@@ -1,0 +1,7 @@
+# 阶段二关系
+
+本批关系是同内容不同路径的sourcealias和已有正文精确去向。三审查对应canonical源已integrated，当前六数学目标与已全文读快照同SHA；无独有证明残缺、无新增命题。duplicate依据不是标题或计数，而是原字节对象相同加逐节语义映射。
+
+CR1–5与CR6、signedspan与非负方向、真客户锥与形式标签、五客户与任意k族、存在与全称、有限审计与一般归纳的边界保持；不增加第三名/新独审身份。原多组pushed但sync冲突的历史和独立恢复证据保真，不倒造synced。
+
+来源关系供后续phase3实际解释；本批不导旧图或强制造边，不重done旧canonical源或RootGC/GJ的round3稿。

@@ -1,0 +1,76 @@
+{
+  "status": "Root exact2page facility model/support reconciliation applied locally; pending explicit checkpoint; no old done/raw changes",
+  "targets": [
+    {
+      "target": "archives/facility-games/state/审查/四设施独立核验与近带有限审计--审查.md",
+      "before_sha256": "bf9200eb1d76a0ce6dad1c3fc564f7b902457c53abed0b94b6457774c7844eda",
+      "agent_preview_sha256": "9042005a384be629b913ce4e6c1b60853679d7b07b67aa4d8dfad006ee6400bd",
+      "root_after_sha256": "e7551fc0ee8465acc70b4e6c763814f788b88b28988f2fcb23130f5748ae6613",
+      "changes": [
+        {
+          "old": "四地点源在 19 个 n=4,6,8 实例上内部 yes/no 谓词为 8/11",
+          "new": "四地点源在 19 个 n=4,6,8 实例上原PARTITION答案 yes/no 为 8/11",
+          "expected_count": 1
+        },
+        {
+          "old": "四地点源把 `yes/no` 作为其支持枚举和对角 guard 的内部判定",
+          "new": "四地点源的 `yes/no` 是原PARTITION等分判定答案，支持枚举和解析对角guard核其归约性质",
+          "expected_count": 1
+        },
+        {
+          "old": "## 四地点独立支持审计\n\n### 输入、谓词与计数\n\n`four_site_fptas_independent.json` 给出 19 个显式源向量，两家设施、四个共同地点，补零后的变量客户数为(n=4,6,8)，并记录 `core_cells`、`core_guard_lower_bound`、`one_nominal_mixed_cells` 和内部布尔值 `yes`。总计数是：\n\n* `support_cells_examined=92496`，其中 `accepted_cells=17890`；\n* `conditional_cost_comparisons=932718`；\n* `yes=8`、`no=11`；\n* `yes_certificate_deviations=96`。\n\n`yes/no` 是这份独立审计实现自身的支持/guard 判定，不是“存在一般 FPTAS”的同义词。源文件声明这是“小型 finite core/unique-alternative support audit plus analytic diagonal guards”，并明确没有枚举所有 diagonal supports；计数可能与第一份四地点审计重叠，也没有取得原始 audit package。因此这里保留源的布尔结果和计数，不能把 8/19 解释为总体成功概率或算法保证。\n\n### 可复核的实例分层\n\n19个实例按补零后的变量客户数n分层如下：\n\n| (n) | 实例数 | `yes` | `no` | 代表性输入与 guard 下界 |\n|---:|---:|---:|---:|---|\n| 4 | 10 | 4 | 6 | `[1]`, `[2]`, `[1,1]`, `[1,2]`, `[1,3]`, `[2,2]`, `[2,3]`, `[3,5]`, `[1,10^{12}+1]`, `[10^{12}+1,10^{12}+1]`；非对角例的 guard 约在 (1.3069!-!1.3071)，重复/对称例为 (13/10)。 |\n| 6 | 5 | 2 | 3 | `[1,1,2]`、`[2,3,5]` 的 guard 为 (13/10)；`[1,2,4]`、`[1,1,1]`、`[2,2,3]` 的 guard 分别为 (144508/110895)、(61932/47525)、(289016/221785)。 |\n| 8 | 4 | 3 | 1 | `[1,1,1,1]`、`[1,2,3,6]`、`[7,7,13,1]` 为 `yes` 且 guard 为 (13/10)；`[1,2,4,8]` 为 `no`，guard 为 (8460/6499)。 |\n\n若只看数值，`no` 行的 guard 都严格大于 (13/10)：例如 `[1]` 和其大尺度复制 `[1,10^{12}+1]` 都给 (6136/4695approx1.306922)，`[1,2,4,8]` 给 (8460/6499approx1.301739)。这说明审计正在探测一个有限的因子边界/支持条件；它没有给出 guard 与总体最优值之间的普遍等式，也没有证明复制、缩放或重复输入保持 `yes/no`。\n\n`one_nominal_mixed_cells` 只是在实现定义的支持单元上记录单名义混合单元数：`yes` 行出现 4、6、8、12 或 36 等有限数值，而多数 `no` 行为 0。它不是均衡数目，也不表示所有混合策略已经求出。与已有 [共享流与多设施有限审计边界](共享流与多设施有限审计边界--审查.md) 中的 32 实例、`yes=8,no=24` 的另一版本相比，本源是独立 19 实例核验；两次计数不能合并为 51 个互不重叠样本，也不能用后者覆盖前者的限制。\n\n### 真实障碍与接续\n\n源 JSON 自己列出三个实质缺口：\n\n1. 支持枚举只覆盖 finite core、unique-alternative 和 analytic diagonal guard，未覆盖所有 diagonal supports；\n2. 计数可能和第一审计重叠，不能作独立样本统计；\n3. 没有原始 audit package，故无法由 JSON 单独恢复完整 solver 或证明 `yes/no` 判定的数学充分性。\n\n因此这份源应保留为“独立有限支持核验”，并与四地点已有审查对象并列关联；后续若要谈 FPTAS/EPTAS，必须补上全输入量词、支持完备性、均衡选择器、运行时间及位复杂度证明。它与当前六人 CAG 模型的目录、顺序历史和均分覆盖量词不同，不建立迁移边。\n\n",
+          "new": "## 四地点独立支持审计\n\n### 输入、真实谓词与计数\n\n本源是两家设施、四个共同地点、正权原子客户的精确条件负载NE模型。当前已全文取得151行独立审计程序及对应构造器、完整证明；partition(src)精确枚举原向量等分子集，yes表示原PARTITION有解，而非支持/guard内部谓词。19例记录92496个support cells examined、17890 accepted cells、932718个条件费用比较，原等分YES8/NO11，YES完整规则在归一化/整数版本共96个实际偏离检查。它不是“存在FPTAS”的标签，也不是成功概率。\n\n### 全部输入与精确数值\n\n| n | 输入层数 | YES | NO |\n|---|---:|---:|---:|\n| 4 | 10 | 3 | 7 |\n| 6 | 5 | 2 | 3 |\n| 8 | 4 | 3 | 1 |\n\nn=4的YES为[1,1]、[2,2]、[10^12+1,10^12+1]；n=6为[1,1,2]、[2,3,5]；n=8为[1,1,1,1]、[1,2,3,6]、[7,7,13,1]。完整19输入、全部分数、代码/旧报告SHA及模型合同见[四地点两设施精确支持审计](../资料/四地点两设施精确支持审计的完整合同--资料.md)。[1]的core guard为6136/4695；[1,10^12+1]实际为1416000000002832/1083461538463705，二者不同。\n\n### 支持覆盖、解析guard与历史边界\n\n程序对核心BC及五个其它无序非对角布局枚举所有闭三态支持，包含名义混合端点及一混合者区间，并从原条件费用核NE。它没有枚举全部对角支持，而以每个对角NE至少一方负载不超过reach/2及七个解析偏离guard排除低因子对角解；非核心五布局检查唯一NE。核心core_guard_lower_bound是全核心NE上的min max{1,R/X,(R−q)/Y}，并非任意内部标签。本19输入该值均<1.31，结合其它路径解析下界>1.31给全局最小倍率。YES构造完整16布局规则，NO全核心支持给正gap。\n\none_nominal_mixed_cells记录允许端点重叠的名义状态数，不是均衡数目。两份32/19例审计输入重叠，计数不合并；有限成功本身不证明全输入复杂度结论。原JSON“当时未取得原始audit package”的文字是历史事实，本轮已取得源码不追改其字节。完整全输入及位复杂度论证另见[四地点无FPTAS证明](../证明/四地点无FPTAS间隙的全支持与编码核算--证明.md)。该精确两设施模型与CAG六人顺序覆盖模型不同。\n\n",
+          "expected_count": 1
+        },
+        {
+          "old": "和未完备支持限制全部保留",
+          "new": "和未枚举对角支持但有解析排除的真实范围全部保留",
+          "expected_count": 1
+        },
+        {
+          "old": "提供一个可重复的 Fraction 支持枚举模板，供补齐完整 support closure 时比较",
+          "new": "提供一个可重复的 Fraction 全核心/非对角闭支持枚举模板，与解析对角排除及全布局实现比较",
+          "expected_count": 1
+        },
+        {
+          "old": "提供四地点有限 guard 的精确有理下界，供寻找真正的全称 lower-bound lemma，但仍需独立证明",
+          "new": "提供四地点有限guard的精确有理下界，与已交付全称gap证明和位复杂度核算比较；有限运行本身不代替证明",
+          "expected_count": 1
+        }
+      ]
+    },
+    {
+      "target": "archives/facility-games/state/审查/共享流与多设施有限审计边界--审查.md",
+      "before_sha256": "0c7d51fc0da3806ab33f708d4fc19a1aefbe80249637353ec48807260c09eaa4",
+      "agent_preview_sha256": "d22becb683338593fa55828f170546a1564c740cc747b9350e13ac31eae38221",
+      "root_after_sha256": "d22becb683338593fa55828f170546a1564c740cc747b9350e13ac31eae38221",
+      "changes": [
+        {
+          "old": "和四设施有限枚举的证据边界",
+          "new": "和四地点两设施有限枚举的证据边界",
+          "expected_count": 1
+        },
+        {
+          "old": "### 补集变换与四设施枚举",
+          "new": "### 补集变换与四地点两设施枚举",
+          "expected_count": 1
+        },
+        {
+          "old": "该来源是四设施有限支持枚举与硬度探针",
+          "new": "该来源是四地点两设施有限支持枚举与硬度探针",
+          "expected_count": 1
+        }
+      ]
+    }
+  ],
+  "actual_checks": [
+    "partition(src) is original PARTITION yes/no; n4 rows3YES/7NO, n6 rows2/3, n8 rows3/1",
+    "32/19 inputs overlap; no combined51 claim; originalcode has2labeled facilities U1/U2 and4sites",
+    "not enumerating diagonal supports is paired with7 analytic exclusion guards>1.31; finitecore minima<1.31 for all19 sources",
+    "[1] fraction6136/4695 differs from two-item large-integer fraction1416000000002832/1083461538463705",
+    "all-real-support m=1 branch encodesexactPARTITION; NO separation3/(8n), polynomialbit integerization80n²T andgap1/(100n²) preserve conditional no-FPTAS scope"
+  ],
+  "new_original_or_supplementary_program_runs": 0,
+  "old_done_and_raw_reports_unchanged": true,
+  "legacy_filename": "existing stable path preserved; metadata title already says four sites; actualmodel nowexplicit twofacilities"
+}

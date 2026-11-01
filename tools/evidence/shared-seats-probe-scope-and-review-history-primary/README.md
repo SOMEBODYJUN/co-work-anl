@@ -1,0 +1,7 @@
+# 平行共享遗漏入口与审查稿
+
+三主源12485B全部实读，五探针14031B、三规范依赖24784B完整源读；两hub审查稿已被NM+ML全语义覆盖各记duplicate，README五探针历史与实际程序范围新资源integrated。本包0原CLI/0import/0数学或LP执行/0成功复跑。
+
+默认10000不冒历史30000argv，随机并集W预筛非实际单outsideW，150/40/12是外seed而非成功LP，单份完整策略锥非所有tie，浮点LP命中有理化verifier仅查SPE未重断言目标越界。原负面报告没有本批执行绑定，未运行spectrum保无结果；所有源码和真正读取位置存档，不把源码存在当历史运行。
+
+原多组claim原字节，本3subset/currentowner/sourceSHA核；Root正文先push后逐源done。相关五程序/三规范源/NC5及旧目标不额外done，冻结输入不改，0sharedGit/网络/账号/mapper。

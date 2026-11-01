@@ -1,0 +1,20 @@
+--- a/archives/customer-attraction/state/问题/逐人覆盖缺口价格桥--问题.md
++++ b/archives/customer-attraction/state/问题/逐人覆盖缺口价格桥--问题.md
+@@ -38,7 +38,7 @@
+ \[
+ B(u_i)\le W. \tag{D}
+ \]
+-取 \(m\) 个最优主题的整数权重 \(z_T\in\{0,1\}\)，则 \(\tau=m\)、\(C(z)=\operatorname{OPT}_m\)，从而
++取达到 \(\operatorname{OPT}_m\) 的 \(m\) 个带索引比较主题（允许重复），令 \(z_T\) 为标签 \(T\) 的出现次数，则 \(z_T\in\mathbb Z_{\ge0}\)、\(\tau=m\)、\(C(z)=\operatorname{OPT}_m\)，从而
+ \[
+ \operatorname{OPT}_m-mu_i\le B(u_i)\le W.
+ \]
+@@ -60,7 +60,7 @@
+ \[
+ u_m=\max_A\sum_{x\in A}\frac1{b_x+1}.
+ \]
+-令 \(y_x=1-\frac1{b_x+1}\)，则每个主题的剩余价值不超过 \(u_m\)，而价格总和正好是根前缀客户的实际覆盖价值，故末位候选桥可直接建立。
++令 \(y_x=1-\frac1{b_x+1}\)，则每个主题的剩余价值不超过 \(u_m\)，而价格总和为 \(\sum_x b_x/(b_x+1)\)，逐客户不超过过去玩家在实际终局的总收益 \(W-u_m\)，故末位候选桥可直接建立。
+ 
+ 倒二有更强的真实尾部投影接口：在固定前缀后的两人完整子博弈中，已有保底可给
+ \[

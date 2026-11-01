@@ -1,0 +1,383 @@
+from pathlib import Path
+import json,hashlib,os
+S=Path('/workspace/scratch/37f0f9248cfc/boss4-next-cache/r3-early-menu-load-defect-primary')
+R=Path('/workspace/scratch/37f0f9248cfc/boss4-research')
+E=S/'tools/evidence/early-menu-load-defect-primary'
+W=S/'cleanup/workspaces/Boss4/r3-early-menu-load-defect-primary-next';W.mkdir(parents=True,exist_ok=True)
+def dump(p,x):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n')
+def sha(b):return hashlib.sha256(b).hexdigest()
+primary=json.loads((E/'source-manifest.json').read_text());related=json.loads((E/'related-source-manifest.json').read_text());ctx=json.loads((E/'context-manifest.json').read_text())
+target='archives/customer-attraction/state/引理/真实早期菜单的中继负载缺陷与价格转移--引理.md'
+def rel(p):return os.path.relpath(p,Path(target).parent).replace(os.sep,'/')
+refs=[]
+for d in primary:
+ for x in d['sources']:
+  ref=f"source:{x['commit']}:{x['path']}"
+  if ref not in refs:refs.append(ref)
+meta=dict(id='customer-attraction/true-early-menu-relay-load-defect-price-transfer',kind='lemma',type_tag='引理',title='真实早期菜单的中继负载缺陷与价格转移',status='algebra-reconstructed-conditional-application; general-payment-open',truth_status='proved-under-explicit-current-and-last-IC-rows; no-general-half-conclusion',review_level='full-two-source-read-and-independent-algebra-check-with-later-budget-comparison',summary='任意早期节点允许全部真实中继随当前行动改变；用有符号二次缺陷修复末位消元，保ε/δ、全参数价格包络、卸载支付及零最大缺陷的结构half条件。一般实际预算仍开放；后续任意查询预算失败不否定此局部引理。')
+head='---\n'+''.join(f'{k}: {json.dumps(v,ensure_ascii=False)}\n' for k,v in meta.items())+'legacy_ids: ["B5-EARLY-MENU-LOAD-DEFECT-v1"]\nsource_refs:\n'+''.join('  - '+json.dumps(x,ensure_ascii=False)+'\n' for x in refs)+'---\n\n'
+body=r"""# 真实早期菜单的中继负载缺陷与价格转移
+
+## 来源、数学状态和不变模型
+
+本页全文整理[prices路由1357B](@173cc2f1900689a8553f)和[早期菜单正文12191B](@a145c1b6c7a8d241d9c7)，两冻结refs各同字节，保留原B5临时数学ID，未把旧角色名称当成本轮执行身份。原文称作者推导尚待独立攻击；本次逐式重构符号、全参数消元及条件推论，后文给完整论证，不以README摘要或有限审计代替证明。一般缺陷支付及当前六人half目标均未由本页解决。
+
+采用单位客户、单位提供者、有限非空共同主题目录、全部有序历史纯SPE的CAG模型，保空主题、重复选择、零客户、任意离轨平局。不是同时选址的加权原子条件负载设施模型。固定任意合法有序过去h，当前玩家之后至少还有末位一人；当前实际主题A，实际末位主题B，中间k≥0名真实中继。对每个当前合法行动T，都沿同一完整策略走真实中继M_T及末位R_T，特别R_A=B。没有把中继冻结，也不把M_Q作为末位的一项合法行动。
+
+令p_x为过去h对客户x的负载，l_T(x)为M_T覆盖x次数，
+
+§[
+d_x=p_x+l_A(x),§qquad
+§Delta_T(x)=l_T(x)-l_A(x),§qquad
+d_x+§Delta_T(x)=p_x+l_T(x)§ge0,\quad§Delta_A=0.
+§]
+
+负载为非负整数；Δ可有正负。对非负背景c定义
+
+§[
+U_c(X,Y)=§sum_{x§in X}§frac1{c_x+1+§mathbf1_Y(x)},§quad
+v=U_d(A,B),\quad w=U_d(B,A).
+§]
+
+v、w就是实际当前/末位最终收益。下述证明仅调用明确列出的当前与末位IC行；中继响应完全取真实策略，无额外单调、同标签或同负载假设。
+
+## 有符号缺陷、净缺陷与精确价格合同
+
+对比较权0≤q_x≤1、统一主题价c≥0定义截断采购利润
+
+§[
+§mathcal B_q(c)=§max_{z_T§ge0}
+§left[§sum_xq_x§min§left(1,§sum_{T§ni x}z_T§right)-c§sum_Tz_T§right].
+§]
+
+记F_q(z)=Σ_xq_x min(1,Σ_{T∋x}z_T)。每个主题权z_T>1截到1不降低目标，故可限制到有限紧盒，最大值存在，包括零价/空主题。z是分数比较组合，不是原玩家行动或一份承诺。
+
+令s_T(x)=1_T(x)、r_T(x)=1_{R_T}(x)，对μ∈Δ(目录)取e_x=E_μr_T(x)。定义
+
+§[
+§xi_T(x)=§frac1{d_x+1}-§frac1{d_x+§Delta_T(x)+1},
+§]
+§[
+§zeta_T(x)=§frac1{(d_x+1)(d_x+2)}
+-§frac1{(d_x+§Delta_T(x)+1)(d_x+§Delta_T(x)+2)},
+§]
+§[
+§varepsilon(§mu)=§sum_x§left[
+§mathbb E(s_T§xi_T)-§mathbb E(r_T§xi_T)
++e_x§mathbb E§xi_T-e_x§mathbb E(s_T§zeta_T)§right],
+§qquad §varepsilon_*=§max_§mu§varepsilon(§mu).
+§tag{1}
+§]
+
+这是有限单纯形上的连续二次函数。μ=点质量A使Δ_A=0，故ε_*≥0；不声称每个ε(μ)非负，也不需要计算最大点或声称二次优化有多项式算法。
+
+更精细的净缺陷为
+
+§[
+§delta(§mu)=§mathbb E_{T,Q§stackrel{§mathrm{iid}}{§sim}§mu}U_d(T,R_Q)
+-§mathbb E_{T§sim§mu}U_{d+§Delta_T}(T,R_T),§qquad
+§delta_*=§max_§mu§delta(§mu).
+§tag{2}
+§]
+
+它依赖同一查询μ，含真实末位激励信用，和先分别最大化再相减不同。δ(μ)可以为负；δ_A=0，因此其最大值非负。矩阵表示C[T,Q]=U_d(T,R_Q)−U_{d+Δ_T}(T,R_T)可非对称，C[T,T]也不一般为0；只有实际A点质量必归零。
+
+对η≥0令
+
+§[
+t_§eta(x)=§min§left§{§frac1{d_x+1},
+§frac1{d_x+2}+§frac§eta{d_x+1+§mathbf1_A(x)}§right§}.
+§]
+
+本地价格转移合同是
+
+§[
+§boxed{§mathcal B_q(v+§varepsilon_*)§le
+§eta w+§sum_x(q_x-t_§eta(x))_+.}
+§tag{3}
+§]
+
+并且0≤δ_*≤ε_*，式(3)的价格可进一步降为v+δ_*。更有选择性的原组合合同，对τ=Σz_T≥1、μ=z/τ为
+
+§[
+F_q(z)-§tau v§le
+§eta w+§sum_x(q_x-t_§eta(x))_++§tau§varepsilon(§mu),
+§tag{4}
+§]
+
+且末项可换更小的τδ(μ)。这里仍有显式真实负载缺陷，不能直接删去它。
+
+## 三类真实IC行及精确缺失项
+
+对τ>0定义
+
+§[
+S=§tau v-§sum_Tz_TU_{d+§Delta_T}(T,R_T)§ge0,
+§]
+§[
+Z=§tau w-§sum_Tz_TU_d(R_T,A)§ge0,
+§]
+§[
+V=§sum_{T,Q}z_Tz_Q
+§left[U_{d+§Delta_T}(R_T,T)-U_{d+§Delta_T}(R_Q,T)§right]§ge0.
+§]
+
+S是当前真实偏离比较；Z只在实际末位节点(h,A,M_A)把合法主题R_T与B比较，所以其背景必须是d及实际A，不能换成Δ_T或T。V每项在真实节点(h,T,M_T)以RT对合法单主题RQ比较；RQ不必在该处最优，不需把M_Q搬到这个节点。
+
+再定义仅用于代数的参考量
+
+§[
+S_0=§tau v-§sum_Tz_TU_d(T,R_T),§quad
+V_0=§sum_{T,Q}z_Tz_Q[U_d(R_T,T)-U_d(R_Q,T)],
+§]
+§[
+G=S+§eta Z/§tau+V/§tau§ge0,\qquad
+G_0=S_0+§eta Z/§tau+V_0/§tau.
+§]
+
+S_0、V_0没有非负保证；将它们误当真实IC正是冻结真实中继。准确恒等式是
+
+§[
+§boxed{G_0=G-§tau§varepsilon(§mu).}
+§tag{5}
+§]
+
+逐客户证明其符号。省略x，定义f_T(b)=1/(d+1+b)−1/(d+Δ_T+1+b)=ξ_T−bζ_T，b∈{0,1}。有
+
+§[
+S_0-S=-§tau§mathbb E[s_Tf_T(r_T)],
+§quad (V_0-V)/§tau=
+§tau§left(§mathbb E[r_Tf_T(s_T)]-e§mathbb E[f_T(s_T)]§right).
+§]
+
+因为s f_T(r)−r f_T(s)=(s−r)ξ_T，二者相加恰为−τε(μ)，ηZ项完全相消。这是负号的来源，没有假设Δ非负。
+
+## 固定参考核的全参数消元
+
+固定客户令a=1_A、b=1_B、D=(d+1)(d+2)，实际份额α=a/(d+a+b)、β=b/(d+a+b)，零分子份额定义为0（包括d=a=b=0）。再记u=Σz_Ts_T、L=Σz_Tr_T、H=Σz_Ts_Tr_T，则
+
+§[
+(S_0)_x=§tau§alpha-u/(d+1)+H/D,\quad
+Z_x=§tau§beta-L/(d+a+1),\quad
+(V_0)_x=(uL-§tau H)/D.
+§]
+
+联合会员H精确消去，得到
+
+§[
+F_q(z)-§tau v=§eta w+§sum_xR_x-G_0,
+§]
+§[
+R=q§min(1,u)-§frac u{d+1}
+-§frac{§eta L}{§tau(d+a+1)}
++§frac{uL}{§tau D}.
+§]
+
+当τ≥1，u,L∈[0,τ]，按u≤1/u≥1两块分别双线性。最大值只需u∈{0,1,τ}、L∈{0,τ}：u=0至多0；u=τ的两角分别比u=1对应角少(τ−1)/(d+1)及(τ−1)/(d+2)。因此
+
+§[
+R§le§max§{0,q-1/(d+1),q-1/(d+2)-§eta/(d+a+1)§}
+=(q-t_§eta)_+.
+§]
+
+结合式(5)和G≥0得(4)，再用ε(μ)≤ε_*移入价格得τ≥1的(3)。
+
+0<τ<1时，所有客户总主题权u≤τ<1，故z和z/τ的覆盖截断都在线性段；价格v+ε_*≥0下目标恰为归一化目标的τ倍。右侧ηw+Σ正部非负，所以统一价格界仍成立；τ=0时目标0。此处只给有限参数的解析推导，不以网格检查代替连续q、η或任意组合的量词。
+
+## 保留真实末位slack得到净缺陷
+
+定义
+
+§[
+§overline V(§mu)=§mathbb E_{T,Q}
+[U_{d+§Delta_T}(R_T,T)-U_{d+§Delta_T}(R_Q,T)]§ge0.
+§]
+
+相同参考核Ud的交叉项对称，结合(5)在τ=1、η=0的恒等式给
+
+§[
+§boxed{§delta(§mu)=§varepsilon(§mu)-§overline V(§mu).}
+§tag{6}
+§]
+
+这也直接等于式(2)的独立双查询表达式；没有把某个参考节点的RT当最佳回复。因V/τ=τVbar，一般τ下
+
+§[
+G_0=S+§eta Z/§tau-§tau§delta(§mu)§ge-§tau§delta(§mu).
+§]
+
+同一余项最大化及小τ缩放给v+δ_*版本，并给0≤δ_*≤ε_*。这个不等式比较的是各函数最大值，不能推出ε_*−δ_*等于Vbar的某个独立最大或最小值。保留同一μ和真实slack才能避免白白丢信用。
+
+## 不解单纯形的负载范围包络
+
+对每客户令
+
+§[
+§xi^+=§max_T§xi_T§ge0,\quad
+§xi^-=§min_T§xi_T§le0,\quad
+§phi^+=§max_T(§xi_T-§zeta_T)
+=§max_T§left[§frac1{d+2}-§frac1{d+§Delta_T+2}§right].
+§]
+
+Δ_A=0保证以上符号；函数随Δ单调，0≤φ^+≤ξ^+。置a_0=ξ^+、b_0=φ^+−ξ^-≥0，定义
+
+§[
+§Gamma_x=§begin{cases}
+a_0,&b_0§le a_0,§§
+(a_0+b_0)^2/(4b_0),&b_0>a_0.
+§end{cases}
+§]
+§[
+§boxed{0§le§delta_*§le§varepsilon_*§le§sum_x§Gamma_x
+§le§sum_x(§xi_x^+-§xi_x^-/4).}
+§tag{7}
+§]
+
+固定e=Pr(r=1)。ε_x=E[(s−r+e)ξ−e sζ]。条件r=0时，s=1至多a_0+eφ^+，s=0至多ea_0；r=1时，s=1至多eφ^+，s=0至多(1−e)(−ξ^-)。因此
+
+§[
+§varepsilon_x§le(1-e)(a_0+e§phi^+)
++e§max§{e§phi^+,(1-e)(-§xi^-)§}.
+§]
+
+max第一项给(1−e)a_0+eφ^+≤a_0；第二项给(1−e)(a_0+b_0e)，其最大值即Γ。最后φ^+≤a_0及e(1−e)≤1/4给Γ≤a_0−ξ^-/4。对x求和取最大即(7)。这些是放大的逐客户范围角点，不声称可由同一完整SPE同时达到。
+
+## 常负载、卸载方向与实际中继利润支付
+
+若每个客户的l_T(x)跨所有当前主题T恒定，则Δ_T=0，ε(μ)恒为0，ε_*=δ_*=0；中继主题标签仍可全变。此时δ(μ)=−Vbar(μ)可能为负，不能把“零最大缺陷”误写成每个净缺陷都零。
+
+若所有x,T满足l_T(x)≤l_A(x)，仅卸载，则ξ^+=φ^+=0，Γ_x=−ξ_x^-/4，故ε_*≤Σ_x(−ξ_x^-)/4。令P_M为实际k名中继最终利润总和，有
+
+§[
+§boxed{§varepsilon_*§le3P_M/8.}
+§tag{8}
+§]
+
+证明：设L=l_A、a=1_A、b=1_B。L=0则卸载差为0；L≥1时
+
+§[
+-§xi^-§le§frac1{p+1}-§frac1{p+L+1}
+=§frac L{(p+1)(p+L+1)}
+§le§frac32§frac L{p+L+a+b}.
+§]
+
+p=0时用(L+a+b)/(L+1)≤(L+2)/(L+1)≤3/2；p≥1时分母(p+1)(p+L+1)≥p+L+2≥p+L+a+b，甚至系数1足够。乘1/4求和，而ΣL/(p+L+a+b)=P_M，即得(8)。δ_*也继承此界。允许新增中继负载时没有同样支付结论，不能删去卸载方向假设。
+
+## 从局部价格到全人数的条件性half
+
+固定m≥2人的完整SPE实际根路径，取任一非末位i做当前玩家，其h是该实际路径前缀；d正是全部实际玩家中除i及末位外的逐客户负载。福利W=Σ_j u_j为实际终局覆盖。取q≡1、η=1/2，得
+
+§[
+§mathcal B_1(u_i+§varepsilon_{*,i})§le W-u_i/2.
+§tag{9}
+§]
+
+核右侧的逐客户比较：d≥1时阈值t=1/(d+1)，余项加末位半份额不超过1−a/[2(d+a+b)]，等价于(a+b)(d+1)≤2(d+a+b)。d=0时，(a,b)=00/10/01/11的“正部余项+末位半份额”为0、1/4、1/2、1/2，分别不超过实际覆盖减半份当前收益0、1/2、1、3/4。空覆盖客户无需删除出比较宇宙。
+
+把最优m主题组合各给权1（允许重复，零主题可补位），由式(9)得到
+
+§[
+§boxed{§operatorname{OPT}_m§le
+W+(m-1/2)u_i+m§varepsilon_{*,i}.}
+§tag{10}
+§]
+
+(9)(10)可将ε_*换为δ_*。若某非末位i满足(m−1/2)u_i+mε_{*,i}≤W，则该SPE满足OPT≤2W；净缺陷版本同理。尤其若i是全体实际最低收益者且中继逐客户负载跨其偏离恒定，ε_*=0又有m u_i≤W，故half成立。最低收益者必须能选为非末位，此结构条件不是一般SPE自动性质。m=1本来覆盖最优，不需本引理的至少两人假设。
+
+只有卸载时可用3P_M/8代入上述充分条件，但不自动满足它。这里既不是给一般每位收益加一个已支付常数，也没有从全人数条件推论跳到当前六人全称命题。
+
+## 允许非恒定负载的零最大缺陷条件
+
+对每客户x要求
+
+§[
+x§in T§Longrightarrow l_T(x)§le l_A(x),
+§tag{11a}
+§]
+§[
+x§in R_T,\ x§notin R_Q§Longrightarrow l_T(x)§ge l_Q(x).
+§tag{11b}
+§]
+
+(11a)只约束当前主题覆盖该客户的分支；(11b)使末位含该客户的分支负载不小于末位不含的分支。它允许负载变化，不要求主题标签相同，也不假定RT在别的背景最优。
+
+令φ_T=ξ_T−ζ_T，将ε的单客户项写为
+
+§[
+§varepsilon_x(§mu)=
+§mathbb E[s_T((1-e)§xi_T+e§phi_T)]
+-§operatorname{Cov}_§mu(r_T,§xi_T).
+§]
+
+ξ、φ与Δ同号，故(11a)使首项非正。ξ随l_T严格增，(11b)给
+
+§[
+§operatorname{Cov}(r,§xi)=§frac12§sum_{T,Q}
+§mu_T§mu_Q(r_T-r_Q)(§xi_T-§xi_Q)§ge0.
+§]
+
+于是每μ有ε(μ)≤0，A点质量达0，所以ε_*=δ_*=0。非末位最低收益者满足这组整个真实菜单条件时，同样由(10)得half。末位可能偏好低负载客户，令(11b)方向反转而造成正缺陷；不能把此条件当作SPE自动推出。
+
+## 后续边界、证明类型与可接续方式
+
+与[倒二非均匀采购](@CTXarchives/customer-attraction/state/定理/真实倒二菜单的非均匀分数采购--定理.md)比较，k=0使Δ=0，继承真实末两人的全参数包络；早期T依赖中继恰由式(5)补项。与[共同静态单槽支配](@CTXarchives/customer-attraction/state/引理/真实末位回复的共同静态单槽支配--引理.md)比较，本页给统一价格的显式缺陷，不构造一份能同时支配多中继菜单的静态单槽分布Q。与[POOL/Jensen](@CTXarchives/customer-attraction/state/引理/R-171池化响应负载Jensen信用与条件接口--引理.md)同样需要实际预算，不能因有非负信用就删掉有符号项。
+
+后续[有符号delta与重叠信用](@CTXarchives/customer-attraction/state/障碍/R-171有符号delta选择与重叠信用边界--障碍.md)、[父方复核](@CTXarchives/customer-attraction/state/障碍/R-171有符号delta选择性预算独立复核--障碍.md)以及实际[9410B边界原文](@ffdb213269fc25b70ecf)/[20277B完整报告](@dc8933a15680748913d6)已完整比较，只读不复done。13人例W33、末位3、OPT36，同一T查询给Σδ=5>18/13；2002个最优重复组合最大1373/507、最小−38375/5577。它们否定任意查询或任意最优组合都能支付的加强，保留存在有利组合及保原客户重叠信用的版本；不否定本页带δ的局部价格引理，更不是六人half反例。本批未重放原自动机、全树比较或2002枚举。
+
+当前旧页一处把4982/5577说成已扣S/Z和重叠后的超额；实际报告该值只扣S/Z。对同一最优计数(1,1,1,9,0,1)，再扣未归一重叠441/2后，归一超额为−179225/11154。完整原before、仅一句proposed、零context patch、精确字段及分层算式在[独立修正包](@E/s-z-overlap-correction/)，供Root审查后接续；本批未覆盖旧页，也不整体否定旧done。
+
+主README的两项接续仍保留：攻击精确缺陷符号/范围与尝试把同一μ选择同全路径预算联动。它所链接6366B原审计程序当前另有owner，本批既未取得其本体，也未运行或认证其351B输出；“独立Fraction审计不代替一般福利证明”只保为源的正确层级说明，不伪造本批同SHA成功。数学论证以上面完整解析式承担，无新增canonical/原审计运行、外审或新颖性认证。
+
+真正未闭合的是：对一般真实菜单，把ε_*、更小δ_*或保留同一μ的τδ(μ)与真实福利/当前末位slack/查询覆盖余项合并支付。先单独最大化各位置再丢查询重叠会更弱。上述恒等式、带假设范围、结构条件与未证全局预算是不同状态；正式超图留第三阶段，本批只说明实际数学关系。
+"""
+body=body.replace('§',chr(92))
+for d in primary+related:body=body.replace('@'+d['id'],rel(d['saved_path']))
+for d in ctx:body=body.replace('@CTX'+d['path'],rel(d['path']))
+body=body.replace('@E',rel(E.relative_to(S)))
+p=S/target;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(head+body)
+dump(E/'formal-resource-manifest.json',[dict(path=target,bytes=p.stat().st_size,sha256=sha(p.read_bytes()))])
+receipts=[
+dict(id='173cc2f1900689a8553f',full_file_reviewed=True,related_material_checked=True,unique_content_accounted_for=True,read_note='1357B路由全文：作者本轮/一般OPEN历史身份、ε/δ价格、常负载/卸载/3P_M/8/最低收益者/同向菜单结构、Fraction审计角色和两项下一步均实读；非仅按README标签判断。',comparison_note='与12191B正文299行两源总量、后续Boss3 signed-delta原note/20277B完整报告和七项上下文全文比较；声明审计程序别owner本体本批未读/未运行，不复done相关源。',decision_note='路由的数学摘要由自足引理承接，历史上下文/审计非证明及μ选择全路径支付接续保留；状态为条件引理/未证一般预算，不提升六人half。',disposition='integrated',targets=[target]),
+dict(id='a145c1b6c7a8d241d9c7',full_file_reviewed=True,related_material_checked=True,unique_content_accounted_for=True,read_note='12191B全部正文实读：全部真实S/Z/V与参考S0/V0、G0符号、连续q/η与τ缩放、δ信用/紧单纯形最大、Γ范围/卸载支付、实际根份额/全人数条件及协方差零最大缺陷逐式重构。',comparison_note='与已done末两人非均匀采购/共同静态单槽、POOL/Jensen、R171父方和有符号选择/重叠信用边界全文比较；只给旧页一句费用层标签的完整before/建议/patch，报告算术不冒充全树重放。',decision_note='保存全部独有解析论证为自足引理，明确有符号点值与非负最大值、条件half与未付一般预算、源作者待审历史与本次内部解析检查；无额外claimed源done，无sharedGit或网络。',disposition='integrated',targets=[target])]
+dump(W/'semantic-receipts.json',receipts)
+(W/'relation-review.md').write_text("""# 第二阶段实际关系审查
+
+早期真实菜单价格转移是末两人消元的精确带缺陷延伸：Δ=0时ε恒0，δ最大0，但δ点值可负；不能冻结中继，也不能从逐孩子静态价格直接得到父预算。单槽静态分布、自由客户价格、统一采购价格保持不同对象。
+
+后续有符号δ矩阵与同μ选择反例限制“任意查询/任意最优组合已可支付”的加强，没有反驳带δ的局部引理。真实S/Z、末位Vbar、重叠余项各有所属费用定义，不能重复扣V，也不能把4982/5577误放在已扣重叠层。修正包只针对一条描述，不整体否定旧页/旧done。
+
+本源恒等式及带显式IC/卸载/协方差条件的推论以完整解析式承接；一般福利支付和当前六人half保留开放。原有限审计程序另有owner，未在本批获得、调用或登记其数学成功。当前两个主源、两个只读已done相关源、全部上下文的范围分别记录。没有第三阶段mapper/图导入、没有强制连通，没有其他claim/done或旧页覆盖。
+""")
+proof_units=[
+('true-history','All T use actual same-strategy M_T and R_T; Δ_A=0 and d+Δ_T>=0; not frozen relay.'),
+('current-S','Current IC compares eventual actual menu payoffs, not reference Ud.'),
+('actual-last-Z','Z background is actual d and actual A; RT is merely a legal single query.'),
+('branch-last-V','Each V row uses node(h,T,M_T); RQ is one legal theme, never MQ.'),
+('signed-identity','S0-S plus (V0-V)/tau cancels binary s*r*zeta and yields -tau*epsilon.'),
+('corner-elimination','Two bilinear rectangles; u=tau corners dominated by u=1 by (tau-1)/(d+1 or d+2).'),
+('small-tau','Coverage remains linear for tau<1, same nonnegative uniform price, RHS nonnegative.'),
+('net-delta','delta=epsilon-Vbar with Vbar>=0 from actual branch rows; maxima nonnegative via point A, points may negative.'),
+('range-envelope','Condition on r=0/1, maximize quadratic in e; Gamma and xi+ -xi-/4 bound; no SPE realizability claimed.'),
+('unload-payment','Only lT<=lA gives quarter range, then per-customer p=0/p>=1 inequality sums to 3PM/8.'),
+('global-conditional','Root d excludes current i and last; eta1/2 thresholds and four d=0 cases give W-ui/2; OPT comparison requires keeping m*defect.'),
+('zero-max','Current-member nonincrease and last-membership/relay-load same ordering imply first term<=0 and covariance>=0; point A yields max0.'),
+('later-boundaries','All-query and all-optimal-combination payment failures retained; selecting a favorable query and overlap credit not ruled out.')]
+dump(E/'analytic-review-obligations.json',[dict(unit=u,reviewed=True,reason=t,verification='independent algebraic reconstruction in formal body, not a new finite suite or external review') for u,t in proof_units])
+inventory={d['id']:d for d in map(json.loads,(R/'cleanup/inventory.jsonl').read_text().splitlines())}
+wanted=['5d12b9ba337060130d26','c0ca00d7195e1370c7d7','f8b0639179fa0be8698a','0f6deaf27382917e1003']
+cand=[]
+for sid in wanted:
+ d=inventory[sid];owner=R/'cleanup/progress'/f'{sid}.json'
+ cand.append(dict(id=sid,path=d['path'],bytes=d['size'],sha256=d['sha256'],local_progress_exists=owner.exists(),eligibility='metadata candidate only; parent must verify actual ownership before claim; no primary read/done'))
+dump(W/'next-candidates.json',cand)
+(W/'delivery.md').write_text("""# CT2交付
+
+原24源capture和27源本地输入供给manifest完整保留；只处理learning_ct真实交集2且ownerBoss4。两原文13548B/299行全部读、七份上下文全文/两已done后续源全文比较；自足新引理与2receipt待Root先推正文再done。
+
+本批无任何原CLI/canonical程序/旧有限suite运行，无sharedGit、clean show、网络、懒加载或其他领/done。工作仅本地原件复制/解析论证/已有报告字段Fraction核算/格式链接和manifest自查。原审计程序别owner且本体未取得，不能当本批运行或新数学证据。
+
+独立S/Z与重叠纠错包含完整before、仅一句proposed、n=0 patch、报告字段与全部归一算式，均在本批E下，不覆盖旧canonical。它仅纠正4982/5577属于只扣S/Z的层，signed post-overlap excess为−179225/11154；不整体否定旧来源处置，不要求先解全树half。
+
+copy-files.json精确列可复制路径，仅一个新canonical引理及E/W新增文件。root transport清单不自列，原件/旧页历史字节均保留。
+""")
+print(json.dumps(dict(formal=target,formal_bytes=p.stat().st_size,receipts=2,original_CLI_runs=0),ensure_ascii=False))

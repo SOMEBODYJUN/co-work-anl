@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ResearchRun",
+  "type": "object",
+  "required": ["run_id", "packet_id", "problem_id", "mode", "main_workspace", "current_frontier", "last_checkpoint", "status"],
+  "properties": {
+    "run_id": {"type": "string", "minLength": 1},
+    "packet_id": {"type": "string", "minLength": 1},
+    "problem_id": {"type": "string", "minLength": 1},
+    "mode": {"enum": ["continuation", "hard-open"]},
+    "main_workspace": {"type": "string"},
+    "subagent_runs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["agent_id", "mode", "workspace", "status"],
+        "properties": {
+          "agent_id": {"type": "string"},
+          "mode": {"enum": ["boundary", "blind", "temporary-verifier", "temporary-adversary"]},
+          "workspace": {"type": "string"},
+          "result_id": {"type": "string"},
+          "status": {"type": "string"},
+          "continuation_of": {"type": ["string", "null"]},
+          "attempt": {"type": "integer", "minimum": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "current_frontier": {"type": "array", "items": {"type": "string"}},
+    "pending_feedback": {"type": "array", "items": {"type": "string"}},
+    "last_checkpoint": {
+      "type": "object",
+      "required": ["checkpoint_id"],
+      "properties": {
+        "checkpoint_id": {"type": "string"},
+        "commit": {"type": "string"},
+        "workspace": {"type": "string"},
+        "at": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "writeback_intent": {
+      "type": "object",
+      "properties": {
+        "objects": {"type": "array", "items": {"type": "string"}},
+        "edges": {"type": "array", "items": {"type": "string"}},
+        "evidence": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "status": {"enum": ["running", "needs-feedback", "blocked", "ready-writeback", "paused"]}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,54 @@
+{
+  "status": "frozen-proposal-v1",
+  "entries": [
+    {
+      "target": "archives/unrelated-machines/state/审查/弱H2强行矩与加权扇出边界双源审查--审查.md",
+      "before_sha256": "e21c378a0bc7b82edf1778a5af99949f18d79777e35dd6e058d6879dec581d06",
+      "proposed_sha256": "e8498641fab19fe55c58dcef00d84f6d5f5683cd1c8de4f7e388090f1ad2425b",
+      "before_snapshot": "unit-rows.before.md",
+      "proposed_snapshot": "unit-rows.proposed.md",
+      "patch": "unit-rows.patch",
+      "replacement_count": 1,
+      "exact_before": "因为 `1<T<2` 且行端均为单位，合法配置至多含一个任务，故共享二阶给每行不同端 `L(x_e x_h)=0`。",
+      "exact_after": "对资源行 R 和全局行 G，全部有限处理时间为一；当 `1≤T<2` 时合法配置至多含一个任务，故共享二阶给这些单位行的不同端 `L(x_e x_h)=0`。中心 V 还含时间 `1/k` 的 Z，不能套用这一零 pair 结论；其条件计数使用下一段的中心配置上界。",
+      "reason": "zero同机pair仅unit行；中心包含tiny。强阈值命题及后续中心floor推导不变。k3,T5/3真实中心{X,Z1,Z2}给pair1，排除所有行zero的字面读法。",
+      "support": [
+        "support/research/current/unrelated_machines/weak_h2_configuration_moment_gap.md#8.2-8.4",
+        "该原稿完整SHA2e6aa07ed9e6cd3401eaa2560429e71af4932cdbb7633ff7a54a9ad973cb5dec；本批沿IL全文sameSHA复用并定点复读"
+      ],
+      "shared_applied": false,
+      "frozen_source_changed": false
+    },
+    {
+      "target": "archives/unrelated-machines/state/审查/长链联合投影与子线性联盟高围长双源审查--审查.md",
+      "before_sha256": "d933a574a747e24df8b541f8d0346a22538986e34a1faf350c8f776808a5f24d",
+      "proposed_sha256": "b453e8bc763c897684ab95b940ccba4f1e93d56ea3a280baf8544315c3cad816",
+      "before_snapshot": "long-path-count.before.md",
+      "proposed_snapshot": "long-path-count.proposed.md",
+      "patch": "long-path-count.patch",
+      "replacement_count": 1,
+      "exact_before": "  M_{k,\\ell}=A_k+B_k\\ell,\n  \\qquad\n  A_k=\\frac{2(k^h-1)}{k-1},\n  \\qquad\n  B_k=2k^h.\n\\]\n围长仍为 2\\ell。",
+      "exact_after": "  M_{k,\\ell}=A'_k+B_k\\ell,\n  \\qquad\n  A'_k=2\\left[\\frac{k^h-1}{k-1}-(k-1)k^{h-1}\\right],\n  \\qquad\n  B_k=2k^h.\n\\]\n这里每侧有 \\(I=(k^h-1)/(k-1)\\) 个非终端、\\(L=k^{h-1}\\) 个共用终端，\\(k^h\\) 条路径各新增 \\(\\ell-1\\) 台内部机，故机器数是 \\(2[I+L+k^h(\\ell-1)]\\)。原子线性正文和脚本的 \\(2[I+k^h\\ell]\\) 多算了 \\(2(k-1)L\\) 台；原定义没有孤立机填充。任务数 \\(N=1+2[I-1+k^h\\ell]\\) 不变，真实连通图有 \\(N-M+1=2(k-1)L\\) 个独立环，不能以原脚本 \\(N=M-1\\) 断言核实际图。修正只改常数项（\\(A'_k\\) 可负而 \\(M>0\\)），下面固定 k 的极限仍成立。\n围长仍为 2\\ell。",
+      "reason": "未padding的原长链图M常数错；一般o(M)对角论证保留，无需r单调。但不能用原代码OK认证实际machine count或把原sampleell无条件迁移。",
+      "support": [
+        "support/research/current/unrelated_machines/model_and_classical_barriers.md#4",
+        "support/research/current/unrelated_machines/long_path_coalition_gap.md#3",
+        "support/research/current/unrelated_machines/sublinear_coalition_projection_high_girth_gap.md (4102B全文无padding)",
+        "selfchecks/long-path-actual-count.py; k4,h3,ell2 M202,N297,girth4,cycle-rank96"
+      ],
+      "shared_applied": false,
+      "frozen_source_changed": false
+    }
+  ],
+  "current_pages": 2,
+  "current_replacements": 2,
+  "original_program_advisory": {
+    "original_sha256": "58776987f2eb1ff13745ca1b064c06534af2cddc9fa6c8266f806892035ada39",
+    "proposed_sha256": "8e5d3e294ac07250275b8d79d2a444a5559df6f6a28f59fe167bc1184303374d",
+    "applied": false,
+    "proposed_version_run": false,
+    "note": "frozen source and actual new original-run OK kept unchanged; advisory two-line implementation correction only"
+  },
+  "previous_quota_proposal": "../independent-root-quota-clarification-proposal-v1/errata-manifest.json",
+  "shared_edit": false
+}

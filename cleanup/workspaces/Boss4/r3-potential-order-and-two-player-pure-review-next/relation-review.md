@@ -1,0 +1,7 @@
+# 阶段二关系
+
+24定义级finite certificate保独有输入/完整σ和反例量词，不将旧348/34同形式策略pass移到新重数；高插入等势只反strict升势和所有maxPhi都好，actual纯0安全不反本例mixed/ownpay/half。791strict降势仍原稿报告，不被24或旧missing状态替代。
+
+两人裸回复f排序是恰一后继BR的精确税身份，任意非负实背景只是代数域扩展；不将r3完整Phi排序当同机制，不混合row D_A和column d_B。一般ownpay强于FM，银行¬FM故其普遍旧OPEN应改，但r2正面接口和此24实例的ownpay不被否定。
+
+三README各自数学资源角色/独立审查范围和程序claim保留；侧审量词不等数值全审，原有限参数回归不承担全m/r，oldfloat候选不等精确证书。0额外done引用原code/JSON或下一5，0phase3图导入，不为连通造边。

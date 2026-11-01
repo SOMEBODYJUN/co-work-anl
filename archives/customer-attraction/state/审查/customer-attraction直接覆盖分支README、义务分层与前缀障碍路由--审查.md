@@ -52,6 +52,6 @@ README 路由三个独立诊断：`check_weak_matching.py` 对既有规范证书
 
 ## 与当前任务和后续接续的关系
 
-这是 customer-attraction 路线，不能迁移到 unrelated-machines 调度或六提供者有限单位客户 SPE。它可作为第三阶段关系证据：弱匹配、弱平均、旧强平均和实际偏离桥应有不同稳定 ID、不同证据类型和不同失败边界。后续读取 `actual_prefix_relay_obstruction.md`、`incumbent_lipschitz_obstruction.md`、三个脚本和 JSON 时，必须保留 `OPEN` 状态，区分候选、完整证明、有限实验和障碍。
+本页属于 customer-attraction 的单位客户共同目录完整历史纯 SPE 模型；任意人数的已证陈述适用于六提供者特例，但本页所列支付候选尚未闭合，不能据此推出六人半覆盖。它不迁移到 unrelated-machines 调度模型。它可作为第三阶段关系证据：弱匹配、弱平均、旧强平均和实际偏离桥应有不同稳定 ID、不同证据类型和不同失败边界。后续读取 `actual_prefix_relay_obstruction.md`、`incumbent_lipschitz_obstruction.md`、三个脚本和 JSON 时，必须保留 `OPEN` 状态，区分候选、完整证明、有限实验和障碍。
 
 本来源未执行任何代码、未核验兄弟文件、未发起新文献搜索。它不证明 Q-CAG-HALF，不否定真正聚合安全值，也不否定弱匹配/弱平均/旧强平均本身。

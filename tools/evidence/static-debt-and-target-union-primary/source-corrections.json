@@ -1,0 +1,49 @@
+{
+  "corrections": [
+    {
+      "id": "DS-target-beta-quantifier",
+      "source_id": "7c7e981b24ce93f21290",
+      "path": "research/workspaces/customer-attraction/R-24e40cab6b8d43ecbbf1c15c4d0edcd5/shared_omission/target_union_incidence_budget.md",
+      "source_sha256": "12e7c5261009a9bc64b8a4dde2400530000416e2e3d4438fe4a2f9827dd7273c",
+      "lines": [
+        28,
+        33
+      ],
+      "before_exact": "For any feasible beta, `y_j=p_j+beta_j` gives\n\n```\n|O| <= sum_j y_j f_j^O(p,r)\n    <= (t+B_O(r)) max_j f_j^O(p,r).                 (A)\n```",
+      "error": "Second upper bound uses optimal BO while quantifying arbitrary feasible beta.",
+      "explicit_counterexample": "m=r=2,p=(0,0),two disjoint singleton maxima andtargetall2customers;BO=2,f=(1,1),feasiblebeta=(2,2);sumyf4>BOmaxf2.",
+      "correct_scope": "arbitrary feasible beta yields t+sum beta; choose an attained optimum beta for t+BO.",
+      "effect": "intermediate quantifier correction; finalA andB preserved with optimalbeta",
+      "current_body_path": "archives/customer-attraction/state/引理/最优目标并集关联LP的真实前缀包络--引理.md",
+      "current_body_sha256": "9a17c54a104ca586b132143a5871c4f3335d5b733b14896b7cec2f6c9862c7d7",
+      "current_body_line": 42,
+      "current_exact_repair_paragraph": "原稿把整个二段链写为“对任意可行β”；第二段作为这个全称断言不成立。例：两个不交单客户极大主题、m=r=2、p=0，B_O(2)=2，f=(1,1)；可行β=(2,2)给Σyf=4>2=(t+B_O)maxf。对任意可行β只能写t+Σβ；本页明确先取最优β，才有所示(A)。这修复中间量词，不改最终包络结论。",
+      "suggested_mathematical_replacement": "For any feasible beta, use t+sum_j beta_j. Choose an optimal feasible beta to replace this sum by B_O(r).",
+      "apply_to_frozen_source": false
+    },
+    {
+      "id": "DS-direct-fj-too-strong",
+      "source_id": "7c7e981b24ce93f21290",
+      "path": "research/workspaces/customer-attraction/R-24e40cab6b8d43ecbbf1c15c4d0edcd5/shared_omission/target_union_incidence_budget.md",
+      "source_sha256": "12e7c5261009a9bc64b8a4dde2400530000416e2e3d4438fe4a2f9827dd7273c",
+      "lines": [
+        39,
+        39
+      ],
+      "before_exact": "A deviation to the full `B_j` earns at least `f_j^O`: if no later action is routed to `j`, each target client's final load is bounded by the displayed denominator; if a later action is first routed to `j`, that follower's theme is contained in `B_j`, so the deviator's terminal payoff dominates the follower's payoff on the same branch. Backward induction with the suffix envelope",
+      "error": "Unconditional deviation payoff>=fj is false when a later follower routes tosamej.",
+      "explicit_counterexample": "two-player common catalogue disjoint A2clients/B1client;completepolicyallA isSPE;O3,rootr2,p0,fA2 butactual/forcedA payoff1.",
+      "correct_scope": "no later same-route gives payoff>=fj; withsame-route gives containment domination oftrue follower payoff and induction>=o/E_t.",
+      "effect": "full-history envelope proof repaired; finalB not refuted",
+      "current_body_path": "archives/customer-attraction/state/引理/最优目标并集关联LP的真实前缀包络--引理.md",
+      "current_body_sha256": "9a17c54a104ca586b132143a5871c4f3335d5b733b14896b7cec2f6c9862c7d7",
+      "current_body_line": 50,
+      "current_exact_repair_paragraph": "若有后继路由j，取其中一个真实未来行动F⊆B_j。二者在**同一完成叶**中，对F每个客户获得相同份额，B_j还可能有额外客户，所以强制者总收益≥这个后继玩家的完整收益。归纳对该未来真历史给≥o/E_{t'}，t'>t；因E_t≥E_{t'}，至少o/E_t。o/D_t也至少o/E_t。两情形都给强制偏离值≥o/E_t，当前SPE最优性完成归纳；末位没有后继，用第一情形。 原稿第39行把“偏离B_j直接得到至少f_j”写成无条件句也过强：两人、A含2客户、B含1客户且不交，完整策略所有人均选A；此时O=3、根r=2有f_A=2，真实选A后只有收益1。发生同路由后继时应使用上面的收益支配与归纳，而不是声称直接达到f_j。最终o/E_t界仍正确。没有把“强制B_j最优”作假设、没有冻结后继或将同计数历史合并。",
+      "suggested_mathematical_replacement": "If no later follower routes to j, deviation payoff is at least f_j. Otherwise containment dominates a true follower payoff, and backward induction gives at least |O|/E_t; direct f_j is not asserted.",
+      "apply_to_frozen_source": false
+    }
+  ],
+  "shared_errata_patch_targets": [],
+  "raw_sources_unchanged": true,
+  "why_no_shared_patch": "Compared existing dynamic routing formal statements already use correct case split; only newprimary manuscript wording corrected innewselfcontainedbody."
+}

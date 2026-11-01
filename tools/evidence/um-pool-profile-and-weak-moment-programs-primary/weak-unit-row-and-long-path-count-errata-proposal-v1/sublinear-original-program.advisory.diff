@@ -1,0 +1,20 @@
+--- frozen-original/tests/audits/unrelated_machines/sublinear_coalition_projection_gap.py
++++ advisory-derived/tests/audits/unrelated_machines/sublinear_coalition_projection_gap.py
+@@ -20,7 +20,7 @@
+ 
+ def sizes(k, ell):
+     h = height(k)
+-    machines = 2 * ((k**h - 1) // (k - 1) + k**h * ell)
++    machines = 2 * ((k**h - 1) // (k - 1) + k**(h - 1) + k**h * (ell - 1))
+     jobs = 1 + 2 * ((k**h - k) // (k - 1) + k**h * ell)
+     return h, machines, jobs
+ 
+@@ -51,7 +51,7 @@
+         for ell in (2, 3, 7, 19):
+             h, m, n = sizes(k, ell)
+             # The path replacement has one task per machine-graph edge.
+-            assert n == m - 1
++            assert n - m + 1 == 2 * (k - 1) * k**(h - 1)
+             assert 2 * ell > 0
+             # Both sample r(M)=o(M) functions are genuinely sublinear.
+             assert r_sqrt(m) * r_sqrt(m) <= m

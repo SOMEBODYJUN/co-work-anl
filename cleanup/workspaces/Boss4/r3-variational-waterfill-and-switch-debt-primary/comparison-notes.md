@@ -1,0 +1,7 @@
+# 全仓相关比较
+
+完整primary五源、20153报告14全行均实读。全文比四正式对象（comparison-manifest保实际SHA）：单遍核心和有序原树账给CC/CONS，VAR新增全局互补、唯一负载/M和伸缩/FE/maxJOINT；零池已有34真实SPE应用只阻H独付。两主稿以前context全读不抵这次所有独有内容，旧EA处置不改。
+
+2320盲稿是水位单遍的历史陈述先验，并非VAR blind；8487提及tail4328/4600审查尚待另primary。通用JOINT字面查询曾过广截断，不声称全读所有同名命中；精确源SHA/VAR名称定向查询已用来核同SHA无成功run，不能与其他跨根JOINT同名合同混用。
+
+5191原函数14指定有理解，无runtimefile input/optimizer/SPE。13小N全子集35，208大N仅214列表213不同；8cached原log计算、3实际条件利润加强分支、20153全byte匹配均有passive原行依据。所有原程序只一次，不以selfcheck再跑；有限证书不推出跨真实树总付款或一般六人half。

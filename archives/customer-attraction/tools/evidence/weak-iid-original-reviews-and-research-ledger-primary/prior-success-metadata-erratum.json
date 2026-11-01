@@ -1,0 +1,72 @@
+{
+  "kind": "metadata-only erratum; preserve original bytes",
+  "source_code": {
+    "path": "archives/customer-attraction/tools/evidence/common-iid-mixture-and-petal-threshold-primary/check_new_petal_threshold_certificates.py",
+    "size": 5255,
+    "sha256": "b034497e46def47694258f5181f4682fece77caca5dcc9246ad97d3614f77d4f"
+  },
+  "source_output": {
+    "path": "archives/customer-attraction/tools/evidence/common-iid-mixture-and-petal-threshold-primary/new-petal-threshold-certificates.json",
+    "size": 6716,
+    "sha256": "87eccdffabba0a59a554cfc00f57e1c5621930925775e3c73539a5555a46097e"
+  },
+  "incorrect_json_field": "new_fixed100.t",
+  "original_value": "197/200",
+  "correct_value": "1969/2000",
+  "deduction": "s=31/2000; fixed100 t=1-s. F100/G100 computed before loop; subsequent loop overwrites t and final serialization mistakenly uses last t=1-3/(2*100)=197/200.",
+  "exact_code_evidence": {
+    "fixed100_assignment": [
+      {
+        "line": 51,
+        "text": "m=100;s=F(31,2000);t=1-s;L=F(2011,1000);R=F(400,199)"
+      }
+    ],
+    "fixed100_evaluation": [
+      {
+        "line": 52,
+        "text": "F100,G100=values(m,m,t)"
+      }
+    ],
+    "later_loop": [
+      {
+        "line": 64,
+        "text": "for m in (53,100):"
+      }
+    ],
+    "later_t_assignment": [
+      {
+        "line": 65,
+        "text": "    K=m;a=F(3,2);t=1-a/m;ff,gg=values(m,K,t);r=F(4*m,2*m-1)"
+      }
+    ],
+    "serialized_field": [
+      {
+        "line": 83,
+        "text": " 'new_fixed100':{'s':s,'t':t,'L':L,'critical_rho':R,'actual_B_at_cut':F100,'actual_petal_at_cut':G100,'Taylor8':taylor8,'Taylor8_less_21_over100':True,'private_Bernoulli_lower':private_lower,'petal_rational_lower':petal_lower,'petal_lower_minus_L':petal_lower-L,'reverse_margin_over_weak_threshold_strict_lower':F(189,2000)},"
+      }
+    ]
+  },
+  "unaffected": [
+    "F100/G100 rational values",
+    "s31/2000 and Taylor8",
+    "private lower and L",
+    "189/2000 reverse margin",
+    "separate m_equals_K_cases test_t197/200 correct for mK100 trial",
+    "published canonical proof t1969/2000"
+  ],
+  "current_old_files_modified": false,
+  "old_entry_reruns": 0,
+  "proposed_future_code_fix": {
+    "first_line_old": "m=100;s=F(31,2000);t=1-s;L=F(2011,1000);R=F(400,199)",
+    "first_line_new": "m=100;s=F(31,2000);fixed100_t=1-s;L=F(2011,1000);R=F(400,199)",
+    "evaluation_new": "F100,G100=values(m,m,fixed100_t)",
+    "serialization_change": "in new_fixed100 only: 't':fixed100_t"
+  },
+  "applied": false,
+  "root_authorization": "Root agrees preserve old output and document in IP resource plus independent metadata-erratum; no old canonical edit without exact false sentence",
+  "canonical_false_all_fields_claim_found": false,
+  "reviewed_canonical": [
+    "archives/customer-attraction/state/证明/花瓣弱iid反族的显式阈值与渐近机制--证明.md",
+    "archives/customer-attraction/state/审查/独立同分布支付闭包的来源与审核合同--审查.md"
+  ]
+}

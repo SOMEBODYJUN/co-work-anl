@@ -1,0 +1,5 @@
+# 原RT独审与静态调和边界
+
+5主MD15110B/2comparison11258B全读核byte，原完整19claim原样保存/本5subsetownerSHA核。两对象自足保存不同真实proof与静态非SPE边界；旧定理充分部分去重，related2source不extra done。
+
+本组0原/新数学CLI，RTr有限记录仅原MD/既有local缺件快照，Root可正常取不当永久remote边界。另PAY7原件的3次真实CLI在独立补充包，不回填旧0run或重复计本组。Root串行bodypush后才done，当前不称已推。

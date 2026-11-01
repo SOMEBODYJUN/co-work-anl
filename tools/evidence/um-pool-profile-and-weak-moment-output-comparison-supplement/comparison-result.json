@@ -1,0 +1,123 @@
+{
+  "status": "full-comparison-read-only-supplement; original-JV64-frozen",
+  "comparison_source_ids": [
+    "ac37746d10824d8f6ea6",
+    "7899c2fad926969cf900"
+  ],
+  "new_primary_receipts": 0,
+  "extra_done_claims": 0,
+  "new_original_program_runs": 0,
+  "full_report_bytes_read": 41734,
+  "all_report_fields_read": true,
+  "read_method": "complete JSON parse; all outer metadata/extra fields exposed, repeated full pool mathematical payload compared exactly against already-reviewed JV default-run payload; all six profile/demand arrays also compactly read",
+  "exact_payload_comparisons": [
+    {
+      "old_id": "ac37746d10824d8f6ea6",
+      "old_subtrees": [
+        "generic_multislice",
+        "mixed_H2"
+      ],
+      "new_id": "24bf95b5485fe003ce4a",
+      "result": "all keys and all values exactly equal as parsed JSON; raw decorated report is not byte-identical stdout",
+      "same_program_sha256": "4029555b9ffdc4da759fba695022e4136c9dc147baa3b5fa76ba462be2cfa700"
+    },
+    {
+      "old_id": "7899c2fad926969cf900",
+      "old_subtree": "root_actual_runs.selected_set_matcher",
+      "new_id": "35c07e6a07d8cf4616c9",
+      "result": "entire nested dictionary exactly equal, including all 6 s profiles, demand arrays, matching counts, selected-set witnesses, explicit counterexample and original examples",
+      "same_program_sha256": "7739be1cb8a36dc0ee2f4b219a2cdd4529f22fa8a4b261bb087e3bff8ad7964a"
+    },
+    {
+      "old_id": "7899c2fad926969cf900",
+      "old_subtree": "root_actual_runs.resource_assignment_and_cyclic_independent",
+      "new_id": "6baab8a8cb72ef092300",
+      "result": "entire nested dictionary exactly equal, including independent exact allocations and all four counts",
+      "same_program_sha256": "394c9afce1f25c3eaf232affcb18079519e9297ece6991d20f9c3324d6bbe767"
+    }
+  ],
+  "weak_extra_fields": {
+    "reproduction_command": "python3 tests/audits/unrelated_machines/weak_h2_configuration_moment_gap.py",
+    "python_version": "3.12.14",
+    "arithmetic": "exact fractions.Fraction and integer Bareiss; no numeric tolerances",
+    "code_sha256": "4029555b9ffdc4da759fba695022e4136c9dc147baa3b5fa76ba462be2cfa700",
+    "proof_path": "research/current/unrelated_machines/weak_h2_configuration_moment_gap.md",
+    "proof_sha256_at_run": "79d40fbb52c8b80e65b52078ef7defef3cf464861e936b29ff27d60db76993bb",
+    "claim": "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1",
+    "scope": "Only two generic complete M2 matrices and one small mixed fixture. Mixed full M2 is not numerically checked; its positivity relies on the general tensor proof. The mixed k=2,b=2 fixture tests the wider construction mechanism, not the selected k>=3,b=k^2 gap sequence.",
+    "asymptotic_formula_checks": [
+      {
+        "k": 3,
+        "T": "6/5",
+        "OPT": "5/3",
+        "ratio": "25/18",
+        "two_minus_ratio": "11/18"
+      },
+      {
+        "k": 5,
+        "T": "15/13",
+        "OPT": "9/5",
+        "ratio": "39/25",
+        "two_minus_ratio": "11/25"
+      },
+      {
+        "k": 10,
+        "T": "110/101",
+        "OPT": "19/10",
+        "ratio": "1919/1100",
+        "two_minus_ratio": "281/1100"
+      },
+      {
+        "k": 100,
+        "T": "10100/10001",
+        "OPT": "199/100",
+        "ratio": "1990199/1010000",
+        "two_minus_ratio": "29801/1010000"
+      }
+    ],
+    "passed": true
+  },
+  "weak_proof_version_boundary": {
+    "historical_proof_sha256_at_run": "79d40fbb52c8b80e65b52078ef7defef3cf464861e936b29ff27d60db76993bb",
+    "current_canonical_sha256": "2e6aa07ed9e6cd3401eaa2560429e71af4932cdbb7633ff7a54a9ad973cb5dec",
+    "equal": false,
+    "old_proof_snapshot_newly_read": false,
+    "conclusion": "same program and finite numerical payload, different recorded proof snapshot; no claim old proof equals later expanded canonical or old run certified later strong-H2 theorem"
+  },
+  "pool_outer_fields": {
+    "claims": [
+      "UM-TWO-STATE-POOL-EXACT-FRONTIER-v1"
+    ],
+    "source_hashes": {
+      "research/current/unrelated_machines/duplication_state_majority_floor.md": "ad8054b9dd3b2fc331343f927defe453f44e40de35a51f3953dc0fba0a9596df",
+      "research/reviews/unrelated_machines/two_state_pool_partial_resource_review.md": "06b173ef3fb7113e38464f77a36fd0a3faf5a9ed9143e11912901692ed148279",
+      "tests/audits/unrelated_machines/two_state_pool_exact_frontier.py": "7739be1cb8a36dc0ee2f4b219a2cdd4529f22fa8a4b261bb087e3bff8ad7964a",
+      "tests/audits/unrelated_machines/two_state_pool_partial_resource_independent.py": "394c9afce1f25c3eaf232affcb18079519e9297ece6991d20f9c3324d6bbe767",
+      "examples/unrelated_machines/two_state_pool_partial_tree_counterexample.json": "21246bd8201edc5637ccdee5620dfc0a60df09d9481233dde0093fcaba98077c"
+    },
+    "attacked_original": {
+      "commit": "0e02aa8e1224f278fe1ad0eb1bfabf558608fa3a",
+      "path": "research/current/unrelated_machines/duplication_state_majority_floor.md",
+      "sha256": "21b0a9460a4299c9aba5617fcbc43f029999af09618cf3e3b77dbbb2582fe37d",
+      "scope": "old ancillary universal equation (3), not majority lower bound (1)"
+    },
+    "root_actual_tree_check": {
+      "vertices": 26,
+      "edges": 25,
+      "score": "5/8",
+      "original_edges": true,
+      "unique_parents": true,
+      "reachable": true
+    },
+    "process_exit_codes": [
+      0,
+      0
+    ],
+    "limits": "Finite audits do not replace the count/cyclic general proof. Majority lower bound retained; original frozen records unmodified. No general UM hardness or external review/novelty certification."
+  },
+  "pool_source_hashes_scope": "only the two sourceprogram fingerprints verified from JV originals; other hashes preserved as report metadata, not new linked-source reading or example-data reproduction",
+  "historical_tree_check_scope": "26 vertices25edges score5/8 originaledges/uniqueparents/reachable are old root field claims, not a new child tree run",
+  "asymptotic_extra_formula_check": "all four added k3/5/10/100 rows rationally substituted once; not output of current default program and not another original program run",
+  "main_manifest_sha256": "d27dd5ee8f0079feffdd34e038ac6ede23dfef89b01ed522060ad7a152d9a6a6",
+  "main_frozen_bytes_unchanged": true
+}

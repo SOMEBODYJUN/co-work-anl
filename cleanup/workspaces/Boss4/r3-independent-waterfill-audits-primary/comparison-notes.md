@@ -1,0 +1,9 @@
+# 全仓比较和来源身份
+
+完整读两代码、两个完整报告、6173复核稿并比六份正式页（comparison-manifest保实际字节）。此前EA把7105/4257仅记7068已读审查的历史报告；本批是载体primary/fullread和新的必要唯一执行，不能让旧旁读抵完成，也不改写EA当时未运行的正确历史。
+
+标准库16case49query/Q+J/t0的版本与本shared14/43/Q/t>0不同SHA；作者5640/4775的80步c10与mixed7105/4257的96步c37不同。mixed读作者report数据，代码独立但不假称未看任何作者结果。shared6173只审核心1–3，明确不认证53和一般聚合。
+
+EA正式原树账曾有LaTeX frac的0x0c；Root已按唯一字节修正并实际pushed2fcf53ecdf9e447798b6b8459a16d6588fe6c3ce/done245a2c27d800594c7af97878ab1f67cd8a0a2a47，本批比较快照重新从canonical取8599B SHA b8016751cd4d68e9236fa25dbf3b3a26c28a35b46e3205dee13190cfd86c6501，旧中间比较SHA与勘误路径保manifest。EA冻结包不改；新三正式正文逐真实bytes检查所有非LF/TAB/CR C0，不能用splitlines代替。
+
+common-pool解析、integercore锐性和有限实现分别承担不同量词。本文不推一般聚合/六人half、不把分数叶称SPE、不重演历史blind、不认证外审新颖性。原2320 blind稿及VAR系列仍未本批done，后续须另全primary处理。

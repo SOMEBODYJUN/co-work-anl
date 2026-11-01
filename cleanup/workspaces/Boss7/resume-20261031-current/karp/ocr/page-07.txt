@@ -1,0 +1,58 @@
+8 Reducibility Among Combinatorial Problems 225
+
+REDUCIBILITY AMONG COMBINATORIAL PROBLEMS 87
+
+elements of other countable domains. It is a reasonable working
+hypothesis, championed originally by Jack Edmonds (1965) in connec-
+tion with problems in graph theory and integer programming, and by
+now widely accepted, that such a problem can be regarded as tract-
+able if and only if there is an algorithm for its solution whose
+running time is bounded by a polynomial in the size of the input.
+In this section we introduce and begin to investigate the class of
+problems solvable in polynomial time.
+
+We begin by giving an extremely general definition of "deter-
+ministic algorithm", computing a function from a countable domain
+D into a countable range R.
+
+For any finite alphabet A, let A* be the set of finite
+
+strings of elements of A; for xe A*, let l1g(x) denote the
+length of x.
+
+A deterministic algorithm A is specified by:
+
+a countable set D (the domain)
+a countable set R (the range)
+a finite alphabet A such that A*AR = >
+
+an encoding function E: D > A*
+a transition function tT: A* + A*UR.
+
+The computation of A on input x €D is the unique sequence
+YysYooe++ Such that y, = E(x), y,4, = T(y,) for all i and,
+if the sequence is finite and ends with y,, then y, € R. Any
+string occurring as an element of a computation is catiea an
+instantaneous description. If the computation of A on input x
+is finite and of length t(x), then t(x) is the running time of
+
+A on input x. A is terminating if all its computations are
+finite. A terminating algorithm A computes the function
+f4t D+R_ such that £4(x) is the last element of the computation
+
+of A on x.
+
+If R= {ACCEPT,REJECT} then A is called a recognition
+algorithm. A recognition algorithm in which D = 2* is called a
+string recognition algorithm. If A is a string recognition
+algorithm then the language recognized by A is {xe 2*| Ey(x) =
+ACCEPT}. If D=R=2* then A is called a string mapping
+algorithm. A terminating algorithm A with domain D = 2
+operates in polynomial time if there is a polynomial p(+) such
+that, for every x é@ 2*, t(x) < p(1g(x)).
+
+To discuss algorithms in any practical context we must spe-
+cialize the concept of deterministic algorithm. Various well
+known classes of string recognition algorithms (Markov algorithms,
+one-tape Turing machines, multitape and multihead Turing machines,
+

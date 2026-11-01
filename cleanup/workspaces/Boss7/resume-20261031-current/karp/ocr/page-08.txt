@@ -1,0 +1,59 @@
+226 Richard M. Karp
+
+88 RICHARD M. KARP
+
+random access machines, etc.) are delineated by restricting the func-
+tions E and T to be of certain very simple types. These definitions
+are standard [Hopcroft & Ullman (1969)] and will not be repeated here.
+It is by now commonplace to observe that many such classes are equi-
+valent in their capability to recognize languages; for each such
+class of algorithms, the class of languages recognized is the
+
+class of recursive languages. This invariance under changes in
+definition is part of the evidence that recursiveness is the cor-
+rect technical formulation of the concept of decidability.
+
+The class of languages recognizable by string recognition
+algorithms which operate in polynomial time is also invariant
+under a wide range of changes in the class of algorithms. For
+example, any language recognizable in time p(*) by a multihead
+or multitape Turing machine is recognizable in time p*(+) by a
+one-tape Turing machine. Thus the class of languages recognizable
+in polynomial time by one-tape Turing machines is the same as the
+class recognizable by the ostensibly more powerful multihead or
+multitape Turing machines. Similar remarks apply to random access
+machines.
+
+Definition 1. P is the class of languages recognizable by
+one-tape Turing machines which operate in polynomial time.
+
+Definition 2. Il is the class of functions from =* into I*
+defined by one-tape Turing machines which operate in polynomial
+time.
+
+The reader will not go wrong by identifying P with the class
+of languages recognizable by digital computers (with unbounded
+backup storage) which operate in polynomial time and [I with the
+class of string mappings performed in polynomial time by such
+computers.
+
+Remark. If f: 2* + 2* is in I then there is a polynomial
+p(+) such that 1g(£(x)) < p(1g(x)).
+
+We next introduce a concept of reducibility which is of cen-
+tral importance in this paper.
+
+Definition 3. Let L and M be languages. Then L«=M
+(L is reducible to M) if there is a function f € Il such that
+f(x) eM*xeL.
+
+Lemma l. If L&=M and Me P then Le P,
+
+Proof. The following is a polynomial-time bounded algorithm
+to decide if x € L: compute f(x); then test in polynomial time
+
+whether f(x) € M.
+
+We will be interested in the difficulty of recognizing subsets
+of countable domains other than 2*, Given such a domain D,
+

@@ -1,0 +1,11 @@
+# LE 五份数学来源的证据合同
+
+五主源34338B/638物理行全文实读，自己的sameSHA preparation实际复用。完整17项原claim保在actual-claim-original.json，本5子集/owner核在owner-verification.json；父方才负责正文实际推送后的done，本包未执行Git或勾选。四自足正式对象分别保I直接互补券/fresh共同余量、八人stationary反例/真实后继账、53例准确出处去重、真实query匹配调和下界。
+
+primary-source-manifest.json列全部精确原件，未改旧冻结源。current-comparison-manifest.json分12份全篇现正文与1份只60–81行的旧ledger段；读正文不扩称全部被链原件读完。reused-53-evidence-manifest.json明确复用已充分同SHA存在性证据，0重跑旧税审、未比两套策略原字节。
+
+本次唯一原程序入口是related的8190B audit_stationary_source.py，先全文读并确认stdlib与固定IO，再在replay/stationary-audit私有完整相对目录以python -I -B执行一次，exit0/stderr空。两个实际输入为该代码和1443260B rawDAG；没有读旧结果或导作者求解器。execution.json保精确argv/CWD/输入前后SHA/输出。新7721B完整报告恰同旧inventory报告SHA；是原独立实现的知情重放，不是新独立或盲实现，不增加code/input/report的primary done。
+
+DAG全部13872节点counts/target/action/children均实际被核；7437决策×8共59496项含self、50732严格。完整历史量词由每节点全合法边和逐层路径乘数给出，不能把16777216满历史写成程序literal枚举。原外层schema/instance/root/root_columns/discovery亦分字段实读，discovery的12870是生成元数据、不混节点总数。
+
+explanatory-arithmetic-selfcheck.json只用Fraction核正文新展示的标量乘积/阈值，不重跑原入口。一般证明由正文逐项推导承担；无新外审/新颖性或原half反例。证据关系说明和三种未证共同付款接口在workspace，不提前注册第三阶段图。

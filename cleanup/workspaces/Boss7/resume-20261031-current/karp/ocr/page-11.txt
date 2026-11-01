@@ -1,0 +1,64 @@
+8 Reducibility Among Combinatorial Problems 229
+
+REDUCIBILITY AMONG COMBINATORIAL PROBLEMS a7
+(2)
+
+We refer to L as the language derived from L
+p-bounded existential quantification.
+
+by
+
+Definition 4. NP is the set of languages derived from ele-
+ments of PC2) by polynomial-bounded existential quantification.
+
+There is an alternative characterization of NP in terms of
+nondeterministic Turing machines. A nondeterministic recognition
+algorithm A is specified by:
+
+a countable set D (the domain)
+
+a finite alphabet A such that A* M{ACCEPT,REJECT} = 9
+an encoding function E: D + A*
+
+a transition relation t C A*x (A*U {ACCEPT,REJECT})
+
+such that, for every y, € A*, the set {<y,,y>| <y,,y> € T} has
+fewer than ka elements, where ka is a constant. A computation
+of A on input x €D is a sequence yj,y7,... such that
+
+yy = E(x), <yyoyyy1? € T for all i, and, if the sequence is
+finite and ends with y,, then y, € {ACCEPT,REJECT}. A string
+
+y € A* which occurs in some computation is an instantaneous
+description. A finite computation ending in ACCEPT is an
+accepting computation. Input x is accepted if there is an
+accepting computation for x. If D=2* then A is a nondeter-
+ministic string recognition algorithm and we say that A operates
+‘in polynomial time if there is a polynomial p(+) such that, when-
+ever x accepts x, there is an accepting computation for x of
+
+length < p(1g(x)).
+
+A nondeterministic algorithm can be regarded as a process
+which, when confronted with a choice between (say) two alternatives,
+can create two copies of itself, and follow up the consequences of
+both courses of action. Repeated splitting may lead to an exponen-
+tially growing number of copies; the input is accepted if any
+sequence of choices leads to acceptance.
+
+The nondeterministic 1-tape Turing machines, multitape
+Turing machines, random-access machines, etc. define classes of
+nondeterministic string recognition algorithms by restricting the
+encoding function E and transition relation Tt to particularly
+simple forms. All these classes of algorithms, restricted to oper-
+ate in polynomial time, define the same class of languages. More-
+
+over, this class is NP.
+
+Theorem 1. L¢ NP if and only if L is accepted by a non-
+deterministic Turing machine which operates in polynomial time.
+
+Proof. = Suppose Lé NP. Then, for some L(2) € P(2) and
+some polynomial p, L is obtained from L(2) by p-bounded exis-
+tential quantification. We can construct a nondeterministic
+

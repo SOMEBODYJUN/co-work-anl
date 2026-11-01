@@ -1,0 +1,21 @@
+{
+  "batch": "R-373d-security-20261031",
+  "replays": [
+    {
+      "command": "python3 background_security_probe.py",
+      "output": "replay/background_security_probe.json",
+      "scope": "all 460 starts from 115 symmetric prefixes"
+    },
+    {
+      "command": "python3 fractional_background_probe.py",
+      "output": "replay/fractional_background_probe.json",
+      "scope": "all 105 starts from prefixes of degree 1..4"
+    }
+  ],
+  "limitations": [
+    "Both probes use floating SciPy LP/SLSQP and finite policy cones",
+    "background probe source is residual-profit test and explicitly says it does not follow from root aggregate-security conjecture",
+    "fractional source retains old-run limitation; replay adds finite-cut/oracle gap diagnostics",
+    "negative finite gaps are screens only, not universal lower bounds or SPE certificates"
+  ]
+}

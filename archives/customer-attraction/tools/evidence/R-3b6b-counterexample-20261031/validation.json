@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "source-byte-parity",
+      "passed": false,
+      "detail": "8 clean-show exports match frozen SHA/size"
+    },
+    {
+      "name": "compile",
+      "passed": true,
+      "detail": "all five Python sources and replay scripts py_compile"
+    },
+    {
+      "name": "anchor-lift-replay",
+      "passed": true,
+      "detail": "anchor_lift_audit.py --max-players 7 output byte-equal to anchor_lift_exact.json; 12 records, all count-state slack checks pass"
+    },
+    {
+      "name": "certified-m5k7",
+      "passed": true,
+      "detail": "independent weak_matching_replay verifier: 2801 histories, 16806 deviations, welfare=1000, OPT=1800, ratio=9/5"
+    },
+    {
+      "name": "last-share-recovery",
+      "passed": true,
+      "detail": "certify_candidate.py recovers exact rational support from floating candidate; verify_certificate passes, welfare=3 OPT=3 ratio=1, 2801 histories"
+    },
+    {
+      "name": "fork-family-smoke",
+      "passed": true,
+      "detail": "fork_family_search.py full grid exits 0, best floating ratio=1.7"
+    },
+    {
+      "name": "cone-search-smoke",
+      "passed": true,
+      "detail": "cone_search.py starts=2 steps=2 exits 0, best floating ratio=1.8; source itself labels candidates not certified"
+    }
+  ],
+  "scope": "auxiliary bridge family and finite m5k7 SPE/cone searches; no six-player CAG half theorem or counterexample",
+  "boundaries": [
+    "anchor lift is a different auxiliary model and its m=7 AB witness remains above half",
+    "floating cone/fork records require exact continuation recovery",
+    "certified m5k7 certificate is one finite full-history pure SPE point",
+    "last-share source was floating; only recovered integer support point is certified"
+  ]
+}

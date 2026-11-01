@@ -1,0 +1,13 @@
+# DL5完整主源比较与实际增量
+
+五原件54824B安全helper纯本地逐size/SHA256/blobSHA1核；Parent明确允许预读，本batch实际claim a81c6e…pushed/synced后核5 actual owner Boss4才写最终正文/receipt和运行。原回执全文字节保，不从本地文件存在推发布。预读时pending原笔记保为pre-claim-read-scope.md，仅记录当时读序，当前gate状态看authorization/STATUS。
+
+PI代码/36550B报告以前只通过5420B审查原文导航，本次两件为primary完整读；程序有main guard、只packet两字段但整6437B文件不改，91/329等是后求值assert非数值计算输入。5954原entry首次一次成功，不能拿CI固定算术或CV6298锥发现器充旧同SHA成功。原182行全保并分26势/coverage类，区分势最大与覆盖最优，K保根3槽extra query为第4槽。
+
+作者6621B主稿以前global审查重构其公式，这次正式primary保全部7节，特别全历史规定非core税0的精确保真充分条件及同一H不双领。当前Mfull/NQ/全pWP及整数extraone一般已被银行真SPE反驳；若第3项欲推出这些全称桥不能继续复活，真正更弱half共资尚缺。已知陈述的先证后读与输入数字隔离是不同独立身份，当前重放不是盲审或外审。
+
+3624作者审计的真输入53单位四人七主题/400完整策略，与4839 global的34三人和lambda组不同。它每参数只查399非空历史2793原tail IC，未查empty root；本次另data-only根7补核，rootP19≥六29/3，原入口仍root检查0。53actual W51/OPT53满覆盖见证、core7后60单位W58/OPT60，非half例。builder和security仅相关原件，本批都不执行/不done，security值只用作lambda字面来源，未认证其最优性。
+
+原报告max refund−path regret不是min；一次原run保全2394个node和path量以及42根叶，逐行恢复min并核核心扣后的0。core7每node regret向量完全同core0、税每角色+k_C/退款+3k_C，是真非零测试，不倒改DC core空的旧域。raw观察数2394/2394/42与unique数相同，不把多事件算多run。原run仅2（PI1/tax1），补核一次不调用原程序/LP/oracle，未重跑任何早先程序。
+
+五当前正式对象全文比较快照有逐SHA清单；只是读取当时working bytes，未从存在推断pushed。三新对象/五receipt/人工关系与自查独立stage写，不改共享页、map或登记。

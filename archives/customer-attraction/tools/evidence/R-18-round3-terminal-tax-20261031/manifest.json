@@ -1,0 +1,48 @@
+{
+  "sources": [
+    {
+      "id": "d3b7b28c92aa8465da20",
+      "path": "archives/customer-attraction/tools/evidence/R-18-round3-terminal-tax-20261031/original/README.md",
+      "bytes": 3712,
+      "sha256": "1ece76c15639d502eeffc7497e4155a4f0915e280b1637fee42986fa3e6e74fc"
+    },
+    {
+      "id": "4a7b2a4b9f48676f6020",
+      "path": "archives/customer-attraction/tools/evidence/R-18-round3-terminal-tax-20261031/original/full_terminal_tax_joint.py",
+      "bytes": 2904,
+      "sha256": "4eb4cd7e02fe1428a41dbf369f6124b7ddc2b7895ade7e90f54ed8c771fc00a9"
+    },
+    {
+      "id": "f3317489c39e7532b0ad",
+      "path": "archives/customer-attraction/tools/evidence/R-18-round3-terminal-tax-20261031/original/full_terminal_tax_joint_m3p4.json",
+      "bytes": 2269,
+      "sha256": "41c3f31e5ec62314ebfcaa3b81da6c17b949b2971f75c3eb7a030299e6019142"
+    },
+    {
+      "id": "ea58dd32069e528f8799",
+      "path": "archives/customer-attraction/tools/evidence/R-18-round3-terminal-tax-20261031/original/full_terminal_tax_probe.py",
+      "bytes": 4562,
+      "sha256": "9901c70a45acf67cbd257440b9329d4dc324a17351a8de144c9859fa7864bd66"
+    },
+    {
+      "id": "0120755c1d3a1646412d",
+      "path": "archives/customer-attraction/tools/evidence/R-18-round3-terminal-tax-20261031/original/full_terminal_tax_probe_run.json",
+      "bytes": 2796,
+      "sha256": "4c8cbcd280a4113fab13f0cd2cde8f524c2b8dff9f33fffa23cbc7553e41e14e"
+    }
+  ],
+  "runs": [
+    {
+      "command": "full_terminal_tax_joint.py --topics 4 --path 0,1,2 --path 0,0,1 --path 0,0,0 --seconds 20",
+      "result": "three exact fixed-cone values 1/2, 13/18, 11/12; HiGHS status 0; floating bound explicitly not certificate"
+    },
+    {
+      "command": "full_terminal_tax_probe.py --variants 1",
+      "result": "14 specified cones; maximum values root-tax 19/20, classic m=5 29/30, reply 53/60, overlap 8/11; no >1"
+    }
+  ],
+  "related": {
+    "root_tax_certificate": "related/root_tax_failure.json",
+    "scope": "fixed full-history SPE cones only"
+  }
+}

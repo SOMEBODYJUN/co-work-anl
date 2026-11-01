@@ -13,14 +13,14 @@ source_refs:
   - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/multi_outer_request_winner_pair_backend_audit.json"
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/multi_outer_request_winner_pair_backend_root_replay_scope.json"
   - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/multi_outer_request_winner_pair_backend_root_replay_scope.json"
-evidence:
-  solver_sha256: "ee41f5fd20993dff6ecdf7103d5930793654201557b83c293f9b929e3d971e53"
-  replay_code_sha256: "460679c82477934bcfdc3ad326f39dd0d0dd0baf7fa4fd75d02df015c7f6b2f0"
+summary: "有限枚举3528个接受项加8个边界样例；与仅两个CE后端样例分开，未实现一般排程器。"
+solver_sha256: "ee41f5fd20993dff6ecdf7103d5930793654201557b83c293f9b929e3d971e53"
+replay_code_sha256: "460679c82477934bcfdc3ad326f39dd0d0dd0baf7fa4fd75d02df015c7f6b2f0"
 ---
 
 # 归一化部分配额福利审计
 
-`normalized_menu_partial_quota_welfare.json` 的程序和输出全部使用 `fractions.Fraction`。它保留重复 indexed states、零权重、零激活行、未用资源、大二进制分母和极小 `q`，并在无随机抽样的有限域中枚举 5,696 个候选，拒绝 2,168 个超容量项，接受 3,536 个，访问 86,912 个 joint actions 和 42,418 个正概率前缀；边界 fixture 为 8 个，非法输入拒绝 19 个。
+`normalized_menu_partial_quota_welfare.json` 的程序和输出全部使用 `fractions.Fraction`。它保留重复 indexed states、零权重、零激活行、未用资源、大二进制分母和极小 `q`。无随机抽样的枚举域有 5,696 个候选，拒绝 2,168 个超容量项、接受 3,528 个；另 8 个边界 fixture 也调用同一审计函数，所以报告 `feasible_cases=3,536=3,528+8`。包含边界在内共访问 86,912 个 joint actions 和 42,418 个正概率前缀，非法输入拒绝 19 个。
 
 审计域固定为 1–3 个资源、1–2 个组、每组两个状态，状态是 `{0,1/2,1}` 上的所有有序 pair（保留重复），`theta∈{1,1/3,1/2,5/6}`，`delta=3/8`，并以全部正概率 joint actions 作为 oracle。它验证实现的容量、CDF、潜势和 attaining-state 处理与有限精确 oracle 一致；它没有实现 LP 求解器、一般 unrelated-machines 调度器或复杂度归约。
 

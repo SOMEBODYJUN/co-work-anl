@@ -1,0 +1,13 @@
+# 四源实读交接
+
+输出只包含已分配四源：5474a39abf2ca86a7504、d8cb660596b3e32b2896、9d19a3dd38546755e01c、7b290e3ac3c882acec62。四个原件均逐份全文读完，总1604B；原件、指纹及8个完整冻结source refs均保存，manifest来自父Boss导出并与repository inventory逐项相等。
+
+两份README各653B/15行：并非因为处于工作区就归模板，实际三节只有当前研究占位、按需建目录与成熟资产另入库、私聊/远端可见性说明；没有具体数学内容或材料链接。两JSON各149B/6行：完整四字段，actor与README一致、instance各不同。两README及旧1254只替换各自精确actor后字节一致，归一化SHA为bdc0856ca4d057a39aaff5f20f058abbb12bf1671bcf90103f4cd40d3846b2db；原字节没有被归一化改写。
+
+检索完整actor、instance、精确路径并读inventory，只找到清单/进度/冻结索引；每个精确前缀仅README/profile。本结论局限于这些文件和冻结材料，不是断言作者别处没有研究。因四文件无数学正文、候选或具体命题链接，不新建定理/算法/问题/反例，也没有要倒填的特定数学纠错。
+
+实际比较阅读：现有身份与接续资料、个人恢复规则和旧题路由资料全文；旧UM和后续CAG工作区总README全文；当前及两冻结程序相关完整函数。本次读取与此前同agent阅读复用分别列actual-reading-list.json，旧两程序SHA仍与inventory相等。程序只读未跑，有限测试/数学均新增运行0。
+
+建议四源分别retained到archives/unrelated-machines/state/资料/不相关机历史工作区的身份与接续边界--资料.md。自足分节--资料.md提供可合并正文及8个source refs，receipts.json给4条完整逐源记录，manifest-additions.json可合入现有证据manifest，original目录可合入现有historical-workspace-identities/original。父Boss需协调统一资料的组数/源数/摘要，新增两表行并保留精确actor/instance。不要覆盖当前Boss5的workspace.json或触发旧身份恢复。
+
+没有改共享正文，没有Git写入、网络或clean操作。先由父Boss正式合并、checkpoint确认pushed，再提交receipts；此处未声称done。新增资源与恢复协议可在阶段三按来源/合同审议，没有数学推导关系。

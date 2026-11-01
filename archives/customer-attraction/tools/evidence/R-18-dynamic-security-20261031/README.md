@@ -1,0 +1,3 @@
+# R-18 occupied-background security finite audit (2026-10-31)
+
+Sources: `a75aaf3ae2483c8d6a26` frozen exact report, `7afe1d4c51ebfa29abd3` independent Fraction audit, `8c891fefb4f3c54316c6` compare-ne search, and `cd739e8ec774e3d19245` individual-cone search. The report records 588,784 pointwise inequalities, r=6..300 half-range checks with B=r-4, 84 legal-background games and 89 SPE outcomes; its statement explicitly remains finite audit only. The three scripts are preserved in original/. Their attempted local execution is recorded in replay/: all stop immediately because the source branch does not contain the referenced `customer_attraction` or `customer_attraction_strategy_lp` packages. No missing dependency was silently replaced.

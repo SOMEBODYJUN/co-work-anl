@@ -1,0 +1,11 @@
+# priority共同付款与child原QA五源证据
+
+五主源23186B全文主读，三自足正文/五final integrated receipts，三旧context23309B与八当前canonical全文数学比较。原22claim pushed/synced698a9b60a1b944178a0cef17de1dd16a4e3dd4b8原样保留，五owner/sourceSHA快照及subset独立核对；normal acquisition原manifest里的未核claim字段保持原样，后续授权另证。
+
+ENV/SOURCE是旧COVER/PAY特例，FRESH复原旧未曝光capture，COV-R定位债；不同action/context共同预算尚未构造。两完整2role3customerSPE分别否条件weightedGamma与看当前rank的pointwise rowmass付款，两者R空，不反合法missedsource流程、确定包络/FRESH或half。文献是原作者历史读取，独审先见父脚本非blind。
+
+唯一必要原QA4734B b174…在实际claim后隔离原相对树运行1次；完整372216B packetbad2…和原code未改。实际return0、stdout1029/stderr0、新JSON与冻结1029B66c03e…逐字节/语义同。源码没有main guard，未被worker import；f/lam在这一次entry内多次。972参数/1275单客户链及旧13actual路径/8type静态价不认证SPE/MIX/Jk。旧13full自动机充分旧成功只复用，0新fullrun；两priority程序0entry。
+
+初3MD齐/2QA缺本地字节的manifest与后正常show取得原capture分开；raw frozen report永不覆写。replay/actual-invocation含命令/解释器/cwd/relocation/input/output/elapsed，input二进制gzip完整保留。C0只检查文本，二进制input按size/SHA核。
+
+关系/数学自查/语义receipts/结构校验与精确白名单在cleanup/workspaces/Boss4/r3-priority-coupling-and-child-audit-primary；本worker只外stage，Root实际bodypush/done另计。下一四priority代码报告safe-local实缺，2旧query/captureMD本地可读不预领。

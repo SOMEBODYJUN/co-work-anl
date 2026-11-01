@@ -1,0 +1,412 @@
+{
+  "scope": "new EB controls and quotient-index arithmetic, not original candidate or MIP replay",
+  "audit_source_sha256": "c0afb75176e136cb64d30963828f2f9bd4d0b945a93670a6d0bb1dc02e873188",
+  "original_main_called": false,
+  "solver_calls": 0,
+  "positive_controls": [
+    {
+      "name": "two_disjoint_singletons",
+      "valid_complete_pure_SPE": true,
+      "customers": 2,
+      "players": 2,
+      "topics": 2,
+      "distinct_coverages": 2,
+      "distinct_maximal_coverages": 2,
+      "root_history": [
+        0,
+        1
+      ],
+      "root_payoffs": [
+        "1",
+        "1"
+      ],
+      "W": 2,
+      "OPT": 2,
+      "OPT_over_W": "1",
+      "half_slack": 2,
+      "histories": 3,
+      "nonself_deviations": 3,
+      "ties": 1,
+      "strict": 2,
+      "minimum_slack": "0",
+      "equal_count_states_with_different_prescribed_actions": 0
+    },
+    {
+      "name": "three_player_known_five_thirds_control",
+      "valid_complete_pure_SPE": true,
+      "customers": 5,
+      "players": 3,
+      "topics": 3,
+      "distinct_coverages": 3,
+      "distinct_maximal_coverages": 3,
+      "root_history": [
+        0,
+        0,
+        0
+      ],
+      "root_payoffs": [
+        "1",
+        "1",
+        "1"
+      ],
+      "W": 3,
+      "OPT": 5,
+      "OPT_over_W": "5/3",
+      "half_slack": 1,
+      "histories": 13,
+      "nonself_deviations": 26,
+      "ties": 6,
+      "strict": 20,
+      "minimum_slack": "0",
+      "equal_count_states_with_different_prescribed_actions": 0
+    },
+    {
+      "name": "equal_coverage_labels_with_nonmarkov_actions",
+      "valid_complete_pure_SPE": true,
+      "customers": 1,
+      "players": 3,
+      "topics": 2,
+      "distinct_coverages": 1,
+      "distinct_maximal_coverages": 1,
+      "root_history": [
+        0,
+        0,
+        0
+      ],
+      "root_payoffs": [
+        "1/3",
+        "1/3",
+        "1/3"
+      ],
+      "W": 1,
+      "OPT": 1,
+      "OPT_over_W": "1",
+      "half_slack": 1,
+      "histories": 7,
+      "nonself_deviations": 7,
+      "ties": 7,
+      "strict": 0,
+      "minimum_slack": "0",
+      "equal_count_states_with_different_prescribed_actions": 1
+    },
+    {
+      "name": "legal_empty_topic",
+      "valid_complete_pure_SPE": true,
+      "customers": 1,
+      "players": 2,
+      "topics": 2,
+      "distinct_coverages": 2,
+      "distinct_maximal_coverages": 1,
+      "root_history": [
+        0,
+        0
+      ],
+      "root_payoffs": [
+        "1/2",
+        "1/2"
+      ],
+      "W": 1,
+      "OPT": 1,
+      "OPT_over_W": "1",
+      "half_slack": 1,
+      "histories": 3,
+      "nonself_deviations": 3,
+      "ties": 0,
+      "strict": 3,
+      "minimum_slack": "1/2",
+      "equal_count_states_with_different_prescribed_actions": 0
+    }
+  ],
+  "negative_controls": [
+    {
+      "name": "missing_history",
+      "input": {
+        "name": "legal_empty_topic",
+        "instance": {
+          "topics": [
+            "A",
+            "empty"
+          ],
+          "players": 2,
+          "customers": [
+            {
+              "topics": [
+                0
+              ],
+              "multiplicity": 1
+            }
+          ]
+        },
+        "strategy": {
+          "actions": [
+            {
+              "history": [],
+              "action": 0
+            },
+            {
+              "history": [
+                0
+              ],
+              "action": 0
+            }
+          ],
+          "terminal_counts": [
+            2,
+            0
+          ]
+        },
+        "expected": {
+          "W": 1,
+          "OPT": 1,
+          "histories": 3,
+          "nonself_deviations": 3
+        }
+      },
+      "observed_error": "AssertionError"
+    },
+    {
+      "name": "duplicate_history",
+      "input": {
+        "name": "legal_empty_topic",
+        "instance": {
+          "topics": [
+            "A",
+            "empty"
+          ],
+          "players": 2,
+          "customers": [
+            {
+              "topics": [
+                0
+              ],
+              "multiplicity": 1
+            }
+          ]
+        },
+        "strategy": {
+          "actions": [
+            {
+              "history": [],
+              "action": 0
+            },
+            {
+              "history": [
+                0
+              ],
+              "action": 0
+            },
+            {
+              "history": [
+                1
+              ],
+              "action": 0
+            },
+            {
+              "history": [],
+              "action": 0
+            }
+          ],
+          "terminal_counts": [
+            2,
+            0
+          ]
+        },
+        "expected": {
+          "W": 1,
+          "OPT": 1,
+          "histories": 3,
+          "nonself_deviations": 3
+        }
+      },
+      "observed_error": "AssertionError"
+    },
+    {
+      "name": "wrong_terminal_counts",
+      "input": {
+        "name": "legal_empty_topic",
+        "instance": {
+          "topics": [
+            "A",
+            "empty"
+          ],
+          "players": 2,
+          "customers": [
+            {
+              "topics": [
+                0
+              ],
+              "multiplicity": 1
+            }
+          ]
+        },
+        "strategy": {
+          "actions": [
+            {
+              "history": [],
+              "action": 0
+            },
+            {
+              "history": [
+                0
+              ],
+              "action": 0
+            },
+            {
+              "history": [
+                1
+              ],
+              "action": 0
+            }
+          ],
+          "terminal_counts": [
+            1,
+            1
+          ]
+        },
+        "expected": {
+          "W": 1,
+          "OPT": 1,
+          "histories": 3,
+          "nonself_deviations": 3
+        }
+      },
+      "observed_error": "AssertionError"
+    },
+    {
+      "name": "profitable_off_path_action",
+      "input": {
+        "name": "legal_empty_topic",
+        "instance": {
+          "topics": [
+            "A",
+            "empty"
+          ],
+          "players": 2,
+          "customers": [
+            {
+              "topics": [
+                0
+              ],
+              "multiplicity": 1
+            }
+          ]
+        },
+        "strategy": {
+          "actions": [
+            {
+              "history": [],
+              "action": 0
+            },
+            {
+              "history": [
+                0
+              ],
+              "action": 0
+            },
+            {
+              "history": [
+                1
+              ],
+              "action": 1
+            }
+          ],
+          "terminal_counts": [
+            2,
+            0
+          ]
+        },
+        "expected": {
+          "W": 1,
+          "OPT": 1,
+          "histories": 3,
+          "nonself_deviations": 3
+        }
+      },
+      "observed_error": "AssertionError"
+    },
+    {
+      "name": "zero_welfare_ratio",
+      "input": {
+        "name": "legal_empty_topic",
+        "instance": {
+          "topics": [
+            "A",
+            "empty"
+          ],
+          "players": 2,
+          "customers": []
+        },
+        "strategy": {
+          "actions": [
+            {
+              "history": [],
+              "action": 0
+            },
+            {
+              "history": [
+                0
+              ],
+              "action": 0
+            },
+            {
+              "history": [
+                1
+              ],
+              "action": 0
+            }
+          ],
+          "terminal_counts": [
+            2,
+            0
+          ]
+        },
+        "expected": {
+          "W": 1,
+          "OPT": 1,
+          "histories": 3,
+          "nonself_deviations": 3
+        }
+      },
+      "observed_error": "ZeroDivisionError"
+    }
+  ],
+  "positive_decision_histories": 26,
+  "positive_nonself_deviations": 39,
+  "quotient_index_counts": [
+    {
+      "m": 5,
+      "p": 7,
+      "d": 2,
+      "customer_orbits": 23,
+      "thresholds": 51,
+      "Y": 588,
+      "Z": 929,
+      "X": 929,
+      "binary_total": 2446,
+      "all_variables": 2520,
+      "concrete_nonempty_types": 127
+    },
+    {
+      "m": 5,
+      "p": 7,
+      "d": 3,
+      "customer_orbits": 39,
+      "thresholds": 92,
+      "Y": 1396,
+      "Z": 2369,
+      "X": 2369,
+      "binary_total": 6134,
+      "all_variables": 6265,
+      "concrete_nonempty_types": 127
+    }
+  ],
+  "unquotiented_counts": {
+    "Y": 8568,
+    "Z": 16660,
+    "T": 330,
+    "types": 127,
+    "binary_total": 41888,
+    "all_variables": 42345
+  },
+  "universal_half_proved": false
+}

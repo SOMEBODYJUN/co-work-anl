@@ -1,0 +1,9 @@
+# latest-NET原探针与owner后缀报告五源证据
+
+5primary14852B全读/2MD完整duplicate/2latest程序报告integrated/1旧浮点JSON retained。1自足计算页/8canonical全文比较，duplicate8units和source/targetSHA；raw13actualclaim/五ownerSHA原样，bodypush/done当前Root另计。
+
+唯一必要originalentry为latest-NET3922 stdlib/defaultm9/stdoutonly：实际1次return0/.25185243s/stdout3034/stderr0，source未改、stdout字节/语义同冻3034。8次run(m)属于同一次CLI/3460pairs，13/12仅结构profile非SPE。wrappercapturedJSON不伪称原程序写文件。
+
+context3420cutcode+27707真实strategyinput全文保闭包但0import/LPentry，1158JSON只是历史负数float/rat字段，无exactdual/w/rat归一核；必要cuts/commonk∀π/ABCD非unique域均自足保。0old52/child/13重跑，不把结构success转给numeric或HALF。
+
+数学自查/10关系/5最终receipt/精确manifest在workspace；下一5actual density原码报告/root重构/两README11561B已全齐/full预读，未预claim。

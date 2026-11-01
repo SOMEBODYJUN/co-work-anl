@@ -1,0 +1,113 @@
+{
+  "generic_multislice": [
+    {
+      "n": 4,
+      "m": 3,
+      "M2_dimension": 67,
+      "M2_rank": 16,
+      "one_hot_tests_degree_le_3": 700,
+      "row_identity_tests_degree_le_3": 525
+    },
+    {
+      "n": 5,
+      "m": 3,
+      "M2_dimension": 106,
+      "M2_rank": 30,
+      "one_hot_tests_degree_le_3": 1880,
+      "row_identity_tests_degree_le_3": 1128
+    }
+  ],
+  "mixed_H2": {
+    "k": 2,
+    "b": 2,
+    "T": "4/3",
+    "jobs": 10,
+    "machines": 9,
+    "edges": 32,
+    "M1_rank": 18,
+    "one_hot_tests_degree_le_2": 4910,
+    "all_global_load_localizers_dimension": 33,
+    "localizer_PSD_ranks": [
+      {
+        "machine": "('V', 0)",
+        "rank": 18
+      },
+      {
+        "machine": "('V', 1)",
+        "rank": 18
+      },
+      {
+        "machine": "('G', 0)",
+        "rank": 18
+      },
+      {
+        "machine": "('R', 0, 0)",
+        "rank": 11
+      },
+      {
+        "machine": "('R', 0, 1)",
+        "rank": 11
+      },
+      {
+        "machine": "('R', 0, 2)",
+        "rank": 11
+      },
+      {
+        "machine": "('R', 1, 0)",
+        "rank": 11
+      },
+      {
+        "machine": "('R', 1, 1)",
+        "rank": 11
+      },
+      {
+        "machine": "('R', 1, 2)",
+        "rank": 11
+      }
+    ],
+    "all_shared_CONFIG_edge_marginals_checked": 32,
+    "positive_same_resource_pair": "1/54",
+    "negative_same_resource_triple": "-1/162",
+    "mixed_global_M2_numerically_checked": false,
+    "mixed_global_M2_proof": "tensor products of PSD components, then nonnegative average"
+  },
+  "reproduction_command": "python3 tests/audits/unrelated_machines/weak_h2_configuration_moment_gap.py",
+  "python_version": "3.12.14",
+  "arithmetic": "exact fractions.Fraction and integer Bareiss; no numeric tolerances",
+  "code_sha256": "4029555b9ffdc4da759fba695022e4136c9dc147baa3b5fa76ba462be2cfa700",
+  "proof_path": "research/current/unrelated_machines/weak_h2_configuration_moment_gap.md",
+  "proof_sha256_at_run": "79d40fbb52c8b80e65b52078ef7defef3cf464861e936b29ff27d60db76993bb",
+  "claim": "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1",
+  "scope": "Only two generic complete M2 matrices and one small mixed fixture. Mixed full M2 is not numerically checked; its positivity relies on the general tensor proof. The mixed k=2,b=2 fixture tests the wider construction mechanism, not the selected k>=3,b=k^2 gap sequence.",
+  "asymptotic_formula_checks": [
+    {
+      "k": 3,
+      "T": "6/5",
+      "OPT": "5/3",
+      "ratio": "25/18",
+      "two_minus_ratio": "11/18"
+    },
+    {
+      "k": 5,
+      "T": "15/13",
+      "OPT": "9/5",
+      "ratio": "39/25",
+      "two_minus_ratio": "11/25"
+    },
+    {
+      "k": 10,
+      "T": "110/101",
+      "OPT": "19/10",
+      "ratio": "1919/1100",
+      "two_minus_ratio": "281/1100"
+    },
+    {
+      "k": 100,
+      "T": "10100/10001",
+      "OPT": "199/100",
+      "ratio": "1990199/1010000",
+      "two_minus_ratio": "29801/1010000"
+    }
+  ],
+  "passed": true
+}

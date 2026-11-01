@@ -1,0 +1,15 @@
+# R-2f6 security source and replay package
+
+This package preserves the five formally claimed frozen sources from `research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/security/` (four security artifacts and `workspace.json`). Each file was retrieved with `python3 co-work-anl/work.py clean show <id> --out …` after enabling the repository fetch, then hashed against `cleanup/inventory.jsonl`. The two frozen source commits (`legacy-cleanup` `68fad804ec5946cb296f77dc5b336308a66abf12` and `main` `aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c`) report the same path, blob, size, and SHA-256 for each source.
+
+`source-manifest.json` records every source ID, path, blob, size, SHA-256, clean-show outcome, and replay details. `original/` contains the exact clean-show bytes. `replay/local-slope/source-root/` contains the six example/certificate pairs and the expected source-tree layout required by `check_local_slope.py`; these are replay dependencies copied from the existing exact-input package and are not additional claimed sources. `replay/` records commands' stdout/stderr and generated JSON. Run `sh replay/local-slope/run.sh` to reproduce the local-slope output in place.
+
+## Replays
+
+* `audit_flat_security_increment.py` is self-contained. Running `sh replay/audit/run.sh` exits 0 with empty stderr, enumerated all 1,464 ordered histories and 16,104 action comparisons for the B=3, 11-action child policy, and checked 286 static three-slot backgrounds. Its generated certificate is byte-identical to `original/flat_security_increment_certificate.json`. The exact result is the local counterexample status stated by the source: actual path `[0,1,2,3]`, root utility `11/30`, root and child safety `23/60`, safety increment `0`, chain debt `-1/60`, minimum slack `0`; the source expressly leaves global safety and HALF open.
+
+* `check_local_slope.py` exited 0 with empty stderr on the six saved fixtures. It rechecked every ordered history and exact primal/dual Fraction certificates after LP support discovery. Running `sh replay/local-slope/run.sh` reproduces the same output; its generated `local_slope_check.json` is byte-identical to the clean source. The six runs have complete-SPE comparison counts 258, 258, 1,554, 1,554, 258, and 111,110 respectively. The `local_security_increment` instance has a negative root L1 value (`-2541846071/10233939282`), while the report is explicitly a targeted saved-input diagnostic rather than a general theorem or search.
+
+* `workspace.json` is metadata only (`schema=1`, save `customer-attraction`, actor `R-2f6cae284faf43fea7a09c0a4fe7c679`, instance UUID); it carries no mathematical claim.
+
+The mathematical interpretation belongs to the existing counterexample object `archives/customer-attraction/state/反例/合法背景安全值平台的局部斜率障碍--反例.md`: the B≥3 finite child-SPE family gives `V'=V` and `u<V`, so it blocks a universal finite local-slope payment rule while preserving the stated boundaries (the specified background may be off the root path; global safety, HALF, and aggregate compensation remain open). The scripts and JSON are evidence for that object, not standalone theorem statements.

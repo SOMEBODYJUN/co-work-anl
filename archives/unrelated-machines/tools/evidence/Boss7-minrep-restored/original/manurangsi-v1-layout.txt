@@ -1,0 +1,419 @@
+                                              A Note on Degree vs Gap of Min-Rep Label Cover and
+                                             Improved Inapproximability for Connectivity Problems
+
+                                                                                  Pasin Manurangsi∗
+                                                                                     UC Berkeley
+arXiv:1807.00936v1 [cs.CC] 3 Jul 2018
+
+
+
+
+                                                                                      May 27, 2022
+
+                                                                                         Abstract
+                                                  This note concerns the trade-off between the degree of the constraint graph and the gap
+                                              in hardness of approximating the Min-Rep variant of Label Cover (aka Projection Game). We
+                                              make a very simple observation that, for NP-hardness with gap g, the degree can be made
+                                              as small as O( g log g), which improves upon the previous Õ( g1/2 ) bound from a work of
+                                              Laekhanukit [Lae14]. Note that our bound is optimal up to a logarithmic factor since there
+                                              is a trivial ∆-approximation for Min-Rep where ∆ is the maximum degree of the constraint
+                                              graph.
+                                                  Thanks to known reductions [CLNV14, CK12, CMVZ16, Lae14], this improvement implies
+                                              better hardness of approximation results for Rooted k-Connectivity, Vertex-Connectivity Sur-
+                                              vivable Network Design and Vertex-Connectivity k-Route Cut.
+
+
+                                        1 Introduction
+                                        We study variants of the Label Cover problem. The input to these problems is a label cover instance
+                                        Π, which consists of (i) a bipartite graph G = ( A, B, E) called the constraint graph, (ii) an alphabet
+                                        set (aka label set) Σ, and, (iii) for each edge ( a, b) ∈ E, a (projection) constraint π( a,b) : Σ → Σ which
+                                        can be any function from Σ to itself.
+                                        A labeling φ : ( A ∪ B) → Σ is a function that assigns each vertex a label from Σ. The value of a
+                                        labeling φ, denoted by valΠ (φ), is the fraction of edges ( a, b) ∈ E such that π( a,b) (φ( a)) = φ(b).
+                                        These edges (or constraints) are said to be satisfied by φ.
+                                        A multilabeling ψ : ( A ∪ B) → P (Σ) is a generalization of labeling in which each vertex can be now
+                                        assigned multiple labels. (Here P (Σ) denote the power set of Σ.) The value of a multilabeling ψ,
+                                        denoted by valΠ (ψ), is the fraction of edges ( a, b) ∈ E such that π( a,b) (ψ( a)) ∩ ψ(b) 6= ∅ (i.e. there
+                                        exists σa ∈ ψ( a) and σb ∈ ψ(b) such that π( a,b) (σa ) = σb ). Similar to before, such edges are said to
+                                        be satisfied by ψ. The cost of a multilabeling ψ, denoted by cost(ψ), is simply ∑v∈ A∪ B |ψ(v)|.
+                                        The two variants of Label Cover we focus on are the Max-Rep and Min-Rep variants. The
+                                        Max-Rep variant asks for a labeling with maximum value, whereas the Min-Rep variant asks
+                                        for a multilabeling that satisfies all constraints and has minimum cost. We use val(Π) and
+                                        Min-Rep(Π) to denote the optimum of Π for Max-Rep and Min-Rep respectively, i.e., val(Π) :=
+                                        maxφ:( A∪ B)→Σ val(φ) and Min-Rep(Π) = minψ:( A∪ B)→P (Σ) such that val(ψ)=1 cost(ψ).
+                                          ∗ Email: pasin@berkeley.edu. Supported by NSF under Grants No. CCF 1655215 and CCF 1815434.
+
+
+
+
+                                                                                             1
+Both Min-Rep and Max-Rep problems are standard starting points used in numerous hardness
+of approximation reductions. In some applications, the parameters one get in inapproximability
+results for Label Cover affect the resulting inapproximability factors of the reductions. The two pa-
+rameters of interest in this note are the alphabet size |Σ| and the maximum degree of the constraint
+graph G. We denote the latter by ∆( G ), or simply ∆ when G is clear from context.
+Suppose that we want a gap of g > 1 in our NP-hardness of approximation of Max-Rep. Raz’s
+parallel repetition theorem [Raz98] combined with the PCP Theorem [AS98, ALM+ 98] implies
+that |Σ| = O( g p ) suffices where p is some (large) constant. This was later improved by Khot
+and Safra [KS13] to |Σ| = O( g6 ) and later by Chan [Cha16] to |Σ| = O( g2 log g). On the other
+hand, standard sparsification arguments imply that the maximum degree can be made as small as
+O( g log g). (See e.g. [Lae14] where such an argument is carried out in full details.)
+For Min-Rep, the typical way to show hardness of approximation with factor g is via proving hard-
+ness of approximating of Max-Rep of factor O( g2 ). This was indeed also the route taken in [Lae14];
+due to the square loss in parameter from Max-Rep, for a gap of g in Min-Rep, the alphabet size
+and the maximum degree now become O( g4 log2 g) and O( g2 log2 g) respectively.
+
+1.1 Our Results
+Our main result is an improvement for the degree parameter. In particular, we show that the
+degree can be made as small as O( g log g) (instead of Õ( g2 ) in [Lae14]) as stated below.
+Theorem 1 For every positive integer g > 1, it is NP-hard (under randomized reduction) to, given a Label
+Cover instance Π of alphabet size O( g4 log2 g) and maximum degree O( g log g), approximate Min-Rep(Π)
+to within a factor of g.
+We remark that our degree bound of O( g log g) here is optimal up to O(log g) factor; when the max-
+imum degree is ∆, the trivial algorithm that, for each edge ( a, b) ∈ E, adds an arbitrary label σ ∈ Σ
+to a and the corresponding label π( a,b) (σ) to b achieves a ∆-approximation for Min-Rep.
+Both our proof and Laekhanukit’s use the same reduction: roughly speaking, we start with a hard
+instance of Max-Rep (that may not be sparse) and subsample a sparse subgraph of the constraint
+graph to create a new instance. The main (simple) observation that leads to the improvement
+is that we can analyze the soundness of Min-Rep of this new instance directly without going
+through Max-Rep; namely, by bounding the probability that each multilabeling satisfies all sub-
+sampled edges and use union bound, we arrive at the improvement. The argument is formalized
+in Section 3.
+1.1.1   Improved Hardness for Connectivity Problems
+As mentioned earlier, Label Cover problems are the starting points of many hardness of approx-
+imation results. Specifically, the degree parameter affects the resulting inapproximation ratios
+for the following connectivity problems: Rooted k-Connectivity, Vertex-Connectivity Survivable
+Network Design and Vertex-Connectivity k-Route Cut. Before we state what our improvement
+implies for these problems, let us first give definitions of these problems and state some of the
+known approximation guarantees for the problems.
+Rooted k-Connectivity (RkC) Problem. In RkC, we are given an undirected graph G, a root vertex
+r and a set of terminals T ⊆ V. The goal is to find a subgraph H of G with minimum number
+of edges such that, for every t ∈ T, there exist at least k vertex-disjoint paths from r to t in the
+subgraph H. The problem has been extensively studied in literature [CCK08, CK08a, CK08b, CK12,
+
+
+                                                   2
+CK14, Nut12, Nut09, CLNV14]; the best known polynomial-time approximation algorithm due to
+Nutov [Nut12] achieves an approximation ratio of O(k log k).
+Vertex-Connectivity Survivable Network Design (VC-SND) Problem. In VC-SND, we are given
+an undirected graph G, a set T ⊆ V of terminals and, for each pair s, t ∈ T of terminals, a connec-
+tivity requirement rst ∈ N ∪ {0}. The goal is to find a subgraph H of G with minimum number of
+vertices such that the requirements are satisfied, i.e., for every s, t ∈ T, there are at least rst vertex-
+disjoint paths from s to t. The best known approximation algorithm for this problem by Chuzhoy
+and Khanna [CK12] achieves an O(k3 log | T |)-approximation where k denotes the maximum con-
+nectivity requirement (i.e. k = maxs,t∈ T rst ).
+Vertex-Connectivity k-Route Cut (VC-kRC) Problem. Given an undirected graph G, D source-
+sink pairs (s1 , t1 ), . . . , (sD , tD ) and an integer k, the goal is to find a smallest set E′ of edges such
+that, when edges in E′ are removed from G, there are less than k vertex-disjoint paths from si
+to ti for all i ∈ [k]. The best known true approximation algorithm of Chuzhoy et al. [CMVZ16]
+achieves an approximation ratio1 O(D k). We note here that Chuzhoy et al. [CMVZ16] also devise
+a bi-criteria approximation algorithm for the problem with a ratio that can be better than the
+aforementioned (true) approximation when no vertex participates in too many source-sink pairs;
+we choose not to state the ratio here, since our result does not apply to bi-criteria approximation
+algorithms.
+The above three problems are shown to be hard to approximate to within a factor of kδ for some
+small (implicit) constant δ > 0 in [CLNV14, CK12, CMVZ16]. In [Lae14], Laekhanukit formulated
+the reduction in terms of Min-Rep Label Cover and observed that one can make δ explicit if the
+degree and the alphabet size can be made explicit polynomials of the gap. More precisely, the
+following theorem, which is a restatement of Theorem 3.1 in [Lae14], captures the dependency
+between the alphabet size, the degree and the resulting connectivity parameter.
+Theorem 2 ([CLNV14, CK12, CMVZ16, Lae14]) There exists an approximation-preserving reduction
+from Min-Rep Label Cover of maximum degree ∆ and alphabet Σ to RkC, VC-SND and VC-kRC with the
+following connectivity parameters: k = O(∆3 |Σ| + ∆4 ) for Rooted k-connectivity, k = O(∆|Σ| + ∆2 ) for
+Vertex-Connectivity Survivable Network Design, and k = O(∆|Σ|) for Vertex-Connectivity k-Route Cut.
+As mentioned earlier, for NP-hardness of Min-Rep Label Cover with gap g, the result of [Lae14]
+gets the degree and the alphabet size to be as small as Õ( g2 ) and Õ( g4 ) respectively. With this,
+Laekhanukit applies Theorem 2 which immediately gives NP-hardness of approximation with
+factors Ω̃(k1/10 ), Ω̃(k1/6 ) and Ω̃(k1/6 ) for Rooted k-connectivity, Vertex-Connectivity Survivable
+Network Design and Vertex-Connectivity k-Route Cut respectively. By starting with Theorem 1
+which has a better degree dependency than that of [Lae14], we immediately arrive at the following
+improved hardness of approximation results for the three problems.
+Corollary 3 For every sufficiently large connectivity parameter k, it is NP-hard to approximate the rooted
+k-connectivity problem to within Ω̃(k1/7 ) factor, the vertex-connectivity survivable network design problem
+to within Ω̃(k1/5 ) factor, and, the vertex-connectivity k-route cut problem to within Ω̃(k1/5 ) factor.
+Another parameter considered in [Lae14] is the number of demand pairs D . Note that D = | T | in
+RkC and D is the number of {s, t} ⊆ T such that rst > 0 in VC-SND. Laekhanukit [Lae14] proved
+the following theorem:
+  1 It should be noted that,   in [CMVZ16], the authors did not explicitly state this; rather they gave an O(k)-
+approximation algorithm for the single source-sink pair case. It is clear that we can simply run this algorithm on
+each source-sink pair and take the union as the answer, which indeed yields an O(D k)-approximation.
+
+
+                                                        3
+Theorem 4 ([Lae14]) There exists an approximation-preserving reduction from Min-Rep Label Cover of
+maximum degree ∆ to RkC, VC-SND and VC-kRC with D = O(∆2 ).
+Plugging Theorem 4 to his Min-Rep hardness, Laekhanukit shows Ω̃(D 1/4 ) ratio hardness for all
+three problems [Lae14]. By using our improved hardness for Min-Rep instead, we immediately
+arrive at an improved factor of Ω̃(D 1/2 ):
+Corollary 5 For every sufficiently large number of demand pairs D , it is NP-hard to approximate RkC,
+VC-SND and VC-kRC to within a factor of Ω̃(D 1/2 ).
+
+2 Preliminaries
+For any graph G and a vertex u of G, we use Γ G (u) to denote the set of neighbors of u in G.
+For succinctness, we will say that a Label Cover instance Π is regular or has maximum degree
+∆ as a shorthand for its associated constraint graph having such properties. To prove our
+result, we need the following hardness of approximation for Max-Rep Label Cover due to
+Chan [Cha16]:
+Theorem 6 ([Cha16]) For some constant C > 0, any prime power q and any δ > 0, it is NP-hard to,
+given a regular Label Cover instance Π of alphabet size q2 , distinguish between val(Π) ⩾ 1 − δ and
+val(Π) < C log q/q + δ.
+We note here that the instance produced in [Cha16] may not be regular. However, it is known that
+one can turn any Label Cover instance to a regular instance while approximately preserving the
+value of the instance. For instance, see Sections 4.2 and 4.3 of [Lae14].
+
+3 Proof of the Main Theorem
+In this section, we prove our main result (Theorem 1). Our main contribution is in fact a generic
+randomized sparsification lemma for Label Cover which is stated below.
+Lemma 7 For any ε, γ > 0, there is a polynomial time randomized reduction that, given any regular Label
+Cover instance Π = ( G = ( A, B, E), Σ, {πe }e∈ E ) where N = | A| + | B|, outputs a Label Cover instance
+                                                                            √
+Π′ with alphabet set Σ and maximum degree at most ∆ := 106 (2 log(2|Σ|)/ γ) such that
+   • (Completeness) if val(Π) ⩾ 1 − ε, then Min-Rep(Π′ ) ⩽ (1 + ε∆) N with probability 0.9, and,
+                                                           √
+   • (Soundness) if val(Π) < γ, then Min-Rep(Π′ ) > (0.06/ γ) N with probability 0.9.
+Before we prove Lemma 7, we note that Theorem 1 follows from it simply by plugging in appro-
+priate parameters.
+
+Proof of Theorem 1. Let C be the constant from Theorem 6. Let q be the smallest prime power
+such that q/ log q > 105 Cg2 , γ be 2C log q/q, ε be 1/∆, and δ be min{ε, Cq log q}. Note that
+q = Θ( g2 log g) and γ = 1/Θ( g2 ). From Theorem 6, it is hard to, given a regular Label Cover
+instance Π with alphabet size q2 , distinguish between val(Π) ⩾ 1 − δ ⩾ 1 − ε and val(Π) <
+C log q/q + δ < 2C log q/q < 10−4 /g2 , where the inequalities follow from our choices of parame-
+ters.
+Applying the reduction in Lemma 7 to Π, we arrive at an instance Π′ with alphabet size q2 =
+                                                    √
+O( g4 log2 g) and maximum degree at most O(log q/ γ) = O( g log g). Moreover, the complete-
+ness guarantee of Lemma 7 implies that, if val(Π) ⩾ 1 − ε, then Min-Rep(Π′ ) ⩽ (1 + ε∆) N = 2N
+with probability 0.9. Similarly, the soundness guarantee of Lemma 7 implies that, if val(Π) <
+
+
+                                                   4
+10−4 /g2 , then Min-Rep(Π′ ) > (0.06/ 10−4 /g2 ) N > 2gN with probability 0.9. Hence, it is NP-
+                                     p
+
+hard (under randomized reduction) to approximate Min-Rep(Π′ ) to within a factor of g.       
+
+The rest of this section is devoted to the proof of Lemma 7 and is organized as follows. First, we
+describe the reduction and state a few useful facts in Section 3.1. The soundness and completeness
+of the reductions are then proved in Sections 3.2 and 3.3 respectively.
+
+3.1 The Reduction
+Once again, we remark here that the reduction is exactly the same as that in [Lae14], except that
+the soundness analysis is different. The reduction in [Lae14] is in turn inspired by a reduction for
+independent set on bounded degree graphs by Austrin et al. [AKS11] who used the similar sub-
+sampling and high-degree vertex trimming techniques in their reduction; indeed our soundness
+analysis is more similar to [AKS11] than to [Lae14]. Nonetheless, we state the reduction in full
+here. Before we do so, let us first mention that we may assume that the degree D of the constraint
+graph in the original instance Π is arbitrarily large2 . In particular, we will assume throughout this
+section that D ⩾ 10000∆ where ∆ is the parameter in the statement of Lemma 7.
+The reduction proceeds in two steps. First, we create an intermediate instance Πint = ( Gint =
+( A, B, Eint ), Σ, {πe }e∈ Eint ) by simply include each edge e ∈ E into Eint independently at random
+with probability p := 0.0001∆/D where D denotes the degree of the original graph G = ( A, B, E).
+Then, we create the instance Π′ = ( G ′ = ( A, B, E′ ), Σ, {πe }e∈ E′ ) by removing every edge such that
+one of its endpoint has degree more than ∆. More formally, let A′ = {a ∈ A | Γ Gint ( a) ⩽ ∆},
+B′ = {b ∈ B | Γ Gint (b) ⩽ ∆} and E′ = ( A′ × B′ ) ∩ Eint . We note here that the vertex sets, the
+alphabet sets and constraints (for remaining edges) of Πint and Π′ remain the same from Π.
+Throughout this section, we use n to denote | A| = | B| = N/2. The following proposition states a
+fact that is useful in our proofs. Note that the probabilistic bound can be sharpen to 1 − o(1) but,
+since we do not need it here, we choose to state the simpler proof below.
+Proposition 8 With probability 0.99, we have | Eint \ E′ | ⩽ 0.1p∆n.
+
+Proof. By Markov inequality, it suffices to show that E [| Eint \ E′ |] ⩽ 0.001p∆n. Due to linearity of
+expectation, E [| Eint \ E′ |] = ∑e∈ E Pr[e ∈ Eint \ E′ ]. For a fixed edge e = ( a, b) ∈ E, we can bound
+Pr[( a, b) ∈ Eint \ E′ ] as follows.
+
+             Pr[( a, b) ∈ Eint \ E′ ] = Pr[( a, b) ∈ Eint ] Pr[( a, b) ∈
+                                                                       / E′ | ( a, b) ∈ Eint ]
+                                                    / A′ ∨ b ∈
+                                         = p · Pr[a ∈         / B′ | ( a, b) ∈ Eint ]
+                                                     / A′ | ( a, b) ∈ Eint ] + Pr[b ∈ / B′ | ( a, b) ∈ Eint ]
+                                                                                                              
+                                         ⩽ p · Pr[a ∈                                                                            (1)
+
+Let us bound Pr[ a ∈ / A′ | ( a, b) ∈ Eint ]. Notice that a ∈  / A′ if and only if |Γ Gint ( a)| > ∆. Moreover,
+observe that E [|Γ Gint ( a)| | ( a, b) ∈ Eint ] = 1 + p( D − 1). Hence, by Markov inequality, we have
+                                                              1 + p ( D − 1)
+                Pr[|Γ Gint ( a)| > ∆ | ( a, b) ∈ Eint ] <                    = 1/∆ + pD/∆ ⩽ 0.0002.
+                                                                     ∆
+                              / A′ | ( a, b) ∈ Eint ] ⩽ 0.0002 and similarly Pr[b ∈
+In other words, we have Pr[ a ∈                                                   / B′ | ( a, b) ∈ Eint ] ⩽
+                                                                      ′
+0.0002. Plugging these back into (1), we have Pr[( a, b) ∈ Eint \ E ] ⩽ 0.0004p. By summing this
+   2 This is because, for any positive integer t, we may create t copies of the vertex sets A, B and add constraints
+
+correspondingly (i.e. the new graph is ( A × [ t], B × [ t], Et ) where Et = {(( a, i ), (b, j)) | ( a, b ) ∈ E, i, j ∈ [ t]} with
+π (( a,i),(b,j)) = π ( a,b)). This ensures that the degree of every vertex is at least t without effecting the value of the instance.
+
+
+                                                                 5
+over all edges ( a, b) ∈ E, we have E [| Eint \ E′ |] ⩽ 0.0004p∆n < 0.001p∆n. As already mentioned,
+Markov inequality then implies Pr[| Eint \ E′ | > 0.1p∆n] < 0.01 as desired.                     
+
+3.2 Completeness Analysis
+The goal of this section is to prove the completeness part of Lemma 7 as stated below.
+Lemma 9 If val(Π) ⩾ 1 − ε, then, with probability 0.9, Min-Rep(Π′ ) ⩽ (1 + ε∆) N.
+
+Proof. Suppose that val(Π) ⩾ 1 − ε; that is, there is a labeling φ : ( A ∪ B) → Σ for Π such
+that valΠ (φ) ⩾ 1 − ε. Let EUNSAT ⊆ E denote the set of (at most ε| E|) edges in E that is not
+satisfied by φ, i.e., EUNSAT = {( a, b) ∈ E | π( a,b) (φ( a)) 6= φ(b)}. We define a multilabeling
+ψ : ( A ∪ B) → P (Σ) for Π′ as follows. First, start with ψ(v) = {φ(v)} for all v ∈ A ∪ B. Then, for
+every ( a, b) ∈ EUNSAT ∩ E′ , pick an arbitrary σ ∈ Σ, and add σ to ψ( a) and π( a,b) (σ) to ψ(b).
+It is clear that ψ satisfies all edges in E′ and that cost(ψ) is at most N + 2| EUNSAT ∩ E′ | ⩽ N +
+2| EUNSAT ∩ Eint |. Hence, it suffices to show that Pr[| EUNSAT ∩ Eint | > 0.5ε∆N ] ⩽ 0.1.
+Observe that E [| EUNSAT ∩ Eint |] = p| EUNSAT | ⩽ p(ε| E|) = 0.00005ε∆N. As a result, Markov
+inequality implies that Pr[| EUNSAT ∩ E′ | > 0.5ε∆N ] ⩽ 0.0001 < 0.1 as desired.           
+
+3.3 Soundness Analysis
+Finally, we will prove the soundness of the reduction, as stated below.
+                                                      √
+Lemma 10 If val(Π) < γ, then Min-Rep(Γ′ ) > 0.06N/ γ with probability at least 0.9.
+Before we prove Lemma 10, let us provide a couple useful propositions. The first states that any
+                              √
+multilabeling of cost ⩽ 0.06N/ γ must leave more than half of the edges of Π unsatisfied:
+                                                                            √
+Proposition 11 If val(Π) < γ, any multilabeling ψ of Π with cost(ψ) ⩽ 0.06N/ γ has valΠ (ψ) <
+0.5.
+
+Proof. Suppose for the sake of contradiction that val(Π) < γ but, for some multilabeling ψ with
+                   √
+cost(ψ) ⩽ (0.06/ γ) N, we have valΠ (ψ) ⩾ 0.5. Consider a random labeling φ of Π generated
+as follows: for every v ∈ A ∪ B, if ψ(v) is non-empty, then let φ(v) be a random element of ψ(v).
+Otherwise, let φ(v) be an arbitrary label. We will show that E [valΠ (φ)] ⩾ γ; this implies that there
+exists a labeling with value at least γ which is a contradiction to val(Π) < γ.
+To bound E [valΠ (φ)], let ESAT denote the set of all edges satisfied by ψ; that is, ESAT = {( a, b) ∈ E |
+∃σa ∈ ψ( a), σb ∈ ψ(b) such that π( a,b) (σa ) = σb }. Since valΠ (ψ) ⩾ 0.5, we have |ESAT | ⩾ 0.5Dn.
+Furthermore, let A⩽0.3/√γ and B⩽0.3/√γ be the sets of vertices in A and B respectively such that ψ
+                      √                                                      √
+assigns at most 0.3/ γ labels to it, i.e., A⩽0.3/√γ = {a ∈ A | |ψ( a)| ⩽ 0.3/ γ} and B⩽0.3/√γ =
+                        √                            √
+{b ∈ B | |ψ(b)| ⩽ 0.3/ γ}. Since cost(ψ) ⩽ (0.06/ γ) N, we can conclude that | A \ A⩽0.3/√γ | +
+| B \ B⩽0.3/√γ | < 0.2N = 0.4n. Thus, the number of edges with at least one endpoint outside
+A⩽0.3/√γ ∪ B⩽0.3/√γ is less than 0.4Dn. Due to this and our earlier bound on | ESAT |, we have
+|ESAT ∩ ( A⩽0.3/√γ × B⩽0.3/√γ )| > 0.5Dn − 0.4Dn = 0.1Dn.
+Each ( a, b) ∈ ESAT ∩ ( A⩽0.3/√γ × B⩽0.3/√γ ) is satisfied by φ with probability |ψ( a)||1 ψ(b)| > 10γ. Thus,
+the expected number of edges satisfied by φ is at least 10γ| ESAT ∩ ( A⩽0.3/√γ × B⩽0.3/√γ )| > γDn.
+In other words, E [valΠ (φ)] > γ, which, as pointed out earlier, is a contradiction.                       
+
+
+
+                                                     6
+The above proposition allows us to apply Chernoff bound to upper bound the probability that
+each multilabeling leaves few edges unsatisfied in Πint , as stated more precisely below.
+Proposition√12 Let ψ be any multilabeling of Π such that valΠ (ψ) < 0.5. Then, with probability at most
+(2|Σ|)−10N/ γ , less than 0.2pDn edges in Eint are unsatisfied by ψ.
+
+Proof. Let EUNSAT ⊆ E denote the set of edges unsatisfied by ψ in Π. Since valΠ (ψ) < 0.5, we have
+|EUNSAT | > 0.5Dn. Since each edge e ∈ EUNSAT is included to Eint independently with probability
+p, we can apply Chernoff bound and conclude that the probability that Eint contains
+                                                                               √
+                                                                                      at least 0.2pDn
+                                  2                     − 5
+such edges is at most exp(−(0.6) (0.5pDn)) ⩽ exp(−10 ∆n) ⩽ (2|Σ|)       − 10N/   γ as desired, where
+the last inequality follows from the choice of ∆.                                                   
+
+With the above propositions in place, Lemma 10 can now be proved by a simple union
+bound.
+
+Proof of Lemma 10. Suppose that val(Π) < γ. Observe that, for any t ∈ N, there is a one-to-one
+correspondence between multilabelings of Π of cost t and subsets of ( A ∪ B) × Σ of size t. As a
+                                                          √
+result, the number of multilabelings of Π of cost3 ⌊0.06N/ γ⌋ is
+                                                 ⌊0.06N/√γ⌋                        0.06N/√γ                    √
+             N |Σ |                    eN |Σ|                              eN |Σ|
+                                                                 
+                  √        ⩽                √                   ⩽               √               ⩽ (2|Σ|) 0.5N/ γ
+         ⌊0.06N/ γ⌋                ⌊0.06N/ γ⌋                           0.06N/ γ
+
+where the first inequality follows from the fact that ( M             K
+                                                        K ) ⩽ ( eM/K ) for all M, K ∈ N and the
+                                              x
+second inequality is from the fact that (eM/x) is an increasing function for x ∈ [0, M ).
+Hence, by Proposition 11,     Proposition 12 and union bound, we can conclude that, with probability
+                         √                                               √
+at least 1 − (2|Σ|)−9.5N/ γ > 0.99, every multilabeling ψ of cost ⌊0.06N/ γ⌋ leaves at least 0.2pDn
+edges in Eint unsatisfied. Finally, recall from Proposition 8 that, with probability 0.99, we have
+                                                                                           √
+|Eint \ E′ | ⩽ 0.1pDn. Thus, with probability 0.98, no multilabeling ψ of cost ⌊0.06N/ γ⌋ can
+satisfy all the edges in E′ , which concludes our proof.                                          
+
+4 Discussions and Open Questions
+While our result implies almost optimal dependency between the gap and the degree for inapprox-
+imability of Min-Rep, getting an (almost) optimal dependency for alphabet size still remains a chal-
+lenging open question. This is true not only for Min-Rep but also for Max-Rep. For Max-Rep, a ran-
+dom labeling satisfies at least 1/|Σ| fraction of edges in expectation, giving a 1/|Σ|-approximation
+for the problem. A slightly better Ω(log |Σ|/|Σ|)-approximation is known [KKT16]; hence, the
+best trade-off one could hope for is |Σ| = O( g log g) where g is the target gap. Again, we remark
+that the best known dependency is from Chan’s work [Cha16] with |Σ| = O( g2 log g).
+For Min-Rep, the situation is less clear. For instance, it is not even clear whether there is an approx-
+imation algorithm with ratio depending only on |Σ|. As a result, it may be interesting to study the
+three-way trade-off between |Σ|, the maximum degree ∆ and the gap g in this case.
+Another interesting question is to try to obtain hardness of approximation in terms of the number
+of variables N = | A| + | B|. This can be viewed as hardness in terms of ∆ but when we allow ∆ to
+be as large as N. To the best of our knowledge, no hardness of the form N δ for some constant δ > 0
+   3 Note that here we need 0.06N/√ γ ⩽ | Σ | N. This is true because a random labeling of Π satisfies 1/| Σ | fraction of
+
+edges in Π; hence, the assumption val(Π) < γ implies that | Σ| > 1/γ.
+
+
+                                                            7
+is known for this regime, although this is believed by some to be true. (For instance, the projection
+games conjecture [Mos15] implies such hardness.) Recently, Dinur and the author [DM18] proves
+N 1−o(1) ETH-hardness of approximation for a closely related 2-CSP problem, which is exactly the
+same is Max-Rep except that the constraints do not have to be projections. Unfortunately, the
+techniques there do not seem to directly apply to Label Cover.
+
+Acknowledgment
+I would like to thank Bundit Laekhanukit for helpful discussions.
+
+References
+[AKS11]     Per Austrin, Subhash Khot, and Muli Safra. Inapproximability of vertex cover and
+            independent set in bounded degree graphs. Theory of Computing, 7(1):27–43, 2011.
+[ALM+ 98] Sanjeev Arora, Carsten Lund, Rajeev Motwani, Madhu Sudan, and Mario Szegedy.
+          Proof verification and the hardness of approximation problems. J. ACM, 45(3):501–
+          555, May 1998.
+[AS98]      Sanjeev Arora and Shmuel Safra. Probabilistic checking of proofs: A new characteri-
+            zation of NP. J. ACM, 45(1):70–122, January 1998.
+[CCK08]     Tanmoy Chakraborty, Julia Chuzhoy, and Sanjeev Khanna. Network design for vertex
+            connectivity. In STOC, pages 167–176, 2008.
+[Cha16]     Siu On Chan. Approximation resistance from pairwise-independent subgroups. J.
+            ACM, 63(3):27:1–27:32, 2016.
+[CK08a]     Chandra Chekuri and Nitish Korula. Single-sink network design with vertex connec-
+            tivity requirements. In FSTTCS, pages 131–142, 2008.
+[CK08b]     Julia Chuzhoy and Sanjeev Khanna. Algorithms for single-source vertex connectivity.
+            In FOCS, pages 105–114, 2008.
+[CK12]      Julia Chuzhoy and Sanjeev Khanna. An O(k3 log n)-approximation algorithm for
+            vertex-connectivity survivable network design. Theory of Computing, 8(1):401–413,
+            2012.
+[CK14]      Chandra Chekuri and Nitish Korula. A graph reduction step preserving element-
+            connectivity and packing steiner trees and forests. SIAM J. Discrete Math., 28(2):577–
+            597, 2014.
+[CLNV14] Joseph Cheriyan, Bundit Laekhanukit, Guyslain Naves, and Adrian Vetta. Approxi-
+         mating rooted steiner networks. ACM Trans. Algorithms, 11(2):8:1–8:22, 2014.
+[CMVZ16] Julia Chuzhoy, Yury Makarychev, Aravindan Vijayaraghavan, and Yuan Zhou. Ap-
+         proximation algorithms and hardness of the k-route cut problem. ACM Trans. Algo-
+         rithms, 12(1):2:1–2:40, 2016.
+[DM18]      Irit Dinur and Pasin Manurangsi. ETH-hardness of approximating 2-CSPs and di-
+            rected steiner network. In ITCS, pages 36:1–36:20, 2018.
+[KKT16]     Guy Kindler, Alexandra Kolla, and Luca Trevisan. Approximation of non-boolean
+            2CSP. In SODA, pages 1705–1714, 2016.
+
+
+
+                                                 8
+[KS13]    Subhash Khot and Muli Safra. A two-prover one-round game with strong soundness.
+          Theory of Computing, 9:863–887, 2013.
+[Lae14]   Bundit Laekhanukit. Parameters of two-prover-one-round game and the hardness of
+          connectivity problems. In SODA, pages 1626–1643, 2014.
+[Mos15]   Dana Moshkovitz. The projection games conjecture and the NP-hardness of ln n-
+          approximating set-cover. Theory of Computing, 11:221–235, 2015.
+[Nut09]   Zeev Nutov. A note on rooted survivable networks. Inf. Process. Lett., 109(19):1114–
+          1119, 2009.
+[Nut12]   Zeev Nutov. Approximating minimum-cost connectivity problems via uncrossable
+          bifamilies. ACM Trans. Algorithms, 9(1):1:1–1:16, 2012.
+[Raz98]   Ran Raz. A parallel repetition theorem. SIAM J. Comput., 27(3):763–803, 1998.
+
+
+
+
+                                              9
+
