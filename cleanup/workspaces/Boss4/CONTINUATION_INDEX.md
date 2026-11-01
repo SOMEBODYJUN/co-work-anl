@@ -655,3 +655,7 @@ R3_RESUME19XQ：六范围19源：unique14型26978客户点二人矩接口同R373
 R3_RESUME19XQ数学/证据pushed efffdb4272e12c95e3ea2593f3be9e5ddaeda836；19源done另推送 ae1bf83af0675c56e5b03c0e7e994676c8faf19a。Boss4累计3452完成，实际未完79；持续接续全仓，不以本批清空收尾。
 
 R3_RESUME16XS：六范围16源完整清洗：exactpair set-BI整数域/两步eligibility与同pair压缩证明，r6尾包版本不符和r7零点快照不授正例；static scan真正静态PNE与SPE残差/earlyreturn遮蔽/shrink仅kind与不可造原载体；generalowner强∀O与half充分∃O分量词、遗漏q预算及28动作有限原报告；native固定7主题5人60分母32int/64cross域及两个search版本记录分开，9客户min5纸证与47客户min35历史不同；directTERM/COMP/HOLES与实际前缀支付未闭/ENV对角及联合OPT槽；population CCE把R-W约束在交换性下等价静态n=m+1 CCE，不授iid/CE/6SPE/截断float精确cert。原件/所有必要依赖保全，原程序/新数学checker0，math明确pushed后逐源done；持续全仓；共16主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME16XS_REMAINING_SCOPE.json。
+
+R3_RESUME16XS数学/证据pushed e6fe0dac2d217b365111a1e13f6a346bc82dfc97；16源done另推送 8c93f752cf0eece9c56789af887a292dbb9c623b。Boss4累计3468完成，实际未完63；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME1XU：Root完整9946源码+11852 canonical与三原JSON/四现正文对读，自足prefix真实小law枚举/每层与全law承诺区别、500/8/30/13/120/四Gram/四boundary精确域，1000只精度bit无大树query，原code/account SHA绑定，非本码512与独立2377不混；原报告/done未改，原main/import/Fraction/newchecker0。mathdeps显式pushed再本源done，持续全仓；共1主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME1XU_REMAINING_SCOPE.json。
