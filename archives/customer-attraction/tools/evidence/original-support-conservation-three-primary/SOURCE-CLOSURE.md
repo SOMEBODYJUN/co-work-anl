@@ -1,0 +1,7 @@
+# 独立原checker的必要运行输入
+
+verify_support_conservation.py只读取BASE/support_conservation_obstruction.json，两源已按原树相对路径完整存，标准库无本地helper/科学包/optimizer导入，有main guard；MD命令在隔离树可作新运行，当前没有执行。probe_common_coverage.py仅原稿提发现器，不是此checker依赖，本组三源不认证其发现历史。
+
+JSON完整7字段n,p,mode,objective,portfolio,actions,y；checker不消费mode/objective。原程序普通assert、hardcoded6维q/指定值约束使其不是任意n,p泛型；main12字段stdoutonly，无write_text/CLI/输出file/原过程记录。未把按源码推定stdout补成原运行/目前PASS。
+
+已发表coupling_layers完整数学证据与当前point126/43/J精确同一；本次仅取该容器必要首层primal/headers抽取，不把未新读的dual/其余6层叫全审。priorR5e9support正常字节比同点但不冒前包出版，旧pair同图但五点不同，已各保准确scope/数据/原指纹，均不extra done或重show。

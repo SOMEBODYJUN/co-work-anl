@@ -1,0 +1,9 @@
+# tree_transport 五源：数学与原件入口
+
+主5原件16730B全部全文；必要related3共42052B全部全文，source-root总8件58782B。新两自足正文分别保MT9/4完整126表与真实22客户全历史证明、发现/独立审计合同。原742B结果与本次0运行分层，不新造stdout/exit事件。
+
+relatedmonotone20168来自Facility14ZE实际normal，只补本scope验证器输入，不额外primarydone；旧pair21086和unit798来自已正式保全同SHA原件及source-manifest reproduction_dependencies，无假新normal。原source-root保持ROOTparents5和同目录monotone_candidate布局。
+
+full10ZD全10IDstatuspushed/rawsynced/preserved_work原样保存；本批没有冲突需独立恢复，不借别批proof。五primaryowner/SHA核后由Root先数学checkpoint再done。旧SOURCE的unusedy/旧rows/floatstatus不当新模型结果，其他四candidate点独有结论归其单独主清洗。
+
+0LP/原verify/import/exec/新数学checker/R/Git写。新检查限数据指纹、AST/JSON schema/跨文件字段与记录完整性、currentR引用、claimowner及文件清单哈希。

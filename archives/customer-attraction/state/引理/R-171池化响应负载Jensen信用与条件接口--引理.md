@@ -1,3 +1,21 @@
+---
+id: customer-attraction/pooled-response-load-jensen-credit-and-conditional-interface
+kind: lemma
+type_tag: 引理
+title: R-171池化响应负载的Jensen信用与条件接口
+status: exact-identity-and-conditional-implication; universal-all-p-pool-payment-refuted; paid-self-consistent-payment-unresolved
+review_level: informed-source-definition-reconciliation; original635-audit-and-input-read; no-new635-execution
+scope: 有限单位客户与有限非空共同标签目录、全部有序历史纯SPE；精确恒等式一般m；旧635反例固定m3
+summary: 保留池化Jensen精确账和条件归约；635完整SPE已否定每个p付款，坏p非自洽，不否至少一个paid SC、安全聚合或原half。原OPEN措辞按文末精确订正。
+source_refs:
+- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-171cd7d518434f36a48cd50df29c9303/continuation/security/README.md
+- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-171cd7d518434f36a48cd50df29c9303/continuation/security/pool_structural_checks.md
+- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-171cd7d518434f36a48cd50df29c9303/security/pooled_response_loads.md
+- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/round4_general/security/pooled_mean_background_raw.json
+- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/round4_general/direct/audit_pooled_635.py
+- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/round4_general/direct/pooled_635_independent_audit.json
+---
+
 # R-171 池化响应负载的 Jensen 信用与条件接口
 
 ## 来源与对象
@@ -53,3 +71,14 @@ W-mP(p)=\sum_i e_i+sum_iκ_i+mJ(p).
 ## 状态与接续
 
 这是精确恒等式、条件性归约和有限校准的组合。一般 POOL、安全值桥、弱 CCE 桥和 Q-CAG-HALF 仍 OPEN；浮点扫描、局部策略锥和未闭合回复不能登记为完整 SPE 反例，也不迁移到 unrelated-machines。
+
+
+## 接续订正：同定义的全p池化付款已有旧反例
+
+本节更新上文原整理时“一般POOL仍OPEN”的历史状态；精确余额和条件性推导保持不变。这里的全p命题指每份原完整SPE、每个目录分布p都有W≥mP(p)。旧635单位客户、m3/六标签完整43节点group策略已经否定它：实际(0,3,4)，u=(154,154,154)，W462，OPT558；p=(e_2+e_5)/2，q=(5/12,1/6,0,1/3,1/12,0)，原独审报告
+\[
+mP(p)-W=\frac{40617}{340340}>0.
+\]
+该报告P的分母先在每actual角色强制同一查询分布、删当前槽后平均竞争负载，再跨actual角色平均，逐项就是本页H_x；查询覆盖概率也是本页t_x。不是把Σ_i位置分数查询偷换成mP。原21型/43动作全部输入、3418B独审和768B完整冻结报告、定义对照与本次0重跑范围见[审查合同及旧池化反例](../资源/自洽池与多槽交换的审查合同及旧池化反例--资源.md)。另一[失败边界页](../资源/辅助付款与规范化路线的逐项失败边界--资源.md)此前已记同一635失败；这是状态接续，不是新反例或新原生认证。
+
+坏p上g_2≠g_5，故不自洽。它不否每份SPE存在某个可付款混合自洽点，也不否最优查询、安全值桥、弱CCE或一般half；静态背景(0,2)给该例v_3≤154=W/3，且2W−OPT366>0。本页当前准确状态因此为：精确恒等式及条件归约成立，全pPOOL强式已否，其余准确未付桥分别保留。不能将635的全p失败与16客户的纯自洽不存在混为一例；后者所有p反而付款。

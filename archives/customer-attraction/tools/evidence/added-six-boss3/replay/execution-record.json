@@ -1,0 +1,28 @@
+{
+  "event": "one unmodified original recover_added top-level through isolated runpy; namespace capture only reuses source-computed values",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-I",
+    "-B",
+    "-c",
+    "import sys,runpy,json\nfrom pathlib import Path\nsys.path.insert(0,sys.argv[1])\ne=runpy.run_path(sys.argv[2],run_name=\"__main__\")\ntriples={n:v for n,v in e['slack'].items() if 'three-profit' in n}\nmetadata={'scope':'capture already computed original recovery namespace; no second matrix/LP/review execution','input_atoms':len(e['atoms']),'rows':len(e['names']),'selected_positive_float_indices':e['S'],'near_active_float_rows':len(e['active']),'exact_basis_rank':len(e['basis']),'exact_nonnegative_point':list(map(str,e['r'])),'row_names':e['names'],'all_original_computed_slacks':{n:str(v) for n,v in e['slack'].items()},'added_triple_rows':len(triples),'added_triple_positive_rows':sum(v>0 for v in triples.values()),'added_triple_zero_rows':sum(v==0 for v in triples.values()),'minimum_added_triple_slack':str(min(triples.values()))}\nPath(sys.argv[3]).write_text(json.dumps(metadata,indent=2)+'\\n')\n",
+    "/workspace/scratch/9559bf893d22/added_six_runtime/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_credible",
+    "/workspace/scratch/9559bf893d22/added_six_runtime/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/next_credible/recover_added.py",
+    "/workspace/scratch/9559bf893d22/added_six_stage/replay/recovery-internals.json"
+  ],
+  "cwd": "/workspace/scratch/9559bf893d22/added_six_runtime",
+  "start_utc": "2026-11-01T18:40:44.781768+00:00",
+  "elapsed_seconds": 1.847689189000448,
+  "exit_code": 0,
+  "Python": "3.12.14",
+  "assertions_enabled": true,
+  "source_sha256": "a2cc823f0459ad81a4b1df3f1734a08d5bcc76a61c23a0e0e3f34b8ab58cd191",
+  "original_recovery_top_level_runs": 1,
+  "original_reopt_import_or_runs": 0,
+  "original_review2396_runs": 0,
+  "LP_calls": 0,
+  "output_file_bytes_equal": true,
+  "output_file_fields_equal": true,
+  "stdout_bytes": 450,
+  "stderr_bytes": 0
+}

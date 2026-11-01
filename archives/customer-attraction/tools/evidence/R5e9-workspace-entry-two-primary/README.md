@@ -1,0 +1,7 @@
+# R5e9根入口与原身份两源
+
+2588README与150workspaceJSON全部实读，原字节2738B保持在source-root。新资源保完整一般half量词、五分支/当前数学对应、审查进度版本和全部4identity字段。它不注册、改绑或迁移旧actor/instance，历史Boss5与当前Boss4cleanup actor分开。
+
+当前8份正式数学全文比较，不重复清洗Boss7已处置的security/static或其它已完成代码/数据。旧security_static拼写与actualsecurity/static路径分开，direct_global仅入口想法，无本工作区inventory实质文件不造资产。tree2冻结数学只以SHA依赖，不复制覆盖原freeze，Root先/同批正式发布依赖再done当前2。
+
+full15ZL全15IDpushed6fe5597b6da6cd52cbac68cb8706ff296dc201f0与rawneeds-attention保原；独立3u2tracked全same/no missing different unmerged/stash2a650aa3...kept另存。当前2math/receiptcheckpoint与done pendingRoot。0原或新数学运行/新relatedshow/R/Git/bind/register。
