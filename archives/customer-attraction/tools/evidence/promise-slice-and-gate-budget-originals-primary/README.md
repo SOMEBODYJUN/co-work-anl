@@ -1,0 +1,11 @@
+# 同主题承诺递推、终端预算攻击与根标量失败
+
+五primary原件7760B正常show取得，源size/SHA逐件匹配；source-manifest与原捕获/当前owner完整36记录保留。五源已全文读，11份主稿与现行相关正文全文比较，其原字节快照和comparison-manifest齐。
+
+两份自足正文分别保存：promise/预算程序的实际集合、路径与有限随机合同；三人20客户根标量失败的全部13有序节点解析证明。依赖原model/exact/certificate/__init__和30客户blind输入逐字节核冻结身份，未额外done。
+
+当前数学执行0：不重跑原886、固定22路径或旧300发现。Root确认会话历史两run曾成功，但事件目录及stdout/stderr没有随旧snapshot恢复；execution-boundary保这个事实和工件不可核边界，不把冻结报告改成当前stdout，不造运行记录。标量反例由完整节点表和原单位份额的解析推导承重。
+
+源原报告仍为历史有限输出：176B报告886是含重复的断言次数；2263B报告300随机只是指定生成域无反例，B104/3与22路径未在当前重算。当前0run不是数学缺口；一般B_final付款本来仍未证，slice/Bellman精确性由现有解析引理承担。
+
+stage供Root串行复制/审读；先正文与依赖checkpoint确认pushed，再对本5 owner子集done。内部worker没有claim/Git/认证/发消息到他人服务或提交done。关系判断记录于工作区relation-review，未跳阶段三造超边。
