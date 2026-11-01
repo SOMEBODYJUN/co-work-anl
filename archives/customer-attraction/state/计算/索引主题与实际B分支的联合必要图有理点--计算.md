@@ -3,7 +3,7 @@ id: "customer-attraction/combined-indexed-and-actual-B-necessary-point"
 kind: "computation"
 type_tag: "计算"
 title: "索引主题与实际B分支的联合必要图有理点"
-status: "full-source-reviewed; independent-exact-structural-and-selected-row-audit"
+status: "full-source-reviewed; independent-structural-audit-and-original-5108-row-replay"
 truth_status: "finite-necessary-graph-point; not-game-or-complete-SPE"
 review_level: "all-11-fields-and-1905-columns-read; exact-capacities-and-actual-floors-reconstructed"
 summary: "保存固定16直方图上的1905列有理向量，解释两种真实历史回复及actual4→B分支投影的联合意义；独立核194隐含00质量、2612交叠上界、六拆分容量及12实际报价，原5108行全图报告另列身份。"
@@ -18,7 +18,7 @@ source_refs:
 
 它是**固定16个旧直方图支持、同时加入索引主题分支和实际第四步强制B分支投影的必要图有理可行点**。原作者报告5108行非负且目标低于一半；这表明这组有限必要条件尚不足以证明half，不是一份游戏、完整历史策略或原模型反例。原点也不是最优值证书：没有匹配的精确对偶或全域最小值结论。
 
-本轮独立Fraction核验覆盖全向量的数学结构、隐含状态、交叠上界、拆分容量和实际旧回复报价，见[执行结果](../../tools/evidence/combined-branch-master-point/current-point-audit.json)。它不导入旧生成器，**不把这些检查计成重新核过全部5108行**。原入口及全部依赖的复现应以其独立执行记录为准。
+本轮独立Fraction核验覆盖全向量的数学结构、隐含状态、交叠上界、拆分容量和实际旧回复报价，见[执行结果](../../tools/evidence/combined-branch-master-point/current-point-audit.json)。它不导入旧生成器，**不把这些检查计成重新核过全部5108行**。随后代码来源清洗另完成了原默认入口的一次真实复现：构建5108行、1905列，全部Fraction余量非负且最小0，W精确相同；退出0、stderr空，49份冻结文件前后SHA不变。该事件见[原入口记录](../../tools/evidence/combined-branch-master-program/rerun/execution.json)与[163B输出](../../tools/evidence/combined-branch-master-program/rerun/stdout.txt)。它是原生成器复现，仍不称另一套独立5108行推导、最优值证书或SPE认证。
 
 # 同一策略中的标签和量词
 
@@ -34,7 +34,7 @@ Z_e=\sigma_6(A_1,A_2,A_3,A_4,R_e).
 \]
 R共有30+36=66个带索引标签；Z也有66个。强制第五位为旧回复或R时，只使用该行动合法及原源IC；不会把被强制行动宣布为该节点最优。R与Z是在不同前缀后的真末回复。联合图中的约束共享这些身份、实际利润和同一容量K，不能逐分支免费换参数。
 
-`actual-fourth-forced-actual-B-projection` 则从实际前三前缀、第四位强制实际 \(A_5\) 的真后三人续局推出一个只在旧直方图列计值的必要投影；它不是把实际 \(A_5\) 当第四位最佳回复，也不把该投影的续局自动并入已存R/Z会员表。相关证明见[跨实际源报价及最优单换](../引理/旧回复跨实际源的共同报价与最优单换--引理.md)。
+`actual-fourth-forced-actual-B-projection` 则从实际前三前缀、第四位强制实际 \(A_6\) 的真后三人续局推出一个只在旧直方图列计值的必要投影；这里原投影记号B是实际末题A6，不是实际倒二题A5。它不是把实际 \(A_6\) 当第四位最佳回复，也不把该投影的续局自动并入已存R/Z会员表。完整代码、448格系数和当前独立重构见[三人尾投影程序](../程序/实际第四步B分支的三人尾投影程序--程序.md)。
 
 # 全部字段及向量编码
 
@@ -99,7 +99,7 @@ h_c-y_g^{01}-y_g^{10}-y_g^{11}\ge0,
 - 对每个实际第k位及旧B/C六主题的12条安全报价重新聚合：\(6u_k-\sum_c h_c\sum_i1_{Q_i}(c)/(p_{k-1}(c)+7-k)\ge0\)。其推导是强制合法Q后，后续至多7−k人覆盖，故真实终局分母不超过该上界；SPE源IC再给实际利润下界。六主题聚合保留重数，不要求各反事实尾利润相同。
 - O、W、坏差、正列数及全部hist桶定义一致；没有从浮点容差把负值当0。
 
-这类检查验证会员质量与真实行的具体计算，不能替代其余索引IC、连续参数cut、混合PAIR及分支投影的全图核验。也没有验证原求解器的运行历史、基、秩、唯一性或最优性。
+这类独立检查验证会员质量与真实行的具体计算，不覆盖其余索引IC、连续参数cut、混合PAIR及分支投影；完整5108行由上述另一原入口事件复现。两者均没有验证原求解器的历史求解过程、基、秩、唯一性或最优性。
 
 # 交叠共同实现、后继输入和实际停界
 

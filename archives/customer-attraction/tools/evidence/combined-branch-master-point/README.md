@@ -12,4 +12,4 @@ python3 archives/customer-attraction/tools/evidence/combined-branch-master-point
 
 [audit_point.py](audit_point.py)使用标准库Fraction读取全部1905条数据，不调用旧生成器或求解器，写出[current-point-audit.json](current-point-audit.json)。当前执行退出0，全部结构、194隐含00、2612交叠上界、六拆分R/Z容量、12实际B/C报价及归一化/福利通过。报告保原11字段（columns另由共享原件完整保存）、16行完整hist、六实际利润及全部18条聚合余量。
 
-这不是全部5108行原入口重跑；更不证明精确最优值或完整历史SPE。原作者verified_rows/minimum_slack保报告身份。后继pair点改变Z，不能将本核验搬到新Z。无求解输出或随机种子被伪造为原作者运行。
+本独立审计不是全部5108行原入口重跑。随后代码源任务的[另一次原默认入口](../combined-branch-master-program/rerun/execution.json)已实际核完5108行、最小余量0；这是另一事件，不并入本脚本的范围。两者均不证明精确最优值或完整历史SPE。后继pair点改变Z，不能将本核验或旧点全图核验搬到新Z。无求解输出或随机种子被伪造为原作者运行。
