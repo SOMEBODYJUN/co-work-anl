@@ -1,0 +1,171 @@
+{
+  "status": "PASS_SMALL_ORIGINAL_API_ACCEPTANCE_AND_EXACT_REJECTION",
+  "source_sha256": "abf6a57871a79b1642ddcd9672a077e9b4b8e55e80bb390acee247e7d74ce8a3",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "elapsed_seconds": 0.005479942003148608,
+  "original_solve_calls": 3,
+  "original_reconstruct_calls": 3,
+  "original_verify_result_calls": 4,
+  "original_verify_successes": 3,
+  "original_verify_expected_rejections": 1,
+  "original_terminal_data_calls_inside_solve": 3,
+  "LP_calls": 0,
+  "stored_random_or_LP_points_rerun": false,
+  "scope": "Three explicit small input games; original APIs unmodified. Large integers show float screening is not exact; verify rejects invalid reconstructed strategy and accepts exact legal one. No all-domain algorithm certification.",
+  "cases": [
+    {
+      "case": "zero_clients",
+      "weights": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "players": 2,
+      "solve": {
+        "ratio": 1.0,
+        "min_welfare": 0.0,
+        "optimum": 0.0,
+        "root_outcomes": 3,
+        "root_min_count": [
+          2,
+          0
+        ],
+        "states": 6
+      },
+      "strategy": [
+        {
+          "history": [],
+          "action": 0
+        },
+        {
+          "history": [
+            0
+          ],
+          "action": 0
+        },
+        {
+          "history": [
+            1
+          ],
+          "action": 0
+        }
+      ],
+      "verify": {
+        "W": 0,
+        "OPT": 0,
+        "tight": 6,
+        "comparisons": 6,
+        "actual": [
+          0,
+          0
+        ],
+        "worst_slack": "0"
+      }
+    },
+    {
+      "case": "duplicate_coverage_and_empty_topic",
+      "weights": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "players": 2,
+      "solve": {
+        "ratio": 1.0,
+        "min_welfare": 1.0,
+        "optimum": 1.0,
+        "root_outcomes": 3,
+        "root_min_count": [
+          2,
+          0,
+          0
+        ],
+        "states": 10
+      },
+      "strategy": [
+        {
+          "history": [],
+          "action": 0
+        },
+        {
+          "history": [
+            0
+          ],
+          "action": 0
+        },
+        {
+          "history": [
+            1
+          ],
+          "action": 0
+        },
+        {
+          "history": [
+            2
+          ],
+          "action": 0
+        }
+      ],
+      "verify": {
+        "W": 1,
+        "OPT": 1,
+        "tight": 8,
+        "comparisons": 12,
+        "actual": [
+          0,
+          0
+        ],
+        "worst_slack": "0"
+      }
+    },
+    {
+      "case": "binary64_equalizes_two_distinct_integer_values",
+      "weights": [
+        0,
+        9007199254740992,
+        9007199254740993,
+        0
+      ],
+      "players": 1,
+      "solve": {
+        "ratio": 1.0,
+        "min_welfare": 9007199254740992.0,
+        "optimum": 9007199254740992.0,
+        "root_outcomes": 2,
+        "root_min_count": [
+          1,
+          0
+        ],
+        "states": 3
+      },
+      "strategy": [
+        {
+          "history": [],
+          "action": 0
+        }
+      ],
+      "exact_rejection": {
+        "history": [],
+        "alternative": 1,
+        "slack": "-1"
+      },
+      "legal_alternative_action1_verification": {
+        "W": 9007199254740993,
+        "OPT": 9007199254740993,
+        "tight": 1,
+        "comparisons": 2,
+        "actual": [
+          1
+        ],
+        "worst_slack": "0"
+      }
+    }
+  ]
+}
