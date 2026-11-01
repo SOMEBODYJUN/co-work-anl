@@ -1,0 +1,7 @@
+# 锚定储备与实际删除边界五源
+
+5actualprimary42370B全normal/fullread/hashblob。三自足正文：合法前缀ANCHOR与同叶祖先reserve引理；真实十四客户的sunkempty/全proper子局SPE AD-CAP严格20>18障碍（根刻意不最优）；双原程序真实合同+19摘要全部15worst字段/44矩阵列244价格/精确26字段43policy。原空root支持限制不否freeQ/half，旧52背景RESERVE不是同量。
+
+19模型30190+4runtime25475闭包同SHA prior全文阅读精确复用，仅related不extra done。新一次存储矩阵点积算术exit0/0.03963380500499625s，19对restricted上下界exacttight/domain/gap/43policyshape核，全部脚本/argv/cwd/log/output/前后五原SHA保；0原entry/import/querymatrix/SPE/IC/LP/OPT。未保存其它697个cases不能由19worst补出完整证书，原旧生产日志不逆造。
+
+八正式全文比较准确留域；5retained/12解释关系/stateupdates[]。7AAJ完整7ID claim actualpushedb0151bf906c8a16bc4170b0b9ed2529faa0cdde1；rawneedsatt原样，独立3u2tracked同/零缺差冲突/stash5e85942e1fc57db44e4ade1a6ac2e431df01541a kept，无借旧事件。Root串行publish/done，worker不改共享R/Git，旧PF5/depth4freeze不改。
