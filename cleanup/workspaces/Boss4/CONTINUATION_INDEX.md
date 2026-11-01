@@ -667,3 +667,7 @@ R3_RESUME19XW：三范围9源：static minSPE/minPNE全桥与三个边界0/0/1�
 R3_RESUME19XW数学/证据pushed 931f3fa769a8d8f6547da205b646adb19ca77fcb；19源done另推送 c1626d9d7818279760db969800b017a0f559ffbb。Boss4累计3488完成，实际未完59；持续接续全仓，不以本批清空收尾。
 
 R3_RESUME9XZ：Root两原码13558由禁Git网络协议normal恢复旧handoff，pair提升/压回<2H/单共享分块完整+baseline12108/汇总18097全读，k4图耦合非整数穷举、LP目标仅可行上界；pDM648实例实际OPT13/T12给显式12,11,13及4v+3d整数证明，code/report SHA绑定，原Pythondict输出非JSON，旧缺报告路径同字节补齐不改他人正文/done。另prefix bank2全322强制终局/21H尾、BI缓存入口与内部不计10713/19470分清；另anchor base原43全树纸证25/29与六处平局变化、probe六int单例/目标count非固定顺序及r0静态OPT/末D两条件精确域。所有原main/import/solver/收益IC/newmathchecker0；另reserve/refund3 exact old52実prefixAB18>17/52>51令RESERVE false、bank λ≤1仅族必要旧52另≤16/17不授sharp、因果退款IC/同叶守恒仍对而实际修复Δ未付分开。mathdeps明确pushed再9源done，继续全仓；共9主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME9XZ_REMAINING_SCOPE.json。
+
+R3_RESUME9XZ数学/证据pushed 0d2ae3adb75a6cd1d3cf34f45b7f8153ca65febd；9源done另推送 b60b8fef4bd14c53b48a8e844beadf5708d6dc56。Boss4累计3497完成，实际未完63；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME6YF：general review3原18524+6421+1418全读，20正式对象全文比较；13税固定算术与自由q全锥minimax/Farkas分量词、BG570仅任意tail当前IC非全SPE、PJS-cap2-LAST付款余额/MP根修复与LQ信用分层；当用户模型保重复标签直接锥等价，w0分离只旧strictdistinct目录额外版本。旧deny税/路径GB/根Mfull各精确量词与五人独证区分，原reportSHA和摘要非全转录、新0run，先mathdeps pushed再3source done，不以本批结束；另staticwidth3全21case/2923原float含负零全读、21与PAIR19消费过滤区别、共同全兴趣点仅单向mingap界、六稀疏点仅行值重构不授floatσ、SCC/lineality/菜单q族按当前状态，零程序重跑。；共6主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME6YF_REMAINING_SCOPE.json。
