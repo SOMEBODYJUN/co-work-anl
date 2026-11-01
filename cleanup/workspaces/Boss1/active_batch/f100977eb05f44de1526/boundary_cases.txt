@@ -1,0 +1,38 @@
+=== --players 0 --topics 0 --samples 1
+Traceback (most recent call last):
+  File "/workspace/scratch/e698cf90ed7a/probe_env/research/workspaces/customer-attraction/R-51ca8c2b36184c41818099bc490374ca/global/cone_probe.py", line 96, in <module>
+    main()
+  File "/workspace/scratch/e698cf90ed7a/probe_env/research/workspaces/customer-attraction/R-51ca8c2b36184c41818099bc490374ca/global/cone_probe.py", line 73, in main
+    gamma, c, v, membership = arrays(instance, certificate)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e698cf90ed7a/probe_env/research/workspaces/customer-attraction/R-51ca8c2b36184c41818099bc490374ca/global/cone_probe.py", line 39, in arrays
+    v = np.zeros((k, len(c)))
+                     ^^^^^^
+TypeError: object of type 'numpy.float64' has no len()
+status=1
+=== --players 1 --topics 0 --samples 1
+Traceback (most recent call last):
+  File "/workspace/scratch/e698cf90ed7a/probe_env/research/workspaces/customer-attraction/R-51ca8c2b36184c41818099bc490374ca/global/cone_probe.py", line 96, in <module>
+    main()
+  File "/workspace/scratch/e698cf90ed7a/probe_env/research/workspaces/customer-attraction/R-51ca8c2b36184c41818099bc490374ca/global/cone_probe.py", line 68, in main
+    instance = Instance(tuple(map(str, range(args.topics))), tuple(customers), args.players)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 6, in __init__
+  File "/workspace/scratch/e698cf90ed7a/probe_env/customer_attraction/model.py", line 57, in __post_init__
+    raise ValueError("positive-player games need at least one legal topic")
+ValueError: positive-player games need at least one legal topic
+status=1
+=== --players -1 --topics 2 --samples 1
+Traceback (most recent call last):
+  File "/workspace/scratch/e698cf90ed7a/probe_env/research/workspaces/customer-attraction/R-51ca8c2b36184c41818099bc490374ca/global/cone_probe.py", line 96, in <module>
+    main()
+  File "/workspace/scratch/e698cf90ed7a/probe_env/research/workspaces/customer-attraction/R-51ca8c2b36184c41818099bc490374ca/global/cone_probe.py", line 68, in main
+    instance = Instance(tuple(map(str, range(args.topics))), tuple(customers), args.players)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 6, in __init__
+  File "/workspace/scratch/e698cf90ed7a/probe_env/customer_attraction/model.py", line 51, in __post_init__
+    _integer(self.players, "players")
+  File "/workspace/scratch/e698cf90ed7a/probe_env/customer_attraction/model.py", line 14, in _integer
+    raise ValueError(f"{label} must be an integer at least {minimum}")
+ValueError: players must be an integer at least 0
+status=1
