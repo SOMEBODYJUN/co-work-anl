@@ -1,0 +1,11 @@
+# R5bb independent四主源
+
+original保存5723B程序和三个原132/133B报告；source-manifest保双冻结版本/path/blob。source-and-report-semantics逐字段保存报告并从实际AST取当前正常输出键，保payoff_coefficient缺口，不能将旧六字段直接当当前七字段运行或确定strong模式。
+
+原代码以随机种子获得少数完整策略，精确构造有序节点IC，再用浮点LP攻击覆盖预算。初始整数实例的证书验证不认证新浮点质量。best_negative_objective=0是未接受负候选的零初始化哨兵，非精确下界或所有LP成功证明。没有为三旧报告重放随机搜索。
+
+唯一新运行是check_fixed_certificate_once.py：在clone外原布局导入当前原模块，固定已有11客户完整证书，原cone一次与canonical StrategyCone一次全有理系数比较；无ExactSPESolver求解/attack/原CLI/随机抽样/LP。replay保存80行全部31类型系数、40固定原质量目标及实际事件记录。记录0.029秒是函数核对段，不是三个历史搜索的时长。排序行只为稳定对照，原cone返回set迭代顺序未被改成历史LP行序。
+
+runtime-inputs共7件：四canonical导入代码、StrategyCone参照实现、固定11客户实例和31动作证书。manifest逐SHA绑定；同SHAcanonical代码已在前批全文阅读，本批不反复跑旧审计。原cone另由original/cone_attack.py在原research路径材料化。重放checker前需在新的independent_cones_runtime布局放这些确切文件；checker的读取路径写在源码中，未提供会默默覆盖旧研究输出的入口。
+
+related保同工作区1744B根README。鲁棒前缀松弛障碍不是SPE，不移来认证这些锥搜索。正式正文位于state/程序/逐人覆盖缺口的随机完整锥攻击与三旧零哨兵报告--程序.md，相关旧定理和开放桥只按已解释的关系引用，不复制成新成果。
