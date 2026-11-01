@@ -583,3 +583,7 @@ R3_RESUME9VY：Root两固定完整策略真安全聚合重权2：两份全输入
 R3_RESUME9VY数学/证据pushed 71af216d70373749bec65b2ce0350e72ccd8d1ef；9源done另推送 ce4d544a12f6594b9586acac61d941f38d5187fb。Boss4累计3174完成，实际未完66；持续接续全仓，不以本批清空收尾。
 
 R3_RESUME3WB：两尾公共锚点复制障碍3：全部k≥2完整动作类证明每份真实两尾SPE避old t、偏离者7>6，单组29客户43动作必要输入及258/self区别全保；旧k2..8计数是有序尾结果非策略数，未反其他SPE/half；0原入口/旧成功重跑/新数学程序；共3主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME3WB_REMAINING_SCOPE.json。
+
+R3_RESUME3WB数学/证据pushed 7529d06cd5fb701f62add738937e2e1bc7380457；3源done另推送 0c6ca78ee37b505e4d3b0a934bec10421a54f941。Boss4累计3183完成，实际未完67；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME26WF：Root四背景根源/因果多删位/抽象链精确极值；prefix四H余量/M共享引理；round6两全图cap/角色pooling入口；父金额三完整16case50列46row及首次存储字段算术核；静态SA五原笔记/独审全人数及∀最优平均失败、存在版未否；三锚四全65列/浮点报告；round7两共同钱包/强FOMA状态；gain两含全交集矩/遗漏分数覆盖及输送LP。共26源，只有新存储字段audit1，原成功/旧阴性/LP/SPE重跑0；历史同名/旧OPEN与当前量词按实读分清，先math checkpoint pushed后done；共26主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME26WF_REMAINING_SCOPE.json。
