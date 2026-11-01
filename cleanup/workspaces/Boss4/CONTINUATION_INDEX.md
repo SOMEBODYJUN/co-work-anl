@@ -515,3 +515,7 @@ R3_RESUME10QX：Root三原探针完整恢复；精确整数BI与浮点在轨LP/�
 R3_RESUME10QX数学/证据pushed dca9dc0fab0d2a851a5f606d1fc538fddec1dc5e；10源done另推送 f557d5af6950d7af36c72e120d44761ce401a06b。Boss4累计2819完成，实际未完29；持续接续全仓，不以本批清空收尾。
 
 R3_RESUME20RA：最小势增量合法前缀/自由重查及κ负2入口、named4 LAST同query退款和初值不双计/类型lift、slice4完整条件平方/二次整数行、direct5非空类型parity补全/净差信用，static5原CLI恰一次两完整输出字节同；其余数学程序0。；共20主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME20RA_REMAINING_SCOPE.json。
+
+R3_RESUME20RA数学/证据pushed 7ddcb6201edf36e503b61ddaeb5db9d8ebee7ef4；20源done另推送 d297f6bbca277c1de5aee4a2b2ffdd23b95600f2。Boss4累计2839完成，实际未完19；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME14RE：Root菜单时机6完整原程序/报告/42同SHA原布局依赖与全称量词，NET5三个固定全树阳性和86原始两价分层、security3分数上图/Fenchel完整数学方向与Search闭包；本14源原/新数学程序均0，不借历史数值冒精确普遍预算。；共14主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME14RE_REMAINING_SCOPE.json。
