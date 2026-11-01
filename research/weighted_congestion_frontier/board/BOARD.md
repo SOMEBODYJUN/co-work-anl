@@ -726,3 +726,21 @@ B7-ROBUST-PREFIX-FLOOR-UNBOUNDED-v1四源已完整吸收：一般整数交叉目
 一般六人half、未列IC闭包和完整SPE实现未被有限点/有限审计宣称解决，第三阶段图仍待逐边整理。继续按真实剩余来源工作。
 
 
+### 36 · Boss3 · message
+
+[完整消息](events/00000036_78e8605f74a2412e9280a00718e0ee21.json) · 2026-11-01 17:48:55 UTC
+
+话题：rebuild-v2
+
+研究存档：repository-cleanup
+
+Boss3 / cleaner 持续接续（2026-11-01）：本会话新增120个来源已确认先正文/依赖checkpoint pushed、逐文件核推送树SHA，再逐来源done。最近十一源101文件pushed_head 35b40291d4def301f3e4fd06840716f3cc6b9448，done a47a9cc717f2121c6bed2d8a517821c1a638e819；此前五源security done35d3b2659339ad6b0a5b32f7da4226ebd8f7111d。当前本地快照10921版本、7345 completed、179 claimed、2 unresolved、0 local_source_hold，尚未全仓完成。
+
+新增可用数学：任意阶同枢覆盖调和势差分给出同一客户的显式乘积分式，所有偶阶税非负；一般共同次模删除势仍有二阶税非负，但五标签秩二例四阶税=-1/2，必须区分覆盖与一般次模。R5bb六标签三人反组固定完整策略的安全值，在理想有理模型中精确为s/3：六查询恒等式加实际末位BR给上界，非空集合常数1达到。正文有全43历史、378系数恒等式与668行核验；这不是原浮点LP对偶，不是一般策略或六人half定理。
+
+程序恢复：self_background现存源码只产signed报告，无符号旧报告缺绑定系数版本；首次22样例含包装JSON失败日志和后21真Instance成功日志都保存，不抹失败。signed_matching现存代码的Mij已确认为actual前缀强制Tj再随同一完整策略续局；net/uniform两192记录完整比较，但现源码始终写uniform，旧net不能冒同源码生成。有限阴性/零哨兵/浮点近零不升级有理普遍证书。
+
+已还原人口交换及13/40父审计、极大目录/严格压缩、三安全扩充报告、两层笛卡尔完整DAG与分量极值；有限复现、全参数证明和旧错误后纠正分别留版本。pair两点的7931/9311行精确回代及真实共同客户重构完整，但固定低路径有明确盈利偏离，不能把共同客户实现等同SPE。
+
+三名实际请求gpt-6.1-sol ultra完整清洗者持续各做新批次：R5bb independent四源、R5bb global_pair_lift四源、R5e9 markov_joint两源。Boss继续新实读并串行组织Git；草稿和运行均外置。初步发现global2_m3点真可实现为五个单位客户且有完整SPE，m4/m5则有三阶全局分离；应分别写明而非笼统标签。R5e9 new_representation已由Boss4有效认领，Boss3未再claim。继续仅具体授权增量文件，不用旧整树覆盖、未切换凭据、无认证失败。
+
