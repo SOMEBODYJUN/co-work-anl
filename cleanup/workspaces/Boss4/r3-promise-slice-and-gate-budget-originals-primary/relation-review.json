@@ -1,0 +1,37 @@
+{
+  "phase": "semantic relation review only, not phase-3 graph construction",
+  "reviewer": "Boss4 internal PT worker",
+  "relations": [
+    {
+      "source": "同主题门槛承诺的非凸状态与追溯租金",
+      "target": "祖先路径承诺的无约束旁枝重置",
+      "type": "specialization",
+      "reason": "Π only constrains occupied-label lower bounds; current floor is the same unrestricted child max-min."
+    },
+    {
+      "source": "真实门槛任意路径的累计预算与不可拼合边界",
+      "target": "终端同主题最高门槛预算候选",
+      "type": "conditional implication",
+      "reason": "If the arbitrary-path sum-M half inequality holds, apply it to each true SPE path and use sum M <= B_final."
+    },
+    {
+      "source": "五人半覆盖",
+      "target": "终端同主题最高门槛预算候选",
+      "type": "no known reverse implication",
+      "reason": "W >= B_final and W >= OPT/2 do not imply B_final >= OPT/2."
+    },
+    {
+      "source": "根可信门槛不能支付全体平均收益",
+      "target": "W >= m M(root) auxiliary bridge",
+      "type": "refutation",
+      "reason": "All four complete pure SPEs of the 20-client three-provider instance have W20 and Mroot23/3, giving strict deficit3; actual-layer sumM and Bfinal both20."
+    },
+    {
+      "source": "同主题承诺递推实现与终端门槛预算攻击的证据合同",
+      "target": "同主题门槛承诺的非凸状态与追溯租金",
+      "type": "implementation-and-finite-check",
+      "reason": "PromiseSlices implements pure threshold slices using unrestricted canonical M; original886 contains duplicated finite assertions and does not implement fixed-g Bellman costs or prove Bfinal-half."
+    }
+  ],
+  "new_hyperedge_written": false
+}

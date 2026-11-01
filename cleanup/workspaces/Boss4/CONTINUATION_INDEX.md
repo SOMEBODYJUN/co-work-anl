@@ -485,3 +485,17 @@ R3_READY23PG：二十三主源：十八主源区间终局/全效率/单例近半
 R3_READY23PG数学/证据pushed fcc4c1b8178b6521876dab46d58e960045fd319b；23源done另推送 241d998cf7afe4938c4dcb8a4ff64495b4d00627。Boss4累计2676完成，实际未完5；持续接续全仓，不以本批清空收尾。
 
 R3_READY29PN：二十九主源：终局税两原探索与九客户9330项新定义级核验、三minvector主源精确去重、密度与根重放真实scope、核心容量作者/独审时序、小外题条件半覆盖、Theta独立锥/固定k交换、纯菜单原件去重和确定环/负探针合同；另最小四公式及未知review时序澄清，不重开旧done/不复扫阴性；共29主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY29PN_REMAINING_SCOPE.json。
+
+R3_RESUME4PV：Root四根产品菜单/银行账本全文合并精确三数学合同及七路线去向；恢复后正常取源/owner核实，0数学重跑；共4主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME4PV_REMAINING_SCOPE.json。
+
+R3_RESUME4PV数学/证据pushed 52927d182e73e0f2ca720d1a55bb7fcfa4f7ddf6；4源done另推送 200e66264957ebb9989405a2a531877effa39cce。Boss4累计2709完成，实际未完32；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME17PY：PQ4历史根与后缀实现、PP8四程序四报告、PT5 promise和预算代码及20客户根标量完整有序表；原有限报告与当前0数学run分层，不重造缺失旧成功日志；共17主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME17PY_REMAINING_SCOPE.json。
+
+R3_RESUME17PY数学/证据pushed db2855038435f16130978853e87887b9045f31e9；17源done另推送 21ef275493a9521196b09378c262e228bf29a11f。Boss4累计2726完成，实际未完21；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME18QF：PR5原命题/唯一merge精确run、PS5 POTRESET及四七客户/同质筛选、PU5退出正规形与后续反族/查询候选/MINPI、PX3三代码精确合同；原模型与有限范围分开，Root实读9自足新正文；共18主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME18QF_REMAINING_SCOPE.json。
+
+R3_RESUME18QF数学/证据pushed bde72e1696f8d6afe51881f5fe6df27bd83a4088；18源done另推送 37a47d48aac8d71668e8408ff822a5be1d73cf1e。Boss4累计2744完成，实际未完23；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME23QJ：Root3实质容量/产品菜单新原CLI精确闭包，层级8对称算法/float边界，hull3凸外松弛/版本差，mergeNP4准确已足去重，R79五原先验与真实剪枝；不改原冻结证据、不重跑旧充分入口；共23主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME23QJ_REMAINING_SCOPE.json。

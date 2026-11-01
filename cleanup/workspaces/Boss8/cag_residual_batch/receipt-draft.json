@@ -1,0 +1,68 @@
+[
+  {
+    "id": "2f88215182d878146027",
+    "full_file_reviewed": true,
+    "related_material_checked": true,
+    "unique_content_accounted_for": true,
+    "read_note": "完整读取 residual_probe.py；重跑固定 p=5 菜单、实际(4,0)、回复(1,2,1,2,0)和比较(1,3)，Fraction 重算四个权重、最小 SPE 松弛、W=R=1。",
+    "comparison_note": "与 customer-attraction 既有辅助桥、R-373d 计数 MILP 障碍和同批两人残余搜索比较；未发现同一固定参数已入库。",
+    "decision_note": "将固定菜单边界 LP 点及其精确重算集成到 R-373d 残余族审查，保留为有限探索，不升级为一般定理。",
+    "disposition": "integrated",
+    "targets": ["archives/customer-attraction/state/审查/R-373d独有残余族固定菜单与全历史审计--审查.md", "archives/customer-attraction/tools/evidence/r373d-unique-residual-family-audit-Boss8/README.md"]
+  },
+  {
+    "id": "d536fe373f4f646d0bfd",
+    "full_file_reviewed": true,
+    "related_material_checked": true,
+    "unique_content_accounted_for": true,
+    "read_note": "完整读取并运行 two_residual_search.py；穷举 6^5 个回复映射，记录 rho=(1,4,4,4,5,4) 和 R-C=1/13 的有理 LP 点。",
+    "comparison_note": "与同 rho 的连续/整数 optimizer 及 Fraction 全历史验证器交叉比较；LP 自身只有浮点结果和分数近似。",
+    "decision_note": "集成固定回复锥的正残差候选；明确它不证明完整模型全称，也不替代整数/逐历史审计。",
+    "disposition": "integrated",
+    "targets": ["archives/customer-attraction/state/审查/R-373d独有残余族固定菜单与全历史审计--审查.md", "archives/customer-attraction/tools/evidence/r373d-unique-residual-family-audit-Boss8/README.md"]
+  },
+  {
+    "id": "36628191e3d12eec94ce",
+    "full_file_reviewed": true,
+    "related_material_checked": true,
+    "unique_content_accounted_for": true,
+    "read_note": "完整读取并运行 unique_optimizer_integer.py；复得 HiGHS 最优整数权重 12 类掩码、总客户数 71。",
+    "comparison_note": "与 unique_residual_family_audit 的首案例逐项比对，权重完全一致；与既有 R-373d 固定桥 MILP 区分路径和目标。",
+    "decision_note": "将其作为整数客户发生器的有限证据集成，最优性只限脚本给定整数模型，数学语义由 Fraction 验证器承担。",
+    "disposition": "integrated",
+    "targets": ["archives/customer-attraction/state/审查/R-373d独有残余族固定菜单与全历史审计--审查.md", "archives/customer-attraction/tools/evidence/r373d-unique-residual-family-audit-Boss8/README.md"]
+  },
+  {
+    "id": "8b85dc80a79894990d23",
+    "full_file_reviewed": true,
+    "related_material_checked": true,
+    "unique_content_accounted_for": true,
+    "read_note": "完整读取并运行 unique_optimizer_probe.py；记录归一化 C=1、R/C>=1.01 下最大连续唯一最优 gap=0.03954545454545444。",
+    "comparison_note": "与整数 MILP 和七参数 Fraction 审计比较；连续近似点没有直接作为单位客户定理使用。",
+    "decision_note": "集成连续搜索层，标记为浮点 LP 有限探针，保留 gap 与约束范围和未证全局语义。",
+    "disposition": "integrated",
+    "targets": ["archives/customer-attraction/state/审查/R-373d独有残余族固定菜单与全历史审计--审查.md", "archives/customer-attraction/tools/evidence/r373d-unique-residual-family-audit-Boss8/README.md"]
+  },
+  {
+    "id": "2e9dc9a1c734744b1a13",
+    "full_file_reviewed": true,
+    "related_material_checked": true,
+    "unique_content_accounted_for": true,
+    "read_note": "完整读取 16KB JSON；核对七个 (d,g) 案例、12 类掩码、42 条动作比较、minimum_slack=0、W/OPT/R 和 B4_slacks。",
+    "comparison_note": "与 verify_unique_residual_family.py 重跑逐字段比较，并与已有另一套唯一最优遗漏族的客户表区分；同 main 版本字节相同。",
+    "decision_note": "作为独立全历史有限审计输出集成，支持显式 d,g 族的精确核验，但 JSON 本身不是该族解析证明。",
+    "disposition": "integrated",
+    "targets": ["archives/customer-attraction/state/审查/R-373d独有残余族固定菜单与全历史审计--审查.md", "archives/customer-attraction/tools/evidence/r373d-unique-residual-family-audit-Boss8/README.md"]
+  },
+  {
+    "id": "f24827465c896e2ec5d0",
+    "full_file_reviewed": true,
+    "related_material_checked": true,
+    "unique_content_accounted_for": true,
+    "read_note": "完整读取并运行 Fraction 验证器；逐单位客户展开、完整七历史、全部六动作比较，重算七组参数和唯一最优 TS。",
+    "comparison_note": "与 JSON 输出逐字段核对，与已有 R-373d 和 R-171 类辅助桥对象比较，确认其量词是两提供者显式策略族而非六人主问题。",
+    "decision_note": "集成验证器及解析公式、约束条件、重放命令和缺口；把可证明内容限定在显式辅助族。",
+    "disposition": "integrated",
+    "targets": ["archives/customer-attraction/state/审查/R-373d独有残余族固定菜单与全历史审计--审查.md", "archives/customer-attraction/tools/evidence/r373d-unique-residual-family-audit-Boss8/README.md"]
+  }
+]
