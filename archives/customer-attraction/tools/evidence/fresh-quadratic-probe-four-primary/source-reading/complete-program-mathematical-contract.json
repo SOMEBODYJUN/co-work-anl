@@ -1,0 +1,88 @@
+{
+  "model": {
+    "auxiliary": "signed symmetric pair-marginal fresh game; not unit-client CAG",
+    "domain": "1<=m<=p, all ordered histories of distinct labels; repeats forbidden only in this auxiliary model",
+    "coefficients": "alpha per label and beta per unordered pair, signs unrestricted",
+    "payoff": "v_a(S)=alpha_a+sum_{b in S-a}beta_ab",
+    "theta": "min over all (m-1)-sets H max unused a v_a(H+a)",
+    "sample_low": "minimum of (pay,a,terminal bitmask) over every root SPE terminal and all its labels; arbitrary player position"
+  },
+  "BI": {
+    "exact_mathematical_recursion": "threshold(H)=max_a min_{S in child outcomes}v_a(S); union child leaves with payoff>=threshold",
+    "cache": "occupied sets cache realizability sets; independent ordered-h subtrees reconstructed separately",
+    "implementation_tolerance": 1e-09,
+    "small_integer_sample_stage": "coefficients -3..3, pay/threshold/theta all exact small Python integers, tolerance cannot merge different integers",
+    "policy": "complete dict keyed ordered tuples, onpath target preserved, offpath child minimizes own deviator payoff, recursive all fresh children",
+    "not_a_single_Markov_selector": true
+  },
+  "LP": {
+    "variables": "all d coefficients in [-1,1] plus free common z",
+    "IC": "every nonself legal fresh action at every complete ordered policy node against its own true continuation",
+    "static_witness": "for each H choose an old-point argmax a_H, keep fixed, constrain z<=new v_aH(H+aH)",
+    "valid_lower_bound": "z<=min_H new v_aH<=min_H max_a new v_a=theta(new)",
+    "objective": "min new v_low(target)-z, selected label need not be root action",
+    "conditional_refutation": "an exact feasible negative objective would disprove only auxiliary individual floor candidate",
+    "restriction": "one fixed full sigma and one old query per H; nonnegative LP optimum is not all-policy theorem",
+    "numerics": "SciPy HiGHS floats; assert res.success only; no Fraction recovery, exact IC/duals/optimum or independent BI postcheck",
+    "zero_point_feasible": true
+  },
+  "driver": {
+    "defaults": {
+      "p": 7,
+      "m": 4,
+      "samples": 1000,
+      "lp_every": 10,
+      "seed": 512
+    },
+    "output_required": true,
+    "first_LP": "sample i=0 if LP enabled and sample gap does not fail",
+    "sample_failure_threshold": -1e-08,
+    "LP_failure_threshold": -1e-07,
+    "output": "write once after loop or failure then print same JSON, no append newline or mkdir/overwrite protection",
+    "invalid_domain_not_checked": "1<=m<=p, samples>=1, supplied coefficient vector dimension; nonpositive samples can leave i unbound",
+    "lp_every_zero_disables": true,
+    "negative_lp_every_also_modulo_triggers": true,
+    "saved_report_missing": [
+      "requested samples",
+      "lp_every",
+      "argv",
+      "source SHA",
+      "software/solver version",
+      "independent stdout/stderr/exit",
+      "all sample coefficients",
+      "all selected policies",
+      "all LP points/status/residuals"
+    ],
+    "current_math_runs": 0
+  },
+  "analytical_dimensions": [
+    {
+      "p": 7,
+      "m": 4,
+      "d_plus_z": 29,
+      "ordered_nodes": 260,
+      "IC": 839,
+      "quotes": 35,
+      "total_rows": 874
+    },
+    {
+      "p": 8,
+      "m": 3,
+      "d_plus_z": 37,
+      "ordered_nodes": 65,
+      "IC": 335,
+      "quotes": 28,
+      "total_rows": 363
+    },
+    {
+      "p": 8,
+      "m": 5,
+      "d_plus_z": 37,
+      "ordered_nodes": 2081,
+      "IC": 6719,
+      "quotes": 70,
+      "total_rows": 6789
+    }
+  ],
+  "dimensions_are_from_source_loop_formula_not_new_matrix_build": true
+}

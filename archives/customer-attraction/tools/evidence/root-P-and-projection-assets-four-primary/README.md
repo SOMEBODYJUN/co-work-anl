@@ -1,0 +1,7 @@
+# 根P与十题投影四原件首次primary
+
+四源35973B都已有充分完整阅读、正常取得及完整正式数学/原字节，本包只补实际认领后的逐源primary语义路由、版本依赖、关系和保全证据。4duplicate准确指向当前R资源各自527/投影章节及各自原件，不复制旧数学正文或原source-root覆盖Root版本。
+
+旧64有理/64float/45dual、投影5prefix/50children及全部十维minimizers已在既有完整记录与原件中，全部当前SHA绑定；原程序不重复扫描/导入/LP/DP运行。原8YI数学及四原件实际pushed tip记录在dependencies。
+
+full9YY全9IDclaimpushed/rawneeds-attention保存；独立3u/2tracked同字节、无missing/different/unmerged及stash kept证明分存。当前四sourceprimary数学checkpoint与done由Root串行完成，claimpushed不冒本批receipt/done已pushed。
