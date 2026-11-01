@@ -1,0 +1,7 @@
+# 完整终局成对容量：六主源与实际复现
+
+六主源为security入口、245客户完整输入、1642B精确报告、262B浮点group片段、2807B固定验收器和1664B发现探针。原件按冻结原路径保于original；source-manifest.json给完整双冻结定位、size和SHA。两份必要related helper只比较阅读，不额外done。
+
+当前仅执行原verify_crosscap_failure.py一次：exit0，259历史/1554含自身比较，stdout逐字节等冻结报告。运行前核JSON实例与原程序内部WEIGHTS一致；运行记录、stdout/stderr在current-replay/。原报告两个多项式字符串系硬编码，正式反例页另给完整展开配方，不称原脚本已验证一般多项式。
+
+未运行发现探针、LP、全p交替优化、规范solver或第二次IC。精确245点只反成对crosscap，其所有二点混合预算仍正；group的舍入级gap缺完整策略，未并到245点。数学正文与逐源处置保持这些证据身份。
