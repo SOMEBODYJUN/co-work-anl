@@ -1,0 +1,7 @@
+# 背景系数首次primary与527资产核验入口
+
+三primary25822B：系数code1956/45记录JSON22174是充分旧读同SHA正常原件复用，准确duplicate到现有正式有限背景资源；verify_assets1692为新normal后全文实读并保新自足程序。系数与新程序不是同一运行闭包：新程序不读background_root文件，只读旧indexed定义/类型及同级augment_fixed_support.json。
+
+source-root保6原件130124B，含9700报告同SHA既有normal/充分阅读以及77420+17182两个已发表充分输入。新程序路径和ROOTparents5输入布局保持完整。没有运行原LP/审计/compileexec/verify_assets或新数学checker，没有伪造stdout成功记录。
+
+full20YU全20IDstatuspushed与rawneeds-attention保留；独立3untracked/2tracked同字节无missing/different/unmerged且stash kept分存。当前source3done及数学出版由Root负责，claimpushed不等于本批math/done已pushed。
