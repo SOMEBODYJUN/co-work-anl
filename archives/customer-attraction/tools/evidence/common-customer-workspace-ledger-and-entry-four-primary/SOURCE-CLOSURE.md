@@ -1,0 +1,7 @@
+# 账本及必要数学来源闭包
+
+四primary为三MD/一个identity，无可执行入口。source-root按完整原根路径保全部字节；related-source-root保存7本次正常read-only取得及一份正式published重用的4870B opposite原稿。它们皆为必要数学阅读，不代原子证书/程序完整认证或额外done。
+
+跨族README的1284计数/正差/必要式完整读，但本包未取完整64重数、1284slack或运行原生成器/核验器；若以后主清洗它们须另正常全取全读。exclusive作者MD+后续rootreview均全文，两者审查时态不混；DR仅作者MD，未claim已读代码/报告或他人审查。terminal1442README/580report全部字段保，旧generator路径/SHA只是源记录，不伪称本包已执行/认证56LP或复原历史输入全集。
+
+高背景/端点/反组次模/现alpha精确税反例及相关signed预算的正式数学全文快照保供定位。此资源只按已读证明比较，0原数学import/main/solver/全树/checker。正式原稿published重用有原来源manifest与当前SHA/blob，无当前新show，不造旧normalcapture。identity不含凭据或重新绑定指令，当前不调用其actor。
