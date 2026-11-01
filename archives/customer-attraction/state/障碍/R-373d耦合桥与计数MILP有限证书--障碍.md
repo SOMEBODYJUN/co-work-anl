@@ -33,6 +33,12 @@
 
 这是固定策略/固定路径的有限桥屏幕，不是所有 SPE 的搜索，也不是六人六提供者 half 反例。
 
+## 新增 `fixed_bridge_mult3.json` 版本核验
+
+来源 `3c4874a0fc772404d552`（SHA-256 `c3b17b2b8b9e03caafcd3656ddb6904613e1430b5e75f9c3348310e09f283d84`）是同一固定策略锥扫描在 `mult=3` 下的独立 JSON 版本。这里 `p=6` 表示六个目录主题，`m=3` 表示三名顺序提供者；它不对应当前六提供者主模型。用冻结 `StrategyCertificate` 依赖重建整数客户实例，完整核验 43 个有序历史及全部偏离，得到路径 `(0,3,4)`、收益 `(69/2,73/2,32)`、`W=103`、`OPT=145`，并保留 `portfolio=(1,2,5)`。
+
+其固定桥筛目标为 `OPT-W-3u_1=-123/2`，源归一化值为 `-123/206`；同时 `2W-OPT=61>0`。因此该版本提供固定锥内未击穿桥的有限证书，并非半覆盖反例、一般桥反例或所有完整 SPE 的结论。原 JSON、验证输出和版本清单保存在 `tools/evidence/R-373d-coupling-credible-20261031/source/fixed_bridge_mult3.json`、`replay/fixed_bridge_mult3_validation.json` 与 `source-manifest.json`。
+
 ## 缺口与接续
 
 签名图账本缺少从 edge state 到客户类型和完整历史的统一构造；静态桥只说明 bridge 变量变化；MILP 策略虽通过定义级 verifier，但 search `status=1`；fixed bridge 依赖 6-provider/3-topic 证书。后续若要推进主问题，必须重新定义终局客户价值均分，覆盖所有 ordered histories、任意平局、空/重复主题和零客户，并把候选、完整证明、条件结论、有限实验、障碍和原模型反例分开标注。

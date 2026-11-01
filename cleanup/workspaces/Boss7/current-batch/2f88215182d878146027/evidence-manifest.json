@@ -1,0 +1,39 @@
+{
+  "source_id": "2f88215182d878146027",
+  "source_path": "research/workspaces/customer-attraction/R-373daba10913464c93771a808d88fce3/global/residual_probe.py",
+  "source_sha256": "0f70a0715ecd6a0985067ea73df08af41735ac084efb96d91e0dbcc159aa5e06",
+  "source_size": 1486,
+  "source_replay": {
+    "command": "python3 source.py",
+    "solver": "scipy.optimize.linprog(method='highs')",
+    "success": true,
+    "objective_max_float": 0.0,
+    "returned_weights": {"2": "1/2", "5": "1/2", "8": "1/2", "16": "1/2"},
+    "minimum_spe_slack": "0",
+    "W": "1",
+    "R": "1"
+  },
+  "exact_recheck": {
+    "script": "audit_exact.py",
+    "rows": 30,
+    "weights": {"2": "1/2", "5": "1/2", "8": "1/2", "16": "1/2"},
+    "minimum_slack": "0",
+    "positive_slack_rows": 7,
+    "zero_slack_rows": 23,
+    "residual_C_minus_R": "0"
+  },
+  "derived_integer_check": {
+    "script": "derived_instance_check.py",
+    "customer_types": [[1], [0, 2], [3], [4]],
+    "actual_path": [4, 0],
+    "W": 2,
+    "OPT_over_ordered_pairs": 2,
+    "ratio_W_over_OPT": "1"
+  },
+  "limits": [
+    "finite fixed two-player menu only",
+    "no independent rational primal/dual LP certificate",
+    "no all-strategy or all-support quantifier",
+    "no general bridge or six-player half result"
+  ]
+}
