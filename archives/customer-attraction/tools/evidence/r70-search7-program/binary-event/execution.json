@@ -1,0 +1,167 @@
+{
+  "status": "PASS_BOUNDED_CURRENT_BINARY_EVENT",
+  "source_inputs_before": {
+    "search7.cpp": {
+      "bytes": 5433,
+      "sha256": "56cac2ec12dccba09010c0dd188b0cc974439ce612f2726773c952220886424a"
+    },
+    "search7": {
+      "bytes": 27160,
+      "sha256": "b37ce54e8a47ce77995a3e24dadab26836facfa2c4cafece9ac2f968bb3f7d2c"
+    }
+  },
+  "source_inputs_after": {
+    "search7.cpp": {
+      "bytes": 5433,
+      "sha256": "56cac2ec12dccba09010c0dd188b0cc974439ce612f2726773c952220886424a"
+    },
+    "search7": {
+      "bytes": 27160,
+      "sha256": "b37ce54e8a47ce77995a3e24dadab26836facfa2c4cafece9ac2f968bb3f7d2c"
+    }
+  },
+  "rebuilt": {
+    "bytes": 23096,
+    "sha256": "a4b7f42dfb367db42f975587ee57726797c737800f5548b030441ed21e83e38c"
+  },
+  "byte_identical_rebuild": false,
+  "short_stdout_stderr_equal": true,
+  "events": [
+    {
+      "name": "file",
+      "argv": [
+        "file",
+        "search7"
+      ],
+      "start_utc": "2026-11-01T18:44:30.382475+00:00",
+      "wall_seconds": 0.0033528979984112084,
+      "exit_code": 0,
+      "stdout_bytes": 217,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "readelf",
+      "argv": [
+        "readelf",
+        "-h",
+        "-l",
+        "-S",
+        "-d",
+        "-n",
+        "--version-info",
+        "-p",
+        ".comment",
+        "search7"
+      ],
+      "start_utc": "2026-11-01T18:44:30.385845+00:00",
+      "wall_seconds": 0.00290314901212696,
+      "exit_code": 0,
+      "stdout_bytes": 12520,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "symbols",
+      "argv": [
+        "nm",
+        "-C",
+        "search7"
+      ],
+      "start_utc": "2026-11-01T18:44:30.388757+00:00",
+      "wall_seconds": 0.00336293299915269,
+      "exit_code": 0,
+      "stdout_bytes": 4548,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "disassembly",
+      "argv": [
+        "objdump",
+        "-d",
+        "-C",
+        "--no-show-raw-insn",
+        "search7"
+      ],
+      "start_utc": "2026-11-01T18:44:30.392128+00:00",
+      "wall_seconds": 0.01473631699627731,
+      "exit_code": 0,
+      "stdout_bytes": 112109,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "rodata",
+      "argv": [
+        "objdump",
+        "-s",
+        "-j",
+        ".rodata",
+        "search7"
+      ],
+      "start_utc": "2026-11-01T18:44:30.406889+00:00",
+      "wall_seconds": 0.005127053998876363,
+      "exit_code": 0,
+      "stdout_bytes": 1329,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "compiler-version",
+      "argv": [
+        "g++",
+        "--version"
+      ],
+      "start_utc": "2026-11-01T18:44:30.412031+00:00",
+      "wall_seconds": 0.0028608050051843747,
+      "exit_code": 0,
+      "stdout_bytes": 244,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "compile",
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-O2",
+        "search7.cpp",
+        "-o",
+        "/workspace/scratch/c0ab78c47566/round17-r70-search7/binary-event/rebuilt-search7"
+      ],
+      "start_utc": "2026-11-01T18:44:30.415019+00:00",
+      "wall_seconds": 0.902873600993189,
+      "exit_code": 0,
+      "stdout_bytes": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "original-short",
+      "argv": [
+        "/workspace/scratch/c0ab78c47566/round17-r70-search7/search7",
+        "1",
+        "192711"
+      ],
+      "start_utc": "2026-11-01T18:44:31.317984+00:00",
+      "wall_seconds": 0.005736462990171276,
+      "exit_code": 0,
+      "stdout_bytes": 237,
+      "stderr_bytes": 62
+    },
+    {
+      "name": "rebuilt-short",
+      "argv": [
+        "/workspace/scratch/c0ab78c47566/round17-r70-search7/binary-event/rebuilt-search7",
+        "1",
+        "192711"
+      ],
+      "start_utc": "2026-11-01T18:44:31.323751+00:00",
+      "wall_seconds": 0.004673819013987668,
+      "exit_code": 0,
+      "stdout_bytes": 237,
+      "stderr_bytes": 62
+    }
+  ],
+  "original_binary_entries": 1,
+  "rebuilt_entries": 1,
+  "requested_budget": 1,
+  "explicit_seed": 192711,
+  "historical_scan_replayed": false,
+  "LP_calls": 0,
+  "scope": "ELF static structure plus one compile and bounded current entry; byte identity or finite output agreement is stated separately, not inferred historical compiler flags or scan provenance."
+}

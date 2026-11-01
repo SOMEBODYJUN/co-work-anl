@@ -1,0 +1,131 @@
+{
+  "primary_id": "12d7027e518db2af3c07",
+  "source": {
+    "path": "archives/customer-attraction/tools/evidence/fixed-policy-circuit-flow/original/circuit_flow_probe.py",
+    "bytes": 7066,
+    "sha256": "992743922242e80469f67fca666c81fc0b3af402d99b40f41785f07a2d12bb43"
+  },
+  "function_spans": [
+    {
+      "name": "counts",
+      "start": 19,
+      "end": 20
+    },
+    {
+      "name": "strategy",
+      "start": 23,
+      "end": 29
+    },
+    {
+      "name": "terminal",
+      "start": 32,
+      "end": 36
+    },
+    {
+      "name": "main",
+      "start": 39,
+      "end": 149
+    }
+  ],
+  "imports": [
+    "from fractions import Fraction as F",
+    "from itertools import combinations, product",
+    "from pathlib import Path",
+    "import json",
+    "import numpy as np",
+    "from scipy.optimize import linprog"
+  ],
+  "scope": {
+    "providers": 3,
+    "labels": 6,
+    "complete_ordered_decision_histories": 43,
+    "root_path": [
+      0,
+      3,
+      4
+    ],
+    "root_counts": [
+      1,
+      0,
+      0,
+      1,
+      1,
+      0
+    ],
+    "only_comparison_labels": [
+      1,
+      2,
+      4
+    ],
+    "terminal_counts": 56,
+    "abstract_nonnegative_payoff_coordinates": 126,
+    "common_nonnegative_customer_variables": 0
+  },
+  "row_contract": {
+    "true_edges_including_self": 258,
+    "self_zero_edges": 43,
+    "dilutions": 2520,
+    "pair_equalities": 45,
+    "six_payoff_equalities": 60,
+    "equalities_are_not_claimed_independent": true
+  },
+  "first_LP": {
+    "objective": "minimize -o dot y",
+    "A_ub": "-I",
+    "A_eq": "[r; C]",
+    "b_eq": "[1; 0]",
+    "bounds": "y >= 0",
+    "rationalization_max_denominator": 10000000,
+    "signs": "mu=-ineqlin.marginals; nu=-eqlin.marginals",
+    "exact_check": "y>=0; Iy>=0; Ey=d; mu>=0; s=E^T nu-I^T mu-o>=0; o.y=nu[0]",
+    "identity": "beta r-o=I^T mu-C^T nu_C+s"
+  },
+  "second_LP": {
+    "variables": 3114,
+    "coordinate_equalities": 126,
+    "matrix": "[I^T, C^T, -C^T, Id126]",
+    "right_side": "beta r-o",
+    "objective": "sum(mu)+sum(theta_plus)+sum(theta_minus)+sum(s)",
+    "exact_final_check": "mu,s>=0; beta r-o=I^T mu+C^T theta+s",
+    "theta": "theta_plus-theta_minus is signed; final nu[1:] uses this theta, not first-stage nu_C",
+    "no_exact_secondary_cost_dual": true,
+    "no_minimum_support_claim": true
+  },
+  "saved_result_structure": {
+    "primal_entries": 126,
+    "nonnegative_rows": 22,
+    "signed_identities": 28,
+    "coordinate_remainder_entries": 0
+  },
+  "shared_events": {
+    "original": {
+      "path": "archives/customer-attraction/tools/evidence/fixed-policy-circuit-flow/replay/execution.json",
+      "bytes": 1329,
+      "sha256": "36afe45749b784e585750c207396dc132c380ddc791fbe3f8c5d7f63442f1a34"
+    },
+    "independent": {
+      "path": "archives/customer-attraction/tools/evidence/fixed-policy-circuit-flow/exact-certificate-audit.json",
+      "bytes": 1395,
+      "sha256": "8dcc429b5c7a929d7a681a9bc7afb485ec4f18f4701527c38626aaf664effdb8"
+    }
+  },
+  "failure_and_output": [
+    "No CLI parser: fixed source constants/strategy/objective.",
+    "Successful final JSON overwrites same basename beside __file__ only after all assertions.",
+    "A prior JSON may remain if a new run fails before the write.",
+    "Assertions are disabled by Python optimization; this shared run kept them enabled.",
+    "Fraction limit_denominator is only a proposal; exact checks can reject.",
+    "The original main has no customer-realizability test."
+  ],
+  "original_model_boundary": {
+    "labels_are_zero_based": true,
+    "C_12": "8/9",
+    "C_14": "8/9",
+    "C_1": "32/45",
+    "C_124": "8/5",
+    "submodular_residual": "-8/15",
+    "therefore_nonnegative_common_customer_realization": false
+  },
+  "new_mathematical_entries_in_program_cleanup": 0,
+  "read_scope": "Full 7066B source, 13242B background main+appendix, 3390B review, complete original certificate and all shared wrappers/verifier/reports; related mathematical corrections read separately."
+}
