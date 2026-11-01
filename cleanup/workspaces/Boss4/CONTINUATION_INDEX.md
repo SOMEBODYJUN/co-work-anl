@@ -551,3 +551,7 @@ R3_RESUME3TF：调和母稿全一般符号式/所有eta极小点与弱等号、�
 R3_RESUME3TF数学/证据pushed f447a44755aa27b972b34c014057aea0c28ab32a；3源done另推送 c1ad74d8d139c09c934f50ba01e57075716e253e。Boss4累计2961完成，实际未完23；持续接续全仓，不以本批清空收尾。
 
 R3_RESUME23TN：Root427共同索引四原件与独立65目录/33末位原物化一次；星核全n匹配静态值与双三块全报告解析，ROW/COLUMN反向与原共同运输/双预算审，400动作cap1锐族和先验，固定菜单MILP两提案完整43节点解析，首对iid/静态值与牺牲前缀合法嵌入。当前仅Root原物化1，其余入口/LP/旧扫描重放0，严格区分全n证明/有限点/历史报告/开放付款；共23主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME23TN_REMAINING_SCOPE.json。
+
+R3_RESUME23TN数学/证据pushed dbe87fc893127de263b031fc3cda9ab774de6bb5；23源done另推送 0ffc3f0e79b87efed05bacfbd8938bb6b8f0db72。Boss4累计2987完成，实际未完55；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME22TW：Root同目录倒二三个严格偏离两原件/一次201定义收益窄核；父方调和菜单审与两个原报告5/一次280纯RNG计划解码；静态密度/祖先回推5自足组件；九标签首对19轨道与511全型原探针4；星族2MD精确去重及原Fraction/Decimal程序2；五人66合法背景诊断2。除两具体窄核外原LP/BI/IC/旧充分成功重放0，完整证明/有限原输出/未付全局预算分层；共22主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME22TW_REMAINING_SCOPE.json。

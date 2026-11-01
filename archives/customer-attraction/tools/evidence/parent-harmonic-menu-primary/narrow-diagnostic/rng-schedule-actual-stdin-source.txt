@@ -1,0 +1,21 @@
+from pathlib import Path
+from fractions import Fraction
+import random,json,sys
+S=Path('/workspace/scratch/37f0f9248cfc/boss4-next-cache/r3-parent-harmonic-menu-primary');rng=random.Random(977714);rows=[];bad=None
+for r in range(1,8):
+ for sample in range(40):
+  topic=[[rng.randrange(2)for _ in range(9)]for _ in range(4)]
+  past=[rng.randrange(4)for _ in range(rng.randrange(5))]
+  tails=[[rng.randrange(4)for _ in range(r-1)]for _ in range(4)]
+  numerators=[rng.randrange(1,6)for _ in range(4)];tau=Fraction(sum(numerators),5)
+  row={'remaining':r,'sample':sample,'z_numerators_over_5':numerators,'tau':str(tau)};rows.append(row)
+  if tau<1:bad=row;break
+  for _eta in range(7):
+   weights=[rng.randrange(6)for _ in range(9)]
+ if bad:break
+report={'scope':'independent decoding of source fixed-seed RNG draw schedule only; no original import/main, potential, payoff, menu value or IC computation',
+ 'python':sys.version,'seed':977714,'planned_menus':280,'visited_schedule_entries':len(rows),'completed_guard_entries':len(rows)-(bad is not None),
+ 'first_failing_tau_guard':bad,'minimum_visited_tau':str(min(Fraction(x['tau'])for x in rows)),
+ 'all_visited_schedule_rows':rows,'new_original_audit_runs':0,'new_payoff_or_IC_runs':0}
+p=S/'rng-schedule-read.json';p.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+print(json.dumps({k:v for k,v in report.items()if k!='all_visited_schedule_rows'},ensure_ascii=False,indent=2))
