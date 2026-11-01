@@ -1,0 +1,5 @@
+# 两承重MD及标量报告首次primary比较
+
+两个原MD已normalshow全文/指纹，完整同终局非负证书/全部history必要式和108客/任意长真尾保护障碍已写入新资源，由Root再次全文审核，仍不是half或真逐人失败证书。纯终局锐性不能冒SPE锐性，root/actual-player/任意离轨history不能混。其原审计代码指向仅历史记录，不因MD提及就宣称本次运行。
+
+208报告全部字段和对应2312原code已全文；旧充分success复用0run，有限grid非全称证明。现在载体是发表旧生成输出，与冻结inventory size/SHA/blob一致；Root已明确授权208按同SHA发表载体复用无新show；实际全8claim已pushed，原local_sync needs-attention保原样，另独立proof核166untracked/2tracked零缺/差/unmerged。三个source当前Boss4在领/SHA核，正式封3准确duplicate，不当远端claim失败、不重claim、不伪改raw为synced。三源数学/字段均已由新资源或既有背景定理充分吸收，故后续可准确duplicate不造重复对象。
