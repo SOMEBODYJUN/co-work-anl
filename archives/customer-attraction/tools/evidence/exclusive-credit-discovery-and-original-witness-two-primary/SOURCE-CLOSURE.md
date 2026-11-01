@@ -1,0 +1,7 @@
+# 原搜索与唯一新saved-point checker的不同闭包
+
+source-root保原research/workspaces/customer-attraction/R-fa8/global_proof两原件及customer_attraction/__init__.py/model.py/exact.py/certificate.py四正式published原字节；__file__.parents[5]正好定位source-root，init只导入其余三模块及stdlib。原probe没有输入文件，witness是其发现输出；顶层seed/2000loop、无guard/CLI，直接import即运行大搜索并可能覆同名JSON，不在保存原件目录执行。
+
+新check_saved_37unit_policy_once.py只用标准库，读原witness不import任何原码；保存所有259节点/1295proper行，assert root字段和局部负差。输出必须新路径，拒覆已有result。唯一这次actualargv/cwd/源&脚本前后SHA/event/stdout/stderr保，builder不调用checker。没有重放原probe、核心solver/verifier或商全树；商合同由递归lift证明，已保存π及新客户会员数据但未生成156动作清单。
+
+原4模块provenance manifest里其它条目只是原metadata，未声称本批读__main__/tests/其它输入或执行其旧replay。sourceSHA匹配当前冻结核，未说原2000循环历史环境绑定这些当时字节；seed/iteration不代完整原过程。相关core4不新增done，16点另冻结包不改。
