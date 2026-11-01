@@ -1,0 +1,7 @@
+# 一题末回复与根行入口三源
+
+3actualprimary13717B完整读；6必要related57500B由Root明确授权read-only正常取得，全exit0/stderr0，原捕获/原字节/指纹齐。2已发表输入94602B全部字段/代码实读、同SHA source-manifest与completedprogress绑定，无伪新normal；canonical4旧充分25475B。source-root保15件全部原文件共191294B及原路径，只作不可原地执行的保全资产，未来需freshcopy。
+
+3正文：入口根P与旧RIG/T×2m等价、旧根饱和与527/投影/19LP范围；一题64split/十独立局部LP的完整模型与10原记录；Root批准新增4row抽象归一LP全m解析最优证明。原19float/原527primalflag/10status不升级为当前数值认证、SPE可实现或最优常数。
+
+原数学程序/LP/DP/audit/compileexec/import/新checker均0，只有6read-onlysource获取；记录其中实际捕获不借外部成功。related与published/canonical全部只闭包不额外primarydone。full13XV claim rawneedsattention与独立3untracked2trackedallSame/stashkept分别保，Root正式mathcheckpoint后才3primarydone。

@@ -1,0 +1,7 @@
+# 显式最大题旧支撑探针：证据入口
+
+两primary15955B、三必要related29119B和两个已发表运行输入94602B全部原字节保留，source-root共139676B。主数学是显式M拆分LP正文及有限背景系数合同。原向量/45记录全字段另有索引。当前仅静态解析与来源核查，0数学执行。
+
+source-root保持原相对布局：主程序及菜单构造在research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/counterexample_search/；indexed代码和输入在tests/audits/及evidence/certificates/customer_attraction/。这保存原程序寻找ROOT的语义，不保证环境版本或原策略存在。
+
+full2YJclaim确为pushed6c118747ba9220fe04288f1453188db8eb1badf6，rawneeds-attention和独立1untracked/0tracked同字节保全证明分别保存。相关show只读且无额外primarydone。Root数学checkpoint及两源done仍pending，不能把claim的pushed当成正文或done已推送。
