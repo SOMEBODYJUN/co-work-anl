@@ -1,0 +1,7 @@
+# Root交接
+
+commoncoverage5成熟：helper3988 firstprimary integrated，4数学同点输出duplicate，89409B完整原点/程序全部合同。新正文自足四模型严格包含/完整source/main与所有point的真实identity，旧pair/same/signed/positive数据各自准确，不按目标同数借对偶。positive当前新126y和known11权独立1次exact字段核全同；原LP/全tree/κ/SPE/dual0重播。
+
+25ZO pushed60de7e55…rawneedsatt，实际final1u284tracked allsame，initial3tracked恢复全过程+全部13原备份bytes/stash6e6bae kept，勿误用旧3u2数或标synced。Graph25ZO a8d正常闭包齐，helper旧normal/whole同SHA复用，alias063新sourceID正常capture齐。
+
+24ZI/27ZN已actualpushed/done/assetSHA绑定，本5不在旧done。Rootcopy-files精确copy仅archives/cleanup，数学复核/actualcheckpoint后逐本5done，另20不代，旧pairrepair4freeze不改，继续currentavailable自然小组。

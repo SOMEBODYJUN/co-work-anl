@@ -1,0 +1,9 @@
+# 3988发现入口与四输出firstprimary完整处置
+
+89409B全scope：helper priornormal/whole/AST同SHA复用，same_support063整byte别名充分读复用；三新point全部126×3收益/43策略/41+11权逐值实读，四输出504数据/metadata无损重构。25ZO60de7e55…full25pushed/rawneedsatt原样，本5owner/hash/normal齐；仅1integrated helper+4精确数学duplicate输出，不代另20源或relateddone。
+
+正文四投影模型严格包含及原实际维数/约束/失败保存/分项Fraction恢复自足；pair弱点不守恒、same点跨标签线性缺口、signed点单调缺4/45、positive11权真客户198/138均分，fixedJ与OPT的区别明确。pair/same/signed/positive逐全数据同已知点，不以float目标猜alias；24ZI/27ZN实际pushed/done与当前assetSHA同指纹。
+
+本批只1必要新算术核：由于producer独立恢复y与weights不check，它核这份新positive126表是否等于既有11权定义收益，全部相同/exit0/stderr0/源与脚本SHA前后不变。所有126结果、原输入/参考权、脚本与actual执行保存，结果SHA089ac588…；0原LP/import/setup/main/γ/κ/SPE/dual/旧成功重放，不能简称总体0新check。
+
+25ZOfinal独立保全1untracked/284tracked全same/no missing-different-unmerged/stash6e6bae kept；initial3tracked不一致及全部13备份文件/真实恢复报告不省略，rawlocal_sync仍needs-attention。该过程仅operation证据非其它数学源done。Root完整数学复核后copy-files精确copy/实际checkpoint再本5done，继续自然来源。
