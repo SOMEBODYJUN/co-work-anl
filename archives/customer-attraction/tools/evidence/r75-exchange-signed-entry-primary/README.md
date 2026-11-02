@@ -1,0 +1,5 @@
+# R75交换与signed入口的三份冻结原件
+
+三源经clean show全文读取并以冻结size/SHA逐件核原字节。original内分别为general_exchange README、signed_harmonic README和工作室workspace.json；完整双冻结定位见source-manifest.json。
+
+本包没有新solver运行，不把入口自报当成员程序已读或已done。正文分别保跨枝信用停点、最优支持补槽的凹性极点最小化及四族解析预算、原路由资料。后续原程序与报告各由独立认领处置。
