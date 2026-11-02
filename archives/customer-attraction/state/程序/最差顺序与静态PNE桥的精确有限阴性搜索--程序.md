@@ -130,3 +130,7 @@ Random(seed)每轮先k∈{3,4,5}，再n∈{2,3,4,5}名玩家；对每个非空ma
 22XT完整22源claim实际status=pushed，remote_tip `26ab863135a398ab834f336fec5570fb382d9b76`；本两件Boss4/in-progress与原SHA一致。原local_sync=needs-attention保留，独立proof中3untracked/2tracked全same、无missing/different/unmerged、stash保留另存；不伪称synced，也不借上一批2+2替代本次3+2。
 
 本次0原main/assess/static_equilibria/规范import/DP/verify/新数学checker、0网络/Git/共享R写。新增的是完整程序/报告语义和三边界解析说明，不伪造600试验事件或新PNE认证。全部原字节/两normal/完整claim/proof/逐源receipt独立冻结，由Root先数学checkpoint再逐源done。
+
+## 2026-11-02：五人五题保存原图的精确桥反例
+
+[56客户五人完整原图](../反例/五人五题五十六客户的顺序与静态最低福利分离--反例.md)现正式处置Rd28原93093B报告：781个字面历史原动作全部保存，3905含自身比较精确非负；126个静态计数仅一PNE型W56，而原两根SPE计数的最低福利54也由252状态集合递推核同。它严格否定本页搜索所针对的同实例最低SPE不低于最低PNE桥，且half余额52仍正。该桥已有三人反例，此五人原件不主张更早或更小；本页有限阴性报告的旧运行身份不变。
