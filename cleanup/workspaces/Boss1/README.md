@@ -61,3 +61,8 @@ R-fa最后13个available已分别按第四9源与第四4源实际claim；funnel�
 ## 后续十五源：四人漏斗精确证书与d398原审计
 
 前五批74源加pair/prefix23源已分别确认checkpoint pushed、远端字节和done pushed，累计97个不同来源。此次待保存15源：funnel/MILP4、祖先/二元独审4、作者二元/静态4、历史curation/身份3；其完整收据见integration/funnel-and-d398-audit-fifteen-receipts.json。四人八标签固定σ首对安全的8192整数系数恢复只是一项条件定理，不是六人half；原MILP限时浮点点没有精确证据。作者79726含10181self与独审19228含4667self分别保留，改变动作为69545和14561。旧方向/4130路径SHA/1147图节点均不充作本轮数学进度。此15源pushed与done仍待各自实际回执。新的d398 potential7/strict3/insurer4正式认领已pushed f9d66b0e83b1abb0bec0ac299b895aa743cdacf3，实际各线实读推进中，非预占长期任务。
+
+
+## 接续十一源：正深度锥、七输入菜单与联合高背景独审
+
+十五源已确认checkpoint pushed 0c73779e82b8754877f5fde89b349ee46648fb88，66文件远端SHA一致，done pushed d51a0af71779b35bc45169ce4c3d7a636dd0bcb2。不同来源累计112，ID及实际回执见integration/confirmed-112-sources.json。此次待保存11源：parent8的230精确原始/对偶与七输入完整后继/CountCSP/独立K5原件，另独审3的九整系数身份和来源哈希差异。root资源已把人口独审“已读数学正文”与未读作者代码分开，不再冒未读证明的盲审；同期祖先/degree原程序已补齐的入口也已串联。新11源checkpoint/done各待实际回执。指定sol/ultra原worker一度用量失败后已恢复security10；其余本轮未在agents的草稿由三条指定恢复子代理及Boss接续，额外spawn返回agent thread limit reached，不降级或虚称六条活跃。所有原稿仍保留。
