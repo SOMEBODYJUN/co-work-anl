@@ -1,0 +1,7 @@
+# 最优有限核与局部势接口来源包
+
+十份Boss8既有主源全部经clean show导出、全文阅读和SHA-256核对，原字节按冻结路径保留；source-manifest.json含完整来源、blob、size与指纹。comparison/esm_obstruction_review.md是必要比较原文（3599B，SHA f40ba815250640ffc2f4c1b58495b2071dfa3f7d96ab889f8aa3404cb6cef02b），未把它重复认领或done。
+
+正式数学为容量二最优有效价格引理、局部势排除审查及两资源入口。原有限核审计恰一次，23基重启检查exit0，stdout单独保存；没有冻结stdout可作字节重放比较。execution.json明确原argv及范围。ESM代码0导入/LP/随机扫描，原621/1131客户完整策略和独审只按所读原审查记录，0本次全树重跑。
+
+三份workspace元数据无数学结论，不执行旧身份命令；一般恢复入口的六目录导航不代替逐源清洗。不得把有限核代数当已获得真实六人银行。开放/已反状态以精确公式和后续勘误为准，原件不改写。
