@@ -13,7 +13,8 @@ HERE = Path(__file__).resolve().parent
 ROOT = next(p for p in HERE.parents if (p / 'cleanup/inventory.jsonl').is_file())
 OLD = ROOT / 'archives/customer-attraction/tools/evidence/pay-original-implementation-comparison'
 IDS = ['be291aa649fa6bd1377d', '373d0259e7b3ecea0d5e',
-       'ed7db7c28c0bd44b2c9a', '11d8ac688fe00b2073c3', '77eab72e4fed4356a179']
+       'ed7db7c28c0bd44b2c9a', '11d8ac688fe00b2073c3', '77eab72e4fed4356a179',
+       '44a62657484ed4b665b5', 'cbb00c0d7e3ba0af602e']
 inventory = {r['id']: r for r in map(json.loads, (ROOT / 'cleanup/inventory.jsonl').read_text().splitlines())}
 old_manifest = json.loads((OLD / 'source-and-dependency-manifest.json').read_text())
 old_rows = {r['id']: r for r in old_manifest['original_related_sources']['rows']}
@@ -77,10 +78,17 @@ assert report['sharp_big_theme_family_checks'] == 38
 assert report['prefix_balance_family_checks'] == 37
 assert report['monotone_parameter_family_checks'] == 36
 assert report['m5_complete_SPE_histories'] == 781 and report['m5_complete_SPE_deviations'] == 3124
+parent_report = json.loads(data[IDS[6]])
+parent_stdout = json.loads((OLD / 'runs/parent-explicit-path-audit/stdout.txt').read_text())
+assert set(parent_report)-set(parent_stdout) == {'command'}
+assert {k:v for k,v in parent_report.items() if k != 'command'} == parent_stdout
+assert [(c['all_ordered_SPE_paths'],c['optimal_counts'],c['literal_breakpoint_and_DAG_value'])
+        for c in parent_report['cases']] == [(81,15,'0'),(6,3,'-3'),(2,9,'-59/15')]
 result = {'scope':'source identity and full saved structure; no original mathematical CLI rerun',
     'sources':rows,'all_781_history_rows_consumed':True,'histories_exactly_all_ordered_decision_histories':True,
     'all_actions_B':True,'three_JSONL_all_fields_compared_preserving_seconds':True,
     'author_report':report,'m5_prefix_direct_fraction_evaluation':prefix_rows,
+    'parent_report':parent_report,'parent_all_fields_match_saved_stdout_except_additional_command':True,
     'prior_execution_record':'archives/customer-attraction/tools/evidence/pay-original-implementation-comparison/execution-summary.json',
     'original_mathematical_entry_executions_this_batch':0}
 (HERE/'verification.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')

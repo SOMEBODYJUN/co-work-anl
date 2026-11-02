@@ -3,14 +3,16 @@ id: customer-attraction/pay-primary-programs-and-left-jump-certificate-closure
 kind: resource
 type_tag: 资源
 title: PAY全路径原程序与参数左跳证书的来源闭合
-status: 五份冻结来源完整实读；复用同字节既有复现，补全逐源处置和末前缀说明
-summary: 区分全部SPE路径的有限PAY判定、128份完整策略审计、参数左跳的781节点证书；五源与已发表原件逐字节一致，m5末两人前缀仍支付，未否定一般PAY或half。
+status: 五份PAY及两份父审冻结来源完整实读；复用同字节既有复现，补全逐源处置和末前缀说明
+summary: 区分全部SPE路径的有限PAY判定、128份完整策略审计、参数左跳的781节点证书与父审三输入；七源与已发表原件逐字节一致，m5末两人前缀仍支付，未否定一般PAY或half。
 source_refs:
 - source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-7c3db62487a34730a704a4f2eb401556/pay/all_path_pay.py
 - source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-7c3db62487a34730a704a4f2eb401556/pay/all_path_pay_evidence.jsonl
 - source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-7c3db62487a34730a704a4f2eb401556/pay/audit_pay.py
 - source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-7c3db62487a34730a704a4f2eb401556/pay/audit_pay_report.json
 - source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-7c3db62487a34730a704a4f2eb401556/pay/monotone_parameter_m5.json
+- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-7c3db62487a34730a704a4f2eb401556/parent/audit_pay_dag.py
+- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-7c3db62487a34730a704a4f2eb401556/parent/pay_dag_audit.json
 ---
 
 # PAY全路径原程序与参数左跳证书的来源闭合
@@ -27,7 +29,9 @@ source_refs:
 | `11d8ac688fe00b2073c3` | `audit_pay_report.json`，563B | 作者上述固定审计的计数与精确值，保留有限检查不替代解析无界论证的声明。 |
 | `77eab72e4fed4356a179` | `monotone_parameter_m5.json`，92365B | 完整16客户输入、781个不同有序决策历史的行动、终局计数及两个左跳前缀；只反单调参数规则。 |
 
-所有原件、依赖和三次先前成功运行仍用[原完整证据包](../../tools/evidence/pay-original-implementation-comparison/source-and-dependency-manifest.json)。本次新[逐源与结构核对](../../tools/evidence/pay-primary-source-closure/verification.json)保存五源SHA、全动作域核对和下述四前缀的精确算术。本次没有重跑已有同SHA、无新疑点的三次原数学入口；其真实运行时刻、输入、stdout、计时差和未覆盖分支保留于原[运行事件](../../tools/evidence/pay-original-implementation-comparison/execution-summary.json)。
+随后接续实读并正式认领两份父审原件：`44a62657484ed4b665b5` 的 `parent/audit_pay_dag.py`（2897B）与 `cbb00c0d7e3ba0af602e` 的 `parent/pay_dag_audit.json`（596B）。下文单列它们与作者128策略检查的区别。七源均有实际冻结导出；五PAY源先行完成的历史不被后续父审处置改写。
+
+所有原件、依赖和三次先前成功运行仍用[原完整证据包](../../tools/evidence/pay-original-implementation-comparison/source-and-dependency-manifest.json)。本次新[逐源与结构核对](../../tools/evidence/pay-primary-source-closure/verification.json)保存七源SHA、全动作域核对和下述四前缀的精确算术。本次没有重跑已有同SHA、无新疑点的三次原数学入口；其真实运行时刻、输入、stdout、计时差和未覆盖分支保留于原[运行事件](../../tools/evidence/pay-original-implementation-comparison/execution-summary.json)。
 
 ## 有限PAY判定究竟量化什么
 
@@ -73,6 +77,22 @@ G=\min_{0\le t\le4}\sum_{x:d_x>0}
 | 3 | 2 | 10/3 | −46/15 |
 
 原完整树只附p1和p2两行：两处收费都未支付，却有40/13>20/7的最优参数左跳，反驳“等待支付时仅向右移动参数”的规则。本次另明确p3确实支付：在t=10/3时总收费34/3、2E=72/5，差为−46/15。不能把两个正前缀截断成“所有允许前缀都失败”，也不能把此树归为PAY或half反例。
+
+## 父审的全部路径交叉检查
+
+`audit_pay_dag.py`先枚举所有m题有序元组并去重成计数，保留每个真OPT计数；再用规范 `ExactSPESolver.ordered_outcomes()` 枚举全部可实现有序SPE路径。对每条路径直接按实际终局逐人收益累计E，对每个k≥2前缀、每个真OPT计数及全部有理断点/端点算最小收费，最后取全部路径的最大值。它没有调用被审 `charge` 或目标终局的 `visit` 递推，最后才与 `inspect_instance` 的总值比较。
+
+这构成固定输入上直接路径/断点评价与计数DAG的有限交叉检查；两端共享规范 `Instance` 收益模型，路径端也使用既有SPE集合枚举器，故不称完全独立建模实现，更不称枚举每份完整历史策略。
+
+| 原脚本内嵌的完整输入 | m | 全部可实现有序路径 | 真OPT计数 | 直接值与DAG值 |
+|---|---:|---:|---:|---:|
+| 三个空主题、零客户 | 4 | 81 | 15 | 0 |
+| `{0,1,2}`、`{1,3}`、`{2,3,4}` | 3 | 6 | 3 | −3 |
+| `{0,1}`、`{1,2}`、`{0,2,3}` | 4 | 2 | 9 | −59/15 |
+
+零客户输入中的三标签都合法；所有3⁴=81条有序路径可实现，15个计数也都最优，任何收费和收益为零。不能合并三个同覆盖空标签后仍称保留原路径量词，也不能把81误作完整策略数3⁴⁰。另两输入的客户集合按原 `from_topic_sets` 形成共享客户，不把各题的客户独立复制。
+
+原报告有完整命令元数据；既有真实执行stdout没有该额外字段，其余所有字段与原报告相同。本次读到并保留这项格式差异，没有宣称两JSON逐字节一致。原两文件与冻结源本身逐字节相同。其有限阴性范围和“非一般PAY证明”原声明由来源对象完整保留；已经成功的一次原父审入口没有为了完成登记再次运行。
 
 ## 复用边界与关系证据
 
