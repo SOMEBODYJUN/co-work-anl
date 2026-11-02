@@ -1,0 +1,6 @@
+def newrow(a,t=F(1,2)):
+    mb=list(map(int,a['max_bits']));p=sum(mb[:3]);tot=sum(mb)
+    d=sum(a['AB_hist'][4:])
+    v4=F(mb[3],tot) if mb[3] else F(0)
+    v5=F(mb[4],tot) if mb[4] else F(0)
+    return 5*v4+t*v5-F(d,p+1)+max(F(0),F(d,(p+1)*(p+2))-t/F(p+mb[3]+1))
