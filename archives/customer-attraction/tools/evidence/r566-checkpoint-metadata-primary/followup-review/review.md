@@ -1,0 +1,42 @@
+# R5662 checkpoint两源完整实读与去向
+
+建议两源均 `retained`：现有正式资源及原件包已无损保其独有字段；此次不需新建福利命题，也不需昂贵重跑。新增建议只是把历史verification的七个passed分别解释，并明确后继运行不能倒填旧事件。`resource-addendum.md` 可追加于既有资源；父方决定整合、checkpoint和done。
+
+## 实读、身份及本次实际动作
+
+先全文读根AGENTS、cleanup/README、cleanup/OBJECTS、tools/README；再读旧 `cleanup/workspaces/Boss6/continuation-20261101/r566-checkpoint/review.md`、resource-addendum、receipts，现正式资源371行全部及source-manifest。原两源逐段全文实读：manifest877行中的全部174条path/SHA256/bytes及scope、snapshot_commit、note；verification全部7 checks、curation_dependency_check、peer_author_replays和main_target。未以旧摘要代替当前阅读。
+
+|源ID|原件|字节|SHA256|
+|---|---|---:|---|
+|3913485fc9b9d5810df5|checkpoint_manifest.json|42960|492401cc235b536f42400195a3195a4dd9711bc0d3f89ce11eba2c58a1feedec|
+|c6b117b9e8fd491d2d98|checkpoint_verification.json|2027|2b6dd05ab524e7994f80332bef3225db40e89605e2ebf52ae87662d46f250629|
+
+新导出两源与正式 `r566-checkpoint-metadata-primary/original` 逐字节同一；正式source-manifest的id/blob/mode/path/SHA/size/双冻结出处全部与本次manifest相同，preserved_path准确。它们来源均为68fad804ec5946cb296f77dc5b336308a66abf12和aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c。
+
+本次只运行一次新 `verify_checkpoint_metadata.py`，输出 `evidence-check.json`、`manifest-comparison.json`。其功能是原字节身份、174三元组、正式表格和JSON转写、五代码SHA、既有小输出的字面字段比较及一个六项有理和；未import任何研究模块，未执行原CLI/LP/矩阵builder/势或SPE枚举。所有写入仅本目录，clone/Git/work.py/凭据均零动作。尝试委派peer字段只读复核被并发上限拒绝，故本方自行读相关正文，无实际子代理启动。
+
+## manifest每项比较和独有去向
+
+独立从cleanup/inventory.jsonl重建174条比较；全部与正式 `manifest-inventory-comparison.json` 同序同字段。完整每条声明、matching/other ID、双冻结版本见 `manifest-comparison.json`。总17810557B，174路径互异，172有同path/SHA/size、2有同路径另版、零缺路径。正式资源全部174表格行的序号/路径/字节亦全等。
+
+两个另版：FRONTIER旧8086B/SHA228ae0b1edbf4b9f8f2c01aa4884ecb46d7ef1b6305bc1ea97f5a5b911f077ed，对现9820B/source bbe87642e2efce14d63c/SHA6e89b1a05e7def262dae3612a6b5bfee17763a114acb2a7f52d22f48a08f53c7；README旧3221B/SHAd57fc596b071189c7e99c2acde812beafa303f5004b1d975753297c3d4279a37，对现3913B/source2febc458086d3c08984e/SHAe8b0dbe0aa9f95a5836777cf55eacf9edb37fe35a840960c534d9bf57c71e30b。b48a7563106808df5ff95bcc0160a8dd9b864ba1所声明两个旧入口未取回，不以现稿假代。
+
+174条全位于actor工作区，不列manifest自己，也不列工作区外的链接checker或其他actor依赖。清单的用途是内容身份/版本恢复；没有全文读174个成员，没有认定172匹配成员已清洗或数学为真。所有成员各自语义处置仍由其原primary承担。
+
+## verification实质比较
+
+全文读以下正式正文并保条件：指定四菜单补价时序（含后续5692两条不同pending负切面）；冻结前沿条件谱/5112依赖行序账本；极小可信尾首回复前移引理；七极大至多两singleton块定理。另全文读incidence比较原稿和候选τ8/3边界note，用以区分τ-only范围包含与core加法信用。读过“七极大六人含早覆盖私有块”定理，但它不是本报告mixed-singleton文字字段的底层审计，不以之替代。
+
+五个数学入口完整源码实际读取且size/SHA均与本manifest一致：B_menu_prices_master3541B、refine_terminal_portfolio3600B、coupled_latest_master2010B、verify_minimum_reply_commutation2779B、audit_B_menu_actual_prices1592B。它们验证的是保存必要系统点/局部尾或缺失新价，不调用一个通用完整根SPE验收器。原价审计默认old5259，特定输入SHA才断言第六余量等于严格负值；因此其passed不能理解为点可行。另全文读后继 `verify_latest_point.py`，它调用原builder而不调用原master main/verify，并检查全列身份/行长度。
+
+对后继小stdout/summary和README实际比较：5692原入口一次与旧行列/min0相容；5112容量原入口一次与旧5112/min0相容；5277后继builder完整回代与旧5277/2033/min0相容，但事件类型不是原master verify；commutation未改main一次、stdout590B恰等manifest所列原报告SHA，保1024/5/1/5及五份完整尾策略。commutation捕获3610B的全部16终局六收益、五SPE含离轨回复和断言量亦读完。容量运行事件的大inputs列表仅程序读取并选其外层事件字段，不声称本次逐一读完/重验49份依赖内容。
+
+后继证据没有使旧parent replay变为第二矩阵实现、外审或原始运行日志；旧JSON自身未记录完整时间/环境/输出哈希。5692现已通过指定28价仍被后续不同合法pending切面严格分离，5112存在字面overlap实现缺口，5277漏普通Y末价；这些不撤销相应已列行的精确通过，也不构造原模型坏SPE。新补稿列齐七项及curation/peer责任，详见resource-addendum。
+
+peer两轨3904列的准确量词由七极大至多两个singleton块定理解释；本次未取/运行底层singleton审计，不冒称新3904验证。`all seven omitted labels passed`仍是历史文字字段，其底层运行未复放，保mixed条件。incidence的精确端点仅重算六项和，差half为256689569/2012347307572；不以此证明动态预算接口或一般half。502链接与git diff检查仅历史封包/编辑声明，不补其缺失执行绑定。
+
+## 独有内容去向与关系判断
+
+manifest全部174SHA/bytes/snapshot/note由既有原件、正式资源全表及逐项comparison完整保；verification所有7项、curation方法和peer原文字段、OPEN由正式资源JSON及原件完整保。`receipts.json`给两条retained建议，列实际阅读/对比与明确目标，不假称目标已由本方推送。父方可复用现targets，也可将本新metadata比较作为补充evidence，勿替代原源件。
+
+本增补仅保来源/版本、实现和有限检查关系；不建立174清单→数学完备、passed→全目录SPE或后继事件→旧事件的假推导。已有资源关系解释充分，无需在第二阶段新造图边。

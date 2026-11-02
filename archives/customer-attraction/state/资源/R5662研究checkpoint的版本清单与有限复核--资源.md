@@ -369,3 +369,29 @@ source_refs:
 这些报告的小量算式也相容：C(23,6)=100947，十八分量argmax和为6，六实际收益之和W=1，最大势减W+C为0；十八倒二support slack恰5正、6零、7负。潜势整数上界8338358321338500恰为单位客户数56723525995500乘60H6=147，低于有符号int64上界。这是转写与标量相容性复核，没有重新运行历史入口、遍历全部势多重集、重构矩阵或给完整SPE认证。
 
 本轮逐项复核的[完整结果](../../tools/evidence/r566-checkpoint-metadata-primary/review-20261101/verification.json)与[复核入口](../../tools/evidence/r566-checkpoint-metadata-primary/review-20261101/verify_metadata.py)保留来源/转写/标量检查；它们不执行原数学研究入口。
+
+## 174项版本身份与七项历史检查的后继证据
+
+checkpoint_manifest.json 的全部174条(path,SHA256,bytes)已重新从冻结 inventory 独立比较，仍为172同版、FRONTIER/README两条另版、零缺路径；结果与本页既有逐项比较完全相同。174条路径全部处于R-5662工作区内，故清单不是完整仓库依赖清单。特别，verification列出的 `research/check_active_research.py` 在工作区外，其他研究者的原模块也不会因本actor清单而获得版本封包认证。manifest的 `snapshot_commit` 和 `note` 是所列文件的版本定位，不能补出未记录的旧运行时点、完整argv或依赖加载记录。
+
+下表逐条解释历史 `passed`，并将现有后继证据与旧报告区分。五个数学入口的现保存源码均已逐字节核为manifest所列版本；本次只读取源码、既有输出和执行记录，没有再次运行这些入口。
+
+|历史check|历史字段与准确含义|现保存的后继对应及边界|
+|---|---|---|
+|`research_2/B_menu_prices_master.py --all-families --verify`|5692行、4849列、minimum_slack=0、passed=true；固定16hist必要系统的保存点回代。|[四菜单证据](../../tools/evidence/b-family-menu-prices-boss3/README.md)保一次同SHA原入口、exit0、5692/4849/min0；是原row builder回代，另有独立28新价/列合同检查，非全矩阵第二实现。|
+|`research_3/refine_terminal_portfolio.py --capacity --verify`|5112行、minimum_slack=0、passed=true；不是5692或5277点。|[容量证据](../../tools/evidence/terminal-capacity-refinement-boss3/README.md)保一次同SHA原入口，stdout记base5083+29=5112/min0；独立29行/1905列比较另有范围，无需重跑。|
+|`research_5/coupled_latest_master.py --verify`|5277行、2033列、minimum_slack=0、passed=true、known_later_cuts=true。|[5277证据](../../tools/evidence/coupled-latest-menu-check-boss3/README.md)保后继原builder完整回代及接口核；该后继事件明确没有调用原master的main/verify，不能倒填为旧命令的原始运行日志。它还给普通Y末价负值，原已列行通过与遗漏合法行严格分离可同时成立。|
+|`research_4/verify_minimum_reply_commutation.py`|1024份完整两人尾策略、5份尾SPE、strict_gap=1/5、passed=true。|[局部枚举证据](../../tools/evidence/minimum-reply-commutation-program/README.md)保一次同SHA未改原main及590B stdout；stdout与manifest所列原报告同SHA。实例是15客户、四主题、固定(0,1,1,3)前缀后的两人尾，不是六人根完整SPE。|
+|`research_1/audit_B_menu_actual_prices.py`|passed=true；scope为严格分离保存的old5259必要点。|同SHA源码默认读 `coupled_B_master_exact.json`，输入SHA `6269be5cbcd61d397c33e19ce2ac31ace3f73aeec22c978426d8f3b30b0fada7` 时断言第六价余量为负。这里的passed是成功发现遗漏真价，不是所有价格可行，更不能把该负值移给后来重排的5692点。|
+|`research/check_active_research.py`|502条链接、passed=true。|保为历史链接检查声明；该JSON没有其当时源码/命令环境/输出绑定，不能据502推数学正确或依赖完整。|
+|`git diff --check`|passed=true。|保为历史编辑检查声明；它检查diff格式，不证明定理、输入可行性、完整SPE或全仓清洗完成。|
+
+`curation_dependency_check` 的method明确是把原已跟踪的actor文件与所选路径复制到独立目录，**其他actor仍使用原来既有来源**；其5692行passed只检查这次所选own-file整理没有打断该入口依赖，不表示所有仓库依赖均独立打包，也不独立重构系数。现后继封包有自己的物化清单与运行事件，不能回填为当年该次复制的日志。
+
+`peer_author_replays` 三组字段也保各自量词：七极大至多两个singleton-block的两轨各3904列，余项分别34955/3308688和30253/9473184，是该结构子类的有理证书；`mixed_singleton_constants = all seven omitted labels passed` 只是该原报告对条件常数检查的文字声明，不取消mixed-singleton条件；incidence端点1006430343355/2012347307572是六项和在τ=149/50处的数值。标量重算确有
+
+$$\sum_{r=1}^{6}\frac1{6+(149/50-1)r}=\frac{1006430343355}{2012347307572}>\frac12,$$
+
+与报告相符，但这个算式不证明相应动态预算接口。既有分数覆盖预算已包含其τ-only半覆盖范围，带共同核的加法式另保原条件，不能从一个端点数推出任意目录结论。peer字段没有在本次重新运行底层审计。
+
+这些后继核对补充的是版本和责任边界。原verification全部字段已在本页完整转写，`main_target = OPEN; no complete SPE counterexample` 保持原义；不从现封包、同SHA源码、同数值输出或局部有限证书合成一般六人half证明。
