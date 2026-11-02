@@ -1,0 +1,44 @@
+{
+  "provenance": "Transcribed from the internal read-only reviewer's actual tool-event report; not rerun to create this file.",
+  "cwd": "/workspace/scratch/b197e2376a82/co-work-anl-boss7",
+  "mathematical_script_events": 2,
+  "other_shell_events": "Three cat-only reading calls, no mathematical execution",
+  "original_main": 0,
+  "original_functions": 0,
+  "MILP": 0,
+  "LP": 0,
+  "git_operations": 0,
+  "limitations": [
+    "No timestamp or historical script SHA was captured; none is invented here.",
+    "Tool outputs were combined output, not separately identified stdout and stderr files.",
+    "Event one prints an analytic all-IC conclusion; it does not iterate 1554 payoff comparisons.",
+    "Event two computes the decoded-binary p sum and analytic expression only; it does not separately traverse Q or IC."
+  ],
+  "events": [
+    {
+      "command": "python3 - <<'PY'\nimport json\nfrom fractions import Fraction as F\nfrom itertools import product,combinations_with_replacement\nfrom pathlib import Path\np=Path('archives/customer-attraction/tools/evidence/joint-pair-policy-cone/related')\na=json.loads((p/'joint_0123_all.json').read_text(),parse_float=F)\nb=json.loads((p/'joint_0123_all_strip.json').read_text(),parse_float=F)\nk,n=a['k'],a['n'];full={tuple(x['history']):x['action'] for x in a['full_policy']};cp={tuple(x['counts']):x['action'] for x in a['count_policy']}\nhs=[h for d in range(n) for h in product(range(k),repeat=d)]\ncn=[tuple(z.count(i) for i in range(k)) for d in range(n) for z in combinations_with_replacement(range(k),d)]\nassert len(full)==len(a['full_policy'])==len(hs)==259 and set(full)==set(hs)\nassert len(cp)==len(a['count_policy'])==len(cn)==84 and set(cp)==set(cn)\nassert all(full[h]==cp[tuple(h.count(i) for i in range(k))] and 0<=full[h]<k for h in hs)\nh=()\nwhile len(h)<n:h=h+(full[h],)\nassert list(h)==a['path']\nassert [h.count(i) for i in range(k)]==a['actual_root_counts']\nassert len(a['weights'])==63 and all(x==0 for x in a['weights'][:-1])\nlam=a['weights'][-1];S=sum(a['p']);T=sum(a['Q'])\nprint(json.dumps({'field_counts':[len(a),len(b)],'all_normal_fields':list(a),'path':h,'count_nodes':len(cp),'ordered_nodes':len(full),'universal_mass':str(lam),'mass_defect':str(lam-1),'p_defect':str(S-1),'Q_defect':str(T-1),'analytic_all_IC':'0 (all 1554 comparisons)','formal_D':str(lam/2-lam*S+lam*T/2),'formal_D_float':float(lam/2-lam*S+lam*T/2),'same_common_fields':all(a[x]==b[x] for x in ['k','n','path','p','Q','tail_rivals','variables','binaries','rows'])}))\nPY",
+      "output": "{\"field_counts\": [19, 14], \"all_normal_fields\": [\"status\", \"k\", \"n\", \"path\", \"p\", \"Q\", \"tail_rivals\", \"seconds\", \"milp_status\", \"message\", \"objective\", \"variables\", \"binaries\", \"rows\", \"weights\", \"count_policy\", \"floating_min_full_Gamma\", \"full_policy\", \"actual_root_counts\"], \"path\": [0, 1, 2, 3], \"count_nodes\": 84, \"ordered_nodes\": 259, \"universal_mass\": \"9999999999999599/10000000000000000\", \"mass_defect\": \"-401/10000000000000000\", \"p_defect\": \"-1/25000000000000000\", \"Q_defect\": \"-1/25000000000000000\", \"analytic_all_IC\": \"0 (all 1554 comparisons)\", \"formal_D\": \"9999999999999599/500000000000000000000000000000000\", \"formal_D_float\": 1.9999999999999197e-17, \"same_common_fields\": true}\n",
+      "exit_code": 0,
+      "tool_wall_time_seconds": 3.7005e-05
+    },
+    {
+      "command": "python3 - <<'PY'\nfrom pathlib import Path\nimport json\nfrom fractions import Fraction as F\np=Path('archives/customer-attraction/tools/evidence/joint-pair-policy-cone/related/joint_0123_all.json')\nd=json.loads(p.read_text(),parse_float=lambda s:F(float(s)))\nl=d['weights'][-1];s=sum(d['p']);z=l*(1-s)/2\nprint('binary64_lambda',l)\nprint('binary64_mass_minus1',l-1)\nprint('binary64_p_Q_minus1',s-1)\nprint('binary64_formal_D',z)\nprint('binary64_formal_D_float',float(z))\nPY",
+      "output": "binary64_lambda 9007199254740631/9007199254740992\nbinary64_mass_minus1 -361/9007199254740992\nbinary64_p_Q_minus1 -1/18014398509481984\nbinary64_formal_D 9007199254740631/324518553658426726783156020576256\nbinary64_formal_D_float 2.77555756156278e-17\n",
+      "exit_code": 0,
+      "tool_wall_time_seconds": 0.3
+    }
+  ],
+  "review_conclusion": "0123 has nonnegative universal mass and exact zero IC in the original label game; unlike 0012 it has no negative masses or negative IC. It violates the current search mass equality and universal-zero bound, and raw p/Q are not unit distributions. Its negative saved objective is not a strict PAIR counterexample. Strip timeout without incumbent is not infeasibility.",
+  "postdelivery_read_only_review": {
+    "files_read": [
+      "new computation body",
+      "README.md",
+      "audit_0123.py",
+      "exact/exact-audit.json",
+      "independent-review.json",
+      "existing alias descent and quotient bodies"
+    ],
+    "mathematical_runs": 0,
+    "conclusion": "Mathematics, quantifiers, special universal-coverage descent and two earlier short-event transcripts checked. Corrected body wording to objective exists with value null. Generated audit status remains its original wording; exact fields and body explicitly state both search constraints fail."
+  }
+}
