@@ -66,3 +66,8 @@ R-fa最后13个available已分别按第四9源与第四4源实际claim；funnel�
 ## 接续十一源：正深度锥、七输入菜单与联合高背景独审
 
 十五源已确认checkpoint pushed 0c73779e82b8754877f5fde89b349ee46648fb88，66文件远端SHA一致，done pushed d51a0af71779b35bc45169ce4c3d7a636dd0bcb2。不同来源累计112，ID及实际回执见integration/confirmed-112-sources.json。此次待保存11源：parent8的230精确原始/对偶与七输入完整后继/CountCSP/独立K5原件，另独审3的九整系数身份和来源哈希差异。root资源已把人口独审“已读数学正文”与未读作者代码分开，不再冒未读证明的盲审；同期祖先/degree原程序已补齐的入口也已串联。新11源checkpoint/done各待实际回执。指定sol/ultra原worker一度用量失败后已恢复security10；其余本轮未在agents的草稿由三条指定恢复子代理及Boss接续，额外spawn返回agent thread limit reached，不降级或虚称六条活跃。所有原稿仍保留。
+
+
+## 接续二十源：人口全量词、势交换与严格尾菜单
+
+前11源已确认checkpoint pushed56e72afb66ff60ab293e71403cafbfe0848c9e2f，39文件远端SHA一致，done pushed f09700da2c4c384329f235351924f602579a6560。本轮累计123个不同来源，见integration/confirmed-123-sources.json。新20源=security10+potential7+strict独审3，三组互链一次联合保存；全部独有域/来源/读序/整数与实域/静态及真实尾域/后续纠错已写。强制过去根不自动获当前最优地板，Mtail与Mfull分开；原JSON成功/旧OPEN保为历史，不假造本批新原入口。两份原始势作者报告只保冻结成功，strict标量原入口一次成功、未重跑大树，source10=0数学入口。20源仍待实际checkpoint/done各自回执。余下保险作者4/独审4、七入口/三锥、compiler补充5及四冻结cert/交换4均按已正式claim或实际任务接续，不占后续大范围。
