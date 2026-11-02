@@ -38,7 +38,7 @@ def coefficients(past, last_past, bits):
 
 
 def main():
-    report = json.loads((ROOT/'original'/'chain_L3_exact.json').read_text())
+    report = json.loads((ROOT/'original'/'full_history_chain'/'chain_L3_exact.json').read_text())
     assert report['L'] == 3
     assert report['lambda'] == ['1','3','2']
     assert report['eta'] == ['4','1']
