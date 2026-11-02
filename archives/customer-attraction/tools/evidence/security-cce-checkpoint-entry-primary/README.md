@@ -1,0 +1,7 @@
+# 安全聚合工作区的CCE交付入口原件
+
+本包保留security_aggregate/README.md、同目录claim.json和上层workspace.json三个冻结源版本的原始字节；完整路径、双冻结提交、SHA及源ID见source-manifest.json。全部通过clean show取得并全文读取。
+
+README为历史交付路由，claim是待正式入库的有限结论登记，workspace仅为旧角色绑定。三者均不是可执行核验程序；本次没有运行数学求解、发现器、审计或LP。准确数学和旧有理执行见正式反例与资源页；本包不复制发现程序或把历史review标签当作新的独立审查。
+
+原文件完整保留，不改其中相对链接。那些链接按旧源工作区解释，不能相对于本包original目录点击并假定已恢复全部上下文。正式资源页提供当前有效对象链接。
