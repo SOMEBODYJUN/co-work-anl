@@ -395,3 +395,5 @@ $$\sum_{r=1}^{6}\frac1{6+(149/50-1)r}=\frac{1006430343355}{2012347307572}>\frac1
 与报告相符，但这个算式不证明相应动态预算接口。既有分数覆盖预算已包含其τ-only半覆盖范围，带共同核的加法式另保原条件，不能从一个端点数推出任意目录结论。peer字段没有在本次重新运行底层审计。
 
 这些后继核对补充的是版本和责任边界。原verification全部字段已在本页完整转写，`main_target = OPEN; no complete SPE counterexample` 保持原义；不从现封包、同SHA源码、同数值输出或局部有限证书合成一般六人half证明。
+
+恢复既有认领时再次从冻结源导出两份元数据，逐字节核对保存原件，并重建174条版本比较及本页完整转写；[可复现检查](../../tools/evidence/r566-checkpoint-metadata-primary/resumption-check/verify.py)与[结果](../../tools/evidence/r566-checkpoint-metadata-primary/resumption-check/report.json)保留这次事件。其范围仍只到版本、表格和原报告字段，没有重跑174个成员、七项历史检查或完整SPE计算。
