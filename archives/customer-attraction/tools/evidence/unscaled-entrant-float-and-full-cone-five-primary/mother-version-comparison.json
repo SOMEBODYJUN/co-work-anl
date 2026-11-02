@@ -1,0 +1,73 @@
+{
+  "source_metadata": {
+    "blob": "b77fe06aef6b72b6012dee974c1eeadc104936d4",
+    "id": "34e929b882eeff66aff7",
+    "mode": "100644",
+    "path": "research/workspaces/customer-attraction/R-d7f409d6a5914bdeb09875ab32618466/exact_credit_probe.py",
+    "sha256": "00d51fb2be9f7269c4fdb647340bce25d913fdd78a4dd04391a5002c489b3425",
+    "size": 5175,
+    "sources": [
+      {
+        "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+        "name": "legacy-cleanup",
+        "path": "research/workspaces/customer-attraction/R-d7f409d6a5914bdeb09875ab32618466/exact_credit_probe.py"
+      },
+      {
+        "commit": "aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c",
+        "name": "main",
+        "path": "research/workspaces/customer-attraction/R-d7f409d6a5914bdeb09875ab32618466/exact_credit_probe.py"
+      }
+    ]
+  },
+  "related_repository_path": "archives/customer-attraction/tools/evidence/unscaled-entrant-float-and-full-cone-five-primary/related-original/research/workspaces/customer-attraction/R-d7f409d6a5914bdeb09875ab32618466/exact_credit_probe.py",
+  "full_file_read": true,
+  "related_only_no_additional_done": true,
+  "transformations": [
+    [
+      "\"\"\"Probe m M <= W+G_C on exact full strategy cones; no universal conclusion.",
+      "\"\"\"Probe alpha=1 entrant m M <= W+G_C on exact full strategy cones; no universal conclusion."
+    ],
+    [
+      "Path(__file__).resolve().parents[4]",
+      "Path(__file__).resolve().parents[5]"
+    ],
+    [
+      "1+F(m-1,m)*c",
+      "1+c"
+    ]
+  ],
+  "these_transformations_produce_exact_new_source_bytes": true,
+  "all_other_code_including_total_mass_normalization_and_guards_unchanged": true,
+  "unified_diff": [
+    "--- research/workspaces/customer-attraction/R-d7f409d6a5914bdeb09875ab32618466/exact_credit_probe.py",
+    "+++ research/workspaces/customer-attraction/R-fa8dd4ddea574a74a634ebc71e6f9ccb/global_proof/entrant_cone_probe.py",
+    "@@ -1,4 +1,4 @@",
+    "-\"\"\"Probe m M <= W+G_C on exact full strategy cones; no universal conclusion.",
+    "+\"\"\"Probe alpha=1 entrant m M <= W+G_C on exact full strategy cones; no universal conclusion.",
+    " ",
+    " The seed selects legal integer customer instances, exact set-valued BI chooses",
+    " a complete SPE, and floating LP only discovers new weights in that fixed cone.",
+    "@@ -13,7 +13,7 @@",
+    " import random",
+    " import sys",
+    " ",
+    "-ROOT = Path(__file__).resolve().parents[4]",
+    "+ROOT = Path(__file__).resolve().parents[5]",
+    " sys.path.insert(0, str(ROOT))",
+    " import numpy as np",
+    " from scipy.optimize import linprog",
+    "@@ -41,8 +41,8 @@",
+    "     loads = tuple(sum(actual.count(j) for j in range(p) if s & (1 << j)) for s in masks)",
+    "     goals = []",
+    "     for a in range(p):",
+    "-        goals.append(tuple(m*F(int(bool(s & (1 << a))), 1+F(m-1,m)*c)",
+    "-                           -int(c>0)-(F(1,1+F(m-1,m)*c) if c else 0)",
+    "+        goals.append(tuple(m*F(int(bool(s & (1 << a))), 1+c)",
+    "+                           -int(c>0)-(F(1,1+c) if c else 0)",
+    "                            for s,c in zip(masks,loads)))",
+    "     return masks, rows, goals, actual",
+    " "
+  ],
+  "source_imports_or_runs": 0,
+  "exact_bytes_transformation_separately_asserted": true
+}
