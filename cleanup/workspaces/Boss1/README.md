@@ -71,3 +71,8 @@ R-fa最后13个available已分别按第四9源与第四4源实际claim；funnel�
 ## 接续二十源：人口全量词、势交换与严格尾菜单
 
 前11源已确认checkpoint pushed56e72afb66ff60ab293e71403cafbfe0848c9e2f，39文件远端SHA一致，done pushed f09700da2c4c384329f235351924f602579a6560。本轮累计123个不同来源，见integration/confirmed-123-sources.json。新20源=security10+potential7+strict独审3，三组互链一次联合保存；全部独有域/来源/读序/整数与实域/静态及真实尾域/后续纠错已写。强制过去根不自动获当前最优地板，Mtail与Mfull分开；原JSON成功/旧OPEN保为历史，不假造本批新原入口。两份原始势作者报告只保冻结成功，strict标量原入口一次成功、未重跑大树，source10=0数学入口。20源仍待实际checkpoint/done各自回执。余下保险作者4/独审4、七入口/三锥、compiler补充5及四冻结cert/交换4均按已正式claim或实际任务接续，不占后续大范围。
+
+
+## 接续二十四源：三锥、保险双实现与冻结证书
+
+20源已确认checkpoint pushed5d348caa94f7e49c70c12b00ce86a85c6fb55b62、50文件SHA同，done pushed38d7aa97515b29cd2a2b16d4774079cbcf6d684a；累计143个不同来源，见integration/confirmed-143-sources.json。下一24源=independent入口/三锥7+作者PY/报告4+冻结完整证书4+独立blind/sharp4+compiler补充5。四冻结证书1178612B与同次原入口生成证书逐字相同，复用唯一gzip并保存完整DAG读取/还原，不新增116068树比较。两段作者/独审输入及运行分别保留，旧812报告同字节只记重复来源；原三锥0/微正float目标不是PAIR证明。本24源待checkpoint/done各自真实回执。另22源由五条实际可运行指定配置子代理承担不同对象，claim16ac189b2ba4e94eb5e0190e7f0fb04b12f9e708已pushed/synced，原件逐项导出中。一条旧nested线程exec不可用已停止，未让其占正式认领。
