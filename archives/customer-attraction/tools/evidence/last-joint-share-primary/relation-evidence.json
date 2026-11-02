@@ -1,0 +1,164 @@
+{
+  "status": "substantive-reviewed-relation-evidence; not-formal-graph",
+  "objects": [
+    {
+      "id": "customer-attraction/credible-menu-and-joint-tree-payoff-share-search",
+      "path": "archives/customer-attraction/state/程序/非极小可信菜单与联合树的收益份额搜索--程序.md"
+    },
+    {
+      "id": "customer-attraction/repeated-root-single-last-topic-one-row-share-certificate",
+      "path": "archives/customer-attraction/state/引理/重复根主题与一次末题的单行份额证书--引理.md"
+    },
+    {
+      "id": "customer-attraction/five-share-scans-and-four-joint-tree-saved-points",
+      "path": "archives/customer-attraction/state/计算/五份份额扫描与四个联合树保存点--计算.md"
+    }
+  ],
+  "relations": [
+    {
+      "id": "share-search-full-model-joint-contract",
+      "type": "implementation",
+      "sources": [
+        {
+          "id": "customer-attraction/full-history-pure-spe-outcome-recursion",
+          "role": "exact complete outcome sets R and current payoff floor"
+        },
+        {
+          "id": "customer-attraction/credible-continuation-menu",
+          "role": "all child outcomes satisfying deviation-payoff<=actual-payoff; independent ordered child subtrees"
+        },
+        {
+          "id": "customer-attraction/full-strategy-multiplicity-cone",
+          "role": "all true-history IC linear rows and homogeneous clone scaling"
+        }
+      ],
+      "targets": [
+        "customer-attraction/credible-menu-and-joint-tree-payoff-share-search"
+      ],
+      "premises": "finite labeled common directory, unit players, equal sharing, every ordered history and all ties; positive-welfare normalization only for share LP",
+      "explanation": "Exact outcome feasibility selects a queried-position path; safe non-minimal menus expand a complete policy; its full IC cone is then optimized. These are separate interfaces and do not make finite sampling exhaustive or supply a universal payoff cap.",
+      "evidence": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-7e9f44beea424d469713364afe7dd180/credible_counterexample/last_share_probe.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-7e9f44beea424d469713364afe7dd180/credible_counterexample/last_share_probe.py",
+        "archives/customer-attraction/state/程序/非极小可信菜单与联合树的收益份额搜索--程序.md"
+      ]
+    },
+    {
+      "id": "one-root-conditional-coefficient-certificate",
+      "type": "conditional-derivation",
+      "sources": [
+        {
+          "path": "archives/customer-attraction/state/引理/重复根主题与一次末题的单行份额证书--引理.md#承重假设和结论",
+          "role": "same literal sigma actual A^(m-1)B and its forced-root-B true leaf A^(m-2)B^2"
+        },
+        {
+          "id": "customer-attraction/full-strategy-multiplicity-cone",
+          "role": "root true-deviation IC is a row in the fixed complete policy cone"
+        }
+      ],
+      "targets": [
+        "customer-attraction/repeated-root-single-last-topic-one-row-share-certificate"
+      ],
+      "premises": "m>=2 for last B; m>=3 for all actual players; nonnegative unit-customer masses, zero welfare retained",
+      "explanation": "Partition by A-only x, B-only y and intersection z. Root gamma=x/(m-1)-y/2>=0 and betaW-uB=2(m-1)/(m+1)*gamma+(m-1)/(m(m+1))*z. Other A players use nonnegativity for m>=3. This is a single conditional exact coefficient identity; no general C2 claim.",
+      "evidence": [
+        "archives/customer-attraction/state/引理/重复根主题与一次末题的单行份额证书--引理.md#单行恒等式证明",
+        "archives/customer-attraction/tools/evidence/last-joint-share-primary/fixed-points-audit.json"
+      ]
+    },
+    {
+      "id": "five-fixed-policy-sharpness-joint-evidence",
+      "type": "joint-upper-and-attainment",
+      "sources": [
+        {
+          "id": "customer-attraction/repeated-root-single-last-topic-one-row-share-certificate",
+          "role": "exact upper bound over each same-policy nonnegative multiplicity cone"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/五份份额扫描与四个联合树保存点--计算.md#本轮一次固定输入整数核验",
+          "role": "all-node IC for each saved full sigma and equality customer point; not only two supports"
+        }
+      ],
+      "targets": [
+        "archives/customer-attraction/state/引理/重复根主题与一次末题的单行份额证书--引理.md#五份保存策略的实际匹配和锐性"
+      ],
+      "premises": "the five saved ordinary/compiled sigma maps, all in current labeled model, each satisfying true two-leaf count assumptions",
+      "explanation": "Full IC makes each supplied equality point a genuine SPE; gamma=0 and zero overlap give last and maximum-player share beta. Upper plus attained primal certifies each of these five fixed cones. The reported2648 historical cone counts are not covered and MIP policies are not assigned this hypothesis.",
+      "evidence": [
+        "archives/customer-attraction/state/引理/重复根主题与一次末题的单行份额证书--引理.md",
+        "archives/customer-attraction/state/计算/五份份额扫描与四个联合树保存点--计算.md",
+        "archives/customer-attraction/tools/evidence/last-joint-share-primary/fixed-points-audit.json"
+      ]
+    },
+    {
+      "id": "share-saved-point-fixed-integer-audit",
+      "type": "finite-exact-check",
+      "sources": [
+        {
+          "path": "archives/customer-attraction/tools/evidence/last-joint-share-primary/original/",
+          "role": "all nine optimized customer/policy pairs and five supplied source vectors"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/last-joint-share-primary/audit_saved_share_points.py",
+          "role": "new standard-library full-history integer arithmetic; no original imports"
+        }
+      ],
+      "targets": [
+        "customer-attraction/five-share-scans-and-four-joint-tree-saved-points"
+      ],
+      "premises": "only these saved literal labeled policies and integer inputs; per-input LCM scaling",
+      "explanation": "One actual invocation checked6506 histories and38060 nonself comparisons across9 saved points plus5 supplied seeds, target/path/payoffs/W/OPT/value. This is not a solver sweep, original optimization replay, source-menu-mode audit, external review or global dual verification for joint points.",
+      "evidence": [
+        "archives/customer-attraction/tools/evidence/last-joint-share-primary/fixed-points-audit.json",
+        "archives/customer-attraction/tools/evidence/last-joint-share-primary/exact-ic-data.json",
+        "archives/customer-attraction/state/计算/五份份额扫描与四个联合树保存点--计算.md"
+      ]
+    },
+    {
+      "id": "joint-012-original-policy-corroborates-cap-counterexample",
+      "type": "construction-source-and-exact-corroboration",
+      "sources": [
+        {
+          "id": "customer-attraction/credible-menu-and-joint-tree-payoff-share-search",
+          "role": "joint MILP only proposes complete sigma; same fixed-cone rational acceptance"
+        },
+        {
+          "id": "customer-attraction/five-share-scans-and-four-joint-tree-saved-points",
+          "role": "joint012 preserves23-customer non-Markov sigma with91strict/33tie, W23 and last12"
+        }
+      ],
+      "targets": [
+        "customer-attraction/twenty-three-unit-full-spe-payoff-cap-and-ratio-counterexample"
+      ],
+      "premises": "finite three-player five-label23-unit input, all31 ordered histories, true successors and ties; the Markov and joint sigma remain different maps",
+      "explanation": "The exact joint point has46<48 and12>10, so it corroborates the already known CAP and pairwise-2 failures using the newly read actual joint sigma. Status1/time limit is discovery metadata, not an upper proof. No half failure or claim of byte identity with an unread separate JSON is inferred.",
+      "evidence": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-7e9f44beea424d469713364afe7dd180/credible_counterexample/joint_share_m3p5.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-7e9f44beea424d469713364afe7dd180/credible_counterexample/joint_share_m3p5.json",
+        "archives/customer-attraction/state/计算/五份份额扫描与四个联合树保存点--计算.md#23客户原MILP策略与现行Markov证明的精确关系"
+      ]
+    }
+  ],
+  "not_added_relations": [
+    {
+      "target": "general CAP from finite ordinary negative scans",
+      "reason": "joint23 point already refutes the target; finite reported bests cannot prove a universal upper bound"
+    },
+    {
+      "target": "five-player or six-player half from share bounds",
+      "reason": "all nine saved examples have W=OPT and fixed-policy coefficient assumptions do not cover all policies"
+    },
+    {
+      "target": "joint fixed-path/global optimality from status/gap or scalar beta",
+      "reason": "no exact MIP upper certificate or stored lambda support; this batch does not rerun optimizers"
+    },
+    {
+      "target": "2648 historical cone counts as new/all individually verified models",
+      "reason": "no per-count action maps and m5 is an interrupted stale improvement snapshot"
+    },
+    {
+      "target": "other related primary source completion",
+      "reason": "fixed_path_goal/pair_probe/root README and imported helpers only related-read here"
+    }
+  ]
+}
