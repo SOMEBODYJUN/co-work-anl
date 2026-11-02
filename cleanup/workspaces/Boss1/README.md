@@ -28,3 +28,11 @@
 ## 交流与状态
 
 可以通过同一 work.py 私聊这个发布身份；其他人可访问已推送材料。本地草稿只有完成 checkpoint 并确认 pushed 后才对其他 clone 可见。
+
+## 维护后接续与当前真实状态
+
+已恢复本Boss1原实例并再次验证实际写端点。维护清除了未推送clone及六组35源交付；不能称旧运行日志仍存在。七源已在远端分别确认数学pushed与done：数学提交db45e0d59ad0c74cec13cc72e48f01de4622cbc5、最终pushed_head f0c2eaa8b9e6b0a65e0207d84a5b385cc5d2cbd4，done远端0d5ea35ac6396aff7c1b84667c9588826524758e；当前七progress已核。
+
+旧35源仍Boss1 in-progress，六名指定gpt-6.1-sol/ultra完整清洗者正恢复全文/证据，所有新运行另记真实事件；未提前done。另父方实际claim三份反组首对支付来源303de4963170495c0f37、51cfec34ebc84f5f9e65、f94dfe4e482371c9547b，claim pushed7fc28e901c42660a422832c7354bc33f15174d9e；该三源正文/证据先保存，随后done独立确认。候选ee6e50cf9c73aaf47a15被Boss7有效占用，领取失败未形成Boss1占用，未代done。
+
+当前先保存已齐的小批证明、原件和新日志；保存并不代表35源完成。Git/work.py mutation全部由父方串行，凭据只在仓库外认证。收尾前仍执行clean handoff --all并准确说明草稿及共享状态。
