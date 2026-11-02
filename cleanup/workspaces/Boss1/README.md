@@ -36,3 +36,11 @@
 旧35源仍Boss1 in-progress，六名指定gpt-6.1-sol/ultra完整清洗者正恢复全文/证据，所有新运行另记真实事件；未提前done。另父方实际claim三份反组首对支付来源303de4963170495c0f37、51cfec34ebc84f5f9e65、f94dfe4e482371c9547b，claim pushed7fc28e901c42660a422832c7354bc33f15174d9e；该三源正文/证据先保存，随后done独立确认。候选ee6e50cf9c73aaf47a15被Boss7有效占用，领取失败未形成Boss1占用，未代done。
 
 当前先保存已齐的小批证明、原件和新日志；保存并不代表35源完成。Git/work.py mutation全部由父方串行，凭据只在仓库外认证。收尾前仍执行clean handoff --all并准确说明草稿及共享状态。
+
+## 2026-11-02 本次恢复核对
+
+本次独立clone已明确resume Boss1，登记与receive-pack实际写端点验证通过。反组六标签原三源恢复正文先checkpoint pushed（数学7727d4a59bc4468c9c492bfcf04b5e8c4abc1d4a，pushed_head368052417295fa89895f20f13dfc1bffe1542b61，11路径字节同），再逐源done pushed 0c32dace4997ffe65bb74c40fe6d9b0903cc08f1。不是仅凭正文存在视为done。
+
+旧R6cfe 35源与新16客户root独审3源已父方全文审阅并整合，待本次显式checkpoint/done各自回执。收据为integration/restored-r6cfe-35-and-root-review-3-receipts.json；不能仅据本页推断这38已done。另24实际接续来源已claim（5a6e1a022c2601a8e64507730a6d852cdd44bf81及f5bf8d18ad97e7b85fef2c8706f26ebb6f9e1209），六条指定模型清洗线继续实读；未处置不预记done。候选dynamic_security已归Boss8，失败整笔认领未形成占用。一次sync恢复needs-attention的36文件与备份4b3aa41d1e9fedc88ca5d69bd5d717ec47550f80逐字全同，stash保留，无丢失或未合并冲突。
+
+本批原重复成功核验充分复用；新补核仅为原代码未绑定的具体缺口，事件各自保全，不增外审/盲审身份，不将两人/三人/五人辅助桥失败冒六人half结论。暂存/运行均clone外，Git/work.py远端写仍父方串行。任何收尾仍须准确handoff，不声称后台继续。
