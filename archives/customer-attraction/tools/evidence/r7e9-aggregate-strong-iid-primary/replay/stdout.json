@@ -1,0 +1,56 @@
+{
+  "status": "EXACT_COUNTEREXAMPLE_TO_STRONG_IID_ONLY",
+  "instance": {
+    "players": 3,
+    "topic_sets": [
+      [
+        "a1",
+        "a2"
+      ],
+      [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      [
+        "a1",
+        "a2",
+        "c"
+      ],
+      [
+        "a1",
+        "a2",
+        "d"
+      ]
+    ],
+    "customer_count": 8
+  },
+  "actual_outcome": [
+    0,
+    1,
+    1
+  ],
+  "actual_payoffs": [
+    "2",
+    "2",
+    "2"
+  ],
+  "W": 6,
+  "OPT3": 8,
+  "ordered_nodes": 21,
+  "comparisons": 84,
+  "q_definition": "q=(0,1-2t,t,t), t=(sqrt(669)-23)/14",
+  "iid_potential_definition": "F(q)=4 f(q1)+f(q2)+f(q3)+2 f(q0+q2+q3); f(s)=3s-3s^2/2+s^3/3",
+  "iid_potential_global_optimality": "f is strictly concave on [0,1], all active action derivatives 3U coincide, inactive U0<U; simplex KKT sufficient; unique q",
+  "t_approx": "0.2046453080539375256630680321703886066764",
+  "Z3_exact": "(4344-156*sqrt(669))/49",
+  "Z3_approx": "6.307237698167355999017539137548393531",
+  "Z3_minus_W_approx": "0.307237698167355999017539137548393531",
+  "strict_sign_certificate": "t is the positive root of increasing P=7t^2+23t-5; P(0)<0<P(11/52)=483/2704; hence t<11/52 iff Z3>6",
+  "not_refuted": [
+    "W >= 3 v3, with v3=44/23",
+    "W >= (1-1/6) Z3",
+    "2 W >= OPT3"
+  ]
+}
