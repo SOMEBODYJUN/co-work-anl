@@ -1,0 +1,21 @@
+--- menu-original-6306B
++++ canonical-original-6583B
+@@ -11,0 +12 @@
++import argparse
+@@ -14,2 +15,2 @@
+-HERE=Path(__file__).resolve().parent
+-SOURCE=HERE.parent/'omission/refined_spectrum_strict_example.json'
++ROOT=Path(__file__).resolve().parents[2]
++SOURCE=ROOT/'examples/customer_attraction/prefix_coupled_seats_strict.json'
+@@ -17,0 +19,3 @@
++    parser=argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('--output',type=Path,help='optional new report path; default audits without writing')
++    args=parser.parse_args()
+@@ -101 +105 @@
+-        'source':str(SOURCE.relative_to(HERE.parent)),
++        'source':str(SOURCE.relative_to(ROOT)),
+@@ -113 +117,3 @@
+-    (HERE/'refined_spectrum_independent_audit.json').write_text(json.dumps(report,indent=2)+'\n')
++    if args.output is not None:
++        args.output.parent.mkdir(parents=True,exist_ok=True)
++        args.output.write_text(json.dumps(report,indent=2)+'\n')
