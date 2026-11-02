@@ -1,0 +1,127 @@
+{
+  "primary_count": 4,
+  "primary_bytes": 15578,
+  "funnel_discovery": {
+    "n4_k8": true,
+    "full_ordered_nodes": 585,
+    "full_IC_with_self": 4680,
+    "full_IC_nonself": 4095,
+    "selected_histories": [
+      0,
+      "only history(0) at depth1",
+      3
+    ],
+    "selected_IC_nonself": 3598,
+    "symbolic_feature_coordinates": 1020,
+    "fixed_Q_backgrounds": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        2,
+        3
+      ]
+    ],
+    "target": "u1+u2−fB(a)−fC(a)",
+    "original_outcome": "floating discovery only; 8 optimal numeric query solves, 26 near-one stored multipliers; no exact original verification",
+    "no_call_to_original_run_or_linprog": true
+  },
+  "new_exact_recovery": {
+    "new_integer_ones": 26,
+    "distinct_Gamma_rows": 16,
+    "coefficient_checks_nonempty": 8160,
+    "coefficient_checks_including_empty": 8192,
+    "formal_policy_domain_checked": 585,
+    "full_numerical_SPE_IC_not_checked": "No customer instance is input; full SPE is the theorem premise, 4680 is the full formal count only.",
+    "one_new_verifier_run": true,
+    "LP_or_MILP_runs": 0,
+    "background_domain": "All per-customer real r>=0, via coefficient nonnegativity and D4(r)>0; divide pointwise before summing unweighted complete IC rows."
+  },
+  "pair_joint_model": {
+    "normalization": "actual u1+u2=1, including factor2 for repeated first labels",
+    "m": "len(path), must be at least2 for first-pair interpretation",
+    "k": "label count",
+    "query": "fixed CLI probability vector, not a maximization variable; generic CLI does not validate probability conditions",
+    "variables": {
+      "customer_types": 63,
+      "payoff_vector_continuous": 258,
+      "binary_actions": 258,
+      "t": 1,
+      "total": 580
+    },
+    "constraints": {
+      "pair_normalization": 1,
+      "total_mass_cap": 1,
+      "topic_root_guarantees": 6,
+      "one_hot": 43,
+      "conditional_vector_consistency": 3096,
+      "conditional_IC": 1290,
+      "static_backgrounds": 21,
+      "total": 4458
+    },
+    "safe_bounds": "root u1<=1, each topic mass<=m*u1<=m, each weight and auxiliary payoff in[0,m]; total mass<=km; M=m is sufficient.",
+    "fixed_query_lower_floor": "t<=query expected payoff for all m−1-slot backgrounds; t is not certified to be true v_m.",
+    "source_output_has_no_exact_recovery": true
+  },
+  "frozen_pair_MILP_report": {
+    "top_level_fields": [
+      "k",
+      "m",
+      "path",
+      "query",
+      "status",
+      "message",
+      "seconds",
+      "floating_2v_lower_over_pair",
+      "floating_dual_bound",
+      "bound_is_not_a_proof",
+      "variables",
+      "constraints",
+      "w",
+      "actions"
+    ],
+    "weights_total_coordinates": 63,
+    "nonzero_raw_coordinates": [
+      {
+        "mask": 5,
+        "raw_decimal": "3.583293427327574E-12"
+      },
+      {
+        "mask": 9,
+        "raw_decimal": "9.831849714679196E-14"
+      },
+      {
+        "mask": 37,
+        "raw_decimal": "-3.755459505200489E-12"
+      },
+      {
+        "mask": 53,
+        "raw_decimal": "2.677537743809774E-13"
+      },
+      {
+        "mask": 59,
+        "raw_decimal": "-1.1486757204727779E-13"
+      },
+      {
+        "mask": 63,
+        "raw_decimal": "1.5000000000000835"
+      }
+    ],
+    "negative_raw_mass_count": 2,
+    "negative_zero_coordinates_count": 9,
+    "actions": 43,
+    "status": 1,
+    "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+    "elapsed_seconds": "45.028515338897705",
+    "incumbent_2t": "1.0000000000000984",
+    "maximization_float_dual_bound": "2.1436032690282905",
+    "proof_boundary": "Time limit, negative tiny literal masses, no exact feasible certificate or rational global bound; no original discovery replay."
+  },
+  "new_original_LP_runs": 0,
+  "new_original_MILP_runs": 0,
+  "old_mature_verifier_runs": 0,
+  "new_integer_checker_runs": 1
+}
