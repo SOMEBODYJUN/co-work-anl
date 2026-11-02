@@ -1,0 +1,13 @@
+# 五人二轮补行、遗憾与文献原件
+
+Boss3 cleaner。本批42份原件2333190B，15Markdown、14Python、13JSON全部全文或全字段实读；并由父方直接重构十个自足正文。两冻结来源标识在source-manifest，旧handoff的独立base另保。source-root按原仓库路径完整保存每个主源，所有原字节/SHA不变。reading-views只是巨JSON阅读辅助，权威字节始终是source-root。
+
+source-manifest逐源给id、原path、blob、size、SHA、精确source_refs与保存路径；reading-ledger和receipts分别给实际读到的内容与数学去向。body目录在archives/customer-attraction/state按对象和类型分开。单换最优索引已并入成熟子集替换，未另造重复定理。
+
+本轮所有数学程序运行0：没有import原模块、调用原函数、原main、LP/BI/随机/定价或新等价checker。历史报告含原时间、PASS或有限数值的，按其真实范围保；原审计没有附运行版本/stdout的，不能补造。数学论证是正文中逐式解析重构，不把字段检查当证明。
+
+original-program-contracts列14份原代码的实际依赖入口、覆盖写及副作用。已发布直接输入以精确路径/指纹复用；另正常取得并全文读14526B actual_root_copies及3887B audit_root_copy_rows，原8021599B暖列输入只完整保字节、以mtime0 gzip无损保存并核解压，不冒全字段再读。三件related不claim/done。部分旧探索的传递依赖布局尚未重建，本批不承诺拷贝一个脚本就能运行。复现旧入口前须另建原布局并补足该入口的闭包；若只是使用本批真行/反例机制/条件引理，正文给完整量词与推导，不依赖重跑发现器。既有成熟成功不为标done重复运行。
+
+comparison-manifest记录成熟数学全文比较与仅身份绑定的直接旧输入，两者严格分开。primary-literature-reading只存六份原论文URL、所读定理/证明范围，不保存版权全文。relations是此次逐对象核出的关系证据，不是导入旧图；第三阶段另行建图。
+
+关键边界：RT5仍为较强预算；437客户只是策略正规式NE；5945客户原完整SPE否W≥5θ但不否half；受限联合β<2仍有显著全域负余项；707浮点点与旧精确点不同；六人旧701点被后续同SHA必要投影排除仍不证明六人half。当前共同标签目录保空覆盖、别名、重复、零客户、全有序离轨历史和任意弱平局。
