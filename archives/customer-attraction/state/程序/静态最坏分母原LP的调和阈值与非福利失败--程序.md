@@ -1,0 +1,51 @@
+---
+id: customer-attraction/static-worst-denominator-original-lp-harmonic-threshold
+kind: program
+type_tag: 程序
+title: 静态最坏分母原LP的调和阈值与非福利失败
+status: 原程序完整实读；明确数学量词、有限证据与执行边界
+summary: 完整读取1367B原LP，解析还原非负矩阵可行当且仅当m≤2H_m，不依赖浮点求解；失败仅是静态模板。
+source_refs:
+  - source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-b28b3013e6464e70862b4993359a6964/experiments/static_worst_lp_probe.py
+---
+
+# 静态最坏分母原LP的调和阈值与非福利失败
+
+## 1. 原程序和准确的线性系统
+
+1367B `static_worst_lp_probe.py`完整实读。它以m个实际单点题{y_i}及m个比较单点题{x_j}组成2m个互异客户。m²个非负变量λ_ij，i,j从0到m−1；2m个逐客户约束、目标恒0。实际客户行及比较客户行分别化为
+
+\[
+\sum_j\lambda_{ij}\le2,\qquad
+\sum_i\frac{\lambda_{ij}}{m-i}\ge1,\qquad \lambda_{ij}\ge0.
+\tag{1}
+\]
+
+源码的b是实际前缀覆盖次数；所有比较客户未被实际路径覆盖，故其b=0，分母为m−i。没有原始离轨后继变量，因而(1)是一份**冻结最坏分母静态证书模板**，不是完整SPE可行性系统。
+
+原程序有main guard；导入会导入NumPy/SciPy，但不启动主循环。`feasible(m)`只返回`bool(result.success)`，将数值不可行、求解异常状态等非success统一压为False，没有附精确Farkas证书。main对m=2,…,14逐一打印bool；本批没有这些实际stdout或退出记录，本次原LP执行0次。
+
+## 2. 可行性可由解析证明完全决定
+
+设H_m=Σ_(r=1)^m1/r。将m个比较列约束相加，再用每个实际行预算，得
+
+\[
+m\le\sum_i\frac{\sum_j\lambda_{ij}}{m-i}\le2H_m.
+\]
+
+反过来，若m≤2H_m，取所有λ_ij=1/H_m，则每个比较列和恰为1，每个实际行和m/H_m≤2，所以(1)可行。这证明
+
+\[
+(1)\text{ 可行}\iff m\le2H_m.
+\tag{2}
+\]
+
+正整数域中(2)等价m≤4：m1…4可直接代入；m5有5>2H_5=137/30，且m−2H_m从m≥2起随m严格增加，因为差分为1−2/(m+1)>0。此处m1是解析扩展，原main从m2开始。
+
+这份精确边界已在[成熟数学对象](../资源/最坏分母静态证书与同序可信矩阵的精确边界--资源.md)给出，本页补原代码、真实调用合同与输出限制，不重复把旧定理登记成新计算结果。
+
+## 3. 为何失败不反驳half
+
+目录取上述2m个单点标签。任意有序历史后，规定当前选一个此前未选过的标签，之后仍遵此规则；到第m位之前总有未用标签。规定利润1；偏离选其它未用标签也至多1，选已用标签至多1/2，后继均完整规定，故这是一份完整纯SPE。固定打破平局可令实际路径依次取y_0,…,y_(m−1)。其W=m，最优m题也只能覆盖m客户，OPT=m。
+
+因此m≥5时(1)不可行，说明该特定静态逐客户付款模板不足，而这个真实游戏仍最优覆盖。它不否定half，不排除真实菜单、按客户关联的适应性预算或别的比较对齐。原程序题头本就作了这个区分，清洗保留其对象身份及全部m范围。
