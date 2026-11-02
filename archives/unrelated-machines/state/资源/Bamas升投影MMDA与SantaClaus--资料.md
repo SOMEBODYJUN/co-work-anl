@@ -15,7 +15,7 @@ source_inventory_id: "80209b36a2ca6ee50b17"
 source_blob: "e4f54c317b218f400c1899b51bcc63b12b7d5288"
 source_sha256: "e1120098a847eb10689c529579af5d44b93ee5f6e655eae7621a2333bf76e8de"
 source_size_bytes: 825616
-source_pdf_pages: 5
+source_pdf_pages: 56
 arxiv_identifier: "2406.18273v2"
 legacy_ids:
   - "BAMAS-MMDA-LIFT-PROJECT-2024-V2"
@@ -24,13 +24,13 @@ legacy_ids:
 
 # 1. 实读范围、文献身份和仓库比较
 
-冻结源 `80209b36a2ca6ee50b17` 的路径是 `history/source/literature/unrelated_machines/bamas_2025_lift_project_santa_claus_v2.pdf`，两冻结提交内容相同，blob 与 SHA-256 见 frontmatter。用 `clean show --out` 导出 PDF，确认其为 PDF 1.5、5 个 PDF 页，再用 Poppler `pdftotext -layout` 读出全部 3324 行；没有只依赖摘要、文件名或旧图。本文题名为 *Lift-and-Project Integrality Gaps for Santa Claus*，作者 Etienne Bamas，arXiv:2406.18273v2，文中版本日期 2024-10-17。
+冻结源 `80209b36a2ca6ee50b17` 的路径是 `history/source/literature/unrelated_machines/bamas_2025_lift_project_santa_claus_v2.pdf`，两冻结提交内容相同，blob 与 SHA-256 见 frontmatter。先前清洗记录称经 `clean show --out` 导出 PDF 1.5，并用 Poppler `pdftotext -layout` 全文抽取 3324 行；其中“5 个 PDF 页”是元数据笔误。2026-11-02 Boss3 再次导出同 SHA 冻结原件，直接读取 PDF 页树，确认 56 页；本次只定点读第 1、3、44、56 页，没有重新声称全文抽取或复证所有证明。本文题名为 *Lift-and-Project Integrality Gaps for Santa Claus*，作者 Etienne Bamas，arXiv:2406.18273v2，文中版本日期 2024-10-17。
 
 全仓比较发现已有 unrelated-machines 正文曾只把 Bamas 作为 MMDA/assignment-LP/subtree 的文献定位（例如“原作业 SH3 子树流与包含容量双源续审查”及“有向需求与调度的压缩双向任务桥”）；那些页面明确没有重构该 PDF 的完整 SA/path hierarchy 证明。本页补上文献源的独有完整结论，同时保留现有正文的边界：它没有给一般 `UM-TARGET-v1` 的实际调度编译器、近二算法不可能性、NP/ETH 困难性，也与当前六人共同目录 SPE 的量词无交集。
 
 # 2. MMDA 模型和松弛
 
-文献研究分层有向图 (G=(V,E))，层 (L_0\dot\cup\cdots\dot\cup L_\ell)，边只从 (L_i) 到 (L_{i+1})，源 (s\in L_0)，汇点为 (L_\ell)，图大小为 (n)，深度满足 (\ell\le O(\log n/\log\log n))。每个非汇点有整数需求 (k_u)，构造中 (k_u\ge n^{\Omega(1/\ell)})。目标是选一个以 (s) 为根的有向树/子图 (T)，每个顶点入度至多 1，源出度至少 (k_s/\alpha)，每个被选非汇点出度至少 (k_v/\alpha)；最大化可行的 (\alpha\)（文献把它称为近似率，越大越好）。
+文献研究分层有向图 (G=(V,E))，层 (L_0\dot\cup\cdots\dot\cup L_\ell)，边只从 (L_i) 到 (L_{i+1})，源 (s\in L_0)，汇点为 (L_\ell)，图大小为 (n)，深度满足 (\ell\le O(\log n/\log\log n))。每个非汇点有整数需求 (k_u)，构造中 (k_u\ge n^{\Omega(1/\ell)})。目标是选一个以 (s) 为根的有向树/子图 (T)，每个顶点入度至多 1，源出度至少 (k_s/\alpha)，每个被选非汇点出度至少 (k_v/\alpha)；最小化可行的损失因子 \(\alpha\)（越小越好）。等价地，若以保留比例 \(b=1/\alpha\) 参数化，则最大化 \(b\)。
 
 朴素 assignment LP 使用边变量 (x_e\in[0,1])：源覆盖、每个非源非汇点的出流至少 (k_v) 倍入流、每点入流至多 1。文献说明 packing 或 covering 约束若统一损失因子 (\alpha)，可通过两次缩放转成标准 LP/整数解，需求损失约为 (\alpha^2)。
 
@@ -93,3 +93,9 @@ Theorem 4：存在多项式算法，把 restricted-assignment 实例变成 canon
 - **不迁移范围：** 本对象不声明一般 (R\|C_{\max}) 近二 gap、不声明 `UM-TARGET-v1` 困难性，不改变仓库中已存在的 MMDA-to-UM 条件桥；它只是可供第三阶段建立“来源/启发/障碍”关系的独立文献对象。
 
 后续如要复用，应保留：分层深度量词、标签集大小、需求阈值、SA/path hierarchy 层数、局部好解定义及 (x_e\le s_e\le6x_e) 的 shadow 关键不等式；不能删去 restricted-assignment 的特例域，也不能把作者 Future directions 的 conjecture 当已证结论。
+
+## 2026-11-02：同冻结原件的页数与损失参数更正
+
+Boss3 的[定点核验记录](../../../customer-attraction/tools/evidence/cag-um-direct-encoding-review-primary/bamas-frozen-metadata-review.json)对应同一源 `80209b36a2ca6ee50b17`、825616B、SHA `e1120098a847eb10689c529579af5d44b93ee5f6e655eae7621a2333bf76e8de`；[只读原件](../../../customer-attraction/tools/evidence/cag-um-direct-encoding-review-primary/related-original/bamas-frozen-v2.pdf)的页树 `/Count` 与 pypdf 页数均为 56。本次 `pdfinfo` 因环境缺少 `libpoppler.so.160` 返回 127，实际成功依据是 PDF 页树与 pypdf，不倒填 Poppler 成功。公开 PDF 的二进制没有下载比较，因此不声称公开文件与冻结副本字节相同。
+
+第 1 页的定义和第 3 页脚注确认：需求写成 (k_v/alpha) 时 (alpha) 是越小越好的损失；MMDA 实例归约到 Santa Claus，因此 Santa Claus 算法给 MMDA 算法。第 44 页 Questions 3、4 与第 56 页末页也已定点读取。本文其它完整证明阅读继续保留其先前清洗的证据身份，本次没有重做 SA/path hierarchy 证明或重新完成该来源。与 CAG 的接口见[直接编码与原文献审查](../../../customer-attraction/state/审查/客户吸引与不相关机的归约边界及原文献核对--审查.md)。
