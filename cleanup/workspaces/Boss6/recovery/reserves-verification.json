@@ -1,0 +1,115 @@
+{
+  "date_utc": "2026-11-02",
+  "scope": "Recovery revalidation of exactly three existing Boss6-claimed frozen sources; no new claims or Git writes.",
+  "primary_fingerprints": [
+    {
+      "id": "92e26cae7480bcfaac5e",
+      "path": "archives/customer-attraction/tools/evidence/nonuniform-reserve-and-common-hub-primary/original/asymmetric_reserve_probe.py",
+      "size": 4957,
+      "sha256": "b4493150965b8ab0e46713de79e96c4545e7d138b3a376e4dbd0c941b839c3e9",
+      "matches_frozen_manifest": true
+    },
+    {
+      "id": "cca242f34a489cfa4951",
+      "path": "archives/customer-attraction/tools/evidence/nonuniform-reserve-and-common-hub-primary/original/asymmetric_t2.json",
+      "size": 913,
+      "sha256": "a72a934a4a0e98e4c9886b47e0957c19bf72f9d3b75dd23b251925d64431a376",
+      "matches_frozen_manifest": true
+    },
+    {
+      "id": "cf877b33ed2b34209d11",
+      "path": "archives/customer-attraction/tools/evidence/nonuniform-reserve-and-common-hub-primary/original/protected_reserves_and_common_hubs.md",
+      "size": 8076,
+      "sha256": "cbd221e94505bf4402fab0b48699bcf30c0a2cec2b6f7338ae7e5aaf96c5b5fc",
+      "matches_frozen_manifest": true
+    }
+  ],
+  "formal_objects": [
+    {
+      "path": "archives/customer-attraction/state/引理/有容量余量的独立储备保护--引理.md",
+      "sha256": "b6fa26987829881bbbfa830bf38710fc6cdc80634fb2776e4944633cff36fbb0"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/共核均匀外围目录的任意人数枢纽中继阻断--定理.md",
+      "sha256": "7e10d5449b900d786fbbd4916fc81bf7f02b7a23ef5a3dedadbc999303cb5dbe"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/非均匀独立储备的末个核心精确有限诊断--计算.md",
+      "sha256": "53b34e58ae1b78cc11a2d1dff957abacbcf771786c5a4777d16755c7a51f1e9f"
+    }
+  ],
+  "relative_links_checked": 18,
+  "broken_links": 0,
+  "replay": {
+    "original_entry_executions": 1,
+    "exit_code": 0,
+    "command": [
+      "python3",
+      "original/asymmetric_reserve_probe.py",
+      "--k",
+      "3",
+      "--t",
+      "2",
+      "--trials",
+      "400",
+      "--seed",
+      "751103",
+      "--output",
+      "asymmetric_t2.replay.json"
+    ],
+    "output_byte_identical_to_frozen": true,
+    "stdout": "cleanup/workspaces/Boss6/recovery/reserves-original-stdout.json",
+    "stderr": "",
+    "tested_inputs": 239,
+    "all_parameter_claim": false
+  },
+  "independent_best_recheck": {
+    "entry_executions": 1,
+    "exit_code": 0,
+    "script_sha256": "446d632fc55890dd8fe7d748f0faf26cef08fe66e7aa37eb6afbb7c5e37860b7",
+    "report_equal_to_existing": true,
+    "stdout": "cleanup/workspaces/Boss6/recovery/reserves-best-stdout.json",
+    "stderr": "",
+    "scope": "Only saved 32-unit-client best case; all 239 inputs not independently rechecked.",
+    "report": {
+      "scope": "one saved best instance, independent unit-customer ordered-history set-valued backward induction; not arbitrary inputs or a new general theorem",
+      "original_and_replay_byte_identical": true,
+      "report_fields_equal": true,
+      "k": 3,
+      "t": 2,
+      "players": 5,
+      "unit_clients": 32,
+      "catalog_topics": 14,
+      "prefix": [
+        "C0",
+        "C1"
+      ],
+      "root_tree_nodes": 2955,
+      "all_terminal_ordered_histories": 2744,
+      "attainable_ordered_histories": 7,
+      "attainable_terminal_counts": 5,
+      "root_threshold": "15/2",
+      "target_counts_achievable": false,
+      "own_A2_min": "7/2",
+      "own_A2_min_terminal_counts": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "all_assertions_passed": true
+    }
+  },
+  "source_and_analytic_proofs_full_read": true,
+  "git_claim_done_checkpoint_actions": false
+}
