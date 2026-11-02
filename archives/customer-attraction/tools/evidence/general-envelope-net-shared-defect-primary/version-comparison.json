@@ -1,0 +1,20 @@
+{
+  "README": {
+    "legacy_source_id": "cb05cd6be72ef95d2097",
+    "main_source_id": "89eb2c90d8e359324808",
+    "legacy_size": 1497,
+    "main_size": 3079,
+    "unchanged_suffix_marker": "## 可访问材料",
+    "suffix_exactly_equal": true,
+    "unified_diff": "--- cb05cd6be72ef95d2097\n+++ 89eb2c90d8e359324808\n@@ -4,7 +4,15 @@\n \n ## 当前研究\n \n-在这里写准确问题、采用的定义/命题版本、当前表示与卡点。\n+一般人数 Q-CAG-HALF 的解析包络与递推审计；六人仍是未闭合的首个关键人数。优先读取 [一般架构审计](general_envelope_audit/architecture_audit.md)，它分开真实已证行、指定模板障碍、近边界秩界反证与最小严格反例归约候选。\n+\n+| 文件 | 精确用途与状态 |\n+| --- | --- |\n+| [architecture_audit.md](general_envelope_audit/architecture_audit.md) | 任意 n 的前 n−2 安全行 + 末对 R 的完整客户类型证书必须满足 tau≤2H_n−1；三类状态给解析 Farkas 停界，不是主猜想反例。另恢复旧 all-big 近边界高维族、显式前缀递推乘子，并由旧私有谱预算读出 OPT_n≤(2−1/n)W+(1−1/n)(D_shared−E)。 |\n+| [audit_architecture.py](general_envelope_audit/audit_architecture.py) | Fraction 闭式 Farkas 向量、解析递推乘子恒等式、all-big 的充分历史计数与末对投影角点实现审计；不调用 LP，不枚举一般 SPE，不以有限回放代替普适证明。 |\n+| [audit_architecture_result.json](general_envelope_audit/audit_architecture_result.json) | 实际运行结果、Python 版本、参数域与复现命令；目标猜想仍 OPEN。 |\n+| [review_shared_defect.md](general_envelope_audit/review_shared_defect.md) | 从旧谱原文独立重构带 E 的共享遗漏缺陷界，并核对安全行/末对投影/完整独立类型域障碍；内部解析复核，未外审。 |\n+| [private_recurrence_audit.md](general_envelope_audit/private_recurrence_audit.md) | 精确指出 mixed-floor 的 private 部分在同路由加入后下降；给一侧递推、望远镜损失和补偿势，明确补偿仍需共同付款。 |\n \n ## 可访问材料\n \n"
+  },
+  "coordination": {
+    "legacy_source_id": "4a3da46233f30971eeaa",
+    "main_source_id": "81fe62096c2d6e71c629",
+    "legacy_size": 7244,
+    "main_size": 8109,
+    "unchanged_suffix_marker": "## 已可靠闭合或可直接引用的内容",
+    "suffix_exactly_equal": true,
+    "unified_diff": "--- 4a3da46233f30971eeaa\n+++ 81fe62096c2d6e71c629\n@@ -5,6 +5,10 @@\n ## 固定目标\n \n 研究对象是 `research/current/customer_attraction/model.md` 的原模型：有限单位客户集 `N`、有限非空共同目录 `S ⊆ 2^N`、恰六名单位权提供者按固定顺序观察全部有序历史并选目录主题。允许重复、空主题、零客户和任意历史依赖平局。固定任意完整历史依赖纯 SPE `σ`，终局福利为覆盖客户数 `W`，最优六主题并集为 `OPT_6`。主 Claim Q-CAG-HALF-6 要求对每个实例、每个完整纯 SPE 都有 `2W ≥ OPT_6`。若主 Claim 为假，必须给出原模型中的严格反例、覆盖全部有序历史的完整策略、以及 Fraction/整数可复现的全历史偏离核验；辅助松弛、局部菜单和静态点都不够。\n+\n+用户最新要求考察一般 n 的解析包络、递推与活跃极大集归约。最新接续入口为 [general_envelope_audit/architecture_audit.md](general_envelope_audit/architecture_audit.md)：该截短逐客户模板必须 tau≤2H_n−1，故不能覆盖 tau=n,n≥3；既有 all-big 族的 M=n、OPT/W=2−1/n 排除普适近边界常数秩说法，但不反驳仍未证明的严格最小反例归约。旧混合席位预算直接给 OPT_n≤(2−1/n)W+(1−1/n)(D_shared−E)；需在同一 W 中支付共享遗漏的剩余缺陷。\n+\n+同步到 `8ca370ad` 后的范围纠正：六人现有分数覆盖条件证书已到 tau_C≤9/2，见 `SYNTHESIS.md`；本工作区旧 tau_inc≤149/50 的 half 范围已被较早的更强条件覆盖，其带核心定量式另有意义，不能继续当作范围突破。六人任意目录及一般人数仍 OPEN。\n \n ## 已可靠闭合或可直接引用的内容\n \n"
+  }
+}
