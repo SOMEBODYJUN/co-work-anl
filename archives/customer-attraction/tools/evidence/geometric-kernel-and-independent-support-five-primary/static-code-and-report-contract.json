@@ -1,0 +1,150 @@
+{
+  "method": "Full primary reading, AST/JSON/byte and input-route metadata checks only; no import or main/LP execution.",
+  "primary_count": 5,
+  "primary_bytes": 15051,
+  "audit_report_fields": [
+    "status",
+    "scope",
+    "histories",
+    "payoff_vertices",
+    "graph_comparisons_with_self",
+    "graph_distinct_edges_with_self",
+    "minimum_graph_slack",
+    "same_topic_dilution_comparisons",
+    "minimum_dilution_slack",
+    "support_classes",
+    "nontrivial_conservation_equalities",
+    "root_counts",
+    "root_total",
+    "portfolio_support",
+    "portfolio_total",
+    "signed_representation_identity_lhs",
+    "signed_representation_identity_rhs",
+    "signed_representation_identity_gap",
+    "typewise_identity_cases"
+  ],
+  "audit_report_literal_keys_and_values_match_code": true,
+  "audit_report_indent2_byte_layout_compatible": true,
+  "audit_input_relative_route": "HERE.parents[1]/tree_coupling/support_conservation_obstruction.json",
+  "audit_input_resolved_to_preserved_related_file": true,
+  "audit_input_sha256": "0630620fb969b6ebac2a0d4b7c46f4a5f818775eba7db6fdaf16050fb7f89ca5",
+  "independent_audit_implementation": {
+    "policy": "Hardcoded 3-player/6-label rule; stored actions only cross-checked",
+    "consumed_fields": [
+      "n",
+      "p",
+      "strategy_actions",
+      "y",
+      "portfolio"
+    ],
+    "unconsumed_fields": [
+      "mode",
+      "objective"
+    ],
+    "no_main_guard": true,
+    "top_level_math_and_report_overwrite_on_import": true,
+    "original_report_fields": 19,
+    "graph_occurrence_comparisons": 258,
+    "graph_distinct_edges": 216,
+    "distinct_edges_status": "Original report value; not recounted or rerun in this batch",
+    "same_topic_checks": 2520,
+    "support_classes": 41,
+    "extra_conservation_equalities": 15,
+    "typewise_signed_identity_cases": 63,
+    "ordinary_asserts_removable": true,
+    "historical_flags_or_exit_metadata": "Not present in frozen report"
+  },
+  "geometric_cli": [
+    {
+      "name": "--players",
+      "default": 3
+    },
+    {
+      "name": "--topics",
+      "default": 6
+    },
+    {
+      "name": "--iterations",
+      "default": 300
+    },
+    {
+      "name": "--seed",
+      "default": 791
+    },
+    {
+      "name": "--resource-specific",
+      "action": "store_true"
+    },
+    {
+      "name": "--random-policy",
+      "action": "store_true"
+    },
+    {
+      "name": "--mixture",
+      "action": "store_true"
+    }
+  ],
+  "geometric_no_main_guard": true,
+  "geometric_model": "u_I(c)=w_I*t_I**(c-1); potential=sum_{j=0}^{c-1}t_I**j; generally W_phi is not coverage",
+  "geometric_rates": {
+    "common_cycle": [
+      0,
+      0.01,
+      0.125,
+      0.25,
+      0.5,
+      0.75,
+      0.9
+    ],
+    "resource_specific_choices": [
+      0,
+      0.01,
+      0.125,
+      0.25,
+      0.5,
+      0.75,
+      0.9,
+      1.0
+    ],
+    "mixture_fixed_grid": [
+      0,
+      0.125,
+      0.25,
+      0.5,
+      0.75,
+      0.9,
+      1.0
+    ],
+    "mixture_overrides_resource_specific": true
+  },
+  "geometric_default_dimensions": {
+    "players": 3,
+    "topics": 6,
+    "iterations": 300,
+    "seed": 791,
+    "columns_default": 63,
+    "columns_mixture": 441,
+    "decision_counts": 28,
+    "count_IC_rows_with_self": 168,
+    "full_ordered_nodes_represented": 43,
+    "full_ordered_comparisons_represented": 258,
+    "query_budget_before_early_exit": 1800
+  },
+  "geometric_objective": "m*E_query + J - 2*W_phi; code variable credit equals J, not G_phi",
+  "geometric_normalization": "W_phi(actual)=1, not total resource mass=1",
+  "geometric_fixed_policy_family": "Count-dependent policies only; full ordered lift is valid for these policies, but no enumeration of all history-dependent policies.",
+  "geometric_float_acceptance": {
+    "solver": "SciPy linprog(method=highs)",
+    "log_best_improvement": 1e-08,
+    "candidate_threshold": 1e-06,
+    "retained_weight_threshold": 1e-09,
+    "exact_recovery_or_revalidation": false
+  },
+  "geometric_original_candidate_or_stdout_in_five_sources": false,
+  "current_followup": "CAG alpha=1 VI is separately refuted by the already-certified 13-player/36-unit-client packet: M1=3, G1=359/66, W=33, gap37/66. This is the same zero-background/no-scaling formula via J=W-G1, not an inference from scaled-alpha failure.",
+  "new_original_audit_runs": 0,
+  "new_geometric_LP_runs": 0,
+  "new_concave_integer_audit_runs": 0,
+  "new_13_player_runs": 0,
+  "new_mathematical_checker_runs": 0
+}
