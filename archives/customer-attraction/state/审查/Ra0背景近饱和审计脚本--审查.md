@@ -26,3 +26,9 @@ evidence_paths:
 在隔离证据目录运行原脚本并接入冻结 ExactSPESolver 依赖，先完整通过 7 个内置实例：空客户、共同重复客户、大私有客户、稀疏 `(m,p)=(3,4),(4,5),(5,7),(6,4)`。每个实例的 `definition_verified_histories` 与 `definition_verified_deviations`、候选 BNS 检查和任意查询检查均完成；记录的 `minimum_BNS_slack` 均为 0，说明存在等号节点，并不说明严格不等式。随后脚本尝试读取外部 `R-84ce8a8709e34ea6af94f99991d3c2e3/counterexample_search/nonpne_best.json`，该文件不在当前证据范围，程序以 `FileNotFoundError` 停止；因此不能把最后一个案例或全批运行宣称完成。
 
 该对象是有限算术审计和实现边界记录。它没有证明 BNS 对所有客户模型、所有完整纯 SPE 或所有六人历史成立，也没有推出 Q-CAG-HALF-6 的半覆盖结论。后续需要取得缺失的 `nonpne_best.json` 后重跑，或单独构造完整证书；同时保持 `minimum_BNS_slack=0` 的等号节点和非 Markov 分支信息，不把有限通过升级为普遍定理。
+
+## 所引用非PNE输入的当前保全位置
+
+原外部R84 `counterexample_search/nonpne_best.json`现已按冻结源完整取得，见[五人七主题固定整数见证](../计算/五人七主题非静态均衡完整策略的整数见证--计算.md)及其原件闭包。该保存点包含1992009名不同单位客户、2801个完整有序历史动作；一次新定义级整数审计确认其SPE和静态4→0正偏离，W1250000、OPT1992009。
+
+这只补足当时缺少输入的当前来源链。本页旧FileNotFoundError/未执行generate的历史记录继续成立；本次没有重跑本页原程序、随机生成流程或BNS/AP公式检查，因此不能把输入到位写作本页全批复现成功或普遍引理证明。
