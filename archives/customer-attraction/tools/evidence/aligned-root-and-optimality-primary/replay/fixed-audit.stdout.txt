@@ -1,0 +1,204 @@
+{
+  "seconds": 1.6871464849991753,
+  "cg_new_names": [
+    "Root:aligned:r4-binary1999",
+    "Root:aligned:r4-pareto0",
+    "Root:aligned:r4-pareto1",
+    "Root:aligned:r4-binary-menu:T",
+    "Root:aligned:r4-binary-menu:X",
+    "Root:aligned:r4-binary-menu:Y",
+    "Root:aligned:r4-binary-menu:Z",
+    "Root:aligned:r4-binary-menu:K",
+    "Root:aligned:actual4-binary"
+  ],
+  "cg_negative_rows_beyond_1e-8": [],
+  "original_exceptions": [
+    {
+      "call": "isolated original exact d=5",
+      "type": "IndexError",
+      "message": "list index out of range",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/a79bc5ba354d/boss3-current/agent-a9/deliverables/archives/customer-attraction/tools/evidence/aligned-root-and-optimality-primary/audit_fixed.py\", line 88, in cg_audit\n    try:ns['aligned_rows'](d5['root_hist'],True,d5['bits'])\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/a79bc5ba354d/boss3-current/agent-a9/deliverables/archives/customer-attraction/tools/evidence/aligned-root-and-optimality-primary/original/template/aligned_root_pricing.py\", line 39, in aligned_rows\n    out[f'Root:aligned:r4-pareto{v}']=sm(value)-4*cov\n                                      ^^^^^^^^^\n  File \"/workspace/scratch/a79bc5ba354d/boss3-current/agent-a9/deliverables/archives/customer-attraction/tools/evidence/aligned-root-and-optimality-primary/original/template/aligned_root_pricing.py\", line 21, in sm\n    def sm(fn):return sum((n*fn(*map(int,ty)) for n,ty in zip(hist,TYPES)),F() if exact else 0)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/a79bc5ba354d/boss3-current/agent-a9/deliverables/archives/customer-attraction/tools/evidence/aligned-root-and-optimality-primary/original/template/aligned_root_pricing.py\", line 21, in <genexpr>\n    def sm(fn):return sum((n*fn(*map(int,ty)) for n,ty in zip(hist,TYPES)),F() if exact else 0)\n                             ^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/a79bc5ba354d/boss3-current/agent-a9/deliverables/archives/customer-attraction/tools/evidence/aligned-root-and-optimality-primary/original/template/aligned_root_pricing.py\", line 38, in value\n    return (beta if exact else float(beta))*Q(x+y+z+k,t+x+y+z+k)-residual(t,x,y,z,k)\n                                                                 ^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/a79bc5ba354d/boss3-current/agent-a9/deliverables/archives/customer-attraction/tools/evidence/aligned-root-and-optimality-primary/original/template/aligned_root_pricing.py\", line 34, in residual\n    return vv[int(e)] if exact else np.take(np.asarray(vv,dtype=float),np.asarray(e,dtype=int))\n           ~~^^^^^^^^\nIndexError: list index out of range\n"
+    },
+    {
+      "call": "isolated original vector two histograms including d=5",
+      "type": "IndexError",
+      "message": "index 5 is out of bounds for axis 0 with size 5",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/a79bc5ba354d/boss3-current/agent-a9/deliverables/archives/customer-attraction/tools/evidence/aligned-root-and-optimality-primary/audit_fixed.py\", line 93, in cg_audit\n    try:ns['aligned_rows'](np.asarray([normal['root_hist'],d5['root_hist']]).T,False)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/a79bc5ba354d/boss3-current/agent-a9/deliverables/archives/customer-attraction/tools/evidence/aligned-root-and-optimality-primary/original/template/aligned_root_pricing.py\", line 39, in aligned_rows\n    out[f'Root:aligned:r4-pareto{v}']=sm(value)-4*cov\n                                      ^^^^^^^^^\n  File \"/workspace/scratch/a79bc5ba354d/boss3-current/agent-a9/deliverables/archives/customer-attraction/tools/evidence/aligned-root-and-optimality-primary/original/template/aligned_root_pricing.py\", line 21, in sm\n    def sm(fn):return sum((n*fn(*map(int,ty)) for n,ty in zip(hist,TYPES)),F() if exact else 0)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/a79bc5ba354d/boss3-current/agent-a9/deliverables/archives/customer-attraction/tools/evidence/aligned-root-and-optimality-primary/original/template/aligned_root_pricing.py\", line 21, in <genexpr>\n    def sm(fn):return sum((n*fn(*map(int,ty)) for n,ty in zip(hist,TYPES)),F() if exact else 0)\n                             ^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/a79bc5ba354d/boss3-current/agent-a9/deliverables/archives/customer-attraction/tools/evidence/aligned-root-and-optimality-primary/original/template/aligned_root_pricing.py\", line 38, in value\n    return (beta if exact else float(beta))*Q(x+y+z+k,t+x+y+z+k)-residual(t,x,y,z,k)\n                                                                 ^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/a79bc5ba354d/boss3-current/agent-a9/deliverables/archives/customer-attraction/tools/evidence/aligned-root-and-optimality-primary/original/template/aligned_root_pricing.py\", line 34, in residual\n    return vv[int(e)] if exact else np.take(np.asarray(vv,dtype=float),np.asarray(e,dtype=int))\n                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/_core/fromnumeric.py\", line 203, in take\n    return _wrapfunc(a, 'take', indices, axis=axis, out=out, mode=mode)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/_core/fromnumeric.py\", line 57, in _wrapfunc\n    return bound(*args, **kwds)\n           ^^^^^^^^^^^^^^^^^^^^\nIndexError: index 5 is out of bounds for axis 0 with size 5\n"
+    }
+  ],
+  "games": {
+    "direct": {
+      "ordered_nonterminal_histories": 781,
+      "nonprescribed_IC": 3124,
+      "strict": 3087,
+      "ties": 37,
+      "minimum_nonprescribed_slack": "0",
+      "actual_path": [
+        3,
+        1,
+        1,
+        2,
+        2
+      ],
+      "actual_payoffs": [
+        "163/15",
+        "221/30",
+        "221/30",
+        "36/5",
+        "36/5"
+      ],
+      "root_ordered_paths": [
+        [
+          0,
+          3,
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          3,
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          3,
+          1,
+          1,
+          2
+        ],
+        [
+          3,
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          4,
+          3,
+          2,
+          1,
+          1
+        ]
+      ],
+      "root_profits": [
+        "79/20",
+        "221/30",
+        "36/5",
+        "163/15",
+        "59/12"
+      ],
+      "tail_profits": [
+        "721/20",
+        "979/30",
+        "164/5",
+        "437/15",
+        "421/12"
+      ],
+      "W": 40,
+      "OPT5": 40,
+      "root_profit": "163/15",
+      "coarse_gap": "243397/30",
+      "DP_counts_states": 252,
+      "DP_terminal_counts": 126,
+      "strategy_origin": "new deterministic completion of old saved count targets, not recovery of an old full strategy"
+    },
+    "security": {
+      "ordered_nonterminal_histories": 2801,
+      "nonprescribed_IC": 16806,
+      "strict": 16806,
+      "ties": 0,
+      "minimum_nonprescribed_slack": "1",
+      "actual_path": [
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "actual_payoffs": [
+        "10",
+        "10",
+        "10",
+        "10",
+        "10"
+      ],
+      "menu_matrix": [
+        [
+          "3",
+          "11/2",
+          "6",
+          "3",
+          "7/2",
+          "6",
+          "6"
+        ],
+        [
+          "33/10",
+          "17/6",
+          "19/5",
+          "33/10",
+          "18/5",
+          "10/3",
+          "19/5"
+        ],
+        [
+          "42/5",
+          "42/5",
+          "14/3",
+          "42/5",
+          "42/5",
+          "49/6",
+          "49/6"
+        ],
+        [
+          "6",
+          "17/2",
+          "9",
+          "11/2",
+          "13/2",
+          "17/2",
+          "17/2"
+        ],
+        [
+          "37/10",
+          "6",
+          "31/5",
+          "37/10",
+          "7/2",
+          "6",
+          "31/5"
+        ],
+        [
+          "10",
+          "143/15",
+          "293/30",
+          "19/2",
+          "49/5",
+          "25/3",
+          "139/15"
+        ],
+        [
+          "22/5",
+          "22/5",
+          "25/6",
+          "39/10",
+          "22/5",
+          "11/3",
+          "11/3"
+        ]
+      ],
+      "pure_blocker": 5,
+      "exact_menu_upper_bound": "17/2",
+      "original_float_menu": 8.380000000000003,
+      "original_float_ratio": 0.8380000000000003,
+      "exact_optimum_of_menu_certified": false,
+      "W": 50,
+      "total_customers": 63,
+      "strategy_origin": "new all-histories constant-5 certificate for the old actual path; original full policy not saved"
+    }
+  }
+}
