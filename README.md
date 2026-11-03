@@ -6,6 +6,7 @@
 - [全仓数学关系图](map/README.md)：使用已克隆的上游超图格式；当前draft-scaffold，数学边待第三阶段逐条建立。
 - [三阶段清洗入口](cleanup/README.md)与[全量逐文件勾选](cleanup/CHECKLIST.md)。
 - [第二阶段提示词](prompts/02-clean.md)、[第三阶段提示词](prompts/03-map.md)。
+- [第二阶段半准入与修复](prompts/02.5-research.md)：保护已完好的数学，删除非数学包装，修复缺失与状态；[对象群执行提示词](prompts/02.5-worker.md)及[程序契约](research/CURATION.md)。
 - [程序与协作操作](tools/README.md)、[命名和入库规则](cleanup/OBJECTS.md)。
 - [整理质量审查](cleanup/audits/2026-10-30/质量审查.md)：固定快照的来源—正文抽查，记录覆盖矩模型身份冲突和已入库正文的导航缺口；done不等于语义验收通过。
 

@@ -1,34 +1,21 @@
-# 研究运行层
+# 数学内容准入与研究读取层
 
-这里包含两个轻量层：第二阶段半的登记/读取索引，以及第二阶段完成、第三阶段超图可用后给 Work 数学 Agent 使用的研究运行提示词。
+数学正文放在 `archives/**/state/`。第二阶段的来源处置不等于当前对象可用；[2.5](../prompts/02.5-research.md) 对正式正文作保留、去噪、局部修复或承重重构，生成第三阶段明确读取的数学对象名单。程序与记录契约见 [CURATION.md](CURATION.md)，对象群处理者使用 [worker 提示词](../prompts/02.5-worker.md)。
 
-当前仓库的数学正文继续放在 `archives/**/state/`，超图继续表示已经确认的对象关系。本目录增加一个轻量桥接层：2.5 只登记对象、来源、证据、边界和两跳读取索引；研究运行层再把这些内容分发给数学 Agent。
+2.5 可以删除纯身份和执行履历页、把必要程序/证书降为附件、合并重复数学和修正失真；原本好的数学不为统一格式强迫重写或重证。未理解内容留明确疑问，不因旧、未证明或暂无引用而丢弃。来源记录、当前数学对象与运行附件分别表达，不把每个源文件包装成一个研究节点。
 
-## 三种状态
+`tools/curation.py` 固定 baseline、检查处置绑定并导出准入名单；它不判断数学、不自动批准、不批量删除。阶段二仍在写正式正文时，本轮设计只运行扫描和测试，不提前冻结共享全量准入；实际2.5在交接且快照稳定后开始。最终准入拒绝未评估内容和待拆多命题容器；局部导出的 `unresolved-bundle` 只供阅读。第三阶段默认只读明确准入的数学对象及必要证据，草图也需要 manifest；`map check --structural` 只诊断候选文件。附件、工作区与历史副本不自动入图。结构通过不能替代数学判断，局部通过不能称全仓完成。
 
-```text
-source records → object Markdown → Research Packet → research result → object / evidence / hyperedge proposal
-```
+## 后续研究读取
 
-对象 Markdown 不因 packet 生成而合并。一个 packet 可以引用多个对象，一个对象也可以进入多个 packet；登记层保存它们的关系和用途。2.5 不证明关系边，第三阶段才决定正式超边。
+`schemas/` 与 `templates/` 保留 Research Packet、结果和运行契约。packet 从明确准入的正文取得精确陈述、条件、状态、证据和具体缺口；一个 packet 可以引用多个对象，但不能从摘要、目录或旧图猜出结论。
 
-## 选定的开源参考
+默认读取窗口为当前对象与问题定义、直接相关对象及证据、再展开一层的条件/反例/障碍。两跳是起点，遇到明确承重边界继续展开；不用把整图和执行履历塞给每个 Agent。
 
-- [Danus](https://github.com/frenzymath/Danus)：Apache-2.0。主 Agent 调度只处理一个 claim 的 Worker，已验证事实进入 content-addressed fact graph；借鉴“小 claim、局部上下文、事实图和角色权限”，不照搬 CLI。
-- [Noemesis](https://github.com/kbr-/math-research)：软件 MIT，研究文字 CC BY 4.0。借鉴 claim registry、append-only 记录、fresh-context review、失败路线和长期恢复。
-- [Math Research Agent](https://github.com/dongxuelian2/math-research-agent)：MIT。借鉴 planner 返回 typed actions、依赖 DAG、ready frontier、continuation、证据回执和持久化研究状态。
-- [OpenTorus](https://github.com/maximilianbehr/OpenTorus)：Apache-2.0。借鉴 typed dossier、prove-or-refute、显式 gap、攻击路线和可恢复 campaign。
-- [OpenProof](https://github.com/mxthematic/openproof)：MIT。借鉴 planner/prover/retriever/repairer 的子目标分解和 proof-node graph；它的 Lean 核验属于按需工具，不是本项目的默认常驻角色。
+后续研究运行见 [research-runtime.md](../prompts/research-runtime.md)。未证命题可作为明确假设或研究目标，不能作为已知事实；数学推导仍写在独立 Markdown，JSON 只负责路由、登记与状态。
 
-这些项目的 CLI、模型提供商和执行后端都不直接成为 Work 的运行时。我们只移植可观察的数据契约、提示词结构、局部上下文和分支/恢复规则，并保留各自许可证与出处。
+accepted 关系绑定当前端点、证据与关系内容；内容变化须重审，机械刷新 hash 不能继承数学批准。逻辑边有未证或已否前提时显式记条件关系，不因此改变目标的独立证明状态。影响查询只给复核范围，不能将所有后继判假；freshness 只查派生图与当前输入是否一致。具体字段和命令见 [CURATION.md](CURATION.md)。
 
-## Work 中的最小运行
+## 参考边界
 
-Research Boss 作为唯一整合者，六个 subagent 采用两种配比：
-
-- `continuation`：4 boundary + 2 blind；
-- `hard-open`：2 boundary + 4 blind。
-
-Verifier、adversary、形式化工具只在一个具体结果需要它时临时占位。常态输出是：新路线、对象关系、证据需求、失败边界和下一动作。两跳是默认上下文窗口，遇到边界再按路径扩展。
-
-JSON 是路由和登记规范，数学正文仍用 Markdown。见 `schemas/`、`templates/`、`prompts/02.5-research.md` 和 `prompts/research-runtime.md`。长程运行状态只保存 run、workspace、frontier、feedback 和 checkpoint，不保存整段对话；恢复先读 resume bundle，再沿原 run 继续。
+当前准入要求对照 Danus、MATEK 与 Noemesis 的原始规范，具体出处和适配见 [CURATION.md](CURATION.md)。原有 Math Research Agent、OpenTorus、OpenProof 等参考继续作为运行层设计线索，不表示本仓库已经部署其 CLI、模型后端或形式化环境。

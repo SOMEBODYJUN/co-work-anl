@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Phase25Baseline",
+  "$comment": "Structure only. tools/curation.py additionally verifies the complete formal path set and each original byte/identity against the pinned local Git commit. This is not mathematical approval.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "commit",
+    "files"
+  ],
+  "properties": {
+    "version": {
+      "type": "integer",
+      "const": 1
+    },
+    "commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "$ref": "#/$defs/formal"
+          },
+          "sha256": {
+            "$ref": "#/$defs/sha"
+          },
+          "object_id": {
+            "$ref": "#/$defs/text"
+          },
+          "kind": {
+            "$ref": "#/$defs/text"
+          },
+          "parse_error": {
+            "$ref": "#/$defs/text"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "path": {
+      "type": "string",
+      "minLength": 1,
+      "allOf": [
+        {
+          "not": {
+            "pattern": "^(?:/)|(?:^|/)\\.{1,2}(?:/|$)|//|\\\\"
+          }
+        },
+        {
+          "not": {
+            "pattern": "(?:^|/)\\.git(?:/|$)"
+          }
+        }
+      ]
+    },
+    "formal": {
+      "type": "string",
+      "allOf": [
+        {
+          "pattern": "^archives/[^/]+/(?:subarchives/[^/]+/)*(?:state/.+\\.md|问题--问题\\.md)$"
+        },
+        {
+          "not": {
+            "pattern": "(?:^|/)(?:tools|evidence|workspaces|cleanup|history|\\.git|original|comparison|comparisons|formal-comparison)(?:/|$)"
+          }
+        },
+        {
+          "$ref": "#/$defs/path"
+        }
+      ]
+    }
+  },
+  "examples": [
+    {
+      "version": 1,
+      "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "files": [
+        {
+          "path": "archives/demo/state/引理/对象--引理.md",
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "object_id": "demo/object",
+          "kind": "lemma"
+        }
+      ]
+    }
+  ]
+}
+
