@@ -16,6 +16,8 @@ CATEGORIES = {'math-exposition','numeric-witness','math-fragment','algorithm-res
 ROUTES = {'retain','distill','restore','extract','attach','delete','clarify'}
 FIELDS = {'path','sha256','category','math_subject_or_nonmath_reason','locator','route'}
 OPTIONAL = {'tags','related_paths'}
+CLASSIFICATION_ONLY = 'classification-only'
+CLEANUP_HANDOFF = '2.5.1 is classification-only; handle any cleanup in phase 2 (2.5.2), not through triage plan-clean/apply-clean'
 
 def write(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -45,15 +47,18 @@ def init(root, run, lanes=6, actor=None, carry_from=None):
     for row in snap['files']:
         row['material_id']=hashlib.sha256(row['path'].encode()).hexdigest()[:20]
         row['bytes']=(root/row['path']).stat().st_size
+    for i,row in enumerate(sorted(snap['files'],key=lambda r:r['path']),1):
+        row['display_id']=f'P25-{i:05d}'
     groups=[[] for _ in range(lanes)];sizes=[0]*lanes
     # Similar paths stay adjacent in each lane; large wrappers are distributed.
     for row in sorted(snap['files'],key=lambda x:-x['bytes']):
         lane=min(range(lanes),key=lambda i:sizes[i])
         groups[lane].append(row['material_id']);sizes[lane]+=row['bytes']
     write(home/'snapshot.json',snap)
-    write(home/'run.json',{'version':1,'run_id':run,'actor':actor,
+    write(home/'run.json',{'version':2,'run_id':run,'actor':actor,
           'step':'2.5.1','snapshot_commit':snap['commit'],'lanes':lanes,
-          'status':'classifying','board':'not-created-single-Boss-internal-batches',
+          'status':'classifying','operation_mode':CLASSIFICATION_ONLY,
+          'board':'not-created-single-Boss-internal-batches',
           'scope':'current canonical formal Markdown; evidence originals excluded'})
     for i,ids in enumerate(groups,1):write(home/'lanes'/f'{i}.json',ids)
     reused=0
@@ -152,27 +157,33 @@ def status(root,run):
 
 def export(root,run):
     home,snap=load(root,run);report=status(root,run);rows=[]
+    classification_only=json.loads((home/'run.json').read_text()).get('operation_mode')==CLASSIFICATION_ONLY
+    display_ids={row['path']:f'P25-{i:05d}' for i,row in enumerate(sorted(snap['files'],key=lambda r:r['path']),1)}
     for original in snap['files']:
         p=home/'records'/f"{original['material_id']}.json"
-        if p.exists():rows.append(json.loads(p.read_text()))
+        if p.exists():rows.append({'display_id':display_ids[original['path']],
+                                   'material_id':original['material_id'],**json.loads(p.read_text())})
+    rows.sort(key=lambda row:row['path'])
     write(home/'summary.json',report)
     write(home/'materials.json',rows)
     locations=[]
     for row in rows:
         name=row['path'];current=name
         action_file=home/'actions'/(hashlib.sha256(name.encode()).hexdigest()[:20]+'.json')
-        action=json.loads(action_file.read_text()) if action_file.exists() else {}
-        if action.get('state')=='applied':current=action.get('target')
-        elif not (root/name).is_file():current=None
+        action=json.loads(action_file.read_text()) if action_file.exists() and not classification_only else {}
+        if (root/name).is_file():action={}
+        elif action.get('state')=='applied':current=action.get('target')
+        else:current=None
         target=curation._safe_path(root,current) if current else None
         exists=target is not None and target.is_file()
         locations.append({'source_path':name,'source_sha256':row['sha256'],
                           'current_path':current if exists else None,
                           'current_sha256':curation.digest(target.read_bytes()) if exists else None,
-                          'disposition':action['action'] if action.get('state')=='applied' else 'current-formal'})
+                          'disposition':action['action'] if action.get('state')=='applied' else 'original-material' if classification_only else 'current-formal'})
     write(home/'current-locations.json',locations)
-    report['current_formal_materials']=sum(x['disposition']=='current-formal' and x['current_path'] is not None for x in locations)
-    report['applied_retirements']=sum(x['disposition']!='current-formal' for x in locations)
+    report['current_formal_materials']=sum(x['disposition'] in {'original-material','current-formal'} and x['current_path'] is not None for x in locations)
+    report['applied_retirements']=sum(x['disposition'] not in {'original-material','current-formal'} for x in locations)
+    if classification_only:report['operation_mode']=CLASSIFICATION_ONLY
     write(home/'summary.json',report)
     mathematical=[r for r in rows if r['category'] not in {'evidence-only','non-math'}]
     write(home/'mathematics.json',mathematical)
@@ -180,37 +191,42 @@ def export(root,run):
     for category in sorted(CATEGORIES):
         write(home/'catalog'/f"{category.replace('/','-')}.json",[r for r in rows if r['category']==category])
     write(home/'stage2-candidates.json',[r for r in rows if r['route'] in {'distill','restore','extract','clarify'}])
+    columns=['display_id','material_id','path','sha256','category','math_subject_or_nonmath_reason','locator','route']
     with (home/'materials.csv').open('w',newline='') as f:
-        writer=csv.DictWriter(f,fieldnames=sorted(FIELDS),lineterminator='\n');writer.writeheader()
-        writer.writerows({k:r[k] for k in sorted(FIELDS)} for r in rows)
+        writer=csv.DictWriter(f,fieldnames=columns,lineterminator='\n');writer.writeheader()
+        writer.writerows({k:r[k] for k in columns} for r in rows)
     archives=collections.defaultdict(list)
     for row in rows:archives[PurePathArchive(row['path'])].append(row)
     catalog=home/'by-archive';catalog.mkdir(exist_ok=True)
     for archive,items in sorted(archives.items()):
         page=catalog/(archive+'.md')
-        content=[f'# {archive} 材料目录','', '类别只判断材料性质，不认证数学真值。已清理/移附件的材料以actions中的当前去向为准。','',
-                 '| 材料 | 类别 | 路由 | 具体理由 |','| --- | --- | --- | --- |']
+        intro='类别只判断材料性质，不认证数学真值；建议去向不是已执行的处置。'
+        content=[f'# {archive} 材料目录','',intro,'',
+                 '| 编号 | 材料 | 类别 | 建议去向 | 定位 | 具体理由 |',
+                 '| --- | --- | --- | --- | --- | --- |']
         for row in sorted(items,key=lambda r:r['path']):
             title=Path(row['path']).stem.replace('|','\\|')
             target=root/row['path'];sid=hashlib.sha256(row['path'].encode()).hexdigest()[:20]
             action_file=home/'actions'/f'{sid}.json'
-            action=json.loads(action_file.read_text()) if action_file.exists() else {}
-            if action.get('state')=='applied':
+            action=json.loads(action_file.read_text()) if action_file.exists() and not classification_only else {}
+            if not target.exists() and action.get('state')=='applied':
                 target=root/action['target'] if action.get('target') else action_file
             elif not target.exists():target=home/'records'/f'{sid}.json'
             link=os.path.relpath(target,page.parent)
             reason=row['math_subject_or_nonmath_reason'].replace('\n',' ').replace('|','\\|')
-            content.append(f'| [{title}](<{link}>) | {row["category"]} | {row["route"]} | {reason} |')
+            locator=row['locator'].replace('\n',' ').replace('|','\\|')
+            content.append(f'| {row["display_id"]} | [{title}](<{link}>) | {row["category"]} | {row["route"]} | {locator} | {reason} |')
         page.write_text('\n'.join(content)+'\n')
     lines=['# 2.5.1 材料定性目录','',f"固定快照 `{report['snapshot_commit']}`；已定性 {report['classified']}/{report['materials']}。分类不是数学真值审查或超边准入。",'',
            '| 材料类别 | 数量 |','| --- | ---: |']
     lines.extend(f'| {c} | {report["categories"].get(c,0)} |' for c in sorted(CATEGORIES))
-    lines+=['',f"本快照材料中，已落实退出正式层 {report['applied_retirements']} 份，现行保留 {report['current_formal_materials']} 份。"]
-    lines+=['','完整六字段清单见 [materials.csv](materials.csv) 和 [materials.json](materials.json)，数学及待抽取素材见 [mathematics.json](mathematics.json)，其中类别已明确的数学见 [mathematics-clear.json](mathematics-clear.json)。mixed/needs-context仍须第二步处理，不能漏掉或当已准入节点。按类别见 catalog/；第二步候选见 [stage2-candidates.json](stage2-candidates.json)。',
-            '','分类与清理落实分开；删除和附件去向另见 actions/。本目录是后台材料清单，不是数学正文。']
+    lines+=['','编号按快照路径排序固定；建议去向供第二阶段处理，不代表处置已执行。']
+    lines+=['','六个分类字段及编号见 [materials.csv](materials.csv) 和 [materials.json](materials.json)，数学及待抽取素材见 [mathematics.json](mathematics.json)，其中类别已明确的数学见 [mathematics-clear.json](mathematics-clear.json)。mixed/needs-context仍须第二步处理，不能漏掉或当已准入节点。按类别见 catalog/；第二步候选见 [stage2-candidates.json](stage2-candidates.json)。']
+    lines+=['','本目录是后台材料清单，不是数学正文。']
     lines+=['','## 按研究存档浏览','']
     lines.extend(f'- [{archive}](by-archive/{archive}.md)：{len(items)}份已定性材料。' for archive,items in sorted(archives.items()))
-    lines+=['','清单SHA绑定冻结原材料；现行正文/附件路径与实际字节版本见 [current-locations.json](current-locations.json)，不可把旧输入SHA当作改写后的现行SHA。']
+    lines+=['','清单SHA绑定冻结原材料；现行正文/附件路径与实际字节版本见 [current-locations.json](current-locations.json)，不可把旧输入SHA当作改写后的现行SHA。' if not classification_only else
+            '清单SHA绑定冻结原材料；当前原路径与实际字节版本见 [current-locations.json](current-locations.json)，路径或字节变化须另行核对。']
     (home/'INDEX.md').write_text('\n'.join(lines)+'\n')
     return report
 
@@ -235,9 +251,7 @@ def main():
         elif a.command=='ingest':result=ingest(root,a.run,a.batch,a.records)
         elif a.command=='status':result=status(root,a.run)
         elif a.command=='export':result=export(root,a.run)
-        else:
-            import triage_clean
-            result=(triage_clean.plan if a.command=='plan-clean' else triage_clean.apply)(root,a.run)
+        else:raise ValueError(CLEANUP_HANDOFF)
         print(json.dumps(result,ensure_ascii=False,indent=2))
     except (ValueError,OSError,KeyError,json.JSONDecodeError) as e:raise SystemExit(str(e))
 

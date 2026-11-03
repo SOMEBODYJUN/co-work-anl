@@ -40,8 +40,13 @@ def rewrite(source,target,text,routes):
 def classification_digest(home):
     return hashlib.sha256(b''.join(p.name.encode()+p.read_bytes() for p in sorted((home/'records').glob('*.json')))).hexdigest()
 
+def require_legacy_cleanup(home):
+    config=json.loads((home/'run.json').read_text())
+    if config.get('version')!=1 or config.get('operation_mode') is not None:
+        raise ValueError(triage.CLEANUP_HANDOFF)
+
 def plan(root,run):
-    home,snapshot=triage.load(root,run);report=triage.status(root,run)
+    home,snapshot=triage.load(root,run);require_legacy_cleanup(home);report=triage.status(root,run)
     starting_classification=classification_digest(home)
     if report['remaining'] or report['stale_record_bindings']:raise ValueError('Finish material classification before the global cleanup plan')
     originals={r['path']:r for r in snapshot['files']}
@@ -95,7 +100,7 @@ def plan(root,run):
     return {'status':result['status'],'actions':len(actions),'needed_evidence_attachments':len(needed),'link_patches':len(patches)}
 
 def apply(root,run):
-    home,snapshot=triage.load(root,run);plan_data=json.loads((home/'cleanup-plan.json').read_text())
+    home,snapshot=triage.load(root,run);require_legacy_cleanup(home);plan_data=json.loads((home/'cleanup-plan.json').read_text())
     if plan_data['status']!='planned-not-applied' or plan_data['classification_sha256']!=classification_digest(home):
         raise ValueError('Classification changed or cleanup already applied; rebuild and review plan')
     routes=plan_data['routes'];prepared=[]

@@ -1,9 +1,10 @@
-# 2.5.1/2 临时协作域
+# 2.5 分类与协作入口
 
-当前入口：[20261103-boss6-current](runs/20261103-boss6-current/INDEX.md)。第一步已完成，见[成果与具体缺口](runs/20261103-boss6-current/RESULTS.md)；第二步见[对象群任务目录](runs/20261103-boss6-current/TASKS.md)，尚未认领。
+当前：[4,619份完整编号分类目录](catalogs/20261103-classification-only/INDEX.md)。第一步仅分类、标号、建目录；任何去向都是建议，未执行清理、合并、蒸馏或改写。旧第一步清理已撤销，原页面和链接恢复。
 
-材料批次用`work.py triage`；第二步对象群用`work.py curation-task`，不要用旧clean来源认领。见[操作手册](../research/CURATION_OPERATIONS.md)、[Boss完整提示词](../prompts/02.5-2-distill.md)、[worker提示词](../prompts/02.5-worker.md)。
+- [第二步Boss提示词](../prompts/02.5-2-distill.md)和[worker提示词](../prompts/02.5-worker.md)。
+- [操作手册](../research/CURATION_OPERATIONS.md)：现有py、独立工作区、任务认领、公屏和提交。
+- [已备144组数学任务](runs/20261103-boss6-current/TASKS.md)及[34份新增候选差量](runs/20261103-boss6-current/catalogue-routing-delta.json)。第二步未开始。
+- [分类更正](classification-only-correction/classification-corrections.json)与[先前清理撤销记录](classification-only-correction/restoration.json)。这些后台文件不是数学对象。
 
-原始冻结定性保存在[runs/20261103-boss6-triage](runs/20261103-boss6-triage/INDEX.md)，现行路径/字节见当前运行的current-locations.json。分类表示材料性质，不认证数学真值，不是最终图准入。
-
-runs/workspaces属于临时机器层，不进入数学研究读取正文。第二步数学回写正式对象，临时设施交接后退役。新公屏拟用wcg/board-curation-25，尚未创建；未来研究Agent另行设计。
+旧runs保留冻结分类和历史动作；当前分类以catalogs入口为准。2.5第三步与超边结构另行设计。
