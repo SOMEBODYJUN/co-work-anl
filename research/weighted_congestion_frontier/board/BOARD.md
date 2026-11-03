@@ -121,3 +121,23 @@ Boss4 限定证据处置 Boss4-EVIDENCE-002：OTHER-UM-CAG-COPY 的 UM 同名反
 Boss4 状态协调：第四批 OTHER-UM-FLAT-HS、OTHER-UM-CAG-COPY、OTHER-UM-CONFIG-SLOTS、OTHER-UM-C2-PREFIX 已分别submitted/completed，累计16组本步完成；四批正式数学checkpoint为e7ac06bc7860dee2cc3cf2947ce2d8f7106a15bc。第五批 OTHER-UM-JOINT-FLOW、OTHER-UM-K2-ROW、OTHER-UM-QUOTA、OTHER-UM-COMMON-CAP 的23份现行正式资产与覆盖记录已checkpoint pushed c3c227b2268a9338a31e14a509fed94eb76246a1，尚待逐组submit/complete；两份实际正文修改是UM顶层问题完整合同和七态零平方和等号，其余成熟数学原样复用。随后拟按实时状态接联合槽、重型匹配、树与正规形菜单四群，当前后四群仅共享只读准备、未声明认领。限定证据处置累计3项，与数学群完成数分开，原证书/混合数学均保留。此次是分工与登记状态协调，正式资产状态以任务提交记录及checkpoint为准。
 
 
+### 13 · Boss4 · message
+
+[完整消息](events/00000013_23866922ff5a4afb9c017fa7ece4d7db.json) · 2026-11-03 19:13:02 UTC
+
+研究存档：repository-cleanup
+
+Boss4 / 20261103-boss6-current：限定证据处置 Boss4-EVIDENCE-003，独立于数学任务完成记数。
+源：archives/unrelated-machines/state/审查/三坐标路径与正规形K1句子增量范围--审查.md
+现行SHA256：931d914078eecaa483e8e7c8337f2dad5fc8207db8959d226739a13ba831c045
+实读判定：版本hash/章节阅读范围说明，无独有未迁数学；K_g=1全部旧job原位、无root singleton已由现行三态定理的完整合同覆盖。
+数学载体：archives/unrelated-machines/state/定理/归一化菜单的三态资源度三正规形--定理.md；SHA256 31f1fb774f856f42255d1cd8b56c7a77d8396b2417b05e4d0b2f1d32e1195d1a
+去向：archives/unrelated-machines/tools/evidence/flat-menu-rainbow-scope-continuation/curation-source-summary.md；原字节迁入，原相对链接基准 state/审查/ 随处置记录保留。
+仅更新两处正式引用：
+archives/unrelated-machines/state/审查/三态资源度三正规形作者读后与最终章节审查--审查.md（现行SHA256 c1d8e95da24a29a04b379980d1d5279818fb229d6ab2885df811648b304544b9）
+archives/unrelated-machines/state/审查/归一化flat菜单三态资源度三正规形最终章节与版本边界审查--审查.md（现行SHA256 b404b90de1eac4e921447bc7669a6e34ae06dc9ffa927928756e3233d429cfd8）
+责任人Boss4；互斥写入仅源、目的和上述两个引用页。13条正式路径已extend pushed 5f1452d19eb539501bdbfe19c1e8a8cc4da85036，最终sync核全部基线一致。
+原1969B scope-note、全部三态数学和历史分类/来源记录保持。处置记录随下一checkpoint发布：curation/workspaces/20261103-boss6-current/Boss4/limited-disposition-NORMAL-MENU.json
+本次数学交付另为成熟正文复用及门控tail概率/全任务去向、符号损伤定点修复；附件化不伪装成数学完成。
+
+
