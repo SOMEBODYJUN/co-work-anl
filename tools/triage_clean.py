@@ -5,6 +5,7 @@ import json
 import os
 from pathlib import Path
 import re
+import subprocess
 from urllib.parse import unquote
 import curation
 import triage
@@ -119,8 +120,14 @@ def apply(root,run):
         if target:
             p=curation._safe_path(root,target);p.parent.mkdir(parents=True,exist_ok=True);p.write_text(revised)
     for p,revised in patches:p.write_text(revised)
+    # Record deletion intent in Git explicitly. Some managed Git workspaces
+    # hydrate a missing tracked file when `git add <path>` is called; unlink
+    # alone must never be mistaken for a committed retirement.
+    if prepared:
+        removed=subprocess.run(['git','rm','--quiet','--',*[a['path'] for a,_,_ in prepared]],cwd=root,capture_output=True,text=True)
+        if removed.returncode:raise ValueError('Git retirement not staged; preserve local changes: '+removed.stderr[:500])
     for action,source,revised in prepared:
-        source.unlink()
+        if source.exists():raise ValueError('Retired path still exists after git rm: '+action['path'])
         outcome=dict(action,state='applied',publication='local-only',history_commit=snapshot['commit'])
         if revised is not None:outcome['target_sha256']=curation.digest(revised.encode())
         triage.write(home/'actions'/f"{action['material_id']}.json",outcome)
