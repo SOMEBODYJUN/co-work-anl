@@ -592,7 +592,9 @@ def main():
     clean.add_argument("args", nargs=argparse.REMAINDER)
     mapping = sub.add_parser("map", help="检查/生成子存档、存档和全仓超图")
     mapping.add_argument("args", nargs=argparse.REMAINDER)
-    research = sub.add_parser('research', help='登记、按需读取超边、两类Solver输入和持续研究恢复')
+    research = sub.add_parser('research', help='登记、按需读取超边、两类Solver输入和持续研究恢复',
+                              epilog='Commands: inventory, register, check, build, search, show, context, edge-bind, packet, init, save, resume. See research/IMPLEMENTATION.md.')
+    research.add_argument('--registry', help='显式选择v2登记文件；省略使用research/registry.json')
     research.add_argument('args', nargs=argparse.REMAINDER)
     curate = sub.add_parser("curate", help="2.5固定原文、逐对象处置与数学准入；只操作本地明确文件")
     curate.add_argument("args", nargs=argparse.REMAINDER)
@@ -649,7 +651,8 @@ def main():
         return start(a)
     repo = checked_repo(a.repo)
     if a.command == 'research':
-        return subprocess.call([sys.executable, str(repo / TOOLS / 'research_runtime.py'), '--repo', str(repo), *a.args])
+        registry = ['--registry', a.registry] if a.registry else []
+        return subprocess.call([sys.executable, str(repo / TOOLS / 'research_runtime.py'), '--repo', str(repo), *registry, *a.args])
     if a.command == 'map' and a.args and a.args[0] in {'inventory', 'plan', 'list', 'claim', 'done', 'handoff', 'status'}:
         env = auth(repo, a)
         result = subprocess.run([sys.executable, str(repo / TOOLS / 'map_tasks.py'), '--repo', str(repo), *a.args], env=env, capture_output=True, text=True)
