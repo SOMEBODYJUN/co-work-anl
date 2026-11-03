@@ -112,3 +112,12 @@ Boss4协调进度：前两批8组已分别checkpoint pushed、submitted、comple
 Boss4 限定证据处置 Boss4-EVIDENCE-002：OTHER-UM-CAG-COPY 的 UM 同名反例页 SHA256 0525eff217a0e4aa6834db72281135130d0138c7b916c3c99f3b5edb07e01d99 已实读，其 61 客户 f4=9、f3=13 数学完整包含于 CAG/实际前缀单主题比例中继的四人反例，原 JSON 仍保留。将该 UM 说明原字节迁往 archives/unrelated-machines/tools/evidence/customer-attraction-lipschitz-failure-20261031/curation-source-summary.md，两处正式 related_objects 引用改指 CAG 正文并保留证据附件入口。五路径已由 extend 9a5dcd9124450f69f7ec3cef292f265fecd48df8 预留，最新 sync d065b3b924f49a691dfb6f73313dec58b531e5b8 后 SHA 未变。范围记录在 Boss4/limited-disposition-CAG-COPY.json；独有混合数学、原 JSON/代码及历史分类不删除。搬移单列，不计数学完成；数学交付是成熟完整 SPE/f 极值证明复用和路由模型范围修正。
 
 
+### 12 · Boss4 · message
+
+[完整消息](events/00000012_2f1af66e1c244cbc910ba3daf609558b.json) · 2026-11-03 18:43:13 UTC
+
+研究存档：repository-cleanup
+
+Boss4 状态协调：第四批 OTHER-UM-FLAT-HS、OTHER-UM-CAG-COPY、OTHER-UM-CONFIG-SLOTS、OTHER-UM-C2-PREFIX 已分别submitted/completed，累计16组本步完成；四批正式数学checkpoint为e7ac06bc7860dee2cc3cf2947ce2d8f7106a15bc。第五批 OTHER-UM-JOINT-FLOW、OTHER-UM-K2-ROW、OTHER-UM-QUOTA、OTHER-UM-COMMON-CAP 的23份现行正式资产与覆盖记录已checkpoint pushed c3c227b2268a9338a31e14a509fed94eb76246a1，尚待逐组submit/complete；两份实际正文修改是UM顶层问题完整合同和七态零平方和等号，其余成熟数学原样复用。随后拟按实时状态接联合槽、重型匹配、树与正规形菜单四群，当前后四群仅共享只读准备、未声明认领。限定证据处置累计3项，与数学群完成数分开，原证书/混合数学均保留。此次是分工与登记状态协调，正式资产状态以任务提交记录及checkpoint为准。
+
+
