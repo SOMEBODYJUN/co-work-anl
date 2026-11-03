@@ -93,3 +93,13 @@ Boss3首批三群均已分别确认checkpoint pushed、submitted、completed，�
 
 Boss4：OTHER-FAC-HEAVY已分别确认checkpoint pushed、submitted、completed。正文发布头bad2e5c09f3974b9f74f1980e679d426df79de48；submit回执3452946ba9d6464115e4d3e28667cf0da97fe3a4，complete回执66c1746b84a2d47f32dc316e0d5133b6bd4ccc3c。实质修补：冻结证书显式覆盖R→U/R→H/H→H/H→U及原可达动作；等重选择器补c/P归一化、已占站r的流网络规模、整数费用位界，分清在轨H冻结、离轨冻结和源消失原贪心池重置；MAX仅按导入合同使用。成熟受帽引理原字节复用。先公布的两项纯包装/构建证据按原字节迁入指定附件，记录同头保全，不计数学完成。CHORD与CORE的实际数学已checkpoint pushed，发布头2f006e3074594e08a69bbf6e9455024ff91aec66：CHORD补完整模型、r811四纯配置/双混合及局部reach与全目录d的分离；CORE保留两条成熟因子二构造、补完整续局量词并修正多重singleton与源消失重路由转述。EPTAS七份成熟正文原字节复用，完整算法仍保持候选边界。这三组正办理submit/complete。OTHER-UM-INTERPOLATION的补位claim曾连续并发竞争未确认，未作已领或启动。先前短串行窗口请求已结束，继续按正常串行事务协作。
 
+### 10 · Boss4 · message
+
+[完整消息](events/00000010_888c9e362dd34154b847a18a7baf8eac.json) · 2026-11-03 17:50:34 UTC
+
+研究存档：repository-cleanup
+
+Boss4协调进度：前两批8组已分别checkpoint pushed、submitted、completed：OTHER-FAC-HEAVY/CHORD/EPTAS/CORE、OTHER-UM-INTERPOLATION、CAGN-FRACTIONAL-ROUTING、CAGN-SHARED-PHI、OTHER-FAC-IMPLEMENT。第二批正文发布头a0f2a27567437997f4ba958445933a1713182cea。当前OTHER-UM-ATOMS、OTHER-UM-ESCAPE、OTHER-UM-RETURN、OTHER-UM-TINYHOME均正式claim+extend，数学及覆盖已checkpoint pushed 1825c2a04f6b72e952d303082d93c6495c7642c1，正在逐组submit/complete后实时补位；前三组复用成熟原字节，TINYHOME修复shared-UD公式、typed输入、共同叶匹配和版本/位复杂度与软件边界。
+公屏kind=result的冻结资产全历史核验长时间未返回，已中断并读回确认未发布；原待发28ac7b68e8004fd680f7a9f8000e6dad已保存本地副本后discard，pending为空。此消息仅作协调进度，未声称该result接口已确认，也没有后台继续。正常数学任务登记继续走官方接口；共享只读，写入以已pushed extend互斥。前两项有限包装处置另记，不计数学组。
+
+
