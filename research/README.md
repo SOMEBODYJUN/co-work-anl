@@ -1,15 +1,18 @@
-# 数学整理与后续研究设计入口
+# 数学整理、关系图与持续研究入口
 
-[上游实读与适配](UPSTREAM_ADAPTATION.md)记录Pharos固定commit、源码/提示词位置和采用的读取机制。
+这里保存共同研究接口、阶段规则、登记和运行恢复信息。完整数学内容在archives，各任务的真实状态以已发布记录为准。
 
-用户已授权把2.5第三步、第三阶段与研究使用一起落实。[IMPLEMENTATION.md](IMPLEMENTATION.md)是已实现v2接口与完整命令，[GITHUB_RESOURCES.md](GITHUB_RESOURCES.md)记录Codespaces/Actions和权益边界。入口为work.py research；新map任务账本与旧curate/map原型分开。此处不自动替2.5前两步作数学判断，也不声称全仓登记和图已完成。下文原型说明仅作历史背景，其“待后续设计”已由这次接口设计承接。
+- [Work研究流程与目录安排](RESEARCH_WORKFLOW.md)：Main/Solver如何用代码和资料，计算在哪里执行，研究成果怎样回流，每个目录保存什么，以及哪些云端通道尚未完成实际验收。
+- [2.5第三步与第三阶段固定入口](PHASE3_READINESS.md)：完整Boss/worker启动词、稳定身份、冻结输入、分批登记、跨批/跨档整合和阶段隔离。
+- [实现与命令](IMPLEMENTATION.md)：research与map命令、v2登记/超边字段、示例、反馈恢复与模板导出。
+- [GitHub资源](GITHUB_RESOURCES.md)：直接PAT接口、Codespaces/Actions配置、权益与权限边界。
+- [交付及验收记录](DELIVERY.md)、[本轮工程验收](checks/phase3-20261103.json)：已实际执行的检查及其范围；工程通过不证明数学真值。
+- [上游代码依据与适配](UPSTREAM_ADAPTATION.md)：Pharos固定版本的具体机制和本项目保留的简化，不宣称其在本题效果最好。
 
-当前执行设计见 [CURATION.md](CURATION.md)：2.5.1材料定性、2.5.2对象群数学整理；[第一步提示词](../prompts/02.5-1-inventory.md)、[第二步Boss](../prompts/02.5-2-distill.md)及[worker](../prompts/02.5-worker.md)已分开。材料分类不是数学真值审查或最终节点准入，原本好内容直接沿用。
+2.5前两步仍使用[CURATION](CURATION.md)、[第一步判据](PHASE25_TRIAGE.md)、[第二步对象群整理](PHASE25_DISTILL.md)、[操作手册](CURATION_OPERATIONS.md)和[程序契约](PHASE25_PROGRAM.md)。第一步只分类和目录，不以标签删原件；第二步由实际执行者按当前任务整理。前两步不替最终节点造ID，也不把来源done或编辑completed当作数学真值认证。
 
-[分类判据](PHASE25_TRIAGE.md)、[对象群任务与出口](PHASE25_DISTILL.md)、[新协作域](CURATION_OPERATIONS.md)和[程序规格](PHASE25_PROGRAM.md)供前两步使用。材料批次与对象群任务程序已实现，第一步run正在逐份分类、清理明确非数学页；新公屏尚未创建。
+2.5第三步和第三阶段的可执行设计已经确定。真实registry、正式超图、对应任务/身份以及数学Solver运行由实际阶段启动时产生；目录和配置准备好不等于这些任务已完成。
 
-2.5.3重新登记、第三阶段超边格式与数学研究Agent由用户与另一AI另定。前两步保留路径、字节版本、可理解正文、原材料去向和具体缺口即可，不强制按未来节点拆页或造ID。
+`tools/curation.py`、`tools/maps.py`、旧graph.json以及本目录部分schemas/templates属于[旧准入/运行原型](CURATION_PROTOTYPE_V1.md)，保留兼容和追溯。当前v2以PHASE3_READINESS、IMPLEMENTATION、根prompts和实际程序为准。当前research-runtime.md及两类Solver提示词是已发布研究使用规范，不再把它们笼统标为待定旧原型。
 
-`tools/curation.py`、`tools/maps.py`、本目录现有准入/packet/result schema、templates与 [research-runtime.md](../prompts/research-runtime.md)均为可参考原型，不表示研究运行框架已定。上一版完整协议见 [CURATION_PROTOTYPE_V1.md](CURATION_PROTOTYPE_V1.md)。不以当前实现限制倒逼前两步数学组织，也不以结构测试通过宣称数学正确。
-
-上游研究对照见[原始规范及代码对照](../cleanup/audits/phase25-design/upstream_requirements.md)。引用不自动构成依赖、未证不能作真前提等数学要求仍有价值；具体schema、读取窗口和运行策略等待后续负责人定案。
+早期准入讨论仍见[上游要求对照](../cleanup/audits/phase25-design/upstream_requirements.md)。其中保全量词/定义、联合前提、版本变化后重判、引用不等于推导等原则继续适用；不同版本的具体schema不能混用。
