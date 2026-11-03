@@ -30,7 +30,7 @@ credible_cone先对旧质量按浮点后limit_denominator(10^6)恢复，清分�
 
 再在最小福利根终局中随机取target。expand(h,q,target)对每个**有序**h独立选能实现target的当前行动；偏离b后，从该孩子集合中挑一个使偏离者收益不超过规定收益的dest，并递归到h b。uniform/min/max/lowW只决定这个合格菜单内的选择法，不删除完整树。保存记录[h,selected,target,destinations]以及完整真实Γ。由有限树归纳，给定终局选择器构成一份真实σ；保存后质量改变了，仍须对该固定σ重新检查Γ。
 
-本批2801动作保存图的所有target/dest索引与真实重放逐项一致，见[四点资格页](<../../../../tools/evidence/phase25-material-attachments/20261103-boss6-triage/396e014803a5c7d749d2.md>)。这份源scope沿用“count-policy”字样，不得据此把有序图降成count表。集合值缓存也不承诺原策略匿名净化；[该一般净化已假](../问题/完整历史计数策略净化--问题.md)。
+本批2801动作保存图的所有target/dest索引与真实重放逐项一致，见[四点资格页](../计算/四个有理计数与有序策略点的完整资格及别名边界--计算.md)。这份源scope沿用“count-policy”字样，不得据此把有序图降成count表。集合值缓存也不承诺原策略匿名净化；[该一般净化已假](../问题/完整历史计数策略净化--问题.md)。
 
 ## 共同迭代、精确门和三份历史报告
 

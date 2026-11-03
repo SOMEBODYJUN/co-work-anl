@@ -15,7 +15,7 @@ source_refs:
 
 ## 实际对象与版本
 
-5857B/48行主review及95行最终正文ff8d35a5c019fa6c5faaa26fa9848727490ade77141fcff4275273877f1064a1均全文读。旧[cover/消元页](配置覆盖坍缩与永久消元双源审查--审查.md)、[有限cover页](<../../../../tools/evidence/phase25-material-attachments/20261103-boss6-triage/5da121ddffc9e69497ce.md>)、[seed页](配置有限覆盖种子精确证书--审查.md)全文比较；本页补指定审查的完整量词/分母/正则作用与修订先验，不把有限fixture冒称一般证明。
+5857B/48行主review及95行最终正文ff8d35a5c019fa6c5faaa26fa9848727490ade77141fcff4275273877f1064a1均全文读。旧[cover/消元页](配置覆盖坍缩与永久消元双源审查--审查.md)、[有限cover页](配置激活与有限覆盖增量审计--审查.md)、[seed页](配置有限覆盖种子精确证书--审查.md)全文比较；本页补指定审查的完整量词/分母/正则作用与修订先验，不把有限fixture冒称一般证明。
 
 一般合法P，有限incidence图为machine i—job j，有限边时间p_ij。正整数q的cover由每条原incidence一个置换π_ij:[q]→[q]给定：job(j,a)只在(i,π_ij(a))执行、时间p_ij。全部机器/任务同数复制，无其它机器、任务、端、改时间或跨type接线；允许任务任意度、零时间及空任务。
 

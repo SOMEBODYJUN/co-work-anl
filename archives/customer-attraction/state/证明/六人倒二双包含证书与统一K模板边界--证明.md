@@ -105,7 +105,7 @@ $$K_j=H_j+\frac{u_6-U_p(E_j,A)}5\ge0,$$
 
 ## 2026-11-03：两份原复算脚本恢复
 
-上文“原独立replay脚本本地缺失”及“原入口/LP/SPE采样均0”记录的是此前协调稿清洗批次的取得与执行范围，原记录保留。本批已从冻结源取回[883B统一K三行原程序](<../../../../tools/evidence/phase25-material-attachments/20261103-boss6-triage/b68aa586e1d325858282.md>)与[1227B去交集1960型原程序](../程序/双包含半覆盖的去交集一千九百六十型复算--程序.md)，核字节及SHA后各以断言启用的隔离解释器执行一次，分别捕获新tuple/文字stdout与含Fraction的dict repr stdout，见[新执行记录](../../tools/evidence/two-early-replay-source-contracts-primary/execution.json)。这两源没有独立冻结stdout；新执行不补造原历史日志，也不冒用3118B审计的405B JSON。
+上文“原独立replay脚本本地缺失”及“原入口/LP/SPE采样均0”记录的是此前协调稿清洗批次的取得与执行范围，原记录保留。本批已从冻结源取回[883B统一K三行原程序](../程序/统一K三行系数障碍的固定有理复算--程序.md)与[1227B去交集1960型原程序](../程序/双包含半覆盖的去交集一千九百六十型复算--程序.md)，核字节及SHA后各以断言启用的隔离解释器执行一次，分别捕获新tuple/文字stdout与含Fraction的dict repr stdout，见[新执行记录](../../tools/evidence/two-early-replay-source-contracts-primary/execution.json)。这两源没有独立冻结stdout；新执行不补造原历史日志，也不冒用3118B审计的405B JSON。
 
 实际源定位（两个冻结提交分别同字节）：
 

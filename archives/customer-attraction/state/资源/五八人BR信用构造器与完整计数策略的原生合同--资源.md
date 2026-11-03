@@ -15,7 +15,7 @@ source_refs:
 
 7917B原code、27685B五人和481955B八人证书全部原字段及每个210/11440 policy行均已实际读取；[源清单](../../tools/evidence/br-credit-constructor-and-policy-certificates-primary/source-manifest.json)。此前NI是necessary related、NQ是两独审输入/构造者context，均0额外done；当前primary责任逐源承接，不能把旧related读当此前primarydone。NX3真实合批claim 118d18f8eb8e9e4368574eced82afd4aa7f6e0bd pushed，本3 owner/in-progress/sourceSHA已核，原local_sync synced保；不预称正文已推或done。
 
-原一般核/路由数学及NI真独审在[多源信用资源](多源整合核的真实BR信用与五八人路由范围--资源.md)和[原计算](<../../../../tools/evidence/phase25-material-attachments/20261103-boss6-triage/9cb3b340fa6309a3346f.md>)完整保存，NQ又给[独审输入合同](真实BR债原独审的策略输入与全历史覆盖合同--资源.md)。本页不重新授同一SPE/路由反例，保生成器真正算法、输出schema、数学角色和先验。
+原一般核/路由数学及NI真独审在[多源信用资源](多源整合核的真实BR信用与五八人路由范围--资源.md)和[原计算](../计算/多源BR信用与五环整数平台的原入口精确复核--计算.md)完整保存，NQ又给[独审输入合同](真实BR债原独审的策略输入与全历史覆盖合同--资源.md)。本页不重新授同一SPE/路由反例，保生成器真正算法、输出schema、数学角色和先验。
 
 ## 原单位模型、参数及完整BI为何合法
 

@@ -27,6 +27,9 @@ class TriageCleanupTests(unittest.TestCase):
             p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(body)
         git('add','.');git('commit','--quiet','-m','Inputs')
         triage.init(self.root,'run',1,'Boss6');self.home,self.snap=triage.load(self.root,'run')
+        # Existing version-1 runs retain the historical cleanup implementation.
+        config=json.loads((self.home/'run.json').read_text());config['version']=1;config.pop('operation_mode')
+        triage.write(self.home/'run.json',config)
         batch=triage.next_batch(self.root,'run',1,30,100000)
         records=[]
         for row in batch['files']:
@@ -47,14 +50,14 @@ class TriageCleanupTests(unittest.TestCase):
         clean.plan(self.root,'run');(self.root/self.d).write_text('New mathematical content')
         with self.assertRaisesRegex(ValueError,'Stale cleanup'):clean.apply(self.root,'run')
         self.assertTrue((self.root/self.c).exists());self.assertTrue((self.root/self.b).exists())
-    def test_catalog_uses_applied_retirement_even_if_stale_local_copy_reappears(self):
+    def test_catalog_prefers_restored_source_over_historical_action(self):
         clean.plan(self.root,'run');clean.apply(self.root,'run')
         (self.root/self.b).parent.mkdir(parents=True,exist_ok=True)
         (self.root/self.b).write_text('Stale untracked local copy')
         triage.export(self.root,'run')
         row=next(x for x in json.loads((self.home/'current-locations.json').read_text()) if x['source_path']==self.b)
-        self.assertEqual(row['disposition'],'attach-needed-evidence')
-        self.assertTrue(row['current_path'].startswith('tools/evidence/'))
+        self.assertEqual(row['disposition'],'current-formal')
+        self.assertEqual(row['current_path'],self.b)
     def test_changed_classification_invalidates_old_cleanup_plan(self):
         clean.plan(self.root,'run')
         row=next(r for r in self.snap['files'] if r['path']==self.c);p=self.home/'records'/f"{row['material_id']}.json"
@@ -75,6 +78,7 @@ class TriageCleanupTests(unittest.TestCase):
         (self.root/self.b).write_text('Fixed run [dependent record](D.md)\n')
         self.git('add',self.b);self.git('commit','--quiet','-m','Add dependency')
         triage.init(self.root,'chain',1,'Boss6');h,s=triage.load(self.root,'chain')
+        config=json.loads((h/'run.json').read_text());config['version']=1;config.pop('operation_mode');triage.write(h/'run.json',config)
         for row in s['files']:
             oldrow=next(x for x in self.snap['files'] if x['path']==row['path'])
             record=json.loads((self.home/'records'/f"{oldrow['material_id']}.json").read_text());record['sha256']=row['sha256']

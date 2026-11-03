@@ -109,4 +109,4 @@ L_i(\tau_S)=1+\sum_{q\in Q\setminus S:h(q)=i}a_q\le1+\delta(S).
 
 历史v1只陈述单query；v2由root提出同组任意子集和 \(\delta(S)\) 加强，独立审查者先按所获精确描述重构机器图证明，再核v2 Exact，之后读作者增广路证明。最终组合审查当时明确软件pending；后续root已审读实际代码并运行冻结14机14任务、3query的8模式实例。两个时点不能互相覆盖。
 
-本轮先读原程序和review，随后读canonical及冻结证明、历史审查与旧成功输出；这是来源核对和直接数学复核，不宣称本轮blind审查。旧成功run的脚本/输入SHA均与原字节相符，未重复构造器运行；本轮另有从旧证书独立回算所有原任务和机器负载的结果，范围见[原程序与审查证据](<../../../../tools/evidence/phase25-material-attachments/20261103-boss6-triage/77a08727208114cfec5d.md>)及[证据包](../../tools/evidence/single-home-cascade-originals/README.md)。一般量词来自上述证明，8个显式模式仅是有限回归。外审和全球新颖性均未认证。
+本轮先读原程序和review，随后读canonical及冻结证明、历史审查与旧成功输出；这是来源核对和直接数学复核，不宣称本轮blind审查。旧成功run的脚本/输入SHA均与原字节相符，未重复构造器运行；本轮另有从旧证书独立回算所有原任务和机器负载的结果，范围见[原程序与审查证据](../计算/单home级联原程序与分层审查证据--计算.md)及[证据包](../../tools/evidence/single-home-cascade-originals/README.md)。一般量词来自上述证明，8个显式模式仅是有限回归。外审和全球新颖性均未认证。

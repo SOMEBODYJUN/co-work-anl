@@ -34,7 +34,7 @@ q6具体实现有24机、42job-copies：每root前三copies放全部small，后�
 
 规范程序另从返回actual sigma重新投影机器copy配置，核其恰等原分布，而非直接回读存下的configs。一般配置阈值在任意cover下相等及本seed T_CONF=4/3，才使这个已给4/3调度的cover精确OPT=4/3；单独程序feasible输出不是求cover OPT。恒等置换q6是六份seed，仍OPT5/3，所以同q/同seed不决定整数OPT。
 
-本seed恰为activation seed乘4/3的重命名矩阵（G→c、C0/C1/C2/C3→A/B/a/b）；配置概率相同。这里q-fold graph cover与[激活提升](<../../../../tools/evidence/phase25-material-attachments/20261103-boss6-triage/3152cb9a3660d2fd15dd.md>)是不同构造，其24/42和16/12机器/jobs不能混。
+本seed恰为activation seed乘4/3的重命名矩阵（G→c、C0/C1/C2/C3→A/B/a/b）；配置概率相同。这里q-fold graph cover与[激活提升](配置激活提升的一步与双符号支撑删除复跑--计算.md)是不同构造，其24/42和16/12机器/jobs不能混。
 
 # 3. 两原audit的真实有限范围
 

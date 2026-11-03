@@ -1,5 +1,6 @@
 """Material triage preserves mathematical inputs and rejects stale/partial batches."""
 import json
+import csv
 from pathlib import Path
 import subprocess
 import sys
@@ -9,6 +10,7 @@ import unittest
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'tools'))
 import triage
+import triage_clean
 
 class TriageTests(unittest.TestCase):
     def setUp(self):
@@ -34,6 +36,8 @@ class TriageTests(unittest.TestCase):
         return triage.ingest(self.root,'test',batch['batch_id'],batch['record_file'])
     def test_scope_and_disjoint_lanes(self):
         h,s=triage.load(self.root,'test');self.assertEqual(len(s['files']),3)
+        self.assertEqual([r['display_id'] for r in sorted(s['files'],key=lambda x:x['path'])],
+                         ['P25-00001','P25-00002','P25-00003'])
         a=set(json.loads((h/'lanes/1.json').read_text()));b=set(json.loads((h/'lanes/2.json').read_text()))
         self.assertFalse(a&b);self.assertEqual(len(a|b),3)
     def test_partial_or_duplicate_batch_cannot_be_completed(self):
@@ -58,6 +62,40 @@ class TriageTests(unittest.TestCase):
             b=triage.next_batch(self.root,'test',lane,30,100000);self.ingest(b,self.records(b))
         result=triage.export(self.root,'test');self.assertEqual(result['remaining'],0)
         self.assertTrue((triage.run_path(self.root,'test')/'INDEX.md').is_file())
+    def test_new_run_is_numbered_classification_only(self):
+        home,snapshot=triage.load(self.root,'test')
+        self.assertEqual(json.loads((home/'run.json').read_text())['operation_mode'],'classification-only')
+        for lane in (1,2):
+            batch=triage.next_batch(self.root,'test',lane,30,100000)
+            records=self.records(batch)
+            if lane==1:
+                records[0].update(category='non-math',route='delete',math_subject_or_nonmath_reason='Only a process note.')
+            self.ingest(batch,records)
+        before={r['path']:(self.root/r['path']).read_bytes() for r in snapshot['files']}
+        triage.export(self.root,'test')
+        rows=json.loads((home/'materials.json').read_text())
+        self.assertEqual({r['path']:r['display_id'] for r in rows},
+                         {r['path']:f'P25-{i:05d}' for i,r in enumerate(sorted(snapshot['files'],key=lambda x:x['path']),1)})
+        self.assertTrue(all(r['material_id'] for r in rows))
+        with (home/'materials.csv').open(newline='') as f:csvrows=list(csv.DictReader(f))
+        self.assertEqual({r['display_id'] for r in csvrows},{r['display_id'] for r in rows})
+        catalog=(home/'by-archive/demo.md').read_text()
+        self.assertIn('| 编号 | 材料 | 类别 | 建议去向 | 定位 |',catalog)
+        self.assertIn('P25-00001',catalog)
+        self.assertIn('Full body',catalog)
+        self.assertIn('建议去向供第二阶段处理', (home/'INDEX.md').read_text())
+        self.assertEqual(before,{r['path']:(self.root/r['path']).read_bytes() for r in snapshot['files']})
+        self.assertFalse((home/'cleanup-plan.json').exists())
+    def test_phase_one_cleanup_commands_and_direct_calls_are_rejected(self):
+        home,_=triage.load(self.root,'test')
+        for fn in (triage_clean.plan,triage_clean.apply):
+            with self.assertRaisesRegex(ValueError,'phase 2'):fn(self.root,'test')
+        for command in ('plan-clean','apply-clean'):
+            p=subprocess.run([sys.executable,str(ROOT/'tools/triage.py'),'--repo',str(self.root),command,'--run','test'],
+                             capture_output=True,text=True)
+            self.assertNotEqual(p.returncode,0)
+            self.assertIn('phase 2',p.stderr)
+        self.assertFalse((home/'cleanup-plan.json').exists())
     def test_actor_not_invented_and_snapshot_not_overwritten(self):
         with self.assertRaisesRegex(ValueError,'explicit Boss'):triage.init(self.root,'other',2)
         with self.assertRaisesRegex(ValueError,'already exists'):triage.init(self.root,'test',2,'Boss6')

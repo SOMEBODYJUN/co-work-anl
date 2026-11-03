@@ -114,7 +114,7 @@ root行由同一倒三节点m次真实偏离求和；Q行是真第四位两人�
 
 三个main均受guard保护，`--max-m`默认分别single12、double12、indexed8，从m3逐项调用run；每项打印去掉point/multiplier的摘要，逐步覆盖同目录同名JSON、scope和累计reports、indent=2加LF。源码导入不跑main，但本轮连导入也没有。**single原63528B报告实际含m3…20，超过代码默认12**；它可由显式更大参数或其它调用产生，原件未记录argv，本页只保实际输出域，不虚构作者按默认命令运行。另两份域恰配默认，也不能据此断言原argv。
 
-全部34报告与每个支持/乘子见[报告资源](<../../../../tools/evidence/phase25-material-attachments/20261103-boss6-triage/573249019e9c606e3b1d.md>)。本轮没有新LP、Fraction、SPE或旧成功复跑；AST/JSON/hash/链接等包静态检查不认证数学。
+全部34报告与每个支持/乘子见[报告资源](../资源/重复前缀三套LP的三十四份原报告与证书界限--资源.md)。本轮没有新LP、Fraction、SPE或旧成功复跑；AST/JSON/hash/链接等包静态检查不认证数学。
 
 ## 与已经取得的正证书及后续独审
 

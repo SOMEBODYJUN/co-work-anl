@@ -1,40 +1,36 @@
 # 2.5.1/2 操作手册
 
-材料分类与清理已完成。当前入口运行 `20261103-boss6-current`，已合并首轮4,608份及随后15份新增/变更材料的实际阅读结果；当前数学与待提取材料3,970份。第二步任务已建立，尚未启动/认领。初始冻结记录另保存在 `20261103-boss6-triage`，不得把它的旧SHA当现行输入。新公屏尚未创建；旧阶段二公屏和来源认领不混用、不清空。
+第一步只分类、标号、建立目录。当前完整入口是[4,619份编号分类表](../curation/catalogs/20261103-classification-only/INDEX.md)，旧run保留冻结阅读记录。此前第一步649份退出与641页链接改动已精确撤销，所有原页面恢复，证据附件也保留。旧actions是历史，不是现行任务。第二步尚未开始；不清空旧公屏，也不创建新公屏。
 
-## 第一步实际命令
+## 第一步：分类目录，零原件处理
 
-本轮已完成，**不要再次init覆盖或重复apply-clean**。新运行才执行第一条：
-
-```sh
-python3 work.py triage init --run 明确的新运行ID --actor Boss编号 --lanes 6
-python3 work.py triage next --run 20261103-boss6-current --lane 1 --limit 30 --byte-limit 150000
-python3 work.py triage ingest --run 20261103-boss6-current --batch 实际batch_id --records 实际record_file
-python3 work.py triage status --run 20261103-boss6-current
-python3 work.py triage export --run 20261103-boss6-current
-```
-
-next返回本批路径、SHA和记录文件；内部代理自己实读、填六字段，再ingest。程序只检查覆盖、重复、类型/路由和版本，不替代内容判断。普通正文读全，机械巨大数据可结构投影，但全篇章节和数学解释不能漏。长文按实际阅读量减小批次，不以文件数追速度。
-
-Boss单独收回六lane，不每材料发远端claim。明显数学页只作内容/结构定性，不逐句消化长证明；X/E删除或移出候选仍须覆盖全篇防藏数学。原件在本轮阅读中保持固定；明确纯非数学页可在已收回且无活跃读取后清理。数学/必要证据先保全，再删混合包装。分类记录与清理动作分开：动作在actions/记原SHA、去向、理由、是否落实与共享状态。SHA变化只定向重读变化材料，不能按旧SHA覆盖。
-
-## 全量定性后的清理
-
-全部材料已定性后，Boss先导出并检查清理计划，再明确应用：
+新运行才初始化，Boss编号由用户明确给出；既有冻结run不要覆盖：
 
 ```sh
-python3 work.py triage plan-clean --run 20261103-boss6-current
-python3 work.py triage apply-clean --run 20261103-boss6-current
-python3 work.py triage export --run 20261103-boss6-current
+python3 work.py triage init --run 新运行ID --actor Boss编号 --lanes 6
+python3 work.py triage next --run 新运行ID --lane 1 --limit 20 --byte-limit 100000
+python3 work.py triage ingest --run 新运行ID --batch 实际batch_id --records 实际record_file
+python3 work.py triage status --run 新运行ID
+python3 work.py triage export --run 新运行ID
 ```
 
-以下清理命令是已完成的执行流程说明，不应对本run再次执行。
+程序生成路径、SHA和材料编号；代理全文快速定性，只填类别、简短理由、定位、后续建议。七类判据见[分类规格](PHASE25_TRIAGE.md)。分类不是数学真值审查，也不是准入；数字多不等于需要蒸馏，裸计算不因为PASS就成为数学。
 
-程序只处理实读者已判non-math/delete或evidence-only/attach/delete的正式包装页；clarify与混合/数学内容不会被自动清掉。仍被保留数学页直接或间接引用的计算说明移作附件并修相对链接；无引用的证据包装删除，原始代码/输入/输出不删除。X身份链接取消，后台actions和retired-paths记录当前去向，不在state再造替代空壳。
+`plan-clean`和`apply-clean`已从第一步入口禁用。第一步不得删除、移附件、合并、抽取、改写或修链。`delete/attach`等route只表示第二步建议。后台记录不进入数学正文。
 
-apply-clean用`git rm`显式暂存退休路径；不要随后对这些已删除路径执行`git add`，也不要用全仓`git add .`回收陈旧副本。checkpoint显式给新增/修改资产，并从实际推送树验证退休路径不存在。
+本次跨快照目录生成器为`tools/classification_catalog.py`：只接受精确匹配路径/SHA的已读记录和人工更正，不自动分类；首批编号冻结，新增路径追加。实际生成命令如下，现有输出已完成，不应覆盖：
 
-应用前全量检查原SHA、分类是否变化和目标是否冲突，检查失败不开始删除。正文改动限于本次退休路径的链接路由；不改数学陈述或证明。检查通过只保证所声明动作/字节，不认证分类数学价值。数学清单见mathematics.json，按存档目录见by-archive/，剩余问题见stage2-candidates.json。
+```sh
+python3 tools/classification_catalog.py --source-runs 20261103-boss6-triage 20261103-boss6-current --out curation/catalogs/20261103-classification-only --corrections curation/classification-only-correction/classification-corrections.json
+```
+
+材料清单、数学子集、证据/非数学子集、第二步候选及按档目录均有完整编号。每条含原路径、SHA、类别、具体理由、正文定位和建议去向。旧run的同路径版本保存在`source_versions`中；当前链接指向已恢复的原件。目录行号不充当数学对象ID或超边端点。
+
+## 第二步启用前
+
+现有`tools/curation_tasks.py`和`work.py curation-task`已实现对象群认领、写入互斥、提交与交接，不需要另造平台或另一个启动器。数学任务使用`20261103-boss6-current`运行域；其旧分类snapshot保持不变，当前分类以新完整目录为准。144组旧计划与本轮路由变化的对照另见该run的TASKS.md；新增或取消的候选由协调Boss按数学联系补齐/调整任务，再领取。不得机械按文件一份建一组。
+
+纯非数学/证据处置不是数学蒸馏交付。若第二步另行明确执行这类处理，先由协调Boss定范围、去向、现行SHA和引用，按小批串行组织；当前数学task submit要求正式数学资产，不能伪造正文来满足它。不凭第一步的类别或route自动执行。
 
 ## 第二步启动模板
 
