@@ -1,0 +1,110 @@
+{
+  "tree_programs": [
+    "original/round13/tree/attack_terminal_share.py",
+    "original/round13/tree/audit_root_source_relaxation.py",
+    "original/round13/tree/terminal_share_symbolic.py"
+  ],
+  "runtime_files": [
+    {
+      "original_path": "customer_attraction/__init__.py",
+      "artifact": "runtime-root/customer_attraction/__init__.py",
+      "size": 691,
+      "sha256": "284282dfb35d5612734b979d691d57be9808c07a03857b533248eb2cbd5079ca",
+      "source_id": "e34d11916a2c223f010d",
+      "source_refs": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:customer_attraction/__init__.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:customer_attraction/__init__.py"
+      ],
+      "role": "runtime-dependency-only-no-done"
+    },
+    {
+      "original_path": "customer_attraction/model.py",
+      "artifact": "runtime-root/customer_attraction/model.py",
+      "size": 8640,
+      "sha256": "ac28fc1a3837954ab9b8fc658701f53aecf0a1da059e316158aab7565dc5f6a8",
+      "source_id": "999293c4e866618a72f6",
+      "source_refs": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:customer_attraction/model.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:customer_attraction/model.py"
+      ],
+      "role": "runtime-dependency-only-no-done"
+    },
+    {
+      "original_path": "customer_attraction/exact.py",
+      "artifact": "runtime-root/customer_attraction/exact.py",
+      "size": 9943,
+      "sha256": "a4c76d77fd6c8d18ac668ce2070a65f927d9dca6bbe3cdd36f467d1598b4a892",
+      "source_id": "14e0922138e43b337600",
+      "source_refs": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:customer_attraction/exact.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:customer_attraction/exact.py"
+      ],
+      "role": "runtime-dependency-only-no-done"
+    },
+    {
+      "original_path": "customer_attraction/certificate.py",
+      "artifact": "runtime-root/customer_attraction/certificate.py",
+      "size": 6201,
+      "sha256": "a269b532260b537e67879eba609ef23e046e8f7303458ecf11271c4673aecc45",
+      "source_id": "52369ae591b07d52c7df",
+      "source_refs": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:customer_attraction/certificate.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:customer_attraction/certificate.py"
+      ],
+      "role": "runtime-dependency-only-no-done"
+    },
+    {
+      "original_path": "tests/audits/customer_attraction_strategy_lp.py",
+      "artifact": "runtime-root/tests/audits/customer_attraction_strategy_lp.py",
+      "size": 20567,
+      "sha256": "a5b3cac73cf07134609af60f101e384cf6f6b325caa24d8d3c31e019b71574d3",
+      "source_id": "51b578ac60c377c6f060",
+      "source_refs": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/customer_attraction_strategy_lp.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/customer_attraction_strategy_lp.py"
+      ],
+      "role": "runtime-dependency-only-no-done"
+    }
+  ],
+  "python_requirement": "Python >=3.10 from union type and builtin generic annotations in dependencies; historical interpreter/version not bound to primary reports",
+  "third_party": [
+    "numpy",
+    "scipy.optimize.linprog (HiGHS)"
+  ],
+  "third_party_historical_versions": "not recorded in primary sources; no current optimization or version certification",
+  "standard_library": [
+    "argparse",
+    "dataclasses",
+    "fractions",
+    "functools",
+    "hashlib",
+    "importlib.util",
+    "itertools",
+    "json",
+    "math",
+    "pathlib",
+    "random",
+    "subprocess",
+    "sys",
+    "time",
+    "types",
+    "typing"
+  ],
+  "program_file_inputs": {
+    "attack_terminal_share.py": [
+      "ROOT/tests/audits/customer_attraction_strategy_lp.py",
+      "ROOT/customer_attraction/{__init__,model,exact,certificate}.py; cases internally randomized"
+    ],
+    "audit_root_source_relaxation.py": [
+      "HERE/terminal_share_symbolic.py",
+      "ROOT/tests/audits/customer_attraction_strategy_lp.py",
+      "ROOT/customer_attraction/{__init__,model,exact,certificate}.py; does not read the frozen output JSON before solving"
+    ],
+    "terminal_share_symbolic.py": [
+      "no external data or local module; m arguments only"
+    ]
+  },
+  "cwd_contract": "attack/audit ROOT=Path.cwd(); original programs are preserved under original/round13/tree and supplied module tree under runtime-root; no wrapper import or execution performed",
+  "output_contract": "audit overwrites root_source_relaxation_exact.json; symbolic overwrites terminal_share_symbolic_m{m}.json; attack writes terminal_share_counterexample.json only on exact positive candidate",
+  "related_round11_scope": "Four comparison sources are not owned and have no receipt. old36 additionally expects examples/customer_attraction/aggregate_theta_failure.json and evidence/certificates/customer_attraction/aggregate_theta_failure.json at Path(__file__).parents[6]; those are not tree-program dependencies and this package does not claim to be a replay bundle for that comparison. insurance probe has internal controller and m argv, plus NumPy/SciPy; its later m6 exact branch writes a distinct exact report."
+}
