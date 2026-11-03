@@ -47,9 +47,23 @@ python3 work.py clean release <本人未完成源ID>
 
 cleanup/CHECKLIST.md及checklists/分册会自动从逐源记录生成勾选。inventory分母固定，后续来源增量另行冻结与登记，不静默重写旧清单。
 
-## 图
+## 第二阶段半：保护原知识与数学准入
 
-`work.py map check`检查对象和边字段；`map build --draft`只生成明确标待建的三级投影；`map build`为第二阶段源版本全部完成后的第三阶段生成。正文及每边数学解释仍要由清洗者斟酌，不能以程序通过代替正确性。
+用最新结果分支的根work.py执行`start --role curator`，使用`prompts/02.5-research.md`；旧启动附件不认识curator时先更新程序。对象群处理者使用`prompts/02.5-worker.md`。此阶段先判断好文保留、去噪、局部修复或承重重构，再做实际处置，不能把全部数学重新证明一遍。协议见[CURATION](../research/CURATION.md)。
+
+```sh
+python3 work.py curate scan
+python3 work.py curate freeze --manifest-out research/curation/manifest.json
+python3 work.py curate plan
+python3 work.py curate check
+python3 work.py curate check --final
+```
+
+以上命令只读本地或写明确的本地计划/基线，不发布、不领取来源、不批量删除。freeze生成全pending骨架，不能自动放行数学；Agent按对象群写正文、删除无用页并更新处置，再校验字节与引用闭包。旧完成回执通过已检查的当前去向解析；只对基线前真实完成事件生效，不能供新done引用已删除页冒充交付。
+
+## 准入后的图
+
+`work.py map check --structural`只诊断正式候选字段；默认`map check`只读明确准入对象。`map build --draft`生成准入区域草图；正式`map build`同时要求第二阶段来源完成、2.5最终通过和关系版本检查。证据、端点、关系内容变更会使旧关系审读过期；`map impact ID`只列待复核范围，不推断全部后继为假。正文及每边数学解释仍由清洗者判断，程序通过不证明数学正确。
 
 运行需要Python3.10+、Git、POSIX（Linux/macOS/WSL），不需要数学Agent CLI、数据库或Lean。上游格式代码及许可证见vendor/UPSTREAM.md。共享协议程序来自既有工具并调整路径；公屏旧存储路径为兼容协议保留在独立公屏分支，本结果文件树不保留旧研究目录。
 

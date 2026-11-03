@@ -221,7 +221,13 @@ def search(root, query, pattern='*.md', limit=30):
     return found
 
 
-def validate_receipt(directory, item):
+def curation_target_routes(directory):
+    """Read current target routing without rewriting a historical receipt."""
+    from curation import legacy_target_routes
+    return legacy_target_routes(directory)
+
+
+def validate_receipt(directory, item, *, curation_routes=None):
     for key in ('full_file_reviewed','related_material_checked','unique_content_accounted_for'):
         if item.get(key) is not True:
             raise ValueError('Semantic completion requires an explicit true declaration: '+key)
@@ -237,8 +243,29 @@ def validate_receipt(directory, item):
         raise ValueError('Useful/absorbed content requires concrete target files')
     for name in targets:
         target=(directory/name.split('#')[0]).resolve()
-        if not target.is_relative_to(directory.resolve()) or not target.is_file():
+        if not target.is_relative_to(directory.resolve()):
             raise ValueError('Target must already be pushed to the result branch: '+name)
+        if not target.is_file():
+            if curation_routes is None:
+                curation_routes=curation_target_routes(directory)
+            route=curation_routes.get(name.split('#')[0])
+            if not route:
+                raise ValueError('Target must already be pushed to the result branch: '+name)
+            sid=item.get('id','')
+            if not isinstance(sid,str) or not re.fullmatch(r'[A-Za-z0-9_.-]+',sid):
+                raise ValueError('Historical curation routing needs the original source ID')
+            baseline=route.get('baseline_commit','')
+            old=board.git(directory,'show',baseline+':cleanup/progress/'+sid+'.json',check=False)
+            try:previous=json.loads(old.stdout) if old.returncode==0 else {}
+            except ValueError:previous={}
+            if (previous.get('disposition') not in COMPLETE or
+                previous.get('source_sha256')!=item.get('source_sha256') or
+                name not in previous.get('targets',[])):
+                raise ValueError('Only a completed receipt already bound at the curation baseline may resolve a retired target: '+name)
+            # A checked 2.5 route can replace or remove an obsolete delivery;
+            # it does not retroactively certify its original mathematics.
+            if not route.get('targets') and route.get('delete_kind')!='non-mathematical':
+                raise ValueError('Curation removed a mathematical target without a replacement: '+name)
     if item['disposition']=='integrated' and not any(p.endswith('.md') or '.md#' in p for p in targets):
         raise ValueError('Integrated mathematical knowledge needs an explanatory Markdown target')
     board.guard(item)
