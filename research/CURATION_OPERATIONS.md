@@ -16,7 +16,21 @@ python3 work.py triage export --run 20261103-boss6-triage
 
 next返回本批路径、SHA和记录文件；内部代理自己实读、填六字段，再ingest。程序只检查覆盖、重复、类型/路由和版本，不替代内容判断。普通正文读全，机械巨大数据可结构投影，但全篇章节和数学解释不能漏。长文按实际阅读量减小批次，不以文件数追速度。
 
-Boss单独收回六lane，不每材料发远端claim。原件在本轮阅读中保持固定；明确纯非数学页可在已收回且无活跃读取后清理。数学/必要证据先保全，再删混合包装。分类记录与清理动作分开：动作在actions/记原SHA、去向、理由、是否落实与共享状态。SHA变化只定向重读变化材料，不能按旧SHA覆盖。
+Boss单独收回六lane，不每材料发远端claim。明显数学页只作内容/结构定性，不逐句消化长证明；X/E删除或移出候选仍须覆盖全篇防藏数学。原件在本轮阅读中保持固定；明确纯非数学页可在已收回且无活跃读取后清理。数学/必要证据先保全，再删混合包装。分类记录与清理动作分开：动作在actions/记原SHA、去向、理由、是否落实与共享状态。SHA变化只定向重读变化材料，不能按旧SHA覆盖。
+
+## 全量定性后的清理
+
+全部材料已定性后，Boss先导出并检查清理计划，再明确应用：
+
+```sh
+python3 work.py triage plan-clean --run 20261103-boss6-triage
+python3 work.py triage apply-clean --run 20261103-boss6-triage
+python3 work.py triage export --run 20261103-boss6-triage
+```
+
+程序只处理实读者已判non-math/delete或evidence-only/attach/delete的正式包装页；clarify与混合/数学内容不会被自动清掉。仍被保留数学页直接或间接引用的计算说明移作附件并修相对链接；无引用的证据包装删除，原始代码/输入/输出不删除。X身份链接取消，后台actions和retired-paths记录当前去向，不在state再造替代空壳。
+
+应用前全量检查原SHA、分类是否变化和目标是否冲突，检查失败不开始删除。正文改动限于本次退休路径的链接路由；不改数学陈述或证明。检查通过只保证所声明动作/字节，不认证分类数学价值。数学清单见mathematics.json，按存档目录见by-archive/，剩余问题见stage2-candidates.json。
 
 ## 第二步启动模板
 

@@ -1,6 +1,6 @@
 # 2.5.1/2 程序实现规格
 
-状态：**材料批次与对象群任务已实现**：tools/triage.py、tools/curation_tasks.py、work.py triage/curation-task，以及start --curation-run独立运行域。以下为行为契约；实际命令见[操作手册](CURATION_OPERATIONS.md)。清理仍由Boss明确选范围实施并登记动作，没有自动批量unlink命令。材料清单与编辑任务不等于数学真值登记；本文件不规定2.5.3或超边格式。实现应复用已有安全路径、Git正常推送、凭据与真实读回确认能力，不搭建新数据库或复杂Agent平台。
+状态：**材料批次与对象群任务已实现**：tools/triage.py、tools/curation_tasks.py、work.py triage/curation-task，以及start --curation-run独立运行域。以下为行为契约；实际命令见[操作手册](CURATION_OPERATIONS.md)。tools/triage_clean.py提供全量覆盖后的plan-clean/apply-clean；Boss检查计划后明确应用，仅按实读分类退休包装，保护有引用证据并修链接。它不自动给材料定性。材料清单与编辑任务不等于数学真值登记；本文件不规定2.5.3或超边格式。实现应复用已有安全路径、Git正常推送、凭据与真实读回确认能力，不搭建新数据库或复杂Agent平台。
 
 ## 最小数据与目录
 
