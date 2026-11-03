@@ -14,7 +14,7 @@ source_refs:
 
 # 来源和本对象的独有范围
 
-2595B原笔记全文实读，两个冻结提交同SHA`57e919a9e68ae4c2a999a1de1babb3929405419f78472d94534ccffcce3bd17d`。它是文献适用范围核对，不是四人数值下界的独立重证。原件完整见[来源](../../tools/evidence/background-induction-source-replay/source-root/research/workspaces/customer-attraction/R-4ffa8b85fa8847e09e45dcafc8e1326f/induction/brethouwer_scope.md)，其它八件背景探针在[计算对象](../计算/背景归纳旧例重放与随机比值探针--计算.md)。
+2595B原笔记全文实读，两个冻结提交同SHA`57e919a9e68ae4c2a999a1de1babb3929405419f78472d94534ccffcce3bd17d`。它是文献适用范围核对，不是四人数值下界的独立重证。原件完整见[来源](../../tools/evidence/background-induction-source-replay/source-root/research/workspaces/customer-attraction/R-4ffa8b85fa8847e09e45dcafc8e1326f/induction/brethouwer_scope.md)，其它八件背景探针在[计算对象](<../../../../tools/evidence/phase25-material-attachments/20261103-boss6-triage/c5277dbbe668c725a823.md>)。
 
 文献为Jan-Tino Brethouwer，*The quality of equilibria in generalized market sharing games*，University of Twente硕士论文，2018-12-03；[大学入口](https://essay.utwente.nl/essays/76986)、[大学PDF](https://essay.utwente.nl/fileshare/file/76986/Brethouwer_MA_EEMCS.pdf)。本轮重新查阅下列指定章节及四人结果所在整页；不冒原笔记的浏览器source ID为本轮认证，也不声称阅读了该论文每个证明、取得作者ILP或核了全球后续文献。
 

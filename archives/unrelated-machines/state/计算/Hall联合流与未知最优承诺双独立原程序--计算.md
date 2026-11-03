@@ -14,7 +14,7 @@ scope: "original code, exact input contract, original finite CLI and historical 
 
 # 两个独立入口与原任务合同
 
-两份 primary 分别是 `hall_group_joint_flow_independent.py`（5485字节）与 `hall_group_opt_promise_independent.py`（4756字节）。本批逐份核原件并阅读全文；它们导入同一候选 `hall_group_joint_flow.py`（24011字节），但自己构造原任务、做 DFS 或阈值枚举。候选的 `audit()` 有 main guard，未被这两个入口执行。本页保存其一般接口以解释有限检查，既有完整主证明见[Hall增量审查](../审查/Hall联合流与前缀匹配增量审计--审查.md)，没有把旧审查重新命名为本轮 blind。
+两份 primary 分别是 `hall_group_joint_flow_independent.py`（5485字节）与 `hall_group_opt_promise_independent.py`（4756字节）。本批逐份核原件并阅读全文；它们导入同一候选 `hall_group_joint_flow.py`（24011字节），但自己构造原任务、做 DFS 或阈值枚举。候选的 `audit()` 有 main guard，未被这两个入口执行。本页保存其一般接口以解释有限检查，既有完整主证明见[Hall增量审查](<../../../../tools/evidence/phase25-material-attachments/20261103-boss6-triage/6a102438ce3700afcf8a.md>)，没有把旧审查重新命名为本轮 blind。
 
 机器为不交的 home 集 H 与 sink 集 Z，|H|+|Z|≥1，允许其中一集为空。home h 有私有任务组 J_h，每个任务 j 的时间 w_j≥0 在 h 与共同允许集 E_h⊆Z 上相同，其他端不可用；宏任务只能在 H 处理，有限时间 p_jh 可异。给整数 q≥2（按二进制输入）、δ≥0、qδ<2、T≥0，合同为
 

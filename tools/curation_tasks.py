@@ -72,7 +72,7 @@ def validate_inputs(root,record):
         if not p.is_file() or curation.digest(p.read_bytes())!=row['sha256']:
             raise ValueError('Task input changed; reframe this task before claiming: '+row['path'])
 
-def transition(root,run,old,all_tasks,actor,operation,request_id,*,assets=None,reason=None,draft_note=None):
+def transition(root,run,old,all_tasks,actor,operation,request_id,*,assets=None,reason=None,draft_note=None,write_paths=None):
     config=json.loads((run_home(root,run)/'run.json').read_text())
     record=old['definition'];definition(root,record)
     new=dict(old)
@@ -85,9 +85,23 @@ def transition(root,run,old,all_tasks,actor,operation,request_id,*,assets=None,r
             if any(overlaps(a,b) for a in record['write_paths'] for b in other['definition']['write_paths']):
                 raise ValueError('Write scope already occupied by '+other['definition']['task_id'])
         new.update(state='claimed',owner=actor)
+    elif operation=='extend':
+        if old.get('owner')!=actor or old['state'] not in {'claimed','blocked'}:raise ValueError('Only owner may extend an unfinished task scope')
+        if not isinstance(write_paths,list) or not write_paths:raise ValueError('Explicit additional output paths required')
+        for name in write_paths:curation._safe_path(root,name)
+        for other in all_tasks:
+            if other['definition']['task_id']==record['task_id'] or other.get('state') not in ACTIVE:continue
+            if any(overlaps(a,b) for a in write_paths for b in other['definition']['write_paths']):raise ValueError('Additional output scope is already occupied')
+        revised=dict(record,write_paths=list(dict.fromkeys(record['write_paths']+write_paths)))
+        definition(root,revised);new['definition']=revised
     elif operation=='submit':
         if old.get('owner')!=actor or old['state'] not in {'claimed','blocked'}:raise ValueError('Claim task before submitting')
         if not isinstance(assets,list) or not assets:raise ValueError('Already-pushed output assets required')
+        for source in record['inputs']:
+            if any(overlaps(source['path'],scope) for scope in record['write_paths']):continue
+            p=curation._safe_path(root,source['path'])
+            if not p.is_file() or curation.digest(p.read_bytes())!=source['sha256']:
+                raise ValueError('Read dependency changed; review the task before submitting: '+source['path'])
         for asset in assets:
             if not isinstance(asset,dict) or set(asset)!={'path','sha256'}:raise ValueError('Output asset needs path and SHA')
             name=asset['path'];p=curation._safe_path(root,name)
@@ -110,7 +124,7 @@ def transition(root,run,old,all_tasks,actor,operation,request_id,*,assets=None,r
     new['request_id']=request_id;board.guard(new)
     return new
 
-def mutate(root,run,task,operation,*,assets=None,reason=None,draft_note=None):
+def mutate(root,run,task,operation,*,assets=None,reason=None,draft_note=None,write_paths=None):
     actor=coordination.config(root,'wcg.actor');instance=coordination.config(root,'wcg.instance')
     if not re.fullmatch(r'Boss[1-9][0-9]*',actor):raise ValueError('Explicit registered Boss required')
     if coordination.config(root,'wcg.curationRun')!=run:raise ValueError('Start an independent curator clone bound to this run')
@@ -127,7 +141,7 @@ def mutate(root,run,task,operation,*,assets=None,reason=None,draft_note=None):
             p=task_path(directory,run,task)
             old=json.loads(p.read_text())
             if old.get('request_id')==request_id:return {'status':'pushed','operation':operation,'task_id':task}
-            new=transition(directory,run,old,tasks(directory,run),actor,operation,request_id,assets=assets,reason=reason,draft_note=draft_note)
+            new=transition(directory,run,old,tasks(directory,run),actor,operation,request_id,assets=assets,reason=reason,draft_note=draft_note,write_paths=write_paths)
             curation._write_json(p,new)
             board.git(directory,'add','--',p.relative_to(directory).as_posix())
             board.git(directory,'commit','--quiet','-m',f'curation {operation}: {actor} {task}')
@@ -145,11 +159,12 @@ def mutate(root,run,task,operation,*,assets=None,reason=None,draft_note=None):
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--repo',type=Path,required=True)
     sub=p.add_subparsers(dest='command',required=True)
-    for command in ['plan','list','show','claim','submit','complete','handoff']:
+    for command in ['plan','list','show','claim','extend','submit','complete','handoff']:
         q=sub.add_parser(command);q.add_argument('--run',required=True)
         if command=='plan':q.add_argument('--record-file',required=True)
         elif command!='list':q.add_argument('task')
         if command=='submit':q.add_argument('--assets-file',required=True)
+        if command=='extend':q.add_argument('--paths-file',required=True)
         if command in {'complete','handoff'}:q.add_argument('--reason',required=True)
         if command=='handoff':q.add_argument('--draft-note')
     a=p.parse_args();root=a.repo.resolve()
@@ -159,7 +174,8 @@ def main():
         elif a.command=='show':result=json.loads(task_path(root,a.run,a.task).read_text())
         else:
             assets=json.loads(curation._safe_path(root,a.assets_file).read_text()) if a.command=='submit' else None
-            result=mutate(root,a.run,a.task,a.command,assets=assets,reason=getattr(a,'reason',None),draft_note=getattr(a,'draft_note',None))
+            write_paths=json.loads(curation._safe_path(root,a.paths_file).read_text()) if a.command=='extend' else None
+            result=mutate(root,a.run,a.task,a.command,assets=assets,reason=getattr(a,'reason',None),draft_note=getattr(a,'draft_note',None),write_paths=write_paths)
         print(json.dumps(result,ensure_ascii=False,indent=2))
     except (ValueError,OSError,KeyError,board.BoardError) as e:raise SystemExit(str(e))
 

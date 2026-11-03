@@ -116,7 +116,7 @@ h=0时对差无贡献。h≥1时，共含i,j的项在φ_i−φ_j中消失，余�
 
 本轮全文比较实际审查`source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/weight_bands_review/independent_review.md#shapley-bound-independently-proved`。它在未读候选时以独立同分布标签采样、支持内均分及条件计数比较证明包络，继而重建势；该审查原记录的candidate-proof comparison栏仍为当时pending，不能擅改为已执行全面逐稿攻击。源README末段指向不存在的旧`dense_band_review`路径，本对象改用实际存在并已读的上述文件。
 
-[本批有限精确核验](../计算/权类别与局部权带的精确核验--计算.md)从原始子集式重新算份额、效率和上下界，不是重复计算式(8)两端；一般实参数定理仍靠上述证明。
+[本批有限精确核验](<../../../../tools/evidence/phase25-material-attachments/20261103-boss6-triage/1b753f49deb22b413dd4.md>)从原始子集式重新算份额、效率和上下界，不是重复计算式(8)两端；一般实参数定理仍靠上述证明。
 
 [有序权组尾部冻结](有序权组尾部冻结--定理.md)在每阶段平移费用后用本包络，以资源固定比例β/a缩放，得到不同的顺序存在机制。[Shapley选择器与分带归一化障碍](../障碍/Shapley选择器与分带归一化--障碍.md)给R选择器锐性、普通势混合差障碍及跨单点权带的线性损失；这些例有精确PNE，不能当真实非存在。两权[双排序势](两权类别双排序混合势--定理.md)使用另一势，故不受标准Shapley选择器障碍否定。
 

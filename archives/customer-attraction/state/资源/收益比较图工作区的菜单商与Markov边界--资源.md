@@ -21,7 +21,7 @@ related_source_refs:
 
 # 收益比较图工作区的菜单商与Markov边界
 
-3101B主入口全文及所需7201B菜单稿、4705B菜单审计、1440B匿名探针、1558B完整匿名表、2275B计数映射程序均正常取得并完整实读。原件见[证据](../../tools/evidence/payoff-comparison-graph-and-source-contracts-primary/README.md)，五related合17179B，不额外primary done。其数学不是一张旧图或研究路线：SCC证明与64原记录已分别落[定理](../定理/真实收益比较图的强连通商与非负流编译--定理.md)、[程序](../程序/收益比较图的六十四样本原审计与循环计数--程序.md)，本页保入口另有的菜单/净化及状态义务。本批0原运行、新数学checker、旧SPE/LP搜索。
+3101B主入口全文及所需7201B菜单稿、4705B菜单审计、1440B匿名探针、1558B完整匿名表、2275B计数映射程序均正常取得并完整实读。原件见[证据](../../tools/evidence/payoff-comparison-graph-and-source-contracts-primary/README.md)，五related合17179B，不额外primary done。其数学不是一张旧图或研究路线：SCC证明与64原记录已分别落[定理](../定理/真实收益比较图的强连通商与非负流编译--定理.md)、[程序](<../../../../tools/evidence/phase25-material-attachments/20261103-boss6-triage/52b0b7d604fe86df827b.md>)，本页保入口另有的菜单/净化及状态义务。本批0原运行、新数学checker、旧SPE/LP搜索。
 
 ## 同菜单的任意深度真实行商
 

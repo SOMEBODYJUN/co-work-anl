@@ -89,4 +89,4 @@ I-query条件删除依赖$\lambda$在激活/U前固定。若$\lambda(U)$与query
 
 这不是断言所有world依赖R/I取消不可能。后来`rankwise_joint_hall.md`另以每个G客户的priority赢家为随机source，并只对实际存在的query token设单位sink，逐world全cut保证整数取消；其期望才回到Hall-B容量。它不以平均容量冒充点态容量，也不能用随机赢家收入替原IC的固定$u_i$，旧SOURCE-NET不凭均值恢复。该新合同的全文比较与未复跑边界见[版本审查](../审查/归属势与联合取消的版本及运行范围--审查.md)，原件只作本批旁读，尚未替它done。
 
-3029B源本批重新全文实读核SHA，保credible分别核Hall-B降source、delta、初始分母与联合预付的内部历史身份，无外审或新颖性认证。原审计本批[真实一次运行](../计算/最优归属运输的全割与有理增广回归--计算.md)只测静态A/B，未调用本页激活、条件取消或SOURCE-NET程序；不能用1704个maxflow替一般incoming背书。六人half仍未由本定理解决，五人已有[独立定理](五人半覆盖--定理.md)。
+3029B源本批重新全文实读核SHA，保credible分别核Hall-B降source、delta、初始分母与联合预付的内部历史身份，无外审或新颖性认证。原审计本批[真实一次运行](<../../../../tools/evidence/phase25-material-attachments/20261103-boss6-triage/e3867644295171a4dbb3.md>)只测静态A/B，未调用本页激活、条件取消或SOURCE-NET程序；不能用1704个maxflow替一般incoming背书。六人half仍未由本定理解决，五人已有[独立定理](五人半覆盖--定理.md)。

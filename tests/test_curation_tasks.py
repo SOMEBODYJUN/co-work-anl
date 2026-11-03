@@ -36,6 +36,12 @@ class CurationTaskTests(unittest.TestCase):
     def test_parent_write_scope_conflicts(self):
         other=self.old();other['definition']['task_id']='B';other['definition']['write_paths']=['archives/demo'];other.update(state='claimed',owner='Boss7')
         with self.assertRaisesRegex(ValueError,'occupied'):self.transition(self.old(),'claim',others=[other])
+    def test_new_authoritative_output_can_be_reserved_after_reuse_search(self):
+        claimed=self.claim();new='archives/demo/state/引理/Existing-authority.md'
+        extended=self.transition(claimed,'extend',write_paths=[new])
+        self.assertIn(new,extended['definition']['write_paths']);self.assertIn(self.input,extended['definition']['write_paths'])
+        other=self.old();other['definition']['task_id']='B';other['definition']['write_paths']=[new];other.update(state='claimed',owner='Boss7')
+        with self.assertRaisesRegex(ValueError,'occupied'):self.transition(claimed,'extend',others=[other],write_paths=[new])
     def test_changed_source_cannot_be_claimed(self):
         (self.root/self.input).write_text('New premise')
         with self.assertRaisesRegex(ValueError,'changed'):self.claim()
@@ -45,6 +51,11 @@ class CurationTaskTests(unittest.TestCase):
         with self.assertRaises(ValueError):self.transition(claimed,'handoff','Boss7',reason='Boundary')
     def test_missing_output_cannot_be_submitted(self):
         with self.assertRaisesRegex(ValueError,'not published'):self.transition(self.claim(),'submit',assets=[{'path':self.input,'sha256':'b'*64}])
+    def test_read_dependency_change_requires_review_before_submission(self):
+        name='archives/demo/state/定义/model.md';p=self.root/name;p.parent.mkdir(parents=True);p.write_text('Original model')
+        self.d['inputs'].append({'path':name,'sha256':curation.digest(p.read_bytes())})
+        claimed=self.claim();p.write_text('Different model')
+        with self.assertRaisesRegex(ValueError,'Read dependency changed'):self.transition(claimed,'submit',assets=[self.asset()])
     def test_submitted_is_not_completed_or_truth_admission(self):
         submitted=self.transition(self.claim(),'submit',assets=[self.asset()])
         self.assertEqual(submitted['state'],'submitted');self.assertNotIn('truth_status',submitted)

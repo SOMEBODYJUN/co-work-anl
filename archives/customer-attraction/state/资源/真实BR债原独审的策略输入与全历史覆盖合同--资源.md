@@ -15,7 +15,7 @@ source_refs:
 
 7883B code、844B五人及1036B八人JSON逐份全文实读核size/SHA/blob。[主清单](../../tools/evidence/coordination-original-program-contracts-primary/source-manifest.json)。它们此前NI仅必要related且额外0done；现在正式primary责任仍逐代码/数据独有语义承接，不以旧读抵主处理，也不为增加run重跑充分同SHA成功。NQ5真实合批claim 698a9b60a1b944178a0cef17de1dd16a4e3dd4b8 pushed，本5 owner/in-progress/sourceSHA已核，原local_sync synced保；当前不预称正文已推/done。
 
-NI已完整保[一般核/路由](多源整合核的真实BR信用与五八人路由范围--资源.md)与[原三entry计算](../计算/多源BR信用与五环整数平台的原入口精确复核--计算.md)，本页给程序真正字段消费/报告闭包及其有限数学，非新授另一个路由不可能定理。
+NI已完整保[一般核/路由](多源整合核的真实BR信用与五八人路由范围--资源.md)与[原三entry计算](<../../../../tools/evidence/phase25-material-attachments/20261103-boss6-triage/9cb3b340fa6309a3346f.md>)，本页给程序真正字段消费/报告闭包及其有限数学，非新授另一个路由不可能定理。
 
 ## 原CLI与固定真实输入
 

@@ -11,7 +11,7 @@ source_refs:
 evidence_manifest: "archives/unrelated-machines/tools/evidence/um-following-actual-checks-primary/README.md"
 ---
 
-主源e7775b9dc03055d338e7，10287B，SHA01fe0eec81d789d685e2bf264ecb2ebc896153939b27f9f216f35d4e7f866927，全部独立核心、生成器和main实读。它导入global_assignment_flat_moment_audit.py（16133B、SHA1dfcaee91aaa6886dae201f5b796decbab9e2b667bb96ff24285a6a00c118666），该同SHA helper先前已完整实读，本批再核字节。独立部分是选择/HS/密度及loss；共同矩构建、精确验证和有理线性代数来自helper，不能称完全无规范依赖。[原件、全部21真实输入/原子/轨迹及绑定](../../tools/evidence/um-following-actual-checks-primary/README.md)保全。已有[共同矩helper资源](共同矩有理Gram平坦原子与低阶Latin点原入口--资源.md)与[近平坦审查](../审查/近平坦HS矩提取与负接口有限审计--审查.md)承担一般数学，不重复授予。
+主源e7775b9dc03055d338e7，10287B，SHA01fe0eec81d789d685e2bf264ecb2ebc896153939b27f9f216f35d4e7f866927，全部独立核心、生成器和main实读。它导入global_assignment_flat_moment_audit.py（16133B、SHA1dfcaee91aaa6886dae201f5b796decbab9e2b667bb96ff24285a6a00c118666），该同SHA helper先前已完整实读，本批再核字节。独立部分是选择/HS/密度及loss；共同矩构建、精确验证和有理线性代数来自helper，不能称完全无规范依赖。[原件、全部21真实输入/原子/轨迹及绑定](../../tools/evidence/um-following-actual-checks-primary/README.md)保全。已有[共同矩helper资源](<../../../../tools/evidence/phase25-material-attachments/20261103-boss6-triage/56ad02b08fc32abf39dd.md>)与[近平坦审查](../审查/近平坦HS矩提取与负接口有限审计--审查.md)承担一般数学，不重复授予。
 
 ## 核心真正接收什么
 
