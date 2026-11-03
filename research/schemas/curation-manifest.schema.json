@@ -1,0 +1,417 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Phase25AdmissionManifest",
+  "$comment": "Examples are illustrative bindings, not an executable admission record. Schema validity does not establish mathematical truth, preserved scope, original Git bytes, target hashes, ownership, decision coverage or readiness; run tools/curation.py check, and --final only for full coverage.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "baseline",
+    "baseline_sha256",
+    "objects",
+    "decisions"
+  ],
+  "properties": {
+    "version": {
+      "type": "integer",
+      "const": 1
+    },
+    "baseline": {
+      "$ref": "#/$defs/path"
+    },
+    "baseline_sha256": {
+      "$ref": "#/$defs/sha"
+    },
+    "objects": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/$defs/mathematics"
+          },
+          {
+            "$ref": "#/$defs/evidence"
+          }
+        ]
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/decision"
+      }
+    }
+  },
+  "$defs": {
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "path": {
+      "type": "string",
+      "minLength": 1,
+      "allOf": [
+        {
+          "not": {
+            "pattern": "^(?:/)|(?:^|/)\\.{1,2}(?:/|$)|//|\\\\"
+          }
+        },
+        {
+          "not": {
+            "pattern": "(?:^|/)\\.git(?:/|$)"
+          }
+        }
+      ]
+    },
+    "formal": {
+      "type": "string",
+      "allOf": [
+        {
+          "pattern": "^archives/[^/]+/(?:subarchives/[^/]+/)*(?:state/.+\\.md|问题--问题\\.md)$"
+        },
+        {
+          "not": {
+            "pattern": "(?:^|/)(?:tools|evidence|workspaces|cleanup|history|\\.git|original|comparison|comparisons|formal-comparison)(?:/|$)"
+          }
+        },
+        {
+          "$ref": "#/$defs/path"
+        }
+      ]
+    },
+    "mathematics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256",
+        "role",
+        "object_id",
+        "statement",
+        "conditions",
+        "support",
+        "use",
+        "status",
+        "dependency_scope"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/formal"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "role": {
+          "const": "mathematics"
+        },
+        "object_id": {
+          "$ref": "#/$defs/text"
+        },
+        "statement": {
+          "$ref": "#/$defs/text"
+        },
+        "conditions": {
+          "$ref": "#/$defs/text"
+        },
+        "support": {
+          "$ref": "#/$defs/text"
+        },
+        "use": {
+          "$ref": "#/$defs/text"
+        },
+        "status": {
+          "enum": [
+            "definition",
+            "proved",
+            "refuted",
+            "conditional",
+            "finite",
+            "conjecture",
+            "gap",
+            "algorithm"
+          ]
+        },
+        "dependency_scope": {
+          "enum": [
+            "single-object",
+            "bundle-pending-split"
+          ]
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256",
+        "role",
+        "owner_ids",
+        "use"
+      ],
+      "properties": {
+        "path": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/path"
+            },
+            {
+              "not": {
+                "$ref": "#/$defs/formal"
+              }
+            }
+          ]
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "role": {
+          "const": "evidence"
+        },
+        "owner_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "use": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "correction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "original_kind",
+        "why_nonmathematical",
+        "why_no_mathematics_lost",
+        "reviewed_by"
+      ],
+      "properties": {
+        "original_kind": {
+          "$ref": "#/$defs/text"
+        },
+        "why_nonmathematical": {
+          "$ref": "#/$defs/text"
+        },
+        "why_no_mathematics_lost": {
+          "$ref": "#/$defs/text"
+        },
+        "reviewed_by": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256",
+        "action",
+        "targets",
+        "reason"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/formal"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "action": {
+          "enum": [
+            "keep",
+            "rewrite",
+            "merge",
+            "attach",
+            "delete",
+            "pending"
+          ]
+        },
+        "targets": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/path"
+          }
+        },
+        "reason": {
+          "$ref": "#/$defs/text"
+        },
+        "preservation": {
+          "$ref": "#/$defs/text"
+        },
+        "delete_kind": {
+          "enum": [
+            "non-mathematical",
+            "redundant"
+          ]
+        },
+        "classification_correction": {
+          "$ref": "#/$defs/correction"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "pending"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "targets": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "keep"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "targets": {
+                "minItems": 1,
+                "maxItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "enum": [
+                  "rewrite",
+                  "merge"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "preservation"
+            ],
+            "properties": {
+              "targets": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "attach"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "targets": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "delete"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "delete_kind"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "delete"
+              },
+              "delete_kind": {
+                "const": "non-mathematical"
+              }
+            },
+            "required": [
+              "delete_kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "targets": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "delete"
+              },
+              "delete_kind": {
+                "const": "redundant"
+              }
+            },
+            "required": [
+              "delete_kind"
+            ]
+          },
+          "then": {
+            "required": [
+              "preservation"
+            ],
+            "properties": {
+              "targets": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "examples": [
+    {
+      "version": 1,
+      "baseline": "research/curation/baseline.json",
+      "baseline_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "objects": [],
+      "decisions": [
+        {
+          "path": "archives/demo/state/引理/对象--引理.md",
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "action": "pending",
+          "targets": [],
+          "reason": "尚未评估；不能默认入图或删除。"
+        }
+      ]
+    }
+  ]
+}
+
