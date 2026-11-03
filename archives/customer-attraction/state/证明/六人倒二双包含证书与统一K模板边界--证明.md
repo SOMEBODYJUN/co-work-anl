@@ -101,3 +101,17 @@ $$K_j=H_j+\frac{u_6-U_p(E_j,A)}5\ge0,$$
 第一条强制 $\lambda_1+\lambda_2\ge4$，后两条分别强制 $\lambda_j\le5/3$，但 $10/3<4$。所以这个指定统一K模板不可能，非SPE反例；新正面证书改用 $H_1,H_2,L$，没有固定把末位 $E_j$ 查询与 $H_j$ 捆成K。
 
 障碍原稿另自报1960位型与5600带交叉位的浮点LP诊断，未附本地可读代码/报告；其中末段将 $b$ 与 $d,\ell$ 一同写成0..6，但 $b$ 定义上是Boolean，不能据此认证其精确LP域。三行精确矛盾不依赖该诊断。本次新程序完整核上面正面1960系数/32压缩类和三行有理值，原入口/LP/SPE采样均0；完整证明与所有系数见[证据](../../tools/evidence/background-five-scope-and-prefix-envelope-primary/README.md)。
+
+
+## 2026-11-03：两份原复算脚本恢复
+
+上文“原独立replay脚本本地缺失”及“原入口/LP/SPE采样均0”记录的是此前协调稿清洗批次的取得与执行范围，原记录保留。本批已从冻结源取回[883B统一K三行原程序](../程序/统一K三行系数障碍的固定有理复算--程序.md)与[1227B去交集1960型原程序](../程序/双包含半覆盖的去交集一千九百六十型复算--程序.md)，核字节及SHA后各以断言启用的隔离解释器执行一次，分别捕获新tuple/文字stdout与含Fraction的dict repr stdout，见[新执行记录](../../tools/evidence/two-early-replay-source-contracts-primary/execution.json)。这两源没有独立冻结stdout；新执行不补造原历史日志，也不冒用3118B审计的405B JSON。
+
+实际源定位（两个冻结提交分别同字节）：
+
+- `source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/subagent-f/replay_m6_r2_uniform_K.py`，源ID `a38ca2f025b4a6dab709`。
+- `source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/subagent-f/replay_m6_r2_uniform_K.py`。
+- `source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/subagent-f/replay_m6_two_early_A_half.py`，源ID `8311acb7569b586c1a02`。
+- `source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/subagent-f/replay_m6_two_early_A_half.py`。
+
+此追加只补原实现及当前可复现入口：三个K系数、1960完整去交集域及全部上述数学不变。更完整3118B/3360含交集审计已经充分，本批仅读取复用，未重跑。关系仍是指定模板障碍与另一组H₁/H₂/L正证书的不同实现/系数核验，不新增一般六人half结论。
