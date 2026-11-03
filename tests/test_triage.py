@@ -61,5 +61,16 @@ class TriageTests(unittest.TestCase):
     def test_actor_not_invented_and_snapshot_not_overwritten(self):
         with self.assertRaisesRegex(ValueError,'explicit Boss'):triage.init(self.root,'other',2)
         with self.assertRaisesRegex(ValueError,'already exists'):triage.init(self.root,'test',2,'Boss6')
+    def test_increment_reuses_only_identical_previously_read_materials(self):
+        b=self.batch();records=self.records(b);self.ingest(b,records)
+        changed=records[0]['path'];(self.root/changed).write_text('A different quantified claim')
+        self.commit_for_increment()
+        result=triage.init(self.root,'increment',2,'Boss6',carry_from='test')
+        self.assertEqual(result['reused_identical_materials'],len(records)-1)
+        home,snapshot=triage.load(self.root,'increment')
+        row=next(r for r in snapshot['files'] if r['path']==changed)
+        self.assertFalse((home/'records'/f"{row['material_id']}.json").exists())
+    def commit_for_increment(self):
+        self.git('add','.');self.git('commit','--quiet','-m','Incremental source change')
 
 if __name__=='__main__':unittest.main()

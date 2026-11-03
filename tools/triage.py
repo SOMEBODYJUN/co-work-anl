@@ -5,6 +5,7 @@ import collections
 import csv
 import hashlib
 import json
+import os
 from pathlib import Path
 import re
 import subprocess
@@ -31,7 +32,7 @@ def load(root, run):
     home=run_path(root,run)
     return home,json.loads((home/'snapshot.json').read_text())
 
-def init(root, run, lanes=6, actor=None):
+def init(root, run, lanes=6, actor=None, carry_from=None):
     if not isinstance(actor,str) or not re.fullmatch(r'Boss[1-9][0-9]*',actor):
         raise ValueError('explicit Boss actor required')
     if not 1 <= lanes <= 64:raise ValueError('lanes must be between 1 and 64')
@@ -55,8 +56,22 @@ def init(root, run, lanes=6, actor=None):
           'status':'classifying','board':'not-created-single-Boss-internal-batches',
           'scope':'current canonical formal Markdown; evidence originals excluded'})
     for i,ids in enumerate(groups,1):write(home/'lanes'/f'{i}.json',ids)
+    reused=0
+    if carry_from:
+        old_home,old_snapshot=load(root,carry_from)
+        old_by_path={r['path']:r for r in old_snapshot['files']}
+        for row in snap['files']:
+            old=old_by_path.get(row['path'])
+            if not old or old['sha256']!=row['sha256']:continue
+            file=old_home/'records'/f"{old['material_id']}.json"
+            if not file.exists():continue
+            record=json.loads(file.read_text());validate_record(record)
+            if record['path']!=row['path'] or record['sha256']!=row['sha256']:continue
+            write(home/'records'/f"{row['material_id']}.json",record);reused+=1
+        config=json.loads((home/'run.json').read_text());config.update(carry_from=carry_from,reused_identical_materials=reused)
+        write(home/'run.json',config)
     return {'run':run,'commit':snap['commit'],'materials':len(snap['files']),
-            'bytes':sum(sizes),'lane_bytes':sizes}
+            'bytes':sum(sizes),'lane_bytes':sizes,'reused_identical_materials':reused}
 
 def next_batch(root, run, lane, limit=15, byte_limit=70000):
     home,snap=load(root,run)
@@ -142,37 +157,66 @@ def export(root,run):
         if p.exists():rows.append(json.loads(p.read_text()))
     write(home/'summary.json',report)
     write(home/'materials.json',rows)
+    mathematical=[r for r in rows if r['category'] in {'math-exposition','numeric-witness','math-fragment','algorithm-result'}]
+    write(home/'mathematics.json',mathematical)
     for category in sorted(CATEGORIES):
         write(home/'catalog'/f"{category.replace('/','-')}.json",[r for r in rows if r['category']==category])
     write(home/'stage2-candidates.json',[r for r in rows if r['route'] in {'distill','restore','extract','clarify'}])
     with (home/'materials.csv').open('w',newline='') as f:
-        writer=csv.DictWriter(f,fieldnames=sorted(FIELDS));writer.writeheader()
+        writer=csv.DictWriter(f,fieldnames=sorted(FIELDS),lineterminator='\n');writer.writeheader()
         writer.writerows({k:r[k] for k in sorted(FIELDS)} for r in rows)
+    archives=collections.defaultdict(list)
+    for row in rows:archives[PurePathArchive(row['path'])].append(row)
+    catalog=home/'by-archive';catalog.mkdir(exist_ok=True)
+    for archive,items in sorted(archives.items()):
+        page=catalog/(archive+'.md')
+        content=[f'# {archive} 材料目录','', '类别只判断材料性质，不认证数学真值。已清理/移附件的材料以actions中的当前去向为准。','',
+                 '| 材料 | 类别 | 路由 | 具体理由 |','| --- | --- | --- | --- |']
+        for row in sorted(items,key=lambda r:r['path']):
+            title=Path(row['path']).stem.replace('|','\\|')
+            target=root/row['path']
+            if not target.exists():
+                sid=hashlib.sha256(row['path'].encode()).hexdigest()[:20]
+                target=home/'actions'/f'{sid}.json'
+                if not target.exists():target=home/'records'/f'{sid}.json'
+            link=os.path.relpath(target,page.parent)
+            reason=row['math_subject_or_nonmath_reason'].replace('\n',' ').replace('|','\\|')
+            content.append(f'| [{title}](<{link}>) | {row["category"]} | {row["route"]} | {reason} |')
+        page.write_text('\n'.join(content)+'\n')
     lines=['# 2.5.1 材料定性目录','',f"固定快照 `{report['snapshot_commit']}`；已定性 {report['classified']}/{report['materials']}。分类不是数学真值审查或超边准入。",'',
            '| 材料类别 | 数量 |','| --- | ---: |']
     lines.extend(f'| {c} | {report["categories"].get(c,0)} |' for c in sorted(CATEGORIES))
-    lines+=['','完整六字段清单见 [materials.csv](materials.csv) 和 [materials.json](materials.json)，按类别见 catalog/；第二步候选见 [stage2-candidates.json](stage2-candidates.json)。',
+    lines+=['','完整六字段清单见 [materials.csv](materials.csv) 和 [materials.json](materials.json)，数学材料见 [mathematics.json](mathematics.json)，按类别见 catalog/；第二步候选见 [stage2-candidates.json](stage2-candidates.json)。',
             '','分类与清理落实分开；删除和附件去向另见 actions/。本目录是后台材料清单，不是数学正文。']
+    lines+=['','## 按研究存档浏览','']
+    lines.extend(f'- [{archive}](by-archive/{archive}.md)：{len(items)}份已定性材料。' for archive,items in sorted(archives.items()))
     (home/'INDEX.md').write_text('\n'.join(lines)+'\n')
     return report
+
+def PurePathArchive(name):
+    parts=Path(name).parts
+    return parts[1] if len(parts)>1 else 'other'
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--repo',type=Path,default=Path(__file__).resolve().parents[1])
     sub=p.add_subparsers(dest='command',required=True)
-    for name in ['init','next','ingest','status','export']:
+    for name in ['init','next','ingest','status','export','plan-clean','apply-clean']:
         q=sub.add_parser(name);q.add_argument('--run',required=True)
         if name=='init':
-            q.add_argument('--lanes',type=int,default=6);q.add_argument('--actor',required=True)
+            q.add_argument('--lanes',type=int,default=6);q.add_argument('--actor',required=True);q.add_argument('--carry-from')
         if name=='next':
             q.add_argument('--lane',type=int,required=True);q.add_argument('--limit',type=int,default=15);q.add_argument('--byte-limit',type=int,default=70000)
         if name=='ingest':q.add_argument('--batch',required=True);q.add_argument('--records',required=True)
     a=p.parse_args();root=a.repo.resolve()
     try:
-        if a.command=='init':result=init(root,a.run,a.lanes,a.actor)
+        if a.command=='init':result=init(root,a.run,a.lanes,a.actor,a.carry_from)
         elif a.command=='next':result=next_batch(root,a.run,a.lane,a.limit,a.byte_limit)
         elif a.command=='ingest':result=ingest(root,a.run,a.batch,a.records)
         elif a.command=='status':result=status(root,a.run)
-        else:result=export(root,a.run)
+        elif a.command=='export':result=export(root,a.run)
+        else:
+            import triage_clean
+            result=(triage_clean.plan if a.command=='plan-clean' else triage_clean.apply)(root,a.run)
         print(json.dumps(result,ensure_ascii=False,indent=2))
     except (ValueError,OSError,KeyError,json.JSONDecodeError) as e:raise SystemExit(str(e))
 
