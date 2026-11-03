@@ -1,12 +1,12 @@
 # 数学研究仓库
 
-这是新结果分支 `rebuild/research-v2`：先建立树与全量清点，第二阶段整理数学对象，第三阶段建立可解释超图。当前正文大多尚待清洗，不能把脚手架当已完成知识库。
+这是新结果分支 `rebuild/research-v2`：先建立树与全量清点，第二阶段整理数学正文；2.5依次做材料定性、对象群整理、另定方案重新登记，再进入待设计的第三阶段。各步完成范围以实际记录为准，不能把脚手架或来源done当作数学质量验收。
 
 - [研究存档](archives/README.md)：四个主要问题家族、独立数学工具及待确认方向；父子问题明确归档。
-- [全仓数学关系图](map/README.md)：使用已克隆的上游超图格式；当前draft-scaffold，数学边待第三阶段逐条建立。
+- [全仓数学关系图](map/README.md)：现有实现是原型；最终结构及研究Agent接口待另行设计。
 - [三阶段清洗入口](cleanup/README.md)与[全量逐文件勾选](cleanup/CHECKLIST.md)。
-- [第二阶段提示词](prompts/02-clean.md)、[第三阶段提示词](prompts/03-map.md)。
-- [第二阶段半准入与修复](prompts/02.5-research.md)：保护已完好的数学，删除非数学包装，修复缺失与状态；[对象群执行提示词](prompts/02.5-worker.md)及[程序契约](research/CURATION.md)。
+- [第二阶段提示词](prompts/02-clean.md)、[第三阶段旧提示词](prompts/03-map.md)（待重设计，暂不启动）。
+- [2.5分步入口](research/CURATION.md)：本轮只设计[第一步材料定性](prompts/02.5-1-inventory.md)和[第二步对象群整理](prompts/02.5-2-distill.md)；[worker提示词](prompts/02.5-worker.md)、[协作设计](research/CURATION_OPERATIONS.md)及[程序待实现规格](research/PHASE25_PROGRAM.md)。第三步与超边设计由用户与另一AI负责。
 - [程序与协作操作](tools/README.md)、[命名和入库规则](cleanup/OBJECTS.md)。
 - [整理质量审查](cleanup/audits/2026-10-30/质量审查.md)：固定快照的来源—正文抽查，记录覆盖矩模型身份冲突和已入库正文的导航缺口；done不等于语义验收通过。
 

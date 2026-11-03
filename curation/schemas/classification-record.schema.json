@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Phase 2.5.1 material classification; not truth review or graph admission",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "path",
+    "sha256",
+    "category",
+    "math_subject_or_nonmath_reason",
+    "locator",
+    "route"
+  ],
+  "properties": {
+    "path": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Repository-relative source material path, generated from the fixed snapshot."
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "category": {
+      "enum": [
+        "math-exposition",
+        "numeric-witness",
+        "math-fragment",
+        "algorithm-result",
+        "evidence-only",
+        "non-math",
+        "mixed/needs-context"
+      ]
+    },
+    "math_subject_or_nonmath_reason": {
+      "type": "string",
+      "minLength": 1,
+      "description": "One or two concrete sentences identifying mathematical content or absence of it."
+    },
+    "locator": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Heading, paragraph, code/data key, or whole short document supporting the classification."
+    },
+    "route": {
+      "enum": [
+        "retain",
+        "distill",
+        "restore",
+        "extract",
+        "attach",
+        "delete",
+        "clarify"
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "related_paths": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "category": {
+            "const": "non-math"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "route": {
+            "enum": [
+              "delete",
+              "clarify"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "category": {
+            "const": "evidence-only"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "route": {
+            "enum": [
+              "attach",
+              "delete",
+              "clarify"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "category": {
+            "const": "mixed/needs-context"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "route": {
+            "enum": [
+              "extract",
+              "clarify"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "category": {
+            "enum": [
+              "math-exposition",
+              "numeric-witness",
+              "math-fragment",
+              "algorithm-result"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "route": {
+            "enum": [
+              "retain",
+              "distill",
+              "restore",
+              "extract",
+              "clarify"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
