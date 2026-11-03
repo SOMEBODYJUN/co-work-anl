@@ -4,6 +4,7 @@
 
 - [可运行的登记、超边和研究接口](research/IMPLEMENTATION.md)：v2记录、分批建图账本、两类Solver、具体反馈、持续保存和恢复。工具完成不等于全仓已登记/已建图，2.5前两步继续独立执行。
 - [GitHub资源与部署](research/GITHUB_RESOURCES.md)：学生权益、Codespaces环境、Actions检查/计算、实际复现入口及尚未启用的云端部分。
+- [本次实现交付与验收](research/DELIVERY.md)：实际通过的测试、精确复现范围、与最新分类工作的同步及local-only部署边界。
 
 - [研究存档](archives/README.md)：四个主要问题家族、独立数学工具及待确认方向；父子问题明确归档。
 - [全仓数学关系图](map/README.md)：旧graph.json原型保留；新接口输出独立graph-v2.json，不自动接纳历史对象。

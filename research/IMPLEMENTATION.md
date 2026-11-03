@@ -8,6 +8,8 @@
 
 `research/registry.json`使用`schema: 2`。不自动把已有frontmatter或旧manifest提升为正式登记。全仓登记应由2.5第二步整理后的实读结果产生；程序提供库存和明确记录的校验。
 
+已同步远端`4eecfe9b3`的只分类目录：材料标号标识一份材料，不等于一个数学命题ID。一份材料可含多个对象，多个材料也可支持同一对象；material记录可附原目录编号供追溯。登记工具不删除、移动或改写原件，不撤销其他Boss的分类与恢复。
+
 | 记录 | 必需内容 | 身份与变更 |
 |---|---|---|
 | object | `object_id,version,title,kind,truth_status,model,statement,quantifiers,assumptions,scope,objections,body,evidence,sources` | ID不从路径/全文hash生成；改陈述、模型、量词、证明或其他登记字段，明确增version；旧版本留Git历史。不同命题不能以重命名掩盖 |
