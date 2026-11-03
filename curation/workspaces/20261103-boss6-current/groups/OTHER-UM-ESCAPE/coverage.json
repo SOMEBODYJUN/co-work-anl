@@ -1,0 +1,84 @@
+{
+  "task_id": "OTHER-UM-ESCAPE",
+  "disposition": "exact-reuse-of-mature-symbolic-construction-and-separated-finite-evidence",
+  "formal_edits": [],
+  "assets": [
+    {
+      "path": "archives/unrelated-machines/state/计算/稀释共享逃逸独立原程序的部分探针与全部匹配--计算.md",
+      "sha256": "df670d754d81fc93d5abac55c4dc1fdf9d9e0599edf792dd2993da88cabdf93f"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/稀释终端与共享逃逸的全边原程序复跑--计算.md",
+      "sha256": "f938adfb5f8c3c2a9563ce6ae33eb64bf4f72e3573ba0870fb7f18fe9abfe381"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/稀释终端与共享逃逸的分离证书--资源.md",
+      "sha256": "abf4eabbf708b50f8d34ee8193a5c44c5162fbd7a2d4c3c257e3af20c9505b31"
+    }
+  ],
+  "mathematical_exit": {
+    "primary": "archives/unrelated-machines/state/资源/稀释终端与共享逃逸的分离证书--资源.md",
+    "scope": "每个整数k>=4的显式展开不相关机族；两棵k叉核心树、每底层组N=k(k-1)个私有终端、N-1个unit阻塞任务和整个实例唯一一台global z；阻塞在z时间1/2。",
+    "lower_bound": "q=k/(k-1)、alpha_r=q^(r-1)/(k-1)、h首次使alpha_h>=1/2。alpha_2=k/(k-1)^2<1/2，因为(k-1)^2-2k=(k-2)^2-3>=1，故h>=3。若B<2-1/k，桥使一根接unit；每活跃父保留k-1个小端就已有负载2-1/k，所以必须外送至少两个普通任务。分支互异给至少2^(h-1)>=4个活跃底层组。每组至少两个普通unit任务占终端，B<2使各终端至多一unit任务，N-1阻塞中至少一个必须去z。各组任务不同，z负载至少4*(1/2)=2>B，矛盾。",
+    "upper_bound": "使用底座从桥所在根到一个终端的单路径调度，路径上每父仅下传一普通任务，其余k-1小端保留；活跃底组仅一个普通任务占终端，其N-1阻塞双射放其余终端，非路径任务按底座放置。完全不用z，峰值恰2-1/k。",
+    "conclusion": "OPT=2-1/k；T=1+1/k有独立CONFIG、每边普通LST及现行GHMR/星匹配证书，OPT/T=(2k-1)/(k+1)=2-3/(k+1)趋于2。全k结论由符号路径/容量与匹配构造承担，不由427机程序输出承担。"
+  },
+  "input_coverage": [
+    {
+      "path": "archives/unrelated-machines/state/计算/稀释共享逃逸独立原程序的部分探针与全部匹配--计算.md",
+      "input_sha256": "df670d754d81fc93d5abac55c4dc1fdf9d9e0599edf792dd2993da88cabdf93f",
+      "disposition": "reuse-unmodified",
+      "unique_content": [
+        "k4/h3/N12的427机521任务完整实例与配置列核验、完整不用z的整数上界调度。",
+        "独立程序仅重算58旧边和44新增z边的完整LST条件向量，属于部分条件点；不能说独立重算全部4914点。",
+        "4394个GHMR强制big查询及4914个星查询为全部相应查询，另给z全部352个可选阻塞的匹配；不同查询可用不同匹配。",
+        "实例/强制点生成器由原底座及扩展导入，配置数值验证和匹配自行重算；peer模块只读SHA，不import或运行，因此不把它称从零独立生成或实际peer过滤。",
+        "mandatory集合恰为bridge；报告0是bridge任务ID，不是mandatory数量零。原程序、报告、独立构造与执行附件原位保留。"
+      ]
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/稀释终端与共享逃逸的全边原程序复跑--计算.md",
+      "input_sha256": "f938adfb5f8c3c2a9563ce6ae33eb64bf4f72e3573ba0870fb7f18fe9abfe381",
+      "disposition": "reuse-unmodified",
+      "unique_content": [
+        "底座原CLI真实all-k4与共享逃逸原CLI的既有执行范围分别保存；k4共享实例全部4562旧边加352新增边、共4914独立LST强制点，区别于独立程序的部分采样。",
+        "全4394大边匹配、4914全边星匹配及实际peer filter_domains首轮接受/零删是不同证据项，不相互冒充。",
+        "k2全整数枚举与k3/k4构造路径调度不同；k4未枚举521项的全部整数指派。",
+        "k4到64的压缩参数行不当作61次展开调度审计；程序输出不充作任意k的证明。",
+        "原代码及其底座/GHMR依赖、真实运行记录与原报告保留，不新增运行。"
+      ]
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/稀释终端与共享逃逸的分离证书--资源.md",
+      "input_sha256": "abf4eabbf708b50f8d34ee8193a5c44c5162fbd7a2d4c3c257e3af20c9505b31",
+      "disposition": "reuse-unmodified-as-primary-mathematical-exit",
+      "unique_content": [
+        "稀释终端的整数unit槽与LST分数剩余容量不同，底座路径阻塞及加入唯一global z后的重新下界证明。",
+        "全部k>=4的active底组分支、z过载与不用z的达到上界；T可行只给T_CONF<=T，不要求T_CONF恰T。",
+        "CONFIG在z取空配置，旧条件点令z质量0；新增阻塞到z条件点只固定该任务并在终端余量中重填其他阻塞。",
+        "重备选星的安全性和严格大于T/2、现行GHMR每次一条大边且覆盖mandatory/强制项/U_i的独立匹配构造。",
+        "基数加强探针只对未加z底座准确识别阈值，不自动扩成共享z变体或条件内CONFIG/GHMR嵌套系统的失败结论。"
+      ]
+    }
+  ],
+  "certificate_quantifiers": {
+    "configuration": "一份T可行CONFIG证书，树/终端沿底座配置，唯一z取空配置；不同机器的配置分布不要求来自实际全局调度。",
+    "conditional_lst": "对每条有限边分别存在一份完整剪枝LST点，使该边质量1；不同边允许不同点。一般符号构造保全部边，有限全边复跑与独立部分重算的实际量词分别保留。",
+    "ghmr": "在T下1为big、1/k与1/2为small，mandatory恰桥。每个核心父的k个small任务有不同大端，强制项和桥可同时无冲突匹配；终端U_i空，z无big查询。覆盖全部所列查询不表示所有查询共享一份负载可行调度。",
+    "star": "每条查询的重备选F可全部单射到外机，最大撤离收益恰全F权，必要界退为p_ij<=T；安全性只用外端严格>T/2，接受不保证实际可调度。",
+    "z_optional_matching": "z的阻塞任务可逐组匹配到各组不同终端，只反映匹配资格，不付普通任务占用及所有组共同z容量；它不是强制big-z查询。",
+    "fixed_point": "初始全部域上每个所列过滤查询已有证书，故没有第一次删除；不包含强制literal后重新嵌套完整过滤或同一条件内加CONFIG/基数约束。"
+  },
+  "read_only_model": {
+    "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+    "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+  },
+  "remaining_boundaries": [
+    "仅否定列明的分离证书/单查询过滤合同，不是一般UM次二近似算法不存在性、hardness或任何所有条件化方法的否定。",
+    "真正未表达的是同一条件中的CONFIG、全局small残余容量及所有任务共同槽预算；更强联合条件、嵌套GHMR或共享z变体的基数探针需另证。",
+    "普通/桥为两端，阻塞有N+1个端；不保每任务两/三资格的额外承诺。",
+    "实例规模按真实展开输入计，h随k增长，不声称对log k的多项式归约。",
+    "原程序的427机器有限实例、压缩参数行和既有有限执行不代替全k符号证明，亦不称外审或新颖性认证。"
+  ],
+  "preservation": "三个正式输入及全部原程序、原输出、真实依赖和证据包原位保留，正式正文零编辑。未重跑审计；组工作区仅记录覆盖、资产与精确量词，数学交付落在三份现行正式正文。"
+}
