@@ -60,7 +60,7 @@ source_refs: ["source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspac
 |signed一般帽/aggregate|解析全query/极点/舍入/拼合；审查已收提示、未先读作者全文，r2/D0/zero端点，不无提示blind|
 |counter精确例|先合同计数推导后动作规则，六单位参数6708决策节点/240198含ownIC，未作者/规范导入；floor不可删，未审通用repair|
 |原research父方root例核|七明确算术参数含非整除/E2J1，总150912构造IC；E2J1 18主题/6174IC，M(2,3)/目标(2,2,4)/旧费5新3/预算9；不同于counter六点或作者单点|
-|convex字典Fraction核|源称父方重跑PASS；从原资源重建四H完整半轴/网格、x2/3、新3旧7/2、E2J1预算9。一般grid/epigraph/负点实现由解析证明承担|
+|convex字典Fraction核|源称research父方重跑PASS；源码从原资源重建四H完整半轴。预算为两段各3点等式断言，min/argmin、common grid等部分输出写定；x2/3、新3旧7/2全域由解析E/J分段式承担，非通用LP求解。一般grid/epigraph/负点实现仍由解析证明承担|
 |fresh child支持|非盲重构，972系数/1275单客户cut链；old13原packet static重算37/66仅算术，不冒13层IC重核；此处只导航|
 |priority父方与fresh|各两套三客户完整SPE、所有终局winner期望/N0/m1；R实际空，不声称fixed missed-source流有反例，确定ENV未否；此处只导航|
 |H结构/参数|root+aggregate知情核；四人解析/signed全tail攻击；原父方重跑`--regression`七参数PASS，与默认23交点/24开区间另一数据分开|
@@ -76,3 +76,7 @@ source_refs: ["source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspac
 没有无明确候选的大规模阴性搜索，指定硬菜单服务一个新H候选，不提高其一般真值。原稿无half负点；本次保所有数学/有限scope及当前five别证推论，仍未支付六人深尾或一般共同信用。原件/原代码可得性/关系/逐源处置和本次0新数学运行范围另保证据。
 
 原件、准确程序缺件/0-run范围、关系和逐源处置见[本批证据](../../tools/evidence/finite-dictionary-epigraph-and-round7-ledger-primary/README.md)。
+
+# 后取得的字典菜单核两主源
+
+原4743B `audit_pooled_dictionary_lp.py`与1624B JSON现已作为两主源全文取得、逐字节及AST/JSON核清，旧program-availability/missing与当时未读码事实保留。全输入闭包、role2未筛末位强制终端、全部原线非负交点/并格、目标六点与字面返回字段已写[自足程序对象](../程序/异质资源字典四个菜单的精确分段核与报告字面量--程序.md)。它没有18主题产品BI/IC、任意字典LP或负点搜索入口。原父方PASS按历史角色复用，当前没有新原入口、独立入口或源函数重放。一般合同和E/J数值不变，只精确区分四H全半轴、预算有限样本、解析全局最优及字面输出的证据层次；两主源原件/指纹/收据及关系见[本轮证据](../../tools/evidence/dictionary-resource-menu-audit-two-primary/README.md)。
