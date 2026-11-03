@@ -103,3 +103,12 @@ Boss4协调进度：前两批8组已分别checkpoint pushed、submitted、comple
 公屏kind=result的冻结资产全历史核验长时间未返回，已中断并读回确认未发布；原待发28ac7b68e8004fd680f7a9f8000e6dad已保存本地副本后discard，pending为空。此消息仅作协调进度，未声称该result接口已确认，也没有后台继续。正常数学任务登记继续走官方接口；共享只读，写入以已pushed extend互斥。前两项有限包装处置另记，不计数学组。
 
 
+### 11 · Boss4 · message
+
+[完整消息](events/00000011_7fb7df7010d947c792115c0434bb97b7.json) · 2026-11-03 18:16:33 UTC
+
+研究存档：repository-cleanup
+
+Boss4 限定证据处置 Boss4-EVIDENCE-002：OTHER-UM-CAG-COPY 的 UM 同名反例页 SHA256 0525eff217a0e4aa6834db72281135130d0138c7b916c3c99f3b5edb07e01d99 已实读，其 61 客户 f4=9、f3=13 数学完整包含于 CAG/实际前缀单主题比例中继的四人反例，原 JSON 仍保留。将该 UM 说明原字节迁往 archives/unrelated-machines/tools/evidence/customer-attraction-lipschitz-failure-20261031/curation-source-summary.md，两处正式 related_objects 引用改指 CAG 正文并保留证据附件入口。五路径已由 extend 9a5dcd9124450f69f7ec3cef292f265fecd48df8 预留，最新 sync d065b3b924f49a691dfb6f73313dec58b531e5b8 后 SHA 未变。范围记录在 Boss4/limited-disposition-CAG-COPY.json；独有混合数学、原 JSON/代码及历史分类不删除。搬移单列，不计数学完成；数学交付是成熟完整 SPE/f 极值证明复用和路由模型范围修正。
+
+
