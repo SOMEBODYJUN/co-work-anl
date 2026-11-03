@@ -436,4 +436,26 @@ class WorkflowTests(unittest.TestCase):
         # Frozen source is still readable after target deletion.
         self.assertEqual(self.work(self.a,'clean','show',self.ids[1]).returncode,0)
 
+    def test_registration_and_map_workflows_keep_phase_identities_separate(self):
+        for name, role, phase, prompt in [('registration-v2', 'curator', 'registration', 'prompts/02.5-3-register.md'), ('map-v2', 'mapper', 'map', 'prompts/03-map.md')]:
+            p=self.seed/'research/operations'/name/'run.json';p.parent.mkdir(parents=True)
+            p.write_text(json.dumps({'schema':1,'phase':phase,'role':role,'prompt':prompt,'board_branch':'wcg/board-'+name}))
+            p=self.seed/prompt;p.parent.mkdir(parents=True,exist_ok=True);p.write_text('# Explicit stage entry\n')
+        (self.seed/'cleanup/coordination.json').write_text(json.dumps({'require_boss_number':True}))
+        git(self.seed,'add','research/operations','prompts','cleanup/coordination.json')
+        git(self.seed,'commit','-m','Publish isolated phase launch profiles');git(self.seed,'push','origin','HEAD:refs/heads/'+BRANCH)
+        for name, role, prompt in [('registration-v2','curator','prompts/02.5-3-register.md'),('map-v2','mapper','prompts/03-map.md')]:
+            repo=self.base/name
+            result=self.work(repo,'start','--remote',str(self.remote),'--actor','Boss17','--role',role,'--workflow-run',name)
+            self.assertEqual(result.returncode,0,result.stderr+result.stdout)
+            receipt=json.loads(result.stdout)
+            self.assertEqual(receipt['context_entry'],prompt)
+            self.assertEqual(receipt['workspace']['path'],'research/workspaces/'+name+'/Boss17')
+            self.assertEqual(receipt['identity_registration']['status'],'registered')
+            self.assertTrue(git(self.remote,'show',BRANCH+':research/operations/'+name+'/people/Boss17.json'))
+        self.assertFalse(git(self.remote,'ls-tree','-r','--name-only',BRANCH,'cleanup/people/Boss17.json'))
+        result=self.work(self.base/'registration-again','start','--remote',str(self.remote),'--actor','Boss17','--role','curator','--workflow-run','registration-v2')
+        self.assertNotEqual(result.returncode,0)
+        self.assertRegex(result.stdout+result.stderr,'another conversation|编号已有其他工作区')
+
 if __name__=='__main__':unittest.main(verbosity=2)

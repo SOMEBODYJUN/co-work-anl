@@ -280,6 +280,16 @@ def role_id(repo, requested=None, prompts=None, default="boss"):
 
 
 def workspace_path(repo, save, who):
+    workflow = run(repo, 'config', '--local', '--get', 'wcg.workflowRun', check=False).stdout.decode().strip()
+    if workflow:
+        if not IDENTIFIER.fullmatch(workflow) or not IDENTIFIER.fullmatch(who) or save != 'repository-cleanup':
+            raise Stop('Invalid workflow run binding')
+        from_path = Path('research/workspaces') / workflow / who
+        cursor = repo
+        for part in from_path.parts:
+            cursor /= part
+            if cursor.is_symlink(): raise Stop('工作区路径不能经过符号链接。')
+        return from_path
     if not IDENTIFIER.fullmatch(save) or not IDENTIFIER.fullmatch(who):
         raise Stop("工作区 ID 不合法。")
     subarchive=run(repo,"config","--local","--get","wcg.subarchive",check=False).stdout.decode().strip()
@@ -441,7 +451,7 @@ def start(args):
             or current_program.read_bytes() != running_source):
         forwarded = ["--repo", str(repo), "start", "--remote", args.remote,
                      "--board-limit", str(board_limit)]
-        for name in ("actor", "role", "token_file", "save", "branch", "board_branch", "subarchive",'auth','curation_run'):
+        for name in ("actor", "role", "token_file", "save", "branch", "board_branch", "subarchive",'auth','curation_run','workflow_run'):
             supplied = getattr(args, name, None)
             if supplied is not None:
                 forwarded.extend(["--" + name.replace("_", "-"), str(supplied)])
@@ -494,6 +504,30 @@ def start(args):
                 or not (repo/'curation/runs'/curation_run/'run.json').is_file()):
             raise Stop('2.5运行须已发布，角色curator、存档repository-cleanup。')
         run(repo,'config','--local','wcg.curationRun',curation_run)
+    previous_workflow = run(repo, 'config', '--local', '--get', 'wcg.workflowRun', check=False).stdout.decode().strip()
+    requested_workflow = getattr(args, 'workflow_run', None)
+    workflow_run = requested_workflow or previous_workflow
+    workflow_config = None
+    if previous_workflow and requested_workflow and previous_workflow != requested_workflow:
+        raise Stop('本clone已绑定另一工作阶段；请用独立clone。')
+    if workflow_run:
+        if curation_run or not IDENTIFIER.fullmatch(workflow_run) or save != 'repository-cleanup':
+            raise Stop('登记/建图运行与2.5第二步独立；使用独立clone和repository-cleanup路由。')
+        if not previous_workflow and run(repo, 'config', '--local', '--get', 'wcg.instance', check=False).stdout:
+            raise Stop('已有对话工作区不能改绑新阶段；请保留它并使用独立clone。')
+        config_path = repo / 'research/operations' / workflow_run / 'run.json'
+        if not config_path.is_file(): raise Stop('请先发布明确的工作阶段run.json')
+        workflow_config = json.loads(config_path.read_text())
+        if workflow_config.get('schema') != 1 or workflow_config.get('role') != selected_role or workflow_config.get('phase') not in {'registration', 'map'}:
+            raise Stop('工作阶段与角色不匹配。')
+        prompt_path = Path(workflow_config['prompt'])
+        if prompt_path.is_absolute() or '..' in prompt_path.parts or not (repo / prompt_path).is_file():
+            raise Stop('工作阶段缺少明确启动词。')
+        expected_board = checked_branch(repo, workflow_config['board_branch'], board=True)
+        if getattr(args, 'board_branch', None) and selected_board != expected_board:
+            raise Stop('公屏与该工作阶段配置不一致。')
+        selected_board = expected_board
+        run(repo, 'config', '--local', 'wcg.workflowRun', workflow_run)
     run(repo, "config", "--local", "wcg.boardBranch", selected_board)
     if legacy:
         # sync has already preserved staged/unstaged/untracked work and stopped
@@ -530,6 +564,9 @@ def start(args):
     elif save == "repository-cleanup":
         result["context_entry"] = ("prompts/03-map.md" if selected_role == "mapper" else
                                    "prompts/02.5-research.md" if selected_role == "curator" else "cleanup/README.md")
+    if workflow_config:
+        result.update(workflow_run=workflow_run, context_entry=workflow_config['prompt'],
+                      role_prompt=workflow_config['prompt'], research_prompt=workflow_config['prompt'])
     result["recent_board_limit"] = board_limit
     if rules.get('require_boss_number') and save=='repository-cleanup':
         command=[sys.executable,str(repo/TOOLS/'coordination.py'),'--repo',str(repo),'register']
@@ -579,6 +616,7 @@ def main():
     s.add_argument("--resume", action="store_true", help="明确接续已存在的同号工作区")
     s.add_argument("--subarchive", help="父存档下的明确子问题；首次绑定，继续同clone复用")
     s.add_argument('--curation-run',help='已发布的2.5运行ID；独立工作区/身份/任务，不混入旧来源')
+    s.add_argument('--workflow-run', help='已发布的登记/建图阶段；独立身份与工作区，不改绑旧阶段')
     s.add_argument("--branch", help="文件分支；新clone默认长期共用分支，既有绑定不变")
     s.add_argument("--board-branch", help="公屏分支；新长期分支clone默认新公屏，既有绑定不变")
     s.add_argument("--board-limit", type=int, default=0,
@@ -593,9 +631,12 @@ def main():
     mapping = sub.add_parser("map", help="检查/生成子存档、存档和全仓超图")
     mapping.add_argument("args", nargs=argparse.REMAINDER)
     research = sub.add_parser('research', help='登记、按需读取超边、两类Solver输入和持续研究恢复',
-                              epilog='Commands: inventory, register, check, build, search, show, context, edge-bind, packet, init, save, resume. See research/IMPLEMENTATION.md.')
+                              epilog='Commands: inventory, freeze, new-id, compose, register, registration-check, check, build, search, show, context, edge-bind, packet, init, save, resume. See research/IMPLEMENTATION.md.')
     research.add_argument('--registry', help='显式选择v2登记文件；省略使用research/registry.json')
     research.add_argument('args', nargs=argparse.REMAINDER)
+    github = sub.add_parser('github', help='使用仓库外凭据调用GitHub研究资源；status只读',
+                            epilog='Commands: status, dispatch, machines, create-codespace, stop-codespace. Creation/dispatch run only when explicitly invoked.')
+    github.add_argument('args', nargs=argparse.REMAINDER)
     curate = sub.add_parser("curate", help="2.5固定原文、逐对象处置与数学准入；只操作本地明确文件")
     curate.add_argument("args", nargs=argparse.REMAINDER)
     triage = sub.add_parser("triage", help="2.5.1材料定性批次、覆盖与目录；不判断数学真值")
@@ -670,6 +711,8 @@ def main():
         module = {"curate":"curation.py", "map":"maps.py", "triage":"triage.py"}[a.command]
         return subprocess.call([sys.executable, str(repo / TOOLS / module), "--repo", str(repo), *a.args])
     env = auth(repo, a)
+    if a.command == 'github':
+        return subprocess.call([sys.executable, str(repo / TOOLS / 'github_resources.py'), '--repo', str(repo), *a.args], env=env)
     if a.command=='curation-task':
         return subprocess.call([sys.executable,str(repo/TOOLS/'curation_tasks.py'),'--repo',str(repo),*a.args],env=env)
     if a.command=='doctor':

@@ -36,8 +36,14 @@ def create(destination):
     edge.update({k: v for k, v in bindings.items() if k != 'note'})
     runtime._write_json(destination / 'map/edges/AB-C.json', edge)
     registry = {'schema': 2, 'objects': objects, 'materials': [dict(ref(body), disposition='objects', object_ids=['A', 'B', 'C'], reason='Three independently addressable statements in one unchanged Markdown page')], 'edge_files': ['map/edges/AB-C.json']}
+    runtime._write_json(destination / 'research/registration/baseline.json', {'schema': 1, 'scope': 'repository', 'coverage_note': 'Complete elementary demo input', 'materials': [ref(body)]})
+    registry['baseline'] = ref('research/registration/baseline.json')
     runtime._write_json(destination / runtime.REGISTRY, registry)
     runtime._write_json(destination / 'map/coverage.json', {o['object_id']: {'state': 'linked', 'edge_ids': ['AB-C'], 'reason': 'The sum relation', 'comparison_scope': 'A B C', 'object_pin': runtime.pin(o)} for o in objects})
+    review = {'comparison_scope': 'The complete elementary positive-sum family', 'outcome': 'One joint relation, no additional archive transfer claimed', 'unresolved': []}
+    runtime._write_json(destination / 'map/integration.json', {'reviewed_by': 'Elementary demo author', 'review_note': 'All demo comparisons explicitly checked',
+        'registry_pin': runtime.pin(registry), 'edge_pins': {'AB-C': runtime.pin(edge)},
+        'archive_reviews': {scope: review for scope in runtime.object_scopes({o['object_id']: o for o in objects})}, 'cross_archive_review': review})
     spec = {'problem_id': 'positive-sum', 'problem': ref('research/target.md'), 'definitions': [ref('research/definitions.md')], 'obstacles': [ref('research/obstacles.md')], 'seed_ids': ['C'], 'hops': 2}
     runtime._write_json(destination / 'research/spec.json', spec)
     graph = runtime.build(destination, final=True)

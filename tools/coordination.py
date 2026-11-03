@@ -9,6 +9,12 @@ def config(root,key):
     return board.git(root,'config','--local','--get',key,check=False).stdout.decode().strip()
 
 def identity_paths(root,who):
+    workflow=config(root,'wcg.workflowRun')
+    if workflow:
+        if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]{0,63}',workflow):raise ValueError('Invalid workflow run')
+        from curation import _safe_path
+        _safe_path(root,'research/operations/'+workflow+'/run.json')
+        return 'research/operations/'+workflow+'/people/'+who+'.json','research/workspaces/'+workflow+'/'+who
     run=config(root,'wcg.curationRun')
     if run:
         if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]{0,100}',run):raise ValueError('Invalid curation run')

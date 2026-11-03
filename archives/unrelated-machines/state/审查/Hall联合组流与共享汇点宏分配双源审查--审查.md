@@ -130,6 +130,8 @@ D_{ht}=\max\{0,F_h+\beta_{ht}+\sum_{j\in U_h}a_j-T\}.
 
 `UM-SHARED-SINK-MACRO-EXIT-v1` 将宏任务有限端点放宽到 homes 与 sink 的非空子集，允许宏任务数量超过 home 数。用 (b+h) 阶匹配把宏任务、dummy、home 和退出位置一起处理：宏可进入 home 或直接在 sink 退出，dummy 补齐空 home 和退出槽。真实 (T)-调度直接产生完美匹配见证，局部覆盖误差仍只乘在总 sink 预算上，因此 home 负载不超过 (T)，sink 不超过 ((1+\eta)T)。
 
+这里不能仅因 `b>h` 返回 FAIL。例如 `T=1`、一个 home、无私有任务，`b₁` 只在 home 可用且时间为 `3/4`，`b₂` 在 home 的时间为 `3/4`、在 sink 的真实时间为 `1/4`。匹配 `b₁→home`、`b₂→exit₁`、`dummy→exit₂` 合法，真实负载为 `3/4` 与 `1/4`。宏 exit 边支付真实 sink 时间，退出位置不各自拥有一份预算；旧 home-only 范围的计数拒绝不能迁移到宏退出合同。完整成本矩阵和不放大强制/宏退出成本的一次预算证明见[私有组退出池共同匹配正文 §1.2–1.4](私有组退出池共同宏任务与有界profile联合选择最终审查--审查.md)。
+
 `UM-BOUNDED-PROFILE-EXIT-POOL-v1` 再允许多个 pool 机器，但所有 pool-enabled 任务共享完整 pool 资格，并有统一 profile
 \[
 a_zc_j\le p_{zj}\le\rho a_zc_j,

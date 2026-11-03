@@ -131,6 +131,11 @@ def mutate(root, task_id, operation, receipt=None, reason=None):
         with client.scratch() as temporary:
             directory = Path(temporary)
             cleanup.checkout_snapshot(client, directory)
+            if coordination.config(root, 'wcg.workflowRun'):
+                person, _ = coordination.identity_paths(root, actor)
+                p = _safe_path(directory, person)
+                if not p.is_file() or json.loads(p.read_text()).get('instance') != coordination.config(root, 'wcg.instance'):
+                    raise ValueError('Boss identity is not registered for this map workflow')
             if not confirmed:
                 coordination.verify_write(directory, branch, board.git(directory, 'rev-parse', 'HEAD').stdout.decode().strip())
                 confirmed = True

@@ -18,14 +18,19 @@ def export(root, destination, remote, branch='main'):
     shutil.copy2(root / '.gitignore', destination / '.gitignore')
     shutil.copytree(root / 'tools', destination / 'tools', ignore=shutil.ignore_patterns('evidence', '__pycache__'))
     (destination / 'tests').mkdir()
-    shutil.copy2(root / 'tests/test_research_runtime.py', destination / 'tests/test_research_runtime.py')
+    for name in ['test_research_runtime.py', 'test_registration.py', 'test_github_resources.py']:
+        shutil.copy2(root / 'tests' / name, destination / 'tests' / name)
     shutil.copytree(root / '.devcontainer', destination / '.devcontainer')
     shutil.copytree(root / '.github', destination / '.github')
     (destination / 'research').mkdir(); (destination / 'prompts').mkdir()
-    for name in ['IMPLEMENTATION.md', 'GITHUB_RESOURCES.md']:
+    for name in ['IMPLEMENTATION.md', 'GITHUB_RESOURCES.md', 'PHASE3_READINESS.md', 'UPSTREAM_ADAPTATION.md']:
         shutil.copy2(root / 'research' / name, destination / 'research' / name)
-    for name in ['research-runtime.md', 'solver-full.md', 'solver-obstacle.md', '02.5-3-register.md', '03-map.md']:
+    for name in ['research-runtime.md', 'solver-full.md', 'solver-obstacle.md', '02.5-3-register.md', '02.5-3-worker.md', '03-map.md', '03-map-worker.md']:
         shutil.copy2(root / 'prompts' / name, destination / 'prompts' / name)
+    for name in ['p25-register-v2', 'map-v2']:
+        path = destination / 'research/operations' / name
+        path.mkdir(parents=True)
+        shutil.copy2(root / 'research/operations' / name / 'run.json', path / 'run.json')
     experiments = json.loads((root / 'research/experiments.json').read_text())
     experiments['experiments'] = {'runtime-smoke': experiments['experiments']['runtime-smoke']}
     (destination / 'research/experiments.json').write_text(json.dumps(experiments, indent=2) + '\n')
@@ -43,6 +48,12 @@ def export(root, destination, remote, branch='main'):
         'Start with `python work.py start --actor Boss1 --role boss --save YOUR_ARCHIVE --remote ' + remote + '`.\n')
     (destination / 'prompts/README.md').write_text('# Research prompts\n\nRead research-runtime.md and the two solver prompts.\n')
     (destination / 'research/CURATION.md').write_text('# Prepare mathematical assets\n\nRead the new project mathematics. Preserve exact domains, quantifiers, hypotheses and conclusions. Register objects explicitly using IMPLEMENTATION.md. No prior project mathematical assets were copied.\n')
+    for directory in ['prompts', 'research']:
+        for path in (destination / directory).rglob('*.md'):
+            text = path.read_text().replace('https://github.com/SOMEBODYJUN/co-work-anl.git', remote).replace('rebuild/research-v2', branch)
+            if directory == 'research':
+                text = '> Reusable template: historical account checks below belong to the source project. Check this new repository and its resources independently.\n\n' + text
+            path.write_text(text)
     subprocess.run(['git', 'init', '--quiet', '--initial-branch=' + branch], cwd=destination, check=True)
     subprocess.run(['git', 'remote', 'add', 'origin', remote], cwd=destination, check=True)
     with (destination / 'README.md').open('a') as stream:

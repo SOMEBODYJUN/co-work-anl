@@ -43,8 +43,17 @@ class ResearchRuntimeTests(unittest.TestCase):
                      'roles': {'A': 'positivity of a', 'B': 'positivity of b', 'C': 'positivity of the sum'},
                      'evidence': [self.ref(self.body, 'C')], 'reviewed_by': 'Fixture', 'review_note': 'Direct elementary proof, fixture only'}
         self.bind()
+        baseline = {'schema': 1, 'scope': 'repository', 'coverage_note': 'All current mathematical fixture pages', 'materials': [self.ref(self.body)]}
+        self.write_json('research/registration/baseline.json', baseline)
+        self.data['baseline'] = self.ref('research/registration/baseline.json')
+        self.write_json(research.REGISTRY, self.data)
         self.write_json('map/coverage.json', {o['object_id']: {'state': 'linked', 'edge_ids': ['AB-C'],
                         'reason': 'Direct sum argument', 'comparison_scope': 'A B C', 'object_pin': research.pin(o)} for o in self.data['objects']})
+        reviewed = {'comparison_scope': 'All fixture A B C statements', 'outcome': 'The joint sum edge explains the comparison', 'unresolved': []}
+        self.write_json('map/integration.json', {'reviewed_by': 'Fixture', 'review_note': 'Elementary single-family integration',
+                        'registry_pin': research.pin(self.data), 'edge_pins': {'AB-C': research.pin(self.edge)},
+                        'archive_reviews': {scope: reviewed for scope in research.object_scopes({o['object_id']: o for o in objects})},
+                        'cross_archive_review': reviewed})
         self.spec = {'problem_id': 'positive-sum', 'problem': self.ref('research/target.md'),
                      'definitions': [self.ref('research/definitions.md')], 'obstacles': [self.ref('research/obstacles.md')], 'seed_ids': ['C']}
         self.write_json('research/spec.json', self.spec)
@@ -162,6 +171,12 @@ class ResearchRuntimeTests(unittest.TestCase):
         result = research.build(self.root, final=True)
         self.assertEqual(len(result['projections']), 3)
         self.assertTrue((self.root / 'archives/demo/map/graph-v2.json').is_file())
+
+    def test_final_graph_requires_cross_batch_and_cross_archive_review(self):
+        path = self.root / 'map/integration.json'
+        data = json.loads(path.read_text()); data['archive_reviews'] = {}
+        path.write_text(json.dumps(data))
+        with self.assertRaisesRegex(ValueError, 'cross-batch'): research.build(self.root, final=True)
 
     def test_registration_changes_need_new_object_version(self):
         self.data['objects'][0]['statement'] = 'A different statement'
