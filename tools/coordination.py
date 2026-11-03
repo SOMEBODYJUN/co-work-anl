@@ -8,6 +8,15 @@ import board
 def config(root,key):
     return board.git(root,'config','--local','--get',key,check=False).stdout.decode().strip()
 
+def identity_paths(root,who):
+    run=config(root,'wcg.curationRun')
+    if run:
+        if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]{0,100}',run):raise ValueError('Invalid curation run')
+        from curation import _safe_path
+        _safe_path(root,'curation/runs/'+run+'/run.json')
+        return 'curation/runs/'+run+'/people/'+who+'.json','curation/workspaces/'+run+'/'+who
+    return 'cleanup/people/'+who+'.json','cleanup/workspaces/'+who
+
 
 def verify_write(root,branch,tip=None):
     remote=board.git(root,'remote','get-url','origin').stdout.decode().strip()
@@ -26,15 +35,14 @@ def register(root):
     who=config(root,'wcg.actor');instance=config(root,'wcg.instance')
     if not re.fullmatch(r'Boss[1-9][0-9]*',who):raise ValueError('Use the Boss number assigned by the prompt')
     if not re.fullmatch(r'[0-9a-f]{32}',instance):raise ValueError('Missing conversation instance')
-    checked=verify_write(root,config(root,'wcg.branch'));relative='cleanup/people/'+who+'.json'
+    checked=verify_write(root,config(root,'wcg.branch'));relative,workspace=identity_paths(root,who)
     fetched=board.git(root,'show','FETCH_HEAD:'+relative,check=False);old=json.loads(fetched.stdout) if fetched.returncode==0 else {}
     if old and old.get('instance')!=instance:raise ValueError('Boss number already belongs to another conversation')
     aliases=old.get('legacy_actors',[]);legacy=config(root,'wcg.legacyActor')
     if legacy and legacy not in aliases:aliases=aliases+[legacy]
-    workspace='cleanup/workspaces/'+who
     record={'boss':who,'instance':instance,'legacy_actors':aliases,'workspace':workspace,'status':'registered'}
     if old==record:return dict(checked,status='registered',actor=who)
-    path=root/relative;path.parent.mkdir(exist_ok=True);path.write_text(json.dumps(record,ensure_ascii=False,indent=2)+'\n')
+    path=root/relative;path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(record,ensure_ascii=False,indent=2)+'\n')
     result=subprocess.run([sys.executable,str(root/'tools/checkpoint.py'),'--repo',str(root),relative,workspace+'/workspace.json',workspace+'/README.md','-m','绑定明确对话身份 '+who],capture_output=True,text=True)
     if result.returncode:raise board.BoardError('Registration not confirmed; local work retained. '+result.stderr[-900:])
     receipt=json.loads(result.stdout)

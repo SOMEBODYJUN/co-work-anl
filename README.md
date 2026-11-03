@@ -6,7 +6,7 @@
 - [全仓数学关系图](map/README.md)：现有实现是原型；最终结构及研究Agent接口待另行设计。
 - [三阶段清洗入口](cleanup/README.md)与[全量逐文件勾选](cleanup/CHECKLIST.md)。
 - [第二阶段提示词](prompts/02-clean.md)、[第三阶段旧提示词](prompts/03-map.md)（待重设计，暂不启动）。
-- [2.5分步入口](research/CURATION.md)：本轮只设计[第一步材料定性](prompts/02.5-1-inventory.md)和[第二步对象群整理](prompts/02.5-2-distill.md)；[worker提示词](prompts/02.5-worker.md)、[协作设计](research/CURATION_OPERATIONS.md)及[程序待实现规格](research/PHASE25_PROGRAM.md)。第三步与超边设计由用户与另一AI负责。
+- [2.5分步入口](research/CURATION.md)：本轮执行[第一步材料定性](prompts/02.5-1-inventory.md)并准备[第二步对象群整理](prompts/02.5-2-distill.md)；[worker提示词](prompts/02.5-worker.md)、[协作设计](research/CURATION_OPERATIONS.md)及[程序契约](research/PHASE25_PROGRAM.md)。第三步与超边设计由用户与另一AI负责。
 - [程序与协作操作](tools/README.md)、[命名和入库规则](cleanup/OBJECTS.md)。
 - [整理质量审查](cleanup/audits/2026-10-30/质量审查.md)：固定快照的来源—正文抽查，记录覆盖矩模型身份冲突和已入库正文的导航缺口；done不等于语义验收通过。
 

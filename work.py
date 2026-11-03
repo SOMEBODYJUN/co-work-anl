@@ -287,7 +287,11 @@ def workspace_path(repo, save, who):
     if subarchive:
         if not IDENTIFIER.fullmatch(subarchive):raise Stop("子存档绑定不合法。")
         base=base/"subarchives"/subarchive
-    relative = (Path("cleanup/workspaces") / who if save == "repository-cleanup"
+    curation_run=run(repo,'config','--local','--get','wcg.curationRun',check=False).stdout.decode().strip()
+    if curation_run and (not IDENTIFIER.fullmatch(curation_run) or save!='repository-cleanup'):
+        raise Stop('2.5运行绑定不合法。')
+    relative = (Path('curation/workspaces')/curation_run/who if curation_run else
+                Path("cleanup/workspaces") / who if save == "repository-cleanup"
                 else base / "workspaces" / who)
     cursor = repo
     for part in relative.parts:
@@ -437,7 +441,7 @@ def start(args):
             or current_program.read_bytes() != running_source):
         forwarded = ["--repo", str(repo), "start", "--remote", args.remote,
                      "--board-limit", str(board_limit)]
-        for name in ("actor", "role", "token_file", "save", "branch", "board_branch", "subarchive",'auth'):
+        for name in ("actor", "role", "token_file", "save", "branch", "board_branch", "subarchive",'auth','curation_run'):
             supplied = getattr(args, name, None)
             if supplied is not None:
                 forwarded.extend(["--" + name.replace("_", "-"), str(supplied)])
@@ -480,6 +484,16 @@ def start(args):
         raise Stop("请先为明确研究问题建立存档README，再绑定此角色。")
     selected_role = role_id(repo, requested_role, prompts,
                             "cleaner" if save == "repository-cleanup" else "boss") if save in RESEARCH_ENTRIES or valid_archive else None
+    previous_run=run(repo,'config','--local','--get','wcg.curationRun',check=False).stdout.decode().strip()
+    requested_run=getattr(args,'curation_run',None)
+    curation_run=requested_run or previous_run
+    if previous_run and requested_run and previous_run!=requested_run:
+        raise Stop('本clone已绑定另一2.5运行；请用独立clone。')
+    if curation_run:
+        if (not IDENTIFIER.fullmatch(curation_run) or selected_role!='curator' or save!='repository-cleanup'
+                or not (repo/'curation/runs'/curation_run/'run.json').is_file()):
+            raise Stop('2.5运行须已发布，角色curator、存档repository-cleanup。')
+        run(repo,'config','--local','wcg.curationRun',curation_run)
     run(repo, "config", "--local", "wcg.boardBranch", selected_board)
     if legacy:
         # sync has already preserved staged/unstaged/untracked work and stopped
@@ -510,6 +524,7 @@ def start(args):
     result.update(role=selected_role,
                   role_prompt=prompts[selected_role] if selected_role else None,
                   board_branch=selected_board)
+    if curation_run:result['curation_run']=curation_run
     if save == "customer-attraction" and not selected_sub:
         result["context_entry"] = "archives/customer-attraction/README.md"
     elif save == "repository-cleanup":
@@ -563,6 +578,7 @@ def main():
     s.add_argument("--save", default=argparse.SUPPRESS)
     s.add_argument("--resume", action="store_true", help="明确接续已存在的同号工作区")
     s.add_argument("--subarchive", help="父存档下的明确子问题；首次绑定，继续同clone复用")
+    s.add_argument('--curation-run',help='已发布的2.5运行ID；独立工作区/身份/任务，不混入旧来源')
     s.add_argument("--branch", help="文件分支；新clone默认长期共用分支，既有绑定不变")
     s.add_argument("--board-branch", help="公屏分支；新长期分支clone默认新公屏，既有绑定不变")
     s.add_argument("--board-limit", type=int, default=0,
@@ -578,6 +594,10 @@ def main():
     mapping.add_argument("args", nargs=argparse.REMAINDER)
     curate = sub.add_parser("curate", help="2.5固定原文、逐对象处置与数学准入；只操作本地明确文件")
     curate.add_argument("args", nargs=argparse.REMAINDER)
+    triage = sub.add_parser("triage", help="2.5.1材料定性批次、覆盖与目录；不判断数学真值")
+    triage.add_argument("args", nargs=argparse.REMAINDER)
+    tasks = sub.add_parser('curation-task',help='2.5对象群任务认领、提交、完成和交接')
+    tasks.add_argument('args',nargs=argparse.REMAINDER)
     r = sub.add_parser("read", help="读取异步公屏")
     r.add_argument("--json", action="store_true")
     r.add_argument("--thread")
@@ -626,10 +646,12 @@ def main():
     if a.command == "start":
         return start(a)
     repo = checked_repo(a.repo)
-    if a.command in ("curate", "map"):
-        module = "curation.py" if a.command == "curate" else "maps.py"
+    if a.command in ("curate", "map", "triage"):
+        module = {"curate":"curation.py", "map":"maps.py", "triage":"triage.py"}[a.command]
         return subprocess.call([sys.executable, str(repo / TOOLS / module), "--repo", str(repo), *a.args])
     env = auth(repo, a)
+    if a.command=='curation-task':
+        return subprocess.call([sys.executable,str(repo/TOOLS/'curation_tasks.py'),'--repo',str(repo),*a.args],env=env)
     if a.command=='doctor':
         return subprocess.call([sys.executable,str(repo/TOOLS/'coordination.py'),'--repo',str(repo),'doctor'],env=env)
     if a.command=='reset':
