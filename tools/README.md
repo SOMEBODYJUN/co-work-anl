@@ -47,15 +47,13 @@ python3 work.py clean release <本人未完成源ID>
 
 cleanup/CHECKLIST.md及checklists/分册会自动从逐源记录生成勾选。inventory分母固定，后续来源增量另行冻结与登记，不静默重写旧清单。
 
-## 2.5第一步/第二步：设计与部署状态
+## 2.5第一步/第二步：实际工具
 
-新入口见[分步设计](../research/CURATION.md)、[第一步提示词](../prompts/02.5-1-inventory.md)、[第二步Boss](../prompts/02.5-2-distill.md)与[worker](../prompts/02.5-worker.md)。当前交付的是分类、程序和协作规格；新材料批次与对象群认领程序尚未实现，不存在可直接复制的新完整启动命令。
+新入口见[分步协议](../research/CURATION.md)、[第一步提示词](../prompts/02.5-1-inventory.md)、[第二步Boss](../prompts/02.5-2-distill.md)与[worker](../prompts/02.5-worker.md)。`work.py triage`提供固定材料、分批、收回、覆盖和分类目录；`work.py curation-task`提供对象群任务发布、认领、提交、完成与交接。
 
-现有`work.py curate scan`只枚举当前正式候选及SHA，不给材料定性。`clean claim/done/handoff`只管旧冻结来源。`start --board-branch`可选新公屏，但curator的工作区/登记目前仍硬编码cleanup域，新save也不直接支持；部署前不可冒称新2.5已可运行。现有checkpoint、正常同步和公屏消息机制可以复用。
+新curator clone显式`start --curation-run 已发布run`，身份与工作区进入顶层curation运行域；显式`--board-branch wcg/board-curation-25`选择临时公屏，save沿用repository-cleanup兼容程序。第一步是单Boss内部六lane，不需要逐材料远端claim或公屏打卡。第二步多Boss按对象群认领，检查重叠写入、输入和产物SHA，正常push并读回确认。
 
-详见[程序待实现规格](../research/PHASE25_PROGRAM.md)与[工作区、公屏、交接和退役](../research/CURATION_OPERATIONS.md)。第一步单Boss收回六名gpt-6-sol/high内部代理批次，不需要逐材料远端claim；第二步多Boss按对象群使用最小单任务事务。
-
-`tools/curation.py`、`tools/maps.py`及现有schema保留为[上一版原型](../research/CURATION_PROTOTYPE_V1.md)，不是本次1/2步骤验收协议。2.5第三步、第三阶段结构和研究Agent由后续设计负责，不用原型格式倒逼数学拆页。
+详见[程序契约](../research/PHASE25_PROGRAM.md)与[实际命令/工作区/交接](../research/CURATION_OPERATIONS.md)。原`clean`只管冻结来源，`curate`及`maps.py`仍为[上一版准入与图原型](../research/CURATION_PROTOTYPE_V1.md)，不能冒充新材料定性或最终超边设计。第三步、第三阶段与研究Agent继续由后续设计负责。
 
 ## 固定身份、认证与重置
 

@@ -1,6 +1,6 @@
 # 2.5.1/2 程序实现规格
 
-状态：**设计规格，专用程序尚未实现**。以下接口名表示拟实现操作，不是现有CLI。材料清单与编辑任务不等于数学真值登记；本文件不规定2.5.3或超边格式。实现应复用已有安全路径、Git正常推送、凭据与真实读回确认能力，不搭建新数据库或复杂Agent平台。
+状态：**材料批次与对象群任务已实现**：tools/triage.py、tools/curation_tasks.py、work.py triage/curation-task，以及start --curation-run独立运行域。以下为行为契约；实际命令见[操作手册](CURATION_OPERATIONS.md)。清理仍由Boss明确选范围实施并登记动作，没有自动批量unlink命令。材料清单与编辑任务不等于数学真值登记；本文件不规定2.5.3或超边格式。实现应复用已有安全路径、Git正常推送、凭据与真实读回确认能力，不搭建新数据库或复杂Agent平台。
 
 ## 最小数据与目录
 
@@ -9,7 +9,7 @@
 | 路径 | 内容 |
 | --- | --- |
 | `curation/runs/<run>/run.json` | 固定运行ID、结果分支、快照commit、材料范围/排除项、新公屏、当前步骤；run不是Boss或数学对象ID |
-| `.../snapshot.jsonl` | 每材料的本地material_id、path、sha256；ID只用于分批，移动/合并后不当作最终数学身份 |
+| `.../snapshot.json` | 每材料的本地material_id、path、sha256；ID只用于分批，移动/合并后不当作最终数学身份 |
 | `.../batches/<batch>.json` | 第一步互斥材料列表、父Boss、内部处理者、写入的批次记录路径及状态 |
 | `.../records/<material_id>.json` | 六字段定性记录，规范见[classification-record.schema.json](../curation/schemas/classification-record.schema.json) |
 | `.../actions/<material_id>.json` | 分类后实际保留/删除/移附件/提取计划及执行状态、当前去向；分类完成与动作落实分开 |
@@ -22,7 +22,7 @@
 
 ## 第一步操作
 
-| 拟实现操作 | 必须行为 |
+| 操作行为 | 必须行为 |
 | --- | --- |
 | 初始化运行/材料导出 | 绑定稳定Git快照及安全路径；全量生成未定性清单，不自动给类型 |
 | 分批 | 仅分配未收回材料；同一材料不同时给两个内部处理者；支持长文拆阅读段落，最终仍一条记录 |
