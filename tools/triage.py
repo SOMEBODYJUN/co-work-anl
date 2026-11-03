@@ -157,6 +157,23 @@ def export(root,run):
         if p.exists():rows.append(json.loads(p.read_text()))
     write(home/'summary.json',report)
     write(home/'materials.json',rows)
+    locations=[]
+    for row in rows:
+        name=row['path'];current=name
+        action_file=home/'actions'/(hashlib.sha256(name.encode()).hexdigest()[:20]+'.json')
+        action=json.loads(action_file.read_text()) if action_file.exists() else {}
+        if action.get('state')=='applied':current=action.get('target')
+        elif not (root/name).is_file():current=None
+        target=curation._safe_path(root,current) if current else None
+        exists=target is not None and target.is_file()
+        locations.append({'source_path':name,'source_sha256':row['sha256'],
+                          'current_path':current if exists else None,
+                          'current_sha256':curation.digest(target.read_bytes()) if exists else None,
+                          'disposition':action['action'] if action.get('state')=='applied' else 'current-formal'})
+    write(home/'current-locations.json',locations)
+    report['current_formal_materials']=sum(x['disposition']=='current-formal' and x['current_path'] is not None for x in locations)
+    report['applied_retirements']=sum(x['disposition']!='current-formal' for x in locations)
+    write(home/'summary.json',report)
     mathematical=[r for r in rows if r['category'] not in {'evidence-only','non-math'}]
     write(home/'mathematics.json',mathematical)
     write(home/'mathematics-clear.json',[r for r in mathematical if r['category']!='mixed/needs-context'])
@@ -175,11 +192,12 @@ def export(root,run):
                  '| 材料 | 类别 | 路由 | 具体理由 |','| --- | --- | --- | --- |']
         for row in sorted(items,key=lambda r:r['path']):
             title=Path(row['path']).stem.replace('|','\\|')
-            target=root/row['path']
-            if not target.exists():
-                sid=hashlib.sha256(row['path'].encode()).hexdigest()[:20]
-                target=home/'actions'/f'{sid}.json'
-                if not target.exists():target=home/'records'/f'{sid}.json'
+            target=root/row['path'];sid=hashlib.sha256(row['path'].encode()).hexdigest()[:20]
+            action_file=home/'actions'/f'{sid}.json'
+            action=json.loads(action_file.read_text()) if action_file.exists() else {}
+            if action.get('state')=='applied':
+                target=root/action['target'] if action.get('target') else action_file
+            elif not target.exists():target=home/'records'/f'{sid}.json'
             link=os.path.relpath(target,page.parent)
             reason=row['math_subject_or_nonmath_reason'].replace('\n',' ').replace('|','\\|')
             content.append(f'| [{title}](<{link}>) | {row["category"]} | {row["route"]} | {reason} |')
@@ -187,10 +205,12 @@ def export(root,run):
     lines=['# 2.5.1 材料定性目录','',f"固定快照 `{report['snapshot_commit']}`；已定性 {report['classified']}/{report['materials']}。分类不是数学真值审查或超边准入。",'',
            '| 材料类别 | 数量 |','| --- | ---: |']
     lines.extend(f'| {c} | {report["categories"].get(c,0)} |' for c in sorted(CATEGORIES))
+    lines+=['',f"本快照材料中，已落实退出正式层 {report['applied_retirements']} 份，现行保留 {report['current_formal_materials']} 份。"]
     lines+=['','完整六字段清单见 [materials.csv](materials.csv) 和 [materials.json](materials.json)，数学及待抽取素材见 [mathematics.json](mathematics.json)，其中类别已明确的数学见 [mathematics-clear.json](mathematics-clear.json)。mixed/needs-context仍须第二步处理，不能漏掉或当已准入节点。按类别见 catalog/；第二步候选见 [stage2-candidates.json](stage2-candidates.json)。',
             '','分类与清理落实分开；删除和附件去向另见 actions/。本目录是后台材料清单，不是数学正文。']
     lines+=['','## 按研究存档浏览','']
     lines.extend(f'- [{archive}](by-archive/{archive}.md)：{len(items)}份已定性材料。' for archive,items in sorted(archives.items()))
+    lines+=['','清单SHA绑定冻结原材料；现行正文/附件路径与实际字节版本见 [current-locations.json](current-locations.json)，不可把旧输入SHA当作改写后的现行SHA。']
     (home/'INDEX.md').write_text('\n'.join(lines)+'\n')
     return report
 

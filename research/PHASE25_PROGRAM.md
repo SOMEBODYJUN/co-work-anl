@@ -59,6 +59,8 @@
 
 状态为 `available → claimed → submitted → completed`；另有 `blocked/handoff/stale`。`submitted`引用已经pushed的产物及commit/path/SHA，`completed`表示本步的编辑和交付验收完成，不表示新定理成立。仅本地草稿留在工作区和交接记录，不能冒充远端交付。
 
+任务初始只锁独立工作区。先查已有权威正文，再用extend预留实际正式输出路径；extend同样检查其他活跃任务的重叠路径。submit至少含一项现行正式数学资产，单独工作区稿或证据不能提交为数学交付；此检查仍不代替内容验收。
+
 交付允许成熟解释复用、简化见证、一般结果、结构认识、损伤恢复、原见证撤回或具体未解义务。验收看数学正文和材料去向；不得要求accepted边、final manifest或一页一数学ID。
 
 `handoff`释放本人未完任务、保留实际原因/草稿路径/是否共享/具体下一步。无提交的任务不能因超时自动夺走仍在写的成果；明确交接或协调处理。`clean handoff`不释放本run任务，不能混报。

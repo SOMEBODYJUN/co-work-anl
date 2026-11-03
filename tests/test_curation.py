@@ -79,6 +79,7 @@ class CurationTests(unittest.TestCase):
 
     def test_formal_scope_excludes_evidence_and_workspaces(self):
         for name in [
+            "archives/demo/state/引理/.rsync-tmp/copy--引理.md",
             "archives/demo/tools/evidence/comparison/archives/demo/state/定理/copy--定理.md",
             "archives/demo/workspaces/A/state/定理/copy--定理.md",
             "cleanup/workspaces/state/定理/copy--定理.md",

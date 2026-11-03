@@ -47,6 +47,14 @@ class TriageCleanupTests(unittest.TestCase):
         clean.plan(self.root,'run');(self.root/self.d).write_text('New mathematical content')
         with self.assertRaisesRegex(ValueError,'Stale cleanup'):clean.apply(self.root,'run')
         self.assertTrue((self.root/self.c).exists());self.assertTrue((self.root/self.b).exists())
+    def test_catalog_uses_applied_retirement_even_if_stale_local_copy_reappears(self):
+        clean.plan(self.root,'run');clean.apply(self.root,'run')
+        (self.root/self.b).parent.mkdir(parents=True,exist_ok=True)
+        (self.root/self.b).write_text('Stale untracked local copy')
+        triage.export(self.root,'run')
+        row=next(x for x in json.loads((self.home/'current-locations.json').read_text()) if x['source_path']==self.b)
+        self.assertEqual(row['disposition'],'attach-needed-evidence')
+        self.assertTrue(row['current_path'].startswith('tools/evidence/'))
     def test_changed_classification_invalidates_old_cleanup_plan(self):
         clean.plan(self.root,'run')
         row=next(r for r in self.snap['files'] if r['path']==self.c);p=self.home/'records'/f"{row['material_id']}.json"

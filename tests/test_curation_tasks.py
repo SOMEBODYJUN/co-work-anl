@@ -61,6 +61,11 @@ class CurationTaskTests(unittest.TestCase):
         self.assertEqual(submitted['state'],'submitted');self.assertNotIn('truth_status',submitted)
         done=self.transition(submitted,'complete',reason='Exact finite witness retained; uniform bound remains open')
         self.assertEqual(done['state'],'completed')
+    def test_workspace_or_evidence_alone_cannot_complete_mathematical_delivery(self):
+        name='curation/workspaces/run/groups/A/draft.md';p=self.root/name;p.parent.mkdir(parents=True);p.write_text('A local analysis draft')
+        claimed=self.transition(self.claim(),'extend',write_paths=[name])
+        with self.assertRaisesRegex(ValueError,'not a mathematical delivery'):
+            self.transition(claimed,'submit',assets=[{'path':name,'sha256':curation.digest(p.read_bytes())}])
     def test_stale_submission_cannot_complete(self):
         submitted=self.transition(self.claim(),'submit',assets=[self.asset()]);(self.root/self.input).write_text('Changed result')
         with self.assertRaisesRegex(ValueError,'changed'):self.transition(submitted,'complete',reason='Complete')

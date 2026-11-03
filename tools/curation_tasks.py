@@ -108,6 +108,8 @@ def transition(root,run,old,all_tasks,actor,operation,request_id,*,assets=None,r
             if not any(overlaps(name,scope) and (name==scope or PurePosixPath(scope) in PurePosixPath(name).parents) for scope in record['write_paths']):
                 raise ValueError('Output is outside claimed scope')
             if not p.is_file() or curation.digest(p.read_bytes())!=asset['sha256']:raise ValueError('Output not published at expected bytes: '+name)
+        if not any(curation.is_formal_path(asset['path']) for asset in assets):
+            raise ValueError('A workspace draft or evidence alone is not a mathematical delivery; reference current formal mathematics')
         new.update(state='submitted',assets=assets,output_commit=board.git(root,'rev-parse','HEAD').stdout.decode().strip())
     elif operation=='complete':
         if old['state']!='submitted' or actor not in {old.get('owner'),config['actor']}:raise ValueError('Only submitted work can be completed by owner/coordinator')

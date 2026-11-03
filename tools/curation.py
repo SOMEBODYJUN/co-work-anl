@@ -28,7 +28,7 @@ MATH_KINDS = {
     "calculation", "computational-evidence", "bridge",
 }
 _FORMAL = re.compile(r"^archives/[^/]+/(?:subarchives/[^/]+/)*(?:state/.+\.md|问题--问题\.md)$")
-_RESERVED = {"tools", "evidence", "workspaces", "cleanup", "history", ".git",
+_RESERVED = {"tools", "evidence", "workspaces", "cleanup", "history", ".git", ".rsync-tmp",
              "original", "comparison", "comparisons", "formal-comparison"}
 
 
