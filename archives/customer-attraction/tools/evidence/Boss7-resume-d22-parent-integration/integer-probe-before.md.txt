@@ -1,0 +1,44 @@
+---
+id: customer-attraction/pure-full-root-menu-fixed-full-policy-milp-probe
+kind: program
+type_tag: 程序
+title: 纯完整根菜单的固定策略锥整数规划探针
+status: full-source-and-all-30-records-retained; numerical-negative-only
+summary: 保15+15完整数值记录、全部source_weights/bad_queries与固定全历史Γ；推导大M和重数界，数值δ不等于精确证书，未保存负锥动作不能靠seed补造。
+source_refs:
+  - source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/counterexample/pure_menu_cone_probe.py
+  - source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/counterexample/pure_menu_cone_probe.py
+  - source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/counterexample/pure_menu_cones_m3p4.json
+  - source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/counterexample/pure_menu_cones_m3p4.json
+  - source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/counterexample/pure_menu_cones_m4p5.json
+  - source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/counterexample/pure_menu_cones_m4p5.json
+---
+
+# 纯完整根菜单的固定策略锥整数规划探针
+
+6059B程序及7370/10132B两报告全文，两个参数对象、全部30记录每个status/margin/dual_upper_bound/positive_candidate/bad_queries/source_weights均已读；15维和31维重数数组完整保在[记录索引及原件](../../tools/evidence/Boss7-resume-d22-menu/README.md)。本轮没有运行MILP、BI、canonical证书或任何样本重生。
+
+有限不同单位客户、共同有限非空标签目录、m单位玩家全有序历史纯SPE；保重复、空题、零客户及任意离轨平局。源码先按整数客户输入用集合值BI选一份完整有序动作表σ，随后固定该动作表改变全部2^p−1个非空兴趣类型重数x≥0。必要StrategyCone完整检查每个有序决策历史都出现、每动作合法，递归构造每个真实孩子终局，去重非零Fraction收益差Γ。Γx≥0准确保持这同一σ在全部离轨历史的IC，不是只根或计数Markov限制；但固定一个锥不代表全部SPE。
+
+## 目标、二元选择及约束范围
+
+原actual福利系数w，根规定动作的真实收益行r；强制根b后的完整m槽计数q_b固定。额外查询a的类型系数f_ab(B)=1_(a∈B)/(1+Σ_(j∈B)q_bj)。变量x、共同margin δ、p²个二元z_ba满足
+
+$$\Gamma x\ge0,\quad w\cdot x=1,\quad\sum_a z_{ba}=1,$$
+$$\delta\le(f_{ab}-r)\cdot x+M(1-z_{ba}),\quad M=m+1.$$
+
+最大化δ，等价在所选锥内寻找每个根列都能选一个坏query的共同正裕量。δ>0只反纯完整根列cap≤actual根u；不直接反任意混合菜单，也不计算新游戏OPT或half。
+
+源码bounds为0≤x_B≤mp、−1≤δ≤m、z∈{0,1}。在完整Γ、m,p≥1和W=1的真实锥中，根u≤1；根强制任何含类型B的主题，份额至少x_B/m，原IC给x_B≤m，所以mp上界不漏正候选。f_ab·x≥0、u≤1与δ≤m又使未选择z0的右边至少M−1=m，故M=m+1足以关闭其限制。此解析合同依赖完整根IC/非负性，不能拿任意矩阵或未正规输入套大M。
+
+SciPy.milp使用float、mip_rel_gap1e−9、每锥时间限制；result.x不存在只返status/positive=false；有解时margin为δ、dual_upper_bound取负mip_dual_bound，bad_queries是每行二元块argmax。只有δ>1e−7时输出浮点重数、完整actions及root_counts；代码本身**没有有理恢复、精确Γ检查或整数客户完整证书验收**。positive_candidate只是提案。负报告的bad_queries也只是求解器所选标签，不表示已有严格坏query。
+
+## 真实随机/策略域和文件合同
+
+默认topics4、players4、cones20、seconds_per_cone5、seed2210227，output可省。最多5×cones个提案：每类型以0.32概率赋1..8，否则0，全零跳过；rng选根可实现终局，完整certificate在动作及最小可信偏离续局的并列候选中随机选。它不采全部可信菜单，也不穷尽策略。按整个有序动作表去重，最多cones条或遇正提案即停；负记录不保存动作表、目标根或完整G，因此source_weights与seed不足以直接读出每个原锥，更不能补造原运行环境/随机迭代顺序。outcomes先转tuple，其顺序还依当时对象实现。
+
+原reports根恰scope、universal_claim_proved=false、parameters、records；parameters为topics/players/cones/seconds_per_cone/seed/output六字段。实际两份分别(m,p)=(3,4)/(4,5)、cones15、seconds2、seed3231022/4231022；各15不同source_weights记录，每条六字段。m3 index0 margin5.551115123125783e−18、index1 −2.8411793761773305e−16、index10 5.2666204730656715e−15，其余±0；m4 index2 1.5466367019911879e−15、index8 6.470255757564061e−16，其余±0。dual_upper_bound与这些非零数相同，signed零原样保留。全部status为HiGHS Optimal、positive_candidate=false，没有正分支输出重数/actions/root_counts。
+
+这30条只是原浮点未越阈值记录，不是30份有理锥最优证明，不认证δ精确0、所有同参数实例无反例或纯列普遍成立。八人双块已有[完整纯列反例](../计算/双块纯根菜单障碍的完整策略DAG与混合证书--计算.md)，不与有限m3/m4未发现冲突。
+
+main在stdout逐锥打印去掉大数组的摘要；若--output给定，最终x模式写JSON，不建父目录；无output只打印且parameters.output为字符串None。导入依赖NumPy/SciPy、规范包和tests/audits/customer_attraction_strategy_lp.py；旧目录根须恢复，冻结原件并非直接可在任意新路径运行。依赖原件指纹及完整实读范围随证据复用，不额外done。新程序/随机提案/原成功重放均0；用途是可接续的有限纯菜单发现合同，不提供六人half结论。
