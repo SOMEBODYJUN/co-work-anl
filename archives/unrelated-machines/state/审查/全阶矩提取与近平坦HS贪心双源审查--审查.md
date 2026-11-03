@@ -86,12 +86,12 @@ X_e^*X_e=A_e,\quad D_e=A_e-A_e^2=B_e^*B_e,
 \]
 以及
 \[
-\|D_e\|\le\delta_e,qquad
+\|D_e\|\le\delta_e,\qquad
 \|[A_e,A_f]\|\le2\sqrt{\delta_e\delta_f}.
 \]
 任务守恒和机器局部化器分别成为
 \[
-\sum_{e\in E_j}A_e=I,qquad
+\sum_{e\in E_j}A_e=I,\qquad
 \sum_{e\text{ at }i}p_eA_e\preceq TI.
 \]
 不能只用常数向量上的缺陷：所有合法四阶矩都可能在该向量上缺陷为零，真正需要的是整个 V1 上的迹缺陷。
@@ -102,7 +102,7 @@ X_e^*X_e=A_e,\quad D_e=A_e-A_e^2=B_e^*B_e,
 \]
 选中端后左乘更新 (K\leftarrow A_eK)。通过至多一次交换每对因子和 (A_e^2-A_e=-D_e)，任意前缀满足
 \[
-\|K_t^2-K_t\|\\le\left(\sum_{s\le t}\sqrt{\delta_{e_s}}\right)^2\le n\sum_{s\le t}\delta_{e_s}\le n\delta.
+\|K_t^2-K_t\|\le\left(\sum_{s\le t}\sqrt{\delta_{e_s}}\right)^2\le n\sum_{s\le t}\delta_{e_s}\le n\delta.
 \]
 近平坦阈值使前缀范数不会塌缩，最大 HS 分支保持 (|K_t|\ge1-2n\delta)，最终 (|K|_{HS}^2\ge(31/32)^2)。这一步依赖整体乘积近幂等，不能把每步正分支的质量简单相乘。
 
@@ -110,13 +110,14 @@ X_e^*X_e=A_e,\quad D_e=A_e-A_e^2=B_e^*B_e,
 
 令 (h=\|K\|_{HS}^2)，(\rho=KK^*/h) 为迹一的有理密度。对选中端 (e)，正文以晚因子交换和缺陷估计
 \[
-\gamma_e=\|(I-A_e)K\|,qquad
+\gamma_e=\|(I-A_e)K\|,\qquad
 \gamma_e^2\le(8n+2)\delta\delta_e,
 \]
 进而得到选择损失
 \[
-\ell_e=1-\operatorname{tr}(\rho A_e)<3\delta_e.
+\ell_e=1-\operatorname{tr}(\rho A_e)\le3\delta_e.
 \]
+零缺陷端须保留等号：当 \(\delta_e=0\) 时，前式给 \((I-A_e)K=0\)，故 \(\ell_e=0\)。
 同一 (\rho) 同时作用于所有机器；由 (\sum_ep_eA_e\preceq TI)，最终真实调度 (sigma) 满足
 \[
 L_i(\sigma)\le T+3\sum_{e\text{ selected at }i}p_e\delta_e\le(1+3\delta)T\le(1+\eta)T.
@@ -135,7 +136,7 @@ L_i(\sigma)\le T+3\sum_{e\text{ selected at }i}p_e\delta_e\le(1+3\delta)T\le(1+\
 
 ## 8. 反例对象和精确输出
 
-第三身份 `UM-GLOBAL-MOMENT-HS-GREEDY-GAP-v1` 固定三台相同机器、一个长度 1 的大任务和八个长度 (1/4) 的小任务，(T=OPT=1)。210 个真实最优调度的均匀分布产生共同四阶矩，(\operatorname{rankM_1=17)。逐任务按固定 big-first 顺序，用全空间 HS 分数选择最大 (\|A_eK\|_{HS}^2)，精确平局取最小机器编号。
+第三身份 `UM-GLOBAL-MOMENT-HS-GREEDY-GAP-v1` 固定三台相同机器、一个长度 1 的大任务和八个长度 (1/4) 的小任务，(T=OPT=1)。210 个真实最优调度的均匀分布产生共同四阶矩，\(\operatorname{rank}M_1=17\)。逐任务按固定 big-first 顺序，用全空间 HS 分数选择最大 (\|A_eK\|_{HS}^2)，精确平局取最小机器编号。
 
 首个大任务选择任意机器；第二步在剩余两机间平局；之后差值均严格正，算法输出形状为一个机器负载 1、另一台负载 2、第三台负载 0，真实比率恰为 2。该输出不在 210 个最优分量支持中，说明正压缩算子连乘不等于被选任务事件有共同真实交集。
 

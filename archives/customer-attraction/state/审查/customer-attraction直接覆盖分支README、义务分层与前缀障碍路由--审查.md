@@ -13,7 +13,8 @@ source_refs:
   - "local:archives/customer-attraction/tools/evidence/customer-attraction-direct-cover-readme-20261031/comparisons/comparison-notes.md"
 related_objects:
   - "local:archives/customer-attraction/tools/evidence/customer-attraction-lipschitz-failure-20261031/original/incumbent_actual_lipschitz_failure.json"
-  - "local:archives/unrelated-machines/state/反例/customer-attraction实际前缀Lipschitz失败证书--反例.md"
+  - "local:archives/customer-attraction/state/反例/实际前缀单主题比例中继的四人反例--反例.md"
+  - "local:archives/unrelated-machines/tools/evidence/customer-attraction-lipschitz-failure-20261031/curation-source-summary.md"
 ---
 
 # customer-attraction 直接覆盖分支 README、义务分层与前缀障碍路由
@@ -45,6 +46,14 @@ README 同时提醒：已有 portfolio matching 反例只否定支付 `|O\C|`，
 较早尝试的桥为 `f_r(b,T) ≥ ((r−1)/r) f_{r−1}(b+A,T)`。README 记录该桥在五客户、三主题、任意正背景重数的统一族中失败，且额外固定动作未必是实际行动；随后又用实际限定的 61 客户输入把失败压缩到实际路径 `(B,A,A,F)`。其中真实偏离满足 `V_{1,A}=9 < (3/4)V_{2,A}=39/4`。因此限制额外行动为实际当前行动也不能修补单主题比例递推。
 
 README 给出的机制解释是：后续跟随者收益从 P 转移到 B，说明只保留某个入场主题标量值、再按人数比例结算固定未来行动的影响是不够的。后续机制需要保留至少 B 的替代信用，或使用真实跨分支中继；继续调单个入场者比例没有证据基础。
+
+## 已有完整数学与原证据的对应
+
+[实际前缀单主题比例中继的四人反例](../反例/实际前缀单主题比例中继的四人反例--反例.md)给出了上述 61 客户输入的完整历史纯 SPE，以及对全部合法完整续局取极小的证明。两种对象须分开：指定同一策略的实际偏离值为 `V₁(A)=9`、`V₂(A)=13`；独立对所有续局求极小仍有 `f₄(空,A)=9`、`f₃(B,A)=13`。前者依赖原完整策略的离轨平局选择，后者的下界不把该策略当成全部 SPE：背景 BA 后第三位选 A 在任意末位平局下至少得 13，其他行动至多 11，故所有 SPE 都须选 A，末位 E 或 F 达到 13。空前缀强制 A 的下界与达到 9 的续局另见该正文。因此实际根动作 B 已满足被检验桥的“真实当前行动”条件，仍有 `9 < 39/4`。
+
+原 JSON 的 `T=0` 指字母主题 A，字段 `A=1` 指字母主题 B；不能把字段名 A 当作同名字母主题。[原有限证据说明](../../../unrelated-machines/tools/evidence/customer-attraction-lipschitz-failure-20261031/curation-source-summary.md)按原字节保留，原 JSON、比较记录与完整策略表也保留。说明附件是原页快照，其相对链接以原位置 `archives/unrelated-machines/state/反例/` 为基址；读取数学时使用上面的现行正式正文。
+
+[五客户固定背景解析族](../障碍/R12bf实际前缀比例嵌入统一族与61客户有理复核--障碍.md)另保 `A={a,c}`、`B={b,c}`、`P={p,q}` 以及任意固定 `A^k (k≥1)` 下 `f₃(A^k,P)=1 < (2/3)f₂(A^(k+1),P)=4/3` 的更小见证。该族不声称固定背景从空历史的 SPE 可达，不能替换上面 61 客户反例的实际前缀量词；其构造技巧仍在原页。两者都只否定指定的单主题比例桥，不否定跨主题匹配、平均或一般半覆盖目标。
 
 ## 诊断代码和边界
 

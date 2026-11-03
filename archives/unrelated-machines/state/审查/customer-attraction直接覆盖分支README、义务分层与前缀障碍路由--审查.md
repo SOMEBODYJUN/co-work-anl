@@ -13,7 +13,8 @@ source_refs:
   - "local:archives/unrelated-machines/tools/evidence/customer-attraction-direct-cover-readme-20261031/comparisons/comparison-notes.md"
 related_objects:
   - "local:archives/unrelated-machines/tools/evidence/customer-attraction-lipschitz-failure-20261031/original/incumbent_actual_lipschitz_failure.json"
-  - "local:archives/unrelated-machines/state/反例/customer-attraction实际前缀Lipschitz失败证书--反例.md"
+  - "local:archives/customer-attraction/state/反例/实际前缀单主题比例中继的四人反例--反例.md"
+  - "local:archives/unrelated-machines/tools/evidence/customer-attraction-lipschitz-failure-20261031/curation-source-summary.md"
 ---
 
 # customer-attraction 直接覆盖分支 README、义务分层与前缀障碍路由
@@ -46,12 +47,20 @@ README 同时提醒：已有 portfolio matching 反例只否定支付 `|O\C|`，
 
 README 给出的机制解释是：后续跟随者收益从 P 转移到 B，说明只保留某个入场主题标量值、再按人数比例结算固定未来行动的影响是不够的。后续机制需要保留至少 B 的替代信用，或使用真实跨分支中继；继续调单个入场者比例没有证据基础。
 
+## 已有完整数学与原证据的对应
+
+[实际前缀单主题比例中继的四人反例](../../../customer-attraction/state/反例/实际前缀单主题比例中继的四人反例--反例.md)给出了上述 61 客户输入的完整历史纯 SPE，以及对全部合法完整续局取极小的证明。两种对象须分开：指定同一策略的实际偏离值为 `V₁(A)=9`、`V₂(A)=13`；独立对所有续局求极小仍有 `f₄(空,A)=9`、`f₃(B,A)=13`。前者依赖原完整策略的离轨平局选择，后者的下界不把该策略当成全部 SPE：背景 BA 后第三位选 A 在任意末位平局下至少得 13，其他行动至多 11，故所有 SPE 都须选 A，末位 E 或 F 达到 13。空前缀强制 A 的下界与达到 9 的续局另见该正文。因此实际根动作 B 已满足被检验桥的“真实当前行动”条件，仍有 `9 < 39/4`。
+
+原 JSON 的 `T=0` 指字母主题 A，字段 `A=1` 指字母主题 B；不能把字段名 A 当作同名字母主题。[原有限证据说明](../../tools/evidence/customer-attraction-lipschitz-failure-20261031/curation-source-summary.md)按原字节保留，原 JSON、比较记录与完整策略表也保留。说明附件是原页快照，其相对链接以原位置 `archives/unrelated-machines/state/反例/` 为基址；读取数学时使用上面的现行正式正文。
+
+[五客户固定背景解析族](../../../customer-attraction/state/障碍/R12bf实际前缀比例嵌入统一族与61客户有理复核--障碍.md)另保 `A={a,c}`、`B={b,c}`、`P={p,q}` 以及任意固定 `A^k (k≥1)` 下 `f₃(A^k,P)=1 < (2/3)f₂(A^(k+1),P)=4/3` 的更小见证。该族不声称固定背景从空历史的 SPE 可达，不能替换上面 61 客户反例的实际前缀量词；其构造技巧仍在原页。两者都只否定指定的单主题比例桥，不否定跨主题匹配、平均或一般半覆盖目标。
+
 ## 诊断代码和边界
 
 README 路由三个独立诊断：`check_weak_matching.py` 对既有规范证书做精确匹配检查但忽略若干嵌套 schema；`lp_weak_matching.py` 对固定完整策略锥做有限 LP 诊断，少量 `m=4,k=6` 与 `m=5,k=7` 未分离强平均，已停止同类随机扫描；`check_incumbent_lipschitz.py` 从 `dynamic_iid_local.json` 找到失败，再压缩成五客户族。它要求 root 后续分别读取这些文件，不能把 README 的指针当成已执行证据。
 
 ## 与当前任务和后续接续的关系
 
-这是 customer-attraction 路线，不能迁移到 unrelated-machines 调度或六提供者有限单位客户 SPE。它可作为第三阶段关系证据：弱匹配、弱平均、旧强平均和实际偏离桥应有不同稳定 ID、不同证据类型和不同失败边界。后续读取 `actual_prefix_relay_obstruction.md`、`incumbent_lipschitz_obstruction.md`、三个脚本和 JSON 时，必须保留 `OPEN` 状态，区分候选、完整证明、有限实验和障碍。
+本页属于 customer-attraction 的单位客户共同目录完整历史纯 SPE 模型；任意人数的已证陈述适用于六提供者特例，但本页所列支付候选尚未闭合，不能据此推出六人半覆盖。它不迁移到 unrelated-machines 调度模型。它可作为第三阶段关系证据：弱匹配、弱平均、旧强平均和实际偏离桥应有不同稳定 ID、不同证据类型和不同失败边界。后续读取 `actual_prefix_relay_obstruction.md`、`incumbent_lipschitz_obstruction.md`、三个脚本和 JSON 时，必须保留 `OPEN` 状态，区分候选、完整证明、有限实验和障碍。
 
 本来源未执行任何代码、未核验兄弟文件、未发起新文献搜索。它不证明 Q-CAG-HALF，不否定真正聚合安全值，也不否定弱匹配/弱平均/旧强平均本身。
