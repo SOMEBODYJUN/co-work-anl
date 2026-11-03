@@ -47,26 +47,15 @@ python3 work.py clean release <本人未完成源ID>
 
 cleanup/CHECKLIST.md及checklists/分册会自动从逐源记录生成勾选。inventory分母固定，后续来源增量另行冻结与登记，不静默重写旧清单。
 
-## 第二阶段半：保护原知识与数学准入
+## 2.5第一步/第二步：设计与部署状态
 
-用最新结果分支的根work.py执行`start --role curator`，使用`prompts/02.5-research.md`；旧启动附件不认识curator时先更新程序。对象群处理者使用`prompts/02.5-worker.md`。此阶段先判断好文保留、去噪、局部修复或承重重构，再做实际处置，不能把全部数学重新证明一遍。协议见[CURATION](../research/CURATION.md)。
+新入口见[分步设计](../research/CURATION.md)、[第一步提示词](../prompts/02.5-1-inventory.md)、[第二步Boss](../prompts/02.5-2-distill.md)与[worker](../prompts/02.5-worker.md)。当前交付的是分类、程序和协作规格；新材料批次与对象群认领程序尚未实现，不存在可直接复制的新完整启动命令。
 
-```sh
-python3 work.py curate scan
-python3 work.py curate freeze --manifest-out research/curation/manifest.json
-python3 work.py curate plan
-python3 work.py curate check
-python3 work.py curate check --final
-```
+现有`work.py curate scan`只枚举当前正式候选及SHA，不给材料定性。`clean claim/done/handoff`只管旧冻结来源。`start --board-branch`可选新公屏，但curator的工作区/登记目前仍硬编码cleanup域，新save也不直接支持；部署前不可冒称新2.5已可运行。现有checkpoint、正常同步和公屏消息机制可以复用。
 
-以上命令只读本地或写明确的本地计划/基线，不发布、不领取来源、不批量删除。freeze生成全pending骨架，不能自动放行数学；Agent按对象群写正文、删除无用页并更新处置，再校验字节与引用闭包。旧完成回执通过已检查的当前去向解析；只对基线前真实完成事件生效，不能供新done引用已删除页冒充交付。
+详见[程序待实现规格](../research/PHASE25_PROGRAM.md)与[工作区、公屏、交接和退役](../research/CURATION_OPERATIONS.md)。第一步单Boss收回六名gpt-6-sol/high内部代理批次，不需要逐材料远端claim；第二步多Boss按对象群使用最小单任务事务。
 
-## 准入后的图
-
-`work.py map check --structural`只诊断正式候选字段；默认`map check`只读明确准入对象。`map build --draft`生成准入区域草图；正式`map build`同时要求第二阶段来源完成、2.5最终通过和关系版本检查。证据、端点、关系内容变更会使旧关系审读过期；`map impact ID`只列待复核范围，不推断全部后继为假。正文及每边数学解释仍由清洗者判断，程序通过不证明数学正确。
-
-运行需要Python3.10+、Git、POSIX（Linux/macOS/WSL），不需要数学Agent CLI、数据库或Lean。上游格式代码及许可证见vendor/UPSTREAM.md。共享协议程序来自既有工具并调整路径；公屏旧存储路径为兼容协议保留在独立公屏分支，本结果文件树不保留旧研究目录。
-
+`tools/curation.py`、`tools/maps.py`及现有schema保留为[上一版原型](../research/CURATION_PROTOTYPE_V1.md)，不是本次1/2步骤验收协议。2.5第三步、第三阶段结构和研究Agent由后续设计负责，不用原型格式倒逼数学拆页。
 
 ## 固定身份、认证与重置
 

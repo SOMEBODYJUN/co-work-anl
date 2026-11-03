@@ -1,21 +1,11 @@
-# 数学内容准入与研究读取层
+# 数学整理与后续研究设计入口
 
-数学正文放在 `archives/**/state/`。第二阶段的来源处置不等于当前对象可用；[2.5](../prompts/02.5-research.md) 对正式正文作保留、去噪、局部修复或承重重构，生成第三阶段明确读取的数学对象名单。程序与记录契约见 [CURATION.md](CURATION.md)，对象群处理者使用 [worker 提示词](../prompts/02.5-worker.md)。
+当前执行设计见 [CURATION.md](CURATION.md)：2.5.1材料定性、2.5.2对象群数学整理；[第一步提示词](../prompts/02.5-1-inventory.md)、[第二步Boss](../prompts/02.5-2-distill.md)及[worker](../prompts/02.5-worker.md)已分开。材料分类不是数学真值审查或最终节点准入，原本好内容直接沿用。
 
-2.5 可以删除纯身份和执行履历页、把必要程序/证书降为附件、合并重复数学和修正失真；原本好的数学不为统一格式强迫重写或重证。未理解内容留明确疑问，不因旧、未证明或暂无引用而丢弃。来源记录、当前数学对象与运行附件分别表达，不把每个源文件包装成一个研究节点。
+[分类判据](PHASE25_TRIAGE.md)、[对象群任务与出口](PHASE25_DISTILL.md)、[新协作域](CURATION_OPERATIONS.md)和[程序规格](PHASE25_PROGRAM.md)供前两步使用。专用程序尚须实现与试运行；本轮没有全仓分类、删除、生产run或新公屏。
 
-`tools/curation.py` 固定 baseline、检查处置绑定并导出准入名单；它不判断数学、不自动批准、不批量删除。阶段二仍在写正式正文时，本轮设计只运行扫描和测试，不提前冻结共享全量准入；实际2.5在交接且快照稳定后开始。最终准入拒绝未评估内容和待拆多命题容器；局部导出的 `unresolved-bundle` 只供阅读。第三阶段默认只读明确准入的数学对象及必要证据，草图也需要 manifest；`map check --structural` 只诊断候选文件。附件、工作区与历史副本不自动入图。结构通过不能替代数学判断，局部通过不能称全仓完成。
+2.5.3重新登记、第三阶段超边格式与数学研究Agent由用户与另一AI另定。前两步保留路径、字节版本、可理解正文、原材料去向和具体缺口即可，不强制按未来节点拆页或造ID。
 
-## 后续研究读取
+`tools/curation.py`、`tools/maps.py`、本目录现有准入/packet/result schema、templates与 [research-runtime.md](../prompts/research-runtime.md)均为可参考原型，不表示研究运行框架已定。上一版完整协议见 [CURATION_PROTOTYPE_V1.md](CURATION_PROTOTYPE_V1.md)。不以当前实现限制倒逼前两步数学组织，也不以结构测试通过宣称数学正确。
 
-`schemas/` 与 `templates/` 保留 Research Packet、结果和运行契约。packet 从明确准入的正文取得精确陈述、条件、状态、证据和具体缺口；一个 packet 可以引用多个对象，但不能从摘要、目录或旧图猜出结论。
-
-默认读取窗口为当前对象与问题定义、直接相关对象及证据、再展开一层的条件/反例/障碍。两跳是起点，遇到明确承重边界继续展开；不用把整图和执行履历塞给每个 Agent。
-
-后续研究运行见 [research-runtime.md](../prompts/research-runtime.md)。未证命题可作为明确假设或研究目标，不能作为已知事实；数学推导仍写在独立 Markdown，JSON 只负责路由、登记与状态。
-
-accepted 关系绑定当前端点、证据与关系内容；内容变化须重审，机械刷新 hash 不能继承数学批准。逻辑边有未证或已否前提时显式记条件关系，不因此改变目标的独立证明状态。影响查询只给复核范围，不能将所有后继判假；freshness 只查派生图与当前输入是否一致。具体字段和命令见 [CURATION.md](CURATION.md)。
-
-## 参考边界
-
-当前准入要求对照 Danus、MATEK 与 Noemesis 的原始规范，具体出处和适配见 [CURATION.md](CURATION.md)。原有 Math Research Agent、OpenTorus、OpenProof 等参考继续作为运行层设计线索，不表示本仓库已经部署其 CLI、模型后端或形式化环境。
+上游研究对照见[原始规范及代码对照](../cleanup/audits/phase25-design/upstream_requirements.md)。引用不自动构成依赖、未证不能作真前提等数学要求仍有价值；具体schema、读取窗口和运行策略等待后续负责人定案。
