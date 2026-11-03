@@ -17,7 +17,7 @@ source_refs:
 
 原review记2026-10-24/Boss3/e086…clone快照、先读相关数学后的内部核验。主稿列四数学快照SHA（prefix2a30c2…、shared a40093…、threshold27eb0f…、Beta债2f3f7b…）是其历史版本边界；本次full shared及两库正常字节精确绑定，不把它们冒原作者当时未见其它证明的盲先验。本批0脚本main、import/runpy、任audit/case、BI/LP或新数学checker；旧回执“passed”不是当前exit。
 
-模型有限不同单位客户/非空有限共同集合目录/单位提供者/全部有序历史纯SPE，保empty/repeats/zero/ties。旧路径可信尾、原完整SPE、合法任意叶、静态克隆同叶是不同域。[共享租金全构造和prefix同合同支配](../构造/共同终局租金的完整修复与前缀成本支配--构造.md)已在本批自足展开，不只引用审查概括；prefix本身已有完整正式证明，不重授。
+模型有限不同单位客户/非空有限共同标签目录（允许同覆盖异标签）/单位提供者/全部有序历史纯SPE，保empty/repeats/zero/ties。旧路径可信尾、原完整SPE、合法任意叶、静态克隆同叶是不同域。[共享租金全构造和prefix同合同支配](../构造/共同终局租金的完整修复与前缀成本支配--构造.md)已在本批自足展开，不只引用审查概括；prefix本身已有完整正式证明，不重授。
 
 # 8010加载与写出合同
 
@@ -106,3 +106,8 @@ D(\lambda)=\max\{0,\max_{i\le j}\sum_t\lambda_td_i^t\},
 原长稿建议保留真实编译器、停止把共同池常数当新支付，转向gap与可信菜单/exact-M/弱背景实现的具体关系。这是数学建议，原§6讨论点未实际发送，本批也不工具外发；不是研究白名单或先五人许可。原“当前五人未过二”按现独立五人定理校正，不能否开放一般候选，亦不将新构造或多次内部确认当外审/新颖性。
 
 [证据与完整源闭包](../../tools/evidence/compiler-relations-review-and-audit-three-primary/README.md)保三主源、三必要related原件/normal、两数学正文/逐源收据/读序和静态检查。19XN实际claim pushed/synced05a331e2e536aec72f2c75095d00992d1c26ac11，按该原回执不套旧needs-attention；Root串行Git/checkpoint/done，旧源done/冻件不改。本批0共享R写或数学执行。
+
+
+## 2026-11-02 来源与现态校准
+
+本次完整实读R-d1相关原稿及后续完整反族后，校准一般人数与固定六人、标签与覆盖的边界。已证局部公式、历史原件及原执行记录保留；逐条修改理由和修改前完整字节见[本次父方更正记录](../../tools/evidence/d1-stable-reset-and-shared-rent-primary/parent-current-statement-corrections.json)。
