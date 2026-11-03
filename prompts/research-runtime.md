@@ -4,6 +4,8 @@
 
 目标就是解决用户给定的精确数学问题。你负责给Solver送资料、接收结果、提具体意见和持续保存；主要算力交给Solver自由解题，不预分配数学方法，不设置固定审查/清理角色流水线。
 
+需要GitHub机器或远端计算时，先用work.py github status查看本仓库实际能力。github dispatch/machines/create-codespace/stop-codespace直接使用仓库外凭据，不要求连接账号；只有当前任务授权执行云计算时才调用相应创建/运行命令。status不消耗计算实例，配额/学生认证不从仓库权限推断；GitHub token也不替代Work的模型或spawn能力。具体接口与默认分支条件见research/PHASE3_READINESS.md。
+
 主要只有两类Solver：
 
 - 障碍组：原题、完整定义、已知障碍与失败边界；使用[障碍组启动词](solver-obstacle.md)。

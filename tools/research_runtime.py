@@ -274,8 +274,11 @@ def check(root, registry=REGISTRY, final=False):
     if final and (missing or pending):
         raise ValueError('Final coverage incomplete: %d unregistered, %d needs-decision' % (len(missing), len(pending)))
     if final:
+        from registration import check as registration_check
+        registration_check(root, registry, final=True)
         coverage = json.loads(_safe_path(root, 'map/coverage.json').read_text())
         validate_coverage(coverage, objects, relations)
+        integration_check(root, data, objects, relations)
     return {'status': 'structure-valid-not-a-mathematical-verdict', 'objects': len(objects), 'edges': len(relations),
             'unregistered_materials': len(missing), 'pending_materials': len(pending), 'final_coverage': not missing and not pending}
 
@@ -297,6 +300,30 @@ def validate_coverage(coverage, objects, relations):
                     raise ValueError('Linked coverage must name a real accepted incident edge')
 
 
+def object_scopes(objects):
+    scopes = set()
+    for obj in objects.values():
+        name = obj['body']['path']
+        if name.startswith('archives/'):
+            deepest = re.match(r'archives/[^/]+(?:/subarchives/[^/]+)*', name)[0]
+            parts = deepest.split('/')
+            scopes.update('/'.join(parts[:i]) for i in range(2, len(parts) + 1, 2))
+    return scopes
+
+
+def integration_check(root, data, objects, relations):
+    review = json.loads(_safe_path(root, 'map/integration.json').read_text())
+    nonempty(review, ['reviewed_by', 'review_note'])
+    if review.get('registry_pin') != pin(data): raise ValueError('Stale integration registry review')
+    expected = {eid: pin(e) for eid, e in relations.items() if e['status'] == 'accepted'}
+    if review.get('edge_pins') != expected: raise ValueError('Stale integration edge reviews')
+    if set(review.get('archive_reviews', {})) != object_scopes(objects):
+        raise ValueError('Every archive/subarchive requires a cross-batch integration review')
+    for row in [*review['archive_reviews'].values(), review.get('cross_archive_review', {})]:
+        nonempty(row, ['comparison_scope', 'outcome'])
+        if row.get('unresolved') != []: raise ValueError('Integration still has unresolved relationship decisions')
+
+
 def build(root, registry=REGISTRY, final=False):
     report = check(root, registry, final)
     data, objects = load(root, registry)
@@ -306,14 +333,7 @@ def build(root, registry=REGISTRY, final=False):
              'registry': registry, 'registry_pin': pin(data), 'nodes': objects,
              'edges': {i: e for i, e in relations.items() if e['status'] == 'accepted'}}
     outputs = ['map/graph-v2.json']
-    scopes = set()
-    for obj in objects.values():
-        name = obj['body']['path']
-        if name.startswith('archives/'):
-            deepest = re.match(r'archives/[^/]+(?:/subarchives/[^/]+)*', name)[0]
-            parts = deepest.split('/')
-            scopes.update('/'.join(parts[:i]) for i in range(2, len(parts) + 1, 2))
-    for scope in sorted(scopes):
+    for scope in sorted(object_scopes(objects)):
         outputs.append(scope + '/map/graph-v2.json')
     for output in outputs:
         scope = output.rsplit('/map/', 1)[0] if '/map/' in output else ''
@@ -456,6 +476,10 @@ def main(argv=None):
     p.add_argument('--registry', default=REGISTRY)
     sub = p.add_subparsers(dest='command', required=True)
     sub.add_parser('inventory')
+    q = sub.add_parser('freeze'); q.add_argument('--inputs-file', required=True); q.add_argument('--out', default='research/registration/baseline.json')
+    q = sub.add_parser('compose'); q.add_argument('--manifest', required=True); q.add_argument('--out', default='research/registration/proposed.json')
+    q = sub.add_parser('registration-check'); q.add_argument('--final', action='store_true')
+    q = sub.add_parser('new-id'); q.add_argument('--count', type=int, default=1)
     q = sub.add_parser('register'); q.add_argument('--record-file', required=True)
     for command in ('check', 'build'):
         q = sub.add_parser(command); q.add_argument('--final', action='store_true')
@@ -472,6 +496,12 @@ def main(argv=None):
     q.add_argument('--feedback'); q.add_argument('--agent-id')
     a = p.parse_args(argv); root = a.repo.resolve()
     if a.command == 'inventory': result = inventory(root, a.registry)
+    elif a.command in {'freeze', 'compose', 'registration-check', 'new-id'}:
+        import registration
+        if a.command == 'freeze': result = registration.freeze(root, a.inputs_file, a.out)
+        elif a.command == 'compose': result = registration.compose(root, a.manifest, a.out)
+        elif a.command == 'registration-check': result = registration.check(root, a.registry, a.final)
+        else: result = registration.new_ids(a.count)
     elif a.command == 'register': result = register(root, a.record_file, a.registry)
     elif a.command in {'check', 'build'}: result = globals()[a.command](root, a.registry, a.final)
     elif a.command == 'search':

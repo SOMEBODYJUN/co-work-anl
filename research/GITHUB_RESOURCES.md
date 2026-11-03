@@ -1,6 +1,8 @@
 # GitHub资源与实际部署边界
 
-核对日期：2026-11-03。以下是公开官方权益，不代表本账号已认证、领取或启用；当前附件的Git写端点认证失败，未读取账号账单。
+核对日期：2026-11-03。以下是公开官方权益，不代表本账号已认证、领取或启用；学生身份与账号余额未核验。
+
+本轮更新：新上传凭据已经通过实际Git写端点并成功推送初版`71f86b4f`。直接PAT接口`work.py github`已实现status、machines、dispatch、create-codespace、stop-codespace；status实际读取成功，未创建/停止实例或dispatch任务。下文“认证失败”是上一轮历史，不再是当前阻塞；学生状态与余额仍未读取或推断。
 
 | 功能 | 用途 | 本次配置 |
 |---|---|---|
@@ -34,7 +36,9 @@ python tools/compute.py positive-kernels-rank --out validation/positive-kernels-
 
 配置成功推送后，Code→Codespaces可按统一配置创建环境。Actions手动workflow_dispatch通常还要求workflow文件存在于默认分支；长期工作分支与main分开，不擅自合并。保持main不动时，可用工作分支push检查或Codespaces直接运行命令。配置已写不代表云端运行通过。
 
-当前远端部署需要被GitHub接受且具备目标Contents/Workflows权限的凭据；附件返回Invalid username or token，已停止重试。学生状态、配额和Copilot权益须在本人Education/Billing确认。未创建Codespace、未触发远端Actions、未代办学生认证。
+新凭据已经通过Git发布与本仓库资源只读API检查。学生状态、配额和Copilot权益仍须在本人Education/Billing确认。本轮未创建Codespace、未手动dispatch计算、未代办学生认证；代码推送触发的检查与实际数学计算分别报告。
+
+GitHub资源调用使用仓库外PAT，无需账号连接器；仓库写权限与Actions/Codespaces权限分开报告。`status`只读；只有明确运行dispatch或create-codespace才产生对应请求，创建环境会使用配额。stop先核对实例属于当前origin仓库。401立即停止，403不会伪装该功能可写，认证信息不跟随重定向。API定义见[Actions workflows](https://docs.github.com/en/rest/actions/workflows)和[Codespaces](https://docs.github.com/en/rest/codespaces/codespaces)。
 
 官方依据：
 
