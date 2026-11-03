@@ -592,6 +592,8 @@ def main():
     clean.add_argument("args", nargs=argparse.REMAINDER)
     mapping = sub.add_parser("map", help="检查/生成子存档、存档和全仓超图")
     mapping.add_argument("args", nargs=argparse.REMAINDER)
+    research = sub.add_parser('research', help='登记、按需读取超边、两类Solver输入和持续研究恢复')
+    research.add_argument('args', nargs=argparse.REMAINDER)
     curate = sub.add_parser("curate", help="2.5固定原文、逐对象处置与数学准入；只操作本地明确文件")
     curate.add_argument("args", nargs=argparse.REMAINDER)
     triage = sub.add_parser("triage", help="2.5.1材料定性批次、覆盖与目录；不判断数学真值")
@@ -646,6 +648,21 @@ def main():
     if a.command == "start":
         return start(a)
     repo = checked_repo(a.repo)
+    if a.command == 'research':
+        return subprocess.call([sys.executable, str(repo / TOOLS / 'research_runtime.py'), '--repo', str(repo), *a.args])
+    if a.command == 'map' and a.args and a.args[0] in {'inventory', 'plan', 'list', 'claim', 'done', 'handoff', 'status'}:
+        env = auth(repo, a)
+        result = subprocess.run([sys.executable, str(repo / TOOLS / 'map_tasks.py'), '--repo', str(repo), *a.args], env=env, capture_output=True, text=True)
+        if result.stderr: sys.stderr.write(result.stderr)
+        if result.returncode:
+            sys.stdout.write(result.stdout)
+            return result.returncode
+        receipt = json.loads(result.stdout)
+        if isinstance(receipt, dict) and receipt.get('status') == 'pushed':
+            try: receipt['local_sync'] = sync(repo, env)
+            except (Stop, OSError) as exc: receipt['local_sync'] = {'status': 'needs-attention', 'detail': str(exc)}
+        print(json.dumps(receipt, ensure_ascii=False, indent=2))
+        return 0
     if a.command in ("curate", "map", "triage"):
         module = {"curate":"curation.py", "map":"maps.py", "triage":"triage.py"}[a.command]
         return subprocess.call([sys.executable, str(repo / TOOLS / module), "--repo", str(repo), *a.args])
