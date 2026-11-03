@@ -2,6 +2,8 @@
 
 新的2.5第三步/构图/研究读取接口已实现，见[完整命令](../research/IMPLEMENTATION.md)。work.py research提供inventory/register/check/build/search/show/context/packet/init/save/resume；work.py map新增inventory/plan/list/claim/done/handoff/status。原curate与map check/build保留为旧原型兼容。Codespaces、Actions和精确实验入口见[GitHub资源](../research/GITHUB_RESOURCES.md)。新工具不替其他Boss重分类或自动建全仓图。
 
+完整后续阶段启动见[PHASE3_READINESS](../research/PHASE3_READINESS.md)：research新增freeze/new-id/compose/registration-check；start --workflow-run隔离阶段身份和工作区；github status/dispatch/machines/create-codespace/stop-codespace直接用仓库外PAT。本轮只发布准备，不激活真实登记/建图阶段。
+
 新对话使用本结果分支的新版work.py和仓库外凭据，自动找附件路径及独立--repo目录：
 
 ```sh

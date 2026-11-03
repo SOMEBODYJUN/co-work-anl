@@ -16,7 +16,7 @@ import time
 SCOPE = "tools"
 DEFAULT_SAVE = "repository-cleanup"
 COMMON_PATHS = ["README.md", "AGENTS.md"]
-SAVE_PATHS = {"repository-cleanup": ["cleanup", "curation", "prompts", "tools", "map", "work.py"]}
+SAVE_PATHS = {"repository-cleanup": ["cleanup", "curation", "research", "prompts", "tools", "map", "work.py"]}
 SAVE_PATTERNS = {}
 SECRET = re.compile(rb"(?:github_pat_|gh[pousr]_)[A-Za-z0-9_]{12,}|-----BEGIN [A-Z ]*PRIVATE KEY-----")
 ROUTING = ("GIT_DIR", "GIT_WORK_TREE", "GIT_COMMON_DIR", "GIT_INDEX_FILE",

@@ -2,6 +2,8 @@
 
 本规范承接用户要求的2.5第三步、第三阶段和Work研究运行。2.5前两步仍按[原对象群整理规则](CURATION.md)执行；本次不重分类、不移动其正文、不清空认领或公屏。工具已实现不表示全仓已登记、已建图或已有Solver在后台运行。旧`curate`与`map check/build`保留兼容，v2入口是`work.py research`；新建图账本是`work.py map inventory/plan/list/claim/done/handoff/status`。
 
+可直接执行的完整启动词、稳定编号原则、输入冻结/批次集成、独立登记验收和跨批整合验收见[PHASE3_READINESS](PHASE3_READINESS.md)。`--workflow-run`将登记和建图与旧清洗/2.5第二步的身份、工作区、公屏隔开。下列命令的候选总表应由批次compose产生，不让多人直接覆盖总registry。
+
 ## 固定设计
 
 数学正文是知识来源；登记与超图是按需读取入口。节点是有精确陈述的数学对象，不是每个文件、日志或程序。一页可以登记多个独立对象，定位到不同标题，无须为了编号切碎原文。代码、输入、输出和复现证书作为owner对象的附件，不自动成为命题节点。对象间的推导、反驳、迁移和启发分开。
@@ -38,6 +40,7 @@ python tools/research_runtime.py --repo validation/first-demo resume demo-run
 python work.py research inventory
 python work.py research register --record-file research/proposed-registry.json
 python work.py research check
+python work.py research registration-check --final
 python work.py checkpoint research/registry.json -m 'Register reviewed mathematical objects and attachments'
 ```
 
@@ -70,7 +73,7 @@ python work.py map status
 
 receipt格式：`{coverage:{object_id:{state,reason,comparison_scope,object_pin,edge_ids?}},assets:[{path,sha256}]}`。每个对象有`linked/isolated-after-review/needs-decision`之一；linked必须列出真实accepted incident边。done表示该批覆盖处置已交付，needs-decision仍不算最终关系闭合。交接用`map handoff TASK --reason ...`。
 
-最终集成形成`map/coverage.json`，逐对象记录同上，不能有needs-decision。然后：
+最终集成形成`map/coverage.json`，逐对象记录同上，不能有needs-decision；并交`map/integration.json`，绑定当前registry及accepted边，分别记录存档/子档跨批审读和跨档比较，具体字段见PHASE3_READINESS。然后：
 
 ```sh
 python work.py research check --final
