@@ -60,6 +60,8 @@ python3 work.py curation-task show --run 20261103-boss6-triage 实际task_id
 python3 work.py curation-task claim --run 20261103-boss6-triage 实际task_id
 ```
 
+每群领取前先sync并读取实际任务状态，领取后再sync并核对输入SHA。当前list/show查看本clone快照，不能把未同步的列表当远端最新占用。Git同步/整合时由Boss组织暂停相关写入并保住草稿。
+
 任务认领采用最新远端单任务事务、输入SHA与交叉写入路径检查、正常push和request_id读回；不以公屏说负责代替锁，不预领大量未来任务。所有代理可跨范围阅读，写入按任务互斥；同clone Git由Boss串行。
 
 产物先checkpoint并收到pushed。assets JSON是`[{"path":"实际正文或附件路径","sha256":"当前实际SHA256"}]`，路径必须在任务写入范围。再提交并说明实质完成出口：
@@ -70,7 +72,7 @@ python3 work.py curation-task complete --run 20261103-boss6-triage 实际task_id
 python3 work.py curation-task handoff --run 20261103-boss6-triage 实际task_id --reason '真实运行边界' --draft-note '草稿路径以及是否共享'
 ```
 
-claim、产物pushed、submitted与completed分别确认。submitted只接受远端已存在的同版产物；仅本地留在工作区和交接记录。completed是本步骤编辑交付，不是证明新定理或最终图准入。内容变更必须重新判断，不机械刷新SHA继承旧完成。只有owner和本run协调Boss可完成已提交任务；handoff只释放本人未完任务。原`clean handoff`不释放这些任务。
+claim、产物pushed、submitted与completed分别确认。submitted只接受远端已存在的同版产物；仅本地留在工作区和交接记录。completed是本步骤编辑交付，不是证明新定理或最终图准入。只读输入依赖在提交前已变动时，程序拒绝提交，须按新内容重新判断；属于本任务可写范围的输入允许以本次产物替换。内容变更必须重新判断，不机械刷新SHA继承旧完成。只有owner和本run协调Boss可完成已提交任务；handoff只释放本人未完任务。原`clean handoff`不释放这些任务。
 
 ## 暂停与退役
 

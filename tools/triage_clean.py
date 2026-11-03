@@ -41,6 +41,7 @@ def classification_digest(home):
 
 def plan(root,run):
     home,snapshot=triage.load(root,run);report=triage.status(root,run)
+    starting_classification=classification_digest(home)
     if report['remaining'] or report['stale_record_bindings']:raise ValueError('Finish material classification before the global cleanup plan')
     originals={r['path']:r for r in snapshot['files']}
     records={json.loads(p.read_text())['path']:json.loads(p.read_text()) for p in (home/'records').glob('*.json')}
@@ -85,8 +86,9 @@ def plan(root,run):
     for name,text in kept.items():
         revised=rewrite(name,name,text,routes)
         if revised!=text:patches.append({'path':name,'source_sha256':curation.digest(text.encode()),'new_sha256':curation.digest(revised.encode())})
+    if classification_digest(home)!=starting_classification:raise ValueError('Classification changed while planning; retry from one stable decision set')
     result={'version':1,'run_id':run,'snapshot_commit':snapshot['commit'],
-            'classification_sha256':classification_digest(home),'actions':actions,'link_patches':patches,'routes':routes,
+            'classification_sha256':starting_classification,'actions':actions,'link_patches':patches,'routes':routes,
             'status':'planned-not-applied','rules':'Only explicitly classified non-math/evidence wrappers; substantive mathematics is retained.'}
     triage.write(home/'cleanup-plan.json',result)
     return {'status':result['status'],'actions':len(actions),'needed_evidence_attachments':len(needed),'link_patches':len(patches)}
@@ -110,6 +112,7 @@ def apply(root,run):
         revised=rewrite(patch['path'],patch['path'],data.decode(),routes)
         if curation.digest(revised.encode())!=patch['new_sha256']:raise ValueError('Link rewrite plan differs')
         patches.append((p,revised))
+    if classification_digest(home)!=plan_data['classification_sha256']:raise ValueError('Classification changed during validation; no cleanup applied')
     # All source/target/version checks complete before touching any original.
     for action,source,revised in prepared:
         target=action['target']

@@ -1,0 +1,79 @@
+---
+id: customer-attraction/fixed-query-and-two-menu-three-floating-snapshots
+kind: resource
+type_tag: 资源
+title: 固定查询闭包与双菜单探索的三份浮点保存点
+status: all-fields-and-zero-columns-preserved;pricing-not-closed
+truth_status: historical-finite-LP-and-floating-pricing-only
+scope: 三份保存JSON全部1747原子记录、849不同列、128最大根状态日志；不是完整策略证书
+summary: 保全三份点的全部字段和对偶支持，说明旧入口SHA、母列重算行名、末轮100零权未重优和10负状态的含义。
+source_refs:
+  - source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/round8_five/maxroot/trueH_bidirectional_discovery.json
+  - source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/round8_five/maxroot/trueH_fixed_closure_discovery.json
+  - source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/round8_five/maxroot/trueH_fixed_closure_fullpricing.json
+---
+
+# 固定查询闭包与双菜单探索的三份浮点保存点
+
+## 1. 三个独立保存对象
+
+这三份JSON是有限必要条件LP和浮点列生成保存点，均无原单位客户游戏、完整历史策略或全有理对偶证书。[程序正文](<../../../../archives/customer-attraction/state/程序/真实第三位固定查询闭包与双菜单替换定价--程序.md>)给P7、94双菜单和60固定查询的真节点证明及合同。历史half未闭合不能沿用为今日开放状态；[五人half定理](<../../../../archives/customer-attraction/state/定理/五人半覆盖--定理.md>)已完成。
+
+|保存点|字节|不重复行名数|保存列数|非零/零primal|稀疏对偶数|dual_beta_float|
+|---|---:|---:|---:|---:|---:|---:|
+|bidirectional discovery|520452|6659|449|51/398|50|2.0007345264961387|
+|fixed_closure discovery|522907|6747|449|50/399|49|1.9927862050739051|
+|fixed_closure fullpricing|818396|6747|849|63/786|61|1.9995733796412523|
+
+保存primal均非负，非零按实际!=0计，不用阈值删小值。两discovery的minimum_slack_float分别−3.675976190109509×10⁻¹²、−3.815836535636663×10⁻¹²，记录浮点误差而非精确可行性；fullpricing没有该字段，不补造。全部row_names、每项primal（含零）、对偶名/值及scope/code已实读保全。
+
+## 2. 全部原子与质量读法
+
+bidir与fixed discovery的449个atoms逐字段/顺序完全相同。fullpricing前449个也相同，其后四轮各加100；三份共1747条保存记录、849个不同完整原子。不同列均读取，没有因零权略过。
+
+每列字段为十位bits、八格AB_hist/AE_hist、十六格second_hist、三套旧查询菜单menus_lh、五位max_bits，部分旧列另有exact_mass。直方图按原TYPES二进制顺序，保五个比较索引的相关统计，不能当无序或独立会员边缘。menus_lh保三套(ℓ,h)统计，max_bits保32状态；全语义见[747行输入](<../../../../archives/customer-attraction/state/程序/真实完整策略的七百四十七行输入映射与核账户--程序.md>)。
+
+前14列含旧exact_mass，共11个不同长有理值。这些是母列注释，并不是新点当前primal_float的有理恢复；应按同索引质量向量读取，不能以旧exact_mass替换。后列无该键不表示零质量，列身份也保是否有键。
+
+证据内 `complete-data-reading-view.json` 是无损读取视图：七字段各建值池，849条元组按池索引保留，缺键−1；三个original_record_maps恢复全部atoms及顺序，report_other_fields保全部其它字段。池规模依次bits97、AB13、AE15、second34、menus_lh33、max_bits30、exact_mass11。所有池及849编码元组逐项实读；原JSON仍是最终字节证据。全零列、同bits异hist列、旧质量注释、63正支持和849保存列均有不同用途，资源不只保beta或正支持摘要。
+
+## 3. 四轮128日志与末100列
+
+history每项含iteration、restricted_beta、new_columns、state_reports；每条state_report含maximum_state、minimum_scaled_residual、contexts、seconds。四轮各遍历32状态，无状态抽样；128条含秒数原样保在原JSON和无损视图。
+
+|轮|LP时列数|restricted_beta|随后新增|每状态contexts|最小scaled residual及状态|
+|---:|---:|---:|---:|---:|---|
+|0|449|1.9927862050739051|100|2062|−15.169957858650418，state0|
+|1|549|1.9980261851201828|100|3072|−8.55636392487045，state0|
+|2|649|1.9993153389672793|100|3072|−8.559872106488097，state0|
+|3|749|1.9995733796412523|100|3072|−5.057012921949564，state2|
+
+最终849列的质量向量是749列LP解后拼100零。索引749…848没有参与当前beta的重新优化，不能称849列已共同重优。原列未删，63正质量都在前749列。零填充保原浮点点可行性，却不保证对新增列最优。
+
+末轮负状态**10个**：0、1、2、4、8、23、27、29、30、31；依次余量−4.790441728982756、−4.913492326022137、−5.057012921949564、−4.737039972924634、−3.908355852273843、−4.861064846982401、−4.854501073595728、−4.434020875878545、−4.518167870858193、−4.8626015475297635。其余22正值也全部保存。
+
+这是120统一缩放的浮点客户型定价残差。负号表示该轮对偶在相应类型域仍可分离，不是某真实玩家获利偏离或福利反例。beta<2是受限LP数值，配合负残差不能当全域factor-two证明；四轮预算耗尽保存，没有闭包成功记录。
+
+## 4. wrapper与实际入口版本
+
+fixed discovery的code_sha256为42d90154f823a7a6c097ad03360b8733811f0d6cfdbbce131af37b28c639dcc5，bidir为ffb7dfc7151a713f95fbfb81940671d08b916a522956ca1de2db72dfa199dcff，均与对应源码字节相符。
+
+fullpricing记录d9f193fe2bc405d9b957ededd6d9342b0d9c8f666487d99a7cc5b2ae6c3b98d5，是当时通用 `price_indexed_hinges.py` 的SHA，不是267B wrapper的SHA，也不等于当前入口SHA **5d7cd51185f6d19d5ba856b3d43d5a827934d6d08c4450d5500af9c22642e278**。当前新增target_beta等行为，不能将每个当前分支倒填为历史已执行。
+
+其scope仍为通用入口的“matched-indexed hinge candidate”说明，并未按固定query类改写；具体保存对象须由6747行、固定discovery前449列、四轮日志及wrapper文件链共同识别，不能只凭这段通用docstring改归为另一个indexed点。
+
+当前入口的明确合同：target存在优先续target列，否则读source；按atom_key加max_bits去重；每轮重算当前行，以W=1最大化O。beta≤2+10⁻⁷才作状态定价，默认32状态，可由Universe.pricing_modes另分模式。调用 `super(cm.Universe,U).price` 绕过cm自带32状态外循环，每状态批量12；候选按残差排序，先取前100再去重，不在第101项以后补足被去重项。先附加列再保存lp.x与新增零；下轮才重优。一次run的history重建，不累计全部历史run。
+
+当前可选target_beta在条件满足时另解加权l1对偶可行问题，按target而非原最优目标pricing；当前输出可有primal_beta_float、certificate_target_beta、projection_mode。冻结fullpricing无这些字段，不能推断它启用了target或多模式。wrapper只请求4轮和固定Universe/文件名，不能消除底层SHA时间差。
+
+## 5. 母来源及相邻版本
+
+本批比较完整阅读payment_fullpricing、source_last_discovery、source_last_pricing三个原件，不额外列主源receipt。payment保存点449列、6565行、beta=2.0007345264961383；四轮前三轮各100新列，末轮beta>2时new_columns=0、state_reports为空。旧入口SHA也为d9f193…，scope仍写通用matched-indexed候选，不能把scope当实际类谱系完整定义。
+
+source_last保存点449列、6687行、53非零primal、52稀疏对偶，beta=2.000658604909693、minimum_slack_float=−5.9969806898152456×10⁻¹²；源码SHA807fca96d70b0f31d3b907c0e6e726f13951fbfc84f231d4ba2336c94b871996。53个primal支持与52个dual支持不是同一计数。
+
+母payment旧名 `actual:5:sum-opt`、`max:tax:opt-union` 与子报告 `actual:5:O`、`max:tax:opt-pairs` 有版本差异。run读取母atoms后**重算**当前系数/行名，不沿用保存row_names。本批bidir行名集合确包含于fixed，fixed两报告同序6747行，但不能把局部包含扩成所有历史文件原样纯追加。
+
+可续用的是合法P7替换、完整原子/对偶/日志、浮点点及版本关系。本批无完整σ、精确全域价格证书、fixed全类型闭包或独立H兼容性障碍证明。全部SHA、逐源去向及原数学程序/新数学checker/LP/定价均0的记录见[证据目录](<../../../../archives/customer-attraction/tools/evidence/trueH-fixed-and-bidirectional-resumed-boss3/README.md>)。
+
+后续[两历史共同目录抬升](<../../../../archives/customer-attraction/state/程序/两种第三位历史的共同目录抬升与分离归因--程序.md>)明确：由source_last恢复的53原子点失败，actual侧的V容量与K-env两行已能精确解释，不归因新增跨历史耦合；fixed恢复的50原子点则在两H辅助128行诊断中浮点可行，无精确抬升或SPE实现。另[实际十三行两态铰链](<../../../../archives/customer-attraction/state/引理/实际第三位十三行投影的两态铰链分解--引理.md>)来自不同63原子输入及747行权，不是本页P7/449列点的同名版本。本次只读这两份成熟正文衔接，不重复审计其原件或精确域。

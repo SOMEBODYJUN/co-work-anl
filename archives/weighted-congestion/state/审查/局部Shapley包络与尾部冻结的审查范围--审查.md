@@ -108,7 +108,7 @@ source_refs:
 
 有限最小点满足D_i(s)≤D_i(s′)，故C_i(s)≤RC_i(s′)；严格R改善必降势。原审查逐项处理零费用、零偏离、两边皆零、次数零、空策略、无人资源、单实际用户、R=1、共同保留资源与R≥1。无人资源不定义a_e而取零贡献；全部策略为空时精确PNE，不能因条件真空而把倍率称为小于1。按当前最小权变化分母会破坏边际身份；必须用潜在用户。无多项式时间保证。
 
-原文的独立有限子集检查是所有{1,2,3,4}^n、n=2,…,5，以及总费用指数r=1,…,12。该程序与报告已在前批单独清洗和实际复跑，见[精确核验对象](../计算/权类别与局部权带的精确核验--计算.md)。它只检查包络与效率，不检查所有份额排序；这也不把原审查最后的candidate comparison pending改成新盲审完成。
+原文的独立有限子集检查是所有{1,2,3,4}^n、n=2,…,5，以及总费用指数r=1,…,12。该程序与报告已在前批单独清洗和实际复跑，见[精确核验对象](<../../../../tools/evidence/phase25-material-attachments/20261103-boss6-triage/1b753f49deb22b413dd4.md>)。它只检查包络与效率，不检查所有份额排序；这也不把原审查最后的candidate comparison pending改成新盲审完成。
 
 ## 尾部冻结审查独立重建的五段链
 
@@ -157,7 +157,7 @@ source_refs:
 
 ## 独立尾部程序的实际覆盖与本轮核对
 
-本审查对象最初整理时，为核对审查范围完整读取相关源`source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/weighted_congestion/weight_bands/independent_tail_freezing.py#main`，当时只读取原冻结报告的coverage/hash汇总字段，没有运行或为这两个来源登记done。后续单独认领程序及报告，已逐项全文读取全部102输入与结果、64参数记录及全部密集群记录，原样复跑一次并与冻结报告逐字节完全相同；完整接口和报告范围见[精确核验对象](../计算/权类别与局部权带的精确核验--计算.md)。后续复现没有改变两份历史审查的独立性或当时覆盖。
+本审查对象最初整理时，为核对审查范围完整读取相关源`source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/weighted_congestion/weight_bands/independent_tail_freezing.py#main`，当时只读取原冻结报告的coverage/hash汇总字段，没有运行或为这两个来源登记done。后续单独认领程序及报告，已逐项全文读取全部102输入与结果、64参数记录及全部密集群记录，原样复跑一次并与冻结报告逐字节完全相同；完整接口和报告范围见[精确核验对象](<../../../../tools/evidence/phase25-material-attachments/20261103-boss6-triage/1b753f49deb22b413dd4.md>)。后续复现没有改变两份历史审查的独立性或当时覆盖。
 
 程序版本1.0、seed95471、SHA256 `7318309925723b9e279b0ad64fd62d567712d152ec57c8ab65f4d0fdafe5690b`。原始子集份额`phi_direct`与势`potential`是分开实现；没有导入作者代码。程序用Fraction和显式`require`检查真值；默认完整JSON stdout，`--output`以x模式独占创建。以下为审查记载且与实际源码/冻结汇总字段相符的范围：
 

@@ -4,10 +4,10 @@
 
 | 材料 | 类别 | 路由 | 具体理由 |
 | --- | --- | --- | --- |
-| [R-18任意对称势菜单候选搜索无反例--候选](<../../../../archives/customer-attraction/state/候选/R-18任意对称势菜单候选搜索无反例--候选.md>) | evidence-only | attach | 定义对称势菜单的有限随机探针和逐历史SPE及LP检查，但只报告m=3,p=3的200/1000次未找到反例，无见证、普遍不等式或独立数学结论。 |
-| [R-18后续gap数值MILP有限状态--候选](<../../../../archives/customer-attraction/state/候选/R-18后续gap数值MILP有限状态--候选.md>) | evidence-only | attach | 三组MILP固定规模的状态、objective proposal和误差记录，m=4在限时停机；未给可指认的精确SPE见证或独立数学断言。 |
+| [R-18任意对称势菜单候选搜索无反例--候选](<../actions/70752577e6f7e48add05.json>) | evidence-only | attach | 定义对称势菜单的有限随机探针和逐历史SPE及LP检查，但只报告m=3,p=3的200/1000次未找到反例，无见证、普遍不等式或独立数学结论。 |
+| [R-18后续gap数值MILP有限状态--候选](<../actions/86cc7ace8eef8dd26c06.json>) | evidence-only | attach | 三组MILP固定规模的状态、objective proposal和误差记录，m=4在限时停机；未给可指认的精确SPE见证或独立数学断言。 |
 | [R-18次安全值有限搜索与根缺口--候选](<../../../../archives/customer-attraction/state/候选/R-18次安全值有限搜索与根缺口--候选.md>) | math-exposition | retain | 明确区分抽象势与共同目录有限搜索，记述高背景半利润条件的适用门槛B≥r−4及根B=0承重缺口；未从有限无反例推出全称桥。 |
-| [R-18终局数值MILP候选m3p4双玩家记录--候选](<../../../../archives/customer-attraction/state/候选/R-18终局数值MILP候选m3p4双玩家记录--候选.md>) | evidence-only | attach | 两名玩家的m=3,p=4终局MILP浮点proposal和求解规模；正文承认没有精确SPE、W/OPT或半界数学断言，供精确化的输入线索。 |
+| [R-18终局数值MILP候选m3p4双玩家记录--候选](<../actions/23d1b61d3fc40ce5dfd5.json>) | evidence-only | attach | 两名玩家的m=3,p=4终局MILP浮点proposal和求解规模；正文承认没有精确SPE、W/OPT或半界数学断言，供精确化的输入线索。 |
 | [R-2fc循环DAG有限完整证书--候选](<../../../../archives/customer-attraction/state/候选/R-2fc循环DAG有限完整证书--候选.md>) | numeric-witness | distill | 12个固定客户目录各给出完整有序纯SPE的精确分数审计及正half余量，但主要以三份审计表的离散输入和结果承载结论，未解释循环/DAG数字的统一结构或可化简机制。 |
 | [signed-harmonic支持归约与交换义务--候选](<../../../../archives/customer-attraction/state/候选/signed-harmonic支持归约与交换义务--候选.md>) | math-fragment | restore | 给F、L、J_c支持归约和等势交换EX的概要及half的条件蕴含，但未展开这些函数、EX关系或真实离轨付款，读者缺少承重定义与推导入口。 |
 | [两步安全链的条件归并与有限探索边界--候选](<../../../../archives/customer-attraction/state/候选/两步安全链的条件归并与有限探索边界--候选.md>) | math-exposition | retain | 定义PAIR为相邻安全链增量之和并给普遍成立时推出聚合桥的条件证明；全兴趣客户零系数可删与数值攻击上下界均有具体推导。 |
@@ -214,7 +214,7 @@
 | [根可信门槛不能支付全体平均收益--反例](<../../../../archives/customer-attraction/state/反例/根可信门槛不能支付全体平均收益--反例.md>) | math-exposition | retain | 20客户三主题的全部有序SPE分类给根最低可信门槛23/3，但每份SPE福利20小于三倍门槛23；后两层门槛各37/6解释错用共同根收入。 |
 | [根回复成员平稳核封顶--反例](<../../../../archives/customer-attraction/state/反例/根回复成员平稳核封顶--反例.md>) | math-exposition | retain | 22客户三人完整SPE的根真后继成员核唯一平稳分布使最大静态查询6>W/3=17/3；实际末节点背景cap5说明指定核边界。 |
 | [残余覆盖的逐人与聚合保底--反例](<../../../../archives/customer-attraction/state/反例/残余覆盖的逐人与聚合保底--反例.md>) | math-exposition | retain | 十四客户五主题完整二人回复表令实际首人4<遗漏单主题5且W9<2M；解释早期改T后可信D响应分摊客户。 |
-| [父方实际incumbent独立全历史审计报告--反例](<../../../../archives/customer-attraction/state/反例/父方实际incumbent独立全历史审计报告--反例.md>) | evidence-only | attach | 仅转述61客户既有反例的冻结PASS审计数、259历史和9−3/4·13=−3/4，没有独有构造或证明；完整反例在另页。 |
+| [父方实际incumbent独立全历史审计报告--反例](<../actions/5cc9bedf5221bc4962a1.json>) | evidence-only | attach | 仅转述61客户既有反例的冻结PASS审计数、259历史和9−3/4·13=−3/4，没有独有构造或证明；完整反例在另页。 |
 | [独立主题饱和续局的全人数实际分数税反族--反例](<../../../../archives/customer-attraction/state/反例/独立主题饱和续局的全人数实际分数税反族--反例.md>) | math-exposition | retain | k+3人八类客户、特殊核心模式与默认集合值BI共同给完整P^kAAB策略；解析实际负载税总桥k≥10及逐人桥k≥9失败，half仍有余量。 |
 | [独立同分布福利支付--反例](<../../../../archives/customer-attraction/state/反例/独立同分布福利支付--反例.md>) | math-exposition | retain | 八客户三人完整SPE给W6<静态iid Nash Z3；多花瓣完整策略及m20和m≥41有理界进一步否定较弱W≥(1−1/2m)Zm，未否真正安全值。 |
 | [独立逐席付款的完整策略反例--反例](<../../../../archives/customer-attraction/state/反例/独立逐席付款的完整策略反例--反例.md>) | math-exposition | retain | 六人七不交题恒选六客户大题是完整SPE，根实际收益1而非法独立席位行要求6；另纠正两人旧例的真实路线计数k=2导致右端仅1。 |
@@ -401,7 +401,7 @@
 | [查询支持的完整策略闭包与严格分离保留--定理](<../../../../archives/customer-attraction/state/定理/查询支持的完整策略闭包与严格分离保留--定理.md>) | math-exposition | retain | 全部有序历史闭包限制原策略保SPE、W、指定严格菜单分离；OPT种子保half反例且闭包规模无人数界。 |
 | [正则共享超图私有填充的自由分数鞍点--定理](<../../../../archives/customer-attraction/state/定理/正则共享超图私有填充的自由分数鞍点--定理.md>) | math-exposition | retain | 正则h均匀共享超图加K−d私有客户的自由分数鞍点精确为(K−d)/(1+(m−1)/q)+d/(1+(m−1)h/q)；K>2d全历史fresh并自动half，强聚合反例仍需真实损失SPE。 |
 | [比较主题数控制的倒二客户负载阈值--定理](<../../../../archives/customer-attraction/state/定理/比较主题数控制的倒二客户负载阈值--定理.md>) | math-exposition | retain | 倒二主题每个客户在早期至少承载k−2次时，真实末两人菜单恒等式的客户余项按负载和比较次数四角非负，得2W≥任意k主题覆盖。 |
-| [独立设施贪心盒因子二--定理](<../../../../archives/customer-attraction/state/定理/独立设施贪心盒因子二--定理.md>) | evidence-only | attach | 仅汇报两份独立设施贪心盒有限JSON审计的因子二数值与偏离次数，明确不推出一般定理。 |
+| [独立设施贪心盒因子二--定理](<../actions/4e70d2449233978a4b83.json>) | evidence-only | attach | 仅汇报两份独立设施贪心盒有限JSON审计的因子二数值与偏离次数，明确不推出一般定理。 |
 | [真实倒二菜单的非均匀分数采购--定理](<../../../../archives/customer-attraction/state/定理/真实倒二菜单的非均匀分数采购--定理.md>) | math-exposition | retain | 真实末位回复菜单定义主题敏感价格c(T)，给全实权分数覆盖的F−C预算、加权包络及共同客户价格LP对偶。 |
 | [真实前缀完整利润席位的一份福利预算--定理](<../../../../archives/customer-attraction/state/定理/真实前缀完整利润席位的一份福利预算--定理.md>) | math-exposition | retain | 实际前缀冻结背景私有遗漏F/G席位的同子树归纳给u_i第r大谱；共享遗漏总量未付。 |
 | [真实后继菜单的调和价格母式与显式债--定理](<../../../../archives/customer-attraction/state/定理/真实后继菜单的调和价格母式与显式债--定理.md>) | math-exposition | retain | 调和势与真后继菜单交叉恒等式给价格界，显式保留R/Z债；两人尾BR可付，多尾一般不可。 |
@@ -453,27 +453,27 @@
 | [PB背景反例的全历史审查与版本--审查](<../../../../archives/customer-attraction/state/审查/PB背景反例的全历史审查与版本--审查.md>) | math-exposition | retain | 给PB Greedy旧负载水位C(h)构造和单块偏离加强，并区分Punish两侧尾人数界、三模式G不等式及singleton静态Jensen的审查范围。 |
 | [R-171共同客户根路径支付与pair预算开放边界--审查](<../../../../archives/customer-attraction/state/审查/R-171共同客户根路径支付与pair预算开放边界--审查.md>) | math-exposition | retain | 比较固定人口pair误差与窗口ghost-rent支付的局部接口，明确skip-premium及真实后继SPE运输尚未得到。 |
 | [R-171区间与早期菜单增量审查--审查](<../../../../archives/customer-attraction/state/审查/R-171区间与早期菜单增量审查--审查.md>) | math-exposition | retain | 连续窗口E_j^(ρ)的Γ调和租金界及跳槽时H_q发散反例，与早期真实中继菜单ξ/ζ带符号缺陷和卸载条件的有限核验范围清楚分节。 |
-| [R-171可信低根接续与有限候选边界--审查](<../../../../archives/customer-attraction/state/审查/R-171可信低根接续与有限候选边界--审查.md>) | evidence-only | attach | 记录五人低根搜索的seed、168个接受点、比率最高171/100和count-Markov限制；未给可复用数学结论或完整新见证。 |
+| [R-171可信低根接续与有限候选边界--审查](<../actions/59225d6c04e97ca6576e.json>) | evidence-only | attach | 记录五人低根搜索的seed、168个接受点、比率最高171/100和count-Markov限制；未给可复用数学结论或完整新见证。 |
 | [R-171弱CCE占用证书玩家对称化勘误--审查](<../../../../archives/customer-attraction/state/审查/R-171弱CCE占用证书玩家对称化勘误--审查.md>) | math-exposition | retain | 聚合偏离A_T不蕴含逐人CCE；三人花瓣原分布个体失败，玩家置换平均得逐人slack=A_T/m。 |
 | [R-171接续工作区主张边界与开放义务--审查](<../../../../archives/customer-attraction/state/审查/R-171接续工作区主张边界与开放义务--审查.md>) | math-exposition | retain | 整理最优遗漏、早期负载缺陷、稀疏槽租金、POOL Jensen和有符号查询的各自精确主张及未闭合量词。 |
 | [R-171池化响应探针与来源增量审查--审查](<../../../../archives/customer-attraction/state/审查/R-171池化响应探针与来源增量审查--审查.md>) | mixed/needs-context | extract | 固定策略锥Gamma行和池化分布的LP/SLSQP探针含模型定义及13人、两人有限数值报告，提取接口而将输出附为证据。 |
-| [R-18-next-security bridge_attack续审计--审查](<../../../../archives/customer-attraction/state/审查/R-18-next-security bridge_attack续审计--审查.md>) | evidence-only | attach | bridge_attack固定菜单浮点求解器状态、容量数值与best -0.0，仅是有限屏幕执行记录。 |
-| [R-18-round3-independent副本回归--审查](<../../../../archives/customer-attraction/state/审查/R-18-round3-independent副本回归--审查.md>) | evidence-only | attach | 仅汇报k=1,2副本族独立脚本的节点、比较数和遗憾回归，任意k数学归纳在别处。 |
+| [R-18-next-security bridge_attack续审计--审查](<../actions/78f40197f18d9d47a5e1.json>) | evidence-only | attach | bridge_attack固定菜单浮点求解器状态、容量数值与best -0.0，仅是有限屏幕执行记录。 |
+| [R-18-round3-independent副本回归--审查](<../actions/7f03243d5d77a75da68c.json>) | evidence-only | attach | 仅汇报k=1,2副本族独立脚本的节点、比较数和遗憾回归，任意k数学归纳在别处。 |
 | [R-18gap-sparse重复源与静态下界桥处置--审查](<../../../../archives/customer-attraction/state/审查/R-18gap-sparse重复源与静态下界桥处置--审查.md>) | math-fragment | restore | 一句断言静态PNE下界桥有有限反例且不影响2W≥OPT，但没有目录、数值或失败不等式；重复gap-sparse三因子仅为来源指向，需接R-18-STATIC-LOWER-ENVELOPE正文。 |
 | [R-18对称投影完整SPE前缀障碍--审查](<../../../../archives/customer-attraction/state/审查/R-18对称投影完整SPE前缀障碍--审查.md>) | numeric-witness | distill | 给15主题投影指定ABC前缀的巨大有理负缺口与九个严格偏离，但具体客户投影需依赖外部JSON。 |
-| [R-18对称投影完整SPE前缀障碍增量--审查](<../../../../archives/customer-attraction/state/审查/R-18对称投影完整SPE前缀障碍增量--审查.md>) | evidence-only | attach | 只有既有ABC/ABCD精确审计数字和九偏离的重复增量记录，未独立解释客户模型。 |
-| [R-18策略双重背景独立审计--审查](<../../../../archives/customer-attraction/state/审查/R-18策略双重背景独立审计--审查.md>) | evidence-only | attach | Fraction审计报告给220端点等式、495内部带符号失败等固定实例核验及背景稀释障碍，没有独立一般命题。 |
+| [R-18对称投影完整SPE前缀障碍增量--审查](<../actions/28c0422db5af77bcb420.json>) | evidence-only | attach | 只有既有ABC/ABCD精确审计数字和九偏离的重复增量记录，未独立解释客户模型。 |
+| [R-18策略双重背景独立审计--审查](<../actions/77d200e640f02c9f8923.json>) | evidence-only | attach | Fraction审计报告给220端点等式、495内部带符号失败等固定实例核验及背景稀释障碍，没有独立一般命题。 |
 | [R-21674三余利润证书与逐人缺口有限搜索实读--审查](<../../../../archives/customer-attraction/state/审查/R-21674三余利润证书与逐人缺口有限搜索实读--审查.md>) | math-exposition | retain | 三余利润机会的有理系数证书接口与有限MILP、Gram切面的不同适用范围逐项交代。 |
 | [R-2fc全局证明B八源清洗--审查](<../../../../archives/customer-attraction/state/审查/R-2fc全局证明B八源清洗--审查.md>) | math-exposition | retain | 清楚分节重建11客户完整SPE的调和势21/2<OPT11、无拥挤族k≤3端点及t>2围堵族末位严格偏离；另标八源读回失败和有限审计边界。 |
 | [R-2fc独立机制四源交叉核验--审查](<../../../../archives/customer-attraction/state/审查/R-2fc独立机制四源交叉核验--审查.md>) | math-exposition | retain | 五客户负载桥反例与碰撞自由族的具体终局及独立有限端点解释清楚。 |
 | [R-373d固定响应锥唯一静态最优与残余覆盖--审查](<../../../../archives/customer-attraction/state/审查/R-373d固定响应锥唯一静态最优与残余覆盖--审查.md>) | math-exposition | retain | 六标签固定响应锥的有理权重与对偶证明覆盖差87/2200为该编码LP最优，同时说明它不构成完整SPE。 |
-| [R-373d完整策略锥根菜单有限浮点屏幕--审查](<../../../../archives/customer-attraction/state/审查/R-373d完整策略锥根菜单有限浮点屏幕--审查.md>) | evidence-only | attach | 完整策略锥根菜单的59局随机浮点筛查与负gap -0.0625，未提出精确见证或普遍结论。 |
+| [R-373d完整策略锥根菜单有限浮点屏幕--审查](<../actions/67afa77c7874bec25126.json>) | evidence-only | attach | 完整策略锥根菜单的59局随机浮点筛查与负gap -0.0625，未提出精确见证或普遍结论。 |
 | [R-373d独有残余族固定菜单与全历史审计--审查](<../../../../archives/customer-attraction/state/审查/R-373d独有残余族固定菜单与全历史审计--审查.md>) | mixed/needs-context | extract | 显式(d,g)十二掩码客户族经全历史42个差验证，严格否定最优组合全遗漏可由W支付；有限LP/MILP搜索另附证据。 |
 | [R-3b6b分数基准与Markov降维来源增量审查--审查](<../../../../archives/customer-attraction/state/审查/R-3b6b分数基准与Markov降维来源增量审查--审查.md>) | mixed/needs-context | extract | 分数benchmark和Markov计数提取的有限小例证书定义数学接口，随机SLSQP与扫描结果需附证据而非升格全称。 |
 | [R-3d253-EO六主题模块局部合同审计--审查](<../../../../archives/customer-attraction/state/审查/R-3d253-EO六主题模块局部合同审计--审查.md>) | math-exposition | retain | 六主题两组三标签有理客户模块的pair回复与三步根收益29/3、第二末位67/6等局部恒等及36×36偏离检查；明确不取代34客户全历史SPE证明。 |
 | [R-3d253OCC-CAP表示锥与模块容量诊断--审查](<../../../../archives/customer-attraction/state/审查/R-3d253OCC-CAP表示锥与模块容量诊断--审查.md>) | math-exposition | retain | OCC-CAP为静态PNE可证的half充分候选，SPE付款未证；三个有限锥攻击及错误比较支持伪反例界。 |
 | [R-3d253一般半覆盖候选与静态组件停界审查--审查](<../../../../archives/customer-attraction/state/审查/R-3d253一般半覆盖候选与静态组件停界审查--审查.md>) | math-exposition | retain | 一般半覆盖候选留下净缺口D−G−W，静态组件给E_p f_B≥2411/246−587(t−2)/246并注明跨枝付款未解。 |
-| [R-3d253固定策略背景攻击探针--审查](<../../../../archives/customer-attraction/state/审查/R-3d253固定策略背景攻击探针--审查.md>) | evidence-only | attach | 固定43节点策略的258 IC行与63类型浮点LP只报告100/200组未见负候选；无符号安全结论或可独立恢复客户证书。 |
+| [R-3d253固定策略背景攻击探针--审查](<../actions/d4d8960000d0c368858a.json>) | evidence-only | attach | 固定43节点策略的258 IC行与63类型浮点LP只报告100/200组未见负候选；无符号安全结论或可独立恢复客户证书。 |
 | [R-3d253固定背景聚合安全攻击探针--审查](<../../../../archives/customer-attraction/state/审查/R-3d253固定背景聚合安全攻击探针--审查.md>) | mixed/needs-context | extract | 固定背景聚合安全候选gap=total−r·value及全历史门槛递推有数学接口，20次浮点重放仅为探针证据。 |
 | [R-3d253固定背景静态安全余项--审查](<../../../../archives/customer-attraction/state/审查/R-3d253固定背景静态安全余项--审查.md>) | math-exposition | retain | 固定背景静态安全余项ρ(b,d,L)非负，推出F_r+R≤(r+s)v_{s+1}并处理端点。 |
 | [R-3d6f分数负载弱桥与证人DAG独立审查--审查](<../../../../archives/customer-attraction/state/审查/R-3d6f分数负载弱桥与证人DAG独立审查--审查.md>) | math-exposition | retain | 四主题m²+1客户完整SPE族实际缩放负载弱桥m≥4失败而half余量正；m4的85历史精确值及固定根证人DAG与完整SPE展开等价量词另核。 |
@@ -493,41 +493,41 @@
 | [R105直接覆盖前缀可达性与中继比例障碍--审查](<../../../../archives/customer-attraction/state/审查/R105直接覆盖前缀可达性与中继比例障碍--审查.md>) | math-exposition | retain | 直接覆盖incidence预算RB不能保证实际SPE前缀可达；61客户实例实际前缀9<39/4。 |
 | [R105研究桌面元资料与方法边界--审查](<../../../../archives/customer-attraction/state/审查/R105研究桌面元资料与方法边界--审查.md>) | math-exposition | retain | 定义级证明删除背景regret包络ΣR≤ΣK−E_d及单删共同退款D/2，同时辨静态排列失败与真实Mfull银行反例的范围。 |
 | [R105跨枝候选与实际根有限探针接续审查--审查](<../../../../archives/customer-attraction/state/审查/R105跨枝候选与实际根有限探针接续审查--审查.md>) | numeric-witness | distill | 四主题零修复候选旧福利105、删后104有明确局部数学边界；实际根50000次无命中仅是有限探针。 |
-| [R105零regret修复JSON完整枚举接续审查--审查](<../../../../archives/customer-attraction/state/审查/R105零regret修复JSON完整枚举接续审查--审查.md>) | evidence-only | attach | 18客户固定背景JSON完整枚举旧唯一SPE W17、新唯一W16、实际regret零，是上一Markdown障碍的机器证书增量。 |
-| [R105零regret修复脚本三源接续审查--审查](<../../../../archives/customer-attraction/state/审查/R105零regret修复脚本三源接续审查--审查.md>) | evidence-only | attach | 三份脚本分别执行固定见证枚举、有限随机搜索和MILP缩小，提供零regret修复计算证据而无独立算法合同。 |
+| [R105零regret修复JSON完整枚举接续审查--审查](<../actions/02d624e53282d4cbd8c7.json>) | evidence-only | attach | 18客户固定背景JSON完整枚举旧唯一SPE W17、新唯一W16、实际regret零，是上一Markdown障碍的机器证书增量。 |
+| [R105零regret修复脚本三源接续审查--审查](<../actions/55d62de6f744ddc24903.json>) | evidence-only | attach | 三份脚本分别执行固定见证枚举、有限随机搜索和MILP缩小，提供零regret修复计算证据而无独立算法合同。 |
 | [R105零regret切换的可信控制否定审查--审查](<../../../../archives/customer-attraction/state/审查/R105零regret切换的可信控制否定审查--审查.md>) | math-exposition | retain | F、P、H、Q不交块族在虚拟删除路径regret零，但原控制器有严格偏离无法成为SPE，否定可信控制。 |
 | [R12动态信用查询分支容量与覆盖付款义务--审查](<../../../../archives/customer-attraction/state/审查/R12动态信用查询分支容量与覆盖付款义务--审查.md>) | math-exposition | retain | 查询分支容量分式恒等式、非SPE一步标量障碍和覆盖信用递推义务均有模型及范围。 |
 | [R171有符号delta余项与tau支付独立复核--审查](<../../../../archives/customer-attraction/state/审查/R171有符号delta余项与tau支付独立复核--审查.md>) | math-exposition | retain | 有符号delta标量余项在q,e∈[0,1]和eta≥0的端点界、S/Z归一化与跨玩家充分付款式；共同z存在性未证。 |
 | [R171独立接续工作区与稀疏租金弱CCE边界--审查](<../../../../archives/customer-attraction/state/审查/R171独立接续工作区与稀疏租金弱CCE边界--审查.md>) | math-exposition | retain | 独立稀疏槽SPE租金、弱CCE有限校准及signed-δ付款重构各自界定量词，保留调和租金发散与时钟项。 |
 | [R18下一反例搜索入口与边界--审查](<../../../../archives/customer-attraction/state/审查/R18下一反例搜索入口与边界--审查.md>) | math-exposition | retain | C1/C2逐人及聚合候选的逻辑关系、七客户C1反例和倒二人局部二倍机制已具体说明。 |
 | [R18个体面行走n3p6最佳证书--审查](<../../../../archives/customer-attraction/state/审查/R18个体面行走n3p6最佳证书--审查.md>) | numeric-witness | distill | 三人六主题客户型{0}×3、{1,4}、{2,3,5}的单例保存点给u=1、OPT=5、W=4，恰达个体桥阈值。 |
-| [R18个体面行走n3p6运行记录--审查](<../../../../archives/customer-attraction/state/审查/R18个体面行走n3p6运行记录--审查.md>) | evidence-only | attach | 2901条随机锥行走记录的统计、seed与best=5回归；精确见证另在best文件，本文无独立命题。 |
+| [R18个体面行走n3p6运行记录--审查](<../actions/b11ece3ab5610fe96266.json>) | evidence-only | attach | 2901条随机锥行走记录的统计、seed与best=5回归；精确见证另在best文件，本文无独立命题。 |
 | [R18个体面行走算法--审查](<../../../../archives/customer-attraction/state/审查/R18个体面行走算法--审查.md>) | math-exposition | retain | 描述面行走的输入策略锥、浮点LP、整数恢复和完整有序历史核验输出合同及有限等号实例。 |
-| [R18克隆5x5最佳证书--审查](<../../../../archives/customer-attraction/state/审查/R18克隆5x5最佳证书--审查.md>) | evidence-only | attach | 5×5克隆浮点最佳比例证书仅列扫描数值与文件指针，没有可独立判读的精确实例结构。 |
-| [R18克隆7x5最佳证书--审查](<../../../../archives/customer-attraction/state/审查/R18克隆7x5最佳证书--审查.md>) | evidence-only | attach | 只载浮点scout第6714次保存点、127维权重及0.9921/1.0497比率，尚无精确客户、完整策略或数学断言。 |
+| [R18克隆5x5最佳证书--审查](<../actions/60248eb778fe9e18918b.json>) | evidence-only | attach | 5×5克隆浮点最佳比例证书仅列扫描数值与文件指针，没有可独立判读的精确实例结构。 |
+| [R18克隆7x5最佳证书--审查](<../actions/124c47910f7aac9447c8.json>) | evidence-only | attach | 只载浮点scout第6714次保存点、127维权重及0.9921/1.0497比率，尚无精确客户、完整策略或数学断言。 |
 | [R18平方根到达动态归纳搜索--审查](<../../../../archives/customer-attraction/state/审查/R18平方根到达动态归纳搜索--审查.md>) | math-exposition | retain | 给五人三主题客户重数、静态利润机会差63/10及平方根收费表达式，明确局部收费候选失败域。 |
 | [R18租金修正搜索与动态边界--审查](<../../../../archives/customer-attraction/state/审查/R18租金修正搜索与动态边界--审查.md>) | math-exposition | retain | 五人三主题组合未来份额F的单步机会差25/6与可接受收益2形成25/12比值，解释静态松弛不能作真分支付款。 |
 | [R18租金修正搜索正确来源--审查](<../../../../archives/customer-attraction/state/审查/R18租金修正搜索正确来源--审查.md>) | math-exposition | retain | 定义前缀静态F与平方根修正H的候选势，一步差FH(b)−FH(child)−2u在五人特定实例正7.1667，限定阈值续局语义。 |
 | [R18缺口锥LP与静态机制--审查](<../../../../archives/customer-attraction/state/审查/R18缺口锥LP与静态机制--审查.md>) | math-exposition | retain | 固定完整策略客户质量锥Gw≥0与目标D_{J,a}=覆盖−根福利−n倍个体收益的LP定义、恢复及主题0漏枚举边界。 |
-| [R18聚合安全最优预算搜索--审查](<../../../../archives/customer-attraction/state/审查/R18聚合安全最优预算搜索--审查.md>) | evidence-only | attach | 固定三人六题策略的浮点G锥与静态minimax LP只重放30样本得退化零预算，没有独立一般数学结论或精确负见证。 |
+| [R18聚合安全最优预算搜索--审查](<../actions/cdcffe1fb16d9ade9e7a.json>) | evidence-only | attach | 固定三人六题策略的浮点G锥与静态minimax LP只重放30样本得退化零预算，没有独立一般数学结论或精确负见证。 |
 | [R18静态下包络文献机制与审计--审查](<../../../../archives/customer-attraction/state/审查/R18静态下包络文献机制与审计--审查.md>) | math-exposition | retain | 25客户三人四题完整SPE福利21，而该例六个静态PNE全福利25，精确否定顺序SPE由静态PNE福利逐例下包络。 |
 | [R216可信攻击与森林前缀候选的证据边界增量--审查](<../../../../archives/customer-attraction/state/审查/R216可信攻击与森林前缀候选的证据边界增量--审查.md>) | math-exposition | retain | 真后继不触根遗漏客户时OPT≤(2−1/m)W且不交主题族取等；泄漏并集B给额外(1−1/m)\|B\|预算，森林阈值仍属候选。 |
-| [R24e静态安全值随机搜索入口--审查](<../../../../archives/customer-attraction/state/审查/R24e静态安全值随机搜索入口--审查.md>) | evidence-only | attach | 随机k3/4、m3/4静态安全LP搜索器无保存输出且依赖包缺失；只定义可能寻找minp<v的有限试验入口。 |
+| [R24e静态安全值随机搜索入口--审查](<../actions/110b891896f3084c0b48.json>) | evidence-only | attach | 随机k3/4、m3/4静态安全LP搜索器无保存输出且依赖包缺失；只定义可能寻找minp<v的有限试验入口。 |
 | [R24产品表示与相对背景策略锥有限审计--审查](<../../../../archives/customer-attraction/state/审查/R24产品表示与相对背景策略锥有限审计--审查.md>) | math-exposition | retain | 两个二值分量的81个边际数组和6个coupling有理核验给产品B_prod(v)=2B(v/2)在33价点的有限等值；两人产品SPE有W5、OPT6，另脚本仅提出相对背景锥搜索未生成结果。 |
 | [R275全子模探针与全树随机根有限回放--审查](<../../../../archives/customer-attraction/state/审查/R275全子模探针与全树随机根有限回放--审查.md>) | mixed/needs-context | extract | 五人七主题共同次模矩锥随机根72轮及截断探针12样本为抽象矩有限候选；其客户正性实现缺口需和数值证据分开。 |
 | [R275可信搜索对称DAG与共同次模投影增量--审查](<../../../../archives/customer-attraction/state/审查/R275可信搜索对称DAG与共同次模投影增量--审查.md>) | mixed/needs-context | extract | 对称DAG有限完整SPE证书、客户投影不可达与次模Shapley必要点属于不同数学模型，需拆出可达性障碍及附证据。 |
-| [R275命名静态regret最佳候选--审查](<../../../../archives/customer-attraction/state/审查/R275命名静态regret最佳候选--审查.md>) | evidence-only | attach | 四主题四人命名静态regret保存85历史浮点策略、15维权重和正slack 1/17，只是固定锥搜索保存点。 |
-| [R275命名静态共同最佳--审查](<../../../../archives/customer-attraction/state/审查/R275命名静态共同最佳--审查.md>) | evidence-only | attach | 固定策略锥的静态共同收费LP保存正slack约0.1861及85历史动作，没有精确客户实例或一般数学主张。 |
+| [R275命名静态regret最佳候选--审查](<../actions/55cc3fbd5606079ed802.json>) | evidence-only | attach | 四主题四人命名静态regret保存85历史浮点策略、15维权重和正slack 1/17，只是固定锥搜索保存点。 |
+| [R275命名静态共同最佳--审查](<../actions/5d1db8e595d5ff5cf708.json>) | evidence-only | attach | 固定策略锥的静态共同收费LP保存正slack约0.1861及85历史动作，没有精确客户实例或一般数学主张。 |
 | [R275命名静态共同脚本--审查](<../../../../archives/customer-attraction/state/审查/R275命名静态共同脚本--审查.md>) | math-exposition | retain | 固定全历史策略的激励锥和共同静态目标LP输入输出均说明，并限定浮点扫描证据。 |
 | [R275填充残差DAG-m6记录--审查](<../../../../archives/customer-attraction/state/审查/R275填充残差DAG-m6记录--审查.md>) | numeric-witness | distill | 九主题六供应商十类有限DAG给W25、OPT26及桥F30>最小u4，声称反驳共同查询regret桥但结构机制未展开。 |
 | [R275填充残差DAG脚本--审查](<../../../../archives/customer-attraction/state/审查/R275填充残差DAG脚本--审查.md>) | math-exposition | retain | 给padding客户实例、目标路径、每偏离动作的DAG选择规则与全节点阈值验证合同。 |
-| [R275安全全局策略迭代脚本--审查](<../../../../archives/customer-attraction/state/审查/R275安全全局策略迭代脚本--审查.md>) | evidence-only | attach | 随机浮点策略迭代的gap日志与短重放，没有独立数学结论或精确保证。 |
-| [R275安全策略迭代n5p7个体--审查](<../../../../archives/customer-attraction/state/审查/R275安全策略迭代n5p7个体--审查.md>) | evidence-only | attach | n5p7个体安全迭代JSON存计数策略、七个正权重和负gap，仅是有限候选且无逐历史Fraction证书。 |
-| [R275安全策略迭代n5p7共同最小--审查](<../../../../archives/customer-attraction/state/审查/R275安全策略迭代n5p7共同最小--审查.md>) | evidence-only | attach | 五人七主题浮点策略锥重启12步1的gap−0.0429和24个非零权重是未整数化的搜索保存点，无精确数学断言。 |
-| [R275安全策略迭代n7p8个体--审查](<../../../../archives/customer-attraction/state/审查/R275安全策略迭代n7p8个体--审查.md>) | evidence-only | attach | n7p8安全策略迭代只记录浮点负gap个体及筛查参数，无精确数学见证。 |
+| [R275安全全局策略迭代脚本--审查](<../actions/67c44146b24ea57816f7.json>) | evidence-only | attach | 随机浮点策略迭代的gap日志与短重放，没有独立数学结论或精确保证。 |
+| [R275安全策略迭代n5p7个体--审查](<../actions/a83386c91b509b6e9c78.json>) | evidence-only | attach | n5p7个体安全迭代JSON存计数策略、七个正权重和负gap，仅是有限候选且无逐历史Fraction证书。 |
+| [R275安全策略迭代n5p7共同最小--审查](<../actions/dbbb2af3a546640cba71.json>) | evidence-only | attach | 五人七主题浮点策略锥重启12步1的gap−0.0429和24个非零权重是未整数化的搜索保存点，无精确数学断言。 |
+| [R275安全策略迭代n7p8个体--审查](<../actions/53230fb9bb035bb27df9.json>) | evidence-only | attach | n7p8安全策略迭代只记录浮点负gap个体及筛查参数，无精确数学见证。 |
 | [R275安全精炼分数锥的七源有限回归--审查](<../../../../archives/customer-attraction/state/审查/R275安全精炼分数锥的七源有限回归--审查.md>) | math-exposition | retain | 七份固定完整策略证书上由客户掩码收益构gamma IC锥并优化共同/个体分数查询坐标；浮点separator均空且两模式坐标长度不同，结论只属固定锥有限LP。 |
-| [R275安全随机精炼n5p7--审查](<../../../../archives/customer-attraction/state/审查/R275安全随机精炼n5p7--审查.md>) | evidence-only | attach | n5p7随机精炼的11次浮点搜索记录负归一gap约−0.2，仅重放固定种子数据。 |
-| [R275安全随机精炼n5p7个体--审查](<../../../../archives/customer-attraction/state/审查/R275安全随机精炼n5p7个体--审查.md>) | evidence-only | attach | n5p7安全随机精炼只记录浮点负归一化gap个体及筛查过程，无精确数学见证。 |
+| [R275安全随机精炼n5p7--审查](<../actions/8eee936a3e95042e6476.json>) | evidence-only | attach | n5p7随机精炼的11次浮点搜索记录负归一gap约−0.2，仅重放固定种子数据。 |
+| [R275安全随机精炼n5p7个体--审查](<../actions/7d6fbfddf1801f899420.json>) | evidence-only | attach | n5p7安全随机精炼只记录浮点负归一化gap个体及筛查过程，无精确数学见证。 |
 | [R275完整历史矩锥最近邻与全子模两次回归--审查](<../../../../archives/customer-attraction/state/审查/R275完整历史矩锥最近邻与全子模两次回归--审查.md>) | math-exposition | retain | 五人七主题抽象Shapley矩空间的完整有序历史策略锥，48轮最近邻及72轮全子模回归分别见13/15个锥和比率2、9/5；缺客户正性实现。 |
 | [R275直接全局multigadget-m5--审查](<../../../../archives/customer-attraction/state/审查/R275直接全局multigadget-m5--审查.md>) | numeric-witness | distill | 14主题、12客户型共26单位的完整五人有序策略表经41371历史与537823偏离核验，实际收益4,4,4,4,5、W21、OPT22；本页只给客户型概要，完整构造在外部证书。 |
 | [R275背景交换投影与回复上界二十源增量--审查](<../../../../archives/customer-attraction/state/审查/R275背景交换投影与回复上界二十源增量--审查.md>) | math-exposition | retain | 十条投影税行经m−3多项式系数非负，五人necessary-row投影可超2W但缺完整SPE；精确区分有限投影与客户游戏。 |
@@ -537,7 +537,7 @@
 | [R29三窗菜单与54客户观察者PNE辅助桥--审查](<../../../../archives/customer-attraction/state/审查/R29三窗菜单与54客户观察者PNE辅助桥--审查.md>) | math-exposition | retain | 三窗环的末位远窗偏离与54客户尾局静态PNE替换桥反例各有具体收益机制。 |
 | [R373固定两人菜单残差探针--审查](<../../../../archives/customer-attraction/state/审查/R373固定两人菜单残差探针--审查.md>) | numeric-witness | distill | 固定回复ρ=(1,2,1,2,0)的30条真实行存在四客户有理等号点C=R=1，整数化W=OPT=2；只是一个菜单返回点。 |
 | [R4捕获占用与源边际运输式--审查](<../../../../archives/customer-attraction/state/审查/R4捕获占用与源边际运输式--审查.md>) | math-exposition | retain | 同一Hall取消的源余额SRC-MARGIN/POOL和等份有序链访问递推v_k≤√k均有证明，明确incoming跨主题仍未共同付款。 |
-| [R4最大单例阈值测试器--审查](<../../../../archives/customer-attraction/state/审查/R4最大单例阈值测试器--审查.md>) | evidence-only | attach | 最大单例阈值M(b+e_a)≤M(b)测试器回放36客户输入输出10→12；精确反例另有正文，本页提供测试接口和运行记录。 |
+| [R4最大单例阈值测试器--审查](<../actions/3555df3d0f12cb59eb2e.json>) | evidence-only | attach | 最大单例阈值M(b+e_a)≤M(b)测试器回放36客户输入输出10→12；精确反例另有正文，本页提供测试接口和运行记录。 |
 | [R4表示层路线与接口--审查](<../../../../archives/customer-attraction/state/审查/R4表示层路线与接口--审查.md>) | math-exposition | retain | 完整SPE终局集合M(q,r)门槛及有序叶可实现条件、相邻换位BA条件与收益排序反例；36客户三人最大单人势插入10<12和52客户实际前缀背景预算失败均另清楚分节。 |
 | [R4运输路线接口与未解条件--审查](<../../../../archives/customer-attraction/state/审查/R4运输路线接口与未解条件--审查.md>) | math-exposition | retain | 真实前缀查询流守恒、单整行IC系数、源余池与抽象HIT/VISIT界有定义；52客户实际前缀明确反驳一般BG预算。 |
 | [R51分数根菜单审计器--审查](<../../../../archives/customer-attraction/state/审查/R51分数根菜单审计器--审查.md>) | math-exposition | retain | 36客户完整策略的全部历史比较和分数背景两层凸对称最优值有明确定义及解析边界。 |
@@ -548,24 +548,24 @@
 | [R51重叠敏感末尾审计器--审查](<../../../../archives/customer-attraction/state/审查/R51重叠敏感末尾审计器--审查.md>) | math-exposition | retain | 两人真实回复利润税界导出根8OPT₂≤10W+2I，双组件笛卡尔端点给全部有理I/W的锐性结构；512算术点只附证。 |
 | [R915一般人数既有拷贝复核--审查](<../../../../archives/customer-attraction/state/审查/R915一般人数既有拷贝复核--审查.md>) | math-exposition | retain | 固定首题0的六人45客户例中静态复制获利1/6而真实偏离因四名客户分母变化损失2/3，真增益−1/2；否定静态复制辅助归约。 |
 | [R915入口与问题边界--审查](<../../../../archives/customer-attraction/state/审查/R915入口与问题边界--审查.md>) | math-exposition | retain | 六人45客户固定见证说明静态复制增益1/6在真实离轨后继转为亏1/2，附完整历史范围。 |
-| [R915推广末回复脚本--审查](<../../../../archives/customer-attraction/state/审查/R915推广末回复脚本--审查.md>) | evidence-only | attach | 六人固定12支持点枚举196个推广末回复target/query情形，唯一微小正浮点分离尚无精确恢复。 |
+| [R915推广末回复脚本--审查](<../actions/43adafebafb3ae6048da.json>) | evidence-only | attach | 六人固定12支持点枚举196个推广末回复target/query情形，唯一微小正浮点分离尚无精确恢复。 |
 | [R915既有拷贝精确记录--审查](<../../../../archives/customer-attraction/state/审查/R915既有拷贝精确记录--审查.md>) | math-exposition | retain | 45客户六人完整SPE有限构造展示静态复制获益1/6而真实后继重置使增益−1/2，否定该辅助归约。 |
 | [R915既有拷贝障碍--审查](<../../../../archives/customer-attraction/state/审查/R915既有拷贝障碍--审查.md>) | math-exposition | retain | 六人45客户固定首题后唯一终局计数仍有第四位静态复制增益1/6、真实重置亏1/2，反驳最坏后继静态稳定命题。 |
-| [R915既有拷贝验证脚本--审查](<../../../../archives/customer-attraction/state/审查/R915既有拷贝验证脚本--审查.md>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；固定45客户验证器给有序历史递归输入、双独立IC核验及静态复制和真实回复的精确输出。 本页无独立可复用数学保证。 |
+| [R915既有拷贝验证脚本--审查](<../actions/4f324413c18798cac985.json>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；固定45客户验证器给有序历史递归输入、双独立IC核验及静态复制和真实回复的精确输出。 本页无独立可复用数学保证。 |
 | [Ra0固定支持背景行脚本--审查](<../../../../archives/customer-attraction/state/审查/Ra0固定支持背景行脚本--审查.md>) | numeric-witness | distill | 437旧行与冻结64客户原子支持增加1430背景行的有限LP，Fraction恢复目标有理值约2.0392且排除旧点S3:C6:D7；未给全部行系数或可实现SPE。 |
 | [Ra0固定支持背景行记录--审查](<../../../../archives/customer-attraction/state/审查/Ra0固定支持背景行记录--审查.md>) | numeric-witness | distill | 同一固定64原子、437+1430行系统报告有理primal约2.0392及旧候选不满足S3:C6:D7；字段无全部支持/行生成规则，且显式无SPE见证与全域对偶。 |
-| [Ra0背景近饱和审计--审查](<../../../../archives/customer-attraction/state/审查/Ra0背景近饱和审计--审查.md>) | evidence-only | attach | 背景近饱和BNS候选的九份指定SPE证书Fraction审计最小slack皆零，v1与客户型M_C修正轨迹仍待一般证明。 |
-| [Ra0背景近饱和审计v2--审查](<../../../../archives/customer-attraction/state/审查/Ra0背景近饱和审计v2--审查.md>) | evidence-only | attach | v2汇总JSON只列八个固定完整证书的BNS零最小松弛、历史和比较次数，无生成器或普遍数学主张。 |
-| [Ra0背景近饱和审计v2脚本--审查](<../../../../archives/customer-attraction/state/审查/Ra0背景近饱和审计v2脚本--审查.md>) | evidence-only | attach | 指定有限完整 SPE 证书上逐节点 Fraction 核 BNS/AP 中间式及饱和支持；页面仅记录脚本检查、缺件和运行范围，无独立数学结论。 |
-| [Ra0背景近饱和审计脚本--审查](<../../../../archives/customer-attraction/state/审查/Ra0背景近饱和审计脚本--审查.md>) | evidence-only | attach | 脚本只在七个内置完整SPE证书逐历史查候选BNS/AP，外部nonpne_best当时缺失中断；没有普遍结论。 |
-| [customer-attraction治理入口与账本边界--审查](<../../../../archives/customer-attraction/state/审查/customer-attraction治理入口与账本边界--审查.md>) | non-math | delete | 全文仅角色、清理/成果账本与两份机器库存的来源导航；没有可独立检查的客户模型、策略或数学推导。 |
+| [Ra0背景近饱和审计--审查](<../actions/c917cf9118a8b576171c.json>) | evidence-only | attach | 背景近饱和BNS候选的九份指定SPE证书Fraction审计最小slack皆零，v1与客户型M_C修正轨迹仍待一般证明。 |
+| [Ra0背景近饱和审计v2--审查](<../actions/6163ea799dd06724b276.json>) | evidence-only | attach | v2汇总JSON只列八个固定完整证书的BNS零最小松弛、历史和比较次数，无生成器或普遍数学主张。 |
+| [Ra0背景近饱和审计v2脚本--审查](<../actions/020946b808cdb23f0ff1.json>) | evidence-only | attach | 指定有限完整 SPE 证书上逐节点 Fraction 核 BNS/AP 中间式及饱和支持；页面仅记录脚本检查、缺件和运行范围，无独立数学结论。 |
+| [Ra0背景近饱和审计脚本--审查](<../actions/79bcfe3ae8159423d1dc.json>) | evidence-only | attach | 脚本只在七个内置完整SPE证书逐历史查候选BNS/AP，外部nonpne_best当时缺失中断；没有普遍结论。 |
+| [customer-attraction治理入口与账本边界--审查](<../actions/cb1f580f585cf74e8f73.json>) | non-math | delete | 全文仅角色、清理/成果账本与两份机器库存的来源导航；没有可独立检查的客户模型、策略或数学推导。 |
 | [customer-attraction直接覆盖分支README、义务分层与前缀障碍路由--审查](<../../../../archives/customer-attraction/state/审查/customer-attraction直接覆盖分支README、义务分层与前缀障碍路由--审查.md>) | math-exposition | retain | 明确弱匹配、弱平均、强平均的不同支付义务，首次偏离子树最小续局压缩，实际61客户前缀9<39/4阻断Lipschitz桥。 |
 | [signed-harmonic工作区路由与OPEN边界--审查](<../../../../archives/customer-attraction/state/审查/signed-harmonic工作区路由与OPEN边界--审查.md>) | math-fragment | restore | 仅以短路线说明提及最优交换矩和支持归约J≤2W，却未给支持归约模型或推导入口。 |
-| [transport_round候选政策与特殊种子障碍接续审查--审查](<../../../../archives/customer-attraction/state/审查/transport_round候选政策与特殊种子障碍接续审查--审查.md>) | evidence-only | attach | 九棵完整历史形式GroupPolicy与Gamma/特殊种子负搜索JSON不含客户收益IC或独立数学结论。 |
+| [transport_round候选政策与特殊种子障碍接续审查--审查](<../actions/77cee70a037397a07c90.json>) | evidence-only | attach | 九棵完整历史形式GroupPolicy与Gamma/特殊种子负搜索JSON不含客户收益IC或独立数学结论。 |
 | [transport尾部two-three-tail脚本来源与精确重放--审查](<../../../../archives/customer-attraction/state/审查/transport尾部two-three-tail脚本来源与精确重放--审查.md>) | math-exposition | retain | 25种遗漏对客户各重3，五人路径(3,4,5,6,7)第四位改0后末位最佳回复1或2，均使其严格增益1/20，故路径非SPE。 |
 | [一般产品金融根稿的版本先验与程序证据边界--审查](<../../../../archives/customer-attraction/state/审查/一般产品金融根稿的版本先验与程序证据边界--审查.md>) | math-exposition | retain | 产品根稿区分固定坐标策略可加、可信L上界、两尾θ分解及环族组合桥障碍，并校正当前extra-one与Mfull反例范围。 |
 | [一般半覆盖根稿的审查时序与接续边界--审查](<../../../../archives/customer-attraction/state/审查/一般半覆盖根稿的审查时序与接续边界--审查.md>) | mixed/needs-context | extract | 根稿五源混合原审查时序与净遗漏、可信前缀价格等数学付款接口；抽出后者并保留状态出处。 |
-| [一般半覆盖研究方向复核--审查](<../../../../archives/customer-attraction/state/审查/一般半覆盖研究方向复核--审查.md>) | non-math | delete | 全文仅既有桥的OPEN/已否状态与研究接续索引，没有展示命题的输入、公式、证书或独有数学论证。 |
+| [一般半覆盖研究方向复核--审查](<../actions/ef69b77f5920a46ebbf6.json>) | non-math | delete | 全文仅既有桥的OPEN/已否状态与研究接续索引，没有展示命题的输入、公式、证书或独有数学论证。 |
 | [一般半覆盖问题接口与异构趋二下界跨模型审查--审查](<../../../../archives/customer-attraction/state/审查/一般半覆盖问题接口与异构趋二下界跨模型审查--审查.md>) | math-exposition | retain | CAG完整历史half的真实Γ锥证书待证接口与另一异构双设施六客户改善环α*(ε)→2并列，清楚区分模型量词。 |
 | [一般机制压力测试的历史界与付款合同--审查](<../../../../archives/customer-attraction/state/审查/一般机制压力测试的历史界与付款合同--审查.md>) | mixed/needs-context | extract | §§父审、五人压力测试及前缀编译给剪枝失败、6049/15625标量界、末层AMOUNT合同；后段另混历史沟通回执与管理意见。 |
 | [一般目录全局收费交接与索引二层真实节点--审查](<../../../../archives/customer-attraction/state/审查/一般目录全局收费交接与索引二层真实节点--审查.md>) | math-exposition | retain | 四人背景利润常数推任意n的Tail4弱界，真实偏离U候选明确三人M/N二层节点，五客户交换捷径反例。 |
@@ -662,7 +662,7 @@
 | [可信惩罚入口的逐人全菜单与遗漏私有化量词--审查](<../../../../archives/customer-attraction/state/审查/可信惩罚入口的逐人全菜单与遗漏私有化量词--审查.md>) | math-exposition | retain | 保当前槽的逐人全菜单C26已被笛卡尔银行完整SPE以六人根收益6/5、菜单下界17/12反驳，私有化存在量词仍开放。 |
 | [可信惩罚的共同目录闭包与影子租金账--审查](<../../../../archives/customer-attraction/state/审查/可信惩罚的共同目录闭包与影子租金账--审查.md>) | math-exposition | retain | Cartesian银行惩罚必要IC为a/(m−1)+b/2≥a；共享鞍点行动折扣与RENT-t把未付影子租金准确表示。 |
 | [可信水位窄障碍的完整末位分界与独立先验--审查](<../../../../archives/customer-attraction/state/审查/可信水位窄障碍的完整末位分界与独立先验--审查.md>) | math-exposition | retain | 53客户四人实际叶高尾保1缩X0质量ρ时，密度/查询迫2/11<ρ<1，七末位BR闭区间表固定Y1/X2，第三人严格偏离；三尾统一缩λ另有全c正修复。 |
-| [可信策略锥与双储备有限审计--审查](<../../../../archives/customer-attraction/state/审查/可信策略锥与双储备有限审计--审查.md>) | evidence-only | attach | 可信策略锥脚本从LP候选整数化再做有限完整历史证书核验，双储备输出是m7有限比值且未命中ratio>2。 |
+| [可信策略锥与双储备有限审计--审查](<../actions/cdd3a5773a70354fbfd7.json>) | evidence-only | attach | 可信策略锥脚本从LP候选整数化再做有限完整历史证书核验，双储备输出是m7有限比值且未命中ratio>2。 |
 | [可信续局试验与动态规划交叉核对--审查](<../../../../archives/customer-attraction/state/审查/可信续局试验与动态规划交叉核对--审查.md>) | mixed/needs-context | extract | 两份五人七主题完整子树菜单保真实SPE有限端点，一客户退化与八客户6/5点分开；40条DP PASS仅缺输入的证据。 |
 | [可信编译与Beta接续的内部审查和有限重放合同--审查](<../../../../archives/customer-attraction/state/审查/可信编译与Beta接续的内部审查和有限重放合同--审查.md>) | mixed/needs-context | extract | 可信编译与Beta页含有符号组件严格种子条件、Beta静态克隆表示与同叶债务；包装回执只复用原审程序。 |
 | [可信阈值与中间归属父方复核--审查](<../../../../archives/customer-attraction/state/审查/可信阈值与中间归属父方复核--审查.md>) | math-exposition | retain | 双向包含中继PAY条件a_i+c_j≥r、可信阈值v_r/L_r递推及示意四极大菜单−1/8边界，PRICE-HALF仍未证。 |
@@ -676,7 +676,7 @@
 | [四复制与末回复研究的原运行及种子身份--审查](<../../../../archives/customer-attraction/state/审查/四复制与末回复研究的原运行及种子身份--审查.md>) | math-exposition | retain | 四复制研究保三重前缀条件的数学支付范围，另区分种子BI及浮点复制模板的有限边界。 |
 | [固定价格取消与入流付款的内部核读--审查](<../../../../archives/customer-attraction/state/审查/固定价格取消与入流付款的内部核读--审查.md>) | math-exposition | retain | SOURCE-NET预取消δ必须进入残余Hall rank与NET行；非负角色价凸分离和分数owner范围区别于未付动态cut。 |
 | [固定有限游戏SPE菜单预算生成器--审查](<../../../../archives/customer-attraction/state/审查/固定有限游戏SPE菜单预算生成器--审查.md>) | algorithm-result | retain | 固定有限游戏菜单递归M(c)及首次偏离互不相交分支极值精确最大化ΣC_i−W，给四指定游戏负最大差及完整策略见证。 |
-| [固定策略锥二倍根支付有限核验--审查](<../../../../archives/customer-attraction/state/审查/固定策略锥二倍根支付有限核验--审查.md>) | evidence-only | attach | 198客户三人固定策略锥整数证书核验目标OPT−W−2u₁=−36，只是正向有限实例，无二倍根支付普遍主张。 |
+| [固定策略锥二倍根支付有限核验--审查](<../actions/56ce27d26a7b906353ef.json>) | evidence-only | attach | 198客户三人固定策略锥整数证书核验目标OPT−W−2u₁=−36，只是正向有限实例，无二倍根支付普遍主张。 |
 | [固定背景收益切片的后继独立秩审查--审查](<../../../../archives/customer-attraction/state/审查/固定背景收益切片的后继独立秩审查--审查.md>) | math-exposition | retain | 固定背景双主题席位矩阵有秩min(2M,2d+1)、显式有理核基、四槽独立；纳入背景收益另给聚合及全单位背景秩。 |
 | [固定输入同时轨道商的存在性与选择器边界--审查](<../../../../archives/customer-attraction/state/审查/固定输入同时轨道商的存在性与选择器边界--审查.md>) | math-exposition | retain | 完整历史终局集合递归R(k)与固定对称输入的同时(k,c)群轨道商给根q可实现性的双向证明；稳定子群动作不能单独规范化。 |
 | [固定过去与全行均值cap组件的内部复核--审查](<../../../../archives/customer-attraction/state/审查/固定过去与全行均值cap组件的内部复核--审查.md>) | math-exposition | retain | 固定实际过去负载L=P+F且P≥rb/m，静态折扣Qpast+Qfuture与均值cap对偶松弛G=ΣμI+ER，保未付Cov余额。 |
@@ -716,7 +716,7 @@
 | [旧客户信用与客户几何四原稿的版本核对--审查](<../../../../archives/customer-attraction/state/审查/旧客户信用与客户几何四原稿的版本核对--审查.md>) | math-exposition | retain | 四旧稿分别含旧客户完整H信用不可能性、支持外hub静态均值分离、同支持梯度环不足及第三主题七收益恒等式，且核原CG输入与现证书首层一致。 |
 | [早期3227输入与双审计增量--审查](<../../../../archives/customer-attraction/state/审查/早期3227输入与双审计增量--审查.md>) | math-exposition | retain | 3227客户完整策略的两条局部安全增量负值及全局正余额有模型、鞍点和逐历史比较。 |
 | [早期真实菜单负载缺陷引理独立审查--审查](<../../../../archives/customer-attraction/state/审查/早期真实菜单负载缺陷引理独立审查--审查.md>) | math-exposition | retain | 真实偏离菜单的epsilon/delta恒等式、矩形角点余项及卸载时epsilon上界3P_M/8均有条件与量词；一般支付仍开放。 |
-| [早期菜单负载缺陷与有限审计--审查](<../../../../archives/customer-attraction/state/审查/早期菜单负载缺陷与有限审计--审查.md>) | evidence-only | attach | 固定有限输入的 Fraction 回放核 ε/δ 恒等式、角点和条件符号，正文明确没有一般支付证明；应附到解析菜单负载结果证据。 |
+| [早期菜单负载缺陷与有限审计--审查](<../actions/aeb6ff9e04aa8f6b7d46.json>) | evidence-only | attach | 固定有限输入的 Fraction 回放核 ε/δ 恒等式、角点和条件符号，正文明确没有一般支付证明；应附到解析菜单负载结果证据。 |
 | [最优元组极大化的表示事实与原归约诊断勘误--审查](<../../../../archives/customer-attraction/state/审查/最优元组极大化的表示事实与原归约诊断勘误--审查.md>) | math-exposition | retain | 最优元组各坐标可扩到极大主题且并集不变；六客户六玩家完整 SPE 反例纠正单点主题必须为全局极大的归约。 |
 | [最优六查询从离轨全称到实际存在量词的演进--审查](<../../../../archives/customer-attraction/state/审查/最优六查询从离轨全称到实际存在量词的演进--审查.md>) | math-exposition | retain | 旧34客户离轨全称和新88客户实际路径存在量词的六查询去相关障碍分开论证。 |
 | [最优前缀付款与净遗漏诊断的证据身份--审查](<../../../../archives/customer-attraction/state/审查/最优前缀付款与净遗漏诊断的证据身份--审查.md>) | mixed/needs-context | extract | 最优前缀BILL、净遗漏NRAVG/NRMAX及十一客户机会诊断为不同付款合同，页内还混原文先验与运行出处。 |
@@ -788,7 +788,7 @@
 | [静态安全亏量与舍入的后继独立审查--审查](<../../../../archives/customer-attraction/state/审查/静态安全亏量与舍入的后继独立审查--审查.md>) | math-exposition | retain | 静态安全亏量分解、零亏量唯一客户负载与纯背景舍入θ−v≤Δ+½√(nvΔ)有完整证明，n1支持量词已修正。 |
 | [静态最优指派桥盲审的双求值与量词核对--审查](<../../../../archives/customer-attraction/state/审查/静态最优指派桥盲审的双求值与量词核对--审查.md>) | math-exposition | retain | 1953客户完整策略在全部最优支持/指派下静态冻结查询和至少1736>W1735，双求值和全历史IC清楚。 |
 | [非空主题额外槽强桥独立核验--审查](<../../../../archives/customer-attraction/state/审查/非空主题额外槽强桥独立核验--审查.md>) | math-exposition | retain | 非空填充家族D−G有二次多项式及K≥67阈值，准确否定强额外槽聚合。 |
-| [非空额外槽强聚合反例独立审计--审查](<../../../../archives/customer-attraction/state/审查/非空额外槽强聚合反例独立审计--审查.md>) | evidence-only | attach | 独立Fraction脚本复核34客户放大K67及新私有槽后57历史、342比较与ΣD−ΣG=−7/384；已有同实例数学正文。 |
+| [非空额外槽强聚合反例独立审计--审查](<../actions/7b29965e620b2f7acec8.json>) | evidence-only | attach | 独立Fraction脚本复核34客户放大K67及新私有槽后57历史、342比较与ΣD−ΣG=−7/384；已有同实例数学正文。 |
 | [顺序客户吸引来源记录与上传半覆盖界限审查--审查](<../../../../archives/customer-attraction/state/审查/顺序客户吸引来源记录与上传半覆盖界限审查--审查.md>) | math-exposition | retain | 上传原研究的末两人势保证给三人8/15解析界，四人巨型例只反逐人末位安全保底。 |
 | [顺序统计残差的表达式错位与逐索引合法性--审查](<../../../../archives/customer-attraction/state/审查/顺序统计残差的表达式错位与逐索引合法性--审查.md>) | math-exposition | retain | 顺序统计程序所算 R′=R−Σq/L 与宣称 R 不同，且逐索引 all-H 合法性不能由排序秩推出。 |
 | [预留菜单盲审三源实质复核--审查](<../../../../archives/customer-attraction/state/审查/预留菜单盲审三源实质复核--审查.md>) | math-exposition | retain | 53客户完整四人策略在正深度低于原静态v4，400节点、收益及有理鞍点都有解释。 |
@@ -1208,7 +1208,7 @@
 | [驻留标量锐菜单的完整策略边界--构造](<../../../../archives/customer-attraction/state/构造/驻留标量锐菜单的完整策略边界--构造.md>) | math-exposition | retain | 行列网格菜单精确达到驻留标量尾收益界，但 r≥5 末位严格偏离；r3 八客户和四客户两张完整策略给可实现锐点。 |
 | [ADM探针的完整终局菜单与两保存点精确证书--程序](<../../../../archives/customer-attraction/state/程序/ADM探针的完整终局菜单与两保存点精确证书--程序.md>) | math-exposition | retain | ADM 完整尾菜单定义、可信 cap 递推及两指定输入的有理原始对偶值 47/24、53/17；发现器为现成 LP 与有限点核验。 |
 | [Beta克隆作者局部发现器的精确候选与完整反证边界--程序](<../../../../archives/customer-attraction/state/程序/Beta克隆作者局部发现器的精确候选与完整反证边界--程序.md>) | math-exposition | retain | Beta克隆发现器的21类型局部LP、精确舍入复核和85客户报告给出25>24的固定fresh合同边界，未执行全树构造。 |
-| [Beta克隆有限探针的集合值合同与四份报告版本--程序](<../../../../archives/customer-attraction/state/程序/Beta克隆有限探针的集合值合同与四份报告版本--程序.md>) | evidence-only | attach | Beta克隆四份有限报告与集合值求解器调用仅给保存样本范围，数学递推已有独立正文。 |
+| [Beta克隆有限探针的集合值合同与四份报告版本--程序](<../actions/38d1601075085a57dd18.json>) | evidence-only | attach | Beta克隆四份有限报告与集合值求解器调用仅给保存样本范围，数学递推已有独立正文。 |
 | [Beta克隆独审的六十倍单位实现与真实双回复--程序](<../../../../archives/customer-attraction/state/程序/Beta克隆独审的六十倍单位实现与真实双回复--程序.md>) | math-exposition | retain | Beta 克隆 60 倍单位客户构造在指定真实子局有 fresh 两个末位 BR 对当前利润 24/27，重复行动真 BR 给25，精确区分固定策略提升合同。 |
 | [P填充独立重建驱动的计数终局与顺序边界--程序](<../../../../archives/customer-attraction/state/程序/P填充独立重建驱动的计数终局与顺序边界--程序.md>) | mixed/needs-context | extract | 给定计数q的W=5k+16、OPT=5k+22有条件代数；驱动未交付指定P^k AAB顺序或输出，抽条件式并关联作者构造。 |
 | [P池完整模式控制器的原生整数审计与两份报告--程序](<../../../../archives/customer-attraction/state/程序/P池完整模式控制器的原生整数审计与两份报告--程序.md>) | math-exposition | retain | 给P池模式自动机与永久BI出口的全历史IC论证，实际末菜单鞍点L=6导出弱LAST缺口k−11，固定k两点另有整数回归。 |
@@ -1216,20 +1216,20 @@
 | [R-f6两种完整策略生成与静态安全探索的原始合同--程序](<../../../../archives/customer-attraction/state/程序/R-f6两种完整策略生成与静态安全探索的原始合同--程序.md>) | mixed/needs-context | extract | 有序可信菜单递推和固定策略Γ锥是数学段落；三份搜索与两份全兴趣等号报告是数值包装，抽递推合同。 |
 | [R486终局价格锥与均匀三二对偶--程序](<../../../../archives/customer-attraction/state/程序/R486终局价格锥与均匀三二对偶--程序.md>) | math-exposition | retain | 三人四人辅助价格锥的两套乘子及τ=3/2的800行有理证书限定辅助行域，数学对象与范围可读。 |
 | [七个极大主题的六人整数终局集合搜索程序--程序](<../../../../archives/customer-attraction/state/程序/七个极大主题的六人整数终局集合搜索程序--程序.md>) | algorithm-result | retain | 七标签六人整数可实现终局集合递推 R 按完整有序子树拼合；旧整数搜索及159客户末点新全树证书有明确机器界。 |
-| [七份完整策略的二查询重置原审计合同--程序](<../../../../archives/customer-attraction/state/程序/七份完整策略的二查询重置原审计合同--程序.md>) | evidence-only | attach | 七份既存完整策略的RESET恒等式、K矩阵及局部余额的固定回归；一般恒等式另见其所引引理。 |
+| [七份完整策略的二查询重置原审计合同--程序](<../actions/603f6006795ceec3f653.json>) | evidence-only | attach | 七份既存完整策略的RESET恒等式、K矩阵及局部余额的固定回归；一般恒等式另见其所引引理。 |
 | [七极大六人位掩码份额松弛的乘子与分离探针--程序](<../../../../archives/customer-attraction/state/程序/七极大六人位掩码份额松弛的乘子与分离探针--程序.md>) | math-exposition | retain | 七极大六人程序把会员位误作2^t份额；完整76行、原LP与21列精确分离说明字面弱化，且该列末位真IC失败。 |
 | [七极大直接私有与同源重查的三份原始行锥--程序](<../../../../archives/customer-attraction/state/程序/七极大直接私有与同源重查的三份原始行锥--程序.md>) | math-exposition | retain | 七极大4064列上的M/L/T/D真实行、最小私有块排序及requery隐藏位投影均给数学前提；ell偏移只弱化Q，容量maxlab须是真最大。 |
-| [七极大真实前缀探针与稠密核验器的原始合同--程序](<../../../../archives/customer-attraction/state/程序/七极大真实前缀探针与稠密核验器的原始合同--程序.md>) | evidence-only | attach | 七极大前缀固定行与稠密checker的有限浮点列核，目标列错误已订正，无独立通用算法保证。 |
+| [七极大真实前缀探针与稠密核验器的原始合同--程序](<../actions/55ade6d4ff691b12f135.json>) | evidence-only | attach | 七极大前缀固定行与稠密checker的有限浮点列核，目标列错误已订正，无独立通用算法保证。 |
 | [七极大行族的非负关联项与私有域根偏离探针--程序](<../../../../archives/customer-attraction/state/程序/七极大行族的非负关联项与私有域根偏离探针--程序.md>) | math-exposition | retain | 证明原lp_all_R所添42个非负incidence项可全删而不改变可行余量集合，并辨明私有域七根真实偏离行及固定六并集目标的适用前提。 |
 | [七标签六人计数策略锥的覆盖缺口搜索--程序](<../../../../archives/customer-attraction/state/程序/七标签六人计数策略锥的覆盖缺口搜索--程序.md>) | math-exposition | retain | 七标签六人11客户点以计数策略展开全历史SPE，OPT11/W6说明锐性族的具体机制。 |
 | [七标签完整策略锥的逐支持优化与八轮保存合同--程序](<../../../../archives/customer-attraction/state/程序/七标签完整策略锥的逐支持优化与八轮保存合同--程序.md>) | math-exposition | retain | 固定完整策略的客户重数锥Gx≥0与逐支持优化给具体五人7题原件；恒选大题全有序历史IC证明W=5、OPT=9。 |
 | [三主题保险全锥与旧两主题回放的原核验合同--程序](<../../../../archives/customer-attraction/state/程序/三主题保险全锥与旧两主题回放的原核验合同--程序.md>) | math-exposition | retain | 三主题保险程序穷尽81²固定根后策略锥并以有理原始/对偶核验跨度C/4与三倍稀释端点。 |
-| [三主题六人门槛重数穷举与四个根探针--程序](<../../../../archives/customer-attraction/state/程序/三主题六人门槛重数穷举与四个根探针--程序.md>) | evidence-only | attach | 三标签六人2186重数穷举与四种根探针是有限扫描，全集求解递推已有规范对象。 |
-| [三人两组完整策略的残余聚合安全锥探针--程序](<../../../../archives/customer-attraction/state/程序/三人两组完整策略的残余聚合安全锥探针--程序.md>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；三人两组探针固定43节点策略及215真IC行，用21静态背景搜残余利润P<3v候选；浮点未给精确反例。 本页无独立可复用数学保证。 |
-| [三人六主题固定策略的逐人覆盖比线性探针--程序](<../../../../archives/customer-attraction/state/程序/三人六主题固定策略的逐人覆盖比线性探针--程序.md>) | evidence-only | attach | 固定三人六标签策略的123个浮点客户锥LP只是已假逐人门槛的有限探索，无有理界。 |
+| [三主题六人门槛重数穷举与四个根探针--程序](<../actions/42242a1d35f3f0234872.json>) | evidence-only | attach | 三标签六人2186重数穷举与四种根探针是有限扫描，全集求解递推已有规范对象。 |
+| [三人两组完整策略的残余聚合安全锥探针--程序](<../actions/01af2f3ee2595b622722.json>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；三人两组探针固定43节点策略及215真IC行，用21静态背景搜残余利润P<3v候选；浮点未给精确反例。 本页无独立可复用数学保证。 |
+| [三人六主题固定策略的逐人覆盖比线性探针--程序](<../actions/6b9a8d14181d46ed0228.json>) | evidence-only | attach | 固定三人六标签策略的123个浮点客户锥LP只是已假逐人门槛的有限探索，无有理界。 |
 | [三人完整策略末位锥的六十三均匀查询原诊断--程序](<../../../../archives/customer-attraction/state/程序/三人完整策略末位锥的六十三均匀查询原诊断--程序.md>) | mixed/needs-context | extract | LAST锥和均匀支持查询的精确定义有数学内容；六十三LP的负浮点gap仅是固定策略诊断，抽接口。 |
 | [三人笛卡尔根门槛凸化的数值筛选程序--程序](<../../../../archives/customer-attraction/state/程序/三人笛卡尔根门槛凸化的数值筛选程序--程序.md>) | math-exposition | retain | 三人笛卡尔根门槛程序计算末位BR、第二位可信菜单φ、根凸化g和静态v3，给产品极限接口。 |
-| [三人笛卡尔编译菜单的固定种子客户锥--程序](<../../../../archives/customer-attraction/state/程序/三人笛卡尔编译菜单的固定种子客户锥--程序.md>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；笛卡尔固定种子客户锥有21列108行及一次浮点求解，正目标与近零根裕量尚不足有限完整SPE编译。 本页无独立可复用数学保证。 |
+| [三人笛卡尔编译菜单的固定种子客户锥--程序](<../actions/8aeaa9bde4f87ee52122.json>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；笛卡尔固定种子客户锥有21列108行及一次浮点求解，正目标与近零根裕量尚不足有限完整SPE编译。 本页无独立可复用数学保证。 |
 | [三十五单位客户复制反例的双实现与完整树合同--程序](<../../../../archives/customer-attraction/state/程序/三十五单位客户复制反例的双实现与完整树合同--程序.md>) | math-exposition | retain | 两份Fraction实现构造35客户三人31节点策略、155项IC并核复制A的8低于原18一半。 |
 | [三十四客户联合势后悔与删位重置的原生回归--程序](<../../../../archives/customer-attraction/state/程序/三十四客户联合势后悔与删位重置的原生回归--程序.md>) | math-exposition | retain | iid查询交换与调和势插入给D−C=R+J及两后继Γ+有符号RESET恒等式；固定34客户根回归得R=−11/82。 |
 | [三重早期覆盖的原作者系数生成器--程序](<../../../../archives/customer-attraction/state/程序/三重早期覆盖的原作者系数生成器--程序.md>) | math-exposition | retain | P3条件下用真实末两人菜单G、早期H_i和末位L组成局部余项Q；2058型非负给任意完整SPE的条件half，且列出无P3有符号残差界。 |
@@ -1241,22 +1241,22 @@
 | [不交花瓣三诱饵的异质核策略锥搜索--程序](<../../../../archives/customer-attraction/state/程序/不交花瓣三诱饵的异质核策略锥搜索--程序.md>) | mixed/needs-context | extract | 五人三诱饵固定策略锥的59次浮点搜索归程序证据；九客户恒选大题的9/5完整SPE有解析不等式，应从保存点提取。 |
 | [不交花瓣与多主题保险的作者原审计--程序](<../../../../archives/customer-attraction/state/程序/不交花瓣与多主题保险的作者原审计--程序.md>) | math-exposition | retain | 说明集合值可信终局递推及不交花瓣跨度、三倍损耗与保险根修复的具体有限数学范围；作者脚本主要核固定 340/4 输入。 |
 | [不交资源笛卡尔目录的精确边缘计数递推--程序](<../../../../archives/customer-attraction/state/程序/不交资源笛卡尔目录的精确边缘计数递推--程序.md>) | algorithm-result | retain | 不交块Cartesian程序以边缘计数精确递推全部可实现SPE终局，另给最优覆盖公式与有限重放范围。 |
-| [两个自然编码的原Fraction审计与有限范围--程序](<../../../../archives/customer-attraction/state/程序/两个自然编码的原Fraction审计与有限范围--程序.md>) | evidence-only | attach | 两个自然编码的固定人数Fraction重放和报告核对只提供已知构造的有限证据。 |
-| [两人固定完整策略的有符号调和与查询锥诊断--程序](<../../../../archives/customer-attraction/state/程序/两人固定完整策略的有符号调和与查询锥诊断--程序.md>) | evidence-only | attach | 两人六题固定策略的有符号调和/query费用锥只有两浮点阴性，无独立数学证书。 |
+| [两个自然编码的原Fraction审计与有限范围--程序](<../actions/7ff389f56078497846a9.json>) | evidence-only | attach | 两个自然编码的固定人数Fraction重放和报告核对只提供已知构造的有限证据。 |
+| [两人固定完整策略的有符号调和与查询锥诊断--程序](<../actions/02c97d31ab2cbe51c1ed.json>) | evidence-only | attach | 两人六题固定策略的有符号调和/query费用锥只有两浮点阴性，无独立数学证书。 |
 | [两人支持外枢轴的单位展开与静态三人核验--程序](<../../../../archives/customer-attraction/state/程序/两人支持外枢轴的单位展开与静态三人核验--程序.md>) | math-exposition | retain | 两人支持外枢轴完整SPE与三人iid支持价之差及真实根回复修复有具体精确机制。 |
-| [两份完整策略的真正安全聚合重赋权探针--程序](<../../../../archives/customer-attraction/state/程序/两份完整策略的真正安全聚合重赋权探针--程序.md>) | evidence-only | attach | 两份给定完整策略上的maxmin重赋权交替LP近零输出无可复原权重或通用判定保证。 |
+| [两份完整策略的真正安全聚合重赋权探针--程序](<../actions/fc13641e6a2ae822616e.json>) | evidence-only | attach | 两份给定完整策略上的maxmin重赋权交替LP近零输出无可复原权重或通用判定保证。 |
 | [两储备复制的末位账与三份五人根缺陷原诊断--程序](<../../../../archives/customer-attraction/state/程序/两储备复制的末位账与三份五人根缺陷原诊断--程序.md>) | math-exposition | retain | 双H惩罚者和储备复制方案在末位D/H的严格BR违例已解析，三根浮点探针仅附证据。 |
 | [两支持单色尾虚拟税的浮点固定策略探针--程序](<../../../../archives/customer-attraction/state/程序/两支持单色尾虚拟税的浮点固定策略探针--程序.md>) | mixed/needs-context | extract | 对AB-IF虚拟查询差给显式客户类型式，但主要是固定k5随机采样、浮点逆向归纳和LP探针的未运行合同，未得精确客户反例。 |
 | [两早期主题包含倒二主题的系数审计器--程序](<../../../../archives/customer-attraction/state/程序/两早期主题包含倒二主题的系数审计器--程序.md>) | math-exposition | retain | 早期两主题含倒二A时的真实菜单IC与全局系数残差推出六人条件half，3360项核验附后。 |
 | [两标签双向空间探索与双实例独审的原程序合同--程序](<../../../../archives/customer-attraction/state/程序/两标签双向空间探索与双实例独审的原程序合同--程序.md>) | math-exposition | retain | 两标签三人SCC内部像秩1、全行锥lineality2的精确反向行恒等式及18客户对照有明确数学解释。 |
 | [两步安全链的全集筛选与稀疏记录版本边界--程序](<../../../../archives/customer-attraction/state/程序/两步安全链的全集筛选与稀疏记录版本边界--程序.md>) | math-exposition | retain | 以完整SPE终局全集递推给前两有序行动/终局资格式(3)的必要充分性，证明按无序pair保最小前两收益不丢PAIR筛查；另校准零和单块packet。 |
-| [两步安全链的固定策略锥搜索与两份浮点纪录--程序](<../../../../archives/customer-attraction/state/程序/两步安全链的固定策略锥搜索与两份浮点纪录--程序.md>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；两步安全链固定全历史策略锥及根/尾静态分布LP，保存1900与732次浮点筛查而无严格负有理证书。 本页无独立可复用数学保证。 |
+| [两步安全链的固定策略锥搜索与两份浮点纪录--程序](<../actions/99cf885c91440b214c23.json>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；两步安全链固定全历史策略锥及根/尾静态分布LP，保存1900与732次浮点筛查而无严格负有理证书。 本页无独立可复用数学保证。 |
 | [两步安全链的自适应策略锥攻击与三份四人记录--程序](<../../../../archives/customer-attraction/state/程序/两步安全链的自适应策略锥攻击与三份四人记录--程序.md>) | math-exposition | retain | 证明合法根查询p和尾对手Q给PAIR上界式(5)，完整策略锥中全兴趣类型系数为零；不交大块别名条件(7)精确解释三保存点的PAIR取等。 |
 | [两种第三位历史的共同目录抬升与分离归因--程序](<../../../../archives/customer-attraction/state/程序/两种第三位历史的共同目录抬升与分离归因--程序.md>) | math-exposition | retain | 两个第三位真实源各自H/HQR隐藏态LP的128与1512行，53原子失败归于actual边已有七行包络。 |
 | [两组阶段策略的两步静态安全锥筛选程序--程序](<../../../../archives/customer-attraction/state/程序/两组阶段策略的两步静态安全锥筛选程序--程序.md>) | mixed/needs-context | extract | 两步PAIR候选与固定p/Q上界方向有数学段落；48/96阶段规则浮点扫描仅是未分离记录，抽候选与方向。 |
 | [两预算菜单原审计的顶层执行与十三人固定证书--程序](<../../../../archives/customer-attraction/state/程序/两预算菜单原审计的顶层执行与十三人固定证书--程序.md>) | mixed/needs-context | extract | 固定十三人实例的13竞争槽p与六背景对偶给v14=9925/4586，两个真实根菜单C1+C2<5；其余主要是原自动机与审计运行合同。 |
 | [严格种子退出锥与真删首独立审计的六原件合同--程序](<../../../../archives/customer-attraction/state/程序/严格种子退出锥与真删首独立审计的六原件合同--程序.md>) | math-exposition | retain | 31客户真删首与种子退出的数学目标、严格末位BR失效和有限证书已逐节解释。 |
-| [个体半阈值与完整终局推送的原始交替搜索合同--程序](<../../../../archives/customer-attraction/state/程序/个体半阈值与完整终局推送的原始交替搜索合同--程序.md>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；个体交替器保全历史IC锥，终局推送器保根子树G与强/弱混合目标；保存float点未给有理SPE证书。 本页无独立可复用数学保证。 |
+| [个体半阈值与完整终局推送的原始交替搜索合同--程序](<../actions/1def6d3eb2746b975ebd.json>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；个体交替器保全历史IC锥，终局推送器保根子树G与强/弱混合目标；保存float点未给有理SPE证书。 本页无独立可复用数学保证。 |
 | [二元线性秩向量束的全历史Shapley安全探针--程序](<../../../../archives/customer-attraction/state/程序/二元线性秩向量束的全历史Shapley安全探针--程序.md>) | math-exposition | retain | GF(2)秩覆盖函数用Möbius反演得到唯一有符号客户权，线性Shapley收益仍具均分式(2)；完整纯SPE终局集合递推(3)有必要充分拼接。 |
 | [二元驻留全有序树与静态拥挤菜单的原审计合同--程序](<../../../../archives/customer-attraction/state/程序/二元驻留全有序树与静态拥挤菜单的原审计合同--程序.md>) | math-exposition | retain | 二元共享族的根菜单L、静态θ、负驻留通量及K5三人完整策略是解释充分的数学结论，七输入运行仅附证。 |
 | [二元驻留族无重复节点的独立精确审计--程序](<../../../../archives/customer-attraction/state/程序/二元驻留族无重复节点的独立精确审计--程序.md>) | math-exposition | retain | 二关联无重复控制器独立审计全部fresh动作、静态θ、逐单位驻留flux，七参数含负flux而W=OPT。 |
@@ -1264,46 +1264,46 @@
 | [二关联根门槛探针与人工停止记录的定义域--程序](<../../../../archives/customer-attraction/state/程序/二关联根门槛探针与人工停止记录的定义域--程序.md>) | math-exposition | retain | 二关联根门槛随机探针调用完整终局集合threshold与静态纯θ；人工中断记录和七环反例范围明确。 |
 | [二关联目录的精确终局探针与内部子题边界--程序](<../../../../archives/customer-attraction/state/程序/二关联目录的精确终局探针与内部子题边界--程序.md>) | math-exposition | retain | rank-two探针区分根SPE阈值与静态θ；内部子题被容器支配只保证静态门槛缩减，不能缩减完整策略目录。 |
 | [二十一菜单背景交叉和的旧支撑求解与完整报告--程序](<../../../../archives/customer-attraction/state/程序/二十一菜单背景交叉和的旧支撑求解与完整报告--程序.md>) | mixed/needs-context | extract | 七真实节点的21×21菜单交叉由合法单主题行(4)求和得式(3)及客户交项b(s−a)；后半为64维有理点、3087行名与浮点marginals的数据包装。 |
-| [二十三单位核末菜单静态审计的原始合同--程序](<../../../../archives/customer-attraction/state/程序/二十三单位核末菜单静态审计的原始合同--程序.md>) | evidence-only | attach | 固定23客户的K、税与k22边界静态核验入口，数学陈述依附其他正文。 |
+| [二十三单位核末菜单静态审计的原始合同--程序](<../actions/3912c5c9c5b7614e1bdf.json>) | evidence-only | attach | 固定23客户的K、税与k22边界静态核验入口，数学陈述依附其他正文。 |
 | [二十二环匿名势反例的全历史精确核验--程序](<../../../../archives/customer-attraction/state/程序/二十二环匿名势反例的全历史精确核验--程序.md>) | math-exposition | retain | 匿名二十二环三人势的全历史策略给U=25、自由列和34、差9，并定位均匀静态下界与边际10→12失效。 |
 | [五个真实根尾的二十参数菜单系数表--程序](<../../../../archives/customer-attraction/state/程序/五个真实根尾的二十参数菜单系数表--程序.md>) | math-exposition | retain | 五个真实根尾的局部必要行eτ相加，正部折点恰二十个d/q且折点之间线性、尾端斜率非负，故有限参数表等价于全τ行族。 |
 | [五人不增坐标的五族必要行生成器--程序](<../../../../archives/customer-attraction/state/程序/五人不增坐标的五族必要行生成器--程序.md>) | math-exposition | retain | 五人同一策略的异索引、跨菜单、全积税、对齐税及背景三人利润五类必要行有来源与公式。 |
 | [五人保交叠全型与常锚点跨族定价的精确恢复合同--程序](<../../../../archives/customer-attraction/state/程序/五人保交叠全型与常锚点跨族定价的精确恢复合同--程序.md>) | algorithm-result | retain | 五人557行全型定价与160常锚跨族行有分族极值结构；有理原始/全域对偶恢复和717有限点分开。 |
 | [五人全槽行最小价格与三尾混合整数探针--程序](<../../../../archives/customer-attraction/state/程序/五人全槽行最小价格与三尾混合整数探针--程序.md>) | mixed/needs-context | extract | 五份浮点策略锥探针和370外轮属于发现履历；四个不交客户三尾完整子博弈的精确Mroot−uroot=−1/96须提取并保背景未到达范围。 |
 | [五人必要行与三人利润的原定义有理审计--程序](<../../../../archives/customer-attraction/state/程序/五人必要行与三人利润的原定义有理审计--程序.md>) | math-exposition | retain | 定义五人1759必要行的四族计数与三人200利润行，解释每条在真实路径上的分母与约束。 |
-| [五人最大根新菜单的两种浮点发现程序--程序](<../../../../archives/customer-attraction/state/程序/五人最大根新菜单的两种浮点发现程序--程序.md>) | evidence-only | attach | 两套最大根固定LP和1504列的受限浮点发现，无精确点或独立求解器保证。 |
+| [五人最大根新菜单的两种浮点发现程序--程序](<../actions/e0bece0781809ac9b2ec.json>) | evidence-only | attach | 两套最大根固定LP和1504列的受限浮点发现，无精确点或独立求解器保证。 |
 | [五人最大根联合块与真实末菜单的浮点定价合同--程序](<../../../../archives/customer-attraction/state/程序/五人最大根联合块与真实末菜单的浮点定价合同--程序.md>) | math-exposition | retain | 把五人最大根511个必要行与真实末位七菜单分离，说明条件定价和原策略语义。 |
 | [五人根付款的原程序与必要条件发现记录--程序](<../../../../archives/customer-attraction/state/程序/五人根付款的原程序与必要条件发现记录--程序.md>) | math-exposition | retain | 64原子旧点由五行与181行必要系统作有理负上包络分离；depth2链在正乘子下退化为五行，限定固定投影点。 |
 | [五人根必要行的三份原审计与完整余项--程序](<../../../../archives/customer-attraction/state/程序/五人根必要行的三份原审计与完整余项--程序.md>) | math-exposition | retain | 五人根第三位/双枝四尾的真实IC加权证书有128与1536客户型余项，三原程序说明全范围。 |
 | [五人根枝发现器与三尾利润边缘查询--程序](<../../../../archives/customer-attraction/state/程序/五人根枝发现器与三尾利润边缘查询--程序.md>) | math-exposition | retain | 四有限根枝系统中区分copy4强加PAIR与九条真合同，并给三尾利润边缘查询的约束含义。 |
-| [五人根饱和六百九十行定价与热启动记录--程序](<../../../../archives/customer-attraction/state/程序/五人根饱和六百九十行定价与热启动记录--程序.md>) | evidence-only | attach | 固定690行浮点LP与2631列热启动及八步输出，新增行的数学合法性由别处承载。 |
+| [五人根饱和六百九十行定价与热启动记录--程序](<../actions/e48ab43117f91326b447.json>) | evidence-only | attach | 固定690行浮点LP与2631列热启动及八步输出，新增行的数学合法性由别处承载。 |
 | [五人第三位查询松弛的原程序与可信性边界--程序](<../../../../archives/customer-attraction/state/程序/五人第三位查询松弛的原程序与可信性边界--程序.md>) | math-exposition | retain | 解释ROW3第三位查询、真尾税与交叉回复缺口，并区分78行松弛和77行物化诊断。 |
 | [五十二客户冻结匹配原独审的定义核与恢复证据--程序](<../../../../archives/customer-attraction/state/程序/五十二客户冻结匹配原独审的定义核与恢复证据--程序.md>) | math-exposition | retain | 52客户四人完整SPE的最优覆盖52，所有最优匹配冻结查询和最小48>实际W47；真实续局IC与冻结替槽明确分开。 |
 | [五根查询族仿射压力的精确可行证书与行合同--程序](<../../../../archives/customer-attraction/state/程序/五根查询族仿射压力的精确可行证书与行合同--程序.md>) | math-exposition | retain | 五根查询族107行仿射放松有21正质量有理点O>2W，精确行审只否定该弱行族的half推导。 |
-| [五百二十七行旧支撑点的纯有理资产核验入口--程序](<../../../../archives/customer-attraction/state/程序/五百二十七行旧支撑点的纯有理资产核验入口--程序.md>) | evidence-only | attach | 固定64类型支撑点与527必要行的Fraction核验，未提出独立方法或新命题。 |
+| [五百二十七行旧支撑点的纯有理资产核验入口--程序](<../actions/f0c02b668c4b45334b2b.json>) | evidence-only | attach | 固定64类型支撑点与527必要行的Fraction核验，未提出独立方法或新命题。 |
 | [五索引根直方图补全与旧新菜单增强的原程序合同--程序](<../../../../archives/customer-attraction/state/程序/五索引根直方图补全与旧新菜单增强的原程序合同--程序.md>) | math-exposition | retain | 五索引根直方图9770列生成与53有理质量恢复满足1326必要行；新增698行仅有程序合同，旧末位负IC阻补全。 |
-| [交换查询可见端点与粗直方图的原分离器--程序](<../../../../archives/customer-attraction/state/程序/交换查询可见端点与粗直方图的原分离器--程序.md>) | algorithm-result | retain | 4096可见状态与粗直方图indexed完成分别按隐藏位取min和仿射ell对偶回收，正有理score精确分离局部完成。 |
+| [交换查询可见端点与粗直方图的原分离器--程序](<../actions/870c2cb7ef6e5f970fa7.json>) | evidence-only | attach | 4096可见状态与粗直方图分离器仅固定点回收合同，缺完整输入/实际认证 |
 | [交集矩表示的有限审计与报告版本边界--程序](<../../../../archives/customer-attraction/state/程序/交集矩表示的有限审计与报告版本边界--程序.md>) | math-exposition | retain | 推导交集矩Möbius收益、布尔奇偶trade及列核稀疏化的数学关系，附有限审计范围。 |
 | [产品可信菜单凸化与全最优元组诊断--程序](<../../../../archives/customer-attraction/state/程序/产品可信菜单凸化与全最优元组诊断--程序.md>) | algorithm-result | retain | 对三人组件的单约束可信菜单凸化给出精确极点枚举：单叶或正负盈余叶对，并论证最优性。 |
 | [人口交换原证书与全参数严格审计的恢复核验--程序](<../../../../archives/customer-attraction/state/程序/人口交换原证书与全参数严格审计的恢复核验--程序.md>) | math-exposition | retain | 两人至三人q≥22人口交换族的78条仿射IC严格为正，W₂=13q−50、W₃=12q−40，说明福利严格下降。 |
-| [任意尾菜单的弱平均与静态额外槽探针--程序](<../../../../archives/customer-attraction/state/程序/任意尾菜单的弱平均与静态额外槽探针--程序.md>) | evidence-only | attach | 两个尾菜单及额外槽固定LP只留浮点正点和500例摘要，末位BR未满足，缺独立数学结论。 |
-| [任意指定根四后续策略锥的原攻击与全部有理记录--程序](<../../../../archives/customer-attraction/state/程序/任意指定根四后续策略锥的原攻击与全部有理记录--程序.md>) | evidence-only | attach | 删除根IC的四个固定正深度策略锥及230条有理记录只检FREE-ROOT辅助域，没有通用算法新保证。 |
+| [任意尾菜单的弱平均与静态额外槽探针--程序](<../actions/e27a36fe2d301d7951b9.json>) | evidence-only | attach | 两个尾菜单及额外槽固定LP只留浮点正点和500例摘要，末位BR未满足，缺独立数学结论。 |
+| [任意指定根四后续策略锥的原攻击与全部有理记录--程序](<../actions/a5529cb62d431941e3c5.json>) | evidence-only | attach | 删除根IC的四个固定正深度策略锥及230条有理记录只检FREE-ROOT辅助域，没有通用算法新保证。 |
 | [任意标记保险与两个不等缺陷产品的原审计--程序](<../../../../archives/customer-attraction/state/程序/任意标记保险与两个不等缺陷产品的原审计--程序.md>) | math-exposition | retain | 任意标记银行的低退出结构及异质两个银行75客户联合SPE给W71、OPT75、损耗37的有限机制，一般m另有证明。 |
 | [任意路径门槛的六种攻击与产品有限报告--程序](<../../../../archives/customer-attraction/state/程序/任意路径门槛的六种攻击与产品有限报告--程序.md>) | math-exposition | retain | TB-ANY的任意路径门槛J、局部floor与Cartesian产品给出相异精确量词和有限数学反例边界。 |
 | [低尾硬删除的独立自动机与全历史覆盖审计--程序](<../../../../archives/customer-attraction/state/程序/低尾硬删除的独立自动机与全历史覆盖审计--程序.md>) | math-exposition | retain | 说明固定13人压缩续局图以逐层6^d覆盖全有序历史，并逐节点核IC及低尾删除亏空。 |
-| [低阶背景利润诊断的浮点前置与冻结报告范围--程序](<../../../../archives/customer-attraction/state/程序/低阶背景利润诊断的浮点前置与冻结报告范围--程序.md>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；低阶背景利润入口无条件先求439行浮点LP，--audit有理化九支持、--solve才用规范BI；冻结点非SPE。 本页无独立可复用数学保证。 |
+| [低阶背景利润诊断的浮点前置与冻结报告范围--程序](<../actions/ba208b684bee6ae92e4e.json>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；低阶背景利润入口无条件先求439行浮点LP，--audit有理化九支持、--solve才用规范BI；冻结点非SPE。 本页无独立可复用数学保证。 |
 | [保实际路径安全报价的补目录贪心探针与新偏离--程序](<../../../../archives/customer-attraction/state/程序/保实际路径安全报价的补目录贪心探针与新偏离--程序.md>) | math-exposition | retain | 推导新增主题Z的质量分裂、末位回复与六条安全报价线性条件，并解释新Z自身的倒二偏离。 |
 | [保留静态盈利偏离的完整策略锥搜索--程序](<../../../../archives/customer-attraction/state/程序/保留静态盈利偏离的完整策略锥搜索--程序.md>) | math-exposition | retain | 固定全树策略锥搜索另加静态盈利切面G，五人七主题最佳完整证书非PNE且比值低于2。 |
 | [保险摆动与保留二值根切割的原程序合同--程序](<../../../../archives/customer-attraction/state/程序/保险摆动与保留二值根切割的原程序合同--程序.md>) | math-exposition | retain | 末位等值回复保险的32型三分之一摆动与二值四尾192型有理双切割解释局部容量，有限程序只核承重系数。 |
-| [保险菜单三份原审计的策略域与保存报告--程序](<../../../../archives/customer-attraction/state/程序/保险菜单三份原审计的策略域与保存报告--程序.md>) | evidence-only | attach | 保险菜单三点的规范集合续局、独立单位展开和零多项式仅复核已有解析定理的固定实例。 |
+| [保险菜单三份原审计的策略域与保存报告--程序](<../actions/51d5a727890911868711.json>) | evidence-only | attach | 保险菜单三点的规范集合续局、独立单位展开和零多项式仅复核已有解析定理的固定实例。 |
 | [克隆支配精确势的完整历史安全值发现探针--程序](<../../../../archives/customer-attraction/state/程序/克隆支配精确势的完整历史安全值发现探针--程序.md>) | mixed/needs-context | extract | 扩大精确势类的克隆支配行由客户拥挤分母推出必要性；主体是有界浮点LP和三份无精确分离的固定随机报告。 |
-| [入口与全终局税交替策略锥探针的检查点合同--程序](<../../../../archives/customer-attraction/state/程序/入口与全终局税交替策略锥探针的检查点合同--程序.md>) | evidence-only | attach | 交替策略锥四检查点114轮及一次支持的有限搜索，无普适判定或精确全域结果。 |
+| [入口与全终局税交替策略锥探针的检查点合同--程序](<../actions/4bc3e8402495d39d128b.json>) | evidence-only | attach | 交替策略锥四检查点114轮及一次支持的有限搜索，无普适判定或精确全域结果。 |
 | [全前缀残余覆盖与尾部利润的精确有限探针--程序](<../../../../archives/customer-attraction/state/程序/全前缀残余覆盖与尾部利润的精确有限探针--程序.md>) | math-exposition | retain | 明确定义OPT_miss≤新增福利+尾部利润的全前缀候选及与BG-NEW逐项等价，给出52客户实际前缀缺口1。 |
 | [全局角色净券九节点图的原始定义级审计--程序](<../../../../archives/customer-attraction/state/程序/全局角色净券九节点图的原始定义级审计--程序.md>) | math-exposition | retain | 九个context抽象图按真实future转移归纳终点HIT界与价格积分及两种多源割，明确未接入客户博弈钱包。 |
-| [全有序收益状态弧与势投影的运输求解器--程序](<../../../../archives/customer-attraction/state/程序/全有序收益状态弧与势投影的运输求解器--程序.md>) | algorithm-result | retain | 有序收益状态弧的守恒运输与势投影形成固定query条件证书，exact_ok以有理残差区别浮点success。 |
-| [全枝逐尾门槛的非可信菜单浮点探针--程序](<../../../../archives/customer-attraction/state/程序/全枝逐尾门槛的非可信菜单浮点探针--程序.md>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；全枝逐尾门槛程序只给无深层IC菜单的浮点LP，六标签十质量点尚未精确可行；环族已有解析反驳。 本页无独立可复用数学保证。 |
-| [全树收益图原审计的三十九行与四边界合同--程序](<../../../../archives/customer-attraction/state/程序/全树收益图原审计的三十九行与四边界合同--程序.md>) | algorithm-result | retain | 全树收益型图审计实现SCC商锥表示、13历史39行与四边界，保完整有序策略及行见证。 |
-| [全树真实收益比较与锐稀释的充分运输LP--程序](<../../../../archives/customer-attraction/state/程序/全树真实收益比较与锐稀释的充分运输LP--程序.md>) | algorithm-result | retain | 全树真实IC弧及同动作锐稀释列的运输LP给固定策略锥充分付款，非负流与残差可构造条件证书。 |
+| [全有序收益状态弧与势投影的运输求解器--程序](<../actions/07d9fe2c0050d40de0b7.json>) | evidence-only | attach | 有序收益运输求解器仅固定query条件线性证书及有理回代，非一般算法保证 |
+| [全枝逐尾门槛的非可信菜单浮点探针--程序](<../actions/a60005a96d0064cdd4d8.json>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；全枝逐尾门槛程序只给无深层IC菜单的浮点LP，六标签十质量点尚未精确可行；环族已有解析反驳。 本页无独立可复用数学保证。 |
+| [全树收益图原审计的三十九行与四边界合同--程序](<../../../../archives/customer-attraction/state/程序/全树收益图原审计的三十九行与四边界合同--程序.md>) | math-exposition | retain | 证明任意形式完整策略的真实收益行锥等于SCC内部可逆空间加商图跨边锥，并给单位整数重数与有理证书对应；39行是固定实例审计。 |
+| [全树真实收益比较与锐稀释的充分运输LP--程序](<../../../../archives/customer-attraction/state/程序/全树真实收益比较与锐稀释的充分运输LP--程序.md>) | math-exposition | retain | 全树真实IC弧与同动作稀释的非负流给条件充分付款证明 |
 | [全混合势冻结点验证的整数行与发现入口--程序](<../../../../archives/customer-attraction/state/程序/全混合势冻结点验证的整数行与发现入口--程序.md>) | math-exposition | retain | 编码3600倍混合势根预算、开放suffix及42安全/29 PAIR行，区分两冻结点静态可行与SPE义务。 |
 | [全目录低阶客户提升与局部完整策略矩探针--程序](<../../../../archives/customer-attraction/state/程序/全目录低阶客户提升与局部完整策略矩探针--程序.md>) | math-exposition | retain | 局部圆柱非负与同一全目录低阶客户x提升式(2)区分局部和全局实现；degree2保证所有全目录Boolean二次非负行，保存三点显示高阶缺口。 |
 | [全遗漏强候选的六百输入原攻击与当前反例映射--程序](<../../../../archives/customer-attraction/state/程序/全遗漏强候选的六百输入原攻击与当前反例映射--程序.md>) | math-exposition | retain | 定义遗漏重置强式f_U(m)≤W，说明600随机输入阴性与现有二人反族的不同量词，并拆解最佳样本39/32/7。 |
@@ -1320,14 +1320,14 @@
 | [六人十三主题固定查询图与两类索引扩张--程序](<../../../../archives/customer-attraction/state/程序/六人十三主题固定查询图与两类索引扩张--程序.md>) | math-exposition | retain | 六人十三主题三真路径构成1118/3088必要图与索引直方图扩张；保存低W点不能解释为完整SPE。 |
 | [六人整数客户候选的全历史激励核验器--程序](<../../../../archives/customer-attraction/state/程序/六人整数客户候选的全历史激励核验器--程序.md>) | algorithm-result | retain | 六人整数客户策略核验器用60倍收益逐计数或全有序历史检查真实IC并算实际OPT，负IC仍正常退出。 |
 | [六人最大根有理包络的发现恢复与原审计--程序](<../../../../archives/customer-attraction/state/程序/六人最大根有理包络的发现恢复与原审计--程序.md>) | math-exposition | retain | 六人最大根程序发现、恢复和整数核验八条有理包络，139264客户型检查与浮点发现身份分开。 |
-| [六人浮点终局搜索的随机输入入口--程序](<../../../../archives/customer-attraction/state/程序/六人浮点终局搜索的随机输入入口--程序.md>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；六人随机入口采样七标签客户重数并用浮点集合值DP返回最小覆盖候选；单次98客户只核覆盖95/98。 本页无独立可复用数学保证。 |
+| [六人浮点终局搜索的随机输入入口--程序](<../actions/1ee93cb8b98a7be7538e.json>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；六人随机入口采样七标签客户重数并用浮点集合值DP返回最小覆盖候选；单次98客户只核覆盖95/98。 本页无独立可复用数学保证。 |
 | [六人第四位混合配对与最大根共同价格的原程序--程序](<../../../../archives/customer-attraction/state/程序/六人第四位混合配对与最大根共同价格的原程序--程序.md>) | math-exposition | retain | 六人第四位B/C旧词53行经全兼容直方图投影得到两条严格切面；最大根336行仍只有浮点phase-I记录。 |
 | [六槽静态势发现与真实倒二回复攻击的双入口合同--程序](<../../../../archives/customer-attraction/state/程序/六槽静态势发现与真实倒二回复攻击的双入口合同--程序.md>) | math-exposition | retain | 六槽静态LP扫924势函数与七份真实倒二回复；提出P6≤W+C的程序性待证接口 |
 | [共享加权最大主题与真实后继的隐藏状态接口--程序](<../../../../archives/customer-attraction/state/程序/共享加权最大主题与真实后继的隐藏状态接口--程序.md>) | math-exposition | retain | 共享加权最大主题H的63行及其真Q/R后继747行保共同隐藏态，精确投影只排固定必要点。 |
 | [共享匹配损失与相邻负载恢复的原精确核验器--程序](<../../../../archives/customer-attraction/state/程序/共享匹配损失与相邻负载恢复的原精确核验器--程序.md>) | math-exposition | retain | 共同菜单排序损失Δ及相邻负载逆恢复用9360/9008等有限有理网格核对 |
 | [共享末回复组合查询的发现与有限精化程序--程序](<../../../../archives/customer-attraction/state/程序/共享末回复组合查询的发现与有限精化程序--程序.md>) | math-exposition | retain | 共享终局G的多查询局部包络ψ有限矩阵探针，仅5083行中一次实际正查询，未得多查询上界。 |
 | [共享遗漏常值判据的独立背景与四树审计--程序](<../../../../archives/customer-attraction/state/程序/共享遗漏常值判据的独立背景与四树审计--程序.md>) | math-exposition | retain | 常值A整子树充要条件的两侧分母和与5184背景测试、四树审计 |
-| [共享遗漏常值均衡的定义级八树审计--程序](<../../../../archives/customer-attraction/state/程序/共享遗漏常值均衡的定义级八树审计--程序.md>) | evidence-only | attach | 固定m2至5、a1/3八组常值策略逐有序树Fraction IC与OPT复验，近二族判据和一般参数证明已在独立构造页。 |
+| [共享遗漏常值均衡的定义级八树审计--程序](<../actions/418f170b48d5f5d32532.json>) | evidence-only | attach | 固定m2至5、a1/3八组常值策略逐有序树Fraction IC与OPT复验，近二族判据和一般参数证明已在独立构造页。 |
 | [共同三人尾的相对调和势独审与两种系数域--程序](<../../../../archives/customer-attraction/state/程序/共同三人尾的相对调和势独审与两种系数域--程序.md>) | math-exposition | retain | 三人尾相对调和势用2048/256系数成员核验、九加权行及最小八状态 |
 | [共同回复联合列的恢复与两级复核--程序](<../../../../archives/customer-attraction/state/程序/共同回复联合列的恢复与两级复核--程序.md>) | math-exposition | retain | 解释共同R/Z二元原子如何恢复旧交叠行和ZZ约束，及27原子、40根原子固定边缘点的必要系统含义。 |
 | [共同最大主题会员的真实分支证书线性程序--程序](<../../../../archives/customer-attraction/state/程序/共同最大主题会员的真实分支证书线性程序--程序.md>) | algorithm-result | retain | 从真实末两人菜单导出M/Z及分支行，并构造全可见会员格和隐藏回复上包络的充分证书LP，证明可行β给O≤βW。 |
@@ -1338,13 +1338,13 @@
 | [共同负载签名与相邻边缘的原有限审计--程序](<../../../../archives/customer-attraction/state/程序/共同负载签名与相邻边缘的原有限审计--程序.md>) | math-exposition | retain | 固定共同负载签名后逐族最大化的条件分解式(1)有纤维独立证明；相邻两层负载边缘以X_c递推唯一恢复联合表。 |
 | [共同静态Q的全锥矩阵与生成策略浮点诊断--程序](<../../../../archives/customer-attraction/state/程序/共同静态Q的全锥矩阵与生成策略浮点诊断--程序.md>) | math-exposition | retain | 静态共同Q条件写成完整策略客户锥的CQ矩阵，三人六题浮点诊断与另一个精确背景证书分层，未称全域证明。 |
 | [关联动态预算算术审计的输入与精确输出--程序](<../../../../archives/customer-attraction/state/程序/关联动态预算算术审计的输入与精确输出--程序.md>) | math-exposition | retain | 精确分数程序核S_n(3)预算乘积和五边分数覆盖7/4对偶，n=7处6739/13440超过半阈。 |
-| [冻结六十四原子背景行的版本输入与求点合同--程序](<../../../../archives/customer-attraction/state/程序/冻结六十四原子背景行的版本输入与求点合同--程序.md>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；六十四原子背景行下AP必要条件与两种M5输入，保存可行点不等于全历史SPE。 数学主张已有正文承载，本页用作来源证据。 |
+| [冻结六十四原子背景行的版本输入与求点合同--程序](<../actions/20109ce63f0e8a1ce4ce.json>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；六十四原子背景行下AP必要条件与两种M5输入，保存可行点不等于全历史SPE。 数学主张已有正文承载，本页用作来源证据。 |
 | [冻结删位宽限的二十一固定策略锥与浮点端点--程序](<../../../../archives/customer-attraction/state/程序/冻结删位宽限的二十一固定策略锥与浮点端点--程序.md>) | math-exposition | retain | 固定删位宽限 D_T 的客户份额式及 Γw≥0 策略锥给出二十一处近 1/m 的浮点端点，明确未有精确对偶且一般 SA 已有反例。 |
 | [净调和预算的旧证书与固定锥原审计--程序](<../../../../archives/customer-attraction/state/程序/净调和预算的旧证书与固定锥原审计--程序.md>) | math-exposition | retain | 调和预算B与净缺口G的十个固定SPE审计及四个固定锥浮点阴性，均非全域证明。 |
 | [净遗漏菜单七份固定证书原诊断的精确量词--程序](<../../../../archives/customer-attraction/state/程序/净遗漏菜单七份固定证书原诊断的精确量词--程序.md>) | math-exposition | retain | 净遗漏R=O\C的NRMAX/NRAVG七证书判据，11客户例的−1/3缺口与71客户未失败范围 |
 | [几何资源核插入信用的计数策略探针--程序](<../../../../archives/customer-attraction/state/程序/几何资源核插入信用的计数策略探针--程序.md>) | math-exposition | retain | 几何资源核以t^(c−1)位势、计数策略IC和三种速率LP作探针，未报告可行候选且调和VI另有13人反例。 |
 | [分数源路由原递推的条件合同与缺失辅助件--程序](<../../../../archives/customer-attraction/state/程序/分数源路由原递推的条件合同与缺失辅助件--程序.md>) | math-fragment | restore | 保留客户源经真实后继coverer传递的V(i,a,x)递推和排列/归属成本式(2)候选；缺原enum_spe辅助件与共同预算上界，无法作为完成证书。 |
-| [分离遗漏的筛选随机探针与两人全回复锥--程序](<../../../../archives/customer-attraction/state/程序/分离遗漏的筛选随机探针与两人全回复锥--程序.md>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；筛选随机D块与两人六题50类型全回复锥LP分开；7776回复策略诊断只是有限筛查。 本页无独立可复用数学保证。 |
+| [分离遗漏的筛选随机探针与两人全回复锥--程序](<../actions/e9491a35805f947098e3.json>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；筛选随机D块与两人六题50类型全回复锥LP分开；7776回复策略诊断只是有限筛查。 本页无独立可复用数学保证。 |
 | [初始客户边回撤原审计的精确合同与有限覆盖--程序](<../../../../archives/customer-attraction/state/程序/初始客户边回撤原审计的精确合同与有限覆盖--程序.md>) | math-exposition | retain | 52客户完整策略1554条IC、126静态OPT、回撤81价格恒等的核验合同 |
 | [前缀保险二十五单位客户原回归与有序模式--程序](<../../../../archives/customer-attraction/state/程序/前缀保险二十五单位客户原回归与有序模式--程序.md>) | math-exposition | retain | 三人25客户旧A/B与保险银行模型列出43个有序历史258条IC，真联合切换W=OPT25并定位旧缺口。 |
 | [前缀完整席位的作者双审计与严格例策略合同--程序](<../../../../archives/customer-attraction/state/程序/前缀完整席位的作者双审计与严格例策略合同--程序.md>) | math-exposition | retain | 124客户三人完整31动作和124非自身IC；F/G席位30槽、三槽严格差及随机受限2288路径 |
@@ -1352,36 +1352,36 @@
 | [前缀银行原审计的模式记忆、BI边界与逐入口终局--程序](<../../../../archives/customer-attraction/state/程序/前缀银行原审计的模式记忆、BI边界与逐入口终局--程序.md>) | mixed/needs-context | extract | H/Y/F模式及永久BI在有限参数上给强制者至多1的可信孩子；页内322条重复终局表与原审计计数属证据包装，一般前缀修复证明另在定理页。 |
 | [剩余利润Bellman与弱缺口的有限诊断程序--程序](<../../../../archives/customer-attraction/state/程序/剩余利润Bellman与弱缺口的有限诊断程序--程序.md>) | mixed/needs-context | extract | 区分剩余最优利润Bellman、零根弱机会、完整插入和背景缺口四命题，交叠族n5至8给局部Bellman负值；其余为无输出诊断与固定锥浮点0.75。 |
 | [加权最大主题迁移与旧返还的固定诊断合同--程序](<../../../../archives/customer-attraction/state/程序/加权最大主题迁移与旧返还的固定诊断合同--程序.md>) | math-exposition | retain | 同一加权最大H强制真后继给覆盖新增≤24η的RESET及非负余项恒等式(5)；零η完整SPE仍有旧角色返还，并保两尾K≤u4/2及未证ONE-K。 |
-| [加权最大铰链的精确恢复与全断点分离--程序](<../../../../archives/customer-attraction/state/程序/加权最大铰链的精确恢复与全断点分离--程序.md>) | algorithm-result | retain | 加权最大铰链g_c经BNS/AP消元并精确分离287断点行；十八个负行只针对必要点。 |
+| [加权最大铰链的精确恢复与全断点分离--程序](<../../../../archives/customer-attraction/state/程序/加权最大铰链的精确恢复与全断点分离--程序.md>) | math-exposition | retain | 加权最大铰链消去会员位的必要不等式和全断点分离有推导 |
 | [动态查询倒数债审计与归属对偶的原始合同--程序](<../../../../archives/customer-attraction/state/程序/动态查询倒数债审计与归属对偶的原始合同--程序.md>) | math-exposition | retain | 动态查询的倒数债q(1−q)(H0−H1)−q²J1和混合归属对偶，有限数值核验保留其公式合同。 |
 | [势排除完整策略的重构与双重核验合同--程序](<../../../../archives/customer-attraction/state/程序/势排除完整策略的重构与双重核验合同--程序.md>) | math-exposition | retain | 解释621客户三人局部势排除差1及1131客户六人实际FFF前缀嵌入，连接完整有序策略与逐节点IC。 |
 | [势最优支持分支的父方全历史有理核验--程序](<../../../../archives/customer-attraction/state/程序/势最优支持分支的父方全历史有理核验--程序.md>) | math-exposition | retain | 1365有序历史和4095非自身IC验证六人策略，势最优支持两枝均有1/6真实孩子预算缺口 |
 | [匿名自拥挤与两类删除势的有限攻击--程序](<../../../../archives/customer-attraction/state/程序/匿名自拥挤与两类删除势的有限攻击--程序.md>) | math-exposition | retain | 匿名自拥挤偏序由isotone/conjunction保证；capped删除势全域DR但非客户调和，quadratic势只在固定人数域单调，均不能由阴性浮点抽样迁移成客户定理。 |
 | [十八主题控制器与按客户定价的大目录浮点攻击--程序](<../../../../archives/customer-attraction/state/程序/十八主题控制器与按客户定价的大目录浮点攻击--程序.md>) | math-exposition | retain | 定义18标签六人计数和菜单DAG的真实子树IC行及客户型定价目标，限定十条浮点记录的证据范围。 |
-| [十八主题控制器的整数区间逆归纳与浮点策略锥--程序](<../../../../archives/customer-attraction/state/程序/十八主题控制器的整数区间逆归纳与浮点策略锥--程序.md>) | algorithm-result | retain | 十八主题控制器用整数区间逆归纳随子控制器递推，八次浮点策略锥重权实验无精确证书。 |
+| [十八主题控制器的整数区间逆归纳与浮点策略锥--程序](<../../../../archives/customer-attraction/state/程序/十八主题控制器的整数区间逆归纳与浮点策略锥--程序.md>) | math-exposition | retain | 大整数区间逆归纳的最小收益筛选与全部终局集合递推有正确性论证 |
 | [十八主题计数选择器的容差破平局与全锥切面--程序](<../../../../archives/customer-attraction/state/程序/十八主题计数选择器的容差破平局与全锥切面--程序.md>) | math-exposition | retain | 十八主题六人计数策略逐层容差选择，固定策略有全IC行锥与比较覆盖LP；默认114类型浮点结果不认证精确SPE。 |
 | [十八主题障碍的整数客户展开与四个新目录输入--程序](<../../../../archives/customer-attraction/state/程序/十八主题障碍的整数客户展开与四个新目录输入--程序.md>) | mixed/needs-context | extract | 19个松弛类型按六owner和D/6整数化生成四份目录输入；同目录聚类及共同约数保持SPE比值，而目录取并/省略不继承原策略IC。 |
-| [十四类种子变体的可信全端点筛选与零检验记录--程序](<../../../../archives/customer-attraction/state/程序/十四类种子变体的可信全端点筛选与零检验记录--程序.md>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；十四类71客户种子随机变体的ADM必要筛选合同及137B报告checked=0；零次路径LP不等于参数族阴性结论。 本页无独立可复用数学保证。 |
+| [十四类种子变体的可信全端点筛选与零检验记录--程序](<../actions/0cc0f76ada6462e1f532.json>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；十四类71客户种子随机变体的ADM必要筛选合同及137B报告checked=0；零次路径LP不等于参数族阴性结论。 本页无独立可复用数学保证。 |
 | [十题有序背景对的旧支撑加行与原有理点--程序](<../../../../archives/customer-attraction/state/程序/十题有序背景对的旧支撑加行与原有理点--程序.md>) | math-exposition | retain | 十题64列加七节点630背景行组成1067必要行LP，保存严格大于2的有理可行点但不赋予共同目录SPE。 |
 | [单色后缀必要松弛与两份定义级校准--程序](<../../../../archives/customer-attraction/state/程序/单色后缀必要松弛与两份定义级校准--程序.md>) | math-exposition | retain | 单色后缀VA必要松弛的五客户负点被真实根B子局排除；另有两人静态弱占优与动态势分离及160格恒等式。 |
 | [单色目标可信策略锥的游走合同与十步保存边界--程序](<../../../../archives/customer-attraction/state/程序/单色目标可信策略锥的游走合同与十步保存边界--程序.md>) | math-exposition | retain | 从Big/Small隔离证明十个保存源的0^5目标只有常0完整策略，说明9/5点与四种菜单模式的同类停界。 |
 | [单调支撑伪收益发现与独立有限审计--程序](<../../../../archives/customer-attraction/state/程序/单调支撑伪收益发现与独立有限审计--程序.md>) | math-exposition | retain | 单调伪收益发现器构造126顶点及图/锐稀释/支持等式；独立审计22客户图与Shapley 1/24缺额排除共同客户表示。 |
 | [单隐藏末回复的配对投影恒等式核验程序--程序](<../../../../archives/customer-attraction/state/程序/单隐藏末回复的配对投影恒等式核验程序--程序.md>) | math-exposition | retain | 单隐藏末回复的40态Fraction恒等式推导强PAIR特例，另以同一完整策略三条IC连接到实际倒二收益。 |
-| [历史依赖策略锥的搜索程序--程序](<../../../../archives/customer-attraction/state/程序/历史依赖策略锥的搜索程序--程序.md>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；全历史策略锥的真实IC约束与支持LP搜索，有限精确点和数值突变不推出一般预算。 数学主张已有正文承载，本页用作来源证据。 |
-| [双主题与前缀支付边界的独立有理回归--程序](<../../../../archives/customer-attraction/state/程序/双主题与前缀支付边界的独立有理回归--程序.md>) | evidence-only | attach | 6048组pair正核、140次参数对照和五人781历史的固定回归；一般公式和证明另在相邻引理。 |
+| [历史依赖策略锥的搜索程序--程序](<../actions/04e0f4c07b76076d492f.json>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；全历史策略锥的真实IC约束与支持LP搜索，有限精确点和数值突变不推出一般预算。 数学主张已有正文承载，本页用作来源证据。 |
+| [双主题与前缀支付边界的独立有理回归--程序](<../actions/9e591b824597becf799d.json>) | evidence-only | attach | 6048组pair正核、140次参数对照和五人781历史的固定回归；一般公式和证明另在相邻引理。 |
 | [双副本全续局递推与单点资源保险诊断--程序](<../../../../archives/customer-attraction/state/程序/双副本全续局递推与单点资源保险诊断--程序.md>) | math-exposition | retain | 完整三人双副本续局递推给出 91 节点策略与 L_prod(BB)=5/2<2L(B)=3 的精确有限例，单点保险 M_cv 另限于凸包诊断。 |
-| [双副本六人博弈的历史标记逆归纳程序--程序](<../../../../archives/customer-attraction/state/程序/双副本六人博弈的历史标记逆归纳程序--程序.md>) | algorithm-result | retain | 双副本六人(q,flags)历史标记逆归纳、整数L=60利润及三份完整SPE状态图 |
+| [双副本六人博弈的历史标记逆归纳程序--程序](<../../../../archives/customer-attraction/state/程序/双副本六人博弈的历史标记逆归纳程序--程序.md>) | math-exposition | retain | 固定六人双副本三组输入的整数逆归纳按全部(q,flags)状态证明所选完整SPE，并明确历史标记不可由人数计数恢复；泛型CLI未验证所有输入。 |
 | [双副本笛卡尔可信菜单的完整策略编译程序--程序](<../../../../archives/customer-attraction/state/程序/双副本笛卡尔可信菜单的完整策略编译程序--程序.md>) | algorithm-result | retain | 给三人双副本菜单的可实现终局充要刻画及根门槛，并据此精确编译全历史纯SPE，逐节点核4368比较。 |
 | [双包含半覆盖的去交集一千九百六十型复算--程序](<../../../../archives/customer-attraction/state/程序/双包含半覆盖的去交集一千九百六十型复算--程序.md>) | math-exposition | retain | 双早期主题各包含倒二主题时，1960客户局部型的有理残差非负，配合真实IC给条件性六人半覆盖。 |
 | [双完整均衡保险锥的原LP与有理提案边界--程序](<../../../../archives/customer-attraction/state/程序/双完整均衡保险锥的原LP与有理提案边界--程序.md>) | mixed/needs-context | extract | 固定高低两完整策略的同客户锥攻击量D≥3(h−ell)，两有理提案分别目标−1/5、−1/23；报告不存完整策略，且ell未必是真根最低值M。 |
-| [双客户池的可信尾局搜索程序--程序](<../../../../archives/customer-attraction/state/程序/双客户池的可信尾局搜索程序--程序.md>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；双客户池三人尾局用真实最佳回应与θ1筛整数参数，最小θ1为7排除指定6阈值目标。 数学主张已有正文承载，本页用作来源证据。 |
+| [双客户池的可信尾局搜索程序--程序](<../actions/5d59d82a3a7e2afa24b3.json>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；双客户池三人尾局用真实最佳回应与θ1筛整数参数，最小θ1为7排除指定6阈值目标。 数学主张已有正文承载，本页用作来源证据。 |
 | [双支持正项回路的固定图二倍修复与稀疏证书--程序](<../../../../archives/customer-attraction/state/程序/双支持正项回路的固定图二倍修复与稀疏证书--程序.md>) | math-exposition | retain | 双支持正项回路将三条实际末位激励、五条稀释行及两条回路恒等式组合成固定图 2R−O 的有理非负证书。 |
 | [双模式保险全树重放与三倍损耗终局对审计--程序](<../../../../archives/customer-attraction/state/程序/双模式保险全树重放与三倍损耗终局对审计--程序.md>) | math-exposition | retain | 双模式保险的同根高低续局满足给定三倍损耗不等式；另以 4 人 26 客户与 34 例 750 对有限重放核明适用界。 |
 | [双组完整策略的分区锥探针与十例有理审计--程序](<../../../../archives/customer-attraction/state/程序/双组完整策略的分区锥探针与十例有理审计--程序.md>) | math-exposition | retain | 双组对称完整策略锥的浮点n3–9探针及十个Fraction输入审计，七个全兴趣等号点与随机三例失败分别说明范围。 |
 | [双组首对安全攻击与受限共同Q的有限阴性--程序](<../../../../archives/customer-attraction/state/程序/双组首对安全攻击与受限共同Q的有限阴性--程序.md>) | mixed/needs-context | extract | 完整策略锥Γ及安全值的量词是数学段落；t4交替LP阴性与两个未绑定模式失败仅为浮点记录，抽数学接口。 |
-| [双菜单AP与最大根元组的发现及恢复合同--程序](<../../../../archives/customer-attraction/state/程序/双菜单AP与最大根元组的发现及恢复合同--程序.md>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；双菜单AP与最大根元组列生成的有限阴性、所选点Fraction恢复，不给完整SPE或全称证。 数学主张已有正文承载，本页用作来源证据。 |
+| [双菜单AP与最大根元组的发现及恢复合同--程序](<../actions/e735c5e2c1bdd71754bb.json>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；双菜单AP与最大根元组列生成的有限阴性、所选点Fraction恢复，不给完整SPE或全称证。 数学主张已有正文承载，本页用作来源证据。 |
 | [反组首对共同静态背景的浮点探针与双组规模边界--程序](<../../../../archives/customer-attraction/state/程序/反组首对共同静态背景的浮点探针与双组规模边界--程序.md>) | math-exposition | retain | 三人六/八标签固定完整策略的共同Q、真实IC乘子LP与t3浮点点、t4失败状态 |
-| [可信全菜单与遗漏私有化的双攻击合同--程序](<../../../../archives/customer-attraction/state/程序/可信全菜单与遗漏私有化的双攻击合同--程序.md>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；固定策略43历史全菜单C26锥交替LP阴性，与遗漏客户owner私有化33原终局精确筛选分属两个候选合同。 本页无独立可复用数学保证。 |
+| [可信全菜单与遗漏私有化的双攻击合同--程序](<../actions/0b89c27824782558063a.json>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；固定策略43历史全菜单C26锥交替LP阴性，与遗漏客户owner私有化33原终局精确筛选分属两个候选合同。 本页无独立可复用数学保证。 |
 | [可信门槛与外部残余强桥的四份原搜索器--程序](<../../../../archives/customer-attraction/state/程序/可信门槛与外部残余强桥的四份原搜索器--程序.md>) | math-exposition | retain | 四搜索器明确625回复图残余LP、三人全策略锥、末位利润预算和门槛下降；三个保存点只在各自有限合同内。 |
 | [合法二值背景复制的四尾发现合同--程序](<../../../../archives/customer-attraction/state/程序/合法二值背景复制的四尾发现合同--程序.md>) | math-exposition | retain | 合法二值背景复制导出 86 行/1280 型及真复制枝 169 行/10240 型必要条件，报告浮点 β1 并指明缺少有理乘子和全型余项。 |
 | [合法单题背景的任意末回复策略锥探针--程序](<../../../../archives/customer-attraction/state/程序/合法单题背景的任意末回复策略锥探针--程序.md>) | math-exposition | retain | 给合法单题H背景的两尾完整IC锥、PB新覆盖缺口与四行非负证书，说明12000随机阴性只在固定模板内。 |
@@ -1389,7 +1389,7 @@
 | [合法背景前两人利润与额外槽安全下界诊断--程序](<../../../../archives/customer-attraction/state/程序/合法背景前两人利润与额外槽安全下界诊断--程序.md>) | math-exposition | retain | 定义合法背景PB的前两人利润与额外槽v_{r+1}，用两层可信终局递推求最小pair和静态安全下界。 |
 | [合法背景成对聚合安全值与变基数阻挡探针--程序](<../../../../archives/customer-attraction/state/程序/合法背景成对聚合安全值与变基数阻挡探针--程序.md>) | math-exposition | retain | 合法旧背景下成对/聚合目标的真实静态安全LP，以及变对手基数阻挡成本d_K的对偶扩展条件；日志仅有限。 |
 | [合法背景数值策略锥的利润归一与四份探索--程序](<../../../../archives/customer-attraction/state/程序/合法背景数值策略锥的利润归一与四份探索--程序.md>) | math-exposition | retain | 合法旧背景子局的集合值策略锥、Fenchel自由分数门槛下界及四份数值等号探索 |
-| [合法背景机会损失与完整策略强系数的保存锥--程序](<../../../../archives/customer-attraction/state/程序/合法背景机会损失与完整策略强系数的保存锥--程序.md>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；合法背景机会损失B与完整根策略强系数S两套固定锥；117恢复点有两例弱IC失败。 数学主张已有正文承载，本页用作来源证据。 |
+| [合法背景机会损失与完整策略强系数的保存锥--程序](<../actions/20e72e95387f4618f629.json>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；合法背景机会损失B与完整根策略强系数S两套固定锥；117恢复点有两例弱IC失败。 数学主张已有正文承载，本页用作来源证据。 |
 | [合法背景残余总利润的全集筛查与三个重复终局点--程序](<../../../../archives/customer-attraction/state/程序/合法背景残余总利润的全集筛查与三个重复终局点--程序.md>) | math-exposition | retain | 完整后缀SPE终局集合递推与r−1静态整数槽安全LP；三份固定输入用纯鞍点精确取等。 |
 | [合法背景聚合与两步安全余额的随机终局筛查--程序](<../../../../archives/customer-attraction/state/程序/合法背景聚合与两步安全余额的随机终局筛查--程序.md>) | math-exposition | retain | 定义合法背景剩余总利润P−rv_r和两步安全余额B2，并解释可信终局首两步门槛兼容。 |
 | [合法背景聚合安全值原随机探针的精确下界合同--程序](<../../../../archives/customer-attraction/state/程序/合法背景聚合安全值原随机探针的精确下界合同--程序.md>) | math-fragment | restore | 明确合法背景剩余利润V≥r v_r(b)的未证全称候选；有理查询逐静态背景重算只给条件下界，缺完整策略证书及有效概率检查。 |
@@ -1415,8 +1415,8 @@
 | [固定前缀覆盖补偿的有限全续局探针--程序](<../../../../archives/customer-attraction/state/程序/固定前缀覆盖补偿的有限全续局探针--程序.md>) | math-exposition | retain | 固定旧前缀残余覆盖补偿式由全可信续局集合随机探针测试，保存29客户点余量27仅属有限样本。 |
 | [固定剩余人数背景利润的两份精确发现器--程序](<../../../../archives/customer-attraction/state/程序/固定剩余人数背景利润的两份精确发现器--程序.md>) | math-exposition | retain | 定义固定背景真实最坏剩余利润V_r与静态最大F_r，并分辨增加过去行动的反单调候选与F/V搜索。 |
 | [固定反组策略的终局删除查询探针--程序](<../../../../archives/customer-attraction/state/程序/固定反组策略的终局删除查询探针--程序.md>) | math-exposition | retain | 固定三人43历史反组策略锥的真实IC与删位三背景查询LP，区分受限封顶和真正静态安全值。 |
-| [固定合法背景价格锥的交替接口与一百八十份保存策略--程序](<../../../../archives/customer-attraction/state/程序/固定合法背景价格锥的交替接口与一百八十份保存策略--程序.md>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；合法旧背景的计数策略IC锥与分数价格交替LP，180个恢复点为后缀SPE且指定纯价差零。 数学主张已有正文承载，本页用作来源证据。 |
-| [固定回复阈值的实际末主题跨枝条件抬升--程序](<../../../../archives/customer-attraction/state/程序/固定回复阈值的实际末主题跨枝条件抬升--程序.md>) | algorithm-result | retain | 固定R阈值slab中条件B/Z联合的41649行跨枝必要系统，消融浮点不可行未给有理Farkas。 |
+| [固定合法背景价格锥的交替接口与一百八十份保存策略--程序](<../actions/519e672f0bd8f89b790c.json>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；合法旧背景的计数策略IC锥与分数价格交替LP，180个恢复点为后缀SPE且指定纯价差零。 数学主张已有正文承载，本页用作来源证据。 |
+| [固定回复阈值的实际末主题跨枝条件抬升--程序](<../actions/460decbc0ecb00620d3d.json>) | evidence-only | attach | 固定5277点的41649行阈值抬升仅有浮点消融状态、无有理Farkas |
 | [固定安全见证两步余额全树锥的三份浮点记录--程序](<../../../../archives/customer-attraction/state/程序/固定安全见证两步余额全树锥的三份浮点记录--程序.md>) | mixed/needs-context | extract | 三份全树固定见证浮点记录含 PAIR 上界的精确方向与 Γ 全历史约束，但其 p/Q 截断小数、fun≈0 和源码范围均只支撑有限探针。 |
 | [固定完整策略与全部终局的静态匹配原诊断--程序](<../../../../archives/customer-attraction/state/程序/固定完整策略与全部终局的静态匹配原诊断--程序.md>) | math-exposition | retain | 真实全历史固定策略及全集SPE终局的静态最优比较匹配，区分所有与存在元组量词，有限样本均非正。 |
 | [固定完整策略对尾部聚合差额的锥攻击--程序](<../../../../archives/customer-attraction/state/程序/固定完整策略对尾部聚合差额的锥攻击--程序.md>) | math-exposition | retain | 固定完整策略客户锥的全史IC及F_r−P_h−r u_a目标，旧两策略830/196项阴性有限搜索 |
@@ -1425,11 +1425,11 @@
 | [固定完整策略锥中的分数全查询发现与整数后核--程序](<../../../../archives/customer-attraction/state/程序/固定完整策略锥中的分数全查询发现与整数后核--程序.md>) | math-exposition | retain | 固定43节点策略的63类型真实IC锥、分数全查询缺口LP和817整数客户正点的精确后核。 |
 | [固定完整策略锥的三种逐人覆盖桥攻击--程序](<../../../../archives/customer-attraction/state/程序/固定完整策略锥的三种逐人覆盖桥攻击--程序.md>) | math-exposition | retain | 三个逐人覆盖桥的完整策略锥LP与七题五人K桥正差56448精确策略见证 |
 | [固定完整策略额外菜单探针的收益与数值边界--程序](<../../../../archives/customer-attraction/state/程序/固定完整策略额外菜单探针的收益与数值边界--程序.md>) | math-exposition | retain | 定义固定完整策略真实后继下额外一槽查询K_i与逐位置min_q max_T菜单量，关联已有银行根菜单分离。 |
-| [固定实际路径全菜单的MILP诊断与有理提案后核--程序](<../../../../archives/customer-attraction/state/程序/固定实际路径全菜单的MILP诊断与有理提案后核--程序.md>) | algorithm-result | retain | 完整m槽强制路径可信菜单E上的MILP选择及查询概率有理恢复，48路径记录仅两次改进提案。 |
+| [固定实际路径全菜单的MILP诊断与有理提案后核--程序](<../actions/f088c777959dd77cc2d7.json>) | evidence-only | attach | 固定实际路径MILP给两次有理提案后核，未穷尽全路径或提供最优证书 |
 | [固定归属NET诊断的精确原始对偶与早停范围--程序](<../../../../archives/customer-attraction/state/程序/固定归属NET诊断的精确原始对偶与早停范围--程序.md>) | math-exposition | retain | 固定 owner NET 的 EQUAL 价格递推、FLOW 网络、rank 贪心和同一 γ 的 NET 判别含精确原始对偶最优性证明，并明确仅首归属早停。 |
 | [固定旧回复边缘的末回复阈值闭包程序--程序](<../../../../archives/customer-attraction/state/程序/固定旧回复边缘的末回复阈值闭包程序--程序.md>) | math-exposition | retain | 在固定旧hist/K/R边缘上以共同阈值层和Z质量仿射代换旧图，给60条末回复行的共同会员实现及三个有限点。 |
-| [固定比较组平均续局集合的递推与二十八客户原点--程序](<../../../../archives/customer-attraction/state/程序/固定比较组平均续局集合的递推与二十八客户原点--程序.md>) | algorithm-result | retain | 固定J平均续局的集合E(q)用同一所选终局消元得递推(2)，可枚举所有可实现结果；28客户例展示其与真SPE差异 |
-| [固定版本精选材料的依赖闭包与隔离复现--程序](<../../../../archives/customer-attraction/state/程序/固定版本精选材料的依赖闭包与隔离复现--程序.md>) | evidence-only | attach | 固定提交精选ZIP的依赖闭包、MANIFEST字节核验及六入口隔离复现，均为既有数学材料的再现/身份包装 |
+| [固定比较组平均续局集合的递推与二十八客户原点--程序](<../../../../archives/customer-attraction/state/程序/固定比较组平均续局集合的递推与二十八客户原点--程序.md>) | math-exposition | retain | 一般固定比较组平均规则的集合递推式(2)给必要充分性，且用28客户点说明它与真实SPE式(3)不同；代码仅做固定点浮点搜索。 |
+| [固定版本精选材料的依赖闭包与隔离复现--程序](<../actions/0d6046b59562da9fa885.json>) | evidence-only | attach | 固定提交精选ZIP的依赖闭包、MANIFEST字节核验及六入口隔离复现，均为既有数学材料的再现/身份包装 |
 | [固定策略与对称目录的安全最优删除费用锥--程序](<../../../../archives/customer-attraction/state/程序/固定策略与对称目录的安全最优删除费用锥--程序.md>) | math-exposition | retain | 41客户坏/好安全最优查询区分ALL/SSR；循环对称给均匀查询最优，四个共客户点解析为W=R=1 |
 | [固定策略地板与全子局安全覆盖的原始双诊断--程序](<../../../../archives/customer-attraction/state/程序/固定策略地板与全子局安全覆盖的原始双诊断--程序.md>) | math-exposition | retain | 区分固定完整策略各深度有序历史利润地板和十九子局地板叠静态安全值，列六实例的精确/浮点付款差。 |
 | [固定索引点的一题末回复拆分与十个局部LP--程序](<../../../../archives/customer-attraction/state/程序/固定索引点的一题末回复拆分与十个局部LP--程序.md>) | math-exposition | retain | 旧64原子固定质量拆一新增末回复题，十个分别求解的局部LP无共同新题及全历史策略耦合。 |
@@ -1465,7 +1465,7 @@
 | [完整续局计数锥的浮点爬升与七主题五人报告--程序](<../../../../archives/customer-attraction/state/程序/完整续局计数锥的浮点爬升与七主题五人报告--程序.md>) | math-exposition | retain | 完整续局BI计数集合及固定目标锥浮点爬升，七题五人报告的11客户种子可解析为OPT/W=9/5。 |
 | [完整行接口与双副本可信菜单的原始精确审计--程序](<../../../../archives/customer-attraction/state/程序/完整行接口与双副本可信菜单的原始精确审计--程序.md>) | math-exposition | retain | 两人标量行全额吸收却未覆盖遗漏客户的t族分离，以及双副本可信叶过滤给Lprod(BB)=5/2<2L(B)=3。 |
 | [完整额外槽二次预算的九证书与固定锥诊断--程序](<../../../../archives/customer-attraction/state/程序/完整额外槽二次预算的九证书与固定锥诊断--程序.md>) | math-exposition | retain | 定义全历史策略FTA的Σ_i p^TK_i p≤W二次预算，并限定九证书及93固定锥查询的有限阴性。 |
-| [实际分数查询的固定策略锥与整数终局扫描--程序](<../../../../archives/customer-attraction/state/程序/实际分数查询的固定策略锥与整数终局扫描--程序.md>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；实际负载分数弱桥在固定策略客户锥的36有理点和集合值整数终局扫描，后续反族已否一般桥。 数学主张已有正文承载，本页用作来源证据。 |
+| [实际分数查询的固定策略锥与整数终局扫描--程序](<../actions/5f3e1f064d2bb084eecb.json>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；实际负载分数弱桥在固定策略客户锥的36有理点和集合值整数终局扫描，后续反族已否一般桥。 数学主张已有正文承载，本页用作来源证据。 |
 | [实际分数桥可信锥探针的十八步合同与八步保存边界--程序](<../../../../archives/customer-attraction/state/程序/实际分数桥可信锥探针的十八步合同与八步保存边界--程序.md>) | math-exposition | retain | 五人实际缩率查询g(a)/W的固定完整策略锥及精确原始/对偶检查方向明确，18步源码只保存八步、各top9/10未触发反例。 |
 | [实际删位与偏离菜单的三种静态博弈发现接口--程序](<../../../../archives/customer-attraction/state/程序/实际删位与偏离菜单的三种静态博弈发现接口--程序.md>) | math-exposition | retain | 以实际删位D、真实偏离后删位M和全部静态背景的包含关系区分三种cap，给固定实例Q与固定策略客户锥P。 |
 | [实际删位静态封顶的原扫描与离轨槽预算--程序](<../../../../archives/customer-attraction/state/程序/实际删位静态封顶的原扫描与离轨槽预算--程序.md>) | math-exposition | retain | 实际删一位矩阵κ的十九份有理鞍点与十三人遗漏T障碍；全部actual支持无法封顶，至少6/25期望离轨槽 |
@@ -1473,10 +1473,10 @@
 | [实际前缀信用与全尾查询行原审计的精确合同--程序](<../../../../archives/customer-attraction/state/程序/实际前缀信用与全尾查询行原审计的精确合同--程序.md>) | math-exposition | retain | 实际前缀覆盖信用的AC系数和全尾ROW-ID、九个固定策略回归与非零返还边界已有数学式 |
 | [实际前缀净匹配探针与均匀分配报告--程序](<../../../../archives/customer-attraction/state/程序/实际前缀净匹配探针与均匀分配报告--程序.md>) | math-exposition | retain | 实际前缀真偏离矩阵的最优元组净匹配与均匀分配两个LP；384条负浮点记录只限已存策略锥。 |
 | [实际末主题三人尾投影的含交集审计器--程序](<../../../../archives/customer-attraction/state/程序/实际末主题三人尾投影的含交集审计器--程序.md>) | math-exposition | retain | 真第四步B枝的S/Z/V三行在含交集h域精确抵消，给448可见类型上包络必要行并分离旧1033点 |
-| [实际末主题嵌套偏离与旧边缘抬升--程序](<../../../../archives/customer-attraction/state/程序/实际末主题嵌套偏离与旧边缘抬升--程序.md>) | algorithm-result | retain | 实际末主题嵌套父子真IC与七八索引菜单的证书LP，并测旧边缘八种浮点条件抬升。 |
+| [实际末主题嵌套偏离与旧边缘抬升--程序](<../../../../archives/customer-attraction/state/程序/实际末主题嵌套偏离与旧边缘抬升--程序.md>) | math-exposition | retain | 同一完整策略的嵌套末回复IC和跨family必要行方向有实质推导 |
 | [实际末菜单的十三人精确点与两种固定锥原探针--程序](<../../../../archives/customer-attraction/state/程序/实际末菜单的十三人精确点与两种固定锥原探针--程序.md>) | math-exposition | retain | 实际末背景K_b的两固定p锥探针给负有限间隔；六客户点真正L_b=7/8，而十三人旧点有精确鞍点L_b=7/3与W33。 |
 | [实际末菜单联合行锥与双块边缘粘合程序--程序](<../../../../archives/customer-attraction/state/程序/实际末菜单联合行锥与双块边缘粘合程序--程序.md>) | math-exposition | retain | 末位菜单46行联合锥与重复前缀双块77/50行边缘粘合各为必要松弛，浮点比率不赋SPE。 |
-| [实际第三位十三行投影的两态全型定价--程序](<../../../../archives/customer-attraction/state/程序/实际第三位十三行投影的两态全型定价--程序.md>) | algorithm-result | retain | 实际第三位13行的同一h两态铰链分解与全型定价oracle，849列点仍为受限浮点发现。 |
+| [实际第三位十三行投影的两态全型定价--程序](<../actions/3d7855694a74d97e6f32.json>) | evidence-only | attach | 实际第三位13行的两态条件定价仅849列浮点发现、无全域精确封闭 |
 | [实际第四步B分支的三人尾投影程序--程序](<../../../../archives/customer-attraction/state/程序/实际第四步B分支的三人尾投影程序--程序.md>) | math-exposition | retain | 同一六人策略actual第四位B真分支的八族非负IC经交集h抵消，再对隐藏q,r,ell取最大上包络，得448格普遍必要行并分离指定旧边缘。 |
 | [实际第四步强制新回复的嵌套投影程序--程序](<../../../../archives/customer-attraction/state/程序/实际第四步强制新回复的嵌套投影程序--程序.md>) | math-exposition | retain | 强制第四位新R/Z后的25条真实IC/价格行经同索引交叠抵消与隐藏变量最大上包络形成合法必要切面，五条负cut只排固定必要点。 |
 | [实际终局删除支持的随机策略锥探针--程序](<../../../../archives/customer-attraction/state/程序/实际终局删除支持的随机策略锥探针--程序.md>) | math-exposition | retain | 固定完整四人策略的真实IC矩阵与22个查询分布上的实际终局删位受限安全目标，解释它与真v4的包含方向。 |
@@ -1494,8 +1494,8 @@
 | [对齐根直方图列生成的双版本与零质量越界--程序](<../../../../archives/customer-attraction/state/程序/对齐根直方图列生成的双版本与零质量越界--程序.md>) | mixed/needs-context | extract | 五人真实根尾的34项对齐必要行含跨根菜单排对角恒等式；大部为934列浮点记录与e=5零质量格索引越界、旧25行/新34行版本差。 |
 | [尾安全菜单三发现器与两份有理核验的实际合同--程序](<../../../../archives/customer-attraction/state/程序/尾安全菜单三发现器与两份有理核验的实际合同--程序.md>) | math-exposition | retain | 十客户尾总安全压缩接口虽满足根/局部安全条件仍有倒二真偏离3>2，两份有理核界定非SPE |
 | [局部交集矩锥的浮点搜索与星形有理审计--程序](<../../../../archives/customer-attraction/state/程序/局部交集矩锥的浮点搜索与星形有理审计--程序.md>) | math-exposition | retain | 七份有理可见矩共同识别为恒中心星形族：小支持局部非负且形式全历史IC，跨目录Boolean分离Q排除共同客户实现；浮点比1.8/2不作真客户反例。 |
-| [局部剩余利润探针与两份原审计的真实范围--程序](<../../../../archives/customer-attraction/state/程序/局部剩余利润探针与两份原审计的真实范围--程序.md>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；静态剩余利润F(h)的全部真实历史局部差F(h)−F(h,a)−2u探针及两份独立有限审计，区分真子SPE与非均衡菜单。 数学主张已有正文承载，本页用作来源证据。 |
-| [已失败残余覆盖加强的随机与固定策略诊断--程序](<../../../../archives/customer-attraction/state/程序/已失败残余覆盖加强的随机与固定策略诊断--程序.md>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；已被两人71客户例否定的残余覆盖R_m≤W，程序分别作全SPE终局随机搜索和二人固定策略客户锥LP。 数学主张已有正文承载，本页用作来源证据。 |
+| [局部剩余利润探针与两份原审计的真实范围--程序](<../actions/f2a8d4f9369e7b974d98.json>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；静态剩余利润F(h)的全部真实历史局部差F(h)−F(h,a)−2u探针及两份独立有限审计，区分真子SPE与非均衡菜单。 数学主张已有正文承载，本页用作来源证据。 |
+| [已失败残余覆盖加强的随机与固定策略诊断--程序](<../actions/5307fb2207a3ed421257.json>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；已被两人71客户例否定的残余覆盖R_m≤W，程序分别作全SPE终局随机搜索和二人固定策略客户锥LP。 数学主张已有正文承载，本页用作来源证据。 |
 | [带实际外部信用的最优冻结匹配锥探针--程序](<../../../../archives/customer-attraction/state/程序/带实际外部信用的最优冻结匹配锥探针--程序.md>) | math-exposition | retain | 固定完整策略正锥上优化给定最优元组的冻结费用减实际覆盖与外部信用，四客户点只否指定元组接口。 |
 | [带目标终局控制器的首对安全值锥探针--程序](<../../../../archives/customer-attraction/state/程序/带目标终局控制器的首对安全值锥探针--程序.md>) | math-exposition | retain | 以(counts,target)控制器拼出整数种子完整SPE，全部状态IC锥及静态安全LP分开；全兴趣质量L+r给任意策略的v=1等号基线，微负保存点需有理复核。 |
 | [带符号菜单环对齐的双有限审计合同--程序](<../../../../archives/customer-attraction/state/程序/带符号菜单环对齐的双有限审计合同--程序.md>) | math-exposition | retain | D/O带符号菜单环的κ缺额、指定债边构造及两套有限有理网格，未把组合mask提升为完整SPE。 |
@@ -1512,25 +1512,25 @@
 | [指定实际路径的全续局阈值审计--程序](<../../../../archives/customer-attraction/state/程序/指定实际路径的全续局阈值审计--程序.md>) | math-exposition | retain | 18主题Rdiag指定六A低覆盖路径的前五层可信阈值缺口均正；末位BR仍不能补倒二失理性 |
 | [指定最优私有化的有序历史独立审计--程序](<../../../../archives/customer-attraction/state/程序/指定最优私有化的有序历史独立审计--程序.md>) | math-exposition | retain | 36客户三人策略指定全Y最优私有化两遗漏客户后，根所有X分支收益至多11而门槛12，全部SPE仅Y排列且W36；改选全X最优仍可保W34。 |
 | [收益图闭集与森林压缩的定义级原审计合同--程序](<../../../../archives/customer-attraction/state/程序/收益图闭集与森林压缩的定义级原审计合同--程序.md>) | algorithm-result | retain | 收益图闭集散度/精确流与森林消环在136小策略和五客户完整SPE上有有限审计，未给一般目标证书。 |
-| [收益比较图的六十四样本原审计与循环计数--程序](<../../../../archives/customer-attraction/state/程序/收益比较图的六十四样本原审计与循环计数--程序.md>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；真实收益比较图的SCC商、路径行与势差实现，64随机动作图5058有限检查不承诺福利界。 数学主张已有正文承载，本页用作来源证据。 |
-| [整数全终局加速器的零背景与固定背景接口--程序](<../../../../archives/customer-attraction/state/程序/整数全终局加速器的零背景与固定背景接口--程序.md>) | algorithm-result | retain | 零背景与合法固定背景的整数全SPE终局集合递推，后者目标为余者总利润；2000次报告仅有限扫描。 |
+| [收益比较图的六十四样本原审计与循环计数--程序](<../actions/52b0b7d604fe86df827b.json>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；真实收益比较图的SCC商、路径行与势差实现，64随机动作图5058有限检查不承诺福利界。 数学主张已有正文承载，本页用作来源证据。 |
+| [整数全终局加速器的零背景与固定背景接口--程序](<../actions/23c0f08781786145eefe.json>) | evidence-only | attach | 整数全终局加速器页的2000次固定扫描和80自测仅是有限实现证据 |
 | [整数占用储备独审的标量回归合同与完整报告--程序](<../../../../archives/customer-attraction/state/程序/整数占用储备独审的标量回归合同与完整报告--程序.md>) | math-exposition | retain | 整数后继k使占用储备I与加强I−G+D分解成非负自税/平方项；两个分数k分布分别得I=−1/48与加强差−7/3600，划定整数量词边界。 |
 | [整数安全聚合的轨道输入搜索与固定策略锥--程序](<../../../../archives/customer-attraction/state/程序/整数安全聚合的轨道输入搜索与固定策略锥--程序.md>) | algorithm-result | retain | 整数客户终局全集DP与传递群均匀查询最优定理结合，给群不变输入静态安全值精确整数公式及固定完整策略锥的反例充分条件。 |
-| [整数覆盖价格的固定策略锥探针与同体报告--程序](<../../../../archives/customer-attraction/state/程序/整数覆盖价格的固定策略锥探针与同体报告--程序.md>) | evidence-only | attach | 固定策略整数购买覆盖价锥的3780次浮点LP仅存全兴趣单客户best 2/3和一份43动作；一般候选另有正文 |
+| [整数覆盖价格的固定策略锥探针与同体报告--程序](<../actions/47560bc28049ba07acc8.json>) | evidence-only | attach | 固定策略整数购买覆盖价锥的3780次浮点LP仅存全兴趣单客户best 2/3和一份43动作；一般候选另有正文 |
 | [新回复与旧主题的混合强配对行程序--程序](<../../../../archives/customer-attraction/state/程序/新回复与旧主题的混合强配对行程序--程序.md>) | math-exposition | retain | 真末两人三条IC加G(C,C)−G(C,J)≥0给强PAIR，六actual与R/Z旧索引按66有序边求和生成72必要行，旧点七行严格负。 |
 | [新末菜单普通价格的有理审计--程序](<../../../../archives/customer-attraction/state/程序/新末菜单普通价格的有理审计--程序.md>) | math-exposition | retain | 六实际位置对新Y末回复的普通安全价格及共同K容量，固定5259必要点末位负价格将该点分离。 |
 | [方向审查原复合审计的依赖与有限证据--程序](<../../../../archives/customer-attraction/state/程序/方向审查原复合审计的依赖与有限证据--程序.md>) | mixed/needs-context | extract | 复合程序重放产品、hub、61客户中继和保护价格等已有证书；各一般结论在别处，抽其中有限数学关系与其余复现包装 |
-| [旋转对称末位菜单的浮点发现程序--程序](<../../../../archives/customer-attraction/state/程序/旋转对称末位菜单的浮点发现程序--程序.md>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；循环mask轨道LP只保固定根与末位BR，八题正门槛候选缺第二人真偏离IC且后续精确点不为SPE。 本页无独立可复用数学保证。 |
+| [旋转对称末位菜单的浮点发现程序--程序](<../actions/a46fc352576b113f1c3c.json>) | evidence-only | attach | 固定输入/策略的搜索或重放记录；循环mask轨道LP只保固定根与末位BR，八题正门槛候选缺第二人真偏离IC且后续精确点不为SPE。 本页无独立可复用数学保证。 |
 | [无重复二次根保底的联合策略MILP与大M合同--程序](<../../../../archives/customer-attraction/state/程序/无重复二次根保底的联合策略MILP与大M合同--程序.md>) | algorithm-result | retain | 联合MILP的一热政策、终局边际向量传播、真实离轨IC与静态见证选择器对任意固定p,m有精确等价编码；大M界2(m+1)保证非选枝放松。 |
 | [旧七百零二行与实际末主题分支的联合松弛程序--程序](<../../../../archives/customer-attraction/state/程序/旧七百零二行与实际末主题分支的联合松弛程序--程序.md>) | math-exposition | retain | 在旧702共同边缘上分别加入B三人尾投影和四个真实强制B分支的IC/MZ/查询行，指出自定义倒二源M行不合法。 |
 | [旧三百八十一客户强聚合复用的单位审计合同--程序](<../../../../archives/customer-attraction/state/程序/旧三百八十一客户强聚合复用的单位审计合同--程序.md>) | math-exposition | retain | 381客户完整三人策略对固定p的强Σ(D_i−C_i+)给负657/400，真实SPE松弛使弱FTA预算仍正。 |
-| [旧冻结匹配原独审的再调用与来源注记--程序](<../../../../archives/customer-attraction/state/程序/旧冻结匹配原独审的再调用与来源注记--程序.md>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；52客户四人完整策略冻结匹配独审的再调用，唯一最优支持所有24匹配最小48大于W47。 数学主张已有正文承载，本页用作来源证据。 |
+| [旧冻结匹配原独审的再调用与来源注记--程序](<../actions/f7edbab72a1013284a38.json>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；52客户四人完整策略冻结匹配独审的再调用，唯一最优支持所有24匹配最小48大于W47。 数学主张已有正文承载，本页用作来源证据。 |
 | [旧回复共同报价十四行的系数审计器--程序](<../../../../archives/customer-attraction/state/程序/旧回复共同报价十四行的系数审计器--程序.md>) | math-exposition | retain | 从同一完整策略的B/C六回复推出12条全actual安全报价及两条共享最大主题容量，给完备边缘代表和旧split点两负行。 |
 | [旧回复跨实际源的共同报价图程序--程序](<../../../../archives/customer-attraction/state/程序/旧回复跨实际源的共同报价图程序--程序.md>) | math-exposition | retain | 建立旧B/C回复的跨实际源14行、隐藏后继960有限价格投影及最优比较元组8单换条件。 |
 | [旧客户信用延拓与同直方图产品的独立有理核验--程序](<../../../../archives/customer-attraction/state/程序/旧客户信用延拓与同直方图产品的独立有理核验--程序.md>) | math-exposition | retain | 旧客户直方图信用T/L合同的AB与交叠族精确审计，同H产品给信用下界−2898和上界−3170矛盾。 |
 | [旧查询回复的有限网格分离程序--程序](<../../../../archives/customer-attraction/state/程序/旧查询回复的有限网格分离程序--程序.md>) | math-exposition | retain | 把同源R/Z旧查询的隐藏后继逐客户最小化成精确必要行，9900有理网格中八条负切面落倒二强PAIR端点。 |
 | [旧查询回复的连续分层分离程序--程序](<../../../../archives/customer-attraction/state/程序/旧查询回复的连续分层分离程序--程序.md>) | math-exposition | retain | 六人真实查询Ψ对2n后继取最小，原策略的真IC给必要线性行；64条分层切割以精确负余量排除旧投影点。 |
-| [早期逐人净缺口的原扫描合同与三十条记录--程序](<../../../../archives/customer-attraction/state/程序/早期逐人净缺口的原扫描合同与三十条记录--程序.md>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；逐人净缺口OPT−W≤m u_i的固定全历史策略客户锥LP，30条中仅26有测试且皆浮点阴性。 数学主张已有正文承载，本页用作来源证据。 |
+| [早期逐人净缺口的原扫描合同与三十条记录--程序](<../actions/b1fdd2243a57bc125bfe.json>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；逐人净缺口OPT−W≤m u_i的固定全历史策略客户锥LP，30条中仅26有测试且皆浮点阴性。 数学主张已有正文承载，本页用作来源证据。 |
 | [星核花瓣族的Fraction审计域与原报告--程序](<../../../../archives/customer-attraction/state/程序/星核花瓣族的Fraction审计域与原报告--程序.md>) | math-exposition | retain | 平衡花瓣的凸性给静态安全值与匹配费用等式；n30、K100有理端点使弱iid支付高于既定预算，Decimal根仅显示。 |
 | [显式前缀席位严格例的独立有序树审计--程序](<../../../../archives/customer-attraction/state/程序/显式前缀席位严格例的独立有序树审计--程序.md>) | math-exposition | retain | 124客户三人例独立合成并核完整有序SPE，显式前缀席位G之和较旧账严格增13/6。 |
 | [显式回复的真尾利润投影切面程序--程序](<../../../../archives/customer-attraction/state/程序/显式回复的真尾利润投影切面程序--程序.md>) | math-exposition | retain | 真尾背景利润界和实际末位共同价格非负组合后，逐客户z∈[0,r]取下包络得一般必要行；四个保存切面恰为既有强PAIR端点。 |
@@ -1544,7 +1544,7 @@
 | [最优外客户删除双族的全策略枚举与七十七条原记录--程序](<../../../../archives/customer-attraction/state/程序/最优外客户删除双族的全策略枚举与七十七条原记录--程序.md>) | math-exposition | retain | 两族二人完整SPE在删除唯一最优AB外客户后最差福利从2Q+1增至3Q−1、及7q增至8q；解析BR表解释反增 |
 | [最优排列调和债的固定策略锥与局部随机探针--程序](<../../../../archives/customer-attraction/state/程序/最优排列调和债的固定策略锥与局部随机探针--程序.md>) | math-exposition | retain | 最优排列H4的四种固定策略锥目标分别测试端点、同查询、局部债及唯一最优支持共同排列，原无精确阳性报告。 |
 | [最优支持冻结指派锥探针与有限阴性--程序](<../../../../archives/customer-attraction/state/程序/最优支持冻结指派锥探针与有限阴性--程序.md>) | math-exposition | retain | 固定完整策略锥对各拟最优支持/排列求共同裕量，并在Fraction恢复后复核全部并列最优互异支持；重复最优元组仍是遗漏量词。 |
-| [最优组合交换入口与封顶调和势随机探针--程序](<../../../../archives/customer-attraction/state/程序/最优组合交换入口与封顶调和势随机探针--程序.md>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；截断二调和势Φ₂对最优覆盖的随机全集终局探针，候选已由14客户两人例否定。 数学主张已有正文承载，本页用作来源证据。 |
+| [最优组合交换入口与封顶调和势随机探针--程序](<../actions/c2734ca09502c2f36956.json>) | evidence-only | attach | 固定输入／旧候选的程序运行与有限审计记录；截断二调和势Φ₂对最优覆盖的随机全集终局探针，候选已由14客户两人例否定。 数学主张已有正文承载，本页用作来源证据。 |
 | [最坏可信终局与静态CCE差值交替发现器--程序](<../../../../archives/customer-attraction/state/程序/最坏可信终局与静态CCE差值交替发现器--程序.md>) | mixed/needs-context | extract | 静态CCE经玩家对称化等价计数聚合LP，可信续局递推和Γ真实IC构成交替搜索；随机浮点快照及五例回归只给有限证据。 |
 | [最大主题仿射逐人桥的发现器与早停纪录--程序](<../../../../archives/customer-attraction/state/程序/最大主题仿射逐人桥的发现器与早停纪录--程序.md>) | math-exposition | retain | 区分P−和P+两条逐人仿射付款桥，62客户点否定前者，后者由银行族否定；给出了具体收益阈值。 |
 | [最大主题局部包络与实际分支压力的浮点合同--程序](<../../../../archives/customer-attraction/state/程序/最大主题局部包络与实际分支压力的浮点合同--程序.md>) | math-exposition | retain | 最大主题单枝63类型局部包络与实际加根枝6144类型234行必要系统，三报告仅浮点发现。 |
@@ -1558,29 +1558,29 @@
 | [有序最差终局路径的两步安全链探针与五人保存点--程序](<../../../../archives/customer-attraction/state/程序/有序最差终局路径的两步安全链探针与五人保存点--程序.md>) | math-exposition | retain | 111客户五人点有序完整SPE与五个静态值的有理双边证书给两步PAIR三个余额877/93、1087/186、0 |
 | [有序离轨变异的全树锥与固定正常路径--程序](<../../../../archives/customer-attraction/state/程序/有序离轨变异的全树锥与固定正常路径--程序.md>) | mixed/needs-context | extract | 变异只改2796个离轨节点，归纳全部候选保持同一有序实际路径；21支持穷尽五人七题OPT，主题对称差行只保异标签。73条LP记录是有限运行包装。 |
 | [有序自复制税势预算的全SPE终局探针--程序](<../../../../archives/customer-attraction/state/程序/有序自复制税势预算的全SPE终局探针--程序.md>) | math-exposition | retain | 全有序历史SPE终局集合递推检验自复制税势预算P_m≤W+C，四个小输入精确接口核验非一般证明。 |
-| [有效保险幅度的七输入完整续局诊断--程序](<../../../../archives/customer-attraction/state/程序/有效保险幅度的七输入完整续局诊断--程序.md>) | evidence-only | attach | 七个固定输入精确枚举根后SPE终局，最大3(h−M)−(2W−OPT)全非正；一般有效幅度引理另有正文，七次阴性不外推。 |
-| [有限实例目录的逐人半覆盖门槛扫描程序--程序](<../../../../archives/customer-attraction/state/程序/有限实例目录的逐人半覆盖门槛扫描程序--程序.md>) | evidence-only | attach | 本页是调用既有全集求解器扫描22个实例的入口和输入范围；逐人门槛与递推已有独立数学正文，未有本入口输出。 |
+| [有效保险幅度的七输入完整续局诊断--程序](<../actions/3ac18cc38defdcf20bbc.json>) | evidence-only | attach | 七个固定输入精确枚举根后SPE终局，最大3(h−M)−(2W−OPT)全非正；一般有效幅度引理另有正文，七次阴性不外推。 |
+| [有限实例目录的逐人半覆盖门槛扫描程序--程序](<../actions/f9f6b91566bd206aee47.json>) | evidence-only | attach | 本页是调用既有全集求解器扫描22个实例的入口和输入范围；逐人门槛与递推已有独立数学正文，未有本入口输出。 |
 | [有限层凹化的定义级有理审计--程序](<../../../../archives/customer-attraction/state/程序/有限层凹化的定义级有理审计--程序.md>) | math-exposition | retain | 二十二环凹化势在固定三层保持所有方格二阶差非正、完整SPE及自由列亏损9；源只对该C22参数作有理穷尽。 |
 | [有限计数势锥的强条件与同支持查询记录--程序](<../../../../archives/customer-attraction/state/程序/有限计数势锥的强条件与同支持查询记录--程序.md>) | math-exposition | retain | 有限计数势的strong搬运行及同支持效率递推(5)(6)有明确证明和signed覆盖表示，有限LP记录另作证据。 |
 | [未缩放插入信用的浮点终局与完整策略锥探针--程序](<../../../../archives/customer-attraction/state/程序/未缩放插入信用的浮点终局与完整策略锥探针--程序.md>) | math-exposition | retain | 未缩放插入价ENT1的浮点终局/完整策略锥两个接口，十三人合法完整策略给37/66明确反例而原小报告仅有限零检出。 |
-| [未覆盖背景信用的完整策略有限审计--程序](<../../../../archives/customer-attraction/state/程序/未覆盖背景信用的完整策略有限审计--程序.md>) | evidence-only | attach | ABʳ五例完整SPE及尾利润2r−1被重放，n64的17/252只是既有三族不等式的Fraction代入；一般信用不可能性由解析障碍承担。 |
+| [未覆盖背景信用的完整策略有限审计--程序](<../actions/dd071e4992eab6bdc89c.json>) | evidence-only | attach | ABʳ五例完整SPE及尾利润2r−1被重放，n64的17/252只是既有三族不等式的Fraction代入；一般信用不可能性由解析障碍承担。 |
 | [末两人固定前缀策略族与交叉必要行原审计--程序](<../../../../archives/customer-attraction/state/程序/末两人固定前缀策略族与交叉必要行原审计--程序.md>) | math-exposition | retain | 五人末两人固定前缀族的9/5整数SPE锥乘子证书与2016条交叉必要行两负值各有明确量词，13客户广告路径因T后真回复失败。 |
 | [末两人固定菜单与实际前缀安全行的半覆盖乘子搜索--程序](<../../../../archives/customer-attraction/state/程序/末两人固定菜单与实际前缀安全行的半覆盖乘子搜索--程序.md>) | mixed/needs-context | extract | 六人43真实行组成P0/P1/P2系数模板且已有P3有理乘子；三次HiGHS不可行无精确Farkas，抽模板 |
 | [末位份额完整策略探针与两路径原审计合同--程序](<../../../../archives/customer-attraction/state/程序/末位份额完整策略探针与两路径原审计合同--程序.md>) | mixed/needs-context | extract | 末位C2=(m+1)u_m≤2W已有真实三/五人反例；26/82条双路径必要行上的两个越界点在四个真尾门槛均失败，故不是完整SPE。 |
 | [末位负载签名条件定价与三系统精确恢复--程序](<../../../../archives/customer-attraction/state/程序/末位负载签名条件定价与三系统精确恢复--程序.md>) | mixed/needs-context | extract | AB末位配对的共同r负载签名使十single菜单及一条共同OO行可条件分解定价；717/727/728必要系统的有理双证书与运行轨迹需分开。 |
 | [末偏离标记审计的真实行双射与多源有理总账--程序](<../../../../archives/customer-attraction/state/程序/末偏离标记审计的真实行双射与多源有理总账--程序.md>) | math-exposition | retain | 非根终局与真实最后偏离IC行的双射、换标恒等式及带signed debt的多源守恒式均有完整数学解释。 |
 | [末回复Fréchet上界的双程序与三层有限报告--程序](<../../../../archives/customer-attraction/state/程序/末回复Fréchet上界的双程序与三层有限报告--程序.md>) | math-exposition | retain | 末回复四态边缘的共同阈值完成、逐类条件Z最大与宽Fréchet上界三层均有有理负值，排固定边缘联合扩张。 |
-| [末回复阈值层的强配对闭包程序--程序](<../../../../archives/customer-attraction/state/程序/末回复阈值层的强配对闭包程序--程序.md>) | algorithm-result | retain | 固定R边缘的阈值层将Z与ZZ交叠共同实现为min，并给旧行仿射代入和10344行精确验证合同。 |
+| [末回复阈值层的强配对闭包程序--程序](<../../../../archives/customer-attraction/state/程序/末回复阈值层的强配对闭包程序--程序.md>) | math-exposition | retain | 强PAIR三条真实IC相加及层内共同阈值使全部交叠min同时实现 |
 | [末对五等号型闭包与固定类型证书的原实现--程序](<../../../../archives/customer-attraction/state/程序/末对五等号型闭包与固定类型证书的原实现--程序.md>) | math-exposition | retain | 末两人三索引真实IC给H−[f(T)+f(S)−g(T,S)]的非负分解；64支持强式19权Farkas与弱式精确点边界 |
 | [条件总势与真实末两位菜单的有理恢复程序--程序](<../../../../archives/customer-attraction/state/程序/条件总势与真实末两位菜单的有理恢复程序--程序.md>) | mixed/needs-context | extract | 18主题条件势的924行是假设预算而未证真SPE必要；两份1535类型精确primal点超过2但倒二可真实偏离，需抽出条件系统与失效边界。 |
-| [条件末回复修复的仿射发现与原子化程序--程序](<../../../../archives/customer-attraction/state/程序/条件末回复修复的仿射发现与原子化程序--程序.md>) | algorithm-result | retain | 固定旧hist/R边缘后以321维Z质量仿射恢复旧行，25层42原子构造和全行Fraction验收可复用。 |
+| [条件末回复修复的仿射发现与原子化程序--程序](<../actions/31c0c9b522cb324dc249.json>) | evidence-only | attach | 固定旧边缘的Z仿射修复、42原子与3949行核验是指定点的有限证据 |
 | [条件独立根回复提升与固定边缘耦合的两级检验--程序](<../../../../archives/customer-attraction/state/程序/条件独立根回复提升与固定边缘耦合的两级检验--程序.md>) | math-exposition | retain | 条件独立提升四个负值不足以排除任意根边缘耦合；对96个耦合列的Farkas向量只在R33非零并给严格预算。 |
 | [条件矩动态规划的完整直方图定价--程序](<../../../../archives/customer-attraction/state/程序/条件矩动态规划的完整直方图定价--程序.md>) | algorithm-result | retain | 条件矩DP枚举末两位组及首回复总数，精确等价于指定多槽直方图定价并用完整遍历核两种参数。 |
 | [极大主题完整席位地板的全路径诊断--程序](<../../../../archives/customer-attraction/state/程序/极大主题完整席位地板的全路径诊断--程序.md>) | math-exposition | retain | 完整E席位地板的保底归纳与反链m5/k6例算出地板和899/60<OPT/2，程序扫描只是附属。 |
 | [极小可信续局首回复前移的精确枚举程序--程序](<../../../../archives/customer-attraction/state/程序/极小可信续局首回复前移的精确枚举程序--程序.md>) | math-exposition | retain | 15客户强制第四步后的全部可信两人尾给旧A极小71/30、前移后13/6及父节点IC阻碍，机制明确。 |
-| [标签汉明保护与真尾计数的有限审计--程序](<../../../../archives/customer-attraction/state/程序/标签汉明保护与真尾计数的有限审计--程序.md>) | evidence-only | attach | 八组块实例的保护域与部分尾计数核验后，fresh-B偏离明确给L/d−L<0；越二形式福利因负IC不能作half反例，普遍障碍已在独立证明。 |
+| [标签汉明保护与真尾计数的有限审计--程序](<../actions/89f408a10bad6021b31e.json>) | evidence-only | attach | 八组块实例的保护域与部分尾计数核验后，fresh-B偏离明确给L/d−L<0；越二形式福利因负IC不能作half反例，普遍障碍已在独立证明。 |
 | [根平稳弱核三次同表输入与随机策略记录--程序](<../../../../archives/customer-attraction/state/程序/根平稳弱核三次同表输入与随机策略记录--程序.md>) | math-exposition | retain | 定义根平稳弱核的尾部计数K(a,b)、平稳分布π和弱上界查询，并界定三次同策略及四人随机搜索的量词。 |
-| [根末位跨第二菜单的条件定价与未收敛记录--程序](<../../../../archives/customer-attraction/state/程序/根末位跨第二菜单的条件定价与未收敛记录--程序.md>) | algorithm-result | retain | 对跨枝菜单行按第二历史末会员c划六个fiber的定价oracle有完整域划分和恢复保证；12轮尚未收敛。 |
+| [根末位跨第二菜单的条件定价与未收敛记录--程序](<../actions/268c74bc80d5672127d2.json>) | evidence-only | attach | 六fiber定价公式嵌在未收敛12轮浮点搜索，未交付全域有理证书 |
 | [正价源池原随机核验的有限域与读后审查--程序](<../../../../archives/customer-attraction/state/程序/正价源池原随机核验的有限域与读后审查--程序.md>) | math-exposition | retain | 正价源池的POOL、NET、LOCAL-SOURCE预算和正价格Q≤position≤W是讨论主体；1800叶与24标量仅是有限回归。 |
 | [残余组合的两级线性探针与根门槛随机检查--程序](<../../../../archives/customer-attraction/state/程序/残余组合的两级线性探针与根门槛随机检查--程序.md>) | math-exposition | retain | 残余TS外部覆盖的22必要行LP、216完整回复图与27客户精确反例分层，另两个随机脚本仅有算法合同。 |
 | [残余覆盖曲线探针的全客户旧报告与量词边界--程序](<../../../../archives/customer-attraction/state/程序/残余覆盖曲线探针的全客户旧报告与量词边界--程序.md>) | math-exposition | retain | 提出残余未覆盖客户曲线F_r(Y)及边际付款下界，说明27客户反例和旧100条全客户报告与当前true-only代码的范围差。 |
@@ -1588,14 +1588,14 @@
 | [浮点终局全集递推与完整历史有理后核程序--程序](<../../../../archives/customer-attraction/state/程序/浮点终局全集递推与完整历史有理后核程序--程序.md>) | algorithm-result | retain | R(c)逆推枚举终局结果并重建有序策略，Fraction后核给定全历史策略的IC；浮点发现步骤受容差与大整数舍入限制。 |
 | [混合私有列三份乘子探针的实际目标与路由域--程序](<../../../../archives/customer-attraction/state/程序/混合私有列三份乘子探针的实际目标与路由域--程序.md>) | mixed/needs-context | extract | 三个未执行LP探针揭示旧私有信用过大及(w−1)/2和w−1/2解析差异，但其余为脚本路由和列数说明。 |
 | [混合私有域的诊断与四十二行原始有理核验--程序](<../../../../archives/customer-attraction/state/程序/混合私有域的诊断与四十二行原始有理核验--程序.md>) | math-exposition | retain | 42行4059型有理乘子给出δ>0的条件性六主题联合下界，且O6最优还依赖私有块最小条件。 |
-| [父方全利润剪枝的六策略原审计与三份流--程序](<../../../../archives/customer-attraction/state/程序/父方全利润剪枝的六策略原审计与三份流--程序.md>) | evidence-only | attach | 六份固定策略的3635项IC与gross/net/clip流为既有剪枝恒等式的有限回归；本页无独立通用算法保证。 |
+| [父方全利润剪枝的六策略原审计与三份流--程序](<../actions/a8e92aa50f44394c1cfb.json>) | evidence-only | attach | 六份固定策略的3635项IC与gross/net/clip流为既有剪枝恒等式的有限回归；本页无独立通用算法保证。 |
 | [父方逐单位客户插入账独审的有序最优域与输入绑定--程序](<../../../../archives/customer-attraction/state/程序/父方逐单位客户插入账独审的有序最优域与输入绑定--程序.md>) | math-exposition | retain | 父方单位展开22客户的全259历史IC、1296最优覆盖和唯一最优四叶24排列账，最小账193/12高于W14。 |
 | [父金额容量十六证书报告的逐字段合同--程序](<../../../../archives/customer-attraction/state/程序/父金额容量十六证书报告的逐字段合同--程序.md>) | math-exposition | retain | 给父金额容量C_l按先前利润和子利润比值的预算式，并解释16固定证书、46请求行的2/3界只属有限实例。 |
 | [独占信用原发现器的三十七客户见证与历史商转移--程序](<../../../../archives/customer-attraction/state/程序/独占信用原发现器的三十七客户见证与历史商转移--程序.md>) | math-exposition | retain | 37客户四人均衡中独占信用给−2/5局部缺口，另给保留完整有序历史策略的五覆盖类商提升。 |
 | [独立吸收主题填充策略的精确有序历史审计程序--程序](<../../../../archives/customer-attraction/state/程序/独立吸收主题填充策略的精确有序历史审计程序--程序.md>) | math-exposition | retain | P^k AAB填充构造用特殊饱和模式及BI退路形成全历史策略，给出W=5k+16、OPT=5k+22的有限族比较。 |
 | [独立门槛多锥与人口预算的三份原攻击器--程序](<../../../../archives/customer-attraction/state/程序/独立门槛多锥与人口预算的三份原攻击器--程序.md>) | math-exposition | retain | 分别推导真实门槛R/Θ、多固定策略锥共享客户向量及人口预算混尺度条件，界定三份攻击器各自所检不等式。 |
 | [环菜单有理回归与两种负面发现器的原程序合同--程序](<../../../../archives/customer-attraction/state/程序/环菜单有理回归与两种负面发现器的原程序合同--程序.md>) | math-exposition | retain | 环主题的真实菜单、静态旋转价和奇数族严格增益有闭式解释；两个负面发现器运行范围另作证据。 |
-| [目标终局联合重数MILP的压缩见证与固定根记录--程序](<../../../../archives/customer-attraction/state/程序/目标终局联合重数MILP的压缩见证与固定根记录--程序.md>) | algorithm-result | retain | 联合客户质量与目标终局的二元y/x共享惩罚MILP有双向完整SPE存在性证明和有效M=m界。 |
+| [目标终局联合重数MILP的压缩见证与固定根记录--程序](<../../../../archives/customer-attraction/state/程序/目标终局联合重数MILP的压缩见证与固定根记录--程序.md>) | math-exposition | retain | 共享惩罚MILP与完整历史SPE存在性有双向证明，时限报告无解证书 |
 | [相对私有块随机策略锥探针--程序](<../../../../archives/customer-attraction/state/程序/相对私有块随机策略锥探针--程序.md>) | mixed/needs-context | extract | 相对块E_j避开过去与规定根但可被外部主题交叉覆盖；固定计数策略锥LP最大化最小块/根收益，15次浮点探针有11份有理提升通过，未加最优比较约束。 |
 | [相邻冻结查询的旧两人策略与PB固定族核验--程序](<../../../../archives/customer-attraction/state/程序/相邻冻结查询的旧两人策略与PB固定族核验--程序.md>) | math-exposition | retain | 相邻冻结查询的SHIFT恒等式和末锚上界明确了两人策略与PB固定族能验证的局部必要关系及未付溢价。 |
 | [相邻换位反例的作者双收益核与六输入审计--程序](<../../../../archives/customer-attraction/state/程序/相邻换位反例的作者双收益核与六输入审计--程序.md>) | math-exposition | retain | 给相邻换位的α<β<μ_B六个有限输入、真实上升与缺口比，并区分参数族无界证明和作者双收益自检。 |
@@ -1618,7 +1618,7 @@
 | [真实查询行的完整树与根自由有限探针--程序](<../../../../archives/customer-attraction/state/程序/真实查询行的完整树与根自由有限探针--程序.md>) | mixed/needs-context | extract | 真实净行H_i=W−O(T)+Σd_i(T_j)是未证普遍付款候选；完整锥与仅删全局根IC的锥区分后，三个命名根自由计划的最小gap均非负但不外推。 |
 | [真实根菜单全分数采购的原六十六项锥探针--程序](<../../../../archives/customer-attraction/state/程序/真实根菜单全分数采购的原六十六项锥探针--程序.md>) | mixed/needs-context | extract | 全分数采购Fν(z)−Σz_ad_a−W用强制根真实收益定价，z可截[0,1]；63整数采购和三次连续重复仅一个正深度策略锥的浮点阴性。 |
 | [真实第三位固定查询闭包与双菜单替换定价--程序](<../../../../archives/customer-attraction/state/程序/真实第三位固定查询闭包与双菜单替换定价--程序.md>) | math-exposition | retain | 从真第三位两菜单七条非负关系推出P7，明确双菜单94行与固定15标签60行的合法替换及浮点定价范围。 |
-| [真实第三位投影的菜单补全与续价合同--程序](<../../../../archives/customer-attraction/state/程序/真实第三位投影的菜单补全与续价合同--程序.md>) | algorithm-result | retain | 由第三节点四个源投影构造可补全的菜单族，列出 24+28+3 行扩展，并按共同 d 分离完整计数直方图的定价问题。 |
+| [真实第三位投影的菜单补全与续价合同--程序](<../actions/37cb2953797657512fb5.json>) | evidence-only | attach | 真实第三位投影的菜单补全只保四份浮点有限记录与程序合同 |
 | [真实策略图的双支持与有符号客户搜索及三份冻结点--程序](<../../../../archives/customer-attraction/state/程序/真实策略图的双支持与有符号客户搜索及三份冻结点--程序.md>) | math-exposition | retain | 真实策略的精确逆推保证完整SPE；给signed共同收益的锐稀释前缀公式及双支持守恒，三份保存点的数学作用与精确归一缺口明确。 |
 | [真实菜单的有符号方向与新标签筛选记录--程序](<../../../../archives/customer-attraction/state/程序/真实菜单的有符号方向与新标签筛选记录--程序.md>) | math-exposition | retain | 证明全非空均匀客户型下各实际删位菜单价格取等，推导严格有理方向经正基λ编译为SPE反例的条件，并指出fresh省行缺零基比较。 |
 | [真实重置配对审计的七旧策略与八人二次型合同--程序](<../../../../archives/customer-attraction/state/程序/真实重置配对审计的七旧策略与八人二次型合同--程序.md>) | math-exposition | retain | RESET成对恒等式的七个有限策略核验外，八人根二次型以255支撑驻点枚举证明指定输入最大1717/560，且局部pair负值与路径聚合正值分离。 |
@@ -1631,27 +1631,27 @@
 | [私有列扩域与十五组对称乘子的真实合同--程序](<../../../../archives/customer-attraction/state/程序/私有列扩域与十五组对称乘子的真实合同--程序.md>) | math-exposition | retain | 混合私有82行中singleton共享保底非法；15组乘子可解析迁移既有42权，给4059列同一精确正残差δ的条件域。 |
 | [笛卡尔完整策略与旧客户信用分离的原始有理审计--程序](<../../../../archives/customer-attraction/state/程序/笛卡尔完整策略与旧客户信用分离的原始有理审计--程序.md>) | math-exposition | retain | 产品完整策略逐坐标IC及F剩余利润可加；64人LOW/UPPER同旧客户直方图分别迫信用G≥−2898与≤−3170，矛盾272。 |
 | [第三主题七收益回路的形式多项式核验与原树入口--程序](<../../../../archives/customer-attraction/state/程序/第三主题七收益回路的形式多项式核验与原树入口--程序.md>) | math-exposition | retain | 三标签占位q,q′,q0的七收益式(G)对七会员模式恒等；r=2s子族全正式(P)，逐会员解系数和符号多项式给全参数证明。 |
-| [第三位查询固定策略锥的有限探针--程序](<../../../../archives/customer-attraction/state/程序/第三位查询固定策略锥的有限探针--程序.md>) | evidence-only | attach | 固定三套计数策略的浮点 LP 和 14 型输入真结果探针报告正余额；这些运行记录不提供超出既有 IC/BI 的通用数学结论。 |
-| [第二位D分支的列生成与完整主题定价--程序](<../../../../archives/customer-attraction/state/程序/第二位D分支的列生成与完整主题定价--程序.md>) | algorithm-result | retain | 第二位 D 分支列生成把全部直方图主题的定价按旧位、D2、j 分解，穷尽 49152 条条件以分离违约行。 |
+| [第三位查询固定策略锥的有限探针--程序](<../actions/29fbaaf2940f97424dd9.json>) | evidence-only | attach | 固定三套计数策略的浮点 LP 和 14 型输入真结果探针报告正余额；这些运行记录不提供超出既有 IC/BI 的通用数学结论。 |
+| [第二位D分支的列生成与完整主题定价--程序](<../actions/346506372b46d6796baa.json>) | evidence-only | attach | 第二位D分支564/908行列生成只有浮点余量，未核新系统有理最优 |
 | [第二节点修复原脚本的输入构造与未调用边界--程序](<../../../../archives/customer-attraction/state/程序/第二节点修复原脚本的输入构造与未调用边界--程序.md>) | mixed/needs-context | extract | 未调用脚本实际只造19/30客户两组掩码及银行core填充草稿，没有联合第二节点策略或验证；可抽取输入掩码与容量选择规则。 |
 | [索引主题与实际第四步B分支的联合必要图程序--程序](<../../../../archives/customer-attraction/state/程序/索引主题与实际第四步B分支的联合必要图程序--程序.md>) | math-exposition | retain | 5108行联合必要图的1905列为索引与实际第四步B分支松弛；实际B三人尾八种真实必要行取隐藏回复上包络，精确可行W<1/2仍非完整SPE。 |
 | [索引回复的真尾利润子集投影程序--程序](<../../../../archives/customer-attraction/state/程序/索引回复的真尾利润子集投影程序--程序.md>) | math-exposition | retain | 将强制R/Z后的r名真后继利润界与同一实际末位报价组合成离散下包络必要行，比较元组含索引对角重复。 |
-| [纯完整根菜单的固定策略锥整数规划探针--程序](<../../../../archives/customer-attraction/state/程序/纯完整根菜单的固定策略锥整数规划探针--程序.md>) | evidence-only | attach | 固定完整策略锥的MILP在30个随机锥上浮点裕量约零，无有理对偶；纯列额外查询cap仅为局部候选，现有八人双块反例另载完整证明。 |
+| [纯完整根菜单的固定策略锥整数规划探针--程序](<../actions/f6f4410a88560861b186.json>) | evidence-only | attach | 固定完整策略锥的MILP在30个随机锥上浮点裕量约零，无有理对偶；纯列额外查询cap仅为局部候选，现有八人双块反例另载完整证明。 |
 | [纯自洽查询发现的析取编码与整数压缩合同--程序](<../../../../archives/customer-attraction/state/程序/纯自洽查询发现的析取编码与整数压缩合同--程序.md>) | math-exposition | retain | 六种纯查询析取编码与固定策略整数压缩的精确约束、Big-M及有理恢复；16客户只是有限见证。 |
 | [纯额外槽门槛与完整路径菜单的固定锥探针--程序](<../../../../archives/customer-attraction/state/程序/纯额外槽门槛与完整路径菜单的固定锥探针--程序.md>) | math-exposition | retain | 阐明纯额外槽 θ_{r+1} 的半数候选条件，并给 m=4 中 θ5≥19/14>4/3 的反例，区分完整路径菜单要求。 |
-| [终局势隐藏查询交替攻击与四人有限记录--程序](<../../../../archives/customer-attraction/state/程序/终局势隐藏查询交替攻击与四人有限记录--程序.md>) | evidence-only | attach | 交替用两套终局势隐藏查询的浮点 LP 攻击 F/G 势，576 次调用及四人记录仅是固定算例，未形成有保证的判定方法。 |
+| [终局势隐藏查询交替攻击与四人有限记录--程序](<../actions/3ae2148184a3304ed73b.json>) | evidence-only | attach | 交替用两套终局势隐藏查询的浮点 LP 攻击 F/G 势，576 次调用及四人记录仅是固定算例，未形成有保证的判定方法。 |
 | [终局自背景的有符号有限策略锥探针与双报告边界--程序](<../../../../archives/customer-attraction/state/程序/终局自背景的有符号有限策略锥探针与双报告边界--程序.md>) | math-exposition | retain | 定义有符号终局自背景 S=\|O\|+Σ_{C∩O}d/(c+d)，推成 B_s≤W+G，并解释它与谐波、终局势条件及最优策略量词的关系。 |
 | [终局负载税两种搜索的原始合同与有限阴性--程序](<../../../../archives/customer-attraction/state/程序/终局负载税两种搜索的原始合同与有限阴性--程序.md>) | math-exposition | retain | 明确提出终局负载税OPT≤W+Σc/(c+1)及变量作用，随机与锥内搜索只提供有限阴性证据。 |
 | [结构化相对私有块策略锥扫描器--程序](<../../../../archives/customer-attraction/state/程序/结构化相对私有块策略锥扫描器--程序.md>) | math-exposition | retain | 定义固定AB叶策略全部真实偏离锥与相对私有块E_j的LP，三人数精确点说明块比率可高而首步损失低。 |
-| [统一K三行系数障碍的固定有理复算--程序](<../../../../archives/customer-attraction/state/程序/统一K三行系数障碍的固定有理复算--程序.md>) | evidence-only | attach | 以 Fraction 重算现有三行统一 K 系数障碍，得到 λ 总量至少 4 与各 λ_j 至多 5/3 的固定核验，未提供独立求解器。 |
+| [统一K三行系数障碍的固定有理复算--程序](<../actions/b68aa586e1d325858282.json>) | evidence-only | attach | 以 Fraction 重算现有三行统一 K 系数障碍，得到 λ 总量至少 4 与各 λ_j 至多 5/3 的固定核验，未提供独立求解器。 |
 | [统一可信价格与删位修复的五份原始有理审计--程序](<../../../../archives/customer-attraction/state/程序/统一可信价格与删位修复的五份原始有理审计--程序.md>) | math-exposition | retain | 解释统一签名价格、删二锚、BANK/BAL/LOW与C(g)=2P−N+p+n的条件安全编译，五份原程序是有理审计。 |
 | [联合背景证书的原审计与单路径收费探针--程序](<../../../../archives/customer-attraction/state/程序/联合背景证书的原审计与单路径收费探针--程序.md>) | math-exposition | retain | 联合高背景付款系数以整数端点和差分证明适用域；前缀PAY在真最优m槽与实际剩余k的量词上分离，46客户旧探针只验一条路径。 |
-| [背景储备四计划全前缀核与七十二浮点锥的证据合同--程序](<../../../../archives/customer-attraction/state/程序/背景储备四计划全前缀核与七十二浮点锥的证据合同--程序.md>) | evidence-only | attach | 四计划逐前缀 RESERVE 检查与 72 个浮点后缀锥只是固定数据审计，主要输出是可复查的计划值与数值余量。 |
+| [背景储备四计划全前缀核与七十二浮点锥的证据合同--程序](<../actions/2a8f6c62a0222b647a96.json>) | evidence-only | attach | 四计划逐前缀 RESERVE 检查与 72 个浮点后缀锥只是固定数据审计，主要输出是可复查的计划值与数值余量。 |
 | [背景旧覆盖付款的系数证书搜索程序--程序](<../../../../archives/customer-attraction/state/程序/背景旧覆盖付款的系数证书搜索程序--程序.md>) | math-exposition | retain | 24乘子192行模板在τ=2有八支持有理Farkas向量，52客户完整SPE即使2u_A≥旧覆盖信用也使尾目标差−1；τ=1另有条件证书。 |
 | [背景菜单的有限证书程序--程序](<../../../../archives/customer-attraction/state/程序/背景菜单的有限证书程序--程序.md>) | math-exposition | retain | 合法H重复背景的两尾P+Δ≥任意双主题fresh覆盖；四个非负乘子、384二值/负载条件与符号余项式(8)证明任意L及全部客户。 |
 | [自然正边发现与完整策略复放的双程序合同--程序](<../../../../archives/customer-attraction/state/程序/自然正边发现与完整策略复放的双程序合同--程序.md>) | math-exposition | retain | 四人五主题完整策略给W419、OPT434，最优匹配的自然新正边q=1而源位皆0，区分自然与可达初始化。 |
 | [自由分数门槛的上界求值与Fenchel策略锥探针--程序](<../../../../archives/customer-attraction/state/程序/自由分数门槛的上界求值与Fenchel策略锥探针--程序.md>) | mixed/needs-context | extract | 自由分数门槛的凸上图与Fenchel切线给全背景下界L_{p,z}；固定Γ锥的floor/local负数只数值候选，真实整数安全值和自由值分开。 |
-| [自由删槽全历史攻击与定义级核验--程序](<../../../../archives/customer-attraction/state/程序/自由删槽全历史攻击与定义级核验--程序.md>) | algorithm-result | retain | FullMenu 使用精确整数 BI/U/E/F 和离路径子树优化逐历史构造完整菜单，materialize 输出策略，含穷举一致性核验。 |
+| [自由删槽全历史攻击与定义级核验--程序](<../actions/172b637af7e2d75c2a4e.json>) | evidence-only | attach | 自由删槽程序页重放七个固定输入的定义级审计，一般包络另在算法页 |
 | [自由删槽列父审的精确合同与四种边界--程序](<../../../../archives/customer-attraction/state/程序/自由删槽列父审的精确合同与四种边界--程序.md>) | math-exposition | retain | 固定36客户策略的18删槽列有理匹配界164/5、80坐标有符号势零余项和四个跨势余额回归，明确不推广任意策略。 |
 | [自由删槽列的原始发现与精确核验合同--程序](<../../../../archives/customer-attraction/state/程序/自由删槽列的原始发现与精确核验合同--程序.md>) | math-exposition | retain | 给36客户全p匹配上下界与固定p的9IC+3MENU有理势恒等式，说明有限AFC例并不闭合任意σ聚合预算。 |
 | [计数策略联合重数候选器与五人全重合端点--程序](<../../../../archives/customer-attraction/state/程序/计数策略联合重数候选器与五人全重合端点--程序.md>) | algorithm-result | retain | 计数依赖策略被编码成联合重数MILP，W=1下Big-M=m给出该受限策略类的精确有限候选判定；保存的全重合点只作端点。 |
@@ -1661,12 +1661,12 @@
 | [跨族首回复的七百零七行发现与菜单闭包原型--程序](<../../../../archives/customer-attraction/state/程序/跨族首回复的七百零七行发现与菜单闭包原型--程序.md>) | math-exposition | retain | 707行跨族首回复系统保持共同K列，隐藏直方图与菜单域可分定价；原浮点β2.01717只属必要放松，230菜单行仍原型。 |
 | [跨枝金额列容量原筛查的完整策略与输入过滤合同--程序](<../../../../archives/customer-attraction/state/程序/跨枝金额列容量原筛查的完整策略与输入过滤合同--程序.md>) | math-exposition | retain | 给定完整SPE的跨枝正价列由各源金额预算的最大q/pw精确优化，并明确只对被筛中的现有证书成立。 |
 | [跨源九项下界原验证器与冻结点的精确合同--程序](<../../../../archives/customer-attraction/state/程序/跨源九项下界原验证器与冻结点的精确合同--程序.md>) | math-exposition | retain | 第三位与第四位共享回复的九项带价下界及固定有理点负余量被解释，15360次定义核不承担全域证明。 |
-| [近113与近817固定有理鞍点探针的完整合同--程序](<../../../../archives/customer-attraction/state/程序/近113与近817固定有理鞍点探针的完整合同--程序.md>) | evidence-only | attach | 两个固定有理 p/q 的 43 节点鞍点 KKT 探针复放既有约束，输出全部利息为零，未建立新一般性结论。 |
+| [近113与近817固定有理鞍点探针的完整合同--程序](<../actions/9c6d1e2d465cbf111ecb.json>) | evidence-only | attach | 两个固定有理 p/q 的 43 节点鞍点 KKT 探针复放既有约束，输出全部利息为零，未建立新一般性结论。 |
 | [连续旧查询切面的迭代精化程序--程序](<../../../../archives/customer-attraction/state/程序/连续旧查询切面的迭代精化程序--程序.md>) | math-exposition | retain | 推导R/Z真实强制分支与同一末位共同报价的连续下包络切面，并精确核保存32行加入5043基础行后的5075行点。 |
-| [逐人净缺口地板的三份浮点续局锥记录--程序](<../../../../archives/customer-attraction/state/程序/逐人净缺口地板的三份浮点续局锥记录--程序.md>) | evidence-only | attach | 三份m3/5/7固定续局锥报告共38条浮点目标均负；缺动作表、精确对偶与完整最优证书，未决逐人净缺口桥不由这些阴性证明。 |
+| [逐人净缺口地板的三份浮点续局锥记录--程序](<../actions/ec1c01e2feb9b62ce912.json>) | evidence-only | attach | 三份m3/5/7固定续局锥报告共38条浮点目标均负；缺动作表、精确对偶与完整最优证书，未决逐人净缺口桥不由这些阴性证明。 |
 | [逐人净缺口锥游走的原恢复与门槛合同--程序](<../../../../archives/customer-attraction/state/程序/逐人净缺口锥游走的原恢复与门槛合同--程序.md>) | math-exposition | retain | 固定完整历史策略的整数IC客户锥以u_i=1归一最大化OPT支持减W，精确恢复三保存点均m−1，开放逐人净缺口仍非half。 |
 | [逐人净覆盖差的可信续局锥搜索与四种子扩展--程序](<../../../../archives/customer-attraction/state/程序/逐人净覆盖差的可信续局锥搜索与四种子扩展--程序.md>) | mixed/needs-context | extract | 逐人净差OPT−W≤mu_i的固定完整策略锥扫描可容非极小可信续局；20条浮点阴性及四种子扩展缺输出，阳性分支还缺恢复后目标>0复核。 |
-| [逐人完整菜单的集合续局与计数策略客户锥探针--程序](<../../../../archives/customer-attraction/state/程序/逐人完整菜单的集合续局与计数策略客户锥探针--程序.md>) | evidence-only | attach | 逐人菜单随机搜索与计数策略浮点客户锥报告有限探针结果，没有给出超越既有完整菜单递推的独立数学保证。 |
+| [逐人完整菜单的集合续局与计数策略客户锥探针--程序](<../actions/1c059658ad117a65f4e5.json>) | evidence-only | attach | 逐人菜单随机搜索与计数策略浮点客户锥报告有限探针结果，没有给出超越既有完整菜单递推的独立数学保证。 |
 | [逐人最优覆盖门槛与安全扩充的固定策略锥探针--程序](<../../../../archives/customer-attraction/state/程序/逐人最优覆盖门槛与安全扩充的固定策略锥探针--程序.md>) | math-exposition | retain | 区分逐人 OPT 地板、固定策略锥和安全扩充构造，给出了明确条件定理及有限探针的边界。 |
 | [逐人最小收益的完整SPE终局探针与稀疏日志--程序](<../../../../archives/customer-attraction/state/程序/逐人最小收益的完整SPE终局探针与稀疏日志--程序.md>) | math-exposition | retain | 集合值R的max-min递推覆盖任意完整历史平局；最低实际玩家收益与OPT/(2m)的等价固定输入判据，21条有限纪录已有银行反族纠错。 |
 | [逐人覆盖地板与净缺口的完整策略锥探针--程序](<../../../../archives/customer-attraction/state/程序/逐人覆盖地板与净缺口的完整策略锥探针--程序.md>) | math-exposition | retain | F/G/R 三种逐人覆盖合同分别建模于完整策略锥，并证明静态最佳回复的 OPT≤W+(m−1)u_i；零报告仅为有限证据。 |
@@ -1678,9 +1678,9 @@
 | [遗漏比较重数的逐客户与乘积精确审计器--程序](<../../../../archives/customer-attraction/state/程序/遗漏比较重数的逐客户与乘积精确审计器--程序.md>) | math-exposition | retain | 遗漏比较次数d的逐客户需求列与F_m(τ)递推给I+D*≤βW；六人β=6718464/2352949推出所有遗漏至少双出现时half，严格反例须有单次遗漏>D比例。 |
 | [重复前缀单分支双分支与八格菜单的三套LP--程序](<../../../../archives/customer-attraction/state/程序/重复前缀单分支双分支与八格菜单的三套LP--程序.md>) | math-exposition | retain | 从重复前缀的单分支、双分支和八格菜单推导 46/77/50 条真分支必要行，并通过 h 端点约化后测试有限 LP。 |
 | [重复标签五人全树锥游走与十六步日志--程序](<../../../../archives/customer-attraction/state/程序/重复标签五人全树锥游走与十六步日志--程序.md>) | math-exposition | retain | 解释五人七标签固定完整策略锥与16步9/5记录，三种九客户向量的共同覆盖别名和缺失15份策略的对偶边界。 |
-| [重复覆盖主题商的有限回归程序--程序](<../../../../archives/customer-attraction/state/程序/重复覆盖主题商的有限回归程序--程序.md>) | evidence-only | attach | 4370字节回归入口列明三组有限输入、八函数和断言覆盖；普遍覆盖商双向结论另由完整策略商等价证明承担。 |
+| [重复覆盖主题商的有限回归程序--程序](<../actions/b39e366eefc4f09f18d0.json>) | evidence-only | attach | 4370字节回归入口列明三组有限输入、八函数和断言覆盖；普遍覆盖商双向结论另由完整策略商等价证明承担。 |
 | [重复覆盖主题的有序历史商程序--程序](<../../../../archives/customer-attraction/state/程序/重复覆盖主题的有序历史商程序--程序.md>) | algorithm-result | retain | 从真实覆盖等价投影正向编译全部有序商历史及原标签提升，逐节点保持利润和纯SPE；输出树规模及前提明确。 |
-| [金额cap1锐族的四百节点原证书与审查读序--程序](<../../../../archives/customer-attraction/state/程序/金额cap1锐族的四百节点原证书与审查读序--程序.md>) | evidence-only | attach | 四百历史的冻结动作表、n=3三请求与原同实现重放支撑既有全n金额cap1锐族定理；本页主要是源审查和数据凭证。 |
+| [金额cap1锐族的四百节点原证书与审查读序--程序](<../actions/2c421bc7eb3d1437d15a.json>) | evidence-only | attach | 四百历史的冻结动作表、n=3三请求与原同实现重放支撑既有全n金额cap1锐族定理；本页主要是源审查和数据凭证。 |
 | [银行势目标递归原审计的完整孩子与DAG计数--程序](<../../../../archives/customer-attraction/state/程序/银行势目标递归原审计的完整孩子与DAG计数--程序.md>) | math-exposition | retain | 解释不交银行目标的势最大席位、每个强制行动真实孩子的低退出归纳，以及m2至7的有限DAG核验范围。 |
 | [银行离开重入的非均衡镜像与十五份完整策略构造--程序](<../../../../archives/customer-attraction/state/程序/银行离开重入的非均衡镜像与十五份完整策略构造--程序.md>) | math-exposition | retain | 银行离开重入费用有连续覆盖段望远镜与H_k入口费，形式树增费并非SPE，十五份真实策略仅有限探针。 |
 | [锚点缺口级联的完整策略锥与三个版本输出合同--程序](<../../../../archives/customer-attraction/state/程序/锚点缺口级联的完整策略锥与三个版本输出合同--程序.md>) | mixed/needs-context | extract | 可信终局递推后固定全树Γ锥最大比较覆盖，私有客户条件保主题互异极大；三版历史只保存改善点和浮点轨迹，不能当全策略上界。 |
@@ -1696,7 +1696,7 @@
 | [静态跟随者门槛保护的受限终局探针与三份数值记录--程序](<../../../../archives/customer-attraction/state/程序/静态跟随者门槛保护的受限终局探针与三份数值记录--程序.md>) | math-exposition | retain | 定义每个根一次且跟随者收益过静态门槛的受限终局最坏值，288客户固定收益与浮点门槛分离，另说明解析族仍非真SPE。 |
 | [非可信保底菜单的混合整数松弛与九客户边界点--程序](<../../../../archives/customer-attraction/state/程序/非可信保底菜单的混合整数松弛与九客户边界点--程序.md>) | math-exposition | retain | 非可信菜单MILP的精确修复点给六标签九客户、247行约束可行且目标上界9，并指出末位由1偏到3，不能成为SPE。 |
 | [非极小可信菜单与联合树的收益份额搜索--程序](<../../../../archives/customer-attraction/state/程序/非极小可信菜单与联合树的收益份额搜索--程序.md>) | mixed/needs-context | extract | 可信菜单可在离轨孩子选非极小收益但不超过实际值；固定Γ份额LP与joint MILP产生23客户CAP反例，五普通点仅固定锥取等且中断快照无全域结论。 |
-| [频率二混合兴趣与五标签的有限随机搜索--程序](<../../../../archives/customer-attraction/state/程序/频率二混合兴趣与五标签的有限随机搜索--程序.md>) | evidence-only | attach | 七标签频率二与五标签全型两种六人随机游走只有生成/停时合同、无冻结输入点或运行结果；五标签half来自另一定理。 |
+| [频率二混合兴趣与五标签的有限随机搜索--程序](<../actions/f67d163be0a1b8f79185.json>) | evidence-only | attach | 七标签频率二与五标签全型两种六人随机游走只有生成/停时合同、无冻结输入点或运行结果；五标签half来自另一定理。 |
 | [额外iid首位诊断的背景合同与静态桥边界--程序](<../../../../archives/customer-attraction/state/程序/额外iid首位诊断的背景合同与静态桥边界--程序.md>) | math-exposition | retain | 两人末回复选择器的有限势周期归约到静态PNE，支持外环族使双方2k低于iid λ3，准确区分条件归约与已否静态前提。 |
 | [首人收益残余目标的固定回复锥与原审计合同--程序](<../../../../archives/customer-attraction/state/程序/首人收益残余目标的固定回复锥与原审计合同--程序.md>) | math-exposition | retain | 两人固定回复锥的42个IC行与残余目标 R−2u₁被精确区分；独立整数点审计给有限反例语义。 |
 | [首对安全值的全历史联合整数探针--程序](<../../../../archives/customer-attraction/state/程序/首对安全值的全历史联合整数探针--程序.md>) | math-exposition | retain | 全历史联合整数模型以全收益向量和合法 M=m 编码完整SPE，静态安全行固定查询；限时浮点点含负质量，不构成反例。 |
@@ -1719,7 +1719,7 @@
 | [三人计数统一终局的末层映射穷尽与跳过边界--算法](<../../../../archives/customer-attraction/state/算法/三人计数统一终局的末层映射穷尽与跳过边界--算法.md>) | algorithm-result | retain | 三人计数统一策略枚举所有末层BR映射f，并以各首枝收益下限的max-min门槛精确合成可实现根终局Ω_M；证明必要充分。 |
 | [任意未来查询的完整行采购价与对偶--算法](<../../../../archives/customer-attraction/state/算法/任意未来查询的完整行采购价与对偶--算法.md>) | algorithm-result | retain | 任意未来查询的完整行采购价由严格递增角色逆推V_s=ρ_sr_s+(1−r_s)min V_child；流LP与价格对偶互相达到，给每客户可复用精确最小费算法。 |
 | [保真实分母的自由未来席位与可预测续价--算法](<../../../../archives/customer-attraction/state/算法/保真实分母的自由未来席位与可预测续价--算法.md>) | algorithm-result | retain | 为等份自由未来席位建立逆序最低f个不同接收角色的PRICE及按时间次序几何权的ACT-PRICE，证明守恒、命中和激活吸收界。 |
-| [全历史策略与最优静态指派的双通路精确审计--算法](<../../../../archives/customer-attraction/state/算法/全历史策略与最优静态指派的双通路精确审计--算法.md>) | algorithm-result | retain | 给定客户实例及完整动作策略，双通路枚举全部终局、全有序历史真实IC和全部最优静态指派；逐客户等价及逐节点判据保证可复用精确审计。 |
+| [全历史策略与最优静态指派的双通路精确审计--算法](<../../../../archives/customer-attraction/state/算法/全历史策略与最优静态指派的双通路精确审计--算法.md>) | math-exposition | retain | 对给定完整策略列出全部有序历史真实IC充要条件与最优静态指派的双重量词；原程序是穷举给定输入的审计，非独立求解方法。 |
 | [公共核等私客放松的对称占用递推--算法](<../../../../archives/customer-attraction/state/算法/公共核等私客放松的对称占用递推--算法.md>) | algorithm-result | retain | 公共核等私客模型以每态最大占用P和eligible递推精确求myopic放松G；排序计数及同负载轨道归纳保证压缩不漏作用。 |
 | [共同终局根价格的最短路与列生成证书--算法](<../../../../archives/customer-attraction/state/算法/共同终局根价格的最短路与列生成证书--算法.md>) | algorithm-result | retain | 固定非负边价时逐终局标记DAG最短路精确求全有序路径下界，列生成后有理化并全域重定价、原始概率核验可证有限LP最优。 |
 | [分享余项候选的完整策略树极值--算法](<../../../../archives/customer-attraction/state/算法/分享余项候选的完整策略树极值--算法.md>) | algorithm-result | retain | 完整策略树的可信终局集合R(k)、离轨孩子极值E_a和路径B(k,q)给出固定实例所有纯SPE的分享余项候选最大缺口D*及策略见证。 |
@@ -1743,101 +1743,101 @@
 | [跨标签正交积与局部四态的精确分支闭包--算法](<../../../../archives/customer-attraction/state/算法/跨标签正交积与局部四态的精确分支闭包--算法.md>) | algorithm-result | retain | 四态局部表对负混合块分支，非负跨边归约最大权闭包/最小割，证明每枝保值并给2^b规模。 |
 | [适应费用的逐批终端增广与全割层积分--算法](<../../../../archives/customer-attraction/state/算法/适应费用的逐批终端增广与全割层积分--算法.md>) | algorithm-result | retain | 固定actual Hall图的逐批增广同时饱和所有价格前缀，最小费用等于层积分的割缺额公式，可对任意有限价格使用。 |
 | [R-18背景利润的随机前缀表示与共同目录正性障碍--表示](<../../../../archives/customer-attraction/state/表示/R-18背景利润的随机前缀表示与共同目录正性障碍--表示.md>) | math-exposition | retain | ghost票随机前缀逐终局表示背景均分，清分母保完整策略但产生玩家专属覆盖；共同目录非负表示因β<0而失败并有最优近似误差。 |
-| [Beta与归属槽势的单客户审计及双版本范围--计算](<../../../../archives/customer-attraction/state/计算/Beta与归属槽势的单客户审计及双版本范围--计算.md>) | evidence-only | attach | Beta势与owner势的单客户边际、误差及首次owner前缀折扣是有限 m≤8 审计；普遍结论另由定理证明。 |
-| [DR聚合安全六份浮点诊断--计算](<../../../../archives/customer-attraction/state/计算/DR聚合安全六份浮点诊断--计算.md>) | evidence-only | attach | 六份扩大DR模型浮点读数仅有固定策略潜势与零哨兵，不含单位客户支持预算或完整SPE。 |
+| [Beta与归属槽势的单客户审计及双版本范围--计算](<../actions/dd7f076df81689a6444c.json>) | evidence-only | attach | Beta势与owner势的单客户边际、误差及首次owner前缀折扣是有限 m≤8 审计；普遍结论另由定理证明。 |
+| [DR聚合安全六份浮点诊断--计算](<../actions/4fa28c4a425395eb95ea.json>) | evidence-only | attach | 六份扩大DR模型浮点读数仅有固定策略潜势与零哨兵，不含单位客户支持预算或完整SPE。 |
 | [DR聚合安全配对浮点诊断--计算](<../../../../archives/customer-attraction/state/计算/DR聚合安全配对浮点诊断--计算.md>) | math-exposition | retain | 四份扩大DR模型浮点诊断与一个精确整数势反例，展示对角CAG关系2Φ(11)=3Φ(1)失败的模型边界。 |
-| [NP末端与首降三原审计的准确复现--计算](<../../../../archives/customer-attraction/state/计算/NP末端与首降三原审计的准确复现--计算.md>) | evidence-only | attach | 三个原入口精确复跑的是嵌入种子和末位/首降有限域，报告字节匹配；任意人数断言依别处解析证明。 |
-| [NextBoss MILP m1p1i0候选与精确边界--计算](<../../../../archives/customer-attraction/state/计算/NextBoss MILP m1p1i0候选与精确边界--计算.md>) | evidence-only | attach | 一人一题HiGHS零目标记录对应平凡W=OPT=1的完整SPE基线，没有独立数学命题。 |
-| [NextBoss MILP m1p2i0候选与精确边界--计算](<../../../../archives/customer-attraction/state/计算/NextBoss MILP m1p2i0候选与精确边界--计算.md>) | evidence-only | attach | 一人二题两个MILP零目标组合都W=OPT=1，是平凡有限回归。 |
+| [NP末端与首降三原审计的准确复现--计算](<../actions/770e277b656af24ef2c3.json>) | evidence-only | attach | 三个原入口精确复跑的是嵌入种子和末位/首降有限域，报告字节匹配；任意人数断言依别处解析证明。 |
+| [NextBoss MILP m1p1i0候选与精确边界--计算](<../actions/6c8dba4e958f2a936568.json>) | evidence-only | attach | 一人一题HiGHS零目标记录对应平凡W=OPT=1的完整SPE基线，没有独立数学命题。 |
+| [NextBoss MILP m1p2i0候选与精确边界--计算](<../actions/d92c651f1403526fd75a.json>) | evidence-only | attach | 一人二题两个MILP零目标组合都W=OPT=1，是平凡有限回归。 |
 | [NextBoss MILP m2p2i0候选与精确边界--计算](<../../../../archives/customer-attraction/state/计算/NextBoss MILP m2p2i0候选与精确边界--计算.md>) | numeric-witness | distill | 二人二题固定锥点给W2、OPT3、gap slack1，却只列types[2,1,0]与三动作，未解释客户类型和策略如何产生该缺口。 |
 | [NextBoss MILP m3p4i0候选与精确边界--计算](<../../../../archives/customer-attraction/state/计算/NextBoss MILP m3p4i0候选与精确边界--计算.md>) | numeric-witness | distill | 三人四题两个portfolio固定锥exact objective2、W3、OPT5均被报告，正文缺客户桶与21节点策略怎样产生目标2的数学结构。 |
-| [NextBoss MILP m3p5i0候选与精确边界--计算](<../../../../archives/customer-attraction/state/计算/NextBoss MILP m3p5i0候选与精确边界--计算.md>) | evidence-only | attach | 两组MILP状态分别最优与限时，后续固定策略审计均给objective2、W3、OPT5，记录本身只承担候选与数值求解状态。 |
-| [NextSecurity bridge_attack有限候选s181--计算](<../../../../archives/customer-attraction/state/计算/NextSecurity bridge_attack有限候选s181--计算.md>) | evidence-only | attach | 五人七题seed181的mv/W浮点值近1，未给正margin或BR失败。 |
-| [NextSecurity bridge_attack有限候选s182--计算](<../../../../archives/customer-attraction/state/计算/NextSecurity bridge_attack有限候选s182--计算.md>) | evidence-only | attach | 五人七题s182只保存W=23、浮点v≈4.6与舍入量级ratio=1，没有独立构造或数学命题。 |
-| [NextSecurity cone有限候选s183--计算](<../../../../archives/customer-attraction/state/计算/NextSecurity cone有限候选s183--计算.md>) | evidence-only | attach | s183浮点锥margin=-0.0及历史索引问题只形成有限诊断，未给精确分离或可解释数学构造。 |
-| [NextSecurity cone有限候选s184--计算](<../../../../archives/customer-attraction/state/计算/NextSecurity cone有限候选s184--计算.md>) | evidence-only | attach | s184候选的所谓正margin仅1.11×10^-16，浮点roundoff量级，无精确桥失败。 |
-| [NextSecurity on-path menu cone候选s185--计算](<../../../../archives/customer-attraction/state/计算/NextSecurity on-path menu cone候选s185--计算.md>) | evidence-only | attach | 只记五人七题一次在轨两行菜单浮点gap−0.0、uniform查询与根路径，未给完整BR或独立数学主张。 |
-| [NextSecurity已知游戏首偏离菜单--计算](<../../../../archives/customer-attraction/state/计算/NextSecurity已知游戏首偏离菜单--计算.md>) | evidence-only | attach | 已知游戏各首偏离菜单cap/W最高约0.9981，均未超过一，属于有限记录。 |
+| [NextBoss MILP m3p5i0候选与精确边界--计算](<../actions/27e1a47ebd636e474bc2.json>) | evidence-only | attach | 两组MILP状态分别最优与限时，后续固定策略审计均给objective2、W3、OPT5，记录本身只承担候选与数值求解状态。 |
+| [NextSecurity bridge_attack有限候选s181--计算](<../actions/d7d5bfd60f9f8d0f87f5.json>) | evidence-only | attach | 五人七题seed181的mv/W浮点值近1，未给正margin或BR失败。 |
+| [NextSecurity bridge_attack有限候选s182--计算](<../actions/63ae199edcd6afee897f.json>) | evidence-only | attach | 五人七题s182只保存W=23、浮点v≈4.6与舍入量级ratio=1，没有独立构造或数学命题。 |
+| [NextSecurity cone有限候选s183--计算](<../actions/ba3ff3fef0cdcd9442e0.json>) | evidence-only | attach | s183浮点锥margin=-0.0及历史索引问题只形成有限诊断，未给精确分离或可解释数学构造。 |
+| [NextSecurity cone有限候选s184--计算](<../actions/d0e68cc442aa72b56777.json>) | evidence-only | attach | s184候选的所谓正margin仅1.11×10^-16，浮点roundoff量级，无精确桥失败。 |
+| [NextSecurity on-path menu cone候选s185--计算](<../actions/23fc920ed8ac4aad6065.json>) | evidence-only | attach | 只记五人七题一次在轨两行菜单浮点gap−0.0、uniform查询与根路径，未给完整BR或独立数学主张。 |
+| [NextSecurity已知游戏首偏离菜单--计算](<../actions/db0fda199b523eac0e6c.json>) | evidence-only | attach | 已知游戏各首偏离菜单cap/W最高约0.9981，均未超过一，属于有限记录。 |
 | [PAY原实现的完整输入与有序路径复现--计算](<../../../../archives/customer-attraction/state/计算/PAY原实现的完整输入与有序路径复现--计算.md>) | math-exposition | retain | PAY三种原入口的全有序路径与参数断点审计说明固定实例精确负余量，特别区分同计数不同平局后继的AAFA与AAAF。 |
 | [PB标准分数平台双标量审计与四层报告合同--计算](<../../../../archives/customer-attraction/state/计算/PB标准分数平台双标量审计与四层报告合同--计算.md>) | math-exposition | retain | 构造固定PB分数背景的R/D竞争鞍点价格与梯度判别，四个j层精确恢复热点与外部客户负载L，分别说明作者/独审谓词范围。 |
 | [PB背景双独立标量程序的范围与报告绑定--计算](<../../../../archives/customer-attraction/state/计算/PB背景双独立标量程序的范围与报告绑定--计算.md>) | math-exposition | retain | PB额外槽反例的f,g,u,s及七个严格有理差固定同一参数，解释标量正性与全历史SPE证明的分工。 |
-| [PB背景反例的标量证据与实际前缀算术--计算](<../../../../archives/customer-attraction/state/计算/PB背景反例的标量证据与实际前缀算术--计算.md>) | evidence-only | attach | 固定PB参数的五项有理差与四项整数不等式被重算，供另页全历史反例的数值核验，未独立展开策略。 |
+| [PB背景反例的标量证据与实际前缀算术--计算](<../actions/8a23b701a162a1dd678c.json>) | evidence-only | attach | 固定PB参数的五项有理差与四项整数不等式被重算，供另页全历史反例的数值核验，未独立展开策略。 |
 | [PEEL有限回归与负漂移见证--计算](<../../../../archives/customer-attraction/state/计算/PEEL有限回归与负漂移见证--计算.md>) | math-exposition | retain | 34客户递归PEEL有signed reset−113/164，三人负漂移例Δ−8/27仍保持D−F及D−C恒等式，阻止重复使用正信用。 |
-| [R-171七人双reservoir与固定策略锥探针--计算](<../../../../archives/customer-attraction/state/计算/R-171七人双reservoir与固定策略锥探针--计算.md>) | evidence-only | attach | 七人九题reservoir的45组最大OPT/W=7/4；另十三人固定packet浮点查询锥gap约−1/14，均不能外推六人half。 |
+| [R-171七人双reservoir与固定策略锥探针--计算](<../actions/dcca49e08240aee7287e.json>) | evidence-only | attach | 七人九题reservoir的45组最大OPT/W=7/4；另十三人固定packet浮点查询锥gap约−1/14，均不能外推六人half。 |
 | [R-171两人三标签池化策略锥局部扫描--计算](<../../../../archives/customer-attraction/state/计算/R-171两人三标签池化策略锥局部扫描--计算.md>) | math-exposition | retain | 定义两人三标签81种完整策略的固定IC锥及删除偏离者背景池化目标，解释局部p交替扫描比值1的有限含义。 |
 | [R-171区间路径租金有限审计与非连续槽反例--计算](<../../../../archives/customer-attraction/state/计算/R-171区间路径租金有限审计与非连续槽反例--计算.md>) | math-exposition | retain | 连续窗口hit-rank租金账本与稀疏非连续槽H_q发散族给出被拒的统一Γ界的具体反例。 |
 | [R-171可信低根发现有限探索--计算](<../../../../archives/customer-attraction/state/计算/R-171可信低根发现有限探索--计算.md>) | numeric-witness | distill | 固定五人七题目标的12个可信锥端点给根份额由916/5449至1/6且W=OPT，缺少这些客户桶与全树策略导致份额取等的结构说明。 |
-| [R-171可信锥最小根有限探索--计算](<../../../../archives/customer-attraction/state/计算/R-171可信锥最小根有限探索--计算.md>) | evidence-only | attach | 固定七题五人种子12步只报告根份额由916/5449至1/6且W=OPT的搜索轨迹，没有独立下界主张。 |
-| [R-171固定人口pair误差审计输出--计算](<../../../../archives/customer-attraction/state/计算/R-171固定人口pair误差审计输出--计算.md>) | evidence-only | attach | 固定人口pair误差JSON保存17280/8188次检查与因子(r−s)(r−1)，系数解释另有引理，此页为审计输出。 |
-| [R-171有限候选摘要与比率边界--计算](<../../../../archives/customer-attraction/state/计算/R-171有限候选摘要与比率边界--计算.md>) | evidence-only | attach | 94条credible walk和四组count-Markov MILP只给有限比率及状态；最高171/100，未给普遍界。 |
-| [R-171池化响应固定p有限审计--计算](<../../../../archives/customer-attraction/state/计算/R-171池化响应固定p有限审计--计算.md>) | evidence-only | attach | 36客户固定策略的池化收益与Jensen差被精确核算，另29/5项固定p锥诊断未证明一般池化安全。 |
-| [R-171计数Markov候选--计算](<../../../../archives/customer-attraction/state/计算/R-171计数Markov候选--计算.md>) | evidence-only | attach | 计数Markov MILP仅复放p=2比值3/2证书，p=7三次为超时或限域不可行；没有全历史一般界。 |
-| [R-18-binary-potential-menu有限审计--计算](<../../../../archives/customer-attraction/state/计算/R-18-binary-potential-menu有限审计--计算.md>) | evidence-only | attach | 匿名二动作signed payoff box中第17428政策有LP gap1/4，但收益未受共同客户几何约束，仅为抽象势模型有限障碍。 |
-| [R-18-cone候选与cycle记录--计算](<../../../../archives/customer-attraction/state/计算/R-18-cone候选与cycle记录--计算.md>) | evidence-only | attach | 两份固定锥objective为负且cycle violation=1，只是固定搜索阴性记录。 |
-| [R-18-cone攻击与边界walk搜索器--计算](<../../../../archives/customer-attraction/state/计算/R-18-cone攻击与边界walk搜索器--计算.md>) | evidence-only | attach | 两份Scout依赖脚本只生成可信锥浮点LP和walk提案，正文无独立算法保证或已验数学结论。 |
+| [R-171可信锥最小根有限探索--计算](<../actions/b6c7d1da55ab3d66a927.json>) | evidence-only | attach | 固定七题五人种子12步只报告根份额由916/5449至1/6且W=OPT的搜索轨迹，没有独立下界主张。 |
+| [R-171固定人口pair误差审计输出--计算](<../actions/8413da0ee80301bdb67a.json>) | evidence-only | attach | 固定人口pair误差JSON保存17280/8188次检查与因子(r−s)(r−1)，系数解释另有引理，此页为审计输出。 |
+| [R-171有限候选摘要与比率边界--计算](<../actions/b9528f7aaccf0ac13ddd.json>) | evidence-only | attach | 94条credible walk和四组count-Markov MILP只给有限比率及状态；最高171/100，未给普遍界。 |
+| [R-171池化响应固定p有限审计--计算](<../actions/eeafae915268b53cf2a0.json>) | evidence-only | attach | 36客户固定策略的池化收益与Jensen差被精确核算，另29/5项固定p锥诊断未证明一般池化安全。 |
+| [R-171计数Markov候选--计算](<../actions/c250677266ec1893fb28.json>) | evidence-only | attach | 计数Markov MILP仅复放p=2比值3/2证书，p=7三次为超时或限域不可行；没有全历史一般界。 |
+| [R-18-binary-potential-menu有限审计--计算](<../actions/08f5f1c10801c08f9a4f.json>) | evidence-only | attach | 匿名二动作signed payoff box中第17428政策有LP gap1/4，但收益未受共同客户几何约束，仅为抽象势模型有限障碍。 |
+| [R-18-cone候选与cycle记录--计算](<../actions/89ab254cf289f68dd0d4.json>) | evidence-only | attach | 两份固定锥objective为负且cycle violation=1，只是固定搜索阴性记录。 |
+| [R-18-cone攻击与边界walk搜索器--计算](<../actions/a931e385d4dcad6b1713.json>) | evidence-only | attach | 两份Scout依赖脚本只生成可信锥浮点LP和walk提案，正文无独立算法保证或已验数学结论。 |
 | [R-18-gap-floor-probe有限检查--计算](<../../../../archives/customer-attraction/state/计算/R-18-gap-floor-probe有限检查--计算.md>) | math-exposition | retain | 明确测试gap-floor条件m min_{a∈q}u_a≥OPT−W，指出三个factor恰低于违例阈值而缩短回放未找到反例。 |
-| [R-18-next-counterexample cone-cycle-clone记录--计算](<../../../../archives/customer-attraction/state/计算/R-18-next-counterexample cone-cycle-clone记录--计算.md>) | evidence-only | attach | pair cone数值约1.39×10^-17、bridge比值低于一，clone九项有效只是有限回归。 |
-| [R-18-next-counterexample搜索器--计算](<../../../../archives/customer-attraction/state/计算/R-18-next-counterexample搜索器--计算.md>) | evidence-only | attach | 四搜索脚本与有限20/10步bridge和half浮点峰值，未提供精确客户或独立数学结果。 |
-| [R-18-next-security-background-search记录--计算](<../../../../archives/customer-attraction/state/计算/R-18-next-security-background-search记录--计算.md>) | evidence-only | attach | 两份静态背景浮点搜索记录的P/(r·v)均近1，未给顺序CAG完整策略、W/OPT或精确边界命题。 |
-| [R-18-next-tree抽象锥与菜单搜索器有限结果--计算](<../../../../archives/customer-attraction/state/计算/R-18-next-tree抽象锥与菜单搜索器有限结果--计算.md>) | evidence-only | attach | 三个抽象锥/菜单搜索只报随机no-hit与一个固定菜单浮点比值，未产生数学证书。 |
-| [R-18-round3全终局税有限锥探针--计算](<../../../../archives/customer-attraction/state/计算/R-18-round3全终局税有限锥探针--计算.md>) | evidence-only | attach | 全终局税候选经有限指定策略锥与Fraction回放均未越界；缺所有完整SPE的共同付款证明。 |
-| [R-18-terminal clone equality审计--计算](<../../../../archives/customer-attraction/state/计算/R-18-terminal clone equality审计--计算.md>) | evidence-only | attach | 仅列m2至10九个clone equality固定回归的valid、W=OPT与历史数，解析全称证明在别处。 |
-| [R-18-terminal-clone等式族续审计--计算](<../../../../archives/customer-attraction/state/计算/R-18-terminal-clone等式族续审计--计算.md>) | evidence-only | attach | 二主题m2..10完整策略核2u_i=u_last及2W=(m+1)u_last，W=OPT=m+1；一般族证明另处。 |
-| [R-18-walk-half候选7x5--计算](<../../../../archives/customer-attraction/state/计算/R-18-walk-half候选7x5--计算.md>) | evidence-only | attach | 七主题五人固定松弛锥的第930步浮点目标1.8，缺整数实例和全历史证书，未形成half反例。 |
+| [R-18-next-counterexample cone-cycle-clone记录--计算](<../actions/911e13aa80f13a337400.json>) | evidence-only | attach | pair cone数值约1.39×10^-17、bridge比值低于一，clone九项有效只是有限回归。 |
+| [R-18-next-counterexample搜索器--计算](<../actions/d7c5973fffe5e0cdb484.json>) | evidence-only | attach | 四搜索脚本与有限20/10步bridge和half浮点峰值，未提供精确客户或独立数学结果。 |
+| [R-18-next-security-background-search记录--计算](<../actions/8344bd46dc0f17ec5bf3.json>) | evidence-only | attach | 两份静态背景浮点搜索记录的P/(r·v)均近1，未给顺序CAG完整策略、W/OPT或精确边界命题。 |
+| [R-18-next-tree抽象锥与菜单搜索器有限结果--计算](<../actions/46ff88bc72e3b6359323.json>) | evidence-only | attach | 三个抽象锥/菜单搜索只报随机no-hit与一个固定菜单浮点比值，未产生数学证书。 |
+| [R-18-round3全终局税有限锥探针--计算](<../actions/7e70b71650a8f7d760c4.json>) | evidence-only | attach | 全终局税候选经有限指定策略锥与Fraction回放均未越界；缺所有完整SPE的共同付款证明。 |
+| [R-18-terminal clone equality审计--计算](<../actions/bb82b01264c67eba5ee2.json>) | evidence-only | attach | 仅列m2至10九个clone equality固定回归的valid、W=OPT与历史数，解析全称证明在别处。 |
+| [R-18-terminal-clone等式族续审计--计算](<../actions/bff86ca1e55dfc298316.json>) | evidence-only | attach | 二主题m2..10完整策略核2u_i=u_last及2W=(m+1)u_last，W=OPT=m+1；一般族证明另处。 |
+| [R-18-walk-half候选7x5--计算](<../actions/d2fadb5217c9ddc2ffc9.json>) | evidence-only | attach | 七主题五人固定松弛锥的第930步浮点目标1.8，缺整数实例和全历史证书，未形成half反例。 |
 | [R-18-walk-m5p7-best--计算](<../../../../archives/customer-attraction/state/计算/R-18-walk-m5p7-best--计算.md>) | numeric-witness | distill | 五人七主题五客户类型的完整策略端点W5、OPT9、比9/5，仅给有限可核实例，没有新的比例机制。 |
-| [R-18-walk-m5p7-run--计算](<../../../../archives/customer-attraction/state/计算/R-18-walk-m5p7-run--计算.md>) | evidence-only | attach | 五人七题100步中94有限锥、184记录和best exact ratio9/5是运行摘要，无全策略最优声明。 |
-| [R-18-walk-m5p8-diverse-best--计算](<../../../../archives/customer-attraction/state/计算/R-18-walk-m5p8-diverse-best--计算.md>) | evidence-only | attach | 五人八主题固定样本重算W5、OPT9、比率9/5，并核给定完整策略，不是half反例。 |
-| [R-18-walk-m5p8-diverse-run--计算](<../../../../archives/customer-attraction/state/计算/R-18-walk-m5p8-diverse-run--计算.md>) | evidence-only | attach | 150步配置的diverse有限锥日志只给144锥、286记录及best exact ratio9/5，没有独立数学主张。 |
-| [R-18gap-sparse三组最佳记录--计算](<../../../../archives/customer-attraction/state/计算/R-18gap-sparse三组最佳记录--计算.md>) | evidence-only | attach | 三条单例客户最佳记录的factor为m−1而小于所攻floor阈值m，未构成一般不等式证明。 |
-| [R-18gap-sparse探针搜索器--计算](<../../../../archives/customer-attraction/state/计算/R-18gap-sparse探针搜索器--计算.md>) | evidence-only | attach | 三组各十轮稀疏搜索所得factor=m−1、OPT/W为5/3、7/4、9/5，未触发factor>m或half失败。 |
-| [R-18占用背景安全有限审计--计算](<../../../../archives/customer-attraction/state/计算/R-18占用背景安全有限审计--计算.md>) | evidence-only | attach | 占用背景脚本列588784点态检查及84个背景游戏；重跑因依赖缺失，不能据此得普遍安全。 |
-| [R-18对称投影m5p15完整证书复核--计算](<../../../../archives/customer-attraction/state/计算/R-18对称投影m5p15完整证书复核--计算.md>) | evidence-only | attach | 十五题五人对称投影保存大策略的W=OPT、比例1，是固定非反例证据。 |
-| [R-18对称投影运行摘要复核--计算](<../../../../archives/customer-attraction/state/计算/R-18对称投影运行摘要复核--计算.md>) | evidence-only | attach | 对称一次运行两条portfolio从浮点约0.85019到精确ratio1，不能证明全域投影界。 |
-| [R-18投影m5p15完整证书复核--计算](<../../../../archives/customer-attraction/state/计算/R-18投影m5p15完整证书复核--计算.md>) | evidence-only | attach | 十五题五人投影保存策略W与OPT给约1.35035，虽有54241历史验证记录仍低于half反例门槛。 |
-| [R-18投影m5p15运行摘要复核--计算](<../../../../archives/customer-attraction/state/计算/R-18投影m5p15运行摘要复核--计算.md>) | evidence-only | attach | 八条m5p15投影运行统计及最佳exact ratio≈1.35035是有限搜索摘要，没有本页独立数学机制。 |
-| [R-18最优预算搜索摘要--计算](<../../../../archives/customer-attraction/state/计算/R-18最优预算搜索摘要--计算.md>) | evidence-only | attach | 1500次预算扫描摘要仅存零最小预算与零负计数，无实例/证书。 |
-| [R-18聚合安全最优预算最小输出--计算](<../../../../archives/customer-attraction/state/计算/R-18聚合安全最优预算最小输出--计算.md>) | evidence-only | attach | 全兴趣mask63单点的预算与strong gap均0，缺策略树和精确证书，仅为聚合安全搜索输出。 |
-| [R-18随机最优预算五人六主题--计算](<../../../../archives/customer-attraction/state/计算/R-18随机最优预算五人六主题--计算.md>) | evidence-only | attach | 五人六题随机点记录W=27与nv近等及−7e−15舍入预算，只是浮点搜索端点。 |
-| [R-18随机最优预算四人六主题--计算](<../../../../archives/customer-attraction/state/计算/R-18随机最优预算四人六主题--计算.md>) | evidence-only | attach | 四人六题一次随机输出W19、v17/4、预算双精度近零，未形成严格负预算或独立数学命题。 |
-| [R-18随机最优预算搜索器--计算](<../../../../archives/customer-attraction/state/计算/R-18随机最优预算搜索器--计算.md>) | evidence-only | attach | 随机整数收益BI和浮点静态安全LP的20样本搜索脚本，保存best预算0而无精确反例或可复用保证。 |
+| [R-18-walk-m5p7-run--计算](<../actions/91f539fff47f0f5794c8.json>) | evidence-only | attach | 五人七题100步中94有限锥、184记录和best exact ratio9/5是运行摘要，无全策略最优声明。 |
+| [R-18-walk-m5p8-diverse-best--计算](<../actions/857c463fdbbf0e35a086.json>) | evidence-only | attach | 五人八主题固定样本重算W5、OPT9、比率9/5，并核给定完整策略，不是half反例。 |
+| [R-18-walk-m5p8-diverse-run--计算](<../actions/6118d83d029d126332f6.json>) | evidence-only | attach | 150步配置的diverse有限锥日志只给144锥、286记录及best exact ratio9/5，没有独立数学主张。 |
+| [R-18gap-sparse三组最佳记录--计算](<../actions/0e815f7476df92039097.json>) | evidence-only | attach | 三条单例客户最佳记录的factor为m−1而小于所攻floor阈值m，未构成一般不等式证明。 |
+| [R-18gap-sparse探针搜索器--计算](<../actions/ba781d4ffe653f368960.json>) | evidence-only | attach | 三组各十轮稀疏搜索所得factor=m−1、OPT/W为5/3、7/4、9/5，未触发factor>m或half失败。 |
+| [R-18占用背景安全有限审计--计算](<../actions/3125ff167205f37cc041.json>) | evidence-only | attach | 占用背景脚本列588784点态检查及84个背景游戏；重跑因依赖缺失，不能据此得普遍安全。 |
+| [R-18对称投影m5p15完整证书复核--计算](<../actions/ba7144b3754fa99449ba.json>) | evidence-only | attach | 十五题五人对称投影保存大策略的W=OPT、比例1，是固定非反例证据。 |
+| [R-18对称投影运行摘要复核--计算](<../actions/0b3c7b7e3d3deb1ab451.json>) | evidence-only | attach | 对称一次运行两条portfolio从浮点约0.85019到精确ratio1，不能证明全域投影界。 |
+| [R-18投影m5p15完整证书复核--计算](<../actions/7850fede5c15f2f0de7e.json>) | evidence-only | attach | 十五题五人投影保存策略W与OPT给约1.35035，虽有54241历史验证记录仍低于half反例门槛。 |
+| [R-18投影m5p15运行摘要复核--计算](<../actions/47da82e6e6bb2902bb98.json>) | evidence-only | attach | 八条m5p15投影运行统计及最佳exact ratio≈1.35035是有限搜索摘要，没有本页独立数学机制。 |
+| [R-18最优预算搜索摘要--计算](<../actions/80eb192b14d784fbec5b.json>) | evidence-only | attach | 1500次预算扫描摘要仅存零最小预算与零负计数，无实例/证书。 |
+| [R-18聚合安全最优预算最小输出--计算](<../actions/f8e0b574d9f77e8cfe78.json>) | evidence-only | attach | 全兴趣mask63单点的预算与strong gap均0，缺策略树和精确证书，仅为聚合安全搜索输出。 |
+| [R-18随机最优预算五人六主题--计算](<../actions/47cb13e03e0c8f32a166.json>) | evidence-only | attach | 五人六题随机点记录W=27与nv近等及−7e−15舍入预算，只是浮点搜索端点。 |
+| [R-18随机最优预算四人六主题--计算](<../actions/3cbf28e25953db50e97c.json>) | evidence-only | attach | 四人六题一次随机输出W19、v17/4、预算双精度近零，未形成严格负预算或独立数学命题。 |
+| [R-18随机最优预算搜索器--计算](<../actions/0b225d392bd90aedc9ba.json>) | evidence-only | attach | 随机整数收益BI和浮点静态安全LP的20样本搜索脚本，保存best预算0而无精确反例或可复用保证。 |
 | [R-2fc-round3-search-m5p7-m5p8有限SPE证书与锥扫描--计算](<../../../../archives/customer-attraction/state/计算/R-2fc-round3-search-m5p7-m5p8有限SPE证书与锥扫描--计算.md>) | mixed/needs-context | extract | 前三份五人完整SPE证书给W/OPT=6/9、5/9、6/9及逐历史IC，正文尾部却混入未结束的shell heredoc与收据JSON，需抽离。 |
-| [R-2fc-聚合安全中段有限复核--计算](<../../../../archives/customer-attraction/state/计算/R-2fc-聚合安全中段有限复核--计算.md>) | evidence-only | attach | 扩大DR势模型的三次浮点LP复核与浏览器取源失败过程，没有独立客户吸引数学结论。 |
+| [R-2fc-聚合安全中段有限复核--计算](<../actions/ed0692f473dc93633ee3.json>) | evidence-only | attach | 扩大DR势模型的三次浮点LP复核与浏览器取源失败过程，没有独立客户吸引数学结论。 |
 | [R-2fc全局证明八源的精确核查与工具边界--计算](<../../../../archives/customer-attraction/state/计算/R-2fc全局证明八源的精确核查与工具边界--计算.md>) | mixed/needs-context | extract | 碰撞自由k族完整SPE的OPT/W趋3/2、五客户占用势障碍和78客户截断势障碍有数学主张；其余为八原件恢复与有限浮点运行账。 |
-| [R-2fc可信搜索B十源逐源审计--计算](<../../../../archives/customer-attraction/state/计算/R-2fc可信搜索B十源逐源审计--计算.md>) | evidence-only | attach | 十条固定DAG候选经全历史Fraction检查有W/OPT/逐人比值，超时状态和有限点不能推一般界。 |
-| [R-2fc可信搜索DAG与循环候选审计--计算](<../../../../archives/customer-attraction/state/计算/R-2fc可信搜索DAG与循环候选审计--计算.md>) | evidence-only | attach | 十二条可信DAG/循环候选的有限SPE核验与旧963点根五个盈利偏离，普遍命题由别页承担。 |
+| [R-2fc可信搜索B十源逐源审计--计算](<../actions/d854ffbc7a0bf75fb636.json>) | evidence-only | attach | 十条固定DAG候选经全历史Fraction检查有W/OPT/逐人比值，超时状态和有限点不能推一般界。 |
+| [R-2fc可信搜索DAG与循环候选审计--计算](<../actions/289e2b0c541707691523.json>) | evidence-only | attach | 十二条可信DAG/循环候选的有限SPE核验与旧963点根五个盈利偏离，普遍命题由别页承担。 |
 | [R-2fc早期floor有限锥搜索与精确候选复核--计算](<../../../../archives/customer-attraction/state/计算/R-2fc早期floor有限锥搜索与精确候选复核--计算.md>) | numeric-witness | distill | 四人七客户和五人九客户完整策略分别达到(2m−1)u=OPT且保持2W−OPT=3，显示有限floor端点。 |
 | [R-2fc根势独立复放与截断探针--计算](<../../../../archives/customer-attraction/state/计算/R-2fc根势独立复放与截断探针--计算.md>) | math-exposition | retain | 78客户三人完整SPE给W54、OPT75而普通与截断调和势均141/2，精确否定该势支付最优覆盖的桥。 |
-| [R-2fc精确税有限探针--计算](<../../../../archives/customer-attraction/state/计算/R-2fc精确税有限探针--计算.md>) | evidence-only | attach | 随机固定策略锥对精确税桥的m4/m5有限负扫描及小规模smoke，无有理正见证或全称对偶。 |
-| [R-2fc紧Markov与受限half尾段复核--计算](<../../../../archives/customer-attraction/state/计算/R-2fc紧Markov与受限half尾段复核--计算.md>) | evidence-only | attach | 两次受限half MILP超时无候选，两个count-Markov候选均W=OPT=1；旧963客保存点又有五条根盈利偏离。 |
+| [R-2fc精确税有限探针--计算](<../actions/327be0fb88304f025dda.json>) | evidence-only | attach | 随机固定策略锥对精确税桥的m4/m5有限负扫描及小规模smoke，无有理正见证或全称对偶。 |
+| [R-2fc紧Markov与受限half尾段复核--计算](<../actions/87a4537488e27ef98a39.json>) | evidence-only | attach | 两次受限half MILP超时无候选，两个count-Markov候选均W=OPT=1；旧963客保存点又有五条根盈利偏离。 |
 | [R-2fc背景人工探针与两人fresh模板--计算](<../../../../archives/customer-attraction/state/计算/R-2fc背景人工探针与两人fresh模板--计算.md>) | math-exposition | retain | 明确人工独立背景与合法前缀负载的差异，三套两人fresh比较乘子模板的有限不可行与全历史锥无负探针各有对象。 |
 | [R-3002根行必要条件点与独立满立方审计--计算](<../../../../archives/customer-attraction/state/计算/R-3002根行必要条件点与独立满立方审计--计算.md>) | math-exposition | retain | 36类型旧根行点使QL标量余量负，五个root重查询全立方系数残差非负；3889+5必要行仍有W约0.477的可行松弛点。 |
 | [R-373d一般菜单归一化有限探针--计算](<../../../../archives/customer-attraction/state/计算/R-373d一般菜单归一化有限探针--计算.md>) | math-exposition | retain | 自定义三计数收益u(q,j)与唯一complete规则下精确扫描m2至60的全部前缀，明确其没有客户均分/SPE映射。 |
-| [R-373d唯一残余族独立核验--计算](<../../../../archives/customer-attraction/state/计算/R-373d唯一残余族独立核验--计算.md>) | evidence-only | attach | 七个参数的唯一残余族Fraction复放和两份有限攻击程序仅核已存二人族证书，普遍参数结论在独立族正文。 |
-| [R-373两槽残余LP搜索与二十七客户独立重现--计算](<../../../../archives/customer-attraction/state/计算/R-373两槽残余LP搜索与二十七客户独立重现--计算.md>) | evidence-only | attach | 枚举7776个二人回复映射找到27客户固定反例，Fraction复算W13、遗漏14及42项IC；同一显式策略结论已有反例正文。 |
-| [R-3b6b有限残余循环锥搜索--计算](<../../../../archives/customer-attraction/state/计算/R-3b6b有限残余循环锥搜索--计算.md>) | evidence-only | attach | 四份残余循环锥仅保存未有理化的浮点策略与last-share比例，尚无合法单位客户及IC证书。 |
-| [R-3b6b计数策略终局集合有限降维探针--计算](<../../../../archives/customer-attraction/state/计算/R-3b6b计数策略终局集合有限降维探针--计算.md>) | evidence-only | attach | 抽象五题势的计数统一结果差集和有限CAG测试说明计数限制风险，缺该抽象点的客户实现；完整模型分离另有反例。 |
+| [R-373d唯一残余族独立核验--计算](<../actions/09d97aa2e81fca9e421a.json>) | evidence-only | attach | 七个参数的唯一残余族Fraction复放和两份有限攻击程序仅核已存二人族证书，普遍参数结论在独立族正文。 |
+| [R-373两槽残余LP搜索与二十七客户独立重现--计算](<../actions/d6cb9198864d56a61a48.json>) | evidence-only | attach | 枚举7776个二人回复映射找到27客户固定反例，Fraction复算W13、遗漏14及42项IC；同一显式策略结论已有反例正文。 |
+| [R-3b6b有限残余循环锥搜索--计算](<../actions/a5d22e76ad3711a3c6b8.json>) | evidence-only | attach | 四份残余循环锥仅保存未有理化的浮点策略与last-share比例，尚无合法单位客户及IC证书。 |
+| [R-3b6b计数策略终局集合有限降维探针--计算](<../actions/a39087c4f3b4fed8c5e3.json>) | evidence-only | attach | 抽象五题势的计数统一结果差集和有限CAG测试说明计数限制风险，缺该抽象点的客户实现；完整模型分离另有反例。 |
 | [R-3b942共享遗漏循环完整锥攻击--计算](<../../../../archives/customer-attraction/state/计算/R-3b942共享遗漏循环完整锥攻击--计算.md>) | math-exposition | retain | 共享BDE/TDE遗漏种子两最差终局及四个五人完整策略锥端点给OPT/W=8/5或7/5，解释共享关联与全树IC同时保住的障碍。 |
-| [R-3b942查询行有限锥扫描--计算](<../../../../archives/customer-attraction/state/计算/R-3b942查询行有限锥扫描--计算.md>) | evidence-only | attach | 四人/五人查询行扫描仅返回正gap的浮点有限锥点，未有Fraction重放或SPE完整认证，属于搜索记录。 |
+| [R-3b942查询行有限锥扫描--计算](<../actions/b4bf5f6614703871302d.json>) | evidence-only | attach | 四人/五人查询行扫描仅返回正gap的浮点有限锥点，未有Fraction重放或SPE完整认证，属于搜索记录。 |
 | [R-3d253固定策略额外槽floor有限审计--计算](<../../../../archives/customer-attraction/state/计算/R-3d253固定策略额外槽floor有限审计--计算.md>) | math-exposition | retain | 三人固定策略额外槽floor的两个精确有理SPE点及一个严格负IC恢复点，明确固定查询保证低于根收益的局部范围。 |
-| [R-486三人六单例碰撞自由策略锥端点--计算](<../../../../archives/customer-attraction/state/计算/R-486三人六单例碰撞自由策略锥端点--计算.md>) | evidence-only | attach | 六单例三人全历史策略215个比较全平局，W=OPT=3；MILP仅限时浮点端点。 |
-| [R-51四主题完整历史MILP候选--计算](<../../../../archives/customer-attraction/state/计算/R-51四主题完整历史MILP候选--计算.md>) | evidence-only | attach | 四主题MILP只有21动作的浮点候选和接近零的求解目标，未保存客户输入与精确激励。 |
-| [R171弱CCE Boss2 独立逐人审计--计算](<../../../../archives/customer-attraction/state/计算/R171弱CCE Boss2 独立逐人审计--计算.md>) | evidence-only | attach | Boss2弱CCE族的57组逐人Fraction检查是固定参数校准，没有最小CCE或一般桥定理。 |
-| [R171稀疏SPE租金审计输出--计算](<../../../../archives/customer-attraction/state/计算/R171稀疏SPE租金审计输出--计算.md>) | evidence-only | attach | q2..30有理租金H_{q−1}/6及有限历史/平局状态输出，一般发散与SPE证明由伴随正文承担。 |
-| [R171稀疏SPE租金独立Fraction审计--计算](<../../../../archives/customer-attraction/state/计算/R171稀疏SPE租金独立Fraction审计--计算.md>) | evidence-only | attach | 两客户稀疏策略q≤5历史和q≤30租金恒等式的Fraction PASS，任意q证明另在伴随正文。 |
+| [R-486三人六单例碰撞自由策略锥端点--计算](<../actions/8f37b0979754a7597035.json>) | evidence-only | attach | 六单例三人全历史策略215个比较全平局，W=OPT=3；MILP仅限时浮点端点。 |
+| [R-51四主题完整历史MILP候选--计算](<../actions/2241c0299950c9accb92.json>) | evidence-only | attach | 四主题MILP只有21动作的浮点候选和接近零的求解目标，未保存客户输入与精确激励。 |
+| [R171弱CCE Boss2 独立逐人审计--计算](<../actions/22466798802c393557b9.json>) | evidence-only | attach | Boss2弱CCE族的57组逐人Fraction检查是固定参数校准，没有最小CCE或一般桥定理。 |
+| [R171稀疏SPE租金审计输出--计算](<../actions/017ed24e6cbb278c6c07.json>) | evidence-only | attach | q2..30有理租金H_{q−1}/6及有限历史/平局状态输出，一般发散与SPE证明由伴随正文承担。 |
+| [R171稀疏SPE租金独立Fraction审计--计算](<../actions/828f9d9d19a010050045.json>) | evidence-only | attach | 两客户稀疏策略q≤5历史和q≤30租金恒等式的Fraction PASS，任意q证明另在伴随正文。 |
 | [R171连续窗口租金独立Fraction审计--计算](<../../../../archives/customer-attraction/state/计算/R171连续窗口租金独立Fraction审计--计算.md>) | math-exposition | retain | 连续窗口租金按命中秩核算，稀疏bits族成本H_q/6超过连续窗界的精确反例及相邻窗口界限均有解释。 |
-| [R18个体桥n4p6搜索记录--计算](<../../../../archives/customer-attraction/state/计算/R18个体桥n4p6搜索记录--计算.md>) | evidence-only | attach | 仅保存四人六题1927条策略锥浮点LP proposal和best7等于阈值，精确有限见证在另一页。 |
-| [R18个体桥n4p6有限最佳证书--计算](<../../../../archives/customer-attraction/state/计算/R18个体桥n4p6有限最佳证书--计算.md>) | evidence-only | attach | 四人六题固定完整SPE的OPT/u=7恰2m−1，W5/OPT7仍half正余量3。 |
-| [R18个体桥n5p7搜索记录--计算](<../../../../archives/customer-attraction/state/计算/R18个体桥n5p7搜索记录--计算.md>) | evidence-only | attach | n5p7锥搜索200步、389条记录的best=9恰为2m−1，只是临界有限运行日志。 |
-| [R18个体桥n5p7有限最佳证书--计算](<../../../../archives/customer-attraction/state/计算/R18个体桥n5p7有限最佳证书--计算.md>) | evidence-only | attach | 五人七题固定完整SPE的OPT/u=9恰2m−1，W5/OPT9仍half正余量1。 |
-| [R18个体桥p5n4最佳比率边界--计算](<../../../../archives/customer-attraction/state/计算/R18个体桥p5n4最佳比率边界--计算.md>) | evidence-only | attach | 四人五题单条ratio=7恰等2n−1的最佳点，页面只绑定证书字段和搜索临界值，无新独立命题。 |
-| [R18个体桥策略锥探针--计算](<../../../../archives/customer-attraction/state/计算/R18个体桥策略锥探针--计算.md>) | evidence-only | attach | 固定策略锥20步LP/分数恢复探针只给ratio2393/569以下的有限 proposal，没有独立桥证明或严格反例。 |
-| [R18五人十五主题投影有限候选--计算](<../../../../archives/customer-attraction/state/计算/R18五人十五主题投影有限候选--计算.md>) | evidence-only | attach | 五人十五主题随机投影一次取得已核比值约1.35035，原64原子索引回复未被保留。 |
-| [R18完整SPE策略锥walk有限候选--计算](<../../../../archives/customer-attraction/state/计算/R18完整SPE策略锥walk有限候选--计算.md>) | evidence-only | attach | 五人七主题30步锥游走恢复比值9/5的固定完整策略证书，未给跨输入或策略上界。 |
-| [R18最大incumbent个体桥有限搜索记录--计算](<../../../../archives/customer-attraction/state/计算/R18最大incumbent个体桥有限搜索记录--计算.md>) | evidence-only | attach | 21步有限锥记录best5，后续发现生成器漏根IC且step25候选非SPE，数值队列不提供有效个体桥见证。 |
-| [R18最大incumbent个体桥策略锥探针--计算](<../../../../archives/customer-attraction/state/计算/R18最大incumbent个体桥策略锥探针--计算.md>) | evidence-only | attach | 探针重建G遗漏根IC且verified硬编码，20步得比9只是松弛候选，不能认证完整SPE个体桥。 |
+| [R18个体桥n4p6搜索记录--计算](<../actions/d3a0020bba8779d4dd3e.json>) | evidence-only | attach | 仅保存四人六题1927条策略锥浮点LP proposal和best7等于阈值，精确有限见证在另一页。 |
+| [R18个体桥n4p6有限最佳证书--计算](<../actions/6d19932ff4a821e165da.json>) | evidence-only | attach | 四人六题固定完整SPE的OPT/u=7恰2m−1，W5/OPT7仍half正余量3。 |
+| [R18个体桥n5p7搜索记录--计算](<../actions/4da06469673a7b37c7ac.json>) | evidence-only | attach | n5p7锥搜索200步、389条记录的best=9恰为2m−1，只是临界有限运行日志。 |
+| [R18个体桥n5p7有限最佳证书--计算](<../actions/a9e3c7bac6c3cc0018e8.json>) | evidence-only | attach | 五人七题固定完整SPE的OPT/u=9恰2m−1，W5/OPT9仍half正余量1。 |
+| [R18个体桥p5n4最佳比率边界--计算](<../actions/171b1dcd7b69fd3f9a97.json>) | evidence-only | attach | 四人五题单条ratio=7恰等2n−1的最佳点，页面只绑定证书字段和搜索临界值，无新独立命题。 |
+| [R18个体桥策略锥探针--计算](<../actions/4e397ef8bd83cf713841.json>) | evidence-only | attach | 固定策略锥20步LP/分数恢复探针只给ratio2393/569以下的有限 proposal，没有独立桥证明或严格反例。 |
+| [R18五人十五主题投影有限候选--计算](<../actions/7882d6abaebf2295d71f.json>) | evidence-only | attach | 五人十五主题随机投影一次取得已核比值约1.35035，原64原子索引回复未被保留。 |
+| [R18完整SPE策略锥walk有限候选--计算](<../actions/0a9d29f97f16a723b397.json>) | evidence-only | attach | 五人七主题30步锥游走恢复比值9/5的固定完整策略证书，未给跨输入或策略上界。 |
+| [R18最大incumbent个体桥有限搜索记录--计算](<../actions/d2dd948002ae6d18d141.json>) | evidence-only | attach | 21步有限锥记录best5，后续发现生成器漏根IC且step25候选非SPE，数值队列不提供有效个体桥见证。 |
+| [R18最大incumbent个体桥策略锥探针--计算](<../actions/caee1c618e5b8ccbf67e.json>) | evidence-only | attach | 探针重建G遗漏根IC且verified硬编码，20步得比9只是松弛候选，不能认证完整SPE个体桥。 |
 | [R18最大incumbent简化MILP障碍--计算](<../../../../archives/customer-attraction/state/计算/R18最大incumbent简化MILP障碍--计算.md>) | math-exposition | retain | 三人六题suffix IC整数MILP点有OPT/u=66/13，但根偏离值最高12高于规定13/2，准确说明强制根并非完整SPE。 |
 | [R275分数策略锥攻击有限阴性记录--计算](<../../../../archives/customer-attraction/state/计算/R275分数策略锥攻击有限阴性记录--计算.md>) | math-exposition | retain | 计数状态R(k)与固定策略锥LP的调和系数、归一化和序列化缺口均清楚，保存单一非零类型仅给0.2有限阴性。 |
-| [R275固定策略锥与地板扫描有限记录--计算](<../../../../archives/customer-attraction/state/计算/R275固定策略锥与地板扫描有限记录--计算.md>) | evidence-only | attach | 随机地板比1.426及固定锥目标比1.111均为浮点、一个动作表的有限诊断，重载策略还有865节点平局敏感。 |
+| [R275固定策略锥与地板扫描有限记录--计算](<../actions/223a6644db0d52f31d92.json>) | evidence-only | attach | 随机地板比1.426及固定锥目标比1.111均为浮点、一个动作表的有限诊断，重载策略还有865节点平局敏感。 |
 | [R275静态共同策略锥攻击与候选重放--计算](<../../../../archives/customer-attraction/state/计算/R275静态共同策略锥攻击与候选重放--计算.md>) | math-exposition | retain | 定义计数递归所生固定动作/孩子锥及静态共同量SC-LP目标，单mask91点精确松弛1/5并指出保存动作与LP权重不对应。 |
 | [R29固定完整SPE锥的逐人覆盖门槛有限复核--计算](<../../../../archives/customer-attraction/state/计算/R29固定完整SPE锥的逐人覆盖门槛有限复核--计算.md>) | math-exposition | retain | 逐人强化候选2mu_i≥OPT与固定完整策略锥检验范围明确，15锥448点无负与后来银行族反例分开。 |
 | [R29固定尾桥与逐人地板探针的独立重放--计算](<../../../../archives/customer-attraction/state/计算/R29固定尾桥与逐人地板探针的独立重放--计算.md>) | math-exposition | retain | 54单位客户固定旧主题的两尾子博弈里真实顺序尾给旧人44/3，而所有静态尾PNE给21，严格反驳尾SPE到不增旧利润PNE桥。 |
@@ -1845,7 +1845,7 @@
 | [R29稳健地板松弛的必要条件失效--计算](<../../../../archives/customer-attraction/state/计算/R29稳健地板松弛的必要条件失效--计算.md>) | math-exposition | retain | 四人候选满足逐层地板且静态查询下界8/5，但历史(0,0,2)真末位BR使当前收益7/3>5/4，差13/12排除完整SPE。 |
 | [R2e5尾分歧恒等式与条件性否定有限复核--计算](<../../../../archives/customer-attraction/state/计算/R2e5尾分歧恒等式与条件性否定有限复核--计算.md>) | math-exposition | retain | 根与尾平均调和收益差被精确分解为Δ_g+C−D，36客户完整策略给C=1/2、D=5/2的条件性否定。 |
 | [R373二元局部响应与残差覆盖的71整数证书--计算](<../../../../archives/customer-attraction/state/计算/R373二元局部响应与残差覆盖的71整数证书--计算.md>) | math-exposition | retain | 六标签二阶段响应模板的63行整数系统有71客户可行点和非负对偶乘子，给该有限编码的精确最优值71。 |
-| [R51分数根菜单有限审计--计算](<../../../../archives/customer-attraction/state/计算/R51分数根菜单有限审计--计算.md>) | evidence-only | attach | 36客户根菜单的16字段和43节点258比较复放支撑既有分数停界引理，当前页主要核原报告与运行字节。 |
+| [R51分数根菜单有限审计--计算](<../actions/5e31d0ad447f1cc6726c.json>) | evidence-only | attach | 36客户根菜单的16字段和43节点258比较复放支撑既有分数停界引理，当前页主要核原报告与运行字节。 |
 | [R51汉明尾部有限审计报告--计算](<../../../../archives/customer-attraction/state/计算/R51汉明尾部有限审计报告--计算.md>) | math-exposition | retain | 汉明尾部20组报告给出近轨/全尾检查域与d≥2早期严格负行；d=1十组覆盖全历史、可认证SPE。 |
 | [R51路径末尾障碍有限审计--计算](<../../../../archives/customer-attraction/state/计算/R51路径末尾障碍有限审计--计算.md>) | math-exposition | retain | 560组形式策略报告给出455条早期真负偏离，解析d=1的105项全效率SPE边界，41个破半形式根均非SPE。 |
 | [R51重叠敏感末尾有限审计--计算](<../../../../archives/customer-attraction/state/计算/R51重叠敏感末尾有限审计--计算.md>) | math-exposition | retain | 两人新生重叠税的逐客户恒等式与25项两层完整策略端点给8OPT=10W+2I，另有合法整数背景限制。 |
@@ -1854,19 +1854,19 @@
 | [ZZ阈值必要系统的有理候选点--计算](<../../../../archives/customer-attraction/state/计算/ZZ阈值必要系统的有理候选点--计算.md>) | math-exposition | retain | 321层质量给出42个共同会员原子并满足3949必要行；后续异索引真实IC两项严格负，排除指定骨架的完整SPE完成。 |
 | [eta预算候选的有限筛查--计算](<../../../../archives/customer-attraction/state/计算/eta预算候选的有限筛查--计算.md>) | math-exposition | retain | 给Σmin菜单η_i/r_i≤2W−OPT的候选及η=rd−M−(r−1)t定义，说明1000次阴性最佳只是零客户。 |
 | [shared模型环与有限菜单精确核验--计算](<../../../../archives/customer-attraction/state/计算/shared模型环与有限菜单精确核验--计算.md>) | numeric-witness | distill | shared模型的有限有理因子499750/309017及10条偏离见证有可指认存在性主张，但客户/设施构造和下界机制仅指向原JSON。 |
-| [signed-harmonic交换矩Fraction审计--计算](<../../../../archives/customer-attraction/state/计算/signed-harmonic交换矩Fraction审计--计算.md>) | evidence-only | attach | signed-harmonic页只登记5850系数及1295概率恒等检查的Fraction PASS，数学公式与用途未在此展开。 |
-| [signed-harmonic交换矩审计输出--计算](<../../../../archives/customer-attraction/state/计算/signed-harmonic交换矩审计输出--计算.md>) | evidence-only | attach | JSON只存5850系数与1295子集概率检查PASS计数，未写数学式或独立对象。 |
-| [signed-harmonic交换身份独立Fraction审计--计算](<../../../../archives/customer-attraction/state/计算/signed-harmonic交换身份独立Fraction审计--计算.md>) | evidence-only | attach | 只给2869算术和92256交换检查的PASS，没有写出被检查的恒等式，属于运行证据。 |
-| [signed-harmonic有限扫描程序入口--计算](<../../../../archives/customer-attraction/state/计算/signed-harmonic有限扫描程序入口--计算.md>) | evidence-only | attach | 短条仅说明脚本遍历SPE终局并写example_scan，未给被验证的恒等式、见证或结果。 |
-| [signed-harmonic有限示例扫描记录--计算](<../../../../archives/customer-attraction/state/计算/signed-harmonic有限示例扫描记录--计算.md>) | evidence-only | attach | 21规范例的谐波/线性余量皆非负，只是冻结有限扫描记录。 |
-| [signed-harmonic策略锥LP诊断入口--计算](<../../../../archives/customer-attraction/state/计算/signed-harmonic策略锥LP诊断入口--计算.md>) | evidence-only | attach | 随机策略锥LP只诊断谐波/线性预算，未给精确证书或一般结论。 |
-| [signed-harmonic身份审计输出--计算](<../../../../archives/customer-attraction/state/计算/signed-harmonic身份审计输出--计算.md>) | evidence-only | attach | 138B输出只含两类检查计数及passed，不给独立数学陈述。 |
-| [一般缩尾独审的七族边界与目标字节版本--计算](<../../../../archives/customer-attraction/state/计算/一般缩尾独审的七族边界与目标字节版本--计算.md>) | evidence-only | attach | 缩尾七族1662项比较及110步水位夹根是现有解析缩尾结论的程序回归，目标文件哈希版本差单列。 |
+| [signed-harmonic交换矩Fraction审计--计算](<../actions/dbed30cc539092d38253.json>) | evidence-only | attach | signed-harmonic页只登记5850系数及1295概率恒等检查的Fraction PASS，数学公式与用途未在此展开。 |
+| [signed-harmonic交换矩审计输出--计算](<../actions/db58889942f03943ab23.json>) | evidence-only | attach | JSON只存5850系数与1295子集概率检查PASS计数，未写数学式或独立对象。 |
+| [signed-harmonic交换身份独立Fraction审计--计算](<../actions/8f05af4166638b531fd1.json>) | evidence-only | attach | 只给2869算术和92256交换检查的PASS，没有写出被检查的恒等式，属于运行证据。 |
+| [signed-harmonic有限扫描程序入口--计算](<../actions/f16457623255536d3568.json>) | evidence-only | attach | 短条仅说明脚本遍历SPE终局并写example_scan，未给被验证的恒等式、见证或结果。 |
+| [signed-harmonic有限示例扫描记录--计算](<../actions/cdcca7e13b6a155f48ac.json>) | evidence-only | attach | 21规范例的谐波/线性余量皆非负，只是冻结有限扫描记录。 |
+| [signed-harmonic策略锥LP诊断入口--计算](<../actions/f5a123901edfd81be5a8.json>) | evidence-only | attach | 随机策略锥LP只诊断谐波/线性预算，未给精确证书或一般结论。 |
+| [signed-harmonic身份审计输出--计算](<../actions/263b606276f88787644b.json>) | evidence-only | attach | 138B输出只含两类检查计数及passed，不给独立数学陈述。 |
+| [一般缩尾独审的七族边界与目标字节版本--计算](<../actions/a19950c93e788cffafda.json>) | evidence-only | attach | 缩尾七族1662项比较及110步水位夹根是现有解析缩尾结论的程序回归，目标文件哈希版本差单列。 |
 | [七主题固定输入基线与终局搜索版本--计算](<../../../../archives/customer-attraction/state/计算/七主题固定输入基线与终局搜索版本--计算.md>) | mixed/needs-context | extract | 五人七题十一客户全历史恒选大主题是完整SPE，W5/OPT9给9/5基线；其余七项历史MILP状态与自由重数无incumbent属证据。 |
-| [七主题逐人门槛与六主题扩充的三份浮点记录--计算](<../../../../archives/customer-attraction/state/计算/七主题逐人门槛与六主题扩充的三份浮点记录--计算.md>) | evidence-only | attach | 16个四人、4个五人direct锥及8个三人padding锥的1795次浮点LP均未给精确越界点。 |
-| [七人储备对照与尾端报告字段核验--计算](<../../../../archives/customer-attraction/state/计算/七人储备对照与尾端报告字段核验--计算.md>) | evidence-only | attach | 119条报告字段自洽和七人764客输入的OPT/端点份额核验未重算全部SPE，属于原尾探针的附证。 |
+| [七主题逐人门槛与六主题扩充的三份浮点记录--计算](<../actions/03093ffc1456285fe1ce.json>) | evidence-only | attach | 16个四人、4个五人direct锥及8个三人padding锥的1795次浮点LP均未给精确越界点。 |
+| [七人储备对照与尾端报告字段核验--计算](<../actions/c34de949d1fa45afec19.json>) | evidence-only | attach | 119条报告字段自洽和七人764客输入的OPT/端点份额核验未重算全部SPE，属于原尾探针的附证。 |
 | [七客户基准查询部分行的完整策略与遗漏总主题--计算](<../../../../archives/customer-attraction/state/计算/七客户基准查询部分行的完整策略与遗漏总主题--计算.md>) | math-exposition | retain | 七客户形式策略在受限J的14005次真实查询全过，遗漏总主题6已有根利润2>1；因此不是完整SPE并展示回复闭包必须加入6。 |
-| [七极大六人搜索的十二次改善记录--计算](<../../../../archives/customer-attraction/state/计算/七极大六人搜索的十二次改善记录--计算.md>) | evidence-only | attach | 十二次七极大六人扫描改善均有2W−OPT严格正；末点另核唯一完整SPE福利131、OPT158，仍是固定点。 |
+| [七极大六人搜索的十二次改善记录--计算](<../actions/75e041d6b0dc0c1123fe.json>) | evidence-only | attach | 十二次七极大六人扫描改善均有2W−OPT严格正；末点另核唯一完整SPE福利131、OPT158，仍是固定点。 |
 | [七极大稠密证书范围审计报告的精确复核--计算](<../../../../archives/customer-attraction/state/计算/七极大稠密证书范围审计报告的精确复核--计算.md>) | math-exposition | retain | 七极大稠密3840列的正余量与私有型负列、OPT=U−min p_j及八客户覆盖等式反例都有明确证明范围。 |
 | [七根子博弈的共同核心缩尾税回归--计算](<../../../../archives/customer-attraction/state/计算/七根子博弈的共同核心缩尾税回归--计算.md>) | math-exposition | retain | 53/60客户完整四人树的七根收益与399个非根历史核验，加入共同核使各角色恒加7/4且统一缩尾税的局部regret不变。 |
 | [七环完整策略的独立原审计与静态值证书--计算](<../../../../archives/customer-attraction/state/计算/七环完整策略的独立原审计与静态值证书--计算.md>) | math-exposition | retain | 七环四人完整400节点策略给W6、OPT7，固定静态值v4=8/7与首位u1=1分离，自由分数t4=14/13再给更细桥失败。 |
@@ -1874,14 +1874,14 @@
 | [三个既存完整策略的NET见证与分层总价--计算](<../../../../archives/customer-attraction/state/计算/三个既存完整策略的NET见证与分层总价--计算.md>) | math-exposition | retain | 86客户NET γ给两钱包同余量−838/39及精确对偶，另以价格≥1证明总价最优1，61/8客户点分别给固定NET价。 |
 | [三人个体安全推送分数候选快照--计算](<../../../../archives/customer-attraction/state/计算/三人个体安全推送分数候选快照--计算.md>) | mixed/needs-context | extract | 恢复36客户策略后，归一查询推送有理正差约0.01928只反受限真实尾分数菜单；全六题自由背景最优333/35<根10，原浮点质量另有61微负IC。 |
 | [三人反组次模安全值探针的精确界与原浮点记录--计算](<../../../../archives/customer-attraction/state/计算/三人反组次模安全值探针的精确界与原浮点记录--计算.md>) | math-exposition | retain | 三人固定43节点次模策略锥的六查询IC/二阶税恒等式给3t≤sP，单个全兴趣客户达到t=s/3；浮点报告超出仅为微残差。 |
-| [三人和两人税精确审计--计算](<../../../../archives/customer-attraction/state/计算/三人和两人税精确审计--计算.md>) | evidence-only | attach | 四份既有税/三人界/重排证明的Fraction算术审计及复跑清单，具体一般推导在各引理定理正文。 |
+| [三人和两人税精确审计--计算](<../actions/7d05af907e8981c8510f.json>) | evidence-only | attach | 四份既有税/三人界/重排证明的Fraction算术审计及复跑清单，具体一般推导在各引理定理正文。 |
 | [三人静态CCE福利原始对偶精确核验--计算](<../../../../archives/customer-attraction/state/计算/三人静态CCE福利原始对偶精确核验--计算.md>) | math-exposition | retain | 八/十三客户完整三人SPE低于静态CCE锐福利的原始对偶证书及全部历史IC范围清楚。 |
 | [三人静态PNE比较与CCE间隙原程序的准确运行--计算](<../../../../archives/customer-attraction/state/计算/三人静态PNE比较与CCE间隙原程序的准确运行--计算.md>) | math-exposition | retain | 分别给16客户顺序SPE福利15低于全部静态PNE16，和三单例CCE福利21/10高于3v=2的有限精确机制与检查域。 |
 | [三人静态纯Nash福利比较的定义级核验--计算](<../../../../archives/customer-attraction/state/计算/三人静态纯Nash福利比较的定义级核验--计算.md>) | math-exposition | retain | 十六客户三人完整SPE福利15低于两个静态纯Nash福利16，21节点与20静态计数穷尽认证。 |
-| [三份全大主题策略的逐人净缺口有限记录--计算](<../../../../archives/customer-attraction/state/计算/三份全大主题策略的逐人净缺口有限记录--计算.md>) | evidence-only | attach | 三份全大主题完整策略给m=4,5,6的W=m、OPT=2m−1，是既有一般构造的固定别名输入及350条游走记录。 |
+| [三份全大主题策略的逐人净缺口有限记录--计算](<../actions/8c260682966a01d3b18e.json>) | evidence-only | attach | 三份全大主题完整策略给m=4,5,6的W=m、OPT=2m−1，是既有一般构造的固定别名输入及350条游走记录。 |
 | [三份向量束秩记录的客户实现与精确安全值--计算](<../../../../archives/customer-attraction/state/计算/三份向量束秩记录的客户实现与精确安全值--计算.md>) | math-exposition | retain | 三份向量束输入中一份三交集容斥为−1不可客户实现，另两份可由九客户实现；推导三点精确静态安全值1、15/16、14/15及匹配对偶。 |
-| [三份逐人及遗漏锥扫描的全记录账本--计算](<../../../../archives/customer-attraction/state/计算/三份逐人及遗漏锥扫描的全记录账本--计算.md>) | evidence-only | attach | 1171条F/G/R有限扫描的无损账本只保阈值以下数值和对偶布尔，无客户向量与乘子，数学合同由另程序正文承担。 |
-| [三份配对原始可行点的完整单位客户核验--计算](<../../../../archives/customer-attraction/state/计算/三份配对原始可行点的完整单位客户核验--计算.md>) | evidence-only | attach | 三个配对模板固定有理点可行值4/3、1、7/4，均单侧质量且各自为完整SPE，不给两侧抵销或普遍最优。 |
+| [三份逐人及遗漏锥扫描的全记录账本--计算](<../actions/8c64398d2fa250280fad.json>) | evidence-only | attach | 1171条F/G/R有限扫描的无损账本只保阈值以下数值和对偶布尔，无客户向量与乘子，数学合同由另程序正文承担。 |
+| [三份配对原始可行点的完整单位客户核验--计算](<../actions/076ac92a5cfa16352803.json>) | evidence-only | attach | 三个配对模板固定有理点可行值4/3、1、7/4，均单侧质量且各自为完整SPE，不给两侧抵销或普遍最优。 |
 | [三份阻挡日志实例的全基数有理原始对偶--计算](<../../../../archives/customer-attraction/state/计算/三份阻挡日志实例的全基数有理原始对偶--计算.md>) | math-exposition | retain | 三份静态阻挡实例用整数弦式1/(1+l)和原始分布/对偶匹配，精确给全阻挡基数最优783/367、3、14/5。 |
 | [三十六客户全菜单诊断的两份完整提案--计算](<../../../../archives/customer-attraction/state/计算/三十六客户全菜单诊断的两份完整提案--计算.md>) | math-exposition | retain | 三十六客户产品目录两份完整策略与额外查询核K_t(c)具体展开，固定菜单提案的负gap和48合法路径有解析解释。 |
 | [三十六客户自由删槽菜单的全查询精确值--计算](<../../../../archives/customer-attraction/state/计算/三十六客户自由删槽菜单的全查询精确值--计算.md>) | math-exposition | retain | 36客户完整SPE的18条实际位置删槽列给坏查询65/2，并以p*与逐位q对偶匹配证明全查询最优164/5<W34。 |
@@ -1889,32 +1889,32 @@
 | [三极大静态席位精确审计--计算](<../../../../archives/customer-attraction/state/计算/三极大静态席位精确审计--计算.md>) | math-exposition | retain | 三极大静态席位权重S=max(Σa,n+max a,3n/2)、菜单阈值与核心移位的数学合同完整，有限回归只支持该结构。 |
 | [三段回复身份闭包的精确局部投影--计算](<../../../../archives/customer-attraction/state/计算/三段回复身份闭包的精确局部投影--计算.md>) | math-exposition | retain | 同一策略三段回复T1=R0、T2=R1给十一条真实IC必要行及128态局部投影，明确12个真实负载组和负极小值。 |
 | [三种续局捷径的完整策略精确审计--计算](<../../../../archives/customer-attraction/state/计算/三种续局捷径的完整策略精确审计--计算.md>) | math-exposition | retain | 三份给定策略逐节点Fraction核验，具体反驳残余保底、同负载相同续局及顺序SPE必为PNE，并补更低福利的合法策略。 |
-| [三重共覆盖大主题的九客户完整策略--计算](<../../../../archives/customer-attraction/state/计算/三重共覆盖大主题的九客户完整策略--计算.md>) | evidence-only | attach | 十客与九客两份五人输入中保存的2801节点0/1大主题策略均精确SPE、W5/OPT9；它是已知大主题族的固定别名核验。 |
+| [三重共覆盖大主题的九客户完整策略--计算](<../actions/32f7ca1b817e18676328.json>) | evidence-only | attach | 十客与九客两份五人输入中保存的2801节点0/1大主题策略均精确SPE、W5/OPT9；它是已知大主题族的固定别名核验。 |
 | [三重早期覆盖的完整残差有限表--计算](<../../../../archives/customer-attraction/state/计算/三重早期覆盖的完整残差有限表--计算.md>) | math-exposition | retain | 三类真实末位IC与早期分母地板分解2W−O，完整64型rho表证明A内前四覆盖至少三重时六人half，另给signed容错界。 |
 | [两人重叠税逐客户恒等式与锐端点的精确重放--计算](<../../../../archives/customer-attraction/state/计算/两人重叠税逐客户恒等式与锐端点的精确重放--计算.md>) | math-exposition | retain | 64会员型余项非负给任意两人完整SPE的8OPT≤10W+2I；五客户/三客户两锐端点与不交产品均取等。 |
-| [两份命名策略的相邻钱包诊断与历史范围--计算](<../../../../archives/customer-attraction/state/计算/两份命名策略的相邻钱包诊断与历史范围--计算.md>) | evidence-only | attach | 52与1953两份命名完整策略仅核冻结钱包/最优元组余量；附旧13例的固定银行算术，普遍反例另由正文承载。 |
-| [两份索引定价报告的全部负列与冻结对偶核对--计算](<../../../../archives/customer-attraction/state/计算/两份索引定价报告的全部负列与冻结对偶核对--计算.md>) | evidence-only | attach | 冻结对偶下 1024 加 23 条负价列的 Fraction 重放记录；只否定该保存的对偶证书。 |
+| [两份命名策略的相邻钱包诊断与历史范围--计算](<../actions/7e5cdb4518f8c0342b82.json>) | evidence-only | attach | 52与1953两份命名完整策略仅核冻结钱包/最优元组余量；附旧13例的固定银行算术，普遍反例另由正文承载。 |
+| [两份索引定价报告的全部负列与冻结对偶核对--计算](<../actions/7f3162959531e0382240.json>) | evidence-only | attach | 冻结对偶下 1024 加 23 条负价列的 Fraction 重放记录；只否定该保存的对偶证书。 |
 | [两客户四标签驻留负缺陷的完整均衡与发现边界--计算](<../../../../archives/customer-attraction/state/计算/两客户四标签驻留负缺陷的完整均衡与发现边界--计算.md>) | math-exposition | retain | 两客户四标签的 21 个完整历史 SPE；双随机根转移给出均匀驻留、负缺陷 −1/4 及固定菜单锐性。 |
 | [两层笛卡尔补偿族的完整策略与分量极值精确核验--计算](<../../../../archives/customer-attraction/state/计算/两层笛卡尔补偿族的完整策略与分量极值精确核验--计算.md>) | math-exposition | retain | 两层九主题完整策略阶段DAG精确核验12参数，另有限全集递推显示联合最差福利低于两个分量最差和n，安全扩充端点仍小于half。 |
-| [两斜率四尾证书与原始份额核验--计算](<../../../../archives/customer-attraction/state/计算/两斜率四尾证书与原始份额核验--计算.md>) | evidence-only | attach | 两斜率四尾两版有理13行证书与4096原始型复放支撑独立定理和根引理；本页主要记录来源、审计及复跑。 |
+| [两斜率四尾证书与原始份额核验--计算](<../actions/09eb78ca62d02f45b772.json>) | evidence-only | attach | 两斜率四尾两版有理13行证书与4096原始型复放支撑独立定理和根引理；本页主要记录来源、审计及复跑。 |
 | [两早期包含条件的有限系数审计--计算](<../../../../archives/customer-attraction/state/计算/两早期包含条件的有限系数审计--计算.md>) | math-exposition | retain | 在两个早期主题各包含倒二A的条件下用S/Z/V/H/L真实行消去交集h，3360型余项非负推出2W≥比较并集；另给遗漏重数必要比例。 |
 | [两条六索引AB投影的有理证书重构--计算](<../../../../archives/customer-attraction/state/计算/两条六索引AB投影的有理证书重构--计算.md>) | math-exposition | retain | 两条AB六索引非负整数乘子经完整54264直方图投影给必要行，分别严格排除两个保存有理点而非构造SPE。 |
-| [两查询交叉子树的四路径精确核验--计算](<../../../../archives/customer-attraction/state/计算/两查询交叉子树的四路径精确核验--计算.md>) | evidence-only | attach | 固定348客户输入上四条真路径核R=12、F=12、交叉插入159/2，属既有来源的一次定义级复放。 |
+| [两查询交叉子树的四路径精确核验--计算](<../actions/f2697b8d9bd394a083f1.json>) | evidence-only | attach | 固定348客户输入上四条真路径核R=12、F=12、交叉插入159/2，属既有来源的一次定义级复放。 |
 | [两标签实际路径的全目录有理覆盖证书--计算](<../../../../archives/customer-attraction/state/计算/两标签实际路径的全目录有理覆盖证书--计算.md>) | math-exposition | retain | 真实SPE若实际只用两个主题，则全目录任意比较客户原子及二尾税必要行的有理对偶给六人OPT≤137W/70。 |
-| [两步安全联合搜索的全兴趣停点与去除超时记录--计算](<../../../../archives/customer-attraction/state/计算/两步安全联合搜索的全兴趣停点与去除超时记录--计算.md>) | evidence-only | attach | 四人六题两次MILP时限停点，其中普通表有负质量且662个真历史IC负余量、strip无候选；不构成客户策略。 |
+| [两步安全联合搜索的全兴趣停点与去除超时记录--计算](<../actions/cb7f28db7aa9af6d8014.json>) | evidence-only | attach | 四人六题两次MILP时限停点，其中普通表有负质量且662个真历史IC负余量、strip无候选；不构成客户策略。 |
 | [两步安全链的三份浮点保存点与六客户校准--计算](<../../../../archives/customer-attraction/state/计算/两步安全链的三份浮点保存点与六客户校准--计算.md>) | mixed/needs-context | extract | 三份浮点保存点与六客户整数大块完整历史均衡并置，后者校准静态根尾安全与 PAIR 等号。 |
-| [两类五人五题策略的二十条净差浮点记录--计算](<../../../../archives/customer-attraction/state/计算/两类五人五题策略的二十条净差浮点记录--计算.md>) | evidence-only | attach | 二十条W归一固定策略锥净差浮点值均负，缺权重、对偶和动作表，未给可验精确界。 |
+| [两类五人五题策略的二十条净差浮点记录--计算](<../actions/9bf804fcd555b187fb9c.json>) | evidence-only | attach | 二十条W归一固定策略锥净差浮点值均负，缺权重、对偶和动作表，未给可验精确界。 |
 | [两组阶段策略的保存点与大块等号校准--计算](<../../../../archives/customer-attraction/state/计算/两组阶段策略的保存点与大块等号校准--计算.md>) | mixed/needs-context | extract | 两组浮点阶段扫描与 C4/C5 整数完整策略并置；大块等号成立，但 C5 浮点根偏离有精确盈利。 |
-| [严格最优覆盖支持的完整策略锥攻击--计算](<../../../../archives/customer-attraction/state/计算/严格最优覆盖支持的完整策略锥攻击--计算.md>) | evidence-only | attach | 四张固定锥的65个最优支持LP只返回57个浮点成功和正最小余量，含容差微负IC，无精确primal/dual。 |
+| [严格最优覆盖支持的完整策略锥攻击--计算](<../actions/4f53e87dc9f10dbca95a.json>) | evidence-only | attach | 四张固定锥的65个最优支持LP只返回57个浮点成功和正最小余量，含容差微负IC，无精确primal/dual。 |
 | [九人尾端选择障碍的双实现精确复核--计算](<../../../../archives/customer-attraction/state/计算/九人尾端选择障碍的双实现精确复核--计算.md>) | math-exposition | retain | 九人966客户产品局完整结果集合中20根结果、18最差结果的25920条最差路径均以六叶先行，尾末成本960与倒二1005均超过W946。 |
 | [九人最差福利低尾端选择的原有限证书与价格余量--计算](<../../../../archives/customer-attraction/state/计算/九人最差福利低尾端选择的原有限证书与价格余量--计算.md>) | math-exposition | retain | 九人966客户最差福利SPE全有序低尾序列使末位/倒二的通用端点成本均超过W，实际价格函数B(v)却有解析闭式。 |
 | [九十二根菜单细胞的精确恢复与平均约束边界--计算](<../../../../archives/customer-attraction/state/计算/九十二根菜单细胞的精确恢复与平均约束边界--计算.md>) | math-exposition | retain | 旧38质量的92正细胞经76组有理修正同时满足1310平均必要行，但这些平均根索引无共同耦合且原同根末位行仍负。 |
 | [九十二细胞根细分的九十六直方图精确排除--计算](<../../../../archives/customer-attraction/state/计算/九十二细胞根细分的九十六直方图精确排除--计算.md>) | math-exposition | retain | 固定92边缘的96完整根直方图经1536系数检查，Farkas单条N对异索引N给R≤−B<0，精确排除该边缘的任意相关耦合。 |
 | [二值四尾有理证书与双实现核验--计算](<../../../../archives/customer-attraction/state/计算/二值四尾有理证书与双实现核验--计算.md>) | math-exposition | retain | 二值背景四尾利润界F4≤22869393/11445824 V4由十二有理非负slack及256型余项支撑，校正/省校正两版差式明确。 |
-| [二值四尾重权界在五人必要点的有限付款测试--计算](<../../../../archives/customer-attraction/state/计算/二值四尾重权界在五人必要点的有限付款测试--计算.md>) | evidence-only | attach | 一个五人必要原子点上 17546 条二值四尾付款行全非负的有限枚举测试。 |
+| [二值四尾重权界在五人必要点的有限付款测试--计算](<../actions/c50a33e966ccb4fc10b6.json>) | evidence-only | attach | 一个五人必要原子点上 17546 条二值四尾付款行全非负的有限枚举测试。 |
 | [二关联保存点的两份常值三人策略--计算](<../../../../archives/customer-attraction/state/计算/二关联保存点的两份常值三人策略--计算.md>) | math-exposition | retain | 两个二关联单位客户输入有完整常值三人策略、逐客户IC公式、静态θ等号与OPT=69/81的精确福利比较。 |
 | [二十七客户残余发现点的原完整回复与精确复核--计算](<../../../../archives/customer-attraction/state/计算/二十七客户残余发现点的原完整回复与精确复核--计算.md>) | math-exposition | retain | 从27客户二人真SPE和22行残余系统恢复九乘子/64型非负余项，推任意二人完整SPE的9R₂(C)≤10W；19客取等仅属必要系统。 |
-| [二十七客户遗漏反例的标签等价与单位核验--计算](<../../../../archives/customer-attraction/state/计算/二十七客户遗漏反例的标签等价与单位核验--计算.md>) | evidence-only | attach | 27 客户遗漏反例的标签重命名独立核验，42 条激励行及 W=13、OPT=14 为既有反例提供复算证据。 |
+| [二十七客户遗漏反例的标签等价与单位核验--计算](<../actions/b52d226d9cf81efdbecd.json>) | evidence-only | attach | 27 客户遗漏反例的标签重命名独立核验，42 条激励行及 W=13、OPT=14 为既有反例提供复算证据。 |
 | [二十四单位客户产品菜单的完整历史与原始对偶核验--计算](<../../../../archives/customer-attraction/state/计算/二十四单位客户产品菜单的完整历史与原始对偶核验--计算.md>) | math-exposition | retain | 24客户产品策略的768完整菜单值逐坐标相加，但共同位置min不能各组件分开；精确原始/对偶夹出菜单值277/54。 |
 | [二十四客户产品菜单的精确原始对偶证书--计算](<../../../../archives/customer-attraction/state/计算/二十四客户产品菜单的精确原始对偶证书--计算.md>) | math-exposition | retain | 24客户产品策略的真实48端点和768核项给菜单值M=277/54的匹配有理原始/对偶见证，并有位置最小不可分差1/12。 |
 | [二十四客户势最大根列的定义级核验--计算](<../../../../archives/customer-attraction/state/计算/二十四客户势最大根列的定义级核验--计算.md>) | math-exposition | retain | 24客户完整SPE七个真根列显示同为势最大却有一列额外查询超根收益、另一列全部低于根收益，精确否定两个选择规则。 |
@@ -1929,26 +1929,26 @@
 | [五人九客户终局税点的完整历史核验--计算](<../../../../archives/customer-attraction/state/计算/五人九客户终局税点的完整历史核验--计算.md>) | math-exposition | retain | 九客户五人完整SPE的终局税余量1/6延伸到恒大题族W+τ−OPT=1/(m+1)，准确界定不能统一扣δW。 |
 | [五人五百五十七行列生成的原始轨迹与点版本--计算](<../../../../archives/customer-attraction/state/计算/五人五百五十七行列生成的原始轨迹与点版本--计算.md>) | mixed/needs-context | extract | 557行列生成轨迹的数学LP仅说明有限列扩张单调与全域对偶所需条件，主体是36轮浮点日志及2183列版本差异。 |
 | [五人共同主题循环反馈与最大主题分支检验--计算](<../../../../archives/customer-attraction/state/计算/五人共同主题循环反馈与最大主题分支检验--计算.md>) | math-exposition | retain | 循环主题必要行及最大主题两分支LP的完整合同、四尾真实偏离行与数值门槛被区分；有限松弛未构造SPE。 |
-| [五人前缀信用双路原审计的全域复现--计算](<../../../../archives/customer-attraction/state/计算/五人前缀信用双路原审计的全域复现--计算.md>) | evidence-only | attach | 四个原入口只重放五人前缀信用32/96型代数表，普遍接口和完整五人证明另在正文。 |
-| [五人十标签聚合末位保底的整数证据--计算](<../../../../archives/customer-attraction/state/计算/五人十标签聚合末位保底的整数证据--计算.md>) | evidence-only | attach | 五人十标签5945客户全策略给W5567、θ1115使W−5θ=−8，是已有全人数聚合末位反例的固定证据。 |
+| [五人前缀信用双路原审计的全域复现--计算](<../actions/3ab6385ff61bff253146.json>) | evidence-only | attach | 四个原入口只重放五人前缀信用32/96型代数表，普遍接口和完整五人证明另在正文。 |
+| [五人十标签聚合末位保底的整数证据--计算](<../actions/cf280f114420731476c5.json>) | evidence-only | attach | 五人十标签5945客户全策略给W5567、θ1115使W−5θ=−8，是已有全人数聚合末位反例的固定证据。 |
 | [五人原始相邻钱包证书的完整数据与一次核验--计算](<../../../../archives/customer-attraction/state/计算/五人原始相邻钱包证书的完整数据与一次核验--计算.md>) | math-exposition | retain | 五人原始完整策略4681节点给StrongA冻结查询超额Qmax−W−Cadj>0，而所有最优排列的冻结指派另有负值，明确非half。 |
-| [五人完整系数域核验--计算](<../../../../archives/customer-attraction/state/计算/五人完整系数域核验--计算.md>) | evidence-only | attach | 五人主半覆盖证明的53乘子及47,872局部状态、6144全域条件重放在正式定理另自足陈述；本页保存程序和输入身份。 |
+| [五人完整系数域核验--计算](<../actions/12f5ed195a8f089c85ee.json>) | evidence-only | attach | 五人主半覆盖证明的53乘子及47,872局部状态、6144全域条件重放在正式定理另自足陈述；本页保存程序和输入身份。 |
 | [五人归纳检验样本与轮廓数组--计算](<../../../../archives/customer-attraction/state/计算/五人归纳检验样本与轮廓数组--计算.md>) | math-exposition | retain | 两真路径1507必要行的指定有理松弛以16列原点和14行对偶证明精确最优β≈2.19933>2，阐明模板不足而非SPE反例。 |
 | [五人旧输入六十六合法背景的前两人诊断--计算](<../../../../archives/customer-attraction/state/计算/五人旧输入六十六合法背景的前两人诊断--计算.md>) | math-exposition | retain | 86客户输入的66种合法背景逐项记录pair与静态查询下界L，说明pair≥2L只是有限未分离、不能推出pair≥2v。 |
 | [五人末位两收益桥的八条保存路径与新完整证书--计算](<../../../../archives/customer-attraction/state/计算/五人末位两收益桥的八条保存路径与新完整证书--计算.md>) | math-exposition | retain | 五人八条可实现路径的新完整策略证书均W=OPT，早期与末位收益的A/B强桥已由三人七/23客户反例另否。 |
 | [五人根刚性四个有限松弛的精确取等点--计算](<../../../../archives/customer-attraction/state/计算/五人根刚性四个有限松弛的精确取等点--计算.md>) | math-exposition | retain | 四套五人根枝松弛有精确取等113/21或16/3，但四点的B2/B3大小均5u且互异，违反完整SPE根刚性，指出漏掉跨根偏离。 |
-| [五人根复制与包络列生成的冻结版本账本--计算](<../../../../archives/customer-attraction/state/计算/五人根复制与包络列生成的冻结版本账本--计算.md>) | evidence-only | attach | 五人根复制和包络列生成的 11 份冻结 JSON 版本账本，保留负定价残差及浮点支持而无数学证书。 |
-| [五人索引偏离双证书--计算](<../../../../archives/customer-attraction/state/计算/五人索引偏离双证书--计算.md>) | evidence-only | attach | 五人437行索引偏离的57乘子与64原子全域核验支撑已有定理及模板障碍；本页是双程序复放和证据清单。 |
+| [五人根复制与包络列生成的冻结版本账本--计算](<../actions/85619eefb6df9b7444d6.json>) | evidence-only | attach | 五人根复制和包络列生成的 11 份冻结 JSON 版本账本，保留负定价残差及浮点支持而无数学证书。 |
+| [五人索引偏离双证书--计算](<../actions/0aeb3e34599217b7e88d.json>) | evidence-only | attach | 五人437行索引偏离的57乘子与64原子全域核验支撑已有定理及模板障碍；本页是双程序复放和证据清单。 |
 | [五人结构化相对私有块最优点--计算](<../../../../archives/customer-attraction/state/计算/五人结构化相对私有块最优点--计算.md>) | math-exposition | retain | 五人 45 单位重构点的固定计数策略 SPE 与九条 IC、五条装箱约束有理对偶，证明固定策略锥私有块比率 8/5。 |
 | [五份份额扫描与四个联合树保存点--计算](<../../../../archives/customer-attraction/state/计算/五份份额扫描与四个联合树保存点--计算.md>) | mixed/needs-context | extract | 五个普通固定锥的份额锐性和 23 客户联合树完整策略推导，与多份扫描、巨大动作附录同页；联合例 W=OPT=23。 |
 | [五份保存策略图的浮点解释与单位客户校准--计算](<../../../../archives/customer-attraction/state/计算/五份保存策略图的浮点解释与单位客户校准--计算.md>) | mixed/needs-context | extract | 五个保存策略图的浮点根激励误差与单位客户整数校准并置，整数版本给 W=5、OPT=9 和 W=6、OPT=11。 |
 | [五动作无势循环的原运输核验与势类抽样记录--计算](<../../../../archives/customer-attraction/state/计算/五动作无势循环的原运输核验与势类抽样记录--计算.md>) | math-exposition | retain | 五动作匿名自拥挤完整策略有W1、v2=3/5且非势循环−5；普通弧运输不可行，势投影却有精确非负流。 |
 | [五十三单位静态安全值的有理鞍点--计算](<../../../../archives/customer-attraction/state/计算/五十三单位静态安全值的有理鞍点--计算.md>) | math-exposition | retain | 53单位博弈静态安全值28481/2924由p侧84个整数背景下界和Q侧7个纯查询上界夹出有理鞍点。 |
 | [任意尾长隐藏回复价格投影--计算](<../../../../archives/customer-attraction/state/计算/任意尾长隐藏回复价格投影--计算.md>) | algorithm-result | retain | 任意尾长固定基数时按代价排序将2^(k−1)个隐藏回复约束投影成2(k−1)个极端比较，并给出等价性证明和适用域。 |
-| [任意背景末位利润余项精确审计--计算](<../../../../archives/customer-attraction/state/计算/任意背景末位利润余项精确审计--计算.md>) | evidence-only | attach | 4394次Fraction局部恒等与69客户标量R*=33只是输出状态；一般末位余项公式在另页，本页没有独立数学论证。 |
-| [优先权选择两实现的完整历史回归合同--计算](<../../../../archives/customer-attraction/state/计算/优先权选择两实现的完整历史回归合同--计算.md>) | evidence-only | attach | 两份priority实现复放四个固定游戏共17项IC，验证条件化权重Γ失败与自适应query超钱包的既有微型反例。 |
+| [任意背景末位利润余项精确审计--计算](<../actions/842576a2eeac2593a4c3.json>) | evidence-only | attach | 4394次Fraction局部恒等与69客户标量R*=33只是输出状态；一般末位余项公式在另页，本页没有独立数学论证。 |
+| [优先权选择两实现的完整历史回归合同--计算](<../actions/ae030b10edfd626bdc97.json>) | evidence-only | attach | 两份priority实现复放四个固定游戏共17项IC，验证条件化权重Γ失败与自适应query超钱包的既有微型反例。 |
 | [余项补偿反例精确证书--计算](<../../../../archives/customer-attraction/state/计算/余项补偿反例精确证书--计算.md>) | math-exposition | retain | 九客户恒选大主题的完整 SPE 与十三行预算恒等式给出两种余项补偿付款的严格正缺口。 |
-| [保护价格的完整策略与匹配证书核验--计算](<../../../../archives/customer-attraction/state/计算/保护价格的完整策略与匹配证书核验--计算.md>) | evidence-only | attach | 固定两人保护价格族四个参数的完整策略/匹配价格核验；任意k价格式已由另页解析推论。 |
+| [保护价格的完整策略与匹配证书核验--计算](<../actions/d4c81ba3a61922b40f7a.json>) | evidence-only | attach | 固定两人保护价格族四个参数的完整策略/匹配价格核验；任意k价格式已由另页解析推论。 |
 | [保护遗漏反例的零根与合法背景核验--计算](<../../../../archives/customer-attraction/state/计算/保护遗漏反例的零根与合法背景核验--计算.md>) | math-exposition | retain | 27客户零根两人SPE给W13与最优并集14，并以31客户合法E背景算出保护遗漏价格B_D(6)=2及分支比较。 |
 | [保护遗漏的完整两人搜索与候选重核--计算](<../../../../archives/customer-attraction/state/计算/保护遗漏的完整两人搜索与候选重核--计算.md>) | math-exposition | retain | 完整两人回复表约束下六标签 31 客户点有保护遗漏比 14/13；原背景需新增标签才合法，四、五标签点比为 1。 |
 | [倒二克隆税界独立角点审计--计算](<../../../../archives/customer-attraction/state/计算/倒二克隆税界独立角点审计--计算.md>) | math-exposition | retain | 倒二克隆税角点审计解释f、e、r的分段支付式与固定人数κ_m，15552角点和4582系数检查承有限回归。 |
@@ -1959,16 +1959,16 @@
 | [全局尾层与早期鲁棒行的精确计数审计--计算](<../../../../archives/customer-attraction/state/计算/全局尾层与早期鲁棒行的精确计数审计--计算.md>) | math-exposition | retain | 共享E、m个Q的全局尾层与早期鲁棒行在m≥2k+1成立，弱化路径的OPT−2W=k(m−2k−2)−1可正，真实第n位偏离仍盈利k。 |
 | [全比较覆盖初始化的固定SAFE归属分离与六策略报告--计算](<../../../../archives/customer-attraction/state/计算/全比较覆盖初始化的固定SAFE归属分离与六策略报告--计算.md>) | math-exposition | retain | 两个固定有序比较 T 的唯一客户归属分别使 SAFE 角色质量 91/5>18 与 61/12>5，分离特定初始化。 |
 | [全积税必要点的精确恢复与四条对齐分离--计算](<../../../../archives/customer-attraction/state/计算/全积税必要点的精确恢复与四条对齐分离--计算.md>) | math-exposition | retain | 44 正原子有理点满足 1920 必要行且 O>2W，却精确违反四条同索引两人税，排除保坐标的 SPE 补全。 |
-| [全策略锥CCE的二十八随机树与四个旧策略--计算](<../../../../archives/customer-attraction/state/计算/全策略锥CCE的二十八随机树与四个旧策略--计算.md>) | evidence-only | attach | 32 棵策略锥上的 660 轮浮点 CCE 对偶交替报告；所有近 1 比率仅有限搜索，未给有理证书。 |
+| [全策略锥CCE的二十八随机树与四个旧策略--计算](<../actions/ea3e1dd215a53671ba7c.json>) | evidence-only | attach | 32 棵策略锥上的 660 轮浮点 CCE 对偶交替报告；所有近 1 比率仅有限搜索，未给有理证书。 |
 | [全覆盖最优组合的等份自然入流价格诊断--计算](<../../../../archives/customer-attraction/state/计算/全覆盖最优组合的等份自然入流价格诊断--计算.md>) | math-exposition | retain | 等份自然流满足EQPRICE逆推且成本K=OPT−W+E，固定全覆盖三例最小价恰遗漏量；一般付款未证。 |
-| [全阶奇偶粘合的精确原件核验--计算](<../../../../archives/customer-attraction/state/计算/全阶奇偶粘合的精确原件核验--计算.md>) | evidence-only | attach | 奇偶粘合原入口有限m核局部会员格和计数策略，两份任意阶解析证明另在障碍与构造正文。 |
+| [全阶奇偶粘合的精确原件核验--计算](<../actions/62b6aac31f430c8d1608.json>) | evidence-only | attach | 奇偶粘合原入口有限m核局部会员格和计数策略，两份任意阶解析证明另在障碍与构造正文。 |
 | [八条末回复查询切面的有理精化点--计算](<../../../../archives/customer-attraction/state/计算/八条末回复查询切面的有理精化点--计算.md>) | math-exposition | retain | 5083必要行和1905列上的有理点满足O1/W<1/2，但168交叠小于Fréchet下界，给出不能粘成同一客户的具体障碍。 |
 | [六人不交覆盖搜索点的随机记录与锐界实例--计算](<../../../../archives/customer-attraction/state/计算/六人不交覆盖搜索点的随机记录与锐界实例--计算.md>) | math-exposition | retain | 两张六人表经整数化与完整策略核验，解析58客户不交族的全部SPE福利43，并以七份精确对偶证明指定策略锥最小比6/11。 |
 | [六人二三主题有界重数的完整终局筛查--计算](<../../../../archives/customer-attraction/state/计算/六人二三主题有界重数的完整终局筛查--计算.md>) | math-exposition | retain | 六人二三主题、重数至2的26/2186局通过精确终局集合递推，分别得到最差OPT/W为1和7/6，限定有限枚举域。 |
 | [六人全大主题纯SPE下界见证--计算](<../../../../archives/customer-attraction/state/计算/六人全大主题纯SPE下界见证--计算.md>) | math-exposition | retain | 六人全选大主题的纯SPE按6/(k+r)≥1逐节点比较、单例偏离不超过1，给W6而OPT11的完整见证。 |
 | [六人共同付款联合必要系统的原始点与后继分离--计算](<../../../../archives/customer-attraction/state/计算/六人共同付款联合必要系统的原始点与后继分离--计算.md>) | math-exposition | retain | 联合701必要行有精确原始低福利点，新增完整索引真行对同一actual/d骨架为严格负，排除该点的完整SPE完成。 |
 | [六人共同回复的二十七原子必要系统障碍--计算](<../../../../archives/customer-attraction/state/计算/六人共同回复的二十七原子必要系统障碍--计算.md>) | math-exposition | retain | 27个共同会员原子实现所列R/Z及1143真必要行的低福利点；后续无K中间偏离行排除固定会员的完整SPE延拓。 |
-| [六人分数覆盖半覆盖的精确系数证书--计算](<../../../../archives/customer-attraction/state/计算/六人分数覆盖半覆盖的精确系数证书--计算.md>) | evidence-only | attach | 六人分数覆盖条件定理的9/2与21/5两套128型有理残差、80角点和160强末对核验在定理另行承重。 |
+| [六人分数覆盖半覆盖的精确系数证书--计算](<../actions/600de1a1e69094d63d5b.json>) | evidence-only | attach | 六人分数覆盖条件定理的9/2与21/5两套128型有理残差、80角点和160强末对核验在定理另行承重。 |
 | [六人前缀保底证书的整数阈值与有理回代--计算](<../../../../archives/customer-attraction/state/计算/六人前缀保底证书的整数阈值与有理回代--计算.md>) | math-exposition | retain | 三重早期覆盖条件下，七个非负有理真IC乘子和3528含交集系数型余项证明2W≥OPT₆；弱条件仅浮点不可行。 |
 | [六人最大根双复制四条支持线的精确核验--计算](<../../../../archives/customer-attraction/state/计算/六人最大根双复制四条支持线的精确核验--计算.md>) | math-exposition | retain | 同一策略三路径的真实复制、容量和末两人税共176行；四套非负有理乘子在8192型余项全非负，给普遍 O≤B_j r+C_j K。 |
 | [六人级联扫描快照与同覆盖大块的完整策略--计算](<../../../../archives/customer-attraction/state/计算/六人级联扫描快照与同覆盖大块的完整策略--计算.md>) | math-exposition | retain | 六人六块共 11 客户的七标签完整策略恒取大覆盖 A，解析全历史 SPE 且最坏福利 6、OPT6=11。 |
@@ -1990,29 +1990,29 @@
 | [共享索引联合终局细化的四百二十七列原始点--计算](<../../../../archives/customer-attraction/state/计算/共享索引联合终局细化的四百二十七列原始点--计算.md>) | math-exposition | retain | 427细化原子保留共享五索引成员关系，192真实终局IC与708必要约束下给O/W>2有限点，并明确未粘合完整策略。 |
 | [共享索引跨族单行的原独立二值审计--计算](<../../../../archives/customer-attraction/state/计算/共享索引跨族单行的原独立二值审计--计算.md>) | math-exposition | retain | 共享索引AB末位对second族的异索引真IC取组内最大对角包络；旧437/447两种质量加权该合法必要行均严格负。 |
 | [共享菜单固定查询与全局鞍点的双精确证书--计算](<../../../../archives/customer-attraction/state/计算/共享菜单固定查询与全局鞍点的双精确证书--计算.md>) | math-exposition | retain | 银行菜单 m6 的两份有理查询证书中，25 个非锚查询形成全局鞍点且全部最优查询运输的相关项 C=135/242>0。 |
-| [共享遗漏末位与保险菜单的双原审计--计算](<../../../../archives/customer-attraction/state/计算/共享遗漏末位与保险菜单的双原审计--计算.md>) | evidence-only | attach | 八点共享遗漏和三参数保险菜单仅作固定负载/公式回放；任意参数的障碍与单列引理另有数学正文。 |
+| [共享遗漏末位与保险菜单的双原审计--计算](<../actions/82b28b55629c96b71adc.json>) | evidence-only | attach | 八点共享遗漏和三参数保险菜单仅作固定负载/公式回放；任意参数的障碍与单列引理另有数学正文。 |
 | [共同容量与多查询投影的二十九切面精化点--计算](<../../../../archives/customer-attraction/state/计算/共同容量与多查询投影的二十九切面精化点--计算.md>) | math-exposition | retain | 共同 K 与同一末位回复的多查询预算产生 29 条精确行；1905 列必要系统点仍有 O=1、W<1/2，字面交叠另有 151 个下界障碍。 |
-| [共同最大主题定价的两版浮点保存与停止边界--计算](<../../../../archives/customer-attraction/state/计算/共同最大主题定价的两版浮点保存与停止边界--计算.md>) | evidence-only | attach | 旧 685 行与 COPY 686 行共同最大主题定价的浮点版本账本，末轮 COPY 阈值停止仍有微负价残差。 |
+| [共同最大主题定价的两版浮点保存与停止边界--计算](<../actions/a4d65d03982fb74c7490.json>) | evidence-only | attach | 旧 685 行与 COPY 686 行共同最大主题定价的浮点版本账本，末轮 COPY 阈值停止仍有微负价残差。 |
 | [共同枢轴末菜单十二必要行与有理分离点--计算](<../../../../archives/customer-attraction/state/计算/共同枢轴末菜单十二必要行与有理分离点--计算.md>) | math-exposition | retain | 从三组真末菜单推导六有向对各同/异索引共十二必要行，65列38正质量的精确2408行点给O>2W而不对应真实SPE。 |
 | [共同枢轴末菜单增强的六十五列重优化--计算](<../../../../archives/customer-attraction/state/计算/共同枢轴末菜单增强的六十五列重优化--计算.md>) | math-exposition | retain | 六个有序菜单族之间的十二条同枢真实末位必要行有显式对角/去对角公式；重优化的 65 列有理点满足 2408 行且 O>2W。 |
 | [共同静态Q证书生成器--计算](<../../../../archives/customer-attraction/state/计算/共同静态Q证书生成器--计算.md>) | algorithm-result | retain | 给固定策略锥的共用静态Q证书生成算法与逐动作λ格式，分数残差逐项验证即可保证全部指定偏离和安全界。 |
-| [具名安全桥搜索与零松弛证据--计算](<../../../../archives/customer-attraction/state/计算/具名安全桥搜索与零松弛证据--计算.md>) | evidence-only | attach | 十个具名策略的浮点锥搜索只保存一个零松弛点，regret版本缺输出与依赖，没有精确负证书。 |
-| [净删源捕获与自由查询的单证书回归--计算](<../../../../archives/customer-attraction/state/计算/净删源捕获与自由查询的单证书回归--计算.md>) | evidence-only | attach | 86客户两人固定完整策略的净删源流回归中，取消后残余source为零；自由查询128序列只验证该点。 |
-| [分数弱桥的三十六个保存点与两份起始终局--计算](<../../../../archives/customer-attraction/state/计算/分数弱桥的三十六个保存点与两份起始终局--计算.md>) | evidence-only | attach | 36个固定有理弱桥点经真历史IC复放均无正缺口，另两个trial0大主题点是已知结构，非全锥对偶或普遍界。 |
+| [具名安全桥搜索与零松弛证据--计算](<../actions/958e714806b25cea9d3f.json>) | evidence-only | attach | 十个具名策略的浮点锥搜索只保存一个零松弛点，regret版本缺输出与依赖，没有精确负证书。 |
+| [净删源捕获与自由查询的单证书回归--计算](<../actions/d0f10ec3fc82c8d2a7ce.json>) | evidence-only | attach | 86客户两人固定完整策略的净删源流回归中，取消后残余source为零；自由查询128序列只验证该点。 |
+| [分数弱桥的三十六个保存点与两份起始终局--计算](<../actions/d26a881b39f87b16ed3e.json>) | evidence-only | attach | 36个固定有理弱桥点经真历史IC复放均无正缺口，另两个trial0大主题点是已知结构，非全锥对偶或普遍界。 |
 | [分数探针八个单客户点与两份常值输入的精确核验--计算](<../../../../archives/customer-attraction/state/计算/分数探针八个单客户点与两份常值输入的精确核验--计算.md>) | math-exposition | retain | 八个单客户候选与源11客户的恒0全历史策略有显式逐节点证明；证明源输入W5/OPT9及单客等号与查询向量，后步缺原策略。 |
-| [分数查询顶点的精确枚举与独立核验--计算](<../../../../archives/customer-attraction/state/计算/分数查询顶点的精确枚举与独立核验--计算.md>) | evidence-only | attach | 分数查询五维260顶点/27排序型的作者枚举与独立低维回归支撑现有有限顶点定理，本页主要是程序和旧浮点清单。 |
-| [分数负载四主题族的全历史核验--计算](<../../../../archives/customer-attraction/state/计算/分数负载四主题族的全历史核验--计算.md>) | evidence-only | attach | 17客户四人和13人固定证书逐节点核验弱桥/税桥缺口，m2至6与两正面工具只是有限回归；无限族证明另有正文。 |
+| [分数查询顶点的精确枚举与独立核验--计算](<../actions/3c5b4e7e42359014bb2d.json>) | evidence-only | attach | 分数查询五维260顶点/27排序型的作者枚举与独立低维回归支撑现有有限顶点定理，本页主要是程序和旧浮点清单。 |
+| [分数负载四主题族的全历史核验--计算](<../actions/73b21aa15b684ae93481.json>) | evidence-only | attach | 17客户四人和13人固定证书逐节点核验弱桥/税桥缺口，m2至6与两正面工具只是有限回归；无限族证明另有正文。 |
 | [分离遗漏模板的全策略浮点记录与四单位等号点--计算](<../../../../archives/customer-attraction/state/计算/分离遗漏模板的全策略浮点记录与四单位等号点--计算.md>) | math-exposition | retain | 四单位四独立块的完整两人策略逐节点收益为1、W与OPT₂均2，解释原7776浮点模板中保存等号点的精确机制。 |
-| [删槽原审计与共同早期乘子的精确配对原始可行点--计算](<../../../../archives/customer-attraction/state/计算/删槽原审计与共同早期乘子的精确配对原始可行点--计算.md>) | evidence-only | attach | 删槽恒等式562430次有限复算和配对发现器原始可行性合同为已写方法的实现证据，没有独立的配对上界。 |
+| [删槽原审计与共同早期乘子的精确配对原始可行点--计算](<../actions/553bd8258518d750d5b6.json>) | evidence-only | attach | 删槽恒等式562430次有限复算和配对发现器原始可行性合同为已写方法的实现证据，没有独立的配对上界。 |
 | [剩余利润机会公式与完整历史的精确核验--计算](<../../../../archives/customer-attraction/state/计算/剩余利润机会公式与完整历史的精确核验--计算.md>) | math-exposition | retain | 剩余利润机会的根缺口精确式与AM–GM尺度及五人背景完整SPE和非局部欠债作用都有具体数学关系。 |
-| [加权末位价格参数精确审计--计算](<../../../../archives/customer-attraction/state/计算/加权末位价格参数精确审计--计算.md>) | evidence-only | attach | 加权末位价格全参数定理已有正文，当前13824身份及9300角点只复放有限系数回归。 |
+| [加权末位价格参数精确审计--计算](<../actions/ebfed55f36a69fbd6829.json>) | evidence-only | attach | 加权末位价格全参数定理已有正文，当前13824身份及9300角点只复放有限系数回归。 |
 | [动态交换完整策略与assignment证书--计算](<../../../../archives/customer-attraction/state/计算/动态交换完整策略与assignment证书--计算.md>) | math-exposition | retain | 1953客户三人完整SPE给静态最优主题排列assignment最低1736>W1735，Möbius客户增量机制限定只否定静态指派桥。 |
-| [动态信用一步覆盖LP探针--计算](<../../../../archives/customer-attraction/state/计算/动态信用一步覆盖LP探针--计算.md>) | evidence-only | attach | 四主题三位局部随机 LP 在 trial 9 产生一步覆盖 gap=1/5 的浮点候选，未给完整策略或精确证书。 |
-| [动态信用一步闭合随机LP探针--计算](<../../../../archives/customer-attraction/state/计算/动态信用一步闭合随机LP探针--计算.md>) | evidence-only | attach | 四主题局部根/两倍尾利润随机 LP 在 trial 2 给 gap=1/16 浮点支撑，未认证末位 SPE。 |
-| [动态信用个体地板锥有限诊断--计算](<../../../../archives/customer-attraction/state/计算/动态信用个体地板锥有限诊断--计算.md>) | evidence-only | attach | 固定SPE策略锥只在归档单例中求两个浮点地板目标，最佳约1.11e−16且无有理正见证；只是依赖受限诊断运行。 |
-| [动态信用固定策略floor LP探针--计算](<../../../../archives/customer-attraction/state/计算/动态信用固定策略floor LP探针--计算.md>) | evidence-only | attach | 固定三人六标签策略的浮点 floor 搜索最佳 violation 为负，仅一个策略的阴性诊断。 |
-| [动态信用末位利润余项Fraction审计--计算](<../../../../archives/customer-attraction/state/计算/动态信用末位利润余项Fraction审计--计算.md>) | evidence-only | attach | 末位余项脚本核 4394 个 Fraction 局部式及 69 客户标量 P=48、v=18、R=69，未复核全树 SPE。 |
-| [动态信用联合一步闭合有限探针--计算](<../../../../archives/customer-attraction/state/计算/动态信用联合一步闭合有限探针--计算.md>) | evidence-only | attach | 四主题三人的随机联合一步LP找到局部gap1/7，缺完整历史策略且只说明固定行系统候选。 |
+| [动态信用一步覆盖LP探针--计算](<../actions/30b31156e85169e4c8de.json>) | evidence-only | attach | 四主题三位局部随机 LP 在 trial 9 产生一步覆盖 gap=1/5 的浮点候选，未给完整策略或精确证书。 |
+| [动态信用一步闭合随机LP探针--计算](<../actions/142b7e51d6bf1a232266.json>) | evidence-only | attach | 四主题局部根/两倍尾利润随机 LP 在 trial 2 给 gap=1/16 浮点支撑，未认证末位 SPE。 |
+| [动态信用个体地板锥有限诊断--计算](<../actions/824425ad774ba64c9a79.json>) | evidence-only | attach | 固定SPE策略锥只在归档单例中求两个浮点地板目标，最佳约1.11e−16且无有理正见证；只是依赖受限诊断运行。 |
+| [动态信用固定策略floor LP探针--计算](<../actions/59432d05fe7b62418148.json>) | evidence-only | attach | 固定三人六标签策略的浮点 floor 搜索最佳 violation 为负，仅一个策略的阴性诊断。 |
+| [动态信用末位利润余项Fraction审计--计算](<../actions/a1fa813d5d71ab10e02f.json>) | evidence-only | attach | 末位余项脚本核 4394 个 Fraction 局部式及 69 客户标量 P=48、v=18、R=69，未复核全树 SPE。 |
+| [动态信用联合一步闭合有限探针--计算](<../actions/fc796dde6359d053690e.json>) | evidence-only | attach | 四主题三人的随机联合一步LP找到局部gap1/7，缺完整历史策略且只说明固定行系统候选。 |
 | [动态极大覆盖预算精确审计--计算](<../../../../archives/customer-attraction/state/计算/动态极大覆盖预算精确审计--计算.md>) | math-exposition | retain | 动态极大覆盖菜单的真实旧负载与路由负载预算、核心移位和四五极大范围均有解释，有限审计作接口回归。 |
 | [动态独立查询与条件支付的精确核验--计算](<../../../../archives/customer-attraction/state/计算/动态独立查询与条件支付的精确核验--计算.md>) | math-exposition | retain | 五人动态 iid 完整策略的 60 客户精确 KKT/残余租金边界与三人固定策略 63 列条件付款证书，两个命题分节明确。 |
 | [势增量双诊断的固定锥停止与已知实例十四行--计算](<../../../../archives/customer-attraction/state/计算/势增量双诊断的固定锥停止与已知实例十四行--计算.md>) | math-exposition | retain | 固定策略锥分离势增量PI与四旧实例14前缀阴性分开，给P_{r+1}^p−P_r^p及完整真实SPE最低收益的比较语义。 |
@@ -2021,14 +2021,14 @@
 | [十三人包与不交复制块的截断覆盖精确定价--计算](<../../../../archives/customer-attraction/state/计算/十三人包与不交复制块的截断覆盖精确定价--计算.md>) | math-exposition | retain | 截断覆盖价格的packing对偶给十三人包B(5/2)=26、B(3)=24；36客户对称块有分段价格max{0,63/2−3v/2,36−3v}且不交复制可加。 |
 | [十三查询末回复投影的原独立局部核验--计算](<../../../../archives/customer-attraction/state/计算/十三查询末回复投影的原独立局部核验--计算.md>) | math-exposition | retain | 十三查询的同一末回复组合恒等式ID和按后继人数压缩MIN有直接证明，28800/3360只核选定参数且保真实历史行语义。 |
 | [十三粗边缘的十二主题整数完成与倒二异议--计算](<../../../../archives/customer-attraction/state/计算/十三粗边缘的十二主题整数完成与倒二异议--计算.md>) | math-exposition | retain | 十三边缘编成十二标签整客户后虽规定路径W<OPT/2，但倒二改T1在所有末位平局严格获利，因而该完成不是SPE。 |
-| [十九旧输入同序可信矩阵的完整记录边界--计算](<../../../../archives/customer-attraction/state/计算/十九旧输入同序可信矩阵的完整记录边界--计算.md>) | evidence-only | attach | 十九旧输入的两种同序可信余量均为正的有限结果；小例补完整策略只说明该固定见证。 |
+| [十九旧输入同序可信矩阵的完整记录边界--计算](<../actions/ebcc1c8970e809ba284b.json>) | evidence-only | attach | 十九旧输入的两种同序可信余量均为正的有限结果；小例补完整策略只说明该固定见证。 |
 | [十五份自由分数地板锥记录的完整矩阵身份与单客户零债--计算](<../../../../archives/customer-attraction/state/计算/十五份自由分数地板锥记录的完整矩阵身份与单客户零债--计算.md>) | math-exposition | retain | 十五份记录共用一个单客户完整 SPE，解析自由分数地板 t4(0)=u1=1/4；所谓负债仅二进制浮点误差。 |
 | [十八主题保底保护松弛的精确审计--计算](<../../../../archives/customer-attraction/state/计算/十八主题保底保护松弛的精确审计--计算.md>) | math-exposition | retain | 18主题108客户构造逐根给首人10低于21/2而后两人12高于门槛、末位另可得21，精确反驳仅以floor保护当前人的松弛。 |
 | [十八主题物化目录的三人可信性诊断--计算](<../../../../archives/customer-attraction/state/计算/十八主题物化目录的三人可信性诊断--计算.md>) | math-exposition | retain | 18主题185客户型物化输入的精确全集排除拟CDE根与所有拟T_i,R_i,S_i尾；交叉S_j给严格增益而真实ROW余额正。 |
 | [十八主题种子的完整SPE终局集合精确归纳--计算](<../../../../archives/customer-attraction/state/计算/十八主题种子的完整SPE终局集合精确归纳--计算.md>) | math-exposition | retain | 集合值逆推E(q)以max_a min后继收益阈值充要保存全部有序历史SPE，固定18主题种子根174终局与最差覆盖有精确界。 |
-| [十六单位客户双数据包核验与匹配入口的证据范围--计算](<../../../../archives/customer-attraction/state/计算/十六单位客户双数据包核验与匹配入口的证据范围--计算.md>) | evidence-only | attach | 16单位客户实际前缀180查询与两静态packet作有理核对，完整策略及全最优鞍点证明另在正文。 |
+| [十六单位客户双数据包核验与匹配入口的证据范围--计算](<../actions/a7ae3aa5b80eccdf0f67.json>) | evidence-only | attach | 16单位客户实际前缀180查询与两静态packet作有理核对，完整策略及全最优鞍点证明另在正文。 |
 | [十客户相邻钱包的原审计与失败层级--计算](<../../../../archives/customer-attraction/state/计算/十客户相邻钱包的原审计与失败层级--计算.md>) | math-exposition | retain | 十客户三人完整SPE的冻结行最大与相邻钱包产生严格差1，而最优指派最低价6可逃更弱版本，数学失败层级明晰。 |
-| [单人与联盟信用两份原始有理枚举的范围核验--计算](<../../../../archives/customer-attraction/state/计算/单人与联盟信用两份原始有理枚举的范围核验--计算.md>) | evidence-only | attach | 单人/联盟信用m≤15/12的整数负载Fraction枚举，通用端点包络已由另页解析证明。 |
+| [单人与联盟信用两份原始有理枚举的范围核验--计算](<../actions/7dc14df6305de849a26f.json>) | evidence-only | attach | 单人/联盟信用m≤15/12的整数负载Fraction枚举，通用端点包络已由另页解析证明。 |
 | [单组锚点固定策略的三分之二精确最优与浮点边界--计算](<../../../../archives/customer-attraction/state/计算/单组锚点固定策略的三分之二精确最优与浮点边界--计算.md>) | math-exposition | retain | 固定43动作策略根IC给a≤2/3，29客户点的末位36格、第二层六行和根六分支证明取等且区分超界小数。 |
 | [单背景主题两人全比较探针的阴性报告--计算](<../../../../archives/customer-attraction/state/计算/单背景主题两人全比较探针的阴性报告--计算.md>) | math-exposition | retain | 合法单主题H背景的两人子博弈，四项真实IC及逐客户非负余项给P+Δ≥freshOPT₂；原2000次阴性日志只是附属。 |
 | [单背景主题两人回复图的随机探针报告--计算](<../../../../archives/customer-attraction/state/计算/单背景主题两人回复图的随机探针报告--计算.md>) | math-exposition | retain | 任意末回复图的48条IC可接同一四乘子非负证书，证明合法H背景每个精确锥目标非负；12000样本零值不是证明。 |
@@ -2037,30 +2037,30 @@
 | [去对角菜单原展开审计与冻结报告复现--计算](<../../../../archives/customer-attraction/state/计算/去对角菜单原展开审计与冻结报告复现--计算.md>) | math-exposition | retain | 去对角菜单的逐客户展开与因式分解恒等；固定旧 64 原子点的合法聚合末位行严格为负。 |
 | [双三主题块的放大保存点与小数归一--计算](<../../../../archives/customer-attraction/state/计算/双三主题块的放大保存点与小数归一--计算.md>) | math-exposition | retain | 双三主题块八轨道质量的五种背景给精确静态安全值v₄=(30a+100b+105f)/72，30个bank仅整数放大。 |
 | [双主题枢轴与跨背景梯度的原实现精确复核--计算](<../../../../archives/customer-attraction/state/计算/双主题枢轴与跨背景梯度的原实现精确复核--计算.md>) | math-exposition | retain | 双主题枢轴14880/58320/6480有限分数项和共同客户梯度签名60条中56负揭示抽象收益点不能由共同客户实现。 |
-| [双副本六人三种完整策略与冻结记录的版本差--计算](<../../../../archives/customer-attraction/state/计算/双副本六人三种完整策略与冻结记录的版本差--计算.md>) | evidence-only | attach | 双副本六人三种当前完整策略被有限定义级核验；两个旧表缺版本字段，静态数值诊断未作全称证明。 |
+| [双副本六人三种完整策略与冻结记录的版本差--计算](<../actions/3dfb3a464cd644e829cd.json>) | evidence-only | attach | 双副本六人三种当前完整策略被有限定义级核验；两个旧表缺版本字段，静态数值诊断未作全称证明。 |
 | [双四主题块的安全值保存点与稠密目录锥点--计算](<../../../../archives/customer-attraction/state/计算/双四主题块的安全值保存点与稠密目录锥点--计算.md>) | math-exposition | retain | 双四主题块的对称群把静态竞争背景缩至11轨道并给v5=min C_l·x/480；稠密八客户点精确得W−5v5=1/64。 |
 | [双块纯根菜单障碍的完整策略DAG与混合证书--计算](<../../../../archives/customer-attraction/state/计算/双块纯根菜单障碍的完整策略DAG与混合证书--计算.md>) | math-exposition | retain | 八人32客户完整SPE的每个纯根列查询cap37/10高于13/4，混合菜单原始对偶值851/280较低，明确否定纯列加强。 |
-| [双客户池尾局算子的规范求解器交叉核验--计算](<../../../../archives/customer-attraction/state/计算/双客户池尾局算子的规范求解器交叉核验--计算.md>) | evidence-only | attach | 双客户池尾算子的十二参数规范求解器交叉核验，固定前三人后的可信门槛一致，不证明全部根策略。 |
+| [双客户池尾局算子的规范求解器交叉核验--计算](<../actions/96c919ea2c5952b803e8.json>) | evidence-only | attach | 双客户池尾算子的十二参数规范求解器交叉核验，固定前三人后的可信门槛一致，不证明全部根策略。 |
 | [双客户池指定尾路径的有限参数排除--计算](<../../../../archives/customer-attraction/state/计算/双客户池指定尾路径的有限参数排除--计算.md>) | math-exposition | retain | 双客户池18标签指定六人尾路径有精确可信末三人判据(P)(F)(T)，固定19^4参数域全部被局部反向归纳排除。 |
-| [双查询交叉回复的三份有限LP与归一化纠错--计算](<../../../../archives/customer-attraction/state/计算/双查询交叉回复的三份有限LP与归一化纠错--计算.md>) | evidence-only | attach | 双查询交叉回复三个浮点 LP 的局部负 curl 与 branch_cov 布尔并集纠错；无有理全行证书。 |
+| [双查询交叉回复的三份有限LP与归一化纠错--计算](<../actions/c473cde73af000153052.json>) | evidence-only | attach | 双查询交叉回复三个浮点 LP 的局部负 curl 与 branch_cov 布尔并集纠错；无有理全行证书。 |
 | [变分水位有理证书与原盲重构的精确范围--计算](<../../../../archives/customer-attraction/state/计算/变分水位有理证书与原盲重构的精确范围--计算.md>) | math-exposition | retain | 单遍水位的H≤D查询补偿及VAR的14份有理KKT证书、log上下界与权非唯一而负载唯一等机制具体。 |
 | [变分独审的十四小集证书与三维导数--计算](<../../../../archives/customer-attraction/state/计算/变分独审的十四小集证书与三维导数--计算.md>) | math-exposition | retain | 14小集水位KKT证书与208客户三维导数块区分，后者精确给根信用导数−159964/8445449，反局部阈值单调性。 |
 | [只用输入与策略的势增量反例全表审计--计算](<../../../../archives/customer-attraction/state/计算/只用输入与策略的势增量反例全表审计--计算.md>) | math-exposition | retain | 430单位客户三人完整策略给P4−P3−u1=33/2的PI反例，完整182势/覆盖表及根查询K≤90区分其它桥。 |
 | [可信分配缺陷的有限探针--计算](<../../../../archives/customer-attraction/state/计算/可信分配缺陷的有限探针--计算.md>) | math-exposition | retain | 实际不交叠主题的匹配分配给出 OPT≤2W+E，并把 E 分解为真实缺口、漏算覆盖、重复覆盖及 IC 松弛；另有有限负例。 |
 | [可信回复与末位响应者的精确审计--计算](<../../../../archives/customer-attraction/state/计算/可信回复与末位响应者的精确审计--计算.md>) | math-exposition | retain | 冻结接续的 16 情形推出 β_k<2，同时总响应缺陷 k(k−1)/2 在 k≥7 破坏所需阈值。 |
-| [可信水位两种独立实现的输入合同与运行版本--计算](<../../../../archives/customer-attraction/state/计算/可信水位两种独立实现的输入合同与运行版本--计算.md>) | evidence-only | attach | 两套可信水位独立代码对同 53 客户策略的 400/57 节点及静态背景复放合同，普遍结论依所引解析审查。 |
+| [可信水位两种独立实现的输入合同与运行版本--计算](<../actions/d9565a662d53bc74257f.json>) | evidence-only | attach | 两套可信水位独立代码对同 53 客户策略的 400/57 节点及静态背景复放合同，普遍结论依所引解析审查。 |
 | [可信水位翻转原审计的输入与冻结版本--计算](<../../../../archives/customer-attraction/state/计算/可信水位翻转原审计的输入与冻结版本--计算.md>) | mixed/needs-context | extract | 版本与输入审计包裹了 53 客户完整策略、84 背景静态双对偶及三个高尾 c 的有限数学见证，需抽取其数学断言与边界。 |
 | [可预测激活与优先级排列的分支合并图精确回归--计算](<../../../../archives/customer-attraction/state/计算/可预测激活与优先级排列的分支合并图精确回归--计算.md>) | math-exposition | retain | 九状态 DAG 的最早激活吸收多项式与 720 优先级排列在 81 格精确对应，展示分支合并的条件进入量。 |
 | [同一完整策略下反复升级的四十二型原端点--计算](<../../../../archives/customer-attraction/state/计算/同一完整策略下反复升级的四十二型原端点--计算.md>) | math-exposition | retain | 42型原端点的唯一最优五标签J覆盖全部客户而同一完整策略StrongA差为负，明确与后继59型正差点不同。 |
 | [同主题祖先门槛的六百三十例精确诊断--计算](<../../../../archives/customer-attraction/state/计算/同主题祖先门槛的六百三十例精确诊断--计算.md>) | math-exposition | retain | 祖先同题门槛递推C(b,ell)用无约束M(b)并对同标签取max，630输入只回归单坐标条件与信用预算。 |
 | [同源再查询与容量报价的三份冻结切面包--计算](<../../../../archives/customer-attraction/state/计算/同源再查询与容量报价的三份冻结切面包--计算.md>) | math-exposition | retain | 同一源两次强制查询的IC权和一次付款及共享末回复组合价格给必要行，27冻结记录中24不同向量且两行仍分离5692点。 |
 | [同覆盖与七异主题的两份五人变异见证--计算](<../../../../archives/customer-attraction/state/计算/同覆盖与七异主题的两份五人变异见证--计算.md>) | math-exposition | retain | 九客户大块策略任意历史收益5/(ν+r)≥1证W5/OPT9，另七异主题完整策略有215899客户、OPT/W=215899/120000。 |
-| [同覆盖商编译的作者测试重放报告--计算](<../../../../archives/customer-attraction/state/计算/同覆盖商编译的作者测试重放报告--计算.md>) | evidence-only | attach | 覆盖商父方636字节报告及856两人策略、200三人样本与六人固定树计数属于已有普遍商证明的同源测试重放。 |
-| [同角色流聚合的原审计与父审切口--计算](<../../../../archives/customer-attraction/state/计算/同角色流聚合的原审计与父审切口--计算.md>) | evidence-only | attach | 同角色流聚合的12个作者角点和6个父审切口仅核流实现与同层界，无客户收益或完整SPE。 |
+| [同覆盖商编译的作者测试重放报告--计算](<../actions/8f608474ccceb1d9f599.json>) | evidence-only | attach | 覆盖商父方636字节报告及856两人策略、200三人样本与六人固定树计数属于已有普遍商证明的同源测试重放。 |
+| [同角色流聚合的原审计与父审切口--计算](<../actions/db8243b646e4efa346e7.json>) | evidence-only | attach | 同角色流聚合的12个作者角点和6个父审切口仅核流实现与同层界，无客户收益或完整SPE。 |
 | [同题冻结删位总额的三个完整策略实例--计算](<../../../../archives/customer-attraction/state/计算/同题冻结删位总额的三个完整策略实例--计算.md>) | math-exposition | retain | 21客户三人完整策略逐层表证明D₀=21>W18，同时两人边界与五人同覆盖点均完整；仅反冻结删位强预算。 |
-| [后继安全值与完整树精确审计--计算](<../../../../archives/customer-attraction/state/计算/后继安全值与完整树精确审计--计算.md>) | evidence-only | attach | 四份程序复核去相关、菜单、逐人安全及全树流的固定输入证书，普遍反例与引理分别另在数学正文。 |
+| [后继安全值与完整树精确审计--计算](<../actions/76e691a4651e45cb051c.json>) | evidence-only | attach | 四份程序复核去相关、菜单、逐人安全及全树流的固定输入证书，普遍反例与引理分别另在数学正文。 |
 | [响应恒等式与分支条件的精确回归--计算](<../../../../archives/customer-attraction/state/计算/响应恒等式与分支条件的精确回归--计算.md>) | math-exposition | retain | 协方差响应恒等式和交叉覆盖直径条件推导分支不等式，并有八客户真子博弈完美均衡反例。 |
-| [四个有理计数与有序策略点的完整资格及别名边界--计算](<../../../../archives/customer-attraction/state/计算/四个有理计数与有序策略点的完整资格及别名边界--计算.md>) | evidence-only | attach | 四个保存有理点均为给定计数/有序动作表的真SPE且比率8/5至11/6，是全大主题既有族的固定资格核验。 |
+| [四个有理计数与有序策略点的完整资格及别名边界--计算](<../actions/396e014803a5c7d749d2.json>) | evidence-only | attach | 四个保存有理点均为给定计数/有序动作表的真SPE且比率8/5至11/6，是全大主题既有族的固定资格核验。 |
 | [四主题六人二值客户全集的精确递推与保存最坏点--计算](<../../../../archives/customer-attraction/state/计算/四主题六人二值客户全集的精确递推与保存最坏点--计算.md>) | math-exposition | retain | 六人四主题 32767 个二值客户实例的终局全集递推与保存最坏七客户点，有限域最低福利比 6/7。 |
 | [四主题笛卡尔根门槛的凸化记录与双副本证书--计算](<../../../../archives/customer-attraction/state/计算/四主题笛卡尔根门槛的凸化记录与双副本证书--计算.md>) | math-exposition | retain | 四标签 72 客户基例凸化门槛 g=55/3 与纯根 G1=161/6；双副本 144 客户完整 SPE 的 G2=271/6 严格小于 2G1。 |
 | [四人六标签固定策略的终局价格审计--计算](<../../../../archives/customer-attraction/state/计算/四人六标签固定策略的终局价格审计--计算.md>) | math-exposition | retain | 四人六标签完整 259 节点固定策略经定义级精确核验为 SPE，实际 W=5、OPT4=6；旧价格字段仍无定义。 |
@@ -2072,70 +2072,70 @@
 | [四十标签背景反例的完整行动核验--计算](<../../../../archives/customer-attraction/state/计算/四十标签背景反例的完整行动核验--计算.md>) | math-exposition | retain | 单主题合法化 34 步背景后，41 个尾节点逐一最佳响应得到 P=17，而新覆盖最优为 18。 |
 | [四复制根阈值的有理证书回放与发现器守卫--计算](<../../../../archives/customer-attraction/state/计算/四复制根阈值的有理证书回放与发现器守卫--计算.md>) | math-exposition | retain | 六人四复制支持线B*r+C*K的40个合法乘子及65536会员余项给条件阈值r/K≤138242864300000000/819860302362953413，并守卫非法PAIR:4。 |
 | [四客户凸化截取原审计与五份完整策略--计算](<../../../../archives/customer-attraction/state/计算/四客户凸化截取原审计与五份完整策略--计算.md>) | math-exposition | retain | 四客户两人五份完整SPE的子均衡凸包矩L≥2却有半半点L=3/2，具体显示父门槛截取不与凸化交换。 |
-| [四尾余项与对齐信用精确核验--计算](<../../../../archives/customer-attraction/state/计算/四尾余项与对齐信用精确核验--计算.md>) | evidence-only | attach | 四尾余项与对齐信用在全部局部会员域作Fraction回归，指定727必要点未被新增信用行切除；解析引理另页。 |
+| [四尾余项与对齐信用精确核验--计算](<../actions/5cf23a20dde1949979b6.json>) | evidence-only | attach | 四尾余项与对齐信用在全部局部会员域作Fraction回归，指定727必要点未被新增信用行切除；解析引理另页。 |
 | [四百七十二客户独立收益分离的精确核验--计算](<../../../../archives/customer-attraction/state/计算/四百七十二客户独立收益分离的精确核验--计算.md>) | math-exposition | retain | 472 客户五/六标签三人完整 SPE 的 W=358、独立查询 Z3=6065/16，严格分离强 iid 收益桥并保删标签投影。 |
 | [四百四十七行重加权点的原始质量与全余量恢复--计算](<../../../../archives/customer-attraction/state/计算/四百四十七行重加权点的原始质量与全余量恢复--计算.md>) | math-exposition | retain | 42正原子恢复64支持上447行全部有理余量，O>2W只在必要系统可行，同点又由跨族负包络排除真实延拓。 |
 | [四组重复奖励尾的三人续局原始诊断--计算](<../../../../archives/customer-attraction/state/计算/四组重复奖励尾的三人续局原始诊断--计算.md>) | math-exposition | retain | 25客户七人候选路径在前三步后改A3的全部可信尾终局中最低给原第四人3而规定仅2，严格排除指定路径。 |
 | [回复子菜单查询的空切面报告--计算](<../../../../archives/customer-attraction/state/计算/回复子菜单查询的空切面报告--计算.md>) | math-exposition | retain | 虽保存cut为空，正文推导真尾利润β_r与共同末价α、γ下包络及四种索引子菜单查询，明确96结构不能证明无分离。 |
 | [固定三人策略锥的全查询价格证书--计算](<../../../../archives/customer-attraction/state/计算/固定三人策略锥的全查询价格证书--计算.md>) | math-exposition | retain | 固定三人完整策略锥上两套60项有理对偶对全部分数查询证明B(u_a)≤2u_a及B(u_a)+u_a≤W，范围固定策略。 |
 | [固定元组共同付款的两个原始有理证书--计算](<../../../../archives/customer-attraction/state/计算/固定元组共同付款的两个原始有理证书--计算.md>) | math-exposition | retain | 固定元组共同付款 LP 的客户型聚合和提升关系及两例有理原始证书，明确未传播到完整可信策略。 |
-| [固定六主题根收益下界的单锥诊断与精确复现--计算](<../../../../archives/customer-attraction/state/计算/固定六主题根收益下界的单锥诊断与精确复现--计算.md>) | evidence-only | attach | 三人六题单策略LP恢复六客户点，43历史IC非负但目标OPT−6u_root=−2，未有全锥对偶。 |
+| [固定六主题根收益下界的单锥诊断与精确复现--计算](<../actions/81a5dc972a17e6afc9f1.json>) | evidence-only | attach | 三人六题单策略LP恢复六客户点，43历史IC非负但目标OPT−6u_root=−2，未有全锥对偶。 |
 | [固定六十四类型的末对弱界与强式Farkas分离--计算](<../../../../archives/customer-attraction/state/计算/固定六十四类型的末对弱界与强式Farkas分离--计算.md>) | math-exposition | retain | 固定64类型弱末对557行有匹配原始/对偶最优v<2；强式19正乘子逐列Farkas排除正W，域外不继承。 |
-| [固定原安全鞍点下的完整策略查询锥审计--计算](<../../../../archives/customer-attraction/state/计算/固定原安全鞍点下的完整策略查询锥审计--计算.md>) | evidence-only | attach | 固定原安全鞍点 p/Q 下扩展到完整策略查询锥，LP 仅返回全兴趣零值且未给全锥精确对偶。 |
-| [固定完整策略UP锥有限探针--计算](<../../../../archives/customer-attraction/state/计算/固定完整策略UP锥有限探针--计算.md>) | evidence-only | attach | 随机100样本的UP固定策略锥LP只保存零slack与浮点输出，无有理后核及全称界。 |
+| [固定原安全鞍点下的完整策略查询锥审计--计算](<../actions/badad240feef1ef125ce.json>) | evidence-only | attach | 固定原安全鞍点 p/Q 下扩展到完整策略查询锥，LP 仅返回全兴趣零值且未给全锥精确对偶。 |
+| [固定完整策略UP锥有限探针--计算](<../actions/25f4c96d2245b27ea692.json>) | evidence-only | attach | 随机100样本的UP固定策略锥LP只保存零slack与浮点输出，无有理后核及全称界。 |
 | [固定完整策略的七层共同客户证书--计算](<../../../../archives/customer-attraction/state/计算/固定完整策略的七层共同客户证书--计算.md>) | math-exposition | retain | 七层共同客户/局部矩/非负客户系统均给精确原始对偶同值，明确局部可实现与共同客户锥的不同最优值。 |
 | [固定实际边缘的最大根图四十原子扩张--计算](<../../../../archives/customer-attraction/state/计算/固定实际边缘的最大根图四十原子扩张--计算.md>) | math-exposition | retain | 以 40 原子权重和 163 联合原子条件耦合保留两边边缘图，并检验 336 个根选择必要行；界定交叉 IC 尚缺。 |
 | [固定尾深菜单障碍的精确核验--计算](<../../../../archives/customer-attraction/state/计算/固定尾深菜单障碍的精确核验--计算.md>) | math-exposition | retain | 固定尾深族两个参数虽OPT>2W却有早期严格偏离，末两人S/Z/V投影恒等及tax角点范围均具体。 |
 | [固定根菜单压力诊断的三份完整策略--计算](<../../../../archives/customer-attraction/state/计算/固定根菜单压力诊断的三份完整策略--计算.md>) | math-exposition | retain | 三固定完整策略的SELF分解给D(p)和C(p)的协方差/自退款矩阵；仅逐点数值诊断，保明确不等式对象。 |
-| [固定离轨次数与重复末覆盖的独立原审计--计算](<../../../../archives/customer-attraction/state/计算/固定离轨次数与重复末覆盖的独立原审计--计算.md>) | evidence-only | attach | 三份固定域 Fraction 排序比较与重复末覆盖数值核验，含 rank2 的 -15/14。 |
+| [固定离轨次数与重复末覆盖的独立原审计--计算](<../actions/ebdf2c717357fb312252.json>) | evidence-only | attach | 三份固定域 Fraction 排序比较与重复末覆盖数值核验，含 rank2 的 -15/14。 |
 | [固定离轨次数原审计的逐层计数与真实核验域--计算](<../../../../archives/customer-attraction/state/计算/固定离轨次数原审计的逐层计数与真实核验域--计算.md>) | math-exposition | retain | 固定离轨秩的历史数N_j与k层核验域；m4/k4覆全树而固定k族仍缺全局福利结论。 |
-| [固定私有尾策略的七根原审计与类型证书--计算](<../../../../archives/customer-attraction/state/计算/固定私有尾策略的七根原审计与类型证书--计算.md>) | evidence-only | attach | 53 客户固定私有尾策略七种强制根的原程序审计，仅核非空 399 节点 IC、末两人预算与根缺陷。 |
+| [固定私有尾策略的七根原审计与类型证书--计算](<../actions/d45e6ca53db7d81147ef.json>) | evidence-only | attach | 53 客户固定私有尾策略七种强制根的原程序审计，仅核非空 399 节点 IC、末两人预算与根缺陷。 |
 | [固定策略的共同客户收益回路与八比五证书--计算](<../../../../archives/customer-attraction/state/计算/固定策略的共同客户收益回路与八比五证书--计算.md>) | math-exposition | retain | 固定策略的126坐标真IC/稀释行给8W/5对偶证书，抽象LP达到8/5却违真实客户次模行。 |
 | [固定策略锥精确证书与重放--计算](<../../../../archives/customer-attraction/state/计算/固定策略锥精确证书与重放--计算.md>) | math-exposition | retain | 固定策略锥的有理原始双对偶证书及非极小延续的两例精确比值 8/5、7/5，陈述有限适用范围。 |
-| [固定背景剩余收益的精确有限扫描--计算](<../../../../archives/customer-attraction/state/计算/固定背景剩余收益的精确有限扫描--计算.md>) | evidence-only | attach | 固定合法背景下剩余总收益 M_b/U_b 的五组预设随机精确扫描合同，本次仅 20 个较小样本重放。 |
+| [固定背景剩余收益的精确有限扫描--计算](<../actions/cbaf8bead172234bf9b0.json>) | evidence-only | attach | 固定合法背景下剩余总收益 M_b/U_b 的五组预设随机精确扫描合同，本次仅 20 个较小样本重放。 |
 | [固定背景剩余收益的计数策略锥扫描--计算](<../../../../archives/customer-attraction/state/计算/固定背景剩余收益的计数策略锥扫描--计算.md>) | math-exposition | retain | 固定背景剩余收益U_b及计数Markov策略锥LP作有限浮点扫描，目标和受限域清楚。 |
 | [固定背景收益切片的有限秩与核基审计--计算](<../../../../archives/customer-attraction/state/计算/固定背景收益切片的有限秩与核基审计--计算.md>) | math-exposition | retain | 两主题固定背景支付切片的Cauchy秩、核基和聚合效率关系为独立有限线性结构。 |
 | [固定计数策略的首步覆盖机会损失锥探针--计算](<../../../../archives/customer-attraction/state/计算/固定计数策略的首步覆盖机会损失锥探针--计算.md>) | math-exposition | retain | 首步覆盖机会损失G_r(b)−H_{r−1}(b,a)在固定策略锥上取LP，采样未解全模型。 |
 | [在轨保底与末两人聚合行的四份精确边界--计算](<../../../../archives/customer-attraction/state/计算/在轨保底与末两人聚合行的四份精确边界--计算.md>) | math-exposition | retain | 在轨保底和末两人聚合行给出必要锥的仿射端点及 m=5..8 的原对偶边界，均严格大于 2。 |
-| [均匀偏置安全对偶精确审计--计算](<../../../../archives/customer-attraction/state/计算/均匀偏置安全对偶精确审计--计算.md>) | evidence-only | attach | 均匀偏置安全对偶在 28 参数、1757 个确定终局利润上精确回归，并给十二主题四人旧证书静态 cap。 |
+| [均匀偏置安全对偶精确审计--计算](<../actions/f51cea9f9c418ef0703c.json>) | evidence-only | attach | 均匀偏置安全对偶在 28 参数、1757 个确定终局利润上精确回归，并给十二主题四人旧证书静态 cap。 |
 | [均匀分数背景障碍的发现与精确核验--计算](<../../../../archives/customer-attraction/state/计算/均匀分数背景障碍的发现与精确核验--计算.md>) | math-exposition | retain | 五客户与 84 客户三人完整 SPE 的固定均匀分数背景查询严格超根支付，后者六主题覆盖互异；自由 q 另有精确差。 |
-| [均匀时间债务冻报告的标量一致性与输入缺口--计算](<../../../../archives/customer-attraction/state/计算/均匀时间债务冻报告的标量一致性与输入缺口--计算.md>) | evidence-only | attach | 冻结 791 客户时间债务标量仅核内部等式 Σψ−W=-26407/84，缺原始输入。 |
+| [均匀时间债务冻报告的标量一致性与输入缺口--计算](<../actions/3023e8f89ae7133d83fb.json>) | evidence-only | attach | 冻结 791 客户时间债务标量仅核内部等式 Σψ−W=-26407/84，缺原始输入。 |
 | [增强三十八原子与五十三根直方图的原审查恢复--计算](<../../../../archives/customer-attraction/state/计算/增强三十八原子与五十三根直方图的原审查恢复--计算.md>) | math-exposition | retain | 三十八原子点满足旧2396行及1326根直方图，但真实终局L2对L1行精确为负；给出必要系统与可实现边界。 |
-| [多源BR信用与五环整数平台的原入口精确复核--计算](<../../../../archives/customer-attraction/state/计算/多源BR信用与五环整数平台的原入口精确复核--计算.md>) | evidence-only | attach | 复核多源BR信用与五环整数平台的固定输入、数值及原入口状态；只承载有限复放记录。 |
-| [多源整合核两步删重原审计的精确合同--计算](<../../../../archives/customer-attraction/state/计算/多源整合核两步删重原审计的精确合同--计算.md>) | evidence-only | attach | 对多源删重的固定 20 条回归和程序输入输出作精确核验，独立公式另有主述。 |
+| [多源BR信用与五环整数平台的原入口精确复核--计算](<../actions/9cb3b340fa6309a3346f.json>) | evidence-only | attach | 复核多源BR信用与五环整数平台的固定输入、数值及原入口状态；只承载有限复放记录。 |
+| [多源整合核两步删重原审计的精确合同--计算](<../actions/c8301341d06fb2819c96.json>) | evidence-only | attach | 对多源删重的固定 20 条回归和程序输入输出作精确核验，独立公式另有主述。 |
 | [多装置锥候选的三四人完整SPE证书--计算](<../../../../archives/customer-attraction/state/计算/多装置锥候选的三四人完整SPE证书--计算.md>) | math-exposition | retain | 两两私有装置与B/T连接块构造三四人完整SPE，有限结果分别W13/OPT14及W17/OPT18。 |
 | [奇偶闭合的字面审计与完整策略--计算](<../../../../archives/customer-attraction/state/计算/奇偶闭合的字面审计与完整策略--计算.md>) | math-exposition | retain | 可见奇偶投影与三角不足Gram的有限精确检查另给三人43历史共用有符号/uniform策略，区分负客户质量和合法63客户博弈。 |
-| [子集势编译的精确核验--计算](<../../../../archives/customer-attraction/state/计算/子集势编译的精确核验--计算.md>) | evidence-only | attach | 子集势编译的 Möbius 反演、有限势差和四个小例完整策略投影的原程序重放；普遍命题另由数学正文承担。 |
+| [子集势编译的精确核验--计算](<../actions/b8d2500d5b6cb302f292.json>) | evidence-only | attach | 子集势编译的 Möbius 反演、有限势差和四个小例完整策略投影的原程序重放；普遍命题另由数学正文承担。 |
 | [孤立未用主题的完整终局探针与万例记录--计算](<../../../../archives/customer-attraction/state/计算/孤立未用主题的完整终局探针与万例记录--计算.md>) | math-exposition | retain | 孤立未用主题候选 ISO 的万例阴性记录外，正文证明实际末两玩家收益至少私块 q 及 q≤K/m 条件范围。 |
-| [安全不交扩充原程序与三份审计报告的逐案例对应--计算](<../../../../archives/customer-attraction/state/计算/安全不交扩充原程序与三份审计报告的逐案例对应--计算.md>) | evidence-only | attach | 安全不交扩充 36 个随机旧游戏的完整策略及卷积 OPT 核验、三个报告的逐案版本差异；全称定理在别页。 |
+| [安全不交扩充原程序与三份审计报告的逐案例对应--计算](<../actions/df2e6efb13bfd0180358.json>) | evidence-only | attach | 安全不交扩充 36 个随机旧游戏的完整策略及卷积 OPT 核验、三个报告的逐案版本差异；全称定理在别页。 |
 | [安全值链与五人逐人安全值的精确核验--计算](<../../../../archives/customer-attraction/state/计算/安全值链与五人逐人安全值的精确核验--计算.md>) | math-exposition | retain | 安全值链的等式、113客户局部支付反例和五人u1<v5均有明确有限数学断言及精确值。 |
-| [安全锥浮点发现探针--计算](<../../../../archives/customer-attraction/state/计算/安全锥浮点发现探针--计算.md>) | evidence-only | attach | 六份安全锥浮点发现探针仅列运行入口/探索对象，无固定输出、精确证书或独立数学结论。 |
-| [完全图菜单对齐原作者审计与版本差异--计算](<../../../../archives/customer-attraction/state/计算/完全图菜单对齐原作者审计与版本差异--计算.md>) | evidence-only | attach | 完全图菜单的原作者有限审计和版本差异，χ 恒等式已有独立引理。 |
+| [安全锥浮点发现探针--计算](<../actions/93ee4c91765dc4442fef.json>) | evidence-only | attach | 六份安全锥浮点发现探针仅列运行入口/探索对象，无固定输出、精确证书或独立数学结论。 |
+| [完全图菜单对齐原作者审计与版本差异--计算](<../actions/d40ecc92900bba093dfb.json>) | evidence-only | attach | 完全图菜单的原作者有限审计和版本差异，χ 恒等式已有独立引理。 |
 | [完整156主题固定前缀的两人尾报告--计算](<../../../../archives/customer-attraction/state/计算/完整156主题固定前缀的两人尾报告--计算.md>) | math-exposition | retain | 156×156 个两人尾收益的可信递归筛得六个尾局，均有 W>1/2，推翻旧目标中的低值尾分支。 |
 | [完整156主题固定前缀的收益矩数据--计算](<../../../../archives/customer-attraction/state/计算/完整156主题固定前缀的收益矩数据--计算.md>) | math-exposition | retain | 156主题共享阈值实现1590客户类型并导出固定四前缀F、G、U收益恒等式；低福利旧尾不继承完整SPE。 |
-| [完整156主题固定前缀的福利矩数据--计算](<../../../../archives/customer-attraction/state/计算/完整156主题固定前缀的福利矩数据--计算.md>) | evidence-only | attach | 固定 156 主题前缀的 24336 个福利矩值与 1590 类型重建数据，不认证全 SPE。 |
+| [完整156主题固定前缀的福利矩数据--计算](<../actions/3e0088c121ba8b64d4fc.json>) | evidence-only | attach | 固定 156 主题前缀的 24336 个福利矩值与 1590 类型重建数据，不认证全 SPE。 |
 | [完整156主题构造所用的配对必要点--计算](<../../../../archives/customer-attraction/state/计算/完整156主题构造所用的配对必要点--计算.md>) | math-exposition | retain | 364 个 Z 层质量与共同阈值构造给出 10344 必要行的会员实现、Z→Z 与强 PAIR 公式及原图停界。 |
 | [完整156主题的作者可信尾与实际缺陷报告--计算](<../../../../archives/customer-attraction/state/计算/完整156主题的作者可信尾与实际缺陷报告--计算.md>) | math-exposition | retain | 证明两人尾存在完整 SPE 当且仅当末位是 BR 且先行收益达到 max_i min_BR U_ij，并据此给出旧 A5/A6 的精确缺陷。 |
 | [完整二主题纠错的原始对偶核验--计算](<../../../../archives/customer-attraction/state/计算/完整二主题纠错的原始对偶核验--计算.md>) | math-exposition | retain | 完整二主题第三等式2X+2V−Z−3B校正旧范围，固定126收益坐标系统的七行有理对偶给最优值2，并展示两两非负无法全局拼合。 |
-| [完整历史子马尔可夫消元的双证书精确回归--计算](<../../../../archives/customer-attraction/state/计算/完整历史子马尔可夫消元的双证书精确回归--计算.md>) | evidence-only | attach | COUNT/LOSS/SUBSET两证书在指定portfolio与root-tax点的精确回归，普遍消元结论另有正文。 |
+| [完整历史子马尔可夫消元的双证书精确回归--计算](<../actions/45e1415777f1b37fb565.json>) | evidence-only | attach | COUNT/LOSS/SUBSET两证书在指定portfolio与root-tax点的精确回归，普遍消元结论另有正文。 |
 | [完整历史广播的六证书与零域精确回归--计算](<../../../../archives/customer-attraction/state/计算/完整历史广播的六证书与零域精确回归--计算.md>) | math-exposition | retain | 六固定完整SPE的fresh/all分母恒等式、源守恒和零域分支有具体数学核验；不扩称正fresh级联或普遍half。 |
 | [完整历史求解器的精确复现--计算](<../../../../archives/customer-attraction/state/计算/完整历史求解器的精确复现--计算.md>) | algorithm-result | retain | 标准库Fraction全集求解器、完整树证书展开和验证给定共同目录的全部纯SPE可实现终局；独立小域完整策略oracle对照量词。 |
 | [完整子树联合菜单的九份精确端点与回流试验--计算](<../../../../archives/customer-attraction/state/计算/完整子树联合菜单的九份精确端点与回流试验--计算.md>) | math-exposition | retain | 九份完整SPE有限端点核84277真实IC，六份固定策略锥目标有逐类型有理对偶；区分48客户端8/5与252客户回流及退化单客户。 |
-| [完整树保存运行与恢复版本边界--计算](<../../../../archives/customer-attraction/state/计算/完整树保存运行与恢复版本边界--计算.md>) | evidence-only | attach | 五个保存完整策略点的有理SPE、目标gap和历史距离cut缺陷记录；无跨策略上界。 |
+| [完整树保存运行与恢复版本边界--计算](<../actions/bb597446e4a8bb569424.json>) | evidence-only | attach | 五个保存完整策略点的有理SPE、目标gap和历史距离cut缺陷记录；无跨策略上界。 |
 | [完整槽平稳核的六查询发现与保存证书--计算](<../../../../archives/customer-attraction/state/计算/完整槽平稳核的六查询发现与保存证书--计算.md>) | math-exposition | retain | 六主题完整 43 节点策略的三槽核有唯一平稳 p，却在两份 6286 客户完整 SPE 中使额外查询超根收益 123/4。 |
 | [完整水位审计与独立锐性审查的证据范围--计算](<../../../../archives/customer-attraction/state/计算/完整水位审计与独立锐性审查的证据范围--计算.md>) | mixed/needs-context | extract | 程序与证据范围说明中包含 53 客户全历史策略、v4=28481/2924 的对偶值及五个水位阈值括定，宜抽取可独立数学叙述。 |
 | [完整策略树分享余项精确审计--计算](<../../../../archives/customer-attraction/state/计算/完整策略树分享余项精确审计--计算.md>) | math-exposition | retain | 分享余项完整树极值D在六人星形66客户取0、双星30客户取−3/4；小域穷举全部形式策略说明有限证据与全称算法的区别。 |
 | [完整策略核心平移与九十六步水位复核--计算](<../../../../archives/customer-attraction/state/计算/完整策略核心平移与九十六步水位复核--计算.md>) | math-exposition | retain | 53 客户四人完整策略的共同核心平移、真静态水位及任意 c 返还比率极限推导，另有 96 步有理端点。 |
 | [完整策略静态安全锥的交替数值探测--计算](<../../../../archives/customer-attraction/state/计算/完整策略静态安全锥的交替数值探测--计算.md>) | math-exposition | retain | 完整策略锥Γw与静态安全值的CONE/QUERY块LP定义清楚；16起点零gap只给全兴趣精确可行点。 |
-| [完整终局选择的有限回归与恢复边界--计算](<../../../../archives/customer-attraction/state/计算/完整终局选择的有限回归与恢复边界--计算.md>) | evidence-only | attach | 完整树实现对680固定锥LP及20联合模型的有限回归、恢复缺口和原代码边界。 |
+| [完整终局选择的有限回归与恢复边界--计算](<../actions/1ddba1f922704db179f9.json>) | evidence-only | attach | 完整树实现对680固定锥LP及20联合模型的有限回归、恢复缺口和原代码边界。 |
 | [实际ABB末三位的七松弛与有限有理证书--计算](<../../../../archives/customer-attraction/state/计算/实际ABB末三位的七松弛与有限有理证书--计算.md>) | math-exposition | retain | 实际ABB末三位真历史七松弛、80角点充分证书与75组有限有理参数均为明确数学条件成果。 |
-| [实际前缀背景反例的完整策略核验--计算](<../../../../archives/customer-attraction/state/计算/实际前缀背景反例的完整策略核验--计算.md>) | evidence-only | attach | 固定前缀 4/6/8 人背景反例的真实策略比较表和数值核验，参数主张另有独立反例页。 |
+| [实际前缀背景反例的完整策略核验--计算](<../actions/f5a4746538911cee26fc.json>) | evidence-only | attach | 固定前缀 4/6/8 人背景反例的真实策略比较表和数值核验，参数主张另有独立反例页。 |
 | [实际末主题三人尾的四百四十八格投影证书--计算](<../../../../archives/customer-attraction/state/计算/实际末主题三人尾的四百四十八格投影证书--计算.md>) | math-exposition | retain | 实际末主题 B 分支三人尾的八类真实 IC 组合经 448 格最大上包络给必要行，旧必要点投影严格为负。 |
 | [实际末主题三源共同容量投影的完整表与精确复核--计算](<../../../../archives/customer-attraction/state/计算/实际末主题三源共同容量投影的完整表与精确复核--计算.md>) | math-exposition | retain | 三条真实 B 分支各自给 IC、共同 K 与逐客户最大上包络，1344 格投影在旧5108点均严格为负。 |
 | [实际末主题分支分离器与四菜单补价原点核验--计算](<../../../../archives/customer-attraction/state/计算/实际末主题分支分离器与四菜单补价原点核验--计算.md>) | math-exposition | retain | 推导真末两人分支M/Z行及有理隐藏状态上包络，说明四菜单实际价格行；另核固定5664与5692点。 |
 | [实际末主题单枝与三枝条件联合的精确点--计算](<../../../../archives/customer-attraction/state/计算/实际末主题单枝与三枝条件联合的精确点--计算.md>) | math-exposition | retain | 实际末B单枝/三枝条件联合的5259与5494行有理点及漏价负行明确限制有限必要系统的可补全性。 |
 | [实际末主题联合主图的局部切面与末价停界--计算](<../../../../archives/customer-attraction/state/计算/实际末主题联合主图的局部切面与末价停界--计算.md>) | math-exposition | retain | 由真实末位最佳回复推出六条 Y 菜单价格，固定5277点的实际末价为严格负有理数，排其完整策略补全。 |
-| [实际第三位七千四百九十七行的有理必要点--计算](<../../../../archives/customer-attraction/state/计算/实际第三位七千四百九十七行的有理必要点--计算.md>) | evidence-only | attach | 7497行必要图上的85显式、64旧原子有理点和已存余量统计；有限点无完整SPE实现。 |
+| [实际第三位七千四百九十七行的有理必要点--计算](<../actions/34ef66cd428f7903cb71.json>) | evidence-only | attach | 7497行必要图上的85显式、64旧原子有理点和已存余量统计；有限点无完整SPE实现。 |
 | [实际终局查询与LAST探针的核验范围--计算](<../../../../archives/customer-attraction/state/计算/实际终局查询与LAST探针的核验范围--计算.md>) | math-exposition | retain | 终局额外查询三人精确失败及LAST静态核/固定策略锥探针范围、末前背景M_b有明确数学定义与边界。 |
 | [实际缩放精确税的固定策略锥搜索--计算](<../../../../archives/customer-attraction/state/计算/实际缩放精确税的固定策略锥搜索--计算.md>) | math-exposition | retain | 给出统一缩放税ET的条件覆盖代数、固定策略锥目标D_a，并解释53锥273查询的负扫描与13人反例边界。 |
 | [实际菜单三组随机报告与四个命名点--计算](<../../../../archives/customer-attraction/state/计算/实际菜单三组随机报告与四个命名点--计算.md>) | mixed/needs-context | extract | 185 份随机 actual 菜单报告为哨兵数值，但命名 root_tax 四人策略另有全历史解析 SPE 校准；prefix 项策略域错配。 |
@@ -2149,48 +2149,48 @@
 | [嵌套回复的有理分离切面--计算](<../../../../archives/customer-attraction/state/计算/嵌套回复的有理分离切面--计算.md>) | math-exposition | retain | 嵌套R/Z回复的五个正权有理切面经真实IC和有名索引平均给旧5180点严格负余量。 |
 | [弱匹配与分区查询的精确核验--计算](<../../../../archives/customer-attraction/state/计算/弱匹配与分区查询的精确核验--计算.md>) | math-exposition | retain | 冻结全查询 Q 的随机排列期望、分区一次收费 R 的超几何公式，以及十四客户反驳普遍 PFR-OPT 桥均明确。 |
 | [弱匹配分区查询有限报告与阈值边界--计算](<../../../../archives/customer-attraction/state/计算/弱匹配分区查询有限报告与阈值边界--计算.md>) | math-exposition | retain | 固定策略锥分区查询q_S的三份浮点样本无严格分离，阈值1与full查询阈值有明确数学差别。 |
-| [弱匹配现有记录汇总与有限边界--计算](<../../../../archives/customer-attraction/state/计算/弱匹配现有记录汇总与有限边界--计算.md>) | evidence-only | attach | 仅汇总十个弱匹配有限记录的W、OPT、matching、slack与V矩阵，没有统一存在性或失败主张。 |
-| [弱匹配策略锥有限攻击与源报告复核--计算](<../../../../archives/customer-attraction/state/计算/弱匹配策略锥有限攻击与源报告复核--计算.md>) | evidence-only | attach | 19与98个固定策略锥上的浮点LP仅报告阈值以下的候选及一局重放，没有精确分离或一般命题。 |
+| [弱匹配现有记录汇总与有限边界--计算](<../actions/66e9c25e4fc640698993.json>) | evidence-only | attach | 仅汇总十个弱匹配有限记录的W、OPT、matching、slack与V矩阵，没有统一存在性或失败主张。 |
+| [弱匹配策略锥有限攻击与源报告复核--计算](<../actions/c5ee688dbfc388a46b14.json>) | evidence-only | attach | 19与98个固定策略锥上的浮点LP仅报告阈值以下的候选及一局重放，没有精确分离或一般命题。 |
 | [归档策略有限计数状态与早停报告的精确边界--计算](<../../../../archives/customer-attraction/state/计算/归档策略有限计数状态与早停报告的精确边界--计算.md>) | math-exposition | retain | 四份归档策略的纯 SPE 终局全集递推，另核一个三人 11 客户保存策略的 31 历史与有理查询。 |
 | [循环查询与补位核的完整策略核验--计算](<../../../../archives/customer-attraction/state/计算/循环查询与补位核的完整策略核验--计算.md>) | math-exposition | retain | 86客户源及m2至5补位完整策略展示同主题受限核最小预算66/88/110/132，跨主题末节点分配又有P=0逃逸。 |
-| [总安全预算的精确证书与独立审计--计算](<../../../../archives/customer-attraction/state/计算/总安全预算的精确证书与独立审计--计算.md>) | evidence-only | attach | 三份 61/89/36 客户完整证书的全历史比较和预算数值重放；一般定义、反例与对偶定理另立正文。 |
+| [总安全预算的精确证书与独立审计--计算](<../actions/ab8bc498892c0bd89b35.json>) | evidence-only | attach | 三份 61/89/36 客户完整证书的全历史比较和预算数值重放；一般定义、反例与对偶定理另立正文。 |
 | [恒题完整策略锥的精确入口界与四份保存点--计算](<../../../../archives/customer-attraction/state/计算/恒题完整策略锥的精确入口界与四份保存点--计算.md>) | math-exposition | retain | 证明恒A完整策略为SPE当且仅当每主题m\|T\A\|≤\|A\T\|，并推固定锥OPT≤(2−1/m)W。 |
 | [成对水库停止收费的奇偶算术回归--计算](<../../../../archives/customer-attraction/state/计算/成对水库停止收费的奇偶算术回归--计算.md>) | math-exposition | retain | 可信缺陷好位置N_k=⌊k/2⌋−1导收费差偶数5k+2、奇数5k−4，解释整族路径无法成为该付款合同的反例。 |
-| [抽象个体菜单LP有限候选--计算](<../../../../archives/customer-attraction/state/计算/抽象个体菜单LP有限候选--计算.md>) | evidence-only | attach | 三人三主题任意匿名势表的浮点 delta 记录与客户吸引游戏无同构，只有有限发现输入。 |
-| [抽象菜单LP有限候选--计算](<../../../../archives/customer-attraction/state/计算/抽象菜单LP有限候选--计算.md>) | evidence-only | attach | 任意匿名 F/G 表的二十样本 LP 重放输出为零，仅记录更宽模型的发现程序与结果。 |
+| [抽象个体菜单LP有限候选--计算](<../actions/0eca8d1ec51f5d9bf00e.json>) | evidence-only | attach | 三人三主题任意匿名势表的浮点 delta 记录与客户吸引游戏无同构，只有有限发现输入。 |
+| [抽象菜单LP有限候选--计算](<../actions/4e56f63a6f006953f81b.json>) | evidence-only | attach | 任意匿名 F/G 表的二十样本 LP 重放输出为零，仅记录更宽模型的发现程序与结果。 |
 | [拆分与跨源固定阈值的配对可行点--计算](<../../../../archives/customer-attraction/state/计算/拆分与跨源固定阈值的配对可行点--计算.md>) | math-exposition | retain | split/cross配对点由同层Z交叠min的共同有理原子实现7931/9311行，而末位/早源真实报价排除指定路径。 |
 | [指定策略安全锥与七极大来源边界--计算](<../../../../archives/customer-attraction/state/计算/指定策略安全锥与七极大来源边界--计算.md>) | math-fragment | restore | 二十一棵固定策略安全锥、三棵条件锥及七极大覆盖子类的结论提要，缺独立输入和证明入口，需接所列来源。 |
-| [排序联合取消的非零已覆盖客户投影回归--计算](<../../../../archives/customer-attraction/state/计算/排序联合取消的非零已覆盖客户投影回归--计算.md>) | evidence-only | attach | 430客户固定三人证书上六种排序world的I取消及R投影复放；未出现非零query传播。 |
+| [排序联合取消的非零已覆盖客户投影回归--计算](<../actions/078fc40787d95468fd35.json>) | evidence-only | attach | 430客户固定三人证书上六种排序world的I取消及R投影复放；未出现非零query传播。 |
 | [整数全集价格探针与全前缀机会预算的十三个保存点--计算](<../../../../archives/customer-attraction/state/计算/整数全集价格探针与全前缀机会预算的十三个保存点--计算.md>) | math-exposition | retain | 说明全集递推H(q)的全历史结果语义与正价格违例取最小实际收益的归约，十三固定点只是回归。 |
 | [新增负列与三人条件后的六十五列恢复链--计算](<../../../../archives/customer-attraction/state/计算/新增负列与三人条件后的六十五列恢复链--计算.md>) | math-exposition | retain | 解释新增200条三人子局利润必要行的40菜单×5组构造，65列有理恢复点满足2396行但被另一必要行排除。 |
-| [无环真实替换的双实现精确核验--计算](<../../../../archives/customer-attraction/state/计算/无环真实替换的双实现精确核验--计算.md>) | evidence-only | attach | 无环真实替换的 52 客户与 86 客户原审计双实现重放，普遍最早归属不等式另由引理证明。 |
-| [旧13人终局税固定策略锥浮点探针--计算](<../../../../archives/customer-attraction/state/计算/旧13人终局税固定策略锥浮点探针--计算.md>) | evidence-only | attach | 固定十三人 packet 第零轮浮点 gap 约−1/14，未有理恢复、完整策略或终局税不等式证书。 |
+| [无环真实替换的双实现精确核验--计算](<../actions/1fe5d9cd87e7c79285fc.json>) | evidence-only | attach | 无环真实替换的 52 客户与 86 客户原审计双实现重放，普遍最早归属不等式另由引理证明。 |
+| [旧13人终局税固定策略锥浮点探针--计算](<../actions/578a0d95e7436f2f5cc6.json>) | evidence-only | attach | 固定十三人 packet 第零轮浮点 gap 约−1/14，未有理恢复、完整策略或终局税不等式证书。 |
 | [旧六十四索引点的二十七异索引诊断--计算](<../../../../archives/customer-attraction/state/计算/旧六十四索引点的二十七异索引诊断--计算.md>) | math-exposition | retain | 原64质量点的27条必要行有8负3零16正；负行排保原坐标质量的完整五人SPE补全。 |
-| [旧完整SPE有限匹配预算探针--计算](<../../../../archives/customer-attraction/state/计算/旧完整SPE有限匹配预算探针--计算.md>) | evidence-only | attach | 仅列五类旧完整SPE固定候选匹配预算的Fraction探针数值，没有展开普遍论证。 |
+| [旧完整SPE有限匹配预算探针--计算](<../actions/2358c0c7843176f7a374.json>) | evidence-only | attach | 仅列五类旧完整SPE固定候选匹配预算的Fraction探针数值，没有展开普遍论证。 |
 | [旧查询回复的八个网格分离切面--计算](<../../../../archives/customer-attraction/state/计算/旧查询回复的八个网格分离切面--计算.md>) | math-exposition | retain | 八个网格负行被逐客户端点消元化为三种强PAIR向量，并由三条真实IC加非负重叠差证明其必要性。 |
 | [旧查询回复的六十四个有理分离切面--计算](<../../../../archives/customer-attraction/state/计算/旧查询回复的六十四个有理分离切面--计算.md>) | math-exposition | retain | 非负参数隐藏回复投影 ψ 给合法强制主题必要行，64个有理切面在旧点皆负而新边缘点非负。 |
 | [旧查询网格切面加入后的有理必要点--计算](<../../../../archives/customer-attraction/state/计算/旧查询网格切面加入后的有理必要点--计算.md>) | math-exposition | retain | 4971行1905坐标必要点W约0.478，194组三态与交叠辅助量的189个Fréchet字面障碍，追加44行通过而后64行负分离。 |
-| [早期3227安全值增量证书--计算](<../../../../archives/customer-attraction/state/计算/早期3227安全值增量证书--计算.md>) | evidence-only | attach | 早期3227客户策略的全局与根后安全值原始对偶记录，结论仅是两条一步归纳的固定障碍。 |
-| [早期机会全历史与逆向归纳攻击--计算](<../../../../archives/customer-attraction/state/计算/早期机会全历史与逆向归纳攻击--计算.md>) | evidence-only | attach | 40份五人七标签完整策略的原浮点扫描与三种有理质量解释核验；37份恢复点的MG目标均为负。 |
+| [早期3227安全值增量证书--计算](<../actions/6b3b2112cfc9068420c7.json>) | evidence-only | attach | 早期3227客户策略的全局与根后安全值原始对偶记录，结论仅是两条一步归纳的固定障碍。 |
+| [早期机会全历史与逆向归纳攻击--计算](<../actions/020f10bdd87d0b7cbfcc.json>) | evidence-only | attach | 40份五人七标签完整策略的原浮点扫描与三种有理质量解释核验；37份恢复点的MG目标均为负。 |
 | [早期机会计数与价格交替样本--计算](<../../../../archives/customer-attraction/state/计算/早期机会计数与价格交替样本--计算.md>) | math-exposition | retain | 395 份机会计数/价格数值表的精确资格分层，保存的大块私块 SPE 端点和固定六客户价格 B(1)=4<W=5 有具体推导。 |
-| [早期菜单负载缺陷独立Fraction审计--计算](<../../../../archives/customer-attraction/state/计算/早期菜单负载缺陷独立Fraction审计--计算.md>) | evidence-only | attach | Fraction 审计枚举43776个标量恒等式和两个固定SPE比较，全球支付桥仍待单独数学推导。 |
+| [早期菜单负载缺陷独立Fraction审计--计算](<../actions/1a9fcc112683273cdc64.json>) | evidence-only | attach | Fraction 审计枚举43776个标量恒等式和两个固定SPE比较，全球支付桥仍待单独数学推导。 |
 | [显式回复实际报价地板图的有理点--计算](<../../../../archives/customer-attraction/state/计算/显式回复实际报价地板图的有理点--计算.md>) | math-exposition | retain | 1905 列必要图有理点满足 4963 条显式回复报价地板行且 O=1、W<1/2；191 个辅助交叠违反 Fréchet 下界。 |
 | [显式回复真尾利润投影的有理切面--计算](<../../../../archives/customer-attraction/state/计算/显式回复真尾利润投影的有理切面--计算.md>) | math-exposition | retain | 四条真尾负切面从同一策略的源IC、末价和尾利润下包络推出，r=1端点严格等于强PAIR并排固定点。 |
 | [显式新回复的实际四五位补价与精确点--计算](<../../../../archives/customer-attraction/state/计算/显式新回复的实际四五位补价与精确点--计算.md>) | math-exposition | retain | 真实第四/五位R/Z查询的隐藏后继min付款生成324行，另36地板区分5251与5287有理点。 |
 | [最优交换与归属插入的双程序精确回归--计算](<../../../../archives/customer-attraction/state/计算/最优交换与归属插入的双程序精确回归--计算.md>) | math-exposition | retain | 单客户调和势和归属插入恒等式给72818个有限incidence核验，并把六排列真实前缀债与同叶信用分账。 |
 | [最优交换二项矩与Beta核的精确核验--计算](<../../../../archives/customer-attraction/state/计算/最优交换二项矩与Beta核的精确核验--计算.md>) | math-exposition | retain | 二项子列表平均与整数Beta系数给两条明确组合恒等式，m至12的4095/24570有理项只作有限回归。 |
-| [最优交换矩独立Fraction审计--计算](<../../../../archives/customer-attraction/state/计算/最优交换矩独立Fraction审计--计算.md>) | evidence-only | attach | Fraction脚本在m≤20的3080组交换矩组合恒等式回归通过，仅算术支撑。 |
+| [最优交换矩独立Fraction审计--计算](<../actions/351e92f8e2b9dc289455.json>) | evidence-only | attach | Fraction脚本在m≤20的3080组交换矩组合恒等式回归通过，仅算术支撑。 |
 | [最优分区冻结查询的发现记录与两规模原精确审计--计算](<../../../../archives/customer-attraction/state/计算/最优分区冻结查询的发现记录与两规模原精确审计--计算.md>) | math-exposition | retain | 两人唯一最优不交比较主题的 127 与 14 客户完整 SPE，所有匹配/owner 冻结查询费用均严格高于 W。 |
-| [最优归属运输的全割与有理增广回归--计算](<../../../../archives/customer-attraction/state/计算/最优归属运输的全割与有理增广回归--计算.md>) | evidence-only | attach | 九个静态目录上的最优归属运输全割、11474次积分核与1479次有理增广回归。 |
+| [最优归属运输的全割与有理增广回归--计算](<../actions/e3867644295171a4dbb3.json>) | evidence-only | attach | 九个静态目录上的最优归属运输全割、11474次积分核与1479次有理增广回归。 |
 | [最优排列调和债的十三人固定审计与锥探针--计算](<../../../../archives/customer-attraction/state/计算/最优排列调和债的十三人固定审计与锥探针--计算.md>) | math-exposition | retain | 标准 H4 的最优元组共同排列量词、十三人自动机每个最优元组好排列及16态覆盖 DP 精确债得到单点结果。 |
-| [最优替槽主审计的完整有限域与双版本报告--计算](<../../../../archives/customer-attraction/state/计算/最优替槽主审计的完整有限域与双版本报告--计算.md>) | evidence-only | attach | 806目录、98125个最优替槽配对的静态公式有限回归及初版/锚版字段对照。 |
+| [最优替槽主审计的完整有限域与双版本报告--计算](<../actions/dfb26727e6b583967aa7.json>) | evidence-only | attach | 806目录、98125个最优替槽配对的静态公式有限回归及初版/锚版字段对照。 |
 | [最优替槽事件与参数核的独立精确回归--计算](<../../../../archives/customer-attraction/state/计算/最优替槽事件与参数核的独立精确回归--计算.md>) | math-exposition | retain | 逐客户A/C槽替换覆盖损失公式、均匀位置避开概率及Beta核有限和均有解释，另明确IC重权局部余量−1/6。 |
 | [最优末节点查询反例精确证据--计算](<../../../../archives/customer-attraction/state/计算/最优末节点查询反例精确证据--计算.md>) | math-exposition | retain | 四人1651客户完整400节点SPE有唯一最优BCDF覆盖1562，四个最优末节点查询收益和1560超过实际福利1559。 |
-| [最优等槽交换矩独立报告--计算](<../../../../archives/customer-attraction/state/计算/最优等槽交换矩独立报告--计算.md>) | evidence-only | attach | 等槽交换调和矩的 3080 个有限参数 Fraction 独立报告，普遍恒等式另在引理。 |
+| [最优等槽交换矩独立报告--计算](<../actions/42b189f168240ccf7765.json>) | evidence-only | attach | 等槽交换调和矩的 3080 个有限参数 Fraction 独立报告，普遍恒等式另在引理。 |
 | [最优覆盖查询费用的精确支持枚举--计算](<../../../../archives/customer-attraction/state/计算/最优覆盖查询费用的精确支持枚举--计算.md>) | math-exposition | retain | 枚举不同支持后以目录最低查询费用补足重复槽的证明给真正 m 槽 K0，并列16例有限值。 |
 | [最优遗漏族的逐客户与线性证书--计算](<../../../../archives/customer-attraction/state/计算/最优遗漏族的逐客户与线性证书--计算.md>) | math-exposition | retain | 最优遗漏两人k≥3族的42激励及21最优比较由线性斜率和k3起点证全参数，L>W而half成立。 |
 | [最大主题包络发现与有理恢复--计算](<../../../../archives/customer-attraction/state/计算/最大主题包络发现与有理恢复--计算.md>) | math-exposition | retain | 五人最大主题根包络的四条正有理线通过真实根 IC 消掉发现参数，另辨同线不同乘子的交叠余项。 |
-| [最大主题容量切割双实现核验--计算](<../../../../archives/customer-attraction/state/计算/最大主题容量切割双实现核验--计算.md>) | evidence-only | attach | 最大主题容量切割两套有限原实现的 4096 客户型余项和标量点复放；一般合法性在根容量引理。 |
+| [最大主题容量切割双实现核验--计算](<../actions/2ef84b2c68106399fbd5.json>) | evidence-only | attach | 最大主题容量切割两套有限原实现的 4096 客户型余项和标量点复放；一般合法性在根容量引理。 |
 | [最大主题近饱和的逐客户证书与原有限审计--计算](<../../../../archives/customer-attraction/state/计算/最大主题近饱和的逐客户证书与原有限审计--计算.md>) | math-exposition | retain | 证明任意 m≥2 的最大主题近饱和恒等式及非负余项，并以21客户形式叶显示标量门槛漏末位BR。 |
 | [最大根三千一百三十二必要行的六十六原子点与尾菜单缺口--计算](<../../../../archives/customer-attraction/state/计算/最大根三千一百三十二必要行的六十六原子点与尾菜单缺口--计算.md>) | math-exposition | retain | 五人最大根66原子有理点满足指定3132必要行且O>2W，遗漏28尾菜单中两真末位行严格负。 |
 | [最大根四复制定系数发现点的精确审计--计算](<../../../../archives/customer-attraction/state/计算/最大根四复制定系数发现点的精确审计--计算.md>) | math-exposition | retain | 推导五条最大根四复制枝的CAP/COPY/FLOOR/LAST/PAIR行和支撑线O≤Br+CK，并指出原四份逐项有理化系数余项为负。 |
@@ -2198,14 +2198,14 @@
 | [最大根真实末菜单消元对六十一原子的精确分离--计算](<../../../../archives/customer-attraction/state/计算/最大根真实末菜单消元对六十一原子的精确分离--计算.md>) | math-exposition | retain | 真实末两人菜单 S/Z/V 非负组合消掉同索引交叠，61 原子最大根点对所得上包络严格负且排全部 610 拆分。 |
 | [最大根重复元组必要系统的六十一原子精确可行点--计算](<../../../../archives/customer-attraction/state/计算/最大根重复元组必要系统的六十一原子精确可行点--计算.md>) | math-exposition | retain | 61原子精确点满足4007必要行而O>2W，后继末菜单和1414新行分离该点。 |
 | [最小支撑核验的三百四十八单位输入与导航范围--计算](<../../../../archives/customer-attraction/state/计算/最小支撑核验的三百四十八单位输入与导航范围--计算.md>) | mixed/needs-context | extract | 348客户全历史有限审计及抽象 k 支撑矩阵恒等式夹在程序执行与旧源导航内，抽取支撑数学和限定范围。 |
-| [最差覆盖计数化的三人有限筛查--计算](<../../../../archives/customer-attraction/state/计算/最差覆盖计数化的三人有限筛查--计算.md>) | evidence-only | attach | 四主题随机二万输入比较完整历史与计数策略最差覆盖，19856通过、144跳过，无保存新反例。 |
-| [最晚净出口原探针与后缀报告的执行范围--计算](<../../../../archives/customer-attraction/state/计算/最晚净出口原探针与后缀报告的执行范围--计算.md>) | evidence-only | attach | 最晚NET程序在结构松弛中找到m9密度13/12，另保存owner后缀数值未分离；不是SPE反例。 |
+| [最差覆盖计数化的三人有限筛查--计算](<../actions/50dcdd2ed4a2e74581d3.json>) | evidence-only | attach | 四主题随机二万输入比较完整历史与计数策略最差覆盖，19856通过、144跳过，无保存新反例。 |
+| [最晚净出口原探针与后缀报告的执行范围--计算](<../actions/46b053bc21d5d0001e26.json>) | evidence-only | attach | 最晚NET程序在结构松弛中找到m9密度13/12，另保存owner后缀数值未分离；不是SPE反例。 |
 | [有限势弱强两点的完整策略与同支持失败--计算](<../../../../archives/customer-attraction/state/计算/有限势弱强两点的完整策略与同支持失败--计算.md>) | math-exposition | retain | 两份六标签三人有限势完整策略严格违反聚合静态安全桥，强点虽通过全部 2520 sharp 行仍同支持福利不守恒。 |
 | [有限阶平稳原审计与七标签角色置换核验--计算](<../../../../archives/customer-attraction/state/计算/有限阶平稳原审计与七标签角色置换核验--计算.md>) | math-exposition | retain | 有限差分角色矩平衡及七标签到42置换提升有明确前两阶等式、最高阶负债与保存菜单末位偏离。 |
-| [末两主题条件与安全值代换的精确核验--计算](<../../../../archives/customer-attraction/state/计算/末两主题条件与安全值代换的精确核验--计算.md>) | evidence-only | attach | 四客户完整SPE扩类证书及26客户二次势与minimax差1/7的定义级固定核验。 |
+| [末两主题条件与安全值代换的精确核验--计算](<../actions/370bef3cd6f6d6931cef.json>) | evidence-only | attach | 四客户完整SPE扩类证书及26客户二次势与minimax差1/7的定义级固定核验。 |
 | [末两人价格恒等式与保护攻击记录--计算](<../../../../archives/customer-attraction/state/计算/末两人价格恒等式与保护攻击记录--计算.md>) | math-exposition | retain | 末两人 S/Z/V 联合会员抵消及价格支配纠正有明确数学式，71条保护搜索零日志仅作为旁证。 |
-| [末两人保底的完整策略核验--计算](<../../../../archives/customer-attraction/state/计算/末两人保底的完整策略核验--计算.md>) | evidence-only | attach | 末两人保底程序在 13824 个有限完整策略及边界输入的原字节重放，普遍命题由正式定理承担。 |
-| [末两人新生重叠的逐客户恒等式有限回归--计算](<../../../../archives/customer-attraction/state/计算/末两人新生重叠的逐客户恒等式有限回归--计算.md>) | evidence-only | attach | 九种固定背景乘64会员位的末两人新生重叠恒等式回归；任意整数背景证明已有独立定理。 |
+| [末两人保底的完整策略核验--计算](<../actions/046153292854320369e4.json>) | evidence-only | attach | 末两人保底程序在 13824 个有限完整策略及边界输入的原字节重放，普遍命题由正式定理承担。 |
+| [末两人新生重叠的逐客户恒等式有限回归--计算](<../actions/026ceca4d51ddc25451b.json>) | evidence-only | attach | 九种固定背景乘64会员位的末两人新生重叠恒等式回归；任意整数背景证明已有独立定理。 |
 | [末两人菜单三原审计的有限范围与版本对应--计算](<../../../../archives/customer-attraction/state/计算/末两人菜单三原审计的有限范围与版本对应--计算.md>) | math-exposition | retain | 核三种真实末两人菜单的G行与交集消去，以及共同包含、单例外、少例外参数审计的有限范围。 |
 | [末两人运输与指定核的双实现核验--计算](<../../../../archives/customer-attraction/state/计算/末两人运输与指定核的双实现核验--计算.md>) | mixed/needs-context | extract | 两份指定三人完整策略的 SCT/DIV 系数与静态核封顶数学见证，夹在11源与两次审计回放清单中。 |
 | [末位克隆独审入口与两份固定锥证书--计算](<../../../../archives/customer-attraction/state/计算/末位克隆独审入口与两份固定锥证书--计算.md>) | math-exposition | retain | 七客户完整SPE的末位/早位收益比7/3违反二倍候选，并给两张固定策略锥的原始及对偶有理等式证书。 |
@@ -2217,75 +2217,75 @@
 | [朴素前缀幽灵租金的精确核验--计算](<../../../../archives/customer-attraction/state/计算/朴素前缀幽灵租金的精确核验--计算.md>) | numeric-witness | distill | 九人二主题完整策略的七项幽灵租金求和为1879/840，超过根福利2的朴素预算199/840；具体策略入口依赖原验证器。 |
 | [条件尾负载全价格加强的二十客户精确诊断--计算](<../../../../archives/customer-attraction/state/计算/条件尾负载全价格加强的二十客户精确诊断--计算.md>) | math-exposition | retain | 三人二十客户完整策略否定条件尾负载全价格逐客加强，另解析真正静态值 B3=17/5 与根收益 19/3。 |
 | [条件独立支付证书的支持恢复与精确复验--计算](<../../../../archives/customer-attraction/state/计算/条件独立支付证书的支持恢复与精确复验--计算.md>) | math-exposition | retain | 固定三人六主题条件锥的63列非负恒等式c−ψ=Γᵀλ+Eᵀη+r给W≥iid基准，限定策略与q。 |
-| [来源回撤原程序与有序策略的精确重放--计算](<../../../../archives/customer-attraction/state/计算/来源回撤原程序与有序策略的精确重放--计算.md>) | evidence-only | attach | 六个原始固定实例的程序重放，有限终局和来源传播计数；一般机制由算法页另述。 |
+| [来源回撤原程序与有序策略的精确重放--计算](<../actions/586168b9439daddc26ef.json>) | evidence-only | attach | 六个原始固定实例的程序重放，有限终局和来源传播计数；一般机制由算法页另述。 |
 | [极大关联结构保底的精确复现--计算](<../../../../archives/customer-attraction/state/计算/极大关联结构保底的精确复现--计算.md>) | math-exposition | retain | 层族和单例缺一极大关联的有限SPE核验含保护/θ/Fr边界，明确普遍定理在另文。 |
 | [极大目录与严格有序压缩原审计的有限重放--计算](<../../../../archives/customer-attraction/state/计算/极大目录与严格有序压缩原审计的有限重放--计算.md>) | math-exposition | retain | 极大目录剪枝和两人严格有序压缩有客户集合构造、DP终局递推及有限参数证书，保数学范围。 |
 | [极小可信续局首回复前移的严格间隙报告--计算](<../../../../archives/customer-attraction/state/计算/极小可信续局首回复前移的严格间隙报告--计算.md>) | math-exposition | retain | 极小可信续局ℓ(q,A)的交换不等式与15客户严格1/5间隙，完整两人尾BR及父节点失效均明述。 |
-| [根主题饱和刚性精确核验--计算](<../../../../archives/customer-attraction/state/计算/根主题饱和刚性精确核验--计算.md>) | evidence-only | attach | 根刚性旧60原子点上100有序主题对有66负行，最小D/E行排除指定必要点；普遍引理另页。 |
-| [根分支交叠谱完整系数域核验--计算](<../../../../archives/customer-attraction/state/计算/根分支交叠谱完整系数域核验--计算.md>) | evidence-only | attach | 七份五人根交叠谱证书在192型域的全部条件最小值与原程序重放；数学引理及推论另立。 |
-| [根刚性分支不等式的有限精确压力测试--计算](<../../../../archives/customer-attraction/state/计算/根刚性分支不等式的有限精确压力测试--计算.md>) | evidence-only | attach | 仅枚举地集至三、玩家至五的60196个分支替换对并报告PASS，普遍根刚性证明在别处。 |
+| [根主题饱和刚性精确核验--计算](<../actions/96eab10323955aacc949.json>) | evidence-only | attach | 根刚性旧60原子点上100有序主题对有66负行，最小D/E行排除指定必要点；普遍引理另页。 |
+| [根分支交叠谱完整系数域核验--计算](<../actions/592f39f48cd3be43de65.json>) | evidence-only | attach | 七份五人根交叠谱证书在192型域的全部条件最小值与原程序重放；数学引理及推论另立。 |
+| [根刚性分支不等式的有限精确压力测试--计算](<../actions/8c299fd26913c4368c0e.json>) | evidence-only | attach | 仅枚举地集至三、玩家至五的60196个分支替换对并报告PASS，普遍根刚性证明在别处。 |
 | [根复制末回复全成员域核验--计算](<../../../../archives/customer-attraction/state/计算/根复制末回复全成员域核验--计算.md>) | math-exposition | retain | 五人根复制两条真实路径九个合同形成128成员型的非负余项ρ与48格最坏查询表，给出必要行。 |
-| [根平稳弱核的原审计与三人锥探针--计算](<../../../../archives/customer-attraction/state/计算/根平稳弱核的原审计与三人锥探针--计算.md>) | evidence-only | attach | 十三人根平稳弱核原审计与三人固定策略锥六次LP探针，三人保存点归一弱差为 -20/427。 |
+| [根平稳弱核的原审计与三人锥探针--计算](<../actions/5c65d4b37f7689b2c363.json>) | evidence-only | attach | 十三人根平稳弱核原审计与三人固定策略锥六次LP探针，三人保存点归一弱差为 -20/427。 |
 | [根平稳弱核的独立单位客户复核--计算](<../../../../archives/customer-attraction/state/计算/根平稳弱核的独立单位客户复核--计算.md>) | math-exposition | retain | 十三人完整自动机及根尾核的唯一平稳分布给弱cap超额379/3900，同时自由静态背景仍满足较强界。 |
 | [根税完整策略锥的同节点最优菜单精确余量--计算](<../../../../archives/customer-attraction/state/计算/根税完整策略锥的同节点最优菜单精确余量--计算.md>) | math-exposition | retain | 固定四人259动作策略锥中252份有理对偶证明所有真最优四菜单ROW≤−W/4，单客户取等并有互异目录逼近族。 |
 | [根联合付款反例完整策略--计算](<../../../../archives/customer-attraction/state/计算/根联合付款反例完整策略--计算.md>) | math-exposition | retain | 13客户20题完整策略给出W=10、OPT=13，并在根部严格否定联合及粗付款式。 |
 | [根门槛与末位人数预算的三个完整历史有限证书--计算](<../../../../archives/customer-attraction/state/计算/根门槛与末位人数预算的三个完整历史有限证书--计算.md>) | math-exposition | retain | 三份完整历史证书精确否定根门槛乘人数、末位人数预算及门槛沿可信首边不下降，含47客户实际首边下降2/3。 |
 | [正深度根遗憾锥的二百三十份有理证书--计算](<../../../../archives/customer-attraction/state/计算/正深度根遗憾锥的二百三十份有理证书--计算.md>) | math-exposition | retain | 四个地图的230个正深度固定策略锥有理原始与对偶证书，界定局部遗憾预算。 |
-| [残余聚合安全锥的全兴趣保存点与概率归一--计算](<../../../../archives/customer-attraction/state/计算/残余聚合安全锥的全兴趣保存点与概率归一--计算.md>) | evidence-only | attach | 单全兴趣客户残余子局的保存查询概率未精确归一，校正后所有21个背景等价且聚合gap为0。 |
+| [残余聚合安全锥的全兴趣保存点与概率归一--计算](<../actions/62b262bcf3e719a4f9fe.json>) | evidence-only | attach | 单全兴趣客户残余子局的保存查询概率未精确归一，校正后所有21个背景等价且聚合gap为0。 |
 | [混合强配对回复图的有理可行点--计算](<../../../../archives/customer-attraction/state/计算/混合强配对回复图的有理可行点--计算.md>) | math-exposition | retain | 5043必要行1905坐标有理点保W约0.478，72新旧强PAIR余量非负却有198辅助交叠不满足字面下界、后续64/32行均负。 |
 | [混合最优索引查询的四源精确分离--计算](<../../../../archives/customer-attraction/state/计算/混合最优索引查询的四源精确分离--计算.md>) | math-exposition | retain | 推混合比较菜单的超几何F_mix公式和整源最强J归约；四源240行在指定点全部严格正。 |
-| [父方实际incumbent完整历史独立审计--计算](<../../../../archives/customer-attraction/state/计算/父方实际incumbent完整历史独立审计--计算.md>) | evidence-only | attach | 独立脚本只重建四人259历史与1295偏离的冻结PASS，缺原输入无法复跑且数学反例已另有正文。 |
+| [父方实际incumbent完整历史独立审计--计算](<../actions/9d74dd83d9e3b178e6dc.json>) | evidence-only | attach | 独立脚本只重建四人259历史与1295偏离的冻结PASS，缺原输入无法复跑且数学反例已另有正文。 |
 | [父方额外槽与非空填充两份冻结报告的精确对应--计算](<../../../../archives/customer-attraction/state/计算/父方额外槽与非空填充两份冻结报告的精确对应--计算.md>) | math-exposition | retain | 三人34客户完整策略的额外槽强桥差D−G=−e+12e²，67倍加私有客户后全主题非空仍在e=1/24为−7/384。 |
 | [独立主题填充完整策略的三个有限审计点--计算](<../../../../archives/customer-attraction/state/计算/独立主题填充完整策略的三个有限审计点--计算.md>) | math-exposition | retain | 独立P主题填充的有限完整策略点及实际分数税公式，k=10时聚合桥差58962/123025而仍高于half。 |
-| [独立储备原审计的全尾结果与有序路径核验--计算](<../../../../archives/customer-attraction/state/计算/独立储备原审计的全尾结果与有序路径核验--计算.md>) | evidence-only | attach | 14个固定尾局与7个全局实例重放canonical全SPE结果，报告有限范围和路径可行性。 |
+| [独立储备原审计的全尾结果与有序路径核验--计算](<../actions/895ed4b20c321888034e.json>) | evidence-only | attach | 14个固定尾局与7个全局实例重放canonical全SPE结果，报告有限范围和路径可行性。 |
 | [独立奖励多惩罚者目录的十八份完整续局诊断--计算](<../../../../archives/customer-attraction/state/计算/独立奖励多惩罚者目录的十八份完整续局诊断--计算.md>) | math-exposition | retain | 互不交叠 X/Y/Z/U 块构造、可信终局集合递推与18组参数区分三条完整策略和十五个不可达目标计数。 |
 | [独立机器C2单位缺口与仙人掌见证--计算](<../../../../archives/customer-attraction/state/计算/独立机器C2单位缺口与仙人掌见证--计算.md>) | numeric-witness | distill | 独立机器 C2 的256伪矩与高周长仙人掌1594配置/713步是另一数学模型的孤立数值见证，需蒸馏其对象和指标。 |
-| [直接覆盖incumbent障碍定义级有理复核--计算](<../../../../archives/customer-attraction/state/计算/直接覆盖incumbent障碍定义级有理复核--计算.md>) | evidence-only | attach | 102个固定k的Fraction局部障碍回归输出，不构成任意k结论。 |
-| [直接覆盖弱匹配LP诊断入口与有限锥边界--计算](<../../../../archives/customer-attraction/state/计算/直接覆盖弱匹配LP诊断入口与有限锥边界--计算.md>) | evidence-only | attach | 未执行的随机固定策略锥弱匹配LP诊断脚本仅规定候选发现和有理恢复接口。 |
+| [直接覆盖incumbent障碍定义级有理复核--计算](<../actions/ce36a03ed0d76d8a1ab5.json>) | evidence-only | attach | 102个固定k的Fraction局部障碍回归输出，不构成任意k结论。 |
+| [直接覆盖弱匹配LP诊断入口与有限锥边界--计算](<../actions/3ec34af2abcc24c50fb8.json>) | evidence-only | attach | 未执行的随机固定策略锥弱匹配LP诊断脚本仅规定候选发现和有理恢复接口。 |
 | [相邻钱包一般族的计数前缀精确审计--计算](<../../../../archives/customer-attraction/state/计算/相邻钱包一般族的计数前缀精确审计--计算.md>) | math-exposition | retain | 相邻钱包全C计数策略在m2/3/5/7经真实IC检查，D插入m个位置穷尽最优指派成本并得存在桥差(m−6)/2。 |
-| [真实前缀均匀组合探针核验--计算](<../../../../archives/customer-attraction/state/计算/真实前缀均匀组合探针核验--计算.md>) | evidence-only | attach | 17份真实前缀均匀组合的Fraction复核与70＋1固定策略锥浮点阴性探针，没有一般不等式证明。 |
+| [真实前缀均匀组合探针核验--计算](<../actions/ab6c9ae4611b97c2c7c7.json>) | evidence-only | attach | 17份真实前缀均匀组合的Fraction复核与70＋1固定策略锥浮点阴性探针，没有一般不等式证明。 |
 | [真实前缀组合完整历史MILP与有限重放--计算](<../../../../archives/customer-attraction/state/计算/真实前缀组合完整历史MILP与有限重放--计算.md>) | math-exposition | retain | 真实前缀全历史MILP的UP线性表达与四个完整SPE实例的精确重放范围。 |
 | [真实前缀组合的最小续局精确探针--计算](<../../../../archives/customer-attraction/state/计算/真实前缀组合的最小续局精确探针--计算.md>) | math-exposition | retain | 最优支持查询成本在首次偏离子树取各自最小SPE续局，说明互不相交子树可粘成同一完整纯策略。 |
 | [真实最优菜单信用的四策略精确诊断--计算](<../../../../archives/customer-attraction/state/计算/真实最优菜单信用的四策略精确诊断--计算.md>) | math-exposition | retain | 四完整策略的真实最优菜单信用L/Q恒等式和全大主题任意m解析等号明确，有限审计另作证据。 |
 | [真实源双菜单AP必要系统的七十六原子精确可行点--计算](<../../../../archives/customer-attraction/state/计算/真实源双菜单AP必要系统的七十六原子精确可行点--计算.md>) | math-exposition | retain | 五人76原子正质量满足2621条真实源AP及菜单必要行而O约2.0273>2W，证明这些明定线性行不足以推出二倍界。 |
 | [真实第三位七行对冻结必要点的精确分离--计算](<../../../../archives/customer-attraction/state/计算/真实第三位七行对冻结必要点的精确分离--计算.md>) | math-exposition | retain | 真正第三位的七条IC与容量行组成普遍投影，四个冻结必要点被对应合法菜单的严格有理负值分离。 |
-| [真实组合匹配与两人平均偏离的精确核验--计算](<../../../../archives/customer-attraction/state/计算/真实组合匹配与两人平均偏离的精确核验--计算.md>) | evidence-only | attach | 固定86客户两人实例的全部末位回复枚举与两人平均偏离代数身份有理核验；一般证明另有正文。 |
-| [私有主题补齐构造器的单次生成与依赖--计算](<../../../../archives/customer-attraction/state/计算/私有主题补齐构造器的单次生成与依赖--计算.md>) | evidence-only | attach | 只在旧34客户输入添19个P私客，调用现成ExactSPESolver一次导出固定53客户400动作；无独立补齐方法保证或本入口的SPE核验。 |
+| [真实组合匹配与两人平均偏离的精确核验--计算](<../actions/31d484fef0944a189132.json>) | evidence-only | attach | 固定86客户两人实例的全部末位回复枚举与两人平均偏离代数身份有理核验；一般证明另有正文。 |
+| [私有主题补齐构造器的单次生成与依赖--计算](<../actions/2aeb3de186ca8f33a8ac.json>) | evidence-only | attach | 只在旧34客户输入添19个P私客，调用现成ExactSPESolver一次导出固定53客户400动作；无独立补齐方法保证或本入口的SPE核验。 |
 | [私有席位与真实末菜单原审计的精确复跑--计算](<../../../../archives/customer-attraction/state/计算/私有席位与真实末菜单原审计的精确复跑--计算.md>) | math-exposition | retain | 私有谱顺序统计保底与极大遗漏条件在有限目录上明确，另有完整历史终局集合递推合同。 |
 | [私有席位谱与六极大证据--计算](<../../../../archives/customer-attraction/state/计算/私有席位谱与六极大证据--计算.md>) | mixed/needs-context | extract | 67个有限系数矩阵每个残余incidence非负构成六极大无私有证明数据，另混入四个路径收费见证及大量历史审计。 |
 | [私题别名九客户的常值五人策略与索引对偶--计算](<../../../../archives/customer-attraction/state/计算/私题别名九客户的常值五人策略与索引对偶--计算.md>) | math-exposition | retain | 九客户七标签常0全历史策略收益5/(n₀+r)≥1、W5/OPT9，四根IC乘子给固定策略锥9/5精确上界。 |
-| [税接口精确审计--计算](<../../../../archives/customer-attraction/state/计算/税接口精确审计--计算.md>) | evidence-only | attach | 首步、背景及根税三个显式反例的完整历史有理审计和重放，普遍族证明各在反例正文。 |
+| [税接口精确审计--计算](<../actions/3caded42abb274781d19.json>) | evidence-only | attach | 首步、背景及根税三个显式反例的完整历史有理审计和重放，普遍族证明各在反例正文。 |
 | [笛卡尔目录发现与精确筛选链--计算](<../../../../archives/customer-attraction/state/计算/笛卡尔目录发现与精确筛选链--计算.md>) | mixed/needs-context | extract | 笛卡尔产品目录的终局集合递推与静态安全值可加性有独立数学解释，但本页主体还记录随机浮点发现和删减过程。 |
 | [笛卡尔目录有限候选与五客户完整证书--计算](<../../../../archives/customer-attraction/state/计算/笛卡尔目录有限候选与五客户完整证书--计算.md>) | math-exposition | retain | 五客户43历史完整策略覆盖4而OPT3=5，51客户三人产品有精确最差福利49对分量27+24，并区分浮点五人结果。 |
 | [笛卡尔福利与支付唯一分解的精确核验--计算](<../../../../archives/customer-attraction/state/计算/笛卡尔福利与支付唯一分解的精确核验--计算.md>) | math-exposition | retain | 联合三人产品的全历史策略给W=2a+2q低于分量3a+2q，且全玩家续局收益唯一是终局集合乘积分解充分条件。 |
-| [笛卡尔银行逐人反族的精确核验--计算](<../../../../archives/customer-attraction/state/计算/笛卡尔银行逐人反族的精确核验--计算.md>) | evidence-only | attach | 笛卡尔银行反族m3/m4的完整有序策略比较与分数门槛精确重放；一般解析反族另有正文。 |
+| [笛卡尔银行逐人反族的精确核验--计算](<../actions/e0f41a83f3bbaf3d80b9.json>) | evidence-only | attach | 笛卡尔银行反族m3/m4的完整有序策略比较与分数门槛精确重放；一般解析反族另有正文。 |
 | [第三位与第二位复制D的固定点补全--计算](<../../../../archives/customer-attraction/state/计算/第三位与第二位复制D的固定点补全--计算.md>) | math-exposition | retain | 旧64质量点的第三位D分支133必要行可数值补全，第二位D加入后283行排除固定点；七行有理障碍另证。 |
 | [等权客户盒内NE最小费用流选择器--计算](<../../../../archives/customer-attraction/state/计算/等权客户盒内NE最小费用流选择器--计算.md>) | algorithm-result | retain | 同一有理权δ客户用站点容量槽增量成本和整数缩放最小费用流求不可分分配，精确核盒约束、势目标及所有允许选项NE。 |
 | [索引主题与实际B分支的联合必要图有理点--计算](<../../../../archives/customer-attraction/state/计算/索引主题与实际B分支的联合必要图有理点--计算.md>) | math-exposition | retain | 索引主题与实际B分支联合必要图的有理可行点W<1/2，明确不是完整SPE。 |
 | [级联发现的四份历史与三种完整单位客户见证--计算](<../../../../archives/customer-attraction/state/计算/级联发现的四份历史与三种完整单位客户见证--计算.md>) | math-exposition | retain | 三份不同五人整数完整SPE见证分别有9/5、10321/5750、1791/1000福利比；正文给出客户、策略与机制。 |
-| [终局冻结钱包原程序及完整策略复跑--计算](<../../../../archives/customer-attraction/state/计算/终局冻结钱包原程序及完整策略复跑--计算.md>) | evidence-only | attach | 原Fraction程序只在旧52及1953客户两份已知完整策略重放1812 IC和12末对查询钱包恒等式。 |
+| [终局冻结钱包原程序及完整策略复跑--计算](<../actions/2a46e3788ed98007737d.json>) | evidence-only | attach | 原Fraction程序只在旧52及1953客户两份已知完整策略重放1812 IC和12末对查询钱包恒等式。 |
 | [终局见证DAG的原审计与固定锥预算复核--计算](<../../../../archives/customer-attraction/state/计算/终局见证DAG的原审计与固定锥预算复核--计算.md>) | math-exposition | retain | 57个两题终局DAG与四人固定策略锥βmax=655/364的有限数学结果。 |
 | [统一尾税和遗漏捕获的单次原审计与两版输出--计算](<../../../../archives/customer-attraction/state/计算/统一尾税和遗漏捕获的单次原审计与两版输出--计算.md>) | math-exposition | retain | 34客户统一缩尾税的84联合式及86客户未取消流给L=(35/38,49/44)、费用1701/38，说明高低权COV债并非全钱包证明。 |
-| [统一缩尾规定续局税的完整历史单例回归--计算](<../../../../archives/customer-attraction/state/计算/统一缩尾规定续局税的完整历史单例回归--计算.md>) | evidence-only | attach | 34客户固定策略缩尾λ为1/2、2/3、1的42节点税与规定后缀regret单例回归。 |
+| [统一缩尾规定续局税的完整历史单例回归--计算](<../actions/4dcd6b15fc8e7f4a0efd.json>) | evidence-only | attach | 34客户固定策略缩尾λ为1/2、2/3、1的42节点税与规定后缀regret单例回归。 |
 | [统一质量原树回归的完整翻转表与异质背景--计算](<../../../../archives/customer-attraction/state/计算/统一质量原树回归的完整翻转表与异质背景--计算.md>) | math-exposition | retain | 53客户统一缩尾的原树在λ0有26个末位节点36项负IC；另14客户异质背景给精确退款与可信B策略。 |
 | [继承三人六题旧收益表与源单位游戏的完整复核--计算](<../../../../archives/customer-attraction/state/计算/继承三人六题旧收益表与源单位游戏的完整复核--计算.md>) | math-exposition | retain | 三人六题源单位游戏和旧抽象收益表的精确差异，53个三元支撑失败限制旧表示。 |
 | [缺边资源目录的十八个完整纯续局诊断--计算](<../../../../archives/customer-attraction/state/计算/缺边资源目录的十八个完整纯续局诊断--计算.md>) | math-exposition | retain | cycle/band缺边资源目录18个明确整数博弈的集合值SPE最差覆盖，最大OPT/W=17/12限定于k3至5及三种权型。 |
 | [联合前缀遗漏谱的有限审计与双版报告--计算](<../../../../archives/customer-attraction/state/计算/联合前缀遗漏谱的有限审计与双版报告--计算.md>) | math-exposition | retain | 联合遗漏谱λ_i的席位公式有限核，银行全图及匹配遗漏构造虽谱取等和全分数行通过，倒二真偏离严格盈利排除SPE。 |
 | [联合回复图的扩展切面与局部查询精确点--计算](<../../../../archives/customer-attraction/state/计算/联合回复图的扩展切面与局部查询精确点--计算.md>) | math-exposition | retain | 5180必要点被新增九条局部行全切，新5189点虽全行可行仍有六种同源再查询真行负，保同点质量变化和合法机制。 |
 | [联合触发有限字典的九比五对偶与非局部脚本--计算](<../../../../archives/customer-attraction/state/计算/联合触发有限字典的九比五对偶与非局部脚本--计算.md>) | math-exposition | retain | 26输入有限脚本字典上有理对偶给9/5精确最优，五局部非SPE脚本经笛卡尔积实现共同完整SPE。 |
-| [联合银行预算原审计与全历史投影的有限覆盖--计算](<../../../../archives/customer-attraction/state/计算/联合银行预算原审计与全历史投影的有限覆盖--计算.md>) | evidence-only | attach | 37个联合银行实例的全历史IC及在轨R/K/κ/d/ρ时间谱预算固定样本审计；一般定理另立。 |
+| [联合银行预算原审计与全历史投影的有限覆盖--计算](<../actions/983568a1bb46287abda0.json>) | evidence-only | attach | 37个联合银行实例的全历史IC及在轨R/K/κ/d/ρ时间谱预算固定样本审计；一般定理另立。 |
 | [背景保护集的计数策略筛查--计算](<../../../../archives/customer-attraction/state/计算/背景保护集的计数策略筛查--计算.md>) | math-exposition | retain | 合法背景计数策略锥IC与protected/global/profit三种目标分开，114客户重构给保护遗漏等号。 |
 | [背景删除节点后悔的定义级精确审计--计算](<../../../../archives/customer-attraction/state/计算/背景删除节点后悔的定义级精确审计--计算.md>) | math-exposition | retain | 证明删背景后实际节点regret≤K−A及总退款恒等式，并有五客户取等点。 |
-| [背景归纳旧例重放与随机比值探针--计算](<../../../../archives/customer-attraction/state/计算/背景归纳旧例重放与随机比值探针--计算.md>) | evidence-only | attach | 八旧例686前缀结果与120客户固定背景策略复放，3000随机探针缺回执；BG候选已有反例。 |
+| [背景归纳旧例重放与随机比值探针--计算](<../actions/c5277dbbe668c725a823.json>) | evidence-only | attach | 八旧例686前缀结果与120客户固定背景策略复放，3000随机探针缺回执；BG候选已有反例。 |
 | [背景旧覆盖二倍付款模板的不可行报告--计算](<../../../../archives/customer-attraction/state/计算/背景旧覆盖二倍付款模板的不可行报告--计算.md>) | math-exposition | retain | 旧覆盖二倍付款模板的八支撑Farkas证书及52客户完整根SPE对条件付款的反例。 |
 | [背景菜单的有限证书--计算](<../../../../archives/customer-attraction/state/计算/背景菜单的有限证书--计算.md>) | math-exposition | retain | 合法前缀已覆盖并集恰为菜单H时，四条真实IC以1/2、1、1、1合成P+Δ≥freshOPT₂，余项对任意旧负载p≥1显式非负。 |
 | [背景首步反例发现与精确重放--计算](<../../../../archives/customer-attraction/state/计算/背景首步反例发现与精确重放--计算.md>) | math-exposition | retain | 23及488客户前缀三回应者完整SPE的局部付款负增量与全局余额区分。 |
 | [自然入流密度协方差与共同对角账的精确回归--计算](<../../../../archives/customer-attraction/state/计算/自然入流密度协方差与共同对角账的精确回归--计算.md>) | math-exposition | retain | 推自然入流每笔密度协方差与共同对角账K_in=M−H+T+COV−L，并在86客户父子给正COV。 |
 | [自然入流松弛账的双版本精确回归--计算](<../../../../archives/customer-attraction/state/计算/自然入流松弛账的双版本精确回归--计算.md>) | math-exposition | retain | 自然父查询的OFF-IC恒等式及fresh分母差将负ell与outside保留，86/61客户两例均未实际触发正recipient半系数分支。 |
-| [自由分数接口的有理核验与版本--计算](<../../../../archives/customer-attraction/state/计算/自由分数接口的有理核验与版本--计算.md>) | evidence-only | attach | 自由分数接口在五客户SPE、231静态切线格和价格身份865/312上的有限回归；普遍凸对偶及反例已有独立正文。 |
+| [自由分数接口的有理核验与版本--计算](<../actions/6746590945fbe74bd477.json>) | evidence-only | attach | 自由分数接口在五客户SPE、231静态切线格和价格身份865/312上的有限回归；普遍凸对偶及反例已有独立正文。 |
 | [自由分数漂移保存点的纯主题零债核对--计算](<../../../../archives/customer-attraction/state/计算/自由分数漂移保存点的纯主题零债核对--计算.md>) | math-exposition | retain | 四份整数客户保存点用纯主题查询的全单纯形上下界证明根与child自由值同为C_a/n，故浮点微负实为零债。 |
 | [自由未来席位控制的两份原报告与真实触发范围--计算](<../../../../archives/customer-attraction/state/计算/自由未来席位控制的两份原报告与真实触发范围--计算.md>) | math-exposition | retain | 89客户固定最优元组换T使三客户由第二位接收，但普通PRICE和激活积分皆229/49；说明触发与价格并非改善。 |
-| [自由根菜单弱安全值的交替锥探测--计算](<../../../../archives/customer-attraction/state/计算/自由根菜单弱安全值的交替锥探测--计算.md>) | evidence-only | attach | 十三人固定策略锥自由根菜单交替LP全部返回全兴趣等号点，精确弱差 -1/26；无全锥上界。 |
+| [自由根菜单弱安全值的交替锥探测--计算](<../actions/cf06dd87273f2a924124.json>) | evidence-only | attach | 十三人固定策略锥自由根菜单交替LP全部返回全兴趣等号点，精确弱差 -1/26；无全锥上界。 |
 | [自由源协方差与标量付款的两份原始有限审计--计算](<../../../../archives/customer-attraction/state/计算/自由源协方差与标量付款的两份原始有限审计--计算.md>) | math-exposition | retain | 自由源逐客户协方差/额外槽恒等式及八客户正债、总体补偿有具体分布和精确数值。 |
 | [自由终局逐人归一模型的候选与对偶复核--计算](<../../../../archives/customer-attraction/state/计算/自由终局逐人归一模型的候选与对偶复核--计算.md>) | math-exposition | retain | 十四份固定全历史策略锥的逐人归一GAP精确原始对偶，以及候选MILP范围。 |
 | [覆盖机会损失反例精确审计--计算](<../../../../archives/customer-attraction/state/计算/覆盖机会损失反例精确审计--计算.md>) | math-exposition | retain | 十一客户机会损失反例的31历史全策略审计和δ2=3>5/2的精确比较。 |
@@ -2293,22 +2293,22 @@
 | [规范门槛与相邻前缀换位的原程序核验--计算](<../../../../archives/customer-attraction/state/计算/规范门槛与相邻前缀换位的原程序核验--计算.md>) | math-exposition | retain | 有限有序终局集合门槛与复制、相邻换位的真实尾成本差逐项说明，五输入只核382/108/270个有限条件。 |
 | [计数策略客户锥搜索与保存输入的精确分版--计算](<../../../../archives/customer-attraction/state/计算/计数策略客户锥搜索与保存输入的精确分版--计算.md>) | math-exposition | retain | 固定计数表压缩真实IC的锥公式与三份质量版本给精确SPE及五人浮点解释根负差。 |
 | [计数统一续局的有限枚举与辅助终局分离--计算](<../../../../archives/customer-attraction/state/计算/计数统一续局的有限枚举与辅助终局分离--计算.md>) | math-exposition | retain | 完整历史集合值R与全局计数统一赋值的量词差异由六主题辅助势终局025严格分离，32末映射和144第二映射穷尽。 |
-| [调和匹配双原入口的会员串与真实分支复核--计算](<../../../../archives/customer-attraction/state/计算/调和匹配双原入口的会员串与真实分支复核--计算.md>) | evidence-only | attach | 两份调和匹配程序对会员串和固定真实分支作8190与510型精确回归，普遍下界另由引理证明。 |
-| [调和末对钱包的原审计与审查身份--计算](<../../../../archives/customer-attraction/state/计算/调和末对钱包的原审计与审查身份--计算.md>) | evidence-only | attach | 调和末对钱包在两固定策略重放COPY/CLIENT/REFUND，m5系数只是字面代数代入，普遍引理已有独立正文。 |
-| [调和福利支付界审计输出--计算](<../../../../archives/customer-attraction/state/计算/调和福利支付界审计输出--计算.md>) | evidence-only | attach | 242字节冻结JSON只记录188412客户检查等有限运行计数，一般调和界在配套解析稿。 |
-| [调和福利支付界独立Fraction审计--计算](<../../../../archives/customer-attraction/state/计算/调和福利支付界独立Fraction审计--计算.md>) | evidence-only | attach | 此页只重放调和支付界脚本的188412项有限系数检查和12证书，普遍逐客户证明另在引理正文。 |
+| [调和匹配双原入口的会员串与真实分支复核--计算](<../actions/1b8de266c8a9552ee28d.json>) | evidence-only | attach | 两份调和匹配程序对会员串和固定真实分支作8190与510型精确回归，普遍下界另由引理证明。 |
+| [调和末对钱包的原审计与审查身份--计算](<../actions/8140154696217c67caba.json>) | evidence-only | attach | 调和末对钱包在两固定策略重放COPY/CLIENT/REFUND，m5系数只是字面代数代入，普遍引理已有独立正文。 |
+| [调和福利支付界审计输出--计算](<../actions/52bf8571e481cb679c0b.json>) | evidence-only | attach | 242字节冻结JSON只记录188412客户检查等有限运行计数，一般调和界在配套解析稿。 |
+| [调和福利支付界独立Fraction审计--计算](<../actions/bf5afee7a698567e072d.json>) | evidence-only | attach | 此页只重放调和支付界脚本的188412项有限系数检查和12证书，普遍逐客户证明另在引理正文。 |
 | [负首步余额族精确审计--计算](<../../../../archives/customer-attraction/state/计算/负首步余额族精确审计--计算.md>) | math-exposition | retain | 任意n≥4负首步补全余额族的计数策略在n4至8精确核验，首步系数趋2及固定α<2量词另由解析分类证明。 |
 | [跨族末位三系统的匹配双证书与浮点轨迹--计算](<../../../../archives/customer-attraction/state/计算/跨族末位三系统的匹配双证书与浮点轨迹--计算.md>) | math-exposition | retain | 五人717/727/728必要系统的原始/对偶匹配精确最优β均>2，类型域与非SPE补全界限清楚。 |
-| [跨角色替换门原程序的依赖与精确复跑--计算](<../../../../archives/customer-attraction/state/计算/跨角色替换门原程序的依赖与精确复跑--计算.md>) | evidence-only | attach | 跨角色门程序在两实例检查25条COPY、90块组合，零损失分支只有空I=J，未给一般非空门的数学验证。 |
+| [跨角色替换门原程序的依赖与精确复跑--计算](<../actions/1fd4f2cb813a6bfa4e44.json>) | evidence-only | attach | 跨角色门程序在两实例检查25条COPY、90块组合，零损失分支只有空I=J，未给一般非空门的数学验证。 |
 | [路径聚合与额外iid及储备审计的精确复核--计算](<../../../../archives/customer-attraction/state/计算/路径聚合与额外iid及储备审计的精确复核--计算.md>) | mixed/needs-context | extract | 三项原审计回放包裹34客户真实路径聚合与7客户银行EI静态差17/432，另有储备实例和历史状态更新。 |
-| [路径菜单发现的三份固定策略锥有限输出--计算](<../../../../archives/customer-attraction/state/计算/路径菜单发现的三份固定策略锥有限输出--计算.md>) | evidence-only | attach | 三份浮点交替锥探针只给n3/4等号和n5负gap，未保存精确Γ可行证书或正分离点。 |
+| [路径菜单发现的三份固定策略锥有限输出--计算](<../actions/ee17135c43ee0e5ed4e0.json>) | evidence-only | attach | 三份浮点交替锥探针只给n3/4等号和n5负gap，未保存精确Γ可行证书或正分离点。 |
 | [连续旧查询的三十二切面精化表--计算](<../../../../archives/customer-attraction/state/计算/连续旧查询的三十二切面精化表--计算.md>) | math-exposition | retain | 32条有理旧查询切面由源IC与隐藏回复最小包络生成，在四个不同有限点上余量逐项分离。 |
 | [连续旧查询精化图的有理可行点--计算](<../../../../archives/customer-attraction/state/计算/连续旧查询精化图的有理可行点--计算.md>) | math-exposition | retain | 六人1905列5075必要行有理点满足W<1/2，但165个交叠列低于Fréchet下界，说明该向量不可直作共同客户交叠。 |
 | [逐人净覆盖缺口的完整终局见证攻击--计算](<../../../../archives/customer-attraction/state/计算/逐人净覆盖缺口的完整终局见证攻击--计算.md>) | math-exposition | retain | 固定策略的终局见证DAG给精确整数可行点与完整有序历史SPE终局的双向构造，并厘清四份阴性MILP无数学排除。 |
 | [逐人最优覆盖门槛的两固定策略锥有理证书--计算](<../../../../archives/customer-attraction/state/计算/逐人最优覆盖门槛的两固定策略锥有理证书--计算.md>) | math-exposition | retain | 两固定完整策略锥的有理原始/对偶证明四角色最优覆盖gap为−1/6、−1/6、−1/19、0。 |
-| [逐人覆盖缺口探针的有限证据--计算](<../../../../archives/customer-attraction/state/计算/逐人覆盖缺口探针的有限证据--计算.md>) | evidence-only | attach | 十九实例207终局与504固定锥 LP 均是未见负值的浮点诊断，未给一般逐人付款证书。 |
+| [逐人覆盖缺口探针的有限证据--计算](<../actions/a67500f7337f268fa70b.json>) | evidence-only | attach | 十九实例207终局与504固定锥 LP 均是未见负值的浮点诊断，未给一般逐人付款证书。 |
 | [逐客户协方差双实现与额外槽策略锥的有限核验--计算](<../../../../archives/customer-attraction/state/计算/逐客户协方差双实现与额外槽策略锥的有限核验--计算.md>) | math-exposition | retain | 逐客户条件倒数债C_x−D_x=1/12的完整SPE实例，与完整额外槽C_i(p)锥目标及浮点限制分明。 |
-| [递减边际稀释的轨道探针与版本核对--计算](<../../../../archives/customer-attraction/state/计算/递减边际稀释的轨道探针与版本核对--计算.md>) | evidence-only | attach | 五人七主题递减边际稀释在418轨道的有限LP探针未见正点，普遍实速率结论另有时钟耦合证明。 |
+| [递减边际稀释的轨道探针与版本核对--计算](<../actions/5648d64747e041d3b581.json>) | evidence-only | attach | 五人七主题递减边际稀释在418轨道的有限LP探针未见正点，普遍实速率结论另有时钟耦合证明。 |
 | [递归台阶发现程序的精确最优证书--计算](<../../../../archives/customer-attraction/state/计算/递归台阶发现程序的精确最优证书--计算.md>) | math-exposition | retain | 重建504行固定策略锥及有理原始对偶，证明四人69客户携带保底台阶缺口的固定优化值1/12。 |
 | [部分核心的两份固定前缀三回应者均衡与储备偏离--计算](<../../../../archives/customer-attraction/state/计算/部分核心的两份固定前缀三回应者均衡与储备偏离--计算.md>) | math-exposition | retain | 60单位客户两份固定前缀三回应者SPE和早期D储备偏离下界21/2>4，明确非六人根SPE。 |
 | [重块与单例目录的逐人floor保存点--计算](<../../../../archives/customer-attraction/state/计算/重块与单例目录的逐人floor保存点--计算.md>) | math-exposition | retain | 重块m客户加m−1单例的全历史策略收益m/(b+r)≥1，给u_i=1与OPT=2m−1的保存点。 |
@@ -2331,14 +2331,14 @@
 | [非最优比较源的非零鲜广播与实际券复用--计算](<../../../../archives/customer-attraction/state/计算/非最优比较源的非零鲜广播与实际券复用--计算.md>) | math-exposition | retain | 二十二客户三玩家非最优比较源中，鲜广播1/8与旧券1/40实际复用，给出毛利及退款算式。 |
 | [顺序半覆盖文献导入边界--计算](<../../../../archives/customer-attraction/state/计算/顺序半覆盖文献导入边界--计算.md>) | math-exposition | retain | 辨明顺序完整历史纯SPE与同时选址或静态NE定理的量词差异，保留多人half的文献猜想边界。 |
 | [额外分数平台原标量与父方报告的证据边界--计算](<../../../../archives/customer-attraction/state/计算/额外分数平台原标量与父方报告的证据边界--计算.md>) | math-exposition | retain | 固定PB参数九个KKT/边际条件给局部u−Δ负而总体U−rΔ正，区分局部平台失败与聚合仍存。 |
-| [额外槽去相关交替锥探针--计算](<../../../../archives/customer-attraction/state/计算/额外槽去相关交替锥探针--计算.md>) | evidence-only | attach | 随机交替LP/SLSQP仅报best ratio1，无精确客户或完整策略证书。 |
-| [额外槽去相关有限发现输出--计算](<../../../../archives/customer-attraction/state/计算/额外槽去相关有限发现输出--计算.md>) | evidence-only | attach | 75次浮点扫描best ratio=1.0，只有权重、分支、行动表，没有精确证书或数学新主张。 |
-| [额外槽聚合安全值交替锥探针--计算](<../../../../archives/customer-attraction/state/计算/额外槽聚合安全值交替锥探针--计算.md>) | evidence-only | attach | 随机策略锥75轮浮点LP/SLSQP交替探索仅记录候选比率，未有完整客户证书。 |
-| [额外槽聚合安全值有限发现输出--计算](<../../../../archives/customer-attraction/state/计算/额外槽聚合安全值有限发现输出--计算.md>) | evidence-only | attach | 保存0.92857浮点best及75次扫描字段，没有精确客户、完整SPE或数学分离证书。 |
+| [额外槽去相关交替锥探针--计算](<../actions/ef0e8f884ce347e82c14.json>) | evidence-only | attach | 随机交替LP/SLSQP仅报best ratio1，无精确客户或完整策略证书。 |
+| [额外槽去相关有限发现输出--计算](<../actions/f107cc0e3be4e607b079.json>) | evidence-only | attach | 75次浮点扫描best ratio=1.0，只有权重、分支、行动表，没有精确证书或数学新主张。 |
+| [额外槽聚合安全值交替锥探针--计算](<../actions/7d05d545f15afc97e537.json>) | evidence-only | attach | 随机策略锥75轮浮点LP/SLSQP交替探索仅记录候选比率，未有完整客户证书。 |
+| [额外槽聚合安全值有限发现输出--计算](<../actions/5fec9ce5c509d187c260.json>) | evidence-only | attach | 保存0.92857浮点best及75次扫描字段，没有精确客户、完整SPE或数学分离证书。 |
 | [额外质量扫描与终局推送探针的精确范围--计算](<../../../../archives/customer-attraction/state/计算/额外质量扫描与终局推送探针的精确范围--计算.md>) | mixed/needs-context | extract | 质量插值的静态(2m−1+δ)t覆盖界与剩一二人支付是真数学，另包裹两批阴性浮点扫描和终局推送探针。 |
 | [首人弱覆盖门槛的固定策略探针与计数游走--计算](<../../../../archives/customer-attraction/state/计算/首人弱覆盖门槛的固定策略探针与计数游走--计算.md>) | math-exposition | retain | 首人u1归一客户锥与五人八客户完整计数策略给OPT/u1=8，独立核全有序IC。 |
 | [首对安全值锥的三个保存点与微小激励误差--计算](<../../../../archives/customer-attraction/state/计算/首对安全值锥的三个保存点与微小激励误差--计算.md>) | math-exposition | retain | 两个首对安全精确取等有限例，以及七题五人原点781条微负IC和另定义整数校准点的区分。 |
-| [首对安全有限阴性与浮点对偶诊断的证据域--计算](<../../../../archives/customer-attraction/state/计算/首对安全有限阴性与浮点对偶诊断的证据域--计算.md>) | evidence-only | attach | 四份无阳性样本及14项浮点对偶支持不构成精确证书；文本主要界定原报告运行范围。 |
+| [首对安全有限阴性与浮点对偶诊断的证据域--计算](<../actions/983794d4f788110476f3.json>) | evidence-only | attach | 四份无阳性样本及14项浮点对偶支持不构成精确证书；文本主要界定原报告运行范围。 |
 | [驻留标量原审查与两份三人策略的有限核验--计算](<../../../../archives/customer-attraction/state/计算/驻留标量原审查与两份三人策略的有限核验--计算.md>) | math-exposition | retain | 驻留菜单任意背景标量包络、四标签锐参数及r≥5网格末位偏离，与两份三人完整策略边界均有解释。 |
 | [鲜利润计数与非零两层图的精确复现--计算](<../../../../archives/customer-attraction/state/计算/鲜利润计数与非零两层图的精确复现--计算.md>) | math-exposition | retain | 鲜利润ν−d_F=P−N、退款余量J+L正及两层非零图显示β1=2，明确仍只是抽象账。 |
 | [七极大固定路由的大小半空间有理覆盖证书--证明](<../../../../archives/customer-attraction/state/证明/七极大固定路由的大小半空间有理覆盖证书--证明.md>) | math-exposition | retain | 六供给者七个极大覆盖集与固定路由000010上，19项有理乘子证明带规模半空间的条件性界。 |
@@ -2351,30 +2351,30 @@
 | [花瓣弱iid分离的覆盖式审查证书--证明](<../../../../archives/customer-attraction/state/证明/花瓣弱iid分离的覆盖式审查证书--证明.md>) | math-exposition | retain | 100花瓣完整SPE及静态iid根方程N、覆盖Z解析界证m≥41弱桥失败并给m20有理余量。 |
 | [花瓣弱iid反族的显式阈值与渐近机制--证明](<../../../../archives/customer-attraction/state/证明/花瓣弱iid反族的显式阈值与渐近机制--证明.md>) | math-exposition | retain | 花瓣完整有序SPE及静态iid交点，显式证明m=K≥53弱iid桥失败，并分析m趋无限的门槛机制。 |
 | [额外iid原压力家族的正确槽数解析判别--证明](<../../../../archives/customer-attraction/state/证明/额外iid原压力家族的正确槽数解析判别--证明.md>) | math-exposition | retain | 额外iid用r+1静态槽数重算八客户三前缀根与36块复制族全k积分上界，旧未命中有限。 |
-| [R-18-cleanup workspace元数据--资料](<../../../../archives/customer-attraction/state/资料/R-18-cleanup workspace元数据--资料.md>) | non-math | delete | 只有schema、save、actor、instance和原件SHA，明确没有客户、策略、收益或证明。 |
+| [R-18-cleanup workspace元数据--资料](<../actions/762b07ffba3cfe13ad20.json>) | non-math | delete | 只有schema、save、actor、instance和原件SHA，明确没有客户、策略、收益或证明。 |
 | [R-18主目标开放状态与三工具独立核对--资料](<../../../../archives/customer-attraction/state/资料/R-18主目标开放状态与三工具独立核对--资料.md>) | math-exposition | retain | 对高背景系数、调和利润支付W≥H_m u_j和ghost-ticket背景编译的数学范围作独立代数核对。 |
-| [R-3b6b工作区身份元数据--资料](<../../../../archives/customer-attraction/state/资料/R-3b6b工作区身份元数据--资料.md>) | non-math | delete | 全文只保存四字段workspace身份与读取指纹，没有模型、策略、证明或独立数学内容。 |
-| [R174工作区元数据--资料](<../../../../archives/customer-attraction/state/资料/R174工作区元数据--资料.md>) | non-math | delete | 仅schema、save、actor、instance，正文明确没有研究问题、定义、策略或结论。 |
-| [R211工作区入口元数据--资料](<../../../../archives/customer-attraction/state/资料/R211工作区入口元数据--资料.md>) | non-math | delete | README布局与checkpoint规则加四字段身份，只有来源记账与协作安排。 |
-| [signed-harmonic工作区身份与版本--资料](<../../../../archives/customer-attraction/state/资料/signed-harmonic工作区身份与版本--资料.md>) | non-math | delete | 只记录150B身份JSON、读取SHA及路由字段，不含带符号调和探针的数学。 |
+| [R-3b6b工作区身份元数据--资料](<../actions/1e26377a2703fc543e79.json>) | non-math | delete | 全文只保存四字段workspace身份与读取指纹，没有模型、策略、证明或独立数学内容。 |
+| [R174工作区元数据--资料](<../actions/d991cdd48c689f8fedc4.json>) | non-math | delete | 仅schema、save、actor、instance，正文明确没有研究问题、定义、策略或结论。 |
+| [R211工作区入口元数据--资料](<../actions/27a3b505063fae640522.json>) | non-math | delete | README布局与checkpoint规则加四字段身份，只有来源记账与协作安排。 |
+| [signed-harmonic工作区身份与版本--资料](<../actions/0f9ec56bb1af40cfc8d2.json>) | non-math | delete | 只记录150B身份JSON、读取SHA及路由字段，不含带符号调和探针的数学。 |
 | [一般半覆盖工作稿的全树账本与第二检查点--资料](<../../../../archives/customer-attraction/state/资料/一般半覆盖工作稿的全树账本与第二检查点--资料.md>) | math-exposition | retain | BER/HARM锚核、owner势误差与TREE-F跨叶债均有公式及未付共同IC边界。 |
-| [一般覆盖工作室的原身份绑定--资料](<../../../../archives/customer-attraction/state/资料/一般覆盖工作室的原身份绑定--资料.md>) | non-math | delete | 四字段旧工作室身份表及来源路由说明，不含数学模型或结论。 |
-| [上传完整策略与四路微型比较的独立审计合同--资料](<../../../../archives/customer-attraction/state/资料/上传完整策略与四路微型比较的独立审计合同--资料.md>) | evidence-only | attach | 上传1885节点策略的22620项定义级核验与209个微型输入四路有限回归，仅作为实现审计。 |
-| [两套退役账本的逐命题来源分诊--资料](<../../../../archives/customer-attraction/state/资料/两套退役账本的逐命题来源分诊--资料.md>) | non-math | delete | 两份退役跨模型账本的29来源ID及九对象去向索引，具体数学命题和证明已在各目标页。 |
+| [一般覆盖工作室的原身份绑定--资料](<../actions/9064ea6b34ec914e193c.json>) | non-math | delete | 四字段旧工作室身份表及来源路由说明，不含数学模型或结论。 |
+| [上传完整策略与四路微型比较的独立审计合同--资料](<../actions/fecc028b82af9675a380.json>) | evidence-only | attach | 上传1885节点策略的22620项定义级核验与209个微型输入四路有限回归，仅作为实现审计。 |
+| [两套退役账本的逐命题来源分诊--资料](<../actions/fd3a02b6a7aacc184879.json>) | non-math | delete | 两份退役跨模型账本的29来源ID及九对象去向索引，具体数学命题和证明已在各目标页。 |
 | [个体安全和全树流独立审计的完整合同--资料](<../../../../archives/customer-attraction/state/资料/个体安全和全树流独立审计的完整合同--资料.md>) | math-exposition | retain | 34客户个体静态安全唯一鞍点与真实预算、任意全树势删除余项恒等式及有条件尾提升式。 |
 | [九人六极大算术审计的参数域和端点勘误--资料](<../../../../archives/customer-attraction/state/资料/九人六极大算术审计的参数域和端点勘误--资料.md>) | math-exposition | retain | 六极大九人以上私有包络与共享调和和有解析下界，并纠正精确B9余量与统一下界余量的不同分数。 |
 | [二十七客户残余反例的原标签与完整回复版本--资料](<../../../../archives/customer-attraction/state/资料/二十七客户残余反例的原标签与完整回复版本--资料.md>) | math-exposition | retain | 两人27客户六主题完整SPE福利13、最优14，两个残余主题覆盖全部14遗漏客户，反驳去重残余预算。 |
-| [仓库读取地图与退役双来源恢复--资料](<../../../../archives/customer-attraction/state/资料/仓库读取地图与退役双来源恢复--资料.md>) | non-math | delete | 全文是旧仓库五研究线导航、来源版本、备份与入口同步合同；未给独立数学构造或论证。 |
+| [仓库读取地图与退役双来源恢复--资料](<../actions/46823dcb000c7f3c1306.json>) | non-math | delete | 全文是旧仓库五研究线导航、来源版本、备份与入口同步合同；未给独立数学构造或论证。 |
 | [全历史纯SPE终局搜索的递推与有限证据--资料](<../../../../archives/customer-attraction/state/资料/全历史纯SPE终局搜索的递推与有限证据--资料.md>) | algorithm-result | retain | 给任意固定整数客户输入完整SPE终局集合E(c)的精确递推和必要充分续局拼接；输入域、终局输出与整数尺度明确。 |
 | [全树收益流与势类攻击的共同表示边界--资料](<../../../../archives/customer-attraction/state/资料/全树收益流与势类攻击的共同表示边界--资料.md>) | math-exposition | retain | 全层支持效率E在计数势空间递推唯一确定势，并等价于某共同有符号客户调和表示，区分非负客户义务。 |
 | [全深度换枝与共享尾账的版本和审查边界--资料](<../../../../archives/customer-attraction/state/资料/全深度换枝与共享尾账的版本和审查边界--资料.md>) | math-exposition | retain | 全深度真实换枝税的signed重置、共同银行一次支付和低权COV缺口均按具体等式/适用历史清楚分节。 |
 | [全续局产品转移与全部最优元组攻击--资料](<../../../../archives/customer-attraction/state/资料/全续局产品转移与全部最优元组攻击--资料.md>) | math-exposition | retain | 全续局产品的独立孩子盈余闭包、未过滤叶有理凸化和统一有限余数证明，给全部最优元组的条件SM反驳放大。 |
-| [六份历史工作区身份的来源路由--资料](<../../../../archives/customer-attraction/state/资料/六份历史工作区身份的来源路由--资料.md>) | non-math | delete | 六份actor/instance及字节表、来源比较和恢复说明；所有内容是身份路由，不存在数学命题或构造。 |
+| [六份历史工作区身份的来源路由--资料](<../actions/c0c93aa3c0fde1cff79c.json>) | non-math | delete | 六份actor/instance及字节表、来源比较和恢复说明；所有内容是身份路由，不存在数学命题或构造。 |
 | [净覆盖缺口与真实补全余额的根稿合同--资料](<../../../../archives/customer-attraction/state/资料/净覆盖缺口与真实补全余额的根稿合同--资料.md>) | math-exposition | retain | 根净缺口L−E、真实前缀余额s(h)的望远镜、孩子ENV和最优前缀HYBRID给准确共同付款未证点及已败加强。 |
 | [分数尾水位审计的有理停点和命令行边界--资料](<../../../../archives/customer-attraction/state/资料/分数尾水位审计的有理停点和命令行边界--资料.md>) | math-exposition | retain | 尾水位单遍降权证明共同查询增益H≤E≤D和同叶利润守恒，并辨认私有客户正停与无理根。 |
 | [动态信用背景探针来源与开放边界--资料](<../../../../archives/customer-attraction/state/资料/动态信用背景探针来源与开放边界--资料.md>) | mixed/needs-context | extract | 历史探针来源表与状态导航中含最后一层信用余项、二层税及未解r·min u_i边界的数学内容。 |
 | [动态局部门槛的独立见证锥与人口预算--资料](<../../../../archives/customer-attraction/state/资料/动态局部门槛的独立见证锥与人口预算--资料.md>) | math-exposition | retain | 局部门槛Θ等于完整局部SPE最小首值，独立见证多锥严格负点可有理整数化，TB-ANY蕴含POP。 |
-| [协调工作室身份的固定路由与实例--资料](<../../../../archives/customer-attraction/state/资料/协调工作室身份的固定路由与实例--资料.md>) | non-math | delete | 150B协调身份与实例说明，所有链接只作旧来源定位，无数学主张。 |
+| [协调工作室身份的固定路由与实例--资料](<../actions/3cf0a94cbedf15a607b5.json>) | non-math | delete | 150B协调身份与实例说明，所有链接只作旧来源定位，无数学主张。 |
 | [单尾两比较基底与自由根预算的边界--资料](<../../../../archives/customer-attraction/state/资料/单尾两比较基底与自由根预算的边界--资料.md>) | math-exposition | retain | 单尾真实BR直接推出两比较并集≤2W，并澄清root-only付费预算与FREE-ROOT强候选的范围。 |
 | [双尾推送与单色续局的版本接口--资料](<../../../../archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md>) | math-exposition | retain | 梳理双尾推送、完整根菜单与单色后缀的不同合同，给r1三真实slack恒等式和全B静态势最大性证明。 |
 | [可信与匹配入口的域及审查合同--资料](<../../../../archives/customer-attraction/state/资料/可信与匹配入口的域及审查合同--资料.md>) | math-exposition | retain | 真实孩子cap、均值floor、BUBBLE与最优组合正损失各合同的可付项及缺口分别明确，不把条件付款误成half。 |
@@ -2386,47 +2386,47 @@
 | [完整根菜单的联合势义务与排序边界--资料](<../../../../archives/customer-attraction/state/资料/完整根菜单的联合势义务与排序边界--资料.md>) | math-exposition | retain | 完整根菜单写出COL的联合势缺口与PAY极小极大形式，并给出静态二因子边界和348客户R环阻碍。 |
 | [完整真实菜单的条件对偶与旧实例账本--资料](<../../../../archives/customer-attraction/state/资料/完整真实菜单的条件对偶与旧实例账本--资料.md>) | math-exposition | retain | 真实r槽菜单FM的minimax/SEP、静态因子二条件half及旧381记录范围独立清楚。 |
 | [客户分数负载覆盖与固定策略锥的审计合同--资料](<../../../../archives/customer-attraction/state/资料/客户分数负载覆盖与固定策略锥的审计合同--资料.md>) | math-exposition | retain | 分数覆盖的真实前缀利润递推给F_m(τ)，固定策略锥的Gamma有理对偶余项证明21份指定策略全非负质量锥W≥nv。 |
-| [客户吸引迁移历史归档清单--资料](<../../../../archives/customer-attraction/state/资料/客户吸引迁移历史归档清单--资料.md>) | non-math | delete | 全文是迁移README与28项manifest的路径哈希、旧导航替代和操作入口；数学命题仅指向他页。 |
+| [客户吸引迁移历史归档清单--资料](<../actions/c3ecc2a12ec6f9d30a76.json>) | non-math | delete | 全文是迁移README与28项manifest的路径哈希、旧导航替代和操作入口；数学命题仅指向他页。 |
 | [指定完整策略锥与全SPE正预算的原程序核验--资料](<../../../../archives/customer-attraction/state/资料/指定完整策略锥与全SPE正预算的原程序核验--资料.md>) | math-exposition | retain | 完整有序子博弈可实现菜单递推给五固定游戏全SPE预算；三固定策略锥的有理Γ乘子保证静态安全。 |
-| [旧清理库存与冷上下文验收的测量合同--资料](<../../../../archives/customer-attraction/state/资料/旧清理库存与冷上下文验收的测量合同--资料.md>) | non-math | delete | 旧清理库存数量、冷上下文验收字节度量与操作合同，没有独立数学模型或命题。 |
+| [旧清理库存与冷上下文验收的测量合同--资料](<../actions/97b1fb6465769023dca9.json>) | non-math | delete | 旧清理库存数量、冷上下文验收字节度量与操作合同，没有独立数学模型或命题。 |
 | [旧研究入口的跨模型分诊与版本合同--资料](<../../../../archives/customer-attraction/state/资料/旧研究入口的跨模型分诊与版本合同--资料.md>) | mixed/needs-context | extract | 跨模型旧入口和版本安排中列出九类数学义务及条件边界，需从治理文字抽取。 |
-| [旧锚点工作区的身份与原生构建忽略规则--资料](<../../../../archives/customer-attraction/state/资料/旧锚点工作区的身份与原生构建忽略规则--资料.md>) | evidence-only | attach | 身份JSON及gitignore规则、历史binary未绑定的复现说明；没有独立数学，相关29/47/9客户结果都在别页。 |
+| [旧锚点工作区的身份与原生构建忽略规则--资料](<../actions/872c1dc3a57e88dfa1e3.json>) | evidence-only | attach | 身份JSON及gitignore规则、历史binary未绑定的复现说明；没有独立数学，相关29/47/9客户结果都在别页。 |
 | [最优排列调和债与归属端点薄化的边界--资料](<../../../../archives/customer-attraction/state/资料/最优排列调和债与归属端点薄化的边界--资料.md>) | math-exposition | retain | 最优排列H4、owner薄化及净差匹配的准确余额分别含重复信用REP和actual独占信用J_out；十三人例只败逐行加强。 |
 | [真实偏离弱平均的最优元组合同与有限锥--资料](<../../../../archives/customer-attraction/state/资料/真实偏离弱平均的最优元组合同与有限锥--资料.md>) | math-exposition | retain | 定义真实偏离V矩阵的弱平均WA、与净差匹配的单向蕴含及准确四锥浮点阴性范围。 |
 | [真实分支支付组件的发展与证据范围--资料](<../../../../archives/customer-attraction/state/资料/真实分支支付组件的发展与证据范围--资料.md>) | math-exposition | retain | 真实分支SOURCE-NET停账、内生分数值Cauchy余额、最优槽势和同一Exp世界都有明确公式与未付跨叶条件。 |
 | [真实删后门槛付款反例的合同与独审读序--资料](<../../../../archives/customer-attraction/state/资料/真实删后门槛付款反例的合同与独审读序--资料.md>) | math-exposition | retain | 真实删后max-min门槛Σδ≤u1由31客户四人完整SPE和三人floors给11>28/3，且末位BR重置后不反该新合同。 |
 | [真实前缀席位与随机索引交换的两份审计--资料](<../../../../archives/customer-attraction/state/资料/真实前缀席位与随机索引交换的两份审计--资料.md>) | math-exposition | retain | 124客户完整SPE给实际席位谱比旧谱强13/6；五客户三人例精确否定随机索引的最新收益与前缀平均可交换。 |
-| [研究入口路由回归与数学地图门槛--资料](<../../../../archives/customer-attraction/state/资料/研究入口路由回归与数学地图门槛--资料.md>) | non-math | delete | 全文是研究入口、角色与数学地图链接的隔离软件回归，没有客户模型结论。 |
+| [研究入口路由回归与数学地图门槛--资料](<../actions/69e9f08068e54d68cd40.json>) | non-math | delete | 全文是研究入口、角色与数学地图链接的隔离软件回归，没有客户模型结论。 |
 | [背景总份额归纳的两种覆盖量与失效接口--资料](<../../../../archives/customer-attraction/state/资料/背景总份额归纳的两种覆盖量与失效接口--资料.md>) | math-exposition | retain | 背景BG与更强UNION-BG的差为\|H\O\|，52客户真前缀使UNION-BG缺1而不否定裸BG。 |
-| [自然捕获的共同配对最优价与固定尾重置--资料](<../../../../archives/customer-attraction/state/资料/自然捕获的共同配对最优价与固定尾重置--资料.md>) | algorithm-result | retain | 真实捕获有向无环重置的Bellman最小剩余整行费用及共同槽置换π优化具有线性路由与有限排列达到性证明。 |
-| [迁移原件治理与旧精确账本--资料](<../../../../archives/customer-attraction/state/资料/迁移原件治理与旧精确账本--资料.md>) | non-math | delete | 迁移原件、旧精确账本路径与治理状态记录，没有独立数学主张。 |
-| [退役选题核验与有限复现合同--资料](<../../../../archives/customer-attraction/state/资料/退役选题核验与有限复现合同--资料.md>) | non-math | delete | 全文登记退役多模型工程回归与有限脚本来源、复现路径；各线数学由别处对象承接。 |
-| [退役选题独立审查工件清单与版本边界--资料](<../../../../archives/customer-attraction/state/资料/退役选题独立审查工件清单与版本边界--资料.md>) | non-math | delete | 全文只列退役选题快照61个工件的路径、字节、哈希、分支和版本，不含运行结果或数学陈述。 |
-| [退役选题索引与版本去重边界--资料](<../../../../archives/customer-attraction/state/资料/退役选题索引与版本去重边界--资料.md>) | non-math | delete | 退役候选池59条的来源类别、四研究线、去重与状态计数索引，没有独立命题或证明。 |
-| [退役选题题源与价值审计边界--资料](<../../../../archives/customer-attraction/state/资料/退役选题题源与价值审计边界--资料.md>) | non-math | delete | 题源身份与前排研究价值审计，59/52来源统计及FA09首发更正，数学义务另由对应问题页陈述。 |
+| [自然捕获的共同配对最优价与固定尾重置--资料](<../../../../archives/customer-attraction/state/资料/自然捕获的共同配对最优价与固定尾重置--资料.md>) | math-exposition | retain | 固定真实捕获初始化的Bellman整行价格和配对排列优化有数学解释 |
+| [迁移原件治理与旧精确账本--资料](<../actions/c6fd963958e4b7a6a898.json>) | non-math | delete | 迁移原件、旧精确账本路径与治理状态记录，没有独立数学主张。 |
+| [退役选题核验与有限复现合同--资料](<../actions/91f3564fbf510160998c.json>) | non-math | delete | 全文登记退役多模型工程回归与有限脚本来源、复现路径；各线数学由别处对象承接。 |
+| [退役选题独立审查工件清单与版本边界--资料](<../actions/df06db7dc5a0e1461253.json>) | non-math | delete | 全文只列退役选题快照61个工件的路径、字节、哈希、分支和版本，不含运行结果或数学陈述。 |
+| [退役选题索引与版本去重边界--资料](<../actions/0f37c4e5e90dd93cacf5.json>) | non-math | delete | 退役候选池59条的来源类别、四研究线、去重与状态计数索引，没有独立命题或证明。 |
+| [退役选题题源与价值审计边界--资料](<../actions/eb5561699743939d19eb.json>) | non-math | delete | 题源身份与前排研究价值审计，59/52来源统计及FA09首发更正，数学义务另由对应问题页陈述。 |
 | [重置密度的初始化守卫与整行付款边界--资料](<../../../../archives/customer-attraction/state/资料/重置密度的初始化守卫与整行付款边界--资料.md>) | math-exposition | retain | raw round7子边上界不蕴含密度守卫p/c；整行IC一次max系数退款等式与双context纯流反校准清楚给适用范围。 |
 | [隐藏回复价格投影审计的真实行与有限域--资料](<../../../../archives/customer-attraction/state/资料/隐藏回复价格投影审计的真实行与有限域--资料.md>) | math-exposition | retain | 隐藏末位回复价格投影的逐客户必要行和2(k−1)排序压缩，有限审计仅检局部公式。 |
 | [首次饱和与独立审查的版本路由--资料](<../../../../archives/customer-attraction/state/资料/首次饱和与独立审查的版本路由--资料.md>) | math-exposition | retain | 首次饱和同一钱包B_stop−E−U=OPT−2W、三八负源税以及整数extra-one银行分离的Jensen关系都有具体量词。 |
 | [首次饱和前沿的审查层次与共同付款边界--资料](<../../../../archives/customer-attraction/state/资料/首次饱和前沿的审查层次与共同付款边界--资料.md>) | math-exposition | retain | SOURCE-NET同一取消资金下首次拒绝量、整行费用与余额满足Bstop−E−U=OPT−2W；HIT、RANDOM-CUT仍欠共同耦合。 |
-| [Beta全鲜策略提升的一百八十例历史记录--资源](<../../../../archives/customer-attraction/state/资源/Beta全鲜策略提升的一百八十例历史记录--资源.md>) | evidence-only | attach | 180次无候选仅三字段历史输出，缺人数、输入、策略和生成版本；两种提升合同由其他正文提出。 |
+| [Beta全鲜策略提升的一百八十例历史记录--资源](<../actions/afbd11b15f5047566d6a.json>) | evidence-only | attach | 180次无候选仅三字段历史输出，缺人数、输入、策略和生成版本；两种提升合同由其他正文提出。 |
 | [DIRECT与前缀门槛的历史量词和后来反驳--资源](<../../../../archives/customer-attraction/state/资源/DIRECT与前缀门槛的历史量词和后来反驳--资源.md>) | math-exposition | retain | DIRECT逐人门槛及PREFIX一般加强被银行完整根族在m≥5精确否定，extra-slot在m≥4失败；half余量仍正。 |
-| [NextSecurity cone_search有限搜索入口--资源](<../../../../archives/customer-attraction/state/资源/NextSecurity cone_search有限搜索入口--资源.md>) | evidence-only | attach | 依赖缺失的cone_search随机固定锥入口含浮点margin和真实Gamma行，无精确对偶或保存一般结论。 |
-| [PAY全路径原程序与参数左跳证书的来源闭合--资源](<../../../../archives/customer-attraction/state/资源/PAY全路径原程序与参数左跳证书的来源闭合--资源.md>) | algorithm-result | retain | PAY固定实例的加权分位内层和完整路径max–min递推有明确输入域、量词顺序与终局证书重构接口。 |
+| [NextSecurity cone_search有限搜索入口--资源](<../actions/1aa2f489898e5f5a2554.json>) | evidence-only | attach | 依赖缺失的cone_search随机固定锥入口含浮点margin和真实Gamma行，无精确对偶或保存一般结论。 |
+| [PAY全路径原程序与参数左跳证书的来源闭合--资源](<../actions/464ef061ec48162b38e3.json>) | evidence-only | attach | PAY原程序与三份固定输入记录仅绑定既有全路径算法实现 |
 | [P池填充完整控制器的证明版本与有限审查域--资源](<../../../../archives/customer-attraction/state/资源/P池填充完整控制器的证明版本与有限审查域--资源.md>) | math-exposition | retain | P池填充23客户核心的全k完整控制器、早期P偏0的裸收益封顶与模式退出证明结构。 |
-| [R-2fc-聚合安全中段八源诊断--资源](<../../../../archives/customer-attraction/state/资源/R-2fc-聚合安全中段八源诊断--资源.md>) | evidence-only | attach | 八份DR潜势扩大模型浮点诊断给seed、试验数和best_objective，未有共同客户或SPE证书。 |
-| [R-373d根菜单容量交替LP浮点发现器--资源](<../../../../archives/customer-attraction/state/资源/R-373d根菜单容量交替LP浮点发现器--资源.md>) | evidence-only | attach | 固定三人六主题策略交替浮点LP输出gap1/16及215 IC行，仅发现过程与输入，没有精确全树反例证书。 |
-| [R-3b9429一般顺序半覆盖恢复入口--资源](<../../../../archives/customer-attraction/state/资源/R-3b9429一般顺序半覆盖恢复入口--资源.md>) | non-math | delete | 旧R-3b9429 README仅列九个研究分支及恢复命令，未承载所链证明、客户策略或反例数据。 |
-| [R-3bbce清洗上下文入口与范围--资源](<../../../../archives/customer-attraction/state/资源/R-3bbce清洗上下文入口与范围--资源.md>) | non-math | delete | R-3bbce README只交接共享入口与暂停安排，workspace.json仅save/actor/instance，没有数学陈述。 |
-| [R-3d6f二次fresh表示分支入口--资源](<../../../../archives/customer-attraction/state/资源/R-3d6f二次fresh表示分支入口--资源.md>) | non-math | delete | R-3d6f README列二次编译稿、程序和回归JSON三个入口及旧开放状态，没有编译论证本体。 |
+| [R-2fc-聚合安全中段八源诊断--资源](<../actions/551775387324cc4b340a.json>) | evidence-only | attach | 八份DR潜势扩大模型浮点诊断给seed、试验数和best_objective，未有共同客户或SPE证书。 |
+| [R-373d根菜单容量交替LP浮点发现器--资源](<../actions/e371cb5ea611712e94ec.json>) | evidence-only | attach | 固定三人六主题策略交替浮点LP输出gap1/16及215 IC行，仅发现过程与输入，没有精确全树反例证书。 |
+| [R-3b9429一般顺序半覆盖恢复入口--资源](<../actions/f25f2c343d2ecb91911c.json>) | non-math | delete | 旧R-3b9429 README仅列九个研究分支及恢复命令，未承载所链证明、客户策略或反例数据。 |
+| [R-3bbce清洗上下文入口与范围--资源](<../actions/56b9cfbd77c7790c4362.json>) | non-math | delete | R-3bbce README只交接共享入口与暂停安排，workspace.json仅save/actor/instance，没有数学陈述。 |
+| [R-3d6f二次fresh表示分支入口--资源](<../actions/7fc8cf1c0d2b64fe0672.json>) | non-math | delete | R-3d6f README列二次编译稿、程序和回归JSON三个入口及旧开放状态，没有编译论证本体。 |
 | [R-486主张账本与共同查询付款缺口--资源](<../../../../archives/customer-attraction/state/资源/R-486主张账本与共同查询付款缺口--资源.md>) | math-exposition | retain | 同终局真实交换配合负载失真和完美匹配条件推OPT≤(2−α)W，且共同查询完全图仅是必要行。 |
 | [R-486同终局交换与碰撞自由有限攻击入口--资源](<../../../../archives/customer-attraction/state/资源/R-486同终局交换与碰撞自由有限攻击入口--资源.md>) | math-fragment | restore | README仅提同终局交换引理与匹配条件的摘要，证明正文未入本页；14案例和MILP失败同样只指向外部载体。 |
-| [R-486工作区导航与六人目标边界--资源](<../../../../archives/customer-attraction/state/资源/R-486工作区导航与六人目标边界--资源.md>) | non-math | delete | R-486 README与workspace.json给旧actor/instance身份、五路线目录和接续路径，没有独立数学论证。 |
+| [R-486工作区导航与六人目标边界--资源](<../actions/5aef77c2137d78ea32a9.json>) | non-math | delete | R-486 README与workspace.json给旧actor/instance身份、五路线目录和接续路径，没有独立数学论证。 |
 | [R-cef一般路线的二十六源范围与接续--资源](<../../../../archives/customer-attraction/state/资源/R-cef一般路线的二十六源范围与接续--资源.md>) | math-exposition | retain | 辨明26源中真实分支FTA、owner划分及早期最低收益价格的量词；推\|U\|=J_U+P_U的客户账。 |
 | [R-d1三十五源的数学分流与当前状态校准--资源](<../../../../archives/customer-attraction/state/资源/R-d1三十五源的数学分流与当前状态校准--资源.md>) | mixed/needs-context | extract | 35来源路由中保留稳定B四税、共享租金、LAST后反族及自由起点价格界，但身份和逐源去向占主体。 |
 | [R-d5b十八来源的查询工具与整理边界--资源](<../../../../archives/customer-attraction/state/资源/R-d5b十八来源的查询工具与整理边界--资源.md>) | math-exposition | retain | 整理真实查询K/H递推达到性与固定小例、557证据范围，给一般查询付款尚缺的量词。 |
 | [R-e593多路线入口与程序证据的准确范围--资源](<../../../../archives/customer-attraction/state/资源/R-e593多路线入口与程序证据的准确范围--资源.md>) | math-exposition | retain | 同支持梯度环的三人15生成环及删除不相关客户保W/OPT却可能破SPE的准确静态等式与障碍。 |
 | [R-e7二十七来源的合同与历史状态分流--资源](<../../../../archives/customer-attraction/state/资源/R-e7二十七来源的合同与历史状态分流--资源.md>) | mixed/needs-context | extract | 27来源清单与状态中还写保险族根额外槽精确值、银行单边障碍及固定退出表LP的适用量词，需抽取数学段。 |
-| [R-f6六路线入口与十一原件的证据身份--资源](<../../../../archives/customer-attraction/state/资源/R-f6六路线入口与十一原件的证据身份--资源.md>) | evidence-only | attach | 11个旧输入/程序的六路线来源和有限资格对照，四保存点证据已在另页自足解释。 |
+| [R-f6六路线入口与十一原件的证据身份--资源](<../actions/cf6fe42dd3195eb0361c.json>) | evidence-only | attach | 11个旧输入/程序的六路线来源和有限资格对照，四保存点证据已在另页自足解释。 |
 | [R23跨枝重置工作区接续与分层核验--资源](<../../../../archives/customer-attraction/state/资源/R23跨枝重置工作区接续与分层核验--资源.md>) | math-exposition | retain | 三题与四题七客户前缀重置势下降及新枝税尖锐例，并标明8(k−2)隐藏位叉未完成共同付款。 |
 | [R24有限扫描与额外槽候选的历史和后续反驳--资源](<../../../../archives/customer-attraction/state/资源/R24有限扫描与额外槽候选的历史和后续反驳--资源.md>) | math-exposition | retain | R24有限扫描提出v_{r+1}与额外槽命题边界，后续四玩家银行例给出u1=4/3<19/14≤v5并否定完整菜单外推。 |
 | [R24精确身份账本与早期价格义务的历史范围--资源](<../../../../archives/customer-attraction/state/资源/R24精确身份账本与早期价格义务的历史范围--资源.md>) | math-exposition | retain | orbit交叠条件经Cauchy–Schwarz及查询标量式推B(u_i)≤(m−1)u_i，另保末两位归一化障碍的状态。 |
@@ -2435,7 +2435,7 @@
 | [R29固定背景尾局与直接门槛工作区的接续范围--资源](<../../../../archives/customer-attraction/state/资源/R29固定背景尾局与直接门槛工作区的接续范围--资源.md>) | mixed/needs-context | extract | 固定背景54客户两尾失败、三窗口删槽和门槛银行后反例嵌在工作区导航与审查版本说明。 |
 | [R2d91首次停止工作区的原始资产和接续范围--资源](<../../../../archives/customer-attraction/state/资源/R2d91首次停止工作区的原始资产和接续范围--资源.md>) | mixed/needs-context | extract | 首次停止工作区目录中含SOURCE-NET共同钱包、局部背包和UNION-BG被52客户根SPE否定的数学范围，但其余为资产路由。 |
 | [R2f6五分支入口的证明合同与历史审查范围--资源](<../../../../archives/customer-attraction/state/资源/R2f6五分支入口的证明合同与历史审查范围--资源.md>) | math-exposition | retain | 最优补全私有块账本恒等式、owner调和误差、银行族逐人门槛反驳与B平台局部斜率失败。 |
-| [R44b24早期例外与尾部LP审计版本--资源](<../../../../archives/customer-attraction/state/资源/R44b24早期例外与尾部LP审计版本--资源.md>) | evidence-only | attach | 平方阈值有限报告40例和独立411参数对角点回归，普遍证明在另一定理正文。 |
+| [R44b24早期例外与尾部LP审计版本--资源](<../actions/aa4d342419a9827da4d9.json>) | evidence-only | attach | 平方阈值有限报告40例和独立411参数对角点回归，普遍证明在另一定理正文。 |
 | [R44b24研究入口的条件结果与恢复边界--资源](<../../../../archives/customer-attraction/state/资源/R44b24研究入口的条件结果与恢复边界--资源.md>) | mixed/needs-context | extract | R44b24历史入口描述共同倒数第二轮条件半界和平方阈值等数学结果，同时大量篇幅为恢复导航。 |
 | [R51工作区身份与阶段任务记录--资源](<../../../../archives/customer-attraction/state/资源/R51工作区身份与阶段任务记录--资源.md>) | mixed/needs-context | extract | 身份与历史履历占主体，但夹有汉明删行SPE边界、d=1与d>1范围区别及现行数学入口；先保住这些范围说明再去身份包装。 |
 | [R5662研究checkpoint的版本清单与有限复核--资源](<../../../../archives/customer-attraction/state/资源/R5662研究checkpoint的版本清单与有限复核--资源.md>) | mixed/needs-context | extract | 174项版本及七项历史复放清单夹有18主题必要点的倒二7条负余量及非SPE边界，应抽存该数学诊断。 |
@@ -2451,8 +2451,8 @@
 | [R977八项主张总账与安全值入口的版本合同--资源](<../../../../archives/customer-attraction/state/资源/R977八项主张总账与安全值入口的版本合同--资源.md>) | math-exposition | retain | 八项有明确量词的数学主张：调和债、三尾转移、HI终局、signed切片、祖先价格及半紧界。 |
 | [Rd64真实替换链未付预算与产品候选入口--资源](<../../../../archives/customer-attraction/state/资源/Rd64真实替换链未付预算与产品候选入口--资源.md>) | math-exposition | retain | 真实替换链的式(T)只是原IC总和，另述产品子菜单凸化和最优元组严格坏条件。 |
 | [StrongA五人原证书的来源与独立审计边界--资源](<../../../../archives/customer-attraction/state/资源/StrongA五人原证书的来源与独立审计边界--资源.md>) | math-exposition | retain | 五人完整策略证书反驳StrongA冻结查询相邻钱包式，并清楚区分最优指派存在弱化。 |
-| [iid与储备原算术审计的入口和状态字段--资源](<../../../../archives/customer-attraction/state/资源/iid与储备原算术审计的入口和状态字段--资源.md>) | evidence-only | attach | iid八客户多项式身份/36客户静态背景和69客户储备原程序的固定算术审计与状态字段。 |
-| [outside等号原审计的单位输入与双行stdout合同--资源](<../../../../archives/customer-attraction/state/资源/outside等号原审计的单位输入与双行stdout合同--资源.md>) | evidence-only | attach | 十一客户二人outside等号原审计的20条全历史比较和225个参数回归，反族普遍论证另在正文。 |
+| [iid与储备原算术审计的入口和状态字段--资源](<../actions/117e59f7b6d002da0b36.json>) | evidence-only | attach | iid八客户多项式身份/36客户静态背景和69客户储备原程序的固定算术审计与状态字段。 |
+| [outside等号原审计的单位输入与双行stdout合同--资源](<../actions/9e664376be9d48e88e27.json>) | evidence-only | attach | 十一客户二人outside等号原审计的20条全历史比较和225个参数回归，反族普遍论证另在正文。 |
 | [一税候选的命名终局审计与笛卡尔保险族--资源](<../../../../archives/customer-attraction/state/资源/一税候选的命名终局审计与笛卡尔保险族--资源.md>) | math-exposition | retain | 同一五人尾背景下ONEGAP充分归约；笛卡尔银行20题族给完整控制器、静态v5及势缺口正余量。 |
 | [一般付款内部审查的量词与有限定义审计--资源](<../../../../archives/customer-attraction/state/资源/一般付款内部审查的量词与有限定义审计--资源.md>) | math-exposition | retain | FREE-Q Farkas完整策略锥、实际税负反例与BG付款缺口的量词审计。 |
 | [一般包络架构的两冻结入口与精确审计合同--资源](<../../../../archives/customer-attraction/state/资源/一般包络架构的两冻结入口与精确审计合同--资源.md>) | math-exposition | retain | 一般包络的Farkas截短障碍、净共享缺陷及private递推纠错具有明确数学公式和适用域。 |
@@ -2469,7 +2469,7 @@
 | [一般机制入口的有限诊断与未付合同--资源](<../../../../archives/customer-attraction/state/资源/一般机制入口的有限诊断与未付合同--资源.md>) | mixed/needs-context | extract | 五研究入口和有限计数作主体，但保存单色尾M=0查询上界、Ftail无限族障碍及复制菜单条件式，抽取独有数学合同。 |
 | [一般机制审查的冻结快照与交流证据--资源](<../../../../archives/customer-attraction/state/资源/一般机制审查的冻结快照与交流证据--资源.md>) | mixed/needs-context | extract | 冻结消息与版本来源为主体，保SOURCE-NET全吸收K=Δ+Eρ及尚缺K≤W的数学付款接口。 |
 | [一般机制建议与六人Fréchet判别工作区--资源](<../../../../archives/customer-attraction/state/资源/一般机制建议与六人Fréchet判别工作区--资源.md>) | math-exposition | retain | 固定四态Fréchet共同扩张的严格负上界，区分释放Z/RZ后的必要图修复与完整SPE。 |
-| [一般菜单与可信构造工作区的来源和历史状态--资源](<../../../../archives/customer-attraction/state/资源/一般菜单与可信构造工作区的来源和历史状态--资源.md>) | evidence-only | attach | 25份一般菜单/构造来源的导航、历史状态与八处正式数学去向，无独立新公式或证书。 |
+| [一般菜单与可信构造工作区的来源和历史状态--资源](<../actions/0fa4a1f6538b4e3fbf28.json>) | evidence-only | attach | 25份一般菜单/构造来源的导航、历史状态与八处正式数学去向，无独立新公式或证书。 |
 | [一般覆盖交换的跨枝信用停点--资源](<../../../../archives/customer-attraction/state/资源/一般覆盖交换的跨枝信用停点--资源.md>) | math-exposition | retain | 同H直方图产品迫G63两端差272、可加信用差17/252与跨枝共同付款缺口均明确。 |
 | [一重离轨原程序的闭包计数与有限报告--资源](<../../../../archives/customer-attraction/state/资源/一重离轨原程序的闭包计数与有限报告--资源.md>) | math-exposition | retain | 一重离轨完整策略给出rank≤1闭包计数及m9受限行W262、OPT540，又解析指出省略rank2行负松弛。 |
 | [七极大六人计数口径与联合行探测账本--资源](<../../../../archives/customer-attraction/state/资源/七极大六人计数口径与联合行探测账本--资源.md>) | math-exposition | retain | 七极大非法席位反例给出W6=11、OPT=11及832/833计数差。 |
@@ -2482,42 +2482,56 @@
 | [三人二次无重复保底的完整策略MILP与限时报告--资源](<../../../../archives/customer-attraction/state/资源/三人二次无重复保底的完整策略MILP与限时报告--资源.md>) | math-exposition | retain | 解释三人fresh二次辅助博弈MILP的有序BI选择与theta差≥1合同，保存171变量591行限时无解证据。 |
 | [三人末位转移的原审计与根公式勘误--资源](<../../../../archives/customer-attraction/state/资源/三人末位转移的原审计与根公式勘误--资源.md>) | math-exposition | retain | 指出末位转移根式漏d/k，正确65d/48与32格非负表一致；保六族末位真实比较的条件结论。 |
 | [三人根缺陷三种子的完整历史计划与客户覆盖--资源](<../../../../archives/customer-attraction/state/资源/三人根缺陷三种子的完整历史计划与客户覆盖--资源.md>) | math-exposition | retain | 三人根缺陷的三个正深度完整计划及覆盖和根后悔数值说明。 |
-| [三人源与中间偏离两份原审计的输入和报告范围--资源](<../../../../archives/customer-attraction/state/资源/三人源与中间偏离两份原审计的输入和报告范围--资源.md>) | evidence-only | attach | 两份原审计输入及报告范围记录27/28点负分离，主要承担原运行证据边界。 |
+| [三人源与中间偏离两份原审计的输入和报告范围--资源](<../actions/d4ce0bcc8cc21b4d4608.json>) | evidence-only | attach | 两份原审计输入及报告范围记录27/28点负分离，主要承担原运行证据边界。 |
 | [三人真实组合的浮点付款模板与三版本报告--资源](<../../../../archives/customer-attraction/state/资源/三人真实组合的浮点付款模板与三版本报告--资源.md>) | math-exposition | retain | 三人九条真实偏离松弛、32768成员型及54/26行线性合同和精确证书边界。 |
 | [三人首对安全值的原入口与非均匀Q发现记录--资源](<../../../../archives/customer-attraction/state/资源/三人首对安全值的原入口与非均匀Q发现记录--资源.md>) | math-exposition | retain | 三人首两位安全命题、M3推导及非均匀Q的背景反驳。 |
 | [三十四客户完整端点救援与根局部总推送分层--资源](<../../../../archives/customer-attraction/state/资源/三十四客户完整端点救援与根局部总推送分层--资源.md>) | math-exposition | retain | 三十四客户含空动作完整SPE值32、OPT34，比较全查询列cap17/2与21个端点中强聚合负差及自由端点救援。 |
 | [三族末位共享索引包络与完整菜单和的原合同--资源](<../../../../archives/customer-attraction/state/资源/三族末位共享索引包络与完整菜单和的原合同--资源.md>) | math-exposition | retain | 三组真实末位源共享索引，排序下上包络DIAG/OFF和25项FULL关系及两固定点负行。 |
 | [三锚对称参数族的强制路径DAG与浮点探索合同--资源](<../../../../archives/customer-attraction/state/资源/三锚对称参数族的强制路径DAG与浮点探索合同--资源.md>) | math-exposition | retain | 三锚参数族65列的客户构造、固定路径DAG可展开完整有序SPE的条件性证明，说明浮点a=1/2缺完整动作与精确核。 |
-| [不相关并行机旧目录的逐项用途--资源](<../../../../archives/customer-attraction/state/资源/不相关并行机旧目录的逐项用途--资源.md>) | non-math | delete | 全文是1359条旧目录记录的763种用途字典、角色、路径、Claim与关联键；数学词句只说明所指文件用途，无独立命题或论证。 |
+| [不相关并行机旧目录的逐项用途--资源](<../actions/cfc632065d7694c838c9.json>) | non-math | delete | 全文是1359条旧目录记录的763种用途字典、角色、路径、Claim与关联键；数学词句只说明所指文件用途，无独立命题或论证。 |
 | [不相关并行机资产的条件与实现边界--资源](<../../../../archives/customer-attraction/state/资源/不相关并行机资产的条件与实现边界--资源.md>) | mixed/needs-context | extract | 218条不相关并行机资产登记同时含模型条件、精确算法与反例边界（如共同汇点舍入、配置LP近二间隙、原生矩层级），并混有大量来源路径、状态和软件角色字段；需抽取数学范围。 |
-| [两套水位独审的输入合同与运行版本--资源](<../../../../archives/customer-attraction/state/资源/两套水位独审的输入合同与运行版本--资源.md>) | evidence-only | attach | 两套水位独审代码与报告的输入、回放计数和版本差异；核心解析水位论证在配套正文。 |
+| [两人安全最优查询面的有限同分布覆盖探针--资源](<../../../../archives/customer-attraction/state/资源/两人安全最优查询面的有限同分布覆盖探针--资源.md>) | math-exposition | retain | 两人静态安全最优面上的iid查询覆盖P2与所有完整SPE最低福利比较，给出精确两层终局公式及有限五点浮点探针限制。 |
+| [两人纯列与势排序工作区的复用边界--资源](<../../../../archives/customer-attraction/state/资源/两人纯列与势排序工作区的复用边界--资源.md>) | math-exposition | retain | 两人纯末位回复列的负载恒等式封顶所有查询，并区别势排序平局、根列ownpay的银行反例。 |
+| [两份尾部复核报告与R5662工作区身份--资源](<../../../../archives/customer-attraction/state/资源/两份尾部复核报告与R5662工作区身份--资源.md>) | math-exposition | retain | 实际末主题尾部448格无K投影的八项IC组合排除旧点，另7931行终局闭包只核指定低福利点且未补全SPE。 |
+| [两套水位独审的输入合同与运行版本--资源](<../actions/9fc93b7a6d96780e1e6e.json>) | evidence-only | attach | 两套水位独审代码与报告的输入、回放计数和版本差异；核心解析水位论证在配套正文。 |
 | [两标签退化策略的完整映射双向空间--资源](<../../../../archives/customer-attraction/state/资源/两标签退化策略的完整映射双向空间--资源.md>) | math-exposition | retain | 两标签三人七行收益锥全xy平面而SCC像仅一维，非负SPE仅共同客户。 |
-| [两步安全链根锥程序的依赖导入版本--资源](<../../../../archives/customer-attraction/state/资源/两步安全链根锥程序的依赖导入版本--资源.md>) | evidence-only | attach | 3952到4040字节版本仅导入路径一行差，程序锥搜索与1900轮输出归属的证据关系。 |
+| [两步安全链根锥程序的依赖导入版本--资源](<../actions/ad343e1df3f0765de687.json>) | evidence-only | attach | 3952到4040字节版本仅导入路径一行差，程序锥搜索与1900轮输出归属的证据关系。 |
 | [两组共享参数锚点的完整策略锥与原best边界--资源](<../../../../archives/customer-attraction/state/资源/两组共享参数锚点的完整策略锥与原best边界--资源.md>) | math-exposition | retain | 四人十标签共享参数完整策略锥：具体真偏离推出a≤1/2，原小数末位反证精确SPE。 |
-| [个人资产结构检查记录的覆盖范围--资源](<../../../../archives/customer-attraction/state/资源/个人资产结构检查记录的覆盖范围--资源.md>) | non-math | delete | 566字节记录只报69链接、Python语法、五JSON解析通过；不含客户输入或数学论断。 |
-| [中文资产目录的命名覆盖与渲染合同--资源](<../../../../archives/customer-attraction/state/资源/中文资产目录的命名覆盖与渲染合同--资源.md>) | non-math | delete | 旧中文目录生成器和2099路径的命名、格式、覆盖规则；无独立数学证明或构造。 |
+| [两组鲜主题完整策略的轨道质量锥与双版本价格探索--资源](<../../../../archives/customer-attraction/state/资源/两组鲜主题完整策略的轨道质量锥与双版本价格探索--资源.md>) | math-exposition | retain | 两组鲜主题固定策略在轨道总质量上构造全部历史压缩IC，分析weak/uniform价格目标和单占块直接预算。 |
+| [两覆盖结构与成对安全工作区的准确接续--资源](<../../../../archives/customer-attraction/state/资源/两覆盖结构与成对安全工作区的准确接续--资源.md>) | math-exposition | retain | 真正背景安全值的成对条件推论被合法沉没背景反例阻断，实际缩放税付款由13人例否定，并辨别260有限策略锥。 |
+| [严格唯一顺序均衡原审计的单位客户与策略合同--资源](<../../../../archives/customer-attraction/state/资源/严格唯一顺序均衡原审计的单位客户与策略合同--资源.md>) | math-exposition | retain | 四标签三人12客户与1215满支持严格唯一完整SPE均低于全部静态PNE，给出21节点真偏离与静态64终局的比较。 |
+| [严格策略发现与冻结静态偏离压缩的精确合同--资源](<../../../../archives/customer-attraction/state/资源/严格策略发现与冻结静态偏离压缩的精确合同--资源.md>) | math-exposition | retain | 三人严格策略发现与固定策略压缩的S/P/N/W整数行，并核16客户点W14、PNE15、OPT16的数学分离。 |
+| [个人资产结构检查记录的覆盖范围--资源](<../actions/8df309e56fc8937ad091.json>) | non-math | delete | 566字节记录只报69链接、Python语法、五JSON解析通过；不含客户输入或数学论断。 |
+| [中文资产目录的命名覆盖与渲染合同--资源](<../actions/571136a75aff13dd7ad3.json>) | non-math | delete | 旧中文目录生成器和2099路径的命名、格式、覆盖规则；无独立数学证明或构造。 |
+| [九标签首对策略的轨道锥与全类型交替探针--资源](<../../../../archives/customer-attraction/state/资源/九标签首对策略的轨道锥与全类型交替探针--资源.md>) | math-exposition | retain | 九标签五人辅助编译的19轨道与511类型两种LP，说明真实安全值、完整策略7381节点IC及浮点阴性边界。 |
 | [二值根桥与双侧修复反馈的量词合同--资源](<../../../../archives/customer-attraction/state/资源/二值根桥与双侧修复反馈的量词合同--资源.md>) | math-exposition | retain | 五根32型匹配行和任意根提升，以及双侧修复C(g)、统一价格量词的数学反馈。 |
 | [二关联目录有限全集与固定见证逆锥的原探针--资源](<../../../../archives/customer-attraction/state/资源/二关联目录有限全集与固定见证逆锥的原探针--资源.md>) | math-exposition | retain | 二关联签名不超过两项，枚举完整历史可达结果与固定见证逆锥，并限定有限探针的非全称范围。 |
-| [二关联逐人候选的五环审计与版本边界--资源](<../../../../archives/customer-attraction/state/资源/二关联逐人候选的五环审计与版本边界--资源.md>) | evidence-only | attach | 五环程序仅核25个末前缀的theta=3/2及五条末位严格偏离，未给完整SPE；后续七环另有反例。 |
+| [二关联逐人候选的五环审计与版本边界--资源](<../actions/85e3d41213bda7c7aa9a.json>) | evidence-only | attach | 五环程序仅核25个末前缀的theta=3/2及五条末位严格偏离，未给完整SPE；后续七环另有反例。 |
+| [二十三客户双策略作者审计与同字节锥别名--资源](<../../../../archives/customer-attraction/state/资源/二十三客户双策略作者审计与同字节锥别名--资源.md>) | math-exposition | retain | 23客户两种完整SPE福利23、末位收益12，否定末位收益倍数与逐人均摊加强桥，并区分缺失对偶乘子。 |
 | [二十九客户根价格的父方Fraction重构合同--资源](<../../../../archives/customer-attraction/state/资源/二十九客户根价格的父方Fraction重构合同--资源.md>) | math-exposition | retain | 29 客户 HI/G/R 递推及 57 条路径价格，给出四个非零对偶乘子精确 LP 值 29，并区分完整 SPE。 |
-| [五人主证书与局部复跑的最终验收身份--资源](<../../../../archives/customer-attraction/state/资源/五人主证书与局部复跑的最终验收身份--资源.md>) | evidence-only | attach | 五人半覆盖已在定理正文；本页仅两次同一主核验器报告、36局部组件及最终验收身份。 |
-| [五人二轮补行与交接快照的证据范围--资源](<../../../../archives/customer-attraction/state/资源/五人二轮补行与交接快照的证据范围--资源.md>) | evidence-only | attach | 旧五人打包/交接快照及42来源处理范围，旧701必要点与单换来源另有数学正文。 |
+| [二十五客户弱核见证的紧凑全历史策略与双版本--资源](<../../../../archives/customer-attraction/state/资源/二十五客户弱核见证的紧凑全历史策略与双版本--资源.md>) | math-exposition | retain | 25客户新紧凑156节点完整策略经四层分类给SPE/W20，保旧唯一核π与cap23/4的弱封顶分离。 |
+| [五人主证书与局部复跑的最终验收身份--资源](<../actions/aa1882f99bfaf4e97483.json>) | evidence-only | attach | 五人半覆盖已在定理正文；本页仅两次同一主核验器报告、36局部组件及最终验收身份。 |
+| [五人二轮补行与交接快照的证据范围--资源](<../actions/2407ea20c10eb5996bca.json>) | evidence-only | attach | 旧五人打包/交接快照及42来源处理范围，旧701必要点与单换来源另有数学正文。 |
 | [五人前缀信用接口与内部独审的历史范围--资源](<../../../../archives/customer-attraction/state/资源/五人前缀信用接口与内部独审的历史范围--资源.md>) | math-exposition | retain | 同一五人前缀的四余人P4与三余人P3信用及非负客户余项，分别给39727u1/24000和47P/24付款条件。 |
 | [五人原证书的parent整数独审与九类最优比较--资源](<../../../../archives/customer-attraction/state/资源/五人原证书的parent整数独审与九类最优比较--资源.md>) | math-exposition | retain | 五人StrongA证书的九类最优五标签多重集和840有序指派完整分类，并区分冻结预算量词。 |
 | [五人双分支证书的原审计和恢复依赖--资源](<../../../../archives/customer-attraction/state/资源/五人双分支证书的原审计和恢复依赖--资源.md>) | math-exposition | retain | 五人重复前三主题双真分支的18行千分和有理乘子条件证书，h端点覆盖全部客户位型。 |
 | [五人定义攻击与实际末位菜单探针的原范围--资源](<../../../../archives/customer-attraction/state/资源/五人定义攻击与实际末位菜单探针的原范围--资源.md>) | math-exposition | retain | 五人真分支上界、Cauchy 估计和实际末位 K/M 菜单，陈述 63 客户常数五的完整 SPE 与纯列 17/2。 |
 | [五人尾部付款与菜单十四来源的范围和原程序合同--资源](<../../../../archives/customer-attraction/state/资源/五人尾部付款与菜单十四来源的范围和原程序合同--资源.md>) | math-exposition | retain | 五人尾部势的 13 客户局部反例、菜单参数断点和付款上下界具有明确数学陈述。 |
-| [五人最大根与共享菜单原件的复现边界--资源](<../../../../archives/customer-attraction/state/资源/五人最大根与共享菜单原件的复现边界--资源.md>) | evidence-only | attach | 29来源的最大根/共享菜单原件、复放身份及七份已有数学对象定位，没有独立于其正文的数学断言。 |
+| [五人最大根与共享菜单原件的复现边界--资源](<../actions/6802d895142f087b485d.json>) | evidence-only | attach | 29来源的最大根/共享菜单原件、复放身份及七份已有数学对象定位，没有独立于其正文的数学断言。 |
 | [五人根刚性闭合分支的作者证书与发现来源--资源](<../../../../archives/customer-attraction/state/资源/五人根刚性闭合分支的作者证书与发现来源--资源.md>) | math-exposition | retain | 五人共同最大根的F_T(Q)≤u+(113/21)(5u−\|T\|)合同及七非负真行、64会员余项被完整解释。 |
 | [五人根独立审计的输入身份与投影范围--资源](<../../../../archives/customer-attraction/state/资源/五人根独立审计的输入身份与投影范围--资源.md>) | math-exposition | retain | 七行P7与十三行P13真实菜单税及63原子负投影、混合查询超几何行。 |
 | [五人根约束与共享容量工作区的原命题登记--资源](<../../../../archives/customer-attraction/state/资源/五人根约束与共享容量工作区的原命题登记--资源.md>) | math-exposition | retain | 登记五人根约束 763F 上界和共享 K 容量切线 β 的数值范围及根极值主张。 |
+| [五人根缺陷种子对的平局分叉与共享遗漏--资源](<../../../../archives/customer-attraction/state/资源/五人根缺陷种子对的平局分叉与共享遗漏--资源.md>) | math-exposition | retain | 九客户与42客户四份正深度可信计划均有根遗憾，后者不同根导致福利36或38；用三倍根保险式计算缺陷。 |
 | [五人相邻钱包原证书的tree全矩阵独审与最优选择界--资源](<../../../../archives/customer-attraction/state/资源/五人相邻钱包原证书的tree全矩阵独审与最优选择界--资源.md>) | math-exposition | retain | 五人raw端点矩阵给COMMON-ALL坏差2714689114258275，却证明此点所有最优tuple指派均有严格负付款余量。 |
+| [五人索引证书来源反馈与阶段询问回执--资源](<../../../../archives/customer-attraction/state/资源/五人索引证书来源反馈与阶段询问回执--资源.md>) | math-exposition | retain | 五人索引反馈复述同一真实末位LAST不等式排2396旧点，并推同查询完全图行由旧族内行支配；历史消息另保来源。 |
 | [五八人BR信用构造器与完整计数策略的原生合同--资源](<../../../../archives/customer-attraction/state/资源/五八人BR信用构造器与完整计数策略的原生合同--资源.md>) | math-exposition | retain | 计数递归逐孩子真实收益择优构成一份完整纯SPE，展示五人自由pivot信用可付与八人首债41/8超过4的路线障碍。 |
-| [五十二客户冻结匹配恢复链与六份原记录--资源](<../../../../archives/customer-attraction/state/资源/五十二客户冻结匹配恢复链与六份原记录--资源.md>) | evidence-only | attach | 52客户匹配反例候选恢复、六原报告与旧执行身份链，结论另在完整反例。 |
+| [五十二客户冻结匹配恢复链与六份原记录--资源](<../actions/d452e1fcfbcc074a2bdd.json>) | evidence-only | attach | 52客户匹配反例候选恢复、六原报告与旧执行身份链，结论另在完整反例。 |
 | [五客户空根计划的正深度可信性与根遗憾--资源](<../../../../archives/customer-attraction/state/资源/五客户空根计划的正深度可信性与根遗憾--资源.md>) | math-exposition | retain | 五客户三人31节点计划在全部正深度可信但根选空题收益0、偏离得1，故不是完整SPE。 |
 | [五标签三人fresh根保底的原始超时可行候选--资源](<../../../../archives/customer-attraction/state/资源/五标签三人fresh根保底的原始超时可行候选--资源.md>) | math-exposition | retain | 超时候选之外分析 α=β=−1 的常数博弈及 θ=根值=−3，明确否定正保底主张。 |
 | [五环整数安全值原审计的字段与范围合同--资源](<../../../../archives/customer-attraction/state/资源/五环整数安全值原审计的字段与范围合同--资源.md>) | math-exposition | retain | 五环静态安全值3/5上下界和区间信用−1/10、单主题算式。 |
 | [交换入口的复制反例末层锐界与CCE停点--资源](<../../../../archives/customer-attraction/state/资源/交换入口的复制反例末层锐界与CCE停点--资源.md>) | math-exposition | retain | 35客户复制全利润两倍失败、真实前缀请求PCAP精确消元及末层锐常数2反族。 |
+| [产品菜单与银行时间谱的量词及付款接口--资源](<../../../../archives/customer-attraction/state/资源/产品菜单与银行时间谱的量词及付款接口--资源.md>) | math-exposition | retain | 产品不交复制给通用菜单量词等价，银行实际路径时间谱给主收益缺陷总预算及全历史饱和投影条件。 |
+| [产品转移金融接口与阈值障碍的精确命题账本--资源](<../../../../archives/customer-attraction/state/资源/产品转移金融接口与阈值障碍的精确命题账本--资源.md>) | math-exposition | retain | 产品SPE闭包、L凸化、SM条件放大有准确量词；标量整行与逐客户费用可无界分离，阈值环例缺尾SPE。 |
 | [任意主题根行的刚性等价与有限补全探针--资源](<../../../../archives/customer-attraction/state/资源/任意主题根行的刚性等价与有限补全探针--资源.md>) | math-exposition | retain | 任意主题根RIG等价与缺席位证明、根饱和排除和527行有理点。 |
 | [任意人数价格与弱门槛工作区的版本入口--资源](<../../../../archives/customer-attraction/state/资源/任意人数价格与弱门槛工作区的版本入口--资源.md>) | math-exposition | retain | 弱θ复制族、末两人价与真实遗漏反例的量词边界。 |
 | [任意子查询付款的两种充分证书与原等价勘误--资源](<../../../../archives/customer-attraction/state/资源/任意子查询付款的两种充分证书与原等价勘误--资源.md>) | math-exposition | retain | 任意晚查询FINANCE总吸收与逐客户COORD是不同充分证书，完整两人SPE族使两者最优费用比无界。 |
@@ -2528,9 +2542,12 @@
 | [优先有效效用反桥的有限审计与一手文献边界--资源](<../../../../archives/customer-attraction/state/资源/优先有效效用反桥的有限审计与一手文献边界--资源.md>) | math-exposition | retain | 最高编号优先规则构造 m=3/4 的全历史 SPE 与福利 1 对 OPT m，并解释静态有效效用假设不能迁移。 |
 | [优先权付款的旧来源去重与child回归输入合同--资源](<../../../../archives/customer-attraction/state/资源/优先权付款的旧来源去重与child回归输入合同--资源.md>) | math-exposition | retain | priority彩票ENV/COVER等价、同角色共同预算与条件协方差债。 |
 | [保护价格实际前缀反例与结构价格的根账本--资源](<../../../../archives/customer-attraction/state/资源/保护价格实际前缀反例与结构价格的根账本--资源.md>) | math-exposition | retain | 27客户B_D(6)=2及52客户实际前缀P+λΔ−freshOPT=−1反例。 |
+| [保留主题与动态门槛接续来源的证据账本--资源](<../../../../archives/customer-attraction/state/资源/保留主题与动态门槛接续来源的证据账本--资源.md>) | math-exposition | retain | 19源接续中明确全覆盖自然价、纯额外槽银行反例、保留主题构造和动态可信后继L的条件边界。 |
 | [保留主题与占用储备根账本的现态校正--资源](<../../../../archives/customer-attraction/state/资源/保留主题与占用储备根账本的现态校正--资源.md>) | math-exposition | retain | 不交储备提升及占用自税恒等式 n qᵀKp=V⁺+I，另以驻点选择器反例限定完整历史结论。 |
 | [保留重叠税十条形式恒等式与第二轮回复边界--资源](<../../../../archives/customer-attraction/state/资源/保留重叠税十条形式恒等式与第二轮回复边界--资源.md>) | math-exposition | retain | 六组客户构成十条PAIR税多项式全m非负证书，仍非SPE。 |
+| [全历史修复与端点审查的来源及方向账本--资源](<../../../../archives/customer-attraction/state/资源/全历史修复与端点审查的来源及方向账本--资源.md>) | mixed/needs-context | extract | 审查和事件总账包含异质可信修复2Σδ+maxδ、共享前缀cap、ROLE/AMOUNT等数学边界，也大量记录旧actor、消息和来源。 |
 | [全局保底研究入口的充分桥障碍与未成熟菜单边界--资源](<../../../../archives/customer-attraction/state/资源/全局保底研究入口的充分桥障碍与未成熟菜单边界--资源.md>) | math-exposition | retain | 构造36m客户保护松弛反族，另记五人包含前缀18行条件证书、真实末菜单G及银行逐人门槛反族。 |
+| [全局覆盖入口的静态PNE证书与净差合同--资源](<../../../../archives/customer-attraction/state/资源/全局覆盖入口的静态PNE证书与净差合同--资源.md>) | math-exposition | retain | 四人50客户完整SPE福利49与唯一静态PNE覆盖50分离，并给出遗漏R减实际独有G的净差义务。 |
 | [全局遗漏与第六位独立工作区的旧入口边界--资源](<../../../../archives/customer-attraction/state/资源/全局遗漏与第六位独立工作区的旧入口边界--资源.md>) | math-exposition | retain | 两人无限遗漏族给出 W=13k−4、OPT=14k−4 等公式，并说明第六位弱 CCE 只是候选。 |
 | [全树付款前沿的历史候选与已排除接口--资源](<../../../../archives/customer-attraction/state/资源/全树付款前沿的历史候选与已排除接口--资源.md>) | math-exposition | retain | 系统区分旧付款路线失败，并写出最优客户一次收费OPT≤R+(1−1/m)W及R≤(1+1/m)W足够half的未证接口。 |
 | [全树单顶点稀释旧障碍的原点与验证合同--资源](<../../../../archives/customer-attraction/state/资源/全树单顶点稀释旧障碍的原点与验证合同--资源.md>) | math-exposition | retain | 全树图真实偏离行与同标签锐稀释κ的证明，固定抽象收益W1/O9/4满足必要行却违反同支持守恒5/8≠3/4。 |
@@ -2545,19 +2562,26 @@
 | [八客户与四十二客户静态CCE分离的原核验合同--资源](<../../../../archives/customer-attraction/state/资源/八客户与四十二客户静态CCE分离的原核验合同--资源.md>) | math-exposition | retain | 两个八客户完整 SPE 策略版本、静态 CCE 544/87 和 42 客户 CCE 至少 33 对福利 32 的分离均有明确陈述。 |
 | [八客户强iid精确证书与聚合入口的版本合同--资源](<../../../../archives/customer-attraction/state/资源/八客户强iid精确证书与聚合入口的版本合同--资源.md>) | math-exposition | retain | 三人八客户完整SPE福利6，静态iid势唯一最大者q*给Z=(4344−156√669)/49>6，另精确v3=44/23。 |
 | [八百十七客户分数原包与三十五客户复制报告的主源路由--资源](<../../../../archives/customer-attraction/state/资源/八百十七客户分数原包与三十五客户复制报告的主源路由--资源.md>) | math-exposition | retain | 817客户分数旧包与35客户完整策略复制点18−2·8=2。 |
-| [公共基础旧目录的逐项用途--资源](<../../../../archives/customer-attraction/state/资源/公共基础旧目录的逐项用途--资源.md>) | non-math | delete | 14条公共旧目录用途、角色及路径索引，仅导航其它正文。 |
+| [公共基础旧目录的逐项用途--资源](<../actions/6dd6820b1319b19ae49e.json>) | non-math | delete | 14条公共旧目录用途、角色及路径索引，仅导航其它正文。 |
+| [六人共同付款工作区的查询闭包与证据版本--资源](<../../../../archives/customer-attraction/state/资源/六人共同付款工作区的查询闭包与证据版本--资源.md>) | math-exposition | retain | 六人共同付款旧667/701必要系统、34权同源真行、强PAIR和同菜单图分别有条件证书；后继M负行排固定701点完整补全。 |
 | [六人共同回复工作区的前沿与证据版本--资源](<../../../../archives/customer-attraction/state/资源/六人共同回复工作区的前沿与证据版本--资源.md>) | math-exposition | retain | 六人共同回复必要投影1033/3889停界及后继真行排除。 |
 | [六人冻结前沿的条件谱与共享回复接续账本--资源](<../../../../archives/customer-attraction/state/资源/六人冻结前沿的条件谱与共享回复接续账本--资源.md>) | math-exposition | retain | 六人9/2分数覆盖、私有遗漏条件与5112必要图坏点的各自范围和共享回复待付预算。 |
+| [六人半覆盖的独立研究合同与探索边界--资源](<../../../../archives/customer-attraction/state/资源/六人半覆盖的独立研究合同与探索边界--资源.md>) | math-exposition | retain | 六人half的完整策略量词、五人及六极大地基、FLOOR/PRICE/PAIR/CAP真行与未证动态安全付款均有公式和边界。 |
 | [六人协调前沿与逐人缺口探索的范围证据--资源](<../../../../archives/customer-attraction/state/资源/六人协调前沿与逐人缺口探索的范围证据--资源.md>) | math-exposition | retain | 六人根实际覆盖支撑引理推 OPT_m≤(2−1/m)W+(1−1/m)\|B\|，并列逐人缺口候选和有限探针。 |
 | [六人协调简报的真实查询合同与保根表示边界--资源](<../../../../archives/customer-attraction/state/资源/六人协调简报的真实查询合同与保根表示边界--资源.md>) | math-exposition | retain | 六人条件证明覆盖双早包含、S/Z/V联合行及错误K模板矛盾，保根一信号重置全历史构造与坏例必要筛选。 |
+| [六人同层原子闭包与势余项研究入口版本--资源](<../../../../archives/customer-attraction/state/资源/六人同层原子闭包与势余项研究入口版本--资源.md>) | mixed/needs-context | extract | 工作区来源导航保六人6000客户非SPE势停界、六客户真实SPE分支障碍、27共同原子与后续新源分离，夹杂研究状态。 |
 | [六人客户残差与常数极大压缩的评审合同--资源](<../../../../archives/customer-attraction/state/资源/六人客户残差与常数极大压缩的评审合同--资源.md>) | math-exposition | retain | 六人R_tau倒二真实菜单行及前缀产品界，44行坏点只排指定模板；all-big族反常数极大数压缩。 |
-| [六人真实源查询的审核账本与冻结输入版本--资源](<../../../../archives/customer-attraction/state/资源/六人真实源查询的审核账本与冻结输入版本--资源.md>) | evidence-only | attach | 根README仅导航27/28原子、915/3949系统和各切面来源，独立公式在所链正式页。 |
+| [六人真实源查询的审核账本与冻结输入版本--资源](<../actions/119e42edb2a0259796e9.json>) | evidence-only | attach | 根README仅导航27/28原子、915/3949系统和各切面来源，独立公式在所链正式页。 |
+| [六人研究入口与真实尾利润投影的四条冻结行--资源](<../../../../archives/customer-attraction/state/资源/六人研究入口与真实尾利润投影的四条冻结行--资源.md>) | math-exposition | retain | 真后继利润与末价的离散下包络由源IC、背景尾利润与末价三行合成，四个正有理乘子在3889必要点只给有限余量。 |
 | [六人研究入口的结构范围与接续记录--资源](<../../../../archives/customer-attraction/state/资源/六人研究入口的结构范围与接续记录--资源.md>) | math-exposition | retain | 六人倒二两个包含条件的客户系数证书、各自量词与至多六极大结构子类边界。 |
 | [六人研究简报的证明范围与席位报告版本账本--资源](<../../../../archives/customer-attraction/state/资源/六人研究简报的证明范围与席位报告版本账本--资源.md>) | math-exposition | retain | 辨明六人52路由属五人、2016会员属六人，并解释目标分数覆盖权τ_D与全目录τ_V不同。 |
 | [六人精选交接包的模型合同与历史证据账本--资源](<../../../../archives/customer-attraction/state/资源/六人精选交接包的模型合同与历史证据账本--资源.md>) | math-exposition | retain | 恰六人half量词、三类不同障碍及后继十三行分离边界。 |
 | [六人联合末回复闭包工作区的来源与停界--资源](<../../../../archives/customer-attraction/state/资源/六人联合末回复闭包工作区的来源与停界--资源.md>) | math-exposition | retain | 固定旧R/Z四态Fréchet宽上界负，释放Z/RZ的3949行有理修复可行，但两条无K对角真行仍排该骨架。 |
 | [六份固定策略对角报告与双pair原审计的合同--资源](<../../../../archives/customer-attraction/state/资源/六份固定策略对角报告与双pair原审计的合同--资源.md>) | math-exposition | retain | 根查询矩阵的交叉项H_AB及全p非负充分推导、348策略PAIR指定两枝反例。 |
 | [六十九客户与十六人信用标尺原报告的字段语义--资源](<../../../../archives/customer-attraction/state/资源/六十九客户与十六人信用标尺原报告的字段语义--资源.md>) | math-exposition | retain | 69 客户策略的全历史 IC 与 Profit/F/h 台阶定义、四人 floor 违例 4、三人剩余 41/5 信用及 n16 上下标尺有明确数学语义。 |
+| [六命名共同Q阳性与千次随机诊断的原报告范围--资源](<../../../../archives/customer-attraction/state/资源/六命名共同Q阳性与千次随机诊断的原报告范围--资源.md>) | numeric-witness | distill | 六命名共同Q浮点阳性和三人三标签1000/0报告只有背景概率与success，缺客户、完整策略、乘子及逐类型余项，不能认证固定锥。 |
+| [六标签静态指派搜索的混合整数合同与固定策略简化--资源](<../../../../archives/customer-attraction/state/资源/六标签静态指派搜索的混合整数合同与固定策略简化--资源.md>) | math-exposition | retain | 六标签三人有符号辅助势的251变量MILP与固定策略70变量简化搜索，明确目标最优支持和六冻结指派的数学约束。 |
+| [共享均值预算与五人接续入口的真实状态--资源](<../../../../archives/customer-attraction/state/资源/共享均值预算与五人接续入口的真实状态--资源.md>) | math-exposition | retain | 固定过去均值预算与完整槽原源范数恒等式区分同一信用，五人AP菜单真行和两尾势缺口仍有共同付款义务。 |
 | [共享最大铰链与十单位策略的原独立回放--资源](<../../../../archives/customer-attraction/state/资源/共享最大铰链与十单位策略的原独立回放--资源.md>) | math-exposition | retain | 双菜单铰链F(H,T)≤8v−7κ及57原子必要条件点、十客户完整五人策略末位份额反例，明确各自量词。 |
 | [共享索引包络与二关联续局的命题账本--资源](<../../../../archives/customer-attraction/state/资源/共享索引包络与二关联续局的命题账本--资源.md>) | math-exposition | retain | 五人同索引AB/second真实末位偏离的共享t上包络及秩二七环逐人θ失败的量词。 |
 | [共享遗漏惩罚与无背景移植的真实末位障碍--资源](<../../../../archives/customer-attraction/state/资源/共享遗漏惩罚与无背景移植的真实末位障碍--资源.md>) | math-exposition | retain | 共享遗漏惩罚的末位外选项严格增益和全k目录倒二真实退出缺陷。 |
@@ -2567,12 +2591,14 @@
 | [共同客户工作区根账本的五项命题与信用桥版本--资源](<../../../../archives/customer-attraction/state/资源/共同客户工作区根账本的五项命题与信用桥版本--资源.md>) | math-exposition | retain | 列出高背景、双支持恒等式、1284 投影和局部失败例的不同命题与适用域。 |
 | [共同客户正锥研究账本的命题与审计合同--资源](<../../../../archives/customer-attraction/state/资源/共同客户正锥研究账本的命题与审计合同--资源.md>) | math-exposition | retain | 逐项解释iid弱桥、包含复制DP、严格唯一SPE与模块全效率，并给正客户锥回路和signed全局二阶割的数学范围。 |
 | [共同客户耦合原审计的符号矩与有限客户行合同--资源](<../../../../archives/customer-attraction/state/资源/共同客户耦合原审计的符号矩与有限客户行合同--资源.md>) | math-exposition | retain | 有符号三标签客户矩、三角负余项及四标签整数二次割的公式和反例范围，与有限审计计数区分。 |
-| [共同查询探索的发现输入与完整证书边界--资源](<../../../../archives/customer-attraction/state/资源/共同查询探索的发现输入与完整证书边界--资源.md>) | evidence-only | attach | 记录 CQ-min 有限反例的来源与证书位置，主要是读取和证据边界。 |
-| [共同目录双设施旧目录的逐项用途--资源](<../../../../archives/customer-attraction/state/资源/共同目录双设施旧目录的逐项用途--资源.md>) | non-math | delete | 23条共同设施旧用途与路径索引，数学词仅指向独立证明，无本页推导。 |
+| [共同查询探索的发现输入与完整证书边界--资源](<../actions/4b906943cf63637ba3a0.json>) | evidence-only | attach | 记录 CQ-min 有限反例的来源与证书位置，主要是读取和证据边界。 |
+| [共同目录入射预算与真实后继的阶段入口--资源](<../../../../archives/customer-attraction/state/资源/共同目录入射预算与真实后继的阶段入口--资源.md>) | math-exposition | retain | 共同目录入射星LP模板给B(m)=ms/2，真实中继必须计旧玩家收益变化，净覆盖债为最优遗漏减实际独有。 |
+| [共同目录双设施旧目录的逐项用途--资源](<../actions/742e2d79db59605ed284.json>) | non-math | delete | 23条共同设施旧用途与路径索引，数学词仅指向独立证明，无本页推导。 |
 | [共同目录双设施资产的条件与角色--资源](<../../../../archives/customer-attraction/state/资源/共同目录双设施资产的条件与角色--资源.md>) | mixed/needs-context | extract | 资产登记JSON混有shared phi、局部弦、复杂性与近带补全精确数学范围及大量路径状态字段。 |
 | [共同运输原审计与双预算复核的范围--资源](<../../../../archives/customer-attraction/state/资源/共同运输原审计与双预算复核的范围--资源.md>) | math-exposition | retain | 共同prefix列与静态删位付款、全客户双预算的总容量等价half所缺共同金额。 |
 | [共同退款与共享负载反馈的量词和历史回执--资源](<../../../../archives/customer-attraction/state/资源/共同退款与共享负载反馈的量词和历史回执--资源.md>) | math-exposition | retain | 共享退款正缺额H与净half不同，179客户逐人失败；共享凸负载静态信用仍缺协方差付款。 |
 | [关联预算与中继工作区身份记录--资源](<../../../../archives/customer-attraction/state/资源/关联预算与中继工作区身份记录--资源.md>) | mixed/needs-context | extract | 三份身份记录混入三主题/五人结果、关联预算与中继适用域摘要；应回接已存在的数学正文后清掉身份页。 |
+| [再查询二十八共同原子的版本与分离证据--资源](<../../../../archives/customer-attraction/state/资源/再查询二十八共同原子的版本与分离证据--资源.md>) | math-exposition | retain | 28共同R/Z原子必要点与旧27点的质量/签名不同；无K第四源840项有理切面分离此固定点并说明线性R正部消元范围。 |
 | [冻结指派原审计的十三目标与严格唯一锥范围--资源](<../../../../archives/customer-attraction/state/资源/冻结指派原审计的十三目标与严格唯一锥范围--资源.md>) | math-exposition | retain | 十三固定SPE目标的冻结指派精确成本，严格唯一多重集锥对三重复目标必有δ=0。 |
 | [冻结组合保底与根行加强的原稿审查合同--资源](<../../../../archives/customer-attraction/state/资源/冻结组合保底与根行加强的原稿审查合同--资源.md>) | math-exposition | retain | 星族静态保底失败、到达租金恒等式和十客户六人 ROOT-K 反例具有明确数学结构及量词。 |
 | [净差匹配的早期覆盖信用与真实分母债--资源](<../../../../archives/customer-attraction/state/资源/净差匹配的早期覆盖信用与真实分母债--资源.md>) | math-exposition | retain | 推导 E−Δ 净差恒等及静态信用、真实分母债和交替差分核。 |
@@ -2580,41 +2606,49 @@
 | [净退款根账本的版本订正与静态组件边界--资源](<../../../../archives/customer-attraction/state/资源/净退款根账本的版本订正与静态组件边界--资源.md>) | math-exposition | retain | 净退款的最优并集量词、银行逐人门槛反驳、响应协方差精确分解及多槽交换式。 |
 | [净遗漏停止前沿的父稿付款合同--资源](<../../../../archives/customer-attraction/state/资源/净遗漏停止前沿的父稿付款合同--资源.md>) | math-exposition | retain | 净遗漏首次停止守恒OPT−2W=B_stop−E−U及合法hybrid cut，揭示停量law与财务law尚无共同价格转换。 |
 | [净遗漏预算与最优前缀付款的历史接口--资源](<../../../../archives/customer-attraction/state/资源/净遗漏预算与最优前缀付款的历史接口--资源.md>) | math-exposition | retain | 净遗漏 L−E 的正确付款需求、22 客户最优前缀账单 D>W 与非根跨枝中继恒等式均有明确数学陈述。 |
+| [分数基数伪客户的原审计与父审范围--资源](<../../../../archives/customer-attraction/state/资源/分数基数伪客户的原审计与父审范围--资源.md>) | math-exposition | retain | 分数基数伪客户以m+1/2阶矩保formal-degree条件平方而二阶整数行负1/4，signed全树IC并非非负客户。 |
 | [分数覆盖工作区的六源合同与有限回归--资源](<../../../../archives/customer-attraction/state/资源/分数覆盖工作区的六源合同与有限回归--资源.md>) | math-exposition | retain | 解释分数前缀利润、截断质量包络及 τ≤7/2 的条件半覆盖，有限回归另列范围。 |
 | [删信用预算并行审查与分支成本的精确校准--资源](<../../../../archives/customer-attraction/state/资源/删信用预算并行审查与分支成本的精确校准--资源.md>) | math-exposition | retain | 最优首动作菜单 LOCAL 恒等式及 all-big 全人数族证明删同尾信用预算 B_m>0，区分系数折扣与局部上界。 |
 | [删当前自洽池与完整端点cap回收的根稿接口--资源](<../../../../archives/customer-attraction/state/资源/删当前自洽池与完整端点cap回收的根稿接口--资源.md>) | math-exposition | retain | 删当前自洽池的一般存在性和条件效率界，以及完整尾SPE不改善前缀的cap回收引理。 |
 | [删除修复的两个福利方向与独立全历史回归合同--资源](<../../../../archives/customer-attraction/state/资源/删除修复的两个福利方向与独立全历史回归合同--资源.md>) | math-exposition | retain | 花瓣形式策略的后悔无常数族、18客户删除后可信重选福利下降及方向UP/DOWN和鲁棒乘积式。 |
 | [前缀回推双审查与静态运输入口的合同--资源](<../../../../archives/customer-attraction/state/资源/前缀回推双审查与静态运输入口的合同--资源.md>) | math-exposition | retain | 证明同parent前缀利润PUSH的共同列κ∞≤L，H补余与共享客户M耦合，完整SPE两孩子例示无权叠加超钱包。 |
-| [前缀替换与弱末菜单修复的入口时态--资源](<../../../../archives/customer-attraction/state/资源/前缀替换与弱末菜单修复的入口时态--资源.md>) | evidence-only | attach | 四个入口的数学推导均指向已有引理，本页主要校正来源、旧状态与读序。 |
+| [前缀替换与弱末菜单修复的入口时态--资源](<../actions/e45e92fa95cc43755c9d.json>) | evidence-only | attach | 四个入口的数学推导均指向已有引理，本页主要校正来源、旧状态与读序。 |
 | [前缀流真实分享与两类独审的历史边界--资源](<../../../../archives/customer-attraction/state/资源/前缀流真实分享与两类独审的历史边界--资源.md>) | math-exposition | retain | all-big 前缀共享损失 m(H_m−1) 与 IC 退款、角色券放松的完整构造及合法复制义务有实质数学解释。 |
 | [加权拥塞旧文件链的全部用途与导出合同--资源](<../../../../archives/customer-attraction/state/资源/加权拥塞旧文件链的全部用途与导出合同--资源.md>) | mixed/needs-context | extract | 501行加权拥塞资产目录与导出/来源身份占主体，仍记后续全状态线性下界否定旧Cd/ln d目标及各数学包的适用边界，抽取数学时态并保原目录。 |
-| [加权拥塞旧目录的逐项用途--资源](<../../../../archives/customer-attraction/state/资源/加权拥塞旧目录的逐项用途--资源.md>) | non-math | delete | 501条加权拥塞旧目录的用途和原路径索引；奇环、线性重置及势结论仅为被链正文的用途说明，无本页数学展开。 |
+| [加权拥塞旧目录的逐项用途--资源](<../actions/b7bed4b97397d4045e6d.json>) | non-math | delete | 501条加权拥塞旧目录的用途和原路径索引；奇环、线性重置及势结论仅为被链正文的用途说明，无本页数学展开。 |
 | [加权拥塞资产的范围与后续修正--资源](<../../../../archives/customer-attraction/state/资源/加权拥塞资产的范围与后续修正--资源.md>) | mixed/needs-context | extract | 79项旧加权拥塞资产逐项混合实质数学量词和界（如全状态 p/10 与 d−1200⌈log₂d⌉² 反例、条件势均衡）以及状态、路径、审查身份；应抽取数学范围，保原登记。 |
 | [动态门槛与归属税工作区的来源和未付预算--资源](<../../../../archives/customer-attraction/state/资源/动态门槛与归属税工作区的来源和未付预算--资源.md>) | math-exposition | retain | 门槛 TB、归属税及 Farkas 残差的数学订正，明确重复覆盖和真实跨枝付款缺口。 |
 | [势交换停界与全人数删人族的作者审计合同--资源](<../../../../archives/customer-attraction/state/资源/势交换停界与全人数删人族的作者审计合同--资源.md>) | math-exposition | retain | 全m删人族m人W=OPT=mL而较少人数根必T的完整策略机制；另有调和势全计数交换、严格改善环和同枢差分。 |
 | [势后悔工作区的三项Claim与历史门槛校正--资源](<../../../../archives/customer-attraction/state/资源/势后悔工作区的三项Claim与历史门槛校正--资源.md>) | math-exposition | retain | 同质末位B若对r−1个B最佳回复即OPT_m≤[1+(m−1)/r]\|B\|、W≥\|B\|；并纠正银行族逐人门槛旧OPEN。 |
 | [包含前缀证书的来源映射与背景回路工作区入口--资源](<../../../../archives/customer-attraction/state/资源/包含前缀证书的来源映射与背景回路工作区入口--资源.md>) | math-exposition | retain | 给背景切片核秩 min(2M,2d+1)、P 填充族参数及 fresh 辅助博弈的明确边界。 |
 | [包含追随与行动上界递归的原程序合同--资源](<../../../../archives/customer-attraction/state/资源/包含追随与行动上界递归的原程序合同--资源.md>) | math-exposition | retain | 首次包含追随与myopic可用行动的递归下界有明确全深度归纳和孪生族停界。 |
+| [区间线性单元搜索的程序与浮点报告合同--资源](<../../../../archives/customer-attraction/state/资源/区间线性单元搜索的程序与浮点报告合同--资源.md>) | math-exposition | retain | 区间终局HI的冻结线性cell LP只给浮点候选，严格排除等号边界需重放；两报告最佳5/3和9/5未破二。 |
+| [十三人精确税证书的构造与三重内部审计--资源](<../../../../archives/customer-attraction/state/资源/十三人精确税证书的构造与三重内部审计--资源.md>) | math-exposition | retain | 13人36客户完整SPE W33、OPT36反实际缩放精确税付款，区分固定自动机与盲BI重建的全历史证据。 |
+| [半重启付款的接口义务与势候选有限压力--资源](<../../../../archives/customer-attraction/state/资源/半重启付款的接口义务与势候选有限压力--资源.md>) | math-exposition | retain | 半重启唯一分布给容量二和H/J双符号债；六客户真实SPE使逐枝势预算差1/6，有限43697压力无全称性。 |
 | [协方差与势重置原审查的先验及版本边界--资源](<../../../../archives/customer-attraction/state/资源/协方差与势重置原审查的先验及版本边界--资源.md>) | math-exposition | retain | 四/七客户逐客户协方差失败与真根总账区别；同质筛选条件证明和POT/RESET的iid后继R+J代数核。 |
 | [协调入口的安全层次时态与真实租金对接--资源](<../../../../archives/customer-attraction/state/资源/协调入口的安全层次时态与真实租金对接--资源.md>) | math-exposition | retain | 写明自由安全值、真实菜单与单查询分布的蕴含链，并给 reset/clock 税的精确差异。 |
 | [协调通信冻结记录的全事件角色与版本范围--资源](<../../../../archives/customer-attraction/state/资源/协调通信冻结记录的全事件角色与版本范围--资源.md>) | mixed/needs-context | extract | 34条通信事件含数学反馈：五环安全值、同支持9/4与双支持27/13及八人首债，夹在大量身份时序记录。 |
 | [单位客户父审计与利润枚举的完整证据合同--资源](<../../../../archives/customer-attraction/state/资源/单位客户父审计与利润枚举的完整证据合同--资源.md>) | math-exposition | retain | 34、71、791 客户的完整策略辅助桥、剩余利润 F_tail 族和八人 DAG 混合菜单有明确数理解释。 |
 | [单尾异组参数锥的比较覆盖与首组超额合同--资源](<../../../../archives/customer-attraction/state/资源/单尾异组参数锥的比较覆盖与首组超额合同--资源.md>) | math-exposition | retain | 异组锚叶参数的实际覆盖 W 和比较 B、SPE 锥归一及首组超额 E=a₀−x₀/2 的含义明确。 |
+| [单末位响应与早期机会工作区的来源账本--资源](<../../../../archives/customer-attraction/state/资源/单末位响应与早期机会工作区的来源账本--资源.md>) | math-exposition | retain | 不交实际前缀单末位回复给条件β_k<2福利式，可信响应缺陷副本族使统一总预算失效；另有合法大背景误差工具。 |
 | [单组公共锚点的缺口发现与固定策略锥原合同--资源](<../../../../archives/customer-attraction/state/资源/单组公共锚点的缺口发现与固定策略锥原合同--资源.md>) | math-exposition | retain | 单组公共锚点固定43动作策略有理模型max a=2/3，根A枝给上界且明示有理点全历史可行。 |
 | [单组锚点原策略基点与单公共主题多尾探针--资源](<../../../../archives/customer-attraction/state/资源/单组锚点原策略基点与单公共主题多尾探针--资源.md>) | math-exposition | retain | 29客户三人完整43策略的逐层BR证明，及k+r单D族的OPT和末节点必要条件。 |
 | [单色续局闭包原审计与研究入口的准确范围--资源](<../../../../archives/customer-attraction/state/资源/单色续局闭包原审计与研究入口的准确范围--资源.md>) | math-exposition | retain | 两类对称差背景的不同单色可信续局不相容，q1五客户与q2二十一客户分别限定边界。 |
 | [历史根重放与后缀锥程序的输入输出合同--资源](<../../../../archives/customer-attraction/state/资源/历史根重放与后缀锥程序的输入输出合同--资源.md>) | math-exposition | retain | 52 客户冻结匹配 Q>W、后缀因果 CUT 必要式及固定策略 LP 的量词有数学陈述。 |
-| [历史资产验证与分数算术报告的适用范围--资源](<../../../../archives/customer-attraction/state/资源/历史资产验证与分数算术报告的适用范围--资源.md>) | evidence-only | attach | 七资产语法/JSON/链接验证计数和一份6561分数算术报告，无原多项式或证明。 |
+| [历史资产验证与分数算术报告的适用范围--资源](<../actions/7c8e4100be19f524416f.json>) | evidence-only | attach | 七资产语法/JSON/链接验证计数和一份6561分数算术报告，无原多项式或证明。 |
 | [原资源核与净缺口工作区的二次接续--资源](<../../../../archives/customer-attraction/state/资源/原资源核与净缺口工作区的二次接续--资源.md>) | math-exposition | retain | 净缺口NET系数必要界、有限层凹化及optional流未来覆盖密度不等式。 |
 | [去当前激励的真实孩子菜单合同与全背景入口勘误--资源](<../../../../archives/customer-attraction/state/资源/去当前激励的真实孩子菜单合同与全背景入口勘误--资源.md>) | math-exposition | retain | 任意真实孩子菜单的整数与分数采购对偶、倒二全实权定理和旧背景\|T\|/2捷径的反例。 |
 | [双写源压缩的精确债与独立首降审查版本--资源](<../../../../archives/customer-attraction/state/资源/双写源压缩的精确债与独立首降审查版本--资源.md>) | math-exposition | retain | 固定pivot连续两次写同回复e造重复源，推精确signed债D及K更新；m组Ai/R族所有首替换核降−1/m。 |
 | [双锚叶目录的浮点记录与同覆盖九客户解析证书--资源](<../../../../archives/customer-attraction/state/资源/双锚叶目录的浮点记录与同覆盖九客户解析证书--资源.md>) | math-exposition | retain | 双锚浮点点的末位障碍与九客户同覆盖标签的完整 SPE 解析证书给出独立数学内容。 |
+| [双预算初始化后直接交换的内部稀释税与净额义务--资源](<../../../../archives/customer-attraction/state/资源/双预算初始化后直接交换的内部稀释税与净额义务--资源.md>) | math-exposition | retain | 双预算INIT-2分割覆盖库存，但未来注入还须同一分割满足RES；最优槽交换只控O外新增，内稀释税仍未付。 |
 | [反复异题拥挤重构与StrongA发现简化的原实现合同--资源](<../../../../archives/customer-attraction/state/资源/反复异题拥挤重构与StrongA发现简化的原实现合同--资源.md>) | math-exposition | retain | 五人完整策略锥重权及强 A 固定查询不等式、整数简化范围兼有实质数学模型和证书解读。 |
 | [可信全历史搜索与双支持校正的原稿证据--资源](<../../../../archives/customer-attraction/state/资源/可信全历史搜索与双支持校正的原稿证据--资源.md>) | math-exposition | retain | 双支持背景BG四客户类型证明、真SPE错误认证纠正及有限搜索边界。 |
 | [可信全端点菜单的别名复核与静态付款下界--资源](<../../../../archives/customer-attraction/state/资源/可信全端点菜单的别名复核与静态付款下界--资源.md>) | math-exposition | retain | 全 cap 端点 D 的有限别名实现和反向商、minimax 以及 OPT≤2mM_adm 的条件桥有完整论证。 |
 | [可信删除分支入口的真预算与受限支持边界--资源](<../../../../archives/customer-attraction/state/资源/可信删除分支入口的真预算与受限支持边界--资源.md>) | math-exposition | retain | 真实删除分支预算 O≤(k+r−1)t_Q+A_Q 与十四客户受限支持失败，区分根路径与完整SPE。 |
 | [可信前缀价格命题与路由边界账本--资源](<../../../../archives/customer-attraction/state/资源/可信前缀价格命题与路由边界账本--资源.md>) | math-exposition | retain | 分别陈述真实退出银行、克隆复用债、SOURCE 密度和有符号组件编译的条件与公式。 |
+| [可信副本拼接的审查版本与低福利缺口--资源](<../../../../archives/customer-attraction/state/资源/可信副本拼接的审查版本与低福利缺口--资源.md>) | math-exposition | retain | 四客户副本的完整SPE族W=OPT4k而静态正遗憾k/2，否定按W/m统一倍数支付的加强桥。 |
 | [可信均值菜单与真实重放的原入口范围--资源](<../../../../archives/customer-attraction/state/资源/可信均值菜单与真实重放的原入口范围--资源.md>) | math-exposition | retain | 可信均值菜单三域、行动边际固定点与完整槽范数m\|\|ρt\|\|²，真实重放协方差费用仍缺共同支付。 |
+| [可信构造与全树共同非负性的来源边界--资源](<../../../../archives/customer-attraction/state/资源/可信构造与全树共同非负性的来源边界--资源.md>) | math-exposition | retain | 全码银行和共同signed终局包说明局部条件不能粘合非负客户；参数删除E客户在t=3/4切换可信终局门槛。 |
 | [可信独审与早期价格有限探针的逐输入合同--资源](<../../../../archives/customer-attraction/state/资源/可信独审与早期价格有限探针的逐输入合同--资源.md>) | math-exposition | retain | 近包含孪生族合法DP下界无常数而完整SPE全效率，早价强消元三余项加权−1/32只反固定模板。 |
 | [可信私有谱来源的遗漏层级缺口与泊松储备判别--资源](<../../../../archives/customer-attraction/state/资源/可信私有谱来源的遗漏层级缺口与泊松储备判别--资源.md>) | math-exposition | retain | 实际遗漏私有块一动作只触一个，谱λ_r保证W≥Σλ_r；仅遗漏层级时已覆盖客户差u_B^C−u_t^C未付款。 |
 | [可信编译资产的精确状态与五人接续账--资源](<../../../../archives/customer-attraction/state/资源/可信编译资产的精确状态与五人接续账--资源.md>) | math-exposition | retain | 五人半覆盖、根保险编译三倍损耗、前缀耦合席位及静态拥挤等多项精确命题范围均在正文展开。 |
@@ -2626,6 +2660,7 @@
 | [同支持守恒障碍的原始字节与定义级审计合同--资源](<../../../../archives/customer-attraction/state/资源/同支持守恒障碍的原始字节与定义级审计合同--资源.md>) | math-exposition | retain | 抽象9/4同支持点违反双标签共同signed身份6y=7/4，区分守恒与客户表示。 |
 | [同枝共同信用与纯孩子阈值的工作区命题账本--资源](<../../../../archives/customer-attraction/state/资源/同枝共同信用与纯孩子阈值的工作区命题账本--资源.md>) | math-exposition | retain | 同枝共同信用联盟负载上界及纯孩子阈值先截再凸的四客户反例。 |
 | [同节点最优菜单余债与早期净缺口探针--资源](<../../../../archives/customer-attraction/state/资源/同节点最优菜单余债与早期净缺口探针--资源.md>) | math-exposition | retain | 同一实际节点最优菜单余债D及39锥净缺口G的有限探针。 |
+| [同题冻结删位总额的完整策略锥与精确恢复探针--资源](<../../../../archives/customer-attraction/state/资源/同题冻结删位总额的完整策略锥与精确恢复探针--资源.md>) | math-exposition | retain | 同题冻结删位总额D_T的负载公式及固定完整策略客户锥LP；13人已认证SPE反全人数SA，三份浮点探针有限。 |
 | [唯一最优逐角色退款见证与原始独审合同--资源](<../../../../archives/customer-attraction/state/资源/唯一最优逐角色退款见证与原始独审合同--资源.md>) | math-exposition | retain | 179客户完整57历史SPE、唯一最优ATQ与逐角色退款g2=36>u2=35。 |
 | [唯一残余发现点的二人矩等价与七节点载体--资源](<../../../../archives/customer-attraction/state/资源/唯一残余发现点的二人矩等价与七节点载体--资源.md>) | math-exposition | retain | 两人完整SPE实例残余R−W=978及旧十二型矩阵等价的限定域。 |
 | [四个子目录入口的审计实现与复用身份--资源](<../../../../archives/customer-attraction/state/资源/四个子目录入口的审计实现与复用身份--资源.md>) | math-exposition | retain | 提出最小收益保底候选R_i+未来收益差≥OPT−W并指出全历史付款缺口。 |
@@ -2639,7 +2674,8 @@
 | [固定完整策略的总覆盖机会与额外iid槽探针合同--资源](<../../../../archives/customer-attraction/state/资源/固定完整策略的总覆盖机会与额外iid槽探针合同--资源.md>) | math-exposition | retain | 推导固定策略全历史 IC 锥与总覆盖机会目标，另给 iid 查询 Nash 的精确有理验收条件。 |
 | [固定实际路径的可信门槛与全菜单包络--资源](<../../../../archives/customer-attraction/state/资源/固定实际路径的可信门槛与全菜单包络--资源.md>) | math-exposition | retain | 固定路径离轨可信孩子可独立拼合，推 U-ENV/P-ENV，并陈述 SM、TB、SM* 及在轨租金差。 |
 | [固定旧组前缀的三人自由两尾MILP合同--资源](<../../../../archives/customer-attraction/state/资源/固定旧组前缀的三人自由两尾MILP合同--资源.md>) | math-exposition | retain | 固定C0后111节点三人MILP的等价建模与有效M=3、a≤2局部界。 |
-| [固定查询闭包与双菜单探索的三份浮点保存点--资源](<../../../../archives/customer-attraction/state/资源/固定查询闭包与双菜单探索的三份浮点保存点--资源.md>) | evidence-only | attach | 三份LP浮点保存点仅列受限beta、1747列和负定价残差，没有完整客户SPE或有理闭包结论。 |
+| [固定枢轴回路与最优元组净收费的接续边界--资源](<../../../../archives/customer-attraction/state/资源/固定枢轴回路与最优元组净收费的接续边界--资源.md>) | math-exposition | retain | 终局signed query/harmonic/self三存在桥有同一最优元组量词，枢轴正核与静态最优替换行尚欠真实共同付款。 |
+| [固定查询闭包与双菜单探索的三份浮点保存点--资源](<../actions/ed51d0b7f96dddbe611b.json>) | evidence-only | attach | 三份LP浮点保存点仅列受限beta、1747列和负定价残差，没有完整客户SPE或有理闭包结论。 |
 | [固定背景共同客户回路的适用范围与接续--资源](<../../../../archives/customer-attraction/state/资源/固定背景共同客户回路的适用范围与接续--资源.md>) | math-exposition | retain | 固定背景双主题切片的Cauchy秩min(2M,2d+1)、核基及背景收益扩展秩。 |
 | [均分覆盖与顺序福利文献的模型边界--资源](<../../../../archives/customer-attraction/state/资源/均分覆盖与顺序福利文献的模型边界--资源.md>) | math-exposition | retain | 逐篇核顺序拍卖、静态有效效用等外部定理的假设，解释覆盖均分的后继稀释如何阻断模型迁移。 |
 | [均匀真实组合强接口的完整策略锥搜索合同--资源](<../../../../archives/customer-attraction/state/资源/均匀真实组合强接口的完整策略锥搜索合同--资源.md>) | math-exposition | retain | 逐tuple强接口F=mO−(m−1)W−ΣV及完整策略客户锥量词，有限阴性范围。 |
@@ -2657,13 +2693,19 @@
 | [安全查询工作区的有限审查与残余模型分流--资源](<../../../../archives/customer-attraction/state/资源/安全查询工作区的有限审查与残余模型分流--资源.md>) | math-exposition | retain | 六人九主题完整SPE对共同静态查询最小收益桥的反例、另一个共享残余族的静态代数均有明确范围。 |
 | [安全聚合交替的一百零五条原记录与全兴趣取等点--资源](<../../../../archives/customer-attraction/state/资源/安全聚合交替的一百零五条原记录与全兴趣取等点--资源.md>) | mixed/needs-context | extract | 105条浮点试验与177动作记录占主体，仅全兴趣单客户的精确取等机制v_m=1/m、W=OPT=1为独立数学解释。 |
 | [安全聚合工作区的CCE交付登记与历史身份--资源](<../../../../archives/customer-attraction/state/资源/安全聚合工作区的CCE交付登记与历史身份--资源.md>) | math-exposition | retain | 八客户三人完整SPE的福利6与静态CCE最低544/87、静态安全值44/23的精确区分。 |
+| [安全聚合探索与银行任务的分段证据身份--资源](<../../../../archives/customer-attraction/state/资源/安全聚合探索与银行任务的分段证据身份--资源.md>) | math-exposition | retain | 安全聚合归纳只给真子局H_A地板，无法付根收益亏损；旧七接口及银行后续的范围分明。 |
+| [完整SPE稀疏槽作者证明与两份原始有限域--资源](<../../../../archives/customer-attraction/state/资源/完整SPE稀疏槽作者证明与两份原始有限域--资源.md>) | math-exposition | retain | 两客户2q玩家完整SPE全历史证明给稀疏重置租金H_(q−1)发散，而真实时钟收费有界。 |
+| [完整历史工作区入口的映射核与残余反族对照--资源](<../../../../archives/customer-attraction/state/资源/完整历史工作区入口的映射核与残余反族对照--资源.md>) | math-exposition | retain | 四人24客户收益映射核rank2/SCC像rank1及两人最优纯遗漏反族的量词。 |
 | [完整历史研究工作区账本的对象与量词恢复--资源](<../../../../archives/customer-attraction/state/资源/完整历史研究工作区账本的对象与量词恢复--资源.md>) | math-exposition | retain | 逐项解释聚合额外槽反例、静态最优交换及单奖金末位模板的原命题和条件范围。 |
+| [完整历史策略锥的最低收益价格攻击--资源](<../../../../archives/customer-attraction/state/资源/完整历史策略锥的最低收益价格攻击--资源.md>) | math-exposition | retain | 截断覆盖价格B(min u)是half充分候选，固定策略锥和最佳一客户完整SPE仅得价格4/5，浮点38锥不证全称。 |
 | [完整后继门槛的阶段接口与选中枝边界--资源](<../../../../archives/customer-attraction/state/资源/完整后继门槛的阶段接口与选中枝边界--资源.md>) | math-exposition | retain | 子SPE全集门槛R(h)的必要充分递推与选中枝最低值误写反例。 |
 | [完整根菜单原始对偶审计的三百八十一客户输入合同--资源](<../../../../archives/customer-attraction/state/资源/完整根菜单原始对偶审计的三百八十一客户输入合同--资源.md>) | math-exposition | retain | 381客户完整根策略、精确 K 矩阵原始及对偶分布证明固定菜单值239604/3169。 |
 | [完整策略安全与首对查询的冻结探针--资源](<../../../../archives/customer-attraction/state/资源/完整策略安全与首对查询的冻结探针--资源.md>) | math-exposition | retain | 固定策略Γ锥、安全值v_n及四人均匀查询的有理乘子证书，区分探针有限范围。 |
 | [完整策略客户锥的逐人与均匀真实查询合同--资源](<../../../../archives/customer-attraction/state/资源/完整策略客户锥的逐人与均匀真实查询合同--资源.md>) | math-exposition | retain | 完整策略客户锥的逐人预算和真实均匀查询目标给出精确公式及条件含义，另对受限背景作数理比较。 |
 | [完整策略静态安全交替搜索与基准哨兵值--资源](<../../../../archives/customer-attraction/state/资源/完整策略静态安全交替搜索与基准哨兵值--资源.md>) | math-exposition | retain | 固定查询安全聚合 LP 的条件性反例机制及哨兵值语义完整阐释，不能将阴性数值视作定理。 |
 | [完整策略首对安全值的全类型锥交替探针--资源](<../../../../archives/customer-attraction/state/资源/完整策略首对安全值的全类型锥交替探针--资源.md>) | math-exposition | retain | 首对安全值固定完整策略客户锥Γw≥0及固定查询LP负margin蕴含s<2v，区分71浮点阴性与全兴趣零点。 |
+| [完整终局推送的自身折扣与末两位储备--资源](<../../../../archives/customer-attraction/state/资源/完整终局推送的自身折扣与末两位储备--资源.md>) | math-exposition | retain | 完整终局query的D/C/P三量及自身折扣R，真倒二L/V/Q和末位储备给精确尾总账，早期债仍未付。 |
+| [完整终局税候选的策略锥浮点反例搜索合同--资源](<../../../../archives/customer-attraction/state/资源/完整终局税候选的策略锥浮点反例搜索合同--资源.md>) | math-exposition | retain | 终局税F=W+E与比较调和松弛的逐客户不等式，固定策略锥归一化搜索尚有限。 |
 | [完整终局聚合三份有限诊断与两种交叉障碍--资源](<../../../../archives/customer-attraction/state/资源/完整终局聚合三份有限诊断与两种交叉障碍--资源.md>) | math-exposition | retain | 完整终局FTA信用恒等式及245客户全路径交叉失败、348客户逐节点PAIR失败而全路径仍有余量。 |
 | [完整路径菜单与回接银行行的来源及审查版本--资源](<../../../../archives/customer-attraction/state/资源/完整路径菜单与回接银行行的来源及审查版本--资源.md>) | math-exposition | retain | 定义完整真实菜单时间函数与产品同步极小，另解释回接运输及银行调和增长的范围。 |
 | [完整阈值目录固定四前缀的可信尾停界--资源](<../../../../archives/customer-attraction/state/资源/完整阈值目录固定四前缀的可信尾停界--资源.md>) | math-exposition | retain | 任意有限目录两人尾完整SPE可实现终局恰BR(i)且U[i][j]≥max_i min_BR U；156主题固定四前缀只剩六可信尾且皆超half。 |
@@ -2671,67 +2713,122 @@
 | [实际分数弱桥的早期候选与后续反族--资源](<../../../../archives/customer-attraction/state/资源/实际分数弱桥的早期候选与后续反族--资源.md>) | math-exposition | retain | 给实际分数背景弱桥、覆盖代数和四主题全人数反族的显式缺口。 |
 | [实际玩家强菜单价格的固定查询客户锥合同--资源](<../../../../archives/customer-attraction/state/资源/实际玩家强菜单价格的固定查询客户锥合同--资源.md>) | math-exposition | retain | 实际最低收益强菜单 B(u)≤W 的客户型锥目标和有限网格与half的条件关系明确。 |
 | [实际缩放税八个完整策略锥的浮点诊断--资源](<../../../../archives/customer-attraction/state/资源/实际缩放税八个完整策略锥的浮点诊断--资源.md>) | math-exposition | retain | 逐客户覆盖估计 OPT≤mMα+W−Gα 与动态税桥的条件关系，八锥仅为有限诊断。 |
+| [实际覆盖与重叠最优目录的静态调和边界--资源](<../../../../archives/customer-attraction/state/资源/实际覆盖与重叠最优目录的静态调和边界--资源.md>) | math-exposition | retain | 最优元组调和预算比half多付重叠R_h，静态不交族OPT=2W却B_h>2W且末位非SPE。 |
 | [实际路径安全最优查询的固定鞍点预算探针--资源](<../../../../archives/customer-attraction/state/资源/实际路径安全最优查询的固定鞍点预算探针--资源.md>) | math-exposition | retain | 实际路径C−W固定鞍点LP的量词、三人策略锥和最优查询唯一性反例。 |
 | [实际遗漏净差与同叶泄漏的支付范围--资源](<../../../../archives/customer-attraction/state/资源/实际遗漏净差与同叶泄漏的支付范围--资源.md>) | math-exposition | retain | 净遗漏 U−G、真实偏离谐波粗预算和同叶分享泄漏恒等式及其适用域有数学内容。 |
-| [审查阅读与命题模板的精确合同--资源](<../../../../archives/customer-attraction/state/资源/审查阅读与命题模板的精确合同--资源.md>) | non-math | delete | 全文是审查阅读协议和命题写作模板，列角色、量词填写要求、审查证据等级；没有实际模型命题或数学证明。 |
+| [审查阅读与命题模板的精确合同--资源](<../actions/ba0b0e698cee66108172.json>) | non-math | delete | 全文是审查阅读协议和命题写作模板，列角色、量词填写要求、审查证据等级；没有实际模型命题或数学证明。 |
+| [客户吸引审查旧目录的逐项用途--资源](<../actions/c5c4ae080376689e2812.json>) | non-math | delete | 十条旧审查的路径、版本、用途及关联索引，只定位审查来源而无自身数学陈述或推导。 |
 | [客户支持三层含义与互补合成的审查边界--资源](<../../../../archives/customer-attraction/state/资源/客户支持三层含义与互补合成的审查边界--资源.md>) | math-exposition | retain | 同一H的最优交集I付款H+J限实际券，fresh ν核与客户保留最大密度核退款；348行只排固定支持剪枝。 |
 | [容量守卫与互惠运输工作区的精确命题和接续边界--资源](<../../../../archives/customer-attraction/state/资源/容量守卫与互惠运输工作区的精确命题和接续边界--资源.md>) | math-exposition | retain | 有限分数查询顶点Ax=1、私有核容量守卫逆归纳和同人数互惠运输核差，列出不同条件域。 |
 | [对称iid福利闭包与最低收益有限锥的来源合同--资源](<../../../../archives/customer-attraction/state/资源/对称iid福利闭包与最低收益有限锥的来源合同--资源.md>) | math-exposition | retain | 对称iid凹势与八客户静态Nash福利>真实SPE，以及最低价格和实际支持安全值的模型区分。 |
 | [对称储备与调和匹配工作区的量词账和删除归纳边界--资源](<../../../../archives/customer-attraction/state/资源/对称储备与调和匹配工作区的量词账和删除归纳边界--资源.md>) | math-exposition | retain | 写出对称储备的 a≤x/2 障碍、调和匹配下界及三客户删位归纳反例。 |
+| [对称储备有限审计的模型导入与全字段合同--资源](<../actions/73dbdfa0511ed94d4d18.json>) | evidence-only | attach | 对称储备固定参数程序的导入、115个尾结果及七组whole-case字段与运行范围；普遍归纳在另稿。 |
 | [对称单占主题块价格的直接mask有限审计合同--资源](<../../../../archives/customer-attraction/state/资源/对称单占主题块价格的直接mask有限审计合同--资源.md>) | math-exposition | retain | 对称块客户轨道直接mask解释d·missing≤(p−d)e≤(p−d)u及精确连续价格B(u)≤W−u的全参数耦合证明。 |
 | [对称卫星商程序与八九人有限报告的证据合同--资源](<../../../../archives/customer-attraction/state/资源/对称卫星商程序与八九人有限报告的证据合同--资源.md>) | math-exposition | retain | 解释对称卫星商的输入模型、终局轨道和有限52点报告；可复用递推证明在独立算法正文。 |
 | [对称输入终局见证商的作者版本与有限候选--资源](<../../../../archives/customer-attraction/state/资源/对称输入终局见证商的作者版本与有限候选--资源.md>) | math-exposition | retain | 完整历史SPE终局集合值递推与同时(k,c)群轨道商的必要/充分拼接，并给S_s客户参数组合计数。 |
+| [局部与精确算法旧目录的逐项用途--资源](<../actions/3a9973243433e66ab847.json>) | non-math | delete | 五条旧目录记录只列数学页面路径、role、用途ID和关联Claim索引，没有独立定义、论证或可用数学见证。 |
+| [局部利润与分离遗漏工作区的证据层次和未付预算--资源](<../../../../archives/customer-attraction/state/资源/局部利润与分离遗漏工作区的证据层次和未付预算--资源.md>) | math-exposition | retain | 61客户四人 AAAF 的局部利润差25>18却未支付根债7，并区分非SPE AAAA 与分离策略粘合条件。 |
 | [局部独立审查与计数终局探索的后续边界--资源](<../../../../archives/customer-attraction/state/资源/局部独立审查与计数终局探索的后续边界--资源.md>) | math-exposition | retain | BNS局部常数、字母表m/H_m无界以及24831客户计数统一终局反例。 |
 | [局部精确均衡资产的条件与角色--资源](<../../../../archives/customer-attraction/state/资源/局部精确均衡资产的条件与角色--资源.md>) | mixed/needs-context | extract | 六条旧asset JSON元数据列适用范围与产出，含EXACT-KAPPA、伪多项式整数谱和k原子Wardrop锐局部差等未展开数学声明，应抽述后保来源。 |
+| [局部障碍与一般付款方向审查的历史依据--资源](<../../../../archives/customer-attraction/state/资源/局部障碍与一般付款方向审查的历史依据--资源.md>) | mixed/needs-context | extract | 历史通信与证据清单中同时保存平方阈值 m≥(r+1)^2+1、三人93行、PROTECTED-SHARP 及signed gradient等数学范围，需提取数学陈述。 |
+| [层级目录的浮点剪枝探针与冻结候选--资源](<../../../../archives/customer-attraction/state/资源/层级目录的浮点剪枝探针与冻结候选--资源.md>) | math-exposition | retain | 层级目录浮点剪枝用min/interval-HI递推说明三份固定输入的界与不足，明确不声称半覆盖失败。 |
+| [工作区恢复层次的数学状态与承重去向--资源](<../../../../archives/customer-attraction/state/资源/工作区恢复层次的数学状态与承重去向--资源.md>) | math-exposition | retain | 根近饱和预算、交集矩表示和遗漏集合W≥H_m\|M\|/τ_M的量词及范围分离例。 |
 | [已知实例行动上界递归探针的完整输入与输出合同--资源](<../../../../archives/customer-attraction/state/资源/已知实例行动上界递归探针的完整输入与输出合同--资源.md>) | math-exposition | retain | 说明递归下界 G 的合法性与22输入中20条数值的适用范围，低 G 不构成SPE反例。 |
 | [带价末回复提前叉的逐行数学与内审范围--资源](<../../../../archives/customer-attraction/state/资源/带价末回复提前叉的逐行数学与内审范围--资源.md>) | math-exposition | retain | 带价提前叉五条真IC非负组合、双报价钱包及8(k−2)局部最小式给一般必要不等式。 |
+| [平稳来源审计的分层证据与静态路线撤回--资源](<../../../../archives/customer-attraction/state/资源/平稳来源审计的分层证据与静态路线撤回--资源.md>) | math-exposition | retain | FQ真实后继恒等式及AMP分母债，另证明对数势静态OPT≤(2m−1)M并撤回错误M≤v_m。 |
 | [平稳查询与复制菜单的有限证据合同--资源](<../../../../archives/customer-attraction/state/资源/平稳查询与复制菜单的有限证据合同--资源.md>) | math-exposition | retain | 6286客户平稳核手算查询差、复制菜单条件meta-Nash和有限根集合分类。 |
 | [平行共享遗漏的有限筛查与盲审入口--资源](<../../../../archives/customer-attraction/state/资源/平行共享遗漏的有限筛查与盲审入口--资源.md>) | math-exposition | retain | 平行遗漏块谱top_m(a_j/s)的r≤2可信归纳和r≥3已覆盖C负载阻碍，区分外层随机BI/固定策略锥有限阴性。 |
+| [异构双设施资产的条件与角色--资源](<../../../../archives/customer-attraction/state/资源/异构双设施资产的条件与角色--资源.md>) | mixed/needs-context | extract | 异构双设施资产列表保有单交叠ρ、稀疏长环及不受限目录ρ等量词主张，整页兼路径与审查状态登记，应抽取数学范围。 |
 | [异构目录双设施旧目录的逐项用途--资源](<../../../../archives/customer-attraction/state/资源/异构目录双设施旧目录的逐项用途--资源.md>) | mixed/needs-context | extract | 异构双设施11条资产用途和版本导航占主体，保单交叠短目录与任意长ρ锐阈值、无界精确威胁核心等数学主张供抽取。 |
 | [强iid状态订正的来源与弱桥后继边界--资源](<../../../../archives/customer-attraction/state/资源/强iid状态订正的来源与弱桥后继边界--资源.md>) | math-exposition | retain | 由静态对称 Nash 属于 CCE 推出强 iid 支付失败，另给八客户显式 Nash 概率和收益。 |
-| [当前五种精确源点的身份与分离归因--资源](<../../../../archives/customer-attraction/state/资源/当前五种精确源点的身份与分离归因--资源.md>) | evidence-only | attach | 五个有理原子点主要记录源SHA、行数和投影归因；这些放松点均未生成共同目录完整SPE。 |
+| [当前五种精确源点的身份与分离归因--资源](<../actions/44f29f6513a45fe7dd1f.json>) | evidence-only | attach | 五个有理原子点主要记录源SHA、行数和投影归因；这些放松点均未生成共同目录完整SPE。 |
 | [循环门槛前身与五环父审的程序合同--资源](<../../../../archives/customer-attraction/state/资源/循环门槛前身与五环父审的程序合同--资源.md>) | math-exposition | retain | 区间HI递推与七主题146人背景21/445>95/2016、五环真门槛比较。 |
-| [拥塞来源分类的保留哈希与目录渲染边界--资源](<../../../../archives/customer-attraction/state/资源/拥塞来源分类的保留哈希与目录渲染边界--资源.md>) | non-math | delete | 拥塞来源INTEGRATION的170项角色/哈希分类和501目录行渲染合同，无数学结论推导。 |
+| [扩大DR聚合安全十源诊断清单--资源](<../../../../archives/customer-attraction/state/资源/扩大DR聚合安全十源诊断清单--资源.md>) | mixed/needs-context | extract | 扩大DR精确势反例 P=161、v=56 与 CAG support 预算冲突有数学解释，九组浮点运行表另属有限证据。 |
+| [投稿判断旧目录的逐项用途--资源](<../actions/51a4b6bc66f02c6658c7.json>) | non-math | delete | 十三条历史投稿判断和旧交接材料的路径与用途索引，内容是投稿定位、归档来源和版本元数据。 |
+| [拥塞来源分类的保留哈希与目录渲染边界--资源](<../actions/e47e7b89f383e77efee5.json>) | non-math | delete | 拥塞来源INTEGRATION的170项角色/哈希分类和501目录行渲染合同，无数学结论推导。 |
 | [收益比较图工作区的菜单商与Markov边界--资源](<../../../../archives/customer-attraction/state/资源/收益比较图工作区的菜单商与Markov边界--资源.md>) | math-exposition | retain | 证明同真实菜单节点的双向IC行形成线性商，四人例和匿名终局表分别说明边界。 |
 | [收益行锥双向空间的形式策略枚举与候选载体--资源](<../../../../archives/customer-attraction/state/资源/收益行锥双向空间的形式策略枚举与候选载体--资源.md>) | math-exposition | retain | 原行锥可逆成员的非负零流等价、24客户策略行空间与探索浮点成员测试的差别有明确数学陈述。 |
 | [整合核净债路由不变量与独立策略审查的历史范围--资源](<../../../../archives/customer-attraction/state/资源/整合核净债路由不变量与独立策略审查的历史范围--资源.md>) | math-exposition | retain | 推导多源核路由净债 N=OPT−W−τ 与省BR信用的强弱，并给floor-only非可信惩罚例。 |
 | [整尾势漂移与有限阈值诊断的停止边界--资源](<../../../../archives/customer-attraction/state/资源/整尾势漂移与有限阈值诊断的停止边界--资源.md>) | math-exposition | retain | 解释背景剩余利润台阶无界、单后继去相关的有效范围和任意路径M和的未付桥。 |
 | [整数二次粘合原审计与工作区元资料--资源](<../../../../archives/customer-attraction/state/资源/整数二次粘合原审计与工作区元资料--资源.md>) | math-exposition | retain | 整数二次Boolean行Q=−1的有理构造与局部边际粘合缺口；三组全树比较。 |
 | [整树退款工作稿的静态删槽差与历史审查范围--资源](<../../../../archives/customer-attraction/state/资源/整树退款工作稿的静态删槽差与历史审查范围--资源.md>) | math-exposition | retain | 同叶缩尾的Γ、ΔB退款恒等式和比较索引静态删槽差、真实策略范围。 |
+| [新末回复价格发现与重置交换尝试的范围证据--资源](<../../../../archives/customer-attraction/state/资源/新末回复价格发现与重置交换尝试的范围证据--资源.md>) | math-exposition | retain | 实际六个末回复Y_i给七条安全价格行，精确5259点的末位缺口约−0.0107347仅分离必要图点，并解释最坏平局乘子为零。 |
 | [新索引回复行与局部审查的有限证据边界--资源](<../../../../archives/customer-attraction/state/资源/新索引回复行与局部审查的有限证据边界--资源.md>) | math-exposition | retain | 平稳同源运输、共享末回复组合和七行重配的合法数学范围及有限切点余量。 |
+| [无拥挤完整均衡族原稿与有限探索的准确范围--资源](<../../../../archives/customer-attraction/state/资源/无拥挤完整均衡族原稿与有限探索的准确范围--资源.md>) | math-exposition | retain | 五客户无拥挤SPE负载桥失败、任意k完整SPE比例趋3/2及多围堵末位障碍。 |
 | [无拥挤真实续局的可信构造与响应预算--资源](<../../../../archives/customer-attraction/state/资源/无拥挤真实续局的可信构造与响应预算--资源.md>) | math-exposition | retain | 无拥挤末位税与条件交换界、响应缺口族 Δ=k(k−1)/2 的真实后继边界。 |
+| [旧命题登记与研究超图的范围和版本合同--资源](<../../../../archives/customer-attraction/state/资源/旧命题登记与研究超图的范围和版本合同--资源.md>) | mixed/needs-context | extract | 旧图索引合同包含五人OPT≤2W、单交叠长目录ρ、greedy负载≥γ及加权拥塞p/10反族等范围纠正，也夹大量SHA、图边及HTML迁移记账。 |
+| [旧命题登记的不相关机全部陈述--资源](<../../../../archives/customer-attraction/state/资源/旧命题登记的不相关机全部陈述--资源.md>) | math-exposition | retain | 逐节登记不相关机目标、配置/矩松弛近二间隙、受限三二近似、需求树桥梁及候选反面接口的各自量词与限制，包含完整数学主张。 |
 | [旧命题登记的加权拥塞全部陈述--资源](<../../../../archives/customer-attraction/state/资源/旧命题登记的加权拥塞全部陈述--资源.md>) | mixed/needs-context | extract | 旧WC命题登记大篇索引表含奇环全状态非存在、有限权类势、线性次数d/10下界等具体声明，但未附逐项证明，需按现行版本抽主张。 |
 | [旧命题登记的设施模型全部陈述--资源](<../../../../archives/customer-attraction/state/资源/旧命题登记的设施模型全部陈述--资源.md>) | math-exposition | retain | 按模型逐项记录设施选址的 φ、2 倍近似、局部复杂度与任意 k 贪心盒结论及各自量词，末节明确混重数位多项式选择仍开放。 |
+| [旧命题登记的顺序客户吸引全部陈述--资源](<../../../../archives/customer-attraction/state/资源/旧命题登记的顺序客户吸引全部陈述--资源.md>) | math-exposition | retain | 完整登记逐条保留半覆盖、结构类界、具体反例、条件付款的精确数学量词与数值。 |
 | [旧图不相关机节点和关系的量词与实现--资源](<../../../../archives/customer-attraction/state/资源/旧图不相关机节点和关系的量词与实现--资源.md>) | mixed/needs-context | extract | 旧图的581个节点含不相关机配置间隙、舍入、条件近似与困难性等精确数学范围，711条合取关系又混入旧状态、审计和来源字段；需按命题抽取而保原索引。 |
 | [旧图共同目录节点和关系的范围--资源](<../../../../archives/customer-attraction/state/资源/旧图共同目录节点和关系的范围--资源.md>) | mixed/needs-context | extract | 旧图节点/超边及来源状态为主体，内有共同目录双设施黄金比纯SPE、三/四地点稀疏锐阈值与两reach反例等明确数学命题，须抽取核对现行正文。 |
 | [旧图加权拥塞节点和关系的实际边界--资源](<../../../../archives/customer-attraction/state/资源/旧图加权拥塞节点和关系的实际边界--资源.md>) | mixed/needs-context | extract | 旧拥塞图233节点与242关系中含奇环T_d、权类R^d界、线性全状态下界等精确数学陈述，亦混大量审查/来源/有限检查边；需按原正文抽取。 |
+| [旧图局部几何节点和关系的条件--资源](<../../../../archives/customer-attraction/state/资源/旧图局部几何节点和关系的条件--资源.md>) | math-exposition | retain | 局部双设施NE三态、强弦 x≤U−qV 或 C−x≥U−V、三混合客户及局部/全局极大分离的原节点与关系，数学范围清楚。 |
 | [旧图异构目录节点和关系的时态--资源](<../../../../archives/customer-attraction/state/资源/旧图异构目录节点和关系的时态--资源.md>) | mixed/needs-context | extract | 旧异构目录图中 HC-RHO 的短目录条件与 SPARSE-RHO-ALL 的任意长单交叠范围、ρ 下界/响应环等数学范围嵌在节点、超边和来源状态记录中；抽取命题与关系，保历史图原件。 |
+| [旧图模型节点的输入和量词--资源](<../../../../archives/customer-attraction/state/资源/旧图模型节点的输入和量词--资源.md>) | math-exposition | retain | 原子客户两设施模型给混合NE差式 Δ+w_i(1−2p_i) 与逐坐标真实偏离威胁的α-SPE判据。 |
 | [旧图计算实现节点和关系的合同--资源](<../../../../archives/customer-attraction/state/资源/旧图计算实现节点和关系的合同--资源.md>) | mixed/needs-context | extract | 旧计算图97节点117关系为来源与状态容器，内含有界交叠精确算法O(N1N2(n+κ3^κ))、贪心盒均衡有限构造及四地点无FPTAS等具体数学合同，需按源正文抽取。 |
-| [旧图证据节点和关系的有限作用--资源](<../../../../archives/customer-attraction/state/资源/旧图证据节点和关系的有限作用--资源.md>) | evidence-only | attach | 旧图E1等证据节点与checks边列有限审计次数、输入和范围，数学结论在另链正文。 |
+| [旧图证据节点和关系的有限作用--资源](<../actions/795766323d7e58af7bc7.json>) | evidence-only | attach | 旧图E1等证据节点与checks边列有限审计次数、输入和范围，数学结论在另链正文。 |
+| [旧图顺序客户吸引及费用扩展的完整范围--资源](<../../../../archives/customer-attraction/state/资源/旧图顺序客户吸引及费用扩展的完整范围--资源.md>) | mixed/needs-context | extract | 148节点与207超边涵盖顺序客户吸引五人半覆盖、六极大主题、真实回复/安全值及费用扩展的精确命题和反例，交织旧图身份、来源、审查状态；抽数学对象和合取关系，保原图。 |
 | [旧数学超图查看器的结构与交互合同--资源](<../../../../archives/customer-attraction/state/资源/旧数学超图查看器的结构与交互合同--资源.md>) | mixed/needs-context | extract | 旧HTML查看器的schema/交互为程序导航，但解析遗漏的CAG关联预算候选含W≥c+(U−c)Σ1/E_t，缺定义须恢复。 |
 | [旧最大根包络的任意比较槽与DIRECT接续--资源](<../../../../archives/customer-attraction/state/资源/旧最大根包络的任意比较槽与DIRECT接续--资源.md>) | math-exposition | retain | 推导任意比较槽的最大主题根包络 OPT_s≤sH+(m−1)K/m，并对照更强交换系数及DIRECT反族。 |
 | [旧研究五轴审查的逐身份范围--资源](<../../../../archives/customer-attraction/state/资源/旧研究五轴审查的逐身份范围--资源.md>) | mixed/needs-context | extract | 640身份的五轴审查状态为主，夹有四人1499/750、五人half证书、WC全状态与UM递归边界等具体数学范围，须抽取后对照正文。 |
 | [旧研究总目录的字段语义与版本边界--资源](<../../../../archives/customer-attraction/state/资源/旧研究总目录的字段语义与版本边界--资源.md>) | mixed/needs-context | extract | 旧研究总目录虽主要列资产与版本，也独立解释五人半证明替换旧2.061695，并给弱iid全局桥的m20花瓣反例及(39/40)Z20>W。 |
+| [旧研究超图HTML的完整表示和交互边界--资源](<../actions/9f6db343b46e55ae4f15.json>) | evidence-only | attach | 静态HTML、JS筛选和超图字段展示合同；数学节点与边在独立图数据中，本页仅记交互实现及显示遗漏。 |
 | [旧策略锥弱指派攻击的变量与输出合同--资源](<../../../../archives/customer-attraction/state/资源/旧策略锥弱指派攻击的变量与输出合同--资源.md>) | math-exposition | retain | 弱冻结指派Q≤(1+1/m)W的63类型策略锥三组线性行及严格唯一搜索范围。 |
-| [旧路径解释账本的覆盖与生成合同--资源](<../../../../archives/customer-attraction/state/资源/旧路径解释账本的覆盖与生成合同--资源.md>) | non-math | delete | 逐源路径迁移账本列58 moved、10 retired、606 new和生成器字段校验，仅解释文件身份及索引生成。 |
+| [旧资产巡检的文件角色与哈希边界--资源](<../actions/c51742c879c21b4f1fc5.json>) | non-math | delete | 内容逐分支说明旧check_assets如何核路径、元数据、教学链接和固定运行记录；有限数值只是旧记录例示，没有独立数学陈述。 |
+| [旧路径解释账本的覆盖与生成合同--资源](<../actions/6e362c447bf86994cbf1.json>) | non-math | delete | 逐源路径迁移账本列58 moved、10 retired、606 new和生成器字段校验，仅解释文件身份及索引生成。 |
 | [早期价格原审计与严格四标签压缩点的来源合同--资源](<../../../../archives/customer-attraction/state/资源/早期价格原审计与严格四标签压缩点的来源合同--资源.md>) | math-exposition | retain | 说明末位价格模板三型负组合与四标签十二客户完整策略的压缩见证范围。 |
+| [显式回复主图的阶段点与未闭报价账本--资源](<../../../../archives/customer-attraction/state/资源/显式回复主图的阶段点与未闭报价账本--资源.md>) | math-exposition | retain | W<1/2阶段点在若干必要回复行内仍被末位实际Y价格行阻断；列示41649固定根消融未完成全闭合。 |
 | [最优元组净调和预算的支持极点与旧族诊断--资源](<../../../../archives/customer-attraction/state/资源/最优元组净调和预算的支持极点与旧族诊断--资源.md>) | math-exposition | retain | 定义最优元组净调和增量B和冻结价D，证明固定支撑下预算极点化及B≤D的条件范围，并诊断四族。 |
+| [最优外客户投影的真实租金门槛与静态覆盖税诊断--资源](<../../../../archives/customer-attraction/state/资源/最优外客户投影的真实租金门槛与静态覆盖税诊断--资源.md>) | math-exposition | retain | 真实可信租金须每个离轨孩子继续SPE；两人A/B/C0投影外客户重选导致福利上涨，静态覆盖税不能代替真实BR。 |
+| [最优补全的真实重启差与保留信用停界--资源](<../../../../archives/customer-attraction/state/资源/最优补全的真实重启差与保留信用停界--资源.md>) | math-exposition | retain | 最优补全定义ρ、ξ、θ、η等非负信用并推 r(δ−u) 恒等式；真子树重启差C_A−C_B无符号及all-big族阻断静态菜单付款。 |
+| [最优补全账本与局部安全付款的命题分层--资源](<../../../../archives/customer-attraction/state/资源/最优补全账本与局部安全付款的命题分层--资源.md>) | math-exposition | retain | 最优补全私有块真实分支账本r(δ−u)以及十环静态floor菜单末位偏离失败。 |
+| [最优首动作菜单原稿的两级信用与真实孩子总账--资源](<../../../../archives/customer-attraction/state/资源/最优首动作菜单原稿的两级信用与真实孩子总账--资源.md>) | math-exposition | retain | 最优首动作真实孩子ρ和规定孩子损失的两层信用恒等式，另给删ξ、η路径预算的all-big反族。 |
+| [最坏分母静态证书与同序可信矩阵的精确边界--资源](<../../../../archives/customer-attraction/state/资源/最坏分母静态证书与同序可信矩阵的精确边界--资源.md>) | math-exposition | retain | 静态最坏分母证书在singleton族精确当且仅当m≤2H_m，m≥5不可行；另区分全可信L候选与fresh下界不足。 |
 | [最大根同源再查询的图语义与审查证据范围--资源](<../../../../archives/customer-attraction/state/资源/最大根同源再查询的图语义与审查证据范围--资源.md>) | math-exposition | retain | 构造P0—P3及QI/QL/QD真实再查询图，证明CAP/SAFE/LAST/PAIR必要行和整数残差推出根行，区分局部分离与完整SPE。 |
+| [最大根谱与真实查询触发的原始声明及审查分层--资源](<../../../../archives/customer-attraction/state/资源/最大根谱与真实查询触发的原始声明及审查分层--资源.md>) | mixed/needs-context | extract | 原五人末位交叠谱、三余位债和首次全坐标触发均有具体数学量词，但主要是十四源去向与审查时序；抽出尚需承接的数学声明。 |
+| [最小势增量与联合费用工作稿的接续合同--资源](<../../../../archives/customer-attraction/state/资源/最小势增量与联合费用工作稿的接续合同--资源.md>) | math-exposition | retain | 同一福利W下的Hall取消、最早激活和共享客户κ⁻定义，区分R-only与联合库存费用及NET-FRAC尚未支付的总费用。 |
+| [最差福利尾端探针的取样范围与严格策略锥合同--资源](<../actions/5676be14dec9b0e2af7b.json>) | evidence-only | attach | 119份最差尾端采样及四人五标签严格策略锥500随机尝试的有限诊断，未给普遍尾端判据。 |
 | [有利可信完成与同次净券付款的根账本--资源](<../../../../archives/customer-attraction/state/资源/有利可信完成与同次净券付款的根账本--资源.md>) | math-exposition | retain | 给有利可信完成的端点集合D与M_adm的极小极大静态下界，证明I客户同次J券并列出fresh跨行残差，保弱首对条件归约。 |
+| [有限背景根系数与菜单交叉求和的证据合同--资源](<../../../../archives/customer-attraction/state/资源/有限背景根系数与菜单交叉求和的证据合同--资源.md>) | math-exposition | retain | 固定背景四个真实激励行经非负λ及有限格非负余项推出菜单交叉求和式(5)。 |
+| [末两负载缺口工作区的来源身份与原支配审查范围--资源](<../../../../archives/customer-attraction/state/资源/末两负载缺口工作区的来源身份与原支配审查范围--资源.md>) | math-exposition | retain | 末两主题负载D/R条件范围，并给前缀客户缺席次数e_i的逐客户分母m−e_i。 |
+| [末主题嵌套查询的内层激励与有限线性探索账本--资源](<../../../../archives/customer-attraction/state/资源/末主题嵌套查询的内层激励与有限线性探索账本--资源.md>) | mixed/needs-context | extract | B枝内IC及7/8菜单的M/Z系数为数学说明，另一大段是多套浮点LP值和旧JSON/审查时序，应抽数学公式并附有限证据。 |
+| [末位份额候选的两路径松弛与可信尾筛选--资源](<../../../../archives/customer-attraction/state/资源/末位份额候选的两路径松弛与可信尾筛选--资源.md>) | math-exposition | retain | 末位份额C2在三人23客户及五人10客户策略失败；两路径必要系统、6455743分母可行点与真实尾门槛区分必要松弛和完整SPE。 |
 | [末位几何工作区入口的五路由与发布身份--资源](<../../../../archives/customer-attraction/state/资源/末位几何工作区入口的五路由与发布身份--资源.md>) | math-exposition | retain | 给净缺口 OPT−W=L−E、安全值/CCE区分及末位负载尾和 Q_B≤W 的条件结论。 |
 | [末位必要压力的两策略锥与原输出合同--资源](<../../../../archives/customer-attraction/state/资源/末位必要压力的两策略锥与原输出合同--资源.md>) | math-exposition | retain | 证明末位真实最佳回复的 OPT≤(2m−1)u_m，区分固定策略压力等号点与真坏点。 |
+| [末位标量与索引必要行的接续版本账本--资源](<../../../../archives/customer-attraction/state/资源/末位标量与索引必要行的接续版本账本--资源.md>) | math-exposition | retain | 实际末位税OPT≤W+(m−1)u−D及m≥6不交完整SPE族否定强化均摊式。 |
 | [末位菜单工作稿的量词校正与背景人数门槛--资源](<../../../../archives/customer-attraction/state/资源/末位菜单工作稿的量词校正与背景人数门槛--资源.md>) | math-exposition | retain | 末位K=f−H Gram核、M_b minimax及PB背景总人数纠错的数学边界。 |
+| [末位负载尾和的原Fraction审计与抽证边界--资源](<../../../../archives/customer-attraction/state/资源/末位负载尾和的原Fraction审计与抽证边界--资源.md>) | math-exposition | retain | 末位负载尾和phi_m(c)与4095位型、312信用类型和SPE路径审计的精确范围，保解析式及证书边界。 |
 | [末偏离树的角色入出账与最优交换行--资源](<../../../../archives/customer-attraction/state/资源/末偏离树的角色入出账与最优交换行--资源.md>) | math-exposition | retain | 末偏离树同一父叶的矩阵列价与坐标双预算，终端Aout角色余额未付。 |
+| [末覆盖复核与税包络策略锥的版本边界--资源](<../../../../archives/customer-attraction/state/资源/末覆盖复核与税包络策略锥的版本边界--资源.md>) | math-exposition | retain | 末覆盖缺席gamma判据和固定策略锥税包络E_*的真实IC范围，区分有限浮点阴性。 |
+| [来源保持密度三实现的初始化选择与合流覆盖--资源](<../../../../archives/customer-attraction/state/资源/来源保持密度三实现的初始化选择与合流覆盖--资源.md>) | math-exposition | retain | 来源保持客户流的INIT、RAW、DENSITY和REFUND不等式及三种初始化合流范围，ROLE总预算仍留缺口。 |
+| [来源回撤与异质修复入口的全树付款边界--资源](<../../../../archives/customer-attraction/state/资源/来源回撤与异质修复入口的全树付款边界--资源.md>) | math-exposition | retain | 异质前缀修复g′=g−(2R+D)、固定来源三角回撤精确cut，以及完整终局push的早期债。 |
+| [来源解释账本的历史语义与当前校正--资源](<../../../../archives/customer-attraction/state/资源/来源解释账本的历史语义与当前校正--资源.md>) | mixed/needs-context | extract | 680条来源映射与187组历史解释主要是来源账本；其中N031校正自足给m=20,J=100完整SPE及静态iid混合均衡，严格否定W≥(1−1/(2m))Z_m，应提取此数学内容。 |
 | [极大交换压缩与净预算的前沿账本版本--资源](<../../../../archives/customer-attraction/state/资源/极大交换压缩与净预算的前沿账本版本--资源.md>) | math-exposition | retain | 列极大目录迁移、人口福利下降及有序压缩的独立范围，并保最优元组净预算候选。 |
 | [极大关联席位原稿的字面合同与核心私有勘误--资源](<../../../../archives/customer-attraction/state/资源/极大关联席位原稿的字面合同与核心私有勘误--资源.md>) | math-exposition | retain | 指明原席位条件误将私有客户全额覆盖及单极大重复计核心，给修正LP与全历史席位证明。 |
 | [极大剪枝人口交换和有序压缩的证明与审查版本--资源](<../../../../archives/customer-attraction/state/资源/极大剪枝人口交换和有序压缩的证明与审查版本--资源.md>) | math-exposition | retain | 极大主题人口交换和有序压缩的局部证明、适用版本与审查校正。 |
+| [核心外查询的三人与四人方向记录及模式边界--资源](<../../../../archives/customer-attraction/state/资源/核心外查询的三人与四人方向记录及模式边界--资源.md>) | math-exposition | retain | 真实实际节点竞争菜单的cap与福利W/n比较、对称客户基及零基Γ方向LP；1400浮点近零项不构成严格方向证书。 |
+| [根价格全路径与列生成的原程序合同--资源](<../../../../archives/customer-attraction/state/资源/根价格全路径与列生成的原程序合同--资源.md>) | algorithm-result | retain | 共同终局根价格在可达DAG上列生成并用精确Fraction对全部终局定价，原始上界与对偶下界相等时给可复用的最优证书。 |
+| [根修复有限判别与全深度工作区的接续边界--资源](<../../../../archives/customer-attraction/state/资源/根修复有限判别与全深度工作区的接续边界--资源.md>) | math-exposition | retain | 根部O−3Δ遗憾锥及可信保险菜单的有效e=h−M修复条件，有限判别不推出全深度支付。 |
 | [根真实菜单与背景化安全探索的版本范围--资源](<../../../../archives/customer-attraction/state/资源/根真实菜单与背景化安全探索的版本范围--资源.md>) | math-exposition | retain | 根PAIR→SELF→WP→安全值的真实菜单链和348/PB指定反例。 |
+| [根部真实拥挤工作区的版本与研究边界--资源](<../../../../archives/customer-attraction/state/资源/根部真实拥挤工作区的版本与研究边界--资源.md>) | math-exposition | retain | 五人真实拥挤根回复的F_T(Q)容量界和690行价格诊断，保留根部范围与未闭边界。 |
+| [正占用核旧目录的逐项用途--资源](<../actions/06c49c266ee1f081aa32.json>) | non-math | delete | 九项正占用核原文件的用途、路径、版本和关联目录索引，没有该秩/锥定理的具体陈述与证明。 |
+| [正占用核资产的独立工具范围--资源](<../../../../archives/customer-attraction/state/资源/正占用核资产的独立工具范围--资源.md>) | math-exposition | retain | 占用核交互秩暴露面、锐坏项质量预算与非闭锥补全三个条目的数学适用条件和限制。 |
 | [正深度静态安全地板反例的单位数据与审查出处--资源](<../../../../archives/customer-attraction/state/资源/正深度静态安全地板反例的单位数据与审查出处--资源.md>) | math-exposition | retain | 四人53单位完整策略的第二位收益29/3低于静态安全值28481/2924，聚合与half仍有余量。 |
 | [正锥与均匀真实组合安全接口的历史分层--资源](<../../../../archives/customer-attraction/state/资源/正锥与均匀真实组合安全接口的历史分层--资源.md>) | math-exposition | retain | 给冻结最优指派的逐客户成本与已知反例，另解释真实前缀均匀组合UP的充分推导。 |
+| [残余并集桥的原证书与分支完整性--资源](<../../../../archives/customer-attraction/state/资源/残余并集桥的原证书与分支完整性--资源.md>) | math-exposition | retain | 27客户两人完整SPE有W13、残余R₂14，明确只否R≤W强桥；同输入最小SPE福利12及16行与216图的量词区别。 |
+| [残余桥两份整数见证的目标与完整回复版本--资源](<../../../../archives/customer-attraction/state/资源/残余桥两份整数见证的目标与完整回复版本--资源.md>) | math-exposition | retain | 27与71客户两人完整SPE回复和全部21对覆盖表分别否定全称/存在的强残余桥，均不违反half。 |
+| [残余桥的浮点发现与静态查询边界--资源](<../../../../archives/customer-attraction/state/资源/残余桥的浮点发现与静态查询边界--资源.md>) | math-exposition | retain | 两人残余桥固定回复锥的42条真实IC、14/13精确27客户对应及86客户静态均匀查询端点。 |
 | [水库与多删反馈的数学范围及传送记录--资源](<../../../../archives/customer-attraction/state/资源/水库与多删反馈的数学范围及传送记录--资源.md>) | math-exposition | retain | 证明成对水库全k修复缺陷2R+Dδ超过目标gap，推多删超几何共享池ROW与势的RESET余项，并校正均匀菜单Jensen方向。 |
 | [池化背景发现器与安全分支入口的证据层--资源](<../../../../archives/customer-attraction/state/资源/池化背景发现器与安全分支入口的证据层--资源.md>) | math-exposition | retain | 635客户逐角色均值池化同查询目标mG−W及43历史锥的精确正差。 |
+| [活跃研究路由的字面检查与目标范围边界--资源](<../actions/8e1807bbe051af55cae8.json>) | non-math | delete | 活跃研究配置的24入口、角色路径、字面检查器及退役hash校验；目标scope只作配置字符串。 |
+| [父方调和菜单两原审计与冻结报告--资源](<../../../../archives/customer-attraction/state/资源/父方调和菜单两原审计与冻结报告--资源.md>) | mixed/needs-context | extract | 5502B调和菜单有限审计与旧四人22620比较报告为主要内容，但含阈值闭式、τR+ηZ负债及其非half作用，数学与运行报告分处。 |
+| [独立全局攻击入口的安全桥均匀接口与文献范围--资源](<../../../../archives/customer-attraction/state/资源/独立全局攻击入口的安全桥均匀接口与文献范围--资源.md>) | math-exposition | retain | 真正静态安全值v_m定义、根聚合mv_m≤W及真实前缀均匀接口mOPT≤(m−1)W+ΣV_ij均为明确候选，并给双客户shared-misery类前提失败。 |
 | [独立利润消元与惩罚菜单证据的复用边界--资源](<../../../../archives/customer-attraction/state/资源/独立利润消元与惩罚菜单证据的复用边界--资源.md>) | math-exposition | retain | A/B/L交叠族的全整数剩余利润消元F_(n−1)，隔离惩罚密度边界。 |
 | [独立前沿入口与大主题精确审计的范围--资源](<../../../../archives/customer-attraction/state/资源/独立前沿入口与大主题精确审计的范围--资源.md>) | math-exposition | retain | 证明大主题恒A全历史策略、背景剩余利润的平方族台阶2q−1及真实盈余补偿。 |
+| [独立恢复平方几何与递归惩罚的原始义务--资源](<../../../../archives/customer-attraction/state/资源/独立恢复平方几何与递归惩罚的原始义务--资源.md>) | math-exposition | retain | 跨背景查询平方恒等式及同背景自回复等覆盖边界，区分27/13抽象点违signed身份。 |
+| [独立重构与合法背景工作区的证据版本--资源](<../../../../archives/customer-attraction/state/资源/独立重构与合法背景工作区的证据版本--资源.md>) | math-exposition | retain | 任意历史最大主题近饱和式、固定尾长floor保护反族及合法背景静态Q/w界与漂移恒等式。 |
 | [独立重构与基数凹化的来源合同与恢复--资源](<../../../../archives/customer-attraction/state/资源/独立重构与基数凹化的来源合同与恢复--资源.md>) | math-exposition | retain | 解释盒分离的非负价格切、客户删除的可信闭包失败及匿名边际势的凹化不变性。 |
 | [直接归属付款的同叶账与十九份深度报告--资源](<../../../../archives/customer-attraction/state/资源/直接归属付款的同叶账与十九份深度报告--资源.md>) | math-exposition | retain | 写出同叶后继泄漏、最优槽删除交换切和19输入的深度地板候选范围。 |
 | [直方图定价与父代复核的输入合同--资源](<../../../../archives/customer-attraction/state/资源/直方图定价与父代复核的输入合同--资源.md>) | math-exposition | retain | 给负载签名下条件定价的四套系统范围和逐人覆盖缺口价格 B(v) 的充分桥。 |
@@ -2740,145 +2837,403 @@
 | [真实中继与祖先门槛的研究入口版本--资源](<../../../../archives/customer-attraction/state/资源/真实中继与祖先门槛的研究入口版本--资源.md>) | mixed/needs-context | extract | 原六分支导航夹有18份多惩罚目录诊断、末位十五客户分离和逐人净缺口数值，缺本页完整输入。 |
 | [真实分支十项合同与菜单可实现性账本--资源](<../../../../archives/customer-attraction/state/资源/真实分支十项合同与菜单可实现性账本--资源.md>) | math-exposition | retain | 逐项区分十项真实分支合同，给两人锐推送、三人反例、完整菜单银行反族和八人纯列与混合值。 |
 | [真实分支累计付款工作区的证据与后续状态--资源](<../../../../archives/customer-attraction/state/资源/真实分支累计付款工作区的证据与后续状态--资源.md>) | math-exposition | retain | 写出标记真实历史交换、净中继和单核删源的已证恒等与未付共同资金，并解释原程序有限域。 |
+| [真实前缀均匀接口的四个策略锥攻击记录--资源](<../../../../archives/customer-attraction/state/资源/真实前缀均匀接口的四个策略锥攻击记录--资源.md>) | math-exposition | retain | 真实前缀均匀候选m\|∪T\|≤(m−1)W+ΣV及四固定锥阴性测试边界。 |
+| [真实可达逐叶平方乘子的上下证书合同--资源](<../../../../archives/customer-attraction/state/资源/真实可达逐叶平方乘子的上下证书合同--资源.md>) | algorithm-result | retain | 对任意完整策略和比较支持构造真实可达κ逐叶平方限制的LP；精确有理原始上证书可提升旧策略福利界，对偶lower>2排除该受限证书。 |
+| [真实最优查询的冻结差额与可信修复接口--资源](<../../../../archives/customer-attraction/state/资源/真实最优查询的冻结差额与可信修复接口--资源.md>) | math-exposition | retain | 真实V与冻结F的差额恒等式ΣV=OPT−W+u+L−Q、净差匹配候选及Cartesian可信缺陷修复损失2R+D各自条件明确。 |
+| [真实末两人价格余项原审计的有限与仿射核验合同--资源](<../../../../archives/customer-attraction/state/资源/真实末两人价格余项原审计的有限与仿射核验合同--资源.md>) | math-exposition | retain | 真实末两人S/Z/V/H逐客户消元与6400有限余项检查、四仿射基点分离，只排特定强价格模板。 |
 | [真实终局平均负载的同查询联合浮点攻击合同--资源](<../../../../archives/customer-attraction/state/资源/真实终局平均负载的同查询联合浮点攻击合同--资源.md>) | math-exposition | retain | 同查询平均终局负载Fσ及其对自由安全值的单向minimax蕴含、浮点搜索域。 |
 | [真实菜单协方差与逃逸余项的审查合同--资源](<../../../../archives/customer-attraction/state/资源/真实菜单协方差与逃逸余项的审查合同--资源.md>) | math-exposition | retain | 同一真实菜单客户的协方差CC1—CC4、跨子菜单COH差及ESC三余项恒等式，另有两人平稳基线和三人固定核反例。 |
+| [真实菜单环耦合工作区的版本与早期价格义务--资源](<../../../../archives/customer-attraction/state/资源/真实菜单环耦合工作区的版本与早期价格义务--资源.md>) | math-exposition | retain | 奇O环索引债κ公式、B(t)截断覆盖价格充分桥及倒二真实价格界。 |
 | [真实计数策略的在轨半覆盖锥原探针--资源](<../../../../archives/customer-attraction/state/资源/真实计数策略的在轨半覆盖锥原探针--资源.md>) | math-exposition | retain | 定义完整计数SPE的在轨重权锥G和半覆盖LP，解释30个种子浮点非负报告仅对固定原策略在轨行作阴性探针。 |
+| [真实门槛路径接续的端点域与审查读序--资源](<../../../../archives/customer-attraction/state/资源/真实门槛路径接续的端点域与审查读序--资源.md>) | math-exposition | retain | 可信前缀端点的D成员回收和低插入查询缺口，SC复制形式策略有严格离轨负IC。 |
+| [研究资产与五轴审查的语义合同--资源](<../../../../archives/customer-attraction/state/资源/研究资产与五轴审查的语义合同--资源.md>) | mixed/needs-context | extract | 351资产和640审查的身份登记为主，但五处适用域损坏、四人上界非锐性及WC全状态改善含具体数学范围，需抽出。 |
+| [私有核心容量守卫的作者证明与三种独审先验--资源](<../../../../archives/customer-attraction/state/资源/私有核心容量守卫的作者证明与三种独审先验--资源.md>) | math-exposition | retain | 全目录私有核cap与异质1/m信用、有限污染Cauchy下界及整数强化和同枝租金限制。 |
 | [私有谱原有限报告与可信构造身份账本的边界--资源](<../../../../archives/customer-attraction/state/资源/私有谱原有限报告与可信构造身份账本的边界--资源.md>) | mixed/needs-context | extract | 大量审计计数/身份履历中藏有q=m−1端点的完整纯SPE解析构造及W=m+1、OPT=2m−1、G=3/2证明，必须抽出后才清理。 |
-| [空白研究工作区与两份历史身份绑定--资源](<../../../../archives/customer-attraction/state/资源/空白研究工作区与两份历史身份绑定--资源.md>) | non-math | delete | 空白研究模板和两份四字段实例绑定，没有填写任何具体数学；邻接成果仅作来源导航。 |
+| [空根构造检查点与十三人纯查询锥探针--资源](<../../../../archives/customer-attraction/state/资源/空根构造检查点与十三人纯查询锥探针--资源.md>) | math-exposition | retain | 单实块空根预算和十三人纯查询固定锥的10817真IC、六挑战差，精确候选有四负差。 |
+| [空白研究工作区与两份历史身份绑定--资源](<../actions/92086a177c8475a6924d.json>) | non-math | delete | 空白研究模板和两份四字段实例绑定，没有填写任何具体数学；邻接成果仅作来源导航。 |
+| [端点债务工作区的诊断合同与来源边界--资源](<../../../../archives/customer-attraction/state/资源/端点债务工作区的诊断合同与来源边界--资源.md>) | math-exposition | retain | H4端点债的REP、J_out分解及13人同查询失败与存在最优排列未失败的量词。 |
+| [笛卡尔补偿与安全扩充的严格目录和审查版本--资源](<../../../../archives/customer-attraction/state/资源/笛卡尔补偿与安全扩充的严格目录和审查版本--资源.md>) | math-exposition | retain | 安全不交扩充与笛卡尔耦合族的全历史条件、目录严格去重和补偿边界有明确数学对象；有限DAG与后续恢复另分节。 |
 | [第七轮共同容量根稿的初始化端点与安全值纠正--资源](<../../../../archives/customer-attraction/state/资源/第七轮共同容量根稿的初始化端点与安全值纠正--资源.md>) | math-exposition | retain | 真实根菜单PAIR/SELF链、FOMA 52客户反例与一次坐标双预算未付Aout。 |
 | [第七轮共同帽与有限字典的精确Claim和证据账--资源](<../../../../archives/customer-attraction/state/资源/第七轮共同帽与有限字典的精确Claim和证据账--资源.md>) | math-exposition | retain | 有限真实字典共同τ网格、epigraph与负点有理实现，以及E/J全半轴最优预算3对旧7/2的严格改善均有独立数学陈述。 |
+| [第三轮总入口与聚合安全值的未付合同--资源](<../../../../archives/customer-attraction/state/资源/第三轮总入口与聚合安全值的未付合同--资源.md>) | math-exposition | retain | 817客户三人完整策略反全p均值分数付款，STATIC-2仅得三倍覆盖；I互补及旧ν重采的同角色费用仍未付。 |
+| [第二节点保险作者的换位回退与半覆盖接口--资源](<../../../../archives/customer-attraction/state/资源/第二节点保险作者的换位回退与半覆盖接口--资源.md>) | math-exposition | retain | 第二节点δ缺陷用Cartesian银行使half差减少4s，并证明固定m的half等价全部此类有fallback计划G≤4δ；可信换位提供fallback。 |
+| [第五轮一般付款账本与末位精确税的现态--资源](<../../../../archives/customer-attraction/state/资源/第五轮一般付款账本与末位精确税的现态--资源.md>) | math-exposition | retain | 末位静态税TAX及RLC有逐客户推导，P池族在k6/12/22分别否三个更强付款助手，还给同查询删位共同q_i预算。 |
+| [第五轮一般半覆盖根稿的付款合同与证据时序--资源](<../../../../archives/customer-attraction/state/资源/第五轮一般半覆盖根稿的付款合同与证据时序--资源.md>) | math-exposition | retain | 根同世界Hall、自由trim最低Δ价格及PB-extra条件推导和合法背景反例。 |
+| [第八轮根稿的来源密度合成与共同付款余量--资源](<../../../../archives/customer-attraction/state/资源/第八轮根稿的来源密度合成与共同付款余量--资源.md>) | math-exposition | retain | NEW-CAP强化初始化与同客户反链给单context密度和整行退款；联合ROLE线性系统能推出half但普遍可行性未证。 |
 | [第六轮共同容量根稿与角色归池的精确合同--资源](<../../../../archives/customer-attraction/state/资源/第六轮共同容量根稿与角色归池的精确合同--资源.md>) | math-exposition | retain | SAFE退券与CLIP剪枝证明局部净非负，并给同角色归池、全O角色cap2、跨节点HIT和来源价格包络的各自条件。 |
 | [第十一轮共享负载的凸信用与共同付款停界--资源](<../../../../archives/customer-attraction/state/资源/第十一轮共享负载的凸信用与共同付款停界--资源.md>) | math-exposition | retain | 共享删槽菜单K上倒数VAR恒等式、混合BAL信用和KKT相关项，推OPT≤(2m−1)γ及待证half付款C≤D+I+γ/2。 |
+| [第十一轮树审查的定义级合同与旧压力记录--资源](<../../../../archives/customer-attraction/state/资源/第十一轮树审查的定义级合同与旧压力记录--资源.md>) | math-exposition | retain | 真实末位需求/方差误差转移与共享KKT协方差总账，明确跨互斥叶的Cov金额仍未付。 |
+| [第十一轮直接查询行的端点域与原诊断范围--资源](<../../../../archives/customer-attraction/state/资源/第十一轮直接查询行的端点域与原诊断范围--资源.md>) | math-exposition | retain | ROW/WM真后继查询和、RF端点包络ENV与最优元组联合交换OPT-EX。 |
+| [第十三轮对抗分支的匹配反例与索引对称化边界--资源](<../../../../archives/customer-attraction/state/资源/第十三轮对抗分支的匹配反例与索引对称化边界--资源.md>) | math-exposition | retain | 五人冻结最优主题匹配强桥被25客户例否定，弱1+1/m版仍候选；S5轨道平均保对称线性量并把轨道和拆成逐行。 |
+| [第十轮根稿的净行合同与相邻钱包反证时序--资源](<../../../../archives/customer-attraction/state/资源/第十轮根稿的净行合同与相邻钱包反证时序--资源.md>) | math-exposition | retain | 实际最小角色的真实净ROW为half充分条件，末两位已付；相邻冻结钱包被十客户及全m唯一最优族反证。 |
 | [第四源索引投影的作者实现小权预算与七百零二行组合--资源](<../../../../archives/customer-attraction/state/资源/第四源索引投影的作者实现小权预算与七百零二行组合--资源.md>) | math-exposition | retain | 六人第四位六分支五条真必要行的448投影、56项小权表及702行精确可行点，明确该点仅分离必要系统。 |
+| [等大小交叠与成对策略锥的有限探针--资源](<../../../../archives/customer-attraction/state/资源/等大小交叠与成对策略锥的有限探针--资源.md>) | mixed/needs-context | extract | 真成对安全H=min_p max_b(Gp)_b与完整计数策略递推有数学接口，三组随机Gram/策略锥浮点诊断需单独附证据。 |
 | [等槽交换调和核的原始有理审计--资源](<../../../../archives/customer-attraction/state/资源/等槽交换调和核的原始有理审计--资源.md>) | math-exposition | retain | 给等槽交换的调和/Vandermonde 核公式、端点及3080参数有限Fraction回归范围。 |
 | [纯续局凸化的精确点对探索与投影候选版本--资源](<../../../../archives/customer-attraction/state/资源/纯续局凸化的精确点对探索与投影候选版本--资源.md>) | math-exposition | retain | 纯续局点对截凸的精确递归H、包含真实纯BI的外松弛方向，并对30客户两人背景给有理分离g(y)=311/30。 |
-| [终局推送工作区的历史身份与恢复路径--资源](<../../../../archives/customer-attraction/state/资源/终局推送工作区的历史身份与恢复路径--资源.md>) | non-math | delete | 旧actor/instance表和依赖路径恢复说明，无模型、策略、断言或输出。 |
+| [终局推送六份冻结点的字段身份与认证边界--资源](<../../../../archives/customer-attraction/state/资源/终局推送六份冻结点的字段身份与认证边界--资源.md>) | mixed/needs-context | extract | 270精确packet的真实查询势序数学反例与五份未核完整IC的浮点快照同页，需分离数学论证和附件数据。 |
+| [终局推送工作区的历史身份与恢复路径--资源](<../actions/1dad82e00ce354a1127f.json>) | non-math | delete | 旧actor/instance表和依赖路径恢复说明，无模型、策略、断言或输出。 |
 | [结构证书作者稿与全树程序同字节来源--资源](<../../../../archives/customer-attraction/state/资源/结构证书作者稿与全树程序同字节来源--资源.md>) | math-exposition | retain | 六人双包含结构证书与最大主题根覆盖条件界、全树有序历史效用向量MILP表示和变量/约束数，程序范围附属于数学解释。 |
 | [给定前缀首两人安全值的完整终局菜单探针--资源](<../../../../archives/customer-attraction/state/资源/给定前缀首两人安全值的完整终局菜单探针--资源.md>) | math-exposition | retain | 子局首两人同份完整SPE兼容判据和整数终局R递推、v_r静态LP。 |
 | [统一价格与双侧修复的根命题身份账本--资源](<../../../../archives/customer-attraction/state/资源/统一价格与双侧修复的根命题身份账本--资源.md>) | math-exposition | retain | 统一λ价格等价、BAL/LOW必要域及signed修复C(g)的精确合同。 |
-| [统一价格父方核验的版本与接续登记--资源](<../../../../archives/customer-attraction/state/资源/统一价格父方核验的版本与接续登记--资源.md>) | evidence-only | attach | 父方五份原始审计的SHA、重放、审查版本和工作区接续登记，数学合同已有单独正文。 |
+| [统一价格父方核验的版本与接续登记--资源](<../actions/0bd2aa7701d6ed3fb18c.json>) | evidence-only | attach | 父方五份原始审计的SHA、重放、审查版本和工作区接续登记，数学合同已有单独正文。 |
+| [继承抽象点与目录算子协调稿的身份和范围--资源](<../../../../archives/customer-attraction/state/资源/继承抽象点与目录算子协调稿的身份和范围--资源.md>) | math-exposition | retain | 抽象收益表违共同客户平方/三支持身份，目录添小题策略保持与笛卡尔补偿、人口单调反例范围。 |
 | [联合银行预算与客户吸收的审查和执行边界--资源](<../../../../archives/customer-attraction/state/资源/联合银行预算与客户吸收的审查和执行边界--资源.md>) | math-exposition | retain | 银行签名余额与共同预算粘合给出客户吸收公式及执行条件 |
 | [背景BNS与AP的版本身份及固定支持有限声明--资源](<../../../../archives/customer-attraction/state/资源/背景BNS与AP的版本身份及固定支持有限声明--资源.md>) | math-exposition | retain | 区分 BNS/AP 两版背景常数和旧64支持必要行超二点，指出点不构成完整SPE。 |
 | [背景交换的五人必要投影声明与版本证据边界--资源](<../../../../archives/customer-attraction/state/资源/背景交换的五人必要投影声明与版本证据边界--资源.md>) | math-exposition | retain | 五人十标签投影的1100行必要约束与交换界定了证明缺口 |
+| [背景信用的诊断范围与原稿证据合同--资源](<../../../../archives/customer-attraction/state/资源/背景信用的诊断范围与原稿证据合同--资源.md>) | math-exposition | retain | 合法背景最优剩余利润BG-GAP及动态信用递推，区分34策略/19实例诊断与两族已证模板障碍。 |
+| [背景储备候选的后续反驳与退款归纳边界--资源](<../../../../archives/customer-attraction/state/资源/背景储备候选的后续反驳与退款归纳边界--资源.md>) | math-exposition | retain | 非空背景RESERVE等价GLOBAL/UNION-BG，52客户实际前缀给18>17；因果退款与bank等号仍独立成立。 |
+| [背景克隆复用债备忘的审查时序与真实提升缺口--资源](<../../../../archives/customer-attraction/state/资源/背景克隆复用债备忘的审查时序与真实提升缺口--资源.md>) | math-exposition | retain | Beta克隆同终局复用债D+G和上尾折扣成立，但固定完整策略lift在AAB真回复25>24失效。 |
 | [背景利润储备递归的原审计与弱诊断合同--资源](<../../../../archives/customer-attraction/state/资源/背景利润储备递归的原审计与弱诊断合同--资源.md>) | math-exposition | retain | 给背景利润 F 的精确盈余递推、全A台阶族与69客户粗储备候选失败的不同范围。 |
 | [背景利润台阶与区间累计安全预算的独立审查边界--资源](<../../../../archives/customer-attraction/state/资源/背景利润台阶与区间累计安全预算的独立审查边界--资源.md>) | math-exposition | retain | 全背景利润F_r的台阶反族、HI放松及五环静态平台DI负漂移，并用银行四人真策略纠正逐节点安全查询桥。 |
+| [背景剪枝与共同客户根支付入口的逐项范围--资源](<../../../../archives/customer-attraction/state/资源/背景剪枝与共同客户根支付入口的逐项范围--资源.md>) | math-exposition | retain | 公共核每主题一私客的任意合法过去剩余最优利润Q*r=r(K/m+1)，并区分区间HI剪枝、29客户根价格与Shapley辅助反例域。 |
 | [背景半利润合同与R4ffa根账本的真实边界--资源](<../../../../archives/customer-attraction/state/资源/背景半利润合同与R4ffa根账本的真实边界--资源.md>) | math-exposition | retain | 半利润合同递推和52客户反例说明背景阈值翻转 |
+| [背景新覆盖与末回复循环债务的来源账本--资源](<../../../../archives/customer-attraction/state/资源/背景新覆盖与末回复循环债务的来源账本--资源.md>) | math-exposition | retain | 背景新增覆盖BG-NEW被52客户前缀证伪；笛卡尔安全值可加、公共padding与末回复循环Theta债另有精确式。 |
+| [背景覆盖信用的旧租金攻击与等号压力--资源](<../../../../archives/customer-attraction/state/资源/背景覆盖信用的旧租金攻击与等号压力--资源.md>) | math-exposition | retain | 背景覆盖信用C*≤W+V被52客户实际前缀否定；租金释放惩罚约束和全租等号族给限定正面内容。 |
+| [背景静态接口与floor保护的原始证明和审查版本--资源](<../../../../archives/customer-attraction/state/资源/背景静态接口与floor保护的原始证明和审查版本--资源.md>) | math-exposition | retain | 背景剩余利润F_r与分数门槛w_r的r+C_r(B)界及两系数模板最优；floor-only反族非真SPE。 |
+| [自洽查询固定策略锥证书与单位独审的合同--资源](<../../../../archives/customer-attraction/state/资源/自洽查询固定策略锥证书与单位独审的合同--资源.md>) | math-exposition | retain | 三人六标签固定p支持等式时的20真IC乘子、63类型非负余项证书及纯SC失败。 |
 | [自洽池与多槽交换的审查合同及旧池化反例--资源](<../../../../archives/customer-attraction/state/资源/自洽池与多槽交换的审查合同及旧池化反例--资源.md>) | math-exposition | retain | 证明自洽池固定点与条件付款，解释635客户全p失败、16客户无纯自洽及ME多槽交换式。 |
+| [自洽池与总查询行的弱付款接续--资源](<../../../../archives/customer-attraction/state/资源/自洽池与总查询行的弱付款接续--资源.md>) | math-exposition | retain | 同一最优元组真实查询行H_i=R_i−(OPT−W)及ΣH=W+ΣL−ΣQ，末位H_m≥u_m、倒二H≥max(t,F/2)，明确早期总账未付；SC池另有背景信用式。 |
+| [花瓣弱iid原审计的策略映射与有理阈值合同--资源](<../../../../archives/customer-attraction/state/资源/花瓣弱iid原审计的策略映射与有理阈值合同--资源.md>) | math-exposition | retain | 花瓣A/B/Q_j全历史两种离轨策略均得W2m、OPT2m+min(J,m−1)；m20/J100及m≥41有理iid弱付款反族，并区分静态v_m。 |
 | [菜单分离独审与cap极端点的原证据范围--资源](<../../../../archives/customer-attraction/state/资源/菜单分离独审与cap极端点的原证据范围--资源.md>) | math-exposition | retain | 菜单产品复制数、24客户有限原始对偶值277/54、cap尾阈值及静态最优换题不等式均有数学内容。 |
 | [菜单聚合与根协方差的审查域及综合边界--资源](<../../../../archives/customer-attraction/state/资源/菜单聚合与根协方差的审查域及综合边界--资源.md>) | math-exposition | retain | 推导根菜单协方差与插入退款式，说明PB合法背景和零根银行对逐节点桥的不同反驳。 |
+| [行动上界递归的整型定向搜索与四个冻结点--资源](<../../../../archives/customer-attraction/state/资源/行动上界递归的整型定向搜索与四个冻结点--资源.md>) | math-exposition | retain | 行动上界递归H/L/E/G的全历史合法性及整型状态DP与四固定输入G>OPT/2。 |
+| [覆盖交换的逐人近饱和推广与旧候选--资源](<../../../../archives/customer-attraction/state/资源/覆盖交换的逐人近饱和推广与旧候选--资源.md>) | math-exposition | retain | 任意实际玩家最大题交换Q(C,D)≤K+(m−1)²E_i的完整证明及三人锐例，后续更强系数已支配。 |
 | [覆盖矩与势支付工作台的状态校正--资源](<../../../../archives/customer-attraction/state/资源/覆盖矩与势支付工作台的状态校正--资源.md>) | math-exposition | retain | 覆盖矩CR1—CR6的span/极射线/稀疏表示及形式非SPE障碍，另区分调和势11客户反例和52客户实际前缀整体预算反例。 |
+| [覆盖矩与扩大势入口的模型和独审合同--资源](<../../../../archives/customer-attraction/state/资源/覆盖矩与扩大势入口的模型和独审合同--资源.md>) | math-exposition | retain | 覆盖矩V_m维数、真实客户锥极射线与锚预算局部缺口；扩大DR势三人161<168不能当CAG反例。 |
+| [设施审查旧目录的逐项用途--资源](<../actions/8d6e7115e751cc3d5998.json>) | non-math | delete | 设施旧审查目录五条仅列路径、角色、用途及Claim显示键，不陈述归约证明或数学机制。 |
 | [调和删除势与终局负载税的历史停点--资源](<../../../../archives/customer-attraction/state/资源/调和删除势与终局负载税的历史停点--资源.md>) | math-exposition | retain | 调和删除边际恒等式与全终局税候选OPT≤W+Σc/(c+1)，核61客户AAAF上该候选正余量但一般式未证。 |
+| [调和利润转换族的原审计与九行报告--资源](<../../../../archives/customer-attraction/state/资源/调和利润转换族的原审计与九行报告--资源.md>) | math-exposition | retain | 两主题r人恒定后继族中根收益1、尾利润r、调和势rH与半利润转换余额1−r/2，九次有限审计只覆盖r2至10。 |
 | [调和匹配双审计的任意完整策略与精确范围--资源](<../../../../archives/customer-attraction/state/资源/调和匹配双审计的任意完整策略与精确范围--资源.md>) | math-exposition | retain | 说明任意完整形式策略的调和匹配下界和两个独立代码的精确有限检查范围。 |
+| [调和插入税的真实后继合同与当前反驳边界--资源](<../../../../archives/customer-attraction/state/资源/调和插入税的真实后继合同与当前反驳边界--资源.md>) | math-exposition | retain | 调和插入税K=h−τ和付费条件C−D≤Eτ+I，银行真SPE已否一般full-menu。 |
+| [调和菜单母式的原参数审计与证书复用范围--资源](<../../../../archives/customer-attraction/state/资源/调和菜单母式的原参数审计与证书复用范围--资源.md>) | math-exposition | retain | 真实后继菜单母式的eta参数极小点及R/Z/S有符号债；1728网格和2500代数样本不支付多层共同预算。 |
+| [调和重构与可变归属入口的来源去向--资源](<../../../../archives/customer-attraction/state/资源/调和重构与可变归属入口的来源去向--资源.md>) | math-exposition | retain | 实际末对调和复制钱包给W≥(2H_m+1)C′；可变归属TAME初始化扩大固定T付款向量但ROLE仍未证。 |
+| [负H候选的真实菜单边界与第七轮入口--资源](<../../../../archives/customer-attraction/state/资源/负H候选的真实菜单边界与第七轮入口--资源.md>) | math-exposition | retain | 真实grandchild菜单H的r2非负、r3产品可加及old23某A负而max H正。 |
+| [跨主题共同付款尝试的扩大合同与未付整行系数--资源](<../../../../archives/customer-attraction/state/资源/跨主题共同付款尝试的扩大合同与未付整行系数--资源.md>) | math-exposition | retain | 可变归属、ALL与ROW退款族说明同客户库存可行，却缺不同真实动作请求的整行IC系数Σκ≤1；EG反族仅否另一纯组合桥。 |
 | [跨分支付款命题账本的精确对象与约束层次--资源](<../../../../archives/customer-attraction/state/资源/跨分支付款命题账本的精确对象与约束层次--资源.md>) | math-exposition | retain | 十项跨枝命题含两覆盖严格界、任意实际玩家交换系数、E+BC共同有符号表示及TC-DIL锋利稀释。 |
+| [跨分支支付工作区的历史Claim与全树末层入口--资源](<../../../../archives/customer-attraction/state/资源/跨分支支付工作区的历史Claim与全树末层入口--资源.md>) | math-exposition | retain | 全树末层最优放松的调和损失及69客户携带保底台阶反例，分清旧OPEN与现有五人定理。 |
 | [跨枝信用与五人索引证据的历史回执--资源](<../../../../archives/customer-attraction/state/资源/跨枝信用与五人索引证据的历史回执--资源.md>) | math-exposition | retain | AC实际银行尖锐系数、ROW-ID跨枝恒等式、五人必要模板全型对偶及2396点ALIGN负行均在回执来源页明确推导。 |
 | [跨续局必要行的共同目录闭包与版本入口--资源](<../../../../archives/customer-attraction/state/资源/跨续局必要行的共同目录闭包与版本入口--资源.md>) | math-exposition | retain | 给五人索引松弛的637跨族和200共享索引必要行，解释超二点无法自动给完整策略。 |
 | [路径强聚合与额外iid及三储备审查的时态--资源](<../../../../archives/customer-attraction/state/资源/路径强聚合与额外iid及三储备审查的时态--资源.md>) | math-exposition | retain | 给空题稀释下路径强聚合差12e²−e及34客户完整SPE，保弱聚合与iid量词区别。 |
 | [路径强聚合原证书与审计输出的字段闭包--资源](<../../../../archives/customer-attraction/state/资源/路径强聚合原证书与审计输出的字段闭包--资源.md>) | mixed/needs-context | extract | 大部分核对审计脚本与报告字段，但明确给34客户完整SPE的路径强聚合D_e=21/16、G_e=4/3及空方向恒等式。 |
-| [路径迁移的五类身份与退役例外--资源](<../../../../archives/customer-attraction/state/资源/路径迁移的五类身份与退役例外--资源.md>) | non-math | delete | 五类旧路径迁移与退役映射、86条映射及文件恢复范围，数学名称仅用来提醒不能从路径推导等价。 |
+| [路径迁移的五类身份与退役例外--资源](<../actions/29cf3b83bb341ba72163.json>) | non-math | delete | 五类旧路径迁移与退役映射、86条映射及文件恢复范围，数学名称仅用来提醒不能从路径推导等价。 |
+| [辅助付款与规范化路线的逐项失败边界--资源](<../../../../archives/customer-attraction/state/资源/辅助付款与规范化路线的逐项失败边界--资源.md>) | math-exposition | retain | 银行Cartesian根逐人静态门槛与全列末税辅助付款有完整反族；计数统一策略、背景、删首等各自失效范围明确。 |
 | [边际势预算与全局正矩原稿的精确证据层次--资源](<../../../../archives/customer-attraction/state/资源/边际势预算与全局正矩原稿的精确证据层次--资源.md>) | math-exposition | retain | 扩大DR势表的边际利润预算必要递推、覆盖客户锥的锚矩全局分离构造及11客户势支配反例均有明确推导。 |
+| [近复制与严格策略原稿的精确版本和审计合同--资源](<../../../../archives/customer-attraction/state/资源/近复制与严格策略原稿的精确版本和审计合同--资源.md>) | math-exposition | retain | 可用模块首次相交收益保底、近包含差集罚金和myopic-ceiling松弛的数学条件与有限执行边界。 |
 | [连续对数势价格与安全值极小极大的入口界限--资源](<../../../../archives/customer-attraction/state/资源/连续对数势价格与安全值极小极大的入口界限--资源.md>) | math-exposition | retain | 证明静态log背景KKT价格 OPT≤2mλ，指出 Jensen 只给τ≤v、τ≤λ。 |
+| [退役分支的逐项来源保全与恢复边界--资源](<../actions/ee857c27b4c3e68f3051.json>) | non-math | delete | 退役六分支旧删除与保存清单，141条只是来源路径、预期哈希，42条为省略记录；未陈述被归档论文的数学主张。 |
+| [退款与可信尾两轮入口的数学边界和审查时态--资源](<../../../../archives/customer-attraction/state/资源/退款与可信尾两轮入口的数学边界和审查时态--资源.md>) | math-exposition | retain | 遗漏私块席位递推、根修复G′=G−3s、179客户退款缺口与反应协方差RTD。 |
 | [逐分支候选协调稿的全称域与有限证据--资源](<../../../../archives/customer-attraction/state/资源/逐分支候选协调稿的全称域与有限证据--资源.md>) | math-exposition | retain | 六人完整历史目标下证明最优主题根支撑条件推出OPT≤(2−1/m)W及触及遗漏B的余项界，并给七极大逐席反例。 |
+| [逐前缀额外槽保底的十环独审与全历史边界--资源](<../../../../archives/customer-attraction/state/资源/逐前缀额外槽保底的十环独审与全历史边界--资源.md>) | math-exposition | retain | 十环三玩家根A_i收益3/2而静态v4=33/20，全部非根背景floor可满足却末位有3>5/2偏离，精确说明不是SPE。 |
+| [逐客户势静态桥的五源合同与精确核验--资源](<../../../../archives/customer-attraction/state/资源/逐客户势静态桥的五源合同与精确核验--资源.md>) | math-exposition | retain | 八客户实际策略势8而十二个静态PNE势9，逐客户调和势删除边际及指定可分势函数类的分离。 |
+| [逐席反例工作区的原始证书与诊断合同--资源](<../../../../archives/customer-attraction/state/资源/逐席反例工作区的原始证书与诊断合同--资源.md>) | math-exposition | retain | 六人逐席付款非法行及两人硬编码k修正、最优容器不能化约全目录的量词。 |
 | [逐角色退款作者字面审计与双实现的证据分层--资源](<../../../../archives/customer-attraction/state/资源/逐角色退款作者字面审计与双实现的证据分层--资源.md>) | math-exposition | retain | 179单位客户、57节点完整SPE的逐角色退款严格失败g₂−u₂−e₂=1，解释唯一最优ATQ和共享退款尚未付。 |
 | [逐角色退款原独审的先验与父方有序审计--资源](<../../../../archives/customer-attraction/state/资源/逐角色退款原独审的先验与父方有序审计--资源.md>) | math-exposition | retain | 给逐角色退款 RF 的条件望远镜与179客户完整策略中第二位缺1的精确反例。 |
+| [逐边回撤与自由删槽工作区账本的当前状态--资源](<../../../../archives/customer-attraction/state/资源/逐边回撤与自由删槽工作区账本的当前状态--资源.md>) | math-exposition | retain | 残余L−E净差、固定余流回撤与AFC自由删槽候选明确；36客户跨势余项−46/15不能仅由正IC付款。 |
 | [通用菜单时机与固定策略锥压力的原诊断合同--资源](<../../../../archives/customer-attraction/state/资源/通用菜单时机与固定策略锥压力的原诊断合同--资源.md>) | math-exposition | retain | 以通用菜单时机 ψ_i、统一 λ 和固定策略锥 LP 区分可检菜单行与全局付款；16 个语料测试并指出单客户整行失效。 |
 | [遗漏净缺口与客户密度付款的直接接续--资源](<../../../../archives/customer-attraction/state/资源/遗漏净缺口与客户密度付款的直接接续--资源.md>) | math-exposition | retain | 用 OPT−W=\|R\|−\|G\| 归约遗漏净缺口，给两尾 fresh 预算 BASE−2、同动作 IC 和跨动作四叶缺口。 |
 | [遗漏删除参数证书与重入菜单的证据分层--资源](<../../../../archives/customer-attraction/state/资源/遗漏删除参数证书与重入菜单的证据分层--资源.md>) | math-exposition | retain | 遗漏客户删除参数与重入菜单的有限证书分层包含数学命题 |
+| [重复前缀三套LP的三十四份原报告与证书界限--资源](<../actions/573249019e9c606e3b1d.json>) | evidence-only | attach | 三套46/77/50必要行的34份浮点LP报告只有ratio、point和乘子，没有有理回代或完整SPE；文中没有独立于这些运行的数学新主张。 |
+| [重复奖励尾目录扩展与前缀收费的原始合同--资源](<../../../../archives/customer-attraction/state/资源/重复奖励尾目录扩展与前缀收费的原始合同--资源.md>) | math-exposition | retain | 重复奖励尾各目录层的最后a_k≤x_k/2及PAY m槽与高背景k槽的收费区别。 |
 | [重复尾部末位比较与森林有限探针的复现边界--资源](<../../../../archives/customer-attraction/state/资源/重复尾部末位比较与森林有限探针的复现边界--资源.md>) | math-exposition | retain | 列出重复尾部末位 BR 的 rc/2≤d≤c/(r+1) 条件和森林候选，有限探针仅检特定范围。 |
+| [重复银行原HALF单策略构造与第十轮读序--资源](<../../../../archives/customer-attraction/state/资源/重复银行原HALF单策略构造与第十轮读序--资源.md>) | math-exposition | retain | 五人银行固定策略的Γ重数锥及38型精确原始端点W26/OPT32；真最优J、LAST必要条件与相邻钱包量词分开。 |
+| [链式回复接口的有限证据与带价叉主源接续--资源](<../../../../archives/customer-attraction/state/资源/链式回复接口的有限证据与带价叉主源接续--资源.md>) | math-exposition | retain | 同源链式回复给任意m/k/L的非负分解，带价叉五IC和两价格钱包保持原倒二前缀；有限m6搜索只诊断。 |
 | [锚定割锥提升的原程序与双版有限报告--资源](<../../../../archives/customer-attraction/state/资源/锚定割锥提升的原程序与双版有限报告--资源.md>) | math-exposition | retain | 锚定割锥提升定义原程序与两版有限报告的数学约束及保证范围 |
+| [随机全类型与指定支持的终局推送浮点合同--资源](<../../../../archives/customer-attraction/state/资源/随机全类型与指定支持的终局推送浮点合同--资源.md>) | math-exposition | retain | 终局平均负载推送F的Jensen/自由背景关系与根收益归一有界性，随机及指定策略浮点阴性只属有限域。 |
+| [零背景弱组合的末位付款证书与精确审计--资源](<../../../../archives/customer-attraction/state/资源/零背景弱组合的末位付款证书与精确审计--资源.md>) | math-exposition | retain | 零背景三人真实九偏离的六组末节点BR slack非负及逐客户余项，推3O≤3W+ΣV，并解释32768会员型的压缩。 |
 | [静态CCE间隙与私有核障碍工作区的版本入口--资源](<../../../../archives/customer-attraction/state/资源/静态CCE间隙与私有核障碍工作区的版本入口--资源.md>) | math-exposition | retain | 从静态CCE分离与分数覆盖τ导出真实路径预算O≤P_{i−1}+rτu_i及乘积福利下界，并定位收益比较图候选。 |
 | [静态二倍近似候选的三策略锥与完整旧报告--资源](<../../../../archives/customer-attraction/state/资源/静态二倍近似候选的三策略锥与完整旧报告--资源.md>) | math-exposition | retain | STATIC-2定义、两后继界、三策略锥与未付响应税均有明确数学推导 |
 | [静态人数预算与固定终局付款反例的来源范围--资源](<../../../../archives/customer-attraction/state/资源/静态人数预算与固定终局付款反例的来源范围--资源.md>) | math-exposition | retain | 静态安全值n v_n的人数单调与固定目录极限证明，13人固定终局缩放税反例及三人StrongA钱包失败、末对DIRECT差额式。 |
 | [静态分母接口的审查先验与投影命中边界--资源](<../../../../archives/customer-attraction/state/资源/静态分母接口的审查先验与投影命中边界--资源.md>) | math-exposition | retain | 静态分母SD恒等式、PRICE局部凸包和HIT反例辨明投影界限 |
+| [静态删位宽限原笔记与有限搜索的准确合同--资源](<../../../../archives/customer-attraction/state/资源/静态删位宽限原笔记与有限搜索的准确合同--资源.md>) | math-exposition | retain | 冻结删位总收益D_T=(m+1)Σ_T1/(c+1)−\|T\C\|，十三人反例否静态宽限；最优元组均匀平均的弱存在接口另保。 |
 | [静态删位宽限的新标签策略锥与单纪录--资源](<../../../../archives/customer-attraction/state/资源/静态删位宽限的新标签策略锥与单纪录--资源.md>) | math-exposition | retain | 建立静态删除 D_T 表达与 SA 充分桥，并明确新标签策略锥扫描的有限性。 |
 | [静态势半覆盖与二分关联预算的原稿边界--资源](<../../../../archives/customer-attraction/state/资源/静态势半覆盖与二分关联预算的原稿边界--资源.md>) | math-exposition | retain | 静态NE半覆盖证明及二分关联预算m²障碍均完整陈述 |
 | [静态平滑性的真实后继桥与额外预算--资源](<../../../../archives/customer-attraction/state/资源/静态平滑性的真实后继桥与额外预算--资源.md>) | math-exposition | retain | 静态SM(1,1)的逐客户证明和三客户完整顺序SPE非PNE证书，指出粗差额D≤W只推出OPT≤3W。 |
+| [静态最坏占用反例与零遗憾紧族的精确程序闭包--资源](<../../../../archives/customer-attraction/state/资源/静态最坏占用反例与零遗憾紧族的精确程序闭包--资源.md>) | math-exposition | retain | 安全最优静态背景的占用收益桥被两核心族否定；全大主题零遗憾族给精确返还债恒等式，有限六m及42组审计单列。 |
+| [静态源占用反例与零遗憾紧族的审查和范围--资源](<../../../../archives/customer-attraction/state/资源/静态源占用反例与零遗憾紧族的审查和范围--资源.md>) | math-exposition | retain | 静态最坏占用源的两core真值反族、真实末位修复及零遗憾紧族，区分同叶折扣与完整SPE。 |
 | [静态福利比较与末回复配对锥的原稿接续--资源](<../../../../archives/customer-attraction/state/资源/静态福利比较与末回复配对锥的原稿接续--资源.md>) | math-exposition | retain | 三人SPE低于全部静态PNE/CCE的实例、n v_n≤CCE_min静态关系，以及末回复删槽与共同早期乘子锥。 |
 | [静态覆盖信用原审计与同父容量审查的范围--资源](<../../../../archives/customer-attraction/state/资源/静态覆盖信用原审计与同父容量审查的范围--资源.md>) | math-exposition | retain | 分清 STATIC、DYN、NET 覆盖信用，给同父容量 COMP 关系及八客户匹配失败例。 |
 | [静态随机删槽工具与安全聚合的旧边界--资源](<../../../../archives/customer-attraction/state/资源/静态随机删槽工具与安全聚合的旧边界--资源.md>) | math-exposition | retain | 带标签随机删竞争槽证明(r−1)v_{r−1}(b)≤rv_r(b)，并由log查询设计证明固定目录n v_n→可覆盖客户总数。 |
 | [非根中继与调和停止稿的真实背景和最小人数--资源](<../../../../archives/customer-attraction/state/资源/非根中继与调和停止稿的真实背景和最小人数--资源.md>) | math-exposition | retain | 非根福利R1-v2、调和势R2及最小人数嵌入E/R有明确数学论证 |
+| [非根福利中继背景修正的严格四客户证书与原审计合同--资源](<../../../../archives/customer-attraction/state/资源/非根福利中继背景修正的严格四客户证书与原审计合同--资源.md>) | math-exposition | retain | 非根福利差必须含旧玩家利润ΔB，四客户严格SPE使省略式失败，并有fresh/active份额恒等式。 |
 | [非负严格三角回撤的最大解与失败割--资源](<../../../../archives/customer-attraction/state/资源/非负严格三角回撤的最大解与失败割--资源.md>) | algorithm-result | retain | 非负严格三角容量系统升序贪心给逐坐标最大可行点，首次失败构造值为z_j<0的显式价格割，且给有理输入O(n²)精确算法。 |
+| [顺序客户吸引旧目录的逐项用途--资源](<../../../../archives/customer-attraction/state/资源/顺序客户吸引旧目录的逐项用途--资源.md>) | mixed/needs-context | extract | 旧目录107项用途含三人5/3、四人1499/750、五人旧OPEN等数学摘要及当前范围问题，也夹大量角色/路径/关联导出；数学仍需连回原正文。 |
 | [顺序客户吸引资产的范围与后续修正--资源](<../../../../archives/customer-attraction/state/资源/顺序客户吸引资产的范围与后续修正--资源.md>) | mixed/needs-context | extract | 旧资产36至350含五人半覆盖、iid反族及局部投影等数学范围，同时整篇嵌入大量路径与身份字段，需抽数学范围 |
 | [额外iid两人子批的同源审计复用与静态反桥闭合--资源](<../../../../archives/customer-attraction/state/资源/额外iid两人子批的同源审计复用与静态反桥闭合--资源.md>) | math-exposition | retain | 等f两人子类、1222客户循环静态PNE与三人iid值的分离，并证明该循环族任一两人完整SPE收益2k+3。 |
 | [额外iid槽的静态凹势与EI候选纠错--资源](<../../../../archives/customer-attraction/state/资源/额外iid槽的静态凹势与EI候选纠错--资源.md>) | math-exposition | retain | 额外iid槽凹势导数、静态安全值方向与银行族对EI反驳 |
 | [额外整数背景与实际终局插入的原始策略锥--资源](<../../../../archives/customer-attraction/state/资源/额外整数背景与实际终局插入的原始策略锥--资源.md>) | math-exposition | retain | 区分整数extra值v_{r+1}、完整真实根菜单与实际终局插入价，给静态因子二及路径逐人门槛的条件蕴含与银行反证。 |
 | [额外槽饱和势与真实偏离分支覆盖上界--资源](<../../../../archives/customer-attraction/state/资源/额外槽饱和势与真实偏离分支覆盖上界--资源.md>) | math-exposition | retain | 额外槽静态界、饱和势存在性与真实偏离分支覆盖上界 |
 | [首偏离源复制的算术审计与分支入口范围--资源](<../../../../archives/customer-attraction/state/资源/首偏离源复制的算术审计与分支入口范围--资源.md>) | math-exposition | retain | 推首偏离复制的倒数恒等式和严格未来比率；208 行审计只是限定证据。 |
+| [首对成块安全的条件归约与可信阈值缺口--资源](<../../../../archives/customer-attraction/state/资源/首对成块安全的条件归约与可信阈值缺口--资源.md>) | math-exposition | retain | PB-extra首对成块安全若普遍成立可由合法背景嵌入推W≥mv_(m+1)并得half；合法背景r2475已否前提，八标签假菜单末位BR却第二位严格偏离。 |
 | [首对查询接口的固定鞍点探针与牺牲版本--资源](<../../../../archives/customer-attraction/state/资源/首对查询接口的固定鞍点探针与牺牲版本--资源.md>) | math-exposition | retain | 首对固定安全鞍点的63变量LP及全兴趣退化点数学分析 |
 | [首归属剪枝随机攻击的实现与两份阴性报告--资源](<../../../../archives/customer-attraction/state/资源/首归属剪枝随机攻击的实现与两份阴性报告--资源.md>) | mixed/needs-context | extract | 主要审计first-owner剪枝的随机程序和两份阴性浮点报告，同时具体解释同一最优槽的SOURCE初始化、SAFE/CLIP图及角色cap2 LP。 |
 | [首次偏离中继与个人研究账本的范围和证据--资源](<../../../../archives/customer-attraction/state/资源/首次偏离中继与个人研究账本的范围和证据--资源.md>) | math-exposition | retain | 建立标记时钟与首次偏离容量限制，并用静态最差占用者构造说明中继不能免费共用。 |
+| [鲁棒前缀障碍研究入口与归档身份--资源](<../../../../archives/customer-attraction/state/资源/鲁棒前缀障碍研究入口与归档身份--资源.md>) | math-exposition | retain | 全部实际前缀最坏分母松弛族W=LH_m、OPT=mL且倒二真偏离，六人低比率点不能升级为SPE反例。 |
+| [一般目录安全债务与真实分支转移--问题](<../../../../archives/customer-attraction/state/问题/一般目录安全债务与真实分支转移--问题.md>) | math-exposition | retain | 全局安全债务ΣD=W−nv与真实Γ的Farkas价格目标2c−o，末层代表历史转移仍未闭合。 |
 | [任意人数完整均衡半覆盖--问题](<../../../../archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md>) | math-exposition | retain | 完整历史均衡半覆盖问题给净遗漏恒等式及 (2m−1)a+1 接近 2 的构造，清楚保留未证范围。 |
 | [任意尾部新增覆盖分数价格--问题](<../../../../archives/customer-attraction/state/问题/任意尾部新增覆盖分数价格--问题.md>) | math-exposition | retain | 任意尾部新增覆盖FRESH价格两人证明和GLOBAL背景反例 |
 | [可信阈值路径价格候选--问题](<../../../../archives/customer-attraction/state/问题/可信阈值路径价格候选--问题.md>) | math-exposition | retain | 定义可信阈值 v_r、路径负载 L_r 与候选 F_r≤2L_r；两人界和不相容条件分开陈述。 |
 | [完整历史计数策略净化--问题](<../../../../archives/customer-attraction/state/问题/完整历史计数策略净化--问题.md>) | math-exposition | retain | 完整历史与计数统一策略净化候选及24831客户严格分离 |
 | [真实重放协方差的定量付款--问题](<../../../../archives/customer-attraction/state/问题/真实重放协方差的定量付款--问题.md>) | math-exposition | retain | 对真实重放列 EDGE、RESET、PREFIX、ENERGY 账式并明确待支付协方差项的量词缺口。 |
+| [签名最优元组预算候选--问题](<../../../../archives/customer-attraction/state/问题/签名最优元组预算候选--问题.md>) | math-exposition | retain | 签名预算B/Q两个未证六人候选、Q−B逐客户非负式及最优支持重复槽的凹性极点归约均有清楚数学陈述。 |
+| [自由extra-one与iid安全值边界--问题](<../../../../archives/customer-attraction/state/问题/自由extra-one与iid安全值边界--问题.md>) | math-exposition | retain | 结构化极大关联给θ下界与half边界；extra-one静态桥有bank反族，IID安全扫描与全量词分开。 |
+| [逐人机会损失与分数价格候选--问题](<../../../../archives/customer-attraction/state/问题/逐人机会损失与分数价格候选--问题.md>) | math-exposition | retain | 逐人净机会损失候选OPT−W≤m u_i，末位/倒二已知、早期及分数价格仍待证明。 |
+| [逐人覆盖缺口价格桥--问题](<../../../../archives/customer-attraction/state/问题/逐人覆盖缺口价格桥--问题.md>) | math-exposition | retain | 逐人分数价格B(u_i)≤W推出half，末位价格与倒二余量已知，早期共同真实后继仍开放。 |
 | [ABB五乘子通式的唯一坏类与负余量机制--障碍](<../../../../archives/customer-attraction/state/障碍/ABB五乘子通式的唯一坏类与负余量机制--障碍.md>) | math-exposition | retain | ABB五乘子有理通式在唯一会员类对l≥3负余量 |
 | [PB大背景的最后单例偏离--障碍](<../../../../archives/customer-attraction/state/障碍/PB大背景的最后单例偏离--障碍.md>) | math-exposition | retain | 大背景参数构造将最后 D 的单例偏离收益算成严格有利，阻断该 PB 模板。 |
+| [PB实块背景删除与跨坐标平局保险的接续边界--障碍](<../../../../archives/customer-attraction/state/障碍/PB实块背景删除与跨坐标平局保险的接续边界--障碍.md>) | math-exposition | retain | 删除PB实块背景使Greedy条件g(r)>3q/2与Fill/Copy条件q>f(t)+(k−1)g(1)矛盾；给跨坐标平局保险d≥b−a的局部界。 |
+| [R-171固定包络价格13节点有符号delta有限审计--障碍](<../../../../archives/customer-attraction/state/障碍/R-171固定包络价格13节点有符号delta有限审计--障碍.md>) | math-exposition | retain | 13人完整自动机的同查询有符号delta总额点T达5超18/13，重叠信用只修固定选择。 |
+| [R-171有符号delta选择与重叠信用边界--障碍](<../../../../archives/customer-attraction/state/障碍/R-171有符号delta选择与重叠信用边界--障碍.md>) | math-exposition | retain | 13人真实全树在2002最优重复组合下最大有符号delta1373/507，否任意选择粗预算而非half。 |
+| [R-171有符号delta选择性预算独立复核--障碍](<../../../../archives/customer-attraction/state/障碍/R-171有符号delta选择性预算独立复核--障碍.md>) | math-exposition | retain | 同一packet13的纯查询总delta5及最优组合两端有理独核，选择性存在版仍留缺口。 |
+| [R-18-round3静态总正遗憾可信副本放大族--障碍](<../../../../archives/customer-attraction/state/障碍/R-18-round3静态总正遗憾可信副本放大族--障碍.md>) | math-exposition | retain | m=2k的X/Y/Z不交块构造完整SPE且W=OPT=4k，总静态regret为k/2，超越固定C W/m。 |
+| [R-18动态利润机会与非局部势边界--障碍](<../../../../archives/customer-attraction/state/障碍/R-18动态利润机会与非局部势边界--障碍.md>) | math-exposition | retain | all-big完整SPE的剩余利润机会差min(j+m/j)-1随sqrt(m)增长，另有前缀债与五人背景反例。 |
+| [R-2fc分数地板与安全动作有限探针--障碍](<../actions/848728c695ccf4744747.json>) | evidence-only | attach | 随机分数floor与安全动作程序只报有限trial的数值比率及candidate空值，无独立数学命题或机制证明。 |
 | [R-2fc背景遗憾探针与无碰撞五客户负载桥--障碍](<../../../../archives/customer-attraction/state/障碍/R-2fc背景遗憾探针与无碰撞五客户负载桥--障碍.md>) | math-exposition | retain | 五客户无碰撞固定SPE支付矩阵与有限Markov锥探针的精确界限 |
-| [R-2fc较大支撑预算DR探索边界--障碍](<../../../../archives/customer-attraction/state/障碍/R-2fc较大支撑预算DR探索边界--障碍.md>) | evidence-only | attach | 仅报告较大支撑预算 DR 掩码 LP 的四次无命中与一个负点；没有独立 CAG 断言或可复用归约证明。 |
+| [R-2fc较大支撑预算DR探索边界--障碍](<../actions/948cde33374643cb8bcd.json>) | evidence-only | attach | 仅报告较大支撑预算 DR 掩码 LP 的四次无命中与一个负点；没有独立 CAG 断言或可复用归约证明。 |
+| [R-3002尾部根证书与tau6模板障碍--障碍](<../../../../archives/customer-attraction/state/障碍/R-3002尾部根证书与tau6模板障碍--障碍.md>) | math-exposition | retain | 十三支撑Farkas负目标−1051597/12277962分离tau6的44行模板，未涉及完整SPE。 |
 | [R-31bbb五人投影必要行的精确不粘合障碍--障碍](<../../../../archives/customer-attraction/state/障碍/R-31bbb五人投影必要行的精确不粘合障碍--障碍.md>) | math-exposition | retain | 五人AP/BNS投影必要行存在有理并集3311537042/1488034729超过2的点 |
 | [R-31bbb共同Q与41隔离数值安全屏--障碍](<../../../../archives/customer-attraction/state/障碍/R-31bbb共同Q与41隔离数值安全屏--障碍.md>) | mixed/needs-context | extract | 共同Q和背景pair数值屏占主体，末节又纳入41与31客户最优面费用的数学反例，应抽取两类内容 |
+| [R-31bbb终局税与弱匹配锥有限屏幕--障碍](<../../../../archives/customer-attraction/state/障碍/R-31bbb终局税与弱匹配锥有限屏幕--障碍.md>) | math-exposition | retain | 终局税OPT≤W+Σc/(c+1)候选及弱匹配完整策略锥有限筛查的明确量词。 |
+| [R-33e8六提供者最优查询去相关桥的精确障碍--障碍](<../../../../archives/customer-attraction/state/障碍/R-33e8六提供者最优查询去相关桥的精确障碍--障碍.md>) | math-exposition | retain | 六人88客户完整SPE有W86、OPT88，四个最优六槽的去相关增量皆负，精确否定该桥。 |
+| [R-373d三价模板报告与有限参数边界--障碍](<../actions/60df931b420fcdba610e.json>) | evidence-only | attach | n1、2浮点可行及n3、4、5、10、20、100求解器不可行状态，参数bgmax30且无本页精确证书。 |
+| [R-373d可信扫描与p15有限实例边界--障碍](<../../../../archives/customer-attraction/state/障碍/R-373d可信扫描与p15有限实例边界--障碍.md>) | numeric-witness | distill | 三份固定整数策略的完整SPE路径与W/OPT数值、p15圆整路径非SPE，但客户构造和策略作用未在正文解释。 |
+| [R-373d耦合桥与计数MILP有限证书--障碍](<../../../../archives/customer-attraction/state/障碍/R-373d耦合桥与计数MILP有限证书--障碍.md>) | mixed/needs-context | extract | 四人13型静态桥的负系数及计数MILP固定证书与签名图代数、来源重放混在一起，且未给共同客户实现的通用结论。 |
+| [R-373d背景安全与FF领头有限屏幕--障碍](<../actions/82e35ed9f2650be52552.json>) | evidence-only | attach | 460个有限背景和105个SLSQP切平面起点皆为负gap的数值屏幕；固定锥及浮点误差不能建立全背景安全断言。 |
+| [R-373d背景支撑分支缺口与三价模板精确障碍--障碍](<../../../../archives/customer-attraction/state/障碍/R-373d背景支撑分支缺口与三价模板精确障碍--障碍.md>) | math-exposition | retain | 背景支撑根系数精确正差及三价模板700型Farkas障碍，与随机SPE缺口阴性分层。 |
+| [R-3b6b全策略锥CCE数值屏幕--障碍](<../actions/6c76628c9310679d1173.json>) | evidence-only | attach | 三种规模的固定策略锥CCE交替LP只给32个旧策略/随机屏幕近1比率和smoke，无新数学结论。 |
+| [R-3b6b最后平均选择严格SPE边界与最小支付搜索--障碍](<../../../../archives/customer-attraction/state/障碍/R-3b6b最后平均选择严格SPE边界与最小支付搜索--障碍.md>) | math-exposition | retain | 三人四主题严格完整SPE最后玩家收益11/2>W/3=16/3，排最低福利末位不超过平均的选择器，区分浮点付款阴性搜索。 |
+| [R-3b6b辅助锚点提升与m5k7有限证书边界--障碍](<../../../../archives/customer-attraction/state/障碍/R-3b6b辅助锚点提升与m5k7有限证书边界--障碍.md>) | mixed/needs-context | extract | 锚点辅助族的全历史比率和m5k7固定SPE证书与浮点候选恢复及网格搜索报告并置，需抽出数学对象。 |
 | [R-3b942一般查询行共同付款缺口--障碍](<../../../../archives/customer-attraction/state/障碍/R-3b942一般查询行共同付款缺口--障碍.md>) | math-exposition | retain | 精确写出查询端点 ENV 和遗漏余额 BAL，指出多后继真实子树共同付款 L≤\|B\|+E 未建立。 |
+| [R-3b942混合账本与根菜单候选停界--障碍](<../../../../archives/customer-attraction/state/障碍/R-3b942混合账本与根菜单候选停界--障碍.md>) | math-exposition | retain | 冻结前缀slack的递推、真实hybrid利润望远镜与根菜单平均候选分别揭示跨子树共同付款缺口。 |
+| [R105零regret切换的原模型不可达障碍--障碍](<../../../../archives/customer-attraction/state/障碍/R105零regret切换的原模型不可达障碍--障碍.md>) | math-exposition | retain | F/P/H/Q四块构造的虚拟删位零regret路径，在原模型根偏离T后有严格收益提升，因而不可达完整SPE。 |
+| [R12bf实际前缀比例嵌入统一族与61客户有理复核--障碍](<../../../../archives/customer-attraction/state/障碍/R12bf实际前缀比例嵌入统一族与61客户有理复核--障碍.md>) | math-exposition | retain | 五客户A/B/P任意k真尾局给f3=1、f2=2，反比例桥；61客户完整SPE另有9<39/4实证。 |
+| [R18最大主题强制根的非完整SPE障碍--障碍](<../../../../archives/customer-attraction/state/障碍/R18最大主题强制根的非完整SPE障碍--障碍.md>) | numeric-witness | distill | 三人六主题强制最大主题根收益13/2且根偏离12，后续252比较成立；正文依赖外部JSON定义客户和动作。 |
 | [R23-promotion势能桥与零遗憾重置精确反例--障碍](<../../../../archives/customer-attraction/state/障碍/R23-promotion势能桥与零遗憾重置精确反例--障碍.md>) | math-exposition | retain | 完整三人策略给 promotion reset 正税且来源 regret 为零的缩放族，并区分桥失败与 half 反例。 |
+| [R4背景候选运输攻击--障碍](<../../../../archives/customer-attraction/state/障碍/R4背景候选运输攻击--障碍.md>) | math-exposition | retain | BG=新增覆盖与活跃利润的背景加强由52客户实际前缀反驳；DEFECT及PRIVATE-LOSS精确分清孩子松弛。 |
 | [SAFE局部归一化与末端税组件的能力边界--障碍](<../../../../archives/customer-attraction/state/障碍/SAFE局部归一化与末端税组件的能力边界--障碍.md>) | math-exposition | retain | 推 SAFE 局部守恒和成本导数、末端组件非 SPE 反模型、共享加载模板的必要 IC 阻断。 |
+| [一致局部客户边际与全树激励的整数二次粘合缺口--障碍](<../../../../archives/customer-attraction/state/障碍/一致局部客户边际与全树激励的整数二次粘合缺口--障碍.md>) | math-exposition | retain | signed锚卫星族在全部proper支持有一致非负客户投影与全树IC，却因C(a)=m−1和m个不交卫星缺全局非负实现。 |
+| [一重离轨行的九人障碍与省略偏离--障碍](<../../../../archives/customer-attraction/state/障碍/一重离轨行的九人障碍与省略偏离--障碍.md>) | math-exposition | retain | 任意m的不交A/B主题策略满足离轨次数≤1的全部IC；m9时W262、OPT540，省略的二重偏离行slack−15/14。 |
+| [七极大六人四族预算的精确负余量与漏税纠错--障碍](<../../../../archives/customer-attraction/state/障碍/七极大六人四族预算的精确负余量与漏税纠错--障碍.md>) | math-exposition | retain | 130列四预算残差的最大统一余量精确为−3080653/133198702，给出五列有理对偶和原始解。 |
+| [七极大六人固定比较并集的路由行族分离--障碍](<../../../../archives/customer-attraction/state/障碍/七极大六人固定比较并集的路由行族分离--障碍.md>) | math-exposition | retain | 七极大六人固定并集的41条合法必要行及五个有理Farkas分离，明确最优六并集U−min\|X_j\|的条件。 |
+| [七极大六人混合保底与末两位税的对称列分离--障碍](<../../../../archives/customer-attraction/state/障碍/七极大六人混合保底与末两位税的对称列分离--障碍.md>) | math-exposition | retain | 七极大扩大的4064列上八轨道分布分离41行，却因倒二位置无共同极大容器不可实现真实路由。 |
+| [七极大双私有与五点完全图的静态席位欠费--障碍](<../../../../archives/customer-attraction/state/障碍/七极大双私有与五点完全图的静态席位欠费--障碍.md>) | math-exposition | retain | 七极大目录的完全图边约束和两私有门槛使静态席位LP最优19>12，真正六人half仍由分数覆盖定理保证。 |
+| [七极大弱混合末税行的全并集分离与最优六集边界--障碍](<../../../../archives/customer-attraction/state/障碍/七极大弱混合末税行的全并集分离与最优六集边界--障碍.md>) | math-exposition | retain | 固定000010路由的17列有理分离仅针对弱M4与全七并集；真正OPT6余额为正且强M4已有负IC行。 |
+| [七极大粗路由全偏离行的十八列分离与真实负载边界--障碍](<../../../../archives/customer-attraction/state/障碍/七极大粗路由全偏离行的十八列分离与真实负载边界--障碍.md>) | math-exposition | retain | 固定路由18列有理分布对83粗行分离固定六集目标，但真实过去负载D1,0平均为负，排除SPE实现。 |
+| [三窗口环的根尾阈值排序仍缺真实末位理性--障碍](<../../../../archives/customer-attraction/state/障碍/三窗口环的根尾阈值排序仍缺真实末位理性--障碍.md>) | math-exposition | retain | 三窗口k≥9族满足根4/3、尾11/6门槛排序，却在真实末节点有收益3严格偏离。 |
+| [不重复比较前缀平均的四人原点与精确恢复--障碍](<../../../../archives/customer-attraction/state/障碍/不重复比较前缀平均的四人原点与精确恢复--障碍.md>) | math-exposition | retain | 四人五主题有理质量使41条不重复前缀平均行成立但O_J=33/16>2W，根真实偏离余量−83/384揭示非SPE。 |
+| [不重复比较前缀筛选的四人行锥障碍--障碍](<../../../../archives/customer-attraction/state/障碍/不重复比较前缀筛选的四人行锥障碍--障碍.md>) | math-exposition | retain | 四人固定策略只保不重复比较前缀的限制锥可达13/4，三行对偶及13条遗漏真负行说明截断失效。 |
+| [两两非负客户投影不能共同实现--障碍](<../../../../archives/customer-attraction/state/障碍/两两非负客户投影不能共同实现--障碍.md>) | math-exposition | retain | 15份两主题非负投影总量可同为2，却违反覆盖行C03+C04−C0−C34≥0；三主题收益另违共同signed身份。 |
 | [两个独立末位奖励的补全互斥--障碍](<../../../../archives/customer-attraction/state/障碍/两个独立末位奖励的补全互斥--障碍.md>) | math-exposition | retain | 两末位奖励子树有严格盈利改动，指定补全参数推出a≤x/2 |
 | [两个真实孩子的五项税与共享终局租金容量--障碍](<../../../../archives/customer-attraction/state/障碍/两个真实孩子的五项税与共享终局租金容量--障碍.md>) | math-exposition | retain | 两个真实孩子五项税同池恒等式与K源共享末端租金容量 |
+| [两尾公共锚点族的旧组逃生与复制路径障碍--障碍](<../../../../archives/customer-attraction/state/障碍/两尾公共锚点族的旧组逃生与复制路径障碍--障碍.md>) | math-exposition | retain | 两尾公共锚点家族k≥2中，任何真实两尾SPE避开旧t组，迫A_t偏离收益7>拟路径C_k收益6。 |
+| [两层续局补偿族的安全扩充福利上限--障碍](<../../../../archives/customer-attraction/state/障碍/两层续局补偿族的安全扩充福利上限--障碍.md>) | math-exposition | retain | 两层笛卡尔完整SPE安全添题后各r比较均严格低2W，独立产品仍无half坏点。 |
 | [严格最优路径保持的两人目录压缩无界性--障碍](<../../../../archives/customer-attraction/state/障碍/严格最优路径保持的两人目录压缩无界性--障碍.md>) | math-exposition | retain | 严格有序实际路径保留的两人目录压缩需要任意多外题 |
+| [严格根尾排序不能支付静态额外槽阈值--障碍](<../../../../archives/customer-attraction/state/障碍/严格根尾排序不能支付静态额外槽阈值--障碍.md>) | math-exposition | retain | 环目录静态值v_n=2−2(n−1)/k及奇数槽严格排序无界比率，形式菜单非SPE且不能支付extra槽。 |
 | [中间极大关联的平稳支付障碍--障碍](<../../../../archives/customer-attraction/state/障碍/中间极大关联的平稳支付障碍--障碍.md>) | math-exposition | retain | 四主题平稳矩阵对中间二元关联产生负系数 |
+| [九客户二层占用探针的精确障碍--障碍](<../../../../archives/customer-attraction/state/障碍/九客户二层占用探针的精确障碍--障碍.md>) | math-exposition | retain | 九客户三人完整SPE路径(5,2,3)福利7而OPT3=8，精确否定二层占用至少最优覆盖的辅助命题。 |
+| [二次非负残差的全目录耦合与局部运输边界--障碍](<../../../../archives/customer-attraction/state/障碍/二次非负残差的全目录耦合与局部运输边界--障碍.md>) | math-exposition | retain | 二次非负函数R_a不可拆成真子目录非负块，显式L分离，并刻画同主题收益逐类型支配。 |
+| [二进制全码银行的加载者真实偏离--障碍](<../../../../archives/customer-attraction/state/障碍/二进制全码银行的加载者真实偏离--障碍.md>) | math-exposition | retain | 二进制银行全码在h>6G下迫任何真实两尾SPE逐坐标平衡，加载者改B_j至少dh/2+\|X_j\|/2，排指定L_i,B_i,B_i有序路径。 |
 | [五人双根偏离模板--障碍](<../../../../archives/customer-attraction/state/障碍/五人双根偏离模板--障碍.md>) | math-exposition | retain | 五人双根偏离460行的有理点O大于2W |
+| [五人末位份额的通用补位失败与单覆盖预算--障碍](<../../../../archives/customer-attraction/state/障碍/五人末位份额的通用补位失败与单覆盖预算--障碍.md>) | math-exposition | retain | 五人C2与通用DD补位由两个完整实例否定；末位单覆盖份额s给W≥89u/30−41s/60，H25仍为候选。 |
 | [五人末菜单与全位置保底联合行锥的精确边界--障碍](<../../../../archives/customer-attraction/state/障碍/五人末菜单与全位置保底联合行锥的精确边界--障碍.md>) | math-exposition | retain | 末菜单与全部位置保底46行的12列有理分离 |
 | [五人索引偏离模板--障碍](<../../../../archives/customer-attraction/state/障碍/五人索引偏离模板--障碍.md>) | math-exposition | retain | 437行必要条件的64原子有理可行点使O>2W，且与57乘子上界匹配；明确不构成SPE反例。 |
 | [五人索引松弛点的根饱和不相容--障碍](<../../../../archives/customer-attraction/state/障碍/五人索引松弛点的根饱和不相容--障碍.md>) | math-exposition | retain | 两个根饱和合法主题C、D差集正，排除索引松弛点的SPE扩展 |
+| [五人证书到六人嵌套重查询的松弛边界--障碍](<../../../../archives/customer-attraction/state/障碍/五人证书到六人嵌套重查询的松弛边界--障碍.md>) | math-exposition | retain | 五人53行证书与六人嵌套重查询局部必要行的松弛分离，旧点非完整SPE。 |
 | [任意人数条件平方与二阶整数正行的共同客户缺口--障碍](<../../../../archives/customer-attraction/state/障碍/任意人数条件平方与二阶整数正行的共同客户缺口--障碍.md>) | math-exposition | retain | 分数基数有符号数组使全部预算内局部平方和全树形式IC成立，但二阶整数行L(L−1)取−1/4，阻共同客户实现。 |
+| [任意共享归属的单一驻留流负余项--障碍](<../../../../archives/customer-attraction/state/障碍/任意共享归属的单一驻留流负余项--障碍.md>) | math-exposition | retain | 四标签驻留路由矩阵与共享关联客户给负净信用−1/18，只否单一驻留付款模板。 |
+| [任意删位保险上漂与全历史新坐标饱和--障碍](<../../../../archives/customer-attraction/state/障碍/任意删位保险上漂与全历史新坐标饱和--障碍.md>) | math-exposition | retain | Cartesian fresh坐标引理迫删后每份SPE福利3m−3，保险族任意删位上漂m−3+e_i，否定有界退款。 |
+| [任意深度子博弈的删除缺陷与单叶付款障碍--障碍](<../../../../archives/customer-attraction/state/障碍/任意深度子博弈的删除缺陷与单叶付款障碍--障碍.md>) | math-exposition | retain | 删除固定插入A后n个互斥真实尾节点各缺1/2，达nK−E而实际插入利润仅1。 |
+| [份额删除的静态保持与跨人数可信闭包失败--障碍](<../../../../archives/customer-attraction/state/障碍/份额删除的静态保持与跨人数可信闭包失败--障碍.md>) | math-exposition | retain | 份额删位保持静态NE和原存活者利润，但34客户三人SPE删后终局不可保持，另有ΣL_i=65>64否定平均闭包。 |
 | [低阶背景利润汇总行的六人可行点与不可实现终局--障碍](<../../../../archives/customer-attraction/state/障碍/低阶背景利润汇总行的六人可行点与不可实现终局--障碍.md>) | math-exposition | retain | 六人439行汇总松弛有O/W大于2的整数目录，坏profile无SPE |
+| [保留实际与最优主题的目录剪枝不保低福利均衡--障碍](<../../../../archives/customer-attraction/state/障碍/保留实际与最优主题的目录剪枝不保低福利均衡--障碍.md>) | math-exposition | retain | 保实际C、最优A/D删B后，原W=2m完整SPE被剪枝目录所有福利3m−1的SPE排除。 |
+| [允许未覆盖旧客户的归一化负载可加信用--障碍](<../../../../archives/customer-attraction/state/障碍/允许未覆盖旧客户的归一化负载可加信用--障碍.md>) | math-exposition | retain | AB、all-big、交叠三个完整SPE在同r63迫f(1,0)、f(1,63)上下界相矛盾，排归一负载可加信用。 |
 | [全势候选与末位报价静态收尾的整数反证和倒二异议--障碍](<../../../../archives/customer-attraction/state/障碍/全势候选与末位报价静态收尾的整数反证和倒二异议--障碍.md>) | math-exposition | retain | 78类整数客户使全势P₆≤W+C和实际末位BR仍不足half；真实倒二强制T偏离又排除这条实际SPE路径。 |
+| [全树固定末层可信性与早期保底的调和损失--障碍](<../../../../archives/customer-attraction/state/障碍/全树固定末层可信性与早期保底的调和损失--障碍.md>) | math-exposition | retain | 不交大小主题T与私有E构造所有末k层真SPE、早期粗保底却无界低覆盖，另三原子行模板矛盾。 |
+| [全树恒中心的局部客户伪矩与二倍紧点--障碍](<../../../../archives/customer-attraction/state/障碍/全树恒中心的局部客户伪矩与二倍紧点--障碍.md>) | math-exposition | retain | 恒中心全树形式策略的局部客户矩满足全IC且W1/OPT2，却被跨全标签二次正性Q分离，非真实客户。 |
+| [全混合终局势预算的静态行族不足--障碍](<../../../../archives/customer-attraction/state/障碍/全混合终局势预算的静态行族不足--障碍.md>) | math-exposition | retain | 十二标签447列上有理点满足根势候选P0、42安全与强PAIR甚至开放前缀Pi，却有O>2W；未给完整SPE。 |
 | [全目录并集不能替代固定槽最优覆盖--障碍](<../../../../archives/customer-attraction/state/障碍/全目录并集不能替代固定槽最优覆盖--障碍.md>) | math-exposition | retain | 十单例目录U10而OPT5=W5，反全目录并集替代固定槽 |
 | [全部可见低度平方的整数格缺口--障碍](<../../../../archives/customer-attraction/state/障碍/全部可见低度平方的整数格缺口--障碍.md>) | math-exposition | retain | 四位底例及偶数阶块提升通过全部指定低度平方与局部投影，整数行L(L−1)却严格负。 |
+| [全部实际前缀最坏分母保底的无界松弛族--障碍](<../../../../archives/customer-attraction/state/障碍/全部实际前缀最坏分母保底的无界松弛族--障碍.md>) | math-exposition | retain | 所有实际前缀最坏分母保底可容许m/H_m无界低路径，但倒二真实末位必改T，排除SPE。 |
+| [全部实际后缀势包络与安全行的六千客户停界--障碍](<../../../../archives/customer-attraction/state/障碍/全部实际后缀势包络与安全行的六千客户停界--障碍.md>) | math-exposition | retain | 6000客户指定六步路径同时满足全部实际后缀SAFE/ENV且W=2940<OPT/2，但倒二改A6后严格获益10127/60，说明条件不充分。 |
 | [全部真实前缀预算行的抽象线性极值--障碍](<../../../../archives/customer-attraction/state/障碍/全部真实前缀预算行的抽象线性极值--障碍.md>) | math-exposition | retain | 仅保真实前缀预算标量行时精确最小W/O为1−∏(1−1/(mr))，m≥4小于半。 |
+| [全高尾零信用池的正交换债务--障碍](<../../../../archives/customer-attraction/state/障碍/全高尾零信用池的正交换债务--障碍.md>) | math-exposition | retain | 三人真SPE全部实际尾均高于v3使返还池H=0，虚拟交换到真实分支仍有严格正Debt。 |
 | [八标签末位真回复菜单的第二人偏离--障碍](<../../../../archives/customer-attraction/state/障碍/八标签末位真回复菜单的第二人偏离--障碍.md>) | math-exposition | retain | 八标签循环目录算出静态v₄=(23a+10b)/16与末位BR窗口；第二位改2时唯一真回复5使菜单无法补全SPE。 |
 | [六人行松弛与真实SPE闭包--障碍](<../../../../archives/customer-attraction/state/障碍/六人行松弛与真实SPE闭包--障碍.md>) | math-exposition | retain | 六人局部必要行、O-only 408行和复制末主题桥给精确松弛值，明确与完整SPE闭包相差更早分支一致性。 |
+| [六极大动态席位合法路径收费--障碍](<../../../../archives/customer-attraction/state/障碍/六极大动态席位合法路径收费--障碍.md>) | math-exposition | retain | 六极大五至八人四套客户关联与合法路径使动态席位和低于OPT/2，不是SPE路径。 |
+| [共享遗漏单目标惩罚的共同银行基线停界--障碍](<../../../../archives/customer-attraction/state/障碍/共享遗漏单目标惩罚的共同银行基线停界--障碍.md>) | math-exposition | retain | 两个目标共享遗漏与银行基线的两次末位比较迫Y同、r皆1、x/2+v相等。 |
 | [共同主题价帽对复制处罚的消元冗余--障碍](<../../../../archives/customer-attraction/state/障碍/共同主题价帽对复制处罚的消元冗余--障碍.md>) | math-exposition | retain | 价帽消元行C由实际节点K帽非负组合推出 |
+| [共同有符号客户的全局三标签耦合缺口--障碍](<../../../../archives/customer-attraction/state/障碍/共同有符号客户的全局三标签耦合缺口--障碍.md>) | math-exposition | retain | signed三标签族满足全sharp与逐对非负客户投影，却有三角有效行−1；另三人同策略图可在不同真客户表实现。 |
+| [共同有符号客户的四人超二福利与局部负原子--障碍](<../../../../archives/customer-attraction/state/障碍/共同有符号客户的四人超二福利与局部负原子--障碍.md>) | math-exposition | retain | 四人共同signed客户全树IC及同支持效率仍可有比较福利160/79>2，但可见模式负原子−13541/17064排合法客户 |
+| [共同核心根源对的统一首截面单位容量障碍--障碍](<../../../../archives/customer-attraction/state/障碍/共同核心根源对的统一首截面单位容量障碍--障碍.md>) | math-exposition | retain | 公共核心m题SPE中独立根对支付OPT须源质量Λ>1，而同首截面客户容量迫Λ≤1，解析排除固定模板。 |
+| [共同源交换的容量与真实换序残差--障碍](<../../../../archives/customer-attraction/state/障碍/共同源交换的容量与真实换序残差--障碍.md>) | math-exposition | retain | 共同源raw swap的残差等式、真换序signed mismatch J与第五行付款前提，另用六/八单例SPE排自动源容量和J符号。 |
+| [凹势可行变分不等式与DR曲率--障碍](<../../../../archives/customer-attraction/state/障碍/凹势可行变分不等式与DR曲率--障碍.md>) | math-exposition | retain | 十平面凹势、有限DR、三人完整策略精确违约插入VI；其势不具调和客户表示，另校准十三人CAG VI反例。 |
 | [切线策略与动态首利摊派的真实边界--障碍](<../../../../archives/customer-attraction/state/障碍/切线策略与动态首利摊派的真实边界--障碍.md>) | math-exposition | retain | 两人不交主题否定W≥mα_m，36客户原SPE对常数切线价格的第二位偏离严格盈利。 |
 | [删去私有支付的共享保底行被完整SPE否定--障碍](<../../../../archives/customer-attraction/state/障碍/删去私有支付的共享保底行被完整SPE否定--障碍.md>) | math-exposition | retain | 18客户七极大主题的完整六人全选0 SPE，使共享客户实际收益为零，逐条否定删私有支付后的B_t共享行。 |
+| [删除两名最优外客户的最差SPE福利反增无界--障碍](<../../../../archives/customer-attraction/state/障碍/删除两名最优外客户的最差SPE福利反增无界--障碍.md>) | math-exposition | retain | 两人唯一最优AB外删两客户可令最差SPE福利增加Q−2，完整末位与根BR表解释机制。 |
 | [前缀安全行与末对投影的调和停界--障碍](<../../../../archives/customer-attraction/state/障碍/前缀安全行与末对投影的调和停界--障碍.md>) | math-exposition | retain | 前缀安全和末对投影逐列证书要求τ≤2H_n−1 |
 | [加一名前置玩家的真实份额障碍与局部修补--障碍](<../../../../archives/customer-attraction/state/障碍/加一名前置玩家的真实份额障碍与局部修补--障碍.md>) | math-exposition | retain | 六人五人后缀原行在单客户背景中负，局部ψ保背景修补 |
 | [动态信用一步闭合标量投影障碍--障碍](<../../../../archives/customer-attraction/state/障碍/动态信用一步闭合标量投影障碍--障碍.md>) | math-exposition | retain | 30客户三人菜单满足根及两项子局half标量却在真实(0,2)末位严格偏离，阻断这种标量归纳。 |
+| [动态可信门槛与剥离递归缺口--障碍](<../../../../archives/customer-attraction/state/障碍/动态可信门槛与剥离递归缺口--障碍.md>) | math-exposition | retain | 39客户精确例否定动态可信Theta剥离候选CM，PEEL第二层留下负重置R=−113/164；beta-packing只给有限探针。 |
+| [匿名计数势的客户相容性--障碍](<../../../../archives/customer-attraction/state/障碍/匿名计数势的客户相容性--障碍.md>) | math-exposition | retain | 调和势Boolean表唯一反演约束重复计数，推三人两主题线性关系和非负客户可实现充要条件x_B≥0。 |
+| [单主题真实均衡逐深度删除信用的调和重入--障碍](<../../../../archives/customer-attraction/state/障碍/单主题真实均衡逐深度删除信用的调和重入--障碍.md>) | math-exposition | retain | 单主题真SPE每层独立删除未来者的精确共同信用为1/i−1/m，总额H_m−1无界而W=1。 |
 | [单公共奖金重复尾部的末位互斥--障碍](<../../../../archives/customer-attraction/state/障碍/单公共奖金重复尾部的末位互斥--障碍.md>) | math-exposition | retain | 重复尾D与B_i两条真实末位BR分别要求d≥rc/2与d≤c/(r+1)，r≥2不相容；另给遗漏独占的条件支付。 |
+| [单挂末银行的三分之一严格保护与阈值平局--障碍](<../../../../archives/customer-attraction/state/障碍/单挂末银行的三分之一严格保护与阈值平局--障碍.md>) | math-exposition | retain | 单挂末银行b<3ℓ时两尾真实SPE迫旧银行利润>b/3，b=3ℓ八客户局部SPE取等 |
+| [单早期包含的七列Farkas见证与源切面实现边界--障碍](<../../../../archives/customer-attraction/state/障碍/单早期包含的七列Farkas见证与源切面实现边界--障碍.md>) | math-exposition | retain | 七列有理Farkas权给18行加权非负、half目标−9/361，区分source-4/source-3公式修正与N替代最大主题K的较弱容量。 |
+| [单调覆盖守恒与锋利稀释的九四伪收益--障碍](<../../../../archives/customer-attraction/state/障碍/单调覆盖守恒与锋利稀释的九四伪收益--障碍.md>) | math-exposition | retain | 三人22客户真策略诱导的独立126收益伪表保总支付/单调/稀释仍达9/4；共同signed线性身份已失 |
+| [单调递减边际势的强安全聚合障碍--障碍](<../../../../archives/customer-attraction/state/障碍/单调递减边际势的强安全聚合障碍--障碍.md>) | math-exposition | retain | 84值单调DR边际势的三人完整SPE总利润161低于3v=168，静态查询与背景双证v=56；无客户表示。 |
 | [双向隔离惩罚的福利上限与逃逸预算--障碍](<../../../../archives/customer-attraction/state/障碍/双向隔离惩罚的福利上限与逃逸预算--障碍.md>) | math-exposition | retain | 双向真实分支给x_i≥v_i≥d≥x_i/2+y_i与条件福利上限，放松隔离后把逃逸写成E缺额。 |
+| [只见旧客户完整直方图的通用信用不可能性--障碍](<../../../../archives/customer-attraction/state/障碍/只见旧客户完整直方图的通用信用不可能性--障碍.md>) | math-exposition | retain | 旧客户完整直方图G_r即便非可加，64人LOW/UPPER同H却强迫G≥−2898与≤−3170 |
+| [可信回复缺陷与逐玩家预算--障碍](<../../../../archives/customer-attraction/state/障碍/可信回复缺陷与逐玩家预算--障碍.md>) | math-exposition | retain | 无拥挤实际路径的真实回复缺陷Δ与三条IC给条件福利式；完整SPE族令全查询Δ/W无界 |
+| [同主题在途查询的补位核预算--障碍](<../../../../archives/customer-attraction/state/障碍/同主题在途查询的补位核预算--障碍.md>) | math-exposition | retain | m人完整SPE补位族受同槽节点查询约束时核预算22(m+1)，跨槽末节点可付W。 |
+| [同对称差背景的不同单色SPE续局不相容--障碍](<../../../../archives/customer-attraction/state/障碍/同对称差背景的不同单色SPE续局不相容--障碍.md>) | math-exposition | retain | 同对称差背景的B/D两种单色尾各自末位改进相加为严格正Δ_q，禁止同时可信 |
 | [同尾补全信用折扣--障碍](<../../../../archives/customer-attraction/state/障碍/同尾补全信用折扣--障碍.md>) | math-exposition | retain | 全选大主题SPE族逐历史算出删ξ或统一折扣的预算失败 |
+| [同支持全部梯度环不能替代共同客户表示--障碍](<../../../../archives/customer-attraction/state/障碍/同支持全部梯度环不能替代共同客户表示--障碍.md>) | math-exposition | retain | 同支持log梯度环归约为十五个两点环，已有形式策略点全满足仍有固定比较9/4>2，缺共同客户表示。 |
 | [同支持守恒与局部客户耦合的严格间隔--障碍](<../../../../archives/customer-attraction/state/障碍/同支持守恒与局部客户耦合的严格间隔--障碍.md>) | math-exposition | retain | 固定43历史策略的七层共同客户锥有精确间隔，并推导旧二主题差值式缺第三条等式。 |
 | [后继末位保底不足以保护当前人的五环障碍--障碍](<../../../../archives/customer-attraction/state/障碍/后继末位保底不足以保护当前人的五环障碍--障碍.md>) | math-exposition | retain | 五环三人末位floor为3/2，而每个根动作有后继均达floor但自身只得1的尾序列；指出末位会真偏离。 |
+| [四人父门槛筛选的仿射包络严格损失--障碍](<../../../../archives/customer-attraction/state/障碍/四人父门槛筛选的仿射包络严格损失--障碍.md>) | math-exposition | retain | 四人真客户菜单在固定根0的纯筛选福利10，单乘子仿射包络仅85/9；全根最差福利另为9。 |
+| [固定乘子提升的商空间边界--障碍](<../../../../archives/customer-attraction/state/障碍/固定乘子提升的商空间边界--障碍.md>) | math-exposition | retain | 三客户真实SPE规范化末回复后产生早期负行；原固定(4,1,2)乘子无法由真实IC和同计数等式修复，重选可成功。 |
 | [固定安全预算锥的五个失败实例--障碍](<../../../../archives/customer-attraction/state/障碍/固定安全预算锥的五个失败实例--障碍.md>) | math-exposition | retain | 五个固定游戏的指定安全分布GB预算最大差均为负，同时三份固定策略锥有正对偶证书；仅界定这些搜索空间。 |
 | [固定尾深最坏保底不足半覆盖--障碍](<../../../../archives/customer-attraction/state/障碍/固定尾深最坏保底不足半覆盖--障碍.md>) | math-exposition | retain | 固定真实k尾与早期最坏保底可有OPT>2W，却欠早期真偏离 |
+| [固定旧背景正信用与连续调和替换的停界--障碍](<../../../../archives/customer-attraction/state/障碍/固定旧背景正信用与连续调和替换的停界--障碍.md>) | math-exposition | retain | all-big完整SPE族证明任何固定c>0加强2P≥F_r+cB失败，连续调和替换一客户例使高尾满权与原D信用不能同时保。 |
+| [固定末回复四态边缘的Fréchet共同扩张障碍--障碍](<../../../../archives/customer-attraction/state/障碍/固定末回复四态边缘的Fréchet共同扩张障碍--障碍.md>) | math-exposition | retain | 固定R/Z四态边缘用Fréchet交叠上界推出真实末回复行的共同扩张必要条件，并以六人旧点严格负有理上界排除该固定边缘。 |
 | [固定末菜单的非均匀前缀付款边界--障碍](<../../../../archives/customer-attraction/state/障碍/固定末菜单的非均匀前缀付款边界--障碍.md>) | math-exposition | retain | 末菜单G和早期R/L行的三客户类型令全m固定系数矛盾 |
 | [固定真实均衡的硬删除信用不能由连续零亏空付款--障碍](<../../../../archives/customer-attraction/state/障碍/固定真实均衡的硬删除信用不能由连续零亏空付款--障碍.md>) | math-exposition | retain | 13人36客户固定SPE硬删除Γ45/2而低尾亏空11ε趋零 |
 | [固定真实尾部粗保底丢失后继最优性--障碍](<../../../../archives/customer-attraction/state/障碍/固定真实尾部粗保底丢失后继最优性--障碍.md>) | math-exposition | retain | 重复E与独立Q块使粗保底有半覆盖缺口但早期偏离获利 |
+| [固定离轨次数截断的无常数福利障碍--障碍](<../../../../archives/customer-attraction/state/障碍/固定离轨次数截断的无常数福利障碍--障碍.md>) | math-exposition | retain | 固定k次离轨IC截断形式策略的OPT/W随m无界，给被省k+1层严格偏离。 |
+| [固定终局资料包的共同客户粘合缺口--障碍](<../../../../archives/customer-attraction/state/障碍/固定终局资料包的共同客户粘合缺口--障碍.md>) | math-exposition | retain | 任意L终局包可局部非负实现的signed客户表，却违反全目录整数二阶行H_b=−2k。 |
+| [固定首步信用系数二的必要性--障碍](<../../../../archives/customer-attraction/state/障碍/固定首步信用系数二的必要性--障碍.md>) | math-exposition | retain | 任意α<2用完整SPE首步补全族构造αu1+F_{n−1}(C1)<OPT_n，给精确门槛α_n→2。 |
 | [固定高尾质量的可信水位翻转与强制末位--障碍](<../../../../archives/customer-attraction/state/障碍/固定高尾质量的可信水位翻转与强制末位--障碍.md>) | math-exposition | retain | 固定高尾质量水位在三客户与53客户实例翻转原树IC，列全部末位BR区间并区分统一缩尾宽合同。 |
+| [在轨精确行与全部固定深度尾局的联合截断--障碍](<../../../../archives/customer-attraction/state/障碍/在轨精确行与全部固定深度尾局的联合截断--障碍.md>) | math-exposition | retain | 实际路径全部IC及每个固定尾深k的全部离轨子局IC仍可由形式策略满足且OPT/W无界；明确第二个离轨节点负行。 |
+| [均匀客户偏置的福利与比较边界--障碍](<../../../../archives/customer-attraction/state/障碍/均匀客户偏置的福利与比较边界--障碍.md>) | math-exposition | retain | 统一正偏置改变真实IC；二题反转，充分K=4M+1使所有编译根half余量严格正 |
 | [均匀组合背景归纳的尾部余量--障碍](<../../../../archives/customer-attraction/state/障碍/均匀组合背景归纳的尾部余量--障碍.md>) | math-exposition | retain | BG-UP限制比较数后仍未证；全选大主题SPE使尾部正余量恰抵局部负额，另以单主题纠正未限n版本。 |
+| [均匀质量两槽乘子证书的整数背景负项--障碍](<../../../../archives/customer-attraction/state/障碍/均匀质量两槽乘子证书的整数背景负项--障碍.md>) | math-exposition | retain | 固定七乘子模板在160种会员角点有四个整数背景负余项，精确排其全背景证书 |
+| [复制遗漏客户池的末两人严格偏离障碍--障碍](<../../../../archives/customer-attraction/state/障碍/复制遗漏客户池的末两人严格偏离障碍--障碍.md>) | math-exposition | retain | P^k AAB形式低覆盖路径在倒二偏D_j后末位必选别池T_h，偏离者得7>5，排除任意完整SPE实现。 |
 | [多个围堵块的目标终局末位障碍--障碍](<../../../../archives/customer-attraction/state/障碍/多个围堵块的目标终局末位障碍--障碍.md>) | math-exposition | retain | 多个围堵块目标终局任意排列的末位均可改A_i严格盈利，t>2时普遍排除该指定路径。 |
+| [多源对称计数核的无余项限制与枢轴切换债--障碍](<../../../../archives/customer-attraction/state/障碍/多源对称计数核的无余项限制与枢轴切换债--障碍.md>) | math-exposition | retain | 最优元组联合交换D_J不等式、真实clone替源重复会员残差以及q≥3的计数核F(2)−F(1)矛盾。 |
 | [奇偶三角不能保证共同客户平方正性--障碍](<../../../../archives/customer-attraction/state/障碍/奇偶三角不能保证共同客户平方正性--障碍.md>) | math-exposition | retain | 有符号四位数组的局部投影和所有可见奇偶三角为正，但明确平方g²为−24；块提升覆盖m=2及m≥4。 |
+| [安全最优查询的全部真实根尾严格间隙--障碍](<../../../../archives/customer-attraction/state/障碍/安全最优查询的全部真实根尾严格间隙--障碍.md>) | math-exposition | retain | 两core多叶族的安全最优查询仅在静态B^k接触v，所有真根尾有严格δ间隙，仍有全史fresh利润地板。 |
+| [完全二主题关联LP根预算障碍--障碍](<../../../../archives/customer-attraction/state/障碍/完全二主题关联LP根预算障碍--障碍.md>) | math-exposition | retain | 完全二主题关联K_s的根LP预算ms/2计全并集，无法独自给m选题敏感付款。 |
 | [完整动作均匀重采的过去质量缺额--障碍](<../../../../archives/customer-attraction/state/障碍/完整动作均匀重采的过去质量缺额--障碍.md>) | math-exposition | retain | 均匀重采使协方差零却丢过去覆盖者质量F/\|a\|Σb/c |
+| [完整策略树平均与独立同分布福利桥--障碍](<../../../../archives/customer-attraction/state/障碍/完整策略树平均与独立同分布福利桥--障碍.md>) | math-exposition | retain | 完整策略逐偏离锥与iid福利Farkas证书、独立前缀删除势余项，并给36客户和平均行形式分离点。 |
 | [完整终局向量的子均衡凸化与父门槛截取不交换--障碍](<../../../../archives/customer-attraction/state/障碍/完整终局向量的子均衡凸化与父门槛截取不交换--障碍.md>) | math-exposition | retain | 四客户子SPE凸化后父门槛截取产生不可实现AB/AC混合点 |
+| [实际与唯一最优支持剪枝的全人数福利跃升--障碍](<../../../../archives/customer-attraction/state/障碍/实际与唯一最优支持剪枝的全人数福利跃升--障碍.md>) | math-exposition | retain | 唯一最优支持加实际C剪枝删B后，全m原W=2m低福利SPE跃升为所有新SPE福利3m−1，F/E归纳保全量词。 |
+| [实际与最大根双路径二百六十六行的精确障碍--障碍](<../../../../archives/customer-attraction/state/障碍/实际与最大根双路径二百六十六行的精确障碍--障碍.md>) | math-exposition | retain | 实际与强制最大根双路径6144型中十二型整数点满足266必要行而W16、O33，仍未实现全史SPE。 |
 | [实际末位菜单增强的逐客户强价格消元障碍--障碍](<../../../../archives/customer-attraction/state/障碍/实际末位菜单增强的逐客户强价格消元障碍--障碍.md>) | math-exposition | retain | 末位菜单五行模板的三个会员型余项加权恒为−1/32 |
+| [实际遗漏客户减半的三人非单调可实现性--障碍](<../../../../archives/customer-attraction/state/障碍/实际遗漏客户减半的三人非单调可实现性--障碍.md>) | math-exposition | retain | 三人四主题客户私块减半使目标q可实现性真、假、全删再真，完整末位/根表证明。 |
+| [实际遗漏客户删除与可信根门槛的无界敏感性--障碍](<../../../../archives/customer-attraction/state/障碍/实际遗漏客户删除与可信根门槛的无界敏感性--障碍.md>) | math-exposition | retain | 五人五主题目标计数仅在E-private权t≥3/4可实现，删一名遗漏客户可使可信根门槛无界上跳。 |
+| [尾部价格证书不能替代完整续局激励--障碍](<../../../../archives/customer-attraction/state/障碍/尾部价格证书不能替代完整续局激励--障碍.md>) | math-exposition | retain | 八客户静态gap和十客户尾价格菜单、rook高尾floor都给精确压缩接口反例；尾菜单存在严格偏离而非SPE。 |
+| [局部真客户矩不能粘合为共同客户--障碍](<../../../../archives/customer-attraction/state/障碍/局部真客户矩不能粘合为共同客户--障碍.md>) | math-exposition | retain | 任意m奇偶signed族全部≤m局部客户投影非负、低阶矩同uniform，但m阶覆盖有效行Q_m=−2^(2m)。 |
+| [当前最佳回复平台上的祖先收益分离--障碍](<../../../../archives/customer-attraction/state/障碍/当前最佳回复平台上的祖先收益分离--障碍.md>) | math-exposition | retain | 两主题A/B末位BR同获M却祖先分别M与2M，排当前收益差控制祖先差的有限斜率 |
+| [成对主题水库路径的全参数可信缺陷收费--障碍](<../../../../archives/customer-attraction/state/障碍/成对主题水库路径的全参数可信缺陷收费--障碍.md>) | math-exposition | retain | 成对水库路径P强制后全史fresh pair利润至少8，使目标C^kD的异质可信修复收费大于形式half差。 |
 | [整终局势与真倒二菜单联合停界--障碍](<../../../../archives/customer-attraction/state/障碍/整终局势与真倒二菜单联合停界--障碍.md>) | math-exposition | retain | 两个有理点通过十八主题势与末菜单行但倒二真实改动获利 |
+| [旧人银行下包络的末步付款与两条实际边缺口--障碍](<../../../../archives/customer-attraction/state/障碍/旧人银行下包络的末步付款与两条实际边缺口--障碍.md>) | math-exposition | retain | 旧人收入下包络Ψ末位可付2M；61客户实际A/AA两边各跌19>18，首步新覆盖修正亦失败 |
+| [最优前缀逐客户变分的调和障碍--障碍](<../../../../archives/customer-attraction/state/障碍/最优前缀逐客户变分的调和障碍--障碍.md>) | math-exposition | retain | 全大主题与单例完整均衡使逐客户前缀变分 UV 留调和正残差，排除该局部乘子。 |
 | [最优剩余利润的局部系数与共享负载信用--障碍](<../../../../archives/customer-attraction/state/障碍/最优剩余利润的局部系数与共享负载信用--障碍.md>) | math-exposition | retain | 全选大主题SPE使最优剩余利润局部台阶无界；交叠族与同负载可加信用给更细冲突。 |
+| [最优比较外信用的冻结匹配量词边界--障碍](<../../../../archives/customer-attraction/state/障碍/最优比较外信用的冻结匹配量词边界--障碍.md>) | math-exposition | retain | 四客户完整两人SPE对给定最优TD的冻结匹配费9/2>W，却有别的最优AB；52客户唯一最优另否存在版本。 |
+| [最优比较字母表的全历史行无统一福利常数--障碍](<../../../../archives/customer-attraction/state/障碍/最优比较字母表的全历史行无统一福利常数--障碍.md>) | math-exposition | retain | 只准比较J和实际A字母的全历史偏离行均成立，形式策略W=L H_m与OPT=mL比无界，遗漏根R盈利。 |
+| [最优组合真实偏离匹配不足--障碍](<../../../../archives/customer-attraction/state/障碍/最优组合真实偏离匹配不足--障碍.md>) | math-exposition | retain | 86客户完整两人SPE唯一最优BD遗漏42，真实两种指派各只付19+22=41，否最优组合真实偏离匹配接口。 |
+| [最大主题加性预算与分数价格曲线--障碍](<../../../../archives/customer-attraction/state/障碍/最大主题加性预算与分数价格曲线--障碍.md>) | math-exposition | retain | 无拥挤族W2m、OPT3m−1、最大主题3，精确否定固定K加性桥，并给分数覆盖价格B(v)原始对偶曲线。 |
+| [最大主题标量预算--障碍](<../../../../archives/customer-attraction/state/障碍/最大主题标量预算--障碍.md>) | math-exposition | retain | 五人最大主题标量锥的精确对偶值越过二，容量行排旧437点；范围仅标量松弛。 |
+| [最大单主题尺度的真实整行查询障碍--障碍](<../../../../archives/customer-attraction/state/障碍/最大单主题尺度的真实整行查询障碍--障碍.md>) | math-exposition | retain | 裸最大主题K的真实根整行加强m≤2有效，但银行族每m≥3精确违反且净ROW仍有裕量 |
+| [最大根局部模板的有理可行障碍--障碍](<../../../../archives/customer-attraction/state/障碍/最大根局部模板的有理可行障碍--障碍.md>) | math-exposition | retain | 最大根240行局部模板的29原子有理点满足 O−2W>0，不能据此推完整均衡。 |
+| [最小收益移至末两位的福利代价--障碍](<../../../../archives/customer-attraction/state/障碍/最小收益移至末两位的福利代价--障碍.md>) | math-exposition | retain | 末两位收益≥θ_n迫福利低于nθ_n的所有SPE最小收益位于前部；36客三人例正规化福利从34升36。 |
+| [有限回复链的保护遗漏松弛--障碍](<../../../../archives/customer-attraction/state/障碍/有限回复链的保护遗漏松弛--障碍.md>) | math-exposition | retain | 有限回复链三个精确LP模式D/P均>1但首根改B后末位最佳回复使根获利，形式点不能扩为目标SPE。 |
+| [未来逐人过门槛不能替代可信续局的七环障碍--障碍](<../../../../archives/customer-attraction/state/障碍/未来逐人过门槛不能替代可信续局的七环障碍--障碍.md>) | math-exposition | retain | 七环算真自由iid值τ=14/13，所有当前动作可被利润3/2的未来动作压至1，但指定末位真实BR会改获2。 |
 | [朴素前缀幽灵租金预算边界--障碍](<../../../../archives/customer-attraction/state/障碍/朴素前缀幽灵租金预算边界--障碍.md>) | math-exposition | retain | 两客户全选A完整SPE的前缀幽灵租金和按H_c增长，m9时1879/840超过根福利2。 |
 | [极大子目录剪枝的全人数福利迁移边界--障碍](<../../../../archives/customer-attraction/state/障碍/极大子目录剪枝的全人数福利迁移边界--障碍.md>) | math-exposition | retain | 全目录碰撞自由族与极大子目录全部SPE的终局分类给L(full)<L(Max)的全人数迁移障碍。 |
+| [标签汉明邻域与完整末尾的删行障碍--障碍](<../../../../archives/customer-attraction/state/障碍/标签汉明邻域与完整末尾的删行障碍--障碍.md>) | math-exposition | retain | 实际和汉明半径r及完整末k层行均可满足而福利比m/(H_d+k+r)>2，明确远离保护区的负IC |
+| [根菜单尾总安全与末位最优的压缩障碍--障碍](<../../../../archives/customer-attraction/state/障碍/根菜单尾总安全与末位最优的压缩障碍--障碍.md>) | math-exposition | retain | 十客户根尾菜单满足四枝尾安全及末位最优却欠完整倒二激励，真实均衡仍全覆盖。 |
+| [根重置局部账本的笛卡尔放大--障碍](<../../../../archives/customer-attraction/state/障碍/根重置局部账本的笛卡尔放大--障碍.md>) | math-exposition | retain | 八人真实DAG上交叉根局部重置R=9/10而e、J皆零；Cartesian乘积放大至9k/10，同分布平均仍有余量。 |
 | [次模删除势的二阶与四阶覆盖交换分离--障碍](<../../../../archives/customer-attraction/state/障碍/次模删除势的二阶与四阶覆盖交换分离--障碍.md>) | math-exposition | retain | 次模共同删除势二阶同枢税非负，但秩二五标签的四阶势差为+1/2，分离客户覆盖势。 |
+| [正负载缺口的尾部预算停界与共同核完整均衡--障碍](<../../../../archives/customer-attraction/state/障碍/正负载缺口的尾部预算停界与共同核完整均衡--障碍.md>) | math-exposition | retain | 共同核心加私客的全历史SPE族精确算θ=s=K/m+1及D=R=m−2，K0否普遍小D，K42六人例证条件扩类。 |
 | [比较覆盖重数与单根分支的必要行障碍--障碍](<../../../../archives/customer-attraction/state/障碍/比较覆盖重数与单根分支的必要行障碍--障碍.md>) | math-exposition | retain | 九主题两路径108必要行有精确16型可行点O/W>2；比较重数未绑定完整目录或SPE。 |
+| [混合路由保底的私有下降与补偿势--障碍](<../../../../archives/customer-attraction/state/障碍/混合路由保底的私有下降与补偿势--障碍.md>) | math-exposition | retain | 混合路由f_j同路由一步因私有块严格下降；补偿势Φ不降但未付真实收益 |
+| [真实偏离分母与原两人见证的指标勘误--障碍](<../../../../archives/customer-attraction/state/障碍/真实偏离分母与原两人见证的指标勘误--障碍.md>) | math-exposition | retain | 原两人分母反例漏query指标而无错位；四人银行真SPE中根改(2,1)后e2负载由冻结1变真实3，均匀乘子失效。 |
+| [真实克隆链的零松弛漂移与双调和抵销--障碍](<../../../../archives/customer-attraction/state/障碍/真实克隆链的零松弛漂移与双调和抵销--障碍.md>) | math-exposition | retain | 真克隆链的Drift−CloneSlack恒等式；五人零g却增益1/6，二题2q人未配对Drift无界 |
+| [真实分支替代与静态排列的量词缺口--障碍](<../../../../archives/customer-attraction/state/障碍/真实分支替代与静态排列的量词缺口--障碍.md>) | math-exposition | retain | Möbius完整均衡中真实分支偏离与冻结终局排列矩阵错位，六种排列均超静态预算。 |
+| [真实子局盈余返还与非均衡聚合菜单的归纳分界--障碍](<../../../../archives/customer-attraction/state/障碍/真实子局盈余返还与非均衡聚合菜单的归纳分界--障碍.md>) | math-exposition | retain | 61客户完整均衡反逐步 L 台阶，另非均衡六根菜单反仅聚合 S 状态。 |
+| [真实末菜单的覆盖成本分离与早期责任转移--障碍](<../../../../archives/customer-attraction/state/障碍/真实末菜单的覆盖成本分离与早期责任转移--障碍.md>) | math-exposition | retain | 末两人真实菜单固定S价可超过half余量，局部逐客户锥欠付；同实例早期真实查询可转移责任 |
+| [真实根删位的小后悔与向上可信修复差--障碍](<../../../../archives/customer-attraction/state/障碍/真实根删位的小后悔与向上可信修复差--障碍.md>) | math-exposition | retain | 删除第二位的因果回放regret总量趋小，却所有删后真SPE福利上升a，排常数倍向上修复 |
+| [真实终局推送构造与自由背景义务--障碍](<../../../../archives/customer-attraction/state/障碍/真实终局推送构造与自由背景义务--障碍.md>) | math-exposition | retain | 真实终局平均负载推送仅给p依赖的固定背景；extra mass两批LP/SLSQP阴性有限扫描未付自由共同背景量词。 |
+| [稀疏两邻环目标的退出缺口与理想修补预算--障碍](<../../../../archives/customer-attraction/state/障碍/稀疏两邻环目标的退出缺口与理想修补预算--障碍.md>) | math-exposition | retain | 稀疏两邻环指定路径的closed-source退出缺口，并以理想中间U_i=1代入有符号预算得B+C≥2+1/(m−1)。 |
+| [空根后实际删除混合的锚定预算严格失败--障碍](<../../../../archives/customer-attraction/state/障碍/空根后实际删除混合的锚定预算严格失败--障碍.md>) | math-exposition | retain | 十四客户sunk empty根后的可信两人策略，所有actual删除列混合查询T值5使锚预算20>2W18；非actual D可降到16。 |
 | [笛卡尔保计划修复的末位边界与重置差--障碍](<../../../../archives/customer-attraction/state/障碍/笛卡尔保计划修复的末位边界与重置差--障碍.md>) | math-exposition | retain | 笛卡尔辅助分量不能修旧末位正后悔，跨枝变化有精确重置账 |
+| [等大银行末位复制的负载上限--障碍](<../../../../archives/customer-attraction/state/障碍/等大银行末位复制的负载上限--障碍.md>) | math-exposition | retain | 等大银行Cartesian目录末位BR迫最终所选银行负载L≤1+floor((m−1)/q)，阻L≥3的最后复制。 |
+| [精确保留激励数值的折叠与末层方向边界--障碍](<../../../../archives/customer-attraction/state/障碍/精确保留激励数值的折叠与末层方向边界--障碍.md>) | math-exposition | retain | 不交客户完整均衡精确数值折叠不能消掉最优外客户，另空题实例显示末层比较不足。 |
+| [缺少尾部理性的环边阈值扩展障碍--障碍](<../../../../archives/customer-attraction/state/障碍/缺少尾部理性的环边阈值扩展障碍--障碍.md>) | math-exposition | retain | 环边形式尾门槛均3/2而根1、v4>3/2，末位可逃至2故仅反非SPE组合桥 |
+| [联合前缀席位与全部分数覆盖行的共享遗漏障碍--障碍](<../../../../archives/customer-attraction/state/障碍/联合前缀席位与全部分数覆盖行的共享遗漏障碍--障碍.md>) | math-exposition | retain | 联合前缀席位与全部分数覆盖必要行在银行逆序路径可同时成立但OPT>2W，倒二真偏离排SPE |
 | [联合后继负载与同主题支配--障碍](<../../../../archives/customer-attraction/state/障碍/联合后继负载与同主题支配--障碍.md>) | math-exposition | retain | 联合负载递归在全部k元主题族只有调和预算，真实SPE仍最优 |
+| [联合终局骨架在倒二层的三份严格偏离--障碍](<../../../../archives/customer-attraction/state/障碍/联合终局骨架在倒二层的三份严格偏离--障碍.md>) | math-exposition | retain | 65主题五人骨架三个二人尾均有对全部末位BR的严格获益偏离，给二人子局可完成性floor必要充分判据。 |
+| [聚合尾部删除稀释恒等式--障碍](<../../../../archives/customer-attraction/state/障碍/聚合尾部删除稀释恒等式--障碍.md>) | math-exposition | retain | 尾部删除稀释D3—D9恒等式留下成本C与驻留R，三人完整SPE证明删尾成本不能置零。 |
+| [自适应后继与真实菜单安全值--障碍](<../../../../archives/customer-attraction/state/障碍/自适应后继与真实菜单安全值--障碍.md>) | math-exposition | retain | 真实后继去相关 D 在四人均衡失败，36客户均衡菜单值11大于根收益10，并给任意人数构造。 |
+| [覆盖矩锚预算与真子目录的全局缺口--障碍](<../../../../archives/customer-attraction/state/障碍/覆盖矩锚预算与真子目录的全局缺口--障碍.md>) | math-exposition | retain | 覆盖矩锚泛函对每个合法客户列非负，但有理假矩在所有真子目录可实现而全局锚预算−r/(2r−1)<0。 |
+| [角色联合矩平衡的有限差分收益余债--障碍](<../../../../archives/customer-attraction/state/障碍/角色联合矩平衡的有限差分收益余债--障碍.md>) | math-exposition | retain | 任意d阶角色矩平衡仍有显式负余债NEG，非SPE菜单界 |
 | [调和势分支删除缺口精确证书--障碍](<../../../../archives/customer-attraction/state/障碍/调和势分支删除缺口精确证书--障碍.md>) | math-exposition | retain | 43节点完整SPE中根平局强制分支调和势由9/2升至5，指出IC只比较动作删除边际。 |
 | [调和势链未来回应项--障碍](<../../../../archives/customer-attraction/state/障碍/调和势链未来回应项--障碍.md>) | math-exposition | retain | 三人完整策略使来源与回放IC松弛均零而promotion势重置降1，有限六人搜索另有明确域。 |
+| [调和均分均衡不能转移到共同稀释参数--障碍](<../../../../archives/customer-attraction/state/障碍/调和均分均衡不能转移到共同稀释参数--障碍.md>) | math-exposition | retain | 13客户完整均分SPE的三项末节点多项式排所有公共稀释参数 |
+| [跨枝共同付款与调和全深度支付障碍--障碍](<../../../../archives/customer-attraction/state/障碍/跨枝共同付款与调和全深度支付障碍--障碍.md>) | math-exposition | retain | 真实策略差额含旧利润返还；全大加单例族的最优排序信用费用 m(H_m−1) 排单路径支付模板。 |
+| [过去租金与未来利润同向帕累托剪枝的有限障碍--障碍](<../../../../archives/customer-attraction/state/障碍/过去租金与未来利润同向帕累托剪枝的有限障碍--障碍.md>) | math-exposition | retain | 四份完整SPE菜单的过去租金与未来总利润帕累托剪枝两方向均删低福利支持点 |
+| [逐人半阈值的最小坏点摘要与非可信二分菜单--障碍](<../../../../archives/customer-attraction/state/障碍/逐人半阈值的最小坏点摘要与非可信二分菜单--障碍.md>) | math-exposition | retain | 逐人半阈值最小坏点ORDER归约与二分菜单尾部盈利缺口 |
 | [遗漏份额支付的半因子勘误--障碍](<../../../../archives/customer-attraction/state/障碍/遗漏份额支付的半因子勘误--障碍.md>) | math-exposition | retain | 纠正遗漏L/2付款只能给三倍界，精确净需求应是L−E，并保形式反模型与真实全遗漏族区别。 |
+| [重复互惠尾惩罚的最后位置闭包--障碍](<../../../../archives/customer-attraction/state/障碍/重复互惠尾惩罚的最后位置闭包--障碍.md>) | math-exposition | retain | 重复互惠尾惩罚三路径假设在t≥2的末位改A_j严格获利；局部预算又迫a≤(3−t)x/[2(t+1)] |
+| [重复惩罚复制的末位菜单失败--障碍](<../../../../archives/customer-attraction/state/障碍/重复惩罚复制的末位菜单失败--障碍.md>) | math-exposition | retain | 同主题重复惩罚在至少两末槽时违反末位最佳回复，有限混合惩罚样本限定结论范围。 |
 | [重复惩罚的末位外选项与无背景移植--障碍](<../../../../archives/customer-attraction/state/障碍/重复惩罚的末位外选项与无背景移植--障碍.md>) | math-exposition | retain | 重复同一H末位改D的外选项严格盈利，PB无背景充分IC冲突；另列共享遗漏路径的倒二缺陷。 |
+| [随机优先正确边际与跨行动共同请求的缺口--障碍](<../../../../archives/customer-attraction/state/障碍/随机优先正确边际与跨行动共同请求的缺口--障碍.md>) | math-exposition | retain | 共同随机优先只保证固定叶均分边际，条件到达和同角色跨行动系数仍缺共同付款证明。 |
+| [随机赢家收入的逐世界激励替换--障碍](<../../../../archives/customer-attraction/state/障碍/随机赢家收入的逐世界激励替换--障碍.md>) | math-exposition | retain | 430客户完整均衡根偏离收益91等于原利润，却大于某优先世界赢家收入45，反逐世界IC替换。 |
+| [零背景平稳负流的整尾返还比与固定人数锐系数--障碍](<../../../../archives/customer-attraction/state/障碍/零背景平稳负流的整尾返还比与固定人数锐系数--障碍.md>) | math-exposition | retain | 零背景单客户尾部负流返还比q(ell−q)/ell可随人数无界，固定ell锐系数floor(ell²/4)/ell；仅静态付款障碍。 |
+| [静态均衡逐客户负载势支配的八客户障碍--障碍](<../../../../archives/customer-attraction/state/障碍/静态均衡逐客户负载势支配的八客户障碍--障碍.md>) | math-exposition | retain | 八客户完整顺序SPE与全部静态PNE负载表严格分离每个f(1)>0、f(2)<2f(1)的逐客户势支配桥。 |
+| [静态席位统一因子二与四极大欠费--障碍](<../../../../archives/customer-attraction/state/障碍/静态席位统一因子二与四极大欠费--障碍.md>) | math-exposition | retain | 三极大静态席位因子趋二，四极大时构造U5n>2nν4n，区分动态完整树付款。 |
+| [额外一槽强聚合去相关被空主题稀释击穿--障碍](<../../../../archives/customer-attraction/state/障碍/额外一槽强聚合去相关被空主题稀释击穿--障碍.md>) | math-exposition | retain | 空题稀释给强聚合二阶式，34客户完整均衡有 D−G=−e+12e²，非空填充亦失败。 |
 | [双核花瓣族的有限弱独立支付分离--反例](<../../../../archives/customer-attraction/subarchives/six-providers/state/反例/双核花瓣族的有限弱独立支付分离--反例.md>) | math-exposition | retain | 双核花瓣完整SPE与凹iid基准唯一交点给n30严格有理弱iid付款反例；真正静态安全值仍低于实际。 |
+| [完整终局成对交叉容量的四人精确反例--反例](<../../../../archives/customer-attraction/subarchives/six-providers/state/反例/完整终局成对交叉容量的四人精确反例--反例.md>) | math-exposition | retain | 四人245客户完整SPE中成对交叉查询M(3,5)+M(5,3)=365>2W360，但同支持p推送二次型保持正余量。 |
 | [六主题三人组策略的全锥完整终局推送--定理](<../../../../archives/customer-attraction/subarchives/six-providers/state/定理/六主题三人组策略的全锥完整终局推送--定理.md>) | math-exposition | retain | 固定六主题三人完整策略锥的十五交叉与六对角真实行证书推出所有查询分布的终局推送预算。 |
 | [双核花瓣族的精确静态安全值--定理](<../../../../archives/customer-attraction/subarchives/six-providers/state/定理/双核花瓣族的精确静态安全值--定理.md>) | math-exposition | retain | 双核花瓣族给任意n、K的静态安全值精确原始/对偶与完整历史SPE，并算与iid基准不同的余量。 |
+| [共同终局交换的读后重构与负载推广范围--审查](<../../../../archives/customer-attraction/subarchives/six-providers/state/审查/共同终局交换的读后重构与负载推广范围--审查.md>) | math-exposition | retain | 同真实终局交换引理和负载推广的条件福利界Σ\|E_h\|≤(1−α)Σu_i，审查其真正有序历史与末位BR前提。 |
+| [十八主题恢复摘要与两种子身份的精确边界--审查](<../../../../archives/customer-attraction/subarchives/six-providers/state/审查/十八主题恢复摘要与两种子身份的精确边界--审查.md>) | math-exposition | retain | 114与88兴趣类型的十八主题大整数输入身份不同，前者完整BI可核最差福利，后者恢复旧策略全IC仍缺绑定。 |
+| [完整终局路径菜单与全推送浮点探针--审查](<../../../../archives/customer-attraction/subarchives/six-providers/state/审查/完整终局路径菜单与全推送浮点探针--审查.md>) | math-exposition | retain | 审查逐项解释三种浮点探针的完整终局张量、固定DAG输入和精度边界，保留计算方法的数学接口说明。 |
+| [截断交集矩的有限差分重构与保策略压缩--审查](<../../../../archives/customer-attraction/subarchives/six-providers/state/审查/截断交集矩的有限差分重构与保策略压缩--审查.md>) | math-exposition | retain | 有限差分三角系数证明终局收益张成截断交集矩，推出同矩保全策略并有理稀疏化及奇偶核。 |
+| [末层金额复核与前缀最小坏节点的历史边界--审查](<../../../../archives/customer-attraction/subarchives/six-providers/state/审查/末层金额复核与前缀最小坏节点的历史边界--审查.md>) | math-exposition | retain | 末层 AMOUNT 列容量至多两倍和固定策略最大式；前缀最小坏节点推导及银行族反例校正。 |
+| [目录价格与实际价格分离源复核--审查](<../../../../archives/customer-attraction/subarchives/six-providers/state/审查/目录价格与实际价格分离源复核--审查.md>) | math-exposition | retain | 六人真末回复菜单Y_i对每个实际位置给S_a≥0与共同容量C≥0，旧点按16 hist的一阶矩算出S6严格负，排其固定坐标补全。 |
+| [计数势格循环的独立Floyd审计与冻结证据--审查](<../../../../archives/customer-attraction/subarchives/six-providers/state/审查/计数势格循环的独立Floyd审计与冻结证据--审查.md>) | math-exposition | retain | 独立Floyd审计解释十五客户完整SPE的真实行四环与旧收益SCC一维空间的严格差异，另记录代码报告范围。 |
+| [调和菜单独审的归一化与合法菜单核验范围--审查](<../../../../archives/customer-attraction/subarchives/six-providers/state/审查/调和菜单独审的归一化与合法菜单核验范围--审查.md>) | math-exposition | retain | 调和菜单R的π归一恒等、η阈值及旧四人负组合债的量词，有限菜单审计只覆盖r2的40个真末位回复。 |
+| [静态列与查询投影的历史审查及强菜单停界--审查](<../../../../archives/customer-attraction/subarchives/six-providers/state/审查/静态列与查询投影的历史审查及强菜单停界--审查.md>) | math-exposition | retain | 静态分母、共同列、未来查询投影和前缀推送关系的审查，另校正强根菜单旧开放状态。 |
+| [一位背景五尾的六比较最大主题根界--引理](<../../../../archives/customer-attraction/subarchives/six-providers/state/引理/一位背景五尾的六比较最大主题根界--引理.md>) | math-exposition | retain | 六人一位背景五尾用25正乘子及2048类型余项证明O≤βr−7K |
 | [两层计数势端点配平的真实行双向支付--引理](<../../../../archives/customer-attraction/subarchives/six-providers/state/引理/两层计数势端点配平的真实行双向支付--引理.md>) | math-exposition | retain | 两层计数势端点非负配平把真实IC行变成双向行锥，且指出收益SCC只给其中一部分。 |
 | [任意深度正价的源金额分解与位置损失--引理](<../../../../archives/customer-attraction/subarchives/six-providers/state/引理/任意深度正价的源金额分解与位置损失--引理.md>) | math-exposition | retain | 合法叶多分支的sender正价与保留额精确分池，位置损失至多r/(r+1)，不要求SPE。 |
 | [任意行重数完整图菜单的精确索引债--引理](<../../../../archives/customer-attraction/subarchives/six-providers/state/引理/任意行重数完整图菜单的精确索引债--引理.md>) | math-exposition | retain | 任意行重数的完整图菜单交叠债χ有平衡余数取等，真实BR加权扣除及K5超环分离均明确。 |
+| [共同终局交换与负载匹配的条件福利证书--引理](<../../../../archives/customer-attraction/subarchives/six-providers/state/引理/共同终局交换与负载匹配的条件福利证书--引理.md>) | math-exposition | retain | 同一完整终局交换把早期IC利润转到末位BR；若负载匹配图有完美匹配，推出条件OPT≤(2−α)W。 |
+| [共同覆盖者请求的逐客户联合投影--引理](<../../../../archives/customer-attraction/subarchives/six-providers/state/引理/共同覆盖者请求的逐客户联合投影--引理.md>) | math-exposition | retain | 共同覆盖者请求的逐客户联合投影给局部密度上界L，保留请求与同侧新增覆盖的区分。 |
+| [十八主题势停界的真实覆盖最优性--引理](<../../../../archives/customer-attraction/subarchives/six-providers/state/引理/十八主题势停界的真实覆盖最优性--引理.md>) | math-exposition | retain | 若十八主题势Φ(Q)≤Φ(T)=V(T)则T达覆盖最优，固定六比较T覆盖全部单位客户但非SPE认证。 |
+| [同子枝前缀利润的非负共同回推--引理](<../../../../archives/customer-attraction/subarchives/six-providers/state/引理/同子枝前缀利润的非负共同回推--引理.md>) | math-exposition | retain | 同一子枝前缀利润分解为非负退款及后缀正项，列和至多一，得共同回推系数界。 |
+| [强制未来利润的真实查询投影与反向分裂--引理](<../../../../archives/customer-attraction/subarchives/six-providers/state/引理/强制未来利润的真实查询投影与反向分裂--引理.md>) | math-exposition | retain | 任意叶synthetic利润可分裂投影至真规定context与未来利润；反向SD保ROW并精确分配正边，但未付全树容量。 |
+| [静态分母返回恒等式与同父双边容量--引理](<../../../../archives/customer-attraction/subarchives/six-providers/state/引理/静态分母返回恒等式与同父双边容量--引理.md>) | math-exposition | retain | 静态中间分母给真实返回SD恒等式，明确同B正边矩阵同时满足ROW与COLUMN及密度上界。 |
+| [十五客户完整策略的势循环严格扩大收益SCC空间--构造](<../../../../archives/customer-attraction/subarchives/six-providers/state/构造/十五客户完整策略的势循环严格扩大收益SCC空间--构造.md>) | math-exposition | retain | 十五客户三人完整SPE39真实行中四条逐类型和为零，根行超出唯一非平凡收益SCC的span。 |
 | [合法背景首对利润与静态安全下界诊断--程序](<../../../../archives/customer-attraction/subarchives/six-providers/state/程序/合法背景首对利润与静态安全下界诊断--程序.md>) | mixed/needs-context | extract | 原页一半是通用首对可信终局等价及有理静态查询下界接口，一半是固定五人66背景的有限阴性与运行审计；应抽取数学接口。 |
-| [完整图索引债独立穷举的输入与报告合同--程序](<../../../../archives/customer-attraction/subarchives/six-providers/state/程序/完整图索引债独立穷举的输入与报告合同--程序.md>) | evidence-only | attach | 对既有完整图引理的9280矩阵、12288字面BR和K5打包作固定域审计；一般证明另在引理页。 |
+| [完整图索引债独立穷举的输入与报告合同--程序](<../actions/fe85b1989bc089d02028.json>) | evidence-only | attach | 对既有完整图引理的9280矩阵、12288字面BR和K5打包作固定域审计；一般证明另在引理页。 |
+| [完整终局见证的热启动向量与受限搜索合同--程序](<../../../../archives/customer-attraction/subarchives/six-providers/state/程序/完整终局见证的热启动向量与受限搜索合同--程序.md>) | math-exposition | retain | 完整终局集合R(k)推导热启动y/z/x/t向量的可行性及Γ重构；半径只限制搜索且仍须精确策略认证。 |
+| [完整菜单包络的离轨终局选择诊断--程序](<../../../../archives/customer-attraction/subarchives/six-providers/state/程序/完整菜单包络的离轨终局选择诊断--程序.md>) | math-exposition | retain | 固定actual叶的离轨孩子可独立拼合，得到U-ENV的min_A max_z公式；原三人MILP仅负候选。 |
+| [成对完整终局容量的浮点发现与精确验收合同--程序](<../../../../archives/customer-attraction/subarchives/six-providers/state/程序/成对完整终局容量的浮点发现与精确验收合同--程序.md>) | mixed/needs-context | extract | 主要说明浮点成对crosscap探针及245客户固定验收器的输入输出，亦明确定义T_{a,b,U}及成对加强目标Txy+Tyx−2c和其可分离含义。 |
+| [真实行锥额外双向空间的两种发现探针--程序](<../../../../archives/customer-attraction/subarchives/six-providers/state/程序/真实行锥额外双向空间的两种发现探针--程序.md>) | mixed/needs-context | extract | SCC收益差H包含于完整行锥双向空间的数学说明与两个有限发现探针、helper导入和历史执行身份混合。 |
+| [金额cap1完整策略锐族的原程序与四百动作证书--程序](<../../../../archives/customer-attraction/subarchives/six-providers/state/程序/金额cap1完整策略锐族的原程序与四百动作证书--程序.md>) | math-exposition | retain | 全人数完整历史策略构造反金额cap1，末位多孩子列比趋二；程序与400节点表作证据。 |
+| [一位背景五尾最大根有理证书与原审计核验--计算](<../../../../archives/customer-attraction/subarchives/six-providers/state/计算/一位背景五尾最大根有理证书与原审计核验--计算.md>) | math-exposition | retain | 固定一位背景五尾的4096类型25有理权支持线，并说明PAIR/LAST及分支行来源。 |
+| [两人两主题热启动原始对偶证书与版本边界--计算](<../../../../archives/customer-attraction/subarchives/six-providers/state/计算/两人两主题热启动原始对偶证书与版本边界--计算.md>) | math-exposition | retain | 两主题二人完整策略在客户型(a,b,c)固定锥的Γ0=(1/2,−1,0)、Γ1=(1,−1/2,0)，给匹配原始点和对偶证明最优比3/2。 |
+| [五人热启动保存策略的单位客户与认证范围--计算](<../../../../archives/customer-attraction/subarchives/six-providers/state/计算/五人热启动保存策略的单位客户与认证范围--计算.md>) | math-exposition | retain | 三份五人热启动策略的全历史解析证书、客户结构和固定锥LP界 |
 | [保存策略的单位客户重放与覆盖类商--计算](<../../../../archives/customer-attraction/subarchives/six-providers/state/计算/保存策略的单位客户重放与覆盖类商--计算.md>) | math-exposition | retain | 两个保存的五人完整策略明确W/OPT和覆盖类商，包含全选0的逐历史证明及历史lift保持IC。 |
+| [六人填充残差输入的自由完整菜单精确封顶--计算](<../../../../archives/customer-attraction/subarchives/six-providers/state/计算/六人填充残差输入的自由完整菜单精确封顶--计算.md>) | math-exposition | retain | 固定六人填充DAG的54真实菜单列有精确p/Q鞍点75/23 |
+| [共享负载旧实例与保险协方差压力--计算](<../../../../archives/customer-attraction/subarchives/six-providers/state/计算/共享负载旧实例与保险协方差压力--计算.md>) | math-exposition | retain | 共享负载BAL恒等W−mF=I−C+D、正支持KKT及保险固定查询最优点的正C与后续全鞍点量词。 |
+| [十二客户人口反例的独立全历史证书--计算](<../../../../archives/customer-attraction/subarchives/six-providers/state/计算/十二客户人口反例的独立全历史证书--计算.md>) | math-exposition | retain | 12客户完整有序树证明三人所有SPE福利12而四人所有SPE福利11，并给有序孩子菜单递推及全路径证书。 |
+| [十八主题完整逆推与前缀种子复核--计算](<../../../../archives/customer-attraction/subarchives/six-providers/state/计算/十八主题完整逆推与前缀种子复核--计算.md>) | math-exposition | retain | 终局集合E(q)的最大保底逆推证明全部真实SPE终局，114类型根174项比例小于二，并精确定位Rdiag指定路径第五人失败。 |
 | [双三主题块的静态安全保存点与归一锥点--计算](<../../../../archives/customer-attraction/subarchives/six-providers/state/计算/双三主题块的静态安全保存点与归一锥点--计算.md>) | math-exposition | retain | 四人六标签轨道输入的静态v₄归约为56背景五轨道，解析六缺一客户族的均衡福利与安全余量；保存LP点的认证范围清楚。 |
+| [完整终局推送的三份浮点候选与缺证边界--计算](<../actions/b3424d4fd6417dcd71e4.json>) | evidence-only | attach | 三份浮点输出仅给四人成对、六人DAG及三人推送的有限负gap和发现关系，无精确新数学见证 |
+| [热启动全模型残差与非计数种子回归--计算](<../../../../archives/customer-attraction/subarchives/six-providers/state/计算/热启动全模型残差与非计数种子回归--计算.md>) | math-exposition | retain | 从完整终局菜单构造目标相关的完整策略DAG可行种子，给全部约束的有理编码。 |
+| [人口gadget私有主题探针与整数混合种子--资源](<../../../../archives/customer-attraction/subarchives/six-providers/state/资源/人口gadget私有主题探针与整数混合种子--资源.md>) | math-exposition | retain | 人口gadget十二私有输入及六混合点的覆盖OPT公式与有限求解范围 |
+| [共同终局局部审计与碰撞自由联合锥的有限记录--资源](<../../../../archives/customer-attraction/subarchives/six-providers/state/资源/共同终局局部审计与碰撞自由联合锥的有限记录--资源.md>) | mixed/needs-context | extract | 六主源程序审计与报告为主，但明确同终局收益t与外组偏离3t/2−1的局部障碍，以及强制碰撞自由精确固定策略锥的验证范围。 |
+| [分组完整推送证书的原核验与父审范围--资源](<../../../../archives/customer-attraction/subarchives/six-providers/state/资源/分组完整推送证书的原核验与父审范围--资源.md>) | math-exposition | retain | 固定三人六主题策略的215真实IC锥上对全部15对iid查询给逐型非负乘子证书，明确固定σ全锥推送与六人菜单不同。 |
+| [双核花瓣原始审计的精确值与运行合同--资源](<../../../../archives/customer-attraction/subarchives/six-providers/state/资源/双核花瓣原始审计的精确值与运行合同--资源.md>) | math-exposition | retain | 双核花瓣精确安全值及平衡竞争计数公式的证明与原审计范围同页保存。 |
+| [少量早期遗漏独审的同文归并与原实现范围--资源](<../../../../archives/customer-attraction/subarchives/six-providers/state/资源/少量早期遗漏独审的同文归并与原实现范围--资源.md>) | math-exposition | retain | 少量早期遗漏定理的末菜单G/K正乘子与平方阈值多项式推导 |
+| [截断交集矩独立全收益审计与显式压缩--资源](<../../../../archives/customer-attraction/subarchives/six-providers/state/资源/截断交集矩独立全收益审计与显式压缩--资源.md>) | mixed/needs-context | extract | 截断交集矩数学差分及奇偶压缩例嵌在原程序字段和重放审计合同中，应抽保数学关系 |
+| [父方调和菜单两原审计与冻结报告--资源](<../actions/e020a9dc3f316bc408e1.json>) | evidence-only | attach | 两段Fraction原审计的1638阈值格、280合法菜单、1885历史22620比较及冻结报告字段范围，数学一般结论由父审正文承担。 |
+| [真正静态安全值的探索入口与认证范围--资源](<../../../../archives/customer-attraction/subarchives/six-providers/state/资源/真正静态安全值的探索入口与认证范围--资源.md>) | mixed/needs-context | extract | 历史研究入口嵌有真正静态安全v_m的竞争量词及W≥(m−1/2)v_m足以推出half的桥，其余主要记录已否定路线与复用去向。 |
 | [六人完整历史半覆盖目标--问题](<../../../../archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md>) | math-exposition | retain | 精确定义六人完整历史纯SPE的半覆盖量词，列与五人及七极大主题结果不相涵的缺口。 |
+| [共享终局多惩罚扩张的外组末位门槛--障碍](<../../../../archives/customer-attraction/subarchives/six-providers/state/障碍/共享终局多惩罚扩张的外组末位门槛--障碍.md>) | math-exposition | retain | 共享终局两枝迫每早组x_i≥x_h/2+a_h，循环求和限制总附加组质量，且literal t>2末位严格偏离。 |
+| [问题--问题](<../../../../archives/customer-attraction/subarchives/six-providers/问题--问题.md>) | math-exposition | retain | 精确提出恰六单位提供者完整历史纯SPE的覆盖至少最优六主题一半，保空重复零客户与平局。 |
+| [问题--问题](<../../../../archives/customer-attraction/问题--问题.md>) | math-fragment | restore | 阶段一仅给六人半覆盖问句与原来源链接，完整模型量词和承重入口留待恢复 |

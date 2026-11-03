@@ -144,7 +144,7 @@ F(P)=\max_{y\ge0,\ \sum_i y_i=1}
 
 原记录提及但本轮未取得原源码的文件包括kronecker_independent.py、verify_kronecker_certificate.py、verify_structural_read_after.py及其旧独立audit输出。实际保全的是四份原记录、已经规范冻结的完整输入/双证书/最终checker，以及本轮新的表比较工具。不能把最终checker冒作这些旧脚本未经修改的字节，也不能因旧脚本未取得而抹去现在可直接阅读、按资格核验的完整数学证书。
 
-正确输入上的数学审查不自动认证错误输入拒绝。后来的负编号、额外行、primal输出作用及稀疏列表规则修正另见[核验器版本与拒绝界限](../计算/Kronecker核验器版本与稀疏输入拒绝--计算.md)。本对象不把旧正确输入运行追认为旧版本已拒绝所有畸形输入。
+正确输入上的数学审查不自动认证错误输入拒绝。后来的负编号、额外行、primal输出作用及稀疏列表规则修正另见[核验器版本与拒绝界限](<../../../../tools/evidence/phase25-material-attachments/20261103-boss6-triage/dec7838164e75ef435fd.md>)。本对象不把旧正确输入运行追认为旧版本已拒绝所有畸形输入。
 
 ## 6. 最终§7的准确字节范围
 
