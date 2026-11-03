@@ -108,3 +108,7 @@ h_i=(g_i)_+、p最大正部、n最大负部达到；p,n各一个全局变量，�
 原五人“未证明所有字典非负”为旧路线状态；当前五人half另已证，由上面的真实有限编译反证可得**每份合法五人有限字典**VALUE≥0，未给具体通用λ，也不是原作者当时的新证明或任意背景五人界。六人/一般仍需真严格负预算或新普遍付款，LP线性化本身不解决它。证明、原审查先验/有限核及原件另保证据。
 
 原件、准确程序缺件/0-run范围、关系和逐源处置见[本批证据](../../tools/evidence/finite-dictionary-epigraph-and-round7-ledger-primary/README.md)。
+
+# 后取得的有限例程序资产
+
+原五MD整理时本地缺少4743B菜单核及1624B报告，旧missing和0新数学运行记录保留。两原件现在已全文取得，字节身份/AST/保存JSON核清；其真实代码范围为E/J四个三人菜单的全线排列与写定预算样本，没有任意字典LP、epigraph或负点实现求解入口。报告的min/argmin等部分字段写死，全域最优仍由既有E/J解析定理承担，不用有限样本证明本页一般合同。原EVIDENCE的research父方PASS准确复用；当前仍0源函数/入口/LP运行。见[完整程序对象](../程序/异质资源字典四个菜单的精确分段核与报告字面量--程序.md)及[两源证据](../../tools/evidence/dictionary-resource-menu-audit-two-primary/README.md)。
