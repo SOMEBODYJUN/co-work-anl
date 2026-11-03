@@ -16,7 +16,8 @@ def git(cwd,*args):
 
 class WorkflowTests(unittest.TestCase):
     def setUp(self):
-        common=ROOT/'.git'
+        common=Path(git(ROOT,'rev-parse','--git-common-dir'))
+        if not common.is_absolute():common=(ROOT/common).resolve()
         self.tmp=tempfile.TemporaryDirectory(dir=common,prefix='workflow-test-');self.addCleanup(self.tmp.cleanup)
         self.base=Path(self.tmp.name);self.remote=self.base/'remote.git';self.seed=self.base/'seed';self.seed.mkdir()
         git(self.base,'init','--bare',str(self.remote));git(self.seed,'init','--initial-branch=main')
@@ -24,7 +25,7 @@ class WorkflowTests(unittest.TestCase):
         git(self.seed,'remote','add','origin',str(self.remote))
         (self.seed/'raw').mkdir();(self.seed/'raw/a.md').write_text('source A: full mathematical content\n');(self.seed/'raw/b.md').write_text('source B: later correction\n')
         git(self.seed,'add','.');git(self.seed,'commit','-m','raw source');source=git(self.seed,'rev-parse','HEAD')
-        shutil.copy2(ROOT/'work.py',self.seed/'work.py');shutil.copytree(ROOT/'tools',self.seed/'tools',ignore=shutil.ignore_patterns('__pycache__'))
+        shutil.copy2(ROOT/'work.py',self.seed/'work.py');shutil.copytree(ROOT/'tools',self.seed/'tools',ignore=shutil.ignore_patterns('__pycache__','evidence'))
         (self.seed/'cleanup').mkdir();rows=[]
         for name in ['raw/a.md','raw/b.md']:
             data=(self.seed/name).read_bytes();oid=git(self.seed,'rev-parse',source+':'+name)
@@ -35,7 +36,7 @@ class WorkflowTests(unittest.TestCase):
         for nid in ['A','B','C']:
             self.node(self.seed,nid)
         (self.seed/'archives/demo/map/edges').mkdir(parents=True)
-        for p in ['prompts/02-clean.md','prompts/03-map.md','prompts/README.md','tools/README.md','cleanup/README.md']:
+        for p in ['prompts/02-clean.md','prompts/02.5-research.md','prompts/03-map.md','prompts/README.md','tools/README.md','cleanup/README.md']:
             dest=self.seed/p;dest.parent.mkdir(exist_ok=True);dest.write_text('# fixture\n')
         child=self.seed/'archives/facility-games/subarchives/common-two'
         child.mkdir(parents=True);(child/'README.md').write_text('# child problem\n')
@@ -44,7 +45,7 @@ class WorkflowTests(unittest.TestCase):
 
     def node(self,root,nid):
         p=root/f'archives/demo/state/定理/{nid}--定理.md';p.parent.mkdir(parents=True,exist_ok=True)
-        p.write_text('---\nid: "demo/'+nid+'"\nkind: "theorem"\ntype_tag: "定理"\ntitle: "'+nid+'"\nstatus: "candidate"\nsummary: "test object"\n---\n\n# test mathematical object\n')
+        p.write_text('---\nid: "demo/'+nid+'"\nkind: "theorem"\ntype_tag: "定理"\ntitle: "'+nid+'"\nstatus: "candidate"\nsummary: "test object"\nsource_refs:\n  - "fixture-source"\n---\n\n# test mathematical object\n')
         return p.relative_to(root).as_posix()
 
     def work(self,repo,*args):
@@ -71,6 +72,12 @@ class WorkflowTests(unittest.TestCase):
         r=self.start('M',role='mapper');receipt=json.loads(self.work(r,'start','--remote',str(self.remote)).stdout)
         self.assertEqual(receipt['context_entry'],'prompts/03-map.md')
         self.assertEqual(set(git(self.remote,'for-each-ref','--format=%(refname:short)','refs/heads').splitlines()),{'main',BRANCH})
+
+    def test_curator_role_uses_mathematical_admission_prompt(self):
+        repo=self.start('Curator',role='curator')
+        result=self.work(repo,'start','--remote',str(self.remote))
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertEqual(json.loads(result.stdout)['context_entry'],'prompts/02.5-research.md')
 
     def test_research_subarchive_is_explicit_and_stable(self):
         repo=self.base/'F'
@@ -371,15 +378,46 @@ class WorkflowTests(unittest.TestCase):
         edge=self.a/'archives/demo/map/edges/joint.md'
         edge.parent.mkdir(parents=True,exist_ok=True)
         edge.write_text('---\nid: "joint"\nkind: "implies"\nsource_ids:\n  - "demo/A"\n  - "demo/B"\ntarget_ids:\n  - "demo/C"\nexplanation: "A supplies the object; B supplies its missing condition"\nconditions: "Both premises under the same model"\nevidence:\n  - "archives/demo/state/定理/A--定理.md"\nstatus: "accepted"\nreviewed_by: "A"\n---\n\nA and B are jointly needed; neither is claimed sufficient alone.\n')
+        r=self.work(self.a,'map','check','--structural');self.assertEqual(r.returncode,0,r.stderr)
+        self.assertNotEqual(self.work(self.a,'map','build','--draft').returncode,0)
+        frozen=self.work(self.a,'curate','freeze','--manifest-out','research/curation/manifest.json')
+        self.assertEqual(frozen.returncode,0,frozen.stderr)
+        manifest_path=self.a/'research/curation/manifest.json';manifest=json.loads(manifest_path.read_text())
+        manifest['objects']=[]
+        for d in manifest['decisions']:
+            d.update(action='keep',targets=[d['path']],reason='Independent fixture mathematical statement retained.')
+            manifest['objects'].append(dict(path=d['path'],sha256=d['sha256'],object_id='demo/'+Path(d['path']).name[0],
+                role='mathematics',statement='Precisely delimited fixture statement',conditions='Same fixed model',
+                support='Explicit fixture proof obligation',use='Independent premise in the joint implication',
+                status='conjecture',dependency_scope='single-object'))
+        manifest_path.write_text(json.dumps(manifest))
+        edge.write_text(edge.read_text().replace('kind: "implies"','kind: "implies"\nrelation_mode: "conditional"'))
+        pins=self.work(self.a,'map','fingerprints',str(edge.relative_to(self.a)))
+        self.assertEqual(pins.returncode,0,pins.stderr);pins=json.loads(pins.stdout)
+        block='endpoint_hashes:\n'+''.join('  - '+json.dumps(x)+'\n' for x in pins['endpoint_hashes'])
+        block+='evidence_hashes:\n'+''.join('  - '+json.dumps(x)+'\n' for x in pins['evidence_hashes'])
+        block+='reviewed_content_sha256: '+json.dumps(pins['reviewed_content_sha256'])+'\n'
+        edge.write_text(edge.read_text().replace('\n---\n','\n'+block+'---\n',1))
         r=self.work(self.a,'map','check');self.assertEqual(r.returncode,0,r.stderr)
         self.assertNotEqual(self.work(self.a,'map','build').returncode,0)
         r=self.work(self.a,'map','build','--draft');self.assertEqual(r.returncode,0,r.stderr)
         graph=json.loads((self.a/'map/graph.json').read_text())
-        self.assertEqual(graph['edges'][0]['source_ids'],['demo/A','demo/B']);self.assertEqual(graph['build_status'],'draft-scaffold')
+        self.assertEqual(graph['edges'][0]['source_ids'],['demo/A','demo/B']);self.assertEqual(graph['build_status'],'draft-curated-partial')
         text=edge.read_text().replace('explanation: "A supplies the object; B supplies its missing condition"','explanation: ""')
         edge.write_text(text);self.assertNotEqual(self.work(self.a,'map','check').returncode,0)
 
     def test_isolated_objects_are_allowed(self):
+        r=self.work(self.a,'curate','freeze','--manifest-out','research/curation/manifest.json')
+        self.assertEqual(r.returncode,0,r.stderr)
+        path=self.a/'research/curation/manifest.json';manifest=json.loads(path.read_text())
+        manifest['objects']=[]
+        for d in manifest['decisions']:
+            d.update(action='keep',targets=[d['path']],reason='Independent object; no known relation is claimed.')
+            manifest['objects'].append(dict(path=d['path'],sha256=d['sha256'],object_id='demo/'+Path(d['path']).name[0],
+                role='mathematics',statement='Precisely delimited fixture claim',conditions='Same fixed model',
+                support='A concrete open proof obligation',use='An independent research question',
+                status='conjecture',dependency_scope='single-object'))
+        path.write_text(json.dumps(manifest))
         r=self.work(self.a,'map','check');self.assertEqual(r.returncode,0,r.stderr)
         self.assertEqual(json.loads(r.stdout)['nodes'],3);self.assertEqual(json.loads(r.stdout)['edges'],0)
 

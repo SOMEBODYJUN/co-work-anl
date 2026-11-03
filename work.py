@@ -35,7 +35,7 @@ RESEARCH_ENTRIES = {
     "unrelated-machines": {"research_entry": "archives/unrelated-machines/README.md", "research_prompt": "archives/unrelated-machines/prompts/README.md", "research_runbook": "tools/README.md"},
     "positive-kernels": {"research_entry": "archives/positive-kernels/README.md", "research_prompt": "archives/positive-kernels/prompts/README.md", "research_runbook": "tools/README.md"},
 }
-ROLE_PROMPTS = {"boss": "prompts/README.md", "cleaner": "prompts/02-clean.md", "mapper": "prompts/03-map.md"}
+ROLE_PROMPTS = {"boss": "prompts/README.md", "cleaner": "prompts/02-clean.md", "curator": "prompts/02.5-research.md", "mapper": "prompts/03-map.md"}
 CLEANUP_ROLE_PROMPTS = ROLE_PROMPTS
 IDENTIFIER = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,63}")
 TOKEN = re.compile(rb"(?:github_pat_|ghp_)[A-Za-z0-9_]{12,}")
@@ -513,7 +513,8 @@ def start(args):
     if save == "customer-attraction" and not selected_sub:
         result["context_entry"] = "archives/customer-attraction/README.md"
     elif save == "repository-cleanup":
-        result["context_entry"] = ("prompts/03-map.md" if selected_role == "mapper" else "cleanup/README.md")
+        result["context_entry"] = ("prompts/03-map.md" if selected_role == "mapper" else
+                                   "prompts/02.5-research.md" if selected_role == "curator" else "cleanup/README.md")
     result["recent_board_limit"] = board_limit
     if rules.get('require_boss_number') and save=='repository-cleanup':
         command=[sys.executable,str(repo/TOOLS/'coordination.py'),'--repo',str(repo),'register']
@@ -575,6 +576,8 @@ def main():
     clean.add_argument("args", nargs=argparse.REMAINDER)
     mapping = sub.add_parser("map", help="检查/生成子存档、存档和全仓超图")
     mapping.add_argument("args", nargs=argparse.REMAINDER)
+    curate = sub.add_parser("curate", help="2.5固定原文、逐对象处置与数学准入；只操作本地明确文件")
+    curate.add_argument("args", nargs=argparse.REMAINDER)
     r = sub.add_parser("read", help="读取异步公屏")
     r.add_argument("--json", action="store_true")
     r.add_argument("--thread")
@@ -623,6 +626,9 @@ def main():
     if a.command == "start":
         return start(a)
     repo = checked_repo(a.repo)
+    if a.command in ("curate", "map"):
+        module = "curation.py" if a.command == "curate" else "maps.py"
+        return subprocess.call([sys.executable, str(repo / TOOLS / module), "--repo", str(repo), *a.args])
     env = auth(repo, a)
     if a.command=='doctor':
         return subprocess.call([sys.executable,str(repo/TOOLS/'coordination.py'),'--repo',str(repo),'doctor'],env=env)
