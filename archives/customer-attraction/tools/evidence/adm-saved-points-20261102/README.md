@@ -1,6 +1,6 @@
 # ADM两保存点与第四轮根稿六来源
 
-Boss4 / cleaner，2026-11-02。本目录及两篇新正文目前仅本地保存，未确认pushed，未提交done。逐源候选记录在`cleanup/workspaces/Boss4/resume-20261102-boundary/PROPOSED_RECEIPTS.json`，必须先发布本文和全部依赖、核推送树，再逐源done。
+Boss4 / cleaner，2026-11-02形成本地保全，后获用户明确授权接续认证与发布。本目录及两篇新正文的发布/完成状态以父方独立checkpoint和done回执为准。逐源候选记录在`cleanup/workspaces/Boss4/resume-20261102-boundary/PROPOSED_RECEIPTS.json`，必须先发布本文和全部依赖、核推送树，再逐源done。
 
 六个primary原件共20,887B，均用当前`cleanup.show`读取冻结版本、核inventory SHA后保在`original/<完整源ID>/原文件名`。manifest保两冻结定位和全部字节指纹。五份正式比较材料从固定结果提交`8a5a74b032e330f43cbdd9da3c46495e511ffaed`读取，保在comparison；已按该提交tree中的Git blob逐份核同，不拿当前漂移URL作证。一次Git批量promisor取blob报bad revision，随后这些公开比较文本由固定commit原始URL取得，blob比对仍成功，没有重试认证。
 

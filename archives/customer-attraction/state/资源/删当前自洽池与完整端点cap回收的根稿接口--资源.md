@@ -74,4 +74,4 @@ MAIN_PROOF_WORKING保NEW-CAP逐客户全图密度及单context whole-IC合法性
 
 这些根源的准确用途是把已证域关系和表示送往仍缺的低值/共同付款接口。第三阶段可记录“SC存在+paid-SC前提⇒条件福利界”“不改善前缀+真实尾⇒ADM成员”“保根银行反例不能迁移删当前矩阵”等有条件关系；不导入旧图、不造已付边。本批两保存点的新有理核只属于[ADM有限菜单程序](../程序/ADM探针的完整终局菜单与两保存点精确证书--程序.md)。
 
-六原件、五份逐字节比较快照及manifest见[证据说明](../../tools/evidence/adm-saved-points-20261102/README.md)。正文与依赖目前仅本地checkpoint；逐源处置JSON是待发布草稿，没有pushed或done确认。
+六原件、五份逐字节比较快照及manifest见[证据说明](../../tools/evidence/adm-saved-points-20261102/README.md)。这六源先前仅本地保全；本次发布状态以父方独立checkpoint与逐源done回执为准，不能从旧工作区边界记录推断当前状态。
