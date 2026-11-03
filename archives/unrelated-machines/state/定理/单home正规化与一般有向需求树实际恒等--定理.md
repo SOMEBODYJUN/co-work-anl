@@ -9,7 +9,7 @@ source_refs: ["source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unre
 source_ids: ["e8b6428338f9c956317c"]
 ---
 
-本文整理原实现所检查的三个独立数学合同。完整原件与双实现有限范围见[程序资源](<../../../../tools/evidence/phase25-material-attachments/20261103-boss6-triage/502519859ce8ce73c139.md>)。相关 canonical `eef751243f82cd1689d6` 本批只实际读第1–111行（§1–6及二阈值反例），其后 moment-lift 不在本页读源范围。以下给自足证明，而非把程序通过当一般证明。
+本文整理原实现所检查的三个独立数学合同。完整原件与双实现有限范围见[程序资源](../资源/单home正规化与需求桥双实现精确审计--资源.md)。相关 canonical `eef751243f82cd1689d6` 本批只实际读第1–111行（§1–6及二阈值反例），其后 moment-lift 不在本页读源范围。以下给自足证明，而非把程序通过当一般证明。
 
 ## 1. 单home输入与带任务标签的图
 

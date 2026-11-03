@@ -135,7 +135,7 @@ best/worst均是**先在每个固定T最小化owner比例，再跨最优T取min/
 
 5535B程序有main guard，模块import会加载NumPy/SciPy并定义run，但不读六例或启动实验；main固定六文件名，从**cwd**的examples及certificates双路径读入，不扫新实例。每份先清点完整history集合，再对所有动作沿σ完成，精确核IC，共3635个含自身比较。它以Fraction算kernel/极端owner阳性值，再转float做172个HiGHS归属LP。失败LP会assert，函数无通用输入校验器合同；六输入利润为正，不把阳性比例除数扩成任意零利润游戏。
 
-main最终覆写同目录`role_cap_results.json`并打印全部报告，未保存原运行argv/环境/stdio或12输入指纹。本批没有倒填旧生成事件，没有运行或import原main/run、没有重跑172LP及已成熟的完整SPE检查。已有[父方全利润CLIP审计](<../../../../tools/evidence/phase25-material-attachments/20261103-boss6-triage/a8e92aa50f44394c1cfb.md>)同用六输入，却是每个context单位利润注入、比较gross/net/clip的不同实验，不能用其成功冒充本源全O-owner合同的运行。
+main最终覆写同目录`role_cap_results.json`并打印全部报告，未保存原运行argv/环境/stdio或12输入指纹。本批没有倒填旧生成事件，没有运行或import原main/run、没有重跑172LP及已成熟的完整SPE检查。已有[父方全利润CLIP审计](../程序/父方全利润剪枝的六策略原审计与三份流--程序.md)同用六输入，却是每个context单位利润注入、比较gross/net/clip的不同实验，不能用其成功冒充本源全O-owner合同的运行。
 
 本轮只写标准库Fraction定义核，读取上两份同SHA旧实例/完整策略和两个明确owner见证。它不导原脚本、solver、优化器；只为(1)(2)到最终F的**具体新见证绑定**重建到达的5及2个SAFE context，两个全角色向量和目标质量/cap/ratio与冻结报告精确相同。每个type的unit列及查询叶是本轮新增保存，原7188B报告没有这些逐列数据。另核输入全有序键及目标T覆盖全部单位客户；没有再次遍历全部旧IC。0.067秒、exit0、stderr0，实际argv/代码及输入指纹见[执行记录](../../tools/evidence/role-cap-and-background-checkpoints-boss3/replay/execution-record.json)，全部unit列和查询叶见[两个精确见证](../../tools/evidence/role-cap-and-background-checkpoints-boss3/replay/two-safe-witnesses.json)。
 

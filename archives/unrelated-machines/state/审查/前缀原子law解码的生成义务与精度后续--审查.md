@@ -15,7 +15,7 @@ source_refs:
 
 ## 精确表示身份与实际来源
 
-本页处理36行composition review中的UM-PREFIX-ATOMIC-DECODING-v1，非私有需求树或unit-presence。另全文读217行canonical a17bde448cd58ab9b637a6050837153006423cf8097b078621bcb302031ff02b；后有限精度是**后续比较**，不倒填旧composition审查范围。现有[宽仿射/前缀双源页](宽仿射矩形与前缀原子解码双源审查--审查.md)、[有限精度/Gram页](<../../../../tools/evidence/phase25-material-attachments/20261103-boss6-triage/1c59cd2b0d40be28f690.md>)全文比较；仿射矩形构造与本law是不同输入承诺。
+本页处理36行composition review中的UM-PREFIX-ATOMIC-DECODING-v1，非私有需求树或unit-presence。另全文读217行canonical a17bde448cd58ab9b637a6050837153006423cf8097b078621bcb302031ff02b；后有限精度是**后续比较**，不倒填旧composition审查范围。现有[宽仿射/前缀双源页](宽仿射矩形与前缀原子解码双源审查--审查.md)、[有限精度/Gram页](前缀原子有限精度与相对Gram审计--审查.md)全文比较；仿射矩形构造与本law是不同输入承诺。
 
 给合法显式P、有理T≥0，每任务有限端集合E_j。对任意相容部分分配S（每任务≤1端）给有理查询器Eval(S)=π(S)，运行时间/输出位长按输入及前缀编码多项式。承诺：π(∅)=1、π≥0，未选j时
 

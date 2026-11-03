@@ -40,7 +40,7 @@ t_b(A)=\sum_{x\in A}h_x,\quad \tau(b)=\sum_x\frac{b_x}{b_x+1}.
 \[
 \min_Q[mM_Q+\tau+E_Qt_b]\le2W\tag{ALL-Q?}
 \]
-都可被以下**真实完整SPE**反驳。上界大于2W并不说明真实OPT大于2W。本页原5351B及七个必要原件53134B均全文实读；没有运行原审计或BI。[程序资源](<../../../../tools/evidence/phase25-material-attachments/20261103-boss6-triage/3912c5c9c5b7614e1bdf.md>)分清数学与历史报告。
+都可被以下**真实完整SPE**反驳。上界大于2W并不说明真实OPT大于2W。本页原5351B及七个必要原件53134B均全文实读；没有运行原审计或BI。[程序资源](../程序/二十三单位核末菜单静态审计的原始合同--程序.md)分清数学与历史报告。
 
 ## 原单位输入及完整控制器
 

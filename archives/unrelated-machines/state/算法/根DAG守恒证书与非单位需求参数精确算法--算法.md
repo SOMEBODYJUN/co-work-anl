@@ -9,7 +9,7 @@ source_refs: ["source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unre
 source_ids: ["e8706876e0c1b5dcebd9"]
 ---
 
-本文保留原程序真实实现的正面算法及其一般证明；[双实现资源](<../../../../tools/evidence/phase25-material-attachments/20261103-boss6-triage/ee27f504e41424634432.md>)另记有限运行。相关canonical `d0a31d464c835feda704`全文164行已比较；旧合同依赖`cd5e59034198845a9ec2`全文565行已读，但旧main未额外运行。
+本文保留原程序真实实现的正面算法及其一般证明；[双实现资源](../资源/根DAG守恒支撑双实现与不同枚举域--资源.md)另记有限运行。相关canonical `d0a31d464c835feda704`全文164行已比较；旧合同依赖`cd5e59034198845a9ec2`全文565行已读，但旧main未额外运行。
 
 ## 1. 输入、树值和新证书
 
