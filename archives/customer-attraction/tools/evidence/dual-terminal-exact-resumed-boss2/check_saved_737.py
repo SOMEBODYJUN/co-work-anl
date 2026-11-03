@@ -29,7 +29,7 @@ sources = {
  'continuation_completion/offdiagonal_closure.py': PREFIX/'continuation-closure-resumed-boss2/original/offdiagonal_closure.py',
  'round4_coupling/joint_transport.py': PREFIX/'round4-joint-transport-resumed-boss2/original/research/workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round4_coupling/joint_transport.py',
  'round5_pricing/terminal_cross_pricing.py': OLD/'original/terminal_cross_pricing.py',
- 'round5_pricing/dual_terminal_pricing.py': REPO/'cleanup/workspaces/Boss2/resume-20261103b/pricing/source/dual_terminal_pricing.py',
+ 'round5_pricing/dual_terminal_pricing.py': PREFIX/'terminal-column-generation-pricing-primary/original/dual_terminal_pricing.py',
 }
 bindings=[]
 for rel,original in sources.items():
