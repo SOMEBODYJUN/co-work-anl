@@ -2,7 +2,7 @@
 
 当前执行设计见 [CURATION.md](CURATION.md)：2.5.1材料定性、2.5.2对象群数学整理；[第一步提示词](../prompts/02.5-1-inventory.md)、[第二步Boss](../prompts/02.5-2-distill.md)及[worker](../prompts/02.5-worker.md)已分开。材料分类不是数学真值审查或最终节点准入，原本好内容直接沿用。
 
-[分类判据](PHASE25_TRIAGE.md)、[对象群任务与出口](PHASE25_DISTILL.md)、[新协作域](CURATION_OPERATIONS.md)和[程序规格](PHASE25_PROGRAM.md)供前两步使用。专用程序尚须实现与试运行；本轮没有全仓分类、删除、生产run或新公屏。
+[分类判据](PHASE25_TRIAGE.md)、[对象群任务与出口](PHASE25_DISTILL.md)、[新协作域](CURATION_OPERATIONS.md)和[程序规格](PHASE25_PROGRAM.md)供前两步使用。材料批次与对象群任务程序已实现，第一步run正在逐份分类、清理明确非数学页；新公屏尚未创建。
 
 2.5.3重新登记、第三阶段超边格式与数学研究Agent由用户与另一AI另定。前两步保留路径、字节版本、可理解正文、原材料去向和具体缺口即可，不强制按未来节点拆页或造ID。
 
