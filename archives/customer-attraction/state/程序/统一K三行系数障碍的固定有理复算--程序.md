@@ -1,0 +1,72 @@
+---
+id: "customer-attraction/uniform-K-three-row-exact-replay"
+kind: "program"
+type_tag: "程序"
+title: "统一K三行系数障碍的固定有理复算"
+status: "complete-frozen-source-contract-and-unchanged-entry-replay"
+truth_status: "指定逐客户统一K模板不可行；不否定六人半覆盖"
+review_level: "frozen-source-full-reading-and-new-original-entry-execution"
+scope: "六人单位客户共同目录完整历史纯SPE；两个固定实际早期主题各包含倒二主题；三行局部系数证书"
+summary: "883B原程序只构造三条有理系数行并断言指定值；保留λ矛盾、顶层执行、tuple输出及旧LP和原405B报告的证据边界。"
+source_refs:
+  - "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/subagent-f/replay_m6_r2_uniform_K.py"
+  - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/subagent-f/replay_m6_r2_uniform_K.py"
+  - "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/subagent-f/m6_r2_uniform_K_obstruction.md"
+---
+
+# 统一K三行系数障碍的固定有理复算
+
+[883B原件](../../tools/evidence/two-early-replay-source-contracts-primary/original/research/workspaces/customer-attraction/subagent-f/replay_m6_r2_uniform_K.py)对应源`a38ca2f025b4a6dab709`，SHA-256为`8799ffa395455707a85c00e9ed5381b3baf485d20ca56ab4a11ffe01ec8341d3`。两冻结提交同字节，原MD把脚本目录写作`subagent_f`，实际冻结路径为`subagent-f`。本程序是既有[双包含与统一K边界证明](../证明/六人倒二双包含证书与统一K模板边界--证明.md)中三个障碍系数的原实现；不产生新定理。
+
+## 模型、行和被排除的精确模板
+
+采用[共同目录完整历史模型](../定义/共同目录完整历史模型--定义.md)：有限单位客户、有限非空共同标签目录，六名单位提供者依次观察全部有序历史选标签，终局客户价值在覆盖者间均分。允许同覆盖异标签、空覆盖、重复选择、零客户及全部离轨平局。固定任意完整纯SPE，实际末两主题为A、B；前四名中有两个固定角色E₃、E₄各包含整个A，其余角色为E₁、E₂。角色命名不重排行动位置。
+
+对任意六个合法比较主题Tᵢ，在同一实际前四有序前缀强制第五位选Tᵢ，仍按原策略的末回复为Rᵢ。记前四负载pₓ，及
+
+\[
+U_p(X,Y)=\sum_{x\in X}\frac1{p_x+1+\mathbf1_Y(x)}.
+\]
+
+全局真实非负行是S=Σᵢ[u₅−Uₚ(Tᵢ,Rᵢ)]、Z=Σᵢ[u₆−Uₚ(Rᵢ,A)]及V=Σᵢ≠ⱼ[Uₚ(Rᵢ,Tᵢ)−Uₚ(Rⱼ,Tᵢ)]。它们分别由倒二IC、实际末位IC和各真实回复分支的末位IC给出。G=S+Z/12+V/6≥0。早期改选A保底和实际末位查询Eⱼ给
+
+\[
+K_j=\underbrace{u_{E_j}-|A|/6}_{H_j\ge0}
++\frac{u_6-U_p(E_j,A)}5\ge0.
+\]
+
+早期偏离后仍沿同一策略，A客户最终至多由六人覆盖，所以其份额至少1/6；这里没有冻结后继。局部系数可为负，非负性说的是全客户求和后的行。
+
+客户的实际会员为a,b,eⱼ∈{0,1}，p是前四总负载，c=p+a+b；比较、回复出现次数为d,ℓ∈{0,…,6}。令w=1_{c>0}、o=1_{d>0}，a/c、b/c等零分子在c=0时取0。代码使用
+
+\[
+G_x=6a/c+b/(2c)-d/(p+1)-\ell/[12(p+a+1)]
++d\ell/[6(p+1)(p+2)],
+\]
+\[
+K_{j,x}=e_j/c-a/6+[b/c-e_j/(p+a+1)]/5.
+\]
+
+交集h=Σᵢ1_{Tᵢ∩Rᵢ}已在G中消去。指定模板要求**同一对常数**λ₁,λ₂≥0使所有允许局部型满足2w−o−Gₓ−λ₁K₁,ₓ−λ₂K₂,ₓ≥0。这一充分系数模板比直接要求真实总和非负更强。
+
+|(p,a,b,e₁,e₂,d,ℓ)|2w−o−Gₓ|K₁,ₓ|K₂,ₓ|
+|---|---:|---:|---:|
+|(2,1,0,0,0,1,0)|−2/3|−1/6|−1/6|
+|(1,0,0,1,0,1,0)|3/2|9/10|0|
+|(1,0,0,0,1,1,0)|3/2|0|9/10|
+
+第一行要求λ₁+λ₂≥4，另两行分别要求λⱼ≤5/3，合计≤10/3<4。因此指定模板不可能。这三个允许会员型不需要同时组成一份SPE实例；此结论排除的是在完整允许系数域逐型成立的模板。它没有给出福利反例或否定该双包含结构类；后者已经用独立H₁、H₂、L和乘子5/4、5/4、1证明half。
+
+## 真实执行合同和输出
+
+源码只有`G`、`K`、`row`三个函数，均不验证任意输入的定义域；顶层只调用表中三个固定合法型。它先打印三行`(label,rhs,K1,K2)`，再用三个`assert`核对指定有理值，最后打印必要λ约束。代码没有求乘子、执行LP、枚举1960型或断言10/3<4；最后的矛盾由上面的算术完成。
+
+它没有main guard，直接导入也会执行打印和断言；依赖仅`fractions.Fraction`，不读写文件，不输入目录或策略。stdout是含`Fraction(...)`的Python tuple表示和一行文字，**不是JSON**。不得用`-O`关闭断言，关闭断言后的输出本身不代表检查成功。
+
+本批对未改原件单独以`python3 -I`执行一次，退出码0、stderr空；[新stdout](../../tools/evidence/two-early-replay-source-contracts-primary/rerun/a38ca2f025b4a6dab709/stdout.txt)保完整四行，[执行元数据](../../tools/evidence/two-early-replay-source-contracts-primary/execution.json)绑定源码SHA及输出SHA。冻结源没有本入口的独立stdout文件，这次捕获是新执行事件，不补造原历史日志。
+
+## 比较和关系
+
+三行数学已由上述正式证明及[既有新重构](../../tools/evidence/background-five-scope-and-prefix-envelope-primary/check_ep_coefficients.py)保存。本批沿用其证明，不重跑重构。原MD提到的1960/5600浮点LP不在这883B源码中，且原MD将布尔b与d,ℓ的范围混写；不能由这三行程序恢复或认证那些LP实验。
+
+[3118B包含审计器](两早期主题包含倒二主题的系数审计器--程序.md)检查另一组H₁/H₂/L正证书和遗漏重数常数；其405B JSON不是本入口输出，未执行这些K行。关系是本程序实现并精确核验既有证明的统一K模板障碍，H/L正证书使用另一组行，二者没有反驳关系。一般六人half仍未解决；无新增外审或新颖性主张。
