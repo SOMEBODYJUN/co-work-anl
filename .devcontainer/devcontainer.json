@@ -1,0 +1,12 @@
+{
+  "name": "Mathematical research workspace",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "hostRequirements": {"cpus": 2, "memory": "4gb"},
+  "postCreateCommand": "python3 tools/bootstrap_research.py",
+  "customizations": {
+    "vscode": {
+      "settings": {"python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python"},
+      "extensions": ["ms-python.python"]
+    }
+  }
+}

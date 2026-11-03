@@ -10,8 +10,9 @@ import uuid
 import board
 import cleanup
 import coordination
-from curation import _safe_path, _write_json
+from curation import _safe_path
 import research_runtime as research
+from research_runtime import _write_json
 
 ACTIVE = {'claimed', 'blocked'}
 
@@ -33,12 +34,15 @@ def overlap(a, b):
 def validate(root, definition):
     research.identity(definition['task_id'])
     research.nonempty(definition, ['goal', 'registry'])
-    data, objects = research.load(root, definition['registry'])
+    data, objects = research.load(root, definition['registry'], verify=False)
     research.strings(definition['object_ids'], 'object_ids', True)
     if set(definition['object_ids']) - objects.keys():
         raise ValueError('Task has unknown objects')
     if definition.get('input_pins') != {oid: research.pin(objects[oid]) for oid in definition['object_ids']}:
         raise ValueError('Task input objects changed; reframe the version-bound task')
+    for oid in definition['object_ids']:
+        research.ref_bytes(root, objects[oid]['body'])
+        for ref in objects[oid]['evidence']: research.ref_bytes(root, ref)
     if definition.get('stage') not in {'3A', '3B', '3C', '3D'}:
         raise ValueError('Explicit map construction stage required')
     research.strings(definition['write_paths'], 'write_paths', True)
@@ -80,9 +84,13 @@ def transition(root, old, others, actor, operation, request_id, receipt=None, re
         if old.get('owner') != actor or old['state'] not in ACTIVE: raise ValueError('Only task owner may finish')
         if not isinstance(receipt, dict): raise ValueError('Explicit coverage and already-pushed assets required')
         if set(receipt.get('coverage', {})) != set(definition['object_ids']): raise ValueError('Every input object requires a coverage result')
+        data, objects = research.load(root, definition['registry'])
+        relations = research.edges(root, data, objects)
         for row in receipt['coverage'].values():
             if row.get('state') not in {'linked', 'isolated-after-review', 'needs-decision'}: raise ValueError('Unknown coverage outcome')
             research.nonempty(row, ['reason', 'comparison_scope'])
+        resolved = {oid: row for oid, row in receipt['coverage'].items() if row['state'] != 'needs-decision'}
+        research.validate_coverage(resolved, {oid: objects[oid] for oid in resolved}, relations)
         if not receipt.get('assets'): raise ValueError('Pushed edge/coverage assets required')
         for ref in receipt['assets']:
             name = ref['path']
@@ -107,7 +115,16 @@ def mutate(root, task_id, operation, receipt=None, reason=None):
     branch = coordination.config(root, 'wcg.branch')
     if not branch: raise ValueError('Start this independent clone on the shared result branch first')
     client = board.Board(root, branch=branch, retries=8)
-    request_id = uuid.uuid4().hex
+    pending_path = client.cache / 'map-pending' / (research.identity(task_id) + '-' + operation + '.json')
+    intent_pin = research.pin({'receipt': receipt, 'reason': reason, 'operation': operation})
+    if pending_path.exists():
+        pending = json.loads(pending_path.read_text())
+        if pending['intent_pin'] != intent_pin:
+            raise ValueError('Unconfirmed request exists; resume its original receipt/reason before replacing it')
+        request_id = pending['request_id']
+    else:
+        request_id = uuid.uuid4().hex
+        _write_json(pending_path, {'task_id': task_id, 'operation': operation, 'request_id': request_id, 'intent_pin': intent_pin})
     confirmed = False
     name = task_path(root, task_id).relative_to(root).as_posix()
     for _ in range(8):
@@ -118,6 +135,10 @@ def mutate(root, task_id, operation, receipt=None, reason=None):
                 coordination.verify_write(directory, branch, board.git(directory, 'rev-parse', 'HEAD').stdout.decode().strip())
                 confirmed = True
             old = json.loads(task_path(directory, task_id).read_text())
+            if old.get('request_id') == request_id:
+                pending_path.unlink(missing_ok=True)
+                return {'status': 'pushed', 'task_id': task_id, 'operation': operation,
+                        'remote_tip': board.git(directory, 'rev-parse', 'HEAD').stdout.decode().strip(), 'recovered_acknowledgement': True}
             new = transition(directory, old, listing(directory), actor, operation, request_id, receipt, reason)
             _write_json(task_path(directory, task_id), new)
             board.git(directory, 'add', '--', name)
@@ -129,10 +150,12 @@ def mutate(root, task_id, operation, receipt=None, reason=None):
             _, tip, _ = cleanup.refresh_snapshot(client)
             actual = board.git(directory, 'show', tip + ':' + name, check=False)
             if not actual.returncode and json.loads(actual.stdout).get('request_id') == request_id:
+                pending_path.unlink(missing_ok=True)
                 return {'status': 'pushed', 'task_id': task_id, 'operation': operation, 'remote_tip': tip,
                         'limit': 'Coverage is not an independent mathematical review'}
-            if pushed.returncode and not re.search(rb'non-fast-forward|fetch first', pushed.stdout + pushed.stderr, re.I):
-                raise board.BoardError('Map write not confirmed; preserve local drafts')
+            if pushed.returncode and not re.search(rb'non-fast-forward|fetch first|cannot lock ref|failed to update ref|stale info|incorrect old value provided', pushed.stdout + pushed.stderr, re.I):
+                detail = board.SECRET.sub('[REDACTED]', pushed.stderr.decode(errors='replace'))
+                raise board.BoardError('Map write not confirmed; preserve local drafts: ' + detail[:700])
     raise board.BoardError('Concurrent map write could not be confirmed')
 
 

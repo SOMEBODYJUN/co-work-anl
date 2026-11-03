@@ -1,0 +1,32 @@
+name: Research compute
+on:
+  workflow_dispatch:
+    inputs:
+      experiment:
+        description: Registered reproducible experiment
+        required: true
+        type: choice
+        options: [runtime-smoke, cag-five-local, positive-kernels-rank]
+permissions:
+  contents: read
+jobs:
+  compute:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Run registered experiment
+        env:
+          RESEARCH_EXPERIMENT: ${{ inputs.experiment }}
+        run: python tools/compute.py "$RESEARCH_EXPERIMENT" --out validation/compute.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: experiment-${{ github.run_id }}
+          path: validation/
+          retention-days: 7

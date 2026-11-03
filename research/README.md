@@ -1,5 +1,9 @@
 # 数学整理与后续研究设计入口
 
+[上游实读与适配](UPSTREAM_ADAPTATION.md)记录Pharos固定commit、源码/提示词位置和采用的读取机制。
+
+用户已授权把2.5第三步、第三阶段与研究使用一起落实。[IMPLEMENTATION.md](IMPLEMENTATION.md)是已实现v2接口与完整命令，[GITHUB_RESOURCES.md](GITHUB_RESOURCES.md)记录Codespaces/Actions和权益边界。入口为work.py research；新map任务账本与旧curate/map原型分开。此处不自动替2.5前两步作数学判断，也不声称全仓登记和图已完成。下文原型说明仅作历史背景，其“待后续设计”已由这次接口设计承接。
+
 当前执行设计见 [CURATION.md](CURATION.md)：2.5.1材料定性、2.5.2对象群数学整理；[第一步提示词](../prompts/02.5-1-inventory.md)、[第二步Boss](../prompts/02.5-2-distill.md)及[worker](../prompts/02.5-worker.md)已分开。材料分类不是数学真值审查或最终节点准入，原本好内容直接沿用。
 
 [分类判据](PHASE25_TRIAGE.md)、[对象群任务与出口](PHASE25_DISTILL.md)、[新协作域](CURATION_OPERATIONS.md)和[程序规格](PHASE25_PROGRAM.md)供前两步使用。材料批次与对象群任务程序已实现，第一步run正在逐份分类、清理明确非数学页；新公屏尚未创建。

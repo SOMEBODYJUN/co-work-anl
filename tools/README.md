@@ -1,5 +1,7 @@
 # 根work.py：启动、源阅读、清洗勾选和图
 
+新的2.5第三步/构图/研究读取接口已实现，见[完整命令](../research/IMPLEMENTATION.md)。work.py research提供inventory/register/check/build/search/show/context/packet/init/save/resume；work.py map新增inventory/plan/list/claim/done/handoff/status。原curate与map check/build保留为旧原型兼容。Codespaces、Actions和精确实验入口见[GitHub资源](../research/GITHUB_RESOURCES.md)。新工具不替其他Boss重分类或自动建全仓图。
+
 新对话使用本结果分支的新版work.py和仓库外凭据，自动找附件路径及独立--repo目录：
 
 ```sh

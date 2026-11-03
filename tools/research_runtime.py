@@ -9,12 +9,14 @@ import argparse
 import copy
 import hashlib
 import json
+import os
 from pathlib import Path
 import re
 import subprocess
+import tempfile
 import uuid
 
-from curation import _safe_path, _write_json, formal_paths
+from curation import _safe_path, formal_paths
 
 REGISTRY = 'research/registry.json'
 LOGICAL = {'implies', 'refutes', 'specializes', 'transfers', 'equivalent_to'}
@@ -22,6 +24,20 @@ CONTEXT = {'motivates', 'cites', 'sourced_from', 'implements', 'checks', 'correc
 TRUTHS = {'definition', 'proved', 'conditional', 'conjecture', 'open', 'refuted', 'finite', 'unassessed'}
 STATES = {'working', 'needs-feedback', 'blocked', 'candidate', 'paused', 'closed'}
 IDENT = re.compile(r'[A-Za-z0-9][A-Za-z0-9_.-]{0,95}')
+
+
+def _write_json(path, data):
+    """A crash leaves either the previous JSON or the complete new JSON."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = None
+    try:
+        with tempfile.NamedTemporaryFile('w', encoding='utf-8', dir=path.parent, prefix='.research-', delete=False) as stream:
+            temporary = Path(stream.name)
+            stream.write(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
+            stream.flush(); os.fsync(stream.fileno())
+        os.replace(temporary, path)
+    finally:
+        if temporary and temporary.exists(): temporary.unlink()
 
 
 def digest(data):
@@ -89,12 +105,17 @@ def section(text, title=None):
     return text[start:end]
 
 
-def ref_bytes(root, ref):
+def reference(root, ref):
     if not isinstance(ref, dict) or not {'path', 'sha256'} <= ref.keys() or ref.keys() - {'path', 'sha256', 'section'}:
         raise ValueError('A reference needs path, sha256, and optional exact section title')
     path = _safe_path(root, ref['path'])
     if not re.fullmatch(r'[0-9a-f]{64}', str(ref['sha256'])):
         raise ValueError('Invalid SHA-256 binding')
+    return path
+
+
+def ref_bytes(root, ref):
+    path = reference(root, ref)
     data = path.read_bytes()
     if digest(data) != ref['sha256']:
         raise ValueError('Stale content binding: ' + ref['path'])
@@ -107,7 +128,7 @@ def read_ref(root, ref):
     return section(ref_bytes(root, ref).decode('utf-8'), ref.get('section'))
 
 
-def load(root, name=REGISTRY, provided=None):
+def load(root, name=REGISTRY, provided=None, verify=True):
     data = json.loads(_safe_path(root, name).read_text()) if provided is None else provided
     if data.get('schema') != 2 or not isinstance(data.get('objects'), list) or not isinstance(data.get('materials'), list):
         raise ValueError('Expected explicit v2 registration; do not auto-admit old file listings')
@@ -122,15 +143,15 @@ def load(root, name=REGISTRY, provided=None):
         strings(obj.get('assumptions'), 'assumptions')
         strings(obj.get('sources'), 'sources')
         strings(obj.get('keywords', []), 'keywords')
-        ref_bytes(root, obj['body'])
+        (ref_bytes if verify else reference)(root, obj['body'])
         if not isinstance(obj.get('evidence'), list):
             raise ValueError('Explicit evidence list required')
         for ref in obj['evidence']:
-            ref_bytes(root, ref)
+            (ref_bytes if verify else reference)(root, ref)
         objects[oid] = obj
     seen = set()
     for row in data['materials']:
-        ref_bytes(root, {k: row[k] for k in ('path', 'sha256')})
+        (ref_bytes if verify else reference)(root, {k: row[k] for k in ('path', 'sha256')})
         if row['path'] in seen:
             raise ValueError('Duplicate material disposition')
         seen.add(row['path'])
@@ -161,7 +182,12 @@ def register(root, record_file, registry=REGISTRY):
     edges(root, data, objects)
     destination = _safe_path(root, registry)
     if destination.exists():
-        _, old = load(root, registry)
+        # Previous byte pins are expected to be stale when explicitly updating
+        # a changed proof. Read identity/version metadata without re-admitting
+        # those old bytes; validate the entire incoming declaration above.
+        previous = json.loads(destination.read_text())
+        old = {identity(obj['object_id']): obj for obj in previous['objects']}
+        if len(old) != len(previous['objects']): raise ValueError('Duplicate previous object IDs')
         for oid, obj in objects.items():
             if oid in old and obj != old[oid] and obj['version'] <= old[oid]['version']:
                 raise ValueError('Changed object requires a new version: ' + oid)
@@ -179,15 +205,15 @@ def edge_digest(edge):
     return pin({k: v for k, v in edge.items() if k not in {'endpoint_pins', 'evidence_pins', 'review_digest'}})
 
 
-def edge_bindings(root, edge, objects):
+def edge_bindings(root, edge, objects, verify=True):
     ids = edge['source_ids'] + edge['target_ids']
     return {'endpoint_pins': {oid: pin(objects[oid]) for oid in sorted(set(ids))},
-            'evidence_pins': {r['path']: digest(ref_bytes(root, r)) for r in edge['evidence']},
+            'evidence_pins': {r['path']: digest(ref_bytes(root, r)) if verify else r['sha256'] for r in edge['evidence']},
             'review_digest': edge_digest(edge),
             'note': 'Mechanical bindings only; no review or acceptance is performed'}
 
 
-def edges(root, data, objects):
+def edges(root, data, objects, verify=True):
     result = {}
     for name in data.get('edge_files', []):
         edge = json.loads(_safe_path(root, name).read_text())
@@ -209,12 +235,12 @@ def edges(root, data, objects):
         if not isinstance(edge.get('evidence'), list) or not edge['evidence']:
             raise ValueError('Exact relation evidence required')
         for ref in edge['evidence']:
-            ref_bytes(root, ref)
+            (ref_bytes if verify else reference)(root, ref)
         if edge.get('relation_mode') not in {'unconditional', 'conditional', 'context'}:
             raise ValueError('Explicit relation_mode required')
         if edge['status'] == 'accepted':
             nonempty(edge, ['reviewed_by', 'review_note'])
-            pins = edge_bindings(root, edge, objects)
+            pins = edge_bindings(root, edge, objects, verify)
             for key in ('endpoint_pins', 'evidence_pins', 'review_digest'):
                 if edge.get(key) != pins[key]:
                     raise ValueError('Stale or missing accepted relation binding: ' + eid + ' / ' + key)
@@ -247,8 +273,28 @@ def check(root, registry=REGISTRY, final=False):
     pending = [r['path'] for r in data['materials'] if r['disposition'] == 'needs-decision']
     if final and (missing or pending):
         raise ValueError('Final coverage incomplete: %d unregistered, %d needs-decision' % (len(missing), len(pending)))
+    if final:
+        coverage = json.loads(_safe_path(root, 'map/coverage.json').read_text())
+        validate_coverage(coverage, objects, relations)
     return {'status': 'structure-valid-not-a-mathematical-verdict', 'objects': len(objects), 'edges': len(relations),
             'unregistered_materials': len(missing), 'pending_materials': len(pending), 'final_coverage': not missing and not pending}
+
+
+def validate_coverage(coverage, objects, relations):
+    if not isinstance(coverage, dict) or set(coverage) != set(objects):
+        raise ValueError('Every registered mathematical object requires a map coverage decision')
+    for oid, row in coverage.items():
+        if row.get('state') not in {'linked', 'isolated-after-review'}:
+            raise ValueError('Final graph still has an unresolved relation decision')
+        nonempty(row, ['reason', 'comparison_scope', 'object_pin'])
+        if row['object_pin'] != pin(objects[oid]):
+            raise ValueError('Stale map coverage decision: ' + oid)
+        if row['state'] == 'linked':
+            strings(row.get('edge_ids'), 'coverage edge_ids', True)
+            for eid in row['edge_ids']:
+                e = relations.get(eid)
+                if not e or e['status'] != 'accepted' or oid not in e['source_ids'] + e['target_ids']:
+                    raise ValueError('Linked coverage must name a real accepted incident edge')
 
 
 def build(root, registry=REGISTRY, final=False):
@@ -281,7 +327,7 @@ def build(root, registry=REGISTRY, final=False):
 
 
 def search(root, query, registry=REGISTRY, limit=20):
-    _, objects = load(root, registry)
+    _, objects = load(root, registry, verify=False)
     terms = query.casefold().split()
     ranked = []
     for oid, obj in objects.items():
@@ -289,15 +335,15 @@ def search(root, query, registry=REGISTRY, limit=20):
         score = sum(text.count(term) for term in terms)
         if score:
             ranked.append((score, oid, obj))
-    return [{'object_id': oid, 'version': obj['version'], 'title': obj['title'], 'truth_status': obj['truth_status'], 'path': obj['body']['path']}
+    return [{'object_id': oid, 'version': obj['version'], 'title': obj['title'], 'truth_status': obj['truth_status'], 'path': obj['body']['path'], 'binding_status': 'unchecked-until-open'}
             for _, oid, obj in sorted(ranked, key=lambda row: (-row[0], row[1]))[:limit]]
 
 
 def context(root, ids, registry=REGISTRY, hops=2):
     if not 0 <= hops <= 10:
         raise ValueError('Use an explicit hop window from 0 to 10; larger reading may be requested separately')
-    data, objects = load(root, registry)
-    relations = edges(root, data, objects)
+    data, objects = load(root, registry, verify=False)
+    relations = edges(root, data, objects, verify=False)
     if not ids or any(i not in objects for i in ids):
         raise ValueError('Known seed object IDs required')
     reached, picked = set(ids), {}
@@ -308,6 +354,11 @@ def context(root, ids, registry=REGISTRY, hops=2):
             if edge['status'] == 'accepted' and endpoints.intersection(previous):
                 picked[eid] = edge
                 reached.update(endpoints)
+    for oid in reached:
+        ref_bytes(root, objects[oid]['body'])
+        for ref in objects[oid]['evidence']: ref_bytes(root, ref)
+    for edge in picked.values():
+        for ref in edge['evidence']: ref_bytes(root, ref)
     return {'seed_ids': ids, 'hops': hops, 'navigation_only': True,
             'objects': [objects[i] for i in sorted(reached)], 'edges': list(picked.values()),
             'instruction': 'Read body and evidence on demand. All source_ids of a hyperedge are joint premises. Adjacency never proves a statement.'}
@@ -346,6 +397,7 @@ def init_run(root, run_id, spec_file, registry=REGISTRY):
         _write_json(home / ('packet-' + profile + '.json'), value)
     state = {'schema': 2, 'run_id': run_id, 'problem_id': spec['problem_id'], 'state': 'working',
              'spec': spec_file, 'spec_pin': pin(spec), 'registry': registry, 'solvers': {},
+             'packet_pins': {profile: pin(value) for profile, value in packets.items()},
              'note': 'No agents were launched by this command; Main starts them through the Work orchestration API.'}
     _write_json(path, state)
     return {'status': 'initialized-local-not-pushed', 'run': path.relative_to(root).as_posix(),
@@ -363,14 +415,18 @@ def update_run(root, run_id, solver_id, profile, note, next_action, state, feedb
     old = run['solvers'].get(solver_id, {})
     if old and old['profile'] != profile:
         raise ValueError('Do not silently change a solver context profile')
-    ref = {'path': note, 'sha256': digest(_safe_path(root, note).read_bytes())}
-    read_ref(root, ref)
+    note_bytes = _safe_path(root, note).read_bytes()
+    note_bytes.decode('utf-8')
     # Immutable events retain the previous result and all pending feedback.
     event_id = uuid.uuid4().hex
+    snapshot = _safe_path(root, (path.parent / 'notes' / (event_id + '.md')).relative_to(root).as_posix())
+    snapshot.parent.mkdir(parents=True, exist_ok=True)
+    snapshot.write_bytes(note_bytes)
+    ref = {'path': snapshot.relative_to(root).as_posix(), 'sha256': digest(note_bytes)}
     event = {'event_id': event_id, 'continuation_of': old.get('latest_event'), 'solver_id': solver_id,
              'profile': profile, 'note': ref, 'next_action': next_action, 'state': state,
              'agent_id': agent_id or old.get('agent_id'), 'feedback': feedback}
-    _write_json(path.parent / 'events' / (event_id + '.json'), event)
+    _write_json(_safe_path(root, (path.parent / 'events' / (event_id + '.json')).relative_to(root).as_posix()), event)
     run['solvers'][solver_id] = dict(event, latest_event=event_id)
     _write_json(path, run)
     return {'status': 'saved-local-not-pushed', 'event_id': event_id, 'continuation_of': event['continuation_of']}
@@ -382,6 +438,10 @@ def resume(root, run_id):
     spec = json.loads(_safe_path(root, run['spec']).read_text())
     if pin(spec) != run['spec_pin']:
         raise ValueError('Problem spec changed; explicitly reframe instead of silently resuming another problem')
+    for profile, expected in run['packet_pins'].items():
+        saved = json.loads((path.parent / ('packet-' + profile + '.json')).read_text())
+        if pin(saved) != expected:
+            raise ValueError('Saved solver packet changed; do not silently alter the context')
     for solver in run['solvers'].values():
         ref_bytes(root, solver['note'])
     head = subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=root, capture_output=True, text=True)
@@ -418,7 +478,9 @@ def main(argv=None):
         if a.limit < 1: raise ValueError('Positive display limit required')
         result = search(root, a.query, a.registry, a.limit)
     elif a.command == 'show':
-        _, objs = load(root, a.registry); result = copy.deepcopy(objs[a.object_id])
+        _, objs = load(root, a.registry, verify=False); result = copy.deepcopy(objs[a.object_id])
+        ref_bytes(root, result['body'])
+        for ref in result['evidence']: ref_bytes(root, ref)
         if a.body: result['body_text'] = read_ref(root, result['body'])
     elif a.command == 'context': result = context(root, a.ids, a.registry, a.hops)
     elif a.command == 'edge-bind':

@@ -1,5 +1,7 @@
 # 本结果仓库工作规则
 
+当前新增授权：用户要求把2.5第三步登记、第三阶段超边、Work的Main/两类Solver、GitHub资源使用落实为可运行交付。对应接口与提示词见research/IMPLEMENTATION.md、research/GITHUB_RESOURCES.md和prompts/research-runtime.md。允许实现、测试、checkpoint这些基础设施；不覆盖其他Boss的2.5前两步对象群工作，不自动批量准入或启动数学研究。下文旧“由另一AI设计/本轮不部署”指前两步整理任务的边界，不否定用户这次的明确实现请求。所有pushed/云端已启用声明须有实际确认。
+
 本次用户最新决定：阶段二继续原来源清洗；2.5分为三步：1材料定性与清理，2对象群数学整理/有限综合，3按另定方案重新登记。当前用户已授权执行并交付第一步，当前入口运行20261103-boss6-current，Boss6与六名gpt-6-sol/high内部代理已完成全量材料定性和清理；第二步可按对象群分派多Boss。2.5第三步、第三阶段超边和真正数学研究Agent由用户与另一AI设计，旧原型不是最终授权。新入口prompts/02.5-research.md与research/CURATION.md。第一步不是数学真值审查，第二步不重证全仓；数字不等于缺陷，原本好的数学保留。第一步已完成；只对实读确认的非数学页实施有版本绑定的清理，不提前执行第二步蒸馏或第三步登记。
 
 结果分支rebuild/research-v2，原始资料来源及冻结提交见cleanup/sources.json；阶段二公屏仍wcg/board-cleanup-20261028。2.5临时公屏拟用wcg/board-curation-25；第一步单Boss内部批次无需公屏消息。顶层curation/已存本轮材料批次与工作区；work.py triage用于本地批次，curation-task用于独立对象群任务。新curator clone用--curation-run绑定独立身份/工作区，不用旧clean认领。新clone用新版根work.py，旧源clone不改绑。凭据留仓库外，不打印、放消息或入库。只改自己认领的共享正文，Git操作保留未提交内容，checkpoint确认pushed才称保存。

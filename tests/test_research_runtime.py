@@ -7,6 +7,8 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest import mock
+from concurrent.futures import ThreadPoolExecutor
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'tools'))
@@ -41,6 +43,8 @@ class ResearchRuntimeTests(unittest.TestCase):
                      'roles': {'A': 'positivity of a', 'B': 'positivity of b', 'C': 'positivity of the sum'},
                      'evidence': [self.ref(self.body, 'C')], 'reviewed_by': 'Fixture', 'review_note': 'Direct elementary proof, fixture only'}
         self.bind()
+        self.write_json('map/coverage.json', {o['object_id']: {'state': 'linked', 'edge_ids': ['AB-C'],
+                        'reason': 'Direct sum argument', 'comparison_scope': 'A B C', 'object_pin': research.pin(o)} for o in self.data['objects']})
         self.spec = {'problem_id': 'positive-sum', 'problem': self.ref('research/target.md'),
                      'definitions': [self.ref('research/definitions.md')], 'obstacles': [self.ref('research/obstacles.md')], 'seed_ids': ['C']}
         self.write_json('research/spec.json', self.spec)
@@ -72,6 +76,21 @@ class ResearchRuntimeTests(unittest.TestCase):
         self.assertEqual({o['object_id'] for o in ctx['objects']}, {'A', 'B', 'C'})
         self.assertEqual(len(ctx['edges']), 1)
         self.assertEqual(ctx['edges'][0]['source_ids'], ['A', 'B'])
+
+    def test_search_reads_metadata_without_scanning_all_mathematical_bodies(self):
+        with mock.patch.object(research, 'ref_bytes', side_effect=AssertionError('Unnecessary full-body read')):
+            result = research.search(self.root, 'positive')
+        self.assertEqual(len(result), 3)
+        self.assertEqual(result[0]['binding_status'], 'unchecked-until-open')
+
+    def test_context_checks_only_reached_mathematical_bytes(self):
+        obj = copy.deepcopy(self.data['objects'][0]); obj['object_id'] = 'D'
+        obj['body'] = {'path': 'archives/demo/state/unrelated.md', 'sha256': 'a'*64}
+        self.data['objects'].append(obj)
+        self.data['materials'].append(dict(obj['body'], disposition='objects', object_ids=['D'], reason='Unrelated claim'))
+        self.write_json(research.REGISTRY, self.data)
+        self.assertEqual(len(research.context(self.root, ['A'], hops=1)['objects']), 3)
+        with self.assertRaises(FileNotFoundError): research.context(self.root, ['D'], hops=0)
 
     def test_one_page_can_hold_multiple_objects_without_rewriting(self):
         _, objects = research.load(self.root)
@@ -152,6 +171,24 @@ class ResearchRuntimeTests(unittest.TestCase):
         self.write_json('research/proposed-registry.json', self.data)
         with self.assertRaisesRegex(ValueError, 'new version'): research.register(self.root, 'research/proposed-registry.json')
 
+    def test_explicit_new_version_can_refresh_stale_proof_bytes(self):
+        self.write(self.body, (self.root / self.body).read_text() + '\nAdditional proof detail.\n')
+        for obj in self.data['objects']:
+            obj['version'] += 1; obj['body'] = self.ref(self.body, obj['object_id'])
+        self.data['materials'][0]['sha256'] = self.ref(self.body)['sha256']
+        self.edge['status'] = 'proposed'; self.edge['evidence'] = [self.ref(self.body, 'C')]
+        self.write_json('map/edges/AB-C.json', self.edge)
+        self.write_json('research/proposed-registry.json', self.data)
+        self.assertEqual(research.register(self.root, 'research/proposed-registry.json')['objects'], 3)
+
+    def test_saved_note_remains_recoverable_after_workspace_edit(self):
+        research.init_run(self.root, 'r1', 'research/spec.json')
+        self.write('research/workspaces/s1.md', '# First result\n')
+        research.update_run(self.root, 'r1', 's1', 'full', 'research/workspaces/s1.md', 'Continue', 'working')
+        self.write('research/workspaces/s1.md', '# New unsaved result\n')
+        saved = research.resume(self.root, 'r1')['run']['solvers']['s1']['note']
+        self.assertEqual(research.read_ref(self.root, saved), '# First result\n')
+
     def definition(self, task_id='t1'):
         return {'task_id': task_id, 'stage': '3A', 'registry': research.REGISTRY,
                 'input_pins': {o['object_id']: research.pin(o) for o in self.data['objects']},
@@ -168,7 +205,7 @@ class ResearchRuntimeTests(unittest.TestCase):
 
     def test_map_done_requires_outputs_in_published_snapshot(self):
         old = {'definition': self.definition(), 'state': 'claimed', 'owner': 'Boss32'}
-        coverage = {i: {'state': 'linked', 'reason': 'AB-C comparison', 'comparison_scope': 'A B C'} for i in ['A', 'B', 'C']}
+        coverage = json.loads((self.root / 'map/coverage.json').read_text())
         with self.assertRaises(FileNotFoundError):
             map_tasks.transition(self.root, old, [], 'Boss32', 'done', 'r2', receipt={'coverage': coverage, 'assets': [{'path': 'map/receipts/t1.json', 'sha256': 'a'*64}]})
 
@@ -178,6 +215,81 @@ class ResearchRuntimeTests(unittest.TestCase):
         p = subprocess.run([sys.executable, str(self.root / 'work.py'), '--repo', str(self.root), 'research', 'context', 'A', '--hops', '1'], cwd=self.root, capture_output=True, text=True)
         self.assertEqual(p.returncode, 0, p.stderr)
         self.assertEqual(len(json.loads(p.stdout)['edges']), 1)
+
+
+class PublishedMapTests(ResearchRuntimeTests):
+    """Real independent clones share a real local bare Git remote."""
+    # Run the publication tests only; inherited contract tests run above.
+    def setUp(self):
+        super().setUp()
+        shutil.copytree(ROOT / 'tools', self.root / 'tools', ignore=shutil.ignore_patterns('evidence', '__pycache__'))
+        definition = self.definition()
+        map_tasks._write_json(map_tasks.task_path(self.root, 't1'), {'definition': definition, 'state': 'available', 'owner': None})
+        self.git('add', '.'); self.git('commit', '--quiet', '-m', 'Publish tasks and tools')
+        self.remote = self.root / 'remote.git'
+        self.git('init', '--bare', '--quiet', str(self.remote))
+        self.git('remote', 'add', 'origin', str(self.remote)); self.git('push', '--quiet', 'origin', 'HEAD:main')
+        self.clones = []
+        for who in ['Boss32', 'Boss33']:
+            path = self.root / who
+            self.git('clone', '--quiet', '--branch', 'main', str(self.remote), str(path))
+            for key, value in [('wcg.actor', who), ('wcg.branch', 'main')]:
+                p = subprocess.run(['git', 'config', '--local', key, value], cwd=path, capture_output=True)
+                self.assertEqual(p.returncode, 0)
+            self.clones.append(path)
+
+    def test_published_task_has_one_winner_under_concurrent_claim(self):
+        def claim(path):
+            try: return map_tasks.mutate(path, 't1', 'claim')['status']
+            except ValueError as exc: return str(exc)
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            results = list(executor.map(claim, self.clones))
+        self.assertEqual(results.count('pushed'), 1, results)
+        self.assertTrue(any('unavailable' in r for r in results), results)
+
+    def test_lost_push_acknowledgement_is_verified_from_remote(self):
+        original = map_tasks.board.git
+        def git(*args, **kwargs):
+            result = original(*args, **kwargs)
+            if len(args) > 1 and args[1] == 'push' and '--dry-run' not in args and result.returncode == 0:
+                return subprocess.CompletedProcess(result.args, 1, b'', b'simulated transport acknowledgement lost')
+            return result
+        with mock.patch.object(map_tasks.board, 'git', side_effect=git):
+            self.assertEqual(map_tasks.mutate(self.clones[0], 't1', 'claim')['status'], 'pushed')
+
+    def test_unpublished_body_cannot_be_marked_done(self):
+        path = self.clones[0]
+        map_tasks.mutate(path, 't1', 'claim')
+        name = 'map/receipts/t1.json'
+        output = path / name; output.parent.mkdir(parents=True); output.write_text('Local draft only')
+        coverage = json.loads((self.root / 'map/coverage.json').read_text())
+        receipt = {'coverage': coverage, 'assets': [{'path': name, 'sha256': research.digest(output.read_bytes())}]}
+        with self.assertRaises(FileNotFoundError): map_tasks.mutate(path, 't1', 'done', receipt)
+
+    def test_network_loss_after_push_recovers_same_request_on_next_call(self):
+        original_git = map_tasks.board.git
+        original_refresh = map_tasks.cleanup.refresh_snapshot
+        state = {'pushed': False}
+        def git(*args, **kwargs):
+            result = original_git(*args, **kwargs)
+            if len(args) > 1 and args[1] == 'push' and '--dry-run' not in args and result.returncode == 0:
+                state['pushed'] = True
+            return result
+        def refresh(client):
+            if state['pushed']: raise map_tasks.board.BoardError('Simulated network loss after remote commit')
+            return original_refresh(client)
+        with mock.patch.object(map_tasks.board, 'git', side_effect=git), mock.patch.object(map_tasks.cleanup, 'refresh_snapshot', side_effect=refresh):
+            with self.assertRaisesRegex(map_tasks.board.BoardError, 'network loss'):
+                map_tasks.mutate(self.clones[0], 't1', 'claim')
+        recovered = map_tasks.mutate(self.clones[0], 't1', 'claim')
+        self.assertEqual(recovered['status'], 'pushed')
+        self.assertTrue(recovered['recovered_acknowledgement'])
+
+
+# Avoid repeating base tests in each remote fixture.
+for _name in list(ResearchRuntimeTests.__dict__):
+    if _name.startswith('test_'):
+        setattr(PublishedMapTests, _name, None)
 
 
 if __name__ == '__main__': unittest.main()

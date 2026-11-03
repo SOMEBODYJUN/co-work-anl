@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "experiments": {
+    "cag-five-local": {
+      "command": ["{python}", "archives/customer-attraction/tools/half5-exact/components/verify_local_components.py"],
+      "seed": null,
+      "precision": "Exact integers and fractions.Fraction; assertions enabled",
+      "timeout_seconds": 180,
+      "scope": "Existing five-provider local component audit only; not the complete five-provider proof and not a six-provider conclusion"
+    },
+    "positive-kernels-rank": {
+      "command": ["{python}", "archives/positive-kernels/tools/rank-faces/verify_rank_faces.py"],
+      "seed": null,
+      "precision": "Exact integers and fractions.Fraction; assertions enabled",
+      "timeout_seconds": 180,
+      "scope": "Existing finite rank-face algebra audit only; no universal theorem import"
+    },
+    "runtime-smoke": {
+      "command": ["{python}", "-m", "unittest", "discover", "-s", "tests", "-p", "test_research_runtime.py", "-v"],
+      "seed": null,
+      "precision": "Exact content hashes and local Git contracts; no numerical mathematics",
+      "timeout_seconds": 180,
+      "scope": "Software integration test only; not evidence for Q-CAG-HALF-6"
+    }
+  }
+}

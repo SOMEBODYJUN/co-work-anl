@@ -35,7 +35,7 @@ RESEARCH_ENTRIES = {
     "unrelated-machines": {"research_entry": "archives/unrelated-machines/README.md", "research_prompt": "archives/unrelated-machines/prompts/README.md", "research_runbook": "tools/README.md"},
     "positive-kernels": {"research_entry": "archives/positive-kernels/README.md", "research_prompt": "archives/positive-kernels/prompts/README.md", "research_runbook": "tools/README.md"},
 }
-ROLE_PROMPTS = {"boss": "prompts/README.md", "cleaner": "prompts/02-clean.md", "curator": "prompts/02.5-research.md", "mapper": "prompts/03-map.md"}
+ROLE_PROMPTS = {"boss": "prompts/research-runtime.md", "cleaner": "prompts/02-clean.md", "curator": "prompts/02.5-research.md", "mapper": "prompts/03-map.md"}
 CLEANUP_ROLE_PROMPTS = ROLE_PROMPTS
 IDENTIFIER = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,63}")
 TOKEN = re.compile(rb"(?:github_pat_|ghp_)[A-Za-z0-9_]{12,}")
