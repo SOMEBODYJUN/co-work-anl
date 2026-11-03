@@ -1,0 +1,11 @@
+# root_payment完整复核
+
+10个认领源均全文读取，与已存在原证据逐SHA/逐字节相同。第一批3源另有receipts-batch1.json；最终receipts.json含全部10项，父处理时须跳过已done项。未执行Git写、推送、领取、done或释放。
+
+新增三正文：五行根付款引理、根原程序及发现合同、第三位查询松弛程序及可信性边界。每篇有稳定ID、完整源commit/path、模型量词、推导或算法、用途和关系判断。没有修改他组共享正文或创建阶段三图。
+
+本轮5个未改原入口各一次：audit_root_D_payment、root_D_envelope、--simple、root_reply_chain --depth2、row3_relaxation。全exit0、stderr空、生成报告逐字节同对应冻结JSON；从未将待输出报告预拷到运行树。原CLI复跑不是新独立SPE审查。另一次标准库inspect_reports检查10源指纹、三精确负gap和非负权、simple64最大值独立重构、chain4096态退化、ROW3新旧支持不同。
+
+关键边界：根五行在每份五人完整SPE有效、只排除指定旧437行64原子点延拓；full181与simple的minimax数值不能按单纯行包含比较，simple把AE三行先相加只计一次t；depth2实际正权没有超出simple。当前78行ROW3报告1.5084908438192186不是旧77行1.51707147材料化输入；两者11支持不同。旧材料化报告只作为读过的历史相关证据，此轮未运行其精确求解器。78行去相关税仍用保守1，后续4/5与actual pair-curl另属exchange_curl对象。
+
+当前五人half已有后继证书；原低前缀OPEN只记历史组件状态。当前六人OPT6半覆盖未由本组解决或反驳。候选ROW3未由浮点松弛或负去相关反例获得真值。全部独有数学与报告去向已在三正文及证据README解释。
