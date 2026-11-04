@@ -6,13 +6,88 @@
 
 ## 签名图审计
 
-`audit_signed_graph_menus.py` 用 Fraction 逐项审计 cut、direct/formula、envelope、deficit 和 odd-cycle 量。固定 seed 重放通过：1,200 个随机定义案例、150 个 half-density sharp 案例、135 个 clique sharp 案例；K5 为 `joint_deficit=2`、最佳 scalar odd-cycle packing (5/3)。源 JSON 与重放逐字段一致。这支持一个局部代数账本，但没有客户类型、终局均分、完整 ordered-history 策略或 SPE 约束，因此不是一般 half 证明。
+`audit_signed_graph_menus.py` 的恒等式可直接由以下定义复核。固定 $q$ 个索引，每行 $r$ 给定位 $z_{ri},f_{ri}\in\{0,1\}$ 及背景 $b_r\ge0$。令
 
-## 静态桥有限反例
+\[
+K_r=\sum_i z_{ri},\quad C_{rs}=\sum_i z_{ri}z_{si},\quad
+h_{rs}=\sum_i|z_{ri}-z_{si}|,
+\]
+\[
+a_r=\frac1{b_r+1},\quad g_r=\frac1{(b_r+1)(b_r+2)},\quad
+A_r=\sum_i\frac{f_{ri}}{b_r+z_{ri}+1}.
+\]
 
-`pair_interest_static_bridge_failure.json` 明确标注 `exact finite bridge counterexample, not half counterexample`：4 个玩家、5 个主题、13 个类型，根 `[2,4,0,3]`，目标计数 `[1,0,1,1,1]`。将 provider 0 移到 1 的静态项由 (10) 变为 (21/2)，并完成 780 条 ordered-history 检查。它只反驳该实例的一条静态桥传递，不能替代覆盖值或半覆盖结论。
+由 $1/(b_r+z_{ri}+1)=a_r-g_rz_{ri}$，得到同索引和异索引的精确式
+
+\[
+D_{rs}=\sum_i\frac{f_{ri}-z_{si}}{b_r+z_{ri}+1}
+=A_r-a_rK_s+g_r C_{rs},
+\]
+\[
+O_{rs}=\sum_{i\ne j}\frac{f_{ri}-z_{sj}}{b_r+z_{ri}+1}
+=(q-1)A_r-(q-1)a_rK_s+g_r(K_rK_s-C_{rs}).
+\]
+
+在 $D$ 中用 $C_{rs}\le\min(K_r,K_s)$、在 $O$ 中用 $C_{rs}\ge\max(0,K_r+K_s-q)$ 给逐边上包络。除去系数 $g_r$ 后，两种上包络减原式的亏损分别为
+
+\[
+\delta_D=\frac{h_{rs}-|K_r-K_s|}{2},\qquad
+\delta_O=\frac{q-h_{rs}-|q-K_r-K_s|}{2}.
+\]
+
+令该边非负权 $w_{rs}=\lambda_{rs}g_r$。对每列二进制赋值，$D$ 边把“两端不同”计为坏边，$O$ 边把“两端相同”计为坏边，令 $\tau$ 为所有二进制赋值中坏边总权的最小值。记
+
+\[
+B=\sum_{D\text{边}}w_{rs}|K_r-K_s|
++\sum_{O\text{边}}w_{rs}|q-K_r-K_s|.
+\]
+
+总亏损等于 $(\sum_i\mathrm{bad}(z_{\cdot i})-B)/2$，故至少
+$\xi=\max(0,(q\tau-B)/2)$；原加权式至多为其逐边上包络减 $\xi$。这是联合签名约束如何加强分别取最坏交集的机制，不依赖随机扫描。
+
+固定 seed 的原 Fraction 审计报告为：1,200 个随机定义案例、150 个 half-density sharp 案例、135 个 clique sharp 案例。全为 $O$ 边的 $K_5$、$q=2$、各行背景零，取两行 $(1,0)$、三行 $(0,1)$，并令 $f_{ri}=z_{ri}$、各 $\lambda=1$ 时，原式 $-2$、逐边包络 $0$、联合亏损 $2$，而最佳标量 odd-cycle packing 为 $5/3$。这些是定义域内的有限核验；尚未给从这些行到共同客户、终局均分和同一完整 SPE 的统一实现。
+
+## 静态桥失效的精确机制
+
+`pair_interest_static_bridge_failure.json` 给四名顺序玩家、五个主题、十三个单位客户类型，主题集合及重数为
+
+| 类型 | 0 | 1 | 2 | 3 | 4 | 01 | 02 | 04 | 12 | 14 | 23 | 24 | 34 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 重数 | 1 | 2 | 3 | 5 | 4 | 4 | 6 | 4 | 4 | 5 | 6 | 1 | 2 |
+
+原完整策略有 $1+5+25+125=156$ 个有序非终端历史，原验证记录包含自身比较共 $5\cdot156=780$ 条。实际路径是 $(2,4,0,3)$，其第三名玩家选择主题 $0$。JSON 的 `static_move: from=0,to=1` 指**主题** $0\to1$，不是第零名玩家改选。
+
+若冻结其他三人的实际行动 $(2,4,3)$，该玩家的静态收益从
+
+\[
+u_0=1+4+6/2+4/2=10
+\]
+
+变成
+
+\[
+u_1^{\rm static}=2+4+4/2+5/2=21/2>10.
+\]
+
+但真实偏离发生在有序历史 $(2,4)$，原策略在 $(2,4,0)$ 后选 $3$、在 $(2,4,1)$ 后选 $2$。所以真实偏离终局为 $(2,4,1,2)$，偏离者收益是
+
+\[
+u_1^{\rm true}=2+4+4/3+5/2=59/6<10.
+\]
+
+静态改进没有传递为真实序贯改进，缺的是后继行动固定这一假设。该树是原完整验证通过的纯 SPE，而不是静态 Nash 均衡。实际四人的收入为 $(27/2,25/2,10,9)$，$W=45$。总客户 $47$，五种单例均非空；任选四个不同主题覆盖所有双主题类型，最优遗漏最小的单例主题 $0$，故 $OPT_4=46$。这反驳静态桥而满足 $2W>OPT_4$，不构成半覆盖反例。
 
 ## 三个计数 MILP 候选
+
+`count_milp.py` 固定主题数 $p$、人数 $m$、实际路径和乘数 `mult`。客户变量为每个非空兴趣集 $T\subseteq[p]$ 的重数 $x_T\ge0$，实际覆盖规范化为 $W(x)=1$。对每个长度 $<m$ 的计数前缀 $k$ 及动作 $a$，二进制 $z_{k,a}$ 满足 $\sum_a z_{k,a}=1$，另有各主题的终局收益变量。当 $z_{k,a}=1$ 时，big-M 行把该状态的终局收益接到子状态 $k+e_a$，并强制当前选 $a$ 的收益不小于改 $b$ 后、沿同一计数策略的真实收益；终端系数直接是单位客户均分行。实际路径上的相应 $z$ 固定为 $1$。这只搜索计数策略，但每份所得计数策略可提升到所有有序节点。
+
+目标使用固定比较组合 $P=\{0,\ldots,\min(m,p)-1\}$，为
+
+\[
+\operatorname{cover}_x(P)-W(x)-\mathrm{mult}\,u_1(x).
+\]
+
+$P$ 未在 MILP 内声明最优，因此其目标不自动等于 $OPT-W-\mathrm{mult}\,u_1$。提取策略后，另在其完整策略锥内解浮点 LP、恢复有理顶点，核验全部精确激励行和 $W=1$，最后统一克隆为单位客户；下表 $W,OPT$ 来自这份整数实例，目标为克隆前的规范化值。这个恢复步骤认证所得点，不认证搜索最优或所有策略。
 
 `count_milp.py` 是浮点 MILP 候选发生器；三个源均为 HiGHS `status=1` time limit，`floating_only=true`，所以 objective 不是全局最优证明。独立 Fraction `StrategyCertificate` verifier 对提取策略树全部通过：
 
@@ -41,4 +116,4 @@
 
 ## 缺口与接续
 
-签名图账本缺少从 edge state 到客户类型和完整历史的统一构造；静态桥只说明 bridge 变量变化；MILP 策略虽通过定义级 verifier，但 search `status=1`；fixed bridge 依赖 6-provider/3-topic 证书。后续若要推进主问题，必须重新定义终局客户价值均分，覆盖所有 ordered histories、任意平局、空/重复主题和零客户，并把候选、完整证明、条件结论、有限实验、障碍和原模型反例分开标注。
+签名图账本缺少从 edge state 到客户类型和完整历史的统一构造；静态桥只说明 bridge 变量变化；MILP 策略虽通过定义级 verifier，但 search `status=1`；fixed bridge 依赖六主题、三名顺序提供者的固定策略证书。后续若要推进主问题，必须重新定义终局客户价值均分，覆盖所有 ordered histories、任意平局、空/重复主题和零客户，并把候选、完整证明、条件结论、有限实验、障碍和原模型反例分开标注。
