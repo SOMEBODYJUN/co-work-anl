@@ -2,6 +2,8 @@
 
 本文件解释已发布实现的运行分工、资料流和目录归属。具体字段与命令见[IMPLEMENTATION](IMPLEMENTATION.md)，登记/建图启动词见[PHASE3_READINESS](PHASE3_READINESS.md)。这是运行说明，不改变任何数学Claim，也不表示全仓登记、正式图或研究运行已经创建。
 
+运行默认是执行优先：Work收到任务后直接读取文件、启动代码、启动Solver和checkpoint。提示词只保留数学边界和必要接口；权限、凭据和网络只在命令失败时报告。
+
 ## 四个部分怎样配合
 
 | 部分 | 实际承担的工作 |
@@ -36,10 +38,19 @@ Main的任务是送材料、收结果、提具体意见、接续原Solver、串�
 | work.py research | 检索、正文、超边窗口、packet、保存、反馈事件和恢复；有端到端测试 | 当前真实全仓registry/graph仍待对应阶段产生 |
 | work.py checkpoint/sync | 已实际认证、推送并确认远端；保留不同对话工作 | 只有pushed才称长期共享，本地文件存在不等于已交付 |
 | tools/compute.py | 执行research/experiments.json明确登记的命令并留版本、seed、精度、输出、错误和范围 | 目前只登记runtime-smoke、cag-five-local、positive-kernels-rank三项；不是任意数学问题的现成求解器 |
-| Actions | workflow配置与直接PAT dispatch接口已写，接口契约有测试 | 手动远端计算没有完成实际端到端验收；workflow_dispatch还须满足默认分支条件，不擅自把研究分支合入main |
-| Codespaces | 环境配置、机器列表、创建/停止接口已写；本仓库列表读取成功 | 未创建云机器；没有实现并验收Work向任意Codespace远程执行任意脚本并取回结果的完整通道 |
+| Actions | push检查、workflow_dispatch、artifact、超时、并发控制和只读GITHUB_TOKEN配置；直接PAT dispatch接口 | 当前workflow配置能跑已登记命令；workflow_dispatch需要workflow在可发现的分支；请求被接受不等于实验通过 |
+| Codespaces | devcontainer、postCreateCommand、机器列表、创建/停止接口；可再配置prebuild | Codespace是远程开发/计算机，不是Work模型；创建后仍需在其中运行登记命令并取回artifact |
 | 文献/网页工具 | Solver可按当前平台实际提供的检索和阅读工具查原始文献 | 不是由GitHub token授予；精确引用及定理适用条件仍须核查 |
 | 其它可选软件/服务 | 可以在具体任务需要时再接入 | 不把尚未安装、未授权或未提供的工具写成已可用，不以另连账号为默认前提 |
+
+可用的仓库能力还包括：
+
+- 分支、提交、历史和代码审查：保存每次数学增量；可用保护规则和CODEOWNERS限制公共文件的并发写入。
+- Issues、Discussions、Projects：把开放义务、批次任务和阻塞点做成可查询工作板；不把Issue正文当数学事实，正式结果仍写state和证据。
+- Actions artifacts、workflow logs、缓存和并发组：保存实验回执、限制重复运行、取消旧任务；需要时可以加matrix并行运行不同参数。
+- Environments、Secrets和OIDC：给需要的云端任务提供受控凭据；程序不读取或打印Secret，当前项目只使用仓库外PAT。
+- Releases、Packages和Pages：发布稳定工具包、容器/依赖或只读研究导航；它们不替代Git正文和证据。
+- Webhooks/API：在需要时接收工作流完成或仓库事件；本项目当前没有把事件自动升级为数学状态。
 
 已有本地复现分别是五人局部证明36组件/47,872系数状态和positive-kernels的有限精确代数审计，不能当成六人新证明。云机器运行Python与Work直接指挥云机器也是两件不同的事。当前稳定起点是Work执行环境加Git保存；云端执行用到时再完成实际配置和验收。
 

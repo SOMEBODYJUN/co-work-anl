@@ -4,6 +4,22 @@
 
 本轮更新：新上传凭据已经通过实际Git写端点并成功推送初版`71f86b4f`。直接PAT接口`work.py github`已实现status、machines、dispatch、create-codespace、stop-codespace；status实际读取成功，未创建/停止实例或dispatch任务。下文“认证失败”是上一轮历史，不再是当前阻塞；学生状态与余额仍未读取或推断。
 
+## 现在能用什么
+
+| 能力 | 研究用途 | 当前状态 |
+|---|---|---|
+| Actions push检查 | 每次工具/提示词修改自动跑测试并上传回执 | 已配置 |
+| Actions workflow_dispatch | 明确选择一个已登记实验，在GitHub runner上执行并上传artifact | 工作流已配置，手动运行需实际调用 |
+| Actions artifacts/logs | 保存stdout、stderr、版本、输入指纹和结果 | 已配置7天artifact；长期数学结果仍需整理回仓库 |
+| Actions concurrency/timeout | 同一分支只留一个检查，防止重复消耗和长时间空转 | 已配置 |
+| Actions environments/secrets | 给特定云任务提供受控凭据 | 可用，但本项目当前不把Secret读进代码 |
+| Codespaces | 统一Python、Git和项目依赖；可以直接运行登记实验 | devcontainer已配置；未创建实例 |
+| Codespaces machines | 按实际可用机器选择CPU/内存 | `work.py github machines`读取，不猜机器名 |
+| Codespaces prebuilds | 预装依赖、减少启动时间 | 当前未配置，依赖较重时再加 |
+| Branches/commits | 保留数学推导、实验和恢复点 | 已使用 |
+| Issues/Discussions/Projects | 管理开放义务和工作分配 | 可启用；正式数学不放在任务卡片里 |
+| Releases/Packages/Pages | 发布工具模板、依赖包和只读导航 | 当前未作为研究状态源 |
+
 | 功能 | 用途 | 本次配置 |
 |---|---|---|
 | Git与历史 | 保存正文、证据、失败路线、断点 | 沿用work.py sync/checkpoint、共同分支和Boss工作区 |
@@ -35,6 +51,8 @@ python tools/compute.py positive-kernels-rank --out validation/positive-kernels-
 后两项均为仓库已有的标准库精确有理数计算。cag-five-local只检查五人局部组件，不是完整五人证明或六人结论；positive-kernels-rank只检查既有有限代数输入，不外推任意权重、次数或闭包定理。
 
 配置成功推送后，Code→Codespaces可按统一配置创建环境。Actions手动workflow_dispatch通常还要求workflow文件存在于默认分支；长期工作分支与main分开，不擅自合并。保持main不动时，可用工作分支push检查或Codespaces直接运行命令。配置已写不代表云端运行通过。
+
+一条完整云端实验链是：`research/experiments.json`登记命令 → `workflow_dispatch`选择实验 → runner或Codespace执行 → `validation/*.json`保存命令、版本、精度、seed、输出和错误 → Main检查结果 → 有数学价值的内容写入对应archive/evidence并checkpoint。云端输出只是Evidence或Observation，不能自动成为Claim。
 
 新凭据已经通过Git发布与本仓库资源只读API检查。学生状态、配额和Copilot权益仍须在本人Education/Billing确认。本轮未创建Codespace、未手动dispatch计算、未代办学生认证；代码推送触发的检查与实际数学计算分别报告。
 
