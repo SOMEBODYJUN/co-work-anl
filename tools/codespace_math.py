@@ -22,6 +22,48 @@ def _json_stdout(value: str):
         return None
 
 
+def _publish_paths(root: Path, output: str):
+    """Include every path in local-only commits before asking checkpoint.py to push.
+
+    The checkpoint auditor deliberately refuses to publish a new receipt while
+    an older local commit would travel outside the requested scope.  A normal
+    Codespace run therefore publishes the whole outstanding research delta,
+    while the first local leg still stages only the new receipt.
+    """
+    branch = subprocess.run(['git', 'branch', '--show-current'], cwd=root,
+                            capture_output=True, text=True, check=False).stdout.strip()
+    if not branch:
+        return [output]
+    remote = f'origin/{branch}'
+    if subprocess.run(['git', 'rev-parse', '--verify', remote], cwd=root,
+                      capture_output=True, text=True, check=False).returncode:
+        return [output]
+    commits = subprocess.run(['git', 'rev-list', '--reverse', f'{remote}..HEAD'],
+                             cwd=root, capture_output=True, text=True, check=False)
+    paths = {output}
+    for commit in commits.stdout.splitlines():
+        names = subprocess.run(['git', 'diff-tree', '--root', '--no-commit-id',
+                                '--no-renames', '--name-only', '-r', commit],
+                               cwd=root, capture_output=True, text=True, check=False)
+        paths.update(name for name in names.stdout.splitlines() if name)
+    # A path deleted by a local commit is still covered by its nearest existing
+    # directory; checkpoint.py accepts the directory and audits the historical
+    # deletion without trying to stage a nonexistent file.
+    result = []
+    for name in sorted(paths):
+        candidate = root / name
+        if candidate.exists() or subprocess.run(['git', 'ls-files', '--', name],
+                                                cwd=root, capture_output=True,
+                                                text=True, check=False).stdout.strip():
+            result.append(name)
+            continue
+        parent = Path(name).parent
+        while parent != Path('.') and not (root / parent).exists():
+            parent = parent.parent
+        result.append(parent.as_posix() if parent != Path('.') else '.')
+    return list(dict.fromkeys(result))
+
+
 def _checkpoint(root: Path, output: str, message: str, local_only: bool):
     # Call checkpoint.py directly for the local leg.  The top-level work.py
     # intentionally validates its configured external token before dispatching
@@ -31,7 +73,7 @@ def _checkpoint(root: Path, output: str, message: str, local_only: bool):
                    '--repo', str(root), output, '-m', message, '--local-only']
     else:
         command = [sys.executable, str(root / 'work.py'), '--repo', str(root),
-                   'checkpoint', output, '-m', message]
+                   'checkpoint', *_publish_paths(root, output), '-m', message]
     completed = subprocess.run(command, cwd=root, capture_output=True, text=True)
     parsed = _json_stdout(completed.stdout)
     if completed.returncode == 0 and isinstance(parsed, dict):
