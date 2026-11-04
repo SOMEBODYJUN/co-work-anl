@@ -1,14 +1,12 @@
 # 分阶段提示词
 
-新增执行入口：[2.5第三步](02.5-3-register.md)、[第三阶段](03-map.md)、[Main](research-runtime.md)、[障碍Solver](solver-obstacle.md)、[成果Solver](solver-full.md)。完整命令和部署边界见[IMPLEMENTATION](../research/IMPLEMENTATION.md)。它们承接下面旧的“另定设计”；不重做2.5前两步，也不把工具完成当作全仓完成。
+**当前2.5第二步只用 [02.5-2-distill.txt](02.5-2-distill.txt)**，包含Boss、内部处理者与已有对话接续要求。另备一个work.py及已有仓库外凭据即可，不另配Project说明或worker词。数学整理与持续循环要求统一在这一份词中。
 
-2.5第三步和第三阶段均已扩为可粘贴的完整Boss启动词；内部处理者分别用[02.5-3-worker](02.5-3-worker.md)和[03-map-worker](03-map-worker.md)。后续交付必须搭配支持`--workflow-run`的最新根work.py，不能继续用第二步旧zip。两阶段本轮只准备，实际启动由用户另行指令；总入口见[PHASE3_READINESS](../research/PHASE3_READINESS.md)。
+其它阶段按用户明确指定分别启用：
 
-- [02-clean.md](02-clean.md)：第二阶段读冻结原文、比较、归类、写正文与逐来源处置。
-- [02.5-research.md](02.5-research.md)：2.5分步总入口。
-- [02.5-1-inventory.md](02.5-1-inventory.md)：第一步单Boss与六名gpt-6-sol/high内部代理快速定性、清理，未来由本对话接续执行。
-- [02.5-2-distill.txt](02.5-2-distill.txt)：第二步唯一完整词，包含Boss、内部处理者和已有对话的接续要求。用户另备work.py及仓库外凭据即可。
-- [02.5-3-register.md](02.5-3-register.md)：对象登记、版本、附件owner和读取入口。
-- [03-map.md](03-map.md)：分批构图、跨批补边、覆盖和单Boss集成。
+- [原第二阶段](02-clean.md)：冻结原始来源的正文清洗。
+- [2.5第一步](02.5-1-inventory.md)：分类、标号、建立目录，已经完成。
+- [2.5第三步](02.5-3-register.md)与[第三阶段](03-map.md)：登记与构图，各自使用独立运行。部署说明见[PHASE3_READINESS](../research/PHASE3_READINESS.md)。
+- [Main研究入口](research-runtime.md)、[障碍Solver](solver-obstacle.md)、[成果Solver](solver-full.md)：后续实际研究。
 
-前两步的分类/编辑任务不预设最终节点与超边格式，不部署数学研究运行时。方法由实质数学处理者自由选择。程序规格与部署状态见 [CURATION](../research/CURATION.md)。
+本步边界与当前程序见[CURATION](../research/CURATION.md)及[操作手册](../research/CURATION_OPERATIONS.md)。

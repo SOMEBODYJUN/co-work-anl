@@ -277,6 +277,29 @@ class CollaborationTests(unittest.TestCase):
         self.assertEqual(json.loads(result.stdout)['selection']['selected'],['B'])
         self.assertEqual(self.remote_task('A')['state'],'available')
 
+    def test_owner_query_reads_published_claim_without_manual_sync(self):
+        task.claim_next(self.root,self.run)
+        self.assertEqual(json.loads(task.task_path(self.root,self.run,'A').read_text())['state'],'available')
+        result=subprocess.run([sys.executable,str(ROOT/'tools/curation_tasks.py'),'--repo',str(self.root),
+                               'list','--run',self.run,'--owner','self'],capture_output=True,text=True)
+        self.assertEqual(result.returncode,0,result.stderr)
+        rows=json.loads(result.stdout)
+        self.assertEqual([r['task_id'] for r in rows],['A'])
+        self.assertEqual(rows[0]['state'],'claimed')
+
+    def test_status_and_show_read_remote_without_touching_local_drafts(self):
+        task.claim_next(self.root,self.run);before=self.count()
+        draft=self.root/'unfinished.md';draft.write_text('A live mathematical draft')
+        for command in [['status'],['show','A']]:
+            result=subprocess.run([sys.executable,str(ROOT/'tools/curation_tasks.py'),'--repo',str(self.root),
+                                   command[0],'--run',self.run,*command[1:]],capture_output=True,text=True)
+            self.assertEqual(result.returncode,0,result.stderr);record=json.loads(result.stdout)
+            if command[0]=='status':self.assertEqual(record['states'],{'claimed':1,'available':1})
+            else:self.assertEqual(record['state'],'claimed')
+        self.assertEqual(draft.read_text(),'A live mathematical draft')
+        self.assertEqual(self.count(),before)
+        self.assertEqual(self.git(self.root,'rev-parse','HEAD'),self.seed)
+
     def test_asset_verification_reuses_one_object_cache(self):
         client=board.Board(self.root,branch='wcg/board-fixture')
         asset=dict(branch=self.branch,commit=self.seed,**self.assets('A')[0])

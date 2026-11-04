@@ -1,10 +1,10 @@
 # 2.5 分类与协作入口
 
-当前：[4,619份完整编号分类目录](catalogs/20261103-classification-only/INDEX.md)。第一步仅分类、标号、建目录；任何去向都是建议，未执行清理、合并、蒸馏或改写。旧第一步清理已撤销，原页面和链接恢复。
+第一步已完成，当前做第二步数学整理；分类编号和任务归属分别管理。
 
-- [第二步Boss提示词](../prompts/02.5-2-distill.md)和[worker提示词](../prompts/02.5-worker.md)。
-- [操作手册](../research/CURATION_OPERATIONS.md)：现有py、独立工作区、任务认领、公屏和提交。
-- [已备144组数学任务](runs/20261103-boss6-current/TASKS.md)及[34份新增候选差量](runs/20261103-boss6-current/catalogue-routing-delta.json)。第二步未开始。
-- [分类更正](classification-only-correction/classification-corrections.json)与[先前清理撤销记录](classification-only-correction/restoration.json)。这些后台文件不是数学对象。
+- [材料分类目录](catalogs/INDEX.md)：原4,619份及新增6篇；编号与分类读取版本可追溯。
+- [第二步唯一完整提示词](../prompts/02.5-2-distill.txt)：已有对话沿用身份与草稿，新对话使用用户指定编号。
+- [现行任务目录](runs/20261103-boss6-current/TASKS.md)：定义以tasks/为准，实时完成与认领用curation-task status/list/show查询远端。
+- [操作手册](../research/CURATION_OPERATIONS.md)：现有work.py、独立工作区、认领、公屏与交付。
 
-旧runs保留冻结分类和历史动作；当前分类以catalogs入口为准。2.5第三步与超边结构另行设计。
+本步按各群自身模型整理与复用数学，删除确认无用的包装；不把旧route当自动删除指令，不登记最终节点或写超边。旧运行数据只用于必要的来源和状态核对，不作为当前操作入口。

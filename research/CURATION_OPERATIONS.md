@@ -1,6 +1,6 @@
 # 2.5.1/2 操作手册
 
-第一步只分类、标号、建立目录，已经完成；第二步正在执行。当前入口是[材料分类目录](../curation/catalogs/INDEX.md)，包含原4,619份分类快照及新增6篇分类。原编号不变，新增接续至P25-04625；较后的正文版本由current-locations定位，不能把冻结分类SHA当作现行正文SHA。30份已分类差量现已进入[14个可领对象群](../curation/plans/20261104-increment/TASKS.md)。此前第一步649份退出与641页链接改动已精确撤销；旧actions只表示历史，不是现行处理指令。公屏继续复用wcg/board-curation-25。
+第一步只分类、标号、建立目录，已经完成；第二步正在执行。当前入口是[材料分类目录](../curation/catalogs/INDEX.md)，包含原4,619份分类快照及新增6篇分类。原编号不变，新增接续至P25-04625；分类SHA定位实际读取版本，现行正文须核对当前任务输入与文件字节。30份已分类差量已纳入[现行任务目录](../curation/runs/20261103-boss6-current/TASKS.md)；实际任务定义只保留在该run的tasks/，不另存规划副本。旧actions不作为现行处理指令。公屏继续复用wcg/board-curation-25。
 
 ## 第一步：分类目录，零原件处理
 
@@ -40,6 +40,8 @@ python3 work.py curation-task show --run 20261103-boss6-current 实际task_id
 
 claim-next示例的2应换成当前真实空位数；可用--prefix筛选任务编号家族。它在同一远端事务中检查最新归属、输入版本和写范围，结果只领取立即能做的数量；正常ref竞争后重选可领群，不再要求各Boss先争同一份旧清单。results中的pushed才可派工；selection说明实际选中及被跳过的过期输入或占用范围。输入过期仍须数学复核，不自动重绑SHA。响应未知保留原目标和request_id，retry不会多领任务。旧batch及单项命令保持兼容。
 
+status、list和show从远端最新任务快照读取，无需为确认刚刚认领的归属手动sync，也不改动本地正文草稿。网络失败据实报错，不回退旧表冒充最新状态。
+
 list默认最多20条短行；--full保留原完整记录，--limit 0表示全量。status输出聚合、活跃任务及未分组差量数；status --full才输出差量路径。身份/端点在启动时检查，普通任务不重复dry-run；实际push及读回负责确认成功。updated_at随真实状态变更记录，不额外打卡。
 
 batch接收JSON数组，每项包含task_id、operation和该操作参数。支持claim（可同时附write_paths）、extend（write_paths）、finish（assets、reason，可附reuse_paths）、旧submit/complete/handoff。一次正常推送提交一批互不冲突的变更；逐项冲突会列为conflict，其它项可以成功，必须检查results。
@@ -55,7 +57,7 @@ batch接收JSON数组，每项包含task_id、operation和该操作参数。支�
 python3 work.py curation-task batch --run 20261103-boss6-current --record-file 实际批次.json
 ```
 
-先claim成功再派实质工作；sync一次取得新快照。编辑前预留路径，不锁整个存档。复用原有数学无需制造空修改或占写锁，finish中以reuse_paths显式列出真正原字节复用的正式数学。
+先claim成功再派实质工作；按需sync取得正文版本，查询归属本身无需sync。编辑前预留路径，不锁整个存档。复用原有数学无需制造空修改或占写锁，finish中以reuse_paths显式列出真正原字节复用的正式数学。
 
 ```json
 [
@@ -69,7 +71,7 @@ python3 work.py curation-task batch --run 20261103-boss6-current --record-file �
 ]
 ```
 
-编辑产物先checkpoint确认pushed，再批量finish；finish一次完成submit+complete，其它旧命令仍兼容。assets保持path/SHA两字段，复用信息另记reused_paths。至少一份正式数学仍是数学交付要求，纯包装批次不伪装为数学完成。
+编辑产物先checkpoint确认pushed，再批量finish；finish一次完成submit+complete，其它旧命令仍兼容。assets保持path/SHA两字段，复用信息另记reused_paths。至少一份正式数学仍是数学交付要求，纯包装批次不伪装为数学完成。无用日志、重复导出和旧交付包在核实无独有内容或未完草稿后直接删除，修正引用，不移入历史目录；不另写工作总结或覆盖表。各群按自身模型整理，不设全仓固定研究题。
 
 响应未知时，意图保存在本clone的Git缓存中，使用相同request_id继续：
 

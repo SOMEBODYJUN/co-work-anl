@@ -53,7 +53,7 @@ cleanup/CHECKLIST.md及checklists/分册会自动从逐源记录生成勾选。i
 
 ## 2.5第一步/第二步：实际工具
 
-新入口见[分步协议](../research/CURATION.md)、[第一步提示词](../prompts/02.5-1-inventory.md)、[第二步Boss](../prompts/02.5-2-distill.md)与[worker](../prompts/02.5-worker.md)。`work.py triage`提供固定材料、分批、收回、覆盖和分类目录；`work.py curation-task`提供对象群任务发布、认领、提交、完成与交接。
+新入口见[分步协议](../research/CURATION.md)、[第一步提示词](../prompts/02.5-1-inventory.md)、[第二步唯一完整提示词](../prompts/02.5-2-distill.txt)。`work.py triage`提供固定材料、分批、收回、覆盖和分类目录；`work.py curation-task`提供对象群任务发布、认领、提交、完成与交接。
 
 新curator clone显式`start --curation-run 已发布run`，身份与工作区进入顶层curation运行域；显式`--board-branch wcg/board-curation-25`选择临时公屏，save沿用repository-cleanup兼容程序。第一步是单Boss内部六lane，不需要逐材料远端claim或公屏打卡。第二步多Boss按对象群认领，检查重叠写入、输入和产物SHA，正常push并读回确认。
 

@@ -38,4 +38,4 @@
 
 编号先按首轮 4,608 份固定顺序分配，再给 11 份新增材料追加编号；同路径的版本记录保存在 JSON 的 source_versions 中。
 
-[第二步 Boss 完整提示词](../../../prompts/02.5-2-distill.md) · [worker 提示词](../../../prompts/02.5-worker.md) · [操作手册](../../../research/CURATION_OPERATIONS.md)
+[第二步唯一完整提示词](../../../prompts/02.5-2-distill.txt) · [操作手册](../../../research/CURATION_OPERATIONS.md)

@@ -190,7 +190,7 @@ def select_claims(root,current,limit,prefix=''):
                    'skipped_count':len(skipped),'skipped':skipped[:12]}
 
 
-def checkout_task_snapshot(client,directory,run,actor):
+def checkout_task_snapshot(client,directory,run,actor=None):
     """Keep the complete Git tree in the index, without expanding the repo."""
     cache,tip,shallow=cleanup.refresh_snapshot(client)
     client.setup(directory)
@@ -200,10 +200,33 @@ def checkout_task_snapshot(client,directory,run,actor):
     board.git(directory,'update-ref','--no-deref','HEAD',tip)
     board.git(directory,'read-tree',tip)
     prefix='curation/runs/'+run
-    raw=board.git(directory,'ls-tree','-r','--name-only','-z',tip,'--',
-                  prefix+'/run.json',prefix+'/people/'+actor+'.json',prefix+'/tasks').stdout
+    names=[prefix+'/run.json',prefix+'/tasks']
+    if actor:names.append(prefix+'/people/'+actor+'.json')
+    raw=board.git(directory,'ls-tree','-r','--name-only','-z',tip,'--',*names).stdout
     materialize(directory,tip,[p.decode() for p in raw.split(b'\0') if p])
     return tip
+
+
+def read_published(root,run,command,*,full=False,state=None,owner=None,limit=None,task_id=None):
+    """Read the latest task metadata without syncing or altering live drafts."""
+    if owner=='self':
+        owner=coordination.config(root,'wcg.actor')
+        if not owner:raise ValueError('No conversation identity is bound to this clone')
+    client=board.Board(root,branch=coordination.config(root,'wcg.branch') or 'rebuild/research-v2')
+    with client.scratch() as name:
+        directory=Path(name);tip=checkout_task_snapshot(client,directory,run)
+        if not (run_home(directory,run)/'run.json').is_file():raise ValueError('Unknown curation run: '+run)
+        if command=='status':
+            materialize(directory,tip,['curation/runs/'+run+'/catalogue-routing-delta.json'])
+            result=task_status(directory,run,full)
+            result.update(remote_tip=tip,meaning='Latest published task metadata; local mathematical drafts are unchanged')
+            return result
+        if command=='list':return task_list(directory,run,state=state,owner=owner,limit=limit,full=full)
+        if command=='show':
+            p=task_path(directory,run,task_id)
+            if not p.is_file():raise ValueError('Unknown task: '+str(task_id))
+            return json.loads(p.read_text())
+        raise ValueError('Unknown task query')
 
 
 def task_status(root,run,full=False):
@@ -416,9 +439,9 @@ def main():
     a=p.parse_args();root=a.repo.resolve()
     try:
         if a.command=='plan':result=plan(root,a.run,a.record_file)
-        elif a.command=='status':result=task_status(root,a.run,full=a.full)
-        elif a.command=='list':result=task_list(root,a.run,state='available' if a.available else a.state,owner=a.owner,limit=a.limit,full=a.full)
-        elif a.command=='show':result=json.loads(task_path(root,a.run,a.task).read_text())
+        elif a.command=='status':result=read_published(root,a.run,'status',full=a.full)
+        elif a.command=='list':result=read_published(root,a.run,'list',state='available' if a.available else a.state,owner=a.owner,limit=a.limit,full=a.full)
+        elif a.command=='show':result=read_published(root,a.run,'show',task_id=a.task)
         elif a.command=='batch':result=mutate_many(root,a.run,json.loads(curation._safe_path(root,a.record_file).read_text()))
         elif a.command=='claim-next':result=claim_next(root,a.run,a.limit,a.prefix)
         elif a.command=='retry':result=retry_request(root,a.run,a.request_id)

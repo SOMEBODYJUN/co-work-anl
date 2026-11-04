@@ -14,7 +14,7 @@
 
 ## 可直接执行的文件
 
-- [Boss提示词](../../../prompts/02.5-research.md)、[对象群worker提示词](../../../prompts/02.5-worker.md)。
+- [当前第二步唯一完整提示词](../../../prompts/02.5-2-distill.txt)。
 - [程序契约与命令](../../../research/CURATION.md)、[准入工具](../../../tools/curation.py)、[超边与版本契约](../../../map/README.md)。
 - [六项真实修复任务](repair_queue.md)、[机器队列](repair_queue.json)：23处引用绑定SHA和选区，先检查任务是否仍适用于当前正文；状态为queued-not-applied。
 - [当前上游规范及代码对照](upstream_requirements.md)：采用原知识保护、语义类型、精确前提、局部上下文、内容失效和条件关系；不照搬宽松空内容默认值，不宣称模型核验100%正确。

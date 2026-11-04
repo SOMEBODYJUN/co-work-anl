@@ -1,19 +1,11 @@
-# 数学研究仓库
+# 数学材料整理仓库
 
-这是结果分支 `rebuild/research-v2`：第二阶段整理数学正文；2.5依次做材料定性、对象群整理、对象登记，再分批建立超边并供Work中的数学Solver按需读取。各步完成范围以实际记录为准，不能把脚手架或来源done当作数学质量验收。
+当前正在做 **2.5第二步**：接续已有分类，复用成熟数学，整理数值机制、片段和混合内容，删除无用包装。各对象沿用自己的模型与问题；本步的完成标准是准确处置材料并留下可用正文。
 
-- [Work研究流程与目录安排](research/RESEARCH_WORKFLOW.md)：模型、代码、超边与GitHub如何配合，Main/Solver的实际流程、各目录归属及云端通道的当前边界。
-- [可运行的登记、超边和研究接口](research/IMPLEMENTATION.md)：v2记录、分批建图账本、两类Solver、具体反馈、持续保存和恢复。工具完成不等于全仓已登记/已建图，2.5前两步继续独立执行。
-- [GitHub资源与部署](research/GITHUB_RESOURCES.md)：学生权益、Codespaces环境、Actions检查/计算、实际复现入口及尚未启用的云端部分。
-- [本次实现交付与验收](research/DELIVERY.md)：实际通过的测试、精确复现范围、与最新分类工作的同步及本轮发布状态。
-- [2.5第三步与第三阶段固定入口](research/PHASE3_READINESS.md)：完整Boss/worker提示词、独立运行身份、冻结输入和分批登记、跨批/跨档验收、Work直接调用GitHub资源。已准备，不自动启动后续阶段。
+用户只需 **一个work.py、已有仓库外凭据、一份[当前提示词](prompts/02.5-2-distill.txt)**。内部程序和说明由执行者按需读取。已有Boss沿用原身份和草稿，成熟成果立即保存，持续补位至本阶段可处理材料完成。
 
-- [研究存档](archives/README.md)：四个主要问题家族、独立数学工具及待确认方向；父子问题明确归档。
-- [全仓数学关系图](map/README.md)：旧graph.json原型保留；新接口输出独立graph-v2.json，不自动接纳历史对象。
-- [三阶段清洗入口](cleanup/README.md)与[全量逐文件勾选](cleanup/CHECKLIST.md)。
-- [第二阶段提示词](prompts/02-clean.md)、[2.5第三步登记](prompts/02.5-3-register.md)、[第三阶段建图](prompts/03-map.md)、[Main研究启动](prompts/research-runtime.md)。
-- [2.5前两步入口](research/CURATION.md)：[第一步材料定性](prompts/02.5-1-inventory.md)、[第二步对象群整理](prompts/02.5-2-distill.md)、[worker提示词](prompts/02.5-worker.md)、[协作设计](research/CURATION_OPERATIONS.md)及[程序契约](research/PHASE25_PROGRAM.md)。真实进度看实际运行记录；第三步与构图的固定入口见上文。
-- [程序与协作操作](tools/README.md)、[命名和入库规则](cleanup/OBJECTS.md)。
-- [整理质量审查](cleanup/audits/2026-10-30/质量审查.md)：固定快照的来源—正文抽查，记录覆盖矩模型身份冲突和已入库正文的导航缺口；done不等于语义验收通过。
+- [材料分类目录](curation/catalogs/INDEX.md)与[当前任务目录](curation/runs/20261103-boss6-current/TASKS.md)。实时进度查询 `work.py curation-task status --run 20261103-boss6-current`。
+- [当前操作说明](research/CURATION_OPERATIONS.md)、[工作规则](AGENTS.md)与[数学对象命名规则](cleanup/OBJECTS.md)。
+- [数学正文](archives/README.md)与必要复现证据 `tools/evidence/`。无用日志、旧交付件和重复副本直接删除，不另存历史目录。
 
-原始资料留在独立来源分支，冻结版本见cleanup/sources.json；本树不再复制成套旧history与工作区。使用work.py读取源文件，持续记录其语义处置。当前主攻仍是客户吸引的恰六人完整历史纯SPE半覆盖；其他存档保留其各自模型、问题和发展性研究，不混合结论。
+其它阶段有独立入口，按用户指定启动：[原第二阶段来源清洗](cleanup/README.md)、[2.5第三步与第三阶段](research/PHASE3_READINESS.md)、[后续研究流程](research/RESEARCH_WORKFLOW.md)、[程序接口](research/IMPLEMENTATION.md)及[GitHub资源](research/GITHUB_RESOURCES.md)。原始来源的冻结版本见 `cleanup/sources.json`；原来源done与数学质量验收分别判断。

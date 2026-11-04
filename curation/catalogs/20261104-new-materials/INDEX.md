@@ -1,8 +1,6 @@
 # 新增材料分类目录
 
-快照 `be96ab1f7a2c1ba3e81e905fc289b9a1c1f03af4`。新增6篇已阅读全文分类，编号接续原目录；不改原件、不执行清理。当前正式材料4619份，历史编号总计4625；6份旧编号材料已在此前第二步退出正式范围，本次未移动或删除。
-
-新增页均是已完成对象群的数学产物，只补目录，不重新派一遍蒸馏。
+新增6篇已全文分类，编号接续原目录；它们是已完成群的产物，不重新派工。分类判断内容性质，不认证数学真值。
 
 | 编号 | 材料 | 类别 | 建议 | 已完成群 |
 | --- | --- | --- | --- | --- |
@@ -13,6 +11,4 @@
 | P25-04624 | [有限完整SPE证书池与六人half边界--证明](<../../../archives/customer-attraction/state/证明/有限完整SPE证书池与六人half边界--证明.md>) | math-exposition | retain | CAGN-FINITE-SPE |
 | P25-04625 | [固定支持背景行有限锥障碍--障碍](<../../../archives/customer-attraction/state/障碍/固定支持背景行有限锥障碍--障碍.md>) | numeric-witness | retain | CAGN-FIXED-SUPPORT |
 
-[原始分类记录](records.json) · [新增清单](materials.csv) · [全部历史带号材料](all-materials.json) · [当前版本定位](current-locations.json)
-
-全部历史带号材料的分类绑定各行sha256；较后的正文修改不冒充已重新分类。本文只补新增路径，数学真值与第二步完成情况另看正式正文和实时任务记录。
+完整的新增记录只保留在[materials.json](materials.json)；各行SHA定位其分类时读取的版本。原编号见[原分类目录](../20261103-classification-only/INDEX.md)。
