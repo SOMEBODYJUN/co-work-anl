@@ -2,7 +2,7 @@
 
 核对日期：2026-11-03。以下是公开官方权益，不代表本账号已认证、领取或启用；学生身份与账号余额未核验。
 
-本轮更新：新上传凭据已经通过实际Git写端点并成功推送初版`71f86b4f`。直接PAT接口`work.py github`已实现status、machines、dispatch、create-codespace、stop-codespace；status实际读取成功，未创建/停止实例或dispatch任务。下文“认证失败”是上一轮历史，不再是当前阻塞；学生状态与余额仍未读取或推断。
+本轮更新：此前已成功推送的初版为历史事实；本次新增运行协议和回执已形成本地提交`c7708eaf`，同步远端后尝试推送时当前外部凭据返回GitHub `401 Invalid username or token`，所以本次改动尚未共享。直接PAT接口`work.py github`仍实现status、machines、dispatch、create-codespace、stop-codespace，但当前凭据下不能把API写入或实时资源状态说成已验证；本轮未创建/停止实例或dispatch任务。学生状态与余额仍未读取或推断。
 
 ## 现在能用什么
 
