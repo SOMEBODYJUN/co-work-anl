@@ -44,6 +44,16 @@ def auth_rejected(result):
     return result.returncode and re.search(rb'authentication failed|invalid username or token|bad credentials|write access .*not granted|permission .*denied|HTTP (?:401|403)',result.stderr,re.I)
 
 
+def push_race(result):
+    """Recognize ordinary concurrent ref updates, including receive-pack CAS."""
+    if not result.returncode:
+        return False
+    output = result.stdout + result.stderr
+    return bool(re.search(rb'non-fast-forward|fetch first|stale info', output, re.I) or
+                re.search(rb'cannot lock ref.*?is at [0-9a-f]+ but expected [0-9a-f]+',
+                          output, re.I | re.S))
+
+
 class Conflict(BoardError):
     pass
 
@@ -438,11 +448,41 @@ class Board:
         asset_shape(asset)
         guard(asset)
         git(self.repo, 'check-ref-format', 'refs/heads/' + asset['branch'])
-        with self.scratch() as directory:
-            self.setup(directory)
-            git(directory, 'fetch', '--quiet', '--no-tags', 'origin', 'refs/heads/' + asset['branch'])
-            if git(directory, 'merge-base', '--is-ancestor', asset['commit'], 'FETCH_HEAD', check=False).returncode:
-                raise ValidationError('Asset commit is not on the named remote branch.')
+        key = hashlib.sha256((self.remote + '\0' + asset['branch']).encode()).hexdigest()[:20]
+        directory = self.cache / ('assets-' + key + '.git')
+        with (self.cache / ('assets-' + key + '.lock')).open('a') as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX)
+            if not directory.exists():
+                git(self.repo, 'init', '--quiet', '--bare', str(directory))
+                git(directory, 'remote', 'add', 'origin', self.remote)
+                # Reuse the caller's objects and shallow boundary. A newly
+                # produced result is already in this clone; do not fetch its
+                # entire repository history into a new empty object store.
+                objects = Path(git(self.repo, 'rev-parse', '--git-path', 'objects').stdout.decode().strip())
+                objects = (self.repo / objects).resolve()
+                alternate = directory / 'objects/info/alternates'
+                alternate.parent.mkdir(parents=True, exist_ok=True)
+                alternate.write_text(str(objects) + '\n')
+                shallow = Path(git(self.repo, 'rev-parse', '--git-path', 'shallow').stdout.decode().strip())
+                shallow = (self.repo / shallow).resolve()
+                if shallow.is_file():
+                    shutil.copyfile(shallow, directory / 'shallow')
+                seed = git(self.repo, 'rev-parse', '--verify',
+                           'refs/remotes/origin/' + asset['branch'], check=False)
+                if seed.returncode == 0:
+                    git(directory, 'update-ref', 'refs/heads/snapshot', seed.stdout.decode().strip())
+            if git(directory, 'remote', 'get-url', 'origin').stdout.decode().strip() != self.remote:
+                raise ValidationError('Asset cache remote mismatch.')
+            git(directory, 'fetch', '--quiet', '--no-tags', 'origin',
+                '+refs/heads/' + asset['branch'] + ':refs/heads/snapshot')
+            # A shallow caller may receive an older legitimate asset. Deepen
+            # the shared cache only when ancestry is not yet available.
+            while git(directory, 'merge-base', '--is-ancestor', asset['commit'],
+                      'refs/heads/snapshot', check=False).returncode:
+                if not (directory / 'shallow').is_file():
+                    raise ValidationError('Asset commit is not on the named remote branch.')
+                git(directory, 'fetch', '--quiet', '--no-tags', '--deepen=128', 'origin',
+                    '+refs/heads/' + asset['branch'] + ':refs/heads/snapshot')
             entry = git(directory, 'ls-tree', asset['commit'], '--', asset['path']).stdout
             if not entry.startswith((b'100644 blob ', b'100755 blob ')):
                 raise ValidationError('Asset must name an ordinary file.')
@@ -476,6 +516,7 @@ class Board:
                 temporary.unlink(missing_ok=True)
             break
         error = None
+        asset_checked = False
         for attempt in range(self.retries):
             try:
                 with self.scratch() as directory:
@@ -487,8 +528,9 @@ class Board:
                             raise Conflict('Remote message ID belongs to different content.')
                         pending.unlink(missing_ok=True)
                         return existing
-                    if 'asset' in intent['body']:
+                    if 'asset' in intent['body'] and not asset_checked:
                         self.check_asset(intent['body']['asset'])
+                        asset_checked = True
                     event = dict(intent, schema=SCHEMA, seq=len(state['events']) + 1, time=int(self.clock()))
                     updated = transition(state, event)
                     root = Path(directory) / PREFIX

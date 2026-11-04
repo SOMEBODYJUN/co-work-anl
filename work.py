@@ -641,7 +641,7 @@ def main():
     curate.add_argument("args", nargs=argparse.REMAINDER)
     triage = sub.add_parser("triage", help="2.5.1材料定性批次、覆盖与目录；不判断数学真值")
     triage.add_argument("args", nargs=argparse.REMAINDER)
-    tasks = sub.add_parser('curation-task',help='2.5对象群任务认领、提交、完成和交接')
+    tasks = sub.add_parser('curation-task',help='2.5对象群短表/status、批量认领/finish、持久重试和一键交接')
     tasks.add_argument('args',nargs=argparse.REMAINDER)
     r = sub.add_parser("read", help="读取异步公屏")
     r.add_argument("--json", action="store_true")

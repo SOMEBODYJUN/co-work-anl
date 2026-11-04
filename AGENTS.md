@@ -1,8 +1,10 @@
 # 本结果仓库工作规则
 
-本轮用户最新范围：2.5第二步由另一侧按当前任务执行，本侧只核定、测试并发布2.5第三步和第三阶段前置设计，不代为登记全仓或建图。固定入口research/PHASE3_READINESS.md；完整Boss/worker启动词分别为prompts/02.5-3-register.md、02.5-3-worker.md、03-map.md、03-map-worker.md。后续用--workflow-run隔离身份、workspace和公屏，暂不创建这些实际身份/公屏。新附件已恢复Git写权限；Work可通过work.py github直接使用仓库外PAT调用资源，status只读，创建/计算等到实际启动任务时调用。下文“第二步未启动/后续另定”是旧交付快照，不能覆盖本轮已核定准备或其他对话实际进度。
+共享阶段分工：2.5第二步使用prompts/02.5-2-distill.md、prompts/02.5-worker.md和curation-run=20261103-boss6-current；第二步正在多Boss协作，实时状态看work.py curation-task status。2.5第三步和第三阶段使用research/PHASE3_READINESS.md及对应registrar/mapper启动词，以--workflow-run隔离身份、workspace和公屏。每个对话以用户指定阶段为准，不把某个对话的“本侧/另一侧”安排写成全仓禁令。软件维护不接管其它Boss已领数学。
 
-当前新增授权：用户要求把2.5第三步登记、第三阶段超边、Work的Main/两类Solver、GitHub资源使用落实为可运行交付。对应接口与提示词见research/IMPLEMENTATION.md、research/GITHUB_RESOURCES.md和prompts/research-runtime.md。允许实现、测试、checkpoint这些基础设施；不覆盖其他Boss的2.5前两步对象群工作，不自动批量准入或启动数学研究。下文旧“由另一AI设计/本轮不部署”指前两步整理任务的边界，不否定用户这次的明确实现请求。所有pushed/云端已启用声明须有实际确认。
+协作程序v2：短状态表与筛选list、批量claim/extend/finish、持久request_id重试、handoff-all、只展开必要文件的任务事务与缓存资产验证。已在协作的Boss先保全草稿并sync更新，不换号、不重做第一步或已完成数学。先认领成功再派实质任务；数学Boss直接整理数学，用户指定的协调Boss统筹纯包装和差量。状态变更用批量事务，暂停一次交接，不把claimed等同仍在运行。
+
+后续基础设施已按用户要求实现，接口见research/IMPLEMENTATION.md、research/GITHUB_RESOURCES.md、prompts/research-runtime.md；Work的Main/两类Solver及GitHub资源到实际被指定任务时才启用。既有授权允许实现、测试、正常提交这些基础设施；不自动批量准入、建图或启动数学研究。所有pushed/已启用声明以实际确认结果为准。以下第一步历史交付中的“未启动/后续另定”不覆盖当前协作状态或已发布后续方案。
 
 本次用户最新决定：阶段二继续原来源清洗；2.5分为三步：1只给材料定性、标号、建立目录，2对象群数学整理/有限综合及另行明确授权的材料处置，3按另定方案重新登记。**第一步绝不删除、移动、合并或改写原件，也不修正文链接；route只是后续建议。**此前两个运行的过度清理已经精确撤销，649原页面及641页面的链接均恢复，必要附件保留；旧actions只表示历史，不能再次应用。完整4619份材料的当前入口为curation/catalogs/20261103-classification-only/INDEX.md；旧run快照和原分类记录保留，供版本追溯。第一步不是数学真值审查；数字不等于缺陷，完整反例、算法合同、猜想和具体缺口都是数学内容。第二步未启动，2.5第三步、第三阶段超边和真正数学研究Agent由用户与另一AI设计；旧原型不是最终授权。
 

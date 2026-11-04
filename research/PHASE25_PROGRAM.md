@@ -55,13 +55,13 @@
 4. 用同一个request_id读回确认；丢失响应不能直接当成功或另发一个新claim。真认证失败立即停止同凭据重试。
 5. 当前任务完成后再接下个任务，不预领长期库存；同一clone全部Git操作仍由Boss串行。
 
-状态为 `available → claimed → submitted → completed`；另有 `blocked/handoff/stale`。`submitted`引用已经pushed的产物及commit/path/SHA，`completed`表示本步的编辑和交付验收完成，不表示新定理成立。仅本地草稿留在工作区和交接记录，不能冒充远端交付。
+状态为 `available → claimed → submitted → completed`；另有 `blocked/handoff/stale`。v2的finish将submit与complete的全部内容校验放在同一事务中完成，不要求为两个远端中间状态分别推送。`submitted`引用已经pushed的产物及commit/path/SHA，`completed`表示本步的编辑和交付验收完成，不表示新定理成立。仅本地草稿留在工作区和交接记录，不能冒充远端交付。
 
-任务初始只锁独立工作区。先查已有权威正文，再用extend预留实际正式输出路径；extend同样检查其他活跃任务的重叠路径。submit至少含一项现行正式数学资产，单独工作区稿或证据不能提交为数学交付；此检查仍不代替内容验收。
+任务初始只锁独立工作区；claim可同时预留已查清的write_paths，后续也可批量extend。真正编辑独占写入；原字节成熟数学以reuse_paths显式共享复用，不为只读引用占写锁。submit至少含一项现行正式数学资产，单独工作区稿或证据不能提交为数学交付；此检查仍不代替内容验收。
 
 交付允许成熟解释复用、简化见证、一般结果、结构认识、损伤恢复、原见证撤回或具体未解义务。验收看数学正文和材料去向；不得要求accepted边、final manifest或一页一数学ID。
 
-`handoff`释放本人未完任务、保留实际原因/草稿路径/是否共享/具体下一步。无提交的任务不能因超时自动夺走仍在写的成果；明确交接或协调处理。`clean handoff`不释放本run任务，不能混报。
+`handoff`释放本人未完任务；handoff-all在一次事务内释放本人全部未完任务，保留实际原因/草稿路径/是否共享/具体下一步。无提交的任务不能因超时自动夺走仍在写的成果；明确交接或协调处理。`clean handoff`不释放本run任务，不能混报。
 
 ## 实现验收情景
 
@@ -79,3 +79,15 @@
 12. 第一、二步的记录不要求最终节点ID或超边schema，也不调用旧final gate冒称完成。
 
 程序已实现；本稿的第一步验收看完整带号目录、七类覆盖、第二步候选与六字段记录的对应，以及正文/附件没有因本步建议而改变。第二步任务按现有程序另行开展；不用单元测试证明数学正确。具体第三步接口等另行设计完成后再加适配层，前两步无需重读已完整定性的全部正文。
+
+## 协作程序v2实现
+
+- status聚合实时任务与差量；list默认短行/最多20项，按owner、state、available筛选；--full保留完整输出。
+- batch一次正常推送处理多个任务，逐项报告成功与冲突；一项冲突不阻断其它不相交任务。claim可合并预留；finish合并submit+complete；handoff-all一次交接。
+- 每次事务只物化run/people/tasks元数据与本次所需输入、资产；Git索引与父提交保留完整原树，不展开整仓正文。
+- 正常ref竞争包含receive-pack的cannot-lock-ref/expected变体，并刷新重试；意图和完成回执在本clone Git缓存保存，同request_id可retry，不重复创建认领。
+- 新事务记录updated_at；没有该字段的历史任务不伪造活动时间，不增加周期打卡。
+- 广播资产验证复用Git对象缓存及浅历史边界；同次公屏发布重试不重复验证同一资产。
+- assets仍为path/SHA两字段，复用另记reused_paths；旧任务数据与单项CLI继续兼容。
+
+真实命令见CURATION_OPERATIONS.md。v2仅维护基础设施，不改任何既有数学正文、任务状态、完成结果或其它Boss身份。

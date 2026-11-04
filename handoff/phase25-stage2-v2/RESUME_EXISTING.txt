@@ -1,0 +1,19 @@
+继续本对话原有Boss身份和原curator clone，使用2.5第二步协作程序v2；不换号、不另占新身份、不重做分类或已完成数学。
+
+先保全当前数学与草稿，由Boss暂停本clone并行文件写入，运行：
+python3 work.py sync
+python3 work.py curation-task status --run 20261103-boss6-current
+python3 work.py curation-task list --run 20261103-boss6-current --owner self --limit 0
+
+读取更新后的prompts/02.5-2-distill.md与prompts/02.5-worker.md，立即继续本人已领未完群；本人没有未完才领新的一批。当前角色沿用数学处理；若用户已指定你协调，则同时统一差量并组与纯包装批次。普通数学Boss不把清一页身份当启动前置。
+
+v2已支持batch一次认领/预留或finish多个群，某群冲突不取消其它成功群；只对results中pushed的群派处理者。先claim成功再派实质数学，成熟正文直接复用，复用用reuse_paths共享，不为了只读占写锁。新增编辑仍先预留、checkpoint确认pushed，然后batch finish一次完成登记。旧的单项命令继续兼容。
+
+status/list是短表，需要详情才show；正常ref竞争由程序刷新重试。响应未知时按给出的request_id使用curation-task retry，不重新制造claim。数学完成就继续补位，不等公屏结果广播或要求其它Boss静默三分钟。默认只读最近20条公屏。
+
+内部数学处理者按完整词使用真实可用并发，每人完整负责一群，Boss也工作。保模型、量词、条件、关键论证与独立技巧；交明确结论、机制或准确缺口，不用阅读/PASS/运行履历交差。不强制新定理，不重新审全仓。
+
+更新后立即实际接续工作，不停在“程序更新完毕”。本次真实结束前先保存并明确逐群下一步，然后一次交接本人未完任务：
+python3 work.py curation-task handoff-all --run 20261103-boss6-current --reason '真实原因' --draft-note '实际逐群草稿/下一步表路径及共享状态'
+
+handoff-all只释放本人未完任务；不冒用别人身份或夺取别人草稿，不虚称后台继续。此轮不执行2.5第三步登记或超边。
