@@ -88,6 +88,10 @@ def run(root: Path, experiment: str, output: str, message: str | None = None,
         local_only: bool = False):
     root = root.resolve()
     output = Path(output).as_posix()
+    ignored = subprocess.run(['git', 'check-ignore', '--no-index', '-q', '--', output],
+                             cwd=root, capture_output=True, check=False)
+    if ignored.returncode == 0:
+        raise ValueError('Checkpoint output is ignored by Git; use research/checks/ or the owning archive evidence directory')
     success = run_experiment(root, experiment, output)
     message = message or 'research compute: ' + experiment
 
