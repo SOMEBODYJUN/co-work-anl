@@ -21,7 +21,7 @@ related_objects:
   - "归一化flat菜单三态资源度三正规形三源审查--审查.md"
   - "三态资源度三正规形作者读后与最终章节审查--审查.md"
   - "三坐标与三态路径正规形范围审查--审查.md"
-  - "三坐标路径与正规形K1句子增量范围--审查.md"
+  - "../../tools/evidence/flat-menu-rainbow-scope-continuation/curation-source-summary.md"
   - "裸菜单读后与保值降度及调色板障碍--审查.md"
 evidence_paths:
   - "archives/unrelated-machines/tools/evidence/normalized-flat-menu-three-state-degree-three-20261031/original/normalized_flat_menu_three_state_degree_three_normal_form_review.md"
@@ -90,7 +90,7 @@ K=1 的贡献是 1 组、1 state、0 own-resource 和 0 new incidence，公式�
 
 # 5. 后续纠错、相关对象与未迁移边界
 
-既有定理 归一化菜单的三态资源度三正规形 已承载主数学对象、OPT/V 双向、树规模和先树后 path 顺序。本源 review 的独有内容是最终章节/版本链：五源 SHA、最终 canonical whole、K=1 修正、全旧 incidence 目的地、off-path 额外激活和 selector 资格变化。既有 归一化flat菜单三态资源度三正规形三源审查 承载 Exact/Proof/Exact-first；三态资源度三正规形作者读后与最终章节审查 已承载作者读后与 §8–9；三坐标路径与正规形K1句子增量范围 专门保留 K1 句子的版本差异。本页不重复建立 theorem。
+既有定理 归一化菜单的三态资源度三正规形 已承载主数学对象、OPT/V 双向、树规模和先树后 path 顺序。本源 review 的独有内容是最终章节/版本链：五源 SHA、最终 canonical whole、K=1 修正、全旧 incidence 目的地、off-path 额外激活和 selector 资格变化。既有 归一化flat菜单三态资源度三正规形三源审查 承载 Exact/Proof/Exact-first；三态资源度三正规形作者读后与最终章节审查 已承载作者读后与 §8–9；[K1 单句版本续审附件](../../tools/evidence/flat-menu-rainbow-scope-continuation/curation-source-summary.md) 原字节保留 K1 句子的版本差异；附件内原相对链接以 `state/审查/` 为基准。本页不重复建立 theorem。
 
 该正规形只适用于显式 normalized-flat source。它不把未归一化 Santa Claus 行 sum p>1、一般 UM、隐式菜单、source hardness、固定 M 近似算法或外部新颖性免费纳入。与同资源宇宙的 bounded-degree/palette 或裸 Cartesian 菜单对象共用部分资源语言，但量词、归一化和保值合同不同，不能合并成一般 UM 结果。当前无实现、有限实验或外部同行评审认证。
 

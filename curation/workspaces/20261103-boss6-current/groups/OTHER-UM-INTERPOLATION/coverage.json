@@ -1,0 +1,93 @@
+{
+  "task_id": "OTHER-UM-INTERPOLATION",
+  "disposition": "精确复用成熟正式数学；正式正文无改动，不制作重复稿。",
+  "input_coverage": [
+    {
+      "path": "archives/unrelated-machines/state/审查/一般插值的Exact先验与后缀范围及草稿边界--审查.md",
+      "input_sha256": "373d4436282d26b352b97e396a9c9c3148201dd1126dee8744e0bdecf14b3e7f",
+      "current_sha256": "373d4436282d26b352b97e396a9c9c3148201dd1126dee8744e0bdecf14b3e7f",
+      "reading": "全文读取，包括全部七节、五主源关系、前驱已含pool分支、作者/独立两机制、最终后缀与旧prefix的范围及追加稿差异。",
+      "mathematical_destination": "archives/unrelated-machines/state/证明/两实际见证插值的流与双色完整证明--证明.md",
+      "historical_destination": "archives/unrelated-machines/state/审查/一般插值的Exact先验与后缀范围及草稿边界--审查.md",
+      "coverage": [
+        {
+          "input_sections": "§1–2",
+          "formal_sections": "证明§1、§5、§9；审查§1–2",
+          "preserved": "一般P/T/F/ν输入量词与bulk原backbone分开；前驱937c已含任意pool的3/2+d/2，不倒改首现归属。"
+        },
+        {
+          "input_sections": "§3–4",
+          "formal_sections": "证明§2–4、§6–9；审查§3–4",
+          "preserved": "整数flow与两匹配双色是完整不同机制，可输出不同τ但满足同一全机合同；Exact-first/实际读后身份保为来源，不替代构造和条件。"
+        },
+        {
+          "input_sections": "§5–6",
+          "formal_sections": "证明§1、§5–9；审查§5–6",
+          "preserved": "最终scope为§6 header、§6.1、§6–10及必要§1，旧§2–5 v3未因此重审；旧J资格由§6替换；撤q-only计件加强不撤一般ceil(N_i/2)。追加稿待审时态保留为历史。"
+        },
+        {
+          "input_sections": "§7",
+          "formal_sections": "证明§8–9；审查§7",
+          "preserved": "只给定actual的构造/存在量词；真实used J移位只是必要身份，未给未知finder、充分decoder、一般UM近似或hardness。"
+        }
+      ]
+    }
+  ],
+  "formal_assets": [
+    {
+      "path": "archives/unrelated-machines/state/证明/两实际见证插值的流与双色完整证明--证明.md",
+      "sha256": "9f0e8e81dd698ba10d97b28a6744bd200e6bb9c9314208802af601927cf48028"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/一般插值的Exact先验与后缀范围及草稿边界--审查.md",
+      "sha256": "373d4436282d26b352b97e396a9c9c3148201dd1126dee8744e0bdecf14b3e7f"
+    }
+  ],
+  "mathematical_conditions": {
+    "general_input": "同一有限普通UM矩阵P，有限端为非负二进制有理数；给T≥0和两份覆盖全部原任务恰一次且全机负荷≤T的actual σ0/σ1。给固定原任务集F及原矩阵合法有限端ν，可超旧support，ν本身不必满足T。",
+    "paired_occurrences": "每非F原任务保两项(b,z)，同job同机仍两项；每机按该原机真实p非增排列、相邻配对、奇尾单列。job-pair为完美匹配，machine-pair为另一匹配；并图最大度2，路径/偶环包括平行长度2环，可确定二染色取一个颜色。",
+    "single_actual_output": "每job-pair恰选一项、每machine-pair至多一项、奇尾至多一项；解码回同一原job/原machine，不新建物理机器或分裂执行。全部机器的件数和负荷由同一τ同时满足，不能逐机独立挑输出。",
+    "per_machine_bound": {
+      "N_i": "两actual在i的非F带标号出现项数",
+      "d_i": "这些实际已用出现项的最大p，空最大0；不含unused大资格和F新ν时间",
+      "L_i_b": "actual b在i的非F总负荷",
+      "t_i": "F在ν新指定端的真实总负荷",
+      "count": "nonF_count_i(τ)≤ceil(N_i/2)",
+      "load": "load_i(τ)≤t_i+(L_i_0+L_i_1+d_i)/2"
+    },
+    "why_bound": "逐机排序x1≥...≥xN≥0，配对至多选一项使所选总重≤x1+x3+...≤(Σx+x1)/2。加回F得到完整逐机界；任意新ν可能很重，不能无条件宣称全局3T/2。",
+    "boundaries": "空任务/F/非F、同端双出现、奇尾、zero原任务、T=0均保留；zero负荷不等于没有任务。总位多项式按给定显式P、两actual、F/ν/T编码收费，不搜索未知两actual。"
+  },
+  "bulk_pool_conditions_and_bounds": {
+    "backbone": "r≥2、偶k≥2、1/2<ρ<1；保完整q/b/f与I/J矩阵，给仅u/仅v为True的两份完整strict≤1 actual；固定全部f到正pool，所有非F的q/b/J一起取整。",
+    "nonpool_J": "J可接I/M/正负C但不接pool。pool非F只有正时间1/k的q；一旧f1满池不容q，另旧free池至多k个q，偶k令ceil(k/2)=k/2。因此特殊正pool新f1后≤3/2，特殊负pool≤1/2，其他正pool=1，其他负pool≤1；非pool≤3/2。",
+    "arbitrary_pool_J": "J可接任意pool后仍保一般ceil(N_i/2)，但撤仅由q推得的k/2、k计件加强。d仅取u/v特殊正pool两actual实际用到的非selector原端最大时间，0≤d≤1。",
+    "arbitrary_pool_per_machine": {
+      "u_v_positive_pool": "≤3/2+d/2",
+      "other_positive_pool": "恰1，可共居zero J",
+      "u_v_negative_pool": "≤1",
+      "other_negative_pool": "≤3/2",
+      "nonpool": "≤3/2"
+    },
+    "strict_threshold": "β=2−δ，0<δ<1/2。d≤1−2δ构造峰≤β；d<1−2δ构造峰<β。因此排除峰<β的allFalse需d≥1−2δ，排除峰≤β需d>1−2δ。",
+    "used_identity": "另需1/k<1−2δ才把必要大d排除q并定位到真实原J。另一actual同原pool有unit f，该同job同机正p不能变zero，因此实际目的地改变；不推出它离开全部pool、去固定branch、付fee或可解码。"
+  },
+  "version_limits": [
+    "旧v3带C/branch K容量gate与backbone回填，原限制域才保M/C≤1及其更强件数模式；无gate双色不可直接继承。",
+    "v4一般同τ合同允许任意P/T/F/ν；bulk非pool扩域后M/C仅≤3/2，不继承恰一job或负C返回模式。",
+    "任意pool域保一般逐机计件，但不保q-only专用件数；最终后缀的“不另主张逐机件数”不取消正式一般式(1)。",
+    "whole SHA、Exact身份或后读final标签不扩大数学scope，不认证旧prefix§2–5或未来未读版本。"
+  ],
+  "necessary_mature_comparison": {
+    "path": "archives/unrelated-machines/state/审查/双见证批量插值与成束耦合细分边界双源审查--审查.md",
+    "sha256": "52dae909cb8887a1a8a4373c651c52e3082603e77a4b9afc58602931ea3bfdb6",
+    "use": "全文旁读以核v3 gate与v4合同差别；其bundle/pair部分不纳入本组数学交付或推广。"
+  },
+  "remaining_limits": [
+    "输入只存在但未给actual时不提供寻找两actual的算法。",
+    "near-unit used J事件是必要条件，未证明足够阻挡插值或构成OR/commit/source decoder。",
+    "没有一般UM近似/hardness、物理OR复用、新后端舍入理论、软件或新运行证据。"
+  ],
+  "self_check": "直接核两匹配结构、排序奇位负荷不等式、F新端加回、pool分类、阈值等号及scope；成熟证明充分，无需重跑suite或新增数学实验。",
+  "disposition_note": "主证明已把版本审查中的一般条件、双色/流两机制、pool逐机上界和必要used身份自足展开；本组精确复用其数学，原审查继续只保读序与版本范围。没有改写正式页或扩大已证域。"
+}

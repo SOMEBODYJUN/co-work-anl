@@ -26,66 +26,63 @@ python3 tools/classification_catalog.py --source-runs 20261103-boss6-triage 2026
 
 材料清单、数学子集、证据/非数学子集、第二步候选及按档目录均有完整编号。每条含原路径、SHA、类别、具体理由、正文定位和建议去向。旧run的同路径版本保存在`source_versions`中；当前链接指向已恢复的原件。目录行号不充当数学对象ID或超边端点。
 
-## 第二步启用前
+## 第二步：协作程序v2
 
-现有`tools/curation_tasks.py`和`work.py curation-task`已实现对象群认领、写入互斥、提交与交接，不需要另造平台或另一个启动器。数学任务使用`20261103-boss6-current`运行域；其旧分类snapshot保持不变，当前分类以新完整目录为准。144组旧计划与本轮路由变化的对照另见该run的TASKS.md；新增或取消的候选由协调Boss按数学联系补齐/调整任务，再领取。不得机械按文件一份建一组。
-
-纯非数学/证据处置不是数学蒸馏交付。若第二步另行明确执行这类处理，先由协调Boss定范围、去向、现行SHA和引用，按小批串行组织；当前数学task submit要求正式数学资产，不能伪造正文来满足它。不凭第一步的类别或route自动执行。
-
-## 第二步启动模板
-
-先下载结果分支**最新根work.py**，旧上传启动器不认识新参数。由用户明确给Boss编号；N是占位，不能随机选。run和程序须已推送。用独立clone，不改绑旧cleaner clone：
+完整词见[Boss](../prompts/02.5-2-distill.md)和[worker](../prompts/02.5-worker.md)。新clone仍用curator/20261103-boss6-current和wcg/board-curation-25；已有同身份clone运行sync更新，不换号、不重做分类。先由用户指定一名协调Boss处理差量分组和纯包装批次，其余Boss直接整理数学。旧run中的数量是快照，实时看status。
 
 ```sh
-python3 work.py --repo /明确的新目录/p25-bossN start \
-  --actor BossN --role curator --save repository-cleanup \
-  --branch rebuild/research-v2 --curation-run 20261103-boss6-current \
-  --board-branch wcg/board-curation-25 --token-file /仓库外/有效凭据.txt
-python3 work.py --repo /明确的目录/p25-bossN doctor
-```
-
-`--curation-run`将工作区放到`curation/workspaces/<run>/<Boss>`，身份注册到`curation/runs/<run>/people/<Boss>.json`；不复用cleanup/workspaces和旧来源people。save暂沿用repository-cleanup作程序兼容，公屏分支和运行域独立，不另建伪数学存档。既有同clone继续复用已绑定run；换run或角色用独立clone。只有明确同对话恢复才使用resume/adopt。
-
-协调Boss在激活第二步时运行一次`board-init`并读回确认，不复制旧历史。公屏按对象群task-id发成果、争议和阻塞；result须带实际pushed资产，不发布四千条打卡。未来研究Agent公屏/运行框架由后续设计，临时公屏不充当数学知识。
-
-## 对象群任务命令
-
-第二步任务须从已定性候选按真实数学联系组建；没有自动按标题生成accepted关系。Boss以[程序契约](PHASE25_PROGRAM.md)给的定义字段写任务JSON（可数组），先本地plan再checkpoint。发布后才能认领：
-
-```sh
-python3 work.py curation-task plan --run 20261103-boss6-current --record-file 仓库内任务定义.json
-python3 work.py checkpoint curation/runs/20261103-boss6-current/tasks -m '发布对象群任务'
-python3 work.py curation-task list --run 20261103-boss6-current
+python3 work.py sync
+python3 work.py curation-task status --run 20261103-boss6-current
+python3 work.py curation-task list --run 20261103-boss6-current --owner self --limit 0
+python3 work.py curation-task list --run 20261103-boss6-current --available --limit 12
 python3 work.py curation-task show --run 20261103-boss6-current 实际task_id
-python3 work.py curation-task claim --run 20261103-boss6-current 实际task_id
 ```
 
-每群领取前先sync并读取实际任务状态，领取后再sync并核对输入SHA。当前list/show查看本clone快照，不能把未同步的列表当远端最新占用。Git同步/整合时由Boss组织暂停相关写入并保住草稿。
+list默认最多20条短行；--full保留原完整记录，--limit 0表示全量。status输出聚合、活跃任务及未分组差量数；status --full才输出差量路径。新事务在任务里记录updated_at，无需额外打卡写入；旧记录没有该字段时不伪造活动时间。
 
-已发布任务先只预留各自`curation/workspaces/<run>/groups/<task>`，不预设重写哪篇数学。领取后先找现有充分正文，再用`extend`预留实际要改写、删除或复用交付的正式路径及附件；收到pushed后才能写。paths JSON是仓库相对路径数组，不含凭据：
+batch接收JSON数组，每项包含task_id、operation和该操作参数。支持claim（可同时附write_paths）、extend（write_paths）、finish（assets、reason，可附reuse_paths）、旧submit/complete/handoff。一次正常推送提交一批互不冲突的变更；逐项冲突会列为conflict，其它项可以成功，必须检查results。
+
+```json
+[
+  {"task_id":"实际A","operation":"claim"},
+  {"task_id":"实际B","operation":"claim","write_paths":["实际独占输出路径"]}
+]
+```
 
 ```sh
-python3 work.py curation-task extend --run 20261103-boss6-current 实际task_id --paths-file 实际paths.json
+python3 work.py curation-task batch --run 20261103-boss6-current --record-file 实际批次.json
 ```
 
-别一口气锁整个存档。若不同群要写同一权威页，Boss先合并/串行其写入；只读可共享。混合页被多群作输入时，在各群独有数学已迁出前不整页删除。输入SHA有变化应定向重判受影响群，不重扫全仓、不机械改SHA继承旧判断。
+先claim成功再派实质工作；sync一次取得新快照。编辑前预留路径，不锁整个存档。复用原有数学无需制造空修改或占写锁，finish中以reuse_paths显式列出真正原字节复用的正式数学。
 
-任务认领采用最新远端单任务事务、输入SHA与交叉写入路径检查、正常push和request_id读回；不以公屏说负责代替锁，不预领大量未来任务。所有代理可跨范围阅读，写入按任务互斥；同clone Git由Boss串行。
+```json
+[
+  {
+    "task_id":"实际A",
+    "operation":"finish",
+    "assets":[{"path":"现行正式数学路径","sha256":"当前SHA256"}],
+    "reuse_paths":["其中原样复用的正式数学路径"],
+    "reason":"具体结论、机制、修复或准确缺口"
+  }
+]
+```
 
-产物先checkpoint并收到pushed。assets JSON是`[{"path":"实际正文或附件路径","sha256":"当前实际SHA256"}]`，路径必须在任务写入范围。至少一项资产须为现行正式数学；仅工作区草稿、附件或处置摘要会被拒绝。复用已有充分正文时，也须预留其路径并引用它的现行字节，明确本群数学如何被覆盖；不必重写或重证好内容。再提交并说明实质完成出口：
+编辑产物先checkpoint确认pushed，再批量finish；finish一次完成submit+complete，其它旧命令仍兼容。assets保持path/SHA两字段，复用信息另记reused_paths。至少一份正式数学仍是数学交付要求，纯包装批次不伪装为数学完成。
+
+响应未知时，意图保存在本clone的Git缓存中，使用相同request_id继续：
 
 ```sh
-python3 work.py curation-task submit --run 20261103-boss6-current 实际task_id --assets-file 实际assets.json
-python3 work.py curation-task complete --run 20261103-boss6-current 实际task_id --reason '实际数学增量、保全或具体缺口'
-python3 work.py curation-task handoff --run 20261103-boss6-current 实际task_id --reason '真实运行边界' --draft-note '草稿路径以及是否共享'
+python3 work.py curation-task retry --run 20261103-boss6-current --request-id 实际ID
 ```
 
-claim、产物pushed、submitted与completed分别确认。submitted只接受远端已存在的同版产物；仅本地留在工作区和交接记录。completed是本步骤编辑交付，不是证明新定理或最终图准入。只读输入依赖在提交前已变动时，程序拒绝提交，须按新内容重新判断；属于本任务可写范围的输入允许以本次产物替换。内容变更必须重新判断，不机械刷新SHA继承旧完成。只有owner和本run协调Boss可完成已提交任务；handoff只释放本人未完任务。原`clean handoff`不释放这些任务。
+普通ref竞争会自动读取最新快照并带抖动重试。任务事务只展开本run元数据和当前所需输入，Git索引保留完整原树；不再为每次claim展开全部正文。成果广播复用对象缓存，公屏推送重试不重复验证同一资产；它的延迟不阻塞数学补位。
 
-## 暂停与退役
+暂停前先保全实际草稿及逐群下一步，再一次交接本人未完任务：
 
-凭据只认证，不入消息、正文、remote或提交。认证失败停止同凭据重试和新认领；本地成果用checkpoint --local-only保存，明确未共享。
+```sh
+python3 work.py curation-task handoff-all --run 20261103-boss6-current --reason '真实原因' --draft-note '实际逐群草稿/下一步表，以及共享状态'
+```
 
-第一步暂停收好已回与未回批次、保留剩余lane和位置；第二步暂停交接/释放本人未完任务，写实际原因、草稿位置、共享状态与下一步。没有后台继续承诺。
+handoff-all不释放他人或已完成任务。不得以表中claimed假设进程仍在跑；也不自行冒用他人身份夺取草稿。协调者明确接续分工，普通Boss继续可领数学。
 
-阶段二旧设施在实际交接后退役；本轮临时工作区和公屏在后续交接完成后退役。先保全被数学/必要证据引用的内容，再清当前树，Git历史留回滚。2.5第三步和最终超边schema不在本手册确定。
+新公屏已存在就复用，默认读最近20条；首次初始化由协调者确认后board-init，不清空原公屏。原阶段二clean命令不处理这些对象群。本步不登记最终节点、不写超边，不改另一侧后续方案。

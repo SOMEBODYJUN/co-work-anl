@@ -154,7 +154,9 @@ backend 明确 whole_scheduling_algorithm_checked=false、small_weight_class_ins
 
 本批 Exact-only 的独有记录是：candidate identity、完整 typed 输入量词、k 可变与 tiny-home 绝对界、所有原 job/finite endpoint 计数、SA1 只作为待求 LP 接口、无 OPT/actual oracle 输入、以及明确排除的多state outer、home 重叠、缺 own helper、auxiliary core、非 tiny 输入和一般 UM。
 
-未完成义务包括：从 Q 实现并核验完整 SA1/MW/variance/CE/Good pipeline；在全参数 tiny-home 域证明每一步位复杂度；实现端到端 P(Q) job assignment；以及处理 v4/v5 扩域、多state outer、重合 homes、一般 non-UD 和一般 UM。没有 source hardness、P 不等于 NP、外部新颖性或一般 19/10 近似结论。
+**已有数学与软件缺口分别保留。** 作者 proof v1 §2 已给 common-SA1 的显式变量/行规模和有理 LP 点位长，§5 用同一底层 helper 分布的公共分母控制全部 MW 轮次，§7 给双资源 winner 枚举的多项式项数和条件矩位长，§8 把它们合成全部原 jobs 的总位多项式算法合同。因此“每一步位复杂度尚未给出证明”不是这份 proof 的现有缺口；这些论证也不是有限 backend 已执行的结论。剩余交付是从 Q 实现并核验完整 SA1/MW/CE/Good 流程和全部原 jobs 的端到端 assignment，软件目前没有完成它们。
+
+v4/v5 有各自的后续限定域正文与证明机制，见[共享 UD 状态势、版本和完整回填](../证明/共享UD%20tiny状态势与19比10回填--证明.md)。它们不由本 v1 的 SA1/方差证明自动获得支持，也不能在已存在对应正文时一概列成“尚无数学”。多 state outer、重合 homes、一般 non-UD 及一般 UM 仍不在本组算法合同内。本 v1 和有限 backend 没有给一般 source hardness、P 不等于 NP、外部新颖性或一般 UM 的 19/10 近似结论；本页 §8 的 NSW 增量仍保留自己的模型与版本，不能并入 tiny-home 算法。
 
 # 7. 处置
 

@@ -1,0 +1,81 @@
+{
+  "task_id": "OTHER-UM-JOINT-SLOTS",
+  "disposition": "four-exact-reused-assets-and-one-targeted-CONFIG-zero-preprocessing-repair",
+  "assets_file": "curation/workspaces/20261103-boss6-current/groups/OTHER-UM-JOINT-SLOTS/assets.json",
+  "formal_edits": [
+    {
+      "path": "archives/unrelated-machines/state/定理/小任务联合槽稳定性与选择边界--定理.md",
+      "before_sha256": "55c0c354bc886dc7d6d47db4a91a203d762f41401294c27f7f6611c6bd6dc64c",
+      "after_sha256": "5a3c005ace1b821da1409b30246879992b40094a8ed61940aeb6753aff71619e",
+      "changes": [
+        "将错误的每个正权atom覆盖每job改为每机配置分布归一、每job跨全部机/配置总覆盖1；完整配置负载<=T，只有big部分负载<=T-tiny(C)<=T-r_i。",
+        "明确每个正权残余配置的big任务数<=K，tiny任务数不受该K限制；定义残余r/s/b，严格正交长和原任务唯一节点。",
+        "全局有零端的原任务先实际安置到零端，从每个配置删除并可合并相同残余配置；保持其余覆盖、归一且负载不增，r/s/b及K承诺按残余重算。",
+        "解除同页零OPT矛盾：含全局预处理的当前算法遇OPT0必输出0；两机一job(0,1)、T1的反例只针对省略预处理而沿y支撑舍入的做法，不否定给定T槽界。"
+      ],
+      "unchanged": "正T联合big/tiny Hall证明、alpha_K槽界、固定源三值选择器和稳定证书选择复杂度均保原范围；原source_refs及source_sha256不变。"
+    }
+  ],
+  "given_H_x_exit": {
+    "domain": "给原非负有理P、T>=0，剪去p>T端，按原T/2划small/big；H是任务/机器两侧均至多一条的大边匹配，所有无small端的任务在H。其余原任务的x只用small端，每任务质量1，非负，h_i+sum p_ij*x_ij<=(1+delta)T。",
+    "algorithm": "保H及其原大任务不变，只对其余small任务按实际时间非增铺单位槽；同一全局任务-槽分数匹配由整数匹配覆盖全部剩余原任务，不逐机独立拼输出。",
+    "bound": "每机small实际负载<=其分数small负载+最大small支撑时间<=(1+delta)T-h_i+T/2，加回同一个h_i后峰<=(3/2+delta)T。small界仍原T/2，不换成松弛容量的一半。",
+    "quantifiers": "这是给定同一H,x后的位多项式完整输出，不搜索H或生成一般x；给定证书舍入不蕴含寻找共同证书。坏给定证书或固定选择失败不是一般UM不可行性证明。"
+  },
+  "choice_versions_and_block_cut": {
+    "old_third_unit": "旧两原程序的3DM构造用{1/3,1}且每任务唯一small；固定delta在[0,1/3)时接口容量1+delta仍只允许整数单位峰<=1。delta=1/3端点的源NO可接口可行，仅说明这份归约端点失效。",
+    "current_half_unit": "现行主稿追加half时间{1/2,1}的完整归约，固定delta在[0,1/2)时共同H/(A_delta)见证存在与源perfect3DM等价，并有总位多项式YES见证生成器的承诺障碍。不能因旧程序或旧review只覆盖delta<1/3，就把现行已证[1/3,1/2)窗口重新列为开放。",
+    "endpoint_scope": "delta=1/3或1/2的特定归约端点失效不证明端点已有算法；3DM NP完全性是原证明导入的标准复杂度依赖。本组未运行后加half程序，也未把其历史运行挪给旧两程序。",
+    "terminal_block": "专用逃逸族在1<=B<=theta_k=2-1/k时须重算r_B=k-floor(k(B-1))。末簇Z_g>=(r_B-1)Y_v及层间原任务守恒给z负载>=(r_B-1)r_B^(h-1)/2；B<theta时r_B>=2、h>=3使下界>=2>B，theta处r_B=1而系数0，真实最优调度的Dirac配置保可行。",
+    "block_limit": "系数不能冻结在旧目标而误删theta处的真调度。该符号切面识别列明末簇家族，不是一般块分离oracle或一般UM算法。局部方向/压缩参数检查不当作大树全部调度枚举。"
+  },
+  "half_density_and_profiles": {
+    "domain": "每变量两私有完整k叉深h树，原selector、内部job和叶port全部保留；每clause真实两轨全部叶arity d_c<=2A_c，无pins/预载/额外任务。不是只计某份YES外送叶。",
+    "Hall_mechanism": "每个原job放两个半片，每槽最多两片；任意job集有2|J|半片而邻槽每个至多2片，故Hall一次覆盖全部变量/轨/原jobs。incoming占首槽时至多再留floor(k/2)小件，峰<=1+floor(k/2)/k<=3/2，外unit至多一job。",
+    "actual_output": "保原机器编号区间、所有原资格和未用外机的零负载区间；从完整sigma提取真实pruned森林，不能把叶数任意补祖先。算法自由选根，不需要源YES或OPT。",
+    "profile_boundary": "指定全正profile锐族的全局OPT仍1，而固定profile最优2-1/(2p-1)；自由选根与指定根是不同合同。p2在半密度域，p1及p3/p4不因此全属该域；不可用指定profile趋二反驳自由根半槽算法。",
+    "CLI_boundary": "旧半密度CLI默认4300十进制位上限时5001位capacity文本在int解析处失败，显式PYTHONINTMAXSTRDIGITS=0后同源码成功；是实现环境限制，不是数学半密度反例。原失败/成功日志和不同修复源身份保留。"
+  },
+  "tiny_big_repair_and_bound": {
+    "correct_CONFIG": "每机sum_C y_iC=1，每剩余job sum_i,C包含j y_iC=1，配置为不重复原job子集且负载<=T。每正权残余atom仅big计数<=K；不要求一个atom包含全部job。",
+    "zero_preprocessing": "任意位置有零端的原job实际放该端并从全部CONFIG删除；其余覆盖和归一不变，负载不增。所有稳定量及基数承诺据残余重算；不声称删除前后r/s/b数值不变。",
+    "support_parameters": "残余tiny按p<=delta*T，tau_i(C)为其工作量，r_i=min正支持tau，s_i=sum y*tau，b_i为正边际tiny最大单件、空支撑0；s_i-r_i<=omega*T。big部分容量<=T-tau_i(C)<=T-r_i，T-r_i=0时无正big边。",
+    "joint_output": "同一原job在不同机器可属不同角色，但联合图只含一个任务节点；同一全局匹配覆盖全部残余job，再并入已实际安置的零job。L_i<=alpha_K(T-r_i)+s_i+b_i<=(alpha_K+omega+delta)T。",
+    "zero_example": "两机一job，时间(0,1)，T1/K1/delta0/omega0。给定y在零机空配置、正机{job}各权1，合法CONFIG(1)。省略全局预处理时正支撑槽匹配输出峰1而真实OPT0；给定T界仍成立。当前预处理实际放零机并删空残余，输出0。",
+    "selection_scope": "tiny稳定证书的固定源族omega<1/2选择障碍、nu/mu三值峰及给定显式CONFIG的构造是另外的准确对象，不与H接口delta窗口或一般UM hardness合并。正T选择族及原证明范围未改。"
+  },
+  "input_coverage": [
+    {
+      "path": "archives/unrelated-machines/state/审查/共同匹配联合槽舍入与包络配置三源审查--审查.md",
+      "input_sha256": "d8ad15db9cdf52d26be477052626a1afd6b0d1106982081d19b82d81e500bb47",
+      "disposition": "reuse-unmodified",
+      "preserved_content": "完整H,x条件舍入、三分之一与half追加选择复杂度、末块cut；另含逐机跨度二3/2、双small incidence与精确槽包络/CONFIG身份，均按原各自假设及外部框架范围保留。非凸包络全局最优化=OPT不写成新小于二松弛。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/半密度半槽与指定根锐族的独立原程序--审查.md",
+      "input_sha256": "736b7f3055bba92e94dec011dc1915f1c7fa73bf1e4f5d4587b0950f22da61a3",
+      "disposition": "reuse-unmodified",
+      "preserved_content": "半密度全变量共同半槽、完整sigma与真实森林、原机器/资格/零区间、独立p1至4完整矩阵和指定根锐值；自由/指定profile、密度/高度及旧CLI大整数文本限制和真实环境设置全部保留。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/小任务稳定联合舍入与选择障碍三源审查--审查.md",
+      "input_sha256": "37af36c6925b605a73ef4396a934054ba5db339507e80f4106cfeaa0a43dab66",
+      "disposition": "reuse-unmodified",
+      "preserved_content": "给定显式CONFIG的共同big/tiny图、全局零端删除先于big基数、合法输入与拒绝边界、5000位分母exact输出及alpha巨大分母未构造的事实、四元组ell2/3完整有限赋值和固定源选择障碍分别保留。有限CLI不是一般LP、alpha全展开或复杂度证明。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/共同大边补全双原程序与三分之一版本边界--计算.md",
+      "input_sha256": "99028c3e98b60e1a6b5a4ea94ef0025df85b83c1467f8e632b26aebffe74051f",
+      "disposition": "reuse-unmodified",
+      "preserved_content": "两种不同3DM原job构造、q0空/非空不同域、旧程序delta<1/3实际有限核验、真分数H保持与逐机回算、局部路径方向及B重算末块；现half<1/2数学追加不倒填成旧CLI运行，也不被旧review历史OPEN截掉。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/小任务联合槽稳定性与选择边界--定理.md",
+      "input_sha256": "55c0c354bc886dc7d6d47db4a91a203d762f41401294c27f7f6611c6bd6dc64c",
+      "disposition": "targeted-contract-repair",
+      "preserved_content": "修正CONFIG全局覆盖/完整与big容量/正权big基数，补全实际零端输出与残余重算，解除零OPT矛盾；原正T槽界、三值实际原任务支付和固定源复杂度范围不变。原source_refs与3097ebf2d896e815ae1038bb5f205bbb9f8f31d309d2b9f0aaa7916451fb7c9d指纹保留。"
+    }
+  ],
+  "honest_source_scope": "本轮完整读五个当前输入，必要模型和已充分数学按现行正文精确复用。54274B原tiny review在当前checkout仅有指纹/阅读索引，本轮未重新取得或全文读它；没有把历史source字段说成本轮新盲审。定点修复由当前合法CONFIG定义、输入审计明确的全局零端顺序及本页自身数学逻辑承担。",
+  "preservation_and_limits": "其余四正式页原字节保留，原程序、JSON、真实输入、环境失败/成功记录和所有附件不改；不重跑suite。没有寻找一般H/稳定证书、通用CONFIG后端或一般UM算法；所有选择障碍、专用cut及有限审计保持原量词。只写获准第5页和本组assets/coverage，没有登记第三步或超边。"
+}
