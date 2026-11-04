@@ -204,21 +204,23 @@ def locked_save(repo, common, cache, args):
         raise Stop("origin must have one identical fetch and push destination.")
     if SECRET.search(remote.encode()) or re.search(r"https?://[^/]*@", remote):
         raise Stop("Remove credentials embedded in origin; use external authentication.")
-    credential = args.token_file or os.environ.get("WCG_CHECKPOINT_TOKEN_FILE")
-    auth_mode=git(repo,'config','--local','--get','wcg.auth',check=False).stdout.decode().strip()
-    if auth_mode=='ssh':credential=None
-    if not credential and auth_mode!='ssh':
-        credential = git(repo, "config", "--local", "--get", "wcg.tokenFile", check=False).stdout.decode().strip()
-    if credential:
-        credential = Path(credential).resolve()
-        if credential.is_relative_to(repo):
-            raise Stop("Keep the credential file outside the repository.")
-        token(credential)  # Validate silently; only the file path is remembered locally.
-        if args.token_file:
-            git(repo, "config", "--local", "wcg.tokenFile", str(credential))
-        os.environ["WCG_CHECKPOINT_TOKEN_FILE"] = str(credential)
-        os.environ["GIT_ASKPASS"] = str(Path(__file__).resolve())
-        os.environ["WCG_CHECKPOINT_ASKPASS"] = "1"
+    credential = None
+    if not getattr(args, 'local_only', False):
+        credential = args.token_file or os.environ.get("WCG_CHECKPOINT_TOKEN_FILE")
+        auth_mode=git(repo,'config','--local','--get','wcg.auth',check=False).stdout.decode().strip()
+        if auth_mode=='ssh':credential=None
+        if not credential and auth_mode!='ssh':
+            credential = git(repo, "config", "--local", "--get", "wcg.tokenFile", check=False).stdout.decode().strip()
+        if credential:
+            credential = Path(credential).resolve()
+            if credential.is_relative_to(repo):
+                raise Stop("Keep the credential file outside the repository.")
+            token(credential)  # Validate silently; only the file path is remembered locally.
+            if args.token_file:
+                git(repo, "config", "--local", "wcg.tokenFile", str(credential))
+            os.environ["WCG_CHECKPOINT_TOKEN_FILE"] = str(credential)
+            os.environ["GIT_ASKPASS"] = str(Path(__file__).resolve())
+            os.environ["WCG_CHECKPOINT_ASKPASS"] = "1"
     paths = [relative(repo, p) for p in (args.paths or default_paths(repo))]
     specs = [":(literal)" + p for p in paths]
     for p, spec in zip(paths, specs):

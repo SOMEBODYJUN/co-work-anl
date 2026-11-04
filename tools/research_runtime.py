@@ -25,6 +25,18 @@ TRUTHS = {'definition', 'proved', 'conditional', 'conjecture', 'open', 'refuted'
 STATES = {'working', 'needs-feedback', 'blocked', 'candidate', 'paused', 'closed'}
 IDENT = re.compile(r'[A-Za-z0-9][A-Za-z0-9_.-]{0,95}')
 
+# Every new mathematical run gets the same three platform launch slots.  The
+# role split preserves the useful blind-vs-informed comparison while making the
+# model/effort choice explicit and machine-readable for Work orchestration.
+SOLVER_ROSTER = [
+    {'solver_id': 'obstacle-1', 'profile': 'obstacle', 'model': 'gpt-6.1-sol',
+     'reasoning_effort': 'ultra', 'fork_turns': 'none'},
+    {'solver_id': 'full-1', 'profile': 'full', 'model': 'gpt-6.1-sol',
+     'reasoning_effort': 'ultra', 'fork_turns': 'none'},
+    {'solver_id': 'full-2', 'profile': 'full', 'model': 'gpt-6.1-sol',
+     'reasoning_effort': 'ultra', 'fork_turns': 'none'},
+]
+
 
 def _write_json(path, data):
     """A crash leaves either the previous JSON or the complete new JSON."""
@@ -394,7 +406,8 @@ def packet(root, spec, profile, registry=REGISTRY):
     result = {'problem_id': spec['problem_id'], 'profile': profile, 'target': target,
               'definitions': definitions, 'obstacles': obstacles,
               'task': 'Solve this exact problem freely. Use any useful mathematical method. Save substantive progress and explicit gaps.',
-              'launch': {'fork_turns': 'none', 'instruction': 'Start a fresh-history solver. Supply only this packet and the matching solver prompt.'},
+              'launch': {'fork_turns': 'none', 'model': 'gpt-6.1-sol', 'reasoning_effort': 'ultra',
+                         'instruction': 'Start a fresh-history solver with the declared model and effort. Supply only this packet and the matching solver prompt.'},
               'limit': 'Context selection is not a file-system access-control boundary; unrestricted tools can read other files.'}
     if profile == 'full':
         result['context'] = context(root, spec['seed_ids'], registry, spec.get('hops', 2))
@@ -415,13 +428,18 @@ def init_run(root, run_id, spec_file, registry=REGISTRY):
     home = path.parent
     for profile, value in packets.items():
         _write_json(home / ('packet-' + profile + '.json'), value)
+    roster = copy.deepcopy(SOLVER_ROSTER)
     state = {'schema': 2, 'run_id': run_id, 'problem_id': spec['problem_id'], 'state': 'working',
              'spec': spec_file, 'spec_pin': pin(spec), 'registry': registry, 'solvers': {},
+             'solver_count': len(roster), 'solver_roster': roster,
+             'launch_plan': {'platform': 'Work', 'exact_count': len(roster),
+                             'instruction': 'Launch every roster slot before solving; Main is not an extra Solver.'},
              'packet_pins': {profile: pin(value) for profile, value in packets.items()},
-             'note': 'No agents were launched by this command; Main starts them through the Work orchestration API.'}
+             'note': 'This command writes packets and a fixed launch plan; Work starts all three platform Solver agents.'}
     _write_json(path, state)
     return {'status': 'initialized-local-not-pushed', 'run': path.relative_to(root).as_posix(),
-            'packets': [str((home / ('packet-' + p + '.json')).relative_to(root)) for p in packets], 'agents_launched': 0}
+            'packets': [str((home / ('packet-' + p + '.json')).relative_to(root)) for p in packets],
+            'solver_count': len(roster), 'solver_roster': roster, 'agents_launched': 0}
 
 
 def update_run(root, run_id, solver_id, profile, note, next_action, state, feedback=None, agent_id=None):
@@ -465,8 +483,10 @@ def resume(root, run_id):
     for solver in run['solvers'].values():
         ref_bytes(root, solver['note'])
     head = subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=root, capture_output=True, text=True)
+    roster = run.get('solver_roster', SOLVER_ROSTER)
     return {'run': run, 'local_head': head.stdout.strip() if not head.returncode else None,
-            'instruction': 'Continue the recorded agent with its existing history. If unavailable, launch fresh with the same profile packet, note, events and pending feedback.',
+            'solver_count': run.get('solver_count', len(roster)), 'solver_roster': roster,
+            'instruction': 'Continue each recorded Solver with its existing history. If unavailable, launch the same roster slot fresh with the same profile packet, note, events and pending feedback.',
             'publication': 'Local HEAD is not remote confirmation; checkpoint and verify status=pushed separately.'}
 
 
@@ -490,6 +510,9 @@ def main(argv=None):
     q = sub.add_parser('packet'); q.add_argument('spec'); q.add_argument('--profile', choices=['obstacle', 'full'], required=True)
     q = sub.add_parser('init'); q.add_argument('run_id'); q.add_argument('--spec', required=True)
     q = sub.add_parser('resume'); q.add_argument('run_id')
+    q = sub.add_parser('compute', help='Run one registered experiment and checkpoint its receipt immediately')
+    q.add_argument('experiment'); q.add_argument('--out', required=True)
+    q.add_argument('--message'); q.add_argument('--local-only', action='store_true')
     q = sub.add_parser('save'); q.add_argument('run_id'); q.add_argument('--solver', required=True)
     q.add_argument('--profile', choices=['obstacle', 'full'], required=True); q.add_argument('--note', required=True)
     q.add_argument('--next', required=True); q.add_argument('--state', choices=sorted(STATES), default='working')
@@ -518,6 +541,9 @@ def main(argv=None):
     elif a.command == 'packet': result = packet(root, json.loads(_safe_path(root, a.spec).read_text()), a.profile, a.registry)
     elif a.command == 'init': result = init_run(root, a.run_id, a.spec, a.registry)
     elif a.command == 'resume': result = resume(root, a.run_id)
+    elif a.command == 'compute':
+        import codespace_math
+        result = codespace_math.run(root, a.experiment, a.out, a.message, a.local_only)
     else: result = update_run(root, a.run_id, a.solver, a.profile, a.note, a.next, a.state, a.feedback, a.agent_id)
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0

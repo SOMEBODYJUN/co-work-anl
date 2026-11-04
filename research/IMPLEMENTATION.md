@@ -84,7 +84,7 @@ python work.py research build --final
 
 ## Work中直接解题
 
-Main使用[研究启动词](../prompts/research-runtime.md)，Solver仅两类：[障碍组](../prompts/solver-obstacle.md)与[成果组](../prompts/solver-full.md)。两组从空历史启动，比例和数量按实际资源决定，不增加常驻审查流水线。
+Main使用[研究启动词](../prompts/research-runtime.md)，Solver仅两类：[障碍组](../prompts/solver-obstacle.md)与[成果组](../prompts/solver-full.md)。每次新的RUN固定三个槽位：一个障碍组、两个成果组；三者均使用`gpt-6.1-sol`和`reasoning_effort=ultra`，从空历史启动。Main不算Solver，也不增加常驻审查流水线；容量不足必须记录，不能静默减少数量。
 
 任务spec为`{problem_id,problem:{path,sha256,section?},definitions:[ref],obstacles:[ref],seed_ids:[ID],hops:2}`。problem和definitions必须完整保留题目、域、量词与约束；障碍材料由Main实读挑选，不能塞进全部既有成果。packet生成器不会做语义脱敏，也不是文件访问控制。若Solver仍有全仓工具，必须靠明确读取规则或平台权限维持输入差异，不能声称物理隔离。
 
@@ -96,13 +96,14 @@ python work.py research context OBJECT_ID --hops 2
 python work.py research save RUN --solver solver1 --profile full --note archives/YOUR_ARCHIVE/workspaces/Boss32/solver1.md --next 'Complete the stated missing inequality' --state working --agent-id PLATFORM_AGENT_ID
 python work.py research save RUN --solver solver1 --profile full --note archives/YOUR_ARCHIVE/workspaces/Boss32/solver1.md --next 'Answer the precise objection' --state needs-feedback --feedback 'Specific objection and what is already accepted'
 python work.py research resume RUN
+python work.py research compute cag-five-local --out research/checks/codespace/cag-five-local.json
 ```
 
-init只生成输入和恢复状态，**不会自动创建Work子代理**。Main通过平台实际的spawn/followup工具启动或接续，按packet的`fork_turns:none`要求操作。成果组可查全部已登记成果，默认两跳只返回元数据和完整超边；按需show正文、读证据、再扩展，不把全仓塞进上下文。障碍组只接收原题、定义、已知障碍与失败边界；若自主提出需要更完整成果，Main明确记载转换或另开成果组任务，不悄悄污染原输入。
+init只生成输入和恢复状态，**不会自动创建Work子代理**。Main通过平台实际的spawn/followup工具启动固定三槽位，按packet的`fork_turns:none`、模型和effort要求操作。成果组可查全部已登记成果，默认两跳只返回元数据和完整超边；按需show正文、读证据、再扩展，不把全仓塞进上下文。障碍组只接收原题、定义、已知障碍与失败边界；若自主提出需要更完整成果，Main明确记载转换或另开成果组任务，不悄悄污染原输入。
 
 save保存不可变笔记副本、event、continuation_of、平台agent_id和具体下一步。Main把反馈送回原Solver；替代者沿用相同profile、packet、笔记和事件。registry改动不自动改变已保存输入。可恢复的是已保存数学进展和任务状态，不保证平台恢复原进程或隐藏推理。断网保留local-only，恢复凭据后用原checkpoint正常推送。
 
-每形成有价值的Lemma、构造、反例、精确实验、失败机制或关键缺口立即checkpoint；不等目标完全解决。新研究先保存候选正文/证据，更新登记和边需要明确数学判断。Main继续用现有公屏、Boss编号、个人工作区、sync/checkpoint；不为本工具另建每轮远端分支。
+每形成有价值的Lemma、构造、反例、精确实验、失败机制或关键缺口立即checkpoint；不等目标完全解决。`research compute`会把一次登记实验的回执、版本和输出先提交本地，再尝试推送同一提交。新研究先保存候选正文/证据，更新登记和边需要明确数学判断。Main继续用现有公屏、Boss编号、个人工作区、sync/checkpoint；不为本工具另建每轮远端分支。
 
 ## 迁移到其他仓库
 

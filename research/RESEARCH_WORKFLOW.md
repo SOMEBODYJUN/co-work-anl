@@ -15,15 +15,15 @@
 
 模型并发和程序计算是两类资源。本实现没有用GitHub token启动模型；增加云机器CPU也没有在代码里自动增加Work的Solver数量。GitHub保存的是可重新读取的研究资产，不是模型隐式记忆。
 
-Main的任务是送材料、收结果、提具体意见、接续原Solver、串行组织Git写入和频繁保存。Solver直接解决同一个精确问题，自选方法。主要两类输入：障碍组收到完整原题/定义/已知失败边界；成果组还可按需取全部已登记成果。两组从空历史启动，不能继承Main已读的全部内容；提示词/packet不是文件系统权限隔离。
+Main的任务是送材料、收结果、提具体意见、接续原Solver、串行组织Git写入和频繁保存。每次新的数学RUN固定启动三个Solver槽位：一个`obstacle-1`障碍组和两个`full-1/full-2`成果组，三者均为`gpt-6.1-sol`、`reasoning_effort=ultra`、`fork_turns=none`；Main不计入这个数量。Solver直接解决同一个精确问题，自选方法。主要两类输入：障碍组收到完整原题/定义/已知失败边界；成果组还可按需取全部已登记成果。两组从空历史启动，不能继承Main已读的全部内容；提示词/packet不是文件系统权限隔离。平台容量不足时必须记录缺失槽位，不能静默降级。
 
 ## 一次真实研究怎样进行
 
 1. **恢复同一问题。** 新对话恢复自己的clone，核对题目、模型、量词、当前数学状态与最后断点。Main给出准确任务，不从全部旧聊天重建题意。
-2. **给两类Solver输入。** research init生成packet及运行记录；Main使用Work实际的spawn工具启动，保存真实agent_id。init本身不创建模型进程。
+2. **给三个Solver输入。** research init生成两个packet和固定三槽位运行记录；Main使用Work实际的spawn工具一次启动`obstacle-1/full-1/full-2`，保存真实agent_id。init本身不创建模型进程。
 3. **按需取知识并解题。** 成果组先search看目录，再show读实际正文；context默认两跳，带出多前提超边的全部端点与条件。遇到有用方向可以继续扩展。障碍组保持约定输入，不被既有路线预先固定。数学方法没有白名单。
 4. **在需要时写代码。** 可以枚举小实例、构造候选、用精确有理数检查不等式、验证策略/证书，或者运行适合本题的其它算法。没有必须先实验再证明的固定循环；能直接证明就直接证明。
-5. **及时保存可接续的进展。** Solver写自己的笔记和代码/输入；Main把具体反馈送回原Solver，并保存run、不可变笔记副本、事件、下一步和checkpoint。保存草稿不必等其成为正式定理。
+5. **及时保存可接续的进展。** Solver每产生一个有价值的引理、构造、反例、失败路线、实验回执或判断，就写自己的笔记和代码/输入，Main把具体反馈送回原Solver，并立即保存run、不可变笔记副本、事件、下一步和checkpoint。保存草稿不必等其成为正式定理，也不能把多项结果攒到最后一次提交。
 6. **有数学价值后写回。** 成熟结论、有效反例、可复用方法或明确缺口进入相应存档state；代码/输入/输出进入对应证据位置。新增或更新登记、超边时保留精确身份、状态和证据，不能把计算结果直接提升为一般证明。
 
 例如在六人客户吸引问题上，Solver可编写候选搜索；找到一个低覆盖终局仅是线索。若要称原模型反例，仍需给完整目录、客户、覆盖全部有序历史的纯SPE策略以及精确核验。程序只检查实际路径、松弛LP或局部菜单时，必须如实记录其范围。没有找到反例也不是一般命题的证明。
@@ -37,7 +37,7 @@ Main的任务是送材料、收结果、提具体意见、接续原Solver、串�
 | 当前Work执行环境 | 可执行仓库Python；两项既有精确数学审计实际复跑通过 | 新问题的搜索/符号/优化程序仍由Solver按题编写；没有预装和验收所有数学软件 |
 | work.py research | 检索、正文、超边窗口、packet、保存、反馈事件和恢复；有端到端测试 | 当前真实全仓registry/graph仍待对应阶段产生 |
 | work.py checkpoint/sync | 已实际认证、推送并确认远端；保留不同对话工作 | 只有pushed才称长期共享，本地文件存在不等于已交付 |
-| tools/compute.py | 执行research/experiments.json明确登记的命令并留版本、seed、精度、输出、错误和范围 | 目前只登记runtime-smoke、cag-five-local、positive-kernels-rank三项；不是任意数学问题的现成求解器 |
+| tools/compute.py + `work.py research compute` | 执行research/experiments.json明确登记的命令并留版本、seed、精度、输出、错误和范围；命令完成后自动做一次本地checkpoint并尝试推送 | 目前只登记runtime-smoke、cag-five-local、positive-kernels-rank三项；不是任意数学问题的现成求解器；新实验必须先登记；需要共享的回执写入未被`.gitignore`排除的`research/checks/`或存档证据目录 |
 | Actions | push检查、workflow_dispatch、artifact、超时、并发控制和只读GITHUB_TOKEN配置；直接PAT dispatch接口 | 当前workflow配置能跑已登记命令；workflow_dispatch需要workflow在可发现的分支；请求被接受不等于实验通过 |
 | Codespaces | devcontainer、postCreateCommand、机器列表、创建/停止接口；可再配置prebuild | Codespace是远程开发/计算机，不是Work模型；创建后仍需在其中运行登记命令并取回artifact |
 | 文献/网页工具 | Solver可按当前平台实际提供的检索和阅读工具查原始文献 | 不是由GitHub token授予；精确引用及定理适用条件仍须核查 |

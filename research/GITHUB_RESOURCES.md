@@ -48,6 +48,16 @@ python tools/compute.py cag-five-local --out validation/cag-five-local.json
 python tools/compute.py positive-kernels-rank --out validation/positive-kernels-rank.json
 ```
 
+在Codespace里给数学研究直接使用的入口是：
+
+```sh
+python work.py research compute cag-five-local --out research/checks/codespace/cag-five-local.json
+```
+
+这条命令先运行`research/experiments.json`中登记的精确计算，保存命令、版本、seed、精度、stdout/stderr和适用范围；随后立即做一次本地Git提交，再尝试把同一提交推送并确认远端。共享回执应放进未被`.gitignore`排除的`research/checks/`或存档证据目录。凭据或网络失败时输出`local-only`，计算回执和本地提交仍保留，不能把它说成已共享。每个有价值的引理、构造、反例或实验都重复这条保存动作；一个长任务不能只在最后提交一次。
+
+具体数学用途是：在统一的Linux/Python环境中运行Solver写的有限枚举、`fractions.Fraction`精确不等式审计、符号/优化程序或可复现实验；把输入、参数、随机种子、精度控制、输出和解释放在`validation/`或对应存档的`tools/evidence/`，再由Main判断哪些只是Observation/Evidence、哪些值得写入数学正文。Codespace本身不增加Work模型或Solver数量，也不自动把计算结果升级为证明。
+
 后两项均为仓库已有的标准库精确有理数计算。cag-five-local只检查五人局部组件，不是完整五人证明或六人结论；positive-kernels-rank只检查既有有限代数输入，不外推任意权重、次数或闭包定理。
 
 配置成功推送后，Code→Codespaces可按统一配置创建环境。Actions手动workflow_dispatch通常还要求workflow文件存在于默认分支；长期工作分支与main分开，不擅自合并。保持main不动时，可用工作分支push检查或Codespaces直接运行命令。配置已写不代表云端运行通过。

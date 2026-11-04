@@ -153,6 +153,16 @@ class ResearchRuntimeTests(unittest.TestCase):
         self.assertEqual(state['agent_id'], 'live-agent-1'); self.assertEqual(state['feedback'], 'Is zero actually allowed?')
         with self.assertRaises(ValueError): research.init_run(self.root, 'r1', 'research/spec.json')
 
+    def test_new_run_declares_three_ultra_solver_slots(self):
+        result = research.init_run(self.root, 'three-slots', 'research/spec.json')
+        self.assertEqual(result['solver_count'], 3)
+        self.assertEqual([slot['solver_id'] for slot in result['solver_roster']],
+                         ['obstacle-1', 'full-1', 'full-2'])
+        self.assertEqual({slot['model'] for slot in result['solver_roster']}, {'gpt-6.1-sol'})
+        self.assertEqual({slot['reasoning_effort'] for slot in result['solver_roster']}, {'ultra'})
+        saved = json.loads((self.root / 'research/runs/three-slots/run.json').read_text())
+        self.assertEqual(saved['launch_plan']['exact_count'], 3)
+
     def test_problem_change_cannot_resume_as_same_problem(self):
         research.init_run(self.root, 'r1', 'research/spec.json')
         self.spec['problem_id'] = 'another-problem'; self.write_json('research/spec.json', self.spec)
