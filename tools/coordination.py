@@ -32,7 +32,7 @@ def verify_write(root,branch,tip=None):
         tip=board.git(root,'rev-parse','FETCH_HEAD').stdout.decode().strip()
     result=board.git(root,'push','--dry-run','--porcelain','origin',tip+':refs/heads/'+branch,check=False)
     if board.auth_rejected(result):raise board.AuthenticationError('GitHub rejected the credential/write permission. Stop retrying this credential.')
-    advanced=bool(result.returncode and re.search(rb'non-fast-forward|fetch first',result.stdout+result.stderr,re.I))
+    advanced=board.push_race(result)
     if result.returncode and not advanced:raise board.BoardError('Write check failed: '+result.stderr.decode(errors='replace')[:700])
     return {'status':'write-verified','branch':branch,'remote_advanced':advanced,'checked_at':int(time.time()),'method':'receive-pack dry-run; no remote change'}
 

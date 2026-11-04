@@ -1,0 +1,106 @@
+{
+  "task_id": "OTHER-UM-JOINT-FLOW",
+  "disposition": "exact-reuse-of-complete-structural-algorithms-and-preserved-software-boundaries",
+  "assets_file": "curation/workspaces/20261103-boss6-current/groups/OTHER-UM-JOINT-FLOW/assets.json",
+  "formal_edits": [],
+  "mathematical_exit": {
+    "question_answer": "macro-home/sink满流只有在同一原任务资格、各版本相应的共同占用守恒和出口计费合同下，才能恢复全部原任务；使用LP的版本必须使用同一a/y。每宏恰选一个home、每home至多一宏、同一被占组同时选接收槽；回填必须使用该合同允许的原任务子集，未占宏组全部留home，零需求旁路不产生真实出口。",
+    "common_structure": "home与sink不交，结构分解已在输入中；宏只在home，私有任务只有自身home和同组共同E_h资格，全部这些私有端时间等于同一个w_j。共同资格和等端体积承重，不能从任意UM矩阵免费提取。",
+    "flow_integrality": "source到macro、home-in到home-out、槽到target的单位容量，以及同一a/y构成的全宏分数流，保证整数流同时选择macro/home/receiver。总流值必须等于全部宏数；不得先独立挑宏匹配再补不相容的接收者。",
+    "schedule_output": "每个原宏按所选合法端处理；每个被选home只迁规定原子出口任务，剩余私有任务留原home；未选home不迁其预计算出口。每个原任务恰一次、有具体合法端点，实际负载由原时间逐机累加，而不是抽象负载向量或分数工作量。"
+  },
+  "three_recovery_contracts": [
+    {
+      "name": "q-Hall组流",
+      "formal_location": "archives/unrelated-machines/state/计算/Hall联合流与未知最优承诺双独立原程序--计算.md",
+      "domain": "q为二进制整数且q>=2，delta>=0、q*delta<2，theta=1/2+1/q；theta*T<=W_h<=T、w_j<=delta*T，全部有限宏端>T/2，宏网络只保p<=T。",
+      "selection_and_rounding": "真实T调度的每个被占home外送量>T/q，给q份接收容量的Hall条件；同一macro-home-sink整数流给每sink至多q个组。tau=(q-1+q*delta)/(q+1)，仅对被选组外送最短原任务前缀至留量<=tau*T。",
+      "actual_loads": "T>0时单组出口<(1-tau+delta)T，无需出口时为0；home<=(1+tau)T，sink<=q(1-tau+delta)T，两界等于rho*T，rho=(2q+q*delta)/(q+1)<2。T=0时无宏直接零调度，有宏则正宏端被剪空而可靠失败。q按容量存，不展开q顶点。",
+      "refusal": "合法阈值合同内联合流无法覆盖全部宏，才可靠推出OPT>T。非法数据异常不是这种FAIL，成功只保证rho*T而不保证T可行。"
+    },
+    {
+      "name": "weighted虚拟组尺寸",
+      "formal_location": "archives/unrelated-machines/state/算法/共同资格组的加权出口联合槽--算法.md",
+      "domain": "W_h<=T、w_j<=delta*T、0<=delta<1/2，全部有限宏端>T/2；允许宏端>T并在LP中剪去。虚拟尺寸d_h=(W_h-T/2)_+，同一LP有macro质量a、home占用x及receiver质量y，sink加权预算sum d_h*y_hz<=T。",
+      "simultaneous_slots": "按d_h非增把同一y切单位槽，原分数流覆盖全部宏，整数化同时选择home和receiver；槽收费给每sink选中虚拟尺寸总量<=T+max d_h<=3T/2。d=0可走零dummy，dummy不是实际机器。",
+      "valid_prefix": "此算法固定tau=1/2+delta。若W_h<=tau*T不迁任务；否则原顺序前缀的最后一步误差由home的delta*T余量支付，实际出口e'_h<d_h。故sink真实负载<=3T/2，home<=(3/2+delta)T。这里前缀正确，不与自由tau算法的撤回前缀混同。",
+      "software": "数学算法含标准有理LP和未知OPT搜索；现软件仅验证给定精确a/y并恢复。坏见证ValueError不认证OPT>T。delta=0仍可有正宏/正OPT。"
+    },
+    {
+      "name": "自由门槛同覆盖FPTAS",
+      "formal_location": "archives/unrelated-machines/state/算法/门槛覆盖的同见证联合槽恢复--算法.md",
+      "domain": "T>0、tau在[1/2,1)、eta>0；d_h=(W_h-tau*T)_+。保原覆盖约束的0/1成本缩放DP产生实际原任务X_h，e_h>=d_h且e_h<=(1+eta)e_h星。DP存精确原覆盖量，不允许近似覆盖不足或重复使用同任务。",
+      "same_cover_condition": "联合LP和sink槽均按这份X_h的同一个e_h计费，sum e_h*y_hz<=(1+eta)T。流选中(h,z)后必须将原X_h整个送z，不能换固定前缀或另一份较重覆盖；未占宏组即使已算X_h也全部原地。",
+      "actual_loads": "e_h<=(1+eta)(1-tau+delta)T；home<=(1+tau)T，sink<=(1+eta)(2-tau+delta)T。R为两者最大值，常数参数满足相应条件时R<2；不声称任意delta/eta/tau都严格次二。",
+      "math_software_split": "数学算法的覆盖FPTAS、显式有理LP、槽流与一侧完备网格搜索已有证明；现代码只有minimum_cover和给定a/y的round_certificate，没有通用LP生成器、零阈值外层或未知OPT端到端后端。"
+    }
+  ],
+  "withdrawn_prefix_preservation": {
+    "status": "旧错误仅作为明确撤回的历史反例保存，不留作当前自由门槛恢复规则。",
+    "small_example": "T=1、tau=1/2，原顺序权(2/5,2/5,1/5)，需求1/2，最小覆盖3/5而固定前缀4/5；LP按X收费却恢复该前缀不能保证成本。",
+    "unbounded_family": "每r>=1，5r个home共一sink，s=1/(10r)，每组宏1/2+s、私有原顺序一件1/5加3r+1件s。正确同覆盖每组选一小件，LP总费1/2；旧前缀却总出口r。真实OPT=1，新恢复sink1/2且home1+s，在其已证R界内。",
+    "scope": "这不否定weighted固定tau=1/2+delta的正确前缀，也不改变原任务。UB必须同时比较大单件和小件越阈前缀；d=10、权(6,4,100)不能因有大单件就返回100而漏最优10。"
+  },
+  "unknown_OPT_and_reliable_failure": {
+    "general_rule": "数学阈值过程在适用结构promise内若OPT<=T必接受，失败才蕴含OPT>T；成功可能发生在T<OPT，因为实际输出只需<=R*T。拒绝给错a/y、结构参数非法或固定充分证书不可用，不等于整个数学可行性测试FAIL。",
+    "Hall_bottleneck": "q-Hall承诺以真实O尺度成立，先在离散宏时间上求同一联合接收网络全覆盖的最小B，再取t=max(maxW,maxw/delta,B)<=O；不得只求macro-home瓶颈而漏sink。其δ=0正O承诺不成立，与weighted算法的δ=0分支不同。",
+    "strict_t_example": "两home一sink，每组6项1/6、两宏各只在其home且时间3/5，q=3、delta=1/3。真实O=11/10，恢复t=1；此例说明t不等于O，成功不声称峰<=t。",
+    "weighted_search": "d_h(t)=(W_h-t/2)_+随t只降，宏可用边/旁路/容量只增，数学LP测试单调；原OPT宏下界用于完备性，不在网格测试额外检查p>t/2。零端直接处理，delta=0不需要除delta。",
+    "threshold_search": "自由覆盖子集及e_h(t)的低侧接受集合可以非单调。先处理零分支，以有限时间分母积Q在整数网格测试，t>=OPT全部接受，任何真实拒绝k<Q*OPT。保持low拒绝、high接受且low<Q*OPT，整数相邻终止high<=Q*OPT即可得R*OPT，不要求低侧单调。",
+    "software_boundary": "上述保证属于完整数学oracle及结构promise。现threshold/weighted给定见证软件不自行生成所有a/y，错误见证的拒绝不能作网格中sound FAIL；原指数DFS/subset-sum审计也不是生产LP或通用未知OPT后端。"
+  },
+  "bundle_peeling_separate_interface": {
+    "formal_location": "archives/unrelated-machines/state/定理/任务包共同入流剥离--定理.md",
+    "given_data": "输入已有实际初态sigma和完整实际目标tau，0<=T<=C<=2T；所有实际源/目标端时间<=T，初峰<=C、目标峰<=T。",
+    "guarantee": "算法输出每个改变原任务直接迁到目标一次的全排列，每个前缀所有机器同时负载<=max(2T,C+T/2)。逐机包及补集均需覆盖安全阈值；五阶段含阶段0安全根出口、共同入流剥离、逆删除补包、补集释放、核心释放，不漏原任务。",
+    "separation": "此定理控制给定完整目标后的路径，不寻找目标，不从分数macro/sink流免费提取一般整数tau。合同失败是不适用，不是OPT>T；也不能未经重新核尺度就把它的T与联合槽算法的恢复峰或任意阈值混为一个数。"
+  },
+  "input_coverage": [
+    {
+      "path": "archives/unrelated-machines/state/计算/Hall联合流与未知最优承诺双独立原程序--计算.md",
+      "input_sha256": "90632a13d48a8015721ad38a20053227478560c781dfe446b8b8af2636b963f1",
+      "disposition": "reuse-unmodified",
+      "preserved_content": "原Hall q组流、同一macro-home-sink选择、实际前缀、所有原任务回填、合法None和非法异常区别、离散瓶颈与严格t<O实例；两独立原矩阵DFS/精确OPT有限审计的不同角色及原依赖/执行附件全部保留。成功数可大于T可行数，不混阈值。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/恢复闭包源程序与算法义务的核验--计算.md",
+      "input_sha256": "9266744f96712b6d45a14fcdddb9a49cb8ab94240fb9b82577ea080980b9d0cb",
+      "disposition": "reuse-unmodified",
+      "preserved_content": "threshold已运行证据的原字节复用、weighted八fixture完整private_assignment与真源a/y重建、macro完整随机main和宏数不足边界；weighted虚拟出口不等实际出口，未占宏第三组全留home，zero-target宏0只属广义恢复API而非严格宏假设正例。",
+      "mixed_independent_content": "C2完整前缀负载、问题页义务、精确容量补全/rank-jump等独立对象按原链接与原量词原位保留，不由旁读把它们合成联合流定理，也不丢弃混合页内容。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/重配置比较依赖与恢复纠错的精确核验--计算.md",
+      "input_sha256": "fd6214366576af695ae14dae792ed47da779e379de3be0623e8d4e590ff2bb96",
+      "disposition": "reuse-unmodified",
+      "preserved_content": "包剥离原证明/程序/独立profile、阶段0漏任务修复及完整任务回算；threshold纠错与同覆盖恢复、UB/DP/one-sided搜索；C2/投影/宏数不足与严格次二重配置障碍保各自范围。旧坏前缀不留作当前规则。",
+      "implementation_boundary": "threshold只从weighted导入单位增广Flow，不调用其不同前缀恢复。三homefixture只撤离两个实际占宏组，虽第三组预计算覆盖也不送出。有限原回放、subset oracle和允许任意回搬的完整状态图不同，不互换结果。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/算法/门槛覆盖的同见证联合槽恢复--算法.md",
+      "input_sha256": "6cfbd620e67e6cd96fcdd61f26cb31b26407d9e3b7c0260c97ddd5870ae3db51",
+      "disposition": "reuse-unmodified-as-main-structural-algorithm",
+      "preserved_content": "精确覆盖FPTAS、同一原X_h、同一a/y联合流、严格槽收费、完整原任务恢复和R界；明确撤回旧前缀并保无界反族，未知OPT一侧完备网格与有限软件后端区别均充分，不重证明。"
+    }
+  ],
+  "additional_assets": [
+    {
+      "path": "archives/unrelated-machines/state/算法/共同资格组的加权出口联合槽--算法.md",
+      "sha256": "494eef0d74c663d7049c65eb0a32b12696ec3a5c0168b47f85514305f8dfb15a",
+      "role": "正式保存不同但正确的weighted虚拟出口/固定tau前缀/home支付离散余量、联合槽及单调未知OPT数学算法；代码仍为给定见证恢复器。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/任务包共同入流剥离--定理.md",
+      "sha256": "5e52df538e2eb9187c6a302f731057b713b6fa6b9790ff59ad7328613e72c24d",
+      "role": "完整既定目标路径、共同入流包容量、阶段0至4及原任务恰一次；与寻找实际目标和sound FAIL分开，不重新研究已闭合充分证明。"
+    }
+  ],
+  "remaining_boundaries": [
+    "结构分解、共同资格和等端成本不是一般UM免费性质；同组异资格或异端体积的更广恢复需另证。",
+    "threshold/weighted数学算法已有标准有理LP论证，但现给定a/y软件没有通用LP和未知OPT端到端后端；不把有限成功计数当一般证明。",
+    "包剥离已给目标且源剪枝的路径问题已闭合，不消除未知整数目标搜索、一般UM共同状态生成或可靠失败义务。",
+    "原宏数=home数的异构tiny半容量经验不能扩到宏数不足；当前恢复只撤离实际占宏组，所以不受该错误扩张影响。",
+    "q作为增长输入时Hall的2-rho可趋0，不能把逐参数rho<2说成统一epsilon；一般UM固定常数次二目标、所有条件接口、外部审查和全球新颖性均未由本组更新为已解。"
+  ],
+  "preservation": "六份成熟正式资产原字节复用，原四输入及全部原程序、报告、真实依赖、任务索引、完整分配和证据包原位保留。没有新跑suite、补造后端或改写正式页；工作区仅承载精确覆盖，正式数学交付落在所列现行正文。"
+}

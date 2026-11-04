@@ -1,0 +1,43 @@
+{
+  "task_id": "CAGN-MENU-RESIDUAL",
+  "formal_path": "archives/customer-attraction/state/审查/R373固定两人菜单残差探针--审查.md",
+  "formal_sha256": "edfd3e0c33bd9839b2e75de280a27a98e9843240e24401451fe8c4e11c89e305",
+  "original_input_sha256": "9441f6f14b2e63996a6fb4d02e707613d7324127398c69c689a226eafaceb530",
+  "model_input_sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+  "coverage": "复用固定策略、四类型、30行定义、整数点和平局及相邻来源边界；修正最小化方向；新增三行精确对偶证书与福利距离恒等式。",
+  "mathematics": {
+    "scope": "固定ρ=(1,2,1,2,0)、实际(4,0)、比较(1,3)、全部31非空类型的非负实权锥",
+    "dual_rows": [
+      "Δ_1,3",
+      "Δ_4,1",
+      "Γ_2"
+    ],
+    "dual_multipliers": [
+      1,
+      1,
+      1
+    ],
+    "normalization_multiplier": 0,
+    "remainder": "P_B−R_B≥0；P_B=u((1,3),1,B)+u((4,1),1,B)",
+    "exact_minimum": 0,
+    "integer_point": "四单位客户；完整两阶段SPE；W=OPT_2=2；C−R=0",
+    "distance": "2C−W(D)=(C−R)+(C−I)"
+  },
+  "self_check": {
+    "exact_coordinate_identity": "Fraction逐列核31类型恒等式及余项非负",
+    "exact_spe_rows": "Fraction核25+5行：归一化7条1/4、23条0；整数化翻倍",
+    "static_optimum": "所有25有序二元组精确核OPT_2=2，正文另给每主题单客户的结构证明",
+    "max_direction_countercheck": "全兴趣单类型达到max(C−R)=1",
+    "independent_read_review": "一次只读定向复核通过"
+  },
+  "preserved": "原source_refs、evidence_paths及六份证据文件均保留；模型页未改。",
+  "open_boundary": "不量化其它回复表/比较路径/非零背景/六位提供者，不是负残差反例或一般half结论。",
+  "evidence_sha256": {
+    "source.py": "0f70a0715ecd6a0985067ea73df08af41735ac084efb96d91e0dbcc159aa5e06",
+    "run.json": "4bc1fed0a7ffe58de614f8d1cd1b58921cc208510dfde41b40b2b2d2add17dc8",
+    "audit_exact.py": "c3c163e20cc545712bc32e5921dd78a084e77815839f0b24cee5d5286b305634",
+    "audit_exact.json": "cae660eb898b44972890a8acb4c3b6e6025c000099285eaf34e074b80d9a0fe8",
+    "derived_instance_check.py": "e74df19ff51f1a79b9736f0df8a12001e3905f3a464bcc73933cb1ebf8fcbca4",
+    "derived_instance_check.json": "7ba481010c36456dcfef481b068f0870219ab49b920d915fb521cbebf1f8717a"
+  }
+}

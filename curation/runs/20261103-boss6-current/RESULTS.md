@@ -20,6 +20,6 @@
 
 第二步尚未启动。现有144组任务均未认领，任务输入已与恢复后的原件匹配；另有34份新增数学候选，协调Boss按[catalogue-routing-delta.json](catalogue-routing-delta.json)分组后再派发。程序与Boss/worker提示词均已存在，纯非数学/证据的处置需另界定小批范围，不伪造成数学交付。
 
-[第二步完整Boss提示词](../../../prompts/02.5-2-distill.md) · [worker提示词](../../../prompts/02.5-worker.md) · [操作手册](../../../research/CURATION_OPERATIONS.md)
+[第二步唯一完整提示词](../../../../prompts/02.5-2-distill.txt) · [操作手册](../../../../research/CURATION_OPERATIONS.md)
 
 旧run snapshot、records、actions保留为历史。当前应使用上面的完整目录，旧“退出正式树”统计已经被恢复操作取代。2.5第三步及超边设计不在本轮执行范围。

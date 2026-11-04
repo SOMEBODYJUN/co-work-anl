@@ -558,12 +558,16 @@ def start(args):
     result.update(role=selected_role,
                   role_prompt=prompts[selected_role] if selected_role else None,
                   board_branch=selected_board)
-    if curation_run:result['curation_run']=curation_run
     if save == "customer-attraction" and not selected_sub:
         result["context_entry"] = "archives/customer-attraction/README.md"
     elif save == "repository-cleanup":
         result["context_entry"] = ("prompts/03-map.md" if selected_role == "mapper" else
                                    "prompts/02.5-research.md" if selected_role == "curator" else "cleanup/README.md")
+    if curation_run:
+        entry='prompts/02.5-2-distill.txt'
+        result.update(curation_run=curation_run,context_entry=entry,research_entry=entry,
+                      role_prompt=entry,research_prompt=entry,
+                      research_runbook='research/CURATION_OPERATIONS.md')
     if workflow_config:
         result.update(workflow_run=workflow_run, context_entry=workflow_config['prompt'],
                       role_prompt=workflow_config['prompt'], research_prompt=workflow_config['prompt'])
@@ -641,7 +645,7 @@ def main():
     curate.add_argument("args", nargs=argparse.REMAINDER)
     triage = sub.add_parser("triage", help="2.5.1材料定性批次、覆盖与目录；不判断数学真值")
     triage.add_argument("args", nargs=argparse.REMAINDER)
-    tasks = sub.add_parser('curation-task',help='2.5对象群任务认领、提交、完成和交接')
+    tasks = sub.add_parser('curation-task',help='2.5对象群短表/status、批量认领/finish、持久重试和一键交接')
     tasks.add_argument('args',nargs=argparse.REMAINDER)
     r = sub.add_parser("read", help="读取异步公屏")
     r.add_argument("--json", action="store_true")

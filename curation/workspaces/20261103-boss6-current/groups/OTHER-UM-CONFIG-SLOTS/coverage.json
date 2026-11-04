@@ -1,0 +1,135 @@
+{
+  "task_id": "OTHER-UM-CONFIG-SLOTS",
+  "disposition": "exact-reuse-of-five-mature-formal-assets; no-new-theorem-or-rerun",
+  "assets_file": "curation/workspaces/20261103-boss6-current/groups/OTHER-UM-CONFIG-SLOTS/assets.json",
+  "formal_edits": [],
+  "mathematical_exit": {
+    "distinction": "对一个已给CONFIG点形成的ST图，某个完整覆盖匹配的坏峰值，只能给该图中坏匹配存在或最坏匹配的下例；它不等于原调度矩阵的最小峰值OPT，也不表示所有完整匹配均坏。K2至K5例中全部private是一份实际好ST匹配，峰1；unit任务在所有有限端的时间为1，另给OPT>=1，故真实OPT=1。",
+    "general_K_authority": "archives/unrelated-machines/state/定理/有界配置基数的严格槽余量与承诺搜索--定理.md",
+    "K5_authority": "archives/unrelated-machines/state/审查/有界配置审查的先验版本与K5阶乘反例--审查.md",
+    "no_gap_upgrade": "坏ST匹配的峰不成为CONFIG整性缺口；这些实例的CONFIG目标和真实OPT均为1。一般K4或K5锐性、最佳匹配选择/修复以及一般UM近似算法没有由有限例解决。"
+  },
+  "three_host_sharp_profile": {
+    "source": "archives/unrelated-machines/state/审查/三主机选择器锐例原始输入增量--审查.md",
+    "T": "1",
+    "machines": ["a", "b", "c"],
+    "jobs": ["j1", "j2"],
+    "machine_job_matrix": [["1/2", "1/2"], ["1", "infinity"], ["infinity", "1"]],
+    "two_YES_profiles": [
+      {"open": ["a"], "preloads_abc": ["0", "1", "1"], "assignment": ["a", "a"], "peak": "1"},
+      {"open": ["b", "c"], "preloads_abc": ["1", "0", "0"], "assignment": ["b", "c"], "peak": "1"}
+    ],
+    "sharp_bad_profiles": [
+      {"open": ["b"], "preloads_abc": ["1", "0", "1"], "assignment": ["b", "a"], "optimum": "3/2"},
+      {"open": ["c"], "preloads_abc": ["1", "1", "0"], "assignment": ["a", "c"], "optimum": "3/2"}
+    ],
+    "role_and_lower_bound": "关闭机带不可迁移T预载，原有限端仍有效。仅开b时j2的最好可用完成负载至少min(1+1/2,1+1)=3/2，且所列完整分配达到；仅开c对称。这是空/满预载选择器状态的真实最优值，不是无预载CONFIG例的坏槽匹配，也不能只从原3乘2矩阵单独读成OPT=3/2。",
+    "Santa_preservation": "原输入的santa_sharp、三特殊物品和一半锐性保其独立复制合同；不写成同一调度矩阵或Santa一般hardness。一般三主机闭包仍由原相关审查所引完整证明承担。"
+  },
+  "bounded_configuration_examples": [
+    {
+      "K": 2,
+      "T": "1",
+      "jobs": 3,
+      "machines": 4,
+      "bad_center_jobs": ["B", "A1"],
+      "bad_peak": "3/2",
+      "good_matching": "全部原任务各去其独占private机器，峰1",
+      "ordinary_OPT": "1",
+      "status": "达到已证一般K2槽包络锐界；并非CONFIG gap。"
+    },
+    {
+      "K": 3,
+      "T": "1",
+      "jobs": 6,
+      "machines": 7,
+      "bad_center_jobs": ["B", "A1", "C2"],
+      "bad_peak": "11/6",
+      "good_matching": "全部原任务各去其独占private机器，峰1",
+      "ordinary_OPT": "1",
+      "status": "达到已证一般K3槽包络锐界；并非所有匹配均有此峰。"
+    },
+    {
+      "K": 4,
+      "T": "1",
+      "jobs": 10,
+      "machines": 11,
+      "bad_center_jobs": ["B", "A1", "C2", "D3"],
+      "bad_peak": "47/24",
+      "good_matching": "全部原任务各去其独占private机器，峰1",
+      "ordinary_OPT": "1",
+      "status": "完整有限下例，不声称一般K4 sharp。D0在首配置和全D配置中是同一原任务，不复制。"
+    }
+  ],
+  "K5_exact_certificate": {
+    "T": "1",
+    "jobs": 15,
+    "machines": 16,
+    "center_layer_sizes": ["1", "1/3", "1/4", "2/9", "3/16"],
+    "distinct_jobs_per_layer": [1, 3, 4, 3, 4],
+    "configurations": [
+      {"counts": [1, 0, 0, 0, 0], "weight": "1/144", "load": "1"},
+      {"counts": [0, 0, 1, 0, 4], "weight": "1/4", "load": "1"},
+      {"counts": [0, 0, 4, 0, 0], "weight": "3/16", "load": "1"},
+      {"counts": [0, 1, 0, 3, 0], "weight": "1/3", "load": "1"},
+      {"counts": [0, 3, 0, 0, 0], "weight": "2/9", "load": "1"}
+    ],
+    "job_identity": "每配置按该层固定顺序取前若干个原任务，同任务在不同配置再次出现不产生副本；每个原任务j只有其唯一private机器。",
+    "private_completion": "中心边际x_j对应private singleton权1-x_j、empty权x_j；全部机器归一，所有任务覆盖1，各正权配置至多5件。",
+    "center_layer_total_masses": ["1/144", "1", "1", "1", "1"],
+    "strict_slot_edges": "按原固定同层顺序取每层最后一件，分别匹配五个中心槽，五条正交长均为1/144；其余原任务各去private槽。触整数端点不算边，不能用容差删除微小正交长。",
+    "bad_complete_matching_peak": "287/144",
+    "good_complete_matching_peak": "1 (全部15项去各自private机器)",
+    "ordinary_OPT": "1 (unit层原任务在所有有限端用时1给下界)",
+    "refuted_bound": "2-1/5! = 239/120",
+    "excess": "287/144-239/120 = 1/720 > 0",
+    "precise_conclusion": "只反驳K5阶乘包络/每个完整ST匹配都受239/120约束的猜测；不反驳存在好匹配、选择或修复匹配，不证明K5一般sharp或CONFIG gap。"
+  },
+  "input_coverage": [
+    {
+      "path": "archives/unrelated-machines/state/审查/三主机选择器锐例原始输入增量--审查.md",
+      "input_sha256": "0874cccd1f5c4404699ba43ab2df03805fad665d1eb14da95dccd51185d282a1",
+      "disposition": "reuse-unmodified",
+      "preserved_content": "原3乘2矩阵、两项原任务、S1/S2完整YES profiles、关闭机T预载下only_b/only_c的3/2 sharp optimum、独立Santa字段、原JSON与replay；一般选择器闭包不由JSON字段替代。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/联合槽位与均匀束匹配有限审查--审查.md",
+      "input_sha256": "e1fd60cac39abd86afba78252e0986591ee53cb889d853b144fa6c302efdf9b3",
+      "disposition": "reuse-unmodified",
+      "preserved_content": "K5原有限报告、287/144对239/120的1/720超额及OPT1好匹配；混合页中distorted-group给定LP witness的联合槽位、零目标/阻断守恒/部分末槽与边界证书，以及K-uniform bundle的q1穷举/q2有限回归也完整保留，既不删去也不合成CONFIG一般gap。",
+      "independent_boundaries": "distorted实现只验证给定LP并rounding，无LP backend或unknown-OPT搜索；K-uniform floor保原有限q/K范围，无任意q/K定理或调度解码。原参数、具体输入、匹配及附件原位保存。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/有界配置槽证书与全覆盖匹配独立复跑--计算.md",
+      "input_sha256": "4b369cb48a9aaa01703f0c9f28fec99c248528b1f1512a13eeb46380c1e472bf",
+      "disposition": "reuse-unmodified",
+      "preserved_content": "完整K2/3/4配置、distinct原任务、中心坏匹配与全部private好匹配；独立程序全局删除任何处有零端的任务、重建严格正交长槽图、枚举9固定fixture共254覆盖matching。该枚举不是全部普通原调度，亦不枚举全部CONFIG点；原两程序不含K5。",
+      "evidence_boundary": "原点y给定，不求CONFIG LP/未知OPT；大分母和微小正交长按Fraction精确处理，不用容差、采样或按分母复制节点。原程序、冻结JSON依赖及既有执行记录原位保留，本组不重跑。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有界配置基数的严格槽余量与承诺搜索--定理.md",
+      "input_sha256": "29740fdc4ca1461600f22b2b517c2f458a1208863626e09d0f29f4399abb4817",
+      "disposition": "reuse-unmodified-as-general-K-authority",
+      "preserved_content": "给定等式覆盖CONFIG(T)点、删除零端任务后正权残余配置至多K件、严格前缀与整数类型/Abel/行列式余量、同一全局覆盖匹配，以及固定K普通OPT结构承诺下的独立搜索合同。一般证明和位时间边界原样保留。"
+    }
+  ],
+  "additional_asset_coverage": {
+    "path": "archives/unrelated-machines/state/审查/有界配置审查的先验版本与K5阶乘反例--审查.md",
+    "sha256": "d00cbef74e6227f35345c74da3233e01c96e798fb963e8ef799fcebdb4b11112",
+    "role": "提供完整K5层数/计数配置/严格1/144正槽边/好坏完整匹配与OPT1的成熟自足正文；保K5后增量不倒填为旧K2至4程序或早期审查覆盖，不重新认证外审或新颖性。"
+  },
+  "general_K_contract": {
+    "supplied_point": "K1的E_i<=T；K>=2的任意完整覆盖匹配同时满足L_i<=E_i<=(2-K^{-(K-1)})T，K2/K3另有锐上界3T/2及11T/6。这里只用已给合法CONFIG点，不假设通用精确CONFIG oracle免费。",
+    "zero_and_identity": "T0先由可行CONFIG得每任务有零端；任何处有零端的任务全局分配零端并从所有配置删除。K只约束正权残余配置；证明中的整数类型聚合不合并实际任务或逐行独立挑匹配。",
+    "strict_edges": "按实际时间非增及固定平局顺序连续铺边际x，只有严格正交长连槽边；原x是一份共同分数匹配，Hall给同一全局覆盖匹配，不能把各行各选一份输出拼接。",
+    "OPT_promise": "另对固定K承诺存在普通最优调度每机至多K个无零端任务，才可用O(m n^K)列/负载断点的截断LP搜索T星<=OPT，再用同一匹配界取得相对普通OPT的保证。K作为增长输入时不继承统一多项式或统一严格次二。"
+  },
+  "remaining_boundaries": [
+    "K4的47/24与K5的287/144都是完整坏匹配下例；尚未证明一般K4/K5最优包络的锐界。",
+    "好匹配存在不等于一般最佳matching选择/修复算法已交付；坏匹配存在也不否定所有选择算法。",
+    "有限matching/assignment/LP-witness测试不推广为任意CONFIG点、任意q/K或一般CONFIG整性缺口。",
+    "三主机关闭机预载的3/2 sharp optimum与无预载private补全CONFIG例的OPT1是两种不同输入合同。",
+    "原任务、T、零目标分支、严格微小交长、每个实际好/坏完整匹配、原程序和证据附件全部保留。"
+  ],
+  "preservation": "五份正式资产原字节复用；没有改写、删除、移动原数学或附件，没有重跑suite，也没有新增一般上界、CONFIG gap或UM主目标结论。工作区只记录精确覆盖与复用，正式数学交付落在五页现行正文。"
+}

@@ -2,27 +2,124 @@
 id: "shared-model/ring-and-finite-menu-certificates"
 kind: "computation"
 type_tag: "计算"
-title: "shared模型环限制与有限菜单精确核验"
-status: "complete-frozen-independent"
-truth_status: "exact-restricted-and-exact-menu-reports"
-review_level: "full-json-read-model-isolation"
-scope: "shared模型的tiny与five_site冻结报告；不迁移CAG"
-summary: "tiny_lazy_ring和tiny_optimal给出alpha=1的环限制核验；前者status=exact_ring_restricted、路径(0,4,3)，后者status=exact、978次查询、618个half states。sharp_lower_rational给出有限alpha=499750/309017、kappa=4。"
+title: "shared模型环与有限菜单精确核验"
+status: "frozen-certificates-connected-to-exact-minima-and-mature-proofs"
+truth_status: "finite-attainment; tiny-optimum-one; rational-lower-example-optimality-by-independent-proof"
+review_level: "full-original-json-and-existing-exact-algorithm-comparison"
+scope: "共同目录双设施原子客户模型；区分环内在轨搜索、全目录偏离与有限菜单"
+summary: "tiny的全NE最低负载矩阵、完整目录回应环和全部实际偏离共同给alpha*=1；lazy剪枝见证可以不是坐标极小。六地点整数例的真最优499750/309017由达到证书与独立全布局下界共同支持。"
 source_refs:
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/shared/tiny_lazy_ring.json"
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/shared/tiny_optimal.json"
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/shared/sharp_lower_rational.json"
 ---
+
 # shared模型环与有限菜单精确核验
 
-## 三种计算对象
+三份报告使用[共同目录双设施原子客户模型](../../../facility-games/subarchives/common-two/问题--问题.md)，与六名顺序提供者的 Q-CAG-HALF-6 无结论迁移。本页将有限环、全体客户 NE 极小值、真实偏离收益及实例最优分别说明；四份相关有限菜单证书见[配套正文](../定理/shared模型黄金比例菜单界与独立边界--定理.md)。
 
-tiny_lazy_ring 状态为 exact_ring_restricted，ring=(4,3)，visited_path=(0,4,3)，layout=(4,3)，alpha=1；on_path common为空、loads=(39,33)、gap=6、score=1。它访问3个位置，做6次exact pair call并剪枝12个response。deviation_certificate逐项保存两个偏离者、目标设施、共同客户、概率和gap，其中有负gap；所以该报告只对声明的环限制负责。
+## 全体 NE 极小值与菜单威胁的区别
 
-tiny_optimal 状态为 exact，layout=(3,4)，ring=(4,3)，alpha=1，on_path score=1；报告统计45次pair oracle、618个half states、978个queries，逐项保存所有deviation certificates。其on_path raw gap为−6但score字段为1，必须保留两个字段而不能把raw gap误写成失败或把score误写成普适定理。
+在有序布局 $(s,t)$ 上，$m(s,t)$ 是**全部**精确独立混合客户 NE 中第一设施收益的最低值，令
 
-sharp_lower_rational 给出 finite_factor_exists=true，alpha=499750/309017，kappa=4；on_path layout=(0,4)，loads=(2000000,1236068)，并保存10条偏离witness。它是一个有限有理下界/存在性报告，默认continuation是枚举local并取首个下端，不等于全局最优延续或CAG策略。
+\[
+d(t)=\max_{z\in S}m(z,t),\qquad b(t)\in\arg\max_{z\in S}m(z,t).
+\]
 
-## 证据阅读和边界
+最大化域仍是整个原目录，即使之后只在某条回应环中寻找在轨布局。给定在轨总负载 $V$、差 $\Delta$，充分倍率目标为
 
-七份原JSON均按原字节保存在 evidence/shared-certificates/original；本轮没有把设施索引或客户概率改写成CAG类型。所有概率、loads、alpha和统计字段是冻结结果；未声称独立重跑外部生成器。它们适合作为shared模型的精确回归资产，或提醒第三阶段保留路径依赖和环限制；不承担Q-CAG-HALF的数学证据。
+\[
+\max\left\{1,\frac{2d(t)}{V+\Delta},\frac{2d(s)}{V-\Delta}\right\};
+\tag{R}
+\]
+
+两个分母分别是第一、第二设施在轨收益的两倍，零收益按原乘法不等式处理。闭三态支持和精确半表方法的保证见[完整负载谱](../../../facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md)、[阈值半表算法](../../../facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md)。这些是实概率域上的精确支持方法，不是有限概率网格。
+
+有限 P/E/T/C 菜单则定义 $u_F(s,t)=\min_{e\in F(s,t)}L_1(e)\ge m(s,t)$。菜单 JSON 的 menu_threats 不能只凭字段名当作上式的真 $d$；本 tiny 输入保存的两类威胁数值恰好相同，不产生一般相等命题。
+
+## tiny：完整最低负载矩阵及回应环
+
+[完整原输入](../../../../tools/evidence/shared-certificates-runtime/original/examples/shared/tiny.json)为权重 $(2,3,5,7,11,13,17,19)$、覆盖 $0123;124;035;246;357$ 的五地点游戏。下表逐行列出 [tiny_optimal 冻结报告](../../tools/evidence/shared-certificates/original/tiny_optimal.json)的 $m(s,t)$；行是第一设施地点 $s$，列是对手地点 $t$。
+
+| $s\backslash t$ | 0 | 1 | 2 | 3 | 4 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 0 | 6 | 12 | 15 | 17 | 17 |
+| 1 | 13 | 8 | 19 | 19 | 19 |
+| 2 | 15 | 22 | 9 | 22 | 22 |
+| 3 | 28 | 17 | 33 | 14 | 33 |
+| 4 | 32 | 39 | 19 | 39 | 16 |
+| 全列最大 $d(t)$ | 32 | 39 | 33 | 39 | 33 |
+| 所选回应 $b(t)$ | 4 | 4 | 3 | 4 | 3 |
+
+从0出发访问 $0\to4\to3\to4$，所以环是 $(4,3)$。这条环只限制候选在轨位置，未删除环外目的地0、1、2的偏离。
+
+全局 exact 输出在轨 $(3,4)$，无共同客户，收益 $(33,39)$，因此 $V=72,\Delta=-6$。代入 (R) 得
+
+\[
+\max\{1,2d(4)/(72-6),2d(3)/(72+6)\}
+=\max\{1,66/66,78/78\}=1.
+\]
+
+gap=-6 是按设施标签定向的负载差；score=1 是这里的最大比值目标。两者无矛盾。全部八个真实偏离收益为：
+
+| 在轨角色与分母 | 目的地顺序 | 偏离收益顺序 | 最大偏离比 |
+| --- | --- | --- | --- |
+| 第一设施，33 | $0,1,2,4$ | $17,19,22,16$ | $2/3$ |
+| 第二设施，39 | $0,1,2,3$ | $17,19,22,14$ | $22/39$ |
+
+每项概率和共同客户列表保存在原证书中。其余布局可按降序客户贪心分配给当时较低负载侧，补成精确纯 NE；该完整规则的实际倍率为1。因为近似倍率定义要求至少1，达到本身已足以确定此输入 $\alpha^*=1$，不需把查询次数当作最优性证明。
+
+## lazy：环内搜索仍验证全游戏，惩罚见证未必取到 $m$
+
+[tiny_lazy_ring 冻结报告](../../tools/evidence/shared-certificates/original/tiny_lazy_ring.json)保存同一访问路径和环，只计算访问列的真值
+$d(0)=32,d(4)=33,d(3)=39$，在轨取标签反射 $(4,3)$、收益 $(39,33)$、$\Delta=6$，输出 exact_ring_restricted、$\alpha=1$。
+
+lazy 对一列的每个候选先计算一个贪心纯 NE 上界 $U(s,t)\ge m(s,t)$；已算真值最大为 $D$ 时，若 $U(s,t)\le D$，可跳过该坐标极小查询并保留贪心 NE 作惩罚。最终列最大仍是真 $d(t)$，但被保留的惩罚不必逐项达到 $m$。本份 JSON 正好显示这个区别：
+
+| 在轨角色与分母 | 全部目的地顺序 | lazy 惩罚收益 | 同址目的地的真最低收益 |
+| --- | --- | --- | --- |
+| 第一设施，39；对手在3 | $0,1,2,3$ | $17,19,22,17$ | $m(3,3)=14$，所选17仍安全 |
+| 第二设施，33；对手在4 | $0,1,2,4$ | $17,19,22,19$ | $m(4,4)=16$，所选19仍安全 |
+
+全部八项仍分别不超过在轨39或33。故该输出支持整个五地点游戏的一份精确 SPE，环限制不把稳定性弱化为“只防环内偏离”。一般而言，环内搜索的最优 $\alpha_K$ 只保证 $\alpha^*\le\alpha_K$，未证明每个输入的全局最优都位于该环；本例因 $\alpha_K=1$ 才同时得到全局最优1。
+
+**证书坐标方向必须保留。** 这两个 exact 格式用 deviator=0/1，偏离记录总按局部 $(destination,opponent)$ 排序；prob_first 和 loads[0] 都属于偏离者。第二设施的记录转成全局有序布局时要反射概率和负载。例如 lazy 中第二家去0、对手在4，局部概率 $p=1$、负载 $(17,32)$；全局布局 $(4,0)$ 应写 $p=0$、负载 $(32,17)$。配套有限菜单证书的 deviator=1/2 与全局布局格式不能直接混用。
+
+原 lazy JSON 只存一个在轨和八个偏离，没有输出默认规则或25布局表；上述其余16布局的纯 NE 补全属于已有数学算法与[完整达到复核](../../../facility-games/state/计算/惰性最大最小回应环的原入口与有限回归--计算.md)，不能说原文件已保存那张完整表。该成熟正文还说明精确剪枝、平局回应可能不同、环限制及原运行断言的准确边界。本页不重跑这些 suite，也不以一次运行中 $\alpha_K\le\phi$ 的断言未触发证明一般 $\phi$。
+
+## 六地点有理例：有限达到与匹配下界分别来自哪里
+
+[完整原输入](../../../../tools/evidence/shared-certificates-runtime/original/examples/shared/sharp_lower_rational.json)有六客户权
+
+\[
+(1236068,762932,381966,72949,18221,763932),
+\]
+
+地点覆盖为 $05;01;02;03;1234;5$，双方共同目录为全部六地点。reach 为
+
+\[
+(2000000,1999000,1618034,1309017,1236068,763932).
+\]
+
+[sharp_lower_rational 冻结证书](../../tools/evidence/shared-certificates/original/sharp_lower_rational.json)在轨 $(0,4)$ 无共同客户，收益 $(2000000,1236068)$；全部十个实际偏离的收益为：
+
+| 偏离者与在轨分母 | 目的地顺序 | 偏离者收益顺序 | 最大偏离比 |
+| --- | --- | --- | --- |
+| 第一设施，2000000 | $1,2,3,4,5$ | $1236068,1236068,1236068,473136,763932$ | $309017/500000$ |
+| 第二设施，1236068 | $0,1,2,3,5$ | $763932,1999000,1618034,1309017,763932$ | $499750/309017$ |
+
+因此该份规则的实际倍率由第二家从4移到1的偏离取到：
+
+\[
+\frac{1999000}{1236068}=\frac{499750}{309017}.
+\]
+
+其余布局按原默认说明枚举局部完整支持并选首片段下端即可补合法客户 NE；这条默认选择无需在每个布局都是全局最优惩罚。finite_factor_exists=true 是达到声明，本身不提供所有布局的匹配下界。
+
+真正最优恰等于该分数，依据是[有理六/五地点下界正文](../../../facility-games/state/定理/共同目录黄金比下界的有理六地点与五地点族--定理.md)的“精确整数例”：全部15种异址加6种同址的排除下界都至少为此值，其中零基布局 $(0,4)$ 取到最小；与上述完整达到合并才得到 $\alpha^*=499750/309017$。其[原输入与完整 NE 复核](../../../facility-games/state/计算/共享目录原始输入与四种子入口的接续复核--计算.md)也已成熟，不在此重复执行。
+
+该有限有理数严格小于 $\phi$，不表示某个有理实例取到无理黄金比，也不替代“每个 $1\le\beta<\phi$ 都有实例排除 $\beta$”的渐近族证明。kappa=4 是包括同址在内的最大共同客户数：地点4同址时有四客户；它不是设施数，异址对在本输入反而至多共一客户。
+
+## 原件与计算证据的地位
+
+三份 JSON 及原查询/半状态/剪枝统计完整保留在[来源 manifest](../../tools/evidence/shared-certificates/source-manifest.json)所列位置。它们支持具体输入和具体续局，计数不增加数学量词：有限菜单最低值、全体 NE 最低值、环内在轨候选、全目录实际偏离及实例全局最优分别按上文解释。一般支持枚举/半表正确性、全局下界、普遍 $\phi$ 与外部审查沿用各自成熟正文和未闭合义务；这些有限证书均不支持 CAG 半覆盖的证明或反例。
