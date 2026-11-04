@@ -558,12 +558,16 @@ def start(args):
     result.update(role=selected_role,
                   role_prompt=prompts[selected_role] if selected_role else None,
                   board_branch=selected_board)
-    if curation_run:result['curation_run']=curation_run
     if save == "customer-attraction" and not selected_sub:
         result["context_entry"] = "archives/customer-attraction/README.md"
     elif save == "repository-cleanup":
         result["context_entry"] = ("prompts/03-map.md" if selected_role == "mapper" else
                                    "prompts/02.5-research.md" if selected_role == "curator" else "cleanup/README.md")
+    if curation_run:
+        entry='prompts/02.5-2-distill.txt'
+        result.update(curation_run=curation_run,context_entry=entry,research_entry=entry,
+                      role_prompt=entry,research_prompt=entry,
+                      research_runbook='research/CURATION_OPERATIONS.md')
     if workflow_config:
         result.update(workflow_run=workflow_run, context_entry=workflow_config['prompt'],
                       role_prompt=workflow_config['prompt'], research_prompt=workflow_config['prompt'])

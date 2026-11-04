@@ -1,6 +1,6 @@
 # 本结果仓库工作规则
 
-共享阶段分工：2.5第二步使用prompts/02.5-2-distill.md、prompts/02.5-worker.md和curation-run=20261103-boss6-current；第二步正在多Boss协作，实时状态看work.py curation-task status。2.5第三步和第三阶段使用research/PHASE3_READINESS.md及对应registrar/mapper启动词，以--workflow-run隔离身份、workspace和公屏。每个对话以用户指定阶段为准，不把某个对话的“本侧/另一侧”安排写成全仓禁令。软件维护不接管其它Boss已领数学。
+共享阶段分工：2.5第二步唯一完整提示词为prompts/02.5-2-distill.txt，curation-run=20261103-boss6-current。用户只需一个work.py、仓库外凭据和这一份提示词；不另配Project说明、worker词或接续词，内部资料由执行者从仓库按需读取。已有Boss使用同一提示词沿用原身份和草稿；内部代理接受同一数学标准及具体任务，启动、认领和Git由Boss统一组织。实时状态看work.py curation-task status。2.5第三步和第三阶段仍按各自明确方案与workflow-run执行，不混入当前阶段。软件维护不接管其它Boss已领数学。
 
 协作程序：空位用curation-task claim-next从远端最新状态直接领可用群，正常竞争自动重选，响应未知则保留原request_id和目标。旧批量claim/extend/finish、短状态表、handoff-all和资产缓存保持兼容。身份与写端点在启动时检查，任务事务以实际push确认，不重复dry-run探测。已有Boss保全草稿后sync，不换号或重做已完成数学。每个处理者完整做数学，Boss也实做；成熟立即保存、finish并补位，不等整轮结束，不以一次提交或汇报收尾。正常切换不交接，只有真实停止才交接本人未完任务；claimed不等于仍在运行。
 

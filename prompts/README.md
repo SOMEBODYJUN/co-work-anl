@@ -7,7 +7,7 @@
 - [02-clean.md](02-clean.md)：第二阶段读冻结原文、比较、归类、写正文与逐来源处置。
 - [02.5-research.md](02.5-research.md)：2.5分步总入口。
 - [02.5-1-inventory.md](02.5-1-inventory.md)：第一步单Boss与六名gpt-6-sol/high内部代理快速定性、清理，未来由本对话接续执行。
-- [02.5-2-distill.md](02.5-2-distill.md)、[02.5-worker.md](02.5-worker.md)：第二步对象群Boss与实质处理者。
+- [02.5-2-distill.txt](02.5-2-distill.txt)：第二步唯一完整词，包含Boss、内部处理者和已有对话的接续要求。用户另备work.py及仓库外凭据即可。
 - [02.5-3-register.md](02.5-3-register.md)：对象登记、版本、附件owner和读取入口。
 - [03-map.md](03-map.md)：分批构图、跨批补边、覆盖和单Boss集成。
 

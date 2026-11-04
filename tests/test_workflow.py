@@ -79,6 +79,40 @@ class WorkflowTests(unittest.TestCase):
         self.assertEqual(result.returncode,0,result.stderr)
         self.assertEqual(json.loads(result.stdout)['context_entry'],'prompts/02.5-research.md')
 
+    def test_single_file_curator_bootstrap_selects_one_stage_prompt(self):
+        home=self.seed/'curation/runs/fixture';home.mkdir(parents=True)
+        (home/'run.json').write_text(json.dumps({'actor':'Boss2'}))
+        entry='prompts/02.5-2-distill.txt'
+        (self.seed/entry).write_text('One complete stage prompt; continue until the stage is complete.\n')
+        git(self.seed,'add','curation',entry);git(self.seed,'commit','-m','Published curation stage')
+        git(self.seed,'push','origin','HEAD:refs/heads/'+BRANCH)
+        starter=self.base/'project-files';starter.mkdir()
+        bootstrap=starter/'work.py';shutil.copy2(ROOT/'work.py',bootstrap)
+        token=starter/'githubtoken.txt';token.write_text('github_pat_'+'x'*40);token.chmod(0o600)
+        repo=self.base/'single-file-curator'
+        result=subprocess.run([sys.executable,str(bootstrap),'--repo',str(repo),'start',
+                               '--remote',str(self.remote),'--actor','Boss2','--role','curator',
+                               '--save','repository-cleanup','--branch',BRANCH,'--curation-run','fixture',
+                               '--board-branch','wcg/board-curation-25','--token-file',str(token)],
+                              cwd=starter,capture_output=True,text=True,timeout=45)
+        self.assertEqual(result.returncode,0,result.stderr)
+        receipt=json.loads(result.stdout)
+        for key in ['context_entry','research_entry','role_prompt','research_prompt']:
+            self.assertEqual(receipt[key],entry)
+        self.assertEqual(receipt['curation_run'],'fixture')
+        self.assertEqual({p.name for p in starter.iterdir()},{'work.py','githubtoken.txt'})
+        self.assertTrue((repo/'tools/curation_tasks.py').is_file())
+        self.assertEqual((repo/entry).read_text(),'One complete stage prompt; continue until the stage is complete.\n')
+        again=subprocess.run([sys.executable,str(bootstrap),'--repo',str(repo),'start',
+                              '--remote',str(self.remote),'--token-file',str(token)],
+                             cwd=starter,capture_output=True,text=True,timeout=45)
+        self.assertEqual(again.returncode,0,again.stderr)
+        resumed=json.loads(again.stdout)
+        self.assertEqual(resumed['actor'],'Boss2')
+        self.assertEqual(resumed['curation_run'],'fixture')
+        self.assertEqual(resumed['context_entry'],entry)
+        self.assertEqual({p.name for p in starter.iterdir()},{'work.py','githubtoken.txt'})
+
     def test_research_subarchive_is_explicit_and_stable(self):
         repo=self.base/'F'
         r=self.work(repo,'start','--remote',str(self.remote),'--actor','F','--save','facility-games','--subarchive','common-two','--role','boss')

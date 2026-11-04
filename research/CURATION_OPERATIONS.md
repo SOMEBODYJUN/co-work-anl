@@ -28,7 +28,7 @@ python3 tools/classification_catalog.py --source-runs 20261103-boss6-triage 2026
 
 ## 第二步：持续领取与批量交付
 
-完整词见[Boss](../prompts/02.5-2-distill.md)和[worker](../prompts/02.5-worker.md)，可直接粘贴的[全文](../prompts/02.5-2-distill.txt)与[原对话接续词](../prompts/02.5-resume.txt)已同步。新clone仍用curator/20261103-boss6-current和wcg/board-curation-25；已有clone保全草稿后sync，不换号或重登记。数学Boss直接做现有群，不等协调头衔或身份页清理。每人完整实做，Boss也做，成熟立即保存并补位，直到本阶段可处理材料都有准确处置；不是一轮代理结束就收尾。旧数量是快照，实时看status。
+用户入口只有[当前阶段完整提示词](../prompts/02.5-2-distill.txt)、work.py和仓库外凭据。新对话与已有对话均使用这一份词；不需要上传本操作说明、内部模块、worker词或接续词。work.py取得仓库后，执行者自行按需读内部资料。新clone仍用curator/20261103-boss6-current和wcg/board-curation-25；已有clone保全草稿后sync，沿用原编号和草稿。每人完整实做，Boss也做，成熟立即保存并补位，直到本阶段可处理材料都有准确处置。旧数量是快照，实时看status。
 
 ```sh
 python3 work.py sync
