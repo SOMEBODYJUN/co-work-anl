@@ -139,13 +139,13 @@ def transition(root,run,old,all_tasks,actor,operation,request_id,*,assets=None,r
     return new
 
 
-def materialize(root,tip,names):
-    """Read only selected regular blobs; preserve their exact bytes."""
+def snapshot_blobs(root,names):
+    """Read indexed regular blobs together, without expanding source files."""
     names=list(dict.fromkeys(names))
     for name in names:
         curation._safe_path(root,name)
         if '\n' in name or '\r' in name:raise ValueError('Invalid transaction path')
-    if not names:return
+    if not names:return {}
     entries=board.git(root,'ls-files','--stage','-z','--',*[':(literal)'+n for n in names]).stdout
     files=[]
     for entry in entries.split(b'\0'):
@@ -153,14 +153,41 @@ def materialize(root,tip,names):
         head,name=entry.split(b'\t',1)
         if head.split()[0] in {b'100644',b'100755'} and name.decode() in names:
             files.append((name.decode(),head.split()[1].decode()))
-    if not files:return
+    if not files:return {}
     raw=board.git(root,'cat-file','--batch',input_data=''.join(oid+'\n' for _,oid in files).encode()).stdout
-    offset=0
+    offset=0;result={}
     for name,_ in files:
         end=raw.find(b'\n',offset);header=raw[offset:end].split()
         if len(header)!=3 or header[1]!=b'blob':raise ValueError('Missing transaction blob: '+name)
         size=int(header[2]);data=raw[end+1:end+1+size];offset=end+2+size
+        result[name]=data
+    return result
+
+
+def materialize(root,tip,names):
+    """Expand only the requested regular blobs, preserving exact bytes."""
+    for name,data in snapshot_blobs(root,names).items():
         path=curation._safe_path(root,name);path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(data)
+
+
+def select_claims(root,current,limit,prefix=''):
+    """Select compatible, current inputs from this transaction's remote tree."""
+    candidates=[t for key,t in sorted(current.items()) if key.startswith(prefix)
+                and t['state'] in {'available','handoff'} and not t.get('owner')]
+    names=[r['path'] for t in candidates for r in t['definition']['inputs']]
+    hashes={name:curation.digest(data) for name,data in snapshot_blobs(root,names).items()}
+    occupied=[scope for t in current.values() if t['state'] in ACTIVE for scope in t['definition']['write_paths']]
+    chosen=[];skipped=[]
+    for t in candidates:
+        d=t['definition'];stale=[r['path'] for r in d['inputs'] if hashes.get(r['path'])!=r['sha256']]
+        if stale:
+            skipped.append({'task_id':d['task_id'],'reason':'input-changed','path':stale[0]});continue
+        if any(overlaps(a,b) for a in d['write_paths'] for b in occupied):
+            skipped.append({'task_id':d['task_id'],'reason':'write-scope-occupied'});continue
+        chosen.append({'operation':'claim','task_id':d['task_id']});occupied.extend(d['write_paths'])
+        if len(chosen)==limit:break
+    return chosen,{'requested':limit,'selected':[op['task_id'] for op in chosen],
+                   'skipped_count':len(skipped),'skipped':skipped[:12]}
 
 
 def checkout_task_snapshot(client,directory,run,actor):
@@ -235,11 +262,18 @@ def mutate_many(root,run,operations,*,request_id=None):
     request_id=request_id or uuid.uuid4().hex
     if not re.fullmatch(r'[0-9a-f]{32}',request_id):raise ValueError('Invalid request ID')
     if not isinstance(operations,list) or not operations:raise ValueError('Nonempty operation list required')
-    allowed={'task_id','operation','assets','reason','draft_note','write_paths','reuse_paths'}
+    allowed={'task_id','operation','assets','reason','draft_note','write_paths','reuse_paths','limit','prefix'}
     for op in operations:
-        if not isinstance(op,dict) or op.keys()-allowed or op.get('operation') not in {'claim','extend','submit','complete','finish','handoff','handoff-all'}:
+        if not isinstance(op,dict) or op.keys()-allowed or op.get('operation') not in {'claim','claim-next','extend','submit','complete','finish','handoff','handoff-all'}:
             raise ValueError('Invalid task operation')
-        if op['operation']!='handoff-all':task_path(root,run,op.get('task_id',''))
+        if op['operation']=='claim-next':
+            if len(operations)!=1 or op.keys()-{'operation','limit','prefix'}:
+                raise ValueError('claim-next is one selection request, without fixed task IDs')
+            if type(op.get('limit',1)) is not int or op.get('limit',1)<1:raise ValueError('Positive selection limit required')
+            if not isinstance(op.get('prefix',''),str):raise ValueError('Task prefix must be text')
+        else:
+            if 'limit' in op or 'prefix' in op:raise ValueError('Selection fields belong to claim-next')
+            if op['operation']!='handoff-all':task_path(root,run,op.get('task_id',''))
         if 'assets' in op and (not isinstance(op['assets'],list) or any(not isinstance(a,dict) or set(a)!={'path','sha256'} for a in op['assets'])):
             raise ValueError('Assets must contain path/SHA records')
         for key in ('write_paths','reuse_paths'):
@@ -253,7 +287,7 @@ def mutate_many(root,run,operations,*,request_id=None):
         return saved['result']
     if pending.is_file() and json.loads(pending.read_text())!=intent:raise ValueError('Request ID already has a different intent')
     curation._write_json(pending,intent)
-    checked=False;last_error=None
+    last_error=None;automatic=operations[0]['operation']=='claim-next'
     for attempt in range(8):
         try:
           with client.scratch() as tmp:
@@ -261,18 +295,25 @@ def mutate_many(root,run,operations,*,request_id=None):
             person=run_home(directory,run)/'people'/f'{actor}.json'
             if not person.is_file() or json.loads(person.read_text()).get('instance')!=instance:
                 raise ValueError('Boss identity is not registered for this run')
-            if not checked:
-                coordination.verify_write(directory,branch,tip);checked=True
+            # Startup verifies the endpoint; this transaction's actual push is
+            # the write check. Repeating a receive-pack dry run adds a round trip.
             current={t['definition']['task_id']:t for t in tasks(directory,run)}
-            if targets.is_file():expanded=json.loads(targets.read_text())
+            selection=None
+            if targets.is_file():
+                saved=json.loads(targets.read_text())
+                expanded=saved['operations'] if isinstance(saved,dict) else saved
+                if isinstance(saved,dict):selection=saved['selection']
             else:
-                expanded=[]
-                for op in operations:
-                    if op['operation']=='handoff-all':
-                        expanded.extend(dict(op,operation='handoff',task_id=k) for k,t in current.items()
-                                        if t.get('owner')==actor and t['state'] in ACTIVE)
-                    else:expanded.append(op)
-                curation._write_json(targets,expanded)
+                if automatic:
+                    op=operations[0];expanded,selection=select_claims(directory,current,op.get('limit',1),op.get('prefix',''))
+                else:
+                    expanded=[]
+                    for op in operations:
+                        if op['operation']=='handoff-all':
+                            expanded.extend(dict(op,operation='handoff',task_id=k) for k,t in current.items()
+                                            if t.get('owner')==actor and t['state'] in ACTIVE)
+                        else:expanded.append(op)
+                curation._write_json(targets,{'operations':expanded,'selection':selection} if automatic else expanded)
             ids=[op['task_id'] for op in expanded]
             if len(ids)!=len(set(ids)):raise ValueError('One operation per task in a batch')
             needed=[]
@@ -298,6 +339,7 @@ def mutate_many(root,run,operations,*,request_id=None):
             if not changed:
                 result={'status':'pushed' if any(r['status']=='pushed' for r in results) else 'no-changes',
                         'request_id':request_id,'actor':actor,'remote_tip':tip,'results':results}
+                if selection is not None:result['selection']=selection
                 curation._write_json(receipt,{'intent':intent,'result':result});pending.unlink(missing_ok=True);targets.unlink(missing_ok=True);return result
             board.git(directory,'add','--',*changed)
             label=f"curation {expanded[0]['operation']}: {actor} {expanded[0]['task_id']}" if len(expanded)==1 else f'curation batch: {actor} ({len(changed)} tasks)'
@@ -305,15 +347,23 @@ def mutate_many(root,run,operations,*,request_id=None):
             pushed=board.git(directory,'push','--quiet','origin','HEAD:refs/heads/'+branch,check=False)
             if board.auth_rejected(pushed):raise board.AuthenticationError('Authentication rejected. Stop credential retries and new claims.')
             _,tip,_=cleanup.refresh_snapshot(client)
-            confirmed=True
+            confirmed=True;seen_request=False
             for name in changed:
                 actual=board.git(directory,'show',tip+':'+name,check=False)
-                if actual.returncode or json.loads(actual.stdout).get('request_id')!=request_id:confirmed=False;break
+                matched=not actual.returncode and json.loads(actual.stdout).get('request_id')==request_id
+                seen_request=seen_request or matched
+                if not matched:confirmed=False
             if confirmed:
                 result={'status':'pushed','request_id':request_id,'actor':actor,'remote_tip':tip,'results':results}
+                if selection is not None:result['selection']=selection
                 curation._write_json(receipt,{'intent':intent,'result':result});pending.unlink(missing_ok=True);targets.unlink(missing_ok=True);return result
             if pushed.returncode and not board.push_race(pushed):
                 raise TaskWriteError('Task write not confirmed; pending request '+request_id)
+            if automatic and pushed.returncode and board.push_race(pushed) and not seen_request:
+                # A definite CAS rejection never published our selection. Pick
+                # other free tasks on the next snapshot instead of losing a race
+                # over the same IDs. Unknown delivery keeps its original targets.
+                targets.unlink(missing_ok=True)
         except (board.AuthenticationError,TaskWriteError):raise
         except board.BoardError as exc:last_error=exc
         if attempt+1<8:board.retry_pause(request_id,attempt)
@@ -327,6 +377,10 @@ def mutate(root,run,task,operation,*,assets=None,reason=None,draft_note=None,wri
     result=mutate_many(root,run,[op]);row=result['results'][0]
     if row['status']!='pushed':raise ValueError(row.get('detail','Task was not changed'))
     return dict(result,task_id=task,operation=operation)
+
+
+def claim_next(root,run,limit=1,prefix=''):
+    return mutate_many(root,run,[{'operation':'claim-next','limit':limit,'prefix':prefix}])
 
 
 def retry_request(root,run,request_id):
@@ -344,11 +398,12 @@ def retry_request(root,run,request_id):
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--repo',type=Path,required=True)
     sub=p.add_subparsers(dest='command',required=True)
-    for command in ['plan','status','list','show','claim','extend','submit','complete','finish','handoff','batch','handoff-all','retry']:
+    for command in ['plan','status','list','show','claim','claim-next','extend','submit','complete','finish','handoff','batch','handoff-all','retry']:
         q=sub.add_parser(command);q.add_argument('--run',required=True)
         if command in {'plan','batch'}:q.add_argument('--record-file',required=True)
         elif command=='retry':q.add_argument('--request-id',required=True)
-        elif command not in {'list','status','handoff-all'}:q.add_argument('task')
+        elif command not in {'list','status','handoff-all','claim-next'}:q.add_argument('task')
+        if command=='claim-next':q.add_argument('--limit',type=int,default=1);q.add_argument('--prefix',default='')
         if command in {'submit','finish'}:
             q.add_argument('--assets-file',required=True);q.add_argument('--reuse-paths-file')
         if command in {'extend','claim'}:q.add_argument('--paths-file',required=command=='extend')
@@ -365,6 +420,7 @@ def main():
         elif a.command=='list':result=task_list(root,a.run,state='available' if a.available else a.state,owner=a.owner,limit=a.limit,full=a.full)
         elif a.command=='show':result=json.loads(task_path(root,a.run,a.task).read_text())
         elif a.command=='batch':result=mutate_many(root,a.run,json.loads(curation._safe_path(root,a.record_file).read_text()))
+        elif a.command=='claim-next':result=claim_next(root,a.run,a.limit,a.prefix)
         elif a.command=='retry':result=retry_request(root,a.run,a.request_id)
         elif a.command=='handoff-all':result=mutate_many(root,a.run,[{'operation':'handoff-all','reason':a.reason,'draft_note':a.draft_note}])
         else:

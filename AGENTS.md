@@ -2,13 +2,15 @@
 
 共享阶段分工：2.5第二步使用prompts/02.5-2-distill.md、prompts/02.5-worker.md和curation-run=20261103-boss6-current；第二步正在多Boss协作，实时状态看work.py curation-task status。2.5第三步和第三阶段使用research/PHASE3_READINESS.md及对应registrar/mapper启动词，以--workflow-run隔离身份、workspace和公屏。每个对话以用户指定阶段为准，不把某个对话的“本侧/另一侧”安排写成全仓禁令。软件维护不接管其它Boss已领数学。
 
-协作程序v2：短状态表与筛选list、批量claim/extend/finish、持久request_id重试、handoff-all、只展开必要文件的任务事务与缓存资产验证。已在协作的Boss先保全草稿并sync更新，不换号、不重做第一步或已完成数学。先认领成功再派实质任务；数学Boss直接整理数学，用户指定的协调Boss统筹纯包装和差量。状态变更用批量事务，暂停一次交接，不把claimed等同仍在运行。
+协作程序：空位用curation-task claim-next从远端最新状态直接领可用群，正常竞争自动重选，响应未知则保留原request_id和目标。旧批量claim/extend/finish、短状态表、handoff-all和资产缓存保持兼容。身份与写端点在启动时检查，任务事务以实际push确认，不重复dry-run探测。已有Boss保全草稿后sync，不换号或重做已完成数学。每个处理者完整做数学，Boss也实做；成熟立即保存、finish并补位，不等整轮结束，不以一次提交或汇报收尾。正常切换不交接，只有真实停止才交接本人未完任务；claimed不等于仍在运行。
+
+材料当前入口为curation/catalogs/INDEX.md。20261104增量补入6篇已交付数学页的分类，接续原编号；30份既有未分组候选已补成14个可领群，见curation/plans/20261104-increment/TASKS.md。新增输出不重复派工。原分类快照及已完成任务记录保留，实时数量只看status。
 
 后续基础设施已按用户要求实现，接口见research/IMPLEMENTATION.md、research/GITHUB_RESOURCES.md、prompts/research-runtime.md；Work的Main/两类Solver及GitHub资源到实际被指定任务时才启用。既有授权允许实现、测试、正常提交这些基础设施；不自动批量准入、建图或启动数学研究。所有pushed/已启用声明以实际确认结果为准。以下第一步历史交付中的“未启动/后续另定”不覆盖当前协作状态或已发布后续方案。
 
-本次用户最新决定：阶段二继续原来源清洗；2.5分为三步：1只给材料定性、标号、建立目录，2对象群数学整理/有限综合及另行明确授权的材料处置，3按另定方案重新登记。**第一步绝不删除、移动、合并或改写原件，也不修正文链接；route只是后续建议。**此前两个运行的过度清理已经精确撤销，649原页面及641页面的链接均恢复，必要附件保留；旧actions只表示历史，不能再次应用。完整4619份材料的当前入口为curation/catalogs/20261103-classification-only/INDEX.md；旧run快照和原分类记录保留，供版本追溯。第一步不是数学真值审查；数字不等于缺陷，完整反例、算法合同、猜想和具体缺口都是数学内容。第二步未启动，2.5第三步、第三阶段超边和真正数学研究Agent由用户与另一AI设计；旧原型不是最终授权。
+本次用户最新决定：阶段二继续原来源清洗；2.5分为三步：1只给材料定性、标号、建立目录，2对象群数学整理/有限综合及另行明确授权的材料处置，3按另定方案重新登记。**第一步绝不删除、移动、合并或改写原件，也不修正文链接；route只是后续建议。**此前两个运行的过度清理已经精确撤销，649原页面及641页面的链接均恢复，必要附件保留；旧actions只表示历史，不能再次应用。原4619份材料分类快照为curation/catalogs/20261103-classification-only/INDEX.md；后续增量由当前目录接续，旧run和编号保留。第一步不是数学真值审查；数字不等于缺陷，完整反例、算法合同、猜想和具体缺口都是数学内容。第一步已完成，第二步正在执行；历史“未启动”说明不阻塞当前任务。2.5第三步、第三阶段超边和真正数学研究Agent由用户与另一AI设计；旧原型不是最终授权。
 
-结果分支rebuild/research-v2，原始资料来源及冻结提交见cleanup/sources.json；阶段二公屏仍wcg/board-cleanup-20261028。2.5临时公屏拟用wcg/board-curation-25；第一步单Boss内部批次无需公屏消息。顶层curation/保存分类目录、历史批次与工作区；work.py triage仅用于本地分类，tools/classification_catalog.py用于跨快照带号目录，curation-task用于第二步独立对象群任务。新curator clone用--curation-run绑定独立身份/工作区，不用旧clean认领。新clone用新版根work.py，旧源clone不改绑。凭据留仓库外，不打印、放消息或入库。只改自己认领的共享正文，Git操作保留未提交内容，checkpoint确认pushed才称保存。
+结果分支rebuild/research-v2，原始资料来源及冻结提交见cleanup/sources.json；阶段二公屏仍wcg/board-cleanup-20261028。2.5公屏现用wcg/board-curation-25；第一步单Boss内部批次无需公屏消息。顶层curation/保存分类目录、历史批次与工作区；work.py triage仅用于本地分类，tools/classification_catalog.py用于跨快照带号目录，curation-task用于第二步独立对象群任务。新curator clone用--curation-run绑定独立身份/工作区，不用旧clean认领。新clone用新版根work.py，旧源clone不改绑。凭据留仓库外，不打印、放消息或入库。只改自己认领的共享正文，Git操作保留未提交内容，checkpoint确认pushed才称保存。
 
 所有数学资料必须保全域、量词、假设、对象、真实状态、关键论证、证据与接续用途。未完成idea仍可保存；候选/条件结果/模板障碍/有限实验/真实反例分别说明。旧入口/聊天/图仅是待核来源，不自动继承为事实。四个主要问题家族不穷尽所有旧选题，允许按实读新建存档和类别。
 

@@ -1,6 +1,6 @@
 # 2.5.1/2 操作手册
 
-第一步只分类、标号、建立目录。当前完整入口是[4,619份编号分类表](../curation/catalogs/20261103-classification-only/INDEX.md)，旧run保留冻结阅读记录。此前第一步649份退出与641页链接改动已精确撤销，所有原页面恢复，证据附件也保留。旧actions是历史，不是现行任务。第二步尚未开始；不清空旧公屏，也不创建新公屏。
+第一步只分类、标号、建立目录，已经完成；第二步正在执行。当前入口是[材料分类目录](../curation/catalogs/INDEX.md)，包含原4,619份分类快照及新增6篇分类。原编号不变，新增接续至P25-04625；较后的正文版本由current-locations定位，不能把冻结分类SHA当作现行正文SHA。30份已分类差量现已进入[14个可领对象群](../curation/plans/20261104-increment/TASKS.md)。此前第一步649份退出与641页链接改动已精确撤销；旧actions只表示历史，不是现行处理指令。公屏继续复用wcg/board-curation-25。
 
 ## 第一步：分类目录，零原件处理
 
@@ -26,19 +26,21 @@ python3 tools/classification_catalog.py --source-runs 20261103-boss6-triage 2026
 
 材料清单、数学子集、证据/非数学子集、第二步候选及按档目录均有完整编号。每条含原路径、SHA、类别、具体理由、正文定位和建议去向。旧run的同路径版本保存在`source_versions`中；当前链接指向已恢复的原件。目录行号不充当数学对象ID或超边端点。
 
-## 第二步：协作程序v2
+## 第二步：持续领取与批量交付
 
-完整词见[Boss](../prompts/02.5-2-distill.md)和[worker](../prompts/02.5-worker.md)。新clone仍用curator/20261103-boss6-current和wcg/board-curation-25；已有同身份clone运行sync更新，不换号、不重做分类。先由用户指定一名协调Boss处理差量分组和纯包装批次，其余Boss直接整理数学。旧run中的数量是快照，实时看status。
+完整词见[Boss](../prompts/02.5-2-distill.md)和[worker](../prompts/02.5-worker.md)，可直接粘贴的[全文](../prompts/02.5-2-distill.txt)与[原对话接续词](../prompts/02.5-resume.txt)已同步。新clone仍用curator/20261103-boss6-current和wcg/board-curation-25；已有clone保全草稿后sync，不换号或重登记。数学Boss直接做现有群，不等协调头衔或身份页清理。每人完整实做，Boss也做，成熟立即保存并补位，直到本阶段可处理材料都有准确处置；不是一轮代理结束就收尾。旧数量是快照，实时看status。
 
 ```sh
 python3 work.py sync
 python3 work.py curation-task status --run 20261103-boss6-current
 python3 work.py curation-task list --run 20261103-boss6-current --owner self --limit 0
-python3 work.py curation-task list --run 20261103-boss6-current --available --limit 12
+python3 work.py curation-task claim-next --run 20261103-boss6-current --limit 2
 python3 work.py curation-task show --run 20261103-boss6-current 实际task_id
 ```
 
-list默认最多20条短行；--full保留原完整记录，--limit 0表示全量。status输出聚合、活跃任务及未分组差量数；status --full才输出差量路径。新事务在任务里记录updated_at，无需额外打卡写入；旧记录没有该字段时不伪造活动时间。
+claim-next示例的2应换成当前真实空位数；可用--prefix筛选任务编号家族。它在同一远端事务中检查最新归属、输入版本和写范围，结果只领取立即能做的数量；正常ref竞争后重选可领群，不再要求各Boss先争同一份旧清单。results中的pushed才可派工；selection说明实际选中及被跳过的过期输入或占用范围。输入过期仍须数学复核，不自动重绑SHA。响应未知保留原目标和request_id，retry不会多领任务。旧batch及单项命令保持兼容。
+
+list默认最多20条短行；--full保留原完整记录，--limit 0表示全量。status输出聚合、活跃任务及未分组差量数；status --full才输出差量路径。身份/端点在启动时检查，普通任务不重复dry-run；实际push及读回负责确认成功。updated_at随真实状态变更记录，不额外打卡。
 
 batch接收JSON数组，每项包含task_id、operation和该操作参数。支持claim（可同时附write_paths）、extend（write_paths）、finish（assets、reason，可附reuse_paths）、旧submit/complete/handoff。一次正常推送提交一批互不冲突的变更；逐项冲突会列为conflict，其它项可以成功，必须检查results。
 

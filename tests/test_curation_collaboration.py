@@ -29,6 +29,7 @@ class CollaborationTests(unittest.TestCase):
             self.git(self.root,'config',key,value)
         h=task.run_home(self.root,self.run);curation._write_json(h/'run.json',{'actor':'Boss1'})
         curation._write_json(h/'people/Boss1.json',{'instance':'a'*32})
+        curation._write_json(h/'people/Boss2.json',{'instance':'b'*32})
         self.paths={};self.definitions={}
         for name in ['A','B']:
             path='archives/demo/state/引理/'+name+'[1].md';self.paths[name]=path
@@ -181,6 +182,100 @@ class CollaborationTests(unittest.TestCase):
         self.assertNotIn('definition',brief[0]);self.assertIn('definition',full[0])
         self.assertEqual(len(task.task_list(self.root,self.run,limit=1)),1)
         self.assertEqual(task.task_status(self.root,self.run)['states'],{'available':2})
+
+    def test_claim_next_skips_changed_input_without_rebinding_it(self):
+        self.write(self.paths['A'],b'Changed mathematical premise')
+        self.git(self.root,'add',self.paths['A']);self.git(self.root,'commit','--quiet','-m','Changed input')
+        self.git(self.root,'push','--quiet','origin','HEAD:refs/heads/'+self.branch)
+        result=task.claim_next(self.root,self.run)
+        self.assertEqual(result['selection']['selected'],['B'])
+        self.assertEqual(result['selection']['skipped'][0]['reason'],'input-changed')
+        self.assertEqual(self.remote_task('A')['state'],'available')
+        self.assertEqual(self.remote_task('A')['definition']['inputs'],self.definitions['A']['inputs'])
+
+    def test_claim_next_skips_an_occupied_write_scope(self):
+        definition=copy.deepcopy(self.definitions['A']);definition['task_id']='C'
+        definition['write_paths']=self.definitions['A']['write_paths'][:]
+        curation._write_json(task.task_path(self.root,self.run,'C'),
+                             {'definition':definition,'state':'claimed','owner':'Boss2'})
+        self.git(self.root,'add','.');self.git(self.root,'commit','--quiet','-m','Occupied scope')
+        self.git(self.root,'push','--quiet','origin','HEAD:refs/heads/'+self.branch)
+        result=task.claim_next(self.root,self.run)
+        self.assertEqual(result['selection']['selected'],['B'])
+        self.assertEqual(result['selection']['skipped'][0]['reason'],'write-scope-occupied')
+
+    def test_claim_next_reselects_after_another_boss_wins_the_same_task(self):
+        peer=self.base/'peer'
+        self.git(self.base,'clone','--quiet','--branch',self.branch,str(self.remote),str(peer))
+        for key,value in {'user.name':'Peer','user.email':'peer@example.invalid','wcg.actor':'Boss2',
+                          'wcg.instance':'b'*32,'wcg.curationRun':self.run,'wcg.branch':self.branch}.items():
+            self.git(peer,'config',key,value)
+        real=board.git;injected=False
+        def git(cwd,*args,**kwargs):
+            nonlocal injected
+            if args[0]=='push' and '--dry-run' not in args and not injected:
+                injected=True;task.claim_next(peer,self.run)
+            return real(cwd,*args,**kwargs)
+        with patch.object(board,'git',side_effect=git),patch.object(board,'retry_pause',lambda *_:None):
+            result=task.claim_next(self.root,self.run)
+        self.assertEqual(result['selection']['selected'],['B'])
+        self.assertEqual(self.remote_task('A')['owner'],'Boss2')
+        self.assertEqual(self.remote_task('B')['owner'],'Boss1')
+        self.assertEqual(self.remote_file('unrelated/deep/binary.dat'),self.binary)
+
+    def test_claim_next_lost_readback_does_not_take_extra_tasks(self):
+        real=task.cleanup.refresh_snapshot;calls=0;before=self.count()
+        def refresh(client):
+            nonlocal calls
+            calls+=1
+            if calls==2:raise board.BoardError('Lost response after successful push')
+            return real(client)
+        with patch.object(task.cleanup,'refresh_snapshot',side_effect=refresh),patch.object(board,'retry_pause',lambda *_:None):
+            result=task.claim_next(self.root,self.run)
+        self.assertEqual(result['selection']['selected'],['A'])
+        self.assertEqual(self.remote_task('A')['state'],'claimed')
+        self.assertEqual(self.remote_task('B')['state'],'available')
+        self.assertEqual(self.count(),before+1)
+
+    def test_claim_next_unknown_failure_retry_keeps_its_original_target(self):
+        real=board.git;request='d'*32
+        def git(cwd,*args,**kwargs):
+            if args[0]=='push':return subprocess.CompletedProcess(args,1,b'',b'Unknown delivery failure')
+            return real(cwd,*args,**kwargs)
+        with patch.object(board,'git',side_effect=git):
+            with self.assertRaises(task.TaskWriteError):
+                task.mutate_many(self.root,self.run,[{'operation':'claim-next','limit':1}],request_id=request)
+        task.mutate(self.root,self.run,'A','claim')
+        result=task.retry_request(self.root,self.run,request)
+        self.assertEqual(result['results'][0]['status'],'conflict')
+        self.assertEqual(self.remote_task('B')['state'],'available')
+
+    def test_claim_next_uses_actual_push_without_a_repeated_write_probe(self):
+        real=board.git;probes=[];pushes=[]
+        def git(cwd,*args,**kwargs):
+            if args[0]=='push':
+                (probes if '--dry-run' in args else pushes).append(args)
+            return real(cwd,*args,**kwargs)
+        with patch.object(board,'git',side_effect=git):result=task.claim_next(self.root,self.run)
+        self.assertEqual(result['status'],'pushed');self.assertEqual(probes,[]);self.assertEqual(len(pushes),1)
+
+    def test_claim_next_authentication_failure_does_not_publish_a_claim(self):
+        real=board.git;pushes=[]
+        def git(cwd,*args,**kwargs):
+            if args[0]=='push':
+                pushes.append(args);return subprocess.CompletedProcess(args,1,b'',b'Authentication failed')
+            return real(cwd,*args,**kwargs)
+        with patch.object(board,'git',side_effect=git):
+            with self.assertRaises(board.AuthenticationError):task.claim_next(self.root,self.run)
+        self.assertEqual(len(pushes),1)
+        self.assertTrue(all(self.remote_task(n)['state']=='available' for n in ['A','B']))
+
+    def test_claim_next_cli_filters_prefix_and_returns_only_the_limit(self):
+        result=subprocess.run([sys.executable,str(ROOT/'tools/curation_tasks.py'),'--repo',str(self.root),
+                               'claim-next','--run',self.run,'--limit','1','--prefix','B'],capture_output=True,text=True)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertEqual(json.loads(result.stdout)['selection']['selected'],['B'])
+        self.assertEqual(self.remote_task('A')['state'],'available')
 
     def test_asset_verification_reuses_one_object_cache(self):
         client=board.Board(self.root,branch='wcg/board-fixture')
