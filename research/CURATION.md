@@ -1,6 +1,6 @@
 # 2.5 分步范围
 
-当前执行2.5第二步，完整提示词只有 [02.5-2-distill.txt](../prompts/02.5-2-distill.txt)。用户提供这一份词、work.py和已有仓库外凭据即可；内部资料由执行者自行读取。任务和实际归属看 [现行任务目录](../curation/runs/20261103-boss6-current/TASKS.md) 与curation-task远端查询，不从旧报告推断进度。
+本轮2.5第二步160群已完成，实际成果与处置见当前run。接续同类整理时完整提示词只有 [02.5-2-distill.txt](../prompts/02.5-2-distill.txt)。用户提供这一份词、work.py和已有仓库外凭据即可；内部资料由执行者自行读取。任务和实际归属看 [现行任务目录](../curation/runs/20261103-boss6-current/TASKS.md) 与curation-task远端查询，不从旧报告推断进度。
 
 | 步骤 | 工作与完成标准 |
 | --- | --- |
