@@ -1,3 +1,11 @@
+---
+kind: review
+type_tag: 审查
+title: "Santa 受限桥与归一化菜单双源审查"
+legacy_ids:
+  - "UM-SANTA-RESTRICTED-BRIDGE-BOUNDARY-v1"
+---
+
 # Santa 受限桥与归一化菜单双源审查
 
 ## 来源身份与阅读范围

@@ -18,7 +18,7 @@ source_refs:
   - "source:177bb999d00126ea6ea9:evidence/runs/unrelated_machines/seven_state_star_global_quadratic_root_replay_scope.json"
 related_objects:
   - "七态星全局二次审计与root重放范围审查--审查.md"
-  - "../计算/七态星全局二次审计与root重放边界--计算.md"
+  - "七态星全局二次审计与root重放范围审查--审查.md"
   - "七态原星仿射Boolean所有者边界Exact与作者Proof版本审查--审查.md"
   - "七态AND端点二次localizer作者read-after审查--审查.md"
   - "鲁棒双端环与七态二次局部核双源审查--审查.md"

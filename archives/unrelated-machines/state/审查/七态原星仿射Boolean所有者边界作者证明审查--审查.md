@@ -15,8 +15,7 @@ source_refs:
 related_objects:
   - "鲁棒双端环与七态二次局部核双源审查--审查.md"
   - "七态星全局二次审计与root重放范围审查--审查.md"
-  - "../计算/七态星全局二次审计与root重放边界--计算.md"
-  - "仿射线结构边界合并稿的版本与分域复核--审查.md"
+  - "七态星全局二次审计与root重放范围审查--审查.md"
   - "身份耦合稀释raw-K2三源精读与锐二倍范围--审查.md"
 evidence_paths:
   - "archives/unrelated-machines/tools/evidence/seven-state-affine-owner-boundary-v1/original/sol_seven_state_affine_boolean_owner_boundary_author_proof_v1.md"

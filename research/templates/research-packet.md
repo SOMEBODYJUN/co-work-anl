@@ -1,48 +1,23 @@
-# Research Packet: `<packet_id>`
+# 研究输入：obstacle / full
 
-## 问题
+实际 packet 由 `work.py research packet` 或 `research init` 从同一 spec 生成；不手工维护另一套 blind/boundary 协议。
 
-- `problem_id`:
-- 精确定义与量词：
-- 成功/失败条件：
+spec 的最小结构：
 
-## 对象与边界
+```json
+{
+  "problem_id": "USER-PROBLEM-ID",
+  "problem": {"path": "archives/ARCHIVE/state/问题/精确原题--问题.md", "sha256": "实际文件SHA256"},
+  "definitions": [{"path": "archives/ARCHIVE/state/定义/模型--定义.md", "sha256": "实际文件SHA256"}],
+  "obstacles": [],
+  "seed_ids": ["实际登记object_id"]
+}
+```
 
-| object_id | 正文路径 | 在本问题中的作用 | 当前状态 |
-|---|---|---|---|
-|  |  |  |  |
+问题及定义包含完整的域、目标量词与约束，引用可用 `section` 指定精确标题。obstacles 只选有用的已知失败边界；不把全仓成果塞进该字段。
 
-### 已知结论
+需要定向取用时可在 spec 加 `edge_ids` 选择 accepted 正向支持的替代分支，或加 `edge_statuses`、`relation_kinds` 选择研究线索。`hops` 默认 0，仅控制额外导航，不截断已选逻辑支持的全部前提。full context 中各端点保留模型、量词、假设、状态与 objections，关系保留完整 conditions、scope、解释和证据定位；正文按需读取。
 
-- claim_id / 类型 / 状态 / 证据：
+obstacle packet 给原题、定义、障碍与自由研究任务。full packet 另给登记检索入口及相关超边，Solver 按需展开完整共同前提、条件和证据。不同支持分支保持 OR，单条逻辑边前提保持 ALL；proposed/refuted/rejected/objections 分别按真实语义理解。
 
-### 开放边界与失败路线
-
-- boundary_id：
-- 不能直接继承的结论：
-
-## 证据和可复现入口
-
-- evidence_id：
-- 路径：
-- 命令或运行入口：
-- 预期结果与已知限制：
-
-## 上下文视图
-
-### full
-
-完整 packet、相关对象和必要证据。
-
-### boundary
-
-问题、边界、相关对象、失败路线和局部证据；不自动读取全仓图。
-
-### blind
-
-问题定义、严格约束和允许的原始材料；不读取已有结论和超图边。
-
-## 下一批问题
-
-1.
-2.
+Main 用真实平台工具创建/接续 Solver。保存实际 profile、agent_id、完整数学笔记、具体反馈与下一动作；恢复时保留原 packet 和笔记，并明确当前登记与初始版本的差异。packet 不代表模型已启动，也不代表数学结论已成立。

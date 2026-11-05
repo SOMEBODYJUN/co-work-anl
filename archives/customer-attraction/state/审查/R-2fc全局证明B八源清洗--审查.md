@@ -50,7 +50,7 @@ GIT_NO_LAZY_FETCH=1 python3 co-work-anl/work.py clean show <source-id>
 
 [
 W=8,qquad mathrm{OPT}_3=11,qquad
-Phi=Psi=3H_1+5H_2=rac{21}{2}<11.
+Phi=Psi=3H_1+5H_2=\frac{21}{2}<11.
 ]
 
 这确实否定“完整 SPE 的调和势/截断调和势普遍支配 OPT”的加强桥；它保留一般 half 的余量 `2W=16>11`，因此不是 Q-CAG-HALF 的反例。任意纯负载函数 `F=sum_x f(c_x)` 若强加 `f(0)=0,f(1)=1` 且要求 `F>=OPT`，本例只给必要条件 `f(2)>=8/5`。

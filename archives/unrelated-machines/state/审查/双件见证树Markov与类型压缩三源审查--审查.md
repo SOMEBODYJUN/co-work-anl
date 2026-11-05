@@ -14,6 +14,8 @@ source_refs:
   - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/tree_markov_completion_audit.json"
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/type_profile_compression_and_rank_bridge_audit.json"
   - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/type_profile_compression_and_rank_bridge_audit.json"
+legacy_ids:
+  - "UM-PAIR-WITNESS-HARDNESS-BARRIER-v1"
 ---
 
 # 读取范围与版本身份

@@ -67,11 +67,11 @@ related_objects:
 
 ## 两任务长度的 restricted assignment
 
-在更窄的 restricted-assignment 模型 (p_{i,j}\in\{p_j,\infty\})，且任务长度只有 (alpha<\beta) 两种时，论文按 (alpha) 与 (eta) 相对 (T) 的四种位置组合调用已有算法或修改上述机器计划：
+在更窄的 restricted-assignment 模型 (p_{i,j}\in\{p_j,\infty\})，且任务长度只有 (alpha<\beta) 两种时，论文按 (alpha) 与 (\beta) 相对 (T) 的四种位置组合调用已有算法或修改上述机器计划：
 
 1. 若任务无任何 (p_j\le T) 的资格机器，立即 REJECT；
-2. 若 (alpha>T/(\ell-1))、(eta\le T)，调用已有两长度算法，保证不超过 (2-\alpha/\beta<2-1/(\ell-1))；
-3. 若 (alpha\le T/(\ell-1))、(eta\le T/2)，调用配置 LP 加舍入，负载至多 (3T/2)；
+2. 若 (alpha>T/(\ell-1))、(\beta\le T)，调用已有两长度算法，保证不超过 (2-\alpha/\beta<2-1/(\ell-1))；
+3. 若 (alpha\le T/(\ell-1))、(\beta\le T/2)，调用配置 LP 加舍入，负载至多 (3T/2)；
 4. 若 (alpha\le T/(\ell-1)<\beta\le T)，按每机 big/small 集合选择机器计划。若只排 small，负载至多 ((\ell-1)\alpha\le T)；若含 big，至多一 big 加 (|S_i|-1) 个 small，负载上界
 \[
 \beta+(|S_i|-1)\alpha\le \left(2-\frac1{\ell-1}\right)T.

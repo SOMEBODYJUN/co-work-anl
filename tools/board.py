@@ -172,6 +172,11 @@ def current_metadata(value):
 
 def transition(state, event):
     """Return a new validated state; a failed message never mutates its input."""
+    return _append_validated(state, event)
+
+
+def _append_validated(state, event, by_id=None, clone=True):
+    """Replay into a private accumulator without recopying the whole history."""
     if not isinstance(event, dict) or set(event) != INTENT_KEYS | {'schema', 'seq', 'time'}:
         raise ValidationError('Invalid message record fields.')
     validate_intent({key: event[key] for key in INTENT_KEYS})
@@ -181,19 +186,23 @@ def transition(state, event):
         raise ValidationError('Noncontiguous message sequence.')
     if type(event['time']) is not int or event['time'] < 0:
         raise ValidationError('Invalid message time.')
-    if any(old['id'] == event['id'] for old in state['events']):
+    if (event['id'] in by_id if by_id is not None else any(old['id'] == event['id'] for old in state['events'])):
         raise Conflict('Duplicate message ID.')
     if 'reply_to' in event['body']:
-        parent = next((old for old in state['events'] if old['id'] == event['body']['reply_to']), None)
+        parent = (by_id.get(event['body']['reply_to']) if by_id is not None else
+                  next((old for old in state['events'] if old['id'] == event['body']['reply_to']), None))
         if parent is None:
             raise ValidationError('reply_to is not an existing message.')
         if save_of(parent) != save_of(event):
             raise ValidationError('A reply cannot cross research saves.')
         if participants(parent) and participants(event) != participants(parent):
             raise ValidationError('A private reply must keep the same two participants.')
-    out = copy.deepcopy(state)
-    out['events'].append(copy.deepcopy(event))
+    out = copy.deepcopy(state) if clone else state
+    saved = copy.deepcopy(event)
+    out['events'].append(saved)
     out['last_time'] = event['time']
+    if by_id is not None:
+        by_id[saved['id']] = saved
     return out
 
 
@@ -227,7 +236,7 @@ def retry_pause(event_id, attempt):
 
 
 def render(state, now=None, selected=None, actor=None):
-    lines = ['# 研究公屏', '', '每个 Work 对话使用一个稳定发布标识署名；程序可自动生成。',
+    lines = ['# 研究公屏', '', '每个 Work 对话使用用户明确指定的 Boss 编号署名。',
              '消息随时发布、异步回复；同题的多条研究路线可以同时推进。',
              '子 agent 的发现由所在对话转述。', '',
              '研究文件使用启动回执绑定的分支；公屏用于异步研讨，冻结文件附带 branch、commit 和 SHA-256。', '',
@@ -302,12 +311,12 @@ class Board:
             events = root / 'events'
             if events.is_symlink():
                 raise ValidationError('Board paths must be ordinary directories.')
-            state = empty_state()
+            state, by_id = empty_state(), {}
             for path in sorted(events.glob('*.json')):
                 if path.is_symlink():
                     raise ValidationError('Message records must be ordinary files.')
                 event = json.loads(path.read_text())
-                state = transition(state, event)
+                state = _append_validated(state, event, by_id, clone=False)
                 if path.name != f"{event['seq']:08d}_{event['id']}.json":
                     raise ValidationError('Message filename/sequence mismatch.')
             return state

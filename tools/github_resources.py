@@ -1,15 +1,18 @@
 """Repository-scoped GitHub resources using the same external PAT as work.py."""
 import argparse
+import base64
 import json
 import os
 from pathlib import Path
 import re
+import shutil
 import subprocess
 import urllib.error
 import urllib.parse
 import urllib.request
 
 from curation import _safe_path
+from compute import request as compute_request
 
 
 class APIError(RuntimeError):
@@ -80,9 +83,109 @@ class Client:
             raise ValueError('Only the registered mathematical compute workflow is supported')
         if not isinstance(inputs, dict) or len(inputs) > 10 or any(not isinstance(k, str) or not isinstance(v, (str, bool, int)) for k, v in inputs.items()):
             raise ValueError('Workflow inputs must be a small explicit JSON object')
+        readiness=self.workflow_status(workflow,ref)
+        if not readiness['manual_dispatch_ready']:
+            raise ValueError('Manual dispatch needs this workflow on the default branch and requested ref. Use compute request plus a branch checkpoint for ordinary computation.')
         result = self.request('POST', self.repo_path('/actions/workflows/' + workflow + '/dispatches'), {'ref': ref, 'inputs': inputs})
         return {'status': 'dispatch-request-accepted', 'response': result, 'workflow': workflow, 'ref': ref,
                 'limit': 'Dispatch acceptance is not a completed or passed run; check the actual Actions run separately'}
+
+    def workflow_status(self, workflow, ref):
+        if workflow not in {'research-checks.yml', 'research-compute.yml'}:
+            raise ValueError('Unknown research workflow')
+        repo = self.request('GET', self.repo_path())
+        result = {'repository': self.repository, 'default_branch': repo['default_branch'], 'workflow': workflow,
+                  'ref': ref, 'mutations_performed': 0}
+        for label, branch in [('default_branch_file', repo['default_branch']), ('requested_ref_file', ref)]:
+            path = '/contents/.github/workflows/'+workflow+'?ref='+urllib.parse.quote(branch, safe='')
+            try:
+                value = self.request('GET', self.repo_path(path))
+                source=base64.b64decode(value.get('content','')).decode('utf-8',errors='replace') if value.get('encoding')=='base64' else ''
+                result[label] = {'exists': True, 'sha': value.get('sha'),
+                                 'declares_compute_request_path':'research/compute-requests/' in source}
+            except APIError as exc:
+                if exc.status != 404: raise
+                result[label] = {'exists': False}
+        result['manual_dispatch_ready'] = result['default_branch_file']['exists'] and result['requested_ref_file']['exists']
+        result['branch_push_route'] = {'declared_on_requested_ref':result['requested_ref_file'].get('declares_compute_request_path',False),
+            'enablement':'Push the prepared request workflow/tools to rebuild/research-v2 before an actual explicit computation request. Only newly added research/compute-requests/*.json request calculation; no run has been started by this read.'}
+        return result
+
+    def jobs(self, run_id):
+        if not str(run_id).isdigit(): raise ValueError('Use the actual numeric Actions run ID')
+        rows=[];page=1
+        while True:
+            value=self.request('GET',self.repo_path('/actions/runs/'+str(run_id)+'/jobs?filter=latest&per_page=100&page='+str(page)))
+            rows.extend(value.get('jobs',[]))
+            if len(value.get('jobs',[]))<100: return rows
+            page+=1
+
+    def runs(self, ref=None, request_id=None, head=None, limit=20, workflow='research-compute.yml'):
+        if not 1<=limit<=100:raise ValueError('Choose 1..100 recent runs')
+        query={'per_page':limit}
+        if ref:query['branch']=ref
+        if head:query['head_sha']=head
+        rows=self.request('GET',self.repo_path('/actions/runs?'+urllib.parse.urlencode(query))).get('workflow_runs',[])
+        result=[]
+        for row in rows:
+            if row.get('path','').split('@')[0]!='.github/workflows/'+workflow:continue
+            item={k:row.get(k) for k in ['id','name','event','status','conclusion','head_branch','head_sha','html_url','created_at','updated_at','run_attempt']}
+            if request_id:
+                jobs=self.jobs(row['id']);matched=[j for j in jobs if j.get('name')=='compute/'+request_id]
+                item['request_jobs']=[{k:j.get(k) for k in ['id','name','status','conclusion','html_url']} for j in matched]
+                item['request_id']=request_id
+                if not matched and not head:continue
+                if not matched:item['request_correlation']='Exact push SHA matches; preparation may still be pending or have failed. Inspect this run.'
+            result.append(item)
+        return {'runs':result,'request_id':request_id,'head_sha':head,'mutations_performed':0,
+                'note':'An empty listing is not completion. Pin --head to the checkpoint commit to find queued or failed preparation before a request job appears.'}
+
+    def run_status(self, run_id):
+        if not str(run_id).isdigit():raise ValueError('Use the actual numeric Actions run ID')
+        row=self.request('GET',self.repo_path('/actions/runs/'+str(run_id)))
+        result={k:row.get(k) for k in ['id','name','event','status','conclusion','head_branch','head_sha','html_url','run_attempt']}
+        result['jobs']=[{k:j.get(k) for k in ['id','name','status','conclusion','html_url']} for j in self.jobs(run_id)]
+        result['artifacts']=self.artifacts(run_id)['artifacts']
+        result['limit']='Read the downloaded result.json and output files; Actions success does not establish a mathematical conclusion.'
+        return result
+
+    def artifacts(self, run_id):
+        if not str(run_id).isdigit():raise ValueError('Use the actual numeric Actions run ID')
+        rows=[];page=1
+        while True:
+            value=self.request('GET',self.repo_path('/actions/runs/'+str(run_id)+'/artifacts?per_page=100&page='+str(page)))
+            rows.extend(value.get('artifacts',[]))
+            if len(value.get('artifacts',[]))<100:break
+            page+=1
+        return {'run_id':int(run_id),'artifacts':[{k:r.get(k) for k in ['id','name','size_in_bytes','expired','created_at','expires_at','digest']} for r in rows]}
+
+    def download(self, artifact_id, output):
+        if not str(artifact_id).isdigit():raise ValueError('Use the actual numeric artifact ID')
+        destination=_safe_path(self.root,output)
+        if destination.exists():raise ValueError('Artifact destination already exists; choose a new path')
+        info=self.request('GET',self.repo_path('/actions/artifacts/'+str(artifact_id)))
+        if info.get('expired'):raise ValueError('Artifact has expired; use retained checkpoint inputs for a deliberate resumed request')
+        class HoldRedirect(urllib.request.HTTPRedirectHandler):
+            def redirect_request(self,*args,**kwargs):return None
+        auth_request=urllib.request.Request('https://api.github.com'+self.repo_path('/actions/artifacts/'+str(artifact_id)+'/zip'),
+            headers={'Accept':'application/vnd.github+json','Authorization':'Bearer '+self._token,'X-GitHub-Api-Version':'2026-03-10','User-Agent':'co-work-research-tools'})
+        opener=urllib.request.build_opener(HoldRedirect())
+        try:
+            response=opener.open(auth_request,timeout=30)
+        except urllib.error.HTTPError as exc:
+            if exc.code!=302:raise APIError(exc.code,'Artifact download rejected') from None
+            location=exc.headers.get('Location','')
+            if urllib.parse.urlparse(location).scheme!='https':raise ValueError('Artifact storage URL must use HTTPS')
+            # The storage request carries no GitHub authorization header.
+            try:response=urllib.request.urlopen(urllib.request.Request(location,headers={'User-Agent':'co-work-research-tools'}),timeout=60)
+            except urllib.error.URLError:raise APIError('download','Artifact storage download failed; retry the artifact ID without exposing its temporary storage URL') from None
+        destination.parent.mkdir(parents=True,exist_ok=True)
+        try:
+            with response, destination.open('xb') as stream:shutil.copyfileobj(response,stream,1024*1024)
+        except BaseException:
+            destination.unlink(missing_ok=True);raise
+        return {'status':'artifact-downloaded','artifact_id':int(artifact_id),'path':output,'bytes':destination.stat().st_size,
+                'next':'Inspect result.json, stdout, stderr, declared outputs and saved algorithm checkpoints before deciding the next computation.'}
 
     def machines(self, ref):
         return self.request('GET', self.repo_path('/codespaces/machines?ref=' + urllib.parse.quote(ref, safe='')))
@@ -107,15 +210,29 @@ def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__); p.add_argument('--repo', type=Path, required=True)
     sub = p.add_subparsers(dest='command', required=True)
     sub.add_parser('status')
+    q = sub.add_parser('workflow-status'); q.add_argument('--workflow',default='research-compute.yml');q.add_argument('--ref',required=True)
+    q = sub.add_parser('submit-compute');q.add_argument('experiment');q.add_argument('--manifest',default='research/experiments.json');q.add_argument('--request-id');q.add_argument('--runner');q.add_argument('--timeout-minutes',type=int,required=True);q.add_argument('--resume-from')
+    q = sub.add_parser('runs');q.add_argument('--ref');q.add_argument('--request-id');q.add_argument('--head');q.add_argument('--limit',type=int,default=20);q.add_argument('--workflow',default='research-compute.yml')
+    q = sub.add_parser('run');q.add_argument('run_id')
+    q = sub.add_parser('artifacts');q.add_argument('run_id')
+    q = sub.add_parser('download');q.add_argument('artifact_id');q.add_argument('--out',required=True)
     q = sub.add_parser('dispatch'); q.add_argument('--workflow', required=True); q.add_argument('--ref', required=True); q.add_argument('--inputs-file')
     q = sub.add_parser('machines'); q.add_argument('--ref', required=True)
     q = sub.add_parser('create-codespace'); q.add_argument('--ref', required=True); q.add_argument('--machine', required=True)
     q = sub.add_parser('stop-codespace'); q.add_argument('name')
     a = p.parse_args(argv); root = a.repo.resolve()
+    if a.command=='submit-compute':
+        result=compute_request(root,a.experiment,a.request_id,a.manifest,a.runner,a.timeout_minutes,a.resume_from)
+        print(json.dumps(result,ensure_ascii=False,indent=2));return 0
     token_file = os.environ.get('WCG_CHECKPOINT_TOKEN_FILE') or subprocess.run(['git', 'config', '--local', '--get', 'wcg.tokenFile'], cwd=root, capture_output=True, text=True).stdout.strip()
     if not token_file: raise ValueError('Use work.py --token-file with an external PAT; no account-link connector is needed')
     client = Client(root, token_file)
     if a.command == 'status': result = client.status()
+    elif a.command=='workflow-status':result=client.workflow_status(a.workflow,a.ref)
+    elif a.command=='runs':result=client.runs(a.ref,a.request_id,a.head,a.limit,a.workflow)
+    elif a.command=='run':result=client.run_status(a.run_id)
+    elif a.command=='artifacts':result=client.artifacts(a.run_id)
+    elif a.command=='download':result=client.download(a.artifact_id,a.out)
     elif a.command == 'dispatch': result = client.dispatch(a.workflow, a.ref, json.loads(_safe_path(root, a.inputs_file).read_text()) if a.inputs_file else {})
     elif a.command == 'machines': result = client.machines(a.ref)
     elif a.command == 'create-codespace': result = client.create(a.ref, a.machine)

@@ -18,7 +18,7 @@ related_objects:
   - "七态原星仿射Boolean所有者边界Exact与作者Proof版本审查--审查.md"
   - "七态原星仿射Boolean所有者边界作者证明审查--审查.md"
   - "七态星全局二次审计与root重放范围审查--审查.md"
-  - "../计算/七态星全局二次审计与root重放边界--计算.md"
+  - "七态星全局二次审计与root重放范围审查--审查.md"
   - "七态AND端点二次localizer作者read-after审查--审查.md"
   - "身份耦合稀释raw-K2三源精读与锐二倍范围--审查.md"
 evidence_paths:

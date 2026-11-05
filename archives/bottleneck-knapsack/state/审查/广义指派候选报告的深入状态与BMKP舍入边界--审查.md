@@ -47,7 +47,7 @@ related_objects:
 
 # GA-03：两容量 BMKP 的具体候选接口
 
-模型是中央 bottleneck 多背包：每件物品有公共正重量 (w_e) 和非负利润 (p_e)，每个箱容量为 (B_1) 或 (B_2)，容量比和箱子数均无固定界；每件至多使用一次且允许 unused，最大化全部箱的最小利润。候选目标是固定 (arepsilon>0) 时给出输入位长多项式、硬容量的 (2/3-arepsilon) 近似。它没有玩家、偏离、延迟或纯 SPE 量词，不能并入 customer-attraction 或拥塞对象。
+模型是中央 bottleneck 多背包：每件物品有公共正重量 (w_e) 和非负利润 (p_e)，每个箱容量为 (B_1) 或 (B_2)，容量比和箱子数均无固定界；每件至多使用一次且允许 unused，最大化全部箱的最小利润。候选目标是固定 (\varepsilon>0) 时给出输入位长多项式、硬容量的 (2/3-\varepsilon) 近似。它没有玩家、偏离、延迟或纯 SPE 量词，不能并入 customer-attraction 或拥塞对象。
 
 报告保留了以下三项条件模块。第一，**联合 critical 恢复**：两种容量各自产生 profile／上舍入标签，并把容量状态、上舍入重量、利润桶和 heavy 标志组成全局 joint type；每个 type 按两种容量下 long 槽的总需求选择全局最重 critical 物品。容量分开选“最重”可能重复原物品，只有全局联合需求的交换保证互不交；被 short 或 unused 的较轻物品可放回，重量不增而每个利润桶损失小于一个桶宽。该交换只在 profile 的自代表、有效状态和 long/short 前提真实成立时有效。
 
@@ -66,7 +66,7 @@ q_{pre}=2/3-8\zeta,\qquad Q=2/3-11\zeta.
 
 其预想流程先以单向阈值 (T) 归一并 cap 利润，再在各容量实例中删除至多一个 heavy-cheap 物品以获得 profile；最后枚举两个 profile、joint-type critical 数、long 配置重数，使用 matching 恢复 short，cheap 池用允许弃置的 LP 舍入。若枚举轮真实命中全部合法 profile、供给和数量见证，报告账目给 long 至少 (Q-4\zeta)，再经 (1+\zeta) 几何网格达到 (2/3-16\zeta\ge2/3-\varepsilon)。这只是“命中见证则输出”的条件结论。
 
-总算法尚未闭合的义务必须同时保留：母文 profile/Lemma 8 的前置利润与 heavy-cheap 条件逐式导入；joint type 的全局可计算性和数量只依 (arepsilon)；profile 自代表、零尺度、无效标签、空 long／short 和零利润边界；全部枚举轮的联合覆盖；未知 (OPT) 的单向 oracle 与有理网格位复杂度；两池物品不抢、昂贵项规范化后的不变量；以及通用实现。报告的 3,000 个 joint Fraction 实例、4,927 次交换和 8,192 个 short-pair 穷举只验证局部合同，不能替代上述全域证明、近似保证或新颖性认证。
+总算法尚未闭合的义务必须同时保留：母文 profile/Lemma 8 的前置利润与 heavy-cheap 条件逐式导入；joint type 的全局可计算性和数量只依 (\varepsilon)；profile 自代表、零尺度、无效标签、空 long／short 和零利润边界；全部枚举轮的联合覆盖；未知 (OPT) 的单向 oracle 与有理网格位复杂度；两池物品不抢、昂贵项规范化后的不变量；以及通用实现。报告的 3,000 个 joint Fraction 实例、4,927 次交换和 8,192 个 short-pair 穷举只验证局部合同，不能替代上述全域证明、近似保证或新颖性认证。
 
 这部分与既有《双容量 BMKP 候选的三模块与完整目标》《双容量瓶颈背包的 profile 标签与完整枚举》和独立反方审查互补：既有对象承接最终参数与反方修正，本报告新增的是八题报告中对联合恢复、short matching、(4p_{max}) 舍入的候选语义及总算法义务的集中陈述。不得把它们合并成“模块合取即总定理”。
 

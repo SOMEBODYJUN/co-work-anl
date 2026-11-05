@@ -1,3 +1,11 @@
+---
+kind: review
+type_tag: 审查
+title: "Santa 无常近似条件反面双源审查"
+legacy_ids:
+  - "UM-SANTA-NO-CONSTANT-CONDITIONAL-v2"
+---
+
 # Santa 无常近似条件反面双源审查
 
 ## 来源身份、版本与阅读范围
