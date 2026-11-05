@@ -86,6 +86,18 @@ def transition(root, old, others, actor, operation, request_id, receipt=None, re
         if set(receipt.get('coverage', {})) != set(definition['object_ids']): raise ValueError('Every input object requires a coverage result')
         data, objects = research.load(root, definition['registry'])
         relations = research.edges(root, data, objects)
+        delivered_edges = {}
+        for ref in receipt['assets']:
+            name = ref['path']
+            parts = PurePosixPath(name).parts
+            if 'map' in parts and 'edges' in parts:
+                research.check_edge(root, name, definition['registry'])
+                edge = json.loads(_safe_path(root, name).read_text())
+                for eid, value in research.edges(root, dict(data, edge_files=[name]), objects).items():
+                    if eid in relations and relations[eid] != value:
+                        raise ValueError('Delivered edge changes an existing canonical edge: ' + eid)
+                    delivered_edges[eid] = value
+        relations.update(delivered_edges)
         for row in receipt['coverage'].values():
             if row.get('state') not in {'linked', 'isolated-after-review', 'needs-decision'}: raise ValueError('Unknown coverage outcome')
             research.nonempty(row, ['reason', 'comparison_scope'])
