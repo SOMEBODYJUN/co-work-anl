@@ -1,6 +1,6 @@
 # 根work.py：启动、源阅读、清洗勾选和图
 
-新的2.5第三步/构图/研究读取接口已实现，见[完整命令](../research/IMPLEMENTATION.md)。work.py research提供inventory/register/check/build/search/show/context/packet/init/save/resume；work.py map新增inventory/plan/list/claim/done/handoff/status。原curate与map check/build保留为旧原型兼容。Codespaces、Actions和精确实验入口见[GitHub资源](../research/GITHUB_RESOURCES.md)。新工具不替其他Boss重分类或自动建全仓图。
+新的2.5第三步/构图/研究读取接口已实现，见[完整命令](../research/IMPLEMENTATION.md)。work.py research提供inventory/register/check/build/search/show/context/packet/init/save/resume；work.py map提供inventory/plan/list/claim/done/handoff/status。旧curate和triage只用于前置阶段接续。Codespaces、Actions和精确实验入口见[GitHub资源](../research/GITHUB_RESOURCES.md)。
 
 完整后续阶段启动见[PHASE3_READINESS](../research/PHASE3_READINESS.md)：research新增freeze/new-id/compose/registration-check；start --workflow-run隔离阶段身份和工作区；github status/dispatch/machines/create-codespace/stop-codespace直接用仓库外PAT。本轮只发布准备，不激活真实登记/建图阶段。
 
@@ -57,7 +57,7 @@ cleanup/CHECKLIST.md及checklists/分册会自动从逐源记录生成勾选。i
 
 新curator clone显式`start --curation-run 已发布run`，身份与工作区进入顶层curation运行域；显式`--board-branch wcg/board-curation-25`选择临时公屏，save沿用repository-cleanup兼容程序。第一步是单Boss内部六lane，不需要逐材料远端claim或公屏打卡。第二步多Boss按对象群认领，检查重叠写入、输入和产物SHA，正常push并读回确认。
 
-详见[程序契约](../research/PHASE25_PROGRAM.md)与[实际命令/工作区/交接](../research/CURATION_OPERATIONS.md)。原`clean`只管冻结来源，`curate`及`maps.py`仍为[上一版准入与图原型](../research/CURATION_PROTOTYPE_V1.md)，不能冒充新材料定性或最终超边设计。2.5第三步使用 `work.py research freeze/new-id/compose/register/registration-check`；第三阶段使用 `work.py map plan/claim/done/handoff/status`。新研究Agent从当前 registry 的 JSON 超边按需读取，不从旧 graph.json 或旧 Markdown 原型恢复。
+详见[程序契约](../research/PHASE25_PROGRAM.md)与[实际命令/工作区/交接](../research/CURATION_OPERATIONS.md)。旧clean、curate和triage只用于读取或接续已发布的前置阶段记录；当前对象登记使用 `work.py research`，第三阶段使用 `work.py map`，研究Agent从当前 registry 的 JSON 超边按需读取。
 
 ## 固定身份、认证与重置
 

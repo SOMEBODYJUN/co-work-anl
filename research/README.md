@@ -8,4 +8,4 @@
 - [云端计算](GITHUB_RESOURCES.md)：按需提交实际程序、跟踪结果、Codespaces的用途。
 - [一手研究的适配](UPSTREAM_ADAPTATION.md)：原始抽取提示、完整超边检索和本仓库的数学边界。
 
-前两步已经完成；[原整理规则](CURATION.md)、[对象群操作](CURATION_OPERATIONS.md)及[旧准入原型](CURATION_PROTOTYPE_V1.md)只供查原工作。旧graph.json与map check/build不是新阶段入口，当前正式格式是schema:2和graph-v2.json。旧工程验收次数不再用作研究可用性的依据。
+前两步的已发布材料进入当前2.5.3输入；[原整理规则](CURATION.md)和[对象群操作](CURATION_OPERATIONS.md)只供接续前置记录。当前正式登记格式是schema:2，第三阶段生成graph-v2.json；旧工程验收次数不作为研究可用性的依据。
