@@ -17,22 +17,25 @@ evidence_manifest: "../../tools/evidence/normalized-xos-threshold-20261031/manif
 
 # 模型和范围
 
-两源均完整读取。固定有理 (0<eta<1)、(tge1)、同一资源宇宙 (|U|=2t)，(d=lflooreta tfloor)，(k=max(1,lceil d/etaceil))。菜单由有限个 indexed、非负、有理、逐 clause 总质量恰为一的加性 clause 组成，允许零系数与重复 indexed clause。要求所有 (|T|=t) 满足 (f(T)=1)，所有 (|B|le d) 满足 (f(B)leeta)。
+两源均完整读取。固定有理 (0<eta<1)、(tge1)、同一资源宇宙 (|U|=2t)，(d=lflooreta t
+floor)，(k=max(1,lceil d/eta
+ceil))。菜单由有限个 indexed、非负、有理、逐 clause 总质量恰为一的加性 clause 组成，允许零系数与重复 indexed clause。要求所有 (|T|=t) 满足 (f(T)=1)，所有 (|B|le d) 满足 (f(B)leeta)。
 
 ## 作者证明与 Exact 的共同结论
 
-任一 clause 的正支撑大小至少 (k)：若支撑不超过 (d)，自身 tiny 值已为一；否则取最大 (d) 个正项，其质量至少 (d/h)，由 tiny 量词得 (hgelceil d/etaceil)。从每个支撑任选 k-subset 并均匀化，保持所有 unit/tiny 合同；反向地，任何“每个 t-subset 含某个 k-subset”的 family 用均匀 clause 实现同一合同。因此
+任一 clause 的正支撑大小至少 (k)：若支撑不超过 (d)，自身 tiny 值已为一；否则取最大 (d) 个正项，其质量至少 (d/h)，由 tiny 量词得 (hgelceil d/eta
+ceil)。从每个支撑任选 k-subset 并均匀化，保持所有 unit/tiny 合同；反向地，任何“每个 t-subset 含某个 k-subset”的 family 用均匀 clause 实现同一合同。因此
 
 [
 K_{min}=Theta(2t,t,k),
 ]
 
-其中 (Theta) 的方向是每个 t 集包含一个指定 k 集，不是相反的 covering-design 约定。固定 k 集被 (inom{2t-k}{t-k}) 个 t 集包含，故有计数下界
+其中 (Theta) 的方向是每个 t 集包含一个指定 k 集，不是相反的 covering-design 约定。固定 k 集被 (\binom{2t-k}{t-k}) 个 t 集包含，故有计数下界
 [
-Kge inom{2t}{t}/inom{2t-k}{t-k}.
+Kge \binom{2t}{t}/\binom{2t-k}{t-k}.
 ]
 
-Exact v2 的独有范围是精确组合等价、(d=0) 的 (K_{min}=t+1)、(eta t) 正整数时 (K_{min}=inom{2t}{t}) 以及固定 (eta) 的 (4^t/mathrm{poly}(t)) 输出界。作者 Proof v2 展开了支持大于 t 的 clause 可删除、原权重不需 uniform、显式可行菜单构造和“等价不是求解覆盖族的算法”边界。
+Exact v2 的独有范围是精确组合等价、(d=0) 的 (K_{min}=t+1)、(eta t) 正整数时 (K_{min}=\binom{2t}{t}) 以及固定 (eta) 的 (4^t/mathrm{poly}(t)) 输出界。作者 Proof v2 展开了支持大于 t 的 clause 可删除、原权重不需 uniform、显式可行菜单构造和“等价不是求解覆盖族的算法”边界。
 
 ## 版本与限制
 

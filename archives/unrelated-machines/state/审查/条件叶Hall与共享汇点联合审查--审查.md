@@ -40,7 +40,7 @@ source_ids:
 * `partial_z_zero_lambda_d0_d1_d2` 有 2 cores、1 leaf、7 resources、3 states；检查 3 条条件行、18 列、4 个 MC rows、4 个 integral pieces，`epsilon=2/5`。它显式保留 partial (z)、重复的 zero-(lambda) 状态和 (d=0,1,2) 尾部；零状态不被删去，空的条件 matching 也作为合法输出记录。
 * `beta_one_with_d2_and_zero_states` 仍为 2 cores、1 leaf、7 resources，但有 4 states、6 个 `beta=1` 状态、4 条条件行、24 列和 2 个 integral pieces，`epsilon=1`。其全局叶流为端口 0 的 0、端口 1 的 1；这说明 beta=1 与零状态可同时出现在合同中，不能由“通常的部分叶”假设悄然排除。
 
-这些字段共同支持“在三个明确 fixture 中，逐条件行的分数流可由有限整数 matching pieces 复原，并保持指定边际”的有限结论。源没有给出任意核心数、任意叶度、任意 (z,lambda,d,eta) 的 LP 可行性判据；也没有证明条件 matching 的选择能在不同核心之间耦合成一个全局分布。`integral_matching_pieces` 是构造记录，不是对所有可行分解的最小值或复杂度界。
+这些字段共同支持“在三个明确 fixture 中，逐条件行的分数流可由有限整数 matching pieces 复原，并保持指定边际”的有限结论。源没有给出任意核心数、任意叶度、任意 (z,lambda,d,\beta) 的 LP 可行性判据；也没有证明条件 matching 的选择能在不同核心之间耦合成一个全局分布。`integral_matching_pieces` 是构造记录，不是对所有可行分解的最小值或复杂度界。
 
 ## 2. Hall 路径投影：大族与 toy 语义边界
 

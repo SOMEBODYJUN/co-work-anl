@@ -54,13 +54,13 @@ F_\beta(K)=
 \end{cases}
 \]
 
-v1 第7项若允许 (K=\varnothing)，会把真空前件与 (0<B_\varnothing=0) 矛盾地拼起来。v2 明确改为“若 (K) 非空 strict1 可行，而每个 singleton 在同一 (eta) 上都收费”，则
+v1 第7项若允许 (K=\varnothing)，会把真空前件与 (0<B_\varnothing=0) 矛盾地拼起来。v2 明确改为“若 (K) 非空 strict1 可行，而每个 singleton 在同一 (\beta) 上都收费”，则
 
 \[
 |K|(\beta-c)<B_K\le1.
 \]
 
-因此 (eta\ge3/2,c\le1) 时 (K) 至多一个元素。空 K 单独保持 strict1、fee0，不进入严格求和。Proof read-after 和 canonical final-section review 均确认这一修复，没有倒改 v1 冻结文件。
+因此 (\beta\ge3/2,c\le1) 时 (K) 至多一个元素。空 K 单独保持 strict1、fee0，不进入严格求和。Proof read-after 和 canonical final-section review 均确认这一修复，没有倒改 v1 冻结文件。
 
 # 3. Canonical 第6节与 v2 Proof 的一致范围
 
@@ -70,7 +70,7 @@ v1 第7项若允许 (K=\varnothing)，会把真空前件与 (0<B_\varnothing=0) 
 - (sigma_0) 与每个 (sigma_r) 都是完整实际峰1见证；
 - (operatorname{OPT}=1) 下界使用 (c+\sum b_r\ge1)，不是“存在 unit 任务”捷径；
 - (operatorname{OPT}_K) 两份实际上界与 (C<2) 强迫 (x_K\to R) 的下界覆盖空 K、B=1、B=2 和 B>2；
-- (B_K=\beta) 仍可行，(c+B_K=\beta) 归 fee0，(eta=2) 所有 pattern fee0；
+- (B_K=\beta) 仍可行，(c+B_K=\beta) 归 fee0，(\beta=2) 所有 pattern fee0；
 - 容量 (s)、异权非空 K 严格和式、(p=1)、(c=1) owner fee 边界均保持。
 
 `proof_read_after_review.md` 记录先读 v1 Exact/独立 Fraction 枚举，再读 v2 Exact 与 Proof 全文；确认 v2 Proof 的第1–6节与 Exact-first 重构一致，未把 owner fee 统一冒称新增 unit 费用，也未将 OPT1 族冒称 OPT gap 或 source reduction。

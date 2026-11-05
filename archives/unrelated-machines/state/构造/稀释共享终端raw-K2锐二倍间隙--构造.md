@@ -38,7 +38,10 @@ related_objects:
  \operatorname{OPT}(P_k)=2-\frac{\lfloor\sqrt{k}\rfloor}{k}.
 ]
 下界：设一份完整调度峰值 (t<2)，并令 (h) 位于 (U_i)。至少有
-(r=k-lfloor k(t-1)\rfloor) 个 (f) 从 (U_i) 导出；因每个 (B) 不能承受两件 unit 任务，这些 (f) 占据不同 (B)。每个被占 (B) 至多能把 (lfloor k(t-1)floor) 个自己的 (e) 留在 home，故至少导出 (r) 个 unit (e) 到 (k) 个终端；终端不重叠给出 (r^2le k)，于是 (tge2-lfloorsqrt{k}floor/k)。上界由选定 (s=lfloorsqrt{k}floor) 个 (f) 到不同 (B)，每个选定 (B) 导出 (s) 个 (e) 并把这 (s^2) 个 unit 任务放到不同终端；其余任务留在 tiny home。该调度在选定 (U,B) 行达到 (2-s/k)，其余行不超过 1。
+(r=k-lfloor k(t-1)\rfloor) 个 (f) 从 (U_i) 导出；因每个 (B) 不能承受两件 unit 任务，这些 (f) 占据不同 (B)。每个被占 (B) 至多能把 (lfloor k(t-1)
+floor) 个自己的 (e) 留在 home，故至少导出 (r) 个 unit (e) 到 (k) 个终端；终端不重叠给出 (r^2le k)，于是 (tge2-lfloorsqrt{k}
+floor/k)。上界由选定 (s=lfloorsqrt{k}
+floor) 个 (f) 到不同 (B)，每个选定 (B) 导出 (s) 个 (e) 并把这 (s^2) 个 unit 任务放到不同终端；其余任务留在 tiny home。该调度在选定 (U,B) 行达到 (2-s/k)，其余行不超过 1。
 
 # 2. raw K2 合同
 
@@ -65,16 +68,16 @@ F[(T_0-\operatorname{load}_v)q^2]\ge0.
 # 4. 全局 affine localizer 的无维度证明
 
 固定一个 (B) 行，写 (g=T_0-\operatorname{load}_B)。在 (Q) 下逐点 (g\ge1/k)。在 (H) 下 (g=1/k-1\{\sigma([k])\text{ 选中该 }B\})，故 (\mathbb E_Hg=1/(2k))。把每组件 home endpoint 消去后，组件内 affine 表达式写成
-(q=\beta+\sum c_{j,b}F_{j,b}+\sum d_{b,\ell,t}G_{b,\ell,t})，并记 (\|c\|^2=\sum c_{j,b}^2)。对所有 (eta,d) 有
+(q=\beta+\sum c_{j,b}F_{j,b}+\sum d_{b,\ell,t}G_{b,\ell,t})，并记 (\|c\|^2=\sum c_{j,b}^2)。对所有 (\beta,d) 有
 [
 \mathbb E_Q[q^2]\ge \|c\|^2/(30Lk^3),\qquad
 \mathbb E_H[gq^2]\ge-2\|c\|^2.
 ]
-第一式由 Q 的全 home、单 (e) 导出和单 (f)+双射三类样本逐项平方界得到；第二式令 (S=sum_jc_{j,sigma(j)})，用 (\mathbb E S^2\le(k/L)\|c\|^2) 与对任意截距 (eta) 的 completing-the-square。选择 (a=1/M) 后
+第一式由 Q 的全 home、单 (e) 导出和单 (f)+双射三类样本逐项平方界得到；第二式令 (S=sum_jc_{j,sigma(j)})，用 (\mathbb E S^2\le(k/L)\|c\|^2) 与对任意截距 (\beta) 的 completing-the-square。选择 (a=1/M) 后
 [
 F[gq^2]\ge((1-a)/(30Lk^4)-2a)\|c\|^2\ge0.
 ]
-对含所有组件 endpoint 的全局 affine (q)，条件于 (I=h) 后组件独立；把其他组件的条件均值吸收到任意 (eta_h)，其条件方差项乘以正的 (\mathbb E[g\mid I=h]) 并可丢弃。因此上述界不随组件数 (M) 或全输入变量数增长。(U) 和终端因 (g\ge1/k) 点态成立。
+对含所有组件 endpoint 的全局 affine (q)，条件于 (I=h) 后组件独立；把其他组件的条件均值吸收到任意 (\beta_h)，其条件方差项乘以正的 (\mathbb E[g\mid I=h]) 并可丢弃。因此上述界不随组件数 (M) 或全输入变量数增长。(U) 和终端因 (g\ge1/k) 点态成立。
 
 # 5. 证书规模、缩放和边界
 

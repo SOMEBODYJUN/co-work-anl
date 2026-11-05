@@ -30,11 +30,11 @@ evidence_manifest: "../../tools/evidence/prefix-atomic-20261030/source-manifest.
 * 500 个 random trees；
 * zero-mass sharp depths 1 到 8 全列；
 * 30 个 full-interval sharp runs，degree lists 包括 `[2]`, `[2,2,2]`, `[3,2]`, `[1,3,1,2]`, `[2,3,2,1]`, `[3,3,3]`；
-* absolute localizer dilution 的 dummy jobs 从 0 到 12，(N=2^{d})，(	au=2^{-(d+1)})；
+* absolute localizer dilution 的 dummy jobs 从 0 到 12，(N=2^{d})，(\tau=2^{-(d+1)})；
 * 网格精确性三组 (B=0,7/11,1)，每组40 runs；另有 (n=1000) 的 large implicit tree，(N) 的二进制长度1001、alpha 分母1003、tau 分母2587；
 * rare weight exponents 1、5、20、100，non-orthogonal basis `[1,2]` 和 `[3,7]`；空对象、零 optimum、一个可用端点和 unavailable edge 四个边界 fixture。
 
-这里最清楚的可迁移算术是质量稀释：每增加一个 dummy job，(N) 翻倍、(	au) 减半，从 (1/2) 开始到 (1/8192)。它提示任何“绝对根质量自动保持”的论证都必须显式控制 dummy/zero-mass 分支；但主审计没有给出近似守恒定理。
+这里最清楚的可迁移算术是质量稀释：每增加一个 dummy job，(N) 翻倍、(\tau) 减半，从 (1/2) 开始到 (1/8192)。它提示任何“绝对根质量自动保持”的论证都必须显式控制 dummy/zero-mass 分支；但主审计没有给出近似守恒定理。
 
 ## 3. 独立 sharpness 和极端对手
 
@@ -63,7 +63,7 @@ evidence_manifest: "../../tools/evidence/prefix-atomic-20261030/source-manifest.
 
 * 与固定阶向量贪心审计的联系是“压缩表示可能丢信息”：向量贪心批次的 q/r Gram 只在列明阶数和源族上核验；本批的 rank omission 与 non-orthogonal basis 反例说明不能把低阶/绝对基证书直接推广。
 * 与森林边界、配置和菜单审计的联系是边界保护：zero mass、unavailable edge、empty fixture 和 dummy dilution 都必须在配置/取整前后保持定义一致；本批没有给这些对象的联合算法。
-* 与一般 approximation 的关系是负面约束：当前没有 approximate conservation、low-degree Gram inference、general (P,T) oracle 或 polynomial full-promise verifier。任何把 (	au=2^{-(d+1)}) 或 512 次 rank check 写成普遍精度/复杂度结论都超出源范围。
+* 与一般 approximation 的关系是负面约束：当前没有 approximate conservation、low-degree Gram inference、general (P,T) oracle 或 polynomial full-promise verifier。任何把 (\tau=2^{-(d+1)}) 或 512 次 rank check 写成普遍精度/复杂度结论都超出源范围。
 
 后续若继续，需要先给出规范化对象的完整域（包括零质量与不可用边）、证明相对 Gram 的秩条件可由输入多项式构造，再说明近似误差如何穿过 localizer dilution。当前可接续内容是有限 sharpness 和表示层障碍，不是已完成定理。
 

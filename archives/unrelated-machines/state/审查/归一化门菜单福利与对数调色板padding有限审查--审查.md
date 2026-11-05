@@ -51,7 +51,7 @@ support 族的每行都给出完整 `menu` 和 `lambda`，并同时回报精确 
 | 43 | 2,5,3 | (431/255) | (21/13) | (99933/68068) | (18/13) | (153/130) | 4 |
 | 67 | 2,3,2 | (12/7) | (5/3) | (809/560) | (4/3) | (28/27) | 4 |
 
-两行都报告 `fractional_incidence_coins = 0`；差别发生在 state-level (z) 的分数性。它们说明：源程序在有限 exact LP certificate 与输出 rounding 之间确实能出现可量化的输出差距；“有 primal-dual certificate”不等于“所有 rounding 输出都达到 certificate objective”。这正是后续若要写一般舍入定理必须补的机制。其余 70 行的有限一致性不能替代此缺口。
+两行都报告 `fractional_incidence_coins = 0`；差别发生在 state-level (z) 的分数性。它们说明：源程序在有限 exact LP certificate 与输出 rounding 之间确实能出现可量化的输出差距；“有 primal-dual certificate”不等于“所有 rounding 输出都达到 certificate objective”。这两例只排除了“舍入输出总与 LP 目标无损相等”的更强断言。现有一般证明给出 5/8 福利保留及 13/8 调度保证，允许这种损失；两行与该保证相容，不能据此宣称一般舍入定理尚有缺口。
 
 ### 2.3 非基本 coin、全 UM 穷举、负控制和大分母
 
@@ -63,7 +63,9 @@ support 族的每行都给出完整 `menu` 和 `lambda`，并同时回报精确 
 | 3,2,1 | (19/27) | (1) | (1/3) | 6 | (5/3) | 9 / 13 / 25 |
 | 4,3,1 | (175/256) | (1) | (1/2) | 12 | (7/4) | 12 / 21 / 41 |
 
-12 条 `brute_um_cases` 对有限 UM 资源分配作完整搜索；首三条代表值为 ((eta_{m opt},UM_{m opt})=(1,1),(1/2,3/2),(1,1))，对应 search nodes 5、13、6，且每行均有 `completed_better_schedules` 和 `resource_allocations`。它们证明的是列出的 12 个小实例已经完成搜索，不是通用 UM solver。
+12 条 `brute_um_cases` 对有限 UM 资源分配作完整搜索；首三条代表值为 ((\beta_{
+m opt},UM_{
+m opt})=(1,1),(1/2,3/2),(1,1))，对应 search nodes 5、13、6，且每行均有 `completed_better_schedules` 和 `resource_allocations`。它们证明的是列出的 12 个小实例已经完成搜索，不是通用 UM solver。
 
 `flat_negative_control` 是一个应单独标记的反例机制：两组、每组一个 state、一个资源、所有 private time 为 1 时，flat optimum 为 2（4 个原始 assignments），gated optimum 为 (3/2)（搜索 13 个节点）。因此 gated menu 在该控制实例上可改善 flat 值；这不能被写成所有 gated menus 都改善，也不能反向证明一般近似下界。
 
@@ -74,7 +76,7 @@ support 族的每行都给出完整 `menu` 和 `lambda`，并同时回报精确 
 - **完整证明：** JSON 中每行的 exact primal-dual 数字、枚举结果和分母均为可复核证据；它们是列出实例的完整证书。
 - **条件结论：** 若固定输入确实属于该菜单语义、LP 行和 rounding 前提均满足，则相应行的 welfare/beta/peak 数值可按证书使用。
 - **有限实验：** 36 support、72 general、3 coin、12 brute、2 large-denominator 全部属于 finite exact replay。
-- **障碍：** 两个 fractional-(z) 行显示输出和 LP objective 的差距；`production_lp_solver=false` 明示没有一般 LP 求解器。
+- **有损舍入边界：** 两个 fractional-(z) 行显示输出和 LP objective 不必相等；`production_lp_solver=false` 明示没有一般 LP 求解器。
 - **候选：** 负控制和大分母可作为以后构造门菜单失败族、分数态舍入压力测试的候选，但当前不是参数族或定理。
 - **原模型反例：** flat-versus-gated 的 (2) 对 (3/2) 只属于该控制输入；不能移植到裸 Cartesian、三叉树 palette 或 CAG 模型。
 
@@ -113,14 +115,14 @@ support 族的每行都给出完整 `menu` 和 `lambda`，并同时回报精确 
 
 padding 样例明确给出 `original_n`、固定 (k)、`N_is_2_to_power`、`actual_H`、palette distinct/bound、active grid length 和 sentinel bitlength：
 
-| original_n | fixed_k | (N) | actual_H | palette distinct/bound | active grid length | sentinel bitlength |
+| original_n | fixed_k | E，N=2^E | actual_H | palette distinct/bound | active grid length | sentinel bitlength |
 |---:|---:|---:|---:|---:|---:|---:|
 | 1 | 2 | 256 | 257 | 36 / 130 | 47 | 513 |
 | 2 | 2 | 320 | 321 | 52 / 162 | 59 | 641 |
 | 5 | 2 | 448 | 449 | 84 / 226 | 74 | 897 |
 | 5 | 3 | 1344 | 1345 | 384 / 674 | 119 | 2689 |
 
-这些样例保留了 padding 对 H、palette 和 sentinel 大小的精确关系；它们没有把 sentinel bitlength 解释成调度复杂度，也没有证明任意 (n,k) 的对数界。空原始实例明确存在，不能在后续写作中悄然加入“原实例非空”假设。
+表中 256、320、448、1344 是指数 E，实际 N=2^E、H=E+1；不能把 E 当作实际任务总数。这些样例保留了 padding 对 H、palette 和 sentinel 大小的精确关系；它们没有把 sentinel bitlength 解释成调度复杂度，也没有证明任意 (n,k) 的对数界。空原始实例明确存在，不能在后续写作中悄然加入“原实例非空”假设。
 
 ### 4.3 分类级证据和缺口
 
@@ -138,8 +140,8 @@ padding 样例明确给出 `original_n`、固定 (k)、`N_is_2_to_power`、`actu
 
 ## 6. 逐源处置与后续接续
 
-- `86f59227811df6eaaa43`：**integrated**。其 36/72/3/12/2 分层、两个 fractional-(z) 行、负控制和两条大分母 fixture 已写入本页，原 JSON 复制到证据目录。后续若要声称一般 gated-menu rounding，必须先解释索引 43/67 的输出缺口。
+- `86f59227811df6eaaa43`：**integrated**。其 36/72/3/12/2 分层、两个 fractional-(z) 行、负控制和两条大分母 fixture 已写入本页，原 JSON 复制到证据目录。索引 43/67 只限制无损等号；一般 5/8 福利与 13/8 保证由现有门控正文承担。
 - `076d098cf0e1aba55e87`：**integrated**。其 75/113/904/113/12/10600 的独立重放、负控制、旧输出拒绝和 SHA 未变字段已写入本页；它是第一源的独立审计证据，不是第二个模型。
 - `ddfaa6d35eddd7d24ab6`：**retained**。其 130 个 H、9038 个网格点、10890/3762/2993 个 pattern 计数和四条 padding 行作为独立的有限候选/障碍资料保留；由于没有 full padded matrix、B 或 hardness，暂不并入任何一般调色板定理。
 
-本页没有关闭任何开放的 gated-menu 舍入、一般 LP 求解、对数 padding 等价性或调色板 hardness 问题。可接续工作是：(i) 对两个 fractional-(z) 实例给出 rounding 失败/成功的完整调度和量词；(ii) 从第三源的 fixed-k identities 中抽取一个明确参数族，先 materialize 小矩阵再证明递推；(iii) 若需要将 palette padding 与旧三叉树模型连接，另写转换并逐任务核验，不能只凭同名的 H、palette 或 sentinel 字段。
+一般门控 5/8 福利与 13/8 调度保证见[门控证明与参数互补](归一化门控福利证明与参数互补八源溯源--审查.md)；私有填充的全称存在性等价见[对数字母表等价](../等价/私有填充的对数字母表调度等价--等价.md)。本页有限记录不承担这些全称证明。生产 LP 后端与假设算法 B 的实际实现仍未交付；若要接到旧三叉树 palette 模型，需另给逐任务转换，不能凭同名参数建立推论。

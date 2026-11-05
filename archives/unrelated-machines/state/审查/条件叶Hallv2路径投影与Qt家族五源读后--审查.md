@@ -61,14 +61,14 @@ V(Q)=\max_{(B_g)\text{ disjoint}}\min_g v_g(B_g).
 
 # 2. 阈值叶、R1--R2 与其实际范围
 
-给定二进制 (arepsilon\in(0,1])，令
+给定二进制 (\varepsilon\in(0,1])，令
 
 \[
 H_g(\varepsilon)=\{u:\max_s p_{gsu}\ge\varepsilon\},\quad
 b_g(\varepsilon)=\max_s\sum_{u\notin H_g}p_{gsu}.
 \]
 
-当 (b_g<\varepsilon) 时，价值至少 (arepsilon) 等价于命中 (H_g)；这给出精确
+当 (b_g<\varepsilon) 时，价值至少 (\varepsilon) 等价于命中 (H_g)；这给出精确
 threshold-unit-demand 分类。指定一组 core (C) 和 leaf (L)，core 状态有
 (lambda_{cs})、(z_{csu})（(0\le z\lelambda)），并要求
 
@@ -78,7 +78,7 @@ threshold-unit-demand 分类。指定一组 core (C) 和 leaf (L)，core 状态�
 
 全局叶流 (y^0) 每个 leaf 行和为 1、每资源列加上 core (z) 不超 1；每个 core-state
 还有独立条件叶流 (y^{cs})，其行和为 (lambda_{cs})，列约束只含该 state 的
-(z_{csu})，不含其他 core 的用量。来源证明：若 (V(Q)\gearepsilon)，取一组达到值的
+(z_{csu})，不含其他 core 的用量。来源证明：若 (V(Q)\ge\varepsilon)，取一组达到值的
 state 与不交正 incidence，叶重资源选一份完整匹配，即得 R1--R2。该 LP 是必要多项式
 放松，不是充分性、实际 allocation 或一般近似算法。
 
@@ -90,14 +90,14 @@ state 与不交正 incidence，叶重资源选一份完整匹配，即得 R1--R2
 旧资源 (u) 有 (d) 个不同正 core group 邻居时，改成各组自己的 port
 (u_1,\ldots,u_d)，并新增 (d-1) 个相邻两端 leaf。给 old basic point
 ((\lambda,z))，令每组在 (u) 上的总 core 使用为
-(eta_i)，旧列给出 (sum_i\beta_i\le1)。选择一个有理 hole 分布
-(pi_i\geeta_i,sum_ipi_i=1)，把每个 leaf 匹配到 hole 左右端的平均；于是全局
-叶行恰为 1、每个 port 列为 (1-pi_i)，与 (eta_i) 合计不超 1。对某一 core-state
+(\beta_i)，旧列给出 (sum_i\beta_i\le1)。选择一个有理 hole 分布
+(pi_i\ge\beta_i,sum_ipi_i=1)，把每个 leaf 匹配到 hole 左右端的平均；于是全局
+叶行恰为 1、每个 port 列为 (1-pi_i)，与 (\beta_i) 合计不超 1。对某一 core-state
 取其自有 port 为 hole，匹配乘 (lambda_{cs})，条件列只留该状态的 (z)，故无须除以
 (lambda)，零 lambda、(d=0,1)、zero/unused 数据均闭合。
 
 反向把一个路径块的 (d-1) 叶行与 (d) 个端口列相加，恢复旧列
-(sum_ieta_i\le1)。在同一指定分区下，完整 R1--R2 投影到原 ((\lambda,z)) 的多面体
+(sum_i\beta_i\le1)。在同一指定分区下，完整 R1--R2 投影到原 ((\lambda,z)) 的多面体
 恰为旧 basic polytope；来源还给出保值方向，故
 
 \[
@@ -125,7 +125,7 @@ V(Q_t)=1/t,qquad \operatorname{OPT}(P(Q_t))=2-1/t.
 40 leaves、64 resources、116 states、180 machines、201 jobs，(V=1/2,
 OPT=3/2)。来源没有声称在所有 counterexamples 中最小。
 
-固定 (arepsilon>0) 取 (t>1/\varepsilon)，得到该 relaxation 在自己的阈值下可行而
+固定 (\varepsilon>0) 取 (t>1/\varepsilon)，得到该 relaxation 在自己的阈值下可行而
 实际 (V<\varepsilon)。这是放松的 integrality/consistency 障碍，不能升级为 actual-YES
 hardness、NP-hardness、近二近似下界或六人 half 反例。
 
