@@ -8,7 +8,7 @@
 
 | 能力 | 研究用途 | 当前状态 |
 |---|---|---|
-| Actions push检查 | 每次工具/提示词修改自动跑测试并上传回执 | 已配置 |
+| Actions push检查 | 只在明确登记的数学计算或阶段交付需要时运行 | 不再自动跑181项工程回归测试 |
 | Actions workflow_dispatch | 明确选择一个已登记实验，在GitHub runner上执行并上传artifact | 工作流已配置，手动运行需实际调用 |
 | Actions artifacts/logs | 保存stdout、stderr、版本、输入指纹和结果 | 已配置7天artifact；长期数学结果仍需整理回仓库 |
 | Actions concurrency/timeout | 同一分支只留一个检查，防止重复消耗和长时间空转 | 已配置 |
@@ -24,7 +24,7 @@
 |---|---|---|
 | Git与历史 | 保存正文、证据、失败路线、断点 | 沿用work.py sync/checkpoint、共同分支和Boss工作区 |
 | Codespaces | 可重建的Linux/Python计算环境 | `.devcontainer/devcontainer.json`与`tools/bootstrap_research.py`；未创建实例 |
-| Actions | 工具兼容测试、手动复现数学计算 | 两份workflow；contents:read；不自动改数学状态 |
+| Actions | 手动复现登记数学计算并保存artifact | 一个`research-compute.yml`；contents:read；不自动改数学状态 |
 | Artifacts | 下载实验版本、输出、错误和范围 | compute.py回执；云端保留7天，有价值结果另做checkpoint |
 | Copilot Student | 编辑器代码辅助 | 不等同Work额度或外部模型API额度；未声称已领取 |
 | Issues/Projects/Discussions | 可选任务协作 | 已有认领账本和公屏，不建立重复系统 |
@@ -43,7 +43,6 @@ Pack目前还列出Azure学生$100额度、JetBrains学生订阅等。Copilot St
 ```sh
 python tools/bootstrap_research.py
 .venv/bin/python work.py research --help
-python tools/compute.py runtime-smoke --out validation/runtime-smoke.json
 python tools/compute.py cag-five-local --out validation/cag-five-local.json
 python tools/compute.py positive-kernels-rank --out validation/positive-kernels-rank.json
 ```

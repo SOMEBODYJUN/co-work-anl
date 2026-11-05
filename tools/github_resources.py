@@ -76,8 +76,8 @@ class Client:
         return result
 
     def dispatch(self, workflow, ref, inputs):
-        if workflow not in {'research-checks.yml', 'research-compute.yml'}:
-            raise ValueError('Only the two repository research workflows are supported')
+        if workflow != 'research-compute.yml':
+            raise ValueError('Only the registered mathematical compute workflow is supported')
         if not isinstance(inputs, dict) or len(inputs) > 10 or any(not isinstance(k, str) or not isinstance(v, (str, bool, int)) for k, v in inputs.items()):
             raise ValueError('Workflow inputs must be a small explicit JSON object')
         result = self.request('POST', self.repo_path('/actions/workflows/' + workflow + '/dispatches'), {'ref': ref, 'inputs': inputs})

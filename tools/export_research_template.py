@@ -17,9 +17,6 @@ def export(root, destination, remote, branch='main'):
     shutil.copy2(root / 'work.py', destination / 'work.py')
     shutil.copy2(root / '.gitignore', destination / '.gitignore')
     shutil.copytree(root / 'tools', destination / 'tools', ignore=shutil.ignore_patterns('evidence', '__pycache__'))
-    (destination / 'tests').mkdir()
-    for name in ['test_research_runtime.py', 'test_registration.py', 'test_github_resources.py']:
-        shutil.copy2(root / 'tests' / name, destination / 'tests' / name)
     shutil.copytree(root / '.devcontainer', destination / '.devcontainer')
     shutil.copytree(root / '.github', destination / '.github')
     (destination / 'research').mkdir(); (destination / 'prompts').mkdir()
@@ -32,12 +29,14 @@ def export(root, destination, remote, branch='main'):
         path.mkdir(parents=True)
         shutil.copy2(root / 'research/operations' / name / 'run.json', path / 'run.json')
     experiments = json.loads((root / 'research/experiments.json').read_text())
-    experiments['experiments'] = {'runtime-smoke': experiments['experiments']['runtime-smoke']}
+    experiments['experiments'] = {
+        name: experiments['experiments'][name]
+        for name in ('cag-five-local', 'positive-kernels-rank')
+        if name in experiments['experiments']
+    }
     (destination / 'research/experiments.json').write_text(json.dumps(experiments, indent=2) + '\n')
     workflow = destination / '.github/workflows/research-compute.yml'
-    workflow.write_text(workflow.read_text().replace('runtime-smoke, cag-five-local, positive-kernels-rank', 'runtime-smoke'))
-    checks = destination / '.github/workflows/research-checks.yml'
-    checks.write_text(checks.read_text().replace('branches: [rebuild/research-v2, main]', 'branches: [' + branch + ']'))
+    workflow.write_text(workflow.read_text())
     source = (destination / 'work.py').read_text()
     for key, value in [('REMOTE', remote), ('DEFAULT_BRANCH', branch), ('DEFAULT_BOARD_BRANCH', 'wcg/board-research')]:
         source = re.sub(r'^' + key + r' = .*$', lambda _: key + ' = ' + json.dumps(value), source, count=1, flags=re.M)
