@@ -10,7 +10,8 @@ python work.py --repo <独立clone> start --actor BossN --role mapper --save rep
 
 执行顺序：
 
-1. `research registration-check`确认输入登记范围。
+0. `python work.py board-init` 初始化或恢复 `wcg/board-map-v2`，再在公屏发送本轮启动消息。
+1. `research registration-check --final`确认登记已经闭合；失败就停在登记阶段。
 2. 3A：同一对象族分批全文读取，按关系密度调整批量。
 3. 3B：同一存档比较各批边界，补读跨批条件和反例。
 4. 3C：只处理明确的跨存档线索，写清模型映射和丢失条件。

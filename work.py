@@ -35,7 +35,7 @@ RESEARCH_ENTRIES = {
     "unrelated-machines": {"research_entry": "archives/unrelated-machines/README.md", "research_prompt": "archives/unrelated-machines/prompts/README.md", "research_runbook": "tools/README.md"},
     "positive-kernels": {"research_entry": "archives/positive-kernels/README.md", "research_prompt": "archives/positive-kernels/prompts/README.md", "research_runbook": "tools/README.md"},
 }
-ROLE_PROMPTS = {"boss": "prompts/research-runtime.md", "cleaner": "prompts/02-clean.md", "curator": "prompts/02.5-research.md", "mapper": "prompts/03-map.md"}
+ROLE_PROMPTS = {"boss": "prompts/research-runtime.md", "cleaner": "prompts/02-clean.md", "curator": "prompts/02.5-3-register.md", "mapper": "prompts/03-map.md"}
 CLEANUP_ROLE_PROMPTS = ROLE_PROMPTS
 IDENTIFIER = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,63}")
 TOKEN = re.compile(rb"(?:github_pat_|ghp_)[A-Za-z0-9_]{12,}")
@@ -562,7 +562,7 @@ def start(args):
         result["context_entry"] = "archives/customer-attraction/README.md"
     elif save == "repository-cleanup":
         result["context_entry"] = ("prompts/03-map.md" if selected_role == "mapper" else
-                                   "prompts/02.5-research.md" if selected_role == "curator" else "cleanup/README.md")
+                                   "prompts/02.5-3-register.md" if selected_role == "curator" else "cleanup/README.md")
     if curation_run:
         entry='prompts/02.5-2-distill.txt'
         result.update(curation_run=curation_run,context_entry=entry,research_entry=entry,
@@ -635,7 +635,7 @@ def main():
     mapping = sub.add_parser("map", help="检查/生成子存档、存档和全仓超图")
     mapping.add_argument("args", nargs=argparse.REMAINDER)
     research = sub.add_parser('research', help='登记、按需读取超边、两类Solver输入和持续研究恢复',
-                              epilog='Commands: inventory, prepare-inputs, freeze, assignments-check, new-id, compose, register, registration-check, check, build, search, show, context, edge-check, edge-bind, packet, init, save, resume, compute. See research/IMPLEMENTATION.md.')
+                              epilog='Commands: inventory, prepare-inputs, freeze, assignments-draft, assignments-check, new-id, compose, register, registration-check, check, build, search, show, context, edge-check, edge-bind, packet, init, save, resume, compute. See research/IMPLEMENTATION.md.')
     research.add_argument('--registry', help='显式选择v2登记文件；省略使用research/registry.json')
     research.add_argument('args', nargs=argparse.REMAINDER)
     github = sub.add_parser('github', help='使用仓库外凭据调用GitHub研究资源；status只读',
@@ -737,9 +737,11 @@ def main():
             except (Stop, OSError) as exc: receipt['local_sync'] = {'status': 'needs-attention', 'detail': str(exc)}
         print(json.dumps(receipt, ensure_ascii=False, indent=2))
         return 0
-    if a.command in ("curate", "map", "triage"):
-        module = {"curate":"curation.py", "map":"maps.py", "triage":"triage.py"}[a.command]
+    if a.command in ("curate", "triage"):
+        module = {"curate":"curation.py", "triage":"triage.py"}[a.command]
         return subprocess.call([sys.executable, str(repo / TOOLS / module), "--repo", str(repo), *a.args])
+    if a.command == "map":
+        raise Stop("旧版 map 原型已移除；第三阶段只使用 map inventory/plan/list/claim/done/handoff/status。")
     env = auth(repo, a)
     if a.command == 'github':
         return subprocess.call([sys.executable, str(repo / TOOLS / 'github_resources.py'), '--repo', str(repo), *a.args], env=env)
@@ -754,8 +756,8 @@ def main():
     target = getattr(a, "to", None)
     if target is not None and (not IDENTIFIER.fullmatch(target) or target == who):
         raise Stop("私聊必须指定另一位 Worker 的有效编号；不会改发到公屏。")
-    if a.command in ("clean", "map"):
-        module = "cleanup.py" if a.command == "clean" else "maps.py"
+    if a.command == "clean":
+        module = "cleanup.py"
         command=[sys.executable, str(repo / TOOLS / module), "--repo", str(repo), *a.args]
         if a.command=='clean' and a.args and a.args[0] in ('claim','done','release','handoff'):
             result=subprocess.run(command,env=env,capture_output=True,text=True)

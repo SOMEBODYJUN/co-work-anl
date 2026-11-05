@@ -34,7 +34,7 @@
 1. 从第二步实际已发布出口形成明确inputs文件：`{scope:"repository"或"partial",coverage_note:"具体覆盖依据",materials:[{path,sha256,catalogue_id?}]}`。不能依据旧数量、分类标签或尚在改写的工作区猜全仓范围。
 2. `research freeze --inputs-file ...`固定版本；原件字节不变。全仓scope会核对当前正式材料是否遗漏；第一步材料目录中正式树之外的数学须由第二步明确去向，并列入本轮显式输入。冻结后新增/变更材料定向重判，不覆盖旧baseline。
 3. 处理者仅写自己的`research/registration/batches/<id>.json`；一个总集成人负责canonical registry。批次使用schema:2，含objects/materials，edge_files为空。跨批同一对象先保住精确身份，重复/冲突经集成人处理；不能让多个Boss各自重写总表。
-4. 总集成人的manifest为`{baseline:{path,sha256},batches:[{batch_id,record:{path,sha256}}]}`。批次先checkpoint，compose核字节并拒绝冲突，随后register候选总表并checkpoint。
+4. 总集成人的manifest为`{baseline:{path,sha256},assignments:{path,sha256},batches:[{batch_id,record:{path,sha256}}]}`。compose会重新核对已发布assignments中的batch、owner、材料路径和写入路径；批次先checkpoint，compose核字节并拒绝冲突，随后register候选总表并checkpoint。
 5. `research registration-check --final`专门验收登记，不读取或要求任何超边/图。要求明确全仓冻结范围、所有输入去向、当前版本与无未决身份。明确open/conjecture可以登记；needs-decision是尚不能辨认/路由材料的状态，两者不混。
 
 ```sh
@@ -42,6 +42,7 @@ python work.py research prepare-inputs --scope repository --coverage-note '第�
 python work.py checkpoint research/registration/inputs.json -m 'Freeze 2.5.3 input inventory'
 python work.py research freeze --inputs-file research/registration/inputs.json
 python work.py checkpoint research/registration/baseline.json -m 'Publish 2.5.3 frozen input baseline'
+python work.py research assignments-draft --baseline research/registration/baseline.json --owners Boss1,Boss2,Boss3,Boss4,Boss5,Boss6,Boss7,Boss8 --output research/registration/assignments.draft.json
 python work.py research assignments-check --assignment-file research/registration/assignments.json
 python work.py research new-id --count 需要的新对象数量
 python work.py research compose --manifest research/registration/batches.json

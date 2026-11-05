@@ -559,6 +559,11 @@ def main(argv=None):
     q = sub.add_parser('freeze'); q.add_argument('--inputs-file', required=True); q.add_argument('--out', default='research/registration/baseline.json')
     q = sub.add_parser('compose'); q.add_argument('--manifest', required=True); q.add_argument('--out', default='research/registration/proposed.json')
     q = sub.add_parser('registration-check'); q.add_argument('--final', action='store_true')
+    q = sub.add_parser('assignments-draft', help='Create a reviewed scheduling draft from a frozen baseline')
+    q.add_argument('--baseline', default='research/registration/baseline.json')
+    q.add_argument('--owners', required=True)
+    q.add_argument('--output', default='research/registration/assignments.draft.json')
+    q.add_argument('--batch-size', type=int, default=80)
     q = sub.add_parser('assignments-check'); q.add_argument('--assignment-file', default='research/registration/assignments.json')
     q = sub.add_parser('new-id'); q.add_argument('--count', type=int, default=1)
     q = sub.add_parser('register'); q.add_argument('--record-file', required=True)
@@ -582,11 +587,12 @@ def main(argv=None):
     a = p.parse_args(argv); root = a.repo.resolve()
     if a.command == 'inventory': result = inventory(root, a.registry)
     elif a.command == 'prepare-inputs': result = prepare_inputs(root, a.output, a.scope, a.coverage_note, a.path)
-    elif a.command in {'freeze', 'compose', 'registration-check', 'assignments-check', 'new-id'}:
+    elif a.command in {'freeze', 'compose', 'registration-check', 'assignments-draft', 'assignments-check', 'new-id'}:
         import registration
         if a.command == 'freeze': result = registration.freeze(root, a.inputs_file, a.out)
         elif a.command == 'compose': result = registration.compose(root, a.manifest, a.out)
         elif a.command == 'registration-check': result = registration.check(root, a.registry, a.final)
+        elif a.command == 'assignments-draft': result = registration.draft_assignments(root, a.baseline, [x for x in a.owners.split(',') if x], a.output, a.batch_size)
         elif a.command == 'assignments-check': result = registration.check_assignments(root, a.assignment_file)
         else: result = registration.new_ids(a.count)
     elif a.command == 'register': result = register(root, a.record_file, a.registry)
