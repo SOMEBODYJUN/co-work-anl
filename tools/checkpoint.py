@@ -223,17 +223,34 @@ def locked_save(repo, common, cache, args):
             os.environ["WCG_CHECKPOINT_ASKPASS"] = "1"
     paths = [relative(repo, p) for p in (args.paths or default_paths(repo))]
     specs = [":(literal)" + p for p in paths]
+    stage_specs = []
+    historical_deletions = None
     for p, spec in zip(paths, specs):
-        if not (repo / p).exists() and not git(repo, "ls-files", "--", spec).stdout:
+        if (repo / p).exists() or git(repo, "ls-files", "--", spec).stdout:
+            stage_specs.append(spec)
+            continue
+        # A prior local commit may already have deleted this exact path. It
+        # still belongs to the outgoing audit scope, but cannot be git-added.
+        if historical_deletions is None:
+            historical_deletions = set()
+            tracking = "refs/remotes/origin/" + bound
+            if not git(repo, "rev-parse", "--verify", tracking, check=False).returncode:
+                for commit in value(repo, "rev-list", tracking + "..HEAD").splitlines():
+                    historical_deletions.update(names(git(repo, "diff-tree", "--root", "--no-commit-id",
+                        "--name-only", "--diff-filter=D", "-r", "-z", commit)))
+        if p not in historical_deletions:
             raise Stop("Unknown checkpoint path: " + p)
-    staged = set(names(git(repo, "diff", "--cached", "--name-only", "-z")))
+    publish_only = getattr(args, 'publish_only', False)
+    staged = set(names(git(repo, "diff", "--cached", "--name-only", "-z"))) if not publish_only else set()
     selected = set(names(git(repo, "diff", "--cached", "--name-only", "-z", "--", *specs)))
     if staged - selected:
         raise Stop("Staged files outside scope; include them explicitly or unstage them: " +
                    ", ".join(sorted(staged - selected)))
-    changed = set(names(git(repo, "diff", "HEAD", "--name-only", "-z", "--", *specs)))
-    changed.update(selected)
-    changed.update(names(git(repo, "ls-files", "--others", "--exclude-standard", "-z", "--", *specs)))
+    changed = set()
+    if not publish_only:
+        changed.update(names(git(repo, "diff", "HEAD", "--name-only", "-z", "--", *specs)))
+        changed.update(selected)
+        changed.update(names(git(repo, "ls-files", "--others", "--exclude-standard", "-z", "--", *specs)))
     for name in changed:
         p = repo / name
         if p.is_symlink():
@@ -245,11 +262,12 @@ def locked_save(repo, common, cache, args):
     message = args.message or "checkpoint: " + ", ".join(Path(p).name for p in sorted(changed)[:3])
     if not message.strip() or SECRET.search(message.encode()):
         raise Stop("Commit message must be nonempty and contain no credentials.")
-    if changed:
-        git(repo, "add", "-A", "--", *specs)
+    if changed and stage_specs:
+        git(repo, "add", "-A", "--", *stage_specs)
     # Deleted raw-source files have no newly introduced whitespace to check.
-    git(repo, "diff", "--cached", "--check", "--no-renames", "--diff-filter=ACMR")
-    files = names(git(repo, "diff", "--cached", "--name-only", "-z"))
+    if not publish_only:
+        git(repo, "diff", "--cached", "--check", "--no-renames", "--diff-filter=ACMR")
+    files = names(git(repo, "diff", "--cached", "--name-only", "-z")) if not publish_only else []
     created = bool(files)
     options = []
     for key, default in (("user.name", "WCG Researcher"),
@@ -371,6 +389,7 @@ def main():
     parser.add_argument("--create-branch", action="store_true",
                         help="Allow first publication of the bound branch, audited against remote main")
     parser.add_argument('--local-only',action='store_true')
+    parser.add_argument('--publish-only', action='store_true', help='Publish existing commits without staging or committing workspace changes')
     args = parser.parse_args()
     print(json.dumps(save(args), ensure_ascii=False, indent=2))
 

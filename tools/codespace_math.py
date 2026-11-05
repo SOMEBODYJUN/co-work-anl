@@ -1,9 +1,7 @@
-"""Run one registered computation and make its checkpoint part of the run.
+"""Run a useful registered computation and checkpoint its complete delivery.
 
-This is the concrete Work/Codespaces bridge: a Solver chooses an experiment
-already listed in ``research/experiments.json``; the command records the exact
-execution receipt, creates a local Git checkpoint immediately, and then tries
-to publish that checkpoint.  A failed push never discards the local result.
+This works in any existing Python environment. Codespaces are optional; normal
+batch computations can use the separate explicit Actions request route.
 """
 from __future__ import annotations
 
@@ -12,7 +10,8 @@ from pathlib import Path
 import subprocess
 import sys
 
-from compute import run as run_experiment
+from compute import DEFAULT_MANIFEST, run as run_experiment
+from curation import _safe_path
 
 
 def _json_stdout(value: str):
@@ -22,89 +21,83 @@ def _json_stdout(value: str):
         return None
 
 
-def _publish_paths(root: Path, output: str):
-    """Include every path in local-only commits before asking checkpoint.py to push.
-
-    The checkpoint auditor deliberately refuses to publish a new receipt while
-    an older local commit would travel outside the requested scope.  A normal
-    Codespace run therefore publishes the whole outstanding research delta,
-    while the first local leg still stages only the new receipt.
-    """
+def _publish_paths(root: Path, paths):
+    """Declare exact outgoing paths without broadening historical deletions."""
     branch = subprocess.run(['git', 'branch', '--show-current'], cwd=root,
                             capture_output=True, text=True, check=False).stdout.strip()
     if not branch:
-        return [output]
+        return list(paths)
     remote = f'origin/{branch}'
     if subprocess.run(['git', 'rev-parse', '--verify', remote], cwd=root,
                       capture_output=True, text=True, check=False).returncode:
-        return [output]
+        return list(paths)
     commits = subprocess.run(['git', 'rev-list', '--reverse', f'{remote}..HEAD'],
                              cwd=root, capture_output=True, text=True, check=False)
-    paths = {output}
+    selected = set(paths)
     for commit in commits.stdout.splitlines():
         names = subprocess.run(['git', 'diff-tree', '--root', '--no-commit-id',
-                                '--no-renames', '--name-only', '-r', commit],
-                               cwd=root, capture_output=True, text=True, check=False)
-        paths.update(name for name in names.stdout.splitlines() if name)
-    # A path deleted by a local commit is still covered by its nearest existing
-    # directory; checkpoint.py accepts the directory and audits the historical
-    # deletion without trying to stage a nonexistent file.
-    result = []
-    for name in sorted(paths):
-        candidate = root / name
-        if candidate.exists() or subprocess.run(['git', 'ls-files', '--', name],
-                                                cwd=root, capture_output=True,
-                                                text=True, check=False).stdout.strip():
-            result.append(name)
-            continue
-        parent = Path(name).parent
-        while parent != Path('.') and not (root / parent).exists():
-            parent = parent.parent
-        result.append(parent.as_posix() if parent != Path('.') else '.')
-    return list(dict.fromkeys(result))
+                                '--no-renames', '--name-only', '-r', '-z', commit],
+                               cwd=root, capture_output=True, check=True).stdout
+        selected.update(name.decode() for name in names.split(b'\0') if name)
+    return sorted(selected)
 
 
-def _checkpoint(root: Path, output: str, message: str, local_only: bool):
-    # Call checkpoint.py directly for the local leg.  The top-level work.py
-    # intentionally validates its configured external token before dispatching
-    # any checkpoint command, while a local commit must remain possible offline.
+def _checkpoint(root: Path, paths, message: str, local_only: bool):
+    # Local preservation must remain possible before authentication succeeds.
     if local_only:
         command = [sys.executable, str(root / 'tools' / 'checkpoint.py'),
-                   '--repo', str(root), output, '-m', message, '--local-only']
+                   '--repo', str(root), *paths, '-m', message, '--local-only']
     else:
         command = [sys.executable, str(root / 'work.py'), '--repo', str(root),
-                   'checkpoint', *_publish_paths(root, output), '-m', message]
+                   'checkpoint', *_publish_paths(root, paths), '--publish-only', '-m', message]
     completed = subprocess.run(command, cwd=root, capture_output=True, text=True)
     parsed = _json_stdout(completed.stdout)
     if completed.returncode == 0 and isinstance(parsed, dict):
         return parsed
-    # The receipt and local commit are intentionally retained even when the
-    # remote credential or network is unavailable.
     return {'status': 'local-only', 'checkpoint_error': (completed.stderr or completed.stdout).strip()[-1200:],
             'returncode': completed.returncode}
 
 
+def _computation_paths(root: Path, output: str, receipt):
+    """Keep this execution's exact reproduction inputs and emitted artifacts."""
+    paths = {output, receipt['manifest'], receipt['stdout_file'], receipt['stderr_file']}
+    paths.update(ref['path'] for ref in receipt.get('input_files', []))
+    requested = [*receipt['spec'].get('outputs', []),
+                 (Path(output).parent / 'checkpoints').as_posix()]
+    for name in requested:
+        candidate = _safe_path(root, name)
+        if candidate.is_file():
+            paths.add(name)
+        elif candidate.is_dir():
+            paths.update(p.relative_to(root).as_posix() for p in candidate.rglob('*') if p.is_file())
+        tracked = subprocess.run(['git', 'ls-files', '-z', '--', ':(literal)' + name],
+                                 cwd=root, capture_output=True, check=True).stdout
+        paths.update(p.decode() for p in tracked.split(b'\0') if p)
+    for name in paths:
+        _safe_path(root, name)
+    return sorted(paths)
+
+
 def run(root: Path, experiment: str, output: str, message: str | None = None,
-        local_only: bool = False):
+        local_only: bool = False, manifest: str = DEFAULT_MANIFEST,
+        resume_from: str | None = None):
     root = root.resolve()
     output = Path(output).as_posix()
     ignored = subprocess.run(['git', 'check-ignore', '--no-index', '-q', '--', output],
                              cwd=root, capture_output=True, check=False)
     if ignored.returncode == 0:
         raise ValueError('Checkpoint output is ignored by Git; use research/checks/ or the owning archive evidence directory')
-    success = run_experiment(root, experiment, output)
+    success = run_experiment(root, experiment, output, manifest, resume_from)
+    receipt = json.loads((root / output).read_text())
+    paths = _computation_paths(root, output, receipt)
     message = message or 'research compute: ' + experiment
-
-    # First make a local checkpoint without depending on GitHub auth.  A
-    # second invocation publishes that exact commit when credentials work.
-    local = _checkpoint(root, output, message, True)
-    publication = local if local_only else _checkpoint(root, output, message, False)
+    local = _checkpoint(root, paths, message, True)
+    publication = local if local_only or not local.get('commit') else _checkpoint(root, paths, message, False)
     return {'experiment': experiment,
             'experiment_status': 'completed' if success else 'failed',
-            'receipt': output,
-            'local_checkpoint': local,
-            'publication': publication,
-            'instruction': 'A pushed checkpoint is shared; local-only means the receipt and commit remain recoverable here.'}
+            'receipt': output, 'checkpoint_paths': paths,
+            'local_checkpoint': local, 'publication': publication,
+            'instruction': 'A pushed checkpoint shares the exact inputs, logs, outputs and algorithm checkpoints. Local-only preserves the run here; inspect any checkpoint_error before claiming it was committed.'}
 
 
 if __name__ == '__main__':
@@ -114,10 +107,12 @@ if __name__ == '__main__':
     parser.add_argument('--out', required=True)
     parser.add_argument('--message')
     parser.add_argument('--local-only', action='store_true')
+    parser.add_argument('--manifest', default=DEFAULT_MANIFEST)
+    parser.add_argument('--resume-from')
     args = parser.parse_args()
     try:
         result = run(Path(__file__).resolve().parents[1], args.experiment, args.out,
-                     args.message, args.local_only)
+                     args.message, args.local_only, args.manifest, args.resume_from)
     except (KeyError, OSError, ValueError) as exc:
         raise SystemExit(str(exc))
     print(json.dumps(result, ensure_ascii=False, indent=2))

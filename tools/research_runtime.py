@@ -6,6 +6,7 @@ authors; structural checks and version pins never certify mathematical truth.
 from __future__ import annotations
 
 import argparse
+from collections import deque
 import copy
 import hashlib
 import json
@@ -24,6 +25,7 @@ CONTEXT = {'motivates', 'cites', 'sourced_from', 'implements', 'checks', 'correc
 TRUTHS = {'definition', 'proved', 'conditional', 'conjecture', 'open', 'refuted', 'finite', 'unassessed'}
 STATES = {'working', 'needs-feedback', 'blocked', 'candidate', 'paused', 'closed'}
 IDENT = re.compile(r'[A-Za-z0-9][A-Za-z0-9_.-]{0,95}')
+OBJECT_IDENT = re.compile(r'[A-Za-z0-9][A-Za-z0-9_.:-]*(?:/[A-Za-z0-9][A-Za-z0-9_.:-]*)*')
 
 # Every new mathematical run gets the same three platform launch slots.  The
 # role split preserves the useful blind-vs-informed comparison while making the
@@ -59,6 +61,17 @@ def digest(data):
 def identity(value):
     if not isinstance(value, str) or not IDENT.fullmatch(value):
         raise ValueError('Use a stable simple ID: letters, numbers, dot, dash, underscore')
+    return value
+
+
+def object_identity(value):
+    """Mathematical IDs are lookup keys, never workspace or task paths.
+
+    Existing archive identities use slash namespaces and colon-qualified Claims.
+    Keep those IDs while retaining identity() for every filename-bearing ID.
+    """
+    if not isinstance(value, str) or len(value) > 512 or not OBJECT_IDENT.fullmatch(value):
+        raise ValueError('Use a stable mathematical ID, preserving slash namespaces and colon-qualified Claims')
     return value
 
 
@@ -146,7 +159,7 @@ def load(root, name=REGISTRY, provided=None, verify=True):
         raise ValueError('Expected explicit v2 registration; do not auto-admit old file listings')
     objects = {}
     for obj in data['objects']:
-        oid = identity(obj.get('object_id'))
+        oid = object_identity(obj.get('object_id'))
         if oid in objects:
             raise ValueError('Duplicate object ID: ' + oid)
         nonempty(obj, ['title', 'kind', 'model', 'statement', 'quantifiers', 'scope', 'objections'])
@@ -161,12 +174,13 @@ def load(root, name=REGISTRY, provided=None, verify=True):
         for ref in obj['evidence']:
             (ref_bytes if verify else reference)(root, ref)
         objects[oid] = obj
-    seen = set()
+    seen, material_by_path = set(), {}
     for row in data['materials']:
         (ref_bytes if verify else reference)(root, {k: row[k] for k in ('path', 'sha256')})
         if row['path'] in seen:
             raise ValueError('Duplicate material disposition')
         seen.add(row['path'])
+        material_by_path[row['path']] = row
         nonempty(row, ['reason'])
         if row.get('disposition') not in {'objects', 'attachment', 'excluded', 'needs-decision'}:
             raise ValueError('Explicit material disposition required')
@@ -178,12 +192,15 @@ def load(root, name=REGISTRY, provided=None, verify=True):
             raise ValueError('Mathematics and attachments require mathematical owners')
         for oid in ids:
             obj = objects[oid]
-            refs = [obj['body']] if row['disposition'] == 'objects' else obj['evidence']
+            refs = [obj['body']] + obj['evidence'] if row['disposition'] == 'objects' else obj['evidence']
             if row['disposition'] in {'objects', 'attachment'} and row['path'] not in {r['path'] for r in refs}:
                 raise ValueError('Material owner must reference these bytes')
     for obj in objects.values():
         if obj['body']['path'] not in seen:
             raise ValueError('Every registered body requires a material disposition')
+        material = material_by_path[obj['body']['path']]
+        if material['disposition'] != 'objects' or obj['object_id'] not in material.get('object_ids', []):
+            raise ValueError('Every live object body must remain declared mathematics owned by that object: ' + obj['object_id'])
     return data, objects
 
 
@@ -191,14 +208,16 @@ def register(root, record_file, registry=REGISTRY):
     """Publish an explicit reviewed registration locally, preserving identity."""
     data = json.loads(_safe_path(root, record_file).read_text())
     _, objects = load(root, registry, provided=data)
-    edges(root, data, objects)
+    # Registration is independently usable before graph construction. A changed
+    # object may leave incident edge reviews stale; map check/build evaluates
+    # those reviews rather than blocking an unrelated identity update here.
     destination = _safe_path(root, registry)
     if destination.exists():
         # Previous byte pins are expected to be stale when explicitly updating
         # a changed proof. Read identity/version metadata without re-admitting
         # those old bytes; validate the entire incoming declaration above.
         previous = json.loads(destination.read_text())
-        old = {identity(obj['object_id']): obj for obj in previous['objects']}
+        old = {object_identity(obj['object_id']): obj for obj in previous['objects']}
         if len(old) != len(previous['objects']): raise ValueError('Duplicate previous object IDs')
         for oid, obj in objects.items():
             if oid in old and obj != old[oid] and obj['version'] <= old[oid]['version']:
@@ -221,8 +240,7 @@ def edge_bindings(root, edge, objects, verify=True):
     ids = edge['source_ids'] + edge['target_ids']
     return {'endpoint_pins': {oid: pin(objects[oid]) for oid in sorted(set(ids))},
             'evidence_pins': {r['path']: digest(ref_bytes(root, r)) if verify else r['sha256'] for r in edge['evidence']},
-            'review_digest': edge_digest(edge),
-            'note': 'Mechanical bindings only; no review or acceptance is performed'}
+            'review_digest': edge_digest(edge)}
 
 
 def edges(root, data, objects, verify=True):
@@ -267,6 +285,15 @@ def edges(root, data, objects, verify=True):
     return result
 
 
+def verify_endpoints(root, edge, objects):
+    for oid in set(edge['source_ids'] + edge['target_ids']):
+        if oid not in objects:
+            raise ValueError('Unknown mathematical endpoint: ' + oid)
+        ref_bytes(root,objects[oid]['body'])
+        for ref in objects[oid]['evidence']:
+            ref_bytes(root,ref)
+
+
 def check_edge(root, edge_file, registry=REGISTRY, verify=True):
     """Validate one proposed/accepted edge before it enters the canonical registry.
 
@@ -274,8 +301,10 @@ def check_edge(root, edge_file, registry=REGISTRY, verify=True):
     gives ``map done`` a real semantic gate for the edge it is delivering,
     instead of relying on the registry's current ``edge_files`` list.
     """
-    data, objects = load(root, registry, verify=verify)
+    data, objects = load(root, registry, verify=False)
     name = _safe_path(root, edge_file).relative_to(root).as_posix()
+    edge = json.loads(_safe_path(root,name).read_text())
+    if verify: verify_endpoints(root,edge,objects)
     relations = edges(root, dict(data, edge_files=[name]), objects, verify=verify)
     edge = relations[next(iter(relations))]
     return {'status': 'edge-structure-valid-not-a-mathematical-verdict',
@@ -296,41 +325,11 @@ def inventory(root, registry=REGISTRY):
 
 
 def prepare_inputs(root, output, scope='repository', coverage_note=None, paths=None):
-    """Write the explicit 2.5.3 input manifest from the current stage-2 bytes.
-
-    This is only a byte inventory.  It does not admit mathematics or infer
-    object identities.  A repository-scope manifest covers the formal archive
-    paths visible at this exact working-tree snapshot; a partial manifest must
-    name each formal path explicitly.
-    """
-    if scope not in {'repository', 'partial'}:
-        raise ValueError('Use repository or partial scope')
+    """Keep the current prepare-inputs CLI while sharing its real Git denominator."""
     if not isinstance(coverage_note, str) or not coverage_note.strip():
         raise ValueError('A concrete coverage note is required')
-    formal = {p.relative_to(root).as_posix() for p in formal_paths(root)}
-    names = sorted(formal) if scope == 'repository' else list(paths or [])
-    if not names:
-        raise ValueError('No stage-2 formal materials were selected')
-    rows = []
-    seen = set()
-    for name in names:
-        if name in seen:
-            raise ValueError('Duplicate material path: ' + name)
-        seen.add(name)
-        path = _safe_path(root, name)
-        if not path.is_file() or name not in formal:
-            raise ValueError('Inputs must name current formal archive files: ' + name)
-        rows.append({'path': name, 'sha256': digest(path.read_bytes())})
-    value = {'scope': scope, 'coverage_note': coverage_note.strip(),
-             'materials': sorted(rows, key=lambda row: row['path'])}
-    destination = _safe_path(root, output)
-    if destination.exists():
-        previous = json.loads(destination.read_text())
-        if previous != value:
-            raise ValueError('Inputs manifest exists with different bytes; create an explicit new filename')
-        return {'status': 'already-prepared', 'path': output, 'materials': len(rows), 'scope': scope}
-    _write_json(destination, value)
-    return {'status': 'prepared-local-not-pushed', 'path': output, 'materials': len(rows), 'scope': scope}
+    import registration
+    return registration.prepare_inputs(root, output, scope, coverage_note.strip(), paths=paths)
 
 
 def check(root, registry=REGISTRY, final=False):
@@ -413,42 +412,206 @@ def build(root, registry=REGISTRY, final=False):
     return dict(report, projections=outputs, publication='local-not-pushed')
 
 
-def search(root, query, registry=REGISTRY, limit=20):
+def inspect_reference(root, ref, *, body=False):
+    """Read a selected reference without turning stale bytes into a global outage."""
+    report = {'reference': copy.deepcopy(ref), 'status': 'unavailable'}
+    try:
+        path = reference(root, ref)
+        data = path.read_bytes()
+        report['current_sha256'] = digest(data)
+        report['status'] = 'current' if report['current_sha256'] == ref['sha256'] else 'changed'
+        if body:
+            report['text'] = section(data.decode('utf-8'), ref.get('section'))
+    except (ValueError, OSError, UnicodeError) as exc:
+        report['error'] = str(exc)
+        report['status'] = 'unavailable'
+    return report
+
+
+def object_view(root, obj, *, body=False):
+    result = copy.deepcopy(obj)
+    result['registration_pin'] = pin(obj)
+    binding = inspect_reference(root, obj['body'], body=body)
+    if 'text' in binding:
+        result['body_text'] = binding.pop('text')
+    result['body_binding'] = binding
+    result['evidence_bindings'] = [inspect_reference(root, ref) for ref in obj['evidence']]
+    result['binding_status'] = ('current' if all(r['status'] == 'current' for r in
+        [binding, *result['evidence_bindings']]) else 'requires-refresh')
+    return result
+
+
+def relation_catalog(root, data):
+    """Index declarations for navigation; validate only selected relations below."""
+    result, errors, ambiguous = {}, [], set()
+    for name in data.get('edge_files', []):
+        try:
+            edge = json.loads(_safe_path(root, name).read_text())
+            eid = identity(edge.get('edge_id'))
+            if eid in result or eid in ambiguous:
+                previous = result.pop(eid, None)
+                ambiguous.add(eid)
+                raise ValueError('Ambiguous duplicate edge ID: ' + eid +
+                    (' also declared in ' + previous[0] if previous else ''))
+            if not isinstance(edge.get('source_ids'), list) or not isinstance(edge.get('target_ids'), list):
+                raise ValueError('Relation endpoints must be explicit lists')
+            if any(not isinstance(i, str) for i in edge['source_ids'] + edge['target_ids']):
+                raise ValueError('Relation endpoint IDs must be strings')
+            result[eid] = (name, edge)
+        except (ValueError, OSError, AttributeError, TypeError) as exc:
+            errors.append({'path': name, 'error': str(exc)})
+    return result, errors
+
+
+def relation_view(root, data, objects, name, edge):
+    result = copy.deepcopy(edge)
+    result['path'] = name
+    result['declaration_pin'] = pin(edge)
+    errors = []
+    try:
+        edges(root, dict(data, edge_files=[name]), objects, verify=False)
+    except (ValueError, OSError, KeyError, TypeError) as exc:
+        errors.append(str(exc))
+    evidence = edge.get('evidence', [])
+    if not isinstance(evidence, list):
+        errors.append('Selected relation evidence must be an explicit list')
+        evidence = []
+    result['evidence_bindings'] = [inspect_reference(root, ref) for ref in evidence]
+    if any(r['status'] != 'current' for r in result['evidence_bindings']):
+        errors.append('One or more selected relation evidence references need refreshing')
+    result['binding_status'] = 'requires-refresh' if errors else 'current'
+    result['binding_errors'] = errors
+    return result
+
+
+def search(root, query, registry=REGISTRY, limit=20, *, model=None, truth_statuses=None, kinds=None):
     _, objects = load(root, registry, verify=False)
     terms = query.casefold().split()
     ranked = []
     for oid, obj in objects.items():
-        text = json.dumps({k: obj[k] for k in ('title', 'statement', 'model', 'keywords') if k in obj}, ensure_ascii=False).casefold()
-        score = sum(text.count(term) for term in terms)
-        if score:
+        if model and model.casefold() not in obj['model'].casefold():
+            continue
+        if truth_statuses and obj['truth_status'] not in truth_statuses:
+            continue
+        if kinds and obj['kind'] not in kinds:
+            continue
+        text = json.dumps({k: obj[k] for k in ('title', 'statement', 'model', 'scope',
+            'quantifiers', 'assumptions', 'keywords', 'aliases', 'legacy_ids') if k in obj}, ensure_ascii=False).casefold()
+        score = sum(text.count(term) for term in terms) + sum(20 for term in terms if term in oid.casefold())
+        if score or not terms:
             ranked.append((score, oid, obj))
-    return [{'object_id': oid, 'version': obj['version'], 'title': obj['title'], 'truth_status': obj['truth_status'], 'path': obj['body']['path'], 'binding_status': 'unchecked-until-open'}
+    return [{'object_id': oid, 'version': obj['version'], 'title': obj['title'], 'kind': obj['kind'],
+             'model': obj['model'], 'scope': obj['scope'], 'truth_status': obj['truth_status'],
+             'objections': obj['objections'], 'path': obj['body']['path'], 'binding_status': 'unchecked-until-open'}
             for _, oid, obj in sorted(ranked, key=lambda row: (-row[0], row[1]))[:limit]]
 
 
-def context(root, ids, registry=REGISTRY, hops=2):
-    if not 0 <= hops <= 10:
-        raise ValueError('Use an explicit hop window from 0 to 10; larger reading may be requested separately')
+def context(root, ids, registry=REGISTRY, hops=0, *, edge_ids=None, edge_statuses=None, relation_kinds=None):
+    """Complete positive support branches first; optional graph hops add navigation."""
+    if hops < 0:
+        raise ValueError('Navigation hops must be nonnegative')
     data, objects = load(root, registry, verify=False)
-    relations = edges(root, data, objects, verify=False)
+    catalog, unreadable = relation_catalog(root, data)
     if not ids or any(i not in objects for i in ids):
         raise ValueError('Known seed object IDs required')
-    reached, picked = set(ids), {}
+    chosen = set(edge_ids or [])
+    if chosen - catalog.keys():
+        raise ValueError('Unknown selected edge IDs: ' + ', '.join(sorted(chosen - catalog.keys())))
+    statuses = set(edge_statuses or ['accepted', 'proposed'])
+    if statuses - {'accepted', 'proposed', 'rejected'}:
+        raise ValueError('Unknown relation status filter')
+    if relation_kinds and set(relation_kinds) - (LOGICAL | CONTEXT):
+        raise ValueError('Unknown relation kind filter')
+    positive = LOGICAL - {'refutes'}
+    cache, views = {}, {}
+    def ov(oid):
+        if oid not in views:
+            views[oid] = object_view(root, objects[oid])
+        return views[oid]
+    def ev(eid):
+        if eid not in cache:
+            name, edge = catalog[eid]
+            cache[eid] = relation_view(root, data, objects, name, edge)
+        return cache[eid]
+    incoming, incident = {}, {}
+    for eid, (_, edge) in catalog.items():
+        for oid in set(edge['source_ids'] + edge['target_ids']):
+            incident.setdefault(oid,set()).add(eid)
+        if edge.get('status') != 'accepted' or edge.get('kind') not in positive:
+            continue
+        for oid in edge['target_ids']:
+            incoming.setdefault(oid,[]).append((eid,'forward'))
+        if edge.get('kind') == 'equivalent_to':
+            for oid in edge['source_ids']:
+                incoming.setdefault(oid,[]).append((eid,'reverse'))
+    required, queue, expanded, support = set(ids), deque(ids), set(), {}
+    proof_edges = set()
+    while queue:
+        target = queue.popleft()
+        if target in expanded:
+            continue
+        expanded.add(target)
+        options = incoming.get(target,[])
+        selected_options = [option for option in options if option[0] in chosen]
+        if selected_options:
+            options = selected_options
+        support[target] = []
+        for eid,direction in sorted(options):
+            e = ev(eid)
+            premises = e['source_ids'] if direction == 'forward' else e['target_ids']
+            conclusions = e['target_ids'] if direction == 'forward' else e['source_ids']
+            unknown = [i for i in e['source_ids'] + e['target_ids'] if i not in objects]
+            endpoint_errors = [i for i in e['source_ids'] + e['target_ids']
+                if i in objects and ov(i)['binding_status'] != 'current']
+            unpaid = [{'object_id': i, 'truth_status': objects[i]['truth_status'],
+                       'binding_status': ov(i)['binding_status'], 'objections': objects[i]['objections']}
+                      for i in premises if i in objects and
+                      (objects[i]['truth_status'] not in {'definition', 'proved'} or ov(i)['binding_status'] != 'current')]
+            support[target].append({'edge_id': eid, 'direction': direction,
+                'all_premises': list(premises), 'conclusion_ids': list(conclusions),
+                'conditions': e.get('conditions'), 'scope': e.get('scope'), 'relation_mode': e.get('relation_mode'),
+                'explanation': e.get('explanation'), 'evidence': e.get('evidence', []),
+                'unpaid_premises': unpaid, 'unknown_endpoints': unknown,
+                'endpoint_binding_changes': endpoint_errors,
+                'current_declared_support': not unknown and not endpoint_errors and e['binding_status'] == 'current',
+                'premise_support_options': list(premises)})
+            proof_edges.add(eid)
+            # Every member of a selected ALL relation is included, irrespective of hop count.
+            for oid in e['source_ids'] + e['target_ids']:
+                if oid in objects:
+                    required.add(oid)
+            queue.extend(i for i in premises if i in objects and i not in expanded)
+    proof_objects = set(required)
+    related = set(proof_edges)
+    def allowed(e):
+        return e.get('status') in statuses and (not relation_kinds or e.get('kind') in relation_kinds)
+    # Direct failures and concrete research leads are useful even with zero navigation hops.
+    candidates = set().union(*(incident.get(oid,set()) for oid in proof_objects))
+    for eid in candidates:
+        e = catalog[eid][1]
+        if allowed(e) and set(e['source_ids'] + e['target_ids']).intersection(proof_objects):
+            if eid not in proof_edges:
+                related.add(eid)
+                required.update(i for i in e['source_ids'] + e['target_ids'] if i in objects)
     for _ in range(hops):
-        previous = set(reached)
-        for eid, edge in relations.items():
-            endpoints = set(edge['source_ids'] + edge['target_ids'])
-            if edge['status'] == 'accepted' and endpoints.intersection(previous):
-                picked[eid] = edge
-                reached.update(endpoints)
-    for oid in reached:
-        ref_bytes(root, objects[oid]['body'])
-        for ref in objects[oid]['evidence']: ref_bytes(root, ref)
-    for edge in picked.values():
-        for ref in edge['evidence']: ref_bytes(root, ref)
-    return {'seed_ids': ids, 'hops': hops, 'navigation_only': True,
-            'objects': [objects[i] for i in sorted(reached)], 'edges': list(picked.values()),
-            'instruction': 'Read body and evidence on demand. All source_ids of a hyperedge are joint premises. Adjacency never proves a statement.'}
+        previous = set(required)
+        candidates = set().union(*(incident.get(oid,set()) for oid in previous))
+        for eid in candidates:
+            e = catalog[eid][1]
+            if allowed(e) and set(e['source_ids'] + e['target_ids']).intersection(previous):
+                related.add(eid)
+                required.update(i for i in e['source_ids'] + e['target_ids'] if i in objects)
+        if required == previous:
+            break
+    picked = [ev(eid) for eid in sorted(related)]
+    return {'seed_ids': ids, 'hops': hops, 'navigation_only': True, 'registry': registry, 'registry_pin': pin(data),
+            'support_semantics': 'OR between support_options; ALL within each option. Conditions and unpaid premises remain explicit. This is not automated proof acceptance.',
+            'proof_closure_object_ids': sorted(proof_objects), 'support_options': support,
+            'objects': [ov(i) for i in sorted(required)], 'edges': picked,
+            'refutations': [e for e in picked if e.get('kind') == 'refutes'],
+            'research_leads': [e for e in picked if e['edge_id'] not in proof_edges and e.get('kind') != 'refutes'],
+            'unavailable_edge_files': unreadable,
+            'instruction': 'Read the selected body and exact evidence on demand. Accepted is an author declaration, not a mathematical verdict. Navigation hops do not truncate selected logical ALL-premise closure. Context links and proposed/rejected relations never supply proved premises.'}
 
 
 def packet(root, spec, profile, registry=REGISTRY):
@@ -460,12 +623,15 @@ def packet(root, spec, profile, registry=REGISTRY):
     obstacles = [read_ref(root, ref) for ref in spec['obstacles']]
     result = {'problem_id': spec['problem_id'], 'profile': profile, 'target': target,
               'definitions': definitions, 'obstacles': obstacles,
+              'input_refs': {key: copy.deepcopy(spec[key]) for key in ('problem', 'definitions', 'obstacles')},
               'task': 'Solve this exact problem freely. Use any useful mathematical method. Save substantive progress and explicit gaps.',
               'launch': {'fork_turns': 'none', 'model': 'gpt-6.1-sol', 'reasoning_effort': 'ultra',
-                         'instruction': 'Start a fresh-history solver with the declared model and effort. Supply only this packet and the matching solver prompt.'},
-              'limit': 'Context selection is not a file-system access-control boundary; unrestricted tools can read other files.'}
+                         'instruction': 'Start a fresh-history solver with the declared model and effort unless the user explicitly requests inherited history. Supply this packet and the matching solver prompt.'},
+              'limit': 'Context selection is not a file-system access-control boundary.'}
     if profile == 'full':
-        result['context'] = context(root, spec['seed_ids'], registry, spec.get('hops', 2))
+        result['context'] = context(root, spec['seed_ids'], registry, spec.get('hops', 0),
+            edge_ids=spec.get('edge_ids'), edge_statuses=spec.get('edge_statuses'), relation_kinds=spec.get('relation_kinds'))
+        result['registry_pin'] = result['context']['registry_pin']
         result['retrieval'] = {'registry': registry, 'commands': ['research search', 'research show', 'research context']}
     return result
 
@@ -488,24 +654,34 @@ def init_run(root, run_id, spec_file, registry=REGISTRY):
              'spec': spec_file, 'spec_pin': pin(spec), 'registry': registry, 'solvers': {},
              'solver_count': len(roster), 'solver_roster': roster,
              'launch_plan': {'platform': 'Work', 'exact_count': len(roster),
-                             'instruction': 'Launch every roster slot before solving; Main is not an extra Solver.'},
+                             'instruction': 'Main launches every roster slot through the actual platform; init itself launches no model.'},
+             'registry_pin': packets['full'].get('registry_pin'),
+             'context_snapshot': {
+                 'objects': {o['object_id']: o['registration_pin'] for o in packets['full']['context']['objects']},
+                 'edges': {e['edge_id']: e['declaration_pin'] for e in packets['full']['context']['edges']}},
              'packet_pins': {profile: pin(value) for profile, value in packets.items()},
-             'note': 'This command writes packets and a fixed launch plan; Work starts all three platform Solver agents.'}
+             'note': 'No agents were launched by this command; Main starts them through the Work orchestration API.'}
     _write_json(path, state)
     return {'status': 'initialized-local-not-pushed', 'run': path.relative_to(root).as_posix(),
             'packets': [str((home / ('packet-' + p + '.json')).relative_to(root)) for p in packets],
             'solver_count': len(roster), 'solver_roster': roster, 'agents_launched': 0}
 
 
-def update_run(root, run_id, solver_id, profile, note, next_action, state, feedback=None, agent_id=None):
+def update_run(root, run_id, solver_id, profile, note, next_action, state, feedback=None, agent_id=None, ack_feedback=False):
     identity(solver_id)
     if profile not in {'obstacle', 'full'} or state not in STATES or not next_action.strip():
         raise ValueError('Explicit solver profile, state and concrete next action required')
     if feedback is not None and not feedback.strip():
         raise ValueError('Concrete feedback required')
+    if feedback is not None and ack_feedback:
+        raise ValueError('Send new feedback or acknowledge the pending feedback, not both in one save')
     path = run_path(root, run_id)
     run = json.loads(path.read_text())
+    roster = {s['solver_id']: s['profile'] for s in run.get('solver_roster', [])}
+    if roster and (solver_id not in roster or roster[solver_id] != profile):
+        raise ValueError('Use a declared Solver roster slot with its original profile')
     old = run['solvers'].get(solver_id, {})
+    old_pending = old.get('feedback_pending', bool(old.get('feedback')))
     if old and old['profile'] != profile:
         raise ValueError('Do not silently change a solver context profile')
     note_bytes = _safe_path(root, note).read_bytes()
@@ -518,7 +694,11 @@ def update_run(root, run_id, solver_id, profile, note, next_action, state, feedb
     ref = {'path': snapshot.relative_to(root).as_posix(), 'sha256': digest(note_bytes)}
     event = {'event_id': event_id, 'continuation_of': old.get('latest_event'), 'solver_id': solver_id,
              'profile': profile, 'note': ref, 'next_action': next_action, 'state': state,
-             'agent_id': agent_id or old.get('agent_id'), 'feedback': feedback}
+             'agent_id': agent_id or old.get('agent_id'),
+             'feedback': feedback if feedback is not None else old.get('feedback'),
+             'feedback_inherited': feedback is None and old.get('feedback') is not None,
+             'feedback_pending': feedback is not None or (old_pending and not ack_feedback),
+             'feedback_acknowledged': bool(ack_feedback and old_pending)}
     _write_json(_safe_path(root, (path.parent / 'events' / (event_id + '.json')).relative_to(root).as_posix()), event)
     run['solvers'][solver_id] = dict(event, latest_event=event_id)
     _write_json(path, run)
@@ -528,21 +708,97 @@ def update_run(root, run_id, solver_id, profile, note, next_action, state, feedb
 def resume(root, run_id):
     path = run_path(root, run_id)
     run = json.loads(path.read_text())
-    spec = json.loads(_safe_path(root, run['spec']).read_text())
-    if pin(spec) != run['spec_pin']:
-        raise ValueError('Problem spec changed; explicitly reframe instead of silently resuming another problem')
+    warnings, packet_bindings, histories = [], {}, {}
+    try:
+        spec = json.loads(_safe_path(root, run['spec']).read_text())
+        if pin(spec) != run['spec_pin']:
+            warnings.append('The current spec changed. Continue the saved original packet or explicitly create a newly framed run; do not silently substitute the new target.')
+    except (ValueError, OSError) as exc:
+        warnings.append('Current spec unavailable; use the saved packet: ' + str(exc))
+    packets = {}
     for profile, expected in run['packet_pins'].items():
-        saved = json.loads((path.parent / ('packet-' + profile + '.json')).read_text())
-        if pin(saved) != expected:
-            raise ValueError('Saved solver packet changed; do not silently alter the context')
-    for solver in run['solvers'].values():
-        ref_bytes(root, solver['note'])
-    head = subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=root, capture_output=True, text=True)
+        relative = (path.parent / ('packet-' + profile + '.json')).relative_to(root).as_posix()
+        try:
+            saved = json.loads(_safe_path(root, relative).read_text())
+            packets[profile] = saved
+            packet_bindings[profile] = {'path': relative, 'status': 'current' if pin(saved) == expected else 'changed'}
+            if pin(saved) != expected:
+                warnings.append('Saved '+profile+' packet differs from its original pin; recover its prior bytes from the published run before claiming the same input.')
+        except (ValueError, OSError) as exc:
+            packet_bindings[profile] = {'path': relative, 'status': 'unavailable', 'error': str(exc)}
+    for solver_id, solver in run['solvers'].items():
+        chain, seen, current = [], set(), solver.get('latest_event')
+        while current:
+            if current in seen:
+                warnings.append('Continuation history has a cycle for '+solver_id)
+                break
+            seen.add(current)
+            try:
+                identity(current)
+                event_path = path.parent/'events'/(current+'.json')
+                event = json.loads(event_path.read_text())
+                chain.append(dict(event, event_path=event_path.relative_to(root).as_posix(),
+                                  note_binding=inspect_reference(root,event['note'])))
+                current = event.get('continuation_of')
+            except (ValueError, OSError, KeyError) as exc:
+                warnings.append('Missing continuation event for '+solver_id+': '+str(exc))
+                break
+        histories[solver_id] = chain
+        note = inspect_reference(root,solver['note'])
+        if note['status'] != 'current':
+            warnings.append('Latest note needs recovery for '+solver_id+'; inspect the preceding immutable events.')
+    changes = {'saved_registry_pin': run.get('registry_pin'), 'registry_changed': None,
+               'objects_changed': [], 'edges_changed': [], 'new_incident_edges': [], 'stale_selected_refs': []}
+    try:
+        data, objects = load(root,run['registry'],verify=False)
+        changes['current_registry_pin'] = pin(data)
+        changes['registry_changed'] = run.get('registry_pin') not in {None,pin(data)}
+        snapshot = run.get('context_snapshot',{})
+        if not snapshot and 'full' in packets:
+            ctx = packets['full'].get('context',{})
+            snapshot = {'objects':{o['object_id']:o.get('registration_pin',pin({k:v for k,v in o.items()
+                if k not in {'registration_pin','body_binding','evidence_bindings','binding_status','body_text'}})) for o in ctx.get('objects',[])},
+                'edges':{e['edge_id']:e.get('declaration_pin') for e in ctx.get('edges',[])}}
+        catalog, _ = relation_catalog(root,data)
+        selected_objects = set(snapshot.get('objects', {}))
+        for eid, (name, edge) in catalog.items():
+            if eid not in snapshot.get('edges', {}) and selected_objects.intersection(edge['source_ids'] + edge['target_ids']):
+                changes['new_incident_edges'].append({'edge_id': eid, 'path': name,
+                    'kind': edge.get('kind'), 'status': edge.get('status'),
+                    'instruction': 'Relation absent from the saved selected context; open its current context before using it.'})
+        for oid, expected in snapshot.get('objects',{}).items():
+            obj = objects.get(oid)
+            if obj is None or pin(obj) != expected:
+                changes['objects_changed'].append({'object_id':oid,'saved_pin':expected,
+                    'current_pin':pin(obj) if obj else None,'current_version':obj.get('version') if obj else None})
+            if obj:
+                view = object_view(root,obj)
+                if view['binding_status'] != 'current':
+                    changes['stale_selected_refs'].append({'object_id':oid,'body':view['body_binding'],
+                        'evidence':view['evidence_bindings']})
+        for eid, expected in snapshot.get('edges',{}).items():
+            current = catalog.get(eid)
+            if current is None or expected is not None and pin(current[1]) != expected:
+                changes['edges_changed'].append({'edge_id':eid,'saved_pin':expected,
+                    'current_pin':pin(current[1]) if current else None})
+            elif current:
+                view = relation_view(root,data,objects,current[0],current[1])
+                if view['binding_status'] != 'current':
+                    changes['stale_selected_refs'].append({'edge_id':eid,'errors':view['binding_errors']})
+    except (ValueError, OSError, KeyError) as exc:
+        changes['registry_error'] = str(exc)
+        warnings.append('Saved notes and packets remain recoverable; the current registry needs attention: '+str(exc))
+    head = subprocess.run(['git','rev-parse','HEAD'],cwd=root,capture_output=True,text=True)
     roster = run.get('solver_roster', SOLVER_ROSTER)
-    return {'run': run, 'local_head': head.stdout.strip() if not head.returncode else None,
-            'solver_count': run.get('solver_count', len(roster)), 'solver_roster': roster,
-            'instruction': 'Continue each recorded Solver with its existing history. If unavailable, launch the same roster slot fresh with the same profile packet, note, events and pending feedback.',
-            'publication': 'Local HEAD is not remote confirmation; checkpoint and verify status=pushed separately.'}
+    return {'run':run,'solver_count':run.get('solver_count',len(roster)),'solver_roster':roster,
+            'packet_bindings':packet_bindings,'event_history':histories,
+            'recent_feedback':{i:s.get('feedback') for i,s in run['solvers'].items() if s.get('feedback')},
+            'pending_feedback':{i:s.get('feedback') for i,s in run['solvers'].items()
+                                if s.get('feedback_pending', bool(s.get('feedback'))) and s.get('feedback')},
+            'version_changes':changes,'recovery_warnings':warnings,
+            'local_head':head.stdout.strip() if not head.returncode else None,
+            'instruction':'Continue the recorded agent. If unavailable, restore the same input profile from its saved packet, latest readable immutable note, concrete feedback and event lineage. Version changes are targeted reading tasks, not a reason to discard existing mathematics or rescan the whole repository.',
+            'publication':'Local HEAD is not remote confirmation; checkpoint and verify pushed separately.'}
 
 
 def main(argv=None):
@@ -551,6 +807,9 @@ def main(argv=None):
     p.add_argument('--registry', default=REGISTRY)
     sub = p.add_subparsers(dest='command', required=True)
     sub.add_parser('inventory')
+    q = sub.add_parser('inputs'); q.add_argument('--out', default='research/registration/inputs.json')
+    q.add_argument('--scope', choices=['repository','partial'], default='repository')
+    q.add_argument('--coverage-note', required=True); q.add_argument('--paths-file')
     q = sub.add_parser('prepare-inputs', help='Freeze a byte inventory for 2.5.3; no mathematical admission')
     q.add_argument('--output', default='research/registration/inputs.json')
     q.add_argument('--scope', choices=['repository', 'partial'], default='repository')
@@ -559,7 +818,7 @@ def main(argv=None):
     q = sub.add_parser('freeze'); q.add_argument('--inputs-file', required=True); q.add_argument('--out', default='research/registration/baseline.json')
     q = sub.add_parser('compose'); q.add_argument('--manifest', required=True); q.add_argument('--out', default='research/registration/proposed.json')
     q = sub.add_parser('registration-check'); q.add_argument('--final', action='store_true')
-    q = sub.add_parser('assignments-draft', help='Create a reviewed scheduling draft from a frozen baseline')
+    q = sub.add_parser('assignments-draft', help='Optional scheduling draft; review it before publishing actual CAS tasks')
     q.add_argument('--baseline', default='research/registration/baseline.json')
     q.add_argument('--owners', required=True)
     q.add_argument('--output', default='research/registration/assignments.draft.json')
@@ -570,8 +829,11 @@ def main(argv=None):
     for command in ('check', 'build'):
         q = sub.add_parser(command); q.add_argument('--final', action='store_true')
     q = sub.add_parser('search'); q.add_argument('query'); q.add_argument('--limit', type=int, default=20)
+    q.add_argument('--model'); q.add_argument('--truth-status', action='append', choices=sorted(TRUTHS)); q.add_argument('--kind', action='append')
     q = sub.add_parser('show'); q.add_argument('object_id'); q.add_argument('--body', action='store_true')
-    q = sub.add_parser('context'); q.add_argument('ids', nargs='+'); q.add_argument('--hops', type=int, default=2)
+    q = sub.add_parser('context'); q.add_argument('ids', nargs='+'); q.add_argument('--hops', type=int, default=0)
+    q.add_argument('--edge', action='append'); q.add_argument('--edge-status', action='append', choices=['accepted','proposed','rejected'])
+    q.add_argument('--relation-kind', action='append', choices=sorted(LOGICAL|CONTEXT))
     q = sub.add_parser('edge-bind'); q.add_argument('edge_file')
     q = sub.add_parser('edge-check'); q.add_argument('edge_file')
     q = sub.add_parser('packet'); q.add_argument('spec'); q.add_argument('--profile', choices=['obstacle', 'full'], required=True)
@@ -579,43 +841,52 @@ def main(argv=None):
     q = sub.add_parser('resume'); q.add_argument('run_id')
     q = sub.add_parser('compute', help='Run one registered experiment and checkpoint its receipt immediately')
     q.add_argument('experiment'); q.add_argument('--out', required=True)
+    q.add_argument('--manifest', default='research/experiments.json'); q.add_argument('--resume-from')
     q.add_argument('--message'); q.add_argument('--local-only', action='store_true')
     q = sub.add_parser('save'); q.add_argument('run_id'); q.add_argument('--solver', required=True)
     q.add_argument('--profile', choices=['obstacle', 'full'], required=True); q.add_argument('--note', required=True)
     q.add_argument('--next', required=True); q.add_argument('--state', choices=sorted(STATES), default='working')
-    q.add_argument('--feedback'); q.add_argument('--agent-id')
+    feedback_group = q.add_mutually_exclusive_group()
+    feedback_group.add_argument('--feedback'); feedback_group.add_argument('--ack-feedback', action='store_true')
+    q.add_argument('--agent-id')
     a = p.parse_args(argv); root = a.repo.resolve()
     if a.command == 'inventory': result = inventory(root, a.registry)
+    elif a.command == 'inputs':
+        import registration
+        result = registration.prepare_inputs(root,a.out,a.scope,a.coverage_note,a.paths_file)
     elif a.command == 'prepare-inputs': result = prepare_inputs(root, a.output, a.scope, a.coverage_note, a.path)
     elif a.command in {'freeze', 'compose', 'registration-check', 'assignments-draft', 'assignments-check', 'new-id'}:
         import registration
         if a.command == 'freeze': result = registration.freeze(root, a.inputs_file, a.out)
         elif a.command == 'compose': result = registration.compose(root, a.manifest, a.out)
         elif a.command == 'registration-check': result = registration.check(root, a.registry, a.final)
-        elif a.command == 'assignments-draft': result = registration.draft_assignments(root, a.baseline, [x for x in a.owners.split(',') if x], a.output, a.batch_size)
+        elif a.command == 'assignments-draft':
+            result = registration.draft_assignments(root, a.baseline, [x.strip() for x in a.owners.split(',') if x.strip()], a.output, a.batch_size)
         elif a.command == 'assignments-check': result = registration.check_assignments(root, a.assignment_file)
         else: result = registration.new_ids(a.count)
     elif a.command == 'register': result = register(root, a.record_file, a.registry)
     elif a.command in {'check', 'build'}: result = globals()[a.command](root, a.registry, a.final)
     elif a.command == 'search':
         if a.limit < 1: raise ValueError('Positive display limit required')
-        result = search(root, a.query, a.registry, a.limit)
+        result = search(root,a.query,a.registry,a.limit,model=a.model,truth_statuses=a.truth_status,kinds=a.kind)
     elif a.command == 'show':
-        _, objs = load(root, a.registry, verify=False); result = copy.deepcopy(objs[a.object_id])
-        ref_bytes(root, result['body'])
-        for ref in result['evidence']: ref_bytes(root, ref)
-        if a.body: result['body_text'] = read_ref(root, result['body'])
-    elif a.command == 'context': result = context(root, a.ids, a.registry, a.hops)
+        _, objs = load(root,a.registry,verify=False)
+        result = object_view(root,objs[a.object_id],body=a.body)
+    elif a.command == 'context':
+        result = context(root,a.ids,a.registry,a.hops,edge_ids=a.edge,edge_statuses=a.edge_status,relation_kinds=a.relation_kind)
     elif a.command == 'edge-bind':
-        _, objs = load(root, a.registry); result = edge_bindings(root, json.loads(_safe_path(root, a.edge_file).read_text()), objs)
+        _, objs = load(root,a.registry,verify=False)
+        edge = json.loads(_safe_path(root,a.edge_file).read_text())
+        verify_endpoints(root,edge,objs)
+        result = edge_bindings(root,edge,objs)
     elif a.command == 'edge-check': result = check_edge(root, a.edge_file, a.registry)
     elif a.command == 'packet': result = packet(root, json.loads(_safe_path(root, a.spec).read_text()), a.profile, a.registry)
     elif a.command == 'init': result = init_run(root, a.run_id, a.spec, a.registry)
     elif a.command == 'resume': result = resume(root, a.run_id)
     elif a.command == 'compute':
         import codespace_math
-        result = codespace_math.run(root, a.experiment, a.out, a.message, a.local_only)
-    else: result = update_run(root, a.run_id, a.solver, a.profile, a.note, a.next, a.state, a.feedback, a.agent_id)
+        result = codespace_math.run(root, a.experiment, a.out, a.message, a.local_only, a.manifest, a.resume_from)
+    else: result = update_run(root, a.run_id, a.solver, a.profile, a.note, a.next, a.state, a.feedback, a.agent_id, a.ack_feedback)
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0
 

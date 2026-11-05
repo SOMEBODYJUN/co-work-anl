@@ -29,14 +29,12 @@ def export(root, destination, remote, branch='main'):
         path.mkdir(parents=True)
         shutil.copy2(root / 'research/operations' / name / 'run.json', path / 'run.json')
     experiments = json.loads((root / 'research/experiments.json').read_text())
-    experiments['experiments'] = {
-        name: experiments['experiments'][name]
-        for name in ('cag-five-local', 'positive-kernels-rank')
-        if name in experiments['experiments']
-    }
+    # The mathematical scripts are intentionally not part of this export.
+    # New projects declare their own useful computations in this manifest.
+    experiments['experiments'] = {}
     (destination / 'research/experiments.json').write_text(json.dumps(experiments, indent=2) + '\n')
     workflow = destination / '.github/workflows/research-compute.yml'
-    workflow.write_text(workflow.read_text())
+    workflow.write_text(workflow.read_text().replace('rebuild/research-v2', branch))
     source = (destination / 'work.py').read_text()
     for key, value in [('REMOTE', remote), ('DEFAULT_BRANCH', branch), ('DEFAULT_BOARD_BRANCH', 'wcg/board-research')]:
         source = re.sub(r'^' + key + r' = .*$', lambda _: key + ' = ' + json.dumps(value), source, count=1, flags=re.M)

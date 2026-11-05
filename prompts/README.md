@@ -11,4 +11,4 @@
 | 已完成：2.5第一步 | [02.5-1-inventory.md](02.5-1-inventory.md) | 分类、标号与目录 |
 | 已完成：原第二阶段 | [02-clean.md](02-clean.md) | 冻结来源处置与正文清洗 |
 
-登记/构图各自使用独立workflow-run、公屏及同一协作引擎，见[阶段入口](../research/PHASE3_READINESS.md)。后续Solver仅有[障碍组](solver-obstacle.md)和[成果组](solver-full.md)，由Main按实际研究需要启动，不提前在整理阶段运行。
+登记/构图各自使用独立workflow-run、公屏及同一协作引擎，见[阶段入口](../research/PHASE3_READINESS.md)。后续自由研究的每个新RUN固定三个槽位（obstacle-1/full-1/full-2），输入仅有[障碍组](solver-obstacle.md)和[成果组](solver-full.md)两类，不提前在登记/构图阶段启动。登记与构图使用实际可用并发，不受该三槽研究配置限制。

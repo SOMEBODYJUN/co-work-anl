@@ -1,85 +1,58 @@
-# 2.5第三步与第三阶段：固定执行接口
+# 2.5第三步与第三阶段执行入口
 
-当前已把2.5第三步和第三阶段的规范、程序、启动词、分配边界和交付门槛准备好。当前仓库尚未生成真实registry、批次任务、Boss people记录或超边任务；启动时必须按本文件先形成并推送输入，不得把prepared配置说成已开工。
+2.5第二步的已发布成果作为输入，不再重复清洗。登记与正式图在真实执行时产生；prepared配置、程序审查和私有演练不表示全仓数学任务已经完成。
 
-## 执行模式
+用户每阶段只需本分支最新版work.py、仓库外凭据和一份完整Boss词。内部worker词与字段由执行者自动读取，不让用户另收集Project文档。
 
-两个阶段现在采用“执行优先”模式：启动后先运行 `work.py`、读取文件、写批次和checkpoint；不在提示词开头讨论权限、架构或安全。程序错误才返回错误信息。数学处理者把时间放在阅读、构造、证明、代码和精确核验上。每次自由数学研究RUN固定启动三个`gpt-6.1-sol`、`reasoning_effort=ultra` Solver槽位：`obstacle-1`、`full-1`、`full-2`；Main不计入数量。每完成一个有价值结果就提交一次，长任务不能攒到末尾；`research compute`会自动先做本地checkpoint再尝试推送。
+| 阶段 | 完整Boss词 | 内部worker | workflow-run / role / 公屏 |
+| --- | --- | --- | --- |
+| 2.5第三步：登记 | [02.5-3-register.md](../prompts/02.5-3-register.md) | [登记worker](../prompts/02.5-3-worker.md) | p25-register-v2 / curator / wcg/board-registration-v2 |
+| 第三阶段：超边 | [03-map.md](../prompts/03-map.md) | [构图worker](../prompts/03-map-worker.md) | map-v2 / mapper / wcg/board-map-v2 |
 
-## 已固定的原则
+## 稳定身份与持续协作
 
-| 身份 | 表示什么 | 不替代什么 |
-|---|---|---|
-| 原来源ID/第一步材料号 | 精确来源版本或一份分类材料 | 不是图节点；来源done不等于数学准入 |
-| object_id | 可独立陈述、引用的数学对象 | 不是一文件一编号；不同模型、量词或结论不偷合并 |
-| version与SHA/pin | 对象版本、正文/证据字节、审读绑定 | 不是数学真值或新颖性评分 |
-| edge_id | 一份解释充分的数学关系/证明支持 | 不是引用、同时出现或文件夹关系自动变成推导 |
-| 任务/Boss/run ID | 协作、互斥写入和恢复 | 不进入数学推理投影 |
+原来源ID追溯版本，object_id标识精确数学对象，edge_id标识解释充分的关系；Boss/task/run只管协作。沿用已有精确Claim ID，不从路径、类型或全文hash造身份。一页可有多个对象，多篇可共同支持一个对象；代码、证书和数值不是自动生成的命题节点。
 
-对象保留已有稳定ID；新增用`research new-id`生成一次M-UUID并随批次保存。路径、类型、状态与研究路线不编码进ID；同一对象改名不换ID，修改记录明确增version。改变精确Claim身份须明确新旧版本/新对象及差异。借鉴的是Pharos/Danus的独立数学事实及按需取证明机制；本库把稳定ID与版本指纹分开，没有谎称照搬其内容hash编号。原始代码依据见[UPSTREAM_ADAPTATION](UPSTREAM_ADAPTATION.md)。
+每个对话使用用户明确给出的唯一Boss编号及独立clone，继续原对话先恢复原身份和未完任务。各阶段任务、people和lead位于research/operations/<workflow-run>，工作区位于research/workspaces/<workflow-run>/<Boss>，不改绑旧curation/clean clone。公屏用于交流结果和依赖，认领/交付由当前远端队列确认。
 
-完整定义、一般/条件结论、有效具体反例、可复用方法、具有数学保证的算法、猜想、具体障碍与开放义务都可登记。未证不自动排除；类型、真值、审读与新颖性分开。普通算术、纯身份、日志、PASS、代码与输出不自动作命题；必要附件有数学owner。excluded只是登记去向，不执行删除。正文不因编号被切碎、合并或改写。
+登记用registration-task，构图用map，二者共用协作引擎而保持运行域隔离。lead通过CAS取得唯一集成权，发布任务并参与数学；每个Boss带子代理做实际阅读、登记或建边。用满用户要求且实际可用并发，反馈交原worker，完成一批及时保存、推送、done和补位，lead持续整合，不等待整轮。本人未完优先，不预占将来批次。
 
-## 两套可直接使用的入口
+持续到本范围准确处理完或真实工具硬边界；一次提交、一次检查、暂时队列空或自设时限不能替代完成。普通竞争自动重选，响应未知核原request_id；暂停handoff，lead另交接集成。claimed不证明进程仍活着，静默不自动转移所有权。具体命令与收据见[IMPLEMENTATION](IMPLEMENTATION.md)。
 
-| 阶段 | 完整Boss启动词 | 内部处理者 | 独立运行/公屏 |
-|---|---|---|---|
-| 2.5第三步 | [02.5-3-register.md](../prompts/02.5-3-register.md) | [02.5-3-worker.md](../prompts/02.5-3-worker.md) | p25-register-v2 / wcg/board-registration-v2 |
-| 第三阶段 | [03-map.md](../prompts/03-map.md) | [03-map-worker.md](../prompts/03-map-worker.md) | map-v2 / wcg/board-map-v2 |
+## 2.5第三步：对象登记独立闭合
 
-新启动参数`--workflow-run`进入`research/operations/<run>/people`与`research/workspaces/<run>/<Boss>`。不改绑旧cleaner/curation-run clone，不复用旧阶段占用；不同阶段可使用同一明确Boss号，阶段内不同对话仍不能借号。配置已发布但公屏/身份只在用户实际启动时创建。旧第二步zip中的work.py不认识新参数，后续交付必须附此分支最新根work.py；现有第二步继续使用其自己的入口。
-
-## 2.5第三步独立闭合
-
-1. 从第二步实际已发布出口形成明确inputs文件：`{scope:"repository"或"partial",coverage_note:"具体覆盖依据",materials:[{path,sha256,catalogue_id?}]}`。不能依据旧数量、分类标签或尚在改写的工作区猜全仓范围。
-2. `research freeze --inputs-file ...`固定版本；原件字节不变。全仓scope会核对当前正式材料是否遗漏；第一步材料目录中正式树之外的数学须由第二步明确去向，并列入本轮显式输入。冻结后新增/变更材料定向重判，不覆盖旧baseline。
-3. 处理者仅写自己的`research/registration/batches/<id>.json`；一个总集成人负责canonical registry。批次使用schema:2，含objects/materials，edge_files为空。跨批同一对象先保住精确身份，重复/冲突经集成人处理；不能让多个Boss各自重写总表。
-4. 总集成人的manifest为`{baseline:{path,sha256},assignments:{path,sha256},batches:[{batch_id,record:{path,sha256}}]}`。compose会重新核对已发布assignments中的batch、owner、材料路径和写入路径；批次先checkpoint，compose核字节并拒绝冲突，随后register候选总表并checkpoint。
-5. `research registration-check --final`专门验收登记，不读取或要求任何超边/图。要求明确全仓冻结范围、所有输入去向、当前版本与无未决身份。明确open/conjecture可以登记；needs-decision是尚不能辨认/路由材料的状态，两者不混。
+lead先依据第二步真实已发布出口生成path/SHA清单，freeze固定baseline并推送，再发布独立登记批次。repository范围核真实Git材料分母，稀疏缺页须恢复，不能以可见文件数冒充全仓。局部工作明确partial及实际路径；必要附件显式列入。
 
 ```sh
-python work.py research prepare-inputs --scope repository --coverage-note '第二步正式出口快照'
-python work.py checkpoint research/registration/inputs.json -m 'Freeze 2.5.3 input inventory'
+python work.py research inputs --out research/registration/inputs.json --scope repository --coverage-note '第二步实际已发布出口与必要附件'
 python work.py research freeze --inputs-file research/registration/inputs.json
-python work.py checkpoint research/registration/baseline.json -m 'Publish 2.5.3 frozen input baseline'
-python work.py research assignments-draft --baseline research/registration/baseline.json --owners Boss1,Boss2,Boss3,Boss4,Boss5,Boss6,Boss7,Boss8 --output research/registration/assignments.draft.json
-python work.py research assignments-check --assignment-file research/registration/assignments.json
-python work.py research new-id --count 需要的新对象数量
-python work.py research compose --manifest research/registration/batches.json
-python work.py research register --record-file research/registration/proposed.json
-python work.py research registration-check --final
+python work.py registration-task lead show
+python work.py registration-task list --owner self
+python work.py registration-task claim-next
 ```
 
-程序不会替人判断数学，也不会自动把对象摘要当完整正文。body/evidence可定位独立段落；证明、条件或定义在别处时引用完整必要位置。程序通过后仍保留准确objections和认识层级。
+worker实读精确陈述、模型、量词、假设、边界、证明与异议，直接写独立schema:2批次；一份文件里的不同Claim不吞并，多份正文的同一对象不重复造身份。批次和收据先checkpoint确认pushed，再done；lead用compose/register持续收拢唯一registry，不让多人覆盖总表。
 
-## 第三阶段质量与多人接口
+完整定义、一般/条件结论、有效反例、构造、可复用方法、算法保证、猜想、具体障碍与开放义务都可登记。精确有限反例若有完整证明可proved，普通扫描为finite。明确open数学不是身份needs-decision；excluded只记登记去向，不执行删除。
 
-3A局部对象族 → 3B存档内跨批整合 → 3C明确跨档比较 → 3D单Boss生成投影。按数学关系密度分批，3–5篇只是起点。每个对象都有linked、isolated-after-review或needs-decision及真实比较范围；没有边可以保持孤立，不按边数验收。
+完成以本轮全仓输入逐项准确处置、稳定身份及完整正文/证据可读、owner明确和跨批冲突消解为准。registration-check --final只验登记，不要求超边。新材料字节另冻baseline，incremental/base_registry保现有数学和边；不重启全仓清洗。
 
-任务通过map plan/claim/done/handoff/status。核心对象覆盖与输出路径互斥，共享只读材料可查。正文、边和回执先pushed再done；旧消息、旧handoff或本地草稿不能代替当前远端所有权/交付。这也落实了清洗公屏seq66、68、71反复提醒的边界：来源完成、可领取集合为空、当前有效owner及数学准入各自独立。
+## 第三阶段：从内到外解释关系
 
-多前提保留一条all超边；独立证明是替代支持。逻辑推导、反驳、迁移与启发/引用/实现/有限检查分开。accepted绑定端点身份、证据及关系解释；改动后重判，不把复核过期解释成全部后继为假。有限实验不冒充一般定理，辅助模型反例不冒原模型反例。
+3A先对象内部承重链，再同子档对象族；3B同档跨批/跨子档；3C有明确线索的跨档映射；3D唯一lead集成三级投影。稳定已登记区域可先做明确partial比较，全仓完成以真实全仓登记为输入。
 
-总集成人必须同时交两份收尾记录：
+任务object_ids是负责覆盖的核心，read_object_ids共享只读，input_pins覆盖两者，输出路径独立。增加已登记依赖用read-add，不锁共同定义或重派整批。对象/材料编号、文件名、相似度和来源done不能作推导依据。
 
-- `map/coverage.json`：每个对象的当前object_pin、比较范围、理由及真实incident边。
-- `map/integration.json`：`reviewed_by,review_note,registry_pin,edge_pins,archive_reviews,cross_archive_review`。archive_reviews覆盖每个当前存档和子档；每条审读含comparison_scope、outcome、unresolved，最终unresolved为空。单档也可明确说明不涉及跨档，不伪造迁移。
+一条ALL边保全部共同前提、端点作用、条件、量词、数学解释和证据；独立证明分开，等价关系保两个方向。定义通常作为条件和引用，不机械造模型hub。反例精确指向被否陈述，迁移写明映射与丢失条件，引用/启发不当证明。作者实读后accepted，不加逐边常驻审批；edge-bind只算绑定，edge-check保留为独立交付检查。
 
-`research check --final/build --final`要求登记独立闭合、对象覆盖和跨批/跨档审读均当前有效，不会因每批各有几条边就自动当整合完毕。开放数学问题可保持开放；这里清零的是尚无处置的关系疑点，不是要求证明所有命题。最终不声称发现所有可能数学联系，只精确声明实际比较范围。
+本批独立边先推送即可done，不等总表先挂边。lead用collect→sync→assemble连续汇总，保已有数学说明，定向复核受影响内容。每个对象保真实比较范围及linked/isolated-after-review/needs-decision；proposed桥与准确open义务可留下，不为完成率造边或强证开放题。
 
-## Work与GitHub资源
+最终map/coverage.json覆盖当前对象版本，map/integration.json记录各档/子档跨批及真实跨档比较；只消解身份、版本和交付疑点。research check --final与build --final生成graph-v2三级投影；按projections显式checkpoint所有输出及registry/coverage/integration确认pushed，不漏archives内投影。
 
-Work里的Main可通过现有执行工具调用根work.py；凭据放clone外，用`--token-file`或本clone既存配置。没有另一个必须连接账号的服务或MCP数据库。
+## 研究Agent和计算如何接续
 
-| 命令 | 行为 | 当前验证 |
-|---|---|---|
-| research search/show/context | 元数据定位、实际正文、完整超边按需读取 | 本地真实端到端与专项测试 |
-| research init/save/resume | 两类输入、不可变笔记、agent_id、具体反馈和原任务接续 | 已测试；模型创建由Work真实spawn/followup承担，GitHub token不能替代模型能力 |
-| github status | 本仓库权限、workflow和本人的本仓库Codespaces，只读 | 接口已实现；当前凭据失效时不把资源状态说成已验证 |
-| github machines --ref ... | 查看实际机器类型 | 接口已实现，不据猜测选昂贵机器 |
-| github dispatch --workflow research-compute.yml --ref ... --inputs-file ... | 明确提交登记实验 | 接口/参数已测试；本轮不调用。接受请求不等于运行通过 |
-| github create-codespace / stop-codespace | 明确创建或停止本仓库环境 | 接口与仓库边界已测试；本轮不创建、不停止任何实例 |
+研究Main按[研究流程](RESEARCH_WORKFLOW.md)及[完整Main词](../prompts/research-runtime.md)启动真实Solver。登记/构图阶段按实际并发工作，不提前运行求解团队；当前自由数学研究RUN的固定三Solver配置只适用于后续研究。
 
-GitHub资源接口只在凭据有效时读取实时权限和实例；当前凭据失效时停止重试并保留本地提交。没有据此推断学生认证、余额或所有写权限。workflow_dispatch要求workflow在默认分支可用；不擅自把研究分支合入main，未满足时在当前环境或Codespaces运行已登记命令。GitHub额度、限制及官方接口依据见[GITHUB_RESOURCES](GITHUB_RESOURCES.md)。
+registry定位正文，context返回完整ALL支持、分开的替代OR、条件与未付前提；refutes和研究线索不当正向证明，导航hops不截断已选证明。按需读完整正文/证据，反馈原Solver继续，保存packet、笔记、事件和具体下一步。局部变化只重判有关支持，不因无关旧边重扫全仓。
 
-后续Main仍只有两类主要Solver：障碍组与成果组，均空历史启动；Main负责送资料、具体反馈、持续checkpoint。用户让运行哪个阶段时才启动对应阶段，不因为配置已发布而自动开始数学研究。
+普通批计算优先已有云端或适合的现成算力，短计算可在当前环境运行；Codespaces用于确需持续交互或特殊环境，不作普通计算默认入口。具体云请求、实际run/产物取回与当前状态见[GITHUB_RESOURCES](GITHUB_RESOURCES.md)。配置和API接受不等于计算完成，数学价值由实际论证与输出判断。

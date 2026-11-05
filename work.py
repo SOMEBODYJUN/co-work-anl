@@ -632,14 +632,18 @@ def main():
     sub.add_parser("board-init", help="初始化绑定公屏；已有公屏不删除消息")
     clean = sub.add_parser("clean", help="来源、逐文件认领/勾选与覆盖")
     clean.add_argument("args", nargs=argparse.REMAINDER)
-    mapping = sub.add_parser("map", help="检查/生成子存档、存档和全仓超图")
+    mapping = sub.add_parser("map", help="超边任务与集成；投影使用research build")
     mapping.add_argument("args", nargs=argparse.REMAINDER)
+    registration_tasks = sub.add_parser('registration-task', help='登记批次的认领、接续、交付和集成')
+    registration_tasks.add_argument('args', nargs=argparse.REMAINDER)
     research = sub.add_parser('research', help='登记、按需读取超边、两类Solver输入和持续研究恢复',
-                              epilog='Commands: inventory, prepare-inputs, freeze, assignments-draft, assignments-check, new-id, compose, register, registration-check, check, build, search, show, context, edge-check, edge-bind, packet, init, save, resume, compute. See research/IMPLEMENTATION.md.')
+                              epilog='Commands: inputs, prepare-inputs, inventory, freeze, assignments-draft, assignments-check, new-id, compose, register, registration-check, check, build, search, show, context, edge-bind, edge-check, packet, init, save, resume, compute. See research/IMPLEMENTATION.md.')
     research.add_argument('--registry', help='显式选择v2登记文件；省略使用research/registry.json')
     research.add_argument('args', nargs=argparse.REMAINDER)
+    computation = sub.add_parser('compute', help='实际计算或生成明确云端批处理请求')
+    computation.add_argument('args', nargs=argparse.REMAINDER)
     github = sub.add_parser('github', help='使用仓库外凭据调用GitHub研究资源；status只读',
-                            epilog='Commands: status, dispatch, machines, create-codespace, stop-codespace. Creation/dispatch run only when explicitly invoked.')
+                            epilog='提交计算请求、查询run并取回产物；Codespaces按实际环境需要使用。')
     github.add_argument('args', nargs=argparse.REMAINDER)
     curate = sub.add_parser("curate", help="2.5固定原文、逐对象处置与数学准入；只操作本地明确文件")
     curate.add_argument("args", nargs=argparse.REMAINDER)
@@ -686,6 +690,7 @@ def main():
     c.add_argument("--create-branch", action="store_true",
                    help="明确允许首次发布绑定分支；基线为远端main，不覆盖已有分支")
     c.add_argument('--local-only',action='store_true')
+    c.add_argument('--publish-only', action='store_true', help='只发布已有提交，保留暂存及未提交草稿')
     sub.add_parser("pending", help="查看待发送消息")
     r = sub.add_parser("retry", help="以原消息 ID 重试发送")
     r.add_argument("event_id")
@@ -698,50 +703,30 @@ def main():
     if a.command == 'research':
         registry = ['--registry', a.registry] if a.registry else []
         return subprocess.call([sys.executable, str(repo / TOOLS / 'research_runtime.py'), '--repo', str(repo), *registry, *a.args])
-    if a.command == 'map' and a.args and a.args[0] in {'inventory', 'plan', 'list', 'claim', 'done', 'handoff', 'status'}:
+    if a.command == 'compute':
+        return subprocess.call([sys.executable, str(repo / TOOLS / 'compute.py'), '--repo', str(repo), *a.args])
+    task_commands = {'inventory', 'lead', 'plan', 'list', 'claim', 'claim-next', 'done',
+                     'handoff', 'reclaim', 'withdraw', 'status', 'collect', 'assemble', 'read-add'}
+    if a.command == 'registration-task' or (a.command == 'map' and a.args and a.args[0] in task_commands):
         env = auth(repo, a)
-        result = subprocess.run([sys.executable, str(repo / TOOLS / 'map_tasks.py'), '--repo', str(repo), *a.args], env=env, capture_output=True, text=True)
+        phase = 'registration' if a.command == 'registration-task' else 'map'
+        result = subprocess.run([sys.executable, str(repo / TOOLS / 'map_tasks.py'), '--repo', str(repo),
+                                 '--phase', phase, *a.args], env=env, capture_output=True, text=True)
         if result.stderr: sys.stderr.write(result.stderr)
         if result.returncode:
             sys.stdout.write(result.stdout)
             return result.returncode
         receipt = json.loads(result.stdout)
-        if isinstance(receipt, dict) and receipt.get('status') == 'planned-local-not-pushed':
-            # A plan is the shared task board, not a private draft. Publish it
-            # immediately so other Boss clones can claim the same snapshot.
-            publish = subprocess.run(
-                [sys.executable, str(repo / TOOLS / 'checkpoint.py'), '--repo', str(repo),
-                 'map/tasks', '-m', 'Publish phase-3 map task plan'],
-                env=env, capture_output=True, text=True)
-            if publish.stderr:
-                sys.stderr.write(publish.stderr)
-            if publish.returncode:
-                receipt['checkpoint'] = {'status': 'local-only',
-                                         'detail': (publish.stderr or publish.stdout).strip()[-1200:]}
-            else:
-                try:
-                    checkpoint = json.loads(publish.stdout)
-                except ValueError:
-                    checkpoint = {'status': 'local-only', 'detail': 'Checkpoint returned non-JSON output'}
-                receipt['checkpoint'] = checkpoint
-                if checkpoint.get('status') == 'pushed':
-                    receipt['status'] = 'pushed'
-                    try:
-                        receipt['local_sync'] = sync(repo, env)
-                    except (Stop, OSError) as exc:
-                        receipt['local_sync'] = {'status': 'needs-attention', 'detail': str(exc)}
-            print(json.dumps(receipt, ensure_ascii=False, indent=2))
-            return 0
         if isinstance(receipt, dict) and receipt.get('status') == 'pushed':
             try: receipt['local_sync'] = sync(repo, env)
             except (Stop, OSError) as exc: receipt['local_sync'] = {'status': 'needs-attention', 'detail': str(exc)}
         print(json.dumps(receipt, ensure_ascii=False, indent=2))
         return 0
+    if a.command == 'map':
+        raise Stop('Use map task commands; graph checking and projection use research check/build.')
     if a.command in ("curate", "triage"):
         module = {"curate":"curation.py", "triage":"triage.py"}[a.command]
         return subprocess.call([sys.executable, str(repo / TOOLS / module), "--repo", str(repo), *a.args])
-    if a.command == "map":
-        raise Stop("旧版 map 原型已移除；第三阶段只使用 map inventory/plan/list/claim/done/handoff/status。")
     env = auth(repo, a)
     if a.command == 'github':
         return subprocess.call([sys.executable, str(repo / TOOLS / 'github_resources.py'), '--repo', str(repo), *a.args], env=env)
@@ -837,6 +822,7 @@ def main():
         if a.create_branch:
             command += ["--create-branch"]
         if a.local_only:command.append('--local-only')
+        if a.publish_only:command.append('--publish-only')
         return subprocess.call(command, env=env)
     return 0
 
