@@ -25,6 +25,8 @@ evidence_manifest: ../../tools/evidence/retired-conditional-leaf-hall-proof-cano
 related_objects:
   - archives/unrelated-machines/state/障碍/一致条件叶边际仍无福利下界--障碍.md
   - archives/unrelated-machines/state/审查/条件叶Hall与共享汇点联合审查--审查.md
+legacy_ids:
+  - "UM-THRESHOLD-LEAF-HALL-CONSISTENT-MARGINALS-PATH-PROJECTION-GAP-v1"
 ---
 
 # 处置范围与对象身份
