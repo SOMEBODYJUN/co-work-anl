@@ -267,6 +267,23 @@ def edges(root, data, objects, verify=True):
     return result
 
 
+def check_edge(root, edge_file, registry=REGISTRY, verify=True):
+    """Validate one proposed/accepted edge before it enters the canonical registry.
+
+    Stage-3 workers intentionally do not edit ``registry.json``.  This command
+    gives ``map done`` a real semantic gate for the edge it is delivering,
+    instead of relying on the registry's current ``edge_files`` list.
+    """
+    data, objects = load(root, registry, verify=verify)
+    name = _safe_path(root, edge_file).relative_to(root).as_posix()
+    relations = edges(root, dict(data, edge_files=[name]), objects, verify=verify)
+    edge = relations[next(iter(relations))]
+    return {'status': 'edge-structure-valid-not-a-mathematical-verdict',
+            'edge_file': name, 'edge_id': edge['edge_id'],
+            'edge_status': edge['status'], 'registry': registry,
+            'objects': sorted(set(edge['source_ids'] + edge['target_ids']))}
+
+
 def inventory(root, registry=REGISTRY):
     path = _safe_path(root, registry)
     known = {}
@@ -507,6 +524,7 @@ def main(argv=None):
     q = sub.add_parser('show'); q.add_argument('object_id'); q.add_argument('--body', action='store_true')
     q = sub.add_parser('context'); q.add_argument('ids', nargs='+'); q.add_argument('--hops', type=int, default=2)
     q = sub.add_parser('edge-bind'); q.add_argument('edge_file')
+    q = sub.add_parser('edge-check'); q.add_argument('edge_file')
     q = sub.add_parser('packet'); q.add_argument('spec'); q.add_argument('--profile', choices=['obstacle', 'full'], required=True)
     q = sub.add_parser('init'); q.add_argument('run_id'); q.add_argument('--spec', required=True)
     q = sub.add_parser('resume'); q.add_argument('run_id')
@@ -538,6 +556,7 @@ def main(argv=None):
     elif a.command == 'context': result = context(root, a.ids, a.registry, a.hops)
     elif a.command == 'edge-bind':
         _, objs = load(root, a.registry); result = edge_bindings(root, json.loads(_safe_path(root, a.edge_file).read_text()), objs)
+    elif a.command == 'edge-check': result = check_edge(root, a.edge_file, a.registry)
     elif a.command == 'packet': result = packet(root, json.loads(_safe_path(root, a.spec).read_text()), a.profile, a.registry)
     elif a.command == 'init': result = init_run(root, a.run_id, a.spec, a.registry)
     elif a.command == 'resume': result = resume(root, a.run_id)

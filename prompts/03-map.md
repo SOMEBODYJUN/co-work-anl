@@ -16,11 +16,13 @@ python work.py --repo <独立clone> start --actor BossN --role mapper --save rep
 4. 3C：只处理明确的跨存档线索，写清模型映射和丢失条件。
 5. 3D：一个集成人合并coverage、integration和graph-v2。
 
-每个任务先 `map plan`，Boss领取后直接读文件和写边。每个对象都给 `linked`、`isolated-after-review` 或 `needs-decision`。孤立对象可以保持孤立。
+每个任务先 `map plan`，再用 `map claim TASK` 领取；Boss只写自己任务定义中的对象和输出范围。每个对象都给 `linked`、`isolated-after-review` 或 `needs-decision`。孤立对象可以保持孤立。不要调用旧的 `maps.py` 原型命令代替这条账本。
 
-每条边必须写：source_ids、target_ids、`premises_mode: all`、每个端点作用、共同条件、完整解释、范围和证据。`{A,B}=>C`是一条联合超边；独立证明是不同边。推导、反驳、迁移、引用、启发、实现和有限检查分开。未证或有限前提只能建立conditional关系。
+每条边必须写入任务保留的 `map/edges/<edge-id>.json`，并写：source_ids、target_ids、`premises_mode: all`、每个端点作用、共同条件、完整解释、范围和证据。`{A,B}=>C`是一条联合超边；独立证明是不同边。推导、反驳、迁移、引用、启发、实现和有限检查分开。未证或有限前提只能建立conditional关系。边正文不重复全文，只引用已登记正文和证据。
 
-边先写 `proposed`，完成数学审读后才写 `accepted`。对象或证据变化就重新审读。边正文、coverage和integration先 checkpoint，确认 `pushed` 后再 `map done`。
+边先写 `proposed`，完成数学审读后才写 `accepted`。对象或证据变化就重新审读。每个任务同时写 `map/receipts/<task-id>.json`，其中 coverage 必须覆盖该任务全部 object_ids；边、coverage 和回执先 checkpoint，确认 `pushed` 后再 `map done TASK --receipt-file ...`。没有 accepted 边的对象必须明确写 `isolated-after-review`，不能为了增加连通性硬连。
+
+在交付边之前先对每个边文件运行 `python work.py research edge-check <edge-file>`。这个检查直接读取当前registry对象和边证据，即使3A/3B处理者还没有更新canonical `registry.edge_files`，也不会让未验证的边混入 `map done`。只有3D集成人在最终整合时把已接受边加入registry。
 
 集成人最后写：
 

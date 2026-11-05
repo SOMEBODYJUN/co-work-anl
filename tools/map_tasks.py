@@ -97,6 +97,13 @@ def transition(root, old, others, actor, operation, request_id, receipt=None, re
             if not any(name == p or PurePosixPath(p) in PurePosixPath(name).parents for p in definition['write_paths']):
                 raise ValueError('Asset outside reserved write scope')
             research.ref_bytes(root, ref)
+            # A stage-3 worker does not edit the canonical registry.  Validate
+            # each delivered edge against the current object table here so an
+            # unregistered or malformed edge cannot pass ``map done`` merely
+            # because registry.edge_files is still empty.
+            parts = PurePosixPath(name).parts
+            if 'map' in parts and 'edges' in parts:
+                research.check_edge(root, name, definition['registry'])
         research.check(root, definition['registry'])
         new.update(state='done', receipt=receipt, output_commit=board.git(root, 'rev-parse', 'HEAD').stdout.decode().strip())
     elif operation == 'handoff':

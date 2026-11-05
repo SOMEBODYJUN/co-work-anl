@@ -63,6 +63,7 @@ python work.py map plan --record-file map/planned-tasks.json
 python work.py checkpoint map/tasks -m 'Publish map construction tasks'
 python work.py map list
 python work.py map claim sum-local
+python work.py research edge-check map/edges/sum.json
 python work.py research edge-bind map/edges/sum.json
 python work.py checkpoint map/edges/sum.json map/receipts/sum.json -m 'Save explained sum hyperedge and coverage'
 python work.py map done sum-local --receipt-file map/receipts/sum.json
