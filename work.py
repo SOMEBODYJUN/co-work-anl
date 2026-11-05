@@ -632,14 +632,18 @@ def main():
     sub.add_parser("board-init", help="初始化绑定公屏；已有公屏不删除消息")
     clean = sub.add_parser("clean", help="来源、逐文件认领/勾选与覆盖")
     clean.add_argument("args", nargs=argparse.REMAINDER)
-    mapping = sub.add_parser("map", help="检查/生成子存档、存档和全仓超图")
+    mapping = sub.add_parser("map", help="超边任务、共享读取与集成；正式投影用research build")
     mapping.add_argument("args", nargs=argparse.REMAINDER)
+    registration_tasks = sub.add_parser('registration-task', help='2.5第三步批次认领、恢复、交接和集成；共用阶段协作引擎')
+    registration_tasks.add_argument('args', nargs=argparse.REMAINDER)
     research = sub.add_parser('research', help='登记、按需读取超边、两类Solver输入和持续研究恢复',
-                              epilog='Commands: inventory, freeze, new-id, compose, register, registration-check, check, build, search, show, context, edge-bind, packet, init, save, resume. See research/IMPLEMENTATION.md.')
+                              epilog='Commands: inputs, inventory, freeze, new-id, compose, register, registration-check, check, build, search, show, context, edge-bind, packet, init, save, resume. See research/IMPLEMENTATION.md.')
     research.add_argument('--registry', help='显式选择v2登记文件；省略使用research/registry.json')
     research.add_argument('args', nargs=argparse.REMAINDER)
+    computation = sub.add_parser('compute', help='按实际数学目的运行计算或生成云端批处理请求')
+    computation.add_argument('args', nargs=argparse.REMAINDER)
     github = sub.add_parser('github', help='使用仓库外凭据调用GitHub研究资源；status只读',
-                            epilog='Commands: status, dispatch, machines, create-codespace, stop-codespace. Creation/dispatch run only when explicitly invoked.')
+                            epilog='按任务提交普通批计算、查询运行并取回产物；Codespaces只在明确需要持续交互时创建。具体命令见github --help。')
     github.add_argument('args', nargs=argparse.REMAINDER)
     curate = sub.add_parser("curate", help="2.5固定原文、逐对象处置与数学准入；只操作本地明确文件")
     curate.add_argument("args", nargs=argparse.REMAINDER)
@@ -698,9 +702,15 @@ def main():
     if a.command == 'research':
         registry = ['--registry', a.registry] if a.registry else []
         return subprocess.call([sys.executable, str(repo / TOOLS / 'research_runtime.py'), '--repo', str(repo), *registry, *a.args])
-    if a.command == 'map' and a.args and a.args[0] in {'inventory', 'plan', 'list', 'claim', 'done', 'handoff', 'status'}:
+    if a.command == 'compute':
+        return subprocess.call([sys.executable, str(repo / TOOLS / 'compute.py'), '--repo', str(repo), *a.args])
+    task_commands = {'inventory', 'lead', 'plan', 'list', 'claim', 'claim-next', 'done',
+                     'handoff', 'reclaim', 'withdraw', 'status', 'collect', 'assemble', 'read-add'}
+    if a.command == 'registration-task' or (a.command == 'map' and a.args and a.args[0] in task_commands):
         env = auth(repo, a)
-        result = subprocess.run([sys.executable, str(repo / TOOLS / 'map_tasks.py'), '--repo', str(repo), *a.args], env=env, capture_output=True, text=True)
+        phase = 'registration' if a.command == 'registration-task' else 'map'
+        result = subprocess.run([sys.executable, str(repo / TOOLS / 'map_tasks.py'), '--repo', str(repo),
+                                 '--phase', phase, *a.args], env=env, capture_output=True, text=True)
         if result.stderr: sys.stderr.write(result.stderr)
         if result.returncode:
             sys.stdout.write(result.stdout)

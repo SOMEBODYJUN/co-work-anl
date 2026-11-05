@@ -1,52 +1,77 @@
-# GitHub资源与实际部署边界
+# 按实际研究任务使用云计算
 
-核对日期：2026-11-03。以下是公开官方权益，不代表本账号已认证、领取或启用；学生身份与账号余额未核验。
+入口仍是 `work.py`。普通批计算优先用 GitHub Actions 或已有算力；只有长期交互、持续会话或特殊依赖确实需要时才使用 Codespaces。创建环境只安装 Python 环境，不自动跑数学实验、演示或回归检查。
 
-本轮更新：新上传凭据已经通过实际Git写端点并成功推送初版`71f86b4f`。直接PAT接口`work.py github`已实现status、machines、dispatch、create-codespace、stop-codespace；status实际读取成功，未创建/停止实例或dispatch任务。下文“认证失败”是上一轮历史，不再是当前阻塞；学生状态与余额仍未读取或推断。
+## 新计算 → 明确请求 → 取回结果
 
-| 功能 | 用途 | 本次配置 |
-|---|---|---|
-| Git与历史 | 保存正文、证据、失败路线、断点 | 沿用work.py sync/checkpoint、共同分支和Boss工作区 |
-| Codespaces | 可重建的Linux/Python计算环境 | `.devcontainer/devcontainer.json`与`tools/bootstrap_research.py`；未创建实例 |
-| Actions | 工具兼容测试、手动复现数学计算 | 两份workflow；contents:read；不自动改数学状态 |
-| Artifacts | 下载实验版本、输出、错误和范围 | compute.py回执；云端保留7天，有价值结果另做checkpoint |
-| Copilot Student | 编辑器代码辅助 | 不等同Work额度或外部模型API额度；未声称已领取 |
-| Issues/Projects/Discussions | 可选任务协作 | 已有认领账本和公屏，不建立重复系统 |
-| Releases/模板 | 稳定版本分发、迁移其他命题 | 已提供本地导出器；未创建新远端仓库或Release |
-| Pages | 可选只读展示 | 当前不另开站点 |
-| Pack合作权益 | 云计算、IDE、域名等 | 按真实需求领取；第三方账号与学生核验由用户完成 |
+先为当前数学问题写实际计算脚本和一个 manifest。不必限于旧的三个 experiment ID；manifest 可以放在当前研究工作区。命令使用参数数组，不通过 shell 字符串执行。例子只展示接口，请替换为当次真实问题：
 
-认证学生的Codespaces个人权益为**180核时/月、20 GB-month存储**：2核约90机器小时，4核约45机器小时，多个实例共享。停止计算后存储仍计量。此配置建议2核、不启用预构建，不开空闲机器消耗配额；剩余量以本人账单为准。
-
-Education页面仍展示“3K Actions minutes”，当前Billing参考页把Pro的included compute写为**$18/月**并列1 GB Actions存储。官方存在新旧口径，不承诺本账号固定3000分钟；以当前账号Billing、runner类型、预算和实际用量为准。
-
-Pack目前还列出Azure学生$100额度、JetBrains学生订阅等。Copilot Student包含代码补全和有额度限制的聊天/Agent使用，并非无限模型算力。这些优惠不能仅靠仓库PAT自动领取；普通Git认证也不等于学生认证。
-
-## 实际入口
-
-```sh
-python tools/bootstrap_research.py
-.venv/bin/python work.py research --help
-python tools/compute.py runtime-smoke --out validation/runtime-smoke.json
-python tools/compute.py cag-five-local --out validation/cag-five-local.json
-python tools/compute.py positive-kernels-rank --out validation/positive-kernels-rank.json
+```json
+{
+  "schema": 1,
+  "experiments": {
+    "current-research-question": {
+      "command": ["{python}", "workspaces/current-question/solve.py"],
+      "inputs": ["workspaces/current-question/input.json"],
+      "checkout_paths": ["workspaces/current-question"],
+      "outputs": ["workspaces/current-question/results"],
+      "timeout_seconds": 7000,
+      "scope": "写清本次计算要区分的数学命题、定义域、输出解释和不能推出的结论"
+    }
+  }
+}
 ```
 
-后两项均为仓库已有的标准库精确有理数计算。cag-five-local只检查五人局部组件，不是完整五人证明或六人结论；positive-kernels-rank只检查既有有限代数输入，不外推任意权重、次数或闭包定理。
+`inputs` 与 `checkout_paths` 写全所需文件/目录；命令中的脚本本身会自动绑定，辅助模块与数据必须显式列入，声明的输出目录从输入绑定中排除。Python 包放在 `python_packages`（用明确版本）或 `requirements_file`；不需要安装依赖就省略。不要把凭据或已有无关输出放进计算输入目录。
 
-配置成功推送后，Code→Codespaces可按统一配置创建环境。Actions手动workflow_dispatch通常还要求workflow文件存在于默认分支；长期工作分支与main分开，不擅自合并。保持main不动时，可用工作分支push检查或Codespaces直接运行命令。配置已写不代表云端运行通过。
+```sh
+python work.py compute request current-research-question --manifest workspaces/current-question/computations.json --request-id C-current-question-01 --timeout-minutes 130
+```
 
-新凭据已经通过Git发布与本仓库资源只读API检查。学生状态、配额和Copilot权益仍须在本人Education/Billing确认。本轮未创建Codespace、未手动dispatch计算、未代办学生认证；代码推送触发的检查与实际数学计算分别报告。
+这一步只在本地新增 `research/compute-requests/C-current-question-01.json`，不启动云计算。请求保存 experiment 条目的内容摘要、每份实际代码/输入的 SHA-256、runner、预算和恢复输入。随后按当前协作流程，把请求、manifest、脚本和输入一并 checkpoint 到 `rebuild/research-v2`；checkpoint 必须确认 pushed，并记下推送 commit SHA。
 
-GitHub资源调用使用仓库外PAT，无需账号连接器；仓库写权限与Actions/Codespaces权限分开报告。`status`只读；只有明确运行dispatch或create-codespace才产生对应请求，创建环境会使用配额。stop先核对实例属于当前origin仓库。401立即停止，403不会伪装该功能可写，认证信息不跟随重定向。API定义见[Actions workflows](https://docs.github.com/en/rest/actions/workflows)和[Codespaces](https://docs.github.com/en/rest/codespaces/codespaces)。
+该分支**新增请求文件**的 push 才创建计算 job。普通正文、代码或提示词提交不触发计算。改旧请求不会重新计算；有意重跑时用新 ID，保留先前结果与原因。`github submit-compute` 是 `compute request` 的同入口别名。
 
-官方依据：
+```sh
+python work.py github runs --ref rebuild/research-v2 --head PUSHED_COMMIT_SHA --request-id C-current-question-01
+python work.py github run RUN_ID
+python work.py github artifacts RUN_ID
+python work.py github download ARTIFACT_ID --out validation/downloads/C-current-question-01.zip
+```
 
-- [学生权益](https://docs.github.com/en/education/about-github-education/github-education-for-students/about-github-education-for-students)
-- [学生认证](https://docs.github.com/en/education/about-github-education/github-education-for-students/apply-to-github-education-as-a-student)
-- [Student Developer Pack](https://education.github.com/pack)
-- [当前计划配额](https://docs.github.com/en/billing/reference/product-usage-included)
-- [Codespaces计量](https://docs.github.com/en/billing/concepts/product-billing/github-codespaces)
-- [Python devcontainer](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/setting-up-your-python-project-for-codespaces)
-- [Actions语法](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax)
-- [手动工作流](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow)
+`runs` 用推送 SHA 找到排队、准备中或准备失败的实际 run；job 名为 `compute/C-current-question-01`。API 接受、找到 run、run 成功、产物已下载是不同状态。下载后读取 `result.json`、stdout/stderr、算法输出和检查点，再判断是否得到有用数学证据。stdout/stderr 写独立文件，避免大输出塞进 JSON。声明的 `outputs` 与结果目录一同上传 artifact；当前保留期 7 天，长期成果应及时取回并 checkpoint。
+
+## 预算、失败和接续
+
+请求明确选择 runner 与分钟预算；默认 runner 为 `ubuntu-latest`。GitHub 托管 runner 单 job 实际上限为 6 小时；本入口接受 3–360 分钟，计算自身的 `timeout_seconds` 至少留出两分钟上传输出。依赖安装也占 job 预算，应按真实任务预留。超过单 job 上限的任务按数学或算法检查点拆分，或转已有合适算力；不能把请求当作获得无限算力。
+
+算法可把可恢复状态写到环境变量 `RESEARCH_CHECKPOINT_DIR` 指定的位置。取回检查点、确认它确实被脚本支持后，再提交新的明确恢复请求：
+
+```sh
+python work.py compute request current-research-question --manifest workspaces/current-question/computations.json --request-id C-current-question-02 --timeout-minutes 130 --resume-from workspaces/current-question/resume.json
+```
+
+恢复文件也绑定 SHA-256，并通过 `RESEARCH_RESUME_FROM` 以及命令参数里的 `{resume_from}` 提供给算法。程序须实际读取该状态；入口不会替算法发明恢复能力。正常计算超时会保存 timeout receipt 与已有输出；整台 runner 被强制结束前来不及上传的文件无法保证保留，因此长计算必须主动写检查点并合理拆分。
+
+已有本地/远程算力可用同一 manifest 执行，不必开 Codespaces：
+
+```sh
+python work.py compute run current-research-question --manifest workspaces/current-question/computations.json --out validation/current-question-01/result.json
+```
+
+本地计算可按任务设置更长超时，或显式 `timeout_seconds: null`；云请求仍遵守真实 runner 预算。每次用新结果目录，避免覆盖旧输出。
+
+## 当前云入口状态
+
+2026-11-05 只读核验：仓库默认分支为 `main`，`main` 没有 `research-compute.yml` 或 `research-checks.yml`；`rebuild/research-v2` 有这两个文件。因此不能宣称默认分支 `workflow_dispatch` 已就绪。本次提供的分支 push 请求入口不依赖往 `main` 安装 workflow。启用它需要把本次 workflow/工具修改推送到 `rebuild/research-v2`；本次审查没有提交真实计算请求、dispatch run 或创建云机。
+
+```sh
+python work.py github workflow-status --ref rebuild/research-v2
+python work.py github status
+```
+
+`workflow-status` 读取两分支的实际文件状态；它不做付费资源探测或计算。若今后确需手工 dispatch，先让默认分支也有对应 workflow，再使用 `github dispatch`，随后仍需查实际 run 与 artifact。工程回归 workflow 改为仅显式手工启动，不再随日常 push 自动重跑。
+
+Codespaces 仍保留 `github machines --ref ...`、`create-codespace --ref ... --machine ...` 和 `stop-codespace NAME`，供确实需要的交互工作；普通计算失败不自动新建云机。
+
+依据：[GitHub workflow 语法](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax)、[实际执行上限](https://docs.github.com/en/actions/reference/limits)、[run API](https://docs.github.com/en/rest/actions/workflow-runs)、[artifact API](https://docs.github.com/en/rest/actions/artifacts)。账号当前可用额度、费用和实际 runner 状态以账号与任务现场为准，不从仓库写权限推断。

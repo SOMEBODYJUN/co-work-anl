@@ -1,13 +1,14 @@
-# 数学材料整理仓库
+# 数学材料与研究仓库
 
-本轮 **2.5第二步已完成：160/160群**。本次接手的剩余89群全部完成，在领与待做均为0。工作内容是：接续已有分类，复用成熟数学，整理数值机制、片段和混合内容，删除无用包装。各对象沿用自己的模型与问题；本步的完成标准是准确处置材料并留下可用正文。
+2.5第二步160群、原第二阶段10,921个来源版本均已准确处置，最后56条遗留已核完。完整数学在[存档](archives/README.md)，必要程序与证据在tools/evidence；开放数学问题仍保留准确缺口。
 
-原第二阶段最后56条遗留来源已逐项核验并闭合：10,921/10,921源版本已准确处置，在领与待裁决均为0。旧身份、重复审计包装和没有独有数学用途的数值输出直接删除；来源处置完成与开放数学问题解决分别判断。
+接下来分两步开展，**每步只需最新版work.py、仓库外凭据和一份完整提示词**：
 
-用户只需 **一个work.py、已有仓库外凭据、一份[当前提示词](prompts/02.5-2-distill.txt)**。内部程序和说明由执行者按需读取。本轮成果、复用正文和准确缺口见各群任务记录；后续阶段按用户另行指定开展。
+1. [2.5第三步：登记对象](prompts/02.5-3-register.md)，建立稳定数学身份及正文/证据入口。
+2. [第三阶段：从内到外建超边](prompts/03-map.md)，解释对象内部、同子档、同档跨批及真实跨档关系。
 
-- [材料分类目录](curation/catalogs/INDEX.md)与[当前任务目录](curation/runs/20261103-boss6-current/TASKS.md)。实时进度查询 `work.py curation-task status --run 20261103-boss6-current`。
-- [当前操作说明](research/CURATION_OPERATIONS.md)、[工作规则](AGENTS.md)与[数学对象命名规则](cleanup/OBJECTS.md)。
-- [数学正文](archives/README.md)与必要复现证据 `tools/evidence/`。无用日志、旧交付件和重复副本直接删除，不另存历史目录。
+[阶段安排](research/PHASE3_READINESS.md)固定任务、公屏和完成条件；[程序命令](research/IMPLEMENTATION.md)给出实际接口。两个阶段的正式登记和图尚未批量启动，设计准备不冒充完成。
 
-其它阶段有独立入口，按用户指定启动：[原第二阶段来源清洗](cleanup/README.md)、[2.5第三步与第三阶段](research/PHASE3_READINESS.md)、[后续研究流程](research/RESEARCH_WORKFLOW.md)、[程序接口](research/IMPLEMENTATION.md)及[GitHub资源](research/GITHUB_RESOURCES.md)。原始来源的冻结版本见 `cleanup/sources.json`；原来源done与数学质量验收分别判断。
+后续[研究Main](prompts/research-runtime.md)通过登记定位正文，读取完整联合支持与反驳范围，反馈原Solver持续推进。[研究流程](research/RESEARCH_WORKFLOW.md)和[云端计算](research/GITHUB_RESOURCES.md)说明实际用法；普通批量计算优先已有云端，Codespaces留给确有环境需求的工作。
+
+已有[分类目录](curation/catalogs/INDEX.md)、[已完成整理任务](curation/runs/20261103-boss6-current/TASKS.md)、[原来源账本](cleanup/README.md)用于查出处，不重新派工。协作按[AGENTS.md](AGENTS.md)执行。

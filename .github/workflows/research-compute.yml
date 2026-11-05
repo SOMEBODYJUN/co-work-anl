@@ -1,32 +1,97 @@
-name: Research compute
+name: Research computation
+
 on:
+  push:
+    branches: [rebuild/research-v2]
+    paths: ['research/compute-requests/*.json']
   workflow_dispatch:
     inputs:
       experiment:
-        description: Registered reproducible experiment
+        description: Explicit computation ID in the manifest
         required: true
-        type: choice
-        options: [runtime-smoke, cag-five-local, positive-kernels-rank]
+        type: string
+      manifest:
+        description: Repository computation manifest
+        default: research/experiments.json
+        type: string
+      request_id:
+        description: Optional correlation ID
+        type: string
+      runner:
+        description: Existing Actions runner label
+        default: ubuntu-latest
+        type: string
+      timeout_minutes:
+        description: Explicit execution budget including output retention (3 to 360)
+        required: true
+        type: number
+
 permissions:
   contents: read
+
 jobs:
-  compute:
+  prepare:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 5
+    outputs:
+      matrix: ${{ steps.requests.outputs.matrix }}
+      has_requests: ${{ steps.requests.outputs.has_requests }}
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
-          persist-credentials: false
+          filter: blob:none
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /work.py
+            /tools/*.py
+            /tools/vendor/**
+            /research/experiments.json
+            /research/compute-requests/
+            /${{ inputs.manifest || 'research/experiments.json' }}
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: '3.12'
-      - name: Run registered experiment
+      - id: requests
+        run: python tools/compute.py prepare-actions --event-file "$GITHUB_EVENT_PATH" --github-output "$GITHUB_OUTPUT"
+
+  compute:
+    needs: prepare
+    if: needs.prepare.outputs.has_requests == 'true'
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.prepare.outputs.matrix) }}
+    name: compute/${{ matrix.request_id }}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: ${{ matrix.timeout_minutes }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          filter: blob:none
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: ${{ matrix.checkout_paths }}
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - id: calculation
         env:
-          RESEARCH_EXPERIMENT: ${{ inputs.experiment }}
-        run: python tools/compute.py "$RESEARCH_EXPERIMENT" --out validation/compute.json
+          REQUEST_FILE: ${{ matrix.request_file }}
+          REQUEST_ID: ${{ matrix.request_id }}
+          EXPERIMENT: ${{ matrix.experiment }}
+          MANIFEST: ${{ matrix.manifest }}
+          EXPERIMENT_PIN: ${{ matrix.experiment_pin }}
+        shell: bash
+        run: |
+          if [ -n "$REQUEST_FILE" ]; then
+            python tools/compute.py execute-request --request-file "$REQUEST_FILE" --out "validation/compute/$REQUEST_ID/result.json"
+          else
+            python tools/compute.py execute-request --experiment "$EXPERIMENT" --manifest "$MANIFEST" --experiment-pin "$EXPERIMENT_PIN" --request-id "$REQUEST_ID" --out "validation/compute/$REQUEST_ID/result.json"
+          fi
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: always()
         with:
-          name: experiment-${{ github.run_id }}
-          path: validation/
+          name: compute-${{ matrix.request_id }}-${{ github.run_attempt }}
+          path: ${{ steps.calculation.outputs.artifact_paths || 'validation/compute' }}
+          if-no-files-found: warn
           retention-days: 7

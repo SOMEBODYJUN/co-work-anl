@@ -1,113 +1,141 @@
-# 可运行的登记、超边与数学研究接口
+# 登记、超边与研究的实际命令
 
-本规范承接用户要求的2.5第三步、第三阶段和Work研究运行。2.5前两步仍按[原对象群整理规则](CURATION.md)执行；本次不重分类、不移动其正文、不清空认领或公屏。工具已实现不表示全仓已登记、已建图或已有Solver在后台运行。旧`curate`与`map check/build`保留兼容，v2入口是`work.py research`；新建图账本是`work.py map inventory/plan/list/claim/done/handoff/status`。
+用户只需根work.py、仓库外凭据和本阶段[完整提示词](../prompts/README.md)。内部模块由程序调用。2.5第三步登记身份；第三阶段解释数学关系；后续Main/Solver才做研究。设计、任务、数学判断分别交付，不以旧演示或测试次数证明已经接通。
 
-可直接执行的完整启动词、稳定编号原则、输入冻结/批次集成、独立登记验收和跨批整合验收见[PHASE3_READINESS](PHASE3_READINESS.md)。`--workflow-run`将登记和建图与旧清洗/2.5第二步的身份、工作区、公屏隔开。下列命令的候选总表应由批次compose产生，不让多人直接覆盖总registry。
+## 同一协作引擎，两套阶段运行
 
-## 固定设计
+| 阶段 | workflow-run | role | 公屏 | 任务入口 |
+| --- | --- | --- | --- | --- |
+| 登记 | p25-register-v2 | curator | wcg/board-registration-v2 | registration-task |
+| 构图 | map-v2 | mapper | wcg/board-map-v2 | map |
 
-数学正文是知识来源；登记与超图是按需读取入口。节点是有精确陈述的数学对象，不是每个文件、日志或程序。一页可以登记多个独立对象，定位到不同标题，无须为了编号切碎原文。代码、输入、输出和复现证书作为owner对象的附件，不自动成为命题节点。对象间的推导、反驳、迁移和启发分开。
-
-`research/registry.json`使用`schema: 2`。不自动把已有frontmatter或旧manifest提升为正式登记。全仓登记应由2.5第二步整理后的实读结果产生；程序提供库存和明确记录的校验。
-
-已同步远端`4eecfe9b3`的只分类目录：材料标号标识一份材料，不等于一个数学命题ID。一份材料可含多个对象，多个材料也可支持同一对象；material记录可附原目录编号供追溯。登记工具不删除、移动或改写原件，不撤销其他Boss的分类与恢复。
-
-| 记录 | 必需内容 | 身份与变更 |
-|---|---|---|
-| object | `object_id,version,title,kind,truth_status,model,statement,quantifiers,assumptions,scope,objections,body,evidence,sources` | ID不从路径/全文hash生成；改陈述、模型、量词、证明或其他登记字段，明确增version；旧版本留Git历史。不同命题不能以重命名掩盖 |
-| body/evidence引用 | `{path,sha256,section?}` | sha256绑定原文件完整字节；section为精确且唯一的Markdown标题，忽略代码块里的伪标题。只返回该标题到下一个同级/上级标题之间正文 |
-| material | `{path,sha256,disposition,object_ids,reason}` | `objects/attachment/excluded/needs-decision`；附件必须指向owner。保留/排除须有实读理由，不由文件名、长度或PASS关键词猜测 |
-| edge | `edge_id,kind,status,source_ids,target_ids,premises_mode,relation_mode,conditions,roles,explanation,scope,evidence` | `premises_mode: all`保留联合前提；独立证明写不同边。不是两条独立充分的二元边 |
-| accepted edge | 再加`reviewed_by,review_note,endpoint_pins,evidence_pins,review_digest` | pins绑定对象完整记录及正文/证据。改条件、角色、解释或端点都会过期；结构检查不证明数学正确 |
-
-`truth_status`：`definition/proved/conditional/conjecture/open/refuted/finite/unassessed`。它与对象类型、关系状态分开。逻辑边种类为`implies/refutes/specializes/transfers/equivalent_to`；语境边为`motivates/cites/sourced_from/implements/checks/corrects/supersedes`。语境边用`relation_mode: context`，不作证明。未证、条件或有限前提只能进入明确`conditional`的逻辑关系；有限检查不能被工具自动当作一般定理。
-
-## 一次完整演示
-
-在仓库根目录执行，演示只写新建的`validation`目录：
+用完整词中的start命令绑定用户指定Boss编号和独立clone，先核Git、remote及实际写端点；继续本人未完任务优先。任务和lead在research/operations/<workflow-run>/，工作区在research/workspaces/<workflow-run>/<Boss>/。旧clean、curation任务与公屏不混入。
 
 ```sh
-python tools/research_demo.py --out validation/first-demo
-python tools/research_runtime.py --repo validation/first-demo context A --hops 1
-python tools/research_runtime.py --repo validation/first-demo resume demo-run
+python work.py registration-task lead show
+python work.py registration-task list --owner self
+python work.py registration-task claim-next
+python work.py registration-task done TASK --receipt-file research/registration/receipts/TASK.json
+python work.py registration-task handoff --all --reason '实际暂停原因与草稿位置'
 ```
 
-演示实际走通：一页三对象登记→`{A,B}⇒C`联合超边→三级投影→两类Solver输入→结果保存→具体反馈→同一运行恢复。演示数学只是正数和，不冒充六人问题进展。
+构图把registration-task换成map。只有唯一lead发布plan和集成总表，lead也做数学；lead claim以远端CAS裁决，不靠公屏口头指定。lead handoff明确交接；必要收回使用reclaim TASK --reason；过期的available/handoff任务由lead用withdraw TASK --reason明确撤下，不碰done成果。claim-next跳过有具体输入问题的候选并报告needs_reframing，继续可执行项，不因计时或静默自动抢任务。任务读最新远端，写入竞争自动重选，响应未知查原request_id。所有资产先checkpoint确认pushed，再done；公屏传实际成果、缺口和依赖，不重复逐动作登记。
 
-## 2.5第三步：登记
+## 2.5第三步：实读登记，批次集成
 
 ```sh
-python work.py research inventory
-python work.py research register --record-file research/proposed-registry.json
-python work.py research check
-python work.py research registration-check --final
-python work.py checkpoint research/registry.json -m 'Register reviewed mathematical objects and attachments'
+python work.py research inputs --out research/registration/inputs.json --scope repository --coverage-note "第二步已发布正式材料及必要附件"
+python work.py research freeze --inputs-file research/registration/inputs.json
+python work.py checkpoint research/registration/inputs.json research/registration/baseline.json -m 'Freeze actual registration inputs'
+python work.py registration-task lead claim
+python work.py registration-task plan --record-file research/registration/tasks-to-publish.json
 ```
 
-由登记Boss实读明确陈述并填写候选registry；可对照演示的完整`research/registry.json`。`register`拒绝同ID同版本偷偷改内容，拒绝无理由删ID；正式退休放入`retired_objects: {ID: reason}`。正文内容有变时旧引用会失效，需要重新实读后更新绑定。记录中sources保存精确文献/冻结源引用，不能把作者解读写成Paper Fact。
+inputs生成真实path/SHA清单，不猜数学身份。repository以Git快照和当前正式材料为分母，sparse缺页必须恢复，不能用可见文件冒充全仓。局部用--scope partial --paths-file明确JSON路径清单；必要附件可在清单中显式补入。freeze固定实际字节，变化另建baseline，不覆盖旧冻结输入。
 
-不强制把全部数学压成一行摘要。statement用于定位，完整证明与边界留在body中。`research inventory`只扫描当前正式`archives/.../state/*.md`及问题页，排除evidence里复制的旧树。2.5整理若产生其他正式位置，应先明确扩展扫描边界；不能据有限扫描宣称覆盖任意目录。
-
-## 第三阶段：同一账本分层构图
-
-3A按数学对象族读同组正文；3B补查存档内跨批边；3C核实明确的跨档迁移；3D由一位集成Boss串行生成投影。3–5篇可作为起点，按关系和文本量调整，不是硬配额。每批保留比较范围和跨批疑问，不为连通造边。
-
-任务定义示例见演示registry，可用对象完整记录的`pin`作为`input_pins`：
+登记任务定义：
 
 ```json
-{"task_id":"sum-local","stage":"3A","registry":"research/registry.json","object_ids":["A","B","C"],"input_pins":{"A":"<object pin>","B":"<object pin>","C":"<object pin>"},"write_paths":["map/edges/sum.json","map/receipts/sum.json"],"goal":"Compare the complete statements and prove the exact joint relation"}
+{
+  "task_id": "CA-last-two", "stage": "registration",
+  "baseline": {"path": "research/registration/baseline.json", "sha256": "完整SHA256"},
+  "materials": [{"path": "实际正文路径", "sha256": "完整SHA256"}],
+  "goal": "区分逐人末两人保底和全人数福利结论，保留各自精确Claim身份",
+  "write_paths": ["research/registration/batches/CA-last-two.json", "research/registration/receipts/CA-last-two.json"]
+}
+```
+
+每批schema:2，含objects、materials、edge_files:[]；批次收据含batch_file引用及assets引用数组。共享只读材料不互斥，批次写路径独立；不让所有人改总registry。完成一批立即checkpoint/done并补位，lead持续消解身份和版本冲突。
+
+| 记录 | 实际内容 |
+| --- | --- |
+| object | object_id、version、title、kind、truth_status、model、statement、quantifiers、assumptions、scope、objections、body、evidence、sources |
+| body/evidence引用 | path、完整文件sha256、可选精确唯一Markdown标题section；完整证明可由多个引用共同定位 |
+| material | path、sha256、disposition、object_ids、reason；去向为objects/attachment/excluded/needs-decision |
+
+一页可有多个对象，多篇可共同支持一个对象。稳定Claim ID优先；新身份用research new-id一次生成并保存，不取路径或全文hash。一份文件的容器ID不能吞掉不同命题。改同对象登记内容明确增version；不同模型、量词或结论不自动合并。附件须有数学owner；普通代码、日志、数值与PASS不造节点。
+
+truth_status分definition/proved/conditional/conjecture/open/refuted/finite/unassessed。精确有限反例若有完整证明可proved，扫描为finite；原题与失败辅助桥保持独立。open数学正常登记；needs-decision只表示尚不清楚身份、来源或路由。
+
+lead可registration-task collect看已done批次，再compose。manifest示例：
+
+```json
+{"baseline":{"path":"research/registration/baseline.json","sha256":"完整SHA256"},"workflow_run":"p25-register-v2"}
+```
+
+```sh
+python work.py sync
+python work.py research compose --manifest research/registration/batches.json
+python work.py research register --record-file research/registration/proposed.json
+python work.py research registration-check --final
+python work.py checkpoint research/registry.json -m 'Integrate accurately registered mathematical objects'
+```
+
+也可显式给batches:[{batch_id,record:{path,sha256}}]。compose只生成候选，register由集成Boss更新唯一总表；同ID矛盾必须实质解决。后续定向增量manifest加mode:incremental和base_registry精确引用，保留现有对象、材料和edge_files。登记闭合独立于超边，不因图尚无边而阻塞。
+
+## 第三阶段：由内到外解释，再统一投影
+
+3A对象内部承重链与同子档对象族；3B同档跨批/跨子档；3C真实跨档映射；3D统一投影。核心object_ids负责覆盖且互斥；read_object_ids共享只读；input_pins覆盖两者，写路径独立。不把共同模型锁成串行瓶颈。
+
+```json
+{
+  "task_id":"CA-last-two-chain", "stage":"3A", "registry":"research/registry.json",
+  "object_ids":["CA-LAST-TWO-FLOOR","CA-ALL-N-WELFARE-4N"],
+  "read_object_ids":["customer-attraction/last-slot-value-and-catalog-counting"],
+  "input_pins":{"CA-LAST-TWO-FLOOR":"对象pin","CA-ALL-N-WELFARE-4N":"对象pin","customer-attraction/last-slot-value-and-catalog-counting":"对象pin"},
+  "write_paths":["map/edges/CA-last-two-chain.json","map/receipts/CA-last-two-chain.json"],
+  "goal":"解释末两人逐人保底与目录计数界怎样联合推出一般福利界，保所有共同条件"
+}
 ```
 
 ```sh
 python work.py map plan --record-file map/planned-tasks.json
-python work.py checkpoint map/tasks -m 'Publish map construction tasks'
-python work.py map list
-python work.py map claim sum-local
-python work.py research edge-bind map/edges/sum.json
-python work.py checkpoint map/edges/sum.json map/receipts/sum.json -m 'Save explained sum hyperedge and coverage'
-python work.py map done sum-local --receipt-file map/receipts/sum.json
-python work.py map status
+python work.py map claim-next
+python work.py map read-add TASK --object-ids 已登记额外依赖
+python work.py research edge-bind map/edges/CA-last-two-chain.json
+python work.py checkpoint map/edges/CA-last-two-chain.json map/receipts/CA-last-two-chain.json -m 'Explain actual joint welfare support'
+python work.py map done TASK --receipt-file map/receipts/CA-last-two-chain.json
 ```
 
-`edge-bind`只算并打印绑定，不自动接受关系。作者在实质数学检查后填写accepted字段。任务用正常Git compare-and-push裁决：输入版本或写入范围重叠不能同时领取；同一clone的Git写操作由Main串行组织。done从最新远端快照核对已发布资产字节；本地未推送正文不能登记完成。push回执丢失时读取远端request_id确认，不重复抢任务。失败保留草稿，认证失败不换同一凭据反复试。
+一条edge含edge_id、kind、status、source_ids、target_ids、premises_mode:all、relation_mode、conditions、roles、explanation、scope、evidence。逻辑种类implies/refutes/specializes/transfers/equivalent_to；语境种类motivates/cites/sourced_from/implements/checks/corrects/supersedes。语境关系不作证明；反驳精确定位，迁移写清模型映射。
 
-receipt格式：`{coverage:{object_id:{state,reason,comparison_scope,object_pin,edge_ids?}},assets:[{path,sha256}]}`。每个对象有`linked/isolated-after-review/needs-decision`之一；linked必须列出真实accepted incident边。done表示该批覆盖处置已交付，needs-decision仍不算最终关系闭合。交接用`map handoff TASK --reason ...`。
+实际例子是末两人保底A与目录计数界B共同推出C：W≥(n−2)K/n+2θ_n，配合两个θ_n下界消去K，得4(n−1)/(n(2n−1))福利保证。n=6仅10/33，不能误写成半覆盖。一条{A,B}⇒C保全部共同前提；不同独立证明另写支持分支。定义可作条件，不机械造模型→所有结论的hub。
 
-最终集成形成`map/coverage.json`，逐对象记录同上，不能有needs-decision；并交`map/integration.json`，绑定当前registry及accepted边，分别记录存档/子档跨批审读和跨档比较，具体字段见PHASE3_READINESS。然后：
+accepted由作者实读后填写reviewed_by、review_note及edge-bind计算的endpoint_pins/evidence_pins/review_digest。绑定不代审，也不要求每边再经另一固定审批者。proposed、rejected保准确未付条件和失败机制；不为完成率强行接受。
+
+构图收据为coverage对象表及assets引用数组。每个核心对象有state、object_pin、reason、comparison_scope；linked另列真实accepted incident edge_ids。状态是linked/isolated-after-review/needs-decision；准确open数学或proposed桥可交付，不要求先证明所有未知。done直接核本批已推送独立边资产，无需等待lead先改总表。
 
 ```sh
-python work.py research check --final
-python work.py research build --final
+python work.py map collect
+python work.py sync
+python work.py map assemble
 ```
 
-最终校验要求当前正式材料有明确处置、每个登记对象有当前版本覆盖结果。草图用不带`--final`的build。输出`map/graph-v2.json`以及存档/子存档对应投影，跨边界节点一并带出。现有`graph.json`原型不覆盖。生成图是派生视图；研究读取直接验证registry和边文件，不会依赖过期投影。
+collect只读汇集完成批的edge_files和coverage_candidates；assemble仅lead执行，合并research/registry.json的边清单并写map/coverage.json、map/integration.json候选。不自动接受边，不编造跨批/跨档数学判断，保留已有实质整合说明；输入变化时在受影响范围标待复核，lead直接接续修订。lead继续处理重复边、受影响版本及未决身份，实读后填各档/子档archive_reviews和cross_archive_review，再research check --final、research build --final。按build回执projections逐一显式checkpoint准确生成路径，连同总表、覆盖和整合；repository-cleanup默认保存范围不含archives内投影，不能省略这些路径，也不宽泛提交整个archives。图为可重建graph-v2.json三级视图；数学真值仍在正文、登记和边解释。
 
-## Work中直接解题
 
-Main使用[研究启动词](../prompts/research-runtime.md)，Solver仅两类：[障碍组](../prompts/solver-obstacle.md)与[成果组](../prompts/solver-full.md)。两组从空历史启动，比例和数量按实际资源决定，不增加常驻审查流水线。
+同一冻结登记输入或同一构图队列中，替换已done批次时在新任务定义加supersedes:[旧任务ID]，覆盖被替换批次的原核心对象（登记按原材料）。新收据的supersession按旧任务ID给reason和assets表；每个旧资产注明retained（新收据保原SHA）、replaced（给新收据中replacement_paths）或retired及实际理由。登记材料字节变化另冻新baseline，用mode:incremental与base_registry接续，不跨baseline替代旧任务。只有新批done后旧批才退出collect，明确替换/退休的旧边退出canonical清单；其他数学保留。例如：
 
-任务spec为`{problem_id,problem:{path,sha256,section?},definitions:[ref],obstacles:[ref],seed_ids:[ID],hops:2}`。problem和definitions必须完整保留题目、域、量词与约束；障碍材料由Main实读挑选，不能塞进全部既有成果。packet生成器不会做语义脱敏，也不是文件访问控制。若Solver仍有全仓工具，必须靠明确读取规则或平台权限维持输入差异，不能声称物理隔离。
+```json
+{"supersession":{"old-task":{"reason":"对象版本更新，只重判相关支持","assets":{"map/edges/old.json":{"disposition":"replaced","replacement_paths":["map/edges/new.json"],"reason":"新版本完整承接原关系并修正条件"}}}}}
+```
+
+## 后续研究：完整支持与原worker接续
+
+Main读[完整研究词](../prompts/research-runtime.md)，按实际需要启动障碍组或成果组，不默认给所有人塞全仓。程序不会自动创建模型子代理。
 
 ```sh
+python work.py research search '精确数学关键词' --model '实际模型' --truth-status proved
+python work.py research show CA-ALL-N-WELFARE-4N --body
+python work.py research context CA-ALL-N-WELFARE-4N --hops 0
 python work.py research init RUN --spec research/problem-spec.json
-python work.py research search 'precise mathematical keyword'
-python work.py research show OBJECT_ID --body
-python work.py research context OBJECT_ID --hops 2
-python work.py research save RUN --solver solver1 --profile full --note archives/YOUR_ARCHIVE/workspaces/Boss32/solver1.md --next 'Complete the stated missing inequality' --state working --agent-id PLATFORM_AGENT_ID
-python work.py research save RUN --solver solver1 --profile full --note archives/YOUR_ARCHIVE/workspaces/Boss32/solver1.md --next 'Answer the precise objection' --state needs-feedback --feedback 'Specific objection and what is already accepted'
+python work.py research save RUN --solver solver1 --profile full --note research/workspaces/RUN/solver1.md --next '继续解决具体未付不等式' --agent-id 实际平台ID
+python work.py research save RUN --solver solver1 --profile full --note research/workspaces/RUN/solver1.md --next '回复具体质疑' --state needs-feedback --feedback '具体质疑和已接受部分'
 python work.py research resume RUN
 ```
 
-init只生成输入和恢复状态，**不会自动创建Work子代理**。Main通过平台实际的spawn/followup工具启动或接续，按packet的`fork_turns:none`要求操作。成果组可查全部已登记成果，默认两跳只返回元数据和完整超边；按需show正文、读证据、再扩展，不把全仓塞进上下文。障碍组只接收原题、定义、已知障碍与失败边界；若自主提出需要更完整成果，Main明确记载转换或另开成果组任务，不悄悄污染原输入。
+context可用--edge选择一份替代证明、--edge-status和--relation-kind取研究线索；返回support_options、proof_closure_object_ids、refutations及research_leads。证明支持保完整ALL前提闭包、替代OR分支、条件、证据及未付前提；hops是导航范围，不能截断已选证明。候选、语境和refutes不当正向已证支持。只对相关过期支持提示重读，不让无关旧边挡住正文读取；不把过期解释为结论为假。
 
-save保存不可变笔记副本、event、continuation_of、平台agent_id和具体下一步。Main把反馈送回原Solver；替代者沿用相同profile、packet、笔记和事件。registry改动不自动改变已保存输入。可恢复的是已保存数学进展和任务状态，不保证平台恢复原进程或隐藏推理。断网保留local-only，恢复凭据后用原checkpoint正常推送。
+spec含problem_id、problem引用、definitions引用数组、obstacles引用数组、seed_ids和导航hops。packet固定本次实际输入；save保不可变笔记、event、continuation_of、agent_id、下一步和反馈。resume恢复事件及未答反馈，登记版本变化、相对原输入新可见的关联边及未答反馈明确显示，不悄改旧packet。Main通过平台真实followup给原worker继续；原进程不可用才由同输入、笔记和断点恢复替代者。
 
-每形成有价值的Lemma、构造、反例、精确实验、失败机制或关键缺口立即checkpoint；不等目标完全解决。新研究先保存候选正文/证据，更新登记和边需要明确数学判断。Main继续用现有公屏、Boss编号、个人工作区、sync/checkpoint；不为本工具另建每轮远端分支。
-
-## 迁移到其他仓库
-
-```sh
-python tools/export_research_template.py --output /absolute/new-workspace --remote https://github.com/OWNER/NEW_REPOSITORY.git --branch main
-```
-
-导出工具、提示词、测试和GitHub配置，不复制旧数学、凭据、公屏或Git历史；明确改为新仓库URL。导出不创建GitHub仓库、不消费Codespaces、不发布远端。新项目先创建自己的archive、精确定义和登记；第三方vendored代码保留原LICENSE与UPSTREAM。此处资产规范不保证能解决任意开放命题。
+普通云端计算、运行跟踪与结果下载见[GITHUB_RESOURCES](GITHUB_RESOURCES.md)。持续研究从真实数学义务出发，不默认数字搜索、不重复跑旧演示。成熟内容及时保存并只更新相关对象/边，不重做全仓清洗。
