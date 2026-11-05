@@ -635,7 +635,7 @@ def main():
     mapping = sub.add_parser("map", help="检查/生成子存档、存档和全仓超图")
     mapping.add_argument("args", nargs=argparse.REMAINDER)
     research = sub.add_parser('research', help='登记、按需读取超边、两类Solver输入和持续研究恢复',
-                              epilog='Commands: inventory, freeze, new-id, compose, register, registration-check, check, build, search, show, context, edge-bind, packet, init, save, resume. See research/IMPLEMENTATION.md.')
+                              epilog='Commands: inventory, prepare-inputs, freeze, assignments-check, new-id, compose, register, registration-check, check, build, search, show, context, edge-check, edge-bind, packet, init, save, resume, compute. See research/IMPLEMENTATION.md.')
     research.add_argument('--registry', help='显式选择v2登记文件；省略使用research/registry.json')
     research.add_argument('args', nargs=argparse.REMAINDER)
     github = sub.add_parser('github', help='使用仓库外凭据调用GitHub研究资源；status只读',
@@ -706,6 +706,32 @@ def main():
             sys.stdout.write(result.stdout)
             return result.returncode
         receipt = json.loads(result.stdout)
+        if isinstance(receipt, dict) and receipt.get('status') == 'planned-local-not-pushed':
+            # A plan is the shared task board, not a private draft. Publish it
+            # immediately so other Boss clones can claim the same snapshot.
+            publish = subprocess.run(
+                [sys.executable, str(repo / TOOLS / 'checkpoint.py'), '--repo', str(repo),
+                 'map/tasks', '-m', 'Publish phase-3 map task plan'],
+                env=env, capture_output=True, text=True)
+            if publish.stderr:
+                sys.stderr.write(publish.stderr)
+            if publish.returncode:
+                receipt['checkpoint'] = {'status': 'local-only',
+                                         'detail': (publish.stderr or publish.stdout).strip()[-1200:]}
+            else:
+                try:
+                    checkpoint = json.loads(publish.stdout)
+                except ValueError:
+                    checkpoint = {'status': 'local-only', 'detail': 'Checkpoint returned non-JSON output'}
+                receipt['checkpoint'] = checkpoint
+                if checkpoint.get('status') == 'pushed':
+                    receipt['status'] = 'pushed'
+                    try:
+                        receipt['local_sync'] = sync(repo, env)
+                    except (Stop, OSError) as exc:
+                        receipt['local_sync'] = {'status': 'needs-attention', 'detail': str(exc)}
+            print(json.dumps(receipt, ensure_ascii=False, indent=2))
+            return 0
         if isinstance(receipt, dict) and receipt.get('status') == 'pushed':
             try: receipt['local_sync'] = sync(repo, env)
             except (Stop, OSError) as exc: receipt['local_sync'] = {'status': 'needs-attention', 'detail': str(exc)}

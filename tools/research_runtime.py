@@ -295,6 +295,44 @@ def inventory(root, registry=REGISTRY):
             for p in formal_paths(root)]
 
 
+def prepare_inputs(root, output, scope='repository', coverage_note=None, paths=None):
+    """Write the explicit 2.5.3 input manifest from the current stage-2 bytes.
+
+    This is only a byte inventory.  It does not admit mathematics or infer
+    object identities.  A repository-scope manifest covers the formal archive
+    paths visible at this exact working-tree snapshot; a partial manifest must
+    name each formal path explicitly.
+    """
+    if scope not in {'repository', 'partial'}:
+        raise ValueError('Use repository or partial scope')
+    if not isinstance(coverage_note, str) or not coverage_note.strip():
+        raise ValueError('A concrete coverage note is required')
+    formal = {p.relative_to(root).as_posix() for p in formal_paths(root)}
+    names = sorted(formal) if scope == 'repository' else list(paths or [])
+    if not names:
+        raise ValueError('No stage-2 formal materials were selected')
+    rows = []
+    seen = set()
+    for name in names:
+        if name in seen:
+            raise ValueError('Duplicate material path: ' + name)
+        seen.add(name)
+        path = _safe_path(root, name)
+        if not path.is_file() or name not in formal:
+            raise ValueError('Inputs must name current formal archive files: ' + name)
+        rows.append({'path': name, 'sha256': digest(path.read_bytes())})
+    value = {'scope': scope, 'coverage_note': coverage_note.strip(),
+             'materials': sorted(rows, key=lambda row: row['path'])}
+    destination = _safe_path(root, output)
+    if destination.exists():
+        previous = json.loads(destination.read_text())
+        if previous != value:
+            raise ValueError('Inputs manifest exists with different bytes; create an explicit new filename')
+        return {'status': 'already-prepared', 'path': output, 'materials': len(rows), 'scope': scope}
+    _write_json(destination, value)
+    return {'status': 'prepared-local-not-pushed', 'path': output, 'materials': len(rows), 'scope': scope}
+
+
 def check(root, registry=REGISTRY, final=False):
     data, objects = load(root, registry)
     relations = edges(root, data, objects)
@@ -513,9 +551,15 @@ def main(argv=None):
     p.add_argument('--registry', default=REGISTRY)
     sub = p.add_subparsers(dest='command', required=True)
     sub.add_parser('inventory')
+    q = sub.add_parser('prepare-inputs', help='Freeze a byte inventory for 2.5.3; no mathematical admission')
+    q.add_argument('--output', default='research/registration/inputs.json')
+    q.add_argument('--scope', choices=['repository', 'partial'], default='repository')
+    q.add_argument('--coverage-note', required=True)
+    q.add_argument('--path', action='append', default=[])
     q = sub.add_parser('freeze'); q.add_argument('--inputs-file', required=True); q.add_argument('--out', default='research/registration/baseline.json')
     q = sub.add_parser('compose'); q.add_argument('--manifest', required=True); q.add_argument('--out', default='research/registration/proposed.json')
     q = sub.add_parser('registration-check'); q.add_argument('--final', action='store_true')
+    q = sub.add_parser('assignments-check'); q.add_argument('--assignment-file', default='research/registration/assignments.json')
     q = sub.add_parser('new-id'); q.add_argument('--count', type=int, default=1)
     q = sub.add_parser('register'); q.add_argument('--record-file', required=True)
     for command in ('check', 'build'):
@@ -537,11 +581,13 @@ def main(argv=None):
     q.add_argument('--feedback'); q.add_argument('--agent-id')
     a = p.parse_args(argv); root = a.repo.resolve()
     if a.command == 'inventory': result = inventory(root, a.registry)
-    elif a.command in {'freeze', 'compose', 'registration-check', 'new-id'}:
+    elif a.command == 'prepare-inputs': result = prepare_inputs(root, a.output, a.scope, a.coverage_note, a.path)
+    elif a.command in {'freeze', 'compose', 'registration-check', 'assignments-check', 'new-id'}:
         import registration
         if a.command == 'freeze': result = registration.freeze(root, a.inputs_file, a.out)
         elif a.command == 'compose': result = registration.compose(root, a.manifest, a.out)
         elif a.command == 'registration-check': result = registration.check(root, a.registry, a.final)
+        elif a.command == 'assignments-check': result = registration.check_assignments(root, a.assignment_file)
         else: result = registration.new_ids(a.count)
     elif a.command == 'register': result = register(root, a.record_file, a.registry)
     elif a.command in {'check', 'build'}: result = globals()[a.command](root, a.registry, a.final)

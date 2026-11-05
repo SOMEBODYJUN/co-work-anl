@@ -1,5 +1,6 @@
 """Freeze explicit stage-2 outputs and compose independently written ID batches."""
 import json
+import re
 import subprocess
 import uuid
 
@@ -101,3 +102,36 @@ def new_ids(count):
     if not 1 <= count <= 1000: raise ValueError('Request 1..1000 explicitly identified mathematical objects')
     return {'object_ids': ['M-' + uuid.uuid4().hex for _ in range(count)],
             'instruction': 'Assign once in your batch and checkpoint. Preserve existing object IDs; do not allocate an ID per file or per log.'}
+
+
+def check_assignments(root, assignment_file):
+    """Validate a pre-split 2.5.3 batch table before any Boss starts."""
+    data = json.loads(_safe_path(root, assignment_file).read_text())
+    if data.get('schema') != 1 or not isinstance(data.get('assignments'), list) or not data['assignments']:
+        raise ValueError('Assignments need schema 1 and a nonempty assignments list')
+    runtime.ref_bytes(root, data['baseline'])
+    baseline = json.loads(runtime.ref_bytes(root, data['baseline']))
+    frozen = {row['path'] for row in baseline.get('materials', [])}
+    batches, owners, materials, writes = set(), set(), set(), set()
+    for row in data['assignments']:
+        if set(row) != {'batch_id', 'owner', 'material_paths', 'write_path'}:
+            raise ValueError('Each assignment needs batch_id, owner, material_paths and write_path')
+        batch_id = runtime.identity(row['batch_id'])
+        if batch_id in batches: raise ValueError('Duplicate batch assignment: ' + batch_id)
+        batches.add(batch_id)
+        if not isinstance(row['owner'], str) or not re.fullmatch(r'Boss[1-9][0-9]*', row['owner']):
+            raise ValueError('Assignment owner must be an explicit Boss number')
+        owners.add(row['owner'])
+        paths = row['material_paths']
+        runtime.strings(paths, 'material_paths', True)
+        if materials.intersection(paths): raise ValueError('Material path assigned twice')
+        if any(path not in frozen for path in paths): raise ValueError('Assignment material is outside the frozen baseline')
+        materials.update(paths)
+        write_path = row['write_path']
+        if write_path in writes or not write_path.startswith('research/registration/batches/') or not write_path.endswith('.json'):
+            raise ValueError('Batch write paths must be unique under research/registration/batches')
+        writes.add(write_path)
+    if materials != frozen:
+        raise ValueError('Assignments must cover every frozen material exactly once')
+    return {'status': 'assignments-valid-not-a-mathematical-verdict', 'batches': len(batches),
+            'owners': sorted(owners), 'materials': len(materials)}

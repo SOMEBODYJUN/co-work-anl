@@ -38,7 +38,7 @@ class GitHubResourceTests(unittest.TestCase):
 
     def test_dispatch_uses_an_explicit_known_workflow_and_does_not_claim_pass(self):
         client = self.client(); client.request.return_value = {'http_status': 204}
-        result = client.dispatch('research-compute.yml', 'rebuild/research-v2', {'experiment': 'runtime-smoke'})
+        result = client.dispatch('research-compute.yml', 'rebuild/research-v2', {'experiment': 'cag-five-local'})
         self.assertEqual(result['status'], 'dispatch-request-accepted')
         self.assertEqual(client.request.call_args.args[0], 'POST')
         self.assertEqual(client.request.call_args.args[2]['ref'], 'rebuild/research-v2')
