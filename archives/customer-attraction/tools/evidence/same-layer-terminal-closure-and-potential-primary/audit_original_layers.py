@@ -72,7 +72,7 @@ def credible_fixed(source,mixed):
 
 def main():
  p=argparse.ArgumentParser();p.add_argument('--runtime',type=Path,required=True);a=p.parse_args();runtime=a.runtime.resolve();out=E/'replay';out.mkdir(exist_ok=True);start=time.time();clock=time.perf_counter()
- preparation=read(runtime/'runtime-preparation.json');before={rel:sha(runtime/rel) for rel in preparation['copied']};assert len(before)==50
+ preparation=read(runtime/'runtime-preparation.json');before={rel:sha(runtime/rel) for rel in preparation['copied']};assert len(before)==49
  parent=runtime/PRE/'parent';child=runtime/PRE/'six_astra';sys.path[:0]=[str(child),str(parent)]
  print('Import exact frozen closure and two original finite auditors',flush=True)
  import attractive_nested as at

@@ -74,7 +74,7 @@ parent还对ℓ=1,2,3各断
 
 # 与已发表作者标量原件及两份独立报告的绑定
 
-[既有作者标量资源](PB背景反例的标量证据与实际前缀算术--计算.md)的1926B原代码和1564B报告本次亦全文比较。作者程序同五主要差，断2474<3754、2292>2066、2472>2060和2472<4120，并用`write_text`覆盖同名JSON。其旧一次原字节成功只属于SHA绑定的作者程序，不是本两份不同SHA入口的执行。作者旧JSON“awaiting independent review”是冻结时点，后来四审查不改该字节，本资源也不倒造旧运行。
+[任意合法背景的前两人额外槽安全值](<../反例/任意合法背景的前两人额外槽安全值--反例.md>)的1926B原代码和1564B报告本次亦全文比较。作者程序同五主要差，断2474<3754、2292>2066、2472>2060和2472<4120，并用`write_text`覆盖同名JSON。其旧一次原字节成功只属于SHA绑定的作者程序，不是本两份不同SHA入口的执行。作者旧JSON“awaiting independent review”是冻结时点，后来四审查不改该字节，本资源也不倒造旧运行。
 
 dynamic报告全顶层含scope/constants、customer/count字段、七组exact/decimal、u/s、strict-positive true、proves_all_histories=false、proves_half=false；parent报告含status、python3.12.14、arithmetic、script_sha256、parameters、五gaps、u/s、free1877、punish180与unit_customers。parent记录源码SHA严格为32ce45d11250eecc08d69b5441f17a5132ac0d5a27f15d88f05a4a73994fdeac，与实际1515B原件一致；版本字符串仅为原报告，不冒称本次解释器事件。
 

@@ -21,7 +21,7 @@ related_objects:
   - "七态原星仿射Boolean所有者边界作者证明审查--审查.md"
   - "七态星全局二次审计与root重放范围审查--审查.md"
   - "七态AND端点二次localizer作者read-after审查--审查.md"
-  - "../计算/七态星全局二次审计与root重放边界--计算.md"
+  - "七态星全局二次审计与root重放范围审查--审查.md"
 evidence_paths:
   - "archives/unrelated-machines/tools/evidence/seven-state-affine-owner-boundary-exact-first-20261031/original/sol_seven_state_affine_boolean_owner_boundary_exact_first_review.md"
 source_sha256: "d3201aba5c072a5a48accffd80347820eb6dead90cf22a30d3ff6799784787d0"

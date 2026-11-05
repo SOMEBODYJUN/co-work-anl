@@ -17,7 +17,7 @@ source_inventory:
   - "id:07f075f376fc5aa958fe; blob:0e5eaf709216d025bfc5f9dce9cef281bf3f9363; sha256:08c7d787759fd48b65cada97c052bdab80556bedde1e14f4601b8e4447b52ffd; path:research/current/unrelated_machines/diluted_sink_probe_gap.md"
 related_reviews:
   - "稀释逃逸行度与共享终端局部审计--审查.md"
-  - "稀释终端独立重放与探针缺口有限审计--审查.md"
+  - "../资源/稀释终端与共享逃逸的分离证书--资源.md"
   - "重型匹配凸化与逃逸残余审计--审查.md"
   - "配置剥离与联合匹配有限审计--审查.md"
   - "C2前缀满载与单位多切片有限审计--审查.md"

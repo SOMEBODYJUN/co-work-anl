@@ -14,7 +14,6 @@ related_objects:
   - ../定理/分段线性凹偏好的共享超梯度合并判别--定理.md
   - ../等价/共同形状可分凹偏好的对数边际规划--等价.md
   - ../资料/克隆识别与Leontief均衡的不同恢复接口--资料.md
-  - ../../../weighted-congestion/state/审查/原子拥塞重选题与失败路线--审查.md
   - ../../../weighted-congestion/state/资料/原子拥塞候选线与37-33小证书--资料.md
   - ../../../weighted-congestion/state/资料/有限双权近似势与非对称精炼目标的不同合同--资料.md
 evidence_paths:
