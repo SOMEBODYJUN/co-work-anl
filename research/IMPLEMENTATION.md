@@ -22,29 +22,25 @@
 
 `truth_status`：`definition/proved/conditional/conjecture/open/refuted/finite/unassessed`。它与对象类型、关系状态分开。逻辑边种类为`implies/refutes/specializes/transfers/equivalent_to`；语境边为`motivates/cites/sourced_from/implements/checks/corrects/supersedes`。语境边用`relation_mode: context`，不作证明。未证、条件或有限前提只能进入明确`conditional`的逻辑关系；有限检查不能被工具自动当作一般定理。
 
-## 一次完整演示
-
-在仓库根目录执行，演示只写新建的`validation`目录：
-
-```sh
-python tools/research_demo.py --out validation/first-demo
-python tools/research_runtime.py --repo validation/first-demo context A --hops 1
-python tools/research_runtime.py --repo validation/first-demo resume demo-run
-```
-
-演示实际走通：一页三对象登记→`{A,B}⇒C`联合超边→三级投影→两类Solver输入→结果保存→具体反馈→同一运行恢复。演示数学只是正数和，不冒充六人问题进展。
-
 ## 2.5第三步：登记
 
 ```sh
+python work.py research prepare-inputs --scope repository \
+  --coverage-note '第二步已发布材料的当前正式文件快照；只绑定字节，不作数学准入'
+python work.py checkpoint research/registration/inputs.json -m 'Freeze 2.5.3 input inventory'
+python work.py research freeze --inputs-file research/registration/inputs.json
+python work.py checkpoint research/registration/baseline.json -m 'Publish 2.5.3 frozen input baseline'
+python work.py research assignments-check --assignment-file research/registration/assignments.json
+python work.py research new-id --count N
 python work.py research inventory
+python work.py research compose --manifest research/registration/batches.json
 python work.py research register --record-file research/proposed-registry.json
 python work.py research check
 python work.py research registration-check --final
 python work.py checkpoint research/registry.json -m 'Register reviewed mathematical objects and attachments'
 ```
 
-由登记Boss实读明确陈述并填写候选registry；可对照演示的完整`research/registry.json`。`register`拒绝同ID同版本偷偷改内容，拒绝无理由删ID；正式退休放入`retired_objects: {ID: reason}`。正文内容有变时旧引用会失效，需要重新实读后更新绑定。记录中sources保存精确文献/冻结源引用，不能把作者解读写成Paper Fact。
+由登记Boss实读明确陈述并填写候选registry。`register`拒绝同ID同版本偷偷改内容，拒绝无理由删ID；正式退休放入`retired_objects: {ID: reason}`。正文内容有变时旧引用会失效，需要重新实读后更新绑定。记录中sources保存精确文献/冻结源引用，不能把作者解读写成Paper Fact。
 
 不强制把全部数学压成一行摘要。statement用于定位，完整证明与边界留在body中。`research inventory`只扫描当前正式`archives/.../state/*.md`及问题页，排除evidence里复制的旧树。2.5整理若产生其他正式位置，应先明确扩展扫描边界；不能据有限扫描宣称覆盖任意目录。
 
@@ -52,7 +48,7 @@ python work.py checkpoint research/registry.json -m 'Register reviewed mathemati
 
 3A按数学对象族读同组正文；3B补查存档内跨批边；3C核实明确的跨档迁移；3D由一位集成Boss串行生成投影。3–5篇可作为起点，按关系和文本量调整，不是硬配额。每批保留比较范围和跨批疑问，不为连通造边。
 
-任务定义示例见演示registry，可用对象完整记录的`pin`作为`input_pins`：
+任务定义示例使用正式registry对象，可用对象完整记录的`pin`作为`input_pins`：
 
 ```json
 {"task_id":"sum-local","stage":"3A","registry":"research/registry.json","object_ids":["A","B","C"],"input_pins":{"A":"<object pin>","B":"<object pin>","C":"<object pin>"},"write_paths":["map/edges/sum.json","map/receipts/sum.json"],"goal":"Compare the complete statements and prove the exact joint relation"}
@@ -112,4 +108,4 @@ save保存不可变笔记副本、event、continuation_of、平台agent_id和具
 python tools/export_research_template.py --output /absolute/new-workspace --remote https://github.com/OWNER/NEW_REPOSITORY.git --branch main
 ```
 
-导出工具、提示词、测试和GitHub配置，不复制旧数学、凭据、公屏或Git历史；明确改为新仓库URL。导出不创建GitHub仓库、不消费Codespaces、不发布远端。新项目先创建自己的archive、精确定义和登记；第三方vendored代码保留原LICENSE与UPSTREAM。此处资产规范不保证能解决任意开放命题。
+导出工具、提示词和GitHub计算配置，不复制旧数学、凭据、公屏或Git历史；明确改为新仓库URL。导出不创建GitHub仓库、不消费Codespaces、不发布远端。新项目先创建自己的archive、精确定义和登记；第三方vendored代码保留原LICENSE与UPSTREAM。此处资产规范不保证能解决任意开放命题。

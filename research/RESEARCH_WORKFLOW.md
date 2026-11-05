@@ -37,7 +37,7 @@ Main的任务是送材料、收结果、提具体意见、接续原Solver、串�
 | 当前Work执行环境 | 可执行仓库Python；两项既有精确数学审计实际复跑通过 | 新问题的搜索/符号/优化程序仍由Solver按题编写；没有预装和验收所有数学软件 |
 | work.py research | 检索、正文、超边窗口、packet、保存、反馈事件和恢复；有端到端测试 | 当前真实全仓registry/graph仍待对应阶段产生 |
 | work.py checkpoint/sync | 已实际认证、推送并确认远端；保留不同对话工作 | 只有pushed才称长期共享，本地文件存在不等于已交付 |
-| tools/compute.py + `work.py research compute` | 执行research/experiments.json明确登记的命令并留版本、seed、精度、输出、错误和范围；命令完成后自动做一次本地checkpoint并尝试推送 | 目前只登记runtime-smoke、cag-five-local、positive-kernels-rank三项；不是任意数学问题的现成求解器；新实验必须先登记；需要共享的回执写入未被`.gitignore`排除的`research/checks/`或存档证据目录 |
+| tools/compute.py + `work.py research compute` | 执行research/experiments.json明确登记的数学计算并留版本、seed、精度、输出、错误和范围；命令完成后自动做一次本地checkpoint并尝试推送 | 当前只登记两项数学审计；不是任意数学问题的现成求解器；新实验必须先登记；需要共享的回执写入未被`.gitignore`排除的`research/checks/`或存档证据目录 |
 | Actions | push检查、workflow_dispatch、artifact、超时、并发控制和只读GITHUB_TOKEN配置；直接PAT dispatch接口 | 当前workflow配置能跑已登记命令；workflow_dispatch需要workflow在可发现的分支；请求被接受不等于实验通过 |
 | Codespaces | devcontainer、postCreateCommand、机器列表、创建/停止接口；可再配置prebuild | Codespace是远程开发/计算机，不是Work模型；创建后仍需在其中运行登记命令并取回artifact |
 | 文献/网页工具 | Solver可按当前平台实际提供的检索和阅读工具查原始文献 | 不是由GitHub token授予；精确引用及定理适用条件仍须核查 |
@@ -105,7 +105,7 @@ Main的任务是送材料、收结果、提具体意见、接续原Solver、串�
 | map/graph-v2.json、archives/.../map/graph-v2.json | 从正文、登记和关系生成的全仓/存档/子档投影，可重建，不是单独的真值来源 |
 | research/experiments.json | 有意登记的可复现计算入口；新实验明确命令、输入、seed、精度和范围 |
 | research/checks/ | 工程验收记录，不作为数学结论节点 |
-| validation/ | 暂存演示、测试和计算回执；不自动进入Git，重要结果整理到其数学owner证据位置后checkpoint |
+| validation/ | 临时本地输出；不作为研究入口或长期状态。需要共享的计算回执写入`research/checks/`或数学owner证据目录后checkpoint |
 
 当前graph.json、research/schemas及部分templates仍含旧原型，保留兼容/追溯。新流程以PHASE3_READINESS、IMPLEMENTATION和对应已实现程序为准，不能把旧图当全仓正式超图。上述登记、运行、任务与v2图文件在实际阶段执行时产生；空目录不需要预先造满。
 

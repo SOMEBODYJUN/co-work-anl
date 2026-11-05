@@ -1,6 +1,6 @@
 # 2.5第三步与第三阶段：固定执行接口
 
-当前只准备并发布规范、程序和启动词。2.5第二步由另一侧继续执行；没有替它清理材料，没有初始化后续公屏、登记Boss、冻结真实全仓baseline或启动批量建图。后续用户要求开工时再按这里启动。
+当前已把2.5第三步和第三阶段的规范、程序、启动词、分配边界和交付门槛准备好。当前仓库尚未生成真实registry、批次任务、Boss people记录或超边任务；启动时必须按本文件先形成并推送输入，不得把prepared配置说成已开工。
 
 ## 执行模式
 
@@ -38,7 +38,11 @@
 5. `research registration-check --final`专门验收登记，不读取或要求任何超边/图。要求明确全仓冻结范围、所有输入去向、当前版本与无未决身份。明确open/conjecture可以登记；needs-decision是尚不能辨认/路由材料的状态，两者不混。
 
 ```sh
+python work.py research prepare-inputs --scope repository --coverage-note '第二步正式出口快照'
+python work.py checkpoint research/registration/inputs.json -m 'Freeze 2.5.3 input inventory'
 python work.py research freeze --inputs-file research/registration/inputs.json
+python work.py checkpoint research/registration/baseline.json -m 'Publish 2.5.3 frozen input baseline'
+python work.py research assignments-check --assignment-file research/registration/assignments.json
 python work.py research new-id --count 需要的新对象数量
 python work.py research compose --manifest research/registration/batches.json
 python work.py research register --record-file research/registration/proposed.json
@@ -70,11 +74,11 @@ Work里的Main可通过现有执行工具调用根work.py；凭据放clone外，
 |---|---|---|
 | research search/show/context | 元数据定位、实际正文、完整超边按需读取 | 本地真实端到端与专项测试 |
 | research init/save/resume | 两类输入、不可变笔记、agent_id、具体反馈和原任务接续 | 已测试；模型创建由Work真实spawn/followup承担，GitHub token不能替代模型能力 |
-| github status | 本仓库权限、workflow和本人的本仓库Codespaces，只读 | 本轮真实API成功；无云机器创建 |
+| github status | 本仓库权限、workflow和本人的本仓库Codespaces，只读 | 接口已实现；当前凭据失效时不把资源状态说成已验证 |
 | github machines --ref ... | 查看实际机器类型 | 接口已实现，不据猜测选昂贵机器 |
 | github dispatch --workflow research-compute.yml --ref ... --inputs-file ... | 明确提交登记实验 | 接口/参数已测试；本轮不调用。接受请求不等于运行通过 |
 | github create-codespace / stop-codespace | 明确创建或停止本仓库环境 | 接口与仓库边界已测试；本轮不创建、不停止任何实例 |
 
-本轮实际API读取到仓库admin/push等权限可用、Research tools workflow可读、Codespaces列表可读且为空。没有据此推断学生认证、余额或所有写权限。workflow_dispatch要求workflow在默认分支可用；不擅自把研究分支合入main，未满足时在当前环境或Codespaces运行已登记命令。GitHub额度、限制及官方接口依据见[GITHUB_RESOURCES](GITHUB_RESOURCES.md)。
+GitHub资源接口只在凭据有效时读取实时权限和实例；当前凭据失效时停止重试并保留本地提交。没有据此推断学生认证、余额或所有写权限。workflow_dispatch要求workflow在默认分支可用；不擅自把研究分支合入main，未满足时在当前环境或Codespaces运行已登记命令。GitHub额度、限制及官方接口依据见[GITHUB_RESOURCES](GITHUB_RESOURCES.md)。
 
 后续Main仍只有两类主要Solver：障碍组与成果组，均空历史启动；Main负责送资料、具体反馈、持续checkpoint。用户让运行哪个阶段时才启动对应阶段，不因为配置已发布而自动开始数学研究。

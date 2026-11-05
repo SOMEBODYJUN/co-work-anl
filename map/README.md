@@ -1,50 +1,46 @@
-# 数学关系图：只读取明确准入的数学对象
+# 数学关系图：registry 到可读取超边
 
-当前新设计与可执行入口见[IMPLEMENTATION](../research/IMPLEMENTATION.md)及[第三阶段提示词](../prompts/03-map.md)。新v2登记支持一页多个独立对象、附件不作节点、多前提all超边；work.py map提供分批任务账本，work.py research check/build生成graph-v2.json。旧graph.json及下列manifest原型保留兼容，不作为自动准入来源。下文“待设计/暂不启动”仅描述旧设计当时状态；大规模执行仍须等待实际2.5第二步/登记结果。
+第三阶段只读取2.5第三步已经推送并通过登记验收的`research/registry.json`。旧`graph.json`、旧Markdown manifest和`maps.py`原型不作为新阶段输入。图是研究导航和按需取上下文的入口，不是数学真值来源。
 
-> 设计状态：以下为上一版工具/提示词原型。用户已将2.5分成材料定性、对象群整理、重新登记；本轮只设计前两步。2.5第三步、第三阶段超边结构及数学研究Agent由用户与另一AI另定。本文件的manifest、一页一ID、模型配置、超边字段与启动流程尚不作为最终决定，暂不按此启动第三阶段。新边界见[CURATION](../research/CURATION.md)。
+## 写入边界
 
-图服务于研究者理解命题、调用证明、检查反例和识别缺口。文件存在、来源done、审计PASS或元数据齐全都不构成数学对象准入。纯工作区身份与执行履历不成为节点。必要代码、输入、证明证书和输出由数学对象引用，不各自包装成数学命题。
+每个Boss先领取一个`map/tasks/<task-id>.json`，任务定义固定对象ID、版本pin和写入路径。对象范围或写入范围重叠时不能同时claim。Boss只写自己的`map/edges/`和`map/receipts/`，不直接改canonical registry或全仓graph。
 
-第二阶段半先按[准入执行协议](../prompts/02.5-research.md)保护成熟数学、删除非数学包装、修复条件和纠错、拆分不同真值/依赖的结论。第三阶段只读取 `research/curation/manifest.json` 明确放行且内容指纹仍一致的数学正文；[程序契约](../research/CURATION.md)说明部分与最终完成的区别。
+```sh
+python work.py map plan --record-file map/planned-tasks.json
+python work.py map list
+python work.py map claim <task-id>
+python work.py research edge-check map/edges/<edge-id>.json
+python work.py checkpoint map/edges/<edge-id>.json map/receipts/<task-id>.json -m 'Publish explained hyperedge and coverage'
+python work.py map done <task-id> --receipt-file map/receipts/<task-id>.json
+python work.py map status
+```
 
-## 节点和证据
-
-节点是一个有明确模型、量词和状态的数学对象。文件是正文地址；同一页的独立结论若有不同依赖或真值，先拆成独立稳定ID。`bundle-pending-split` 仅是部分阶段的阅读容器，导出状态为 `unresolved-bundle`，不能用作已接受逻辑边端点，不能通过2.5最终验收。开放问题、精确猜想和具体失败机制可以保留，不能因未证而删除，也不能当已证前提。
-
-本地证据须为准入数学正文或有数学owner的附件，并绑定当前内容指纹。`source:<完整commit>:<路径>#段落` 可引用固定清单中的冻结证据；它不自动成为逻辑前提。程序不会判断一个证据是否足够承担证明。
+`map plan`会先把任务板checkpoint并尝试推送；只有远端确认`pushed`，其他Boss才应claim。claim、done、handoff使用远端快照和稳定request_id，丢回执时先读远端，不重复创建请求。认证失败保留本地草稿，不反复消耗同一失效凭据。
 
 ## 超边契约
 
-联合前提 `A1,...,Ak` 到结论 `B` 保留为一条多源超边，不能拆成每个前提单独足够的二元边。边说明每个对象提供什么、共同条件/变量对应、合法推理或精确反驳范围以及证据。目录相邻、同名、引用或共有输入不是逻辑依赖。
+联合前提必须保留为一条`premises_mode: all`超边。端点、条件、解释和证据都要写清，目录相邻、同名、共有输入或引用关系不能自动变成推导。
 
-- `source_ids`、`target_ids`：稳定命题身份。
-- `kind`：逻辑类 `implies/refutes/specializes/transfers/derived_from/equivalent_to`；其它已登记类 `motivates/cites/sourced_from/implements/checks/corrects/supersedes`。新类型在语义明确前保持proposed，不能靠改拼写避开逻辑限制。
-- `explanation`、`conditions`、正文：为何能联系、各前提作用、适用域及缺失条件。
-- `evidence`：精确证明、反例或附件位置。
-- `status`、`reviewed_by`：proposed/accepted/rejected和实际关系审读者。accepted只声明关系已经审读，不为端点自动赋真值。
-- `relation_mode: conditional`：逻辑边有未证、已否或条件性前提时必须显式声明；即使结论另有独立证明，也不能把本边冒作无条件证明。
-- `endpoint_hashes`、`evidence_hashes`、`reviewed_content_sha256`：端点、证据及关系自身的内容绑定。任一改变都须重新判断相关关系，不能静默沿用旧审读。
+- `source_ids`、`target_ids`：registry中的稳定对象ID。
+- `kind`：逻辑关系为`implies/refutes/specializes/transfers/equivalent_to`；语境关系为`motivates/cites/sourced_from/implements/checks/corrects/supersedes`。
+- `relation_mode`：逻辑关系使用`unconditional`或`conditional`；语境关系使用`context`。
+- `roles`：每个端点在这条关系中的数学作用。
+- `conditions`、`explanation`、`scope`：共同前提、推理范围和适用域。
+- `evidence`：正文、证明、反例或有数学owner的计算证据。
+- `accepted`边还必须有`reviewed_by`、`review_note`以及当前`endpoint_pins`、`evidence_pins`、`review_digest`。
 
-字段模板见[关系模板](../cleanup/templates/联系--关系.md)。这些约束检查声明、路径和版本，不提供形式化正确性或独立数学认证。
+`research edge-check`在canonical `registry.edge_files`仍为空时也能验证交付边；`map done`会再次验证任务回执中的边，并把本批已交付边临时纳入coverage检查。因此3A/3B/3C处理者无需提前修改registry，3D集成人才把已接受边加入canonical表。
 
-## 命令和三层投影
+## 分层与收尾
+
+3A处理同一对象族，3B处理同一存档的跨批关系，3C只处理有明确模型映射和条件保真的跨档关系，3D由一位集成人生成`map/coverage.json`、`map/integration.json`和派生`graph-v2.json`。没有关系的对象可以保持`isolated-after-review`，不为增加连通性硬造边；`needs-decision`不能进入最终闭合。
+
+边、coverage和回执先推送，再`done`。最终运行：
 
 ```sh
-python3 work.py curate scan
-python3 work.py curate freeze --manifest-out research/curation/manifest.json
-python3 work.py curate check
-python3 work.py curate check --final
-python3 work.py map check --structural
-python3 work.py map check
-python3 work.py map fingerprints archives/真实档/map/edges/真实关系.md
-python3 work.py map impact 实际变化的对象ID
-python3 work.py map build --draft
-python3 work.py map build
+python work.py research check --final
+python work.py research build --final
 ```
 
-`freeze` 建立原文基线和全pending骨架，不裁定数学。`--structural` 仅诊断当前正式候选格式，排除历史证据副本；默认 `map check` 检查准入对象与关系。`fingerprints` 只计算版本值，不能替代关系审读或把status升为accepted。`impact` 生成待复核范围，不宣布所有后继命题为假，替代证明可能仍成立。
-
-草图只呈现已准入区域，状态为 `draft-curated-partial`。正式生成同时要求来源阶段完成、2.5全量准确处置和关系检查通过。子存档、父存档、全仓共享对象和关系身份，跨边界保留联合前提；证据/工作区里的历史map不生成投影。
-
-既有 `graph.json` 仍是阶段一身份种子，不表示已执行本轮2.5或已建正式超图。只复用上游NodeRecord/HyperEdgeRecord/GraphSnapshot容器与Markdown格式，[上游记录](../tools/vendor/UPSTREAM.md)没有声称部署其验证或Agent运行时。
+最终图只表示已比较的范围。研究Main使用`research search/show/context`按需读取正文和完整超边；图中没有某条路线不代表数学上不可能。

@@ -8,4 +8,4 @@
 - [当前操作说明](research/CURATION_OPERATIONS.md)、[工作规则](AGENTS.md)与[数学对象命名规则](cleanup/OBJECTS.md)。
 - [数学正文](archives/README.md)与必要复现证据 `tools/evidence/`。无用日志、旧交付件和重复副本直接删除，不另存历史目录。
 
-其它阶段有独立入口，按用户指定启动：[原第二阶段来源清洗](cleanup/README.md)、[2.5第三步与第三阶段](research/PHASE3_READINESS.md)、[后续研究流程](research/RESEARCH_WORKFLOW.md)、[程序接口](research/IMPLEMENTATION.md)及[GitHub资源](research/GITHUB_RESOURCES.md)。原始来源的冻结版本见 `cleanup/sources.json`；原来源done与数学质量验收分别判断。
+当前下一步是[2.5第三步与第三阶段](research/PHASE3_READINESS.md)：先冻结第二步出口并完成对象登记，再按3A/3B/3C/3D建立可读取超边。原第二阶段来源清洗仍见[cleanup/README.md](cleanup/README.md)；后续研究流程、程序接口和GitHub资源见[RESEARCH_WORKFLOW](research/RESEARCH_WORKFLOW.md)、[IMPLEMENTATION](research/IMPLEMENTATION.md)和[GITHUB_RESOURCES](research/GITHUB_RESOURCES.md)。原始来源的冻结版本见`cleanup/sources.json`；原来源done与数学质量验收分别判断。

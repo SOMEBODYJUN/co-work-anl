@@ -57,7 +57,7 @@ cleanup/CHECKLIST.md及checklists/分册会自动从逐源记录生成勾选。i
 
 新curator clone显式`start --curation-run 已发布run`，身份与工作区进入顶层curation运行域；显式`--board-branch wcg/board-curation-25`选择临时公屏，save沿用repository-cleanup兼容程序。第一步是单Boss内部六lane，不需要逐材料远端claim或公屏打卡。第二步多Boss按对象群认领，检查重叠写入、输入和产物SHA，正常push并读回确认。
 
-详见[程序契约](../research/PHASE25_PROGRAM.md)与[实际命令/工作区/交接](../research/CURATION_OPERATIONS.md)。原`clean`只管冻结来源，`curate`及`maps.py`仍为[上一版准入与图原型](../research/CURATION_PROTOTYPE_V1.md)，不能冒充新材料定性或最终超边设计。第三步、第三阶段与研究Agent继续由后续设计负责。
+详见[程序契约](../research/PHASE25_PROGRAM.md)与[实际命令/工作区/交接](../research/CURATION_OPERATIONS.md)。原`clean`只管冻结来源，`curate`及`maps.py`仍为[上一版准入与图原型](../research/CURATION_PROTOTYPE_V1.md)，不能冒充新材料定性或最终超边设计。2.5第三步使用 `work.py research freeze/new-id/compose/register/registration-check`；第三阶段使用 `work.py map plan/claim/done/handoff/status`。新研究Agent从当前 registry 的 JSON 超边按需读取，不从旧 graph.json 或旧 Markdown 原型恢复。
 
 ## 固定身份、认证与重置
 
