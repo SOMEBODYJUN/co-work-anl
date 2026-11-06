@@ -1,0 +1,77 @@
+{
+  "definition": {
+    "task_id": "register-ab98f323ad-0087",
+    "stage": "registration",
+    "baseline": {
+      "path": "research/registration/baseline.json",
+      "sha256": "5d5737ab6d07552b48925bdb936dae70490e8de1ee0da2b380bb2d16dd5690cf"
+    },
+    "materials": [
+      {
+        "path": "archives/facility-games/state/审查/工具章节与稀疏目录来源接续审查--审查.md",
+        "sha256": "82470d30b7beae2aa5307678acf4ffff26ed928bb153a67a638c934ade7135ae"
+      }
+    ],
+    "goal": "批量登记本批已整理数学材料；实读精确对象、稳定身份、正文与必要证据。保留各自模型和量词，不逐源重新清洗，不在本步建超边。",
+    "write_paths": [
+      "research/registration/batches/register-ab98f323ad-0087.json",
+      "research/registration/receipts/register-ab98f323ad-0087.json"
+    ],
+    "context_plan": {
+      "budget": {
+        "context_tokens": 500000,
+        "window_source": "official-default",
+        "model": "gpt-6.1-sol",
+        "used_tokens": null,
+        "history_mode": "fresh-worker",
+        "reserve_tokens": 200000,
+        "reading_tokens": 300000,
+        "output_tokens": 100000,
+        "runtime_remaining_tokens": null,
+        "declared_remaining_before_reserve_tokens": null,
+        "assumptions": [
+          "Window source is declared, not discovered from this conversation.",
+          "Reading budget includes source text and object/task metadata.",
+          "Reserved context includes expected generated records and later reasoning/tool growth.",
+          "Fresh worker assumed; actual system/prefix usage is unknown and covered only by the engineering reserve."
+        ],
+        "budget_is_runtime_measurement": false
+      },
+      "reading": {
+        "chars": 7302,
+        "utf8_bytes": 14770,
+        "source_tokens": 11382,
+        "metadata_tokens": 102,
+        "estimated_tokens": 11516,
+        "metadata_chars": 107,
+        "metadata_utf8_bytes": 145,
+        "distinct_files": 1,
+        "reading_segments": 1,
+        "token_count_is_estimate": true,
+        "estimators": [
+          "conservative-math-text-estimate-v1; not a tokenizer count"
+        ],
+        "unmeasured_refs": [],
+        "measurement_scope": "Requested complete text spans plus supplied metadata; binary evidence is not token-counted from raw bytes.",
+        "task_overhead_tokens": 32
+      },
+      "estimated_output_tokens": 1311,
+      "output_estimate": "Scheduling estimate from source length, not an inferred Claim count; adjust if actual independent objects need more space.",
+      "material_count": 1,
+      "scopes": [
+        "archives/facility-games"
+      ],
+      "shared_read_refs": [],
+      "reading_mode": "planned-window",
+      "oversized": false,
+      "unmeasured_materials": [],
+      "instruction": "Read the assigned materials in useful batches. Shared definitions are read-only and counted once. If a unit exceeds the window, continue it in sections with saved mathematical notes; do not truncate it or mark it read from a summary."
+    }
+  },
+  "state": "available",
+  "owner": null,
+  "request_id": "d7a9d313c9de4daeb07cfecea1b638c2",
+  "requests": {
+    "d7a9d313c9de4daeb07cfecea1b638c2": "plan"
+  }
+}
