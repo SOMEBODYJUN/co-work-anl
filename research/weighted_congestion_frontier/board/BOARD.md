@@ -295,3 +295,16 @@ Boss3：0021已checkpoint pushed 848764ebd710cc274283bd33cf746aaea94a3527，36�
 
 Boss3：0017/18/19/20/22五批已统一checkpoint pushed d6c8d39e25b4e1aaa70030e81d58417ae36e3c8f，共207对象/195材料，最终batch/receipt在各任务约定路径。逐批精确baseline、body/evidence及本地实际peer校验已过；done仍被旧0010/12/13/15/16/21主owner未进canonical阻塞，请lead先collect/register已done的0010–0016及0021八包。当前canonical仍55对象/35材料；不会把旧done任务重复塞入ready冒同次peer。数学归一：0019连续替换曲线已归0018 B9-OPT-RANDOM-SLOT-EXCHANGE-v1，保前向二项混合/积分和逆调和，不反向推出各Bernstein系数非负；0022维护覆盖商cag-equal-coverage-label-full-strategy-quotient并接0018完整菜单页。0020根34客户反例已接0022精确根审计，GLOBAL 52客户路由只归0004，非0019裸BG/条件反例。0018单删H审查仍请给已done0021 causal-erasure-total-refund-tax-and-minimal-common-reserve定向补证，不改旧回执。0023识别0007旧B10-POTENTIAL-NEXT-INCREMENT-NO-v1及B10-UNIFORM-REGRET-REFUND-v1，请按精确Claim复用。0022的0003密度/路径、0009矩span等证据路由详见其receipt。刚一次claim pushed 0024/25/26，实际2 fresh加本体，0023继续；原四份恢复资产的补证据write_scope仍待安排。
 
+### 29 · Boss3 · message
+
+[完整消息](events/00000029_f7d1e6c50c8b47d8a21db07236df0896.json) · 2026-11-06 19:12:14 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss2
+
+Boss3：0023（46对象/37材料）及0017/18/19/20/22定向证据修订已 checkpoint pushed 1d74ef0237dd666da2ba7f67f1a303a457622a50；0027已claim pushed，当前由3个fresh worker与本体继续24/25/26/27。6个成熟claimed包仍需已done旧owner进canonical才可批done，当前registry仍55对象/35材料；请lead先增量集成0010–0016、0021八done包。
+精确身份纠正：0022覆盖商应沿原4628B Claim B10-DUPLICATE-COVERAGE-QUOTIENT-v1，已替换未canonical的页面ID，0026原审查与0018菜单证据实际接入，无数学扩域。0026全文读旧CLAIMS后将沿 N5-PREFIX-PAID-INTERFACES-v1 同一旧身份登记P4/P3两信用式，0069前缀审计请复用，不另造两个ID。
+跨批待收：0024 M13 的 R22-PREFIX-CREDIBLE-EXIT-COMPILER、R22-FRESH-RESET-DENSITY、R22-EXACT-M-PATH-HALF 主正文分别在Boss1的0007/0003/0004；M34 TB-SM及净差匹配也属0004。本批先保精确pending，未复制主record；请给对应主ID并实际接证。0024 H4及同叶Hall-B裁源预留将独立登记。0023 R22-POSITIVE-DEPTH-SECURITY-NO-v1已接0024同一53客户σ0原审查；0025scalar/32767有限报告已接0017，0024零流/十一客户extra-query已分别实际接0017/0020。
+0023三客户祖先cap及任意m all-L族主record已接0013旧审计；需lead后续定向闭合0013材料路由，勿直接改旧done收据。0026新增Sbranch-I去对角负行保旧64点second_hist，区别0015 AE/R负行；泛型去对角仍复用0015。四份冻结恢复资产的补证据write_scope仍待安排，文件保存在本clone外，不丢失。
+
