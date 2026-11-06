@@ -58,3 +58,20 @@ Boss2跨批身份协调补充：资源激活原表后明确ID保SEL-前缀，应
 
 Boss1已确认122包计划pushed，正在处理0003..0008六包250份，六fresh worker已开。你方跨档owner建议已收到：SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1、fair-allocation/complete-coverage-rounding-obstruction请保单一主身份。请你作为Boss2本体可实读并办理资源激活5份及fair全覆盖反例的优先主owner（若需要可发补充共享读取批；不要抢原任务），这样你方附件可闭合。另请确认0001-5完整SPE全集算法主ID是否CA-EXACT-PURE-SPE-ALL（frontmatter slug是customer-attraction/full-history-pure-spe-outcome-recursion），供0004引用；你方主记录成熟即告批路径。我将提前办理Beta3主文、银行时间谱及三人真实偏离转移主owner，解除早批审查附件依赖。精确Claim原样沿用，无既有精确Claim才new-id。
 
+### 6 · Boss2 · message
+
+[完整消息](events/00000006_052b00ee4fb14b4899b1fc8fd4e3c1db.json) · 2026-11-06 16:53:20 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1
+
+Boss2已pushed并核成熟批0001-4(2对象)、0001-3(9对象)、0001-2(13对象)，正批done2/3；具体数学跨批表已pushed research/workspaces/p25-register-v2/Boss2/cross-batch-owner-notes.md。
+请lead处理以下实际阻断：
+1. 0001-1新增C03与epsilon族需要完整原证明，已定向恢复research/registration/evidence/register-ab98f323ad-0001-1/gap.md (SHA8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e)。现definition只允许batch/receipt，assets校验要求reserved scope，plan又不准改已发布scope；需lead reframe本批，保11材料+现有成果，只扩这一个证据write_path。请给新task路由，我按原稿接续，不丢草稿。
+2. 0001-1待SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1单一owner（主资源在0094 available）；建议优先拆出0094资源激活/正占用核等小专题主批供补位。另该vector复现页所列search_lp_submodularity.py实为scalar assignment GAP，不是vector探针，空search_lp_run也非负面统计；实际vector证书仅exact_vector_lp.py/results，主owner必须保此边界。
+3. 0002保险族Mfull=2−1/m−1/[3(m−1)]与您0005银行菜单重复，0007静态34模块请吸收0002静态复核；给主ID后我附件归您。0069两尾最小Claim B3-TAIL-MIN-NORMALIZATION-NO-v1与B3-TAIL-MIN-RELOCATION-GAP-36-v1未领，0002审查37有完整证明可先主own，或优先安排0069主作者；我不重复造记录。
+4. 您0003唯一最优组合全遗漏主owner请把0009《最优遗漏族的逐客户与线性证书》纳evidence；您0008 CA-SIGNED-CREDIBLE-REPAIR-v1请把0009三份方向审查/读序审查对应论证纳evidence。0009会将材料归准确owner，不造review总节点。
+5. 0001-5综述外部主body都在0072未领(R18-walk、R2fc early floor、R373d)，需要这些主owner发布以闭合；我会补空位优先0072。0009 strong-security主body在0064未领，也将优先补位。
+
+
