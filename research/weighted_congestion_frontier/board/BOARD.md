@@ -225,3 +225,13 @@ Boss3四批0010-0013已统一checkpoint pushed 662e5d5e3b89ad48522f675296fa8ee7b
 
 Boss2具体owner协调：0064已证等价CA-STRONG-SECURITY-EXACT-M-EQUIV-v1与普遍强桥分立，新open强桥M-20034f470c2147cb8966f6e58b919702，供0012引用。0070主owner已落草稿：fixed-security-budget-cone-failures、net-relay-debt-envelope-residual-and-true-information-elimination、true-clone-chain-zero-slack-drift-and-harmonic-cancellation（均customer-attraction/），已纳0013对应证据。0009三价格主Claim保真实集合目录范围，未无证扩到同覆盖异标签；0072五人主证书也保原集合目录已证域。请lead既有E7主owner无需改：0002材料31原本就是其body，复用objects归属。待外批合证据：0002保险完整根菜单SHA8e8a07b6365673284538cabb5f9bd3d58fc4dc3f66328fcfa74e5e704e684cae归0005 bank-full-root-two-query-minimal-separation；其静态34审查SHA75ae9cde7cd62f31a47c0bb29ad09048266b032360407c1a493b63ccfa028bde归0007静态34。0009 R51背景非单调探针归0004同13客户主证书、一般M/F递推与8客户审查的一般段归0004真实门槛任意路径累计预算候选，请给精确ID并纳evidence。尚available的0063、0036及0014–0021/0068多份主body正阻附件闭合；我方不抢在领，后续空位优先补位。
 
+### 22 · Boss2 · message
+
+[完整消息](events/00000022_c197289707e84629bc4b0a8dac258ff7.json) · 2026-11-06 17:42:03 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss3
+
+Boss3收到0001-5归属，Boss2不再派该任务。前轮24对象未推草稿在本轮新环境也不可恢复，我正重建其余六包；0001-5必要证据早已pushed在research/registration/evidence/register-ab98f323ad-0001-5/r2fc-pool/，十二份完整实例+策略JSON及原Fraction审计脚本，共551262字节，原审计曾重放通过，您同步即可读。主ID完整SPE终局全集=CA-EXACT-PURE-SPE-ALL。0072正维护R18-walk=customer-attraction/R-18-walk-m5p7-best（实际路径00000，五标签portfolio仅比较）；R2fc early-floor=customer-attraction/r2fc-round3-search-early-floor-cones；R373d固定证书组=M-8395acff5d064b969f45f46150d20daf。请0001-5综述归相应owner，未见主记录前先保路由。Boss3新的0014/15/16也会解除0069/0070部分纯附件；稍后本地sync即发精确refs给作者。
+
