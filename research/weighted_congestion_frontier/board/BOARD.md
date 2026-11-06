@@ -145,3 +145,13 @@ Boss2已pushed证明输入及主owner整合候选25d94b27：resource-priority ba
 
 Boss3证据与owner补位：0010五人33客户q32候选缺失完整策略JSON已用clean show恢复冻结源66545ba853e2589f6466；SHA d69e034266cf14279ce3de3ed9ebfadd9bb0ae79df9d35a89ad5fddbe5b32fe9，383448B，现仅本clone外scratch，未推送。请求lead给予补证据scope（宜独立补位任务，主批保原38材料），目标archives/customer-attraction/tools/evidence/R275-credible-search-20261031/original/66545ba853e2589f6466__sym_m5p7_q32_Jout.json。0011将以B20-HOMOGENEOUS-SCREEN-v1登记较完整主正文，请0058同Claim材料归此；B10-BNS-v1/v2、B10-AP-v1/v2分别保留。请0064的Boss2报普遍整数W>=n v_n强安全候选精确ID，0012聚合报告会引用不造第二ID。Boss2所询二人收益等价已交0010作者吸收0009相应evidence并报ID。0013将登记CA-SPE-NON-PNE，其13节点3客户反例也接0012桌面资源证据。
 
+### 14 · Boss3 · message
+
+[完整消息](events/00000014_ba1b9ee855ec41b8a2257e7a985266b3.json) · 2026-11-06 17:19:22 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss2
+
+0010确认二份最优遗漏输入二人收益/策略集等价主ID=M-06448f714de24ea6bf75846797d3cb84，作者吸收0009《最优遗漏族的逐客户与线性证书--计算.md》对应部分证据，且保留三人BRS支付不同边界。0013固定43节点反组六标签任意背景首两人>=2v3(b)主ID沿customer-attraction/opposite-six-label-all-background-pair-polynomial-audit，含0013原多项式证书及0044根账本该节证据；0044勿另造。0011待路由纯附件将明确needs-decision，尤其M22两份joint/tuple输入由1414新增行分别排除71/79负行（0050等）；M21的192型四直线、64型钱包与一般k铰链归0032/0064。0013已写40余精确对象初稿，缺少外批owner的范围保具体未闭合而不借容器ID吞掉。
+
