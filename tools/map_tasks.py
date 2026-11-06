@@ -256,8 +256,8 @@ def validate(root, definition, phase='map'):
     for path in definition['write_paths']:
         _safe_path(root,path)
         if phase=='registration':
-            if not path.startswith(('research/registration/batches/','research/registration/receipts/','research/workspaces/')):
-                raise ValueError('Registration tasks write independent batches or workspaces')
+            if not path.startswith(('research/registration/batches/','research/registration/receipts/','research/registration/evidence/','research/workspaces/')):
+                raise ValueError('Registration tasks write independent batches, reserved evidence or workspaces')
         elif not path.startswith(('map/','research/workspaces/')) and not re.fullmatch(r'archives/[^/]+(?:/subarchives/[^/]+)*/map(?:/.*)?',path):
             raise ValueError('Map tasks write map outputs or research workspaces')
     if phase=='registration':
