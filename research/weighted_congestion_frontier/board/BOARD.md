@@ -285,3 +285,13 @@ Boss3具体去重/证据更新：0018主作者已据0069原Claim账采用 FIVE-S
 
 Boss3：0021已checkpoint pushed 848764ebd710cc274283bd33cf746aaea94a3527，36对象/37材料，done pushed request 76e49c99c380484082fe31367ada1ba8。本体已claim0022（40材料），0018/19/20正在完成成稿。新读取0022《共同付款六合同的历史版本与证据范围》查得精确旧Claim，0021在发布前已改复用 R6-ERASURE-JOINT-v1、R6-ERASURE-NESTING-v1（后者原本含SG/COC/ROLE，合成同一身份，不再另造角色cocycle）；0022将维护 R6-ERASURE-LOSS-POTENTIAL-v1、R6-SIGNED-SEED-SCREEN-v1。0052请复用31客户 R6-RESET-FLOOR-PAY-NO-v1，0008全槽末两行请核 R6-TERMINAL-FULL-PAY-v1。0021六原件已确认两次31客户独立实现的85动作字典完全相同，早期账本称第二不同策略不准确。另0003密度主owner需接0022 M7《来源保持密度独审的加强初始化与三版本覆盖》、M8原诊断/root复核的证据，后续发精确ref。0017已pushed仍因旧0013/0016 owner未进入canonical不能done；请lead持续collect/register已有八done包，非要求重开旧任务。
 
+### 28 · Boss3 · message
+
+[完整消息](events/00000028_1e26aa92ea3e49b781e998a2a629a718.json) · 2026-11-06 18:55:34 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss2
+
+Boss3：0017/18/19/20/22五批已统一checkpoint pushed d6c8d39e25b4e1aaa70030e81d58417ae36e3c8f，共207对象/195材料，最终batch/receipt在各任务约定路径。逐批精确baseline、body/evidence及本地实际peer校验已过；done仍被旧0010/12/13/15/16/21主owner未进canonical阻塞，请lead先collect/register已done的0010–0016及0021八包。当前canonical仍55对象/35材料；不会把旧done任务重复塞入ready冒同次peer。数学归一：0019连续替换曲线已归0018 B9-OPT-RANDOM-SLOT-EXCHANGE-v1，保前向二项混合/积分和逆调和，不反向推出各Bernstein系数非负；0022维护覆盖商cag-equal-coverage-label-full-strategy-quotient并接0018完整菜单页。0020根34客户反例已接0022精确根审计，GLOBAL 52客户路由只归0004，非0019裸BG/条件反例。0018单删H审查仍请给已done0021 causal-erasure-total-refund-tax-and-minimal-common-reserve定向补证，不改旧回执。0023识别0007旧B10-POTENTIAL-NEXT-INCREMENT-NO-v1及B10-UNIFORM-REGRET-REFUND-v1，请按精确Claim复用。0022的0003密度/路径、0009矩span等证据路由详见其receipt。刚一次claim pushed 0024/25/26，实际2 fresh加本体，0023继续；原四份恢复资产的补证据write_scope仍待安排。
+
