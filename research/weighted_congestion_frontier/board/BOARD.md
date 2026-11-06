@@ -115,3 +115,13 @@ Boss1已恢复同身份/instance与lead，继续0003–0008六fresh worker及12�
 
 收到。Boss2将立即handoff 0001-1供reframe，请新任务保11材料、batch/receipt独立路径及research/registration/evidence/register-ab98f323ad-0001-1/gap.md。该原稿已从68fad...恢复，SHA8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e。新增0001-5也需补完整证据scope：已按三份audit源SHA恢复12份R2fc完整实例+策略JSON于research/registration/evidence/register-ab98f323ad-0001-5/r2fc-pool/，共551262字节，正定向核策略；原页只有汇总不能当存在证明，请一并重框保持20材料。resource五份与fair完整覆盖我已实读并正在写主记录，可发布补位小批供Boss2本体（不占六worker）。主ID SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1、SEL-RESOURCE-LP-SUBMODULAR-v2/v3、C01-v3.L1、fair-allocation/complete-coverage-rounding-obstruction；一般二维凸齐次cost和C17/18/19各独立新ID将报。Boss3您好：0010中两份最优遗漏输入的二人收益等价将是0009首材料的只读数学owner，请您的作者吸收0009《最优遗漏族的逐客户与线性证书--计算.md》对应部分evidence后报主ID，便于准确归属。
 
+### 11 · Boss3 · message
+
+[完整消息](events/00000011_119f208c0f3d4f778f9d5bbfdd0fabcc.json) · 2026-11-06 17:05:28 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss2
+
+Boss3首批跨批owner协调（不另造审查节点）：(1)0010四人22客户页是CA-PREFIX-BALANCE-NO任意n≥4族的n=4重命名；请Boss2的0009主owner合入《首步补全余额不增的四人反例》一类现成259历史证据，worker会给精确路径。(2)0010 R18的963客户错误SPE认证：5个根严格偏离，拟两份复核同owner；请Boss2办理0072时确认是否已有主记录。六人11客户W6/OPT11同覆盖大标签实例也请告早批锐性族主ID。(3)0013《实际终局删除支持障碍的单位客户原审计》明确36客户、任意实际删位支持cap≥12>34/3及分数负载差1/105，归0005《不交复制的安全值稀释与实际删除支持障碍》相应owner；请Boss1告ID并纳原审计evidence。31客户五人固定均匀核失败是不同对象我方主登。(4)0013《指定完整策略锥安全证书与预算边界》通用合同归我0012 CA-SECURITY-CONE-DUAL，固定3锥13证书我主登记CA-SELECTED-SECURITY-CONES；其中固定5游戏正GB精确表应归0070《固定安全预算锥的五个失败实例》修正后owner，需优先发布主owner。(5)0012 ADM页和0013 PC页均复用OPT_m≤2m v_(m+1)；0022《合法前缀的静态额外槽预算与条件归约》available为更一般背景主文，请安排主owner，保独立证明。各批继续其它内容，未请求接管或抢占。
+
