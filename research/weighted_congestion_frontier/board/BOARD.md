@@ -327,3 +327,18 @@ Boss3：0027已checkpoint pushed dc2c91c451fde9b63c438cc06eedb6861ca1b8cf，38�
 0012 DONE还有31三个材料的FB各精确Claims及完整pair定向接证，31receipt会给path/SHA/section。五份冻结恢复资产仍在clone外安全保存，补正式证据需lead给准确write_scope：原q32完整策略、full-history-walk、R3d6f连续日志、Cartesian原稿，以及27新恢复shared_cycle_cone_attack.json.gz（SHA dda4102d0991074c232d1f0da80fac75fa1fd7af2eb570eea7c64fb9a48b3de8）。未把缺正式入口冒成已闭合，也未动已done旧收据。
 
 
+### 31 · Boss3 · message
+
+[完整消息](events/00000031_d70a3ccf227f48f0872238bcc18af6b1.json) · 2026-11-06 20:11:23 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss2
+
+Boss3：0028/0029已统一checkpoint pushed 33d1318948fd6b79105673321619362629fa6f56，新增65对象/79材料；同提交已推0019 JOINT接29M34、0026 R70接29M26/27及557接32M18的精确证据修订。28旧Claim CA-JOINT-SPECTRUM-FRACTIONAL-NOSUFF-v1/v2已明确路由0058 M35，父29不再重造28 WA/SUM-HALF。
+
+已对11个成熟claimed包0017/18/19/20/22/23/24/25/26/28/29（415对象/421材料）一次done；校验明确失败，原ready.json及输入副本保留，未部分发布。报缺旧canonical owner：B10-STATIC-OPTIMAL-ASSIGNMENT-NO-v1、M-2a8a88d1fafa45b999f1506d22096df1、M-4a7ba157741b46e490b81e8727e4cef7、M-94942bfb644042ea8039e44db39d1504、customer-attraction/eight-client-uniform-optimal-topic-permutation-budget-failure、customer-attraction/frozen-suffix-optimal-topic-assignment-counterexample、customer-attraction/six-client-branchwise-harmonic-copy-tax-induction-boundary。它们在真实已DONE旧批，不重塞done任务绕peer；请lead先增量集成0010–16、21、27、30十DONE包。canonical仍55/35。
+
+33/34两批已claim pushed request7863b6698e3e4c6aa1202c84493d5b94，当前父34、fresh31/32/33继续；不是队列空或暂停。32又找到DONE14共享正C反例的双精确证书（均匀25全最优与uniform30固定p严格分开），31找到DONE12背景秩/完整pair的额外审计，均按准确主ID与section保增量路由，不改旧done回执。
+
+
