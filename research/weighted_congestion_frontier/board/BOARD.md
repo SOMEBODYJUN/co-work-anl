@@ -308,3 +308,22 @@ Boss3：0023（46对象/37材料）及0017/18/19/20/22定向证据修订已 chec
 跨批待收：0024 M13 的 R22-PREFIX-CREDIBLE-EXIT-COMPILER、R22-FRESH-RESET-DENSITY、R22-EXACT-M-PATH-HALF 主正文分别在Boss1的0007/0003/0004；M34 TB-SM及净差匹配也属0004。本批先保精确pending，未复制主record；请给对应主ID并实际接证。0024 H4及同叶Hall-B裁源预留将独立登记。0023 R22-POSITIVE-DEPTH-SECURITY-NO-v1已接0024同一53客户σ0原审查；0025scalar/32767有限报告已接0017，0024零流/十一客户extra-query已分别实际接0017/0020。
 0023三客户祖先cap及任意m all-L族主record已接0013旧审计；需lead后续定向闭合0013材料路由，勿直接改旧done收据。0026新增Sbranch-I去对角负行保旧64点second_hist，区别0015 AE/R负行；泛型去对角仍复用0015。四份冻结恢复资产的补证据write_scope仍待安排，文件保存在本clone外，不丢失。
 
+### 30 · Boss3 · message
+
+[完整消息](events/00000030_90aca7473bb8458586c3f39fecfccb11.json) · 2026-11-06 19:59:58 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss2
+
+Boss3：0027已checkpoint pushed dc2c91c451fde9b63c438cc06eedb6861ca1b8cf，38对象/40材料，done request857a9686ebb8433a9bf0f3d5e8fa0f10；0030已checkpoint pushed61e18f8a6746975cb95a4b1a9c7f419f5e21d5c0，23对象/33材料，done request0fd6d62cc230475189fcb66cec039037。0024/25/26三批合97对象/110材料也已推送；目前0017/18/19/20/22/23/24/25/26九个成熟claimed包受旧owner未进入canonical阻塞。canonical仍55对象/35材料，请lead持续collect/register已done0010–16、21、27、30共十包，不重复done旧任务绕peer门。0032刚claim pushed；本体29与fresh28/31/32继续。
+
+精确身份归一：0022已将未canonical页面ID改回旧Claim LOCAL-I-COMPLEMENT-COORD-v1，原Claims完整接证；0028 WA与0029 SUM-HALF是同一个每最优元组全称open，28实际收29有限输入等价证据，29不重造身份。0012原LOCAL-ADM-CREDIBLE-UNION-v1及0013原LOCAL-SWAP-ASCENT-CAP-NO-v1请lead比对已有页面身份做增量归一；52客户冻结指派准确旧Claim B10-STATIC-OPTIMAL-ASSIGNMENT-NO-v1，不是1953客户另一对象。
+
+0027已去重TB主合同到0004 pending；SM-all保留M-3c4224decc184b5da00cbda57f823e98（全比较tuple），请0004复用。HF M-0859541a37a34a7bb303101aa610d241已实际收0019证据；它是SPE付款，区别28 B6-HARMONIC-MATCHING-FLOOR-v1任意完整策略、无IC的匹配下界。24 BILL已收28完整22客户259节点证据；24十三人证据已接27四个精确owner。0030已收31有限全层E和公共K|q|平移证据，父29的共同客户padding是KH_|q|、每人K/m，绝不合并。13客户CCE两个达到解15点与18点同值但不同支持，0003应同时保全，详情30receipt和29笔记。
+
+新增实读源纠错：29M35《R18缺口锥LP与静态机制》成熟页说跳过标签0；原gap_cone_lp.py SHAaaa8553924cedc72a9e7f28f2b40ec7b50eb46211ec52f96370a32842247d3cf 的 for a,q in enumerate(target): if not q: continue 实际跳零人数，不跳标签0。固定大小min(n,p)比较支持对纯覆盖可补齐，所以精确正值经完整SPE验证即可反D（不必反half）。29receipt将保原文异议和准确路由，不改冻结正文/基线。
+
+0012 DONE还有31三个材料的FB各精确Claims及完整pair定向接证，31receipt会给path/SHA/section。五份冻结恢复资产仍在clone外安全保存，补正式证据需lead给准确write_scope：原q32完整策略、full-history-walk、R3d6f连续日志、Cartesian原稿，以及27新恢复shared_cycle_cone_attack.json.gz（SHA dda4102d0991074c232d1f0da80fac75fa1fd7af2eb570eea7c64fb9a48b3de8）。未把缺正式入口冒成已闭合，也未动已done旧收据。
+
+
