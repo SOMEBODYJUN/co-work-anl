@@ -72,6 +72,74 @@ plan成功即发布，无需先给草稿做一次独立远端登记。每批sche
 
 truth_status为definition/proved/conditional/conjecture/open/refuted/finite/unassessed。精确有限反例存在性有完整证明可proved；扫描为finite。被否的辅助桥与原题独立。清楚的open义务正常登记，needs-decision只表示身份、来源或路由尚不清楚。完整知识留正文，statement用于定位，不把证明压成一行或为编号切碎原文。
 
+### 一份正文登记两个对象的完整格式
+
+数学全文继续留在Markdown；worker写`research/registration/batches/<task-id>.json`，lead集成到唯一`research/registry.json`。下面演示一份正文中有两个独立对象，假定原文已有“命题A与证明”“命题B与证明”两个唯一标题，各章包含对应完整陈述与证明。示例不是实际登记；ID、路径、标题、状态、来源和所有`<...>`必须换成实读值。`unassessed`仅演示状态字段，不能不作数学判断就照抄。
+
+```json
+{
+  "schema": 2,
+  "objects": [
+    {
+      "object_id": "EXAMPLE-A",
+      "version": 1,
+      "title": "<对象A准确名称>",
+      "kind": "<对象A实际数学类型>",
+      "truth_status": "unassessed",
+      "model": "<实际模型和定义域>",
+      "statement": "<对象A精确陈述>",
+      "quantifiers": "<对象A完整量词>",
+      "assumptions": ["<对象A实际前提>"],
+      "scope": "<对象A适用范围>",
+      "objections": "<实际异议、缺口或已核对范围>",
+      "body": {
+        "path": "<本批真实正文路径.md>",
+        "sha256": "<完整文件原始字节的实际64位SHA256>",
+        "section": "命题A与证明"
+      },
+      "evidence": [],
+      "sources": ["<实际可追溯来源标识>"]
+    },
+    {
+      "object_id": "EXAMPLE-B",
+      "version": 1,
+      "title": "<对象B准确名称>",
+      "kind": "<对象B实际数学类型>",
+      "truth_status": "unassessed",
+      "model": "<实际模型和定义域>",
+      "statement": "<对象B精确陈述>",
+      "quantifiers": "<对象B完整量词>",
+      "assumptions": ["<对象B实际前提>"],
+      "scope": "<对象B适用范围>",
+      "objections": "<实际异议、缺口或已核对范围>",
+      "body": {
+        "path": "<本批真实正文路径.md>",
+        "sha256": "<完整文件原始字节的实际64位SHA256>",
+        "section": "命题B与证明"
+      },
+      "evidence": [],
+      "sources": ["<实际可追溯来源标识>"]
+    }
+  ],
+  "materials": [
+    {
+      "path": "<本批真实正文路径.md>",
+      "sha256": "<完整文件原始字节的实际64位SHA256>",
+      "disposition": "objects",
+      "object_ids": ["EXAMPLE-A", "EXAMPLE-B"],
+      "reason": "<说明本文件怎样承载两个对象及实际读取比较范围>"
+    }
+  ],
+  "edge_files": []
+}
+```
+
+逐对象的`object_id`是数学身份，`version`是该对象记录版本；同一文件的两个对象使用同一个文件SHA256，不以hash合并身份。引用只支持`path`、`sha256`和可选`section`；`section`是原文精确且唯一的ATX标题文字，不是URL锚点、行号或任意文本片段，读取到下一个同级或更高级标题前。无合适唯一标题可省略该字段绑定全文，仍须以准确陈述辨别对象并如实交待定位疑点。正文改动会使全文SHA256变化，相关引用须按真实新字节及既有版本/冻结规则定向更新。
+
+上例只有在各`body`已完整承载对应论证且无另外必要证据时才可用空`evidence`。证明、必要定义、输入、程序或证书在其它章节/文件时，逐条加到`evidence`，每项仍是`path/sha256/section`引用；完整证明可以跨多个引用。`sources`是来源追溯字符串，不能代替字节定位。`materials`按文件版本反向列全数学owner：正文用`objects`，必要附件用`attachment`并归相应对象；一份附件可服务多个对象。代码、数值和日志不因此自动成为数学对象。
+
+实际识别命题、区分同义/独立内容、判断量词条件与状态并填写JSON的是Boss/worker。`tools/research_runtime.py`的`load/ref_bytes/section`和`tools/registration.py`的`validate_batch`会检查必填结构、ID/版本、SHA、标题存在且唯一，以及材料与owner的引用闭合；这些检查不替代上述数学判断。第三阶段按`object_id`引用超边端点，不把整篇文件当一个默认节点。
+
 lead持续collect已done批次，保全后sync再compose，不等全部人结束。registration-task collect --baseline <本轮已发布baseline路径>默认只给短摘要；加--full的JSON可直接作为compose manifest；也可用以下短manifest自动选本baseline已done批次：
 
 ```json
