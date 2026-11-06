@@ -11,7 +11,7 @@
 | 2.5第三步：登记数学对象 | [登记提示词](prompts/02.5-3-register.md) | curator；p25-register-v2；wcg/board-registration-v2 |
 | 第三阶段：从内到外建超边 | [构图提示词](prompts/03-map.md) | mapper；map-v2；wcg/board-map-v2 |
 | 后续实际研究 | [Main提示词](prompts/research-runtime.md) | 按明确研究问题建立运行，原Solver持续接续 |
-| 已有整理任务的必要修订 | [2.5第二步提示词](prompts/02.5-2-distill.txt) | 原curation-run及原工作区，不改绑 |
+| 已完成整理的必要追溯/修订 | [既有任务操作](research/CURATION_OPERATIONS.md) | 原curation-run及工作区，不重新启动旧阶段 |
 
 具体启动、任务、字段与阶段闭合见[阶段入口](research/PHASE3_READINESS.md)及[命令](research/IMPLEMENTATION.md)。维护程序或审查设计不自动启动全仓登记、构图或Solver，不替其他Boss认领数学任务。自由研究按现行Main词保留固定三个Solver槽位；登记和构图按实际可用并发持续补位。
 
@@ -19,9 +19,11 @@
 
 开始先检查本地目录、Git状态、remote及远端，保全已有成果再同步。结果分支rebuild/research-v2；新对话使用用户明确给出的唯一Boss编号和独立clone，不猜号、不借其他身份。继续同一对话沿用原clone、编号、草稿和未完任务。凭据仅在仓库外用于认证。
 
-先恢复本人未完任务，再claim-next。只对确认pushed的任务派工；范围对应实际执行，不占以后才做的大批工作。核心对象和写入范围互斥，共享只读依赖不锁公共定义。任务状态读最新远端；claimed不证明进程仍活着，静默不等于可抢。普通竞争自动重选，响应未知沿用原request_id核远端回执。公屏只传递真实成果、依赖和问题，不代替任务归属或制造逐动作打卡。
+先恢复本人未完任务，再按实际空位claim-next --count N批领阅读包；同一次done --record-file可批交已成熟包。一个任务含几十或上百份材料，不逐材料建立认领状态。只对确认pushed的任务派工；范围对应实际执行，不占以后才做的大批工作。核心对象和写入范围互斥，共享只读依赖不锁公共定义。任务状态读最新远端；claimed不证明进程仍活着，静默不等于可抢。普通竞争自动重选，响应未知沿用原request_id核远端回执。公屏只传递真实成果、依赖和问题，不代替任务归属或制造逐动作打卡。
 
-Boss与全部子代理都实读、理解并写出可用数学，不设置占主要并发的常驻汇报或审批者。按用户要求和实际可用并发启动；反馈交原worker接续，完成一批立即保存、推送、done并补位，Boss同时做实质工作与跨批整合。同clone的Git写入由Boss串行组织。持续到本范围准确处理完或真实运行硬边界，不以一次提交、一轮代理、暂时队列空或自设预算结束。
+登记用research batches-draft自动分包，构图用research map-draft按完整对象及去重证据分包。预算是上界，不固定页数，不机械凑满；2.5.3复用成熟正文，核精确身份、陈述量词、条件和证据owner，有疑点才深读，不重新清洗/重证全部旧成果。
+
+Boss与全部子代理都实读、理解并写出可用数学，不设置占主要并发的常驻汇报或审批者。按用户要求和实际可用并发启动；批内反馈交原worker接续，完成一包立即保存、推送、done，空位补新的fresh worker处理下一包，不把旧包全文带入后又按零占用预算，Boss同时做实质工作与跨批整合。同clone的Git写入由Boss串行组织。持续到本范围准确处理完或真实运行硬边界，不以一次提交、一轮代理、暂时队列空或自设预算结束。
 
 每个workflow只有一个CAS确认的lead负责发布任务和集成总表；lead也做数学。登记用registration-task，构图用map，不能把旧clean/curation认领混进来。暂停用当前阶段handoff保存草稿与下一步，lead另交接集成。认证失败保全local-only，不虚称pushed/done或后台继续。
 

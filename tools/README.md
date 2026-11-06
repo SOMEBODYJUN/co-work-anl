@@ -7,9 +7,9 @@
 | 入口 | 实际用途 |
 | --- | --- |
 | start / doctor / sync / checkpoint | 身份与真实写端点、同步、明确路径保存及pushed确认 |
-| registration-task | 登记批次的lead、plan、list、claim-next、done、handoff、collect |
+| registration-task | 登记批次的lead、plan、list、claim-next --count、done --record-file、handoff、collect |
 | map | 同引擎的构图任务，另有read-add及assemble集成 |
-| research | inputs/freeze/compose/register、对象/超边读取、packet、save/resume |
+| research | prepare-inputs/freeze、batches-draft/map-draft自动分包、compose/register、完整超边读取、packet/save/resume |
 | compute / github | 普通云端批处理请求、运行与结果取回；按需环境管理 |
 | read / inbox / send | 当前绑定公屏；消息不代替认领或完成回执 |
 | clean / triage / curation-task | 原来源及前两步任务，不混入新阶段 |
@@ -30,3 +30,5 @@ python work.py inbox
 旧map check/build与原型已移除；图检查和投影使用research check/build。curate只用于前置记录；旧来源命令见[cleanup](../cleanup/README.md)，原对象群命令见[CURATION_OPERATIONS](../research/CURATION_OPERATIONS.md)。
 
 已有research compute保留“执行本次计算并立即保存”的入口；它与通用云端compute request共用实际计算后端，输出、日志和检查点随本次结果保存，具体用法见云端说明。
+
+默认Sol窗口按官方500K声明，规划预留200K（包含生成记录/推导/工具空间），正文与元数据预算300K；字符数、token估计与实际窗口遥测分别标明。具体模型或已用上下文不同则按实报调整。一个包可含几十/百份，多个包可一次CAS领取和交付；不另造逐材料工单。

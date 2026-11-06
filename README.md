@@ -1,14 +1,15 @@
-# 数学材料与研究仓库
+# 数学研究仓库
 
-2.5第二步160群、原第二阶段10,921个来源版本均已准确处置，最后56条遗留已核完。完整数学在[存档](archives/README.md)，必要程序与证据在tools/evidence；开放数学问题仍保留准确缺口。
+新 Project 只需 **work.py、仓库外凭据、当前阶段的一份完整提示词**。程序会恢复仓库并自行读取内部模块和 worker 说明，不需要下载一组程序、Project 文档或历史版本。
 
-接下来分两步开展，**每步只需最新版work.py、仓库外凭据和一份完整提示词**：
+| 当前下载 | 用途 |
+| --- | --- |
+| [work.py](work.py) | 唯一程序入口，直接覆盖旧同名文件 |
+| [2.5.3 登记完整词](prompts/02.5-3-register.md) | 批量登记成熟数学对象、正文和证据入口 |
+| [第三阶段构图完整词](prompts/03-map.md) | 从内到外建立研究可直接使用的超边 |
 
-1. [2.5第三步：登记对象](prompts/02.5-3-register.md)，建立稳定数学身份及正文/证据入口。
-2. [第三阶段：从内到外建超边](prompts/03-map.md)，解释对象内部、同子档、同档跨批及真实跨档关系。
+2.5.3 先自动按材料关联、文本及输出预算分成阅读包，再批领、批交。单包可含几十份材料，短材料可达百份；Boss 一次可领取实际空位对应的多个包，不逐材料远端登记。构图按完整数学对象及必要证据分包，共享引用去重；不固定每包 3–5 篇，也不为填满上下文硬拼无关对象。
 
-[阶段安排](research/PHASE3_READINESS.md)固定任务、公屏和完成条件；[程序命令](research/IMPLEMENTATION.md)给出实际接口。两个阶段的正式登记和图尚未批量启动，设计准备不冒充完成。
+[阶段入口](research/PHASE3_READINESS.md)与[程序命令](research/IMPLEMENTATION.md)由执行者按需读取。后续研究按仓库内[Main 提示词](prompts/research-runtime.md)接续；当前 Project 不必额外上传。
 
-后续[研究Main](prompts/research-runtime.md)通过登记定位正文，读取完整联合支持与反驳范围，反馈原Solver持续推进。[研究流程](research/RESEARCH_WORKFLOW.md)和[云端计算](research/GITHUB_RESOURCES.md)说明实际用法；普通批量计算优先已有云端，Codespaces留给确有环境需求的工作。
-
-已有[分类目录](curation/catalogs/INDEX.md)、[已完成整理任务](curation/runs/20261103-boss6-current/TASKS.md)、[原来源账本](cleanup/README.md)用于查出处，不重新派工。协作按[AGENTS.md](AGENTS.md)执行。
+前两步160群及原第二阶段10,921个来源版本已经准确处置。完整数学在[存档](archives/README.md)，必要证据在tools/evidence；[分类目录](curation/catalogs/INDEX.md)和既有任务账本供追溯，不重新派工。失效提示词已经直接移除，不保留另一套历史下载入口。协作按[AGENTS.md](AGENTS.md)执行。

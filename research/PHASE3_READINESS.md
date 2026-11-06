@@ -15,7 +15,7 @@
 
 每个对话使用用户明确给出的唯一Boss编号及独立clone，继续原对话先恢复原身份和未完任务。各阶段任务、people和lead位于research/operations/<workflow-run>，工作区位于research/workspaces/<workflow-run>/<Boss>，不改绑旧curation/clean clone。公屏用于交流结果和依赖，认领/交付由当前远端队列确认。
 
-登记用registration-task，构图用map，二者共用协作引擎而保持运行域隔离。lead通过CAS取得唯一集成权，发布任务并参与数学；每个Boss带子代理做实际阅读、登记或建边。用满用户要求且实际可用并发，反馈交原worker，完成一批及时保存、推送、done和补位，lead持续整合，不等待整轮。本人未完优先，不预占将来批次。
+登记用registration-task，构图用map，二者共用协作引擎而保持运行域隔离。lead通过CAS取得唯一集成权，发布任务并参与数学；每个Boss带子代理做实际阅读、登记或建边。用满用户要求且实际可用并发，批内反馈交原worker，完成一包及时保存、推送、done，下一包补fresh worker，lead持续整合，不等待整轮。本人未完优先，不预占将来批次。
 
 持续到本范围准确处理完或真实工具硬边界；一次提交、一次检查、暂时队列空或自设时限不能替代完成。普通竞争自动重选，响应未知核原request_id；暂停handoff，lead另交接集成。claimed不证明进程仍活着，静默不自动转移所有权。具体命令与收据见[IMPLEMENTATION](IMPLEMENTATION.md)。
 
@@ -23,15 +23,9 @@
 
 lead先依据第二步真实已发布出口生成path/SHA清单，freeze固定baseline并推送，再发布独立登记批次。repository范围核真实Git材料分母，稀疏缺页须恢复，不能以可见文件数冒充全仓。局部工作明确partial及实际路径；必要附件显式列入。
 
-```sh
-python work.py research inputs --out research/registration/inputs.json --scope repository --coverage-note '第二步实际已发布出口与必要附件'
-python work.py research freeze --inputs-file research/registration/inputs.json
-python work.py registration-task lead show
-python work.py registration-task list --owner self
-python work.py registration-task claim-next
-```
+完整可复制启动顺序只保留在本阶段Boss词：先恢复/取得lead，发布inputs与baseline，再batches-draft、plan和批领。其它Boss恢复本人未完并领取已发布包；这里不再维护第二套启动脚本。
 
-worker实读精确陈述、模型、量词、假设、边界、证明与异议，直接写独立schema:2批次；一份文件里的不同Claim不吞并，多份正文的同一对象不重复造身份。批次和收据先checkpoint确认pushed，再done；lead用compose/register持续收拢唯一registry，不让多人覆盖总表。
+登记批次包含预算内几十/百份材料，可一次领交多个包，不逐材料远端认领。worker复用成熟正文，实读精确身份、陈述、模型、量词、假设、边界及来源owner，有疑点再深读承重证明；不重新清洗或重证全部旧成果。直接写独立schema:2批次；一份文件里的不同Claim不吞并，多份正文的同一对象不重复造身份。批次和收据先checkpoint确认pushed，再done；lead用compose/register持续收拢唯一registry，不让多人覆盖总表。
 
 完整定义、一般/条件结论、有效反例、构造、可复用方法、算法保证、猜想、具体障碍与开放义务都可登记。精确有限反例若有完整证明可proved，普通扫描为finite。明确open数学不是身份needs-decision；excluded只记登记去向，不执行删除。
 
@@ -40,6 +34,8 @@ worker实读精确陈述、模型、量词、假设、边界、证明与异议�
 ## 第三阶段：从内到外解释关系
 
 3A先对象内部承重链，再同子档对象族；3B同档跨批/跨子档；3C有明确线索的跨档映射；3D唯一lead集成三级投影。稳定已登记区域可先做明确partial比较，全仓完成以真实全仓登记为输入。
+
+初始3A用research map-draft生成候选预算包，再map plan；3B/3C只对明确新比较frontier生成计划，不无条件全仓两两枚举。正文+元数据默认按Sol官方500K窗口预留200K后规划300K，这是估计而非本会话容量实报；同页独立Claim及共享证据按实际完整区间计。
 
 任务object_ids是负责覆盖的核心，read_object_ids共享只读，input_pins覆盖两者，输出路径独立。增加已登记依赖用read-add，不锁共同定义或重派整批。对象/材料编号、文件名、相似度和来源done不能作推导依据。
 

@@ -20,6 +20,15 @@ from research_runtime import _write_json
 
 ACTIVE = {'claimed', 'blocked'}
 PHASES = {'registration': ('curator', 'p25-register-v2'), 'map': ('mapper', 'map-v2')}
+_TREES = {}
+_KNOWN_OBJECTS = {}
+
+
+def _local_objects(root,refresh=False):
+    key=str(Path(root).resolve())
+    if refresh or key not in _KNOWN_OBJECTS:
+        _KNOWN_OBJECTS[key]=set(board.git(root,'cat-file','--batch-all-objects','--batch-check=%(objectname)').stdout.decode().splitlines())
+    return _KNOWN_OBJECTS[key]
 
 
 class TaskBusy(ValueError):
@@ -46,14 +55,103 @@ def binding(root, phase='map', local=False):
             'home':'research/operations/' + PHASES[phase][1], 'config':{}, 'local':True}
 
 
+def _cache_for(root):
+    marker=Path(root)/'.git/workflow-cache'
+    return Path(marker.read_text().strip()) if marker.is_file() else None
+
+
+def _source_for(root):
+    marker=Path(root)/'.git/workflow-source'
+    return Path(marker.read_text().strip()) if marker.is_file() else None
+
+
+def _tree(root,revision='HEAD'):
+    resolved=board.git(root,'rev-parse',revision).stdout.decode().strip()
+    key=(str(Path(root).resolve()),resolved)
+    if key not in _TREES:
+        entries={}
+        for entry in board.git(root,'ls-tree','-r','-z',resolved).stdout.split(b'\0'):
+            if not entry:continue
+            metadata,name=entry.split(b'\t',1);mode,kind,oid=metadata.split()
+            if kind==b'blob':entries[name.decode()] = (oid.decode(),mode.decode())
+        _TREES[key]=entries
+    return _TREES[key]
+
+
+def _cache_objects(cache,oids,commit=False,source=None):
+    """Fetch needed objects together into the reusable cache, never per source."""
+    requested=list(dict.fromkeys(oids))
+    if not requested:return
+    with cache.with_suffix('.lock').open('a') as lock:
+        fcntl.flock(lock,fcntl.LOCK_EX)
+        # --batch-all-objects enumerates local packs/loose objects and does not
+        # ask the promisor for each missing blob as cat-file -e would do.
+        known_before=str(cache.resolve()) in _KNOWN_OBJECTS
+        present=_local_objects(cache)
+        missing=[oid for oid in requested if oid not in present]
+        if missing and known_before:
+            # Another reader may have warmed this shared cache since our first
+            # check. Refresh only on a miss, not once for every material/task.
+            present=_local_objects(cache,refresh=True);missing=[oid for oid in requested if oid not in present]
+        if missing and not commit and source is not None and source.is_dir():
+            available=_local_objects(source)
+            local=[oid for oid in missing if oid in available]
+            if local:
+                # Pack only explicitly named blobs, never commit ancestry and
+                # never an alternate to a shallow caller's object store.
+                packed=board.git(source,'pack-objects','--stdout',input_data=('\n'.join(local)+'\n').encode(),timeout=120)
+                board.git(cache,'index-pack','--stdin',input_data=packed.stdout,timeout=120)
+                copied=set(local);missing=[oid for oid in missing if oid not in copied]
+                present.update(copied)
+        if missing:
+            depth=['--depth=1'] if commit else []
+            # Explicit blob wants have no commit ancestry to negotiate. Keep
+            # them out of FETCH_HEAD and do not traverse them as commit tips.
+            board.git(cache,'-c','fetch.negotiationAlgorithm=noop','fetch','--quiet','--no-write-fetch-head','--no-tags',*depth,'--filter=blob:none','origin',*missing,timeout=120)
+            present.update(missing)
+
+
+def _prefetch(root,names):
+    """Materialize exact published files using one durable blob batch."""
+    cache=_cache_for(root)
+    if cache is None:return
+    missing=[name for name in dict.fromkeys(names) if not _safe_path(root,name).is_file()]
+    if not missing:return
+    tree=_tree(root)
+    for name in missing:
+        if name not in tree:raise ValueError('Required published input/asset is absent: '+name)
+        if tree[name][1] not in {'100644','100755'}:raise ValueError('Expected a regular published file: '+name)
+    oids=[tree[name][0] for name in missing];_cache_objects(cache,oids,source=_source_for(root))
+    result=board.git(cache,'cat-file','--batch',input_data=('\n'.join(oids)+'\n').encode())
+    offset=0
+    for name,oid in zip(missing,oids):
+        end=result.stdout.find(b'\n',offset);header=result.stdout[offset:end].split()
+        if end<0 or len(header)!=3 or header[0].decode()!=oid or header[1]!=b'blob':raise ValueError('Invalid published object batch: '+name)
+        size=int(header[2]);body=result.stdout[end+1:end+1+size]
+        if len(body)!=size:raise ValueError('Incomplete published object: '+name)
+        path=_safe_path(root,name);path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(body)
+        offset=end+size+2
+    if offset!=len(result.stdout):raise ValueError('Unexpected published object batch bytes')
+
+
 def _ensure(root, name):
-    """Materialize only a needed file in our disposable sparse snapshot."""
-    path=_safe_path(root,name)
-    if not path.is_file() and (Path(root)/'.git/workflow-snapshot').is_file():
-        fetched=board.git(root,'show','HEAD:'+name,check=False)
-        if not fetched.returncode:
-            path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(fetched.stdout)
-    return path
+    _prefetch(root,[name])
+    return _safe_path(root,name)
+
+
+def _material_versions(root,refs,baseline):
+    """Compare committed blob identities; reading each proof is worker work."""
+    commit=baseline.get('commit')
+    if not isinstance(commit,str) or not re.fullmatch(r'[0-9a-f]{40}|[0-9a-f]{64}',commit):
+        raise ValueError('Registration tasks require a committed frozen baseline')
+    cache=_cache_for(root)
+    if cache is not None:_cache_objects(cache,[commit],commit=True)
+    frozen=_tree(root,commit);current=_tree(root)
+    for ref in refs:
+        name=ref['path'];_safe_path(root,name)
+        before=frozen.get(name);after=current.get(name)
+        if before is None or after is None or before[0]!=after[0] or before[1] not in {'100644','100755'} or after[1] not in {'100644','100755'}:
+            raise ValueError('Registration material changed since the frozen input: '+name)
 
 
 def _ref_bytes(root,ref):
@@ -96,12 +194,16 @@ def _refresh(client):
 
 def _checkout(client,directory,ctx):
     cache,tip,shallow=_refresh(client);client.setup(directory)
+    metadata=[oid for name,(oid,_) in _tree(cache,tip).items() if name.startswith(ctx['home']+'/')]
+    _cache_objects(cache,metadata,source=client.repo)
     meta=Path(directory)/'.git';info=meta/'objects/info';info.mkdir(exist_ok=True);(info/'alternates').write_text(str(cache/'objects')+'\n')
     if shallow is not None:(meta/'shallow').write_bytes(shallow)
     board.git(directory,'config','remote.origin.promisor','true');board.git(directory,'config','remote.origin.partialclonefilter','blob:none')
     board.git(directory,'config','core.sparseCheckout','true')
     (meta/'info/sparse-checkout').write_text('/'+ctx['home']+'/\n')
     (meta/'workflow-snapshot').write_text('Disposable metadata-first workflow snapshot\n')
+    (meta/'workflow-cache').write_text(str(cache)+'\n')
+    (meta/'workflow-source').write_text(str(client.repo)+'\n')
     board.git(directory,'checkout','--quiet','--detach',tip)
 
 
@@ -166,11 +268,11 @@ def validate(root, definition, phase='map'):
         if not isinstance(refs,list) or not refs: raise ValueError('Explicit registration material refs required')
         seen=set()
         for ref in refs:
-            _ref_bytes(root,ref)
             if ref['path'] in seen: raise ValueError('Duplicate task material')
             seen.add(ref['path'])
             if ref['path'] not in frozen or ref['sha256']!=frozen[ref['path']]['sha256']:
                 raise ValueError('Task material is outside this frozen registration baseline')
+        _material_versions(root,refs,baseline)
     else:
         research.nonempty(definition,['registry'])
         _,objects=_load(root,definition['registry'],verify=False)
@@ -181,6 +283,7 @@ def validate(root, definition, phase='map'):
         if ids-objects.keys(): raise ValueError('Task has unknown objects')
         if definition.get('input_pins')!={oid:research.pin(objects[oid]) for oid in ids}:
             raise ValueError('Task input objects changed; hand off and plan a reframed task')
+        _prefetch(root,[ref['path'] for oid in ids for ref in [objects[oid]['body'],*objects[oid]['evidence']]])
         for oid in ids:
             _ref_bytes(root,objects[oid]['body'])
             for ref in objects[oid]['evidence']:_ref_bytes(root,ref)
@@ -213,9 +316,14 @@ def _task_keys(definition,phase):
     return set() if phase=='registration' else set(definition['object_ids'])
 
 
+def _material_count(rows):
+    return len({ref['path'] for row in rows for ref in row['definition'].get('materials',[])})
+
+
 def _asset_refs(root,definition,receipt):
     assets=receipt.get('assets')
     if not isinstance(assets,list) or not assets:raise ValueError('Already-pushed batch assets required')
+    _prefetch(root,[ref['path'] for ref in assets])
     canonical=None
     for ref in assets:
         name=ref['path']
@@ -229,7 +337,7 @@ def _asset_refs(root,definition,receipt):
 
 
 def batch_edges(root,definition,receipt,objects):
-    files=[]
+    files=[];evidence=[]
     for ref in receipt['assets']:
         if not ref['path'].endswith('.json'):continue
         try:row=json.loads(_ref_bytes(root,ref))
@@ -239,25 +347,78 @@ def batch_edges(root,definition,receipt,objects):
             permitted=set(definition['object_ids']+definition.get('read_object_ids',[]))
             if not ids<=permitted or not ids.intersection(definition['object_ids']):
                 raise ValueError('Batch edge endpoints require a core object and declared read dependencies')
-            for evidence in row.get('evidence',[]):_ref_bytes(root,evidence)
+            evidence.extend(row.get('evidence',[]))
             files.append(ref['path'])
+    _prefetch(root,[ref['path'] for ref in evidence])
+    for ref in evidence:_ref_bytes(root,ref)
     return research.edges(root,{'edge_files':files},objects),files
 
 
-def _registration_done(root,definition,receipt):
+def _existing_registration_objects(root):
+    path=_safe_path(root,research.REGISTRY)
+    if not path.is_file():
+        if _cache_for(root) is None or research.REGISTRY not in _tree(root):return {}
+        _prefetch(root,[research.REGISTRY])
+    return {obj['object_id']:obj for obj in json.loads(path.read_text()).get('objects',[])}
+
+
+def _registration_done(root,definition,receipt,peer_objects=None):
     ref=receipt.get('batch_file')
     if ref not in receipt['assets']:raise ValueError('batch_file must be an already-pushed reserved asset')
     record=json.loads(_ref_bytes(root,ref))
     own={obj['object_id']:obj for obj in record.get('objects',[])}
     external={oid for row in record.get('materials',[]) for oid in row.get('object_ids',[])}-own.keys()
     if external:
-        path=_ensure(root,research.REGISTRY)
-        existing=json.loads(path.read_text()) if path.exists() else {}
-        own.update({obj['object_id']:obj for obj in existing.get('objects',[]) if obj['object_id'] in external})
+        peers=peer_objects or {};known=_existing_registration_objects(root) if external-peers.keys() else {}
+        known.update(peers)
+        own.update({oid:known[oid] for oid in external if oid in known})
+    needed=[row['path'] for row in record.get('materials',[])]
+    needed.extend(ref['path'] for obj in own.values() for ref in [obj['body'],*obj.get('evidence',[])])
+    _prefetch(root,needed)
     for obj in own.values():
         _ref_bytes(root,obj['body'])
         for evidence in obj.get('evidence',[]):_ref_bytes(root,evidence)
-    registration.validate_batch(root,record,definition['materials'],definition['baseline'])
+    registration.validate_batch(root,record,definition['materials'],definition['baseline'],peer_objects=peer_objects)
+
+
+def _prefetch_done(root,deliveries,phase):
+    """Warm one completion set without creating per-material transactions."""
+    assets=[]
+    for _,receipt in deliveries:
+        if not isinstance(receipt,dict) or not isinstance(receipt.get('assets'),list) or not receipt['assets']:
+            raise ValueError('Every completed batch needs its published receipt assets')
+        assets.extend(receipt['assets'])
+    _prefetch(root,[ref['path'] for ref in assets])
+    needed=[]
+    if phase=='registration':
+        records=[];owners={}
+        for _,receipt in deliveries:
+            if receipt.get('batch_file') not in receipt['assets']:raise ValueError('Every batch_file must be a published asset')
+            record=json.loads(_ref_bytes(root,receipt['batch_file']));records.append(record)
+            for obj in record.get('objects',[]):
+                oid=obj['object_id']
+                if oid in owners and owners[oid]!=obj:raise ValueError('Conflicting mathematical owner across completion batches: '+oid)
+                owners[oid]=obj
+            needed.extend(row['path'] for row in record.get('materials',[]))
+        peer_objects=dict(owners)
+        external={oid for record in records for row in record.get('materials',[]) for oid in row.get('object_ids',[])}-owners.keys()
+        if external:
+            known=_existing_registration_objects(root)
+            owners.update({oid:known[oid] for oid in external if oid in known})
+        needed.extend(ref['path'] for obj in owners.values() for ref in [obj['body'],*obj.get('evidence',[])])
+    else:
+        for definition,receipt in deliveries:
+            _,objects=_load(root,definition['registry'],verify=False)
+            ids=definition['object_ids']+definition.get('read_object_ids',[])
+            needed.extend(ref['path'] for oid in ids if oid in objects for ref in [objects[oid]['body'],*objects[oid]['evidence']])
+            for ref in receipt['assets']:
+                if not ref['path'].endswith('.json'):continue
+                try:edge=json.loads(_ref_bytes(root,ref))
+                except (ValueError,UnicodeError):continue
+                if isinstance(edge,dict) and 'edge_id' in edge:
+                    needed.extend(r['path'] for r in edge.get('evidence',[]))
+    _prefetch(root,needed)
+    return peer_objects if phase=='registration' else None
 
 
 def superseded_ids(definition):
@@ -304,7 +465,7 @@ def _supersession(root,definition,receipt,rows,phase):
     return retired
 
 
-def transition(root,old,others,actor,operation,request_id,receipt=None,reason=None,phase='map'):
+def transition(root,old,others,actor,operation,request_id,receipt=None,reason=None,phase='map',peer_objects=None):
     new=copy.deepcopy(old);definition=old['definition']
     # Release works even after a legitimate proof/version change made old pins stale.
     if operation=='handoff':
@@ -331,7 +492,7 @@ def transition(root,old,others,actor,operation,request_id,receipt=None,reason=No
                 if any(r['state']=='done' and r['definition']['task_id']!=definition['task_id'] and target in superseded_ids(r['definition']) for r in others):
                     raise ValueError('An old batch already has a completed successor; supersede that current successor instead: '+target)
             _supersession(root,definition,receipt,others,phase)
-            if phase=='registration':_registration_done(root,definition,receipt)
+            if phase=='registration':_registration_done(root,definition,receipt,peer_objects)
             else:
                 if set(receipt.get('coverage',{}))!=set(definition['object_ids']):raise ValueError('Every core object needs coverage')
                 _,objects=_load(root,definition['registry'],verify=False)
@@ -359,10 +520,20 @@ def _verify_actor(caller,directory,ctx,actor,instance):
 
 def _plan(root,records,ctx,actor,instance,request_id):
     require_lead(root,ctx,actor,instance)
-    current=listing(root,ctx=ctx);known={r['definition']['task_id']:r['definition'] for r in current};new={}
+    current=listing(root,ctx=ctx);known_rows={r['definition']['task_id']:r for r in current}
+    known={tid:row['definition'] for tid,row in known_rows.items()};new={};existing=[];refreshed={};seen=set()
     for record in records:
         validate(root,record,ctx['phase']);task=record['task_id']
-        if task in known or task in new:raise ValueError('Duplicate/existing task; preserve ownership')
+        if task in seen:raise ValueError('Duplicate task in the same plan')
+        seen.add(task)
+        if task in known:
+            before={k:v for k,v in known[task].items() if k!='context_plan'}
+            after={k:v for k,v in record.items() if k!='context_plan'}
+            if before!=after:raise ValueError('Existing task has changed mathematical inputs or write scope; reframe it: '+task)
+            existing.append(task)
+            if known_rows[task]['state']!='done' and known[task].get('context_plan')!=record.get('context_plan'):
+                row=copy.deepcopy(known_rows[task]);row['definition']=record;refreshed[task]=row
+            continue
         new[task]=record
     combined={**known,**new}
     for record in new.values():
@@ -383,8 +554,12 @@ def _plan(root,records,ctx,actor,instance,request_id):
     for task,definition in new.items():
         row=_request({'definition':definition,'state':'available','owner':None},request_id,'plan')
         path=task_path(root,task,ctx=ctx);_write_json(path,row);paths.append(path)
-    lead=lead_record(root,ctx);_request(lead,request_id,'plan');_write_json(lead_path(root,ctx),lead);paths.append(lead_path(root,ctx))
-    return paths,{'tasks':sorted(new)}
+    for task,row in refreshed.items():
+        _request(row,request_id,'plan');path=task_path(root,task,ctx=ctx);_write_json(path,row);paths.append(path)
+    if paths:
+        lead=lead_record(root,ctx);_request(lead,request_id,'plan');_write_json(lead_path(root,ctx),lead);paths.append(lead_path(root,ctx))
+    return paths,{'tasks':sorted(new),'existing_tasks':sorted(existing),
+                 'existing_states':{tid:known_rows[tid]['state'] for tid in existing},'refreshed_context_plans':sorted(refreshed)}
 
 
 def _apply(root,ctx,actor,instance,intent,request_id):
@@ -392,8 +567,16 @@ def _apply(root,ctx,actor,instance,intent,request_id):
     lead=lead_record(root,ctx)
     acknowledged=[r for r in [lead,*rows] if request_id in r.get('requests',{})]
     if acknowledged:
-        recovered=[r['definition']['task_id'] for r in acknowledged if 'definition' in r]
-        return [],dict(recovered_acknowledgement=True,tasks=recovered,**({'task_id':recovered[0]} if len(recovered)==1 else {}))
+        recovered=[r for r in acknowledged if 'definition' in r]
+        if operation=='done-many':
+            requested={item['task_id']:item['receipt'] for item in intent.get('completions',[])}
+            recovered=[r for r in rows if r['definition']['task_id'] in requested and r.get('receipt')==requested[r['definition']['task_id']]]
+        result={'recovered_acknowledgement':True,'tasks':[r['definition']['task_id'] for r in recovered],
+                'task_records':recovered,'material_count':_material_count(recovered),
+                'currently_owned_tasks':[r['definition']['task_id'] for r in recovered if r.get('owner')==actor and r['state'] in ACTIVE]}
+        if len(recovered)==1:result.update(task_id=recovered[0]['definition']['task_id'],task=recovered[0])
+        if not recovered:result['lead']=lead
+        return [],result
     if operation=='lead-claim':
         if lead.get('owner') and (lead['owner']!=actor or lead.get('instance')!=instance):raise TaskBusy('Another conversation is the workflow lead')
         lead.update(owner=actor,instance=instance,state='claimed');_request(lead,request_id,operation);_write_json(lead_path(root,ctx),lead)
@@ -414,25 +597,62 @@ def _apply(root,ctx,actor,instance,intent,request_id):
             lead.setdefault('requests',{})[request_id]=operation;_write_json(lead_path(root,ctx),lead);paths.append(lead_path(root,ctx))
         return paths,{'tasks':[r['definition']['task_id'] for r in chosen]}
     if operation=='claim-next':
+        count=intent.get('count',1)
+        if type(count) is not int or count<1:raise ValueError('Claim count is the positive number of actual free batch slots')
         owned=[r['definition']['task_id'] for r in rows if r.get('owner')==actor and r['state'] in ACTIVE]
-        reframing=[]
+        reframing=[];claimed=[];paths=[];current=list(rows)
         # Existing work is visible but does not forbid taking a second batch for a free worker.
         choices=[r for r in rows if r['state'] in {'available','handoff'} and not r.get('owner') and r['definition']['task_id'].startswith(intent.get('prefix',''))]
         for old in choices:
             if old['definition'].get('stage')=='3D' and lead.get('owner')!=actor:continue
-            try:new=transition(root,old,rows,actor,'claim',request_id,phase=ctx['phase'])
+            try:new=transition(root,old,current,actor,'claim',request_id,phase=ctx['phase'])
             except TaskBusy:continue
             except (ValueError,OSError,KeyError,TypeError) as exc:
                 # Keep the stale row visible and unchanged; one old version
                 # must not prevent useful work on later current batches.
                 reframing.append({'task_id':old['definition']['task_id'],'error':str(exc)})
                 continue
-            path=task_path(root,old['definition']['task_id'],ctx=ctx);_write_json(path,new)
-            return [path],{'task_id':old['definition']['task_id'],'task':new,'owned_tasks':owned,'needs_reframing':reframing}
-        return [],{'status':'no-available-task','owned_tasks':owned,'needs_reframing':reframing,'instruction':'Resume owned work; the lead must explicitly reframe or withdraw listed stale tasks. An empty queue does not mean the phase is complete.'}
+            path=task_path(root,old['definition']['task_id'],ctx=ctx)
+            paths.append(path);claimed.append(new)
+            current=[new if r['definition']['task_id']==old['definition']['task_id'] else r for r in current]
+            if len(claimed)==count:break
+        if claimed:
+            # Publish the selected batch set atomically after all selections.
+            for path,new in zip(paths,claimed):_write_json(path,new)
+            result={'tasks':[r['definition']['task_id'] for r in claimed],'task_records':claimed,
+                    'claimed_batches':len(claimed),'requested_batches':count,'unfilled_slots':count-len(claimed),
+                    'material_count':_material_count(claimed),
+                    'owned_tasks':owned,'needs_reframing':reframing}
+            if len(claimed)==1:result.update(task_id=claimed[0]['definition']['task_id'],task=claimed[0])
+            return paths,result
+        return [],{'status':'no-available-task','tasks':[],'claimed_batches':0,'requested_batches':count,'unfilled_slots':count,
+                   'owned_tasks':owned,'needs_reframing':reframing,'instruction':'Resume owned work; the lead must explicitly reframe or withdraw listed stale tasks. An empty queue does not mean the phase is complete.'}
+    if operation=='done-many':
+        completions=intent.get('completions')
+        if not isinstance(completions,list) or not completions:raise ValueError('Explicit completed batch receipts required')
+        ids=[item['task_id'] for item in completions]
+        if len(ids)!=len(set(ids)):raise ValueError('Duplicate batch in one completion transaction')
+        known={r['definition']['task_id']:r for r in rows}
+        if set(ids)-known.keys():raise ValueError('Unknown completed batch in this workflow')
+        already={item['task_id'] for item in completions if known[item['task_id']]['state']=='done'
+                 and known[item['task_id']].get('owner')==actor and known[item['task_id']].get('receipt')==item['receipt']}
+        # Warm all actual delivery references together. Each transition below
+        # still validates exact bytes, ownership, baseline and mathematical refs.
+        deliveries=[(known[item['task_id']]['definition'],item['receipt']) for item in completions] if len(already)!=len(ids) else []
+        peers=_prefetch_done(root,deliveries,ctx['phase'])
+        updated=[transition(root,known[item['task_id']],rows,actor,'done',request_id,
+                            receipt=item['receipt'],phase=ctx['phase'],peer_objects=peers) for item in completions if item['task_id'] not in already]
+        paths=[]
+        for row in updated:
+            path=task_path(root,row['definition']['task_id'],ctx=ctx);_write_json(path,row);paths.append(path)
+        returned=updated+[known[tid] for tid in sorted(already)]
+        return paths,{'tasks':ids,'task_records':returned,'completed_batches':len(updated),'already_done_tasks':sorted(already),
+                      'material_count':_material_count(returned)}
     matches=[r for r in rows if r['definition']['task_id']==task_id]
     if not matches:raise ValueError('Unknown task in this workflow: '+str(task_id))
     old=matches[0]
+    if operation=='done' and old['state']=='done' and old.get('owner')==actor and old.get('receipt')==intent.get('receipt'):
+        return [],{'task_id':task_id,'task':old,'already_done':True,'completed_batches':0}
     if operation=='read-add':
         if ctx['phase']!='map':raise ValueError('Shared object reads apply to registered map objects')
         if old.get('owner')!=actor or old['state'] not in ACTIVE:raise ValueError('Only extend reads on your active task')
@@ -440,8 +660,13 @@ def _apply(root,ctx,actor,instance,intent,request_id):
         extra=intent.get('read_ids') or [];research.strings(extra,'read object IDs',True)
         new=copy.deepcopy(old);definition=new['definition'];_,objects=_load(root,definition['registry'],verify=False)
         if set(extra)-objects.keys():raise ValueError('Unknown read object IDs')
+        if set(extra)<=set(definition['object_ids']+definition.get('read_object_ids',[])):
+            return [],{'task_id':task_id,'task':old,'already_read':True}
+        old_reads=set(definition.get('read_object_ids',[]))
         definition['read_object_ids']=list(dict.fromkeys(definition.get('read_object_ids',[])+[oid for oid in extra if oid not in definition['object_ids']]))
         definition['input_pins']={oid:research.pin(objects[oid]) for oid in definition['object_ids']+definition['read_object_ids']}
+        if set(definition['read_object_ids'])!=old_reads and isinstance(definition.get('context_plan'),dict):
+            definition['context_plan']['budget_status']='reading-scope-expanded-reestimate'
         validate(root,definition,'map');_request(new,request_id,operation)
     elif operation=='reclaim':
         require_lead(root,ctx,actor,instance)
@@ -461,11 +686,15 @@ def _apply(root,ctx,actor,instance,intent,request_id):
     return [path],{'task_id':task_id,'task':new}
 
 
-def mutate(root,task_id,operation,receipt=None,reason=None,phase='map',records=None,prefix='',local=False,read_ids=None):
+def mutate(root,task_id,operation,receipt=None,reason=None,phase='map',records=None,prefix='',local=False,read_ids=None,count=1,completions=None):
     ctx=binding(root,phase,local);actor=coordination.config(root,'wcg.actor') or ('Boss1' if local else '')
     instance=coordination.config(root,'wcg.instance') or ('local-offline' if local else '')
     if not re.fullmatch(r'Boss[1-9][0-9]*',actor):raise ValueError('Explicit Boss identity required')
     intent={'operation':operation,'task_id':task_id,'receipt':receipt,'reason':reason,'records':records,'prefix':prefix,'read_ids':read_ids}
+    # Default one-batch operations retain their old intent fingerprint so an
+    # upgrade can recover an existing pending request unchanged.
+    if count!=1:intent['count']=count
+    if completions is not None:intent['completions']=completions
     board.guard(intent)
     if local:
         paths,result=_apply(root,ctx,actor,instance,intent,uuid.uuid4().hex)
@@ -478,19 +707,29 @@ def mutate(root,task_id,operation,receipt=None,reason=None,phase='map',records=N
     pending_path=pending_dir/(key+'.json');intent_pin=research.pin(intent)
     if pending_path.exists():
         pending=json.loads(pending_path.read_text())
-        if pending['intent_pin']!=intent_pin:raise ValueError('Unconfirmed operation exists; retry its original receipt/reason before replacing it')
-        request_id=pending['request_id']
+        if pending['intent_pin']!=intent_pin and pending.get('push_attempted',True):
+            raise ValueError('Unconfirmed operation exists; retry its original receipt/reason before replacing it')
+        request_id=pending['request_id'] if pending['intent_pin']==intent_pin else uuid.uuid4().hex
+        attempted=pending.get('push_attempted',True) if pending['intent_pin']==intent_pin else False
     else:
-        request_id=uuid.uuid4().hex;_write_json(pending_path,{'request_id':request_id,'intent_pin':intent_pin,'intent':intent})
+        request_id=uuid.uuid4().hex;attempted=False
+    _write_json(pending_path,{'request_id':request_id,'intent_pin':intent_pin,'intent':intent,'push_attempted':attempted})
     for _ in range(8):
         with client.scratch() as temporary:
             directory=Path(temporary);_checkout(client,directory,ctx);_verify_actor(root,directory,ctx,actor,instance)
-            paths,result=_apply(directory,ctx,actor,instance,intent,request_id)
+            try:paths,result=_apply(directory,ctx,actor,instance,intent,request_id)
+            except (ValueError,OSError,KeyError,TypeError):
+                # A rejected receipt has not reached push. Let the worker fix
+                # it, rather than trapping the corrected receipt as "unknown".
+                if not attempted:pending_path.unlink(missing_ok=True)
+                raise
             if not paths:
                 pending_path.unlink(missing_ok=True)
                 return dict(result,status=result.get('status','pushed'),request_id=request_id,remote_tip=board.git(directory,'rev-parse','HEAD').stdout.decode().strip())
             names=[p.relative_to(directory).as_posix() for p in paths]
             board.git(directory,'add','--',*names);board.git(directory,'commit','--quiet','-m',f'{phase} {operation}: {actor} {task_id or prefix}')
+            attempted=True
+            _write_json(pending_path,{'request_id':request_id,'intent_pin':intent_pin,'intent':intent,'push_attempted':True})
             pushed=board.git(directory,'push','--quiet','origin','HEAD:refs/heads/'+branch,check=False)
             if board.auth_rejected(pushed):raise board.AuthenticationError('Authentication rejected; retain work and stop new claims')
             _,tip,_=_refresh(client)
@@ -534,7 +773,8 @@ def collect(root,phase='map',local=False,ctx=None,baseline_ref=None):
     if phase=='registration':
         baseline=rows[0]['definition']['baseline']
         if any(r['definition']['baseline']!=baseline for r in rows):raise ValueError('Completed batches refer to different baselines')
-        for row in rows:_registration_done(root,row['definition'],row['receipt'])
+        peers=_prefetch_done(root,[(row['definition'],row['receipt']) for row in rows],phase)
+        for row in rows:_registration_done(root,row['definition'],row['receipt'],peers)
         return {'baseline':baseline,'batches':[{'batch_id':r['definition']['task_id'],'record':r['receipt']['batch_file']} for r in rows], 'tasks':[r['definition']['task_id'] for r in rows], 'superseded_tasks':sorted(replaced)}
     registry=rows[0]['definition']['registry']
     if any(r['definition']['registry']!=registry for r in rows):raise ValueError('Map batches use different registries')
@@ -625,6 +865,64 @@ def assemble(root,local=False):
             'instruction':'Read actual cross-batch/cross-archive links, finish integration prose, then research check/build --final; checkpoint exact files.'}
 
 
+def _task_brief(root,row,phase,local=False):
+    definition=row['definition'];tid=definition['task_id']
+    ctx=binding(root,phase,local) if coordination.config(root,'wcg.workflowRun') or local else None
+    brief={'task_id':tid,'task_file':task_path(root,tid,phase,ctx).relative_to(root).as_posix(),
+           'stage':definition['stage'],'state':row['state'],'owner':row.get('owner'),
+           'material_count':len(definition.get('materials',[])),
+           'object_count':len(definition.get('object_ids',[])),
+           'shared_read_count':len(definition.get('read_object_ids',[])),
+           'write_paths':definition['write_paths']}
+    context=definition.get('context_plan')
+    if isinstance(context,dict):
+        brief['context_plan']={k:v for k,v in context.items() if isinstance(v,(str,int,float,bool)) or v is None}
+        for key in ['budget','context_budget','reading']:
+            if isinstance(context.get(key),dict):
+                brief['context_plan'][key]={k:v for k,v in context[key].items() if isinstance(v,(str,int,float,bool)) or v is None}
+    return brief
+
+
+def _brief(root,result,phase,local=False):
+    """Keep terminal receipts small; full published definitions remain readable."""
+    if isinstance(result,list):
+        return [_task_brief(root,row,phase,local) if isinstance(row,dict) and 'definition' in row else row for row in result]
+    if not isinstance(result,dict):return result
+    out=dict(result)
+    if isinstance(out.get('task'),dict):out['task']=_task_brief(root,out['task'],phase,local)
+    if isinstance(out.get('task_records'),list):out['task_records']=[_task_brief(root,row,phase,local) for row in out['task_records']]
+    if isinstance(out.get('lead'),dict):out['lead']={k:v for k,v in out['lead'].items() if k!='requests'}
+    if 'coverage_candidates' in out:
+        out['coverage_object_count']=len(out.pop('coverage_candidates'))
+    if isinstance(out.get('edge_files'),list):out['edge_file_count']=len(out.pop('edge_files'))
+    if isinstance(out.get('needs_reframing'),list):
+        rows=out['needs_reframing'];out['needs_reframing_count']=len(rows)
+        if len(rows)>12:
+            out['needs_reframing']=rows[:12]
+            out['more_reframing_in_full_output']=True
+    if isinstance(out.get('unresolved_objects'),list):
+        rows=out['unresolved_objects'];out['unresolved_object_count']=len(rows)
+        if len(rows)>12:
+            out['unresolved_objects']=rows[:12]
+            out['more_unresolved_in_coverage_file']=True
+    out['reading_instruction']='Read task_file for the complete published batch; use --full only when full machine output is needed.'
+    return out
+
+
+def done_records(root,record_file):
+    records=json.loads(_safe_path(root,record_file).read_text())
+    if not isinstance(records,list) or not records:raise ValueError('Completion input is [{task_id, receipt_file}, ...] for currently mature batches')
+    ids=set();result=[]
+    for row in records:
+        if not isinstance(row,dict) or set(row)!={'task_id','receipt_file'}:raise ValueError('Each completion item needs task_id and receipt_file')
+        tid=research.identity(row['task_id'])
+        if tid in ids:raise ValueError('Duplicate completed batch: '+tid)
+        ids.add(tid)
+        receipt=json.loads(_safe_path(root,row['receipt_file']).read_text())
+        result.append({'task_id':tid,'receipt':receipt})
+    return sorted(result,key=lambda row:row['task_id'])
+
+
 def main(argv=None):
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--repo',type=Path,required=True);p.add_argument('--phase',choices=sorted(PHASES),default='map');p.add_argument('--local-only',action='store_true',help='Explicit private offline rehearsal; never writes a remote')
     sub=p.add_subparsers(dest='command',required=True)
@@ -635,13 +933,15 @@ def main(argv=None):
     q=sub.add_parser('collect');q.add_argument('--baseline',help='Registration only: published frozen baseline path for this incremental collection')
     sub.add_parser('assemble')
     q=sub.add_parser('lead');q.add_argument('action',choices=['claim','handoff','show']);q.add_argument('--reason')
-    q=sub.add_parser('claim-next');q.add_argument('--prefix',default='')
+    q=sub.add_parser('claim-next');q.add_argument('--prefix',default='');q.add_argument('--count',type=int,default=1,help='Actual free batch slots; a batch may already contain hundreds of materials')
     q=sub.add_parser('read-add');q.add_argument('task_id');q.add_argument('--object-ids',nargs='+',required=True)
     for command in ['claim','done','handoff','reclaim','withdraw']:
-        q=sub.add_parser(command);q.add_argument('task_id',nargs='?' if command=='handoff' else None)
-        if command=='done':q.add_argument('--receipt-file',required=True)
+        q=sub.add_parser(command);q.add_argument('task_id',nargs='?' if command in {'handoff','done'} else None)
+        if command=='done':
+            source=q.add_mutually_exclusive_group(required=True);source.add_argument('--receipt-file');source.add_argument('--record-file',help='JSON list of {task_id, receipt_file}; one atomic completion transaction')
         if command in {'handoff','reclaim','withdraw'}:q.add_argument('--reason',required=True)
         if command=='handoff':q.add_argument('--all',action='store_true')
+    for command_parser in sub.choices.values():command_parser.add_argument('--full',action='store_true',help='Return full definitions/receipts instead of compact batch summaries')
     a=p.parse_args(argv);root=a.repo.resolve()
     if a.command=='inventory':result=research.inventory(root,a.registry)
     elif a.command=='plan':result=plan(root,a.record_file,a.phase,a.local_only)
@@ -671,8 +971,16 @@ def main(argv=None):
     else:
         operation='lead-'+a.action if a.command=='lead' else 'handoff-all' if a.command=='handoff' and a.all else a.command
         if a.command=='handoff' and ((a.all and a.task_id) or (not a.all and not a.task_id)):raise ValueError('Use one task ID or --all')
-        receipt=json.loads(_safe_path(root,a.receipt_file).read_text()) if a.command=='done' else None
-        result=mutate(root,getattr(a,'task_id',None),operation,receipt,getattr(a,'reason',None),a.phase,prefix=getattr(a,'prefix',''),local=a.local_only,read_ids=getattr(a,'object_ids',None))
+        receipt=None;completions=None
+        if a.command=='done':
+            if a.record_file:
+                if a.task_id:raise ValueError('Bulk completion uses --record-file without one task ID')
+                completions=done_records(root,a.record_file);operation='done-many'
+            else:
+                if not a.task_id:raise ValueError('Single completion uses done TASK --receipt-file PATH')
+                receipt=json.loads(_safe_path(root,a.receipt_file).read_text())
+        result=mutate(root,getattr(a,'task_id',None),operation,receipt,getattr(a,'reason',None),a.phase,prefix=getattr(a,'prefix',''),local=a.local_only,read_ids=getattr(a,'object_ids',None),count=getattr(a,'count',1),completions=completions)
+    if not a.full:result=_brief(root,result,a.phase,a.local_only)
     print(json.dumps(result,ensure_ascii=False,indent=2));return 0
 
 

@@ -45,7 +45,7 @@ def git(repo, *args, check=True):
     except subprocess.TimeoutExpired:
         raise Stop("Git timed out. Rerun the same command; local commits are retained.")
     if check and result.returncode:
-        detail = SECRET.sub(b"[REDACTED]", result.stderr).decode(errors="replace")
+        detail = SECRET.sub(b"[REDACTED]", result.stderr or result.stdout).decode(errors="replace")
         raise Stop("Git failed: " + detail.strip()[:1000])
     return result
 

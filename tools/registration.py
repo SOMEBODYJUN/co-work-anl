@@ -1,5 +1,6 @@
 """Freeze explicit stage-2 outputs and compose independently written ID batches."""
 import json
+import math
 import re
 from pathlib import Path, PurePosixPath
 import subprocess
@@ -166,14 +167,26 @@ def merge_material(previous, incoming):
     return row
 
 
-def validate_batch(root, record, expected_materials=None, baseline_ref=None):
-    """Validate this batch and only the existing owners it explicitly reuses."""
+def validate_batch(root, record, expected_materials=None, baseline_ref=None, peer_objects=None):
+    """Validate one batch and the exact published owners it explicitly reuses.
+
+    The queue may supply owners from the other already-pushed records in one
+    atomic delivery. They are read-only validation context, not extra objects
+    or material assignments in this batch.
+    """
     if record.get('schema') != 2 or record.get('edge_files'):
         raise ValueError('Registration batches use schema 2 and no edge_files')
     if not isinstance(record.get('objects'), list) or not isinstance(record.get('materials'), list):
         raise ValueError('A registration batch needs objects and materials')
     own = {runtime.object_identity(o.get('object_id')): o for o in record['objects']}
     if len(own) != len(record['objects']): raise ValueError('Duplicate mathematical object in one batch')
+    peers = {} if peer_objects is None else peer_objects
+    if not isinstance(peers, dict): raise ValueError('Published peer owners must be an object-ID mapping')
+    for oid, owner in peers.items():
+        if runtime.object_identity(oid) != owner.get('object_id'):
+            raise ValueError('Published peer owner identity differs from its key')
+        if oid in own and own[oid] != owner:
+            raise ValueError('Conflicting mathematical owner across completion batches: ' + oid)
     if expected_materials is not None:
         expected = {r['path']: r['sha256'] for r in expected_materials}
         actual = {r['path']: r['sha256'] for r in record['materials']}
@@ -190,9 +203,11 @@ def validate_batch(root, record, expected_materials=None, baseline_ref=None):
     external = referenced - own.keys()
     materials = [dict(r) for r in record['materials']]
     if external:
-        canonical = _safe_path(root, runtime.REGISTRY)
-        existing = json.loads(canonical.read_text()) if canonical.exists() else {}
-        known = {o['object_id']: o for o in existing.get('objects', [])}
+        known = dict(peers)
+        if external - known.keys():
+            canonical = _safe_path(root, runtime.REGISTRY)
+            existing = json.loads(canonical.read_text()) if canonical.exists() else {}
+            known.update({o['object_id']: o for o in existing.get('objects', []) if o['object_id'] not in known})
         if external - known.keys(): raise ValueError('Unknown existing mathematical owner: ' + ', '.join(sorted(external - known.keys())))
         paths = {r['path']: r for r in materials}
         for oid in sorted(external):
@@ -202,8 +217,15 @@ def validate_batch(root, record, expected_materials=None, baseline_ref=None):
                 row = {'path': body['path'], 'sha256': body['sha256'], 'disposition': 'objects', 'object_ids': [oid],
                        'reason': 'Read-only existing mathematical owner; not a new batch material'}
                 materials.append(row); paths[body['path']] = row
+            else:
+                row = paths[body['path']]
+                if row['sha256'] != body['sha256'] or row.get('disposition') != 'objects':
+                    raise ValueError('A reused mathematical owner needs its exact body declared as mathematics: ' + oid)
+                row['object_ids'] = list(dict.fromkeys(row.get('object_ids', []) + [oid]))
     runtime.load(root, provided={'schema': 2, 'objects': list(own.values()), 'materials': materials, 'edge_files': []})
-    return {'objects': len(record['objects']), 'materials': len(record['materials']), 'reused_existing_owners': sorted(external)}
+    return {'objects': len(record['objects']), 'materials': len(record['materials']),
+            'reused_existing_owners': sorted(external - peers.keys()),
+            'reused_published_group_owners': sorted(external & peers.keys())}
 
 
 def compose(root, manifest_file, output):
@@ -404,3 +426,497 @@ def draft_assignments(root, baseline_file, owners, output, batch_size=80):
     return {'status': 'assignments-draft-local-not-pushed', 'path': output, 'batches': len(assignments),
             'materials': sum(len(row['material_paths']) for row in assignments), 'owners': owners,
             'review_required': True}
+
+
+def _registration_scope(name):
+    """Keep closely related archive material together without assigning Claims."""
+    parts = PurePosixPath(name).parts
+    if len(parts) >= 2 and parts[0] == 'archives':
+        stop = 2
+        while len(parts) > stop + 1 and parts[stop] == 'subarchives':
+            stop += 2
+        return '/'.join(parts[:stop])
+    return '/'.join(parts[:-1]) or '.'
+
+
+def _registration_links(name, text, known):
+    """Local Markdown links are scheduling clues, never inferred relations."""
+    import posixpath
+    from urllib.parse import unquote
+    result = set()
+    for value in re.findall(r'\[[^\]]*\]\(([^\n]*?)\)', text):
+        value = value.strip()
+        if value.startswith('<') and '>' in value:
+            value = value[1:value.index('>')]
+        elif re.search(r'\s+["\']', value):
+            value = re.split(r'\s+["\']', value, maxsplit=1)[0]
+        value = unquote(value.split('#', 1)[0])
+        if not value or re.match(r'^[A-Za-z][A-Za-z0-9+.-]*:', value):
+            continue
+        target = posixpath.normpath(value.lstrip('/') if value.startswith('/') else
+                                    posixpath.join(str(PurePosixPath(name).parent), value))
+        if target in known and target != name:
+            result.add(target)
+    return result
+
+
+def _registration_order(names, links):
+    """Follow direct local families, keeping common definition hubs shared."""
+    names = set(names)
+    degree = {name: 0 for name in names}
+    for name in names:
+        for target in links[name] & names:
+            degree[target] += 1
+    hub_limit = max(8, (len(names) + 19) // 20)
+    hubs = {name for name, count in degree.items() if count >= hub_limit}
+    adjacent = {name: set() for name in names}
+    for name in names:
+        for target in links[name] & names:
+            if target not in hubs and name not in hubs:
+                adjacent[name].add(target)
+                adjacent[target].add(name)
+    result, left = [], set(names)
+    while left:
+        first = min(left)
+        pending = [first]
+        while pending:
+            name = pending.pop()
+            if name not in left:
+                continue
+            left.remove(name)
+            result.append(name)
+            pending.extend(sorted(adjacent[name] & left, reverse=True))
+    return result, hubs
+
+
+def _published_registration_materials(root, include_completed=True):
+    """Read only a synced published queue, never a local unpublished task JSON."""
+    import coordination
+    note = {'source': 'not-a-published-queue-snapshot', 'skipped_materials': 0}
+    top = subprocess.run(['git', 'rev-parse', '--show-toplevel'], cwd=root, capture_output=True, text=True)
+    if top.returncode or Path(top.stdout.strip()).resolve() != root:
+        return set(), dict(note, registry_source='local-unpublished-workspace'), None
+    run = coordination.config(root, 'wcg.workflowRun') or 'p25-register-v2'
+    config = _safe_path(root, 'research/operations/' + runtime.identity(run) + '/run.json')
+    states = {'available', 'claimed', 'blocked', 'handoff'} | ({'done'} if include_completed else set())
+    if (coordination.config(root, 'wcg.workflowRun') and config.is_file()
+            and json.loads(config.read_text()).get('phase') == 'registration'):
+        import map_tasks
+        with map_tasks.latest(root, 'registration') as (directory, ctx):
+            records = map_tasks.listing(directory, ctx=ctx)
+            tip = map_tasks.board.git(directory, 'rev-parse', 'HEAD').stdout.decode().strip()
+            already = {(ref['path'], ref['sha256']) for row in records
+                       if row.get('state') in states and row.get('definition', {}).get('stage') == 'registration'
+                       for ref in row['definition'].get('materials', [])}
+            if runtime.REGISTRY in map_tasks._tree(directory):
+                map_tasks._ensure(directory, runtime.REGISTRY)
+                data, _ = runtime.load(directory, verify=False)
+                published_materials = {row['path']: row for row in data['materials']}
+            else:
+                published_materials = {}
+        return already, {'source': 'latest-published-workflow-snapshot', 'tip': tip, 'workflow_run': run,
+                         'registry_source': 'latest-published-workflow-snapshot',
+                         'skipped_materials': 0,
+                         'note': 'Same-version work already in the published queue is resumed/integrated; withdrawn tasks can be reassigned.'}, published_materials
+    if not config.is_file() or json.loads(config.read_text()).get('phase') != 'registration':
+        run = 'p25-register-v2'
+    branch = coordination.config(root, 'wcg.branch') or subprocess.run(
+        ['git', 'branch', '--show-current'], cwd=root, capture_output=True, text=True).stdout.strip()
+    tracking = 'refs/remotes/origin/' + branch
+    tip = subprocess.run(['git', 'rev-parse', '--verify', tracking], cwd=root, capture_output=True, text=True)
+    if tip.returncode:
+        return set(), dict(note, source='unavailable-remote-tracking-snapshot', tracking=tracking,
+                           registry_source='local-unpublished-workspace'), None
+    commit = tip.stdout.strip()
+    prefix = 'research/operations/' + run + '/tasks/'
+    tree = subprocess.run(['git', 'ls-tree', '-r', '-z', commit, '--', prefix], cwd=root, capture_output=True)
+    if tree.returncode:
+        raise ValueError('Cannot read the published registration task snapshot; sync before drafting')
+    entries = []
+    for entry in tree.stdout.split(b'\0'):
+        if not entry:
+            continue
+        meta, name = entry.split(b'\t', 1)
+        _, kind, oid = meta.split()
+        if kind == b'blob' and name.endswith(b'.json'):
+            entries.append((name.decode('utf-8'), oid.decode('ascii')))
+    raw = subprocess.run(['git', 'cat-file', '--batch'], cwd=root, capture_output=True,
+                         input=''.join(oid + '\n' for _, oid in entries).encode('ascii'))
+    if raw.returncode:
+        raise ValueError('Cannot read published registration task bytes; sync before drafting')
+    already, offset = set(), 0
+    for name, _ in entries:
+        end = raw.stdout.find(b'\n', offset)
+        header = raw.stdout[offset:end].split()
+        if end < 0 or len(header) != 3 or header[1] != b'blob':
+            raise ValueError('Cannot read published registration task: ' + name)
+        size = int(header[2])
+        record = json.loads(raw.stdout[end + 1:end + 1 + size])
+        offset = end + 2 + size
+        definition = record.get('definition', {})
+        if record.get('state') in states and definition.get('stage') == 'registration':
+            already.update((ref['path'], ref['sha256']) for ref in definition.get('materials', []))
+    if offset != len(raw.stdout):
+        raise ValueError('Invalid published registration task response')
+    registry_tree = subprocess.run(['git', 'ls-tree', '--name-only', commit, '--', runtime.REGISTRY],
+                                   cwd=root, capture_output=True)
+    if registry_tree.returncode:
+        raise ValueError('Cannot inspect the published registration table; sync before drafting')
+    if registry_tree.stdout.strip():
+        canonical = subprocess.run(['git', 'show', commit + ':' + runtime.REGISTRY], cwd=root, capture_output=True)
+        if canonical.returncode:
+            raise ValueError('Cannot read the published registration table; sync before drafting')
+        data, _ = runtime.load(root, provided=json.loads(canonical.stdout), verify=False)
+        published_materials = {row['path']: row for row in data['materials']}
+    else:
+        published_materials = {}
+    return already, {'source': tracking, 'tip': commit, 'workflow_run': run,
+                     'registry_source': tracking,
+                     'skipped_materials': 0,
+                     'note': 'Same-version materials already in published unfinished or completed tasks are resumed/integrated instead of scheduled again; withdrawn tasks may be reassigned.'}, published_materials
+
+
+_CONTEXT_ENCODINGS = {}
+
+
+def _context_text(path, raw):
+    binary_suffixes = {'.pdf', '.doc', '.docx', '.ppt', '.pptx', '.xls', '.xlsx', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.bmp', '.tif', '.tiff', '.zip', '.gz', '.parquet', '.pkl', '.npy', '.npz', '.sqlite', '.db'}
+    if path.suffix.lower() in binary_suffixes or b'\0' in raw or raw.startswith((b'%PDF-', b'PK\x03\x04')):
+        return None
+    try:
+        return raw.decode('utf-8')
+    except UnicodeDecodeError:
+        return None
+
+
+def text_cost(text, model='gpt-6.1-sol'):
+    """Count characters/bytes separately and label text-token measurement honestly."""
+    if not isinstance(text, str):
+        raise ValueError('Text measurement requires decoded text')
+    if model not in _CONTEXT_ENCODINGS:
+        try:
+            import tiktoken
+            encoding = tiktoken.encoding_for_model(model)
+        except Exception:
+            encoding = None
+        _CONTEXT_ENCODINGS[model] = encoding
+    encoding = _CONTEXT_ENCODINGS[model]
+    if encoding is not None:
+        tokens = len(encoding.encode(text, disallowed_special=()))
+        estimator = 'tiktoken-model-mapping:' + encoding.name
+        estimated = False
+    else:
+        # Standard-library fallback for Chinese mathematical Markdown. It is a
+        # deliberately padded planning estimate, never characters == tokens.
+        tokens = 0
+        for run in re.findall(r'[A-Za-z0-9_]+|[ \t]+|\r\n|\n|.', text, re.DOTALL):
+            if run.isascii() and re.fullmatch(r'[A-Za-z0-9_]+', run):
+                tokens += math.ceil(len(run) / 3)
+            elif run.isspace() and '\n' not in run and '\r' not in run:
+                tokens += math.ceil(len(run) / 8)
+            elif run in {'\n', '\r\n'}:
+                tokens += 1
+            elif len(run) == 1 and (0x3400 <= ord(run) <= 0x9fff or 0x20000 <= ord(run) <= 0x3134f):
+                tokens += 2
+            else:
+                tokens += len(run.encode('utf-8'))
+        tokens = math.ceil(tokens * 1.15)
+        estimator = 'conservative-math-text-estimate-v1; not a tokenizer count'
+        estimated = True
+    return {'chars': len(text), 'utf8_bytes': len(text.encode('utf-8')),
+            'estimated_tokens': tokens, 'token_count_is_estimate': estimated,
+            'estimator': estimator, 'model': model}
+
+
+def context_budget(context_tokens=500000, window_source='official-default', used_tokens=None,
+                   reserve_tokens=None, inherited=False, output_tokens=None, model='gpt-6.1-sol'):
+    """A tunable reading plan; unknown runtime usage is not invented as telemetry."""
+    if not isinstance(model, str) or not model.strip():
+        raise ValueError('Declare the worker model for a reading plan')
+    if window_source == 'official-default' and (model != 'gpt-6.1-sol' or context_tokens != 500000):
+        raise ValueError('The 500K official default here is for gpt-6.1-sol; provide a reported or user-specified window for another model')
+    if type(context_tokens) is not int or context_tokens < 1:
+        raise ValueError('context_tokens must be a positive integer')
+    if window_source not in {'official-default', 'platform-reported', 'user-specified'}:
+        raise ValueError('State whether the context window is official-default, platform-reported or user-specified')
+    if used_tokens is not None and (type(used_tokens) is not int or used_tokens < 0):
+        raise ValueError('used_tokens is a platform reading, or omitted when unknown')
+    if reserve_tokens is None:
+        reserve_tokens = max(1, context_tokens * 2 // 5)
+    if type(reserve_tokens) is not int or not 0 < reserve_tokens < context_tokens:
+        raise ValueError('Reserve explicit room for instructions, reasoning, tools and writing')
+    if output_tokens is None:
+        output_tokens = min(100000, max(1, reserve_tokens // 2))
+    if type(output_tokens) is not int or not 0 < output_tokens <= reserve_tokens:
+        raise ValueError('Output allowance must fit within the reserved context')
+    available = context_tokens - reserve_tokens - (used_tokens if used_tokens is not None else 0)
+    if available < 1:
+        raise ValueError('The declared usage and reserves leave no reading budget; use a fresh worker or correct the budget')
+    assumptions = ['Window source is declared, not discovered from this conversation.',
+                   'Reading budget includes source text and object/task metadata.',
+                   'Reserved context includes expected generated records and later reasoning/tool growth.']
+    if inherited and used_tokens is None:
+        # A long inherited conversation is not a fresh 500K window. Keep the
+        # result usable as a small-window draft but never claim it fits exactly.
+        available = min(available, max(1, context_tokens // 5))
+        assumptions.append('Inherited context usage is unknown: limited planning window only; prefer a fresh worker or supply reported used_tokens.')
+    elif used_tokens is None:
+        assumptions.append('Fresh worker assumed; actual system/prefix usage is unknown and covered only by the engineering reserve.')
+    return {'context_tokens': context_tokens, 'window_source': window_source, 'model': model,
+            'used_tokens': used_tokens, 'history_mode': 'inherited' if inherited else 'fresh-worker',
+            'reserve_tokens': reserve_tokens, 'reading_tokens': available,
+            'output_tokens': output_tokens, 'runtime_remaining_tokens': None,
+            'declared_remaining_before_reserve_tokens': None if used_tokens is None else context_tokens-used_tokens,
+            'assumptions': assumptions, 'budget_is_runtime_measurement': False}
+
+
+def _merged_intervals(intervals):
+    merged = []
+    for start, end in sorted(intervals):
+        if merged and start <= merged[-1][1]:
+            merged[-1] = (merged[-1][0], max(end, merged[-1][1]))
+        else:
+            merged.append((start, end))
+    return merged
+
+
+def reading_cost(root, refs, metadata=None, cache=None, model='gpt-6.1-sol'):
+    """Measure complete requested reading spans once per path/SHA, not per Claim."""
+    cache = {} if cache is None else cache
+    sources = {}
+    for ref in refs:
+        path = runtime.reference(root, ref)
+        key = (ref['path'], ref['sha256'])
+        if key not in cache:
+            raw = path.read_bytes()
+            if runtime.digest(raw) != ref['sha256']:
+                raise ValueError('Stale content binding: ' + ref['path'])
+            text = _context_text(path, raw)
+            cache[key] = {'text': text, 'bytes': len(raw)}
+        text = cache[key]['text']
+        row = sources.setdefault(key, {'ref': {'path': key[0], 'sha256': key[1]}, 'spans': []})
+        if text is None:
+            row['unmeasured'] = True
+            continue
+        if 'section' not in ref:
+            row['spans'].append((0, len(text)))
+        else:
+            selected = runtime.section(text, ref['section'])
+            positions = [start for title, _, start in runtime.heading_sections(text) if title == ref['section']]
+            if len(positions) != 1:
+                raise ValueError('Section title missing or ambiguous: ' + ref['section'])
+            row['spans'].append((positions[0], positions[0] + len(selected)))
+    totals = {'chars': 0, 'utf8_bytes': 0, 'source_tokens': 0, 'metadata_tokens': 0,
+              'estimated_tokens': 0, 'metadata_chars': 0, 'metadata_utf8_bytes': 0, 'distinct_files': len(sources), 'reading_segments': 0,
+              'token_count_is_estimate': False, 'estimators': [], 'unmeasured_refs': []}
+    for key, row in sources.items():
+        if row.get('unmeasured'):
+            totals['unmeasured_refs'].append(dict(row['ref'], bytes=cache[key]['bytes'],
+                reason='Non-text evidence: export/read with the appropriate tool, then size its actual extracted context'))
+            continue
+        text = cache[key]['text']
+        spans = _merged_intervals(row['spans'])
+        signature = (model, tuple(spans))
+        measured = cache[key].setdefault('span_costs', {})
+        if signature not in measured:
+            measured[signature] = text_cost('\n'.join(text[start:end] for start, end in spans), model)
+        cost = measured[signature]
+        totals['chars'] += cost['chars']; totals['utf8_bytes'] += cost['utf8_bytes']
+        totals['source_tokens'] += cost['estimated_tokens']; totals['reading_segments'] += len(spans)
+        totals['token_count_is_estimate'] |= cost['token_count_is_estimate']
+        if cost['estimator'] not in totals['estimators']: totals['estimators'].append(cost['estimator'])
+    if metadata is not None:
+        text = metadata if isinstance(metadata, str) else json.dumps(metadata, ensure_ascii=False, sort_keys=True)
+        cost = text_cost(text, model)
+        totals['metadata_tokens'] = cost['estimated_tokens']
+        totals['metadata_chars'] = cost['chars']; totals['metadata_utf8_bytes'] = cost['utf8_bytes']
+        totals['token_count_is_estimate'] |= cost['token_count_is_estimate']
+        if cost['estimator'] not in totals['estimators']: totals['estimators'].append(cost['estimator'])
+    totals['estimated_tokens'] = totals['source_tokens'] + totals['metadata_tokens']
+    totals['measurement_scope'] = 'Requested complete text spans plus supplied metadata; binary evidence is not token-counted from raw bytes.'
+    return totals
+
+
+def pack_units(root, units, budget, max_items=200, cache=None):
+    """Pack caller-ordered mathematical units; never truncate an oversized object."""
+    if type(max_items) is not int or max_items < 1:
+        raise ValueError('max_items must be positive')
+    if not isinstance(units, list): raise ValueError('A concrete ordered list of reading units is required')
+    cache = {} if cache is None else cache
+    seen = set()
+    for unit in units:
+        key = unit.get('key')
+        if not isinstance(key, str) or not key or key in seen:
+            raise ValueError('Reading units require distinct nonempty keys')
+        seen.add(key)
+        if not isinstance(unit.get('refs'), list): raise ValueError('Reading unit refs must be an explicit list')
+        output = unit.get('estimated_output_tokens', 0)
+        if type(output) is not int or output < 0: raise ValueError('Output estimates must be nonnegative integers')
+    metadata_costs = {}
+    for item in units:
+        metadata = item.get('metadata', {'key': item['key']})
+        value = metadata if isinstance(metadata, str) else json.dumps(metadata, ensure_ascii=False, sort_keys=True)
+        metadata_costs[item['key']] = text_cost(value, budget.get('model', 'gpt-6.1-sol'))
+    def measure(items):
+        refs = [ref for item in items for ref in item['refs']]
+        cost = reading_cost(root, refs, None, cache, budget.get('model', 'gpt-6.1-sol'))
+        cost['metadata_tokens'] = sum(metadata_costs[item['key']]['estimated_tokens'] for item in items)
+        cost['metadata_chars'] = sum(metadata_costs[item['key']]['chars'] for item in items)
+        cost['metadata_utf8_bytes'] = sum(metadata_costs[item['key']]['utf8_bytes'] for item in items)
+        cost['estimated_tokens'] += cost['metadata_tokens']
+        cost['token_count_is_estimate'] |= any(metadata_costs[item['key']]['token_count_is_estimate'] for item in items)
+        for item in items:
+            estimator = metadata_costs[item['key']]['estimator']
+            if estimator not in cost['estimators']: cost['estimators'].append(estimator)
+        cost['task_overhead_tokens'] = 32 * len(items)
+        cost['estimated_tokens'] += cost['task_overhead_tokens']
+        return cost
+    def entry(items, cost):
+        output = sum(item.get('estimated_output_tokens', 0) for item in items)
+        oversized = cost['estimated_tokens'] > budget['reading_tokens'] or output > budget['output_tokens']
+        unknown = bool(cost['unmeasured_refs'])
+        return {'units': list(items), 'reading': cost, 'estimated_output_tokens': output,
+                'oversized': oversized, 'requires_export': unknown,
+                'budget_status': 'requires-evidence-export' if unknown else 'requires-connected-reading-passes' if oversized else 'within-declared-planning-budget',
+                'context_budget': budget}
+    packs, current, current_cost = [], [], None
+    for unit in units:
+        alone = measure([unit])
+        output = unit.get('estimated_output_tokens', 0)
+        exceptional = bool(alone['unmeasured_refs']) or alone['estimated_tokens'] > budget['reading_tokens'] or output > budget['output_tokens']
+        if exceptional:
+            if current: packs.append(entry(current, current_cost)); current, current_cost = [], None
+            packs.append(entry([unit], alone))
+            continue
+        candidate = [*current, unit]
+        cost = measure(candidate)
+        candidate_output = sum(item.get('estimated_output_tokens', 0) for item in candidate)
+        if current and (len(candidate) > max_items or cost['estimated_tokens'] > budget['reading_tokens'] or candidate_output > budget['output_tokens']):
+            packs.append(entry(current, current_cost)); current, current_cost = [unit], alone
+        else:
+            current, current_cost = candidate, cost
+    if current: packs.append(entry(current, current_cost))
+    return {'packs': packs, 'units': len(units), 'unassigned_units': [],
+            'oversized_units': [item['key'] for pack in packs if pack['oversized'] for item in pack['units']],
+            'requires_export_units': [item['key'] for pack in packs if pack['requires_export'] for item in pack['units']]}
+
+
+def draft_registration_tasks(root, baseline_file='research/registration/baseline.json',
+                             output='research/registration/tasks.json', max_materials=200,
+                             task_prefix='register', context_options=None,
+                             include_registered=False):
+    """Pack many frozen materials into each existing registration queue task.
+
+    The program schedules reading and ownership only. It never allocates a
+    mathematical object per page or fills mathematical records automatically.
+    """
+    root = Path(root).resolve()
+    runtime.identity(task_prefix)
+    if type(max_materials) is not int or max_materials < 1:
+        raise ValueError('max_materials must be a positive batch ceiling')
+    baseline_path = _safe_path(root, baseline_file)
+    baseline_bytes = baseline_path.read_bytes()
+    baseline = json.loads(baseline_bytes)
+    if baseline.get('schema') != 1 or not isinstance(baseline.get('materials'), list) or not baseline['materials']:
+        raise ValueError('Registration planning needs an actual frozen input baseline')
+    budget = context_budget(**(context_options or {}))
+    scheduled, queue_snapshot, published_materials = _published_registration_materials(root, include_completed=not include_registered)
+    known = {}
+    if not include_registered:
+        if published_materials is not None:
+            known = published_materials
+        elif _safe_path(root, runtime.REGISTRY).is_file():
+            registered, _ = runtime.load(root, verify=False)
+            known = {row['path']: row for row in registered['materials']}
+    rows, texts, links, scopes, file_bytes = {}, {}, {}, {}, {}
+    already_registered, already_scheduled = 0, 0
+    for original in baseline['materials']:
+        row = {key: original[key] for key in ('path', 'sha256')}
+        name = row['path']
+        if name in rows:
+            raise ValueError('Duplicate frozen material: ' + name)
+        runtime.reference(root, row)
+        rows[name] = row
+        previous = known.get(name, {})
+        if previous.get('sha256') == row['sha256'] and previous.get('disposition') in {'objects', 'attachment', 'excluded'}:
+            already_registered += 1
+            continue
+        if (name, row['sha256']) in scheduled:
+            already_scheduled += 1
+            continue
+        raw = runtime.ref_bytes(root, row)
+        file_bytes[name] = len(raw)
+        texts[name] = _context_text(_safe_path(root, name), raw)
+        scopes.setdefault(_registration_scope(name), []).append(name)
+    for name in texts:
+        links[name] = _registration_links(name, texts[name] or '', rows)
+    definitions = {name for name in rows if any(part.casefold() in {'定义', '模型', 'definition', 'definitions', 'model', 'models'}
+                   for part in PurePosixPath(name).parts) or PurePosixPath(name).stem.endswith(('--定义', '--模型'))}
+    units, cost_cache = [], {}
+    for scope, names in sorted(scopes.items()):
+        ordered, _ = _registration_order(names, links)
+        for name in ordered:
+            shared = sorted(links[name] & definitions)
+            cost = text_cost(texts[name], budget['model']) if texts[name] is not None else {'estimated_tokens': 0}
+            cached = {'text': texts[name], 'bytes': file_bytes[name]}
+            if texts[name] is not None:
+                cached['span_costs'] = {(budget['model'], ((0, len(texts[name])),)): cost}
+            cost_cache[(name, rows[name]['sha256'])] = cached
+            estimated_output = 400 + min(1600, (int(cost['estimated_tokens']) * 8 + 99) // 100)
+            units.append({'key': name, 'material': rows[name], 'scope': scope,
+                          'refs': [rows[name], *(rows[target] for target in shared)],
+                          'metadata': {'material': name, 'scope': scope},
+                          'estimated_output_tokens': estimated_output,
+                          'requires_export': texts[name] is None})
+    packed = pack_units(root, units, budget, max_items=max_materials, cache=cost_cache)
+    packs = packed['packs']
+    baseline_ref = {'path': baseline_file, 'sha256': runtime.digest(baseline_bytes)}
+    plan_id = runtime.pin({'baseline': baseline_ref, 'budget': budget, 'max_materials': max_materials,
+                           'include_registered': bool(include_registered),
+                           'groups': [[unit['key'] for unit in pack['units']] for pack in packs]})[:10]
+    tasks = []
+    for number, pack in enumerate(packs, 1):
+        members = pack['units']
+        task_id = runtime.identity(task_prefix + '-' + plan_id + '-' + str(number).zfill(4))
+        primary = [unit['material'] for unit in members]
+        primary_paths = {ref['path'] for ref in primary}
+        shared = {ref['path']: ref for unit in members for ref in unit['refs'] if ref['path'] not in primary_paths}
+        unknown = sorted({unit['key'] for unit in members if unit.get('requires_export')} |
+                         {ref['path'] for ref in pack['reading'].get('unmeasured_refs', [])})
+        mode = 'export-before-reading' if unknown else 'sectioned-reading' if pack.get('oversized') else 'planned-window'
+        task = {'task_id': task_id, 'stage': 'registration', 'baseline': baseline_ref,
+                'materials': primary,
+                'goal': '批量登记本批已整理数学材料；实读精确对象、稳定身份、正文与必要证据。保留各自模型和量词，不逐源重新清洗，不在本步建超边。',
+                'write_paths': ['research/registration/batches/' + task_id + '.json',
+                                'research/registration/receipts/' + task_id + '.json'],
+                'context_plan': {'budget': budget, 'reading': pack['reading'],
+                                 'estimated_output_tokens': pack['estimated_output_tokens'],
+                                 'output_estimate': 'Scheduling estimate from source length, not an inferred Claim count; adjust if actual independent objects need more space.',
+                                 'material_count': len(primary), 'scopes': sorted({unit['scope'] for unit in members}),
+                                 'shared_read_refs': [shared[name] for name in sorted(shared)],
+                                 'reading_mode': mode, 'oversized': bool(pack.get('oversized')),
+                                 'unmeasured_materials': unknown,
+                                 'instruction': 'Read the assigned materials in useful batches. Shared definitions are read-only and counted once. If a unit exceeds the window, continue it in sections with saved mathematical notes; do not truncate it or mark it read from a summary.'}}
+        tasks.append(task)
+    destination = _safe_path(root, output)
+    if destination == baseline_path or output == runtime.REGISTRY or output in rows:
+        raise ValueError('Write the task draft separately from frozen inputs and mathematical content')
+    try:
+        previous_plan = json.loads(destination.read_text()) if destination.is_file() else None
+    except ValueError:
+        previous_plan = None
+    if previous_plan != tasks:
+        runtime._write_json(destination, tasks)
+    return {'status': 'registration-current-no-new-materials' if not tasks else
+                      'registration-tasks-already-drafted' if previous_plan == tasks else
+                      'registration-tasks-drafted-local-not-published', 'path': output,
+            'tasks': len(tasks), 'materials': len(texts), 'baseline_materials': len(rows),
+            'already_registered_materials': already_registered,
+            'already_scheduled_materials': already_scheduled,
+            'queue_snapshot': dict(queue_snapshot, skipped_materials=already_scheduled),
+            'materials_per_task': [len(task['materials']) for task in tasks],
+            'max_materials': max_materials, 'context_budget': budget,
+            'oversized_tasks': [task['task_id'] for task in tasks if task['context_plan']['oversized']],
+            'unmeasured_materials': sorted(name for name in texts if texts[name] is None),
+            'next': ('Publish this task array once with registration-task plan --record-file ' + output + '; each claim/done operates on a complete many-material task.') if tasks else
+                    'No new material batches were created. Resume existing run tasks and integration; do not pass an empty draft to plan.'}

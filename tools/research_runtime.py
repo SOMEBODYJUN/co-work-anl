@@ -801,11 +801,390 @@ def resume(root, run_id):
             'publication':'Local HEAD is not remote confirmation; checkpoint and verify pushed separately.'}
 
 
+def draft_map_tasks(root, output='map/planned-tasks.json', registry=REGISTRY,
+                    stage='3A', object_ids=None, task_prefix='map',
+                    context_options=None, max_objects=None):
+    """Draft bounded reading comparisons; never infer or accept a relation.
+
+    One complete registered object is a unit. Shared pages are preferred
+    together, but separately located Claims remain independent core objects.
+    Later layers require an explicit comparison frontier rather than replaying
+    every completed local comparison or enumerating all object pairs.
+    """
+    import posixpath
+    from urllib.parse import unquote, urlsplit
+    import registration
+
+    root = Path(root).resolve()
+    if stage not in {'3A', '3B', '3C'}:
+        raise ValueError('Draft mathematical comparisons for 3A/3B/3C; 3D is lead integration')
+    identity(task_prefix)
+    data, objects = load(root, registry, verify=False)
+    selected = list(dict.fromkeys(object_ids if object_ids is not None else sorted(objects)))
+    if not selected or set(selected) - objects.keys():
+        raise ValueError('Select actual registered mathematical objects before drafting map batches')
+    if stage != '3A' and object_ids is None:
+        raise ValueError('3B/3C require an explicit comparison frontier, not a whole-registry rescan')
+    if max_objects is not None and (type(max_objects) is not int or max_objects < 1):
+        raise ValueError('Optional maximum core-object count must be positive')
+    budget = registration.context_budget(**(context_options or {}))
+    measure_text = lambda text: registration.text_cost(text, budget['model'])
+    queue_snapshot = {'source': 'not-a-published-queue-snapshot', 'skipped_current_core_objects': 0}
+    if stage == '3A' and object_ids is None:
+        # Planning is not claiming. A bound mapper reads the current lightweight
+        # remote queue, not a potentially old origin tracking ref or a local
+        # task-shaped draft. Standalone tools have no workflow authentication
+        # binding and explicitly report their tracking-snapshot fallback.
+        import coordination
+        top = subprocess.run(['git', 'rev-parse', '--show-toplevel'], cwd=root,
+                             capture_output=True, text=True)
+        if not top.returncode and Path(top.stdout.strip()).resolve() == root:
+            bound_run = coordination.config(root, 'wcg.workflowRun')
+            run = bound_run or 'map-v2'
+            config_path = _safe_path(root, 'research/operations/' + identity(run) + '/run.json')
+            bound_mapper = bool(bound_run and config_path.exists()
+                                and json.loads(config_path.read_text()).get('phase') == 'map')
+            if not bound_mapper:
+                run = 'map-v2'
+            rows, snapshot_source, snapshot_tip = [], None, None
+            if bound_mapper:
+                import map_tasks
+                with map_tasks.latest(root, 'map') as (snapshot, ctx):
+                    rows = map_tasks.listing(snapshot, ctx=ctx)
+                    snapshot_tip = subprocess.check_output(['git', 'rev-parse', 'HEAD'],
+                                                           cwd=snapshot, text=True).strip()
+                snapshot_source = 'latest-published-workflow'
+            else:
+                branch = coordination.config(root, 'wcg.branch') or subprocess.run(
+                    ['git', 'branch', '--show-current'], cwd=root, capture_output=True, text=True).stdout.strip()
+                tracking = 'refs/remotes/origin/' + branch
+                tip = subprocess.run(['git', 'rev-parse', '--verify', tracking], cwd=root,
+                                     capture_output=True, text=True)
+                if not tip.returncode:
+                    snapshot_tip, snapshot_source = tip.stdout.strip(), tracking
+                    prefix = 'research/operations/' + run + '/tasks/'
+                    names = subprocess.run(['git', 'ls-tree', '-r', '--name-only', '-z',
+                                            snapshot_tip, '--', prefix], cwd=root, capture_output=True)
+                    for name in names.stdout.decode('utf-8').split('\0'):
+                        if not name.endswith('.json'):
+                            continue
+                        saved = subprocess.run(['git', 'show', snapshot_tip + ':' + name],
+                                               cwd=root, capture_output=True)
+                        if not saved.returncode:
+                            rows.append(json.loads(saved.stdout))
+            if snapshot_source:
+                already = set()
+                for row in rows:
+                    definition = row.get('definition', {})
+                    inputs = definition.get('input_pins', {})
+                    if (row.get('state') in {'available', 'claimed', 'blocked', 'done', 'handoff'}
+                            and definition.get('stage') == stage and definition.get('registry') == registry
+                            and inputs and all(oid in objects and pin(objects[oid]) == value
+                                               for oid, value in inputs.items())):
+                        already.update(definition.get('object_ids', []))
+                selected = [oid for oid in selected if oid not in already]
+                queue_snapshot = {'source': snapshot_source, 'tip': snapshot_tip, 'workflow_run': run,
+                                  'skipped_current_core_objects': len(already & objects.keys()),
+                                  'note': 'These cores belong to published current-input tasks; explicit object frontiers request deliberate recomparison. Bound workflows use the fresh remote queue; standalone fallback uses the reported tracking snapshot.'}
+    if not selected:
+        _write_json(_safe_path(root, output), [])
+        return {'status': 'no-new-map-tasks', 'path': output, 'tasks': 0, 'core_objects': 0,
+                'queue_snapshot': queue_snapshot,
+                'instruction': 'Resume the published queue or finish integration; do not map plan an empty task array.'}
+    cache, units, refs_for, neighbors = {}, {}, {}, {}
+    body_owners = {}
+    for oid, obj in objects.items():
+        body_owners.setdefault(obj['body']['path'], []).append(oid)
+
+    def scope_of(obj):
+        scopes = object_scopes({obj['object_id']: obj})
+        deepest = max(scopes, key=lambda s: (len(s.split('/')), s)) if scopes else '.'
+        if stage == '3B' and deepest.startswith('archives/'):
+            return '/'.join(deepest.split('/')[:2])
+        return '.' if stage == '3C' else deepest
+
+    def text_reference(ref):
+        key = (ref['path'], ref['sha256'])
+        if key not in texts:
+            # Only a declared exact section is inspected for reading links;
+            # another Claim elsewhere on the same page is not silently used.
+            texts[key] = registration._context_text(reference(root, ref), ref_bytes(root, ref))
+        return section(texts[key], ref.get('section')) if texts[key] is not None else ''
+
+    def linked_ids(oid):
+        obj = objects[oid]
+        found = set()
+        # Evidence is already a complete mandatory reading reference; naming
+        # its registered owners is useful, but definitions do not connect all
+        # their users into one artificial comparison family.
+        for ref in obj['evidence']:
+            found.update(body_owners.get(ref['path'], []))
+        text = text_reference(obj['body'])
+        for raw in re.findall(r'\]\(\s*(?:<([^>]+)>|([^\s)]+))', text):
+            target = unquote(raw[0] or raw[1])
+            split = urlsplit(target)
+            if split.scheme or split.netloc or (not split.path and not split.fragment):
+                continue
+            name = (posixpath.normpath(posixpath.join(posixpath.dirname(obj['body']['path']), split.path))
+                    if split.path else obj['body']['path'])
+            if name.startswith('../') or name.startswith('/'):
+                continue
+            found.update(body_owners.get(name, []))
+        return found - {oid}
+
+    def continued_reading(refs, payload):
+        """Exact, ordered reading windows; the original mathematical refs stay intact."""
+        allowance = max(1, budget['reading_tokens'] - measure_text(
+            json.dumps(payload, ensure_ascii=False))['estimated_tokens'] - 32 * len(payload))
+        spans, originals, guide = {}, {}, []
+        for ref in refs:
+            key = (ref['path'], ref['sha256'])
+            originals.setdefault(key, []).append(ref.get('section'))
+            text = text_reference(ref)
+            full = texts[key]
+            if full is None:
+                guide.append({'source': {'path': key[0], 'sha256': key[1]},
+                              'requires_readable_export': True,
+                              'continuation': 'Read/export this evidence with its appropriate tool; keep the owning object and its obligations.'})
+                continue
+            if 'section' in ref:
+                start = next(position for title, _, position in heading_sections(full) if title == ref['section'])
+                interval = (start, start + len(text))
+            else:
+                interval = (0, len(full))
+            spans.setdefault(key, []).append(interval)
+        for key, intervals in spans.items():
+            full = texts[key]
+            for start, end in registration._merged_intervals(intervals):
+                cursor = start
+                while cursor < end:
+                    if measure_text(full[cursor:end])['estimated_tokens'] <= allowance:
+                        stop = end
+                    else:
+                        low, high = cursor + 1, end
+                        while low < high:
+                            middle = (low + high + 1) // 2
+                            if measure_text(full[cursor:middle])['estimated_tokens'] <= allowance:
+                                low = middle
+                            else:
+                                high = middle - 1
+                        stop = low
+                        # Prefer complete paragraphs/lines. A very long line
+                        # still has exact consecutive character windows.
+                        boundary = full.rfind('\n\n', cursor, stop)
+                        if boundary <= cursor:
+                            boundary = full.rfind('\n', cursor, stop)
+                        if boundary > cursor:
+                            stop = boundary + (2 if full[boundary:boundary + 2] == '\n\n' else 1)
+                    cost = measure_text(full[cursor:stop])
+                    guide.append({'source': {'path': key[0], 'sha256': key[1]},
+                                  'declared_sections': list(dict.fromkeys(originals[key])),
+                                  'start_char': cursor, 'end_char_exclusive': stop,
+                                  'start_line': full.count('\n', 0, cursor) + 1,
+                                  'end_line': full.count('\n', 0, max(cursor, stop - 1)) + 1,
+                                  'estimated_tokens': cost['estimated_tokens'],
+                                  'token_count_is_estimate': cost['token_count_is_estimate'],
+                                  'continuation': 'Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.'})
+                    cursor = stop
+        for index, item in enumerate(guide, 1):
+            item['pass'] = index
+        return guide
+
+    texts = {}
+    for oid in selected:
+        obj = objects[oid]
+        refs = [obj['body'], *obj['evidence']]
+        refs_for[oid] = refs
+        units[oid] = {'key': oid, 'refs': refs, 'metadata': obj,
+                      'estimated_output_tokens': max(1200, measure_text(
+                          json.dumps(obj, ensure_ascii=False))['estimated_tokens'] + 400)}
+        neighbors[oid] = linked_ids(oid)
+
+    # Families are conservative reading candidates: the same source page,
+    # explicit source links, or an exact declared model in the same local
+    # source family. These hints never create a mathematical edge.
+    parent = {oid: oid for oid in selected}
+    def find(oid):
+        while parent[oid] != oid:
+            parent[oid] = parent[parent[oid]]
+            oid = parent[oid]
+        return oid
+    def union(left, right):
+        if scope_of(objects[left]) == scope_of(objects[right]):
+            a, b = find(left), find(right)
+            if a != b:
+                parent[max(a, b)] = min(a, b)
+    pages, models = {}, {}
+    selected_set = set(selected)
+    for oid in selected:
+        obj = objects[oid]
+        page_key = (scope_of(obj), obj['body']['path'])
+        if page_key in pages:
+            union(oid, pages[page_key])
+        else:
+            pages[page_key] = oid
+        if obj['kind'].casefold() not in {'definition', 'model', '定义', '模型'}:
+            model_key = (scope_of(obj), posixpath.dirname(obj['body']['path']), ' '.join(obj['model'].split()))
+            if model_key in models:
+                union(oid, models[model_key])
+            else:
+                models[model_key] = oid
+            for other in neighbors[oid] & selected_set:
+                if objects[other]['kind'].casefold() not in {'definition', 'model', '定义', '模型'}:
+                    union(oid, other)
+    if stage != '3A':
+        # For later layers the lead selected this comparison frontier
+        # explicitly. Do not split it merely because its source paths differ.
+        anchors = {}
+        for oid in selected:
+            scope = scope_of(objects[oid])
+            if scope in anchors:
+                union(oid, anchors[scope])
+            else:
+                anchors[scope] = oid
+    families = {}
+    for oid in selected:
+        families.setdefault((scope_of(objects[oid]), find(oid)), []).append(oid)
+    packs = []
+    for (scope, family), ids in sorted(families.items()):
+        # Within a family, keep direct source neighbors close without forming
+        # a transitive all-pairs comparison obligation.
+        pending = set(ids)
+        order, frontier = [], deque()
+        while pending:
+            if not frontier:
+                frontier.append(min(pending, key=lambda i: (objects[i]['body']['path'], i)))
+            oid = frontier.popleft()
+            if oid not in pending:
+                continue
+            pending.remove(oid); order.append(units[oid])
+            frontier.extend(sorted(neighbors[oid] & pending,
+                                   key=lambda i: (objects[i]['body']['path'], i)))
+        result = registration.pack_units(root, order, budget,
+                                         max_items=max_objects or len(order), cache=cache)
+        packs.extend((scope, family, pack) for pack in result['packs'])
+
+    tasks, oversize, reading_totals = [], [], {'chars': 0, 'utf8_bytes': 0, 'estimated_tokens': 0}
+    for scope, family, packed in packs:
+        core = [unit['key'] for unit in packed['units']]
+        reads, deferred, deferred_issues = [], [], {}
+        mandatory_refs = [ref for oid in core for ref in refs_for[oid]]
+        payload = [objects[oid] for oid in core]
+        anchors = []
+        if stage != '3A':
+            def origin(oid):
+                scopes = object_scopes({oid: objects[oid]})
+                value = max(scopes, key=lambda s: (len(s.split('/')), s)) if scopes else '.'
+                return '/'.join(value.split('/')[:2]) if stage == '3C' else value
+            core_origins = {origin(oid) for oid in core}
+            other_origins = {}
+            frontier = [oid for oid in selected if scope_of(objects[oid]) == scope]
+            for oid in frontier:
+                if oid not in core and origin(oid) not in core_origins:
+                    other_origins.setdefault(origin(oid), oid)
+            anchors = list(other_origins.values())
+            # If a single-origin explicit frontier splits into several packs,
+            # retain one concrete comparison peer rather than isolated labels.
+            if not anchors and len(core) < len(frontier):
+                anchors = [next(oid for oid in frontier if oid not in core)]
+            for oid in anchors:
+                reads.append(oid)
+                obj = objects[oid]
+                mandatory_refs.extend([obj['body'], *obj['evidence']])
+                payload.append(obj)
+        reading = registration.reading_cost(root, mandatory_refs, metadata=payload, cache=cache, model=budget['model'])
+        reading['task_overhead_tokens'] = 32 * len(payload)
+        reading['estimated_tokens'] += reading['task_overhead_tokens']
+        oversized = packed['oversized'] or reading['estimated_tokens'] > budget['reading_tokens']
+        candidates = sorted(set().union(*(neighbors[oid] for oid in core)) - set(core) - set(reads))
+        if not oversized and not reading['unmeasured_refs']:
+            for oid in candidates:
+                obj = objects[oid]
+                trial_refs = [*mandatory_refs, obj['body'], *obj['evidence']]
+                try:
+                    trial = registration.reading_cost(root, trial_refs, metadata=[*payload, obj], cache=cache, model=budget['model'])
+                except (ValueError, OSError) as exc:
+                    deferred.append(oid); deferred_issues[oid] = str(exc)
+                    continue
+                trial['task_overhead_tokens'] = 32 * (len(core) + len(reads) + 1)
+                trial['estimated_tokens'] += trial['task_overhead_tokens']
+                if not trial['unmeasured_refs'] and trial['estimated_tokens'] <= budget['reading_tokens']:
+                    reads.append(oid); mandatory_refs = trial_refs; payload.append(obj); reading = trial
+                else:
+                    deferred.append(oid)
+        else:
+            deferred = candidates
+        all_ids = [*core, *reads]
+        task_id = task_prefix + '-' + stage.lower() + '-' + pin(
+            {'stage': stage, 'core': core, 'inputs': {oid: pin(objects[oid]) for oid in all_ids}})[:16]
+        unique_refs = {json.dumps(ref, sort_keys=True): ref for ref in mandatory_refs}
+        context_plan = {'budget': budget, 'reading': reading,
+                        'estimated_output_tokens': packed['estimated_output_tokens'],
+                        'oversized': oversized,
+                        'requires_export': bool(reading['unmeasured_refs']),
+                        'reading_refs': list(unique_refs.values()),
+                        'deferred_candidate_ids': deferred,
+                        'deferred_candidate_issues': deferred_issues,
+                        'comparison_anchor_ids': anchors,
+                        'family_hint': family, 'scope_hint': scope,
+                        'status': 'complete-declared-references-planned',
+                        'note': 'Source/model hints propose reading comparisons, not proved relations. '
+                                'Read any newly discovered necessary premise through read-add; '
+                                'do not truncate a proof or treat a deferred candidate as paid evidence.'}
+        if oversized:
+            oversize.append(task_id)
+            context_plan['status'] = 'complete-object-requires-staged-reading'
+            context_plan['note'] += ' Preserve this complete object/comparison frontier; read its exact declared sections in successive turns, '
+            context_plan['note'] += 'saving the hypotheses, established steps and remaining obligations between turns.'
+            context_plan['reading_passes'] = continued_reading(mandatory_refs, payload)
+        if reading['unmeasured_refs']:
+            context_plan['status'] = 'complete-object-requires-readable-evidence'
+            context_plan['note'] += ' Read/export the actual non-text evidence with its appropriate tool; '
+            context_plan['note'] += 'raw binary bytes are not a measured token budget.'
+        tasks.append({'task_id': task_id, 'stage': stage, 'registry': registry,
+                      'object_ids': core, 'read_object_ids': reads,
+                      'input_pins': {oid: pin(objects[oid]) for oid in all_ids},
+                      'write_paths': ['map/edges/' + task_id, 'map/receipts/' + task_id + '.json'],
+                      'goal': 'Read and compare the complete assigned mathematical objects in ' + scope +
+                              '; preserve model, quantifiers, hypotheses, exact refutation targets and open obligations. '
+                              'Create only explained useful relations; shared definitions do not imply hub edges.',
+                      'context_plan': context_plan})
+        for key in reading_totals:
+            reading_totals[key] += reading[key]
+    destination = _safe_path(root, output)
+    _write_json(destination, tasks)
+    return {'status': 'map-tasks-draft-local-not-pushed', 'path': output,
+            'tasks': len(tasks), 'core_objects': len(selected),
+            'queue_snapshot': queue_snapshot,
+            'core_counts': [len(task['object_ids']) for task in tasks],
+            'reading_files_per_task': [len({ref['path'] for ref in task['context_plan']['reading_refs']}) for task in tasks],
+            'reading_totals': reading_totals, 'oversized_tasks': oversize,
+            'instruction': 'Review the actual mathematical families, then map plan this task array. '
+                           'A task is a batch, not a file or an automatic edge. '
+                           '3B/3C require the actual comparison frontier; 3D remains lead integration.'}
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--repo', type=Path, required=True)
     p.add_argument('--registry', default=REGISTRY)
     sub = p.add_subparsers(dest='command', required=True)
+    def reading_options(parser):
+        parser.add_argument('--model', default='gpt-6.1-sol')
+        parser.add_argument('--context-tokens', type=int)
+        parser.add_argument('--context-source', choices=['official-default', 'platform-reported', 'user-specified'])
+        parser.add_argument('--used-tokens', type=int)
+        parser.add_argument('--reserve-tokens', type=int)
+        parser.add_argument('--output-tokens', type=int)
+        parser.add_argument('--context-mode', choices=['fresh', 'inherited'], default='fresh')
+
+    def reading_plan(args):
+        return {'model': args.model,
+                'context_tokens': args.context_tokens if args.context_tokens is not None else 500000,
+                'window_source': args.context_source or ('user-specified' if args.context_tokens is not None else 'official-default'),
+                'used_tokens': args.used_tokens, 'reserve_tokens': args.reserve_tokens,
+                'output_tokens': args.output_tokens, 'inherited': args.context_mode == 'inherited'}
+
     sub.add_parser('inventory')
     q = sub.add_parser('inputs'); q.add_argument('--out', default='research/registration/inputs.json')
     q.add_argument('--scope', choices=['repository','partial'], default='repository')
@@ -817,6 +1196,21 @@ def main(argv=None):
     q.add_argument('--path', action='append', default=[])
     q = sub.add_parser('freeze'); q.add_argument('--inputs-file', required=True); q.add_argument('--out', default='research/registration/baseline.json')
     q = sub.add_parser('compose'); q.add_argument('--manifest', required=True); q.add_argument('--out', default='research/registration/proposed.json')
+    q = sub.add_parser('batches-draft', help='Draft whole registration batches from real frozen materials and a reading budget')
+    q.add_argument('--baseline', default='research/registration/baseline.json')
+    q.add_argument('--output', default='research/registration/tasks.json')
+    q.add_argument('--max-materials', type=int, default=200)
+    q.add_argument('--task-prefix', default='register')
+    q.add_argument('--include-registered', action='store_true')
+    reading_options(q)
+    q = sub.add_parser('map-draft', help='Draft related complete-object comparisons within a declared context budget')
+    q.add_argument('--output', default='map/planned-tasks.json')
+    q.add_argument('--stage', choices=['3A', '3B', '3C'], default='3A')
+    q.add_argument('--object-id', action='append')
+    q.add_argument('--objects-file')
+    q.add_argument('--task-prefix', default='map')
+    q.add_argument('--max-objects', type=int)
+    reading_options(q)
     q = sub.add_parser('registration-check'); q.add_argument('--final', action='store_true')
     q = sub.add_parser('assignments-draft', help='Optional scheduling draft; review it before publishing actual CAS tasks')
     q.add_argument('--baseline', default='research/registration/baseline.json')
@@ -855,6 +1249,21 @@ def main(argv=None):
         import registration
         result = registration.prepare_inputs(root,a.out,a.scope,a.coverage_note,a.paths_file)
     elif a.command == 'prepare-inputs': result = prepare_inputs(root, a.output, a.scope, a.coverage_note, a.path)
+    elif a.command == 'batches-draft':
+        import registration
+        result = registration.draft_registration_tasks(root, a.baseline, a.output,
+            max_materials=a.max_materials, task_prefix=a.task_prefix,
+            context_options=reading_plan(a), include_registered=a.include_registered)
+    elif a.command == 'map-draft':
+        ids = a.object_id
+        if a.objects_file:
+            selected = json.loads(_safe_path(root, a.objects_file).read_text())
+            if isinstance(selected, dict): selected = selected.get('object_ids')
+            strings(selected, 'selected object IDs', True)
+            ids = list(dict.fromkeys([*(ids or []), *selected]))
+        result = draft_map_tasks(root, output=a.output, registry=a.registry,
+            stage=a.stage, object_ids=ids, task_prefix=a.task_prefix,
+            context_options=reading_plan(a), max_objects=a.max_objects)
     elif a.command in {'freeze', 'compose', 'registration-check', 'assignments-draft', 'assignments-check', 'new-id'}:
         import registration
         if a.command == 'freeze': result = registration.freeze(root, a.inputs_file, a.out)

@@ -28,14 +28,14 @@ DEFAULT_BRANCH = "rebuild/research-v2"
 DEFAULT_BOARD_BRANCH = "wcg/board-cleanup-20261028"
 DEFAULT_START_SAVE = "repository-cleanup"
 RESEARCH_ENTRIES = {
-    "repository-cleanup": {"research_entry": "cleanup/README.md", "research_prompt": "prompts/02-clean.md", "research_runbook": "tools/README.md"},
+    "repository-cleanup": {"research_entry": "cleanup/README.md", "research_prompt": "prompts/02.5-3-register.md", "research_runbook": "tools/README.md"},
     "customer-attraction": {"research_entry": "archives/customer-attraction/README.md", "research_prompt": "archives/customer-attraction/prompts/README.md", "research_runbook": "tools/README.md"},
     "facility-games": {"research_entry": "archives/facility-games/README.md", "research_prompt": "archives/facility-games/prompts/README.md", "research_runbook": "tools/README.md"},
     "weighted-congestion": {"research_entry": "archives/weighted-congestion/README.md", "research_prompt": "archives/weighted-congestion/prompts/README.md", "research_runbook": "tools/README.md"},
     "unrelated-machines": {"research_entry": "archives/unrelated-machines/README.md", "research_prompt": "archives/unrelated-machines/prompts/README.md", "research_runbook": "tools/README.md"},
     "positive-kernels": {"research_entry": "archives/positive-kernels/README.md", "research_prompt": "archives/positive-kernels/prompts/README.md", "research_runbook": "tools/README.md"},
 }
-ROLE_PROMPTS = {"boss": "prompts/research-runtime.md", "cleaner": "prompts/02-clean.md", "curator": "prompts/02.5-3-register.md", "mapper": "prompts/03-map.md"}
+ROLE_PROMPTS = {"boss": "prompts/research-runtime.md", "cleaner": "cleanup/README.md", "curator": "prompts/02.5-3-register.md", "mapper": "prompts/03-map.md"}
 CLEANUP_ROLE_PROMPTS = ROLE_PROMPTS
 IDENTIFIER = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,63}")
 TOKEN = re.compile(rb"(?:github_pat_|ghp_)[A-Za-z0-9_]{12,}")
@@ -564,7 +564,7 @@ def start(args):
         result["context_entry"] = ("prompts/03-map.md" if selected_role == "mapper" else
                                    "prompts/02.5-3-register.md" if selected_role == "curator" else "cleanup/README.md")
     if curation_run:
-        entry='prompts/02.5-2-distill.txt'
+        entry='research/CURATION_OPERATIONS.md'
         result.update(curation_run=curation_run,context_entry=entry,research_entry=entry,
                       role_prompt=entry,research_prompt=entry,
                       research_runbook='research/CURATION_OPERATIONS.md')
@@ -613,7 +613,7 @@ def main():
     s.add_argument('--actor',help='提示词明确指定的Boss编号；首次必填，接续复用')
     s.add_argument('--adopt-legacy',action='store_true')
     s.add_argument('--auth',choices=('token','ssh'),default=argparse.SUPPRESS)
-    s.add_argument("--role", choices=tuple(ROLE_PROMPTS), help="本轮新清洗clone默认cleaner；既有绑定复用")
+    s.add_argument("--role", choices=tuple(ROLE_PROMPTS), help="显式选择当前阶段角色；既有绑定复用")
     s.add_argument("--token-file", default=argparse.SUPPRESS)
     s.add_argument("--remote", default=REMOTE)
     s.add_argument("--save", default=argparse.SUPPRESS)
@@ -637,7 +637,7 @@ def main():
     registration_tasks = sub.add_parser('registration-task', help='登记批次的认领、接续、交付和集成')
     registration_tasks.add_argument('args', nargs=argparse.REMAINDER)
     research = sub.add_parser('research', help='登记、按需读取超边、两类Solver输入和持续研究恢复',
-                              epilog='Commands: inputs, prepare-inputs, inventory, freeze, assignments-draft, assignments-check, new-id, compose, register, registration-check, check, build, search, show, context, edge-bind, edge-check, packet, init, save, resume, compute. See research/IMPLEMENTATION.md.')
+                              epilog='Commands: inputs, prepare-inputs, inventory, batches-draft, map-draft, freeze, assignments-draft, assignments-check, new-id, compose, register, registration-check, check, build, search, show, context, edge-bind, edge-check, packet, init, save, resume, compute. See research/IMPLEMENTATION.md.')
     research.add_argument('--registry', help='显式选择v2登记文件；省略使用research/registry.json')
     research.add_argument('args', nargs=argparse.REMAINDER)
     computation = sub.add_parser('compute', help='实际计算或生成明确云端批处理请求')
@@ -702,16 +702,25 @@ def main():
     repo = checked_repo(a.repo)
     if a.command == 'research':
         registry = ['--registry', a.registry] if a.registry else []
-        return subprocess.call([sys.executable, str(repo / TOOLS / 'research_runtime.py'), '--repo', str(repo), *registry, *a.args])
+        # Bound planners read the latest shared task metadata to avoid
+        # duplicating batches assigned by another clone. Other local reading
+        # commands, and help, do not need authentication.
+        planner = a.args and a.args[0] in {'batches-draft', 'map-draft'}
+        workflow = run(repo, 'config', '--local', '--get', 'wcg.workflowRun', check=False).stdout.decode().strip() if planner else ''
+        env = auth(repo, a) if workflow and not any(x in a.args for x in ('-h', '--help')) else None
+        return subprocess.call([sys.executable, str(repo / TOOLS / 'research_runtime.py'), '--repo', str(repo), *registry, *a.args], env=env)
     if a.command == 'compute':
         return subprocess.call([sys.executable, str(repo / TOOLS / 'compute.py'), '--repo', str(repo), *a.args])
     task_commands = {'inventory', 'lead', 'plan', 'list', 'claim', 'claim-next', 'done',
                      'handoff', 'reclaim', 'withdraw', 'status', 'collect', 'assemble', 'read-add'}
     if a.command == 'registration-task' or (a.command == 'map' and a.args and a.args[0] in task_commands):
-        env = auth(repo, a)
         phase = 'registration' if a.command == 'registration-task' else 'map'
-        result = subprocess.run([sys.executable, str(repo / TOOLS / 'map_tasks.py'), '--repo', str(repo),
-                                 '--phase', phase, *a.args], env=env, capture_output=True, text=True)
+        command = [sys.executable, str(repo / TOOLS / 'map_tasks.py'), '--repo', str(repo),
+                   '--phase', phase, *a.args]
+        if any(option in a.args for option in ('-h', '--help')):
+            return subprocess.call(command)
+        env = auth(repo, a)
+        result = subprocess.run(command, env=env, capture_output=True, text=True)
         if result.stderr: sys.stderr.write(result.stderr)
         if result.returncode:
             sys.stdout.write(result.stdout)

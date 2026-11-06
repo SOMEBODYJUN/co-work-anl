@@ -60,10 +60,10 @@
 
 ## 上一版原型在这两步的过重/越界处
 
-已移除的上一版原型的全量 baseline/manifest、当前 SHA、`statement/conditions/support/use/status/dependency_scope`、final export、逐文件 action 和分类更正可供后续重新登记与验收，但若在首轮阅读全文时逐项填完整，4465 候选与大量解析不兼容会把快速定性变成格式工程；且字段通过仍不证明数学正确。上一版 `prompts/02.5-research.md`/worker 把冻结、改写、准入、第三阶段关系指纹/impact、超边语义和数学研究尝试连成一次对象群工作；这些不应成为第 1 步每件材料或第 2 步每个数值片段的完成门槛。尤其不得现在决定“一文件一 ID/必须拆文件/稳定段落端点”中哪种是后续唯一 schema，也不为关系连通、Agent 角色或图的 accepted 边预造结论。
+已移除的上一版原型的全量 baseline/manifest、当前 SHA、`statement/conditions/support/use/status/dependency_scope`、final export、逐文件 action 和分类更正可供后续重新登记与验收，但若在首轮阅读全文时逐项填完整，4465 候选与大量解析不兼容会把快速定性变成格式工程；且字段通过仍不证明数学正确。已移除的跨阶段提示词 把冻结、改写、准入、第三阶段关系指纹/impact、超边语义和数学研究尝试连成一次对象群工作；这些不应成为第 1 步每件材料或第 2 步每个数值片段的完成门槛。尤其不得现在决定“一文件一 ID/必须拆文件/稳定段落端点”中哪种是后续唯一 schema，也不为关系连通、Agent 角色或图的 accepted 边预造结论。
 
 阶段二文档中“资源对象进入图”、旧 audit 的“同页可以稳定段落端点”与现行工具的一页一主 ID 有时间上的设计差异；本稿只指出多状态必须分别说明，具体登记方式留给后续。第 1 步的规模覆盖靠逐件全文读、程序编号和完整目录闭合，不靠全量重证、程序重跑、原历史逐字节认证或先行删除。第 2 步要投入数学判断，但只对真的有未表达数值机制/片段者投入；好正文可建议沿用，纯身份可建议去噪，第一步不作具体处理。历史清理及其撤销只如实记录，不重复列作现行工作。
 
 ## 执行入口
 
-第一步 Boss 与内部 worker 的提示词见 [02.5-1-inventory.md](../prompts/02.5-1-inventory.md)；材料记录字段由 [classification-record.schema.json](../curation/schemas/classification-record.schema.json)限定。这是材料清单格式，不是未来数学对象或超边 schema。程序规格见 [PHASE25_PROGRAM.md](PHASE25_PROGRAM.md)。
+第一步已完成，其旧启动提示词已移除；材料记录字段由 [classification-record.schema.json](../curation/schemas/classification-record.schema.json)限定。这是材料清单格式，不是未来数学对象或超边 schema。程序规格见 [PHASE25_PROGRAM.md](PHASE25_PROGRAM.md)。

@@ -6,7 +6,7 @@
 
 3A先看对象内部的承重论证，再比较同子档对象族；3B补同档跨批/跨子档关系；3C核明确跨档线索的模型映射与条件；3D由唯一lead持续集成。不把每步算术拆成节点，不为连通率造边。共同模型、记号和定义通常作为条件与共享阅读引用，不机械造连接全部结果的hub。
 
-Boss和内部处理者都做实质数学，反馈交原worker继续，空位立即补位。本人未完任务优先，成熟一批立即保存、交付并接下一批，lead同步整合，不等全轮结束。持续到准确处置本范围或真实运行边界，不以一次提交、一次build或暂时队列空结束。
+Boss和内部处理者都做实质数学，批内反馈交原worker继续，下一包用fresh上下文补位。本人未完任务优先，成熟一批立即保存、交付并接下一批，lead同步整合，不等全轮结束。持续到准确处置本范围或真实运行边界，不以一次提交、一次build或暂时队列空结束。
 
 ## 共享读取，独立写入
 
@@ -15,11 +15,11 @@ Boss和内部处理者都做实质数学，反馈交原worker继续，空位立�
 ```sh
 python work.py map lead show
 python work.py map list --owner self
-python work.py map claim-next
+python work.py map claim-next --count 6
 python work.py map read-add TASK --object-ids 已登记依赖ID
 ```
 
-lead用plan发布可执行任务并参与数学，不设常驻审批流水线。任务与结果先确认pushed再交付；响应未知核原request_id。过期输入可handoff，lead定向改版；已准确完成的批次不重扫。原样复用canonical已发布边可用其精确SHA列入assets，不占该边写范围。
+lead按完整Boss词用map-draft→plan发布候选比较范围；draft只在实际有新比较范围时生成，恢复时先接既有队列，空草稿不plan。lead用plan发布可执行任务并参与数学，不设常驻审批流水线。任务与结果先确认pushed再交付；响应未知核原request_id。过期输入可handoff，lead定向改版；已准确完成的批次不重扫。原样复用canonical已发布边可用其精确SHA列入assets，不占该边写范围。
 
 ## 一条边保住什么
 

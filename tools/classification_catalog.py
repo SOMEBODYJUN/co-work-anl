@@ -149,7 +149,7 @@ def build(root, source_runs, output, corrections=None):
     lines.extend(f'- [{name}](by-archive/{name}.md)：{len(items)} 份。' for name, items in sorted(archives.items()))
     lines += ['', '旧运行中的清理动作仅为历史记录；本轮已恢复其原页面及链接。当前目录链接始终指向原材料。原始证据附件也保留。', '',
               '编号先按首轮 4,608 份固定顺序分配，再给 11 份新增材料追加编号；同路径的版本记录保存在 JSON 的 source_versions 中。', '',
-              '[第二步唯一完整提示词](../../../prompts/02.5-2-distill.txt) · [操作手册](../../../research/CURATION_OPERATIONS.md)']
+              '[当前登记入口](../../../prompts/02.5-3-register.md) · [操作手册](../../../research/CURATION_OPERATIONS.md)']
     (home/'INDEX.md').write_text('\n'.join(lines)+'\n')
     return report
 

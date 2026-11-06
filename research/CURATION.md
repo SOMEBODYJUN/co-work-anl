@@ -1,6 +1,6 @@
 # 2.5 分步范围
 
-本轮2.5第二步160群已完成，实际成果与处置见当前run。接续同类整理时完整提示词只有 [02.5-2-distill.txt](../prompts/02.5-2-distill.txt)。用户提供这一份词、work.py和已有仓库外凭据即可；内部资料由执行者自行读取。任务和实际归属看 [现行任务目录](../curation/runs/20261103-boss6-current/TASKS.md) 与curation-task远端查询，不从旧报告推断进度。
+本轮2.5第二步160群已完成，实际成果与处置见当前run。旧整理提示词已移除；此页只解释已完成材料的去向，必要修订查[既有操作](CURATION_OPERATIONS.md)。当前启动使用[登记完整词](../prompts/02.5-3-register.md)或[构图完整词](../prompts/03-map.md)。任务和实际归属看 [现行任务目录](../curation/runs/20261103-boss6-current/TASKS.md) 与curation-task远端查询，不从旧报告推断进度。
 
 | 步骤 | 工作与完成标准 |
 | --- | --- |

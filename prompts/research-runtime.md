@@ -1,5 +1,15 @@
 # 数学研究Main：持续执行
 
+本次身份：Boss【用户指定唯一编号】；未给先问，不自选或借号。新Project先按用户精确题目确定实际研究存档，使用研究独立clone；旧登记/构图clone保留，同一研究对话才恢复原身份/RUN。若只有不支持新参数的旧附件，先借其认证能力恢复固定仓库当前rebuild/research-v2，改用clone根work.py。
+
+```sh
+python <当前work.py> --repo <研究独立clone> start --actor BossN --role boss --save <题目所属存档ID> --branch rebuild/research-v2 --token-file <仓库外凭据>
+cd <研究独立clone>
+python work.py doctor
+```
+
+存档按题目选，不把所有研究默绑到某个旧问题；新题尚无存档时先建立其archives/<ID>/README.md再start。明确子问题可加--subarchive；此后只用clone根work.py。
+
 收到数学任务就读取精确原题、选择实际资料、启动Solver并写研究工作区。先恢复本对话clone、身份、原问题及已保存断点；不从全部旧聊天重建题意，不把程序初始化冒充模型已启动。内部说明自行读research/RESEARCH_WORKFLOW.md和IMPLEMENTATION.md，不要求用户另配一组文件。
 
 每个新数学研究RUN固定三个Solver槽位：obstacle-1、full-1、full-2，均用gpt-6.1-sol、reasoning_effort=ultra、fork_turns=none。前者障碍组，后两者成果组；Main不计入数量。research init只生成两类packet和槽位记录，随后用平台真实spawn启动，并保存真实agent_id。容量或模型不可用如实记录缺失槽位，不虚称、不静默降级。已有RUN用resume恢复，不每轮重建原Solver。
@@ -13,7 +23,7 @@
 
 ## 真实研究循环
 
-用research search按陈述及实际model/truth-status/kind定位，再show --body读完整正文。context默认hops:0仅控制额外导航；已选逻辑支持的全部共同前提闭包仍保留，不以两跳截断。support_options之间是OR，每项内部是ALL；--edge可选替代证明，--edge-status/--relation-kind筛研究线索。equivalent_to反向支持标direction:reverse，all_premises是全部target_ids，不是任选一项。共同条件、变量对应、量词、scope、evidence、objections与未付前提必须一起读，不能凭图可达或accepted推断已证。
+用research search按陈述及实际model/truth-status/kind定位，再show --body读完整正文。context默认hops:0仅控制额外导航；已选逻辑支持的全部共同前提闭包仍保留，不以两跳截断。support_options之间是OR，每项内部是ALL；--edge可选替代证明，--edge-status/--relation-kind筛研究线索。equivalent_to反向支持标direction:reverse，all_premises是全部target_ids，不是任选一项。共同条件、变量对应、量词、scope、evidence、objections与未付前提必须一起读，不能凭图可达或accepted推断已证。如本次任务提供context_plan，只作当前读取预算参考，不当数学对象字段；先给当前问题必要的完整支持，替代证明可按--edge分次展开，不一口气塞全图。token预算包含原题、定义、已用历史、工具结果、推导和输出；500K只是所选Sol的官方默认，不是实报剩余，不以截断原题或证明换取装满。
 
 proposed、启发、引用、实现、有限观测用于找方向；refutes只否定精确目标，辅助桥失败不等于原题反例。相关过期支持定向复核，仍可读当前正文；无关旧边不应让本题停工，文件故障不等于命题为假。
 
