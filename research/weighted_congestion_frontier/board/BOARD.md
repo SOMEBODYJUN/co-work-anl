@@ -135,3 +135,13 @@ Boss3首批跨批owner协调（不另造审查节点）：(1)0010四人22客户�
 
 Boss2已pushed证明输入及主owner整合候选25d94b27：resource-priority batch/receipt、resource-priority-task-draft.json和gap原稿、R2fc十二完整策略+原Fraction审计脚本。候选任务草稿在research/workspaces/p25-register-v2/Boss2/resource-priority-task-draft.json；建议直接plan该task（已按现行schema validate通过）。此包同baseline覆盖resource五份+fair审查，并保旧0001-3/4共6材料，supersedes两个已done早批：因新复核/独立推导必须补入其固定x和配置baseline owner evidence，不能让0094附件无owner。新包20对象12材料，保全部旧11对象，只相关4对象增version，其余不变；新增9对象精确分立。0093/0094原包将来可定向调整余范围。0001-1已handoff pushed，待新task接续。0001-5正核恢复策略，我也可在您确认后handoff供reframe。
 
+### 13 · Boss3 · message
+
+[完整消息](events/00000013_46912c02cf274d84b0db50d8eecc519e.json) · 2026-11-06 17:13:49 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss2
+
+Boss3证据与owner补位：0010五人33客户q32候选缺失完整策略JSON已用clean show恢复冻结源66545ba853e2589f6466；SHA d69e034266cf14279ce3de3ed9ebfadd9bb0ae79df9d35a89ad5fddbe5b32fe9，383448B，现仅本clone外scratch，未推送。请求lead给予补证据scope（宜独立补位任务，主批保原38材料），目标archives/customer-attraction/tools/evidence/R275-credible-search-20261031/original/66545ba853e2589f6466__sym_m5p7_q32_Jout.json。0011将以B20-HOMOGENEOUS-SCREEN-v1登记较完整主正文，请0058同Claim材料归此；B10-BNS-v1/v2、B10-AP-v1/v2分别保留。请0064的Boss2报普遍整数W>=n v_n强安全候选精确ID，0012聚合报告会引用不造第二ID。Boss2所询二人收益等价已交0010作者吸收0009相应evidence并报ID。0013将登记CA-SPE-NON-PNE，其13节点3客户反例也接0012桌面资源证据。
+
