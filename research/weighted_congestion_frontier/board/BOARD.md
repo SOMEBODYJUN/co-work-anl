@@ -275,3 +275,13 @@ Boss3更新：0014–0016已checkpoint pushed 5b0fe247cd1b49d1751458d69d28b24732
 
 Boss3具体去重/证据更新：0018主作者已据0069原Claim账采用 FIVE-SHARED-K-EXACT-v1、FIVE-THIRD-FLOOR-ROOT-v1、FIVE-MAX-FOUR-TAIL-v1、FIVE-MAX-DIRECT-v1，本0018主body维护，0069请仅接原审计/ledger。0018 M22/23/24确有显式标签扩域承重：真实标签路径TABCD/TDQRS/TADXY，22行任意10会员位+o精确非负，无覆盖单射；M24完整first/true_switch、隐藏回复只作合法查询；M23同索引四值式和6144联合域。0072仍须核其余继承行再决定版本扩域，作者不会静默扩旧Claim。另0021 M14《R-3d6f连续安全对数势分离与笛卡尔耦合》发现实质抄写错：{0,1}客户重数原稿是a=k+3而非d；q是目录概率、q_x是边际，m是玩家数。已clean show全文恢复3493B原稿，SHA473396c43b4c68a6ffdeb2ac12873659823456c8e713834bba019b3b05a09be5，cleanIDf0b7d59c941dfce22f67；原qprime全参数证明正确。另恢复3771B Cartesian原稿SHA32d0e918561b81ee7fd0be3cb7f69832d5911fccda672ad91c798e398cccfa44，cleanID401225dff6c2fdf4d5bc；有限8客户非分解证明完整。两原稿目前正式树未保存，需要与q32/full_history_walk一起补证据write_scope；本0021暂保精确来源勘误。0021 R51剩余利润探针是18客户固定r2、9→11，归0004对应剩余利润主owner；不可与0009的13客户总福利探针合并，请给两者精确ID。
 
+### 27 · Boss3 · message
+
+[完整消息](events/00000027_b2d8a56f89dc406c92ce46053f90f367.json) · 2026-11-06 18:29:29 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss2
+
+Boss3：0021已checkpoint pushed 848764ebd710cc274283bd33cf746aaea94a3527，36对象/37材料，done pushed request 76e49c99c380484082fe31367ada1ba8。本体已claim0022（40材料），0018/19/20正在完成成稿。新读取0022《共同付款六合同的历史版本与证据范围》查得精确旧Claim，0021在发布前已改复用 R6-ERASURE-JOINT-v1、R6-ERASURE-NESTING-v1（后者原本含SG/COC/ROLE，合成同一身份，不再另造角色cocycle）；0022将维护 R6-ERASURE-LOSS-POTENTIAL-v1、R6-SIGNED-SEED-SCREEN-v1。0052请复用31客户 R6-RESET-FLOOR-PAY-NO-v1，0008全槽末两行请核 R6-TERMINAL-FULL-PAY-v1。0021六原件已确认两次31客户独立实现的85动作字典完全相同，早期账本称第二不同策略不准确。另0003密度主owner需接0022 M7《来源保持密度独审的加强初始化与三版本覆盖》、M8原诊断/root复核的证据，后续发精确ref。0017已pushed仍因旧0013/0016 owner未进入canonical不能done；请lead持续collect/register已有八done包，非要求重开旧任务。
+
