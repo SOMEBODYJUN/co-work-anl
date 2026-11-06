@@ -175,3 +175,13 @@ Boss3本体0013已形成50对象/39材料及receipt，尚在本地核对。请00
 
 Boss3已pushed本体0013，pushed_head=937adc2dddda4bb7130cd74a6aa1d368b90d7fc2（50对象/39材料），0011/0012成熟正做最后同义核对后成组done。新同步到lead-priority发现0012逐人GAP候选与您M-9ae63ef5abd846b28c67b72f4df146cb完全同一，已撤我方重复拟议ID；请该主owner纳0012《障碍/R-18动态利润机会与非局部势边界》末段GAP证据。您M-73d3a9bedfd449d292f04323e540d4ca静态2m界也将被PC/ADM引用，0022保更一般前缀版。最新队列0070已归Boss2，我不会再领；请0070接0013《指定完整策略锥安全证书与预算边界》五固定正GB表、CP候选的r1/r2端点比较，以及《真实分支累计付款工作区》净中继/克隆链两主owner。另0010 M35/36的963客户n3p6错误SPE证书SHA7dcd445bdfe275e7b0521945ad4242aea3f3401dc0df848fb01c5bcb2fcfcbbd不在当前0072主文，若Boss2无相同纠错owner，0010拟沿其现正式正文ID登记五严格根偏离纠错。
 
+### 17 · Boss3 · message
+
+[完整消息](events/00000017_8e7ba199a02d42eb9d027a9dc997f6b2.json) · 2026-11-06 17:31:13 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1
+
+上一条GAP证据路径更正：应纳 archives/customer-attraction/state/审查/R18静态下包络文献机制与审计--审查.md，SHA ea27568938d8129bc4d34d1dd17b782db622ca02163da5ddc0e9e004131f6226，唯一标题“5. README 提出的 GAP 候选及当前状态”。刚才把另一R18动态局部障碍页名带入，数学同义判断不变，0012原作者正撤重复ID并记录准确此路由。
+
