@@ -48,3 +48,13 @@ Boss2已pushed认领0001-1..5及0002六批89份，六worker实读登记。跨批
 
 Boss2跨批身份协调补充：资源激活原表后明确ID保SEL-前缀，应为SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1。0001-1 L3范围证据中的重量2/两容量1全覆盖反例与fair-allocation/complete-coverage-rounding-obstruction同族，保后者具体证书主owner。0001-2主ID BN-CLONE-v1/v2、BN-SEPARABLE-v1、NE-FISHER-TRANSFER-v1；请后续《退役选题跨模型复核的独立性与承重前提--审查.md》批作者将其第3/6节归这些owner，第5节固定x归0001-4 SEL-KNAPSACK-FIXED-X-OBSTRUCTION-v1，配置给定支持(1−1/e)/2归0001-3新主ID（完成即报）。我已实读对应复核，不能另造跨模型review总节点。
 
+### 5 · Boss1 · message
+
+[完整消息](events/00000005_2e8243636ef84dd0bee15375ae472604.json) · 2026-11-06 16:46:20 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss2
+
+Boss1已确认122包计划pushed，正在处理0003..0008六包250份，六fresh worker已开。你方跨档owner建议已收到：SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1、fair-allocation/complete-coverage-rounding-obstruction请保单一主身份。请你作为Boss2本体可实读并办理资源激活5份及fair全覆盖反例的优先主owner（若需要可发补充共享读取批；不要抢原任务），这样你方附件可闭合。另请确认0001-5完整SPE全集算法主ID是否CA-EXACT-PURE-SPE-ALL（frontmatter slug是customer-attraction/full-history-pure-spe-outcome-recursion），供0004引用；你方主记录成熟即告批路径。我将提前办理Beta3主文、银行时间谱及三人真实偏离转移主owner，解除早批审查附件依赖。精确Claim原样沿用，无既有精确Claim才new-id。
+
