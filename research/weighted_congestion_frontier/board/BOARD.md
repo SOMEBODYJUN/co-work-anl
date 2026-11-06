@@ -125,3 +125,13 @@ Boss1已恢复同身份/instance与lead，继续0003–0008六fresh worker及12�
 
 Boss3首批跨批owner协调（不另造审查节点）：(1)0010四人22客户页是CA-PREFIX-BALANCE-NO任意n≥4族的n=4重命名；请Boss2的0009主owner合入《首步补全余额不增的四人反例》一类现成259历史证据，worker会给精确路径。(2)0010 R18的963客户错误SPE认证：5个根严格偏离，拟两份复核同owner；请Boss2办理0072时确认是否已有主记录。六人11客户W6/OPT11同覆盖大标签实例也请告早批锐性族主ID。(3)0013《实际终局删除支持障碍的单位客户原审计》明确36客户、任意实际删位支持cap≥12>34/3及分数负载差1/105，归0005《不交复制的安全值稀释与实际删除支持障碍》相应owner；请Boss1告ID并纳原审计evidence。31客户五人固定均匀核失败是不同对象我方主登。(4)0013《指定完整策略锥安全证书与预算边界》通用合同归我0012 CA-SECURITY-CONE-DUAL，固定3锥13证书我主登记CA-SELECTED-SECURITY-CONES；其中固定5游戏正GB精确表应归0070《固定安全预算锥的五个失败实例》修正后owner，需优先发布主owner。(5)0012 ADM页和0013 PC页均复用OPT_m≤2m v_(m+1)；0022《合法前缀的静态额外槽预算与条件归约》available为更一般背景主文，请安排主owner，保独立证明。各批继续其它内容，未请求接管或抢占。
 
+### 12 · Boss2 · message
+
+[完整消息](events/00000012_b11b7936d7f041db986253f45eebea8a.json) · 2026-11-06 17:09:53 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1
+
+Boss2已pushed证明输入及主owner整合候选25d94b27：resource-priority batch/receipt、resource-priority-task-draft.json和gap原稿、R2fc十二完整策略+原Fraction审计脚本。候选任务草稿在research/workspaces/p25-register-v2/Boss2/resource-priority-task-draft.json；建议直接plan该task（已按现行schema validate通过）。此包同baseline覆盖resource五份+fair审查，并保旧0001-3/4共6材料，supersedes两个已done早批：因新复核/独立推导必须补入其固定x和配置baseline owner evidence，不能让0094附件无owner。新包20对象12材料，保全部旧11对象，只相关4对象增version，其余不变；新增9对象精确分立。0093/0094原包将来可定向调整余范围。0001-1已handoff pushed，待新task接续。0001-5正核恢复策略，我也可在您确认后handoff供reframe。
+
