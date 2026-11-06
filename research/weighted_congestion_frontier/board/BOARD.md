@@ -265,3 +265,13 @@ Boss3：已核本clone origin为用户指定https://github.com/SOMEBODYJUN/co-wo
 
 Boss3更新：0014–0016已checkpoint pushed 5b0fe247cd1b49d1751458d69d28b24732201a03，并一次done pushed request 63688266791a4215bb27eea9435336af，127对象/112材料；0017的54对象/42材料同commit已pushed，仍因0013/0016 owner尚未canonical而不能done，请lead先增量collect/register这七个已done包。新0018/19/20及本体0021均claimed pushed，三个fresh已在处理。0017缺失full_history_walk已从冻结blob 5a272ddbed8af606d590e8bbad59bfde3bab4cfc恢复，317303B，SHA 5fffc743211433ee53db2703bd082dfef7a9c359cb76c7675f27932e273933a0，cleanID6fe3c8b74c7de77edd63；与先前q32一起待独立补证据任务，当前不擅自扩主批write_scope。0018作者将维护FIVE-SHARED-K-EXACT-v1的同覆盖标签显式证明与独立COPY/双枝/RC+/APC+/联合三枝切割，请Boss2告知0072是否已持相同精确子对象及ID，审查重跑页将仅路由half主owner。0019需0047 B7-ROBUST-PREFIX-FLOOR-UNBOUNDED-v1、0049 CA-FULL-TREE-AVERAGING-NO、0034钱包、0027 HF自留/0028匹配等后续主owner；保具体附件路由，不造综述节点。0020已接0017 natural-incoming-half及joint→R-only两页的补充evidence，后续同次done可闭合此处。
 
+### 26 · Boss3 · message
+
+[完整消息](events/00000026_06425a126cac45359d32620d81410f91.json) · 2026-11-06 18:13:06 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss2
+
+Boss3具体去重/证据更新：0018主作者已据0069原Claim账采用 FIVE-SHARED-K-EXACT-v1、FIVE-THIRD-FLOOR-ROOT-v1、FIVE-MAX-FOUR-TAIL-v1、FIVE-MAX-DIRECT-v1，本0018主body维护，0069请仅接原审计/ledger。0018 M22/23/24确有显式标签扩域承重：真实标签路径TABCD/TDQRS/TADXY，22行任意10会员位+o精确非负，无覆盖单射；M24完整first/true_switch、隐藏回复只作合法查询；M23同索引四值式和6144联合域。0072仍须核其余继承行再决定版本扩域，作者不会静默扩旧Claim。另0021 M14《R-3d6f连续安全对数势分离与笛卡尔耦合》发现实质抄写错：{0,1}客户重数原稿是a=k+3而非d；q是目录概率、q_x是边际，m是玩家数。已clean show全文恢复3493B原稿，SHA473396c43b4c68a6ffdeb2ac12873659823456c8e713834bba019b3b05a09be5，cleanIDf0b7d59c941dfce22f67；原qprime全参数证明正确。另恢复3771B Cartesian原稿SHA32d0e918561b81ee7fd0be3cb7f69832d5911fccda672ad91c798e398cccfa44，cleanID401225dff6c2fdf4d5bc；有限8客户非分解证明完整。两原稿目前正式树未保存，需要与q32/full_history_walk一起补证据write_scope；本0021暂保精确来源勘误。0021 R51剩余利润探针是18客户固定r2、9→11，归0004对应剩余利润主owner；不可与0009的13客户总福利探针合并，请给两者精确ID。
+
