@@ -6,6 +6,8 @@
 
 3A先看对象内部的承重论证，再比较同子档对象族；3B补同档跨批/跨子档关系；3C核明确跨档线索的模型映射与条件；3D由唯一lead持续集成。不把每步算术拆成节点，不为连通率造边。共同模型、记号和定义通常作为条件与共享阅读引用，不机械造连接全部结果的hub。
 
+worker从证明的输入输出、共同结构、条件差异、反例目标和未付义务提出具体比较问题，即使没有旧链接也主动检索。lead据这些线索接续3B/3C范围并追踪漏对象的补登记，不让队列空代替判断完成；实际工作顺序和交接责任以完整Boss词为准。
+
 Boss和内部处理者都做实质数学，批内反馈交原worker继续，下一包用fresh上下文补位。本人未完任务优先，成熟一批立即保存、交付并接下一批，lead同步整合，不等全轮结束。持续到准确处置本范围或真实运行边界，不以一次提交、一次build或暂时队列空结束。
 
 ## 共享读取，独立写入
@@ -32,6 +34,8 @@ lead按完整Boss词用map-draft→plan发布候选比较范围；draft只在实
 
 作者实读后才accepted，先写最终status、reviewed_by/review_note等语义字段，再edge-bind取得三项绑定，随后edge-check。绑定检查不证明数学正确；条件、解释、正文或证据变化只复核受影响关系。不另要求每边再过一个固定审批者。
 
+前提尚未证成而条件推导已完整，可为accepted且relation_mode:conditional，未付前提仍须保留；推导自身缺桥才proposed，不能以accepted直接提升终点真值。
+
 ```sh
 python work.py research edge-bind map/edges/实际边.json
 python work.py research edge-check map/edges/实际边.json
@@ -40,6 +44,8 @@ python work.py map done TASK --receipt-file map/receipts/TASK.json
 ```
 
 edge-check独立校验交付边，canonical边清单尚未更新也能交付。done核当前批次的已推送资产与覆盖，不让无关旧边拖住该批。linked列真实accepted incident边；无已知成立联系但比较范围清楚时可isolated-after-review。明确open数学或proposed桥可以保留，needs-decision只表示尚未辨明身份、版本、来源或交付去向。
+
+认真比较后零边时，以现有coverage的comparison_scope/reason交清候选、范围和数学理由，收据可用assets:[]，不另造边或说明文件；完整边及零边收据见IMPLEMENTATION。登记阶段的batch_file资产要求不变。
 
 ## 汇总与最终交付
 

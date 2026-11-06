@@ -159,6 +159,16 @@ python work.py checkpoint research/registry.json -m 'Integrate accurately regist
 
 后续小增量manifest用mode:incremental和base_registry当前精确引用，保现有对象、材料和edge_files，只接必要新批。新baseline不重收旧baseline；collect用--baseline选本轮版本，增量manifest再补mode/base_registry。只是同一baseline内改正已done批次才用下面的supersedes机制；材料字节变化另冻新baseline并增量，不跨baseline替代旧任务。
 
+### 缺对象、语义冲突与研究成果怎样接回
+
+`compose`只合记录，不判断数学同义。确认为同一精确命题时，登记lead先比较模型、变量对应、量词顺序、前提、结论和域，选一个主身份、主正文并合齐独立证明和必要证据；主记录由实际分配到主body材料的批次作者维护，必要时先调整批次范围，其他作者把来源归该owner，不各自写不同的同ID记录。主owner未发布时，同Boss的已推批可成组交付；跨Boss由lead先集成主owner，相关作者再续交，同时做其它独立材料。已经done的资产按现有定向替代/增量处理，不直接覆盖旧回执。
+
+map lead发现漏对象，或研究Main有新成果时，由发起人负责把精确陈述、条件、正文/证据出处和需要新增/改版的理由送到现有p25登记lead并跟进；不能发完消息就当完成。只有独立可复用的数学对象需要补登记，普通证明步骤留在现有正文和边解释。原lead已交接或明确空缺，发起Boss可用本对话合适绑定clone或独立阶段clone显式`lead claim`接任；已有归属未解时先保存具体数学与待整合项、继续其它独立工作，不凭静默抢占。
+
+字节不变的既有正文可复用对应baseline，发布只含必要来源的局部批次；同SHA材料的owner列表由增量合并。新正文或改字节先明确checkpoint确认pushed，再发布新的inputs/baseline路径；全仓完成须新baseline仍覆盖当前全仓字节，但只派新增/改动部分的数学工作。用`mode:incremental`和当前`base_registry`精确引用收必要新批。需要清理重复身份时，manifest的`retired_objects`给准确去向与理由，保留独有数学和来源。涉及总表时串行安排：登记lead先完成并推送对象/材料增量，map lead再同步、重判受影响pin与关系；其余数学不等全仓重建。
+
+旧核心未变而只增加已登记依赖，用`map read-add`续原批；核心版本/pin已变，作者保草稿并handoff，map lead按新版本重派交原worker接续；已done批按定向替代处理。正常完成本轮登记/构图后，准确出口已pushed并交清接续位置，lead也须`lead handoff --reason`释放集成位，后续增量才有合法接任入口；不是每包结束就重换lead。
+
 ## 第三阶段：从内到外建边与整合
 
 3A先对象内部承重链，再同子档对象族；3B同档跨批/跨子档；3C真实跨档映射；3D统一投影。lead先按关联与同一预算形成草稿再发布：
@@ -173,12 +183,12 @@ python work.py map plan --record-file map/planned-tasks.json
 
 ```json
 {
-  "task_id":"CA-tail-chain", "stage":"3A", "registry":"research/registry.json",
-  "object_ids":["CA-LAST-TWO-FLOOR","CA-ALL-N-WELFARE-4N"],
-  "read_object_ids":["customer-attraction/last-slot-value-and-catalog-counting"],
-  "input_pins":{"CA-LAST-TWO-FLOOR":"对象pin","CA-ALL-N-WELFARE-4N":"对象pin","customer-attraction/last-slot-value-and-catalog-counting":"对象pin"},
-  "write_paths":["map/edges/CA-tail-chain.json","map/receipts/CA-tail-chain.json"],
-  "goal":"解释末两人保底与目录计数怎样联合推出全人数福利界，保全部共同条件"
+  "task_id":"joint-proof", "stage":"3A", "registry":"research/registry.json",
+  "object_ids":["OBJECT-C"],
+  "read_object_ids":["OBJECT-A","OBJECT-B"],
+  "input_pins":{"OBJECT-A":"<对象A的registration_pin>","OBJECT-B":"<对象B的registration_pin>","OBJECT-C":"<对象C的registration_pin>"},
+  "write_paths":["map/edges/joint-proof","map/receipts/joint-proof.json"],
+  "goal":"核清A和B是否共同支持C，保留完整模型、量词、条件与证据"
 }
 ```
 
@@ -186,19 +196,75 @@ python work.py map plan --record-file map/planned-tasks.json
 python work.py map plan --record-file map/planned-tasks.json
 python work.py map claim-next --count 6
 python work.py map read-add TASK --object-ids 已登记的额外共享依赖
-python work.py research edge-bind map/edges/CA-tail-chain.json
-python work.py research edge-check map/edges/CA-tail-chain.json
-python work.py checkpoint map/edges/CA-tail-chain.json map/receipts/CA-tail-chain.json -m 'Publish explained joint support'
+python work.py research edge-bind map/edges/joint-proof/support.json
+python work.py research edge-check map/edges/joint-proof/support.json
+python work.py checkpoint map/edges/joint-proof/support.json map/receipts/joint-proof.json -m 'Publish explained joint support'
 python work.py map done --record-file map/ready.json
 ```
 
 edge含edge_id、kind、status、source_ids、target_ids、premises_mode:all、relation_mode、conditions、roles、explanation、scope、evidence。逻辑种类implies/refutes/specializes/transfers/equivalent_to；语境种类motivates/cites/sourced_from/implements/checks/corrects/supersedes。定义通常作条件和正文引用，不机械造模型hub。引用、相似度、目录从属不冒作推导。
 
-真实例子：末两人保底A与计数界B共同给W≥(n−2)K/n+2θ_n，代入两个θ_n下界消K，得到4(n−1)/(n(2n−1))福利保证。n=6仅10/33。{A,B}⇒C写一条ALL边，不能拆成A单独、B单独足够的两边；不同独立证明另写OR支持。equivalent_to表示ALL(source)⇔ALL(target)，反向要同时保全部targets。refutes多目标须逐项有否定证据，只否定合取不能宣称每项都假；迁移必须写模型映射与保留/丢失条件。
+{A,B}⇒C写一条ALL边，不能拆成A单独、B单独足够的两边；不同独立证明另写OR支持。equivalent_to表示ALL(source)⇔ALL(target)，反向要同时保全部targets。refutes多目标须逐项有否定证据，只否定合取不能宣称每项都假；迁移必须写模型映射与保留/丢失条件。各对象代表本次实际数学，示例ID不能直接写进真实任务。
 
-作者完整实读后可accepted，无固定二次审批流水。先定最终status、reviewed_by及具体review_note，再edge-bind填endpoint_pins/evidence_pins/review_digest三个字段，最后edge-check。绑定覆盖语义文字，之后改文字、状态、端点或证据要重核。edge-check校本边而不要求已在canonical清单，程序检查不代替数学判断。proposed保未付条件，rejected保精确失败理由。
+作者完整实读后可accepted，无固定二次审批流水。先定最终status、reviewed_by及具体review_note，再edge-bind填endpoint_pins/evidence_pins/review_digest三个字段，最后edge-check。绑定覆盖语义文字，之后改文字、状态、端点或证据要重核。edge-check校本边而不要求已在canonical清单，程序检查不代替数学判断。前提尚未证明但“若A且B则C”的论证完整时，可以是`accepted`且`relation_mode:conditional`，不会把C提升为已证；关系论证本身还有缺步才用`proposed`。所有前提与额外条件均已付清才可作为无条件支持，`rejected`保精确失败理由。
 
 map收据含coverage对象表和assets引用数组。coverage覆盖所有核心对象，每项有state、object_pin、reason、comparison_scope；linked另列真实accepted incident edge_ids。状态为linked/isolated-after-review/needs-decision。清楚open问题和proposed联系可准确完成比较；没有accepted联系时如实记录范围和未付义务，不为完成率强造边。已发布canonical边可用精确SHA共享复用，不占原样边写范围；新文件仍保独立write_paths。
+
+### 一条ALL边与对应收据
+
+以下是尚未绑定的关系草稿，所有ID、文字和引用都须替换为实际数学。`status`取决于推导有没有完成，不取决于前提命题是否已经证明；草稿先列为`proposed`，确认推导后按上文确定状态及relation_mode，填写审读说明并运行edge-bind/edge-check。
+
+```json
+{
+  "edge_id": "joint-support",
+  "kind": "implies",
+  "status": "proposed",
+  "source_ids": ["OBJECT-A", "OBJECT-B"],
+  "target_ids": ["OBJECT-C"],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "<共同模型、量词及全部附加条件>",
+  "roles": {"OBJECT-A": "<A提供哪一步>", "OBJECT-B": "<B提供哪一步>", "OBJECT-C": "<所得结论>"},
+  "explanation": "<完整推导及变量对应；若未完成则指出具体缺步>",
+  "scope": "<关系实际适用范围>",
+  "evidence": [{"path": "<实际论证路径.md>", "sha256": "<文件实际64位SHA256>", "section": "<原文唯一标题>"}]
+}
+```
+
+对于上例核心只有C的任务，确认有成立关系后的收据如下。`object_pin`用`research show`返回的registration_pin，assets的SHA在边文件最终写好/绑定后计算；收据不把自己列为asset。
+
+```json
+{
+  "coverage": {
+    "OBJECT-C": {
+      "state": "linked",
+      "object_pin": "<对象C当前registration_pin>",
+      "comparison_scope": "<实际比较的A、B、C版本与必要论证范围>",
+      "reason": "<为何这条关系准确支持本对象，条件还有哪些未付>",
+      "edge_ids": ["joint-support"]
+    }
+  },
+  "assets": [{"path": "map/edges/joint-proof/support.json", "sha256": "<最终边JSON实际64位SHA256>"}]
+}
+```
+
+一批可多边，也可认真比较后零边。零边时，把已比较哪些候选、为何不能成立或尚缺哪一步，直接写入现有coverage的comparison_scope/reason，交`assets:[]`，无需另造说明文件。以下同样只演示核心C；实际每个core都要有条目，不能把有限比较说成不存在任何潜在关系。
+
+```json
+{
+  "coverage": {
+    "OBJECT-C": {
+      "state": "isolated-after-review",
+      "object_pin": "<对象C当前registration_pin>",
+      "comparison_scope": "<实际读过的对象版本、候选关系和证据范围>",
+      "reason": "<逐项说明本范围没有成立关系的数学理由及有价值的未付条件>"
+    }
+  },
+  "assets": []
+}
+```
+
+零边仍须真实完成本范围工作。已读对象本体与必要论证，按模型、陈述和条件主动检索后确无合理候选，可记录实际检索范围及理由据实isolated-after-review，不凑无关比较或自环；未读/未检索不能当完成。身份/输入或比较尚未弄清写needs-decision，由lead定向续办。空assets只适用于图阶段，登记仍须已推batch_file资产。需要保留有价值的候选关系时，写proposed边并把其文件列入assets，不能因不accepted就删除线索。
 
 ```sh
 python work.py map collect
@@ -222,15 +288,15 @@ lead实读并填每个当前档/子档archive_reviews及cross_archive_review，�
 
 Main按[完整研究词](../prompts/research-runtime.md)操作；新Project明确Boss号与精确研究题目，独立clone用start --role boss --save <实际研究存档>，不复用登记/构图角色或默认套旧问题。同一研究对话沿原clone/RUN恢复。每个新RUN固定obstacle-1、full-1、full-2，均gpt-6.1-sol/ultra/fork_turns:none；init生成实际packet和槽位，不自动创建模型。平台真实spawn/followup，记录真实agent_id。此三槽配置不限制登记/构图的可用并发。
 
-spec含problem_id、problem引用、definitions引用数组、obstacles引用数组、seed_ids；可加hops、edge_ids、edge_statuses、relation_kinds。原题和定义完整保模型、域、量词和约束。obstacle只接原题/定义/障碍，full另给按需登记成果；用户明确要求继承时照办并准确说明实际输入。packet不代表权限隔离。固定槽位不直接换profile；需要成果交现有full槽，用户明确改变输入实验则用明确新spec/RUN，保原packet。
+spec含problem_id、problem引用、definitions引用数组、obstacles引用数组、seed_ids；可加hops、edge_ids、edge_statuses、relation_kinds。原题和定义完整保模型、域、量词和约束。Main先核本对话/RUN中的实际原题；已有自主选题授权可从该范围的真实开放义务选题，只有会改变题意的关键条件不明才询问。没有相关既有成果时写`seed_ids:[]`，full packet以空objects/edges启动，原题、定义和障碍仍完整；不强塞无关旧对象，也不要求先登记原题才准研究。选择了具体edge_ids则须给真实相关seed，防止丢掉明确选择的证明分支。obstacle只接原题/定义/障碍，full另给按需登记成果；用户明确要求继承时照办并准确说明实际输入。packet不代表权限隔离。固定槽位不直接换profile；需要成果交现有full槽，用户明确改变输入实验则用明确新spec/RUN，保原packet。
 
 ```sh
 python work.py research search '精确数学关键词' --model '实际模型' --truth-status proved
-python work.py research show CA-ALL-N-WELFARE-4N --body
-python work.py research context CA-ALL-N-WELFARE-4N --hops 0
+python work.py research show OBJECT-C --body
+python work.py research context OBJECT-C --hops 0
 python work.py research init RUN --spec research/problem-spec.json
 python work.py research save RUN --solver full-1 --profile full --note research/workspaces/RUN/full-1.md --next '继续具体未付不等式' --agent-id 实际平台ID
-python work.py research save RUN --solver full-1 --profile full --note research/workspaces/RUN/full-1.md --next '回应具体续局质疑' --state needs-feedback --feedback '具体疑点及已成立部分'
+python work.py research save RUN --solver full-1 --profile full --note research/workspaces/RUN/full-1.md --next '回应具体推导缺口' --state needs-feedback --feedback '具体疑点及已成立部分'
 python work.py research save RUN --solver full-1 --profile full --note research/workspaces/RUN/full-1.md --next '接续答复后的推导' --state working --ack-feedback
 python work.py research resume RUN
 ```

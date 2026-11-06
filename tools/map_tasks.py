@@ -322,7 +322,8 @@ def _material_count(rows):
 
 def _asset_refs(root,definition,receipt):
     assets=receipt.get('assets')
-    if not isinstance(assets,list) or not assets:raise ValueError('Already-pushed batch assets required')
+    if not isinstance(assets,list) or (not assets and definition.get('stage') not in {'3A','3B','3C','3D'}):
+        raise ValueError('Registration requires published batch assets; a map comparison with no edges may use an empty asset list')
     _prefetch(root,[ref['path'] for ref in assets])
     canonical=None
     for ref in assets:
@@ -385,8 +386,8 @@ def _prefetch_done(root,deliveries,phase):
     """Warm one completion set without creating per-material transactions."""
     assets=[]
     for _,receipt in deliveries:
-        if not isinstance(receipt,dict) or not isinstance(receipt.get('assets'),list) or not receipt['assets']:
-            raise ValueError('Every completed batch needs its published receipt assets')
+        if not isinstance(receipt,dict) or not isinstance(receipt.get('assets'),list) or (phase=='registration' and not receipt['assets']):
+            raise ValueError('Explicit receipt assets required; registration batches cannot have an empty asset list')
         assets.extend(receipt['assets'])
     _prefetch(root,[ref['path'] for ref in assets])
     needed=[]

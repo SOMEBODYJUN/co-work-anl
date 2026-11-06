@@ -1,54 +1,45 @@
-# 2.5第三步与第三阶段执行入口
+# 各阶段怎样交接、怎样算完成
 
-2.5第二步的已发布成果作为输入，不再重复清洗。登记与正式图在真实执行时产生；prepared配置、程序审查和私有演练不表示全仓数学任务已经完成。
+**先理解整个工作，再开始本阶段：已有数学正文经2.5.3登记成可准确引用的对象，第三阶段读清对象间怎样共同推导，后续Main/Solver利用这些知识研究用户的原题，新成果再定向回流。** 准备好程序和提示词不等于已做完这些数学工作。
 
-用户每阶段只需本分支最新版work.py、仓库外凭据和一份完整Boss词。内部worker词与字段由执行者自动读取，不让用户另收集Project文档。
+用户每阶段只需当前work.py、仓库外凭据和该阶段一份完整Boss词。执行者自行读内部worker、格式与接口，不要求用户另配一组文件。完整入口为[2.5.3登记](../prompts/02.5-3-register.md)、[第三阶段超边](../prompts/03-map.md)、[后续研究Main](../prompts/research-runtime.md)；具体命令及JSON模板见[IMPLEMENTATION](IMPLEMENTATION.md)。
 
-| 阶段 | 完整Boss词 | 内部worker | workflow-run / role / 公屏 |
-| --- | --- | --- | --- |
-| 2.5第三步：登记 | [02.5-3-register.md](../prompts/02.5-3-register.md) | [登记worker](../prompts/02.5-3-worker.md) | p25-register-v2 / curator / wcg/board-registration-v2 |
-| 第三阶段：超边 | [03-map.md](../prompts/03-map.md) | [构图worker](../prompts/03-map-worker.md) | map-v2 / mapper / wcg/board-map-v2 |
+| 负责人 | 实际输入 | 必须作的数学判断 | 实际产物 | 谁接着用 |
+| --- | --- | --- | --- | --- |
+| 登记lead、各Boss和worker | 前置整理的正式正文、必要证据与本轮冻结材料 | 独立对象、同义/版本、模型量词、准确状态、完整论证和owner | 独立批次JSON；lead集成research/registry.json及逐材料准确去向 | map lead按已发布对象版本组织比较 |
+| map lead、各Boss和worker | 当前registry、完整正文/证据、明确比较范围 | 联合前提、独立证明、反驳目标、模型映射、成立条件和真实未付义务 | 边JSON、实质coverage、跨批integration及三级投影 | Main按具体原题选择对象、正文和完整支持 |
+| Main与三个Solver | 用户给定或明确延续的精确原题、完整定义/障碍、相关已有成果 | 推导是否成立、是否解决原题、反例是否满足原模型、部分结果还欠什么 | 独立研究笔记、成熟state正文、必要代码/输入和定向增量 | 原Solver接反馈继续；登记/map lead接相关增量 |
 
-## 稳定身份与持续协作
+## 2.5.3交给第三阶段的出口
 
-原来源ID追溯版本，object_id标识精确数学对象，edge_id标识解释充分的关系；Boss/task/run只管协作。沿用已有精确Claim ID，不从路径、类型或全文hash造身份。一页可有多个对象，多篇可共同支持一个对象；代码、证书和数值不是自动生成的命题节点。
+worker复用成熟正文，实读精确陈述、条件与完整论证位置，写每批对象JSON；一页可多对象、多篇可同对象。登记lead负责跨批语义归一：读对应陈述及承重出处，决定同义合并、独立证明并存、改版或不同对象分立，反馈原作者修批后再集成。不能让自动compose代替这项判断。
 
-每个对话使用用户明确给出的唯一Boss编号及独立clone，继续原对话先恢复原身份和未完任务。各阶段任务、people和lead位于research/operations/<workflow-run>，工作区位于research/workspaces/<workflow-run>/<Boss>，不改绑旧curation/clean clone。公屏用于交流结果和依赖，认领/交付由当前远端队列确认。
+本轮真实材料全部有准确去向，所有对象身份、版本、正文/证据和owner可追溯，跨批冲突已实质处理，才交出登记出口。任务done或队列空仍可能留下needs-decision；lead须针对具体身份/来源疑点安排补办，不能转给第三阶段猜。明确open数学可以准确登记，不要求先证明它，也不要求已有超边。已done批修正和材料字节变化按现有定向替代/增量规则处理。
 
-登记用registration-task，构图用map，二者共用协作引擎而保持运行域隔离。lead通过CAS取得唯一集成权，发布任务并参与数学；每个Boss带子代理做实际阅读、登记或建边。用满用户要求且实际可用并发，批内反馈交原worker，完成一包及时保存、推送、done，下一包补fresh worker，lead持续整合，不等待整轮。本人未完优先，不预占将来批次。
+## 第三阶段怎样推进和交出出口
 
-持续到本范围准确处理完或真实工具硬边界；一次提交、一次检查、暂时队列空或自设时限不能替代完成。普通竞争自动重选，响应未知核原request_id；暂停handoff，lead另交接集成。claimed不证明进程仍活着，静默不自动转移所有权。具体命令与收据见[IMPLEMENTATION](IMPLEMENTATION.md)。
+map lead负责形成并接续比较范围：3A读对象内部承重链及同子档对象族；结合已读证明、条件差异、objections和共同结构提出3B同档跨批/跨子档问题，再提出3C有实际数学理由的跨档比较。旧引用可作线索，不能成为唯一候选来源。每次任务说明具体比较谁、要判断什么；3D由lead边接收边整合，不等整轮结束。
 
-## 2.5第三步：对象登记独立闭合
+worker实读后给关系或有根据的比较结论。ALL边保全部共同前提，独立证明分OR，反例和迁移写清准确目标、映射及条件。前提未证但条件推导完整可为accepted conditional，推导本身缺步才proposed；对象open据实保留，身份或来源没辨清才记needs-decision。准确零边批可在coverage中写出实质比较范围、判断和依据，以`assets:[]`交付；不能把没比较冒作孤立，也不用伪造一条边。
 
-lead先依据第二步真实已发布出口生成path/SHA清单，freeze固定baseline并推送，再发布独立登记批次。repository范围核真实Git材料分母，稀疏缺页须恢复，不能以可见文件数冒充全仓。局部工作明确partial及实际路径；必要附件显式列入。
+缺少实质独立对象时，发现者给出精确陈述、已有相关ID及完整出处，map lead负责跟进登记补办，取得已发布身份后续原比较批。完整证明中的普通中间步骤可写在边解释和证据中，不为每一步另造对象。稳定已登记区域可以明确partial先做。
 
-完整可复制启动顺序只保留在本阶段Boss词：先恢复/取得lead，发布inputs与baseline，再batches-draft、plan和批领。其它Boss恢复本人未完并领取已发布包；这里不再维护第二套启动脚本。
+出口是当前对象版本对应的`map/coverage.json`、各档/子档及跨档实质说明`map/integration.json`、实际边和可重建投影，全部准确保存并确认pushed。已规划范围与已发现必要线索须有准确处置；暂时无任务不等于完成，完成也不等于宣称已发现所有可能数学联系。最后的final检查和build支持核对一致性，不能代替这些数学判断。
 
-登记批次包含预算内几十/百份材料，可一次领交多个包，不逐材料远端认领。worker复用成熟正文，实读精确身份、陈述、模型、量词、假设、边界及来源owner，有疑点再深读承重证明；不重新清洗或重证全部旧成果。直接写独立schema:2批次；一份文件里的不同Claim不吞并，多份正文的同一对象不重复造身份。批次和收据先checkpoint确认pushed，再done；lead用compose/register持续收拢唯一registry，不让多人覆盖总表。
+已读对象本体与必要论证，按模型、陈述和条件主动检索后确无合理候选，也可依据实际排查范围和理由记录孤立；未读/未检索不能当完成，不必凑无关对象比较。
 
-完整定义、一般/条件结论、有效反例、构造、可复用方法、算法保证、猜想、具体障碍与开放义务都可登记。精确有限反例若有完整证明可proved，普通扫描为finite。明确open数学不是身份needs-decision；excluded只记登记去向，不执行删除。
+## 研究怎样接住、怎样回流
 
-完成以本轮全仓输入逐项准确处置、稳定身份及完整正文/证据可读、owner明确和跨批冲突消解为准。registration-check --final只验登记，不要求超边。新材料字节另冻baseline，incremental/base_registry保现有数学和边；不重启全仓清洗。
+后续每个研究RUN是1个Main与3个Solver：1个障碍组从原题、定义和已知障碍独立研究，2个成果组另可读已有正文、登记、完整超边与证据；都研究同一精确原题。新题没有相关旧成果时允许`seed_ids:[]`，full从空成果context开始，原题和定义仍须完整。
 
-## 第三阶段：从内到外解释关系
+Main负责实质评议Solver的命题、推导或见证、条件、状态及缺口，再把成熟内容写入相应state，保存必要输入，并准备最小相关登记/构图增量。候选和部分结果先完整保存，具体反馈交原Solver继续；不能把一次返回或已写笔记冒作整题完成。原题准确闭合或真实运行边界才作研究交接，操作见[研究流程](RESEARCH_WORKFLOW.md)。
 
-3A先对象内部承重链，再同子档对象族；3B同档跨批/跨子档；3C有明确线索的跨档映射；3D唯一lead集成三级投影。稳定已登记区域可先做明确partial比较，全仓完成以真实全仓登记为输入。
+## 谁跟进补办和增量
 
-初始3A用research map-draft生成候选预算包，再map plan；3B/3C只对明确新比较frontier生成计划，不无条件全仓两两枚举。正文+元数据默认按Sol官方500K窗口预留200K后规划300K，这是估计而非本会话容量实报；同页独立Claim及共享证据按实际完整区间计。
+登记补办交现有`p25-register-v2` lead，关系增量交现有`map-v2` lead；发现者和当前阶段lead负责追到对口接收及准确交付，不只留一句“送lead”。登记总表增量先串行集成并确认pushed，map lead随后同步该版本，定向重判受影响端点pin、边和coverage；保留仍成立的替代证明，不把失去一条支持当成命题为假。
 
-任务object_ids是负责覆盖的核心，read_object_ids共享只读，input_pins覆盖两者，输出路径独立。增加已登记依赖用read-add，不锁共同定义或重派整批。对象/材料编号、文件名、相似度和来源done不能作推导依据。
+原lead已handoff或明确空缺时，可用本对话已有合适绑定clone，或保留原工作区另建独立阶段clone，显式lead claim接任办理。沉默不等于空缺。归属未解时，在现有批次/研究笔记保全完整数学、相关ID与证据位置、待整合事项，继续可独立推进的数学；不抢占、不假称已入登记或图。
 
-一条ALL边保全部共同前提、端点作用、条件、量词、数学解释和证据；独立证明分开，等价关系保两个方向。定义通常作为条件和引用，不机械造模型hub。反例精确指向被否陈述，迁移写明映射与丢失条件，引用/启发不当证明。作者实读后accepted，不加逐边常驻审批；edge-bind只算绑定，edge-check保留为独立交付检查。
+正常完成本轮登记或构图后，lead也须在准确出口pushed、接续位置交清后显式lead handoff交出集成位，供下次增量合法接任。图批补登记后，旧核心不变只增依赖用read-add；核心版本/pin变化则作者保草稿handoff，由map lead按新版重派并交原worker接续；已done范围走定向替代，不在旧pin任务反复交付。
 
-本批独立边先推送即可done，不等总表先挂边。lead用collect→sync→assemble连续汇总，保已有数学说明，定向复核受影响内容。每个对象保真实比较范围及linked/isolated-after-review/needs-decision；proposed桥与准确open义务可留下，不为完成率造边或强证开放题。
-
-最终map/coverage.json覆盖当前对象版本，map/integration.json记录各档/子档跨批及真实跨档比较；只消解身份、版本和交付疑点。research check --final与build --final生成graph-v2三级投影；按projections显式checkpoint所有输出及registry/coverage/integration确认pushed，不漏archives内投影。
-
-## 研究Agent和计算如何接续
-
-研究Main按[研究流程](RESEARCH_WORKFLOW.md)及[完整Main词](../prompts/research-runtime.md)启动真实Solver。登记/构图阶段按实际并发工作，不提前运行求解团队；当前自由数学研究RUN的固定三Solver配置只适用于后续研究。
-
-registry定位正文，context返回完整ALL支持、分开的替代OR、条件与未付前提；refutes和研究线索不当正向证明，导航hops不截断已选证明。按需读完整正文/证据，反馈原Solver继续，保存packet、笔记、事件和具体下一步。局部变化只重判有关支持，不因无关旧边重扫全仓。
-
-普通批计算优先已有云端或适合的现成算力，短计算可在当前环境运行；Codespaces用于确需持续交互或特殊环境，不作普通计算默认入口。具体云请求、实际run/产物取回与当前状态见[GITHUB_RESOURCES](GITHUB_RESOURCES.md)。配置和API接受不等于计算完成，数学价值由实际论证与输出判断。
+Boss与worker都做实质数学，lead同时整合。持续到本范围准确交付或真实运行边界，不以一次提交、一轮代理或暂时队列空结束；登记/构图新包用fresh worker，本批反馈仍交原worker，研究反馈沿原Solver接续。真实暂停按当前阶段handoff保存准确断点，并区分已推送、仅本地和仍未完。

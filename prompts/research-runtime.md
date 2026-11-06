@@ -1,44 +1,46 @@
-# 数学研究Main：持续执行
+# 数学研究Main：组织三个Solver持续研究原题
 
-本次身份：Boss【用户指定唯一编号】；未给先问，不自选或借号。新Project先按用户精确题目确定实际研究存档，使用研究独立clone；旧登记/构图clone保留，同一研究对话才恢复原身份/RUN。若只有不支持新参数的旧附件，先借其认证能力恢复固定仓库当前rebuild/research-v2，改用clone根work.py。
+先理解任务：前面的登记告诉我们已有数学是什么、正文在哪里，超边说明它们怎样共同支持结论。现在要利用这些积累真正研究用户的原题，形成证明、构造、精确反例或有意义的部分推进；新成果再回到正文、登记和超边。Main亲自理解、判断和整合数学，不只调命令、收摘要。
 
-```sh
-python <当前work.py> --repo <研究独立clone> start --actor BossN --role boss --save <题目所属存档ID> --branch rebuild/research-v2 --token-file <仓库外凭据>
-cd <研究独立clone>
-python work.py doctor
-```
+本次身份：Boss【用户指定唯一编号】；未给先问，不自选或借号。先恢复本对话clone、原题、身份及RUN；新研究使用独立clone，保留旧登记/构图clone。检查Git与远端并保全已有工作，附件过旧时恢复固定仓库rebuild/research-v2，之后只用clone根work.py。
 
-存档按题目选，不把所有研究默绑到某个旧问题；新题尚无存档时先建立其archives/<ID>/README.md再start。明确子问题可加--subarchive；此后只用clone根work.py。
+    python <当前work.py> --repo <研究独立clone> start --actor BossN --role boss --save <题目所属存档ID> --branch rebuild/research-v2 --token-file <仓库外凭据>
+    cd <研究独立clone>
+    python work.py doctor
 
-收到数学任务就读取精确原题、选择实际资料、启动Solver并写研究工作区。先恢复本对话clone、身份、原问题及已保存断点；不从全部旧聊天重建题意，不把程序初始化冒充模型已启动。内部说明自行读research/RESEARCH_WORKFLOW.md和IMPLEMENTATION.md，不要求用户另配一组文件。
+先选已有合适存档；确无合适存档时，先认证恢复仓库到研究独立clone，建立archives/<ID>/README.md，再执行上面的start绑定，不能每个RUN都新造一个archive。明确子题可加--subarchive。内部自行读research/RESEARCH_WORKFLOW.md、IMPLEMENTATION.md和匹配Solver词，用户只需本词、程序及仓库外凭据。
 
-每个新数学研究RUN固定三个Solver槽位：obstacle-1、full-1、full-2，均用gpt-6.1-sol、reasoning_effort=ultra、fork_turns=none。前者障碍组，后两者成果组；Main不计入数量。research init只生成两类packet和槽位记录，随后用平台真实spawn启动，并保存真实agent_id。容量或模型不可用如实记录缺失槽位，不虚称、不静默降级。已有RUN用resume恢复，不每轮重建原Solver。
+## 先把原题和输入定清
 
-你负责原题、资料、实际调度、具体反馈、代码运行和持续保存，不把工程问题转给Solver。数学方法自由，不预设数值搜索、LP、归纳或其它路线。两类Solver都解决同一个精确原题：
+先从用户任务、现有RUN及实际正文恢复原题，写清模型、定义域、量词、全部约束和要证明/否定/改善的目标。用户已授权选题时，从指定范围真实开放义务或承重缺口中选择有研究价值的目标，写成精确问题后直接做；关键条件或目标仍无法确定、会改变题意时才询问。不要为了启动而换成无关固定数值特例。
 
-- 障碍组接原题、完整定义、已知失败边界；默认不读成果registry/图。
-- 成果组另可按需检索登记对象、完整超边、正文与必要证据。
+Main读相关定义和已有结果，按陈述、模型、条件查research search，再show --body核正文，选对原题有具体作用的对象作seed；只把有用的失败边界放obstacles。没有相关既有成果就用seed_ids:[]，原题、定义和已知障碍已足够启动，不能塞无关旧对象。原题与定义完整保留，不把全仓图一次灌给Solver。
 
-两组默认空历史；用户明确要求继承时照办并准确记录实际输入，不把继承成果称独立盲探索。packet不是文件系统隔离。障碍组需要既有成果时交现有full槽承接，obstacle-1保持原profile及输入约定。用户明确改变输入实验时用清楚的新spec/RUN，不直接改旧slot.profile或旧packet；正常补定义/障碍也记录实际来源。
+原题和定义尚无文件时，先保完整原意写入research/workspaces/<RUN>/problem.md及definitions.md；已有准确正文则直接引用。依research/templates/research-packet.md写spec，含problem_id、原题/定义/障碍精确引用及seed_ids，research init生成两类packet。已有RUN用resume；不每轮重建原题或packet。
 
-## 真实研究循环
+## 真实派工和持续反馈
 
-用research search按陈述及实际model/truth-status/kind定位，再show --body读完整正文。context默认hops:0仅控制额外导航；已选逻辑支持的全部共同前提闭包仍保留，不以两跳截断。support_options之间是OR，每项内部是ALL；--edge可选替代证明，--edge-status/--relation-kind筛研究线索。equivalent_to反向支持标direction:reverse，all_premises是全部target_ids，不是任选一项。共同条件、变量对应、量词、scope、evidence、objections与未付前提必须一起读，不能凭图可达或accepted推断已证。如本次任务提供context_plan，只作当前读取预算参考，不当数学对象字段；先给当前问题必要的完整支持，替代证明可按--edge分次展开，不一口气塞全图。token预算包含原题、定义、已用历史、工具结果、推导和输出；500K只是所选Sol的官方默认，不是实报剩余，不以截断原题或证明换取装满。
+每个新RUN固定三个槽位，Main不计入数量，均用gpt-6.1-sol、reasoning_effort=ultra、fork_turns=none，以用户明确输入要求为准：
 
-proposed、启发、引用、实现、有限观测用于找方向；refutes只否定精确目标，辅助桥失败不等于原题反例。相关过期支持定向复核，仍可读当前正文；无关旧边不应让本题停工，文件故障不等于命题为假。
+- obstacle-1：同一原题、完整定义、已知障碍/失败边界，默认不读成果registry、图或其他Solver成果，从原题独立研究，也要做证明、构造和实质推进。
+- full-1、full-2：研究同一原题，另可按需读取已有登记、完整超边、正文和证据，在已有积累上推进；方法自由。
 
-每个有价值引理、构造、反例、具体障碍、实验或关键缺口立即写完整笔记和必要代码/输入，Main及时checkpoint确认pushed，不等整轮或目标完全解决。研究笔记用research save保存不可变版本、下一步、agent_id和具体反馈；新反馈送原Solver继续，保留已成立部分。worker把实际答复写进笔记；确认已答该具体反馈时save加--ack-feedback，历史保留，后续工作不反复复活已答问题。普通save不丢尚未回答的反馈。
+init只准备packet；随后用平台真实spawn，给匹配Solver词、原题packet、clone绝对路径、独立笔记路径research/workspaces/<RUN>/<solver-id>.md和本槽写入范围，保存真实agent_id。模型或槽位不可用如实记录，不虚称或静默降级。用户要求继承时照办并记录实际输入；不把继承成果称独立空历史。obstacle需要已有成果时交现有full槽承接；改变输入实验用明确新spec/RUN，不直接改旧profile或packet。
 
-Solver返回一批就接原任务下一步，空位及时接续，Main整合可用数学与具体缺口。持续到原题准确闭合或真实运行硬边界，不以一次提交、一轮Solver或队列安静结束。原进程不可用才从同profile、原packet、最近笔记、反馈及事件恢复替代者。resume明确显示相关改版和相对原输入新可见的关联关系，不悄改已保存packet、不重扫全仓。
+收到成果后Main必须读实际笔记和必要论证：核是否仍满足原题模型与量词，哪些部分已证，哪些条件未付，反例是否真的满足原模型并否定目标。证明缺步、条件结果、有限观测与原题反例分别处理；具体判断见RESEARCH_WORKFLOW。不把accepted、程序成功或多数Solver同意当证明。
 
-## 计算与成果回流
+把已成立部分保住，将具体缺步、反例检查或可推进的下一数学义务交原Solver继续，并用research save保笔记、真实agent_id和反馈。两个full重复时，按各自实际进展分配不同未解义务或论证对照点，不预设LP等路线；有分歧就核精确假设和关键推理。实际回答写进笔记后再--ack-feedback，普通save保未答反馈。Git写入由Main串行组织。
 
-从具体数学义务决定是否写程序。短计算可在当前环境，普通批量计算优先已有云端批处理；Codespaces留给确需持续交互或特殊环境的工作，不为普通运行默认开机，不默认重跑旧审计。
+反馈同样遵守原输入约定：需引入成果图或其他Solver新成果的依赖/对照交full承接，不能灌入obstacle却仍称独立。原题必要澄清按实际来源记录；用户明确改变输入实验才用新spec/RUN。
 
-云端同一个work.py完成：compute request <本次数学计算ID> --manifest <本次manifest> --request-id <新ID> --timeout-minutes <实际预算>生成本地请求；把请求、代码、manifest和输入一起checkpoint确认pushed并记下SHA；再github runs --ref rebuild/research-v2 --head <SHA> --request-id <ID>、github run <RUN>、github artifacts <RUN>、github download <ARTIFACT> --out <ZIP>。读取实际receipt、输出和检查点再判断数学意义，不能把请求接受或进程成功当研究完成。完整参数见research/GITHUB_RESOURCES.md。
+持续接收、整合、反馈、保存并接续原任务；不以一轮Solver、一次提交、队列安静或自设时限结束。原题有覆盖全部要求的证明或满足全部约束的精确反例才算相应数学目标闭合，部分成果保存后继续。原进程失效才按同profile、原packet、最近笔记和待答反馈恢复替代者；相关版本变化定向核对，不丢已有推导或重扫全仓。
 
-已有明确实验可research compute <ID> --manifest <路径> --out <回执>运行并自动保存相关代码、输入和产物；这不是必须先执行的开工步骤。新计算不限定旧experiment ID，脚本与依赖按实际问题写清。超长任务须实际支持检查点恢复，入口不替算法发明恢复能力。GitHub凭据只用于资源与Git，不启动模型。
+## 保存、计算和成果回流
 
-成熟数学写相应archive/state，代码/输入/证据跟随数学owner；候选、完整证明、有限观察、精确反例、失败机制和开放义务分开。先有实质内容，再定向更新有关登记与超边，不每出一条引理重做全仓清洗。
+Solver把精确陈述、完整推导/见证、适用条件、实际证据、未付义务和下一步写入约定Markdown；重要进展立即保存，不等整题解决。Main用research save记录不可变笔记与事件，并及时checkpoint本次笔记、RUN和必要输入确认pushed。
 
-真实暂停保存研究run、笔记、已共享成果与准确下一步，说明pushed、仅本地和仍未完部分；失败保local-only，不虚称后台继续。命令成功直接继续，失败报告具体错误和可继续的数学工作。
+Main实质评议后，将可复用数学写入对应archives/<存档>/[subarchives/<子档>/]state/<类型>/<对象名>--<类型>.md；候选、条件、证明、有限结果和精确反例据实标明，代码/输入/证据归其数学owner。Main负责交给现有登记lead和map lead完成必要局部增量，并跟进实际登记/构图结果。对口lead明确空缺或已handoff时，用合适绑定clone或独立阶段clone按lead claim接任；归属未解就把完整成果和具体待整合项保存在现有研究笔记/next中继续跟进，原Solver照常研究，不假称已入总表或图。先推登记改版，再同步重判受影响关系；无关研究不等待全仓整合。
+
+计算服务于具体数学疑点：短计算可在当前环境，普通批量计算优先已有云端批处理；Codespaces用于确需持续交互或特殊环境。Main负责代码运行、输入及真实输出取回，Solver不承担Git/调度故障。接口与云端完整命令按需读research/GITHUB_RESOURCES.md；运行成功不代替数学论证。
+
+真实暂停保RUN、完整笔记、未答反馈和具体下一步，准确说明pushed、仅本地与未完；失败保local-only，不虚称后台继续。

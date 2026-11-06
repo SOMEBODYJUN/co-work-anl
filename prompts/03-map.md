@@ -1,10 +1,16 @@
-# 第三阶段：从内到外建立超边
+# 第三阶段：从内到外建立数学超边
 
-本次身份：Boss【用户指定唯一编号】。未给先问，不自选或借号，内部worker沿用父Boss。你连接已登记数学，交出研究者能用的解释性超边：哪些前提共同承重、条件与量词是什么、反驳指哪条陈述、还欠什么。
+## 先理解这份工作，再开始
 
-## 启动与持续协作
+2.5.3已给数学对象认清身份、编号并标好正文/证据位置。本阶段实读这些数学，说明哪些前提共同推出结论、结果怎样迁移、反例否定哪条准确陈述，交出研究时能直接使用的超边。
 
-先核本地目录、Git状态、remote及远端，保全并恢复已有身份、clone和未完任务。附件start --help若无--workflow-run/curator，只借其认证能力恢复https://github.com/SOMEBODYJUN/co-work-anl.git的rebuild/research-v2，再用clone根work.py，不拿旧start登记或覆盖仓库文件。已有clone若绑定旧阶段或另一对话，保留并另建本阶段独立clone；同阶段同对话才恢复原clone。
+之后由1个Main＋3个Solver研究同一原题：Main调度、反馈和整合；1个障碍组从原题、定义及已知障碍独立研究，默认不读成果图；2个成果组可用本库正文和完整超边推进。你现在为后者准备完整数学支持，不提前启动研究Solver。
+
+本次身份：Boss【用户指定唯一编号】。未给先问，不猜号或借号，worker沿用父Boss。默认gpt-6.1-sol/ultra，用满用户要求且实际可用并发。Boss与worker都做实质数学，方法自由，不设常驻汇报/审批者；同clone Git由Boss串行。
+
+## 恢复本人工作并领取整包
+
+先核目录、Git状态、remote及远端并保全成果。同对话恢复原clone、身份与未完批次；其他绑定保留，另用本阶段独立clone。旧附件不认参数时先认证恢复固定仓库当前分支，改用clone根程序。
 
 ```sh
 python <当前work.py> --repo <独立clone> start --actor BossN --role mapper --save repository-cleanup --branch rebuild/research-v2 --workflow-run map-v2 --token-file <仓库外凭据>
@@ -12,41 +18,47 @@ cd <独立clone>
 python work.py doctor
 ```
 
-此后只用clone根程序。任务/身份research/operations/map-v2，公屏wcg/board-map-v2。读AGENTS.md、research/IMPLEMENTATION.md、research/PHASE3_READINESS.md、实际registry/登记出口；worker自行读prompts/03-map-worker.md。全仓构图以registration-check --final的真实登记为输入；明确partial的稳定已登记区域可先做，不称全图完成。
+此后只用clone根程序，公屏wcg/board-map-v2。读AGENTS.md、实际registry/登记出口及research/IMPLEMENTATION.md的边、coverage和零边示例；worker读prompts/03-map-worker.md。全仓构图接真实完成的登记；稳定局部可明确partial先做。
 
-先map list --owner self恢复本人未完，再lead show与实际公屏。有lead接其任务，无lead时lead claim；唯一集成人同时做数学。默认gpt-6.1-sol/ultra，以用户明确配置为准，尽快用满实际并发。Boss和全部worker都实读、比较、写边，不设常驻汇报或审批者，同clone Git由Boss串行；已有6个处理者就由他们直接做，不再每人向下启动6个。
+先map list --owner self恢复未完，再map lead show及实际公屏。有lead接现有任务，无lead显式lead claim；成功者发布比较范围并持续集成，也做数学。只派当前仍归本人且pushed的任务。每包用fork_turns:none的fresh worker，给Boss号、clone绝对路径、任务路径和内部词；批内反馈找原worker，完成一包立即补新worker，不把上包历史当零占用。
 
-持续循环：本人未完→填空位→读写整批→成熟即保存/pushed、批量done→lead持续跨层整合→接下一批。批内反馈原worker修订；done后立即补fork_turns:none的新fresh worker，给明确Boss号、clone绝对路径、本批任务路径、内部词与必要边界，Boss身份不变。用户明确继承/复用时扣已用或未知历史预留，不把上批历史当0。范围还有未处置对象、明确待比较关系或未整合批次就继续，不以一轮、一次提交、一次check/build、暂时队列空或自设预算结束。
+## 每包怎样做数学
 
-## 关联与预算分批
+**读清对象。** 按object_ids/read_object_ids读精确陈述、模型、域、量词、条件、objections和必要完整论证，确认已成立与未付部分。正文仍是Markdown，端点使用登记object_id。
 
-3A先对象内部承重链、同子档对象族，3B同档跨批/跨子档，3C明确跨档映射，3D统一投影。篇数由数学关联和文本预算决定，可以几篇、十几篇或更多，不固定3–5、9篇或对象配额。
+**提出具体比较。** 从结论可否作另一证明的前提、共同假设/结构、模型特化/变换、反例目标、所用工具及未付条件，检索相关登记并读原文。没有旧链接也要主动提出有数学理由的比较。额外已登记端点由Boss用map read-add加入，共享读取不抢他人核心范围。
+
+**决定关系和粒度。** 一条边可承载完整多步论证；常规代入、记账和算术写进explanation及证据，不逐步造节点，不为自足证明造自环。确有独立复用价值的缺漏引理，才给Boss精确陈述、条件、完整出处及单独登记理由。
+
+{A,B}⇒C保一条ALL边，交清各前提作用、条件、变量对应和推导；独立证明分OR。equivalent_to须证双向，反向保全部targets。refutes逐项指明确被否命题，辅助桥失败不冒原题反例。迁移交清对象、允许选择、约束、量词和目标怎样对应、保留/损失什么；只证单向就保单向。引用、启发、实现及有限观察保语境身份，不作一般证明。
+
+**区分关系成立和前提成立。** 推导完整但前提未证，可accepted+relation_mode:conditional，写明未付前提，不提升终点真值；推导本身缺桥才proposed，写准确缺步。作者实读后可accepted，无固定二审；先定status、reviewed_by/review_note，再edge-bind、edge-check。某证明缺步只撤具体支持，保有效替代证明；命题被反例否定另作判断。文字/证据变化定向重核。
+
+## 从内部做到跨档，lead接续前沿
+
+3A先对象内部承重论证、同子档对象族；3B同档跨批/跨子档；3C有理由的跨档映射；3D持续集成。worker边做边给lead具体对象ID、比较问题、条件和出处，落现有比较范围/理由。lead据此主动产生下一层前沿；稳定局部即可接下一层，不等全仓一轮结束，不全仓两两枚举。
+
+仅lead发布新范围；已有计划先恢复。0任务转恢复、补比较范围或整合，不plan空表。
 
 ```sh
 python work.py sync
 python work.py research map-draft --stage 3A --output map/planned-tasks.json
 python work.py map plan --record-file map/planned-tasks.json
-python work.py map claim-next --count <当前实际worker空位数>
+python work.py map claim-next --count <实际worker空位数>
 ```
 
-仅在尚无这批已发布计划或确有新比较范围时生成/发布草稿；已有任务先恢复，不重复plan同一批。回执0任务就恢复已发布队列或整合，不plan空表。sync保本地正文/registry一致，绑定阶段planner另读最新轻量队列metadata排重；同名候选直接刷新，已发布任务不覆盖。审草稿的真实读取范围后发布；引用只是找关系的线索，不自动成边。object_ids是本批核心覆盖，read_object_ids共享只读，input_pins覆盖两者，write_paths独立。只给当前owner仍为本Boss且已确认pushed的任务派worker；领取摘要给任务路径，worker只取本批完整定义。新增已登记端点用map read-add TASK --object-ids ID...继续原任务；真改版才handoff后定向重派。需要遗漏对象送lead做登记增量，不重清洗。
+3B/3C由lead用重复--object-id或--objects-file给实际前沿。按关联和真实上下文预算整包读取，共同证据去重，不固定篇数或硬拼无关对象；超大完整对象保同任务分章节连续读写，保存成立部分与断点，不截断证明。
 
-完整数学对象及必要证明是原子阅读单位；同页优先合读，独立sections可分包共享，不为去重合并Claim。共同定义/证据按实际区间去重。Sol官方500K窗口是规划起点，40%总预留随窗口同比缩放，500K时正文/元数据初值300K、预留200K，已用历史另扣，可调但不当实报剩余；字符不是token，其它模型不套500K。单对象过大保同任务按reading_passes/章节连续读写，不为每pass新增认领，不截断条件或证明。拆预算后仍保必要对照锚和未付前沿，不把跨档比较拆成互不相干的单边阅读。后续3B/3C只沿明确新联系；map-draft --stage 3B/3C必须用重复--object-id或--objects-file给出实际比较frontier，不能无条件重扫全registry。3D由lead整合，不用map-draft。
+缺漏独立对象或登记纠错由当前map lead追踪登记增量，具体交接按PHASE3_READINESS：协调p25 lead；空缺/已交接位可由本Boss在独立登记clone显式接任，不抢仍绑定他人的身份。增量先pushed再同步：旧核心未变、只加依赖时read-add续原批；核心版本/pin已变时作者保草稿并handoff，lead按新版本重派，原worker接续；已done范围按定向替代处理。归属未解先保具体数学并做其它比较，不发完消息就丢、编造ID或假称已入图。
 
-## 交付可使用的数学关系
+## 写出产物，成熟即交，持续做到准确出口
 
-每边含稳定edge_id、kind、status、source_ids、target_ids、premises_mode:all、relation_mode、conditions、roles、explanation、scope、evidence。写清每项前提提供什么、变量如何对应、共同模型/量词与怎样得到结论。{A,B}⇒C是一条ALL超边，不拆成各自足够的二元边；独立证明分OR支持。equivalent_to是ALL(source)⇔ALL(target)，反向也保全部targets。
+按write_paths写独立边JSON及coverage收据JSON，完整模板见IMPLEMENTATION。每个core对象说明实际比较过谁、成立/不成立的理由及仍欠什么：linked要有真实accepted incident边；isolated-after-review要完成实际比较；身份/版本/交付疑点才needs-decision，明确开放数学可准确处置。
 
-推导、反驳、特化、迁移、等价，与启发、引用、来源、实现、检查、纠错、替代分开。反驳精确指向被否陈述，多目标逐项有证据，不能把否定合取当每项为假；辅助桥失败不冒原题反例。迁移写明确映射与保留/丢失条件，有限阴性不作普遍反驳。定义通常作条件/引用，有真实数学作用才建边，不机械造模型hub或逐数字节点。
+本包可多边或零边。有边列真实已推assets；零边以coverage承载上述实质比较，收据assets:[]，不另造边或说明文件。已读本体和必要论证、按模型/陈述/条件主动检索后确无合理候选，也可记录检索范围与原因据实isolated-after-review；未读或未检索不能当审完，不为交付凑无关比较或自环。同端点不同证明保区别，重复包装由lead实读后定向合并。
 
-作者实读后可accepted，不设逐边固定二审流水。先定最终status、reviewed_by及具体review_note，再edge-bind填三项绑定，edge-check核独立交付；之后改条件、文字、端点或证据要重核。程序不代数学判断，proposed保未付条件，rejected保精确失败理由，不为完成率解完所有未知或强行接受。
+成熟几个交几个，不等整轮。checkpoint本次准确产物确认pushed，Boss自动组成task_id/receipt_file的ready数组，用map done --record-file批交，单批done仍可用。未知回执沿原请求核远端；认证失败保local-only并停止新认领，参数按IMPLEMENTATION。
 
-worker直接写本批独立边和coverage收据。每个核心对象给object_pin、真实comparison_scope、reason及linked/isolated-after-review/needs-decision；linked列真实accepted incident边。明确open/proposed可准确完成比较，不等于身份needs-decision；无已知成立联系就如实留孤立与范围，不强连。
+lead边收边collect→保全并sync→assemble，实写各档/子档archive_reviews及cross_archive_review，消解重复、条件冲突和明确待比较线索。当前对象及已声明比较范围准确处置、交接和待整合项闭合后，research check --final、build --final；按projections显式checkpoint全部准确投影及registry/coverage/integration确认pushed，不漏archives内输出。本轮准确出口已pushed且交清接续位置后，lead用map lead handoff --reason <准确出口与增量入口>交出集成位，供后续合法接任。
 
-成熟边/收据只列本次明确路径，一次checkpoint确认pushed，Boss把当前成熟task_id/receipt_file自动组成ready数组，map done --record-file <ready文件>一次批交；单项done仍可用。ready仅本次输入，确认pushed后删，失败保原输入。成熟几个交几个，不等整轮。独立边不等总registry先挂边；原样canonical边以精确SHA共享复用，不占写锁。
-
-lead持续collect→保全并sync→assemble，合唯一边清单与coverage/integration候选，不自动接受或编数学理由。旧实质说明保留，改版只标受影响范围复核；同队列替换已done批用supersedes明确旧资产去向，新批done再退出旧批。过期未领/已交接任务由lead withdraw，claim-next跳过并报具体重派项，不堵其他工作。
-
-lead实写各档/子档archive_reviews及cross_archive_review；最终清身份、版本、来源和交付疑点，准确开放数学可留图。research check --final及build --final后，按回执projections逐个显式checkpoint准确投影路径，连同registry、coverage和integration确认pushed；默认保存范围不含archives内投影，不能漏交或整档乱提。
-
-研究Main之后search→show/context取完整支持、条件、证据、反驳与开放义务，导航距离不截断证明；入口prompts/research-runtime.md，本阶段不提前启动Solver。全范围准确完成才收尾；真实暂停map handoff --all --reason保草稿/共享情况/下一步，lead另交接。真实硬边界保本地和原请求，准确报告pushed/仅本地/未完，不虚称后台继续。
+持续循环：恢复未完→补空位→实读比较→成熟保存/交付→lead接下一层并整合→接下一包。本范围仍有未处置对象、明确比较线索或未整合成果就继续，不以一次提交、一轮、队列暂空或一次check/build结束；不要求解完开放题或找尽一切潜在关系。真实暂停用map handoff --all --reason保存草稿、共享状态及下一步，lead另交接；如实区分pushed、仅本地和仍未完，不虚称后台继续。

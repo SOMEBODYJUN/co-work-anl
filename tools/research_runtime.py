@@ -629,9 +629,18 @@ def packet(root, spec, profile, registry=REGISTRY):
                          'instruction': 'Start a fresh-history solver with the declared model and effort unless the user explicitly requests inherited history. Supply this packet and the matching solver prompt.'},
               'limit': 'Context selection is not a file-system access-control boundary.'}
     if profile == 'full':
-        result['context'] = context(root, spec['seed_ids'], registry, spec.get('hops', 0),
-            edge_ids=spec.get('edge_ids'), edge_statuses=spec.get('edge_statuses'), relation_kinds=spec.get('relation_kinds'))
-        result['registry_pin'] = result['context']['registry_pin']
+        seeds = spec.get('seed_ids', [])
+        strings(seeds, 'seed_ids')
+        if seeds:
+            result['context'] = context(root, seeds, registry, spec.get('hops', 0),
+                edge_ids=spec.get('edge_ids'), edge_statuses=spec.get('edge_statuses'), relation_kinds=spec.get('relation_kinds'))
+            result['registry_pin'] = result['context']['registry_pin']
+        else:
+            if spec.get('edge_ids'):
+                raise ValueError('Select relevant seed objects for the requested proof branches; omit both when no prior results are needed')
+            result['context'] = {'seed_ids': [], 'registry': registry, 'objects': [], 'edges': [],
+                'support_options': {}, 'proof_closure_object_ids': [], 'refutations': [], 'research_leads': [],
+                'instruction': 'No prior mathematical results selected. Start from the exact problem, definitions and obstacles; retrieve genuinely relevant results later, without inserting unrelated seeds.'}
         result['retrieval'] = {'registry': registry, 'commands': ['research search', 'research show', 'research context']}
     return result
 
@@ -661,6 +670,8 @@ def init_run(root, run_id, spec_file, registry=REGISTRY):
                  'edges': {e['edge_id']: e['declaration_pin'] for e in packets['full']['context']['edges']}},
              'packet_pins': {profile: pin(value) for profile, value in packets.items()},
              'note': 'No agents were launched by this command; Main starts them through the Work orchestration API.'}
+    if state['registry_pin'] is None:
+        state.pop('registry_pin')
     _write_json(path, state)
     return {'status': 'initialized-local-not-pushed', 'run': path.relative_to(root).as_posix(),
             'packets': [str((home / ('packet-' + p + '.json')).relative_to(root)) for p in packets],
@@ -786,8 +797,15 @@ def resume(root, run_id):
                 if view['binding_status'] != 'current':
                     changes['stale_selected_refs'].append({'edge_id':eid,'errors':view['binding_errors']})
     except (ValueError, OSError, KeyError) as exc:
-        changes['registry_error'] = str(exc)
-        warnings.append('Saved notes and packets remain recoverable; the current registry needs attention: '+str(exc))
+        no_initial_results = ('full' in packets and not run.get('registry_pin')
+                              and not packets['full'].get('context', {}).get('objects'))
+        if (no_initial_results and isinstance(exc, FileNotFoundError)
+                and exc.filename == str(_safe_path(root, run['registry']))):
+            changes['registry_available'] = False
+            changes['instruction'] = 'This run selected no prior results; continue its saved original problem and notes. A registry is not required before doing mathematics.'
+        else:
+            changes['registry_error'] = str(exc)
+            warnings.append('Saved notes and packets remain recoverable; the current registry needs attention: '+str(exc))
     head = subprocess.run(['git','rev-parse','HEAD'],cwd=root,capture_output=True,text=True)
     roster = run.get('solver_roster', SOLVER_ROSTER)
     return {'run':run,'solver_count':run.get('solver_count',len(roster)),'solver_roster':roster,

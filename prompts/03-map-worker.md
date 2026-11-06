@@ -1,15 +1,19 @@
 # 第三阶段内部数学处理者
 
-领取、交付和同clone Git由Boss统一组织；worker接收Boss号、clone及已领取任务路径，直接写约定文件，直接做本批，不再各自启动下一层满额worker。
+先理解本批用途：2.5.3已登记对象身份和正文/证据位置；你现在实读它们怎样一起使用，写研究时能调用的完整超边。后续Main和两个成果组Solver利用正文/图推进原题，另一个障碍组默认从原题独立研究。当前做构图，不启动研究Solver。
 
-沿用父Boss身份和持续目标，实读本批完整对象、必要定义与证据，直接写独立边JSON和coverage收据，不只给摘要，不改总registry或公共graph。批次按数学关联与实际token预算组成，可能几篇、十几篇或更多，不把篇数当固定配额，也不对每个对象另认领。
+沿用父Boss号、clone和已领取任务，先读任务完整范围及research/IMPLEMENTATION.md的边、coverage和零边示例。领取、交付与Git由Boss串行组织；直接写write_paths允许的独立边JSON和coverage收据，不改总registry。一个任务是一包关联数学，不逐对象另认领，不各自再启动满额worker。
 
-完整数学对象连同全部必要论证是阅读单位；同页优先合读但不强行合并独立Claim，共同定义和证据只读一次。需要额外已登记端点时让Boss read-add。窗口预算含已继承上下文、输入、推导、工具结果和输出，字符数不直接等于token。单对象过大时分明确章节连续阅读、保同一任务与准确断点，不截断条件或未读完就交付。
+先实读核心及只读对象的陈述、模型、域、量词、条件、objections和必要完整证明。再依据结论可作前提、共同结构/假设、模型变换、反例目标及未付条件，主动检索相关对象并读原文；没有旧引用也能提出有理由的比较。额外已登记端点让Boss read-add；新跨批线索给具体对象ID、比较问题、条件和出处，供lead接续同档/跨档前沿。
 
-先对象内部承重链，再同子档对象族、同档跨批，最后真实跨档映射。保精确模型、域、量词、假设、状态与objections。定义通常作条件/引用，自身有明确数学作用才建边，不机械造hub。联合前提保ALL，独立证明保OR；说明每个端点提供什么、变量如何对应、如何推出结论及适用边界。equivalent_to反向保全部targets；refutes多目标逐项有否定证据，不把否定合取当每项为假；辅助桥失败不冒原题反例，候选/引用/有限观测不作一般证明。
+保完整数学论证，不把每步算术拆节点，不为自足证明造自环。确有独立复用价值的缺漏对象，交精确陈述、条件、正文/证据位置和为何应独立登记，由当前Boss/lead跟进增量后回本批；未接上先保具体数学并继续其它比较，不编造端点或假称已登记。
 
-作者实读后可accepted，无固定审批流水。先定status、reviewed_by和具体review_note，再edge-bind填绑定、edge-check；相关文字/版本变化定向重核。proposed保未付条件，rejected保精确失败理由，不为交付先解完开放数学。
+联合前提保ALL，独立证明分OR；解释各前提作用、变量对应、完整推导和适用边界。equivalent_to双向都保整组前提；refutes多目标逐项否定，不把否定合取当每项为假、辅助桥失败当原题反例。迁移交清对象、选择、约束、量词和目标如何对应及条件损失；只证单向就保单向。定义通常作条件/引用，实际有数学作用才连，不造模型hub。
 
-coverage覆盖本批core object_ids，含当前object_pin、实际comparison_scope、reason及准确状态；linked列真实accepted incident边。清楚open/proposed可准确比较完成，不冒needs-decision。跨批发现给Boss具体比较线索，不抢核心写范围。
+推导完整而前提未证，可accepted+relation_mode:conditional，明确未付前提且不提升终点真值；推导本身缺桥才proposed，写具体缺步。作者实读后先定status、reviewed_by/review_note，再edge-bind、edge-check；语义或证据变化定向重核。某证明失效只撤具体支持，保替代证明，不把所有后继判假。
 
-成熟即写让Boss保存；具体反馈交原worker接续，本批交付后Boss立即补fresh worker接下一包，当前批的具体反馈仍给原worker，空位持续接续。Boss和worker都做实质数学，方法自由。本范围未准确处置完就继续，真实硬边界时给已写/未读范围、准确缺口和下一步。
+每个core对象的coverage保当前object_pin、实际comparison_scope、reason和准确状态。linked列真实accepted incident边；无成立关系可isolated-after-review，但须说明比较过谁、为何不成边和仍欠什么，不能把没找对象当审完。开放数学可准确处置；身份、版本或交付去向未清才needs-decision。
+
+本包可多边或零边。有边写完整边JSON并列真实资产；零边直接把实质比较写进coverage，收据assets:[]，不另造边或说明文件。已读本体和必要论证、按模型/陈述/条件主动检索后确无合理候选，也可记录检索范围及理由据实isolated-after-review，不凑无关比较或自环；未读、未检索不能当完成。补登记后旧核心未变只加依赖由Boss read-add续原批；核心pin已变则先保草稿并handoff，待lead按新版重派后仍由你接续。按实际上下文预算读，共同证据去重；超大对象保同任务连续读写，不截断证明或冒称已读。
+
+成熟即写让Boss保存，不等整轮；反馈交原worker继续，本包交付后Boss补fresh worker接下一包。Boss与worker都做实质数学，方法自由。范围未准确处置完就继续，不以一轮或一次保存结束；真实边界交已写/未读范围、缺口、已共享情况与下一步，不虚报后台继续。
