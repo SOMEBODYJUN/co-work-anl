@@ -1,0 +1,1274 @@
+{
+  "schema": 2,
+  "objects": [
+    {
+      "object_id": "WC-ANCHORED-POLYNOMIAL-CYCLE-LOCK-v1",
+      "version": 2,
+      "title": "双轮改善环的锚定三元全状态编译",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限原子加权拥塞游戏：有限非空玩家与资源、资源无关正玩家权、每人有限非空资源子集策略族，允许空策略与零费；非负系数次数至多d的多项式资源费用；个体成本为所用资源费用和，不乘自身权；所有单方偏离按真实新负载重算。",
+      "statement": "任意n≥3、次数≤p、每人恰二动作且有全0依次翻1再同序翻0的严格α改善2n环，给全部状态成本界B及环余量η；令L=C(n−1,2)、δ=max_T(1−min_{i∈T}w_i/Σ_Tw_i)、M=2αB，取δ^D≤η/(4α²BL)，增加2L个费用M(x/W_T)^D的锚定三元资源，保留玩家/权/旧资源及恰二动作，得到无α-PNE游戏，次数≤max(p,D)。有理输入可全有理。",
+      "quantifiers": "∀满足输入环合同的有限游戏及α≥1，∀符合预算整数D，存在所述显式全状态编译。",
+      "assumptions": [
+        "n≥3，每人恰两个合法动作",
+        "B≥max_{s,i}C_i(s)>0，η为指定全部环边最小正margin",
+        "δ^D≤η/(4α²BL)"
+      ],
+      "scope": "次数依实例，不自动保p；不得扩大最终策略族。n=2输入环已覆盖全态，n=1不可能。统一预算的效率障碍不同于实际最低锁定次数。",
+      "objections": "正文给出一般数学论证；内部审查与有限程序核验不代替该论证，未作外审或新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/双轮改善环的锚定三元全状态编译--定理.md",
+        "sha256": "01951fc300c6bf4092d14290629359729272348928d1a8f45ecfcea533a24016"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md",
+          "sha256": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/拥塞时钟与局部矩账本的全部陈述--资料.md",
+          "sha256": "5c7b615f4237edf437219a3f51070497011fadf3b3c3651a3a97b373d7319b4f",
+          "section": "完整冻结账本第 673–844 行"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+          "sha256": "f34c797df23040e074e9b1778911b5167c972eaabf01bb998599d8452d4d242e",
+          "section": "分叉、类前沿与锚定时钟"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/anchored_cycle_lock.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/ordinal_potentials/anchored_cycle_lock_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/weighted_congestion_frontier/CLAIMS.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/weighted_congestion_frontier/CLAIMS.md"
+      ]
+    },
+    {
+      "object_id": "WC-ANTICHAIN-CORE-NORMAL-FORM-v1",
+      "version": 2,
+      "title": "必选背景消除的空交反链核心",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限原子加权拥塞游戏：有限非空玩家与资源、资源无关正玩家权、每人有限非空资源子集策略族，允许空策略与零费；非负系数次数至多d的多项式资源费用；个体成本为所用资源费用和，不乘自身权；所有单方偏离按真实新负载重算。",
+      "statement": "任何次数≤d有限游戏有不依α的有限变换：输出显式精确PNE，或输出原非空玩家子集及其权、同次数上限、每人≥2个非空动作且为包含反链/总交空的核心H及固定提升L，使∀实α≥1，H每个α-PNE均提升为原游戏α-PNE。另固定(d,α)的严格反例存在等价于正整数权/单位单项式且具此核心结构的反例存在。",
+      "quantifiers": "∀G,d，∃上述不依倍率的变换与L，∀α≥1均单向提升；∀固定d,α有反例存在等价。",
+      "assumptions": [
+        "正平移吸收全部玩家逐资源必选背景",
+        "包含极小动作保非负费用最佳回应比较"
+      ],
+      "scope": "允许删玩家，不反向投影全部近似均衡，不保最佳倍率；整数推论须先整数化再核心再复制费用。",
+      "objections": "正文给出一般数学论证；内部审查与有限程序核验不代替该论证，未作外审或新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/必选背景消除的空交反链核心--定理.md",
+        "sha256": "e36a3e46c9f9a98e534f3b84b31d78682546b8623d2e2d6dbb781068e2fb04bc"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/严格反例的整数单位单项式规范形--定理.md",
+          "sha256": "a09eb81e40c4fcd8c47ee38fa034fd4ab9001e4f39acf30eab3573e83c2e82f0"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/有限择证与规范形的审查范围--审查.md",
+          "sha256": "2dbc62595b00144c1cb607c7fd51cd0835d2f16f577317a1c9c3372dd10edb38"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/拥塞时钟与局部矩账本的全部陈述--资料.md",
+          "sha256": "5c7b615f4237edf437219a3f51070497011fadf3b3c3651a3a97b373d7319b4f",
+          "section": "完整冻结账本第 673–844 行"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+          "sha256": "f34c797df23040e074e9b1778911b5167c972eaabf01bb998599d8452d4d242e",
+          "section": "分叉、类前沿与锚定时钟"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md#7",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/template_certificates/antichain_core_normal_form_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/weighted_congestion_frontier/CLAIMS.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/weighted_congestion_frontier/CLAIMS.md"
+      ]
+    },
+    {
+      "object_id": "WC-R2-RESOURCE-POWER-BRIDGE",
+      "version": 2,
+      "title": "资源幂矩与降序边际势的共同尺度桥",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限原子加权拥塞游戏：有限非空玩家与资源、资源无关正玩家权、每人有限非空资源子集策略族，允许空策略与零费；非负系数次数至多d的多项式资源费用；个体成本为所用资源费用和，不乘自身权；所有单方偏离按真实新负载重算。 动作可保重复标签指向同一资源子集；比较只取真实成本，不因重复标签造新数学对象。",
+      "statement": "共同R>1、0<p<1，按全部潜在用户固定每资源权比Q_e及半开R窗最大重数K_e。存在静态资源可加势，全部真实加入边满足w_i^p c_e(Y)≤Δ_iΨ_e≤α_e w_i^p c_e(Y)，α_e=min{Q_e,1+A_R(p)K_e^(1−p)H_d(p)}，H_d=sup_{S≥0}S^p[1−(S/(1+S))^d]。α=max({1}∪α_e)给全部严格α改善降势及PNE存在；只对d≥1，H_d<κ_p d^p，κ_p=sup_{y>0}(1−e^(−y))/y^p，且d→∞时H_d/d^p→κ_p；d=0另取H0=0，不套此严格不等式。",
+      "quantifiers": "∀有限任意正实权游戏，∀共同R>1,p∈(0,1)，存在预先固定逐资源选取的共同w_i^p尺度势；∀严格α改善下降。",
+      "assumptions": [
+        "潜在用户固定，K按玩家重数及半开窗计",
+        "同一p跨所有资源",
+        "费用非负系数，d≥0；d=0单独取H0=0"
+      ],
+      "scope": "不把资源势随状态更换；d=0精确，p=0不可代，p=1另有直接端点。稀疏K=o(d)给受限o(d)，不是全类上界；无多项式求最小保证。",
+      "objections": "正文给出一般数学论证；内部审查与有限程序核验不代替该论证，未作外审或新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/资源幂矩与降序边际势的共同尺度桥--定理.md",
+        "sha256": "49ad923c7cb04046516270424c8e683d048dd99c939c00a0a5605130e1ad002c"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/引理/乘法权窗密度的锐幂矩--引理.md",
+          "sha256": "43c435eb211eb87560341b52aa6161e145db8b044b2611079aa52dd6f883f6e9"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/幂桥与共同幂混合的版本和证明范围--审查.md",
+          "sha256": "01477e503955889bbedbbcc794055bc20d3c67c47a376c13a28826e6780737cf"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/幂路径机制来源与现行桥接审查--审查.md",
+          "sha256": "2a532aed6305478d7889ca41715ad130306dc3216dabba5949e6bdd9b2892422"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/拥塞全类目标与早期源包络账本的全部陈述--资料.md",
+          "sha256": "63d83d2686c31af7738970511c4eae6d6c7bb924e06b30b56efc2e37fff095cf",
+          "section": "完整冻结账本第 1–248 行"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+          "sha256": "503d019086ae0db71d6a98544fd524788fae16b6be2548db721bd5a931c1a147",
+          "section": "玩家尺度、资源目标与选择器"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/power_bridge.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/power_bridge/independent_review.md",
+        "原精确Claim/版本记法：WC-R2-RESOURCE-POWER-BRIDGE v1",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/weighted_congestion_frontier/CLAIMS.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/weighted_congestion_frontier/CLAIMS.md"
+      ],
+      "legacy_aliases": [
+        "WC-R2-RESOURCE-POWER-BRIDGE v1"
+      ]
+    },
+    {
+      "object_id": "WC-R1-MULTIPLIER-BARRIER",
+      "version": 2,
+      "title": "任意玩家乘子的多尺度边际夹逼",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "固定有限正玩家权向量、单资源费用x^d的局部集合边际夹逼接口：对全部i∉S⊆N比较Δ_iF(S)与h_i(w(S)+w_i)^d；F与正h可依完整w，无匿名/连续/统一规则限制。有限原子加权拥塞游戏：有限非空玩家与资源、资源无关正玩家权、每人有限非空资源子集策略族，允许空策略与零费；非负系数次数至多d的多项式资源费用；个体成本为所用资源费用和，不乘自身权；所有单方偏离按真实新负载重算。 ρ_d=sup_{t>0}[(d+1)(1+t)^d+t^(d+1)]/[d+(1+t)^(d+1)]，ρ_d/d→1。",
+      "statement": "每个d≥2及1≤a<ρ_d，存在有限正权向量w，使不存在任何集合函数F及正乘子h_i同时在全部i∉S上满足h_i(w(S)+w_i)^d≤Δ_iF(S)≤a h_i(w(S)+w_i)^d。F和h可依完整有限w。κ*_d=sup_w inf可行倍率满足ρ_d≤κ*_d≤d，且ρ_d>d^((d−1)/(d+1))，故κ*_d/d→1；有理α,t0给有限有理压缩证书选择。",
+      "quantifiers": "∀d≥2，∀实1≤a<ρ_d，∃有限w，∀F及正h，上述全部边际合同不能成立。",
+      "assumptions": [
+        "同一玩家h在全部用户上下文一致",
+        "只使用有限类路径及有限幂和极限，先类内同时平均F,h"
+      ],
+      "scope": "方法障碍不是无均衡；其全2^E见证可有全空精确PNE。不要求匿名性/连续性或统一生成规则，inf不预设取得。",
+      "objections": "正文给出一般数学论证；内部审查与有限程序核验不代替该论证，未作外审或新颖性认证。 新接双源审查仍以当时内部候选及外审待定表述，保其证据等级；本记录的数学证明入口仍为完整多尺度正文。四个压缩证书不声称展开玩家或全态枚举；sup严格界不宣称单个有限向量达到。",
+      "body": {
+        "path": "archives/weighted-congestion/state/障碍/任意玩家乘子的多尺度边际夹逼--障碍.md",
+        "sha256": "a8a81a49e28d9aa79571dda74c10e0ac45123f3ed2298b8625a1cfb3794e13ac"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/审查/统一序势与非线性选态的量词和纠错--审查.md",
+          "sha256": "8199bbff2672f070cac643aaca19ad4c62d3768373d41ff2fd3c1ab3a25a71d6"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/循环窗口复制的近次数真实改善环--定理.md",
+          "sha256": "e6948b99b84e49e6683f0278be19661793042f5b7321f742af8fc578749aace2"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/边际乘子障碍与多项式端点归约双源审查--审查.md",
+          "sha256": "a38e6eef1bb72c061e841be2f5d08abf3d48ec87688b03253f0318547b915915",
+          "section": "1. 任意玩家乘子边际夹逼障碍"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/边际乘子障碍与多项式端点归约双源审查--审查.md",
+          "sha256": "a38e6eef1bb72c061e841be2f5d08abf3d48ec87688b03253f0318547b915915",
+          "section": "3. 与先有对象的关系"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/边际乘子障碍与多项式端点归约双源审查--审查.md",
+          "sha256": "a38e6eef1bb72c061e841be2f5d08abf3d48ec87688b03253f0318547b915915",
+          "section": "4. 结论、用途和缺口"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/拥塞结构势与规范形账本的全部陈述--资料.md",
+          "sha256": "9e14b51a1e19062674f69602052761645c99f10e0b55d0215e5e84a4adf2314d",
+          "section": "完整冻结账本第 451–672 行"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+          "sha256": "503d019086ae0db71d6a98544fd524788fae16b6be2548db721bd5a931c1a147",
+          "section": "玩家尺度、资源目标与选择器"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/加权拥塞旧候选目录与后续数学状态--审查.md",
+          "sha256": "f851d005d87fa5c15a3ccfb164980919f9ab7abd9069c6b15383f4eb67345adf",
+          "section": "十项候选的独有内容与去向"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/separable_ordinal_obstruction.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/questions/weighted_congestion/marginal_potentials/arbitrary_multipliers.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/ordinal_potentials/game_specific_independent_attack.md",
+        "原精确Claim/版本记法：WC-R1-MULTIPLIER-BARRIER v1",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/weighted_congestion/marginal_potentials/multiplier_evidence.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/weighted_congestion/marginal_potentials/multiplier_evidence.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/questions/weighted_congestion/marginal_potentials/arbitrary_multipliers.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/questions/weighted_congestion/marginal_potentials/fixed_marginal_potential_obstruction.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/questions/weighted_congestion/marginal_potentials/fixed_marginal_potential_obstruction.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/weighted_congestion/marginal_potentials/verify_multipliers.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/weighted_congestion/marginal_potentials/verify_multipliers.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/weighted_congestion_frontier/CLAIMS.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/weighted_congestion_frontier/CLAIMS.md"
+      ],
+      "legacy_aliases": [
+        "WC-R1-MULTIPLIER-BARRIER v1"
+      ]
+    },
+    {
+      "object_id": "WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1",
+      "version": 2,
+      "title": "循环窗口复制的近次数真实改善环",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限原子加权拥塞游戏：有限非空玩家与资源、资源无关正玩家权、每人有限非空资源子集策略族，允许空策略与零费；非负系数次数至多d的多项式资源费用；个体成本为所用资源费用和，不乘自身权；所有单方偏离按真实新负载重算。",
+      "statement": "d≥2，R_d(t)=((d+1)(1+t)^d+t^{d+1})/(d+(1+t)^{d+1})，ρ_d=sup_{t>0}R_d(t)。每个1≤α<ρ_d都有有限正有理权、全部费用恰x^d、每人策略族2^E的游戏，真实严格α改善图有闭环而全空仍是精确PNE；因此无任何实值函数沿该游戏全部严格α改善边严格下降。ρ_d>d^((d−1)/(d+1))、ρ_d≤d，故ρ_d/d→1。",
+      "quantifiers": "∀整数d≥2，∀实1≤α<ρ_d，∃所述有限游戏及严格改善闭环。",
+      "assumptions": [
+        "真实单玩家偏离，非负费用",
+        "有限类路径测试先补连接列排除非负对偶零坐标，再用严格替代及循环窗口复制"
+      ],
+      "scope": "环阻碍任意全局严格改善势；不否定均衡存在、选定调度算法或仅以势最小点证明存在的证书。输入全态编译前须删去2^E扩展保两个动作。",
+      "objections": "正文给出一般数学论证；内部审查与有限程序核验不代替该论证，未作外审或新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/循环窗口复制的近次数真实改善环--定理.md",
+        "sha256": "e6948b99b84e49e6683f0278be19661793042f5b7321f742af8fc578749aace2"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/障碍/任意玩家乘子的多尺度边际夹逼--障碍.md",
+          "sha256": "a8a81a49e28d9aa79571dda74c10e0ac45123f3ed2298b8625a1cfb3794e13ac"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/拥塞结构势与规范形账本的全部陈述--资料.md",
+          "sha256": "9e14b51a1e19062674f69602052761645c99f10e0b55d0215e5e84a4adf2314d",
+          "section": "完整冻结账本第 451–672 行"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+          "sha256": "503d019086ae0db71d6a98544fd524788fae16b6be2548db721bd5a931c1a147",
+          "section": "玩家尺度、资源目标与选择器"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/cyclic_clone_improvement_cycles.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/ordinal_potentials/cyclic_clone_improvement_cycles_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/weighted_congestion_frontier/CLAIMS.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/weighted_congestion_frontier/CLAIMS.md"
+      ]
+    },
+    {
+      "object_id": "WC-DEGREE-LOCAL-COST-COMPRESSION-v1",
+      "version": 2,
+      "title": "有限次全成本空间与正资源压缩",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限原子加权拥塞游戏：有限非空玩家与资源、资源无关正玩家权、每人有限非空资源子集策略族，允许空策略与零费；非负系数次数至多d的多项式资源费用；个体成本为所用资源费用和，不乘自身权；所有单方偏离按真实新负载重算。",
+      "statement": "固定玩家权、动作标签数m_i及d≥0，全部玩家成本表属于D=Σ_i m_i Σ_{T⊆N\\{i},|T|≤d}Π_{j∈T}(m_j−1)维空间；任意游戏可用≤D个正系数单项式资源类型及≤M=Σm_i个零费单点标签资源，逐玩家逐状态及全部真实偏离成本完全不变；原为空交反链核心时可保该结构。二动作D=2nΣ_{r≤min(d,n−1)}C(n−1,r)，固定d为O_d(M^{d+1})。",
+      "quantifiers": "∀有限n,w,m,d及其任意非负多项式游戏，∃所述精确全成本表示。",
+      "assumptions": [
+        "固定正玩家权与有限动作标签",
+        "非负系数次数≤d"
+      ],
+      "scope": "可改变资源、系数与空动作集合表示；不保单位系数、不限制资源潜在用户数、不提供统一人数/动作数截止或算法效率。",
+      "objections": "正文给出一般数学论证；内部审查与有限程序核验不代替该论证，未作外审或新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/有限次全成本空间与正资源压缩--定理.md",
+        "sha256": "ac5a9ce583b8196645e2c3694ab2722abd7492824c611540a6168bdd52b43660"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/资料/拥塞时钟与局部矩账本的全部陈述--资料.md",
+          "sha256": "5c7b615f4237edf437219a3f51070497011fadf3b3c3651a3a97b373d7319b4f",
+          "section": "完整冻结账本第 673–844 行"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+          "sha256": "503d019086ae0db71d6a98544fd524788fae16b6be2548db721bd5a931c1a147",
+          "section": "正锥、全局支撑与低阶表示"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/template_certificates/selector_local_moments.md#1-2",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/weighted_congestion/template_certificates/selector_local_moments.md#1-2",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/template_certificates/selector_local_moments_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/weighted_congestion_frontier/CLAIMS.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/weighted_congestion_frontier/CLAIMS.md"
+      ]
+    },
+    {
+      "object_id": "WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1",
+      "version": 2,
+      "title": "完整proper锥的必要暂态质量",
+      "kind": "theorem",
+      "truth_status": "conditional",
+      "model": "有限原子加权拥塞游戏：有限非空玩家与资源、资源无关正玩家权、每人有限非空资源子集策略族，允许空策略与零费；非负系数次数至多d的多项式资源费用；个体成本为所用资源费用和，不乘自身权；所有单方偏离按真实新负载重算。 二动作签名矩阵B_H(β)以每态所选玩家旧资源指示量×旧负载^k减β倍目标动作指示量×真实新负载^k为列条目；概率对偶为μ≥0、Σμ=1、B_H(β)^Tμ≤0。完整proper签名每玩家块只取空、仅0、仅1。",
+      "statement": "给d≥0、α≥1及有非空严格α改善简单环Q的n玩家二动作游戏G，正费用资源对每人至多在一个动作；n′=max(n,d+2)，任补普通正权及flag正权，则完整proper签名0,…,d次锥上可构造唯一循环为Q的全状态真翻位H，具有对全部β≥1可行的完全暂态概率对偶。把原游戏正资源系数a零延拓到完整proper锥，令b(s)=(B_H(α)a)_s，η=min_(s∈嵌入环)b(s)>0，M=max_(s∈暂态)max{0,−b(s)}≥0。在原α，每个概率对偶μ都满足暂态质量t≥η/(η+M)>0，无循环支撑对偶；M=0时t=1，分母因η>0始终为正。任意β≥1无点质量对偶。 特别每个d≥2及1≤α<ρ_d，循环窗口真实环保其两个proper动作并抽简单环后给正有理权的上述完整proper锥实例，ρ_d/d→1。",
+      "quantifiers": "∀满足输入坏环/proper合同的G,d,α及新增正权，∃H，∀其α概率对偶有正暂态质量。",
+      "assumptions": [
+        "原G有非空严格α改善简单环",
+        "原正费用资源proper，新增玩家不使用旧资源",
+        "完整proper签名锥，包含私人常数列"
+      ],
+      "scope": "这是条件植入定理，不声称低次有坏环或无均衡游戏；∀态∃费用反例不交换为∃费用∀态。近次数循环输入须保其两个动作并抽简单环。",
+      "objections": "正文给出一般数学论证；内部审查与有限程序核验不代替该论证，未作外审或新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/奇偶暂态层与完整锥必要质量--定理.md",
+        "sha256": "9c7c399a3d42d6a1e3a7921221e504bf3784145ed1cead3fdd553c036dc8f01e"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md",
+          "sha256": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a",
+          "section": "精确矩阵与全部量词"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/有限动作资源签名压缩--定理.md",
+          "sha256": "b65ee24853893fbba0259ebbd6352505d5ddbd54c47253fe417605cf11e758e2",
+          "section": "模型和精确合同"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/循环窗口复制的近次数真实改善环--定理.md",
+          "sha256": "e6948b99b84e49e6683f0278be19661793042f5b7321f742af8fc578749aace2"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/拥塞共享侧资源与正占用核账本的全部陈述--资料.md",
+          "sha256": "3a787178b9ae25b34ed7aeaa59b33ef9079667a67223ff0ac99b2cf7a8f39d82",
+          "section": "完整冻结账本第 845–1053 行"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+          "sha256": "503d019086ae0db71d6a98544fd524788fae16b6be2548db721bd5a931c1a147",
+          "section": "正锥、全局支撑与低阶表示"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/template_certificates/selector_local_moments.md#5,13",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/weighted_congestion/template_certificates/selector_local_moments.md#5,13",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/template_certificates/selector_local_moments_review.md#完整proper锥",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/weighted_congestion_frontier/CLAIMS.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/weighted_congestion_frontier/CLAIMS.md"
+      ]
+    },
+    {
+      "object_id": "WC-TRANSIENT-PARITY-SELECTOR-DUAL-v1",
+      "version": 2,
+      "title": "低阶奇偶抵消的完全暂态择证对偶",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限原子加权拥塞游戏：有限非空玩家与资源、资源无关正玩家权、每人有限非空资源子集策略族，允许空策略与零费；非负系数次数至多d的多项式资源费用；个体成本为所用资源费用和，不乘自身权；所有单方偏离按真实新负载重算。 二动作签名矩阵B_H(β)以每态所选玩家旧资源指示量×旧负载^k减β倍目标动作指示量×真实新负载^k为列条目；概率对偶为μ≥0、Σμ=1、B_H(β)^Tμ≤0。完整proper签名每玩家块只取空、仅0、仅1。",
+      "statement": "每个整数d≥0及长度d+3的任意正实权向量，存在处处真翻位、无自环且唯一二循环的全状态选择器；在全部完整签名及次数0,…,d上，活跃偶cube的均匀概率对偶全部支撑于暂态，同一分布对所有β≥1可行，亦可限制proper锥。",
+      "quantifiers": "∀d≥0，∀w∈R_{>0}^{d+3}，∃H及同一概率λ，∀β≥1有B_H(β)^Tλ≤0，λ全暂态。",
+      "assumptions": [
+        "完整动作签名列、非负费用、次数≤d",
+        "对偶归一化为λ≥0、1^Tλ=1"
+      ],
+      "scope": "只证明暂态支撑可以可行；该原始二循环等质量亦给对偶，因此不证明暂态必要或改善最佳倍率。",
+      "objections": "正文给出一般数学论证；内部审查与有限程序核验不代替该论证，未作外审或新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/奇偶暂态层与完整锥必要质量--定理.md",
+        "sha256": "9c7c399a3d42d6a1e3a7921221e504bf3784145ed1cead3fdd553c036dc8f01e",
+        "section": "公共模型和原始奇偶身份"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md",
+          "sha256": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a",
+          "section": "精确矩阵与全部量词"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/有限动作资源签名压缩--定理.md",
+          "sha256": "b65ee24853893fbba0259ebbd6352505d5ddbd54c47253fe417605cf11e758e2",
+          "section": "模型和精确合同"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/拥塞时钟与局部矩账本的全部陈述--资料.md",
+          "sha256": "5c7b615f4237edf437219a3f51070497011fadf3b3c3651a3a97b373d7319b4f",
+          "section": "完整冻结账本第 673–844 行"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+          "sha256": "503d019086ae0db71d6a98544fd524788fae16b6be2548db721bd5a931c1a147",
+          "section": "正锥、全局支撑与低阶表示"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/template_certificates/selector_local_moments.md#5,13",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/weighted_congestion/template_certificates/selector_local_moments.md#5,13",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/template_certificates/selector_local_moments_review.md#完整proper锥",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/weighted_congestion_frontier/CLAIMS.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/weighted_congestion_frontier/CLAIMS.md"
+      ]
+    },
+    {
+      "object_id": "weighted-congestion/optimal-nonuniform-right-quadrature",
+      "version": 2,
+      "title": "单项式最优非均匀右端采样的唯一递推",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限网格上非减可积函数的右端求积；相对效率专用于单项式/非负多项式，最优采样为[0,1]的x^d。此处数值网格并非实际游戏资源实现。",
+      "statement": "F_n(d)=min_{0=x0<⋯<xn=1}Σ(x_j−x_{j−1})x_j^d，a_n=(d+1)F_n。∀n,d≥1最优严格划分存在且唯一，a1=d+1、a_n=d+1−d a_{n−1}^{−1/d}；最优倒数第二点a_{n−1}^{−1/d}。有1+ln a−(ln a)²/(2d)≤a_n≤1+ln a；给固定格数渐近、达到c(d+1)数值增益的有限格数界及有理断点扰动≤(2n+d)ε。",
+      "quantifiers": "∀整数n,d≥1有唯一最优网格及递推；∀固定0<c<1，存在可计算有限格数使a_n≤1/c；∀保持顺序的两网格有扰动界。",
+      "assumptions": [
+        "纯数值右端采样、单项式x^d",
+        "有理化须保严格余量与断点次序"
+      ],
+      "scope": "无统一固定格数能对全部大d给固定cd增益；非均匀权会破坏同权clone秩/相位/门合同，未完成实际拥塞实现桥，不给多项式位长。",
+      "objections": "正文给出一般数学论证；内部审查与有限程序核验不代替该论证，未作外审或新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/右端离散面积的网格误差与最优采样--定理.md",
+        "sha256": "cbdb0a71ada8f10a75ac76a1e98f0eac7c604e3a20ab89a52a661344f61ea0bf",
+        "section": "最优非均匀右端采样"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/审查/端点面积与正修复的审查范围--审查.md",
+          "sha256": "5a849b9f2d5fe6bf9db309f442500f84c90f4d3dccf0d030c4403eedbd4ad4d8"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+          "sha256": "503d019086ae0db71d6a98544fd524788fae16b6be2548db721bd5a931c1a147",
+          "section": "从结构到决策与社会成本的九个缺口"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/structural_reconstruction/endpoint_area_principle.md#1,5,7",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/weighted_congestion/structural_reconstruction/endpoint_area_principle.md#1,5,7",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/structural_reconstruction/endpoint_review.md#2-3",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/structural_reconstruction/endpoint_integration_review.md#2"
+      ]
+    },
+    {
+      "object_id": "weighted-congestion/right-endpoint-area-quadrature",
+      "version": 2,
+      "title": "右端离散面积的任意网格误差与删除效率",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限网格上非减可积函数的右端求积；相对效率专用于单项式/非负多项式，最优采样为[0,1]的x^d。此处数值网格并非实际游戏资源实现。 网格0=x0<⋯<xn=W，a_j=x_j−x_(j−1),t_j=b+x_j,T=b+W,h=max a_j；S_d=Σa_j t_j^d,I_d=(T^(d+1)−b^(d+1))/(d+1)，η=max a_j/t_j。",
+      "statement": "任意非减可积f及最大格宽h的网格，0≤Σ a_j f(t_j)−∫f≤h[f(T)−f(b)]。单项式d≥1有精确单格K_d(a/t)，I_d≤S_d≤I_d/K_d(η)；非减C²凸f另有误差≤h(f(T)−f(b))/2+h²(f′(T)−f′(b))/8。非负多项式逐项相加，并给合法负载上移/系数误差下的端点面积比。",
+      "quantifiers": "∀b≥0,W>0及任意有限严格网格，∀对应f满足给定条件，有上述界。",
+      "assumptions": [
+        "基本绝对界仅需非减可积",
+        "半常数细化须f′≥0,f″≥0，不能只留凸性",
+        "相对单格界用最高次数与最大a_j/t_j"
+      ],
+      "scope": "端点系数M不必等于窗口总质量；b=0首格相对宽度1可能粗。费用零不作比。数值采样不是实际玩家资源实现。",
+      "objections": "正文给出一般数学论证；内部审查与有限程序核验不代替该论证，未作外审或新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/右端离散面积的网格误差与最优采样--定理.md",
+        "sha256": "cbdb0a71ada8f10a75ac76a1e98f0eac7c604e3a20ab89a52a661344f61ea0bf"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/审查/端点面积与正修复的审查范围--审查.md",
+          "sha256": "5a849b9f2d5fe6bf9db309f442500f84c90f4d3dccf0d030c4403eedbd4ad4d8"
+        },
+        {
+          "path": "archives/weighted-congestion/state/计算/端点窗口与社会修复的精确核验--计算.md",
+          "sha256": "1662477960fe7b7289ac80d63daaca829d4e30b67e5e4c37e701be10dd8936d4"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/加权拥塞结构方法连续论文与近次数证明链--资料.md",
+          "sha256": "8ed8e9bdfbc515fd059e87dd4c5f734bb2574abb5e99e4285f5737fc22160b2a"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/结构方法论文的冻结版本与审查覆盖--审查.md",
+          "sha256": "35287420467cfc18b8b0fc3742de24405b25e0a541c74b028675753058128760"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+          "sha256": "503d019086ae0db71d6a98544fd524788fae16b6be2548db721bd5a931c1a147",
+          "section": "从结构到决策与社会成本的九个缺口"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/structural_reconstruction/endpoint_area_principle.md#1,5,7",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/weighted_congestion/structural_reconstruction/endpoint_area_principle.md#1,5,7",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/structural_reconstruction/endpoint_review.md#2-3",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/structural_reconstruction/endpoint_integration_review.md#2"
+      ]
+    },
+    {
+      "object_id": "WC-ENDPOINT-AREA-WINDOW-CERTIFICATE-v1",
+      "version": 2,
+      "title": "端点面积误差与同权窗口的有限收缩证书及精确阈值",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限原子加权拥塞游戏：有限非空玩家与资源、资源无关正玩家权、每人有限非空资源子集策略族，允许空策略与零费；非负系数次数至多d的多项式资源费用；个体成本为所用资源费用和，不乘自身权；所有单方偏离按真实新负载重算。",
+      "statement": "整数d,K≥1、R>0、m=K/R，P=(1+m)^d，X=Σ_(j=1)^K(1+j/R)^d，Y=Σ_(j=1)^K(j/R)^d。对α≥1、κ≥1，Γ=(αX−Y)/(R(P−α))只在H=P−α>0域定义；P>α且κΓ<1，当且仅当α<α_grid,κ=(P+κY/R)/(1+κX/R)。右侧严格阈值自动给P>α。连续包络(P+κB)/(1+κA)及粗/细右和误差给严格有限可用预算。重端点另需(κ−1)(αX−Y)>Y。正文分清总质量、分辨率、重自身基线和κ，给晶格/临界质量极限与κ≥d无用区。 原有限合同保持：D=P+B−α(1+A)>0且R>α(P−1)/D、mR=K∈N时，H,L>0且Γ<1并有显式正余量；整数d>1、1≤α<d^((d−1)/(d+1))可取有限有理局部收缩参数。任意b≥0、正网格b=t0<⋯<tn=T、a_j=t_j−t_(j−1)、h=max a_j，基本误差0≤Σa_j t_j^d−∫_b^T t^d dt≤h(T^d−b^d)。",
+      "quantifiers": "∀所写参数/目标，对此明确局部费用表有精确有限阈值及所述极限；严格有理余量可用有限有理网格实现。",
+      "assumptions": [
+        "只分析已明确的重(P,1)、轻(Y,X)局部表",
+        "面积A=((1+m)^(d+1)−1)/(d+1)，B=m^(d+1)/(d+1)",
+        "对真实游戏仍需资源关联验证及全态闭合"
+      ],
+      "scope": "局部最优d−2ln d不是同次数全状态反例；裸Γ<1不支付重余量、return、全部相位或时钟。有限R/d留真实晶格损失，不等同连续c极限。 原Claim的基本网格误差在本体保留；任意网格相对效率/凸半常数等完整精化及最优非均匀采样仍保各自独立数学入口。",
+      "objections": "正文给出一般数学论证；内部审查与有限程序核验不代替该论证，未作外审或新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/等权窗口传播的精确阈值与安全余量--定理.md",
+        "sha256": "af010b359f1f608ce0e9e4960c23bd3c8fad2f2f03ec5916c2e1e2f08c22ae45"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/右端离散面积的网格误差与最优采样--定理.md",
+          "sha256": "cbdb0a71ada8f10a75ac76a1e98f0eac7c604e3a20ab89a52a661344f61ea0bf"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/端点面积与正修复的审查范围--审查.md",
+          "sha256": "5a849b9f2d5fe6bf9db309f442500f84c90f4d3dccf0d030c4403eedbd4ad4d8"
+        },
+        {
+          "path": "archives/weighted-congestion/state/计算/端点窗口与社会修复的精确核验--计算.md",
+          "sha256": "1662477960fe7b7289ac80d63daaca829d4e30b67e5e4c37e701be10dd8936d4"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/加权拥塞结构方法连续论文与近次数证明链--资料.md",
+          "sha256": "8ed8e9bdfbc515fd059e87dd4c5f734bb2574abb5e99e4285f5737fc22160b2a"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/结构方法论文的冻结版本与审查覆盖--审查.md",
+          "sha256": "35287420467cfc18b8b0fc3742de24405b25e0a541c74b028675753058128760"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/拥塞全状态与决策重建账本的全部陈述--资料.md",
+          "sha256": "6e96eb47083bbd9c10848fc8605c2f4d9ea4d4ae02c31c48b68a84c73bccf55a",
+          "section": "完整冻结账本第 1054–1325 行"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+          "sha256": "503d019086ae0db71d6a98544fd524788fae16b6be2548db721bd5a931c1a147",
+          "section": "从结构到决策与社会成本的九个缺口"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/structural_reconstruction/endpoint_area_principle.md#2-4,8",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/weighted_congestion/structural_reconstruction/endpoint_area_principle.md#2-4,8",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/structural_reconstruction/endpoint_review.md#4-6",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/structural_reconstruction/endpoint_integration_review.md#3-4",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/weighted_congestion_frontier/CLAIMS.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/weighted_congestion_frontier/CLAIMS.md"
+      ],
+      "legacy_aliases": [
+        "weighted-congestion/equal-window-area-threshold"
+      ]
+    },
+    {
+      "object_id": "M-e7929cadcd154450adc13350a49c66f9",
+      "version": 2,
+      "title": "强个体锚定门不保证社会压缩的六玩家精确反例",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "六玩家加权拥塞游戏：三位权1二动作玩家，便宜bit010；三位权3必用背景玩家以私人零资源区分两个动作。基体e_i费用(x/4)^10，完整锚定门c(x)=(6/5)(x/3)^6；完整社会W=Σ_i w_i C_i。 前沿为三原bit至多一次相邻变化的串{000,001,011,100,110,111}；完整门仅三原玩家使用一对资源，各按bit xor(0,1,0)选侧，010/101触发三人同侧。",
+      "statement": "α=1、B=1、v=6/5,u=128/1215,z=2/1215，RD余量23/243>0；全部64纯态的完整社会最优都在前沿外，其值21531573/5242880。修复010→000使mover费6/5降到1217/1215，却使W升到966179863/212336640，后者是最佳前沿成本。因此RD及前沿恒移不蕴含SD或全OPT在前沿。 RD定义为v>α(B+Lu)，此例L=1、α=1。门两侧互异且与基体资源互不相交；全社会基线和触发罚项按实际权计。",
+      "quantifiers": "∃该明确有限游戏，满足RD但∀完整社会最优状态均不在前沿；存在指定修复个人费降而社会费升。",
+      "assumptions": [
+        "完整社会目标必须包含三位背景权3玩家成本",
+        "原三人便宜动作为空，反向非空；背景玩家动作以零资源区分",
+        "以全部真实偏离/实际费用为准"
+      ],
+      "scope": "精确否定在完整等权锚定门架构中删除SD后，由RD/前沿门恒移推出完整OPT压缩或社会下降的断言；个人费用下降不蕴含全体W下降。",
+      "objections": "三位权3必用用户的真实社会外部性必须保留；输出最高次数10，基体10次、门6次，不能混用。正文解析比较和两套有限literal证据一致，未重跑。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/锚定门的社会费用分解与最优压缩--定理.md",
+        "sha256": "dc6b751a584d2f2bc89e8aa092c8d5c2bcf6339c1d108f3499d85d96115e8f1d",
+        "section": "RD成立但完整社会最优在前沿外"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/计算/端点窗口与社会修复的精确核验--计算.md",
+          "sha256": "1662477960fe7b7289ac80d63daaca829d4e30b67e5e4c37e701be10dd8936d4",
+          "section": "第一literal修复实现：稳定集合、恒移和高次反边界"
+        },
+        {
+          "path": "archives/weighted-congestion/state/计算/端点窗口与社会修复的精确核验--计算.md",
+          "sha256": "1662477960fe7b7289ac80d63daaca829d4e30b67e5e4c37e701be10dd8936d4",
+          "section": "第二literal实现：混合权、完整路径、正则化联合输入"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/端点面积与正修复的审查范围--审查.md",
+          "sha256": "5a849b9f2d5fe6bf9db309f442500f84c90f4d3dccf0d030c4403eedbd4ad4d8"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md",
+          "sha256": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f",
+          "section": "完整等权类门及强支配"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/锚定门的社会费用分解与最优压缩--定理.md",
+          "sha256": "dc6b751a584d2f2bc89e8aa092c8d5c2bcf6339c1d108f3499d85d96115e8f1d",
+          "section": "固定社会目标和全状态分解"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/锚定门的社会费用分解与最优压缩--定理.md",
+          "sha256": "dc6b751a584d2f2bc89e8aa092c8d5c2bcf6339c1d108f3499d85d96115e8f1d",
+          "section": "真实基体社会外部性的完整上界"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+          "sha256": "503d019086ae0db71d6a98544fd524788fae16b6be2548db721bd5a931c1a147",
+          "section": "从结构到决策与社会成本的九个缺口"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/structural_reconstruction/socially_descending_repair.md#1-5,6",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/weighted_congestion/structural_reconstruction/socially_descending_repair.md#1-5,6",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/structural_reconstruction/positive_repair_integration_review.md#3,5"
+      ]
+    },
+    {
+      "object_id": "WC-SOCIALLY-DESCENDING-REPAIR-v1",
+      "version": 2,
+      "title": "支付真实社会外部性的修复下降与完整最优压缩",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限原子加权拥塞游戏：有限非空玩家与资源、资源无关正玩家权、每人有限非空资源子集策略族，允许空策略与零费；非负系数次数至多d的多项式资源费用；个体成本为所用资源费用和，不乘自身权；所有单方偏离按真实新负载重算。 有序类A_a=((a,0),…,(a,n_a−1))中每人权w_a、动作bit0/1；前沿F为每类相邻bit至多一次变化。每个1≤j<k<n_a设一对新资源，三个用户(0,j,k)按动作bit xor(0,1,0)选侧，两侧同费c_a，010/101触发三人共享。L_a=C(n_a−1,2)，z_a=c_a(w_a),u_a=c_a(2w_a),v_a=c_a(3w_a)；n_a≤2无门。参与数r_a0=L_a，r_ai=n_a−2(i>0,n_a≥3)。 ν_a(s)为类a中触发010/101的锚定三元门个数；B_a是该类全部玩家、所有完整基体状态的个体费用有效正上界。",
+      "statement": "完整等权类锚定门对全部状态满足W+=W^B+K+Σ_a w_a ν_a(3v_a−2u_a−z_a)，K=Σw_a L_a(2u_a+z_a)。基体次数≤p时真实偏离社会外部性≤(p+1)w_i C_i^B(new)。若各非平凡类SD:3v_a−2u_a−z_a>(p+1)B_a，则指定最早异位修复每步严格降低完整W、每个社会最优在前沿，OPT+=K+min_front W^B；再加目标RD及容差稳定，核心乘法/加性质量转移。3α≥p+1时RD蕴含SD。",
+      "quantifiers": "∀合法完整门全状态有分解；∀满足SD的基体/门，所有指定修复社会下降及完整OPT压缩；条件RD下进一步提升稳定质量。",
+      "assumptions": [
+        "完整社会W=Σ_i w_i C_i，计背景/必用者",
+        "SD按基体次数p而非输出门次数",
+        "社会目标非任意玩家公平系数或最大个体费"
+      ],
+      "scope": "RD和前沿恒移单独不压完整OPT；SD不单独保个人改善或稳定集非空。明确三人正向例和六玩家反边界分开，门新增后是真实新增游戏费用。",
+      "objections": "正文给出一般数学论证；内部审查与有限程序核验不代替该论证，未作外审或新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/锚定门的社会费用分解与最优压缩--定理.md",
+        "sha256": "dc6b751a584d2f2bc89e8aa092c8d5c2bcf6339c1d108f3499d85d96115e8f1d"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md",
+          "sha256": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/端点面积与正修复的审查范围--审查.md",
+          "sha256": "5a849b9f2d5fe6bf9db309f442500f84c90f4d3dccf0d030c4403eedbd4ad4d8"
+        },
+        {
+          "path": "archives/weighted-congestion/state/计算/端点窗口与社会修复的精确核验--计算.md",
+          "sha256": "1662477960fe7b7289ac80d63daaca829d4e30b67e5e4c37e701be10dd8936d4"
+        },
+        {
+          "path": "archives/weighted-congestion/state/计算/结构方法现稿的源码与二十七页核对--计算.md",
+          "sha256": "734535975a96e4e706d5d62116a58829b2347080a5a5d154ed06b26fab706f2d"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/加权拥塞结构方法连续论文与近次数证明链--资料.md",
+          "sha256": "8ed8e9bdfbc515fd059e87dd4c5f734bb2574abb5e99e4285f5737fc22160b2a"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/结构方法论文的冻结版本与审查覆盖--审查.md",
+          "sha256": "35287420467cfc18b8b0fc3742de24405b25e0a541c74b028675753058128760"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/拥塞全状态与决策重建账本的全部陈述--资料.md",
+          "sha256": "6e96eb47083bbd9c10848fc8605c2f4d9ea4d4ae02c31c48b68a84c73bccf55a",
+          "section": "完整冻结账本第 1054–1325 行"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+          "sha256": "503d019086ae0db71d6a98544fd524788fae16b6be2548db721bd5a931c1a147",
+          "section": "从结构到决策与社会成本的九个缺口"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/structural_reconstruction/socially_descending_repair.md#1-5,6",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/weighted_congestion/structural_reconstruction/socially_descending_repair.md#1-5,6",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/structural_reconstruction/positive_repair_integration_review.md#3,5",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/weighted_congestion_frontier/CLAIMS.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/weighted_congestion_frontier/CLAIMS.md"
+      ],
+      "legacy_aliases": [
+        "weighted-congestion/anchor-social-compression"
+      ]
+    },
+    {
+      "object_id": "WC-REGULARIZED-CORE-REPAIR-QUALITY-v1",
+      "version": 2,
+      "title": "正则化核心的稳定与社会质量联合转移",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限原子加权拥塞游戏：有限非空玩家与资源、资源无关正玩家权、每人有限非空资源子集策略族，允许空策略与零费；非负系数次数至多d的多项式资源费用；个体成本为所用资源费用和，不乘自身权；所有单方偏离按真实新负载重算。 有序类A_a=((a,0),…,(a,n_a−1))中每人权w_a、动作bit0/1；前沿F为每类相邻bit至多一次变化。每个1≤j<k<n_a设一对新资源，三个用户(0,j,k)按动作bit xor(0,1,0)选侧，两侧同费c_a，010/101触发三人共享。L_a=C(n_a−1,2)，z_a=c_a(w_a),u_a=c_a(2w_a),v_a=c_a(3w_a)；n_a≤2无门。参与数r_a0=L_a，r_ai=n_a−2(i>0,n_a≥3)。",
+      "statement": "给完整等权锚定门基体次数p，跨资源共同插入尺度h_i>0及α0势Φ_B，前沿全状态包络mW^B≤Φ_B≤MW^B（完整W含必用）。有限η≥0，前沿全局最小sη of Φ_B+ηW^B，βη=max_i(α0h_i+η(p+1)w_i)/(h_i+ηw_i)、λη=(M+η)/(m+η)。若RD在βη成立且SD成立，则sη为完整G+的βη-PNE，W+(sη)≤K+λη min_front W^B≤λη OPT(G+)；3βη≥p+1时RD自动给SD。恢复必用基线q_min b_e c_e(b_e)可给全社会粗包络。",
+      "quantifiers": "∀满足共同尺度/真实全社会包络合同的有限基体及有限η，∀同时满足目标RD与SD门，前沿每个全局最小点均有联合保证。",
+      "assumptions": [
+        "Φ_B全部合法局部插入合同，玩家尺度h跨资源相同",
+        "0<m≤M<∞只需全部前沿态包络",
+        "新倍率βη核RD；SD另付基体社会外部性",
+        "全局最小化在非积前沿合法，不能仅取单边局部最小"
+      ],
+      "scope": "局部最小只给稳定，gap只给加性质量不自动稳定。全社会与可动成本不同，须恢复必用基线；S7起草/审查同人不称独立盲审，未认证外审/算法效率。",
+      "objections": "正文给出一般数学论证；内部审查与有限程序核验不代替该论证，未作外审或新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/正则化核心的稳定与社会质量联合转移--定理.md",
+        "sha256": "b30c141a5a855315fca9713b4abfbdf73f456993594aed8782b1895c73d42cb3"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md",
+          "sha256": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/锚定门的社会费用分解与最优压缩--定理.md",
+          "sha256": "dc6b751a584d2f2bc89e8aa092c8d5c2bcf6339c1d108f3499d85d96115e8f1d"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/端点面积与正修复的审查范围--审查.md",
+          "sha256": "5a849b9f2d5fe6bf9db309f442500f84c90f4d3dccf0d030c4403eedbd4ad4d8"
+        },
+        {
+          "path": "archives/weighted-congestion/state/计算/端点窗口与社会修复的精确核验--计算.md",
+          "sha256": "1662477960fe7b7289ac80d63daaca829d4e30b67e5e4c37e701be10dd8936d4"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/加权拥塞结构方法连续论文与近次数证明链--资料.md",
+          "sha256": "8ed8e9bdfbc515fd059e87dd4c5f734bb2574abb5e99e4285f5737fc22160b2a"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/结构方法论文的冻结版本与审查覆盖--审查.md",
+          "sha256": "35287420467cfc18b8b0fc3742de24405b25e0a541c74b028675753058128760"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/拥塞全状态与决策重建账本的全部陈述--资料.md",
+          "sha256": "6e96eb47083bbd9c10848fc8605c2f4d9ea4d4ae02c31c48b68a84c73bccf55a",
+          "section": "完整冻结账本第 1054–1325 行"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+          "sha256": "503d019086ae0db71d6a98544fd524788fae16b6be2548db721bd5a931c1a147",
+          "section": "从结构到决策与社会成本的九个缺口"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/structural_reconstruction/socially_descending_repair.md#5.1",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/weighted_congestion/structural_reconstruction/socially_descending_repair.md#5.1",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/structural_reconstruction/positive_repair_integration_review.md#4-5",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/decision_methods/decision_quality.md#3",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/weighted_congestion_frontier/CLAIMS.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/weighted_congestion_frontier/CLAIMS.md"
+      ]
+    },
+    {
+      "object_id": "WC-R1-ORDINAL-COPY-BRIDGE",
+      "version": 2,
+      "title": "跨游戏统一可加序势的复制夹逼桥",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限原子加权拥塞游戏：有限非空玩家与资源、资源无关正玩家权、每人有限非空资源子集策略族，允许空策略与零费；非负系数次数至多d的多项式资源费用；个体成本为所用资源费用和，不乘自身权；所有单方偏离按真实新负载重算。 ρ_d=sup_{t>0}[(d+1)(1+t)^d+t^(d+1)]/[d+(1+t)^(d+1)]，ρ_d/d→1。",
+      "statement": "固定d≥2,w,有限α≥1，非零费用c先给H_{d,w,c}，可依w,d,c但不依策略、资源数/身份/其他资源，相同费用复制使用同H。对该w全部有限游戏，Σ_eH_c(S_e)在全部严格α改善下降，等价于每个游戏全部全局最小点均为α-PNE；二者均等价于存在与c,S,G无关的正h_i，使h_i c(Y)≤Δ_iH_c(S)≤αh_i c(Y)。有限实际复制和正下确界建立必要性。",
+      "quantifiers": "∀固定统一局部规则，在全部游戏上的两项性质等价并强迫共同正玩家尺度；对α<ρ_d，有某有限w不存在这种规则。",
+      "assumptions": [
+        "规则限制策略族后保持不变",
+        "相同费用资源复制使用相同H",
+        "非零非负多项式，零费不作比"
+      ],
+      "scope": "仅某个最小点或整游戏任选H均不满足必要性前提；不是同游戏任意可分全边势障碍，也不否定均衡存在。",
+      "objections": "正文给出一般数学论证；内部审查与有限程序核验不代替该论证，未作外审或新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/跨游戏统一可加序势的复制夹逼桥--定理.md",
+        "sha256": "d16921f2bda7ba392bf01e8fae5efa91d1f4dd675bbfcfa53fab372cc06181c5"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/障碍/任意玩家乘子的多尺度边际夹逼--障碍.md",
+          "sha256": "a8a81a49e28d9aa79571dda74c10e0ac45123f3ed2298b8625a1cfb3794e13ac"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/统一序势与非线性选态的量词和纠错--审查.md",
+          "sha256": "8199bbff2672f070cac643aaca19ad4c62d3768373d41ff2fd3c1ab3a25a71d6"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/加权拥塞旧候选目录与后续数学状态--审查.md",
+          "sha256": "f851d005d87fa5c15a3ccfb164980919f9ab7abd9069c6b15383f4eb67345adf",
+          "section": "十项候选的独有内容与去向"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/questions/weighted_congestion/ordinal_potentials/universal_additive_ordinal_bridge.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/questions/weighted_congestion/ordinal_potentials/universal_additive_ordinal_bridge.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/ordinal_potentials/REVIEW.md",
+        "原精确Claim/版本记法：WC-R1-ORDINAL-COPY-BRIDGE v1"
+      ]
+    },
+    {
+      "object_id": "M-4ae04fa3f5dc4436a5869f82003945b7",
+      "version": 2,
+      "title": "八玩家十六资源十次奇环的精确全状态反例",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限加权原子拥塞游戏，个体成本为所选资源费用之和、不乘自身权；单方偏离固定别人并重算含自身的真实新负载。三hub权(32,2,8)，三群light权(1,4,16)、人数(3,1,1)，共8人16资源；main次数(2,10,10)、side次数10，α=11/10；实际正有理资源系数按该verify.py coefficients配方，literal菜单按有向奇环接口。 每个hub动作h使用A_i^h及全部上一群B_(i−1),j^h；每个light动作l使用A_i^l与B_ij^(1−l)，两个动作非空不交。a_i/b_i由所引用192行原程序coefficients以Fraction从该固定输入唯一确定；全部资源费用为正有理系数单项式。",
+      "statement": "全部256状态及2048条真实单人翻位精确覆盖；每态有严格11/10改善，min_s max_i C_i(s)/C_i(flip_i s)=1677156492182507717953258425353716518539/1422139621021019872923783670016457177603>11/10。该有限正费用游戏无11/10-PNE。 每条偏离均重新累加实际用户权并求费用，代码逐一断言目标费new>0，再取比。无11/10-PNE的全态覆盖亦由同位light/全反位时奇环同色hub两类严格测试解释。",
+      "quantifiers": "∃所述具体8人16资源游戏，∀256态∃真实单玩家严格11/10改善；有限minmax值为列明Fraction。",
+      "assumptions": [
+        "使用verify.py实际coefficients完整配方及真实资源菜单",
+        "不把8400标量测试当8400游戏",
+        "与1949人手选系数或中点系数游戏分开",
+        "192行verify.py原件已完整只读，coefficients给所有有理a/b及权/菜单；literal对全部256位串逐2048翻位assert new>0后取比，无除零",
+        "literal.json完整Fraction输出与冻结报告逐字段相同；本次未再执行"
+      ],
+      "scope": "只断言这一精确8人16资源游戏；精确Fraction是此游戏的min_s max_i改善比。2048为全部256×8真实bit翻位，非巨大一般族展开。",
+      "objections": "源码完整coefficients/菜单与完整Fraction报告共同定位实际实例，不以PASS或float显示代替输入/证明。代码与报告本次只读，不声称本次重跑；不同于1949人手选1434444625245301/707371943476824游戏。",
+      "body": {
+        "path": "archives/weighted-congestion/state/计算/奇环四程序的实际实例与精确复算--计算.md",
+        "sha256": "66eb0e7953c7547f9bf7c2cdb649e4e0ec9aed473ecde428d77799d57cf7136b",
+        "section": "verify.py：精确标量与一个8人真实游戏"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/tools/evidence/odd-ring-audit-residual/original/tests/audits/weighted_congestion/odd_ring/verify.py",
+          "sha256": "0c7a86bdac91325343bc7fcfc53c56b6036782a49fd64a21a988ad9b5999de31"
+        },
+        {
+          "path": "archives/weighted-congestion/tools/evidence/odd-ring-audit-residual/replay/literal.json",
+          "sha256": "10d96e8d7d7322f3c209fa01cce3c220a1e5cb58757f8242f6479d5954d0d226"
+        },
+        {
+          "path": "archives/weighted-congestion/tools/evidence/odd-ring-audit-residual/replay-comparison.json",
+          "sha256": "d77e38224309faec1f0d86f283006f84d4ba67fb7a7a205db06df9d142c8cecf"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md",
+          "sha256": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/奇环放大器的独立攻击与来源范围--审查.md",
+          "sha256": "7b04ad596915f175434d8d46d3e7106db08528dbcc54a3865ca4b82c83759759",
+          "section": "完整材料及真实读序"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/weighted_congestion/odd_ring/verify.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/weighted_congestion/odd_ring/verify.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/weighted_congestion/odd_ring_linear/verify_ring.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/weighted_congestion/odd_ring_linear/verify_ring.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/weighted_congestion/odd_ring_linear/attack.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/weighted_congestion/odd_ring_linear/attack.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/weighted_congestion/odd_ring_linear_audit/audit_checks.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/weighted_congestion/odd_ring_linear_audit/audit_checks.py"
+      ]
+    },
+    {
+      "object_id": "M-dec88dc2302a46e384b5111e8e5ed2a2",
+      "version": 2,
+      "title": "奇数枢纽群组的全参数二进制放大族",
+      "kind": "construction",
+      "truth_status": "proved",
+      "model": "有限加权原子拥塞游戏，个体成本为所选资源费用之和、不乘自身权；单方偏离固定别人并重算含自身的真实新负载。奇数枢纽同权群组：正全局玩家权、非负单项式，个体成本不乘权，每人二非空动作，群成员各自单人行动。参数s≥6整数，r=2^s,d=2sr,α=r/4，任意奇整数m≥s，L=2m−1；t_i=1/r,x0=r^−L,n0=floor(r^L/s),k0=s；普通群x_i=r,n_i=1,k_i=d，side次数d。",
+      "statement": "上述参数满足真实权闭环及正N/M/P/Q，且G>(2^L)/(3sr)≥r/(6s)>1，因而有正系数实际资源游戏，每一纯态有严格α改善，无α-PNE。通过次数≤D单调包含，对所有整数D≥768得a_*(D)>D/(16 log2 D)。",
+      "quantifiers": "∀整数s≥6，∀奇整数m≥s，存在所述有限严格反例；∀整数D≥768有相应下界。",
+      "assumptions": [
+        "完整奇环两测试及正系数循环实现合同",
+        "普通群与side全部2m−1个损失一起控制，m可增长"
+      ],
+      "scope": "全s≥6及增长奇m≥s的二进制充分族；与同页全d≥4096均匀族及k0=1线性reset族身份分立。",
+      "objections": "G>1由全m统一估计给出；有限s=6,7,8程序只核局部参数，不承担无限量词。人数巨大无规模/位长承诺；R1-ODD-RING-AUDIT-v1是来源审查身份而非偷用为新数学ID。",
+      "body": {
+        "path": "archives/weighted-congestion/state/构造/奇数枢纽群组的显式均匀放大族--构造.md",
+        "sha256": "ea945b9122367a32b6b2386df6e75628e446e54cacfa31f3b3c92054698c9e4f",
+        "section": "原二进制族的独立常数证明"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/计算/奇环四程序的实际实例与精确复算--计算.md",
+          "sha256": "66eb0e7953c7547f9bf7c2cdb649e4e0ec9aed473ecde428d77799d57cf7136b",
+          "section": "audit_checks.py：精确系数与有限Decimal诊断分别计数"
+        },
+        {
+          "path": "archives/weighted-congestion/state/构造/奇数枢纽群组的显式均匀放大族--构造.md",
+          "sha256": "ea945b9122367a32b6b2386df6e75628e446e54cacfa31f3b3c92054698c9e4f",
+          "section": "真实游戏和全态证书"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md",
+          "sha256": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/普遍近似均衡阈值的闭端点--定理.md",
+          "sha256": "6547fc23e128521343486ede7be0e7b0268b531229ccd0059783735486940e64"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/奇环放大器的独立攻击与来源范围--审查.md",
+          "sha256": "7b04ad596915f175434d8d46d3e7106db08528dbcc54a3865ca4b82c83759759",
+          "section": "这两份新源的独有数学去向"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/odd_ring_linear/independent_attack.md#Independent-uniform-asymptotic-sufficient-family",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/weighted_congestion/odd_ring_linear/independent_attack.md#Independent-uniform-asymptotic-sufficient-family",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/odd_ring_linear_audit/asymptotic_review.md#Original-dyadic-candidate",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/weighted_congestion/odd_ring_linear_audit/asymptotic_review.md#Original-dyadic-candidate"
+      ]
+    },
+    {
+      "object_id": "weighted-congestion/odd-ring-uniform-fixed-hub-amplification-family",
+      "version": 2,
+      "title": "奇数枢纽群组的显式均匀放大族",
+      "kind": "construction",
+      "truth_status": "proved",
+      "model": "有限原子加权拥塞游戏：有限非空玩家与资源、资源无关正玩家权、每人有限非空资源子集策略族，允许空策略与零费；非负系数次数至多d的多项式资源费用；个体成本为所用资源费用和，不乘自身权；所有单方偏离按真实新负载重算。",
+      "statement": "对所有整数d≥4096及奇整数3≤m≤d，K=ceil ln d、t=8K/d、α=d/(8K)(16d)^(−1/(2m))>1，存在正有理权/正有理单项式系数、每人二非空动作的真实奇数枢纽群组游戏无α-PNE。显示权u0=1,u_i=t^{2(m−i)},v_i=t u_{i+1}，reset群n0=floor(1/(K t^{2m−1}))及次数K，普通群人数1/次数d，side次数d；完整乘积G≥16/e>1支付增长m。固定m=3给Ω(d^(5/6)/ln d)，m=Θ(ln d)给α≥d/(32ln d)。",
+      "quantifiers": "∀整数d≥4096，∀奇3≤m≤d，∃所述有限全状态严格反例；全部m损失统一控制。",
+      "assumptions": [
+        "群组成员各自行动，真实单玩家改善",
+        "正N/M/P/Q、权闭环及G>1的合法资源实现",
+        "奇m用全反位时奇环同色边穷尽全态"
+      ],
+      "scope": "人数尤其n0可巨大，hub数不等于总人数。不是较后线性reset k0=1族；α可无理但费用系数可在严格开集中有理化，不保证规模/位长。",
+      "objections": "正文给出一般数学论证；内部审查与有限程序核验不代替该论证，未作外审或新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/构造/奇数枢纽群组的显式均匀放大族--构造.md",
+        "sha256": "ea945b9122367a32b6b2386df6e75628e446e54cacfa31f3b3c92054698c9e4f"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/计算/奇环四程序的实际实例与精确复算--计算.md",
+          "sha256": "66eb0e7953c7547f9bf7c2cdb649e4e0ec9aed473ecde428d77799d57cf7136b"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/奇环放大器的独立攻击与来源范围--审查.md",
+          "sha256": "7b04ad596915f175434d8d46d3e7106db08528dbcc54a3865ca4b82c83759759",
+          "section": "这两份新源的独有数学去向"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/odd_ring_linear/independent_attack.md#Independent-uniform-asymptotic-sufficient-family",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/weighted_congestion/odd_ring_linear/independent_attack.md#Independent-uniform-asymptotic-sufficient-family",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/odd_ring_linear_audit/asymptotic_review.md#Original-dyadic-candidate",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/weighted_congestion/odd_ring_linear_audit/asymptotic_review.md#Original-dyadic-candidate"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "sha256": "f34c797df23040e074e9b1778911b5167c972eaabf01bb998599d8452d4d242e",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1",
+        "WC-R1-DAG-STEP",
+        "WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1",
+        "WC-CLASS-INTERNAL-CLOCK-FRONT-OBSTRUCTION-v1",
+        "WC-ORDERED-TAIL-PARAMETER-LIMIT-v1",
+        "WC-ANCHORED-POLYNOMIAL-CYCLE-LOCK-v1",
+        "WC-ANTICHAIN-CORE-NORMAL-FORM-v1"
+      ],
+      "reason": "完整实读；所列本批主作者实际接受其对应数学/审查/有限实现范围为evidence。跨批其他独有内容另在receipt按精确ref路由，不以目录名称或历史运行替代接受。 本次独立补充逐条比较本页相关路由；object_ids显式保留原0113准确已接owner，并并入已观察0115旧乘子接证及本次Boss3真实实读的0115候选owner（若本页涉及）。本页仍有未接外主owner的独立命题，详见0113-evidence-closure的owner-routing-requests；在其实际接证与lead合法整合前保needs-decision，不能因已找到主目标/存在draft/本页部分接证改attachment或声称整页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "sha256": "503d019086ae0db71d6a98544fd524788fae16b6be2548db721bd5a931c1a147",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1",
+        "WC-R1-DAG-STEP",
+        "WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1",
+        "WC-CLASS-INTERNAL-CLOCK-FRONT-OBSTRUCTION-v1",
+        "WC-CALIBRATION-EXISTENCE-SEPARATION-v1",
+        "weighted-congestion/private-penalty-compilation-original-regret",
+        "WC-HETEROGENEOUS-HUB-SORTED-SIDE-v1",
+        "WC-HETEROGENEOUS-HUB-SORTED-SIDE-v2",
+        "WC-ORDERED-TAIL-PARAMETER-LIMIT-v1",
+        "WC-R3-DENSE-POT-SHARP-v1",
+        "WC-R3-BAND-CURL-v1",
+        "WC-R3-BAND-LINEAR-v1",
+        "WC-R2-RESOURCE-POWER-BRIDGE",
+        "WC-R1-MULTIPLIER-BARRIER",
+        "WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1",
+        "WC-DEGREE-LOCAL-COST-COMPRESSION-v1",
+        "WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1",
+        "WC-TRANSIENT-PARITY-SELECTOR-DUAL-v1",
+        "weighted-congestion/optimal-nonuniform-right-quadrature",
+        "weighted-congestion/right-endpoint-area-quadrature",
+        "WC-ENDPOINT-AREA-WINDOW-CERTIFICATE-v1",
+        "M-e7929cadcd154450adc13350a49c66f9",
+        "WC-SOCIALLY-DESCENDING-REPAIR-v1",
+        "WC-REGULARIZED-CORE-REPAIR-QUALITY-v1"
+      ],
+      "reason": "完整实读；所列本批主作者实际接受其对应数学/审查/有限实现范围为evidence。跨批其他独有内容另在receipt按精确ref路由，不以目录名称或历史运行替代接受。 本次独立补充逐条比较本页相关路由；object_ids显式保留原0113准确已接owner，并并入已观察0115旧乘子接证及本次Boss3真实实读的0115候选owner（若本页涉及）。本页仍有未接外主owner的独立命题，详见0113-evidence-closure的owner-routing-requests；在其实际接证与lead合法整合前保needs-decision，不能因已找到主目标/存在draft/本页部分接证改attachment或声称整页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/有限稳定决策的实现审计与版本范围--审查.md",
+      "sha256": "b6b8c3de5b1cefddc4d2c67c4622628aa700634bc41c82b5696bb54e38131b0e",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "M-501ca0864fac4eeeaedb2327ae17d613",
+        "M-176097319fef40a8a452199cb0822b4f",
+        "WC-CALIBRATION-EXISTENCE-SEPARATION-v1",
+        "M-833ebc16e1fe4b758df39be4a013bdb0",
+        "weighted-congestion/pne-with-persistent-strict-improvement-cycle",
+        "weighted-congestion/private-penalty-compilation-original-regret"
+      ],
+      "reason": "完整实读；所列本批主作者实际接受其对应数学/审查/有限实现范围为evidence。跨批其他独有内容另在receipt按精确ref路由，不以目录名称或历史运行替代接受。 本次独立补充逐条比较本页相关路由；object_ids显式保留原0113准确已接owner，并并入已观察0115旧乘子接证及本次Boss3真实实读的0115候选owner（若本页涉及）。本页仍有未接外主owner的独立命题，详见0113-evidence-closure的owner-routing-requests；在其实际接证与lead合法整合前保needs-decision，不能因已找到主目标/存在draft/本页部分接证改attachment或声称整页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/Pro派生简报的逐项数学范围与版本审查--审查.md",
+      "sha256": "9e64eb947d98ee23a9cc0d460b0757b19aad1175a5a6eb00ce60c373b3bfc187",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "WC-R1-DAG-STEP",
+        "WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1",
+        "weighted-congestion/nonnegative-polynomial-positive-monomial-reduction",
+        "M-f308c64eadcc4812a08c6de8178ae6f6",
+        "WC-R3-DENSE-LOCAL-v1",
+        "OC-AMPLIFIER-LIMIT-v1"
+      ],
+      "reason": "完整实读；所列本批主作者实际接受其对应数学/审查/有限实现范围为evidence。跨批其他独有内容另在receipt按精确ref路由，不以目录名称或历史运行替代接受。 本次独立补充逐条比较本页相关路由；object_ids显式保留原0113准确已接owner，并并入已观察0115旧乘子接证及本次Boss3真实实读的0115候选owner（若本页涉及）。本页仍有未接外主owner的独立命题，详见0113-evidence-closure的owner-routing-requests；在其实际接证与lead合法整合前保needs-decision，不能因已找到主目标/存在draft/本页部分接证改attachment或声称整页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/加权拥塞旧候选目录与后续数学状态--审查.md",
+      "sha256": "f851d005d87fa5c15a3ccfb164980919f9ab7abd9069c6b15383f4eb67345adf",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "WC-R1-DAG-STEP",
+        "WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1",
+        "WC-R3-DENSE-LOCAL-v1",
+        "OC-AMPLIFIER-LIMIT-v1",
+        "WC-R1-MULTIPLIER-BARRIER",
+        "WC-R1-ORDINAL-COPY-BRIDGE"
+      ],
+      "reason": "完整实读；所列本批主作者实际接受其对应数学/审查/有限实现范围为evidence。跨批其他独有内容另在receipt按精确ref路由，不以目录名称或历史运行替代接受。 本次独立补充逐条比较本页相关路由；object_ids显式保留原0113准确已接owner，并并入已观察0115旧乘子接证及本次Boss3真实实读的0115候选owner（若本页涉及）。本页仍有未接外主owner的独立命题，详见0113-evidence-closure的owner-routing-requests；在其实际接证与lead合法整合前保needs-decision，不能因已找到主目标/存在draft/本页部分接证改attachment或声称整页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/计算/十四资源构造与缩权族的精确复现--计算.md",
+      "sha256": "48cfab42028bf9c53f7ab818a026475caba5d7ee2afe2ac3759de5c6a2f83c7f",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "WC-R3-CROSS32-TOPOLOGY-SEPARATION-v1",
+        "WCF-R3-FIXED-DEGREE-FAIL-v1",
+        "M-30d382c7f97c48eea789aed8e8f93eed",
+        "WCF-R3-SCALED-TEMPLATE-v1",
+        "WCF-R3-SCALED-ORIGINAL-v1",
+        "WCF-R3-SCALED-RETUNED-v1",
+        "WCF-R3-SCALED-RETUNED-v2",
+        "WCF-R3-CROSS32-AUDIT-v1"
+      ],
+      "reason": "完整实读；所列本批主作者实际接受其对应数学/审查/有限实现范围为evidence。跨批其他独有内容另在receipt按精确ref路由，不以目录名称或历史运行替代接受。 本次独立补充逐条比较本页相关路由；object_ids显式保留原0113准确已接owner，并并入已观察0115旧乘子接证及本次Boss3真实实读的0115候选owner（若本页涉及）。本页仍有未接外主owner的独立命题，详见0113-evidence-closure的owner-routing-requests；在其实际接证与lead合法整合前保needs-decision，不能因已找到主目标/存在draft/本页部分接证改attachment或声称整页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/两攻击源包络的审查与诊断范围--审查.md",
+      "sha256": "1ff88458ee7a18a718ff49bf79cda46d00ee6d0b777ca251ced47ac4e179036a",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "WC-ENVELOPE-CEILING"
+      ],
+      "reason": "完整实读；所列本批主作者实际接受其对应数学/审查/有限实现范围为evidence。跨批其他独有内容另在receipt按精确ref路由，不以目录名称或历史运行替代接受。 本次独立补充逐条比较本页相关路由；object_ids显式保留原0113准确已接owner，并并入已观察0115旧乘子接证及本次Boss3真实实读的0115候选owner（若本页涉及）。本页仍有未接外主owner的独立命题，详见0113-evidence-closure的owner-routing-requests；在其实际接证与lead合法整合前保needs-decision，不能因已找到主目标/存在draft/本页部分接证改attachment或声称整页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/两列与互补符号列主稿的完整归属及零费见证--审查.md",
+      "sha256": "686004fc2e3132acb8d88c80f5c46a9d9a625c0aae769312df19e12126a981df",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "M-72506b0d8d06459fa1ab0e0f7595de20",
+        "WC-R1-SIGNED-COLUMNS",
+        "M-a34d8b63f1c34d06937002a34e1a4263"
+      ],
+      "reason": "完整实读；所列本批主作者实际接受其对应数学/审查/有限实现范围为evidence。跨批其他独有内容另在receipt按精确ref路由，不以目录名称或历史运行替代接受。 本次独立补充逐条比较本页相关路由；object_ids显式保留原0113准确已接owner，并并入已观察0115旧乘子接证及本次Boss3真实实读的0115候选owner（若本页涉及）。本页仍有未接外主owner的独立命题，详见0113-evidence-closure的owner-routing-requests；在其实际接证与lead合法整合前保needs-decision，不能因已找到主目标/存在draft/本页部分接证改attachment或声称整页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/计算/保守两攻击端点归约的精确复现与范围--计算.md",
+      "sha256": "40e0f380262f635aefd1f1e7d50e993fd7f30118d1770b6d41efc6888dd5af74",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "WC-ENVELOPE-CEILING"
+      ],
+      "reason": "完整实读；所列本批主作者实际接受其对应数学/审查/有限实现范围为evidence。跨批其他独有内容另在receipt按精确ref路由，不以目录名称或历史运行替代接受。 本次独立补充逐条比较本页相关路由；object_ids显式保留原0113准确已接owner，并并入已观察0115旧乘子接证及本次Boss3真实实读的0115候选owner（若本页涉及）。本页仍有未接外主owner的独立命题，详见0113-evidence-closure的owner-routing-requests；在其实际接证与lead合法整合前保needs-decision，不能因已找到主目标/存在draft/本页部分接证改attachment或声称整页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/计算/局部权带份额与选择器的作者精确核验--计算.md",
+      "sha256": "34dd103a81fe2b0a6a48a1a3fefa83424527a38cf5a2c642f4f4f249755ccf40",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "WC-R3-DENSE-SHARE-v1",
+        "WC-R3-DENSE-LOCAL-v1",
+        "WC-R3-DENSE-POT-SHARP-v1",
+        "WC-R3-BAND-CURL-v1",
+        "WC-R3-BAND-LINEAR-v1"
+      ],
+      "reason": "完整实读；所列本批主作者实际接受其对应数学/审查/有限实现范围为evidence。跨批其他独有内容另在receipt按精确ref路由，不以目录名称或历史运行替代接受。 本次独立补充逐条比较本页相关路由；object_ids显式保留原0113准确已接owner，并并入已观察0115旧乘子接证及本次Boss3真实实读的0115候选owner（若本页涉及）。本页仍有未接外主owner的独立命题，详见0113-evidence-closure的owner-routing-requests；在其实际接证与lead合法整合前保needs-decision，不能因已找到主目标/存在draft/本页部分接证改attachment或声称整页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/局部Shapley包络与尾部冻结的审查范围--审查.md",
+      "sha256": "cd1cc9eb77370b36df67bba81ff2a43c31d86c8dcd991caac3136ea7eab3e6f2",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "WC-ORDERED-COHORT-FREEZING-v1",
+        "WC-R3-DENSE-SHARE-v1",
+        "WC-R3-DENSE-LOCAL-v1",
+        "WC-ORDERED-TAIL-PARAMETER-LIMIT-v1",
+        "WC-R3-DENSE-POT-SHARP-v1",
+        "WC-R3-BAND-LINEAR-v1"
+      ],
+      "reason": "完整实读；所列本批主作者实际接受其对应数学/审查/有限实现范围为evidence。跨批其他独有内容另在receipt按精确ref路由，不以目录名称或历史运行替代接受。 本次独立补充逐条比较本页相关路由；object_ids显式保留原0113准确已接owner，并并入已观察0115旧乘子接证及本次Boss3真实实读的0115候选owner（若本页涉及）。本页仍有未接外主owner的独立命题，详见0113-evidence-closure的owner-routing-requests；在其实际接证与lead合法整合前保needs-decision，不能因已找到主目标/存在draft/本页部分接证改attachment或声称整页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/奇环放大器的独立攻击与来源范围--审查.md",
+      "sha256": "7b04ad596915f175434d8d46d3e7106db08528dbcc54a3865ca4b82c83759759",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "OC-AMPLIFIER-v1",
+        "OC-AMPLIFIER-LIMIT-v1",
+        "OC-AMPLIFIER-ENVELOPE-v1",
+        "M-7d23b8e3f7de46a78d1433a2b44f0567",
+        "M-4ae04fa3f5dc4436a5869f82003945b7",
+        "M-dec88dc2302a46e384b5111e8e5ed2a2",
+        "weighted-congestion/odd-ring-uniform-fixed-hub-amplification-family"
+      ],
+      "reason": "完整实读；所列本批主作者实际接受其对应数学/审查/有限实现范围为evidence。跨批其他独有内容另在receipt按精确ref路由，不以目录名称或历史运行替代接受。 本次独立补充逐条比较本页相关路由；object_ids显式保留原0113准确已接owner，并并入已观察0115旧乘子接证及本次Boss3真实实读的0115候选owner（若本页涉及）。本页仍有未接外主owner的独立命题，详见0113-evidence-closure的owner-routing-requests；在其实际接证与lead合法整合前保needs-decision，不能因已找到主目标/存在draft/本页部分接证改attachment或声称整页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/边际乘子障碍与多项式端点归约双源审查--审查.md",
+      "sha256": "a38e6eef1bb72c061e841be2f5d08abf3d48ec87688b03253f0318547b915915",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "WC-R2-COARSE-LOSS",
+        "WC-R1-MULTIPLIER-BARRIER"
+      ],
+      "reason": "完整实读；本批只实接唯一节2.3中同n3/w1/5/Qx²/2的保守证书损失到WC-R2-COARSE-LOSS。第1节及第3/4节乘子范围已由0115 WC-R1-MULTIPLIER-BARRIER实际接受；第2节其余端点归约继续路由0112，不以一处接证吞整页。 本次独立补充逐条比较本页相关路由；object_ids显式保留原0113准确已接owner，并并入已观察0115旧乘子接证及本次Boss3真实实读的0115候选owner（若本页涉及）。本页仍有未接外主owner的独立命题，详见0113-evidence-closure的owner-routing-requests；在其实际接证与lead合法整合前保needs-decision，不能因已找到主目标/存在draft/本页部分接证改attachment或声称整页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/双轮改善环的锚定三元全状态编译--定理.md",
+      "sha256": "01951fc300c6bf4092d14290629359729272348928d1a8f45ecfcea533a24016",
+      "disposition": "objects",
+      "object_ids": [
+        "WC-ANCHORED-POLYNOMIAL-CYCLE-LOCK-v1"
+      ],
+      "reason": "已连续实读本文完整正文及其实际模型、精确陈述、全部条件、证明位置、版本与审查边界；此文件承载所列数学身份。复用成熟论证，未重跑数学程序。 本次18对象候选仅并0113相符证据，不改本页原数学或其他旧owner；主body按schema保objects。本页如有未接外owner的独立内容，继续依父0115-evidence-closure原owner请求保留pending，不由objects状态宣告全页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/必选背景消除的空交反链核心--定理.md",
+      "sha256": "e36a3e46c9f9a98e534f3b84b31d78682546b8623d2e2d6dbb781068e2fb04bc",
+      "disposition": "objects",
+      "object_ids": [
+        "WC-ANTICHAIN-CORE-NORMAL-FORM-v1"
+      ],
+      "reason": "已连续实读本文完整正文及其实际模型、精确陈述、全部条件、证明位置、版本与审查边界；此文件承载所列数学身份。复用成熟论证，未重跑数学程序。 本次18对象候选仅并0113相符证据，不改本页原数学或其他旧owner；主body按schema保objects。本页如有未接外owner的独立内容，继续依父0115-evidence-closure原owner请求保留pending，不由objects状态宣告全页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/资源幂矩与降序边际势的共同尺度桥--定理.md",
+      "sha256": "49ad923c7cb04046516270424c8e683d048dd99c939c00a0a5605130e1ad002c",
+      "disposition": "objects",
+      "object_ids": [
+        "WC-R2-RESOURCE-POWER-BRIDGE"
+      ],
+      "reason": "已连续实读本文完整正文及其实际模型、精确陈述、全部条件、证明位置、版本与审查边界；此文件承载所列数学身份。复用成熟论证，未重跑数学程序。 本次18对象候选仅并0113相符证据，不改本页原数学或其他旧owner；主body按schema保objects。本页如有未接外owner的独立内容，继续依父0115-evidence-closure原owner请求保留pending，不由objects状态宣告全页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/任意玩家乘子的多尺度边际夹逼--障碍.md",
+      "sha256": "a8a81a49e28d9aa79571dda74c10e0ac45123f3ed2298b8625a1cfb3794e13ac",
+      "disposition": "objects",
+      "object_ids": [
+        "WC-R1-MULTIPLIER-BARRIER"
+      ],
+      "reason": "已连续实读本文完整正文及其实际模型、精确陈述、全部条件、证明位置、版本与审查边界；此文件承载所列数学身份。复用成熟论证，未重跑数学程序。 本次18对象候选仅并0113相符证据，不改本页原数学或其他旧owner；主body按schema保objects。本页如有未接外owner的独立内容，继续依父0115-evidence-closure原owner请求保留pending，不由objects状态宣告全页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/循环窗口复制的近次数真实改善环--定理.md",
+      "sha256": "e6948b99b84e49e6683f0278be19661793042f5b7321f742af8fc578749aace2",
+      "disposition": "objects",
+      "object_ids": [
+        "WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1"
+      ],
+      "reason": "已连续实读本文完整正文及其实际模型、精确陈述、全部条件、证明位置、版本与审查边界；此文件承载所列数学身份。复用成熟论证，未重跑数学程序。 本次18对象候选仅并0113相符证据，不改本页原数学或其他旧owner；主body按schema保objects。本页如有未接外owner的独立内容，继续依父0115-evidence-closure原owner请求保留pending，不由objects状态宣告全页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有限次全成本空间与正资源压缩--定理.md",
+      "sha256": "ac5a9ce583b8196645e2c3694ab2722abd7492824c611540a6168bdd52b43660",
+      "disposition": "objects",
+      "object_ids": [
+        "WC-DEGREE-LOCAL-COST-COMPRESSION-v1"
+      ],
+      "reason": "已连续实读本文完整正文及其实际模型、精确陈述、全部条件、证明位置、版本与审查边界；此文件承载所列数学身份。复用成熟论证，未重跑数学程序。 本次18对象候选仅并0113相符证据，不改本页原数学或其他旧owner；主body按schema保objects。本页如有未接外owner的独立内容，继续依父0115-evidence-closure原owner请求保留pending，不由objects状态宣告全页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/奇偶暂态层与完整锥必要质量--定理.md",
+      "sha256": "9c7c399a3d42d6a1e3a7921221e504bf3784145ed1cead3fdd553c036dc8f01e",
+      "disposition": "objects",
+      "object_ids": [
+        "WC-TRANSIENT-PARITY-SELECTOR-DUAL-v1",
+        "WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1"
+      ],
+      "reason": "已连续实读本文完整正文及其实际模型、精确陈述、全部条件、证明位置、版本与审查边界；此文件承载所列数学身份。复用成熟论证，未重跑数学程序。 本次18对象候选仅并0113相符证据，不改本页原数学或其他旧owner；主body按schema保objects。本页如有未接外owner的独立内容，继续依父0115-evidence-closure原owner请求保留pending，不由objects状态宣告全页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/右端离散面积的网格误差与最优采样--定理.md",
+      "sha256": "cbdb0a71ada8f10a75ac76a1e98f0eac7c604e3a20ab89a52a661344f61ea0bf",
+      "disposition": "objects",
+      "object_ids": [
+        "weighted-congestion/right-endpoint-area-quadrature",
+        "weighted-congestion/optimal-nonuniform-right-quadrature"
+      ],
+      "reason": "已连续实读本文完整正文及其实际模型、精确陈述、全部条件、证明位置、版本与审查边界；此文件承载所列数学身份。复用成熟论证，未重跑数学程序。 本次18对象候选仅并0113相符证据，不改本页原数学或其他旧owner；主body按schema保objects。本页如有未接外owner的独立内容，继续依父0115-evidence-closure原owner请求保留pending，不由objects状态宣告全页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/等权窗口传播的精确阈值与安全余量--定理.md",
+      "sha256": "af010b359f1f608ce0e9e4960c23bd3c8fad2f2f03ec5916c2e1e2f08c22ae45",
+      "disposition": "objects",
+      "object_ids": [
+        "WC-ENDPOINT-AREA-WINDOW-CERTIFICATE-v1"
+      ],
+      "reason": "已连续实读本文完整正文及其实际模型、精确陈述、全部条件、证明位置、版本与审查边界；此文件承载所列数学身份。复用成熟论证，未重跑数学程序。 本次18对象候选仅并0113相符证据，不改本页原数学或其他旧owner；主body按schema保objects。本页如有未接外owner的独立内容，继续依父0115-evidence-closure原owner请求保留pending，不由objects状态宣告全页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/锚定门的社会费用分解与最优压缩--定理.md",
+      "sha256": "dc6b751a584d2f2bc89e8aa092c8d5c2bcf6339c1d108f3499d85d96115e8f1d",
+      "disposition": "objects",
+      "object_ids": [
+        "WC-SOCIALLY-DESCENDING-REPAIR-v1",
+        "M-e7929cadcd154450adc13350a49c66f9",
+        "WC-FRONT-SOCIAL-COST-SHIFT-v1"
+      ],
+      "reason": "已连续实读本文完整正文及其实际模型、精确陈述、全部条件、证明位置、版本与审查边界；此文件承载所列数学身份。复用成熟论证，未重跑数学程序。 独立子命题按父一次分配的新稳定ID单列；完整承重节与必要证据已逐项实读定位。 本次18对象候选仅并0113相符证据，不改本页原数学或其他旧owner；主body按schema保objects。本页如有未接外owner的独立内容，继续依父0115-evidence-closure原owner请求保留pending，不由objects状态宣告全页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/正则化核心的稳定与社会质量联合转移--定理.md",
+      "sha256": "b30c141a5a855315fca9713b4abfbdf73f456993594aed8782b1895c73d42cb3",
+      "disposition": "objects",
+      "object_ids": [
+        "WC-REGULARIZED-CORE-REPAIR-QUALITY-v1"
+      ],
+      "reason": "已连续实读本文完整正文及其实际模型、精确陈述、全部条件、证明位置、版本与审查边界；此文件承载所列数学身份。复用成熟论证，未重跑数学程序。 本次18对象候选仅并0113相符证据，不改本页原数学或其他旧owner；主body按schema保objects。本页如有未接外owner的独立内容，继续依父0115-evidence-closure原owner请求保留pending，不由objects状态宣告全页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/跨游戏统一可加序势的复制夹逼桥--定理.md",
+      "sha256": "d16921f2bda7ba392bf01e8fae5efa91d1f4dd675bbfcfa53fab372cc06181c5",
+      "disposition": "objects",
+      "object_ids": [
+        "WC-R1-ORDINAL-COPY-BRIDGE"
+      ],
+      "reason": "已连续实读本文完整正文及其实际模型、精确陈述、全部条件、证明位置、版本与审查边界；此文件承载所列数学身份。复用成熟论证，未重跑数学程序。 本次18对象候选仅并0113相符证据，不改本页原数学或其他旧owner；主body按schema保objects。本页如有未接外owner的独立内容，继续依父0115-evidence-closure原owner请求保留pending，不由objects状态宣告全页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/计算/奇环四程序的实际实例与精确复算--计算.md",
+      "sha256": "66eb0e7953c7547f9bf7c2cdb649e4e0ec9aed473ecde428d77799d57cf7136b",
+      "disposition": "objects",
+      "object_ids": [
+        "weighted-congestion/odd-ring-uniform-fixed-hub-amplification-family",
+        "M-dec88dc2302a46e384b5111e8e5ed2a2",
+        "M-4ae04fa3f5dc4436a5869f82003945b7",
+        "OC-AMPLIFIER-v1",
+        "OC-AMPLIFIER-LIMIT-v1",
+        "OC-AMPLIFIER-ENVELOPE-v1"
+      ],
+      "reason": "全文实读。四程序的具体输入、完整有理遍历边界和解析一般证明区别供本批均匀奇环构造复用；dyadic与八人精确实例已按父唯一分配的两个独立身份绑定；手选1949人阈值/接口/二阶渐近向0112请求实际接受；0113已实际实读接受并由本实例核验正式record.evidence：audit_checks.py四组linear-reset仅归OC-AMPLIFIER-v1，七Decimal仅归LIMIT/ENVELOPE有限诊断；dyadic、8人和1949人不并入。不合并手选与中点系数，不为8400标量/PASS造节点，未重跑数学程序。 独立子命题按父一次分配的新稳定ID单列；完整承重节与必要证据已逐项实读定位。 本页还承载八人全状态精确反例主body，按现schema必须保objects；该状态不表示1949人阈值、接口与二阶包络的外部范围已接受。必须保本项pending_route_ids及其完整owner请求为全范围最终检查阻塞项，不能由本页objects直接推定全部完成。 本次18对象候选仅并0113相符证据，不改本页原数学或其他旧owner；主body按schema保objects。本页如有未接外owner的独立内容，继续依父0115-evidence-closure原owner请求保留pending，不由objects状态宣告全页闭合。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/构造/奇数枢纽群组的显式均匀放大族--构造.md",
+      "sha256": "ea945b9122367a32b6b2386df6e75628e446e54cacfa31f3b3c92054698c9e4f",
+      "disposition": "objects",
+      "object_ids": [
+        "weighted-congestion/odd-ring-uniform-fixed-hub-amplification-family",
+        "M-dec88dc2302a46e384b5111e8e5ed2a2"
+      ],
+      "reason": "已连续实读本文完整正文及其实际模型、精确陈述、全部条件、证明位置、版本与审查边界；此文件承载所列数学身份。复用成熟论证，未重跑数学程序。 独立子命题按父一次分配的新稳定ID单列；完整承重节与必要证据已逐项实读定位。 本次18对象候选仅并0113相符证据，不改本页原数学或其他旧owner；主body按schema保objects。本页如有未接外owner的独立内容，继续依父0115-evidence-closure原owner请求保留pending，不由objects状态宣告全页闭合。"
+    }
+  ],
+  "edge_files": []
+}
