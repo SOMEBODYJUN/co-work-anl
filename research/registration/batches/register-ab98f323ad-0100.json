@@ -1,0 +1,1898 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline.json",
+    "sha256": "5d5737ab6d07552b48925bdb936dae70490e8de1ee0da2b380bb2d16dd5690cf"
+  },
+  "objects": [
+    {
+      "object_id": "UM-FOREST-TWO-BOUNDARY-MENU-v1",
+      "version": 1,
+      "title": "双边界森林中同一真实分配的一端精确支配与另一端近似菜单",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 内部机器V、互异边界a,b；每件一或两有限端，合并平行任务后的机器支撑图是森林；a无容量上限，b是另一个受限边界。",
+      "statement": "给T≥0及有理0<η≤1，可在输入总位长与数值1/η上多项式规模内构造由实际完整分配τ组成的菜单。对每个内部负载≤T且L_b(ρ)≤T的比较分配ρ，存在同一个菜单项τ，使L_a(τ)≤L_a(ρ)、L_b(τ)≤(1+η)L_b(ρ)，每内部机器与b负载≤(1+η)T。L_b(ρ)=0时同一τ的b负载也为0。局部floor与全局ceil分别实现此合同；菜单坐标须来自同一τ。恢复到外部核心峰值B时，原完整调度峰≤max(B,(1+η)T)。",
+      "quantifiers": "对每个合法森林、T≥0、0<η≤1及每个在上述完整比较域中的ρ，存在一个同时控制两边界的真实菜单项；空菜单只保证比较域为空。",
+      "assumptions": [
+        "比较域必须含b≤T而不限制a；不能只取一个域中的a最小值和另一分配的b最小值拼接",
+        "几何预算可取ε=η/3；全局先定逐机尺度；保存全部原任务身份与恢复指针",
+        "复杂度在显式有理输入总位长和数值1/η上多项式，而非仅log(1/η)；零端、平行任务、退化组件单列处理"
+      ],
+      "scope": "双边界局部菜单合同。可成功返回比较域外的分配；两舍入实现可返回不同菜单。共享边界的同批恢复只取一次max；任意层层嵌套不封闭且可积累(1+η_i)乘积，不能免费当普通任务。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/森林边界审查源e279补录--审查.md",
+        "sha256": "a541011ce4b4f96ed104d399b7906189b2cc15f85169e9d0b4c6855a9ca7a402"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/森林边界与双端菜单有限审计--审查.md",
+          "sha256": "47cafdaecea72e7b95d7ec2f4a51787d3acd41c73dd2476ee3fb14f978eff259",
+          "section": "3. two-boundary 主审计和独立实现"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/双边界森林菜单双实现与强比较域原程序复跑--计算.md",
+          "sha256": "184413e8062b4322400416c96a012a2914fcded408169421b8f1313cbd1de0ae"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/forest_boundary_crosscheck.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/forest_boundary_downward_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/forest_boundary_family_probe.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/forest_boundary_upward_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/forest_two_boundary_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/forest_two_boundary_independent_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/forest_two_boundary_independent.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/forest_two_boundary_menu.py",
+        "legacy:UM-FOREST-TWO-BOUNDARY-MENU-v1"
+      ]
+    },
+    {
+      "object_id": "UM-FIXED-WORK-CONVEX-POTENTIAL-BARRIER-v1",
+      "version": 1,
+      "title": "私有昂贵叶族的准确工作量前沿与固定凸势近二屏障",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 h≥2、q≥1；h台核心与hq台私有叶，tiny的home时间t=(h−1)/(hq)、自己的叶时间1，big在核心时间1；A=2−1/h，原OPT=1。",
+      "statement": "对任意实际调度，R_B记big所在核心的tiny外移数，R_all记全部tiny外移数，则Cmax=max(1,A−tR_B)、W=h+(1−t)R_all；可行C∈[1,A]的最小工作量为h+(1−t)ceil((A−C)/t)。最小工作量面强制tiny全home，big均匀分数点的有序槽正支撑只含峰A调度。任意固定乘法工作量预算仍可由q=h²保留趋二坏界。对任意事先固定的有限非减凸f:[0,3]→R，若Δ=f(1)−f(0)>0，记D=f(3)−f(2)，取q>(1−1/h)D/Δ，则每个全局势Σ_i f(L_i)最小解均有R_B=0、峰A。",
+      "quantifiers": "对每h≥2及相应q；对每固定预算/固定满足Δ>0的势函数，可选任意充分大q；结论涉及所有全局势最小解，而非某局部扫描输出。",
+      "assumptions": [
+        "R_B与R_all必须分开；额外在非big核心迁tiny只增工作量",
+        "凸势先固定后选族参数；函数在[0,3]有限、非减且凸",
+        "OPT=1由完整实际分配和总负载下界共同承担"
+      ],
+      "scope": "工作量/固定分离凸势及给定槽正支撑路线的具体屏障；不是一般算法、任意凸势、复杂度或近二OPT-hardness结论。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。 Δ=0不能纳入上述势屏障：固定hinge f(x)=(x−1)_+可有峰1的全局最小解。768状态只是有限程序域；平方势最小值与相应峰值的旧误记已按审查修正。",
+      "body": {
+        "path": "archives/unrelated-machines/state/障碍/私有昂贵叶的工作量与固定凸势近二边界--障碍.md",
+        "sha256": "9fbd8c09d67888a1f710539a7a29671070f683dfa0a09ddc2e3ecd9489ad5cb3"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/计算/私有昂贵叶与中任务标量原程序的精确范围--计算.md",
+          "sha256": "7d483474f5e65ff7d7165fb2dd83b3ef7624810367e982dcc8b84efe45388f1e"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/层容量与固定工作边界的证明和证据范围--审查.md",
+          "sha256": "e275f4cf7c73847eb07b7f7ed075bfd68704c95b5b17a7c042d618e53db98970"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/questions/unrelated_machines/fixed_work_and_medium_config_barriers.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/fixed_work_and_medium_config_barriers.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/questions/unrelated_machines/bounded_level_tensor_capacity_escape.md"
+      ]
+    },
+    {
+      "object_id": "UM-MEDIUM-CONFIG-TINY-BARRIER-v1",
+      "version": 1,
+      "title": "中任务CONFIG证书与独立微任务收费合同的固定k4反例",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 固定74机169任务的k=4双树；目标T=5/4，所有有限时间≥1/4。",
+      "statement": "同一完整原矩阵有CONFIG(5/4)证书而真实OPT=7/4。对每个固定有理0<α<1/5，全部有限任务端都严格大于αT，因此该完整证书在“无微任务、仅中任务配置加独立微任务收费”接口下仍可行，然而OPT/T=7/5>1+α。",
+      "quantifiers": "对每个固定0<α<1/5使用同一个完整矩阵和同一可行配置证书；不是仅核三项标量就生成矩阵。",
+      "assumptions": [
+        "中/微分类阈值为αT且α严格小于1/5",
+        "T仅是可行CONFIG证书阈值，不声称精确T_CONF",
+        "169原任务与74机器全部存在且保不同平行任务身份"
+      ],
+      "scope": "否定该固定分类的1+α接口保证；与有界配置基数K的2−K^{−(K−1)}正面定理相容，不否定所有有界K方法。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。 α=1/5时不再有“没有微任务”推论；历史标量程序只算三个算式，没有展开74×169矩阵。",
+      "body": {
+        "path": "archives/unrelated-machines/state/障碍/中任务配置与独立微任务收费的接口间隙--障碍.md",
+        "sha256": "5b54630db2213996091ed7eef7f018bc2a53319832583b78f255de948ea8176d"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/计算/私有昂贵叶与中任务标量原程序的精确范围--计算.md",
+          "sha256": "7d483474f5e65ff7d7165fb2dd83b3ef7624810367e982dcc8b84efe45388f1e"
+        },
+        {
+          "path": "archives/unrelated-machines/state/障碍/双树配置证书的趋二整数间隙--障碍.md",
+          "sha256": "9df495ce6a36239df905c8a8b6b4b7dc29778e68679e0c23f5ba79777dce73cf"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/经典槽恢复与双树动态规划的程序合同--计算.md",
+          "sha256": "37e100f2dcd7267b88f6ae00d997485de60c2d595c1399981840ea3a38f243b8",
+          "section": "展开树的配置接口"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/层容量与固定工作边界的证明和证据范围--审查.md",
+          "sha256": "e275f4cf7c73847eb07b7f7ed075bfd68704c95b5b17a7c042d618e53db98970"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/questions/unrelated_machines/fixed_work_and_medium_config_barriers.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/model_and_classical_barriers.md#4",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/bounded_configuration_cardinality_slot_margin.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/fixed_work_and_medium_config_barriers.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/model_and_classical_barriers.md#4-配置LP间隙族的独立重索引重构",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/rounding_and_gap.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/questions/unrelated_machines/bounded_level_tensor_capacity_escape.md"
+      ]
+    },
+    {
+      "object_id": "UM-CONF-GAP-v1",
+      "version": 1,
+      "title": "二端异速双树的完整配置证书与趋二配置间隙",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 每件恰两有限端的双树族k≥4；重索引α_r=(k/(k−1))^(r−1)/(k−1)，高度h为首个α_h≥1/2；末层父端的k枚不同任务共享终端。",
+      "statement": "每个k≥4的完整显式矩阵满足OPT=2−1/k，并有完整CONFIG(T_k)证书T_k=1+1/k。因此OPT/T_CONF≥OPT/T_k=2−3/(k+1)→2；结合普通CONFIG/ST上界，上确界为2。整数下界来自big所在树的逐层分支强迫，完整配置由逐机全small/incoming+一small分布与根big边际削薄构成。",
+      "quantifiers": "对所有整数k≥4成立；矩阵按实际展开规模收费；大k压缩DP数值不是大矩阵全枚举。",
+      "assumptions": [
+        "逐机配置含空与有身份任务子集，权和1，逐任务覆盖恰1",
+        "根的α与删big概率按重索引版本核；原VW v1存在高度偏一/根删薄索引问题",
+        "T_CONF≤1+1/k而非在此证明等号"
+      ],
+      "scope": "CONFIG的松弛间隙，不是OPT目标近二hardness、不是所有2−ε算法不可能；特别接线/额外耦合可加强该族。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/障碍/双树配置证书的趋二整数间隙--障碍.md",
+        "sha256": "9df495ce6a36239df905c8a8b6b4b7dc29778e68679e0c23f5ba79777dce73cf"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/计算/经典槽恢复与双树动态规划的程序合同--计算.md",
+          "sha256": "37e100f2dcd7267b88f6ae00d997485de60c2d595c1399981840ea3a38f243b8"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/配置LP在图平衡及不相关机中的间隙--资源.md",
+          "sha256": "0fcfc44edf52bb6f1d0bf459c9847540342f55c9f4d681588f32670d1c64de26",
+          "section": "二端异速的趋二配置间隙"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/model_and_classical_barriers.md#4-配置LP间隙族的独立重索引重构",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/rounding_and_gap.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf#PDF-pages-1-13",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf#PDF-pages-1-13"
+      ]
+    },
+    {
+      "object_id": "UM-STAR-CONFIG-TRANSFER-v1",
+      "version": 1,
+      "title": "极小超载星的外部碰星列质量CONFIG转移",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 当前T剪枝实例中v的全部可用任务F非空，S=Σ_F p_va>T且S−p_va≤T逐a成立；删v/F，以普通任务e在外机i的时间min_{a∈F}p_ia替代，并保存argmin。",
+      "statement": "整数T可行性双向保持，约化峰B逆展开至≤max(B,T)。对给定原完整CONFIG点，若外机中“配置至少含一个F任务”的总列质量Q_F=Σ_{i≠v}Σ_{C:C∩F≠∅}y_iC≥1，可抽全局质量1将每个命中配置的所选argmin替为e，得到约化完整CONFIG点；每步至多一次全局split，非零支持规模≤S_y−S_v+1。逆向按argmin及v上F\\{a}可无条件恢复CONFIG。强制e→i需优先抽该i质量；逆向保持实际可行性不保证恢复所有原probe。",
+      "quantifiers": "对每个满足全集/极小条件的当前星与每个满足Q_F≥1的完整输入点；每次实际收缩重新验条件，保存原任务身份并逆序展开。",
+      "assumptions": [
+        "Q_F是命中列概率总质量，不是期望F任务数q_F；配置可同时含多枚F",
+        "指定外机的强制边探针需该机优先抽取，不由无条件转移自动得到",
+        "split全局计一次，不是每外机可任意拆一次"
+      ],
+      "scope": "精确单任务及条件配置转移；不把q≥2普通任务压缩、匹配身份、所有收缩次序终态或全部原probe保真纳入。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。 长拼写UM-STAR-CONFIGURATION-TRANSFER-v1与本短拼写是同一已识别命题的legacy同义路由，不另造对象。独立反例展示q_F≥1不足、无目标优先不足、逆向不保全部probe。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/极小星配置转移的真实依赖与全边核验--资源.md",
+        "sha256": "219870e1dd96cb16930fabc60b8e98a2072b51bdaa85cb75627ffd305c8273d7",
+        "section": "一般CONFIG转移合同与证明"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/成束局部相容性与极小星消元的身份边界--资源.md",
+          "sha256": "f0d0c03bf99a4979d8dbee110602efa18b5116f6884adfb5b419bcc338b250d8",
+          "section": "极小超载星：已成立的精确单任务压缩"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/极小星配置保持与稀疏收缩族独立冻结审查--审查.md",
+          "sha256": "3770159de5ce7b48c471566bc8b01d206b26ba8e0fc2e28b9762650e2583816e"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/极小星配置转移的真实依赖与全边核验--资源.md",
+          "sha256": "219870e1dd96cb16930fabc60b8e98a2072b51bdaa85cb75627ffd305c8273d7"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/三选稀疏条件配置与资源星转移有限审查--审查.md",
+          "sha256": "5dcc341353986d1f9631b932f9f115e05de0433253cf1fe54c34fc634bc31e53",
+          "section": "4. 端点极小星收缩：配置转移的条件和推导"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/槽包络稀疏配置转移与矩证书有限审查--审查.md",
+          "sha256": "d1157bcfece87df1a24e97c12f410f5486bcc133dee775b05693a4f7fab67fc6",
+          "section": "3. 星配置转移：收缩后的稀疏支持与互斥反例"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/槽包络稀疏配置转移与矩证书有限审查--审查.md",
+          "sha256": "d1157bcfece87df1a24e97c12f410f5486bcc133dee775b05693a4f7fab67fc6",
+          "section": "A. 星收缩：外部任务数量不能代替碰星配置的质量"
+        }
+      ],
+      "sources": [
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/star_configuration_transfer.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/star_configuration_transfer_independent.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/unrelated-machines/R-98dda64741bb4e8b9198dd9a71a2f3a0/README.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/unrelated-machines/R-98dda64741bb4e8b9198dd9a71a2f3a0/README.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/bundle_coupling_subdivision_barrier.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md",
+        "source:4db608745d33c83c9e05:research/reviews/unrelated_machines/star_configuration_transfer_review.md",
+        "source:10d6e8aa4a99d7f45041:evidence/runs/unrelated_machines/sparse_conditioned_configuration_audit.json",
+        "source:f11bf766ebcd2a7358b7:evidence/runs/unrelated_machines/star_configuration_transfer_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/sparse_conditioned_configuration_gap.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/sparse_conditioned_configuration_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/star_configuration_transfer_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/sparse_conditioned_configuration.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/sparse_conditioned_configuration_independent.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/slot_envelope_identity_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/slot_envelope_identity_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/sparse_conditioned_configuration_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/sparse_conditioned_configuration_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/star_configuration_transfer_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/star_configuration_transfer_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/token_label_hypergeometric_lift_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/token_label_hypergeometric_lift_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/weak_h2_configuration_moment_gap_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/weak_h2_configuration_moment_gap_audit.json",
+        "legacy-alias:UM-STAR-CONFIGURATION-TRANSFER-v1"
+      ]
+    },
+    {
+      "object_id": "UM-SPARSE-CONDITIONED-CONFIG-GAP-v1",
+      "version": 1,
+      "title": "三选稀疏深树的逐有限边独立CONFIG证书与趋二间隙",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 k≥3，r=(k−1)/k，s0=min{s:kr^s≤1}，M=(k−1)k^(s0−2)，取H≥s0且2^(H−2)≥M，γ=2^(2−H)。两棵k叉树由根任务连接，底部任务各有父/terminal/共享z三个有限端。",
+      "statement": "此完整稀疏族真实OPT=2−1/k，且在T=1+1/k时，对每一条有限原边e分别存在完整CONFIG(T)点满足x_e=1。构造的坏cluster须整块外送k−1枚任务，外送原任务数≤M，γM≤1；不能重复再乘k−1。小bag表示最大bag4、separator3，但独立逐边证书不要求共同base或联合separator一致性；若给完整分隔联合律，精确gluing会识别真实可行性。",
+      "quantifiers": "∀合法k,H，∀有限边e，∃各自的完整条件配置点；不是∃一个点或一个共同分布同时固定所有边。",
+      "assumptions": [
+        "M计的是被送出的有身份block任务，不是cluster数",
+        "每份条件点都覆盖全部原任务、逐行归一并守T",
+        "bag宽度叙述不提供未知配置求解oracle或一般多项式算法"
+      ],
+      "scope": "逐边独立CONFIG探针的松弛gap。端点仍触发极小星，本条不自动包含预处理后终态；整数最优性来自一般构造证明，有限k3,H5审计不是一般极限证明。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/三选稀疏条件配置与资源星转移有限审查--审查.md",
+        "sha256": "5dcc341353986d1f9631b932f9f115e05de0433253cf1fe54c34fc634bc31e53",
+        "section": "2. 稀疏深树族：一般构造与明确量词"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/极小星配置转移的真实依赖与全边核验--资源.md",
+          "sha256": "219870e1dd96cb16930fabc60b8e98a2072b51bdaa85cb75627ffd305c8273d7",
+          "section": "共享稀疏输入及M的计数单位"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/三选稀疏条件配置与资源星转移有限审查--审查.md",
+          "sha256": "5dcc341353986d1f9631b932f9f115e05de0433253cf1fe54c34fc634bc31e53",
+          "section": "3. 有限主审计与独立重建：保存哪些事实"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/槽包络稀疏配置转移与矩证书有限审查--审查.md",
+          "sha256": "d1157bcfece87df1a24e97c12f410f5486bcc133dee775b05693a4f7fab67fc6",
+          "section": "2. 三选稀疏深树：全边条件配置的双路核验"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/未归档配置证书批次与量词边界--审查.md",
+          "sha256": "e50f84daeb3534546c3a0269f3136f6362f9ecb708d764e9b1cc4e0d60d2dc5b",
+          "section": "3.3 两个稀疏条件配置的同一数值边界"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/稀疏配置与子线性联盟来源审查新增--审查.md",
+          "sha256": "234808ef5b1ad11ca3b1655e462153030555827f59f094e82ec13d7c284a0b33",
+          "section": "2. 稀疏深树：逐边证书的精确量词"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/稀疏配置与强矩匹配双源增量审查--审查.md",
+          "sha256": "e8f6b5ec531d5f6ba46d4e16220c684640f3fa34d41073a1cba47b63e4e21ad3",
+          "section": "2. 稀疏深树的逐边配置合同"
+        }
+      ],
+      "sources": [
+        "source:10d6e8aa4a99d7f45041:evidence/runs/unrelated_machines/sparse_conditioned_configuration_audit.json",
+        "source:f11bf766ebcd2a7358b7:evidence/runs/unrelated_machines/star_configuration_transfer_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/sparse_conditioned_configuration_gap.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/sparse_conditioned_configuration_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/star_configuration_transfer_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/sparse_conditioned_configuration.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/sparse_conditioned_configuration_independent.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/star_configuration_transfer.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/star_configuration_transfer_independent.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/slot_envelope_identity_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/slot_envelope_identity_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/sparse_conditioned_configuration_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/sparse_conditioned_configuration_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/star_configuration_transfer_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/star_configuration_transfer_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/token_label_hypergeometric_lift_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/token_label_hypergeometric_lift_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/weak_h2_configuration_moment_gap_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/weak_h2_configuration_moment_gap_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/unrelated_machines/long_path_gap_small_instance.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:examples/unrelated_machines/long_path_gap_small_instance.json"
+      ]
+    },
+    {
+      "object_id": "UM-CONTRACTED-SPARSE-CONFIG-GAP-v1",
+      "version": 1,
+      "title": "稀疏深树按实际端点极小星序列收缩后的全边条件CONFIG间隙",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 使用上一稀疏深树族的同一参数域与T=1+1/k；在每个左右底星执行指定合法单任务argmin收缩，记录原身份及替代边。",
+      "statement": "经该指定合法序列后的真实整数OPT仍为2−1/k，终态无可用极小超载星；对每条终态有限边e分别有完整CONFIG(T)点满足x_e=1。替代边查询按目标外机优先抽质量，未收缩边按其原条件证书转移。逆恢复只保证可行性/峰，不保证原每个probe。有限k3,H5原1051任务729机经324次收缩成为727任务405机，对全部1778终态有限边核验；这些有限数字只附着一般证明。",
+      "quantifiers": "对每个规定参数及该实际可复核收缩顺序，逐终态有限边分别存在完整证书；不对任意收缩次序、任意同构终态或共同base量化。",
+      "assumptions": [
+        "每步确认全集极小星、外部命中质量与目标优先合同",
+        "replace任务是普通任务但须记录argmin与原任务树",
+        "全局支持split界按每实际步计"
+      ],
+      "scope": "预处理加逐边独立配置探针仍可趋二；不排除更强联合读出或全局方法。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/三选稀疏条件配置与资源星转移有限审查--审查.md",
+        "sha256": "5dcc341353986d1f9631b932f9f115e05de0433253cf1fe54c34fc634bc31e53",
+        "section": "4. 端点极小星收缩：配置转移的条件和推导"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/极小星配置保持与稀疏收缩族独立冻结审查--审查.md",
+          "sha256": "3770159de5ce7b48c471566bc8b01d206b26ba8e0fc2e28b9762650e2583816e"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/极小星配置转移的真实依赖与全边核验--资源.md",
+          "sha256": "219870e1dd96cb16930fabc60b8e98a2072b51bdaa85cb75627ffd305c8273d7"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/三选稀疏条件配置与资源星转移有限审查--审查.md",
+          "sha256": "5dcc341353986d1f9631b932f9f115e05de0433253cf1fe54c34fc634bc31e53",
+          "section": "5. \\(k=3,H=5\\) 收缩审计：主路、独立路和反例"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/槽包络稀疏配置转移与矩证书有限审查--审查.md",
+          "sha256": "d1157bcfece87df1a24e97c12f410f5486bcc133dee775b05693a4f7fab67fc6",
+          "section": "3. 星配置转移：收缩后的稀疏支持与互斥反例"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/未归档配置证书批次与量词边界--审查.md",
+          "sha256": "e50f84daeb3534546c3a0269f3136f6362f9ecb708d764e9b1cc4e0d60d2dc5b",
+          "section": "3.3 两个稀疏条件配置的同一数值边界"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/稀疏配置与强矩匹配双源增量审查--审查.md",
+          "sha256": "e8f6b5ec531d5f6ba46d4e16220c684640f3fa34d41073a1cba47b63e4e21ad3",
+          "section": "2. 稀疏深树的逐边配置合同"
+        }
+      ],
+      "sources": [
+        "source:10d6e8aa4a99d7f45041:evidence/runs/unrelated_machines/sparse_conditioned_configuration_audit.json",
+        "source:f11bf766ebcd2a7358b7:evidence/runs/unrelated_machines/star_configuration_transfer_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/sparse_conditioned_configuration_gap.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/sparse_conditioned_configuration_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/star_configuration_transfer_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/sparse_conditioned_configuration.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/sparse_conditioned_configuration_independent.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/star_configuration_transfer.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/star_configuration_transfer_independent.py",
+        "source:4db608745d33c83c9e05:research/reviews/unrelated_machines/star_configuration_transfer_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/slot_envelope_identity_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/slot_envelope_identity_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/sparse_conditioned_configuration_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/sparse_conditioned_configuration_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/star_configuration_transfer_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/star_configuration_transfer_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/token_label_hypergeometric_lift_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/token_label_hypergeometric_lift_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/weak_h2_configuration_moment_gap_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/weak_h2_configuration_moment_gap_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/unrelated_machines/long_path_gap_small_instance.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:examples/unrelated_machines/long_path_gap_small_instance.json"
+      ]
+    },
+    {
+      "object_id": "UM-COMPACT-COUNT-ESCAPE-GAP-v1",
+      "version": 1,
+      "title": "紧凑共享逃逸族同时通过pair与行计数独立见证的趋二间隙",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 k≥2，N=2k²个中心V，G=N−2k台全局机；每中心X在V/G时间1、k个Z在V时间1/k及本块k+1个R时间1；k个Y在R时间1及共享z时间1/k。",
+      "statement": "完整族OPT=θ_k=2−1/k，CONFIG(1)可行，所有两机器对均有各自GPC2证书，域/极小星规则无首次删除。全局row-count上界c为V,z取k、G,R取1；对任意机器v可构造避开v的全任务计数合法分配，所以任意有限边或v的任意合法C∈C_v(1)可独立放回v并延伸成全任务计数见证。不存在共同相关性的保证；接受这些必要条件仍留下趋二gap。",
+      "quantifiers": "∀整数k≥2，∀单机v、∀其合法配置C，∃各自完整计数延伸；全部pair也各自存在，不要求同一全局律。",
+      "assumptions": [
+        "原R块完整单位邻接与各任务身份保留",
+        "上述配置延伸的其它机器只守任务数c_i，不是实际容量≤1，也不是完整CONFIG延伸",
+        "对真实容量的多行预算和完整单机CONFIG探针另有独立Claim"
+      ],
+      "scope": "具体紧凑族上多个逐查询接口的合取gap，不是任意输入算法下界或OPT-hardness。商DP仅利用对称R置换求有限族精确OPT，非一般solver。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/全局基数与逐行均匀相关读出边界有限审查--审查.md",
+        "sha256": "daf5efa8d82171f728cceb41f21c0735801b1590686c37964a05d32af3c0c4ef",
+        "section": "3. 紧凑共享逃逸族和 `UM-COMPACT-COUNT-ESCAPE-GAP-v1`"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/全局行计数审查的原冻结范围与多行追加证明--审查.md",
+          "sha256": "c920dda4d04f23e80bf66c50e006af66631277c92531a8f93250f38b83d688a6",
+          "section": "旧紧凑族和全部独立计数见证"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/紧凑共享逃逸的双路原矩阵与商动态规划--资源.md",
+          "sha256": "c58f69c4643d97bf2f848908dfe4fd5f651e13053f69cd646e3f76fa151c7db9"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/完整单机配置延伸的双装配原入口与有限范围--资源.md",
+          "sha256": "ee7695c7321b727301efc9150fe3faf5d26f785a20a445aa7ccc18c35a0ef06a",
+          "section": "完整LP点与共同条件分布是不同合同"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/未归档配置证书批次与量词边界--审查.md",
+          "sha256": "e50f84daeb3534546c3a0269f3136f6362f9ecb708d764e9b1cc4e0d60d2dc5b",
+          "section": "3.1 k=2 配置精确达到 \\(3/2\\)"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/紧凑共享逃逸k2原始矩阵增量--审查.md",
+          "sha256": "d49bba2fe60ba7f58530b1de910e3883d1371e64f9d5dcf9327ddb6efd0835a9"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/unrelated_machines/row_uniform_correlated_guard_examples.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:examples/unrelated_machines/row_uniform_correlated_guard_examples.json",
+        "source:99fabfaf306e1766cd1e:evidence/runs/unrelated_machines/multirow_count_extension_audit.json",
+        "source:292abbaeaee297858760:evidence/runs/unrelated_machines/row_count_escape_audit.json",
+        "source:c7ca54100a256e0b0bd2:evidence/runs/unrelated_machines/row_uniform_correlated_guard_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/row_count_escape_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/compact_count_escape.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/independent_row_count_escape.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/compact_config_probe.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/compact_config_probe_independent.py"
+      ]
+    },
+    {
+      "object_id": "UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2",
+      "version": 1,
+      "title": "逐行均匀共同标签下的ceil-half真实资源匹配",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限简单二部图G=(U,V,E)；每左点u有显式非空标签集A_u，右v有q_v=deg(v)个分区互异单位资源；每边f_e:A_u→R_v是每原像等大的满射。一个标签同时决定u所有incident请求。",
+      "statement": "确定性位多项式算法选择一个共同标签profile及资源互异的真实请求边子集F，使每个u保留至少ceil(d_u/2)。资源碰撞势Φ=Σ_r binom(c_r,2)严格下降到各左点碰撞成本C_u≤d_u−1；再按每请求1/c_r给分数覆盖，权和≥(d_u+1)/2，复制ceil(d_u/2)配额并做一次全局匹配同时完成所有左点。",
+      "quantifiers": "对每个显式合法简单图、每个均匀映射/标签输入，同时保证全部左点；含空图、孤立点。",
+      "assumptions": [
+        "同一左点不同测试不落同一资源是简单图与资源分区的承重结果",
+        "逐行满射及等原像不可改成任意纯列映射",
+        "势下降次数≤binom(|E|,2)，按显式标签总长度收费"
+      ],
+      "scope": "真实共同读出正面子类。平行identity请求、非均匀行或多层祖先限制不在定理内，不据此产生一般UM算法。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/全局基数与逐行均匀相关读出边界有限审查--审查.md",
+        "sha256": "daf5efa8d82171f728cceb41f21c0735801b1590686c37964a05d32af3c0c4ef",
+        "section": "4. 逐行均匀相关读出：`UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2`"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/全局基数与逐行均匀相关读出边界有限审查--审查.md",
+          "sha256": "daf5efa8d82171f728cceb41f21c0735801b1590686c37964a05d32af3c0c4ef",
+          "section": "6. 三个冻结证据和全仓比较"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/双轨阈值实际前沿与逐行均匀相关防护双源审查--审查.md",
+          "sha256": "5d77a177309257a8b3033c9b1de86e93feea5aa5c99e291b9be88d0625f6d276",
+          "section": "3. 逐行均匀相关读出来源"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/逐行均匀相关与强配置矩两源读后补录--审查.md",
+          "sha256": "aa09b3be98ccbcbc3d45f5ea54b92310ff0d75124a262c93e40bd46a88b587ce",
+          "section": "1. 逐行均匀相关读出：整数势、共同匹配与 flat-state 编译"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/unrelated_machines/row_uniform_correlated_guard_examples.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:examples/unrelated_machines/row_uniform_correlated_guard_examples.json",
+        "source:99fabfaf306e1766cd1e:evidence/runs/unrelated_machines/multirow_count_extension_audit.json",
+        "source:292abbaeaee297858760:evidence/runs/unrelated_machines/row_count_escape_audit.json",
+        "source:c7ca54100a256e0b0bd2:evidence/runs/unrelated_machines/row_uniform_correlated_guard_audit.json"
+      ]
+    },
+    {
+      "object_id": "UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1",
+      "version": 1,
+      "title": "逐行均匀图的显式平层UM编译与三半负载",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 从上述简单逐行均匀图编译：每(u,a)有parent机，u的selector在其任一parent时间1；每(a,e)的port在其parent时间1/d_u、在f_e(a)资源机时间1。",
+      "statement": "用同一标签及ceil-half资源匹配F：selector放选中parent，选中状态的F ports放对应外机，其余全部ports留各自parent。对d_u>0的左点，未选parent负载1，选中parent负载1+(d_u−|F∩δ(u)|)/d_u≤1+floor(d_u/2)/d_u≤3/2，外机≤1。故完整实际峰≤3/2；非空selector输入OPT≥1，得到该子类3/2近似。 孤立左点只有selector而无port，选中parent负载1、其它parent负载0；无selector且无port的空任务输入峰0。",
+      "quantifiers": "对每个合法显式编译输入，算法输出全部原任务同一完整分配；空图/孤立u单独处理。",
+      "assumptions": [
+        "编译前的简单图、均匀映射合同必须成立",
+        "全部未选状态的原port任务仍保留并在自己parent执行",
+        "处理d_u=0时不使用1/d_u"
+      ],
+      "scope": "限定平层编译子类，非任意UM识别器；不声称3/2在整个子类锐利或求精确OPT。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/全局基数与逐行均匀相关读出边界有限审查--审查.md",
+        "sha256": "daf5efa8d82171f728cceb41f21c0735801b1590686c37964a05d32af3c0c4ef",
+        "section": "5. 平层 unrelated-machines 编译和 `UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1`"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/全局基数与逐行均匀相关读出边界有限审查--审查.md",
+          "sha256": "daf5efa8d82171f728cceb41f21c0735801b1590686c37964a05d32af3c0c4ef",
+          "section": "4. 逐行均匀相关读出：`UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2`"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/全局基数与逐行均匀相关读出边界有限审查--审查.md",
+          "sha256": "daf5efa8d82171f728cceb41f21c0735801b1590686c37964a05d32af3c0c4ef",
+          "section": "6. 三个冻结证据和全仓比较"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/双轨阈值实际前沿与逐行均匀相关防护双源审查--审查.md",
+          "sha256": "5d77a177309257a8b3033c9b1de86e93feea5aa5c99e291b9be88d0625f6d276",
+          "section": "3. 逐行均匀相关读出来源"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/逐行均匀相关与强配置矩两源读后补录--审查.md",
+          "sha256": "aa09b3be98ccbcbc3d45f5ea54b92310ff0d75124a262c93e40bd46a88b587ce",
+          "section": "1. 逐行均匀相关读出：整数势、共同匹配与 flat-state 编译"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/unrelated_machines/row_uniform_correlated_guard_examples.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:examples/unrelated_machines/row_uniform_correlated_guard_examples.json",
+        "source:99fabfaf306e1766cd1e:evidence/runs/unrelated_machines/multirow_count_extension_audit.json",
+        "source:292abbaeaee297858760:evidence/runs/unrelated_machines/row_count_escape_audit.json",
+        "source:c7ca54100a256e0b0bd2:evidence/runs/unrelated_machines/row_uniform_correlated_guard_audit.json"
+      ]
+    },
+    {
+      "object_id": "UM-CONFIG-FINITE-COVER-v1",
+      "version": 1,
+      "title": "同型有限置换cover的CONFIG恒等、某cover实现与高围长坍缩",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 有限incidence图的q-cover：每机器/任务同数q复制，每原边给置换π_ij；job(j,a)只在(i,π_ij(a))以原时间执行，禁止改时间/加资格/跨type接线。",
+      "statement": "每个固定cover Q均有T_CONF(Q)=T_CONF(P)，且每份原实际σ可无损提升到每个Q。给原有理完整配置点y及共同分母q，可按配置socket双射和逐边部分置换补全构造某Q及峰≤T实际调度。因此min_{q,Q}OPT(Q)=T_CONF(P)，最小值取得；正OPT时不存在0/0问题。0/1配置基矩阵的Cramer/Hadamard给某实现q的log q多项式，显式q规模仍可能指数。任意固定g存在girth>g的cover达到同样T_CONF：先实现再取有限群的正则右作用cover，不能仅凭短词非恒等就断言无fixed point。四机七任务seed精确OPT5/3、T_CONF4/3，某q6接线OPT4/3，恒等q6接线仍5/3。",
+      "quantifiers": "∀固定同型cover配置阈值相等/原调度可提升；∀有理y∃依y选择的cover；∀固定围长g∃某实现最优阈值的高围长cover。",
+      "assumptions": [
+        "CONFIG含空并逐行质量1、逐任务恰覆盖1；≥1覆盖借向下封闭裁成恰1",
+        "共同分母须涵盖局部配置系数，不只边际坐标",
+        "高围长构造使用群H对自身regular作用；复合cover保全部type与分量"
+      ],
+      "scope": "纯cover不能自动保整数NO；高围长存在性不提供多项式显式规模、最小q、通用配置oracle、指定接线hardness或原实例整数解恢复。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/有限置换cover的配置等价与高围长坍缩审查--审查.md",
+        "sha256": "fa63d72fcf867447ec891256595aac50c4583c92d829149ca6942aeea85fa670"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/配置激活与有限覆盖增量审计--审查.md",
+          "sha256": "8a050e9939c5471a4d5ea4eb1bd1073a34575dff7c9a0c5f4f6590a08d31a32a",
+          "section": "5. 有限 cover 与高girth词"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/配置有限覆盖种子精确证书--审查.md",
+          "sha256": "512572e273e00f6e7903432c1f7d44512801058d4b9ee9b8f1fcb05cb3e6bd5d"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/配置覆盖坍缩与永久消元双源审查--审查.md",
+          "sha256": "10f241e63ab02a51c70a6e3d9e34d18be5f1c4a938c2380c84672a357b3e6fe3",
+          "section": "1. 有限置换 cover 与配置阈值的精确关系"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/配置证书有限置换cover的构造与独立有限复跑--计算.md",
+          "sha256": "11ab6f2425292d52493ca6dbde173b498bfd248e7f83c2ce219de1b42fa02e86"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/未归档配置证书批次与量词边界--审查.md",
+          "sha256": "e50f84daeb3534546c3a0269f3136f6362f9ecb708d764e9b1cc4e0d60d2dc5b",
+          "section": "3.2 q=6 的 4/3 目标配置"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/configuration_finite_cover_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/configuration_finite_cover_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/compact_config_probe_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/configuration_activation_support_loss_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/configuration_activation_two_sign_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/configuration_finite_cover_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/configuration_finite_cover_independent.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/unrelated_machines/configuration_finite_cover_seed.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:examples/unrelated_machines/configuration_finite_cover_seed.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/configuration_finite_cover_obstruction.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/configuration_finite_cover_obstruction.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/configuration_finite_cover.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/configuration_finite_cover_independent.py"
+      ]
+    },
+    {
+      "object_id": "UM-WEIGHTED-EXCESS-ZERO-DEFECT-TRAP-v1",
+      "version": 1,
+      "title": "加权excess规则的一条指定最大步历史终止于近二坏支撑",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 m≥3、0<ε<1且m>1/ε；q=1−1/m，β=(1−ε)/4；m台H与m台Z，big核心1，A home q/private β，F home1/m/private β。",
+      "statement": "存在平均m个真实OPT1原子的初态，以及明确m次最大核方向步（局部系数(1,−1,−(m−1),m−1)，步长1/m），保持任务与核心载荷行，合法删除低excess的Z行，最终固定A全home、F全private。终态N=m、秩m、核零且缺陷D=0，然而每个固定后完整支撑补全的峰都恰2−1/m。",
+      "quantifiers": "对每给定ε可选m，并存在所列一条实际合法规则历史；结论覆盖该终态全部原任务补全，不量化每种合法方向历史。",
+      "assumptions": [
+        "固定与删行必须按该加权excess规则；终态rank把任务行依赖扣除",
+        "每个原任务仍恰一次，全部固定工作计入负载",
+        "方向第一步即破坏big-count CONFIG条件"
+      ],
+      "scope": "规则层面指定历史的支撑安全反例；不是CONFIG保持历史、所有算法失败或复杂度下界。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/加权excess零缺陷终态的指定坏历史与审查范围--审查.md",
+        "sha256": "ad88213b239d5c67a2b3fe9aec1e63469800e979e690766b19e63ffb351539af"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/配置覆盖坍缩与永久消元双源审查--审查.md",
+          "sha256": "10f241e63ab02a51c70a6e3d9e34d18be5f1c4a938c2380c84672a357b3e6fe3",
+          "section": "2. 永久消元的零缺陷死锁"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/零缺陷与加权扇出边界双源审查--审查.md",
+          "sha256": "93c63ebf07dccbcfc3af817cf9901487328096b024e6f8f2bb61a12161627039",
+          "section": "1. weighted excess zero-defect trap"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/configuration_elimination_support_loss_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/configuration_elimination_support_loss_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/configuration_finite_cover_obstruction.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/configuration_finite_cover_obstruction.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/weighted_excess_zero_defect_trap_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/weighted_excess_zero_defect_trap_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/weighted_fanout_profile_boundary_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/weighted_fanout_profile_boundary_audit.json"
+      ]
+    },
+    {
+      "object_id": "UM-CONFIG-PRESERVING-ACTIVATION-SUPPORT-LOSS-v1",
+      "version": 1,
+      "title": "完整CONFIG单次激活最大步造成的精确支撑损失",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 输入显式m≥2,n≥1、完整CONFIG(1)点y*、正配置全部写出；E+为其正边际支撑，P+为删零端后的原输入。每job添私有R_j、每核心添filler及私有Q，另添单位anchor。 明确ℓ_i=Σ_j p_ij x*_ij≤1、S_i=Σ_{j:(i,j)∈E+}p_ij，固定0<ε<1、β=(1−ε)/4；原j私有端β，filler的home端ℓ_i、私有端β。",
+      "statement": "可构造真实OPT1的提升及共同实际最优分解；以每核心被激活的配置y*/m和单位私有填充形成初态。λ从1/m增至1的整段都有完整CONFIG(1)表示并保护核心载荷l_i；所给正方向最大步1−1/m，端点全部任务受剩余正支撑限制的最优值精确为max(1,OPT(P+))。反向最大端λ=0仍有最优补全，所以这里只证明一个坏符号。",
+      "quantifiers": "对每个显式合法y*按其实际列出长度构造；全任务支撑受限OPT为精确等式，非沿继承补全的单个下界。",
+      "assumptions": [
+        "输入必须给完整配置点，不从分数负载免费求y*",
+        "ℓ_i是原分数真实行负载，不是配置质量或列数；S_i是行正支撑处理时间总和，私有β和单位anchor按模型定义",
+        "无active原子的独立变体λ0=1/(m+1)可允许m1，不能悄悄扩大本标准m≥2合同"
+      ],
+      "scope": "一次合法删行/最大步的规则反例；不是任意方向、双符号、真circuit或一般算法下界。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/完整配置单次激活提升的精确支撑端点与两种初态--审查.md",
+        "sha256": "bf722ac2df040ae83f7ae2b089721813db506a07b72107e21d452dc2a89ecddd"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/配置激活与有限覆盖增量审计--审查.md",
+          "sha256": "8a050e9939c5471a4d5ea4eb1bd1073a34575dff7c9a0c5f4f6590a08d31a32a",
+          "section": "4. 支撑激活：两端 (5/4) 与中间 `OPT=1`"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/配置激活提升的一步与双符号支撑删除复跑--计算.md",
+          "sha256": "5fa8dbfbec65cee62c1b36318b558cb69b2987edd46b7d04ac544a27fa8d8817",
+          "section": "2. 一步激活：完整真实初态与CONFIG路径"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/configuration_elimination_support_loss_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/configuration_elimination_support_loss_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/compact_config_probe_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/configuration_activation_support_loss_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/configuration_activation_two_sign_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/configuration_finite_cover_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/configuration_finite_cover_independent.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/configuration_activation_support_loss.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/configuration_activation_two_sign.py"
+      ]
+    },
+    {
+      "object_id": "UM-CONFIG-PRESERVING-TWO-SIGN-SUPPORT-LOSS-v1",
+      "version": 1,
+      "title": "两副本真实半激活耦合的双符号最大步坏支撑",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 以前条显式CONFIG核为输入，另要求正边支撑二分色，每job至多两正端、每色至多一端；取两个互不交activation副本及各自anchor。",
+      "statement": "通过同一份逆CDF实际原子耦合得到λ_A=λ_B=1/2的真实最优凸分解；沿λ_A=1/2+θ、λ_B=1/2−θ保持整段完整CONFIG及保护行。两个最大符号θ=±1/2的所有剩余正支撑完整补全，其最优峰均精确max(1,OPT(P+))。不必作指数独立乘积分解。四核心七任务seed经3/4缩放有OPT(P+)=5/4。",
+      "quantifiers": "对满足额外二色正支撑假设的每显式输入；对两个指定最大符号均量化所有端点支撑补全。",
+      "assumptions": [
+        "二色条件作用于y*正端，不是任意资格图的自动性质",
+        "两副本共用一个真实半激活原子分布而非只拼一阶边际",
+        "两个副本任务与机器互不交，anchor均计入"
+      ],
+      "scope": "双符号直和方向反例，方向不是circuit；有限seed活坐标58、任务22、保护行8、秩30、核维28，不声称满秩/零缺陷。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/完整配置双符号直和提升的真实耦合与审查先验--审查.md",
+        "sha256": "bfd688c7bcd456f6d3396beaf65d46914075d47680c7c231fc72f6f3a442b101"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/配置覆盖坍缩与永久消元双源审查--审查.md",
+          "sha256": "10f241e63ab02a51c70a6e3d9e34d18be5f1c4a938c2380c84672a357b3e6fe3",
+          "section": "3. 双副本双符号与单环 circuit"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/配置激活提升的一步与双符号支撑删除复跑--计算.md",
+          "sha256": "5fa8dbfbec65cee62c1b36318b558cb69b2987edd46b7d04ac544a27fa8d8817",
+          "section": "3. 双符号：半激活真原子与精确非circuit秩"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/configuration_elimination_support_loss_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/configuration_elimination_support_loss_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/configuration_finite_cover_obstruction.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/configuration_finite_cover_obstruction.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/configuration_activation_support_loss.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/configuration_activation_two_sign.py"
+      ]
+    },
+    {
+      "object_id": "UM-CONFIG-PRESERVING-CIRCUIT-TWO-SIGN-SUPPORT-LOSS-v1",
+      "version": 1,
+      "title": "真单环CONFIG保持的两最大端点与全正支撑近二最优值",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 奇整数D≥3，L=D+2，N=DL；两色2L条rail K、2N个外机G、L个停车Q及N个Z；原任务U/F/H/E与所有有限端按正文显式定义。",
+      "statement": "三种实际基态及其N个同步旋转给真实OPT1初态，全部有限端均为正边际。H/E在G端组成一个4N简单交替环，方向支撑内秩4N−1、核维1，因而为支撑极小circuit。最大箱段两端为±γ（γ=(L−1)/(2L)）；整段有完整CONFIG(1)表示，不固定任何任务为唯一端，但两个端点各自所有正支撑完整实际调度的最优峰都精确2−1/D。保护行都达最小正excess ρ=(L−1)/L；取D>1/ε可使所列删除合法。",
+      "quantifiers": "对每奇D≥3的一般显式矩阵；两端精确OPT涉及任意全任务重排，不限三基态或继承的回填。",
+      "assumptions": [
+        "circuit是相对该保护矩阵的支撑极小，不称全空间最小cardinality方向",
+        "完整矩阵机器3N+3L、任务4N+2、有限边10N+2L",
+        "有理扩展参数的bit复杂度须含其自身编码长度；不写O(logD)掩去输入"
+      ],
+      "scope": "指定真circuit及两符号的支撑损失，非所有合法circuit均坏或所有算法不可能。D7的理论环秩251不冒称软件做过该次核空间计算；有限D3/5/7端点检查与一般证明分层。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/真单环双坏端点的三种实际基态与全支撑证明--审查.md",
+        "sha256": "4b9bfef00dfc30f05038bdd3b5089d75411d12cbe10942618f7f2a030a3df8e8"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/配置保环与高周girth有限审计--审查.md",
+          "sha256": "3c485488cea79e8addad3eeba0abe68152020b22b35deb5bd2b7e3004ae11ea4",
+          "section": "2. 配置保环 single-cycle endpoints"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/配置覆盖坍缩与永久消元双源审查--审查.md",
+          "sha256": "10f241e63ab02a51c70a6e3d9e34d18be5f1c4a938c2380c84672a357b3e6fe3",
+          "section": "3. 双副本双符号与单环 circuit"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/真单环审查的Exact先序与有理参数版本证据--审查.md",
+          "sha256": "c916b4676b7827add2587154a20ca14ad0ffcb901a054fe9a0812b0ee3ca4fc5"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/配置保真的真单环端点有限审计与有理版本--计算.md",
+          "sha256": "f464ac383323ae3dff443b84af6f4a8732b226b34ba4d34cd1f5110e1c71e555"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/configuration_preserving_single_cycle_endpoint_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/configuration_preserving_single_cycle_endpoint_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/configuration_preserving_single_cycle_endpoints_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/configuration_preserving_single_cycle_endpoints_rational_parameter_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/cactus_high_girth_configuration_gap_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/configuration_preserving_single_cycle_endpoints_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/configuration_preserving_single_cycle_endpoints_rational_parameter_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/cactus_high_girth_configuration_gap_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/configuration_finite_cover_obstruction.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/configuration_finite_cover_obstruction.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/configuration_preserving_single_cycle_endpoints.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md#4"
+      ]
+    },
+    {
+      "object_id": "UM-MULTIINPUT-MISSING-ONE-COUNT-CANDIDATE-v1",
+      "version": 1,
+      "title": "两实际YES见证下多输入缺一状态的坏数至多输入数",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 互不交输入A与输出B，r=|A|≥2、D=|B|≥2；关闭一机器只添不可迁移T预载。已给S_o(A开/B关)、S_c(A关/B开)两份峰≤T实际完整见证。ν_i为A全关且恰b_i关的真实OPT。",
+      "statement": "真正坏状态数|{i:ν_i>3T/2}|≤r；可按显式两见证总位长多项式输出至少max(0,D−r)个不同目标状态及各自完整峰≤3T/2调度。证明固定μ=S_c中A的零时间任务在μ端，余任务以λ=S_o接收端时间构造列预算≤T的权；从各b_i作严格> T/2最小闭包，闭包两两不交，每输入列至多超半一次，故至多r个不获保证索引。每次拼接是同一全部任务分配。wire例恰min(r,D)个状态为2T；D>r的二叉树例所有目标恰3T/2。",
+      "quantifiers": "对每个合法基础矩阵、T≥0及两已给实际见证；对所有目标计数，算法不输入未知ν_i。D≤r时不给存在三半好状态。",
+      "assumptions": [
+        "严格超半闭包不能改成≥半；不得人为加点",
+        "μ在A的零端任务仍逐件保留，不能全局删除",
+        "关闭保留所有基础资格；T0沿实际见证给零峰无需除法"
+      ],
+      "scope": "多输入坏状态计数与静态完整拼接；不蕴含r>1任意两状态和≤3T，也不寻找未知两YES、提供动态迁移路径、source NO或一般UM算法。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。 原来源明确为未入current的candidate；本页含完整解析证明，可按上述明确输入合同登记数学结论，同时保未canonical提升、无实现大run、无外审、新颖性未认证等历史，不把登记写成原有可靠Claim账本已接受。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/多输入缺一输出的严格半闭包与坏状态计数--审查.md",
+        "sha256": "9059abcc53adf67051df94369557c885b4febb231173107bfc8c2a02ec54a55b"
+      },
+      "evidence": [],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/unrelated-machines/R-56ef7110b0a749ac8b85029bd8c6dd61/multiple_input_missing_one_count_candidate.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/unrelated-machines/R-56ef7110b0a749ac8b85029bd8c6dd61/multiple_input_missing_one_count_candidate.md"
+      ]
+    },
+    {
+      "object_id": "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1",
+      "version": 1,
+      "title": "弱H2共同四阶矩加同一一阶CONFIG仍有趋二gap",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 弱H2(T)：Boolean/任务one-hot商代数上的共同degree4泛函L，M2 PSD、各机器degree1负载localizer PSD、到次数3 one-hot；同一一阶L(x_e)有完整CONFIG(T)，不同机内高阶不强制与配置行匹配。",
+      "statement": "对k≥3，b=k²、r=b+1、N=b+k的稀释星族，真实OPT=2−1/k，而弱H2(1)可行，故该松弛gap上确界为2。证书将1/k激活块、真实X双射与非激活Y注入、激活块Y/Z的fractional multislice四阶矩张量后混合；multislice矩μ(S)=Π_a(t)_{c_a}/(N)_q（q≤4）的M2 PSD由原全文的harmonic block证明，活跃localizer为0，其余为真实Gram的非负组合。逐机CONFIG与共同一阶精确相同，但其二阶未共享。",
+      "quantifiers": "∀整数k≥3；对全部次数≤4的共同矩/全部机器localizer同时成立；非每小块各自一份互不相容矩。",
+      "assumptions": [
+        "多slice PSD所用m≥3、N≥m+1与正有理t按原具体参数满足",
+        "矩必须在同一Boolean/one-hot商中，而非PSD小矩阵分别拼接",
+        "CONFIG只共享一阶，row2/rawK2/SA3/SH3或全局joint不能替代此合同"
+      ],
+      "scope": "明确弱H2松弛的完整可行证书及整数gap，不是OPT-hardness、一般舍入算法下界或强row2 gap。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/弱H2强行矩与加权扇出边界双源审查--审查.md",
+        "sha256": "e8498641fab19fe55c58dcef00d84f6d5f5683cd1c8de4f7e388090f1ad2425b",
+        "section": "2. 弱 H2：同一一阶 CONFIG 加全局四阶矩仍可趋二"
+      },
+      "evidence": [
+        {
+          "path": "tools/evidence/root-seed-multislice-and-global-escape-corrections/original/research/current/unrelated_machines/weak_h2_configuration_moment_gap.md",
+          "sha256": "2e6aa07ed9e6cd3401eaa2560429e71af4932cdbb7633ff7a54a9ad973cb5dec"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/槽包络稀疏配置转移与矩证书有限审查--审查.md",
+          "sha256": "d1157bcfece87df1a24e97c12f410f5486bcc133dee775b05693a4f7fab67fc6",
+          "section": "5. 弱 H2 配置矩缺口与混合张量证书"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/全阶矩提取冻结审查增量--审查.md",
+          "sha256": "78d4dab0e230bfc33541b284230f0525fee46a7ed6823aa51d48273b979277a9",
+          "section": "5.2 C2/弱 H2 的近二间隙"
+        }
+      ],
+      "sources": [
+        "source:6a55a2b4d6d9bbb39e0f:research/current/unrelated_machines/weak_h2_configuration_moment_gap.md",
+        "source:9b272a005d864cfa241d:research/current/unrelated_machines/weighted_fanout_profile_boundary.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/weak_h2_configuration_moment_gap_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/weighted_fanout_profile_boundary_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/weak_h2_configuration_moment_gap.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/weak_h2_configuration_moment_gap_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/slot_envelope_identity_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/slot_envelope_identity_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/sparse_conditioned_configuration_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/sparse_conditioned_configuration_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/star_configuration_transfer_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/star_configuration_transfer_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/token_label_hypergeometric_lift_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/token_label_hypergeometric_lift_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/weak_h2_configuration_moment_gap_audit.json"
+      ]
+    },
+    {
+      "object_id": "UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1",
+      "version": 1,
+      "title": "同一稀释星族共享机内二阶CONFIG后的阈值恰整数OPT",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 使用上条同一稀释星族，但共同degree4 L的同机不同端二阶须与完整CONFIG行匹配，M2仍PSD。",
+      "statement": "该强化在此族的可行阈值精确为θ_k=2−1/k。T<2时单位R/G行配置至多一个任务，故同机不同端pair为0；M2零范数向量的正交性推出对外部固定端f的条件容量Σ_e L(x_f x_e)≤L(x_f)。中心V有时间1/k的Z，必须另用其配置条件上界q=floor(k(T−1))。若T<θ_k则q≤k−2；条件于中心X会迫≥b+k−q的质量进b+1本地单位槽，矛盾，从而所有中心X质量0；N个X只能进N−1个全球单位槽又矛盾。T=θ_k用真实最优调度Dirac点达到。",
+      "quantifiers": "对k≥3此具体族、所有T<θ_k不可行，T=θ_k可行；不量化一般UM。",
+      "assumptions": [
+        "T<1的拒绝由基本单位任务覆盖另行处理；条件计数段在1≤T<θ_k",
+        "单位R/G同机pair为0不能套到混有small的V行",
+        "二阶必须与同一CONFIG行共享，不只是有某个相同一阶CONFIG证书"
+      ],
+      "scope": "此族上的强row-pair精确校准；不提供一般强H2精确性、gap、舍入算法或多项式配置oracle。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/弱H2强行矩与加权扇出边界双源审查--审查.md",
+        "sha256": "e8498641fab19fe55c58dcef00d84f6d5f5683cd1c8de4f7e388090f1ad2425b",
+        "section": "2.3 强化合同的精确校准"
+      },
+      "evidence": [
+        {
+          "path": "tools/evidence/root-seed-multislice-and-global-escape-corrections/original/research/current/unrelated_machines/weak_h2_configuration_moment_gap.md",
+          "sha256": "2e6aa07ed9e6cd3401eaa2560429e71af4932cdbb7633ff7a54a9ad973cb5dec"
+        }
+      ],
+      "sources": [
+        "source:6a55a2b4d6d9bbb39e0f:research/current/unrelated_machines/weak_h2_configuration_moment_gap.md",
+        "source:9b272a005d864cfa241d:research/current/unrelated_machines/weighted_fanout_profile_boundary.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/weak_h2_configuration_moment_gap_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/weighted_fanout_profile_boundary_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/weak_h2_configuration_moment_gap.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/weak_h2_configuration_moment_gap_audit.json"
+      ]
+    },
+    {
+      "object_id": "UM-WEIGHTED-FANOUT-PROFILE-BOUNDARY-v1",
+      "version": 1,
+      "title": "两实际YES下加权扇出profile预算与整等号面",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 独立预载接口：互异输入a与q≥2个输出B；关闭只添唯一端T真实预载、不删基础边。已给实际S1(a开/B全关)、S2(a关/B全开)，均峰≤T。",
+      "statement": "对任意K⊆B、k=|K|≥2及显式有理β_i≥0、Σ_Kβ_i=1，可确定性位多项式输出某i∈K和状态“a及K\\{i}关闭、其它输出开放”的完整实际调度，峰≤(2−β_i)T。相应真实最优值μ_{K,i}满足Σ_K μ_{K,i}≤(2k−1)T。用S1的源端时间行权作顺序加权闭包，取含a的颜色并逐任务S1/S2拼接；全机负载在同一分配中计费。加权星任务(a:ω_iT,b_i:T)给μ_{B,i}=(2−ω_i)T，达到整个预算面；每个k≥2、T>0均锐。",
+      "quantifiers": "∀合法输入与已给两见证、∀K大小≥2、∀β单纯形；算法输入不含未知μ，预算用其作存在性反证。",
+      "assumptions": [
+        "权w_uv按S1源端时间p_uj，不能换成接收端时间",
+        "所有输出在S1只可承担零基础工作；零时间任务仍存在",
+        "T0在相同q/K域逐状态零峰处理；输出复杂度按实际基础任务数与两见证/β总位长"
+      ],
+      "scope": "给定两个实际YES的参数化preload接口，不从CONFIG/弱矩免费构造两见证；近二单输出开放星不提供源问题hardness。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/弱H2强行矩与加权扇出边界双源审查--审查.md",
+        "sha256": "e8498641fab19fe55c58dcef00d84f6d5f5683cd1c8de4f7e388090f1ad2425b",
+        "section": "3. 加权扇出预载接口：有两个实际 YES 才有正面预算"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/tools/evidence/um-following-actual-checks-primary/comparison/research/current/unrelated_machines/weighted_fanout_profile_boundary.md",
+          "sha256": "7bb7e967d492751f0f92fb547608af56e5aaffff387dca559b54d20ef283d78d"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/零缺陷与加权扇出边界双源审查--审查.md",
+          "sha256": "93c63ebf07dccbcfc3af817cf9901487328096b024e6f8f2bb61a12161627039",
+          "section": "2. weighted fanout profile boundary"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/加权扇出二度菜单夹具与历史入口三源审查--审查.md",
+          "sha256": "2470a0e216743d58ca7ac695e7d874364eb76d35c611c1a1223fb5c683f9774b",
+          "section": "加权扇出 profile star（`0c3bf6d24f1ba76ead00`）"
+        }
+      ],
+      "sources": [
+        "source:6a55a2b4d6d9bbb39e0f:research/current/unrelated_machines/weak_h2_configuration_moment_gap.md",
+        "source:9b272a005d864cfa241d:research/current/unrelated_machines/weighted_fanout_profile_boundary.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/weak_h2_configuration_moment_gap_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/weighted_fanout_profile_boundary_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/weak_h2_configuration_moment_gap.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/weak_h2_configuration_moment_gap_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/weighted_excess_zero_defect_trap_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/weighted_excess_zero_defect_trap_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/weighted_fanout_profile_boundary_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/weighted_fanout_profile_boundary_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/unrelated_machines/weighted_fanout_profile_star.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/unrelated_machines/weighted_menu_joint_fixtures.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/README.md"
+      ]
+    },
+    {
+      "object_id": "UM-FANOUT-MISSING-ONE-THREE-HALVES-v1",
+      "version": 1,
+      "title": "至少两个输出的缺一真实状态两两三T预算与三半锐界",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 独立预载接口：互异输入a与q≥2个输出B；关闭只添唯一端T真实预载、不删基础边。已给实际S1(a开/B全关)、S2(a关/B全开)，均峰≤T。",
+      "statement": "令ν_i为关闭a和恰b_i、其余输出开放的真实OPT。任意不同u,v有ν_u+ν_v≤3T；由两已给实际见证可输出这两个状态之一的完整峰≤3T/2调度。因此至少有一个三半状态、至多一个ν_i>3T/2，并有Σ_iν_i≤3qT/2。每个q≥2、T>0均有全binarytree实例使所有ν_i=3T/2：每父子任务父端T/2、子端T。不能把至多一个坏改成所有好，三输出控制例为(5/4,7/4,1)。",
+      "quantifiers": "q≥2承重；每对不同输出、全部目标真实最优值同时满足预算；可构造三半只需给该对及实际见证。",
+      "assumptions": [
+        "q至少2，不能把空/单输出退化语句扩到pair推出的存在或总和结论",
+        "关闭仍有原资格并计真实预载",
+        "T0在原域平凡，锐性只声称T>0"
+      ],
+      "scope": "限定独立预载模型的缺一预算；q1只有一般2T界，一件(a:T,b:T)的双关闭目标OPT2T，故不在三半定理域。无源NO与未知YES求解。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/弱H2强行矩与加权扇出边界双源审查--审查.md",
+        "sha256": "e8498641fab19fe55c58dcef00d84f6d5f5683cd1c8de4f7e388090f1ad2425b",
+        "section": "3. 加权扇出预载接口：有两个实际 YES 才有正面预算"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/tools/evidence/um-following-actual-checks-primary/comparison/research/current/unrelated_machines/weighted_fanout_profile_boundary.md",
+          "sha256": "7bb7e967d492751f0f92fb547608af56e5aaffff387dca559b54d20ef283d78d"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/零缺陷与加权扇出边界双源审查--审查.md",
+          "sha256": "93c63ebf07dccbcfc3af817cf9901487328096b024e6f8f2bb61a12161627039",
+          "section": "2. weighted fanout profile boundary"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/加权扇出二度菜单夹具与历史入口三源审查--审查.md",
+          "sha256": "2470a0e216743d58ca7ac695e7d874364eb76d35c611c1a1223fb5c683f9774b",
+          "section": "加权扇出 profile star（`0c3bf6d24f1ba76ead00`）"
+        }
+      ],
+      "sources": [
+        "source:6a55a2b4d6d9bbb39e0f:research/current/unrelated_machines/weak_h2_configuration_moment_gap.md",
+        "source:9b272a005d864cfa241d:research/current/unrelated_machines/weighted_fanout_profile_boundary.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/weak_h2_configuration_moment_gap_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/weighted_fanout_profile_boundary_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/weak_h2_configuration_moment_gap.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/weak_h2_configuration_moment_gap_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/weighted_excess_zero_defect_trap_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/weighted_excess_zero_defect_trap_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/weighted_fanout_profile_boundary_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/weighted_fanout_profile_boundary_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/unrelated_machines/weighted_fanout_profile_star.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/unrelated_machines/weighted_menu_joint_fixtures.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/README.md"
+      ]
+    },
+    {
+      "object_id": "M-9a4d60726a564ed493cd4e84df82cd0e",
+      "version": 1,
+      "title": "固定二元H的有理局部多面体点恰为有限覆盖投影",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "固定有限二元校验矩阵H及其Tanner图；原码C=ker_F2 H。每check局部偶字凸包相交为P(H)；M-cover逐原incidence用置换连接M份变量/校验，覆盖码字按每变量类型平均投影ω。Q(H)是全部有限cover投影的并。",
+      "statement": "Q(H)=P(H)∩Q^n，且闭包Q(H)=P(H)；每个P顶点有理且在某有限cover可实现。给有理局部偶字分解，取坐标与局部系数共同分母M，以每边0/1 socket数相等作双射，得到实际覆盖码字。",
+      "quantifiers": "∀固定H、∀有理ν∈P，∃依ν选择的有限M与接线；反向∀有限cover码字，其投影在P。",
+      "assumptions": [
+        "M须涵盖局部凸系数分母，不只投影ν分母",
+        "接线按点选择，存在某wiring而非任意wiring",
+        "局部码是二元偶校验，不能直接当调度负载配置"
+      ],
+      "scope": "组合凸几何定理，与信道无关；不提供最小M、统一多项式显式cover阶数或一般高效译码。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md",
+        "sha256": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+        "section": "2. 基本多面体与有理点的精确实现"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/tools/evidence/Boss7-vontobel-restored/vontobel-koetter-2005-v1.pdf",
+          "sha256": "d6b6f7868f5a80220586b0394a55c244f6732b787e4aa9945baf0369167366cf"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/Boss7-vontobel-restored/README.md",
+          "sha256": "86170e6d862cf4264f53f9153bd05746e18a1ecd5a1f7c20b32214248e42d4da"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/vontobel_koetter_2005_graph_cover_decoding_v1.pdf",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/vontobel_koetter_2005_graph_cover_decoding_v1.pdf",
+        "Vontobel–Koetter 2005 v1 Proposition 10; Appendix A.1 Lemmas 55–58"
+      ]
+    },
+    {
+      "object_id": "M-655414c8f3494d3fab373b7c3b5a7e40",
+      "version": 1,
+      "title": "有限LLR下归一图覆盖译码与LP的共同最优值",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "固定有限二元校验矩阵H及其Tanner图；原码C=ker_F2 H。每check局部偶字凸包相交为P(H)；M-cover逐原incidence用置换连接M份变量/校验，覆盖码字按每变量类型平均投影ω。Q(H)是全部有限cover投影的并。 给λ∈R^n各坐标有限，覆盖观测按类型复制。",
+      "statement": "把覆盖似然以1/M归一并去观测常数后，min_{ω∈Q(H)}〈ω,λ〉=min_{ω∈P(H)}〈ω,λ〉；有一个共同的有理最优顶点在有限cover取得。整面平局须采用相容顶点选择，不能指定无理LP最优点并声称其精确有限cover实现。",
+      "quantifiers": "∀固定H及有限成本λ，最优值相等且存在共同可实现最优点；不声称所有最优LP点均可精确有限实现。",
+      "assumptions": [
+        "比较不同覆盖长度必须保1/M",
+        "信道推导用二元输入无记忆均匀先验的标准LLR；纯有限成本等值不额外要求输出对称",
+        "BEC无限LLR另用硬固定位置，不能代入本有限成本合同"
+      ],
+      "scope": "GCD/LP目标及相容tie等价，不是SPA/MSA/MPID的动态收敛、迭代界或算法同一性。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md",
+        "sha256": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+        "section": "4. 归一化图覆盖译码及其与消息传递的边界"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md",
+          "sha256": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+          "section": "3. 信道合同与LP译码"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/Boss7-vontobel-restored/vontobel-koetter-2005-v1.pdf",
+          "sha256": "d6b6f7868f5a80220586b0394a55c244f6732b787e4aa9945baf0369167366cf"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/vontobel_koetter_2005_graph_cover_decoding_v1.pdf",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/vontobel_koetter_2005_graph_cover_decoding_v1.pdf",
+        "Vontobel–Koetter 2005 v1 Proposition 22"
+      ]
+    },
+    {
+      "object_id": "M-1b373ae082784eac8a0cb3bd63b2797a",
+      "version": 1,
+      "title": "基本锥描述、极射线实现与未缩放计数的正确子集关系",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "固定有限二元校验矩阵H及其Tanner图；原码C=ker_F2 H。每check局部偶字凸包相交为P(H)；M-cover逐原incidence用置换连接M份变量/校验，覆盖码字按每变量类型平均投影ω。Q(H)是全部有限cover投影的并。 K(H)=conic P(H)，Z(H)是覆盖码字按变量类型未归一计数。",
+      "statement": "K(H)恰为ω≥0且每check j、每i∈I_j满足ω_i≤Σ_{h∈I_j\\{i}}ω_h的锥；任意锥向量可充分小正缩放进P。每条非零极射线含有可实现覆盖计数的正倍数。安全结论Z(H)⊆K(H)∩Z^n，且z mod2属于C；不能写成原v1 Lemma24误印的整数点等式。H=(1 1 1)、z=(1,1,1)满足锥不等式但奇总和，不可能由覆盖偶字计数，否定该等式。",
+      "quantifiers": "∀固定H的整个实锥；∀未缩放cover计数的子集/模2约束；∀非零极射线∃某正倍数实现。",
+      "assumptions": [
+        "不把一般实锥向量直接当有限cover投影",
+        "原Lemma26的完整消元不等式推导引自其[32,52]，成熟页保留该文献归属",
+        "minimal pseudocodeword指极射线而非已最小化某种信道权"
+      ],
+      "scope": "正确锥描述与误印隔离。展示的最小反例保在此Claim的objections/evidence，不另登记错误原式proved。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。 原v1印刷Lemma24等式已被精确奇偶反例否定；本对象只登记安全子集、锥和射线陈述。未重建外引扩展表示，表示计数不是译码复杂度下界。",
+      "body": {
+        "path": "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md",
+        "sha256": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+        "section": "5. 基本锥、极射线和表示复杂度"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md",
+          "sha256": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+          "section": "确定错误、表达缺口与安全结论"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/Boss7-vontobel-restored/vontobel-koetter-2005-v1.pdf",
+          "sha256": "d6b6f7868f5a80220586b0394a55c244f6732b787e4aa9945baf0369167366cf"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/Boss7-vontobel-restored/README.md",
+          "sha256": "86170e6d862cf4264f53f9153bd05746e18a1ecd5a1f7c20b32214248e42d4da"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/vontobel_koetter_2005_graph_cover_decoding_v1.pdf",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/vontobel_koetter_2005_graph_cover_decoding_v1.pdf"
+      ]
+    },
+    {
+      "object_id": "M-fe3ac5a7f1374a24a221eb5c26172625",
+      "version": 1,
+      "title": "Tanner森林的覆盖分解与基本多面体整数性",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "固定有限二元校验矩阵H及其Tanner图；原码C=ker_F2 H。每check局部偶字凸包相交为P(H)；M-cover逐原incidence用置换连接M份变量/校验，覆盖码字按每变量类型平均投影ω。Q(H)是全部有限cover投影的并。",
+      "statement": "若Tanner图是有限森林，则任意M-cover经每个分量重标号后分解成M份原森林，覆盖码字平均是原码字有理凸组合；结合有理覆盖实现及闭包，P(H)=conv C。因此该域GCD/LP与块ML最优值一致。",
+      "quantifiers": "∀有限Tanner森林H，∀有限M及其所有接线；森林各分量独立处理。",
+      "assumptions": [
+        "必须无环；仅稀疏或大围长但有环不足",
+        "以块ML最优值比较，平局按码字顶点选择"
+      ],
+      "scope": "无环特例，不含一般LDPC图或含环MPID算法等价。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md",
+        "sha256": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+        "section": "5. 基本锥、极射线和表示复杂度"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/tools/evidence/Boss7-vontobel-restored/vontobel-koetter-2005-v1.pdf",
+          "sha256": "d6b6f7868f5a80220586b0394a55c244f6732b787e4aa9945baf0369167366cf"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/vontobel_koetter_2005_graph_cover_decoding_v1.pdf",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/vontobel_koetter_2005_graph_cover_decoding_v1.pdf",
+        "Vontobel–Koetter 2005 v1 Lemma 28; Appendix A.5"
+      ]
+    },
+    {
+      "object_id": "M-66b1b61e046b4b8f8e4cc949b1d3322a",
+      "version": 1,
+      "title": "信道伪权的尺度、两候选概率与比较链",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "固定有限二元校验矩阵H及其Tanner图；原码C=ker_F2 H。每check局部偶字凸包相交为P(H)；M-cover逐原incidence用置换连接M份变量/校验，覆盖码字按每变量类型平均投影ω。Q(H)是全部有限cover投影的并。 非零ω∈R_+^n；AWGN BPSK参数E_c>0,N_0>0，独立噪声且发送全零。",
+      "statement": "w_AWGN=||ω||_1²/||ω||_2²，w_BEC=|suppω|，w_max-frac=||ω||_1/||ω||∞，w_frac=||ω||_1；w_BSC=2e，其中降序坐标累计分段线性函数F满足F(e)=F(n)/2（可非整数）。只比较0与ω时错误概率为Q(sqrt((2E_c/N_0)w_AWGN))。前四种信道/比例权正缩放不变，fractional不变性不成立。0≤ω≤1时w_frac≤w_max-frac≤w_AWGN≤w_BEC，及w_frac≤w_max-frac≤w_BSC≤w_BEC；AWGN/BSC无普遍大小关系。非负锥组合的四种缩放不变权不小于参与向量的最小权，故其最小值可从P非零顶点移到K\\{0}，fractional最小值不能如此移锥。",
+      "quantifiers": "定义/比较对所有指定域非零向量；概率只针对给定两候选，零向量各权另约定0。",
+      "assumptions": [
+        "全零无损归约若用于整码错误率还需二元线性、输出对称信道与对称译码器",
+        "BSC累计函数跨格线性插值，不取简单整数多数",
+        "权比较含fractional的链需要ω≤1"
+      ],
+      "scope": "伪权及pairwise几何，不是全部候选竞争后的块错误率；不将Hamming/BSC概率公式直接换权，不以支撑代幅度。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md",
+        "sha256": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+        "section": "6. 伪权：同一锥在不同信道上的不同尺度"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md",
+          "sha256": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+          "section": "3. 信道合同与LP译码"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/Boss7-vontobel-restored/vontobel-koetter-2005-v1.pdf",
+          "sha256": "d6b6f7868f5a80220586b0394a55c244f6732b787e4aa9945baf0369167366cf"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/vontobel_koetter_2005_graph_cover_decoding_v1.pdf",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/vontobel_koetter_2005_graph_cover_decoding_v1.pdf"
+      ]
+    },
+    {
+      "object_id": "M-5e9f212b88f34a0c8cdcb0e74e582886",
+      "version": 1,
+      "title": "正则H的canonical completion与次线性最小AWGN伪权上界",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "固定有限二元校验矩阵H及其Tanner图；原码C=ker_F2 H。每check局部偶字凸包相交为P(H)；M-cover逐原incidence用置换连接M份变量/校验，覆盖码字按每变量类型平均投影ω。Q(H)是全部有限cover投影的并。 统一校验度d_c≥2，根变量所在分量的距离2t变量取ω_i=(d_c−1)^−t，其余分量取0。",
+      "statement": "该canonical completion满足基本锥不等式。固定整数3≤d_v<d_c时，每个长度n的(d_v,d_c)正则H都有w_AWGN^min(H)≤[d_v(d_v−1)/(d_v−2)]² n^β，β=log((d_v−1)²)/log((d_v−1)(d_c−1))<1。树状层数上界与衰减几何和给||ω||_2²≥1、||ω||_1≤d_v/(d_v−2)(d_v−1)^t*，故固定度表示族的最小AWGN权/n→0。",
+      "quantifiers": "completion锥可行对d_c≥2；次线性上界仅3≤d_v<d_c固定且n按族增长。断连图取任一分量，其大小≤n。",
+      "assumptions": [
+        "根分量外置0，不能假装断连图全局直径有限",
+        "不将公式延至d_v=2零分母或d_v≥d_c",
+        "canonical completion未必给真正最小伪权"
+      ],
+      "scope": "特定AWGN最小伪权上界；不推出码Hamming距离次线性、BSC权次线性、一般girth坏性或调度困难性。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md",
+        "sha256": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+        "section": "7. Canonical completion与AWGN伪权次线性上界"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/tools/evidence/Boss7-vontobel-restored/vontobel-koetter-2005-v1.pdf",
+          "sha256": "d6b6f7868f5a80220586b0394a55c244f6732b787e4aa9945baf0369167366cf"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/vontobel_koetter_2005_graph_cover_decoding_v1.pdf",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/vontobel_koetter_2005_graph_cover_decoding_v1.pdf",
+        "Vontobel–Koetter 2005 v1 Lemma 48, Proposition 49, Corollary 50; A.12–A.13"
+      ]
+    },
+    {
+      "object_id": "M-d916ae59215a47a0af7661c0748ab981",
+      "version": 1,
+      "title": "停止集恰为基本多面体某点的正支撑",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "固定有限二元校验矩阵H及其Tanner图；原码C=ker_F2 H。每check局部偶字凸包相交为P(H)；M-cover逐原incidence用置换连接M份变量/校验，覆盖码字按每变量类型平均投影ω。Q(H)是全部有限cover投影的并。",
+      "statement": "S是停止集（每个与S相邻的check至少有两个S邻居），当且仅当S=suppω对某ω∈P(H)。正向由singleton锥约束，反向1_S∈K(H)后作充分小的正缩放进入P；因此停止集刻画支撑而不决定坐标幅度。",
+      "quantifiers": "∀固定H及变量集合S，包括空集对应零向量。",
+      "assumptions": [
+        "校验邻居数按原二元Tanner图；支撑是严格正坐标集合",
+        "反向不声称1_S本身必在P"
+      ],
+      "scope": "BEC支撑机制，不足以恢复AWGN权或统一trapping-set动力学；near-codeword经验讨论未升级为定量最近点定理。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md",
+        "sha256": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+        "section": "8. 停止集、near-codewords与冗余校验"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/tools/evidence/Boss7-vontobel-restored/vontobel-koetter-2005-v1.pdf",
+          "sha256": "d6b6f7868f5a80220586b0394a55c244f6732b787e4aa9945baf0369167366cf"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/vontobel_koetter_2005_graph_cover_decoding_v1.pdf",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/vontobel_koetter_2005_graph_cover_decoding_v1.pdf",
+        "Vontobel–Koetter 2005 v1 Proposition 51"
+      ]
+    },
+    {
+      "object_id": "M-3262fb2c84db47bfb4f4bcab6e9408d4",
+      "version": 1,
+      "title": "森林行和冗余校验与围长内有限行和不收紧P",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "固定有限二元校验矩阵H及其Tanner图；原码C=ker_F2 H。每check局部偶字凸包相交为P(H)；M-cover逐原incidence用置换连接M份变量/校验，覆盖码字按每变量类型平均投影ω。Q(H)是全部有限cover投影的并。",
+      "statement": "增加若干原H行的模2和不改变原码且只能缩小P；若参与一个新行的原行诱导Tanner子图为森林，该新行已被原局部凸包蕴含，故P不变。每个新行各自满足此条件时可同时加入。若原图围长为有限偶数g，则加入所有至多r个原行的模2和所得R_r(H)，在r≤(g−2)/2时满足R_r(H)=P(H)。",
+      "quantifiers": "∀固定H、∀满足森林条件的新行及其集合；有限偶围长条件下∀整数r≤(g−2)/2。",
+      "assumptions": [
+        "行和在F2，诱导图包括所选check及其相邻变量",
+        "森林定理应用于所选子系统再与其余约束相交"
+      ],
+      "scope": "有限行和不收紧的准确条件；不能推出加全部对偶行总得conv C，也不能反称有4环必收紧或译码必变坏。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md",
+        "sha256": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+        "section": "8. 停止集、near-codewords与冗余校验"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/tools/evidence/Boss7-vontobel-restored/vontobel-koetter-2005-v1.pdf",
+          "sha256": "d6b6f7868f5a80220586b0394a55c244f6732b787e4aa9945baf0369167366cf"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/vontobel_koetter_2005_graph_cover_decoding_v1.pdf",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/vontobel_koetter_2005_graph_cover_decoding_v1.pdf",
+        "Vontobel–Koetter 2005 v1 Lemma 52, Corollaries 53–54"
+      ]
+    },
+    {
+      "object_id": "M-bf7de96d319e47a3bb17c74058cd866c",
+      "version": 1,
+      "title": "真单环全局有效cut拒绝全正CONFIG给定点的真实分解",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 使用奇D≥3、L=D+2真单环v1；x0为其真实OPT1初态，x+为一个最大circuit端点。",
+      "statement": "全部实际T1调度满足Σ_t x_(G_{1,t},H_t)≥D−1。取δ=1/D²，xδ=(1−δ)x+ +δx0在完整CONFIG(1)且全部有限端严格正，却违反该cut，所以不在实际T1调度凸包。其正支撑仍是整个原矩阵、真实OPT仍1，故拒绝给定点的凸分解不能据此对实例报FAIL。",
+      "quantifiers": "∀奇D≥3；cut对该矩阵所有实际T1原子成立；给出一个精确全正有理CONFIG点违反。",
+      "assumptions": [
+        "给定点分解判断与存在某个实际调度是不同量词",
+        "使用同一完整原矩阵，不能只继承某基态/预定补全比较"
+      ],
+      "scope": "给定点的global-hull切面反例；不关闭寻找其它真实点或整数调度的义务。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/真单环给定点分解拒绝与低停车扩域候选--审查.md",
+        "sha256": "965ef6bd33ad5f943d9b186f588f54856aa55ddb957d3e59eb3c8fdc33d7bf86",
+        "section": "全段CONFIG和给定点拒绝"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/真单环给定点分解拒绝与低停车扩域候选--审查.md",
+          "sha256": "965ef6bd33ad5f943d9b186f588f54856aa55ddb957d3e59eb3c8fdc33d7bf86",
+          "section": "已核v1的精确对象"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/真单环双坏端点的三种实际基态与全支撑证明--审查.md",
+          "sha256": "4b9bfef00dfc30f05038bdd3b5089d75411d12cbe10942618f7f2a030a3df8e8"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/unrelated-machines/R-56ef7110b0a749ac8b85029bd8c6dd61/support_safe_motion_and_point_regeneration_questions.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/unrelated-machines/R-56ef7110b0a749ac8b85029bd8c6dd61/support_safe_motion_and_point_regeneration_questions.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/configuration_preserving_single_cycle_endpoint_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/configuration_preserving_single_cycle_endpoint_review.md"
+      ]
+    },
+    {
+      "object_id": "M-a5a6789597834992bbae0e9945b256e1",
+      "version": 1,
+      "title": "互素D与大L的低停车真单环扩域候选",
+      "kind": "conjecture",
+      "truth_status": "conjecture",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 候选改用D≥2、L≥D+2、gcd(D,L)=1、N=DL，并延长rail尾段；不倒改原奇D,L=D+2已证v1。",
+      "statement": "候选共同边际p=(D+1)/(2L)、q=(2L−D−3)/(2L)，对应非对称箱段[−p,q]；候选断言整个指定段可配置保持且两端正支撑整数OPT仍2−1/D。取L=D²+1可使停车负载D/L→0。",
+      "quantifiers": "拟对全部上述互素参数成立，当前只保候选和明确待核算式，未用有限标量检查充当一般证明。",
+      "assumptions": [
+        "延长尾段后须完整重数实际原子并重核每个有限端边际",
+        "需重新证明端点全正支撑下界、CONFIG完整性和最大箱步",
+        "原v1不能自动作新域的证明"
+      ],
+      "scope": "后续低停车扩域研究对象；不与v1已证真circuit定理合并。",
+      "objections": "来源明确为未来v2候选，完整原子计数与后置独立审查尚未完成；登记不提升为proved，不重跑旧标量程序。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/真单环给定点分解拒绝与低停车扩域候选--审查.md",
+        "sha256": "965ef6bd33ad5f943d9b186f588f54856aa55ddb957d3e59eb3c8fdc33d7bf86",
+        "section": "未来v2：低停车负载而不倒改v1"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/真单环给定点分解拒绝与低停车扩域候选--审查.md",
+          "sha256": "965ef6bd33ad5f943d9b186f588f54856aa55ddb957d3e59eb3c8fdc33d7bf86",
+          "section": "证据状态与接续"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/unrelated-machines/R-56ef7110b0a749ac8b85029bd8c6dd61/support_safe_motion_and_point_regeneration_questions.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/unrelated-machines/R-56ef7110b0a749ac8b85029bd8c6dd61/support_safe_motion_and_point_regeneration_questions.md"
+      ]
+    },
+    {
+      "object_id": "M-6b8271c4ff7842d9a7187743b0ae09b4",
+      "version": 1,
+      "title": "相容真实目标原子的conformal circuit正向最大步保支撑",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 x确在当前支撑的真实T调度凸包；A含任务守恒及x负载恰T的行、限制固定0/1坐标。目标σ须为某实际凸分解的正权原子，或另明确σ−x∈ker A。",
+      "statement": "将σ−x作核中同符号circuit分解，任一与σ−x conformal的非零d取正向最大箱步，均不会把σ所用正端删成0；故端点正支撑仍含一个实际峰≤T原子。负载恰T的行中正权原子共同恰T，因而满足A相容性。",
+      "quantifiers": "对每个具有上述真实凸包promise的x、每个相容目标σ及每个同符号d，正向最大步成立；不把相反符号也保证保同一σ。",
+      "assumptions": [
+        "任意T可行σ未必满足x的紧载荷行，不能省略σ−x∈ker A条件",
+        "固定0/1坐标不动；活坐标0<x_e<1",
+        "circuit分解只给存在性，不提供未知σ"
+      ],
+      "scope": "一步支撑存在，未保证新点CONFIG、松载荷行分数可行、原子输出、方向寻找或可迭代点再生。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。 原探索桌面未进入可靠Claim账本；这里按明确相容输入合同登记完整局部数学论证，不改原历史成熟度。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/支撑安全负载方向与CONFIG点再生的不同义务--审查.md",
+        "sha256": "5c94afbb537c86258649370acee3f9656b3f30c518efb6e6e88fb4b752064094",
+        "section": "Conformal只给支撑，不负责下一点"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/支撑安全负载方向与CONFIG点再生的不同义务--审查.md",
+          "sha256": "5c94afbb537c86258649370acee3f9656b3f30c518efb6e6e88fb4b752064094",
+          "section": "状态与问题身份"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/unrelated-machines/R-56ef7110b0a749ac8b85029bd8c6dd61/support_safe_motion_and_point_regeneration_questions.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/unrelated-machines/R-56ef7110b0a749ac8b85029bd8c6dd61/support_safe_motion_and_point_regeneration_questions.md"
+      ]
+    },
+    {
+      "object_id": "M-bdd481ab565d4b3bbae3e5a594c6a397",
+      "version": 1,
+      "title": "两相同机器三件全正时间例中所有负载circuit都离开CONFIG",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 两台相同机，h耗1，a,b各耗1/2，T=1，以机1的三个任务概率(t_h,t_a,t_b)表示。",
+      "statement": "真实T凸包与CONFIG(1)投影都恰为{(t,1−t,1−t):0≤t≤1}。保护任务和两紧载荷行后消元核满足u_h+(u_a+u_b)/2=0；其每个非零支撑极小circuit只动两任务，而CONFIG非零切向动三任务，故从该线段内点沿任意非零负载circuit作非零箱步都立即离开CONFIG。例d=(1,−2,0)从全半以最大步1/4到(3/4,0,1/2)，两行负载仍1且仍有实际h|ab支撑。",
+      "quantifiers": "这个完整有限原矩阵中的全部非零负载circuits，非有限随机抽样；若端点没有该符号合法非零步则不额外声称存在移动。",
+      "assumptions": [
+        "h/a/b都是真实不同任务且所有有限端严格正",
+        "CONFIG正权列因总工作2而必须满载，仅{h}或{a,b}"
+      ],
+      "scope": "精确全circuits局部反例，不否定一般核方向或支撑安全一步；不构成实例不可行证书。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/支撑安全负载方向与CONFIG点再生的不同义务--审查.md",
+        "sha256": "5c94afbb537c86258649370acee3f9656b3f30c518efb6e6e88fb4b752064094",
+        "section": "全正时间三任务：所有负载circuits都离开CONFIG"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/支撑安全负载方向与CONFIG点再生的不同义务--审查.md",
+          "sha256": "5c94afbb537c86258649370acee3f9656b3f30c518efb6e6e88fb4b752064094",
+          "section": "证据、原先验与接续缺口"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/unrelated-machines/R-56ef7110b0a749ac8b85029bd8c6dd61/support_safe_motion_and_point_regeneration_questions.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/unrelated-machines/R-56ef7110b0a749ac8b85029bd8c6dd61/support_safe_motion_and_point_regeneration_questions.md"
+      ]
+    },
+    {
+      "object_id": "M-d586453c5e6d4534b67225b1fa89c936",
+      "version": 1,
+      "title": "真实凸包promise下泛型一般核方向的一步双端支撑保真",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限显式普通不相关机；不可拆分且有身份的原任务；非负二进制有理有限时间、不可用端∞；每件至少一有限端；实际调度每件恰选一原有限端，负载按原矩阵求和。 x确在真实T调度凸包；A只含全部正权真实原子共同满足的等式并固定当前0/1坐标；活坐标q个，核基N维k>0。",
+      "statement": "把边界线性形式ℓ_e(u)=−(Nu)_e/x_e、r_e(u)=(Nu)_e/(1−x_e)按整个系数向量恒等分组，确定性选一般核方向d=Nu，避开所有非恒等形式取值碰撞。正、负最大箱端各只命中一个恒等组，分别保留某个实际T原子的全部正支撑（两端原子可不同）。以u(t)=(1,t,…,t^(k−1))扫描1≤t≤binom(2q,2)(k−1)+1，总位多项式即可避根。方向不要求支撑极小，也不保证不是circuit。",
+      "quantifiers": "∀具真实凸包promise且非零核的显式有理x,A，算法输出一个非零方向与两最大箱端；两端各存在某实际原子但算法不输出它。",
+      "assumptions": [
+        "A与固定坐标须被真实分解中全部正权原子共同满足",
+        "按线性系数恒等分组，不能只比较当前某个u上的偶然相等",
+        "k1时任何非零核方向可本就是circuit；核零/无活坐标不要求非零移动"
+      ],
+      "scope": "一般核方向的一步存在/构造合同；新点可不在CONFIG，不提供原子提取、松载荷可行、迭代再生或一般舍入算法。",
+      "objections": "登记复用所引成熟正文中的完整论证与冻结证据；本 worker 不执行旧数学程序。历史有限审计不充当一般证明，外审、新颖性和全局主目标不因登记升级。 来源原标题称“非circuit”，但k=1反例使该额外承诺不成立；本记录仅登记正文证明实际支持的一般核方向。原稿仍为探索candidate、未入可靠账本且无先行独立完整审查；不倒填独立审查或CONFIG/迭代保证。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/支撑安全负载方向与CONFIG点再生的不同义务--审查.md",
+        "sha256": "5c94afbb537c86258649370acee3f9656b3f30c518efb6e6e88fb4b752064094",
+        "section": "非circuit泛型方向的一步候选"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/支撑安全负载方向与CONFIG点再生的不同义务--审查.md",
+          "sha256": "5c94afbb537c86258649370acee3f9656b3f30c518efb6e6e88fb4b752064094",
+          "section": "全正时间三任务：所有负载circuits都离开CONFIG"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/支撑安全负载方向与CONFIG点再生的不同义务--审查.md",
+          "sha256": "5c94afbb537c86258649370acee3f9656b3f30c518efb6e6e88fb4b752064094",
+          "section": "证据、原先验与接续缺口"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/unrelated-machines/R-56ef7110b0a749ac8b85029bd8c6dd61/support_safe_motion_and_point_regeneration_questions.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/unrelated-machines/R-56ef7110b0a749ac8b85029bd8c6dd61/support_safe_motion_and_point_regeneration_questions.md"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/审查/森林边界审查源e279补录--审查.md",
+      "sha256": "a541011ce4b4f96ed104d399b7906189b2cc15f85169e9d0b4c6855a9ca7a402",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-FOREST-TWO-BOUNDARY-MENU-v1"
+      ],
+      "reason": "本页§一至七为双边界菜单完整数学主体，正文身份在本批。§六中单边界/fixed-B比较只作区别与反例来源，UM-FOREST-BOUNDARY-AUGMENT-v1另路由0099，不能由双边界容器吞并。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/单边界森林交叉核对与经典族原入口的真实调用--计算.md",
+      "sha256": "34829a3ab65bc453fef2f6a6e47c9e4e247719d29521c3cfc0d499327ab0e41e",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "全文已读。§1/2/4/5的one-boundary真实程序/固定B证据需0099 UM-FOREST-BOUNDARY-AUGMENT-v1实际接受 exact path/SHA；§3是经典双树已生成输入的有限证据而非新数学对象，未运行旧CLI。不因0099同名主定理便假称已接收。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/森林边界与双端菜单有限审计--审查.md",
+      "sha256": "47cafdaecea72e7b95d7ec2f4a51787d3acd41c73dd2476ee3fb14f978eff259",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-FOREST-TWO-BOUNDARY-MENU-v1"
+      ],
+      "reason": "§3 two-boundary主审计与独立实现已精确入本批双边界evidence；§2 one-boundary三类有限证据留0099 UM-FOREST-BOUNDARY-AUGMENT-v1实际接证路由，不把两模型合并。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/双边界森林菜单双实现与强比较域原程序复跑--计算.md",
+      "sha256": "184413e8062b4322400416c96a012a2914fcded408169421b8f1313cbd1de0ae",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-FOREST-TWO-BOUNDARY-MENU-v1"
+      ],
+      "reason": "双边界同一真实菜单项、两舍入实现及其完整有限域由本批主record实际收证；不是新软件/PASS对象。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/单边界森林双向格点程序的真实负载与恢复--计算.md",
+      "sha256": "ead70ce57bdb92a79809da61d463aea02db8dc8cfac108e705c50b901d2fe242",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "全文已读，单边界floor/ceil真实恢复与有限原CLI合同，需0099 UM-FOREST-BOUNDARY-AUGMENT-v1实际接 exact path/SHA；不得用本批双边界对象吞单边界。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/私有昂贵叶与中任务标量原程序的精确范围--计算.md",
+      "sha256": "7d483474f5e65ff7d7165fb2dd83b3ef7624810367e982dcc8b84efe45388f1e",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-FIXED-WORK-CONVEX-POTENTIAL-BARRIER-v1",
+        "UM-MEDIUM-CONFIG-TINY-BARRIER-v1"
+      ],
+      "reason": "私有昂贵叶完整状态程序与中任务三标量的不同运行域，分别接两主对象；768状态/三算式不是另一个数学结论，也不宣称该程序展开中任务矩阵。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/障碍/中任务配置与独立微任务收费的接口间隙--障碍.md",
+      "sha256": "5b54630db2213996091ed7eef7f018bc2a53319832583b78f255de948ea8176d",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-MEDIUM-CONFIG-TINY-BARRIER-v1"
+      ],
+      "reason": "固定k4、α<1/5完整中任务接口反例及其证据入口为独立主对象；T仅证书阈值。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/障碍/双树配置证书的趋二整数间隙--障碍.md",
+      "sha256": "9df495ce6a36239df905c8a8b6b4b7dc29778e68679e0c23f5ba79777dce73cf",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-CONF-GAP-v1",
+        "UM-MEDIUM-CONFIG-TINY-BARRIER-v1"
+      ],
+      "reason": "双树完整构造/证书/整数最优值的一般主体，保重索引与T_CONF≤而非等式；配置gap与OPT-hardness分离。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/经典槽恢复与双树动态规划的程序合同--计算.md",
+      "sha256": "37e100f2dcd7267b88f6ae00d997485de60c2d595c1399981840ea3a38f243b8",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-CONF-GAP-v1",
+        "UM-MEDIUM-CONFIG-TINY-BARRIER-v1"
+      ],
+      "reason": "展开树配置接口与专用对称树DP已入本批UM-CONF-GAP-v1 evidence。§输入、输出和确定性恢复的给定x有序槽恢复器需0094 UM-ST-ROUND-v1 owner实际接受同path/SHA/section；指数oracle和历史数字不另造对象，不改已DONE batch。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/障碍/私有昂贵叶的工作量与固定凸势近二边界--障碍.md",
+      "sha256": "9fbd8c09d67888a1f710539a7a29671070f683dfa0a09ddc2e3ecd9489ad5cb3",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-FIXED-WORK-CONVEX-POTENTIAL-BARRIER-v1"
+      ],
+      "reason": "准确R_B/R_all工作量、固定预算与Δ>0凸势一般证明主body；Δ0 hinge例外留objections。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/成束局部相容性与极小星消元的身份边界--资源.md",
+      "sha256": "f0d0c03bf99a4979d8dbee110602efa18b5116f6884adfb5b419bcc338b250d8",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-STAR-CONFIG-TRANSFER-v1"
+      ],
+      "reason": "本批星CONFIG-transfer仅接“极小超载星：已成立的精确单任务压缩”中Q_F配置转移部分。成束§二的UM-PAIR-SUBDIVISION-GAP-v1→0097，UM-CARDINALITY-CLOSURE-v1→0097/0101统一forced-residual主版；整数UM-MINIMAL-STAR-CONTRACTION-v1及UM-STAR-Q-JOB-COMPRESSION-NO-v1→0099。各主owner实际接受前保精确路由，既不丢不同命题，也不把旧弱计数版覆盖强化版。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/极小星配置保持与稀疏收缩族独立冻结审查--审查.md",
+      "sha256": "3770159de5ce7b48c471566bc8b01d206b26ba8e0fc2e28b9762650e2583816e",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-STAR-CONFIG-TRANSFER-v1",
+        "UM-CONTRACTED-SPARSE-CONFIG-GAP-v1"
+      ],
+      "reason": "外部命中配置质量、一次全局split、probe优先/逆向范围及指定稀疏收缩有限证据，分别接本批两主对象。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/极小星配置转移的真实依赖与全边核验--资源.md",
+      "sha256": "219870e1dd96cb16930fabc60b8e98a2072b51bdaa85cb75627ffd305c8273d7",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-STAR-CONFIG-TRANSFER-v1",
+        "UM-SPARSE-CONDITIONED-CONFIG-GAP-v1",
+        "UM-CONTRACTED-SPARSE-CONFIG-GAP-v1"
+      ],
+      "reason": "星CONFIG转移完整主proof在§一般CONFIG转移合同与证明，稀疏计数M按原任务数与实际全边核验接稀疏两主对象；长CONFIGURATION拼写只是同义legacy route。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三选稀疏条件配置与资源星转移有限审查--审查.md",
+      "sha256": "5dcc341353986d1f9631b932f9f115e05de0433253cf1fe54c34fc634bc31e53",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-SPARSE-CONDITIONED-CONFIG-GAP-v1",
+        "UM-CONTRACTED-SPARSE-CONFIG-GAP-v1",
+        "UM-STAR-CONFIG-TRANSFER-v1"
+      ],
+      "reason": "一页两主体：§2未收缩族逐边独立CONFIG与§4指定终态收缩族分别登记；参数/任务数/终态边数及反例证据保实际范围。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/槽包络稀疏配置转移与矩证书有限审查--审查.md",
+      "sha256": "d1157bcfece87df1a24e97c12f410f5486bcc133dee775b05693a4f7fab67fc6",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-SPARSE-CONDITIONED-CONFIG-GAP-v1",
+        "UM-CONTRACTED-SPARSE-CONFIG-GAP-v1",
+        "UM-STAR-CONFIG-TRANSFER-v1",
+        "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1"
+      ],
+      "reason": "本批实际接§2/3/5及§A对应稀疏/星/弱H2证据。§1槽包络有限身份审计→0106 UM-ST-ENVELOPE-CONFIG-IDENTITY-v1；§4和§B匿名标签−Q²/whole-K必要式→0101 UM-ANONYMOUS-TOKEN-M1-LIFT-M2-NONEXTENSION-v1；§C多行真实容量→0099 UM-COMPACT-MULTIROW-EXTENSION-v1。外owner未实际收同path/SHA/section前保持needs-decision，不能因同页槽位接证吞标签命题。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/全局行计数审查的原冻结范围与多行追加证明--审查.md",
+      "sha256": "c920dda4d04f23e80bf66c50e006af66631277c92531a8f93250f38b83d688a6",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-COMPACT-COUNT-ESCAPE-GAP-v1"
+      ],
+      "reason": "旧紧凑族/避机计数证据已入本批compact主对象。安全过滤及多行真实负载追加证明需0099 UM-GLOBAL-ROW-COUNT-FILTER-v1 / UM-COMPACT-MULTIROW-EXTENSION-v1实际收证；冻结版本与后加全量词证明/代码差异不合并成旧运行。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/全局基数与逐行均匀相关读出边界有限审查--审查.md",
+      "sha256": "daf5efa8d82171f728cceb41f21c0735801b1590686c37964a05d32af3c0c4ef",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-COMPACT-COUNT-ESCAPE-GAP-v1",
+        "UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2",
+        "UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1"
+      ],
+      "reason": "三个本批独立主对象：§3紧凑族、§4共同标签ceil-half、§5平层3/2；§2全局filter及§3.1多行真实容量路由0099独立Claim，不能以同页容器吞并。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/全局基数探针的精确原入口与安全过滤--资源.md",
+      "sha256": "8c2f4e5efb0d1b158e818276b33740dd4eedbfbb2aad2bf9d3899163b5fe6ead",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "全文完整读的全局row-count安全过滤器/有权增广/同步删边位复杂度与有限输入范围，精确owner为0099 UM-GLOBAL-ROW-COUNT-FILTER-v1；待实际收path/SHA。接受并不产生调度，拒绝才能证OPT>T。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/紧凑共享逃逸的双路原矩阵与商动态规划--资源.md",
+      "sha256": "c58f69c4643d97bf2f848908dfe4fd5f651e13053f69cd646e3f76fa151c7db9",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-COMPACT-COUNT-ESCAPE-GAP-v1"
+      ],
+      "reason": "完整矩阵、真实OPT一般证明、完整pair和独立避机计数、有限商DP分别作为同一紧凑族主证据；不把DP误作一般solver。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/多行真实容量的原任务延伸与尖锐预算审计--资源.md",
+      "sha256": "cb7365e3c6912e47468e6502642845db5c6c386c1626ac1872848c95590cd152",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "全文多行真实容量同时延伸、全部配置类型配方和尖锐G+1 Hall失败，唯一UM-COMPACT-MULTIROW-EXTENSION-v1主owner在0099；当前待其实际接同path/SHA，不将证明改名归紧凑count。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/完整单机配置延伸的双装配原入口与有限范围--资源.md",
+      "sha256": "ee7695c7321b727301efc9150fe3faf5d26f785a20a445aa7ccc18c35a0ef06a",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-COMPACT-COUNT-ESCAPE-GAP-v1"
+      ],
+      "reason": "§完整LP点与共同条件分布是不同合同作为本批紧凑族比较evidence；独有全k完整CONFIG逐机逐配置延伸、两装配以及共同base一阶条件混合失败属于0099 UM-MACHINE-CONFIG-PROBE-GAP-v1，待其实际收path/SHA。全k证明与有限k2全部333/k3–8代表点/k2–128标量分开。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/配置激活与有限覆盖增量审计--审查.md",
+      "sha256": "8a050e9939c5471a4d5ea4eb1bd1073a34575dff7c9a0c5f4f6590a08d31a32a",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-CONFIG-PRESERVING-ACTIVATION-SUPPORT-LOSS-v1",
+        "UM-CONFIG-FINITE-COVER-v1"
+      ],
+      "reason": "§4单次激活证据及§5有限cover证据已入本批对应主record；§3完整单机CONFIG探针的有限枚举→0099 UM-MACHINE-CONFIG-PROBE-GAP-v1，待实际owner接受。不把k3–128混合措辞扩成全矩阵穷举。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/有限置换cover的配置等价与高围长坍缩审查--审查.md",
+      "sha256": "fa63d72fcf867447ec891256595aac50c4583c92d829149ca6942aeea85fa670",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-CONFIG-FINITE-COVER-v1"
+      ],
+      "reason": "自足五方向、det分母、regular高girth与seed精确T_CONF完整proof主体，不误写任意接线实现原配置点。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/配置有限覆盖种子精确证书--审查.md",
+      "sha256": "512572e273e00f6e7903432c1f7d44512801058d4b9ee9b8f1fcb05cb3e6bd5d",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-CONFIG-FINITE-COVER-v1"
+      ],
+      "reason": "四机七任务seed完整有理配置与128全部原调度有限证书；一般cover恒等/高girth由主证明承担。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md",
+      "sha256": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+      "disposition": "objects",
+      "object_ids": [
+        "M-9a4d60726a564ed493cd4e84df82cd0e",
+        "M-655414c8f3494d3fab373b7c3b5a7e40",
+        "M-1b373ae082784eac8a0cb3bd63b2797a",
+        "M-fe3ac5a7f1374a24a221eb5c26172625",
+        "M-66b1b61e046b4b8f8e4cc949b1d3322a",
+        "M-5e9f212b88f34a0c8cdcb0e74e582886",
+        "M-d916ae59215a47a0af7661c0748ab981",
+        "M-3262fb2c84db47bfb4f4bcab6e9408d4"
+      ],
+      "reason": "真正不同的8个编码结论分别用父实际分配新ID；H111/z111原Lemma24误印反例附正确锥记录。来源PDF/完整证据入口保留，编码与调度cover不合并。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/配置保环与高周girth有限审计--审查.md",
+      "sha256": "3c485488cea79e8addad3eeba0abe68152020b22b35deb5bd2b7e3004ae11ea4",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-CONFIG-PRESERVING-CIRCUIT-TWO-SIGN-SUPPORT-LOSS-v1",
+        "UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1"
+      ],
+      "reason": "§2真单环证据入本批；§3 cactus由0095主record实际读取并精确接受，owner批次register-ab98f323ad-0095.json SHA3fffad589e32dfb802fc0958aef7319a96b06213e573623d20df4ce8ae383594中已含同path/SHA/section。六finite families而非全[2,256]枚举；T是证书非exactT_CONF。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/配置覆盖坍缩与永久消元双源审查--审查.md",
+      "sha256": "10f241e63ab02a51c70a6e3d9e34d18be5f1c4a938c2380c84672a357b3e6fe3",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-CONFIG-FINITE-COVER-v1",
+        "UM-WEIGHTED-EXCESS-ZERO-DEFECT-TRAP-v1",
+        "UM-CONFIG-PRESERVING-TWO-SIGN-SUPPORT-LOSS-v1",
+        "UM-CONFIG-PRESERVING-CIRCUIT-TWO-SIGN-SUPPORT-LOSS-v1"
+      ],
+      "reason": "逐section分接cover、零excess、直和双符号与真circuit四独立对象，不因review双源标题合并模型。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/加权excess零缺陷终态的指定坏历史与审查范围--审查.md",
+      "sha256": "ad88213b239d5c67a2b3fe9aec1e63469800e979e690766b19e63ffb351539af",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-WEIGHTED-EXCESS-ZERO-DEFECT-TRAP-v1"
+      ],
+      "reason": "完整指定坏历史/真OPT1/终态全补全/精确秩自足主体，明确非CONFIG保持。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/完整配置单次激活提升的精确支撑端点与两种初态--审查.md",
+      "sha256": "bf722ac2df040ae83f7ae2b089721813db506a07b72107e21d452dc2a89ecddd",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-CONFIG-PRESERVING-ACTIVATION-SUPPORT-LOSS-v1"
+      ],
+      "reason": "单次激活标准m≥2主主体及独立无active变体，精确支撑OPT等式；不吞双符号或circuit。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/完整配置双符号直和提升的真实耦合与审查先验--审查.md",
+      "sha256": "bfd688c7bcd456f6d3396beaf65d46914075d47680c7c231fc72f6f3a442b101",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-CONFIG-PRESERVING-TWO-SIGN-SUPPORT-LOSS-v1"
+      ],
+      "reason": "额外二色正支撑下真实半激活耦合与直和方向两端主体，明确方向非circuit。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/真单环双坏端点的三种实际基态与全支撑证明--审查.md",
+      "sha256": "4b9bfef00dfc30f05038bdd3b5089d75411d12cbe10942618f7f2a030a3df8e8",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-CONFIG-PRESERVING-CIRCUIT-TWO-SIGN-SUPPORT-LOSS-v1",
+        "M-bf7de96d319e47a3bb17c74058cd866c"
+      ],
+      "reason": "三实际基态、同步旋转、支撑极小环方向、整段CONFIG与两端全支撑真实OPT近二的完整主证明。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/真单环审查的Exact先序与有理参数版本证据--审查.md",
+      "sha256": "c916b4676b7827add2587154a20ca14ad0ffcb901a054fe9a0812b0ee3ca4fc5",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-CONFIG-PRESERVING-CIRCUIT-TWO-SIGN-SUPPORT-LOSS-v1"
+      ],
+      "reason": "Exact先行/作者后置来源与有理参数编码修正，保D7只检有限结构、未软件求核的事实。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/配置保真的真单环端点有限审计与有理版本--计算.md",
+      "sha256": "f464ac383323ae3dff443b84af6f4a8732b226b34ba4d34cd1f5110e1c71e555",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-CONFIG-PRESERVING-CIRCUIT-TWO-SIGN-SUPPORT-LOSS-v1"
+      ],
+      "reason": "真单环有限D3/5/7原程序域、实际矩阵与有理编码证据；复用既有运行，不执行新数学程序。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/配置激活提升的一步与双符号支撑删除复跑--计算.md",
+      "sha256": "5fa8dbfbec65cee62c1b36318b558cb69b2987edd46b7d04ac544a27fa8d8817",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-CONFIG-PRESERVING-ACTIVATION-SUPPORT-LOSS-v1",
+        "UM-CONFIG-PRESERVING-TWO-SIGN-SUPPORT-LOSS-v1"
+      ],
+      "reason": "同seed的一步/双符号两类完整原任务支撑删除有限审计，分别接主record；非circuit秩与实际有限域保真。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/配置证书有限置换cover的构造与独立有限复跑--计算.md",
+      "sha256": "11ab6f2425292d52493ca6dbde173b498bfd248e7f83c2ce219de1b42fa02e86",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-CONFIG-FINITE-COVER-v1"
+      ],
+      "reason": "有理y输入、某q6接线、完整原任务验证与有限高girth词检查，不声称实际生成一般高girthgroup cover。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/真单环给定点分解拒绝与低停车扩域候选--审查.md",
+      "sha256": "965ef6bd33ad5f943d9b186f588f54856aa55ddb957d3e59eb3c8fdc33d7bf86",
+      "disposition": "objects",
+      "object_ids": [
+        "M-bf7de96d319e47a3bb17c74058cd866c",
+        "M-a5a6789597834992bbae0e9945b256e1"
+      ],
+      "reason": "同页两个不同truth：已证给定全正CONFIG点的全局cut拒绝与待核低停车互素扩域候选分开新ID；不把给定点拒绝当实例FAIL。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/支撑安全负载方向与CONFIG点再生的不同义务--审查.md",
+      "sha256": "5c94afbb537c86258649370acee3f9656b3f30c518efb6e6e88fb4b752064094",
+      "disposition": "objects",
+      "object_ids": [
+        "M-6b8271c4ff7842d9a7187743b0ae09b4",
+        "M-bdd481ab565d4b3bbae3e5a594c6a397",
+        "M-d586453c5e6d4534b67225b1fa89c936"
+      ],
+      "reason": "同页三机制独立身份：相容目标conformal支撑、完整三任务所有circuits反例、一般核泛型双端一步。修正任意σ相容性与非circuit过强措辞；保探索/未canonical历史与未交CONFIG/迭代能力。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/零缺陷与加权扇出边界双源审查--审查.md",
+      "sha256": "93c63ebf07dccbcfc3af817cf9901487328096b024e6f8f2bb61a12161627039",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-WEIGHTED-EXCESS-ZERO-DEFECT-TRAP-v1",
+        "UM-WEIGHTED-FANOUT-PROFILE-BOUNDARY-v1",
+        "UM-FANOUT-MISSING-ONE-THREE-HALVES-v1"
+      ],
+      "reason": "§1零缺陷指定历史与§2有两个实际YES的fanout两Claim分接，完整fanout原证明入口另附；q≥2不能丢。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/多输入缺一输出的严格半闭包与坏状态计数--审查.md",
+      "sha256": "9059abcc53adf67051df94369557c885b4febb231173107bfc8c2a02ec54a55b",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-MULTIINPUT-MISSING-ONE-COUNT-CANDIDATE-v1"
+      ],
+      "reason": "完整严格目标端半闭包、至多r坏计数与两种锐性主体，原candidate成熟度保在objections；数学完整结论按明确两实际见证输入合同登记。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/弱H2强行矩与加权扇出边界双源审查--审查.md",
+      "sha256": "e8498641fab19fe55c58dcef00d84f6d5f5683cd1c8de4f7e388090f1ad2425b",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1",
+        "UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1",
+        "UM-WEIGHTED-FANOUT-PROFILE-BOUNDARY-v1",
+        "UM-FANOUT-MISSING-ONE-THREE-HALVES-v1"
+      ],
+      "reason": "四独立Claim：weak共同degree4+一阶CONFIG、同族强row2阈值、fanout加权profile与缺一三半；各附实际读的完整原证明，保q≥2、弱强二阶匹配不同义务。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/加权扇出二度菜单夹具与历史入口三源审查--审查.md",
+      "sha256": "2470a0e216743d58ca7ac695e7d874364eb76d35c611c1a1223fb5c683f9774b",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-WEIGHTED-FANOUT-PROFILE-BOUNDARY-v1",
+        "UM-FANOUT-MISSING-ONE-THREE-HALVES-v1",
+        "UM-DEGREE-TWO-BOUNDED-MENU-JOINT-ROUNDING-v2"
+      ],
+      "reason": "profile star部分接本批fanout两Claim；五weighted menu父section由0095 UM-DEGREE-TWO-BOUNDED-MENU-JOINT-ROUNDING-v2实际接受同path/SHA/section并已落其最终批次。history README只保历史关系，不造数学对象，也不扩大为gated13/8后端。"
+    }
+  ],
+  "edge_files": []
+}
