@@ -1,0 +1,206 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline-5cd4b9018.json",
+    "sha256": "af99fb773928f3fc6bcd577ade37fbb07e8f84befbb2304158b99894ab1e56a3"
+  },
+  "objects": [
+    {
+      "object_id": "cag-common-marginal-iid-mixture-static-cap",
+      "version": 2,
+      "title": "共同边缘iid背景的任意潜变量混合不改善静态封顶",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "同一有限单位客户及共同目录的同时均分客户博弈；允许重复主题。静态背景分布先于查询独立选定，v_n为面对全部n-1槽主题多重集的混合查询max-min值。CCE允许相关、非对称分布。",
+      "statement": "固定非负客户背景b和k个背景槽，α_A(q)=Σ_(x∈A)E[1/(b_x+1+Bin(k,q_x))]。对任何查询前选定、与查询无关的共同边缘随机q，有α_A(Eq)≤Eα_A(q)对全部A同时成立；故在所有潜变量混合共同iid背景中最小化最大查询收益的值，等于使用单一共同q的最优值。证明用G_(b,k)(t)=∫_0^1 z^b(1−t+tz)^k dz的凸性。",
+      "quantifiers": "任意有限目录、k≥0、逐客户非负背景，及任意共同边缘的混合分布。",
+      "assumptions": [
+        "给定潜变量后k槽独立同分布",
+        "同一q用于所有背景槽且不能观察查询后选择"
+      ],
+      "scope": "共同边缘iid混合的精确封顶定理。",
+      "objections": "不同边缘的独立产品不属于被排除类；一般相关背景更不受此结论排除。 0033补独立二次数域与120 reciprocal二差/1728有理Jensen有限检查。任意背景、任意共同latent混合的全称结论仍由主body凸性及同一个均值证明；有限格不能替代该量词，也不排不同边缘的独立产品。",
+      "body": {
+        "path": "archives/customer-attraction/state/定理/共同边缘独立背景混合的静态封顶--定理.md",
+        "sha256": "4a551e51c55ce2ce8ead7690fd91ca5b2a67232ace366fc4624e7221cb98448e"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/八客户静态封顶与花瓣弱桥的原始精确审计--程序.md",
+          "sha256": "0f8ac8ba94bdcc12f459810787955cf3eb2489734d9f4e9712c3cba271ee3345"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/静态独立同分布安全基准--定理.md",
+          "sha256": "1a79c786e8fed1c7dbefff583922350f6148b35375bd00d3df91cfbc9f11cbf0"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/独立包络复核的局部匹配与静态封顶合同--审查.md",
+          "sha256": "5060c57df829b9fc9528416acc10ba2a70ac0ad0f21d887249ec9c74afd18881"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/定理/共同边缘独立背景混合的静态封顶--定理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round4_security/iid_closure.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round4_independent/iid_mixture_cap_review.md",
+        "archives/customer-attraction/state/审查/独立包络复核的局部匹配与静态封顶合同--审查.md"
+      ]
+    },
+    {
+      "object_id": "M-22cc1ddc40364bcba33c8a66276089f4",
+      "version": 2,
+      "title": "八客户实例的最优共同iid封顶与不同边缘产品分离",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "同一有限单位客户及共同目录的同时均分客户博弈；允许重复主题。静态背景分布先于查询独立选定，v_n为面对全部n-1槽主题多重集的混合查询max-min值。CCE允许相关、非对称分布。",
+      "statement": "正文八客户四主题实例、两背景槽的共同iid最优封顶ρ=(1448−52√669)/49>2，达到于q=(0,t,(1−t)/2,(1−t)/2)、t=(30−√669)/7；任意潜变量共同iid混合仍不能封顶2。两个不同边缘的独立背景槽则可达到自由静态安全值44/23<2：第一槽固定主题1，第二槽在1、2、3上取(3,10,10)/23。",
+      "quantifiers": "指定八客户四主题实例；共同iid最优性遍历全部q及其潜变量混合。",
+      "assumptions": [
+        "客户块A大小2、B大小4、c和d各1及正文四主题",
+        "两背景槽，零预置背景"
+      ],
+      "scope": "共同iid限制与一般独立产品的精确分离。",
+      "objections": "9的原程序只认证给定q的代数值；本页的移质量、对称化和单变量优化提供全局最优性。原完整SPE W6、OPT8支持动态背景，但该静态定理不把强/弱iid猜想误作CCE猜想。 0033补Q[t]/(7t²−60t+33)的16有序背景、64静态终局及不同边缘(26,44,44,44)/23精确合同。给定q代数值与全q全局最优性分开，后者由主body移质量/对称化/唯一交点承担；120/1728仅有限回归，不能把Z3>544/87读成CCE上界证明或相关性不可缺少。",
+      "body": {
+        "path": "archives/customer-attraction/state/定理/共同边缘独立背景混合的静态封顶--定理.md",
+        "sha256": "4a551e51c55ce2ce8ead7690fd91ca5b2a67232ace366fc4624e7221cb98448e"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/八客户静态封顶与花瓣弱桥的原始精确审计--程序.md",
+          "sha256": "0f8ac8ba94bdcc12f459810787955cf3eb2489734d9f4e9712c3cba271ee3345"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/独立包络复核的局部匹配与静态封顶合同--审查.md",
+          "sha256": "5060c57df829b9fc9528416acc10ba2a70ac0ad0f21d887249ec9c74afd18881"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/定理/共同边缘独立背景混合的静态封顶--定理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round4_security/iid_closure.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round4_independent/iid_mixture_cap_review.md",
+        "archives/customer-attraction/state/审查/独立包络复核的局部匹配与静态封顶合同--审查.md"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/two-leaf-shared-client-profit-bilateral-coupling",
+      "version": 2,
+      "title": "任意两叶共享客户利润的双边耦合与同孩子共同列cap",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空共同标签目录及覆盖映射；单位提供者按固定次序观察全部有序历史各选一次主题，终局客户价值在所有覆盖者间均分。完整纯策略保留同覆盖异标签、空主题、重复行动、零客户及任意离轨弱平局；真实偏离后沿同一原策略在改变后的有序历史续行。",
+      "statement": "任意合法完整叶B,W，M_kℓ=Σx∈Wk∩Bℓ1/(cW cB)；行和rk=uk(W;cover(B))≤uk(W)，列和sℓ=uℓ(B;cover(W))≤uℓ(B)，总和=|cover(W)∩cover(B)|。同一W总系数0≤ψk≤L的共享部分Σψk rk可精确送到父金额aℓ=ΣψkMkℓ≤L pℓ(B)。共同前缀保证其过去整行均为共享特例；未共享新客户金额仍明确剩余。",
+      "quantifiers": "所有有限单位实例、任意两合法叶、全部同孩子系数；无需均衡或共同前缀。",
+      "assumptions": [],
+      "scope": "按同客户保量、角色可变化的双边矩阵。",
+      "objections": "该核可能向更早角色转移，不继承原prefix非减价格/后缀/HIT支持；不同孩子不能各领同parent一份cap。 0033补原独立审查的M双边marginal与共同cap重构。M只运输两叶共享客户，可换角色且可能向过去回流，不继承PUSH的非减价格/TIME/HIT；W新客户、别的child及已有parent请求不获第二份容量。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/两叶共享客户利润的双边耦合--引理.md",
+        "sha256": "e02b95e60256b016de6f468f5cac200849adf794def46f8365f26ba91255604f"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/前缀请求回推的单调价格与祖先规范化--引理.md",
+          "sha256": "6b31e7c3bef41e06ce8bac21425998bb9190b6232dd079d80d237041efb41b02"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/共同覆盖者请求的密度投影与静态列余量--引理.md",
+          "sha256": "9a3a5698b25b4e0ce36e3a2ac23064fbffdf31fbc8a763818744a141ff33798c"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/前缀回推双审查与静态运输入口的合同--资源.md",
+          "sha256": "0e28f00b93d2af604c5c57df499224bc008b1185b24471fcbb55f196ccbc623d"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/引理/两叶共享客户利润的双边耦合--引理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round7/independent/review_prefix_pushback.md#5",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round7/independent/review_prefix_pushback.md#5",
+        "archives/customer-attraction/state/资源/前缀回推双审查与静态运输入口的合同--资源.md"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/customer-attraction/state/审查/独立包络复核的局部匹配与静态封顶合同--审查.md",
+      "sha256": "5060c57df829b9fc9528416acc10ba2a70ac0ad0f21d887249ec9c74afd18881",
+      "disposition": "attachment",
+      "object_ids": [
+        "cag-cross-family-two-tail-common-anchor-transport-bound",
+        "cag-common-marginal-iid-mixture-static-cap",
+        "M-22cc1ddc40364bcba33c8a66276089f4"
+      ],
+      "reason": "0033闭合：保已接共同锚点owner，补两条共同iid封顶主身份的独立二次数域/有限回归全文证据；44配置/49064局部指派/147192恒等式不审完整IC，末章61原子跨族行是既有2016行的历史绑定而非新程序或新反例。取代旧待接来源理由，不额外制造已自足对象的历史审批。"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/独立同分布支付闭包的来源与审核合同--审查.md",
+      "sha256": "2cd4bca4137f9a0b6a2d1a36cb0578ebbde00e61937fd7e856a3d9a6c4c32c51",
+      "disposition": "attachment",
+      "object_ids": [
+        "cag-petal-weak-iid-explicit-threshold-and-asymptotics",
+        "M-23e88c59328c467899a9f55e97802bcb"
+      ],
+      "reason": "0033逐份全文比较后闭合：现有显式阈值及Poisson渐近owner已经实际接本页全文。八客户强桥与多花瓣全有序历史构造在0006成熟主body自足，任意固定异花瓣选择规则已全称包含该审查的P1/P2与循环两版本；本页重复证明与原运行来源不再设外owner必接门槛。K=m≥53、K100/m≥41及m20/30点分开，历史当时缺件与后继恢复分开。"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/弱独立抽样阈值的原程序与完整历史证书--审查.md",
+      "sha256": "225d1d70c7084f8b1fc15a9e9cae0dddd16c7e852f21b99c2340db0960c15f41",
+      "disposition": "attachment",
+      "object_ids": [
+        "cag-petal-weak-iid-explicit-threshold-and-asymptotics"
+      ],
+      "reason": "0033闭合：现有对角显式阈值owner已实际全文接证。本源固定P1/P2策略为0006主body任意预定不同花瓣规则的特例，无新一般定理身份；其6完整树12448节点、每个两方法64958非自比较与10个循环策略31668含自比较分别保历史域，未冒100人原程序重放。对角m≥53解析量词已由阈值主body承担，不将重复基础族设外owner必接门槛。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/前缀回推双审查与静态运输入口的合同--资源.md",
+      "sha256": "0e28f00b93d2af604c5c57df499224bc008b1185b24471fcbb55f196ccbc623d",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/common-prefix-parent-column-complement-and-future-overlap-pushback",
+        "customer-attraction/two-leaf-shared-client-profit-bilateral-coupling"
+      ],
+      "reason": "0033闭合：保已实际接证的共同前缀补余owner，另接两叶共享M的完整独立证明合同；PUSH部分与精确绑定0085唯一v2完整record并集同次集成。所有前缀共同cap与部分H共用同一父列，不得多孩子重复领取；R-only TIME与full-O范围分开，历史FOMA强桥OPEN由现有52客户精确反例校正。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/历史根重放与后缀锥程序的输入输出合同--资源.md",
+      "sha256": "9adf4290fa9f7dbb3ac65deb5d92dcfb32fc3a1d400487916ac627e37d7e9f37",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/source-causal-payment-suffix-necessary-cuts-and-targeted-cone-scope"
+      ],
+      "reason": "0033闭合：保已实际全文接证的source-causal后缀cut owner；52客户独立2078B/611B完整审计另与精确绑定0060唯一v2的FOMA记录同次集成。v1四fixture root replay只是精确历史范围，不扩大至后继v2/v3或制造新桥；三固定k浮点负值仍非全SPE或精确对偶。"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/共同边缘独立背景混合的静态封顶--定理.md",
+      "sha256": "4a551e51c55ce2ce8ead7690fd91ca5b2a67232ace366fc4624e7221cb98448e",
+      "disposition": "objects",
+      "object_ids": [
+        "cag-common-marginal-iid-mixture-static-cap",
+        "M-22cc1ddc40364bcba33c8a66276089f4"
+      ],
+      "reason": "实读成熟正文的模型、精确陈述、量词、条件和必要论证位置；复用完整正文证明，按独立数学身份列出本页所有自有对象。未重跑历史程序、未声称新增盲审，不建超边。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/两叶共享客户利润的双边耦合--引理.md",
+      "sha256": "e02b95e60256b016de6f468f5cac200849adf794def46f8365f26ba91255604f",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/two-leaf-shared-client-profit-bilateral-coupling",
+        "customer-attraction/common-coverer-request-density-projection-and-static-column-deficit"
+      ],
+      "reason": "完整实读任意两叶共享客户M矩阵及两边marginal、整过去特例、角色变更/新客户剩余；它与保角色COMMON核不同。"
+    }
+  ],
+  "edge_files": []
+}
