@@ -1,0 +1,140 @@
+{
+  "schema": 2,
+  "objects": [
+    {
+      "object_id": "customer-attraction/monotone-projection-from-joint-query-to-omitted-customer-cancellation",
+      "version": 2,
+      "title": "同world联合R/I-query取消到R-only取消的残网单调投影",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空共同标签目录及覆盖映射；单位提供者按固定次序观察全部有序历史各选一次主题，终局客户价值在所有覆盖者间均分。完整纯策略保留同覆盖异标签、空主题、重复行动、零客户及任意离轨弱平局；真实偏离后沿同一原策略在改变后的有序历史续行。",
+      "statement": "同一priority世界U，B(U)联合error图整数流可送G。只保其送R路径作为A(U)可行部分流，再在A普通residual增广到G、到sink即停，得到每R终点γR(x)≥λR(x)，额外R取消总量=λI。固定同world原R路线/完整IC正单价vx≥1后，K_Ronly(U)≤K_joint(U)−N_I(U)，故E K_Ronly≤E K_joint−κ−。A单world用unit赢家coupon，均值流才在裸actual Hall-A集合。",
+      "quantifiers": "任意原完整SPE、固定同一最优T/owner、无并列U、任一B满流及预先选定同world合法路线/价格；允许其看U后共同选定。",
+      "assumptions": [
+        "B角色边是A子图，R终端和随机G赢家source相同",
+        "保持原确定ui/D价格≥1；投影过程中不换R路线",
+        "A可有环，不是时间递增query路线"
+      ],
+      "scope": "逐世界随机unit图的R终点单调与总正费节省。",
+      "objections": "不保另一LOCAL-TOTAL/source-net约束，不把随机收入当IC，不将相关E[(1−γ)v]拆均值。prefer-I证据非零投影却所有query止owner，未证incoming。",
+      "body": {
+        "path": "archives/customer-attraction/state/算法/联合查询取消向遗漏客户取消的单调投影--算法.md",
+        "sha256": "4f6f0cd8ee572b01c9ce0f7dcf662e4747d80d7a99a692db0f31953e4c74a10a"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/固定与逐世界联合正费用的遗漏投影--定理.md",
+          "sha256": "cc185fb7530488cb49997710ce419f8f5d1f368fff45ac36cae4f448687291e6"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/排序联合取消的三种合同与两版证据--审查.md",
+          "sha256": "9a027996419daf9633e9fe6c627ac334304b6de936740596a37ae6cdff55ef83"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/随机排序的联合查询库存与逐世界Hall取消--定理.md",
+          "sha256": "e0304497482a27ba8b10d0b7a168a53d5c542be7a9d9170ae59d6bbfae4e967d"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/自然入流余额的作者版本与资金合同史--审查.md",
+          "sha256": "2f26dcd5615793830c854c502e01fd13a576efcac8909e2b811a23221057da8f",
+          "section": "README的三个接口与一份资金"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/算法/联合查询取消向遗漏客户取消的单调投影--算法.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round4/mixed/rankwise_joint_hall.md#credible的R-only投影及独立重构",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round4/mixed/rankwise_joint_hall.md",
+        "archives/customer-attraction/state/审查/自然入流余额的作者版本与资金合同史--审查.md"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/fixed-and-worldwise-joint-positive-fee-omission-projection",
+      "version": 2,
+      "title": "固定等分Hall-B到固定Hall-A的正query费用投影",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空共同标签目录及覆盖映射；单位提供者按固定次序观察全部有序历史各选一次主题，终局客户价值在所有覆盖者间均分。完整纯策略保留同覆盖异标签、空主题、重复行动、零客户及任意离轨弱平局；真实偏离后沿同一原策略在改变后的有序历史续行。",
+      "statement": "原固定等分Hall-B以actual gi为source、R库存1、I−库存κ，I边1/(c+1)≤固定Hall-A的1/c。任一B满流λ只保送R子流，再在固定A增广得γ∈ΓA、γx≥λR,x、ΣR(γ−λR)=λI。保持同一R路线且每单位完整IC正价≥1，额外删R省至少λI，丢剩I-query正费至少κ−−λI，故K_R(1−γ)≤K_J−κ−。",
+      "quantifiers": "任意原完整SPE、固定T/owner、固定等分B满流与同一R合法路线正价；不是每world随机coupon图。",
+      "assumptions": [
+        "比较正query总费，未先从I停止信用作负退款",
+        "σ为完整SPE以保ui/D≥1，根regret>0计划不自动适用"
+      ],
+      "scope": "无需随机lift的固定γ∈ΓA版本；同world版主身份另归a21。",
+      "objections": "不保局部δ/逐角色η或SOURCE-NET，不证明前件KJ≤W+κ。原fixed附录后加未获旧mixed回执，当前以完整解析证明定位。",
+      "body": {
+        "path": "archives/customer-attraction/state/定理/固定与逐世界联合正费用的遗漏投影--定理.md",
+        "sha256": "cc185fb7530488cb49997710ce419f8f5d1f368fff45ac36cae4f448687291e6"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/联合查询库存的Hall取消与初始化付款--定理.md",
+          "sha256": "b5050f5745d549cecea7542a6bad2374b8cf0a8c225409ee5cef6f37b2828311"
+        },
+        {
+          "path": "archives/customer-attraction/state/算法/联合查询取消向遗漏客户取消的单调投影--算法.md",
+          "sha256": "4f6f0cd8ee572b01c9ce0f7dcf662e4747d80d7a99a692db0f31953e4c74a10a"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/排序联合取消的三种合同与两版证据--审查.md",
+          "sha256": "9a027996419daf9633e9fe6c627ac334304b6de936740596a37ae6cdff55ef83"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/自然入流余额的作者版本与资金合同史--审查.md",
+          "sha256": "2f26dcd5615793830c854c502e01fd13a576efcac8909e2b811a23221057da8f",
+          "section": "README的三个接口与一份资金"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/定理/固定与逐世界联合正费用的遗漏投影--定理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round4/credible/adaptive_hall_projection.md",
+        "archives/customer-attraction/state/审查/自然入流余额的作者版本与资金合同史--审查.md"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/customer-attraction/state/算法/联合查询取消向遗漏客户取消的单调投影--算法.md",
+      "sha256": "4f6f0cd8ee572b01c9ce0f7dcf662e4747d80d7a99a692db0f31953e4c74a10a",
+      "disposition": "objects",
+      "object_ids": [
+        "M-e9165326b31d45028180e0ad89b7c1dd",
+        "customer-attraction/real-omitted-query-free-cancellation-cover-and-price-separation",
+        "customer-attraction/monotone-projection-from-joint-query-to-omitted-customer-cancellation",
+        "customer-attraction/fixed-and-worldwise-joint-positive-fee-omission-projection"
+      ],
+      "reason": "完整实读随机unit图B→A、保每R终点residual增广和至少N_I价格节省；接0017 M35审查精确证据。与固定Γ版本分立。"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定与逐世界联合正费用的遗漏投影--定理.md",
+      "sha256": "cc185fb7530488cb49997710ce419f8f5d1f368fff45ac36cae4f448687291e6",
+      "disposition": "objects",
+      "object_ids": [
+        "M-e9165326b31d45028180e0ad89b7c1dd",
+        "customer-attraction/monotone-projection-from-joint-query-to-omitted-customer-cancellation",
+        "customer-attraction/fixed-and-worldwise-joint-positive-fee-omission-projection"
+      ],
+      "reason": "完整实读逐world版/后加固定λ版和历史审查边界；随机世界投影归21，本页主登记固定等分A中γ∈Γ版本，不扩到局部NET或root-regret。"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/自然入流余额的作者版本与资金合同史--审查.md",
+      "sha256": "2f26dcd5615793830c854c502e01fd13a576efcac8909e2b811a23221057da8f",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/natural-incoming-true-history-slack-and-per-recipient-half-coefficient",
+        "customer-attraction/monotone-projection-from-joint-query-to-omitted-customer-cancellation",
+        "customer-attraction/fixed-and-worldwise-joint-positive-fee-omission-projection"
+      ],
+      "reason": "本source全文及两投影主body全文实读；自然OFF-IC实际接收见已pushed0047-30唯一v2，须先集成该批再接本增量。本source§README明确证明保B送R子流、A残网增广不减R终点、额外取消lambda_I以及删除剩余I正费；world版仅均值回固定Gamma，后加fixed-lambda版逐点在固定A。正价来自同一原完整SPE的固定u_i/D_s≥1，两域均未证明总费预算前件，也不保旧delta/逐角色eta。现两个投影主身份实接该source，不新造对象、不冒认新的独立运行/独立审稿。"
+    }
+  ],
+  "edge_files": []
+}
