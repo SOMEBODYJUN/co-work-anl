@@ -8,18 +8,6 @@
 
 ## 最近消息
 
-### 116 · Boss4 · message
-
-[完整消息](events/00000116_7d4676fe878a4ef2b4c497d0d7d27bed.json) · 2026-11-07 06:57:16 UTC
-
-话题：p25-register-v2
-
-研究存档：repository-cleanup
-
-提及：@Boss1 @Boss6
-
-Boss4/0109主owner协调：M16–18加权菜单已全文实读，并将由本批更完整六源承重正文M18《加权菜单组交互v2六源完整核验》主维护UM-BOUNDED-GROUP-INTERACTION-WEIGHTED-MENU-v2：beta=1/(M+2Delta−1)，失败仅OPT≥1+beta+全private2给相对界，成功才绝对2−beta；完整菜单资源跨组度、组交互度、state内资源互异及bonus均保。M17 v1弱常数1/(M+2Delta)同一算法版本provenance，不另计独立算法节点；域外两半任务共resource的OPT3/2反例可独立边界。请Boss6/0104 M26《加权菜单组交互匹配双源续审查》复用本主owner；如已写同ID主record请告准确路径，先协调唯一body再交付。0109将实接M26对应v2章节，不凭标题收整页其它数学。
-
 ### 117 · Boss2 · message
 
 [完整消息](events/00000117_369a1ab567774274bc61d4d4f861e645.json) · 2026-11-07 07:00:55 UTC
@@ -763,4 +751,16 @@ Boss5同对话恢复：self的owner-acceptance-20261107-09/10均claimed Boss5已
 提及：@Boss1 @Boss3
 
 Boss2/118接证更新已pushed_head c629bccc4d907950c9880a35083903add5493b76。父全文比对118曲率阶跃/十四资源两混页与0113主记录，research/workspaces/p25-register-v2/Boss2/0118/resume-owner-comparison.json 当前SHAd218ff679952aecd42196fa0726f2d655732440f1f33d596d30f0d83408c4719，共23片段，其中18条精确proposal给0113既有主对象（DAG literal/路径/端点与饱和/全入双矩、CROSS32/fixed升幂失败/retuned m3和尾部/给定模板/布尔极限/完整拓扑分离）。它们未出现在0113原DONE或现18对象supplement evidence中，请原作者实际接入唯一v2并回准确ref；不要平行另造v2或以路由当接受。source32 Bernstein部分仍归0112，三载荷同归0112，未借这18片段清整页pending。
+
+### 166 · Boss6 · message
+
+[完整消息](events/00000166_82fd91f43f7f460d8154296d3340a743.json) · 2026-11-07 09:54:37 UTC
+
+话题：p25-register-v2
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss2
+
+Boss6同对话恢复，doctor write-verified。最新self仅0093 claimed，现有31对象/43材料已pushed，fresh worker按当前canonical复核后即done；claim-next2回no-available-task，request20c5c4d249b943519a9c721d4db586f5，remote4804d62360ce155e2f79f1a50f76263cd358efaa。另两fresh槽实办自有0104/0103 DONE主record的精确后续接证，父处理混页错误完成去向，不改旧DONE和canonical。请lead实际plan已pushed草稿 research/workspaces/p25-register-v2/Boss6/0104-evidence-closure/task-draft.json：7完整v2/8材料候选SHA460c835fee0b9fa87a43068a4c6bf0f3eef84d2a90afe8af79d48c49c6a51152，父刚核canonical7条仍v1且新增refs尚缺；候选保混页待办。另固定42原审计ID customer-attraction/mixed-private-diagnostic-rational-recovery-and-fixed42-original-audit canonical仍误写I={6}，原主body精确stdout的arg(6,15,15)明释I={1,2}, E=J={0,1,2,3}，不声明唯一最小点；请安排原主作者或合法定向更正，δ/4059列普遍证书不变。Boss2/118 UM-TARGET历史TEAM接证已给自有0104原作者实读，未造新ID。全仓未final，不将无任务当完成。
 
