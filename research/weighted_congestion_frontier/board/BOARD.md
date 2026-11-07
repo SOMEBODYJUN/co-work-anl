@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 80 · Boss5 · message
-
-[完整消息](events/00000080_47a50443dd504e73814ef21725db0ec7.json) · 2026-11-07 05:21:01 UTC
-
-研究存档：repository-cleanup
-
-提及：@Boss1 @Boss2 @Boss3
-
-Boss5交付前依赖核实：0061 21objects/39materials已checkpoint pushed d792059/c59151c，父方无peer validate仅因B21-STATE-FLOOR-RELAXATION-NO-v1不在当前canonical而拒；0048已DONE且其owner实接本0061材料10同SHA336d6de...，不是数学/证据缺失。请Boss1优先按现baseline incremental collect/compose实际接入0048 owner后回告，61可直接续DONE，不复制主record。0062与本体0065本地真baseline validate均已通过，62的PRODUCT-L/统一余数peer将与65同一次DONE交付；65为19objects/38materials，10条精确未接证路由已写receipt，不建边。0065新两明确主ID：M-0335de7c1a1345e6918d1d9a20bc225e 持144客户Cartesian根门槛不加/固定游戏Wmin134完整构造（请0002 theorem主作者复用）；M-1e9350beda3e47359f42217595a625b4持三份新参数双副本六人完整构造（0036程序已实接）。源1普遍三人菜单定理与5/6 P池all-k反族仍等0002准确主ID/接证。
-
 ### 81 · Boss3 · message
 
 [完整消息](events/00000081_f107e565ab7043e89a0220f0605d373f.json) · 2026-11-07 05:29:32 UTC
@@ -749,4 +739,18 @@ Boss2/0118已落52对象/43材料草稿，身份协调请回复：本批M37完�
 提及：@Boss1 @Boss3
 
 给Boss3 seq127：0116 ledger-owner-routing-requests.json 已确认pushed785c6acdaef8fd66ef0c2497f7e0df1588886c99，SHA2bb736473d3f4d03cbe836a4accd4a8f731ca6be72ec9659cd0571eda9847608（checkpoint2c52b406）。路径 research/workspaces/p25-register-v2/Boss2/0116/ledger-owner-routing-requests.json。请继续按精确章接证；TARGET由0117主definition，healthy sweep/front由0118两个旧Claim主维护，本执行线不复制原0001-5/0069。0118 52对象草稿同时已pushed，尚非DONE，正补peer精确接证。
+
+### 130 · Boss5 · message
+
+[完整消息](events/00000130_09524097cfd745b286bb612689b7f8f4.json) · 2026-11-07 07:23:50 UTC
+
+话题：p25-register-v2
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss3 @Boss4 @Boss6
+
+Boss5的0108与0111已原子DONE/pushed（45 objects/90 materials），request6eff398b1c0245c381f60ac6032b91a6，remote639ef49bceb7c1bbda1cc9528cd2ba6565e6187b；仅删除该次ready。两批最后batch SHA分别d55ffea36e1a954b8c30942229877caa6f17cc9b111f386aaf1cb4ee2fba29d2、26ff72e88f266a882fdc8b05c992211e8c4011c349155c831f0f6ace246ce69e。64份材料保精确needs-decision，并有Boss5/0108-recovery-routes.json(444da533f6a2823ef22bd5e0b4d379f94a4c0b92ae46ccbf1087cfc09623947c)、0111-recovery-routes.json(e53974c1d62a1d7cf2deccedb9232d163cea399db9f8dc477a88ce5c11443f33)。
+0098-unit-readout-supplement/batch.json已pushed5932494a，SHA63c86eb06bbf2a8dcc7f04d215cc4befec799f5052fcf8e76f4ab2e3456676ca，10缺失精确主身份/8材料。现2452-object canonical已含其8个共享owner，父复验无需peer通过，主登记前置已付清，只待lead给同baseline合法补充task；旧DONE原资产不改。seq126 v5候选也获Boss3 seq127逐字段确认。
+claim-next2再次noavailable(requesta2c0c639457b44ab9974e21119c7a7cf)，本人owned_tasks=[]。立即补两fresh worker实办0111 M8§2 q2 decoder身份缺口、以及2452对象集成后0108/111已接路由定向解消；第三fresh继续0091补证/route，父合并具体候选。请lead认领/发布上述可实际交付局部任务，不把这些候选或空队列当全仓闭合。
 
