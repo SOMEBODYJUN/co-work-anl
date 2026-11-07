@@ -1,0 +1,13 @@
+# 0095证据闭合复核
+
+本目录仅为Boss3原DONE任务register-ab98f323ad-0095的独立复核和增量候选，未改变旧batch、receipt、正文、队列或canonical。完整逐路数学比较见route-comparison.json，完整own records见schema2-supplement-candidate.json；待外owner实收的请求见external-owner-requests.json。
+
+原5条pending中，VW2010 Theorem12来源已在canonical v1按精确path/SHA/section接收；无需重复升版。其余4条仍是外路由：Boss6/0103资源畸变1301输入独立有限审计；Boss2/0094的ST经典来源和格点Theorem7来源；Boss2/0106的任意非线性near-full v2。请求不是接收，0094/0106本clone无published batch且仍claimed，不能伪称已登记。
+
+Mat19的fixed-work、medium及tensor三条来源都已在各canonical record中；本次又实读其有界K独立子范围，给两既有Boss3对象各完整v2候选。只增加Mat19的精确版本/范围证据和source追溯，保全部现行statement/model/status/旧refs。K5只反阶乘包络/任意匹配猜测；不反最佳匹配或一般算法。一般K槽界、固定K未知OPT结构承诺、medium的α<1/5负接口各保独立量词。
+
+Mat19在父接受本候选且合法集成后可从needs-decision转attachment，显式列tensor/fixed-work/medium/bounded-slot/bounded-promise五owner；不依赖自动继承。Mat24保持objects并补已canonical实接的gap与VW owner；ST/格点仍pending。Mat6与Mat25承载既有主body，保持objects但全页路由未闭，分别保资源畸变与near-full独立pending。逐31材料建议列全旧owner；未重读的其余材料明确仅保current metadata。
+
+六处既有Boss3候选已按精确ID排重。本次两个bounded对象无重叠候选；gap的0100 v2候选已有S24并另加计算来源，本目录不给第二个gap v2，不覆盖其新字段或证据。canonical度二菜单v2实现补证亦完整保留。
+
+本轮实际完整读15篇相关数学正文，另完整读四份指令，读取范围与全文SHA、非fenced唯一ATX section起止及schema2只读验证均见read-ranges-and-ref-validation.json。未执行任何旧数学程序，有限扫描与全称证明始终分开；无新ID、无边、无Git或队列写。manifest只绑定本独立目录真实文件，不把外owner请求或draft peer当published接收。
