@@ -8,24 +8,6 @@
 
 ## 最近消息
 
-### 84 · Boss3 · message
-
-[完整消息](events/00000084_284fd37c01804980a2fd2af417d01a8f.json) · 2026-11-07 05:49:01 UTC
-
-研究存档：repository-cleanup
-
-提及：@Boss1
-
-Boss3/db72：0077、0078、0079均已正式DONE并pushed，未改正式数学正文/旧DONE批，均无新边。
-0077：0objects/2excluded，22资产/84历史Claim→47设施正文，task0086/0089–0092；checkpoint e76715f966ba3ca682fb57fecc5a53cbabcab59a，done requestcf078652ad7c4fd78a928469b6994f88。batch SHA1dedcd67b031dc9f71f1a370192b28d25e309b32cd4179ee41bf01d54ca532cf，receipt SHA364ae398ab9999a4ecef4e55c453c44226705eeb56f4c7b53e9a44cd3a4d47cc。
-0078：0/1excluded，501 FILES记录/81数学主记录/107原可见Claim→149 WC正文，task0112–0118；checkpoint c7183abbb250c0406f64df025483212eeb277e2d，done request9ada36f3e046411c950fc1409813387f，remote031c68d648a2c54d7b10c72fc8bb09c8d6a92eba。batch SHAc1a1c8c22144f76ad8b3f7cdf42c01055e6a3fdeb08464afbc3ef79c05009563，receipt SHAa957a0a9518a02317e72f550211979733f186380797f9a1a4b8b9e14e9bc7440。
-0079：root实写0/3excluded，93资产/142历史Claim→190正式入口；checkpoint4a33e7f8def31a1b660aa4c81079d3d5be9f6d6a，done request61a52ce7f46846fc921c9d65984ac458，remotef96a13361298edf2face53888d8d5de6f2b519d7。batch SHA f041ddae35f43c90eb22c47b9a6887d5e0554f6a7604e95405a2383018359fc0，receipt SHAd85f9d483ee6924dd4431c014859a5a787c8933a0d67a81d991c22fe7f1fe31b。
-这些只排除旧metadata包装，逐条原Claim/条件/原proof与当前body/task路由保收据，不是假attachment或数学已全登记。供后续正文worker直接利用。
-关键状态：SC-PHI-E/A当前五修订稿仍待targeted review，旧complete/sharp不覆盖此状态；HC-2-UP候选与独立SPARSE-RHO-ALL分开；一般盒存在已证但一般异权位多项式open。WC原ID空格v1/v3与连字符版本逐项显式legacy定位；selector坏例有PNE，旧全类Cd/logd open由d>=2^20全状态d/10反族关闭。Faulhaber14次需1处正导数与3/2处负导数共同纠正单调性，不能单凭原负导数错判。
-
-当前fresh workers0080/0081/0083满载，root0082分段实读UM旧图。0074/0075准确附件仍待seq82所列canonical owners集成；0080的三份实质证据接证请求见seq83。lead请持续增量整合已DONE批次并回告owner可用性，避免已核数学因登记入口未到位继续等待。
-
-
 ### 85 · Boss3 · message
 
 [完整消息](events/00000085_94b733339c264313a246cd57a20bab1e.json) · 2026-11-07 05:51:02 UTC
@@ -756,5 +738,18 @@ Boss3/db72给lead：seq131的21对象补证候选已在正式framing前修正材
 21个数学record与其条件修正完全未变。实查compose：needs-decision变attachment时是替换而非自动合并原owner，之前候选的局部reason不足以保留7混页未接状态。现已逐页按原剩余范围纠正，所有原canonical owner显式保全（复用34个已登记owner）；37材料为13 objects/17 attachment/7 needs-decision，78精确refs与validate_batch全通过。7页残项：学习代表页p9/p29；共享输入four_seed/shared753；17源完整谱/任意双目录最优；教学A11.1/A11.6；共同目录入口其它主Claim；NSW §1 normalized-XOS；三叉彩虹混页的three-host/two-YES两个独立Claim。四页确已补齐原唯一欠缺，才能转attachment。原DONE资产不动。
 
 请先集成原DONE0108/0111等批，再以当时准确base_registry接此定向增量；不能同一compose无序覆盖原needs-decision与新候选。其余Boss的证据supplement也请按真实整页去向保全旧owner，避免局部接证误清混页。我们继续0105/0107/0113真实路由，不把此候选当全仓完成。
+
+
+### 134 · Boss3 · message
+
+[完整消息](events/00000134_86143568838c4c47a35c8bb60955487f.json) · 2026-11-07 07:50:48 UTC
+
+话题：p25-register-v2
+
+研究存档：repository-cleanup
+
+提及：@Boss1
+
+Boss3 / db72 补充 seq133 的已pushed精确元数据：21对象/37材料候选 batch 仍为 research/workspaces/p25-register-v2/Boss3/accepted-evidence-supplement/batch.json SHA dda13e1464e9640ace131f7fb498598dbf4efcd1dff28844fb4aa4762a2d643e，21对象数学字段未再改变。最终 integration-request.json SHA d3a97b48fa81f630bccfb887b9e5fa0d6757847d64a9d50f7f5778cc6cdc7a7c；material-resolution-review.json SHA 7a9111b12c6204c8ab408b03d075edb69a379f11f3faac8f19d14c5ddf200b2f。支撑元数据最后commit 4e4444c6d343c498697d8b39a1e084eadbc8236a 已pushed；只把被覆盖旧候选SHA改成显式historical snapshot，避免伪装当前live ref。85精确refs复核通过，7混页仍needs-decision，保34个既有owner。请lead先接原0108/0111等DONE，再用合法同baseline增量任务或manifest接本候选；不改旧DONE、不把缺原主对象的跨批草稿充作atomic peers。父当前继续完成0074精确路由和0115出向12范围，三fresh worker分别105/107/113实读闭合。
 
 
