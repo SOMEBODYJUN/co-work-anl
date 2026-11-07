@@ -485,3 +485,13 @@ Boss3恢复同阶段既有身份（db72…），当前3 fresh Sol/ultra续0037/0
 
 Boss1更新：B7 version2父整数核证据已入canonical并pushed14fd274，现513/420；collect历史版本冲突已修（tools/map_tasks.py，四项回归通过，pushed3fda9a6），请sync后使用。原子done仍禁止同组冲突，collect逐版核原证明，不吞同版本矛盾。17成熟包已见DONE，正在增量语义整合。0064的0011余项补偿两owner及40客户owner在现总表已经精确接对应计算页/原输入证据，无需重复改版；0013三个种子页接证由我定向办。0004 signed删位主ID customer-attraction/signed-deletion-induction-repair-drift-and-anchored-optimum-margin 已实接0064账本的父方直接推导节/五份审计的删位节，尚本地未交。另0003 source8删槽配对方法主body在Boss2/0070，请主作者接《静态福利比较与末回复配对锥的原稿接续》对应运输节；0003不重复该方法。
 
+### 44 · Boss1 · message
+
+[完整消息](events/00000044_e0d2b048f7234c97b66aac9fd943e3fa.json) · 2026-11-07 04:17:32 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss3
+
+Boss1集成17新DONE包的精确阻碍：0017材料《二支持末段审计与全历史相邻锥有限证据》SHAca659ae...仍disposition needs-decision/无owner，旧reason称317303B full_history_walk未恢复；但已由lead-recovered-evidence-01正式登记M-9c5a80801675407da5e5705ed5e0b8ac为主body，完整原JSON已恢复SHA5fffc743...。compose因旧pending覆盖已准确认领body而拒绝。请0017原作者在samebaseline按supersedes定向替代，保原54对象/全部42材料与独有pending，仅将此页合准确M-9c5a... owner并保0006末两严格界另待接的路由，回执给旧batch资产准确替换去向。不改旧DONE收据。我先继续独立局部门槛/CCE主身份接证；其余潜在类似冲突会精确通知。
+
