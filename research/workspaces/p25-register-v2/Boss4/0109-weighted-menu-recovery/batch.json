@@ -1,0 +1,97 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline-5cd4b9018.json",
+    "sha256": "af99fb773928f3fc6bcd577ade37fbb07e8f84befbb2304158b99894ab1e56a3"
+  },
+  "objects": [
+    {
+      "object_id": "UM-BOUNDED-GROUP-INTERACTION-WEIGHTED-MENU-v2",
+      "version": 1,
+      "title": "完整菜单组交互与资源跨组度受限的加权菜单二减beta实际近似",
+      "kind": "algorithm-guarantee",
+      "truth_status": "proved",
+      "model": "有限非空组G，各组非空显式indexed states。每state内资源标识互异，incidence私有端时间p≥0且总和≤1、资源端1；每state一私有机，每组selector可去本组全部私有机且耗时1。所有未选states及原jobs保留。",
+      "statement": "令Δ≥1为完整菜单并集上的资源跨组数上界，M≥0为完整菜单并集的组交互图最大度上界。β=1/(M+2Δ−1)，R=2−β。无需OPT/YES/配置输入，可确定性总位多项式输出全部原任务合法调度Cmax≤R·OPT。补每个deficient state独有bonus保OPT及M/Δ后，heavy图无全覆盖匹配则OPT≥1+β且全private峰≤2，仅给相对界；有匹配则reserve互异heavy资源，再由一次共同full Δ-block Hall匹配给所有diffuse组导出质量≥[1−(M+Δ−1)β]/Δ=β，成功峰≤R。",
+      "quantifiers": "每个上述显式合法输入、任意非负有理权、有效二进制整数M≥0/Δ≥1；包括零private权、空资源state和重复indexed states；位复杂度按完整incidences及数值编码长度。",
+      "assumptions": [
+        "同state资源互异，原private机与resource机物理区分；无拒绝任务、预载或附加约束。",
+        "资源度/交互度按所有state的并集，不是按最终选择state事后估计。",
+        "bonus资源属于归一化实例的合法资源；未选state的bonus也保存。"
+      ],
+      "scope": "受限typed ordinary-UM类；固定M/Δ为统一次二，参数增长改善可消失。strict unit promise区分OPT≤1与OPT>R，不是每输入都有绝对R输出。",
+      "objections": "本次完整实读六源主正文、v1/v2修正页、Fanout混合页和双源续审查，定位完整归一化、heavy失败、共同full-slot Hall及全原任务回填证明。v1较弱β=1/(M+2Δ)与v2精确Δ−1尾项是同一算法版本；state内资源重复的两机三任务反例沿用M-70743e212ea6414ea8b3489269acf294而不并入本输入域。未复读六份冻结历史原稿，未重跑18018排序核验；这些读取/运行只作成熟正文记载。无production implementation不撤销当前数学算法保证；不宣称新颖性或一般UM算法。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/加权菜单组交互v2六源完整核验--审查.md",
+        "sha256": "ed72c3664e860515df81d99236839aedf15d4dab9c9ea6f3a60cd6bfc988490c"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/加权菜单组交互v1陈述与v2修正--审查.md",
+          "sha256": "58e54adaaa22d43f4129177afa04360e8365cb8b316cd4b60088ae29788aa287"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/加权Fanout与有界组菜单两源精读--审查.md",
+          "sha256": "6dc3ac49d4170223ca4f12f707a2c5491e460ada10c7c5e93eecd188fb8eb89d",
+          "section": "2. Bounded-group weighted menu interaction"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/加权菜单组交互匹配双源续审查--审查.md",
+          "sha256": "abea4e750c731c9fdf0bc861d835233eef97c9bd71a47f47ae6eae3d64856f7e"
+        }
+      ],
+      "sources": [
+        "clean:838de956e42feb209656",
+        "clean:81bedb783f0814b60f04",
+        "clean:debc6511483e365a7aa8",
+        "clean:739aab1b33748ff72d4b",
+        "clean:5e0992f7954115aacb26",
+        "clean:4026eb5b99ce6b59bfc0",
+        "clean:588d9d1babe0d23e6a59",
+        "source:0e40cceb6da556656823",
+        "legacy-version:UM-BOUNDED-GROUP-INTERACTION-WEIGHTED-MENU-v1"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/审查/加权Fanout与有界组菜单两源精读--审查.md",
+      "sha256": "6dc3ac49d4170223ca4f12f707a2c5491e460ada10c7c5e93eecd188fb8eb89d",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "M-70743e212ea6414ea8b3489269acf294",
+        "UM-BOUNDED-GROUP-INTERACTION-WEIGHTED-MENU-v2"
+      ],
+      "reason": "已实接第2节有界完整菜单v2至本主算法并保原非单射反例owner；第1节加权fanout仍未由其主owner对本页作正向接证，整页保持未决，不因部分接证清零。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/加权菜单组交互v1陈述与v2修正--审查.md",
+      "sha256": "58e54adaaa22d43f4129177afa04360e8365cb8b316cd4b60088ae29788aa287",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-BOUNDED-GROUP-INTERACTION-WEIGHTED-MENU-v2"
+      ],
+      "reason": "全文实读，同一完整菜单受限算法的早期弱常数来源或独立续审查；正向evidence已经逐项绑定，不另造版本定理。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/加权菜单组交互v2六源完整核验--审查.md",
+      "sha256": "ed72c3664e860515df81d99236839aedf15d4dab9c9ea6f3a60cd6bfc988490c",
+      "disposition": "objects",
+      "object_ids": [
+        "M-70743e212ea6414ea8b3489269acf294",
+        "UM-BOUNDED-GROUP-INTERACTION-WEIGHTED-MENU-v2"
+      ],
+      "reason": "同一完整加权菜单v2主算法及已canonical非单射域外反例；补齐主算法稳定身份，保留原反例owner。全文实读当前成熟正文，未复读六冻结历史原稿。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/加权菜单组交互匹配双源续审查--审查.md",
+      "sha256": "abea4e750c731c9fdf0bc861d835233eef97c9bd71a47f47ae6eae3d64856f7e",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-BOUNDED-GROUP-INTERACTION-WEIGHTED-MENU-v2"
+      ],
+      "reason": "全文实读，同一完整菜单受限算法的早期弱常数来源或独立续审查；正向evidence已经逐项绑定，不另造版本定理。"
+    }
+  ],
+  "edge_files": []
+}
