@@ -1,0 +1,195 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline-5cd4b9018.json",
+    "sha256": "af99fb773928f3fc6bcd577ade37fbb07e8f84befbb2304158b99894ab1e56a3"
+  },
+  "objects": [
+    {
+      "object_id": "M-1d23d302c0104324b2a821ad2dd9670a",
+      "version": 2,
+      "title": "两层可信终局threshold精确刻画同一子SPE的前两行动利润",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限单位客户、有限非空共同标签目录及覆盖映射，单位提供者按固定次序各选一次，终局客户价值由全部覆盖者均分。完整策略定义于全部合法有序历史，保空主题、同覆盖异标签、重复选择、零客户及任意离轨平局；真实偏离沿同一原策略在改变后的历史继续。",
+      "statement": "令R(b)为前缀计数b后全部纯SPE可实现终局，M(b)=max_a min_(z∈R(b+e_a))u_a(z)。有R(b)=∪_a{z∈R(b+e_a):u_a(z)≥M(b)}。余r≥2时，有一份完整子SPE先走a,b′到同一z，当且仅当z∈R(b+e_a)、u_a(z)≥M(b)，且z∈R(b+e_a+e_b′)、u_b′(z)≥M(b+e_a)。因此遍历这些同一z最小化u_a(z)+u_b′(z)恰给全部子SPE的首对最小利润，重复a=b′须有两次新增计数。",
+      "quantifiers": "所有有限单位客户目录、任意合法前缀/余r≥2、全部a,b′/终局z。",
+      "assumptions": [
+        "R保存整个可信集合，成员续局有限达到",
+        "真实离轨孩子在不同有序节点可独立贴合，actual两层共享同一所选z"
+      ],
+      "scope": "准确的同叶前两行动枚举算法；比独立取两个单层最小值更强。",
+      "objections": "浮点恢复query再全静态列Fraction取min只给安全下界；66非负margin不证明PB或精确最优值。主体算法正确性不将原3150B程序泛称脏schema验证器。 登记实读本批成熟Markdown全文及精确陈述/承重证明位置，复用成熟论证；本worker未重跑数学程序、未冒称全文重读链接大数组或原代码。",
+      "body": {
+        "path": "archives/customer-attraction/state/程序/合法背景前两人利润与额外槽安全下界诊断--程序.md",
+        "sha256": "288fa71ca6dd49256475bf985060be2c75f29b43f0f84c046c5c4758867f9eb5",
+        "section": "两层threshold怎样恰好刻画前两人"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/合法背景前两人利润与额外槽安全下界诊断--程序.md",
+          "sha256": "288fa71ca6dd49256475bf985060be2c75f29b43f0f84c046c5c4758867f9eb5",
+          "section": "背景、剩余玩家与额外一槽"
+        },
+        {
+          "path": "archives/customer-attraction/subarchives/six-providers/state/程序/合法背景首对利润与静态安全下界诊断--程序.md",
+          "sha256": "7b455d5eeda874cd6067abe451fb05f412304905efd36a71e3257b027a86f010",
+          "section": "可信终局全集如何取首对最小值"
+        },
+        {
+          "path": "archives/customer-attraction/subarchives/six-providers/state/程序/合法背景首对利润与静态安全下界诊断--程序.md",
+          "sha256": "7b455d5eeda874cd6067abe451fb05f412304905efd36a71e3257b027a86f010",
+          "section": "静态LP只给提案，精确值是可行query的下界"
+        },
+        {
+          "path": "archives/customer-attraction/subarchives/six-providers/state/程序/合法背景首对利润与静态安全下界诊断--程序.md",
+          "sha256": "7b455d5eeda874cd6067abe451fb05f412304905efd36a71e3257b027a86f010",
+          "section": "原JSONL两条记录及全部66行"
+        }
+      ],
+      "sources": [
+        "canonical:archives/customer-attraction/state/程序/合法背景前两人利润与额外槽安全下界诊断--程序.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round5/menu/pair_targeted_diagnostic.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round5/menu/pair_targeted_diagnostic.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round5/menu/pair_five_individual_diagnostic.jsonl",
+        "registration-accepted-source:archives/customer-attraction/subarchives/six-providers/state/程序/合法背景首对利润与静态安全下界诊断--程序.md#可信终局全集如何取首对最小值",
+        "registration-accepted-source:archives/customer-attraction/subarchives/six-providers/state/程序/合法背景首对利润与静态安全下界诊断--程序.md#静态LP只给提案，精确值是可行query的下界",
+        "registration-accepted-source:archives/customer-attraction/subarchives/six-providers/state/程序/合法背景首对利润与静态安全下界诊断--程序.md#原JSONL两条记录及全部66行"
+      ]
+    },
+    {
+      "object_id": "M-0b376f94c10846d5942e2cbc14e7d0ad",
+      "version": 2,
+      "title": "全合法背景首对静态安全付款蕴含同actual路径成块聚合与half",
+      "kind": "conditional-theorem",
+      "truth_status": "conditional",
+      "model": "有限单位客户、有限非空共同标签目录及覆盖映射，单位提供者按固定次序各选一次，终局客户价值由全部覆盖者均分。完整策略定义于全部合法有序历史，保空主题、同覆盖异标签、重复选择、零客户及任意离轨平局；真实偏离沿同一原策略在改变后的历史继续。",
+      "statement": "同目录合法主题A有v_(k−1)(b+1_A)≥v_k(b)，k≥2。若全合法背景、余r≥2的所有完整子SPE均前两最终利润和≥2v_(r+1)(b)（PB-extra），则任意根m人SPE沿同一actual依次配对、奇数末位真BR可得W≥m v_(m+1)(0)。静态倒数Jensen及m主题覆盖账给OPT_m≤2m v_(m+1)(0)，所以该前提蕴含half；PB-strong用v_r同样给W≥m v_m。",
+      "quantifiers": "条件蕴含对任意有限实例、任意m≥1与每份完整SPE；嵌入恒真对所有合法b/A/k。",
+      "assumptions": [
+        "假设PB-extra或更强PB-strong对全部合法背景/子SPE成立",
+        "配对沿一份原actual路径，不重新选每对有利续局",
+        "m1及奇末位用v1≥v2及真BR"
+      ],
+      "scope": "准确的成块条件归约；前提当前已被合法巨大背景PB反例否定。",
+      "objections": "条件推导完整但PB一般前提为假，不能作为已证half；实际路径专用弱化另有量词，未被该背景反例自动否。最小坏点只给proper配对信用，不是每后继逐人地板。 登记实读本批成熟Markdown全文及精确陈述/承重证明位置，复用成熟论证；本worker未重跑数学程序、未冒称全文重读链接大数组或原代码。",
+      "body": {
+        "path": "archives/customer-attraction/state/资源/首对成块安全的条件归约与可信阈值缺口--资源.md",
+        "sha256": "f80669a3f0a6b221d2d3321ccc1af2a8ca172be708689594d41f245104dc9bce"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/反例/任意合法背景的前两人额外槽安全值--反例.md",
+          "sha256": "0701ae9959fd048cd50268a63c72b48f098dad1d3922c2e44c29ce41075a4016"
+        },
+        {
+          "path": "archives/customer-attraction/subarchives/six-providers/state/程序/合法背景首对利润与静态安全下界诊断--程序.md",
+          "sha256": "7b455d5eeda874cd6067abe451fb05f412304905efd36a71e3257b027a86f010",
+          "section": "候选的背景、槽数与量词"
+        },
+        {
+          "path": "archives/customer-attraction/subarchives/six-providers/state/程序/合法背景首对利润与静态安全下界诊断--程序.md",
+          "sha256": "7b455d5eeda874cd6067abe451fb05f412304905efd36a71e3257b027a86f010",
+          "section": "后续状态：任意背景PB已反，实际前缀仍须另判"
+        }
+      ],
+      "sources": [
+        "canonical:archives/customer-attraction/state/资源/首对成块安全的条件归约与可信阈值缺口--资源.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round5/independent/two_block_security_reduction.md",
+        "registration-accepted-source:archives/customer-attraction/subarchives/six-providers/state/程序/合法背景首对利润与静态安全下界诊断--程序.md#候选的背景、槽数与量词",
+        "registration-accepted-source:archives/customer-attraction/subarchives/six-providers/state/程序/合法背景首对利润与静态安全下界诊断--程序.md#后续状态：任意背景PB已反，实际前缀仍须另判"
+      ]
+    },
+    {
+      "object_id": "M-4e97ae13336449f9a93716f3f591f5f8",
+      "version": 2,
+      "title": "合法背景PB反例否定存在安全最优p支付两预算菜单",
+      "kind": "corollary",
+      "truth_status": "proved",
+      "model": "有限单位客户、有限非空共同标签目录及覆盖映射，单位提供者按固定次序各选一次，终局客户价值由全部覆盖者均分。完整策略定义于全部合法有序历史，保空主题、同覆盖异标签、重复选择、零客户及任意离轨平局；真实偏离沿同一原策略在改变后的历史继续。",
+      "statement": "固定合法背景b、余r≥2、同一完整SPE，actual首A*、前两收益α/β；真根尾B1(a)、actual第二节点真尾B2(a)。Q1(a)=A*+B1(a)，Q2(a)=A*+a+B2(a)各为r槽，K_j(T,a)=Σ_T1/(b+1+c(Q_j(a)))。t=v_(r+1)(b)，对每安全最优p有C_j=E_(T,a iid p)K_j≥t。既有合法PB反例α+β<2t故对此同σ所有安全最优p均C1+C2>α+β，否定普遍存在一个安全最优p联合付款。",
+      "quantifiers": "存在合法背景/完整SPE使∀p∈Argmax v_(r+1)(b)联合付款失败；不要求PB反例精确安全值。",
+      "assumptions": [
+        "两菜单来自同一σ，actual根孩子与第二节点保持嵌套",
+        "每个静态列含r合法竞争槽，query独立于列"
+      ],
+      "scope": "既有PB真反例的独立安全最优分布量词推论。",
+      "objections": "对角税与DEBT恒等式仍真；PB背景已满覆盖、并非实际根前缀，不能判根half或实际路径专用弱化失败。 登记实读本批成熟Markdown全文及精确陈述/承重证明位置，复用成熟论证；本worker未重跑数学程序、未冒称全文重读链接大数组或原代码。",
+      "body": {
+        "path": "archives/customer-attraction/state/推论/任意背景的两预算安全最优菜单不能普遍付款--推论.md",
+        "sha256": "f146cf50db2f55169790d9cac8456a54d20b4b35621328f28f96323f4153ecc7"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/反例/任意合法背景的前两人额外槽安全值--反例.md",
+          "sha256": "0701ae9959fd048cd50268a63c72b48f098dad1d3922c2e44c29ce41075a4016"
+        },
+        {
+          "path": "archives/customer-attraction/subarchives/six-providers/state/程序/合法背景首对利润与静态安全下界诊断--程序.md",
+          "sha256": "7b455d5eeda874cd6067abe451fb05f412304905efd36a71e3257b027a86f010",
+          "section": "后续状态：任意背景PB已反，实际前缀仍须另判"
+        }
+      ],
+      "sources": [
+        "canonical:archives/customer-attraction/state/推论/任意背景的两预算安全最优菜单不能普遍付款--推论.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round6/tail/PB_two_menu_working.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round6/tail/PB_two_menu_working.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round6/tail/README.md",
+        "registration-accepted-source:archives/customer-attraction/subarchives/six-providers/state/程序/合法背景首对利润与静态安全下界诊断--程序.md#后续状态：任意背景PB已反，实际前缀仍须另判"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/customer-attraction/state/程序/合法背景前两人利润与额外槽安全下界诊断--程序.md",
+      "sha256": "288fa71ca6dd49256475bf985060be2c75f29b43f0f84c046c5c4758867f9eb5",
+      "object_ids": [
+        "M-1d23d302c0104324b2a821ad2dd9670a"
+      ],
+      "disposition": "objects",
+      "reason": "本文件完整实读；仅列本文独立可复用数学的精确新身份，完整论证按各body/必要evidence定位。普通数值、源日志和历史OPEN分别留正文，不据文件名造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/首对成块安全的条件归约与可信阈值缺口--资源.md",
+      "sha256": "f80669a3f0a6b221d2d3321ccc1af2a8ca172be708689594d41f245104dc9bce",
+      "object_ids": [
+        "M-0b376f94c10846d5942e2cbc14e7d0ad"
+      ],
+      "disposition": "objects",
+      "reason": "本文件完整实读；仅列本文独立可复用数学的精确新身份，完整论证按各body/必要evidence定位。普通数值、源日志和历史OPEN分别留正文，不据文件名造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/推论/任意背景的两预算安全最优菜单不能普遍付款--推论.md",
+      "sha256": "f146cf50db2f55169790d9cac8456a54d20b4b35621328f28f96323f4153ecc7",
+      "object_ids": [
+        "M-4e97ae13336449f9a93716f3f591f5f8"
+      ],
+      "disposition": "objects",
+      "reason": "本文件完整实读；仅列本文独立可复用数学的精确新身份，完整论证按各body/必要evidence定位。普通数值、源日志和历史OPEN分别留正文，不据文件名造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/subarchives/six-providers/state/程序/合法背景首对利润与静态安全下界诊断--程序.md",
+      "sha256": "7b455d5eeda874cd6067abe451fb05f412304905efd36a71e3257b027a86f010",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "M-1d23d302c0104324b2a821ad2dd9670a",
+        "M-0b376f94c10846d5942e2cbc14e7d0ad",
+        "M-4e97ae13336449f9a93716f3f591f5f8"
+      ],
+      "reason": "Boss5原0061主作者已实读本页及三个主body，接收双threshold同一终局首对选择、r竞争槽有理query的L≤v边界、PB一般背景失败与actual-prefix弱化区别。保当前全部owner；三个原请求038/039/040已实质接收，但Boss3的actual-prefix-incidence-budget-and-pb-reachability-review补证仍只在0085已推候选，当前canonical未接该片段。故本单独候选仍保needs-decision，待lead将Boss3与本三记录合法集成后补四owner并集才能整页attachment；不借草稿peer、不把有限66正margin当PB证明。"
+    }
+  ],
+  "edge_files": []
+}
