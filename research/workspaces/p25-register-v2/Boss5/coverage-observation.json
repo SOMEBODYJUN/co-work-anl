@@ -1,15 +1,25 @@
 {
   "schema": 1,
-  "base_registry": {
+  "actor": "Boss5",
+  "workflow_run": "p25-register-v2",
+  "registry": {
     "path": "research/registry.json",
-    "sha256": "138a38267df3cc7621c88a251e4e0a46b8a3d92a4f446af744414ed5cbe722de"
+    "sha256": "add163458f1252f3bca0e588c906c1780ff3320fff9f85b11bc5987e9447de2c"
   },
-  "scope": "repository",
-  "objects": 2613,
-  "materials": 3008,
-  "missing_materials_count": 1168,
-  "new_formal_paths_count": 0,
-  "pending_materials_count": 737,
-  "final_passed": false,
-  "note": "research registration-check --final独立执行仍不通过；数量不替代数学判断。"
+  "baseline": {
+    "path": "research/registration/baseline-5cd4b9018.json",
+    "sha256": "af99fb773928f3fc6bcd577ade37fbb07e8f84befbb2304158b99894ab1e56a3"
+  },
+  "observed_registry_objects": 2859,
+  "observed_registry_materials": 3337,
+  "command": "python work.py research registration-check --final",
+  "exit_code": 1,
+  "exact_error": "Registration coverage incomplete: frozen repository scope required; 839 missing, 0 new formal paths, 791 pending",
+  "meaning": "独立登记final未通过；这些是结构/覆盖观测而非数学正确性判断。两已DONE新包及尚待lead发布的候选不冒称canonical已吸收。",
+  "our_new_done_tasks": [
+    "register-boss3-owner-acceptance-20261107-09",
+    "register-boss3-owner-acceptance-20261107-10"
+  ],
+  "canonical_unit_readout24_confirmed": true,
+  "no_edges_created": true
 }
