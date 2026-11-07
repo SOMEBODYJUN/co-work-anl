@@ -1,0 +1,268 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline.json",
+    "sha256": "5d5737ab6d07552b48925bdb936dae70490e8de1ee0da2b380bb2d16dd5690cf"
+  },
+  "objects": [
+    {
+      "object_id": "UM-C2-LOAD-UNIT-GAP-v1",
+      "version": 1,
+      "title": "普通四阶C2-load的单位多切片证书与间隙上确界二",
+      "kind": "relaxation-gap",
+      "truth_status": "proved",
+      "model": "有限UM端变量Boolean/one-hot四阶矩M2 PSD、次数一逐机负载localizer、阈值端剪枝；不加三阶逐项非负、完整CONFIG或prefix计数强化。",
+      "statement": "每整数m>=3，n=m+1个全可用单位任务、t=n/m，相容k<=4不同任务端集的y_S=prod_a(t)_{c_a(S)}/(n)_k给可行C2-load证书。T_C2=t而整数OPT=2，比例2m/(m+1)趋2；任意含端剪枝C2实例由assignment/ST上界不超过2，故正OPT域间隙上确界为2。rankM1=1+m(m-1)，rankM2=1+m(m-1)+m^2(m-1)(m-2)/2。同机三任务矩-1/m^4，T<2的CONFIG不成立。",
+      "quantifiers": "forall integer m>=3; forall compatible literal sets with at most four distinct jobs; general upper bound for the stated pruned relaxation.",
+      "assumptions": [
+        "完整二次商空间的radical/张成/正交Gram分解按M6解析证明",
+        "不把有限Schur/Bareiss运行替代全称PSD"
+      ],
+      "scope": "松弛边界；仅证明C2不蕴含CONFIG，未证明反向全局支配或C2+CONFIG合取间隙；实例本身易解。",
+      "objections": "本轮实读成熟解析证明及有限运行职责，不重跑原程序。有限m2失败另立边界；m5原主线程运行不倒填独立审查。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/C2多切片的一般PSD与最小边界负平方--审查.md",
+        "sha256": "f5057a077151b45b68951d9a38375ae0255a6f386595d13b2f37d4c6370cc883"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/C2单位多切片与循环批量修复双源审查--审查.md",
+          "sha256": "10bf87f67a32b97fe70b7472c174cd1634b692f4cf2e4b6e5dc84bfc151fe21d"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/C2前缀满载与单位多切片有限审计--审查.md",
+          "sha256": "d76afd4a737bb0bf2ea99ef28ddceeb6da1d8d15c39d94baa52e322789bc9735"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/C2单位伪矩的有限Schur消元与颜色公式复跑--计算.md",
+          "sha256": "d4d25c30782ffff3f7c47c3be430c699e1f082fa76cd64702c49ee9b75999687"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/单位多切片原矩阵的整数Bareiss独立入口--资源.md",
+          "sha256": "85090eea2b62cea2bb9a253de5cd6bad8e8279b57a8d6f6b7bcb6d4c81f22c32"
+        }
+      ],
+      "sources": [
+        "task:register-ab98f323ad-0102; mature-body M6"
+      ]
+    },
+    {
+      "object_id": "M-c7afd458b546466b96676d45b76ebe79",
+      "version": 1,
+      "title": "m=2多切片矩的最小三单项式负平方",
+      "kind": "boundary-counterexample",
+      "truth_status": "proved",
+      "model": "上述单位多切片公式的m=2,n=3,t=3/2边界；常数、一次和相容二次monomial商基。",
+      "statement": "令p1=x11*x21，p2=x11*x32，p3=x22*x32。三项Gram=[[1/8,3/16,0],[3/16,3/8,3/16],[0,3/16,1/8]]，L[(p1-p2+p3)^2]=-1/8，故M2非PSD；所有一或二基项主块PSD，三项支撑为最小。",
+      "quantifiers": "exist explicit three compatible degree-two monomials; forall one/two-element supports in the stated monomial basis.",
+      "assumptions": [
+        "m2公式不调用(n)_4=0；实际union至多n=3",
+        "最小性用M6穷尽两项主块的解析分类"
+      ],
+      "scope": "仅否m2边界，不否m>=3证书；Bareiss输出rank4只是正pivot阶段数，不是失败矩的总代数rank。",
+      "objections": "新身份一次分配记录在id-allocation.json；非普通单次数值，保可复用的最小负平方边界。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/C2多切片的一般PSD与最小边界负平方--审查.md",
+        "sha256": "f5057a077151b45b68951d9a38375ae0255a6f386595d13b2f37d4c6370cc883"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/单位多切片原矩阵的整数Bareiss独立入口--资源.md",
+          "sha256": "85090eea2b62cea2bb9a253de5cd6bad8e8279b57a8d6f6b7bcb6d4c81f22c32"
+        }
+      ],
+      "sources": [
+        "task:register-ab98f323ad-0102; mature-body M6"
+      ]
+    },
+    {
+      "object_id": "UM-C2-PREFIX-CONDITIONING-DEGREE-v1",
+      "version": 1,
+      "title": "相同四阶真实矩不识别指定四步前缀的完整机器负载",
+      "kind": "information-obstruction",
+      "truth_status": "proved",
+      "model": "同一非负有理UM矩阵及两份真实最优完整调度有限分布；one-hot端literal矩。",
+      "statement": "存在三机七任务OPT=2实例的两份16支撑最优分布，其全部degree<=4端矩相同；前四零任务都到A的同一事件F概率均1/16，条件整机负载分别(1,0,2)和(0,1,2)。一般深度t正概率前缀的标量完整负载用sum_e p_e y_(F union e)/y_F，最高需t+1阶；degree-one localizer与条件C2分别可需t+3,t+4阶。",
+      "quantifiers": "exist one explicit matrix and two optimal distributions; equal moments for every <=4-literal subset; source-specific conditional quantity.",
+      "assumptions": [
+        "F概率严格正；零概率分支不可除零",
+        "用修复后七任务矩阵，旧互补3/2双任务full-B恒定见证不认证此结论"
+      ],
+      "scope": "来源条件信息非识别，不排重新耦合、另一来源、重求残余证书或一般舍入算法。",
+      "objections": "成熟正文给自足parity计数及真实OPT；64合法分配/1093端子集/精确PSD是有限独立核验而非算法不可能性。",
+      "body": {
+        "path": "archives/unrelated-machines/state/障碍/四阶矩与指定前缀的整机负载--障碍.md",
+        "sha256": "74ab67dd4109eca5822f1e14c3ada3af9af8f5b42a3aefe79b61f05ecd294760"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/C2前缀满载与单位多切片有限审计--审查.md",
+          "sha256": "d76afd4a737bb0bf2ea99ef28ddceeb6da1d8d15c39d94baa52e322789bc9735"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/C2前缀整机负载修复程序的真实分布复跑--计算.md",
+          "sha256": "90b8f07564889a4c9d5f7c8a704d0df4303ec737190925f6b6408981ff0d953e"
+        }
+      ],
+      "sources": [
+        "task:register-ab98f323ad-0102; mature-body M10"
+      ]
+    },
+    {
+      "object_id": "UM-ROBUST-CYCLIC-BATCH-OPT-v1",
+      "version": 1,
+      "title": "固定余量循环批次的位多项式局部优化器",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限有理UM，给定T>0实际完整调度sigma，Cmax<=2T，仅用p_ij<=T端；每循环源一次送非空原任务子集到一个目的地。",
+      "statement": "给eta in (0,1)，背包按h=eta*T/(2n)压缩每有向机器对并对每精确收益保最小到达成本；若存在每参与机净降至少eta*T的真实循环，代表菜单含至少eta*T/2净降的可执行简单机器循环。SCC严格转向及重复源剪接可找循环；执行至多floor(4m/eta)轮后终止且无真实eta*T循环。固定eta为总位多项式，变eta则关于1/eta多项式。",
+      "quantifiers": "forall supplied legal schedule and eta; existence implication from true eta-margin cycle to found eta/2 representative cycle.",
+      "assumptions": [
+        "lambda=0时须保至少一个严格转向，普通有环不够",
+        "任务身份不重复；相同源消环剪接后才执行",
+        "T0/空任务/m1另直接分支"
+      ],
+      "scope": "终态只排该鲁棒循环，不保证统一makespan改善、不返回全局OPT>T证书，也不假称关于log(1/eta)多项式。",
+      "objections": "成熟菜单/剪接/背包/工作量终止证明完整；软件入口另在0105，应由其原作者接本主身份，不造程序节点。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/鲁棒循环批次菜单与分流合流边界--资源.md",
+        "sha256": "937442a6b1a8dea55373af4ddc12a2da6b16718130ccbd1826849068ccb87a10"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/C2单位多切片与循环批量修复双源审查--审查.md",
+          "sha256": "10bf87f67a32b97fe70b7472c174cd1634b692f4cf2e4b6e5dc84bfc151fe21d"
+        }
+      ],
+      "sources": [
+        "task:register-ab98f323ad-0102; mature-body M12"
+      ]
+    },
+    {
+      "object_id": "UM-BATCH-SUPPORT-REPAIR-NO-v1",
+      "version": 1,
+      "title": "三机批量修复所需无界任务与单机撤离支持",
+      "kind": "local-repair-obstruction",
+      "truth_status": "proved",
+      "model": "三机A/B/E原任务族：A两unit分别可去B/E；B/E各2k tiny，本端1/k、回A端1/(4k)。",
+      "statement": "任k>=1，初负载(2,2,2)、OPT=1。任意严格lex改善至少改变k+1件任务且某机器撤至少k件；一unit与接收叶k件tiny同步交换达到该支持下界。因此固定总任务/固定单机撤离预算不足支持所有此类单步改善。",
+      "quantifiers": "forall integer k>=1; forall actual legal assignments strictly lex-better than stated initial assignment.",
+      "assumptions": [
+        "计变化任务/原身份，不只计机器净负载",
+        "只一次邻域改进；不附LP支撑承诺"
+      ],
+      "scope": "局部邻域反例，非计算困难性、非多轮所有固定批次失败、非源LP舍入反例。",
+      "objections": "无界撤离与单目的地限制不同；成熟证明按大任务是否离A穷尽。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/鲁棒循环批次菜单与分流合流边界--资源.md",
+        "sha256": "937442a6b1a8dea55373af4ddc12a2da6b16718130ccbd1826849068ccb87a10"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/C2单位多切片与循环批量修复双源审查--审查.md",
+          "sha256": "10bf87f67a32b97fe70b7472c174cd1634b692f4cf2e4b6e5dc84bfc151fe21d"
+        }
+      ],
+      "sources": [
+        "task:register-ab98f323ad-0102; mature-body M12"
+      ]
+    },
+    {
+      "object_id": "UM-FORK-MINCOST-ROUND-REPAIR-NO-v1",
+      "version": 1,
+      "title": "正支撑LST最小成本槽输出的单目的地修复障碍",
+      "kind": "rounding-contract-counterexample",
+      "truth_status": "proved",
+      "model": "有限有理UM、theta=1/k，三机fork核另增N=8k私有H机器；给定合法正支撑LST点与标准正交长槽图。",
+      "statement": "裸三机六任务fork的坏态C=2-theta，唯一非平凡Cmax不增改配需要A同时向B/E发送并由E向B发送，达到OPT=1；裸核T1 LP唯一是最优整数点，不能当坏态LP支撑。增H后显式LST点满足各机load<=1，所有最小总处理成本槽匹配诱导同一坏机器分配C=2-1/k，且任何Cmax不增非平凡修复仍需多目的地。",
+      "quantifiers": "forall family parameters k in stated positive domain; every minimum-cost cover matching at supplied LST point; all makespan-nonincreasing legal repairs.",
+      "assumptions": [
+        "theta in (0,1)，故k>1",
+        "仅给定任意可行LST点，未称basic/CONFIG点",
+        "各可移job当前端是支撑内唯一最便宜机器"
+      ],
+      "scope": "否定LST给定点+mincost槽+每源单目的地不增修复合同；不排其他x、配置初始化、槽外分流、临时超载或一般UM算法。",
+      "objections": "A两big质量2t>1违反CONFIG(1)基数；该条件必须保留，不能用坏初态吞掉初始化假设。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/鲁棒循环批次菜单与分流合流边界--资源.md",
+        "sha256": "937442a6b1a8dea55373af4ddc12a2da6b16718130ccbd1826849068ccb87a10"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/C2单位多切片与循环批量修复双源审查--审查.md",
+          "sha256": "10bf87f67a32b97fe70b7472c174cd1634b692f4cf2e4b6e5dc84bfc151fe21d"
+        }
+      ],
+      "sources": [
+        "task:register-ab98f323ad-0102; mature-body M12"
+      ]
+    },
+    {
+      "object_id": "UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1",
+      "version": 1,
+      "title": "真实最优凸包槽初始化的严格lex长链支持下界",
+      "kind": "local-repair-obstruction",
+      "truth_status": "proved",
+      "model": "每k>=3,d>=1的二端正有理UM开链族；x=(1/k)S0+(1-1/k)S1为两份真实OPT1完整调度的凸组合。",
+      "statement": "标准槽的每个最小成本cover matching诱导只激活一条最便宜tiny链的坏分配sigma，峰B=2-1/k。任意Cmax<=B且严格lex改善的实际重分配必须激活一条新链，至少改d+1件任务且涉及d+2个新旧端点机器；另一tiny链激活恰达到。允许中间lex变坏时，逆序逐件下传给一条Cmax从不增加、最终到S0的路径。",
+      "quantifiers": "forall k>=3,d>=1; every mincost fixed-slot output; every actual strict-lex improvement, even outside x support.",
+      "assumptions": [
+        "机器支持按变化任务全部新旧端点计",
+        "所有finite端仍限该原矩阵二端",
+        "tiny同值平局只改标签"
+      ],
+      "scope": "只限制指定初始化后的严格lex局部支持，非weak-Cmax路径障碍、非全局重配置hardness；已给真实分解可直接选最优分量。",
+      "objections": "保开链的弱max中性逃逸；不能把闭环更强结论倒套本族。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/最优凸包初始化的坐标与长链修复边界--资源.md",
+        "sha256": "abccf684c33956d4ead7c0dc78a81484002fabc69cd1c627b8088c14dbf4a39a"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/最优凸包长链与私有汇点边界两源精读--审查.md",
+          "sha256": "e35fcdd1daa6e043eb1150988cb4248910658b3d5a0d3f5dbb3677c2306ff20f"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/C2单位多切片与循环批量修复双源审查--审查.md",
+          "sha256": "10bf87f67a32b97fe70b7472c174cd1634b692f4cf2e4b6e5dc84bfc151fe21d"
+        }
+      ],
+      "sources": [
+        "task:register-ab98f323ad-0102; mature-body M4"
+      ]
+    },
+    {
+      "object_id": "UM-OPT-HULL-CLOSED-CYCLE-WEAK-LOCAL-GAP-v1",
+      "version": 1,
+      "title": "真实最优凸包闭环的弱max支持下界与精确逃逸峰",
+      "kind": "local-repair-obstruction",
+      "truth_status": "proved",
+      "model": "闭环族k>=3,d>=1，a=b=1-1/k，delta=(k-1)/k^2，c=1/k^2，宏链D=d+k-1；两真实OPT1分量的显式凸组合。",
+      "statement": "所有最小成本槽输出仅激活严格最便宜g0环，峰B_k=2-3/k+3/(2k^2)趋2。任何不同且Cmax<=B_k的实际分配必须激活整条新tiny环，最小变化任务数及参与机器数均d+1并可达到；允许单任务路径时，sigma到最优分量的最小可能路径峰恰B_k+c，尾回root后逆序释放达到。",
+      "quantifiers": "forall stated family parameters; every mincost slot output; all distinct weak-max-nonincreasing assignments; minimax over legal single-job paths to supplied optimum.",
+      "assumptions": [
+        "1+a>B_k迫闭环迁移位单调",
+        "机器/任务支持与路径长度分开",
+        "临时slack c随k增大消失"
+      ],
+      "scope": "比开链更强的中性小支持首步障碍，仍不排允许暂时超额、无界批量、全局求解或直接用已给最优分量。",
+      "objections": "原有限枚举与独立整数审计只支持所列参数，未在本轮重跑；一般支持与逃逸证明由成熟正文承担。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/最优凸包初始化的坐标与长链修复边界--资源.md",
+        "sha256": "abccf684c33956d4ead7c0dc78a81484002fabc69cd1c627b8088c14dbf4a39a"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/C2单位多切片与循环批量修复双源审查--审查.md",
+          "sha256": "10bf87f67a32b97fe70b7472c174cd1634b692f4cf2e4b6e5dc84bfc151fe21d"
+        }
+      ],
+      "sources": [
+        "task:register-ab98f323ad-0102; mature-body M4"
+      ]
+    }
+  ],
+  "materials": [],
+  "edge_files": [],
+  "reading_note": "Root read M0--18 fully, M15/16 repeated after truncation; M19/20 partial and M21 visible fully. Remaining M22--41 not read by root. Final worker must complete all 42 and compare cross-task owner routes; this fragment is not a deliverable batch."
+}
