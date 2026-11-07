@@ -1,0 +1,185 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline-5cd4b9018.json",
+    "sha256": "af99fb773928f3fc6bcd577ade37fbb07e8f84befbb2304158b99894ab1e56a3"
+  },
+  "objects": [
+    {
+      "object_id": "M-0fc59c8f626f463da80beb0d15d65bab",
+      "version": 2,
+      "title": "对数势全局最大点与连续静态minimax的全人数严格分离",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空带标签共同目录、单位权顺序提供者；终局均分，完整纯策略在全部有序历史定义，包含全部离轨行动、重复、同覆盖异标签及弱平局。真实偏离后沿同一完整策略续走。 静态q属于共同目录概率单纯形Δ(S)，q_x为客户覆盖边际；k=m−1。",
+      "statement": "每个m≥2，k=m−1、a=k+3、d=2k+3，客户{1},{2},{3},{0,1}各a，{0,2,3}为d，共4a+d=6m+9。令g_A(q)=Σx∈A1/(1+kq_x)、L(q)=Σxlog(1+kq_x)。q*=(0,1/3,1/3,1/3)全局最大化凹L，四g均6；s=(3d+2a)/(4(d+2a)), ε=1/(4k)，q′=(ε,1/3−sε,1/3−(1−s)ε/2,1/3−(1−s)ε/2)合法且每个g_A(q′)<6。因此L的最大点不总求解v_cont=min_qmax_Ag_A(q)。",
+      "quantifiers": "每个整数m≥2显式单位客户目录；q′的严格通分证明对全部k≥1成立，不是有限m回归外推。",
+      "assumptions": [
+        "有限共同目录，q是目录概率而非客户概率",
+        "没有指定完整SPE"
+      ],
+      "scope": "连续静态表示边界；不反驳原half或SPE到安全值付款桥。",
+      "objections": "主正文已按恢复原稿勘正目录概率域、m 的提供者人数含义及 {0,1} 客户重数，并写全称严格分离的承重不等式。复核两项符号恒等式与四组 Fraction 边界，沿用原稿全部证明。静态安全值比较桥仍属已有主owner。",
+      "body": {
+        "path": "archives/customer-attraction/state/审查/R-3d6f连续安全对数势分离与笛卡尔耦合--审查.md",
+        "sha256": "bc34f8a5e9ba464313af5cd483297ab817f6b49561627b1d8d38100b85ec2bf2",
+        "section": "2. 连续对数势的精确分离族"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "research/registration/evidence/register-lead-recovered-evidence-01/continuous_security_log_boundary.md",
+          "sha256": "473396c43b4c68a6ffdeb2ac12873659823456c8e713834bba019b3b05a09be5"
+        }
+      ],
+      "sources": [
+        "clean:f0b7d59c941dfce22f67",
+        "git:5cd4b901871b2773156e6341e0e13855b6287b88:archives/customer-attraction/state/审查/R-3d6f连续安全对数势分离与笛卡尔耦合--审查.md"
+      ]
+    },
+    {
+      "object_id": "M-4dd19989d9f54d9c9099a35766768a26",
+      "version": 2,
+      "title": "33客户五人七标签的q32完整SPE及固定策略锥证书",
+      "kind": "construction",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空带标签共同目录、单位权顺序提供者；终局均分，完整纯策略在全部有序历史定义，包含全部离轨行动、重复、同覆盖异标签及弱平局。真实偏离后沿同一完整策略续走。",
+      "statement": "客户掩码4,8,16,32各3人，63为5人、64为1人、67为15人，共33人。原JSON的2801节点完整策略actual为00011、计数(3,2,0,0,0,0,0)，各人收益4、W=20；主题(2,3,4,5,6)覆盖全部33客户，故OPT5=33、OPT/W=33/20。全部16806条非自身真实偏离IC成立。原证书另保13个非零精确对偶乘子，给该固定策略非负客户锥和指定组合的33/20界。",
+      "quantifiers": "该指定单位客户输入和全部有序历史；锥界仅对这份固定策略及指定比较组合，不量化所有五人策略或六人实例。",
+      "assumptions": [
+        "保原完整动作表与不同有序历史",
+        "对偶行编号依原策略锥程序合同解释"
+      ],
+      "scope": "精确有限完整SPE存在性和原固定锥证书；不是half反例或全局福利界。",
+      "objections": "已核勘误正文 W=5+15=20 只覆盖掩码63/67，J覆盖全部33人，并复查全部21个五标签比较支持。完整策略及16806条 IC 沿恢复原件的 Fraction 定义级独立审计；13个对偶乘子的最优性沿原JSON证书，未重解或重建对偶行。warm-start和有限日志保留为证据。",
+      "body": {
+        "path": "archives/customer-attraction/state/计算/对称DAG五人三十三客户候选与有限回归--计算.md",
+        "sha256": "985c0b51667f5ae39974c42136667a2bbc1ed9e0ed526553fb0c3c4a75627e10"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "research/registration/evidence/register-lead-recovered-evidence-01/sym_m5p7_q32_Jout.json",
+          "sha256": "d69e034266cf14279ce3de3ed9ebfadd9bb0ae79df9d35a89ad5fddbe5b32fe9"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/R275可信搜索对称DAG与共同次模投影增量--审查.md",
+          "sha256": "67a39f4b44f7b397ce41da91c154530ccf861e400c31c3776ccec699d530b2e8"
+        },
+        {
+          "path": "research/registration/evidence/register-lead-recovered-evidence-01/audit_finite_cag.py",
+          "sha256": "0a92ab7f0f3a6b3005e502a7ac0ecb0e563b27155a36dd97e4356188096350ef"
+        },
+        {
+          "path": "research/registration/evidence/register-lead-recovered-evidence-01/audit_finite_cag.json",
+          "sha256": "9bcff83a958a76d162bf3b63727250aad992fdaa04f8583531cd94dd34d86031"
+        }
+      ],
+      "sources": [
+        "clean:66545ba853e2589f6466",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/credible_search/sym_m5p7_q32_Jout.json",
+        "git:5cd4b901871b2773156e6341e0e13855b6287b88:archives/customer-attraction/state/计算/对称DAG五人三十三客户候选与有限回归--计算.md"
+      ]
+    },
+    {
+      "object_id": "M-6d89eb71c1ff4842aa6c2a6f89f159ef",
+      "version": 2,
+      "title": "8客户全Cartesian联合SPE投影可非SPE",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空带标签共同目录、单位权顺序提供者；终局均分，完整纯策略在全部有序历史定义，包含全部离轨行动、重复、同覆盖异标签及弱平局。真实偏离后沿同一完整策略续走。",
+      "statement": "分量I不交A3/B2，分量II不交C2/D1；目录AC/AD/BC/BD。根BC，第二玩家在AC/AD/BC/BD后分别BC/BC/AD/AC，四根真实收益4/4/4/3，各末节点BR，故完整5节点SPE。actual BC→AD覆盖8=OPT2。固定第二分量首C时，第一分量投影根B收益2可改A收益3，投影非SPE；联合AC偏离使第二分量可信平局罚恰损1。",
+      "quantifiers": "指定8个不同单位客户、两玩家、全部5有序节点及20含自身比较；存在联合完整SPE不逐分量分解。",
+      "assumptions": [
+        "两客户分量不交、联合目录完整",
+        "保历史依赖弱平局"
+      ],
+      "scope": "否定任意联合SPE自动分解的逆命题；非half反例。",
+      "objections": "主正文已按恢复原稿勘正分量 I(3,2)、II(2,1) 和完整策略四枝。定向 Fraction 核全部20项含自身比较及投影1单位盈利偏离。其余 Cartesian/银行/菜单例的输入及反驳量词分别保留。",
+      "body": {
+        "path": "archives/customer-attraction/state/审查/R-3d6f连续安全对数势分离与笛卡尔耦合--审查.md",
+        "sha256": "bc34f8a5e9ba464313af5cd483297ab817f6b49561627b1d8d38100b85ec2bf2",
+        "section": "4. 笛卡尔目录耦合审查"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "research/registration/evidence/register-lead-recovered-evidence-01/cartesian_catalog_coupling.md",
+          "sha256": "32d0e918561b81ee7fd0be3cb7f69832d5911fccda672ad91c798e398cccfa44"
+        }
+      ],
+      "sources": [
+        "clean:401225dff6c2fdf4d5bc",
+        "git:5cd4b901871b2773156e6341e0e13855b6287b88:archives/customer-attraction/state/审查/R-3d6f连续安全对数势分离与笛卡尔耦合--审查.md"
+      ]
+    },
+    {
+      "object_id": "M-8dcfbe91a71b4d3a870f5d2cd0bced19",
+      "version": 2,
+      "title": "客户不交全Cartesian目录的覆盖和两类静态安全值可加性",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空带标签共同目录、单位权顺序提供者；终局均分，完整纯策略在全部有序历史定义，包含全部离轨行动、重复、同覆盖异标签及弱平局。真实偏离后沿同一完整策略续走。",
+      "statement": "有限多个客户不交分量、完整带标签Cartesian共同目录、同步同一人数m下，OPT_m、真实不观察查询的静态混合安全值v_m和连续安全值v_cont各等于分量之和。任取各分量完整纯SPE，逐分量仅读其投影有序历史的产品策略是联合完整纯SPE。",
+      "quantifiers": "任意有限个有限非空分量、每个m≥1；可加性对所有相关联合查询/背景仍成立，产品SPE是充分构造。",
+      "assumptions": [
+        "客户集两两不交",
+        "联合目录含全部标签元组，保留同覆盖异标签",
+        "同一玩家人数和顺序"
+      ],
+      "scope": "静态值的精确双向可加性及产品策略充分方向；不同于保原策略的银行容量、均匀位置菜单加性和fresh缺陷加性。",
+      "objections": "原稿的“联合主题唯一决定坐标”按带标签元组解释，不能因分量同覆盖别名把信号商掉。下界乘积查询、上界乘积对偶和各边际可实现性完整在原稿；本次全文读并比较canonical PRODUCT/银行/菜单/fresh对象后保持不同量。未断言任意联合SPE可分解。 主正文同一章节迁到5cd4b9018勘误后的新字节，静态加性及产品SPE的证据和量词沿原版本。",
+      "body": {
+        "path": "archives/customer-attraction/state/审查/R-3d6f连续安全对数势分离与笛卡尔耦合--审查.md",
+        "sha256": "bc34f8a5e9ba464313af5cd483297ab817f6b49561627b1d8d38100b85ec2bf2",
+        "section": "4. 笛卡尔目录耦合审查"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "research/registration/evidence/register-lead-recovered-evidence-01/cartesian_catalog_coupling.md",
+          "sha256": "32d0e918561b81ee7fd0be3cb7f69832d5911fccda672ad91c798e398cccfa44"
+        }
+      ],
+      "sources": [
+        "clean:401225dff6c2fdf4d5bc",
+        "git:5cd4b901871b2773156e6341e0e13855b6287b88:archives/customer-attraction/state/审查/R-3d6f连续安全对数势分离与笛卡尔耦合--审查.md"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/customer-attraction/state/审查/R-3d6f连续安全对数势分离与笛卡尔耦合--审查.md",
+      "sha256": "bc34f8a5e9ba464313af5cd483297ab817f6b49561627b1d8d38100b85ec2bf2",
+      "disposition": "objects",
+      "object_ids": [
+        "M-0fc59c8f626f463da80beb0d15d65bab",
+        "M-6d89eb71c1ff4842aa6c2a6f89f159ef",
+        "M-8dcfbe91a71b4d3a870f5d2cd0bced19"
+      ],
+      "reason": "同路径5cd4b9018勘误新冻结版本；旧回执与原证据保全，按原精确数学身份升版。"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/对称DAG五人三十三客户候选与有限回归--计算.md",
+      "sha256": "985c0b51667f5ae39974c42136667a2bbc1ed9e0ed526553fb0c3c4a75627e10",
+      "disposition": "objects",
+      "object_ids": [
+        "M-4dd19989d9f54d9c9099a35766768a26"
+      ],
+      "reason": "同路径5cd4b9018勘误新冻结版本；旧回执与原证据保全，按原精确数学身份升版。"
+    }
+  ],
+  "edge_files": []
+}
