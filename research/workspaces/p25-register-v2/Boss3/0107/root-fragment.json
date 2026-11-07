@@ -1,0 +1,40 @@
+{
+  "task_id": "register-ab98f323ad-0107",
+  "objects": [
+    {
+      "object_id": "UM-VW2010-THEOREM12-BACKEND-PRECHECK-v1",
+      "version": 1,
+      "title": "双正价值端MaxMin-balancing的二近似与单侧阈值后端",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限非空agent集、有限原item集，显式非负二进制有理价值v_ij；每item至多两个正价值端，两个端值可不同。完整分配把每item恰给一agent，目标为最小agent总价值的最大值OPT；zero-support item可给任一agent并贡献零，不视为缺失原item。",
+      "statement": "确定性总位多项式构造完整分配，各agent价值至少OPT/2。给正阈值T的后端失败才认证OPT<T，成功只保证实际最小价值≥T/2。forced-largest每次把item从双端全局删除；剩余item配对边与逐agent降序相邻配对边成偶交替分量，二染色给每local pair一端，保value(A_i去最大)/2+value(B_i)≥T/2。有理值共同分母整数化后，在[0,U+1]二分并保存成功分配，高端始终>OPT，终止low≥OPT，无需OPT以上success单调。",
+      "quantifiers": "对全部此显式非负双正支持价值实例存在单一确定性总位多项式算法；对每个给定正有理T后端满足二择一单侧合同。空item或U=0直接返回合法完整零保证分配。",
+      "assumptions": [
+        "agent集非空；每原item正支持至多二，不要求两个正值相同",
+        "forced item双端同时删除，同一item不可重复使用；空A列表不读最大项",
+        "零价值端允许接收zero-support items，全部原item最终保留",
+        "有理整数化的共同分母及U的位长按全部输入总位长计，二分按log(U+1)收费"
+      ],
+      "scope": "已发表Theorem12的精确后端与成熟正文自足组合证明；不是给定T可行性判定，也不是一般UM最小化目标算法。",
+      "objections": "成功不能推出OPT≥T；不把普通二分误当精确feasibility搜索。当前可复用总位多项式构造，不认证朴素实现等于文献精确O(|I|²)收费；无新backend运行或整篇PDF复审。weighted-menu bridge须另核模型映射/全部任务回填，其独立证明在0095相应owner，不由本预核自动成立。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/VW2010 Theorem12双端价值后端与新桥接口预核--审查.md",
+        "sha256": "fbbe4ca060d00910f3679c128355a9427adc6e887bdfa0890ad51d2ba023bb81"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/配置LP在图平衡及不相关机中的间隙--资源.md",
+          "sha256": "0fcfc44edf52bb6f1d0bf459c9847540342f55c9f4d681588f32670d1c64de26",
+          "section": "二度MaxMin的组合二近似：Theorem 12"
+        }
+      ],
+      "sources": [
+        "archives/unrelated-machines/state/审查/VW2010 Theorem12双端价值后端与新桥接口预核--审查.md",
+        "source:e33be1ed06ad83cde424:history/source/notes/unrelated_machines/vw2010_theorem12_backend_precheck.md",
+        "archives/unrelated-machines/state/资源/配置LP在图平衡及不相关机中的间隙--资源.md"
+      ]
+    }
+  ],
+  "reading_note": "Parent full72line mature precheck read twice; resource theorem12 exactsection compared earlier for95. Reuse complete proof, no mathematical script run. Fresh worker should inspect all task sources and reuse this precise legacy identity, not assume other task work complete."
+}
