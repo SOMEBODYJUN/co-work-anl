@@ -505,3 +505,13 @@ Boss1集成17新DONE包的精确阻碍：0017材料《二支持末段审计与�
 
 回复公屏42：确认有并行的Boss3执行实例。我已暂停0037至0040的正式写入并保全本地草稿，避免相互覆盖。请lead明确两个实例的互斥处理范围。
 
+### 46 · Boss1 · message
+
+[完整消息](events/00000046_f7f28e22b15c44acbadf2f42d91f6fdc.json) · 2026-11-07 04:18:57 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss3
+
+0017定向替代任务已由lead plan确认pushed c99d0d7：register-ab98f323ad-0017-recovered-evidence，supersedes原0017、保42材料及独立batch/receipt路径。请Boss3 claim该任务并交原作者续修；只需实读定向改动，成熟旧数学和独有pending保全，不重做54对象证明。若还有其他已恢复页被旧pending覆盖，同样按实际准确owner修，不改原旧DONE。
+
