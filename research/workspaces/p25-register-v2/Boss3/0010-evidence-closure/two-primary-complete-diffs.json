@@ -1,0 +1,365 @@
+[
+  {
+    "object_id": "CA-COVERAGE-OPPORTUNITY-NO",
+    "actual_highest_complete_mother": [
+      {
+        "task": {
+          "path": "research/operations/p25-register-v2/tasks/register-ab98f323ad-0010.json",
+          "sha256": "9bcaf47a9dbe79785b65e38c6d24429829319867418db57ad078b56b46b4281c"
+        },
+        "task_id": "register-ab98f323ad-0010",
+        "owner": "Boss3",
+        "state": "done",
+        "batch": {
+          "path": "research/registration/batches/register-ab98f323ad-0010.json",
+          "sha256": "620402ea06fad3d08978bf3e903ad67018094c557285625a86f71ccb617649d6"
+        },
+        "embedded_receipt_fingerprint": "2f68d616f30c76612b2c071c24ce52f2660664d38be9ec6e70fc6f5cd475bc48",
+        "receipt_assets_verified": [
+          {
+            "path": "research/registration/batches/register-ab98f323ad-0010.json",
+            "sha256": "620402ea06fad3d08978bf3e903ad67018094c557285625a86f71ccb617649d6"
+          }
+        ],
+        "receipt_file": {
+          "path": "research/registration/receipts/register-ab98f323ad-0010.json",
+          "sha256": "1c9193031dc9eb09e066fc436967f989a0f9386c716d08f18d3c651559c23130"
+        },
+        "physical_receipt_equals_embedded": true,
+        "record_fingerprint": "bc58a3d0893e9e283991da33624b9cfb24e579be9a7fdfa8236ed84aa6688dd2",
+        "validation_basis": "Actual task.state=done; embedded receipt.batch_file and every receipt.assets path/SHA checked. Prepared/claimed/canonical-only do not establish acceptance."
+      }
+    ],
+    "complete_preimage": {
+      "object_id": "CA-COVERAGE-OPPORTUNITY-NO",
+      "version": 1,
+      "title": "在轨最优补全损失不能由各实际玩家逐期收费",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "共同目录、完整有序历史、有限单位客户均分吸引博弈。允许不同标签覆盖同一客户集；每次偏离后沿同一完整纯策略在改变后的真实历史续走。",
+      "statement": "3人、共同标签A,B,T,D,E的11客户完整SPE，实际路径AAB，收益(5/2,5/2,3)，W=8、OPT=11且最优支持ABT唯一。以实际前缀C定义F_r(C)=max_{r个主题}|C∪其覆盖|，δ_i=F_{m−i+1}(C_{i−1})−F_{m−i}(C_i)，有δ_i≥0与Σδ_i=OPT−W，但该实例δ_2=3>u_2=5/2。故逐期收费δ_i≤u_i以及其逐前缀版本不普适。",
+      "quantifiers": "存在上述完整有序历史纯SPE使某期δ_i>u_i；而望远镜Σ_i(u_i−δ_i)=2W−OPT对每条路径恒等成立。",
+      "assumptions": [
+        "客户类型及全25个末位回复在正文；根A、第二人所有历史均A。",
+        "最优补全允许重复主题，前缀按覆盖并集更新。"
+      ],
+      "scope": "仅否定更强的逐期收费；本例所有所列总余额仍非负，不是否定半覆盖。",
+      "objections": "完整31个决策历史和155条含自身比较的原证书在定位证据中；成熟证书复用，未本轮执行旧审计。",
+      "body": {
+        "path": "archives/customer-attraction/state/反例/在轨最优补全损失的逐期收费--反例.md",
+        "sha256": "15b613bb77a8da9a9f9c55a9e39376c076b8f8ee371056f76c7a1ce1c88a96ee"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/tools/evidence/coverage-opportunity/examples/customer_attraction/coverage_opportunity_failure.json",
+          "sha256": "27cfbde57d3e8d4d05f420c55f8851c94fd5e142d96ff09c0bacaf7de42e6e17"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/coverage-opportunity/evidence/certificates/customer_attraction/coverage_opportunity_failure.json",
+          "sha256": "f714a87c6448b0ddcc070d325bd81bedd4ca7f4689893e344f77214fc1668256"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/coverage-opportunity/tests/audits/customer_attraction_coverage_opportunity.py",
+          "sha256": "249fe5652c73339ef19d77bfd432a9715b72afbde76a2d6a9c06588d1813aab3"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/coverage_opportunity_counterexample.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/customer_attraction/coverage_opportunity_counterexample.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/customer_attraction/coverage_opportunity_failure.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/customer_attraction/coverage_opportunity_failure.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/customer_attraction_coverage_opportunity.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/prefix_balance_family.md。",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2d91ff13b4b44effbe7e78a60470bcc7/direct/background_induction_and_private_root.md#4。",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-65d0f88edf3849b39ca5eb79760e970b/full_tree/inductive_charge/README.md#NRAVG。"
+      ]
+    },
+    "preimage_fingerprint": "bc58a3d0893e9e283991da33624b9cfb24e579be9a7fdfa8236ed84aa6688dd2",
+    "complete_next_record": {
+      "object_id": "CA-COVERAGE-OPPORTUNITY-NO",
+      "version": 2,
+      "title": "在轨最优补全损失不能由各实际玩家逐期收费",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "共同目录、完整有序历史、有限单位客户均分吸引博弈。允许不同标签覆盖同一客户集；每次偏离后沿同一完整纯策略在改变后的真实历史续走。",
+      "statement": "3人、共同标签A,B,T,D,E的11客户完整SPE，实际路径AAB，收益(5/2,5/2,3)，W=8、OPT=11且最优支持ABT唯一。以实际前缀C定义F_r(C)=max_{r个主题}|C∪其覆盖|，δ_i=F_{m−i+1}(C_{i−1})−F_{m−i}(C_i)，有δ_i≥0与Σδ_i=OPT−W，但该实例δ_2=3>u_2=5/2。故逐期收费δ_i≤u_i不普适；同一实际前缀A也是合法固定前缀，故将这一逐节点收费式量化到任意合法固定前缀的版本同样失败。累计前缀余额B_t=Σ_(i≤t)u_i+F_(m−t)(C_t)−OPT_m在本例依次为(0,5/2,2,5)，全部非负，但B₂−B₁=−1/2，说明余额未必单调。",
+      "quantifiers": "存在上述完整有序历史纯SPE使实际第二期δ₂=3>u₂=5/2；固定其实际合法前缀A，所对应两人尾局的当前节点也违反逐节点收费。望远镜Σ_i(u_i−δ_i)=2W−OPT对每条路径恒等成立；本例不决定一般SPE的累计前缀余额是否非负。",
+      "assumptions": [
+        "客户类型及全25个末位回复在正文；根A、第二人所有历史均A。",
+        "最优补全允许重复主题，前缀按覆盖并集更新。"
+      ],
+      "scope": "仅否定逐节点机会损失收费及前缀余额的逐步非减；本11客户例的全部B_t均非负，不由它推断B_t≥0一般成立或一般失败，也不否定半覆盖。",
+      "objections": "完整31个决策历史和155条含自身比较的原证书在定位证据中；成熟证书复用，未本轮执行旧审计。 v1“逐前缀版本”准确指主body L138的“任意合法固定前缀下的对应逐节点全称版本”，不指L143定义的累计B_t≥0；本v2依正文L126–147作量词澄清，0数学程序运行。",
+      "body": {
+        "path": "archives/customer-attraction/state/反例/在轨最优补全损失的逐期收费--反例.md",
+        "sha256": "15b613bb77a8da9a9f9c55a9e39376c076b8f8ee371056f76c7a1ce1c88a96ee"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/tools/evidence/coverage-opportunity/examples/customer_attraction/coverage_opportunity_failure.json",
+          "sha256": "27cfbde57d3e8d4d05f420c55f8851c94fd5e142d96ff09c0bacaf7de42e6e17"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/coverage-opportunity/evidence/certificates/customer_attraction/coverage_opportunity_failure.json",
+          "sha256": "f714a87c6448b0ddcc070d325bd81bedd4ca7f4689893e344f77214fc1668256"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/coverage-opportunity/tests/audits/customer_attraction_coverage_opportunity.py",
+          "sha256": "249fe5652c73339ef19d77bfd432a9715b72afbde76a2d6a9c06588d1813aab3"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/coverage_opportunity_counterexample.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/customer_attraction/coverage_opportunity_counterexample.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/customer_attraction/coverage_opportunity_failure.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/customer_attraction/coverage_opportunity_failure.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/customer_attraction_coverage_opportunity.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/prefix_balance_family.md。",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2d91ff13b4b44effbe7e78a60470bcc7/direct/background_induction_and_private_root.md#4。",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-65d0f88edf3849b39ca5eb79760e970b/full_tree/inductive_charge/README.md#NRAVG。"
+      ]
+    },
+    "next_fingerprint": "217b0f95a307339b9fa624f3297873cdcb20aa43181c2867f9f9973435ba9cd1",
+    "changed_fields": {
+      "version": {
+        "before": 1,
+        "after": 2
+      },
+      "quantifiers": {
+        "before": "存在上述完整有序历史纯SPE使某期δ_i>u_i；而望远镜Σ_i(u_i−δ_i)=2W−OPT对每条路径恒等成立。",
+        "after": "存在上述完整有序历史纯SPE使实际第二期δ₂=3>u₂=5/2；固定其实际合法前缀A，所对应两人尾局的当前节点也违反逐节点收费。望远镜Σ_i(u_i−δ_i)=2W−OPT对每条路径恒等成立；本例不决定一般SPE的累计前缀余额是否非负。"
+      },
+      "statement": {
+        "before": "3人、共同标签A,B,T,D,E的11客户完整SPE，实际路径AAB，收益(5/2,5/2,3)，W=8、OPT=11且最优支持ABT唯一。以实际前缀C定义F_r(C)=max_{r个主题}|C∪其覆盖|，δ_i=F_{m−i+1}(C_{i−1})−F_{m−i}(C_i)，有δ_i≥0与Σδ_i=OPT−W，但该实例δ_2=3>u_2=5/2。故逐期收费δ_i≤u_i以及其逐前缀版本不普适。",
+        "after": "3人、共同标签A,B,T,D,E的11客户完整SPE，实际路径AAB，收益(5/2,5/2,3)，W=8、OPT=11且最优支持ABT唯一。以实际前缀C定义F_r(C)=max_{r个主题}|C∪其覆盖|，δ_i=F_{m−i+1}(C_{i−1})−F_{m−i}(C_i)，有δ_i≥0与Σδ_i=OPT−W，但该实例δ_2=3>u_2=5/2。故逐期收费δ_i≤u_i不普适；同一实际前缀A也是合法固定前缀，故将这一逐节点收费式量化到任意合法固定前缀的版本同样失败。累计前缀余额B_t=Σ_(i≤t)u_i+F_(m−t)(C_t)−OPT_m在本例依次为(0,5/2,2,5)，全部非负，但B₂−B₁=−1/2，说明余额未必单调。"
+      },
+      "scope": {
+        "before": "仅否定更强的逐期收费；本例所有所列总余额仍非负，不是否定半覆盖。",
+        "after": "仅否定逐节点机会损失收费及前缀余额的逐步非减；本11客户例的全部B_t均非负，不由它推断B_t≥0一般成立或一般失败，也不否定半覆盖。"
+      },
+      "objections": {
+        "before": "完整31个决策历史和155条含自身比较的原证书在定位证据中；成熟证书复用，未本轮执行旧审计。",
+        "after": "完整31个决策历史和155条含自身比较的原证书在定位证据中；成熟证书复用，未本轮执行旧审计。 v1“逐前缀版本”准确指主body L138的“任意合法固定前缀下的对应逐节点全称版本”，不指L143定义的累计B_t≥0；本v2依正文L126–147作量词澄清，0数学程序运行。"
+      }
+    },
+    "old_body_evidence_sources_preserved": true,
+    "source_locations": [
+      {
+        "body": {
+          "path": "archives/customer-attraction/state/反例/在轨最优补全损失的逐期收费--反例.md",
+          "sha256": "15b613bb77a8da9a9f9c55a9e39376c076b8f8ee371056f76c7a1ce1c88a96ee"
+        },
+        "section": "被否定的量词与仍然成立的恒等式",
+        "lines": [
+          23,
+          54
+        ]
+      },
+      {
+        "body": {
+          "path": "archives/customer-attraction/state/反例/在轨最优补全损失的逐期收费--反例.md",
+          "sha256": "15b613bb77a8da9a9f9c55a9e39376c076b8f8ee371056f76c7a1ce1c88a96ee"
+        },
+        "section": "在轨第二步的严格欠额",
+        "lines": [
+          126,
+          147
+        ]
+      }
+    ],
+    "mathematics_execution": 0
+  },
+  {
+    "object_id": "customer-attraction/r18-largest-incumbent-individual-bridge-finite-counterexample",
+    "actual_highest_complete_mother": [
+      {
+        "task": {
+          "path": "research/operations/p25-register-v2/tasks/register-ab98f323ad-0010.json",
+          "sha256": "9bcaf47a9dbe79785b65e38c6d24429829319867418db57ad078b56b46b4281c"
+        },
+        "task_id": "register-ab98f323ad-0010",
+        "owner": "Boss3",
+        "state": "done",
+        "batch": {
+          "path": "research/registration/batches/register-ab98f323ad-0010.json",
+          "sha256": "620402ea06fad3d08978bf3e903ad67018094c557285625a86f71ccb617649d6"
+        },
+        "embedded_receipt_fingerprint": "2f68d616f30c76612b2c071c24ce52f2660664d38be9ec6e70fc6f5cd475bc48",
+        "receipt_assets_verified": [
+          {
+            "path": "research/registration/batches/register-ab98f323ad-0010.json",
+            "sha256": "620402ea06fad3d08978bf3e903ad67018094c557285625a86f71ccb617649d6"
+          }
+        ],
+        "receipt_file": {
+          "path": "research/registration/receipts/register-ab98f323ad-0010.json",
+          "sha256": "1c9193031dc9eb09e066fc436967f989a0f9386c716d08f18d3c651559c23130"
+        },
+        "physical_receipt_equals_embedded": true,
+        "record_fingerprint": "0e2f9afb6e9b98863a0c7678b10e7fa8f88118bb824401b08d148b2ab138d53b",
+        "validation_basis": "Actual task.state=done; embedded receipt.batch_file and every receipt.assets path/SHA checked. Prepared/claimed/canonical-only do not establish acceptance."
+      }
+    ],
+    "complete_preimage": {
+      "object_id": "customer-attraction/r18-largest-incumbent-individual-bridge-finite-counterexample",
+      "version": 1,
+      "title": "已反驳的R18最大incumbent完整SPE及个体桥认证",
+      "kind": "withdrawn-certificate",
+      "truth_status": "refuted",
+      "model": "3人6共同主题963单位客户的完整形式有序策略表；共同目录均分收益，强制根动作后沿同一原表的真实改变历史续走。",
+      "statement": "被否定的原认证声称：冻结largest_incumbent_n3p6_best.json中的43节点形式策略是完整纯SPE，并以OPT/u_min=642/125>3作为逐人个体桥的有效反例。该完整SPE前提实际为假：根规定0、实际终局(0,2,3)，根沿各强制动作0,…,5的同策略真实收益为(375/2,303,303,357,190,303)，除自身外五个动作全严格获利。因此原成功标记不能认证SPE，也不能提供SPE个体桥反例。",
+      "quantifiers": "仅反驳此精确SHA原JSON对应43节点形式策略的认证，不否定个体桥存在其它真正反例，也不将该形式策略的数值关系推广到所有SPE。",
+      "assumptions": [
+        "原输入JSON SHA256=7dcd445bdfe275e7b0521945ad4242aea3f3401dc0df848fb01c5bcb2fcfcbbd，963名不同单位客户按11类重数展开。",
+        "完整有序表有43个节点；真实偏离后不改策略或另选有利续局。",
+        "标准库Fraction逐客户精确均分；原有42个非根节点有效不替代根激励。"
+      ],
+      "scope": "保M36精确旧稳定ID，状态refuted，M35完整纠错为主body；原JSON及完整定义级Fraction纠错程序/报告按精确路径SHA保全。",
+      "objections": "全258项含自身比较（215非自身）中有五个严格盈利，全部在空历史根，最小盈利5/2。实际利润(375/2,579/2,273)和实际覆盖W=750，OPT=963，963是总客户数与静态最优而非实际W。原审计跳过空历史且成功字段未承担根检查；不是浮点舍入问题。原有个体数值比只属无SPE约束的形式表算术。此轮完整读成熟纠错正文和纠错源码，解析必要报告根字段；复用既有完整报告，不新跑审计或冒称本轮逐行全报告复审。",
+      "body": {
+        "path": "archives/customer-attraction/state/审查/最大incumbent候选的根激励遗漏与错误认证--审查.md",
+        "sha256": "1a9b6d1080669810d9cfbc473bc3b88a092489b379505b94a164664390eed747"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/反例/R18最大incumbent个体桥有限反例--反例.md",
+          "sha256": "2931df3fa7079b21c0c5e037ac77aff5f8390a8ab5de1eb3c40aa76c838b99aa"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/R-2fc可信搜索DAG与循环候选审计--计算.md",
+          "sha256": "470b06d2f877ba950a0763c6d41596dd91428615c72e3ddd17be97558bcbffc4"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-18-global-proof-incumbent-20261031/original/largest_incumbent_n3p6_best.json",
+          "sha256": "7dcd445bdfe275e7b0521945ad4242aea3f3401dc0df848fb01c5bcb2fcfcbbd"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/cyclic-extension-terminal-support-and-root-audit-primary/related-original/largest_incumbent_probe.py",
+          "sha256": "24ef0170b318beb6411bbeec2f988c38bdf57443fc48a361edeac464f97a16b0"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/cyclic-extension-terminal-support-and-root-audit-primary/new-root-definition-check/verify-root-and-full-history.py",
+          "sha256": "d4a8749e4784f9dcda5e6e8c955980aa4c4f785a39d4dff9732dbe9a36a02b09"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/cyclic-extension-terminal-support-and-root-audit-primary/new-root-definition-check/replay-with-local-input.py",
+          "sha256": "79f7a8c318e5e72be5a6881d505fa99321df4a43e5456bb4e5055f6ae8635abc"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/cyclic-extension-terminal-support-and-root-audit-primary/new-root-definition-check/stdout.json",
+          "sha256": "f7b7601c900141f23d4b3a4401a93c7ba44b82270a2bed4750606450f7b07614"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/cyclic-extension-terminal-support-and-root-audit-primary/new-root-definition-check/execution.json",
+          "sha256": "a3c34b3573324a7c565290ddebcb6c8dcd2af3c150e20182f9c4520f541d02cc"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/credible_search/README.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/credible_search/audit_old_largest_incumbent.py",
+        "clean:663827506601922a81a3:research/workspaces/customer-attraction/R-18e993ca519949aba29e030d3d7b15b3/global_proof/largest_incumbent_n3p6_best.json"
+      ]
+    },
+    "preimage_fingerprint": "0e2f9afb6e9b98863a0c7678b10e7fa8f88118bb824401b08d148b2ab138d53b",
+    "complete_next_record": {
+      "object_id": "customer-attraction/r18-largest-incumbent-individual-bridge-finite-counterexample",
+      "version": 2,
+      "title": "已反驳的R18最大incumbent完整SPE及个体桥认证",
+      "kind": "withdrawn-certificate",
+      "truth_status": "refuted",
+      "model": "3人6共同主题963单位客户的完整形式有序策略表；共同目录均分收益，强制根动作后沿同一原表的真实改变历史续走。",
+      "statement": "被否定的原认证声称：冻结largest_incumbent_n3p6_best.json中的43节点形式策略是完整纯SPE，并以OPT/u_min=642/125>5=2m−1作为逐人个体桥的有效反例。该完整SPE前提实际为假：根规定0、实际终局(0,2,3)，根沿各强制动作0,…,5的同策略真实收益为(375/2,303,303,357,190,303)，除自身外五个动作全严格获利。因此原成功标记不能认证SPE，也不能提供SPE个体桥反例。",
+      "quantifiers": "仅反驳此精确SHA原JSON对应43节点形式策略的认证，不否定个体桥存在其它真正反例，也不将该形式策略的数值关系推广到所有SPE。",
+      "assumptions": [
+        "原输入JSON SHA256=7dcd445bdfe275e7b0521945ad4242aea3f3401dc0df848fb01c5bcb2fcfcbbd，963名不同单位客户按11类重数展开。",
+        "完整有序表有43个节点；真实偏离后不改策略或另选有利续局。",
+        "标准库Fraction逐客户精确均分；原有42个非根节点有效不替代根激励。"
+      ],
+      "scope": "保M36精确旧稳定ID，状态refuted，M35完整纠错为主body；原JSON及完整定义级Fraction纠错程序/报告按精确路径SHA保全。",
+      "objections": "全258项含自身比较（215非自身）中有五个严格盈利，全部在空历史根，最小盈利5/2。实际利润(375/2,579/2,273)和实际覆盖W=750，OPT=963，963是总客户数与静态最优而非实际W。原审计跳过空历史且成功字段未承担根检查；不是浮点舍入问题。原有个体数值比只属无SPE约束的形式表算术。此轮完整读成熟纠错正文和纠错源码，解析必要报告根字段；复用既有完整报告，不新跑审计或冒称本轮逐行全报告复审。 v2按主body《同一精确输入而非标签相近》L45–47及旧body L31–33，明确原逐人桥阈值为2m−1=5；只纠正v1比较门槛文字，保撤证、根五盈利和全部旧refs，不重跑。",
+      "body": {
+        "path": "archives/customer-attraction/state/审查/最大incumbent候选的根激励遗漏与错误认证--审查.md",
+        "sha256": "1a9b6d1080669810d9cfbc473bc3b88a092489b379505b94a164664390eed747"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/反例/R18最大incumbent个体桥有限反例--反例.md",
+          "sha256": "2931df3fa7079b21c0c5e037ac77aff5f8390a8ab5de1eb3c40aa76c838b99aa"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/R-2fc可信搜索DAG与循环候选审计--计算.md",
+          "sha256": "470b06d2f877ba950a0763c6d41596dd91428615c72e3ddd17be97558bcbffc4"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-18-global-proof-incumbent-20261031/original/largest_incumbent_n3p6_best.json",
+          "sha256": "7dcd445bdfe275e7b0521945ad4242aea3f3401dc0df848fb01c5bcb2fcfcbbd"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/cyclic-extension-terminal-support-and-root-audit-primary/related-original/largest_incumbent_probe.py",
+          "sha256": "24ef0170b318beb6411bbeec2f988c38bdf57443fc48a361edeac464f97a16b0"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/cyclic-extension-terminal-support-and-root-audit-primary/new-root-definition-check/verify-root-and-full-history.py",
+          "sha256": "d4a8749e4784f9dcda5e6e8c955980aa4c4f785a39d4dff9732dbe9a36a02b09"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/cyclic-extension-terminal-support-and-root-audit-primary/new-root-definition-check/replay-with-local-input.py",
+          "sha256": "79f7a8c318e5e72be5a6881d505fa99321df4a43e5456bb4e5055f6ae8635abc"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/cyclic-extension-terminal-support-and-root-audit-primary/new-root-definition-check/stdout.json",
+          "sha256": "f7b7601c900141f23d4b3a4401a93c7ba44b82270a2bed4750606450f7b07614"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/cyclic-extension-terminal-support-and-root-audit-primary/new-root-definition-check/execution.json",
+          "sha256": "a3c34b3573324a7c565290ddebcb6c8dcd2af3c150e20182f9c4520f541d02cc"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/credible_search/README.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/credible_search/audit_old_largest_incumbent.py",
+        "clean:663827506601922a81a3:research/workspaces/customer-attraction/R-18e993ca519949aba29e030d3d7b15b3/global_proof/largest_incumbent_n3p6_best.json"
+      ]
+    },
+    "next_fingerprint": "313d571a6bd5454ef955de86dde3854cc4b4f0d605c20e1bf40e0ede093f0ec6",
+    "changed_fields": {
+      "version": {
+        "before": 1,
+        "after": 2
+      },
+      "statement": {
+        "before": "被否定的原认证声称：冻结largest_incumbent_n3p6_best.json中的43节点形式策略是完整纯SPE，并以OPT/u_min=642/125>3作为逐人个体桥的有效反例。该完整SPE前提实际为假：根规定0、实际终局(0,2,3)，根沿各强制动作0,…,5的同策略真实收益为(375/2,303,303,357,190,303)，除自身外五个动作全严格获利。因此原成功标记不能认证SPE，也不能提供SPE个体桥反例。",
+        "after": "被否定的原认证声称：冻结largest_incumbent_n3p6_best.json中的43节点形式策略是完整纯SPE，并以OPT/u_min=642/125>5=2m−1作为逐人个体桥的有效反例。该完整SPE前提实际为假：根规定0、实际终局(0,2,3)，根沿各强制动作0,…,5的同策略真实收益为(375/2,303,303,357,190,303)，除自身外五个动作全严格获利。因此原成功标记不能认证SPE，也不能提供SPE个体桥反例。"
+      },
+      "objections": {
+        "before": "全258项含自身比较（215非自身）中有五个严格盈利，全部在空历史根，最小盈利5/2。实际利润(375/2,579/2,273)和实际覆盖W=750，OPT=963，963是总客户数与静态最优而非实际W。原审计跳过空历史且成功字段未承担根检查；不是浮点舍入问题。原有个体数值比只属无SPE约束的形式表算术。此轮完整读成熟纠错正文和纠错源码，解析必要报告根字段；复用既有完整报告，不新跑审计或冒称本轮逐行全报告复审。",
+        "after": "全258项含自身比较（215非自身）中有五个严格盈利，全部在空历史根，最小盈利5/2。实际利润(375/2,579/2,273)和实际覆盖W=750，OPT=963，963是总客户数与静态最优而非实际W。原审计跳过空历史且成功字段未承担根检查；不是浮点舍入问题。原有个体数值比只属无SPE约束的形式表算术。此轮完整读成熟纠错正文和纠错源码，解析必要报告根字段；复用既有完整报告，不新跑审计或冒称本轮逐行全报告复审。 v2按主body《同一精确输入而非标签相近》L45–47及旧body L31–33，明确原逐人桥阈值为2m−1=5；只纠正v1比较门槛文字，保撤证、根五盈利和全部旧refs，不重跑。"
+      }
+    },
+    "old_body_evidence_sources_preserved": true,
+    "source_locations": [
+      {
+        "body": {
+          "path": "archives/customer-attraction/state/审查/最大incumbent候选的根激励遗漏与错误认证--审查.md",
+          "sha256": "1a9b6d1080669810d9cfbc473bc3b88a092489b379505b94a164664390eed747"
+        },
+        "section": "同一精确输入而非标签相近",
+        "lines": [
+          16,
+          47
+        ]
+      },
+      {
+        "evidence": {
+          "path": "archives/customer-attraction/state/反例/R18最大incumbent个体桥有限反例--反例.md",
+          "sha256": "2931df3fa7079b21c0c5e037ac77aff5f8390a8ab5de1eb3c40aa76c838b99aa"
+        },
+        "lines": [
+          27,
+          35
+        ]
+      }
+    ],
+    "mathematics_execution": 0
+  }
+]
