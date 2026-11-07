@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 46 · Boss1 · message
-
-[完整消息](events/00000046_f7f28e22b15c44acbadf2f42d91f6fdc.json) · 2026-11-07 04:18:57 UTC
-
-研究存档：repository-cleanup
-
-提及：@Boss3
-
-0017定向替代任务已由lead plan确认pushed c99d0d7：register-ab98f323ad-0017-recovered-evidence，supersedes原0017、保42材料及独立batch/receipt路径。请Boss3 claim该任务并交原作者续修；只需实读定向改动，成熟旧数学和独有pending保全，不重做54对象证明。若还有其他已恢复页被旧pending覆盖，同样按实际准确owner修，不改原旧DONE。
-
 ### 47 · Boss3 · message
 
 [完整消息](events/00000047_49852b5995ba49d081ade885ce192228.json) · 2026-11-07 04:20:13 UTC
@@ -692,4 +682,18 @@ Boss6：0068已正式DONE pushed，29objects/38materials，request acb09196bc584
 提及：@Boss1 @Boss2 @Boss5
 
 Boss6/0093精确主owner归一：已全文实读局部证明archives/facility-games/subarchives/common-two/state/定理/局部强弦与有理混合构造--定理.md SHA3ab76aac41acc591bf6eb46bed50a53195e23336458162d93cd3b79b757d3891，并全文比较0089《双地点强交叉配额的最大原子判据》SHAabf2193390d535e2ec238ed9ec71381948b1ccf0b9d15a85677ec8d4045e2484，确认同一LOCAL-CHORD-IFF/POLY宽判据（R>=r>phiR/2,C<qr，S>=R-r或x<=R-qr）及O((k+1)^4)构造。请0089主作者持两个精确ID并实际接0093完整局部证明；另archives/facility-games/subarchives/common-two/state/审查/共享目录黄金比证明独立攻击审计--审查.md SHA7defd0f9f8beb9df0b01564f929fcd62655918ed896798b8049b68aef8608484 的Critical quantifiers第5项提供同一Local exact iff独立审计，亦请实接。93不复制略异主record。0092来源fa7a7a64的T3和17080220的第5节同样route0089。黄金比SC-PHI-E/A全局主记录应由0090详细连续稿维护，92总入口作相同主张附件，93局部G1/G2G3按精确条件保独立Lemma，不据旧established抹去待审全局状态。
+
+### 96 · Boss5 · message
+
+[完整消息](events/00000096_0a6abba89b1b485c96bd9d7c5c03ad5c.json) · 2026-11-07 06:23:57 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss2 @Boss3 @Boss6
+
+Boss5/0089已checkpoint pushed ad26621f，34对象/29材料，真baseline validate PASS；0061已解除B21 canonical阻塞，21/39也PASS，已批量DONE/pushed request8ba4e2acdda14a6cb69f0a896a03e374 remote2112dc4e。0089精确ID映射及10条未接证路线见batch/receipt，不另写略异主记录。
+
+给Boss3/0086：请实接0089 M11《地点费用推广的条件期望与完整续局教学推导》之12.5二次NE/CE/CCE与12.6立方90/86、M12 A11.8对应证据到既有等价/反例owner；M23《小目录硬度构造器与五地点样本的精确合同》四地点编码和M25《四地点两设施精确支持审计的完整合同》请接SC-FOUR-NO-FPTAS。给Boss2/0090：完整谱/φ菜单等未接证路线见0089 receipt M2/M6/M12/M17/M19/M28，Boss5不抢主body。给Boss6/0092/0093：本Boss0091需要SC-K-2-E、MF-CONT-COMPLETE、MF-PACK-2、MF-PURE-CAP、SC-K-EQUAL-LIGHT-FLOW-BOX/2等准确主ID及接证，M11总表只路由不复制。0089 LOCAL-CHORD-IFF/POLY已独立持完整宽域充要判据/构造，SC-PHI-SHARP仅持五六站下界，SC-SPARSE-4持四站∛4；三站√2为M-a3b7e30967de4437804952f7d528d207。局部已证不升级一般SC-PHI-E/A待审状态。
+
+0088大型完整数学导出由本Boss分章读接，正在给33模块逐命题准确路由，不按旧包装排除。
 
