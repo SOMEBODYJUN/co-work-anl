@@ -1,0 +1,158 @@
+{
+  "object_id": "M-9803edf0cfc8420dae511fa143f8c51d",
+  "old_complete_record": {
+    "object_id": "M-9803edf0cfc8420dae511fa143f8c51d",
+    "version": 1,
+    "title": "固定坏终局计数的可信换位极端正常形",
+    "kind": "lemma",
+    "truth_status": "conditional",
+    "model": "有限单位客户、有限非空带标签共同主题目录、单位权顺序提供者；主题允许为空、同覆盖异标签及重复选择。完整纯策略定义在全部有序历史，任意平局保留；偏离后使用同一策略的真实后继。根福利W为覆盖客户数，非零背景的未来收益和不等同于新增覆盖。",
+    "statement": "在固定PB坏点/固定终局计数且根收益最大、实际利润序列字典序最大的可实现完整SPE中，任意严格上升u_i<u_(i+1)必有M_(剩余−1)(hS_(i+1))>u_i，否则可信换位改进极端序。若另有OPT_m>2W，令τ=2W/(2m−1)，由末位LAST界存在最后一次u_i<τ≤u_(i+1)的上升，所能保证仍只是该换位门槛>u_i。",
+    "quantifiers": "对满足上述坏点存在及极端选择条件的每个固定计数实现。",
+    "assumptions": [
+      "固定完整可实现终局计数，不任意跨计数最大化",
+      "存在相应坏点时才作条件推导",
+      "LAST比较使用原实例OPT_m"
+    ],
+    "scope": "条件极端结构；不主张PB坏点实际存在。",
+    "objections": "不得把门槛>u_i提升为≥τ；PB的一些普遍加强已经被后继反例否定，不影响本带前提推导。LAST通用结论沿现有正文，不重复造节点。",
+    "body": {
+      "path": "archives/customer-attraction/state/引理/可信相邻换位与固定计数坏点正常形--引理.md",
+      "sha256": "aaa8859eaa5951c82329b324465346657ddd29c5593aa4ae4898adbf5e7c15b2"
+    },
+    "evidence": [
+      {
+        "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+        "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+      }
+    ],
+    "sources": [
+      "archives/customer-attraction/state/引理/可信相邻换位与固定计数坏点正常形--引理.md",
+      "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round6/global/credible_adjacent_transposition.md"
+    ]
+  },
+  "proposed_complete_record": {
+    "object_id": "M-9803edf0cfc8420dae511fa143f8c51d",
+    "version": 2,
+    "title": "固定坏终局计数的可信换位极端正常形",
+    "kind": "lemma",
+    "truth_status": "conditional",
+    "model": "有限单位客户、有限非空带标签共同主题目录、单位权顺序提供者；主题允许为空、同覆盖异标签及重复选择。完整纯策略定义在全部有序历史，任意平局保留；偏离后使用同一策略的真实后继。根福利W为覆盖客户数，非零背景的未来收益和不等同于新增覆盖。",
+    "statement": "固定任意可由完整纯SPE实现的终局主题计数q，在实现q的全部完整SPE中取实际收益向量字典序最大者。对其中每个相邻严格上升u_i<u_(i+1)，必有M_(m−i)(h_i,S_(i+1))>u_i。若该q另满足OPT_m>2W，令τ=2W/(2m−1)，LAST给u_m>τ>W/m，故存在最后一个u_i<τ的位置，其后u_(i+1)≥τ，且只保证上述门槛>u_i。另在固定实例、合法h和余人数r≥2，置t=v_(r+1)(b)；若首对利润α+β<2t的完整子SPE集合非空，在该集合取α最大者，则α<β时M_(r−1)(h,B)>α。此PB选择仅给首对barrier。",
+    "quantifiers": "对每个有限实例及每个可实现固定终局计数q，在该q全部完整SPE实现中作lex选择，得到所有相邻位置的barrier；half最后低点另外假设该q的OPT_m>2W。PB部分另对每个固定合法背景和r≥2、非空首对和<2v_(r+1)(b)的子SPE集合取首利最大，只推出其首对barrier。",
+    "assumptions": [
+      "固定计数部分在该q全部完整SPE实现中取字典序最大，不附加不被任意相邻换位保留的菜单/PB筛选",
+      "PB部分的坏集合只以首对总和α+β<2t定义；首利最大化不授任意后续位置的barrier",
+      "最后低点额外使用OPT_m>2W及原实例LAST界；不主张half坏计数或PB坏点实际存在"
+    ],
+    "scope": "条件极端结构：固定q全实现lex的所有相邻barrier、另列PB首对极端及half坏q的必要last-dip。",
+    "objections": "不得把门槛>u_i提升为≥τ；PB的一些普遍加强已经被后继反例否定，不影响本带前提推导。LAST通用结论沿现有正文，不重复造节点。 本次将v1合写的PB首利最大选择与固定q全实现lex选择分述。PB坏性只在首对换位下按首对和保持，不能据此把PB筛选域内lex极值用于所有后续位置；固定q的half坏性由同一W/OPT保持。这是既有正文两种选择域的陈述澄清，未新证坏点存在、未将M>u_i提高为M≥τ。",
+    "body": {
+      "path": "archives/customer-attraction/state/引理/可信相邻换位与固定计数坏点正常形--引理.md",
+      "sha256": "aaa8859eaa5951c82329b324465346657ddd29c5593aa4ae4898adbf5e7c15b2"
+    },
+    "evidence": [
+      {
+        "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+        "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+      },
+      {
+        "path": "archives/customer-attraction/state/审查/净券换位与调和组件的内部审查范围--审查.md",
+        "sha256": "4f45e4a5cf106c6314e53083d340fc2229f55d6d8369645b98962c3d56daaa50",
+        "section": "mixed按陈述重构的换位与固定计数扩展"
+      }
+    ],
+    "sources": [
+      "archives/customer-attraction/state/引理/可信相邻换位与固定计数坏点正常形--引理.md",
+      "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round6/global/credible_adjacent_transposition.md",
+      "archives/customer-attraction/state/审查/净券换位与调和组件的内部审查范围--审查.md"
+    ]
+  },
+  "exact_field_diffs": {
+    "version": {
+      "v1": 1,
+      "v2": 2
+    },
+    "statement": {
+      "v1": "在固定PB坏点/固定终局计数且根收益最大、实际利润序列字典序最大的可实现完整SPE中，任意严格上升u_i<u_(i+1)必有M_(剩余−1)(hS_(i+1))>u_i，否则可信换位改进极端序。若另有OPT_m>2W，令τ=2W/(2m−1)，由末位LAST界存在最后一次u_i<τ≤u_(i+1)的上升，所能保证仍只是该换位门槛>u_i。",
+      "v2": "固定任意可由完整纯SPE实现的终局主题计数q，在实现q的全部完整SPE中取实际收益向量字典序最大者。对其中每个相邻严格上升u_i<u_(i+1)，必有M_(m−i)(h_i,S_(i+1))>u_i。若该q另满足OPT_m>2W，令τ=2W/(2m−1)，LAST给u_m>τ>W/m，故存在最后一个u_i<τ的位置，其后u_(i+1)≥τ，且只保证上述门槛>u_i。另在固定实例、合法h和余人数r≥2，置t=v_(r+1)(b)；若首对利润α+β<2t的完整子SPE集合非空，在该集合取α最大者，则α<β时M_(r−1)(h,B)>α。此PB选择仅给首对barrier。"
+    },
+    "quantifiers": {
+      "v1": "对满足上述坏点存在及极端选择条件的每个固定计数实现。",
+      "v2": "对每个有限实例及每个可实现固定终局计数q，在该q全部完整SPE实现中作lex选择，得到所有相邻位置的barrier；half最后低点另外假设该q的OPT_m>2W。PB部分另对每个固定合法背景和r≥2、非空首对和<2v_(r+1)(b)的子SPE集合取首利最大，只推出其首对barrier。"
+    },
+    "assumptions": {
+      "v1": [
+        "固定完整可实现终局计数，不任意跨计数最大化",
+        "存在相应坏点时才作条件推导",
+        "LAST比较使用原实例OPT_m"
+      ],
+      "v2": [
+        "固定计数部分在该q全部完整SPE实现中取字典序最大，不附加不被任意相邻换位保留的菜单/PB筛选",
+        "PB部分的坏集合只以首对总和α+β<2t定义；首利最大化不授任意后续位置的barrier",
+        "最后低点额外使用OPT_m>2W及原实例LAST界；不主张half坏计数或PB坏点实际存在"
+      ]
+    },
+    "scope": {
+      "v1": "条件极端结构；不主张PB坏点实际存在。",
+      "v2": "条件极端结构：固定q全实现lex的所有相邻barrier、另列PB首对极端及half坏q的必要last-dip。"
+    },
+    "objections": {
+      "v1": "不得把门槛>u_i提升为≥τ；PB的一些普遍加强已经被后继反例否定，不影响本带前提推导。LAST通用结论沿现有正文，不重复造节点。",
+      "v2": "不得把门槛>u_i提升为≥τ；PB的一些普遍加强已经被后继反例否定，不影响本带前提推导。LAST通用结论沿现有正文，不重复造节点。 本次将v1合写的PB首利最大选择与固定q全实现lex选择分述。PB坏性只在首对换位下按首对和保持，不能据此把PB筛选域内lex极值用于所有后续位置；固定q的half坏性由同一W/OPT保持。这是既有正文两种选择域的陈述澄清，未新证坏点存在、未将M>u_i提高为M≥τ。"
+    },
+    "evidence": {
+      "v1": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        }
+      ],
+      "v2": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/净券换位与调和组件的内部审查范围--审查.md",
+          "sha256": "4f45e4a5cf106c6314e53083d340fc2229f55d6d8369645b98962c3d56daaa50",
+          "section": "mixed按陈述重构的换位与固定计数扩展"
+        }
+      ]
+    },
+    "sources": {
+      "v1": [
+        "archives/customer-attraction/state/引理/可信相邻换位与固定计数坏点正常形--引理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round6/global/credible_adjacent_transposition.md"
+      ],
+      "v2": [
+        "archives/customer-attraction/state/引理/可信相邻换位与固定计数坏点正常形--引理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round6/global/credible_adjacent_transposition.md",
+        "archives/customer-attraction/state/审查/净券换位与调和组件的内部审查范围--审查.md"
+      ]
+    }
+  },
+  "bearing_sections": [
+    {
+      "path": "archives/customer-attraction/state/引理/可信相邻换位与固定计数坏点正常形--引理.md",
+      "sha256": "aaa8859eaa5951c82329b324465346657ddd29c5593aa4ae4898adbf5e7c15b2",
+      "section": "固定PB坏点及固定终局计数的极端结构"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/可信相邻换位与固定计数坏点正常形--引理.md",
+      "sha256": "aaa8859eaa5951c82329b324465346657ddd29c5593aa4ae4898adbf5e7c15b2",
+      "section": "同规定终局负载的子树替换保留严格祖先比较"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/可信相邻换位与固定计数坏点正常形--引理.md",
+      "sha256": "aaa8859eaa5951c82329b324465346657ddd29c5593aa4ae4898adbf5e7c15b2",
+      "section": "真正half坏计数的最后低利润跨越"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/净券换位与调和组件的内部审查范围--审查.md",
+      "sha256": "4f45e4a5cf106c6314e53083d340fc2229f55d6d8369645b98962c3d56daaa50",
+      "section": "mixed按陈述重构的换位与固定计数扩展"
+    }
+  ],
+  "why": "v1以斜杠合写两种极值选择域。PB首对和在首对交换下保持，但后续位置交换可能改变首对和；固定q全部实现的lex选择才支持每个相邻上升。原正文证明不变。"
+}
