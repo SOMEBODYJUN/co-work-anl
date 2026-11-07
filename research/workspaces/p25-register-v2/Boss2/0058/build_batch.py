@@ -234,6 +234,11 @@ manifest=json.loads((ROOT/'archives/customer-attraction/tools/evidence/five-roun
 finite=next(o for o in objects if o['object_id']==page(2))
 finite['evidence'].extend(ref(x['preserved_path']) for x in manifest if 'audit_five_availability.' in x['path'])
 
+fresh = next(o for o in objects if o['object_id'] == page(24))
+fresh['evidence'].append(ref(
+    'archives/customer-attraction/state/程序/逐历史鲜动作税包络锥的原程序与十二条记录--程序.md',
+    '为什么任意逐历史鲜动作策略在种子上都是SPE'))
+
 # Complete the explicit imported proof entrances without rewriting mature bodies.
 pay_ids = {page(38), ids[6], page(39), ids[7], ids[8]}
 for obj in objects:
