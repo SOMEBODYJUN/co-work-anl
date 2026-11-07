@@ -1,0 +1,729 @@
+{
+  "schema": 2,
+  "objects": [
+    {
+      "object_id": "WC-R1-DAG-STEP",
+      "version": 1,
+      "title": "辅助DAG阶跃博弈的精确路径均衡门槛",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限simple DAG D（允许m0）；根权1、正轻权，W<1且每v的outsum<w_v；DAG双列binary策略。成对同费为明确阈值的非连续step费用，幅度A0,A_v≥0。不是非负系数多项式模型。用全局补位把根规范到0，Z为与根同位轻玩家集合。",
+      "statement": "m>0时存在唯一q>1满足q=1+Σ_(k≥1)P_k q^(−k)。每组非负幅度均有q-PNE；对正幅度A_v=A0 h_v(q)，h_v=(1+Σ_(u→v)h_u)/q，某游戏的最佳纯倍率恰q，由全入/全出状态取得。m0时q=1。",
+      "quantifiers": "∀有限DAG，sup_幅度 min_纯态 max_真实偏离倍率=q_D，正幅度取得最坏值；任意幅度至少有一个q_D-PNE。",
+      "assumptions": [
+        "明确step负载分离与原双列策略",
+        "幅度非负，最坏取得时A0>0"
+      ],
+      "scope": "路径数按顶点计；原精确图键+version1。不能把不连续费用结论直接迁入多项式模型。",
+      "objections": "正文给出所列范围的完整证明或精确有限证书；冻结内部审查及有限计算按实际范围引用，未作外审或全球新颖性认证。本登记不重跑旧数学程序。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+        "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+          "sha256": "f34c797df23040e074e9b1778911b5167c972eaabf01bb998599d8452d4d242e"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+          "sha256": "503d019086ae0db71d6a98544fd524788fae16b6be2548db721bd5a931c1a147"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/Pro派生简报的逐项数学范围与版本审查--审查.md",
+          "sha256": "9e64eb947d98ee23a9cc0d460b0757b19aad1175a5a6eb00ce60c373b3bfc187"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/加权拥塞旧候选目录与后续数学状态--审查.md",
+          "sha256": "f851d005d87fa5c15a3ccfb164980919f9ab7abd9069c6b15383f4eb67345adf"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/拥塞全类目标与早期源包络账本的全部陈述--资料.md",
+          "sha256": "63d83d2686c31af7738970511c4eae6d6c7bb924e06b30b56efc2e37fff095cf",
+          "section": "完整冻结账本第 1–248 行"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/step_dag/step_dependency_threshold.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/step_dag/independent_review.md"
+      ],
+      "legacy_aliases": [
+        "WC-R1-DAG-STEP v1",
+        "weighted-congestion/step-DAG-exact-path-threshold"
+      ]
+    },
+    {
+      "object_id": "weighted-congestion/step-DAG-literal-cost-reduction",
+      "version": 1,
+      "title": "辅助阶跃DAG的全状态字面费用化简",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限simple DAG D（允许m0）；根权1、正轻权，W<1且每v的outsum<w_v；DAG双列binary策略。成对同费为明确阈值的非连续step费用，幅度A0,A_v≥0。不是非负系数多项式模型。用全局补位把根规范到0，Z为与根同位轻玩家集合。",
+      "statement": "根当前费A0+Σ_(v∈Z)A_v，翻后费A0+Σ_(v∉Z)A_v。轻v在Z时当前A_v、偏离P_v=A0+Σ_(u→v,u∈Z)A_u；v不在Z时两者反置。该成本表由真实资源及严格负载分离逐项给出。",
+      "quantifiers": "∀合法权、非负幅度和全部Z⊆V，根与每名轻玩家全部真实翻位满足该表。",
+      "assumptions": [
+        "W<1及outsum<w_v严格分离",
+        "与主对象相同step位置"
+      ],
+      "scope": "费用表可独立引用；若删严格分离，step取值可变，公式不再自动成立。",
+      "objections": "正文给出所列范围的完整证明或精确有限证书；冻结内部审查及有限计算按实际范围引用，未作外审或全球新颖性认证。本登记不重跑旧数学程序。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+        "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990",
+        "section": "全状态真实费用化简"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+          "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/step_dag/step_dependency_threshold.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/step_dag/independent_review.md"
+      ]
+    },
+    {
+      "object_id": "weighted-congestion/step-DAG-rational-balanced-factor",
+      "version": 1,
+      "title": "DAG有理单参数幅度的精确最佳倍率",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限simple DAG D（允许m0）；根权1、正轻权，W<1且每v的outsum<w_v；DAG双列binary策略。成对同费为明确阈值的非连续step费用，幅度A0,A_v≥0。不是非负系数多项式模型。用全局补位把根规范到0，Z为与根同位轻玩家集合。",
+      "statement": "r≥1，置h_v(r)=(1+Σ_in h_u(r))/r，A_v=A0 h_v(r)，A0>0。此游戏最佳倍率恰β(r)=min{r,1+Σh_v(r)}，由全入或全出取得。m>0时取有理r<q_D趋q_D，全部权与幅度可有理且β(r)趋q_D。",
+      "quantifiers": "∀D、∀r≥1成立；∀δ>0可取全有理合法实例最佳倍率大于q_D−δ。",
+      "assumptions": [
+        "同step模型",
+        "A0>0，r≥1"
+      ],
+      "scope": "有理逼近不声称q_D本身有理；不将辅助成本表视为合法多项式费用。",
+      "objections": "正文给出所列范围的完整证明或精确有限证书；冻结内部审查及有限计算按实际范围引用，未作外审或全球新颖性认证。本登记不重跑旧数学程序。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+        "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990",
+        "section": "有理单参数实例"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+          "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/step_dag/step_dependency_threshold.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/step_dag/independent_review.md"
+      ]
+    },
+    {
+      "object_id": "weighted-congestion/step-DAG-path-extrema-and-degree",
+      "version": 1,
+      "title": "DAG阶跃门槛的图极值与入度界",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限simple DAG D（允许m0）；根权1、正轻权，W<1且每v的outsum<w_v；DAG双列binary策略。成对同费为明确阈值的非连续step费用，幅度A0,A_v≥0。不是非负系数多项式模型。用全局补位把根规范到0，Z为与根同位轻玩家集合。",
+      "statement": "固定m，空图q_empty=(1+√(1+4m))/2给最小值，传递完全DAG给最大值Φ_m，满足Φ_m=(1+1/Φ_m)^m；等号图精确如正文。最大入度Δ时q≤(1+Δ+√((Δ−1)^2+4m))/2，特别Δ=o(√m)给q~√m。",
+      "quantifiers": "∀m顶点有限simple DAG；固定m刻画图极值，任意序列Δ=o√m得渐近式。",
+      "assumptions": [
+        "同step模型",
+        "Δ为最大入度，非最长路径高度"
+      ],
+      "scope": "图极值与度界属于辅助阶跃系统；不能将树高度结论推广任意DAG。",
+      "objections": "正文给出所列范围的完整证明或精确有限证书；冻结内部审查及有限计算按实际范围引用，未作外审或全球新颖性认证。本登记不重跑旧数学程序。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+        "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990",
+        "section": "图极值、度界、树特化与浅DAG反例"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+          "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/step_dag/step_dependency_threshold.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/step_dag/independent_review.md"
+      ]
+    },
+    {
+      "object_id": "weighted-congestion/transitive-tree-step-specialization",
+      "version": 1,
+      "title": "祖先闭包树的DAG阶跃门槛特化",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限simple DAG D（允许m0）；根权1、正轻权，W<1且每v的outsum<w_v；DAG双列binary策略。成对同费为明确阈值的非连续step费用，幅度A0,A_v≥0。不是非负系数多项式模型。用全局补位把根规范到0，Z为与根同位轻玩家集合。",
+      "statement": "对根树的祖先闭包DAG，深度ℓ的h=r^(−1)(1+1/r)^(ℓ−1)，q由总和方程确定；固定顶点数时星与链给精确极值。高度H=o√m时q~√m。",
+      "quantifiers": "∀有限根树的祖先闭包，按其深度/高度成立。",
+      "assumptions": [
+        "边包括所有祖先关系，而非只保父子边",
+        "同step模型"
+      ],
+      "scope": "树特化的域精确保留；其高度结论不是任意DAG定理。",
+      "objections": "正文给出所列范围的完整证明或精确有限证书；冻结内部审查及有限计算按实际范围引用，未作外审或全球新颖性认证。本登记不重跑旧数学程序。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+        "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990",
+        "section": "图极值、度界、树特化与浅DAG反例"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+          "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/step_dag/step_dependency_threshold.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/step_dag/independent_review.md"
+      ]
+    },
+    {
+      "object_id": "weighted-congestion/shallow-DAG-height-transfer-counterexample",
+      "version": 1,
+      "title": "两层完全DAG反驳树高度门槛迁移",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限simple DAG D（允许m0）；根权1、正轻权，W<1且每v的outsum<w_v；DAG双列binary策略。成对同费为明确阈值的非连续step费用，幅度A0,A_v≥0。不是非负系数多项式模型。用全局补位把根规范到0，Z为与根同位轻玩家集合。",
+      "statement": "两层各s顶点、全部第一层指向第二层时，最长有向路径仅2顶点，但q³−q²−2sq−s²=0，且q~s^(2/3)。因此任意DAG的浅高度不能推出树祖先闭包的√m阶门槛。",
+      "quantifiers": "∀整数s≥1给出该辅助DAG游戏路径门槛；s→∞给渐近分离。",
+      "assumptions": [
+        "同step定义",
+        "有向完全二部两层图"
+      ],
+      "scope": "反驳的是错误的跨域高度迁移；没有合法多项式无均衡结论。",
+      "objections": "正文给出所列范围的完整证明或精确有限证书；冻结内部审查及有限计算按实际范围引用，未作外审或全球新颖性认证。本登记不重跑旧数学程序。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+        "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990",
+        "section": "图极值、度界、树特化与浅DAG反例"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+          "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/step_dag/step_dependency_threshold.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/step_dag/independent_review.md"
+      ]
+    },
+    {
+      "object_id": "WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1",
+      "version": 1,
+      "title": "DAG端点低泄漏的精确次数预算",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "固定有限非空simple DAG D=(V,E)，m=|V|≥1。根权1，正轻权w_v，W=Σw_v<1，t_v=Σ_(v→u)w_u<w_v；两列同费的DAG端点检测系统，费用非零非负系数多项式、次数≤d。P_k计k顶点有向路径。它首先是端点检测系统，尚不是全状态多项式博弈均衡结论。",
+      "statement": "令d≥1、0<ε<1、z=ε^(−1/d)、S_D(z)=Σ_(k≥1)P_k z^(k−1)。存在上述合法权与费用满足p0(W)≤εp0(1)、p_v(1+t_v)≤εp_v(1+w_v)，当且仅当z(z−1)S_D(z)≤1。固定权可行恰为W≤1/z且w_v≥z−1+zt_v；纯d次单项式足以实现全部可行检测。",
+      "quantifiers": "∀有限非空simple DAG、∀整数d≥1、∀ε∈(0,1)，权与非零费用的存在量词等价于标量判据。",
+      "assumptions": [
+        "合法权的严格W<1及t_v<w_v",
+        "非负系数且费用非零"
+      ],
+      "scope": "包含等号可行、必要次数界及反向拓扑最小权递推；不把端点低泄漏当成所有中间负载或均衡的保真。",
+      "objections": "正文给出所列范围的完整证明或精确有限证书；冻结内部审查及有限计算按实际范围引用，未作外审或全球新颖性认证。本登记不重跑旧数学程序。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/有向无环端点低泄漏的精确次数预算--定理.md",
+        "sha256": "965f989741ccff9344da1d56a337ed48bef60875e90748f0874327176d1f5236"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+          "sha256": "f34c797df23040e074e9b1778911b5167c972eaabf01bb998599d8452d4d242e"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+          "sha256": "503d019086ae0db71d6a98544fd524788fae16b6be2548db721bd5a931c1a147"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/拥塞结构势与规范形账本的全部陈述--资料.md",
+          "sha256": "9e14b51a1e19062674f69602052761645c99f10e0b55d0215e5e84a4adf2314d",
+          "section": "完整冻结账本第 451–672 行"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/polynomial_curvature/dag_low_leakage_budget_review.md"
+      ],
+      "legacy_aliases": [
+        "weighted-congestion/DAG-endpoint-leakage-degree-budget"
+      ]
+    },
+    {
+      "object_id": "weighted-congestion/DAG-endpoint-slack-and-saturation",
+      "version": 1,
+      "title": "DAG可行权的全部松弛表示与饱和刚性",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "固定有限非空simple DAG D=(V,E)，m=|V|≥1。根权1，正轻权w_v，W=Σw_v<1，t_v=Σ_(v→u)w_u<w_v；两列同费的DAG端点检测系统，费用非零非负系数多项式、次数≤d。P_k计k顶点有向路径。它首先是端点检测系统，尚不是全状态多项式博弈均衡结论。",
+      "statement": "置τ=z−1，邻接矩阵A按outgoing作用，R_z=(I−zA)^(−1)。全部可行权恰为w=R_z(τ1+b)，b≥0且1ᵀR_z b≤1/z−τS_D(z)。在z(z−1)S_D(z)=1时b=0、权唯一；每个通过检测的非零费用必须为正倍数x^d。",
+      "quantifiers": "在前述每个D,d,ε下刻画全部可行权；饱和判据成立时刻画全部费用。",
+      "assumptions": [
+        "同DAG端点模型",
+        "z>1、D有限无环"
+      ],
+      "scope": "保全部权的自由度与饱和等号；不含m0、d0、ε0或1外域。",
+      "objections": "正文给出所列范围的完整证明或精确有限证书；冻结内部审查及有限计算按实际范围引用，未作外审或全球新颖性认证。本登记不重跑旧数学程序。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/有向无环端点低泄漏的精确次数预算--定理.md",
+        "sha256": "965f989741ccff9344da1d56a337ed48bef60875e90748f0874327176d1f5236",
+        "section": "全部可行权、饱和刚性与边界域"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/有向无环端点低泄漏的精确次数预算--定理.md",
+          "sha256": "965f989741ccff9344da1d56a337ed48bef60875e90748f0874327176d1f5236"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/polynomial_curvature/dag_low_leakage_budget_review.md"
+      ]
+    },
+    {
+      "object_id": "WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1",
+      "version": 1,
+      "title": "极值幅度DAG多项式游戏的全入近似均衡",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限原子加权拥塞游戏：有限玩家、资源及每人有限非空资源子集动作族（可有空动作），每人资源无关正实权；资源费用为非负系数次数至多整数d的多项式。玩家成本为所用资源费用之和，不再乘权；每次真实单方偏离冻结别人并计入自身新负载。α-PNE用全部偏离的弱式C_old≤α C_new，α≥1；零费直接用不等式。 固定非空simple DAG的原双列binary策略，根权1，W<1、outsum<w_v；q=q_D>1及h来自辅助DAG。存在A>0满足真实费用幅度p0(1)=A、p_v(1+w_v)=A h_v(q)；两列相同非零费用。",
+      "statement": "令B_d(q)=q/[1+(q−1)(1+1/[q(q−1)])^(−d)]。真实全入状态是max{1+1/q,B_d(q)}-PNE；对每个d≥16统一为4√(d/ln d)-PNE。",
+      "quantifiers": "∀上述有限DAG、合法实权、d≥1及满足同一幅度锚定的任意非负多项式形状，指定全入状态满足结论。",
+      "assumptions": [
+        "极值幅度锚定N不可省",
+        "每个资源次数≤d，费用非零"
+      ],
+      "scope": "无需低漏或高平台保真；结论只封闭固定极值幅度子类，任意幅度和全类策略未由此覆盖。",
+      "objections": "正文给出所列范围的完整证明或精确有限证书；冻结内部审查及有限计算按实际范围引用，未作外审或全球新颖性认证。本登记不重跑旧数学程序。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+        "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+          "sha256": "f34c797df23040e074e9b1778911b5167c972eaabf01bb998599d8452d4d242e"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+          "sha256": "503d019086ae0db71d6a98544fd524788fae16b6be2548db721bd5a931c1a147"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/Pro派生简报的逐项数学范围与版本审查--审查.md",
+          "sha256": "9e64eb947d98ee23a9cc0d460b0757b19aad1175a5a6eb00ce60c373b3bfc187"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/加权拥塞旧候选目录与后续数学状态--审查.md",
+          "sha256": "f851d005d87fa5c15a3ccfb164980919f9ab7abd9069c6b15383f4eb67345adf"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/拥塞结构势与规范形账本的全部陈述--资料.md",
+          "sha256": "9e14b51a1e19062674f69602052761645c99f10e0b55d0215e5e84a4adf2314d",
+          "section": "完整冻结账本第 451–672 行"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md"
+      ],
+      "legacy_aliases": [
+        "weighted-congestion/extremal-step-amplitude-polynomial-all-in"
+      ]
+    },
+    {
+      "object_id": "weighted-congestion/extremal-DAG-weight-gap-moment",
+      "version": 1,
+      "title": "DAG极值幅度的缺口加权矩",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限原子加权拥塞游戏：有限玩家、资源及每人有限非空资源子集动作族（可有空动作），每人资源无关正实权；资源费用为非负系数次数至多整数d的多项式。玩家成本为所用资源费用之和，不再乘权；每次真实单方偏离冻结别人并计入自身新负载。α-PNE用全部偏离的弱式C_old≤α C_new，α≥1；零费直接用不等式。 固定非空simple DAG的原双列binary策略，根权1，W<1、outsum<w_v；q=q_D>1及h来自辅助DAG。存在A>0满足真实费用幅度p0(1)=A、p_v(1+w_v)=A h_v(q)；两列相同非零费用。",
+      "statement": "δ_v=w_v−Σ_out w_u>0，令c_v为到v的路径计数，则W=Σc_vδ_v；μ=Σh_v(q)δ_v≤W/q<1/q。路径展开与独立双重求和均给该矩约束。",
+      "quantifiers": "∀同模型的合法权与对应q/h成立。",
+      "assumptions": [
+        "极值DAG h递推",
+        "W<1"
+      ],
+      "scope": "是控制根真实偏离的引理，不对任意幅度提供同样矩。",
+      "objections": "正文给出所列范围的完整证明或精确有限证书；冻结内部审查及有限计算按实际范围引用，未作外审或全球新颖性认证。本登记不重跑旧数学程序。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+        "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c",
+        "section": "总权重的缺口矩"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+          "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md"
+      ]
+    },
+    {
+      "object_id": "weighted-congestion/extremal-all-in-root-rational-bound",
+      "version": 1,
+      "title": "极值幅度全入状态的根Jensen包络",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限原子加权拥塞游戏：有限玩家、资源及每人有限非空资源子集动作族（可有空动作），每人资源无关正实权；资源费用为非负系数次数至多整数d的多项式。玩家成本为所用资源费用之和，不再乘权；每次真实单方偏离冻结别人并计入自身新负载。α-PNE用全部偏离的弱式C_old≤α C_new，α≥1；零费直接用不等式。 固定非空simple DAG的原双列binary策略，根权1，W<1、outsum<w_v；q=q_D>1及h来自辅助DAG。存在A>0满足真实费用幅度p0(1)=A、p_v(1+w_v)=A h_v(q)；两列相同非零费用。",
+      "statement": "根全入旧费用qA；真实翻后成本≥A[1+Σh_v(q)(1+δ_v)^(−d)]>A[1+(q−1)(1+1/[q(q−1)])^(−d)]，故根的改善比严格小于B_d(q)。轻玩家各比至多1+1/q，合得指定全入均衡。",
+      "quantifiers": "∀满足幅度N的全部合法多项式形状及正权成立。",
+      "assumptions": [
+        "非负系数次数界",
+        "缺口矩与凸函数Jensen",
+        "真实新负载重算"
+      ],
+      "scope": "保留严格根界与实际游戏接口，不把非连续step结论直接导入。",
+      "objections": "正文给出所列范围的完整证明或精确有限证书；冻结内部审查及有限计算按实际范围引用，未作外审或全球新颖性认证。本登记不重跑旧数学程序。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+        "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c",
+        "section": "根偏离的Jensen包络"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+          "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c",
+          "section": "总权重的缺口矩"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+          "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c",
+          "section": "所有轻玩家的真实偏离"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+          "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c",
+          "section": "对象、实际幅度条件和结论"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md"
+      ]
+    },
+    {
+      "object_id": "weighted-congestion/extremal-all-in-uniform-square-root-bound",
+      "version": 1,
+      "title": "根包络对所有实q的统一平方根界",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限原子加权拥塞游戏：有限玩家、资源及每人有限非空资源子集动作族（可有空动作），每人资源无关正实权；资源费用为非负系数次数至多整数d的多项式。玩家成本为所用资源费用之和，不再乘权；每次真实单方偏离冻结别人并计入自身新负载。α-PNE用全部偏离的弱式C_old≤α C_new，α≥1；零费直接用不等式。 固定非空simple DAG的原双列binary策略，根权1，W<1、outsum<w_v；q=q_D>1及h来自辅助DAG。存在A>0满足真实费用幅度p0(1)=A、p_v(1+w_v)=A h_v(q)；两列相同非零费用。",
+      "statement": "所有整数d≥16及所有实q>1，max{1+1/q,B_d(q)}≤4√(d/ln d)。",
+      "quantifiers": "∀d≥16、∀实q>1，不仅DAG可达到的q。",
+      "assumptions": [
+        "B_d(q)精确定义如主对象"
+      ],
+      "scope": "标量统一估计需结合真实幅度与权合同才能给游戏结论。",
+      "objections": "正文给出所列范围的完整证明或精确有限证书；冻结内部审查及有限计算按实际范围引用，未作外审或全球新颖性认证。本登记不重跑旧数学程序。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+        "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c",
+        "section": "对所有实 $q>1$ 的统一常数"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+          "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md"
+      ]
+    },
+    {
+      "object_id": "WCF-R3-CROSS32-AUDIT-v1",
+      "version": 1,
+      "title": "四玩家十四资源三十二次全态严格九五反例",
+      "kind": "construction",
+      "truth_status": "proved",
+      "model": "有限原子加权拥塞游戏：有限玩家、资源及每人有限非空资源子集动作族（可有空动作），每人资源无关正实权；资源费用为非负系数次数至多整数d的多项式。玩家成本为所用资源费用之和，不再乘权；每次真实单方偏离冻结别人并计入自身新负载。α-PNE用全部偏离的弱式C_old≤α C_new，α≥1；零费直接用不等式。",
+      "statement": "四正有理权(1,1/10,1/20,1/50)，七互补mask0101,0112,1022,1100,1120,1122,1211，归一化振幅127,231,145,139,28,41,289；前六对degree32、末对degree2。全部16态均有严格9/5偏离；精确最佳倍率由冻结有理证书给出（约1.800488032325864），0110/1001在该最佳端点为PNE。",
+      "quantifiers": "一个固定有限合法游戏、全部状态和全部真实翻位。",
+      "assumptions": [
+        "费用为幅度乘归一化负载的指定纯幂",
+        "全态严格有理比较由完整证书承担"
+      ],
+      "scope": "有限分离，不是增长下界族；小数只导读，完整精确证据保留。",
+      "objections": "正文给出所列范围的完整证明或精确有限证书；冻结内部审查及有限计算按实际范围引用，未作外审或全球新颖性认证。本登记不重跑旧数学程序。",
+      "body": {
+        "path": "archives/weighted-congestion/state/构造/四玩家十四资源三十二次全状态反例--构造.md",
+        "sha256": "2a6f9aa10062a5b19314028eec981012a1b6481831729fb4e1e1fe56eae34da6"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/计算/十四资源构造与缩权族的精确复现--计算.md",
+          "sha256": "48cfab42028bf9c53f7ab818a026475caba5d7ee2afe2ac3759de5c6a2f83c7f"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/十四资源缩权族的独立审查与量词修正--审查.md",
+          "sha256": "799c690767e9c827e895f6f2e9f9947692700943a8bb7ae0d16c3b90c0c9f8c5"
+        },
+        {
+          "path": "archives/weighted-congestion/tools/evidence/crossover/original/evidence/certificates/weighted_congestion/crossover/degree32_certificate.json",
+          "sha256": "f9cab87ef40948304f015e9f25995086c586b1436fe42da163f7420289a309de"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/拥塞有限分离与奇环证书账本的全部陈述--资料.md",
+          "sha256": "5896a1e0441c967adb93be24d827218cabc8a39b885a4132598a94ee83ec90c0",
+          "section": "完整冻结账本第 249–450 行"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/crossover/README.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/weighted_congestion/crossover/degree32_certificate.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/weighted_congestion/crossover/verify_degree32.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/weighted_congestion/crossover/main_check.py"
+      ],
+      "legacy_aliases": [
+        "weighted-congestion/four-player-fourteen-resource-degree32"
+      ]
+    },
+    {
+      "object_id": "WCF-R3-FIXED-DEGREE-FAIL-v1",
+      "version": 1,
+      "title": "固定十四资源权重与幅度升幂最终失去九五障碍",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限原子加权拥塞游戏：有限玩家、资源及每人有限非空资源子集动作族（可有空动作），每人资源无关正实权；资源费用为非负系数次数至多整数d的多项式。玩家成本为所用资源费用之和，不再乘权；每次真实单方偏离冻结别人并计入自身新负载。α-PNE用全部偏离的弱式C_old≤α C_new，α≥1；零费直接用不等式。",
+      "statement": "固定权(1,1/10,1/20,1/50)、七对mask及归一化振幅(127,231,145,139,28,41,289)；前六对纯d次、最后二次。d40已有B约1.792816<9/5，0111/1000为9/5-PNE；d→∞时B→5235403/2930833<9/5，故所有充分大d均失去9/5非存在。",
+      "quantifiers": "该固定参数族随整数d提升的反例与精确极限；存在有限D后全部d≥D稳定。",
+      "assumptions": [
+        "只改变前六对次数，权与归一化振幅固定",
+        "最后一对保持二次"
+      ],
+      "scope": "不宣称所有d≥40均稳定或40为最小失败次数；不反驳同时缩权族。",
+      "objections": "正文给出所列范围的完整证明或精确有限证书；冻结内部审查及有限计算按实际范围引用，未作外审或全球新颖性认证。本登记不重跑旧数学程序。",
+      "body": {
+        "path": "archives/weighted-congestion/state/反例/固定权重十四资源族升幂失去九五障碍--反例.md",
+        "sha256": "7e4d5f0138df1336720191c57ebc12394fd0930f6743c9886699615f815c4316"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/计算/十四资源构造与缩权族的精确复现--计算.md",
+          "sha256": "48cfab42028bf9c53f7ab818a026475caba5d7ee2afe2ac3759de5c6a2f83c7f"
+        },
+        {
+          "path": "archives/weighted-congestion/tools/evidence/crossover/original/evidence/certificates/weighted_congestion/crossover/degree40_failure_certificate.json",
+          "sha256": "9ddc43bae1b994ddffac7f9573923f7a5d89800de6fa0eda5d28db6178a1a0bf"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/拥塞有限分离与奇环证书账本的全部陈述--资料.md",
+          "sha256": "5896a1e0441c967adb93be24d827218cabc8a39b885a4132598a94ee83ec90c0",
+          "section": "完整冻结账本第 249–450 行"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/crossover/README.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/weighted_congestion/crossover/degree40_failure_certificate.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/weighted_congestion/crossover/fixed_weight_limit_certificate.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/weighted_congestion/crossover/fixed_degree_scan.json"
+      ],
+      "legacy_aliases": [
+        "weighted-congestion/fixed-weight-fourteen-resource-degree-persistence-failure"
+      ]
+    },
+    {
+      "object_id": "WCF-R3-SCALED-RETUNED-v2",
+      "version": 1,
+      "title": "重调十四资源缩权族的二十起点二倍障碍",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限原子加权拥塞游戏：有限玩家、资源及每人有限非空资源子集动作族（可有空动作），每人资源无关正实权；资源费用为非负系数次数至多整数d的多项式。玩家成本为所用资源费用之和，不再乘权；每次真实单方偏离冻结别人并计入自身新负载。α-PNE用全部偏离的弱式C_old≤α C_new，α≥1；零费直接用不等式。 四玩家两动作，七互补mask0101,0112,1022,1100,1120,1122,1211，0不参加/1用动作0/2用动作1；每mask另有互补同费资源。整数m≥1，D_m32m²，权(1,1/(10m),1/(20m),1/(50m))，固定正有理t=(a,b,c,d,e,f,g)，支持总权T_j(m)。",
+      "statement": "同一重调t，定向误差给每m≥20全态严格2出口，统一margin≥2735869393/1048576000000>0；m3另由精确证书排除2，m1/2存在2-PNE，m4..19未在该定理关闭。B→100/49。取m=floor√(d/32)把结论嵌入每整数次数上界d≥12800。",
+      "quantifiers": "固定该t，∀m≥20及m3严格排除2；∀d≥12800存在degree≤d有限反例。",
+      "assumptions": [
+        "同缩权族",
+        "使用定向费用误差及正margin"
+      ],
+      "scope": "新起点20不声称最优，也不把未核4..19判为失败或通过。",
+      "objections": "正文给出所列范围的完整证明或精确有限证书；冻结内部审查及有限计算按实际范围引用，未作外审或全球新颖性认证。本登记不重跑旧数学程序。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/十四资源缩权族的常数无均衡界--定理.md",
+        "sha256": "62f4f0e0e9090a650f09442465161a4552f1ea84fad2bfa1f36c8183448733e0"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md",
+          "sha256": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/十四资源缩权族的独立审查与量词修正--审查.md",
+          "sha256": "799c690767e9c827e895f6f2e9f9947692700943a8bb7ae0d16c3b90c0c9f8c5"
+        },
+        {
+          "path": "archives/weighted-congestion/state/计算/十四资源构造与缩权族的精确复现--计算.md",
+          "sha256": "48cfab42028bf9c53f7ab818a026475caba5d7ee2afe2ac3759de5c6a2f83c7f"
+        },
+        {
+          "path": "archives/weighted-congestion/tools/evidence/crossover/original/evidence/certificates/weighted_congestion/crossover/limit_evidence/retuned_m3_certificate.json",
+          "sha256": "e289952c78da5e98718d9de35d1bfc38b77a30e7e08a3888563d21e0e2e867d6"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/拥塞有限分离与奇环证书账本的全部陈述--资料.md",
+          "sha256": "5896a1e0441c967adb93be24d827218cabc8a39b885a4132598a94ee83ec90c0",
+          "section": "完整冻结账本第 249–450 行"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/crossover/limit_family.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/crossover_limit_review/review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/weighted_congestion/crossover/limit_evidence/retuned_m3_certificate.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/weighted_congestion/crossover/limit_evidence/finite_scans.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/weighted_congestion/crossover/limit_evidence/uniform_bounds.json"
+      ]
+    },
+    {
+      "object_id": "WCF-R3-SCALED-TEMPLATE-v1",
+      "version": 1,
+      "title": "十四资源固定八偏离模板的三次根可行边界",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限原子加权拥塞游戏：有限玩家、资源及每人有限非空资源子集动作族（可有空动作），每人资源无关正实权；资源费用为非负系数次数至多整数d的多项式。玩家成本为所用资源费用之和，不再乘权；每次真实单方偏离冻结别人并计入自身新负载。α-PNE用全部偏离的弱式C_old≤α C_new，α≥1；零费直接用不等式。 四玩家两动作，七互补mask0101,0112,1022,1100,1120,1122,1211，0不参加/1用动作0/2用动作1；每mask另有互补同费资源。整数m≥1，D_m32m²，权(1,1/(10m),1/(20m),1/(50m))，固定正有理t=(a,b,c,d,e,f,g)，支持总权T_j(m)。",
+      "statement": "设r>2是x³−x²−2x−1的唯一根。固定八代表见证严格锥的正有理振幅可行恰1≤α<r；对每个该α可选一份不随m变的正有理t及有限M，使全部m≥M、全16态有严格α出口。α≥r该指定见证锥不可行。正文以E_m=S exp(−64m/117)+17g/(50m)与正margin给明确M。",
+      "quantifiers": "∀实α∈[1,r)，∃固定正有理t、∃有限M，∀m≥M成立；模板锥α≥r不可行。",
+      "assumptions": [
+        "使用正文固定8见证，不允许任意换witness后还称模板最优",
+        "正有理振幅与完整缩权模型"
+      ],
+      "scope": "不是整个十四资源拓扑最优，不声称一份t同时达到全部α<r，也不声称有限实例在r端点取得。",
+      "objections": "正文给出所列范围的完整证明或精确有限证书；冻结内部审查及有限计算按实际范围引用，未作外审或全球新颖性认证。本登记不重跑旧数学程序。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/十四资源既定偏离模板的三次根阈值--定理.md",
+        "sha256": "d9c67c259e194f6a516c2118fe3c021b1a306562a7a3368475865b97b88914e3"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md",
+          "sha256": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/十四资源缩权族的独立审查与量词修正--审查.md",
+          "sha256": "799c690767e9c827e895f6f2e9f9947692700943a8bb7ae0d16c3b90c0c9f8c5"
+        },
+        {
+          "path": "archives/weighted-congestion/state/计算/十四资源构造与缩权族的精确复现--计算.md",
+          "sha256": "48cfab42028bf9c53f7ab818a026475caba5d7ee2afe2ac3759de5c6a2f83c7f"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/拥塞有限分离与奇环证书账本的全部陈述--资料.md",
+          "sha256": "5896a1e0441c967adb93be24d827218cabc8a39b885a4132598a94ee83ec90c0",
+          "section": "完整冻结账本第 249–450 行"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/crossover/limit_family.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/crossover_limit_review/review.md"
+      ],
+      "legacy_aliases": [
+        "weighted-congestion/scaled-fourteen-resource-selected-witness-cubic-threshold"
+      ]
+    },
+    {
+      "object_id": "M-30d382c7f97c48eea789aed8e8f93eed",
+      "version": 1,
+      "title": "十四资源缩权族的完整布尔费用极限与阈值收敛",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限原子加权拥塞游戏：有限玩家、资源及每人有限非空资源子集动作族（可有空动作），每人资源无关正实权；资源费用为非负系数次数至多整数d的多项式。玩家成本为所用资源费用之和，不再乘权；每次真实单方偏离冻结别人并计入自身新负载。α-PNE用全部偏离的弱式C_old≤α C_new，α≥1；零费直接用不等式。 四玩家两动作，七互补mask0101,0112,1022,1100,1120,1122,1211，0不参加/1用动作0/2用动作1；每mask另有互补同费资源。整数m≥1，D_m32m²，权(1,1/(10m),1/(20m),1/(50m))，固定正有理t=(a,b,c,d,e,f,g)，支持总权T_j(m)。",
+      "statement": "每固定正有理t，前六对未全支持使用的费用≤t_j exp(−64m/117)趋0，全支持费用恒t_j；第七对向与重玩家同侧用户收费趋g，其余趋0。正文八代表及互补穷尽正成本极限表，全部16态和全部真实偏离逐项收敛，B(G_m(t))→B∞(t)。",
+      "quantifiers": "∀固定正有理七振幅t，当整数m→∞，有限全部费用/偏离与minimax按表收敛。",
+      "assumptions": [
+        "固定有限状态集",
+        "所有极限当前与偏离成本严格正"
+      ],
+      "scope": "极限是辅助费用表；非存在仍必须回到有限m合法游戏。",
+      "objections": "正文给出所列范围的完整证明或精确有限证书；冻结内部审查及有限计算按实际范围引用，未作外审或全球新颖性认证。本登记不重跑旧数学程序。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md",
+        "sha256": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df",
+        "section": "布尔极限的来由"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md",
+          "sha256": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/十四资源缩权族的独立审查与量词修正--审查.md",
+          "sha256": "799c690767e9c827e895f6f2e9f9947692700943a8bb7ae0d16c3b90c0c9f8c5"
+        },
+        {
+          "path": "archives/weighted-congestion/state/计算/十四资源构造与缩权族的精确复现--计算.md",
+          "sha256": "48cfab42028bf9c53f7ab818a026475caba5d7ee2afe2ac3759de5c6a2f83c7f"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/crossover/limit_family.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/crossover_limit_review/review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/weighted_congestion/crossover/limit_evidence/scaled_limits.json"
+      ]
+    },
+    {
+      "object_id": "WC-R3-CROSS32-TOPOLOGY-SEPARATION-v1",
+      "version": 1,
+      "title": "十四资源反例与完整对称两列三十二次拓扑的分离",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限原子加权拥塞游戏：有限玩家、资源及每人有限非空资源子集动作族（可有空动作），每人资源无关正实权；资源费用为非负系数次数至多整数d的多项式。玩家成本为所用资源费用之和，不再乘权；每次真实单方偏离冻结别人并计入自身新负载。α-PNE用全部偏离的弱式C_old≤α C_new，α≥1；零费直接用不等式。",
+      "statement": "完整对称两列拓扑允许所有n≥1、w>0及全部非负系数次数≤32的P/Q；其最佳纯倍率的全参数sup T32≤89/50<9/5，而指定四玩家十四资源例B(G)>9/5。",
+      "quantifiers": "∀完整对称两列参数有89/50-PNE；存在明确十四资源合法degree32实例严格超过该值。",
+      "assumptions": [
+        "完整两列到单项式源归约的α≥(1+√3)/2门槛",
+        "源d32精确Bernstein证书",
+        "指定十四资源全状态严格证书"
+      ],
+      "scope": "全拓扑分离，不仅某个两攻击参数组的数值比较；不是全类最优下界。",
+      "objections": "正文给出所列范围的完整证明或精确有限证书；冻结内部审查及有限计算按实际范围引用，未作外审或全球新颖性认证。本登记不重跑旧数学程序。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/十四资源非对称例与对称两列拓扑的三十二次分离--定理.md",
+        "sha256": "d752d80857a5dc9d8936e874e19f862bf8d5660e2f9fbf68c297a6a1c46c97d8"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/构造/四玩家十四资源三十二次全状态反例--构造.md",
+          "sha256": "2a6f9aa10062a5b19314028eec981012a1b6481831729fb4e1e1fe56eae34da6"
+        },
+        {
+          "path": "archives/weighted-congestion/state/计算/十四资源构造与缩权族的精确复现--计算.md",
+          "sha256": "48cfab42028bf9c53f7ab818a026475caba5d7ee2afe2ac3759de5c6a2f83c7f"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/对称两列拓扑的单项式两攻击归约--定理.md",
+          "sha256": "6d6ffc835804eec4e380e086b818d8e022dc1c0d70d505d31a09873766b7d6d9"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/三十二次两攻击源包络上界--定理.md",
+          "sha256": "fc89af9c3515b2c0d0cdf2461e6146301952f42003078848e679242910520ca8"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/十四资源缩权族的独立审查与量词修正--审查.md",
+          "sha256": "799c690767e9c827e895f6f2e9f9947692700943a8bb7ae0d16c3b90c0c9f8c5"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/拥塞有限分离与奇环证书账本的全部陈述--资料.md",
+          "sha256": "5896a1e0441c967adb93be24d827218cabc8a39b885a4132598a94ee83ec90c0",
+          "section": "完整冻结账本第 249–450 行"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/crossover/separation.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/source_topology/symmetric_two_column_reduction.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/source_degree32/symmetric_source_interval_certificate.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/weighted_congestion/crossover/main_check.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/weighted_congestion/crossover/main_check_results.json"
+      ],
+      "legacy_aliases": [
+        "weighted-congestion/degree32-crossover-topology-separation"
+      ]
+    }
+  ],
+  "source": {
+    "path": "research/registry.json",
+    "sha256": "22b476a35c3221bbc17f36d29f165e9933f8f0e7c4a92b00c358122b302b4bfe"
+  },
+  "note": "Observed v1 complete records; not a replacement batch."
+}
