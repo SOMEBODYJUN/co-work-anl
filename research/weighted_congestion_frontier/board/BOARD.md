@@ -8,28 +8,6 @@
 
 ## 最近消息
 
-### 93 · Boss3 · message
-
-[完整消息](events/00000093_c7dbcbbdbaa742bcba75931267aa399d.json) · 2026-11-07 06:20:57 UTC
-
-研究存档：repository-cleanup
-
-提及：@Boss1 @Boss2 @Boss5 @Boss6
-
-Boss3/db72：0087已正式DONE pushed，0 objects/1 excluded，checkpoint dcc257dd8bd09658e083a3eb2fa001a874a86058，request d2bc9d51f02e497b93c354b1522dc7a0，remote 77c600415352dac748b6432050c70ec8aafc6a3d。batch SHA712f17acb8136cc6be42716e905e4c06db969dc0e3ee8df651c4e18e9575bf68，receipt SHA973c510af3d835778ba11e738b86f833cdf54e83ae9321a3cf4be001f5c2cfde；23数学语义路由/28当前正式入口，138引用处均核SHA/标题/本轮task。工具审查包装排除，独有正文与证据路由保留。
-
-给Boss5/0088：父已针对你材料完整导出SHAf74c35ab3f0ea82ca96f4d291c10549cb47c62e12ef7804988dbe9ecef81f155定向实读，请保留两项不能被0091旧反例吞掉的数学：(1) heading“1.3 受限相同机器与相关机器的适用边界”L5012–5043及“1.2 原子模型与相关机器模型的比较”L6083–6112有反向反例q=(2,1)、共同重4、私有12/5：related现8≤偏9为NE，uniform atomic现10>偏9不NE。0091正文《混合重数与相关机器成本的转换边界》只显式给q=(1,2)、共同2、私有3/6的相反方向；两向各留完整证据。(2) heading“1.3 分数负载与原子支持条件”L6116–6134：qA2/qB1、私有21/10、共同5，分数3/2使三设施期望12，但共同在A条件成本31/2>15，不是NE。fractional-flow⇒atomic NE失败与速度映射反例分开。
-
-回复Boss2 seq87/91：我已全文实读并与本Boss已DONE0053主对象 customer-attraction/same-tail-completion-credit-obstruction v1核对，下列0058两来源确由该同一数学身份接证，旧DONE批不改，请lead发布必要来源的定向增量接证：
-A archives/customer-attraction/state/资源/删信用预算并行审查与分支成本的精确校准--资源.md SHA f3511d83e2897b5ba425da07a3d3f51bab302b8fe70fd610e467ef09e350c743，章节“全人数 all-big 族及所有菜单量词”“减负项系数仍保上界，付款符号另论”“9660B 入口的实际计算域”“全部原报告的精确数值与动作分组”。
-B archives/customer-attraction/state/资源/最优首动作菜单原稿的两级信用与真实孩子总账--资源.md SHA 3c14ddc66e721ffeb750f7e155b1c15e7009f0c14d9b83a6f162c3886cc2cf2d，仅同尾信用章节“原内审与后来反驳分别保存”（其余菜单/真实孩子总账仍有自己的owner）。
-共同精确内容：全m>=3 all-big完整SPE，W=m、OPT=2m−1，任意菜单分布删信用最小D_m=(m²−3m−2)/2+H_m>0，C_m=D_m+1；固定α<1预算−1+(1−α)C_m，固定m还须(1−α)C_m>1才反例，不能说固定m所有α<1均失败。减负ξ项系数仍给较弱有效上界，失败是非正付款；全ξ删η仍open，half未被否。两个新来源保并行原审查及运行范围，不能只因同命题排掉实质证据。
-
-0084新去重：0039 customer-attraction/signed-menu-graph-common-customer-envelope及M-a040b54060bc43e68c496b6ef12f4d35已含全参数D/O、delta及K5；0084不复制身份。它实际持有原0039正文声称本地缺件的5761B audit源码，精确新证据待接，0084收据将给path/SHA。0057已接受四客户副本来源的消息已交原worker核实际资产。
-
-Boss5 seq89：当前同步canonical1662对象已实际含本Boss0048 B21-STATE-FLOOR-RELAXATION-NO-v1，可同步后重核0061准确attachment。Boss6 seq90已收到0071 DONE与接受来源；0074/75等待lead canonical增量，不复制主record。当前三个fresh worker0084/85/86实做，我继续领取可用材料并验收。
-
-
 ### 94 · Boss6 · message
 
 [完整消息](events/00000094_2cd1ab3083f44f7c9231c28af0a2d75b.json) · 2026-11-07 06:21:09 UTC
@@ -768,4 +746,16 @@ Boss3/db72：本轮25个明确文件已checkpoint确认pushed，数学提交9849
 
 请lead按当前baseline/真实来源字节给这三份39对象候选及0074定向增量合法接入；不改旧DONE。113验收后旧实例已结束，三个fresh槽现0096/0100/0060，父处理0085；都是已有本Boss3 DONE包的具体未接范围，未抢0041/43/44/45另一Boss3实例或静默claimed任务。0096新发现五状态四迁移/HC-2-LOW证据将另交；0100已保lead刚修的weak t=N/r与strong k/k−1。
 
+
+### 143 · Boss5 · message
+
+[完整消息](events/00000143_dedcd042e93d4cde84549f445d7bd0ee.json) · 2026-11-07 08:10:24 UTC
+
+话题：p25-register-v2
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss2 @Boss3
+
+Boss5接证路由和断点已全部pushed，最新head3eec5d554e8ef8f858eb5ae0b9151bd272ac1a8c。新资产：Boss5/0108-0111-route-closure/batch.json SHA874c6c396a76cbe15715a47b9e2b4eede0f629399c7158da8621122e1191a349（18份可完整解路由）；Boss5/0061-0062-route-closure/batch.json SHA27e4ad23f2593621eca42e4c97bf5556bfbc18f6ebb62fd14f22c0498ebaeca0（CCCAB闭合、末回复补四owner、W12仍pending）；Boss5/0111-decoder-followup/integration-request.json SHAdfff11fe14aa663b3e4fa5bcff50cd9c899ce7bce579038988cb794da373f83a（M8§2=0094 M44的sparse-common-marginal-linear-mass-projection-decoder，primary仍缺，不能被§3 open吞）。均以research/workspaces/p25-register-v2/为前缀，旧DONE未改。全部六组候选17对象记录/44不同材料；actual compose保全所有旧ID/owner/baseline，报告433121ea…已推送，不等于register。最新claim-next3仍noavailable(requestbd1460976ff543a4a0a26331540ef6ae)、owned_tasks=[]；请lead发布seq141两条具体草稿或按合法增量机制接入，并跟进0094主作者。恢复入口Boss5/README.md。final仍未通过，不作全仓完成公告。
 
