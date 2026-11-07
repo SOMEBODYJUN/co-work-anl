@@ -1,0 +1,6029 @@
+{
+  "schema": 1,
+  "owner": "Boss4",
+  "workflow_run": "p25-register-v2",
+  "task": {
+    "path": "research/operations/p25-register-v2/tasks/register-boss5-unit-readout-supplement.json",
+    "sha256": "81d6f9f115e13cc515a375f8218c8d3cf5b7a0005dd0add134973a5d5a15787c"
+  },
+  "status": "blocked-duplicate-already-DONE-24; handoff-review-only; not-a-registration-batch",
+  "done_eligible": false,
+  "decision": "当前任务与已DONE24是同一十Claim/同一十材料的重复领取范围；最终复核快照已精确集成24，十主对象逐字段相同，十材料path/SHA、disposition及owner列表逐行相同。保留24正式资产，不生成竞争batch或伪造done回执；由父Boss交接本任务，请现lead撤回重复项或经明确重框后处理真实增量。",
+  "source_candidate": {
+    "path": "research/workspaces/p25-register-v2/Boss5/0098-unit-readout-supplement/batch.json",
+    "sha256": "069fd013fb69bd875342641d521d7d154a84bebb1748115a1b67ae262e9e8d45"
+  },
+  "done24_batch": {
+    "path": "research/registration/batches/register-lead-unit-readout-supplement-24.json",
+    "sha256": "109bc0dc25cc87449256d1d3caf0109e3c98b0f4cced28df4ee012801c8c9697"
+  },
+  "done24_task": {
+    "path": "research/operations/p25-register-v2/tasks/register-lead-unit-readout-supplement-24.json",
+    "sha256": "553fe517a7c89211bd7a961c3886012b35d7b02aa90a9db66264419fca8abc91"
+  },
+  "done24_receipt": {
+    "path": "research/registration/receipts/register-lead-unit-readout-supplement-24.json",
+    "sha256": "2574a560965c93cea80e638012d5ded22132b11c5e1f531a0ad3ce60318b0d8d"
+  },
+  "current_canonical": {
+    "path": "research/registry.json",
+    "sha256": "add163458f1252f3bca0e588c906c1780ff3320fff9f85b11bc5987e9447de2c"
+  },
+  "baseline": {
+    "path": "research/registration/baseline-5cd4b9018.json",
+    "sha256": "af99fb773928f3fc6bcd577ade37fbb07e8f84befbb2304158b99894ab1e56a3"
+  },
+  "counts": {
+    "compared_claims": 10,
+    "assigned_material_versions": 10,
+    "objects_exactly_equal_candidate_to_done24": 9,
+    "objects_with_field_differences": 1,
+    "materials_with_reason_only_difference": 10,
+    "canonical_exact_claim_ids_present": 10,
+    "new_objects_written": 0,
+    "new_ids_allocated": 0,
+    "new_formal_batches_written": 0,
+    "edge_files_written": 0,
+    "canonical_objects_exactly_equal_done24": 10,
+    "canonical_materials_same_path_sha_disposition_owners_done24": 10
+  },
+  "duplicate_task_definition_check": {
+    "same_baseline": true,
+    "same_ordered_material_path_sha_list": true,
+    "same_claim_id_set": true,
+    "same_body_evidence_and_sources_all_claims": true,
+    "only_object_difference": "24在CALIBRATED-SLOT.statement加入selector根质量y_vs∈[0,1]；其余九对象逐字段相等。",
+    "material_difference": "十行仅reason改写；path/SHA、disposition、object_ids逐行全部相同。没有新材料版本或独立数学范围。",
+    "canonical_incorporated_done24": true,
+    "canonical_integration_note": "最终复核中canonical已收24且十主record逐字段与24一致；材料reason合并/路由说明的差异逐行保留在material_comparisons。"
+  },
+  "object_comparisons": [
+    {
+      "object_id": "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+      "candidate_version": 1,
+      "done24_version": 1,
+      "truth_status": "proved",
+      "candidate_record_digest": "a1dfd65330d2c251d552ce99f00bd822defef2860fe325a6e8690a13f725d0f9",
+      "done24_record_digest": "a1dfd65330d2c251d552ce99f00bd822defef2860fe325a6e8690a13f725d0f9",
+      "digest_encoding": "SHA256 of UTF8 sorted-key compact JSON; not a separate file SHA",
+      "differing_fields": [],
+      "body_equal": true,
+      "evidence_equal": true,
+      "sources_equal": true,
+      "canonical_current": {
+        "object_id": "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+        "version": 1,
+        "title": "私有单位双树在C<2的mandatory-r森林精确正规形",
+        "kind": "equivalence",
+        "truth_status": "proved",
+        "model": "有限显式私有单位读出双树：整数k,h≥1；每变量两棵互不相交满k叉深h树，内部点为机器；一枚mandatory selector仅在两根时间1；内部edge任务父端1/k、子端1；叶port父端1/k或所属clause任一unit机时间1；各clause有整数A_c≥0台互异unit。全部原任务含未选轨均必须执行，无pins、预载、额外任务/资格或共享内部机。叶地址全部显式列出，A_c可二进制编码，未用原unit保精确零负载。",
+        "statement": "对有理C∈[1,2)，r=ceil(k(2−C))∈[1,k]。存在全部原jobs的实际Cmax≤C调度，当且仅当每变量恰选一个sign根、每active节点恰选r个原孩子且深h选叶共同注入原clause units的mandatory-r森林存在。给任一方向见证可确定性位多项式构造另一方向；正规化active负载恰1+(k−r)/k、inactive≤1、外unit≤1。",
+        "quantifiers": "∀有限显式P，∀有理C∈[1,2)；∀相应合法调度/森林见证，∃可构造的反向完整见证。V=∅为空调度/空森林。",
+        "assumptions": [
+          "完整显式双树与全部原任务/原资格；内部机器私有且每机唯一incoming。",
+          "不同clause外部unit互不重合、无额外任务/预载；每port在所属clause全部unit均有时间1资格。",
+          "复杂度按显式P及所给有理见证总位长；不按仅二进制k,h虚构压缩树输出。",
+          "全部变量selector mandatory；每个clause的所选真实叶必须共同满足整数注入容量A_c。"
+        ],
+        "scope": "无pins的全部变量、全部任务精确iff；k1、h1、C1、A0及空变量均包括。",
+        "objections": "不是从一个任意全局根只取部分可达变量；不以配置边际或叶数量代替真实祖先与slot注入。含私有host/pins的开底模块属于不同P，不由本iff覆盖。",
+        "body": {
+          "path": "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md",
+          "sha256": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7",
+          "section": "3.1 定义域与 iff"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+            "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+            "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+            "section": "1. 精确Claim对象、定义和量词"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+            "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+            "section": "2. 实际调度到必选森林及完整正规化"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+            "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+            "section": "3. 必选森林到实际完整调度"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+            "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+            "section": "4. 边界、构造性和总位复杂度"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+            "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+            "section": "4. 修剪森林、半密度和 leaf-hitting"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位森林与叶Hall阈值两源精读--审查.md",
+            "sha256": "801e9b4d69612ca5b04cb8a76ad4578dd1628591fa86f1fdb20580f8b4db8990",
+            "section": "1. Mandatory pruned-forest IFF 与半密度合同"
+          }
+        ],
+        "sources": [
+          "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+          "source:b0102cb54211d9846435:research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md"
+        ]
+      },
+      "statement_checked": "对有理C∈[1,2)，r=ceil(k(2−C))∈[1,k]。存在全部原jobs的实际Cmax≤C调度，当且仅当每变量恰选一个sign根、每active节点恰选r个原孩子且深h选叶共同注入原clause units的mandatory-r森林存在。给任一方向见证可确定性位多项式构造另一方向；正规化active负载恰1+(k−r)/k、inactive≤1、外unit≤1。",
+      "quantifiers_checked": "∀有限显式P，∀有理C∈[1,2)；∀相应合法调度/森林见证，∃可构造的反向完整见证。V=∅为空调度/空森林。",
+      "mathematical_decision": "同一无pin显式私有双树、mandatory全部变量与全部原jobs；C∈[1,2)、r=ceil(k(2−C))的实际调度iff逐变量完整r森林及共同真实unit注入。模型/量词/双向构造相同，未增加独立对象。",
+      "canonical_done24_differing_fields": []
+    },
+    {
+      "object_id": "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+      "candidate_version": 1,
+      "done24_version": 1,
+      "truth_status": "proved",
+      "candidate_record_digest": "1768bfd2be36240898d8a7db6bc7bb20b36e92b4de183a980dd371a3c0bc6cc2",
+      "done24_record_digest": "1768bfd2be36240898d8a7db6bc7bb20b36e92b4de183a980dd371a3c0bc6cc2",
+      "digest_encoding": "SHA256 of UTF8 sorted-key compact JSON; not a separate file SHA",
+      "differing_fields": [],
+      "body_equal": true,
+      "evidence_equal": true,
+      "sources_equal": true,
+      "canonical_current": {
+        "object_id": "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+        "version": 1,
+        "title": "全轨半密度单位双树的任意高度共同三半调度",
+        "kind": "algorithm-theorem",
+        "truth_status": "proved",
+        "model": "有限显式私有单位读出双树：整数k,h≥1；每变量两棵互不相交满k叉深h树，内部点为机器；一枚mandatory selector仅在两根时间1；内部edge任务父端1/k、子端1；叶port父端1/k或所属clause任一unit机时间1；各clause有整数A_c≥0台互异unit。全部原任务含未选轨均必须执行，无pins、预载、额外任务/资格或共享内部机。叶地址全部显式列出，A_c可二进制编码，未用原unit保精确零负载。",
+        "statement": "若每clause两轨所有实际叶的总arity d_c≤2A_c，则确定性位多项式输出全部原jobs的共同实际σ，内部负载≤1+floor(k/2)/k≤3/2、外unit≤1；非空OPT≥1，故也是本结构类三半近似。一次half-slot Hall matching覆盖全部任务，并可提取r=ceil(k/2)的mandatory森林。k2,h1三变量四clause14机15job split例真OPT=3/2，证绝对上界锐。",
+        "quantifiers": "∀k,h≥1、∀有限显式变量集及任意wiring，只要∀c d_c≤2A_c；∃确定性总位多项式完整σ。锐例为存在性；不声称所有算法的近似因子下界。",
+        "assumptions": [
+          "完整显式双树与全部原任务/原资格；内部机器私有且每机唯一incoming。",
+          "不同clause外部unit互不重合、无额外任务/预载；每port在所属clause全部unit均有时间1资格。",
+          "复杂度按显式P及所给有理见证总位长；不按仅二进制k,h虚构压缩树输出。",
+          "d_c计两轨全部实际ports含重复occurrence；允许自由选择selector根，不要求任意指定profile。"
+        ],
+        "scope": "任意高度/分叉/wiring的固定半密度无pin单位外端类；空变量输出0，k1上界1。",
+        "objections": "不需源赋值、YES、LP或未知OPT；不能删掉半密度条件或改成任意指定根模式。3/2锐例只证绝对T1界锐。原半密度CLI处理5001位十进制容量需PYTHONINTMAXSTRDIGITS=0；该实现环境限制不反驳数学定理。",
+        "body": {
+          "path": "archives/unrelated-machines/state/审查/半密度半槽与指定根锐族的独立原程序--审查.md",
+          "sha256": "736b7f3055bba92e94dec011dc1915f1c7fa73bf1e4f5d4587b0950f22da61a3",
+          "section": "半密度程序的完整合同"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+            "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/半密度半槽与指定根锐族的独立原程序--审查.md",
+            "sha256": "736b7f3055bba92e94dec011dc1915f1c7fa73bf1e4f5d4587b0950f22da61a3",
+            "section": "半片、一次共同匹配与真实森林"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/半密度半槽与指定根锐族的独立原程序--审查.md",
+            "sha256": "736b7f3055bba92e94dec011dc1915f1c7fa73bf1e4f5d4587b0950f22da61a3",
+            "section": "半密度有限audit、锐例及真实文本限制"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md",
+            "sha256": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7",
+            "section": "3.2 半密度 universal 3/2 与叶命中门槛"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+            "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+            "section": "4. 修剪森林、半密度和 leaf-hitting"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+            "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+            "section": "6. 半密度条件下，任意深度、任意接线都不能保留近二间隙"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位森林与叶Hall阈值两源精读--审查.md",
+            "sha256": "801e9b4d69612ca5b04cb8a76ad4578dd1628591fa86f1fdb20580f8b4db8990",
+            "section": "1. Mandatory pruned-forest IFF 与半密度合同"
+          }
+        ],
+        "sources": [
+          "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+          "source:b0102cb54211d9846435:research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md",
+          "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/unit_readout_half_density_three_halves.py"
+        ]
+      },
+      "statement_checked": "若每clause两轨所有实际叶的总arity d_c≤2A_c，则确定性位多项式输出全部原jobs的共同实际σ，内部负载≤1+floor(k/2)/k≤3/2、外unit≤1；非空OPT≥1，故也是本结构类三半近似。一次half-slot Hall matching覆盖全部任务，并可提取r=ceil(k/2)的mandatory森林。k2,h1三变量四clause14机15job split例真OPT=3/2，证绝对上界锐。",
+      "quantifiers_checked": "∀k,h≥1、∀有限显式变量集及任意wiring，只要∀c d_c≤2A_c；∃确定性总位多项式完整σ。锐例为存在性；不声称所有算法的近似因子下界。",
+      "mathematical_decision": "同一全轨全部actual ports的逐clause半密度d≤2A；任意k,h和wiring的一次全局half-slot Hall覆盖全部jobs，界1+floor(k/2)/k。split只证绝对界锐，自由选根不等于任意指定根。",
+      "canonical_done24_differing_fields": []
+    },
+    {
+      "object_id": "UM-PRUNED-TREE-LEAF-HITTING-v1",
+      "candidate_version": 1,
+      "done24_version": 1,
+      "truth_status": "proved",
+      "candidate_record_digest": "5570c1efcba8ef0e9780538c7cb59869ad838f716bbee5c3849e97cc5a058f46",
+      "done24_record_digest": "5570c1efcba8ef0e9780538c7cb59869ad838f716bbee5c3849e97cc5a058f46",
+      "digest_encoding": "SHA256 of UTF8 sorted-key compact JSON; not a separate file SHA",
+      "differing_fields": [],
+      "body_equal": true,
+      "evidence_equal": true,
+      "sources_equal": true,
+      "canonical_current": {
+        "object_id": "UM-PRUNED-TREE-LEAF-HITTING-v1",
+        "version": 1,
+        "title": "满k叉树r修剪子树的锐叶命中数与祖先证书",
+        "kind": "combinatorial-theorem",
+        "truth_status": "proved",
+        "model": "完整显式k叉深h有根树的叶子集；k,h≥1、1≤r≤k；r-pruned子树保原根、全高、每active内部恰r孩子。这个对象不要求调度任务或clause机器。",
+        "statement": "令q=k−r+1、N=k^h。命中每棵保原根、全深度且每active内部恰r个孩子的r-pruned subtree的最小叶集大小恰q^h；不含任何此子树的最大叶集大小恰N−q^h，两界逐参数可达。对任意双色叶集可后序DP提取纯蓝r子树或纯红q子树；真实叶数严格小于q^h时dummy补集必含完整r子树。",
+        "quantifiers": "∀整数k,h≥1，∀1≤r≤k；∀显式叶双色划分；存在所述可构造证书。最小/最大遍历同一完整树全部叶子集。h0仅作为递推基例1。",
+        "assumptions": [
+          "完整k叉深h树，保原根且不收缩路径；r在每个active层统一。",
+          "显式树/长度h叶地址计入输入；不承诺poly(log h)展开巨大压缩树。"
+        ],
+        "scope": "纯组合叶集合门槛与构造；k1、r1、rk、h1端点包括。dummy调度另需真实共同外部容量。",
+        "objections": "数量≥q^h不保证具体位置已经命中；等号不能改成严格小于的结论。叶定理不解决跨变量clause packing、外部容量或含pin实际调度。与0096保原根分叉估值有关，但陈述/量词不同，当前无该精确Claim主record。",
+        "body": {
+          "path": "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md",
+          "sha256": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7",
+          "section": "3.2 半密度 universal 3/2 与叶命中门槛"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+            "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+            "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+            "section": "8. 虚拟叶补齐的精确命中门槛"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+            "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+            "section": "4. 修剪森林、半密度和 leaf-hitting"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位森林与叶Hall阈值两源精读--审查.md",
+            "sha256": "801e9b4d69612ca5b04cb8a76ad4578dd1628591fa86f1fdb20580f8b4db8990",
+            "section": "2. 精确叶 hitting 与 dummy 逃逸"
+          }
+        ],
+        "sources": [
+          "UM-PRUNED-TREE-LEAF-HITTING-v1",
+          "source:b0102cb54211d9846435:research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md"
+        ]
+      },
+      "statement_checked": "令q=k−r+1、N=k^h。命中每棵保原根、全深度且每active内部恰r个孩子的r-pruned subtree的最小叶集大小恰q^h；不含任何此子树的最大叶集大小恰N−q^h，两界逐参数可达。对任意双色叶集可后序DP提取纯蓝r子树或纯红q子树；真实叶数严格小于q^h时dummy补集必含完整r子树。",
+      "quantifiers_checked": "∀整数k,h≥1，∀1≤r≤k；∀显式叶双色划分；存在所述可构造证书。最小/最大遍历同一完整树全部叶子集。h0仅作为递推基例1。",
+      "mathematical_decision": "同一完整k叉深h的纯组合叶集合对象；q=k−r+1、最小hitting q^h及最大r-free k^h−q^h，严格少于q^h才迫dummy补集有r树，外部容量另付。",
+      "canonical_done24_differing_fields": []
+    },
+    {
+      "object_id": "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+      "candidate_version": 1,
+      "done24_version": 1,
+      "truth_status": "proved",
+      "candidate_record_digest": "1cbec45045d4701690bdac89b57357589e5f04398a19a230283baf3f24c8719b",
+      "done24_record_digest": "b486f619a4c67eae2986d977a1e692bf057f1a960786ac9700bfdbfa3e338667",
+      "digest_encoding": "SHA256 of UTF8 sorted-key compact JSON; not a separate file SHA",
+      "differing_fields": [
+        {
+          "field": "statement",
+          "candidate": "给1≤r≤k，L=k−r+1。selector根质量y_v0+y_v1=1；根q=y_vs、非根q=t_parent。给所有原内部/叶任务同一有理下传t_e∈[0,1]，若逐机Σ_out t_e≥r−1+q、逐clauseΣ_ports t_e≤A_c，则确定性在P+见证总位长多项式输出全部原jobs的实际σ，内部C≤2−r/k、外unit≤1。uniform x0=1/2、x_l=(r−1+x_(l−1))/k在d_c x_h≤A_c时自产该证书；k>1有x_h=a+(1/2−a)/k^h，a=(r−1)/(k−1)。",
+          "done24": "给1≤r≤k，L=k−r+1。selector根质量y_vs∈[0,1]、y_v0+y_v1=1；根q=y_vs、非根q=t_parent。给所有原内部/叶任务同一有理下传t_e∈[0,1]，若逐机Σ_out t_e≥r−1+q、逐clauseΣ_ports t_e≤A_c，则确定性在P+见证总位长多项式输出全部原jobs的实际σ，内部C≤2−r/k、外unit≤1。uniform x0=1/2、x_l=(r−1+x_(l−1))/k在d_c x_h≤A_c时自产该证书；k>1有x_h=a+(1/2−a)/k^h，a=(r−1)/(k−1)。"
+        }
+      ],
+      "body_equal": true,
+      "evidence_equal": true,
+      "sources_equal": true,
+      "canonical_current": {
+        "object_id": "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+        "version": 1,
+        "title": "强全轨分数任务数证书的incoming首槽完整舍入",
+        "kind": "algorithm-theorem",
+        "truth_status": "proved",
+        "model": "有限显式私有单位读出双树：整数k,h≥1；每变量两棵互不相交满k叉深h树，内部点为机器；一枚mandatory selector仅在两根时间1；内部edge任务父端1/k、子端1；叶port父端1/k或所属clause任一unit机时间1；各clause有整数A_c≥0台互异unit。全部原任务含未选轨均必须执行，无pins、预载、额外任务/资格或共享内部机。叶地址全部显式列出，A_c可二进制编码，未用原unit保精确零负载。",
+        "statement": "给1≤r≤k，L=k−r+1。selector根质量y_vs∈[0,1]、y_v0+y_v1=1；根q=y_vs、非根q=t_parent。给所有原内部/叶任务同一有理下传t_e∈[0,1]，若逐机Σ_out t_e≥r−1+q、逐clauseΣ_ports t_e≤A_c，则确定性在P+见证总位长多项式输出全部原jobs的实际σ，内部C≤2−r/k、外unit≤1。uniform x0=1/2、x_l=(r−1+x_(l−1))/k在d_c x_h≤A_c时自产该证书；k>1有x_h=a+(1/2−a)/k^h，a=(r−1)/(k−1)。",
+        "quantifiers": "∀显式P，∀整数r∈[1,k]，∀满足共同强行/外容量的显式有理见证；∃可构造完整σ。uniform递推是足够证书，不要求给YES。",
+        "assumptions": [
+          "完整显式双树与全部原任务/原资格；内部机器私有且每机唯一incoming。",
+          "不同clause外部unit互不重合、无额外任务/预载；每port在所属clause全部unit均有时间1资格。",
+          "复杂度按显式P及所给有理见证总位长；不按仅二进制k,h虚构压缩树输出。",
+          "全部轨使用强分数任务数行q+Σ(1−t)≤整数L；q不是所有根恒1，而为两个互补selector质量。",
+          "给定t/y的编码位长计入输入；所有机器/外端共享同一t与共同容量。"
+        ],
+        "scope": "给强证书的充分舍入、uniform校准及其边界；k1仅r1、x_l=1/2；空变量先返回0。",
+        "objections": "弱Σt≥r q不够：k4h1r2真OPT7/4>目标3/2。强行亦非一般必要：k2h1r2、四叶共A2真OPT1但强行总外送≥3。额外k>1、a d_c≤A_c且真实C≤1时可推出强证书存在；该受限必要性不可用于任意阈值。原实现无通用LP/OPT后端。",
+        "body": {
+          "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+          "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4",
+          "section": "强分数任务数：充分证书及真正舍入"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+            "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+            "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4",
+            "section": "校准、条件必要性及固定密度的两分支"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+            "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4",
+            "section": "三份原矩阵证书：两种 LP 误用和一个精确失败"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+            "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+            "section": "1. 校准计数槽与有界密度"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/多小端密度流障碍与单位读出校准槽双源审查--审查.md",
+            "sha256": "ccf410a29e660aba575bf8c0df61a2b29ddd0e1ede7f68b8c1ee1203153c7a39",
+            "section": "二、单位读出校准槽与固定密度次二算法"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/unit-calibrated-originals/comparisons/unit_readout_calibrated_cardinality_slots.md",
+            "sha256": "dd33b681f22b957fecb5c4a29beca173cb7b619d77c542e99e91c0bd88b5bd88"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/Unit-readout槽与配置阈值两源精读--审查.md",
+            "sha256": "7230a61609a3e2d4d1e0a11657eda00b73a18df76327469e68fb04a002fdb9fc",
+            "section": "1. Calibrated cardinality slots 与 bounded-density"
+          }
+        ],
+        "sources": [
+          "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+          "source:d8e44b3299441a551ae0:research/current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md",
+          "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/unit_readout_calibrated_cardinality.py"
+        ]
+      },
+      "statement_checked": "给1≤r≤k，L=k−r+1。selector根质量y_vs∈[0,1]、y_v0+y_v1=1；根q=y_vs、非根q=t_parent。给所有原内部/叶任务同一有理下传t_e∈[0,1]，若逐机Σ_out t_e≥r−1+q、逐clauseΣ_ports t_e≤A_c，则确定性在P+见证总位长多项式输出全部原jobs的实际σ，内部C≤2−r/k、外unit≤1。uniform x0=1/2、x_l=(r−1+x_(l−1))/k在d_c x_h≤A_c时自产该证书；k>1有x_h=a+(1/2−a)/k^h，a=(r−1)/(k−1)。",
+      "quantifiers_checked": "∀显式P，∀整数r∈[1,k]，∀满足共同强行/外容量的显式有理见证；∃可构造完整σ。uniform递推是足够证书，不要求给YES。",
+      "mathematical_decision": "同一强全轨共同分数任务数证书S_r与incoming-first槽；根q=y_vs、非根q=t_parent，两个根互补。24明确补y_vs∈[0,1]，与成熟正文非负且和1一致；这是候选遗漏域的明确化，未改变稳定数学身份或新增证据。",
+      "canonical_done24_differing_fields": []
+    },
+    {
+      "object_id": "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+      "candidate_version": 1,
+      "done24_version": 1,
+      "truth_status": "proved",
+      "candidate_record_digest": "f6e6c2663e047b0f9804b90473f7f607c14e540923f39f781784ceb10b3948e9",
+      "done24_record_digest": "f6e6c2663e047b0f9804b90473f7f607c14e540923f39f781784ceb10b3948e9",
+      "digest_encoding": "SHA256 of UTF8 sorted-key compact JSON; not a separate file SHA",
+      "differing_fields": [],
+      "body_equal": true,
+      "evidence_equal": true,
+      "sources_equal": true,
+      "canonical_current": {
+        "object_id": "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+        "version": 1,
+        "title": "固定clause密度D单位双树的统一离二实际算法",
+        "kind": "algorithm-theorem",
+        "truth_status": "proved",
+        "model": "有限显式私有单位读出双树：整数k,h≥1；每变量两棵互不相交满k叉深h树，内部点为机器；一枚mandatory selector仅在两根时间1；内部edge任务父端1/k、子端1；叶port父端1/k或所属clause任一unit机时间1；各clause有整数A_c≥0台互异unit。全部原任务含未选轨均必须执行，无pins、预载、额外任务/资格或共享内部机。叶地址全部显式列出，A_c可二进制编码，未用原unit保精确零负载。",
+        "statement": "对每固定有理D≥2、全轨实际arity满足d_c≤D A_c的P，确定性位多项式输出完整σ，Cmax≤(2−1/(4D))OPT。k≥D取r=1+floor((k−1)/(2D))、自产x0=1/2校准证书，有x_h≤1/D、r/k>1/(4D)。k<D做每变量一枚真实叶的clause容量匹配；成功沿原路径给2−1/k，失败由mandatory路径必要性证OPT=2并输出全父置最优调度。",
+        "quantifiers": "∀固定有理常数D≥2，∀满足逐clause密度的显式P；∃同一确定性总位多项式算法。D也可显式输入，运行按P,D位长多项式，但统一余量仅在D固定时成立。",
+        "assumptions": [
+          "完整显式双树与全部原任务/原资格；内部机器私有且每机唯一incoming。",
+          "不同clause外部unit互不重合、无额外任务/预载；每port在所属clause全部unit均有时间1资格。",
+          "复杂度按显式P及所给有理见证总位长；不按仅二进制k,h虚构压缩树输出。",
+          "d_c计两轨全部实际叶的总arity，逐clause而非全局平均；D≥2。"
+        ],
+        "scope": "不需给定完整YES、源赋值、未知OPT或通用LP；k1走容量匹配，空变量0，A0强制d0。",
+        "objections": "早期四源审查“固定D依赖完整YES”属摘要压缩误读，按正式材料20纠正：fixed-D自产证书无需YES；额外条件C1必要性才用YES。D随目标变化不提供类上统一ε；不是一般UM算法，1/(4D)未称最佳。",
+        "body": {
+          "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+          "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4",
+          "section": "校准、条件必要性及固定密度的两分支"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+            "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+            "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4",
+            "section": "关系解释、边界和逐源去向"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/多小端密度流障碍与单位读出校准槽双源审查--审查.md",
+            "sha256": "ccf410a29e660aba575bf8c0df61a2b29ddd0e1ede7f68b8c1ee1203153c7a39",
+            "section": "二、单位读出校准槽与固定密度次二算法"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+            "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+            "section": "1. 校准计数槽与有界密度"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/unit-calibrated-originals/comparisons/unit_readout_calibrated_cardinality_slots.md",
+            "sha256": "dd33b681f22b957fecb5c4a29beca173cb7b619d77c542e99e91c0bd88b5bd88",
+            "section": "4. 固定密度上界类的统一次二算法"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/Unit-readout槽与配置阈值两源精读--审查.md",
+            "sha256": "7230a61609a3e2d4d1e0a11657eda00b73a18df76327469e68fb04a002fdb9fc",
+            "section": "1. Calibrated cardinality slots 与 bounded-density"
+          }
+        ],
+        "sources": [
+          "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+          "source:d8e44b3299441a551ae0:research/current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md"
+        ]
+      },
+      "statement_checked": "对每固定有理D≥2、全轨实际arity满足d_c≤D A_c的P，确定性位多项式输出完整σ，Cmax≤(2−1/(4D))OPT。k≥D取r=1+floor((k−1)/(2D))、自产x0=1/2校准证书，有x_h≤1/D、r/k>1/(4D)。k<D做每变量一枚真实叶的clause容量匹配；成功沿原路径给2−1/k，失败由mandatory路径必要性证OPT=2并输出全父置最优调度。",
+      "quantifiers_checked": "∀固定有理常数D≥2，∀满足逐clause密度的显式P；∃同一确定性总位多项式算法。D也可显式输入，运行按P,D位长多项式，但统一余量仅在D固定时成立。",
+      "mathematical_decision": "同一固定有理D≥2、全轨逐clause d≤DA类；k≥D自产证书、k<D真实容量匹配及失败OPT2，无给定YES前提。保证(2−1/(4D))OPT仅D固定有统一余量。",
+      "canonical_done24_differing_fields": []
+    },
+    {
+      "object_id": "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+      "candidate_version": 1,
+      "done24_version": 1,
+      "truth_status": "proved",
+      "candidate_record_digest": "6978b5892da25852e9db5b26bc44ec4ff01e1aa0735af29644a1bc8489456bd5",
+      "done24_record_digest": "6978b5892da25852e9db5b26bc44ec4ff01e1aa0735af29644a1bc8489456bd5",
+      "digest_encoding": "SHA256 of UTF8 sorted-key compact JSON; not a separate file SHA",
+      "differing_fields": [],
+      "body_equal": true,
+      "evidence_equal": true,
+      "sources_equal": true,
+      "canonical_current": {
+        "object_id": "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+        "version": 1,
+        "title": "单位双树CONFIG全阈值的精确正部多面体与有理分解",
+        "kind": "equivalence",
+        "truth_status": "proved",
+        "model": "有限显式私有单位读出双树：整数k,h≥1；每变量两棵互不相交满k叉深h树，内部点为机器；一枚mandatory selector仅在两根时间1；内部edge任务父端1/k、子端1；叶port父端1/k或所属clause任一unit机时间1；各clause有整数A_c≥0台互异unit。全部原任务含未选轨均必须执行，无pins、预载、额外任务/资格或共享内部机。叶地址全部显式列出，A_c可二进制编码，未用原unit保精确零负载。",
+        "statement": "对有理T∈[1,2)，s=floor(k(T−1))。CONFIG(T)可行iff存在共同y/t：y_v0+y_v1=1、y≥0、0≤t≤1；根q=y_vs、非根q=t_parent；逐内部机Σ_out(q−t_e)_+≤s q，逐clauseΣ_ports t_e≤A_c。给有理边际可位多项式构造每机精确配置分布；引z≥0,z≥q−t、Σz≤s q线性化并对1+s/k网格二分，可精确求Tconf。",
+        "quantifiers": "∀显式P，∀有理T∈[1,2)，完整通常CONFIG可行⇔所列多项式系统可行；∀可行有理共同边际，∃位多项式局部配置分解。空实例Tconf0；k1仅检1否则2。",
+        "assumptions": [
+          "完整显式双树与全部原任务/原资格；内部机器私有且每机唯一incoming。",
+          "不同clause外部unit互不重合、无额外任务/预载；每port在所属clause全部unit均有时间1资格。",
+          "复杂度按显式P及所给有理见证总位长；不按仅二进制k,h虚构压缩树输出。",
+          "CONFIG按每机概率和1、空配置允许、每原job共同边际精确覆盖1；不是跨机joint law。",
+          "局部构造用c_e=(q−t_e)_+；任意lower/sum lift须裁到合法共同概率区间，不能直接当共现。"
+        ],
+        "scope": "此私有结构类全T<2精确配置描述及求阈值的数学算法；q0/q1、s0均保留。",
+        "objections": "不直接给整数σ或一般UM小配置LP。单行源码只实现局部构造及有限正负证书，未集成全局CONFIG后端；有限PASS不承担iff。各机配置只共享同一t，不要求同一全局联合抽样。",
+        "body": {
+          "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+          "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+          "section": "2.1 模型和正部多面体的精确量词"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+            "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+            "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+            "section": "2.2 必要性和充分性"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+            "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+            "section": "单行配置凸包的正部条件"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+            "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+            "section": "行审计的正负证书与全局边界"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+            "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+            "section": "2. 配置正部、严格单位 gap 与闭合树回归"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/unit-calibrated-originals/comparisons/unit_readout_configuration_threshold_polytope.md",
+            "sha256": "b29c1500da407a86c3172c6738f22c5b10c073d0270aeac9acd668260983967a",
+            "section": "2. 每个配置阈值的精确正部多面体"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/Unit-readout槽与配置阈值两源精读--审查.md",
+            "sha256": "7230a61609a3e2d4d1e0a11657eda00b73a18df76327469e68fb04a002fdb9fc",
+            "section": "2. 正部 CONFIG、严格单位 5/3 与闭合两树"
+          }
+        ],
+        "sources": [
+          "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+          "source:40a75aa26f402db03c39:research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md"
+        ]
+      },
+      "statement_checked": "对有理T∈[1,2)，s=floor(k(T−1))。CONFIG(T)可行iff存在共同y/t：y_v0+y_v1=1、y≥0、0≤t≤1；根q=y_vs、非根q=t_parent；逐内部机Σ_out(q−t_e)_+≤s q，逐clauseΣ_ports t_e≤A_c。给有理边际可位多项式构造每机精确配置分布；引z≥0,z≥q−t、Σz≤s q线性化并对1+s/k网格二分，可精确求Tconf。",
+      "quantifiers_checked": "∀显式P，∀有理T∈[1,2)，完整通常CONFIG可行⇔所列多项式系统可行；∀可行有理共同边际，∃位多项式局部配置分解。空实例Tconf0；k1仅检1否则2。",
+      "mathematical_decision": "同一T∈[1,2)、s=floor(k(T−1))的CONFIG iff共同y/t正部系统及局部有理分解；共享边际非跨机joint law，任意lift须最小正部/合法裁剪。",
+      "canonical_done24_differing_fields": []
+    },
+    {
+      "object_id": "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+      "candidate_version": 1,
+      "done24_version": 1,
+      "truth_status": "proved",
+      "candidate_record_digest": "e7d93d3a3a82f7fbd3f8edead92caac68c366ba3b07745c6ebd576d4e7780603",
+      "done24_record_digest": "e7d93d3a3a82f7fbd3f8edead92caac68c366ba3b07745c6ebd576d4e7780603",
+      "digest_encoding": "SHA256 of UTF8 sorted-key compact JSON; not a separate file SHA",
+      "differing_fields": [],
+      "body_equal": true,
+      "evidence_equal": true,
+      "sources_equal": true,
+      "canonical_current": {
+        "object_id": "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+        "version": 1,
+        "title": "严格CONFIG1整轨LP等价与active-only五三承诺构造",
+        "kind": "algorithm-theorem",
+        "truth_status": "proved",
+        "model": "有限显式私有单位读出双树：整数k,h≥1；每变量两棵互不相交满k叉深h树，内部点为机器；一枚mandatory selector仅在两根时间1；内部edge任务父端1/k、子端1；叶port父端1/k或所属clause任一unit机时间1；各clause有整数A_c≥0台互异unit。全部原任务含未选轨均必须执行，无pins、预载、额外任务/资格或共享内部机。叶地址全部显式列出，A_c可二进制编码，未用原unit保精确零负载。",
+        "statement": "令n_cvs为每变量sign全轨叶接c的数目。CONFIG(1) iff整轨LP(L)：y_v0+y_v1=1、y≥0、Σ_v,s n_cvs y_vs≤A_c。若(L)可行，确定性位多项式输出完整σ：k1有C≤1，k≥2有C≤2−floor(k/2)/k≤5/3（偶k≤3/2）。k≥2选最大权重轨，d_c*≤2A_c，仅对选轨用x0=1校准槽、未选轨全父置；k1用整数容量流。结合有理LP解得YES OPT≤1/NO OPT>5/3承诺判定。",
+        "quantifiers": "∀显式P；CONFIG1与(L)可行等价；∀给定有理(L)见证有确定性位多项式完整σ；数学上可先求LP。承诺算法只在YES OPT≤1或NO OPT>5/3的指定promise上判别。",
+        "assumptions": [
+          "完整显式双树与全部原任务/原资格；内部机器私有且每机唯一incoming。",
+          "不同clause外部unit互不重合、无额外任务/预载；每port在所属clause全部unit均有时间1资格。",
+          "复杂度按显式P及所给有理见证总位长；不按仅二进制k,h虚构压缩树输出。",
+          "严格阈值恰1；n_cvs计原全轨全部叶，所有源行共用同一有理y。",
+          "active-only指定根selector incoming质量为1；未选轨固定父置，无须强全轨(S_r)行或全轨半密度。"
+        ],
+        "scope": "无需p份完整YES/固定h/固定D；严格CONFIG1消元与五三promise，非整个结构类任意OPT五三近似。",
+        "objections": "5/3未称锐。T=1+1/k允许incoming与一small共配置，不可整体缩放冒作本合同。源码只收并校验(L)见证并舍入，未集成LP/promise solver；数学LP算法与实现分开。",
+        "body": {
+          "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+          "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4",
+          "section": "严格单位整轨见证：代码实际给出的五三合同"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+            "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+            "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+            "section": "2.3 严格单位阈值、整轨 LP和五三承诺算法"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+            "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+            "section": "2. 配置正部、严格单位 gap 与闭合树回归"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/unit-calibrated-originals/comparisons/unit_readout_configuration_threshold_polytope.md",
+            "sha256": "b29c1500da407a86c3172c6738f22c5b10c073d0270aeac9acd668260983967a",
+            "section": "3. 严格单位阈值等价于整轨选择 LP"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/unit-calibrated-originals/comparisons/unit_readout_configuration_threshold_polytope.md",
+            "sha256": "b29c1500da407a86c3172c6738f22c5b10c073d0270aeac9acd668260983967a",
+            "section": "4. 整轨 LP 的确定性完整五三调度"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/Unit-readout槽与配置阈值两源精读--审查.md",
+            "sha256": "7230a61609a3e2d4d1e0a11657eda00b73a18df76327469e68fb04a002fdb9fc",
+            "section": "2. 正部 CONFIG、严格单位 5/3 与闭合两树"
+          }
+        ],
+        "sources": [
+          "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+          "source:40a75aa26f402db03c39:research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md",
+          "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/unit_readout_literal_gap.py"
+        ]
+      },
+      "statement_checked": "令n_cvs为每变量sign全轨叶接c的数目。CONFIG(1) iff整轨LP(L)：y_v0+y_v1=1、y≥0、Σ_v,s n_cvs y_vs≤A_c。若(L)可行，确定性位多项式输出完整σ：k1有C≤1，k≥2有C≤2−floor(k/2)/k≤5/3（偶k≤3/2）。k≥2选最大权重轨，d_c*≤2A_c，仅对选轨用x0=1校准槽、未选轨全父置；k1用整数容量流。结合有理LP解得YES OPT≤1/NO OPT>5/3承诺判定。",
+      "quantifiers_checked": "∀显式P；CONFIG1与(L)可行等价；∀给定有理(L)见证有确定性位多项式完整σ；数学上可先求LP。承诺算法只在YES OPT≤1或NO OPT>5/3的指定promise上判别。",
+      "mathematical_decision": "同一严格CONFIG1 iff整轨L，给定共同有理见证作active-only五三；未选轨全父置，k1容量流。严格1与近单位1+1/k不同，软件未集成LP与数学LP可求分开。",
+      "canonical_done24_differing_fields": []
+    },
+    {
+      "object_id": "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+      "candidate_version": 1,
+      "done24_version": 1,
+      "truth_status": "proved",
+      "candidate_record_digest": "985b3826f15d0ccba2febdd3541df47ad3694cc2bcc2e7943d29c47e8c12b371",
+      "done24_record_digest": "985b3826f15d0ccba2febdd3541df47ad3694cc2bcc2e7943d29c47e8c12b371",
+      "digest_encoding": "SHA256 of UTF8 sorted-key compact JSON; not a separate file SHA",
+      "differing_fields": [],
+      "body_equal": true,
+      "evidence_equal": true,
+      "sources_equal": true,
+      "canonical_current": {
+        "object_id": "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+        "version": 1,
+        "title": "闭合单变量双树的精确CONFIG阈值与实际OPT",
+        "kind": "exact-family-theorem",
+        "truth_status": "proved",
+        "model": "有限显式私有单位读出双树：整数k,h≥1；每变量两棵互不相交满k叉深h树，内部点为机器；一枚mandatory selector仅在两根时间1；内部edge任务父端1/k、子端1；叶port父端1/k或所属clause任一unit机时间1；各clause有整数A_c≥0台互异unit。全部原任务含未选轨均必须执行，无pins、预载、额外任务/资格或共享内部机。叶地址全部显式列出，A_c可二进制编码，未用原unit保精确零负载。本对象再限单变量；每底父k叶共享自己的独有一台terminal。",
+        "statement": "单变量双满k叉深h树中，每个底层内部父节点的k枚叶共用其独有一台terminal（A1、外端时间1），不同父节点terminal不共享。实际OPT=2−1/k；Tconf=1+s*/k，s*=min{0≤s<k:(k−s)^h≤2k^(h−1)}。k≥3且(k−1)^h≤2k^(h−1)时精确Tconf=1+1/k，逐例OPT/Tconf=2−3/(k+1)趋2。",
+        "quantifiers": "∀整数k,h≥1的该闭合原矩阵族；s*取有限网格最小值。趋二子族令k→∞并选择满足条件的h；不要求八组数值实例代表所有参数。",
+        "assumptions": [
+          "完整显式双树与全部原任务/原资格；内部机器私有且每机唯一incoming。",
+          "不同clause外部unit互不重合、无额外任务/预载；每port在所属clause全部unit均有时间1资格。",
+          "复杂度按显式P及所给有理见证总位长；不按仅二进制k,h虚构压缩树输出。",
+          "仅一个变量两sign；每个底父的全部k叶共享独有unit，末端不跨底父合并。"
+        ],
+        "scope": "同一闭合原P的实际OPT和精确配置阈值；k1为1。",
+        "objections": "八组参数仅整数算术回算，大(12,32)未展开全矩阵。含0/1 pin的开底profile、七变量unit全cube及每clause单机外端1/4分别是不同对象，保0098既有M身份，不并入本族。经典实际gap来源与本页阈值消元分别保留。",
+        "body": {
+          "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+          "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+          "section": "2.4 闭合两树族的精确配置阈值"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+            "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+            "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+            "section": "小 JSON：严格整轨见证与八组闭合参数"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+            "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+            "section": "2. 配置正部、严格单位 gap 与闭合树回归"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/unit-calibrated-originals/comparisons/unit_readout_configuration_threshold_polytope.md",
+            "sha256": "b29c1500da407a86c3172c6738f22c5b10c073d0270aeac9acd668260983967a",
+            "section": "5. 经典闭合两树的精确配置阈值"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/Unit-readout槽与配置阈值两源精读--审查.md",
+            "sha256": "7230a61609a3e2d4d1e0a11657eda00b73a18df76327469e68fb04a002fdb9fc",
+            "section": "2. 正部 CONFIG、严格单位 5/3 与闭合两树"
+          }
+        ],
+        "sources": [
+          "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+          "source:40a75aa26f402db03c39:research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md"
+        ]
+      },
+      "statement_checked": "单变量双满k叉深h树中，每个底层内部父节点的k枚叶共用其独有一台terminal（A1、外端时间1），不同父节点terminal不共享。实际OPT=2−1/k；Tconf=1+s*/k，s*=min{0≤s<k:(k−s)^h≤2k^(h−1)}。k≥3且(k−1)^h≤2k^(h−1)时精确Tconf=1+1/k，逐例OPT/Tconf=2−3/(k+1)趋2。",
+      "quantifiers_checked": "∀整数k,h≥1的该闭合原矩阵族；s*取有限网格最小值。趋二子族令k→∞并选择满足条件的h；不要求八组数值实例代表所有参数。",
+      "mathematical_decision": "同一单变量、每底父k叶共享独有一台terminal的闭合原P；OPT=2−1/k及s*精确网格阈值。八参数仅算术，非巨大树展开；不合并含pin或外时间1/4实例。",
+      "canonical_done24_differing_fields": []
+    },
+    {
+      "object_id": "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+      "candidate_version": 1,
+      "done24_version": 1,
+      "truth_status": "proved",
+      "candidate_record_digest": "eccabb8f838ec7dcf55ba328ab0d633b0e6c02ff2946d1a641520a9ca6bfed41",
+      "done24_record_digest": "eccabb8f838ec7dcf55ba328ab0d633b0e6c02ff2946d1a641520a9ca6bfed41",
+      "digest_encoding": "SHA256 of UTF8 sorted-key compact JSON; not a separate file SHA",
+      "differing_fields": [],
+      "body_equal": true,
+      "evidence_equal": true,
+      "sources_equal": true,
+      "canonical_current": {
+        "object_id": "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+        "version": 1,
+        "title": "任意密度显式单位双树的固定高度叶流近似",
+        "kind": "algorithm-theorem",
+        "truth_status": "proved",
+        "model": "有限显式私有单位读出双树：整数k,h≥1；每变量两棵互不相交满k叉深h树，内部点为机器；一枚mandatory selector仅在两根时间1；内部edge任务父端1/k、子端1；叶port父端1/k或所属clause任一unit机时间1；各clause有整数A_c≥0台互异unit。全部原任务含未选轨均必须执行，无pins、预载、额外任务/资格或共享内部机。叶地址全部显式列出，A_c可二进制编码，未用原unit保精确零负载。",
+        "statement": "对本模型每个显式P，确定性位多项式输出全部原jobs实际σ，Cmax≤(1+2^(−1/h))OPT。整数流求每变量共同可送真实叶的最大b；b0证OPT2并全父置；b≥1每变量保较多sign至少m=ceil(b/2)枚标记叶，N=k^h、q=floor((N−m)^(1/h))、rhat=k−q，用真实祖先DP仅删原流叶提取rhat森林、保共同slot注入并完整回填。",
+        "quantifiers": "∀显式P，∀k,h≥1与任意clause密度/wiring；∃确定性总位多项式σ。∀固定高度上界H，统一近似因子≤1+2^(−1/H)<2。",
+        "assumptions": [
+          "完整显式双树与全部原任务/原资格；内部机器私有且每机唯一incoming。",
+          "不同clause外部unit互不重合、无额外任务/预载；每port在所属clause全部unit均有时间1资格。",
+          "复杂度按显式P及所给有理见证总位长；不按仅二进制k,h虚构压缩树输出。",
+          "流须饱和每变量b，不能只取总流平均；取出的子树只保同一整数流的真实原叶和共同外机注入。"
+        ],
+        "scope": "不需给定YES、源赋值、LP或OPT oracle；算法允许h输入但保证随无界h趋2。",
+        "objections": "更早四源综述把叶流与多YES混写，正式18明确叶流无YES前提。k4h3的64-open祖先反例不能只靠叶数升级三半；当前因子未称最佳。源NO可能无YES不影响本算法，但不提供一般UM统一ε。",
+        "body": {
+          "path": "archives/unrelated-machines/state/审查/单位读出叶流与选择重组的原程序及锐矩阵--审查.md",
+          "sha256": "839f4e4242eb16b000ba8f34da2f3d748c0aba40ae11a9598bed3723570214b3",
+          "section": "固定高度叶流：算法、证明和失败机制"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+            "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+            "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+            "section": "3.1 固定高度叶流近似"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+            "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+            "section": "3. 全局叶流与 selector mixing"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/um-joint-projection/original/research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+            "sha256": "425af66b7eaa6c8317398f1806aceeae869459ffb57ee9b89c2a6fd2d029070f",
+            "section": "2. 任意密度的真实叶流与祖先提取"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+            "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+            "section": "8. 虚拟叶补齐的精确命中门槛"
+          }
+        ],
+        "sources": [
+          "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+          "source:dce12333944853ff579d:research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md"
+        ]
+      },
+      "statement_checked": "对本模型每个显式P，确定性位多项式输出全部原jobs实际σ，Cmax≤(1+2^(−1/h))OPT。整数流求每变量共同可送真实叶的最大b；b0证OPT2并全父置；b≥1每变量保较多sign至少m=ceil(b/2)枚标记叶，N=k^h、q=floor((N−m)^(1/h))、rhat=k−q，用真实祖先DP仅删原流叶提取rhat森林、保共同slot注入并完整回填。",
+      "quantifiers_checked": "∀显式P，∀k,h≥1与任意clause密度/wiring；∃确定性总位多项式σ。∀固定高度上界H，统一近似因子≤1+2^(−1/H)<2。",
+      "mathematical_decision": "同一任意密度显式P的共同每变量饱和b叶流；真实祖先DP只删已送叶，保共同unit注入与全部jobs，因子1+2^(−1/h)。无需给YES，h无界余量趋零。",
+      "canonical_done24_differing_fields": []
+    },
+    {
+      "object_id": "UM-UNIT-READOUT-SELECTOR-MIXING-v1",
+      "candidate_version": 1,
+      "done24_version": 1,
+      "truth_status": "proved",
+      "candidate_record_digest": "31c218fe0b3b3ad6c3661d4df2f23b4357d7c50b5d724784f54883be5ad9ba6a",
+      "done24_record_digest": "31c218fe0b3b3ad6c3661d4df2f23b4357d7c50b5d724784f54883be5ad9ba6a",
+      "digest_encoding": "SHA256 of UTF8 sorted-key compact JSON; not a separate file SHA",
+      "differing_fields": [],
+      "body_equal": true,
+      "evidence_equal": true,
+      "sources_equal": true,
+      "canonical_current": {
+        "object_id": "UM-UNIT-READOUT-SELECTOR-MIXING-v1",
+        "version": 1,
+        "title": "同一P完整YES的covered-selector坐标重组及逐p锐界",
+        "kind": "algorithm-theorem",
+        "truth_status": "proved",
+        "model": "有限显式私有单位读出双树：整数k,h≥1；每变量两棵互不相交满k叉深h树，内部点为机器；一枚mandatory selector仅在两根时间1；内部edge任务父端1/k、子端1；叶port父端1/k或所属clause任一unit机时间1；各clause有整数A_c≥0台互异unit。全部原任务含未选轨均必须执行，无pins、预载、额外任务/资格或共享内部机。叶地址全部显式列出，A_c可二进制编码，未用原unit保精确零负载。",
+        "statement": "给同一原P的p≥1份完整真实C≤1调度，并指定每变量sign至少在某份selector出现；非空另需N=k^h≥p。确定性按P+全部见证总位长多项式输出保全部指定根的完整σ，C≤2−1/(2p−1)。k≥p取r=floor(k/p)给2−r/k；k<p且N≥p取r1给2−1/k；p1保原YES。完整YES迫所选整轨全外送，故指定轨d_c*≤pA_c；仅指定轨x0=1建槽，另一轨全部父置。每p有k=2p−1,h1锐指定profile族，原P全局OPT仍1。",
+        "quantifiers": "∀显式P，∀p≥1，∀属于同一P且全机峰≤1的完整σ¹…σᵖ，∀逐变量被这些selector覆盖的指定profile，在非空N≥p时有所述构造；∀p存在精确达到统一profile上界的族。",
+        "assumptions": [
+          "完整显式双树与全部原任务/原资格；内部机器私有且每机唯一incoming。",
+          "不同clause外部unit互不重合、无额外任务/预载；每port在所属clause全部unit均有时间1资格。",
+          "复杂度按显式P及所给有理见证总位长；不按仅二进制k,h虚构压缩树输出。",
+          "同一P、同一原资格/共同clause容量、每份给定见证覆盖全部原jobs与机器；局部availability或不同pin profile不足。",
+          "指定sign至少在一份完整YES出现；非空N≥p。active-only根质量1，未指定轨原任务全父置。"
+        ],
+        "scope": "给完整见证的指定模式代价；canonical shared-positive/private-negative族与原JSON双共享clause族分别保来源。",
+        "objections": "不寻找未知YES，不适用于没有完整YES的任意NO输出，也不构成一般近似困难性。N<p时k1h1两变量交叉clause例指定profile真OPT2，条件不可删；锐值是约束profile最优，非原全局OPT下界大于1。含pin三profile为不同P，不能套此重组。",
+        "body": {
+          "path": "archives/unrelated-machines/state/审查/单位读出叶流与选择重组的原程序及锐矩阵--审查.md",
+          "sha256": "839f4e4242eb16b000ba8f34da2f3d748c0aba40ae11a9598bed3723570214b3",
+          "section": "多份完整 YES：指定 selector 重组"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+            "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位读出叶流与选择重组的原程序及锐矩阵--审查.md",
+            "sha256": "839f4e4242eb16b000ba8f34da2f3d748c0aba40ae11a9598bed3723570214b3",
+            "section": "完整 JSON：双共享子句锐族"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/半密度半槽与指定根锐族的独立原程序--审查.md",
+            "sha256": "736b7f3055bba92e94dec011dc1915f1c7fa73bf1e4f5d4587b0950f22da61a3",
+            "section": "独立指定根锐族生成器的实际内容"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/半密度半槽与指定根锐族的独立原程序--审查.md",
+            "sha256": "736b7f3055bba92e94dec011dc1915f1c7fa73bf1e4f5d4587b0950f22da61a3",
+            "section": "两源不能互换的量词与关系"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+            "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+            "section": "3.2 给定 p 份完整 YES 的 selector mixing"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+            "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+            "section": "3.3 锐例和边界反例"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+            "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+            "section": "3. 全局叶流与 selector mixing"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/um-joint-projection/original/research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+            "sha256": "425af66b7eaa6c8317398f1806aceeae869459ffb57ee9b89c2a6fd2d029070f",
+            "section": "3. 完整 YES 选择状态的任意坐标重组"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/um-joint-projection/original/research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+            "sha256": "425af66b7eaa6c8317398f1806aceeae869459ffb57ee9b89c2a6fd2d029070f",
+            "section": "4. 对每 p 的锐例及准确否定范围"
+          }
+        ],
+        "sources": [
+          "UM-UNIT-READOUT-SELECTOR-MIXING-v1",
+          "source:dce12333944853ff579d:research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+          "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/unit_readout_selector_profile_independent.py"
+        ]
+      },
+      "statement_checked": "给同一原P的p≥1份完整真实C≤1调度，并指定每变量sign至少在某份selector出现；非空另需N=k^h≥p。确定性按P+全部见证总位长多项式输出保全部指定根的完整σ，C≤2−1/(2p−1)。k≥p取r=floor(k/p)给2−r/k；k<p且N≥p取r1给2−1/k；p1保原YES。完整YES迫所选整轨全外送，故指定轨d_c*≤pA_c；仅指定轨x0=1建槽，另一轨全部父置。每p有k=2p−1,h1锐指定profile族，原P全局OPT仍1。",
+      "quantifiers_checked": "∀显式P，∀p≥1，∀属于同一P且全机峰≤1的完整σ¹…σᵖ，∀逐变量被这些selector覆盖的指定profile，在非空N≥p时有所述构造；∀p存在精确达到统一profile上界的族。",
+      "mathematical_decision": "同一原P的p份完整C≤1真实见证、指定sign覆盖及非空N≥p；active-only指定根质量1、另一轨父置。2−1/(2p−1)为指定profile锐界，原锐族全局OPT1；不同pin P不能充同P多YES。",
+      "canonical_done24_differing_fields": []
+    }
+  ],
+  "material_comparisons": [
+    {
+      "material": {
+        "path": "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md",
+        "sha256": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7"
+      },
+      "candidate_done24_differing_fields": [
+        {
+          "field": "reason",
+          "candidate": "0098原DONE的0-based material_index=16；本候选未改旧DONE/receipt。§2异质宏/承诺搜索/强三分割残余沿原四owner；§3.1的mandatory全部变量r森林iff、§3.2半密度三半及纯树叶hitting由本组精确接纳，保持无pin、共同clause注入及所有原jobs条件。 本行完整保留原DONE及当前canonical所有owner，且本组已在各body/evidence精确绑定本页字节。原未接名单已全部被本十Claim覆盖，本页无剩余身份/来源路由；数学开放项和实现边界照旧。仅在本候选经合法任务发布并增量接入后，本页路由方属正式闭合。",
+          "done24": "全文实读。§2异质宏/tiny、未知OPT承诺搜索及三分割残余保留原四owner；§3.1全部变量mandatory-r森林iff与§3.2半密度全jobs三半、纯树叶hitting分别由本批三主record接纳。保无pin、真实祖先及共同clause注入；不把源开放义务当身份缺口。原0098 DONE材料16及其其它范围不改。"
+        }
+      ],
+      "candidate_done24_same_path_sha_disposition_and_owner_list": true,
+      "done24_disposition": "objects",
+      "done24_object_ids": [
+        "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1",
+        "UM-HETEROGENEOUS-MACRO-PROMISE-v1",
+        "UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1",
+        "M-36e9d6d07bed4754858f0f578f0ad101",
+        "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+        "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+        "UM-PRUNED-TREE-LEAF-HITTING-v1"
+      ],
+      "canonical_current": {
+        "path": "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md",
+        "sha256": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7",
+        "disposition": "objects",
+        "object_ids": [
+          "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1",
+          "UM-HETEROGENEOUS-MACRO-PROMISE-v1",
+          "UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1",
+          "M-36e9d6d07bed4754858f0f578f0ad101",
+          "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+          "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+          "UM-PRUNED-TREE-LEAF-HITTING-v1"
+        ],
+        "reason": "全文实读。§2异质宏/tiny、未知OPT承诺搜索及三分割残余保留原四owner；§3.1全部变量mandatory-r森林iff与§3.2半密度全jobs三半、纯树叶hitting分别由本批三主record接纳。保无pin、真实祖先及共同clause注入；不把源开放义务当身份缺口。原0098 DONE材料16及其其它范围不改。"
+      },
+      "same_canonical_sha": true,
+      "canonical_owners_missing_from_done24": [],
+      "done24_owners_added_to_canonical": [],
+      "canonical_done24_differing_fields": []
+    },
+    {
+      "material": {
+        "path": "archives/unrelated-machines/state/审查/半密度半槽与指定根锐族的独立原程序--审查.md",
+        "sha256": "736b7f3055bba92e94dec011dc1915f1c7fa73bf1e4f5d4587b0950f22da61a3"
+      },
+      "candidate_done24_differing_fields": [
+        {
+          "field": "reason",
+          "candidate": "0098原DONE的0-based material_index=17；本候选未改旧DONE/receipt。半密度程序合同与全部原jobs/真实森林由HALF-DENSITY接纳；独立双共享clause锐族/指定profile合同由SELECTOR-MIXING接纳，保自由选根与指定根差异及旧CLI大十进制环境边界。 本行完整保留原DONE及当前canonical所有owner，且本组已在各body/evidence精确绑定本页字节。原未接名单已全部被本十Claim覆盖，本页无剩余身份/来源路由；数学开放项和实现边界照旧。仅在本候选经合法任务发布并增量接入后，本页路由方属正式闭合。",
+          "done24": "全文实读。半密度完整原jobs的半槽/Hall/真实森林归HALF-DENSITY；独立双共享clause锐族和指定profile上下界归SELECTOR-MIXING。自由选根与指定根、任意高度半密度与同P完整YES条件分开；5001位十进制原CLI需显式环境设置的限制保留。原0098材料17不改。"
+        }
+      ],
+      "candidate_done24_same_path_sha_disposition_and_owner_list": true,
+      "done24_disposition": "objects",
+      "done24_object_ids": [
+        "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+        "UM-UNIT-READOUT-SELECTOR-MIXING-v1"
+      ],
+      "canonical_current": {
+        "path": "archives/unrelated-machines/state/审查/半密度半槽与指定根锐族的独立原程序--审查.md",
+        "sha256": "736b7f3055bba92e94dec011dc1915f1c7fa73bf1e4f5d4587b0950f22da61a3",
+        "disposition": "objects",
+        "object_ids": [
+          "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+          "UM-UNIT-READOUT-SELECTOR-MIXING-v1"
+        ],
+        "reason": "全文实读。半密度完整原jobs的半槽/Hall/真实森林归HALF-DENSITY；独立双共享clause锐族和指定profile上下界归SELECTOR-MIXING。自由选根与指定根、任意高度半密度与同P完整YES条件分开；5001位十进制原CLI需显式环境设置的限制保留。原0098材料17不改。"
+      },
+      "same_canonical_sha": true,
+      "canonical_owners_missing_from_done24": [],
+      "done24_owners_added_to_canonical": [],
+      "canonical_done24_differing_fields": []
+    },
+    {
+      "material": {
+        "path": "archives/unrelated-machines/state/审查/单位读出叶流与选择重组的原程序及锐矩阵--审查.md",
+        "sha256": "839f4e4242eb16b000ba8f34da2f3d748c0aba40ae11a9598bed3723570214b3"
+      },
+      "candidate_done24_differing_fields": [
+        {
+          "field": "reason",
+          "candidate": "0098原DONE的0-based material_index=18；本候选未改旧DONE/receipt。任意密度固定高度叶流不需给YES；同一P多完整YES的指定selector重组另需覆盖及非空N≥p。两主record接纳完整算法、祖先提取、共同容量和锐profile，程序复核只作为有限证据。 本行完整保留原DONE及当前canonical所有owner，且本组已在各body/evidence精确绑定本页字节。原未接名单已全部被本十Claim覆盖，本页无剩余身份/来源路由；数学开放项和实现边界照旧。仅在本候选经合法任务发布并增量接入后，本页路由方属正式闭合。",
+          "done24": "全文实读。任意密度固定高度整数叶流、最大共同b、floor-root和真实祖先提取归FIXED-HEIGHT；同一P的p份完整C≤1见证、覆盖指定sign及非空N≥p的重组与双共享clause锐族归SELECTOR-MIXING。前者无需给YES；后者的profile锐值不等于原全局OPT下界。原0098材料18不改。"
+        }
+      ],
+      "candidate_done24_same_path_sha_disposition_and_owner_list": true,
+      "done24_disposition": "objects",
+      "done24_object_ids": [
+        "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+        "UM-UNIT-READOUT-SELECTOR-MIXING-v1"
+      ],
+      "canonical_current": {
+        "path": "archives/unrelated-machines/state/审查/单位读出叶流与选择重组的原程序及锐矩阵--审查.md",
+        "sha256": "839f4e4242eb16b000ba8f34da2f3d748c0aba40ae11a9598bed3723570214b3",
+        "disposition": "objects",
+        "object_ids": [
+          "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+          "UM-UNIT-READOUT-SELECTOR-MIXING-v1"
+        ],
+        "reason": "全文实读。任意密度固定高度整数叶流、最大共同b、floor-root和真实祖先提取归FIXED-HEIGHT；同一P的p份完整C≤1见证、覆盖指定sign及非空N≥p的重组与双共享clause锐族归SELECTOR-MIXING。前者无需给YES；后者的profile锐值不等于原全局OPT下界。原0098材料18不改。"
+      },
+      "same_canonical_sha": true,
+      "canonical_owners_missing_from_done24": [],
+      "done24_owners_added_to_canonical": [],
+      "canonical_done24_differing_fields": []
+    },
+    {
+      "material": {
+        "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+        "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a"
+      },
+      "candidate_done24_differing_fields": [
+        {
+          "field": "reason",
+          "candidate": "0098原DONE的0-based material_index=19；本候选未改旧DONE/receipt。四源§1校准/固定D、§2正部/严格1/闭树、§3自由叶流/完整YES重组、§4森林/半密度/hitting由十个主record分别接纳；依正式强计数实现纠正早综述固定D/YES和根incoming压缩句，有限audit不替代证明。 本行完整保留原DONE及当前canonical所有owner，且本组已在各body/evidence精确绑定本页字节。原未接名单已全部被本十Claim覆盖，本页无剩余身份/来源路由；数学开放项和实现边界照旧。仅在本候选经合法任务发布并增量接入后，本页路由方属正式闭合。",
+          "done24": "全文实读。§1校准强计数/固定D、§2正部CONFIG/strict1/闭合树、§3固定高度叶流/完整YES重组、§4森林/半密度/hitting由本批十个主record全部精确接证。早期压缩句“fixed-D依赖YES”及根incoming恒1须按强计数正式纠偏理解：强全轨根q=y_vs，fixed-D自产证书无需YES；有限audit不替代一般证明。原0098材料19不改。"
+        }
+      ],
+      "candidate_done24_same_path_sha_disposition_and_owner_list": true,
+      "done24_disposition": "attachment",
+      "done24_object_ids": [
+        "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+        "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+        "UM-PRUNED-TREE-LEAF-HITTING-v1",
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+        "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+        "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+        "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+        "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+        "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+        "UM-UNIT-READOUT-SELECTOR-MIXING-v1"
+      ],
+      "canonical_current": {
+        "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+        "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+        "disposition": "attachment",
+        "object_ids": [
+          "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+          "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+          "UM-PRUNED-TREE-LEAF-HITTING-v1",
+          "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+          "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+          "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+          "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+          "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+          "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+          "UM-UNIT-READOUT-SELECTOR-MIXING-v1"
+        ],
+        "reason": "全文实读。§1校准强计数/固定D、§2正部CONFIG/strict1/闭合树、§3固定高度叶流/完整YES重组、§4森林/半密度/hitting由本批十个主record全部精确接证。早期压缩句“fixed-D依赖YES”及根incoming恒1须按强计数正式纠偏理解：强全轨根q=y_vs，fixed-D自产证书无需YES；有限audit不替代一般证明。原0098材料19不改。"
+      },
+      "same_canonical_sha": true,
+      "canonical_owners_missing_from_done24": [],
+      "done24_owners_added_to_canonical": [],
+      "canonical_done24_differing_fields": []
+    },
+    {
+      "material": {
+        "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+        "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4"
+      },
+      "candidate_done24_differing_fields": [
+        {
+          "field": "reason",
+          "candidate": "0098原DONE的0-based material_index=20；本候选未改旧DONE/receipt。强全轨(S_r)给定有理证书、fixed-D自产证书/小k必要路径fallback、严格CONFIG1整轨LP与active-only五三分别由三个主record接纳；无需把fixed-D增加完整YES前提，保弱行反例/强行非必要及软件无通用LP后端。 本行完整保留原DONE及当前canonical所有owner，且本组已在各body/evidence精确绑定本页字节。原未接名单已全部被本十Claim覆盖，本页无剩余身份/来源路由；数学开放项和实现边界照旧。仅在本候选经合法任务发布并增量接入后，本页路由方属正式闭合。",
+          "done24": "全文实读。强全轨(S_r)给定共同有理证书、uniform深度校准及其充分/受限必要边界归CALIBRATED-SLOT；固定D自产证书和小k必要路径fallback归BOUNDED-DENSITY；严格CONFIG1整轨(L)与active-only五三归STRICT-UNIT。保q根为互补质量、active-only指定根才为1；源码未集成通用LP/OPT。原0098材料20不改。"
+        }
+      ],
+      "candidate_done24_same_path_sha_disposition_and_owner_list": true,
+      "done24_disposition": "objects",
+      "done24_object_ids": [
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+        "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+        "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1"
+      ],
+      "canonical_current": {
+        "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+        "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4",
+        "disposition": "objects",
+        "object_ids": [
+          "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+          "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+          "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1"
+        ],
+        "reason": "全文实读。强全轨(S_r)给定共同有理证书、uniform深度校准及其充分/受限必要边界归CALIBRATED-SLOT；固定D自产证书和小k必要路径fallback归BOUNDED-DENSITY；严格CONFIG1整轨(L)与active-only五三归STRICT-UNIT。保q根为互补质量、active-only指定根才为1；源码未集成通用LP/OPT。原0098材料20不改。"
+      },
+      "same_canonical_sha": true,
+      "canonical_owners_missing_from_done24": [],
+      "done24_owners_added_to_canonical": [],
+      "canonical_done24_differing_fields": []
+    },
+    {
+      "material": {
+        "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+        "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310"
+      },
+      "candidate_done24_differing_fields": [
+        {
+          "field": "reason",
+          "candidate": "0098原DONE的0-based material_index=21；本候选未改旧DONE/receipt。正部CONFIG iff、严格1整轨LP/给定见证五三、闭合两树阈值、固定高度任意密度叶流及同P多完整YES重组由五个主record接纳；保局部配置边际与完整整数σ、strict1与near-unit阈值的不同量词。 本行完整保留原DONE及当前canonical所有owner，且本组已在各body/evidence精确绑定本页字节。原未接名单已全部被本十Claim覆盖，本页无剩余身份/来源路由；数学开放项和实现边界照旧。仅在本候选经合法任务发布并增量接入后，本页路由方属正式闭合。",
+          "done24": "全文实读。正部CONFIG全阈值iff/有理分解、严格CONFIG1整轨消元及五三promise、闭合两树精确阈值、任意密度固定高度叶流、同P多完整YES指定selector重组分别由本批五个主record接纳。共享边际不等于joint schedule law；严格1与1+1/k、固定高度与N≥p各保自身量词。原0098材料21不改。"
+        }
+      ],
+      "candidate_done24_same_path_sha_disposition_and_owner_list": true,
+      "done24_disposition": "objects",
+      "done24_object_ids": [
+        "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+        "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+        "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+        "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+        "UM-UNIT-READOUT-SELECTOR-MIXING-v1"
+      ],
+      "canonical_current": {
+        "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+        "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+        "disposition": "objects",
+        "object_ids": [
+          "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+          "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+          "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+          "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+          "UM-UNIT-READOUT-SELECTOR-MIXING-v1"
+        ],
+        "reason": "全文实读。正部CONFIG全阈值iff/有理分解、严格CONFIG1整轨消元及五三promise、闭合两树精确阈值、任意密度固定高度叶流、同P多完整YES指定selector重组分别由本批五个主record接纳。共享边际不等于joint schedule law；严格1与1+1/k、固定高度与N≥p各保自身量词。原0098材料21不改。"
+      },
+      "same_canonical_sha": true,
+      "canonical_owners_missing_from_done24": [],
+      "done24_owners_added_to_canonical": [],
+      "canonical_done24_differing_fields": []
+    },
+    {
+      "material": {
+        "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+        "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf"
+      },
+      "candidate_done24_differing_fields": [
+        {
+          "field": "reason",
+          "candidate": "0098原DONE的0-based material_index=22；本候选未改旧DONE/receipt。原三owner完整保留：三个不同含pin原P的精确profile、unit七变量NO的三半上界、外端1/4的不同矩阵上界。§单行正部构造/lift裁剪与§小JSON八组闭树阈值分别由CONFIG-POSITIVE-PART、CLOSED-TREES接纳；不由单行分解推全局整数σ。 本行完整保留原DONE及当前canonical所有owner，且本组已在各body/evidence精确绑定本页字节。原未接名单已全部被本十Claim覆盖，本页无剩余身份/来源路由；数学开放项和实现边界照旧。仅在本候选经合法任务发布并增量接入后，本页路由方属正式闭合。",
+          "done24": "全文实读。原三个owner完整保留：三个不同含0/1 pin原P的精确profile、unit七变量源NO但三半上界、外端1/4不同矩阵上界。单行正部必要充分构造/lift裁剪与八组闭合阈值算术分别补给CONFIG-POSITIVE-PART/CLOSED-TREES；不由单行分解推出全局整数σ，也不把不同pin矩阵视为同P多YES。原0098材料22不改。"
+        }
+      ],
+      "candidate_done24_same_path_sha_disposition_and_owner_list": true,
+      "done24_disposition": "objects",
+      "done24_object_ids": [
+        "M-b4a6d0d0b41c4ef2b84217f7ac101ea1",
+        "M-c663aecb01df4eefa9ed35be826cfbab",
+        "M-1b7aae02648540af8d4986eb762adaae",
+        "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+        "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1"
+      ],
+      "canonical_current": {
+        "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+        "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+        "disposition": "objects",
+        "object_ids": [
+          "M-b4a6d0d0b41c4ef2b84217f7ac101ea1",
+          "M-c663aecb01df4eefa9ed35be826cfbab",
+          "M-1b7aae02648540af8d4986eb762adaae",
+          "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+          "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1"
+        ],
+        "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：M-b4a6d0d0b41c4ef2b84217f7ac101ea1,M-c663aecb01df4eefa9ed35be826cfbab,M-1b7aae02648540af8d4986eb762adaae。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1,UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1；不创建平行同ID主记录。\n全文实读。原三个owner完整保留：三个不同含0/1 pin原P的精确profile、unit七变量源NO但三半上界、外端1/4不同矩阵上界。单行正部必要充分构造/lift裁剪与八组闭合阈值算术分别补给CONFIG-POSITIVE-PART/CLOSED-TREES；不由单行分解推出全局整数σ，也不把不同pin矩阵视为同P多YES。原0098材料22不改。"
+      },
+      "same_canonical_sha": true,
+      "canonical_owners_missing_from_done24": [],
+      "done24_owners_added_to_canonical": [],
+      "canonical_done24_differing_fields": [
+        {
+          "field": "reason",
+          "canonical": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：M-b4a6d0d0b41c4ef2b84217f7ac101ea1,M-c663aecb01df4eefa9ed35be826cfbab,M-1b7aae02648540af8d4986eb762adaae。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1,UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1；不创建平行同ID主记录。\n全文实读。原三个owner完整保留：三个不同含0/1 pin原P的精确profile、unit七变量源NO但三半上界、外端1/4不同矩阵上界。单行正部必要充分构造/lift裁剪与八组闭合阈值算术分别补给CONFIG-POSITIVE-PART/CLOSED-TREES；不由单行分解推出全局整数σ，也不把不同pin矩阵视为同P多YES。原0098材料22不改。",
+          "done24": "全文实读。原三个owner完整保留：三个不同含0/1 pin原P的精确profile、unit七变量源NO但三半上界、外端1/4不同矩阵上界。单行正部必要充分构造/lift裁剪与八组闭合阈值算术分别补给CONFIG-POSITIVE-PART/CLOSED-TREES；不由单行分解推出全局整数σ，也不把不同pin矩阵视为同P多YES。原0098材料22不改。"
+        }
+      ]
+    },
+    {
+      "material": {
+        "path": "archives/unrelated-machines/state/审查/多小端密度流障碍与单位读出校准槽双源审查--审查.md",
+        "sha256": "ccf410a29e660aba575bf8c0df61a2b29ddd0e1ede7f68b8c1ee1203153c7a39"
+      },
+      "candidate_done24_differing_fields": [
+        {
+          "field": "reason",
+          "candidate": "0098原DONE的0-based material_index=23；本候选未改旧DONE/receipt。第一源逐机多小端柔性密度/容量流障碍保原SMALL-DENSITY owner；第二源分数任务数/有序槽Hall与深度校准、固定D两分支由CALIBRATED-SLOT、BOUNDED-DENSITY接纳；二者模型和density量词分清。 本行完整保留原DONE及当前canonical所有owner，且本组已在各body/evidence精确绑定本页字节。原未接名单已全部被本十Claim覆盖，本页无剩余身份/来源路由；数学开放项和实现边界照旧。仅在本候选经合法任务发布并增量接入后，本页路由方属正式闭合。",
+          "done24": "全文实读。第一源逐机多小端柔性密度的容量流障碍保原SMALL-DENSITY owner；第二源强分数任务数、incoming-first槽/Hall、uniform递推及固定clause密度D两分支由CALIBRATED-SLOT/BOUNDED-DENSITY接证。逐机柔性密度与逐clause全轨arity密度不混。原0098材料23不改。"
+        }
+      ],
+      "candidate_done24_same_path_sha_disposition_and_owner_list": true,
+      "done24_disposition": "objects",
+      "done24_object_ids": [
+        "UM-SMALL-DENSITY-FLOW-BARRIER-v1",
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+        "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1"
+      ],
+      "canonical_current": {
+        "path": "archives/unrelated-machines/state/审查/多小端密度流障碍与单位读出校准槽双源审查--审查.md",
+        "sha256": "ccf410a29e660aba575bf8c0df61a2b29ddd0e1ede7f68b8c1ee1203153c7a39",
+        "disposition": "objects",
+        "object_ids": [
+          "UM-SMALL-DENSITY-FLOW-BARRIER-v1",
+          "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+          "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1"
+        ],
+        "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-SMALL-DENSITY-FLOW-BARRIER-v1。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-CALIBRATED-SLOT-v1,UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1；不创建平行同ID主记录。\n全文实读。第一源逐机多小端柔性密度的容量流障碍保原SMALL-DENSITY owner；第二源强分数任务数、incoming-first槽/Hall、uniform递推及固定clause密度D两分支由CALIBRATED-SLOT/BOUNDED-DENSITY接证。逐机柔性密度与逐clause全轨arity密度不混。原0098材料23不改。"
+      },
+      "same_canonical_sha": true,
+      "canonical_owners_missing_from_done24": [],
+      "done24_owners_added_to_canonical": [],
+      "canonical_done24_differing_fields": [
+        {
+          "field": "reason",
+          "canonical": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-SMALL-DENSITY-FLOW-BARRIER-v1。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-CALIBRATED-SLOT-v1,UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1；不创建平行同ID主记录。\n全文实读。第一源逐机多小端柔性密度的容量流障碍保原SMALL-DENSITY owner；第二源强分数任务数、incoming-first槽/Hall、uniform递推及固定clause密度D两分支由CALIBRATED-SLOT/BOUNDED-DENSITY接证。逐机柔性密度与逐clause全轨arity密度不混。原0098材料23不改。",
+          "done24": "全文实读。第一源逐机多小端柔性密度的容量流障碍保原SMALL-DENSITY owner；第二源强分数任务数、incoming-first槽/Hall、uniform递推及固定clause密度D两分支由CALIBRATED-SLOT/BOUNDED-DENSITY接证。逐机柔性密度与逐clause全轨arity密度不混。原0098材料23不改。"
+        }
+      ]
+    },
+    {
+      "material": {
+        "path": "archives/unrelated-machines/state/审查/Unit-readout槽与配置阈值两源精读--审查.md",
+        "sha256": "7230a61609a3e2d4d1e0a11657eda00b73a18df76327469e68fb04a002fdb9fc"
+      },
+      "candidate_done24_differing_fields": [
+        {
+          "field": "reason",
+          "candidate": "0107原DONE的0-based material_index=36。全文实读：§1校准强计数槽/固定D与§2正部CONFIG/严格单位五三/闭合两树共五个已有Claim由本候选主record分别补入精确section evidence；fixed-D无YES前提，strict-unit给定整轨见证与数学LP后端分开，保shared marginal非joint law、k<D失败真OPT2。整页这五类数学均已本地接纳，未发现剩余身份/来源路由；保原DONE及当前canonical所有owner。正式接证仍待合法任务发布与lead增量集成，旧DONE不改。",
+          "done24": "全文实读。§1校准强计数槽/固定D与§2正部CONFIG/严格单位五三/闭合两树分别被本批五个精确Claim接纳为section evidence。保fixed-D无需YES、k<D必要匹配失败真OPT2、strict1给定整轨见证及数学有理LP与软件未集成后端、共同边际非joint law。原0107材料36中本页五类未接路由由此补齐；旧DONE及其余范围不改。"
+        }
+      ],
+      "candidate_done24_same_path_sha_disposition_and_owner_list": true,
+      "done24_disposition": "attachment",
+      "done24_object_ids": [
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+        "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+        "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+        "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+        "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1"
+      ],
+      "canonical_current": {
+        "path": "archives/unrelated-machines/state/审查/Unit-readout槽与配置阈值两源精读--审查.md",
+        "sha256": "7230a61609a3e2d4d1e0a11657eda00b73a18df76327469e68fb04a002fdb9fc",
+        "disposition": "attachment",
+        "object_ids": [
+          "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+          "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+          "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+          "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+          "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1"
+        ],
+        "reason": "全文实读。§1校准强计数槽/固定D与§2正部CONFIG/严格单位五三/闭合两树分别被本批五个精确Claim接纳为section evidence。保fixed-D无需YES、k<D必要匹配失败真OPT2、strict1给定整轨见证及数学有理LP与软件未集成后端、共同边际非joint law。原0107材料36中本页五类未接路由由此补齐；旧DONE及其余范围不改。"
+      },
+      "same_canonical_sha": true,
+      "canonical_owners_missing_from_done24": [],
+      "done24_owners_added_to_canonical": [],
+      "canonical_done24_differing_fields": []
+    },
+    {
+      "material": {
+        "path": "archives/unrelated-machines/state/审查/单位森林与叶Hall阈值两源精读--审查.md",
+        "sha256": "801e9b4d69612ca5b04cb8a76ad4578dd1628591fa86f1fdb20580f8b4db8990"
+      },
+      "candidate_done24_differing_fields": [
+        {
+          "field": "reason",
+          "candidate": "0109原DONE的0-based material_index=22。全文实读并由本候选三个主record接纳§1 mandatory全部变量forest iff/half-density全jobs三半和§2纯树hitting q^h/最大r-free/dummy仅组合存在性；精确section evidence已加。整页仍有§3 Threshold leaf Hall/consistent marginals/path projection，对应当前canonical主身份UM-THRESHOLD-LEAF-HALL-CONSISTENT-MARGINALS-PATH-PROJECTION-GAP-v1，其现record尚未引用本页：该部分及§4相关partition/共同边际非完整law边界待原主作者/lead接证。本行保原DONE及当前canonical全部owner，并仅反向增加已准确接纳的三unit/leaf owner；必须保needs-decision，不能因局部unit接证转attachment抹掉Hall未接范围。",
+          "done24": "全文实读。§1全部变量mandatory森林iff及半密度全jobs三半、§2纯树hitting q^h/最大r-free/dummy仅组合存在性由本批三主record精确接证。§3 Threshold leaf Hall/consistent marginals/path projection及§4有关指定partition、共同叶edge marginals而非all-core joint law的范围仍待UM-THRESHOLD-LEAF-HALL-CONSISTENT-MARGINALS-PATH-PROJECTION-GAP-v1原主作者/lead接纳本页字节；当前该record未引用本页。保needs-decision，不用局部unit接证抹掉Hall范围；原0109材料22及旧DONE不改。"
+        }
+      ],
+      "candidate_done24_same_path_sha_disposition_and_owner_list": true,
+      "done24_disposition": "needs-decision",
+      "done24_object_ids": [
+        "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+        "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+        "UM-PRUNED-TREE-LEAF-HITTING-v1"
+      ],
+      "canonical_current": {
+        "path": "archives/unrelated-machines/state/审查/单位森林与叶Hall阈值两源精读--审查.md",
+        "sha256": "801e9b4d69612ca5b04cb8a76ad4578dd1628591fa86f1fdb20580f8b4db8990",
+        "disposition": "needs-decision",
+        "object_ids": [
+          "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+          "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+          "UM-PRUNED-TREE-LEAF-HITTING-v1"
+        ],
+        "reason": "全文实读。§1全部变量mandatory森林iff及半密度全jobs三半、§2纯树hitting q^h/最大r-free/dummy仅组合存在性由本批三主record精确接证。§3 Threshold leaf Hall/consistent marginals/path projection及§4有关指定partition、共同叶edge marginals而非all-core joint law的范围仍待UM-THRESHOLD-LEAF-HALL-CONSISTENT-MARGINALS-PATH-PROJECTION-GAP-v1原主作者/lead接纳本页字节；当前该record未引用本页。保needs-decision，不用局部unit接证抹掉Hall范围；原0109材料22及旧DONE不改。"
+      },
+      "same_canonical_sha": true,
+      "canonical_owners_missing_from_done24": [],
+      "done24_owners_added_to_canonical": [],
+      "canonical_done24_differing_fields": []
+    }
+  ],
+  "pin_quantifier_correction": {
+    "object_id": "M-b4a6d0d0b41c4ef2b84217f7ac101ea1",
+    "canonical_current_version": 1,
+    "canonical_current_record": {
+      "object_id": "M-b4a6d0d0b41c4ef2b84217f7ac101ea1",
+      "version": 1,
+      "title": "私有host真实pin开底双树的精确三半profile",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "固定一变量k4,h3，42内部机+128私有host，169树job及128唯一端pin。正轨/负轨全开放各为不同P且OPT1；仅负轨digit均<2的8host开放时真实OPT3/2：二叉pruned树达到，全闭分支不可激活迫负根留两小边给下界。",
+      "quantifiers": "存在正文完整固定显式矩阵/原任务证书；对源全部128赋值均核NO；量词仅所述固定实例及解析下界。",
+      "assumptions": [
+        "固定k4,h3及完整真实原资格/任务",
+        "共享机器全部共同计负载；不可复制/漏任务"
+      ],
+      "scope": "三个不同含pin完整矩阵；0pin仍是必须安置原任务，不能当同P多YES",
+      "objections": "成熟正文给出所列域内的完整理由；本登记复用证明，未重新运行审计。外审及全球新颖性未认证；不声称一般UM统一次二目标已闭合。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+        "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+        "section": "私有host与真实0/1 pin：三个不同原P"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/original/unit_readout_two_tree_actual_certificates.json",
+          "sha256": "b44ee0f44485f2e1497b87338106d642beaa85b96196a810c569b4d120febefd"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/unit-configuration-row-and-opened-tree-originals",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/unit_readout_configuration_row_decomposition.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/unit_readout_two_tree_certificates.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/unit_readout_two_tree_independent.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:examples/unrelated_machines/unit_readout_configuration_threshold_examples.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:examples/unrelated_machines/unit_readout_two_tree_actual_certificates.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md"
+      ]
+    },
+    "canonical_primary_identical_to_old0098": true,
+    "old0098_task": {
+      "path": "research/operations/p25-register-v2/tasks/register-ab98f323ad-0098.json",
+      "sha256": "f3d4e7a50190079d146bec4d23babfe8fb97baa21ad67e35bae61b82e072daf7"
+    },
+    "old0098_batch": {
+      "path": "research/registration/batches/register-ab98f323ad-0098.json",
+      "sha256": "ed27cfb8c33d7a015de6b1e08a6aa07a3a00cea4937b6343ad3cdd7fdf5684ec"
+    },
+    "current_erroneous_quantifiers": "存在正文完整固定显式矩阵/原任务证书；对源全部128赋值均核NO；量词仅所述固定实例及解析下界。",
+    "erroneous_fragment": "对源全部128赋值均核NO",
+    "not_repaired_by_candidate": true,
+    "not_repaired_by_done24": true,
+    "not_repaired_by_resumed_review": "Boss5/0098-unit-readout-resume为独立十Claim反馈，没有此M对象主record更新；unit24/review只将该错记作nonblocking_prior_record_correction。",
+    "proposed_correct_quantifiers": "存在正文固定的一变量k=4,h=3的三个完整含pin原矩阵P_+、P_-、P_weak；各有170台机器与297枚必须安置的原job（169树job和128枚唯一端0/1 pin）。P_+全正64host开放、P_-全负64host开放，分别OPT=1；P_weak仅负轨三位地址各digit<2的8host开放，OPT=3/2。量词仅此三固定完整实例、所给完整调度及解析最优性证明；不量化七变量源的128赋值，不把三个不同P视为同一P的多份YES。",
+    "truth_status_decision": "保持proved；第三P有完整上界与解析下界，错误在量词模板混入其它对象，非反驳三P数学。",
+    "body_support": {
+      "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+      "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+      "section": "私有host与真实0/1 pin：三个不同原P"
+    },
+    "source_NO_belongs_to": [
+      {
+        "object_id": "M-c663aecb01df4eefa9ed35be826cfbab",
+        "body": {
+          "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+          "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+          "section": "七变量全cube：源NO却有实际三半"
+        }
+      },
+      {
+        "object_id": "M-1b7aae02648540af8d4986eb762adaae",
+        "body": {
+          "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+          "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+          "section": "七变量全cube：源NO却有实际三半"
+        }
+      }
+    ],
+    "proof_of_three_profile_scope": "正文唯一标题“私有host与真实0/1 pin：三个不同原P”给一变量42内部机+128host、169树job+128pin=297jobs。全正/全负开放各OPT1；weak八开放负host用二叉pruned树达3/2，全闭分支不能激活迫负根留两枚1/4边给≥3/2。下一标题“七变量全cube：源NO却有实际三半”才有全部128赋值及两个不同外端矩阵。",
+    "certificate_file": {
+      "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/original/unit_readout_two_tree_actual_certificates.json",
+      "sha256": "b44ee0f44485f2e1497b87338106d642beaa85b96196a810c569b4d120febefd"
+    },
+    "targeted_certificate_fields": {
+      "json_pointer": "/examples/private_module",
+      "profiles": [
+        {
+          "name": "all_positive_open_T_YES",
+          "open_host_count": 64,
+          "machines": [
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": []
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": []
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                3,
+                3
+              ]
+            }
+          ],
+          "original_jobs": 297,
+          "unique_end_pin_jobs": 128,
+          "sigma_length": 297,
+          "listed_machine_loads": 170,
+          "recorded_makespan": "1"
+        },
+        {
+          "name": "all_negative_open_T_YES",
+          "open_host_count": 64,
+          "machines": [
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": []
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": []
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                3,
+                3
+              ]
+            }
+          ],
+          "original_jobs": 297,
+          "unique_end_pin_jobs": 128,
+          "sigma_length": 297,
+          "listed_machine_loads": 170,
+          "recorded_makespan": "1"
+        },
+        {
+          "name": "only_pruned_negative_open_weak",
+          "open_host_count": 8,
+          "machines": [
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": []
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 0,
+              "variable": 0,
+              "word": [
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": []
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "internal",
+              "sign": 1,
+              "variable": 0,
+              "word": [
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                0,
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                1,
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                2,
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 0,
+              "word": [
+                3,
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                0,
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                1,
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                2,
+                3,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                0,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                0,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                0,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                1,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                1,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                1,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                2,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                2,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                2,
+                3
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                3,
+                0
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                3,
+                1
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                3,
+                2
+              ]
+            },
+            {
+              "kind": "private_host",
+              "sign": 1,
+              "word": [
+                3,
+                3,
+                3
+              ]
+            }
+          ],
+          "original_jobs": 297,
+          "unique_end_pin_jobs": 128,
+          "sigma_length": 297,
+          "listed_machine_loads": 170,
+          "recorded_makespan": "3/2"
+        }
+      ],
+      "private_module_has_source_NO_assignment_table": false,
+      "source_NO_assignment_table_sizes": {
+        "unit_slot_source_NO_escape": 128,
+        "single_endpoint_source_NO_escape": 128
+      }
+    },
+    "next_action": "lead给原主owner/合法定向增量任务，沿本M稳定ID修正quantifiers并按记录变更规则用下一版本；保正文/证据精确字节与其它两个M对象。不得直接改0098旧DONE或将本十Claim重复任务冒作已修。0098为另一旧baseline，勿跨baseline误用supersedes旧0098。"
+  },
+  "mixed_hall_scope": {
+    "material": {
+      "path": "archives/unrelated-machines/state/审查/单位森林与叶Hall阈值两源精读--审查.md",
+      "sha256": "801e9b4d69612ca5b04cb8a76ad4578dd1628591fa86f1fdb20580f8b4db8990"
+    },
+    "done24_disposition": "needs-decision",
+    "unit_sections_accepted_by_done24": [
+      "1. Mandatory pruned-forest IFF 与半密度合同",
+      "2. 精确叶 hitting 与 dummy 逃逸"
+    ],
+    "pending_sections": [
+      "3. Threshold leaf Hall 与 consistent marginals",
+      "4. 关系与未解边界"
+    ],
+    "target_object_id": "UM-THRESHOLD-LEAF-HALL-CONSISTENT-MARGINALS-PATH-PROJECTION-GAP-v1",
+    "current_version": 1,
+    "current_primary_body": {
+      "path": "archives/unrelated-machines/state/审查/条件叶Hall投影与一致边际四源证明读后--审查.md",
+      "sha256": "3a15197b94cc2ab85e03c4fe5e79b009b8e90b449c396b23ded7bb72ef063bc4"
+    },
+    "current_primary_accepts_this_material": false,
+    "decision": "继续needs-decision。指定partition、positive neighbors、MC仅共享leaf-edge marginals而非all-core或完整matching law；由原Hall主owner/lead精确接此页证据后才可闭合，不能因三unit/leaf项完成抹掉混页。"
+  },
+  "validation": {
+    "candidate_and_done24_validate_batch": {
+      "research/workspaces/p25-register-v2/Boss5/0098-unit-readout-supplement/batch.json": {
+        "objects": 10,
+        "materials": 10,
+        "reused_existing_owners": [
+          "M-1b7aae02648540af8d4986eb762adaae",
+          "M-36e9d6d07bed4754858f0f578f0ad101",
+          "M-b4a6d0d0b41c4ef2b84217f7ac101ea1",
+          "M-c663aecb01df4eefa9ed35be826cfbab",
+          "UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1",
+          "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1",
+          "UM-HETEROGENEOUS-MACRO-PROMISE-v1",
+          "UM-SMALL-DENSITY-FLOW-BARRIER-v1"
+        ],
+        "reused_published_group_owners": []
+      },
+      "research/registration/batches/register-lead-unit-readout-supplement-24.json": {
+        "objects": 10,
+        "materials": 10,
+        "reused_existing_owners": [
+          "M-1b7aae02648540af8d4986eb762adaae",
+          "M-36e9d6d07bed4754858f0f578f0ad101",
+          "M-b4a6d0d0b41c4ef2b84217f7ac101ea1",
+          "M-c663aecb01df4eefa9ed35be826cfbab",
+          "UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1",
+          "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1",
+          "UM-HETEROGENEOUS-MACRO-PROMISE-v1",
+          "UM-SMALL-DENSITY-FLOW-BARRIER-v1"
+        ],
+        "reused_published_group_owners": []
+      }
+    },
+    "all_assigned_file_sha_match": true,
+    "body_evidence_reference_occurrences": 73,
+    "distinct_body_evidence_files": 15,
+    "all_reference_sha_and_unique_section_checks_passed": true,
+    "canonical_owners_missing_from_done24": [],
+    "reused_existing_owner_count": 8,
+    "structure_checks_do_not_replace_math_review": true
+  },
+  "actual_reading": {
+    "assigned_materials_full_text_count": 10,
+    "assigned_materials_full_text_chars": 76972,
+    "assigned_materials_full_text_utf8_bytes": 133991,
+    "full_text_additional_definition": {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+    },
+    "object_metadata_scope": "十Claim的model/statement/quantifiers/assumptions/scope/objections/body/evidence/sources逐对象读取并比较；十materials完整reason及owner对照当前canonical。",
+    "review_metadata_scope": "unit24/review的身份检查、关键分离、未接路由、pin纠错等选定字段；0098-resume的mathematical-review.md与integration-request.json全文，JSON用于精确定位/比较；不将旧作者全文阅读记为本轮对四份原证明再次全文阅读。",
+    "original_mathematical_evidence_scope": "本轮复用十份成熟正文的完整证明解释；四份原数学比较稿仅做SHA和全部引用标题结构核查，未重新全文读或重证。",
+    "large_json_scope": "原1.76MB证书JSON本轮仅解析并定向读取private_module三profile的模型/任务数/负载条数/开放host数及cube NO表归属；未逐矩阵格重审或重算全部资格与σ。",
+    "new_original_audit_runs": 0,
+    "new_proofs_or_cleaning": false,
+    "runtime_context_remaining": "unknown; no platform token claim",
+    "counting_note": "本轮字符与UTF8字节按十个原始文件分别统计再求和，不加文件间分隔符，不沿用旧review的聚合计数。"
+  },
+  "preserved_assets": [
+    {
+      "path": "research/registration/batches/register-ab98f323ad-0098.json",
+      "sha256": "ed27cfb8c33d7a015de6b1e08a6aa07a3a00cea4937b6343ad3cdd7fdf5684ec"
+    },
+    {
+      "path": "research/registration/batches/register-ab98f323ad-0107.json",
+      "sha256": "4b171c5c8181ab22252ad220ccd9f3c2e7b54658fb0e12fc366415d1be2971e7"
+    },
+    {
+      "path": "research/registration/batches/register-ab98f323ad-0109.json",
+      "sha256": "773f403d61ddbb213cedd05e252d34f84b254bf324254ebf0c1bb44a9ce0330f"
+    },
+    {
+      "path": "research/registration/batches/register-lead-unit-readout-supplement-24.json",
+      "sha256": "109bc0dc25cc87449256d1d3caf0109e3c98b0f4cced28df4ee012801c8c9697"
+    },
+    {
+      "path": "research/registration/receipts/register-lead-unit-readout-supplement-24.json",
+      "sha256": "2574a560965c93cea80e638012d5ded22132b11c5e1f531a0ad3ce60318b0d8d"
+    }
+  ],
+  "next_actions": [
+    "父Boss精确保存本review与本任务receipt交接说明，handoff该重复claimed任务；本worker不操作队列。",
+    "请现lead withdraw重复register-boss5-unit-readout-supplement；最终快照已精确收24，无需再集成或复制其十Claim。后续动作前再核最新canonical。",
+    "仅当lead确认24本身有实质必须更新时，正式重框supersedes24且覆盖原十材料、保独有数学与原资产去向；本轮比较未发现需要替代24的独立数学增量。",
+    "pin量词纠错属于现M-b4a6d…主记录的独立定向增量，十Claim候选/24未包含其主record；按上述准确域另办。",
+    "Hall混页原主owner精确接证独立续办，期间保needs-decision。"
+  ],
+  "no_git_writes": true,
+  "no_queue_mutations": true,
+  "canonical_mutated": false,
+  "old_DONE_mutated": false,
+  "formal_batch_created": false,
+  "no_edges": true
+}
