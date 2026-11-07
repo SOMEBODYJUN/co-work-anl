@@ -1,0 +1,69 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline-5cd4b9018.json",
+    "sha256": "af99fb773928f3fc6bcd577ade37fbb07e8f84befbb2304158b99894ab1e56a3"
+  },
+  "objects": [
+    {
+      "object_id": "UM-MACHINE-UNIFORM-QUERY-RETURN-INDEX-EXCHANGE-v2",
+      "version": 2,
+      "title": "逐机统一容量下的严格查询返回交换",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "显式有限不相关机原处理矩阵；有限端是二进制非负有理数，任务不可拆，每原任务恰执行一次，峰为原机负载最大值。",
+      "statement": "令 X_i=A∪(R∖{b_i})∪{q_i}，inactive=A∪R。给同一阈值 T 的两个不同 aligned 内部实际见证 i,j，一次容量匹配增广产生 inactive 或指定 A∪(R∖{b_i})∪{q_j} 的完整内部见证，峰≤T。若 inactive 不可行，两向指定错配都可行。任一 aligned 可行性也可先用匹配判定。",
+      "quantifiers": "任意 k≥2、有限内部资格、正有理 T 和 i≠j；给定见证确定性总位多项式。每机容量 min(N,⌊T/s_h⌋)，s_h=0 时 N。",
+      "assumptions": [
+        "同一内部机所有原任务有限端同为该机 s_h",
+        "固定 A 与两族原任务身份，所有 A 始终内部"
+      ],
+      "scope": "内部严格交换及互异私有外机的原任务封装。对任意有理B≥T，须保严格T可行的两aligned前件；若inactive在B也不可行，输出的指定错配本身仍在T可行。",
+      "objections": "收缩共同A∪(R∖{b_i,b_j})的平行元证明，与多源一次增广及先q_j后b_i两搜索分别定位。只翻转一次且保全部已匹配原任务和A；容量截N与证明中的秩截断分开。任一aligned可行足以保证每个A有内部有限端，封装合法并不反向推出aligned可行。旧单容量异权只通过一机至多一件与恢复实际p_hz归约；真实共享外端、一般异权搜索和全局强制查询均需另外证明。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/逐机统一容量的查询返回严格交换--定理.md",
+        "sha256": "59cd4e4530bfbb80c80844825e1a4f4b7f5e52310af8f83cc5458edc08cb2577"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/逐机统一索引交换的版本与外接范围--审查.md",
+          "sha256": "3ae0ae5a42e6eba36154ca4b85199b1b9ee4e6bab5c7fe577f7f814e732e5f31"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/逐机统一交换的五稿原义与封装前件--审查.md",
+          "sha256": "f738463ef00e1cbb965fa26b9e48c57ad16f36fde49085f5052d4f0df039d733"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单容量首稿与逐机统一终审的历史边界--审查.md",
+          "sha256": "85feeba25b27a3a5dd32ca76233b13a02bf70e0cfd107bc0ff69755075387368",
+          "section": "5. root v2最终review的全部独有落地"
+        },
+        {
+          "path": "archives/unrelated-machines/state/证明/容量查询返回的平行元证明与双增广实现--证明.md",
+          "sha256": "bb66898d714c875c64acf2bc147d7fb13834d5230a4acfeac3f103f303140b70"
+        }
+      ],
+      "sources": [
+        "archives/unrelated-machines/state/定理/逐机统一容量的查询返回严格交换--定理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/machine_uniform_query_return_index_exchange.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/machine_uniform_query_return_index_exchange_review.md",
+        "archives/unrelated-machines/state/审查/逐机统一索引交换的版本与外接范围--审查.md",
+        "archives/unrelated-machines/state/审查/逐机统一交换的五稿原义与封装前件--审查.md",
+        "archives/unrelated-machines/state/审查/单容量首稿与逐机统一终审的历史边界--审查.md",
+        "archives/unrelated-machines/state/证明/容量查询返回的平行元证明与双增广实现--证明.md"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/定理/逐机统一容量的查询返回严格交换--定理.md",
+      "sha256": "59cd4e4530bfbb80c80844825e1a4f4b7f5e52310af8f83cc5458edc08cb2577",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-MACHINE-UNIFORM-QUERY-RETURN-INDEX-EXCHANGE-v2"
+      ],
+      "reason": "保原逐机统一容量和严格交换主对象；接收两条完整证明和封装充分性、弱阈值及旧v1匹配化约的版本证据。"
+    }
+  ],
+  "edge_files": []
+}
