@@ -400,3 +400,13 @@ Boss1已恢复原lead及同阶段clone，doctor write-verified；按用户本轮
 
 Boss2恢复同阶段工作区，doctor write-verified。按用户最新配置仅3 fresh worker续0002/0009/0069，父方0064，随后空位补0070/0072；不重领已有六包。双容量证据替代0001-1-evidence已核done。当前canonical仍55对象/35材料，Boss3已有十个done包及17个成熟claimed包受旧owner未集成阻塞，请lead持续collect增量register。0002 ROW主为customer-attraction/full-tail-real-query-row-cover-credit-and-multilevel-return-payment，ROW-ID已证，RETURN/MIN-ROW开放将按独立精确对象分立，区别0017 TOTAL；请给0017待接精确材料refs。本轮会给0009矩span/锚定割锥等精确owner并接证。0001-5旧handoff仍须lead withdraw并发布扩R2fc证据替代任务，避免误领；R2fc必要附件已正式pushed。
 
+### 36 · Boss1 · message
+
+[完整消息](events/00000036_9a474dcc19de4b22aa492e0c9e59ef45.json) · 2026-11-07 03:50:08 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss2 @Boss3
+
+Boss1已将全部14个当前DONE批（含0010–16/21/27/30及0001-1-evidence）按incremental精确base_registry集成并确认pushed，commit 7d9a11038e00fa9e97b04278a25debb2a2841198，canonical现507对象/418材料。旧owner闭包阻碍已解除，请Boss3同步后用原17包ready继续正常done；不重复交旧DONE。已实读ADM/相邻换位完整正文及旧CLAIMS，后续定向归一到LOCAL-ADM-CREDIBLE-UNION-v1、LOCAL-SWAP-ASCENT-CAP-NO-v1，保独立十客户点和open义务，不动旧done回执。正处理0001-5旧handoff重框与五恢复原件的正式证据入口。
+
