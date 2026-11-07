@@ -1,0 +1,1252 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline-5cd4b9018.json",
+    "sha256": "af99fb773928f3fc6bcd577ade37fbb07e8f84befbb2304158b99894ab1e56a3"
+  },
+  "objects": [
+    {
+      "object_id": "QUAD-EQ",
+      "version": 2,
+      "title": "两设施同客户二次实际负载费用保持全部NE/CE/CCE集合",
+      "kind": "equivalence",
+      "truth_status": "proved",
+      "model": "有限正权原子客户、两设施从有限带标签目录同时选址，客户在可达设施间选择；设施收益为期望服务重量，完整续局对全部合法带标签布局独立指定。恰两设施、强制服务。客户i在两设施使用同一f_i(z)=a_i z²+b_i z+c_i，a_i,b_i≥0且a_i+b_i>0，费用为E[f_i(实际负载)]；本对象比较线性负载费用与二次费用下的纯NE、独立混合NE、CE、CCE集合。",
+      "statement": "固定布局和客户i，其覆盖客户总权V固定，两个自身反事实成本负载X,Y满足X+Y=V+w_i，故f_i(X)−f_i(Y)=[a_i(V+w_i)+b_i](X−Y)，括号是与其他行动及推荐无关的正数。因此每个客户全部纯偏离收益差同乘正数，纯NE、独立混合NE、CE、CCE的分布集合逐布局完全相同；设施仍按原期望负载收费，所以完整稳定规则及最优倍率也相同。",
+      "quantifiers": "任意上述正权两设施实例、任意合法布局、任意独立或相关客户分布。",
+      "assumptions": [
+        "同一客户在两设施使用完全同一f_i",
+        "设施收益定义不改，恰两设施与强制服务"
+      ],
+      "scope": "精确集合等价，不仅均衡存在性；允许不同客户不同系数。",
+      "objections": "不外推三设施、退出选项、设施依赖函数、三次成本；常数项抵消但正差系数不可为0。",
+      "body": {
+        "path": "archives/facility-games/state/等价/两设施同客户二次费用的均衡集合保持--等价.md",
+        "sha256": "72975462df6994e12097f47e8cf2bbf37523e31a6625eca6f533e33ba6967aff"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/审查/成本扩展、CCE与异构ρ边界的独立整理--审查.md",
+          "sha256": "c20e773de9de62557a7fcb97436fbef9c4ee30484afad8a055a2955d48f2e543"
+        },
+        {
+          "path": "archives/facility-games/state/引理/客户相关续局与纯负载费用变换的精确边界--引理.md",
+          "sha256": "c8ce76fffd5a4a946383b3b07e71629d32f3094b7e114c732de1cc3514b80f73"
+        },
+        {
+          "path": "archives/facility-games/state/证明/地点费用推广的条件期望与完整续局教学推导--证明.md",
+          "sha256": "f00befec59c4e8205511c2abdc0e09022fc4a95e120306f79dfba6252b87eaaf",
+          "section": "12.5 二次费用为何保持全部客户均衡"
+        },
+        {
+          "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+          "sha256": "9ff056ee4073e03d61b049a3e1e35e2b68828a63fe5c4b3260c0a7c5b714fe8c",
+          "section": "A11.8 二次费用为何保留均衡，三次费用为何没有同样结论"
+        },
+        {
+          "path": "archives/facility-games/state/计算/局部谱与实例最优程序的原入口复现--计算.md",
+          "sha256": "63e4e289d0cfae29ce10b7778636c96407b19d739eee557f41bcf3515982a573",
+          "section": "17源的数学去向"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/等价/两设施同客户二次费用的均衡集合保持--等价.md"
+      ]
+    },
+    {
+      "object_id": "QUAD-PHI",
+      "version": 2,
+      "title": "二次同客户费用黄金比全局上界的条件转移",
+      "kind": "theorem",
+      "truth_status": "conditional",
+      "model": "有限正权原子客户、两设施从有限带标签目录同时选址，客户在可达设施间选择；设施收益为期望服务重量，完整续局对全部合法带标签布局独立指定。两设施共同目录、强制服务；客户i两设施使用同一f_i(z)=a_i z²+b_i z+c_i，a_i,b_i≥0且a_i+b_i>0，费用为E[f_i(实际负载)]，精确客户独立混合NE。",
+      "statement": "若原线性实际负载共同目录模型的SC-PHI-E普遍φ稳定精确续局定理成立，则由逐布局均衡分布及设施收益完全相同，二次费用模型也有同一φ上界。原线性模型的φ下界族则无须上界前提即可原样保留。",
+      "quantifiers": "在原线性SC-PHI-E真正成立的条件下，对全部满足QUAD-EQ条件的共同目录实例。",
+      "assumptions": [
+        "QUAD-EQ的恰两设施、同客户同函数、强制服务全部条件",
+        "SC-PHI-E/A原普遍上界须另行targeted review闭合"
+      ],
+      "scope": "明确条件性迁移记录；二次模型φ下界已由独立下界承接。",
+      "objections": "当前SC-PHI-E/A五修订稿仍待修复/审查，不能从旧页“complete”升级此条件对象；CE/CCE上界另需原上界同域。",
+      "body": {
+        "path": "archives/facility-games/state/等价/两设施同客户二次费用的均衡集合保持--等价.md",
+        "sha256": "72975462df6994e12097f47e8cf2bbf37523e31a6625eca6f533e33ba6967aff"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/审查/成本扩展、CCE与异构ρ边界的独立整理--审查.md",
+          "sha256": "c20e773de9de62557a7fcb97436fbef9c4ee30484afad8a055a2955d48f2e543"
+        },
+        {
+          "path": "archives/facility-games/state/引理/客户相关续局与纯负载费用变换的精确边界--引理.md",
+          "sha256": "c8ce76fffd5a4a946383b3b07e71629d32f3094b7e114c732de1cc3514b80f73"
+        },
+        {
+          "path": "archives/facility-games/state/证明/地点费用推广的条件期望与完整续局教学推导--证明.md",
+          "sha256": "f00befec59c4e8205511c2abdc0e09022fc4a95e120306f79dfba6252b87eaaf",
+          "section": "12.5 二次费用为何保持全部客户均衡"
+        },
+        {
+          "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+          "sha256": "9ff056ee4073e03d61b049a3e1e35e2b68828a63fe5c4b3260c0a7c5b714fe8c",
+          "section": "A11.8 二次费用为何保留均衡，三次费用为何没有同样结论"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/等价/两设施同客户二次费用的均衡集合保持--等价.md"
+      ]
+    },
+    {
+      "object_id": "M-970991e8661942cca3a1f9e3a5587f63",
+      "version": 2,
+      "title": "线性混合NE在三次实际负载费用下失效的三正权客户例",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限正权原子客户、两设施从有限带标签目录同时选址，客户在可达设施间选择；设施收益为期望服务重量，完整续局对全部合法带标签布局独立指定。固定两设施布局、强制服务，比较同客户共同线性费用z与共同三次费用z³；随机化费用为E[f_i(实际负载)]。三名正权客户：第一侧私有1，共同客户2和3；第二侧私有背景为空。",
+      "statement": "私有客户负载为1与0，两共同客户权2、3。线性费用下两共同客户选第一设施概率分别p=1/4、q=1/3，使各自反事实期望费用4=4与9/2=9/2，故独立混合NE。改为实现负载的三次方时，权2客户第一设施期望费用90、第二86，仍以正概率选第一，故原分布不再NE。",
+      "quantifiers": "存在所列正权共同客户和单侧私有负载固定布局；只反驳均衡集合不变。",
+      "assumptions": [
+        "费用是E[L³]，不是(E[L])³",
+        "0是第二设施无私有客户的背景，非零权客户",
+        "客户费用为E[f_i(L)]，不是f_i(E[L])；私有背景0表示没有该侧私有客户"
+      ],
+      "scope": "自足有理有限反例，区分二次恒正比例与一般高次。",
+      "objections": "不宣称三次模型无稳定规则、无通用常数或精确最优已求；新三次混合概率只是正文校准。",
+      "body": {
+        "path": "archives/facility-games/state/等价/两设施同客户二次费用的均衡集合保持--等价.md",
+        "sha256": "72975462df6994e12097f47e8cf2bbf37523e31a6625eca6f533e33ba6967aff"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/审查/成本扩展、CCE与异构ρ边界的独立整理--审查.md",
+          "sha256": "c20e773de9de62557a7fcb97436fbef9c4ee30484afad8a055a2955d48f2e543"
+        },
+        {
+          "path": "archives/facility-games/state/引理/客户相关续局与纯负载费用变换的精确边界--引理.md",
+          "sha256": "c8ce76fffd5a4a946383b3b07e71629d32f3094b7e114c732de1cc3514b80f73"
+        },
+        {
+          "path": "archives/facility-games/state/证明/地点费用推广的条件期望与完整续局教学推导--证明.md",
+          "sha256": "f00befec59c4e8205511c2abdc0e09022fc4a95e120306f79dfba6252b87eaaf",
+          "section": "12.6 立方费用失去的是哪一项结论"
+        },
+        {
+          "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+          "sha256": "9ff056ee4073e03d61b049a3e1e35e2b68828a63fe5c4b3260c0a7c5b714fe8c",
+          "section": "A11.8 二次费用为何保留均衡，三次费用为何没有同样结论"
+        },
+        {
+          "path": "archives/facility-games/state/计算/局部谱与实例最优程序的原入口复现--计算.md",
+          "sha256": "63e4e289d0cfae29ce10b7778636c96407b19d739eee557f41bcf3515982a573",
+          "section": "17源的数学去向"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/等价/两设施同客户二次费用的均衡集合保持--等价.md"
+      ]
+    },
+    {
+      "object_id": "POLY-CONT",
+      "version": 2,
+      "title": "显式有理续局多面体的完整倍率精确最优化",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "两领导者有限非空行动集A、B；每个布局有非空允许续局集E(s,t)，不同布局可独立指定，两个非负收益坐标的局部最小值均达到；不假定客户负载表示。每个布局全部允许收益由显式有限非空有界有理多面体及非负仿射收益映射覆盖，并提供实际续局有效实现器。",
+      "statement": "先对每个局部多面体做坐标LP求m_i并取全目录D。每个在轨候选多面体上解max λ，0≤λ≤1、u1≥λD1、u2≥λD2。全部候选最大值Λ>0时，α*=1/Λ为有理数且达到，取最优在轨点并为真实偏离选相应坐标极小，得到完整最优规则；Λ=0则没有任何有限稳定倍率。D_i=0的约束自动正确处理。算法在显式总表示位长与实际续局实现器成本中多项式。",
+      "quantifiers": "全部满足所列表示合同的有限两领导者游戏；优化在全部合法布局、全部允许续局和全部完整规则上。",
+      "assumptions": [
+        "多面体覆盖全部允许收益而非只给子集",
+        "从LP点到实际续局的实现接口有效且精确"
+      ],
+      "scope": "表示相对的精确算法，不是对任意隐式大客户游戏自动多项式。",
+      "objections": "必须计显式单元数和位长；不同布局可独立指定仍必要。κ≥3的多混合者一般产生多线性对象，不能默认套有理多面体。",
+      "body": {
+        "path": "archives/facility-games/state/定理/显式续局多面体的两领导者倍率最优化--定理.md",
+        "sha256": "d7ec0b488384110be23d882c81891ebf60957c7c5eb843ea44d09c312626a4b1"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/定理/独立续局的威胁配额与双颜色回应核心--定理.md",
+          "sha256": "f4cb7da4aae54182d5b53197bdb1dc97651746765c1ea11992ec993ce27cc284"
+        },
+        {
+          "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+          "sha256": "9ff056ee4073e03d61b049a3e1e35e2b68828a63fe5c4b3260c0a7c5b714fe8c",
+          "section": "A11.7 哪些更一般的续局能使用同样拼接"
+        },
+        {
+          "path": "archives/facility-games/state/计算/局部谱与实例最优程序的原入口复现--计算.md",
+          "sha256": "63e4e289d0cfae29ce10b7778636c96407b19d739eee557f41bcf3515982a573",
+          "section": "17源的数学去向"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/定理/显式续局多面体的两领导者倍率最优化--定理.md"
+      ]
+    },
+    {
+      "object_id": "M-364184f6b6324e008109f0ce4ea6c4a5",
+      "version": 2,
+      "title": "任意精确有限费用且每布局至多两战略客户的九支持LP算法",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限正权原子客户、两设施从有限带标签目录同时选址，客户在可达设施间选择；设施收益为期望服务重量，完整续局对全部合法带标签布局独立指定。强制服务且客户独立随机；客户费用为E[f_(i,j,s)(实际负载)]，函数可按客户/设施/地点不同且无需单调。在全部合法布局（含合法同址）至多两名双可达战略客户，每个实际有限成本求值精确有理且求值时间和输出位长多项式。",
+      "statement": "每局至多8个实现成本值；每名战略客户有纯左、纯右、混合三个闭支持状态，故每布局至多9个有理二维支持多面体。双人博弈的自身行动成本差对另一客户混合概率仿射，支持无差/符号条件为线性；设施期望负载也仿射。由显式多面体算法求局部坐标极小、在轨最优λ和完整最优续局，LP至多3变量，在显式输入和精确成本求值总位成本中多项式。",
+      "quantifiers": "所有合法布局（含合法同址）均κ≤2；任意上述精确有理有限费用表及全部独立客户NE。",
+      "assumptions": [
+        "不得只核在轨或异址κ≤2",
+        "混合支持用闭状态覆盖边界重合，不遗漏纯NE"
+      ],
+      "scope": "数学算法已闭合；具体规范实现尚未交付不改变有限支持/LP保证。",
+      "objections": "不外推κ≥3、不要求费用单调、也不把隐式超多有限求值点免费计为常数输入。",
+      "body": {
+        "path": "archives/facility-games/state/定理/显式续局多面体的两领导者倍率最优化--定理.md",
+        "sha256": "d7ec0b488384110be23d882c81891ebf60957c7c5eb843ea44d09c312626a4b1"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/定理/独立续局的威胁配额与双颜色回应核心--定理.md",
+          "sha256": "f4cb7da4aae54182d5b53197bdb1dc97651746765c1ea11992ec993ce27cc284"
+        },
+        {
+          "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+          "sha256": "9ff056ee4073e03d61b049a3e1e35e2b68828a63fe5c4b3260c0a7c5b714fe8c",
+          "section": "两名公共客户的非线性费用为什么仍线性"
+        },
+        {
+          "path": "archives/facility-games/state/计算/局部谱与实例最优程序的原入口复现--计算.md",
+          "sha256": "63e4e289d0cfae29ce10b7778636c96407b19d739eee557f41bcf3515982a573",
+          "section": "17源的数学去向"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/定理/显式续局多面体的两领导者倍率最优化--定理.md"
+      ]
+    },
+    {
+      "object_id": "SC-FOUR-NO-FPTAS",
+      "version": 2,
+      "title": "四共同地点实例最优精确续局倍率的无FPTAS间隙",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限正权原子客户、两设施同时选各自有限带标签地点目录；客户在可达设施间强制服务，费用为自己加入后所在设施的实际总负载；不可达两家者不参与。客户独立混合NE；设施收益为期望负载，完整精确续局在全部合法带标签布局逐布局指定，含同址（如合法）。两设施共同目录恰四个地点，所有客户权为二进制正整数（或正有理）。",
+      "statement": "正文从PARTITION在多项式位长内构造n+6客户和四地点，n≥4为偶数、wi=1+(nai−T)/(16n²T)。YES实例的全部完整精确NE续局最优倍率α*=13/10；NO实例任意实概率局部NE、任意在轨带标签布局及任意完整规则均有α*≥13/10+1/(100n²)。其余五种异址布局的NE唯一纯且与四个同址布局共同由guard排除；核心支持恒等式覆盖全部支持而非有限概率扫描。统一乘80n²T清分母得正整数且位长多项式。因此除非P=NP，不存在上述精确续局输出合同的加法FPTAS；ε=1/(200n²)即能区分。乘法FPTAS和具有相应两侧误差界的值近似亦被同一间隙排除。",
+      "quantifiers": "任意PARTITION输入映为上述实例；NO对全部实概率NE及全部完整续局量词；复杂性结论条件于P≠NP。",
+      "assumptions": [
+        "逼近对象为设施稳定倍率，客户续局保持精确NE",
+        "算法时间须poly(L+ellε,1/ε)才是FPTAS"
+      ],
+      "scope": "四地点已足够；原证明与教材支持、编码核算完整保留。",
+      "objections": "不推出强NP困难、不排除EPTAS、不把有限支持核验当一般证明；标题“四设施”旧审查实际是两设施四地点。",
+      "body": {
+        "path": "archives/facility-games/state/定理/四共同地点实例最优倍率的无FPTAS间隙--定理.md",
+        "sha256": "507515ba508682a6c4b21f1df309d3d15a90a6b358876074f0f368f73c073a47"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/证明/四地点无FPTAS间隙的全支持与编码核算--证明.md",
+          "sha256": "34f728801f56e616be2e6cdf3c82c8cbe52f3f5a79c46ede308204f3578e9db1"
+        },
+        {
+          "path": "archives/facility-games/state/审查/四设施独立核验与近带有限审计--审查.md",
+          "sha256": "e7551fc0ee8465acc70b4e6c763814f788b88b28988f2fcb23130f5748ae6613"
+        },
+        {
+          "path": "archives/facility-games/state/审查/学习代表页的数学可见内容与视觉证据范围--审查.md",
+          "sha256": "3cb3487b5864caabf2ca9c1746c5757ff67cf56c6d9ec9f61e2e443b3a8029e2",
+          "section": "页38：四地点归约的全部其他布局守卫"
+        },
+        {
+          "path": "archives/facility-games/state/计算/小目录硬度构造器与五地点样本的精确合同--计算.md",
+          "sha256": "52692dfd1300114349b5d41835e79c52cb09dd21332fc8bbaeffa1eb3f97da88",
+          "section": "四地点构造器：另一种精度间隙的输入资产"
+        },
+        {
+          "path": "archives/facility-games/state/资料/四地点两设施精确支持审计的完整合同--资料.md",
+          "sha256": "6ff142cedc53ac0dce58b66c24c54e480a12ed554ceb96d5cdbf481f3b87d1ad"
+        },
+        {
+          "path": "archives/facility-games/state/资料/共同目录成果入口的接口与版本状态--资料.md",
+          "sha256": "55c9f2e39906cb3193ab6f722809bf1a0a6b0db0f30fcff4788916e3b4b98d4f",
+          "section": "全部十五项原分支资产的去向"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/定理/四共同地点实例最优倍率的无FPTAS间隙--定理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/four_site_no_fptas.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/four_site_no_fptas.md"
+      ]
+    },
+    {
+      "object_id": "SC-TWO-NEAR-BAND-REP",
+      "version": 2,
+      "title": "固定重支持近平衡精确补全的位多项式代表选择",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限正权原子客户、两设施同时选各自有限带标签地点目录；客户在可达设施间强制服务，费用为自己加入后所在设施的实际总负载；不可达两家者不参与。客户独立混合NE；设施收益为期望负载，完整精确续局在全部合法带标签布局逐布局指定，含同址（如合法）。",
+      "statement": "固定重客户的两侧纯/真正混合支持和其余背景差D，轻客户总权S，真正混合重客户数k，给定有理H>0，轻客户满足0<w_i≤H，重客户满足v_j>H；可在位多项式时间判定是否存在该支持的精确客户NE满足|Δ|≤H并返回精确代表。恒等式(1−k)Δ=D+Σ_light w_i(2p_i−1)。递减贪心纯列表残差|r|≤max(wmax,|D|−S)；k=0直接检查，k≥1且|D|≤S时用零差或只混合一个高侧轻客户，|D|>S且k=1时无解；|D|>S且k≥2时按正文阈值t=(|D|−S+2Σ_Fw)/(k−1)迁移w<t的轻客户（相等不迁移），无解分支和反射分支均完整。",
+      "quantifiers": "固定布局的非负有理独占背景、显式正有理客户、给定有理H>0，逐名分为轻0<w_i≤H与重v_j>H，并逐名指定重纯第一/纯第二/真正混合支持；对全部实概率精确NE判定，不限网格。",
+      "assumptions": [
+        "重支持中的混合须真正混合，输入重权v_j>H保证带内恢复概率在(0,1)",
+        "所有轻权0<w_i≤H，给定有理H>0；非负独占背景，线性实际负载费用",
+        "纯轻客户可重新分配；只返回符合给定重支持的某个|Δ|≤H代表"
+      ],
+      "scope": "O(n log n)排序及O(n²)有理运算，输出位长多项式；不按权大小复制客户或枚举概率分母。",
+      "objections": "只判此固定支持的近带代表；不据有限审计声称完整EPTAS或全客户任意非线性费用适用。",
+      "body": {
+        "path": "archives/facility-games/state/算法/固定重支持近平衡精确补全的位多项式选择--算法.md",
+        "sha256": "0b116c5637f6c6ae6447cabccb794dadbbc646c981b6577c928b3ba077c2e35e"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/计算/近平衡补全两路原支持审计的精确复现--计算.md",
+          "sha256": "28d7f587e4e1c5deaf26e395033255ea0b54aee1a6bb10eaccc47cf434ac8c5e"
+        },
+        {
+          "path": "archives/facility-games/state/审查/四设施独立核验与近带有限审计--审查.md",
+          "sha256": "e7551fc0ee8465acc70b4e6c763814f788b88b28988f2fcb23130f5748ae6613"
+        },
+        {
+          "path": "archives/facility-games/state/审查/学习代表页的数学可见内容与视觉证据范围--审查.md",
+          "sha256": "3cb3487b5864caabf2ca9c1746c5757ff67cf56c6d9ec9f61e2e443b3a8029e2",
+          "section": "页48：拒绝算法为何覆盖混合轻客户"
+        },
+        {
+          "path": "archives/facility-games/state/审查/学习代表页的数学可见内容与视觉证据范围--审查.md",
+          "sha256": "3cb3487b5864caabf2ca9c1746c5757ff67cf56c6d9ec9f61e2e443b3a8029e2",
+          "section": "页49：接受例、反射例与只显示两行的拒绝表"
+        },
+        {
+          "path": "archives/facility-games/state/资料/共同目录成果入口的接口与版本状态--资料.md",
+          "sha256": "55c9f2e39906cb3193ab6f722809bf1a0a6b0db0f30fcff4788916e3b4b98d4f",
+          "section": "局部补全为何不等于已交付EPTAS"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/算法/固定重支持近平衡精确补全的位多项式选择--算法.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/near_band_completion.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/near_band_completion.md"
+      ]
+    },
+    {
+      "object_id": "Q-SC-ALPHA-EPTAS",
+      "version": 2,
+      "title": "共同目录实例最优稳定倍率的EPTAS输出义务",
+      "kind": "question",
+      "truth_status": "open",
+      "model": "有限正权原子客户、两设施同时选各自有限带标签地点目录；客户在可达设施间强制服务，费用为自己加入后所在设施的实际总负载；不可达两家者不参与。客户独立混合NE；设施收益为期望负载，完整精确续局在全部合法带标签布局逐布局指定，含同址（如合法）。两家使用相同显式有限目录；正有理权以二进制给出。",
+      "statement": "给任意ε>0，要求输出全部带标签布局的精确客户NE与一个在轨布局，使其倍率α≤α*+ε，时间f(1/ε)·poly(L+ellε)，候选目标2^{O(1/ε)}·poly(L+ellε)。正文已写的相对误差组合为η=ε/16、C=(1+η)/(1−η)，若重支持/轻客户代表同时按合同保持局部威胁和在轨收益，则完整倍率至多C²α*，结合α*≤2给加法误差<ε；该条件组合不交付完整EPTAS。",
+      "quantifiers": "每个显式正有理共同目录实例、每个有效精度输入；全部局部输出必须精确NE，近似仅在设施最优倍率。",
+      "assumptions": [
+        "输入总位长含客户权、覆盖和ellε",
+        "所需全局菜单代表、选取、输出及总位复杂度接口须真正交付"
+      ],
+      "scope": "数学开放算法义务；固定重支持近带补全已独立闭合，四地点无FPTAS不排除EPTAS。",
+      "objections": "不能将六接口草图或误差代数写成已proved EPTAS；不是身份待决，保持open。",
+      "body": {
+        "path": "archives/facility-games/state/候选/实例最优倍率EPTAS的精度组合与未交付接口--候选.md",
+        "sha256": "7669507a6d5ed3b2cb1bd59c2a3ee665f9288c93365a8f0e431b8e94507b2825"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/算法/固定重支持近平衡精确补全的位多项式选择--算法.md",
+          "sha256": "0b116c5637f6c6ae6447cabccb794dadbbc646c981b6577c928b3ba077c2e35e"
+        },
+        {
+          "path": "archives/facility-games/state/计算/近平衡补全两路原支持审计的精确复现--计算.md",
+          "sha256": "28d7f587e4e1c5deaf26e395033255ea0b54aee1a6bb10eaccc47cf434ac8c5e"
+        },
+        {
+          "path": "archives/facility-games/state/审查/四设施独立核验与近带有限审计--审查.md",
+          "sha256": "e7551fc0ee8465acc70b4e6c763814f788b88b28988f2fcb23130f5748ae6613"
+        },
+        {
+          "path": "archives/facility-games/state/资料/共同目录成果入口的接口与版本状态--资料.md",
+          "sha256": "55c9f2e39906cb3193ab6f722809bf1a0a6b0db0f30fcff4788916e3b4b98d4f",
+          "section": "局部补全为何不等于已交付EPTAS"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/候选/实例最优倍率EPTAS的精度组合与未交付接口--候选.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/questions/shared_alpha_eptas.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/questions/shared_alpha_eptas.md"
+      ]
+    },
+    {
+      "object_id": "facility-games/all-cross-single-overlap-interval-optimum-and-attainment-check",
+      "version": 2,
+      "title": "全交叉单交叠双目录完整续局的精确区间最优算法",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限正权原子客户、两设施同时选各自有限带标签地点目录；客户在可达设施间强制服务，费用为自己加入后所在设施的实际总负载；不可达两家者不参与。客户独立混合NE；设施收益为期望负载，完整精确续局在全部合法带标签布局逐布局指定，含同址（如合法）。本对象还要求所有跨目录合法地点对的覆盖交集至多一个客户，含合法同址；正权客户与不可拆分原子必须保留。显式正有理输入。",
+      "statement": "每格若私有背景A<B，唯一共同客户去第一，第一期望负载x=A+w；A>B则x=A；A=B则全部NE期望x遍历[A,A+w]。无共同客户为单点。于是全NE收益谱为闭区间x∈[ell,h]、第二收益V−x。算D1(t)=max_s ell(s,t)、D2(s)=max_t(V−h)，固定格最优x为clamp(V D1/(D1+D2),[ell,h])（双D=0另任取），求全部格最小max(1,D1/x,D2/(V−x))，零分子比值为0，正数除0为∞；双D=0时最优倍率为1。返回有理最优值、在轨NE和全部真实偏离所需的坐标极小，并为其他布局按固定公式补成完整最优规则；最优达到，位时间O((n+1)|U1||U2|)有理扫描。",
+      "quantifiers": "全部全交叉单交叠显式正有理双目录实例，优化在全部完整独立客户NE续局与全部在轨布局上。",
+      "assumptions": [
+        "合法同址也满足至多一共同客户",
+        "全NE期望谱而非仅固定纯P菜单",
+        "零收益和零配额按正文分支"
+      ],
+      "scope": "精确实例最优与完整有理实现算法；不只构造统一ρ保证。",
+      "objections": "旧检查器只验证给定候选达到某倍率，不证明全局最优或NO；历史104实例611布局399profile非本次新运行。",
+      "body": {
+        "path": "archives/facility-games/state/算法/全交叉单交叠双目录的区间最优与达到检查--算法.md",
+        "sha256": "9e574dfd6148b78a53b2ee8b6885b0f511ae700677ba242f220d0cea58c26e1c"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/定理/独立续局的威胁配额与双颜色回应核心--定理.md",
+          "sha256": "f4cb7da4aae54182d5b53197bdb1dc97651746765c1ea11992ec993ce27cc284"
+        },
+        {
+          "path": "archives/facility-games/state/定理/显式续局多面体的两领导者倍率最优化--定理.md",
+          "sha256": "d7ec0b488384110be23d882c81891ebf60957c7c5eb843ea44d09c312626a4b1"
+        },
+        {
+          "path": "archives/facility-games/state/证明/短目录扰动与六顶点服务名单的教材核算--证明.md",
+          "sha256": "9acc2f3b49aeffa524efd77d0ba4ea317c417cae6084a645ff8204fba6edf592"
+        },
+        {
+          "path": "archives/facility-games/state/计算/共享目录原始输入与四种子入口的接续复核--计算.md",
+          "sha256": "cefe6cdbfd65ffa7bd4450035c7994012beac6b7a9bdc9b17ef759b123ee38df",
+          "section": "单交叠原程序与新定向核查"
+        },
+        {
+          "path": "archives/facility-games/state/资料/共同目录成果入口的接口与版本状态--资料.md",
+          "sha256": "55c9f2e39906cb3193ab6f722809bf1a0a6b0db0f30fcff4788916e3b4b98d4f",
+          "section": "同址正规形主源的逐节吸收"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/算法/全交叉单交叠双目录的区间最优与达到检查--算法.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:facility_spe/exact/single_overlap.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:facility_spe/exact/single_overlap.py"
+      ]
+    },
+    {
+      "object_id": "SPARSE-BAD-LONG",
+      "version": 2,
+      "title": "三比二到ρ之间的任意长全格坏精确回应族",
+      "kind": "construction",
+      "truth_status": "proved",
+      "model": "有限正权原子客户、两设施同时选各自有限带标签地点目录；客户在可达设施间强制服务，费用为自己加入后所在设施的实际总负载；不可达两家者不参与。客户独立混合NE；设施收益为期望负载，完整精确续局在全部合法带标签布局逐布局指定，含同址（如合法）。本对象还要求所有跨目录合法地点对的覆盖交集至多一个客户，含合法同址；正权客户与不可拆分原子必须保留。",
+      "statement": "对每个3/2<r<ρ及任意长度参数n，正文同一客户身份族在每边n+1行动上所有格都存在倍率>r的设施偏离，故无r稳定格；每格客户NE/CE/CCE唯一，唯一精确回应环长度2(n+1)，每个非空回应闭核心均为全目录。构造用原子x=1同时覆盖所有Ai、Cj、D，y覆盖B和全部Cj，配各站私有客户；交叠全域≤1。可达量A、C交错落[L,H]，B=b、D=d，正文九条严格参数不等式保证所有格类型和回应。",
+      "quantifiers": "每个3/2<r<ρ、每个n≥1，存在正有理权（可清分母整数）真实单交叠实例。",
+      "assumptions": [
+        "参数须同时满足0<y<b、1+y<L<H<d等正文严格条件",
+        "回应精确，不能换成弱坏边压缩"
+      ],
+      "scope": "保留旧SPARSE-BAD-LONG原r区间；全1≤r<ρ扩展另登记。",
+      "objections": "旧说明“非全部Ai高”不正确：1<r<ρ参数可令所有Ai高而B低，不违反双方全高定理。",
+      "body": {
+        "path": "archives/facility-games/state/构造/单交叠精确回应核心的长环与亚ρ坏族--构造.md",
+        "sha256": "62462b59484bf5c3ed4c593fbe6c095a103dcd6bae4508831a3bb782c7d42155"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/审查/单交叠ρ分支的量词与版本接续--审查.md",
+          "sha256": "aa29101c7729dd51947348c4fa6999f28ace77a7839803a656252ab2e1d55bab"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/周期峰值与稀疏流增量证据--审查.md",
+          "sha256": "07d8abb462c43a557ad9073d5198fb17315ffa6fae7bf316a4ef53f7a0a38c57",
+          "section": "3. 设施单交叠目录长环的有限有理表"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/构造/单交叠精确回应核心的长环与亚ρ坏族--构造.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/heterogeneous/sparse_long_cycles.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/heterogeneous/sparse_long_cycles.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/heterogeneous/sparse_bad_long_cycles.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/heterogeneous/sparse_bad_long_cycles.md"
+      ]
+    },
+    {
+      "object_id": "SPARSE-BAD-LONG-ALL",
+      "version": 2,
+      "title": "全部亚ρ倍率的任意长坏回应环及一高锚障碍",
+      "kind": "construction",
+      "truth_status": "proved",
+      "model": "有限正权原子客户、两设施同时选各自有限带标签地点目录；客户在可达设施间强制服务，费用为自己加入后所在设施的实际总负载；不可达两家者不参与。客户独立混合NE；设施收益为期望负载，完整精确续局在全部合法带标签布局逐布局指定，含同址（如合法）。本对象还要求所有跨目录合法地点对的覆盖交集至多一个客户，含合法同址；正权客户与不可拆分原子必须保留。",
+      "statement": "同一原子身份族的参数开域对每个1<r<ρ都非空：正文以ρ根恒等式取足够小ε并给b,d,L,H,y，九条严格不等式全部成立，且单组参数可独立于n；有理化再清分母保持全部坏格和唯一2(n+1)回应环。r=1取任一r0>1实例即可。对1<r<ρ可保所有Ai为高行动、B为低行动；所以即使指定保留一高锚，精确回应闭核心仍无统一大小界。",
+      "quantifiers": "每个1≤r<ρ及任意n，存在全交叉单交叠正整数实例，全部格无r稳定且全部NE/CE/CCE唯一。",
+      "assumptions": [
+        "开域选择先保共同严格裕量，再做有理化",
+        "高行动按本方全目录最大R/r定义"
+      ],
+      "scope": "实质扩大旧SPARSE-BAD-LONG倍率量词；与普通长环或弱边核心不同。",
+      "objections": "不能伸到r=ρ：同参数条件消元已要求r³−r²−2r+1<0；不否认ρ上界。r=1时只有最大An高，不能照抄r>1全Ai高说法。",
+      "body": {
+        "path": "archives/facility-games/state/构造/单交叠精确回应核心的长环与亚ρ坏族--构造.md",
+        "sha256": "62462b59484bf5c3ed4c593fbe6c095a103dcd6bae4508831a3bb782c7d42155"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/审查/单交叠ρ分支的量词与版本接续--审查.md",
+          "sha256": "aa29101c7729dd51947348c4fa6999f28ace77a7839803a656252ab2e1d55bab"
+        },
+        {
+          "path": "archives/facility-games/state/定理/单交叠任意目录的ρ纯续局与高区障碍--定理.md",
+          "sha256": "0ba344a265f574511e7348825a2d010d80a0343cbcf6c506a17a01032aea12d3"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/周期峰值与稀疏流增量证据--审查.md",
+          "sha256": "07d8abb462c43a557ad9073d5198fb17315ffa6fae7bf316a4ef53f7a0a38c57",
+          "section": "3. 设施单交叠目录长环的有限有理表"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/构造/单交叠精确回应核心的长环与亚ρ坏族--构造.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/heterogeneous/sparse_long_cycles.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/heterogeneous/sparse_long_cycles.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/heterogeneous/sparse_bad_long_cycles.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/heterogeneous/sparse_bad_long_cycles.md"
+      ]
+    },
+    {
+      "object_id": "SPARSE-HIGH-ACYCLIC",
+      "version": 2,
+      "title": "单交叠任意目录无稳定格时高区回应严格下降",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限正权原子客户、两设施同时选各自有限带标签地点目录；客户在可达设施间强制服务，费用为自己加入后所在设施的实际总负载；不可达两家者不参与。客户独立混合NE；设施收益为期望负载，完整精确续局在全部合法带标签布局逐布局指定，含同址（如合法）。本对象还要求所有跨目录合法地点对的覆盖交集至多一个客户，含合法同址；正权客户与不可拆分原子必须保留。",
+      "statement": "固定以(覆盖总权R,全局优先级)排序的纯客户规则P：唯一共同客户去较小一端；定义各列/行的P最佳回应与每方Rmax，r≥1下R(s)≥Rmax/r称本方高行动。若P没有r稳定格，则每个从高行动出发的精确最佳回应边严格降全局顺序，且其共享原子w>R(source)−Rmax/r；因此回应环必遇本方低行动。",
+      "quantifiers": "任意满足全交叉单交叠的有限双目录、任意固定全局优先级、任意r≥1；下降结论以全局不存在r稳定格为前提。",
+      "assumptions": [
+        "高低按各自全目录Rmax定义",
+        "回应使用同一固定P而非任意换NE"
+      ],
+      "scope": "条件高区障碍，用于任意目录ρ证明；不要求小目录。",
+      "objections": "不得删去“没有r稳定格”或“高行动”前提；普通长环仍可有稳定格和上升边，单方全高不够。",
+      "body": {
+        "path": "archives/facility-games/state/定理/单交叠任意目录的ρ纯续局与高区障碍--定理.md",
+        "sha256": "0ba344a265f574511e7348825a2d010d80a0343cbcf6c506a17a01032aea12d3"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/审查/单交叠ρ分支的量词与版本接续--审查.md",
+          "sha256": "aa29101c7729dd51947348c4fa6999f28ace77a7839803a656252ab2e1d55bab"
+        },
+        {
+          "path": "archives/facility-games/state/构造/单交叠精确回应核心的长环与亚ρ坏族--构造.md",
+          "sha256": "62462b59484bf5c3ed4c593fbe6c095a103dcd6bae4508831a3bb782c7d42155"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/周期峰值与稀疏流增量证据--审查.md",
+          "sha256": "07d8abb462c43a557ad9073d5198fb17315ffa6fae7bf316a4ef53f7a0a38c57",
+          "section": "4. 设施回应中的高reach探针与平局负对照"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/定理/单交叠任意目录的ρ纯续局与高区障碍--定理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/heterogeneous/sparse_high_reach_barrier.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/heterogeneous/sparse_high_reach_barrier.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/heterogeneous/sparse_unbounded_rho.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/heterogeneous/sparse_unbounded_rho.md"
+      ]
+    },
+    {
+      "object_id": "SPARSE-BALANCED-R",
+      "version": 2,
+      "title": "单交叠双目录双方全高时的r稳定格",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限正权原子客户、两设施同时选各自有限带标签地点目录；客户在可达设施间强制服务，费用为自己加入后所在设施的实际总负载；不可达两家者不参与。客户独立混合NE；设施收益为期望负载，完整精确续局在全部合法带标签布局逐布局指定，含同址（如合法）。本对象还要求所有跨目录合法地点对的覆盖交集至多一个客户，含合法同址；正权客户与不可拆分原子必须保留。",
+      "statement": "沿用同一固定纯规则P。若双方各自的全部行动均满足R(s)≥本方Rmax/r，则存在一个r稳定格；零覆盖方另可直接处理。证明由有限双颜色回应环与高区严格下降矛盾。",
+      "quantifiers": "任意r≥1、任意有限全交叉单交叠双目录及固定全局平局优先级。",
+      "assumptions": [
+        "双方全部行动均高，不能只要求一方",
+        "覆盖权和高阈值由真实正权客户定义"
+      ],
+      "scope": "平衡子类保证，不宣称一般无条件r稳定。",
+      "objections": "正文给r=1.8的一方全高反例边界；不因r可小于ρ推翻一般ρ锐下界。",
+      "body": {
+        "path": "archives/facility-games/state/定理/单交叠任意目录的ρ纯续局与高区障碍--定理.md",
+        "sha256": "0ba344a265f574511e7348825a2d010d80a0343cbcf6c506a17a01032aea12d3"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/审查/单交叠ρ分支的量词与版本接续--审查.md",
+          "sha256": "aa29101c7729dd51947348c4fa6999f28ace77a7839803a656252ab2e1d55bab"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/周期峰值与稀疏流增量证据--审查.md",
+          "sha256": "07d8abb462c43a557ad9073d5198fb17315ffa6fae7bf316a4ef53f7a0a38c57",
+          "section": "4. 设施回应中的高reach探针与平局负对照"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/定理/单交叠任意目录的ρ纯续局与高区障碍--定理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/heterogeneous/sparse_high_reach_barrier.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/heterogeneous/sparse_high_reach_barrier.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/heterogeneous/sparse_unbounded_rho.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/heterogeneous/sparse_unbounded_rho.md"
+      ]
+    },
+    {
+      "object_id": "SPARSE-RHO-ALL",
+      "version": 2,
+      "title": "全交叉单交叠任意双目录的ρ纯精确续局上界",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限正权原子客户、两设施同时选各自有限带标签地点目录；客户在可达设施间强制服务，费用为自己加入后所在设施的实际总负载；不可达两家者不参与。客户独立混合NE；设施收益为期望负载，完整精确续局在全部合法带标签布局逐布局指定，含同址（如合法）。本对象还要求所有跨目录合法地点对的覆盖交集至多一个客户，含合法同址；正权客户与不可拆分原子必须保留。",
+      "statement": "令ρ=2cos(π/7)，即z³−z²−2z+1的最大实根。任意上述双目录，任何固定全局优先级的纯客户规则P均有ρ稳定布局，故存在覆盖全部合法布局的纯精确NE续局规则及ρ稳定在轨选择。r≥ρ时无稳定格假设迫使高→低首次入口及两原子身份相容，得到r(r−1)X<a<r²X/(r²−1)，从而r³−r²−2r+1<0矛盾。六客户短目录下界说明ρ为此类最佳统一常数。显式正有理输入可在O((n+1)|U1||U2|)有理扫描中求出，v≤ρu的精确比较可用齐次三次式与v≤u分支。",
+      "quantifiers": "所有有限目录大小，不限min(|U1|,|U2|)；所有合法跨目录对均单交叠；任意固定优先级P。",
+      "assumptions": [
+        "合法同址也满足交集至多一客户",
+        "不把共享权任意独立矩阵代替同一客户身份"
+      ],
+      "scope": "一般任意目录上界已闭合且有位多项式构造；与短目录旧HC-RHO独立保身份。",
+      "objections": "本批没有把一般异构任意交叠也降到ρ；HC-2-LOW有两共同客户而不属此子类。",
+      "body": {
+        "path": "archives/facility-games/state/定理/单交叠任意目录的ρ纯续局与高区障碍--定理.md",
+        "sha256": "0ba344a265f574511e7348825a2d010d80a0343cbcf6c506a17a01032aea12d3"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/定理/单交叠短目录的ρ稳定阈值与六客户锐族--定理.md",
+          "sha256": "1e56a62a6bebb5f1065db605ef91bfdac14814f2e2b73cb0ad624d7ae196803e"
+        },
+        {
+          "path": "archives/facility-games/state/审查/单交叠ρ分支的量词与版本接续--审查.md",
+          "sha256": "aa29101c7729dd51947348c4fa6999f28ace77a7839803a656252ab2e1d55bab"
+        },
+        {
+          "path": "archives/facility-games/state/构造/单交叠精确回应核心的长环与亚ρ坏族--构造.md",
+          "sha256": "62462b59484bf5c3ed4c593fbe6c095a103dcd6bae4508831a3bb782c7d42155"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/周期峰值与稀疏流增量证据--审查.md",
+          "sha256": "07d8abb462c43a557ad9073d5198fb17315ffa6fae7bf316a4ef53f7a0a38c57",
+          "section": "4. 设施回应中的高reach探针与平局负对照"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/定理/单交叠任意目录的ρ纯续局与高区障碍--定理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/heterogeneous/sparse_high_reach_barrier.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/heterogeneous/sparse_high_reach_barrier.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/heterogeneous/sparse_unbounded_rho.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/heterogeneous/sparse_unbounded_rho.md"
+      ]
+    },
+    {
+      "object_id": "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1",
+      "version": 2,
+      "title": "任意固定批量的逐参数首次变化环锐界",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限m≥1、n≥0显式不相关机矩阵；有限端为非负二进制有理数，不可用端∞；每任务至少一有限端，全部不可拆原任务各选一个有限端，Cmax为最大总负载。",
+      "statement": "∀k≥1、正有理T、T≤C≤2T，m=k+1环实例初峰C、目标T、真实OPT=T。低支C≤3T/2用固定padding C−T与源T/目标2T−C任务，高支用每源两件C/2/目标T/2任务。任何与初态不同且至多k件改机的最终分配峰≥U=max(2T,C+T/2)；直接单件环序峰恰U，故允许回搬/绕路的≤k批路径到指定τ的minimax也恰U。",
+      "quantifiers": "∀k,T,C∃显式环输入；∀非空≤k件变化及任意到指定τ的路径下界，∃达界路径。",
+      "assumptions": [
+        "k按显式m=k+1输出收费，非poly(log k)",
+        "C≤B<U时σ在B容量状态图孤立；B<C时σ不属于图",
+        "C=T零步到最优集合峰T，只有到指定不同τ保能垒"
+      ],
+      "scope": "固定支持首次变化界；不限制无界批量或更强初始化，一般算法困难性未由此推出。三机9/4是k2高支有限特例。",
+      "objections": "所列成熟正文含完整证明；本次复用解析论证，不重跑历史有限审计。外审和全球新颖性不由登记升级。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/剪枝首步与固定批量环能垒--定理.md",
+        "sha256": "64c68eded8f6ccb18e8902992130f94feaff1b6953a41eceb43d02f8cd6d01cc"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/计算/给定目标重配置的精确审计与版本纠错--计算.md",
+          "sha256": "516eada950dc7d97051d1473ff49483f8711ab4514afb12e51042ee65cebb156"
+        },
+        {
+          "path": "archives/unrelated-machines/state/定理/任务包共同入流剥离--定理.md",
+          "sha256": "5e52df538e2eb9187c6a302f731057b713b6fa6b9790ff59ad7328613e72c24d"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/周期峰值与稀疏流增量证据--审查.md",
+          "sha256": "07d8abb462c43a557ad9073d5198fb17315ffa6fae7bf316a4ef53f7a0a38c57",
+          "section": "1. 两作业循环的瞬时峰值"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/pruned_first_move_and_transient_peak.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/pruned_first_move_transient_peak_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/pruned_first_move_transient_peak.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/pruned_first_move_independent.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/pruned_first_move_full_input.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/permanent_buffer_activation_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/held_cycle_assigned_max_path_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/lst_support_release_and_threshold_group_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/lst_support_release_optimal_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/bundle_peeling_path_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/bundle_peeling_profile_independent.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/bundle_inflow_peeling_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/bundle_inflow_peeling_frozen_proof.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/bundle_peeling_buffer_path.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/bundle_peeling_path_audit.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/bundle_peeling_profile_independent.py"
+      ]
+    },
+    {
+      "object_id": "UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1",
+      "version": 2,
+      "title": "完整flat菜单的真实helper路径资源度三归约",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "显式完整flat菜单普通UM：有限非空组，每组非空indexed states；每state独立private机、每资源独立资源机，每组一件在本组各private耗时1的selector；每个(g,s,u)为不同原incidence，只在自身private耗非负有理p_gsu或真实共享资源机耗1；未列端∞，所有未选state/零权任务也保留，无隐藏预载。",
+      "statement": "任意各state总质量W≤1的显式flat P可总位多项式构造D(P)，资源跨全部菜单的组度≤3，Kmax≤max(Kmax(P),2)，OPT精确保留。每资源d组改d ports并添d−1真实二态singleton helper；任意源C<2调度全任务扩展及任意目标C<2调度逐原任务投影均峰不增。归一化W=1时所有正partial阈值及V=0保持。",
+      "quantifiers": "∀完整P，无需OPT/源见证；∀实际低峰调度两向转换；∀v∈(0,1]partial可行性等价，故V整体相等。",
+      "assumptions": [
+        "资源degree按组并集计，包括零membership",
+        "d0保unused资源、d1无helper",
+        "目标未选helper也可外送；不假定预设matching",
+        "C≥2另用全private≤2基线，不沿用强制外送"
+      ],
+      "scope": "保OPT含2端点；不保组数/交互度M，不提供hardness源；路径gadget已有BCG2009核实先例。",
+      "objections": "所列成熟正文含完整证明；本次复用解析论证，不重跑历史有限审计。外审和全球新颖性不由登记升级。 本次补接read-after §2仅作同一证明来源核对；该节“selector、选中incidence和未选incidence都在private负载一”的合写须按主正文§3解释为selector留选中private、选中incidence送匹配port、未选incidence留另一private，三件helper原jobs各恰执行一次。该措辞不改变主正文完整矩阵及C<2两向证明。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/完整菜单的资源度三路径归约--定理.md",
+        "sha256": "afb7a6751e65f5e968a2b8798b8ba284983d64694fde1a463dae991b0018bb34"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定理/三坐标零权切片的精确菜单嵌入--定理.md",
+          "sha256": "986db069a11f89723aa3378bee60252d9a2e89bc807ecabe759973f8797861e9"
+        },
+        {
+          "path": "archives/unrelated-machines/state/定理/归一化菜单的三态资源度三正规形--定理.md",
+          "sha256": "31f1fb774f856f42255d1cd8b56c7a77d8396b2417b05e4d0b2f1d32e1195d1a"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/NSW比例勘误与flat菜单证明读后--审查.md",
+          "sha256": "828aaf4fc65ad4b38350e639aceeccab5562ed0bae8e7d7f1d386f8923ba4024",
+          "section": "2. Flat-menu 度三路径降度 Proof read-after"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/flat_menu_resource_degree_three_path_reduction_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/flat_menu_resource_degree_three_path_reduction_exact_v1.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/flat_menu_resource_degree_three_path_reduction_exact_v1.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/flat_menu_resource_degree_three_path_reduction_proof_v1.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/flat_menu_resource_degree_three_path_reduction_proof_v1.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/flat_menu_resource_degree_three_path_reduction_rainbow_canonical_sections6_7_read_after.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/flat_menu_resource_degree_three_path_reduction_rainbow_canonical_sections6_7_read_after.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/flat_menu_resource_degree_three_path_reduction_rainbow_exact_only_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/flat_menu_resource_degree_three_path_reduction_rainbow_exact_only_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/flat_menu_resource_degree_three_path_reduction_rainbow_final_attribution_note.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/flat_menu_resource_degree_three_path_reduction_rainbow_final_attribution_note.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/degree_three_weighted_menu_cube_embedding_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/weighted_menu_bounded_group_interaction_rounding.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/normalized_flat_menu_three_state_degree_three_normal_form_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/normalized_weighted_menu_santa_value_and_size.md"
+      ]
+    },
+    {
+      "object_id": "UM-PRIVATE-TERNARY-RAINBOW-MULTIPLICITY-THRESHOLD-v2",
+      "version": 3,
+      "title": "三叉二叉rainbow的全局叶色重数二三门槛",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "单棵显式有限完全有根三叉树，高h≥1，每个内部结点恰三个子结点且全部叶深h，每叶赋有限颜色。binary rainbow为包含根、每个保留内部结点恰保留两个子结点、全部保留叶颜色互异的同高度二叉子树。重数按整棵完整树每种颜色的全部叶出现次数计，包含归约新添的Dead、protected及fresh控制色；复杂性按完整显式树编码长度。",
+      "statement": "每色≤2时每输入均有binary rainbow，由occurrence两桶和raw q次可加。每色≤3时binary rainbow仍NP完全：底父private三同色Dead、protected palette及fresh AND/OR/Pad保持全局计数，3SAT等价与多项式显式规模。对应完整UM仍YES≤4/3/NO=5/3。",
+      "quantifiers": "∀h≥1的重数≤2树；存在到重数≤3域的3SAT确定性多项式归约。",
+      "assumptions": [
+        "逻辑表达式为树，每子式只用一次",
+        "occurrence颜色在false bundle与clause atom各一次",
+        "protected guard全局两次，Dead色三次",
+        "不把全局重数换成逐state计数"
+      ],
+      "scope": "单棵完整三叉树的精确局部门槛。",
+      "objections": "≤2由两桶raw q子可加给全YES；0108 M29独立稿还给显式树自底向上选择与traceback，保留构造内容，未认证生产软件。≤3的作者protected R_H与独立Must/Fresh/Dead不同：每底父Dead色专用且三次，受保护guard每份一次、OR共享合计两次，occurrence各在false bundle与clause atom一次，全部neutral/atom/filler等控制色均计最终全树重数，每个逻辑子式只嵌入一次。完整树高度O(log(s+2))、节点数(3^{h+1}−1)/2及颜色编码多项式。继承颜色资源至多三枚eligible leaf jobs的5/4调度gap；全局重数不换成逐state计数，不与多root菜单CONFIG混同，非近二。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/三叉彩虹困难与树Markov联合审查--审查.md",
+        "sha256": "d6300fbd1906ee421016eb3e5c6b9da7a05d0ca428512bc4af76ea27497c839e"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+          "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/三叉彩虹全局重数门槛v2读后攻击--审查.md",
+          "sha256": "c5d3338fd36c18cc5ed5cdf6cf2fa90a57adc9d8a12fca96624af8f391a32acf"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/单位读出树与实际调度地板的限定合同--资源.md",
+          "sha256": "a65857c226db1209e4fd96add555e753ad0db130318adfc2d2f1a8f58473845e",
+          "section": "CONFIG、注入与重数"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/三叉彩虹与三主机新增审查源去向--审查.md",
+          "sha256": "c124095178e5a6e696e2385b48cbe95f9952d815671fe5b21ceb1fc9d034e4e9",
+          "section": "2. 三叉彩虹源的独有补充与去向"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/三叉彩虹全局重数门槛v2三源精读--审查.md",
+          "sha256": "44aa99dc06cbab560986239110544aee1127a310ce587c26949b29eff7a5c077"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/tree_markov_completion.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/tree_markov_completion.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/tree_markov_completion.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/tree_markov_completion.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/tree_markov_completion_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/tree_markov_completion_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/ternary_rainbow_subtree_exact_hardness_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/ternary_rainbow_multiplicity_threshold_v2_exact_source.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/ternary_rainbow_multiplicity_threshold_v2_independent_pcsp_source.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/ternary_rainbow_multiplicity_threshold_v2_proof_source.md"
+      ]
+    },
+    {
+      "object_id": "UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1",
+      "version": 2,
+      "title": "全有限1至n平方整数矩阵与原调度统一改善等价",
+      "kind": "equivalence",
+      "truth_status": "proved",
+      "model": "D是m,n≥1显式m×n全有限正整数矩阵，条目1,…,n²；原域为非负二进制有理UM含∞及零。",
+      "statement": "全原模型存在确定性位多项式统一次二实际调度算法当且仅当D存在。固定k≥2，若D有α=2−1/k backend B，则原域有2−1/(2k)算法，保持每个B输入的m、n。n≥8k时g=1+1/(4k)，T从L按g倍增至首个≥U；保留端q=max(1,ceil(4knp/T))，其余n²。",
+      "quantifiers": "∀先固定k≥2、∀保证整个D的B、∀原合法P；每个合格输出都可解码，非只存在有利YES输出。",
+      "assumptions": [
+        "空/精确零分支先行；正OPT有0<L≤OPT≤U≤nL。",
+        "n<8k时全枚举原合法分配，固定k下次数多项式。",
+        "按原p>T或∞拒坏候选；所有保留输出按原P精确回算并取最好。"
+      ],
+      "scope": "固定k总位多项式的算法存在性等价；不实现B、不提供NP源gap或近二hardness。",
+      "objections": "首个T≥OPT满足T≤gOPT；强式OPT(Q)≤(4kn/T)OPT+n不可用粗界代替。αOPT(Q)<n²排每个哨兵；回译展开为2−1/(2k)−1/(8k²)−1/(16k³)。有限全调度测试与普遍证明分开。",
+      "body": {
+        "path": "archives/unrelated-machines/state/等价/稠密小整数调度的统一改善等价--等价.md",
+        "sha256": "8155d56ba20cac4b7b05e221c17978a6dd1329cd172231d90caca0a3e266ca2b"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/三种正规形的分节冻结与独立核验--审查.md",
+          "sha256": "5a6ae1d9a04783a60593ce63901dafe3582396b6a43e67123b3ab0ce55ad2b95"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/三种正规形精确测试的输入与完整分类--计算.md",
+          "sha256": "30bef1cd26a9a88307b54d0971a48880cd096f27409aac937bdc41292a2ea9be"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/稠密小整数等价草稿独立核验--审查.md",
+          "sha256": "396564c62d7ffdf01770ee341923e20c7309f0a9870d9cdceeea088add3673eb"
+        }
+      ],
+      "sources": [
+        "legacy-claim:UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/model_and_classical_barriers.md#6-全常数否定与稠密小整数正规形",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/dense_small_integer_equivalence_review.md"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/facility-games/state/候选/实例最优倍率EPTAS的精度组合与未交付接口--候选.md",
+      "sha256": "7669507a6d5ed3b2cb1bd59c2a3ee665f9288c93365a8f0e431b8e94507b2825",
+      "disposition": "objects",
+      "object_ids": [
+        "Q-SC-ALPHA-EPTAS"
+      ],
+      "reason": "增量精确范围：Q-SC-ALPHA-EPTAS: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
+    },
+    {
+      "path": "archives/facility-games/state/定理/单交叠任意目录的ρ纯续局与高区障碍--定理.md",
+      "sha256": "0ba344a265f574511e7348825a2d010d80a0343cbcf6c506a17a01032aea12d3",
+      "disposition": "objects",
+      "object_ids": [
+        "SPARSE-HIGH-ACYCLIC",
+        "SPARSE-BALANCED-R",
+        "SPARSE-RHO-ALL"
+      ],
+      "reason": "增量精确范围：SPARSE-HIGH-ACYCLIC: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。；SPARSE-BALANCED-R: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。；SPARSE-RHO-ALL: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
+    },
+    {
+      "path": "archives/facility-games/state/定理/四共同地点实例最优倍率的无FPTAS间隙--定理.md",
+      "sha256": "507515ba508682a6c4b21f1df309d3d15a90a6b358876074f0f368f73c073a47",
+      "disposition": "objects",
+      "object_ids": [
+        "SC-FOUR-NO-FPTAS"
+      ],
+      "reason": "增量精确范围：SC-FOUR-NO-FPTAS: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
+    },
+    {
+      "path": "archives/facility-games/state/定理/显式续局多面体的两领导者倍率最优化--定理.md",
+      "sha256": "d7ec0b488384110be23d882c81891ebf60957c7c5eb843ea44d09c312626a4b1",
+      "disposition": "objects",
+      "object_ids": [
+        "POLY-CONT",
+        "M-364184f6b6324e008109f0ce4ea6c4a5",
+        "M-5d5cdbdac6be46b2a1debd895fba87c8"
+      ],
+      "reason": "增量精确范围：POLY-CONT: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。；M-364184f6b6324e008109f0ce4ea6c4a5: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
+    },
+    {
+      "path": "archives/facility-games/state/审查/学习代表页的数学可见内容与视觉证据范围--审查.md",
+      "sha256": "3cb3487b5864caabf2ca9c1746c5757ff67cf56c6d9ec9f61e2e443b3a8029e2",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "facility-games/two-facility-pure-improvement-move-bounds-and-default",
+        "facility-games/three-mixers-needed-for-local-cross-quota",
+        "SC-FOUR-NO-FPTAS",
+        "SC-TWO-NEAR-BAND-REP"
+      ],
+      "reason": "部分证据已准确接收，整页仍有明确未闭合范围：页38、48、49已接；页9全局双锚及页29一般盒不属于本次两个接证对象，仍需0093/0092对应主owner的准确接证/集成。保原页24/28既有owner。\n增量精确范围：SC-FOUR-NO-FPTAS；接证区间=页38：四地点归约的全部其他布局守卫；数学范围=四共同地点/两设施，PARTITION补零n变量并非n设施，全部实概率精确NE与全布局guard；YES13/10、NO≥13/10+1/(100n²)，统一scale80n²T。32/19样本与六列表构造运行范围分开，不相加当51独立样本；full_diagonal_enumeration=false有解析对角guard不等于漏全局。visual仅历史页38可见表，未在本次重新看PNG；entry仅four_site_no_fptas行。；SC-TWO-NEAR-BAND-REP；接证区间=页48：拒绝算法为何覆盖混合轻客户；数学范围=固定重支持的精确近带判定/代表；H>0、所有轻权0<w≤H、重权v>H。迁移严格w<t，拒绝证明覆盖轻客户真正混合及反射；不提供指定Δ、最优倍率或EPTAS。visual只采成熟文字数学与历史可见边界，未新看/生成图片。；SC-TWO-NEAR-BAND-REP；接证区间=页49：接受例、反射例与只显示两行的拒绝表；数学范围=固定重支持的精确近带判定/代表；H>0、所有轻权0<w≤H、重权v>H。迁移严格w<t，拒绝证明覆盖轻客户真正混合及反射；不提供指定Δ、最优倍率或EPTAS。visual只采成熟文字数学与历史可见边界，未新看/生成图片。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
+    },
+    {
+      "path": "archives/facility-games/state/构造/单交叠精确回应核心的长环与亚ρ坏族--构造.md",
+      "sha256": "62462b59484bf5c3ed4c593fbe6c095a103dcd6bae4508831a3bb782c7d42155",
+      "disposition": "objects",
+      "object_ids": [
+        "SPARSE-LONG-CYCLE",
+        "SPARSE-BAD-LONG",
+        "SPARSE-BAD-LONG-ALL"
+      ],
+      "reason": "增量精确范围：SPARSE-BAD-LONG: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。；SPARSE-BAD-LONG-ALL: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
+    },
+    {
+      "path": "archives/facility-games/state/等价/两设施同客户二次费用的均衡集合保持--等价.md",
+      "sha256": "72975462df6994e12097f47e8cf2bbf37523e31a6625eca6f533e33ba6967aff",
+      "disposition": "objects",
+      "object_ids": [
+        "QUAD-EQ",
+        "QUAD-PHI",
+        "M-970991e8661942cca3a1f9e3a5587f63"
+      ],
+      "reason": "增量精确范围：QUAD-EQ: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。；QUAD-PHI: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。；M-970991e8661942cca3a1f9e3a5587f63: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
+    },
+    {
+      "path": "archives/facility-games/state/算法/全交叉单交叠双目录的区间最优与达到检查--算法.md",
+      "sha256": "9e574dfd6148b78a53b2ee8b6885b0f511ae700677ba242f220d0cea58c26e1c",
+      "disposition": "objects",
+      "object_ids": [
+        "facility-games/all-cross-single-overlap-interval-optimum-and-attainment-check"
+      ],
+      "reason": "增量精确范围：facility-games/all-cross-single-overlap-interval-optimum-and-attainment-check: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
+    },
+    {
+      "path": "archives/facility-games/state/算法/固定重支持近平衡精确补全的位多项式选择--算法.md",
+      "sha256": "0b116c5637f6c6ae6447cabccb794dadbbc646c981b6577c928b3ba077c2e35e",
+      "disposition": "objects",
+      "object_ids": [
+        "SC-TWO-NEAR-BAND-REP"
+      ],
+      "reason": "增量精确范围：SC-TWO-NEAR-BAND-REP: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
+    },
+    {
+      "path": "archives/facility-games/state/计算/共享目录原始输入与四种子入口的接续复核--计算.md",
+      "sha256": "cefe6cdbfd65ffa7bd4450035c7994012beac6b7a9bdc9b17ef759b123ee38df",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "facility-games/two-reach-three-site-multiple-overlap-no-exact-stability",
+        "SC-PHI-SHARP",
+        "SC-SPARSE-4",
+        "facility-games/three-mixers-needed-for-local-cross-quota",
+        "facility-games/all-cross-single-overlap-interval-optimum-and-attainment-check"
+      ],
+      "reason": "部分证据已准确接收，整页仍有明确未闭合范围：single_overlap完整交叉双目录算法已接；four_seed的1203例、shared753及验证器合同不在该算法对象的本次范围，仍须核0090/0093主owner的准确接受。保原四个已接owner。\n增量精确范围：facility-games/all-cross-single-overlap-interval-optimum-and-attainment-check；接证区间=单交叠原程序与新定向核查；数学范围=所有交叉布局含同址κ≤1的完整区间最优与达到检查。历史104输入/611布局/399profiles只是有限实现证据；verify接受有效较松倍率不证明最优，默认字符串不是数学证据。entry末段明确不同于仅异址单交叠的共同目录域。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
+    },
+    {
+      "path": "archives/facility-games/state/计算/小目录硬度构造器与五地点样本的精确合同--计算.md",
+      "sha256": "52692dfd1300114349b5d41835e79c52cb09dd21332fc8bbaeffa1eb3f97da88",
+      "disposition": "attachment",
+      "object_ids": [
+        "SC-FIVE-DECa-HARD",
+        "SC-FOUR-NO-FPTAS"
+      ],
+      "reason": "本次补齐原唯一剩余接证范围并保全部既有owner：原五地点owner已实接；本次四地点构造器精确接入SC-FOUR-NO-FPTAS，原两个范围均有准确owner与证据，保五地点owner后一并闭合。\n增量精确范围：SC-FOUR-NO-FPTAS；接证区间=四地点构造器：另一种精度间隙的输入资产；数学范围=四共同地点/两设施，PARTITION补零n变量并非n设施，全部实概率精确NE与全布局guard；YES13/10、NO≥13/10+1/(100n²)，统一scale80n²T。32/19样本与六列表构造运行范围分开，不相加当51独立样本；full_diagonal_enumeration=false有解析对角guard不等于漏全局。visual仅历史页38可见表，未在本次重新看PNG；entry仅four_site_no_fptas行。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
+    },
+    {
+      "path": "archives/facility-games/state/计算/局部谱与实例最优程序的原入口复现--计算.md",
+      "sha256": "63e4e289d0cfae29ce10b7778636c96407b19d739eee557f41bcf3515982a573",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "LOCAL-HARD",
+        "LOCAL-CHORD-IFF",
+        "LOCAL-CHORD-POLY",
+        "facility-games/two-facility-pure-improvement-move-bounds-and-default",
+        "facility-games/threshold-meet-in-middle-objectives-and-response-pruning",
+        "M-78b5c8b948b14f799fb5849a464c17a7",
+        "M-a4510cf6b0ee470384411c5b272b372b",
+        "LOCAL-ATOM-WARDROP-k",
+        "DP-W",
+        "QUAD-EQ",
+        "M-970991e8661942cca3a1f9e3a5587f63",
+        "POLY-CONT",
+        "M-364184f6b6324e008109f0ce4ea6c4a5"
+      ],
+      "reason": "部分证据已准确接收，整页仍有明确未闭合范围：显式多面体、两公共客户非线性和二次/立方行已接；17源表中的完整谱、任意双目录最优仍未在本候选接齐，需要对应主owner精确接受与集成。原九个已接owner全部保留。\n增量精确范围：QUAD-EQ；接证区间=17源的数学去向；数学范围=恰两设施、强制服务、同客户两处同二次函数，a,b≥0且a+b>0；每个纯偏离差乘同一正数a_i(V+w_i)+b_i，因此纯/独立混合NE、CE、CCE各自集合完全保持。17源表仅接二次费用行，其他模型不由此收。；M-970991e8661942cca3a1f9e3a5587f63；接证区间=17源的数学去向；数学范围=私有A=1、B=0为空侧，公共2/3权共三名正权客户；p=(1/4,1/3)线性NE，立方时权2客户90>86故非NE。只否认均衡集合保持，不否认立方模型全局φ。17源表仅二次/立方行。；POLY-CONT；接证区间=17源的数学去向；数学范围=显式全部收益的有限有界有理多面体+有效实现器、布局独立；maxλ∈[0,1]，Λ=0无有限倍率。按表示总长及实现器成本，不能把隐式指数单元免费省略；17源表仅显式多面体行。；M-364184f6b6324e008109f0ce4ea6c4a5；接证区间=17源的数学去向；数学范围=每个全部合法布局至多两公共客户、精确有理成本值多项式可得，≤9个闭支持二维多面体、每局≤8成本值；费用可标签/地点相关且不单调。此宽合同须含同址κ≤2，不能从共同目录另一同址正规形自动删该条件；17源表仅两战略客户非线性行。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
+    },
+    {
+      "path": "archives/facility-games/state/证明/地点费用推广的条件期望与完整续局教学推导--证明.md",
+      "sha256": "f00befec59c4e8205511c2abdc0e09022fc4a95e120306f79dfba6252b87eaaf",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-613302aba5ba48ac8b629aa729ee2564",
+        "M-3da368da9d6346799790a0e72271c9b8",
+        "M-a6537b738f484012a55a432d820821f0",
+        "facility-games/common-catalog-location-cost-diagonal-normal-form-and-tight-two",
+        "M-4c0491ded97f432790aeb8cbfa062dfb",
+        "facility-games/offdiagonal-two-overlap-nonlinear-nine-rectangle-exact-optimum",
+        "QUAD-EQ",
+        "QUAD-PHI",
+        "M-970991e8661942cca3a1f9e3a5587f63"
+      ],
+      "reason": "本次补齐原唯一剩余接证范围并保全部既有owner：原其余费用模型六个owner已实接；本次12.5二次均衡保持/条件势转移与12.6立方反例三个owner补齐唯一剩余范围，保原六owner后一并闭合。\n增量精确范围：QUAD-EQ；接证区间=12.5 二次费用为何保持全部客户均衡；数学范围=恰两设施、强制服务、同客户两处同二次函数，a,b≥0且a+b>0；每个纯偏离差乘同一正数a_i(V+w_i)+b_i，因此纯/独立混合NE、CE、CCE各自集合完全保持。17源表仅接二次费用行，其他模型不由此收。；QUAD-PHI；接证区间=12.5 二次费用为何保持全部客户均衡；数学范围=只接受代数等价向共同目录φ上界的条件转移，SC-PHI-E/A一般上界仍待定向审查；来源已明确不能由局部恒等式重证全局φ。；M-970991e8661942cca3a1f9e3a5587f63；接证区间=12.6 立方费用失去的是哪一项结论；数学范围=私有A=1、B=0为空侧，公共2/3权共三名正权客户；p=(1/4,1/3)线性NE，立方时权2客户90>86故非NE。只否认均衡集合保持，不否认立方模型全局φ。17源表仅二次/立方行。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
+    },
+    {
+      "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+      "sha256": "9ff056ee4073e03d61b049a3e1e35e2b68828a63fe5c4b3260c0a7c5b714fe8c",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "LOCAL-HARD",
+        "M-b2bcfe1f64ee4a7799a58ef2609d04dd",
+        "facility-games/threshold-meet-in-middle-objectives-and-response-pruning",
+        "M-78b5c8b948b14f799fb5849a464c17a7",
+        "DP-W",
+        "FPT-D",
+        "QUAD-EQ",
+        "QUAD-PHI",
+        "M-970991e8661942cca3a1f9e3a5587f63",
+        "POLY-CONT",
+        "M-364184f6b6324e008109f0ce4ea6c4a5"
+      ],
+      "reason": "部分证据已准确接收，整页仍有明确未闭合范围：A11.7和A11.8本次已接；A11.1完整支持谱、A11.6 EXACT-KAPPA需与0090/0091准确主owner接证增量核对，本候选不冒称两者已canonical闭合。保原六个已接owner。\n增量精确范围：QUAD-EQ；接证区间=A11.8 二次费用为何保留均衡，三次费用为何没有同样结论；数学范围=恰两设施、强制服务、同客户两处同二次函数，a,b≥0且a+b>0；每个纯偏离差乘同一正数a_i(V+w_i)+b_i，因此纯/独立混合NE、CE、CCE各自集合完全保持。17源表仅接二次费用行，其他模型不由此收。；QUAD-PHI；接证区间=A11.8 二次费用为何保留均衡，三次费用为何没有同样结论；数学范围=只接受代数等价向共同目录φ上界的条件转移，SC-PHI-E/A一般上界仍待定向审查；来源已明确不能由局部恒等式重证全局φ。；M-970991e8661942cca3a1f9e3a5587f63；接证区间=A11.8 二次费用为何保留均衡，三次费用为何没有同样结论；数学范围=私有A=1、B=0为空侧，公共2/3权共三名正权客户；p=(1/4,1/3)线性NE，立方时权2客户90>86故非NE。只否认均衡集合保持，不否认立方模型全局φ。17源表仅二次/立方行。；POLY-CONT；接证区间=A11.7 哪些更一般的续局能使用同样拼接；数学范围=显式全部收益的有限有界有理多面体+有效实现器、布局独立；maxλ∈[0,1]，Λ=0无有限倍率。按表示总长及实现器成本，不能把隐式指数单元免费省略；17源表仅显式多面体行。；M-364184f6b6324e008109f0ce4ea6c4a5；接证区间=两名公共客户的非线性费用为什么仍线性；数学范围=每个全部合法布局至多两公共客户、精确有理成本值多项式可得，≤9个闭支持二维多面体、每局≤8成本值；费用可标签/地点相关且不单调。此宽合同须含同址κ≤2，不能从共同目录另一同址正规形自动删该条件；17源表仅两战略客户非线性行。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
+    },
+    {
+      "path": "archives/facility-games/state/资料/共同目录成果入口的接口与版本状态--资料.md",
+      "sha256": "55c9f2e39906cb3193ab6f722809bf1a0a6b0db0f30fcff4788916e3b4b98d4f",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "SC-TWO-SITE-EXACT",
+        "SC-EQUAL-REACH-EXACT",
+        "SC-TWO-REACH-SPARSE",
+        "SC-PHI-SHARP",
+        "SC-FOUR-NO-FPTAS",
+        "SC-TWO-NEAR-BAND-REP",
+        "Q-SC-ALPHA-EPTAS",
+        "facility-games/all-cross-single-overlap-interval-optimum-and-attainment-check"
+      ],
+      "reason": "部分证据已准确接收，整页仍有明确未闭合范围：本候选仅增加无FPTAS、近带、EPTAS开放接口及全交叉单交叠算法的准确范围；线性同址正规形、粒度、一般phi等原剩余独有内容仍需对应owner接受/集成。保原四个已接owner。\n增量精确范围：SC-FOUR-NO-FPTAS；接证区间=全部十五项原分支资产的去向；数学范围=四共同地点/两设施，PARTITION补零n变量并非n设施，全部实概率精确NE与全布局guard；YES13/10、NO≥13/10+1/(100n²)，统一scale80n²T。32/19样本与六列表构造运行范围分开，不相加当51独立样本；full_diagonal_enumeration=false有解析对角guard不等于漏全局。visual仅历史页38可见表，未在本次重新看PNG；entry仅four_site_no_fptas行。；SC-TWO-NEAR-BAND-REP；接证区间=局部补全为何不等于已交付EPTAS；数学范围=固定重支持的精确近带判定/代表；H>0、所有轻权0<w≤H、重权v>H。迁移严格w<t，拒绝证明覆盖轻客户真正混合及反射；不提供指定Δ、最优倍率或EPTAS。visual只采成熟文字数学与历史可见边界，未新看/生成图片。；Q-SC-ALPHA-EPTAS；接证区间=局部补全为何不等于已交付EPTAS；数学范围=只接受明确开放的全局菜单/完整精确续局/一般位复杂度交付义务及与已证近带局部算法的边界；C²失真组合、η=ε/16记录不升级已交付EPTAS。；facility-games/all-cross-single-overlap-interval-optimum-and-attainment-check；接证区间=同址正规形主源的逐节吸收；数学范围=所有交叉布局含同址κ≤1的完整区间最优与达到检查。历史104输入/611布局/399profiles只是有限实现证据；verify接受有效较松倍率不证明最优，默认字符串不是数学证据。entry末段明确不同于仅异址单交叠的共同目录域。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
+    },
+    {
+      "path": "archives/facility-games/state/资料/四地点两设施精确支持审计的完整合同--资料.md",
+      "sha256": "6ff142cedc53ac0dce58b66c24c54e480a12ed554ceb96d5cdbf481f3b87d1ad",
+      "disposition": "attachment",
+      "object_ids": [
+        "SC-FOUR-NO-FPTAS"
+      ],
+      "reason": "本次补齐原唯一剩余接证范围并保全部既有owner：全文只欠SC-FOUR-NO-FPTAS主owner，两独立精确闭支持审计与32/19有限样本范围已实际接入该对象，准确闭合。\n增量精确范围：SC-FOUR-NO-FPTAS；接证区间=whole mature page；数学范围=四共同地点/两设施，PARTITION补零n变量并非n设施，全部实概率精确NE与全布局guard；YES13/10、NO≥13/10+1/(100n²)，统一scale80n²T。32/19样本与六列表构造运行范围分开，不相加当51独立样本；full_diagonal_enumeration=false有解析对角guard不等于漏全局。visual仅历史页38可见表，未在本次重新看PNG；entry仅four_site_no_fptas行。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/剪枝首步与固定批量环能垒--定理.md",
+      "sha256": "64c68eded8f6ccb18e8902992130f94feaff1b6953a41eceb43d02f8cd6d01cc",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-PRUNED-BUNDLE-PEELING-PATH-v1",
+        "UM-PRUNED-FIRST-MOVE-BOUND-v1",
+        "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1"
+      ],
+      "reason": "增量精确范围：UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/完整菜单的资源度三路径归约--定理.md",
+      "sha256": "afb7a6751e65f5e968a2b8798b8ba284983d64694fde1a463dae991b0018bb34",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1",
+        "UM-DEGREE-THREE-WEIGHTED-MENU-CUBE-EMBEDDING-v1",
+        "UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1"
+      ],
+      "reason": "增量精确范围：UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/私有菜单树有界叶重数配置界--定理.md",
+      "sha256": "5b810c65140f9581fb362f8ff739b09f019a7c435a1bc2eb3d7a34d42c3041d3",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2",
+        "UM-Q-PRIVATE-TREE-BOUNDED-MULTIPLICITY-CONFIGURATION-FLOOR-v3",
+        "UM-PRIVATE-TREE-MULTIPLICITY-GAP-ASYMPTOTIC-v1"
+      ],
+      "reason": "本22核对当前canonical已有精确owner、原完整evidence引用、版本链及本页模型/边界段；复用上一轮已集成证明，不重复改写或回退主记录。 增量精确范围：UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/NSW比例勘误与flat菜单证明读后--审查.md",
+      "sha256": "828aaf4fc65ad4b38350e639aceeccab5562ed0bae8e7d7f1d386f8923ba4024",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1"
+      ],
+      "reason": "部分证据已准确接收，整页仍有明确未闭合范围：仅§2 flat resource-degree3 path主owner证据已接；§1 XOS normalized比例仍是另一数学范围，需要0104/0106准确owner接证/集成，不因§2完成而清除整页needs-decision。\n增量精确范围：UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1；接证区间=2. Flat-menu 度三路径降度 Proof read-after；数学范围=同一完整flat-menu资源度三路径Claim的作者proof read-after；保真实helper/原jobs/资格、C<2双向与OPT=2 fallback、正V及V0端点。不承接同页XOS比例勘误，不新增第二theorem、不扩一般UM或SPE。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22实读全文；§2 helper放置的合写依主正文§3纠正解释为selected incidence送port，selector及unselected incidence留各private；§1 XOS/NSW的γ_hi互补修正仍保未接证。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三叉palette张量v2三源精读与放大障碍边界--审查.md",
+      "sha256": "5abe77b66c8a6b062c0a972c25b82463560ee6b7ea44fe2cfb7093dc9bb85437",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-TERNARY-PALETTE-TENSOR-AMPLIFICATION-OBSTRUCTION-v2"
+      ],
+      "reason": "本22核对当前canonical已有精确owner、原完整evidence引用、版本链及本页模型/边界段；复用上一轮已集成证明，不重复改写或回退主记录。 增量精确范围：UM-TERNARY-PALETTE-TENSOR-AMPLIFICATION-OBSTRUCTION-v2；接证区间=whole mature page；数学范围=Explicit complete equal-depth tree, h≥1, local last-parent palette≤2, aligned Cartesian tuple equality and k≥2,k|h pure contraction only. Fixed YES(A,B,A)/NO(A,A,A); gap upper envelope G_k≤5/4 decreases to1; expansion size and NP⊆QP discussion direction preserved.。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三叉palette张量v2作者证明复杂度方向增量--审查.md",
+      "sha256": "890502a571ffe8fff0ee953454d1ea83e0c795e08a70573f59c13dc9787ada4f",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-TERNARY-PALETTE-TENSOR-AMPLIFICATION-OBSTRUCTION-v2"
+      ],
+      "reason": "本22核对当前canonical已有精确owner、原完整evidence引用、版本链及本页模型/边界段；复用上一轮已集成证明，不重复改写或回退主记录。 增量精确范围：UM-TERNARY-PALETTE-TENSOR-AMPLIFICATION-OBSTRUCTION-v2；接证区间=whole mature page；数学范围=Explicit complete equal-depth tree, h≥1, local last-parent palette≤2, aligned Cartesian tuple equality and k≥2,k|h pure contraction only. Fixed YES(A,B,A)/NO(A,A,A); gap upper envelope G_k≤5/4 decreases to1; expansion size and NP⊆QP discussion direction preserved.。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三叉palette张量v2独立字面清洗增量--审查.md",
+      "sha256": "7cc2de28f91f5a4dc1ed76ee75593c8f138205faa6171c504989dd6efa0dea30",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-TERNARY-PALETTE-TENSOR-AMPLIFICATION-OBSTRUCTION-v2"
+      ],
+      "reason": "本22核对当前canonical已有精确owner、原完整evidence引用、版本链及本页模型/边界段；复用上一轮已集成证明，不重复改写或回退主记录。 增量精确范围：UM-TERNARY-PALETTE-TENSOR-AMPLIFICATION-OBSTRUCTION-v2；接证区间=whole mature page；数学范围=Explicit complete equal-depth tree, h≥1, local last-parent palette≤2, aligned Cartesian tuple equality and k≥2,k|h pure contraction only. Fixed YES(A,B,A)/NO(A,A,A); gap upper envelope G_k≤5/4 decreases to1; expansion size and NP⊆QP discussion direction preserved.。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三叉彩虹与三主机新增审查源去向--审查.md",
+      "sha256": "c124095178e5a6e696e2385b48cbe95f9952d815671fe5b21ceb1fc9d034e4e9",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-TERNARY-PALETTE-TENSOR-AMPLIFICATION-OBSTRUCTION-v2",
+        "UM-PRIVATE-TERNARY-RAINBOW-BINARY-SUBTREE-NP-COMPLETE-v1",
+        "UM-PRIVATE-TERNARY-RAINBOW-MULTIPLICITY-THRESHOLD-v2"
+      ],
+      "reason": "部分证据已准确接收，整页仍有明确未闭合范围：§2三叉彩虹/重数/张量三对象已接；另有UM-THREE-HOST-SELECTOR-THREE-HALVES-v1和UM-TWO-YES-SC-DUPLICATION-HALF-v1范围，本次未获相应主owner接证/集成，故混页保needs-decision。\n增量精确范围：UM-TERNARY-PALETTE-TENSOR-AMPLIFICATION-OBSTRUCTION-v2；接证区间=2. 三叉彩虹源的独有补充与去向；数学范围=Explicit complete equal-depth tree, h≥1, local last-parent palette≤2, aligned Cartesian tuple equality and k≥2,k|h pure contraction only. Fixed YES(A,B,A)/NO(A,A,A); gap upper envelope G_k≤5/4 decreases to1; expansion size and NP⊆QP discussion direction preserved.；UM-PRIVATE-TERNARY-RAINBOW-BINARY-SUBTREE-NP-COMPLETE-v1；接证区间=2. 三叉彩虹源的独有补充与去向；数学范围=Same explicit full ternary rooted binary rainbow NP-complete identity. Preserve both author Dead-AND and independent A-copy/anchor construction proofs, global occurrence/fresh guards and full polynomial expanded output; actual UM bridge YES≤4/3, NO=5/3, ratio5/4.；UM-PRIVATE-TERNARY-RAINBOW-MULTIPLICITY-THRESHOLD-v2；接证区间=2. 三叉彩虹源的独有补充与去向；数学范围=Global final-tree color multiplicity≤2 guarantees binary rainbow; ≤3 remains NP-complete with distinct per-bottom-parent Dead colors and protected single-use palettes. Fresh controls count toward multiplicity; inherited resource-degree≤3 schedule gap remains5/4.。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三叉彩虹二叉子树三源精读与原P边界--审查.md",
+      "sha256": "3e4c8f2196fe8fbe350bd21294f88ad5a0ad3c73fe8c8e03255ddcd3428b43ef",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-PRIVATE-TERNARY-RAINBOW-BINARY-SUBTREE-NP-COMPLETE-v1"
+      ],
+      "reason": "本22核对当前canonical已有精确owner、原完整evidence引用、版本链及本页模型/边界段；复用上一轮已集成证明，不重复改写或回退主记录。 增量精确范围：UM-PRIVATE-TERNARY-RAINBOW-BINARY-SUBTREE-NP-COMPLETE-v1；接证区间=whole mature page；数学范围=Same explicit full ternary rooted binary rainbow NP-complete identity. Preserve both author Dead-AND and independent A-copy/anchor construction proofs, global occurrence/fresh guards and full polynomial expanded output; actual UM bridge YES≤4/3, NO=5/3, ratio5/4.。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三叉彩虹二叉子树作者证明read-after范围修正--审查.md",
+      "sha256": "96a8af1f76d7e693feaec3ff63f0644d7f0e37a8f7ff0c9d9b07dfdb071e7bd5",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-PRIVATE-TERNARY-RAINBOW-BINARY-SUBTREE-NP-COMPLETE-v1"
+      ],
+      "reason": "本22核对当前canonical已有精确owner、原完整evidence引用、版本链及本页模型/边界段；复用上一轮已集成证明，不重复改写或回退主记录。 增量精确范围：UM-PRIVATE-TERNARY-RAINBOW-BINARY-SUBTREE-NP-COMPLETE-v1；接证区间=whole mature page；数学范围=Same explicit full ternary rooted binary rainbow NP-complete identity. Preserve both author Dead-AND and independent A-copy/anchor construction proofs, global occurrence/fresh guards and full polynomial expanded output; actual UM bridge YES≤4/3, NO=5/3, ratio5/4.。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三叉彩虹全局重数门槛v2三源精读--审查.md",
+      "sha256": "44aa99dc06cbab560986239110544aee1127a310ce587c26949b29eff7a5c077",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-PRIVATE-TERNARY-RAINBOW-MULTIPLICITY-THRESHOLD-v2"
+      ],
+      "reason": "本22核对当前canonical已有精确owner、原完整evidence引用、版本链及本页模型/边界段；复用上一轮已集成证明，不重复改写或回退主记录。 增量精确范围：UM-PRIVATE-TERNARY-RAINBOW-MULTIPLICITY-THRESHOLD-v2；接证区间=whole mature page；数学范围=Global final-tree color multiplicity≤2 guarantees binary rainbow; ≤3 remains NP-complete with distinct per-bottom-parent Dead colors and protected single-use palettes. Fresh controls count toward multiplicity; inherited resource-degree≤3 schedule gap remains5/4.。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三叉彩虹困难与树Markov联合审查--审查.md",
+      "sha256": "d6300fbd1906ee421016eb3e5c6b9da7a05d0ca428512bc4af76ea27497c839e",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-PRIVATE-TERNARY-RAINBOW-BINARY-SUBTREE-NP-COMPLETE-v1",
+        "UM-PRIVATE-TERNARY-RAINBOW-MULTIPLICITY-THRESHOLD-v2",
+        "UM-TERNARY-PALETTE-TENSOR-AMPLIFICATION-OBSTRUCTION-v2"
+      ],
+      "reason": "增量精确范围：UM-TERNARY-PALETTE-TENSOR-AMPLIFICATION-OBSTRUCTION-v2: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。；UM-PRIVATE-TERNARY-RAINBOW-BINARY-SUBTREE-NP-COMPLETE-v1: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。；UM-PRIVATE-TERNARY-RAINBOW-MULTIPLICITY-THRESHOLD-v2: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22只接三叉§一至三，保三既有body owner及pending_route_indices:[31]；§四树Markov五机反例及至多四机边界仍待UM-TREE-MARKOV-COMPLETION-NO-v1与M-02f7731efe924dbd8f703b29440b4d1f的主owner定向接证。objects表示本页承载三叉主body，不宣称整个混页已闭合。",
+      "pending_route_indices": [
+        31
+      ]
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/周期峰值与稀疏流增量证据--审查.md",
+      "sha256": "07d8abb462c43a557ad9073d5198fb17315ffa6fae7bf316a4ef53f7a0a38c57",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-RATIO-GROUP-JOINT-SLOT-v1",
+        "SPARSE-BAD-LONG",
+        "SPARSE-BAD-LONG-ALL",
+        "SPARSE-HIGH-ACYCLIC",
+        "SPARSE-BALANCED-R",
+        "SPARSE-RHO-ALL",
+        "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1"
+      ],
+      "reason": "本次补齐原唯一剩余接证范围并保全部既有owner：原UM-RATIO-GROUP-JOINT-SLOT-v1已接§2；R16峰值与R17/R18设施长环及高reach/tie六个owner已经父实际接证，此候选保原ratio owner并接齐所有章节。\n增量精确范围：SPARSE-BAD-LONG；接证区间=3. 设施单交叠目录长环的有限有理表；数学范围=r=7/4与六个明确n的有理回归表，支持同一有身份长环族；较大n无完整cycle列表，表不独立证明任意n或所有r<rho。；SPARSE-BAD-LONG-ALL；接证区间=3. 设施单交叠目录长环的有限有理表；数学范围=同一扩域族在r=7/4的有限实例证据，不替代全1≤r<rho参数开域/有理化的一般证明。；SPARSE-HIGH-ACYCLIC；接证区间=4. 设施回应中的高reach探针与平局负对照；数学范围=400有限Fraction探针及tie负控制只补固定纯规则和全局均衡量词分离；不删无r稳定格/高行动/固定全局优先级的承重条件。；SPARSE-BALANCED-R；接证区间=4. 设施回应中的高reach探针与平局负对照；数学范围=有限balanced与零reach分支及六环样例是同双目录纯规则的边界证据；不由有限样例证明任意目录定理，也不把单方高当双方全高。；SPARSE-RHO-ALL；接证区间=4. 设施回应中的高reach探针与平局负对照；数学范围=有限高reach/tie/六客户近锐样例只补模型与规则量词边界；一般rho上界与全称算法仍由成熟主正文完整证明。；UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1；接证区间=1. 两作业循环的瞬时峰值；数学范围=三机六job、初峰7/4、指定目标OPT1、逐单任务顺序峰9/4，是k=2高支一般定理的完整有限路径证据；不把单顺序本身充当所有路径下界。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/私有注入树v1分数地板陈述与proof-cover版本审查--审查.md",
+      "sha256": "b1cdd717e26a3e24e7d4a0b9e2a54af68c1db61cc38c33d96d69e3a0e686cd6a",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2"
+      ],
+      "reason": "本22核对当前canonical已有精确owner、原完整evidence引用、版本链及本页模型/边界段；复用上一轮已集成证明，不重复改写或回退主记录。 增量精确范围：UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2；接证区间=whole mature page；数学范围=Same private all-jobs d-ary menu-tree theorem. Preserve v1 fractional-floor historical label as narrower provenance, not a second 5/3 identity. A exact positive-part CONFIG rows and common multiplicity lambda; B injective leaf maps, common subtree distribution, blocker/Haxell rank r^h+1, all original jobs backfilled; C selector-candidate-only filtering with LP feasible implies original OPT≤5/3, infeasible implies OPT>1, strict promise only.。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/私有注入树v1独立与证明三源增量--审查.md",
+      "sha256": "1c3fe422535460fbb8e467305dee557d00a2a6654d8451ddcc25f1133f58630c",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2"
+      ],
+      "reason": "本22核对当前canonical已有精确owner、原完整evidence引用、版本链及本页模型/边界段；复用上一轮已集成证明，不重复改写或回退主记录。 增量精确范围：UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2；接证区间=whole mature page；数学范围=Same private all-jobs d-ary menu-tree theorem. Preserve v1 fractional-floor historical label as narrower provenance, not a second 5/3 identity. A exact positive-part CONFIG rows and common multiplicity lambda; B injective leaf maps, common subtree distribution, blocker/Haxell rank r^h+1, all original jobs backfilled; C selector-candidate-only filtering with LP feasible implies original OPT≤5/3, infeasible implies OPT>1, strict promise only.。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/私有注入树v2 proof-cover读后核对--审查.md",
+      "sha256": "caaf71d2f8c9b878b21f6f2e4476591ba63601dda567d3e068975f9268da03e1",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2"
+      ],
+      "reason": "本22核对当前canonical已有精确owner、原完整evidence引用、版本链及本页模型/边界段；复用上一轮已集成证明，不重复改写或回退主记录。 增量精确范围：UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2；接证区间=whole mature page；数学范围=Same private all-jobs d-ary menu-tree theorem. Preserve v1 fractional-floor historical label as narrower provenance, not a second 5/3 identity. A exact positive-part CONFIG rows and common multiplicity lambda; B injective leaf maps, common subtree distribution, blocker/Haxell rank r^h+1, all original jobs backfilled; C selector-candidate-only filtering with LP feasible implies original OPT≤5/3, infeasible implies OPT>1, strict promise only.。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/私有注入树v2作者证明读后与范围续审--审查.md",
+      "sha256": "ac7096aefe70dc357d75a3fe8a1b30be74ef2d5f1a79b6993f940407eb6b8ef7",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2"
+      ],
+      "reason": "本22核对当前canonical已有精确owner、原完整evidence引用、版本链及本页模型/边界段；复用上一轮已集成证明，不重复改写或回退主记录。 增量精确范围：UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2；接证区间=whole mature page；数学范围=Same private all-jobs d-ary menu-tree theorem. Preserve v1 fractional-floor historical label as narrower provenance, not a second 5/3 identity. A exact positive-part CONFIG rows and common multiplicity lambda; B injective leaf maps, common subtree distribution, blocker/Haxell rank r^h+1, all original jobs backfilled; C selector-candidate-only filtering with LP feasible implies original OPT≤5/3, infeasible implies OPT>1, strict promise only.。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/私有注入树v2四源批次语义核对--审查.md",
+      "sha256": "067f219ebd8e0d9be28f993facb8ef687b4894dd679c0d1c601ca076298c1fef",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2"
+      ],
+      "reason": "本22核对当前canonical已有精确owner、原完整evidence引用、版本链及本页模型/边界段；复用上一轮已集成证明，不重复改写或回退主记录。 增量精确范围：UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2；接证区间=whole mature page；数学范围=Same private all-jobs d-ary menu-tree theorem. Preserve v1 fractional-floor historical label as narrower provenance, not a second 5/3 identity. A exact positive-part CONFIG rows and common multiplicity lambda; B injective leaf maps, common subtree distribution, blocker/Haxell rank r^h+1, all original jobs backfilled; C selector-candidate-only filtering with LP feasible implies original OPT≤5/3, infeasible implies OPT>1, strict promise only.。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/私有注入树v2根冻结证明源处置--审查.md",
+      "sha256": "b9eea46e85ca7513f36a183b894d42ea428bc1da4bb88933bb4bd28e86d55bf6",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2"
+      ],
+      "reason": "本22核对当前canonical已有精确owner、原完整evidence引用、版本链及本页模型/边界段；复用上一轮已集成证明，不重复改写或回退主记录。 增量精确范围：UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2；接证区间=whole mature page；数学范围=Same private all-jobs d-ary menu-tree theorem. Preserve v1 fractional-floor historical label as narrower provenance, not a second 5/3 identity. A exact positive-part CONFIG rows and common multiplicity lambda; B injective leaf maps, common subtree distribution, blocker/Haxell rank r^h+1, all original jobs backfilled; C selector-candidate-only filtering with LP feasible implies original OPT≤5/3, infeasible implies OPT>1, strict promise only.。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/稠密小整数等价草稿独立核验--审查.md",
+      "sha256": "396564c62d7ffdf01770ee341923e20c7309f0a9870d9cdceeea088add3673eb",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1"
+      ],
+      "reason": "增量精确范围：UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1；接证区间=whole mature page；数学范围=Fixed-k algorithm existence equivalence between full nonnegative rational/∞ UM and dense positive [1,n²] integer matrices. Preserve n<8k fixed-k exhaustive branch, zero/empty cases, n² forbidden-end sentinel and precise first good T bound. Any fixed real improvement contains a fixed reciprocal-integer improvement; no effective extraction of epsilon or variable-k algorithm.。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/等价/稠密小整数调度的统一改善等价--等价.md",
+      "sha256": "8155d56ba20cac4b7b05e221c17978a6dd1329cd172231d90caca0a3e266ca2b",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1"
+      ],
+      "reason": "增量精确范围：UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
+    }
+  ],
+  "edge_files": []
+}
