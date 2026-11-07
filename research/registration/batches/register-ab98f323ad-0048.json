@@ -1,0 +1,1520 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline.json",
+    "sha256": "5d5737ab6d07552b48925bdb936dae70490e8de1ee0da2b380bb2d16dd5690cf"
+  },
+  "objects": [
+    {
+      "object_id": "customer-attraction/full-comparison-coverage-fixed-SAFE-ownership-separation-and-six-policy-report",
+      "version": 1,
+      "title": "固定全覆盖初始化与固定SAFE核的最优归属容量严格失败",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空带标签共同目录、单位提供者按固定顺序观察全部有序历史各选一次；终局客户在覆盖者间均分。完整纯SPE须在全部有序在轨及离轨历史满足真实偏离IC，偏离后沿同一原策略继续；允许空主题、重复行动、同覆盖异标签、零客户和历史依赖平局。",
+      "statement": "存在两份正文完整纯SPE及固定最优比较元组，其全覆盖初始化的固定SAFE归属唯一，却均有角色负载超过1。61客户root-tax策略actual AAAF，u=(9,9,9,11)、W38；固定最优T=(A,B,C,D)，归属总费用(9,199/11,91/5,864/55)，最大容量比91/90。11客户旧D平局策略actual AAB，u=(5/2,5/2,3)、W8；T=(A,B,T)，总费用(5/2,61/12,41/12)，最大容量比61/60。",
+      "quantifiers": "存在所示固定完整策略及固定最优T；各T中客户覆盖槽唯一，故该T的全部合法owner选择均失败。",
+      "assumptions": [
+        "固定全覆盖初始化及正文全利润SAFE核；实际源、过去与future各账按原定义",
+        "11客户使用原D平局版本，不移用后来的E平局策略"
+      ],
+      "scope": "精确否定这两个固定T上的存在owner容量1合同。",
+      "objections": "不否定换最优T、换流核、CLIP或一般有利路由；六策略其余浮点报告不认证精确最优或普遍真值。",
+      "body": {
+        "path": "archives/customer-attraction/state/计算/全比较覆盖初始化的固定SAFE归属分离与六策略报告--计算.md",
+        "sha256": "a8056e626e8393fc2007d7251b7d6b5b699ca49f7f0cc12f996c9fcb81485798"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/一般半覆盖的末位菜单与独立重构停点账本--资源.md",
+          "sha256": "4011554388263c95a98305c25669c6115dd35ca8965a78345492c5a76a1867fb"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-ab2c6df20538474c948f5f24e59437ee/global_credit/test_role_cap.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-ab2c6df20538474c948f5f24e59437ee/global_credit/role_cap_results.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/customer_attraction/root_tax_failure.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/customer_attraction/root_tax_failure.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/customer_attraction/coverage_opportunity_failure.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/customer_attraction/coverage_opportunity_failure.json"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/pb-background-on-path-prefix-obstruction",
+      "version": 1,
+      "title": "PB大背景无法接成所规定常值尾的根SPE实际前缀",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "单位客户共同目录的PB固定输入与给定整数背景；比较所有实现该背景的旧有序前缀及规定regular尾，检验它们能否作为某根完整SPE实际路径。不存在这样的SPE是结论，不作为输入假设。",
+      "statement": "对原PB参数d=20,k=3,q=12,Q=2063,H=100000,M=10^9及r=2475，任何精确实现指定背景b的旧前缀并接规定regular尾的有序路径，都不能是一份根完整SPE的实际路径。实现该背景必有D-singleton；取最后一个，此后无D-singleton、全尾regular，其原收益至多1/(HM)，改为相应真D主题不论原策略后继怎样至少得dq/(M+L+2)>1/(HM)，其中L=495120001823260。",
+      "quantifiers": "所有精确实现该b的旧有序词及一切可能完整后继策略；排除的是指定在轨背景加尾路径。",
+      "assumptions": [
+        "沿用正文PB目录、完整整数参数和b的精确客户负载",
+        "L是所有这类实现的长度上界；最后D-singleton之后的真实偏离不冻结后继"
+      ],
+      "scope": "合法背景反例向根实际路径提升的严格障碍。",
+      "objections": "不否定原合法背景后的子SPE、其它根构造或一般half；不可删去背景实现计数前提。",
+      "body": {
+        "path": "archives/customer-attraction/state/障碍/PB大背景的最后单例偏离--障碍.md",
+        "sha256": "2360e144e4ea174ec3b59ec87363a00ee0e39c9ade3c844fcc2435d687a2e7c7"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d1dc7a18aded4304a25a87486681fb21/security_continue/direct_PB_prefix_obstruction.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-d1dc7a18aded4304a25a87486681fb21/security_continue/direct_PB_prefix_obstruction.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d1dc7a18aded4304a25a87486681fb21/security_continue/README.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round5/menu/pair_attack.md"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/one-real-block-punishment-contract-empty-root-budget",
+      "version": 1,
+      "title": "单实块惩罚合同的空根完整IC迫使二倍覆盖预算",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空带标签共同目录、单位提供者按固定顺序观察全部有序历史各选一次；终局客户在覆盖者间均分。完整纯SPE须在全部有序在轨及离轨历史满足真实偏离IC，偏离后沿同一原策略继续；允许空主题、重复行动、同覆盖异标签、零客户和历史依赖平局。",
+      "statement": "正文合同有k≥2个copy、n≥1个后续不同实块选择者、r=k+n；每实块q>0单位客户，copy用F并带k−1个dummy，银行规模H。实际末位BR给H≥n；最后copy真实偏离后的特定惩罚枝，若每位后继至多选一个实块，则Jensen与真实IC给n≥k(k−1)。在规定足够多实块的共同目录中，覆盖计算因此给2W−OPT≥qk>0。",
+      "quantifiers": "所有满足明确目录、actual模式及真实惩罚续局限制的完整根SPE；联合动作允许同时改变两个坐标。",
+      "assumptions": [
+        "足够多实块，正文使用至少r+1及2k个实块的可用性",
+        "被分析的真实惩罚枝每个后继最多选一个实块",
+        "k,n取整数；q>0；H按正文单位规格"
+      ],
+      "scope": "受限可实现合同的必要参数界与覆盖结论。",
+      "objections": "不把经济/银行IC分开；更宽多实块后继、不同触发器未被排除。k=1、n=0、q=0边界按正文分别处理。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/单实块惩罚合同的空根预算界--引理.md",
+        "sha256": "2952334c73060b89cce7a5276eee0a900016468918ad17e1c238b7a1c7c70934"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/round4_general/construction/empty_root_pb_checkpoint.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/round4_general/construction/README.md"
+      ]
+    },
+    {
+      "object_id": "M-85e3959fb61345109fbfd30f4e98901e",
+      "version": 1,
+      "title": "任意合法背景的新覆盖最优值由两倍活跃利润支付的候选",
+      "kind": "open-problem",
+      "truth_status": "open",
+      "model": "有限不同单位客户、有限非空带标签共同目录、单位提供者按固定顺序观察全部有序历史各选一次；终局客户在覆盖者间均分。完整纯SPE须在全部有序在轨及离轨历史满足真实偏离IC，偏离后沿同一原策略继续；允许空主题、重复行动、同覆盖异标签、零客户和历史依赖平局。",
+      "statement": "固定合法旧前缀b、余r人的完整子SPE，F={x:b_x=0}，实际后缀负载c，U=Σ_{c_x>0}c_x/(b_x+c_x)。问是否总有M_r^new(b)=max_{T1…Tr}|F∩⋃T_j|≤2U。正文已证r=2时更具体的M_2^new≤a+2b′≤2(a+b′)；一般r的该助手未闭合。",
+      "quantifiers": "每个有限共同目录、合法旧前缀及每份剩余r≥1的完整子SPE；最优比较遍历全部r个合法主题。",
+      "assumptions": [
+        "U包括活跃者从旧覆盖客户获得的份额；M只数旧背景外客户",
+        "不要求所给合法前缀由某个根SPE实际达到"
+      ],
+      "scope": "合法背景fresh覆盖付款义务；空背景才回到根half。 成熟背景尾界另给r=1时Mnew≤U、r=2时≤3U/2、r=3时≤5U/3、r=4时≤1499U/750；本较弱旧BASE-2不冒充当前最强结果。",
+      "objections": "不能与已否M_new≤W_new+U的RESERVE或含旧活跃比较值F_r(b)的更强候选混同。",
+      "body": {
+        "path": "archives/customer-attraction/state/资源/遗漏净缺口与客户密度付款的直接接续--资源.md",
+        "sha256": "e92da6b28fb1850e19be9687b7642e1a25c9f1e5068a9603462ed4f3f44ba582",
+        "section": "合法背景的新覆盖预算：完整两人基底"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/round3_general/direct/README.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/round3_general/direct/density_payment_followup.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/round3_general/direct/direct_working.md"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/legal-prefix-independent-background-anchored-counting-and-same-leaf-ancestor-reserve",
+      "version": 1,
+      "title": "合法前缀独立竞争分布的锚定覆盖计数界",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限不同单位客户与有限非空带标签共同主题目录；静态查询和竞争槽只按覆盖负载计均分收益，允许重复主题、空主题及同覆盖异标签。不预设动态策略或SPE。 固定合法旧有序前缀负载b≥0。",
+      "statement": "任意k≥1个合法比较主题并集O、r≥1及不观察查询的r−1竞争槽分布Q，令t_Q=max_T E_QΣ_{x∈T}1/(1+b_x+c_x(B))、A_Q=E_QΣ_x b_x/(1+b_x+c_x(B))，则|O|≤(k+r−1)t_Q+A_Q。证明先取均负载L和竞争槽平均主题边际，再用逐客户覆盖式与倒数凸性；r=1竞争项为零。",
+      "quantifiers": "所有所列合法前缀、k/r、比较元组与独立竞争分布；不要求比较最优或任何SPE。",
+      "assumptions": [
+        "查询与竞争抽样独立，共用同一完整合法目录",
+        "k为比较槽数，不是目录大小；所有分母≥1"
+      ],
+      "scope": "静态有背景覆盖账；A_Q尚非actual祖先利润。",
+      "objections": "不能在同一随机B里相关地选一个竞争主题作查询再用t_Q封顶；空背景特化复用旧静态计数界。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/合法前缀共同背景的锚定计数与同叶祖先储备--引理.md",
+        "sha256": "00a50452e1f94c4c5b8606e59a2786d8054b4accd43756163e92db8f2b3c71c2",
+        "section": "1. 固定前缀的共同分母"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/实际删除锚定预算的双原程序与完整有限记录--程序.md",
+          "sha256": "744b585d1659b974d69903bd5f564ba077085a9cf84060627da9d7c4d41073c7"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/可信删除分支入口的真预算与受限支持边界--资源.md",
+          "sha256": "8cd2826a0054f9c5ca918359c2f38a664eeaea583f7bc445f128ccbd7ce56b81"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/credible/anchored_reserve_and_deletion_boundary.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/credible/anchored_reserve_and_deletion_boundary.md"
+      ]
+    },
+    {
+      "object_id": "M-9810d7282a7f4250b1849b5c8a8f5947",
+      "version": 1,
+      "title": "同一终局删除任一活跃槽的祖先储备不超过该叶祖先利润",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限不同单位客户与有限非空带标签共同主题目录；静态查询和竞争槽只按覆盖负载计均分收益，允许重复主题、空主题及同覆盖异标签。不预设动态策略或SPE。 固定同一合法前缀及一个完整active终局，不要求该终局为SPE。",
+      "statement": "同一旧负载b与r≥1个active主题S1…Sr、负载n，祖先总终局利润B_actual=Σ_{b_x>0}b_x/(b_x+n_x)。删任一active槽j的r−1槽背景Q_j有A_Qj=Σ_x b_x/(1+b_x+n_x−1_{x∈S_j})≤B_actual；任意固定概率混合删除列仍成立。",
+      "quantifiers": "所有所列同叶终局、每个删除槽及任意概率混合，不要求均匀删位。",
+      "assumptions": [
+        "b_x=0的祖先项按零处理；b_x>0时分母严格正",
+        "祖先利润与删除背景来自同一叶，不能跨叶替换"
+      ],
+      "scope": "只支付同叶祖先项，不支付独立查询t_Q。",
+      "objections": "与已否旧背景新覆盖RESERVE是不同命题；重复主题可合并概率，不产生额外库存。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/合法前缀共同背景的锚定计数与同叶祖先储备--引理.md",
+        "sha256": "00a50452e1f94c4c5b8606e59a2786d8054b4accd43756163e92db8f2b3c71c2",
+        "section": "2. 一份终局的删除列支付同叶祖先项"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/实际删除锚定预算的双原程序与完整有限记录--程序.md",
+          "sha256": "744b585d1659b974d69903bd5f564ba077085a9cf84060627da9d7c4d41073c7"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/可信删除分支入口的真预算与受限支持边界--资源.md",
+          "sha256": "8cd2826a0054f9c5ca918359c2f38a664eeaea583f7bc445f128ccbd7ce56b81"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/空根后实际删除混合的锚定预算严格失败--障碍.md",
+          "sha256": "52a5f146c3d6a2f7df2413ba31e482459cbeec0c7fbdfa753abde09befa2f378"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/credible/anchored_reserve_and_deletion_boundary.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/credible/anchored_reserve_and_deletion_boundary.md"
+      ]
+    },
+    {
+      "object_id": "M-9e3ed0d171dd4e2b8622d4db7838defb",
+      "version": 1,
+      "title": "沉没首位后同一自由竞争分布的查询及祖先联合预算",
+      "kind": "open-problem",
+      "truth_status": "open",
+      "model": "有限不同单位客户、有限非空带标签共同目录、单位提供者按固定顺序观察全部有序历史各选一次；终局客户在覆盖者间均分。完整纯SPE须在全部有序在轨及离轨历史满足真实偏离IC，偏离后沿同一原策略继续；允许空主题、重复行动、同覆盖异标签、零客户和历史依赖平局。 此处只要求固定合法首位之后的完整子SPE，不额外假定该沉没首位自身满足根IC。",
+      "statement": "原m≥2，固定一个合法已行动首位后余r=m−1，取k=m个最优比较槽。是否总存在同一个不观察查询的r−1合法竞争槽分布Q，使2r t_Q+A_Q≤2W，其中t_Q/A_Q按ANCHOR，W为该固定首位与真实尾的总覆盖？ANCHOR使该预算足以给OPT_m≤2W。",
+      "quantifiers": "每个所列沉没首位和完整剩余子SPE，存在一份共同Q；支持允许全部合法竞争元组。",
+      "assumptions": [
+        "两项必须使用同一Q，不可分别取两个最优分布",
+        "W=V_active+B_actual；首位仅合法固定而非免费删除"
+      ],
+      "scope": "来源明确留待支付的共同分布接口。空首位时退为余r人的强安全聚合W≥r v_r。",
+      "objections": "只限actual删除支持的版本已被十四客户例否定；扩大支持的自由Q不能据此判false。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/合法前缀共同背景的锚定计数与同叶祖先储备--引理.md",
+        "sha256": "00a50452e1f94c4c5b8606e59a2786d8054b4accd43756163e92db8f2b3c71c2",
+        "section": "3. 尚未支付的查询项及准确特化"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/实际删除锚定预算的双原程序与完整有限记录--程序.md",
+          "sha256": "744b585d1659b974d69903bd5f564ba077085a9cf84060627da9d7c4d41073c7"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/可信删除分支入口的真预算与受限支持边界--资源.md",
+          "sha256": "8cd2826a0054f9c5ca918359c2f38a664eeaea583f7bc445f128ccbd7ce56b81"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/空根后实际删除混合的锚定预算严格失败--障碍.md",
+          "sha256": "52a5f146c3d6a2f7df2413ba31e482459cbeec0c7fbdfa753abde09befa2f378"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/credible/anchored_reserve_and_deletion_boundary.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/credible/anchored_reserve_and_deletion_boundary.md"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/sunk-empty-root-actual-deletion-mixture-anchored-cap-failure",
+      "version": 1,
+      "title": "空沉没首位后的全部actual删除混合都违反锚定cap预算",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "三位单位提供者、六共同标签A,B,T,D,E,空主题的完整形式策略；仅正深度节点组成完整子SPE，沉没空根不满足根IC。",
+      "statement": "十四单位客户B3、T3、AD2、AE2、BDE2、TDE2；正文43历史策略中42正深度节点252含self比较均满足IC。沉没空根后的actual为空,A,B，u=(0,4,5)、W9、OPT3=14。任意删除A/B一槽并混合的竞争Q都有t_Q=5、A_Q=0，故(k+r−1)t_Q+A_Q=4·5=20>18=2W；非actual惩罚主题D作纯竞争列则最大query4，得16≤18。",
+      "quantifiers": "所给固定输入、完整形式策略及所有actual删除列概率混合；非actual纯D仅为一个可行改进。",
+      "assumptions": [
+        "根空行动收益0且可偏离，不把整份形式策略称SPE",
+        "k=3、r=2；Q含一个竞争槽；祖先客户负载为零"
+      ],
+      "scope": "精确支持限制反例，不是否定自由Q版本。",
+      "objections": "没有声称D是自由极小极大最优；不反根完整SPE的half。",
+      "body": {
+        "path": "archives/customer-attraction/state/障碍/空根后实际删除混合的锚定预算严格失败--障碍.md",
+        "sha256": "52a5f146c3d6a2f7df2413ba31e482459cbeec0c7fbdfa753abde09befa2f378"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/实际删除锚定预算的双原程序与完整有限记录--程序.md",
+          "sha256": "744b585d1659b974d69903bd5f564ba077085a9cf84060627da9d7c4d41073c7"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/可信删除分支入口的真预算与受限支持边界--资源.md",
+          "sha256": "8cd2826a0054f9c5ca918359c2f38a664eeaea583f7bc445f128ccbd7ce56b81"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/合法前缀共同背景的锚定计数与同叶祖先储备--引理.md",
+          "sha256": "00a50452e1f94c4c5b8606e59a2786d8054b4accd43756163e92db8f2b3c71c2"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/credible/anchored_reserve_and_deletion_boundary.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/credible/anchored_reserve_and_deletion_boundary.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/credible/audit_anchored_deletion_failure.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/credible/audit_anchored_deletion_failure.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/credible/anchored_deletion_failure_exact.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/credible/anchored_deletion_failure_exact.json"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/complete-terminal-push-own-discount-and-paid-tail-reserve",
+      "version": 1,
+      "title": "完整终局推送末两位的非负税储备及实际末列合并界",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空带标签共同目录、单位提供者按固定顺序观察全部有序历史各选一次；终局客户在覆盖者间均分。完整纯SPE须在全部有序在轨及离轨历史满足真实偏离IC，偏离后沿同一原策略继续；允许空主题、重复行动、同覆盖异标签、零客户和历史依赖平局。",
+      "statement": "同一actual路径及p，D为真强制收益、P为完整m槽独立额外query、e=u−D。倒二前背景b，末回复ρ(A)，q_x=Pr[x∈A]、η_x=Pr[x∈A∩ρ(A)]、w_x=1/((b_x+1)(b_x+2))。真末IC均值L≥0、V=Σq_x²/((b_x+2)(b_x+3))、Q=Σ2w_x q_x(q_x−η_x)/(b_x+3)≥0满足D_(m−1)−P_(m−1)=L+V+Q。末位P_m=u_m−e_m−V_m，V_m=Σq_x²/((b′_x+1)(b′_x+2))；实际末列另折扣R_actual。自由最小列ψ_m满足ψ_m≤u_m−e_m−max(V_m,R_actual)，两储备不可相加。",
+      "quantifiers": "所有m≥2的完整SPE及同一个任意目录分布p；各末位回复在准确有序前缀取原σ。",
+      "assumptions": [
+        "p只抽样数学查询，不改变真实策略",
+        "L是完整行动IC之和而非逐客户非负；η≤q",
+        "末列g_p(z)=u_m−e_m−R_actual；所有折扣分母正"
+      ],
+      "scope": "末两位可直接消费的精确非负储备及不重复计费原则。",
+      "objections": "未支付所有早期有符号债；EXACT-EARLY-PAY与既有SUMmin属于同一个未证全路径预算，不再重复建节点。",
+      "body": {
+        "path": "archives/customer-attraction/state/资源/完整终局推送的自身折扣与末两位储备--资源.md",
+        "sha256": "b35f22d2e7a802f8b4aa87f503bfe2690273a37bc414932d428d3ad728954bfa"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/固定三人完整推送的两分布浮点探针--程序.md",
+          "sha256": "8392d95c0154efc0b8256f495d3364838642a8e6e0014e1d8373ea6b61e54c6d"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/完整终局查询的信用恒等式与末两位付款--引理.md",
+          "sha256": "4f65f98fc0f48132fa7b1160e646f7439f2331f25d0b4b6d95b7471edd8ae407"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/单后继去相关恒等式--引理.md",
+          "sha256": "abc752a9c2d642eea7e6dc16500e24e9c7436119bb883441b86ecc43eb9ce365"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-3bc48d936f044f12b0fa743482ff5eb0/menu/complete_push_reserved_debt.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-3bc48d936f044f12b0fa743482ff5eb0/menu/complete_push_reserved_debt.md"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/unbounded-depth-deletion-defect-one-leaf-payment-obstruction",
+      "version": 1,
+      "title": "合法深层子局删位后的累计原策略后悔不受单叶小钱包控制",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空带标签共同目录、单位提供者按固定顺序观察全部有序历史各选一次；终局客户在覆盖者间均分。完整纯SPE须在全部有序在轨及离轨历史满足真实偏离IC，偏离后沿同一原策略继续；允许空主题、重复行动、同覆盖异标签、零客户和历史依赖平局。 在任意长合法旧前缀后的完整子SPE分析删除辅助游戏，不声称该前缀由根SPE实际达到。",
+      "statement": "每n≥1，目录为不交单客户A,B1…Bn，旧背景每Bj一位；先有固定插入A，再n位真实尾按优先顺序选尚未覆盖的Bj（最后才A），正文规则补全全部子历史SPE。实际尾B1…Bn，删除A前其收益d_A=1、实际同叶删除返还E=0；删A而保留原历史映射后，每个actual后继节点的偏离后悔恰1/2，累计n/2。故没有独立于n的常数可用d_A或同叶E支付累计缺陷。",
+      "quantifiers": "每个整数n的明确合法背景和完整子SPE；任意拟议人数无关常数都被足够大n排除。",
+      "assumptions": [
+        "删除只作用于辅助收益背景，原策略保原历史映射",
+        "各后悔比较使用原σ真实强制完成，不冻结全部尾"
+      ],
+      "scope": "累计删除激励误差的无界反族。",
+      "objections": "不否定含n因子的既有删除界、不否定重新构造新策略的其它修复，也不是根half反例。",
+      "body": {
+        "path": "archives/customer-attraction/state/障碍/任意深度子博弈的删除缺陷与单叶付款障碍--障碍.md",
+        "sha256": "27626aa36c5dd1bf89da12167c98f8569546fd12a5e0c572e3438084da8ca56b"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-105f776c3e6d4a22bb7c380c5df8edc7/harmonic_menu/insertion_pool_and_dynamic_regret.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-105f776c3e6d4a22bb7c380c5df8edc7/harmonic_menu/audit_insertion_sensitivity.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-105f776c3e6d4a22bb7c380c5df8edc7/harmonic_menu/insertion_sensitivity_audit.json"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/full-slot-query-deletion-identity-and-coverage-increment",
+      "version": 1,
+      "title": "匿名势的完整槽查询删除恒等式及调和势覆盖增量",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限非空行动集上的匿名多重集势Φ，定义于所需0至m+1槽；固定m槽形式profile z和独立查询p，不要求IC、SPE、单调或DR。",
+      "statement": "记G_p(z)=E_T[Φ(z+T)−Φ(z)]，U_Φ(z)=Σ_j[Φ(z)−Φ(z−j)]。逐带标签槽删除给(m+1)G_p(z)=Σ_jG_p(z−j)+E_T[U_Φ(z+T)−U_Φ(z)]。调和客户势Φ=ΣH_c时U_Φ(z)=覆盖W(z)，故最后项等于新query新增覆盖的期望且非负。",
+      "quantifiers": "所有所列有限势、profile及分布；重复行动仍逐槽计数。",
+      "assumptions": [
+        "删除槽保其出现重数；势同时定义在相邻三层",
+        "客户调和特化的覆盖增量结论依赖该特殊势"
+      ],
+      "scope": "一般代数身份与单位客户模型的精确特化。",
+      "objections": "一般单调DR势不保证U_Φ单调；正文18→0边界排除该错误外推。身份本身不支付SPE跨路径预算。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/完整槽查询的删除恒等式与覆盖增量--引理.md",
+        "sha256": "ff33c39268e6aefece8b361d78f869137da2f4461ef59efb5d57a4c731514b42"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-c8ca54e5f2854c2c93bf83abc2f24f5c/round2/fullslots/README.md#回到原-CAG-的准确断点"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/four-player-exact-full-terminal-pair-crosscap-counterexample",
+      "version": 1,
+      "title": "245客户完整四人SPE违反全路径成对crosscap但该两点FTA全为正",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空带标签共同目录、单位提供者按固定顺序观察全部有序历史各选一次；终局客户在覆盖者间均分。完整纯SPE须在全部有序在轨及离轨历史满足真实偏离IC，偏离后沿同一原策略继续；允许空主题、重复行动、同覆盖异标签、零客户和历史依赖平局。",
+      "statement": "正文245单位客户六主题完整259节点策略actual=(4,0,2,5)，u全45、W180、OPT4=245。定义M(a,b)=Σ_{i=1}^4 f_{Z_i(b)}(a)，其中Z_i(b)为同σ在actual前缀强制b后的完整四槽叶。查询/源3,5子矩阵为[[90,180],[185,132]]，交叉和365>2W360。但p=(t,1−t)在该支持上的余量W−pᵀMp=143t²−101t+48≥17255/572>0，对全部t∈[0,1]成立。",
+      "quantifiers": "存在这份完整SPE反成对全称桥；正FTA余量只量化固定支持{3,5}上的所有混合。",
+      "assumptions": [
+        "原完整有序动作表及1554个含self真实IC的成熟Fraction证据",
+        "查询与forced源独立同分布；原游戏仍四人"
+      ],
+      "scope": "完整游戏内的成对加强反例与同支持二次型的精确界。",
+      "objections": "不反half、全目录所有p的FTA或路径菜单存在性；原报告多项式字符串不是程序证明，正文配方承担全t证明。",
+      "body": {
+        "path": "archives/customer-attraction/state/资源/完整终局聚合三份有限诊断与两种交叉障碍--资源.md",
+        "sha256": "f2bbc5f8cbffd3d1b9a13170714513bfbee689b4a774530869a18d2d9d5f1b77",
+        "section": "245客户：完整路径成对加强失败"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/完整终局查询的信用恒等式与末两位付款--引理.md",
+          "sha256": "4f65f98fc0f48132fa7b1160e646f7439f2331f25d0b4b6d95b7471edd8ae407"
+        },
+        {
+          "path": "archives/customer-attraction/subarchives/six-providers/state/反例/完整终局成对交叉容量的四人精确反例--反例.md",
+          "sha256": "391669757479aef00a99367910ec0bad62caab8f4c9584b87a7ae15734ce862a"
+        },
+        {
+          "path": "archives/customer-attraction/subarchives/six-providers/tools/evidence/full-terminal-crosscap-primary/original/research/workspaces/customer-attraction/R-486bb9adb8cd4d9a940dbf3b1ab0b1de/security/dual/crosscap_failure_exact.json",
+          "sha256": "2c6adf9cbf29c27e857b6491fe7b8de0b39ae6499c393e9763ece0c6f292b83e"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cef41b80a6e048b5a395b738d3b0b6e7/menu/README.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cef41b80a6e048b5a395b738d3b0b6e7/menu/attack_aggregate_extra.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cef41b80a6e048b5a395b738d3b0b6e7/independent/pairwise_fixed_cone.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-cef41b80a6e048b5a395b738d3b0b6e7/independent/per_node_pairwise_failure.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-cef41b80a6e048b5a395b738d3b0b6e7/independent/old_crosscap_replay_review.md"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/root-reset-pair-and-auxiliary-tail-covariance",
+      "version": 1,
+      "title": "完整整数终局根重置对的精确交叉税与辅助尾份额协方差",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限单位客户共同目录、合法旧负载b及同一完整形式分支计划；余r≥2，强制当前A后未来负载n_A来自该同一计划。代数不需后继IC；涉及e≥0或末两位付款时另用真实IC。",
+      "statement": "逐客户c=b+1、d_A=c+n_A、a_A=1_A，D(A)=Σa_A/d_A，K(T,A)=Σa_T/(d_A+a_A)。R(A,T)=Σ(a_A−a_T)(n_A−n_T)/(d_A d_T)，J(A,T)=Σ_{a_A=a_T=1}[1/(d_A(d_A+1))+1/(d_T(d_T+1))]≥0。精确K(T,A)+K(A,T)−D(A)−D(T)=R−J，故2u−cross=e_A+e_T+J−R；R的正部至多两真实分支未来利润之和。iid p下令F_A=n_A/d_A，ER=2ΣCov(a,F)/c，EJ=2Σp_x E[a/(d(d+1))]，u−pᵀKp=E e+EJ/2−ER/2。QUAD展开为Σp_Ae_A+Σp_A²τ_A+Σ_{A<T}p_Ap_T(J−R)，τ_A=Σ_{x∈A}1/(d_A(d_A+1))。",
+      "quantifiers": "所有所列计划、合法源A/T及同一任意p；若仅一名真实末后继且当前IC、两枝末位完整BR均成立，则另有成对交叉≤2u。",
+      "assumptions": [
+        "独立抽样A,T同分布；分母d_A删除当前会员，K分母另加a_A",
+        "无条件期望外税项只含一次p_x；若改条件a=1才出现p_x²",
+        "末两位推论还须当前IC及两枝末位真实IC"
+      ],
+      "scope": "整数完整终局的重置/协方差及对角税精确账；不同于先平均负载再取倒数的协方差响应身份。",
+      "objections": "双分支future利润不是同一actual W；局部普遍cap已被银行反例否定，不能把恒等式或末两位推广为全路径付款。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/根重置对恒等式与辅助尾份额协方差--引理.md",
+        "sha256": "fec4209b078d36ef1fd44a5b7fc5a7475292bad2be2125a71681b6bfdc4f6304"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/完整额外槽聚合原稿的税项修正与有限攻击--资源.md",
+          "sha256": "28b7fcd5abc593c948f99d169f6dc5534090cb84180b79b67630c779a2e76c1b"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/完整终局查询的信用恒等式与末两位付款--引理.md",
+          "sha256": "4f65f98fc0f48132fa7b1160e646f7439f2331f25d0b4b6d95b7471edd8ae407"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/单后继去相关恒等式--引理.md",
+          "sha256": "abc752a9c2d642eea7e6dc16500e24e9c7436119bb883441b86ecc43eb9ce365"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/完整终局推送的协方差响应恒等式--引理.md",
+          "sha256": "2d5507f6933a3317499fc5efadd3c049e78ff73d82707de427f22a886b7c844b"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/relay/working.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/relay/working.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-24e40cab6b8d43ecbbf1c15c4d0edcd5/dynamic_flow/covariance_reset_criterion.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-24e40cab6b8d43ecbbf1c15c4d0edcd5/dynamic_flow/cartesian_pair_obstruction.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/relay/aggregate_extra_slot_gap.md"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/integer-successor-occupation-reserve-and-self-tax-decomposition",
+      "version": 1,
+      "title": "整数经验后继占用的非负储备及完整菜单恒等式",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限单位客户共同目录与合法固定旧负载b，余n+1位，n≥1；同一完整形式计划在每个forced当前A后给n个真实主题后继，其客户占用k_A(x)为0至n整数。这里不预设后继SPE；当前IC只在把平均D换成当前u时另用。",
+      "statement": "令a_A(x)=1_A、d_A=1+b+a_A+k_A、K(T,A)=Σ_{x∈T}1/d_A，P的每列为n个后继主题的经验概率。任意当前分布p，q=Pp，V+=E_AΣ_x k_A/d_A，I=Σ_x[(E k_A)E(1/d_A)−E(k_A/d_A)]。对独立同分布A,A′有I_x=(1/2)E[(k−k′)((k−k′)+(a−a′))/(dd′)]≥0，故n qᵀKp=V++I≥V+。",
+      "quantifiers": "全部完整形式计划及全部p；k整数且a二值，任意客户间相关均保留。",
+      "assumptions": [
+        "q是后继主题经验占用的p平均，仍为合法目录分布",
+        "V+使用额外query分母，是折扣尾份额而非原真实未来总利润",
+        "非负来自整数差Δk及Δa∈{−1,0,1}"
+      ],
+      "scope": "一侧经验后继查询预算与精确守恒。",
+      "objections": "不能推出pᵀKq或对称方向导数的有利符号；分数占用的一般延伸为假。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/整数后继占用储备的全菜单自税分解--引理.md",
+        "sha256": "bc835b29bad4199d45b74985e61bdfe06339cce5c7ae2dc1d05d275dfa5de5fb",
+        "section": "2. 占用恒等式与逐对非负"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/整数占用储备独审的标量回归合同与完整报告--程序.md",
+          "sha256": "088dc1b414a56b777d435ffb3ce1fa61e2caa518632a3d31989536b2d1585039"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/平稳来源审计的分层证据与静态路线撤回--资源.md",
+          "sha256": "2ebfd31e61d2f71977ec056c1fc559de471faa2b3620fb02c34ed7e1eb286d7a"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/parent/occupation_reserve_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/parent/occupation_reserve_review.md"
+      ]
+    },
+    {
+      "object_id": "M-baa3cc8d26b049de921bbae4e67206a3",
+      "version": 1,
+      "title": "整数占用的完整self-tax分解支付当前查询缺口",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限单位客户共同目录与合法固定旧负载b，余n+1位，n≥1；同一完整形式计划在每个forced当前A后给n个真实主题后继，其客户占用k_A(x)为0至n整数。这里不预设后继SPE；当前IC只在把平均D换成当前u时另用。",
+      "statement": "同OCC记号，G=pᵀKp、D=EΣ_x a/(b+1+k)，p_(a,j)=Pr[a_A(x)=a,k_A(x)=j]。逐客户I_x−(G_x−D_x)=Σ_j p_(1,j)(1−p_(0,j))/((b+1+j)(b+2+j))+(1/2)E[1_{Δk≠0}(Δk²−Δa²)/(dd′)]≥0。故I≥G−D，联合OCC得G+V+≤D+n qᵀKp。只有另有当前节点真实IC时才可继续≤u+n qᵀKp。",
+      "quantifiers": "每个所列整数占用完整形式计划与所有p；当前IC条件单独量化。",
+      "assumptions": [
+        "p_(a,j)是同一客户下当前会员/整数占用的联合分布",
+        "非零整数Δk的平方至少1，故第二项非负",
+        "各式共享同一self-tax，不可重复扣除"
+      ],
+      "scope": "比单独I≥0更具体的查询缺口支付身份。",
+      "objections": "不把V+替换actual尾利润，不由此推出一般WD方向条件；该平方余项在分数占用可为负。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/整数后继占用储备的全菜单自税分解--引理.md",
+        "sha256": "bc835b29bad4199d45b74985e61bdfe06339cce5c7ae2dc1d05d275dfa5de5fb",
+        "section": "3. 同一self-tax只付一次：I≥G−D"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/整数占用储备独审的标量回归合同与完整报告--程序.md",
+          "sha256": "088dc1b414a56b777d435ffb3ce1fa61e2caa518632a3d31989536b2d1585039"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/平稳来源审计的分层证据与静态路线撤回--资源.md",
+          "sha256": "2ebfd31e61d2f71977ec056c1fc559de471faa2b3620fb02c34ed7e1eb286d7a"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/parent/occupation_reserve_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/parent/occupation_reserve_review.md"
+      ]
+    },
+    {
+      "object_id": "M-c32b5390049a4954adff14ca6dade564",
+      "version": 1,
+      "title": "允许分数后继占用时OCC储备I可严格为负",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "单客户形式概率模型，b=0、会员a∈{0,1}而后继占用k允许分数；不是单位提供者共同目录的完整SPE模型。",
+      "statement": "取(a,k)=(0,1/2),(1,0)各概率1/2，d=1+a+k，则I=−1/48，G=7/24、D=1/2、V+=1/6、n qᵀKp=7/48。因此I≥0及其一侧V+付款的分数延伸失败；此同点I−G+D=3/16>0，并未反第二条CURRENT-GAP。",
+      "quantifiers": "存在所示精确两原子分数分布，否定所有分数占用的非负储备全称式。",
+      "assumptions": [
+        "沿同样标量定义计算I、G、D；不把分数k补称真实整数后继"
+      ],
+      "scope": "OCC整数前提的独立边界。",
+      "objections": "不反整数占用引理、原单位游戏或half；另一分数例才否CURRENT-GAP。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/整数后继占用储备的全菜单自税分解--引理.md",
+        "sha256": "bc835b29bad4199d45b74985e61bdfe06339cce5c7ae2dc1d05d275dfa5de5fb",
+        "section": "4. 整数边界不是所有分数质量的结论"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/整数占用储备独审的标量回归合同与完整报告--程序.md",
+          "sha256": "088dc1b414a56b777d435ffb3ce1fa61e2caa518632a3d31989536b2d1585039"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/parent/occupation_reserve_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/parent/occupation_reserve_review.md"
+      ]
+    },
+    {
+      "object_id": "M-6526b5b5fc274da290e143809932e604",
+      "version": 1,
+      "title": "允许分数占用时CURRENT-GAP即使I正也会失败",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "单客户形式概率模型，b=0、会员二值而后继占用允许分数，不声称可由单位后继或完整SPE实现。",
+      "statement": "取(a,k)=(0,0)概率9/10、(1,1/4)概率1/10，d=1+a+k。精确I=1/80、G=17/180、D=2/25、V+=1/90、n qᵀKp=17/720，I−G+D=−7/3600<0；所以分数域的I≥G−D及G+V+≤D+n qᵀKp均失败，尽管I本身为正。",
+      "quantifiers": "存在所示固定有理分布；反分数占用上的缺口支付全称式。",
+      "assumptions": [
+        "无整数真实后继主张；平方项可为负"
+      ],
+      "scope": "CURRENT-GAP的独立整数性边界。",
+      "objections": "与前一I负分布不是同一被否命题，不用两例否定原整数定理。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/整数后继占用储备的全菜单自税分解--引理.md",
+        "sha256": "bc835b29bad4199d45b74985e61bdfe06339cce5c7ae2dc1d05d275dfa5de5fb",
+        "section": "4. 整数边界不是所有分数质量的结论"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/整数占用储备独审的标量回归合同与完整报告--程序.md",
+          "sha256": "088dc1b414a56b777d435ffb3ce1fa61e2caa518632a3d31989536b2d1585039"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/parent/occupation_reserve_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/parent/occupation_reserve_review.md"
+      ]
+    },
+    {
+      "object_id": "M-3904ca6262394f3fa8854653620204dd",
+      "version": 1,
+      "title": "八人完整SPE反无条件经验后继定量方向导数界",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空带标签共同目录、单位提供者按固定顺序观察全部有序历史各选一次；终局客户在覆盖者间均分。完整纯SPE须在全部有序在轨及离轨历史满足真实偏离IC，偏离后沿同一原策略继续；允许空主题、重复行动、同覆盖异标签、零客户和历史依赖平局。",
+      "statement": "同一八人八主题32单位客户完整DAG策略，根u=13/4，取p在主题2,3,6,7各1/4。完整额外query二次值G=733/240<u，q=Pp，方向d(p)=(q−p)ᵀ(K+Kᵀ)p=−1/4，而2(G−u)/7=−47/840，差d−2(G−u)/7=−163/840<0。故普遍无条件QD定量下界失败。该点另有qᵀKp=286/105、V+=92/5、I=2/3、I−G+D=69/80，保持整数储备成立。",
+      "quantifiers": "存在这份完整SPE与固定有理p，反对所有p要求的定量式。",
+      "assumptions": [
+        "K含当前强制槽的完整8槽额外查询，P只取7个真实后继",
+        "原DAG全部历史IC由成熟独立证据承担，本轮未重跑"
+      ],
+      "scope": "经验占用方向的定量加强反例。",
+      "objections": "G<u，所以此点单独不能反条件WD“G>u⇒d>0”；WD由另一银行论证处理。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/整数后继占用储备的全菜单自税分解--引理.md",
+        "sha256": "bc835b29bad4199d45b74985e61bdfe06339cce5c7ae2dc1d05d275dfa5de5fb",
+        "section": "5. 经验后继方向只得到一侧预算"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/八人平稳来源作者原审计的目标自洽与十八字段合同--程序.md",
+          "sha256": "6d538b391c534801c31e28e8bf0a550420a4509d1f001a1234488f72ae4e61a9"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/平稳后继来源作者探针与既有独审的原始合同--程序.md",
+          "sha256": "8fc92f72fd46b2d5df93cdfe428e39b74c71dbcce0b4beeaec4aeaf715ae5b0a"
+        },
+        {
+          "path": "archives/customer-attraction/state/反例/真实后继占用平稳分布的付款失效与放大余项--反例.md",
+          "sha256": "62da891e1e92c00aefbc3e01f9286689ec15c7125ff735830ae2a2fb6fdb547f"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/stationary-author-audit-and-route-status-five-primary/related-original/research/workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/counterexample/pure_menu_two_block_dag.json",
+          "sha256": "6190bc98dedda4fb22a1af6339702c03a6cb3b04cd8dfe6b18a577782e5d2f95"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/parent/occupation_reserve_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/parent/occupation_reserve_review.md"
+      ]
+    },
+    {
+      "object_id": "M-60f9f799fe4f4a19b0ff5e08ea2ab2cc",
+      "version": 1,
+      "title": "银行完整SPE及二次最大点反条件经验占用上升方向WD",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空带标签共同目录、单位提供者按固定顺序观察全部有序历史各选一次；终局客户在覆盖者间均分。完整纯SPE须在全部有序在轨及离轨历史满足真实偏离IC，偏离后沿同一原策略继续；允许空主题、重复行动、同覆盖异标签、零客户和历史依赖平局。",
+      "statement": "取四人银行完整SPE：四经济singleton与三个二客户银行块、全12个Cartesian主题，共10单位客户，根u=4/3。在九个非零经济×银行主题上均匀的p0有G(p0)=p0ᵀKp0=59/36>u。紧概率单纯形上G有全局最大点p*，故G(p*)≥59/36>u；q*=Pp*仍为合法概率，沿q*−p*的可行单侧方向导数d(p*)=(q*−p*)ᵀ(K+Kᵀ)p*≤0。因此普遍蕴含G>u⇒d>0为假。",
+      "quantifiers": "存在该完整单位游戏、完整SPE及至少一个G最大分布p*；紧性证明存在，不要求给出其坐标。",
+      "assumptions": [
+        "P由同一真实完整根列的三个后继占用定义",
+        "p0只给G最大值的严格下界，不冒称p0是G的全局最大点"
+      ],
+      "scope": "真实游戏内排除全p弱导数付款方向的解析反证。",
+      "objections": "不否定整数OCC或CURRENT-GAP，也不从局部根失败推出全路径FTA或half失败；源旧OPEN已由本证明更新。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/整数后继占用储备的全菜单自税分解--引理.md",
+        "sha256": "bc835b29bad4199d45b74985e61bdfe06339cce5c7ae2dc1d05d275dfa5de5fb",
+        "section": "6. 当前状态校正：全p弱导数蕴含也已被银行反驳"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/反例/银行完整根列的两查询最小分离--反例.md",
+          "sha256": "de029690ad3bc92a323a87536cbcdae41cae202ffaa8088a6a57fa6db652c04b"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/parent/occupation_reserve_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/parent/occupation_reserve_review.md"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/log-background-price-and-static-minimax-entry-boundary",
+      "version": 1,
+      "title": "连续log背景的KKT价格账与两种质量的静态覆盖界",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限不同单位客户与有限非空带标签共同主题目录；静态查询和竞争槽只按覆盖负载计均分收益，允许重复主题、空主题及同覆盖异标签。不预设动态策略或SPE。",
+      "statement": "对整数m≥1，以非负主题质量q、Σq=m最大化L(q)=Σ_x log(1+c_x(q))。任一最大者q*有g(T)=Σ_T1/(1+c_x)≤λ=max_Tg(T)，正支持取等，mλ=Σ_xc_x/(1+c_x)，从而OPT_m≤2mλ。另一原源取m≥2、背景质量m−1，以概率p最大化Σlog(1+(m−1)a_x(p))，同一KKT论证给(m−1)M=Σc/(1+c)及OPT_m≤(2m−1)M；m=1直接M=OPT₁。",
+      "quantifiers": "每个有限共同目录及所列正整数m、每个对应log最大背景；比较最优元组可含重复。",
+      "assumptions": [
+        "背景质量是连续形式量，不是完整SPE的真实后继人数",
+        "紧单纯形保证最大者；不要求有理、唯一或每客户负载正"
+      ],
+      "scope": "两个明确质量规格下的同一静态价格账；零客户时所有量为0。",
+      "objections": "Jensen仅给自由连续minmax τ≤v_(m+1)和τ≤λ（质量m），不能推出λ≤v；log背景不自动是minmax鞍点。也不据此断言该数值比较普遍为假，更没有实际u_i≥λ或总福利付款。",
+      "body": {
+        "path": "archives/customer-attraction/state/资源/连续对数势价格与安全值极小极大的入口界限--资源.md",
+        "sha256": "d876fe01264d059111a319dbcb6f7fc46775ffeb2d741badd89bfa156dffaf93",
+        "section": "对数背景KKT给精确价格账"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/平稳来源审计的分层证据与静态路线撤回--资源.md",
+          "sha256": "2ebfd31e61d2f71977ec056c1fc559de471faa2b3620fb02c34ed7e1eb286d7a",
+          "section": "3. 对数优化中成立的静态界与已撤回的一步"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/potential/README.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/potential/README.md"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/fifty-three-unit-static-security-exact-rational-saddle",
+      "version": 1,
+      "title": "五十三单位七标签目录的完整静态四人安全值精确鞍点",
+      "kind": "finite-optimum",
+      "truth_status": "proved",
+      "model": "有限不同单位客户与有限非空带标签共同主题目录；静态查询和竞争槽只按覆盖负载计均分收益，允许重复主题、空主题及同覆盖异标签。不预设动态策略或SPE。",
+      "statement": "对正文53单位七标签输入，v₄是一个隐藏query对三个非适应整数竞争槽的maxmin，恰为28481/2924。query最优p=(570,570,1197,570,570,1197,1174)/5848；对手Q在012,016,026,126,346,356,456上分别取(370,3941,1481,1481,4089,1629,1629)/14620。全部84竞争多重集下p收益≥该值，全部七纯query在Q下收益等于该值。紧竞争列共八个，额外包含不在Q支持中的345。",
+      "quantifiers": "固定此53单位目录；query遍历七标签概率单纯形，竞争遍历所有7³有序三槽词或其84负载多重集。",
+      "assumptions": [
+        "竞争允许重复且不观察query随机实现；4包含query本人",
+        "同目录输入由完整14兴趣桶给定；84列和七行精确有理证书均在body/证据"
+      ],
+      "scope": "完整有限静态最优值及一对原始/对偶最优分布。",
+      "objections": "不声称最优分布唯一、不把整数竞争扩成分数背景；与同输入R22动态完整SPE反例及其构造是不同命题，静态负载合并不授权合并动态有序历史。",
+      "body": {
+        "path": "archives/customer-attraction/state/计算/五十三单位静态安全值的有理鞍点--计算.md",
+        "sha256": "0264280f0307cf41dfc6930e13235ff18b3a66819cf80d8a25713d416ef6c59e"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/正深度静态安全地板反例的单位数据与审查出处--资源.md",
+          "sha256": "c8229013942cb470f677e150e1d5d2e052be45eef8a24f0ebf1ff28177075bf2"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/不交保留字面策略的原始单位审计与十四处平局恢复--程序.md",
+          "sha256": "dc04adf99b9ebcdd577aca8bc5e7f91bf044aa5f0ab89a0bd1500989fa2da0b9"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/endogenous-padding-and-security-primary/static-security-exact.json",
+          "sha256": "e0f8f4210d8d1751ddfebb9a33037bd6cb51cb70635a25cc3b81cf10554588d9"
+        },
+        {
+          "path": "archives/customer-attraction/state/构造/五十三单位四人完整策略与内生水位基准--构造.md",
+          "sha256": "7bc96b556fef1c8cae96c768ff79087682593044092ae73f1c4c86f1c574f0a9"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/tail/endogenous_53_security.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/tail/endogenous_53_instance.json"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/middle-incidence-stationary-payment-obstruction",
+      "version": 1,
+      "title": "中间极大关联的整数路由平稳逐客户付款模板严格失败",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "四个极大主题标签的形式整数后继路由模板；客户会员I={1,2}、背景整数b≥0；没有共同输入及完整SPE可实现性假设。",
+      "statement": "每个r≥3，令n=r−1，M=[[0,n−1,1,0],[n−1,0,0,1],[1,0,0,n−1],[0,1,n−1,0]]。R=M/n双随机且不可约，唯一平稳π均匀；后继客户负载K=(n−1,n−1,1,1)。根减后继平均的客户系数δ_i=(n1_(i∈I)−K_i)/(n(b+1_(i∈I)+K_i))满足π·δ=−(n−1)/(2n(b+n)(b+1))<0；r=3,b=0时为−1/8。",
+      "quantifiers": "所有整数r≥3、b≥0的显式模板族；平稳概率唯一，故换平稳分布不能改其负号。",
+      "assumptions": [
+        "目的标签为矩阵行、强制根为列；每列恰n个整数后继、没有自路由",
+        "假设后继选择所路由的整个极大主题以得到该标量K"
+      ],
+      "scope": "反驳只靠局部人数、平稳流和每客户独立非负的直接证明模板。",
+      "objections": "不是完整SPE half或总福利反例；其他客户及跨根/早期IC可能补偿。不可约不要求非周期。",
+      "body": {
+        "path": "archives/customer-attraction/state/障碍/中间极大关联的平稳支付障碍--障碍.md",
+        "sha256": "cceb2a82baa1be8075cc8eeeb3f5ba1be0f0075d4f2b108fee10e084b08cc102"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/extreme_maximal_membership_floor.md#6-一般目录的精确停界",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/parent/stationary_middle_incidence_boundary.md"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/nonuniform-true-tail-stationary-customer-cut-identity",
+      "version": 1,
+      "title": "真实尾边任意驻留权的平稳切流与归属松弛精确分解",
+      "kind": "identity",
+      "truth_status": "proved",
+      "model": "固定有限共同目录、合法旧前缀及r≥2人的同一完整形式策略；所有根强制分支及真实后继确定。所述代数身份不需要该策略满足SPE，若用于SPE则另取真实IC。",
+      "statement": "列出极大主题A_i，强制A_i后真实后继B_iℓ及利润d_i,v_iℓ；合法路由B_iℓ⊆A_j(i,ℓ)。任取每根q_iℓ≥0、Σℓq_iℓ=1，R_ji=Σ_(ℓ:j(i,ℓ)=j)q_iℓ，任取π=Rπ，f_iℓ=π_iq_iℓ。对客户设I_i=1_(x∈A_i),H_iℓ=1_(x∈B_iℓ),K_i=ΣℓH_iℓ，w_i=1/(b+I_i+K_i)。则Σ_iπ_i(d_i−Σℓq_iℓv_iℓ)=Σ_x(C_x+O_x)，C_x=Σ_iℓf_iℓ(I_i−I_j)w_i，O_x=Σ_iℓf_iℓ(I_j−H_iℓ)w_i≥0；平稳给内外切流相等，C_x=F_cut(E_out w_source−E_in w_source)，零切流时C_x=0。",
+      "quantifiers": "每个所列固定完整分支计划、所有合法路由/驻留权及其任意平稳概率。",
+      "assumptions": [
+        "w_i零分母处任选有限非负值；该处原收益贡献0且C/O相消",
+        "极大主题存在于有限非空目录；不要求无自路由、不可约或非周期"
+      ],
+      "scope": "任意非均匀真实尾抽样下的精确切流恒等式；所有分支共享原策略及原输入。",
+      "objections": "O非负不迫C非负；不能把平稳流的守恒当作倒数分母已相抵，更不自动支付一般根—尾差。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/真实尾边任意驻留权的客户切流恒等式--引理.md",
+        "sha256": "efc627c8ff6f4a5b594f4046a0138e3b4b298c9b4deb7e68afb0a6b9fefae34e",
+        "section": "逐客户分解与零分母"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/relay/stationary/nonuniform_edge_interface.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/relay/stationary/nonuniform_edge_interface.md"
+      ]
+    },
+    {
+      "object_id": "M-9757e3eefa3b417ba1f871da0f316a7f",
+      "version": 1,
+      "title": "旧36客户完整SPE使所有尾权与所有平稳分布的根—尾目标恒负",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空带标签共同目录、单位提供者按固定顺序观察全部有序历史各选一次；终局客户在覆盖者间均分。完整纯SPE须在全部有序在轨及离轨历史满足真实偏离IC，偏离后沿同一原策略继续；允许空主题、重复行动、同覆盖异标签、零客户和历史依赖平局。",
+      "statement": "取三人六标签X0..X2,Y0..Y2目录：九个XY对各1客户、九个2X2Y型各3客户，共36。完整43有序节点规则为root X0，第二人选另一组最小标签，末位选第二人同组最小未用标签。这是完整纯SPE；每个强制根分支利润都是(10,12,12)，实际W34、OPT₃36、v₃10。所有标签极大且互不包含，路由归属无松弛；任意根尾驻留权q、任意对应平稳π，Σ_iπ_i(d_i−Σℓq_iℓv_iℓ)=−2。因此“总能选权及平稳分布使一般根—尾差非负”被此同一原模型实例否定。",
+      "quantifiers": "存在此完整SPE，对其所有合法尾选择权与全部平稳概率全称失败。",
+      "assumptions": [
+        "保留原六标签、全部43有序节点的真实回复和平局",
+        "每个根的两个真实后继各利润12，根利润10"
+      ],
+      "scope": "同一36客户输入上的全权方法障碍；全称选权失败不同于旧聚合θ失败本身。",
+      "objections": "不否半覆盖、真实总安全值聚合或只含单例/缺一/全关联的结构定理；未另造第二个36客户输入身份。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/真实尾边任意驻留权的客户切流恒等式--引理.md",
+        "sha256": "efc627c8ff6f4a5b594f4046a0138e3b4b298c9b4deb7e68afb0a6b9fefae34e",
+        "section": "旧36客户完整SPE反驳一般根—尾目标"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/反例/三人聚合末位保底--反例.md",
+          "sha256": "f2ff6b486d46f5e05d9acb2497ec1114ac8ab4698460fb46656d320e640fe4c0"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/relay/stationary/nonuniform_edge_interface.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/relay/stationary/nonuniform_edge_interface.md"
+      ]
+    },
+    {
+      "object_id": "B21-ARBITRARY-OWNER-REPEAT-v1",
+      "version": 1,
+      "title": "任意固定客户归属的强制比较前缀调和误差界",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限不同单位客户与有限非空带标签共同主题目录；静态查询和竞争槽只按覆盖负载计均分收益，允许重复主题、空主题及同覆盖异标签。不预设动态策略或SPE。",
+      "statement": "固定m≥1的合法比较元组T、O=⋃T_i及每个x∈O的一个固定覆盖槽o(x)。F_Q(B)=|O|+Σ_(x∉O)H_c−Σ_(x∈O,x∉B_o)1/(1+c)，e_i=u_i−(F_Q(B)−F_Q(B^(−i)))。覆盖客户的误差在owner或O外为0，非owner则为1/(1+k_x)，k_x数非owner覆盖槽。任取Y_i其前i槽恰为T_1..T_i、尾随i任变，若a_x为比较覆盖次数，则Σ_(i:x∈T_i)e_i(Y_i;x)≤H_(a_x)−1。owner不必是首次覆盖槽。",
+      "quantifiers": "任意有限目录、每个m≥1、每个合法比较元组及任意一次固定owner，所有满足比较前缀条件的叶族。",
+      "assumptions": [
+        "同一个owner贯穿全部叶；T不必最优",
+        "槽删除是辅助空占位，不要求空主题在目录中；叶也可来自真实完成但不需要SPE"
+      ],
+      "scope": "旧UNIT插入误差的一般量词加强；沿用源明确Claim B21-ARBITRARY-OWNER-REPEAT-v1。",
+      "objections": "不能逐叶重选owner、替换成任意实际前缀或在负号处将误差上界当成已支付信用；跨叶重置债务未被解决。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/任意固定归属的比较前缀调和误差--引理.md",
+        "sha256": "25fffa8f9c52de806dd0a1d806e6f5907567c8ba925d2d8921081d317864526e",
+        "section": "比较前缀，而非任意实际前缀"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/最优补全账本与局部安全付款的命题分层--资源.md",
+          "sha256": "32581aa5b7987011aed2ecc3b426d1cfc45f1d782ecc1bb946ca12000a6d1bec"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/R2f6五分支入口的证明合同与历史审查范围--资源.md",
+          "sha256": "98c289fa59add960145e0336fef2a100bc7d44bab62b1e60b3f7d36b01b33031"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/安全平台与归属推论原稿的审查和实现边界--资源.md",
+          "sha256": "1a1e2027f0bbbd181b81170f7d0345e297714bc2cbd421c117eb923360f8905e"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/CLAIMS.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/branch_budget/review_arbitrary_owner_harmonic_path.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/random_portfolio/arbitrary_owner_prefix_budget.md"
+      ]
+    },
+    {
+      "object_id": "M-52269de7c7654e718899924ce225b2de",
+      "version": 1,
+      "title": "固定独立端点的随机归属平均势与直接边际误差界",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限不同单位客户与有限非空带标签共同主题目录；静态查询和竞争槽只按覆盖负载计均分收益，允许重复主题、空主题及同覆盖异标签。不预设动态策略或SPE。",
+      "statement": "均匀排列带索引比较元组T，再对每客户在其覆盖索引中均匀选owner。对独立于这两个随机源的固定B，E F_Q(B)=Fbar(B)=Σ_(x∈O)(m+1)c_x/[m(c_x+1)]+Σ_(x∉O)H_(c_x)，EΣ_ie_i(B)=Σ_(x∈O,c_x>0)(mc_x−1)/[m(c_x+1)]。直接使用Fbar的O内覆盖槽边际误差为(mc−1)/[mc(c+1)]；m≥2沿比较前缀的客户总误差≤H_a−(m+1)a/[m(a+1)]=H_a−1+(m−a)/[m(a+1)]，m=1直接为0。",
+      "quantifiers": "任意固定比较元组、所列随机排列/归属、所有独立固定端点B；另一个直接误差式对所有比较前缀叶族。",
+      "assumptions": [
+        "T槽带索引，重复覆盖仍保槽重数；a为客户在比较元组的覆盖次数",
+        "固定端点的独立性仅用于期望公式；直接Fbar差分不假借该独立性"
+      ],
+      "scope": "随机owner在固定端点的确切平均及对应较松确定误差，不与AH紧界合并。",
+      "objections": "真正Y_i可能依赖排列，不能对其套无条件固定端点均值；平均势并未免费继承H_a−1。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/任意固定归属的比较前缀调和误差--引理.md",
+        "sha256": "25fffa8f9c52de806dd0a1d806e6f5907567c8ba925d2d8921081d317864526e",
+        "section": "固定端点的平均势及较松直接误差"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/最优补全账本与局部安全付款的命题分层--资源.md",
+          "sha256": "32581aa5b7987011aed2ecc3b426d1cfc45f1d782ecc1bb946ca12000a6d1bec"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/R2f6五分支入口的证明合同与历史审查范围--资源.md",
+          "sha256": "98c289fa59add960145e0336fef2a100bc7d44bab62b1e60b3f7d36b01b33031"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/安全平台与归属推论原稿的审查和实现边界--资源.md",
+          "sha256": "1a1e2027f0bbbd181b81170f7d0345e297714bc2cbd421c117eb923360f8905e"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/CLAIMS.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/branch_budget/review_arbitrary_owner_harmonic_path.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/random_portfolio/arbitrary_owner_prefix_budget.md"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/static-slot-deletion-and-security-aggregate-boundary-resource",
+      "version": 1,
+      "title": "固定整数背景的静态安全值人数单调与均匀删槽精确式",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限不同单位客户与有限非空带标签共同主题目录；静态查询和竞争槽只按覆盖负载计均分收益，允许重复主题、空主题及同覆盖异标签。不预设动态策略或SPE。",
+      "statement": "固定非负整数背景b，v_r(b)=max_p min_(B∈S^(r−1)) E_(T∼p)Σ_T1/(b+1+c(B))。每个r≥2有(r−1)v_(r−1)(b)≤r v_r(b)。证明从有限minimax最优竞争分布均匀删一带索引槽：客户原覆盖c>0、d=b+1+c时删后期望1/d+c/[(r−1)d(d−1)]≤r/[(r−1)d]，c=0时不变。零背景任意s≥1个固定竞争槽还满足s E f_(B−J)(T)=(s+1)f_B(T)−|T∖⋃B|。",
+      "quantifiers": "所有有限共同目录、固定非负整数b、整数r≥2；精确零背景式对全部固定竞争元组与query。",
+      "assumptions": [
+        "竞争可联合相关但不观察query随机实现；uniform删除带索引槽，重复主题不得去重",
+        "零覆盖单独处理，无零分母；背景b不随删槽改变"
+      ],
+      "scope": "静态原始/对偶工具；只登记人数单调和精确删除，不重复既有fractional-cover下界与全目录极限主owner。",
+      "objections": "不是删真实SPE玩家后重新求均衡，不支付逐人或跨位置安全值；背景利润不冒充覆盖。",
+      "body": {
+        "path": "archives/customer-attraction/state/资源/静态随机删槽工具与安全聚合的旧边界--资源.md",
+        "sha256": "ef67683018aec28aa1732148c63fe6cee6cc3585898b9bea7e8fe39f0d88aabd",
+        "section": "静态值、槽重数与完整证明"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/静态人数预算与固定终局付款反例的来源范围--资源.md",
+          "sha256": "aeab3c51c6a699364fc5794d2fe1eaeba733fac8d5c1040f19f3313302aa9a19"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-29b83efed6b045678e3b7ee11dffb7b3/general_proof/potential_attack/README.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-29b83efed6b045678e3b7ee11dffb7b3/general_proof/potential_attack/README.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-29b83efed6b045678e3b7ee11dffb7b3/security_bridge/README.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-29b83efed6b045678e3b7ee11dffb7b3/security_bridge/README.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-29b83efed6b045678e3b7ee11dffb7b3/general_proof/README.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-29b83efed6b045678e3b7ee11dffb7b3/general_proof/README.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/round4_security/security_population_limit.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/round4_security/security_population_limit.md"
+      ]
+    },
+    {
+      "object_id": "B21-STATE-FLOOR-RELAXATION-NO-v1",
+      "version": 1,
+      "title": "十环全历史状态floor加根IC不足以推出额外槽首位保底",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "十单位客户、十个模10连续三窗口共同主题、三玩家；完整111节点形式策略满足根IC与全部非根状态floor，明确不是SPE。",
+      "statement": "A_i={e_(i−1),e_i,e_(i+1)}；根强制A_i后的指定叶为(A_i,A_(i−1),A_(i+2))，收益(3/2,2,5/2)。均匀query和三个不交窗口的随机旋转对偶给v₄(0)=33/20；指定第二/末位状态分别有v₃≤2、v₂≤5/2。其他末位历史取真BR，可补全所有非根floor及根IC。但每个指定末位改A_(i+4)得3，盈利1/2；故完整形式floor接口不能推出根3/2≥v₄，缺口为3/20。",
+      "quantifiers": "存在给定完整形式策略，满足全部非根有序历史的额外槽floor及根全部行动IC，却违反根额外槽保底。",
+      "assumptions": [
+        "状态v_s含一个query及s−1个隐藏非适应静态竞争槽；背景floor只给上界，无精确值主张",
+        "全部111节点的补全规则明确，指定末位保留原非最优动作"
+      ],
+      "scope": "沿用源精确Claim B21-STATE-FLOOR-RELAXATION-NO-v1；完整静态双向证书和补全证明在0061相关正式页。",
+      "objections": "不能把完整形式策略称为完整SPE，也不反真正extra-one或half；未来0061复用这一身份而不另造反例。",
+      "body": {
+        "path": "archives/customer-attraction/state/资源/安全平台与归属推论原稿的审查和实现边界--资源.md",
+        "sha256": "1a1e2027f0bbbd181b81170f7d0345e297714bc2cbd421c117eb923360f8905e",
+        "section": "十环floor：可补全形式策略，仍明确非SPE"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/最优补全账本与局部安全付款的命题分层--资源.md",
+          "sha256": "32581aa5b7987011aed2ecc3b426d1cfc45f1d782ecc1bb946ca12000a6d1bec"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/逐前缀额外槽保底的十环独审与全历史边界--资源.md",
+          "sha256": "336d6de526011727e82fb31f593f31faed56136099f5999cf26cbd980d684694"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/branch_budget/review_arbitrary_owner_harmonic_path.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/potential/review_background_security_plateau.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/random_portfolio/arbitrary_owner_prefix_budget.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/relay/state_dependent_floor_interface_counterexample.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/security/flat_security_increment_counterexample.md",
+        "clean:27f7db956b60296d4fed:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/random_portfolio/arbitrary_owner_budget_audit.json",
+        "clean:e87d3323feac224b9907:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/random_portfolio/audit_arbitrary_owner_budget.py"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/safety-plateau-owner-originals-review-and-implementation-boundary",
+      "version": 1,
+      "title": "固定前缀末位替换的根利润与独立查询有符号退款恒等式",
+      "kind": "identity",
+      "truth_status": "proved",
+      "model": "任意有限共同目录的固定前缀负载q包含一个标记根主题A，随后仅替换一个末位主题B为B′；静态代数身份，不预设SPE。",
+      "statement": "令h_x=1_(x∈B′)−1_(x∈B)，独立query客户覆盖概率p_x。精确Δu_last=Σ_xh_x/(q_x+1)，Δu_root=−Σ_x1_A(x)h_x/[q_x(q_x+1)]，ΔG=−Σ_xp_xh_x/[(q_x+1)(q_x+2)]；因此Δ(G−u_root)=Σ_x[h_x/(q_x+1)]·[1_A(x)/q_x−p_x/(q_x+2)]。十环指定末位修成A_(i+4)的具体点，根3/2→2、G39/20→37/20，债9/20→−3/20，下降3/5。",
+      "quantifiers": "每个固定前缀、所列单末位替换及所有独立query分布；具体十环变化只是该点代入。",
+      "assumptions": [
+        "根不覆盖处1_A/q按0解释，覆盖处q≥1",
+        "G是同一query混合对完整前缀加末槽的额外查询值，p在替换前后固定"
+      ],
+      "scope": "逐客户保符号的真实末位替换身份；该通用式与十环floor反例分成两个对象。",
+      "objections": "改进末位只约束第一总和，不能迫混合符号的退款总和非负，单个十环repair不证明一般退款预算。",
+      "body": {
+        "path": "archives/customer-attraction/state/资源/安全平台与归属推论原稿的审查和实现边界--资源.md",
+        "sha256": "1a1e2027f0bbbd181b81170f7d0345e297714bc2cbd421c117eb923360f8905e",
+        "section": "十环floor：可补全形式策略，仍明确非SPE"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/最优补全账本与局部安全付款的命题分层--资源.md",
+          "sha256": "32581aa5b7987011aed2ecc3b426d1cfc45f1d782ecc1bb946ca12000a6d1bec"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/逐前缀额外槽保底的十环独审与全历史边界--资源.md",
+          "sha256": "336d6de526011727e82fb31f593f31faed56136099f5999cf26cbd980d684694"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/branch_budget/review_arbitrary_owner_harmonic_path.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/potential/review_background_security_plateau.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/random_portfolio/arbitrary_owner_prefix_budget.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/relay/state_dependent_floor_interface_counterexample.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/security/flat_security_increment_counterexample.md",
+        "clean:27f7db956b60296d4fed:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/random_portfolio/arbitrary_owner_budget_audit.json",
+        "clean:e87d3323feac224b9907:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/random_portfolio/audit_arbitrary_owner_budget.py"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/customer-attraction/state/计算/全比较覆盖初始化的固定SAFE归属分离与六策略报告--计算.md",
+      "sha256": "a8056e626e8393fc2007d7251b7d6b5b699ca49f7f0cc12f996c9fcb81485798",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/full-comparison-coverage-fixed-SAFE-ownership-separation-and-six-policy-report"
+      ],
+      "reason": "本页精确独立数学已登记，body及完整证明/必要证据按精确SHA定位。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/一般半覆盖的末位菜单与独立重构停点账本--资源.md",
+      "sha256": "4011554388263c95a98305c25669c6115dd35ca8965a78345492c5a76a1867fb",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "customer-attraction/full-comparison-coverage-fixed-SAFE-ownership-separation-and-six-policy-report"
+      ],
+      "reason": "已读懂数学；未决仅为同义主owner的精确证据接收/版本修正。本批已接收的局部证据owner列在object_ids；receipt给各实质块、稳定候选身份、正文和接收动作，不因已有标题就声称完成。"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/PB大背景的最后单例偏离--障碍.md",
+      "sha256": "2360e144e4ea174ec3b59ec87363a00ee0e39c9ade3c844fcc2435d687a2e7c7",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/pb-background-on-path-prefix-obstruction"
+      ],
+      "reason": "本页精确独立数学已登记，body及完整证明/必要证据按精确SHA定位。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/单实块惩罚合同的空根预算界--引理.md",
+      "sha256": "2952334c73060b89cce7a5276eee0a900016468918ad17e1c238b7a1c7c70934",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/one-real-block-punishment-contract-empty-root-budget"
+      ],
+      "reason": "本页精确独立数学已登记，body及完整证明/必要证据按精确SHA定位。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/字面删背景的复制惩罚预算与低头高尾草图--资源.md",
+      "sha256": "71a03658e987f3843ec724d48d0f4aa4d7a495ef8de765e241f5031cb26c2272",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "已读懂数学；未决仅为同义主owner的精确证据接收/版本修正。receipt给各实质块、稳定候选身份、正文和接收动作，不因已有标题就声称完成。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/遗漏净缺口与客户密度付款的直接接续--资源.md",
+      "sha256": "e92da6b28fb1850e19be9687b7642e1a25c9f1e5068a9603462ed4f3f44ba582",
+      "disposition": "objects",
+      "object_ids": [
+        "M-85e3959fb61345109fbfd30f4e98901e"
+      ],
+      "reason": "本页精确独立数学已登记，body及完整证明/必要证据按精确SHA定位。另有同页已知主身份的证据路由待lead增量接收，详receipt.pending_owner_routes；不将该部分冒称已闭合。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/背景储备候选的后续反驳与退款归纳边界--资源.md",
+      "sha256": "d6b23672157a98dd19412027c7da7ce2b4ca58c27e2e199dd0cb0f6ee5677640",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "已读懂数学；未决仅为同义主owner的精确证据接收/版本修正。receipt给各实质块、稳定候选身份、正文和接收动作，不因已有标题就声称完成。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/合法前缀共同背景的锚定计数与同叶祖先储备--引理.md",
+      "sha256": "00a50452e1f94c4c5b8606e59a2786d8054b4accd43756163e92db8f2b3c71c2",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/legal-prefix-independent-background-anchored-counting-and-same-leaf-ancestor-reserve",
+        "M-9810d7282a7f4250b1849b5c8a8f5947",
+        "M-9e3ed0d171dd4e2b8622d4db7838defb",
+        "customer-attraction/sunk-empty-root-actual-deletion-mixture-anchored-cap-failure"
+      ],
+      "reason": "本页精确独立数学已登记，body及完整证明/必要证据按精确SHA定位。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/实际删除锚定预算的双原程序与完整有限记录--程序.md",
+      "sha256": "744b585d1659b974d69903bd5f564ba077085a9cf84060627da9d7c4d41073c7",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/legal-prefix-independent-background-anchored-counting-and-same-leaf-ancestor-reserve",
+        "M-9810d7282a7f4250b1849b5c8a8f5947",
+        "M-9e3ed0d171dd4e2b8622d4db7838defb",
+        "customer-attraction/sunk-empty-root-actual-deletion-mixture-anchored-cap-failure"
+      ],
+      "reason": "原输入/完整策略/独审或程序合同确已被所列数学owner的evidence引用；有限日志不另造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/可信删除分支入口的真预算与受限支持边界--资源.md",
+      "sha256": "8cd2826a0054f9c5ca918359c2f38a664eeaea583f7bc445f128ccbd7ce56b81",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/legal-prefix-independent-background-anchored-counting-and-same-leaf-ancestor-reserve",
+        "M-9810d7282a7f4250b1849b5c8a8f5947",
+        "M-9e3ed0d171dd4e2b8622d4db7838defb",
+        "customer-attraction/sunk-empty-root-actual-deletion-mixture-anchored-cap-failure"
+      ],
+      "reason": "原输入/完整策略/独审或程序合同确已被所列数学owner的evidence引用；有限日志不另造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/空根后实际删除混合的锚定预算严格失败--障碍.md",
+      "sha256": "52a5f146c3d6a2f7df2413ba31e482459cbeec0c7fbdfa753abde09befa2f378",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/sunk-empty-root-actual-deletion-mixture-anchored-cap-failure",
+        "M-9810d7282a7f4250b1849b5c8a8f5947",
+        "M-9e3ed0d171dd4e2b8622d4db7838defb"
+      ],
+      "reason": "本页精确独立数学已登记，body及完整证明/必要证据按精确SHA定位。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/完整终局推送的自身折扣与末两位储备--资源.md",
+      "sha256": "b35f22d2e7a802f8b4aa87f503bfe2690273a37bc414932d428d3ad728954bfa",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/complete-terminal-push-own-discount-and-paid-tail-reserve"
+      ],
+      "reason": "本页精确独立数学已登记，body及完整证明/必要证据按精确SHA定位。另有同页已知主身份的证据路由待lead增量接收，详receipt.pending_owner_routes；不将该部分冒称已闭合。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/固定三人完整推送的两分布浮点探针--程序.md",
+      "sha256": "8392d95c0154efc0b8256f495d3364838642a8e6e0014e1d8373ea6b61e54c6d",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/complete-terminal-push-own-discount-and-paid-tail-reserve"
+      ],
+      "reason": "原输入/完整策略/独审或程序合同确已被所列数学owner的evidence引用；有限日志不另造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/任意深度子博弈的删除缺陷与单叶付款障碍--障碍.md",
+      "sha256": "27626aa36c5dd1bf89da12167c98f8569546fd12a5e0c572e3438084da8ca56b",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/unbounded-depth-deletion-defect-one-leaf-payment-obstruction"
+      ],
+      "reason": "本页精确独立数学已登记，body及完整证明/必要证据按精确SHA定位。"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/背景删除节点后悔的定义级精确审计--计算.md",
+      "sha256": "87bad85366c7d5ffbc44811aa1446fdb105efb4f73f78f0d9c9c0b2b43875bee",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "已读懂数学；未决仅为同义主owner的精确证据接收/版本修正。receipt给各实质块、稳定候选身份、正文和接收动作，不因已有标题就声称完成。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/完整终局税候选的策略锥浮点反例搜索合同--资源.md",
+      "sha256": "ba8949000dc64f64db107631ccff1d67472d208277f9ce7246e1662c2bbc0ecd",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "已读懂数学；未决仅为同义主owner的精确证据接收/版本修正。receipt给各实质块、稳定候选身份、正文和接收动作，不因已有标题就声称完成。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/完整终局查询的信用恒等式与末两位付款--引理.md",
+      "sha256": "4f65f98fc0f48132fa7b1160e646f7439f2331f25d0b4b6d95b7471edd8ae407",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "customer-attraction/complete-terminal-push-own-discount-and-paid-tail-reserve",
+        "customer-attraction/four-player-exact-full-terminal-pair-crosscap-counterexample",
+        "customer-attraction/root-reset-pair-and-auxiliary-tail-covariance"
+      ],
+      "reason": "已读懂数学；未决仅为同义主owner的精确证据接收/版本修正。本批已接收的局部证据owner列在object_ids；receipt给各实质块、稳定候选身份、正文和接收动作，不因已有标题就声称完成。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/完整槽查询的删除恒等式与覆盖增量--引理.md",
+      "sha256": "ff33c39268e6aefece8b361d78f869137da2f4461ef59efb5d57a4c731514b42",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/full-slot-query-deletion-identity-and-coverage-increment"
+      ],
+      "reason": "本页精确独立数学已登记，body及完整证明/必要证据按精确SHA定位。另有同页已知主身份的证据路由待lead增量接收，详receipt.pending_owner_routes；不将该部分冒称已闭合。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/完整终局聚合三份有限诊断与两种交叉障碍--资源.md",
+      "sha256": "f2bbc5f8cbffd3d1b9a13170714513bfbee689b4a774530869a18d2d9d5f1b77",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/four-player-exact-full-terminal-pair-crosscap-counterexample"
+      ],
+      "reason": "本页精确独立数学已登记，body及完整证明/必要证据按精确SHA定位。另有同页已知主身份的证据路由待lead增量接收，详receipt.pending_owner_routes；不将该部分冒称已闭合。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/完整额外槽聚合原稿的税项修正与有限攻击--资源.md",
+      "sha256": "28b7fcd5abc593c948f99d169f6dc5534090cb84180b79b67630c779a2e76c1b",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "customer-attraction/root-reset-pair-and-auxiliary-tail-covariance"
+      ],
+      "reason": "已读懂数学；未决仅为同义主owner的精确证据接收/版本修正。本批已接收的局部证据owner列在object_ids；receipt给各实质块、稳定候选身份、正文和接收动作，不因已有标题就声称完成。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/根重置对恒等式与辅助尾份额协方差--引理.md",
+      "sha256": "fec4209b078d36ef1fd44a5b7fc5a7475292bad2be2125a71681b6bfdc4f6304",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/root-reset-pair-and-auxiliary-tail-covariance"
+      ],
+      "reason": "本页精确独立数学已登记，body及完整证明/必要证据按精确SHA定位。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/整数后继占用储备的全菜单自税分解--引理.md",
+      "sha256": "bc835b29bad4199d45b74985e61bdfe06339cce5c7ae2dc1d05d275dfa5de5fb",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/integer-successor-occupation-reserve-and-self-tax-decomposition",
+        "M-baa3cc8d26b049de921bbae4e67206a3",
+        "M-c32b5390049a4954adff14ca6dade564",
+        "M-6526b5b5fc274da290e143809932e604",
+        "M-3904ca6262394f3fa8854653620204dd",
+        "M-60f9f799fe4f4a19b0ff5e08ea2ab2cc"
+      ],
+      "reason": "本页精确独立数学已登记，body及完整证明/必要证据按精确SHA定位。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/整数占用储备独审的标量回归合同与完整报告--程序.md",
+      "sha256": "088dc1b414a56b777d435ffb3ce1fa61e2caa518632a3d31989536b2d1585039",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/integer-successor-occupation-reserve-and-self-tax-decomposition",
+        "M-baa3cc8d26b049de921bbae4e67206a3",
+        "M-c32b5390049a4954adff14ca6dade564",
+        "M-6526b5b5fc274da290e143809932e604"
+      ],
+      "reason": "原输入/完整策略/独审或程序合同确已被所列数学owner的evidence引用；有限日志不另造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/平稳来源审计的分层证据与静态路线撤回--资源.md",
+      "sha256": "2ebfd31e61d2f71977ec056c1fc559de471faa2b3620fb02c34ed7e1eb286d7a",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "customer-attraction/integer-successor-occupation-reserve-and-self-tax-decomposition",
+        "M-baa3cc8d26b049de921bbae4e67206a3",
+        "customer-attraction/log-background-price-and-static-minimax-entry-boundary"
+      ],
+      "reason": "已读懂数学；未决仅为同义主owner的精确证据接收/版本修正。本批已接收的局部证据owner列在object_ids；receipt给各实质块、稳定候选身份、正文和接收动作，不因已有标题就声称完成。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/八人平稳来源作者原审计的目标自洽与十八字段合同--程序.md",
+      "sha256": "6d538b391c534801c31e28e8bf0a550420a4509d1f001a1234488f72ae4e61a9",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "M-3904ca6262394f3fa8854653620204dd"
+      ],
+      "reason": "已读懂数学；未决仅为同义主owner的精确证据接收/版本修正。本批已接收的局部证据owner列在object_ids；receipt给各实质块、稳定候选身份、正文和接收动作，不因已有标题就声称完成。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/平稳后继来源作者探针与既有独审的原始合同--程序.md",
+      "sha256": "8fc92f72fd46b2d5df93cdfe428e39b74c71dbcce0b4beeaec4aeaf715ae5b0a",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "M-3904ca6262394f3fa8854653620204dd"
+      ],
+      "reason": "已读懂数学；未决仅为同义主owner的精确证据接收/版本修正。本批已接收的局部证据owner列在object_ids；receipt给各实质块、稳定候选身份、正文和接收动作，不因已有标题就声称完成。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/正深度静态安全地板反例的单位数据与审查出处--资源.md",
+      "sha256": "c8229013942cb470f677e150e1d5d2e052be45eef8a24f0ebf1ff28177075bf2",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "customer-attraction/fifty-three-unit-static-security-exact-rational-saddle"
+      ],
+      "reason": "已读懂数学；未决仅为同义主owner的精确证据接收/版本修正。本批已接收的局部证据owner列在object_ids；receipt给各实质块、稳定候选身份、正文和接收动作，不因已有标题就声称完成。"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/五十三单位静态安全值的有理鞍点--计算.md",
+      "sha256": "0264280f0307cf41dfc6930e13235ff18b3a66819cf80d8a25713d416ef6c59e",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/fifty-three-unit-static-security-exact-rational-saddle"
+      ],
+      "reason": "本页精确独立数学已登记，body及完整证明/必要证据按精确SHA定位。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/不交保留字面策略的原始单位审计与十四处平局恢复--程序.md",
+      "sha256": "dc04adf99b9ebcdd577aca8bc5e7f91bf044aa5f0ab89a0bd1500989fa2da0b9",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "customer-attraction/fifty-three-unit-static-security-exact-rational-saddle"
+      ],
+      "reason": "已读懂数学；未决仅为同义主owner的精确证据接收/版本修正。本批已接收的局部证据owner列在object_ids；receipt给各实质块、稳定候选身份、正文和接收动作，不因已有标题就声称完成。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/直接归属付款的同叶账与十九份深度报告--资源.md",
+      "sha256": "1db84828fb6d6e575ecc3a4733c5e5a80bfafb5375c2aca6f91f2a254c2c1fb2",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "已读懂数学；未决仅为同义主owner的精确证据接收/版本修正。receipt给各实质块、稳定候选身份、正文和接收动作，不因已有标题就声称完成。"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/中间极大关联的平稳支付障碍--障碍.md",
+      "sha256": "cceb2a82baa1be8075cc8eeeb3f5ba1be0f0075d4f2b108fee10e084b08cc102",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/middle-incidence-stationary-payment-obstruction"
+      ],
+      "reason": "本页精确独立数学已登记，body及完整证明/必要证据按精确SHA定位。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/真实尾边任意驻留权的客户切流恒等式--引理.md",
+      "sha256": "efc627c8ff6f4a5b594f4046a0138e3b4b298c9b4deb7e68afb0a6b9fefae34e",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/nonuniform-true-tail-stationary-customer-cut-identity",
+        "M-9757e3eefa3b417ba1f871da0f316a7f"
+      ],
+      "reason": "本页精确独立数学已登记，body及完整证明/必要证据按精确SHA定位。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/一般安全付款检查点与中继分支导航--资源.md",
+      "sha256": "4f7c985a12523e5098baf1db1036eb6197e60ee19c728cad37869079cb29fd8d",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "已读懂数学；未决仅为同义主owner的精确证据接收/版本修正。receipt给各实质块、稳定候选身份、正文和接收动作，不因已有标题就声称完成。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/最优补全账本与局部安全付款的命题分层--资源.md",
+      "sha256": "32581aa5b7987011aed2ecc3b426d1cfc45f1d782ecc1bb946ca12000a6d1bec",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "B21-ARBITRARY-OWNER-REPEAT-v1",
+        "M-52269de7c7654e718899924ce225b2de",
+        "B21-STATE-FLOOR-RELAXATION-NO-v1",
+        "customer-attraction/safety-plateau-owner-originals-review-and-implementation-boundary"
+      ],
+      "reason": "已读懂数学；未决仅为同义主owner的精确证据接收/版本修正。本批已接收的局部证据owner列在object_ids；receipt给各实质块、稳定候选身份、正文和接收动作，不因已有标题就声称完成。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/任意固定归属的比较前缀调和误差--引理.md",
+      "sha256": "25fffa8f9c52de806dd0a1d806e6f5907567c8ba925d2d8921081d317864526e",
+      "disposition": "objects",
+      "object_ids": [
+        "B21-ARBITRARY-OWNER-REPEAT-v1",
+        "M-52269de7c7654e718899924ce225b2de"
+      ],
+      "reason": "本页精确独立数学已登记，body及完整证明/必要证据按精确SHA定位。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/R2f6五分支入口的证明合同与历史审查范围--资源.md",
+      "sha256": "98c289fa59add960145e0336fef2a100bc7d44bab62b1e60b3f7d36b01b33031",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "B21-ARBITRARY-OWNER-REPEAT-v1",
+        "M-52269de7c7654e718899924ce225b2de"
+      ],
+      "reason": "已读懂数学；未决仅为同义主owner的精确证据接收/版本修正。本批已接收的局部证据owner列在object_ids；receipt给各实质块、稳定候选身份、正文和接收动作，不因已有标题就声称完成。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/安全平台与归属推论原稿的审查和实现边界--资源.md",
+      "sha256": "1a1e2027f0bbbd181b81170f7d0345e297714bc2cbd421c117eb923360f8905e",
+      "disposition": "objects",
+      "object_ids": [
+        "B21-STATE-FLOOR-RELAXATION-NO-v1",
+        "customer-attraction/safety-plateau-owner-originals-review-and-implementation-boundary",
+        "B21-ARBITRARY-OWNER-REPEAT-v1",
+        "M-52269de7c7654e718899924ce225b2de"
+      ],
+      "reason": "本页精确独立数学已登记，body及完整证明/必要证据按精确SHA定位。另有同页已知主身份的证据路由待lead增量接收，详receipt.pending_owner_routes；不将该部分冒称已闭合。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/连续对数势价格与安全值极小极大的入口界限--资源.md",
+      "sha256": "d876fe01264d059111a319dbcb6f7fc46775ffeb2d741badd89bfa156dffaf93",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/log-background-price-and-static-minimax-entry-boundary"
+      ],
+      "reason": "本页精确独立数学已登记，body及完整证明/必要证据按精确SHA定位。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/静态随机删槽工具与安全聚合的旧边界--资源.md",
+      "sha256": "ef67683018aec28aa1732148c63fe6cee6cc3585898b9bea7e8fe39f0d88aabd",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/static-slot-deletion-and-security-aggregate-boundary-resource"
+      ],
+      "reason": "本页精确独立数学已登记，body及完整证明/必要证据按精确SHA定位。另有同页已知主身份的证据路由待lead增量接收，详receipt.pending_owner_routes；不将该部分冒称已闭合。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/静态人数预算与固定终局付款反例的来源范围--资源.md",
+      "sha256": "aeab3c51c6a699364fc5794d2fe1eaeba733fac8d5c1040f19f3313302aa9a19",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "customer-attraction/static-slot-deletion-and-security-aggregate-boundary-resource"
+      ],
+      "reason": "已读懂数学；未决仅为同义主owner的精确证据接收/版本修正。本批已接收的局部证据owner列在object_ids；receipt给各实质块、稳定候选身份、正文和接收动作，不因已有标题就声称完成。"
+    }
+  ],
+  "edge_files": []
+}
