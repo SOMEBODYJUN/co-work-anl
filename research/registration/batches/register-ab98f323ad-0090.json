@@ -1,0 +1,453 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline.json",
+    "sha256": "5d5737ab6d07552b48925bdb936dae70490e8de1ee0da2b380bb2d16dd5690cf"
+  },
+  "objects": [
+    {
+      "object_id": "SC-GRANULAR-APPROX",
+      "version": 1,
+      "title": "异址共有原子粒度的全续局误差与近似SPE构造",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "两带标签设施从同一有限非空地点目录同时选址；有限严格正权原子客户被覆盖后强制独立随机选择可达设施，最小化包含自身完整权重的条件负载；设施最大化期望吸引权重。完整规则在每个有序布局取精确客户NE。",
+      "statement": "令R=max_s w(C_s)，θ=max{w_i:i同时属于两个不同物理地点}（无此客户为0）。R=0时任意完整NE规则的零收益布局精确稳定。θ<R时存在完整精确客户NE规则及在轨布局，倍率不超过(R+θ)/(R−θ)：同址取每客户1/2，异址任取精确NE；在轨选可拆分Wardrop两收益排序向量的字典序最大布局。每个异址NE与该布局Wardrop收益逐坐标相差至多θ/2；二进制正有理输入可扫描全部地点对并用降序贪心构造纯NE，得到位多项式完整规则。",
+      "quantifiers": "每个上述共同目录两设施输入；θ<R时存在同一布局，使所有异址精确NE选择及指定同址对半选择的完整规则均满足该倍率。实权给存在/误差，有理输入给算法位复杂度。",
+      "assumptions": [
+        "客户权严格正；目录有限非空",
+        "有限倍率结论限0≤θ<R，R=0单列零收益边界"
+      ],
+      "scope": "θ仅计不同物理地点的共同单体，同址允许任意重原子。θ=0给精确SPE；不声称θ≥R的有限倍率或该保证实例最优。独立于待审SC-PHI-E/A。",
+      "objections": "本轮完整实读本批24份成熟材料及共享定义，复用本自足成熟证明；未重证旧稿或重跑程序。148实例/726偏离及279局部支持只属有限核验；SC-PHI-E/A待定向审查不承担本对象普遍证明。",
+      "body": {
+        "path": "archives/facility-games/state/定理/异址共有原子的粒度误差与近似续局--定理.md",
+        "sha256": "62bf7b3b43267b45ab9592a1ef8bd517a6ec42823e79e017c02411d0cbb8ccd1"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/计算/共享目录旁支程序的接口与精确复现--计算.md",
+          "sha256": "ae3ab1aa989b8f85a9a6cf6a9ec5e50284fb41619418513193e3845a69eb0fe4"
+        },
+        {
+          "path": "archives/facility-games/state/证明/结构阈值与Wardrop误差的完整教学推导--证明.md",
+          "sha256": "be636e1941383afd1b9e0537bdb8d36722420479a5bd87e93ed9668c8ce6e138",
+          "section": "6　原子客户与可拆分客户：固定布局上的误差"
+        },
+        {
+          "path": "archives/facility-games/state/资料/共同目录成果入口的接口与版本状态--资料.md",
+          "sha256": "55c9f2e39906cb3193ab6f722809bf1a0a6b0db0f30fcff4788916e3b4b98d4f",
+          "section": "全部十五项原分支资产的去向"
+        },
+        {
+          "path": "archives/facility-games/state/审查/实例最优计算的参数与判定前沿--审查.md",
+          "sha256": "4a67f6d5f9fb7931c79de47956a00a5ea0077f512e440f3ac5f61679370ae885",
+          "section": "其他结构界与前沿的作用"
+        },
+        {
+          "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+          "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/atomic_granularity.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/atomic_granularity.md"
+      ]
+    },
+    {
+      "object_id": "M-b5488c2696964ec58745ce5426f2b777",
+      "version": 1,
+      "title": "双设施全部独立混合客户NE的闭支持负载谱",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "固定两个带标签设施的一个布局；非负私有背景A,B、有限逐名严格正权公共原子客户w_i。客户独立随机化，覆盖后强制选择可达设施，最小化含自身全部原子重量的条件负载期望；X=A+Σw_ip_i、Y=B+Σw_i(1−p_i)、Δ=X−Y。",
+      "statement": "令δ=A−B、V=A+B+Σw_i。每客户取纯1/纯2/名义混合三态；名义混合含端点。若名义混合数m、纯坐标和P，完整条件为(1−m)Δ=δ+P，纯1要求Δ≤w_i、纯2要求Δ≥−w_i、名义混合要求|Δ|≤w_i。m=0或m≥2时只核相应唯一点；m=1须δ+P=0，并保[ max({−w_h}∪{−w_i:纯2}), min({w_h}∪{w_i:纯1}) ]整个闭区间。全部3^n单元的并精确覆盖全部NE谱，X=(V+Δ)/2、Y=(V−Δ)/2；概率逐名恢复。有理输入的端点及任一给定有理谱点恢复概率位长多项式。",
+      "quantifiers": "任意有限公共客户数n≥0、任意非负实背景A,B和严格正实权；所有独立混合NE均被覆盖且每个接受点可实现。编码和位长结论另限二进制有理输入。",
+      "assumptions": [
+        "客户成本是含完整自重的线性实现负载，独立随机化",
+        "名义混合支持允许0/1端点，保留所有等号和重叠单元"
+      ],
+      "scope": "局部完整谱刻画；n=0为唯一强制收益，单公共客户A=B=0有整个概率区间。全谱可有离散缺口；不取凸包、不限制实际混合人数、不把有限菜单最小值当全NE最小值。",
+      "objections": "复用成熟完整条件成本和双向覆盖证明；3^n枚举不声称一般多项式。单元有限不等于NE只有有限个；有理谱点的概率位长还计该点编码长度。有限运行不认证一般φ或全局最优。",
+      "body": {
+        "path": "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md",
+        "sha256": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+          "sha256": "9ff056ee4073e03d61b049a3e1e35e2b68828a63fe5c4b3260c0a7c5b714fe8c",
+          "section": "A11.1 先把一个局部博弈化成一条差距坐标"
+        },
+        {
+          "path": "archives/facility-games/state/计算/局部谱与实例最优程序的原入口复现--计算.md",
+          "sha256": "63e4e289d0cfae29ce10b7778636c96407b19d739eee557f41bcf3515982a573",
+          "section": "四个原入口，各一次"
+        },
+        {
+          "path": "archives/facility-games/state/计算/局部谱与实例最优程序的原入口复现--计算.md",
+          "sha256": "63e4e289d0cfae29ce10b7778636c96407b19d739eee557f41bcf3515982a573",
+          "section": "一次额外的窄合同核验"
+        },
+        {
+          "path": "archives/facility-games/state/计算/局部谱与实例最优程序的原入口复现--计算.md",
+          "sha256": "63e4e289d0cfae29ce10b7778636c96407b19d739eee557f41bcf3515982a573",
+          "section": "17源的数学去向"
+        },
+        {
+          "path": "archives/facility-games/state/计算/异构双目录四种子程序与五输入的精确复现--计算.md",
+          "sha256": "e39f3c14485ab325e8b2ce26a8d0f277e1c6f56597c08f4d4e5b9442f3ceb7df",
+          "section": "五份冻结输入的完整谱与回应环"
+        },
+        {
+          "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+          "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09"
+        },
+        {
+          "path": "archives/facility-games/state/审查/三份学习附录与当前共享目录对象接续--审查.md",
+          "sha256": "908cdf2fe32983d137ec9f134a4e31c4f28ab1a39d0d18ae1eb9dc60d7dd09db",
+          "section": "同址正规形和不同地点交叠参数"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/local_and_exact/local_geometry_and_chord.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/local_and_exact/local_geometry_and_chord.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/local_and_exact/exact_algorithms_and_extensions.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/local_and_exact/exact_algorithms_and_extensions.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/exact/bounded_overlap.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/exact/bounded_overlap.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/local/exact_methods.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/local/exact_methods.md"
+      ]
+    },
+    {
+      "object_id": "M-7c7cfc38cb10411e8b8b5f9ee5747b77",
+      "version": 1,
+      "title": "固定四种子守卫修复菜单及给定配额的完整纯续局算法",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "两带标签设施从各自有限非空目录U1,U2同时选址，目录可不同、相交；客户有限且权严格正，覆盖后强制参与、独立混合并最小化含自身完整重量的实际条件负载，设施最大化期望服务权。完整规则逐合法带标签布局给精确客户NE，设施倍率仅在选定在轨对全部实际单方位置偏离要求。",
+      "statement": "每布局先固定共同集中按(w_i,−ID_i)最大的h，只试全第一、全第二、h独第一、h独第二四个纯种子；已NE就收，未NE仅在原低侧每公共权≥初始差的守卫下从原高侧搬最大权严格改善者w<gap，首次翻转/等负载/无改善停，否则丢弃。输出都是纯NE、菜单非空且≤4项；每次修复≤k移动、O((k+1)^2)有理操作、原低侧收益不减。全矩形菜单固定后求各自坐标min和全目录max D1F,D2F；给定在轨菜单收益x,y若2x≥D1F(t)、2y≥D2F(s)，两种实际偏离分别选对应坐标极小成员，其余布局用全第一守卫默认，得到完整因子2纯客户NE规则。若续局只许该固定菜单，双配额亦必要。全矩形构造O(|U1||U2|(n+1)^2)，显式二进制有理输入中间位长多项式。",
+      "quantifiers": "每个合法局部输入/纯种子，以及每个双目录输入和每份实际满足双配额的在轨菜单成员；不在此断言所有输入都存在这样的成员。",
+      "assumptions": [
+        "共同客户逐名正权；纯分配且严格改善仅w<gap",
+        "客户ID和所有平局规则预先固定；菜单在计算D/回应环之前固定",
+        "初始低侧守卫是调用首次翻转停止修复的必要接口；全侧种子的空守卫保证默认合法"
+      ],
+      "scope": "局部NE/修复/菜单非空、运算位长与给定配额证书的完整补全独立已证。该菜单比全singleton小，也不枚举全体混合NE；只扫一个回应环的普遍成功归HC-2-UP候选。",
+      "objections": "守卫失败时不可提前停机；一般最大权修复可继续多次反转，但不据此向固定菜单补新成员。原verify核显式达到而不验证任意default文字、菜单最优或普遍成功；指定数学默认按本正文构造。",
+      "body": {
+        "path": "archives/facility-games/state/算法/守卫纯修复的边界与四种子证书算法--算法.md",
+        "sha256": "f874dd3fa229d095f96b14bd82553bd55eb0cdace583881826101da32f1f8c6c"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/计算/异构双目录四种子程序与五输入的精确复现--计算.md",
+          "sha256": "e39f3c14485ab325e8b2ce26a8d0f277e1c6f56597c08f4d4e5b9442f3ceb7df",
+          "section": "四种子菜单及完整续局合同"
+        },
+        {
+          "path": "archives/facility-games/state/计算/异构双目录四种子程序与五输入的精确复现--计算.md",
+          "sha256": "e39f3c14485ab325e8b2ce26a8d0f277e1c6f56597c08f4d4e5b9442f3ceb7df",
+          "section": "输入与verify实际核什么"
+        },
+        {
+          "path": "archives/facility-games/state/计算/异构双目录四种子程序与五输入的精确复现--计算.md",
+          "sha256": "e39f3c14485ab325e8b2ce26a8d0f277e1c6f56597c08f4d4e5b9442f3ceb7df",
+          "section": "原suite的完整实际复现"
+        },
+        {
+          "path": "archives/facility-games/state/计算/共享目录原始输入与四种子入口的接续复核--计算.md",
+          "sha256": "cefe6cdbfd65ffa7bd4450035c7994012beac6b7a9bdc9b17ef759b123ee38df",
+          "section": "取回真实依赖后的四个原入口"
+        },
+        {
+          "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+          "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/算法/守卫纯修复的边界与四种子证书算法--算法.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:learning/appendices/A08_hc_seeds.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:learning/appendices/A08_hc_seeds.md"
+      ]
+    },
+    {
+      "object_id": "HC-2-UP",
+      "version": 1,
+      "title": "固定四种子菜单任意双色回应环的因子二覆盖候选",
+      "kind": "conjecture",
+      "truth_status": "conjecture",
+      "model": "两带标签设施从各自有限非空目录U1,U2同时选址，目录可不同、相交；客户有限且权严格正，覆盖后强制参与、独立混合并最小化含自身完整重量的实际条件负载，设施最大化期望服务权。完整规则逐合法带标签布局给精确客户NE，设施倍率仅在选定在轨对全部实际单方位置偏离要求。本对象特指每布局预制最多四项的maximum_only菜单，两个全侧种子和同一预指定最大公共客户的两个singleton；不使用全singleton大菜单。",
+      "statement": "先在全U1×U2固定四种子纯NE菜单F，再定义u(s,t)为菜单中s端最小负载、d(s)=max_{t异色}u(t,s)、b(s)∈argmax。候选声称每条简单b有向环T的两色行动笛卡尔积中，存在同一菜单成员满足2L_s≥d(t)、2L_t≥d(s)。若该全称覆盖成立，则得到任意目录上O(|U1||U2|(n+1)^2)有理操作、位多项式的因子2完整纯续局构造。正文完整保最大客户ID传播、真实纯转移集X、合法C–F/B–G弦及h≥e/2与h<e/2两分支。",
+      "quantifiers": "每个有限正实权客户/两个任意有限非空目录输入、每个预固定全局ID及合法最大回应tie-map、其每个简单有向环；同址/相交目录仍以颜色标签区分。算法位长另限显式正二进制有理输入。",
+      "assumptions": [
+        "使用准确固定四种子菜单及受守卫的纯修复；所有u/d从同一菜单求出",
+        "d最大域始终完整原目录；失败反设覆盖所选核心每格每个菜单元素",
+        "归一化只在环最大d>0后；纯极小见证保真实原子而非期望拆分"
+      ],
+      "scope": "四种子maximum_only普遍成功候选；两环和零d边界已局部处理，任意长偶环两分支需按该菜单合同独立重构。后来的全singleton通用因子2定理另有主body/owner，不能用它或SPARSE-RHO-ALL替换本更窄菜单命题。",
+      "objections": "成熟A09及现行四种子对象明确保内部候选，主TeX/历史审计虽称theorem/pass，不据该时态升级。本轮未重证或新定位反例；有限1203/2004例和程序未报错均不解除普遍覆盖义务。不是将未知证明步骤作为额外数学假设而标conditional。",
+      "body": {
+        "path": "archives/facility-games/state/证明/四种子坏回应环的两分支推导与候选边界--证明.md",
+        "sha256": "f5ab9034d04ca5863ea4d16c4b7e44f0b762a26dad6bc0f299295ed92d372729"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/算法/守卫纯修复的边界与四种子证书算法--算法.md",
+          "sha256": "f874dd3fa229d095f96b14bd82553bd55eb0cdace583881826101da32f1f8c6c",
+          "section": "复杂度、输出与候选状态"
+        },
+        {
+          "path": "archives/facility-games/state/计算/异构双目录四种子程序与五输入的精确复现--计算.md",
+          "sha256": "e39f3c14485ab325e8b2ce26a8d0f277e1c6f56597c08f4d4e5b9442f3ceb7df",
+          "section": "模型与真实状态"
+        },
+        {
+          "path": "archives/facility-games/state/计算/异构双目录四种子程序与五输入的精确复现--计算.md",
+          "sha256": "e39f3c14485ab325e8b2ce26a8d0f277e1c6f56597c08f4d4e5b9442f3ceb7df",
+          "section": "原suite的完整实际复现"
+        },
+        {
+          "path": "archives/facility-games/state/审查/三份异构历史环证明与当前ρ对象接续--审查.md",
+          "sha256": "dcab980aa9a7f725298dcb36fed7c08099c1998b62cb623e0475fc056e69cbe8",
+          "section": "二、six_cycle_prior：固定纯菜单的六环排除"
+        },
+        {
+          "path": "archives/facility-games/state/审查/三份异构回应核心与长环补充审查--审查.md",
+          "sha256": "8f43459c7559dbe18104f057f6f0d95b43916eb7594ebaaa3a6ad4c4c1c4a231"
+        },
+        {
+          "path": "archives/facility-games/state/审查/三份异构复杂度附录与最终审计接续--审查.md",
+          "sha256": "deeadce133e267603f8d9565bc956e86807bb7ab8c213143b602b9ff3f3b8395",
+          "section": "当前状态和实际研究定位"
+        },
+        {
+          "path": "archives/facility-games/state/审查/三组讲义盲读与更新复查的完整证据边界--审查.md",
+          "sha256": "1dcf79de45bb694e18e2d823c22520b28f5b98b208de571f56006ec8545db58c",
+          "section": "异构目录与 ρ"
+        },
+        {
+          "path": "archives/facility-games/state/审查/异构主手稿完整证明与现行对象接续--审查.md",
+          "sha256": "0cd311828045cb74e72715f1809773c1d212975b6c6153c2d02c620467985ef1",
+          "section": "四、四种子菜单和任意目录因子 2 主张"
+        },
+        {
+          "path": "archives/facility-games/state/计算/共享目录原始输入与四种子入口的接续复核--计算.md",
+          "sha256": "cefe6cdbfd65ffa7bd4450035c7994012beac6b7a9bdc9b17ef759b123ee38df",
+          "section": "取回真实依赖后的四个原入口"
+        },
+        {
+          "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+          "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/证明/四种子坏回应环的两分支推导与候选边界--证明.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:learning/appendices/A09_hc_cycle.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:learning/appendices/A09_hc_cycle.md"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/facility-games/state/资料/双设施黄金比连续稿与固定菜单证明合同--资料.md",
+      "sha256": "f3473fdcc7de5f7c7be47df3a25a479c381f3fbe00817cf9e47bda91dae58b1d",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "一般φ连续稿已由0092/Boss6在公屏103确认全文实读f3473f/f1bac0并接受至SC-PHI-E/A；主batch尚未发布canonical，暂保needs-decision待增量。cycle transport与constructor按unassessed待定向审查；LOCAL-CHORD-IFF/POLY宽域及盒交换/三混合已有0089主owner，不复制。26页与旧25页分版详receipt。"
+    },
+    {
+      "path": "archives/facility-games/state/定理/异址共有原子的粒度误差与近似续局--定理.md",
+      "sha256": "62bf7b3b43267b45ab9592a1ef8bd517a6ec42823e79e017c02411d0cbb8ccd1",
+      "disposition": "objects",
+      "object_ids": [
+        "SC-GRANULAR-APPROX"
+      ],
+      "reason": "独立粒度定理自足证明及完整有理规则，θ只计异址；保R=0、θ<R、同址主动对半及任意异址NE量词。"
+    },
+    {
+      "path": "archives/facility-games/state/计算/共享目录旁支程序的接口与精确复现--计算.md",
+      "sha256": "ae3ab1aa989b8f85a9a6cf6a9ec5e50284fb41619418513193e3845a69eb0fe4",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "SC-GRANULAR-APPROX"
+      ],
+      "reason": "SC-GRANULAR-APPROX已接程序/全NE端点有限核验及当时缺依赖时态。shared_phi/CLI归0092 SC-PHI-E/A与0093证书/菜单接口；shared_offdiag归0091同址最优主owner。0089后来已成功原suite与本页当时未运行并存。"
+    },
+    {
+      "path": "archives/facility-games/state/计算/惰性最大最小回应环的原入口与有限回归--计算.md",
+      "sha256": "fef2d1dfd467dc3913b745facb4e12a72b8ae98e6a6a325914c69da29903e712",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "惰性剪枝/环内最优主body已由0089 M-a4510cf6b0ee470384411c5b272b372b持有；需原作者接本完整新原入口/默认补全/相对概率方向证据。有限30回归不造节点、不证φ。"
+    },
+    {
+      "path": "archives/facility-games/state/证明/结构阈值与Wardrop误差的完整教学推导--证明.md",
+      "sha256": "be636e1941383afd1b9e0537bdb8d36722420479a5bd87e93ed9668c8ce6e138",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "SC-GRANULAR-APPROX"
+      ],
+      "reason": "本页k=2固定布局误差作为粒度证明对照已接；三/四站阈值、五站φ下界、任意k尖锐Wardrop分别路由0089已持主owner，未用旧N≥5等号升级φ。"
+    },
+    {
+      "path": "archives/facility-games/state/计算/异构双目录四种子程序与五输入的精确复现--计算.md",
+      "sha256": "e39f3c14485ab325e8b2ce26a8d0f277e1c6f56597c08f4d4e5b9442f3ceb7df",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "M-7c7cfc38cb10411e8b8b5f9ee5747b77",
+        "HC-2-UP",
+        "M-b5488c2696964ec58745ce5426f2b777"
+      ],
+      "reason": "本批四种子局部算法、HC-2-UP候选和完整谱已接准确章节。短目录rho、六顶点趋二下界、普通/坏长环主body在0086；任意单交叠rho和全singleton通用2在0093，有限输入不另造节点。"
+    },
+    {
+      "path": "archives/facility-games/state/算法/守卫纯修复的边界与四种子证书算法--算法.md",
+      "sha256": "f874dd3fa229d095f96b14bd82553bd55eb0cdace583881826101da32f1f8c6c",
+      "disposition": "objects",
+      "object_ids": [
+        "M-7c7cfc38cb10411e8b8b5f9ee5747b77",
+        "HC-2-UP"
+      ],
+      "reason": "本批局部守卫修复/固定四菜单/给定配额补全主body，HC-2-UP候选的算法接口亦接；不将A8.1–A8.5普通中间式各造对象。"
+    },
+    {
+      "path": "archives/facility-games/state/证明/四种子坏回应环的两分支推导与候选边界--证明.md",
+      "sha256": "f5ab9034d04ca5863ea4d16c4b7e44f0b762a26dad6bc0f299295ed92d372729",
+      "disposition": "objects",
+      "object_ids": [
+        "HC-2-UP"
+      ],
+      "reason": "HC-2-UP完整候选主body，固定四种子全局菜单身份和全目录d/任意环量词明确；成熟两分支不据内部PASS自升proved。"
+    },
+    {
+      "path": "archives/facility-games/state/证明/固定重支持近平衡补全的分支与精度边界--证明.md",
+      "sha256": "972638fc072a4189748bf7c6f2b25ad129f2630fa310e6e02e4561f1bc164a14",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "固定重支持近带主body在0086，精确Claim SC-TWO-NEAR-BAND-REP；EPTAS候选另在0086/0091接续。本文十例及四分支不新增同义记录，待主owner接完整证据。"
+    },
+    {
+      "path": "archives/facility-games/问题--问题.md",
+      "sha256": "bc9c2a5971e93378b4cf0a862fa9f80590ebef2c14f473f88074eaea9d109122",
+      "disposition": "excluded",
+      "object_ids": [],
+      "reason": "模型及现行分支导航重复既有正式定义/定理，本页无独有命题或必要证书，不造问题容器节点。模型主body0089；后来全singleton2和任意单交叠rho归0093、短目录rho归0086，各保版本。"
+    },
+    {
+      "path": "archives/facility-games/state/资料/设施示例总入口与证明配对--资料.md",
+      "sha256": "af8aef55d3442ef4acb8a1031cf14991e73d25157aee5dd4a80e24cd8a02eedd",
+      "disposition": "excluded",
+      "object_ids": [],
+      "reason": "5行示例导航和配对纪律，独有原输入已在0089正式计算材料完整保存；本页无独立数学或必要证书，排除为重复导航，不抹去原件/来源。"
+    },
+    {
+      "path": "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md",
+      "sha256": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1",
+      "disposition": "objects",
+      "object_ids": [
+        "M-b5488c2696964ec58745ce5426f2b777"
+      ],
+      "reason": "独立完整闭支持谱主body；m=1整区间、n=0、端点/重复支持、任意实际混合人数及有理位长完整保全。"
+    },
+    {
+      "path": "archives/facility-games/state/审查/三份学习附录与当前共享目录对象接续--审查.md",
+      "sha256": "908cdf2fe32983d137ec9f134a4e31c4f28ab1a39d0d18ae1eb9dc60d7dd09db",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "M-b5488c2696964ec58745ce5426f2b777"
+      ],
+      "reason": "完整谱已接本页同址/异址参数章节；φ下界/三四阈值/14/13归0089，同址正规形归0091。须主owner实接教学来源及有理化证据；N≥5等号另依待审φ上界。"
+    },
+    {
+      "path": "archives/facility-games/state/审查/三份异构历史环证明与当前ρ对象接续--审查.md",
+      "sha256": "dcab980aa9a7f725298dcb36fed7c08099c1998b62cb623e0475fc056e69cbe8",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "HC-2-UP"
+      ],
+      "reason": "HC-2-UP已接历史纯六环范围/状态及菜单差异；短目录rho和普通长核心/亚rho坏族主body0086、任意单交叠rho0093待接。历史全混合最小与固定纯菜单分开。"
+    },
+    {
+      "path": "archives/facility-games/state/审查/三份异构回应核心与长环补充审查--审查.md",
+      "sha256": "8f43459c7559dbe18104f057f6f0d95b43916eb7594ebaaa3a6ad4c4c1c4a231",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "HC-2-UP"
+      ],
+      "reason": "HC-2-UP已接独立审计和response_core同路线段；CORE-LIFT/显式多面体/短目录rho/普通长环归0086，双目录精确最优归0091；分离区间轻客户NE双射另保存精确statement待lead判主身份，不用源审计升级候选。"
+    },
+    {
+      "path": "archives/facility-games/state/审查/三份异构复杂度附录与最终审计接续--审查.md",
+      "sha256": "deeadce133e267603f8d9565bc956e86807bb7ab8c213143b602b9ff3f3b8395",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "HC-2-UP"
+      ],
+      "reason": "HC-2-UP已接一般二审计的候选/主稿状态差异；共同目录三/五站弱NP完全归0089主owner待接本A04/A05原证明接续，固定a/弱NP/全布局量词保全。"
+    },
+    {
+      "path": "archives/facility-games/state/审查/三组讲义盲读与更新复查的完整证据边界--审查.md",
+      "sha256": "1dcf79de45bb694e18e2d823c22520b28f5b98b208de571f56006ec8545db58c",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "HC-2-UP"
+      ],
+      "reason": "本批已接HC-2-UP候选历史审读边界；其余报告还覆盖φ/局部强弦、任意k/盒/等权流、无FPTAS/近带、非线性和既有阈值等，多owner需分别接精确章节。原JSON自报/基线最终版/本轮未重跑范围不混写。"
+    },
+    {
+      "path": "archives/facility-games/state/审查/共享四地点无FPTAS来源声明与黄金比菜单算法接续审查--审查.md",
+      "sha256": "c831752be7717e99e5ab16ac843c05c7df61e45a299ac21476ce770c958384c4",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "四地点无FPTAS来源声明归0086 SC-FOUR-NO-FPTAS，phi菜单transfer归0092 SC-PHI-A/E；用户26行摘录不冒作原65例包，历史753有限运行不解普遍φ待审。"
+    },
+    {
+      "path": "archives/facility-games/state/审查/共享目录黄金比主稿源码与PDF接续审查--审查.md",
+      "sha256": "59731176a2d25c43474a96179d27189c8695fc445dc48a67f6fa8a94afc1bf9d",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "旧25页shared_phi源完整版本支持0092 PHI E/A；不能用旧established覆盖0090 M19当前26页待定向审查。宽域局部strong-chord主owner0089另接。"
+    },
+    {
+      "path": "archives/facility-games/state/审查/双设施黄金比稿的五处修订与待审证明域--审查.md",
+      "sha256": "f1bac0d1de8846e2354851e3340c60ea0ed679d9e064806a2b28c8e9e3aec70e",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "当前26页五修订与待审证明域已由0092/Boss6公屏103确认全文实读并接受至SC-PHI-E/A，按unassessed保cycle transport与polynomial constructor待审；0092尚未发布canonical，暂保needs-decision待增量。正文新修式与有限通过不等verified。"
+    },
+    {
+      "path": "archives/facility-games/state/审查/学习主线02-04数学审查--审查.md",
+      "sha256": "b8f9fa92e405800cd0fb84e3a5ec0ecd5aeabdc94462f438b3dc3c7105a6a978",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "02一般φ、03任意k/四预算装箱/离轨、04完整谱/精确算法/无FPTAS/近带由0092/0093/0086/0089对应主owner接完整教学证据；本页没有四种子主命题，不挂HC-2-UP无关证据。旧内部已审时态不解除当前SC-PHI-E/A修订后待审。"
+    },
+    {
+      "path": "archives/facility-games/state/审查/异构主手稿完整证明与现行对象接续--审查.md",
+      "sha256": "0cd311828045cb74e72715f1809773c1d212975b6c6153c2d02c620467985ef1",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "HC-2-UP"
+      ],
+      "reason": "HC-2-UP已接四种子主稿路线与候选状态差异。CORE-LIFT、趋二下界、短目录rho、纯单调迁移、显式多面体归0086；EXACT-KAPPA归0091；一般全singleton2归0093，原17页编译不代证。"
+    },
+    {
+      "path": "archives/facility-games/state/审查/异构当前源与既有对象衔接--审查.md",
+      "sha256": "aa6484978ad06a67672e794352929e4e52eb29a8ab0168edeecb2eaf731d15d9",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "CORE-LIFT抽象威胁配额/闭核与HC-MONOTONE仅纯客户费用迁移是0086持主body的不同对象；待其精确owner实接，不合并成全mixed单调迁移。"
+    },
+    {
+      "path": "archives/facility-games/state/审查/设施共享目录基准近带来源与强弦三源处置--审查.md",
+      "sha256": "2b4f759cf5a4538ae4e1663c61ed7400544c5801ccd9d834dc7d26ccf60c4a1c",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "局部宽域强弦LOCAL-CHORD-IFF/POLY已有0089主body；近带SC-TWO-NEAR-BAND-REP和EPTAS候选归0086，文献基准/优先权仅历史来源不造数学节点，待主owner精确接证。"
+    }
+  ],
+  "edge_files": []
+}

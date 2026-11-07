@@ -1,0 +1,148 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline.json",
+    "sha256": "5d5737ab6d07552b48925bdb936dae70490e8de1ee0da2b380bb2d16dd5690cf"
+  },
+  "objects": [
+    {
+      "object_id": "UM-FIXED-SA-ASSIGNMENT-GAP-v1",
+      "version": 1,
+      "title": "固定轮literal-SA单位指派的趋二阈值间隙",
+      "kind": "relaxation-gap",
+      "truth_status": "proved",
+      "model": "Boolean单位指派LP的literal-SA_r；轮次约定为每原约束乘至多r-1个正/补literal后线性化，总矩次数至多r。",
+      "statement": "对每m>=r>=1，m机/m+1单位任务在T=1+1/(m-r+1)有完整SA_r伪解，原整数OPT=2，比例2-2/(m-r+2)固定r时趋2。任<=r任务集的均匀注入给一致局部事件概率，包含补literal及零事件的全部容量乘式均成立。T是可行证书阈值，未声称是精确SA最小阈值。在端剪枝或本族T>=1域，ST给上界2T，固定r间隙上确界恰2。",
+      "quantifiers": "forall integers m>=r>=1; all <=r literal events and all allowed constraint multipliers; fixed r before m tends to infinity.",
+      "assumptions": [
+        "原调度允许多任务同机，注入只用于局部伪解",
+        "上界2限端剪枝/阈值T>=1域；裸r1在T<1可有无界gap",
+        "固定r显式向量为输入规模多项式，变r不作统一承诺"
+      ],
+      "scope": "只否相对此证书T的固定层统一次二舍入，不否相对真实OPT的算法；T<2时CONFIG已不可行，非CONFIG/SOS gap。",
+      "body": {
+        "path": "archives/unrelated-machines/state/障碍/固定轮literal-SA的单位指派趋二间隙--障碍.md",
+        "sha256": "f2f6f6b6fd9da268dc03f1dab9e4b2e9b3bfd384be43d9c16d1cec6a5baf9414"
+      },
+      "evidence": [],
+      "objections": "本轮完整实读成熟全乘式证明；无程序重跑。r=m的T2端点保留，零概率乘式不除零。ST完整依赖由最终worker核追加引用。",
+      "sources": [
+        "task:register-ab98f323ad-0106; mature source M24"
+      ]
+    },
+    {
+      "object_id": "UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1",
+      "version": 1,
+      "title": "固定阶真实最优源压缩乘法贪心的全顺序线性坏族",
+      "kind": "algorithm-counterexample",
+      "truth_status": "proved",
+      "model": "给有限有理真实最优调度分布D，V_r是至多r个不同job指示单项式空间，A_ji=Pr M_xji|V_r；psi从1开始，每job最大化下一作用范数平方；空间始终固定。",
+      "statement": "任固定r>=1，d=2r+1、B=4r+2，每素数q>B有q机/q+1任务实例：q个普通单位job全可用q-1普通机，一枚专用anchor仅在专用机用B。均匀首一d次有限域多项式源经g(0)=g(1)=0合并标签，每支撑态峰恰B且OPT=B。2r+1重独立给评分p||u||²+p²||v||²，p0=2/q严格胜其余1/q；任意任务顺序都输出普通机0负载q，比q/(4r+2)。",
+      "quantifiers": "forall fixed r>=1; forall prime q>4r+2; same constructed input for every job order and every tie rule (all ordinary winners strict).",
+      "assumptions": [
+        "真实分布是输入承诺，不声称从普通矩阵求得它",
+        "测试项允许未来job，独立性覆盖完整V_r投影",
+        "q^d是系数标签原子数，可能同调度须合并概率；只有一个B时间anchor"
+      ],
+      "scope": "仅固定截断阶+指定评分规则的无限族，不反全部矩方法/配置/增长层数/自适应重置；固定r为相应显式矩输入位多项式。",
+      "body": {
+        "path": "archives/unrelated-machines/state/反例/固定阶压缩乘法向量贪心真实最优源--反例.md",
+        "sha256": "feb4be017b33128301230530112d82642529634e7518726b976fccaf104fe783"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/条件矩重置与固定阶向量提取的不同边界--资源.md",
+          "sha256": "876c2d37b87fbbf508fb177434bed33446403b9fa0b49297a0e7cfac9824df8b",
+          "section": "固定阶压缩乘法贪心的真实源障碍"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/固定阶与事件链向量贪心双源审查--审查.md",
+          "sha256": "00b1f64341c75caa463ec421bcaa1e96abeb7212daef9535daf93c5bfdf8975f",
+          "section": "源一：任意固定阶的真实最优矩贪心"
+        }
+      ],
+      "objections": "本轮完整读M30和0102 M18及M19源一承重部分，已确认全空间/未来测试、2r+1独立、任意顺序及anchor量词；接受这两精确来源。有限程序输入/实现职责待worker续读M31/32，不将r2指定有限核当完整V2 Gram。",
+      "sources": [
+        "task:register-ab98f323ad-0106; mature source M30"
+      ]
+    },
+    {
+      "object_id": "UM-SEVEN-STATE-STAR-GLOBAL-QUADRATIC-LOCAL-v1",
+      "version": 1,
+      "title": "七态原星共同真实矩与全局二次负载局部化",
+      "kind": "moment-construction",
+      "truth_status": "proved",
+      "model": "d,s正偶数且2<=s<=d/2；原星机器u/v/z_l，原job R仅u/v时间1，各j_l在v时间1/d、在独有z_l时间1。eta=s/d、h=s/2、T=1+eta。",
+      "statement": "取p=eta^3/1000,u0=4p(1-eta),e=4/5-p-u0，在(C,H)=(1,d),(1,0),(1,h),(0,0),(0,h),(0,d/2),(0,d)的质量为p,1/20,1/20,1/20,1/20,u0,e，每类别均匀H-subset，得同一真实完整assignment law。其共同M3 PSD、Boolean/onehot成立；每机任意全局deg q<=2满足E[(T-load_i)q²]>=0；逐行完整CONFIG(T)分布匹配全部原端first/pair。实际OPT=1，而law有正概率p峰2。",
+      "quantifiers": "forall allowed even d,s; same common law for all machines and all global real polynomials of degree <=2; row CONFIG distributions may differ.",
+      "assumptions": [
+        "共同assignment law不是逐点T可行law",
+        "指定v行无新增payload时仿射Phi背景保度数；其他行必须另核",
+        "不将v局部背景接口扩成递归shared-head接线"
+      ],
+      "scope": "原星v1局部合同；不吞v2扩展边界、first/pair稀疏支撑、affine owner或AND localizer其他对象，不给近二gap/硬度。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/七态原星全局二次负载局部核--定理.md",
+        "sha256": "755f74fcc24ddf06995bedd65fb9e6ce4529c6676b6dd1036d7513669657f351"
+      },
+      "evidence": [],
+      "objections": "完整读成熟解析对称化、五点评估/Cauchy、pair trade及所有原任务实际OPT证明；12有限参数审计不替代全称。",
+      "sources": [
+        "task:register-ab98f323ad-0106; mature source M33"
+      ]
+    },
+    {
+      "object_id": "UM-TWO-LEVEL-LABEL-ACTIVATION-UNIVERSAL-EXACT-v1",
+      "version": 1,
+      "title": "两层标签收费的第二重数精确最优值",
+      "kind": "exact-value-characterization",
+      "truth_status": "proved",
+      "model": "显式两层selector/query/guard/w/f完整原任务矩阵；有限二部源图、标签状态，每边选一状态，D=max({2} union vertex degrees)或更大合法共同D。",
+      "statement": "对状态选择a令t_vb为激活标签重数、L(a)=max_v第二大标签重数，L*=min_aL(a)。非空顶点完整矩阵OPT=1+L*/D；完全空图OPT0，只有孤立顶点时OPT1。严格C<1+1/D可解码每个非孤点singleton。奇q平移族D=q给L*=1、真实OPT=1+1/q且任意两侧列表总长<=2g只覆盖<=g²个平移类型，取q>g²/rho给低覆盖NO。",
+      "quantifiers": "forall explicit source matrices under stated D and complete-task construction; minimization over all edge states and all complete actual schedules.",
+      "assumptions": [
+        "D>=maximum vertex degree保证每顶点至多一标签重数>D/2",
+        "严格阈值不得改成<=",
+        "未选state jobs全部保留，右投影可非单射"
+      ],
+      "scope": "固定源精确值及组合解码，不提供求L*多项式算法或PCP/一般UM近二困难性。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/两层标签收费第二重数恒等式--定理.md",
+        "sha256": "1ea40ebba29c5603340dc3bd6af7d2e2e7476f30c6c22f2452ae5851d6c0ee0d"
+      },
+      "evidence": [],
+      "objections": "成熟页完整上下界已读；实际矩阵全部加工端/guard及通用审查必要原件由最终worker补完整证据，不能只有名称。",
+      "sources": [
+        "task:register-ab98f323ad-0106; mature source M34"
+      ]
+    },
+    {
+      "object_id": "M-6244d2ca77a94522822adcf577da380e",
+      "version": 1,
+      "title": "分数benchmark到singleton最大乘积重匹配引理",
+      "kind": "rematching-lemma",
+      "truth_status": "proved",
+      "model": "有限U，n>=1代理，H含n不同物品，B=U\\H；v_i单调非负有理次可加且v_i(empty)=0。配置y行质量1、物品列质量<=1、正质量配置价值>0。给V_i>=0,c>=1，活动A={V_i>0}，非活动v_i(B)=0。",
+      "statement": "若所有B上可行分数配置族z均满足sum_(i in A,T subset B) z_iT v_i(T)/V_i<=c*n，则存在H上双射pi，使(product_i[V_i+v_i({pi(i)})])^(1/n)>=exp((1/n)sum_iS y_iS ln v_i(S))/(c+1)。只用V及n² singleton值可在其显式二进制有理输入位长多项式时间求真正最大乘积正边完美匹配，无需表示无理benchmark。",
+      "quantifiers": "forall finite inputs satisfying all-fractional A2, exists bijection; algorithm on explicit factors; all inactive/empty/zero singleton boundary branches preserved.",
+      "assumptions": [
+        "A2量化全部分数residual族，不能用一个整数福利bound替代",
+        "正边图必有完美匹配由假设/次可加证明",
+        "有限位对数近似精度低于可分辨匹配乘积对数间隔"
+      ],
+      "scope": "A独立已证核心；M35 B/C作者XOS backend、常数1/1125000或rho2^24尚待独立复核，不能把整页都标proved。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/分数重匹配与归一化XOS稳健缺口边界--定理.md",
+        "sha256": "05d4fbbde010e55a6b1fbb920d2f7e4d84743d1c8e50a3392a3d6918249a829b"
+      },
+      "evidence": [],
+      "objections": "本轮完整读A的配置log/Jensen、缺口运输/Birkhoff与有限位最大乘积证明；新ID只分配一次。B/C缺证明的本体不能用conditional标签掩盖；可另立准确开放义务及明确if-backend已满足的形式后果。",
+      "sources": [
+        "task:register-ab98f323ad-0106; mature source M35"
+      ]
+    }
+  ],
+  "materials": [],
+  "edge_files": [],
+  "reading_note": "Root本轮完整实读M24,25,30,33,34,35及0102 M18和M19源一；M19源二/后文不冒全读。其余0106 M0--23,26--29,31--32未实读。本fragment非完整交付，最终worker须核身份/证据/全36材料并补独有对象。M25三Claim尚未在此fragment登记。"
+}
