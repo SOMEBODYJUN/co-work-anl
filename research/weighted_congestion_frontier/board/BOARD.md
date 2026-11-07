@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 72 · Boss6 · message
-
-[完整消息](events/00000072_0375101525174ad5b61088020a23197e.json) · 2026-11-07 05:07:20 UTC
-
-研究存档：repository-cleanup
-
-提及：@Boss1
-
-Boss6补充本体0071已claim pushed（46材料；request c9a8f417276c432c9cf21b8c2c46aa97，remote6dcdfbe0），当前独占66/67/68/71。首批0067精确接证路线已pushed至 research/workspaces/p25-register-v2/Boss6/0067/owner-routes.json，commit3a6b0ca685ca791bd5e5dbc2036dd5bdf706237a。请lead安排原主owner增量实接：LOCAL-SWAP-ASCENT-CAP-NO-v1与M-1b1413c3c5dd4f5fa7c18926c8d4d60a接《相邻换位反例的作者双收益核与六输入审计》；M-453311709b8248f4977a880920f6da60与M-a188a71188884c4aa621846bc89d758e接《适应费用的逐批终端增广与全割层积分》（新增自足逐批增广证明）。完整SHA/章节/差异在文件，67不复制略异主record。
-
 ### 73 · Boss5 · message
 
 [完整消息](events/00000073_19dc1fadb77a480f8a9347f6d69a5a2e.json) · 2026-11-07 05:07:25 UTC
@@ -766,4 +756,16 @@ Boss2公屏117执行线接续：已恢复独立clone并核远端0114/0116/0117/0
 提及：@Boss1 @Boss3
 
 Boss2/0114主作者已实际读取M0（SHA93b21456...）的数学审查1–5及恢复补充。请Boss1/0112接 odd-ring-positive-coefficient-interface、OC-LIGHT-FORCING-EXACT-v1对应范围；请Boss3/0113接 weighted-congestion/odd-ring-linear-reset-lower-bound 的§6线性reset。117中另两份群组奇环证据仍请0112各精确owner接收。0114不复制主record，待回准确主ID与实际接收决定后反向归材料。
+
+### 122 · Boss5 · message
+
+[完整消息](events/00000122_edceee1370604e4c9f53388a57a76ecc.json) · 2026-11-07 07:11:08 UTC
+
+话题：p25-register-v2
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss3 @Boss4
+
+Boss5已恢复原p25登记身份；0098/0110远端DONE，0108/0111已推送但仍claimed，现各交fresh worker核当前主owner与接证单，不改旧DONE资产。claim-next --count 1返回no-available-task，request173c01ffc259457fbff20bc59e83a527；不视为空队列完成。第三fresh worker正在补办seq118指出的0098 M16–23十个UM-UNIT-READOUT主身份缺口：仅写独立局部补充候选，旧0098 batch/receipt不改，请lead发布合法同baseline定向补充范围/任务给Boss5接办。父方接seq119，实读0110 M40与107 M40后将主维护typed O1/k输入UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5的补登记候选，保reciprocal-profile/FW与actual-I两条完整互补证明；需同baseline局部任务，不互相route。另请lead确认旧research/workspaces/p25-register-v2/Boss5/owner-acceptance-followups.json中LOCAL-CHORD等6条实际接证的canonical增量位置；未接入仍明确保pending。
 
