@@ -1,0 +1,162 @@
+{
+  "schema": 2,
+  "objects": [
+    {
+      "object_id": "UM-GLOBAL-MOMENT-NEARFLAT-EXTRACTION-v1",
+      "version": 2,
+      "title": "给定近平坦四阶共同矩的确定性全空间 HS 调度提取",
+      "kind": "conditional-algorithm",
+      "truth_status": "conditional",
+      "model": "剪去 p_e>T 后的原 unrelated-machines 实例；给定显式有理 C2-load(T) 四阶共同矩 y、同一 V₁/V₂ Gram 商空间及全空间 G-HS 贪心。",
+      "statement": "设原实例先按目标 T 剪枝，所有保留端满足 0≤p_e≤T 且各任务合法端非空；n,d≥1、T>0、0<η≤1，y 满足归一化、四阶 assignment ideal、M₂(y)⪰0 及所有机器的一次负载 localizer PSD。令 R=rank M₁≥1，A_e 为同一 Gram 空间 V₁ 上的压缩乘法，D_e=A_e−A_e²=B_e*B_e，δ_e=tr D_e≥0、δ=Σ_eδ_e。若 δ≤min{1/(64ndR),η/16}，则 K₀=I_R，固定任意输入任务次序，每步选使有理 G-HS 分数 ‖A_eK‖² 最大的合法端（固定输入顺序破平局），左乘 K←A_eK，确定性输出一个原任务调度，所有机器同时满足 load_i≤(1+3δ)T≤(1+η)T。总位时间关于显式 (P,T,η,y) 的输入长度多项式。",
+      "quantifiers": "对每个合法有理实例、每个给定的同一 C2-load(T) 证书 y，只要所列 NF 缺陷条件成立；任务顺序事先任定，所有机器由同一个输出和同一个正状态 ρ=KK*/‖K‖² 同时认证。",
+      "assumptions": [
+        "先按目标 T 剪去长端，保留端均有 0≤p_e≤T 且每个非空任务仍有合法端；n 为任务数、d 为保留的显式端数。",
+        "y_∅=1，M₂ PSD，one-hot/Boolean/同任务互斥至 degree4，逐机 L[(T−load_i)q²]≥0 对所有 affine q 成立；不额外要求逐项四阶非负或 prefix-count localizers。",
+        "δ 使用整个 V₁ 的 trace 和 R=rank M₁，不能改成某个向量的局部缺陷、逐机矩或仅 entry-wise 指标。",
+        "本算法接收有理 y；无需生成 SDP 点、求谱/开平方、调用逆 δ/逆 T 精度 oracle。Rational Gram 的坐标运算、秩和比较按总位复杂度计。"
+      ],
+      "scope": "必要原正文完整保存共同压缩、0≤A_e≤I、同任务和为 I、泄漏与 commutator、任意前缀近幂等及最大分支保持的证明。前缀误差≤nδ、HS 总质量 h≥961/1024；选端 loss≤(1184/961)δ_e，对 δ_e>0 才写严格 <3δ_e，δ_e=0 时 loss=0。对同一个 ρ 把选端损失与原 load localizer 合并得逐机 (1+3δ)T。未剪长边时的 T/(1−3δ) 弱式不能替换本强式。δ=0 等价 rank M₂=rank M₁，可按经典 commuting rational projection/flat 原子方法恢复至多 R 个精确 T 调度并重建矩。n=0 返回空调度；T=0 可外层只保零时间端作预处理，核心 NF API 仍保留其合同，不把所有大缺陷 T=0 证书自动判通过。 0109六输入页补足原自包含v2实现和完整有理证书位置：只校验C2-load而非强helper域；五份接受证书、一份δ=5拒绝，稀有第四角不把小权重等同小缺陷；核心只读矩、测试原子用于造输入。T=0正δ通过仅为该fixture，大缺陷T=0仍可被核心拒绝。",
+      "objections": "条件提取证明在所列合同内闭合，但未提供从任意普通实例生成这种 y 的算法。强验证 helper 另查 entry∈[0,1] 和 prefix-count，其运行不能证明这些是本弱合同的必要假设；Latin4 仅低阶 PSD，不是完整四阶负载证书。NF 不通过只拒绝接口条件，不能推出 OPT>T。原正文的生成障碍使用独立 half-unit 3DM 的 yes=1/no≥3/2：若在每个 OPT≤T 输入都能总位多项式生成原 T 小缺陷证书，则取 η=1、输出≤67T/64<3T/2 会解该 gap；除非 P=NP，不存在这种普适生成器。此依赖不是一般 C2 gap 或所有矩提取规则的不可能性。21/6 fixture 和 Fraction 审计是有限实现证据，不是证书生成或一般 UM-TARGET 解。 新接六输入页的未剪枝API仍可按 T/(1−3δ)≤(1+η)T 保弱式，不能提升为未剪枝的 (1+3δ)T；六个既定fixture均在剪枝域，五份保存完整矩/Gram/前缀/ρ，拒绝项仅保可重建输入。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/全阶矩提取与近平坦HS贪心双源审查--审查.md",
+        "sha256": "dbef9218b48846a2bb3950bcbb373a18e7f4f9d9d24cef9b009717b5c3dcddfd",
+        "section": "二、近平坦四阶矩的条件提取与 HS 贪心"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/tools/evidence/um-following-audit-contracts-primary/comparison/research/current/unrelated_machines/global_assignment_moment_rounding.md",
+          "sha256": "c49e7d8dd13757f16ce6bd451c32999966739bed9be5c40d0bade4fce63cb1f0"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/全局指派矩轮廓冻结审查增量--审查.md",
+          "sha256": "dd0b96bb4beb8cfb9630803206b7d7421e61242f202c10bed87b6d66dbd516bd"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/共同矩有理Gram平坦原子与低阶Latin点原入口--资源.md",
+          "sha256": "d11930042e429bebfcba8dd043d6817dc6932b68ea34e972f0fe3e23f8d2180f"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/近平坦共同矩的独立HS原提取与强验证依赖--资源.md",
+          "sha256": "091dc9cf07383990a88d383111f0b9c17b36a4710e2174d111de49187be67127"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/近平坦HS矩提取与负接口有限审计--审查.md",
+          "sha256": "75a1b2acf113638d10cedee9f3e0f15199a10bea721c7fb1136bbad92957ca85"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/近平坦矩原提取器的六输入与完整有理证书--计算.md",
+          "sha256": "d4c536aeb3179f53e0dbbbb1a6a77ae1ce500bfff7ce008465e61557a8d7caf3"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/未归档配置证书批次与量词边界--审查.md",
+          "sha256": "e50f84daeb3534546c3a0269f3136f6362f9ecb708d764e9b1cc4e0d60d2dc5b",
+          "section": "6. Global moment/HS 审计包"
+        }
+      ],
+      "sources": [
+        "global_assignment_moment_rounding.md 完整原正文 SHA c49e7d8dd13757f16ce6bd451c32999966739bed9be5c40d0bade4fce63cb1f0；给定证书、经典 flat 背景、独立有理实现与有限审计层级分别保留。",
+        "0108 recovery实际读取0109的精确证据节并接纳；未重跑历史程序，有限实现/比较证据不充当全称证明。",
+        "0096-R26: archives/unrelated-machines/state/审查/未归档配置证书批次与量词边界--审查.md §6. Global moment/HS 审计包；abbd6a205df15b9dce26 / global_assignment_moment_freeze.json（原始SHA 8f4983cd7d7a4a890f0f5eca18723ef0a07960feb8af8c5503e3cebbbb678d81）；给定共同四阶C2-load证书、整个V1的NF迹缺陷和已剪枝p≤T条件下的提取器之冻结源码/结果一致性与来源路由；不是证书生成器、一般矩定理或新的全称证明。 本增量未重跑旧审计，未读取所列外部flat-extension文献。"
+      ]
+    },
+    {
+      "object_id": "UM-GLOBAL-MOMENT-HS-GREEDY-GAP-v1",
+      "version": 2,
+      "title": "真实最优四阶矩上指定全空间 HS 贪心的精确二倍反例",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "三台 identical machines 上真正最优调度的均匀 law 及其共同四阶 assignment 矩；K₀=I 的全空间 HS 分支选择，固定 big-first 顺序和平局规则。",
+      "statement": "取一个时间1的大 job 和八个时间1/4的小 jobs，三机总工作量3，T=OPT=1。对恰210个真实最优 assignment（大 job 所在机有3选、另两机各四小 job 有 C(8,4) 选）取均匀分布并形成共同四阶矩，rank M₁=17、δ=Σ_e tr(A_e−A_e²)=66。K₀=I₁₇，先大 job 后按标签处理小 jobs，每步最大化 ‖A_eK‖²_HS、平局取最小机器编号且左乘，则精确输出 [0,1,1,1,1,1,1,1,1]，真实负载 (1,2,0)，比率2。",
+      "quantifiers": "存在这一显式有理真 law；结论固定同一全空间初始化、指定任务次序、机器编号与精确平局规则。每步分数及后续严格分支可在原始有理递推表核对。",
+      "assumptions": [
+        "所有矩来自210个真正 OPT=1 完整调度的同一个均匀分布，故满足共同 assignment PSD/负载 localizer 合同；不是伪造逐机 law。",
+        "HS 内积和 A_e 均为同一 V₁ 压缩的有理 Gram 定义，不以秩一状态分数替代 trace-HS 分数。",
+        "第一步和首个小 job 利用精确对称平局，随后各小 job 的既定分支有正有理分数差；不能删去规则仍声称同一必然输出。"
+      ],
+      "scope": "必要原正文第9节与成熟计算正文保存组合矩、秩、缺陷、完整递推定义和精确输出；证明否定的是“真四阶最优矩本身足以让这一固定 HS 贪心严格优于二”。同例的 rank-one 规则给平衡输出只是独立有限对照。 0109有限审查§4精确接入同一210点law的R=17、δ=66、两次对称平局和其后严格正差值；全HS最终HS²=3369699728819633/18296029367563788288，rank-one对照负载(1,1,1)只归此固定输入对照。",
+      "objections": "δ=66 远离 NF 小缺陷条件，所以不反驳给定近平坦证书提取。不是所有初始化、所有任务顺序、所有平局、所有 HS 变体或所有矩算法的下界；rank-one 对照成功也不构成一般算法保证。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/全阶矩提取与近平坦HS贪心双源审查--审查.md",
+        "sha256": "dbef9218b48846a2bb3950bcbb373a18e7f4f9d9d24cef9b009717b5c3dcddfd",
+        "section": "三、全空间 HS 规则的大缺陷二倍反例"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/tools/evidence/um-following-audit-contracts-primary/comparison/research/current/unrelated_machines/global_assignment_moment_rounding.md",
+          "sha256": "c49e7d8dd13757f16ce6bd451c32999966739bed9be5c40d0bade4fce63cb1f0",
+          "section": "9. 大缺陷真实矩上全空间HS恰二倍"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/真实最优矩上全空间HS与单状态贪心原程序--计算.md",
+          "sha256": "db9555eb59e02564a57343bd2b4c843212506e3a6d70ab08906f9195e5a124c8"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/全局指派矩轮廓冻结审查增量--审查.md",
+          "sha256": "dd0b96bb4beb8cfb9630803206b7d7421e61242f202c10bed87b6d66dbd516bd"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/循环路径与HS贪心有限审计--审查.md",
+          "sha256": "17566920013c6a0b70e81d7959a1c6ad9af2d13b0f11569847a66159938601fc",
+          "section": "4. 三机 HS 型贪心和 rank-one 对照"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/未归档配置证书批次与量词边界--审查.md",
+          "sha256": "e50f84daeb3534546c3a0269f3136f6362f9ecb708d764e9b1cc4e0d60d2dc5b",
+          "section": "6. Global moment/HS 审计包"
+        }
+      ],
+      "sources": [
+        "全空间 HS 三机反例的完整冻结正文与真实最优矩原程序入口；只登记本固定规则的精确反例，不另造程序运行结论。",
+        "0108 recovery实际读取0109的精确证据节并接纳；未重跑历史程序，有限实现/比较证据不充当全称证明。",
+        "0096-R26: archives/unrelated-machines/state/审查/未归档配置证书批次与量词边界--审查.md §6. Global moment/HS 审计包；abbd6a205df15b9dce26 / global_assignment_moment_freeze.json（原始SHA 8f4983cd7d7a4a890f0f5eca18723ef0a07960feb8af8c5503e3cebbbb678d81）；同一三机big1+8small1/4、210个真实最优源、R=17、δ=66的固定全空间HS规则之冻结源码/结果一致性与来源路由；不扩大到所有顺序/初始化/平局；rank-one仅为此输入的独立有限对照。 本增量未重跑旧审计，未读取所列外部flat-extension文献。"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/审查/全阶矩提取与近平坦HS贪心双源审查--审查.md",
+      "sha256": "dbef9218b48846a2bb3950bcbb373a18e7f4f9d9d24cef9b009717b5c3dcddfd",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-FULL-DEGREE-MOMENT-DECODING-v1",
+        "UM-GLOBAL-MOMENT-NEARFLAT-EXTRACTION-v1",
+        "UM-GLOBAL-MOMENT-HS-GREEDY-GAP-v1"
+      ],
+      "reason": "三个独立稳定Claim的成熟分节正文；全阶逻辑桥、给定NF证书条件算法、固定全HS真实二倍反例分别登记。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/未归档配置证书批次与量词边界--审查.md",
+      "sha256": "e50f84daeb3534546c3a0269f3136f6362f9ecb708d764e9b1cc4e0d60d2dc5b",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-TRANSIENT-PRIORITY-DEADLOCK-v1",
+        "UM-SPARSE-CONDITIONED-CONFIG-GAP-v1",
+        "UM-CONTRACTED-SPARSE-CONFIG-GAP-v1",
+        "UM-COMPACT-COUNT-ESCAPE-GAP-v1",
+        "UM-CONFIG-FINITE-COVER-v1",
+        "UM-GLOBAL-MOMENT-NEARFLAT-EXTRACTION-v1",
+        "UM-GLOBAL-MOMENT-HS-GREEDY-GAP-v1"
+      ],
+      "reason": "全文读23源逐个保全。priority deadlock已在0095主record有精确section；其余按共同DAG/设施游戏/CONFIG/slot/fork/Hall/sink/moment/UNSAT分别路由。Sparse如已出现0100正式证据才列已接；未接不假归档，设施不是UM。 父已核0100最终主record实际接3.1 compact及3.2 finite-cover，本材料另保这些精确owner；其余未接章节仍needs-decision。 Boss5原0108主作者本增量实际接纳0096-R26的§6为NF/固定全HS两Claim之冻结SHA、来源路由与有限审计一致性证据；完整保留原五owner并增加这两owner。只解除route index 26；其余混页章节尚未获各主owner接受，仍needs-decision，未接外部文献或未读原程序。",
+      "pending_route_indices": [
+        9,
+        10,
+        11,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        27
+      ]
+    }
+  ],
+  "edge_files": []
+}
