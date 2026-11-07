@@ -1,0 +1,542 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline-5cd4b9018.json",
+    "sha256": "af99fb773928f3fc6bcd577ade37fbb07e8f84befbb2304158b99894ab1e56a3"
+  },
+  "objects": [
+    {
+      "object_id": "CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1",
+      "version": 2,
+      "title": "最优首动作菜单的真实孩子损失精确恒等与路径总账",
+      "kind": "identity",
+      "truth_status": "proved",
+      "model": "有限单位客户、有限非空共同标签目录、单位提供者顺序观察全部有序历史；每位各选一主题，客户价值在最终覆盖者间均分。重复行动、空覆盖、同覆盖异标签和全部离轨弱平局均保留；具体反例仅限其指定输入。",
+      "statement": "任意合法有序历史覆盖P、余r、规定S及收益u，F_k(Q)=max_(k合法主题)|Q∪全部主题|，G=F_r(P)，H=F_(r−1)(P∪S)，δ=G−H；最优菜单由F_(r−1)(P∪A)=G定义。强制A沿同σ得尾并集Y_A、收益d_A及Γ=u−d_A≥0。记M=|A∖(P∪S)|、t=|A∖(P∪S∪Y_A)|、ρ=G−|P∪A∪Y_A|、θ=M−δ、f=|S∖(P∪A∪Y_A)|、ξ=H−|P∪S∪Y_A|、η=r d_A−M−(r−1)t。各项非负，r(δ−u)=(r−1)ρ−θ−(r−1)f−(r−1)ξ−η−rΓ。沿actual路径Σ(δ_i−u_i)=OPT−2W。任意非菜单A令G_A=F_(r−1)(P∪A)、λ=G−G_A、R=G_A−|P∪A∪Y_A|、hatθ=M+λ−δ，则r(δ−u)=rλ+(r−1)R−hatθ−(r−1)f−(r−1)ξ−η−rΓ。",
+      "quantifiers": "∀有限原实例、每份完整SPE、每合法有序历史；菜单最小值只在本历史的最优首动作菜单内，真实后继不得更换。",
+      "assumptions": [],
+      "scope": "∀有限原实例、每份完整SPE、每合法有序历史；菜单最小值只在本历史的最优首动作菜单内，真实后继不得更换。",
+      "objections": "ρ,θ,f,ξ,η各有静态最优性/真实IC理由，路径恒等准确但未支付总预算。丢ξ、η的加强已有反例；只丢η后的总候选单列open，不从恒等式宣称half。 工作稿复核的(6)是相同最优菜单恒等式；(7)另计合法非菜单动作的 rλ_A 和修正 θ̂_A。取菜单分布只组合已成立的式子。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/最优首动作菜单与真实孩子损失--引理.md",
+        "sha256": "0a19af6f0b2a834ad342f9f482fd3427f82fe18d5fb7bd4753a9fa6540166e69"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/共同核心客户对分享余项候选的平移--引理.md",
+          "sha256": "d208adab3ccc5c03c8c683abf451b1bab2d072e577bbba83ea795ed3b7308add"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/星形目录的分享余项等号--定理.md",
+          "sha256": "40bf5060ca268ecf6297ab9b89b539ea6e7f87ee7ea7142742df56fa7c406304"
+        },
+        {
+          "path": "archives/customer-attraction/state/算法/分享余项候选的完整策略树极值--算法.md",
+          "sha256": "6f9d8b5a954aade36b1b2d13c90ce96bf0f7fe03ed338a52c82eaa9c4124a19e"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/删信用预算并行审查与分支成本的精确校准--资源.md",
+          "sha256": "f3511d83e2897b5ba425da07a3d3f51bab302b8fe70fd610e467ef09e350c743",
+          "section": "被否定的是删信用后的付款，不是局部恒等式"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/最优首动作菜单原稿的两级信用与真实孩子总账--资源.md",
+          "sha256": "3c14ddc66e721ffeb750f7e155b1c15e7009f0c14d9b83a6f162c3886cc2cf2d",
+          "section": "同一精确历史和两层原稿"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/最优首动作菜单原稿的两级信用与真实孩子总账--资源.md",
+          "sha256": "3c14ddc66e721ffeb750f7e155b1c15e7009f0c14d9b83a6f162c3886cc2cf2d",
+          "section": "菜单版保全部新增客户，信用不能双花"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/最优首动作菜单原稿的两级信用与真实孩子总账--资源.md",
+          "sha256": "3c14ddc66e721ffeb750f7e155b1c15e7009f0c14d9b83a6f162c3886cc2cf2d",
+          "section": "菜单外动作不能漏覆盖损失"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/optimal_first_action_branch_gap.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/customer_attraction/optimal_first_action_branch_gap.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/customer_attraction/optimal_first_action_branch_gap.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/offspring_menu_loss_bound.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-3bc48d936f044f12b0fa743482ff5eb0/optimal_gap/stopping_barrier.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-a8ee6fdb155c47da95540775b4a6a2db/tree/README.md",
+        "archives/customer-attraction/state/资源/删信用预算并行审查与分支成本的精确校准--资源.md",
+        "archives/customer-attraction/state/资源/最优首动作菜单原稿的两级信用与真实孩子总账--资源.md"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/optimal-completion-private-block-ledger",
+      "version": 2,
+      "title": "最优补全私有块的同枝份额与全路径精确缺额",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空共同标签目录及覆盖映射、m名单位提供者顺序观察全部有序历史各选一次主题；终局每名客户在其所有覆盖者间均分。固定定义于全部合法有序历史的完整纯SPE，保空主题、重复行动、同覆盖标签、零客户与任意离轨平局；强制偏离后沿同一原σ真实续行。根无外生背景，W为actual覆盖。",
+      "statement": "actual位置i的过去并集P、余r、规定S，F_k(P)=max合法k槽|P∪各题|，δ_i=F_r(P)−F_(r−1)(P∪S)。选最优补全T、O=P∪各T、D_j=T_j\\(P∪其它T)、e=|S\\O|。真强制T_j后的当前收益d_ij、块外部分d_out和future在D_j总份额L_ij满足|D_j|=d_ij−d_out+L_ij。令Γ=u_i−d_ij≥0、ε=F_(r−1)(P∪S)−[F_r(P)+e−|D_j\\S|]≥0，则δ_i−u_i=L_ij−d_out−|D_j∩S|−e−ε−Γ。逐actual位置取一份选择后，Σδ_i=OPT−W，故OPT−2W恰为上述右侧之和。",
+      "quantifiers": "任意完整SPE的每个actual位置、每份最优余槽补全和每个比较索引；沿actual可各选一次。",
+      "assumptions": [
+        "D_j仅比较元组私有且无过去覆盖，不是全目录私有",
+        "L_ij与d_ij属于同一强制分支，不换actual尾"
+      ],
+      "scope": "真实私有块守恒、准确局部及全路径ledger；静态交换以最优补全为承重。",
+      "objections": "当前完整收益只消费一次；静态多槽交换由0033 M-229d7c0b44324c27b2755e659b46d235对应合同处理，不另分同义EX1节点。不能把L_ij跨子树相加当已付实际利润。 工作稿在同一比较私有块输入上另给真实强制孩子的ρ_j及同尾静态ξ_j表达；R_h−u=R_(hS)+(r−1)R_(hT_j)/r−(ε_j+e+η_j^priv)/r−(r−1)(f_j+ξ_j)/r−Γ_j。按原策略分别取两个真实孩子，递推本身未给跨分支付款。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/最优补全私有块交换与分支账本--引理.md",
+        "sha256": "5bdc6de1c6e8aa7163903d8339badd8b757e8c1836c21ae6d320c4fe99cc2d8e",
+        "section": "一个真实强制分支的无重计恒等式"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/最优补全私有块交换与分支账本--引理.md",
+          "sha256": "5bdc6de1c6e8aa7163903d8339badd8b757e8c1836c21ae6d320c4fe99cc2d8e",
+          "section": "总账、未证加强及后续关系"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/最优首动作菜单原稿的两级信用与真实孩子总账--资源.md",
+          "sha256": "3c14ddc66e721ffeb750f7e155b1c15e7009f0c14d9b83a6f162c3886cc2cf2d",
+          "section": "私有块版真实孩子递推"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/引理/最优补全私有块交换与分支账本--引理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/branch_budget/optimal_completion_exchange_debt.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/branch_budget/optimal_completion_exchange_debt.md",
+        "archives/customer-attraction/state/资源/最优首动作菜单原稿的两级信用与真实孩子总账--资源.md"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/true-branch-owner-cost-exact-welfare-slack",
+      "version": 2,
+      "title": "整行真实查询归属LP的三非负误差与half余量精确差额",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空带标签共同目录及任意覆盖映射，m名单位提供者依次观察全部有序历史各选一次，终局客户在覆盖者间均分；完整纯SPE在所有在轨及离轨有序历史比较同一原策略下的真实偏离续局。保空主题、重复选择、同覆盖异标签、零客户及任意离轨弱平局。",
+      "statement": "固定完整σ及一个最优并集O，实际C、W，R=O∖C、G=C∖O、J=O∪C、E=N∖J。每行全目录概率y满足遗漏查询质量a_x≥1，成本q_i(A)=|R∩A|−d_i^J(A)。则Σyq=|R|−W+Σ_(x∈R)(a_x−1)+ΣyΓ_i(A)+Σy d_i^E(A)，其中Γ=u_i−d_i≥0。有限可行紧LP达到D=|R|−W+E_min；D≤|G|当且仅当E_min≤2W−OPT。对偶β≥0、α自由、α_i+Σ_(R∩A)β≤q_i(A)，常数β=1、α_i=−u_i只给相同下基线|R|−W。",
+      "quantifiers": "每份完整SPE、每个固定最优并集O及全部合法整行查询y；一般付款的每O强式与存在O弱式分别开放。",
+      "assumptions": [
+        "d_i(A)是实际有序前缀强制A后沿同一σ的全部收益；J与E限制收益都保原分母",
+        "行和为1，重复主题查询的客户质量按全部会员计；唯一owner标签不删重复覆盖"
+      ],
+      "scope": "原mixed-owner目标和对偶的精确解析分解，不是一般付款或SPE半覆盖证明。",
+      "objections": "half仅给非负余量，不保证能容纳三项误差。all-big可取E_min=0、D=−1，故同尾删信用预算失败不能转移给本LP。程序页的随机h及有限审计不授全部SPE结论。 并行原审查另保两套最优并集量词；全称版本用一份SPE的一坏最优并集反驳，存在版本须同一份SPE的全部最优并集均坏。历史m=3,5程序只核显式原始/β=1对偶匹配值−1，本轮未重新运行。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/真实分支归属成本与福利余量的精确差额--引理.md",
+        "sha256": "1cecef7751dd76f54cc8b49fbbf90ba3e5418e8e05f34a47c4fe98d2318a2298"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/动态查询倒数债审计与归属对偶的原始合同--程序.md",
+          "sha256": "d26c7b11b2780b274a0f85ae5c27ae63030443ebb20e39b9d0a0dc56d4f4d809",
+          "section": "mixed-owner原始对偶：集合与量词的两项纠正"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/真实门槛与归属响应税的有限原审计合同--程序.md",
+          "sha256": "e065fa1162c9519ca3033b7d460237e47896180f3388f6e96bbd29251ed15704",
+          "section": "owner_tax逐客户实际计算"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/删信用预算并行审查与分支成本的精确校准--资源.md",
+          "sha256": "f3511d83e2897b5ba425da07a3d3f51bab302b8fe70fd610e467ef09e350c743",
+          "section": "三份原件、并行身份和现有对象"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/删信用预算并行审查与分支成本的精确校准--资源.md",
+          "sha256": "f3511d83e2897b5ba425da07a3d3f51bab302b8fe70fd610e467ef09e350c743",
+          "section": "9660B 入口的实际计算域"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/删信用预算并行审查与分支成本的精确校准--资源.md",
+          "sha256": "f3511d83e2897b5ba425da07a3d3f51bab302b8fe70fd610e467ef09e350c743",
+          "section": "全部原报告的精确数值与动作分组"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/new-general-mechanisms-review-and-audit-three-primary/source-root/research/workspaces/customer-attraction/R-f399f831353446a49502f49d8abd2cb7/recursive_state/mixed_owner_lp.md",
+          "sha256": "89ca689f91817453c74013fbe2691964c68379cfc7797858260cb5ecb511d342"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/new-general-mechanisms-review-and-audit-three-primary/source-root/research/workspaces/customer-attraction/boss20/route_flow/dual_owner_budget.md",
+          "sha256": "1ec77ba0c4ac0b09bd57ca081cf99e1e1f5dc7e23916e706af09399d984aa3fe"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/new-general-mechanisms-review-and-audit-three-primary/source-root/research/workspaces/customer-attraction/R-b6d636d360e14c11aeb4b76415ed422b/direction_review/continued_exchange_2026_10_24/audits/audit_new_general_mechanisms.py",
+          "sha256": "a0f1aa4dc593a832085d9fcd87c91d82cf3703a8ee118b123f2e5ffe7228546b"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/new-general-mechanisms-review-and-audit-three-primary/source-root/research/workspaces/customer-attraction/R-b6d636d360e14c11aeb4b76415ed422b/direction_review/continued_exchange_2026_10_24/audits/audit_new_general_mechanisms.json",
+          "sha256": "3048ed5e0c286f962c5a39589eab874ed03f906330a9994a86ae4c1dbfa0f4fe"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/引理/真实分支归属成本与福利余量的精确差额--引理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-b6d636d360e14c11aeb4b76415ed422b/direction_review/continued_exchange_2026_10_24/audits/new_general_mechanisms.md#5",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-f399f831353446a49502f49d8abd2cb7/recursive_state/mixed_owner_lp.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/boss20/route_flow/dual_owner_budget.md",
+        "archives/customer-attraction/state/程序/动态查询倒数债审计与归属对偶的原始合同--程序.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/boss20/route_flow/dual_owner_budget.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/boss20/route_mpath/README.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/boss20/route_mpath/README.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/boss20/route_mpath/audit_dynamic_query_debt.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/boss20/route_mpath/audit_dynamic_query_debt.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/boss20/route_mpath/dynamic_query_debt_identity.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/boss20/route_mpath/dynamic_query_debt_identity.md",
+        "archives/customer-attraction/state/程序/真实门槛与归属响应税的有限原审计合同--程序.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-f399f831353446a49502f49d8abd2cb7/counterexample_attack/owner_tax_exhaustive.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-f399f831353446a49502f49d8abd2cb7/counterexample_attack/owner_tax_exhaustive_report.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-f399f831353446a49502f49d8abd2cb7/counterexample_attack/owner_tax_search_random.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-f399f831353446a49502f49d8abd2cb7/root_route/experiments/check_threshold_candidate.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-f399f831353446a49502f49d8abd2cb7/root_route/experiments/q3_m5.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-f399f831353446a49502f49d8abd2cb7/root_route/experiments/q4_m4_sample500.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-f399f831353446a49502f49d8abd2cb7/threshold_budget/test_summary.py",
+        "archives/customer-attraction/state/资源/删信用预算并行审查与分支成本的精确校准--资源.md"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/same-tail-completion-credit-obstruction",
+      "version": 2,
+      "title": "同尾补全信用删除及固定比例折扣的全人数付款障碍",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空带标签共同目录及任意覆盖映射，m名单位提供者依次观察全部有序历史各选一次，终局客户在覆盖者间均分；完整纯SPE在所有在轨及离轨有序历史比较同一原策略下的真实偏离续局。保空主题、重复选择、同覆盖异标签、零客户及任意离轨弱平局。",
+      "statement": "m≥3时取m客户大主题B与m−1个互不交单例，所有有序历史恒选B为完整SPE，W=m、OPT=2m−1。按最优首动作信用账，删ξ与η的STRONG预算对全部各节点菜单分布的最小左减右为D_m=(m²−3m−2)/2+H_m>0。只保留被减ξ项固定比例α<1、其余原系数不变，最有利预算为−1+(1−α)C_m，C_m=(m²−3m)/2+H_m；删η时这是最小值，保η时全部分布同值，故每个固定α<1在足够大m失败。",
+      "quantifiers": "全部整数m≥3及全部实际路径最优菜单分布；固定m的折扣反证条件是(1−α)C_m>1，而非任意α<1均失败。",
+      "assumptions": [
+        "ξ、η、ρ、θ、f、Γ严格沿CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1的同一真实尾定义",
+        "保留原其它系数，讨论的是加强共同付款预算非正性"
+      ],
+      "scope": "特定信用预算的解析反例族；保留游戏构造既有身份，新增其预算失败用途。",
+      "objections": "减少被减非负ξ的系数会放松上界，不能声称原上界失效。完整保ξ只删η的候选未被本族否定；完整信用恒等式及half均未被反驳。 并行稿保m=3、5显式全有序树的39、3905次比较（均含自身）和7、21条实际路径菜单行。该程序只处理这两个人数；全人数结论由主正文和两处解析推导承担。",
+      "body": {
+        "path": "archives/customer-attraction/state/障碍/同尾补全信用折扣--障碍.md",
+        "sha256": "714f29df960c50fa72fed210beb43f9f85eb14ea23641b6cb89b35f8f1d72d49"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/最优首动作菜单与真实孩子损失--引理.md",
+          "sha256": "0a19af6f0b2a834ad342f9f482fd3427f82fe18d5fb7bd4753a9fa6540166e69"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/删信用预算并行审查与分支成本的精确校准--资源.md",
+          "sha256": "f3511d83e2897b5ba425da07a3d3f51bab302b8fe70fd610e467ef09e350c743",
+          "section": "全人数 all-big 族及所有菜单量词"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/删信用预算并行审查与分支成本的精确校准--资源.md",
+          "sha256": "f3511d83e2897b5ba425da07a3d3f51bab302b8fe70fd610e467ef09e350c743",
+          "section": "减负项系数仍保上界，付款符号另论"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/删信用预算并行审查与分支成本的精确校准--资源.md",
+          "sha256": "f3511d83e2897b5ba425da07a3d3f51bab302b8fe70fd610e467ef09e350c743",
+          "section": "9660B 入口的实际计算域"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/删信用预算并行审查与分支成本的精确校准--资源.md",
+          "sha256": "f3511d83e2897b5ba425da07a3d3f51bab302b8fe70fd610e467ef09e350c743",
+          "section": "全部原报告的精确数值与动作分组"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/最优首动作菜单原稿的两级信用与真实孩子总账--资源.md",
+          "sha256": "3c14ddc66e721ffeb750f7e155b1c15e7009f0c14d9b83a6f162c3886cc2cf2d",
+          "section": "原内审与后来反驳分别保存"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/new-general-mechanisms-review-and-audit-three-primary/source-root/research/workspaces/customer-attraction/R-b6d636d360e14c11aeb4b76415ed422b/direction_review/continued_exchange_2026_10_24/audits/new_general_mechanisms.md",
+          "sha256": "d16de32794a6355fa19112106a034077be254b81155bd88573a9afaa61dbd892"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/new-general-mechanisms-review-and-audit-three-primary/source-root/research/workspaces/customer-attraction/R-b6d636d360e14c11aeb4b76415ed422b/direction_review/continued_exchange_2026_10_24/audits/audit_new_general_mechanisms.py",
+          "sha256": "a0f1aa4dc593a832085d9fcd87c91d82cf3703a8ee118b123f2e5ffe7228546b"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/new-general-mechanisms-review-and-audit-three-primary/source-root/research/workspaces/customer-attraction/R-b6d636d360e14c11aeb4b76415ed422b/direction_review/continued_exchange_2026_10_24/audits/audit_new_general_mechanisms.json",
+          "sha256": "3048ed5e0c286f962c5a39589eab874ed03f906330a9994a86ae4c1dbfa0f4fe"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/障碍/同尾补全信用折扣--障碍.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/all_big_completion_slack_obstruction.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/all_big_completion_slack_obstruction.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/optimal_first_action_branch_gap.md#5-非均匀选择及全路径共同支付的准确剩余义务",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/customer_attraction/optimal_first_action_branch_gap.md#5-边界和准确状态",
+        "archives/customer-attraction/state/资源/删信用预算并行审查与分支成本的精确校准--资源.md",
+        "archives/customer-attraction/state/资源/最优首动作菜单原稿的两级信用与真实孩子总账--资源.md"
+      ]
+    },
+    {
+      "object_id": "M-5a32d36d5d2d4eb8a54df3a0a7566a9b",
+      "version": 2,
+      "title": "分享余项的最优首动作菜单聚合付款候选",
+      "kind": "candidate",
+      "truth_status": "open",
+      "model": "有限单位客户、有限非空共同标签目录、单位提供者顺序观察全部有序历史；每位各选一主题，客户价值在最终覆盖者间均分。重复行动、空覆盖、同覆盖异标签和全部离轨弱平局均保留；具体反例仅限其指定输入。",
+      "statement": "零根原完整SPE的每actual位置i余r_i，最优首动作菜单𝓜_i内取同σ真实强制尾，η_i(A)=r_i d_i(A)−|A∖(P_i∪S_i)|−(r_i−1)|A∖(P_i∪S_i∪Y_i(A))|≥0。候选Λ(σ)=Σ_i min_(A∈𝓜_i)η_i(A)/r_i≤2W−OPT_m。",
+      "quantifiers": "∀m≥1、∀有限原实例、∀完整有序历史纯SPE；每位置可选自身最小菜单A，但其强制尾须来自同一原σ。",
+      "assumptions": [],
+      "scope": "∀m≥1、∀有限原实例、∀完整有序历史纯SPE；每位置可选自身最小菜单A，但其强制尾须来自同一原σ。",
+      "objections": "普遍式尚未完成付款；共同核平移、全m星形等号和固定实例精确极值算法为结构/攻击工具，不以有限检查关闭全称目标。η与ρ、复制税C不同，保独立身份。 保全部ξ仅删η时，沿actual路径各位置独立最小化η_A/r。all-big族反驳删ξ/η及固定折扣的更强合同，仍给本候选留开放状态。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/最优首动作菜单与真实孩子损失--引理.md",
+        "sha256": "0a19af6f0b2a834ad342f9f482fd3427f82fe18d5fb7bd4753a9fa6540166e69"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/共同核心客户对分享余项候选的平移--引理.md",
+          "sha256": "d208adab3ccc5c03c8c683abf451b1bab2d072e577bbba83ea795ed3b7308add"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/星形目录的分享余项等号--定理.md",
+          "sha256": "40bf5060ca268ecf6297ab9b89b539ea6e7f87ee7ea7142742df56fa7c406304"
+        },
+        {
+          "path": "archives/customer-attraction/state/算法/分享余项候选的完整策略树极值--算法.md",
+          "sha256": "6f9d8b5a954aade36b1b2d13c90ce96bf0f7fe03ed338a52c82eaa9c4124a19e"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/删信用预算并行审查与分支成本的精确校准--资源.md",
+          "sha256": "f3511d83e2897b5ba425da07a3d3f51bab302b8fe70fd610e467ef09e350c743",
+          "section": "减负项系数仍保上界，付款符号另论"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/最优首动作菜单原稿的两级信用与真实孩子总账--资源.md",
+          "sha256": "3c14ddc66e721ffeb750f7e155b1c15e7009f0c14d9b83a6f162c3886cc2cf2d",
+          "section": "原内审与后来反驳分别保存"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/optimal_first_action_branch_gap.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/customer_attraction/optimal_first_action_branch_gap.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/customer_attraction/optimal_first_action_branch_gap.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/offspring_menu_loss_bound.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-3bc48d936f044f12b0fa743482ff5eb0/optimal_gap/stopping_barrier.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-a8ee6fdb155c47da95540775b4a6a2db/tree/README.md",
+        "archives/customer-attraction/state/资源/删信用预算并行审查与分支成本的精确校准--资源.md",
+        "archives/customer-attraction/state/资源/最优首动作菜单原稿的两级信用与真实孩子总账--资源.md"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/actual-prefix-fresh-coverage-global-counterexample",
+      "version": 2,
+      "title": "实际根SPE前缀的剩余利润加新增覆盖预算失败",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限单位客户、有限非空共同主题目录、m名单位提供者依全部合法有序历史各选一次；终局客户价值在覆盖者间均分；完整纯SPE在每个有序历史按同一策略真实偏离续行。",
+      "statement": "52客户六标签四人完整SPE实际ABAB；实际前缀AB之后P=17、新增Δ=0、两槽最大新增O₂(b)=18。于是对每个实λ，P+λΔ−O₂(b)=−1。",
+      "quantifiers": "存在同一个有限实例、一份完整根σ和实际前缀，使每个固定实λ的普遍桥同时失败。",
+      "assumptions": [
+        "b由实际前两位合法行动生成；P只算剩余两位收益，O₂只算前缀未覆盖客户"
+      ],
+      "scope": "实际到达背景的GLOBAL反例，比仅固定合法子局强。",
+      "objections": "259节点完整编码和全真实偏离合同见正文；手写尾局与原根限制在三个离轨平局处不同。W34/OPT52不反half。 私有块工作稿BG?以含旧并集的F_r(P)−W_h≤V_h表述同一全局新增覆盖桥。AB后旧并集34、F_2(P)=52、W_h=34、V_h=17；缺额18>17。证据中的这一路由限此BG?，裸|O|≤旧份额+2V另有身份。",
+      "body": {
+        "path": "archives/customer-attraction/state/反例/实际前缀的剩余利润与新增覆盖--反例.md",
+        "sha256": "256da0925a23f2cc0bad23f4c9de1722ec417d91cca4b817abd10bbbc331a1b7"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/实际前缀背景反例的完整策略核验--计算.md",
+          "sha256": "ae8714e5d0e1dc12e864e9b3e62b66b0dc4aa7488ed63b8b5dcb6b381146039a"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/最优首动作菜单原稿的两级信用与真实孩子总账--资源.md",
+          "sha256": "3c14ddc66e721ffeb750f7e155b1c15e7009f0c14d9b83a6f162c3886cc2cf2d",
+          "section": "原内审与后来反驳分别保存"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/反例/实际前缀的剩余利润与新增覆盖--反例.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-5c4f6385eec046eb9a20052facacba11/background/global_actual_prefix_counterexample.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-5c4f6385eec046eb9a20052facacba11/background/global_actual_prefix_complete_spe.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-5c4f6385eec046eb9a20052facacba11/parent/actual_prefix_independent_review.md",
+        "archives/customer-attraction/state/资源/最优首动作菜单原稿的两级信用与真实孩子总账--资源.md"
+      ]
+    },
+    {
+      "object_id": "M-7e204ccd7c6e4b7c8cbd5ddec64f5716",
+      "version": 2,
+      "title": "十三人完整SPE否定同一查询的统一有符号delta粗预算",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空共同标签目录和覆盖映射；m名单位权提供者依次观察全部有序历史各选一次主题，客户价值在终局覆盖者间均分。完整纯SPE保所有在轨和离轨有序历史、弱平局、重复行动、空主题、零客户及同覆盖异标签；偏离后沿同一原策略真实后继。具体集合目录限制或特定策略以本对象另列前提为准。",
+      "statement": "固定13人36客户六标签(A,B,T,D,E,P)完整SPE的实际路径P^10AAB，W=33、OPT=36、前12人利润5/2、末位w=3。同一μ=δ_T令前十个非末位δ_i=1/2、后两位为0，Σδ=5>(W+w)/(2m)=18/13，差47/13；总矩阵最大条目5，B/T点质量达到。2002个达到OPT的允许重复主题的m槽计数向量各诱导同一查询μ=n/13，其中368个总δ超过18/13，最大1373/507、超额671/507，最小−38375/5577；目录均匀查询为7/132。故对所有同一查询的统一粗预算及对所有最优组合查询的粗预算均被此固定SPE反驳；同一SPE存在支付得起的最优组合。",
+      "quantifiers": "存在一份固定13人完整有序历史纯SPE与坏同一查询；其全部2002个最优可重复计数向量有限精确比较，既有坏查询也有好查询。一般存在一个共同最优查询以支付全部独立余项仍开放。",
+      "assumptions": [
+        "δ沿每次真实中继/末回复而非冻结suffix",
+        "各位置使用同一个μ",
+        "保持总质量、真实S/Z slack与查询依赖重叠余项的同一账本"
+      ],
+      "scope": "精确否统一粗delta付款助手，不反一般或六人half。",
+      "objections": "28原脚本外部依赖未随其source提供，不冒本次重跑；本库已有完整packet作为必要策略证据。重复组合失败不外推少重复选择性版本；2W−OPT30。 原探针保固定13人自动机27243节点和112050次真实偏离比较。原报441/2为未除人数的重叠量；本查询实际扣项441/26，将仅扣S/Z后的超额4982/5577变为−179225/11154。核此精确算术，沿用历史重放，选择共同查询的一般义务仍开放。",
+      "body": {
+        "path": "archives/customer-attraction/state/障碍/R-171有符号delta选择与重叠信用边界--障碍.md",
+        "sha256": "7a85659ade80875c9e9889074d5ecec1b8565eb2088ba5cef3aa2d24e2d7b3a9"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/障碍/R-171有符号delta选择性预算独立复核--障碍.md",
+          "sha256": "7f2ff187a395c6a7380672aacd8aaa3fa0602d916be555b16de2757dbb4531e5"
+        },
+        {
+          "path": "archives/customer-attraction/state/反例/实际均匀缩放负载的弱付款桥--反例.md",
+          "sha256": "32a7f769383211709c67373e85118ceb541b5e4d58d2bb3d826272ac3e332b1f"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-171-price13-20261031/original/refined_tax_k10_packet.json.gz",
+          "sha256": "bad2b15d1abe89d9fa8671df84de8638a4b1ca46279712baa5482abb2bdf18ce"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/R-171固定包络价格13节点有符号delta有限审计--障碍.md",
+          "sha256": "431f661e12248a5c5b8b2f7e003b8c3cc9cc907d47745c7e5c9f13b7effea445",
+          "section": "输入与 SPE 验证"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/R-171固定包络价格13节点有符号delta有限审计--障碍.md",
+          "sha256": "431f661e12248a5c5b8b2f7e003b8c3cc9cc907d47745c7e5c9f13b7effea445",
+          "section": "有符号 delta 的实测范围"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/R-171固定包络价格13节点有符号delta有限审计--障碍.md",
+          "sha256": "431f661e12248a5c5b8b2f7e003b8c3cc9cc907d47745c7e5c9f13b7effea445",
+          "section": "信用尝试与开放缺口"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-171-price13-20261031/original/probe_signed_delta.py",
+          "sha256": "53c14148d65c4e7f35c44b77bdf6b9f6204f49507bf96c842a07f9a50e336252"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-171-price13-20261031/replay/packet13_all_nodes_audit.json.gz",
+          "sha256": "413b08a0ff864c409ce08932a4172bc259ff3ba9d0d1e3d27653ae194aeb87b5"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-171-price13-20261031/replay/signed_delta_report.json",
+          "sha256": "46e73447954de7f97a7f72a61fb24f12388dee54a0cffddb2d7f8b8716b47756"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/障碍/R-171有符号delta选择与重叠信用边界--障碍.md",
+        "customer-attraction/r171-signed-delta-and-overlap-credit-boundary",
+        "archives/customer-attraction/state/障碍/R-171固定包络价格13节点有符号delta有限审计--障碍.md"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/customer-attraction/state/反例/实际前缀的剩余利润与新增覆盖--反例.md",
+      "sha256": "256da0925a23f2cc0bad23f4c9de1722ec417d91cca4b817abd10bbbc331a1b7",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/actual-prefix-fresh-coverage-global-counterexample"
+      ],
+      "reason": "复用既有主正文和稳定ID；精确接收另列来源证据及数学范围，保原证明、条件和其它材料归属。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优补全私有块交换与分支账本--引理.md",
+      "sha256": "5bdc6de1c6e8aa7163903d8339badd8b757e8c1836c21ae6d320c4fe99cc2d8e",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/optimal-completion-private-block-ledger"
+      ],
+      "reason": "复用既有主正文和稳定ID；精确接收另列来源证据及数学范围，保原证明、条件和其它材料归属。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优首动作菜单与真实孩子损失--引理.md",
+      "sha256": "0a19af6f0b2a834ad342f9f482fd3427f82fe18d5fb7bd4753a9fa6540166e69",
+      "disposition": "objects",
+      "object_ids": [
+        "CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1",
+        "M-5a32d36d5d2d4eb8a54df3a0a7566a9b"
+      ],
+      "reason": "复用既有主正文和稳定ID；精确接收另列来源证据及数学范围，保原证明、条件和其它材料归属。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/真实分支归属成本与福利余量的精确差额--引理.md",
+      "sha256": "1cecef7751dd76f54cc8b49fbbf90ba3e5418e8e05f34a47c4fe98d2318a2298",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/true-branch-owner-cost-exact-welfare-slack"
+      ],
+      "reason": "复用既有主正文和稳定ID；精确接收另列来源证据及数学范围，保原证明、条件和其它材料归属。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/删信用预算并行审查与分支成本的精确校准--资源.md",
+      "sha256": "f3511d83e2897b5ba425da07a3d3f51bab302b8fe70fd610e467ef09e350c743",
+      "disposition": "attachment",
+      "object_ids": [
+        "CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1",
+        "customer-attraction/true-branch-owner-cost-exact-welfare-slack",
+        "customer-attraction/same-tail-completion-credit-obstruction",
+        "M-5a32d36d5d2d4eb8a54df3a0a7566a9b"
+      ],
+      "reason": "实读两套付款量词、all-big解析表、旧有限执行域及逐位置数值。与0053同尾折扣主命题相同；LOCAL归最优首动作，owner LP有限原始/对偶匹配与量词区分归真实分支归属成本，保η候选只接原开放范围。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/最优首动作菜单原稿的两级信用与真实孩子总账--资源.md",
+      "sha256": "3c14ddc66e721ffeb750f7e155b1c15e7009f0c14d9b83a6f162c3886cc2cf2d",
+      "disposition": "attachment",
+      "object_ids": [
+        "CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1",
+        "customer-attraction/optimal-completion-private-block-ledger",
+        "customer-attraction/same-tail-completion-credit-obstruction",
+        "M-5a32d36d5d2d4eb8a54df3a0a7566a9b",
+        "customer-attraction/actual-prefix-fresh-coverage-global-counterexample"
+      ],
+      "reason": "实读整页。私有块(3)–(4)归同一强制分支账本的两个真实孩子表达；菜单(6)、任意动作(7)归最优首动作主身份；后出的同尾折扣、保η开放义务和BG?反例分别归各精确数学owner。"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/R-171固定包络价格13节点有符号delta有限审计--障碍.md",
+      "sha256": "431f661e12248a5c5b8b2f7e003b8c3cc9cc907d47745c7e5c9f13b7effea445",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-7e204ccd7c6e4b7c8cbd5ddec64f5716"
+      ],
+      "reason": "实读固定有序自动机、同查询矩阵及选择性数值。全部查询或全部最优组合预算的全称合同各有坏点；固定最大点仅扣S/Z仍超额，再扣overlap已修复。完整冻结探针/报告继续作为该十三人精确反例的证据。"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/R-171有符号delta选择与重叠信用边界--障碍.md",
+      "sha256": "7a85659ade80875c9e9889074d5ecec1b8565eb2088ba5cef3aa2d24e2d7b3a9",
+      "disposition": "objects",
+      "object_ids": [
+        "M-7e204ccd7c6e4b7c8cbd5ddec64f5716"
+      ],
+      "reason": "复用既有主正文和稳定ID；精确接收另列来源证据及数学范围，保原证明、条件和其它材料归属。"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/同尾补全信用折扣--障碍.md",
+      "sha256": "714f29df960c50fa72fed210beb43f9f85eb14ea23641b6cb89b35f8f1d72d49",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/same-tail-completion-credit-obstruction"
+      ],
+      "reason": "复用既有主正文和稳定ID；精确接收另列来源证据及数学范围，保原证明、条件和其它材料归属。"
+    }
+  ],
+  "edge_files": []
+}
