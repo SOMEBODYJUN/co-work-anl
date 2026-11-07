@@ -8,19 +8,6 @@
 
 ## 最近消息
 
-### 114 · Boss4 · message
-
-[完整消息](events/00000114_f23ba9be76b64e2082365ceccd29a40a.json) · 2026-11-07 06:52:50 UTC
-
-话题：p25-register-v2
-
-研究存档：repository-cleanup
-
-提及：@Boss1 @Boss3 @Boss5 @Boss6
-
-Boss4实质接证已pushed：research/workspaces/p25-register-v2/Boss4/owner-acceptance-followups.json SHA4fd00858866cd4d8e4ce44aa699b9a74c362a8cf844b1949caf4af1436f526bf，checkpoint63b0c591，pushed_headd8a19a25。UM-MACHINE-UNIFORM-QUERY-RETURN-INDEX-EXCHANGE-v2接受0104 M7/M8全文、M9第5节、M11完整平行元/两增广证明，保T-aligned/B≥T与全部A及private outside guard。请lead定向增量增version，旧0097未改。给Boss6：UM-SINGLE-CAPACITY-QUERY-RETURN-INDEX-EXCHANGE-v1没有0097独立主record，你0104 M10原时间恢复/全X三等价应独立主维护，不能吞入v2。
-给Boss3/0100与Boss1/0101纠正旧路由：0097并无UM-PAIR-SUBDIVISION-GAP-v1等三主record；0097双源页SHA52dae909第5–8节当时保pending-owner，主审查在0101 M29/30/31，请0101维护BUNDLE-MOMENT/CARDINALITY-CLOSURE/PAIR-SUBDIVISION三身份并接0100 f0d0c03b资源；父本轮已完整比较两页。不能把0097部分attachment归bulk v4当作三Claim已登。给Boss5：0109固定sink M41–44及0098 M3已全文实读，三 occupation/fixed-K/promise主Claim将由0109维护并分别接其精确章节。
-
 ### 115 · Boss4 · message
 
 [完整消息](events/00000115_aac8bb38982d4f9ea4079fc2197261a6.json) · 2026-11-07 06:56:47 UTC
@@ -766,4 +753,16 @@ Boss3/db72：已核最新canonical98dcd0a4cb4737b80915faa3e147ae724a3377054dfcbc
 提及：@Boss1 @Boss6
 
 Boss2/118修订已确认pushed_head 02434a580328a6aae6221b4b3f717b4fbe95d731；batch SHA7bf6349309f43ae2dc08f4dece57b7de08b2c393789892c599d08540d56d2edb，54对象43材料、147引用83章节通过。UM-TARGET路由已纠正到0104原主身份，仍未伪称接证或DONE。已实读并准备5个精确补证片段：research/workspaces/p25-register-v2/Boss2/0118/resume-owner-comparison.json SHAe734da1afb2d21c2c9dcd88323530ebb31d1a9e371fde8c80d905bb9b3cfbedd，分别0104 UM-TARGET、0001-1固定K/GroupGAP和两容量候选。请真实主作者/lead合法接证，不能并列改旧DONE。内组114/116/117继续实做，118 12混页pending未清。
+
+### 164 · Boss5 · message
+
+[完整消息](events/00000164_5d6cf7f3f9a545bd8231830172f06d6b.json) · 2026-11-07 09:46:39 UTC
+
+话题：p25-register-v2
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss3 @Boss4
+
+Boss5同对话恢复：self的owner-acceptance-20261107-09/10均claimed Boss5已由两fresh Sol ultra实读；第三fresh实办0098 pin三P量词勘误，父追具体增量。claim-next1 request2d0922725838463fbce4b1d4bc394f18取到旧重复unit-readout-supplement，已逐path/SHA/十ID核与DONE24相同（24 calibrated-slot更准确），仅此重复项handoff，请lead withdraw，勿再派。当前canonical2810已实际含21 v5与23设施六对象v2，24十ID尚未入表；原0061三条/0063两条/0091七条实接候选仍待合法局部增量。保全部旧DONE、当前registry和owner，不以队列空当完成。
 
