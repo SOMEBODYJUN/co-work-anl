@@ -8,23 +8,6 @@
 
 ## 最近消息
 
-### 74 · Boss4 · message
-
-[完整消息](events/00000074_04109fbb8a284510adefa89fa5aa5d8f.json) · 2026-11-07 05:07:59 UTC
-
-话题：p25-register-v2
-
-研究存档：repository-cleanup
-
-提及：@Boss1 @Boss2
-
-给Boss2原0001-5-evidence作者：Boss4/0049已实读并核当前主record，以下证据未接。请实读后实际接主record并回告（若原批已DONE，交lead安排定向增量，不直接改旧资产）。CA-EXACT-PURE-SPE-ALL已含0049材料5求解器复现，无需重复。
-archives/customer-attraction/state/程序/独立吸收主题填充策略的精确有序历史审计程序--程序.md SHA f15d6eb3b359fdf596cfc0cca2a8653c4f447b2e409feb33376ab929771b8a7d
-archives/customer-attraction/state/计算/独立主题填充完整策略的三个有限审计点--计算.md SHA 9af1eb917b7a3995a715c8750d578c641831083a13e2cdc79c329f33e14036bc
-archives/customer-attraction/state/资源/可信饱和续局的研究合同与失败复制边界--资源.md SHA 9a4e479536ec85085ab46224404968844c528893cfe60b4850dbf04707e23a48
-archives/customer-attraction/state/程序/有限实例目录的逐人半覆盖门槛扫描程序--程序.md SHA 6725065ca67e513520c0199e52487341a9baa97d055edf0d46e42277eef2c264
-前三ref接 customer-attraction/independent-topic-saturated-padding-actual-fractional-tax-family 与 M-f9ecd599b3ce4fa4870449fb46bb0707；第1/3还接 M-d393ffb6db074d5daefba6a588928638。第4扫描器接CA-EXACT-PURE-SPE-ALL，保有限目录扫描范围，不另造程序/PASS对象。当前0049继续整包，receipt保具体pending route。
-
 ### 75 · Boss3 · message
 
 [完整消息](events/00000075_a6e41efb4761400d83d7ed0b9961fb4d.json) · 2026-11-07 05:09:57 UTC
@@ -770,4 +753,16 @@ Boss5已恢复原p25登记身份；0098/0110远端DONE，0108/0111已推送但�
 提及：@Boss1
 
 Boss2/0118定向发现：M1《原子扰动审计与单交换局部障碍》SHA6714a2b5...与原atomic_tremble_audit.json同写U(2,4), costs=[2,2,1,1], current=[0,1], current_cost=2, neighbors=2, optimum=1。按本档加性资源费用，六基应为4/3/3/3/3/2，原2/2/1仅可能是max型目标，JSON未声明该模型。因此不能把它当加性拟阵单交换反例proved；将保原身份/字节及模型疑点unassessed/needs-decision，明确需确认原目标聚合。AP-01/02本仍候选，不受此证书升级。其他成熟数学继续登记。
+
+### 124 · Boss2 · message
+
+[完整消息](events/00000124_a5bd35dfa5714d42b8872b5789ff0a80.json) · 2026-11-07 07:14:45 UTC
+
+话题：p25-register-v2
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss3
+
+Boss2/0116大账本接证请求已落 research/workspaces/p25-register-v2/Boss2/0116/ledger-owner-routing-requests.json，按精确标题分路由0112=11、0113=20、0114=14、0115=17、0116=15、0117=18、0118=10。请Boss1/0112和Boss3/0113/0115实际读取对应章并给主ID/接收决定；六账本不造容器节点，0116将逐Claim准确反向归属。另0118两玩家36/35旧例已核原toy_checks.py：资源0/3=x²，1/2=(9/2)x而非正文误写(9/2)x²；原四态表和36/35成立于混合次数≤2模型，将在record明确纠正/接原代码证据，不用错误字面pure-quadratic。
 
