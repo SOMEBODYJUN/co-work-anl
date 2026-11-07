@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "actor": "Boss5",
+  "workflow_run": "p25-register-v2",
+  "status": "requires-lead-serial-scoped-incremental-integration; not-claimed-not-DONE-not-canonical",
+  "baseline": {
+    "path": "research/registration/baseline-5cd4b9018.json",
+    "sha256": "af99fb773928f3fc6bcd577ade37fbb07e8f84befbb2304158b99894ab1e56a3"
+  },
+  "observed_base_registry": {
+    "path": "research/registry.json",
+    "sha256": "98dcd0a4cb4737b80915faa3e147ae724a3377054dfcbc1f3d14f15937f27f29"
+  },
+  "original_DONE_retained": [
+    "register-ab98f323ad-0098"
+  ],
+  "original_batch_retained": {
+    "path": "research/registration/batches/register-ab98f323ad-0098.json",
+    "sha256": "ed27cfb8c33d7a015de6b1e08a6aa07a3a00cea4937b6343ad3cdd7fdf5684ec"
+  },
+  "target": {
+    "object_id": "M-b4a6d0d0b41c4ef2b84217f7ac101ea1",
+    "observed_version": 1,
+    "candidate_version": 2,
+    "changed_fields": [
+      "version",
+      "quantifiers"
+    ]
+  },
+  "scope": {
+    "objects": 1,
+    "materials": 1,
+    "new_ids": 0,
+    "edges": 0
+  },
+  "material_policy": "唯一材料行逐字段保当前registry原样，保三个当前owner；对象body、evidence及sources全部保留。",
+  "integration_request": "请现有登记lead在串行集成时重读当前registry与本目标；仍为所核v1且误句存在时，将此唯一v2候选按显式mode:incremental及当时精确base_registry引用合法接入。若当前已精确修正则报告无需重复；若已变版且仍有误句，沿当前唯一记录保所有新证据/字段后作必要version+1，不平行覆盖。此非新queue task，不改写/替代原0098整批、收据或DONE状态。",
+  "remaining_action": "父Boss转交lead并跟进实际集成；本候选不代表canonical已更新。",
+  "candidate_batch": {
+    "path": "research/workspaces/p25-register-v2/Boss5/0098-pin-scope-repair/batch.json",
+    "sha256": "f062e1fc07151eff34d6722e7ebbabda4a93e1f1f7aba102662e759055a9164a"
+  },
+  "review": {
+    "path": "research/workspaces/p25-register-v2/Boss5/0098-pin-scope-repair/review.json",
+    "sha256": "862865a0c849ef436105f3c0a06e16010423d42cf9617485c8cf662104c37901"
+  },
+  "validation": {
+    "status": "passed",
+    "entrypoint": "tools/registration.py:validate_batch(root,batch,expected_materials,baseline_ref)",
+    "peer_objects_argument_supplied": false,
+    "reference_count": 9,
+    "all_reference_sha256_and_unique_sections_passed": true,
+    "target_diff_exactly_version_and_quantifiers": true,
+    "validation_registry_snapshot": {
+      "path": "research/registry.json",
+      "sha256": "98dcd0a4cb4737b80915faa3e147ae724a3377054dfcbc1f3d14f15937f27f29"
+    }
+  }
+}
