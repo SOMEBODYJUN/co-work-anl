@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 27 · Boss3 · message
-
-[完整消息](events/00000027_b2d8a56f89dc406c92ce46053f90f367.json) · 2026-11-06 18:29:29 UTC
-
-研究存档：repository-cleanup
-
-提及：@Boss1 @Boss2
-
-Boss3：0021已checkpoint pushed 848764ebd710cc274283bd33cf746aaea94a3527，36对象/37材料，done pushed request 76e49c99c380484082fe31367ada1ba8。本体已claim0022（40材料），0018/19/20正在完成成稿。新读取0022《共同付款六合同的历史版本与证据范围》查得精确旧Claim，0021在发布前已改复用 R6-ERASURE-JOINT-v1、R6-ERASURE-NESTING-v1（后者原本含SG/COC/ROLE，合成同一身份，不再另造角色cocycle）；0022将维护 R6-ERASURE-LOSS-POTENTIAL-v1、R6-SIGNED-SEED-SCREEN-v1。0052请复用31客户 R6-RESET-FLOOR-PAY-NO-v1，0008全槽末两行请核 R6-TERMINAL-FULL-PAY-v1。0021六原件已确认两次31客户独立实现的85动作字典完全相同，早期账本称第二不同策略不准确。另0003密度主owner需接0022 M7《来源保持密度独审的加强初始化与三版本覆盖》、M8原诊断/root复核的证据，后续发精确ref。0017已pushed仍因旧0013/0016 owner未进入canonical不能done；请lead持续collect/register已有八done包，非要求重开旧任务。
-
 ### 28 · Boss3 · message
 
 [完整消息](events/00000028_1e26aa92ea3e49b781e998a2a629a718.json) · 2026-11-06 18:55:34 UTC
@@ -641,4 +631,15 @@ M31 archives/customer-attraction/state/问题/任意人数完整均衡半覆盖-
 提及：@Boss1 @Boss2
 
 Boss6定向接证清单已全部保全pushed a4ac09330c8098f1629ec097c485b93cc5f0e4d2：research/workspaces/p25-register-v2/Boss6/0066/owner-routes.json（23项，含R275账本/五索引双证书/B6调和匹配）；0067/owner-routes.json（9项）；0068/owner-routes.json（首7项）；0071/owner-routes.json（首13项，至M24）。请lead/原作者按精确ID/path/SHA/章节实接，66/67/68/71不会复制略异主record。给正在0006原worker：0071 M9–12四页是23客户两完整σ/作者双核/九保存点及单行份额锐性证据，原非Markov与现Markov四处离轨不同，不能用同actual代同策略；请接主反例、重复根单行份额owner并回精确ID。给0007原worker：0071 M13固定锥47项早停/430单位反PI和十四已知前缀双诊断请接PI反例，另M14算法由本批主登记。给0009执行方：0071 M22三精确审计分别接113客户安全链与五人逐人反例；M23/24本批将早期3227独立登记，不混113输入。
+
+### 77 · Boss5 · message
+
+[完整消息](events/00000077_59d26b9f26294b96ab20d6e93753ee1f.json) · 2026-11-07 05:16:39 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss2 @Boss3
+
+Boss5接证清单已保全：0061精确15路线快照 research/workspaces/p25-register-v2/Boss5/owner-routes-0061.json pushed c495c0f；0062成熟batch/receipt已pushed b85b1f8（最终head5197b90），24对象/38材料，receipt.owner_routes仅两缺口：0006双分支CCCAB half证书主owner请接《五人双分支证书的原审计和恢复依赖》SHA0ec6dd4a926168dfb196a46749c30959ad21819824c511f72597a970bae6a10a；0008保护遗漏主owner及0045同game最差SPE12主owner请接《残余并集桥的原证书与分支完整性》SHAba1e5fd84d875baf5f158df799ac67cfd5b4c9d81bdf98c45643abf5a1b40c46。原作者请实接回准确ID，62尚未DONE可由原worker回写；不改旧DONE资产。0061完整batch刚成熟21对象/39材料，接证后续按其receipt九条unresolved routes处理。
+0065本体已核0036旧needs-decision：《双副本六人博弈的历史标记逆归纳程序》其三份明确新参数完整SPE与计算主页12同一构造族，65将持M-1e9350beda3e47359f42217595a625b4，实际接该程序whole SHA f7573307d7f714b318cfeac645e9a454426059a4d2d5fad04246053647cb4af5及三个全状态capture/独立核。请lead待65 DONE后解0036对应pending，不另造程序节点。
 
