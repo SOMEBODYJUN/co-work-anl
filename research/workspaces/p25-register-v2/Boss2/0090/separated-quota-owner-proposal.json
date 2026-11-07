@@ -1,0 +1,152 @@
+{
+  "task_id": "register-ab98f323ad-0090",
+  "base_batch": {
+    "path": "research/registration/batches/register-ab98f323ad-0090.json",
+    "sha256": "ce8fd98d8a418841d3b5c16c6c32bd255447e413984c53587b6dee513a83b759"
+  },
+  "status": "independent-reviewed-owner-proposal-for-original-batch-author",
+  "reading_scope": "本次只定向实读 M15 原审查 §1.2、§2、§3，以及冻结 response_core §3–3.1 和 MITM 局部接口。整批其余材料的读取范围由原0090作者负责。",
+  "objects": [
+    {
+      "object_id": "M-5f0171d575284564ba947fd2ead30355",
+      "version": 1,
+      "title": "单侧分离的目标负载差区间内强制轻客户的精确均衡双射",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "固定一对带标签设施。两侧非负私有负载 A,B，各共同客户 i 有正权 w_i，必须服务，独立混合选择任一侧，最小化给定自身行动时含自身全重的期望负载。记期望负载差 Δ=L_A−L_B，总负载 V=A+B+Σ_i w_i。",
+      "statement": "给非空闭区间 I=[ℓ,h] 严格位于零的一侧，令 η=min_{z∈I}|z|。若 I>0，去除共同客户中所有 w_i<η 者并把其总重加入右侧私有负载 B。若 I<0，则加入左侧私有负载 A。原局和约化局所有满足 Δ∈I 的独立混合 NE 由限制及按原索引强制回填纯低侧互为逆双射，并逐坐标保留 L_A,L_B。负载配额 L_A≥a,L_B≥b 对应 I=[2a−V,V−2b]。在有理输入下，可用单谷目标 dist(Δ,I) 的阈值半表算法给出精确见证，时间 poly(n,L)+poly(k,L)·3^⌈k/2⌉，k 为保留客户数，L 为输入位长。",
+      "quantifiers": "任意上述固定双设施局部输入及任意这样的非空目标区间，双射作用于各自所有满足目标的客户 NE，包括纯策略。位复杂度结论只对精确有理输入。",
+      "assumptions": [
+        "目标区间与零严格分离",
+        "剔除阈值是严格小于 η，w_i=η 必须保留",
+        "设施标号和原客户身份保留"
+      ],
+      "scope": "这是固定布局目标可行性约化。它保两侧期望负载和逐客户续局，保留的战略客户数 k 可等于 n，且重量位长随原输入变化。",
+      "objections": "本次定向核了 response_core 第3节完整证明及半表输入合同。差值 Δ+w_i(1−2p_i) 的严格符号强制轻客户，确定性吸收保余者条件成本。核了正负两侧和等权端点，等号时可有无差。冻结审查页用全文SHA，原证明用唯一标题。",
+      "body": {
+        "path": "archives/facility-games/state/审查/三份异构回应核心与长环补充审查--审查.md",
+        "sha256": "8f43459c7559dbe18104f057f6f0d95b43916eb7594ebaaa3a6ad4c4c1c4a231"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/tools/evidence/heterogeneous-response-core-20261031/response_core.md",
+          "sha256": "32cf08d9deca38b7b355df12973ca6fec3a42c94e47608534fa5a10e8ce669a9",
+          "section": "3. Exact target-dependent feasibility reduction"
+        },
+        {
+          "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+          "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09"
+        },
+        {
+          "path": "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
+          "sha256": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65",
+          "section": "局部查询的确切输入与保证"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/heterogeneous/response_core.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/heterogeneous/response_core.md"
+      ]
+    },
+    {
+      "object_id": "M-b1426dee9acc4c7b85798d6e53e92a9c",
+      "version": 1,
+      "title": "两设施局部自有覆盖配额质量可行而无精确客户均衡的有限见证",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "固定一对带标签设施。两侧非负私有负载 A,B，各共同客户 i 有正权 w_i，必须服务，独立混合选择任一侧，最小化给定自身行动时含自身全重的期望负载。记期望负载差 Δ=L_A−L_B，总负载 V=A+B+Σ_i w_i。",
+      "statement": "总质量可行的两侧配额 L_A≥(A+Σw)/β、L_B≥(B+Σw)/β 可以没有精确客户 NE。β=2 时取 (A,B)=(1,0)，共同权重 (2,4)：配额差区间为 [0,1]，全部均衡差恰为 {−1,3}。另在 β=9/5、(A,B)=(18,3)、共同权重 (20,3,28) 时，配额差区间 [14/3,12] 也无均衡差。",
+      "quantifiers": "对每个写明的固定局部输入，存在质量上同时满足两个配额的负载向量，但对该输入的任意独立混合客户 NE，至少一个配额失败。",
+      "assumptions": [
+        "只比较固定局部布局的精确客户 NE",
+        "配额的分子是对应侧私有负载与全部共同客户权重之和"
+      ],
+      "scope": "两个参数各自是局部可行性反例。第一例的完整均衡谱有洞；结论只涉及此布局的两侧配额。",
+      "objections": "本次实读原第3.1节和整理审查，用 Fraction 枚举纯左/纯右/无差闭支持核两例。第二例原文只列举部分实际均衡差，保留其配额不可达精确结论。",
+      "body": {
+        "path": "archives/facility-games/state/审查/三份异构回应核心与长环补充审查--审查.md",
+        "sha256": "8f43459c7559dbe18104f057f6f0d95b43916eb7594ebaaa3a6ad4c4c1c4a231"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/tools/evidence/heterogeneous-response-core-20261031/response_core.md",
+          "sha256": "32cf08d9deca38b7b355df12973ca6fec3a42c94e47608534fa5a10e8ce669a9",
+          "section": "3.1 An important false simplification"
+        },
+        {
+          "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+          "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09"
+        },
+        {
+          "path": "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md",
+          "sha256": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1",
+          "section": "三态闭单元精确覆盖"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/heterogeneous/response_core.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/heterogeneous/response_core.md"
+      ]
+    }
+  ],
+  "material_update": {
+    "path": "archives/facility-games/state/审查/三份异构回应核心与长环补充审查--审查.md",
+    "sha256": "8f43459c7559dbe18104f057f6f0d95b43916eb7594ebaaa3a6ad4c4c1c4a231",
+    "disposition": "objects",
+    "object_ids": [
+      "M-5f0171d575284564ba947fd2ead30355",
+      "M-b1426dee9acc4c7b85798d6e53e92a9c",
+      "HC-2-UP"
+    ],
+    "reason": "主登 response_core §3 的分离目标轻客户双射及 §3.1 的局部配额反例。该页也是既有 HC-2-UP 的证据，保其owner。CORE-LIFT/显式多面体/短目录ρ/普通长环归0086，双目录精确最优归0091，各待主作者定向接收原receipt的对应证据，当前继续保这些精确路由。"
+  },
+  "remaining_routes": "保留原0090 receipt其它全部待办。原 separated-target-light-client-bijection-identity-review 可据此闭合；本提案本身尚非canonical或DONE。",
+  "validation_if_applied_to_base_batch": {
+    "objects": 6,
+    "materials": 24,
+    "reused_existing_owners": [],
+    "reused_published_group_owners": []
+  },
+  "finite_witness_crosscheck": {
+    "method": "A/B 为纯左/右，M 为闭无差。对每个模式，d=A−B+Σ纯左w−Σ纯右w，m=混合数；解 (1−m)Δ=d，并验纯左 Δ≤w、纯右 Δ≥−w、混合 −w≤Δ≤w。m=1 且 d=0 时检整个闭交，d≠0 时排除。表列完全部可行模式。",
+    "cases": [
+      {
+        "A": 1,
+        "B": 0,
+        "weights": [
+          2,
+          4
+        ],
+        "beta": "2",
+        "quota_interval": [
+          "0",
+          "1"
+        ],
+        "closed_support_gaps": {
+          "AB": "−1",
+          "BA": "3",
+          "MM": "−1"
+        }
+      },
+      {
+        "A": 18,
+        "B": 3,
+        "weights": [
+          20,
+          3,
+          28
+        ],
+        "beta": "9/5",
+        "quota_interval": [
+          "14/3",
+          "12"
+        ],
+        "closed_support_gaps": {
+          "ABB": "4",
+          "BBA": "20",
+          "MAM": "−18"
+        }
+      }
+    ]
+  }
+}
