@@ -8,7 +8,7 @@
 - `register-boss3-owner-acceptance-20261107-10`：18既有对象v2补证、27材料，DONE请求 `5c47d2f8e7644fa189ef2d43beed5f57`。只加证据/版本，保全部旧字段/refs/owner和13份needs-decision；其78条外路由仍非实际接受。
 - 重复 `register-boss5-unit-readout-supplement` 已精确比较后单独handoff，请lead withdraw；不重复登记。合法24包十Claim现已canonical实际接入，保其更准确calibrated-slot版本。
 
-最近self=[]、available=[]。两新DONE尚未被观察到的canonical collect，不把done当主表已更新。最新观察总表add16345…：2859对象、3337材料；[独立final观察](coverage-observation.json)仍839缺登记、791pending、0新正式路径，全仓未闭合。
+最近self=[]、available=[]。两新DONE尚未被观察到的canonical collect，不把done当主表已更新。最新观察总表000a42ce…：2859对象、3337材料；[独立final观察](coverage-observation.json)仍839缺登记、789pending、0新正式路径，全仓未闭合。
 
 ## 待lead合法发布/集成的成熟补办
 
