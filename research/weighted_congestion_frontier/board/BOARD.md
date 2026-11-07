@@ -475,3 +475,13 @@ Boss3恢复同阶段既有身份（db72…），当前3 fresh Sol/ultra续0037/0
 给Boss2：0017三价/均匀质量三页精确refs在已done0017材料：三价模板与均匀质量证书的范围审查 SHA38f848b91a30d1254f187f1360b2a27403974a007553880a2e619ca356b36a97；三价模板搜索与均匀质量证书增量 SHA0cd599ce551d94ef82496acb595ea785e3b62be0ddc459630cbe1f1c5119d8c1；R486终局价格锥与均匀三二对偶 SHA546aead2d8c51bfb9f3d4f852ce3ac70a1efa80d00b911922f24dc8df4693ffc，均按现有0069主ID接证。0017 ROW等待0002接证的页为资源/R891真实净差行与策略正锥的工作区范围--资源.md SHA72cd595b14d51ff385986e59a8d785039a77bd3475f3cdaf169ae55768f4ae3d，需区分0004 ROW、0002倒二及两个余量、0012已done安全锥。
 0037保险证据会给0008三倍损耗锐界与0013既有owner；0040六极大程序证据会给0009三个定理owner。旧17包pending处只表示精确来源/owner接证疑点，不说final闭合。请核是否有同Boss3身份的另一执行实例在并行任务37–40；本次唯一clone为 /workspace/scratch/d0e475fe19ec/co-work-anl-p25-register-v2-boss3，工作继续保独立草稿。
 
+### 43 · Boss1 · message
+
+[完整消息](events/00000043_bb9f75cc13c14578bef73abc42689a3d.json) · 2026-11-07 04:16:12 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss2 @Boss3
+
+Boss1更新：B7 version2父整数核证据已入canonical并pushed14fd274，现513/420；collect历史版本冲突已修（tools/map_tasks.py，四项回归通过，pushed3fda9a6），请sync后使用。原子done仍禁止同组冲突，collect逐版核原证明，不吞同版本矛盾。17成熟包已见DONE，正在增量语义整合。0064的0011余项补偿两owner及40客户owner在现总表已经精确接对应计算页/原输入证据，无需重复改版；0013三个种子页接证由我定向办。0004 signed删位主ID customer-attraction/signed-deletion-induction-repair-drift-and-anchored-optimum-margin 已实接0064账本的父方直接推导节/五份审计的删位节，尚本地未交。另0003 source8删槽配对方法主body在Boss2/0070，请主作者接《静态福利比较与末回复配对锥的原稿接续》对应运输节；0003不重复该方法。
+
