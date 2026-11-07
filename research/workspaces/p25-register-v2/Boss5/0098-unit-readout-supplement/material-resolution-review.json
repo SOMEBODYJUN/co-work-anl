@@ -1,0 +1,634 @@
+{
+  "schema": 1,
+  "owner": "Boss5",
+  "workflow_run": "p25-register-v2",
+  "status": "local-reviewed-candidate-unclaimed-not-done",
+  "canonical_snapshot": {
+    "path": "research/registry.json",
+    "sha256": "38b7826ba307fbbc0bdc2e47fd49dc838db7c22569b9ac8f48ec5fdd3a9076b8"
+  },
+  "candidate_batch": {
+    "path": "research/workspaces/p25-register-v2/Boss5/0098-unit-readout-supplement/batch.json",
+    "sha256": "069fd013fb69bd875342641d521d7d154a84bebb1748115a1b67ae262e9e8d45"
+  },
+  "counts": {
+    "objects": 10,
+    "materials": 10,
+    "reused_canonical_owner_ids": 8,
+    "unresolved_materials": 1
+  },
+  "source_done_snapshots": [
+    {
+      "task_id": "register-ab98f323ad-0098",
+      "state": "done",
+      "owner": "Boss5",
+      "batch": {
+        "path": "research/registration/batches/register-ab98f323ad-0098.json",
+        "sha256": "ed27cfb8c33d7a015de6b1e08a6aa07a3a00cea4937b6343ad3cdd7fdf5684ec"
+      },
+      "task_snapshot": {
+        "path": "research/operations/p25-register-v2/tasks/register-ab98f323ad-0098.json",
+        "sha256": "f3d4e7a50190079d146bec4d23babfe8fb97baa21ad67e35bae61b82e072daf7"
+      }
+    },
+    {
+      "task_id": "register-ab98f323ad-0107",
+      "state": "done",
+      "owner": "Boss3",
+      "batch": {
+        "path": "research/registration/batches/register-ab98f323ad-0107.json",
+        "sha256": "4b171c5c8181ab22252ad220ccd9f3c2e7b54658fb0e12fc366415d1be2971e7"
+      },
+      "task_snapshot": {
+        "path": "research/operations/p25-register-v2/tasks/register-ab98f323ad-0107.json",
+        "sha256": "683f03e46fab1686502ae05cb486b0fe8d48e32000c2bc524a160191444cc2b9"
+      }
+    },
+    {
+      "task_id": "register-ab98f323ad-0109",
+      "state": "done",
+      "owner": "Boss4",
+      "batch": {
+        "path": "research/registration/batches/register-ab98f323ad-0109.json",
+        "sha256": "773f403d61ddbb213cedd05e252d34f84b254bf324254ebf0c1bb44a9ce0330f"
+      },
+      "task_snapshot": {
+        "path": "research/operations/p25-register-v2/tasks/register-ab98f323ad-0109.json",
+        "sha256": "0aa499b24f18f0b6b0c17e565b9888d357bdfb43dea53cc898e979fb2ae71abc"
+      }
+    }
+  ],
+  "compose_semantics": {
+    "implementation": {
+      "path": "tools/registration.py",
+      "sha256": "919b753c72af795ce859f1783126bf0ce7af04e73d160c05ba04c0392c6528fd"
+    },
+    "rule": "compose incremental遇同SHA且两去向都在objects/attachment内才merge_material并owner并集；previous needs-decision或incoming needs-decision不走此并集，首次显式update直接replace整行。因此必须在incoming显式保全原所有owner及页上真实未接范围。此审查仅按实际代码检查十行分支，未compose/注入全表。",
+    "branches": [
+      {
+        "path": "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md",
+        "branch": "incremental first-update replacement: incoming row must preserve whole-page owners and pending scope",
+        "incoming_disposition": "objects"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/半密度半槽与指定根锐族的独立原程序--审查.md",
+        "branch": "incremental first-update replacement: incoming row must preserve whole-page owners and pending scope",
+        "incoming_disposition": "objects"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/单位读出叶流与选择重组的原程序及锐矩阵--审查.md",
+        "branch": "incremental first-update replacement: incoming row must preserve whole-page owners and pending scope",
+        "incoming_disposition": "objects"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+        "branch": "incremental first-update replacement: incoming row must preserve whole-page owners and pending scope",
+        "incoming_disposition": "attachment"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+        "branch": "incremental first-update replacement: incoming row must preserve whole-page owners and pending scope",
+        "incoming_disposition": "objects"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+        "branch": "incremental first-update replacement: incoming row must preserve whole-page owners and pending scope",
+        "incoming_disposition": "objects"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+        "branch": "merge_material: same-SHA objects/attachment union",
+        "incoming_disposition": "objects"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/多小端密度流障碍与单位读出校准槽双源审查--审查.md",
+        "branch": "merge_material: same-SHA objects/attachment union",
+        "incoming_disposition": "objects"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/Unit-readout槽与配置阈值两源精读--审查.md",
+        "branch": "incremental first-update replacement: incoming row must preserve whole-page owners and pending scope",
+        "incoming_disposition": "attachment"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/单位森林与叶Hall阈值两源精读--审查.md",
+        "branch": "incremental first-update replacement: incoming row must preserve whole-page owners and pending scope",
+        "incoming_disposition": "needs-decision"
+      }
+    ]
+  },
+  "materials": [
+    {
+      "material": {
+        "path": "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md",
+        "sha256": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7"
+      },
+      "source_task": "register-ab98f323ad-0098",
+      "source_index_zero_based": 16,
+      "original_done_row": {
+        "path": "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md",
+        "sha256": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7",
+        "disposition": "needs-decision",
+        "object_ids": [
+          "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1",
+          "UM-HETEROGENEOUS-MACRO-PROMISE-v1",
+          "UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1",
+          "M-36e9d6d07bed4754858f0f578f0ad101"
+        ],
+        "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1,UM-HETEROGENEOUS-MACRO-PROMISE-v1,UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1,M-36e9d6d07bed4754858f0f578f0ad101。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1,UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1,UM-PRUNED-TREE-LEAF-HITTING-v1；不创建平行同ID主记录。"
+      },
+      "current_canonical_row": {
+        "path": "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md",
+        "sha256": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7",
+        "disposition": "needs-decision",
+        "object_ids": [
+          "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1",
+          "UM-HETEROGENEOUS-MACRO-PROMISE-v1",
+          "UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1",
+          "M-36e9d6d07bed4754858f0f578f0ad101"
+        ],
+        "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1,UM-HETEROGENEOUS-MACRO-PROMISE-v1,UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1,M-36e9d6d07bed4754858f0f578f0ad101。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1,UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1,UM-PRUNED-TREE-LEAF-HITTING-v1；不创建平行同ID主记录。"
+      },
+      "preserved_existing_owner_ids": [
+        "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1",
+        "UM-HETEROGENEOUS-MACRO-PROMISE-v1",
+        "UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1",
+        "M-36e9d6d07bed4754858f0f578f0ad101"
+      ],
+      "accepted_unit_owner_ids": [
+        "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+        "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+        "UM-PRUNED-TREE-LEAF-HITTING-v1"
+      ],
+      "remaining_owner_routes": [],
+      "proposed_disposition": "objects",
+      "reason": "0098原DONE的0-based material_index=16；本候选未改旧DONE/receipt。§2异质宏/承诺搜索/强三分割残余沿原四owner；§3.1的mandatory全部变量r森林iff、§3.2半密度三半及纯树叶hitting由本组精确接纳，保持无pin、共同clause注入及所有原jobs条件。 本行完整保留原DONE及当前canonical所有owner，且本组已在各body/evidence精确绑定本页字节。原未接名单已全部被本十Claim覆盖，本页无剩余身份/来源路由；数学开放项和实现边界照旧。仅在本候选经合法任务发布并增量接入后，本页路由方属正式闭合。"
+    },
+    {
+      "material": {
+        "path": "archives/unrelated-machines/state/审查/半密度半槽与指定根锐族的独立原程序--审查.md",
+        "sha256": "736b7f3055bba92e94dec011dc1915f1c7fa73bf1e4f5d4587b0950f22da61a3"
+      },
+      "source_task": "register-ab98f323ad-0098",
+      "source_index_zero_based": 17,
+      "original_done_row": {
+        "path": "archives/unrelated-machines/state/审查/半密度半槽与指定根锐族的独立原程序--审查.md",
+        "sha256": "736b7f3055bba92e94dec011dc1915f1c7fa73bf1e4f5d4587b0950f22da61a3",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1,UM-UNIT-READOUT-SELECTOR-MIXING-v1；不创建平行同ID主记录。"
+      },
+      "current_canonical_row": {
+        "path": "archives/unrelated-machines/state/审查/半密度半槽与指定根锐族的独立原程序--审查.md",
+        "sha256": "736b7f3055bba92e94dec011dc1915f1c7fa73bf1e4f5d4587b0950f22da61a3",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1,UM-UNIT-READOUT-SELECTOR-MIXING-v1；不创建平行同ID主记录。"
+      },
+      "preserved_existing_owner_ids": [],
+      "accepted_unit_owner_ids": [
+        "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+        "UM-UNIT-READOUT-SELECTOR-MIXING-v1"
+      ],
+      "remaining_owner_routes": [],
+      "proposed_disposition": "objects",
+      "reason": "0098原DONE的0-based material_index=17；本候选未改旧DONE/receipt。半密度程序合同与全部原jobs/真实森林由HALF-DENSITY接纳；独立双共享clause锐族/指定profile合同由SELECTOR-MIXING接纳，保自由选根与指定根差异及旧CLI大十进制环境边界。 本行完整保留原DONE及当前canonical所有owner，且本组已在各body/evidence精确绑定本页字节。原未接名单已全部被本十Claim覆盖，本页无剩余身份/来源路由；数学开放项和实现边界照旧。仅在本候选经合法任务发布并增量接入后，本页路由方属正式闭合。"
+    },
+    {
+      "material": {
+        "path": "archives/unrelated-machines/state/审查/单位读出叶流与选择重组的原程序及锐矩阵--审查.md",
+        "sha256": "839f4e4242eb16b000ba8f34da2f3d748c0aba40ae11a9598bed3723570214b3"
+      },
+      "source_task": "register-ab98f323ad-0098",
+      "source_index_zero_based": 18,
+      "original_done_row": {
+        "path": "archives/unrelated-machines/state/审查/单位读出叶流与选择重组的原程序及锐矩阵--审查.md",
+        "sha256": "839f4e4242eb16b000ba8f34da2f3d748c0aba40ae11a9598bed3723570214b3",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1,UM-UNIT-READOUT-SELECTOR-MIXING-v1；不创建平行同ID主记录。"
+      },
+      "current_canonical_row": {
+        "path": "archives/unrelated-machines/state/审查/单位读出叶流与选择重组的原程序及锐矩阵--审查.md",
+        "sha256": "839f4e4242eb16b000ba8f34da2f3d748c0aba40ae11a9598bed3723570214b3",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1,UM-UNIT-READOUT-SELECTOR-MIXING-v1；不创建平行同ID主记录。"
+      },
+      "preserved_existing_owner_ids": [],
+      "accepted_unit_owner_ids": [
+        "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+        "UM-UNIT-READOUT-SELECTOR-MIXING-v1"
+      ],
+      "remaining_owner_routes": [],
+      "proposed_disposition": "objects",
+      "reason": "0098原DONE的0-based material_index=18；本候选未改旧DONE/receipt。任意密度固定高度叶流不需给YES；同一P多完整YES的指定selector重组另需覆盖及非空N≥p。两主record接纳完整算法、祖先提取、共同容量和锐profile，程序复核只作为有限证据。 本行完整保留原DONE及当前canonical所有owner，且本组已在各body/evidence精确绑定本页字节。原未接名单已全部被本十Claim覆盖，本页无剩余身份/来源路由；数学开放项和实现边界照旧。仅在本候选经合法任务发布并增量接入后，本页路由方属正式闭合。"
+    },
+    {
+      "material": {
+        "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+        "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a"
+      },
+      "source_task": "register-ab98f323ad-0098",
+      "source_index_zero_based": 19,
+      "original_done_row": {
+        "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+        "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-CALIBRATED-SLOT-v1,UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1,UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1,UM-UNIT-READOUT-STRICT-UNIT-GAP-v1,UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1,UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1,UM-UNIT-READOUT-SELECTOR-MIXING-v1,UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1,UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1,UM-PRUNED-TREE-LEAF-HITTING-v1；不创建平行同ID主记录。"
+      },
+      "current_canonical_row": {
+        "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+        "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-CALIBRATED-SLOT-v1,UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1,UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1,UM-UNIT-READOUT-STRICT-UNIT-GAP-v1,UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1,UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1,UM-UNIT-READOUT-SELECTOR-MIXING-v1,UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1,UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1,UM-PRUNED-TREE-LEAF-HITTING-v1；不创建平行同ID主记录。"
+      },
+      "preserved_existing_owner_ids": [],
+      "accepted_unit_owner_ids": [
+        "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+        "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+        "UM-PRUNED-TREE-LEAF-HITTING-v1",
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+        "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+        "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+        "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+        "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+        "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+        "UM-UNIT-READOUT-SELECTOR-MIXING-v1"
+      ],
+      "remaining_owner_routes": [],
+      "proposed_disposition": "attachment",
+      "reason": "0098原DONE的0-based material_index=19；本候选未改旧DONE/receipt。四源§1校准/固定D、§2正部/严格1/闭树、§3自由叶流/完整YES重组、§4森林/半密度/hitting由十个主record分别接纳；依正式强计数实现纠正早综述固定D/YES和根incoming压缩句，有限audit不替代证明。 本行完整保留原DONE及当前canonical所有owner，且本组已在各body/evidence精确绑定本页字节。原未接名单已全部被本十Claim覆盖，本页无剩余身份/来源路由；数学开放项和实现边界照旧。仅在本候选经合法任务发布并增量接入后，本页路由方属正式闭合。"
+    },
+    {
+      "material": {
+        "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+        "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4"
+      },
+      "source_task": "register-ab98f323ad-0098",
+      "source_index_zero_based": 20,
+      "original_done_row": {
+        "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+        "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-CALIBRATED-SLOT-v1,UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1,UM-UNIT-READOUT-STRICT-UNIT-GAP-v1；不创建平行同ID主记录。"
+      },
+      "current_canonical_row": {
+        "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+        "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-CALIBRATED-SLOT-v1,UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1,UM-UNIT-READOUT-STRICT-UNIT-GAP-v1；不创建平行同ID主记录。"
+      },
+      "preserved_existing_owner_ids": [],
+      "accepted_unit_owner_ids": [
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+        "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+        "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1"
+      ],
+      "remaining_owner_routes": [],
+      "proposed_disposition": "objects",
+      "reason": "0098原DONE的0-based material_index=20；本候选未改旧DONE/receipt。强全轨(S_r)给定有理证书、fixed-D自产证书/小k必要路径fallback、严格CONFIG1整轨LP与active-only五三分别由三个主record接纳；无需把fixed-D增加完整YES前提，保弱行反例/强行非必要及软件无通用LP后端。 本行完整保留原DONE及当前canonical所有owner，且本组已在各body/evidence精确绑定本页字节。原未接名单已全部被本十Claim覆盖，本页无剩余身份/来源路由；数学开放项和实现边界照旧。仅在本候选经合法任务发布并增量接入后，本页路由方属正式闭合。"
+    },
+    {
+      "material": {
+        "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+        "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310"
+      },
+      "source_task": "register-ab98f323ad-0098",
+      "source_index_zero_based": 21,
+      "original_done_row": {
+        "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+        "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1,UM-UNIT-READOUT-STRICT-UNIT-GAP-v1,UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1,UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1,UM-UNIT-READOUT-SELECTOR-MIXING-v1；不创建平行同ID主记录。"
+      },
+      "current_canonical_row": {
+        "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+        "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1,UM-UNIT-READOUT-STRICT-UNIT-GAP-v1,UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1,UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1,UM-UNIT-READOUT-SELECTOR-MIXING-v1；不创建平行同ID主记录。"
+      },
+      "preserved_existing_owner_ids": [],
+      "accepted_unit_owner_ids": [
+        "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+        "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+        "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+        "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+        "UM-UNIT-READOUT-SELECTOR-MIXING-v1"
+      ],
+      "remaining_owner_routes": [],
+      "proposed_disposition": "objects",
+      "reason": "0098原DONE的0-based material_index=21；本候选未改旧DONE/receipt。正部CONFIG iff、严格1整轨LP/给定见证五三、闭合两树阈值、固定高度任意密度叶流及同P多完整YES重组由五个主record接纳；保局部配置边际与完整整数σ、strict1与near-unit阈值的不同量词。 本行完整保留原DONE及当前canonical所有owner，且本组已在各body/evidence精确绑定本页字节。原未接名单已全部被本十Claim覆盖，本页无剩余身份/来源路由；数学开放项和实现边界照旧。仅在本候选经合法任务发布并增量接入后，本页路由方属正式闭合。"
+    },
+    {
+      "material": {
+        "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+        "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf"
+      },
+      "source_task": "register-ab98f323ad-0098",
+      "source_index_zero_based": 22,
+      "original_done_row": {
+        "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+        "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+        "disposition": "objects",
+        "object_ids": [
+          "M-b4a6d0d0b41c4ef2b84217f7ac101ea1",
+          "M-c663aecb01df4eefa9ed35be826cfbab",
+          "M-1b7aae02648540af8d4986eb762adaae"
+        ],
+        "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：M-b4a6d0d0b41c4ef2b84217f7ac101ea1,M-c663aecb01df4eefa9ed35be826cfbab,M-1b7aae02648540af8d4986eb762adaae。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1,UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1；不创建平行同ID主记录。"
+      },
+      "current_canonical_row": {
+        "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+        "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+        "disposition": "objects",
+        "object_ids": [
+          "M-b4a6d0d0b41c4ef2b84217f7ac101ea1",
+          "M-c663aecb01df4eefa9ed35be826cfbab",
+          "M-1b7aae02648540af8d4986eb762adaae"
+        ],
+        "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：M-b4a6d0d0b41c4ef2b84217f7ac101ea1,M-c663aecb01df4eefa9ed35be826cfbab,M-1b7aae02648540af8d4986eb762adaae。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1,UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1；不创建平行同ID主记录。"
+      },
+      "preserved_existing_owner_ids": [
+        "M-b4a6d0d0b41c4ef2b84217f7ac101ea1",
+        "M-c663aecb01df4eefa9ed35be826cfbab",
+        "M-1b7aae02648540af8d4986eb762adaae"
+      ],
+      "accepted_unit_owner_ids": [
+        "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+        "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1"
+      ],
+      "remaining_owner_routes": [],
+      "proposed_disposition": "objects",
+      "reason": "0098原DONE的0-based material_index=22；本候选未改旧DONE/receipt。原三owner完整保留：三个不同含pin原P的精确profile、unit七变量NO的三半上界、外端1/4的不同矩阵上界。§单行正部构造/lift裁剪与§小JSON八组闭树阈值分别由CONFIG-POSITIVE-PART、CLOSED-TREES接纳；不由单行分解推全局整数σ。 本行完整保留原DONE及当前canonical所有owner，且本组已在各body/evidence精确绑定本页字节。原未接名单已全部被本十Claim覆盖，本页无剩余身份/来源路由；数学开放项和实现边界照旧。仅在本候选经合法任务发布并增量接入后，本页路由方属正式闭合。"
+    },
+    {
+      "material": {
+        "path": "archives/unrelated-machines/state/审查/多小端密度流障碍与单位读出校准槽双源审查--审查.md",
+        "sha256": "ccf410a29e660aba575bf8c0df61a2b29ddd0e1ede7f68b8c1ee1203153c7a39"
+      },
+      "source_task": "register-ab98f323ad-0098",
+      "source_index_zero_based": 23,
+      "original_done_row": {
+        "path": "archives/unrelated-machines/state/审查/多小端密度流障碍与单位读出校准槽双源审查--审查.md",
+        "sha256": "ccf410a29e660aba575bf8c0df61a2b29ddd0e1ede7f68b8c1ee1203153c7a39",
+        "disposition": "objects",
+        "object_ids": [
+          "UM-SMALL-DENSITY-FLOW-BARRIER-v1"
+        ],
+        "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-SMALL-DENSITY-FLOW-BARRIER-v1。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-CALIBRATED-SLOT-v1,UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1；不创建平行同ID主记录。"
+      },
+      "current_canonical_row": {
+        "path": "archives/unrelated-machines/state/审查/多小端密度流障碍与单位读出校准槽双源审查--审查.md",
+        "sha256": "ccf410a29e660aba575bf8c0df61a2b29ddd0e1ede7f68b8c1ee1203153c7a39",
+        "disposition": "objects",
+        "object_ids": [
+          "UM-SMALL-DENSITY-FLOW-BARRIER-v1"
+        ],
+        "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-SMALL-DENSITY-FLOW-BARRIER-v1。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-CALIBRATED-SLOT-v1,UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1；不创建平行同ID主记录。"
+      },
+      "preserved_existing_owner_ids": [
+        "UM-SMALL-DENSITY-FLOW-BARRIER-v1"
+      ],
+      "accepted_unit_owner_ids": [
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+        "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1"
+      ],
+      "remaining_owner_routes": [],
+      "proposed_disposition": "objects",
+      "reason": "0098原DONE的0-based material_index=23；本候选未改旧DONE/receipt。第一源逐机多小端柔性密度/容量流障碍保原SMALL-DENSITY owner；第二源分数任务数/有序槽Hall与深度校准、固定D两分支由CALIBRATED-SLOT、BOUNDED-DENSITY接纳；二者模型和density量词分清。 本行完整保留原DONE及当前canonical所有owner，且本组已在各body/evidence精确绑定本页字节。原未接名单已全部被本十Claim覆盖，本页无剩余身份/来源路由；数学开放项和实现边界照旧。仅在本候选经合法任务发布并增量接入后，本页路由方属正式闭合。"
+    },
+    {
+      "material": {
+        "path": "archives/unrelated-machines/state/审查/Unit-readout槽与配置阈值两源精读--审查.md",
+        "sha256": "7230a61609a3e2d4d1e0a11657eda00b73a18df76327469e68fb04a002fdb9fc"
+      },
+      "source_task": "register-ab98f323ad-0107",
+      "source_index_zero_based": 36,
+      "original_done_row": {
+        "path": "archives/unrelated-machines/state/审查/Unit-readout槽与配置阈值两源精读--审查.md",
+        "sha256": "7230a61609a3e2d4d1e0a11657eda00b73a18df76327469e68fb04a002fdb9fc",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "全文已读；父再全文实读本页并逐对象核0096最终54对象，0096并无这五类UNIT-READOUT主身份。准确主正文在0098 M16–23，按公屏118/119纠正早先0096/0101/0109候选路由：请0098实际接calibrated slots、fixed-D、positive-part CONFIG、strict-unit given-C1五三及closed-two-tree各精确节。保L=k−r+1/全局Hall/全部原jobs；fixed-D的k<D fallback失败OPT=2；strict-unit五三须真实C1见证；closed k≥3且(k−s)^h≤2k^(h−1)。当前尚无外owner实际接受回执，继续needs-decision，不抄为本批primary。"
+      },
+      "current_canonical_row": {
+        "path": "archives/unrelated-machines/state/审查/Unit-readout槽与配置阈值两源精读--审查.md",
+        "sha256": "7230a61609a3e2d4d1e0a11657eda00b73a18df76327469e68fb04a002fdb9fc",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "全文已读；父再全文实读本页并逐对象核0096最终54对象，0096并无这五类UNIT-READOUT主身份。准确主正文在0098 M16–23，按公屏118/119纠正早先0096/0101/0109候选路由：请0098实际接calibrated slots、fixed-D、positive-part CONFIG、strict-unit given-C1五三及closed-two-tree各精确节。保L=k−r+1/全局Hall/全部原jobs；fixed-D的k<D fallback失败OPT=2；strict-unit五三须真实C1见证；closed k≥3且(k−s)^h≤2k^(h−1)。当前尚无外owner实际接受回执，继续needs-decision，不抄为本批primary。"
+      },
+      "preserved_existing_owner_ids": [],
+      "accepted_unit_owner_ids": [
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+        "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+        "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+        "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+        "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1"
+      ],
+      "remaining_owner_routes": [],
+      "proposed_disposition": "attachment",
+      "reason": "0107原DONE的0-based material_index=36。全文实读：§1校准强计数槽/固定D与§2正部CONFIG/严格单位五三/闭合两树共五个已有Claim由本候选主record分别补入精确section evidence；fixed-D无YES前提，strict-unit给定整轨见证与数学LP后端分开，保shared marginal非joint law、k<D失败真OPT2。整页这五类数学均已本地接纳，未发现剩余身份/来源路由；保原DONE及当前canonical所有owner。正式接证仍待合法任务发布与lead增量集成，旧DONE不改。"
+    },
+    {
+      "material": {
+        "path": "archives/unrelated-machines/state/审查/单位森林与叶Hall阈值两源精读--审查.md",
+        "sha256": "801e9b4d69612ca5b04cb8a76ad4578dd1628591fa86f1fdb20580f8b4db8990"
+      },
+      "source_task": "register-ab98f323ad-0109",
+      "source_index_zero_based": 22,
+      "original_done_row": {
+        "path": "archives/unrelated-machines/state/审查/单位森林与叶Hall阈值两源精读--审查.md",
+        "sha256": "801e9b4d69612ca5b04cb8a76ad4578dd1628591fa86f1fdb20580f8b4db8990",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "完整实读成熟正文；数学本身状态清楚，未决仅跨批主身份/精确接证路由。mandatory forest iff/half-density三半/叶hitting q^h与threshold Hall共同叶边际分模型；单位读出主据seq118在0098，阈值主由0101精确确认，不吞完整law。"
+      },
+      "current_canonical_row": {
+        "path": "archives/unrelated-machines/state/审查/单位森林与叶Hall阈值两源精读--审查.md",
+        "sha256": "801e9b4d69612ca5b04cb8a76ad4578dd1628591fa86f1fdb20580f8b4db8990",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "完整实读成熟正文；数学本身状态清楚，未决仅跨批主身份/精确接证路由。mandatory forest iff/half-density三半/叶hitting q^h与threshold Hall共同叶边际分模型；单位读出主据seq118在0098，阈值主由0101精确确认，不吞完整law。"
+      },
+      "preserved_existing_owner_ids": [],
+      "accepted_unit_owner_ids": [
+        "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+        "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+        "UM-PRUNED-TREE-LEAF-HITTING-v1"
+      ],
+      "remaining_owner_routes": [
+        {
+          "section": "3. Threshold leaf Hall 与 consistent marginals",
+          "target_object_id": "UM-THRESHOLD-LEAF-HALL-CONSISTENT-MARGINALS-PATH-PROJECTION-GAP-v1",
+          "state": "current-canonical-primary-exists-but-this-page-not-yet-bound",
+          "action": "该主record所属作者/lead精确接本页§3及必要§4边界，保指定partition、共同叶edge marginals而非all-core joint law；本组不代改该主record。"
+        }
+      ],
+      "proposed_disposition": "needs-decision",
+      "reason": "0109原DONE的0-based material_index=22。全文实读并由本候选三个主record接纳§1 mandatory全部变量forest iff/half-density全jobs三半和§2纯树hitting q^h/最大r-free/dummy仅组合存在性；精确section evidence已加。整页仍有§3 Threshold leaf Hall/consistent marginals/path projection，对应当前canonical主身份UM-THRESHOLD-LEAF-HALL-CONSISTENT-MARGINALS-PATH-PROJECTION-GAP-v1，其现record尚未引用本页：该部分及§4相关partition/共同边际非完整law边界待原主作者/lead接证。本行保原DONE及当前canonical全部owner，并仅反向增加已准确接纳的三unit/leaf owner；必须保needs-decision，不能因局部unit接证转attachment抹掉Hall未接范围。"
+    }
+  ],
+  "precise_evidence_acceptances": [
+    {
+      "reference": {
+        "path": "archives/unrelated-machines/state/审查/Unit-readout槽与配置阈值两源精读--审查.md",
+        "sha256": "7230a61609a3e2d4d1e0a11657eda00b73a18df76327469e68fb04a002fdb9fc",
+        "section": "1. Calibrated cardinality slots 与 bounded-density"
+      },
+      "object_ids": [
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+        "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1"
+      ],
+      "acceptance": "本候选作者已实读并按同一模型/量词精确接受为对应主record的补充证据；正式发布及canonical整合仍待lead。"
+    },
+    {
+      "reference": {
+        "path": "archives/unrelated-machines/state/审查/Unit-readout槽与配置阈值两源精读--审查.md",
+        "sha256": "7230a61609a3e2d4d1e0a11657eda00b73a18df76327469e68fb04a002fdb9fc",
+        "section": "2. 正部 CONFIG、严格单位 5/3 与闭合两树"
+      },
+      "object_ids": [
+        "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+        "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+        "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1"
+      ],
+      "acceptance": "本候选作者已实读并按同一模型/量词精确接受为对应主record的补充证据；正式发布及canonical整合仍待lead。"
+    },
+    {
+      "reference": {
+        "path": "archives/unrelated-machines/state/审查/单位森林与叶Hall阈值两源精读--审查.md",
+        "sha256": "801e9b4d69612ca5b04cb8a76ad4578dd1628591fa86f1fdb20580f8b4db8990",
+        "section": "1. Mandatory pruned-forest IFF 与半密度合同"
+      },
+      "object_ids": [
+        "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+        "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1"
+      ],
+      "acceptance": "本候选作者已实读并按同一模型/量词精确接受为对应主record的补充证据；正式发布及canonical整合仍待lead。"
+    },
+    {
+      "reference": {
+        "path": "archives/unrelated-machines/state/审查/单位森林与叶Hall阈值两源精读--审查.md",
+        "sha256": "801e9b4d69612ca5b04cb8a76ad4578dd1628591fa86f1fdb20580f8b4db8990",
+        "section": "2. 精确叶 hitting 与 dummy 逃逸"
+      },
+      "object_ids": [
+        "UM-PRUNED-TREE-LEAF-HITTING-v1"
+      ],
+      "acceptance": "本候选作者已实读并按同一模型/量词精确接受为对应主record的补充证据；正式发布及canonical整合仍待lead。"
+    }
+  ],
+  "mathematical_separations": [
+    {
+      "topic": "strong-all-rails versus active-only",
+      "decision": "强全轨(S_r)根q=y_v0/y_v1为互补有理质量，非根q=t_parent；只有strict-unit多数轨/指定profile重组的active-only指定根incoming=1，未选轨全部父置。",
+      "evidence": {
+        "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+        "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4",
+        "section": "关系解释、边界和逐源去向"
+      }
+    },
+    {
+      "topic": "fixed-D witness premise",
+      "decision": "固定D自产校准证书和k<D容量匹配不需完整YES；真实YES只用于额外a d≤A域的受限C1必要性。早期四源压缩句不扩充最终定理前提。",
+      "evidence": {
+        "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+        "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4",
+        "section": "校准、条件必要性及固定密度的两分支"
+      }
+    },
+    {
+      "topic": "fixed-height versus complete-YES mixing",
+      "decision": "任意密度固定高度叶流量化全部输入且不需YES；mixing必须同一P的p份完整C≤1见证、逐变量覆盖指定sign及非空N≥p。",
+      "evidence": {
+        "path": "archives/unrelated-machines/state/审查/单位读出叶流与选择重组的原程序及锐矩阵--审查.md",
+        "sha256": "839f4e4242eb16b000ba8f34da2f3d748c0aba40ae11a9598bed3723570214b3",
+        "section": "比较纠偏、用途及接续"
+      }
+    },
+    {
+      "topic": "strict T1 versus near-unit T",
+      "decision": "CONFIG1恰整轨(L)，active-only舍入给五三promise；闭合族Tconf可能1+1/k，不能将近单位阈值整体缩放后当严格1合同。",
+      "evidence": {
+        "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+        "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+        "section": "4. 两源之间的关系和不能合并之处"
+      }
+    },
+    {
+      "topic": "pin / unit-cube / scaled-cube",
+      "decision": "M-b4a6d0d0b41c4ef2b84217f7ac101ea1为三个不同含0/1 pin原P，不能套同P多YES；M-c663aecb01df4eefa9ed35be826cfbab为无pin unit七变量源NO却C≤3/2特定矩阵，亦属半密度一般定理的例；M-1b7aae02648540af8d4986eb762adaae每clause单机外端1/4是不同矩阵，非unit iff。三者旧身份保留，不新增/重证/合并。",
+      "evidence": {
+        "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+        "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+        "section": "开底树六证书的实际模型"
+      }
+    },
+    {
+      "topic": "leaf count and ancestor structure",
+      "decision": "q^h是锐最小hitting数，最大r-free为N−q^h；数量≥q^h不保证特定位置命中；dummy纯树存在另需共同外部容量，不能免费扩成调度。",
+      "evidence": {
+        "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+        "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+        "section": "8. 虚拟叶补齐的精确命中门槛"
+      }
+    }
+  ],
+  "hall_remaining_canonical_primary": {
+    "object_id": "UM-THRESHOLD-LEAF-HALL-CONSISTENT-MARGINALS-PATH-PROJECTION-GAP-v1",
+    "body": {
+      "path": "archives/unrelated-machines/state/审查/条件叶Hall投影与一致边际四源证明读后--审查.md",
+      "sha256": "3a15197b94cc2ab85e03c4fe5e79b009b8e90b449c396b23ded7bb72ef063bc4"
+    },
+    "current_record_refs_this_page": false,
+    "decision": "精确主模型/量词与正文已实读，§3应交该对象原主作者/lead接受；本候选不改其record、不提前闭合整页。"
+  },
+  "validation": {
+    "command": "registration.validate_batch(root,candidate,expected_materials=ten_exact_refs,baseline_ref=candidate.baseline); no peer_objects supplied",
+    "objects": 10,
+    "materials": 10,
+    "reused_existing_owners": [
+      "M-1b7aae02648540af8d4986eb762adaae",
+      "M-36e9d6d07bed4754858f0f578f0ad101",
+      "M-b4a6d0d0b41c4ef2b84217f7ac101ea1",
+      "M-c663aecb01df4eefa9ed35be826cfbab",
+      "UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1",
+      "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1",
+      "UM-HETEROGENEOUS-MACRO-PROMISE-v1",
+      "UM-SMALL-DENSITY-FLOW-BARRIER-v1"
+    ],
+    "reused_published_group_owners": [],
+    "all_body_evidence_refs_sha_and_unique_sections_read": true,
+    "existing_owner_union_checked": true,
+    "canonical_mutated": false,
+    "queue_claim_or_done": false,
+    "git_operations": false,
+    "new_mathematical_audits_or_edges": false
+  },
+  "actual_reading": "本轮实读AGENTS/READINESS/worker/IMPLEMENTATION登记节与双对象例、registration.py validate_batch/merge_material/compose实际分支；0098八份正式成熟正文全文、0107/0109两页全文、共享UM定义及Hall当前主record/body全文，核当前canonical与三份原DONE资产/对应pending路由。成熟证明复用，未声称重读或新跑原程序/巨大JSON；先前0096比较仅历史保留，不冒作本轮全文实读。",
+  "next_actions": [
+    "现lead按十份相同原字节材料发布合法局部registration补充任务，分配新的正式write_paths。",
+    "经checkpoint/push/done后以精确base_registry作incremental接入；十个unit对象沿原稳定ID与version1，当前均无canonical主record。",
+    "0109§3另定向交当前Hall主record作者接证；在其真实接纳前保本页needs-decision。本候选不supersede、不修改任何旧DONE。"
+  ],
+  "baseline_rebind": {
+    "from_original_0098_baseline": {
+      "path": "research/registration/baseline.json",
+      "sha256": "5d5737ab6d07552b48925bdb936dae70490e8de1ee0da2b380bb2d16dd5690cf"
+    },
+    "to_current_canonical_baseline": {
+      "path": "research/registration/baseline-5cd4b9018.json",
+      "sha256": "af99fb773928f3fc6bcd577ade37fbb07e8f84befbb2304158b99894ab1e56a3"
+    },
+    "all_ten_material_bytes_unchanged_and_present": true,
+    "reason": "候选尚未发布，新增局部任务应绑定当前lead baseline；不跨baseline伪supersede旧DONE，也不让incremental输出把全仓baseline倒退。"
+  }
+}
