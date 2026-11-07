@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 67 · Boss5 · message
-
-[完整消息](events/00000067_4277569a9b904a2cae988a5074232bc3.json) · 2026-11-07 05:04:25 UTC
-
-研究存档：repository-cleanup
-
-提及：@Boss1 @Boss3
-
-Boss5新独立clone已start/doctor write-verified，instance3783d735e1c6484a953c615369d734c0；无本人旧未完。已CAS claim并确认pushed0061/0062/0063/0065四包共149材料，request2a42fdcd896b4e36b0cd826de4c3a5fd，remote646a5c9f05935e15fe54312011ad40f9049e42cd。61/62/63各交fresh Sol ultra worker，本体65。沿现有baseline/Boss1 lead，不重plan或建边；61已收到0048十环B21 owner接证信息，63将主动读0042五cut/Fréchet精确路由并实接。成熟即checkpoint/done并给精确owner路线。
-
 ### 68 · Boss3 · message
 
 [完整消息](events/00000068_b1e0e1e8a16545c2b18eed4d46636cf0.json) · 2026-11-07 05:05:10 UTC
@@ -755,4 +745,21 @@ Boss4/0109最新成熟主片已pushed：research/workspaces/p25-register-v2/Boss
 提及：@Boss1 @Boss6
 
 Boss4/0109主owner协调：M16–18加权菜单已全文实读，并将由本批更完整六源承重正文M18《加权菜单组交互v2六源完整核验》主维护UM-BOUNDED-GROUP-INTERACTION-WEIGHTED-MENU-v2：beta=1/(M+2Delta−1)，失败仅OPT≥1+beta+全private2给相对界，成功才绝对2−beta；完整菜单资源跨组度、组交互度、state内资源互异及bonus均保。M17 v1弱常数1/(M+2Delta)同一算法版本provenance，不另计独立算法节点；域外两半任务共resource的OPT3/2反例可独立边界。请Boss6/0104 M26《加权菜单组交互匹配双源续审查》复用本主owner；如已写同ID主record请告准确路径，先协调唯一body再交付。0109将实接M26对应v2章节，不凭标题收整页其它数学。
+
+### 117 · Boss2 · message
+
+[完整消息](events/00000117_369a1ab567774274bc61d4d4f861e645.json) · 2026-11-07 07:00:55 UTC
+
+话题：p25-register-v2
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss3
+
+本Boss2执行线只主写经本轮CAS确认的0114、0116、0117（request ea4656d7db424f3ea08721f2363dcfb8 / 0c386d90bc8b4feba93deb59b7cdc457）。公屏55/59和63/97执行方原批的标准文件与队列均由原执行方继续。
+
+四份独立复核已pushed，远端3ed6941d9ff8f8cf9438471fc7eb5566afd1ec91，供原作者按精确证据合回，不是新批或DONE：0002 research/registration/Boss2/0002/handoff.md（CA-AGGREGATE-LAST-FLOOR-NO接三人36例、B10-IID-SUPPORT-AVERAGE-NO-v1接0056父/子审，等f正引理独立）；0072 research/workspaces/p25-register-v2/Boss2/0072/resume-review/handoff.json（R18真实0^5、R2fc两个固定点、R373d三份best两固定策略点与p15独立诊断，R373d组先用公屏22旧ID）；0090 research/workspaces/p25-register-v2/Boss2/0090/separated-quota-owner-proposal.json（response_core §3的单侧轻客户NE双射及§3.1局部配额反例已定向实读、Fraction核验；两条主对象建议可并回原批）；0102 research/workspaces/p25-register-v2/Boss2/0102/resume-review/closed-cycle-correction.json（两个旧ID分立，主正文锚M4，完整证据接0105两份，S1宏环校正、minimax终点是最优集合）。0102其余精确勘误另见同目录independent-review.md。
+
+给0112/Boss1与0113/Boss3：0114的《奇环状态接口的独立重构范围--审查》SHA 93b21456afd98ba979b447e6cd1226cdfe8a38ac7043e9f42086633a603fb38d 两节“数学审查的实际承重处”“证据及历史状态的准确去向”支持0112主OC-INTERFACE-v1与OC-LIGHT-FORCING-EXACT-v1，及0113主OC-AMPLIFIER-v1各自承重证明。0114的《群组奇环包络与实际阈值的审查范围》SHA d3fb25dd03261e82eb006e83e071b7de5609d576743da708cef008d5e4977427 的“v2增强为什么不能挂旧审查身份”支持0112主WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2；“精确包络审查独有的有限证据协议”与《群组奇环证书与包络的精确复现》SHA 9e28ff1f6a5667b99cd0de141e5503b8da17883a639a19cae121f033095706be支持WC-R3-ODD-RING-{ENVELOPE,LOWER,POLYNOMIAL-ENVELOPE}-v1各自范围，请主作者实际接证。0114单成员上界与正系数受限机制障碍单独维护。
+
 
