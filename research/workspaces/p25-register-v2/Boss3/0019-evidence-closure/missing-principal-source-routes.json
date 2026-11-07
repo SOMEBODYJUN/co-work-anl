@@ -1,0 +1,318 @@
+[
+  {
+    "principal_body": {
+      "path": "archives/customer-attraction/state/障碍/最小收益移至末两位的福利代价--障碍.md",
+      "sha256": "5adde31691c869d7f5c1af0f2708435905952c4f43a76f6cfa6f1353c5014664"
+    },
+    "exact_frontmatter": "\nid: \"customer-attraction/tail-minimum-relocation-welfare-gap\"\nkind: \"obstruction\"\ntype_tag: \"障碍\"\ntitle: \"全局最小收益移至末两位的福利代价\"\nstatus: \"proved-with-exact-witness\"\nsource_labels:\n  - \"tail_minimum_obstruction.md / G1\"\n  - \"tail_minimum_obstruction.md / E1\"\nsummary: \"W<nθ_n的完整SPE不能在保持福利不增时把任何全局最小收益放到末两位；36客户实例的最小福利从34升到36，精确代价2。\"\nsource_refs:\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-24bfbfd5ec7845b79374a1938c335df7/normalization/tail_minimum_obstruction.md\"\n  - \"source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-24bfbfd5ec7845b79374a1938c335df7/normalization/tail_minimum_obstruction.md\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/last_two_floor.md\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/aggregate_theta_counterexample.md\"\n",
+    "exact_body_text_for_route_only": "---\nid: \"customer-attraction/tail-minimum-relocation-welfare-gap\"\nkind: \"obstruction\"\ntype_tag: \"障碍\"\ntitle: \"全局最小收益移至末两位的福利代价\"\nstatus: \"proved-with-exact-witness\"\nsource_labels:\n  - \"tail_minimum_obstruction.md / G1\"\n  - \"tail_minimum_obstruction.md / E1\"\nsummary: \"W<nθ_n的完整SPE不能在保持福利不增时把任何全局最小收益放到末两位；36客户实例的最小福利从34升到36，精确代价2。\"\nsource_refs:\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-24bfbfd5ec7845b79374a1938c335df7/normalization/tail_minimum_obstruction.md\"\n  - \"source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-24bfbfd5ec7845b79374a1938c335df7/normalization/tail_minimum_obstruction.md\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/last_two_floor.md\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/aggregate_theta_counterexample.md\"\n---\n\n# 全局最小收益移至末两位的福利代价\n\n## 一般门槛\n\n固定一份有限共同目录单位客户输入、n≥2名提供者，并保留[完整有序历史SPE模型](../定义/共同目录完整历史模型--定义.md)的全部离轨历史及任意平局。θ_n是该输入的末位最坏背景值，W(σ)=Σ_i u_i(σ)。[末两人保底定理](../定理/末两人逐人保底与全人数弱福利界--定理.md)保证每份完整纯SPE的最后两位均有收益至少θ_n。\n\n因此有以下已证明的正规化障碍：\n\n1. 若某份完整纯SPE的全局最小收益在最后两位中至少出现一次，则所有玩家收益均≥θ_n，故W≥nθ_n。\n2. 若存在σ_0满足W_0=W(σ_0)<nθ_n，那么任意满足W(σ)≤W_0的完整纯SPE，其全局最小收益的**全部出现位置**都严格早于最后两位。\n3. 即使允许更换整份完整策略，只要新策略的全局最小收益落在最后两位，福利就至少增加nθ_n−W_0>0。\n\n“最后两位中至少一次”包括全局最小收益平局，结论无需唯一最小者。W_0<nθ_n自动排除零覆盖退化；n=2时不存在这样的σ_0。命题允许新策略与旧策略有完全不同的离轨续局，并不只限制局部交换。\n\n同一终局行动多重集的重排保留覆盖人数与收益多重集；但重排所得路径未必能扩成完整SPE。若原福利低于nθ_n，任何把最小收益移入末两位的重排都不能是完整SPE的终局。玩家在收益函数中对称，不意味着策略树的时间次序可以任意交换。\n\n## 末两人前提的另一种重构\n\n本源还记录一个有限回复映射论证，和已归档的两人重叠恒等式一致。固定倒二前缀负载p，令f_p(A)=Σ_{x∈A}1/(p_x+1)，U_p(A,B)为先选A、后选B时前者收益，则\n\n\\[\n U_p(A,B)-U_p(B,A)=f_p(A)-f_p(B).\n\\]\n\n指定末位最佳回复映射r:A↦r(A)。若倒二实际收益U低于该节点θ_2(p)，则对每个A，倒二最优性给U_p(A,r(A))≤U，末位最优性给U_p(r(A),A)≥θ_2(p)>U，故f_p(A)<f_p(r(A))。有限集合上的映射必有有向环，沿环严格增加矛盾。这重获倒二保底；固定过去与每个候选新背景都是原n−1合法竞争元组，故θ_2(p)≥θ_n。该重构没有产生另一项更强数值界，不能重复认领为新主结果。\n\n## 36客户实例的精确下界与达到\n\n复用[三人36客户反例](../反例/三人聚合末位保底--反例.md)：六主题X={0,1,2}、Y={3,4,5}，每跨组对一客户，每组各取两标签的兴趣集合三客户；θ_3=12、OPT_3=36。原完整策略路径(0,3,4)，收益(10,12,12)，福利34。\n\n这份输入的每个完整SPE福利只可能为34或36，可以直接从所有末位比较说明，而不把有限求解器当一般论证：首主题为a时，第二人总能选同组不同标签，迫使第三人选同组第三标签，获得12；重复a后第三人最优给第二人仅9，所以第二人不会重复首主题。前两标签若同组，末位严格完成该组，三人各12；若跨组，第二人既然可保12，所选末位平局必须使其得12，终局便为两名同组玩家各12、一名另一组玩家10。故所有SPE终局的福利为36或34；低福利时最小收益只在第一位。\n\n给达到36且末两位有全局最小收益的完整策略：仍令第三人在(a,b)后选b所属组最小未出现标签；第二人在首标签0后改选1，在其他首标签后仍选相反组首标签；根选0。第二人各节点仍取最大收益12，第三人仍逐节点最优。第一人选0得12，改选其他标签依原续局得10，因此根最优。实际路径(0,1,2)，收益(12,12,12)，全局最小值在全部三位置出现。\n\n由两份完整策略及前述穷尽论证，\n\n\\[\n \\min_{\\sigma\\in\\mathrm{SPE}}W(\\sigma)=34,\\qquad\n \\min_{\\substack{\\sigma\\in\\mathrm{SPE}:\\\\\n \\text{末两位含全局最小收益}}}W(\\sigma)=36.\n\\]\n\n所以本例最小正规化代价恰为2，福利倍率为18/17。这不是宣称所有实例的最小代价为2；一般结论只有阈值nθ_n−W_0。\n\n## 精确证据与适用边界\n\n本次全文读原workspace数学说明和独立脚本。原字节[审计](../../tools/evidence/aggregate-security/original/research/workspaces/customer-attraction/R-24bfbfd5ec7845b79374a1938c335df7/normalization/audit_tail_minimum.py)不导入规范实现，直接展开36个单位客户，分别核两个完整策略的43节点、258项行动比较（各215项非自身动作），检查36个末位前缀及216个终局的五类算术。\n\n另以有序历史集合值逆向归纳枚举全部SPE根终局：每个候选孩子可选择自己的可信子SPE，当前选择的收益须至少为各孩子最小可实现当前收益之最大值。这与已归档[完整历史终局全集算法](../算法/完整历史纯SPE终局全集--算法.md)的存在型重构一致，保留同负载历史的不同续局。得到48个有序SPE终局，其中12个含尾部全局最小收益；相应福利最小值为34和36。本轮重放及冻结对照见[证据对象](../计算/静态安全值与聚合保底的精确核验--计算.md)。\n\n本障碍否定的是保持福利不增的末位/倒二最小收益正规化，不否定允许福利上升的变换，也不证明任何六人半覆盖反例。若要从一个低福利反例变成特定顺序，必须同时控制完整策略可信性和福利变化；只移动终局排列或利用玩家同质性不够。旧来源是临时workspace中的成熟一般门槛和有限精确达到例，已据实迁入数学正文，不因其原位置而丢弃。\n",
+    "actual_task_routes": [
+      {
+        "task_file": {
+          "path": "research/operations/p25-register-v2/tasks/register-ab98f323ad-0069.json",
+          "sha256": "c46e279af66a1d60241a6fb39bacbae42a2ee918237d98cc365e2e864b421526"
+        },
+        "state": "claimed",
+        "owner": "Boss2",
+        "assignment_material": {
+          "path": "archives/customer-attraction/state/障碍/最小收益移至末两位的福利代价--障碍.md",
+          "sha256": "5adde31691c869d7f5c1af0f2708435905952c4f43a76f6cfa6f1353c5014664"
+        },
+        "receipt_batch_file": null
+      }
+    ],
+    "canonical_records_with_exact_body": [],
+    "policy": "Source routing only; no stub, allocation, claim, acceptance or ownership inferred from claimed/prepared."
+  },
+  {
+    "principal_body": {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+    },
+    "exact_frontmatter": "\nid: \"customer-attraction/full-history-pure-spe-outcome-recursion\"\nkind: \"algorithm\"\ntype_tag: \"算法\"\ntitle: \"完整历史纯SPE的终局全集递推与证书展开\"\nstatus: \"complete\"\ntruth_status: \"proved\"\nreview_level: \"semantic-reconstruction-and-source-code-check\"\nscope: \"有限非空共同标签目录；单位提供者；单位客户整数重数；任意完整有序历史纯策略\"\nlegacy_ids:\n  - \"CA-EXACT-PURE-SPE-ALL\"\nsummary: \"集合值逆向归纳精确刻画全部纯SPE终局；按计数缓存集合，但逐有序历史独立展开完整策略。\"\nsource_refs:\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/exact_solver.md\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:customer_attraction/exact.py\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:customer_attraction/certificate.py\"\n",
+    "exact_body_text_for_route_only": "---\nid: \"customer-attraction/full-history-pure-spe-outcome-recursion\"\nkind: \"algorithm\"\ntype_tag: \"算法\"\ntitle: \"完整历史纯SPE的终局全集递推与证书展开\"\nstatus: \"complete\"\ntruth_status: \"proved\"\nreview_level: \"semantic-reconstruction-and-source-code-check\"\nscope: \"有限非空共同标签目录；单位提供者；单位客户整数重数；任意完整有序历史纯策略\"\nlegacy_ids:\n  - \"CA-EXACT-PURE-SPE-ALL\"\nsummary: \"集合值逆向归纳精确刻画全部纯SPE终局；按计数缓存集合，但逐有序历史独立展开完整策略。\"\nsource_refs:\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/exact_solver.md\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:customer_attraction/exact.py\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:customer_attraction/certificate.py\"\n---\n\n# 完整历史纯SPE的终局全集递推与证书展开\n\n## 模型和目标\n\n采用[共同目录完整历史模型](../定义/共同目录完整历史模型--定义.md)。有 $p\\ge1$ 个共同主题标签、$m\\ge1$ 名依次移动的单位提供者。类型 $B\\subseteq\\{0,\\ldots,p-1\\}$ 的非负整数重数 $r_B$ 表示不同的单位客户；它不是不可分加权客户。空兴趣类型、空覆盖主题、不同标签覆盖相同、重复选择均可保留。终局计数 $c$ 满足 $\\sum_a c_a=m$；对实际被选的主题 $a$，\n\n$$\nU_a(c)=\\sum_{B\\ni a}\\frac{r_B}{\\sum_{b\\in B}c_b}.\n$$\n\n每个求值中 $c_a>0$，所以分母为正。福利 $W(c)=\\sum_{B:B\\cdot c>0}r_B$，并有 $W(c)=\\sum_a c_aU_a(c)$。\n\n本对象证明算法在每个子博弈返回**可以由某一完整历史纯SPE实现的所有终局计数**，并能为每个终局构造完整策略。它不枚举所有完整策略，不涉及混合行为SPE，也不证明六人福利界。\n\n## 计数缓存的准确含义\n\n有序历史 $h=(a_1,\\ldots,a_t)$ 的计数是 $k$。相同计数的两个历史所诱导的剩余博弈具有相同合法行动、相同剩余层数、相同终局收益函数；保持后缀行动的映射给出子博弈同构。因此其可实现终局**集合**相同，记作 $R(k)$。\n\n两个历史仍是原树上不同节点。已给完整策略在它们的后续行动可以不同；本算法没有令策略成为计数函数。此点既由下述充分性拼接证明使用，也由[历史平局反例](../反例/同负载历史的不同续局--反例.md)检验。\n\n## 全集递推及完整证明\n\n若 $\\sum_a k_a=m$，令 $R(k)=\\{k\\}$。否则对每个行动 $a$ 定义\n\n$$\nR_a=R(k+e_a),\\qquad\n\\ell_a=\\min_{c\\in R_a}U_a(c),\\qquad\nM(k)=\\max_a\\ell_a.\n$$\n\n递推式为\n\n$$\n\\boxed{R(k)=\\bigcup_a\\{c\\in R_a:U_a(c)\\ge M(k)\\}.}\\tag{1}\n$$\n\n按剩余层数归纳证明集合恰好正确，同时非空。\n\n**必要性。** 给定某份完整纯SPE，在当前节点选 $a$ 并到达 $c$。限制到孩子 $a$ 的策略仍是子SPE，故归纳假设给出 $c\\in R_a$。对其他行动 $b$，给定策略在该离轨孩子实际到达某个 $d_b\\in R_b$。当前玩家最优性给出\n\n$$\nU_a(c)\\ge U_b(d_b)\\ge\\ell_b.\n$$\n\n对自己的行动还有 $U_a(c)\\ge\\ell_a$，所以 $U_a(c)\\ge M(k)$，式(1)保留 $c$。\n\n**充分性。** 取某个 $c\\in R_a$ 且 $U_a(c)\\ge M(k)$。在孩子 $a$ 使用归纳假设提供的一个实现 $c$ 的子SPE。对每个 $b\\ne a$，选择达到 $\\ell_b$ 的终局 $d_b$，再使用实现该终局的子SPE。有限集合保证最小值达到；不同有序孩子的后代互不相交，故这些策略可以同时拼接。当前选择 $a$，所有偏离满足\n\n$$\nU_b(d_b)=\\ell_b\\le M(k)\\le U_a(c).\n$$\n\n当前行动最优且所有孩子均为子SPE，拼接策略就是本节点的纯SPE。这使用允许的历史依赖平局，不要求相同计数节点选择同一实现。\n\n**非空性。** 选达到 $\\max_a\\ell_a$ 的行动 $a$。其非空孩子集合中每个 $c$ 都有 $U_a(c)\\ge\\ell_a=M(k)$，所以至少一个进入 $R(k)$。全零收益游戏也满足此论证。终端基础层显然正确，归纳完成。\n\n## 完整策略和指定有序路径\n\n给定根目标 $c\\in R(0)$，在每个有序节点 $h$ 维护一个希望实现的终局 $c_h$。选择满足 $c_h\\in R(k+e_a)$ 和 $U_a(c_h)\\ge M(k)$ 的行动 $a$，在该孩子继续目标 $c_h$；其他孩子分别传入使当前玩家收益最小的合法子SPE终局。每个有序节点分别展开，直到深度 $m$。由充分性证明，每个目标都可实现。\n\n若另给完整有序在轨路径 $q$，先检查它的计数等于 $c$，然后仅在 $q$ 的各前缀强制指定下一行动。该行动若不满足上述合法条件，拒绝该路径；否则其余孩子仍独立选择最小收益子SPE，得到恰好实现 $q$ 的完整证书。`ordered_outcomes()` 逐层遍历这些合法行动，输出每条可实现路径一次。它枚举路径，不枚举所有支持同一路径的完整策略。\n\n规范实现允许 `action_selector(history, candidates)` 和 `continuation_selector(history, candidates)` 在传入候选中选择。回调不能引入候选外行动或续局。完整历史键使不同排序的同计数节点可以各自破平局。\n\n## 定义级独立核验证书\n\n证书含每个长度 $0,\\ldots,m-1$ 的有序决策历史的行动，以及声明的根终局计数。验证器先检查历史键集合恰好完整、每个行动合法、声明终局长度与人数正确，再对整棵树自底向上计算**所给策略**在每个行动孩子后的真实终局。当前指定行动为 $a$ 时，对每个其他 $b$ 检查\n\n$$\nU_a(c(h,a))\\ge U_b(c(h,b)).\\tag{2}\n$$\n\n每名提供者只在自己的层移动一次，故任一子博弈中其单方策略偏离能影响的就是实际遇到节点上的行动。全部节点的式(2)与子树归纳恰好等价于SPE。验证器不调用式(1)，也不借求解器的集合缓存认证结果。它同时重放根路径并核对声明终局。\n\n## 复杂度与边界\n\n计数状态数 $N=\\binom{m+p}{p}$，终局计数数 $T=\\binom{m+p-1}{p-1}$。每个 $R(k)$ 至多 $T$ 项。忽略有理数算术和收益计算成本，可用 $O(NpT)$ 次候选扫描；集合存储是 $O(NT)$ 个计数项，计数向量本身有 $p$ 个坐标。完整证书另有 $\\sum_{t=0}^{m-1}p^t$ 个行动项，展开与验证随有序树大小增长。没有联合输入位长多项式时间保证。\n\n软件还允许 $m=0$：不管目录是否为空，唯一终局为零计数、唯一完整策略为空。正人数与空目录的输入被拒绝。正人数的主问题仍采用非空目录。零覆盖时 `inefficiency_ratio()` 约定为一，不能拿该约定定义 $0/0$ 的数学效率比。\n\n## 实现、比较和接续\n\n[精确求解器资源与复现](../计算/完整历史求解器的精确复现--计算.md)保留原字节规范包、完整测试及数据依赖。源码 `exact.py` 的 `_solve`、`certificate`、`ordered_outcomes` 与上述三部分分别对应；`certificate.py` 的 `verify_certificate` 直接实施式(2)。`model.py` 使用任意精度整数和 `Fraction`，客户类型压缩逐项保持原单位客户定义。\n\n已实读冻结 `uploaded_tool_audit.md` §4–5：规范包、既有LCM搜索和上传NumPy工具使用同一集合递推，后者不是不同均衡概念；NumPy整数范围与稠密表限制属于额外实现边界。该审计报告的有限四路一致性不替代本对象的归纳证明。已实读 `strategy_cone.md`：固定完整策略后对客户重数做线性优化是另一接口，不能把有限策略样本称作全部策略。\n\n用途是构造和认证有限实例、枚举合法背景的终局集合、重放候选反例及攻击附加引理。需要一般人数、任意目录的福利结论时，仍须统一数学论证或合法反例；增加有限搜索规模不会自动补足这个量词。\n\n本对象记录模型→递推、递推→证书构造、定义级核验→有限证书认证的关系证据；第三阶段再建立正式超边。\n",
+    "actual_task_routes": [
+      {
+        "task_file": {
+          "path": "research/operations/p25-register-v2/tasks/register-ab98f323ad-0001-5-evidence.json",
+          "sha256": "b5317b3dd101124cdbbae9837a2d2a0a99881166de4d9a2ec07f7464c98f5c94"
+        },
+        "state": "claimed",
+        "owner": "Boss2",
+        "assignment_material": {
+          "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+          "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+        },
+        "receipt_batch_file": null
+      },
+      {
+        "task_file": {
+          "path": "research/operations/p25-register-v2/tasks/register-ab98f323ad-0001-5.json",
+          "sha256": "ab085979a6ca7bb855cc9767c18f01b784eafdca63e848cf0177b8ff4a284684"
+        },
+        "state": "withdrawn",
+        "owner": null,
+        "assignment_material": {
+          "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+          "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+        },
+        "receipt_batch_file": null
+      }
+    ],
+    "canonical_records_with_exact_body": [],
+    "policy": "Source routing only; no stub, allocation, claim, acceptance or ownership inferred from claimed/prepared."
+  },
+  {
+    "principal_body": {
+      "path": "archives/customer-attraction/state/定理/真实路径安全值链的嵌入与债务恒等式--定理.md",
+      "sha256": "d5431e82c2acd43845c37528035f4d59f1e4e564cfdd5b1b8112dc8753147b12"
+    },
+    "exact_frontmatter": "\nid: \"customer-attraction/actual-path-security-chain-debt\"\nkind: \"theorem\"\ntype_tag: \"定理\"\ntitle: \"真实路径安全值链的嵌入与债务恒等式\"\nstatus: \"complete\"\ntruth_status: \"proved-identities-with-open-global-bridge\"\nreview_level: \"exact-definition-reconstruction-and-replay\"\nsummary: \"固定背景列嵌入使真实安全值单调；强弱债务精确望远镜，弱式保留末位半收益。\"\nsource_refs:\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/security_chain_and_local_boundary.md\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/2026-10-10/security_chain_review.md\"\n",
+    "exact_body_text_for_route_only": "---\nid: \"customer-attraction/actual-path-security-chain-debt\"\nkind: \"theorem\"\ntype_tag: \"定理\"\ntitle: \"真实路径安全值链的嵌入与债务恒等式\"\nstatus: \"complete\"\ntruth_status: \"proved-identities-with-open-global-bridge\"\nreview_level: \"exact-definition-reconstruction-and-replay\"\nsummary: \"固定背景列嵌入使真实安全值单调；强弱债务精确望远镜，弱式保留末位半收益。\"\nsource_refs:\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/security_chain_and_local_boundary.md\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/2026-10-10/security_chain_review.md\"\n---\n\n# 真实路径安全值链的嵌入与债务恒等式\n\n## 1. 任意固定背景的安全值\n\n背景客户负载为非负整数向量 b，恰剩 r≥1 人。令\n\n\\[\nv_r(b)=\\max_{p\\in\\Delta(\\mathcal S)}\\min_{B\\in\\mathcal S^{r-1}}\n\\sum_a p_a\\sum_{x\\in a}\\frac1{b_x+1+\\operatorname{load}_B(x)}.\n\\tag{1}\n\\]\n\n这里只是静态零和比较：B 不观察查询 a 的抽样实现。背景固定，客户价值仍为一；\n分母中的 b 不是客户权重。空背景的 v_n(0) 是\n[已证明的混合安全值](静态混合安全值的锐目录计数界--定理.md)，满足\n\n\\[\nv_n(0)\\ge\\operatorname{OPT}_n/(2n-1).\n\\tag{2}\n\\]\n\n**背景嵌入。** 对每个合法主题 A、r≥2，\n\n\\[\nv_{r-1}(b+\\mathbf1_A)\\ge v_r(b).\n\\tag{3}\n\\]\n\n证明：对每个查询分布 p，左侧最小值的竞争主题为 A 加上 r−2 个主题，\n只是右侧全部 r−1 个竞争主题的一个子集。先比较这两个最小值，再最大化同一 p。\n这不要求任何后继理性；也没有把适应性回复当成静态背景。\n\n## 2. 沿真实路径的精确全局预算\n\n给定完整纯 SPE 的实际主题路径 S_1,…,S_n，收益 u_i，根覆盖 W=Σ_i u_i。\n记 b_i 为前 i−1 人的客户负载，r_i=n−i+1，并令\n\n\\[\nV_i=v_{r_i}(b_i),\\qquad s=V_1=v_n(0).\n\\]\n\n式 (3) 给 V_1≤…≤V_n。末位实际最佳回应给 V_n=u_n。\n当 n≥2 时，定义每一步的强预算余额\n\n\\[\nD_i=u_i-V_i+(n-i)(V_{i+1}-V_i)\n=u_i+(r_i-1)V_{i+1}-r_iV_i,\\quad 1\\le i<n.\n\\tag{4}\n\\]\n\n**链恒等式（CA-SECURITY-CHAIN-INTERFACE）。**\n\n\\[\n\\boxed{\\sum_{i=1}^{n-1}D_i=W-ns.}\n\\tag{5}\n\\]\n\n证明：第 i 项的 V_{i+1} 系数为 n−i，下一项的 V_{i+1} 系数为 −(n−i)。\n全部内部项消去，剩下 Σ_{i<n}u_i−nV_1+V_n；代入 V_n=u_n。\n因而这里没有未证明的逐步不等式。\n\n**较弱的充分桥。** 不必证明每步 D_i≥0，也不必证明 W≥ns。\n只要对任意原模型根 SPE 证明\n\n\\[\n\\boxed{\\sum_{i<n}D_i\\ge-\\tfrac12s,}\n\\quad\\text{等价于}\\quad\n\\boxed{W\\ge(n-\\tfrac12)v_n(0),}\n\\tag{6}\n\\]\n\n就由式 (2) 精确得到 W≥OPT_n/2。式 (6) 是本页提出的**开放义务**，\n不是由式 (5) 自动推出的结论；它也可能比原猜想更强而为假。\n\n另外，若尝试给每步相同的弱系数，置\n\n\\[\n\\widetilde D_i=u_i+(r_i-\\tfrac32)V_{i+1}-(r_i-\\tfrac12)V_i,\n\\]\n\n则同样的望远镜给\n\n\\[\n\\boxed{W-(n-\\tfrac12)s=\\sum_{i<n}\\widetilde D_i+\\tfrac12u_n.}\n\\tag{7}\n\\]\n\n不能漏掉末位的 u_n/2。末两人保底还给 D_{n−1}≥0：\n固定该背景的局部 θ 至少为 V_{n−1}，且末两人各获得至少 θ。\n这只控制尾端，不控制更早的 D_i。\n\n还要区分“较弱全局目标”和“较弱局部条件”：\n\\(\\widetilde D_i=D_i-(V_{i+1}-V_i)/2\\le D_i\\)。因此要求每个\n\\(\\widetilde D_i\\ge0\\) 实际上比要求每个 \\(D_i\\ge0\\) 更强，\n不是较弱全局目标的必要条件。下文两项负值是同一个局部失败机制。\n\nn=1 时 W=s=OPT_1，空和式 (5) 仍成立；式 (7) 的空和与末位项也正确。\n零客户给所有量为零，不需要除以覆盖。重复主题、空主题与同覆盖不同标签均保留。\n\n\n## 适用背景、比较与接续\n\n上述静态列嵌入的证明实际上对任意非负实数背景也成立：分母至少1，固定背景加入一个合法主题后，剩余竞争元组正好是原列集的子集。非整数背景只作为静态解析扩展；由原模型真实历史产生的背景仍是非负整数。链恒等式的代数本身不要求早期理性，只在末位以真正最优性使用V_n=u_n。即使一般策略不满足它，也可保留末位修正u_n−V_n。\n\n末两人的固定背景保底依据[末两人逐人保底](末两人逐人保底与全人数弱福利界--定理.md)；本链不新设与目录相同的匿名平局限制。[113客户完整SPE](../反例/真实前缀逐步安全值付款--反例.md)给首步D₁<0，次步正收益补回，故不能把链恒等式用作逐步支付证明。静态iid价值和真正minimax安全值也不可互换：前者的强弱普遍支付桥已有反例。\n\n本页的开放义务是根全局ΣD_i≥−s/2（或更强的ΣD_i≥0）。这不是必要条件，也不是已证结论；half可用其他对象证明。V_i按实际位置编号，v_r按剩余人数编号；根s=v_n(0)=V₁，不是末位V_n。原审查纠正过这项下标歧义，本页全程分开。零客户、空主题、重复标签和任意平局均无须删去或除以覆盖。\n\n来源主文§§1–2及内部审查的普遍嵌入/望远镜推导；[精确核验资源](../计算/安全值链与五人逐人安全值的精确核验--计算.md)另保留原代码和有限回归，不以有限回归替代上述普遍证明。关系证据：共同目录提供同一查询分布的列包含；完整SPE仅提供末位值；静态安全值锐下界提供half的条件充分性。第三阶段可据此分别建立推导和障碍关系。\n",
+    "actual_task_routes": [
+      {
+        "task_file": {
+          "path": "research/operations/p25-register-v2/tasks/register-ab98f323ad-0009.json",
+          "sha256": "008da3052bbfe45e1a1826131a357d7f88343f8421aad2a4a85b1965d83c9f09"
+        },
+        "state": "claimed",
+        "owner": "Boss2",
+        "assignment_material": {
+          "path": "archives/customer-attraction/state/定理/真实路径安全值链的嵌入与债务恒等式--定理.md",
+          "sha256": "d5431e82c2acd43845c37528035f4d59f1e4e564cfdd5b1b8112dc8753147b12"
+        },
+        "receipt_batch_file": null
+      }
+    ],
+    "canonical_records_with_exact_body": [],
+    "policy": "Source routing only; no stub, allocation, claim, acceptance or ownership inferred from claimed/prepared."
+  },
+  {
+    "principal_body": {
+      "path": "archives/customer-attraction/state/反例/真实前缀逐步安全值付款--反例.md",
+      "sha256": "57b62e091da05acccef3e945f8bb7df1601dde49f20705f6800344b83d3ee1a1"
+    },
+    "exact_frontmatter": "\nid: \"customer-attraction/actual-prefix-local-security-payment-counterexample\"\nkind: \"counterexample\"\ntype_tag: \"反例\"\ntitle: \"真实前缀逐步安全值付款\"\nstatus: \"complete\"\ntruth_status: \"finite-original-model-local-induction-refutation\"\nreview_level: \"exact-definition-reconstruction-and-replay\"\nsummary: \"113客户三人完整SPE首步强弱安全值余额均负，全局两余额仍正。\"\nsource_refs:\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/security_chain_and_local_boundary.md\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/customer_attraction/local_security_increment.json\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/customer_attraction/local_security_increment.json\"\n",
+    "exact_body_text_for_route_only": "---\nid: \"customer-attraction/actual-prefix-local-security-payment-counterexample\"\nkind: \"counterexample\"\ntype_tag: \"反例\"\ntitle: \"真实前缀逐步安全值付款\"\nstatus: \"complete\"\ntruth_status: \"finite-original-model-local-induction-refutation\"\nreview_level: \"exact-definition-reconstruction-and-replay\"\nsummary: \"113客户三人完整SPE首步强弱安全值余额均负，全局两余额仍正。\"\nsource_refs:\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/security_chain_and_local_boundary.md\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/customer_attraction/local_security_increment.json\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/customer_attraction/local_security_increment.json\"\n---\n\n# 真实前缀逐步安全值付款\n\n本对象在[共同目录完整历史模型](../定义/共同目录完整历史模型--定义.md)中否定两条逐节点安全值付款式。背景安全值、位置记号和全局债务恒等式由[链对象](../定理/真实路径安全值链的嵌入与债务恒等式--定理.md)定义。以下仅三人固定实例，非六人half反例。\n\n## 3. 两种逐步归纳都为假：113 个单位客户\n\n六主题按标签 0,…,5 编号。客户兴趣用 mask 的第 a 位表示喜欢主题 a。\n下面的重数均展开为不同的单位客户，没有带权提供者或非单位价值客户。\n\n| mask | 重数 | mask | 重数 | mask | 重数 |\n|---|---:|---|---:|---|---:|\n| 4 | 3 | 13 | 1 | 14 | 3 |\n| 20 | 2 | 23 | 1 | 27 | 15 |\n| 29 | 8 | 30 | 8 | 31 | 4 |\n| 32 | 3 | 34 | 2 | 43 | 8 |\n| 45 | 13 | 46 | 7 | 49 | 3 |\n| 51 | 7 | 53 | 7 | 54 | 10 |\n| 59 | 8 | | | | |\n\n总计 113 人。完整策略如下，X={0,1,2}，Y={3,4,5}：\n根选 0；第二人选择与首主题相反组的最小标签；第三人在第二主题所属组中\n选择此前未出现的最小标签。每组三标签、此前只有两人，故重复的离轨历史也有定义。\n不同顺序历史可得到不同回复，没有强制匿名平局。\n\n全部 43 个有序决策历史、258 项含自行动比较都精确满足最优性。\n实际路径与福利为\n\n\\[\n(0,3,4),\\qquad u=(95/3,110/3,110/3),\\qquad W=105,\\quad OPT_3=113.\n\\tag{8}\n\\]\n\n否定局部归纳只需两个小分数证书：\n\n- 空背景查询 p=(1,1,2,1,1,2)/8，枚举所有两个竞争主题，最小期望收益为 385/12。\n  因而 V_1=v_3(0)≥385/12。\n- 固定首主题 0 后，局部竞争者以概率 3/5 选 1、2/5 选 2。\n  六个纯查询的期望收益均不超过 484/15，故 V_2=v_2(\\mathbf1_0)≤484/15。\n\n因此\n\n\\[\nD_1=u_1+2V_2-3V_1\n\\le95/3+2(484/15)-3(385/12)=-1/20<0,\n\\tag{9}\n\\]\n\n而直接降低人数系数也不修复：\n\n\\[\n\\widetilde D_1=u_1+\\tfrac32V_2-\\tfrac52V_1\n\\le95/3+\\tfrac32(484/15)-\\tfrac52(385/12)=-17/120<0.\n\\tag{10}\n\\]\n\n这严格否定两条“每个真实节点自行支付下一步安全值”的普遍引理。\n反例同时保存了匹配的精确原始、对偶鞍点，给\n\n\\[\nV_1=\\frac{1035446642}{32182199},\\qquad V_2=\\frac{10259}{318}.\n\\]\n\n实际全局余额却为\n\n\\[\nW-3V_1=\\frac{272790969}{32182199}>0,\\qquad\nW-\\tfrac52V_1=\\frac{790514290}{32182199}>0.\n\\tag{11}\n\\]\n\n所以该完整 SPE **没有否定[链对象](../定理/真实路径安全值链的嵌入与债务恒等式--定理.md)的全局弱桥、强聚合桥或原半覆盖**。\n它明确要求沿这条安全值链的证明允许跨多个真实节点转移债务，不能要求每一步非负。\n\n\n## 小分数证书如何构成严格证明\n\n逐类型定义f_b(a)=Σ_{T∋a}w_T/(1+负载_T)。根查询p的全部36个有序竞争对最小值385/12；固定真实首动作0后，对偶混合(1,2)的六个查询上界依次为(464/15,484/15,967/30,484/15,484/15,484/15)。因此无需求精确最优安全值即可严格得到D₁≤−1/20和弱D₁≤−17/120。完整匹配原始/对偶另外验证了文中两个精确值。\n\n本轮两份互不导入的原字节Fraction审计均实际重放通过，43有序决策历史258含自身比较中91项平局、无负项，216终局覆盖最大113。强链项为(−571165576/1705656547,467/53)，弱链项为(−7739134297/20467878564,1401/212)，另有末位55/3，准确回收到正文两项全局正余额。完整动作表、鞍点和逐比较数据见[核验资源](../计算/安全值链与五人逐人安全值的精确核验--计算.md)。\n\n独有审查信息：原内部审查还记录一个3227客户早期见证及其数值，保全在资源原审查中；其原输入和策略不在本批已认领集合，本轮不声称复跑或完成处置那个早期包。审查列出的“2W−OPT=2673”是双倍half余额，不能称未加倍余额。本文采用已完整复跑的113客户规范版本，不以较小客户数抹去早期记录。\n\n接续时可以使用正的尾部付款跨节点吸收负首步；须另证全局下界，不可再次假设逐步D_i≥0。与[三人逐人混合安全值反例](三人逐人混合安全值--反例.md)同属真正安全值付款障碍，但本例否定含安全值增量的两种更具体递推，不是同一个命题。没有断言聚合桥为假。\n",
+    "actual_task_routes": [
+      {
+        "task_file": {
+          "path": "research/operations/p25-register-v2/tasks/register-ab98f323ad-0009.json",
+          "sha256": "008da3052bbfe45e1a1826131a357d7f88343f8421aad2a4a85b1965d83c9f09"
+        },
+        "state": "claimed",
+        "owner": "Boss2",
+        "assignment_material": {
+          "path": "archives/customer-attraction/state/反例/真实前缀逐步安全值付款--反例.md",
+          "sha256": "57b62e091da05acccef3e945f8bb7df1601dde49f20705f6800344b83d3ee1a1"
+        },
+        "receipt_batch_file": null
+      }
+    ],
+    "canonical_records_with_exact_body": [],
+    "policy": "Source routing only; no stub, allocation, claim, acceptance or ownership inferred from claimed/prepared."
+  },
+  {
+    "principal_body": {
+      "path": "archives/customer-attraction/state/反例/五人首位收益低于真正混合安全值--反例.md",
+      "sha256": "9e4d30f04f7d3f91fc56dce2fd25bb8d05f409c7753962c82f12377d07bd9c24"
+    },
+    "exact_frontmatter": "\nid: \"customer-attraction/five-provider-individual-static-security-counterexample\"\nkind: \"counterexample\"\ntype_tag: \"反例\"\ntitle: \"五人首位收益低于真正混合安全值\"\nstatus: \"complete\"\ntruth_status: \"finite-original-model-individual-bridge-refutation\"\nreview_level: \"exact-definition-reconstruction-and-replay\"\nsummary: \"86客户十主题五人完整SPE首位81/5低于真正安全值2262/139，聚合与half均成立。\"\nsource_refs:\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/customer_attraction/five_individual_security.json\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/customer_attraction/five_individual_security.json\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/customer_attraction_five_individual_security.py\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/2026-10-10/five_individual_security_independent.json\"\n",
+    "exact_body_text_for_route_only": "---\nid: \"customer-attraction/five-provider-individual-static-security-counterexample\"\nkind: \"counterexample\"\ntype_tag: \"反例\"\ntitle: \"五人首位收益低于真正混合安全值\"\nstatus: \"complete\"\ntruth_status: \"finite-original-model-individual-bridge-refutation\"\nreview_level: \"exact-definition-reconstruction-and-replay\"\nsummary: \"86客户十主题五人完整SPE首位81/5低于真正安全值2262/139，聚合与half均成立。\"\nsource_refs:\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/customer_attraction/five_individual_security.json\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/customer_attraction/five_individual_security.json\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/customer_attraction_five_individual_security.py\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/2026-10-10/five_individual_security_independent.json\"\n---\n\n# 五人首位收益低于真正混合安全值\n\n在[共同目录完整历史模型](../定义/共同目录完整历史模型--定义.md)取五名单位提供者，十个共同目录标签0,…,9（别名X0,…,X4,Y0,…,Y4）。客户是下表29个兴趣类型展开成86名不同单位客户，重数不是客户价值或提供者权重。\n\n| 兴趣标签集合 | 不同单位客户数 |\n|---|---:|\n| {4} | 1 |\n| {0,1,2,3,5,6,7,8} | 4 |\n| {0,1,2,4,5,6,7,8} | 3 |\n| {0,1,3,4,5,6,7,8} | 3 |\n| {0,2,3,4,5,6,7,8} | 3 |\n| {1,2,3,4,5,6,7,8} | 3 |\n| {0,1,2,3,4,5,6,7,8} | 4 |\n| {9} | 1 |\n| {0,1,2,3,5,6,7,9} | 3 |\n| {0,1,2,4,5,6,7,9} | 3 |\n| {0,1,3,4,5,6,7,9} | 3 |\n| {0,2,3,4,5,6,7,9} | 3 |\n| {1,2,3,4,5,6,7,9} | 3 |\n| {0,1,2,3,5,6,8,9} | 3 |\n| {0,1,2,4,5,6,8,9} | 3 |\n| {0,1,3,4,5,6,8,9} | 3 |\n| {0,2,3,4,5,6,8,9} | 3 |\n| {1,2,3,4,5,6,8,9} | 3 |\n| {0,1,2,3,5,7,8,9} | 3 |\n| {0,1,2,4,5,7,8,9} | 3 |\n| {0,1,3,4,5,7,8,9} | 3 |\n| {0,2,3,4,5,7,8,9} | 3 |\n| {1,2,3,4,5,7,8,9} | 3 |\n| {0,1,2,3,6,7,8,9} | 3 |\n| {0,1,2,4,6,7,8,9} | 3 |\n| {0,1,3,4,6,7,8,9} | 3 |\n| {0,2,3,4,6,7,8,9} | 3 |\n| {1,2,3,4,6,7,8,9} | 3 |\n| {0,1,2,3,5,6,7,8,9} | 4 |\n\n十个覆盖互异且均为极大主题；同一客户可同时喜欢多个主题。完整策略由[原动作证书](../../tools/evidence/security-chain-boundary/original/evidence/certificates/customer_attraction/five_individual_security.json)中的`strategy.actions`给出，恰含Σ_{d=0}⁴10^d=11111个有序历史记录，每个历史指定一个合法标签。这里策略的数学身份就是这份完整有限函数，不只指定实际路径，也不把不同有序历史合并为计数策略。`terminal_counts`只是可校验冗余。该冻结文件SHA256为372bea6caf743792be542c411e9bcb961b6af6d31dc89d76e6a903e609be990f。\n\n对每个历史h和候选a，沿此固定策略从ha继续到终局z(h,a)，逐兴趣类型计算当前玩家Σ_{T∋a}w_T/Σ_{b∈z(h,a)}1_{b∈T}。完整比较111110项（含自身11111项），全部非负；其余99999偏离中74562严格、25437平局。所以这是所有有序历史上的纯SPE。实际路径(4,5,6,7,8)，收益(81/5,86/5,86/5,86/5,86/5)，W=85。十标签选五允许重复的2002组计数穷尽给OPT₅=86。\n\n## 真正安全值的精确原始和对偶\n\n令v₅为竞争四主题不能观察随机查询实现的静态minimax值，定义同[静态安全值定理](../定理/静态混合安全值的锐目录计数界--定理.md)。取原始p：标签4和9各55/278，其余八标签各21/278。对全部10⁴有序四主题竞争元组（含重复），其期望查询收益均≥2262/139。\n\n对偶仅支持两个五标签组内的四标签子集：组{0,1,2,3,4}中删4的元组{0,1,2,3}概率79/278，其余四个四元子集各15/278；组{5,6,7,8,9}同理，删9的概率79/278，其余各15/278。十个概率和1且均非负。此竞争元组分布不依赖查询主题；对全部十个纯查询的期望值均恰2262/139。原始全列与对偶全行相合，证明\n\n$$v_5=2262/139>81/5=u_1,\\qquad v_5-u_1=51/695>0.$$\n\n这严格否定逐人u_i≥v_n的普遍桥，五人本身是合法原模型实例。完整策略检验和鞍点检验均为有限有理证明，不依赖浮点优化器成功状态。原证书的seed、root_menus、retained和target是发现运行元数据，不是数学保证；原审计不使用它们来证明SPE或安全值。\n\n## 范围和接续\n\n同例W−5v₅=505/139>0，2W−OPT₅=84>0；因而不否定聚合安全值桥，也不否定half，不提供六人反例。比[既有三人逐人反例](三人逐人混合安全值--反例.md)多给一份五人十极大目录的完整证书；不能把人数增加本身当更强普遍定理。与[安全值链局部反例](真实前缀逐步安全值付款--反例.md)保持独立命题身份。\n\n原[Fraction审计](../../tools/evidence/security-chain-boundary/original/tests/audits/customer_attraction_five_individual_security.py)不导入求解器/优化器/其他验证器，按定义完整验证有序历史、真实续局、收益、全部安全背景和对偶行；本轮[重放](../../tools/evidence/security-chain-boundary/replay-five.json)与冻结完整输出逐字段全等。程序、输入和证据的读取与复现边界见[资源对象](../计算/安全值链与五人逐人安全值的精确核验--计算.md)。无外部评审、新颖性或最小性认证。\n",
+    "actual_task_routes": [
+      {
+        "task_file": {
+          "path": "research/operations/p25-register-v2/tasks/register-ab98f323ad-0009.json",
+          "sha256": "008da3052bbfe45e1a1826131a357d7f88343f8421aad2a4a85b1965d83c9f09"
+        },
+        "state": "claimed",
+        "owner": "Boss2",
+        "assignment_material": {
+          "path": "archives/customer-attraction/state/反例/五人首位收益低于真正混合安全值--反例.md",
+          "sha256": "9e4d30f04f7d3f91fc56dce2fd25bb8d05f409c7753962c82f12377d07bd9c24"
+        },
+        "receipt_batch_file": null
+      }
+    ],
+    "canonical_records_with_exact_body": [],
+    "policy": "Source routing only; no stub, allocation, claim, acceptance or ownership inferred from claimed/prepared."
+  },
+  {
+    "principal_body": {
+      "path": "archives/customer-attraction/state/反例/R4最大单例阈值失败证书--反例.md",
+      "sha256": "328d289646397d6425562cb0657bf25ff15c15088e45a380d7e2cbdba2ad51ed"
+    },
+    "exact_frontmatter": "\nid: \"customer-attraction/r4-maximum-singleton-threshold-failure\"\nkind: \"counterexample\"\ntype_tag: \"反例\"\ntitle: \"最大单例主题插入后可信阈值严格上升的36客户证书\"\nstatus: \"fixed-instance-proved-and-exactly-replayed\"\ntruth_status: \"maximum-singleton-threshold-monotonicity-false\"\nreview_level: \"semantic-reconstruction-and-independent-finite-rational-replay\"\nscope: \"三名单位提供者、六主题、36个单位客户；全部完整历史纯SPE续局集合\"\nsummary: \"六主题单例值均21，但全部SPE可信阈值由空背景10升至插入任一最大单例主题后的12；原JSON的20及4个终局计数完全复算。底层实例已归档，非六人half反例。\"\nsource_refs:\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-4ffa8b85fa8847e09e45dcafc8e1326f/representation/maximum_singleton_threshold_failure.json\"\n  - \"source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-4ffa8b85fa8847e09e45dcafc8e1326f/representation/maximum_singleton_threshold_failure.json\"\n",
+    "exact_body_text_for_route_only": "---\nid: \"customer-attraction/r4-maximum-singleton-threshold-failure\"\nkind: \"counterexample\"\ntype_tag: \"反例\"\ntitle: \"最大单例主题插入后可信阈值严格上升的36客户证书\"\nstatus: \"fixed-instance-proved-and-exactly-replayed\"\ntruth_status: \"maximum-singleton-threshold-monotonicity-false\"\nreview_level: \"semantic-reconstruction-and-independent-finite-rational-replay\"\nscope: \"三名单位提供者、六主题、36个单位客户；全部完整历史纯SPE续局集合\"\nsummary: \"六主题单例值均21，但全部SPE可信阈值由空背景10升至插入任一最大单例主题后的12；原JSON的20及4个终局计数完全复算。底层实例已归档，非六人half反例。\"\nsource_refs:\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-4ffa8b85fa8847e09e45dcafc8e1326f/representation/maximum_singleton_threshold_failure.json\"\n  - \"source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-4ffa8b85fa8847e09e45dcafc8e1326f/representation/maximum_singleton_threshold_failure.json\"\n---\n\n# 最大单例主题插入后可信阈值严格上升\n\n## 被否定的准确候选\n\n采用[共同目录完整历史模型](../定义/共同目录完整历史模型--定义.md)。客户为有限个价值一的不同客户，三名单位权提供者依次观察全部有序历史并各选一个共同目录主题；客户在最终覆盖者之间均分。完整纯SPE的要求覆盖全部离轨历史，允许重复选择和任意收益平局。\n\n令过去主题计数为 \\(q\\)，尚余 \\(r=3-\\sum_aq_a\\) 人。对兴趣类型 \\(C\\) 的客户，其过去负载为 \\(b_C(q)=\\sum_{a\\in C}q_a\\)。定义在该背景下插入一人的单例值\n\n\\[\nF_q(a)=\\sum_{C\\ni a}\\frac{m_C}{1+b_C(q)}.\n\\]\n\n这不包含后继竞争。令 \\(\\mathcal R(q,r)\\) 为此前有序历史后，**某份完整纯子SPE**可实现的全部终局主题计数；相同计数历史的可实现集合相同，不要求给定策略按计数行动。若终局计数为 \\(z\\)，选择主题 \\(a\\) 的当前玩家收益为\n\n\\[\nU_a(z)=\\sum_{C\\ni a}\\frac{m_C}{\\sum_{j\\in C}z_j}.\n\\]\n\n规范可信阈值是\n\n\\[\nM(q,r)=\\max_a\\min_{z\\in\\mathcal R(q+e_a,r-1)}U_a(z).\n\\tag{1}\n\\]\n\n各有序孩子可独立拼接完整子SPE，故这个max–min恰等于当前子博弈全部完整纯SPE中**当前玩家**收益的最小值；见[终局全集递推](../算法/完整历史纯SPE终局全集--算法.md)。它不是对所有玩家收益取最小值，也不是固定一份策略的真实偏离值。\n\n被否定的候选为：对所有合法背景、\\(r\\ge2\\) 及每个 \\(a\\in\\arg\\max F_q\\)，有\n\n\\[\nM(q+e_a,r-1)\\le M(q,r).\n\\tag{MON}\n\\]\n\n以下固定实例中每个主题都是最大单例主题，却对每个主题均有 \\(12>10\\)。所以即使把“每个最大者”弱化为“存在一个最大者可使阈值不升”，这个实例仍否定它。它没有测试“单例最大者唯一”或另加目录结构的版本。\n\n## 原JSON的完整实例\n\n主题标签按 \\((X_0,X_1,X_2,Y_0,Y_1,Y_2)=(0,1,2,3,4,5)\\) 排列，记两组为 \\(X,Y\\)。客户的兴趣集合及重数为\n\n| 客户兴趣集合 | 集合种数 | 每种单位客户数 | 总客户数 |\n| --- | ---: | ---: | ---: |\n| \\(\\{X_i,Y_j\\}\\)，\\(0\\le i,j\\le2\\) | 9 | 1 | 9 |\n| \\(I\\cup J\\)，\\(I\\subset X,J\\subset Y,\\ |I|=|J|=2\\) | 9 | 3 | 27 |\n\n重数三表示三个不同单位客户，总计36人。每个主题覆盖 \\(3+2\\cdot3\\cdot3=21\\) 人，所以空背景 \\(q=0\\) 的六个 \\(F_0\\) 全为21。三个X主题或三个Y主题覆盖全部36人，因此 \\(\\operatorname{OPT}_3=36\\)。\n\n这是已归档[三人聚合末位保底反例](三人聚合末位保底--反例.md)的同一个输入，不是新的底层实例。该对象讨论 \\(W\\ge3\\theta_3\\) 的失败；本JSON保存另一条精确候选(MON)及其全部可信计数证据。\n\n## 解析复算：阈值10到12\n\n全部216个有序终局按组内置换、两组交换和玩家位置置换分为五类。直接对36个客户求均分收益得\n\n| 代表终局 | 按所列位置的收益 | 覆盖数 | 有序终局数 |\n| --- | --- | ---: | ---: |\n| \\((0,1,2)\\) | \\((12,12,12)\\) | 36 | 12 |\n| \\((0,3,4)\\) | \\((10,12,12)\\) | 34 | 108 |\n| \\((0,0,1)\\) | \\((9,9,15)\\) | 33 | 36 |\n| \\((0,0,3)\\) | \\((25/3,25/3,37/3)\\) | 29 | 54 |\n| \\((0,0,0)\\) | \\((7,7,7)\\) | 21 | 6 |\n\n先分析最后一人。前两主题相同，最后人严格选择同组的一个新主题，收益15；前两主题同组不同，严格选择该组第三主题，收益12；前两主题跨组，任一未选主题的收益均12，复制已有主题只有 \\(25/3\\)。这里保留所有最优回复，不指定唯一平局规则。\n\n固定第一人已经选 \\(X_0=0\\)。第二人各类行动在全部末位最优回复下的收益为\n\n| 第二人行动 | 末位最优回复 | 第二人的可能收益 | 该行动的可信最小值 |\n| --- | --- | --- | ---: |\n| 重复0 | 1或2 | 9 | 9 |\n| 1或2 | X组第三主题 | 12 | 12 |\n| 任意Y主题 | 任一未用主题 | 10或12 | 10 |\n\n由(1)，\\(M(e_0,2)=\\max(9,12,10)=12\\)。所以第二人可以选同组新主题，或者选Y主题并由末位选另一个Y主题；但不能在第二人收益只有10的叶上停留。于是该子博弈的全部终局计数正是\n\n\\[\n\\mathcal R(e_0,2)=\\{e_0+e_1+e_2\\}\\ \\cup\n\\{e_0+e_i+e_j:3\\le i<j\\le5\\}.\n\\tag{2}\n\\]\n\n这是四个**完整终局**计数，已经包含背景里的第一个0，不是只数剩余两人的计数。第一人在式(2)第一类叶得12、后三类得10。因此强制首题0后的最坏可信收益恰为10；六个首题对称，得到\n\n\\[\n\\boxed{M(0,3)=10<12=M(e_a,2)\\quad\\text{对每个 }a\\in\\{0,\\ldots,5\\}.}\n\\]\n\n阈值比较两端的“当前玩家”不同：左边是首位，右边是固定首位行动后的第二位。这里没有把已行动玩家的收益10误记成孩子阈值12。\n\n取所有首题的式(2)并集，根的全部终局计数为\n\n\\[\n\\mathcal R(0,3)=\\{e_i+e_j+e_k:0\\le i<j<k\\le5\\},\n\\tag{3}\n\\]\n\n共 \\(\\binom63=20\\) 项，逐项等于JSON的`before_outcomes`；式(2)逐项等于四项`after_outcomes`。这不是说三个不同主题的任意顺序都可实现。全在同组的两个三元组各有六个顺序；18个跨组三元组必须先选单独一组的那个主题，后两人选择另一组，故各有两个顺序。根共48条可实现有序路径；固定首题0后有8条。\n\n## 一个全历史实现及范围核对\n\n为显式见到收益10可达到，给出完整策略：根选0；任一首题 \\(a\\) 后，第二人选相反组的最小标签；任意二步历史 \\((a,b)\\) 后，末位选 \\(b\\) 所属组中最小的未出现标签。组大小三，故全部重复或离轨历史均有定义。\n\n上面的末位比较证明每个末位行动最优。任一首题后，第二人指定行动得12；重复首题得9，其他新主题依指定末位策略均得12。任意首题后的根收益都为10，根也最优。因此它是覆盖 \\(1+6+36=43\\) 个有序决策节点的完整纯SPE，实际路径 \\((0,3,4)\\)，收益 \\((10,12,12)\\)，覆盖34人。原JSON本身没有完整策略映射；本段是根据同一输入和已归档完整策略所作的自足实现。\n\n本例全部SPE的福利仅为34或36，都满足half；特别地 \\(34>36/2\\)。它没有否定一般半覆盖，更没有给出[恰六人半覆盖问题](../../subarchives/six-providers/问题--问题.md)的反例或证明，也没有证明可把三人实例填补成六人而保留指定阈值或均衡。旧问题的全称人数候选被一个三人实例否定，不等于六人本身已有该分离。\n\n此处 \\(M(0,3)=10\\) 与该输入的静态末位最坏最佳回复值 \\(\\theta_3=12\\) 不同；数值12恰等不允许交换定义。对[可信相邻换位引理](../引理/可信相邻换位与固定计数坏点正常形--引理.md)，本证书否定的是用“最大单例先插入”免费保证孩子阈值不升的捷径；准确AB/BA门槛条件仍成立，必须逐条件核验。它也不否定同负载子树替换或给定门槛下的条件换位。\n\n## 证据、执行和关系边界\n\n主来源ID `708b84a0a005716b6692` 的JSON全文4156字节，SHA256为 `cf45d02bce087cb8e17793e89bd9e2c6419ecafc0fb5da7d9e3b2e29fb15a660`，两冻结提交同字节；[原报告](../../tools/evidence/R4-singleton-threshold-failure/maximum_singleton_threshold_failure.json)原样保全。除实例、背景、最大主题、六项单例值、两个阈值和20/4个计数外，其`source`仅指底层输入路径，`candidate_status: FALSE`仅指(MON)。它没有历史执行时间、代码哈希、完整策略或外审字段，不能据JSON补造这些事实。\n\n已完整读相关原`test_maximum_singleton_threshold.py`、`representation/README.md`及规范`exact.py`。原测试定点读取既有36人输入，用规范全集求解器找第一个严格分离即返回；它不是广搜目录或扫描所有合法背景的报告。另一个本批来源整理保留了[未改原测试的重放输出](../../tools/evidence/R4-singleton-threshold-test/run/stdout.json)，4156字节与本主报告一致；原程序的接口与执行范围由[测试器审查](../审查/R4最大单例阈值测试器--审查.md)负责。\n\n本对象新增的[独立有理复算程序](../../tools/evidence/R4-singleton-threshold-failure/verify_independent.py)不导入规范求解包，展开全部36个单位客户，按有序历史递归穷尽216个有序终局和43个决策节点。它核六个首题阈值、(2)(3)全集、48/8条有序路径、\\(\\operatorname{OPT}_3=36\\)、福利集合 \\(\\{34,36\\}\\)，并对上段公式策略核258项含自身动作的比较，其中215项是真正改变动作。全部精确相等和原JSON每个语义字段均通过；[本次结果](../../tools/evidence/R4-singleton-threshold-failure/independent-replay.json)不是历史报告，也不是新的盲审或外审。\n\n与既有对象的关系已逐项判断：本输入复用聚合末位反例，阈值定义与可实现性使用终局全集算法，结论限制无条件次序规范化而不反驳条件换位，六人half仅为未被解决的目标边界。详细可复现命令、来源清单及关系理由见[证据说明](../../tools/evidence/R4-singleton-threshold-failure/README.md)。本批不为此另改第三阶段超图。\n",
+    "actual_task_routes": [
+      {
+        "task_file": {
+          "path": "research/operations/p25-register-v2/tasks/register-ab98f323ad-0001-5-evidence.json",
+          "sha256": "b5317b3dd101124cdbbae9837a2d2a0a99881166de4d9a2ec07f7464c98f5c94"
+        },
+        "state": "claimed",
+        "owner": "Boss2",
+        "assignment_material": {
+          "path": "archives/customer-attraction/state/反例/R4最大单例阈值失败证书--反例.md",
+          "sha256": "328d289646397d6425562cb0657bf25ff15c15088e45a380d7e2cbdba2ad51ed"
+        },
+        "receipt_batch_file": null
+      },
+      {
+        "task_file": {
+          "path": "research/operations/p25-register-v2/tasks/register-ab98f323ad-0001-5.json",
+          "sha256": "ab085979a6ca7bb855cc9767c18f01b784eafdca63e848cf0177b8ff4a284684"
+        },
+        "state": "withdrawn",
+        "owner": null,
+        "assignment_material": {
+          "path": "archives/customer-attraction/state/反例/R4最大单例阈值失败证书--反例.md",
+          "sha256": "328d289646397d6425562cb0657bf25ff15c15088e45a380d7e2cbdba2ad51ed"
+        },
+        "receipt_batch_file": null
+      }
+    ],
+    "canonical_records_with_exact_body": [],
+    "policy": "Source routing only; no stub, allocation, claim, acceptance or ownership inferred from claimed/prepared."
+  },
+  {
+    "principal_body": {
+      "path": "archives/customer-attraction/state/反例/三人聚合末位保底--反例.md",
+      "sha256": "f2ff6b486d46f5e05d9acb2497ec1114ac8ab4698460fb46656d320e640fe4c0"
+    },
+    "exact_frontmatter": "\nid: \"customer-attraction/three-player-aggregate-last-floor-counterexample\"\nkind: \"counterexample\"\ntype_tag: \"反例\"\ntitle: \"三人36客户完整SPE的聚合末位保底反例\"\nstatus: \"proved-and-exactly-replayed\"\nlegacy_ids:\n  - \"CA-AGGREGATE-LAST-FLOOR-NO\"\nsummary: \"六主题36个单位客户的完整43节点纯SPE给W=34、θ_3=12、OPT_3=36；否定W≥3θ_3，严格满足half，且真正静态v_3=10。\"\nsource_refs:\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/aggregate_theta_counterexample.md\"\n  - \"source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/customer_attraction/aggregate_theta_counterexample.md\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/customer_attraction/aggregate_theta_failure.json\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/customer_attraction/aggregate_theta_failure.json\"\n",
+    "exact_body_text_for_route_only": "---\nid: \"customer-attraction/three-player-aggregate-last-floor-counterexample\"\nkind: \"counterexample\"\ntype_tag: \"反例\"\ntitle: \"三人36客户完整SPE的聚合末位保底反例\"\nstatus: \"proved-and-exactly-replayed\"\nlegacy_ids:\n  - \"CA-AGGREGATE-LAST-FLOOR-NO\"\nsummary: \"六主题36个单位客户的完整43节点纯SPE给W=34、θ_3=12、OPT_3=36；否定W≥3θ_3，严格满足half，且真正静态v_3=10。\"\nsource_refs:\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/aggregate_theta_counterexample.md\"\n  - \"source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/customer_attraction/aggregate_theta_counterexample.md\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/customer_attraction/aggregate_theta_failure.json\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/customer_attraction/aggregate_theta_failure.json\"\n---\n\n# 三人36客户完整SPE的聚合末位保底反例\n\n## 被否定的命题及原模型输入\n\n在[共同目录完整历史模型](../定义/共同目录完整历史模型--定义.md)中，令θ_n=min_{B∈𝒮^{n−1}}max_AΣ_{x∈A}1/(1+h_B(x))。这是末位面对最坏纯背景时的最佳回复值。以下原模型实例否定辅助命题“每份完整纯SPE有W≥nθ_n”；它不是半覆盖反例。\n\n三名提供者，六主题标签0,…,5，分组X={0,1,2}、Y={3,4,5}。客户由兴趣集合定义，给定主题覆盖恰好喜欢它的客户：\n\n| 客户兴趣集合 | 每种集合的单位客户数 | 集合种数 | 合计 |\n| --- | ---: | ---: | ---: |\n| {x,y}，x∈X、y∈Y | 1 | 9 | 9 |\n| I∪J，I⊂X、J⊂Y且各含两个标签 | 3 | 9 | 27 |\n\n因此有36个不同单位客户。每主题覆盖3+2·3·3=21人。三个X主题或三个Y主题覆盖全部客户，OPT_3=36。六主题均非空、两两不同；这是合法特例，并不删除一般模型中的空主题或重复行动。\n\n## 终局算术与全部历史策略\n\n按组内置换、组交换和玩家位置置换，全部216个有序终局分成以下五类。每项由Σ_{客户喜欢所选主题}1/覆盖次数计算；支付总和恰为覆盖人数。\n\n| 代表终局 | 按所列位置的收益 | W | 有序终局数 |\n| --- | --- | ---: | ---: |\n| (0,1,2) | (12,12,12) | 36 | 12 |\n| (0,3,4) | (10,12,12) | 34 | 108 |\n| (0,0,1) | (9,9,15) | 33 | 36 |\n| (0,0,3) | (25/3,25/3,37/3) | 29 | 54 |\n| (0,0,0) | (7,7,7) | 21 | 6 |\n\n定义完整策略σ如下，而不只给在轨路径：根选0；任意长度一历史(a)后，第二人选a相反组的最小标签；任意长度二历史(a,b)后，第三人选b所属组中最小的未出现标签。组大小三，历史最多用掉其中两个不同标签，因此重复前缀和全部离轨前缀也有定义。\n\n逐层核查SPE：\n\n1. 若末位前缀两标签相同，选同组新标签得15，其他可能值为7或37/3；指定动作最优。若两标签同组而不同，选该组第三标签得12，其他可能值9或10。若跨组，任一未用标签得12，复制已有标签得25/3；指定动作在平局最大者中。\n2. 对任一首标签a，第二人的指定动作得12；复制a得到9，其余不同主题动作依指定末策略均得12。因此指定第二动作最优，不要求打破所有平局。\n3. 第一人选任一标签后，后两人都选相反组的两个不同标签，所以第一人均得10。根选0最优。\n\n这覆盖1+6+36=43个有序决策节点的全部6个候选动作，包含所有离轨历史。由有限完全信息博弈的逆向最优性，σ是完整纯SPE。实际路径为(0,3,4)，收益(10,12,12)，W=34。\n\n## θ_3、真正安全值及失败范围\n\n上述末位比较同时说明：重复的二主题背景最佳回复值15，两个不同主题背景最佳回复值12。因此θ_3=12，并且\n\n\\[\n W=34<36=3\\theta_3,\\quad\n \\operatorname{OPT}_3/W=18/17<2.\n\\]\n\n原模型半覆盖仍严格成立。两名后继各达到θ_3，早期玩家只有10，故“把末两人的保底无损聚合到每个人”失败。完整SPE可信性没有消除这个早期亏损。\n\n[静态混合安全值](../定理/静态混合安全值的锐目录计数界--定理.md)在本例恰为v_3=10，故W≥3v_3。这里不能把θ_3和v_3交换，也不能把本例当作逐人u_i≥v_3的反例；真正逐人桥由另一份[34客户实例](三人逐人混合安全值--反例.md)否定。\n\n同一36例还用于[真实菜单安全值障碍](../障碍/自适应后继与真实菜单安全值--障碍.md)：根真实菜单的受限值z_1=11，而根收益10；那一结论的比较对象为z_1，也不是θ_3。此处保存各自准确关系，不因复用一个输入而混并三个命题。\n\n## 证据与接续\n\n原[输入](../../tools/evidence/aggregate-security/original/examples/customer_attraction/aggregate_theta_failure.json)与[完整43节点证书](../../tools/evidence/aggregate-security/original/evidence/certificates/customer_attraction/aggregate_theta_failure.json)均以冻结字节保全。本轮两个互不导入规范求解器的Fraction实现分别重放258项节点行动比较；其中独立实现展开全部36个单位客户、全部216终局、36个末位背景，并核原证书和公式策略完全一致。输出见[精确核验](../计算/静态安全值与聚合保底的精确核验--计算.md)。自比较有43项，真正改变动作的比较为215项，不能把258都称严格偏离。\n\n该有限例不是对所有人数的计算推断。[三人及以上的一般整数构造](三人及以上聚合末位保底--反例.md)为每个n≥3给W=nθ_n−1；它另处理全部重复离轨前缀。这个36例还给[最小收益移至末两位的精确福利代价](../障碍/最小收益移至末两位的福利代价--障碍.md)：所有低福利SPE均不可能把全局最小收益放到末两位。后续若正规化策略，必须追踪福利是否上升，不能据此无损缩小原模型的全称量词。\n",
+    "actual_task_routes": [
+      {
+        "task_file": {
+          "path": "research/operations/p25-register-v2/tasks/register-ab98f323ad-0001-5-evidence.json",
+          "sha256": "b5317b3dd101124cdbbae9837a2d2a0a99881166de4d9a2ec07f7464c98f5c94"
+        },
+        "state": "claimed",
+        "owner": "Boss2",
+        "assignment_material": {
+          "path": "archives/customer-attraction/state/反例/三人聚合末位保底--反例.md",
+          "sha256": "f2ff6b486d46f5e05d9acb2497ec1114ac8ab4698460fb46656d320e640fe4c0"
+        },
+        "receipt_batch_file": null
+      },
+      {
+        "task_file": {
+          "path": "research/operations/p25-register-v2/tasks/register-ab98f323ad-0001-5.json",
+          "sha256": "ab085979a6ca7bb855cc9767c18f01b784eafdca63e848cf0177b8ff4a284684"
+        },
+        "state": "withdrawn",
+        "owner": null,
+        "assignment_material": {
+          "path": "archives/customer-attraction/state/反例/三人聚合末位保底--反例.md",
+          "sha256": "f2ff6b486d46f5e05d9acb2497ec1114ac8ab4698460fb46656d320e640fe4c0"
+        },
+        "receipt_batch_file": null
+      }
+    ],
+    "canonical_records_with_exact_body": [],
+    "policy": "Source routing only; no stub, allocation, claim, acceptance or ownership inferred from claimed/prepared."
+  },
+  {
+    "principal_body": {
+      "path": "archives/customer-attraction/state/反例/三人及以上聚合末位保底--反例.md",
+      "sha256": "d316702ecc98a5976769d1d2e0094341474e0c4655deaac825bc208ae81d36e7"
+    },
+    "exact_frontmatter": "\nid: \"customer-attraction/all-n-aggregate-last-floor-counterexample\"\nkind: \"counterexample\"\ntype_tag: \"反例\"\ntitle: \"每个n≥3的聚合末位保底完整整数反例\"\nstatus: \"proved-general-construction\"\nlegacy_ids:\n  - \"CA-AGGREGATE-LAST-FLOOR-NO\"\nsummary: \"每个n≥3均有有限共同目录、单位客户和完整纯SPE满足W=nθ_n−1；正编译及重复末位背景分别证明，不把signed回归当合法输入。\"\nsource_refs:\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/aggregate_theta_counterexample.md\"\n  - \"source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/customer_attraction/aggregate_theta_counterexample.md\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/mobius_compiler.md\"\n",
+    "exact_body_text_for_route_only": "---\nid: \"customer-attraction/all-n-aggregate-last-floor-counterexample\"\nkind: \"counterexample\"\ntype_tag: \"反例\"\ntitle: \"每个n≥3的聚合末位保底完整整数反例\"\nstatus: \"proved-general-construction\"\nlegacy_ids:\n  - \"CA-AGGREGATE-LAST-FLOOR-NO\"\nsummary: \"每个n≥3均有有限共同目录、单位客户和完整纯SPE满足W=nθ_n−1；正编译及重复末位背景分别证明，不把signed回归当合法输入。\"\nsource_refs:\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/aggregate_theta_counterexample.md\"\n  - \"source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/customer_attraction/aggregate_theta_counterexample.md\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/mobius_compiler.md\"\n---\n\n# 每个n≥3的聚合末位保底完整整数反例\n\n## 完整原模型结论\n\n对每个整数n≥3，存在[共同目录完整历史模型](../定义/共同目录完整历史模型--定义.md)的一份有限单位客户输入及一份包括全部有序离轨历史的纯SPE，使\n\n\\[\n \\boxed{W=n\\theta_n-1},\\qquad\n \\theta_n=\\min_{B\\in\\mathcal S^{n-1}}\\max_{A\\in\\mathcal S}\n        \\sum_{x\\in A}\\frac1{1+h_B(x)}.\n \\tag{1}\n\\]\n\n目录有2n个两两不同主题。下面先构造带符号的辅助势，再给每个客户类型严格正整数重数并扩成单位客户。辅助游戏并非原模型；只有正编译和全部重复历史处理之后才得到式(1)。本族严格满足半覆盖，否定的仅是W≥nθ_n这一加强桥。\n\n## 两组子集势及全部distinct历史的辅助策略\n\n主题标签集P=X⊔Y，两组大小均为n。定义整数函数F:2^P→ℤ，F(∅)=0，且\n\n\\[\n F(S)=\\begin{cases}\n 1,&|S|=n\\text{ 且S只落在一组中},\\\\\n -1,&|S|=n-1\\text{ 且S同时交两组},\\\\\n 0,&\\text{其他情况}.\n \\end{cases}\n \\tag{2}\n\\]\n\n先限制每次只能选尚未出现的标签。n个不同标签的终局S中，玩家选a的辅助收益为F(S)−F(S\\{a})。纯组终局人人收益1；混合终局中某组的唯一成员收益0，该组有至少两名成员时每名成员收益1。因此所有辅助终局收益均属于{0,1}。\n\n固定各组标签次序，完整定义所有不同标签前缀的策略：根选X的首标签；第二人在任意首标签后选相反组首个未用标签；长度至少二时，若前缀纯组则继续该组，否则继续第二个标签所属组，每次选该组首个未用标签。该动作总存在，因为每组有n个标签而行动前总长≤n−1。\n\n任一非根节点的指定行动最终得1：纯前缀继续成为纯组终局；混合前缀中指定玩家加入已经出现的第二标签组，成为该组至少第二人；第二人选相反组后仍有n−2≥1名后继加入其组。任何fresh偏离收益至多1。根选任一标签都成为一组唯一成员，后n−1名玩家在相反组，故得0。这给全部distinct有序历史的辅助SPE，根路径的总收益n−1。任意n−1个不同标签前缀，末位可以选择一个fresh标签得1。\n\n## 从带符号势到合法单位客户的精确接口\n\n此步实读并使用冻结 `mobius_compiler.md` 的M1/M2；其来源由Boss2单独清洗，本页没有据此重复申报该来源done。正式[子集调和反演](../定理/子集调和势的Möbius反演--定理.md)与[无重复辅助博弈完整历史编译](../定理/无重复辅助博弈的完整历史编译--定理.md)已共享，本轮又逐段核对其参数、全部重复子树扩展及策略投影满射；下面保留本应用所需的自足接口和更大偏置常数。\n\n对非空A,B⊆P令\n\n\\[\n c_A=\\sum_{T\\subseteq A}(-1)^{|A|-|T|}F(T),\\quad\n z_A=(-1)^{|A|+1}|A|c_A,\\quad\n x_B=\\sum_{A\\supseteq B}(-1)^{|A|-|B|}z_A.\n \\tag{3}\n\\]\n\n调和数H_0=0、H_k=Σ_{j=1}^k1/j。Boolean调和核H_{|B∩S|}在非空单项式A的系数是(−1)^{|A|+1}/|A|（A⊆B时），反演后得到\n\n\\[\n \\sum_{B\\ne\\varnothing}x_BH_{|B\\cap S|}=F(S)\n \\quad(S\\subseteq P).\n \\tag{4}\n\\]\n\n该核系数可由H_k=∫_0^1(1−t^k)/(1−t)dt逐项展开求出。式(3)的x_B均为整数。对任意计数终局q定义Φ_x(q)=Σ_Bx_BH_{Σ_{a∈B}q_a}，则选a的带符号收益为Φ_x(q)−Φ_x(q−e_a)，即Σ_{B∋a}x_B/(Σ_{t∈B}q_t)。在distinct终局这恰等于式(2)的边际；在重复终局不能任意指定另一个收益表。\n\n置\n\n\\[\n M=\\sum_{B\\ne\\varnothing}|x_B|,\\qquad K=6M+4,\\qquad r_B=x_B+K>0.\n \\tag{5}\n\\]\n\n为每个非空B造r_B个不同单位客户，恰喜欢B内主题。每个单标签兴趣类型严格正，故主题两两不同。带符号收益的绝对值在任意终局至多M。正编译的K≥4M+1保证M2的以下全历史性质：所有SPE行动都选当前未用标签；所有辅助fresh策略的完整SPE都能扩为原模型完整SPE，并精确保留distinct节点的比较和平局。\n\n关键不是单纯让重数为正。按剩余深度逆向归纳，若全部后继选fresh标签，利用未用标签的对称性对齐两个续局，fresh当前行动相对已经出现v≥1次的old标签，其单位全类型偏置收益差为\n\n\\[\n \\sum_{C\\subseteq P\\setminus\\{a,b\\}}\n \\left(\\frac1{1+s_C}-\\frac1{1+v+s_C}\\right)\\ge\\frac12.\n \\tag{6}\n\\]\n\n每项非负，空集项为v/(v+1)≥1/2。带符号部分的最坏收益差为−2M，故正编译后fresh相对old严格有利至少K/2−2M>0。不同fresh当前行动具有相同偏置收益；在distinct历史的全部fresh续局，n个不同终局标签对每位玩家的偏置恒为Kb，其中\n\n\\[\n b=\\frac{2^{2n}-2^n}{n}.\n \\tag{7}\n\\]\n\n因此式(2)的比较和平局被保留。对已含重复的离轨历史逐层选任意fresh最优续局即可补齐；式(6)使跳入这些子树的old偏离也不具威胁。由于原游戏有限，这给一份所有历史有定义的完整纯SPE，没有把fresh限制偷偷留在原模型中。\n\n## 最坏末位背景：为什么重复历史不会降低θ_n\n\n若末位前缀含n−1个不同标签，式(6)使old行动严格劣于fresh；辅助最佳收益为1，故其真实最佳回复值恰为Kb+1。\n\n还必须控制最坏背景定义中允许的重复前缀。固定一个此时尚未出现的查询标签a。若某背景标签有重数v≥2，将其一份转给一个未用且不同于a的新标签。按客户类型是否含这两个背景标签配对，其单位偏置在拆分前减拆分后为\n\n\\[\n \\sum_C\\left[\n \\frac1{(1+s_C)(2+s_C)}-\n \\frac1{(v+s_C)(v+s_C+1)}\\right]\\ge\\frac13.\n \\tag{8}\n\\]\n\n其余标签贡献s_C≥0；各项非负，空集项至少1/2−1/6=1/3。2n个标签保证始终有足够新标签，在保持查询a未出现的条件下可把背景拆成n−1个不同标签。最终查询单位偏置为b，所以原重复背景中的fresh查询偏置至少b+1/3。加上带符号部分下界−M，原背景最佳回复值至少\n\n\\[\n K(b+1/3)-M\n =Kb+1+(M+1/3)>Kb+1.\n \\tag{9}\n\\]\n\n因此θ_n恰为Kb+1，且由distinct前缀取得。式(8)是对全部重复背景的论证，不能用“均衡路径没有重复”替代。\n\n## 福利、覆盖及明确未否定的命题\n\n实际终局由根的一个X标签和n−1个Y标签组成。带符号支付总和为n−1；均分守恒对带符号计数仍是代数恒等式，所以带符号覆盖也为n−1。n个不同标签覆盖的非空兴趣类型数为C=2^{2n}−2^n=nb，故\n\n\\[\n W=KC+n-1=n(Kb+1)-1=n\\theta_n-1,\n\\]\n\n证明式(1)。这是任意n≥3的一般有限整数构造，不是从n=3,4,5的实验外推。\n\n任何最多n个标签的带符号覆盖绝对值至多M，全类型偏置覆盖至多KC；于是OPT_n≤KC+M，而每个distinct终局W≥KC−M。因此\n\n\\[\n 2W-\\operatorname{OPT}_n\\ge KC-3M>0.\n\\]\n\n这族严格满足half，正偏置把福利比压近1；它不能作为六人半覆盖的原模型反例。它也没有否定真正静态安全值的聚合桥W≥nv_n；θ_n与v_n的优化次序不同，见[静态安全值定理](../定理/静态混合安全值的锐目录计数界--定理.md)。\n\n式(3)显式表有2^{2n}个子集，客户总数可能很大。此处只证明每个n存在有限单位客户输入；没有声称关于n的多项式大小构造、最小客户数或全球新颖性。\n\n## 证据、比较与后续使用\n\n本次全文读聚合反例及Möbius编译来源，并比较已完成的[任意人数真实菜单障碍](../障碍/自适应后继与真实菜单安全值--障碍.md)。两者共享式(2)的辅助势与M1/M2，但菜单值证明用另一偏置常数和另一比较对象；本页为准确控制最坏重复背景采用K=6M+4。\n\n[本次精确核验](../计算/静态安全值与聚合保底的精确核验--计算.md)复跑原字节脚本：n=3,4,5只检查带符号代数、全部不同标签有序历史的辅助SPE与拆分算术，没有导出相应全部正客户实例，也未枚举一般n的完整原策略。合法有限原模型证书另为[36客户三人实例](三人聚合末位保底--反例.md)。一般合法性与全部重复历史由上面的编译归纳和拆分证明承担。\n\n第三阶段关系应记录本对象依赖M1/M2（稳定ID `customer-attraction/boolean-harmonic-potential-inversion` 与 `customer-attraction/fresh-game-full-history-embedding`）、强化36例为所有n≥3，并反驳聚合θ桥；它与原模型半覆盖是目标边界关系。M2的策略限制投影为满射，重复离轨子树的扩展可以不唯一，本应用没有要求双射。接续可以研究更弱的真实聚合安全值预算，但不能再将W≥nθ_n作为一般待证引理。\n",
+    "actual_task_routes": [
+      {
+        "task_file": {
+          "path": "research/operations/p25-register-v2/tasks/register-ab98f323ad-0002.json",
+          "sha256": "66aa072abdad67148e43c93d3f27ee62cda4ba4d8aa023ec23e138dd41aa4b87"
+        },
+        "state": "claimed",
+        "owner": "Boss2",
+        "assignment_material": {
+          "path": "archives/customer-attraction/state/反例/三人及以上聚合末位保底--反例.md",
+          "sha256": "d316702ecc98a5976769d1d2e0094341474e0c4655deaac825bc208ae81d36e7"
+        },
+        "receipt_batch_file": null
+      }
+    ],
+    "canonical_records_with_exact_body": [],
+    "policy": "Source routing only; no stub, allocation, claim, acceptance or ownership inferred from claimed/prepared."
+  },
+  {
+    "principal_body": {
+      "path": "archives/customer-attraction/state/反例/三人逐人混合安全值--反例.md",
+      "sha256": "34c7dd12ea1390e5f8b26134cc17380fa4354d46cb76ccf88d630b37f2675ed2"
+    },
+    "exact_frontmatter": "\nid: \"customer-attraction/individual-mixed-security-counterexample\"\nkind: \"counterexample\"\ntype_tag: \"反例\"\ntitle: \"三人34客户完整SPE击穿逐人混合安全值保底\"\nstatus: \"complete\"\ntruth_status: \"counterexample-verified\"\nreview_level: \"full-history-exact-replay-and-semantic-reconstruction\"\nscope: \"原共同目录单位客户模型；三名玩家；六个不同主题；全部有序历史纯SPE\"\nlegacy_ids:\n  - \"CA-INDIVIDUAL-SECURITY-NO\"\nsummary: \"完整策略给u1=29/3，而真正安全值v3=2411/246，差11/82；安全最优查询唯一。W=32、OPT3=34，聚合安全值及half在此例均严格成立。\"\nsource_sha256: \"bc5202502faa778fae402da4d74a4da8971ffa30bd712423147555b6e15a437a\"\nsource_refs:\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/customer_attraction/individual_security_failure.json\"\n  - \"source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:examples/customer_attraction/individual_security_failure.json\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/individual_security_counterexample.md#1-安全值与具体实例\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/individual_security_counterexample.md#2-完整纯策略及全部子博弈的最优性\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/individual_security_counterexample.md#3-静态安全值的匹配精确证书\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/customer_attraction/individual_security_failure.json\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/customer_attraction_individual_security.py\"\n  - \"source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/customer_attraction/individual_security_counterexample.md\"\n",
+    "exact_body_text_for_route_only": "---\nid: \"customer-attraction/individual-mixed-security-counterexample\"\nkind: \"counterexample\"\ntype_tag: \"反例\"\ntitle: \"三人34客户完整SPE击穿逐人混合安全值保底\"\nstatus: \"complete\"\ntruth_status: \"counterexample-verified\"\nreview_level: \"full-history-exact-replay-and-semantic-reconstruction\"\nscope: \"原共同目录单位客户模型；三名玩家；六个不同主题；全部有序历史纯SPE\"\nlegacy_ids:\n  - \"CA-INDIVIDUAL-SECURITY-NO\"\nsummary: \"完整策略给u1=29/3，而真正安全值v3=2411/246，差11/82；安全最优查询唯一。W=32、OPT3=34，聚合安全值及half在此例均严格成立。\"\nsource_sha256: \"bc5202502faa778fae402da4d74a4da8971ffa30bd712423147555b6e15a437a\"\nsource_refs:\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/customer_attraction/individual_security_failure.json\"\n  - \"source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:examples/customer_attraction/individual_security_failure.json\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/individual_security_counterexample.md#1-安全值与具体实例\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/individual_security_counterexample.md#2-完整纯策略及全部子博弈的最优性\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/individual_security_counterexample.md#3-静态安全值的匹配精确证书\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/customer_attraction/individual_security_failure.json\"\n  - \"source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/customer_attraction_individual_security.py\"\n  - \"source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/customer_attraction/individual_security_counterexample.md\"\n---\n\n# 三人34客户完整SPE击穿逐人混合安全值保底\n\n## 被否定的命题与合法实例\n\n采用[共同目录完整历史模型](../定义/共同目录完整历史模型--定义.md)，三名单位权提供者依次行动。被否定的是“每份完整纯SPE的每位玩家均有 $u_i\\ge v_n$”，其中\n\n$$\nf_B(a)=\\sum_{x\\in a}\\frac1{1+\\#\\{b\\in B:x\\in b\\}},\\qquad\nv_n=\\max_{p\\in\\Delta(\\mathcal S)}\\min_{B\\in\\mathcal S^{n-1}}\\sum_ap_af_B(a).\n$$\n\n静态背景 $B$ 不观察所抽查询 $a$；顺序游戏的真实后继观察全部有序历史。反例使用真正不限竞争元组的安全值，不是受限真实菜单值，也不是任意非最优查询分布。\n\n主题为 $X_0,X_1,X_2,Y_0,Y_1,Y_2$，标签依次为 $0,\\ldots,5$。mask的第 $a$ 位为一表示该类客户喜欢主题 $a$。下表的重数是不同单位客户的数量：\n\n| mask | 重数 | mask | 重数 | mask | 重数 |\n|---|---:|---|---:|---|---:|\n| 4 | 1 | 27 | 4 | 29 | 3 |\n| 30 | 3 | 31 | 2 | 32 | 1 |\n| 43 | 3 | 45 | 3 | 46 | 3 |\n| 51 | 3 | 53 | 3 | 54 | 3 |\n| 59 | 2 | | | | |\n\n总重数为34。六主题的客户集合两两不同，特别地标签2、5各有私有客户。主题 $0,2,5$ 覆盖全部34人，故 $\\operatorname{OPT}_3=34$。\n\n## 完整策略和所有离轨比较\n\n记 $X=\\{0,1,2\\}$、$Y=\\{3,4,5\\}$。根选0；第二人在首主题属于 $X$ 时选3，否则选0；第三人在任意有序二主题历史 $(a,b)$ 后，选 $b$ 所属组中最小的未出现标签。每组有三个标签而历史长度只有二，所以全部36个末节点都有定义。该策略恰可按计数表示，不将一般SPE限制为计数策略。\n\n固定此末策略，第二人的六行动真实续局收益如下；指定行动3或0在每行达到最大值：\n\n| 首主题 / 第二候选 | 0 | 1 | 2 | 3 | 4 | 5 |\n|---|---:|---:|---:|---:|---:|---:|\n| 0 | 55/6 | 67/6 | 32/3 | 67/6 | 67/6 | 67/6 |\n| 1 | 67/6 | 55/6 | 32/3 | 67/6 | 67/6 | 67/6 |\n| 2 | 67/6 | 67/6 | 26/3 | 35/3 | 35/3 | 23/2 |\n| 3 | 67/6 | 67/6 | 67/6 | 55/6 | 67/6 | 32/3 |\n| 4 | 67/6 | 67/6 | 67/6 | 67/6 | 55/6 | 32/3 |\n| 5 | 35/3 | 35/3 | 23/2 | 67/6 | 67/6 | 26/3 |\n\n末位各历史的六行动最大收益如下；指定第三行动逐格达到该值：\n\n| a / b | 0 | 1 | 2 | 3 | 4 | 5 |\n|---|---:|---:|---:|---:|---:|---:|\n| 0 | 41/3 | 32/3 | 67/6 | 67/6 | 67/6 | 35/3 |\n| 1 | 32/3 | 41/3 | 67/6 | 67/6 | 67/6 | 35/3 |\n| 2 | 67/6 | 67/6 | 47/3 | 35/3 | 35/3 | 25/2 |\n| 3 | 67/6 | 67/6 | 35/3 | 41/3 | 32/3 | 67/6 |\n| 4 | 67/6 | 67/6 | 35/3 | 32/3 | 41/3 | 67/6 |\n| 5 | 35/3 | 35/3 | 25/2 | 67/6 | 67/6 | 47/3 |\n\n表格由客户定义直接求 $\\sum_{T\\ni t}w_T/(1+\\mathbf1_{a\\in T}+\\mathbf1_{b\\in T})$。第一人改选任何主题后沿原策略继续，均得 $29/3$。这些比较穷尽 $1+6+36=43$ 个有序决策历史，故策略在包括重复前缀与全部离轨平局的原模型中为完整纯SPE。\n\n实际路径及支付为\n\n$$\nz=(0,3,4),\\qquad u=(29/3,67/6,67/6),\\qquad W=32.\n\\tag{1}\n$$\n\n## 真正静态安全值：匹配有理原始和对偶\n\n查询分布取\n\n$$\np^*=(10,10,21,10,10,21)/82.\n\\tag{2}\n$$\n\n所有21个无序竞争对（等效覆盖全部36个有序对）在交换0/1、交换3/4及交换两组下分类如下。普通标签为0、1、3、4，特殊标签为2、5：\n\n| 竞争对类型 | 对数 | 查询期望 |\n|---|---:|---:|\n| 普通标签重复 | 4 | 1468/123 |\n| 特殊标签重复 | 2 | 1510/123 |\n| 同组两个不同标签 | 6 | 2411/246 |\n| 跨组两个普通标签 | 4 | 2597/246 |\n| 跨组普通与特殊标签 | 4 | 1282/123 |\n| 跨组两个特殊标签 | 1 | 857/82 |\n\n所以 $p^*$ 保证 $2411/246$。反向，在竞争对 $01,02,12,34,35,45$ 上取\n\n$$\nQ=(23,9,9,23,9,9)/82.\n\\tag{3}\n$$\n\n任意纯查询标签对 $Q$ 的期望均恰为 $2411/246$，从而\n\n$$\n\\boxed{v_3=2411/246,\\qquad v_3-u_1=11/82>0.}\n\\tag{4}\n$$\n\n查询最优分布还是唯一的。按(3)的竞争对行序及0至5的查询列序，将收益矩阵乘六得\n\n$$\nA=\\begin{pmatrix}\n55&55&64&58&58&58\\\\\n58&67&52&61&61&60\\\\\n67&58&52&61&61&60\\\\\n58&58&58&55&55&64\\\\\n61&61&60&58&67&52\\\\\n61&61&60&67&58&52\n\\end{pmatrix},\\qquad\\det A=-11717460\\ne0.\n$$\n\n$Q$ 的全部六项严格正；最优查询对这些竞争对的保证均至少 $v_3$，它们的 $Q$ 平均又恰为 $v_3$，所以六项必须全部取等。于是任意最优查询都满足 $Ap=(2411/41)\\mathbf1$。可逆性及(2)给出唯一性。未缩放矩阵的行列式为 $-12055/48$，两种数值由 $6^6$ 因子一致。\n\n## 保留的全局预算和失败机制\n\n本例严格满足\n\n$$\nW-3v_3=213/82>0,\\qquad 2W-\\operatorname{OPT}_3=30>0.\n\\tag{5}\n$$\n\n为精确说明早期亏损与补偿，固定实际玩家 $i$ 的实际前缀，令 $B_i(a)$ 为其改选 $a$ 后原完整策略产生的竞争元组，含固定过去及真实后继。对查询分布 $p$ 定义\n\n$$\nD_i=\\sum_ap_af_{B_i(a)}(a),\\quad\nC_i=\\sum_{a,b}p_ap_bf_{B_i(b)}(a),\\quad\n\\kappa_i=D_i-C_i,\\quad e_i=u_i-D_i\\ge0.\n$$\n\n精确恒等式为 $W-\\sum_iC_i=\\sum_i(\\kappa_i+e_i)$。在唯一安全最优 $p^*$ 上：\n\n| 玩家 | $D_i$ | $C_i$ | $\\kappa_i$ | $e_i$ |\n|---|---:|---:|---:|---:|\n| 1 | 29/3 | 2411/246 | -11/82 | 0 |\n| 2 | 5311/492 | 1252/123 | 101/164 | 61/164 |\n| 3 | 2597/246 | 2597/246 | 0 | 25/41 |\n\n于是 $W-\\sum_iC_i=60/41>0$。根节点亏损并未由其自身激励松弛修补，后继的收益和松弛却给总预算足够补偿。因此该例否定逐人桥，仍兼容“某个安全最优分布有非负总补偿”及更弱的真正聚合桥。\n\n[单后继恒等式](../引理/单后继去相关恒等式--引理.md)保证末两人均有 $u_i\\ge v_n$，一人时显然成立；所以三人是这个辅助逐人桥可失败的最少人数。这里不声称34客户或六主题最小。与[36客户菜单障碍](../障碍/自适应后继与真实菜单安全值--障碍.md)使用同一形式策略，但客户重数不同：36例有 $u_1=v_3=10$，不能把它写成此处反例。最初沿该形式策略的完整激励锥改变重数获得360客户候选，再以整数优化找到34客户；发现优化与最终证明分开。\n\n## 证据和可接续用途\n\n[单位客户输入](../../tools/evidence/continuation-security/examples/customer_attraction/individual_security_failure.json)、[完整43节点策略与静态证书](../../tools/evidence/continuation-security/evidence/certificates/customer_attraction/individual_security_failure.json)及[原字节精确审计](../../tools/evidence/continuation-security/tests/audits/customer_attraction_individual_security.py)已保全。审计不导入SPE求解器或浮点优化器，展开34个不同单位客户，核验全部216终局、43历史、258项含自身动作比较、全部36静态背景和两种预算；215项真实偏离中144项严格亏损、71项平局。本轮[重放输出](../../tools/evidence/continuation-security/replay-individual.json)全部通过。\n\n原来源另记录互不导入的压缩类型独立审计与行列式排列展开；本轮实际复跑的是上面的单位客户实现，未冒称再跑另一实现。内部审查和定义级有理证书支持该有限反例，无外部同行评审或全球新颖性认证。\n\n源ID `06d6eed8703b9eb98f72` 全文；证书ID `4617d18c9d098ce255c9`；审计ID `7538b76f70a1b44e1e5f`。后续六人或任意人数的研究应寻找聚合支付或其他覆盖机制，不能继续把逐人 $u_i\\ge v_n$ 当作待证普遍桥。\n",
+    "actual_task_routes": [
+      {
+        "task_file": {
+          "path": "research/operations/p25-register-v2/tasks/register-ab98f323ad-0001-5-evidence.json",
+          "sha256": "b5317b3dd101124cdbbae9837a2d2a0a99881166de4d9a2ec07f7464c98f5c94"
+        },
+        "state": "claimed",
+        "owner": "Boss2",
+        "assignment_material": {
+          "path": "archives/customer-attraction/state/反例/三人逐人混合安全值--反例.md",
+          "sha256": "34c7dd12ea1390e5f8b26134cc17380fa4354d46cb76ccf88d630b37f2675ed2"
+        },
+        "receipt_batch_file": null
+      },
+      {
+        "task_file": {
+          "path": "research/operations/p25-register-v2/tasks/register-ab98f323ad-0001-5.json",
+          "sha256": "ab085979a6ca7bb855cc9767c18f01b784eafdca63e848cf0177b8ff4a284684"
+        },
+        "state": "withdrawn",
+        "owner": null,
+        "assignment_material": {
+          "path": "archives/customer-attraction/state/反例/三人逐人混合安全值--反例.md",
+          "sha256": "34c7dd12ea1390e5f8b26134cc17380fa4354d46cb76ccf88d630b37f2675ed2"
+        },
+        "receipt_batch_file": null
+      }
+    ],
+    "canonical_records_with_exact_body": [],
+    "policy": "Source routing only; no stub, allocation, claim, acceptance or ownership inferred from claimed/prepared."
+  },
+  {
+    "requested_legacy_claim": "CA-NEW-POLICY-CONE-SECURITY",
+    "exact_statement": "固定21棵完整形式策略σ，各自所有非负客户类型重数w只要Γσw≥0，均有Wσ(w)≥n v_n(w)；19棵n5m7、1棵n5m8、1棵n6m8。共同Q和非负Γ乘子不依w或查询分布p；不量化所有策略。",
+    "principal_source_route": {
+      "path": "archives/customer-attraction/state/计算/指定策略安全锥与七极大来源边界--计算.md",
+      "sha256": "ae3113480ec327071179eb43933185e7d72b8b9548f5da4ba5a32571b6832a1e"
+    },
+    "exact_body_text_for_route_only": "# 指定策略安全锥与七极大来源的边界\n\n本页整合三类来源：\n\n1. `a81b9371d7fa4a4d022d` 的二十一棵指定完整策略安全锥：任意非负客户重数 (w) 只要固定策略仍为 SPE，就有 (W_\\sigma(w)\\ge n v_n(w))；同时五人十个不同极大主题、86 单位客户存在逐人真正安全值反例，但 (2W-OPT_5=84>0)。这不是任意策略或六人 half 定理。\n2. `e6b1681f4525ecd3529c` 的三棵固定策略锥：61 客户根税、89 客户去相关各自整个重数锥上逐人 (u_i\\ge v_n) 且 (W\\ge nv_n)；原 36 客户策略只对后两位给出聚合桥。证书是固定策略的非负行组合，不可跨策略推广。\n3. `cfc22bd3f1dee7f1ece9` 的七极大来源：恰七个不同包含极大覆盖、任意 (n\\ge7)、任意内部子主题、完整历史纯 SPE 满足 (U\\le2W)，且此时 (OPT_n=U)。来源在 (n=7,8) 用完整 literal 有理列，(n=9\\)–12 用 988 个压缩列，(n\\ge13) 用解析余项分支；独立复核报告 24,384 个 literal 列和 988 个压缩列。它不补齐一般六人，也不把旧 n5/n6 缺项写成五人命题开放。\n\n上述都是结构/策略锥或极大覆盖子类的精确资产；与本轮六提供者一般共同目录目标保持独立。原报告、证书包和来源哈希见 evidence manifest。\n",
+    "actual_task": {
+      "file": {
+        "path": "research/operations/p25-register-v2/tasks/register-ab98f323ad-0009.json",
+        "sha256": "008da3052bbfe45e1a1826131a357d7f88343f8421aad2a4a85b1965d83c9f09"
+      },
+      "state": "claimed",
+      "owner": "Boss2"
+    },
+    "actual0036_followup": {
+      "task": {
+        "path": "research/operations/p25-register-v2/tasks/register-boss3-evidence-followup-0036-20261107.json",
+        "sha256": "d823795f25c8016579870f29640fc2b530009e817a1f95a5ec4374aa423dc97e"
+      },
+      "state": "done",
+      "receipt_batch_file": {
+        "path": "research/registration/batches/register-boss3-evidence-followup-0036-20261107.json",
+        "sha256": "1ce39114956cf8cbab6ac9ac32bbb5587e5af4116438b34fe7dee02254d0537d"
+      },
+      "objects": [],
+      "disposition": "needs-decision pending0009 principal identity, not a mother record"
+    },
+    "source_ids": [
+      "a81b9371d7fa4a4d022d",
+      "760834c0f64c80b5ccc1"
+    ],
+    "full_certificate": {
+      "path": "archives/customer-attraction/tools/evidence/security-cones-new/original/new_policy_security_cones.json.gz",
+      "sha256": "a4e84d0478ba0ededabe547870ad0a4916cd05a78e686183ed6ef1b660583045"
+    },
+    "policy": "Exact claim and actual route only, no stub or arbitrary new ID."
+  }
+]
