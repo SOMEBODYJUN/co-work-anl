@@ -1,0 +1,1479 @@
+{
+  "task_id": "register-ab98f323ad-0092",
+  "status": "draft-worker-in-progress",
+  "record": {
+    "schema": 2,
+    "baseline": {
+      "path": "research/registration/baseline.json",
+      "sha256": "5d5737ab6d07552b48925bdb936dae70490e8de1ee0da2b380bb2d16dd5690cf"
+    },
+    "objects": [
+      {
+        "object_id": "MF-MODEL",
+        "version": 1,
+        "title": "共同目录任意设施数的原子客户模型与完整续局",
+        "kind": "definition",
+        "truth_status": "definition",
+        "model": "MF-MODEL：任意有限非空共同地点目录 S、显式带标签设施 k≥2 和正原子客户；固定布局客户强制服务、独立随机化、实际线性负载成本。",
+        "statement": "每个带标签布局 s∈S^k；覆盖者须选一家可达设施，未覆盖者无动作；客户 i 选 f 的条件成本 w_i+Σ_{j≠i}w_jp_jf，设施期望收益 L_f=Σ_i w_ip_if。精确客户NE的正支持仅取条件成本最小选项；α≥1的近似设施稳定要求一份全布局精确客户NE函数及一个在轨布局，对每次实际单设施偏离均有 L_f(偏离)≤αL_f(在轨)。",
+        "quantifiers": "每个 k≥2、所有有限客户与非空有限目录、所有 s∈S^k；存在一份完整规则和在轨布局，再对每个 f 与 r≠s_f 检验。",
+        "assumptions": [
+          "正实权，覆盖关系任意",
+          "设施同时纯选址，允许同址；客户间独立",
+          "同一带标签布局的续局只选一次"
+        ],
+        "scope": "允许空客户、零覆盖和零收益。有效算法另取正二进制有理权与显式设施标签。",
+        "objections": "不同于异构目录或顺序客户吸引；线性期望不替代含自身权的条件成本。",
+        "body": {
+          "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+          "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+        },
+        "evidence": [
+          {
+            "path": "archives/facility-games/subarchives/common-many/问题--问题.md",
+            "sha256": "2c0adc76d711aed5fbebbd960b760ca1ab499d3d5d53be025f62943b78a4e6fd"
+          }
+        ],
+        "sources": [
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/model.md",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/model.md#1-输入行动与收益"
+        ]
+      },
+      {
+        "object_id": "SC-K-2-E",
+        "version": 1,
+        "title": "共同目录任意设施数的因子二完整续局存在",
+        "kind": "theorem",
+        "truth_status": "proved",
+        "model": "MF-MODEL：任意有限非空共同地点目录 S、显式带标签设施 k≥2 和正原子客户；固定布局客户强制服务、独立随机化、实际线性负载成本。",
+        "statement": "存在布局 s 和一份覆盖 S^k 的精确客户NE规则，使所有实际单方设施偏离收益≤其在轨收益的2倍；在轨可为站点纯且站内独立均匀，所有离轨布局可用纯精确NE。",
+        "quantifiers": "∀k≥2∀有限合法实例，∃s∃σ，∀设施f∀目录r≠s_f；同一σ对全部带标签布局定义。",
+        "assumptions": [
+          "有限共同目录",
+          "正实权不可拆原子",
+          "被覆盖客户必须服务，设施收益是客户期望负载"
+        ],
+        "scope": "包括零覆盖；统一常数≤2，不保证实例最优、尖锐性、一般位多项式搜索或对任意续局都稳。",
+        "objections": "正文保完整四类搬迁、孤立重原子、单设施源孤儿、未覆盖者及全标签拼接。24与当前TeX为同命题证明；后续冻结审查纠正把未覆盖重客户误纳入修复义务。1–7、10、23为有限检查或证据口径；1319是抽查在轨见证而非实例，不能替代证明。",
+        "body": {
+          "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+          "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3"
+        },
+        "evidence": [
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+            "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/计算/原子条件成本检查与逆向纯均衡枚举--计算.md",
+            "sha256": "e78590ca537da3605d327ae90fd115261d3125b6533cb5954f8ce66e0994c2ce"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/审查/因子二后续仓库审查与研究定位--审查.md",
+            "sha256": "1ff824637c8da975094011ce3b0124ebbdefb1e0d4e2c493689faf8fd318f372"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/审查/因子二逆向审查与证据边界--审查.md",
+            "sha256": "4da65ac903f5202a2b8161338804f0248c44660b12f8e95bee1f8a4e329de912"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/计算/因子二构造审计与交付检查的验证边界--计算.md",
+            "sha256": "b25e7539d3e54996937c54eba7c4f40aa0e6cc054146e9123065f978effb197f"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/计算/四份回归输入与实际覆盖分支--计算.md",
+            "sha256": "58aad1a64ac80979d03cc3acfa2be7f1d816f0a3e374d899fe6e220effc8ff15"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/计算/四份保存证书的显式续局与默认补全--计算.md",
+            "sha256": "55f47647331536643d3b6553a4384d39ffd59ef3d517c7be0e58f7bf96930288"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/计算/构造与布局障碍记录的逐项证据口径--计算.md",
+            "sha256": "2d666e87927bba3773969bf5d021077ad2b9e97080e63749acf2317af7de4bca"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/计算/因子二冻结审计记录与版本归属--计算.md",
+            "sha256": "86f8e34e454a7bedf2010c0bf890d173ef201c75cc3168e19ff5a063a67fcde2"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/问题--问题.md",
+            "sha256": "2c0adc76d711aed5fbebbd960b760ca1ab499d3d5d53be025f62943b78a4e6fd"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/审查/因子二论文的重原子修订与冻结审查--审查.md",
+            "sha256": "fc038c896527d8d6bbcb8dabb1463af2f65b5f6e02aaf0d290e02ced72353b55"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/计算/因子二连续稿的八页核读与有限重构--计算.md",
+            "sha256": "fcba302d0fb80f70f2fc8fc8cc48db39a938be8b0463b6eb5f2a3e360336d0ee"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/资料/共同目录因子二连续论文与完整续局证明--资料.md",
+            "sha256": "3a3a13e5f7a1a8c25c50454789df574589f877346bc5cba89f7a3af58e71d99e"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md",
+            "sha256": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/tools/evidence/factor-two-reverse-review/replayed_reverse.json",
+            "sha256": "7a05e7b85a193828f24a61e5aa5b4884d16c254eb9688c3caebda29a15c57ab5"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/tools/evidence/factor-two-audit-suite/snapshot_manifest.json",
+            "sha256": "bc2bc43604d591da3c4fa3c01038192c6df359231c5f684353c2c5686d465dbd"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/tools/evidence/factor-two-historical-audits/kfac_independent.json",
+            "sha256": "c8ead2d7345bf6999f7a48cb6a9fe24ae8d91d7f0c692b43f875645bd1afcc08"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/tools/evidence/factor-two-record-inventory/frozen_exact.json",
+            "sha256": "ea1a4c9ee4cd4a73284639a82ad0a6f3877b5e88ebc9f9bf938e1701051bb6de"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/papers/factor-two-current/main.tex",
+            "sha256": "e745ec526dccb9f874837729c6ec3d092ea6ea9e44edf602a749cef9f18fe922"
+          },
+          {
+            "path": "tools/evidence/multiple-facilities-paper/current-verification.json",
+            "sha256": "ce4258b40e34d1b96ce97fb18df2b02447782b503f74bb5f937b15d3485e706b"
+          },
+          {
+            "path": "tools/evidence/common-many-primary-register/original/research/current/multi_facility/claims.md",
+            "sha256": "3ebdc5ee98b8dbd847e06e26e1fc6b708002e485fe2b31abb9ee1ae491d26e89"
+          }
+        ],
+        "sources": [
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/uniform_two.md",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/model.md",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/reverse_review.md",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:learning/03_arbitrary_k.md#6-四项搬迁预算"
+        ]
+      },
+      {
+        "object_id": "SC-K-LEX-BUDGET",
+        "version": 1,
+        "title": "全局升序字典序最大在轨均衡与四类搬迁预算",
+        "kind": "lemma",
+        "truth_status": "proved",
+        "model": "MF-MODEL：任意有限非空共同地点目录 S、显式带标签设施 k≥2 和正原子客户；固定布局客户强制服务、独立随机化、实际线性负载成本。",
+        "statement": "正最大覆盖时，每个全布局站纯/站内均匀升序设施负载向量字典序最大者均为精确客户NE且各设施收益正。源 u 每设施收益 a=W_u/q_u；q_u≥2 时，对其他已占 t 有 W_t≤(q_t+1)a、未占 r 真正新增 N_r≤a；q_u=1 时分别在左侧加 w(J_u∩C_t)、w(J_u∩C_r)。",
+        "quantifiers": "∀实例正最大覆盖，∀所列有限族的全局并列最大者，∀源与合法目标。",
+        "assumptions": [
+          "共同目录允许同一次比较搬迁",
+          "客户站点赋值可重新接纳仍被覆盖的原源客户"
+        ],
+        "scope": "四预算及站均匀NE可独立复用；字典序需对整个有限族取全局最大，局部算法是另一命题。",
+        "objections": "源消失时必须保源客户交集项；零覆盖由主定理另作处理。",
+        "body": {
+          "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+          "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+          "section": "一、有限站点分配族与升序字典序最大者"
+        },
+        "evidence": [
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+            "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+            "section": "二、所选在轨策略是精确客户 NE"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+            "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+            "section": "三、同一个最大者给出全部转移预算"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/资料/共同目录因子二连续论文与完整续局证明--资料.md",
+            "sha256": "3a3a13e5f7a1a8c25c50454789df574589f877346bc5cba89f7a3af58e71d99e"
+          },
+          {
+            "path": "tools/evidence/common-many-primary-register/original/research/current/multi_facility/claims.md",
+            "sha256": "3ebdc5ee98b8dbd847e06e26e1fc6b708002e485fe2b31abb9ee1ae491d26e89"
+          }
+        ],
+        "sources": [
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/uniform_two.md",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/model.md",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/reverse_review.md",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:learning/03_arbitrary_k.md#6-四项搬迁预算"
+        ]
+      },
+      {
+        "object_id": "MF-CONT-COMPLETE",
+        "version": 1,
+        "title": "实际偏离精确客户均衡的带标签完整拼接",
+        "kind": "lemma",
+        "truth_status": "proved",
+        "model": "MF-MODEL：任意有限非空共同地点目录 S、显式带标签设施 k≥2 和正原子客户；固定布局客户强制服务、独立随机化、实际线性负载成本。",
+        "statement": "给定在轨布局及其精确客户NE，且给每个实际带标签单设施偏离各一个精确客户NE，即可无冲突延伸为全布局精确NE函数；若所给档案满足α偏离不等式，则得到完整α近似SPE。",
+        "quantifiers": "∀布局∀在轨NE∀每个实际偏离的指定NE，∃一个完整续局延伸全部指定。",
+        "assumptions": [
+          "设施标签不按物理同址取商",
+          "其余固定布局客户游戏有纯NE，由有限半平方负载势保证"
+        ],
+        "scope": "离轨只需客户NE，不要求离轨设施本身稳定；这项独立拼接不是因子二存在性。",
+        "objections": "可用最小编号初态和确定严格改善规则作默认；默认求值的多项式时间另有合同。",
+        "body": {
+          "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+          "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+          "section": "六、把全部局部选择拼成一个完整函数"
+        },
+        "evidence": [
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+            "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+            "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+            "section": "七、有限精确程序、短证书与算法边界"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/计算/四份保存证书的显式续局与默认补全--计算.md",
+            "sha256": "55f47647331536643d3b6553a4384d39ffd59ef3d517c7be0e58f7bf96930288"
+          },
+          {
+            "path": "tools/evidence/common-many-primary-register/original/research/current/multi_facility/claims.md",
+            "sha256": "3ebdc5ee98b8dbd847e06e26e1fc6b708002e485fe2b31abb9ee1ae491d26e89"
+          }
+        ],
+        "sources": [
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/uniform_two.md",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/model.md",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/reverse_review.md",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:learning/03_arbitrary_k.md#6-四项搬迁预算"
+        ]
+      },
+      {
+        "object_id": "MF-PACK-2",
+        "version": 1,
+        "title": "有限原子的二倍帽装箱与孤立超重箱",
+        "kind": "lemma",
+        "truth_status": "proved",
+        "model": "标量正权原子装箱，无覆盖限制。",
+        "statement": "总重至多(h+1)a 的原子可分为至多h箱；每箱重≤2a，或恰有一个自身>2a的原子。任意可行成对合并有限构造；把普通帽与孤立宏阈一同改为ca（1≤c<2）普遍失败：h+1个a重原子。",
+        "quantifiers": "∀a>0∀整数h≥1∀满足总重界的有限正权列表（含空）。",
+        "assumptions": [
+          "原子不可拆",
+          "箱无预先的客户覆盖限制"
+        ],
+        "scope": "用于因子二种子；局部常数锐性不推出全模型设施阈值。",
+        "objections": "成对合并至多n−1次；存在证明也覆盖实权、等号及空输入。",
+        "body": {
+          "path": "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md",
+          "sha256": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+          "section": "原子装箱引理"
+        },
+        "evidence": [
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+            "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+            "section": "四、每次实际偏离都有受帽可行纯初态"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/资料/共同目录因子二连续论文与完整续局证明--资料.md",
+            "sha256": "3a3a13e5f7a1a8c25c50454789df574589f877346bc5cba89f7a3af58e71d99e"
+          },
+          {
+            "path": "tools/evidence/common-many-primary-register/original/research/current/multi_facility/claims.md",
+            "sha256": "3ebdc5ee98b8dbd847e06e26e1fc6b708002e485fe2b31abb9ee1ae491d26e89"
+          }
+        ],
+        "sources": [
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/uniform_two.md#4-a-packing-lemma-with-isolated-macro-clients",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/uniform_two.md#6-exact-client-equilibration-preserves-the-cap",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/reverse_review.md#A",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/polytime_frontier.md#mf-pure-cap-poly-polynomial-completion-from-a-capped-pure-assignment"
+        ]
+      },
+      {
+        "object_id": "MF-PURE-CAP",
+        "version": 1,
+        "title": "孤立重原子与普通设施共同帽的有限纯均衡修复",
+        "kind": "lemma",
+        "truth_status": "proved",
+        "model": "MF-MODEL：任意有限非空共同地点目录 S、显式带标签设施 k≥2 和正原子客户；固定布局客户强制服务、独立随机化、实际线性负载成本。",
+        "statement": "固定布局的可行纯种子若每个设施负载≤B或仅有一名自身>B的已服务客户，则任意严格客户改善保原重客户孤立及普通负载≤B；有限终止于完整客户游戏的纯NE，指定普通设施仍受帽。",
+        "quantifiers": "∀固定布局∀B>0∀满足条件的可行纯种子，任意严格改善序列有帽且有限结束。",
+        "assumptions": [
+          "重客户原已服务且孤立",
+          "普通客户只执行真正严格改善，成本含自身原子"
+        ],
+        "scope": "有限势修复；不删客户原动作；B=0平凡可另处理。位多项式完成另见 MF-PURE-CAP-POLY。",
+        "objections": "未覆盖重客户无动作，不施加孤立条件；不能省略已服务超重客户单独占用，也不能允许无护栏平局移动。",
+        "body": {
+          "path": "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md",
+          "sha256": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+          "section": "受帽纯均衡修复引理"
+        },
+        "evidence": [
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+            "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+            "section": "五、完整客户游戏中的严格改善保住上界"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/审查/因子二论文的重原子修订与冻结审查--审查.md",
+            "sha256": "fc038c896527d8d6bbcb8dabb1463af2f65b5f6e02aaf0d290e02ced72353b55"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/资料/共同目录因子二连续论文与完整续局证明--资料.md",
+            "sha256": "3a3a13e5f7a1a8c25c50454789df574589f877346bc5cba89f7a3af58e71d99e"
+          },
+          {
+            "path": "tools/evidence/common-many-primary-register/original/research/current/multi_facility/claims.md",
+            "sha256": "3ebdc5ee98b8dbd847e06e26e1fc6b708002e485fe2b31abb9ee1ae491d26e89"
+          }
+        ],
+        "sources": [
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/uniform_two.md#4-a-packing-lemma-with-isolated-macro-clients",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/uniform_two.md#6-exact-client-equilibration-preserves-the-cap",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/reverse_review.md#A",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/polytime_frontier.md#mf-pure-cap-poly-polynomial-completion-from-a-capped-pure-assignment"
+        ]
+      },
+      {
+        "object_id": "M-897ec3f17ea34dd6a96c4b26fd205fe7",
+        "version": 1,
+        "title": "共同目录因子二的显式有理短证书与有限生成",
+        "kind": "proposition",
+        "truth_status": "proved",
+        "model": "MF-MODEL：任意有限非空共同地点目录 S、显式带标签设施 k≥2 和正原子客户；固定布局客户强制服务、独立随机化、实际线性负载成本。",
+        "statement": "显式二进制有理输入下，有有限精确程序产生因子二在轨布局、0或1/q的在轨表、k(|S|−1)个纯偏离续局及确定有限默认规则；显式档案长度及档案检查位多项式。",
+        "quantifiers": "∀显式正二进制有理实例（设施标签显式列出），∃多项式长证书及有限精确生成过程。",
+        "assumptions": [
+          "显式客户与覆盖关系、显式k个设施",
+          "未写出的布局由解析证明正确的有限默认规则求值"
+        ],
+        "scope": "检查在轨与实际偏离的显式档案；不枚举指数多的默认历史。",
+        "objections": "不保证位多项式搜索或默认求值；短证明描述与运行时间分开。",
+        "body": {
+          "path": "archives/facility-games/subarchives/common-many/state/审查/有理证书命题的独立审查与有限程序边界--审查.md",
+          "sha256": "9fbe8a22a7f89c3760d05775db0c2bafe59d94f3764ec1fb1f4265a07624cfc8",
+          "section": "证书命题的精确结论"
+        },
+        "evidence": [
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+            "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+            "section": "七、有限精确程序、短证书与算法边界"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/计算/四份保存证书的显式续局与默认补全--计算.md",
+            "sha256": "55f47647331536643d3b6553a4384d39ffd59ef3d517c7be0e58f7bf96930288"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/审查/因子二论文的重原子修订与冻结审查--审查.md",
+            "sha256": "fc038c896527d8d6bbcb8dabb1463af2f65b5f6e02aaf0d290e02ced72353b55"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/资料/共同目录因子二连续论文与完整续局证明--资料.md",
+            "sha256": "3a3a13e5f7a1a8c25c50454789df574589f877346bc5cba89f7a3af58e71d99e"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/papers/factor-two-current/main.tex",
+            "sha256": "e745ec526dccb9f874837729c6ec3d092ea6ea9e44edf602a749cef9f18fe922"
+          }
+        ],
+        "sources": [
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/manuscripts/multiple_facilities/main.tex#sec:proof",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/manuscripts/multiple_facilities/REFEREE_REPORT_round1.md#prop:certificate",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/manuscripts/multiple_facilities/REFEREE_REPORT_round2_proof.md#prop:certificate",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/facility/multiple_facilities_appendix/prop-certificate.md#Chunk-1"
+        ]
+      },
+      {
+        "object_id": "SC-K-LEXMAX-BARRIER",
+        "version": 1,
+        "title": "固定全局字典序最大占用的精确倍率趋近二",
+        "kind": "obstruction",
+        "truth_status": "proved",
+        "model": "MF-MODEL：任意有限非空共同地点目录 S、显式带标签设施 k≥2 和正原子客户；固定布局客户强制服务、独立随机化、实际线性负载成本。",
+        "statement": "每个k≥2,h≥2有k地点k正有理客户；所有站纯/站内均匀全局升序字典序最大者的占用相同至标签置换。固定该占用且任取全部客户NE时，可达的最佳完整倍率恰2h/(h+1)；同实例换占用可精确SPE。",
+        "quantifiers": "∀整数k≥2∀整数h≥2∃显式实例；∀选定坏占用的在轨/离轨NE有下界，且∃全规则达到；另∃好占用。",
+        "assumptions": [
+          "完整共同目录，允许独立混合客户NE",
+          "坏占用固定、但客户NE可任意改选"
+        ],
+        "scope": "否定统一亚二的此固定布局规则；不能当全模型下界。",
+        "objections": "20参数实例/1552偏离/6全枚举只回归，数学下界用全部NE的严格强制偏离与显式达到。",
+        "body": {
+          "path": "archives/facility-games/subarchives/common-many/state/障碍/固定字典序占用的二倍极限--障碍.md",
+          "sha256": "9e8e9b3cbe62926584325cb029894f94b07f1c1fce55b4a013ad31746c7aa326"
+        },
+        "evidence": [
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/审查/因子二逆向审查与证据边界--审查.md",
+            "sha256": "4da65ac903f5202a2b8161338804f0248c44660b12f8e95bee1f8a4e329de912"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/计算/因子二构造审计与交付检查的验证边界--计算.md",
+            "sha256": "b25e7539d3e54996937c54eba7c4f40aa0e6cc054146e9123065f978effb197f"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/计算/构造与布局障碍记录的逐项证据口径--计算.md",
+            "sha256": "2d666e87927bba3773969bf5d021077ad2b9e97080e63749acf2317af7de4bca"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+            "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/tools/evidence/factor-two-audit-suite/replayed_lexmax_barrier.json",
+            "sha256": "744d2f05204e40e5ff06549d7f45bdfcf403f36b9c0b497617fca5d5cf46d13e"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/tools/evidence/factor-two-audit-suite/barrier_replay_comparison.json",
+            "sha256": "859c50e921f4392d2066b21826cacb26d47fdeb7ca8a58724292bf50cd14b431"
+          }
+        ],
+        "sources": [
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/lexmax_boundary.md",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/kfac_lexmax_barrier.json"
+        ]
+      },
+      {
+        "object_id": "SC-K-SYMMETRIC-MENU-OBSTRUCTION",
+        "version": 1,
+        "title": "固定在轨见证下同址对称续局的无界假威胁",
+        "kind": "obstruction",
+        "truth_status": "proved",
+        "model": "MF-MODEL：任意有限非空共同地点目录 S、显式带标签设施 k≥2 和正原子客户；固定布局客户强制服务、独立随机化、实际线性负载成本。",
+        "statement": "对每q≥3，有三地点三客户、k=q+1的全局字典序最大站内均匀在轨NE；某实际偏离的所有同址对称客户NE使偏离倍率 q²/(q−1/4)>q，而同一在轨布局及NE配非对称纯离轨可精确SPE。",
+        "quantifiers": "∀整数q≥3∃输入与一个指定全局最大在轨见证；∀该偏离的同址对称NE；另∃全布局精确续局。",
+        "assumptions": [
+          "同址对称指同一客户对同物理地点的各设施概率相同；仍允许跨站混合"
+        ],
+        "scope": "仅攻击指定在轨见证的对称离轨菜单；不是全模型下界或所有在轨选取失效。",
+        "objections": "七个冻结q值的算术复核与普遍解析证据分开。",
+        "body": {
+          "path": "archives/facility-games/subarchives/common-many/state/障碍/同址对称续局的无界假威胁--障碍.md",
+          "sha256": "695b0530af4bc49381086d9fa412db3d4fc07d0357f73944f1846472fe0145cf"
+        },
+        "evidence": [
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/审查/因子二逆向审查与证据边界--审查.md",
+            "sha256": "4da65ac903f5202a2b8161338804f0248c44660b12f8e95bee1f8a4e329de912"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/计算/因子二冻结审计记录与版本归属--计算.md",
+            "sha256": "86f8e34e454a7bedf2010c0bf890d173ef201c75cc3168e19ff5a063a67fcde2"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+            "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/tools/evidence/factor-two-reverse-review/run_reverse_audit.py",
+            "sha256": "3ea7b07f8d46e1176242e518fb12205cd495bb27b7da7f6b3c0f8f760fd7b716"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/tools/evidence/factor-two-reverse-review/replayed_reverse.json",
+            "sha256": "7a05e7b85a193828f24a61e5aa5b4884d16c254eb9688c3caebda29a15c57ab5"
+          }
+        ],
+        "sources": [
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/symmetric_menu_obstruction.md",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/multi_facility/run_reverse_audit.py#symmetry_family"
+        ]
+      },
+      {
+        "object_id": "M-f33cc518f28045e1809c8b3113999135",
+        "version": 1,
+        "title": "共同目录跨全部设施数的尖锐普遍稳定常数",
+        "kind": "question",
+        "truth_status": "open",
+        "model": "MF-MODEL：任意有限非空共同地点目录 S、显式带标签设施 k≥2 和正原子客户；固定布局客户强制服务、独立随机化、实际线性负载成本。",
+        "statement": "求 C_unif=sup_{k≥2,I} α*(I,k)，其中 α* 对全部带标签布局与逐布局独立精确客户NE规则取实例最佳近似倍率；已知 φ≤C_unif≤2。",
+        "quantifiers": "跨每个整数k≥2及每个合法输入取上确界；每个实例先取存在型完整续局的最优倍率。",
+        "assumptions": [
+          "上下界分别来自共同双目录同一目录情形的下界和共同目录任意k因子二"
+        ],
+        "scope": "最佳统一常数；不把k=2下界或固定布局的趋二障碍赋给每个固定k>2。",
+        "objections": "当前缺统一亚二定理或覆盖全部布局及续局的趋二实例族。",
+        "body": {
+          "path": "archives/facility-games/subarchives/common-many/问题--问题.md",
+          "sha256": "2c0adc76d711aed5fbebbd960b760ca1ab499d3d5d53be025f62943b78a4e6fd",
+          "section": "最佳常数与相邻问题"
+        },
+        "evidence": [
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/障碍/固定字典序占用的二倍极限--障碍.md",
+            "sha256": "9e8e9b3cbe62926584325cb029894f94b07f1c1fce55b4a013ad31746c7aa326"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/障碍/同址对称续局的无界假威胁--障碍.md",
+            "sha256": "695b0530af4bc49381086d9fa412db3d4fc07d0357f73944f1846472fe0145cf"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+            "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3"
+          },
+          {
+            "path": "archives/facility-games/state/定理/共同目录黄金比下界的有理六地点与五地点族--定理.md",
+            "sha256": "d6da289ea0636830fae204b32fb28e1f854ff1ffdf84a3a58b988c45a9de0fbb"
+          }
+        ],
+        "sources": [
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/claims.md"
+        ]
+      },
+      {
+        "object_id": "SC-K-GREEDY-BUDGET",
+        "version": 1,
+        "title": "规范贪心冻结原池的末分数与单设施源预算",
+        "kind": "lemma",
+        "truth_status": "proved",
+        "model": "MF-MODEL：任意有限非空共同地点目录 S、显式带标签设施 k≥2 和正原子客户；固定布局客户强制服务、独立随机化、实际线性负载成本。 规范贪心占用 O、重数 q、最后分数 γ；站纯/站内均匀客户 NE。",
+        "statement": "最终每个原池 q_tγ≤W_t^0≤(q_t+1)γ，未开站真正新增 N_v≤γ；若源u最终只一家，N_v+w(J_u^0∩C_v)≤W_u^0≤2γ。规范步骤以已占原池除以下一重数或未开站尚未覆盖重竞价。",
+        "quantifiers": "∀有限共同目录正覆盖输入、任何固定选址平局序、∀最终占站及指定未占站。",
+        "assumptions": [
+          "站首次开启接收尚未覆盖的客户；其原池此后固定",
+          "预算只施加给原池；不要求原在轨客户为NE"
+        ],
+        "scope": "精确算术可计算；预算不保证任意后续重分配仍保孤儿项。",
+        "objections": "空覆盖零分数另作全零续局。",
+        "body": {
+          "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+          "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+          "section": "规范贪心、冻结原池及预算"
+        },
+        "evidence": [
+          {
+            "path": "archives/facility-games/subarchives/common-many/问题--问题.md",
+            "sha256": "2c0adc76d711aed5fbebbd960b760ca1ab499d3d5d53be025f62943b78a4e6fd"
+          },
+          {
+            "path": "tools/evidence/common-many-primary-register/original/research/current/multi_facility/claims.md",
+            "sha256": "3ebdc5ee98b8dbd847e06e26e1fc6b708002e485fe2b31abb9ee1ae491d26e89"
+          }
+        ],
+        "sources": [
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/greedy_box_global_progress.md#Sections-7-10",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/polytime_frontier.md#SC-K-GREEDY-SINGLETON-RESET-and-SC-K-GREEDY-BOX-TO-2",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/polytime_frontier.md#MF-PURE-CAP-POLY"
+        ]
+      },
+      {
+        "object_id": "SC-K-GREEDY-MAX-MULT",
+        "version": 1,
+        "title": "规范贪心原归属具有最大可达占站重数",
+        "kind": "lemma",
+        "truth_status": "proved",
+        "model": "MF-MODEL：任意有限非空共同地点目录 S、显式带标签设施 k≥2 和正原子客户；固定布局客户强制服务、独立随机化、实际线性负载成本。 规范贪心占用 O、重数 q、最后分数 γ；站纯/站内均匀客户 NE。",
+        "statement": "每名已覆盖客户归属h是其第一已开可达站，对每个可达已占t有 q_h≥q_t；按重数非增、同重数首开次序可写 h=min A_i。",
+        "quantifiers": "∀规范贪心输入∀在轨覆盖客户∀可达已占站。",
+        "assumptions": [
+          "正权原子使较早原站初次选择比较具有严格额外重量",
+          "首次覆盖冻结原池"
+        ],
+        "scope": "允许平局与多重同址；排序关系用于完整盒抽象化。",
+        "objections": "不能给任意任命的归属加上最大重数或最早开站性质。",
+        "body": {
+          "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+          "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+          "section": "原归属具有最大可达重数"
+        },
+        "evidence": [
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+            "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/引理/阈值截断与归位计数的严格推进--引理.md",
+            "sha256": "9d84b47d3e7fdd71a3a25d82f5c1c8b65a3e8088ad1610c09e19794bbfb87015"
+          },
+          {
+            "path": "tools/evidence/common-many-primary-register/original/research/current/multi_facility/claims.md",
+            "sha256": "3ebdc5ee98b8dbd847e06e26e1fc6b708002e485fe2b31abb9ee1ae491d26e89"
+          }
+        ],
+        "sources": [
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/greedy_box_global_progress.md#Sections-7-10",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/polytime_frontier.md#SC-K-GREEDY-SINGLETON-RESET-and-SC-K-GREEDY-BOX-TO-2",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/polytime_frontier.md#MF-PURE-CAP-POLY"
+        ]
+      },
+      {
+        "object_id": "SC-K-GREEDY-BOX-EXISTS",
+        "version": 1,
+        "title": "一般完整盒与精确客户均衡的截断归位构造",
+        "kind": "theorem",
+        "truth_status": "proved",
+        "model": "归一化盒客户游戏：正整数站点重数 q_t，冻结基载 c_t∈[0,1]，每名可动客户 0<w_i<1、非空选项 A_i、归属 h_i∈A_i。设施均分所在站总重。",
+        "statement": "在最大可达重数归属 h 下，从原归属 c 出发，每步原严格改善后任意归还违反自身H的离家客户；固定阈值截断价格块与离家数交错势逐步严格推进，≤∏|A_i|−1步到完整 0≤X_t≤1、全原选项NE及 e_i≤(1−w_i)/q_hi。每个改善者当时满足H时也可守护交错。",
+        "quantifiers": "∀合法抽象输入∀合规顺序；真实规范贪心冻结重客户及单选客户后满足映射；有理输入的状态/势编码和只存当前状态位空间多项式。",
+        "assumptions": [
+          "归属重数至少所有其可达站的重数",
+          "严格客户改善检查全部原始选项；归位为满足守卫的另外一步",
+          "正覆盖映射取γ>0"
+        ],
+        "scope": "存在性不限固定树宽、轻客户权种或重数；停机界可指数。",
+        "objections": "截断和归位计数缺一不可；多项式位长或单批开销不推出总步数多项式。当前只接既有精确证明与有限实现审查。",
+        "body": {
+          "path": "archives/facility-games/subarchives/common-many/state/引理/阈值截断与归位计数的严格推进--引理.md",
+          "sha256": "9d84b47d3e7fdd71a3a25d82f5c1c8b65a3e8088ad1610c09e19794bbfb87015"
+        },
+        "evidence": [
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+            "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+            "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+          },
+          {
+            "path": "archives/facility-games/state/审查/学习代表页的数学可见内容与视觉证据范围--审查.md",
+            "sha256": "3cb3487b5864caabf2ca9c1746c5757ff67cf56c6d9ec9f61e2e443b3a8029e2"
+          },
+          {
+            "path": "tools/evidence/claims-graph-review-resources/original/research/current/claims.md",
+            "sha256": "dd25571aac7cd4fc71a8a2e3ffaa7f5638ba90619c4e4ccacf7774a28bef0b81"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/问题/一般异权盒选择的统一位复杂度目标--问题.md",
+            "sha256": "321b36b0574063b359700751b1206400c134de698365598a4fdca7832dc10a3e"
+          }
+        ],
+        "sources": [
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/greedy_box_global_progress.md#Sections-1-6"
+        ]
+      },
+      {
+        "object_id": "SC-K-GREEDY-SINGLETON-RESET",
+        "version": 1,
+        "title": "单设施源的全原客户池重置离轨接口",
+        "kind": "lemma",
+        "truth_status": "conditional",
+        "model": "MF-MODEL：任意有限非空共同地点目录 S、显式带标签设施 k≥2 和正原子客户；固定布局客户强制服务、独立随机化、实际线性负载成本。 规范贪心占用 O、重数 q、最后分数 γ；站纯/站内均匀客户 NE。",
+        "statement": "规范贪心占用源u最终仅一家；其在轨收益a≥γ时，任一目标偏离可重置所有旧客户至原池，失站原客户仅重挂原单设施组或新开目标；用两组池预算建立帽2γ纯初态，完成精确偏离NE且收益≤2γ≤2a。",
+        "quantifiers": "∀合法正γ贪心布局∀单设施源∀目标；允许任意给定在轨独立混合NE，只用a≥γ。",
+        "assumptions": [
+          "位多项式强化使用受限同链 MAX",
+          "保留原池、原重数及全部合法站点"
+        ],
+        "scope": "有限正确性自足；位多项式只在数学导入接口下成立，无在轨选择责任。",
+        "objections": "不能用当前在轨客户池取代原池；静止单设施站池不是只由本人的原池限额。",
+        "body": {
+          "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+          "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+          "section": "单设施源：重置全部原客户池"
+        },
+        "evidence": [
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+            "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+            "section": "规范贪心、冻结原池及预算"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+            "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+            "section": "原归属具有最大可达重数"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/审查/受限同链调度导入的最大值与范围义务--审查.md",
+            "sha256": "0f112e754fd5c918a7bbc5791cc31af95345e91dc27c90e3f49cc322a3b99ddb"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md",
+            "sha256": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md",
+            "sha256": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db"
+          },
+          {
+            "path": "tools/evidence/claims-graph-review-resources/original/research/current/claims.md",
+            "sha256": "dd25571aac7cd4fc71a8a2e3ffaa7f5638ba90619c4e4ccacf7774a28bef0b81"
+          }
+        ],
+        "sources": [
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/greedy_box_global_progress.md#Sections-7-10",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/polytime_frontier.md#SC-K-GREEDY-SINGLETON-RESET-and-SC-K-GREEDY-BOX-TO-2",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/polytime_frontier.md#MF-PURE-CAP-POLY"
+        ]
+      },
+      {
+        "object_id": "SC-K-GREEDY-BOX-TO-2",
+        "version": 1,
+        "title": "给定规范贪心盒内在轨NE的因子二续局完成接口",
+        "kind": "theorem",
+        "truth_status": "conditional",
+        "model": "MF-MODEL：任意有限非空共同地点目录 S、显式带标签设施 k≥2 和正原子客户；固定布局客户强制服务、独立随机化、实际线性负载成本。 规范贪心占用 O、重数 q、最后分数 γ；站纯/站内均匀客户 NE。",
+        "statement": "若给定精确站纯/站内均匀在轨NE且每站 W_t∈[q_tγ,(q_t+1)γ]，则 q_u≥2 的源在当前池装箱、q_u=1 的源全原池重置，给每个带标签实际偏离纯NE及所有未列布局默认纯NE，完整因子二；用 MAX 可位多项式完成及查询。",
+        "quantifiers": "∀显式有理正γ贪心输入∀给定合法盒内精确NE，∃一份完整规则；对全部实际偏离同时成立。",
+        "assumptions": [
+          "给定完整盒且精确客户NE，非仅上盒",
+          "位多项式强化依 MAX；有限纯势也保证完成"
+        ],
+        "scope": "不要求在轨满足归位H或单源私有储备，不负责寻找在轨盒见证。",
+        "objections": "同一结论的有限程序与规范软件的位复杂度分开。",
+        "body": {
+          "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+          "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b"
+        },
+        "evidence": [
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+            "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/审查/受限同链调度导入的最大值与范围义务--审查.md",
+            "sha256": "0f112e754fd5c918a7bbc5791cc31af95345e91dc27c90e3f49cc322a3b99ddb"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md",
+            "sha256": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md",
+            "sha256": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a"
+          },
+          {
+            "path": "tools/evidence/claims-graph-review-resources/original/research/current/claims.md",
+            "sha256": "dd25571aac7cd4fc71a8a2e3ffaa7f5638ba90619c4e4ccacf7774a28bef0b81"
+          }
+        ],
+        "sources": [
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/greedy_box_global_progress.md#Sections-7-10",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/polytime_frontier.md#SC-K-GREEDY-SINGLETON-RESET-and-SC-K-GREEDY-BOX-TO-2",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/polytime_frontier.md#MF-PURE-CAP-POLY"
+        ]
+      },
+      {
+        "object_id": "SC-K-GREEDY-BOX-FINITE-2",
+        "version": 1,
+        "title": "规范贪心占位的完整因子二有限构造",
+        "kind": "theorem",
+        "truth_status": "proved",
+        "model": "MF-MODEL：任意有限非空共同地点目录 S、显式带标签设施 k≥2 和正原子客户；固定布局客户强制服务、独立随机化、实际线性负载成本。 规范贪心占用 O、重数 q、最后分数 γ；站纯/站内均匀客户 NE。",
+        "statement": "对任意显式有理输入，规范贪心确定占位，交错势产生完整盒精确在轨NE，四类实际偏离经装箱/原池重置及有限纯改善完成；所有带标签布局给精确客户NE，设施偏离收益至多两倍。",
+        "quantifiers": "∀显式合法实例∃规范贪心布局及完整规则；∀设施实际偏离。",
+        "assumptions": [
+          "正覆盖先构造盒；零覆盖另直接给任意布局和全未服务零续局",
+          "有限离轨纯改善，无需外部调度器"
+        ],
+        "scope": "位多项式空间可只存当前状态；没有一般总位多项式时间保证。",
+        "objections": "这是 SC-K-2-E 的不同、指定贪心布局的构造，不等同于原全局字典序布局，也不声称软件所有报告输出无异常。",
+        "body": {
+          "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+          "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+          "section": "定理和模型"
+        },
+        "evidence": [
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+            "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+            "section": "规范贪心、冻结原池及预算"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+            "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+            "section": "原归属具有最大可达重数"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+            "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+            "section": "归一化并证明全部客户NE"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+            "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+            "section": "存续源：按当前在轨池装箱"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+            "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+            "section": "单设施源：重置全部原客户池"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+            "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+            "section": "完整续局和时间层级"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+            "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+            "section": "退化输入和结构推论"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+            "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md",
+            "sha256": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/引理/阈值截断与归位计数的严格推进--引理.md",
+            "sha256": "9d84b47d3e7fdd71a3a25d82f5c1c8b65a3e8088ad1610c09e19794bbfb87015"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/推论/结构参数下完整盒均衡的多项式选择--推论.md",
+            "sha256": "9d02870fb31e12e603886b503b39ca7fc396fa15e888d6f2643bb678a25e8863"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/算法/等重轻客户下盒流与无约束细化--算法.md",
+            "sha256": "82abd37faab9e81b4fc3f4e302e8b2f704e8c5f2ccb0287f57527b2db3b99245"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/计算/等重流连接续局的原模型审计--计算.md",
+            "sha256": "f8210c60d13fbf7f0c07e378255c429f2b679dc3d33a2541317f779aea4bdb58"
+          },
+          {
+            "path": "archives/facility-games/state/审查/学习代表页的数学可见内容与视觉证据范围--审查.md",
+            "sha256": "3cb3487b5864caabf2ca9c1746c5757ff67cf56c6d9ec9f61e2e443b3a8029e2"
+          },
+          {
+            "path": "tools/evidence/claims-graph-review-resources/original/research/current/claims.md",
+            "sha256": "dd25571aac7cd4fc71a8a2e3ffaa7f5638ba90619c4e4ccacf7774a28bef0b81"
+          }
+        ],
+        "sources": [
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/greedy_box_global_progress.md#Sections-7-10",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/polytime_frontier.md#SC-K-GREEDY-SINGLETON-RESET-and-SC-K-GREEDY-BOX-TO-2",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/polytime_frontier.md#MF-PURE-CAP-POLY"
+        ]
+      },
+      {
+        "object_id": "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import",
+        "version": 1,
+        "title": "受限相同链精确纯NE位多项式双端保持导入",
+        "kind": "lemma",
+        "truth_status": "proved",
+        "model": "相同单位容量标签机器、原子纯任务、任意逐名允许机器集。",
+        "statement": "对任意可行纯初态可用已发表Nashification在输入位多项式时间求精确纯NE，最终最大负载不增、最小不减；逐关联分量同样保持两端。会议版Cor4.3的逐UBF两端不变量经§4调用/重组归纳传递到完整算法。",
+        "quantifiers": "∀显式机器和逐名正二进制有理任务、非空允许集、∀可行纯初态；包括空机器或无任务。",
+        "assumptions": [
+          "成本为所选机器的实际总负载，严格改选成本含自己的原子",
+          "有理权乘分母积保多项式位长；最终算法/调用界由原文Th4.7导入"
+        ],
+        "scope": "MAX是RANGE的较弱接口；不将混合重数的站点合为相关机器速度，也无本库规范调度器实现。",
+        "objections": "21记录早期未取到PDF；26记录后续实际读取会议Cor4.3与全阶段、期刊Th6.5。RANGE为流程推导，不能误称期刊定理明文给最小值。",
+        "body": {
+          "path": "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md",
+          "sha256": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a"
+        },
+        "evidence": [
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/审查/受限同链调度导入的最大值与范围义务--审查.md",
+            "sha256": "0f112e754fd5c918a7bbc5791cc31af95345e91dc27c90e3f49cc322a3b99ddb"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/冻结静止超载的偏离者受帽补全--定理.md",
+            "sha256": "6be181b8a474095c33d8168852a1093eeae1937e91cfe52ebff3953be18b5cff"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+            "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b"
+          },
+          {
+            "path": "tools/evidence/common-many-primary-register/original/research/current/multi_facility/claims.md",
+            "sha256": "3ebdc5ee98b8dbd847e06e26e1fc6b708002e485fe2b31abb9ee1ae491d26e89"
+          }
+        ],
+        "sources": [
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:learning/08_reading_list.md",
+          "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:learning/08_reading_list.md",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:learning/reviews/20261010.json#reports.blind_core",
+          "https://cgi.csc.liv.ac.uk/~gairing/publications/2004-stoc.pdf",
+          "https://cgi.csc.liv.ac.uk/~gairing/publications/2009-tocs.pdf"
+        ]
+      },
+      {
+        "object_id": "MF-PURE-CAP-POLY",
+        "version": 1,
+        "title": "受帽纯种子的位多项式精确客户均衡完成",
+        "kind": "lemma",
+        "truth_status": "conditional",
+        "model": "MF-MODEL：任意有限非空共同地点目录 S、显式带标签设施 k≥2 和正原子客户；固定布局客户强制服务、独立随机化、实际线性负载成本。",
+        "statement": "给定满足 MF-PURE-CAP 的显式有理固定布局纯种子，删除原孤立超帽客户和设施，用 MAX 求普通游戏纯NE，再恢复孤立重客户，普通设施仍≤B；输入位多项式。已给全局字典序在轨见证后，各帽种子及离轨完成亦位多项式。",
+        "quantifiers": "∀有理固定布局与满足同一帽隔离条件的显式种子；∃保帽位多项式算法，导入 MAX。",
+        "assumptions": [
+          "每个已服务>B客户独占，普通初负载≤B",
+          "恢复后仍核全部原动作；MAX足够"
+        ],
+        "scope": "不给一般在轨搜索，不是旧有限 pure_improve 代码的时间保证。",
+        "objections": "本批26后续原文核定可支撑数学导入，但明确区分有文献可调用与本仓已实现。",
+        "body": {
+          "path": "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md",
+          "sha256": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+          "section": "在因子二证明中的接口与计算边界"
+        },
+        "evidence": [
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+            "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+            "section": "七、有限精确程序、短证书与算法边界"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/冻结静止超载的偏离者受帽补全--定理.md",
+            "sha256": "6be181b8a474095c33d8168852a1093eeae1937e91cfe52ebff3953be18b5cff"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+            "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/审查/受限同链调度导入的最大值与范围义务--审查.md",
+            "sha256": "0f112e754fd5c918a7bbc5791cc31af95345e91dc27c90e3f49cc322a3b99ddb"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md",
+            "sha256": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a"
+          },
+          {
+            "path": "tools/evidence/common-many-primary-register/original/research/current/multi_facility/claims.md",
+            "sha256": "3ebdc5ee98b8dbd847e06e26e1fc6b708002e485fe2b31abb9ee1ae491d26e89"
+          }
+        ],
+        "sources": [
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/uniform_two.md#4-a-packing-lemma-with-isolated-macro-clients",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/uniform_two.md#6-exact-client-equilibration-preserves-the-cap",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/reverse_review.md#A",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/polytime_frontier.md#mf-pure-cap-poly-polynomial-completion-from-a-capped-pure-assignment"
+        ]
+      },
+      {
+        "object_id": "MF-FROZEN-OVERLOAD-POLY",
+        "version": 1,
+        "title": "静止设施可冻结超帽时的偏离者受帽纯NE",
+        "kind": "theorem",
+        "truth_status": "conditional",
+        "model": "MF-MODEL：任意有限非空共同地点目录 S、显式带标签设施 k≥2 和正原子客户；固定布局客户强制服务、独立随机化、实际线性负载成本。",
+        "statement": "给定纯种子、B≥0和初负载≤B的指定设施f，冻结全部>M帽设施及其客户。若每个冻结客户外部负载 M_h−w_i 不超过每个可达其他冻结设施的原负载及每个可达普通设施的残余纯NE强制池下界 η，则恢复全原动作后的纯NE可保持 f≤B；导入MAX给位多项式。",
+        "quantifiers": "∀合法有理布局、种子、指定f、B及满足全部冻结比较的输入；∃全模型纯NE。",
+        "assumptions": [
+          "残余仅含普通设施和未冻结客户，按普通重数重算 η",
+          "可选分量初始最小值强化另需 RANGE；基本版只需 MAX"
+        ],
+        "scope": "允许多个客户同处静止超帽设施；不保证种子可找到、对每个在轨NE有证书或整个负载均≤B。",
+        "objections": "cap 41实例中冻结44与67、普通移动者20；这与不可能存在旧全局帽种子并存。有限正确性独立由纯势证明。",
+        "body": {
+          "path": "archives/facility-games/subarchives/common-many/state/定理/冻结静止超载的偏离者受帽补全--定理.md",
+          "sha256": "6be181b8a474095c33d8168852a1093eeae1937e91cfe52ebff3953be18b5cff"
+        },
+        "evidence": [
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/资料/旧帽与两类贪心坏选择的原始程序--资料.md",
+            "sha256": "398d1246b49b03ed157148dcd4c8e4f96fd5bd2bc69ba469c7a8f8acc6002bce"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+            "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/审查/受限同链调度导入的最大值与范围义务--审查.md",
+            "sha256": "0f112e754fd5c918a7bbc5791cc31af95345e91dc27c90e3f49cc322a3b99ddb"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md",
+            "sha256": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a"
+          },
+          {
+            "path": "tools/evidence/kfac-greedy-and-flow-primary/replay-tree/examples/multi_facility/greedy_cap_obstruction.json",
+            "sha256": "2e288935d0b289a56a421777f56e79a112d31e64dce25ae56e09606eaf8d0e68"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/tools/evidence/facility-complement-reset/original/research/current/multi_facility/frozen_overload_completion.md",
+            "sha256": "897d672d95ea748a4beea4770b73f68d1062a063c69bfd91be605ee85c4df2b8"
+          },
+          {
+            "path": "tools/evidence/common-many-primary-register/original/research/current/multi_facility/claims.md",
+            "sha256": "3ebdc5ee98b8dbd847e06e26e1fc6b708002e485fe2b31abb9ee1ae491d26e89"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/引理/强制原子池的纯均衡设施负载下界--引理.md",
+            "sha256": "f52ac3cbca886828fe6ec8a3fb63c922ca712004d47ffba09e6e700a35aeda2a"
+          }
+        ],
+        "sources": [
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/frozen_overload_completion.md",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/kfac_frozen_overload.py"
+        ]
+      },
+      {
+        "object_id": "SC-K-FROZEN-OVERLOAD-2",
+        "version": 1,
+        "title": "给定全部实际偏离冻结证书的完整因子二续局",
+        "kind": "theorem",
+        "truth_status": "conditional",
+        "model": "MF-MODEL：任意有限非空共同地点目录 S、显式带标签设施 k≥2 和正原子客户；固定布局客户强制服务、独立随机化、实际线性负载成本。",
+        "statement": "给定任意有理精确独立混合在轨NE和每次实际带标签偏离在帽2a_f下的成功冻结证书，保持在轨策略，完成全部实际偏离及默认纯NE，得到完整因子二续局；MAX提供位多项式构造与查询。",
+        "quantifiers": "∀给定合法显式在轨策略和对每个实际偏离给定的成功证书，∃一份完整续局。",
+        "assumptions": [
+          "按偏离布局重新取覆盖和残余纯强制池下界",
+          "数学位多项式导入MAX；零收益帽0仍适用"
+        ],
+        "scope": "无贪心/删席箱前提；不是普遍在轨选择或证书生成器。",
+        "objections": "错误在轨NE可能根本无成功证书；原代码只有限改善，不能声称一般时间。",
+        "body": {
+          "path": "archives/facility-games/subarchives/common-many/state/定理/冻结静止超载的偏离者受帽补全--定理.md",
+          "sha256": "6be181b8a474095c33d8168852a1093eeae1937e91cfe52ebff3953be18b5cff",
+          "section": "完整续局与复杂度范围"
+        },
+        "evidence": [
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/冻结静止超载的偏离者受帽补全--定理.md",
+            "sha256": "6be181b8a474095c33d8168852a1093eeae1937e91cfe52ebff3953be18b5cff",
+            "section": "固定布局的完整证书"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/冻结静止超载的偏离者受帽补全--定理.md",
+            "sha256": "6be181b8a474095c33d8168852a1093eeae1937e91cfe52ebff3953be18b5cff",
+            "section": "残余完成与重新接纳全部原动作"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/资料/旧帽与两类贪心坏选择的原始程序--资料.md",
+            "sha256": "398d1246b49b03ed157148dcd4c8e4f96fd5bd2bc69ba469c7a8f8acc6002bce"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/审查/受限同链调度导入的最大值与范围义务--审查.md",
+            "sha256": "0f112e754fd5c918a7bbc5791cc31af95345e91dc27c90e3f49cc322a3b99ddb"
+          },
+          {
+            "path": "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md",
+            "sha256": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a"
+          },
+          {
+            "path": "tools/evidence/common-many-primary-register/original/research/current/multi_facility/claims.md",
+            "sha256": "3ebdc5ee98b8dbd847e06e26e1fc6b708002e485fe2b31abb9ee1ae491d26e89"
+          }
+        ],
+        "sources": [
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/multi_facility/frozen_overload_completion.md",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/kfac_frozen_overload.py"
+        ]
+      }
+    ],
+    "materials": [
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/计算/原子条件成本检查与逆向纯均衡枚举--计算.md",
+        "sha256": "e78590ca537da3605d327ae90fd115261d3125b6533cb5954f8ce66e0994c2ce",
+        "disposition": "attachment",
+        "object_ids": [
+          "SC-K-2-E"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/审查/因子二后续仓库审查与研究定位--审查.md",
+        "sha256": "1ff824637c8da975094011ce3b0124ebbdefb1e0d4e2c493689faf8fd318f372",
+        "disposition": "attachment",
+        "object_ids": [
+          "SC-K-2-E"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/审查/因子二逆向审查与证据边界--审查.md",
+        "sha256": "4da65ac903f5202a2b8161338804f0248c44660b12f8e95bee1f8a4e329de912",
+        "disposition": "attachment",
+        "object_ids": [
+          "SC-K-2-E",
+          "SC-K-LEXMAX-BARRIER",
+          "SC-K-SYMMETRIC-MENU-OBSTRUCTION"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/计算/因子二构造审计与交付检查的验证边界--计算.md",
+        "sha256": "b25e7539d3e54996937c54eba7c4f40aa0e6cc054146e9123065f978effb197f",
+        "disposition": "attachment",
+        "object_ids": [
+          "SC-K-2-E",
+          "SC-K-LEXMAX-BARRIER"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/计算/四份回归输入与实际覆盖分支--计算.md",
+        "sha256": "58aad1a64ac80979d03cc3acfa2be7f1d816f0a3e374d899fe6e220effc8ff15",
+        "disposition": "attachment",
+        "object_ids": [
+          "SC-K-2-E"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/计算/四份保存证书的显式续局与默认补全--计算.md",
+        "sha256": "55f47647331536643d3b6553a4384d39ffd59ef3d517c7be0e58f7bf96930288",
+        "disposition": "attachment",
+        "object_ids": [
+          "SC-K-2-E",
+          "MF-CONT-COMPLETE",
+          "M-897ec3f17ea34dd6a96c4b26fd205fe7"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/计算/构造与布局障碍记录的逐项证据口径--计算.md",
+        "sha256": "2d666e87927bba3773969bf5d021077ad2b9e97080e63749acf2317af7de4bca",
+        "disposition": "attachment",
+        "object_ids": [
+          "SC-K-2-E",
+          "SC-K-LEXMAX-BARRIER"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/障碍/固定字典序占用的二倍极限--障碍.md",
+        "sha256": "9e8e9b3cbe62926584325cb029894f94b07f1c1fce55b4a013ad31746c7aa326",
+        "disposition": "objects",
+        "object_ids": [
+          "SC-K-LEXMAX-BARRIER",
+          "M-f33cc518f28045e1809c8b3113999135"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/障碍/同址对称续局的无界假威胁--障碍.md",
+        "sha256": "695b0530af4bc49381086d9fa412db3d4fc07d0357f73944f1846472fe0145cf",
+        "disposition": "objects",
+        "object_ids": [
+          "SC-K-SYMMETRIC-MENU-OBSTRUCTION",
+          "M-f33cc518f28045e1809c8b3113999135"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/计算/因子二冻结审计记录与版本归属--计算.md",
+        "sha256": "86f8e34e454a7bedf2010c0bf890d173ef201c75cc3168e19ff5a063a67fcde2",
+        "disposition": "attachment",
+        "object_ids": [
+          "SC-K-2-E",
+          "SC-K-SYMMETRIC-MENU-OBSTRUCTION"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/问题--问题.md",
+        "sha256": "2c0adc76d711aed5fbebbd960b760ca1ab499d3d5d53be025f62943b78a4e6fd",
+        "disposition": "objects",
+        "object_ids": [
+          "MF-MODEL",
+          "SC-K-2-E",
+          "M-f33cc518f28045e1809c8b3113999135",
+          "SC-K-GREEDY-BUDGET"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/资料/旧帽与两类贪心坏选择的原始程序--资料.md",
+        "sha256": "398d1246b49b03ed157148dcd4c8e4f96fd5bd2bc69ba469c7a8f8acc6002bce",
+        "disposition": "attachment",
+        "object_ids": [
+          "MF-FROZEN-OVERLOAD-POLY",
+          "SC-K-FROZEN-OVERLOAD-2"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/资料/等权流对抗审计的全极小与残图边界--资料.md",
+        "sha256": "5aac61cb284873271b726537696fb2cff4800f17f25657b32341ba90e790d2d7",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "工作草稿：该材料尚未处置，不得据此交付。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/计算/等重流全局极小值与增广实现的有限审计--计算.md",
+        "sha256": "1209a90f1db8bcfe6cdd24ddb85376ef614a03dccd498d1d4ebccfe54c647757",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "工作草稿：该材料尚未处置，不得据此交付。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/算法/共同锚点嵌套选项的降序列表均衡--算法.md",
+        "sha256": "5e6a5d49b38f480490a4c8d255aa9deb6a10eae9590277447d046bcb8a706f4c",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "工作草稿：该材料尚未处置，不得据此交付。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/审查/有理证书命题的独立审查与有限程序边界--审查.md",
+        "sha256": "9fbe8a22a7f89c3760d05775db0c2bafe59d94f3764ec1fb1f4265a07624cfc8",
+        "disposition": "objects",
+        "object_ids": [
+          "M-897ec3f17ea34dd6a96c4b26fd205fe7"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+        "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+        "disposition": "objects",
+        "object_ids": [
+          "MF-MODEL",
+          "SC-K-2-E",
+          "MF-CONT-COMPLETE",
+          "SC-K-LEXMAX-BARRIER",
+          "SC-K-SYMMETRIC-MENU-OBSTRUCTION",
+          "SC-K-GREEDY-MAX-MULT",
+          "SC-K-GREEDY-BOX-EXISTS",
+          "SC-K-GREEDY-BOX-TO-2",
+          "SC-K-GREEDY-BOX-FINITE-2",
+          "MF-FROZEN-OVERLOAD-POLY"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+        "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+        "disposition": "objects",
+        "object_ids": [
+          "SC-K-2-E",
+          "SC-K-LEX-BUDGET",
+          "MF-CONT-COMPLETE",
+          "MF-PACK-2",
+          "MF-PURE-CAP",
+          "M-897ec3f17ea34dd6a96c4b26fd205fe7",
+          "M-f33cc518f28045e1809c8b3113999135",
+          "MF-PURE-CAP-POLY"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/定理/冻结静止超载的偏离者受帽补全--定理.md",
+        "sha256": "6be181b8a474095c33d8168852a1093eeae1937e91cfe52ebff3953be18b5cff",
+        "disposition": "objects",
+        "object_ids": [
+          "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import",
+          "MF-PURE-CAP-POLY",
+          "MF-FROZEN-OVERLOAD-POLY",
+          "SC-K-FROZEN-OVERLOAD-2"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+        "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+        "disposition": "objects",
+        "object_ids": [
+          "SC-K-GREEDY-BUDGET",
+          "SC-K-GREEDY-MAX-MULT",
+          "SC-K-GREEDY-BOX-EXISTS",
+          "SC-K-GREEDY-SINGLETON-RESET",
+          "SC-K-GREEDY-BOX-TO-2",
+          "SC-K-GREEDY-BOX-FINITE-2",
+          "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import",
+          "MF-PURE-CAP-POLY"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/审查/受限同链调度导入的最大值与范围义务--审查.md",
+        "sha256": "0f112e754fd5c918a7bbc5791cc31af95345e91dc27c90e3f49cc322a3b99ddb",
+        "disposition": "attachment",
+        "object_ids": [
+          "SC-K-GREEDY-SINGLETON-RESET",
+          "SC-K-GREEDY-BOX-TO-2",
+          "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import",
+          "MF-PURE-CAP-POLY",
+          "MF-FROZEN-OVERLOAD-POLY",
+          "SC-K-FROZEN-OVERLOAD-2"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/审查/因子二论文的重原子修订与冻结审查--审查.md",
+        "sha256": "fc038c896527d8d6bbcb8dabb1463af2f65b5f6e02aaf0d290e02ced72353b55",
+        "disposition": "attachment",
+        "object_ids": [
+          "SC-K-2-E",
+          "MF-PURE-CAP",
+          "M-897ec3f17ea34dd6a96c4b26fd205fe7"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/计算/因子二连续稿的八页核读与有限重构--计算.md",
+        "sha256": "fcba302d0fb80f70f2fc8fc8cc48db39a938be8b0463b6eb5f2a3e360336d0ee",
+        "disposition": "attachment",
+        "object_ids": [
+          "SC-K-2-E"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/资料/共同目录因子二连续论文与完整续局证明--资料.md",
+        "sha256": "3a3a13e5f7a1a8c25c50454789df574589f877346bc5cba89f7a3af58e71d99e",
+        "disposition": "attachment",
+        "object_ids": [
+          "SC-K-2-E",
+          "SC-K-LEX-BUDGET",
+          "MF-PACK-2",
+          "MF-PURE-CAP",
+          "M-897ec3f17ea34dd6a96c4b26fd205fe7"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md",
+        "sha256": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+        "disposition": "objects",
+        "object_ids": [
+          "SC-K-2-E",
+          "MF-PACK-2",
+          "MF-PURE-CAP",
+          "SC-K-GREEDY-SINGLETON-RESET",
+          "SC-K-GREEDY-BOX-TO-2",
+          "SC-K-GREEDY-BOX-FINITE-2",
+          "MF-PURE-CAP-POLY"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md",
+        "sha256": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a",
+        "disposition": "objects",
+        "object_ids": [
+          "SC-K-GREEDY-SINGLETON-RESET",
+          "SC-K-GREEDY-BOX-TO-2",
+          "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import",
+          "MF-PURE-CAP-POLY",
+          "MF-FROZEN-OVERLOAD-POLY",
+          "SC-K-FROZEN-OVERLOAD-2"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/引理/阈值截断与归位计数的严格推进--引理.md",
+        "sha256": "9d84b47d3e7fdd71a3a25d82f5c1c8b65a3e8088ad1610c09e19794bbfb87015",
+        "disposition": "objects",
+        "object_ids": [
+          "SC-K-GREEDY-MAX-MULT",
+          "SC-K-GREEDY-BOX-EXISTS",
+          "SC-K-GREEDY-BOX-FINITE-2"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/推论/结构参数下完整盒均衡的多项式选择--推论.md",
+        "sha256": "9d02870fb31e12e603886b503b39ca7fc396fa15e888d6f2643bb678a25e8863",
+        "disposition": "attachment",
+        "object_ids": [
+          "SC-K-GREEDY-BOX-FINITE-2"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/算法/等重轻客户下盒流与无约束细化--算法.md",
+        "sha256": "82abd37faab9e81b4fc3f4e302e8b2f704e8c5f2ccb0287f57527b2db3b99245",
+        "disposition": "attachment",
+        "object_ids": [
+          "SC-K-GREEDY-BOX-FINITE-2"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/计算/等重流连接续局的原模型审计--计算.md",
+        "sha256": "f8210c60d13fbf7f0c07e378255c429f2b679dc3d33a2541317f779aea4bdb58",
+        "disposition": "attachment",
+        "object_ids": [
+          "SC-K-GREEDY-BOX-FINITE-2"
+        ],
+        "reason": "本批已核精确陈述/证据角色，记录于所列数学 owner。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-many/state/问题/三设施重复占位的二倍完整续局--问题.md",
+        "sha256": "9d2d304cd595b8f17adfbbae80436f54bf5fb70885681ab184b667668f13980b",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "工作草稿：该材料尚未处置，不得据此交付。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-two/state/定义/共同目录精确续局与菜单模型--定义.md",
+        "sha256": "6afce2194294221712300cda25cded41810cbc3e17d480049ee4ec2f45fd3b53",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "工作草稿：该材料尚未处置，不得据此交付。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-two/问题--问题.md",
+        "sha256": "042ca07f543d34341cba5bb1367c2c60664fe1f6ee590a179b0aeafeb956dfb0",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "工作草稿：该材料尚未处置，不得据此交付。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-two/state/定理/共同目录黄金比存在与有理构造--定理.md",
+        "sha256": "fa7a7a6429bbe429d35f2a5dcad07163aab8df1cf828b72f735cd2c96d1e8ff6",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "工作草稿：该材料尚未处置，不得据此交付。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-two/state/资料/历史黄金比存在候选证明与当前对象映射--资料.md",
+        "sha256": "f741aacf27fb3f06dc1de6eb04652c3d1ebcdc5fcc61872296aa7b5c69e68bf2",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "工作草稿：该材料尚未处置，不得据此交付。"
+      },
+      {
+        "path": "archives/facility-games/subarchives/common-two/state/定理/共同目录黄金比闭环证明--定理.md",
+        "sha256": "1708022067e8323ab890e50a90ef6923fac66fa0e91320467797b6883a508188",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "工作草稿：该材料尚未处置，不得据此交付。"
+      }
+    ],
+    "edge_files": []
+  },
+  "receipt_draft": {
+    "schema": 2,
+    "task_id": "register-ab98f323ad-0092",
+    "actor": "Boss6",
+    "workflow_run": "p25-register-v2",
+    "baseline": {
+      "path": "research/registration/baseline.json",
+      "sha256": "5d5737ab6d07552b48925bdb936dae70490e8de1ee0da2b380bb2d16dd5690cf"
+    },
+    "status": "local-draft-not-ready",
+    "batch_file": {
+      "path": "research/registration/batches/register-ab98f323ad-0092.json",
+      "sha256": "41a1e120785a9e267b93d7545d2fb5316b8b4c4984e191bd89584bbd5111718c"
+    },
+    "assets": [
+      {
+        "path": "research/registration/batches/register-ab98f323ad-0092.json",
+        "sha256": "41a1e120785a9e267b93d7545d2fb5316b8b4c4984e191bd89584bbd5111718c"
+      }
+    ],
+    "allocated_object_ids": [
+      "M-897ec3f17ea34dd6a96c4b26fd205fe7",
+      "M-f33cc518f28045e1809c8b3113999135"
+    ],
+    "id_allocation_calls": 1,
+    "summary": {
+      "objects": 20,
+      "materials": 36,
+      "edge_files": 0
+    },
+    "reading_scope": {
+      "method": "按模型、精确陈述、数学证明完整位置与版本核登记；关键条件和后续审查定向深读；不重跑既有审计。",
+      "pending_material_indices_1_based": [
+        13,
+        14,
+        15,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    "owner_routes": [],
+    "validation": {
+      "command": "registration.validate_batch(root, record, expected_materials, baseline_ref)",
+      "result": {
+        "objects": 20,
+        "materials": 36,
+        "reused_existing_owners": [],
+        "reused_published_group_owners": []
+      }
+    }
+  }
+}
