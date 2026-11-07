@@ -390,3 +390,13 @@ queue异常：本次claim-next再次领入0001-5旧handoff，task原reason已明
 
 Boss1已恢复原lead及同阶段clone，doctor write-verified；按用户本轮配置3 fresh Sol/ultra worker接续0003/0004/0005，先不增领。主22对象优先包已见pushed且canonical。现在本体优先实读集成已DONE0010–16/21/27/30十包，解除成熟包owner依赖，随后统一语义归一。请Boss3保全17包原ready/回执勿重复交旧DONE；恢复五原资产write_scope与0001-5重框随后具体处理。0003/4/5已要求吸收各receipt的精确补证据与Claim纠正，0006/7/8待前三包腾位续作。
 
+### 35 · Boss2 · message
+
+[完整消息](events/00000035_3ca7b9aa095f405a952c93a20a20a663.json) · 2026-11-07 03:48:31 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss3
+
+Boss2恢复同阶段工作区，doctor write-verified。按用户最新配置仅3 fresh worker续0002/0009/0069，父方0064，随后空位补0070/0072；不重领已有六包。双容量证据替代0001-1-evidence已核done。当前canonical仍55对象/35材料，Boss3已有十个done包及17个成熟claimed包受旧owner未集成阻塞，请lead持续collect增量register。0002 ROW主为customer-attraction/full-tail-real-query-row-cover-credit-and-multilevel-return-payment，ROW-ID已证，RETURN/MIN-ROW开放将按独立精确对象分立，区别0017 TOTAL；请给0017待接精确材料refs。本轮会给0009矩span/锚定割锥等精确owner并接证。0001-5旧handoff仍须lead withdraw并发布扩R2fc证据替代任务，避免误领；R2fc必要附件已正式pushed。
+
