@@ -1,0 +1,316 @@
+{
+  "actor": "Boss3",
+  "base_registry": {
+    "path": "research/registry.json",
+    "sha256": "c11120dfaee23b507b0c1387b067cf46e422a4fffdbd80776453b375e516541f"
+  },
+  "baseline": {
+    "path": "research/registration/baseline-5cd4b9018.json",
+    "sha256": "af99fb773928f3fc6bcd577ade37fbb07e8f84befbb2304158b99894ab1e56a3"
+  },
+  "old_candidates_unchanged": [
+    {
+      "path": "research/workspaces/p25-register-v2/Boss3/0028-evidence-closure/schema2-supplement-candidate.json",
+      "sha256": "6908489517c1f0b8e3ee5df89c8a0e6bcfd4cc5fc0add109abd53d7d1eaa2205"
+    },
+    {
+      "path": "research/workspaces/p25-register-v2/Boss3/0084-evidence-closure/schema2-supplement-candidate.json",
+      "sha256": "5e7872eebf446872801a0728344287f5244d01c1c1ed0ac273187415077f1f03"
+    }
+  ],
+  "new_executable_candidates": [
+    {
+      "path": "research/workspaces/p25-register-v2/Boss3/followup-canonical-reconciliation-20261107/0028-complete-canonical-v3-candidate.json",
+      "sha256": "4e5646f3be027873f745699a25e3b9b6964ba71d9bf26729ad6f0a3e96b5956a"
+    },
+    {
+      "path": "research/workspaces/p25-register-v2/Boss3/followup-canonical-reconciliation-20261107/0084-complete-owner-union-candidate.json",
+      "sha256": "4a965f2265e8c9e1c89c57403bd6653527c23012e9a435eb78b3ab1ac2c21f6a"
+    }
+  ],
+  "0028_waterfill": {
+    "object_id": "CA-FRACTIONAL-TAIL-WATERFILL-v1",
+    "current_complete_v2_preimage": {
+      "object_id": "CA-FRACTIONAL-TAIL-WATERFILL-v1",
+      "version": 2,
+      "title": "分数尾水位的一份共同查询信用与利润守恒",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限单位客户、有限非空带标签共同目录、单位权顺序提供者；允许空主题、同覆盖异标签和重复选择。完整纯策略定义在全部有序历史，平局任意；每次偏离使用同一原策略的真实后继。合法背景来自有序旧前缀，非零背景的未来总利润不同于新增覆盖。",
+      "statement": "给定有限叶、合法整数背景b、一单位根A、n个单位尾和t≥0，存在同一辅助尾质量w∈[0,1]^n：原u_j≥t者保1，正质量者单位收益密度≥t，原覆盖支撑不变。令D=Σ(t−u_j)_+、客户返还h_x=1/(b_x+1+tail_w)−1/(b_x+1+tail_1)，则对所有客户子集T同时0≤ΔJ_T≤ΔQ_T=Σ_T h_x≤H=Σh_x≤D，其中Q替根，J保留完整根再插入。根返还Γ=ΔQ_A，V(w)=V(1)−Γ−ΔB_old，故Γ+ΔB_old+tΣw≤V(1)。单遍依次降低不足线者到首个水位或0即可。",
+      "quantifiers": "任意有限单位叶、合法整数背景、主题重复/空主题及t≥0；全部查询同一w。",
+      "assumptions": [
+        "w只是辅助质量，不是新的单位角色SPE",
+        "零质量密度取正侧极限",
+        "背景返还仅按准确守恒计入"
+      ],
+      "scope": "历史精确Claim的共同信用定理及退化端点。",
+      "objections": "H常数1锐；背景返还可为kD而无固定倍上界；存在无理水位1/√2。独立审查解析证明可允许实背景，但本历史Claim保持共同模型整数背景域，不静默扩域。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/分数尾水位的共同查询信用与利润守恒--引理.md",
+        "sha256": "d9ca9cb82ac113e8573c6ac7f18f19019d69801c1990b675ee2d5e50e07f23eb"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/变分水位有理证书与原盲重构的精确范围--计算.md",
+          "sha256": "70715b82213f184e0d01f151235352e837b5e97450d91ce3e4d8defc2b10d2d2"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/共同查询水位的独立解析复核与边界实现--审查.md",
+          "sha256": "aa09ae3c92554dd27ff2c4c3c6dbbc77e4833b1a8ae16d4c25f9a294f93860b7"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/水位事件的共同信用与原树激励账--引理.md",
+          "sha256": "b8016751cd4d68e9236fa25dbf3b3a26c28a35b46e3205dee13190cfd86c6501"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/同一实际福利的联合付款与净遗漏归约--引理.md",
+          "sha256": "a4ae2dfa031704dcf47a27c5a5ab5731bca400baf590e65267e83f16642c9d53",
+          "section": "单叶信用、局部列界与跨叶付款的不同范围"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/引理/分数尾水位的共同查询信用与利润守恒--引理.md"
+      ]
+    },
+    "old_pending_v2_preimage": {
+      "object_id": "CA-FRACTIONAL-TAIL-WATERFILL-v1",
+      "version": 2,
+      "title": "分数尾水位的一份共同查询信用与利润守恒",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限单位客户、有限非空带标签共同目录、单位权顺序提供者；允许空主题、同覆盖异标签和重复选择。完整纯策略定义在全部有序历史，平局任意；每次偏离使用同一原策略的真实后继。合法背景来自有序旧前缀，非零背景的未来总利润不同于新增覆盖。",
+      "statement": "给定有限叶、合法整数背景b、一单位根A、n个单位尾和t≥0，存在同一辅助尾质量w∈[0,1]^n：原u_j≥t者保1，正质量者单位收益密度≥t，原覆盖支撑不变。令D=Σ(t−u_j)_+、客户返还h_x=1/(b_x+1+tail_w)−1/(b_x+1+tail_1)，则对所有客户子集T同时0≤ΔJ_T≤ΔQ_T=Σ_T h_x≤H=Σh_x≤D，其中Q替根，J保留完整根再插入。根返还Γ=ΔQ_A，V(w)=V(1)−Γ−ΔB_old，故Γ+ΔB_old+tΣw≤V(1)。单遍依次降低不足线者到首个水位或0即可。",
+      "quantifiers": "任意有限单位叶、合法整数背景、主题重复/空主题及t≥0；全部查询同一w。",
+      "assumptions": [
+        "w只是辅助质量，不是新的单位角色SPE",
+        "零质量密度取正侧极限",
+        "背景返还仅按准确守恒计入"
+      ],
+      "scope": "历史精确Claim的共同信用定理及退化端点。",
+      "objections": "H常数1锐；背景返还可为kD而无固定倍上界；存在无理水位1/√2。独立审查解析证明可允许实背景，但本历史Claim保持共同模型整数背景域，不静默扩域。 0028只接16个有理边界和rho=1/sqrt(2)严格有理夹逼回归；普遍共同w、全部query信用及利润守恒由既有解析证明承担。同页124客户三人完整SPE/席位差为另一已登记对象，不把水位辅助质量当新SPE或有理输出算法，不把PASS造节点。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/分数尾水位的共同查询信用与利润守恒--引理.md",
+        "sha256": "d9ca9cb82ac113e8573c6ac7f18f19019d69801c1990b675ee2d5e50e07f23eb"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/变分水位有理证书与原盲重构的精确范围--计算.md",
+          "sha256": "70715b82213f184e0d01f151235352e837b5e97450d91ce3e4d8defc2b10d2d2"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/共同查询水位的独立解析复核与边界实现--审查.md",
+          "sha256": "aa09ae3c92554dd27ff2c4c3c6dbbc77e4833b1a8ae16d4c25f9a294f93860b7"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/水位事件的共同信用与原树激励账--引理.md",
+          "sha256": "b8016751cd4d68e9236fa25dbf3b3a26c28a35b46e3205dee13190cfd86c6501"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/前缀耦合席位与尾水位边界增量审计--审查.md",
+          "sha256": "5fc0d4ae04a7bc87c6330f5192d4a10e6fab6f626b2b3029fc0ef80cd0b1c4f6",
+          "section": "3. `customer_attraction_waterfill.json`：水位构造的 16 个有理边界和无理停点"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/前缀耦合席位与尾水位边界增量审计--审查.md",
+          "sha256": "5fc0d4ae04a7bc87c6330f5192d4a10e6fab6f626b2b3029fc0ef80cd0b1c4f6",
+          "section": "3.1 16 个有理案例的完整类别"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/前缀耦合席位与尾水位边界增量审计--审查.md",
+          "sha256": "5fc0d4ae04a7bc87c6330f5192d4a10e6fab6f626b2b3029fc0ef80cd0b1c4f6",
+          "section": "3.2 无理停点"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/引理/分数尾水位的共同查询信用与利润守恒--引理.md",
+        "archives/customer-attraction/state/审查/前缀耦合席位与尾水位边界增量审计--审查.md"
+      ]
+    },
+    "complete_v3": {
+      "object_id": "CA-FRACTIONAL-TAIL-WATERFILL-v1",
+      "version": 3,
+      "title": "分数尾水位的一份共同查询信用与利润守恒",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限单位客户、有限非空带标签共同目录、单位权顺序提供者；允许空主题、同覆盖异标签和重复选择。完整纯策略定义在全部有序历史，平局任意；每次偏离使用同一原策略的真实后继。合法背景来自有序旧前缀，非零背景的未来总利润不同于新增覆盖。",
+      "statement": "给定有限叶、合法整数背景b、一单位根A、n个单位尾和t≥0，存在同一辅助尾质量w∈[0,1]^n：原u_j≥t者保1，正质量者单位收益密度≥t，原覆盖支撑不变。令D=Σ(t−u_j)_+、客户返还h_x=1/(b_x+1+tail_w)−1/(b_x+1+tail_1)，则对所有客户子集T同时0≤ΔJ_T≤ΔQ_T=Σ_T h_x≤H=Σh_x≤D，其中Q替根，J保留完整根再插入。根返还Γ=ΔQ_A，V(w)=V(1)−Γ−ΔB_old，故Γ+ΔB_old+tΣw≤V(1)。单遍依次降低不足线者到首个水位或0即可。",
+      "quantifiers": "任意有限单位叶、合法整数背景、主题重复/空主题及t≥0；全部查询同一w。",
+      "assumptions": [
+        "w只是辅助质量，不是新的单位角色SPE",
+        "零质量密度取正侧极限",
+        "背景返还仅按准确守恒计入"
+      ],
+      "scope": "历史精确Claim的共同信用定理及退化端点。",
+      "objections": "H常数1锐；背景返还可为kD而无固定倍上界；存在无理水位1/√2。独立审查解析证明可允许实背景，但本历史Claim保持共同模型整数背景域，不静默扩域。 0028只接16个有理边界和rho=1/sqrt(2)严格有理夹逼回归；普遍共同w、全部query信用及利润守恒由既有解析证明承担。同页124客户三人完整SPE/席位差为另一已登记对象，不把水位辅助质量当新SPE或有理输出算法，不把PASS造节点。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/分数尾水位的共同查询信用与利润守恒--引理.md",
+        "sha256": "d9ca9cb82ac113e8573c6ac7f18f19019d69801c1990b675ee2d5e50e07f23eb"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/变分水位有理证书与原盲重构的精确范围--计算.md",
+          "sha256": "70715b82213f184e0d01f151235352e837b5e97450d91ce3e4d8defc2b10d2d2"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/共同查询水位的独立解析复核与边界实现--审查.md",
+          "sha256": "aa09ae3c92554dd27ff2c4c3c6dbbc77e4833b1a8ae16d4c25f9a294f93860b7"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/水位事件的共同信用与原树激励账--引理.md",
+          "sha256": "b8016751cd4d68e9236fa25dbf3b3a26c28a35b46e3205dee13190cfd86c6501"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/同一实际福利的联合付款与净遗漏归约--引理.md",
+          "sha256": "a4ae2dfa031704dcf47a27c5a5ab5731bca400baf590e65267e83f16642c9d53",
+          "section": "单叶信用、局部列界与跨叶付款的不同范围"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/前缀耦合席位与尾水位边界增量审计--审查.md",
+          "sha256": "5fc0d4ae04a7bc87c6330f5192d4a10e6fab6f626b2b3029fc0ef80cd0b1c4f6",
+          "section": "3. `customer_attraction_waterfill.json`：水位构造的 16 个有理边界和无理停点"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/前缀耦合席位与尾水位边界增量审计--审查.md",
+          "sha256": "5fc0d4ae04a7bc87c6330f5192d4a10e6fab6f626b2b3029fc0ef80cd0b1c4f6",
+          "section": "3.1 16 个有理案例的完整类别"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/前缀耦合席位与尾水位边界增量审计--审查.md",
+          "sha256": "5fc0d4ae04a7bc87c6330f5192d4a10e6fab6f626b2b3029fc0ef80cd0b1c4f6",
+          "section": "3.2 无理停点"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/引理/分数尾水位的共同查询信用与利润守恒--引理.md",
+        "archives/customer-attraction/state/审查/前缀耦合席位与尾水位边界增量审计--审查.md"
+      ]
+    },
+    "current_record_compact_sha256": "2ff6059c7bfa8d6001ee79101cb12180a4a94c8811b7a6688812d85005a3e058",
+    "old_candidate_record_compact_sha256": "228905ff22f269e2953fc9b1d7468e248517f693d615ebe2deaff4311deef43a",
+    "new_record_compact_sha256": "c48f9ce9e754834cacc809b9771ba8319a3fa45a6d6af918dfcd929a256a0ae2",
+    "unchanged_core_fields": [
+      "title",
+      "kind",
+      "truth_status",
+      "model",
+      "statement",
+      "quantifiers",
+      "assumptions",
+      "scope",
+      "body"
+    ],
+    "reason": "Current v2 additionally accepted the one-actual-welfare payment-contract section. Preserve it and append the independent sixteen rational boundary / irrational-stop regression evidence in a single v3. Do not publish the earlier pending v2 in parallel.",
+    "parent_new_reading": "Full87-line 同一实际福利的联合付款与净遗漏归约 body read. Exact waterfill section71-77 preserves one common w and H<=D, exact tail-profit loss and original-SPE boundary; it does not make each query an independent D or furnish a cross-history role budget. Existing0028 full reading/acceptance remains valid."
+  },
+  "0084_two_material_unions": [
+    {
+      "path": "archives/customer-attraction/state/障碍/R-2fc背景遗憾探针与无碰撞五客户负载桥--障碍.md",
+      "current_material": {
+        "path": "archives/customer-attraction/state/障碍/R-2fc背景遗憾探针与无碰撞五客户负载桥--障碍.md",
+        "sha256": "f7fd1bc59bbfc1090203a9909274ea2b1704f9eaf382fac37272f371cd0c4d07",
+        "disposition": "needs-decision",
+        "object_ids": [
+          "customer-attraction/actual-prefix-fresh-coverage-global-counterexample"
+        ],
+        "reason": "部分接证：仅background_regret_probe节及源码作为已反GLOBAL桥的历史有限发现工具，由52客户实际前缀主owner接收；随机前缀与Markov子类、三次浮点阴性均不作完整根反例证明。独有五客户无碰撞精确obstruction仍待CA-COLLISION-FREE-LOAD-PAYMENT-NO主owner实读接其源531860b3798ce2ad5665、矩阵与20比较；本批不吞该数学、不清整页needs。"
+      },
+      "old_candidate_material": {
+        "path": "archives/customer-attraction/state/障碍/R-2fc背景遗憾探针与无碰撞五客户负载桥--障碍.md",
+        "sha256": "f7fd1bc59bbfc1090203a9909274ea2b1704f9eaf382fac37272f371cd0c4d07",
+        "disposition": "needs-decision",
+        "object_ids": [
+          "CA-COLLISION-FREE-LOAD-PAYMENT-NO"
+        ],
+        "reason": "五客户完整无拥挤实例及原报告已由本Boss的0010精确Claim实接；同页合法背景Markov浮点探针目标是P+Delta−指定新覆盖，三次无负点不是一般结论，仍待Boss1接受为失败GLOBAL路线的历史证据。"
+      },
+      "complete_final_material": {
+        "path": "archives/customer-attraction/state/障碍/R-2fc背景遗憾探针与无碰撞五客户负载桥--障碍.md",
+        "sha256": "f7fd1bc59bbfc1090203a9909274ea2b1704f9eaf382fac37272f371cd0c4d07",
+        "disposition": "attachment",
+        "object_ids": [
+          "customer-attraction/actual-prefix-fresh-coverage-global-counterexample",
+          "CA-COLLISION-FREE-LOAD-PAYMENT-NO"
+        ],
+        "reason": "现行GLOBAL主owner已接background_regret_probe节及其历史有限发现工具；本完整增量由CA-COLLISION-FREE-LOAD-PAYMENT-NO补接五客户无拥挤精确obstruction的原输入、矩阵与20比较。两部分联合保各自正文和必要证据，背景Markov三次浮点阴性不作完整根反例或一般结论。原互待owner路由现已全部具备，无剩余独有未接内容。"
+      }
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/R-31bbb终局税与弱匹配锥有限屏幕--障碍.md",
+      "current_material": {
+        "path": "archives/customer-attraction/state/障碍/R-31bbb终局税与弱匹配锥有限屏幕--障碍.md",
+        "sha256": "a079f815dbd576c4217da8dbb6f0ff15ef93aad9be830bd7cbf9ff8cec0be20b",
+        "disposition": "needs-decision",
+        "object_ids": [
+          "CA-STRATEGY-CONE"
+        ],
+        "reason": "部分接证：弱匹配与addition节的portfolio全有序策略锥和count-Markov lift两实现及有限阴性归CA-STRATEGY-CONE作实现/应用证据；不将额外严格唯一最优support当锥定理前提。终局税节17固定策略浮点屏幕及terminal_probe/named_run仍待M-21b495b7e58840219b8452da00e263d2主owner实读接证；workspace仅provenance，不造节点。未接范围具体保needs。"
+      },
+      "old_candidate_material": {
+        "path": "archives/customer-attraction/state/障碍/R-31bbb终局税与弱匹配锥有限屏幕--障碍.md",
+        "sha256": "a079f815dbd576c4217da8dbb6f0ff15ef93aad9be830bd7cbf9ff8cec0be20b",
+        "disposition": "needs-decision",
+        "object_ids": [
+          "M-21b495b7e58840219b8452da00e263d2"
+        ],
+        "reason": "全终局税17命名策略浮点屏幕及完整原程序/报告已由本Boss的0017 open候选实接；同页addition=sum d/(1+c)<=W的唯一支持策略锥及计数Markov两种搜索，仍待CA-STRATEGY-CONE主owner接受有限实现证据。它不是W+|C\\O|的净预算，不能据此新造普遍定理或反例。"
+      },
+      "complete_final_material": {
+        "path": "archives/customer-attraction/state/障碍/R-31bbb终局税与弱匹配锥有限屏幕--障碍.md",
+        "sha256": "a079f815dbd576c4217da8dbb6f0ff15ef93aad9be830bd7cbf9ff8cec0be20b",
+        "disposition": "attachment",
+        "object_ids": [
+          "CA-STRATEGY-CONE",
+          "M-21b495b7e58840219b8452da00e263d2"
+        ],
+        "reason": "现行CA-STRATEGY-CONE已接弱匹配/addition节的全有序portfolio锥、count-Markov实现及有限阴性；本完整增量由M-21b495b7e58840219b8452da00e263d2补接终局税17命名策略浮点屏幕和完整terminal_probe/named_run程序报告。两部分联合接证，addition是sum d/(1+c)<=W，不偷换成W+|C\\O|净预算；额外严格唯一最优support不成为锥定理前提，有限屏幕不升普遍定理或反例。"
+      }
+    }
+  ],
+  "0084_object_records_unchanged_from_old_candidate": true,
+  "mathematical_boundaries": "The two source pages are complementary exact owner acceptances. Only genuine identity/source routing needs are cleared; open occupation/general-payment mathematics remain open. The full existing proofs and all current owners remain.",
+  "official_no_peer_validation_and_compose": [
+    {
+      "scope": "0028",
+      "candidate": {
+        "path": "research/workspaces/p25-register-v2/Boss3/followup-canonical-reconciliation-20261107/0028-complete-canonical-v3-candidate.json",
+        "sha256": "4e5646f3be027873f745699a25e3b9b6964ba71d9bf26729ad6f0a3e96b5956a"
+      },
+      "objects": 5,
+      "materials": 46,
+      "all_old_records_and_material_owners_preserved": true,
+      "actual_incremental_compose_passed": true,
+      "canonical_written": false
+    },
+    {
+      "scope": "0084",
+      "candidate": {
+        "path": "research/workspaces/p25-register-v2/Boss3/followup-canonical-reconciliation-20261107/0084-complete-owner-union-candidate.json",
+        "sha256": "4a965f2265e8c9e1c89c57403bd6653527c23012e9a435eb78b3ab1ac2c21f6a"
+      },
+      "objects": 2,
+      "materials": 5,
+      "all_old_records_and_material_owners_preserved": true,
+      "actual_incremental_compose_passed": true,
+      "canonical_written": false
+    }
+  ],
+  "unique_exact_refs_checked": 85,
+  "unique_ATX_sections_checked": 16,
+  "new_ids": 0,
+  "mathematical_program_runs": 0,
+  "old_done_batches_receipts_and_registry_unchanged": true,
+  "publication": "Parent accepted locally; awaits serial checkpoint and legitimate task publication/integration."
+}
