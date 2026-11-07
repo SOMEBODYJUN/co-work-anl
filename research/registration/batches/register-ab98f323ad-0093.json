@@ -411,7 +411,7 @@
       "quantifiers": "∀满足上述门槛的有限正实权固定布局，问∃一个独立混合精确立方NE同时达到两配额。",
       "assumptions": [
         "客户无退出；两设施使用同一z³费用，无出行偏置",
-        "立方在取实现期望之后计算；不以线性混合NE替代"
+        "先对含自身完整重量的每次实现负载取立方，再对其他客户独立抽签取条件期望E[L³]；不以(E[L])³或线性混合NE替代"
       ],
       "scope": "局部配额桥；即使成立仍需全目录菜单与全部实际偏离论证，失败也不直接否定Q-CUBIC。",
       "objections": "明确数学open；k≤2九矩形仅解决给定输入的oracle，未证明任意人数配额。",
@@ -1455,6 +1455,51 @@
       "sources": [
         "archives/fair-allocation/state/审查/公平参数化选题战报与实质试攻边界--审查.md"
       ]
+    },
+    {
+      "object_id": "TS-COPIES-3-SDEF1-v1",
+      "version": 1,
+      "title": "三人任意类型数等值副本的完整SD-EF1前缀目标",
+      "kind": "question",
+      "truth_status": "open",
+      "model": "三名代理、任意有限类型集G；类型g有c_g∈{1,2,3}个副本，同一观察者对同型副本等值；每人每类型至多一件，所有副本完整分配。每个观察者给定自己的严格类型全序；不附加PO。",
+      "statement": "问是否总有二元矩阵x_ig∈{0,1}、每列Σ_i x_ig=c_g，使每个观察者i、每个比较者j及i的每个类型排序前缀P都满足Σ_(g∈P)x_ig≥Σ_(g∈P)x_jg−1。首个义务是同时保持三种排序全部前缀的交换／增广证明，或给出精确反例。",
+      "quantifiers": "∀有限类型集G、∀各型副本数c_g∈{1,2,3}、∀三名代理的严格类型全序，问∃一份完整合法分配，∀观察者i、比较者j和i排序的全部前缀P同时满足差至多1。",
+      "assumptions": [
+        "每人每型至多一件且全部副本分完；同型副本对同一观察者等值。",
+        "c_g=3时三名代理各获一份，该类型在任一观察者前缀内对任意两人的计数同时加1，故前缀差抵消；消去这些全体列后只余c_g∈{1,2}。",
+        "若允许c_g=0，空类型可删且前缀计数不变；这里的正副本模型无须依赖该扩展。含ties或weak orders的扩展须另给前缀约定。"
+      ],
+      "scope": "固定n=3、任意类型数的独立限制目标；CB02与本合同相同（去除或补回全体副本列）。FG02是任意n的母问题；FA05是冲突图上的maximal additive EF1，不同模型。9216个至多四非全体类型的严格profile及更大随机样本仅有限证据。",
+      "objections": "明确数学open。均分分数点的逐人舍入误差1一般只给成对误差2，不能推出目标1；一般partition约束负例须保同型等值copies结构才能反驳本题。当前没有任意类型数的交换／增广不变量证明，也未由有限扫描升级。",
+      "body": {
+        "path": "archives/fair-allocation/state/资料/可加公平与副本前缀目标的候选反例分层--资料.md",
+        "sha256": "f871cd1cc5160e0753f9913b1d02991cf081529ff9dd87dddd9f071cba4cfccc",
+        "section": "三人copies SD-EF1：独立的前缀问题"
+      },
+      "evidence": [
+        {
+          "path": "archives/fair-allocation/state/问题/四人层流约束有序EF1与副本SD-EF1--问题.md",
+          "sha256": "b9002a70648f38943081da442c014b72786d6a4c75fcac85f00a2181ff98a9a5",
+          "section": "任意人数goods-with-copies"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/跨域工具迁移与独立反方候选地图--资料.md",
+          "sha256": "3aaaf4c1c0d03554c61587992fa14290b31e3a7931bd1e949e4b10ef764a8764",
+          "section": "CB02：copies SD-EF1 的前缀系统和有限范围"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/退役跨域工具迁移候选注册表与处置边界--资料.md",
+          "sha256": "350c9765d07baebacc2bf870f039e9cef11a9afbb473e49151bed434927d534a"
+        }
+      ],
+      "sources": [
+        "archives/fair-allocation/state/资料/可加公平与副本前缀目标的候选反例分层--资料.md",
+        "CB02",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/CLAIMS.md",
+        "archives/weighted-congestion/state/资料/跨域工具迁移与独立反方候选地图--资料.md",
+        "archives/weighted-congestion/state/资料/退役跨域工具迁移候选注册表与处置边界--资料.md"
+      ]
     }
   ],
   "materials": [
@@ -1833,14 +1878,15 @@
     {
       "path": "archives/fair-allocation/state/资料/可加公平与副本前缀目标的候选反例分层--资料.md",
       "sha256": "f871cd1cc5160e0753f9913b1d02991cf081529ff9dd87dddd9f071cba4cfccc",
-      "disposition": "needs-decision",
+      "disposition": "objects",
       "object_ids": [
         "SEL-CHORES-TRIVALUED-AUDIT-v1",
         "SEL-FAIR-FPO-PROBE-v1",
         "SEL-PB-EFX-MONOTONE-COMPLETION-OBSTRUCTION-v1",
-        "M-16fa0689a0bb44c087d58a8f94933c21"
+        "M-16fa0689a0bb44c087d58a8f94933c21",
+        "TS-COPIES-3-SDEF1-v1"
       ],
-      "reason": "已按实际数学部分核对本批归属；待0118既有主owner精确接收 FG01,FG02：ordered laminar与copies前缀合同；三值chores、fPO、单调补全及K8顺序独裁另归本批各自对象，不互推。 未复制主记录；详receipt内逐项路由。"
+      "reason": "本页已分别定位四条可加固定反例／方法障碍与三人copies独立开放目标；三人任意类型数TS-COPIES-3-SDEF1-v1用本页精确既有ID补漏登记，与一般人数FG02分立。K8/K12的FG01来源仍待0118主owner精确接证；不能把两key与一般四人laminar主目标或未审约化当等价。"
     },
     {
       "path": "archives/fair-allocation/state/审查/退役公平商品有限玩具结果--审查.md",
