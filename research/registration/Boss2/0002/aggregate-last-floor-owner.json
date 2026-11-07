@@ -1,0 +1,63 @@
+{
+  "object_id": "CA-AGGREGATE-LAST-FLOOR-NO",
+  "version": 1,
+  "title": "共同目录聚合末位保底失败：每个 n≥3 的完整整数反族",
+  "kind": "counterexample",
+  "truth_status": "proved",
+  "model": "有限共同目录与单位客户的顺序选题，终局各客户在覆盖者间均分；完整纯SPE包括全部有序历史，允许重复动作与弱平局。",
+  "statement": "令 θ_n=min_{B∈𝒮^{n−1}} max_{A∈𝒮} Σ_{x∈A}(1+h_B(x))⁻¹。每个整数 n≥3 均有 2n 个不同主题的合法有限整数单位客户输入和完整纯SPE，使 W=nθ_n−1，且 2W>OPT_n；另有 6 主题 36 客户的独立三人有限实例，完整SPE给 W=34、θ_3=12、OPT_3=36。故一般聚合桥 W≥nθ_n 为假。",
+  "quantifiers": "对每个整数 n≥3，存在有限合法输入及至少一份完整纯SPE；θ_n 对所有长度 n−1 的目录纯行动背景取最小，包括重复背景，再取对手单次最佳回复。三人36客户为同一否定桥的额外固定实例，其赤字为2。",
+  "assumptions": [
+    "客户兴趣类型由主题子集给定，每个整数重数展开为不同单位客户。",
+    "有限共同目录，一人一动作；策略完整地定义于在轨与离轨有序前缀。"
+  ],
+  "scope": "精确反驳最坏纯背景末位值的聚合，未反驳静态混合安全值 v_n 的聚合或半覆盖；36客户实例的 v_3=10，不是逐人混合安全值反例。",
+  "objections": "正调和编译与重复背景拆分承担所有 n 和全部历史；带符号有限回归只核辅助层，不充当合法实例。36客户正文保留独立小证书而不和一般构造的单位赤字混算。",
+  "body": {
+    "path": "archives/customer-attraction/state/反例/三人及以上聚合末位保底--反例.md",
+    "sha256": "d316702ecc98a5976769d1d2e0094341474e0c4655deaac825bc208ae81d36e7"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/三人聚合末位保底--反例.md",
+      "sha256": "f2ff6b486d46f5e05d9acb2497ec1114ac8ab4698460fb46656d320e640fe4c0"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/子集调和势的Möbius反演--定理.md",
+      "sha256": "9c7e58e4642077607ce2b49c67e7598c97b47b4cdb1b43a34cf335dd2aec5629"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/无重复辅助博弈的完整历史编译--定理.md",
+      "sha256": "e6e06a43973f7c37673b498074475fdf8aa37338d448aff53b2bf9b2e7fa0dd4"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/静态安全值与聚合保底的精确核验--计算.md",
+      "sha256": "9ca3c8ce9e23da06f04168123bbbef57e70998a16a11b22f90c79c4c07da35f9",
+      "section": "两条互不导入的36客户重放"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/静态安全值与聚合保底的精确核验--计算.md",
+      "sha256": "9ca3c8ce9e23da06f04168123bbbef57e70998a16a11b22f90c79c4c07da35f9",
+      "section": "任意人数构造的有限辅助回归"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/aggregate-security/original/examples/customer_attraction/aggregate_theta_failure.json",
+      "sha256": "be0e1a54d3a7ddfeba327c03ce1975932e8fd1018926147b9c555fe6af180aaf"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/aggregate-security/original/evidence/certificates/customer_attraction/aggregate_theta_failure.json",
+      "sha256": "cf08edab0813de8eccee8d5466d15b40bd42c980da9b0b68c925f4ae80991010"
+    }
+  ],
+  "sources": [
+    "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/aggregate_theta_counterexample.md",
+    "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/customer_attraction/aggregate_theta_counterexample.md",
+    "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/mobius_compiler.md",
+    "source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/customer_attraction/aggregate_theta_failure.json",
+    "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/customer_attraction/aggregate_theta_failure.json"
+  ]
+}
