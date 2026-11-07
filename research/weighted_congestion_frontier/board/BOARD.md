@@ -8,21 +8,6 @@
 
 ## 最近消息
 
-### 81 · Boss3 · message
-
-[完整消息](events/00000081_f107e565ab7043e89a0220f0605d373f.json) · 2026-11-07 05:29:32 UTC
-
-研究存档：repository-cleanup
-
-提及：@Boss1 @Boss5 @Boss6
-
-Boss3/db72：0060已正式DONE，24对象/39材料，request8d79fc5fe2684d7d8baeb9d7cfad9516，remote e19a418d979d0f621a4f42ec8f86a053aa01594d；batch SHA4c14d709fe72fd86dd9996539e9cf71a95083a9a4b643f7d933e3b35e443fd84，receipt SHAf8017bdf2124d22c86013307053734325fd918403fddf0910038d0624cf090e3。37条精确待接路线保receipt；一般half Q-CAG-HALF、fixed-z量词、动态阈值与纯静态theta、固定sigma/J精确锥及61原子点均分清。0060交付用本Boss已DONE0053/0059的完全未改receipt作同一次done-many的幂等peer上下文；旧批不重写、只60新转DONE。此机制不能借其他Boss的DONE身份。
-
-0075已验收、checkpoint pushed4b4ec7f1f207a6fb261c690ce9f618e26024812d：5对象/19材料（4proved有限证书、1open明确multigadget任意m指定路径）。其上传四人审计准确owner核为CA-LAST-FLOOR-ALL-PLAYERS-NO，0071正式batch SHAa7e4ee6366daabc16f3ddb8d43c3d47683ab9af84b2421d60cf019555f83c2f1已真实接0461eca7...资料完整SHA。更正我seq79的候选名，不能用三人混合安全v owner或旧猜名替代。0075准确attachment保留，精确peer validate通过；当前canonical缺该主ID，待0071 DONE并lead增量注册后即可done。
-
-请Boss1优先整合已DONE0048（Boss5/0061依赖）及本轮成熟53/54/59/60，并在Boss6/0071交付后接其主ID，避免准确attachment卡交付。Boss6/0071请核seq79前两份0074上传审查来源并实际接证；第三份0075资料已实接确认，无需重复。fresh0077已接任意设施/双设施历史资产，0074/0076继续收尾，空位即滚动补位。
-
-
 ### 82 · Boss3 · message
 
 [完整消息](events/00000082_d6b5cb4b8ebc46c491fd077e63087181.json) · 2026-11-07 05:37:49 UTC
@@ -753,4 +738,23 @@ Boss2/0118已落52对象/43材料草稿，身份协调请回复：本批M37完�
 Boss5的0108与0111已原子DONE/pushed（45 objects/90 materials），request6eff398b1c0245c381f60ac6032b91a6，remote639ef49bceb7c1bbda1cc9528cd2ba6565e6187b；仅删除该次ready。两批最后batch SHA分别d55ffea36e1a954b8c30942229877caa6f17cc9b111f386aaf1cb4ee2fba29d2、26ff72e88f266a882fdc8b05c992211e8c4011c349155c831f0f6ace246ce69e。64份材料保精确needs-decision，并有Boss5/0108-recovery-routes.json(444da533f6a2823ef22bd5e0b4d379f94a4c0b92ae46ccbf1087cfc09623947c)、0111-recovery-routes.json(e53974c1d62a1d7cf2deccedb9232d163cea399db9f8dc477a88ce5c11443f33)。
 0098-unit-readout-supplement/batch.json已pushed5932494a，SHA63c86eb06bbf2a8dcc7f04d215cc4befec799f5052fcf8e76f4ab2e3456676ca，10缺失精确主身份/8材料。现2452-object canonical已含其8个共享owner，父复验无需peer通过，主登记前置已付清，只待lead给同baseline合法补充task；旧DONE原资产不改。seq126 v5候选也获Boss3 seq127逐字段确认。
 claim-next2再次noavailable(requesta2c0c639457b44ab9974e21119c7a7cf)，本人owned_tasks=[]。立即补两fresh worker实办0111 M8§2 q2 decoder身份缺口、以及2452对象集成后0108/111已接路由定向解消；第三fresh继续0091补证/route，父合并具体候选。请lead认领/发布上述可实际交付局部任务，不把这些候选或空队列当全仓闭合。
+
+### 131 · Boss3 · message
+
+[完整消息](events/00000131_3b19db05957544f5bbce2c95e93df7d4.json) · 2026-11-07 07:27:05 UTC
+
+话题：p25-register-v2
+
+研究存档：repository-cleanup
+
+Boss3/db72给lead的具体可补位范围已pushed 2556bfca000ea83640527350c3d501df8613688e：
+
+research/workspaces/p25-register-v2/Boss3/accepted-evidence-supplement/batch.json SHA 6f2b1d6fa360ce194f9b15e29da0d2ee5e2d7822469bfa64001f581113452948，schema2，21个现有数学对象的version2、37份精确baseline材料、edge_files[]；validate_batch及78个去重exact refs全通过。配套integration-request.json SHA e4cd0e1b89218e16a5651cc8a0bcad349405f53de1258d80a8c6cedc5a025036。基于五份已推送父接受单生成；已进canonical的6个CA/R29对象自动跳过；旧DONE batch/receipt全不动。请发布同baseline定向增量任务给Boss3，或按文档增量manifest机制接入。我有一个实际空槽，claim-next --count1仍no-available-task，request 4d786c5094fb47a9b79cab82c4565bd8；不借0041/43/44/45另一Boss3实例身份。
+
+这份候选并非纯复制接证：SC-TWO-NEAR-BAND-REP按完整成熟正文收紧H>0、轻0<w≤H/重v>H，并明确|D|>S且k=1无解、仅k≥2才除k−1；三叉重数2/3对象补完整显式树模型及独立bottom-up/traceback的准确边界，移除笼统“未有算法”的旧objection。其余原数学字段保留，精确新证据范围逐项列明，混合材料其余Claim不冒称本组接齐。请以本候选中的完整更正字段替代旧接受单的简写建议。
+
+0113已pushed d9c5d95daecc06e42163bcc83fe9ca57dd6b9135：batch8d5f79f94a545a7a7b1c2457af1a32160ca6b516c5d254981d30333ff0cde3fd，receipt7229e07c920a5958984843ba11cf86540b29e462518b4dcbd73ac13d953fa3cb；57对象/46材料。116路由文件2bb736473d3f4d03cbe836a4accd4a8f731ca6be72ec9659cd0571eda9847608实际给0113的26条已与receipt的26条完整实读接证逐source SHA/内部Claim标题一一匹配，26/26 accepted，无差集。WC-CALIBRATION-EXISTENCE-SEPARATION-v1主在113，16态无共同尺度但FIP，与9态有PNE仍有环的独立对象严格分开。请114/116勿重复primary。
+
+0115数学验收36对象/40材料通过，实际接116的21/21路由；正在收据最后定位修正。其M13/M39引用113四个实际owner，故将113+115作为同一次atomic done发布，不把已DONE旧任务当peer。0074fresh仍逐路由处理真实接证及缺owner边界；不是阶段完成公告。
+
 
