@@ -489,6 +489,28 @@ def _registration_order(names, links):
     return result, hubs
 
 
+def _scheduled_registration_materials(records, registry, include_completed):
+    active = {'available', 'claimed', 'blocked', 'handoff'}
+    incorporated = {batch['batch_id']: batch['record'] for batch in registry.get('registration_batches', [])}
+    superseded = {task_id for row in records if row.get('state') == 'done'
+                  for task_id in row['definition'].get('supersedes', [])}
+    scheduled = set()
+    for row in records:
+        definition = row['definition']
+        if definition.get('stage') != 'registration':
+            continue
+        state = row.get('state')
+        if state == 'done' and include_completed:
+            task_id = definition['task_id']
+            batch = row.get('receipt', {}).get('batch_file')
+            if task_id in superseded or (batch is not None and incorporated.get(task_id) == batch):
+                continue
+        elif state not in active:
+            continue
+        scheduled.update((ref['path'], ref['sha256']) for ref in definition['materials'])
+    return scheduled
+
+
 def _published_registration_materials(root, include_completed=True):
     """Read only a synced published queue, never a local unpublished task JSON."""
     import coordination
@@ -498,26 +520,24 @@ def _published_registration_materials(root, include_completed=True):
         return set(), dict(note, registry_source='local-unpublished-workspace'), None
     run = coordination.config(root, 'wcg.workflowRun') or 'p25-register-v2'
     config = _safe_path(root, 'research/operations/' + runtime.identity(run) + '/run.json')
-    states = {'available', 'claimed', 'blocked', 'handoff'} | ({'done'} if include_completed else set())
+    queue_note = ('Resume active work and integrate uncollected receipts. '
+                  'Integrated batches may leave materials eligible for targeted follow-up.')
     if (coordination.config(root, 'wcg.workflowRun') and config.is_file()
             and json.loads(config.read_text()).get('phase') == 'registration'):
         import map_tasks
         with map_tasks.latest(root, 'registration') as (directory, ctx):
             records = map_tasks.listing(directory, ctx=ctx)
             tip = map_tasks.board.git(directory, 'rev-parse', 'HEAD').stdout.decode().strip()
-            already = {(ref['path'], ref['sha256']) for row in records
-                       if row.get('state') in states and row.get('definition', {}).get('stage') == 'registration'
-                       for ref in row['definition'].get('materials', [])}
+            data = {}
             if runtime.REGISTRY in map_tasks._tree(directory):
                 map_tasks._ensure(directory, runtime.REGISTRY)
                 data, _ = runtime.load(directory, verify=False)
-                published_materials = {row['path']: row for row in data['materials']}
-            else:
-                published_materials = {}
+            already = _scheduled_registration_materials(records, data, include_completed)
+            published_materials = {row['path']: row for row in data.get('materials', [])}
         return already, {'source': 'latest-published-workflow-snapshot', 'tip': tip, 'workflow_run': run,
                          'registry_source': 'latest-published-workflow-snapshot',
                          'skipped_materials': 0,
-                         'note': 'Same-version work already in the published queue is resumed/integrated; withdrawn tasks can be reassigned.'}, published_materials
+                         'note': queue_note}, published_materials
     if not config.is_file() or json.loads(config.read_text()).get('phase') != 'registration':
         run = 'p25-register-v2'
     branch = coordination.config(root, 'wcg.branch') or subprocess.run(
@@ -544,36 +564,33 @@ def _published_registration_materials(root, include_completed=True):
                          input=''.join(oid + '\n' for _, oid in entries).encode('ascii'))
     if raw.returncode:
         raise ValueError('Cannot read published registration task bytes; sync before drafting')
-    already, offset = set(), 0
+    records, offset = [], 0
     for name, _ in entries:
         end = raw.stdout.find(b'\n', offset)
         header = raw.stdout[offset:end].split()
         if end < 0 or len(header) != 3 or header[1] != b'blob':
             raise ValueError('Cannot read published registration task: ' + name)
         size = int(header[2])
-        record = json.loads(raw.stdout[end + 1:end + 1 + size])
+        records.append(json.loads(raw.stdout[end + 1:end + 1 + size]))
         offset = end + 2 + size
-        definition = record.get('definition', {})
-        if record.get('state') in states and definition.get('stage') == 'registration':
-            already.update((ref['path'], ref['sha256']) for ref in definition.get('materials', []))
     if offset != len(raw.stdout):
         raise ValueError('Invalid published registration task response')
     registry_tree = subprocess.run(['git', 'ls-tree', '--name-only', commit, '--', runtime.REGISTRY],
                                    cwd=root, capture_output=True)
     if registry_tree.returncode:
         raise ValueError('Cannot inspect the published registration table; sync before drafting')
+    data = {}
     if registry_tree.stdout.strip():
         canonical = subprocess.run(['git', 'show', commit + ':' + runtime.REGISTRY], cwd=root, capture_output=True)
         if canonical.returncode:
             raise ValueError('Cannot read the published registration table; sync before drafting')
         data, _ = runtime.load(root, provided=json.loads(canonical.stdout), verify=False)
-        published_materials = {row['path']: row for row in data['materials']}
-    else:
-        published_materials = {}
+    already = _scheduled_registration_materials(records, data, include_completed)
+    published_materials = {row['path']: row for row in data.get('materials', [])}
     return already, {'source': tracking, 'tip': commit, 'workflow_run': run,
                      'registry_source': tracking,
                      'skipped_materials': 0,
-                     'note': 'Same-version materials already in published unfinished or completed tasks are resumed/integrated instead of scheduled again; withdrawn tasks may be reassigned.'}, published_materials
+                     'note': queue_note}, published_materials
 
 
 _CONTEXT_ENCODINGS = {}
