@@ -339,6 +339,126 @@
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-3d2531ded15f453daef73b30eef82940/audit/background_static_security_remainder.md",
         "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-3d2531ded15f453daef73b30eef82940/audit/background_static_security_remainder.md"
       ]
+    },
+    {
+      "object_id": "M-34064c40606c48978e4688e9e1628b37",
+      "version": 1,
+      "title": "三人两花瓣的聚合静态无悔与逐玩家CCE分离",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "共同目录静态客户吸引博弈。三个带位置的单位玩家，核心 C 为两单位客户，B 为与核心不交的四单位客户，P₁/P₂ 分别为 C 加一个不同私客。偏离只替换当前玩家的固定主题，其他玩家的终局行动冻结。",
+      "statement": "固定位置分布 μ=7/24·(C,B,B)+3/8·(C,C,B)+1/6·(P₁,B,B)+1/6·(P₂,B,B) 的每个固定主题聚合偏离损失非负：A_B=A_P₁=A_P₂=0，A_C=17/6；但玩家2改B的偏离损失为−3/8，故 μ 非CCE。对玩家位置均匀置换后，各玩家对每主题的损失为 A_T/3，给同福利 19/3 的CCE。",
+      "quantifiers": "存在此明确静态目录及有序混合，对全部四个合法固定查询聚合约束成立而对至少一对（玩家、查询）个体约束失败。置换后的全部玩家及固定查询均满足约束。",
+      "assumptions": [
+        "每个客户在覆盖它的提供者间均分。",
+        "静态CCE比较固定替代主题。",
+        "只置换花瓣标签并不交换玩家位置。"
+      ],
+      "scope": "固定位置分布的确切反例及其修复；一般占用计数LP和多花瓣族上界沿用已有对象。与顺序SPE偏离无关。",
+      "objections": "原报告 aggregate_slack 和 PASS 只核聚合量。原三状态权重的 B 比较及负的逐人项已定位于第3节；保留冻结原报告及程序。后续一般弱CCE支付仍有独立义务。",
+      "body": {
+        "path": "archives/customer-attraction/state/审查/R-171弱CCE占用证书玩家对称化勘误--审查.md",
+        "sha256": "b0f8fbbe59907a8d8179ff597a5a90700ad8a5a5ff01b4b8478f656b51ecd090",
+        "section": "3. 三人两花瓣的失败与修复"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/审查/R-171弱CCE占用证书玩家对称化勘误--审查.md",
+          "sha256": "b0f8fbbe59907a8d8179ff597a5a90700ad8a5a5ff01b4b8478f656b51ecd090",
+          "section": "1. 量词修正"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/R-171弱CCE占用证书玩家对称化勘误--审查.md",
+          "sha256": "b0f8fbbe59907a8d8179ff597a5a90700ad8a5a5ff01b4b8478f656b51ecd090",
+          "section": "2. 冻结范围与精确证据"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-171-independent-20261031/original/weak_cce_boss2_audit.json",
+          "sha256": "573b9a60f68308d65b31645d91c563d19698075770d7ccd95bc7d4c95e3adad9"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-171-independent-20261031/original/audit_weak_cce_boss2.py",
+          "sha256": "b4ca4d0a38816d7a1eda83645aa85c6d91adc8125f910c5252711120b2ec41fe"
+        }
+      ],
+      "sources": [
+        "customer-attraction/r171-weak-cce-occupancy-player-symmetrization-review",
+        "clean:e659ae7cc2fe2ecebd70",
+        "clean:6678221a19976d2929df"
+      ]
+    },
+    {
+      "object_id": "M-f0b8daf961564b3bb7399f1380170a07",
+      "version": 1,
+      "title": "两单例三人末位最佳回复的双祖先封顶不可合并",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "三个提供者顺序选题的原单位客户吸引模型，目录为不交单位单例 A、B，前缀为 (A,B)，末位允许全部弱最佳回复。两祖先支付按其 A、B 动作所得真实客户均分。",
+      "statement": "在末位子局 (A,B)，选 A、选 B 都是最佳回复，给祖先 A、B 的收益向量分别 (1/2,1)、(1,1/2)。每个祖先的 1/2 上限分别可由某最佳回复实现，且无同一最佳回复同时实现两个上限。",
+      "quantifiers": "存在指定合法前缀；对每个祖先分别存在满足其上限的最优回复，但不存在满足两者的共同最优回复。",
+      "assumptions": [
+        "三人、两单例、单位客户、终局均分。",
+        "末位为纯动作；在前缀固定后两题同为最佳回复。"
+      ],
+      "scope": "同一真实末位子局共同可行性的反例。此目录的全历史与计数Markov纯SPE终局计数集合恰好仍相同；另一一般匿名博弈的终局分离独立登记。",
+      "objections": "原审查§3并列两种模型；两列封顶向量来自单例客户吸引博弈，不属于一般匿名博弈的 payoff table。每策略14次比较覆盖全树含自身，不是仅根节点。",
+      "body": {
+        "path": "archives/customer-attraction/state/审查/R28空稀释、加入冲突与UTP有限审计--审查.md",
+        "sha256": "afdf71a7e4b8c5057268cbf1422b613ce35e42e0ca05be96045fe0cff09766cc",
+        "section": "3. 加入冲突：精确的表示障碍，但不是客户吸引反例"
+      },
+      "evidence": [
+        {
+          "path": "research/workspaces/p25-register-v2/Boss4/0073/verify_join_conflict.py",
+          "sha256": "18db12202a9635af9547e57d1cef208e86a0af86ddc10c6bba04936f5e1b0360"
+        },
+        {
+          "path": "research/workspaces/p25-register-v2/Boss4/0073/join_conflict_verification.json",
+          "sha256": "a635199eae9f2a677f1964c39f0b2d8dea4c247ac92171a620f6da2d78f5ea72"
+        }
+      ],
+      "sources": [
+        "customer-attraction/r28-certificate-dynamic-audit",
+        "clean:be13357485a38d6a56f5",
+        "clean:a62b7a378ecbc3ea24f7"
+      ]
+    },
+    {
+      "object_id": "M-0099728e245c474cb859d7dba9318bff",
+      "version": 1,
+      "title": "三人二行动一般匿名博弈的全历史与计数Markov终局分离",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "一般匿名顺序博弈，三位玩家依次取 A 或 B。终局计数 (3,0),(2,1),(1,2),(0,3) 分别给 A、B 角色收益 (2,0),(3,1),(1,3),(0,3)，零计数动作的支付项不被调用。",
+      "statement": "指定收益表有7份完整纯SPE，终局计数为四种全部可能计数；强制同计数的有序前缀 AB 和 BA 选相同末位动作后，只余3份纯SPE，终局仅 (3,0),(0,3)。中间计数 (2,1),(1,2) 因约束计数Markov而丢失。",
+      "quantifiers": "存在此明确一般匿名收益表。枚举定义在全部7个决策历史上的 2⁷ 个纯策略，以每策略7节点×2动作的弱最佳回复条件筛全历史纯SPE，再筛计数Markov；失败候选在首个不满足处退出。",
+      "assumptions": [
+        "只限给定有限匿名收益表。",
+        "每玩家只行动一次，完整树逐节点弱最佳回复定义纯SPE。",
+        "计数Markov约束等价于规定动作 AB=BA。"
+      ],
+      "scope": "一般匿名博弈的精确表示障碍，区别于同页两单例客户吸引例。该收益表没有主张可由客户均分实现。",
+      "objections": "输出字段 root_comparisons_per_strategy 表示7节点×2动作的全树比较上限。原代码对两种模型分别枚举；保完整收益表、枚举程序及冻结结果。",
+      "body": {
+        "path": "archives/customer-attraction/state/审查/R28空稀释、加入冲突与UTP有限审计--审查.md",
+        "sha256": "afdf71a7e4b8c5057268cbf1422b613ce35e42e0ca05be96045fe0cff09766cc",
+        "section": "3. 加入冲突：精确的表示障碍，但不是客户吸引反例"
+      },
+      "evidence": [
+        {
+          "path": "research/workspaces/p25-register-v2/Boss4/0073/verify_join_conflict.py",
+          "sha256": "18db12202a9635af9547e57d1cef208e86a0af86ddc10c6bba04936f5e1b0360"
+        },
+        {
+          "path": "research/workspaces/p25-register-v2/Boss4/0073/join_conflict_verification.json",
+          "sha256": "a635199eae9f2a677f1964c39f0b2d8dea4c247ac92171a620f6da2d78f5ea72"
+        }
+      ],
+      "sources": [
+        "customer-attraction/r28-certificate-dynamic-audit",
+        "clean:be13357485a38d6a56f5",
+        "clean:a62b7a378ecbc3ea24f7"
+      ]
     }
   ],
   "materials": [
@@ -373,9 +493,11 @@
     {
       "path": "archives/customer-attraction/state/审查/R-171弱CCE占用证书玩家对称化勘误--审查.md",
       "sha256": "b0f8fbbe59907a8d8179ff597a5a90700ad8a5a5ff01b4b8478f656b51ecd090",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "聚合A_T≥0不蕴含逐玩家CCE；m3K2原分布明确失败，玩家置换后Δ_i=A_T/m且福利不变。须把勘误真正接三状态族及占用LP主记录。"
+      "disposition": "objects",
+      "object_ids": [
+        "M-34064c40606c48978e4688e9e1628b37"
+      ],
+      "reason": "第3节的精确固定位置分布否定聚合即逐人的推断；一般三状态族上界及占用LP为外批原有身份，待接入本独立勘误证据。"
     },
     {
       "path": "archives/customer-attraction/state/审查/R-171接续工作区主张边界与开放义务--审查.md",
@@ -398,9 +520,10 @@
       "sha256": "acfdd01ee14201f2541ebbdc87ad8eea6bc059706b9dc7a73782f11d50738083",
       "disposition": "attachment",
       "object_ids": [
-        "customer-attraction/multiple-blockade-target-terminal-last-player-obstruction"
+        "customer-attraction/multiple-blockade-target-terminal-last-player-obstruction",
+        "HARMONIC-POTENTIAL-COVERAGE-NO-v1"
       ],
-      "reason": "多围堵末位解析障碍由0049实接；同页十一客户调和势和无拥挤族仍有分别待接证路线，不能据一个owner宣称全页数学归齐。"
+      "reason": "十一客户调和势段已由现行canonical主记录明确接入；多围堵族任意排列的末位障碍归0049独立主记录。无拥挤族有限端点仍按收据路线待主owner实接。"
     },
     {
       "path": "archives/customer-attraction/state/审查/R-2fc独立机制四源交叉核验--审查.md",
@@ -574,7 +697,7 @@
       "sha256": "457884e301e08d9dde0cfd2458cc69a7e2ded54fa21b55f46287d3fef2b85491",
       "disposition": "needs-decision",
       "object_ids": [],
-      "reason": "浮点锥提案→有理恢复→全有序证书的面行走方法及n5p7三十步OPT/u=9等号；这是方法/有限生成，不把每个保存点立节点。"
+      "reason": "现行原程序实际以指定已用主题收益归一、在可实现根终局优先选最低个人收益的端点。n5/p7 精确取等是经典大主题加四单例的带标签重放；固定锥方法归同类主记录，尚待正向接证。"
     },
     {
       "path": "archives/customer-attraction/state/审查/R18租金修正搜索与动态边界--审查.md",
@@ -602,7 +725,7 @@
       "sha256": "0e2da5cc10a1d99d8047f437c32ea60f8dad95458b5852fc8b3e4f8ec0c6d0ce",
       "disposition": "needs-decision",
       "object_ids": [],
-      "reason": "6客户两分量产品的81边际/6coupling/33价格及完整两人W5/OPT6有限合同；相对背景探针未运行。需产品主owner判断同一输入职责，未称一般乘积定理。"
+      "reason": "找到0007既有P1与P2/P3精确主身份。取回冻结原程序和JSON，作为第2节有限校准待原作者接证；第3节相对背景入口依赖未交，仍无搜索结论。"
     },
     {
       "path": "archives/customer-attraction/state/审查/R275命名静态共同脚本--审查.md",
@@ -649,9 +772,12 @@
     {
       "path": "archives/customer-attraction/state/审查/R28空稀释、加入冲突与UTP有限审计--审查.md",
       "sha256": "afdf71a7e4b8c5057268cbf1422b613ce35e42e0ca05be96045fe0cff09766cc",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "旧34客户空稀释、generic非CAG join冲突、7客户回复cycle、三纯θ预选审计分立；join不是客户吸引反例，有限探针不外推。需各主owner比较接完整小例证据。"
+      "disposition": "objects",
+      "object_ids": [
+        "M-f0b8daf961564b3bb7399f1380170a07",
+        "M-0099728e245c474cb859d7dba9318bff"
+      ],
+      "reason": "第3节两个精确例分别保留：原两单例末位双封顶，与一般匿名收益表计数Markov丢终局。第1、2、4、5节的旧输入与有限探针仍有各自接证路线，不能由两新记录代收。"
     },
     {
       "path": "archives/customer-attraction/state/审查/R29三窗菜单与54客户观察者PNE辅助桥--审查.md",
