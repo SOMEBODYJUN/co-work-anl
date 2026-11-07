@@ -1,0 +1,62 @@
+{
+  "old_primary": {
+    "path": "archives/unrelated-machines/state/障碍/归一化XOS菜单阈值规模下界--障碍.md",
+    "sha256": "4c44b7b77d84c6f42ce7bd9444df5edd881b6e94317c58f1a04e5de765f98628"
+  },
+  "old_task": "0101",
+  "old_material_index": 6,
+  "erroneous_ranges": [
+    {
+      "line_range": [
+        71,
+        71
+      ],
+      "section": "1. 支撑包含与 (K)-family 等价",
+      "problem": "r=d+1 uniform反向不保tiny；不等式d/r≤d/ceil(d/η)方向错误。",
+      "counterexample": "η=1/2,t=4,d=2,r=3，3-support均匀clause在其中2项为2/3>1/2。"
+    },
+    {
+      "line_range": [
+        89,
+        89
+      ],
+      "section": "2. 计数下界",
+      "problem": "ηt整数不意味着r=t；该锐端应写k=t。"
+    }
+  ],
+  "correct_independent_complete_proof": {
+    "ref": {
+      "path": "archives/unrelated-machines/state/审查/XOS阈值规模k覆盖等价与r弱界勘误--审查.md",
+      "sha256": "69bdbb2a9c3a1db2b1cdad08ea2e23862421662357a9357ebbae38f1ec4234dd"
+    },
+    "sections": [
+      {
+        "path": "archives/unrelated-machines/state/审查/XOS阈值规模k覆盖等价与r弱界勘误--审查.md",
+        "sha256": "69bdbb2a9c3a1db2b1cdad08ea2e23862421662357a9357ebbae38f1ec4234dd",
+        "section": "对象、最小family方向与全部参数"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/XOS阈值规模k覆盖等价与r弱界勘误--审查.md",
+        "sha256": "69bdbb2a9c3a1db2b1cdad08ea2e23862421662357a9357ebbae38f1ec4234dd",
+        "section": "Support计数、正确反向与旧r错误"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/XOS阈值规模k覆盖等价与r弱界勘误--审查.md",
+        "sha256": "69bdbb2a9c3a1db2b1cdad08ea2e23862421662357a9357ebbae38f1ec4234dd",
+        "section": "两个真锐端点与固定η规模"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/XOS阈值规模k覆盖等价与r弱界勘误--审查.md",
+        "sha256": "69bdbb2a9c3a1db2b1cdad08ea2e23862421662357a9357ebbae38f1ec4234dd",
+        "section": "版本与真实审读范围"
+      }
+    ],
+    "proof_summary": "M38完整自足正确证明：support h≤d违tiny；top-d和≥d/h≤η迫h≥ceil(d/η)；unit T达到有限max⇒clause support⊂T。每support取k-set、其上uniform1/k，unit保留且任意small值≤d/k≤η；反向任何k-cover均可造菜单，从而精确Θ。旧M6 line71错误写r-family反向并用d/r≤d/ceil(d/η)；line89以r=t描述ηt整数亦错（正确k=t）。M6一般弱r计数命题仍有效，局部错证明不可把整个阈值障碍标unassessed；v2精确结论由M38全证。"
+  },
+  "valid_old_parts_to_preserve": [
+    "line34 r=d+1定义及line69 support>d导出弱r-cover方向",
+    "K≥C(2t,t)/C(2t−r,t−r)≥2^r弱界；旧来源历史独立性不倒填"
+  ],
+  "identity_comparison": "同一宇宙、norm1非负有限显式clauses和全部unit/tiny量词。v1弱r下界仍proved；v2精确最小k-cover由M38自足全证proved。错的是M6局部反向及r/k标记，不能笼统把整障碍记unassessed。",
+  "requested_action": "0101/lead将v2 body指M38；M6保正确弱界并精确标勘误，不由worker改冻结正文。"
+}
