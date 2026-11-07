@@ -1,0 +1,65 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline-5cd4b9018.json",
+    "sha256": "af99fb773928f3fc6bcd577ade37fbb07e8f84befbb2304158b99894ab1e56a3"
+  },
+  "objects": [
+    {
+      "object_id": "customer-attraction/mixed-private-diagnostic-rational-recovery-and-fixed42-original-audit",
+      "version": 2,
+      "title": "固定42有理行在4059早覆盖私有列上的严格并集预算",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "CAG共同目录完整历史模型：有限单位客户；有限非空带标签共同目录，覆盖映射可不单射；n名单位提供者按固定顺序各选一次，观察全部有序历史；终局客户在覆盖者间均分。完整纯SPE在全部合法有序历史给行动，含空覆盖、重复选择、同覆盖异标签、零客户和历史依赖弱平局。真实偏离后继必须取同一σ，不把计数相同历史合并。根W=Σu_i，有背景剩余利润不当作新覆盖。",
+      "statement": "七极大六人，实际末位归属0，固定O6=union B0..B5，所有被选私有j=1..5的客户在实际前五位至少出现。将M0..3乘(33/98,17/26,38/55,57/82)，L1..5乘5/51、L6乘9/44，T01..05乘5/47，合法rootR0乘29/92，其余固定42行权0。全部4059兼容列的目标残差W−|O6|/2最小为δ=54012438388289/984516162149520>0，首个最小arg为位掩码(I,E,J)=(6,15,15)，即I={1,2}、E=J={0,1,2,3}（不声明最小列唯一性），负列数0。故真实实例W−|O6|/2≥δU；X6最小时才解释为OPT6。",
+      "quantifiers": "满足所述域的每份真实完整σ；有限系数恒等式覆盖所有4059列，非浮点发现的最优性断言。",
+      "assumptions": [
+        "固定目标是漏6并集",
+        "M/L/T/root的全部真实前提",
+        "私有早覆盖域",
+        "若称OPT则需X6最小"
+      ],
+      "scope": "固定乘子精确证明，原固定核验器/首次stdout证据完整保留；不以程序标题立节点。",
+      "objections": "1655B verify_candidate先浮点再有理重构，1474B固定核验器只有长度assert；实际非负性必须由冻结stdout的负列数/余项判断。本轮未重跑，不认证更优乘子。 0025定向勘误：原record把整数mask6误写成集合{6}；实际程序I>>j与E>>t的零起点位定义给6=2^1+2^2、15=2^0+2^1+2^2+2^3。源码只在严格更小时更新arg，冻结stdout只给首个min，不枚举全部取最小列。此次全文核主文、1474B原码及75B输出，不运行代码；正delta、4059完整列域、42固定非负权及早覆盖/X6最小条件不变。",
+      "body": {
+        "path": "archives/customer-attraction/state/程序/混合私有域的诊断与四十二行原始有理核验--程序.md",
+        "sha256": "b0e04bc2a0dd9c39f8bbd72e680f4e472efc79f7ec4007852a509300247681eb"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/tools/evidence/reviewed-local-diagnostic-and-exact-verifiers-three-primary/source-root/intake/reviewed-local-20261029/raw/verify_simple.py",
+          "sha256": "9587f864d60242c28adb937b16ff8fb06658c9485bd75e1c3ea742945fc864a8"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/reviewed-local-diagnostic-and-exact-verifiers-three-primary/first-exact-run/stdout.txt",
+          "sha256": "0cba4e961da6b56da2e4c14f7c1f4b753bce376feae6e24e81d9d85e0bbf9139"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/混合私有域的诊断与四十二行原始有理核验--程序.md",
+          "sha256": "b0e04bc2a0dd9c39f8bbd72e680f4e472efc79f7ec4007852a509300247681eb",
+          "section": "首次实际回放及条件推论"
+        }
+      ],
+      "sources": [
+        "source:3821a7c7b30610dceea3e0affadfb75047877c9d:intake/reviewed-local-20261029/raw/diagnose_mixed.py",
+        "source:3821a7c7b30610dceea3e0affadfb75047877c9d:intake/reviewed-local-20261029/raw/verify_candidate.py",
+        "source:3821a7c7b30610dceea3e0affadfb75047877c9d:intake/reviewed-local-20261029/raw/verify_simple.py",
+        "archives/customer-attraction/state/程序/混合私有域的诊断与四十二行原始有理核验--程序.md"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/customer-attraction/state/程序/混合私有域的诊断与四十二行原始有理核验--程序.md",
+      "sha256": "b0e04bc2a0dd9c39f8bbd72e680f4e472efc79f7ec4007852a509300247681eb",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/mixed-private-diagnostic-rational-recovery-and-fixed42-original-audit",
+        "customer-attraction/seven-maxima-six-provider-early-private-coverage-conditional-half"
+      ],
+      "reason": "已完整连续实读本页精确陈述、条件、论证/原证据合同；数学成熟证明复用，本轮0数学搜索/枚举/LP/审计重放。 固定42有理核验有独立定量δ；浮点发现流程不认证最优性。 0025原作者已核固定42原码/冻结stdout，将主record误解mask6的表述修正为I={1,2}、E=J={0,1,2,3}及首个arg；正文不改，保全部原owner与证明条件。"
+    }
+  ],
+  "edge_files": []
+}
