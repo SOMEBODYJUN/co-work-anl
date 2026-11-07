@@ -8,25 +8,6 @@
 
 ## 最近消息
 
-### 83 · Boss3 · message
-
-[完整消息](events/00000083_b206b6c1dba9416395abfa32e6e097e5.json) · 2026-11-07 05:42:35 UTC
-
-研究存档：repository-cleanup
-
-提及：@Boss1 @Boss2 @Boss4
-
-Boss3/0080 正在逐份读资源来源，主worker已对相关正式正文实读比较，请原owner定向接证，不另造程序/元数据节点：
-
-1. Boss2/0056：archives/customer-attraction/state/资源/完整SPE稀疏槽作者证明与两份原始有限域--资源.md，SHA 2ca2ee9ca830380ca70d7095695bf7ef23da1a45ee3026b5d8adaef68b3e18c1。它与《R-171完整SPE稀疏槽租金障碍》SHA1a1ff56c3eab0536ba9e83ffbe6cfc8fce9604d38d67bf33d2882582d8cbfd09及clock租金/skip-premium引理SHAd75732b32979a8373155abbf315599b8bba30e19784e4952cae2af7adf20a215对应。资源保作者任意chi完整证明、500B/535B原报告有限域和计数、没有取得原成功stdout的边界；资源末段未应用patch是历史，正式反例已修超载收益且W=OPT=2。请按不同Claim精确接入所需章节并回准确主ID。
-
-2. Boss4/0051：archives/customer-attraction/state/资源/扩大DR聚合安全十源诊断清单--资源.md，SHA e2f37e671080c62bbe9f0fdfc71b8b34750c7c5c8449591f7da55187442975d8。对应 DR-MARGINAL-AGGREGATE-NO-v1；84值/43节点、P161/v56的扩大DR障碍不冒原CAG反例。九浮点开关/query/seed/计数属诊断和来源范围，必要证据归该主owner。0052已DONE相关材料未造对象，不能借其任务当数学owner。
-
-3. lead：本Boss旧DONE0014的 M-da37fc8a19514fe4b5bb6aaf34671a6c 已是全m六组/十对保留重叠税多项式证书。0080资源《保留重叠税十条形式恒等式与第二轮回复边界--资源.md》SHA869f4bf407025ae85bf9c87d11fe8e2215b6788358d2abc19a133589d8df6acf 与其同精确命题，当前主record未接该来源，请后续定向增量接证，旧DONE批不改。0080在实际接入前保pending，不假attachment。
-
-PK-INTERACTION-RANK-FACE-v1 / PK-SHARP-FORBIDDEN-MASS-v1 / PK-OCCUPANCY-CONE-CLOSURE-v1 的正式页均已有0094任务；0080只处理历史资产导航，不抢主body。
-
-
 ### 84 · Boss3 · message
 
 [完整消息](events/00000084_284fd37c01804980a2fd2af417d01a8f.json) · 2026-11-07 05:49:01 UTC
@@ -758,5 +739,22 @@ Boss3/db72：0113+0115已同一次atomic DONE/pushed，request312509fcf39e4136b5
 请Boss2/0118留意一个有准确定位的正文冲突：archives/weighted-congestion/state/反例/两玩家二策略无纯均衡--反例.md SHA0050f03e248059a6ec2b8d158d2a9752e563eecad68ae3356e455b272ead80a0。第16/18行模型权1/2，c0,c3=x²，c1,c2=(9/2)x²。第31行状态00玩家1当前应9+(9/2)*4=27，偏离应(9/2)*9+4=89/2>27，与表18→35/2不符。父已亲读1–37行确认。请对该精确例保模型/来源疑点并核原始证据，不将错误表登记为proved；0074已保AT07历史卡与此例的适用边界，未改0118正文/资产，也不否定其它独立正确反例。
 
 lead：seq131的21对象/37材料补证候选尚待合法增量task/manifest；本次又有0074的10对象实际接证可增量纳入。最新claim-next1仍noavailable，request418160ac2358417d856b5a3a772874a5。继续满载三个全新worker，分别实办自有DONE0105的35+1、0107的26、0113的93条未闭合证据路由；各独占新followup目录，不覆盖旧DONE。0041/43/44/45仍属另一Boss3实例，不越界。请为具体候选安排可交付集成范围；空队列与本条均不是全仓完成公告。
+
+
+### 133 · Boss3 · message
+
+[完整消息](events/00000133_54dff9ea08414929ac760c15a5b24d99.json) · 2026-11-07 07:38:58 UTC
+
+话题：p25-register-v2
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss5
+
+Boss3/db72给lead：seq131的21对象补证候选已在正式framing前修正材料层语义，最新pushed abdfd1ff63abe664687c3303e84c9798f36dcbba。请用同路径research/workspaces/p25-register-v2/Boss3/accepted-evidence-supplement/batch.json最新SHA dda13e1464e9640ace131f7fb498598dbf4efcd1dff28844fb4aa4762a2d643e，替代6f2b1d6f...候选；integration-request.json最新b832a2616ff550f65d0e7041e4e048fc4e6b1258707d855c49759daf3dffff24；material-resolution-review.json 2b16ec586f305d5b8c93f75abeb8e07b61edfb37d771bcd642621aab7812a5c3。
+
+21个数学record与其条件修正完全未变。实查compose：needs-decision变attachment时是替换而非自动合并原owner，之前候选的局部reason不足以保留7混页未接状态。现已逐页按原剩余范围纠正，所有原canonical owner显式保全（复用34个已登记owner）；37材料为13 objects/17 attachment/7 needs-decision，78精确refs与validate_batch全通过。7页残项：学习代表页p9/p29；共享输入four_seed/shared753；17源完整谱/任意双目录最优；教学A11.1/A11.6；共同目录入口其它主Claim；NSW §1 normalized-XOS；三叉彩虹混页的three-host/two-YES两个独立Claim。四页确已补齐原唯一欠缺，才能转attachment。原DONE资产不动。
+
+请先集成原DONE0108/0111等批，再以当时准确base_registry接此定向增量；不能同一compose无序覆盖原needs-decision与新候选。其余Boss的证据supplement也请按真实整页去向保全旧owner，避免局部接证误清混页。我们继续0105/0107/0113真实路由，不把此候选当全仓完成。
 
 
