@@ -1,0 +1,2604 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline.json",
+    "sha256": "5d5737ab6d07552b48925bdb936dae70490e8de1ee0da2b380bb2d16dd5690cf"
+  },
+  "objects": [
+    {
+      "object_id": "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding",
+      "version": 1,
+      "title": "有序槽的费用保持与逐机加一件舍入",
+      "kind": "rounding",
+      "truth_status": "proved",
+      "model": "广义指派：有限不可拆任务、非负处理时间和线性分配费用，无释放/先后；位复杂度针对有理输入",
+      "statement": "多项式输出全任务匹配诱导的实际分配，费用≤Σc_ij x_ij，L_i≤ℓ_i+r_i（空支撑 r_i=0），保 x_ij=1 的端。若给 t=T 且原 (C,T) 整数解存在，得到 (C,2T)。",
+      "quantifiers": "每个给定可行分数点 x；同时对每机",
+      "assumptions": [
+        "任务列和为1",
+        "正支撑 p_ij≤t"
+      ],
+      "scope": "不要求顶点或费用非负；取最小费用覆盖匹配。",
+      "objections": "任意覆盖匹配只保负载；t<T 时不能用LP排除所有T-调度。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+        "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+        "section": "1. 模型、两个阈值与准确主结论"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+          "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+          "section": "2. 有序槽与最小费用匹配：完整证明"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资料/不相关并行机文献清单范围与证据层级--资料.md",
+          "sha256": "17aa2105082ec806a46808706cf132335618d5cca73dd9d879f2dc124f5bba7a"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf#pp461-474",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf#pp461-474"
+      ]
+    },
+    {
+      "object_id": "M-0dd50fa1610d4eb5a8f21264dc38cd75",
+      "version": 1,
+      "title": "异容量与二进制重数的压缩保费用舍入",
+      "kind": "rounding",
+      "truth_status": "proved",
+      "model": "广义指派：有限不可拆任务、非负处理时间和线性分配费用，无释放/先后；位复杂度针对有理输入",
+      "statement": "保整数底数，仅展开少于 mn 个剩余任务；输出整数件数，费用不增加且 L_i≤T_i+t_i。",
+      "quantifiers": "任意各机容量 T_i、边上限 t_i、二进制整数重数 n_j 及给定可行 x",
+      "assumptions": [],
+      "scope": "压缩输出，不承诺显式列出指数多个任务标签。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+        "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+        "section": "3. 非统一容量与二进制任务重数"
+      },
+      "evidence": [],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf#pp461-474",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf#pp461-474"
+      ]
+    },
+    {
+      "object_id": "M-0288a54cb75047b4bd8737616cbae4e4",
+      "version": 1,
+      "title": "非负费用下的快速放宽广义指派",
+      "kind": "literature-algorithm",
+      "truth_status": "proved",
+      "model": "广义指派：有限不可拆任务、非负处理时间和线性分配费用，无释放/先后；位复杂度针对有理输入",
+      "statement": "原论文 Cor. 2.4 输出费用≤(1+ε)C 且峰≤(2+ε)T；期望 O(n² log n) 或确定性 O(mn² log n) 算术/迭代时间。",
+      "quantifiers": "每固定 ε>0；任何有 (C,T) 整数见证的实例",
+      "assumptions": [
+        "费用非负",
+        "p_ij≤T 剪枝"
+      ],
+      "scope": "非负费用剪枝和近似 packing 承重；不扩张为任意有理编码的同一总位时间。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+        "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+        "section": "4. 非负费用下的快速、略放宽版本"
+      },
+      "evidence": [],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf#pp461-474",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf#pp461-474"
+      ]
+    },
+    {
+      "object_id": "M-b46680a97d184eb7b98147b36f84f2a0",
+      "version": 1,
+      "title": "线性变速的端点混合与保费用舍入",
+      "kind": "rounding",
+      "truth_status": "proved",
+      "model": "区间速度且费用线性插值的广义指派",
+      "statement": "删除 l_ij>t，重算截断慢端费用；以 a+b 正质量端的平均时间和费用作为 ST 输入，返回费用≤C、峰≤T+t。",
+      "quantifiers": "每个可行快慢端 LP，任意阈值 T,t,C",
+      "assumptions": [],
+      "scope": "只在平均速度可实现的线性区间模型；t=T 可作双标准。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+        "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+        "section": "5. 线性时间—费用折衷的变速扩展"
+      },
+      "evidence": [],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf#pp461-474",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf#pp461-474"
+      ]
+    },
+    {
+      "object_id": "M-49e9997cd9f844868fd866561237e733",
+      "version": 1,
+      "title": "同一见证下的无权平均完成时间与峰值",
+      "kind": "literature-algorithm",
+      "truth_status": "proved",
+      "model": "无释放时间、不相关机、无权平均完成时间",
+      "statement": "位置LP与重排最小费用槽给平均≤M、峰≤2T；取 M 最优时 T 也只在达到 M 的调度中取最优。",
+      "quantifiers": "任意共同阈值 (M,T)，若有同一调度同时满足",
+      "assumptions": [],
+      "scope": "ST Theorem 3.1；原文校样报告 Rote/Hurkens 否定独立双最优，未附可核矩阵/证明；不立本仓精确反例。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+        "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+        "section": "6. 平均完成时间与 makespan：共同见证及后续纠错"
+      },
+      "evidence": [],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf#pp461-474",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf#pp461-474"
+      ]
+    },
+    {
+      "object_id": "M-04dd365bc35d44009fea6ef6f6d1e734",
+      "version": 1,
+      "title": "非负运行费用加峰值的二近似",
+      "kind": "literature-algorithm",
+      "truth_status": "proved",
+      "model": "线性变速、整数快慢端、非负运行费用、正系数 μ",
+      "statement": "对截断LP的 f(t) 和真实值 f̄≤f(t)+μt，比较 f(t) 与 μt 决定保留区间；用最小峰值最优解为整数的引理，O(log(n max u)) 次 LP 得2近似。",
+      "quantifiers": "所有该域输入，最小化 cost+μ Cmax",
+      "assumptions": [],
+      "scope": "ST Theorem 4.3；整数峰值引理承重，不能直接用于任意有理/离散或非线性时间。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+        "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+        "section": "7. 非负运行费用加 makespan 的合并目标"
+      },
+      "evidence": [],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf#pp461-474",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf#pp461-474"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/learning-augmented-makespan-prediction-guided-search",
+      "version": 1,
+      "title": "预测增补重任务的学习增强最大完工时间保证",
+      "kind": "literature-algorithm",
+      "truth_status": "proved",
+      "model": "正二进制加工时间的不相关机；预测是允许弃权的部分机器分配",
+      "statement": "内层只增补 K 个重遗漏，峰≤Cmax(σ)+max(εT,R⁻_{T,K})+R⁺_T；外层临界阈值与 LST 兜底把同一误差在 OPT 处评估且封顶 2OPT。时间 O((mn)^K poly(m,n,log P,1/ε))。",
+      "quantifiers": "每 T>0、ε∈(0,1)、预算 K 与任意比较调度；外层可任取最优比较调度",
+      "assumptions": [],
+      "scope": "论文 Thms 5.1–5.2，严格重端 p>εT；准确预测得1+ε，固定K才位多项式。",
+      "objections": "外层不假设内层成功单调；合成实验不是一般保证。",
+      "body": {
+        "path": "archives/unrelated-machines/state/文献/学习增强非相关机makespan--文献.md",
+        "sha256": "248cedcccfa539d19964d3950092d5c01bc9f45d3e38641ea88e8ccb683b422f",
+        "section": "误差量与主保证"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/文献/学习增强非相关机makespan--文献.md",
+          "sha256": "248cedcccfa539d19964d3950092d5c01bc9f45d3e38641ea88e8ccb683b422f",
+          "section": "模型与预测对象"
+        },
+        {
+          "path": "archives/unrelated-machines/state/文献/学习增强非相关机makespan--文献.md",
+          "sha256": "248cedcccfa539d19964d3950092d5c01bc9f45d3e38641ea88e8ccb683b422f",
+          "section": "内层算法：局部补回遗漏重作业"
+        },
+        {
+          "path": "archives/unrelated-machines/state/文献/学习增强非相关机makespan--文献.md",
+          "sha256": "248cedcccfa539d19964d3950092d5c01bc9f45d3e38641ea88e8ccb683b422f",
+          "section": "外层算法：临界阈值同步"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资料/不相关并行机文献清单范围与证据层级--资料.md",
+          "sha256": "17aa2105082ec806a46808706cf132335618d5cca73dd9d879f2dc124f5bba7a"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/baba_bampis_mitropoulos_2026_learning_augmented_v1.pdf",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/baba_bampis_mitropoulos_2026_learning_augmented_v1.pdf"
+      ]
+    },
+    {
+      "object_id": "M-d32a4146dbbd4c0197c815d139d7c500",
+      "version": 1,
+      "title": "允许插入、删除和改派的重作业预测修订",
+      "kind": "literature-algorithm",
+      "truth_status": "proved",
+      "model": "同一预测模型，K次插入/删除/改派的重投影邻域",
+      "statement": "内层峰≤Cmax(σ)+Δ_edit，其中 Δ_edit 是同一编辑预测的 max(εT,R⁻)+R⁺ 的最小值；外层≤min(OPT+Δ_edit(OPT,σ*),2OPT)，保持相同时间阶。",
+      "quantifiers": "每个比较调度及 T,K,ε；外层任意最优比较调度",
+      "assumptions": [],
+      "scope": "附录 D.1–D.2；距离≤K的最优重投影给1+ε；单一误差分量不必单调。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/文献/学习增强非相关机makespan--文献.md",
+        "sha256": "248cedcccfa539d19964d3950092d5c01bc9f45d3e38641ea88e8ccb683b422f",
+        "section": "可编辑预测变体（附录 D）"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/文献/学习增强非相关机makespan--文献.md",
+          "sha256": "248cedcccfa539d19964d3950092d5c01bc9f45d3e38641ea88e8ccb683b422f",
+          "section": "模型与预测对象"
+        },
+        {
+          "path": "archives/unrelated-machines/state/文献/学习增强非相关机makespan--文献.md",
+          "sha256": "248cedcccfa539d19964d3950092d5c01bc9f45d3e38641ea88e8ccb683b422f",
+          "section": "外层算法：临界阈值同步"
+        },
+        {
+          "path": "archives/unrelated-machines/state/文献/学习增强非相关机makespan--文献.md",
+          "sha256": "248cedcccfa539d19964d3950092d5c01bc9f45d3e38641ea88e8ccb683b422f",
+          "section": "误差量与主保证"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/baba_bampis_mitropoulos_2026_learning_augmented_v1.pdf",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/baba_bampis_mitropoulos_2026_learning_augmented_v1.pdf"
+      ]
+    },
+    {
+      "object_id": "M-3fcaea74cca845be8c00c0f2e9d089f5",
+      "version": 1,
+      "title": "小容量有序槽的扩张和中心式快速恢复",
+      "kind": "rounding",
+      "truth_status": "proved",
+      "model": "稀疏资格图、正整数时间的不相关机；算术/稀疏规模复杂度",
+      "statement": "以 q=1/(1+η) 切槽使 |N(S)|≥(1+η)|S|；确定性 O(|E_H|η⁻¹log n) 恢复支持保持全匹配，L_i≤(1+η)ℓ_i+实际最大件。",
+      "quantifiers": "每个给定列和1的 x、每 0<η<1；所有机器同时",
+      "assumptions": [],
+      "scope": "Li §3 Theorem3.3；短增广路的中心式算法，不承诺分布式并发。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+        "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+        "section": "3. 小容量槽制造Hall扩张：自足主链"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/分布式不相关机负载均衡与混合覆盖--资源.md",
+          "sha256": "d190cd2e576754535fb25191347f3026495c4208100907fd89cd74129bda80d8"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/li_2023_nearly_linear_scheduling_v2.pdf#pp1-39",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/li_2023_nearly_linear_scheduling_v2.pdf#pp1-39"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/li-nearly-linear-scheduling-lp-and-rounding",
+      "version": 1,
+      "title": "稀疏不相关机最大完工时间的确定性近线性算法",
+      "kind": "literature-algorithm",
+      "truth_status": "proved",
+      "model": "稀疏资格图、正整数时间的不相关机；算术/稀疏规模复杂度",
+      "statement": "Young MPC、列归一化、小槽扩张和几何阈值搜索输出峰≤(2+ε)OPT，时间 Õ_ε(|E|)。",
+      "quantifiers": "每固定 ε>0、每个此域合法实例",
+      "assumptions": [],
+      "scope": "Li Theorem1.1，显式资格图、无先后；任意有理输入位时间另论。",
+      "objections": "P≥OPT 保成功；低阈值成功不是 OPT≤P。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+        "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+        "section": "2. 混合装填覆盖求解器及promise阈值"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+          "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+          "section": "文献身份、读取及证据等级"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+          "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+          "section": "1. 不可混用的输入、目标与运行保证"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+          "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+          "section": "3. 小容量槽制造Hall扩张：自足主链"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/li_2023_nearly_linear_scheduling_v2.pdf#pp1-39",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/li_2023_nearly_linear_scheduling_v2.pdf#pp1-39"
+      ]
+    },
+    {
+      "object_id": "M-92d8c66af7df4a55b7b48a3f0348c440",
+      "version": 1,
+      "title": "窗口LP到稀疏矩形LP的保尾质量恢复",
+      "kind": "literature-algorithm",
+      "truth_status": "proved",
+      "model": "正整数不相关机、正权重的加权完成时间",
+      "statement": "近线性恢复矩形解，时槽拥塞≤1+O(η)，任意端时刻(1+cη)t之后尾质量≤窗口估计在t后的尾质量；目标损失1+O(η)。",
+      "quantifiers": "任意满足窗口容量近似合同的窗口解，每个端和时刻 t",
+      "assumptions": [],
+      "scope": "Li Thm4.1、Cor4.2及附录B/C；主存在构造取c=5，分母展开不是实现。",
+      "objections": "C.1的inside不等式应与 p_ij≤Δ_d 一致；原刊写反，资源保留纠错。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+        "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+        "section": "4. 加权完成时间：窗口LP与矩形LP不是同一个对象"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+          "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+          "section": "1. 不可混用的输入、目标与运行保证"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+          "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+          "section": "5. Im–Li舍入的随机性与大整数处理"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/li_2023_nearly_linear_scheduling_v2.pdf#pp1-39",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/li_2023_nearly_linear_scheduling_v2.pdf#pp1-39"
+      ]
+    },
+    {
+      "object_id": "M-8d9c5ef35c7a4ae4bedaad34b37f8f6b",
+      "version": 1,
+      "title": "加权完成时间的近线性相关随机舍入",
+      "kind": "literature-algorithm",
+      "truth_status": "proved",
+      "model": "无先后的不相关机加权完成时间，正整数端时间和权重",
+      "statement": "结合近似矩形解、几何随机移位、Im–Li相关舍入及Smith顺序，期望目标≤(1.45+ε)OPT，时间 Õ_ε(|E|)。",
+      "quantifiers": "每固定ε>0和该域输入，目标保证取输出的期望",
+      "assumptions": [],
+      "scope": "Li Theorem1.3；Im–Li 常数与外部舍入承重。",
+      "objections": "不是逐次、确定性或高概率界；B.2应为 ln ρ 均匀。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+        "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+        "section": "5. Im–Li舍入的随机性与大整数处理"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+          "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+          "section": "1. 不可混用的输入、目标与运行保证"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+          "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+          "section": "4. 加权完成时间：窗口LP与矩形LP不是同一个对象"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/li_2023_nearly_linear_scheduling_v2.pdf#pp1-39",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/li_2023_nearly_linear_scheduling_v2.pdf#pp1-39"
+      ]
+    },
+    {
+      "object_id": "M-271c52e5782242e190cbc8b56c952a92",
+      "version": 1,
+      "title": "单机有先后的加权完成时间近线性二加精度近似",
+      "kind": "literature-algorithm",
+      "truth_status": "proved",
+      "model": "一台机器、非负整数时长、显式DAG、有权完成时间",
+      "statement": "DAG累计LP+聚合MWU+按分数完成时间列表排序得2+ε；Õ_ε((n+κ)log p_max)。",
+      "quantifiers": "每固定 ε>0、任一该域输入",
+      "assumptions": [],
+      "scope": "Li Thm1.4；结构约束精确保持。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+        "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+        "section": "6. 先后约束附录A、C.2、D：独立模型的完整去向"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+          "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+          "section": "1. 不可混用的输入、目标与运行保证"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+          "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+          "section": "7. DAG单容量oracle与特殊流：附录E–F"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/li_2023_nearly_linear_scheduling_v2.pdf#pp1-39",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/li_2023_nearly_linear_scheduling_v2.pdf#pp1-39"
+      ]
+    },
+    {
+      "object_id": "M-e8885334520c415bb4afb682ac8c31c8",
+      "version": 1,
+      "title": "同机并行单位任务有先后的加权完成时间近似",
+      "kind": "literature-algorithm",
+      "truth_status": "proved",
+      "model": "同机并行单位作业、显式DAG、加权完成时间",
+      "statement": "共用随机分位数优先级得期望 (1+√2+ε) 近似，Õ_ε(n+κ)。",
+      "quantifiers": "每固定 ε>0、任一该域输入；期望保证",
+      "assumptions": [],
+      "scope": "Li Thm1.5；所引函数极值引理承重，确定性 F=C 只给3。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+        "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+        "section": "6. 先后约束附录A、C.2、D：独立模型的完整去向"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+          "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+          "section": "1. 不可混用的输入、目标与运行保证"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+          "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+          "section": "7. DAG单容量oracle与特殊流：附录E–F"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/li_2023_nearly_linear_scheduling_v2.pdf#pp1-39",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/li_2023_nearly_linear_scheduling_v2.pdf#pp1-39"
+      ]
+    },
+    {
+      "object_id": "M-aa1e2e5787dd4f788630e62f130523b9",
+      "version": 1,
+      "title": "同机并行任意整数时长有先后的加权完成时间近似",
+      "kind": "literature-algorithm",
+      "truth_status": "proved",
+      "model": "同机并行、显式DAG、非负整数长度、加权完成时间",
+      "statement": "累计LP和 F_j=C_j+q_j−p_j 列表得6+ε，时间 Õ_ε((n+κ)log p_max)。",
+      "quantifiers": "每固定 ε>0、任一该域输入",
+      "assumptions": [],
+      "scope": "Li Thm1.6；大数处理不删去容量行带来的 log p_max。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+        "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+        "section": "6. 先后约束附录A、C.2、D：独立模型的完整去向"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+          "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+          "section": "1. 不可混用的输入、目标与运行保证"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+          "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+          "section": "7. DAG单容量oracle与特殊流：附录E–F"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/li_2023_nearly_linear_scheduling_v2.pdf#pp1-39",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/li_2023_nearly_linear_scheduling_v2.pdf#pp1-39"
+      ]
+    },
+    {
+      "object_id": "M-c0d0a5f2c8414e3fab9ebefca65252b8",
+      "version": 1,
+      "title": "DAG序多面体单容量oracle与特殊流割证书",
+      "kind": "literature-algorithm",
+      "truth_status": "proved",
+      "model": "显式DAG、非负 a,b；仅源供给/汇容量限制的单商品DAG流",
+      "statement": "输出精确满足序约束 y、by≤1+η、ay≥ay*−φ；NFPγ 子程给真可行 f 与 S' 满足 a(S\\S')+γ b(T(S'))/(1+η)≤val(f)+φ/3。",
+      "quantifiers": "任一非负系数、φ>0 及内精度η；最优 y* 是精确单容量最优",
+      "assumptions": [],
+      "scope": "Li A.2/E.3/F.13；handle隔离后向支撑，动态树承重，非通用最大流。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+        "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+        "section": "7. DAG单容量oracle与特殊流：附录E–F"
+      },
+      "evidence": [],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/li_2023_nearly_linear_scheduling_v2.pdf#pp1-39",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/li_2023_nearly_linear_scheduling_v2.pdf#pp1-39"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/distributed-load-balancing-mixed-packing-covering-bgw-v1",
+      "version": 1,
+      "title": "BGW v1 的 CONGEST (2+ε) 整数合同及缺口",
+      "kind": "literature-algorithm",
+      "truth_status": "unassessed",
+      "model": "输入资格二部图本身为 CONGEST 图；正尺寸、局部消息 O(log(m+n)) 位",
+      "statement": "作者声明输出峰≤(2+ε)λ*，无需全局已知尺寸界、轮数不依尺寸比；本冻结证明的混合黑盒和并发匹配链未闭合。",
+      "quantifiers": "每固定 ε>0、任意正有限端；作者称确定性 poly(log(mn)/ε) 轮",
+      "assumptions": [],
+      "scope": "具体 Lemma5.12 不可行输入 packing 缺前提；LemmaA.2 并行不冲突增广缺实现；不据此否定目标。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/分布式不相关机负载均衡与混合覆盖--资源.md",
+        "sha256": "d190cd2e576754535fb25191347f3026495c4208100907fd89cd74129bda80d8",
+        "section": "1. 模型与作者声明的输出合同"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/分布式不相关机负载均衡与混合覆盖--资源.md",
+          "sha256": "d190cd2e576754535fb25191347f3026495c4208100907fd89cd74129bda80d8",
+          "section": "4.1 不能从可行分支直接得不可行packing界"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/分布式不相关机负载均衡与混合覆盖--资源.md",
+          "sha256": "d190cd2e576754535fb25191347f3026495c4208100907fd89cd74129bda80d8",
+          "section": "4.2 数值、零行与通信合同仍需展开"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/分布式不相关机负载均衡与混合覆盖--资源.md",
+          "sha256": "d190cd2e576754535fb25191347f3026495c4208100907fd89cd74129bda80d8",
+          "section": "5. 有序小槽舍入与CONGEST匹配边界"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/bernstein_gupta_wang_2026_distributed_load_v1.pdf#pp1-32",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/bernstein_gupta_wang_2026_distributed_load_v1.pdf#pp1-32"
+      ]
+    },
+    {
+      "object_id": "M-adee88db90b2410982b3fa0efd99273a",
+      "version": 1,
+      "title": "有失败分支行界的冻结插值及尺寸分桶",
+      "kind": "algorithm",
+      "truth_status": "conditional",
+      "model": "输入图 CONGEST，正尺寸的异机分数调度",
+      "statement": "BFS冻结按距离插值；活动机保强不变量，非活动机保弱界。保护带桶和所有偏移联合支持，再调用黑盒，得到覆盖≥1、负载≤(1+O(ε))λ*、支持端≤(1+O(ε))λ*。",
+      "quantifiers": "任意合法正尺寸图；若强黑盒能以多对数轮处理给定逐机残余容量",
+      "assumptions": [
+        "可行时覆盖或局部可靠拒绝",
+        "包括拒绝的所有运行 packing≤1+O(ε)",
+        "按分桶与参数整数化合同"
+      ],
+      "scope": "是分数恢复；先知尺寸比的弱算法再分桶去掉尺寸比。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/分布式不相关机负载均衡与混合覆盖--资源.md",
+        "sha256": "d190cd2e576754535fb25191347f3026495c4208100907fd89cd74129bda80d8",
+        "section": "2. 未知目标下的冻结插值：可复用的条件机制"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/分布式不相关机负载均衡与混合覆盖--资源.md",
+          "sha256": "d190cd2e576754535fb25191347f3026495c4208100907fd89cd74129bda80d8",
+          "section": "3. 去掉尺寸比：清重边、保护带与所有偏移"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/bernstein_gupta_wang_2026_distributed_load_v1.pdf#pp1-32",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/bernstein_gupta_wang_2026_distributed_load_v1.pdf#pp1-32"
+      ]
+    },
+    {
+      "object_id": "M-d411e7659e154cde8709dda69abf907a",
+      "version": 1,
+      "title": "BGW v1 印刷 Algorithm7 在不可行输入上的 packing 反例",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "标准化双 packing 行(1,1)、双 covering 行(.01,.01)，L=4 ln2/ε",
+      "statement": "不可行要求 t≤L 且 t≥100L；完全对称的算法仍更新到 t>(10L−ln100)/1.01，t/L 的极限下界>9，covering仍拒绝而 packing 失守。",
+      "quantifiers": "0<ε≤.1；照印刷伪代码，固定充分多项式相位预算",
+      "assumptions": [],
+      "scope": "只反驳该印刷执行及预算，不反驳可行分支或可能修正；Decimal复放为有限证据。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/分布式不相关机负载均衡与混合覆盖--资源.md",
+        "sha256": "d190cd2e576754535fb25191347f3026495c4208100907fd89cd74129bda80d8",
+        "section": "4.1 不能从可行分支直接得不可行packing界"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/tools/evidence/bgw_distributed_young_infeasible_probe.py",
+          "sha256": "d0b90185bb2562b716732f521428936f32d19bbf1256c07b0775c76a1436699e"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/bgw_distributed_young_infeasible_probe.json",
+          "sha256": "bc815f095492dac94e7775afabef213afa279b1e3576642616624d03977ad1b0"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/bernstein_gupta_wang_2026_distributed_load_v1.pdf#pp1-32",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/bernstein_gupta_wang_2026_distributed_load_v1.pdf#pp1-32"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/lst-vertex-pseudoforest-rounding",
+      "version": 1,
+      "title": "LST顶点支撑伪森林及保整数任务舍入",
+      "kind": "rounding",
+      "truth_status": "proved",
+      "model": "正整数不相关机矩阵；零/有理扩展仅按注明的同一证明或缩放",
+      "statement": "紧约束分块使每个正支撑分量为树或单环；保 x=1 的任务，余任务匹配使每机最多添一件，负载≤d_i+t。单位小任务/大任务m族固定该顶点时峰2m−1，OPT=m。",
+      "quantifiers": "每个只用 p_ij≤t 的可行 LP 顶点；各机同时",
+      "assumptions": [],
+      "scope": "报告定理1及其恢复锐例；有理有限端的秩/匹配论证同样成立。",
+      "objections": "顶点合同，不是 ST 任意点；趋二例仅保整数部分。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/LST不相关机二近似与硬度--资源.md",
+        "sha256": "4476021a34f5c4940acadc45c1c61e473e9274075176b6f138c048a56a3e0b8a",
+        "section": "1. 顶点支撑伪森林与逐机加性舍入"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/LST不相关机二近似与硬度--资源.md",
+          "sha256": "4476021a34f5c4940acadc45c1c61e473e9274075176b6f138c048a56a3e0b8a",
+          "section": "保整数部分的趋二例，不是一般近似困难性"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+          "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+          "section": "舍入分析的趋二锐例"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf#printed-pages-1-10",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf#printed-pages-1-10"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/lst-two-approximation",
+      "version": 1,
+      "title": "LST剪枝松弛判定与一般二近似",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "正整数不相关机矩阵；零/有理扩展仅按注明的同一证明或缩放",
+      "statement": "剪 p_ij>d 后若LP不可行则可靠NO，否则取顶点输出峰≤2d；松弛二分恢复实际2近似，不需成功集合单调。",
+      "quantifiers": "所有合法实例；对每试验阈值 d",
+      "assumptions": [],
+      "scope": "1987报告定理2；有理输入共同缩放，另处理零最优。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/LST不相关机二近似与硬度--资源.md",
+        "sha256": "4476021a34f5c4940acadc45c1c61e473e9274075176b6f138c048a56a3e0b8a",
+        "section": "2. 松弛判定、一般二近似和趋二实例"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/LST不相关机二近似与硬度--资源.md",
+          "sha256": "4476021a34f5c4940acadc45c1c61e473e9274075176b6f138c048a56a3e0b8a",
+          "section": "1. 顶点支撑伪森林与逐机加性舍入"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资料/不相关并行机文献清单范围与证据层级--资料.md",
+          "sha256": "17aa2105082ec806a46808706cf132335618d5cca73dd9d879f2dc124f5bba7a"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf#printed-pages-1-10",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf#printed-pages-1-10"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/lst-fixed-machines-small-space-ptas",
+      "version": 1,
+      "title": "固定机器数的小空间 PTAS",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "正整数不相关机矩阵；零/有理扩展仅按注明的同一证明或缩放",
+      "statement": "枚举各机 >εd 的长端，短端LP舍入只添 εd，给(1+ε)松弛判定及优化；时间含约 (n+1)^(m/ε)，空间多项式。",
+      "quantifiers": "每固定 m、ε>0；每合法实例",
+      "assumptions": [],
+      "scope": "报告定理3；不是可变m PTAS，也不声称本构造 FPTAS。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/LST不相关机二近似与硬度--资源.md",
+        "sha256": "4476021a34f5c4940acadc45c1c61e473e9274075176b6f138c048a56a3e0b8a",
+        "section": "3. 固定机器数的小空间PTAS"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/LST不相关机二近似与硬度--资源.md",
+          "sha256": "4476021a34f5c4940acadc45c1c61e473e9274075176b6f138c048a56a3e0b8a",
+          "section": "1. 顶点支撑伪森林与逐机加性舍入"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/LST不相关机二近似与硬度--资源.md",
+          "sha256": "4476021a34f5c4940acadc45c1c61e473e9274075176b6f138c048a56a3e0b8a",
+          "section": "2. 松弛判定、一般二近似和趋二实例"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf#printed-pages-1-10",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf#printed-pages-1-10"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/lst-strict-three-halves-hardness",
+      "version": 1,
+      "title": "LST三维匹配归约与严格三半硬度",
+      "kind": "complexity",
+      "truth_status": "proved",
+      "model": "正整数不相关机矩阵；零/有理扩展仅按注明的同一证明或缩放",
+      "statement": "{1,3} 阈值3的弱归约 NO≥4；{1,2,3} 阈值2利用同型dummy留下唯一三元组机，NO≥3，从而ρ<3/2的多项式近似推出P=NP。",
+      "quantifiers": "对所有3DM输入；每固定 ρ<3/2",
+      "assumptions": [
+        "3DM 的标准 NP 完全性"
+      ],
+      "scope": "报告定理4–5；精确3/2未排除，非近二困难性。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/LST不相关机二近似与硬度--资源.md",
+        "sha256": "4476021a34f5c4940acadc45c1c61e473e9274075176b6f138c048a56a3e0b8a",
+        "section": "4. 三维匹配归约与严格三半端点"
+      },
+      "evidence": [],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf#printed-pages-1-10",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf#printed-pages-1-10"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/lst-fixed-two-processing-times",
+      "version": 1,
+      "title": "固定正整数处理时间集合的精确复杂度分类",
+      "kind": "complexity",
+      "truth_status": "proved",
+      "model": "显式完整矩阵，有限正整数加工时间集合固定；不允许额外∞端",
+      "statement": "单值和 {p,2p} 精确多项式（{1,2}成对槽、奇阈值私有dummy）；其他固定 p<q 用 q 维匹配归约 NP-hard，故三值以上同样难。",
+      "quantifiers": "任一固定加工时间集合；对全部该类矩阵",
+      "assumptions": [],
+      "scope": "报告定理6–7；不自动导出统一近似比下界或允许禁止端。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/LST不相关机二近似与硬度--资源.md",
+        "sha256": "4476021a34f5c4940acadc45c1c61e473e9274075176b6f138c048a56a3e0b8a",
+        "section": "5. 固定正整数加工时间集合的分类"
+      },
+      "evidence": [],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf#printed-pages-1-10",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf#printed-pages-1-10"
+      ]
+    },
+    {
+      "object_id": "M-5af596d5d75441cba006ff7ba31a19a4",
+      "version": 1,
+      "title": "有可验证失败的松弛阈值接口足以全局优化",
+      "kind": "reduction",
+      "truth_status": "proved",
+      "model": "一般非负二进制有理/∞不相关机矩阵，m≥1，所有任务至少一有限端",
+      "statement": "返回全调度峰≤ρT或可独立验证D⇒OPT>T足以通过 Q 分母网格二分输出ρ近似。失败上移下界、成功保存见证下移索引；O(log(QU+1))次。",
+      "quantifiers": "固定ρ=2−1/k；若对每P和有理T有总位多项式阈值接口",
+      "assumptions": [],
+      "scope": "不是精确判定；OPT>T 仍可成功；不要求上索引始终≥OPT，不从近似存在性免费推出可验证证书。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/问题/不相关机的统一整数输出与全调度解码--问题.md",
+        "sha256": "c09bd8cd373f12e4452d2685c37d3ffacfc58e851d0da1f05d1712202d1457c8",
+        "section": "阈值接口与可靠失败"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/不相关机研究状态总账与开放义务--审查.md",
+          "sha256": "0023883cd49f47238d841ebfc96a7aede59673c67073b21bb49031e8f4b8224c"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资料/UM_Route_Card模板与路线量词边界--资料.md",
+          "sha256": "c4ddeaa996e35d48a924ef717d83caed2708ce017c00771a92eaae67640bc5be"
+        }
+      ],
+      "sources": []
+    },
+    {
+      "object_id": "M-b851ba34bffb4533b962b3a5560e2538",
+      "version": 1,
+      "title": "真实源NO的全调度解码归约充分合同",
+      "kind": "reduction",
+      "truth_status": "proved",
+      "model": "一般非负有理/∞不相关机整数实际调度及明确困难源",
+      "statement": "位多项式生成 P 与已知 T>0，YES≤(1+η)T、NO≥βT 且 (2−ε)(1+η)<β，可判别源；充分的NO证明对任意峰<βT的完整实际调度给位多项式解码。",
+      "quantifiers": "对每个拟排除固定 ε>0，选择 δ<ε 的固定有理近二gap，或对应 η,β",
+      "assumptions": [],
+      "scope": "仅证明此合同足够；归约和共同容量生成本身仍开放；假设需按确定性/随机源指明。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/问题/不相关机的统一整数输出与全调度解码--问题.md",
+        "sha256": "c09bd8cd373f12e4452d2685c37d3ffacfc58e851d0da1f05d1712202d1457c8",
+        "section": "覆盖全部改善量的反面接口"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/不相关机研究状态总账与开放义务--审查.md",
+          "sha256": "0023883cd49f47238d841ebfc96a7aede59673c67073b21bb49031e8f4b8224c"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资料/UM_Route_Card模板与路线量词边界--资料.md",
+          "sha256": "c4ddeaa996e35d48a924ef717d83caed2708ce017c00771a92eaae67640bc5be"
+        },
+        {
+          "path": "archives/unrelated-machines/state/文献/需求树困难性导入的参与条件与参数方向--文献.md",
+          "sha256": "38dbf9ca65b81707ca536a8eb6f222c68664cffcccc73bb7187b3c7a03753a83"
+        }
+      ],
+      "sources": []
+    },
+    {
+      "object_id": "UM-LST-SUPPORT-RELEASE-OPTIMAL-v1",
+      "version": 1,
+      "title": "锚任务修正族的零质量边释放精确前沿",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "r个互不相交 m 核心+备用块；私有任务 1−1/m，单位锚；T=OPT=1",
+      "statement": "给定可行 x 的正支撑中，允许至多 k 条零质量边时最优峰为 k<r 时 2−1/m，否则1。每块可用锚备用端或私有备用端恢复。",
+      "quantifiers": "任意整数 m≥2,r≥1,k≥0；只计最终实际使用而 x 中为零的端",
+      "assumptions": [],
+      "scope": "仅限固定 x 支持合同；不能排联合重选或预算随块数增长。",
+      "objections": "单块原审计有限，乘积结论由块独立性证明。",
+      "body": {
+        "path": "archives/unrelated-machines/state/障碍/固定正支撑释放的精确近二前沿--障碍.md",
+        "sha256": "e8dd561961bd330af5bca2f04059ef9eddda261ec0124c1ae79e44e7919157b2",
+        "section": "修正后的块族与完整前沿"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/共同容量接续工作区的身份核对与纠错导航--资源.md",
+          "sha256": "83188229ae249d56f3b45ec6f23a8437b8b22db7c0ab42e13d56f78cc10bbe4b"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/lst_support_release_optimal_gap.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/lst_support_release_optimal.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/lst_support_release_optimal_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/lst_support_release_and_threshold_group.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/lst_support_release_and_threshold_group_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md#原支撑族修正"
+      ]
+    },
+    {
+      "object_id": "UM-LST-SUPPORT-RELEASE-v0",
+      "version": 1,
+      "title": "旧 51/100 支撑释放族的真实最优值纠正",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "m核心+1扩展，m重件仅核心耗时.51，m+1小件均耗时49m/[100(m+1)]",
+      "statement": "固定正支撑阈值1下补全不可行；真实无支撑约束OPT恰 1−49/[100(m+1)]<1。",
+      "quantifiers": "每个整数m≥2、给定旧均分点",
+      "assumptions": [],
+      "scope": "不是修正锚族；解析下界不由原脚本输出字段代替。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/障碍/固定正支撑释放的精确近二前沿--障碍.md",
+        "sha256": "e8dd561961bd330af5bca2f04059ef9eddda261ec0124c1ae79e44e7919157b2",
+        "section": "旧族保留的内容与OPT纠错"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/共同容量接续工作区的身份核对与纠错导航--资源.md",
+          "sha256": "83188229ae249d56f3b45ec6f23a8437b8b22db7c0ab42e13d56f78cc10bbe4b"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/lst_support_release_optimal_gap.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/lst_support_release_optimal.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/lst_support_release_optimal_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/lst_support_release_and_threshold_group.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/lst_support_release_and_threshold_group_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md#原支撑族修正"
+      ]
+    },
+    {
+      "object_id": "UM-SANTA-NO-CONSTANT-CONDITIONAL-v2",
+      "version": 1,
+      "title": "Santa无常数近似经位保持桥推出一般UM无统一改善",
+      "kind": "complexity",
+      "truth_status": "conditional",
+      "model": "一般二进制非负有理 Santa Claus 和一般确定性位多项式不相关机",
+      "statement": "若 SCHA_det^N 和适用位保持桥均成立，则任意 2−ε 近似也为 2−1/q，由桥产生 q+1 的 Santa 近似，矛盾。",
+      "quantifiers": "任一固定 ε∈(0,1)；取固定 q≥max(2,ceil(1/ε))、η=1",
+      "assumptions": [
+        "SCHA_det^N：每固定整数c≥3都无确定性位多项式 c 近似",
+        "BLMRS Makespan→Santa 的固定 q,η 归约在该有理域保持确定性总位多项式"
+      ],
+      "scope": "v1/v2 核心相同，v2精化位模型。",
+      "objections": "Santa现有低于2的硬度与q+1不冲突；不能推出无条件近二硬度。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/Santa无常数近似条件反面双源审查--审查.md",
+        "sha256": "406f82949f814028b7161bb4508fa48218dff0c0eb16af9ba05b43443088ba63",
+        "section": "条件命题及证明"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/Santa无常数近似条件反面双源审查--审查.md",
+          "sha256": "406f82949f814028b7161bb4508fa48218dff0c0eb16af9ba05b43443088ba63",
+          "section": "来源身份、版本与阅读范围"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/Santa无常数近似条件反面双源审查--审查.md",
+          "sha256": "406f82949f814028b7161bb4508fa48218dff0c0eb16af9ba05b43443088ba63",
+          "section": "适用性、位复杂度与数学边界"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/共同容量接续工作区的身份核对与纠错导航--资源.md",
+          "sha256": "83188229ae249d56f3b45ec6f23a8437b8b22db7c0ab42e13d56f78cc10bbe4b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/三维束匹配入口的全层约束与条件反面边界--资源.md",
+          "sha256": "016c40ff76255028d868f226635682dac58a08185cc813b22d84981fb63debed"
+        },
+        {
+          "path": "archives/unrelated-machines/state/文献/需求树困难性导入的参与条件与参数方向--文献.md",
+          "sha256": "38dbf9ca65b81707ca536a8eb6f222c68664cffcccc73bb7187b3c7a03753a83"
+        }
+      ],
+      "sources": [
+        "clean:320c21caaf68f30f0f5e",
+        "clean:a8ec98c7bc5bce1b0d3e"
+      ]
+    },
+    {
+      "object_id": "M-49195941d69c4784890f322dca84ef7b",
+      "version": 1,
+      "title": "BLMRS 有理位复杂度接续义务",
+      "kind": "obligation",
+      "truth_status": "open",
+      "model": "BLMRS Theorem1 makespan→Santa 的二进制非负有理输入/实际输出",
+      "statement": "补齐有理缩放、有限取整、配置枚举、全部中间分母和输出位增长，使 (2−1/α)→(α+η) 保持确定性位多项式。",
+      "quantifiers": "每固定 α≥2、η>0；对所有该域输入",
+      "assumptions": [],
+      "scope": "与 Santa 无常数假设、真实源NO解码均为不同义务。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/Santa无常数近似条件反面双源审查--审查.md",
+        "sha256": "406f82949f814028b7161bb4508fa48218dff0c0eb16af9ba05b43443088ba63",
+        "section": "适用性、位复杂度与数学边界"
+      },
+      "evidence": [],
+      "sources": [
+        "clean:a8ec98c7bc5bce1b0d3e"
+      ]
+    },
+    {
+      "object_id": "UM-K-UNIFORM-BUNDLE-FLOOR-v1",
+      "version": 1,
+      "title": "可选资源束需求树的分层匹配精确值",
+      "kind": "identity",
+      "truth_status": "proved",
+      "model": "需求DAG r→x→e→u，q=|X|>0，x需求1，标签需求K≥1，标签资源束1≤|S|≤k",
+      "statement": "若ν_t为最多可不交领取t个资源的不同选择点数，b*=max_{1≤t≤min(k,K)} min(ν_t/q,t/K)。标准树桥给OPT=2−b*。",
+      "quantifiers": "任意 q,k,K 和显式可选束族；每 t 层不同x各用一标签、领取互斥",
+      "assumptions": [],
+      "scope": "选中正评分树取t=ceil(K b)；不能先并同x的可选束。",
+      "objections": "q=0 的程序空值0不同于标准根树截断值1；枚举有限。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/k均匀束与单层配额超图双源审查--审查.md",
+        "sha256": "f168c8cf058a2c347b6b3bb71afab83c0512ed9c76ee5ca8baa0848e38af7d46",
+        "section": "1. 定义域和精确恒等式"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/k均匀束与单层配额超图双源审查--审查.md",
+          "sha256": "f168c8cf058a2c347b6b3bb71afab83c0512ed9c76ee5ca8baa0848e38af7d46",
+          "section": "2. 完整证明机制"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/k均匀束与单层配额超图双源审查--审查.md",
+          "sha256": "f168c8cf058a2c347b6b3bb71afab83c0512ed9c76ee5ca8baa0848e38af7d46",
+          "section": "3. 归约含义：所有层都要控制"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/k均匀束与单层配额超图双源审查--审查.md",
+          "sha256": "f168c8cf058a2c347b6b3bb71afab83c0512ed9c76ee5ca8baa0848e38af7d46",
+          "section": "4. 证据和边界"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/三维束匹配入口的全层约束与条件反面边界--资源.md",
+          "sha256": "016c40ff76255028d868f226635682dac58a08185cc813b22d84981fb63debed",
+          "section": "k束分层：只压完整匹配层不够"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/两状态配额方向与固定层匹配的接续合同--资源.md",
+          "sha256": "39b3902d45d8c937377e42ee244a0fddad2fc333f9a2e96a2b465de7648b67e0",
+          "section": "可选bundle的固定层地板是另一种义务"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/共同容量接续工作区的身份核对与纠错导航--资源.md",
+          "sha256": "83188229ae249d56f3b45ec6f23a8437b8b22db7c0ab42e13d56f78cc10bbe4b"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/k_uniform_bundle_matching_floor.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/k_uniform_bundle_matching_floor.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/single_layer_quota_hypergraph_obstruction.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/single_layer_quota_hypergraph_obstruction.md"
+      ]
+    },
+    {
+      "object_id": "M-a0dc6c9aa5f94abf9340cba38081c453",
+      "version": 1,
+      "title": "可选束的固定领取层可分辨一段近二承诺",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "固定 K,δ 的显式可选束需求树，q=|X|>0",
+      "statement": "YES b*=1可截出 ν_t0=q，NO b*≤δ强制 ν_t0≤δq；将子束和x作为 t0+1 元超边，极大匹配达到最优/(t0+1)，因而多项式区分该接口承诺。",
+      "quantifiers": "每固定 0<δ<1；t0=⌊Kδ⌋+1；若 δ<1/(t0+1)",
+      "assumptions": [],
+      "scope": "只筛直接 bundle 接口；非一般调度困难性。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/k均匀束与单层配额超图双源审查--审查.md",
+        "sha256": "f168c8cf058a2c347b6b3bb71afab83c0512ed9c76ee5ca8baa0848e38af7d46",
+        "section": "3. 归约含义：所有层都要控制"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/k均匀束与单层配额超图双源审查--审查.md",
+          "sha256": "f168c8cf058a2c347b6b3bb71afab83c0512ed9c76ee5ca8baa0848e38af7d46",
+          "section": "1. 定义域和精确恒等式"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/k均匀束与单层配额超图双源审查--审查.md",
+          "sha256": "f168c8cf058a2c347b6b3bb71afab83c0512ed9c76ee5ca8baa0848e38af7d46",
+          "section": "2. 完整证明机制"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/两状态配额方向与固定层匹配的接续合同--资源.md",
+          "sha256": "39b3902d45d8c937377e42ee244a0fddad2fc333f9a2e96a2b465de7648b67e0",
+          "section": "可选bundle的固定层地板是另一种义务"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/三维束匹配入口的全层约束与条件反面边界--资源.md",
+          "sha256": "016c40ff76255028d868f226635682dac58a08185cc813b22d84981fb63debed"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/k_uniform_bundle_matching_floor.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/k_uniform_bundle_matching_floor.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/single_layer_quota_hypergraph_obstruction.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/single_layer_quota_hypergraph_obstruction.md"
+      ]
+    },
+    {
+      "object_id": "UM-SINGLE-LAYER-QUOTA-VALUE-v1",
+      "version": 1,
+      "title": "根需求独立的单邻域配额树值",
+      "kind": "identity",
+      "truth_status": "proved",
+      "model": "需求DAG r→x→e_x→z，根需求q>0独立于|X|，每选择点仅一邻域，e_x需求K≥1",
+      "statement": "b*=max_{0≤t≤K} min(1,ν_t/q,t/K)，ν_0=|X|。YES b*=1要求ν_K≥q；NO须对每个t>δK压低ν_t/q。",
+      "quantifiers": "任意q,K及显式邻域，所有正需求节点计入树评分",
+      "assumptions": [],
+      "scope": "共享邻域取并可能改变原多标签对象；空层项给零值。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/k均匀束与单层配额超图双源审查--审查.md",
+        "sha256": "f168c8cf058a2c347b6b3bb71afab83c0512ed9c76ee5ca8baa0848e38af7d46",
+        "section": "5. 精确值与证明"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/k均匀束与单层配额超图双源审查--审查.md",
+          "sha256": "f168c8cf058a2c347b6b3bb71afab83c0512ed9c76ee5ca8baa0848e38af7d46",
+          "section": "6. 对近二归约的必要义务"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/k均匀束与单层配额超图双源审查--审查.md",
+          "sha256": "f168c8cf058a2c347b6b3bb71afab83c0512ed9c76ee5ca8baa0848e38af7d46",
+          "section": "7. 证据、用途与开放项"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/两状态配额方向与固定层匹配的接续合同--资源.md",
+          "sha256": "39b3902d45d8c937377e42ee244a0fddad2fc333f9a2e96a2b465de7648b67e0"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单层配额超图与两状态行列池有限审查--审查.md",
+          "sha256": "13600f5474d0bc64c8b528995d35c3f546b62acd736ca0439960a7d9c8fea138"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/k_uniform_bundle_matching_floor.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/k_uniform_bundle_matching_floor.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/single_layer_quota_hypergraph_obstruction.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/single_layer_quota_hypergraph_obstruction.md"
+      ]
+    },
+    {
+      "object_id": "UM-TWO-STATE-QUOTA-HALL-CUT-v1",
+      "version": 1,
+      "title": "固定两状态方向的整数Hall支付及缺口割",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "两状态标签资源，每状态内资源互不交，资源总度≤2；固定变量子集、方向及整数t_ℓ≥0",
+      "statement": "互不交支付存在当且仅当 Σ_U t_ℓ≤|N(U)|=p(U)+e(U)+∂(U)；二进制容量整数流输出支付或正缺口割，含未选标签的边界资源。整束且全变量时配额选择退化2SAT。",
+      "quantifiers": "任意固定 (S,α)；对全部选中标签子集 U",
+      "assumptions": [],
+      "scope": "部分配额不退化成成对冲突；一方向FAIL只否该方向。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/两状态配额Hall切与方向义务双源审查--审查.md",
+        "sha256": "3191cef6678c1888d1bebc5c4a3f93b4021f3831f7b8e7d95434c9415a2c6e95",
+        "section": "1. 精确对象和等价条件"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/两状态配额Hall切与方向义务双源审查--审查.md",
+          "sha256": "3191cef6678c1888d1bebc5c4a3f93b4021f3831f7b8e7d95434c9415a2c6e95",
+          "section": "2. 完整支付与部分支付的分界"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/两状态配额Hall切与方向义务双源审查--审查.md",
+          "sha256": "3191cef6678c1888d1bebc5c4a3f93b4021f3831f7b8e7d95434c9415a2c6e95",
+          "section": "3. 证据范围和准确限制"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/两状态配额方向与固定层匹配的接续合同--资源.md",
+          "sha256": "39b3902d45d8c937377e42ee244a0fddad2fc333f9a2e96a2b465de7648b67e0",
+          "section": "固定方向的整数支付与显式Hall缺口"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/共同容量接续工作区的身份核对与纠错导航--资源.md",
+          "sha256": "83188229ae249d56f3b45ec6f23a8437b8b22db7c0ab42e13d56f78cc10bbe4b"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/two_state_quota_hall_cut_decomposition.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/two_state_quota_hall_cut_decomposition.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/two_state_quota_orientation_obligation.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/two_state_quota_orientation_obligation.md"
+      ]
+    },
+    {
+      "object_id": "UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1",
+      "version": 1,
+      "title": "两状态根树与配额方向的精确存在性等价",
+      "kind": "identity",
+      "truth_status": "proved",
+      "model": "r→x→(x,a)→资源，q_r>0，每状态内部不交，标签需求K≥1",
+      "statement": "b≥δ iff 选至少 ceil(δq_r) 个变量，每变量选一标签并领取 ceil(δK) 个资源，全部领取两两不交。",
+      "quantifiers": "每δ∈(0,1]；存在高评分树当且仅当存在子集、方向、注入领取",
+      "assumptions": [],
+      "scope": "等价不提供联合搜索器；正根限定，零根另行定义；全方向FAIL的桥仍开放。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/两状态配额Hall切与方向义务双源审查--审查.md",
+        "sha256": "3191cef6678c1888d1bebc5c4a3f93b4021f3831f7b8e7d95434c9415a2c6e95",
+        "section": "4. 残余模型和 orientation"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/两状态配额Hall切与方向义务双源审查--审查.md",
+          "sha256": "3191cef6678c1888d1bebc5c4a3f93b4021f3831f7b8e7d95434c9415a2c6e95",
+          "section": "5. 根树存在性当且仅当 orientation"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/两状态配额Hall切与方向义务双源审查--审查.md",
+          "sha256": "3191cef6678c1888d1bebc5c4a3f93b4021f3831f7b8e7d95434c9415a2c6e95",
+          "section": "6. 2-SAT、部分配额与近二义务"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/两状态配额方向与固定层匹配的接续合同--资源.md",
+          "sha256": "39b3902d45d8c937377e42ee244a0fddad2fc333f9a2e96a2b465de7648b67e0",
+          "section": "two-rail orientation是存在性等价"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/two_state_quota_hall_cut_decomposition.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/two_state_quota_hall_cut_decomposition.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/two_state_quota_orientation_obligation.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/two_state_quota_orientation_obligation.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/jansen-rohwedder-restricted-configuration-eleven-sixths",
+      "version": 1,
+      "title": "受限指派配置LP的六分之十一间隙上界",
+      "kind": "literature-theorem",
+      "truth_status": "proved",
+      "model": "受限指派，p_ij∈{p_j,∞}，资格集合可任意大；峰值最小化",
+      "statement": "OPT≤(11/6)OPT*；2017四类 blocker 按前缀激活，停滞推出配置对偶负射线，有限签名严格下降，故可得到11/6输出，但没有多项式步界。",
+      "quantifiers": "每个受限指派实例",
+      "assumptions": [],
+      "scope": "2019 §3 有同一不等式的不同 repelled-move 证明；共享命题身份。",
+      "objections": "2017 SA/BL 排印与不等式在资源§3补足；11/6上界未称锐。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/配置松弛的局部搜索与图平衡界--资源.md",
+        "sha256": "960aab12b10cbfa64e6c04acf22907b9bad4b44ba4228fd72a6537b145791f83",
+        "section": "1. 模型、配置LP及准确结果"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/配置松弛的局部搜索与图平衡界--资源.md",
+          "sha256": "960aab12b10cbfa64e6c04acf22907b9bad4b44ba4228fd72a6537b145791f83",
+          "section": "2. 四类 blocker 如何维护可接续的部分调度"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/配置松弛的局部搜索与图平衡界--资源.md",
+          "sha256": "960aab12b10cbfa64e6c04acf22907b9bad4b44ba4228fd72a6537b145791f83",
+          "section": "3. 不停滞：由局部阻塞构造不可能的配置LP对偶"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/配置松弛的局部搜索与图平衡界--资源.md",
+          "sha256": "960aab12b10cbfa64e6c04acf22907b9bad4b44ba4228fd72a6537b145791f83",
+          "section": "4. 有限终止为何不等于多项式复杂度"
+        },
+        {
+          "path": "archives/unrelated-machines/state/文献/Jansen-Rohwedder-2019--受限指派准多项式近似--文献.md",
+          "sha256": "5d0f5f99d39fa01916c6e3f03ec6e80eb4f71b93283167ccb7f5d71dab317029",
+          "section": "配置 LP 与对偶停滞证书"
+        },
+        {
+          "path": "archives/unrelated-machines/state/文献/Jansen-Rohwedder-2019--受限指派准多项式近似--文献.md",
+          "sha256": "5d0f5f99d39fa01916c6e3f03ec6e80eb4f71b93283167ccb7f5d71dab317029",
+          "section": "非构造性配置 LP 间隙：(11/6)"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/jansen_rohwedder_2017_configuration_lp_v2.pdf#pp1-11",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/jansen_rohwedder_2017_configuration_lp_v2.pdf#pp1-11"
+      ]
+    },
+    {
+      "object_id": "M-4e5b42fa948d49d4a4defd4259802258",
+      "version": 1,
+      "title": "受限指派的六分之十一加精度多项式估值",
+      "kind": "literature-algorithm",
+      "truth_status": "proved",
+      "model": "受限指派，p_ij∈{p_j,∞}，资格集合可任意大；峰值最小化",
+      "statement": "近似配置LP阈值加11/6上界给一个数 E，OPT≤E≤(11/6+ε)OPT。",
+      "quantifiers": "每固定 ε>0、每个受限实例",
+      "assumptions": [],
+      "scope": "2017 Corollary1.2；近似LP后端是外引，估值不承诺在多项式时间内输出调度。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/配置松弛的局部搜索与图平衡界--资源.md",
+        "sha256": "960aab12b10cbfa64e6c04acf22907b9bad4b44ba4228fd72a6537b145791f83",
+        "section": "1. 模型、配置LP及准确结果"
+      },
+      "evidence": [],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/jansen_rohwedder_2017_configuration_lp_v2.pdf#pp1-11",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/jansen_rohwedder_2017_configuration_lp_v2.pdf#pp1-11"
+      ]
+    },
+    {
+      "object_id": "M-53c108a39e6b4437a5b68904d07ec522",
+      "version": 1,
+      "title": "四类 blocker 双目标摊销模板的六分之十一限制",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "受限指派，p_ij∈{p_j,∞}，资格集合可任意大；峰值最小化",
+      "statement": "单大件配置迫截断质量≤R；两机均需对偶≥1而总可收费≤3R−1/2+3η，η→0得R≥5/6。",
+      "quantifiers": "若保持指定对偶形式与 SA/BA 两机配对收费要求",
+      "assumptions": [],
+      "scope": "仅限制此常数模板，不是 11/6 间隙下界、算法或复杂度障碍。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/配置松弛的局部搜索与图平衡界--资源.md",
+        "sha256": "960aab12b10cbfa64e6c04acf22907b9bad4b44ba4228fd72a6537b145791f83",
+        "section": "5. 六分之十一是该常数模板的障碍，非问题硬度"
+      },
+      "evidence": [],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/jansen_rohwedder_2017_configuration_lp_v2.pdf#pp1-11",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/jansen_rohwedder_2017_configuration_lp_v2.pdf#pp1-11"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/jansen-rohwedder-2019-quasi-polynomial-restricted-assignment",
+      "version": 1,
+      "title": "受限指派六分之十一加精度的准多项式实际调度",
+      "kind": "literature-algorithm",
+      "truth_status": "proved",
+      "model": "受限指派，p_ij∈{p_j,∞}，资格集合可任意大；峰值最小化",
+      "statement": "Theorem16 给实际合法峰≤(11/6+ε)OPT，n^{O((1/ε)log n)}。每机至多一 huge；leap/critical/small/non-critical 四层，无动作给几何加权对偶证书。",
+      "quantifiers": "每固定 ε>0、每个受限实例",
+      "assumptions": [],
+      "scope": "2019组合算法；非估值，也不是多项式，配置LP用于分析。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/文献/Jansen-Rohwedder-2019--受限指派准多项式近似--文献.md",
+        "sha256": "5d0f5f99d39fa01916c6e3f03ec6e80eb4f71b93283167ccb7f5d71dab317029",
+        "section": "准多项式构造：(11/6+\\varepsilon)"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/文献/Jansen-Rohwedder-2019--受限指派准多项式近似--文献.md",
+          "sha256": "5d0f5f99d39fa01916c6e3f03ec6e80eb4f71b93283167ccb7f5d71dab317029",
+          "section": "配置 LP 与对偶停滞证书"
+        },
+        {
+          "path": "archives/unrelated-machines/state/文献/Jansen-Rohwedder-2019--受限指派准多项式近似--文献.md",
+          "sha256": "5d0f5f99d39fa01916c6e3f03ec6e80eb4f71b93283167ccb7f5d71dab317029",
+          "section": "2+ε 准多项式算法（方法导入）"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/jansen_rohwedder_2019_quasi_polynomial_v2.pdf#PDF-pages-1-30",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/jansen_rohwedder_2019_quasi_polynomial_v2.pdf#PDF-pages-1-30"
+      ]
+    },
+    {
+      "object_id": "M-6486a4ef9d24403f91b12e6412a9d473",
+      "version": 1,
+      "title": "受限指派二加精度的层扩张准多项式构造",
+      "kind": "literature-algorithm",
+      "truth_status": "proved",
+      "model": "受限指派，p_ij∈{p_j,∞}，资格集合可任意大；峰值最小化",
+      "statement": "从任意分配出发用坏机邻层找到负载≤(1+ε)τ的目标移动；无动作满对数层即给负对偶。词典序状态界 n^{O((1/ε)log n)}，输出峰≤(2+ε)τ。",
+      "quantifiers": "每个 τ 及 ε>0，在配置 LP τ 可行时",
+      "assumptions": [],
+      "scope": "2019教学变体可单独复用层扩张，不等于原强保证。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/文献/Jansen-Rohwedder-2019--受限指派准多项式近似--文献.md",
+        "sha256": "5d0f5f99d39fa01916c6e3f03ec6e80eb4f71b93283167ccb7f5d71dab317029",
+        "section": "2+ε 准多项式算法（方法导入）"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/文献/Jansen-Rohwedder-2019--受限指派准多项式近似--文献.md",
+          "sha256": "5d0f5f99d39fa01916c6e3f03ec6e80eb4f71b93283167ccb7f5d71dab317029",
+          "section": "配置 LP 与对偶停滞证书"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/jansen_rohwedder_2019_quasi_polynomial_v2.pdf#PDF-pages-1-30",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/jansen_rohwedder_2019_quasi_polynomial_v2.pdf#PDF-pages-1-30"
+      ]
+    },
+    {
+      "object_id": "UM-LITERATURE-MMDA-SA-GAP-BAMAS-V2",
+      "version": 1,
+      "title": "Bamas 深度三 MMDA 的一轮SA间隙",
+      "kind": "literature-obstruction",
+      "truth_status": "proved",
+      "model": "深度3相邻层包含边的MMDA，最小损失α，规模 Θ(n)",
+      "statement": "一轮 assignment-LP Sherali–Adams 仍有 n^{Ω(1)} 整数间隙。Shadow 抽样触发子树，同一分布边出现满足 x_e≤s_e≤6x_e，处理单边正/负条件；整数下界另证。",
+      "quantifiers": "充分大n的显式层状族；非汇点需求 n^{Ω(1)}",
+      "assumptions": [],
+      "scope": "不是计算硬度或一般UM gap；BAMAS-MMDA-LIFT-PROJECT-2024-V2是同源容器。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/Bamas升投影MMDA与SantaClaus--资料.md",
+        "sha256": "ca4aeec52e027d9422e1519df4eca40932c4538c3820a267c82a55540521d817",
+        "section": "3. 深度 3 的一轮 SA 间隙"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/Bamas升投影MMDA与SantaClaus--资料.md",
+          "sha256": "ca4aeec52e027d9422e1519df4eca40932c4538c3820a267c82a55540521d817",
+          "section": "2. MMDA 模型和松弛"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/Bamas升投影MMDA与SantaClaus--资料.md",
+          "sha256": "ca4aeec52e027d9422e1519df4eca40932c4538c3820a267c82a55540521d817",
+          "section": "2026-11-02：同冻结原件的页数与损失参数更正"
+        },
+        {
+          "path": "archives/unrelated-machines/state/文献/需求树困难性导入的参与条件与参数方向--文献.md",
+          "sha256": "38dbf9ca65b81707ca536a8eb6f222c68664cffcccc73bb7187b3c7a03753a83"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/bamas_2025_lift_project_santa_claus_v2.pdf",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/bamas_2025_lift_project_santa_claus_v2.pdf"
+      ]
+    },
+    {
+      "object_id": "M-b51f7575d2f44fe3a73e3ad594af67c6",
+      "version": 1,
+      "title": "Bamas 深度相关 path hierarchy 间隙及局部好解",
+      "kind": "literature-obstruction",
+      "truth_status": "proved",
+      "model": "层状MMDA，深度 ℓ∈Ω(1)∩o(log n/loglog n)",
+      "statement": "至少 ℓ/c 轮 path hierarchy 仍有 n^{Ω(1/ℓ)} 间隙；需求 n^{Θ(1/ℓ)}、每点 n^{Ω(logℓ)} 路、存在 ℓ/c-locally-good 整数路径集。",
+      "quantifiers": "充分大 n、适用ℓ，存在绝对 c>0 和显式族",
+      "assumptions": [],
+      "scope": "一般SA Θ(ℓ)轮是猜想，不是同一个定理。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/Bamas升投影MMDA与SantaClaus--资料.md",
+        "sha256": "ca4aeec52e027d9422e1519df4eca40932c4538c3820a267c82a55540521d817",
+        "section": "4. 任意深度的 lift、path hierarchy 和局部好解"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/Bamas升投影MMDA与SantaClaus--资料.md",
+          "sha256": "ca4aeec52e027d9422e1519df4eca40932c4538c3820a267c82a55540521d817",
+          "section": "2. MMDA 模型和松弛"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/Bamas升投影MMDA与SantaClaus--资料.md",
+          "sha256": "ca4aeec52e027d9422e1519df4eca40932c4538c3820a267c82a55540521d817",
+          "section": "2026-11-02：同冻结原件的页数与损失参数更正"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/bamas_2025_lift_project_santa_claus_v2.pdf",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/bamas_2025_lift_project_santa_claus_v2.pdf"
+      ]
+    },
+    {
+      "object_id": "M-68e534b8b5c1428d990961b1dfae1cb2",
+      "version": 1,
+      "title": "受限Santa Claus 的高轮SA间隙",
+      "kind": "literature-obstruction",
+      "truth_status": "proved",
+      "model": "受限 Santa：每资源玩家无关价值，不可用端价值0",
+      "statement": "存在规模n的实例，⌊εn⌋轮SA仍有 Ω(1/ε) 间隙；k+1玩家、k个价值1大物与私有3ε小物。",
+      "quantifiers": "任意n及 Ω(1/n)≤ε≤1/3",
+      "assumptions": [],
+      "scope": "Bamas附录A Theorem3，目标为最大最小价值。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/Bamas升投影MMDA与SantaClaus--资料.md",
+        "sha256": "ca4aeec52e027d9422e1519df4eca40932c4538c3820a267c82a55540521d817",
+        "section": "5. restricted-assignment 附录的独立结果"
+      },
+      "evidence": [],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/bamas_2025_lift_project_santa_claus_v2.pdf",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/bamas_2025_lift_project_santa_claus_v2.pdf"
+      ]
+    },
+    {
+      "object_id": "M-c99f51ac275e4ac09e860f75a108d704",
+      "version": 1,
+      "title": "受限Santa Claus的canonical化与一轮SA控制",
+      "kind": "literature-theorem",
+      "truth_status": "proved",
+      "model": "受限 Santa Claus canonical 实例",
+      "statement": "每玩家只能取大物、或最多一个大物且其余小物，大物归一为T；该域一轮 SA 至少等强于 Davies–Rothvoss–Zhang LP，其已知间隙≤4。",
+      "quantifiers": "任意受限实例；变换多项式且保近似意义",
+      "assumptions": [],
+      "scope": "Bamas附录A Theorem4；不转成一般makespan。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/Bamas升投影MMDA与SantaClaus--资料.md",
+        "sha256": "ca4aeec52e027d9422e1519df4eca40932c4538c3820a267c82a55540521d817",
+        "section": "5. restricted-assignment 附录的独立结果"
+      },
+      "evidence": [],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/bamas_2025_lift_project_santa_claus_v2.pdf",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/bamas_2025_lift_project_santa_claus_v2.pdf"
+      ]
+    },
+    {
+      "object_id": "M-b6ffef8c23fc422eadbf95593b604ffe",
+      "version": 1,
+      "title": "BCG全源森林不等于单根保参与比例的导入合同",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "BCG 必须含全部sources 的 forest；目标UM桥用单根分层需求树",
+      "statement": "加根且需求为 q 只收费已选源比例，不能从缺全源森林推出 b*≤δ。收益2复制会拆分到不同玩家，星封装则只增加一条子边；须另有不可分裂的部分解解码。",
+      "quantifiers": "原森林 NO 只排全源；固定 δ<1 的单根树可选少数源",
+      "assumptions": [],
+      "scope": "是逻辑/模型导入缺口，不是BCG定理反例或一般困难性。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/文献/需求树困难性导入的参与条件与参数方向--文献.md",
+        "sha256": "38dbf9ca65b81707ca536a8eb6f222c68664cffcccc73bb7187b3c7a03753a83",
+        "section": "BCG：必须包含全部sources的forest不等于单根保比例"
+      },
+      "evidence": [],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/bcg_mmda_hardness_import_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/bcg_mmda_hardness_import_review.md"
+      ]
+    },
+    {
+      "object_id": "UM-DUPLICATION-TWO-COPY-FLOOR-v1",
+      "version": 1,
+      "title": "两份完整复制状态内不交的半值地板",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "两标签资源束每状态内部不交，K_x^a=|B_x^a|≥1，根需求q=|X|",
+      "statement": "按资源出现二着色，每束至少一色保 ceil(K/2)；某色覆盖至少q/2变量，给b*≥1/2；根需求Q≥q时下界q/(2Q)。",
+      "quantifiers": "任意该域两副本，不要求同一源解或源可行",
+      "assumptions": [],
+      "scope": "复制结构下排 b*<1/2；不同于一般重数≤2或残余配额。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/两份复制多数地板与共同激活复制障碍双源审查--审查.md",
+        "sha256": "5e06ccad61d733369eea265a4a2f5cfec977025da0bdb2cabfa79f6b03220b64",
+        "section": "一、两份完整复制的二分之一地板"
+      },
+      "evidence": [],
+      "sources": [
+        "clean:25dbaab0a68127463da6"
+      ]
+    },
+    {
+      "object_id": "UM-MULTI-ACTIVATION-STATIC-COVER-v1",
+      "version": 1,
+      "title": "两给定调度共同激活的静态源cover与目标packing",
+      "kind": "reconfiguration",
+      "truth_status": "proved",
+      "model": "给原调度峰≤C、目标峰≤T，T≤C≤2T；迁移用真实源/目标时长",
+      "statement": "令U=max(2T,C+T/2)、h_i=(S_i+Q_i−U)_+；若迁R的源工作≥h_i且目标新增≤U−S_i，先迁R再迁余项的任意顺序安全≤U。等源/等目标时长用带上下界整数 circulation。",
+      "quantifiers": "任意同一改变任务子集R同时满足源cover和目标packing",
+      "assumptions": [],
+      "scope": "HOLD-EDGE 只是同静态集合顺序改写；可行目标不保证存在安全首步。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/两份复制多数地板与共同激活复制障碍双源审查--审查.md",
+        "sha256": "5e06ccad61d733369eea265a4a2f5cfec977025da0bdb2cabfa79f6b03220b64",
+        "section": "二、共同激活的静态 cover/packing 接口"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/两份复制多数地板与共同激活复制障碍双源审查--审查.md",
+          "sha256": "5e06ccad61d733369eea265a4a2f5cfec977025da0bdb2cabfa79f6b03220b64",
+          "section": "三、删除条件后的精确反例与复制不放大"
+        }
+      ],
+      "sources": [
+        "clean:95be789159cb78608f97"
+      ]
+    },
+    {
+      "object_id": "UM-DISJOINT-BLOCK-NO-AMPLIFICATION-v1",
+      "version": 1,
+      "title": "独立块拼接不放大最优峰值",
+      "kind": "identity",
+      "truth_status": "proved",
+      "model": "机器及任务不相交、跨块禁边的不相关机实例",
+      "statement": "OPT(⊔I_t)=max_t OPT(I_t)，分别最优并集给上界，任何全局调度限制给各块下界。",
+      "quantifiers": "任意有限块及块缩放",
+      "assumptions": [],
+      "scope": "不能把纯不相交复制当近二放大。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/两份复制多数地板与共同激活复制障碍双源审查--审查.md",
+        "sha256": "5e06ccad61d733369eea265a4a2f5cfec977025da0bdb2cabfa79f6b03220b64",
+        "section": "三、删除条件后的精确反例与复制不放大"
+      },
+      "evidence": [],
+      "sources": [
+        "clean:95be789159cb78608f97"
+      ]
+    },
+    {
+      "object_id": "UM-SHARED-CLONE-REPLICATION-COLLAPSE-v1",
+      "version": 1,
+      "title": "同机共享任务复制趋向普通assignment-LP",
+      "kind": "identity",
+      "truth_status": "proved",
+      "model": "一般显式不相关机；每原任务复制 k 份，共享原机，F为无额外剪枝 assignment-LP最优峰",
+      "statement": "kF≤O_k≤kF+max_iΣ_{j有限}p_ij；复制解平均给LP下界，逐端舍入误差至多一份给上界，O_k/k→F。",
+      "quantifiers": "任意整数k≥1；固定原实例",
+      "assumptions": [],
+      "scope": "显式展开 nk 不因k二进制而位多项式；非配置LP或剪枝阈值。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/两份复制多数地板与共同激活复制障碍双源审查--审查.md",
+        "sha256": "5e06ccad61d733369eea265a4a2f5cfec977025da0bdb2cabfa79f6b03220b64",
+        "section": "三、删除条件后的精确反例与复制不放大"
+      },
+      "evidence": [],
+      "sources": [
+        "clean:95be789159cb78608f97"
+      ]
+    },
+    {
+      "object_id": "UM-OPT-HULL-HIGHER-NC-SUCCESS-v1",
+      "version": 1,
+      "title": "私有汇点固定边际高阶正NC的精确成功率",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "k件1/k small每组在自己 home/sink，r≥k组；一单位big边际各home 1/r，small各自sink边际1/r",
+      "statement": "令t=min(d,q)。峰≤2−q/k的最大成功率 t=1时1，否则 min(1, binom(k,t)/(r^(t−1)binom(q,t)))；阶乘矩上界由每态恰k个small外送的混合law达到。",
+      "quantifiers": "每k≥2、r≥k、1≤d,q≤k，任意保固定x的完整随机调度并在各组内所有2≤|S|≤d满足正事件上界 r^{−|S|}",
+      "assumptions": [],
+      "scope": "限制固定边际正NC；无补事件或跨组NC要求。",
+      "objections": "r=k²,d=k,q=ceil(εk) 时任意固定多项式采样 union bound 趋零；条件乘积需每历史保持同一合同。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/高阶负相关两状态多数与鲁棒环相位边界有限审查--审查.md",
+        "sha256": "5966fde7c7e92ec1ba0aee4dafa2c4199626d7a470c264b9e191df5a8422e6d8",
+        "section": "2.1 精确合同和阶乘矩上界"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/高阶负相关两状态多数与鲁棒环相位边界有限审查--审查.md",
+          "sha256": "5966fde7c7e92ec1ba0aee4dafa2c4199626d7a470c264b9e191df5a8422e6d8",
+          "section": "2.2 完整达到 law、边界和采样"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/高阶负相关两状态多数与鲁棒环相位边界有限审查--审查.md",
+          "sha256": "5966fde7c7e92ec1ba0aee4dafa2c4199626d7a470c264b9e191df5a8422e6d8",
+          "section": "2.3 有限独立证据"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/高阶负相关两状态多数与鲁棒环相位边界有限审查--审查.md",
+          "sha256": "5966fde7c7e92ec1ba0aee4dafa2c4199626d7a470c264b9e191df5a8422e6d8",
+          "section": "3. `UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1`"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/higher-nc-duplication-cycle-20261030/private_sink_higher_order_nc_independent_audit.json",
+          "sha256": "ac3938436df69ce861b2e61e42fefa1bf3997b5a11a69ae6f41ded34783777a9"
+        }
+      ],
+      "sources": [
+        "source:f5432a4b00c66b245897:evidence/runs/unrelated_machines/private_sink_higher_order_nc_independent_audit.json",
+        "source:3e041703cd2a1dd28eb9:evidence/runs/unrelated_machines/robust_consistency_state_majority_audit.json",
+        "source:a304a2379c86ebfd545d:evidence/runs/unrelated_machines/robust_cycle_shared_context_phase_audit.json"
+      ]
+    },
+    {
+      "object_id": "UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1",
+      "version": 1,
+      "title": "残余两状态束的多数状态树地板",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "每变量两标签、原需求K_x^a≥1，同一状态各残余束互不交，根需求q_r>0",
+      "statement": "某状态至少含 |G|/2 个好变量；选全体该状态好变量和各真实残余束给 b≥min{|G|/(2q_r),δ}；G空时取0。",
+      "quantifiers": "任意残余删叶/删变量及δ≥0；G为至少一状态保留比例≥δ的变量集合",
+      "assumptions": [],
+      "scope": "显式多项式输出见证；需求不随删叶缩小。",
+      "objections": "不否定混合状态；整束冲突附属锐性撤回，行列池另有精确式。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/高阶负相关两状态多数与鲁棒环相位边界有限审查--审查.md",
+        "sha256": "5966fde7c7e92ec1ba0aee4dafa2c4199626d7a470c264b9e191df5a8422e6d8",
+        "section": "3. `UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1`"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/两状态多数树的有限枚举与部分资源边界--资源.md",
+          "sha256": "501c7fa4b82fcb6cd6964feefaec4a19b2870aee429c1c4c107cad28e803d06a",
+          "section": "程序实际做了什么"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/两状态多数树的有限枚举与部分资源边界--资源.md",
+          "sha256": "501c7fa4b82fcb6cd6964feefaec4a19b2870aee429c1c4c107cad28e803d06a",
+          "section": "主地板的自足证明"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/两状态多数树的有限枚举与部分资源边界--资源.md",
+          "sha256": "501c7fa4b82fcb6cd6964feefaec4a19b2870aee429c1c4c107cad28e803d06a",
+          "section": "34389的真实枚举域"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/higher-nc-duplication-cycle-20261030/robust_consistency_state_majority_audit.json",
+          "sha256": "b81b59d97acbe78ea4a358fdd7c264298320206c59b94ec551d583c4b14582e2"
+        },
+        {
+          "path": "tools/evidence/um-star-transfer-majority-and-rank-programs-primary/original/tests/audits/unrelated_machines/robust_consistency_state_majority.py",
+          "sha256": "c4d3f062f8289a170a94edcaed04f1ca553701616546338eb8c1ef0cc761202e"
+        }
+      ],
+      "sources": [
+        "source:f5432a4b00c66b245897:evidence/runs/unrelated_machines/private_sink_higher_order_nc_independent_audit.json",
+        "source:3e041703cd2a1dd28eb9:evidence/runs/unrelated_machines/robust_consistency_state_majority_audit.json",
+        "source:a304a2379c86ebfd545d:evidence/runs/unrelated_machines/robust_cycle_shared_context_phase_audit.json"
+      ]
+    },
+    {
+      "object_id": "UM-ROBUST-CYCLE-SHARED-CONTEXT-PHASE-v1",
+      "version": 1,
+      "title": "双端鲁棒环在共享背景下的相位互换和锐界",
+      "kind": "reconfiguration",
+      "truth_status": "proved",
+      "model": "T>0，T≤B<2T；双端n≥2环、各core机器互不交，context可跨core；给一份全实例峰≤T实际调度",
+      "statement": "环在B下只有两coherent相位 iff 所有 b_(i−1)+a_i>B。任意换相给全调度峰<3T−B；B≥3T/2 时所有相位弱B可行。每0<e<2T−B有指定反相的精确最小扩展峰3T−B−e。",
+      "quantifiers": "每个core的全部碰撞和>B；对任意显式各core相位向量，全部context任务固定原端",
+      "assumptions": [],
+      "scope": "两core共享机器不适用；反相失败例与等号边界有精确构造。",
+      "objections": "不是寻找未知严格见证的算法、一般decoder或三半硬度。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/高阶负相关两状态多数与鲁棒环相位边界有限审查--审查.md",
+        "sha256": "5966fde7c7e92ec1ba0aee4dafa2c4199626d7a470c264b9e191df5a8422e6d8",
+        "section": "4. `UM-ROBUST-CYCLE-SHARED-CONTEXT-PHASE-v1`"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/tools/evidence/higher-nc-duplication-cycle-20261030/robust_cycle_shared_context_phase_audit.json",
+          "sha256": "cf4c2797f80df6cdd1889f7c2a618b206c5c956c9c61ea42d6a46660d03af7a8"
+        }
+      ],
+      "sources": [
+        "source:f5432a4b00c66b245897:evidence/runs/unrelated_machines/private_sink_higher_order_nc_independent_audit.json",
+        "source:3e041703cd2a1dd28eb9:evidence/runs/unrelated_machines/robust_consistency_state_majority_audit.json",
+        "source:a304a2379c86ebfd545d:evidence/runs/unrelated_machines/robust_cycle_shared_context_phase_audit.json"
+      ]
+    },
+    {
+      "object_id": "UM-TWO-STATE-POOL-EXACT-FRONTIER-v1",
+      "version": 1,
+      "title": "可裁剪行列残余池的选集配额与精确前沿",
+      "kind": "identity",
+      "truth_status": "proved",
+      "model": "s×s格，s行s列标签，根需求2s，标签原需求K≥s，资源单父且允许部分领取",
+      "statement": "固定选集统一配额为 floor(s−ab/(a+b))；可重选k标签得 h_k=min(s,floor(s²/k))，b*=max_k min(k/(2s),h_k/K)。旧min(1/2,s/K)恰 K≥2s−2成立；s=K=4值5/8。",
+      "quantifiers": "所有整数s≥1,K≥s；每固定选a行b列及每k=a+b>0",
+      "assumptions": [],
+      "scope": "显式网格时精确最优构造多项式，K只入分母，不扫数值；不是一般双状态算法。",
+      "objections": "规范全选集克隆匹配、资源穷举、独立流和循环分配验证有限域；不同s4见证都合法。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/行列残余池的匹配与三路独立核验--资源.md",
+        "sha256": "d52d2326acd36bd9c2a380ca39769da19b10f9652e337b3220eda3e95cc36290",
+        "section": "精确值为何成立"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/行列残余池的匹配与三路独立核验--资源.md",
+          "sha256": "d52d2326acd36bd9c2a380ca39769da19b10f9652e337b3220eda3e95cc36290",
+          "section": "selected-set 克隆槽规范审计"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/行列残余池的匹配与三路独立核验--资源.md",
+          "sha256": "d52d2326acd36bd9c2a380ca39769da19b10f9652e337b3220eda3e95cc36290",
+          "section": "先陈述独立程序的三条核验"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单层配额超图与两状态行列池有限审查--审查.md",
+          "sha256": "13600f5474d0bc64c8b528995d35c3f546b62acd736ca0439960a7d9c8fea138",
+          "section": "两状态残余行列池：原锐性撤回与修复公式"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/行列池类型配置与单位读出三源接续审查--审查.md",
+          "sha256": "6e60ab060e757aeed470e0086620e882e6a78d8fb102a2276f9d3fe8acb650b2",
+          "section": "1. 可裁剪两状态行列池的精确前沿"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/两状态配额方向与固定层匹配的接续合同--资源.md",
+          "sha256": "39b3902d45d8c937377e42ee244a0fddad2fc333f9a2e96a2b465de7648b67e0",
+          "section": "行列池的正确尺度"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/两状态配额Hall切与方向义务双源审查--审查.md",
+          "sha256": "3191cef6678c1888d1bebc5c4a3f93b4021f3831f7b8e7d95434c9415a2c6e95",
+          "section": "6. 2-SAT、部分配额与近二义务"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/两状态多数树的有限枚举与部分资源边界--资源.md",
+          "sha256": "501c7fa4b82fcb6cd6964feefaec4a19b2870aee429c1c4c107cad28e803d06a",
+          "section": "sharp_example的真实部分资源见证"
+        },
+        {
+          "path": "tools/evidence/um-pool-profile-and-weak-moment-programs-primary/original/tests/audits/unrelated_machines/two_state_pool_exact_frontier.py",
+          "sha256": "7739be1cb8a36dc0ee2f4b219a2cdd4529f22fa8a4b261bb087e3bff8ad7964a"
+        },
+        {
+          "path": "tools/evidence/um-pool-profile-and-weak-moment-programs-primary/original/tests/audits/unrelated_machines/two_state_pool_partial_resource_independent.py",
+          "sha256": "394c9afce1f25c3eaf232affcb18079519e9297ece6991d20f9c3324d6bbe767"
+        },
+        {
+          "path": "tools/evidence/um-pool-profile-and-weak-moment-output-comparison-supplement/original/evidence/runs/unrelated_machines/two_state_pool_exact_frontier_audit.json",
+          "sha256": "e9007061ba847674429ebb1717a1cf9b309e4ccea3a9cfe547b1c5777ed2e5aa"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/高阶负相关两状态多数与鲁棒环相位边界有限审查--审查.md",
+          "sha256": "5966fde7c7e92ec1ba0aee4dafa2c4199626d7a470c264b9e191df5a8422e6d8"
+        }
+      ],
+      "sources": [
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/two_state_pool_exact_frontier.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/two_state_pool_partial_resource_independent.py"
+      ]
+    },
+    {
+      "object_id": "UM-NORMALIZED-TYPE-MATCHING-RANK-VALUE-IDENTITY-v1",
+      "version": 1,
+      "title": "归一化类型profile匹配的全任务真实值恒等",
+      "kind": "identity",
+      "truth_status": "proved",
+      "model": "m≥1显式非负有理type矩阵、非空indexed菜单、整数counts≤n，每profile W(c)>0",
+      "statement": "固定 f_ic=Σ v min(c(v),N_iv)/W(c)，F_i=max_c f_ic，V为不交最大最小值。每profile一私机、每玩家selector、全部tokens实际存在，峰<2资源最多一unit；双向恢复给OPT_UM=2−V。",
+      "quantifiers": "每个完整合法菜单，包括重复、缺失型、零token和V=0；反向任意峰C<2完整调度",
+      "assumptions": [],
+      "scope": "原始分块生成的可达count子域由#30承重；本程序和双向证明确认可缺失/超可用型的显式菜单。",
+      "objections": "零token保留/删除同最优但不是同调度集合；124版、1260实际调度、331解码是有限审计。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/归一化类型匹配编译的全任务有限核验--资源.md",
+        "sha256": "9bd16e330e4c9ed1e9a65de5e8841ce6c764fdc633807a27d2aa8a479edb815a",
+        "section": "全量jobs的真实UM编译与双向证明"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/归一化类型匹配编译的全任务有限核验--资源.md",
+          "sha256": "9bd16e330e4c9ed1e9a65de5e8841ce6c764fdc633807a27d2aa8a479edb815a",
+          "section": "输入域：正W、indexed菜单、零型和缺失型"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/归一化类型匹配编译的全任务有限核验--资源.md",
+          "sha256": "9bd16e330e4c9ed1e9a65de5e8841ce6c764fdc633807a27d2aa8a479edb815a",
+          "section": "固定8结构、两零token版的全部结果"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/类型压缩与仿射并行线双源审查--审查.md",
+          "sha256": "1be743b04d1c34025a703c09b80813d38dfa90dd845e9c13123f2f68ad34277a",
+          "section": "2.3 Exact B：归一化 type matching 的真实值恒等式"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/行列池类型配置与单位读出三源接续审查--审查.md",
+          "sha256": "6e60ab060e757aeed470e0086620e882e6a78d8fb102a2276f9d3fe8acb650b2",
+          "section": "2.2 归一化 profile 的真实 UM 恒等式"
+        },
+        {
+          "path": "tools/evidence/um-star-transfer-majority-and-rank-programs-primary/original/tests/audits/unrelated_machines/type_matching_rank_bridge.py",
+          "sha256": "1c0ac2c662838795bfd8a616cd7cf88f135b29d7a8e6948b0abc70071c9c1ffc"
+        }
+      ],
+      "sources": [
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/type_matching_rank_bridge.py"
+      ]
+    },
+    {
+      "object_id": "M-43d1a6e5f4114a3882175890c6e5b41b",
+      "version": 1,
+      "title": "归一化最大类型菜单不次模的四资源见证",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "一玩家四资源值(1/4,1/2,1/2,3/4)，所有总值≥1的明确类型profile",
+      "statement": "F(A)=F(B)=3/5，而F(A∪B)=1、F(A∩B)=1/4，6/5<5/4。",
+      "quantifiers": "存在所列菜单；A={0,1}, B={0,2}",
+      "assumptions": [],
+      "scope": "只反驳 max over profiles 的普遍次模性，固定 profile 仍为加权 partition-matroid rank。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/归一化类型匹配编译的全任务有限核验--资源.md",
+        "sha256": "9bd16e330e4c9ed1e9a65de5e8841ce6c764fdc633807a27d2aa8a479edb815a",
+        "section": "max-profile的显式非次模反例"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/类型压缩与仿射并行线双源审查--审查.md",
+          "sha256": "1be743b04d1c34025a703c09b80813d38dfa90dd845e9c13123f2f68ad34277a",
+          "section": "2.4 非次模和接续限制"
+        }
+      ],
+      "sources": [
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/type_matching_rank_bridge.py"
+      ]
+    },
+    {
+      "object_id": "UM-SC-BLOCK-TYPE-PROFILE-RECONSTRUCTION-v1",
+      "version": 1,
+      "title": "单阈值Santa 的分块计数菜单重构",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "显式非负二进制有理Santa Claus，m≥1,n≥0，固定有理ε>0，资源可闲置",
+      "statement": "截断、τ=δ/n删tiny、几何网格舍入和分块后，确定性位多项式生成 O_ε(log(n+1)) 类型及每玩家 (n+1)^{O_ε(1)} profiles；有 A′⊆A 匹配其一且舍后值≥1/(1+ε)。",
+      "quantifiers": "每玩家i、每原资源子集A若val_i(A)≥1；可同时用于任意不交YES分配",
+      "assumptions": [],
+      "scope": "n=0旁路；不求共同选择、不判阈值。",
+      "objections": "原Appendix B较高tiny阈值有101资源反例，采用安全τ并将网格延至a_K≤τ；ε不按log1/ε统一收费。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/类型压缩与仿射并行线双源审查--审查.md",
+        "sha256": "1be743b04d1c34025a703c09b80813d38dfa90dd845e9c13123f2f68ad34277a",
+        "section": "2.1 Exact A 的定义域、量词与压缩结论"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/类型压缩与仿射并行线双源审查--审查.md",
+          "sha256": "1be743b04d1c34025a703c09b80813d38dfa90dd845e9c13123f2f68ad34277a",
+          "section": "2.2 原文 cutoff 的实质边界"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/行列池类型配置与单位读出三源接续审查--审查.md",
+          "sha256": "6e60ab060e757aeed470e0086620e882e6a78d8fb102a2276f9d3fe8acb650b2",
+          "section": "2.1 分块压缩"
+        }
+      ],
+      "sources": [
+        "source:af0562c14e7407309d73:research/current/unrelated_machines/type_profile_compression_and_matching_rank_bridge.md",
+        "source:cc3fc3849a2e96e053fb:research/current/unrelated_machines/weighted_affine_parallel_relation_reweighting_obstruction.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/type_profile_compression_and_rank_bridge_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/weighted_affine_parallel_relation_reweighting_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/santa_block_type_profiles.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/type_matching_rank_bridge.py"
+      ]
+    },
+    {
+      "object_id": "UM-WEIGHTED-AFFINE-LINE-PARALLEL-RELATIONS-HALF-ESCAPE-v1",
+      "version": 1,
+      "title": "任意显式状态权的并行仿射线半保留算法",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "素数R，k≥2；R组允许表 Σ_i a_i=j、按tag互斥的F_R²仿射线；每state任意非负norm1权",
+      "statement": "条件于固定组state时c均匀；去共点的总损失期望≤1，最多一组损失>1/2，唯一例外回填全束。所有组选不交资源得V≥1/2，输出全部jobs实际峰≤3/2。",
+      "quantifiers": "所有完整显式权表；存在并可确定性枚举 c,d 给各组 a(j)=cj+d",
+      "assumptions": [],
+      "scope": "R^(2k−2)候选在显式表下多项式；关系值1/R但易判，singleton/k=1可V=0，不是一般NO soundness。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/类型压缩与仿射并行线双源审查--审查.md",
+        "sha256": "1be743b04d1c34025a703c09b80813d38dfa90dd845e9c13123f2f68ad34277a",
+        "section": "3.1 定义域和真实 UM 编译"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/类型压缩与仿射并行线双源审查--审查.md",
+          "sha256": "1be743b04d1c34025a703c09b80813d38dfa90dd845e9c13123f2f68ad34277a",
+          "section": "3.2 条件平均和唯一例外回填"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/类型压缩与仿射并行线双源审查--审查.md",
+          "sha256": "1be743b04d1c34025a703c09b80813d38dfa90dd845e9c13123f2f68ad34277a",
+          "section": "3.3 否定范围、反例和有限证据"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/归一化菜单的保值表示与放大失效边界--资源.md",
+          "sha256": "fcf576c66694cf62d22613ad9cde9807e86428ff51d9d14f29718842330603e2",
+          "section": "LINE各族的量词"
+        }
+      ],
+      "sources": [
+        "source:af0562c14e7407309d73:research/current/unrelated_machines/type_profile_compression_and_matching_rank_bridge.md",
+        "source:cc3fc3849a2e96e053fb:research/current/unrelated_machines/weighted_affine_parallel_relation_reweighting_obstruction.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/type_profile_compression_and_rank_bridge_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/weighted_affine_parallel_relation_reweighting_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/santa_block_type_profiles.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/type_matching_rank_bridge.py"
+      ]
+    },
+    {
+      "object_id": "UM-SANTA-RESTRICTED-BRIDGE-BOUNDARY-v1",
+      "version": 1,
+      "title": "需求树token桥不保持restricted Santa端点值",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "restricted Santa 要求同一物品所有非零端共享一固有值；需求树token桥",
+      "statement": "同一原任务在父端时间/价值1/k_v，在孩子端为1，不能落入restricted Santa；强制全部k_v=1退成至多一子边、b仅0或1。",
+      "quantifiers": "只要某正需求点 k_v>1且有出边；最小显式点 k_v=2,d_v=1",
+      "assumptions": [],
+      "scope": "模型边界，不能拿restricted常数算法充一般Santa或UM反面。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/Santa受限桥与归一化菜单双源审查--审查.md",
+        "sha256": "f96a1038bc7dd23d2e88c6ed842203ee93778a1feb579883ceaf3b5235bf7dac",
+        "section": "一、restricted Santa 与需求树桥梁不保真"
+      },
+      "evidence": [],
+      "sources": [
+        "clean:ba67e7eebfe21013c7ae"
+      ]
+    },
+    {
+      "object_id": "UM-WEIGHTED-MENU-STATE-DUMMY-SC-v1",
+      "version": 1,
+      "title": "显式归一化加性菜单的Santa与实际UM精确值桥",
+      "kind": "identity",
+      "truth_status": "proved",
+      "model": "有限非空组，各组 K_g≥1 indexed state；显式非负有理state权和恰1，实际资源不能复用",
+      "statement": "令 V=max_{不交B}min_g max_s a_gs(B_g)。每state一agent、每组 K_g−1 个只对此组单位dummy，必有dummy-free agent；与全部原job的selector编译双向对应，OPT_SC=V，OPT_UM=2−V。",
+      "quantifiers": "任意菜单；各阈值t∈[0,1]及全部原任务调度",
+      "assumptions": [],
+      "scope": "涵盖V=0/1、K_g=1、C=2；W≤1需在增广资源重定义V，不能免费输入一般SC行。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/Santa受限桥与归一化菜单双源审查--审查.md",
+        "sha256": "f96a1038bc7dd23d2e88c6ed842203ee93778a1feb579883ceaf3b5235bf7dac",
+        "section": "二、归一化完整菜单的精确值桥"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/归一化菜单的保值表示与放大失效边界--资源.md",
+          "sha256": "fcf576c66694cf62d22613ad9cde9807e86428ff51d9d14f29718842330603e2",
+          "section": "完整flat与SC"
+        }
+      ],
+      "sources": [
+        "clean:737121825175bccceb42"
+      ]
+    },
+    {
+      "object_id": "UM-GLOBAL-ROW-COUNT-FILTER-v1",
+      "version": 1,
+      "title": "全局行基数匹配过滤保所有阈值调度边",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "一般二进制非负有理/∞矩阵、T剪枝；每行以当前最小有限耗时定任务数上限",
+      "statement": "按其它机行数上限作b匹配，覆盖必须离开v的任务并最大化从v可卸的真实权；无覆盖或保留负载下界>T即删边，迭代到稳定。",
+      "quantifiers": "任意P,T；每轮每存活j→v独立固定；保每一个T可行调度的全部边",
+      "assumptions": [],
+      "scope": "确定性位多项式；接受不保证可行。固定同一下界时全局查询支配任一子池，不包含子池重算。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/全局行基数过滤与多外层单态小home双源审查--审查.md",
+        "sha256": "72061471b5bce8d44abbdcb885d7d68986959c1bac382405081f398ceb06cbbb",
+        "section": "1. 精确过滤合同"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/单边界消元与独立配置探针的恢复合同--资源.md",
+          "sha256": "aadcf1772ba9ccd911f7a116ff483f82cff65177f335d1edf7ae8ad450856bbc"
+        }
+      ],
+      "sources": [
+        "clean:8e7fbfe13b8dcfeb9ec6"
+      ]
+    },
+    {
+      "object_id": "UM-MACHINE-CONFIG-PROBE-GAP-v1",
+      "version": 1,
+      "title": "紧凑近二族通过每个单机配置的独立完整延伸",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "k≥2,N=2k²,G=N−2k；中心、全局、每块k+1局部和共享z；时间1/k、1、∞；T=1",
+      "statement": "族的实际OPT=2−1/k；全部单机CONFIG独立探针、GPC₂和全局行计数过滤均通过；低峰迫至少2k块活跃并至少各一Y去z。",
+      "quantifiers": "每k；每台i的每个合法配置C，都可各自选完整 CONFIG 点把i行固定为C",
+      "assumptions": [],
+      "scope": "不同探针可用不同全局点，不能替代共同高阶law。",
+      "objections": "单配置延伸不是一般整数可行的必要条件；#35保两个装配公式与共基缺口。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/全局行基数过滤与多外层单态小home双源审查--审查.md",
+        "sha256": "72061471b5bce8d44abbdcb885d7d68986959c1bac382405081f398ceb06cbbb",
+        "section": "2. 紧凑多项式族和整数值"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/全局行基数过滤与多外层单态小home双源审查--审查.md",
+          "sha256": "72061471b5bce8d44abbdcb885d7d68986959c1bac382405081f398ceb06cbbb",
+          "section": "3. 所有逐机计数和配置探针仍通过"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/单边界消元与独立配置探针的恢复合同--资源.md",
+          "sha256": "aadcf1772ba9ccd911f7a116ff483f82cff65177f335d1edf7ae8ad450856bbc",
+          "section": "紧凑族：每个单机配置各自可延伸"
+        }
+      ],
+      "sources": [
+        "clean:8e7fbfe13b8dcfeb9ec6"
+      ]
+    },
+    {
+      "object_id": "UM-COMPACT-MULTIROW-EXTENSION-v1",
+      "version": 1,
+      "title": "紧凑族多行真实容量延伸的尖锐中心预算",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "同一紧凑逃逸族；测试集合U内负载≤1，所有机仍守逐行计数",
+      "statement": "至多G时可显式构造实际任务延伸；U取G+1中心并固定共享z为空时Y仅走局部且X槽不足。G是最大统一中心预算。",
+      "quantifiers": "每U含至多G个中心、每固定单机(i,C)有延伸；存在G+1中心的失败测试",
+      "assumptions": [],
+      "scope": "多行域按中心数计，不是所有机器任意联合配置。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/全局行基数过滤与多外层单态小home双源审查--审查.md",
+        "sha256": "72061471b5bce8d44abbdcb885d7d68986959c1bac382405081f398ceb06cbbb",
+        "section": "3. 所有逐机计数和配置探针仍通过"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/全局行基数过滤与多外层单态小home双源审查--审查.md",
+          "sha256": "72061471b5bce8d44abbdcb885d7d68986959c1bac382405081f398ceb06cbbb",
+          "section": "2. 紧凑多项式族和整数值"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/单边界消元与独立配置探针的恢复合同--资源.md",
+          "sha256": "aadcf1772ba9ccd911f7a116ff483f82cff65177f335d1edf7ae8ad450856bbc",
+          "section": "紧凑族：每个单机配置各自可延伸"
+        }
+      ],
+      "sources": [
+        "clean:8e7fbfe13b8dcfeb9ec6"
+      ]
+    },
+    {
+      "object_id": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4",
+      "version": 1,
+      "title": "有共享UD叶的单态多外层 tiny-home 19/10 v4",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "normalized-flat typed single-state outers，互异home，B-only共享fallback，可加B-only exact-threshold UD叶",
+      "statement": "未知OPT，rational FW matching oracle与凹reciprocal局部势；外层到25/128时用prefix-flow和完整叶匹配恢复全jobs，否则可靠给V≤18/19并输出峰≤2基线，均达19/10近似。",
+      "quantifiers": "每k≥2且max home≤1/(16384k²)；k=1无tiny上界",
+      "assumptions": [],
+      "scope": "v4独立于v1 CDF/MW；有限交换检查不等于全后端。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/全局行基数过滤与多外层单态小home双源审查--审查.md",
+        "sha256": "72061471b5bce8d44abbdcb885d7d68986959c1bac382405081f398ceb06cbbb",
+        "section": "2. v4：共享 UD 叶、k1 greedy 与 k2 曲率"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/全局行基数过滤与多外层单态小home双源审查--审查.md",
+          "sha256": "72061471b5bce8d44abbdcb885d7d68986959c1bac382405081f398ceb06cbbb",
+          "section": "二、多外层 single-state tiny-home 的限定算法"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/归一化菜单的保值表示与放大失效边界--资源.md",
+          "sha256": "fcf576c66694cf62d22613ad9cde9807e86428ff51d9d14f29718842330603e2"
+        }
+      ],
+      "sources": [
+        "clean:c43c08d4bf6fe07ad2bf"
+      ]
+    },
+    {
+      "object_id": "UM-FOREST-BOUNDARY-AUGMENT-v1",
+      "version": 1,
+      "title": "森林单边界的根负载一侧精确支配及恢复",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "显式任务只有一或两个有限端，内部森林V和唯一外边界r，外部任务不用V；去平行包后无环",
+      "statement": "确定性 poly(input bits,1/η) 可靠拒绝内部T不可行，或输出真实根负载b及全任务τ，内部≤(1+η)T且 b≤L_r(ρ)；固定摘要逆展开峰≤max(B,(1+η)T)。",
+      "quantifiers": "每T≥0、0<η≤1；对每一份原内部≤T的完整分配ρ",
+      "assumptions": [],
+      "scope": "背包舍入只付当前包，不累积深度；根精确，双边界需相关菜单。",
+      "objections": "不宣称T双向判定或 η 的二进制位多项式；0阈值独立。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/单边界森林与极小超载星双源审查--审查.md",
+        "sha256": "8776d3938fd201fbdee497489d521bf52dc11df4cfd16be01ce8e4024f7a9069",
+        "section": "1. 定义域与精确合同"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/单边界森林与极小超载星双源审查--审查.md",
+          "sha256": "8776d3938fd201fbdee497489d521bf52dc11df4cfd16be01ce8e4024f7a9069",
+          "section": "2. 森林动态规划与归纳证明"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单边界森林与极小超载星双源审查--审查.md",
+          "sha256": "8776d3938fd201fbdee497489d521bf52dc11df4cfd16be01ce8e4024f7a9069",
+          "section": "3. 消元用途、独立实现与边界"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/单边界消元与独立配置探针的恢复合同--资源.md",
+          "sha256": "aadcf1772ba9ccd911f7a116ff483f82cff65177f335d1edf7ae8ad450856bbc",
+          "section": "单边界森林：一侧精确支配"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/forest-boundary-20261030/source/forest_boundary_upward_audit.json",
+          "sha256": "0a51b94fc2f7373907e2cad2e8b89cae491e7827fd74eb671354c4c70f84018e"
+        }
+      ],
+      "sources": [
+        "clean:00ef3bac6ce1ef8238b9"
+      ]
+    },
+    {
+      "object_id": "UM-MINIMAL-STAR-CONTRACTION-v1",
+      "version": 1,
+      "title": "全部邻任务极小超载星的阈值精确消元",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "当前T剪枝矩阵，一机全部邻任务F非空，S>T且删去任一项后≤T",
+      "statement": "把F和中心替为一个摘要e，外端用真实最小处理时间及argmin。原/约化T可行等价；逆展开非中心负载不变、新中心≤T，反复逆序仍峰≤max(B,T)。",
+      "quantifiers": "任意T及满足条件的星；任意约化实际峰B可逆恢复",
+      "assumptions": [],
+      "scope": "不能只取F真子集或任意高阈值正向；CONFIG转换另须外部质量。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/单边界森林与极小超载星双源审查--审查.md",
+        "sha256": "8776d3938fd201fbdee497489d521bf52dc11df4cfd16be01ce8e4024f7a9069",
+        "section": "1. 精确可行性保持"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/单边界消元与独立配置探针的恢复合同--资源.md",
+          "sha256": "aadcf1772ba9ccd911f7a116ff483f82cff65177f335d1edf7ae8ad450856bbc",
+          "section": "极小超载星：整数iff与CONFIG条件"
+        }
+      ],
+      "sources": [
+        "clean:8c90fcce237d7988a7a5"
+      ]
+    },
+    {
+      "object_id": "UM-STAR-Q-JOB-COMPRESSION-NO-v1",
+      "version": 1,
+      "title": "多任务外溢不能以普通任务保全部外部余量",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "q≥2，q+1星任务、q+1外机；类A任q台余1/q，类B至多q−1台余1",
+      "statement": "两类profile迫每替代任务外机集合两两不交且各至少2，至少需2q外机>q+1，矛盾。",
+      "quantifiers": "任意固定用q个普通任务代替且须保全部余量profile",
+      "assumptions": [],
+      "scope": "不排保任务身份的matching/matroid、多边界、额外机器或近似摘要。",
+      "objections": "按所列模型、量词和证据范围使用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/单边界森林与极小超载星双源审查--审查.md",
+        "sha256": "8776d3938fd201fbdee497489d521bf52dc11df4cfd16be01ce8e4024f7a9069",
+        "section": "3. 多任务外溢、配置点与拟阵外包的边界"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/单边界消元与独立配置探针的恢复合同--资源.md",
+          "sha256": "aadcf1772ba9ccd911f7a116ff483f82cff65177f335d1edf7ae8ad450856bbc",
+          "section": "极小超载星：整数iff与CONFIG条件"
+        }
+      ],
+      "sources": [
+        "clean:8c90fcce237d7988a7a5"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/审查/固定槽跨槽修复与最小工作面支撑障碍有限审查--审查.md",
+      "sha256": "029fcbb46a203747cf61c162abb52ab4ecc88bbfaefb7f2c62c5fced16635232",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "全文三区分：固定槽每匹配峰值2m/(m+1)；单目的地Hamming两个分支及批降峰；最小工作面正支撑与工作量放宽阶梯。0098 主正文、0105 有限审查同义，不重建主记录。UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1 是此文件中的单目的地别名；完整原任务割见0098专篇。 待接精确owner UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1, UM-ONE-DESTINATION-SLOT-REPAIR-v1, UM-MIN-WORK-FACE-SUPPORT-GAP-v1。0098（Boss5）真最优凸包固定槽§5及原任务割专篇；最小工作面0098正扰动标准形与0105有限核验。需要分别反向收录本文件§2、§3、§4及确切审计字节；没有同批主记录。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+      "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding",
+        "M-0dd50fa1610d4eb5a8f21264dc38cd75",
+        "M-0288a54cb75047b4bd8737616cbae4e4",
+        "M-b46680a97d184eb7b98147b36f84f2a0",
+        "M-49e9997cd9f844868fd866561237e733",
+        "M-04dd365bc35d44009fea6ef6f6d1e734",
+        "unrelated-machines/lst-vertex-pseudoforest-rounding"
+      ],
+      "reason": "主舍入、压缩重数、近似 packing、线性变速、平均完成时间共同见证、合并目标各为独立合同；§2趋二锐例与#7 LST保整数部分例共用相同矩阵/同一分数点。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/学习增强非相关机makespan--文献.md",
+      "sha256": "248cedcccfa539d19964d3950092d5c01bc9f45d3e38641ea88e8ccb683b422f",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/learning-augmented-makespan-prediction-guided-search",
+        "M-d32a4146dbbd4c0197c815d139d7c500"
+      ],
+      "reason": "保留预测插入和一般编辑两个定理族及各自外层变换；有限实验仅支撑复盘。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+      "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+      "disposition": "objects",
+      "object_ids": [
+        "M-3fcaea74cca845be8c00c0f2e9d089f5",
+        "unrelated-machines/li-nearly-linear-scheduling-lp-and-rounding",
+        "M-92d8c66af7df4a55b7b48a3f0348c440",
+        "M-8d9c5ef35c7a4ae4bedaad34b37f8f6b",
+        "M-271c52e5782242e190cbc8b56c952a92",
+        "M-e8885334520c415bb4afb682ac8c31c8",
+        "M-aa1e2e5787dd4f788630e62f130523b9",
+        "M-c0d0a5f2c8414e3fab9ebefca65252b8"
+      ],
+      "reason": "六项论文合同和小槽/窗口/DAG恢复分开登记；复杂度算术模型、随机性和两处刊印纠错均保留。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/分布式不相关机负载均衡与混合覆盖--资源.md",
+      "sha256": "d190cd2e576754535fb25191347f3026495c4208100907fd89cd74129bda80d8",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/distributed-load-balancing-mixed-packing-covering-bgw-v1",
+        "M-adee88db90b2410982b3fa0efd99273a",
+        "M-d411e7659e154cde8709dda69abf907a",
+        "M-3fcaea74cca845be8c00c0f2e9d089f5"
+      ],
+      "reason": "保留作者合同、条件分数机制和不依赖扫描的精确伪代码反例；仅常数虚拟边拥塞不证明分布式匹配。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资料/不相关机研究入口与文献状态--资料.md",
+      "sha256": "c603285989f9a4ac0a730e9e07c0225195cad2c395d1ad3144aacadd83d57279",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "研究入口对同一开放目标给出处、当前承重义务和文献分层；不重复造新目标或论文定理。 待接精确owner UM-TARGET-v1。0104（Boss6）原问题页；本页「精确目标身份与当前状态」只证明同目标/路线 provenance，需要主记录反向收录。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/LST不相关机二近似与硬度--资源.md",
+      "sha256": "4476021a34f5c4940acadc45c1c61e473e9274075176b6f138c048a56a3e0b8a",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/lst-vertex-pseudoforest-rounding",
+        "unrelated-machines/lst-two-approximation",
+        "unrelated-machines/lst-fixed-machines-small-space-ptas",
+        "unrelated-machines/lst-strict-three-halves-hardness",
+        "unrelated-machines/lst-fixed-two-processing-times"
+      ],
+      "reason": "保留1987 CWI原报告五个稳定子对象，标清固定机器数、精确双值及严格三半端点；趋二例归顶点恢复边界。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资料/不相关并行机文献清单范围与证据层级--资料.md",
+      "sha256": "17aa2105082ec806a46808706cf132335618d5cca73dd9d879f2dc124f5bba7a",
+      "disposition": "attachment",
+      "object_ids": [
+        "unrelated-machines/learning-augmented-makespan-prediction-guided-search",
+        "unrelated-machines/lst-two-approximation",
+        "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding"
+      ],
+      "reason": "53项带日期文献/下载与版本清单，不是穷尽文献或独立证明；独有 provenance 留在原处，数学归下列精确对象。 比较/导航、不以本材料为必要证据：UM-TARGET-v1。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/问题/不相关机的统一整数输出与全调度解码--问题.md",
+      "sha256": "c09bd8cd373f12e4452d2685c37d3ffacfc58e851d0da1f05d1712202d1457c8",
+      "disposition": "objects",
+      "object_ids": [
+        "M-5af596d5d75441cba006ff7ba31a19a4",
+        "M-b851ba34bffb4533b962b3a5560e2538"
+      ],
+      "reason": "总位统一目标归原问题；本文的正面松弛判定与反面全调度解码是独立充分正规形。 待接精确owner UM-TARGET-v1。主目标由0104原问题页承担；本文件「统一近似目标」待反向收证；本批独立正规合同已登记。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/不相关机研究状态总账与开放义务--审查.md",
+      "sha256": "0023883cd49f47238d841ebfc96a7aede59673c67073b21bb49031e8f4b8224c",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-5af596d5d75441cba006ff7ba31a19a4",
+        "M-b851ba34bffb4533b962b3a5560e2538"
+      ],
+      "reason": "历史状态账本，所列各项已在精确专题正文；与本批直接相关的共同阈值、源NO解码和主目标义务保留为来源。 比较/导航、不以本材料为必要证据：UM-TARGET-v1。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资料/UM_Route_Card模板与路线量词边界--资料.md",
+      "sha256": "c4ddeaa996e35d48a924ef717d83caed2708ce017c00771a92eaae67640bc5be",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-5af596d5d75441cba006ff7ba31a19a4",
+        "M-b851ba34bffb4533b962b3a5560e2538"
+      ],
+      "reason": "历史路线卡及修正后的一侧FAIL/全调度解码合同来源；模板角色和顺序没有数学身份。 比较/导航、不以本材料为必要证据：UM-TARGET-v1。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/障碍/固定正支撑释放的精确近二前沿--障碍.md",
+      "sha256": "e8dd561961bd330af5bca2f04059ef9eddda261ec0124c1ae79e44e7919157b2",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-LST-SUPPORT-RELEASE-OPTIMAL-v1",
+        "UM-LST-SUPPORT-RELEASE-v0"
+      ],
+      "reason": "按已有 v0/v1 两身份保留不同族、旧OPT纠错和新精确前沿；证据域是单块，组合由正文。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/共同容量接续工作区的身份核对与纠错导航--资源.md",
+      "sha256": "83188229ae249d56f3b45ec6f23a8437b8b22db7c0ab42e13d56f78cc10bbe4b",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-LST-SUPPORT-RELEASE-v0",
+        "UM-LST-SUPPORT-RELEASE-OPTIMAL-v1",
+        "UM-TWO-STATE-QUOTA-HALL-CUT-v1",
+        "UM-K-UNIFORM-BUNDLE-FLOOR-v1",
+        "UM-SANTA-NO-CONSTANT-CONDITIONAL-v2"
+      ],
+      "reason": "全文是18个历史源的身份、去重和接续，不独立新立数学对象；单目的地、LST旧/新纠错、两状态配额和Santa条件路线保为导航及版本出处；四字段JSON和空模板无数学。 比较/导航、不以本材料为必要证据：UM-ONE-DESTINATION-SLOT-REPAIR-v1。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/Santa无常数近似条件反面双源审查--审查.md",
+      "sha256": "406f82949f814028b7161bb4508fa48218dff0c0eb16af9ba05b43443088ba63",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-SANTA-NO-CONSTANT-CONDITIONAL-v2",
+        "M-49195941d69c4784890f322dca84ef7b"
+      ],
+      "reason": "两冻结版本同条件蕴含，使用规范v2身份；明确未证 Santa 假设与位保持接续。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/三维束匹配入口的全层约束与条件反面边界--资源.md",
+      "sha256": "016c40ff76255028d868f226635682dac58a08185cc813b22d84981fb63debed",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-K-UNIFORM-BUNDLE-FLOOR-v1",
+        "M-a0dc6c9aa5f94abf9340cba38081c453",
+        "UM-SANTA-NO-CONSTANT-CONDITIONAL-v2"
+      ],
+      "reason": "原个人入口的数学分流：3DM μ/ν 二层闭式、可选束全部t层、固定层极大匹配地板和 Santa 条件反面均由专篇承载；错误 singleton Z 标签枚举不是反例；q=0按标准桥OPT1。 待接精确owner UM-3DM-DEMAND-FLOOR-OBSTRUCTION-v1。3DM精确ID由0105三维匹配需求地板页、0104三维匹配与高维配额页协调；本文§三维匹配需求树给二层公式和 q=0 纠错，需主记录反向收证。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/k均匀束与单层配额超图双源审查--审查.md",
+      "sha256": "f168c8cf058a2c347b6b3bb71afab83c0512ed9c76ee5ca8baa0848e38af7d46",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-K-UNIFORM-BUNDLE-FLOOR-v1",
+        "M-a0dc6c9aa5f94abf9340cba38081c453",
+        "UM-SINGLE-LAYER-QUOTA-VALUE-v1"
+      ],
+      "reason": "可选束恒等、固定层复杂度筛选、单邻域独立根需求恒等分别承载。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/两状态配额方向与固定层匹配的接续合同--资源.md",
+      "sha256": "39b3902d45d8c937377e42ee244a0fddad2fc333f9a2e96a2b465de7648b67e0",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-TWO-STATE-QUOTA-HALL-CUT-v1",
+        "UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1",
+        "UM-TWO-STATE-POOL-EXACT-FRONTIER-v1",
+        "UM-K-UNIFORM-BUNDLE-FLOOR-v1",
+        "M-a0dc6c9aa5f94abf9340cba38081c453",
+        "UM-SINGLE-LAYER-QUOTA-VALUE-v1"
+      ],
+      "reason": "接续入口复用固定方向 Hall、根树方向等价、行列池校正和可选束全层地板；没有独立联合方向生成定理。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/两状态配额Hall切与方向义务双源审查--审查.md",
+      "sha256": "3191cef6678c1888d1bebc5c4a3f93b4021f3831f7b8e7d95434c9415a2c6e95",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-TWO-STATE-QUOTA-HALL-CUT-v1",
+        "UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1",
+        "UM-TWO-STATE-POOL-EXACT-FRONTIER-v1"
+      ],
+      "reason": "固定方向流与全局方向存在性两精确对象，有限279936例支持前者；行列池公式复用专篇。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/配置松弛的局部搜索与图平衡界--资源.md",
+      "sha256": "960aab12b10cbfa64e6c04acf22907b9bad4b44ba4228fd72a6537b145791f83",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/jansen-rohwedder-restricted-configuration-eleven-sixths",
+        "M-4e5b42fa948d49d4a4defd4259802258",
+        "M-53c108a39e6b4437a5b68904d07ec522"
+      ],
+      "reason": "2017资源分别保受限配置间隙、估值以及模板极限；图平衡外引不在此重复立项。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Jansen-Rohwedder-2019--受限指派准多项式近似--文献.md",
+      "sha256": "5d0f5f99d39fa01916c6e3f03ec6e80eb4f71b93283167ccb7f5d71dab317029",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/jansen-rohwedder-2019-quasi-polynomial-restricted-assignment",
+        "M-6486a4ef9d24403f91b12e6412a9d473",
+        "unrelated-machines/jansen-rohwedder-restricted-configuration-eleven-sixths"
+      ],
+      "reason": "2019的两项准多项式实际构造独立；11/6配置LP不等式与2017共用身份但保两独立证明。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/Bamas升投影MMDA与SantaClaus--资料.md",
+      "sha256": "ca4aeec52e027d9422e1519df4eca40932c4538c3820a267c82a55540521d817",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-LITERATURE-MMDA-SA-GAP-BAMAS-V2",
+        "M-b51f7575d2f44fe3a73e3ad594af67c6",
+        "M-68e534b8b5c1428d990961b1dfae1cb2",
+        "M-c99f51ac275e4ac09e860f75a108d704"
+      ],
+      "reason": "按论文 MMDA 一轮 SA、path hierarchy、受限Santa附录两定理分列；原件56页与损失方向已修订。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/需求树困难性导入的参与条件与参数方向--文献.md",
+      "sha256": "38dbf9ca65b81707ca536a8eb6f222c68664cffcccc73bb7187b3c7a03753a83",
+      "disposition": "objects",
+      "object_ids": [
+        "M-b6ffef8c23fc422eadbf95593b604ffe",
+        "UM-SANTA-NO-CONSTANT-CONDITIONAL-v2",
+        "UM-LITERATURE-MMDA-SA-GAP-BAMAS-V2",
+        "M-b851ba34bffb4533b962b3a5560e2538"
+      ],
+      "reason": "BCG参与/不可分收益导入单列；BLMRS逆否只有阈值相交才成立、Bamas层级gap不是计算hardness，作相关来源。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/两份复制多数地板与共同激活复制障碍双源审查--审查.md",
+      "sha256": "5e06ccad61d733369eea265a4a2f5cfec977025da0bdb2cabfa79f6b03220b64",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-DUPLICATION-TWO-COPY-FLOOR-v1",
+        "UM-MULTI-ACTIVATION-STATIC-COVER-v1",
+        "UM-DISJOINT-BLOCK-NO-AMPLIFICATION-v1",
+        "UM-SHARED-CLONE-REPLICATION-COLLAPSE-v1"
+      ],
+      "reason": "两复制半地板、共同激活及其精确两机反例、两类复制不放大分别定位；HOLD-EDGE同义重写归共同激活。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/两状态多数树的有限枚举与部分资源边界--资源.md",
+      "sha256": "501c7fa4b82fcb6cd6964feefaec4a19b2870aee429c1c4c107cad28e803d06a",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1",
+        "UM-TWO-STATE-POOL-EXACT-FRONTIER-v1"
+      ],
+      "reason": "多数地板的第二份证明与有限程序；34389仅完整等K两状态及非空变量子集，两个好集合恒同、tie固定，非任意删叶枚举。s4 K8精确1/2由独立上界，s=K=4的5/8修复归池。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/高阶负相关两状态多数与鲁棒环相位边界有限审查--审查.md",
+      "sha256": "5966fde7c7e92ec1ba0aee4dafa2c4199626d7a470c264b9e191df5a8422e6d8",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-OPT-HULL-HIGHER-NC-SUCCESS-v1",
+        "UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1",
+        "UM-ROBUST-CYCLE-SHARED-CONTEXT-PHASE-v1",
+        "UM-TWO-STATE-POOL-EXACT-FRONTIER-v1"
+      ],
+      "reason": "固定边际随机law、多数状态根树、双端相位换相三种模型分别定位；附的 JSON 只作各自有限复核。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/行列残余池的匹配与三路独立核验--资源.md",
+      "sha256": "d52d2326acd36bd9c2a380ca39769da19b10f9652e337b3220eda3e95cc36290",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-TWO-STATE-POOL-EXACT-FRONTIER-v1"
+      ],
+      "reason": "同一族的完整计数、固定选集Hall强化、闭式与三路审计；修复一般锐性，不改独立多数下界。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单层配额超图与两状态行列池有限审查--审查.md",
+      "sha256": "13600f5474d0bc64c8b528995d35c3f546b62acd736ca0439960a7d9c8fea138",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-SINGLE-LAYER-QUOTA-VALUE-v1",
+        "UM-TWO-STATE-POOL-EXACT-FRONTIER-v1"
+      ],
+      "reason": "单层配额4788+100 Fraction例与行列池全部选集/独立流/循环构造均归准确通项；有限 run 不再立数学节点。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/行列池类型配置与单位读出三源接续审查--审查.md",
+      "sha256": "6e60ab060e757aeed470e0086620e882e6a78d8fb102a2276f9d3fe8acb650b2",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-TWO-STATE-POOL-EXACT-FRONTIER-v1",
+        "UM-SC-BLOCK-TYPE-PROFILE-RECONSTRUCTION-v1",
+        "UM-NORMALIZED-TYPE-MATCHING-RANK-VALUE-IDENTITY-v1"
+      ],
+      "reason": "前两簇为行列池、类型压缩、rank真实编译的并行证明/审查；单位读出为已有比较背景，参数与两个精确反例继续由各自主对象。 比较/导航、不以本材料为必要证据：UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1, UM-UNIT-READOUT-CALIBRATED-SLOT-v1。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/归一化类型匹配编译的全任务有限核验--资源.md",
+      "sha256": "9bd16e330e4c9ed1e9a65de5e8841ce6c764fdc633807a27d2aa8a479edb815a",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-NORMALIZED-TYPE-MATCHING-RANK-VALUE-IDENTITY-v1",
+        "M-43d1a6e5f4114a3882175890c6e5b41b"
+      ],
+      "reason": "实际全jobs双向rank证明含扩域及证据程序；另保具体非次模反例。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/类型压缩与仿射并行线双源审查--审查.md",
+      "sha256": "1be743b04d1c34025a703c09b80813d38dfa90dd845e9c13123f2f68ad34277a",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-SC-BLOCK-TYPE-PROFILE-RECONSTRUCTION-v1",
+        "UM-WEIGHTED-AFFINE-LINE-PARALLEL-RELATIONS-HALF-ESCAPE-v1",
+        "UM-NORMALIZED-TYPE-MATCHING-RANK-VALUE-IDENTITY-v1",
+        "M-43d1a6e5f4114a3882175890c6e5b41b"
+      ],
+      "reason": "分块和任意权并行线各为自足正面结论；rank真实值与非次模见证同#29复用；cutoff纠错保在分块证据。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/归一化菜单的保值表示与放大失效边界--资源.md",
+      "sha256": "fcf576c66694cf62d22613ad9cde9807e86428ff51d9d14f29718842330603e2",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-WEIGHTED-MENU-STATE-DUMMY-SC-v1",
+        "UM-WEIGHTED-AFFINE-LINE-PARALLEL-RELATIONS-HALF-ESCAPE-v1",
+        "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4"
+      ],
+      "reason": "历史导航保同一normalized-flat主定义的几种不同表示、张量失效、LINE族、typed算法；不把归纳总览当额外新定理。明确复用主要锚点，其余专题链接按正文路径。 比较/导航、不以本材料为必要证据：UM-ACTUAL-KRONECKER-NO-TO-YES-v1, UM-DEGREE-THREE-WEIGHTED-MENU-CUBE-EMBEDDING-v1, UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1, UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1, UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5, UM-NORMALIZED-FLAT-CARTESIAN-TENSOR-REVERSE-AMPLIFICATION-v1, UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1, UM-NORMALIZED-XOS-THRESHOLD-MENU-SIZE-OBSTRUCTION-v2, UM-UNPRUNED-ASSIGNMENT-LP-KRONECKER-v1。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/Santa受限桥与归一化菜单双源审查--审查.md",
+      "sha256": "f96a1038bc7dd23d2e88c6ed842203ee93778a1feb579883ceaf3b5235bf7dac",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-SANTA-RESTRICTED-BRIDGE-BOUNDARY-v1",
+        "UM-WEIGHTED-MENU-STATE-DUMMY-SC-v1"
+      ],
+      "reason": "restricted端点反例及norm1双目标桥本页为主；XOS覆盖规模v2复用专门Exact正文与勘误。 待接精确owner UM-NORMALIZED-XOS-THRESHOLD-MENU-SIZE-OBSTRUCTION-v2。同宇宙规模v2的精确覆盖式及端点，由0110 Exact 与0107勘误主正文承担；本页第三节待反向收证。0101 v1与精确v2不混写。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三坐标与三态路径正规形范围审查--审查.md",
+      "sha256": "ee48116b9ceed7277a49a64b045b4ca5239ebbf794322a1bdfc9af8f908c119f",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "三个嵌入量词同已done0095的专篇：零权cube全阈值/保M，路径只在C<2读取helper，三态先树后路径且保正partial和端点，不重造主记录。 待接精确owner UM-DEGREE-THREE-WEIGHTED-MENU-CUBE-EMBEDDING-v1, UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1, UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1。0095已done三个定理主正文已存在，但本页范围审查的独有版本比对和边界尚未被三 owner 反向收证；需lead定向增量。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/全局行基数过滤与多外层单态小home双源审查--审查.md",
+      "sha256": "72061471b5bce8d44abbdcb885d7d68986959c1bac382405081f398ceb06cbbb",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-GLOBAL-ROW-COUNT-FILTER-v1",
+        "UM-MACHINE-CONFIG-PROBE-GAP-v1",
+        "UM-COMPACT-MULTIROW-EXTENSION-v1",
+        "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4"
+      ],
+      "reason": "行计数过滤、紧凑配置探针和多行精确预算主证；保v4参数合同，v1/v5待0107专门证明，三者非同一版本。 待接精确owner UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1, UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5。v1/v5主证明0107（Boss3）及0109（Boss4）版本审查；本页v1/v5对应§2.1/§2.3需反向收证。v4不是v4b。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/单边界消元与独立配置探针的恢复合同--资源.md",
+      "sha256": "aadcf1772ba9ccd911f7a116ff483f82cff65177f335d1edf7ae8ad450856bbc",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-FOREST-BOUNDARY-AUGMENT-v1",
+        "UM-MINIMAL-STAR-CONTRACTION-v1",
+        "UM-STAR-Q-JOB-COMPRESSION-NO-v1",
+        "UM-GLOBAL-ROW-COUNT-FILTER-v1",
+        "UM-MACHINE-CONFIG-PROBE-GAP-v1",
+        "UM-COMPACT-MULTIROW-EXTENSION-v1"
+      ],
+      "reason": "历史恢复合同：森林、星、条件配置变换、稀疏各边探针及紧凑逐机延伸共享已有数学身份；保给定配置的构造、Q方向及共同base区别，不再造容器定理。 待接精确owner UM-STAR-CONFIGURATION-TRANSFER-v1, UM-SPARSE-CONDITIONED-CONFIG-GAP-v1, UM-CONTRACTED-SPARSE-CONFIG-GAP-v1。0100星CONFIG专篇、0102稀疏配置专篇与本页§2/§3共享精确对象，需要反向接收相应证明/条件。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单边界森林与极小超载星双源审查--审查.md",
+      "sha256": "8776d3938fd201fbdee497489d521bf52dc11df4cfd16be01ce8e4024f7a9069",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-FOREST-BOUNDARY-AUGMENT-v1",
+        "UM-MINIMAL-STAR-CONTRACTION-v1",
+        "UM-STAR-Q-JOB-COMPRESSION-NO-v1"
+      ],
+      "reason": "森林与星整数等价/多任务摘要反例主证。容量一GPC₂族、星配置转移及拟阵外包归另有规范正文的对象。 待接精确owner UM-CAPACITY-ONE-PAIR-GAP-v1, UM-STAR-CONFIGURATION-TRANSFER-v1, UM-KNAPSACK-MATROID-ENVELOPE-v1。0100星CONFIG、0110拟阵、容量一星的规范主记录需要接入本页「2. 计数型反例和配置耦合」「3. 多任务外溢、配置点与拟阵外包的边界」；森林和极小星整数主记录已独立保存。"
+    }
+  ],
+  "edge_files": []
+}
