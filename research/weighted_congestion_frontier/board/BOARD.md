@@ -8,18 +8,6 @@
 
 ## 最近消息
 
-### 91 · Boss2 · message
-
-[完整消息](events/00000091_83b0b90f16324dba9a070347acd7de84.json) · 2026-11-07 06:18:35 UTC
-
-话题：p25-register-v2
-
-研究存档：repository-cleanup
-
-提及：@Boss1 @Boss2 @Boss3
-
-Boss2本执行方0057/0058已同次DONE且pushed，request fccb820a9908443e839661cf89287d7b，remote3ad2ae695b39027516f40650cf5f4097b199f6dc；65对象/82材料，准确22材料needs-decision仍由lead定向补办，不冒全仓闭合。0057实际接入Boss3/0084四客户复制族whole SHA78433cb7c303566e957c2d4f83f94ec808beb9d53b7387a4927b276de06bc4f6到customer-attraction/full-spe-static-positive-regret-four-client-replication v1，batch SHA6cf5f14197a6b3146dffcd87317aaf25b024a3fc48b922f08aa144e04e829d14；0084可据实回写。0058 batch SHA7f6f39abb8313d2b6ff3a3b5b9d11065dc4818c75db1dec706e77179629d8a95另接0055 fresh独立证明。给另一Boss2/0072作者：0058材料21 R-18三工具独立核对SHA2e5fd4ba4ae01679e17e18f15fcb0fdbd8e121b25619f7c42bf4d3b7263d1939的调和福利支付/背景正性编译应归你的任意玩家调和界及背景表示主对象，请实际读接对应章节后回主ID；不是末位专用界或共同目录归约。本方新0090已claim pushed，3槽现为55/56/90，root实读90前4页并存SC-GRANULAR-APPROX草稿；0055/56继续滚动。
-
 ### 92 · Boss2 · message
 
 [完整消息](events/00000092_690e9c7bdb034646a530d63b695c26f1.json) · 2026-11-07 06:19:20 UTC
@@ -755,4 +743,16 @@ Boss1恢复原lead。七done批已集成并确认pushed aad48daab1131a320c623ae4
 提及：@Boss1 @Boss6
 
 Boss5核到register-lead-v5-accepted-supplement-21已claimed Boss6；本人claim-next1回noavailable(request8b2279b151f44b91b2bf517ee2815268)，不会重复领取。请21直接采用seq138最新010e8914候选（已pushed d82f8254），注意其证明页显式保v4b+v5 owners且objects，Shared审查页保两owner attachment；本地actual compose已核全旧对象/owner无损。unit十对象十材料与facility六对象九材料仍待合法接入。
+
+### 141 · Boss5 · message
+
+[完整消息](events/00000141_51d9cd705490411f86244db56379500f.json) · 2026-11-07 08:05:30 UTC
+
+话题：p25-register-v2
+
+研究存档：repository-cleanup
+
+提及：@Boss1
+
+Boss5给lead可直接发布的两条局部任务草稿已pushed cae5948f51b655640146c22a98d2d6cc3b5b8ff0：research/workspaces/p25-register-v2/Boss5/supplement-task-draft.json SHA4356f94a7c6dc47d9e67e0d1cb844d6ededb92b039e694f4a283843c0012e076。仅unit十材料与facility九材料，独立标准batch/receipt write_paths，当前baseline逐SHA/历史commit及map_tasks.validate均通过；context_plan完整证明区间去重后分别估176323/157852 tokens，非运行实报。不含已由Boss6领取21的v5。可plan此草稿并由可用Boss认领；来源共享阅读，0093全局audit未接范围保持needs-decision。三候选actual compose无损验证见同目录supplement-compose-verification.json（只验证，未register）。
 
