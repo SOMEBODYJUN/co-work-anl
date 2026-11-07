@@ -58,7 +58,7 @@
       ]
     },
     {
-      "object_id": "weighted-congestion/asymmetric-matroid-pure-perfect-computation",
+      "object_id": "SEL-MATROID-PERFECT-ASYM-v1",
       "version": 1,
       "title": "非对称拟阵纯trembling-hand perfect的位多项式输出问题",
       "kind": "open problem",
@@ -84,36 +84,8 @@
       ],
       "sources": [
         "archives/weighted-congestion/state/问题/非对称拟阵拥塞的纯精炼均衡计算--问题.md",
-        "2.5.3 Boss2 register-ab98f323ad-0118"
-      ]
-    },
-    {
-      "object_id": "weighted-congestion/atomic-tremble-audit-and-local-obstruction",
-      "version": 1,
-      "title": "U(2,4)单交换障碍的成本聚合待辨",
-      "kind": "obstruction candidate",
-      "truth_status": "unassessed",
-      "model": "有限标准加权拥塞：固定正玩家权，有限显式资源子集菜单；非负系数多项式费用；个人成本为未乘自身权的资源延迟和，真实偏离重算含自身新负载。",
-      "statement": "来源声称资源costs=[2,2,1,1]、基[0,1]费用2、四邻居费用2、最优基费用1；这仅与max型聚合相容，不能作为本档加性费用下的有效反例。",
-      "quantifiers": "固定六基有限实例；不推出任意原子拥塞的无PNE或perfect存在。",
-      "assumptions": [
-        "需明确原证书的基成本聚合定义"
-      ],
-      "scope": "保原身份和JSON精确字节，待核模型后路由有效命题。",
-      "objections": "本轮具体核出加性六基费用应4,3,3,3,3,2；原证书无完整动作/延迟输入，3750/3000 PASS也仅是报告。下一步确认是否bottleneck max模型；不将原错误数字登记proved。",
-      "body": {
-        "path": "archives/weighted-congestion/state/审查/原子扰动审计与单交换局部障碍--审查.md",
-        "sha256": "6714a2b5c9ffac5a14a3de9eb79ad8655978763d57f0ad829720cbeedc966a86"
-      },
-      "evidence": [
-        {
-          "path": "archives/weighted-congestion/tools/evidence/retired-topic-selection-20261031/atomic_tremble_audit.json",
-          "sha256": "546535a4e461dab688ad4c316c88ce4d5754ea4476c20c295242c9a7aebddf0e"
-        }
-      ],
-      "sources": [
-        "archives/weighted-congestion/state/审查/原子扰动审计与单交换局部障碍--审查.md",
-        "2.5.3 Boss2 register-ab98f323ad-0118"
+        "2.5.3 Boss2 register-ab98f323ad-0118",
+        "weighted-congestion/asymmetric-matroid-pure-perfect-computation"
       ]
     },
     {
@@ -478,6 +450,1026 @@
         "archives/weighted-congestion/state/定理/固定玩家尺度图势的圈比阈值--定理.md",
         "2.5.3 Boss2 register-ab98f323ad-0118"
       ]
+    },
+    {
+      "object_id": "weighted-congestion/incompatible-player-rank-marginal-obstruction",
+      "version": 1,
+      "title": "不相容同秩异权使固定三角势插入下界失败",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限标准加权拥塞：固定正玩家权，有限显式资源子集菜单；非负系数多项式费用；个人成本为未乘自身权的资源延迟和，真实偏离重算含自身新负载。",
+      "statement": "w=(9,5),r=(2,2),d=3,A=2,lambda=(1/2,1/2),c=x³与固定身份序下，F({1})=625,F({0,1})=20281，插入边际19656小于h_0 c(14)=24696，差5040。",
+      "quantifiers": "该完全明确两用户有限模板。",
+      "assumptions": [
+        "新端点w0>w1但r0=r1违反相容条件",
+        "同层按0先1固定序"
+      ],
+      "scope": "仅否去掉秩相容后沿用同一模板的插入下界，不是无均衡反例。",
+      "objections": "本轮核精确陈述、前提及完整证明位置，复用成熟正文；未重新逐句证明或重跑有限审计。",
+      "body": {
+        "path": "archives/weighted-congestion/state/障碍/不相容玩家秩的三角势边际失效--障碍.md",
+        "sha256": "32db0c7ec2f9a410358ef3069d747eec6d4d14ee337e57dde70bed832eb2d988"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/weighted-congestion/state/障碍/不相容玩家秩的三角势边际失效--障碍.md",
+        "2.5.3 Boss2 register-ab98f323ad-0118"
+      ]
+    },
+    {
+      "object_id": "WC-R1-PREFIX-SMOOTHING",
+      "version": 1,
+      "title": "dyadic前缀阶跃保真模拟的三载荷指数过冲",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "有限标准加权拥塞：固定正玩家权，有限显式资源子集菜单；非负系数多项式费用；个人成本为未乘自身权的资源延迟和，真实偏离重算含自身新负载。",
+      "statement": "固定m≥3的对称前缀两列策略中a1可达L=3/2−2^(−m),H=3/2,U=2−2^(−m)。任意非零非负系数多项式p与epsilon∈(0,1)，p(L)≤epsilon p(H)迫p(U)/p(H)≥epsilon^(−2^(m−2))，实际次数≥ln(1/epsilon)/ln(H/L)。",
+      "quantifiers": "∀整数m≥3 ∀有限非零非负系数p ∀0<epsilon<1。",
+      "assumptions": [
+        "真实前缀策略及dyadic权固定",
+        "三点均为合法状态负载"
+      ],
+      "scope": "仅固定低泄漏/有限平台保真模拟，不否所有多项式构造；m2粗指数失败而精确gamma工具仍有效。",
+      "objections": "本轮核精确陈述、前提及完整证明位置，复用成熟正文；未重新逐句证明或重跑有限审计。",
+      "body": {
+        "path": "archives/weighted-congestion/state/障碍/前缀阶跃平台的三载荷过冲--障碍.md",
+        "sha256": "61117a8e46ac2a2d347eb53027f47dccbc5df1dc1e090da7be76b870f1616587"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/审查/三载荷包络的独立审查范围--审查.md",
+          "sha256": "b34fed0f836caf175fa79e764ddbed9b0d81f587116d43bc4d42f5e9d6a3245e"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/障碍/前缀阶跃平台的三载荷过冲--障碍.md",
+        "2.5.3 Boss2 register-ab98f323ad-0118"
+      ]
+    },
+    {
+      "object_id": "weighted-congestion/asymmetric-two-column-complementary-two-attack-certificate",
+      "version": 1,
+      "title": "异质轻权双列的充分两攻击全状态证书",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限标准加权拥塞：固定正玩家权，有限显式资源子集菜单；非负系数多项式费用；个人成本为未乘自身权的资源延迟和，真实偏离重算含自身新负载。",
+      "statement": "一个权1主玩家整列动作、每light i正权wi选{A0,Bi}/{B0,Ai}，主费x^k、卫星beta_i x^d。若H:1+sum beta_i(1+wi)^d>alpha[(1+W)^k+sum beta_i]且每L_i:(1+wi)^k+beta_i wi^d>alpha[W^k+beta_i(1+wi)^d]，则全部状态有真实单人严格alpha出口。",
+      "quantifiers": "∀n≥1,wi>0,beta_i≥0,k,d≥1,alpha≥1满足所列严格式。",
+      "assumptions": [
+        "资源互异、两侧同费、真实新负载",
+        "主列无light时主攻击，否则同列任意light攻击"
+      ],
+      "scope": "仅充分；不假设wi≤1、不证可行参数优越或必要性。",
+      "objections": "本轮核精确陈述、前提及完整证明位置，复用成熟正文；未重新逐句证明或重跑有限审计。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/异权双列互补资源的两攻击证书--定理.md",
+        "sha256": "d0397129e0c5598f9d782bc4814217ca805faad9b72aa466f09b9eb0b1d0539a"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/weighted-congestion/state/定理/异权双列互补资源的两攻击证书--定理.md",
+        "2.5.3 Boss2 register-ab98f323ad-0118"
+      ]
+    },
+    {
+      "object_id": "weighted-congestion/two-player-two-strategy-no-pne",
+      "version": 1,
+      "title": "两玩家四资源混合线性二次的36/35精确阈值反例",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限标准加权拥塞：固定正玩家权，有限显式资源子集菜单；非负系数多项式费用；个人成本为未乘自身权的资源延迟和，真实偏离重算含自身新负载。",
+      "statement": "权(1,2)，菜单玩家0:{0,1}/{2,3},玩家1:{0,2}/{1,3}，费用c0=c3=x²,c1=c2=(9/2)x。四态成本依00/01/10/11为(27/2,18),(29/2,35/2),(29/2,35/2),(27/2,18)。每态严格改善，最佳纯倍率恰36/35，端点为弱均衡。",
+      "quantifiers": "仅上述固定有限二动作输入；所有1≤alpha<36/35无alpha-PNE。",
+      "assumptions": [
+        "按原toy_checks.py真实函数，资源1/2是线性",
+        "个人成本不乘权，目标计自身"
+      ],
+      "scope": "次数≤2混合费用；不是全资源纯二次反例。",
+      "objections": "成熟正文资源1/2的x²及示例等式有笔误；原代码实际F(9,2)*load，冻结四态输出与该混合模型一致。本轮定向核算纯二次字面模型会有00/11精确PNE，故按代码证据登记此正确域。",
+      "body": {
+        "path": "archives/weighted-congestion/state/反例/两玩家二策略无纯均衡--反例.md",
+        "sha256": "0050f03e248059a6ec2b8d158d2a9752e563eecad68ae3356e455b272ead80a0"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/tools/evidence/atomic-games/toy_checks.py",
+          "sha256": "bbc732c0ad4812ec74e3b086cf382c55495719f4a88e9c39f848b21377094144"
+        },
+        {
+          "path": "archives/weighted-congestion/tools/evidence/atomic-games/toy_output.json",
+          "sha256": "9ddc45afd6627829cd6e44e7d0ffa7cba1f0752b83bab61baeba4c3547ce0cfd"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/反例/两玩家二策略无纯均衡--反例.md",
+        "2.5.3 Boss2 register-ab98f323ad-0118"
+      ]
+    },
+    {
+      "object_id": "weighted-congestion/common-scale-stability-quality-certificate",
+      "version": 1,
+      "title": "共同尺度交付中的真实稳定残差及证书语义",
+      "kind": "definition",
+      "truth_status": "definition",
+      "model": "有限标准加权拥塞：固定正玩家权，有限显式资源子集菜单；非负系数多项式费用；个人成本为未乘自身权的资源延迟和，真实偏离重算含自身新负载。",
+      "statement": "目标alpha的逐真实偏离残差R=alpha C_i(t_i,s_-i)−C_i(s)全部非负恰alpha-PNE。势YES给对应全部严格改善下降；指定函数/尺度接口NO只判接口，不判原游戏无PNE；未完成枚举/无精确证书为UNKNOWN。社会质量须独立指定目标及有效下界/gap。",
+      "quantifiers": "任意有限非负成本游戏、alpha≥1及其明确完整偏离范围。",
+      "assumptions": [
+        "不除成本，允许零/空/平局",
+        "共同玩家乘子跨资源相同"
+      ],
+      "scope": "本对象只定义交付接口；本页区间投影/正则化定理归0114精确owner。",
+      "objections": "本轮核精确陈述、前提及完整证明位置，复用成熟正文；未重新逐句证明或重跑有限审计。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定义/共同尺度稳定与社会质量的证书接口--定义.md",
+        "sha256": "c17d6fb0d93bd42814ce807198beee8fc96217c38d317228ea52b3dbfb1c9a23",
+        "section": "1. 输入、背景和可检查的输出"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/weighted-congestion/state/定义/共同尺度稳定与社会质量的证书接口--定义.md",
+        "2.5.3 Boss2 register-ab98f323ad-0118"
+      ]
+    },
+    {
+      "object_id": "WC-TWO-WEIGHT-ORDER-BLEND-v1",
+      "version": 1,
+      "title": "全局两权双排序混合势的A_d存在保证",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限标准加权拥塞：固定正玩家权，有限显式资源子集菜单；非负系数多项式费用；个人成本为未乘自身权的资源延迟和，真实偏离重算含自身新负载。",
+      "statement": "全部可动权在{a,b},a≥b>0、次数≤d,d≥2时，D+lambda U以lambda=1/(A_d−1),A_d=(1+sqrt(4d−3))/2给共同玩家乘子，全部严格A_d改善下降且每局部最小为A_d-PNE。",
+      "quantifiers": "任意有限玩家/菜单/人数/权比和非负实系数。",
+      "assumptions": [
+        "全局两权或固定背景平移后两可动权",
+        "精确真实多资源偏离"
+      ],
+      "scope": "最优只指两个边际包络的lambda平衡；d0/1及a=b有精确势。",
+      "objections": "本轮核精确陈述、前提及完整证明位置，复用成熟正文；未重新逐句证明或重跑有限审计。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/两权类别双排序混合势--定理.md",
+        "sha256": "60037a78fb11a5ee69f88f1571936ce03c0e801c7598c9a0bec0a76fb18003a7"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/审查/权类别排序势与共占高度的审查范围--审查.md",
+          "sha256": "5addca12a6cfc4cc59a84bbf40244d5f2ba884b4e3ea1401e195c7ead86a0b3a",
+          "section": "两权审查：逐区间凸斜率的完整独立证明"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/定理/两权类别双排序混合势--定理.md",
+        "2.5.3 Boss2 register-ab98f323ad-0118"
+      ]
+    },
+    {
+      "object_id": "WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1",
+      "version": 1,
+      "title": "全部d≥2^20的正有理纯d次全状态d/10失稳族",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限标准加权拥塞：固定正玩家权，有限显式资源子集菜单；非负系数多项式费用；个人成本为未乘自身权的资源延迟和，真实偏离重算含自身新负载。",
+      "statement": "每个整数d≥2^20有有限正有理权游戏，每人恰两个非空不交动作、全部资源为正有理数倍x^d，且每态某真实单人偏离有margin C_old−(d/10)C_new≥(2^d−d/10)/8>0。",
+      "quantifiers": "∀整数d≥2^20 ∃有限G ∀s ∃i,t_i≠s_i满足所列严格差额。",
+      "assumptions": [
+        "循环窗口指定参数Q=d^4,m=1+ceil(log2 d²),N=Q^(m−1)/d",
+        "全部前沿出口及最早反位三元门全态修复",
+        "(2/3)^d泄漏由同次数整数预算支付"
+      ],
+      "scope": "人数/系数/权比/动作大小可极大；不保多项式输入规模、最优常数、小次数。",
+      "objections": "本轮核精确陈述、前提及完整证明位置，复用成熟正文；未重新逐句证明或重跑有限审计。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/全状态线性次数无均衡族--定理.md",
+        "sha256": "fd1208e470d12721ed79fea67fbd43221c432a95fc0433ac3df2d5f0573c7d9b"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/审查/全状态线性次数构造的范围审查--审查.md",
+          "sha256": "495a851a4b3d1189c7897e3d1f92fbfccd67de09abe9ef5f6ae337d0ee33425e"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/定理/全状态线性次数无均衡族--定理.md",
+        "2.5.3 Boss2 register-ab98f323ad-0118"
+      ]
+    },
+    {
+      "object_id": "WC-HEALTHY-LINEAR-SWEEP-v1",
+      "version": 1,
+      "title": "线性次数窗口基体的健康双扫与统一cap",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限标准加权拥塞：固定正玩家权，有限显式资源子集菜单；非负系数多项式费用；个人成本为未乘自身权的资源延迟和，真实偏离重算含自身新负载。",
+      "statement": "p≥20、Q=p^4、m=1+ceil(log2 p²)、N=p^(4m−5)的m类循环窗口基体按指定相邻/返回测试正系数构造；全局逐clone先0→1再1→0的健康双扫是严格p/10改善闭环，资源成本全态由B_*=m Q^(m−1)2^p封顶。",
+      "quantifiers": "每个整数p≥20的指定有限二动作基体。",
+      "assumptions": [
+        "A_a=(2L/H)^a,A_R=H/(2J)",
+        "四种类端点精确P/Q压缩及正预算"
+      ],
+      "scope": "只健康环/cap，不能单独推出全状态无均衡。",
+      "objections": "本轮核精确陈述、前提及完整证明位置，复用成熟正文；未重新逐句证明或重跑有限审计。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/全状态线性次数无均衡族--定理.md",
+        "sha256": "fd1208e470d12721ed79fea67fbd43221c432a95fc0433ac3df2d5f0573c7d9b",
+        "section": "基础构造：循环窗口"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/weighted-congestion/state/定理/全状态线性次数无均衡族--定理.md",
+        "2.5.3 Boss2 register-ab98f323ad-0118"
+      ]
+    },
+    {
+      "object_id": "WC-HEALTHY-FRONT-COVERAGE-v1",
+      "version": 1,
+      "title": "窗口基体全部错位product-front的真实保前沿出口",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限标准加权拥塞：固定正玩家权，有限显式资源子集菜单；非负系数多项式费用；个人成本为未乘自身权的资源延迟和，真实偏离重算含自身新负载。",
+      "statement": "同指定p≥20窗口基体的任意product-front，某一原玩家翻位后仍在product-front且margin≥H/4，H=2^p−p/10。相邻相位不在短区间由重端点出逃，否则累积短差及返回奇偶由末类前/后端点出逃。",
+      "quantifiers": "∀product-front状态，逐状态∃单clone合法偏离。",
+      "assumptions": [
+        "扭转对称仅用于加钟前基体",
+        "全尾部返回误差与累积T界真实支付"
+      ],
+      "scope": "全前沿覆盖比一条健康双扫环强，仍需非法态门补全。",
+      "objections": "本轮核精确陈述、前提及完整证明位置，复用成熟正文；未重新逐句证明或重跑有限审计。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/全状态线性次数无均衡族--定理.md",
+        "sha256": "fd1208e470d12721ed79fea67fbd43221c432a95fc0433ac3df2d5f0573c7d9b",
+        "section": "前沿状态与全状态补全"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/weighted-congestion/state/定理/全状态线性次数无均衡族--定理.md",
+        "2.5.3 Boss2 register-ab98f323ad-0118"
+      ]
+    },
+    {
+      "object_id": "WC-MATCHING-LOG-UPPER-NEGATIVE-v1",
+      "version": 1,
+      "title": "全类固定Cd/ln d纯均衡保证被全状态族否定",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限标准加权拥塞：固定正玩家权，有限显式资源子集菜单；非负系数多项式费用；个人成本为未乘自身权的资源延迟和，真实偏离重算含自身新负载。",
+      "statement": "不存在固定C使所有足够大次数d的全类游戏均有Cd/ln d-PNE。给任意C≥1,d0≥2，选d=2^k≥d0且ln d>10C，再用每态严格d/10出口族，逐态得到严格Cd/ln d出口。",
+      "quantifiers": "∀C≥1 ∀d0≥2 ∃整数d≥d0 ∃有限G ∀s ∃i,t_i严格改善。",
+      "assumptions": [
+        "依同次数全状态d/10族",
+        "次数/权谱/规模按原全类允许增长"
+      ],
+      "scope": "被否的是全类固定常数对数改善目标；不反有限权类或其他结构子类。",
+      "objections": "本轮核精确陈述、前提及完整证明位置，复用成熟正文；未重新逐句证明或重跑有限审计。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/全状态线性次数无均衡族--定理.md",
+        "sha256": "fd1208e470d12721ed79fea67fbd43221c432a95fc0433ac3df2d5f0573c7d9b",
+        "section": "结论及适用边界"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/weighted-congestion/state/定理/全状态线性次数无均衡族--定理.md",
+        "2.5.3 Boss2 register-ab98f323ad-0118"
+      ]
+    },
+    {
+      "object_id": "WC-CLASS-FRONT-ALLSTATE-COMPILER-v1",
+      "version": 1,
+      "title": "全部同权类前沿出口到全状态的条件编译",
+      "kind": "theorem",
+      "truth_status": "conditional",
+      "model": "有限标准加权拥塞：固定正玩家权，有限显式资源子集菜单；非负系数多项式费用；个人成本为未乘自身权的资源延迟和，真实偏离重算含自身新负载。",
+      "statement": "给任意二动作合法基体，B=max C、eta=min_front max_保front(C_old−alpha C_new)>0、L=max binom(n_a−1,2)，令M=2alpha B，取正整数D使(2/3)^D≤eta/(4alpha²BL)；加入同类完整锚定三元pair后，次数max(p,D)，每态有margin≥eta/2真实单人严格alpha出口，保持原玩家/权/两个动作。",
+      "quantifiers": "对任意p≥0,alpha≥1、任意满足eta>0的有限基体；L=0时原游戏已全态失稳。",
+      "assumptions": [
+        "全部product-front已有保front严格出口是输入前提",
+        "同类等权，fresh同费三元pair",
+        "B和eta用真实有限全状态量"
+      ],
+      "scope": "条件推导完整；不是仅改善环前提。较弱抵消预算与alpha1独立范围完整保正文；D是充分预算非真实最优。",
+      "objections": "本轮核精确陈述、前提及完整证明位置，复用成熟正文；未重新逐句证明或重跑有限审计。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/同权类前沿全覆盖的全状态编译--定理.md",
+        "sha256": "e618d7fdd185bcea95f777934d6b1407fc1b4dedd562220a73e1f7fffaa2d9cf"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/weighted-congestion/state/定理/同权类前沿全覆盖的全状态编译--定理.md",
+        "2.5.3 Boss2 register-ab98f323ad-0118"
+      ]
+    },
+    {
+      "object_id": "WC-R3-FULL-TOPOLOGY-REDUCTION-v3",
+      "version": 1,
+      "title": "对称同轻权两列无均衡到单项式两攻击源的rho归约",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限标准加权拥塞：固定正玩家权，有限显式资源子集菜单；非负系数多项式费用；个人成本为未乘自身权的资源延迟和，真实偏离重算含自身新负载。",
+      "statement": "次数≤d的完整对称两列拓扑，若alpha≥rho=(1+sqrt3)/2且无alpha-PNE，则存在N≥1,0<omega≤1,1≤k≤d,0<beta<1使两单项式严格攻击S1/S2同时成立。允许人数/权/费用变化；两阈值满足T_source≤T_topology≤max(rho,T_source)。",
+      "quantifiers": "∀原拓扑实例 ∀alpha≥rho，若无均衡则∃新源参数。",
+      "assumptions": [
+        "共同light权但允许w>1",
+        "两侧同主费F/同卫星G，非负系数次数≤d",
+        "稳定整数区间、左右支转换与非负系数单项式抽取"
+      ],
+      "scope": "存在性归约不保单实例最优倍率或原w；与异质轻权充分证书分立。",
+      "objections": "本轮核精确陈述、前提及完整证明位置，复用成熟正文；未重新逐句证明或重跑有限审计。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/对称两列拓扑的单项式两攻击归约--定理.md",
+        "sha256": "6d6ffc835804eec4e380e086b818d8e022dc1c0d70d505d31a09873766b7d6d9"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/weighted-congestion/state/定理/对称两列拓扑的单项式两攻击归约--定理.md",
+        "2.5.3 Boss2 register-ab98f323ad-0118"
+      ]
+    },
+    {
+      "object_id": "WC-ADDITIVE-NEAR-DEGREE-ALLSTATE-v1",
+      "version": 1,
+      "title": "全部整数尾部d−1200ceil(log2 d)^2的同次数全状态下界",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限标准加权拥塞：固定正玩家权，有限显式资源子集菜单；非负系数多项式费用；个人成本为未乘自身权的资源延迟和，真实偏离重算含自身新负载。",
+      "statement": "每个整数d≥2^20有正有理纯d次两非空不交动作游戏，每态存在严格(d−1200ceil(log2 d)^2)改善。令ell=ceil(log2d),n=ceil(d/(1200ell²))，直接逐跳点核统一条件并在次数d支付门泄漏；实际alpha=(1−1/n)d≥展示倍率。",
+      "quantifiers": "∀整数d≥2^20 ∃有限G ∀s ∃真实单人严格出口。",
+      "assumptions": [
+        "调用参数化构造的统一(A)，不把n(d)代入固定n的d0(n)",
+        "完整错位前沿/非法态/同次数证明在被引构造"
+      ],
+      "scope": "不称有限d恰d无均衡；单数位长O(d²)不等于巨大游戏总规模多项式。",
+      "objections": "本轮核精确陈述、前提及完整证明位置，复用成熟正文；未重新逐句证明或重跑有限审计。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/平方对数加性缺口的全状态近次数下界--定理.md",
+        "sha256": "63f3eed48ba119f9a1e13667137baaf8eabd3083003b71ceacf443d4849a13b1"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/构造/短窗网格分离的全状态近一反例--构造.md",
+          "sha256": "fb94d8287c034a822bde2a44f27e03501d9d9babbe1f53ab4e6e460dae9f523c"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/定理/平方对数加性缺口的全状态近次数下界--定理.md",
+        "2.5.3 Boss2 register-ab98f323ad-0118"
+      ]
+    },
+    {
+      "object_id": "M-44798fea47994bf481e9ebb8443dabf7",
+      "version": 1,
+      "title": "普适纯近似均衡倍率与次数之比趋于一",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限标准加权拥塞：固定正玩家权，有限显式资源子集菜单；非负系数多项式费用；个人成本为未乘自身权的资源延迟和，真实偏离重算含自身新负载。",
+      "statement": "令a_*(d)为全类次数≤d普适倍率下确界，内部三角势对每个有限游戏的有限k给A_(d,k)<d，故a_*≤d；配全状态near下界得1−1200ceil(log2d)^2/d≤a_*/d≤1，从而极限为1。",
+      "quantifiers": "d→∞整数尾部；先对每个有限游戏分别应用有限k正向结论。",
+      "assumptions": [
+        "负向near构造",
+        "独立正向有限权类三角势完整证明"
+      ],
+      "scope": "负向结果本身不证明上界；不宣称有限d阈值恰d。",
+      "objections": "本轮核精确陈述、前提及完整证明位置，复用成熟正文；未重新逐句证明或重跑有限审计。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/平方对数加性缺口的全状态近次数下界--定理.md",
+        "sha256": "63f3eed48ba119f9a1e13667137baaf8eabd3083003b71ceacf443d4849a13b1",
+        "section": "普遍阈值的上下界分别由何承担"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+          "sha256": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/定理/平方对数加性缺口的全状态近次数下界--定理.md",
+        "2.5.3 Boss2 register-ab98f323ad-0118"
+      ]
+    },
+    {
+      "object_id": "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1",
+      "version": 1,
+      "title": "有限全局权类别三角势的隐式根存在界",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限标准加权拥塞：固定正玩家权，有限显式资源子集菜单；非负系数多项式费用；个人成本为未乘自身权的资源延迟和，真实偏离重算含自身新负载。",
+      "statement": "全局可动权类别≤k，d≥2，唯一根A_(d,k)=sum_{j<k}((d−1)/A)^j∈[1,d)；三角排序混合给共同乘子并在全部严格A改善下降，每个局部最小为A-PNE。固定k渐近A~d^(1−1/k)，固定d时A随k增至d。",
+      "quantifiers": "∀有限正实权游戏、非负系数次数≤d、实际全局k；k1为精确。",
+      "assumptions": [
+        "固定类别次序跨资源一致",
+        "真实新增/删除/保留资源分别估计"
+      ],
+      "scope": "每资源权类别数不能直接代全局k；只有限存在/终止不保位多项式。",
+      "objections": "本轮核精确陈述、前提及完整证明位置，复用成熟正文；未重新逐句证明或重跑有限审计。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+        "sha256": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/审查/权类别排序势与共占高度的审查范围--审查.md",
+          "sha256": "5addca12a6cfc4cc59a84bbf40244d5f2ba884b4e3ea1401e195c7ead86a0b3a",
+          "section": "三角势：共同承重核对与有理上根"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+        "2.5.3 Boss2 register-ab98f323ad-0118"
+      ]
+    },
+    {
+      "object_id": "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1",
+      "version": 1,
+      "title": "固定单策略玩家背景的有限可动权类精确吸收",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限标准加权拥塞：固定正玩家权，有限显式资源子集菜单；非负系数多项式费用；个人成本为未乘自身权的资源延迟和，真实偏离重算含自身新负载。",
+      "statement": "只有一个合法策略的玩家在各资源形成固定非负背景B_e；平移c_e(B_e+x)保非负系数和次数且逐状态/真实偏离可动成本不变。因此仅需计可动权类别k即有A_(d,k)-PNE，势可拉回原游戏。",
+      "quantifiers": "任意固定玩家权类别与有限可动权类k≥1；无可动者唯一状态精确。",
+      "assumptions": [
+        "固定指菜单单元素，非仅路径中暂不动"
+      ],
+      "scope": "背景吸收对稳定精确，不自动保含固定玩家的社会成本包络。",
+      "objections": "本轮核精确陈述、前提及完整证明位置，复用成熟正文；未重新逐句证明或重跑有限审计。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+        "sha256": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2",
+        "section": "固定背景吸收"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/计算/有限权类网格与固定背景取整的作者核验--计算.md",
+          "sha256": "6e74512df2a8f064853e09b39c7cd71433fc63c8f6d308eabc9f1aa3344b834a"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+        "2.5.3 Boss2 register-ab98f323ad-0118"
+      ]
+    },
+    {
+      "object_id": "WC-WEIGHT-CLASS-CLUSTER-ROUNDING-v1",
+      "version": 1,
+      "title": "固定标签窄权簇向下取整的单次R^d损失",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限标准加权拥塞：固定正玩家权，有限显式资源子集菜单；非负系数多项式费用；个人成本为未乘自身权的资源延迟和，真实偏离重算含自身新负载。",
+      "statement": "每个可动玩家有固定标签v_tau≤w_i≤R v_tau，k个正代表权，固定玩家不取整；全状态/偏离C′≤C≤R^d C′，取整A_(d,k)-PNE即原R^d A_(d,k)-PNE。",
+      "quantifiers": "∀d≥2,k≥1,R≥1满足固定簇标签的游戏。",
+      "assumptions": [
+        "固定背景非负，x′≤x≤R x′",
+        "代表可重复或未用"
+      ],
+      "scope": "不保证任意权谱能少簇覆盖；只有一个R^d损失。",
+      "objections": "本轮核精确陈述、前提及完整证明位置，复用成熟正文；未重新逐句证明或重跑有限审计。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+        "sha256": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2",
+        "section": "近似权簇单向取整"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/计算/有限权类网格与固定背景取整的作者核验--计算.md",
+          "sha256": "6e74512df2a8f064853e09b39c7cd71433fc63c8f6d308eabc9f1aa3344b834a"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+        "2.5.3 Boss2 register-ab98f323ad-0118"
+      ]
+    },
+    {
+      "object_id": "weighted-congestion/rounding-potential-pullback-review-observation",
+      "version": 1,
+      "title": "窄簇取整势拉回后的原游戏动态加强",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限标准加权拥塞：固定正玩家权，有限显式资源子集菜单；非负系数多项式费用；个人成本为未乘自身权的资源延迟和，真实偏离重算含自身新负载。",
+      "statement": "相同窄簇合同下，原C_old>R^d A C_new迫取整C′_old>A C′_new，因此取整三角势拉回后在原全部严格R^d A改善下降；无需除成本。",
+      "quantifiers": "任意满足固定标签窄簇与固定背景合同的有限游戏。",
+      "assumptions": [
+        "原/取整全状态及真实偏离C′≤C≤R^dC′",
+        "取整势严格A改善下降"
+      ],
+      "scope": "原规范Claim只存在性，本审查是独立保留动态加强，未把源未纳建议伪作原本主张。",
+      "objections": "本轮核精确陈述、前提及完整证明位置，复用成熟正文；未重新逐句证明或重跑有限审计。",
+      "body": {
+        "path": "archives/weighted-congestion/state/审查/权类别排序势与共占高度的审查范围--审查.md",
+        "sha256": "5addca12a6cfc4cc59a84bbf40244d5f2ba884b4e3ea1401e195c7ead86a0b3a",
+        "section": "采纳说明与未纳入的动态取整建议"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+          "sha256": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2",
+          "section": "近似权簇单向取整"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/审查/权类别排序势与共占高度的审查范围--审查.md",
+        "2.5.3 Boss2 register-ab98f323ad-0118"
+      ]
+    },
+    {
+      "object_id": "WC-R1-RESOURCE-SUPPORT",
+      "version": 1,
+      "title": "资源潜在用户支持r给总成本严格r改善势",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限标准加权拥塞：固定正玩家权，有限显式资源子集菜单；非负系数多项式费用；个人成本为未乘自身权的资源延迟和，真实偏离重算含自身新负载。",
+      "statement": "任意非负非递减费用、任意正权、每资源潜在用户数≤r，未加权总成本Phi=sum_i C_i在全部严格r改善下降；每个全局最小点是r-PNE。",
+      "quantifiers": "任意有限游戏，r≥1；全部支持为空时所有成本零精确。",
+      "assumptions": [
+        "潜在用户是至少一个合法动作会使用该资源的全部玩家",
+        "真实新负载和成本未乘自身权"
+      ],
+      "scope": "r可随次数增长；不给全类次线性、时间复杂度或所有高支持不存在结论。",
+      "objections": "本轮核精确陈述、前提及完整证明位置，复用成熟正文；未重新逐句证明或重跑有限审计。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/资源潜在用户支持的总成本势--定理.md",
+        "sha256": "4f252181961ef4fdda7e02f6ee460861b4d52c1271d85c8d1dd1242ef8f42844"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/weighted-congestion/state/定理/资源潜在用户支持的总成本势--定理.md",
+        "2.5.3 Boss2 register-ab98f323ad-0118",
+        "weighted-congestion/potential-user-support-total-cost"
+      ]
+    },
+    {
+      "object_id": "FG01",
+      "version": 1,
+      "title": "四人laminar完整EF1的两个ordered key问题",
+      "kind": "open problem",
+      "truth_status": "open",
+      "model": "公平商品：四人非负可加估值、共同4-colorable laminar约束；强化ordered no-envy。",
+      "statement": "要求任意给定人序下K8（类大小3,3,2，每类cap1、总cap2）和K12（四类各3，每类cap1、总cap3）均有完整可行EF1且i<j时vi(Ai)≥vi(Aj)，进而接回四人laminar目标。",
+      "quantifiers": "两个明确key域中∀非负实估值，含零和ties，分别∃完整有序EF1分配。",
+      "assumptions": [
+        "完整性与各容量可行",
+        "EF1和ordered no-envy同时成立"
+      ],
+      "scope": "普通EF1与强化版分立；有限5000/500样本不覆盖连续锥。",
+      "objections": "冻结候选及明确未付义务；有限样本不闭合全称命题，未将历史文献排重声明作当前新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/审查/退役公平商品候选三源处置--审查.md",
+        "sha256": "884fabbe490151b23a6fbd315f5c4badbce21f7aadeb10c808052bfeb2cc443b",
+        "section": "FG01：四人 laminar EF1 的 key 实例"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/tools/evidence/retired-fair-goods-20261031/candidates.json",
+          "sha256": "89442a34791086e3030aeb5b21e264bfe8bf267d23ee7646adc7d6030fe77c32"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/审查/退役公平商品候选三源处置--审查.md"
+      ]
+    },
+    {
+      "object_id": "FG02",
+      "version": 1,
+      "title": "等值副本任意类型数的SD-EF1目标",
+      "kind": "open problem",
+      "truth_status": "open",
+      "model": "公平商品copies：每型c_g≤n个副本，同型对每观察者等值，每人每型≤1，完整分配。",
+      "statement": "求对所有观察者i、比较者j及i价值排序前缀P满足|Ai∩P|≥|Aj∩P|−1的完整分配；先n3任意类型数，再一般n。",
+      "quantifiers": "∀有限类型与合法副本数/每人排序，∃满足全部前缀比较的分配。",
+      "assumptions": [
+        "同型副本等值",
+        "非universal三人型可归c_g∈{1,2}"
+      ],
+      "scope": "一般partition负例不能不保等值结构迁移；9216/81有限域不是任意类型数证明。",
+      "objections": "冻结候选及明确未付义务；有限样本不闭合全称命题，未将历史文献排重声明作当前新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/审查/退役公平商品候选三源处置--审查.md",
+        "sha256": "884fabbe490151b23a6fbd315f5c4badbce21f7aadeb10c808052bfeb2cc443b",
+        "section": "FG02：goods-with-copies 的 SD-EF1"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/tools/evidence/retired-fair-goods-20261031/candidates.json",
+          "sha256": "89442a34791086e3030aeb5b21e264bfe8bf267d23ee7646adc7d6030fe77c32"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/审查/退役公平商品候选三源处置--审查.md"
+      ]
+    },
+    {
+      "object_id": "FG03",
+      "version": 1,
+      "title": "三人六物品两类别下同步EF1与fPO的开放合同",
+      "kind": "open problem",
+      "truth_status": "open",
+      "model": "公平商品：三人六件非负可加估值，两类各3，每类共同cap1，完整约束分配。",
+      "statement": "要求完整可行分配同时EF1与共同约束分数多面体内fractional Pareto optimal；首义务是支持face上的跨类别价格交错，或有理反例。",
+      "quantifiers": "∀该连续估值域的有限实例∃同时满足两性质的分配。",
+      "assumptions": [
+        "两类别公平比较合计只允许删除一件"
+      ],
+      "scope": "不能以每类别EF1替代全包EF1；36分配support-cone审计尚未运行。",
+      "objections": "冻结候选及明确未付义务；有限样本不闭合全称命题，未将历史文献排重声明作当前新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/审查/退役公平商品候选三源处置--审查.md",
+        "sha256": "884fabbe490151b23a6fbd315f5c4badbce21f7aadeb10c808052bfeb2cc443b",
+        "section": "其他候选的准确状态"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/tools/evidence/retired-fair-goods-20261031/candidates.json",
+          "sha256": "89442a34791086e3030aeb5b21e264bfe8bf267d23ee7646adc7d6030fe77c32"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/审查/退役公平商品候选三源处置--审查.md"
+      ]
+    },
+    {
+      "object_id": "FG04",
+      "version": 1,
+      "title": "两任意类别硬上界下的位多项式2/3-MMS目标",
+      "kind": "open problem",
+      "truth_status": "open",
+      "model": "公平商品：任意n，非负可加有理估值，两不交类别共同上界，完整可行分配。",
+      "statement": "求位多项式2/3-MMS算法，MMS按完整可行n划分定义；须联合保持剩余每人MMS及各类别剩余可行性。",
+      "quantifiers": "∀该输入域的实例，统一多项式算法输出每人≥2/3个体MMS的完整可行分配。",
+      "assumptions": [
+        "基准与输出均尊重两类别上界"
+      ],
+      "scope": "单类别结果不自动给两类别；拟matching/residual模块未闭。",
+      "objections": "冻结候选及明确未付义务；有限样本不闭合全称命题，未将历史文献排重声明作当前新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/审查/退役公平商品候选三源处置--审查.md",
+        "sha256": "884fabbe490151b23a6fbd315f5c4badbce21f7aadeb10c808052bfeb2cc443b",
+        "section": "其他候选的准确状态"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/tools/evidence/retired-fair-goods-20261031/candidates.json",
+          "sha256": "89442a34791086e3030aeb5b21e264bfe8bf267d23ee7646adc7d6030fe77c32"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/审查/退役公平商品候选三源处置--审查.md"
+      ]
+    },
+    {
+      "object_id": "FG05",
+      "version": 1,
+      "title": "m=n+2商品all-good EFX0分配数的紧极值目标",
+      "kind": "open problem",
+      "truth_status": "open",
+      "model": "公平商品：n人、m=n+2物品，任意非负可加估值，all-good EFX0含零值删除。",
+      "statement": "确定有标号完整EFX0分配数的最小可能值，先n5,m7，要求紧构造或一般结构下界；不得扩成任意m一般EFX存在问题。",
+      "quantifiers": "对固定n,m=n+2在全部非负估值上取最小计数。",
+      "assumptions": [
+        "零/平局EFX0约定须保留"
+      ],
+      "scope": "目前候选未执行新计数实验；外部既有上下界只作source线索。",
+      "objections": "冻结候选及明确未付义务；有限样本不闭合全称命题，未将历史文献排重声明作当前新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/审查/退役公平商品候选三源处置--审查.md",
+        "sha256": "884fabbe490151b23a6fbd315f5c4badbce21f7aadeb10c808052bfeb2cc443b",
+        "section": "其他候选的准确状态"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/tools/evidence/retired-fair-goods-20261031/candidates.json",
+          "sha256": "89442a34791086e3030aeb5b21e264bfe8bf267d23ee7646adc7d6030fe77c32"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/审查/退役公平商品候选三源处置--审查.md"
+      ]
+    },
+    {
+      "object_id": "FC-LEMMA-R2-2C-v1",
+      "version": 1,
+      "title": "无loops两平行类秩成本的完整EF/EFX构造",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "公平家务：n≥1人、m不可分家务，每人异质二划分A_i⊔B_i=M，无loops，c_i(S)=1[S∩Ai≠∅]+1[S∩Bi≠∅]。",
+      "statement": "m≥n时有complete EF并可O(n³m)保守多项式构造；m<n时每人至多一件的完整分配是EFX。缺字图匹配不足时用交替路使可达人未匹配，再选全局未匹配物品翻缺字位以增广。",
+      "quantifiers": "∀该有限输入域；两平行类可有空类。",
+      "assumptions": [
+        "成本为两容量1平行类rank≤2，不含loops",
+        "增广须全局未匹配item而非仅e∉T"
+      ],
+      "scope": "不要求PO，不扩到三类或一般rank2；完整内部证明可登记proved。",
+      "objections": "已核missing-word/交替可达/全局未匹配item关键修正。来源历史称candidate lemma不影响其已给完整内部证明状态；没有外审/新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/审查/退役公平家务候选三源处置--审查.md",
+        "sha256": "9b1388d9c3c24d343aa102d3d2c96d5f0ef25108ca46cfbbc4fe344079752324",
+        "section": "FC-LEMMA-R2-2C-v1：两平行类无 loops 的局部引理"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/tools/evidence/retired-fair-chores-20261031/rank2_two_classes_lemma.md",
+          "sha256": "12b9460d10d35f9129395803331ce7c617ac04fd05bbf54f8ee56115840c3558"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/审查/退役公平家务候选三源处置--审查.md"
+      ]
+    },
+    {
+      "object_id": "FC-01",
+      "version": 1,
+      "title": "秩至多二 matroid chores 的 EFX 分类",
+      "kind": "open problem",
+      "truth_status": "open",
+      "model": "独立公平家务/图定向模型：{\"agents\": \"arbitrary n\", \"items\": \"arbitrary m\", \"costs\": \"matroid rank ≤2, heterogeneous; rational data not needed\", \"requirements\": [\"complete\", \"EFX\"], \"excluded_requirement\": \"PO\"}",
+      "statement": "秩至多二 matroid chores 的 EFX 分类；首个明确义务：找到三平行类中取代缺字/互补pair的cover-or-common-rainbow二分，或最小反例。",
+      "quantifiers": "对所列输入域中的每个有限实例；若问算法则要求输入bit长度的多项式时间",
+      "assumptions": [
+        "按input_domain完整分配/相应公平语义",
+        "模型与非加权商品/拥塞分立"
+      ],
+      "scope": "冻结候选域；不把二平行类局部引理扩为其总解。",
+      "objections": "冻结候选及明确未付义务；有限样本不闭合全称命题，未将历史文献排重声明作当前新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/审查/退役公平家务候选三源处置--审查.md",
+        "sha256": "9b1388d9c3c24d343aa102d3d2c96d5f0ef25108ca46cfbbc4fe344079752324",
+        "section": "候选报告与 candidates.json 的独有内容"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/tools/evidence/retired-fair-chores-20261031/candidates.json",
+          "sha256": "c677873a97dfb56ed86ae94a051c52aa8feed250f953e83ee83406291d551bac"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/审查/退役公平家务候选三源处置--审查.md"
+      ]
+    },
+    {
+      "object_id": "FC-02",
+      "version": 1,
+      "title": "混合图单圈与仙人掌的 EFX 定向",
+      "kind": "open problem",
+      "truth_status": "open",
+      "model": "独立公平家务/图定向模型：{\"graph\": \"simple pseudoforest then cactus\", \"utility\": \"arbitrary signed rational endpoint-additive; 0 outside incidence\", \"notion\": \"EFX^+_0; remove own nonpositive or other strictly positive item\"}",
+      "statement": "混合图单圈与仙人掌的 EFX 定向；首个明确义务：证明挂树可由常数/多项式大小边界状态完整消去，cycle约束与EFX双向等价。",
+      "quantifiers": "对所列输入域中的每个有限实例；若问算法则要求输入bit长度的多项式时间",
+      "assumptions": [
+        "按input_domain完整分配/相应公平语义",
+        "模型与非加权商品/拥塞分立"
+      ],
+      "scope": "冻结候选域；不把二平行类局部引理扩为其总解。",
+      "objections": "冻结候选及明确未付义务；有限样本不闭合全称命题，未将历史文献排重声明作当前新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/审查/退役公平家务候选三源处置--审查.md",
+        "sha256": "9b1388d9c3c24d343aa102d3d2c96d5f0ef25108ca46cfbbc4fe344079752324",
+        "section": "候选报告与 candidates.json 的独有内容"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/tools/evidence/retired-fair-chores-20261031/candidates.json",
+          "sha256": "c677873a97dfb56ed86ae94a051c52aa8feed250f953e83ee83406291d551bac"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/审查/退役公平家务候选三源处置--审查.md"
+      ]
+    },
+    {
+      "object_id": "FC-03",
+      "version": 1,
+      "title": "精确三件配额与三值 chores MMS",
+      "kind": "open problem",
+      "truth_status": "open",
+      "model": "独立公平家务/图定向模型：{\"quota\": \"exactly3 each\", \"costs\": \"{0,1,2}; {1,2,3} only affine-equivalent\", \"n\": \"arbitrary\"}",
+      "statement": "精确三件配额与三值 chores MMS；首个明确义务：检查已有ternary证明是否保持cardinality，并用MBLP刻画n3m9极点或找反例。",
+      "quantifiers": "对所列输入域中的每个有限实例；若问算法则要求输入bit长度的多项式时间",
+      "assumptions": [
+        "按input_domain完整分配/相应公平语义",
+        "模型与非加权商品/拥塞分立"
+      ],
+      "scope": "冻结候选域；不把二平行类局部引理扩为其总解。",
+      "objections": "冻结候选及明确未付义务；有限样本不闭合全称命题，未将历史文献排重声明作当前新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/审查/退役公平家务候选三源处置--审查.md",
+        "sha256": "9b1388d9c3c24d343aa102d3d2c96d5f0ef25108ca46cfbbc4fe344079752324",
+        "section": "候选报告与 candidates.json 的独有内容"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/tools/evidence/retired-fair-chores-20261031/candidates.json",
+          "sha256": "c677873a97dfb56ed86ae94a051c52aa8feed250f953e83ee83406291d551bac"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/审查/退役公平家务候选三源处置--审查.md"
+      ]
+    },
+    {
+      "object_id": "FC-04",
+      "version": 1,
+      "title": "五人公共双值 chores EFX",
+      "kind": "open problem",
+      "truth_status": "open",
+      "model": "独立公平家务/图定向模型：{\"n\": 5, \"costs\": \"common bivalued {1,r}\", \"items\": \"arbitrary\"}",
+      "statement": "五人公共双值 chores EFX；首个明确义务：证明三元素deficient sets的分解或给不可分解障碍。",
+      "quantifiers": "对所列输入域中的每个有限实例；若问算法则要求输入bit长度的多项式时间",
+      "assumptions": [
+        "按input_domain完整分配/相应公平语义",
+        "模型与非加权商品/拥塞分立"
+      ],
+      "scope": "冻结候选域；不把二平行类局部引理扩为其总解。",
+      "objections": "冻结候选及明确未付义务；有限样本不闭合全称命题，未将历史文献排重声明作当前新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/审查/退役公平家务候选三源处置--审查.md",
+        "sha256": "9b1388d9c3c24d343aa102d3d2c96d5f0ef25108ca46cfbbc4fe344079752324",
+        "section": "候选报告与 candidates.json 的独有内容"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/tools/evidence/retired-fair-chores-20261031/candidates.json",
+          "sha256": "c677873a97dfb56ed86ae94a051c52aa8feed250f953e83ee83406291d551bac"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/审查/退役公平家务候选三源处置--审查.md"
+      ]
+    },
+    {
+      "object_id": "FC-05",
+      "version": 1,
+      "title": "常数 EFX 的多项式初始化",
+      "kind": "open problem",
+      "truth_status": "open",
+      "model": "独立公平家务/图定向模型：{\"costs\": \"additive rational; restricted first to ≤3 cost levels per agent\", \"goal\": \"constant EFX polynomial algorithm\"}",
+      "statement": "常数 EFX 的多项式初始化；首个明确义务：给输入bit长度多项式initializer，不能只证明其存在。",
+      "quantifiers": "对所列输入域中的每个有限实例；若问算法则要求输入bit长度的多项式时间",
+      "assumptions": [
+        "按input_domain完整分配/相应公平语义",
+        "模型与非加权商品/拥塞分立"
+      ],
+      "scope": "冻结候选域；不把二平行类局部引理扩为其总解。",
+      "objections": "冻结候选及明确未付义务；有限样本不闭合全称命题，未将历史文献排重声明作当前新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/审查/退役公平家务候选三源处置--审查.md",
+        "sha256": "9b1388d9c3c24d343aa102d3d2c96d5f0ef25108ca46cfbbc4fe344079752324",
+        "section": "候选报告与 candidates.json 的独有内容"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/tools/evidence/retired-fair-chores-20261031/candidates.json",
+          "sha256": "c677873a97dfb56ed86ae94a051c52aa8feed250f953e83ee83406291d551bac"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/审查/退役公平家务候选三源处置--审查.md"
+      ]
+    },
+    {
+      "object_id": "FC-06",
+      "version": 1,
+      "title": "三人九件 additive chores EFX",
+      "kind": "open problem",
+      "truth_status": "open",
+      "model": "独立公平家务/图定向模型：{\"n\": 3, \"m\": 9, \"costs\": \"nonnegative additive\"}",
+      "statement": "三人九件 additive chores EFX；首个明确义务：减少bundle-size patterns或给可删物lemma的完整证明。",
+      "quantifiers": "对所列输入域中的每个有限实例；若问算法则要求输入bit长度的多项式时间",
+      "assumptions": [
+        "按input_domain完整分配/相应公平语义",
+        "模型与非加权商品/拥塞分立"
+      ],
+      "scope": "冻结候选域；不把二平行类局部引理扩为其总解。",
+      "objections": "冻结候选及明确未付义务；有限样本不闭合全称命题，未将历史文献排重声明作当前新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/审查/退役公平家务候选三源处置--审查.md",
+        "sha256": "9b1388d9c3c24d343aa102d3d2c96d5f0ef25108ca46cfbbc4fe344079752324",
+        "section": "候选报告与 candidates.json 的独有内容"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/tools/evidence/retired-fair-chores-20261031/candidates.json",
+          "sha256": "c677873a97dfb56ed86ae94a051c52aa8feed250f953e83ee83406291d551bac"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/审查/退役公平家务候选三源处置--审查.md"
+      ]
+    },
+    {
+      "object_id": "M-d4886d85ccbf408db1841867b44b8c75",
+      "version": 1,
+      "title": "任意边序ladder生成树基的常数weighted prefix误差目标",
+      "kind": "open problem",
+      "truth_status": "open",
+      "model": "graphic matroid：任意长度ladder、任意边序，x在spanning-tree base polytope，非负边权。",
+      "statement": "求与ladder长度无关的统一常数C，使存在生成树基B对每个边序前缀的加权偏差|sum_prefix w_e(1_B(e)−x_e)|≤C max_e w_e；需不随分解高度累积的交换/不变量。",
+      "quantifiers": "∃统一有限C ∀长度/边序/x/w ∃基B满足全部前缀。",
+      "assumptions": [
+        "任意边序",
+        "无界rank/corank保留"
+      ],
+      "scope": "固定rank/corank或cactus平凡界不解决；toy未执行。",
+      "objections": "冻结候选及明确未付义务；有限样本不闭合全称命题，未将历史文献排重声明作当前新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/资料/退役跨域工具迁移候选注册表与处置边界--资料.md",
+        "sha256": "350c9765d07baebacc2bf870f039e9cef11a9afbb473e49151bed434927d534a",
+        "section": "七个候选的精确内容与当前映射"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/资料/跨域工具迁移与独立反方候选地图--资料.md",
+          "sha256": "3aaaf4c1c0d03554c61587992fa14290b31e3a7931bd1e949e4b10ef764a8764"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/资料/退役跨域工具迁移候选注册表与处置边界--资料.md"
+      ]
+    },
+    {
+      "object_id": "M-145786f402924ba78f555361438588f9",
+      "version": 1,
+      "title": "二人二元共同利益下随机全信息clipped simultaneous RM+目标",
+      "kind": "open problem",
+      "truth_status": "open",
+      "model": "bounded multilinear potential、两人二动作identical-interest game；无偏且有界方差utility-vector全信息估计；标准同时clipped RM+。",
+      "statement": "给该精确随机算法的收敛/真实gap结论或满足相同观测合同的反例；首须控制positive-part clipping、最佳动作误判及持久regret state，不能用generic SGD或确定性算法替换。",
+      "quantifiers": "对全部该模型与噪声过程的主张待明确收敛模式及证明；当前为明确算法机制的开放义务。",
+      "assumptions": [
+        "同时更新、positive-part clipping",
+        "观测无偏/有界方差"
+      ],
+      "scope": "单代理真实势期望下降只否错误Lyapunov推理，不是该RM+不收敛反例。",
+      "objections": "冻结候选及明确未付义务；有限样本不闭合全称命题，未将历史文献排重声明作当前新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/资料/退役跨域工具迁移候选注册表与处置边界--资料.md",
+        "sha256": "350c9765d07baebacc2bf870f039e9cef11a9afbb473e49151bed434927d534a",
+        "section": "七个候选的精确内容与当前映射"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/资料/跨域工具迁移与独立反方候选地图--资料.md",
+          "sha256": "3aaaf4c1c0d03554c61587992fa14290b31e3a7931bd1e949e4b10ef764a8764"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/资料/退役跨域工具迁移候选注册表与处置边界--资料.md"
+      ]
+    },
+    {
+      "object_id": "CB07",
+      "version": 1,
+      "title": "显式size≤2策略非加权拥塞PNE的局部优化边界",
+      "kind": "open problem",
+      "truth_status": "open",
+      "model": "非加权原子拥塞：每策略资源数≤2、显式策略表、非负非递减延迟；先二动作仿射子域。",
+      "statement": "确定任意PNE搜索的局部优化复杂度边界；需刻画策略incidence可表示的二次Q,h并核低度局部优化，而不能由全局势最小化硬度直接推出PNE搜索硬度。",
+      "quantifiers": "∀明确限制域的有限实例的PNE搜索算法或准确难度归约目标。",
+      "assumptions": [
+        "资源数限制是每策略≤2",
+        "显式输入，非加权且仿射first子域明确"
+      ],
+      "scope": "受限incidence不能任意嵌入PSD QUBO；未执行建议toy。",
+      "objections": "冻结候选及明确未付义务；有限样本不闭合全称命题，未将历史文献排重声明作当前新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/资料/退役跨域工具迁移候选注册表与处置边界--资料.md",
+        "sha256": "350c9765d07baebacc2bf870f039e9cef11a9afbb473e49151bed434927d534a",
+        "section": "七个候选的精确内容与当前映射"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/资料/跨域工具迁移与独立反方候选地图--资料.md",
+          "sha256": "3aaaf4c1c0d03554c61587992fa14290b31e3a7931bd1e949e4b10ef764a8764"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/资料/退役跨域工具迁移候选注册表与处置边界--资料.md"
+      ]
+    },
+    {
+      "object_id": "weighted-congestion/triangular-rational-upper-root-review",
+      "version": 1,
+      "title": "有理严格上根三角势的精确边际余量",
+      "kind": "method",
+      "truth_status": "proved",
+      "model": "有限全局k权类、次数≤d≥2的非负系数拥塞势模板；有理beta>0。",
+      "statement": "取t=(d−1)/beta,Z=sum_{j<k}t^j，若Z<beta，用lambda=t^j/Z，累积T_i给上/下边际比R_i=beta+(Z−beta)/T_i，最大在i=k，beta−max R_i=beta/Z−1>0；beta严格大于隐式根。",
+      "quantifiers": "任意d≥2,k≥1及正有理beta满足有限和严格条件。",
+      "assumptions": [
+        "共同玩家乘子跨资源",
+        "精确有理有限和"
+      ],
+      "scope": "只严格上根认证；beta不冒充精确根，四有限代入仅证据。",
+      "objections": "冻结候选及明确未付义务；有限样本不闭合全称命题，未将历史文献排重声明作当前新颖性认证。",
+      "body": {
+        "path": "archives/weighted-congestion/state/审查/权类别排序势与共占高度的审查范围--审查.md",
+        "sha256": "5addca12a6cfc4cc59a84bbf40244d5f2ba884b4e3ea1401e195c7ead86a0b3a",
+        "section": "有理上根的精确余量"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+          "sha256": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/审查/权类别排序势与共占高度的审查范围--审查.md"
+      ]
     }
   ],
   "materials": [
@@ -488,27 +1480,25 @@
       "object_ids": [
         "M-a49d79da09f0479f9f325fa38fcc6242",
         "M-aef49c1daf6b4ab4a4cff57b92f27f9a",
-        "weighted-congestion/asymmetric-matroid-pure-perfect-computation"
+        "SEL-MATROID-PERFECT-ASYM-v1"
       ],
-      "reason": "已核本页精确陈述、模型条件和完整论证入口；保多对象独立数学身份。"
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/审查/原子扰动审计与单交换局部障碍--审查.md",
       "sha256": "6714a2b5c9ffac5a14a3de9eb79ad8655978763d57f0ad829720cbeedc966a86",
-      "disposition": "objects",
-      "object_ids": [
-        "weighted-congestion/atomic-tremble-audit-and-local-obstruction"
-      ],
-      "reason": "已核本页精确陈述、模型条件和完整论证入口；保多对象独立数学身份。"
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "原加性U(2,4)成本数值矛盾，保已识别候选身份及原JSON；须确认是否max型模型，不按错误字面反例proved。"
     },
     {
       "path": "archives/weighted-congestion/state/问题/非对称拟阵拥塞的纯精炼均衡计算--问题.md",
       "sha256": "1b872fd3acb54fa78231dffde4f9708e9bed2a4fe7a8d0864773882cd423236a",
       "disposition": "objects",
       "object_ids": [
-        "weighted-congestion/asymmetric-matroid-pure-perfect-computation"
+        "SEL-MATROID-PERFECT-ASYM-v1"
       ],
-      "reason": "已核本页精确陈述、模型条件和完整论证入口；保多对象独立数学身份。"
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/障碍/幂和与正成本乘积的最小选态障碍--障碍.md",
@@ -519,7 +1509,7 @@
         "M-88529b26211042a2b53a1a8f8f5a8add",
         "M-5525ddc99d93462ba7e275aaadb46749"
       ],
-      "reason": "已核本页精确陈述、模型条件和完整论证入口；保多对象独立数学身份。"
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/算法/共同尺度正则化的精确因子优化--算法.md",
@@ -529,7 +1519,7 @@
         "wc-common-scale-regularization-exact-factor-optimization",
         "M-577ad8a145af49a2bc6c4fc8cc9d27de"
       ],
-      "reason": "已核本页精确陈述、模型条件和完整论证入口；保多对象独立数学身份。"
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/算法/前沿双端点报价的类图树宽求解--算法.md",
@@ -538,7 +1528,7 @@
       "object_ids": [
         "wc-front-endpoint-quote-dp-class-treewidth-stable-cost"
       ],
-      "reason": "已核本页精确陈述、模型条件和完整论证入口；保多对象独立数学身份。"
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/算法/非负冻结报价的树宽稳定成本双准则--算法.md",
@@ -547,7 +1537,7 @@
       "object_ids": [
         "wc-treewidth-frozen-quote-dp-stable-cost-bicriteria"
       ],
-      "reason": "已核本页精确陈述、模型条件和完整论证入口；保多对象独立数学身份。"
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/计算/四百玩家十六次改善环的字面程序资源--计算.md",
@@ -556,7 +1546,7 @@
       "object_ids": [
         "weighted-congestion/four-hundred-player-degree-sixteen-cycle-executable-resource"
       ],
-      "reason": "已核本页精确陈述、模型条件和完整论证入口；保多对象独立数学身份。"
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/构造/递峰相邻锚定门的线性资源修复--构造.md",
@@ -565,7 +1555,7 @@
       "object_ids": [
         "wc-sparse-ascending-adjacent-anchored-repair"
       ],
-      "reason": "已核本页精确陈述、模型条件和完整论证入口；保多对象独立数学身份。"
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/算法/全盒安全下降与带版本的异步修复--算法.md",
@@ -574,7 +1564,7 @@
       "object_ids": [
         "wc-box-safe-reference-potential-versioned-asynchronous-repair"
       ],
-      "reason": "已核本页精确陈述、模型条件和完整论证入口；保多对象独立数学身份。"
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/算法/有种子势预算的高次尾项近精确修复--算法.md",
@@ -583,7 +1573,7 @@
       "object_ids": [
         "wc-seed-affine-budget-high-degree-tail-near-exact-repair"
       ],
-      "reason": "已核本页精确陈述、模型条件和完整论证入口；保多对象独立数学身份。"
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/定理/纯双人奇环的缺陷取向阈值--定理.md",
@@ -593,7 +1583,7 @@
         "weighted-congestion/pure-pair-odd-ring-exact-defect-threshold",
         "M-630a7672d1d94245a34f178891f9a754"
       ],
-      "reason": "已核本页精确陈述、模型条件和完整论证入口；保多对象独立数学身份。"
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/定理/固定玩家尺度图势的圈比阈值--定理.md",
@@ -602,217 +1592,284 @@
       "object_ids": [
         "weighted-congestion/fixed-scale-graph-potential-cycle-threshold"
       ],
-      "reason": "已核本页精确陈述、模型条件和完整论证入口；保多对象独立数学身份。"
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/审查/权深度反演与目标证书的审查范围--审查.md",
       "sha256": "056dc7c6f826385154cba8889c7fd0d1f6cdb01ca7708324590d5102d60eb100",
       "disposition": "needs-decision",
       "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "reason": "接续草稿：待准确外部owner接证或剩余候选身份核对，不伪称已完整交付。"
     },
     {
       "path": "archives/weighted-congestion/state/审查/权类别排序势与共占高度的审查范围--审查.md",
       "sha256": "5addca12a6cfc4cc59a84bbf40244d5f2ba884b4e3ea1401e195c7ead86a0b3a",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "disposition": "objects",
+      "object_ids": [
+        "WC-TWO-WEIGHT-ORDER-BLEND-v1",
+        "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1",
+        "weighted-congestion/rounding-potential-pullback-review-observation",
+        "weighted-congestion/triangular-rational-upper-root-review"
+      ],
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/计算/共占高度与闭词端点的独立有限核验--计算.md",
       "sha256": "3f08ce38fae73f6289023f017646da6e9ea6db618bee07d9ab3c57392e56a0dc",
       "disposition": "needs-decision",
       "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "reason": "接续草稿：待准确外部owner接证或剩余候选身份核对，不伪称已完整交付。"
     },
     {
       "path": "archives/weighted-congestion/state/计算/相容秩端点与高度边界的作者有限核验--计算.md",
       "sha256": "4fa5660ac42d94f942fedb0be02b23c12ccd04b2ace11281a5838d3473c70243",
       "disposition": "needs-decision",
       "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "reason": "接续草稿：待准确外部owner接证或剩余候选身份核对，不伪称已完整交付。"
     },
     {
       "path": "archives/weighted-congestion/state/障碍/不相容玩家秩的三角势边际失效--障碍.md",
       "sha256": "32db0c7ec2f9a410358ef3069d747eec6d4d14ee337e57dde70bed832eb2d988",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "disposition": "objects",
+      "object_ids": [
+        "weighted-congestion/incompatible-player-rank-marginal-obstruction"
+      ],
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/计算/有限权类网格与固定背景取整的作者核验--计算.md",
       "sha256": "6e74512df2a8f064853e09b39c7cd71433fc63c8f6d308eabc9f1aa3344b834a",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "disposition": "attachment",
+      "object_ids": [
+        "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1",
+        "WC-WEIGHT-CLASS-CLUSTER-ROUNDING-v1"
+      ],
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/审查/曲率与阶跃结论的审查范围--审查.md",
       "sha256": "ff6d843f1a59b6b00147e6feb2df2fdb146983f8e08d3cd659d69d8361fcdf29",
       "disposition": "needs-decision",
       "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "reason": "接续草稿：待准确外部owner接证或剩余候选身份核对，不伪称已完整交付。"
     },
     {
       "path": "archives/weighted-congestion/state/审查/三载荷包络的独立审查范围--审查.md",
       "sha256": "b34fed0f836caf175fa79e764ddbed9b0d81f587116d43bc4d42f5e9d6a3245e",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "disposition": "attachment",
+      "object_ids": [
+        "WC-R1-PREFIX-SMOOTHING"
+      ],
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/障碍/前缀阶跃平台的三载荷过冲--障碍.md",
       "sha256": "61117a8e46ac2a2d347eb53027f47dccbc5df1dc1e090da7be76b870f1616587",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "disposition": "objects",
+      "object_ids": [
+        "WC-R1-PREFIX-SMOOTHING"
+      ],
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/定理/异权双列互补资源的两攻击证书--定理.md",
       "sha256": "d0397129e0c5598f9d782bc4814217ca805faad9b72aa466f09b9eb0b1d0539a",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "disposition": "objects",
+      "object_ids": [
+        "weighted-congestion/asymmetric-two-column-complementary-two-attack-certificate"
+      ],
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/反例/两玩家二策略无纯均衡--反例.md",
       "sha256": "0050f03e248059a6ec2b8d158d2a9752e563eecad68ae3356e455b272ead80a0",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "disposition": "objects",
+      "object_ids": [
+        "weighted-congestion/two-player-two-strategy-no-pne"
+      ],
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/定义/共同尺度稳定与社会质量的证书接口--定义.md",
       "sha256": "c17d6fb0d93bd42814ce807198beee8fc96217c38d317228ea52b3dbfb1c9a23",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "disposition": "objects",
+      "object_ids": [
+        "weighted-congestion/common-scale-stability-quality-certificate"
+      ],
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/定理/两权类别双排序混合势--定理.md",
       "sha256": "60037a78fb11a5ee69f88f1571936ce03c0e801c7598c9a0bec0a76fb18003a7",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "disposition": "objects",
+      "object_ids": [
+        "WC-TWO-WEIGHT-ORDER-BLEND-v1"
+      ],
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/定理/全状态线性次数无均衡族--定理.md",
       "sha256": "fd1208e470d12721ed79fea67fbd43221c432a95fc0433ac3df2d5f0573c7d9b",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "disposition": "objects",
+      "object_ids": [
+        "WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1",
+        "WC-HEALTHY-LINEAR-SWEEP-v1",
+        "WC-HEALTHY-FRONT-COVERAGE-v1",
+        "WC-MATCHING-LOG-UPPER-NEGATIVE-v1"
+      ],
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/定理/同权类前沿全覆盖的全状态编译--定理.md",
       "sha256": "e618d7fdd185bcea95f777934d6b1407fc1b4dedd562220a73e1f7fffaa2d9cf",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "disposition": "objects",
+      "object_ids": [
+        "WC-CLASS-FRONT-ALLSTATE-COMPILER-v1"
+      ],
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/定理/对称两列拓扑的单项式两攻击归约--定理.md",
       "sha256": "6d6ffc835804eec4e380e086b818d8e022dc1c0d70d505d31a09873766b7d6d9",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "disposition": "objects",
+      "object_ids": [
+        "WC-R3-FULL-TOPOLOGY-REDUCTION-v3"
+      ],
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/定理/平方对数加性缺口的全状态近次数下界--定理.md",
       "sha256": "63f3eed48ba119f9a1e13667137baaf8eabd3083003b71ceacf443d4849a13b1",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "disposition": "objects",
+      "object_ids": [
+        "WC-ADDITIVE-NEAR-DEGREE-ALLSTATE-v1",
+        "M-44798fea47994bf481e9ebb8443dabf7"
+      ],
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
       "sha256": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "disposition": "objects",
+      "object_ids": [
+        "M-44798fea47994bf481e9ebb8443dabf7",
+        "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1",
+        "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1",
+        "WC-WEIGHT-CLASS-CLUSTER-ROUNDING-v1",
+        "weighted-congestion/rounding-potential-pullback-review-observation",
+        "weighted-congestion/triangular-rational-upper-root-review"
+      ],
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/定理/资源潜在用户支持的总成本势--定理.md",
       "sha256": "4f252181961ef4fdda7e02f6ee460861b4d52c1271d85c8d1dd1242ef8f42844",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "disposition": "objects",
+      "object_ids": [
+        "WC-R1-RESOURCE-SUPPORT"
+      ],
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/审查/全状态线性次数构造的范围审查--审查.md",
       "sha256": "495a851a4b3d1189c7897e3d1f92fbfccd67de09abe9ef5f6ae337d0ee33425e",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "disposition": "attachment",
+      "object_ids": [
+        "WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1"
+      ],
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/审查/十四资源交叉构造与三十二次源式上界审查--审查.md",
       "sha256": "ec82c3e4fe3437648541b94146344ca00ad857e6465903599a8c0da259efa436",
       "disposition": "needs-decision",
       "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "reason": "接续草稿：待准确外部owner接证或剩余候选身份核对，不伪称已完整交付。"
     },
     {
       "path": "archives/weighted-congestion/state/审查/序势独立有限核验与Faulhaber幂目标障碍三源审查--审查.md",
       "sha256": "4af7373ba7a9057454a15b224b378e72acadc8fbe10df6a070e7d250aa23fa1a",
       "disposition": "needs-decision",
       "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "reason": "接续草稿：待准确外部owner接证或剩余候选身份核对，不伪称已完整交付。"
     },
     {
       "path": "archives/weighted-congestion/state/审查/循环克隆独立时钟预算与多类组装五源审查--审查.md",
       "sha256": "ff2e9483688cd8b587937c9efe8bb42b26c4bbe41acdec163a5bb4dc9415227e",
       "disposition": "needs-decision",
       "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "reason": "接续草稿：待准确外部owner接证或剩余候选身份核对，不伪称已完整交付。"
     },
     {
       "path": "archives/weighted-congestion/state/审查/循环复制与锚定时钟十源有限审查--审查.md",
       "sha256": "9cc6a094173a367567e0daca2417d4e26f18ac1b9ee1610a140ce09dd4e54032",
       "disposition": "needs-decision",
       "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "reason": "接续草稿：待准确外部owner接证或剩余候选身份核对，不伪称已完整交付。"
     },
     {
       "path": "archives/weighted-congestion/state/审查/退役公平商品候选三源处置--审查.md",
       "sha256": "884fabbe490151b23a6fbd315f5c4badbce21f7aadeb10c808052bfeb2cc443b",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "disposition": "objects",
+      "object_ids": [
+        "FG01",
+        "FG02",
+        "FG03",
+        "FG04",
+        "FG05"
+      ],
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/审查/退役公平家务候选三源处置--审查.md",
       "sha256": "9b1388d9c3c24d343aa102d3d2c96d5f0ef25108ca46cfbbc4fe344079752324",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "disposition": "objects",
+      "object_ids": [
+        "FC-LEMMA-R2-2C-v1",
+        "FC-01",
+        "FC-02",
+        "FC-03",
+        "FC-04",
+        "FC-05",
+        "FC-06"
+      ],
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/资料/主攻问题范围价值与旧原子NE课题的关系--资料.md",
       "sha256": "a6f0f07c4a9882dc9b850722563c7b3db554fb144118ba91d3f498eb048f3be8",
       "disposition": "needs-decision",
       "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "reason": "接续草稿：待准确外部owner接证或剩余候选身份核对，不伪称已完整交付。"
     },
     {
       "path": "archives/weighted-congestion/state/资料/历史共同研究提示词TEAM兼容入口与量词边界--资料.md",
       "sha256": "d8e0cfbbffb1653e280896dc408201a614283db94644574ff2566e397190a847",
       "disposition": "needs-decision",
       "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "reason": "接续草稿：待准确外部owner接证或剩余候选身份核对，不伪称已完整交付。"
     },
     {
       "path": "archives/weighted-congestion/state/资料/跨域工具迁移与独立反方候选地图--资料.md",
       "sha256": "3aaaf4c1c0d03554c61587992fa14290b31e3a7931bd1e949e4b10ef764a8764",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "disposition": "attachment",
+      "object_ids": [
+        "M-d4886d85ccbf408db1841867b44b8c75",
+        "M-145786f402924ba78f555361438588f9",
+        "CB07"
+      ],
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     },
     {
       "path": "archives/weighted-congestion/state/资料/退役跨域工具迁移候选注册表与处置边界--资料.md",
       "sha256": "350c9765d07baebacc2bf870f039e9cef11a9afbb473e49151bed434927d534a",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "接续草稿：尚未完成本材料实读及精确owner判断，不作为已交付。"
+      "disposition": "objects",
+      "object_ids": [
+        "M-d4886d85ccbf408db1841867b44b8c75",
+        "M-145786f402924ba78f555361438588f9",
+        "CB07"
+      ],
+      "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
     }
   ],
   "edge_files": []
