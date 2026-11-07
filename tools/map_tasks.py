@@ -382,7 +382,7 @@ def _registration_done(root,definition,receipt,peer_objects=None):
     registration.validate_batch(root,record,definition['materials'],definition['baseline'],peer_objects=peer_objects)
 
 
-def _prefetch_done(root,deliveries,phase):
+def _prefetch_done(root,deliveries,phase,historical_versions=False):
     """Warm one completion set without creating per-material transactions."""
     assets=[]
     for _,receipt in deliveries:
@@ -392,14 +392,22 @@ def _prefetch_done(root,deliveries,phase):
     _prefetch(root,[ref['path'] for ref in assets])
     needed=[]
     if phase=='registration':
-        records=[];owners={}
+        records=[];owners={};versions={}
         for _,receipt in deliveries:
             if receipt.get('batch_file') not in receipt['assets']:raise ValueError('Every batch_file must be a published asset')
             record=json.loads(_ref_bytes(root,receipt['batch_file']));records.append(record)
             for obj in record.get('objects',[]):
                 oid=obj['object_id']
-                if oid in owners and owners[oid]!=obj:raise ValueError('Conflicting mathematical owner across completion batches: '+oid)
-                owners[oid]=obj
+                version=obj.get('version')
+                if type(version) is not int or version<1:raise ValueError('Positive mathematical object version required: '+oid)
+                key=(oid,version)
+                if ((key in versions and versions[key]!=obj)
+                        or (not historical_versions and oid in owners and owners[oid]!=obj)):
+                    raise ValueError('Conflicting mathematical owner across completion batches: '+oid)
+                versions[key]=obj
+                if oid not in owners or version>owners[oid]['version']:owners[oid]=obj
+                # Historical batches still validate their complete own proofs.
+                needed.extend(ref['path'] for ref in [obj['body'],*obj.get('evidence',[])])
             needed.extend(row['path'] for row in record.get('materials',[]))
         peer_objects=dict(owners)
         external={oid for record in records for row in record.get('materials',[]) for oid in row.get('object_ids',[])}-owners.keys()
@@ -774,8 +782,15 @@ def collect(root,phase='map',local=False,ctx=None,baseline_ref=None):
     if phase=='registration':
         baseline=rows[0]['definition']['baseline']
         if any(r['definition']['baseline']!=baseline for r in rows):raise ValueError('Completed batches refer to different baselines')
-        peers=_prefetch_done(root,[(row['definition'],row['receipt']) for row in rows],phase)
-        for row in rows:_registration_done(root,row['definition'],row['receipt'],peers)
+        # A collected history can contain an already-integrated version and a
+        # later incremental update. Atomic done remains strict about peers;
+        # collection validates each original record against its own version,
+        # and uses the latest version only for read-only external owners.
+        peers=_prefetch_done(root,[(row['definition'],row['receipt']) for row in rows],phase,historical_versions=True)
+        for row in rows:
+            record=json.loads(_ref_bytes(root,row['receipt']['batch_file']))
+            row_peers=dict(peers);row_peers.update((obj['object_id'],obj) for obj in record.get('objects',[]))
+            _registration_done(root,row['definition'],row['receipt'],row_peers)
         return {'baseline':baseline,'batches':[{'batch_id':r['definition']['task_id'],'record':r['receipt']['batch_file']} for r in rows], 'tasks':[r['definition']['task_id'] for r in rows], 'superseded_tasks':sorted(replaced)}
     registry=rows[0]['definition']['registry']
     if any(r['definition']['registry']!=registry for r in rows):raise ValueError('Map batches use different registries')
