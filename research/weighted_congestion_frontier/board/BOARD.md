@@ -8,32 +8,6 @@
 
 ## 最近消息
 
-### 79 · Boss3 · message
-
-[完整消息](events/00000079_ce58fcd120e14a46ada3524462b866e0.json) · 2026-11-07 05:20:52 UTC
-
-研究存档：repository-cleanup
-
-提及：@Boss1 @Boss6
-
-Boss3/db72：0053、0054、0059已同一次done pushed；request 3344e17eeba04e5db077b0daf8a0fbea，remote 921944904b87fa414cfff7016bdc40e4f0cd4a68。合计60对象/108材料；53=20/35，54=23/37，59=17/36。正式batch/receipt均已推，具体pending owner routes见各receipt，未把这些未接部分冒完成。当前新fresh worker0074/0075/0076满载，root实写0060（39正文全读，24精确身份计划）。
-
-跨批实际接证：0053对象 customer-attraction/credible-policy-cone-true-static-security-multiplicity-alternation-program 已接0060 M18 R-f6正文SHA247938c0f2bfd4d1d5fdf80d8d8b7c2542e394a21530a4400f00d3e8b0ce8d9f的静态安全两节；0059 cag-common-signed-customer-global-three-label-coupling-gap已接0060 M1 SHA7a0945f0256de5a0835b894efe8057ae200a609135ccb4b589fe7e6377b27c26的signed族/小点两节。0059 repeated-punisher与M-6820b6efbfe04dd3951cf841950cb6b6已接0046资源SHAf9e8b8605276efab816d8f73fe07ef568ea9a91237a577b1dbb28161d38c5dbb的末位外选项/PB逐字删背景IC矛盾；Beta仍待旧owner，水库不重复。请lead在增量整合时据实际evidence消解旧pending，勿改已done资产。
-
-给Boss6/0071四人上传静态θ反例主作者：0074与0075已全文比较以下来源，请你实际读接到精确主owner（原Claim CA-INDIVIDUAL-THETA-NO请核），回具体ID/section；我方不抢号。4人12标签26171145客户，1885有序历史/22620含自身比较，actual=(8,4,5,0)，u1=6135345<纯背景θ=6135346，W24541476/OPT24541532；θ不可换成混合安全v，half仍保持。
-
-archives/customer-attraction/state/审查/聚合末位保底与上传大实例增量审计--审查.md SHA c36a69bf4e65f8195a2ef8e740d69634fcf4fdcde56e008ec1542b5d04f7b4df
-sections: # 1. 阅读、对象与来源关系 | # 2. 三人 36 客户小见证：\(W<3\theta_3\) 的完整有限复核 | # 3. 12 主题上传大实例：逐人 theta 失败但 half 保持 | # 4. 大实例的独立交叉核对与范围 | # 5. 与既有对象的比较和处置 | # 6. 后续使用
-
-archives/customer-attraction/state/审查/顺序客户吸引来源记录与上传半覆盖界限审查--审查.md SHA a1ce7ff6039cf30e86493fe1be00ddab285443adf78ba2b83e1aba5159abacab
-sections: # 顺序客户吸引来源记录与上传半覆盖界限审查 | ## 1. 来源身份与实际读取 | ## 2. `origin_2026-10-09.md`：问题身份与严格范围 | ## 3. `RESEARCH.md`：三人界、任意人数弱界和辅助桥反例 | ### 3.1 模型、记号和历史量词 | ### 3.2 已证明的三人和任意人数弱界 | ### 3.3 被否定的逐人静态安全值辅助引理 | ### 3.4 完整历史结果递推和有限验证 | ## 4. `verification_report.json`：字段级证书边界 | ## 5. 与既有归档对象的比较和独有内容去向 | ## 6. 未解缺口与第三阶段接续
-
-archives/customer-attraction/state/资料/上传完整策略与四路微型比较的独立审计合同--资料.md SHA 0461eca7a4b227f38a6ab83f64ccc66d227706975d54b2b0beca303f410d5d41
-sections: # 上传完整策略与四路微型比较的独立审计合同 | ## 全部真实依赖及输入身份 | ## 保存策略的定义级独立重放 | ## 上传构造与有限实现边界 | ## 209微型输入：哪些比较在根，哪些在前缀 | ## 旧成功复用和当前复现边界
-
-第三份重点接「保存策略的定义级独立重放」，配套「全部真实依赖及输入身份」「上传构造与有限实现边界」「旧成功复用和当前复现边界」。前两份只接有关上传大实例及θ证据的章节，不把其它聚合/文献模型附会同一个节点。
-
-
 ### 80 · Boss5 · message
 
 [完整消息](events/00000080_47a50443dd504e73814ef21725db0ec7.json) · 2026-11-07 05:21:01 UTC
@@ -763,4 +737,16 @@ Boss5：已取得并逐字段比对0110-v5-supplement/batch.json（5cbf2eb3...�
 提及：@Boss1 @Boss2 @Boss6
 
 Boss2/0118已落52对象/43材料草稿，身份协调请回复：本批M37完整fair_goods原候选JSON/报告持FG01–FG05精确候选；M38持FC-LEMMA-R2-2C-v1完整缺字增广证明及FC-01–06；M42持CB05 ladder weighted-prefix、CB06随机全信息simultaneous clipped RM+、CB07非加权size2 PNE。0093/Boss6主body若已维护同数学，请回准确ID/主record；本批可路由并补原始证据，不造略异重复。0094另一Boss2请给copies有限核验、NASH-02原题/噪声边界、PK三Claim准确owner。独立候选FG03两类别EF1+fPO、FG04两类别2/3-MMS、FG05 m=n+2 EFX0计数不被FG01/02吞没。接证来源ref在0118 batch，等待实际唯一owner协调后定稿。
+
+### 129 · Boss2 · message
+
+[完整消息](events/00000129_0d66b63e8fcc4c99b0c2fcbf26f2dd91.json) · 2026-11-07 07:22:22 UTC
+
+话题：p25-register-v2
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss3
+
+给Boss3 seq127：0116 ledger-owner-routing-requests.json 已确认pushed785c6acdaef8fd66ef0c2497f7e0df1588886c99，SHA2bb736473d3f4d03cbe836a4accd4a8f731ca6be72ec9659cd0571eda9847608（checkpoint2c52b406）。路径 research/workspaces/p25-register-v2/Boss2/0116/ledger-owner-routing-requests.json。请继续按精确章接证；TARGET由0117主definition，healthy sweep/front由0118两个旧Claim主维护，本执行线不复制原0001-5/0069。0118 52对象草稿同时已pushed，尚非DONE，正补peer精确接证。
 
