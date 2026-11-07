@@ -1,0 +1,275 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline.json",
+    "sha256": "5d5737ab6d07552b48925bdb936dae70490e8de1ee0da2b380bb2d16dd5690cf"
+  },
+  "objects": [
+    {
+      "object_id": "M-4dd19989d9f54d9c9099a35766768a26",
+      "version": 1,
+      "title": "33客户五人七标签的q32完整SPE及固定策略锥证书",
+      "kind": "construction",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空带标签共同目录、单位权顺序提供者；终局均分，完整纯策略在全部有序历史定义，包含全部离轨行动、重复、同覆盖异标签及弱平局。真实偏离后沿同一完整策略续走。",
+      "statement": "客户掩码4,8,16,32各3人，63为5人、64为1人、67为15人，共33人。原JSON的2801节点完整策略actual为00011、计数(3,2,0,0,0,0,0)，各人收益4、W=20；主题(2,3,4,5,6)覆盖全部33客户，故OPT5=33、OPT/W=33/20。全部16806条非自身真实偏离IC成立。原证书另保13个非零精确对偶乘子，给该固定策略非负客户锥和指定组合的33/20界。",
+      "quantifiers": "该指定单位客户输入和全部有序历史；锥界仅对这份固定策略及指定比较组合，不量化所有五人策略或六人实例。",
+      "assumptions": [
+        "保原完整动作表与不同有序历史",
+        "对偶行编号依原策略锥程序合同解释"
+      ],
+      "scope": "精确有限完整SPE存在性和原固定锥证书；不是half反例或全局福利界。",
+      "objections": "沿0010收据已一次分配而暂未入库的ID。四份客户单例在actual并未覆盖，正文将3+3+3+3+5+15写成W20的那行展开有误；准确W只由mask63/67给5+15=20。已针对该疑点独立从所有原动作/单位客户用Fraction重算IC、actual和全部静态组合，结果正确；没有重解LP或重建13乘子的行枚举，原对偶证据和成熟说明完整保留。warm-start已知5/3与30条回归只作求解器证据，不另造普通PASS节点。",
+      "body": {
+        "path": "archives/customer-attraction/state/计算/对称DAG五人三十三客户候选与有限回归--计算.md",
+        "sha256": "1b399baaabbf5fbd9a2d0dc32b48e456673e8932ae0100a8ec179a6b8ba41483"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "research/registration/evidence/register-lead-recovered-evidence-01/sym_m5p7_q32_Jout.json",
+          "sha256": "d69e034266cf14279ce3de3ed9ebfadd9bb0ae79df9d35a89ad5fddbe5b32fe9"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/R275可信搜索对称DAG与共同次模投影增量--审查.md",
+          "sha256": "67a39f4b44f7b397ce41da91c154530ccf861e400c31c3776ccec699d530b2e8"
+        },
+        {
+          "path": "research/registration/evidence/register-lead-recovered-evidence-01/audit_finite_cag.py",
+          "sha256": "0a92ab7f0f3a6b3005e502a7ac0ecb0e563b27155a36dd97e4356188096350ef"
+        },
+        {
+          "path": "research/registration/evidence/register-lead-recovered-evidence-01/audit_finite_cag.json",
+          "sha256": "9bcff83a958a76d162bf3b63727250aad992fdaa04f8583531cd94dd34d86031"
+        }
+      ],
+      "sources": [
+        "clean:66545ba853e2589f6466",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/credible_search/sym_m5p7_q32_Jout.json"
+      ]
+    },
+    {
+      "object_id": "M-9c5a80801675407da5e5705ed5e0b8ac",
+      "version": 1,
+      "title": "五人七标签截断共同矩的36锥有限相邻搜索",
+      "kind": "finite-computation",
+      "truth_status": "finite",
+      "model": "五人七标签的截断单调次模共同Shapley矩，至五阶；不是非负客户表示。每份策略仍定义在2801个有序决策历史。",
+      "statement": "冻结seed9201773的36轮、36个不同锥记录每轮19607含自身有序比较；最大保存精确可行比7/5。最佳round0根计数(2,1,1,0,0,0,1)、目标mask47，保存119非零有理矩和完整2801动作表，动作字母表{0,1,2,6}。其余轮次记录6/5、1442/1061、275/201、497/363、1169/851；未有客户正性实现。",
+      "quantifiers": "仅该冻结36轮输出和其保存有理候选；不是所有共同矩锥或所有纯SPE的上界。",
+      "assumptions": [
+        "采用输出自身truncated scope",
+        "不猜测缺失continuation_policy/global_submodular/root_selection invocation"
+      ],
+      "scope": "抽象矩有限探索及必要完整证据；无单位客户反例、无普遍half结论。",
+      "objections": "已全文读成熟审查、36行记录及全部119矩值；动作数组完整解析并核各深度1/7/49/343/2401，未手工逐动作复审或重跑抽象矩LP/IC。原输出customer_realizability:not_claimed，不能把7/5写成原客户福利界。terminal_pair有限审计另归0006末两不同定理，本对象不吞该定理。",
+      "body": {
+        "path": "archives/customer-attraction/state/审查/二支持末段审计与全历史相邻锥有限证据--审查.md",
+        "sha256": "ca659ae54c8c0a335bb0fe5fc5a574b0bbae3a68d8631614c734ccbbabf62aa3",
+        "section": "三、`full_history_walk`：程序合同与运行输出"
+      },
+      "evidence": [
+        {
+          "path": "research/registration/evidence/register-lead-recovered-evidence-01/full_history_walk.json",
+          "sha256": "5fffc743211433ee53db2703bd082dfef7a9c359cb76c7675f27932e273933a0"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/terminal-pair-and-full-history-walk-primary/full_history_walk_summary.json",
+          "sha256": "80a5699da2e3f0725460f73aa1541fa953dacc078526d49dc9f8015510c8cf37"
+        }
+      ],
+      "sources": [
+        "clean:6fe3c8b74c7de77edd63",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/tree_coupling/round2/full_history_walk.json"
+      ]
+    },
+    {
+      "object_id": "M-0fc59c8f626f463da80beb0d15d65bab",
+      "version": 1,
+      "title": "对数势全局最大点与连续静态minimax的全人数严格分离",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空带标签共同目录、单位权顺序提供者；终局均分，完整纯策略在全部有序历史定义，包含全部离轨行动、重复、同覆盖异标签及弱平局。真实偏离后沿同一完整策略续走。 静态q属于共同目录概率单纯形Δ(S)，q_x为客户覆盖边际；k=m−1。",
+      "statement": "每个m≥2，k=m−1、a=k+3、d=2k+3，客户{1},{2},{3},{0,1}各a，{0,2,3}为d，共4a+d=6m+9。令g_A(q)=Σx∈A1/(1+kq_x)、L(q)=Σxlog(1+kq_x)。q*=(0,1/3,1/3,1/3)全局最大化凹L，四g均6；s=(3d+2a)/(4(d+2a)), ε=1/(4k)，q′=(ε,1/3−sε,1/3−(1−s)ε/2,1/3−(1−s)ε/2)合法且每个g_A(q′)<6。因此L的最大点不总求解v_cont=min_qmax_Ag_A(q)。",
+      "quantifiers": "每个整数m≥2显式单位客户目录；q′的严格通分证明对全部k≥1成立，不是有限m回归外推。",
+      "assumptions": [
+        "有限共同目录，q是目录概率而非客户概率",
+        "没有指定完整SPE"
+      ],
+      "scope": "连续静态表示边界；不反驳原half或SPE到安全值付款桥。",
+      "objections": "完整原稿已恢复并全文读，通分承重为2a−d=3、sD−(1−s)F/2=1/8。成熟综述错误把{0,1}写成d、把q写成客户单纯形、把m说成主题数；此登记按原稿精确域勘误，冻结综述字节未改。原一般v_cont≥OPT/(2m−1)和v_cont≤v_m与已登记安全值主owner复用，不因本页再造同义桥。",
+      "body": {
+        "path": "archives/customer-attraction/state/审查/R-3d6f连续安全对数势分离与笛卡尔耦合--审查.md",
+        "sha256": "8e712d8faf6143ce5b05435ba01b971e3e199f5402aebdcca6db63795ecbdf01",
+        "section": "2. 连续对数势的精确分离族"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "research/registration/evidence/register-lead-recovered-evidence-01/continuous_security_log_boundary.md",
+          "sha256": "473396c43b4c68a6ffdeb2ac12873659823456c8e713834bba019b3b05a09be5"
+        }
+      ],
+      "sources": [
+        "clean:f0b7d59c941dfce22f67"
+      ]
+    },
+    {
+      "object_id": "M-8dcfbe91a71b4d3a870f5d2cd0bced19",
+      "version": 1,
+      "title": "客户不交全Cartesian目录的覆盖和两类静态安全值可加性",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空带标签共同目录、单位权顺序提供者；终局均分，完整纯策略在全部有序历史定义，包含全部离轨行动、重复、同覆盖异标签及弱平局。真实偏离后沿同一完整策略续走。",
+      "statement": "有限多个客户不交分量、完整带标签Cartesian共同目录、同步同一人数m下，OPT_m、真实不观察查询的静态混合安全值v_m和连续安全值v_cont各等于分量之和。任取各分量完整纯SPE，逐分量仅读其投影有序历史的产品策略是联合完整纯SPE。",
+      "quantifiers": "任意有限个有限非空分量、每个m≥1；可加性对所有相关联合查询/背景仍成立，产品SPE是充分构造。",
+      "assumptions": [
+        "客户集两两不交",
+        "联合目录含全部标签元组，保留同覆盖异标签",
+        "同一玩家人数和顺序"
+      ],
+      "scope": "静态值的精确双向可加性及产品策略充分方向；不同于保原策略的银行容量、均匀位置菜单加性和fresh缺陷加性。",
+      "objections": "原稿的“联合主题唯一决定坐标”按带标签元组解释，不能因分量同覆盖别名把信号商掉。下界乘积查询、上界乘积对偶和各边际可实现性完整在原稿；本次全文读并比较canonical PRODUCT/银行/菜单/fresh对象后保持不同量。未断言任意联合SPE可分解。",
+      "body": {
+        "path": "archives/customer-attraction/state/审查/R-3d6f连续安全对数势分离与笛卡尔耦合--审查.md",
+        "sha256": "8e712d8faf6143ce5b05435ba01b971e3e199f5402aebdcca6db63795ecbdf01",
+        "section": "4. 笛卡尔目录耦合审查"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "research/registration/evidence/register-lead-recovered-evidence-01/cartesian_catalog_coupling.md",
+          "sha256": "32d0e918561b81ee7fd0be3cb7f69832d5911fccda672ad91c798e398cccfa44"
+        }
+      ],
+      "sources": [
+        "clean:401225dff6c2fdf4d5bc"
+      ]
+    },
+    {
+      "object_id": "M-6d89eb71c1ff4842aa6c2a6f89f159ef",
+      "version": 1,
+      "title": "8客户全Cartesian联合SPE投影可非SPE",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空带标签共同目录、单位权顺序提供者；终局均分，完整纯策略在全部有序历史定义，包含全部离轨行动、重复、同覆盖异标签及弱平局。真实偏离后沿同一完整策略续走。",
+      "statement": "分量I不交A3/B2，分量II不交C2/D1；目录AC/AD/BC/BD。根BC，第二玩家在AC/AD/BC/BD后分别BC/BC/AD/AC，四根真实收益4/4/4/3，各末节点BR，故完整5节点SPE。actual BC→AD覆盖8=OPT2。固定第二分量首C时，第一分量投影根B收益2可改A收益3，投影非SPE；联合AC偏离使第二分量可信平局罚恰损1。",
+      "quantifiers": "指定8个不同单位客户、两玩家、全部5有序节点及20含自身比较；存在联合完整SPE不逐分量分解。",
+      "assumptions": [
+        "两客户分量不交、联合目录完整",
+        "保历史依赖弱平局"
+      ],
+      "scope": "否定任意联合SPE自动分解的逆命题；非half反例。",
+      "objections": "与银行固定控制器、PRODUCT-MENU及其它惩罚例比较，精确输入与被否量词不同。成熟综述的组件参数(2,1)不是该完整原稿I(3,2)/II(2,1)；按原稿的全部收益表保留。完整证明与20项比较解析复用，无新参数扫描。",
+      "body": {
+        "path": "archives/customer-attraction/state/审查/R-3d6f连续安全对数势分离与笛卡尔耦合--审查.md",
+        "sha256": "8e712d8faf6143ce5b05435ba01b971e3e199f5402aebdcca6db63795ecbdf01",
+        "section": "4. 笛卡尔目录耦合审查"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "research/registration/evidence/register-lead-recovered-evidence-01/cartesian_catalog_coupling.md",
+          "sha256": "32d0e918561b81ee7fd0be3cb7f69832d5911fccda672ad91c798e398cccfa44"
+        }
+      ],
+      "sources": [
+        "clean:401225dff6c2fdf4d5bc"
+      ]
+    },
+    {
+      "object_id": "M-c38f48fb4739493382960e39269f6cde",
+      "version": 1,
+      "title": "共享遗漏循环的四份五人七标签完整SPE端点",
+      "kind": "construction",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空带标签共同目录、单位权顺序提供者；终局均分，完整纯策略在全部有序历史定义，包含全部离轨行动、重复、同覆盖异标签及弱平局。真实偏离后沿同一完整策略续走。",
+      "statement": "冻结两原根计数(0,1,1,1,2,0,0)/(0,1,1,2,1,0,0)各有两完整2801节点策略。组合01256端点客户mask1/30/32/64重数1/5/1/1，W5、OPT8；组合12356端点mask30/32/65重数5/1/1，W5、OPT7。每份所有16806条非自身真偏离IC成立，各人actual收益1。两个7/5结果另保存指定固定锥/组合的14非零对偶；8/5端点无精确最优对偶。",
+      "quantifiers": "仅四个保存策略/客户点和各指定组合；不量化全部共享循环锥、所有组合或所有五人SPE。",
+      "assumptions": [
+        "每份锥1506非零去重IC行按原程序定义",
+        "完整gzip原始字节和四份全部动作保留"
+      ],
+      "scope": "精确有限SPE构造，原两指定锥对偶证据并存；未找到half反例不升级全域阴性。",
+      "objections": "四策略已因缺完整原件的历史疑点定向以独立Fraction逐有序历史核验，连同q32共14005节点/84030非自身比较；并穷尽每个固定客户输入的合法静态5槽计数求OPT。未重跑LP或重建14对偶的行编号。四点有两种客户表及两种真实根计数，保全同一家族的全部4份策略而不按PASS造四节点；与0027 m5k7最大性9/5点不同。",
+      "body": {
+        "path": "archives/customer-attraction/state/计算/R-3b942共享遗漏循环完整锥攻击--计算.md",
+        "sha256": "c130c9c079de3c47c8a8139662d7109ad70de3daa3a8d1ff2d6f5078a033f964"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "research/registration/evidence/register-lead-recovered-evidence-01/shared_cycle_cone_attack.json.gz",
+          "sha256": "dda4102d0991074c232d1f0da80fac75fa1fd7af2eb570eea7c64fb9a48b3de8"
+        },
+        {
+          "path": "research/registration/evidence/register-lead-recovered-evidence-01/audit_finite_cag.py",
+          "sha256": "0a92ab7f0f3a6b3005e502a7ac0ecb0e563b27155a36dd97e4356188096350ef"
+        },
+        {
+          "path": "research/registration/evidence/register-lead-recovered-evidence-01/audit_finite_cag.json",
+          "sha256": "9bcff83a958a76d162bf3b63727250aad992fdaa04f8583531cd94dd34d86031"
+        }
+      ],
+      "sources": [
+        "clean:4d8262f72fac9d472a66"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/customer-attraction/state/计算/对称DAG五人三十三客户候选与有限回归--计算.md",
+      "sha256": "1b399baaabbf5fbd9a2d0dc32b48e456673e8932ae0100a8ec179a6b8ba41483",
+      "disposition": "objects",
+      "object_ids": [
+        "M-4dd19989d9f54d9c9099a35766768a26"
+      ],
+      "reason": "本补办实读该成熟页陈述/条件和必要原件，原件SHA精确恢复；只新增此前因证据缺失未登记的独立数学，原已处置内容/其它owner在增量中保留。"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/二支持末段审计与全历史相邻锥有限证据--审查.md",
+      "sha256": "ca659ae54c8c0a335bb0fe5fc5a574b0bbae3a68d8631614c734ccbbabf62aa3",
+      "disposition": "objects",
+      "object_ids": [
+        "M-9c5a80801675407da5e5705ed5e0b8ac"
+      ],
+      "reason": "本补办实读该成熟页陈述/条件和必要原件，原件SHA精确恢复；只新增此前因证据缺失未登记的独立数学，原已处置内容/其它owner在增量中保留。 本次只接full_history_walk抽象矩；terminal_pair代数审计仍须0006对应结构定理owner接证，未把整页所有数学宣称闭合。"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R-3d6f连续安全对数势分离与笛卡尔耦合--审查.md",
+      "sha256": "8e712d8faf6143ce5b05435ba01b971e3e199f5402aebdcca6db63795ecbdf01",
+      "disposition": "objects",
+      "object_ids": [
+        "M-0fc59c8f626f463da80beb0d15d65bab",
+        "M-8dcfbe91a71b4d3a870f5d2cd0bced19",
+        "M-6d89eb71c1ff4842aa6c2a6f89f159ef"
+      ],
+      "reason": "本补办实读该成熟页陈述/条件和必要原件，原件SHA精确恢复；只新增此前因证据缺失未登记的独立数学，原已处置内容/其它owner在增量中保留。"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/R-3b942共享遗漏循环完整锥攻击--计算.md",
+      "sha256": "c130c9c079de3c47c8a8139662d7109ad70de3daa3a8d1ff2d6f5078a033f964",
+      "disposition": "objects",
+      "object_ids": [
+        "M-c38f48fb4739493382960e39269f6cde"
+      ],
+      "reason": "本补办实读该成熟页陈述/条件和必要原件，原件SHA精确恢复；只新增此前因证据缺失未登记的独立数学，原已处置内容/其它owner在增量中保留。"
+    }
+  ],
+  "edge_files": []
+}
