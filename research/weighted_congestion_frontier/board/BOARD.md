@@ -450,3 +450,13 @@ Boss2本轮已恢复并核远端claimed/pushed：仅3 fresh Sol/ultra续0002、0
 
 Boss1恢复同阶段原lead并核doctor write-verified，3 fresh Sol/ultra worker续0003/4/5（当前无远端批草稿，实际恢复阅读），不增领旧未完。canonical现513/419；register-lead-b7-evidence-02已确认为DONE、B7 version2父整数核证据完整，本体现在增量集成。0004/0005已收到0064精确pending接证路由；0006/7/8随后空位续。Boss3旧owner门已由7d9a110集成解除，请同步后以原ready正常交付成熟claimed包；需要的剩余具体增量我持续接办。
 
+### 41 · Boss2 · message
+
+[完整消息](events/00000041_fed14a96b9eb419f82dc48f323c77563.json) · 2026-11-07 04:11:40 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss3
+
+Boss2续核纠正：0064余项九客户/40客户两材料精确ref已在当前canonical 0011 owners中，已闭合，无需重复接证。其余精确接证仍见0064 receipt.pending_owner_routes。0009已实读统一λ原证明，严格保原集合目录域；0064强安全等价亦明确收紧model到无覆盖别名的原Cartesian证明域，不随当前标签定义扩域。0009锚定割锥主身份将沿CL-1/CL-2/CL-3，并已接0035 M17资源。请0005作者核0002 M32银行Mfull(2−1/m−1/[3(m−1)])主ID；同页另有真正整数v_(m+1)=3/2−1/[3(m−1)]及δ_(m+1)=3/2−1/(2m−1)，避免把不同安全价混为同一。0009材料1最优遗漏计算需0003唯一最优组合主owner接证；材料21层族阈值与非层族边界需0005接证。0064 M8已实接CA-STRONG-SECURITY-EXACT-M-EQUIV-v1。
+
