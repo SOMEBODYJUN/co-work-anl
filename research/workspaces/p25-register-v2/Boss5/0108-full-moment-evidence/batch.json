@@ -1,0 +1,103 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline-5cd4b9018.json",
+    "sha256": "af99fb773928f3fc6bcd577ade37fbb07e8f84befbb2304158b99894ab1e56a3"
+  },
+  "objects": [
+    {
+      "object_id": "UM-FULL-DEGREE-MOMENT-DECODING-v1",
+      "version": 2,
+      "title": "全阶共同 assignment 矩与逐机负载局部化器的整数调度桥",
+      "kind": "decoding",
+      "truth_status": "proved",
+      "model": "有限合法 unrelated-machines 原实例 P；同一 assignment Boolean/one-hot/互斥商环上的全阶有理泛函及每机 load localizer。",
+      "statement": "给定 n 个原 jobs、合法端集 E、T≥0 及次数至 2n+1 的同一有理泛函 L，若 L(1)=1、deg q≤n 时 L(q²)≥0，且每机 i 和所有 deg q≤n 都有 L[(T−load_i)q²]≥0，并满足相应总次数内的 assignment ideal 恒等式，则对每个完整合法 assignment σ 的原子 m_σ=∏_j x_{j,σ(j)}，权 w_σ=L(m_σ)=L(m_σ²)≥0、Σ_σw_σ=1，且 (T−load_i(σ))w_σ≥0。于是所有正权 σ 都是原任务的 T 可行调度，至少存在一个。",
+      "quantifiers": "对每个有限合法 (P,T)、每个符合合同的共同 L，同时对所有机器和所有合法完整 assignment。n=0 的空调度、T=0 与零处理时间按相同恒等式或显式空分支涵盖。",
+      "assumptions": [
+        "任务不可拆、无释放/先后，只有合法有限端可被指派；每个非空任务至少一个合法端。",
+        "不是按机器各自给互不相容的边际 law：所有 positivity、one-hot、原子权和 load localizer 必须来自同一 L。",
+        "Boolean、同任务互斥及 one-hot 等式按 degree≤2n+1 商关系成立；q=m_σ 合法，localizer 最高次数 2n+1。"
+      ],
+      "scope": "原子幂等给非负权，展开全部 one-hot 给归一化；逐机 load 在原子上的商环恒等式将局部化器化为常数 slack 乘 w_σ，逐点筛除全部超载原子。这是完整原任务的逻辑解码终点，正文给出闭合证明。 0109前缀审查§3仅补同一full-degree次数与生成义务的比较证据：完整原子localizer总次数2n+1；O(E)前缀解码还另需可查询的非负守恒共同law，不由本全阶存在桥自动取得。",
+      "objections": "完整矩表与全部原子通常指数大；不声称生成 L、压缩存储、poly(input) 枚举/解码或 SDP 求解，不给可靠 FAIL⇒OPT>T 的一般 oracle。给定证书必含正原子不能被当作普通 UM 的可计算多项式算法；与四阶近平坦条件提取是不同合同。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/全阶矩提取与近平坦HS贪心双源审查--审查.md",
+        "sha256": "dbef9218b48846a2bb3950bcbb373a18e7f4f9d9d24cef9b009717b5c3dcddfd",
+        "section": "一、全阶共同矩到整数调度的闭合桥"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/tools/evidence/um-forest-and-frozen-macro-primary/comparison/research/current/unrelated_machines/full_degree_moment_localizer_decoding_bridge.md",
+          "sha256": "32b6374633176fd2e1d3d7534a1b4aaec5066b99f38d2353ff91e51ae3860108"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/全局指派矩轮廓冻结审查增量--审查.md",
+          "sha256": "dd0b96bb4beb8cfb9630803206b7d7421e61242f202c10bed87b6d66dbd516bd"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/前缀原子证书解码桥与full-degree生成义务审查--审查.md",
+          "sha256": "613a03aad7f1f455ca4398c06c712000aea39a5ca68aba4d377290b17cfc056f",
+          "section": "3. Full-degree、one-hot 与前缀矩边界"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/全阶矩提取冻结审查增量--审查.md",
+          "sha256": "78d4dab0e230bfc33541b284230f0525fee46a7ed6823aa51d48273b979277a9",
+          "section": "2. 精确命题与承重条件"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/全阶矩提取冻结审查增量--审查.md",
+          "sha256": "78d4dab0e230bfc33541b284230f0525fee46a7ed6823aa51d48273b979277a9",
+          "section": "3. 原子权筛选证明"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/全阶矩提取冻结审查增量--审查.md",
+          "sha256": "78d4dab0e230bfc33541b284230f0525fee46a7ed6823aa51d48273b979277a9",
+          "section": "4. 精确失败机制与不能推出的命题"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/全阶矩提取冻结审查增量--审查.md",
+          "sha256": "78d4dab0e230bfc33541b284230f0525fee46a7ed6823aa51d48273b979277a9",
+          "section": "6. 有限证据的准确范围"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/um-forest-and-frozen-macro-primary/comparison/research/reviews/unrelated_machines/full_degree_moment_localizer_review.md",
+          "sha256": "d8a2c46c8d94a05cce0f15e12161eda4d7fc7e5b57f0776e6ab840d69a318c02",
+          "section": "全阶共同矩整数提取桥的独立核对"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/um-forest-and-frozen-macro-primary/original/tests/audits/unrelated_machines/full_degree_moment_and_saddle.py",
+          "sha256": "8ce327de573870b4d4477e1c8dd283ef715ebfe7cc3799df6e84a245efdbfeea"
+        }
+      ],
+      "sources": [
+        "全阶原正文的冻结 SHA 与完整证明由必要 evidence 绑定；全局指派矩冻结增量是三身份比较和有限证据路由，不提升有限枚举为一般求解器。",
+        "0108 recovery实际读取0109的精确证据节并接纳；未重跑历史程序，有限实现/比较证据不充当全称证明。",
+        "0108定向补证：实读冻结审查78d4dab0e230bfc33541b284230f0525fee46a7ed6823aa51d48273b979277a9的§2/§3同命题完整重构、§4边界和§6有限证据；原独立审查f9337ec754271a4e4dc2及脚本077c6e9d54abd1b5e3be完整原字节已绑定并实读，未重跑。脚本仅2机2任务单位端T=1的四个assignment及两个正原子；重轻saddle部分不归此对象。0096-R26仅NF/HS，不作full-degree请求；0101仍claimed/Boss1，本页材料去向待原owner与lead串行协调。"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/审查/全阶矩提取与近平坦HS贪心双源审查--审查.md",
+      "sha256": "dbef9218b48846a2bb3950bcbb373a18e7f4f9d9d24cef9b009717b5c3dcddfd",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-FULL-DEGREE-MOMENT-DECODING-v1",
+        "UM-GLOBAL-MOMENT-NEARFLAT-EXTRACTION-v1",
+        "UM-GLOBAL-MOMENT-HS-GREEDY-GAP-v1"
+      ],
+      "reason": "三个独立稳定Claim的成熟分节正文；全阶逻辑桥、给定NF证书条件算法、固定全HS真实二倍反例分别登记。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/全阶矩提取冻结审查增量--审查.md",
+      "sha256": "78d4dab0e230bfc33541b284230f0525fee46a7ed6823aa51d48273b979277a9",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-FULL-DEGREE-MOMENT-DECODING-v1"
+      ],
+      "reason": "0108原主owner已实读并提出v2同命题补证候选，尚未canonical接入；§2/§3为同一全阶L原子筛选桥，§4与§6保生成/有限核验边界。当前baseline同SHA材料的原任务register-ab98f323ad-0101仍claimed/Boss1，本候选不替0101交付或清整页。§5的NF/HS、C2/弱H2、prefix比较及§6其它对象证据不据此新增owner；其它所有者接证与该页最终去向由原owner/lead续判。"
+    }
+  ],
+  "edge_files": []
+}

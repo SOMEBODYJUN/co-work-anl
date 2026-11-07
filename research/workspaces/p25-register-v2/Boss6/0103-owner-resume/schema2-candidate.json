@@ -1,0 +1,565 @@
+{
+  "schema": 2,
+  "objects": [
+    {
+      "object_id": "UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1",
+      "version": 2,
+      "title": "逐资源正权畸变的完整 flat UM 实际近二界",
+      "kind": "定理",
+      "truth_status": "proved",
+      "model": "显式完整 ordinary flat UM，非空组与 indexed states；state 私有权 W_x≤1，selector 时间1，原 incidence 在对应资源端时间1。",
+      "statement": "令 κ 为同一资源上正 private 权的最大/最小比之最大值（至少1）。对每个固定实 α>4，输出完整原任务调度 C≤2−(2−OPT)/(ακ)≤(2−1/(ακ))OPT。带 baseline b_x=1−W_x 的 V 恰有 OPT=2−V；restricted Santa 中间值 V/κ≤V_-≤V。若所有像 κ≤κ₀ 且 ε<1/(ακ₀)，可分 YES OPT≤1 和 NO OPT≥2−ε。",
+      "quantifiers": "每个固定 α>4、所有该域有限显式二进制有理输入；固定 κ₀ 和严格 ε 条件下的额外 promise。",
+      "assumptions": [
+        "每组 selector 和全部未选状态原 jobs 均在完整矩阵",
+        "使用已发表 Cheng–Mao fixed-a>4 restricted Santa 定理，取固定有理 a<α",
+        "零权排除于 κ；不用预知 OPT 或 κ 界"
+      ],
+      "scope": "任意资源跨组度；bound 随实例 κ。不能套到另一个 home/sink 编译或 κ 无界的一致保证。",
+      "objections": "C=2 端点由全 private 调度独立处理；分离阈值固定有理且须严格间隔。后端未在仓库实现；945 小例不认证一般后端。 本次定向接证：新增S6审查来源及1301完整输入/20,798辅助allocation/两组α各10,770次解码的精确范围和来源角色。底层independent_audit.py及1301 JSON在旧canonical evidence中已接，不是新增实验或第二次独立审计；945旧审计和全部旧refs保留，不重复计数，不把观察3/2或有限PASS作全域证明。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/逐资源正权畸变与κ边界--定理.md",
+        "sha256": "b783d56af21a6fe65deb8bf69608a22bf16b31f74b1fa6ecbd9b0f130f77db6a"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/资源畸变审查的真实先验与阈值修补--审查.md",
+          "sha256": "8db949569f264ddfe92ee2e5979271bf8986a21ccef0729139be6ed65493793f"
+        },
+        {
+          "path": "archives/unrelated-machines/state/证明/资源畸变的双表示与全任务回填--证明.md",
+          "sha256": "8d5826c4f7ef14bff433f182e2cde51678a89479c0d568fb29a6fd13242574b4"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/资源畸变的双路有限穷举与历史运行--资源.md",
+          "sha256": "be2d5088e347cd658508913a2af468eea2b6fc57a4b37c34441ee0362f56404b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/逐资源正权畸变与固定κ边界审查--审查.md",
+          "sha256": "d15dd5ab4818e0c9ab8f33c867bab03ad326498c0bc719941241de848da0880e"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/cyclic-resource-distortion/original/resource_distortion_flat_menu_review.md",
+          "sha256": "7859b1ee8f0fd880dbd78ef88d47aabdd58e1b588abe02601263286c078fe9a2"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/cyclic-resource-distortion/original/resource_distortion_flat_menu.py",
+          "sha256": "0331f42d656f20363742de402f2f5de4d60d7c56f923cc9c31ed007eab039b75"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/cyclic-resource-distortion/original/resource_distortion_independent_audit.py",
+          "sha256": "63673ce192f84e11f8cb948d7e393cc88732aeaa1da49191de3abad66c4fb488"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/cyclic-resource-distortion/comparisons/resource_distortion_flat_menu_audit.json",
+          "sha256": "bdce155db03e7f8f2683107931a923a01e59a2e2323f13769466e002926ebeba"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/cyclic-resource-distortion/comparisons/resource_distortion_independent_audit.json",
+          "sha256": "532d588f9d58d1d2ab007b1b04c4a0cb02fa83fbeaf1874b95c3cadb71fc63a7"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/资源畸变独立审计与严格次二批量能垒范围--审查.md",
+          "sha256": "5aaf03ca3ad8bad7f141212a4ee432937939b4effbc058bb8f1e1c35773a4c07",
+          "section": "1. 逐资源正权畸变对象：域、量词和结论"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/资源畸变独立审计与严格次二批量能垒范围--审查.md",
+          "sha256": "5aaf03ca3ad8bad7f141212a4ee432937939b4effbc058bb8f1e1c35773a4c07",
+          "section": "2. 资源审计的实际范围和可复现性"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/资源畸变独立审计与严格次二批量能垒范围--审查.md",
+          "sha256": "5aaf03ca3ad8bad7f141212a4ee432937939b4effbc058bb8f1e1c35773a4c07",
+          "section": "5.1 与资源畸变既有对象"
+        }
+      ],
+      "sources": [
+        "68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/resource_distortion_flat_menu_rounding.md",
+        "68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/resource_distortion_flat_menu_review.md",
+        "68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/resource_distortion_flat_menu_author_final_read.md",
+        "68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/resource_distortion_flat_menu_statement_first_review.md",
+        "archives/unrelated-machines/state/审查/资源畸变独立审计与严格次二批量能垒范围--审查.md"
+      ]
+    },
+    {
+      "object_id": "UM-NORMALIZED-MENU-PARTIAL-QUOTA-WELFARE-FLOOR-v1",
+      "version": 2,
+      "title": "部分激活归一化菜单的高质量组福利地板",
+      "kind": "定理",
+      "truth_status": "proved",
+      "model": "显式归一化菜单，每组非空 indexed states，每态正/零有理权和1；不交资源束，质量 f_g 为原菜单最大值。",
+      "statement": "给有理 λ≥0，组行和≤1、总质量 q、每资源正支撑列和≤1。多项式输出不交 bundles，任意固定有理 0<δ<1−1/e 有 H_δ≥(1−1/e−δ)q/(1−δ)，q>0 时 H_{3/8}>2q/5。YES 有至少 q 个质量1组，NO 每次 H_{3/8}<βq、β≤3/8 的 promise 可由 LP 可行性区分。",
+      "quantifiers": "每个显式输入、每个有理 0<q≤组数和每份给定 λ；每个固定 δ；q=0 单独返回空束。",
+      "assumptions": [
+        "列约束按正支撑不按权值",
+        "用 W−δA 同时计实际激活数",
+        "精确有理 CDF 条件期望，重新读取原菜单 attaining state"
+      ],
+      "scope": "部分激活 F2；不承诺全组达到常数、一般 XOS/NSW 或 UM 求解。",
+      "objections": "实际激活数 A 不等于 q。β 是被禁止高组比例；旧低组比例须互补。e 仅证明使用，有限程序只接给定见证。 本次定向接证：新增3528+8、86912 joint/42418正概率前缀的有限程序范围；软件只给定见证且q>0，不把理论q=0分支写成软件已实现。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/部分激活菜单福利地板--定理.md",
+        "sha256": "691933c9e406e557f5f3e565a8051731049600e71c4e3422109d2e6aa4e75a99"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/部分激活菜单福利的精确条件期望原程序--资源.md",
+          "sha256": "4d01915f50e93147d6131c4110c4f89ee0d0ef13dcb7134991c0da315a7f8844"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/部分激活菜单福利地板范围审查--审查.md",
+          "sha256": "e08d30d9f53f33d2cd556791558cdcd2f828bb57cfa0559ffab3f1981a87bc7f"
+        },
+        {
+          "path": "tools/evidence/um-occupation-and-menu-primary/original/1d9b334ebced677c1709.py",
+          "sha256": "ee41f5fd20993dff6ecdf7103d5930793654201557b83c293f9b929e3d971e53"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/归一化菜单福利与CE后端有限审查--审查.md",
+          "sha256": "ff71b003c72627276dd53226bbe09a8ea343a40d42e017b65d0389af4b87c11a",
+          "section": "归一化部分配额福利审计"
+        }
+      ],
+      "sources": [
+        "68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
+        "68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/normalized_menu_partial_quota_welfare_review.md",
+        "archives/unrelated-machines/state/审查/归一化菜单福利与CE后端有限审查--审查.md"
+      ]
+    },
+    {
+      "object_id": "UM-SQRT-MULTIPLICITY-FLOOR-v1",
+      "version": 2,
+      "title": "单层t束配额的离散平方根重数地板",
+      "kind": "定理",
+      "truth_status": "proved",
+      "model": "q≥1个变量，邻域|A_x|≥K≥1，原资源总关联度≤Δ；ν_t为可选变量各领t个邻域资源且全局不交的最大数。",
+      "statement": "b=max_{1≤t≤K}min{t/K,ν_t/q}≥max_t min{t/K,(K−t+1)/(K−t+1+tΔ)}。K≥sqrtΔ+1时取t0=floor(K/(sqrtΔ+1))得b≥t0/K≥1/(sqrtΔ+1)−1/K。分组例和N资源上界给平方根量级；多标签必须先固定完整合法标签，不能合并邻域制造新束。",
+      "quantifiers": "每个所述有限单层邻域系统；t逐整数1..K；附加平方根式仅在明确K条件下。",
+      "assumptions": [
+        "ν_t是真实不交t束，不带其它标签相容条件"
+      ],
+      "scope": "组合计数引理和构造必要条件；非source hardness。",
+      "objections": "最大束极大性计数给完整证明。23192 finite audit仅有限支持；K小保离散B，连续平衡不是有限精确值。 本次定向接证：新增离散floor与分组极限的duplicate审查来源；不另造同义命题，不把连续量级写成有限精确公式。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/单层平方根配额与单外层选择器双源审查--审查.md",
+        "sha256": "7f319b14bea348bd91050571205bbdec8666540d76f1bab58a79d51d9fe7ead3",
+        "section": "2. 单层配额超图的平方根重数地板"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/平方根配额与单外层审查增量三源--审查.md",
+          "sha256": "439e6f1ce8a8f5b1195c0ded8d8f50a699e73755a3f163ee40f85d5ba699f17a",
+          "section": "3. 单层平方根配额 review：离散地板与已归档重复"
+        }
+      ],
+      "sources": [
+        "archives/unrelated-machines/state/审查/单层平方根配额与单外层选择器双源审查--审查.md",
+        "archives/unrelated-machines/state/审查/平方根配额与单外层审查增量三源--审查.md"
+      ]
+    },
+    {
+      "object_id": "UM-SINGLE-OUTER-TYPED-13-8-v1",
+      "version": 2,
+      "title": "只输入typed单outer菜单的确定性十三比八完整调度",
+      "kind": "定理",
+      "truth_status": "proved",
+      "model": "显式二进制有理typed normalized-flat Q：一个outer，state的homes互异，每home独立own-singleton helper；fallback资源跨helper共享但与homes分离，保零/重复/未选jobs。",
+      "statement": "只给Q，内部生成plain common primitive-SA1阈值LP，11次adaptive有理二分及CDF-max福利舍入，完整输出原P(Q)所有jobs，C≤(13/8)OPT(P(Q))，总位多项式。独立128grid+阈值扫描是同一精确合同的另一证明/算法。OPT=2−V；可行LP下端可超过V，仅V≤h为不变量。",
+      "quantifiers": "每个该域typed Q；存在一个总算法；不输入ε、OPT、LP可行点、真实law或oracle。",
+      "assumptions": [
+        "阈值ε>0且每查询共同有理一/二阶数组，所有primitive及补乘行",
+        "single outer与own singleton closure"
+      ],
+      "scope": "typed Q-only，非从任意ordinary矩阵识别表示；不同于given-point ε²/4对象。",
+      "objections": "11次后区间1/2048；q=13ε/8−10/8+1/256正负分支保安全。旧页“多个state单group域外”与完整typed定义冲突时按完整定义，不外加单state假设。无端到端软件认证。 本次定向接证：补齐独立128grid的完整jobs/位复杂度章节与0110同一typed Q-only来源。given-point ε²/4仍属另一个owner；新来源rawK2/S3仅历史导航，不扩为新合同审查。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/单层平方根配额与单外层选择器双源审查--审查.md",
+        "sha256": "7f319b14bea348bd91050571205bbdec8666540d76f1bab58a79d51d9fe7ead3",
+        "section": "3. 单外层 typed 菜单的近似算法与源边界"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资料/one-outer13-8与primitive-SA1同点后端--资料.md",
+          "sha256": "6fd4b32245791698d52562fbb8262dd3c762e52ba4f939156602f97464bbd158",
+          "section": "2. one-outer 13/8：固定 LP grid 和 5/8 welfare"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单外层normalized-flat三源精读与13-8版本边界审查--审查.md",
+          "sha256": "e9a1ea285ed74114498511d9e7d4b6cb49f963ad84d63e9d8681cf0b9619e221",
+          "section": "3. v2 Exact：typed Q-only 的 13/8 算法合同"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单外层normalized-flat三源精读与13-8版本边界审查--审查.md",
+          "sha256": "e9a1ea285ed74114498511d9e7d4b6cb49f963ad84d63e9d8681cf0b9619e221",
+          "section": "4. Author Proof v2：完整 13/8 推导"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单outer 13-8作者proof释放后读后与版本边界审查--审查.md",
+          "sha256": "bd35da0ba8d5de047f9546efee94121ef69ea07f7b6b95e3e9eafacbfe8290c9"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单外层canonical final v2全文post-read与13-8版本边界审查--审查.md",
+          "sha256": "e5d92fe02effac8b086fdfddf7a530e67b24be26131f4571aca0bc09c8e7abc4",
+          "section": "2.2 typed-Q-alone 13/8"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单外层canonical final v2全文post-read与13-8版本边界审查--审查.md",
+          "sha256": "e5d92fe02effac8b086fdfddf7a530e67b24be26131f4571aca0bc09c8e7abc4",
+          "section": "3. 完整 ordinary P 和 OPT=2−V"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单外层canonical final v2全文post-read与13-8版本边界审查--审查.md",
+          "sha256": "e5d92fe02effac8b086fdfddf7a530e67b24be26131f4571aca0bc09c8e7abc4",
+          "section": "4. LP、FAIL 语义和同一条件点"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单外层canonical final v2全文post-read与13-8版本边界审查--审查.md",
+          "sha256": "e5d92fe02effac8b086fdfddf7a530e67b24be26131f4571aca0bc09c8e7abc4",
+          "section": "5.2 CDF-max（Q-only 13/8）"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单外层canonical final v2全文post-read与13-8版本边界审查--审查.md",
+          "sha256": "e5d92fe02effac8b086fdfddf7a530e67b24be26131f4571aca0bc09c8e7abc4",
+          "section": "6. 13/8 仿射质量线与二分边界"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单外层canonical final v2全文post-read与13-8版本边界审查--审查.md",
+          "sha256": "e5d92fe02effac8b086fdfddf7a530e67b24be26131f4571aca0bc09c8e7abc4",
+          "section": "7. 完整 jobs、复杂度与 NP-source corollary"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/平方根配额与单外层审查增量三源--审查.md",
+          "sha256": "439e6f1ce8a8f5b1195c0ded8d8f50a699e73755a3f163ee40f85d5ba699f17a",
+          "section": "4. 单外层选择器 review：两个算法合同与 source boundary"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资料/one-outer13-8与primitive-SA1同点后端--资料.md",
+          "sha256": "6fd4b32245791698d52562fbb8262dd3c762e52ba4f939156602f97464bbd158",
+          "section": "3. 完整 jobs、位复杂度和限制"
+        }
+      ],
+      "sources": [
+        "archives/unrelated-machines/state/审查/单层平方根配额与单外层选择器双源审查--审查.md",
+        "archives/unrelated-machines/state/审查/平方根配额与单外层审查增量三源--审查.md",
+        "archives/unrelated-machines/state/资料/one-outer13-8与primitive-SA1同点后端--资料.md"
+      ]
+    },
+    {
+      "object_id": "UM-RAW-K2-LOCAL-LAW-DIRECT-CANONICAL-PULLBACK-OBSTRUCTION-v1",
+      "version": 2,
+      "title": "逐行完整local law及global M2不能保证指定同点canonical拉回",
+      "kind": "精确反例",
+      "truth_status": "proved",
+      "model": "每有理0<c<1、T=1+c的typed单outer 18机17job34finite-end普通UM族，三形式Boolean位的共同degree≤4 functional。",
+      "statement": "存在同一L满足Boolean/one-hot、global M2 PSD、所有机器全部全局affine q的raw负载localizer、逐行完整CONFIG(T) membership law；原OPT=1。但指定A=a、Z=aE的direct canonical pullback有claim×state=−1/160及quality×state=−c/160，三因子跨三物理机，故该同点规则不成立。",
+      "quantifiers": "每个二进制有理0<c<1，存在文中明确有限公式证书；失败仅针对该点及指定代换。",
+      "assumptions": [
+        "不要求global triple-literal非负或共同CONFIG随机变量",
+        "本地law不假定跨行联合调度law"
+      ],
+      "scope": "点级接口精确反例；不否另一个canonical点/LP重求/typed算法。",
+      "objections": "正文给七维positive pivots、所有localizers符号证明、各行完整law及17job峰1见证。旧c=3/4和72模式仅有限回归，无actual gap/全SA1不可行。 本次定向接证：补充作者read-after、389和d38各自来源范围；18m/17j/34e全参数结论不变。d38非Exact-first，389的§13为Exact-first后知情复核，§14为作者一致性复核；prefix374仅hash且未运行linked程序。三因子负项只否指定同点pullback。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/单层平方根配额与单外层选择器双源审查--审查.md",
+        "sha256": "7f319b14bea348bd91050571205bbdec8666540d76f1bab58a79d51d9fe7ead3",
+        "section": "4. 第二源后半段的 raw 局部 law 反例与 S3 桥"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/Sol通用repair-k2全局local-law与canonical-pullback三源审查--审查.md",
+          "sha256": "70e2b59097c9330dc6ae90965b17e93caa98cf1d9690729924011a6e7aa6e889"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/K2局部行律拉回障碍--审查.md",
+          "sha256": "422cf3d05636aca6cb0fe1bf1bce95d916b4d956609e56124150f9ea519d2c83"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/Raw-K2与SH3条件流两源精读--审查.md",
+          "sha256": "02ecb904fea7f0df16b1397558f8ff30150f9eed754f128d5e8dadc8cf09e7e5",
+          "section": "1. Raw K2 full local-law obstruction"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/归一化配置与原任务矩证书的层次边界--资源.md",
+          "sha256": "3cac27a267c0fd52ef50090c91626c5cc52da040ac6ed88a95d6fd67e966728e",
+          "section": "原身份与更强矩"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/identity-coupling-raw-k2-sa3-final-sections--审查.md",
+          "sha256": "b7af17547dbfb0bb485a9dfe53aec4becfd5db42a46ce1306f3b66d803f052a0",
+          "section": "2. §13：十八机 raw K2 的完整合同"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/Sol通用repair-k2作者证明read-after增量--审查.md",
+          "sha256": "b200bfe9f07963b9d32389e3084bb2bd7cccaeffa9a88b32e91a51bb13a50852"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/Raw-K2-S3组合最终两节Sol-NSW实际实读与边界增量--审查.md",
+          "sha256": "6690c5cbb97b60b6bf62344fc9efc2edb9158238d10bf719478b19c9e24103f3",
+          "section": "2. §13：参数化 raw K2 证书和 direct canonical 障碍"
+        }
+      ],
+      "sources": [
+        "archives/unrelated-machines/state/审查/单层平方根配额与单外层选择器双源审查--审查.md",
+        "archives/unrelated-machines/state/审查/identity-coupling-raw-k2-sa3-final-sections--审查.md",
+        "archives/unrelated-machines/state/审查/Sol通用repair-k2作者证明read-after增量--审查.md",
+        "archives/unrelated-machines/state/审查/Raw-K2-S3组合最终两节Sol-NSW实际实读与边界增量--审查.md"
+      ]
+    },
+    {
+      "object_id": "UM-DILUTED-SINK-PROBE-GAP-v1",
+      "version": 2,
+      "title": "终端稀释底座同时通过配置及独立LST星探针的趋二间隙",
+      "kind": "精确构造",
+      "truth_status": "proved",
+      "model": "k≥4，h为(k/(k−1))^{h−1}/(k−1)≥1/2首次层；两k叉树、unit根桥，各底层组N=k(k−1)终端及N−1 unit阻塞，普通边时间1/k和1。",
+      "statement": "完整原矩阵OPT=2−1/k；T=1+1/k有完整CONFIG证书、每条有限边各自独立普通剪枝LST强制点及全饱和重备选星匹配，首轮零删边。OPT/T=2−3/(k+1)趋2。",
+      "quantifiers": "每k≥4的显式展开输入；每边存在其自己的完整分数点/匹配，非共同调度分布。",
+      "assumptions": [
+        "保全部原树/组/阻塞任务",
+        "算法与证书复杂度对展开规模计费"
+      ],
+      "scope": "分离证书接口gap，不是一般近似困难性。",
+      "objections": "k2/3有限代码不倒扩一般族参数；h增长不称对log k多项式归约。加强同条件大基数能恰识别此底座，另立BG。 本次定向接证：新增八份联合来源§7的对应专用probe审查；无global z底座、同条件大边基数修复及共享单z逃逸三合同各自保留，不混作通用LP/完整decoder或一般困难性。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md",
+        "sha256": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+        "section": "6. 终端容量稀释族"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md",
+          "sha256": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+          "section": "5. 逐边 LST 和重备选星匹配"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/稀释终端与共享逃逸的分离证书--资源.md",
+          "sha256": "4a9af533d068b13a70b6936044122017a5067ebc423b2f9c256976d67fe8113a",
+          "section": "无global z的终端稀释族"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/稀释终端与共享逃逸的全边原程序复跑--计算.md",
+          "sha256": "c7881cc9ac23ec2c03cede874e7e02c0d94a670fe9090879bb0d64e4d5c57afc"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/不相关机八份联合审查来源增量--审查.md",
+          "sha256": "3e5f41166ef62ec4a52b0be22f1ac5d0be8f90124c0f709b4c883878c5b6b07a",
+          "section": "7. 稀释终端探针与共享小端逃逸"
+        }
+      ],
+      "sources": [
+        "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md",
+        "archives/unrelated-machines/state/审查/不相关机八份联合审查来源增量--审查.md"
+      ]
+    },
+    {
+      "object_id": "UM-BIG-CARDINALITY-PROBE-v1",
+      "version": 2,
+      "title": "同条件大边基数LP探针对终端稀释底座的准确阈值识别",
+      "kind": "定理",
+      "truth_status": "proved",
+      "model": "SP未增加global z底座，候选有理目标C；在同一条件LP加入每机Σ_{j:p_ij>C/2}x_ij≤1，逐边强制x_ij=1并迭代删不可行边。",
+      "statement": "该有效大边基数规则保真实C调度；在底座C<OPT=2−1/k时逐层删至bridge无域，C≥OPT时保最优真实调度的使用边，故此族阈值准确。",
+      "quantifiers": "每k≥4、每二进制有理候选C；同条件容量与强制边联合。",
+      "assumptions": [
+        "普通assignment约束与大边基数在同一个条件LP",
+        "安全性指最优实际使用边保留，非全部不用边都不删除"
+      ],
+      "scope": "专用底座准确识别，不自动覆盖共享z变体。",
+      "objections": "无通用LP生产实现或一般调度finder；各独立LST点不能替换同条件LP。 本次定向接证：新增八份联合来源§7的对应专用probe审查；无global z底座、同条件大边基数修复及共享单z逃逸三合同各自保留，不混作通用LP/完整decoder或一般困难性。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md",
+        "sha256": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+        "section": "7. 加入大边基数不等式后的准确修复边界"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/稀释终端与共享逃逸的分离证书--资源.md",
+          "sha256": "4a9af533d068b13a70b6936044122017a5067ebc423b2f9c256976d67fe8113a",
+          "section": "大任务基数探针确实修复这个底座"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/不相关机八份联合审查来源增量--审查.md",
+          "sha256": "3e5f41166ef62ec4a52b0be22f1ac5d0be8f90124c0f709b4c883878c5b6b07a",
+          "section": "7. 稀释终端探针与共享小端逃逸"
+        }
+      ],
+      "sources": [
+        "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md",
+        "archives/unrelated-machines/state/审查/不相关机八份联合审查来源增量--审查.md"
+      ]
+    },
+    {
+      "object_id": "UM-DILUTED-ESCAPE-PROBE-GAP-v1",
+      "version": 2,
+      "title": "唯一全局半时间逃逸机仍通过配置独立探针与GHMR的趋二间隙",
+      "kind": "精确构造",
+      "truth_status": "proved",
+      "model": "SP底座k≥4，整个实例只加一台global z；每组每件阻塞在z新增时间1/2，其余无z端。",
+      "statement": "完整OPT仍2−1/k：低峰使每活跃父至少传两支，h≥3迫至少四活跃底组，各一不同阻塞去z使负载≥2。T=1+1/k配置z为空、全部旧新边独立LST点、GHMR大边与星匹配仍首轮无删边，比例趋2。",
+      "quantifiers": "每k≥4；每查询证书分别存在。z是全实例共享一台，阻塞有N+1端。",
+      "assumptions": [
+        "完整解析下界另证，不直接继承无z",
+        "GHMR为文中逐大边固定合同，非嵌套全filter"
+      ],
+      "scope": "分离配置/LST/GHMR/星接口共同不足；非同一条件联合容量失败的一般结论。",
+      "objections": "k4 427机521job4914边实展开；独立程序只58旧点44新点，4394大边/4914星是全查询。全边原CLI不同，61压缩行非61次展开。mandatory=0是bridge编号而非零个。 本次定向接证：新增八份联合来源§7的对应专用probe审查；无global z底座、同条件大边基数修复及共享单z逃逸三合同各自保留，不混作通用LP/完整decoder或一般困难性。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md",
+        "sha256": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+        "section": "8. 共享小端逃逸扩展"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/稀释终端与共享逃逸的分离证书--资源.md",
+          "sha256": "4a9af533d068b13a70b6936044122017a5067ebc423b2f9c256976d67fe8113a",
+          "section": "共享逃逸阶段：所有组共用唯一一台z"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/稀释共享逃逸独立原程序的部分探针与全部匹配--计算.md",
+          "sha256": "52f22455dae427e6ff8d3b4a77659d2e672baa2f38bbd2ebc27f9cddafe8329d"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/稀释终端与共享逃逸的全边原程序复跑--计算.md",
+          "sha256": "c7881cc9ac23ec2c03cede874e7e02c0d94a670fe9090879bb0d64e4d5c57afc"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/稀释逃逸行度与共享终端局部审计--审查.md",
+          "sha256": "db8f4dda3fe86d8f3f7cf2ad3c4ac8897170d1ef5c3c5a5be8e3d703e779357d",
+          "section": "2. 稀释逃逸 probe gap：k=4 的实际展开"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/不相关机八份联合审查来源增量--审查.md",
+          "sha256": "3e5f41166ef62ec4a52b0be22f1ac5d0be8f90124c0f709b4c883878c5b6b07a",
+          "section": "7. 稀释终端探针与共享小端逃逸"
+        }
+      ],
+      "sources": [
+        "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md",
+        "archives/unrelated-machines/state/审查/不相关机八份联合审查来源增量--审查.md"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/定理/逐资源正权畸变与κ边界--定理.md",
+      "sha256": "b783d56af21a6fe65deb8bf69608a22bf16b31f74b1fa6ecbd9b0f130f77db6a",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1"
+      ],
+      "reason": "完整 W≤1 逐资源正权 κ 算法、所有原 jobs 回填和严格固定κ筛选正文。 本候选仅由0103原主作者实际接收：保留本批主body及全部旧owner。保留所有既有owner/refs；未接的他方章节和原未决事项仍未决，不把本次接证冒作全页闭合。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/部分激活菜单福利地板--定理.md",
+      "sha256": "691933c9e406e557f5f3e565a8051731049600e71c4e3422109d2e6aa4e75a99",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-NORMALIZED-MENU-PARTIAL-QUOTA-WELFARE-FLOOR-v1"
+      ],
+      "reason": "实读部分激活 F2 的正支撑 LP、计罚确定化、两种高组结论、严格 promise 与 q=0 边界。 本候选仅由0103原主作者实际接收：保留本批主body及全部旧owner。保留所有既有owner/refs；未接的他方章节和原未决事项仍未决，不把本次接证冒作全页闭合。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/Raw-K2-S3组合最终两节Sol-NSW实际实读与边界增量--审查.md",
+      "sha256": "6690c5cbb97b60b6bf62344fc9efc2edb9158238d10bf719478b19c9e24103f3",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-RAW-K2-LOCAL-LAW-DIRECT-CANONICAL-PULLBACK-OBSTRUCTION-v1"
+      ],
+      "reason": "全文已读；§2参数化rawK2 obstruction、§3 supplied rawS3→plaincanonicalSA1为不同Claim，拟0103/0110待统一实际接受。S3需原unit-cap1全部乘行，M2 optional只推出M1；feasibility不输出调度。 本候选仅由0103原主作者实际接收：UM-RAW-K2-LOCAL-LAW-DIRECT-CANONICAL-PULLBACK-OBSTRUCTION-v1。保留所有既有owner/refs；未接的他方章节和原未决事项仍未决，不把本次接证冒作全页闭合。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/Sol通用repair-k2作者证明read-after增量--审查.md",
+      "sha256": "b200bfe9f07963b9d32389e3084bb2bd7cccaeffa9a88b32e91a51bb13a50852",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-RAW-K2-LOCAL-LAW-DIRECT-CANONICAL-PULLBACK-OBSTRUCTION-v1"
+      ],
+      "reason": "全文已读；rawK2作者proof read-after拟0103同一给定点obstruction，待实际接受。保M2全局证明、raw localizers、逐行law与actualOPT1不同义。 本候选仅由0103原主作者实际接收：UM-RAW-K2-LOCAL-LAW-DIRECT-CANONICAL-PULLBACK-OBSTRUCTION-v1。保留所有既有owner/refs；未接的他方章节和原未决事项仍未决，不把本次接证冒作全页闭合。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/identity-coupling-raw-k2-sa3-final-sections--审查.md",
+      "sha256": "b7af17547dbfb0bb485a9dfe53aec4becfd5db42a46ce1306f3b66d803f052a0",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-RAW-SA3-CANONICAL-SA1-POINT-PULLBACK-v1",
+        "UM-RAW-K2-LOCAL-LAW-DIRECT-CANONICAL-PULLBACK-OBSTRUCTION-v1"
+      ],
+      "reason": "既有完整阅读与精确来源保留；恢复时已核实主owner接证：UM-RAW-SA3-CANONICAL-SA1-POINT-PULLBACK-v1。 尚待主owner实接：UM-RAW-K2-LOCAL-LAW-DIRECT-CANONICAL-PULLBACK-OBSTRUCTION-v1。 当前canonical owner/证据增量尚未可用，故准确保留needs-decision且不复制主记录；逐项接证引用与未付动作见receipt.pending_evidence_routes及0108-recovery-routes.json。 本候选仅由0103原主作者实际接收：UM-RAW-K2-LOCAL-LAW-DIRECT-CANONICAL-PULLBACK-OBSTRUCTION-v1。保留所有既有owner/refs；未接的他方章节和原未决事项仍未决，不把本次接证冒作全页闭合。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/不相关机八份联合审查来源增量--审查.md",
+      "sha256": "3e5f41166ef62ec4a52b0be22f1ac5d0be8f90124c0f709b4c883878c5b6b07a",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-DILUTED-SINK-PROBE-GAP-v1",
+        "UM-BIG-CARDINALITY-PROBE-v1",
+        "UM-DILUTED-ESCAPE-PROBE-GAP-v1"
+      ],
+      "reason": "全文已读，属于跨批成熟对象的必要证据/版本或有限审计补充；不复制主记录。待唯一owner接入：UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1, UM-DEGREE-THREE-WEIGHTED-MENU-CUBE-EMBEDDING-v1, UM-DEGREE-TWO-BOUNDED-MENU-JOINT-ROUNDING-v2, UM-DEPTH-TWO-HALF-v1, UM-DILUTED-SHARED-TERMINAL-RAW-K2-GAP-v1, UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1, UM-DILUTED-SINK-PROBE-GAP-v1, UM-BIG-CARDINALITY-PROBE-v1, UM-DILUTED-ESCAPE-PROBE-GAP-v1, UM-DISTORTED-GROUP-JOINT-SLOT-v1, UM-DISTORTED-GROUP-PROMISE-APPROX-v1。精确path/SHA/section、任务和模型边界见同名receipt.pending_evidence_routes。 本候选仅由0103原主作者实际接收：UM-DILUTED-SINK-PROBE-GAP-v1, UM-BIG-CARDINALITY-PROBE-v1, UM-DILUTED-ESCAPE-PROBE-GAP-v1。保留所有既有owner/refs；未接的他方章节和原未决事项仍未决，不把本次接证冒作全页闭合。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单层平方根配额与单外层选择器双源审查--审查.md",
+      "sha256": "7f319b14bea348bd91050571205bbdec8666540d76f1bab58a79d51d9fe7ead3",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-SQRT-MULTIPLICITY-FLOOR-v1",
+        "UM-SINGLE-OUTER-TYPED-13-8-v1",
+        "UM-RAW-K2-LOCAL-LAW-DIRECT-CANONICAL-PULLBACK-OBSTRUCTION-v1"
+      ],
+      "reason": "完整两源读；§2平方根、§3Q-only typed、§4rawK2各保身份；同页given-point与rawS3已有107/110主owner，待他们定向接证。 本候选仅由0103原主作者实际接收：保留本批主body及全部旧owner。保留所有既有owner/refs；未接的他方章节和原未决事项仍未决，不把本次接证冒作全页闭合。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/平方根配额与单外层审查增量三源--审查.md",
+      "sha256": "439e6f1ce8a8f5b1195c0ded8d8f50a699e73755a3f163ee40f85d5ba699f17a",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-SQRT-MULTIPLICITY-FLOOR-v1",
+        "UM-SINGLE-OUTER-TYPED-13-8-v1"
+      ],
+      "reason": "已完整读取本文件全部章节并区分具体模型、量词、状态及来源角色。 跨批接证待主owner精确确认/发布，不复制同ID主记录：0097:UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1（仅#2：signed内部端口downset、零坐标自由/锐计数、混合strict见证与受限ECCC代入。）；0103:UM-SQRT-MULTIPLICITY-FLOOR-v1（#3离散floor地板、分组极限和duplicate版本边界。）；0107:UM-SINGLE-OUTER-PRIMITIVE-SA1-EPS2-4-v1,UM-SINGLE-OUTER-TYPED-13-8-v1（#4两个输入合同及typed source-gap边界；rawK2/S3历史导航不扩成新版审查。） 本候选仅由0103原主作者实际接收：UM-SQRT-MULTIPLICITY-FLOOR-v1, UM-SINGLE-OUTER-TYPED-13-8-v1。保留所有既有owner/refs；未接的他方章节和原未决事项仍未决，不把本次接证冒作全页闭合。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化菜单福利与CE后端有限审查--审查.md",
+      "sha256": "ff71b003c72627276dd53226bbe09a8ea343a40d42e017b65d0389af4b87c11a",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-NORMALIZED-MENU-PARTIAL-QUOTA-WELFARE-FLOOR-v1"
+      ],
+      "reason": "已完整读取本文件全部章节并区分具体模型、量词、状态及来源角色。 跨批接证待主owner精确确认/发布，不复制同ID主记录：0103:UM-NORMALIZED-MENU-PARTIAL-QUOTA-WELFARE-FLOOR-v1（第一节3528+8有限福利域/86912joint/42418前缀，q>0软件边界。）；0107:UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1（第二节两例shared-state CE有限后端，非整调度。） 本候选仅由0103原主作者实际接收：UM-NORMALIZED-MENU-PARTIAL-QUOTA-WELFARE-FLOOR-v1。保留所有既有owner/refs；未接的他方章节和原未决事项仍未决，不把本次接证冒作全页闭合。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md",
+      "sha256": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-HEAVY-ALTERNATIVE-FILTER-v1",
+        "UM-DILUTED-SINK-PROBE-GAP-v1",
+        "UM-BIG-CARDINALITY-PROBE-v1",
+        "UM-DILUTED-ESCAPE-PROBE-GAP-v1"
+      ],
+      "reason": "完整两个解析源读；§二四对象归本批。§一RAW-K2/ROW-DEGREE的实际主body在0112材料0/1，待接主owner，不以probe对象吞并不同矩合同。 本候选仅由0103原主作者实际接收：保留本批主body及全部旧owner。保留所有既有owner/refs；未接的他方章节和原未决事项仍未决，不把本次接证冒作全页闭合。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/资源畸变独立审计与严格次二批量能垒范围--审查.md",
+      "sha256": "5aaf03ca3ad8bad7f141212a4ee432937939b4effbc058bb8f1e1c35773a4c07",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-STRICT-SUB2-BATCH-BARRIER-v1",
+        "UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1"
+      ],
+      "reason": "全文实读；承载本批独立数学主对象并按精确Claim分开陈述/模型/量词，成熟完整证明复用。 资源畸变部分另待0103 UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1主owner接收，receipt保精确路由；本批只主收严格三机能垒。 本候选仅由0103原主作者实际接收：UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1。保留所有既有owner/refs；未接的他方章节和原未决事项仍未决，不把本次接证冒作全页闭合。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资料/one-outer13-8与primitive-SA1同点后端--资料.md",
+      "sha256": "6fd4b32245791698d52562fbb8262dd3c762e52ba4f939156602f97464bbd158",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-SINGLE-OUTER-PRIMITIVE-SA1-EPS2-4-v1",
+        "UM-SINGLE-OUTER-TYPED-13-8-v1"
+      ],
+      "reason": "全文已读；§1 supplied-point独立CDF半福利/同点后端由本批接受；§2 typed13/8固定128grid另给0103待接受，保独立方法区别。 本候选仅由0103原主作者实际接收：UM-SINGLE-OUTER-TYPED-13-8-v1。保留所有既有owner/refs；未接的他方章节和原未决事项仍未决，不把本次接证冒作全页闭合。"
+    }
+  ],
+  "edge_files": []
+}

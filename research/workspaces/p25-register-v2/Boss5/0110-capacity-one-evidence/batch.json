@@ -1,0 +1,110 @@
+{
+  "schema": 2,
+  "objects": [
+    {
+      "object_id": "UM-CAPACITY-ONE-PAIR-GAP-v1",
+      "version": 2,
+      "title": "容量一紧凑星的全部机器对配置耦合及二倍接受间隙",
+      "kind": "construction",
+      "truth_status": "proved",
+      "model": "普通unrelated-machines；整数k≥2的k块星：V_a、k−1台G、每块k+1台R；每块X_a、k件Y、k件Z，X在V/G时间1，Y仅本块R时间1，Z在V时间1/k、在本块R时间1。GPC₂(T)保完整单机配置边际及每机器对支持不相交的联合分布。",
+      "statement": "此族有显式CONFIG(1)及全部机器对GPC₂(1)证书，整数OPT=2−1/k。四类非乘积coupling为G–G、同块R–R、V–R及V–G，其余支持任务集合分离用乘积。k≥3时极小超载星规则和单/双域基数闭包无起点；k2的G可触发而不能并入不可约域。任意GPC₂接受目标投影为CONFIG，标准槽给≤2T，若先极小星消元则逆恢复≤max(2T,T)=2T；本族T<1时Y剪空、T1接受、OPT趋2，故正OPT域该接受合同gap上确界恰2。",
+      "quantifiers": "对每整数k≥2给明确完整边际和所有无序机器对的couplings；不可约只∀k≥3。上界量化所有接受该GPC₂合同的T及正确极小星逆恢复，不假定存在多项式GPC₂求解器。",
+      "assumptions": [
+        "GPC₂多端任务只需同一pair不双选，不要求每对内部恰覆盖该job，也不要求所有pair在三机以上相容。",
+        "CONFIG逐机归一、合法配置真实负载≤T、每原job总覆盖一；所有机器/任务物理身份保持。",
+        "acceptance gap比值只在OPT>0上使用；目标取得与阈值剪枝语义按正文。"
+      ],
+      "scope": "显式特定星族一般构造/整数最优和给定接受合同的上确界；不是一般调度困难性、完整SA/SDP下界或efficient GPC₂ oracle。",
+      "objections": "m=k²+3k−1,n=2k²+k，最小资格数k。V–G公式的(k−2)项在k2为零，不强行删除边界。主程序k3..12仅核完整pair边际/支持，proved_integer_optimum字段只计算公式；一般最优性由unit容量下界和显式上界证明。factorized represented entries并非逐条展开数。与后来N=2k²、G=N−2k共享逃逸族及0099极小星/q-profile主Claims分立。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/容量一星族的全机器对原入口与符号耦合--资源.md",
+        "sha256": "86c2726661ae90b6226739a1292e3a637c3059683ba9e0215b4e4a5702723d79"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/极小超载星容量耦合与最小工作面支撑障碍有限审查--审查.md",
+          "sha256": "f55a0693a25a149bec2dc4c610e23f00e5b5412cbfefcc21b285e73be6f5e13e",
+          "section": "3.1 紧凑容量一星族"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/极小超载星容量耦合与最小工作面支撑障碍有限审查--审查.md",
+          "sha256": "f55a0693a25a149bec2dc4c610e23f00e5b5412cbfefcc21b285e73be6f5e13e",
+          "section": "3.2 GPC₂ 配置合同及两机耦合"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/极小星收缩与配置耦合有限审查--审查.md",
+          "sha256": "bfad798f54df11b5dcdc56d6504fa8978b55c153f3be9e6029765916687f91e5",
+          "section": "2. 容量一星的 pair 耦合证书"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/极小超载星容量差共享资源与拟阵外包冻结审查--审查.md",
+          "sha256": "77f88cbd3adf5bafac2923dd5ad59d39b412554ebf2de0bb62b3d2bd0289b8fc",
+          "section": "3. 紧凑共享资源族与 GPC2"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/成束局部相容性与极小星消元的身份边界--资源.md",
+          "sha256": "f0d0c03bf99a4979d8dbee110602efa18b5116f6884adfb5b419bcc338b250d8",
+          "section": "极小超载星：已成立的精确单任务压缩"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/capacity_one_star_pair.py",
+        "source:e024705ef6909102d311:evidence/runs/unrelated_machines/minimal_star_capacity_audit.json",
+        "state:archives/unrelated-machines/state/资源/容量一星族的全机器对原入口与符号耦合--资源.md",
+        "state:archives/unrelated-machines/state/资源/成束局部相容性与极小星消元的身份边界--资源.md#极小超载星：已成立的精确单任务压缩"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/资源/容量一星族的全机器对原入口与符号耦合--资源.md",
+      "sha256": "86c2726661ae90b6226739a1292e3a637c3059683ba9e0215b4e4a5702723d79",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-CAPACITY-ONE-PAIR-GAP-v1"
+      ],
+      "reason": "已完整读取本文件全部章节；当前成熟对象的陈述、量词与完整论证位置已核。 本批维护数学owner；原始历史/有限运行/后续证明角色已逐项分清，不声称重读全部链接原件或重跑程序。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/极小超载星容量耦合与最小工作面支撑障碍有限审查--审查.md",
+      "sha256": "f55a0693a25a149bec2dc4c610e23f00e5b5412cbfefcc21b285e73be6f5e13e",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-CAPACITY-ONE-PAIR-GAP-v1"
+      ],
+      "reason": "已完整读取本文件全部章节；当前成熟对象的陈述、量词与完整论证位置已核。 跨批接证待主owner精确确认/发布，不复制同ID主记录：0099:UM-MINIMAL-STAR-CONTRACTION-v1,UM-STAR-Q-JOB-COMPRESSION-NO-v1,UM-MIN-WORK-FACE-SUPPORT-GAP-v1（仅#2/#3.3/#4各自claim：max恢复、qprofile及m族整个min-W面支撑趋二/basic/q阶梯；#3.1-3.2GPC归0110。）"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/极小星收缩与配置耦合有限审查--审查.md",
+      "sha256": "bfad798f54df11b5dcdc56d6504fa8978b55c153f3be9e6029765916687f91e5",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-CAPACITY-ONE-PAIR-GAP-v1"
+      ],
+      "reason": "已完整读取本文件全部章节；当前成熟对象的陈述、量词与完整论证位置已核。 跨批接证待主owner精确确认/发布，不复制同ID主记录：0099:UM-MINIMAL-STAR-CONTRACTION-v1,UM-STAR-Q-JOB-COMPRESSION-NO-v1（仅#1/#3：极小星全邻域max(B,T)恢复及q-profile普通压缩障碍；#2GPC2归0110。）"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/极小超载星容量差共享资源与拟阵外包冻结审查--审查.md",
+      "sha256": "77f88cbd3adf5bafac2923dd5ad59d39b412554ebf2de0bb62b3d2bd0289b8fc",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-CAPACITY-ONE-PAIR-GAP-v1"
+      ],
+      "reason": "已完整读取本文件全部章节；当前成熟对象的陈述、量词与完整论证位置已核。 跨批接证待主owner精确确认/发布，不复制同ID主记录：0099:UM-MINIMAL-STAR-CONTRACTION-v1,UM-STAR-Q-JOB-COMPRESSION-NO-v1（#2/#4收缩及q-profile不同方向边界，有限运行 provenance。）；0107:UM-KNAPSACK-MATROID-ENVELOPE-v1（仅#5完整唯一回路/命中集证明max(1,2−p/k)，原地集全部共同集最坏量词；非算法所选集失败。）"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/成束局部相容性与极小星消元的身份边界--资源.md",
+      "sha256": "f0d0c03bf99a4979d8dbee110602efa18b5116f6884adfb5b419bcc338b250d8",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-STAR-CONFIG-TRANSFER-v1",
+        "UM-MINIMAL-STAR-CONTRACTION-v1",
+        "UM-STAR-Q-JOB-COMPRESSION-NO-v1",
+        "UM-CAPACITY-ONE-PAIR-GAP-v1"
+      ],
+      "reason": "本批星CONFIG-transfer仅接“极小超载星：已成立的精确单任务压缩”中Q_F配置转移部分。成束§二的UM-PAIR-SUBDIVISION-GAP-v1→0097，UM-CARDINALITY-CLOSURE-v1→0097/0101统一forced-residual主版；整数UM-MINIMAL-STAR-CONTRACTION-v1及UM-STAR-Q-JOB-COMPRESSION-NO-v1→0099。各主owner实际接受前保精确路由，既不丢不同命题，也不把旧弱计数版覆盖强化版。\nBoss5原0110主owner本次实读本页全文，并与容量一星主body全文及既有四个evidence精确section比较；E08仅接唯一标题“极小超载星：已成立的精确单任务压缩”尾段容量一星边界，追加给UM-CAPACITY-ONE-PAIR-GAP-v1 v2：旧k块无共享z，CONFIG(1)+全部GPC₂(1)，整数OPT=2−1/k；构造k≥2，不可约仅k≥3。保canonical material已有UM-STAR-CONFIG-TRANSFER-v1，并反向保canonical已引用本页的UM-MINIMAL-STAR-CONTRACTION-v1及UM-STAR-Q-JOB-COMPRESSION-NO-v1；不借本次接证修改这些外owner记录。成束二阶/细分及单双域闭包、静态拟阵外包的其余来源归属仍由相应主owner实接后续办，故整页仍needs-decision。"
+    }
+  ],
+  "edge_files": []
+}
