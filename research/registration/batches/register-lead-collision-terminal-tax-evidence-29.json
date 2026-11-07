@@ -1,0 +1,143 @@
+{
+  "schema": 2,
+  "objects": [
+    {
+      "object_id": "CA-COLLISION-FREE-LOAD-PAYMENT-NO",
+      "version": 2,
+      "title": "无碰撞完整SPE否定任何归一逐负载覆盖支付",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限单位客户共同目录均分吸引博弈；完整有序历史纯策略，真实偏离沿同一策略在改变后的历史续走，允许标签别名和历史依赖平局。",
+      "statement": "2人5客户0,…,4，A={0,1,2},B={0,1,3},C={0,1},D={3,4}。完整策略根C，末位A→B、B→A、C→D、D→A，所有五个决策历史均最优。实际CD，各利润2、W4，OPT2=5由AD达到，实际负载(1,1,0,1,1)。对所有f:非负整数→R，只要f(0)=0且f(1)=1，同一实例均有Σ_x f(c_x)=4<5。因此修改任意高负载项都不能修复该归一逐负载支付桥。",
+      "quantifiers": "存在同一个合法无碰撞完整SPE，同时对每个满足两归一条件的f失败；不是只针对某个固定函数的扫描。",
+      "assumptions": [
+        "所有有序历史和客户表在正文。",
+        "实际负载只出现0、1，遗漏客户负载0。"
+      ],
+      "scope": "既有精确Claim CA-COLLISION-FREE-LOAD-PAYMENT-NO；否定归一逐负载辅助桥。",
+      "objections": "不否定半覆盖（2W=8≥OPT5）；证明f全称来自同一负载向量，而非有限函数枚举。成熟审计复用，未本轮重跑。 R-2fc 同一实例的冻结审计另核全部 20 个比较（15 个非自身、9 个严格，最小松弛 0）、两条最优有序路径 AD/DA 和占用/谐和势 4；不改变反例量词。终局税的每位覆盖客户贡献是 1+1/2，本例 W+τ=6≥5，因此不否定全终局税候选。",
+      "body": {
+        "path": "archives/customer-attraction/state/反例/五客户无拥挤SPE负载桥障碍--反例.md",
+        "sha256": "5a25e57b77cbdb207bf8a7b01919e234f21da5266c418f1527625ea6f34b6fab"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-2fc-independent-mechanism-20261031/source/audit_collision_free_spe.py",
+          "sha256": "981e8f32d4eff3432f075733fc634ab712e4624c1b71b906fcce735b938113f1"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-2fc-independent-mechanism-20261031/source/collision_free_spe_exact_audit.json",
+          "sha256": "33ccb3eb762c6b6bd96d601d23ae3e7ec8f2e66a1553d8db63e508828e9ea187"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/R-2fc背景遗憾探针与无碰撞五客户负载桥--障碍.md",
+          "sha256": "f7fd1bc59bbfc1090203a9909274ea2b1704f9eaf382fac37272f371cd0c4d07",
+          "section": "`collision_free_obstruction_audit.json`：精确五客户固定实例"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-2fc-global-left-20261031/source/collision_free_obstruction_audit.json",
+          "sha256": "dd946143d6d4aee7f381b69b6ab59be775ea2a35029aee42fb841ef9661287e9"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/customer_attraction/collision_free_occupancy.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/customer_attraction_collision_free_occupancy.py",
+        "source:531860b3798ce2ad5665"
+      ]
+    },
+    {
+      "object_id": "M-21b495b7e58840219b8452da00e263d2",
+      "version": 2,
+      "title": "完整终局负载税支付最优覆盖的开放候选",
+      "kind": "open-problem",
+      "truth_status": "open",
+      "model": "有限单位客户、有限非空带标签共同主题目录、单位权顺序提供者；完整纯策略定义于全部合法有序历史，重复选择、空主题及任意平局均按正文保留。每次偏离沿同一完整策略的真实后继；终局同客户由覆盖者均分。",
+      "statement": "设实际SPE终局负载c、W=|{x:c_x>0}|，全终局税τ(c)=Σ_(c_x>0)c_x/(c_x+1)。候选对每份完整SPE均有OPT_m≤W+τ(c)；若成立则由τ≤mW/(m+1)得OPT_m≤(2−1/(m+1))W。",
+      "quantifiers": "任意有限单位客户共同目录、任意m≥1及每份完整有序历史纯SPE。",
+      "assumptions": [
+        "税含全部终局覆盖者，不是前m−1槽的截断税",
+        "W=0单独保0，不使用严格比值"
+      ],
+      "scope": "既有full-terminal-tax/OCC-CAP的同一全称候选。",
+      "objections": "1500随机+20旧输入的直接探针与160固定策略浮点锥只给有限支持，未提供所有锥的精确对偶。九客户点的正松弛不是反例。与本批ψ负载代理不同；0048、0061同候选应归本ID。 R-31bbb 的 named 浮点锥仅筛 17 个给定完整策略及各自目标支持，W=1；此处 gap=OPT_support−W−τ（正才是候选），原 17 项全负，最大约 −0.05，既有 19 项重放逐原标签全等，未触发精确有理恢复与反例核验。没有跨全策略、客户重数或平局的精确非分离证书，开放义务不变。",
+      "body": {
+        "path": "archives/customer-attraction/state/程序/终局负载税两种搜索的原始合同与有限阴性--程序.md",
+        "sha256": "0581cfff731758cfa91954e94587c28e4f263dc2bc9dd04b81d5dd466c80dfa1"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/R-31bbb终局税与弱匹配锥有限屏幕--障碍.md",
+          "sha256": "a079f815dbd576c4217da8dbb6f0ff15ef93aad9be830bd7cbf9ff8cec0be20b",
+          "section": "终局税桥（terminal_tax）"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-31bbb-tail-20261031/source/terminal_probe.py",
+          "sha256": "66f0a1fad51d5b8cbe3ba11e517c3024d7175c9c8947230800d177908f9f8fec"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-31bbb-tail-20261031/source/named_run.json",
+          "sha256": "dc84e5a537314c370f8f98f517c03abe0fcd36860929c613550ffc065575fc2e"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-31bbb-tail-20261031/replay/terminal_named_smoke.json",
+          "sha256": "3b34d9fc663246a766440a0435444372f1407718748c0f107baf9a001431197f"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/程序/终局负载税两种搜索的原始合同与有限阴性--程序.md",
+        "source:8b6760619bab4e1702fa",
+        "source:8b31cc50582f5168dfb9",
+        "source:2bbe0a3beb159a4dbc7c",
+        "source:d1a612d8573311659cc6",
+        "source:97be5afb8d227f60d760",
+        "source:4789e4082bbf9cfe27ca",
+        "source:874d2e5005dc4b2b770a"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/customer-attraction/state/反例/五客户无拥挤SPE负载桥障碍--反例.md",
+      "sha256": "5a25e57b77cbdb207bf8a7b01919e234f21da5266c418f1527625ea6f34b6fab",
+      "disposition": "objects",
+      "object_ids": [
+        "CA-COLLISION-FREE-LOAD-PAYMENT-NO"
+      ],
+      "reason": "完整阅读成熟正文及共同定义，按精确数学对象登记；本轮复用已整理证明/完整证书，不重新清洗或冒称全量数组复审。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/终局负载税两种搜索的原始合同与有限阴性--程序.md",
+      "sha256": "0581cfff731758cfa91954e94587c28e4f263dc2bc9dd04b81d5dd466c80dfa1",
+      "disposition": "objects",
+      "object_ids": [
+        "M-21b495b7e58840219b8452da00e263d2"
+      ],
+      "reason": "完整实读本页成熟数学陈述、条件、量词和证明/必要证据合同；本页自有独立数学对象按稳定身份登记。已知同一身份复用，不重跑成熟程序，不建超边。 另有定向跨批收证待办，准确列于receipt，不宣称该部分已闭合。"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/R-2fc背景遗憾探针与无碰撞五客户负载桥--障碍.md",
+      "sha256": "f7fd1bc59bbfc1090203a9909274ea2b1704f9eaf382fac37272f371cd0c4d07",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/actual-prefix-fresh-coverage-global-counterexample",
+        "CA-COLLISION-FREE-LOAD-PAYMENT-NO"
+      ],
+      "reason": "背景遗憾节及源码仍按27归52客户实际前缀GLOBAL反例，仅为三次随机、计数状态Markov策略的历史浮点发现工具；其阴性不作完整根可达或全称预算证明。固定五客户节及原审计归无碰撞完整SPE的精确全称f桥反例：同一负载(1,1,0,1,1)使所有f(0)=0、f(1)=1的和均为4<5。已比较各自真实续局、OPT与证据来源，两个范围均已定向接收。"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/R-31bbb终局税与弱匹配锥有限屏幕--障碍.md",
+      "sha256": "a079f815dbd576c4217da8dbb6f0ff15ef93aad9be830bd7cbf9ff8cec0be20b",
+      "disposition": "attachment",
+      "object_ids": [
+        "CA-STRATEGY-CONE",
+        "M-21b495b7e58840219b8452da00e263d2"
+      ],
+      "reason": "弱匹配与addition节及count-Markov、portfolio实现仍按27归CA-STRATEGY-CONE作有限应用；200局/1663策略-目标对与两局Markov smoke不作全策略结论，严格唯一最优support只属发现约束。终局税节、原probe与named报告归全终局税开放义务；17条全负浮点结果与19条既有重放分别保留，不提供全称或精确锥证书。workspace仅留provenance。两节均已定向接收。"
+    }
+  ],
+  "edge_files": []
+}
