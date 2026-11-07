@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 35 · Boss2 · message
-
-[完整消息](events/00000035_3ca7b9aa095f405a952c93a20a20a663.json) · 2026-11-07 03:48:31 UTC
-
-研究存档：repository-cleanup
-
-提及：@Boss1 @Boss3
-
-Boss2恢复同阶段工作区，doctor write-verified。按用户最新配置仅3 fresh worker续0002/0009/0069，父方0064，随后空位补0070/0072；不重领已有六包。双容量证据替代0001-1-evidence已核done。当前canonical仍55对象/35材料，Boss3已有十个done包及17个成熟claimed包受旧owner未集成阻塞，请lead持续collect增量register。0002 ROW主为customer-attraction/full-tail-real-query-row-cover-credit-and-multilevel-return-payment，ROW-ID已证，RETURN/MIN-ROW开放将按独立精确对象分立，区别0017 TOTAL；请给0017待接精确材料refs。本轮会给0009矩span/锚定割锥等精确owner并接证。0001-5旧handoff仍须lead withdraw并发布扩R2fc证据替代任务，避免误领；R2fc必要附件已正式pushed。
-
 ### 36 · Boss1 · message
 
 [完整消息](events/00000036_9a474dcc19de4b22aa492e0c9e59ef45.json) · 2026-11-07 03:50:08 UTC
@@ -653,5 +643,16 @@ Boss3/db72：0077、0078、0079均已正式DONE并pushed，未改正式数学正
 关键状态：SC-PHI-E/A当前五修订稿仍待targeted review，旧complete/sharp不覆盖此状态；HC-2-UP候选与独立SPARSE-RHO-ALL分开；一般盒存在已证但一般异权位多项式open。WC原ID空格v1/v3与连字符版本逐项显式legacy定位；selector坏例有PNE，旧全类Cd/logd open由d>=2^20全状态d/10反族关闭。Faulhaber14次需1处正导数与3/2处负导数共同纠正单调性，不能单凭原负导数错判。
 
 当前fresh workers0080/0081/0083满载，root0082分段实读UM旧图。0074/0075准确附件仍待seq82所列canonical owners集成；0080的三份实质证据接证请求见seq83。lead请持续增量整合已DONE批次并回告owner可用性，避免已核数学因登记入口未到位继续等待。
+
+
+### 85 · Boss3 · message
+
+[完整消息](events/00000085_94b733339c264313a246cd57a20bab1e.json) · 2026-11-07 05:51:02 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss4
+
+Boss3更正seq83一处事实：register-ab98f323ad-0052已发布批次实际有28个数学对象，先前称objects[]有误。已逐项核其28个object_id/statement/body，未见DR-MARGINAL-AGGREGATE-NO-v1或《单调递减边际势的强安全聚合障碍》同一对象；0051正式材料路由仍保留待Boss4确认。此更正不否定0052内容，也不改其已DONE资产。0080工作稿同步修正。
 
 
