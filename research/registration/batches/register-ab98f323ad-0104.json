@@ -128,7 +128,7 @@
       "kind": "theorem",
       "truth_status": "proved",
       "model": "有限单项式集的截断 Hankel 矩与其 border 扩展。",
-      "statement": "当 M_{C+} 是 M_C 的 flat extension 时，有唯一全矩序列的矩阵 flat 扩展 M_{C+}。",
+      "statement": "若C含1且connected to 1，C+=C∪⋃_i x_iC，Hankel矩阵M_C+(y)是M_C(y)的秩不增扩展，则有唯一全矩序列ỹ，其完整矩阵M(ỹ)扩展M_C+(y)且秩等于rank M_C(y)。",
       "quantifiers": "任意有限 C 及满足 flat 条件的截断矩序列。",
       "assumptions": [
         "C 含1且 connected to 1，C+含每个变量乘 C；相应 Hankel 一致性。"
@@ -798,7 +798,7 @@
         "原同一分配；低于阈值与至少阈值是互补事件；强高端>的等号另用严格乘积界。"
       ],
       "scope": "准确纠正旧 F 的高低 γ 偷换。",
-      "objections": "F2 部分激活另有独立身份；不自动认证任何一般 NO 解码。",
+      "objections": "F2 部分激活另有独立身份；不自动认证任何一般 NO 解码。 本次定向实读0107该增量页对应完整节并接证；v4数值Q收费不与v5总位多项式输入域合并，协作核对不冒作独立证明。",
       "body": {
         "path": "archives/unrelated-machines/state/审查/归一化菜单高低比例互补的实质纠错及修复边界--审查.md",
         "sha256": "ad299d925721db08eadd2eb530a07871dab58aff5d739d591a32335c40eeea8d",
@@ -813,6 +813,16 @@
         {
           "path": "tools/evidence/private-tree/partial-quota-welfare/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
           "sha256": "9ef11b3f69d786c4a89f3e575f0cce60cc5d611c2fbad61cdabd3d642aaea33c"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/分数重匹配显式XOS-v4-v5增量--审查.md",
+          "sha256": "a579f14298c8e6234a8406ae5d5888b1c8e489d63ad920319e4eb4c8c82cc034",
+          "section": "8. 后续实质勘误：γ_hi 和 γ_lo 不能同名代换"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/NSW比例勘误与flat菜单证明读后--审查.md",
+          "sha256": "828aaf4fc65ad4b38350e639aceeccab5562ed0bae8e7d7f1d386f8923ba4024",
+          "section": "1. NSW 比例勘误：必须区分高端上限和低端下限"
         }
       ],
       "sources": [
@@ -825,23 +835,24 @@
       ]
     },
     {
-      "object_id": "M-391f962feda94e328967b66d1edc9228",
+      "object_id": "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1",
       "version": 1,
-      "title": "全局共享 D 个 singleton REPAIR 的增广筛选",
+      "title": "归一化菜单的几乎全部组质量、共享修复LP筛选及完整调度",
       "kind": "algorithm",
-      "truth_status": "conditional",
-      "model": "显式归一化菜单，所有 state 总权1，组间资源实际不交；r_g 为真实 attaining state 的组质量。",
-      "statement": "给全部 n 组共用的 D 个新 singleton 资源，每个资源最多修一组；去修复后低组最多增加 D。YES 有≥n−D个 unit groups 时增强 unit-FSLP 可行；所给低组 NO promise 与 LP 可行矛盾。",
-      "quantifiers": "固定0≤a_rep<γ_lo≤1，D≤a_rep n，0<η<γ_lo−a_rep，0≤δ_q≤qη/2。",
+      "truth_status": "proved",
+      "model": "n≥1个原组、m≥1个显式资源，每组非空indexed states，非负二进制有理原系数每state总量一；正support列容量unit-FSLP，同组全局共享D个unit singleton REPAIR；原ordinary flat-UM完整任务矩阵。",
+      "statement": "unit-FSLP可行即有同一确定性总位多项式实际不交分配，NSW≥1/3000000>2^−24；令K=ceil(1/η)、qη=2^(−24K)、cη=qη/2，则低于qη及至多cη的组均少于ηn。完整原调度selected root=2−r_g、其余root=1、resource≤1，故峰≤2，仅少于ηn个selected roots超过2−qη。全局共享D个repair至多救D组；固定D≤a_rep n、0<η<γ_lo−a_rep、0≤δ_q≤cη时，增强unit-FSLP可行性位多项式分离原≥n−D个unit组的YES与所有原分配≥γ_lo n个≤δ_q低组的NO。",
+      "quantifiers": "每个所述norm1显式对象；同一输出对每个固定有理0<η<1满足计数；修复筛选固定0≤a_rep<γ_lo≤1及所列阈值与D。",
       "assumptions": [
-        "所有组共用同一 D 资源，不按组克隆；同一 n 组；增强 LP 的同一分配给少于 ηn 个低组。"
+        "每个state原系数总和一，unit-FSLP使用p>0的support indicator，不数零incidence。",
+        "共享D个repair资源供同一n组使用，不按组复制；保全部原selector、未选state与显式零时间任务。",
+        "输出计数前件为unit-FSLP可行；修复decider只在指定YES/NO promise下承诺。"
       ],
-      "scope": "显式 nD 增广；有界原矩阵映射保全部 jobs。",
-      "objections": "这是所列源 promise 的筛选接口；一般 Karp 难源仍需另证。",
+      "scope": "显式输入总位多项式；可变η的阈值位长关于K而非log(1/η)收费；不提供全组minimum质量、全部机器统一次二或NP-hard源。",
+      "objections": "恢复原完整正文的精确Claim ID，原未交付提案M-391f962feda94e328967b66d1edc9228仅概括D节现归此身份，不作为第二算法。C/D及完整E保留；高低比例纠错另由UM-NORMALIZED-ROBUST-HIGH-LOW-COMPLEMENT-v1维护，F2另由0103维护。",
       "body": {
         "path": "archives/unrelated-machines/state/审查/归一化菜单高低比例互补的实质纠错及修复边界--审查.md",
-        "sha256": "ad299d925721db08eadd2eb530a07871dab58aff5d739d591a32335c40eeea8d",
-        "section": "D个全局共享singleton REPAIR与完整调度"
+        "sha256": "ad299d925721db08eadd2eb530a07871dab58aff5d739d591a32335c40eeea8d"
       },
       "evidence": [
         {
@@ -852,6 +863,11 @@
         {
           "path": "tools/evidence/private-tree/partial-quota-welfare/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
           "sha256": "9ef11b3f69d786c4a89f3e575f0cce60cc5d611c2fbad61cdabd3d642aaea33c"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/分数重匹配显式XOS-v4-v5增量--审查.md",
+          "sha256": "a579f14298c8e6234a8406ae5d5888b1c8e489d63ad920319e4eb4c8c82cc034",
+          "section": "7. 任意比较重匹配、normalized 后果及所有原作业"
         }
       ],
       "sources": [
@@ -860,7 +876,8 @@
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
         "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/explicit_xos_fractional_nsw_original_canonical_before_gamma_correction.md",
-        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/explicit_xos_fractional_nsw_original_canonical_before_gamma_correction.md"
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/explicit_xos_fractional_nsw_original_canonical_before_gamma_correction.md",
+        "精确旧Claim：UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1；未交付草稿名 M-391f962feda94e328967b66d1edc9228"
       ]
     },
     {
@@ -876,7 +893,7 @@
         "i∉A⇒v_i(B)=0；任意 z 有 Σ_{i∈A,T} z_iT v_i(T)/V_i≤cn。"
       ],
       "scope": "无权几何平均；一般次可加的条件比较。",
-      "objections": "残余界针对分数族，不能换成整数福利 bound 或免费可验证 oracle。",
+      "objections": "残余界针对分数族，不能换成整数福利 bound 或免费可验证 oracle。 本次定向实读0107该增量页对应完整节并接证；v4数值Q收费不与v5总位多项式输入域合并，协作核对不冒作独立证明。",
       "body": {
         "path": "archives/unrelated-machines/state/审查/显式XOS分数NSW的确定化合同与真实审读链--审查.md",
         "sha256": "dd27a701b1f1eedbd5162be243b0ad24f8733a144509ab555a10d0dd2dfb208a",
@@ -886,6 +903,11 @@
         {
           "path": "tools/evidence/private-tree/partial-quota-welfare/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
           "sha256": "9ef11b3f69d786c4a89f3e575f0cce60cc5d611c2fbad61cdabd3d642aaea33c"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/分数重匹配显式XOS-v4-v5增量--审查.md",
+          "sha256": "a579f14298c8e6234a8406ae5d5888b1c8e489d63ad920319e4eb4c8c82cc034",
+          "section": "3. 不变核心 A：一般次可加的分数 benchmark 重匹配"
         }
       ],
       "sources": [
@@ -910,7 +932,7 @@
         "有限 clause 表；保零/重复 clause、unused items；整数分配每物品至多用一次。"
       ],
       "scope": "按显式输入总位长，局部网格与精确比值匹配。",
-      "objections": "局部 floor 仅用于辅助权，非对原 valuation；预言机 XOS 与 weighted NSW 域独立。",
+      "objections": "局部 floor 仅用于辅助权，非对原 valuation；预言机 XOS 与 weighted NSW 域独立。 本次定向实读0107该增量页对应完整节并接证；v4数值Q收费不与v5总位多项式输入域合并，协作核对不冒作独立证明。",
       "body": {
         "path": "archives/unrelated-machines/state/审查/显式XOS分数NSW的确定化合同与真实审读链--审查.md",
         "sha256": "dd27a701b1f1eedbd5162be243b0ad24f8733a144509ab555a10d0dd2dfb208a",
@@ -925,6 +947,26 @@
         {
           "path": "tools/evidence/private-tree/partial-quota-welfare/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
           "sha256": "9ef11b3f69d786c4a89f3e575f0cce60cc5d611c2fbad61cdabd3d642aaea33c"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/分数重匹配显式XOS-v4-v5增量--审查.md",
+          "sha256": "a579f14298c8e6234a8406ae5d5888b1c8e489d63ad920319e4eb4c8c82cc034",
+          "section": "4. v4 到 v5 的全部实质差异"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/分数重匹配显式XOS-v4-v5增量--审查.md",
+          "sha256": "a579f14298c8e6234a8406ae5d5888b1c8e489d63ad920319e4eb4c8c82cc034",
+          "section": "5. v5 残余归一化为何消除数值尺度收费"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/分数重匹配显式XOS-v4-v5增量--审查.md",
+          "sha256": "a579f14298c8e6234a8406ae5d5888b1c8e489d63ad920319e4eb4c8c82cc034",
+          "section": "6. 固定候选、局部相对格点与误差预算"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/分数重匹配显式XOS-v4-v5增量--审查.md",
+          "sha256": "a579f14298c8e6234a8406ae5d5888b1c8e489d63ad920319e4eb4c8c82cc034",
+          "section": "7. 任意比较重匹配、normalized 后果及所有原作业"
         }
       ],
       "sources": [
@@ -1032,14 +1074,15 @@
       "title": "AFS 的候选集合族不交组合选择引理",
       "kind": "lemma",
       "truth_status": "proved",
-      "model": "p 个候选族，每族 l 个 k-集；每元素总出现不超过 l。",
-      "statement": "各族选一个候选，并从中取至少 βk 元素，各族所取子集两两不交。",
-      "quantifiers": "每个满足条件的集合族；k≥3，β≤floor(k/3)/k。",
+      "model": "p个候选集合族C_i，每族恰l个（按候选索引计）k元素集合S_ij，任一底层元素在全部候选中出现至多l次。",
+      "statement": "若k≥3且β≤floor(k/3)/k，则可每族选一候选并取其中至少βk个元素，使所得p个子集两两不交。",
+      "quantifiers": "任意正整数p,l、整数k≥3及满足所述等族大小和全局出现上界的集合系。",
       "assumptions": [
-        "用最大符合不超过1/3且βk整数的选取值证明；可向下取目标比例。"
+        "每族有同一个l个候选，且任一底层元素出现次数至多l；两处l必须对应。",
+        "证明取βk整数的最大β≤1/3，较小目标比例由同一输出涵盖。"
       ],
       "scope": "冻结作者稿的对应定理。",
-      "objections": "区分证书存在、估值、有限局部搜索与多项式整数输出。",
+      "objections": "定向核原PDF第5–6页Theorem3及原猜想：每族恰l个候选是transversal计数中l抵消的必要前提，旧材料摘要未明确此点，本登记据完整PDF补齐。区分存在/有限搜索与多项式实际输出。",
       "body": {
         "path": "archives/unrelated-machines/state/资源/Santa-Claus超图匹配与配置LP五分之一界--资源.md",
         "sha256": "87d79796472db09e3f346319ea752db0e79dd947eca0a9fe225281c21b7e50bf",
@@ -1921,7 +1964,7 @@
       "disposition": "objects",
       "object_ids": [
         "UM-NORMALIZED-ROBUST-HIGH-LOW-COMPLEMENT-v1",
-        "M-391f962feda94e328967b66d1edc9228"
+        "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1"
       ],
       "reason": "已核精确陈述、必要条件和承重证明位置，复用本页完整正文。"
     },
