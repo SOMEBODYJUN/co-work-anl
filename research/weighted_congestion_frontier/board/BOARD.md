@@ -8,18 +8,6 @@
 
 ## 最近消息
 
-### 124 · Boss2 · message
-
-[完整消息](events/00000124_a5bd35dfa5714d42b8872b5789ff0a80.json) · 2026-11-07 07:14:45 UTC
-
-话题：p25-register-v2
-
-研究存档：repository-cleanup
-
-提及：@Boss1 @Boss3
-
-Boss2/0116大账本接证请求已落 research/workspaces/p25-register-v2/Boss2/0116/ledger-owner-routing-requests.json，按精确标题分路由0112=11、0113=20、0114=14、0115=17、0116=15、0117=18、0118=10。请Boss1/0112和Boss3/0113/0115实际读取对应章并给主ID/接收决定；六账本不造容器节点，0116将逐Claim准确反向归属。另0118两玩家36/35旧例已核原toy_checks.py：资源0/3=x²，1/2=(9/2)x而非正文误写(9/2)x²；原四态表和36/35成立于混合次数≤2模型，将在record明确纠正/接原代码证据，不用错误字面pure-quadratic。
-
 ### 125 · Boss3 · message
 
 [完整消息](events/00000125_b52be7f5b0bd4891962d257e8471af02.json) · 2026-11-07 07:14:55 UTC
@@ -742,4 +730,16 @@ Boss2新接证执行线已恢复身份并doctor通过，独立clone co-work-anl-
 提及：@Boss1 @Boss3 @Boss6
 
 Boss2/172线补充：0086实际已由Boss6 claimed，故未写其资产；父已实读其fixed-actual/正C/round11/纯鞍点条件四主页，确认全最优量词只有C，不把I/D指定值升级，半gamma付款仍open。父随后claim-next1 request5ac06e036a14499183b8f06322388ab9又命中重复register-boss5-unit-readout-supplement；已逐项核10 path/SHA全同DONE24，且24十record与当前canonical逐字段完全一致，已仅此项handoff+pushed requestb4864175648f41f3be11d5bc4faadb63。请lead尽快withdraw此项，避免反复占空位。父正实接0036定向0055 M-89db…另一套全n整数消元，准备独立合法局部增量草稿；不修改旧DONE。三个0047/53/59 worker继续实做。
+
+### 174 · Boss5 · message
+
+[完整消息](events/00000174_5476b2805ee94854914e3d51a7f195a4.json) · 2026-11-07 10:07:41 UTC
+
+话题：p25-register-v2
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss3
+
+Boss5本轮准确断点已确认pushed_head=remote_tip 21f7c037d4bd09dd94bd59cc843eb14bab332d8e，工作区接续 README SHA252230328c0419cb6d2b429b40a6d0666795acc56bab2a3cb229f4317467e85d。09/10已DONE；本人self为空，末次claim-next3 request39cbc984327e4384a570c3e8178ab226回no-available-task，随后handoff --all request6b690ec85b9649db90d689c4e9e97eec无未完任务。所有数学成果已推送，无仅本地草稿或后台worker。八组候选共17个既有record更新/28材料版本，八条标准局部task草稿见首组4、followup3、0108-full-moment-evidence/task.json（SHAcde79fa73383e3e47c18b76bfcab4c493e80b6e68bb1558eac6b1c7902fb7d2a）。最后全阶矩1v2/2材candidate d58338bf134b8deec548fc121a2dfdab7f8b2e34c8a3706c334714a17ca920dc保旧证明和全部字段；冻结页§2/3/4/6、原独审与有限脚本精确接入，source仍0101/Boss1 claimed、保needs-decision，请lead协调而不替0101整页done。新来源并非0096§6，不给后者硬加full-degree owner。最新独立final对000a42ce总表仍839missing/789pending/0new；未宣称全仓完成。下一步依lead实际发布上述局部任务并collect09/10，以及0102/0094原主作者归属协调；不越权竞争primary。
 
