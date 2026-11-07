@@ -1,0 +1,332 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline-5cd4b9018.json",
+    "sha256": "af99fb773928f3fc6bcd577ade37fbb07e8f84befbb2304158b99894ab1e56a3"
+  },
+  "objects": [
+    {
+      "object_id": "UM-DEGREE-TWO-BOUNDED-MENU-JOINT-ROUNDING-v2",
+      "version": 2,
+      "title": "资源跨组度二显式菜单的联合取整",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "显式完整flat菜单普通UM：有限非空组，每组非空indexed states；每state独立private机、每资源独立资源机，每组一件在本组各private耗时1的selector；每个(g,s,u)为不同原incidence，只在自身private耗非负有理p_gsu或真实共享资源机耗1；未列端∞，所有未选state/零权任务也保留，无隐藏预载。 每state W≤1；每资源跨全部states至多两个不同groups，K为最大显式菜单大小。",
+      "statement": "存在不输入OPT/最优选态/YES的确定性位多项式实际调度算法，Cmax≤2−(2−OPT)/(2K)≤(2−1/(2K))OPT。归一化时OPT=2−V，组平均加性v_g=(1/K_g)Σ_state p给V/K≤辅助MaxMin最优，调用二度MaxMin整数2近似，再逐组取最大state并回填全部原任务。W<1以各state独占bonus资源/真实incidence归一，双向全任务删添精确保OPT。",
+      "quantifiers": "∀本完整显式degree2菜单输入，K可增长仍位多项式；只有固定K得统一常数改善。",
+      "assumptions": [
+        "每资源端unit、private独占、完整state结构作为输入",
+        "G非空使OPT≥1",
+        "外部backend限定每item≤2个非负加性玩家",
+        "零/空/重复state均保，bonus含全部未选state"
+      ],
+      "scope": "限定完整显式flat、unit资源端、跨组度≤2和W≤1；当前代码实现这一受限域的辅助MaxMin与全部原任务恢复。不给一般UM结构提取、degree≥3、共享private、W>1、隐式菜单或其他结构算法；跨组度也不等于state-dummy Santa的agent度。",
+      "objections": "原主正文给菜单平均、bonus精确保值和完整原任务回填；Theorem 12及原precheck仍承担独立的加性MaxMin二近似，原文精确O(|I|²)收费未认证。M0当前程序和M1三源审查补齐实现证据：两端同时删项的强制闭包、交替两匹配BFS、清分母和高端始终大于辅助最优的整数二分。成功只给真实分配值≥T/2，失败才认证A<T；不需成功单调。当前实现输出全部原任务的资格、精确时间和区间；不认证任意辅助metadata最优性。M2独立832个原assignment、M3外置夹具与成功阈值高于OPT的有限见证、M4 §4旧后端程序与运行只归有限/版本回归证据，同五夹具或同旧run不重复计；7个raw后端中有1个1200-agent非穷举长环。保持空/重复indexed state和零任务；无一般UM、state-dummy Santa度二或新独立扫描Claim。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/笛卡尔分块一致性与二度菜单联合取整双源审查--审查.md",
+        "sha256": "36d607e8a6c0b60893c29cc66f1a107bcac427cb25e4b71d1b469156c38309bc",
+        "section": "二、degree-two group menu 的联合取整定理"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/配置LP在图平衡及不相关机中的间隙--资源.md",
+          "sha256": "0fcfc44edf52bb6f1d0bf459c9847540342f55c9f4d681588f32670d1c64de26",
+          "section": "二度MaxMin的组合二近似：Theorem 12"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/VW2010 Theorem12双端价值后端与新桥接口预核--审查.md",
+          "sha256": "fbbe4ca060d00910f3679c128355a9427adc6e887bdfa0890ad51d2ba023bb81"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/加权扇出二度菜单夹具与历史入口三源审查--审查.md",
+          "sha256": "2470a0e216743d58ca7ac695e7d874364eb76d35c611c1a1223fb5c683f9774b",
+          "section": "五个 weighted menu 联合夹具（`b88c0af63e1cab4774d1`）"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/度二菜单结构后端的强制闭包与实际调度输出--资源.md",
+          "sha256": "933348b81f7392211b95512c4079cf2d63d78b73225f10156e2f49de90118eee",
+          "section": "显式输入和全部原任务"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/度二菜单结构后端的强制闭包与实际调度输出--资源.md",
+          "sha256": "933348b81f7392211b95512c4079cf2d63d78b73225f10156e2f49de90118eee",
+          "section": "bonus、共同加性辅助与已存数学合同"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/度二菜单结构后端的强制闭包与实际调度输出--资源.md",
+          "sha256": "933348b81f7392211b95512c4079cf2d63d78b73225f10156e2f49de90118eee",
+          "section": "`vw_threshold` 的承重不变量"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/度二菜单结构后端的强制闭包与实际调度输出--资源.md",
+          "sha256": "933348b81f7392211b95512c4079cf2d63d78b73225f10156e2f49de90118eee",
+          "section": "无成功单调性假设的精确二分"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/度二菜单结构后端的强制闭包与实际调度输出--资源.md",
+          "sha256": "933348b81f7392211b95512c4079cf2d63d78b73225f10156e2f49de90118eee",
+          "section": "实际输出、bonus删除及验证器"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/度二菜单结构后端的强制闭包与实际调度输出--资源.md",
+          "sha256": "933348b81f7392211b95512c4079cf2d63d78b73225f10156e2f49de90118eee",
+          "section": "真实运行与版本证据"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/二度菜单联合舍入后端的三源审查--审查.md",
+          "sha256": "159b2d405f86535765ab266245b4d6f4007b227ccbf2d90dc473b5ef66e45bd4",
+          "section": "来源和冻结身份"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/二度菜单联合舍入后端的三源审查--审查.md",
+          "sha256": "159b2d405f86535765ab266245b4d6f4007b227ccbf2d90dc473b5ef66e45bd4",
+          "section": "完整输入域和归一化身份"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/二度菜单联合舍入后端的三源审查--审查.md",
+          "sha256": "159b2d405f86535765ab266245b4d6f4007b227ccbf2d90dc473b5ef66e45bd4",
+          "section": "(OPT=2-V) 与共同取整桥"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/二度菜单联合舍入后端的三源审查--审查.md",
+          "sha256": "159b2d405f86535765ab266245b4d6f4007b227ccbf2d90dc473b5ef66e45bd4",
+          "section": "生产后端的算法义务和代码审查"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/二度菜单联合舍入后端的三源审查--审查.md",
+          "sha256": "159b2d405f86535765ab266245b4d6f4007b227ccbf2d90dc473b5ef66e45bd4",
+          "section": "有限证据（不替代一般证明）"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/二度菜单联合舍入后端的三源审查--审查.md",
+          "sha256": "159b2d405f86535765ab266245b4d6f4007b227ccbf2d90dc473b5ef66e45bd4",
+          "section": "适用范围、缺口和处置"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/二度菜单联合取整有限审计--审查.md",
+          "sha256": "291265bbe1af069234c91b0ab132649f5e613132cfe84001f14e56564652098b",
+          "section": "二度菜单联合取整有限审计"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/度二加权菜单外置夹具审计与后端版本--计算.md",
+          "sha256": "b7001254593a594724684225cc9388536f11f867914b990df503b20e369891b4",
+          "section": "度二菜单的实际调度证书"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/加权菜单状态dummy值桥六源与后端审查--审查.md",
+          "sha256": "c10466f02af1faddc2c32d86589b6b21ddeb9fe4b8654e91ea6ca303a0cda645",
+          "section": "4. 两份程序的有限后端与实际运行"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/cartesian_menu_block_coherence_rank_and_deficit.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/cartesian_menu_block_coherence_rank_and_deficit.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/degree_two_group_bounded_menu_joint_rounding.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/degree_two_group_bounded_menu_joint_rounding.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf#PDF-pages-1-13",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf#PDF-pages-1-13",
+        "clean:bc7fbb3d9e7d1df6050e",
+        "clean:dc9f56bcbf195d72a6a3",
+        "clean:7a479340d3503830410a",
+        "clean:8937d43a1e470ace7aa1",
+        "clean:af2ee631a5e5e8dfd2e2",
+        "clean:8629950ab119d7e0bef2",
+        "clean:66c02ab103dfc9b7ba29",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/degree_two_menu_joint_v2/root_independent_original_matrix_verification.json"
+      ]
+    },
+    {
+      "object_id": "UM-WEIGHTED-MENU-STATE-DUMMY-SC-v1",
+      "version": 2,
+      "title": "显式归一化加性菜单的Santa与实际UM精确值桥",
+      "kind": "identity",
+      "truth_status": "proved",
+      "model": "有限非空显式组；每组有K_g≥1个indexed states，每state在同一显式资源宇宙上的非负二进制有理权恰好和为1。UM每state一独有private机、每个真实资源一独立unit机；每组一件仅能去本组private机的unit selector，每incidence一枚独立原任务，只能在其private端耗原权或资源端耗1。Santa每state一agent，每真实资源一不可拆单owner item。",
+      "statement": "V=max_{两两不交B_g} min_g max_s a_gs(B_g)。Santa给每组加K_g−1枚不可拆own dummies（本组所有state agents对每枚值1，外组值0），用dummy-free agent的真实资源束提取每组一个state；反向给该state相应资源束、其他state各给一枚本组dummy。与全原任务UM调度双向转换，OPT_SC=V且OPT_UM=2−V；对任意给定t∈[0,1]，存在全agent效用≥t的Santa allocation iff 存在峰值≤2−t的完整UM schedule。",
+      "quantifiers": "任意满足归一化域的显式菜单、任意给定t∈[0,1]及两向任意合法见证；两向给定见证的转换按输入总位长多项式，不输入或求解未知V。",
+      "assumptions": [
+        "每state实资源权和恰1；Santa完整row加own dummy后总值为K_g",
+        "每real item和dummy不可拆、只有一个owner；同组不能合并多个state的真实束",
+        "所有原incidences包括未选state及零权任务都执行，且无额外资格或任务"
+      ],
+      "scope": "无resource degree限制。含V=0/1、K_g=1、t=0与峰2；只在C<2使用单位外端独占，C≥2时目标0。W≤1要先在增广资源上重定义V。不得由原资源group-degree推state-agent degree，也不给一般Santa/UM hardness或canonical §4–6的菜单规模结论。",
+      "objections": "两个ID在显式归一化域、K_g−1枚own dummy、max-min不交束、双值身份及全t与全原任务的解码上完全相同；SC-VALUE-BRIDGE-v1是同义来源，保SC-v1主记录。M4 §2–3含任意分配、浪费/外送dummy和严格C<2的独立Exact-first重构与作者Proof；Proof与Proof read-after同字节，保读序而不算第二Proof。M5的canonical §1–3独立范围确认及最终scope note保同一未变前缀，后续§5变化只涉及独立XOS菜单规模。M4 §4仅是另一个度二算法的有限回归，不为本全度值桥背书。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/Santa受限桥与归一化菜单双源审查--审查.md",
+        "sha256": "f96a1038bc7dd23d2e88c6ed842203ee93778a1feb579883ceaf3b5235bf7dac",
+        "section": "二、归一化完整菜单的精确值桥"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/归一化菜单的保值表示与放大失效边界--资源.md",
+          "sha256": "fcf576c66694cf62d22613ad9cde9807e86428ff51d9d14f29718842330603e2",
+          "section": "完整flat与SC"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/加权菜单状态dummy值桥六源与后端审查--审查.md",
+          "sha256": "c10466f02af1faddc2c32d86589b6b21ddeb9fe4b8654e91ea6ca303a0cda645",
+          "section": "1. 来源身份与实际读取范围"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/加权菜单状态dummy值桥六源与后端审查--审查.md",
+          "sha256": "c10466f02af1faddc2c32d86589b6b21ddeb9fe4b8654e91ea6ca303a0cda645",
+          "section": "2. 归一化值桥的稳定数学对象"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/加权菜单状态dummy值桥六源与后端审查--审查.md",
+          "sha256": "c10466f02af1faddc2c32d86589b6b21ddeb9fe4b8654e91ea6ca303a0cda645",
+          "section": "3. 值桥的承重步骤与边界"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/加权菜单状态dummy值桥六源与后端审查--审查.md",
+          "sha256": "c10466f02af1faddc2c32d86589b6b21ddeb9fe4b8654e91ea6ca303a0cda645",
+          "section": "5. 与既有正文的关系与接续"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资料/加权菜单Santa值桥与不相关机转换--资料.md",
+          "sha256": "d01ac63a4da47c8cfaed8ed296efa00ea4b375ef8b567c0338c938d6d175aa8c",
+          "section": "对象身份与读取范围"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资料/加权菜单Santa值桥与不相关机转换--资料.md",
+          "sha256": "d01ac63a4da47c8cfaed8ed296efa00ea4b375ef8b567c0338c938d6d175aa8c",
+          "section": "精确模型"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资料/加权菜单Santa值桥与不相关机转换--资料.md",
+          "sha256": "d01ac63a4da47c8cfaed8ed296efa00ea4b375ef8b567c0338c938d6d175aa8c",
+          "section": "双向转换与公式"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资料/加权菜单Santa值桥与不相关机转换--资料.md",
+          "sha256": "d01ac63a4da47c8cfaed8ed296efa00ea4b375ef8b567c0338c938d6d175aa8c",
+          "section": "规模、规范化与明确的限制"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资料/加权菜单Santa值桥与不相关机转换--资料.md",
+          "sha256": "d01ac63a4da47c8cfaed8ed296efa00ea4b375ef8b567c0338c938d6d175aa8c",
+          "section": "两份来源的版本比较"
+        }
+      ],
+      "sources": [
+        "clean:737121825175bccceb42",
+        "clean:6db603641caeca5e5460",
+        "clean:76b7fd4a1ca40900f16c",
+        "clean:ef3264a3be9018961b2b",
+        "clean:f6caeecc72965c8e8dcf",
+        "clean:71d9b4b2e2e41a07b8c5",
+        "clean:17da21202b0a1b39bd70",
+        "legacy:UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1"
+      ]
+    },
+    {
+      "object_id": "UM-MINIMAL-STAR-CONTRACTION-v1",
+      "version": 2,
+      "title": "全部邻任务极小超载星的阈值精确消元",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "在给定非负阈值T剪去不可用或p_ia>T的边后的当前UM矩阵，选机器v及其全部可用任务F≠∅；S=Σ_(a∈F)p_va>T且每a满足S−p_va≤T。",
+      "statement": "删v及F，用一件普通任务e取代；在每外机i令p′_ie=min_{a∈F可用i} p_ia并保存真实argmin（空集为∞）。原/约化T可行等价。任意约化实际分配将e@i展开为argmin任务a@i，其余F还v，旧外机负载保持且新中心负载≤T；固定T连续收缩逆序展开保持峰≤max(B,T)。若e无有限边，原实例T不可行。",
+      "quantifiers": "对每个T与当前阈值剪枝实例中满足全邻域极小超载条件的星；对任意约化实际分配及其峰B，并可逐步逆序恢复任意有限条同T有效收缩链。",
+      "assumptions": [
+        "F是当前v的全部邻域；逐项删除条件对每个a成立",
+        "记录每个有限摘要端的真实原任务argmin及各步身份/分块，以便逆序恢复"
+      ],
+      "scope": "整数T阈值可行性的局部精确规则；任意B的保证只在逆恢复方向。一般正向不保任意C>T；配置转换、容量一星的松弛gap及多外溢压缩均为独立对象。",
+      "objections": "0100历史入口资源「极小超载星：已成立的精确单任务压缩」只取开头的整数两向和逆序恢复两段：至少一项必外送，argmin恢复保外机负载；历史README检验义务已由同一成熟规则关闭。Q_F(y)≥1的配置抽质量、强制端优先、q-profile、容量一星与拟阵另有命题，不能由此整数iff推出。规则条件不成立本身不认证不可行。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/单边界森林与极小超载星双源审查--审查.md",
+        "sha256": "8776d3938fd201fbdee497489d521bf52dc11df4cfd16be01ce8e4024f7a9069",
+        "section": "1. 精确可行性保持"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/单边界消元与独立配置探针的恢复合同--资源.md",
+          "sha256": "aadcf1772ba9ccd911f7a116ff483f82cff65177f335d1edf7ae8ad450856bbc",
+          "section": "极小超载星：整数iff与CONFIG条件"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/成束局部相容性与极小星消元的身份边界--资源.md",
+          "sha256": "f0d0c03bf99a4979d8dbee110602efa18b5116f6884adfb5b419bcc338b250d8",
+          "section": "极小超载星：已成立的精确单任务压缩"
+        }
+      ],
+      "sources": [
+        "clean:8c90fcce237d7988a7a5",
+        "clean:230d4849302e1679ef5a"
+      ]
+    },
+    {
+      "object_id": "UM-STAR-Q-JOB-COMPRESSION-NO-v1",
+      "version": 2,
+      "title": "多任务外溢不能以普通任务保全部外部余量",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "对每个整数q≥2，原星有q+1件任务，中心容量1且每项时间1；q+1台固定外机，机i执行对应任务i耗1/q，其他任务耗2（在本例容量≤1可视为不可用）。A-profile任取q台余1/q、其余0，B-profile任取至多q−1台余1、其余0。替代后中心消去。",
+      "statement": "原星对所有A可行、对所有B不可行；不存在仅使用同一q+1台外机的固定q件普通替代任务（任意非负有理或∞端时间）同时保持这些余量的可行性。否则每个替代任务的小边集合{机i:时间≤1/q}必须至少两台，且两两不交，需2q>q+1台，矛盾。",
+      "quantifiers": "每个整数q≥2，对任意固定的q任务替代矩阵，至少一个A或B profile的可行性不保；因而更不能精确保全部外部余量。",
+      "assumptions": [
+        "替代只能用同一外机集和q件普通任务，无额外任务身份/匹配约束；替代矩阵不能随profile改变",
+        "0处理时间和∞资格均允许；容量0并不排除0处理时间"
+      ],
+      "scope": "排除固定q普通任务、相同外机、全部余量保真的局部摘要。不排匹配/拟阵保身份、额外机器或任务、多边界、选择性profile、非局部或近似接口。",
+      "objections": "0100同一极小星标题仅接同时外放q枚的A/B段，不吞并单任务收缩、CONFIG、容量一星或静态拟阵。若某A的替代分配只占≤q−1个正负载机器（含有0时间任务或正任务共机），升这些机余量为1、其余置0仍保原分配，从而错误接受某B；故删任意机后的A须有全q个正任务的小边匹配。若两小边集合相交，则两任务同机、其余任取各小边，可用至多q−1机且每机负载≤q·(1/q)=1，又错误接受B。这是任意替代矩阵的解析障碍，不是枚举的结论。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/单边界森林与极小超载星双源审查--审查.md",
+        "sha256": "8776d3938fd201fbdee497489d521bf52dc11df4cfd16be01ce8e4024f7a9069",
+        "section": "3. 多任务外溢、配置点与拟阵外包的边界"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/单边界消元与独立配置探针的恢复合同--资源.md",
+          "sha256": "aadcf1772ba9ccd911f7a116ff483f82cff65177f335d1edf7ae8ad450856bbc",
+          "section": "极小超载星：整数iff与CONFIG条件"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/成束局部相容性与极小星消元的身份边界--资源.md",
+          "sha256": "f0d0c03bf99a4979d8dbee110602efa18b5116f6884adfb5b419bcc338b250d8",
+          "section": "极小超载星：已成立的精确单任务压缩"
+        }
+      ],
+      "sources": [
+        "clean:8c90fcce237d7988a7a5",
+        "clean:230d4849302e1679ef5a"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/审查/笛卡尔分块一致性与二度菜单联合取整双源审查--审查.md",
+      "sha256": "36d607e8a6c0b60893c29cc66f1a107bcac427cb25e4b71d1b469156c38309bc",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-QARY-AFFINE-MENU-RECOUPLING-CONSISTENCY-v1",
+        "UM-BINARY-CARTESIAN-BLOCK-FIBER-QUOTA-v1",
+        "UM-DEGREE-TWO-BOUNDED-MENU-JOINT-ROUNDING-v2"
+      ],
+      "reason": "实读全篇。笛卡尔部分的qary affine与binary block和二度菜单联合取整为各自主对象；本增量只把0101的同域数学/代码和有限证据接到二度菜单原owner。§5的near-full deficit v2保原独立路由，未并入度二结论。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单边界森林与极小超载星双源审查--审查.md",
+      "sha256": "8776d3938fd201fbdee497489d521bf52dc11df4cfd16be01ce8e4024f7a9069",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-FOREST-BOUNDARY-AUGMENT-v1",
+        "UM-MINIMAL-STAR-CONTRACTION-v1",
+        "UM-STAR-Q-JOB-COMPRESSION-NO-v1"
+      ],
+      "reason": "实读全篇。单边界森林、极小超载星整数可行性iff和q件普通任务的A/B余量障碍各自独立；本增量只从0100接后二者各自段落。容量一GPC₂、Q_F条件配置转换、静态拟阵外包仍由各自的主记录承担，保既有反向待接范围。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/Santa受限桥与归一化菜单双源审查--审查.md",
+      "sha256": "f96a1038bc7dd23d2e88c6ed842203ee93778a1feb579883ceaf3b5235bf7dac",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-SANTA-RESTRICTED-BRIDGE-BOUNDARY-v1",
+        "UM-WEIGHTED-MENU-STATE-DUMMY-SC-v1"
+      ],
+      "reason": "实读全篇。restricted Santa端点反例与显式归一化state-dummy精确值桥各自主对象；本增量只接0101与后者同义的模型、双值、全任务解码和证明读序。第三节同一资源宇宙的XOS覆盖数v2独立，保既有反向待接范围。"
+    }
+  ],
+  "edge_files": []
+}
