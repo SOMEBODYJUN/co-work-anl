@@ -1,0 +1,884 @@
+{
+  "task_id": "register-ab98f323ad-0103",
+  "status": "draft-worker-in-progress",
+  "record": {
+    "schema": 2,
+    "task_id": "register-ab98f323ad-0103",
+    "baseline": {
+      "path": "research/registration/baseline.json",
+      "sha256": "5d5737ab6d07552b48925bdb936dae70490e8de1ee0da2b380bb2d16dd5690cf"
+    },
+    "objects": [
+      {
+        "object_id": "UM-NEAR-UNIT-PCSP-EXACT-MINION-v1",
+        "version": 1,
+        "title": "近单位严格/宽松蕴含的完整布尔 polymorphism minion",
+        "kind": "定理",
+        "truth_status": "proved",
+        "model": "Boolean strict/weak promise CSP：A_k(b,x) 为 b=0 或 Σx≥k−1，B_{k,r} 为 b=0 或 Σx≥r，两侧同有 AMO₂ 与 ONE；一般约束图。",
+        "statement": "f 属于该 minion 当且仅当 f 单调，winning supports 非空且两两相交，且每个极小 winning support 大小≤k−r；每个极小 winner 双侧 fixing。r=k−1 时仅 projections；k−r≥2 允许任意大本质元数。",
+        "quantifiers": "每个固定整数 k≥2、1≤r≤k−1；对每个 n≥1 和 n 元 Boolean f 双向。",
+        "assumptions": [
+          "固定 A/B、AMO₂、ONE 关系合同"
+        ],
+        "scope": "A_k 到 B_{k,r} 的 promise 模板；不限定源约束图。",
+        "objections": "充分性需计 inactive rows：选中的极小 winner 最多排除 |S| 列。不是 UM 物理编译。",
+        "body": {
+          "path": "archives/unrelated-machines/state/审查/近单位PCSP蕴含与物理复制义务最终范围审查--审查.md",
+          "sha256": "05f56de06de9c6a087704dff698cc949df910695f6073d1d622b4ccc3d06f9f2",
+          "section": "1. Strict/weak near-unit PCSP 与精确 minion"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/审查/近单位PCSP与单位presence胶合双源审查--审查.md",
+            "sha256": "fce35ad0eff41983cc776e569a91ea0e5375d5c0a6ca0cf7a7c3eb6c0453f3ad",
+            "section": "2.1 模板和精确 minion"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/near-unit-implication-pcsp-20261031/original/near_unit_implication_pcsp_review.md",
+            "sha256": "9ee1c800ceccb7d49dcd5addc9c80ce927ec66a7399cc05077f89e7792fb1749"
+          }
+        ],
+        "sources": [
+          "68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/near_unit_implication_pcsp_review.md",
+          "35763d19e84e87d2e95a",
+          "29d4881762b3773ed35d:research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md",
+          "56ab7cc3466f397ebcfe:research/current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md"
+        ]
+      },
+      {
+        "object_id": "UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1",
+        "version": 1,
+        "title": "一般约束图近单位 PCSP 的 NP 困难性",
+        "kind": "定理",
+        "truth_status": "proved",
+        "model": "Boolean strict/weak promise CSP：A_k(b,x) 为 b=0 或 Σx≥k−1，B_{k,r} 为 b=0 或 Σx≥r，两侧同有 AMO₂ 与 ONE；一般约束图。",
+        "statement": "每个模板的 strict 可满足与 weak 不可满足之区分是 NP-hard。精确 minion 的恒等同态进入 strongly C-fixing minion，C=k−r；使用 Barto–Bulín–Krokhin–Opršal 定理。",
+        "quantifiers": "对每个固定整数 k≥2、1≤r≤k−1；输入为任意该模板约束实例。",
+        "assumptions": [
+          "变量可重复并任意多次出现",
+          "适用一般 PCSP strongly C-fixing 硬性定理"
+        ],
+        "scope": "一般约束图 promise decision。",
+        "objections": "Feder 普通非 Δ-matroid 定理不能转用，weak 关系投影可变为全 Boolean cube；不推出物理 UM 或近二归约。",
+        "body": {
+          "path": "archives/unrelated-machines/state/审查/近单位PCSP蕴含与物理复制义务最终范围审查--审查.md",
+          "sha256": "05f56de06de9c6a087704dff698cc949df910695f6073d1d622b4ccc3d06f9f2",
+          "section": "2. 一般 PCSP NP-hardness 与普通 CSP 迁移边界"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/审查/近单位PCSP与单位presence胶合双源审查--审查.md",
+            "sha256": "fce35ad0eff41983cc776e569a91ea0e5375d5c0a6ca0cf7a7c3eb6c0453f3ad",
+            "section": "2.2 一般 PCSP NP-hardness 和 Feder 边界"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/近单位PCSP蕴含与物理复制义务最终范围审查--审查.md",
+            "sha256": "05f56de06de9c6a087704dff698cc949df910695f6073d1d622b4ccc3d06f9f2",
+            "section": "1. Strict/weak near-unit PCSP 与精确 minion"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/near-unit-implication-pcsp-20261031/original/near_unit_implication_pcsp_review.md",
+            "sha256": "9ee1c800ceccb7d49dcd5addc9c80ce927ec66a7399cc05077f89e7792fb1749"
+          }
+        ],
+        "sources": [
+          "68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/near_unit_implication_pcsp_review.md",
+          "35763d19e84e87d2e95a",
+          "29d4881762b3773ed35d:research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md",
+          "56ab7cc3466f397ebcfe:research/current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md"
+        ]
+      },
+      {
+        "object_id": "UM-MULTISMALL-INCIDENCE-FLOW-APPROX-v1",
+        "version": 1,
+        "title": "原生多 small 关联的两类容量流",
+        "kind": "定理",
+        "truth_status": "proved",
+        "model": "显式普通 UM，有限处理时间为 {1,1/k}，允许一个任务有多个 small 端。",
+        "statement": "无 small 端的任务 Q 用单位流得最小瓶颈 B，其余用 small 流得 F；合并给实际峰≤B+F/k≤B+max_i ceil(Σ_{j:i∈S_j}1/|S_j|)/k。每件 small 任务至少 D≥2 端且每行≤k 个 small 关联时比率≤5/3；每件至少 k 端且行预算同前时，OPT≤1+1/k 当且仅当 Q 有单位匹配，否则 OPT≥2。",
+        "quantifiers": "对每个 k≥2、每个此类显式实例；两个附加保证分别要求对应列度和行度。",
+        "assumptions": [
+          "所有任务至少一合法端",
+          "Q 与其余任务分开但在同一原机器实际合并"
+        ],
+        "scope": "原生 small-incidence 结构域，完整原任务调度。",
+        "objections": "不用分数点冒作实际输出。one-small 归约义务与易解域分开；证明和 k−3/互异机器纠错见审查及原稿。",
+        "body": {
+          "path": "archives/unrelated-machines/state/审查/近单位PCSP与单位presence胶合双源审查--审查.md",
+          "sha256": "fce35ad0eff41983cc776e569a91ea0e5375d5c0a6ca0cf7a7c3eb6c0453f3ad",
+          "section": "2.4 native 多 small 的流边界"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/审查/近单位PCSP蕴含与物理复制义务最终范围审查--审查.md",
+            "sha256": "05f56de06de9c6a087704dff698cc949df910695f6073d1d622b4ccc3d06f9f2",
+            "section": "3.3 Native multi-small flow"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/near-unit-implication-pcsp-20261031/original/near_unit_implication_pcsp_review.md",
+            "sha256": "9ee1c800ceccb7d49dcd5addc9c80ce927ec66a7399cc05077f89e7792fb1749"
+          }
+        ],
+        "sources": [
+          "29d4881762b3773ed35d:research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md",
+          "56ab7cc3466f397ebcfe:research/current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md",
+          "aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/near_unit_implication_pcsp_review.md",
+          "aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/unit_presence_two_witness_gluing_review.md"
+        ]
+      },
+      {
+        "object_id": "UM-TWO-MEASUREMENT-UNIT-PRESENCE-SHARP-GLUING-v1",
+        "version": 1,
+        "title": "两份实际见证的单位占位逐 k 锐胶合",
+        "kind": "定理",
+        "truth_status": "proved",
+        "model": "显式普通 UM，全部有限时间 {1,1/k}，两不同原测量机 v,w。",
+        "statement": "给同实例两完整实际调度 σ0、σ1（各峰≤T=1+1/k），v,w 的单位占位分别均0与均1，则每个指定占位位对均可多项式输出全部原任务一次的合法调度，峰≤B(k)=1+ceil((k+2)/2)/k。对每个 k 有四机、2k+6 件两端任务的实例，两混合位的最小实际峰恰 B(k)，不限定模式的 OPT=T。",
+        "quantifiers": "对每个二进制整数 k≥2、每个该域实例及两输入见证、不同 v,w 和任意位对；锐族逐 k 存在。",
+        "assumptions": [
+          "单位占位指某件恰1任务，而非指定身份",
+          "两见证峰<2，单位边是真匹配"
+        ],
+        "scope": "给定两份实际见证的两位胶合，任意任务资格数。",
+        "objections": "k=2、3 时 B=2；k≥4 才绝对次二。原匹配路径/计数共同流及独立整数费用流均保原任务。",
+        "body": {
+          "path": "archives/unrelated-machines/state/审查/单位占位两见证胶合的原证与范围推进--审查.md",
+          "sha256": "37b6eedd567c910448011535b24956e2b05c07dbf33fa29037cc4762662b5ccd"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/审查/近单位PCSP与单位presence胶合双源审查--审查.md",
+            "sha256": "fce35ad0eff41983cc776e569a91ea0e5375d5c0a6ca0cf7a7c3eb6c0453f3ad",
+            "section": "3. 两份实际见证下的 unit-presence 胶合"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/两实际见证presence胶合的锐界与后重中端范围--审查.md",
+            "sha256": "703b7de591730561fb6012896e4249f52c1e6210ba03889eb19548348be3ee3c"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/uniform-presence-reset/comparisons/unit_presence_two_witness_sharp_gluing.md",
+            "sha256": "0b9ab7d50bba3b4b7c5825c6208e51d23d20cdb5460d8e7478a6ef866f986e00"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/uniform-presence-reset/original/uniform_presence_gluing_source.md",
+            "sha256": "8757dbdf7b3206febe76ba925092b3d2bb8e1eb87e2d29fe8ed9278a514c02ea"
+          }
+        ],
+        "sources": [
+          "68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/uniform_presence_gluing_source.md",
+          "68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md",
+          "68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/unit_presence_two_witness_gluing_review.md"
+        ]
+      },
+      {
+        "object_id": "UM-TWO-MEASUREMENT-TINY-PRESENCE-GLUING-v1",
+        "version": 1,
+        "title": "不等 tiny 时间的两位单位占位胶合",
+        "kind": "定理",
+        "truth_status": "proved",
+        "model": "显式普通 UM，有限时间在 {1}∪[0,a]，二进制有理 0≤a<1。",
+        "statement": "给同一实例峰≤T=1+a 的两份完整调度，使两不同测量机在前者单位占位均0、后者均1。每个指定两位模式可用完整原任务构造，峰≤3T/2。奇 k≥3 的 a=1/k 单位族使统一系数锐；a=0 可实际≤1。",
+        "quantifiers": "对每个所述 a、实例、两完整见证及任意两位模式；系数锐性是有参数族达到而非每个 a。",
+        "assumptions": [
+          "每原任务仅一次执行",
+          "两份实际见证作为输入"
+        ],
+        "scope": "给定见证的两位占位；允许 tiny 不等、0、tiny/unit 切换。",
+        "objections": "a<1/3 才从统一界推出绝对峰<2，a=1/3 有混合值2。两个证明是匹配/虚项二染色与直接原 job 槽整数费用流。",
+        "body": {
+          "path": "archives/unrelated-machines/state/审查/tiny配对槽独立证明与重中端胶合的分域审查--审查.md",
+          "sha256": "2ab2890104c9a4c5100861da1c071262591c95586bd8b82561a7b52a158bc9b5",
+          "section": "Tiny：直接对原jobs配对槽，不靠virtual任务证明"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/审查/近单位PCSP与单位presence胶合双源审查--审查.md",
+            "sha256": "fce35ad0eff41983cc776e569a91ea0e5375d5c0a6ca0cf7a7c3eb6c0453f3ad",
+            "section": "3.3 tiny、heavy-medium 扩展及 sharp 族"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/两实际见证presence胶合的锐界与后重中端范围--审查.md",
+            "sha256": "703b7de591730561fb6012896e4249f52c1e6210ba03889eb19548348be3ee3c",
+            "section": "不等tiny端的共同加权半整化"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/uniform-presence-reset/comparisons/unit_presence_two_witness_sharp_gluing.md",
+            "sha256": "0b9ab7d50bba3b4b7c5825c6208e51d23d20cdb5460d8e7478a6ef866f986e00"
+          }
+        ],
+        "sources": [
+          "68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/unit_presence_two_witness_gluing_review.md",
+          "68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/tiny_presence_gluing_independent_source.md",
+          "68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/heavy_medium_strict_witness_presence_gluing_review.md"
+        ]
+      },
+      {
+        "object_id": "UM-HEAVY-MEDIUM-STRICT-WITNESS-PRESENCE-GLUING-v1",
+        "version": 1,
+        "title": "重/中端间隔下的两份严格见证占位胶合",
+        "kind": "定理",
+        "truth_status": "proved",
+        "model": "显式普通 UM，给同实例两完整实际调度；只对其实际使用端要求 medium [0,aT] 或 heavy [(1−ε)T,T]。",
+        "statement": "给定两不同测量机在两见证的 heavy 占位分别00和11，则任意指定位对可仅用每原任务两个见证端确定性构造实际分配，峰≤[3/2+(ε+a)/2]T<2T。间隔≥κ时≤(2−κ/2)T。",
+        "quantifiers": "对每个有理 T>0、0≤ε<1/2、0≤a<1−ε、每个满足条件实例和两见证、任意指定两位。",
+        "assumptions": [
+          "两见证各自峰≤T",
+          "未使用资格任意；不增原任务",
+          "占位不指定原任务身份"
+        ],
+        "scope": "重/中分离的已给定实际见证；不等 heavy 时间和时间0允许。",
+        "objections": "单路翻转的 heavy 增量 εT 与新增 medium aT 可同机叠加；T=0 域外。两冻结证明为同主构造，历史全文件认证范围不移植，未证全参数锐性。",
+        "body": {
+          "path": "archives/unrelated-machines/state/证明/重中端严格双见证的完整分量胶合--证明.md",
+          "sha256": "343c30ab0e8341493a50b0ec4ab922584fae15c7d88866cfa648e567e2d3aa68"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/审查/重中端胶合的Exact先验与最终组合范围--审查.md",
+            "sha256": "7e6bc5e91fe3ec31c9eec508e08c9a3e2781084efa271f54be387792ce5c4611"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/tiny配对槽独立证明与重中端胶合的分域审查--审查.md",
+            "sha256": "2ab2890104c9a4c5100861da1c071262591c95586bd8b82561a7b52a158bc9b5",
+            "section": "Heavy–medium：改变见证容量和时间规则的新ID"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/两实际见证presence胶合的锐界与后重中端范围--审查.md",
+            "sha256": "703b7de591730561fb6012896e4249f52c1e6210ba03889eb19548348be3ee3c",
+            "section": "后续有间隔heavy/medium：引入medium本身不充分"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/uniform-presence-reset/comparisons/unit_presence_two_witness_sharp_gluing.md",
+            "sha256": "0b9ab7d50bba3b4b7c5825c6208e51d23d20cdb5460d8e7478a6ef866f986e00"
+          }
+        ],
+        "sources": [
+          "68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/heavy_medium_presence_strict_witness_gluing_exact_v1.md",
+          "68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/heavy_medium_presence_strict_witness_gluing_proof_v1.md",
+          "68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/heavy_medium_presence_strict_witness_gluing_independent_review_v1.md"
+        ]
+      },
+      {
+        "object_id": "UM-NEAR-UNIT-PHYSICAL-COPY-OPEN",
+        "version": 1,
+        "title": "近单位 PCSP 到普通 UM 的物理复制与低载解码义务",
+        "kind": "开放义务",
+        "truth_status": "open",
+        "model": "一般 strict/weak PCSP 源与目标显式普通 UM；物理任务为 one-hot 单件原任务。",
+        "statement": "仍需构造总位多项式编译，使 strict YES 产生同一原矩阵的统一低峰实际分配，而目标任一低峰完整实际调度都可解码为 weak 源赋值；须共同处理 fanout、三类端口、任务出现次数和全机负载。",
+        "quantifiers": "存在可计算编译；所有承诺源输入；YES 存在一份完整实际调度；soundness 对目标全部低峰完整调度。",
+        "assumptions": [
+          "抽象源 hard 不带物理次数约束",
+          "保原任务唯一性、端口资格和共同容量"
+        ],
+        "scope": "当前没有可用的编译或近二 hardness；数学开放，身份明确。",
+        "objections": "裸占位两实际见证可胶合，native 多 small 易解合同和 Feder weak soundness 失败分别限制候选；不能由它们推出一般不可能。",
+        "body": {
+          "path": "archives/unrelated-machines/state/审查/近单位PCSP蕴含与物理复制义务最终范围审查--审查.md",
+          "sha256": "05f56de06de9c6a087704dff698cc949df910695f6073d1d622b4ccc3d06f9f2",
+          "section": "3. 物理 UM 编译的真实 obligations"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/审查/近单位PCSP与单位presence胶合双源审查--审查.md",
+            "sha256": "fce35ad0eff41983cc776e569a91ea0e5375d5c0a6ca0cf7a7c3eb6c0453f3ad",
+            "section": "4. 两源关系、反面用途和未闭义务"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/near-unit-implication-pcsp-20261031/original/near_unit_implication_pcsp_review.md",
+            "sha256": "9ee1c800ceccb7d49dcd5addc9c80ce927ec66a7399cc05077f89e7792fb1749"
+          }
+        ],
+        "sources": [
+          "68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/near_unit_implication_pcsp_review.md",
+          "35763d19e84e87d2e95a",
+          "29d4881762b3773ed35d:research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md",
+          "56ab7cc3466f397ebcfe:research/current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md"
+        ]
+      },
+      {
+        "object_id": "UM-UNRELATED-AUX-HEAVY-READOUT-BULK-OR-COMMIT-SPLIT-v3",
+        "version": 1,
+        "title": "重正读口 ring 的两严格见证全 False 构造",
+        "kind": "定理",
+        "truth_status": "proved",
+        "model": "完整显式 ring 普通 UM，r≥2、偶 k≥2、有理 1/2<ρ<1；辅助 J 仅可去内部 I（任意非负有理）或正 C（全部有限端在 (1/2,1]）。",
+        "statement": "给同一实例两份峰≤1 完整见证，分别仅不同 u、v 为 True，令 c_a^t 为见证 t 中在 a 的正 C 上全部 J 数，K_a=ceil((c_a^u+c_a^v)/2)。可位多项式给出全 False 完整实际调度：每 J 只用其两见证端，I≤3/2，M/C≤1 且每台恰一真实任务；负 pool≤1/k，正 pool≤1+max(0,K_a−1)/k，峰≤3/2。",
+        "quantifiers": "对每个合域 ring 与 J、每对不同 u,v 和两完整同 P 见证；一次共同原任务输出。",
+        "assumptions": [
+          "辅助不能接负 C/M/pool；backbone 不接 I",
+          "正 C 严格大于 1/2 保证至多一 J；同编号 b 与 J 不共居",
+          "False strict 的正 C J 数≤1"
+        ],
+        "scope": "保 v3 的计数与每台 M/C 一件原任务性质；其实际 C 负载不必恰1。",
+        "objections": "v4 广义端口放宽不保 M/C≤1。这里不寻找未知 strict 见证、不作 source NO 归约；原作者与独立稿各有 flow 编码和真实 ring 回填。",
+        "body": {
+          "path": "archives/unrelated-machines/state/证明/重读口批量全假的计数容量与原任务证明--证明.md",
+          "sha256": "8875427a48797e8647e3e11307df74f44866b9e9b25e092d00f333890a613d76"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/审查/批量辅助三版读后与重读口到一般插值的范围链--审查.md",
+            "sha256": "4cb2dba7cec7bc4e9f905c6d2534ce2795da605a21ffdf129c1610f736cc793b"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/双见证批量插值与成束耦合细分边界双源审查--审查.md",
+            "sha256": "52dae909cb8887a1a8a4373c651c52e3082603e77a4b9afc58602931ea3bfdb6",
+            "section": "1. v3 的完整域、输入量词和结论"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/双见证批量插值与成束耦合细分边界双源审查--审查.md",
+            "sha256": "52dae909cb8887a1a8a4373c651c52e3082603e77a4b9afc58602931ea3bfdb6",
+            "section": "2. strict 计数和共同流的实际证明"
+          },
+          {
+            "path": "archives/unrelated-machines/state/资源/真实源NO全调度解码路线卡的历史合同--资源.md",
+            "sha256": "d3bbfc851c809e5e6fba22aa50e39709ef92a576ebbc2b5848ff50f8e531d9a7",
+            "section": "卡所指的两个实际入口"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/bulk-readout-boundary-history/derived/bulk_or_commit_canonical_v3_sections_1_5.md",
+            "sha256": "df8d61b09dcdce43f7b76d50c8c981e80d91cdcce5a3a28b063e4cd317004a48"
+          }
+        ],
+        "sources": [
+          "68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/unrelated_aux_heavy_readout_bulk_or_commit_split_statement_only_v3.md",
+          "68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/unrelated_aux_heavy_readout_bulk_or_commit_split_proof_v3.md",
+          "68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/unrelated_aux_heavy_readout_bulk_or_commit_split_statement_first_review_v3.md"
+        ]
+      },
+      {
+        "object_id": "UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1",
+        "version": 1,
+        "title": "逐资源正权畸变的完整 flat UM 实际近二界",
+        "kind": "定理",
+        "truth_status": "proved",
+        "model": "显式完整 ordinary flat UM，非空组与 indexed states；state 私有权 W_x≤1，selector 时间1，原 incidence 在对应资源端时间1。",
+        "statement": "令 κ 为同一资源上正 private 权的最大/最小比之最大值（至少1）。对每个固定实 α>4，输出完整原任务调度 C≤2−(2−OPT)/(ακ)≤(2−1/(ακ))OPT。带 baseline b_x=1−W_x 的 V 恰有 OPT=2−V；restricted Santa 中间值 V/κ≤V_-≤V。若所有像 κ≤κ₀ 且 ε<1/(ακ₀)，可分 YES OPT≤1 和 NO OPT≥2−ε。",
+        "quantifiers": "每个固定 α>4、所有该域有限显式二进制有理输入；固定 κ₀ 和严格 ε 条件下的额外 promise。",
+        "assumptions": [
+          "每组 selector 和全部未选状态原 jobs 均在完整矩阵",
+          "使用已发表 Cheng–Mao fixed-a>4 restricted Santa 定理，取固定有理 a<α",
+          "零权排除于 κ；不用预知 OPT 或 κ 界"
+        ],
+        "scope": "任意资源跨组度；bound 随实例 κ。不能套到另一个 home/sink 编译或 κ 无界的一致保证。",
+        "objections": "C=2 端点由全 private 调度独立处理；分离阈值固定有理且须严格间隔。后端未在仓库实现；945 小例不认证一般后端。",
+        "body": {
+          "path": "archives/unrelated-machines/state/定理/逐资源正权畸变与κ边界--定理.md",
+          "sha256": "b783d56af21a6fe65deb8bf69608a22bf16b31f74b1fa6ecbd9b0f130f77db6a"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/审查/资源畸变审查的真实先验与阈值修补--审查.md",
+            "sha256": "8db949569f264ddfe92ee2e5979271bf8986a21ccef0729139be6ed65493793f"
+          },
+          {
+            "path": "archives/unrelated-machines/state/证明/资源畸变的双表示与全任务回填--证明.md",
+            "sha256": "8d5826c4f7ef14bff433f182e2cde51678a89479c0d568fb29a6fd13242574b4"
+          },
+          {
+            "path": "archives/unrelated-machines/state/资源/资源畸变的双路有限穷举与历史运行--资源.md",
+            "sha256": "be2d5088e347cd658508913a2af468eea2b6fc57a4b37c34441ee0362f56404b"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/逐资源正权畸变与固定κ边界审查--审查.md",
+            "sha256": "d15dd5ab4818e0c9ab8f33c867bab03ad326498c0bc719941241de848da0880e"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/cyclic-resource-distortion/original/resource_distortion_flat_menu_review.md",
+            "sha256": "7859b1ee8f0fd880dbd78ef88d47aabdd58e1b588abe02601263286c078fe9a2"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/cyclic-resource-distortion/original/resource_distortion_flat_menu.py",
+            "sha256": "0331f42d656f20363742de402f2f5de4d60d7c56f923cc9c31ed007eab039b75"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/cyclic-resource-distortion/original/resource_distortion_independent_audit.py",
+            "sha256": "63673ce192f84e11f8cb948d7e393cc88732aeaa1da49191de3abad66c4fb488"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/cyclic-resource-distortion/comparisons/resource_distortion_flat_menu_audit.json",
+            "sha256": "bdce155db03e7f8f2683107931a923a01e59a2e2323f13769466e002926ebeba"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/cyclic-resource-distortion/comparisons/resource_distortion_independent_audit.json",
+            "sha256": "532d588f9d58d1d2ab007b1b04c4a0cb02fa83fbeaf1874b95c3cadb71fc63a7"
+          }
+        ],
+        "sources": [
+          "68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/resource_distortion_flat_menu_rounding.md",
+          "68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/resource_distortion_flat_menu_review.md",
+          "68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/resource_distortion_flat_menu_author_final_read.md",
+          "68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/resource_distortion_flat_menu_statement_first_review.md"
+        ]
+      },
+      {
+        "object_id": "UM-NORMALIZED-MENU-PARTIAL-QUOTA-WELFARE-FLOOR-v1",
+        "version": 1,
+        "title": "部分激活归一化菜单的高质量组福利地板",
+        "kind": "定理",
+        "truth_status": "proved",
+        "model": "显式归一化菜单，每组非空 indexed states，每态正/零有理权和1；不交资源束，质量 f_g 为原菜单最大值。",
+        "statement": "给有理 λ≥0，组行和≤1、总质量 q、每资源正支撑列和≤1。多项式输出不交 bundles，任意固定有理 0<δ<1−1/e 有 H_δ≥(1−1/e−δ)q/(1−δ)，q>0 时 H_{3/8}>2q/5。YES 有至少 q 个质量1组，NO 每次 H_{3/8}<βq、β≤3/8 的 promise 可由 LP 可行性区分。",
+        "quantifiers": "每个显式输入、每个有理 0<q≤组数和每份给定 λ；每个固定 δ；q=0 单独返回空束。",
+        "assumptions": [
+          "列约束按正支撑不按权值",
+          "用 W−δA 同时计实际激活数",
+          "精确有理 CDF 条件期望，重新读取原菜单 attaining state"
+        ],
+        "scope": "部分激活 F2；不承诺全组达到常数、一般 XOS/NSW 或 UM 求解。",
+        "objections": "实际激活数 A 不等于 q。β 是被禁止高组比例；旧低组比例须互补。e 仅证明使用，有限程序只接给定见证。",
+        "body": {
+          "path": "archives/unrelated-machines/state/定理/部分激活菜单福利地板--定理.md",
+          "sha256": "691933c9e406e557f5f3e565a8051731049600e71c4e3422109d2e6aa4e75a99"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/state/资源/部分激活菜单福利的精确条件期望原程序--资源.md",
+            "sha256": "4d01915f50e93147d6131c4110c4f89ee0d0ef13dcb7134991c0da315a7f8844"
+          },
+          {
+            "path": "archives/unrelated-machines/state/审查/部分激活菜单福利地板范围审查--审查.md",
+            "sha256": "e08d30d9f53f33d2cd556791558cdcd2f828bb57cfa0559ffab3f1981a87bc7f"
+          },
+          {
+            "path": "tools/evidence/um-occupation-and-menu-primary/original/1d9b334ebced677c1709.py",
+            "sha256": "ee41f5fd20993dff6ecdf7103d5930793654201557b83c293f9b929e3d971e53"
+          }
+        ],
+        "sources": [
+          "68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
+          "68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/normalized_menu_partial_quota_welfare_review.md"
+        ]
+      }
+    ],
+    "materials": [
+      {
+        "path": "archives/unrelated-machines/state/审查/近单位PCSP与单位presence胶合双源审查--审查.md",
+        "sha256": "fce35ad0eff41983cc776e569a91ea0e5375d5c0a6ca0cf7a7c3eb6c0453f3ad",
+        "disposition": "objects",
+        "object_ids": [
+          "UM-MULTISMALL-INCIDENCE-FLOW-APPROX-v1",
+          "UM-NEAR-UNIT-PCSP-EXACT-MINION-v1",
+          "UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1",
+          "UM-NEAR-UNIT-PHYSICAL-COPY-OPEN",
+          "UM-TWO-MEASUREMENT-TINY-PRESENCE-GLUING-v1",
+          "UM-TWO-MEASUREMENT-UNIT-PRESENCE-SHARP-GLUING-v1"
+        ],
+        "reason": "实读 §2–4：精确 minion、一般源难性、native 流、三个已给见证胶合及物理复制义务。ternary 独立正式主证在 0096，另列精确路由。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/tiny配对槽独立证明与重中端胶合的分域审查--审查.md",
+        "sha256": "2ab2890104c9a4c5100861da1c071262591c95586bd8b82561a7b52a158bc9b5",
+        "disposition": "objects",
+        "object_ids": [
+          "UM-HEAVY-MEDIUM-STRICT-WITNESS-PRESENCE-GLUING-v1",
+          "UM-TWO-MEASUREMENT-TINY-PRESENCE-GLUING-v1"
+        ],
+        "reason": "实读原任务槽独立证明、uniform/tiny 实读先验及 heavy 新范围；旧有限枚举不认证新域。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/证明/重中端严格双见证的完整分量胶合--证明.md",
+        "sha256": "343c30ab0e8341493a50b0ec4ab922584fae15c7d88866cfa648e567e2d3aa68",
+        "disposition": "objects",
+        "object_ids": [
+          "UM-HEAVY-MEDIUM-STRICT-WITNESS-PRESENCE-GLUING-v1"
+        ],
+        "reason": "实读完整重匹配分量与共同配对舍入，核翻转叠加和全部原机界。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/单位与异权辅助分摊的见证和版本边界--审查.md",
+        "sha256": "1b333d9a1c787c6788e60ef355ddfb81b8560e9de418355b3cec3dec1261a70f",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/证明/逐机统一与异权辅助的共同流及双回填--证明.md",
+        "sha256": "053ea2ea11c9c91907c0cdfb86d052d63fecd0dc4805dbbcda57a5747f6811bf",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/批量辅助三版读后与重读口到一般插值的范围链--审查.md",
+        "sha256": "4cb2dba7cec7bc4e9f905c6d2534ce2795da605a21ffdf129c1610f736cc793b",
+        "disposition": "attachment",
+        "object_ids": [
+          "UM-UNRELATED-AUX-HEAVY-READOUT-BULK-OR-COMMIT-SPLIT-v3"
+        ],
+        "reason": "实读 v1/v2/v3 冻结先验、v3 旧8153B规范、三作者 Proof 读后；后两节的 v4 放宽域独立路由。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/证明/重读口批量全假的计数容量与原任务证明--证明.md",
+        "sha256": "8875427a48797e8647e3e11307df74f44866b9e9b25e092d00f333890a613d76",
+        "disposition": "objects",
+        "object_ids": [
+          "UM-UNRELATED-AUX-HEAVY-READOUT-BULK-OR-COMMIT-SPLIT-v3"
+        ],
+        "reason": "完整 v3 主证，含两 flow 编码、两原任务回填、全机界与量词；第7节说明 v2/v4 非同身份。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/重中端胶合的Exact先验与最终组合范围--审查.md",
+        "sha256": "7e6bc5e91fe3ec31c9eec508e08c9a3e2781084efa271f54be387792ce5c4611",
+        "disposition": "attachment",
+        "object_ids": [
+          "UM-HEAVY-MEDIUM-STRICT-WITNESS-PRESENCE-GLUING-v1"
+        ],
+        "reason": "实读重/中端五源身份、Proof/最终组合所覆盖义务、控制字节及 T=0 措辞修正。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/单位占位两见证胶合的原证与范围推进--审查.md",
+        "sha256": "37b6eedd567c910448011535b24956e2b05c07dbf33fa29037cc4762662b5ccd",
+        "disposition": "objects",
+        "object_ids": [
+          "UM-TWO-MEASUREMENT-UNIT-PRESENCE-SHARP-GLUING-v1"
+        ],
+        "reason": "实读原 uniform 九节证明的归档与完整构造、显式锐族和参数端点。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/两实际见证presence胶合的锐界与后重中端范围--审查.md",
+        "sha256": "703b7de591730561fb6012896e4249f52c1e6210ba03889eb19548348be3ee3c",
+        "disposition": "attachment",
+        "object_ids": [
+          "UM-HEAVY-MEDIUM-STRICT-WITNESS-PRESENCE-GLUING-v1",
+          "UM-TWO-MEASUREMENT-TINY-PRESENCE-GLUING-v1",
+          "UM-TWO-MEASUREMENT-UNIT-PRESENCE-SHARP-GLUING-v1"
+        ],
+        "reason": "实读三域量词、完整原 job 还原、两种 uniform 证明、tiny 系数锐性与重/中端后续范围。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/文献/Feder--扇出受限约束系统与广义拟阵--文献.md",
+        "sha256": "8af44fe3ed624ad55d9ee2c39369ea2354a9d9616b4f371b50297fb4296011c9",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/近单位PCSP蕴含与物理复制义务最终范围审查--审查.md",
+        "sha256": "05f56de06de9c6a087704dff698cc949df910695f6073d1d622b4ccc3d06f9f2",
+        "disposition": "objects",
+        "object_ids": [
+          "UM-MULTISMALL-INCIDENCE-FLOW-APPROX-v1",
+          "UM-NEAR-UNIT-PCSP-EXACT-MINION-v1",
+          "UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1",
+          "UM-NEAR-UNIT-PHYSICAL-COPY-OPEN"
+        ],
+        "reason": "实读精确 minion、一般 hardness、普通 CSP 迁移边界、native 流和物理复制义务；§4 ternary 单独路由主身份。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/文献/Davies-Rothvoss-Zhang--Santa拟阵超图--文献.md",
+        "sha256": "e475210850b0ad827ccfbd5b080c482d092e15d01ebda4ceca91560f93889ac6",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/资源畸变审查的真实先验与阈值修补--审查.md",
+        "sha256": "8db949569f264ddfe92ee2e5979271bf8986a21ccef0729139be6ed65493793f",
+        "disposition": "attachment",
+        "object_ids": [
+          "UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1"
+        ],
+        "reason": "实读逐资源畸变审查的实际先验与有理阈值补丁，外部 Cheng–Mao 与 DRZ 版本不混。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/定理/逐资源正权畸变与κ边界--定理.md",
+        "sha256": "b783d56af21a6fe65deb8bf69608a22bf16b31f74b1fa6ecbd9b0f130f77db6a",
+        "disposition": "objects",
+        "object_ids": [
+          "UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1"
+        ],
+        "reason": "完整 W≤1 逐资源正权 κ 算法、所有原 jobs 回填和严格固定κ筛选正文。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/证明/资源畸变的双表示与全任务回填--证明.md",
+        "sha256": "8d5826c4f7ef14bff433f182e2cde51678a89479c0d568fb29a6fd13242574b4",
+        "disposition": "attachment",
+        "object_ids": [
+          "UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1"
+        ],
+        "reason": "实读 bonus 与规范 baseline 两表示、双向实际值/调度关系和未知目标处理。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/资源/资源畸变的双路有限穷举与历史运行--资源.md",
+        "sha256": "be2d5088e347cd658508913a2af468eea2b6fc57a4b37c34441ee0362f56404b",
+        "disposition": "attachment",
+        "object_ids": [
+          "UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1"
+        ],
+        "reason": "归逐资源畸变，有限945例双路原程序和证书；不提升为定理或软件后端。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/定理/部分激活菜单福利地板--定理.md",
+        "sha256": "691933c9e406e557f5f3e565a8051731049600e71c4e3422109d2e6aa4e75a99",
+        "disposition": "objects",
+        "object_ids": [
+          "UM-NORMALIZED-MENU-PARTIAL-QUOTA-WELFARE-FLOOR-v1"
+        ],
+        "reason": "实读部分激活 F2 的正支撑 LP、计罚确定化、两种高组结论、严格 promise 与 q=0 边界。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/门控归一化FSLP四源清洗--审查.md",
+        "sha256": "2df6beb69a4f267953dd2298a41b153fd5110467acadde09df6b0601dca07b64",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md",
+        "sha256": "a5d9a684e8d8413457f5cf999e28b8a6aa93b140256be3031d6f3e2e02742195",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/归一化门控菜单v2三源精读与13-8算法版本审查--审查.md",
+        "sha256": "a4a7e0a28927697fa92175ad43d78a94c1bffdd967d447bc54606c172e493cc5",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/近完美归一化robust源四源审查--审查.md",
+        "sha256": "3fc6b21c3c331f5406792029de5c5ccd385cebc6a1040a1ea8589d48a9c8b5ce",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/引理/显式均匀束robust源的福利排除域--引理.md",
+        "sha256": "433f623b79db8ac16c6a15e6a427512ac2c8245ebc24e024eb10d923746adf94",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/资源/归一化配置与原任务矩证书的层次边界--资源.md",
+        "sha256": "3cac27a267c0fd52ef50090c91626c5cc52da040ac6ed88a95d6fd67e966728e",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/单层平方根配额与单外层选择器双源审查--审查.md",
+        "sha256": "7f319b14bea348bd91050571205bbdec8666540d76f1bab58a79d51d9fe7ead3",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/原作业SH3子树流与包含容量双源续审查--审查.md",
+        "sha256": "df902f2dd76c9c5447a742e1c682a511a8fae95c9d1af7b8e00c350d27cad6f9",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/集合包含入口切陈述先行重构与实阈值边界--审查.md",
+        "sha256": "c1883604080ff7945faab61a479603b4a2fd61e2c61942aa8c0d266d5fdb82a8",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/SH3包含切口二项式有限审计--审查.md",
+        "sha256": "427538a387f63af62c5b266b8be232c47ed977adb977dd739c32743fe47d99c9",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/资料/rawSH3条件子树流与集合包含切--资料.md",
+        "sha256": "3c2e6ed26705e86bab0020f51e7d59f9f9f57a57892722f632eb11fa447b3507",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md",
+        "sha256": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/计算/共享终端k2局部Gram的原程序重建--计算.md",
+        "sha256": "137b42b6063cbfff3c768540365f2d6d0834f7308690bc5830c22dbd414ed5c1",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/资源/稀释终端与共享逃逸的分离证书--资源.md",
+        "sha256": "4a9af533d068b13a70b6936044122017a5067ebc423b2f9c256976d67fe8113a",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/计算/稀释共享逃逸独立原程序的部分探针与全部匹配--计算.md",
+        "sha256": "52f22455dae427e6ff8d3b4a77659d2e672baa2f38bbd2ebc27f9cddafe8329d",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/计算/稀释终端与共享逃逸的全边原程序复跑--计算.md",
+        "sha256": "c7881cc9ac23ec2c03cede874e7e02c0d94a670fe9090879bb0d64e4d5c57afc",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/稀释逃逸行度与共享终端局部审计--审查.md",
+        "sha256": "db8f4dda3fe86d8f3f7cf2ad3c4ac8897170d1ef5c3c5a5be8e3d703e779357d",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/计算/整行CONFIG有限差分交易的四例原程序复跑--计算.md",
+        "sha256": "0407962deb7c13b51bb45bd24b252cd8e7ea88703a236eb50b2926a06783b2f4",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/鲁棒双端环与七态二次局部核双源审查--审查.md",
+        "sha256": "e88a91183512a0d6e6dc4b63f8168ae213a0d60470de5726cd9ddd4e4d80730e",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/资源/近二源归约研究入口的数学范围与历史接续--资源.md",
+        "sha256": "2be5e7027e2c38638d7d78074c1200df4cc711d144bad32d8f188750611f410b",
+        "disposition": "needs-decision",
+        "object_ids": [],
+        "reason": "本轮尚未完成精确处置，保留下一次读取。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/资源/部分激活菜单福利的精确条件期望原程序--资源.md",
+        "sha256": "4d01915f50e93147d6131c4110c4f89ee0d0ef13dcb7134991c0da315a7f8844",
+        "disposition": "attachment",
+        "object_ids": [
+          "UM-NORMALIZED-MENU-PARTIAL-QUOTA-WELFARE-FLOOR-v1"
+        ],
+        "reason": "实读规范 Fraction 原程序的给定见证合同与有限复跑；附着 F2，不把原 main 当一般 LP 搜索。"
+      }
+    ],
+    "edge_files": []
+  },
+  "receipt_draft": {
+    "schema": 2,
+    "task_id": "register-ab98f323ad-0103",
+    "owner": "Boss6",
+    "baseline": {
+      "path": "research/registration/baseline.json",
+      "sha256": "5d5737ab6d07552b48925bdb936dae70490e8de1ee0da2b380bb2d16dd5690cf"
+    },
+    "batch_file": {
+      "path": "research/registration/batches/register-ab98f323ad-0103.json",
+      "sha256": "eba0c4a19733323bdd6122c2648673dfd95415cfa8e76fe39cd53657cd0db268"
+    },
+    "assets": [
+      {
+        "path": "research/registration/batches/register-ab98f323ad-0103.json",
+        "sha256": "eba0c4a19733323bdd6122c2648673dfd95415cfa8e76fe39cd53657cd0db268"
+      }
+    ],
+    "allocated_object_ids": [],
+    "id_allocations": {},
+    "legacy_aliases": [],
+    "reading_scope": {
+      "method": "登记实读正式材料，复用完整成熟证明；定向读承重条件、纠错、来源及唯一标题。历史审查/运行仅追溯。",
+      "material_sections": [
+        {
+          "path": "archives/unrelated-machines/state/审查/近单位PCSP与单位presence胶合双源审查--审查.md",
+          "sha256": "fce35ad0eff41983cc776e569a91ea0e5375d5c0a6ca0cf7a7c3eb6c0453f3ad",
+          "scope": "实读 §2–4：精确 minion、一般源难性、native 流、三个已给见证胶合及物理复制义务。ternary 独立正式主证在 0096，另列精确路由。"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/tiny配对槽独立证明与重中端胶合的分域审查--审查.md",
+          "sha256": "2ab2890104c9a4c5100861da1c071262591c95586bd8b82561a7b52a158bc9b5",
+          "scope": "实读原任务槽独立证明、uniform/tiny 实读先验及 heavy 新范围；旧有限枚举不认证新域。"
+        },
+        {
+          "path": "archives/unrelated-machines/state/证明/重中端严格双见证的完整分量胶合--证明.md",
+          "sha256": "343c30ab0e8341493a50b0ec4ab922584fae15c7d88866cfa648e567e2d3aa68",
+          "scope": "实读完整重匹配分量与共同配对舍入，核翻转叠加和全部原机界。"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/批量辅助三版读后与重读口到一般插值的范围链--审查.md",
+          "sha256": "4cb2dba7cec7bc4e9f905c6d2534ce2795da605a21ffdf129c1610f736cc793b",
+          "scope": "实读 v1/v2/v3 冻结先验、v3 旧8153B规范、三作者 Proof 读后；后两节的 v4 放宽域独立路由。"
+        },
+        {
+          "path": "archives/unrelated-machines/state/证明/重读口批量全假的计数容量与原任务证明--证明.md",
+          "sha256": "8875427a48797e8647e3e11307df74f44866b9e9b25e092d00f333890a613d76",
+          "scope": "完整 v3 主证，含两 flow 编码、两原任务回填、全机界与量词；第7节说明 v2/v4 非同身份。"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/重中端胶合的Exact先验与最终组合范围--审查.md",
+          "sha256": "7e6bc5e91fe3ec31c9eec508e08c9a3e2781084efa271f54be387792ce5c4611",
+          "scope": "实读重/中端五源身份、Proof/最终组合所覆盖义务、控制字节及 T=0 措辞修正。"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位占位两见证胶合的原证与范围推进--审查.md",
+          "sha256": "37b6eedd567c910448011535b24956e2b05c07dbf33fa29037cc4762662b5ccd",
+          "scope": "实读原 uniform 九节证明的归档与完整构造、显式锐族和参数端点。"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/两实际见证presence胶合的锐界与后重中端范围--审查.md",
+          "sha256": "703b7de591730561fb6012896e4249f52c1e6210ba03889eb19548348be3ee3c",
+          "scope": "实读三域量词、完整原 job 还原、两种 uniform 证明、tiny 系数锐性与重/中端后续范围。"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/近单位PCSP蕴含与物理复制义务最终范围审查--审查.md",
+          "sha256": "05f56de06de9c6a087704dff698cc949df910695f6073d1d622b4ccc3d06f9f2",
+          "scope": "实读精确 minion、一般 hardness、普通 CSP 迁移边界、native 流和物理复制义务；§4 ternary 单独路由主身份。"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/资源畸变审查的真实先验与阈值修补--审查.md",
+          "sha256": "8db949569f264ddfe92ee2e5979271bf8986a21ccef0729139be6ed65493793f",
+          "scope": "实读逐资源畸变审查的实际先验与有理阈值补丁，外部 Cheng–Mao 与 DRZ 版本不混。"
+        },
+        {
+          "path": "archives/unrelated-machines/state/定理/逐资源正权畸变与κ边界--定理.md",
+          "sha256": "b783d56af21a6fe65deb8bf69608a22bf16b31f74b1fa6ecbd9b0f130f77db6a",
+          "scope": "完整 W≤1 逐资源正权 κ 算法、所有原 jobs 回填和严格固定κ筛选正文。"
+        },
+        {
+          "path": "archives/unrelated-machines/state/证明/资源畸变的双表示与全任务回填--证明.md",
+          "sha256": "8d5826c4f7ef14bff433f182e2cde51678a89479c0d568fb29a6fd13242574b4",
+          "scope": "实读 bonus 与规范 baseline 两表示、双向实际值/调度关系和未知目标处理。"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/资源畸变的双路有限穷举与历史运行--资源.md",
+          "sha256": "be2d5088e347cd658508913a2af468eea2b6fc57a4b37c34441ee0362f56404b",
+          "scope": "归逐资源畸变，有限945例双路原程序和证书；不提升为定理或软件后端。"
+        },
+        {
+          "path": "archives/unrelated-machines/state/定理/部分激活菜单福利地板--定理.md",
+          "sha256": "691933c9e406e557f5f3e565a8051731049600e71c4e3422109d2e6aa4e75a99",
+          "scope": "实读部分激活 F2 的正支撑 LP、计罚确定化、两种高组结论、严格 promise 与 q=0 边界。"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/部分激活菜单福利的精确条件期望原程序--资源.md",
+          "sha256": "4d01915f50e93147d6131c4110c4f89ee0d0ef13dcb7134991c0da315a7f8844",
+          "scope": "实读规范 Fraction 原程序的给定见证合同与有限复跑；附着 F2，不把原 main 当一般 LP 搜索。"
+        }
+      ]
+    },
+    "pending_exact_owner_routes": [],
+    "local_validation": {
+      "objects": 10,
+      "materials": 39,
+      "reused_existing_owners": [],
+      "reused_published_group_owners": []
+    },
+    "edge_files": []
+  }
+}
