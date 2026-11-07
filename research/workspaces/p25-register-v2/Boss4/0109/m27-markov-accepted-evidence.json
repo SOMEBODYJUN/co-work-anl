@@ -1,0 +1,128 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline.json",
+    "sha256": "5d5737ab6d07552b48925bdb936dae70490e8de1ee0da2b380bb2d16dd5690cf"
+  },
+  "objects": [
+    {
+      "object_id": "M-02f7731efe924dbd8f703b29440b4d1f",
+      "version": 3,
+      "title": "至多四机的树Markov逐态T补全边界",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "显式有限不相关机原处理矩阵；有限端是二进制非负有理数，任务不可拆，每原任务恰执行一次，峰为原机负载最大值。",
+      "statement": "同树Markov合同，至多四机的树为 star 或 double-star。某一中心点或一条中央边覆盖所有树边，其配置或 pair 在真实全局分布中有同态见证，并决定全部树任务方向；从该原支持态补非树任务，峰≤T。",
+      "quantifiers": "对该合同中所有至多四机连通生成树和每个正概率耦合态。",
+      "assumptions": [
+        "给真实T调度分布；每任务两端、每机对至多一任务；保单机与树边完整配置边际"
+      ],
+      "scope": "正面小规模阈值，和五机反例合起来确立同合同最小反例规模。",
+      "objections": "是存在原支持态的补全理由；未给仅凭局部边际数据搜索原分布或一般大树解码。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/五机树Markov再耦合补全反例最终审查--审查.md",
+        "sha256": "a39e260294b92937a9d22d383d78da8fa5e6ab6b7a6bb8c11afca4c7f910bb2c",
+        "section": "3. 反例的修复事实与至多四机边界"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/五机树Markov再耦合补全反例最终审查--审查.md",
+          "sha256": "a39e260294b92937a9d22d383d78da8fa5e6ab6b7a6bb8c11afca4c7f910bb2c",
+          "section": "1. 被反驳的 Markov completion 合同"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/um-tree-matching-and-configuration-primary/comparison/research/current/unrelated_machines/tree_markov_completion.md",
+          "sha256": "73628429e0c9773a3cfc083a8b3d87ef3b20004a583df6f5dce2492309a31817"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/tree-markov-completion-20261031/original/tree_markov_completion_review.md",
+          "sha256": "627ae18f30b5c34dd8a2aba95861758998a914f9fac9c7b78628b7e222e1274d"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/双件见证树Markov与类型压缩三源审查--审查.md",
+          "sha256": "a824f9134594a0962856a957b6877973c04db6866e84096635e453a8df13984b",
+          "section": "2. 五机树 Markov 再耦合：保 pair 边际仍丢非树兼容性"
+        }
+      ],
+      "sources": [
+        "archives/unrelated-machines/state/审查/五机树Markov再耦合补全反例最终审查--审查.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/tree_markov_completion_review.md",
+        "related-source:9e66cf0e6411197f7a23:research/current/unrelated_machines/tree_markov_completion.md",
+        "related-source:72369fac674ccdc4c862:evidence/runs/unrelated_machines/tree_markov_completion_audit.json",
+        "related-source:4793fd8514c206c37797:"
+      ]
+    },
+    {
+      "object_id": "UM-TREE-MARKOV-COMPLETION-NO-v1",
+      "version": 3,
+      "title": "五机生成树Markov再耦合的固定逐态补全反例",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "显式有限不相关机原处理矩阵；有限端是二进制非负有理数，任务不可拆，每原任务恰执行一次，峰为原机负载最大值。",
+      "statement": "五机路径的两份真实峰1原调度各以1/2混合。中机恒空，树边Markov再耦合产生四个各1/4态；其中左右端同时被树任务占满，非树 unit c 只可到这两端，冻结树任务的任一实际补全峰2。普通OPT=1。",
+      "quantifiers": "存在该完整五机五任务输入、固定生成树及正概率态；反驳对每一正概率态的严格<2T承诺。",
+      "assumptions": [
+        "每任务恰两有限机器、每机对至多一任务",
+        "只保单机与树边全联合边际，固定树任务再补非树任务"
+      ],
+      "scope": "确切反驳指定树、逐态、无迁移合同。主/独立证据均32个完整分配、四态各两补全。",
+      "objections": "移动树任务 a 即可峰1；保非树相关性、选择好态或换树各属另合同。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/五机树Markov再耦合补全反例最终审查--审查.md",
+        "sha256": "a39e260294b92937a9d22d383d78da8fa5e6ab6b7a6bb8c11afca4c7f910bb2c"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/独立稀释残余与树Markov完成审计--审查.md",
+          "sha256": "3eccc601fc1df8f37968c25fff9f31b3a72a722c99bd8b314dd13c47d7b42b97",
+          "section": "3. 树 Markov completion：局部拼接可能产生一个坏完成"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/五机树Markov独立原程序的逐态最优补全--计算.md",
+          "sha256": "bce0e2f08369b4fc69c16efdab49074173abc1040dc3164b4e94dde2d5e1b2c7"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/um-tree-matching-and-configuration-primary/comparison/research/current/unrelated_machines/tree_markov_completion.md",
+          "sha256": "73628429e0c9773a3cfc083a8b3d87ef3b20004a583df6f5dce2492309a31817"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/um-tree-matching-and-configuration-primary/comparison/evidence/runs/unrelated_machines/tree_markov_completion_audit.json",
+          "sha256": "cf2d1bd613e8ac0567f051cc0cf22c0e3059e1775a2e78cff3aec17a5e51b855"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/um-tree-matching-and-configuration-primary/comparison/evidence/runs/unrelated_machines/independent_tree_markov_completion_audit.json",
+          "sha256": "b4bcd5ff7e389db8c39b67615cb7adc73a6e77a62add4b65788d710a496e6e79"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/tree-markov-completion-20261031/original/tree_markov_completion_review.md",
+          "sha256": "627ae18f30b5c34dd8a2aba95861758998a914f9fac9c7b78628b7e222e1274d"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/双件见证树Markov与类型压缩三源审查--审查.md",
+          "sha256": "a824f9134594a0962856a957b6877973c04db6866e84096635e453a8df13984b",
+          "section": "2. 五机树 Markov 再耦合：保 pair 边际仍丢非树兼容性"
+        }
+      ],
+      "sources": [
+        "archives/unrelated-machines/state/审查/五机树Markov再耦合补全反例最终审查--审查.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/tree_markov_completion_review.md",
+        "related-source:9e66cf0e6411197f7a23:research/current/unrelated_machines/tree_markov_completion.md",
+        "related-source:72369fac674ccdc4c862:evidence/runs/unrelated_machines/tree_markov_completion_audit.json",
+        "related-source:4793fd8514c206c37797:"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/审查/五机树Markov再耦合补全反例最终审查--审查.md",
+      "sha256": "a39e260294b92937a9d22d383d78da8fa5e6ab6b7a6bb8c11afca4c7f910bb2c",
+      "disposition": "objects",
+      "object_ids": [
+        "M-02f7731efe924dbd8f703b29440b4d1f",
+        "UM-TREE-MARKOV-COMPLETION-NO-v1"
+      ],
+      "reason": "五机精确反例与至多四机的全部正概率态补全各登记并保共同精确边际合同。\n定向补证包：实读本文件全文，复用此处现有精确主身份，补齐独立审查、完整原证明或纠错证据；保持模型/量词/条件区分并保留原evidence全部分支，不接无owner条目、不建边。此文件全部现行主body owner如object_ids。"
+    }
+  ],
+  "edge_files": []
+}
