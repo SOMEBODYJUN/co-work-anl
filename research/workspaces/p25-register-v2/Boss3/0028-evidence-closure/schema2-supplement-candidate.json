@@ -1,0 +1,786 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline-5cd4b9018.json",
+    "sha256": "af99fb773928f3fc6bcd577ade37fbb07e8f84befbb2304158b99894ab1e56a3"
+  },
+  "objects": [
+    {
+      "object_id": "B10-STATIC-OPTIMAL-ASSIGNMENT-NO-v1",
+      "version": 3,
+      "title": "52客户四人完整SPE的最优冻结匹配一单位缺口",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限单位客户、有限非空带标签共同主题目录、单位权顺序提供者；主题允许为空、同覆盖异标签及重复选择。完整纯策略定义在全部有序历史，任意平局保留；偏离后使用同一策略的真实后继。根福利W为覆盖客户数，非零背景的未来收益和不等同于新增覆盖。",
+      "statement": "六标签、52单位客户、四人完整259节点SPE，actual3322，每人47/4、W47。唯一最优支持{0,1,4,5}覆盖全部52；全部24匹配中12个成本48、12个293/6，故min冻结成本48=W+1。反驳存在最优元组与匹配使静态冻结总利润≤W。",
+      "quantifiers": "指定22非零兴趣类型及完整259动作表；全部最优元组和所有24排列。",
+      "assumptions": [
+        "覆盖最优支持唯一性由私人客户与人数证明，未忽略重复主题",
+        "计算冻结成本不走改变后的真实后继"
+      ],
+      "scope": "强最优冻结指派存在式的精确反例。",
+      "objections": "真查询V及客户一次归属PFRR是不同量词；半覆盖余量2W−OPT=42。1953客户三人点是另一完整反例，均保留。 0033补独立2078B标准库52客户/259节点/1554含自比较及611B完整报告来源，唯一最优支持与24匹配的48、293/6精确值同原反例。该W47/OPT52不是R4的W34/OPT52；1113B根重放v1四fixture与v2/v3不同入口保各自范围，后缀1421浮点锥不构成精确对偶。 0028累计补证：保留0033独立2078B/611B合同，并加入原2869B审查、恢复4852B定义核/3789B冻结报告和不同2308B短核/957B报告。三代码消费字段不同，但均为同52客户/四人/259有序节点/1554含自身比较、唯一0145支持及24冻结匹配；285含自身平局扣259仅26非自身平局，不能把这些计数作不同证书或新运行。冻结其他actual动作与真后继不混。旧0060唯一v2已正式入表，本次累计内容以canonical v2为底升v3；0033未发表的同v2片段已在本v3全量保留，不应再平行覆盖。",
+      "body": {
+        "path": "archives/customer-attraction/state/反例/最优组合冻结匹配的一单位缺口--反例.md",
+        "sha256": "3d74c52a434d295a964e056c52b6231c62c7e4ef93cd9a8910d6c0b2b07af4a3"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/反例/静态最优主题排列的冻结后缀失败--反例.md",
+          "sha256": "609556b835bcc09071a53d7783967a4ec73ba8e69b183fa4a9365762558887a3"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/冻结指派的客户恒等式与最优比较量词--引理.md",
+          "sha256": "09cb6e1ff63c6271dc81652c82fb7f4248b438c598f2f39664503925f9ec17a4"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/局部独立审查与计数终局探索的后续边界--资源.md",
+          "sha256": "aae83dc4b36147a04381100ed6ea04a54e881220d35521ca66172101b5a9f671",
+          "section": "README的静态匹配入口：不是当前新审计"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/历史根重放与后缀锥程序的输入输出合同--资源.md",
+          "sha256": "9adf4290fa9f7dbb3ac65deb5d92dcfb32fc3a1d400487916ac627e37d7e9f37"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/四人冻结匹配独审的报告与复用边界--审查.md",
+          "sha256": "2359fd5b812647f4a4d6bbcfdc864e6d1f1986debdeb12d64e87eaa132b76bf4"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/五十二客户冻结匹配原独审的定义核与恢复证据--程序.md",
+          "sha256": "ccc0acda16da5edae088c0617eae5700980545367111edf940c33822dde1e5ff"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/相邻阈值五输入诊断与旧冻结匹配的原复核--程序.md",
+          "sha256": "84b17992a58704c1e48e0777073436524610741c699539af79c37f8acd3884e3",
+          "section": "旧FOMA独立短核实际消费什么"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/反例/最优组合冻结匹配的一单位缺口--反例.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-a0bb57fa24044a8794bc7991918a19c6/static_matching/optimal_static_matching_counterexample.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-a0bb57fa24044a8794bc7991918a19c6/static_matching/optimal_static_matching_counterexample.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-a0bb57fa24044a8794bc7991918a19c6/static_matching/static_matching_counterexample.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-a0bb57fa24044a8794bc7991918a19c6/static_matching/static_matching_counterexample.json",
+        "archives/customer-attraction/state/资源/历史根重放与后缀锥程序的输入输出合同--资源.md",
+        "archives/customer-attraction/state/审查/四人冻结匹配独审的报告与复用边界--审查.md",
+        "archives/customer-attraction/state/程序/五十二客户冻结匹配原独审的定义核与恢复证据--程序.md",
+        "archives/customer-attraction/state/程序/相邻阈值五输入诊断与旧冻结匹配的原复核--程序.md"
+      ]
+    },
+    {
+      "object_id": "M-31697dbf0acf42ecb27a433f134566e0",
+      "version": 2,
+      "title": "同一实际前缀真偏离矩阵的存在型净Q匹配付款",
+      "kind": "conjecture",
+      "truth_status": "open",
+      "model": "有限单位客户、单位权顺序提供者、有限非空共同标签目录，覆盖映射可非单射；完整纯SPE定义于全部合法有序标签历史。允许空覆盖、重复动作、零客户和任意历史依赖弱平局；每次强制行动后仍沿同一原策略的真实后继，终局客户在覆盖者间均分。",
+      "statement": "候选：存在覆盖最优恰m元组T_j及排列π，使Bπ=∑_i M_iπ(i)≥Q(c,d)−E；M_ij严格为在原σ的实际i前缀强制T_j后沿原σ完成的当前收益。因M_ij≤u_i，Bπ≤W；MATCH等价[Q−W−E]+Γπ≤0，其中Γπ=W−Bπ≥0。",
+      "quantifiers": "∀有限实例∀m≥1∀完整SPE ∃最优恰m元组∃一个共同排列；固定actual源历史，不另选分支或派生SPE。",
+      "assumptions": [
+        "强制者只由其原源节点IC付款，不在强制分支被当作新优化者",
+        "全部比较使用同一完整原策略，不能将互斥分支利润相加作为实际W"
+      ],
+      "scope": "未证的明确actual-prefix匹配充分接口。",
+      "objections": "正文为缺输入exchange README作解析条件补全，不冒缺失程序的原精确语义。累积最优前缀BILL-UP已假及离轨源收益都不能转授此固定actual合同。 0028现取得5801B实际程序及双192记录合同，确认rows_for沿原actual前缀、真实后继的M矩阵；旧缺件叙述保其当时状态。最终精确拒绝须对恢复点全部最优多重集取最小gap仍正，不能只攻一个最优J。uniform平均比Bmax更强，与本匹配身份及弱净差/WA分别保留。384浮点负值无解向量/精确dual，不认证固定锥精确上界或六人/全称结论；net缺uniform字段与当前源码序列化不符，原字节不补写。",
+      "body": {
+        "path": "archives/customer-attraction/state/证明/终局净预算的元组支持量词与条件付款--证明.md",
+        "sha256": "48d94f566501f30480fbe1fd6b6f9f5451754ca7a9bb80c95d60c5887002d137"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/净调和预算的旧证书与固定锥原审计--程序.md",
+          "sha256": "7a7698995f43282b54bdd2a0ed22348d0891beec026faae63cd383454bb5b7d0"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/实际前缀净匹配探针与均匀分配报告--程序.md",
+          "sha256": "8106d84b72b1182ca79e8278938cfabca5690ca7190dcfc9f852b413b53d80b4",
+          "section": "原候选的真实矩阵与两级付款"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/实际前缀净匹配探针与均匀分配报告--程序.md",
+          "sha256": "8106d84b72b1182ca79e8278938cfabca5690ca7190dcfc9f852b413b53d80b4",
+          "section": "固定策略锥与LP的实际含义"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/实际前缀净匹配探针与均匀分配报告--程序.md",
+          "sha256": "8106d84b72b1182ca79e8278938cfabca5690ca7190dcfc9f852b413b53d80b4",
+          "section": "源码的成功、失败、精确候选与保存分支"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/实际前缀净匹配探针与均匀分配报告--程序.md",
+          "sha256": "8106d84b72b1182ca79e8278938cfabca5690ca7190dcfc9f852b413b53d80b4",
+          "section": "版本不吻合、依赖与本轮零LP"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/证明/终局净预算的元组支持量词与条件付款--证明.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-5d61c5324e744dc0a66133207fcbd010/RESEARCH_STATE.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-5d61c5324e744dc0a66133207fcbd010/FAILED_ROUTES.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-5d61c5324e744dc0a66133207fcbd010/exchange/README.md",
+        "archives/customer-attraction/state/程序/实际前缀净匹配探针与均匀分配报告--程序.md"
+      ]
+    },
+    {
+      "object_id": "CA-FRACTIONAL-TAIL-WATERFILL-v1",
+      "version": 2,
+      "title": "分数尾水位的一份共同查询信用与利润守恒",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限单位客户、有限非空带标签共同目录、单位权顺序提供者；允许空主题、同覆盖异标签和重复选择。完整纯策略定义在全部有序历史，平局任意；每次偏离使用同一原策略的真实后继。合法背景来自有序旧前缀，非零背景的未来总利润不同于新增覆盖。",
+      "statement": "给定有限叶、合法整数背景b、一单位根A、n个单位尾和t≥0，存在同一辅助尾质量w∈[0,1]^n：原u_j≥t者保1，正质量者单位收益密度≥t，原覆盖支撑不变。令D=Σ(t−u_j)_+、客户返还h_x=1/(b_x+1+tail_w)−1/(b_x+1+tail_1)，则对所有客户子集T同时0≤ΔJ_T≤ΔQ_T=Σ_T h_x≤H=Σh_x≤D，其中Q替根，J保留完整根再插入。根返还Γ=ΔQ_A，V(w)=V(1)−Γ−ΔB_old，故Γ+ΔB_old+tΣw≤V(1)。单遍依次降低不足线者到首个水位或0即可。",
+      "quantifiers": "任意有限单位叶、合法整数背景、主题重复/空主题及t≥0；全部查询同一w。",
+      "assumptions": [
+        "w只是辅助质量，不是新的单位角色SPE",
+        "零质量密度取正侧极限",
+        "背景返还仅按准确守恒计入"
+      ],
+      "scope": "历史精确Claim的共同信用定理及退化端点。",
+      "objections": "H常数1锐；背景返还可为kD而无固定倍上界；存在无理水位1/√2。独立审查解析证明可允许实背景，但本历史Claim保持共同模型整数背景域，不静默扩域。 0028只接16个有理边界和rho=1/sqrt(2)严格有理夹逼回归；普遍共同w、全部query信用及利润守恒由既有解析证明承担。同页124客户三人完整SPE/席位差为另一已登记对象，不把水位辅助质量当新SPE或有理输出算法，不把PASS造节点。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/分数尾水位的共同查询信用与利润守恒--引理.md",
+        "sha256": "d9ca9cb82ac113e8573c6ac7f18f19019d69801c1990b675ee2d5e50e07f23eb"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/变分水位有理证书与原盲重构的精确范围--计算.md",
+          "sha256": "70715b82213f184e0d01f151235352e837b5e97450d91ce3e4d8defc2b10d2d2"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/共同查询水位的独立解析复核与边界实现--审查.md",
+          "sha256": "aa09ae3c92554dd27ff2c4c3c6dbbc77e4833b1a8ae16d4c25f9a294f93860b7"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/水位事件的共同信用与原树激励账--引理.md",
+          "sha256": "b8016751cd4d68e9236fa25dbf3b3a26c28a35b46e3205dee13190cfd86c6501"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/前缀耦合席位与尾水位边界增量审计--审查.md",
+          "sha256": "5fc0d4ae04a7bc87c6330f5192d4a10e6fab6f626b2b3029fc0ef80cd0b1c4f6",
+          "section": "3. `customer_attraction_waterfill.json`：水位构造的 16 个有理边界和无理停点"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/前缀耦合席位与尾水位边界增量审计--审查.md",
+          "sha256": "5fc0d4ae04a7bc87c6330f5192d4a10e6fab6f626b2b3029fc0ef80cd0b1c4f6",
+          "section": "3.1 16 个有理案例的完整类别"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/前缀耦合席位与尾水位边界增量审计--审查.md",
+          "sha256": "5fc0d4ae04a7bc87c6330f5192d4a10e6fab6f626b2b3029fc0ef80cd0b1c4f6",
+          "section": "3.2 无理停点"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/引理/分数尾水位的共同查询信用与利润守恒--引理.md",
+        "archives/customer-attraction/state/审查/前缀耦合席位与尾水位边界增量审计--审查.md"
+      ]
+    },
+    {
+      "object_id": "M-d59dcfb341744dfbae60018ba3c04c0f",
+      "version": 2,
+      "title": "存在最优indexed元组与共同排列支付完整actual调和债H4",
+      "kind": "conjecture",
+      "truth_status": "open",
+      "model": "有限不同单位客户、有限非空共同带标签目录及覆盖映射、单位权顺序提供者；完整纯策略定义于全部合法有序标签历史，保空主题、重复选择、同覆盖异标签、零客户和任意离轨平局。终局客户在所有覆盖者间均分；真实偏离后沿同一原策略在改变后的有序历史续行。",
+      "statement": "完整σ actual覆盖C/负载c/W，e_T=Σ_T1/(1+c)，R0=Σ_(x∈C)1/(1+c)。d_i(T)是在原actual第i前缀强制T后沿同σ真实继续的整位收益。标准H4候选：存在达到OPT_m的indexed m元组(T_j)及共同排列π，使Σ_i[e_(T_π(i))−d_i(T_π(i))]≤R0。令S=Σd、最优并集U、O=|U|、k_x比较覆盖次数，Jout=Σ_(C\\U)c/(1+c)、REP=Σ_U(k_x−1)/(1+c)，则精确等价S≥O−W+Jout+REP；若成立，静态COV与S≤W给half。",
+      "quantifiers": "∀有限实例∀m≥1∀完整有序历史纯SPE ∃一个覆盖最优indexed恰m元组∃一个共同排列；不是∀最优元组/∀排列或同query重复m次。",
+      "assumptions": [
+        "d保原actual前缀，不改成连续已强制OPT前缀",
+        "e使用完整actual负载c，未乘α或删当前槽",
+        "重复比较主题仍计多索引与REP，零客户均取零"
+      ],
+      "scope": "标准H4本身正常登记open；原CLAIMS仅命名H4而无精确稳定Claim ID，故分配新M。",
+      "objections": "owner薄化只去REP，净差匹配还需去Jout，三者不等同。13提供者/36客户的任意同query失败37/66不反此存在量词；该完整策略本批只复用成熟报告，不新认112050比较。五人half不倒证H4。 0028补入R-cef3187B停点的原真实背景合同与(D)/(S)展开：正债仅当真实偏离分母k≥c+2，删当前槽信用只扣一次；冻结查询f不由IC直接≤u。仍是存在最优indexed元组及共同排列的H4，owner只去REP、不去Jout；十三人任意同query37/66失败及更强单前缀预算失败不反此存在量词。",
+      "body": {
+        "path": "archives/customer-attraction/state/资料/最优排列调和债与归属端点薄化的边界--资料.md",
+        "sha256": "867e798a53abb4755270a3c71ec3dc67993158a2e2349b2e60592e41369dc6c4",
+        "section": "真实query与三个端点账"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/固定替换主题的最优槽遗漏概率与付款边界--引理.md",
+          "sha256": "ea977c818b085626a06a983a9cf1d99abc6e755eeba902a9879913db0b8692f4"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/调和债务归属笔记的原审查先验与纠错范围--审查.md",
+          "sha256": "c701a637c76c9680f4bf752dbde509b05342721ffbd931096e592343745a41eb"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/实际末菜单的十三人精确点与两种固定锥原探针--程序.md",
+          "sha256": "4aef30975e40a71864700cef54a9bee2d70fd078791bc31353756929a2bc1898"
+        },
+        {
+          "path": "archives/customer-attraction/state/资料/最优排列调和债与归属端点薄化的边界--资料.md",
+          "sha256": "867e798a53abb4755270a3c71ec3dc67993158a2e2349b2e60592e41369dc6c4",
+          "section": "owner只去掉比较重复信用"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/非根中继与调和停止稿的真实背景和最小人数--资源.md",
+          "sha256": "7ce66241ec3851a76d895866269c05bef5501d888628d1a14a2737e7695cb38e",
+          "section": "H4只要求存在一个最优元组与共同排列"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/资料/最优排列调和债与归属端点薄化的边界--资料.md",
+        "archives/customer-attraction/state/资源/非根中继与调和停止稿的真实背景和最小人数--资源.md"
+      ]
+    },
+    {
+      "object_id": "M-fd7aa990e8824f67a6290331695b5f9a",
+      "version": 2,
+      "title": "最小剩余人数extra-one反例的真实后继根外信用正规形",
+      "kind": "lemma",
+      "truth_status": "conditional",
+      "model": "有限单位客户、单位权顺序提供者、有限非空共同标签目录，覆盖映射可非单射；策略保全部有序历史、空主题、重复动作、零客户与任意离轨平局。收益为客户价值在终局覆盖者间均分；强制动作后沿同一原策略的真实后继完成。根无外部负载时W等于总收益，合法非零背景下尾利润不等同全覆盖。",
+      "statement": "若全背景逐人F_r:u≥v_(r+1)(b)失败，取剩余人数最小坏点t=v_(r+1)(b)>u。对每个根A，真实根收益d_A≤u，每个同枝后继最终收益≥t，且每个后继B在A外的折扣份额≥t−d_A>0。根分支总根外信用≥(r−1)(t−d_A)，但未证明可跨根合付。",
+      "quantifiers": "在全部合法背景/目录/完整SPE中对剩余人数取最小反例；对该点每根枝、每后继量化。",
+      "assumptions": [
+        "静态对手先定全部r槽",
+        "嵌入v_r(b+1_A)≥v_(r+1)(b)",
+        "孩子继承同一原完整SPE"
+      ],
+      "scope": "逐人整数extra-one的必要反例结构。",
+      "objections": "普遍F_r当前已由银行反族否定；条件正规形仍有效。不把后继不包含根提升成后继两两不包含。 0028补3893B原最小坏子树证明：先在同一固定实例全部合法背景/余人数域取最小，再逐次嵌入同一原sigma的真实孩子得每后继≥t；原仅写r≥2，不替换后来更强r≥3，也不提供显式最小r实例。PB2475背景首利仅保证坏点存在，该合法背景不保证为空根SPE实际前缀；非SPE环菜单排序不能冒充真实孩子。0029的既有5544B审查已在当前evidence保留，本次不再造平行身份或弱版本。",
+      "body": {
+        "path": "archives/customer-attraction/state/问题/自由extra-one与iid安全值边界--问题.md",
+        "sha256": "2788cef1bcf3876f78905d0cb0aa7ff6ad0e57006815c9de7ff79da82e3f64c2"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/最小剩余人数的安全值嵌入与环菜单排序边界--审查.md",
+          "sha256": "fa6556bf90e0c433519742c5419135bd25480a86c61897b33775c4fd49db7244"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-0f99797b33de46bfb498541a0bc5fae9/security/c3317c7ab24c0a5af1b5.raw",
+          "sha256": "631a2c93666f5312c85d284dd2e33bbeebd35c47ec24227fc7c3ccac31d8e6b5"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/非根中继与调和停止稿的真实背景和最小人数--资源.md",
+          "sha256": "7ce66241ec3851a76d895866269c05bef5501d888628d1a14a2737e7695cb38e",
+          "section": "最小坏人数的归约仍保真实完整子SPE"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/问题/自由extra-one与iid安全值边界--问题.md",
+        "customer-attraction/free-extra-one-iid-security-boundaries",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/structured_maximal_membership_theta.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/structured_maximal_membership_theta.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/audit_structured_theta.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/audit_structured_theta.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/structured_theta_audit.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/structured_theta_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/minimal_extra_one_counterexample_normal_form.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/minimal_extra_one_counterexample_normal_form.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/extra_iid_probe.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/extra_iid_probe.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/extra_iid_probe_report.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/extra_iid_probe_report.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/full_weak_wp_probe.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/full_weak_wp_probe.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/full_weak_wp_report.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/full_weak_wp_report.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/README.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/README.md",
+        "archives/customer-attraction/state/资源/非根中继与调和停止稿的真实背景和最小人数--资源.md"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/customer-attraction/state/算法/固定来源路由的最大回撤与价格分离--算法.md",
+      "sha256": "a34248c8d362cbb9d3d05919e635eb63541f7bec8c5c9c4d8c0ed948611ed9ca",
+      "disposition": "objects",
+      "object_ids": [
+        "CA-FIXED-ORIGIN-RETRACTION-v1",
+        "customer-attraction/atom-retraction-zero-rebate-prices-and-failed-cuts",
+        "M-b36ea945fc41428c9aed003ae371dc92"
+      ],
+      "reason": "完整连续实读成熟正文及必要共享模型，区分本页各精确命题/量词/条件与证据；正文/证明复用，不新清洗或重证明全仓，不把历史计算或普通算术造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/初始客户边独立回撤与共同价格分散返还--定理.md",
+      "sha256": "96096bf3cdb9ef2a6b219b48ebc432114790692c523294815e046286c61b33e3",
+      "disposition": "objects",
+      "object_ids": [
+        "ATOM-RETRACTION-v1",
+        "DISPERSION-REBATE-v1",
+        "CA-FIXED-ORIGIN-RETRACTION-v1",
+        "customer-attraction/atom-retraction-zero-rebate-prices-and-failed-cuts",
+        "M-b36ea945fc41428c9aed003ae371dc92"
+      ],
+      "reason": "完整连续实读成熟正文及必要共享模型，区分本页各精确命题/量词/条件与证据；正文/证明复用，不新清洗或重证明全仓，不把历史计算或普通算术造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/原子独立回撤的零返还价格与失败切面--审查.md",
+      "sha256": "271789220b2dd7a035dfa6161ba2018d736f2d96aaa6acb1db3609f8eb3c655e",
+      "disposition": "objects",
+      "object_ids": [
+        "ATOM-RETRACTION-v1",
+        "DISPERSION-REBATE-v1",
+        "customer-attraction/atom-retraction-zero-rebate-prices-and-failed-cuts",
+        "M-b36ea945fc41428c9aed003ae371dc92",
+        "CA-FIXED-ORIGIN-RETRACTION-v1"
+      ],
+      "reason": "完整连续实读成熟正文及必要共享模型，区分本页各精确命题/量词/条件与证据；正文/证明复用，不新清洗或重证明全仓，不把历史计算或普通算术造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/初始客户边回撤原审计的精确合同与有限覆盖--程序.md",
+      "sha256": "09d16a4ebc829729443b15aad3ace4648fdd7bfe80962b63837469c060e0e8ec",
+      "disposition": "attachment",
+      "object_ids": [
+        "ATOM-RETRACTION-v1",
+        "DISPERSION-REBATE-v1"
+      ],
+      "reason": "原程序/52客户真实atom有限重放为两个解析工具的证据附件，不为程序、日志、81/64价格PASS另造对象；完整读取成熟正文，未重跑原代码。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/真实历史返回动作的精确账本与共同资金缺口--引理.md",
+      "sha256": "531bbd0b36506a1f2b8c616a713a598d4b538e2c470e090ce13e590508e89d22",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/off-history-return-exact-ledger-and-common-funding-gap",
+        "M-3d0dbf4f161844cd95cd3d48f8e96ded"
+      ],
+      "reason": "完整连续实读成熟正文及必要共享模型，区分本页各精确命题/量词/条件与证据；正文/证明复用，不新清洗或重证明全仓，不把历史计算或普通算术造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/四人冻结匹配独审的报告与复用边界--审查.md",
+      "sha256": "2359fd5b812647f4a4d6bbcfdc864e6d1f1986debdeb12d64e87eaa132b76bf4",
+      "disposition": "attachment",
+      "object_ids": [
+        "B10-STATIC-OPTIMAL-ASSIGNMENT-NO-v1"
+      ],
+      "reason": "原52客户四人冻结匹配独审的同输入/完整策略及冻结最小成本证据，已由本包canonical-v2→v3记录完整接入；复用成熟数学，不把旧运行算作本轮。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/五十二客户冻结匹配原独审的定义核与恢复证据--程序.md",
+      "sha256": "ccc0acda16da5edae088c0617eae5700980545367111edf940c33822dde1e5ff",
+      "disposition": "attachment",
+      "object_ids": [
+        "B10-STATIC-OPTIMAL-ASSIGNMENT-NO-v1"
+      ],
+      "reason": "4852B独立定义核和3789B报告已恢复，完整52客户/259历史/1554含自身IC及24匹配合同接同一B10身份v3；旧缺blob历史保留，未新跑代码。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/相邻阈值五输入诊断与旧冻结匹配的原复核--程序.md",
+      "sha256": "84b17992a58704c1e48e0777073436524610741c699539af79c37f8acd3884e3",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/adjacent-cap-five-fixed-input-finite-diagnostic",
+        "B10-STATIC-OPTIMAL-ASSIGNMENT-NO-v1"
+      ],
+      "reason": "保五输入相邻cap有限诊断主身份；本页另一个2308B/957B旧FOMA短核的实际消费字段和完整同点证据接B10累计v3，与4852B和2078B独立实现分开，不混cap扫描和冻结匹配。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/双预算初始化后直接交换的内部稀释税与净额义务--资源.md",
+      "sha256": "26d3c5ad93f00c1644753c9a27e8aca97a0e7bd8ac286a6c51a1030fade11201",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/direct-after-coordinate-init-internal-dilution-and-net-coverage-debt",
+        "customer-attraction/frozen-assignment-overlap-and-reverse-SD-price-opposite-directions"
+      ],
+      "reason": "完整连续实读成熟正文及必要共享模型，区分本页各精确命题/量词/条件与证据；正文/证明复用，不新清洗或重证明全仓，不把历史计算或普通算术造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/有利可信完成与同次净券付款的根账本--资源.md",
+      "sha256": "4c3f804f8e43ae2dc05a52c74ef10bf9da788a0075bdb56fadf79da624ca22d0",
+      "disposition": "objects",
+      "object_ids": [
+        "LOCAL-ADM-CREDIBLE-UNION-v1",
+        "LOCAL-I-COMPLEMENT-COORD-v1",
+        "LOCAL-SWAP-ASCENT-CAP-NO-v1",
+        "LOCAL-PAIR-ONE-SECURITY-v1",
+        "M-73d3a9bedfd449d292f04323e540d4ca",
+        "M-4df17feb4e044e8896e284362f8c53f7"
+      ],
+      "reason": "六个当前canonical完整记录均已实际接收同SHA根账本，反向owner完整保留：ADM、互补I、末对one-security与其余主身份各保原条件。旧三个待路由只因旧时未接证，现按真实已接字段关闭，不再要求重做证明/代签。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/冻结指派交集与逆向价格的相反方向--引理.md",
+      "sha256": "917e0740e5570edaa929e85677851d5823d5fd7d935b6402d8c66ad46bdcd87c",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/frozen-assignment-overlap-and-reverse-SD-price-opposite-directions"
+      ],
+      "reason": "完整连续实读成熟正文及必要共享模型，区分本页各精确命题/量词/条件与证据；正文/证明复用，不新清洗或重证明全仓，不把历史计算或普通算术造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/末偏离树的角色入出账与最优交换行--资源.md",
+      "sha256": "041e2b3f6d18c88cc7123a409776db25ff3814b89dbf82da55bf9059caa3a33b",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/last-deviation-tree-role-account-and-optimal-exchange"
+      ],
+      "reason": "保本页精确β带角色总账和合法最优EX行，区别0004主末偏离剥离中继更完整对象；普通树几何不冒half，跨owner更大主记录的接证另列receipt。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/真实最优查询的冻结差额与可信修复接口--资源.md",
+      "sha256": "095b8032ca0e53a429329fb32d8b861e98b9e76f7dfd3dc21f464b53247115b8",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/true-optimal-portfolio-net-gap-joint-payment"
+      ],
+      "reason": "实际canonical净差匹配主record已接同SHA资源，故补准确反向owner。F与真实V、signed Q、平均匹配、min-child保持原actual及repair的2R+D均已在成熟正文完整证明；本入口无独立新证书，不重复把所有导航链接列为外国owner阻塞。41/42裸遗漏与净差合同、7锥66支持浮点与全称付款仍区分。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/真实偏离弱平均的最优元组合同与有限锥--资料.md",
+      "sha256": "b51d28d93e1509f0162949299e97bb6e472cfd715d209b2dc0869385b7757db7",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/true-query-weak-average-optimal-tuples-and-finite-cones",
+        "M-2f7e8fa801ee41ea9689a1690786bdd5"
+      ],
+      "reason": "完整连续实读成熟正文及必要共享模型，区分本页各精确命题/量词/条件与证据；正文/证明复用，不新清洗或重证明全仓，不把历史计算或普通算术造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/实际前缀净匹配探针与均匀分配报告--程序.md",
+      "sha256": "8106d84b72b1182ca79e8278938cfabca5690ca7190dcfc9f852b413b53d80b4",
+      "disposition": "objects",
+      "object_ids": [
+        "M-007d7464674841459cb297635fa75f73",
+        "M-44eb2befe16c4f3f8790c871c07e05ca",
+        "M-31697dbf0acf42ecb27a433f134566e0"
+      ],
+      "reason": "原两主身份uniform开放与384浮点记录保留，另将真正Bmax匹配程序证据接既有M316 v2。固定J浮点LP与最终全部最优元组的存在量词拒绝阶段不同；无payload不声称完成整数/完整策略反例。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/真实偏离最优匹配的调和下界--引理.md",
+      "sha256": "0da66c8c92bc2c6a8e90016aab7329333972865442f39eb86a238bb7eb92deb2",
+      "disposition": "objects",
+      "object_ids": [
+        "B6-HARMONIC-MATCHING-FLOOR-v1"
+      ],
+      "reason": "完整连续实读成熟正文及必要共享模型，区分本页各精确命题/量词/条件与证据；正文/证明复用，不新清洗或重证明全仓，不把历史计算或普通算术造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/实际覆盖与重叠最优目录的静态调和边界--资源.md",
+      "sha256": "fbec04d58e0bcd653081085b1ea5fcb12ab01538733f4104bd5690d1f81436e2",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/actual-coverage-and-overlapping-optimal-catalog-static-harmonic-boundary"
+      ],
+      "reason": "完整连续实读成熟正文及必要共享模型，区分本页各精确命题/量词/条件与证据；正文/证明复用，不新清洗或重证明全仓，不把历史计算或普通算术造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/共同核心独立储备目录的任意跨组重复尾屏障--定理.md",
+      "sha256": "f3f0be77778b11c05c37504093d0a99c7c2589a84082d4de7e9c3abe5fb13632",
+      "disposition": "objects",
+      "object_ids": [
+        "CA-COMMON-CORE-ARBITRARY-TAIL-v2"
+      ],
+      "reason": "完整连续实读成熟正文及必要共享模型，区分本页各精确命题/量词/条件与证据；正文/证明复用，不新清洗或重证明全仓，不把历史计算或普通算术造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/联合前缀谱与跨组重复尾证明的版本和重构--审查.md",
+      "sha256": "f56e6fbab20270381e802b19fde4d01298572307ce00eaeba455081e8c7312d6",
+      "disposition": "objects",
+      "object_ids": [
+        "CA-COMMON-CORE-ARBITRARY-TAIL-v2",
+        "CA-ANCHOR-PRIVATE-SEAT-SPECTRUM-v1",
+        "true-prefix-coupled-complete-profit-seats-one-welfare-budget"
+      ],
+      "reason": "保原已接的G/F/跨组共同尾三个主owner。PAY只是同10070B作者证明/接口导航，没有新参数族独审；联合谱10550B作者与5000B内部重构已由当前JOINT-SPECTRUM-FRACTIONAL-NOSUFF-v1和M-27f62f447b9b471f89b0d2b52c8907fb的完整主文及62af41资源/源清单保全。其完整图m≥13和匹配m≥5均确定非SPE，倒二真实严格偏离分别核对。原旧CA-prefixed拟路由名不冒充当前稳定ID，不新造alias或重复版本。61/34/5人数有限日志不提升证明。"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/真实前缀完整利润席位的一份福利预算--定理.md",
+      "sha256": "5698a5dd6c39a2718653cbf69e0eadc4acfbb8c5dd80b83b1718d78f4442a09b",
+      "disposition": "objects",
+      "object_ids": [
+        "CA-ANCHOR-PRIVATE-SEAT-SPECTRUM-v1",
+        "true-prefix-coupled-complete-profit-seats-one-welfare-budget",
+        "M-c7e224af58894e58a9c6a921bf1d43c1",
+        "M-bb3ab44ba00f4fd68e634a926ecd954c"
+      ],
+      "reason": "完整连续实读成熟正文及必要共享模型，区分本页各精确命题/量词/条件与证据；正文/证明复用，不新清洗或重证明全仓，不把历史计算或普通算术造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/归属容量完整利润谱与动态地板边界--定理.md",
+      "sha256": "dd89bc3f1d36e9852bdd8b43102adc146a0b153b99ca97bf5dbc132937e26b9a",
+      "disposition": "objects",
+      "object_ids": [
+        "assigned-action-capacity-complete-profit-spectrum-and-dynamic-floor-boundary",
+        "M-2af2b18d08424715a642b087ccb616a6"
+      ],
+      "reason": "完整连续实读成熟正文及必要共享模型，区分本页各精确命题/量词/条件与证据；正文/证明复用，不新清洗或重证明全仓，不把历史计算或普通算术造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/前缀席位两次独审的读序与严格例范围--审查.md",
+      "sha256": "e4e12395f5f4142e4f6a796cbb4773dd3072d27acee089c0b4375b55def981c1",
+      "disposition": "objects",
+      "object_ids": [
+        "CA-ANCHOR-PRIVATE-SEAT-SPECTRUM-v1",
+        "true-prefix-coupled-complete-profit-seats-one-welfare-budget",
+        "M-c7e224af58894e58a9c6a921bf1d43c1",
+        "M-bb3ab44ba00f4fd68e634a926ecd954c"
+      ],
+      "reason": "完整连续实读成熟正文及必要共享模型，区分本页各精确命题/量词/条件与证据；正文/证明复用，不新清洗或重证明全仓，不把历史计算或普通算术造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/前缀耦合席位与尾水位边界增量审计--审查.md",
+      "sha256": "5fc0d4ae04a7bc87c6330f5192d4a10e6fab6f626b2b3029fc0ef80cd0b1c4f6",
+      "disposition": "objects",
+      "object_ids": [
+        "M-bb3ab44ba00f4fd68e634a926ecd954c",
+        "CA-FRACTIONAL-TAIL-WATERFILL-v1"
+      ],
+      "reason": "保M-bb3已接124客户三人完整SPE/席位比较；另一个水位JSON16有理/1无理边界回归现在由水位主身份v2准确接证，同页两对象分开，普遍引理仍由解析证明承担。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/前缀完整席位的作者双审计与严格例策略合同--程序.md",
+      "sha256": "7643fad4c52b4d4801aee7402e9d1420085c5f93687c8a6f8917f84664b2f014",
+      "disposition": "objects",
+      "object_ids": [
+        "CA-ANCHOR-PRIVATE-SEAT-SPECTRUM-v1",
+        "true-prefix-coupled-complete-profit-seats-one-welfare-budget",
+        "M-bb3ab44ba00f4fd68e634a926ecd954c"
+      ],
+      "reason": "作者不同完整策略、有限30个F/G席及局部平局替换论证归同一严格增强存在对象，全部数学细节在原正文/证据；1200尝试/2288受限路径只作G既有定理的回归附件，不增策略节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/显式前缀席位严格例的独立有序树审计--程序.md",
+      "sha256": "82219368b5e8c19d8eacd9ea8a55446b607e9c51440c032f8169dc08fa23996e",
+      "disposition": "objects",
+      "object_ids": [
+        "CA-ANCHOR-PRIVATE-SEAT-SPECTRUM-v1",
+        "M-bb3ab44ba00f4fd68e634a926ecd954c"
+      ],
+      "reason": "完整连续实读成熟正文及必要共享模型，区分本页各精确命题/量词/条件与证据；正文/证明复用，不新清洗或重证明全仓，不把历史计算或普通算术造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/真实前缀席位与随机索引交换的两份审计--资料.md",
+      "sha256": "607739ba053c517e8dd140eaa3a50ab6e13eeb9e5b75d305672bd82353bbecd5",
+      "disposition": "objects",
+      "object_ids": [
+        "CA-ANCHOR-PRIVATE-SEAT-SPECTRUM-v1",
+        "M-bb3ab44ba00f4fd68e634a926ecd954c",
+        "M-18f7e473aa1e45c0b10f41910d536c13"
+      ],
+      "reason": "同一124客户独立见证和另一个五客户交换反例分清；后者只否随机最新位平均，uniform目标本例有正slack，不能称uniform反例。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/极大主题完整席位地板的全路径诊断--程序.md",
+      "sha256": "4a9135c9134420207f0ee5433982a3a46f756d6692a620d18bdfe679e9cdd96a",
+      "disposition": "objects",
+      "object_ids": [
+        "assigned-action-capacity-complete-profit-spectrum-and-dynamic-floor-boundary",
+        "M-2af2b18d08424715a642b087ccb616a6"
+      ],
+      "reason": "完整连续实读成熟正文及必要共享模型，区分本页各精确命题/量词/条件与证据；正文/证明复用，不新清洗或重证明全仓，不把历史计算或普通算术造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/Rd64真实替换链未付预算与产品候选入口--资源.md",
+      "sha256": "4fb8e68862729bce30d7cd0a9836bbe04761c6841ba71209540e94b4e77dce04",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "原Rd64仅912B导航及不完整surplus/residual定义，universal_root_price.md与heterogeneous_opt_profile.md在当前archives未找到完整body，故保needs-decision作为来源/身份定位义务，不将开放数学本身等同缺判断。替换链只给恒等式重写，R868产品/凸包/条件复制的完整现有对象不能冒称两个缺件原命题；2186阴性不证明通用lambda存在，无新节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/非根跨枝福利中继恒等式--引理.md",
+      "sha256": "3185a8928d28315d460a746dbaf3daa607a37f533d80d9a93e13f85c57afff60",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/nonroot-cross-branch-welfare-relay-identity",
+        "M-bd20a96728e54dfe820660098484d67f",
+        "customer-attraction/harmonic-insertion-tax-real-successor-contract-and-current-failure-boundary"
+      ],
+      "reason": "完整连续实读成熟正文及必要共享模型，区分本页各精确命题/量词/条件与证据；正文/证明复用，不新清洗或重证明全仓，不把历史计算或普通算术造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/最优前缀插入利润不能共用实际福利--反例.md",
+      "sha256": "7efa409afd927119af9fedeaff76a8deb14d08559641962e7d6104ed6f211e86",
+      "disposition": "attachment",
+      "object_ids": [
+        "R22-OPTIMAL-PREFIX-BILL-UP-NO-v1"
+      ],
+      "reason": "全文已读并逐公式/模型/全24最优排列与实际0024主record比较；主owner已实际接此页精确证据，复用同一22客户259节点ABBB/193÷12>W14反证。原记录/程序独立性不冒本批新执行。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/最优前缀插入账的原程序与双报告版本合同--程序.md",
+      "sha256": "a4be869842fb08e692fdaf4cda7f4db94655ea5ed0d1181058f759286941d17b",
+      "disposition": "attachment",
+      "object_ids": [
+        "R22-OPTIMAL-PREFIX-BILL-UP-NO-v1"
+      ],
+      "reason": "全文已读并逐公式/模型/全24最优排列与实际0024主record比较；主owner已实际接此页精确证据，复用同一22客户259节点ABBB/193÷12>W14反证。旧九例其它八输入及case8仅fixed-UP flag不提升新反例。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/父方逐单位客户插入账独审的有序最优域与输入绑定--程序.md",
+      "sha256": "92883784c68d941f4f92b3452d27e70d6e5c0515b9d756c93f372dce61337884",
+      "disposition": "attachment",
+      "object_ids": [
+        "R22-OPTIMAL-PREFIX-BILL-UP-NO-v1"
+      ],
+      "reason": "全文已读并逐公式/模型/全24最优排列与实际0024主record比较；主owner已实际接此页精确证据，复用同一22客户259节点ABBB/193÷12>W14反证。原记录/程序独立性不冒本批新执行。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/调和插入税的真实后继合同与当前反驳边界--资源.md",
+      "sha256": "cebd2d4d1f35957d8d519c6dc7adfedddaa0fe4b012aee588c9829e70cadd83b",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/nonroot-cross-branch-welfare-relay-identity",
+        "customer-attraction/harmonic-insertion-tax-real-successor-contract-and-current-failure-boundary"
+      ],
+      "reason": "完整连续实读成熟正文及必要共享模型，区分本页各精确命题/量词/条件与证据；正文/证明复用，不新清洗或重证明全仓，不把历史计算或普通算术造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/非根中继与调和停止稿的真实背景和最小人数--资源.md",
+      "sha256": "7ce66241ec3851a76d895866269c05bef5501d888628d1a14a2737e7695cb38e",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/nonroot-cross-branch-welfare-relay-identity",
+        "M-bd20a96728e54dfe820660098484d67f",
+        "customer-attraction/off-history-return-exact-ledger-and-common-funding-gap",
+        "M-d59dcfb341744dfbae60018ba3c04c0f",
+        "M-fd7aa990e8824f67a6290331695b5f9a"
+      ],
+      "reason": "保非根福利/删位势/真历史返回既有owner；H4停点和最小坏人数真实子SPE归约各接其既有主身份v2。非根旧玩家利润不省，H4存在最优排列不改全称，原r≥2不覆盖后来r≥3，PB背景与空根福利/恰六人问题分域。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/R-cef一般路线的二十六源范围与接续--资源.md",
+      "sha256": "41d013c8254097ff36b34bfe31b3edbb424a39c74fb5b4234242052df6534903",
+      "disposition": "excluded",
+      "object_ids": [],
+      "reason": "完整二十六源根范围/CLAIMS/六入口导航无独立新数学；首题吸收、两程序合同、非根中继/H4/背景正规形分别有本批及明确主body。J_U+P_U=|U|等普通一次归属算术留正文，不造节点；不把历史协作或资源日志作为对象。"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/首题触发恒尾的稳定覆盖与全目录福利界--定理.md",
+      "sha256": "786ed33fd270aeaa62c75d14f5398ece3fa72edf4f8e386952f9a76ad88c018a",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/first-label-absorbing-suffix-stable-coverage-and-all-equilibria-bound",
+        "M-004bb31d900445a6b85041a48b8443f7"
+      ],
+      "reason": "完整连续实读成熟正文及必要共享模型，区分本页各精确命题/量词/条件与证据；正文/证明复用，不新清洗或重证明全仓，不把历史计算或普通算术造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/首题触发与分组拥挤的完整策略锥探针--程序.md",
+      "sha256": "73fc3564c5ac3fbe94efbfc42cdc78361289f5c9655b1ed5d1c88c37910f715d",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/first-label-absorbing-suffix-stable-coverage-and-all-equilibria-bound",
+        "M-ce4cb628d8544607a74532f91982bb1a"
+      ],
+      "reason": "吸收置换四目标精确1由M36解析定理承担；指定对称银行末位不相容独立已证障碍。不同历史依赖拥挤的一条原浮点1只有MD声明、未存stdout/精确证书，按单次数值不设数学节点，详receipt，不能挂给不同吸收模板作数学支持。"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/恒题完整策略锥的精确入口界与四份保存点--计算.md",
+      "sha256": "30807ce73680de23fef72ba69b2b5575ba959e1bab8c353c104cfa5a70628211",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/first-label-absorbing-suffix-stable-coverage-and-all-equilibria-bound",
+        "M-004bb31d900445a6b85041a48b8443f7",
+        "M-4fb38f50ebc7460dab1021d0dea40c47",
+        "customer-attraction/monochrome-complete-policy-cone-exact-entry-and-terminal-tax-four-points"
+      ],
+      "reason": "恒A条件锥、entry和全终局税三个命题分立；四完整保存点精确证明/认证作为证据，不按6120动作、114历史或PASS数量立对象。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/单源末两人吸收与末位调和端点预算--引理.md",
+      "sha256": "9058a33cfe3a368428594f97d267163bfad250cfd431596b7a11accfb4e4cb05",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/single-source-last-two-absorption-and-terminal-harmonic-endpoint-budget",
+        "M-71cf6e8121284b359a6fba818dc38e45",
+        "NESTED-PREFIX-RECIPROCAL-TRANSPORT-v1"
+      ],
+      "reason": "完整连续实读成熟正文及必要共享模型，区分本页各精确命题/量词/条件与证据；正文/证明复用，不新清洗或重证明全仓，不把历史计算或普通算术造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/同人数嵌套前缀的互惠末回复运输--引理.md",
+      "sha256": "0bf9415a528ee06f14c958aec716b622119ee2e898d5b5ab7b6665c598f29854",
+      "disposition": "objects",
+      "object_ids": [
+        "NESTED-PREFIX-RECIPROCAL-TRANSPORT-v1",
+        "customer-attraction/single-source-last-two-absorption-and-terminal-harmonic-endpoint-budget"
+      ],
+      "reason": "完整连续实读成熟正文及必要共享模型，区分本页各精确命题/量词/条件与证据；正文/证明复用，不新清洗或重证明全仓，不把历史计算或普通算术造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/历史根重放与后缀锥程序的输入输出合同--资源.md",
+      "sha256": "9adf4290fa9f7dbb3ac65deb5d92dcfb32fc3a1d400487916ac627e37d7e9f37",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/source-causal-payment-suffix-necessary-cuts-and-targeted-cone-scope",
+        "B10-STATIC-OPTIMAL-ASSIGNMENT-NO-v1"
+      ],
+      "reason": "保source-causal原owner；0033独立2078B/611B的B10接证片段已由0028本包累计v3完整纳入，须同时更新反向owner。其他根重放/后缀固定锥的原范围均保留。"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/最优组合冻结匹配的一单位缺口--反例.md",
+      "sha256": "3d74c52a434d295a964e056c52b6231c62c7e4ef93cd9a8910d6c0b2b07af4a3",
+      "disposition": "objects",
+      "object_ids": [
+        "B10-STATIC-OPTIMAL-ASSIGNMENT-NO-v1"
+      ],
+      "reason": "实读成熟正文的模型、精确陈述、量词、条件和必要论证位置；复用完整正文证明，按独立数学身份列出本页所有自有对象。未重跑历史程序、未声称新增盲审，不建超边。"
+    },
+    {
+      "path": "archives/customer-attraction/state/证明/终局净预算的元组支持量词与条件付款--证明.md",
+      "sha256": "48d94f566501f30480fbe1fd6b6f9f5451754ca7a9bb80c95d60c5887002d137",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/terminal-net-budget-tuple-support-quantifiers-and-conditional-payment",
+        "M-e5eaa0fa39a44340a6c66d2a6c91c781",
+        "M-c5280acf6de14745af28bd5489a3bc21",
+        "M-31697dbf0acf42ecb27a433f134566e0",
+        "customer-attraction/signed-harmonic-support-reduction",
+        "M-913764be148746a69d4d2be33426c902",
+        "M-a376477eb1a04352975bc853aefd3aad"
+      ],
+      "reason": "全文实读；独立数学对象按精确陈述/模型/量词登记，完整知识保在正文与必要证据。 静态净账条件定理、恰m的F/Q与actual-prefix MATCH未解命题分立；未与≤m支持悄然合并。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/分数尾水位的共同查询信用与利润守恒--引理.md",
+      "sha256": "d9ca9cb82ac113e8573c6ac7f18f19019d69801c1990b675ee2d5e50e07f23eb",
+      "disposition": "objects",
+      "object_ids": [
+        "CA-FRACTIONAL-TAIL-WATERFILL-v1"
+      ],
+      "reason": "已逐份完整阅读准确冻结正文、共同模型及承重论证；按独立数学身份登记，复用成熟证明，不重跑数学程序，不建超边。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/最优排列调和债与归属端点薄化的边界--资料.md",
+      "sha256": "867e798a53abb4755270a3c71ec3dc67993158a2e2349b2e60592e41369dc6c4",
+      "disposition": "objects",
+      "object_ids": [
+        "M-d59dcfb341744dfbae60018ba3c04c0f",
+        "M-cba935411f324fffa5bcee5b89a85760",
+        "M-05b51399a0114768921338b101578273"
+      ],
+      "reason": "H4与owner薄化总R0存在型义务分别保原ID；层级Jout/REP及净差匹配0004边界保留。0027已实际接收“逐行加强和旧十三人例的有限含义”到ENT1 M-05b51399a0114768921338b101578273；本行复用该同一失败桥，不把逐行加强反例当存在型H4或owner薄化反例。"
+    },
+    {
+      "path": "archives/customer-attraction/state/问题/自由extra-one与iid安全值边界--问题.md",
+      "sha256": "2788cef1bcf3876f78905d0cb0aa7ff6ad0e57006815c9de7ff79da82e3f64c2",
+      "disposition": "objects",
+      "object_ids": [
+        "M-efdf008801f0409e9c81762f795695be",
+        "M-4884af964e3444a886d139a78f32ac03",
+        "M-fd7aa990e8824f67a6290331695b5f9a",
+        "M-5429c06797ea4fda8039d57a4d69b834"
+      ],
+      "reason": "结构化theta、模板障碍、最小坏点正规形及至多两题桥四独立对象。"
+    }
+  ],
+  "edge_files": []
+}
