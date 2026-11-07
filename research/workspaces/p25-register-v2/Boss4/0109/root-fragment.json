@@ -1,0 +1,270 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline.json",
+    "sha256": "5d5737ab6d07552b48925bdb936dae70490e8de1ee0da2b380bb2d16dd5690cf"
+  },
+  "objects": [
+    {
+      "version": 1,
+      "truth_status": "proved",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/固定汇点占位基面与未知OPT承诺的最终审查--审查.md",
+        "sha256": "72eb5d43cc26f10ae71d8df45aa44ccc0ff2fb7d1a2309099f10eb6c0f68dc28"
+      },
+      "sources": [
+        "source:1fdb08ccd3717fa2ad9c",
+        "source:82af0ae2f147b7c28726"
+      ],
+      "object_id": "UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1",
+      "title": "占位基与有限模式的K侧约束顶点至多2K个非单值home",
+      "kind": "lemma",
+      "model": "有限宏到home资格图；所有宏均须覆盖的transversal base多面体B(M)。每home有限0/1 empty/occupied模式，occupied仅依赖该home是否被宏占用；P(Q)为与base匹配相容的实际模式选择凸包。",
+      "statement": "给P(Q)添加任意K条线性侧不等式。任一交切顶点y正支持中，含至少两项正模式的home数R≤2K。令x占位向量的最小base面为G，混合标签home集F、每home正模式数a_h，则dimG≥|F|/2，dim_P=dimG+Σ_h(a_h−1)−|F|≥R/2，交切顶点又有dim_P≤K。给正支持可用带下界宏匹配恢复覆盖全部宏及强制occupied homes的兼容整数选择，但该支持恢复不自动保侧预算。",
+      "quantifiers": "任意整数K≥0、任意有限覆盖匹配图、任意上述模式库及有理线性侧约束、每个可行交切顶点；K=0保原积分性。",
+      "assumptions": [
+        "occupation向量属于覆盖全部宏的base而非仅独立集。",
+        "所有同home occupied模式与该home所有可匹配宏同等兼容；不能依赖具体宏身份/尺寸。",
+        "y是模式多面体交切的投影顶点；扩展LP任意basic point的投影不一定是它。"
+      ],
+      "scope": "一般模式面维数引理及支持兼容恢复，不直接给预算控制或一般UM调度器。",
+      "objections": "本轮全文实读M41–44与两个跨批审查，复用成熟双向交替匹配/纤维维数证明；未重跑有限程序。M42只核小规模base暴露面，M43是指数审计函数库；20760是带重数离散权面数，均不冒作任意实权一般证明。",
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/占位最优基面的独立精确枚举程序--资源.md",
+          "sha256": "6d9be52517cb086f068262ac099182c6d7af8cb372bf38bdea58365b0a5f4744"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/占位模式投影顶点与精确匹配审计函数库--资源.md",
+          "sha256": "9a7a218354f07d5a6b3aa0bc20a0b31fb7bfe18b357cf20478d296ccbb2da760"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/固定汇点模式与占位基面的原有限枚举--资源.md",
+          "sha256": "6ac1c36935a22f2464c90f3ea5e611240df50c505688b15cec9e3e340a22d9c9",
+          "section": "occupation必须是覆盖全部宏的base"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/占位基面与残余边缺口有限审查--审查.md",
+          "sha256": "442194b369cd965ca8402011ba969a306b66f8c04fabcbc3e4d85ad5285c3951",
+          "section": "2. 固定汇点 occupation 模式面：一般引理和算法合同"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/占位基面与残余边缺口有限审查--审查.md",
+          "sha256": "442194b369cd965ca8402011ba969a306b66f8c04fabcbc3e4d85ad5285c3951",
+          "section": "3. occupation 面有限证据（37cf）"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/失真组联合槽舍入与固定汇点占位双源审查--审查.md",
+          "sha256": "7a3644e31616ec18cd434ab73163ea073cf7ba11dca8cdaac2c9ea406c961b29",
+          "section": "二、固定 K 共享汇点的占位拟阵合同"
+        }
+      ]
+    },
+    {
+      "version": 1,
+      "truth_status": "proved",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/固定汇点占位基面与未知OPT承诺的最终审查--审查.md",
+        "sha256": "72eb5d43cc26f10ae71d8df45aa44ccc0ff2fb7d1a2309099f10eb6c0f68dc28"
+      },
+      "sources": [
+        "source:1fdb08ccd3717fa2ad9c",
+        "source:82af0ae2f147b7c28726"
+      ],
+      "object_id": "UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1",
+      "title": "固定K共享汇点与唯一home私有组的给定阈值三半实际调度",
+      "kind": "algorithm-guarantee",
+      "model": "显式普通不相关机器；不交homes H与K个sinks Z，宏只可在H，私有任务分成互不交J_h，每任务只可去唯一home h及Z子集；原finite处理时间为非负二进制有理。",
+      "statement": "给T≥0，所有有限宏端>T/2，在上述结构内确定性算法返回FAIL或一份覆盖全部原任务各一次的实际分配。若OPT≤T必有成功支，故FAIL⇒OPT>T；每成功输出Cmax≤3T/2。T>0时sink向上取整尺度T/(4N)、home保真实时间，每组DP；枚举≤10K² heavy homes/实际模式、删其余heavy模式、lex精确LP投影顶点、带下界宏匹配及模式回溯共同输出。全体sink取整预算5T/4一次，≤2K改变home各贡献≤T/(8K)，得3T/2。",
+      "quantifiers": "每个固定整数K≥1、每个给定结构/分区与T≥0；总位多项式次数依赖K。对所有合法输入成功⇒输出界，OPT≤T⇒成功；成功不反推OPT≤T。",
+      "assumptions": [
+        "宏资格剪去p>T后，无端/全覆盖匹配失败可靠拒绝；完整结构满足宏端>T/2。",
+        "每个私有job只有一个home组，组间不共享原任务；sink资格可任意子集，home可不可用。",
+        "预算按全部N=max(1,Σ|J_h|)共同取整；occupied模式仅是0/1标签，不依具体宏边身份或大小。"
+      ],
+      "scope": "固定K受限UM构造；允许空组、无宏、零/∞和大分母，T=0先用原零端检查。K=0可另用直接残余匹配，但不是此K≥1算法量词。",
+      "objections": "不把K随输入增长时N的K次DP和heavy枚举称统一多项式。成熟证明完整，原449行程序只核DP/小多面体/支持恢复/阈值逻辑，未交付通用LP或完整scheduler；本轮未重新运行。此项不给未知OPT免费搜索。",
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/固定汇点模式与占位基面的原有限枚举--资源.md",
+          "sha256": "6ac1c36935a22f2464c90f3ea5e611240df50c505688b15cec9e3e340a22d9c9"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/占位基面与残余边缺口有限审查--审查.md",
+          "sha256": "442194b369cd965ca8402011ba969a306b66f8c04fabcbc3e4d85ad5285c3951",
+          "section": "2. 固定汇点 occupation 模式面：一般引理和算法合同"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/失真组联合槽舍入与固定汇点占位双源审查--审查.md",
+          "sha256": "7a3644e31616ec18cd434ab73163ea073cf7ba11dca8cdaac2c9ea406c961b29",
+          "section": "二、固定 K 共享汇点的占位拟阵合同"
+        }
+      ]
+    },
+    {
+      "version": 1,
+      "truth_status": "proved",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/固定汇点占位基面与未知OPT承诺的最终审查--审查.md",
+        "sha256": "72eb5d43cc26f10ae71d8df45aa44ccc0ff2fb7d1a2309099f10eb6c0f68dc28"
+      },
+      "sources": [
+        "source:1fdb08ccd3717fa2ad9c",
+        "source:82af0ae2f147b7c28726"
+      ],
+      "object_id": "UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1",
+      "title": "有限宏边严格大于OPT一半承诺下固定汇点三半近似",
+      "kind": "promise-approximation",
+      "model": "同固定K、唯一home私有组的不相关机器模型，未输入T或OPT；全部finite时间二进制非负有理。",
+      "statement": "额外承诺每条有限宏边严格大于OPT/2时，固定K可确定性总位多项式输出完整实际调度Cmax≤3OPT/2。先处理OPT=0；取共同分母积D，有正整数q*=D OPT。宏非空且最小finite宏边a时U=2aD−1≥q*，q≤U均有q/D<2a；宏空用任意合法原调度C令U=DC。初始化U成功并存见证，维持lo<q*及hi成功，FAIL只更新lo，成功只更新hi，至hi=lo+1≤q*返回成功见证。无需接受谓词单调。",
+      "quantifiers": "每个固定K≥1、每个满足全部有限宏端>OPT/2的合法显式结构输入；O(log(U+1))个给定阈值调用，各数值位长多项式。",
+      "assumptions": [
+        "含OPT的额外承诺承重，不能免费验证或在一般输入删除。",
+        "保给定home/sink分区、唯一home私有组、普通原任务身份和K固定。",
+        "先用全部零端处理OPT0；宏非空a=0、U<1或初始失败可报告未认证，promise内不会触发。"
+      ],
+      "scope": "promise类未知最优值近似，区别于给T的单侧FAIL保证和一般UM目标。",
+      "objections": "成功阈值可以低于OPT而只给三半输出，不得以成功当T可行判定；需要lo<q*的单侧不变量而不是接受集合单调。本轮复用成熟整数网格证明；16380有限表与1024宏网格是阈值逻辑审计，不是端到端scheduler测试。",
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/固定汇点模式与占位基面的原有限枚举--资源.md",
+          "sha256": "6ac1c36935a22f2464c90f3ea5e611240df50c505688b15cec9e3e340a22d9c9",
+          "section": "非单调阈值表与固定参数恒等式"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/占位基面与残余边缺口有限审查--审查.md",
+          "sha256": "442194b369cd965ca8402011ba969a306b66f8c04fabcbc3e4d85ad5285c3951",
+          "section": "2. 固定汇点 occupation 模式面：一般引理和算法合同"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/失真组联合槽舍入与固定汇点占位双源审查--审查.md",
+          "sha256": "7a3644e31616ec18cd434ab73163ea073cf7ba11dca8cdaac2c9ea406c961b29",
+          "section": "二、固定 K 共享汇点的占位拟阵合同"
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/审查/固定汇点占位基面与未知OPT承诺的最终审查--审查.md",
+      "sha256": "72eb5d43cc26f10ae71d8df45aa44ccc0ff2fb7d1a2309099f10eb6c0f68dc28",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1",
+        "UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1",
+        "UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1"
+      ],
+      "reason": "父Boss4本轮完整实读，按侧约束面/给T算法/含OPT承诺三身份区分；原资源为完整证明或必要算法证据，不为每个有限计数造节点。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/占位最优基面的独立精确枚举程序--资源.md",
+      "sha256": "6d9be52517cb086f068262ac099182c6d7af8cb372bf38bdea58365b0a5f4744",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1"
+      ],
+      "reason": "父Boss4本轮完整实读，按侧约束面/给T算法/含OPT承诺三身份区分；原资源为完整证明或必要算法证据，不为每个有限计数造节点。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/占位模式投影顶点与精确匹配审计函数库--资源.md",
+      "sha256": "9a7a218354f07d5a6b3aa0bc20a0b31fb7bfe18b357cf20478d296ccbb2da760",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1"
+      ],
+      "reason": "父Boss4本轮完整实读，按侧约束面/给T算法/含OPT承诺三身份区分；原资源为完整证明或必要算法证据，不为每个有限计数造节点。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/固定汇点模式与占位基面的原有限枚举--资源.md",
+      "sha256": "6ac1c36935a22f2464c90f3ea5e611240df50c505688b15cec9e3e340a22d9c9",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1",
+        "UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1",
+        "UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1"
+      ],
+      "reason": "父Boss4本轮完整实读，按侧约束面/给T算法/含OPT承诺三身份区分；原资源为完整证明或必要算法证据，不为每个有限计数造节点。"
+    }
+  ],
+  "edge_files": [],
+  "read_scope": {
+    "complete_mature_bodies": [
+      {
+        "path": "archives/unrelated-machines/state/审查/固定汇点占位基面与未知OPT承诺的最终审查--审查.md",
+        "sha256": "72eb5d43cc26f10ae71d8df45aa44ccc0ff2fb7d1a2309099f10eb6c0f68dc28"
+      },
+      {
+        "path": "archives/unrelated-machines/state/资源/占位最优基面的独立精确枚举程序--资源.md",
+        "sha256": "6d9be52517cb086f068262ac099182c6d7af8cb372bf38bdea58365b0a5f4744"
+      },
+      {
+        "path": "archives/unrelated-machines/state/资源/占位模式投影顶点与精确匹配审计函数库--资源.md",
+        "sha256": "9a7a218354f07d5a6b3aa0bc20a0b31fb7bfe18b357cf20478d296ccbb2da760"
+      },
+      {
+        "path": "archives/unrelated-machines/state/资源/固定汇点模式与占位基面的原有限枚举--资源.md",
+        "sha256": "6ac1c36935a22f2464c90f3ea5e611240df50c505688b15cec9e3e340a22d9c9"
+      }
+    ],
+    "complete_peer_bodies": [
+      {
+        "path": "archives/unrelated-machines/state/审查/占位基面与残余边缺口有限审查--审查.md",
+        "sha256": "442194b369cd965ca8402011ba969a306b66f8c04fabcbc3e4d85ad5285c3951"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/失真组联合槽舍入与固定汇点占位双源审查--审查.md",
+        "sha256": "7a3644e31616ec18cd434ab73163ea073cf7ba11dca8cdaac2c9ea406c961b29"
+      }
+    ],
+    "unread_assigned_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
+    "note": "此为父的成熟部分，不是整批完成；原历史证据/源码未新运行，完整字段待整批合并。"
+  }
+}
