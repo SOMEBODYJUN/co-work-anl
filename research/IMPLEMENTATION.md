@@ -58,7 +58,7 @@ python work.py research batches-draft --baseline research/registration/baseline.
 python work.py registration-task plan --record-file research/registration/tasks.json
 ```
 
-默认跳过当前canonical同SHA且准确处置材料，新版本/needs-decision才入批；显式重审用--include-registered。默认单批最多200份材料，按同档/子档、正文读取线索及实际token预算装包；当前正文实测常见约35–45份/包，短材料可100以上，以实际草稿为准，不凑数截断。一次claim-next --count 6批领6个包，可合计约200份分给已有6个worker，不是每个worker再spawn6个。草稿每task包含task_id、stage:registration、baseline引用、materials精确引用数组、goal、独立write_paths及context_plan；worker读取本批后写`research/registration/batches/<task-id>.json`与对应receipts。lead按实际数学关联修订这份草稿，不另填一套全仓工单。同名候选草稿直接更新，不产历史版本；tasks=0不交空表plan，转恢复/整合后按真实状态判断。
+默认跳过当前总表中同SHA且已准确处置的材料、有效未完批次范围和未集成的done回执范围。历史done已经集成后，同SHA仍为needs-decision且无在途任务的材料可再次分包，沿用已有对象和证据做定向补办。显式重审用--include-registered。默认单批最多200份材料，按同档/子档、正文读取线索及实际token预算装包；当前正文实测常见约35–45份/包，短材料可100以上，以实际草稿为准，不凑数截断。一次claim-next --count 6批领6个包，可合计约200份分给已有6个worker，不是每个worker再spawn6个。草稿每task包含task_id、stage:registration、baseline引用、materials精确引用数组、goal、独立write_paths及context_plan；worker读取本批后写`research/registration/batches/<task-id>.json`与对应receipts。lead按实际数学关联修订这份草稿，不另填一套全仓工单。同名候选草稿直接更新，不产历史版本；tasks=0不交空表plan，转恢复/整合后按真实状态判断。
 
 plan成功即发布，无需先给草稿做一次独立远端登记。每批schema:2，含objects、materials、edge_files:[]；收据含batch_file精确引用及assets引用数组。一页可供不同批次共享阅读，但独立文件由各自worker写。若有用户明确固定owner安排则遵守；assignments-check可验证可选固定分配表，不取代队列的实时归属或迫使每轮手工排全仓。
 
