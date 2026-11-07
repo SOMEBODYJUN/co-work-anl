@@ -1,0 +1,199 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline.json",
+    "sha256": "5d5737ab6d07552b48925bdb936dae70490e8de1ee0da2b380bb2d16dd5690cf"
+  },
+  "objects": [
+    {
+      "object_id": "M-7fa6f1e2b320459eac88c1c614c870b3",
+      "version": 1,
+      "title": "tau=6 literal128的44行端点模板不能推出半覆盖目标",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "命名的有限非负质量必要行模板：128列(o,a)，o∈{0,1}，a∈{0,…,63}为六个实际成员位；t=Σa_i，p_i=Σ_(j<i)a_j，u_i=a_i/t（t0时为0）。不要求列质量能实现同一完整历史SPE。",
+      "statement": "目标列为1_(t>0)−o/2。44行依次为6个6u_i−o/(p_i+7−i)、36个u_i−a_j/(p_i+7−i)、端点6u_5+u_6/2−o/(p_5+1)+o a_5 1_(p_5=0)/4，以及PAIR u_5+u_6+a_5/((p_5+1)(p_5+2))−o[2/(6(p_5+1))−1/(36(p_5+1)(p_5+2))]（i从1计）。保存的13原子有理非负质量和1，全部44行期望≥0且最小0，目标期望−1051597/12277962<0。因此这些命名行及逐列非负余项不能非负组合出目标非负。",
+      "quantifiers": "仅该固定tau6、128列、44行系统；存在一个精确有理分离质量。不是对全部六人SPE或全部行模板的否定。",
+      "assumptions": [
+        "列次序为每个actual=0,…,63后依次o=0,1",
+        "i在源码为0起始、此陈述已一致转成1起始",
+        "仅用所列fractional-F、actual-safe、endpoint-R与averaged strong-PAIR行"
+      ],
+      "scope": "固定模板的精确Farkas障碍；root-requery旧证书与3894行必要点另路由既有R3002对象。",
+      "objections": "不是游戏/纯SPE反例，也未证明主half、ROW或更强行族不可能。13原子和完整Fraction核验器为成熟证据；本登记实读正文、源码和全部证书，未重新运行LP或数学验证器。",
+      "body": {
+        "path": "archives/customer-attraction/state/障碍/R-3002尾部根证书与tau6模板障碍--障碍.md",
+        "sha256": "9d9eb9ff1e7d9de53fe65d1e304a8d73aabf831fc745985d0df55a8dbc211e20",
+        "section": "tau=6 literal128 精确 Farkas 障碍"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/障碍/R-3002尾部根证书与tau6模板障碍--障碍.md",
+          "sha256": "9d9eb9ff1e7d9de53fe65d1e304a8d73aabf831fc745985d0df55a8dbc211e20"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-3002-residual-20261031/source/tau6_endpoint_probe.py",
+          "sha256": "f84bd338f139433ef924b50b02022a240bcf12ed86e83d40dfd09281a650404e"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-3002-residual-20261031/source/tau6_endpoint_farkas.json",
+          "sha256": "00b6b20698b86393a8470595faf4abcd2aebe54debd10c8c135fba0218df3e88"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/障碍/R-3002尾部根证书与tau6模板障碍--障碍.md",
+        "frozen:R-3002/research_5/tau6_endpoint_probe.py",
+        "frozen:R-3002/research_5/tau6_endpoint_farkas.json"
+      ],
+      "keywords": [
+        "有限必要行",
+        "有理分离",
+        "tau6",
+        "完整SPE不可冒认"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/R-31bbb-saturation-exact-projection-obstruction-20261031",
+      "version": 1,
+      "title": "五人实际路径AP及全部最大题BNS必要投影的精确不可粘合点",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "有限不同单位客户，有限非空带标签共同目录及任意覆盖映射；单位提供者按固定次序观察全部有序历史各选一次，终局每客户在覆盖者间均分。完整纯SPE保全部有序历史、弱平局、重复行动、空覆盖、同覆盖异标签及零客户。下面必要行投影只抽取实际成员位和比较成员位，不自动具有完整SPE实现。 本对象固定五个实际槽及五个比较标签；在1023非空10位成员类型上取非负有理质量，以实际覆盖W=1归一化；证书对每个实际位型a及每个比较槽t把group_mass[a]/5放到a|2^(5+t)，不是一棵续局树。",
+      "statement": "令i为0…4，k=5−i，背景b为更早实际位的命中数，u_i为本位在实际五槽终局的均分，s_i(C)=Σ_C1/(b+k)，K_i=max_C s_i(C)，F_i(C,D)=Σ_(C∩D)1/(b+k)+Σ_(D\\C)1/(b+1)。保存11组精确有理质量满足50个u_i≥s_i(C)行、k≥2时400个F_i(C,D)≤s_i(C)+[(k−1)4+k²/2](u_i−s_i(C))行、以及全部实际最大C上的250个F_i(C,D)≤K_i+(k−1)(k+bmax_C−1)(u_i−K_i)行；源码的max背景准确取证书正质量且属于C的客户，空集取0。其W=1而五比较主题并集3311537042/1488034729=2+335467584/1488034729，全部700行非负，最小AP松弛6484381029/74401736450>0。因此这些必要条件合取不蕴涵该投影的比较覆盖≤2W。 其中bmax_C=max({b_x:质量正且x∈C}∪{0})。",
+      "quantifiers": "存在该固定五人投影的精确有理点；所有10个标签、所有5个实际位置、全部实际最大主题的所列700行均核。不是存在一份实现该点的完整SPE。",
+      "assumptions": [
+        "BNS系数使用正质量支持上的真实max背景；不把发现LP中较弱全局系数替成同一行",
+        "比较主题各含唯一比较成员位，质量在五槽均分",
+        "F与u、背景全部来自同一投影点；没有离轨动作表"
+      ],
+      "scope": "精确必要行不可粘合障碍；450/930行发现LP的浮点值约2.315868/2.225443只作发现证据，不作为精确LP最优性。",
+      "objections": "五人一般half已有独立完整证明，与本点不矛盾。点只有实际成员/比较成员质量，缺全部真实偏离与后继一致性；不能称五人half反例，也没有认证所存点为该LP的精确最优。本登记复用成熟Fraction全行证书，未重跑优化器或验证器。",
+      "body": {
+        "path": "archives/customer-attraction/state/障碍/R-31bbb五人投影必要行的精确不粘合障碍--障碍.md",
+        "sha256": "e35514c13ef4891656f67dfaf7176bbd0701fa7225edc115de6ec66b53e33728",
+        "section": "2. 有理 witness 的实际核验"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/障碍/R-31bbb五人投影必要行的精确不粘合障碍--障碍.md",
+          "sha256": "e35514c13ef4891656f67dfaf7176bbd0701fa7225edc115de6ec66b53e33728"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-31bbb-saturation-20261031/source/actual_ap_projection.py",
+          "sha256": "9fcc6adf94c04241e0df246c85fc74b9f078523ecd38163a9baac7756efddc2d"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-31bbb-saturation-20261031/source/exact_projection_witness.py",
+          "sha256": "cb0ed842108c684e5c656f95a97b578c936a179e8731495b3d7101640ded2805"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-31bbb-saturation-20261031/source/exact_projection_witness.json",
+          "sha256": "3245c24a8eed4441065e74f5ef272149227edeb6059bc25744e23793eb5a52ce"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/障碍/R-31bbb五人投影必要行的精确不粘合障碍--障碍.md",
+        "frozen:R-31bbb/actual_ap_projection.py",
+        "frozen:R-31bbb/exact_projection_witness.py",
+        "frozen:R-31bbb/exact_projection_witness.json"
+      ],
+      "keywords": [
+        "五人",
+        "AP",
+        "BNS",
+        "必要行非充分",
+        "有理证书"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/customer-attraction/state/资源/旧图计算实现节点和关系的合同--资源.md",
+      "sha256": "296e580413e486e1b33388eb85f3087537e48e2dccce311a0b9ea0dcbb82b17e",
+      "disposition": "excluded",
+      "object_ids": [],
+      "reason": "旧计算图导航包装：97节点/117关系全部实读；不逐关系造超边。数学逐身份现行正文、精确SHA、版本与已发布正文任务见receipt；程序/审计归数学证据，元资源不新立对象。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/旧图顺序客户吸引及费用扩展的完整范围--资源.md",
+      "sha256": "18a3adc8415e4e9043c629b871d20b229f729f29d54eea9e31f07140ec17e1e6",
+      "disposition": "excluded",
+      "object_ids": [],
+      "reason": "旧图跨费用扩展、多设施、CAG、正核的148节点/207关系导航；分别路由现行精确模型正文，历史状态不作当前truth。不是一个合并定理，不继承旧open覆盖当前proved。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/顺序客户吸引旧目录的逐项用途--资源.md",
+      "sha256": "d259db24c395129a6474bedfc4e2904e544b383957675598bcf95f247c2efff5",
+      "disposition": "excluded",
+      "object_ids": [],
+      "reason": "107条旧目录用途/角色/路径的导航；77等包级claim展示并非每条独立数学，逐项现行入口见receipt；无独有新证明。"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/R-171固定包络价格13节点有符号delta有限审计--障碍.md",
+      "sha256": "431f661e12248a5c5b8b2f7e003b8c3cc9cc907d47745c7e5c9f13b7effea445",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "与0065 M-7e204ccd7c6e4b7c8cbd5ddec64f5716同packet13有符号delta对象，完整来源与新增信用读数待实际owner接证，不复制主record。"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/R-18-round3静态总正遗憾可信副本放大族--障碍.md",
+      "sha256": "78433cb7c303566e957c2d4f83f94ec808beb9d53b7387a4927b276de06bc4f6",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/full-spe-static-positive-regret-four-client-replication"
+      ],
+      "reason": "实际已发布0057主对象已接受本整页path/SHA为evidence；本clone核0057 batch SHA6cf5f14197a6b3146dffcd87317aaf25b024a3fc48b922f08aa144e04e829d14及主ID v1/evidence均一致。全k四客户复制族同一身份，附件归既有owner，不复制主record。"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/R-2fc背景遗憾探针与无碰撞五客户负载桥--障碍.md",
+      "sha256": "f7fd1bc59bbfc1090203a9909274ea2b1704f9eaf382fac37272f371cd0c4d07",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "五客户无拥挤固定实例同0010 CA-COLLISION-FREE-LOAD-PAYMENT-NO；背景探针是有限浮点工具证据，整体P+Δ桥已另有52客户反例。待原owner接证，保模型/人数/随机样本边界。"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/R-3002尾部根证书与tau6模板障碍--障碍.md",
+      "sha256": "9d9eb9ff1e7d9de53fe65d1e304a8d73aabf831fc745985d0df55a8dbc211e20",
+      "disposition": "objects",
+      "object_ids": [
+        "M-7fa6f1e2b320459eac88c1c614c870b3"
+      ],
+      "reason": "新增tau6 literal128命名44行有理模板障碍已登记；五条root-requery与3894行必要点同0063 R-3002根行对象，后者来源接受另见receipt pending routes，不重造对象。"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/R-31bbb五人投影必要行的精确不粘合障碍--障碍.md",
+      "sha256": "e35514c13ef4891656f67dfaf7176bbd0701fa7225edc115de6ec66b53e33728",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/R-31bbb-saturation-exact-projection-obstruction-20261031"
+      ],
+      "reason": "五人实际路径AP/BNS精确必要投影不可粘合，保稳定ID和700行有理证明；浮点发现点/代码为证据。"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/R-31bbb终局税与弱匹配锥有限屏幕--障碍.md",
+      "sha256": "a079f815dbd576c4217da8dbb6f0ff15ef93aad9be830bd7cbf9ff8cec0be20b",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "终局全税候选同0017 M-21b495b7e58840219b8452da00e263d2待接证；addition与Markov阴性仅固定锥浮点屏幕，无精确新定理/反例，不用改称发现合同另造节点。其精确桥式、源码、样本及路由疑点见receipt。"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/R-33e8六提供者最优查询去相关桥的精确障碍--障碍.md",
+      "sha256": "42e8a19834e91ae6ca61a3ed2d5f6f8e060fa91d16164530c4fd131633e62fb8",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "34+EMPTY旧全称/88实际路径存在性两量词均已在task0002正式反例及演进审查保存；本页待主body owner接证，不以另一页稳定ID重复主记录。"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/R-373d耦合桥与计数MILP有限证书--障碍.md",
+      "sha256": "f0410daa71f6635bcddada62ef71e41b03437c48192fc1dee7f11ca5cdeb7737",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "D/O图恒等式与xi已是0039 SG1证明的相同代数，K5同M-a040b54060bc43e68c496b6ef12f4d35；本页原5761B审计源码是0039正文明确缺件的精确候选补证，待原owner接纳。47客户静态非PNE同0013存在性，计数编码同0037，改目标/接受点不另造节点。详见逐章节pending routes。"
+    }
+  ],
+  "edge_files": []
+}

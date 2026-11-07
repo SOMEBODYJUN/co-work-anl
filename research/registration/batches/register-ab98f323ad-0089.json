@@ -1,0 +1,1840 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline.json",
+    "sha256": "5d5737ab6d07552b48925bdb936dae70490e8de1ee0da2b380bb2d16dd5690cf"
+  },
+  "objects": [
+    {
+      "object_id": "facility-games/two-facility-two-catalog-model-and-complete-exact-continuation",
+      "version": 1,
+      "title": "双设施双目录原子客户与完整精确续局模型",
+      "kind": "definition",
+      "truth_status": "definition",
+      "model": "两带标签设施从各自有限非空目录同时选址，正权不可分客户被覆盖后强制参与，客户独立随机化并最小化包含自身完整重量的实际条件负载期望；设施收益为期望服务总权。完整规则逐有序布局选择精确客户NE，设施倍率只在所选纯在轨布局对全部实际单方偏离要求。",
+      "statement": "输入为有限客户I、严格正w_i、地点覆盖C_s及U1,U2有限非空。客户没有退出或相关随机化；在(s,t)以p_i选首家的公共客户满足p_i=1⇒Δ≤w_i，p_i=0⇒Δ≥−w_i，0<p_i<1⇒Δ=w_i(2p_i−1)。完整σ在所有U1×U2指定NE，在轨(s,t)收益(X,Y)须对r≠s,u≠t满足L1(σ(r,t))≤αX、L2(σ(s,u))≤αY。真实坐标极小与有限菜单极小不同；一般目录不允许未经条件的标签反射取商。",
+      "quantifiers": "每个有限合法输入、每个带标签布局、每名公共客户；存在一份完整规则是研究目标量词，不是所有规则都稳定。",
+      "assumptions": [
+        "权重严格正，客户和覆盖显式；未覆盖者不服务",
+        "同址允许且设施标签不同；位复杂度另限二进制有理输入"
+      ],
+      "scope": "线性双设施基本定义，包含共同与异构目录；不包含顺序CAG、相关客户、出行费或多设施。",
+      "objections": "正文完整保真实D_i iff接口及零收益约定，但不由定义宣称一般极小值可多项式求。此处仅登记模型，不吞并独立算法/困难性。",
+      "body": {
+        "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+        "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/model.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/model.md"
+      ]
+    },
+    {
+      "object_id": "SC-TWO-SITE-EXACT",
+      "version": 1,
+      "title": "至多两共同地点总有精确设施SPE",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "两带标签设施从各自有限非空目录同时选址，正权不可分客户被覆盖后强制参与，客户独立随机化并最小化包含自身完整重量的实际条件负载期望；设施收益为期望服务总权。完整规则逐有序布局选择精确客户NE，设施倍率只在所选纯在轨布局对全部实际单方偏离要求。本对象进一步要求两设施共同目录S，允许同址、空客户/空覆盖和零收益边界。",
+      "statement": "共同目录|S|≤2时存在完整独立混合客户NE规则和纯设施在轨布局，使α=1；不限制异址公共客户数。二站从任一纯异址NE及反射出发，若同址对半偏离过帽就改相应同址在轨。",
+      "quantifiers": "对每个满足本结构的输入，存在一份完整规则与一个纯设施布局；不是每份NE规则都稳定。",
+      "assumptions": [
+        "|S|≤2；异址交叠不限"
+      ],
+      "scope": "三类充分条件分别登记；共同目录实权存在性，零reach和平局保留。",
+      "objections": "成熟自足证明复用。客户续局可混合，不将纯设施在轨误写为客户全纯。两reach结论不能删单交叠。",
+      "body": {
+        "path": "archives/facility-games/state/定理/少地点与两种覆盖总重的精确稳定边界--定理.md",
+        "sha256": "e8ddb55eb3432abf5a366ff06393764e513cbec31bd1464447aa2549af332a65",
+        "section": "至多两地点"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/定理/少地点与两种覆盖总重的精确稳定边界--定理.md",
+          "sha256": "e8ddb55eb3432abf5a366ff06393764e513cbec31bd1464447aa2549af332a65",
+          "section": "三个不同的充分条件"
+        },
+        {
+          "path": "archives/facility-games/state/定理/少地点与两种覆盖总重的精确稳定边界--定理.md",
+          "sha256": "e8ddb55eb3432abf5a366ff06393764e513cbec31bd1464447aa2549af332a65",
+          "section": "使用异址威胁的合法条件"
+        },
+        {
+          "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+          "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09"
+        },
+        {
+          "path": "archives/facility-games/state/审查/实例最优计算的参数与判定前沿--审查.md",
+          "sha256": "4a67f6d5f9fb7931c79de47956a00a5ea0077f512e440f3ac5f61679370ae885",
+          "section": "共同目录的同址更新为何合法"
+        },
+        {
+          "path": "archives/facility-games/state/资料/共同目录成果入口的接口与版本状态--资料.md",
+          "sha256": "55c9f2e39906cb3193ab6f722809bf1a0a6b0db0f30fcff4788916e3b4b98d4f",
+          "section": "同址正规形主源的逐节吸收"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/定理/少地点与两种覆盖总重的精确稳定边界--定理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/instance_complexity_barriers.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/instance_complexity_barriers.md"
+      ]
+    },
+    {
+      "object_id": "SC-EQUAL-REACH-EXACT",
+      "version": 1,
+      "title": "共同目录全同覆盖总重的精确稳定",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "两带标签设施从各自有限非空目录同时选址，正权不可分客户被覆盖后强制参与，客户独立随机化并最小化包含自身完整重量的实际条件负载期望；设施收益为期望服务总权。完整规则逐有序布局选择精确客户NE，设施倍率只在所选纯在轨布局对全部实际单方偏离要求。本对象进一步要求两设施共同目录S，允许同址、空客户/空覆盖和零收益边界。",
+      "statement": "所有地点reach R_s=R时存在完整精确SPE。任意异址公共客户对半给两侧R−W_st/2，选交叠总重W_st最小的一对在轨；单地点及R=0单独合法。",
+      "quantifiers": "对每个满足本结构的输入，存在一份完整规则与一个纯设施布局；不是每份NE规则都稳定。",
+      "assumptions": [
+        "任意有限共同目录；R_s恒定；异址交叠人数不限"
+      ],
+      "scope": "三类充分条件分别登记；共同目录实权存在性，零reach和平局保留。",
+      "objections": "成熟自足证明复用。客户续局可混合，不将纯设施在轨误写为客户全纯。两reach结论不能删单交叠。",
+      "body": {
+        "path": "archives/facility-games/state/定理/少地点与两种覆盖总重的精确稳定边界--定理.md",
+        "sha256": "e8ddb55eb3432abf5a366ff06393764e513cbec31bd1464447aa2549af332a65",
+        "section": "任意多地点但全同reach"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/定理/少地点与两种覆盖总重的精确稳定边界--定理.md",
+          "sha256": "e8ddb55eb3432abf5a366ff06393764e513cbec31bd1464447aa2549af332a65",
+          "section": "三个不同的充分条件"
+        },
+        {
+          "path": "archives/facility-games/state/定理/少地点与两种覆盖总重的精确稳定边界--定理.md",
+          "sha256": "e8ddb55eb3432abf5a366ff06393764e513cbec31bd1464447aa2549af332a65",
+          "section": "使用异址威胁的合法条件"
+        },
+        {
+          "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+          "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09"
+        },
+        {
+          "path": "archives/facility-games/state/审查/实例最优计算的参数与判定前沿--审查.md",
+          "sha256": "4a67f6d5f9fb7931c79de47956a00a5ea0077f512e440f3ac5f61679370ae885",
+          "section": "共同目录的同址更新为何合法"
+        },
+        {
+          "path": "archives/facility-games/state/资料/共同目录成果入口的接口与版本状态--资料.md",
+          "sha256": "55c9f2e39906cb3193ab6f722809bf1a0a6b0db0f30fcff4788916e3b4b98d4f",
+          "section": "同址正规形主源的逐节吸收"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/定理/少地点与两种覆盖总重的精确稳定边界--定理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/instance_complexity_barriers.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/instance_complexity_barriers.md"
+      ]
+    },
+    {
+      "object_id": "SC-TWO-REACH-SPARSE",
+      "version": 1,
+      "title": "单交叠且至多两种覆盖总重的精确稳定",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "两带标签设施从各自有限非空目录同时选址，正权不可分客户被覆盖后强制参与，客户独立随机化并最小化包含自身完整重量的实际条件负载期望；设施收益为期望服务总权。完整规则逐有序布局选择精确客户NE，设施倍率只在所选纯在轨布局对全部实际单方偏离要求。本对象进一步要求两设施共同目录S，允许同址、空客户/空覆盖和零收益边界。",
+      "statement": "每对不同地点至多共享一名客户，reach只取至多两个值时存在完整精确SPE。高高最小交叠a≤2(R−L)用高高对半；否则H(h)=L，在低点高低收益或全局低低最小交叠分支取得合法候选，并以同址正规形检查/必要时换同址。",
+      "quantifiers": "对每个满足本结构的输入，存在一份完整规则与一个纯设施布局；不是每份NE规则都稳定。",
+      "assumptions": [
+        "异址交集人数≤1；reach至多两个值；同址覆盖人数不限"
+      ],
+      "scope": "三类充分条件分别登记；共同目录实权存在性，零reach和平局保留。",
+      "objections": "成熟自足证明复用。客户续局可混合，不将纯设施在轨误写为客户全纯。两reach结论不能删单交叠。",
+      "body": {
+        "path": "archives/facility-games/state/定理/少地点与两种覆盖总重的精确稳定边界--定理.md",
+        "sha256": "e8ddb55eb3432abf5a366ff06393764e513cbec31bd1464447aa2549af332a65",
+        "section": "单交叠且恰两种reach"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/定理/少地点与两种覆盖总重的精确稳定边界--定理.md",
+          "sha256": "e8ddb55eb3432abf5a366ff06393764e513cbec31bd1464447aa2549af332a65",
+          "section": "三个不同的充分条件"
+        },
+        {
+          "path": "archives/facility-games/state/定理/少地点与两种覆盖总重的精确稳定边界--定理.md",
+          "sha256": "e8ddb55eb3432abf5a366ff06393764e513cbec31bd1464447aa2549af332a65",
+          "section": "使用异址威胁的合法条件"
+        },
+        {
+          "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+          "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09"
+        },
+        {
+          "path": "archives/facility-games/state/审查/实例最优计算的参数与判定前沿--审查.md",
+          "sha256": "4a67f6d5f9fb7931c79de47956a00a5ea0077f512e440f3ac5f61679370ae885",
+          "section": "共同目录的同址更新为何合法"
+        },
+        {
+          "path": "archives/facility-games/state/资料/共同目录成果入口的接口与版本状态--资料.md",
+          "sha256": "55c9f2e39906cb3193ab6f722809bf1a0a6b0db0f30fcff4788916e3b4b98d4f",
+          "section": "同址正规形主源的逐节吸收"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/定理/少地点与两种覆盖总重的精确稳定边界--定理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/instance_complexity_barriers.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/instance_complexity_barriers.md"
+      ]
+    },
+    {
+      "object_id": "facility-games/two-reach-three-site-multiple-overlap-no-exact-stability",
+      "version": 1,
+      "title": "两reach多交叠三地点实例的真正最优倍率14/13",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "两带标签设施从各自有限非空目录同时选址，正权不可分客户被覆盖后强制参与，客户独立随机化并最小化包含自身完整重量的实际条件负载期望；设施收益为期望服务总权。完整规则逐有序布局选择精确客户NE，设施倍率只在所选纯在轨布局对全部实际单方偏离要求。本对象进一步要求两设施共同目录S，允许同址、空客户/空覆盖和零收益边界。",
+      "statement": "五客户权(6,6,8,5,3)，覆盖分别AB、AB、AC、BC、BC，reach(20,20,16)。全部异址NE负载AB=(14,14)、AC=(12,16)、BC=(15,13)，H(A),H(B),H(C)=(16,14,15)。三同址用收益和及低侧≤reach/2，连同全部异址排除证明所有完整规则倍率≥14/13；BC在轨(15,13)及异址这些NE/同址对半达到14/13。",
+      "quantifiers": "存在该精确有限输入；对任意在轨布局和任意完整精确客户NE规则均有倍率下界，另存在达到规则。",
+      "assumptions": [
+        "该输入异址AB和BC各两名共享客户；并非单交叠"
+      ],
+      "scope": "精确反驳从单交叠两reach稳定定理删除单交叠；不是所有三地点输入的最坏常数。",
+      "objections": "解析覆盖连续混合NE与全部九有序布局，不依赖有限菜单求解器的verify。",
+      "body": {
+        "path": "archives/facility-games/state/反例/两种覆盖总重的多交叠三地点不稳定例--反例.md",
+        "sha256": "ed5e124b34a3eb1f5bf610d6392b6df99deef9d0d67bb53b3f3f82a634bbe1c4"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/计算/共享目录原始输入与四种子入口的接续复核--计算.md",
+          "sha256": "cefe6cdbfd65ffa7bd4450035c7994012beac6b7a9bdc9b17ef759b123ee38df",
+          "section": "五个真实输入及其数学用途"
+        },
+        {
+          "path": "archives/facility-games/state/定理/少地点与两种覆盖总重的精确稳定边界--定理.md",
+          "sha256": "e8ddb55eb3432abf5a366ff06393764e513cbec31bd1464447aa2549af332a65",
+          "section": "不可删除的假设与复杂度用途"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/反例/两种覆盖总重的多交叠三地点不稳定例--反例.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/shared/two_reach_multi_no.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:examples/shared/two_reach_multi_no.json"
+      ]
+    },
+    {
+      "object_id": "SC-PHI-SHARP",
+      "version": 1,
+      "title": "共同目录五六地点正有理族的黄金比下界",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "两带标签设施从各自有限非空目录同时选址，正权不可分客户被覆盖后强制参与，客户独立随机化并最小化包含自身完整重量的实际条件负载期望；设施收益为期望服务总权。完整规则逐有序布局选择精确客户NE，设施倍率只在所选纯在轨布局对全部实际单方偏离要求。本对象进一步要求两设施共同目录S，允许同址、空客户/空覆盖和零收益边界。",
+      "statement": "令φ=(1+√5)/2。每个1≤α<φ都有正有理权、五共同地点、异址单交叠输入I，使α*(I)>α。正文先给六地点六客户族，以共同严格余量q²(φ−α)排尽十五异址与六同址类，再统一正有理扰动；限制前五地点保全部必要偏离。显式整数例的六点及五点最优均恰499750/309017。",
+      "quantifiers": "∀实数1≤α<φ，∃正有理实例I，∀纯在轨布局及∀完整精确NE规则不能α稳定；不是存在一个坏续局。",
+      "assumptions": [
+        "共同目录；客户强制服务、独立混合；完整实际偏离量词"
+      ],
+      "scope": "仅SC-PHI-SHARP的下界义务及有理族；有限有理例不声称取到无理φ。",
+      "objections": "不依赖SC-PHI-E上界；其修订后待定向审查状态不由本独立下界解除。有理化不假定NE对应连续，不声称外部首次性。",
+      "body": {
+        "path": "archives/facility-games/state/定理/共同目录黄金比下界的有理六地点与五地点族--定理.md",
+        "sha256": "d6da289ea0636830fae204b32fb28e1f854ff1ffdf84a3a58b988c45a9de0fbb"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/计算/共享目录原始输入与四种子入口的接续复核--计算.md",
+          "sha256": "cefe6cdbfd65ffa7bd4450035c7994012beac6b7a9bdc9b17ef759b123ee38df",
+          "section": "五个真实输入及其数学用途"
+        },
+        {
+          "path": "archives/facility-games/state/资料/共同目录成果入口的接口与版本状态--资料.md",
+          "sha256": "55c9f2e39906cb3193ab6f722809bf1a0a6b0db0f30fcff4788916e3b4b98d4f",
+          "section": "全部十五项原分支资产的去向"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/定理/共同目录黄金比下界的有理六地点与五地点族--定理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/sharp_phi_lower.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/sharp_phi_lower.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/small_sparse_catalogs.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/small_sparse_catalogs.md"
+      ]
+    },
+    {
+      "object_id": "M-a3b7e30967de4437804952f7d528d207",
+      "version": 1,
+      "title": "单交叠至多三地点的尖锐阈值√2",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "两带标签设施从各自有限非空目录同时选址，正权不可分客户被覆盖后强制参与，客户独立随机化并最小化包含自身完整重量的实际条件负载期望；设施收益为期望服务总权。完整规则逐有序布局选择精确客户NE，设施倍率只在所选纯在轨布局对全部实际单方偏离要求。本对象进一步要求两设施共同目录S，允许同址、空客户/空覆盖和零收益边界。",
+      "statement": "令τ_N为至多N共同地点且每异址交叠人数≤1的正有理输入α*上确界，则τ_3=√2。上界固定reach排序、纯异址菜单及同址可实现惩罚，假设全部候选失败推出三步威胁矛盾；实权下界h=1/√2的三客户例取等，有理逼近给正有理下界族。",
+      "quantifiers": "所有该类正实权输入有倍率≤√2；∀a<√2有正有理输入最优>a。",
+      "assumptions": [
+        "两设施共同目录至多三地点",
+        "每对不同地点最多一名共同客户；同址可稠密"
+      ],
+      "scope": "三地点普遍尖锐阈值，不继承一般φ证明的待审义务。",
+      "objections": "上界为完整规则存在，不是每个客户NE；菜单威胁可实现但未冒真实m；τ1/τ2身份另复用SC-TWO-SITE-EXACT。",
+      "body": {
+        "path": "archives/facility-games/state/定理/单交叠目录三四地点的尖锐稳定阈值--定理.md",
+        "sha256": "93ec05dedb05b2d0adffcd43e741f3dd320a4de8f74144ecbc18d77c04fea48b",
+        "section": "三地点上界$\\sqrt2$"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/定理/单交叠目录三四地点的尖锐稳定阈值--定理.md",
+          "sha256": "93ec05dedb05b2d0adffcd43e741f3dd320a4de8f74144ecbc18d77c04fea48b",
+          "section": "域、阈值与证明状态"
+        },
+        {
+          "path": "archives/facility-games/state/定理/单交叠目录三四地点的尖锐稳定阈值--定理.md",
+          "sha256": "93ec05dedb05b2d0adffcd43e741f3dd320a4de8f74144ecbc18d77c04fea48b",
+          "section": "固定纯异址菜单及同址惩罚"
+        },
+        {
+          "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+          "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/定理/单交叠目录三四地点的尖锐稳定阈值--定理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/small_sparse_catalogs.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/small_sparse_catalogs.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/sharp_phi_lower.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/sharp_phi_lower.md"
+      ]
+    },
+    {
+      "object_id": "SC-SPARSE-4",
+      "version": 1,
+      "title": "单交叠至多四地点的尖锐阈值∛4与有理达到族",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "两带标签设施从各自有限非空目录同时选址，正权不可分客户被覆盖后强制参与，客户独立随机化并最小化包含自身完整重量的实际条件负载期望；设施收益为期望服务总权。完整规则逐有序布局选择精确客户NE，设施倍率只在所选纯在轨布局对全部实际单方偏离要求。本对象进一步要求两设施共同目录S，允许同址、空客户/空覆盖和零收益边界。",
+      "statement": "同类τ_4=∛4。完整上界失败链用r³=4推出B>rD>r²C/2>r³B/4=B。五客户覆盖H到ABC、私有A、BD、CD、私有D；无损族B=99/100,H=31/50,C=99z/200,D=99/(100z)，3/2<z≤∛4，每个有理z给正有理输入α*=z，实z=∛4取等。另一ε族α*=z(1−ε)，z=19/12,ε=1/1000给6327/4000。",
+      "quantifiers": "∀满足条件输入有≤∛4规则；∀上述有理z有精确α*=z输入；实权可取等。",
+      "assumptions": [
+        "两设施共同目录至多四地点、异址交叠人数≤1"
+      ],
+      "scope": "N≤4独立解析阈值。五地点只登记独立φ下界，不以本页给一般φ上界。",
+      "objections": "不能把原SC-SPARSE-4容器吞掉三地点不同命题；有理输入不声称恰取无理∛4。",
+      "body": {
+        "path": "archives/facility-games/state/定理/单交叠目录三四地点的尖锐稳定阈值--定理.md",
+        "sha256": "93ec05dedb05b2d0adffcd43e741f3dd320a4de8f74144ecbc18d77c04fea48b",
+        "section": "四地点上界$\\sqrt[3]4$"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/定理/单交叠目录三四地点的尖锐稳定阈值--定理.md",
+          "sha256": "93ec05dedb05b2d0adffcd43e741f3dd320a4de8f74144ecbc18d77c04fea48b",
+          "section": "域、阈值与证明状态"
+        },
+        {
+          "path": "archives/facility-games/state/定理/单交叠目录三四地点的尖锐稳定阈值--定理.md",
+          "sha256": "93ec05dedb05b2d0adffcd43e741f3dd320a4de8f74144ecbc18d77c04fea48b",
+          "section": "固定纯异址菜单及同址惩罚"
+        },
+        {
+          "path": "archives/facility-games/state/定理/单交叠目录三四地点的尖锐稳定阈值--定理.md",
+          "sha256": "93ec05dedb05b2d0adffcd43e741f3dd320a4de8f74144ecbc18d77c04fea48b",
+          "section": "四地点五客户：两个实际有理下界族"
+        },
+        {
+          "path": "archives/facility-games/state/计算/共享目录原始输入与四种子入口的接续复核--计算.md",
+          "sha256": "cefe6cdbfd65ffa7bd4450035c7994012beac6b7a9bdc9b17ef759b123ee38df",
+          "section": "五个真实输入及其数学用途"
+        },
+        {
+          "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+          "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/定理/单交叠目录三四地点的尖锐稳定阈值--定理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/small_sparse_catalogs.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/small_sparse_catalogs.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/sharp_phi_lower.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/sharp_phi_lower.md"
+      ]
+    },
+    {
+      "object_id": "LOCAL-HARD",
+      "version": 1,
+      "title": "指定设施全部NE坐标阈值的弱NP完全性",
+      "kind": "reduction",
+      "truth_status": "proved",
+      "model": "固定两个带标签设施、非负私有背景A,B及显式正权公共原子客户w_i；公共客户独立混合、含自身完整重量的实际条件负载费用，设施收益X=A+Σw_ip_i、Y=B+Σw_i(1-p_i)，Δ=X−Y。",
+      "statement": "输入非负有理私有背景、正整数公共权及正整数Q，判定是否有精确独立混合NE使Δ≤−Q为弱NP完全；指定第一设施真实坐标极小值弱NP难。SUBSET SUM五进制无进位编码到t_i∈{0,1,2}，变量重Q+a_i、n+1个Q锚并以Δ=−Q完整反向编码；镜像并加一名小共同客户可消去私有背景，A=B=0仍难。NP证书来自完整闭支持，DP-W给伪多项式上界。",
+      "quantifiers": "对全部合法输入的判定复杂度；归约对任意源SUBSET SUM，全部实概率NE而非限常数混合者。",
+      "assumptions": [
+        "显式正整数共同权，非负有理背景；阈值有二进制编码"
+      ],
+      "scope": "局部真实极值；不等于选址SPE见证难，不声称强NP完全。",
+      "objections": "有限hardness_enum首例扫描未遍历全所列域；成熟归约自足，不以扫描次数作证明。",
+      "body": {
+        "path": "archives/facility-games/state/归约/指定设施均衡负载极小值的弱NP完全性--归约.md",
+        "sha256": "aa398a78b53b28adfdc71c5a17e016b6323854b14d7a0fa14d9cb25401e685df"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+          "sha256": "9ff056ee4073e03d61b049a3e1e35e2b68828a63fe5c4b3260c0a7c5b714fe8c",
+          "section": "A11.4 LOCAL-HARD：极值为什么不能被当作免费子程序"
+        },
+        {
+          "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+          "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc"
+        },
+        {
+          "path": "archives/facility-games/state/计算/局部谱与实例最优程序的原入口复现--计算.md",
+          "sha256": "63e4e289d0cfae29ce10b7778636c96407b19d739eee557f41bcf3515982a573",
+          "section": "四个原入口，各一次"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/归约/指定设施均衡负载极小值的弱NP完全性--归约.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/local/hardness.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/local/hardness.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/local_and_exact/exact_algorithms_and_extensions.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/local_and_exact/exact_algorithms_and_extensions.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/hardness_enum.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/hardness_enum.py"
+      ]
+    },
+    {
+      "object_id": "M-b2bcfe1f64ee4a7799a58ef2609d04dd",
+      "version": 1,
+      "title": "局部真实最小负载需无界实际混合人数的单位权族",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "固定两个带标签设施、非负私有背景A,B及显式正权公共原子客户w_i；公共客户独立混合、含自身完整重量的实际条件负载费用，设施收益X=A+Σw_ip_i、Y=B+Σw_i(1-p_i)，Δ=X−Y。",
+      "statement": "A=B且2r名单位公共客户，r≥2。全部NE的最小Δ=−(r−1)/r，仅由r−1人纯第一、r+1人真正混合且各p=1/(2r)的结构取得（客户标签可置换）。纯NE只有Δ=0、单混合不可能；对m≥2,b名纯第二的−Δ=(2r−m−2b)/(m−1)及奇偶界证明唯一极小结构。",
+      "quantifiers": "∀整数r≥2存在此输入；∀其最优NE均有r+1名真正混合者。",
+      "assumptions": [
+        "共同单位权；两私有总负载相同；完整连续混合概率域"
+      ],
+      "scope": "反驳把精确坐标极小的实际混合人数截为任何固定常数；不是任意NE搜索困难。",
+      "objections": "不同于固定强配额40/39三混合例，前者是所有r的坐标极值族。",
+      "body": {
+        "path": "archives/facility-games/state/归约/指定设施均衡负载极小值的弱NP完全性--归约.md",
+        "sha256": "aa398a78b53b28adfdc71c5a17e016b6323854b14d7a0fa14d9cb25401e685df",
+        "section": "最优点可能需要无界实际混合者"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+          "sha256": "9ff056ee4073e03d61b049a3e1e35e2b68828a63fe5c4b3260c0a7c5b714fe8c",
+          "section": "极小值有时确实需要任意多名混合者"
+        },
+        {
+          "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+          "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/归约/指定设施均衡负载极小值的弱NP完全性--归约.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/local/hardness.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/local/hardness.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/local_and_exact/exact_algorithms_and_extensions.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/local_and_exact/exact_algorithms_and_extensions.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/hardness_enum.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/hardness_enum.py"
+      ]
+    },
+    {
+      "object_id": "LOCAL-CHORD-IFF",
+      "version": 1,
+      "title": "局部强交叉配额的最大原子充要判据",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "固定两个带标签设施、非负私有背景A,B及显式正权公共原子客户w_i；公共客户独立混合、含自身完整重量的实际条件负载费用，设施收益X=A+Σw_ip_i、Y=B+Σw_i(1-p_i)，Δ=X−Y。",
+      "statement": "reach R≥r>φR/2，共同总重C<qr，q=(√5−1)/2；C>0令最大共同原子x、S=C−x，则存在NE同时L_R≥qr、L_r≥qR，当且仅当S≥R−r或x≤R−qr。C=0直接可行。等号允许；S<R−r且x>R−qr时全部NE唯一并失首配额。",
+      "quantifiers": "对每个满足严格reach/共同总重条件的局部输入；判据覆盖全部mixed NE，构造在可行域存在。",
+      "assumptions": [
+        "R≥r>φR/2且C<qr；权严格正，C≤r",
+        "位时间另要求显式正二进制有理权，q比较精确"
+      ],
+      "scope": "只固定双地点的强quota问题；不认证全局固定菜单、任意坏环或SC-PHI-E/A。",
+      "objections": "x≤(1−q)R仅是充分子类，不能写成必要条件。软件实现与历史14646报告另属证据，未在本轮重跑。",
+      "body": {
+        "path": "archives/facility-games/state/定理/双地点强交叉配额的最大原子判据--定理.md",
+        "sha256": "abf2193390d535e2ec238ed9ec71381948b1ccf0b9d15a85677ec8d4045e2484"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/算法/盒截面平方和的两坐标端点交换--算法.md",
+          "sha256": "739a955e044f6092f3de5a71e067e9137a639c850f82dc14662e5e723131b535"
+        },
+        {
+          "path": "archives/facility-games/state/引理/两设施纯改善的移动界与默认续局--引理.md",
+          "sha256": "d765eaf078a7832bdf4d177bb25dfd24dfe6aeb2fc4bc151d88faa95a4340012"
+        },
+        {
+          "path": "archives/facility-games/state/计算/局部谱与实例最优程序的原入口复现--计算.md",
+          "sha256": "63e4e289d0cfae29ce10b7778636c96407b19d739eee557f41bcf3515982a573",
+          "section": "历史实测与当前实现分开"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/定理/双地点强交叉配额的最大原子判据--定理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/local_and_exact/local_geometry_and_chord.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/local_and_exact/local_geometry_and_chord.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/local/chord_exchange.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/local/chord_exchange.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/local_chord_full.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/local_chord_full.md"
+      ]
+    },
+    {
+      "object_id": "LOCAL-CHORD-POLY",
+      "version": 1,
+      "title": "强交叉配额判据的位多项式局部构造",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "固定两个带标签设施、非负私有背景A,B及显式正权公共原子客户w_i；公共客户独立混合、含自身完整重量的实际条件负载费用，设施收益X=A+Σw_ip_i、Y=B+Σw_i(1-p_i)，Δ=X−Y。",
+      "statement": "在LOCAL-CHORD-IFF同域，显式正二进制有理输入可在O((n+1)^4)有理运算和多项式位长判定条件并在可行时构造达两强配额的精确独立混合NE。内部盒截面仅需两坐标端点局部最优；坏正/负gap按全分支修复，≥3指定混合者的质量界给配额；更宽最大权域保坏负gap的x< R−qr修正。",
+      "quantifiers": "对每个满足严格reach/共同总重条件的局部输入；判据覆盖全部mixed NE，构造在可行域存在。",
+      "assumptions": [
+        "R≥r>φR/2且C<qr；权严格正，C≤r",
+        "位时间另要求显式正二进制有理权，q比较精确"
+      ],
+      "scope": "只固定双地点的强quota问题；不认证全局固定菜单、任意坏环或SC-PHI-E/A。",
+      "objections": "x≤(1−q)R仅是充分子类，不能写成必要条件。软件实现与历史14646报告另属证据，未在本轮重跑。",
+      "body": {
+        "path": "archives/facility-games/state/定理/双地点强交叉配额的最大原子判据--定理.md",
+        "sha256": "abf2193390d535e2ec238ed9ec71381948b1ccf0b9d15a85677ec8d4045e2484"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/算法/盒截面平方和的两坐标端点交换--算法.md",
+          "sha256": "739a955e044f6092f3de5a71e067e9137a639c850f82dc14662e5e723131b535"
+        },
+        {
+          "path": "archives/facility-games/state/引理/两设施纯改善的移动界与默认续局--引理.md",
+          "sha256": "d765eaf078a7832bdf4d177bb25dfd24dfe6aeb2fc4bc151d88faa95a4340012"
+        },
+        {
+          "path": "archives/facility-games/state/计算/局部谱与实例最优程序的原入口复现--计算.md",
+          "sha256": "63e4e289d0cfae29ce10b7778636c96407b19d739eee557f41bcf3515982a573",
+          "section": "历史实测与当前实现分开"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/定理/双地点强交叉配额的最大原子判据--定理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/local_and_exact/local_geometry_and_chord.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/local_and_exact/local_geometry_and_chord.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/local/chord_exchange.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/local/chord_exchange.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/local_chord_full.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/local_chord_full.md"
+      ]
+    },
+    {
+      "object_id": "facility-games/two-facility-pure-improvement-move-bounds-and-default",
+      "version": 1,
+      "title": "双设施纯改善的任意顺序与最大权移动界及默认纯NE",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "固定两个带标签设施、非负私有背景A,B及显式正权公共原子客户w_i；公共客户独立混合、含自身完整重量的实际条件负载费用，设施收益X=A+Σw_ip_i、Y=B+Σw_i(1-p_i)，Δ=X−Y。",
+      "statement": "任意合法纯分配上严格改善重w恰w<g=H−L；移动后|g−2w|<g、最小负载不降。任意严格改善次序共O((n+1)^2)次；每步选择最大权可改善客户时每人至多一次、总≤n，扫描实现O((n+1)^2)有理运算。另按共同权非增依次插入当前低侧从私有底载出发，O(n log n)得纯NE并可作完整规则默认。",
+      "quantifiers": "所有双设施私有底载与正权公共客户；任意严格序列与指定最大权序列分别有界。",
+      "assumptions": [
+        "严格改善，平局不移动；两设施固定背景",
+        "最大权破平局固定；不含配额保持的额外推断"
+      ],
+      "scope": "同一双gap结构的纯修复/默认方法；任意设施数不继承此多项式界。",
+      "objections": "终点NE不自动保特定双配额；固定最大客户当私有背景须另核它每个中间态不愿动。",
+      "body": {
+        "path": "archives/facility-games/state/引理/两设施纯改善的移动界与默认续局--引理.md",
+        "sha256": "d765eaf078a7832bdf4d177bb25dfd24dfe6aeb2fc4bc151d88faa95a4340012"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/审查/学习代表页的数学可见内容与视觉证据范围--审查.md",
+          "sha256": "3cb3487b5864caabf2ca9c1746c5757ff67cf56c6d9ec9f61e2e443b3a8029e2",
+          "section": "页28：一般最大重量纯修复须继续到无改善"
+        },
+        {
+          "path": "archives/facility-games/state/计算/双设施菜单与盒截面交换的精确复核--计算.md",
+          "sha256": "b4c12e26e1852eea31c9faae7b3560c7b078b9b039c89bfcc3a52164edc19a9e",
+          "section": "精确$q$比较和局部NE模块"
+        },
+        {
+          "path": "archives/facility-games/state/计算/局部谱与实例最优程序的原入口复现--计算.md",
+          "sha256": "63e4e289d0cfae29ce10b7778636c96407b19d739eee557f41bcf3515982a573",
+          "section": "17源的数学去向"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/引理/两设施纯改善的移动界与默认续局--引理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/local_and_exact/local_geometry_and_chord.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/local_and_exact/local_geometry_and_chord.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/local/chord_exchange.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/local/chord_exchange.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/local/exact_methods.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/local/exact_methods.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:facility_spe/exact/mitm.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:facility_spe/exact/mitm.py"
+      ]
+    },
+    {
+      "object_id": "facility-games/threshold-meet-in-middle-objectives-and-response-pruning",
+      "version": 1,
+      "title": "局部阈值半表对单谷目标的精确NE优化",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "固定两个带标签设施、非负私有背景A,B及显式正权公共原子客户w_i；公共客户独立混合、含自身完整重量的实际条件负载费用，设施收益X=A+Σw_ip_i、Y=B+Σw_i(1-p_i)，Δ=X−Y。",
+      "statement": "对可精确比较的f(Δ)，若其在t0左非增右非减，半表按重前缀/符号枚举A/B/M、同(m,z)去重并分组排序。每右混合数只需查目标两侧最近可行z；m=1分子为零时将t0截入完整可行区间。时间/空间poly(n)3^ceil(n/2)，中间有理位长多项式并恢复NE见证。",
+      "quantifiers": "所有正有理局部输入及上述单谷目标，目标求值成本另计。",
+      "assumptions": [
+        "目标具有所述单谷性并可精确比较；不把单元区间压成默认端点"
+      ],
+      "scope": "局部单谷目标优化，不输出全部谱，不适用于任意黑盒目标。",
+      "objections": "存在指数n依赖；不称一般位多项式。",
+      "body": {
+        "path": "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
+        "sha256": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65",
+        "section": "局部查询的确切输入与保证"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+          "sha256": "9ff056ee4073e03d61b049a3e1e35e2b68828a63fe5c4b3260c0a7c5b714fe8c",
+          "section": "A11.5 MITM：用两半支持避免全笛卡尔积"
+        },
+        {
+          "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+          "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+          "section": "阈值压缩是完整谱的等价表示"
+        },
+        {
+          "path": "archives/facility-games/state/计算/局部谱与实例最优程序的原入口复现--计算.md",
+          "sha256": "63e4e289d0cfae29ce10b7778636c96407b19d739eee557f41bcf3515982a573",
+          "section": "四个原入口，各一次"
+        },
+        {
+          "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+          "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:facility_spe/exact/mitm.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:facility_spe/exact/mitm.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/proofs/local/mitm_research_log.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/proofs/local/mitm_research_log.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/local_and_exact/exact_algorithms_and_extensions.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/local_and_exact/exact_algorithms_and_extensions.md"
+      ]
+    },
+    {
+      "object_id": "M-78b5c8b948b14f799fb5849a464c17a7",
+      "version": 1,
+      "title": "共同目录全部布局的MITM真正实例最优算法",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "两带标签设施从各自有限非空目录同时选址，正权不可分客户被覆盖后强制参与，客户独立随机化并最小化包含自身完整重量的实际条件负载期望；设施收益为期望服务总权。完整规则逐有序布局选择精确客户NE，设施倍率只在所选纯在轨布局对全部实际单方偏离要求。本对象进一步要求两设施共同目录S，允许同址、空客户/空覆盖和零收益边界。",
+      "statement": "game_solve对全部含同址布局以MITM求真两向m和全目录d(t)=max_s m(s,t)，在每局部谱上最小化max{1,2d(t)/(V+Δ),2d(s)/(V−Δ)}，目标Δ0=V(d(t)−d(s))/(d(t)+d(s))（两d零取0），比较所有布局得真正α*与达到规则。总N²poly(κ)3^ceil(κ/2)加incidence处理，κ仍含同址公共数。",
+      "quantifiers": "每个显式正有理共同目录输入；优化遍历全部布局及真实NE。",
+      "assumptions": [
+        "零分子/零收益作0、正威胁/零收益为∞；α至少1"
+      ],
+      "scope": "真实全局最优；不同于有限菜单最优或lazy找到的环内最优。",
+      "objections": "本原实现未实现κ只计异址的后续正规形；verify短证书只核达到，最优性由完整搜索论证。",
+      "body": {
+        "path": "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
+        "sha256": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65",
+        "section": "真正实例最优与环内最优"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
+          "sha256": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65",
+          "section": "局部查询的确切输入与保证"
+        },
+        {
+          "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+          "sha256": "9ff056ee4073e03d61b049a3e1e35e2b68828a63fe5c4b3260c0a7c5b714fe8c",
+          "section": "A11.6 EXACT-KAPPA：把所有局部谱拼成真正最优证书"
+        },
+        {
+          "path": "archives/facility-games/state/计算/局部谱与实例最优程序的原入口复现--计算.md",
+          "sha256": "63e4e289d0cfae29ce10b7778636c96407b19d739eee557f41bcf3515982a573"
+        },
+        {
+          "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+          "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:facility_spe/exact/mitm.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:facility_spe/exact/mitm.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/proofs/local/mitm_research_log.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/proofs/local/mitm_research_log.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/local_and_exact/exact_algorithms_and_extensions.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/local_and_exact/exact_algorithms_and_extensions.md"
+      ]
+    },
+    {
+      "object_id": "M-a4510cf6b0ee470384411c5b272b372b",
+      "version": 1,
+      "title": "可实现纯NE上界的响应剪枝与全域威胁环内优化",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "两带标签设施从各自有限非空目录同时选址，正权不可分客户被覆盖后强制参与，客户独立随机化并最小化包含自身完整重量的实际条件负载期望；设施收益为期望服务总权。完整规则逐有序布局选择精确客户NE，设施倍率只在所选纯在轨布局对全部实际单方偏离要求。本对象进一步要求两设施共同目录S，允许同址、空客户/空覆盖和零收益边界。",
+      "statement": "给任一具体客户NE的首收益U(s,t)，m≤U≤reach_s。固定对手t若已有真最大D且U≤D，可跳过该m而保NE作惩罚见证；按U降序精化最终得到精确全目录d(t)及有效最大响应。lazy路径访问r≤N列、环长k≤r时局部查询≤O(Nr+k²)，在环内用全目录d优化给完整游戏达到规则且该环内最优。",
+      "quantifiers": "所有合法显式共同目录输入及所选响应路径；跳过项有具体NE上界见证。",
+      "assumptions": [
+        "greedy_pair使用非增权低侧插入的实际NE；不以松弛上界当可执行惩罚",
+        "d的max始终全合法目录"
+      ],
+      "scope": "精确剪枝及环内达到合同；不保证全局α*或正比例剪枝。",
+      "objections": "最坏查询仍N²；代码assert环倍率≤φ另依待审全局环定理，未登记为本算法已证保证。",
+      "body": {
+        "path": "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
+        "sha256": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65",
+        "section": "响应剪枝的真实证明"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/引理/两设施纯改善的移动界与默认续局--引理.md",
+          "sha256": "d765eaf078a7832bdf4d177bb25dfd24dfe6aeb2fc4bc151d88faa95a4340012"
+        },
+        {
+          "path": "archives/facility-games/state/计算/局部谱与实例最优程序的原入口复现--计算.md",
+          "sha256": "63e4e289d0cfae29ce10b7778636c96407b19d739eee557f41bcf3515982a573",
+          "section": "历史实测与当前实现分开"
+        },
+        {
+          "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+          "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:facility_spe/exact/mitm.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:facility_spe/exact/mitm.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/proofs/local/mitm_research_log.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/proofs/local/mitm_research_log.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/local_and_exact/exact_algorithms_and_extensions.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/local_and_exact/exact_algorithms_and_extensions.md"
+      ]
+    },
+    {
+      "object_id": "LOCAL-ATOM-WARDROP-k",
+      "version": 1,
+      "title": "任意固定K设施原子NE与Wardrop负载的尖锐坐标误差",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "固定K≥2标签设施及有限正权客户，按任意可达集合强制服役，独立混合原子NE条件负载成本；同布局每客户可分后的Wardrop作对照。",
+      "statement": "对任意原子NE期望负载x及任意同布局Wardrop负载ℓ，令θ为可达至少两设施客户的最大原子（无则0），有max_f|x_f−ℓ_f|≤(K−1)θ/2。运输耦合T_fg=Σw_i p_if q_ig使每相邻排序净差≤θ，零和得结论。每K用相邻边M=K(K−1)/2单位客户链给等号。",
+      "quantifiers": "∀固定布局、∀其原子NE、∀其Wardrop对照；每K存在等号族。",
+      "assumptions": [
+        "费用为线性实现负载、含自身重量；正实权也成立"
+      ],
+      "scope": "固定布局加性误差，不是选址SPE倍数或良好续局选择不可能性。",
+      "objections": "θ按可达设施数计，同址任意NE亦包括；不同于仅异址共享原子且同址主动半分的粒度定理。",
+      "body": {
+        "path": "archives/facility-games/state/引理/原子与Wardrop固定布局负载的尖锐坐标误差--引理.md",
+        "sha256": "60825fe521008b64eb8db1150abe872f663fd9e575735e125d07cbaa6336e4f7"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+          "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09"
+        },
+        {
+          "path": "archives/facility-games/state/计算/局部谱与实例最优程序的原入口复现--计算.md",
+          "sha256": "63e4e289d0cfae29ce10b7778636c96407b19d739eee557f41bcf3515982a573",
+          "section": "17源的数学去向"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/引理/原子与Wardrop固定布局负载的尖锐坐标误差--引理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/local_and_exact/atomic_wardrop_gap.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/local_and_exact/atomic_wardrop_gap.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/local_and_exact/README.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/local_and_exact/README.md"
+      ]
+    },
+    {
+      "object_id": "DP-W",
+      "version": 1,
+      "title": "整数公共总重参数的完整双设施NE谱动态规划",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "固定两个带标签设施、非负私有背景A,B及显式正权公共原子客户w_i；公共客户独立混合、含自身完整重量的实际条件负载费用，设施收益X=A+Σw_ip_i、Y=B+Σw_i(1-p_i)，Δ=X−Y。",
+      "statement": "公共正整数总重W、私有A,B非负有理，排序按|Δ|重前缀，把轻客户固定低侧，重客户DP状态(m,z)按纯首/纯次/名义混合转移；(1−m)Δ=δ−εℓ_j+z配重阈值闭区间，m=1保完整连续段。O(n²W+n log n)有理运算得完整谱、坐标极值和双配额见证；保所有父层O(n²W)空间，滚动仅极值O(nW)。",
+      "quantifiers": "所有显式整数公共权、非负有理背景；每输出谱片内目标有NE恢复。",
+      "assumptions": [
+        "复杂度按整数总重数值W，非logW；空n用常数开销统一"
+      ],
+      "scope": "已实现的伪多项式算法，可逐布局求全局真最优。",
+      "objections": "有理权清分母可令W指数大，不称一般位多项式；530对照是有限证据。",
+      "body": {
+        "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+        "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+        "section": "整数总重DP-W"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+          "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+          "section": "阈值压缩是完整谱的等价表示"
+        },
+        {
+          "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+          "sha256": "9ff056ee4073e03d61b049a3e1e35e2b68828a63fe5c4b3260c0a7c5b714fe8c",
+          "section": "A11.2 DP-W：轻客户先固定，重客户按状态合并"
+        },
+        {
+          "path": "archives/facility-games/state/计算/局部谱与实例最优程序的原入口复现--计算.md",
+          "sha256": "63e4e289d0cfae29ce10b7778636c96407b19d739eee557f41bcf3515982a573",
+          "section": "四个原入口，各一次"
+        },
+        {
+          "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+          "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/local_and_exact/exact_algorithms_and_extensions.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/local_and_exact/exact_algorithms_and_extensions.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/local/exact_methods.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/local/exact_methods.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:facility_spe/exact/threshold_dp.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:facility_spe/exact/threshold_dp.py"
+      ]
+    },
+    {
+      "object_id": "FPT-D",
+      "version": 1,
+      "title": "显式客户的不同权值数参数化精确NE优化",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "固定两个带标签设施、非负私有背景A,B及显式正权公共原子客户w_i；公共客户独立混合、含自身完整重量的实际条件负载费用，设施收益X=A+Σw_ip_i、Y=B+Σw_i(1-p_i)，Δ=X−Y。",
+      "statement": "有d种精确有理权且逐客户显式，枚举符号、d+1截断和总指定混合人数K；每重类用至多2d整数b_h,m_h，z=Σv_h(n_h−2b_h−m_h)。K≠1代入Δ并正确处理负分母；K=1加零分子约束检完整阈值/配额区间。归约为O(dn)个固定维ILP，导入经典固定维算法得2^{O(d³)}poly(n,L)，恢复极值和配额NE。",
+      "quantifiers": "每个上述显式输入；d为参数，固定维ILP作为外部标准工具。",
+      "assumptions": [
+        "不允许把巨大人数仅二进制重数编码而仍要求显式输出时间",
+        "精确有理/代数配额比较和上下取整"
+      ],
+      "scope": "已证明的固定维ILP归约与导入算法保证，规范ILP程序未实现。",
+      "objections": "不是n^{O(d)}枚举，不是可变d统一多项式；未重证Lenstra/Kannan算法或声称本轮外文新核。",
+      "body": {
+        "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+        "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+        "section": "不同权种FPT-D"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+          "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+          "section": "阈值压缩是完整谱的等价表示"
+        },
+        {
+          "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+          "sha256": "9ff056ee4073e03d61b049a3e1e35e2b68828a63fe5c4b3260c0a7c5b714fe8c",
+          "section": "A11.3 FPT-D：不同重量少时，按人数代替逐人状态"
+        },
+        {
+          "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+          "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/local_and_exact/exact_algorithms_and_extensions.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/local_and_exact/exact_algorithms_and_extensions.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/local/exact_methods.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/local/exact_methods.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:facility_spe/exact/threshold_dp.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:facility_spe/exact/threshold_dp.py"
+      ]
+    },
+    {
+      "object_id": "SC-THREE-DEC1-HARD",
+      "version": 1,
+      "title": "恰三共同地点精确稳定判定的弱NP完全性",
+      "kind": "reduction",
+      "truth_status": "proved",
+      "model": "两带标签设施从各自有限非空目录同时选址，正权不可分客户被覆盖后强制参与，客户独立随机化并最小化包含自身完整重量的实际条件负载期望；设施收益为期望服务总权。完整规则逐有序布局选择精确客户NE，设施倍率只在所选纯在轨布局对全部实际单方偏离要求。本对象进一步要求两设施共同目录S，允许同址、空客户/空覆盖和零收益边界。",
+      "statement": "DEC1：恰三共同地点、显式正二进制有理/整数客户权，判定α*(I)≤1弱NP完全。SUBSET SUM局部完整谱端点装入AB两等重、AC单原子和BC硬群；YES在AC配完整规则，NO逐AA/BB/CC/AB/AC/BC排除任意NE及其反射。",
+      "quantifiers": "∀事先固定的合域有理a（a=1单独），∀源SUBSET SUM输入有多项式归约；YES存在完整规则，NO排除所有布局/规则。",
+      "assumptions": [
+        "地点数是三/五，设施数始终二",
+        "二进制正整数权亦可；固定a不是输入a的统一预处理保证"
+      ],
+      "scope": "全布局、精确独立混合客户NE的弱NP完全性；NP有理证书及整数总重伪多项式上界齐全。",
+      "objections": "有限23例/原程序不代普遍归约；不称强NP完全、最少地点数或固定常数gap；不依SC-PHI-E。",
+      "body": {
+        "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+        "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+          "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+          "section": "三地点a=1：六类在轨布局的精确守卫"
+        },
+        {
+          "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+          "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+          "section": "位长、NO间隙、NP成员性与“弱”"
+        },
+        {
+          "path": "archives/facility-games/state/审查/学习附录A04-A05阈值困难性审查--审查.md",
+          "sha256": "f4516fe76be18a4019ec68d7428a20aeba6525a548751a462df77afbf064f3ad"
+        },
+        {
+          "path": "archives/facility-games/state/审查/实例最优计算的参数与判定前沿--审查.md",
+          "sha256": "4a67f6d5f9fb7931c79de47956a00a5ea0077f512e440f3ac5f61679370ae885",
+          "section": "固定阈值分类必须守全布局"
+        },
+        {
+          "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+          "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/three_site_exact_hardness.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/three_site_exact_hardness.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/five_site_exact_hardness.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/five_site_exact_hardness.md"
+      ]
+    },
+    {
+      "object_id": "SC-THREE-DECa-HARD",
+      "version": 1,
+      "title": "恰三共同地点固定1<a<σ判定的弱NP完全性",
+      "kind": "reduction",
+      "truth_status": "proved",
+      "model": "两带标签设施从各自有限非空目录同时选址，正权不可分客户被覆盖后强制参与，客户独立随机化并最小化包含自身完整重量的实际条件负载期望；设施收益为期望服务总权。完整规则逐有序布局选择精确客户NE，设施倍率只在所选纯在轨布局对全部实际单方偏离要求。本对象进一步要求两设施共同目录S，允许同址、空客户/空覆盖和零收益边界。",
+      "statement": "对每个事先固定有理1<a<σ=(1+√3)/2，恰三共同地点DEC_a弱NP完全。改变reach顺序的R_B>R_A>R_C模板及完整六类守卫给YES合法续局、NO全NE排除；常数补数只依a，输出位长对源输入多项式。",
+      "quantifiers": "∀事先固定的合域有理a（a=1单独），∀源SUBSET SUM输入有多项式归约；YES存在完整规则，NO排除所有布局/规则。",
+      "assumptions": [
+        "地点数是三/五，设施数始终二",
+        "二进制正整数权亦可；固定a不是输入a的统一预处理保证"
+      ],
+      "scope": "全布局、精确独立混合客户NE的弱NP完全性；NP有理证书及整数总重伪多项式上界齐全。",
+      "objections": "有限23例/原程序不代普遍归约；不称强NP完全、最少地点数或固定常数gap；不依SC-PHI-E。",
+      "body": {
+        "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+        "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+          "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+          "section": "三地点固定1<a<σ：改变reach顺序后的守卫"
+        },
+        {
+          "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+          "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+          "section": "位长、NO间隙、NP成员性与“弱”"
+        },
+        {
+          "path": "archives/facility-games/state/审查/学习附录A04-A05阈值困难性审查--审查.md",
+          "sha256": "f4516fe76be18a4019ec68d7428a20aeba6525a548751a462df77afbf064f3ad"
+        },
+        {
+          "path": "archives/facility-games/state/审查/实例最优计算的参数与判定前沿--审查.md",
+          "sha256": "4a67f6d5f9fb7931c79de47956a00a5ea0077f512e440f3ac5f61679370ae885",
+          "section": "固定阈值分类必须守全布局"
+        },
+        {
+          "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+          "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/three_site_exact_hardness.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/three_site_exact_hardness.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/five_site_exact_hardness.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/five_site_exact_hardness.md"
+      ]
+    },
+    {
+      "object_id": "SC-FIVE-DECa-HARD",
+      "version": 1,
+      "title": "恰五共同地点固定亚黄金比判定的弱NP完全性",
+      "kind": "reduction",
+      "truth_status": "proved",
+      "model": "两带标签设施从各自有限非空目录同时选址，正权不可分客户被覆盖后强制参与，客户独立随机化并最小化包含自身完整重量的实际条件负载期望；设施收益为期望服务总权。完整规则逐有序布局选择精确客户NE，设施倍率只在所选纯在轨布局对全部实际单方偏离要求。本对象进一步要求两设施共同目录S，允许同址、空客户/空覆盖和零收益边界。",
+      "statement": "对每个事先固定有理1<a<φ，恰五共同地点DEC_a弱NP完全。SUBSET SUM五进制微群、中心宏/桥宏和叶守卫构造正权输入；YES精确α*=a并给全部25布局规则，NO所有五同址十异址类满足α*>a。桥宏的全部NE双向删除需私有差严格大于微群总重；位长多项式，NO间隙可指数小。",
+      "quantifiers": "∀事先固定的合域有理a（a=1单独），∀源SUBSET SUM输入有多项式归约；YES存在完整规则，NO排除所有布局/规则。",
+      "assumptions": [
+        "地点数是三/五，设施数始终二",
+        "二进制正整数权亦可；固定a不是输入a的统一预处理保证"
+      ],
+      "scope": "全布局、精确独立混合客户NE的弱NP完全性；NP有理证书及整数总重伪多项式上界齐全。",
+      "objections": "有限23例/原程序不代普遍归约；不称强NP完全、最少地点数或固定常数gap；不依SC-PHI-E。",
+      "body": {
+        "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+        "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+          "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+          "section": "五地点：固定亚黄金比的有效参数"
+        },
+        {
+          "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+          "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+          "section": "位长、NO间隙、NP成员性与“弱”"
+        },
+        {
+          "path": "archives/facility-games/state/审查/学习附录A04-A05阈值困难性审查--审查.md",
+          "sha256": "f4516fe76be18a4019ec68d7428a20aeba6525a548751a462df77afbf064f3ad"
+        },
+        {
+          "path": "archives/facility-games/state/审查/实例最优计算的参数与判定前沿--审查.md",
+          "sha256": "4a67f6d5f9fb7931c79de47956a00a5ea0077f512e440f3ac5f61679370ae885",
+          "section": "固定阈值分类必须守全布局"
+        },
+        {
+          "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+          "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09"
+        },
+        {
+          "path": "archives/facility-games/state/审查/五设施DECa硬度有限审计--审查.md",
+          "sha256": "dd3e51f96d26bfafd0d46cc0c601fede0099b62d99723b3a441eb86914bc7c0c"
+        },
+        {
+          "path": "archives/facility-games/state/计算/小目录硬度构造器与五地点样本的精确合同--计算.md",
+          "sha256": "52692dfd1300114349b5d41835e79c52cb09dd21332fc8bbaeffa1eb3f97da88"
+        },
+        {
+          "path": "archives/facility-games/state/资料/五地点硬度审计的支持区间与完整续局--资料.md",
+          "sha256": "2f8c2364699ea2539fab746c0c0fb98289b9eb872829c6a69244a5d5c29a6a5c"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/three_site_exact_hardness.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/three_site_exact_hardness.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/five_site_exact_hardness.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/five_site_exact_hardness.md"
+      ]
+    },
+    {
+      "object_id": "M-4303d44e50dc45738c857776bbee7b79",
+      "version": 1,
+      "title": "三地点双等重AB守卫在a0处不可延伸",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "两带标签设施从各自有限非空目录同时选址，正权不可分客户被覆盖后强制参与，客户独立随机化并最小化包含自身完整重量的实际条件负载期望；设施收益为期望服务总权。完整规则逐有序布局选择精确客户NE，设施倍率只在所选纯在轨布局对全部实际单方偏离要求。本对象进一步要求两设施共同目录S，允许同址、空客户/空覆盖和零收益边界。",
+      "statement": "在正文指定AB双等重覆盖、BC局部阈值编码、δ≥0,Q>0的守卫模板中，正私有预算P_C>0与AB排除L>ak强迫R同时严格大于((2a+1)(W+δ)+Q)/2并小于[a²(W−Q)+(a²−2)δ]/[2(a²−1)]。a0>1为2a0³−2a0−1=0；a≥a0时上减下的正分母分子=−(2a³−2a−1)(W+δ)−2δ−(2a²−1)Q<0，故此模板不能延伸。",
+      "quantifiers": "∀该指定模板参数，a≥a0时两必要守卫不可能同时成立。",
+      "assumptions": [
+        "保同一覆盖、阈值编码和角色；a>1，W>0,δ≥0,Q>0"
+      ],
+      "scope": "特定归约模板预算障碍，非一般三地点复杂度结论。",
+      "objections": "更强三地点模板已覆盖到σ；不得由旧模板失败推σ以上易解或无其它归约。",
+      "body": {
+        "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+        "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+        "section": "三地点两种具体模板为何停止"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/审查/学习附录A04-A05阈值困难性审查--审查.md",
+          "sha256": "f4516fe76be18a4019ec68d7428a20aeba6525a548751a462df77afbf064f3ad",
+          "section": "倍率大于一的两种守卫模板"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/three_site_exact_hardness.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/three_site_exact_hardness.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/five_site_exact_hardness.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/five_site_exact_hardness.md"
+      ]
+    },
+    {
+      "object_id": "M-c2e28c0a40ca493bbd7814be06aebecb",
+      "version": 1,
+      "title": "改变reach三地点守卫在σ处的负私有预算障碍",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "两带标签设施从各自有限非空目录同时选址，正权不可分客户被覆盖后强制参与，客户独立随机化并最小化包含自身完整重量的实际条件负载期望；设施收益为期望服务总权。完整规则逐有序布局选择精确客户NE，设施倍率只在所选纯在轨布局对全部实际单方偏离要求。本对象进一步要求两设施共同目录S，允许同址、空客户/空覆盖和零收益边界。",
+      "statement": "在R>J>L、同覆盖与J=a(V+Q)/2的阈值守卫中，P_C分子=[1−2a(a−1)]W−(2a−1)Q−a(a−1)δ。a≥σ=(1+√3)/2时严格负；即移动中间reach写z=J−L∈(0,δ)，仿射分子两端[1−2a(a−1)]W−δ−(2a−1)Q及[1−2a(a−1)](W+δ)−(2a−1)Q皆负，仍不可修复。",
+      "quantifiers": "∀本模板正参数及∀0<z<δ，a≥σ不能满足P_C>0。",
+      "assumptions": [
+        "指定覆盖、角色与阈值编码；W,Q>0,δ≥0,a>1"
+      ],
+      "scope": "特定更强三地点模板的精确终点；非全模型相变。",
+      "objections": "不排除新覆盖/新守卫；不以五地点困难性冒三地点分类。",
+      "body": {
+        "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+        "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+        "section": "三地点两种具体模板为何停止"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/审查/学习附录A04-A05阈值困难性审查--审查.md",
+          "sha256": "f4516fe76be18a4019ec68d7428a20aeba6525a548751a462df77afbf064f3ad",
+          "section": "倍率大于一的两种守卫模板"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/three_site_exact_hardness.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/three_site_exact_hardness.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/five_site_exact_hardness.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/five_site_exact_hardness.md"
+      ]
+    },
+    {
+      "object_id": "M-71d82a16bfb044258c7e5428810ec213",
+      "version": 1,
+      "title": "一般三地点高倍率阈值的精确复杂度分类义务",
+      "kind": "problem",
+      "truth_status": "open",
+      "model": "两带标签设施从各自有限非空目录同时选址，正权不可分客户被覆盖后强制参与，客户独立随机化并最小化包含自身完整重量的实际条件负载期望；设施收益为期望服务总权。完整规则逐有序布局选择精确客户NE，设施倍率只在所选纯在轨布局对全部实际单方偏离要求。本对象进一步要求两设施共同目录S，允许同址、空客户/空覆盖和零收益边界。",
+      "statement": "在恰三共同地点且允许任意异址交叠的上述模型中，对固定有理σ≤a<φ，进一步分类DEC_a={I:α*(I)≤a}的复杂度；现三地点归约只到a<σ，五地点亚φ困难性不能解决恰三地点分类，指定模板负预算也不能推出算法。",
+      "quantifiers": "分别对每个固定合域有理a研究全部显式正有理输入；不是输入a的统一算法承诺。",
+      "assumptions": [
+        "恰三共同地点；异址交叠无常数限制；精确客户NE"
+      ],
+      "scope": "正文明确未闭合的复杂度问题。",
+      "objections": "一般φ上界修订后仍待定向审查；不把未审上界作已付前提。数学open正常登记，不是身份needs-decision。",
+      "body": {
+        "path": "archives/facility-games/state/审查/实例最优计算的参数与判定前沿--审查.md",
+        "sha256": "4a67f6d5f9fb7931c79de47956a00a5ea0077f512e440f3ac5f61679370ae885",
+        "section": "固定阈值分类必须守全布局"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+          "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+          "section": "判定对象、结论和复用边界"
+        },
+        {
+          "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+          "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+          "section": "三地点两种具体模板为何停止"
+        },
+        {
+          "path": "archives/facility-games/state/审查/学习附录A04-A05阈值困难性审查--审查.md",
+          "sha256": "f4516fe76be18a4019ec68d7428a20aeba6525a548751a462df77afbf064f3ad"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/审查/实例最优计算的参数与判定前沿--审查.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/questions/instance_complexity.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/questions/instance_complexity.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/local_and_exact/README.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/local_and_exact/README.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/local_and_exact/exact_algorithms_and_extensions.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/local_and_exact/exact_algorithms_and_extensions.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/instance_complexity_barriers.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/instance_complexity_barriers.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/three_site_exact_hardness.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/three_site_exact_hardness.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/shared/five_site_exact_hardness.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/shared/five_site_exact_hardness.md"
+      ]
+    },
+    {
+      "object_id": "facility-games/box-slice-square-endpoint-exchange",
+      "version": 1,
+      "title": "盒截面两坐标端点平方增益的多项式局部构造",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "正权盒截面P={x:−v_i≤x_i≤v_i,Σx_i=t}，|t|≤Σv_i，F=Σx_i²。",
+      "statement": "从按编号填充顶点出发，每次接受严格增益的两坐标保和线段另一端点，终止于顶点且任意两坐标可行线段两端均不能提高F。pivot换权必严格下降，同pivot反号所用权严格增加，O((m+1)^3)移动、O((m+1)^4)有理运算；正二进制有理输入中间位长多项式。终点若pivot(z,d)仍内点，纯+v⇒d≤v、纯−v⇒d≥−v；d>0另有纯+v权≥z，纯−v且v<z⇒v≤d，负d对称。",
+      "quantifiers": "每个可行正实盒输入有局部正确性；显式二进制有理输入有位时间保证；m=0,t=0常数处理。",
+      "assumptions": [
+        "仅严格增益移动，等值不动；目标与邻域固定如上"
+      ],
+      "scope": "局部代数工具及强弦所需充分端点不等式；不保全局凸最大或设施均衡。",
+      "objections": "3529小例不能代一般phase证明；全局SC-PHI-E/A待审不因此解除。",
+      "body": {
+        "path": "archives/facility-games/state/算法/盒截面平方和的两坐标端点交换--算法.md",
+        "sha256": "739a955e044f6092f3de5a71e067e9137a639c850f82dc14662e5e723131b535"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/计算/双设施菜单与盒截面交换的精确复核--计算.md",
+          "sha256": "b4c12e26e1852eea31c9faae7b3560c7b078b9b039c89bfcc3a52164edc19a9e",
+          "section": "盒截面3529例及其真正输出合同"
+        },
+        {
+          "path": "archives/facility-games/state/定理/双地点强交叉配额的最大原子判据--定理.md",
+          "sha256": "abf2193390d535e2ec238ed9ec71381948b1ccf0b9d15a85677ec8d4045e2484",
+          "section": "内分支的初始NE与局部交换"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/算法/盒截面平方和的两坐标端点交换--算法.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/manuscripts/shared_catalog/main.tex#app:polynomial-chord",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/manuscripts/shared_catalog/main.tex#app:polynomial-chord"
+      ]
+    },
+    {
+      "object_id": "M-ea99eafd412b440a861bb28b8d74ea01",
+      "version": 1,
+      "title": "盒截面端点算法的严格非全局最优返回例",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "同一正权盒截面与F=Σx_i²，按编号贪心起点和所写两坐标端点邻域。",
+      "statement": "v=(14,13,19),t=−10时规定初始化返回x=(14,−5,−19)，三对另一端增益分别−36,−96,−280，故局部算法停止且F=582；同可行截面另有(−14,−13,17)且F=654。因此“该算法返回全局平方和最大点”错误，所写局部合同仍成立。",
+      "quantifiers": "存在此精确输入及严格局部但非全局返回；不是任意返回皆非全局。",
+      "assumptions": [
+        "保具体初始化和两坐标端点邻域"
+      ],
+      "scope": "精确否定全局最优加强式；不能拿它否定局部算法或设施定理。",
+      "objections": "可按M14嵌入强弦R=120,r=110,C=65域，但仍不成为强弦反例。",
+      "body": {
+        "path": "archives/facility-games/state/算法/盒截面平方和的两坐标端点交换--算法.md",
+        "sha256": "739a955e044f6092f3de5a71e067e9137a639c850f82dc14662e5e723131b535",
+        "section": "一个真实的非全局返回例"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/算法/盒截面平方和的两坐标端点交换--算法.md",
+          "sha256": "739a955e044f6092f3de5a71e067e9137a639c850f82dc14662e5e723131b535",
+          "section": "确定算法"
+        },
+        {
+          "path": "archives/facility-games/state/计算/双设施菜单与盒截面交换的精确复核--计算.md",
+          "sha256": "b4c12e26e1852eea31c9faae7b3560c7b078b9b039c89bfcc3a52164edc19a9e",
+          "section": "盒截面3529例及其真正输出合同"
+        },
+        {
+          "path": "archives/facility-games/state/定理/双地点强交叉配额的最大原子判据--定理.md",
+          "sha256": "abf2193390d535e2ec238ed9ec71381948b1ccf0b9d15a85677ec8d4045e2484",
+          "section": "内分支的初始NE与局部交换"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/算法/盒截面平方和的两坐标端点交换--算法.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/manuscripts/shared_catalog/main.tex#app:polynomial-chord",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/manuscripts/shared_catalog/main.tex#app:polynomial-chord"
+      ]
+    },
+    {
+      "object_id": "facility-games/three-mixers-needed-for-local-cross-quota",
+      "version": 1,
+      "title": "双设施40/39强交叉配额确需三名实际混合者",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "固定两个带标签设施、非负私有背景A,B及显式正权公共原子客户w_i；公共客户独立混合、含自身完整重量的实际条件负载费用，设施收益X=A+Σw_ip_i、Y=B+Σw_i(1-p_i)，Δ=X−Y。",
+      "statement": "A=40,B=39、三名共同客户各20，reach(100,99)与q=(√5−1)/2强配额X≥99q,Y≥100q。全部NE恰为3个纯型(60,79)、无单混合、3个双混合型(79,60)及唯一三混合型p_i=39/80、负载(277/4,279/4)。只有最后一种满足双强配额，故不能把该局部目标限制为≤2名实际混合。",
+      "quantifiers": "该固定输入全部连续NE分类；全部≤2实际混合NE失配额，存在三混合达标。",
+      "assumptions": [
+        "私有负载、权重及q配额按正文精确参数；独立混合"
+      ],
+      "scope": "否定局部混合支持上限，不否定强弦或全局φ规则存在。",
+      "objections": "不把3^3状态的连续支持分类误称概率网格；不宣称每个全局稳定布局必须三混合。",
+      "body": {
+        "path": "archives/facility-games/state/反例/两设施强配额的三名混合必要例--反例.md",
+        "sha256": "661874f0fe49707ad520e1b505b9e3959e06d1a8998596b1358e93654961c3eb"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/计算/共享目录原始输入与四种子入口的接续复核--计算.md",
+          "sha256": "cefe6cdbfd65ffa7bd4450035c7994012beac6b7a9bdc9b17ef759b123ee38df",
+          "section": "五个真实输入及其数学用途"
+        },
+        {
+          "path": "archives/facility-games/state/审查/学习代表页的数学可见内容与视觉证据范围--审查.md",
+          "sha256": "3cb3487b5864caabf2ca9c1746c5757ff67cf56c6d9ec9f61e2e443b3a8029e2",
+          "section": "页24：端点种子是NE，仍可能未满足双配额"
+        },
+        {
+          "path": "archives/facility-games/state/计算/双设施菜单与盒截面交换的精确复核--计算.md",
+          "sha256": "b4c12e26e1852eea31c9faae7b3560c7b078b9b039c89bfcc3a52164edc19a9e",
+          "section": "三混合例与半分示例的校正"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/反例/两设施强配额的三名混合必要例--反例.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/manuscripts/shared_catalog/main.tex#lem:chord",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/manuscripts/shared_catalog/main.tex#lem:chord"
+      ]
+    },
+    {
+      "object_id": "M-613302aba5ba48ac8b629aa729ee2564",
+      "version": 1,
+      "title": "同址标签对称的地点相关有限费用双设施模型",
+      "kind": "definition",
+      "truth_status": "definition",
+      "model": "共同有限非空目录、两带标签设施、正权原子客户、覆盖后强制服务和独立混合。客户条件费用为E[h_{i,s}(w_i+Σ_{j≠i}w_jZ_js)]，可能实现上的费用有限；同一物理地点不区分设施标签。设施仍最大化期望服务权重，完整规则逐有序布局给精确客户NE。",
+      "statement": "每可达客户地点对给h_{i,s}，在全部实际负载上有限；费用先对固定自身行动的每个实现求h再期望，不能用h(E[L])。函数可地点/客户相关，不需连续单调，唯同物理地点两标签用同函数。完整规则和α*仍按全部带标签布局、精确独立混合NE及设施期望服务权重。",
+      "quantifiers": "每个上述有限费用表/函数输入，每布局、每客户的条件行动比较。",
+      "assumptions": [
+        "恰两设施共同目录，强制参与、同址标签费用相同",
+        "位算法另需精确求值表示/位长合同"
+      ],
+      "scope": "费用模型定义，与线性模型和一般标签相关费用分开。",
+      "objections": "E[h(L)]≠h(E[L])的示范算术不另造对象；规范nonlinear_sparse实现未交付。",
+      "body": {
+        "path": "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md",
+        "sha256": "d1a1c3e352427b09e3821451f4fbb79e709611b41365f346cc777d3ad22949cc",
+        "section": "A12.1 模型与本附录要证明的结果"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/证明/地点费用推广的条件期望与完整续局教学推导--证明.md",
+          "sha256": "f00befec59c4e8205511c2abdc0e09022fc4a95e120306f79dfba6252b87eaaf",
+          "section": "12.1 从随机负载重新定义费用"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:learning/appendices/A12_nl_bounds.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:learning/appendices/A12_nl_bounds.md"
+      ]
+    },
+    {
+      "object_id": "M-3da368da9d6346799790a0e72271c9b8",
+      "version": 1,
+      "title": "任意有限地点费用的同址对半与普遍因子二",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "共同有限非空目录、两带标签设施、正权原子客户、覆盖后强制服务和独立混合。客户条件费用为E[h_{i,s}(w_i+Σ_{j≠i}w_jZ_js)]，可能实现上的费用有限；同一物理地点不区分设施标签。设施仍最大化期望服务权重，完整规则逐有序布局给精确客户NE。",
+      "statement": "任意地点t同址且全部覆盖客户独立对半时，固定一客户的两行动反事实负载分布相同，故任意h下是精确NE且两侧R_t/2。令t最大reach R，则任意偏离收益≤R，其他布局由有限博弈NE存在性补齐，得每输入α*≤2；全零覆盖得1。",
+      "quantifiers": "对每个本模型输入存在一份完整规则及纯同址在轨支持因子2；并非每个NE规则。",
+      "assumptions": [
+        "同址不区分设施标签；共同目录让两家可同址最大reach",
+        "可能实现费用有限、有限客户行动；外部导入有限博弈NE存在性"
+      ],
+      "scope": "任意费用和任意异址交叠的存在性，不给一般NE位多项式求解器。",
+      "objections": "相同平均负载不足以证明，承重是完整反事实分布对称；退出或标签相关费用需另证。",
+      "body": {
+        "path": "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md",
+        "sha256": "d1a1c3e352427b09e3821451f4fbb79e709611b41365f346cc777d3ad22949cc",
+        "section": "A12.2 分布对称给出上界"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md",
+          "sha256": "d1a1c3e352427b09e3821451f4fbb79e709611b41365f346cc777d3ad22949cc",
+          "section": "A12.1 模型与本附录要证明的结果"
+        },
+        {
+          "path": "archives/facility-games/state/证明/地点费用推广的条件期望与完整续局教学推导--证明.md",
+          "sha256": "f00befec59c4e8205511c2abdc0e09022fc4a95e120306f79dfba6252b87eaaf",
+          "section": "12.2 费用形状任意时，为什么仍有因子二"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:learning/appendices/A12_nl_bounds.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:learning/appendices/A12_nl_bounds.md"
+      ]
+    },
+    {
+      "object_id": "M-a6537b738f484012a55a432d820821f0",
+      "version": 1,
+      "title": "三半权客户任意正出行偏置的全布局尖锐二与零偏置跳变",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "共同有限非空目录、两带标签设施、正权原子客户、覆盖后强制服务和独立混合。客户条件费用为E[h_{i,s}(w_i+Σ_{j≠i}w_jZ_js)]，可能实现上的费用有限；同一物理地点不区分设施标签。设施仍最大化期望服务权重，完整规则逐有序布局给精确客户NE。",
+      "statement": "三客户各1/2可达AB、BC、CA，沿循环起点偏置0终点ε。∀ε>0异址NE唯一，收益(1,1/2)，小收益家到第三点得1；任意同址NE收益和1、低侧≤1/2也可去第三点必得1，故α*=2。ε=0时所有异址公共客户对半收益3/4、同址对半1/2给精确SPE，α*=1。等边三角形边长2、客户在各有向边1/4处、统一半径8/5和费用z+εd实现相同偏置差。",
+      "quantifiers": "∀ε>0，该实例∀在轨布局和∀完整规则倍率≥2，存在上界规则；ε=0另有完整因子1规则。",
+      "assumptions": [
+        "同一客户可按地点付偏置；几何可达距离1/2,3/2，第三距离√13/2"
+      ],
+      "scope": "尖锐因子二及精确NE倍率在零偏置的跳变；不是地点无关立方反例。",
+      "objections": "不能仅展示一个坏NE；正文六异址三同址全量排除完整。任意欧氏黑盒输入不自动获有理位算法合同。",
+      "body": {
+        "path": "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md",
+        "sha256": "d1a1c3e352427b09e3821451f4fbb79e709611b41365f346cc777d3ad22949cc",
+        "section": "A12.3 不能通过改换续局化解的三客户反例"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md",
+          "sha256": "d1a1c3e352427b09e3821451f4fbb79e709611b41365f346cc777d3ad22949cc",
+          "section": "A12.4 欧氏距离实现与零偏置边界"
+        },
+        {
+          "path": "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md",
+          "sha256": "d1a1c3e352427b09e3821451f4fbb79e709611b41365f346cc777d3ad22949cc",
+          "section": "A12.2 分布对称给出上界"
+        },
+        {
+          "path": "archives/facility-games/state/证明/地点费用推广的条件期望与完整续局教学推导--证明.md",
+          "sha256": "f00befec59c4e8205511c2abdc0e09022fc4a95e120306f79dfba6252b87eaaf",
+          "section": "12.3 一个必须检查全部布局的出行费反例"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:learning/appendices/A12_nl_bounds.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:learning/appendices/A12_nl_bounds.md"
+      ]
+    },
+    {
+      "object_id": "facility-games/common-catalog-location-cost-diagonal-normal-form-and-tight-two",
+      "version": 1,
+      "title": "任意地点费用完整续局的同址正规形与真正最优达到",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "共同有限非空目录、两带标签设施、正权原子客户、覆盖后强制服务和独立混合。客户条件费用为E[h_{i,s}(w_i+Σ_{j≠i}w_jZ_js)]，可能实现上的费用有限；同一物理地点不区分设施标签。设施仍最大化期望服务权重，完整规则逐有序布局给精确客户NE。",
+      "statement": "全部异址NE的真实m1(r,t)=min L1，H(t)=max_{r≠t}m1，G_t=max{1,2H(t)/R_t}，F_st(e)=max{1,H(t)/X,H(s)/Y}。α*=min{min_t G_t,min_{s≠t,e}F_st(e)}且有限最优达到，有最优规则全部离轨同址对半。异址F候选若同址偏离过帽则改相应同址因子1，不能无条件保原异址。NE紧性、标签反射与实际偏离两族不相交给完整证明。",
+      "quantifiers": "每个本费用模型输入；所有在轨/全部真实NE下的最优等式，存在一份完整最优规则。",
+      "assumptions": [
+        "0/0=0、正数/0=∞、空max0与空min∞；同址标签对称",
+        "固定布局只使用有限费用表，NE闭且非空"
+      ],
+      "scope": "只限共同目录标签对称费用；不枚举同址NE的全局优化正规形。",
+      "objections": "无需h整体连续或单调；不把真实谱取凸包，不宣称每个异址放松候选都原位达到。",
+      "body": {
+        "path": "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md",
+        "sha256": "d1a1c3e352427b09e3821451f4fbb79e709611b41365f346cc777d3ad22949cc",
+        "section": "A12.5 从全部异址收益谱得到实例最优值"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md",
+          "sha256": "d1a1c3e352427b09e3821451f4fbb79e709611b41365f346cc777d3ad22949cc",
+          "section": "A12.1 模型与本附录要证明的结果"
+        },
+        {
+          "path": "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md",
+          "sha256": "d1a1c3e352427b09e3821451f4fbb79e709611b41365f346cc777d3ad22949cc",
+          "section": "A12.2 分布对称给出上界"
+        },
+        {
+          "path": "archives/facility-games/state/证明/地点费用推广的条件期望与完整续局教学推导--证明.md",
+          "sha256": "f00befec59c4e8205511c2abdc0e09022fc4a95e120306f79dfba6252b87eaaf",
+          "section": "12.4 为什么只计算异址收益谱仍能找全局最优"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:learning/appendices/A12_nl_bounds.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:learning/appendices/A12_nl_bounds.md"
+      ]
+    },
+    {
+      "object_id": "M-4c0491ded97f432790aeb8cbfa062dfb",
+      "version": 1,
+      "title": "单交叠地点无关严格递增费用保持异址谱与实例最优值",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "共同有限非空目录、两带标签设施、正权原子客户、覆盖后强制服务和独立混合。客户条件费用为E[h_{i,s}(w_i+Σ_{j≠i}w_jZ_js)]，可能实现上的费用有限；同一物理地点不区分设施标签。设施仍最大化期望服务权重，完整规则逐有序布局给精确客户NE。",
+      "statement": "每异址最多一名公共客户且每名客户跨地点用同一严格递增h_i，则全部异址NE及设施收益谱与线性负载模型相同；唯一公共客户p在R_s<R_t为1、R_s>R_t为0、相等为[0,1]。由同址正规形，α*_nonlinear(I)=α*_linear(I)，可按线性异址谱+同址对半构造最优规则，不用求h_i值。",
+      "quantifiers": "每个满足条件输入逐实例相同；所有异址NE收益谱相同，但未比较全部同址NE。",
+      "assumptions": [
+        "每对不同地点交叠人数≤1；同址可多人",
+        "h_i跨地点相同且严格递增，非仅非减"
+      ],
+      "scope": "逐实例最优等价，可转移独立已证的1/√2/∛4阈值及φ下界；φ普遍上界仍依线性待审对象。",
+      "objections": "地点偏置或平台函数破坏严格比较，不在结论内。",
+      "body": {
+        "path": "archives/facility-games/state/算法/异址双交叠非线性均衡的九矩形精确优化--算法.md",
+        "sha256": "cd40a2f9e10044613c662e7d8477722b02f31ce10246204d528ec97d768327bf",
+        "section": "A13.2 一名公共客户：不必计算非线性函数"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md",
+          "sha256": "d1a1c3e352427b09e3821451f4fbb79e709611b41365f346cc777d3ad22949cc",
+          "section": "A12.5 从全部异址收益谱得到实例最优值"
+        },
+        {
+          "path": "archives/facility-games/state/证明/地点费用推广的条件期望与完整续局教学推导--证明.md",
+          "sha256": "f00befec59c4e8205511c2abdc0e09022fc4a95e120306f79dfba6252b87eaaf",
+          "section": "12.7 一名公共客户时，单调性为什么已经足够"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/算法/异址双交叠非线性均衡的九矩形精确优化--算法.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:learning/appendices/A13_nl_solver.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:learning/appendices/A13_nl_solver.md"
+      ]
+    },
+    {
+      "object_id": "facility-games/offdiagonal-two-overlap-nonlinear-nine-rectangle-exact-optimum",
+      "version": 1,
+      "title": "异址至多二公共客户的非线性真正最优位多项式算法",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "共同有限非空目录、两带标签设施、正权原子客户、覆盖后强制服务和独立混合。客户条件费用为E[h_{i,s}(w_i+Σ_{j≠i}w_jZ_js)]，可能实现上的费用有限；同一物理地点不区分设施标签。设施仍最大化期望服务权重，完整规则逐有序布局给精确客户NE。",
+      "statement": "每异址公共人数k≤2时，固定自身行动后费用差是另一概率的仿射式，3^k个闭纯首/纯次/无差异状态逐坐标给矩形，并映为最多九闭收益区间，保完整非凸并与见证。精确有理费用接口在输入位长多项式时间返回多项式位分数时，按真实m/H及同址正规形逐谱段clamp交点，O(m²(n+1))有理运算、O(m²)费用调用另计调用成本，输出α*、最优在轨及全部m²布局精确客户NE规则。",
+      "quantifiers": "所有显式n客户,m共同地点、正二进制有理权且异址交叠≤2的费用输入；费用表示满足接口合同。",
+      "assumptions": [
+        "同址标签对称且同址客户数不受二限制",
+        "不把区间并凸化；零斜率、V=0、零威胁与端点均完整处理",
+        "费用接口必须精确、输出位长多项式；稀疏高次指数或近似实数黑盒不自动符合"
+      ],
+      "scope": "数学算法完整；比所有合法布局交叠≤2的一般标签费用框架多用共同目录正规形，规范通用软件未交付。",
+      "objections": "只核一张表给达到，最优性另靠九状态完备性和全部布局优化。k≥3条件可能多线性耦合；地点无关立方一般φ问题仍open且主body在0093。",
+      "body": {
+        "path": "archives/facility-games/state/算法/异址双交叠非线性均衡的九矩形精确优化--算法.md",
+        "sha256": "cd40a2f9e10044613c662e7d8477722b02f31ce10246204d528ec97d768327bf"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md",
+          "sha256": "d1a1c3e352427b09e3821451f4fbb79e709611b41365f346cc777d3ad22949cc",
+          "section": "A12.5 从全部异址收益谱得到实例最优值"
+        },
+        {
+          "path": "archives/facility-games/state/证明/地点费用推广的条件期望与完整续局教学推导--证明.md",
+          "sha256": "f00befec59c4e8205511c2abdc0e09022fc4a95e120306f79dfba6252b87eaaf",
+          "section": "12.8 两名公共客户时，从四个费用值走到全局算法"
+        }
+      ],
+      "sources": [
+        "archives/facility-games/state/算法/异址双交叠非线性均衡的九矩形精确优化--算法.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:learning/appendices/A13_nl_solver.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:learning/appendices/A13_nl_solver.md"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/facility-games/state/审查/学习代表页的数学可见内容与视觉证据范围--审查.md",
+      "sha256": "3cb3487b5864caabf2ca9c1746c5757ff67cf56c6d9ec9f61e2e443b3a8029e2",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "facility-games/two-facility-pure-improvement-move-bounds-and-default",
+        "facility-games/three-mixers-needed-for-local-cross-quota"
+      ],
+      "reason": "已核成熟陈述和证明位置，身份/证据接收尚有对口缺口：p7普通分析不造节点；p9全局双锚需0093主证明，p29一般盒需0092，p38四地点gap及p48/49近带需0086。p24三混合和p28纯改善已由本批主owner精确接相应章节；其它部分尚待主owner接证，八图只历史视觉不认证全书。"
+    },
+    {
+      "path": "archives/facility-games/state/审查/学习附录A04-A05阈值困难性审查--审查.md",
+      "sha256": "f4516fe76be18a4019ec68d7428a20aeba6525a548751a462df77afbf064f3ad",
+      "disposition": "attachment",
+      "object_ids": [
+        "SC-THREE-DEC1-HARD",
+        "SC-THREE-DECa-HARD",
+        "SC-FIVE-DECa-HARD",
+        "M-4303d44e50dc45738c857776bbee7b79",
+        "M-c2e28c0a40ca493bbd7814be06aebecb",
+        "M-71d82a16bfb044258c7e5428810ec213"
+      ],
+      "reason": "成熟数学/必要原输入与独立有限证据按精确Claim归本批主owner；不把程序、PASS、单次数值另造节点。"
+    },
+    {
+      "path": "archives/facility-games/state/计算/共享目录原始输入与四种子入口的接续复核--计算.md",
+      "sha256": "cefe6cdbfd65ffa7bd4450035c7994012beac6b7a9bdc9b17ef759b123ee38df",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "facility-games/two-reach-three-site-multiple-overlap-no-exact-stability",
+        "SC-PHI-SHARP",
+        "SC-SPARSE-4",
+        "facility-games/three-mixers-needed-for-local-cross-quota"
+      ],
+      "reason": "已核成熟陈述和证明位置，身份/证据接收尚有对口缺口：五输入中三名混合/有限下界/14/13已本批接证；single_overlap完整交叉双目录算法归0086，four_seed有限1203例及shared753/验证器套件归0090/0093主owner，不以PASS造节点。待其精确ID接本原始输入与运行合同。"
+    },
+    {
+      "path": "archives/facility-games/state/反例/两种覆盖总重的多交叠三地点不稳定例--反例.md",
+      "sha256": "ed5e124b34a3eb1f5bf610d6392b6df99deef9d0d67bb53b3f3f82a634bbe1c4",
+      "disposition": "objects",
+      "object_ids": [
+        "facility-games/two-reach-three-site-multiple-overlap-no-exact-stability"
+      ],
+      "reason": "本批主body数学已按独立模型/命题分清，保完整证明及必要证据；不由容器页ID吞不同量词。"
+    },
+    {
+      "path": "archives/facility-games/state/定理/少地点与两种覆盖总重的精确稳定边界--定理.md",
+      "sha256": "e8ddb55eb3432abf5a366ff06393764e513cbec31bd1464447aa2549af332a65",
+      "disposition": "objects",
+      "object_ids": [
+        "SC-TWO-SITE-EXACT",
+        "SC-EQUAL-REACH-EXACT",
+        "SC-TWO-REACH-SPARSE",
+        "facility-games/two-reach-three-site-multiple-overlap-no-exact-stability"
+      ],
+      "reason": "本批主body数学已按独立模型/命题分清，保完整证明及必要证据；不由容器页ID吞不同量词。"
+    },
+    {
+      "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+      "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09",
+      "disposition": "objects",
+      "object_ids": [
+        "facility-games/two-facility-two-catalog-model-and-complete-exact-continuation",
+        "SC-TWO-SITE-EXACT",
+        "SC-EQUAL-REACH-EXACT",
+        "SC-TWO-REACH-SPARSE",
+        "M-a3b7e30967de4437804952f7d528d207",
+        "SC-SPARSE-4",
+        "M-b2bcfe1f64ee4a7799a58ef2609d04dd",
+        "facility-games/threshold-meet-in-middle-objectives-and-response-pruning",
+        "M-78b5c8b948b14f799fb5849a464c17a7",
+        "M-a4510cf6b0ee470384411c5b272b372b",
+        "LOCAL-ATOM-WARDROP-k",
+        "DP-W",
+        "FPT-D",
+        "SC-THREE-DEC1-HARD",
+        "SC-THREE-DECa-HARD",
+        "SC-FIVE-DECa-HARD"
+      ],
+      "reason": "本批主body数学已按独立模型/命题分清，保完整证明及必要证据；不由容器页ID吞不同量词。"
+    },
+    {
+      "path": "archives/facility-games/state/资料/共同目录成果入口的接口与版本状态--资料.md",
+      "sha256": "55c9f2e39906cb3193ab6f722809bf1a0a6b0db0f30fcff4788916e3b4b98d4f",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "SC-TWO-SITE-EXACT",
+        "SC-EQUAL-REACH-EXACT",
+        "SC-TWO-REACH-SPARSE",
+        "SC-PHI-SHARP"
+      ],
+      "reason": "已核成熟陈述和证明位置，身份/证据接收尚有对口缺口：十五资产导航及同址正规形/结构类/局部复杂度/φ状态/EPTAS分版已实读。结构类、下界与本批主对象已接；线性同址正规形、粒度、近带、无FPTAS及一般φ分别需对应正式主body owner接证；不将README作普遍定理。"
+    },
+    {
+      "path": "archives/facility-games/state/定理/共同目录黄金比下界的有理六地点与五地点族--定理.md",
+      "sha256": "d6da289ea0636830fae204b32fb28e1f854ff1ffdf84a3a58b988c45a9de0fbb",
+      "disposition": "objects",
+      "object_ids": [
+        "SC-PHI-SHARP"
+      ],
+      "reason": "本批主body数学已按独立模型/命题分清，保完整证明及必要证据；不由容器页ID吞不同量词。"
+    },
+    {
+      "path": "archives/facility-games/state/定理/单交叠目录三四地点的尖锐稳定阈值--定理.md",
+      "sha256": "93ec05dedb05b2d0adffcd43e741f3dd320a4de8f74144ecbc18d77c04fea48b",
+      "disposition": "objects",
+      "object_ids": [
+        "M-a3b7e30967de4437804952f7d528d207",
+        "SC-SPARSE-4"
+      ],
+      "reason": "本批主body数学已按独立模型/命题分清，保完整证明及必要证据；不由容器页ID吞不同量词。"
+    },
+    {
+      "path": "archives/facility-games/state/算法/异址双交叠非线性均衡的九矩形精确优化--算法.md",
+      "sha256": "cd40a2f9e10044613c662e7d8477722b02f31ce10246204d528ec97d768327bf",
+      "disposition": "objects",
+      "object_ids": [
+        "M-4c0491ded97f432790aeb8cbfa062dfb",
+        "facility-games/offdiagonal-two-overlap-nonlinear-nine-rectangle-exact-optimum"
+      ],
+      "reason": "本批主body数学已按独立模型/命题分清，保完整证明及必要证据；不由容器页ID吞不同量词。"
+    },
+    {
+      "path": "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md",
+      "sha256": "d1a1c3e352427b09e3821451f4fbb79e709611b41365f346cc777d3ad22949cc",
+      "disposition": "objects",
+      "object_ids": [
+        "M-613302aba5ba48ac8b629aa729ee2564",
+        "M-3da368da9d6346799790a0e72271c9b8",
+        "M-a6537b738f484012a55a432d820821f0",
+        "facility-games/common-catalog-location-cost-diagonal-normal-form-and-tight-two",
+        "M-4c0491ded97f432790aeb8cbfa062dfb",
+        "facility-games/offdiagonal-two-overlap-nonlinear-nine-rectangle-exact-optimum"
+      ],
+      "reason": "本批主body数学已按独立模型/命题分清，保完整证明及必要证据；不由容器页ID吞不同量词。"
+    },
+    {
+      "path": "archives/facility-games/state/证明/地点费用推广的条件期望与完整续局教学推导--证明.md",
+      "sha256": "f00befec59c4e8205511c2abdc0e09022fc4a95e120306f79dfba6252b87eaaf",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "M-613302aba5ba48ac8b629aa729ee2564",
+        "M-3da368da9d6346799790a0e72271c9b8",
+        "M-a6537b738f484012a55a432d820821f0",
+        "facility-games/common-catalog-location-cost-diagonal-normal-form-and-tight-two",
+        "M-4c0491ded97f432790aeb8cbfa062dfb",
+        "facility-games/offdiagonal-two-overlap-nonlinear-nine-rectangle-exact-optimum"
+      ],
+      "reason": "已核成熟陈述和证明位置，身份/证据接收尚有对口缺口：12.5二次NE/CE/CCE保持与12.6立方90/86反例主body在0086《两设施同客户二次费用的均衡集合保持》，本批其余费用模型/因子二/正规形/单与双交叠合同已主owner实接。二次与立方独立内容待原作者精确ID和相同SHA证据接收，不能整体假attachment。"
+    },
+    {
+      "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+      "sha256": "9ff056ee4073e03d61b049a3e1e35e2b68828a63fe5c4b3260c0a7c5b714fe8c",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "LOCAL-HARD",
+        "M-b2bcfe1f64ee4a7799a58ef2609d04dd",
+        "facility-games/threshold-meet-in-middle-objectives-and-response-pruning",
+        "M-78b5c8b948b14f799fb5849a464c17a7",
+        "DP-W",
+        "FPT-D"
+      ],
+      "reason": "已核成熟陈述和证明位置，身份/证据接收尚有对口缺口：A11.1完整支持谱主body0090，A11.6 EXACT-KAPPA主body0091，A11.7显式多面体/两公共非线性及A11.8二次/立方主body0086。本批DP/FPT/LOCAL-HARD/无界mixed/MITM已接准确章节；其余路线必须由对应主owner实接，不复制主record。"
+    },
+    {
+      "path": "archives/facility-games/state/归约/指定设施均衡负载极小值的弱NP完全性--归约.md",
+      "sha256": "aa398a78b53b28adfdc71c5a17e016b6323854b14d7a0fa14d9cb25401e685df",
+      "disposition": "objects",
+      "object_ids": [
+        "LOCAL-HARD",
+        "M-b2bcfe1f64ee4a7799a58ef2609d04dd"
+      ],
+      "reason": "本批主body数学已按独立模型/命题分清，保完整证明及必要证据；不由容器页ID吞不同量词。"
+    },
+    {
+      "path": "archives/facility-games/state/定理/双地点强交叉配额的最大原子判据--定理.md",
+      "sha256": "abf2193390d535e2ec238ed9ec71381948b1ccf0b9d15a85677ec8d4045e2484",
+      "disposition": "objects",
+      "object_ids": [
+        "LOCAL-CHORD-IFF",
+        "LOCAL-CHORD-POLY",
+        "facility-games/box-slice-square-endpoint-exchange",
+        "M-ea99eafd412b440a861bb28b8d74ea01"
+      ],
+      "reason": "本批主body数学已按独立模型/命题分清，保完整证明及必要证据；不由容器页ID吞不同量词。"
+    },
+    {
+      "path": "archives/facility-games/state/引理/两设施纯改善的移动界与默认续局--引理.md",
+      "sha256": "d765eaf078a7832bdf4d177bb25dfd24dfe6aeb2fc4bc151d88faa95a4340012",
+      "disposition": "objects",
+      "object_ids": [
+        "LOCAL-CHORD-IFF",
+        "LOCAL-CHORD-POLY",
+        "facility-games/two-facility-pure-improvement-move-bounds-and-default",
+        "M-a4510cf6b0ee470384411c5b272b372b"
+      ],
+      "reason": "本批主body数学已按独立模型/命题分清，保完整证明及必要证据；不由容器页ID吞不同量词。"
+    },
+    {
+      "path": "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
+      "sha256": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65",
+      "disposition": "objects",
+      "object_ids": [
+        "facility-games/threshold-meet-in-middle-objectives-and-response-pruning",
+        "M-78b5c8b948b14f799fb5849a464c17a7",
+        "M-a4510cf6b0ee470384411c5b272b372b"
+      ],
+      "reason": "本批主body数学已按独立模型/命题分清，保完整证明及必要证据；不由容器页ID吞不同量词。"
+    },
+    {
+      "path": "archives/facility-games/state/审查/实例最优计算的参数与判定前沿--审查.md",
+      "sha256": "4a67f6d5f9fb7931c79de47956a00a5ea0077f512e440f3ac5f61679370ae885",
+      "disposition": "objects",
+      "object_ids": [
+        "SC-TWO-SITE-EXACT",
+        "SC-EQUAL-REACH-EXACT",
+        "SC-TWO-REACH-SPARSE",
+        "SC-THREE-DEC1-HARD",
+        "SC-THREE-DECa-HARD",
+        "SC-FIVE-DECa-HARD",
+        "M-71d82a16bfb044258c7e5428810ec213"
+      ],
+      "reason": "本批主body数学已按独立模型/命题分清，保完整证明及必要证据；不由容器页ID吞不同量词。 本页其余独立内容待原主owner接证：结构类/硬度/三站open与本批已接；线性正规形、EXACT-KAPPA、异址粒度及EPTAS的来源范围仍需对口主owner接完整证据，不用原时态覆盖当前φ待审。"
+    },
+    {
+      "path": "archives/facility-games/state/引理/原子与Wardrop固定布局负载的尖锐坐标误差--引理.md",
+      "sha256": "60825fe521008b64eb8db1150abe872f663fd9e575735e125d07cbaa6336e4f7",
+      "disposition": "objects",
+      "object_ids": [
+        "LOCAL-ATOM-WARDROP-k"
+      ],
+      "reason": "本批主body数学已按独立模型/命题分清，保完整证明及必要证据；不由容器页ID吞不同量词。"
+    },
+    {
+      "path": "archives/facility-games/state/计算/局部谱与实例最优程序的原入口复现--计算.md",
+      "sha256": "63e4e289d0cfae29ce10b7778636c96407b19d739eee557f41bcf3515982a573",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "LOCAL-HARD",
+        "LOCAL-CHORD-IFF",
+        "LOCAL-CHORD-POLY",
+        "facility-games/two-facility-pure-improvement-move-bounds-and-default",
+        "facility-games/threshold-meet-in-middle-objectives-and-response-pruning",
+        "M-78b5c8b948b14f799fb5849a464c17a7",
+        "M-a4510cf6b0ee470384411c5b272b372b",
+        "LOCAL-ATOM-WARDROP-k",
+        "DP-W"
+      ],
+      "reason": "已核成熟陈述和证明位置，身份/证据接收尚有对口缺口：17源数学去向逐项保全文：本批局部DP/半表/强弦/纯修复/Wardrop均已接；完整谱、任意双目录最优、显式多面体和二次费用主owner待实接其程序/短证书边界。四原运行与额外窄合同核验不是普遍数学新节点。"
+    },
+    {
+      "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+      "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+      "disposition": "objects",
+      "object_ids": [
+        "LOCAL-HARD",
+        "facility-games/threshold-meet-in-middle-objectives-and-response-pruning",
+        "DP-W",
+        "FPT-D"
+      ],
+      "reason": "本批主body数学已按独立模型/命题分清，保完整证明及必要证据；不由容器页ID吞不同量词。"
+    },
+    {
+      "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+      "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+      "disposition": "objects",
+      "object_ids": [
+        "SC-THREE-DEC1-HARD",
+        "SC-THREE-DECa-HARD",
+        "SC-FIVE-DECa-HARD",
+        "M-4303d44e50dc45738c857776bbee7b79",
+        "M-c2e28c0a40ca493bbd7814be06aebecb",
+        "M-71d82a16bfb044258c7e5428810ec213"
+      ],
+      "reason": "本批主body数学已按独立模型/命题分清，保完整证明及必要证据；不由容器页ID吞不同量词。"
+    },
+    {
+      "path": "archives/facility-games/state/审查/五设施DECa硬度有限审计--审查.md",
+      "sha256": "dd3e51f96d26bfafd0d46cc0c601fede0099b62d99723b3a441eb86914bc7c0c",
+      "disposition": "attachment",
+      "object_ids": [
+        "SC-FIVE-DECa-HARD"
+      ],
+      "reason": "成熟数学/必要原输入与独立有限证据按精确Claim归本批主owner；不把程序、PASS、单次数值另造节点。"
+    },
+    {
+      "path": "archives/facility-games/state/计算/小目录硬度构造器与五地点样本的精确合同--计算.md",
+      "sha256": "52692dfd1300114349b5d41835e79c52cb09dd21332fc8bbaeffa1eb3f97da88",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "SC-FIVE-DECa-HARD"
+      ],
+      "reason": "已核成熟陈述和证明位置，身份/证据接收尚有对口缺口：五地点全部合同和三原资产本批SC-FIVE-DECa-HARD实接；四地点构造器为SC-FOUR-NO-FPTAS必要输入/整数编码与六列表接口核验，需0086主作者接精确同SHA。不把四地点源数n当设施数。"
+    },
+    {
+      "path": "archives/facility-games/state/资料/五地点硬度审计的支持区间与完整续局--资料.md",
+      "sha256": "2f8c2364699ea2539fab746c0c0fb98289b9eb872829c6a69244a5d5c29a6a5c",
+      "disposition": "attachment",
+      "object_ids": [
+        "SC-FIVE-DECa-HARD"
+      ],
+      "reason": "成熟数学/必要原输入与独立有限证据按精确Claim归本批主owner；不把程序、PASS、单次数值另造节点。"
+    },
+    {
+      "path": "archives/facility-games/state/资料/四地点两设施精确支持审计的完整合同--资料.md",
+      "sha256": "6ff142cedc53ac0dce58b66c24c54e480a12ed554ceb96d5cdbf481f3b87d1ad",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "已核成熟陈述和证明位置，身份/证据接收尚有对口缺口：两独立原闭支持审计及32/19样本的四地点无FPTAS证据应归SC-FOUR-NO-FPTAS；n是补零变量数，full=false解析守卫已覆盖同址。尚待主owner接完整SHA及精确ID；不造审计计数节点。"
+    },
+    {
+      "path": "archives/facility-games/state/算法/盒截面平方和的两坐标端点交换--算法.md",
+      "sha256": "739a955e044f6092f3de5a71e067e9137a639c850f82dc14662e5e723131b535",
+      "disposition": "objects",
+      "object_ids": [
+        "LOCAL-CHORD-IFF",
+        "LOCAL-CHORD-POLY",
+        "facility-games/box-slice-square-endpoint-exchange",
+        "M-ea99eafd412b440a861bb28b8d74ea01"
+      ],
+      "reason": "本批主body数学已按独立模型/命题分清，保完整证明及必要证据；不由容器页ID吞不同量词。"
+    },
+    {
+      "path": "archives/facility-games/state/反例/两设施强配额的三名混合必要例--反例.md",
+      "sha256": "661874f0fe49707ad520e1b505b9e3959e06d1a8998596b1358e93654961c3eb",
+      "disposition": "objects",
+      "object_ids": [
+        "facility-games/three-mixers-needed-for-local-cross-quota"
+      ],
+      "reason": "本批主body数学已按独立模型/命题分清，保完整证明及必要证据；不由容器页ID吞不同量词。"
+    },
+    {
+      "path": "archives/facility-games/state/计算/双设施菜单与盒截面交换的精确复核--计算.md",
+      "sha256": "b4c12e26e1852eea31c9faae7b3560c7b078b9b039c89bfcc3a52164edc19a9e",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "facility-games/two-facility-pure-improvement-move-bounds-and-default",
+        "facility-games/box-slice-square-endpoint-exchange",
+        "M-ea99eafd412b440a861bb28b8d74ea01",
+        "facility-games/three-mixers-needed-for-local-cross-quota"
+      ],
+      "reason": "已核成熟陈述和证明位置，身份/证据接收尚有对口缺口：本批盒交换/三混合/纯修复已接相应小域证据；1089菜单/320游戏/全部d及d=0说明性更正需固定菜单和一般φ待审主owner接，不由有限通过升级全局任意环/O(k^4)。"
+    }
+  ],
+  "edge_files": []
+}
