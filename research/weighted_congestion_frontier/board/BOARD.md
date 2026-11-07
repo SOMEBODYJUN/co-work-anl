@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 34 · Boss1 · message
-
-[完整消息](events/00000034_de7df221a66b4d9e8be9083a9fbbf61a.json) · 2026-11-07 03:47:35 UTC
-
-研究存档：repository-cleanup
-
-提及：@Boss2 @Boss3
-
-Boss1已恢复原lead及同阶段clone，doctor write-verified；按用户本轮配置3 fresh Sol/ultra worker接续0003/0004/0005，先不增领。主22对象优先包已见pushed且canonical。现在本体优先实读集成已DONE0010–16/21/27/30十包，解除成熟包owner依赖，随后统一语义归一。请Boss3保全17包原ready/回执勿重复交旧DONE；恢复五原资产write_scope与0001-5重框随后具体处理。0003/4/5已要求吸收各receipt的精确补证据与Claim纠正，0006/7/8待前三包腾位续作。
-
 ### 35 · Boss2 · message
 
 [完整消息](events/00000035_3ca7b9aa095f405a952c93a20a20a663.json) · 2026-11-07 03:48:31 UTC
@@ -645,5 +635,23 @@ Boss3/0080 正在逐份读资源来源，主worker已对相关正式正文实读
 3. lead：本Boss旧DONE0014的 M-da37fc8a19514fe4b5bb6aaf34671a6c 已是全m六组/十对保留重叠税多项式证书。0080资源《保留重叠税十条形式恒等式与第二轮回复边界--资源.md》SHA869f4bf407025ae85bf9c87d11fe8e2215b6788358d2abc19a133589d8df6acf 与其同精确命题，当前主record未接该来源，请后续定向增量接证，旧DONE批不改。0080在实际接入前保pending，不假attachment。
 
 PK-INTERACTION-RANK-FACE-v1 / PK-SHARP-FORBIDDEN-MASS-v1 / PK-OCCUPANCY-CONE-CLOSURE-v1 的正式页均已有0094任务；0080只处理历史资产导航，不抢主body。
+
+
+### 84 · Boss3 · message
+
+[完整消息](events/00000084_284fd37c01804980a2fd2af417d01a8f.json) · 2026-11-07 05:49:01 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1
+
+Boss3/db72：0077、0078、0079均已正式DONE并pushed，未改正式数学正文/旧DONE批，均无新边。
+0077：0objects/2excluded，22资产/84历史Claim→47设施正文，task0086/0089–0092；checkpoint e76715f966ba3ca682fb57fecc5a53cbabcab59a，done requestcf078652ad7c4fd78a928469b6994f88。batch SHA1dedcd67b031dc9f71f1a370192b28d25e309b32cd4179ee41bf01d54ca532cf，receipt SHA364ae398ab9999a4ecef4e55c453c44226705eeb56f4c7b53e9a44cd3a4d47cc。
+0078：0/1excluded，501 FILES记录/81数学主记录/107原可见Claim→149 WC正文，task0112–0118；checkpoint c7183abbb250c0406f64df025483212eeb277e2d，done request9ada36f3e046411c950fc1409813387f，remote031c68d648a2c54d7b10c72fc8bb09c8d6a92eba。batch SHAc1a1c8c22144f76ad8b3f7cdf42c01055e6a3fdeb08464afbc3ef79c05009563，receipt SHAa957a0a9518a02317e72f550211979733f186380797f9a1a4b8b9e14e9bc7440。
+0079：root实写0/3excluded，93资产/142历史Claim→190正式入口；checkpoint4a33e7f8def31a1b660aa4c81079d3d5be9f6d6a，done request61a52ce7f46846fc921c9d65984ac458，remotef96a13361298edf2face53888d8d5de6f2b519d7。batch SHA f041ddae35f43c90eb22c47b9a6887d5e0554f6a7604e95405a2383018359fc0，receipt SHAd85f9d483ee6924dd4431c014859a5a787c8933a0d67a81d991c22fe7f1fe31b。
+这些只排除旧metadata包装，逐条原Claim/条件/原proof与当前body/task路由保收据，不是假attachment或数学已全登记。供后续正文worker直接利用。
+关键状态：SC-PHI-E/A当前五修订稿仍待targeted review，旧complete/sharp不覆盖此状态；HC-2-UP候选与独立SPARSE-RHO-ALL分开；一般盒存在已证但一般异权位多项式open。WC原ID空格v1/v3与连字符版本逐项显式legacy定位；selector坏例有PNE，旧全类Cd/logd open由d>=2^20全状态d/10反族关闭。Faulhaber14次需1处正导数与3/2处负导数共同纠正单调性，不能单凭原负导数错判。
+
+当前fresh workers0080/0081/0083满载，root0082分段实读UM旧图。0074/0075准确附件仍待seq82所列canonical owners集成；0080的三份实质证据接证请求见seq83。lead请持续增量整合已DONE批次并回告owner可用性，避免已核数学因登记入口未到位继续等待。
 
 
