@@ -1,0 +1,445 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline.json",
+    "sha256": "5d5737ab6d07552b48925bdb936dae70490e8de1ee0da2b380bb2d16dd5690cf"
+  },
+  "objects": [
+    {
+      "object_id": "customer-attraction/r373-binary-local-response-residual-coverage-71-certificate",
+      "version": 1,
+      "title": "R373指定二阶段响应与严格二标签覆盖差系统的LP及整数最优值71",
+      "kind": "exact-optimization-certificate",
+      "truth_status": "proved",
+      "model": "六个标签0,…,5、63个非空兴趣类型B及非负实质量w_B；整数限制表示单位客户重数。固定两阶段响应ρ=(1,4,4,4,5,4)，仅本页的63行编码系统。",
+      "statement": "令u_i(a,b;B)=1_{(a,b)_i∈B}/(1_{a∈B}+1_{b∈B})，零分子按0。36行2Σw_B[u_1(a,ρ(a);B)−u_1(a,b;B)]≥0，6行2Σw_B[u_0(0,1;B)−u_0(b,ρ(b);B)]≥0。C_B=1_{B∩{0,1}≠∅}、O_B=1_{B∩{2,3}≠∅}、R_B=O_B(1−C_B)，另有Σw_B(R_B−C_B)≥1及每个0≤a≤b≤5、(a,b)≠(2,3)的Σw_B[O_B−1_{B∩{a,b}≠∅}]≥1。在这些约束下min Σw_B=71，且非负整数限制也恰为71。整数见证为{1:10,2:13,4:8,8:8,20:5,24:5,36:5,40:5,49:6,50:4,54:1,58:1}（键为兴趣mask）；非负对偶乘子给所有63列系数≤1、对偶值27+22+22=71。",
+      "quantifiers": "对全部满足本63行的非负实w均有Σw≥71；存在所列整数w达到71。只固定该ρ，不量化所有响应表。",
+      "assumptions": [
+        "类型B非空，mask按0,…,5位解释",
+        "两阶段收益分母按两个提供者槽计，重复标签仍计两槽",
+        "覆盖差右端和20个其它二标签对差的右端均为1"
+      ],
+      "scope": "精确有限线性模型的最优值与整数可达性；严格的是指定覆盖比较，规定收益可以平局。",
+      "objections": "该记录不编码六人完整策略树，不能作为六人half证明或反例，也不证明唯一最优客户表或唯一最佳回复。与R373固定五标签ρ=(1,2,1,2,0)的零残差主对象模型不同，不能按R373名称合并。复用成熟Fraction原—对偶证明，登记本轮未重跑MILP或原验证程序。",
+      "body": {
+        "path": "archives/customer-attraction/state/计算/R373二元局部响应与残差覆盖的71整数证书--计算.md",
+        "sha256": "f57616eeb55e7fa2b9eb368faf1827033937b864012618749dc3a45040e7f8c2",
+        "section": "精确最优值和整数见证"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/计算/R373二元局部响应与残差覆盖的71整数证书--计算.md",
+          "sha256": "f57616eeb55e7fa2b9eb368faf1827033937b864012618749dc3a45040e7f8c2",
+          "section": "对象和来源身份"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/R373二元局部响应与残差覆盖的71整数证书--计算.md",
+          "sha256": "f57616eeb55e7fa2b9eb368faf1827033937b864012618749dc3a45040e7f8c2",
+          "section": "63 个线性约束的精确含义"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/R373二元局部响应与残差覆盖的71整数证书--计算.md",
+          "sha256": "f57616eeb55e7fa2b9eb368faf1827033937b864012618749dc3a45040e7f8c2",
+          "section": "与主模型的边界"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R373-unique-optimizer-integer/source.py",
+          "sha256": "f2878977624eb4548594ce70ce3a592768398fbdde8650c522aeb4bce332955d"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R373-unique-optimizer-integer/verify_dual.py",
+          "sha256": "31537fbc658c412c261227c3922279209a60e9121cd3a42d4c136399c7ec0805"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R373-unique-optimizer-integer/dual_certificate.json",
+          "sha256": "7eda003fd17bd93581424a0ebe0d54969b34048ad04fc6ead6e0b22b3ac935af"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-373daba10913464c93771a808d88fce3/global/unique_optimizer_integer.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-373daba10913464c93771a808d88fce3/global/unique_optimizer_integer.py"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/four-player-six-label-terminal-price-fixed-policy-resource",
+      "version": 1,
+      "title": "四人六标签六客户冻结完整策略的W5与OPT4等于6",
+      "kind": "finite-spe-construction",
+      "truth_status": "proved",
+      "model": "有限单位客户、有限非空带标签共同目录、单位提供者按固定次序各选一次主题并观察全部有序历史；最终客户价值在覆盖者间均分。整数类型重数表示不同单位客户。完整纯SPE保全部离轨历史、重复行动及任意弱平局；真实偏离后按同一策略在改变后的历史续完。客户不进行设施模型的客户侧NE选择。",
+      "statement": "目录为0,…,5，三类兴趣{0,1,2,3}重数4、{5}重数1、{0,1,3,4,5}重数1。冻结four_price_best.json中的259节点完整有序策略为纯SPE，实际路径(3,0,1,1)，终局计数(1,2,0,1,0,0)，四人收益均为5/4、W=5；允许重复的静态四主题最优OPT4=6。独立定义级有理表覆盖259×6=1554项含自身比较（1295项非自身），最小slack为0。",
+      "quantifiers": "存在这个六单位客户、四人六标签实例及所给完整策略；SPE核验量化其全部259历史和全部六行动。",
+      "assumptions": [
+        "完整动作表精确绑定输入SHA14e813bb26898416354020f4a2b620dd661208353c4798712cfb8bfbc8da83da",
+        "偏离后沿相同冻结动作表在新历史上完成",
+        "单位客户重数直接展开，客户不另行动"
+      ],
+      "scope": "明确固定实例的完整纯SPE存在性、实际福利与精确静态最优；页ID只承载此数学Claim。",
+      "objections": "旧score=-0.0、z和clones不参与该证明，不认证任何终局价格最优或价格锥上界；该输入half成立，也未证明它的实际终局是最差SPE。原页早段仅资源的旧限制以末节新增定义级核验为准。本轮复用成熟证书与完整比较表，不重新进行1554次研究核验。",
+      "body": {
+        "path": "archives/customer-attraction/state/计算/四人六标签固定策略的终局价格审计--计算.md",
+        "sha256": "82958619c67ecfa956bb8a95008f4f0d39209a1706a7483fb85388a04d00427b",
+        "section": "本次新增定义级精确核验"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/计算/四人六标签固定策略的终局价格审计--计算.md",
+          "sha256": "82958619c67ecfa956bb8a95008f4f0d39209a1706a7483fb85388a04d00427b",
+          "section": "冻结输入"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/四人六标签固定策略的终局价格审计--计算.md",
+          "sha256": "82958619c67ecfa956bb8a95008f4f0d39209a1706a7483fb85388a04d00427b",
+          "section": "数学可用范围"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/四人六标签固定策略的终局价格审计--计算.md",
+          "sha256": "82958619c67ecfa956bb8a95008f4f0d39209a1706a7483fb85388a04d00427b",
+          "section": "复现依赖"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/terminal-price-boss4/original/four_price_best.json",
+          "sha256": "14e813bb26898416354020f4a2b620dd661208353c4798712cfb8bfbc8da83da"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/saved-terminal-price-policies-definition-audit/audit_saved_price_policies.py",
+          "sha256": "1393f59a239ab29992a35134c0b3c8be9f912cea93a421ecae54d6b04eb09c85"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/saved-terminal-price-policies-definition-audit/report.json",
+          "sha256": "48e11a2c4abbadfb832b088bc58970e03b005501d2d9d147583219393088fa47"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-486bb9adb8cd4d9a940dbf3b1ab0b1de/terminal/four_price_best.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-486bb9adb8cd4d9a940dbf3b1ab0b1de/terminal/four_price_best.json",
+        "legacy-source-id:98b31652314b9c430f82"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/multigadget-spe-certificates",
+      "version": 1,
+      "title": "多装置家族m3的8标签18客户完整SPE与福利13",
+      "kind": "finite-spe-construction",
+      "truth_status": "proved",
+      "model": "有限单位客户、有限非空带标签共同目录、单位提供者按固定次序各选一次主题并观察全部有序历史；最终客户价值在覆盖者间均分。整数类型重数表示不同单位客户。完整纯SPE保全部离轨历史、重复行动及任意弱平局；真实偏离后按同一策略在改变后的历史续完。客户不进行设施模型的客户侧NE选择。",
+      "statement": "对m置k=m−1、p=3k+2、B=3k、T=3k+1；每i=0,…,k−1有兴趣{i,k+2i}和{i,k+2i+1}各2个单位客户，另有{B}、{T}各3个，{B}∪{k,…,3k−1}及{T}∪{k,…,3k−1}各2个；共同标签为0,…,3k+1。固定m=3的18单位客户/8标签实例，冻结multigadget_m3.json给出73个有序历史的完整纯SPE，实际路径(0,1,6)，收益为(4,4,5)，W=13、OPT3=14。独立验证器核全部511项非自身真实偏离，均无盈利。",
+      "quantifiers": "仅固定m=3的所列客户目录与完整策略；对该策略全部有序历史及所有合法替代标签成立。",
+      "assumptions": [
+        "所有类型重数为不同单位客户",
+        "实际路径和动作表由同一个完整策略实现",
+        "OPT按至多m标签支持精确有限枚举"
+      ],
+      "scope": "有限完整纯SPE构造基准；不声称最差性、任意m存在同路径或一般half锐性。原容器页ID固定给三人这一个精确Claim；四人另立已分配ID。",
+      "objections": "既有证明复用逐历史verify_certificate；计数缓存只用于收益或终局集合，未将策略Markov化。本轮实读构造、模型和验证器，读证书/报告真实身份；未重跑旧求解器。18/32个根终局数量仅是来源报告元数据，不据此在本身份另立全集最坏性结论。",
+      "body": {
+        "path": "archives/customer-attraction/state/计算/多装置锥候选的三四人完整SPE证书--计算.md",
+        "sha256": "8c48a86f0bc6f7bfadbfb945600df3f15f59c0b67e7df5e8b5d8bf8f91965962",
+        "section": "2. 完整证书和独立核验"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/计算/多装置锥候选的三四人完整SPE证书--计算.md",
+          "sha256": "8c48a86f0bc6f7bfadbfb945600df3f15f59c0b67e7df5e8b5d8bf8f91965962",
+          "section": "1. 构造的真实定义"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/多装置锥候选的三四人完整SPE证书--计算.md",
+          "sha256": "8c48a86f0bc6f7bfadbfb945600df3f15f59c0b67e7df5e8b5d8bf8f91965962",
+          "section": "3. 能够、不能够推出的结论"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R275-multigadget-spe-certificates-20261031/source/multigadget.py",
+          "sha256": "436d0c66f47c3299e7a8b9a91b51f2a526566c3d016b3cbfc6d98ff704fabd9e"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R275-multigadget-spe-certificates-20261031/source/multigadget_m3.json",
+          "sha256": "d2dc89325a20910d7c160d320d4aa7f73e8a76a5e22710ba1a69892e5f2f810d"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R275-multigadget-spe-certificates-20261031/replay/verification.json",
+          "sha256": "e718acdb1ddfc6f71a334126d26276fe86d8683b188a40fa2d08e79038f3be27"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/exact-spe/customer_attraction/model.py",
+          "sha256": "ac28fc1a3837954ab9b8fc658701f53aecf0a1da059e316158aab7565dc5f6a8"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/exact-spe/customer_attraction/certificate.py",
+          "sha256": "a269b532260b537e67879eba609ef23e046e8f7303458ecf11271c4673aecc45"
+        }
+      ],
+      "sources": [
+        "clean:aae47277d64d22d4a121:research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/direct_global/multigadget.py",
+        "clean:4965c677e7d2d6835222:research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/direct_global/multigadget_m3.json"
+      ]
+    },
+    {
+      "object_id": "M-16b390c1707a48e2b2de67e945ed9c01",
+      "version": 1,
+      "title": "多装置家族m4的11标签22客户完整SPE与福利17",
+      "kind": "finite-spe-construction",
+      "truth_status": "proved",
+      "model": "有限单位客户、有限非空带标签共同目录、单位提供者按固定次序各选一次主题并观察全部有序历史；最终客户价值在覆盖者间均分。整数类型重数表示不同单位客户。完整纯SPE保全部离轨历史、重复行动及任意弱平局；真实偏离后按同一策略在改变后的历史续完。客户不进行设施模型的客户侧NE选择。",
+      "statement": "对m置k=m−1、p=3k+2、B=3k、T=3k+1；每i=0,…,k−1有兴趣{i,k+2i}和{i,k+2i+1}各2个单位客户，另有{B}、{T}各3个，{B}∪{k,…,3k−1}及{T}∪{k,…,3k−1}各2个；共同标签为0,…,3k+1。固定m=4的22单位客户/11标签实例，冻结multigadget_m4.json给出1464个有序历史的完整纯SPE，实际路径(0,1,2,9)，收益为(4,4,4,5)，W=17、OPT4=18。独立验证器核全部14640项非自身真实偏离，均无盈利。",
+      "quantifiers": "仅固定m=4的所列客户目录与完整策略；对该策略全部有序历史及所有合法替代标签成立。",
+      "assumptions": [
+        "所有类型重数为不同单位客户",
+        "实际路径和动作表由同一个完整策略实现",
+        "OPT按至多m标签支持精确有限枚举"
+      ],
+      "scope": "有限完整纯SPE构造基准；不声称最差性、任意m存在同路径或一般half锐性。与三人和已发布五人构造按玩家数、目录、客户和完整策略域分立。",
+      "objections": "既有证明复用逐历史verify_certificate；计数缓存只用于收益或终局集合，未将策略Markov化。本轮实读构造、模型和验证器，读证书/报告真实身份；未重跑旧求解器。18/32个根终局数量仅是来源报告元数据，不据此在本身份另立全集最坏性结论。",
+      "body": {
+        "path": "archives/customer-attraction/state/计算/多装置锥候选的三四人完整SPE证书--计算.md",
+        "sha256": "8c48a86f0bc6f7bfadbfb945600df3f15f59c0b67e7df5e8b5d8bf8f91965962",
+        "section": "2. 完整证书和独立核验"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/计算/多装置锥候选的三四人完整SPE证书--计算.md",
+          "sha256": "8c48a86f0bc6f7bfadbfb945600df3f15f59c0b67e7df5e8b5d8bf8f91965962",
+          "section": "1. 构造的真实定义"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/多装置锥候选的三四人完整SPE证书--计算.md",
+          "sha256": "8c48a86f0bc6f7bfadbfb945600df3f15f59c0b67e7df5e8b5d8bf8f91965962",
+          "section": "3. 能够、不能够推出的结论"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R275-multigadget-spe-certificates-20261031/source/multigadget.py",
+          "sha256": "436d0c66f47c3299e7a8b9a91b51f2a526566c3d016b3cbfc6d98ff704fabd9e"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R275-multigadget-spe-certificates-20261031/source/multigadget_m4.json",
+          "sha256": "91030115baa9db8a04cf5385b3396be14340e59caed6e4213945b837213b0b6f"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R275-multigadget-spe-certificates-20261031/replay/verification.json",
+          "sha256": "e718acdb1ddfc6f71a334126d26276fe86d8683b188a40fa2d08e79038f3be27"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/exact-spe/customer_attraction/model.py",
+          "sha256": "ac28fc1a3837954ab9b8fc658701f53aecf0a1da059e316158aab7565dc5f6a8"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/exact-spe/customer_attraction/certificate.py",
+          "sha256": "a269b532260b537e67879eba609ef23e046e8f7303458ecf11271c4673aecc45"
+        }
+      ],
+      "sources": [
+        "clean:aae47277d64d22d4a121:research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/direct_global/multigadget.py",
+        "clean:070355aa559a4a7a07ad:research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/direct_global/multigadget_m4.json"
+      ]
+    },
+    {
+      "object_id": "M-cc7c84bc2a6741f0ae9a164cc9e1e456",
+      "version": 1,
+      "title": "多装置明确家族任意m的指定路径完整SPE可实现性",
+      "kind": "open-problem",
+      "truth_status": "open",
+      "model": "有限单位客户、有限非空带标签共同目录、单位提供者按固定次序各选一次主题并观察全部有序历史；最终客户价值在覆盖者间均分。整数类型重数表示不同单位客户。完整纯SPE保全部离轨历史、重复行动及任意弱平局；真实偏离后按同一策略在改变后的历史续完。客户不进行设施模型的客户侧NE选择。",
+      "statement": "对m置k=m−1、p=3k+2、B=3k、T=3k+1；每i=0,…,k−1有兴趣{i,k+2i}和{i,k+2i+1}各2个单位客户，另有{B}、{T}各3个，{B}∪{k,…,3k−1}及{T}∪{k,…,3k−1}各2个；共同标签为0,…,3k+1。开放义务：对每个整数m≥3，是否都存在一份完整有序历史纯SPE，其实际路径恰为π_m=(0,1,…,m−2,3(m−1))？必须为同一构造的全部离轨子博弈给可信续局，不能只给在轨计数或局部响应行。",
+      "quantifiers": "待证明的精确谓词为∀m≥3 ∃完整纯SPE σ_m，其实际有序路径为π_m；当前只知有限m=3,4及独立m=5证书。",
+      "assumptions": [
+        "目录和客户类型严格取本页给定家族",
+        "提供者人数恰为m",
+        "策略量化全部有序历史，弱平局允许但不得冻结偏离后继"
+      ],
+      "scope": "主身份只登记指定路径在全m的可实现性。即使该谓词得到肯定，也只给一个可实现福利值，不会确定该实例最小纯SPE福利；对全体SPE的最坏福利控制是另外未支付的研究目标，未作为本对象的第二个全称结论。",
+      "objections": "m3/m4/m5有限证明不支付任意m量词；源中“推广并控制最小福利”不应合成一个含混定理。本记录无普遍证明、无反例，不将明确数学open误标成身份needs-decision。",
+      "body": {
+        "path": "archives/customer-attraction/state/计算/多装置锥候选的三四人完整SPE证书--计算.md",
+        "sha256": "8c48a86f0bc6f7bfadbfb945600df3f15f59c0b67e7df5e8b5d8bf8f91965962",
+        "section": "4. 与已有对象的衔接"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/计算/多装置锥候选的三四人完整SPE证书--计算.md",
+          "sha256": "8c48a86f0bc6f7bfadbfb945600df3f15f59c0b67e7df5e8b5d8bf8f91965962",
+          "section": "1. 构造的真实定义"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/多装置锥候选的三四人完整SPE证书--计算.md",
+          "sha256": "8c48a86f0bc6f7bfadbfb945600df3f15f59c0b67e7df5e8b5d8bf8f91965962",
+          "section": "2. 完整证书和独立核验"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/多装置锥候选的三四人完整SPE证书--计算.md",
+          "sha256": "8c48a86f0bc6f7bfadbfb945600df3f15f59c0b67e7df5e8b5d8bf8f91965962",
+          "section": "3. 能够、不能够推出的结论"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R275-multigadget-spe-certificates-20261031/source/multigadget.py",
+          "sha256": "436d0c66f47c3299e7a8b9a91b51f2a526566c3d016b3cbfc6d98ff704fabd9e"
+        }
+      ],
+      "sources": [
+        "p25-register-v2:register-ab98f323ad-0075",
+        "archives/customer-attraction/state/计算/多装置锥候选的三四人完整SPE证书--计算.md"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/customer-attraction/state/计算/R373二元局部响应与残差覆盖的71整数证书--计算.md",
+      "sha256": "f57616eeb55e7fa2b9eb368faf1827033937b864012618749dc3a45040e7f8c2",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/r373-binary-local-response-residual-coverage-71-certificate"
+      ],
+      "reason": "全文实读并以原source/63列对偶/63行原始slack比较，页ID只对应指定二阶段63行系统的精确最优71；非一般六人SPE。"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/任意尾长隐藏回复价格投影--计算.md",
+      "sha256": "3b162cad68299aa99cb12ec560dc85c7aefb56d9b115760c0abcc9de132b44ed",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "主数学是已登记CA-PRICED-HIDDEN-REPLY-v1的排序消元及精确实现；其owner尚未将本path/SHA接入evidence。21固定policy锥证书保独立条件及长有理数原件，不从exact_certified字段重造21个已证对象。pending仅为证据接收路由。"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/四人六标签固定策略的终局价格审计--计算.md",
+      "sha256": "82958619c67ecfa956bb8a95008f4f0d39209a1706a7483fb85388a04d00427b",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/four-player-six-label-terminal-price-fixed-policy-resource"
+      ],
+      "reason": "全文区分旧资源段与末节新增定义级证书；页ID只承载4人6标签6客户完整SPE W5/OPT6，score/z/clones不认证价格数学。"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/固定尾深菜单障碍的精确核验--计算.md",
+      "sha256": "3d28f4c92c999deb53bad6cd51ffd676af78cb5e37686a42287a3840726f3eaf",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "615格和末两人投影是既有固定尾深障碍/真实末两税代数的有限复核，无独立普遍定理或SPE反例。两主owner未接本path/SHA，保精确pending路由，不为程序通过数量立号。"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/多装置锥候选的三四人完整SPE证书--计算.md",
+      "sha256": "8c48a86f0bc6f7bfadbfb945600df3f15f59c0b67e7df5e8b5d8bf8f91965962",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/multigadget-spe-certificates",
+        "M-16b390c1707a48e2b2de67e945ed9c01",
+        "M-cc7c84bc2a6741f0ae9a164cc9e1e456"
+      ],
+      "reason": "全文实读并按三人/四人实例精确拆身份；三人复用页ID，四人与全m指定路径open各用父Boss一次分配ID。最坏福利不是这些有限构造的结论。"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/弱匹配分区查询有限报告与阈值边界--计算.md",
+      "sha256": "775e48a531919487a6bac76a896bc2df0bddbb66c4d8ba9eb6f1ea1c449d44f7",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "三份partition浮点报告支持有限无分离器观察，阈值1不同于full查询1+1/m及half；主查询合同/实现owner在0055尚待接本版本，不为success计数和容差噪声立节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/归档策略有限计数状态与早停报告的精确边界--计算.md",
+      "sha256": "ceeeb590c59e69d7f7434566f7507f486f2319f37a14e140dae6ee52917817be",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "集合值递推与CA-EXACT-PURE-SPE-ALL同义；四输入根集合、选定31节点树与浮点早停报告是该算法/固定锥的有限证据。已有主记录不在本批写范围且未接本版本，保pending。"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/父方额外槽与非空填充两份冻结报告的精确对应--计算.md",
+      "sha256": "028eefe72d6cf88ca755ccb4062ba75dc7d026b9de66f3c6643bf1d07ca35032",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "两份冻结父报告的强桥反例、两点稀释及非空填充与既有聚合extra-slot/empty-root对象同义。并未新增反例定理；主owner未接本path/SHA，保pending并区分真实旧运行与本轮零新运行。"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/独立机器C2单位缺口与仙人掌见证--计算.md",
+      "sha256": "cb23745f41e1786c1fd9135adbc361da505b9abc9a58a2824e22888bb76915c1",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "独立机器C2-load伪矩与高周长仙人掌见证属于unrelated-machines，不能在CAG中建主题或福利对象。已给0102/0095精确数学路由，但主owner未登记/接此版本，故仅归属needs-decision。"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/等权客户盒内NE最小费用流选择器--计算.md",
+      "sha256": "85dfa2448e38ecee0f70195655ef749e95c96edb57c8ec28fe1a3ec2fe503575",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "精确源码中的SC-K-EQUAL-LIGHT-FLOW-BOX与facility-games/common-many正式等重流主正文同一算法保证；0092尚未接本SHA。本页不抢另模型主body，也不将受限等权在轨位多项式界扩大为完整离轨算法。"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/随机锥安全搜索与背景二元精确回归--计算.md",
+      "sha256": "3a240ae6cc37c66b718378738728070bf1a4fd9fcf085642ba57dad0d1f979c2",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "随机锥零浮点候选和未完成扫描不立数学节点；11984项背景二元Fraction回归只归既有任意背景双支持恒等式owner。该owner尚未接此path/SHA，保pending并保一般恒等式证明责任。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/上传完整策略与四路微型比较的独立审计合同--资料.md",
+      "sha256": "0461eca7a4b227f38a6ab83f64ccc66d227706975d54b2b0beca303f410d5d41",
+      "disposition": "attachment",
+      "object_ids": [
+        "CA-LAST-FLOOR-ALL-PLAYERS-NO"
+      ],
+      "reason": "已实读0071发布主记录CA-LAST-FLOOR-ALL-PLAYERS-NO及其evidence，准确接入本path/SHA，故真实attachment该owner。四人逐人θ失败不是真正mixed安全v；209根四路/1793前缀两路回归另待CA-EXACT-PURE-SPE-ALL接证，不因其中一owner待办撤去已真实接证。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/两套退役账本的逐命题来源分诊--资料.md",
+      "sha256": "0b2e2b4250b6d1e74dbbcdc1ec8989e5372274acde5b245f229b37fb8300f1d7",
+      "disposition": "excluded",
+      "object_ids": [],
+      "reason": "历史跨模型来源索引，29是来源ID/版本数而非29互异数学节点；数学载荷已有九个准确独立档案正文。排除该二级索引作为新对象/必要证明附件，保来源地图，不抹去其链接数学，也不虚称所有旁读链接已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/同行选题比较与候选优先级边界--资料.md",
+      "sha256": "6892b07d0b495ae747d0781d6c783ac02991db11018e744812d49ebfce531cc3",
+      "disposition": "excluded",
+      "object_ids": [],
+      "reason": "同行优先级、题源增量和proof-obligation地图，没有独立完整证明或可取代原题页的规范输入。排除其研究排序/历史新颖性判词作为数学节点；AP/star/chores/PMMS/secretary候选须从各准确模型主正文接续，不在CAG统一立题。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/个体安全和全树流独立审计的完整合同--资料.md",
+      "sha256": "1488258b80e3e4d196db405f079504ef55c0f5574ab746a0159d0ef70f618954",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "34客户真正mixed安全反例、全树平均流模板分离、条件k尾提升三类数学owner分立。后两非SPE向量不能认作福利反例；该资料的新增独立审计未接各主owner，保多路pending而不另造资源节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/九人六极大算术审计的参数域和端点勘误--资料.md",
+      "sha256": "276f72632d6712af4500aabd85cb65e2bac73d70d26dac006fe3d75d0fb0f205",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "算术δ、私有包络、共享和式及九人端点勘误归CA-SIX-MAXIMA-NINE-PLUS-HALF/0009。精确B9余量和统一解析下界余量严格分开；owner未接本SHA及勘误，pending仅为归属，不是九人定理open。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/分数尾水位审计的有理停点和命令行边界--资料.md",
+      "sha256": "eaefca48d63b2fc3dd86cb698344d089aae382da9f7089e4c30ad6efeb93e13e",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "共同查询水位、信用1锐例、背景kD族、无理停点均已归CA-FRACTIONAL-TAIL-WATERFILL-v1及其成熟边界正文；16fixture/49子集不是新一般定理。主owner尚未接本审计版本，保pending，未假称新水位运行。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/学习导引与多设施因子二选择器边界--资料.md",
+      "sha256": "46fd7732357b6aa8df31b3ec74efb29f5667a3cae0f8aec6855698436b601942",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "双设施φ、任意设施因子二、等权流及一般位多项式open均归facility-games的各主正文/0091/0092；此教学地图不是六人CAG同一模型。已明确open数学另有主问题载体，当前needs-decision仅为资料证据归属待接。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/隐藏回复价格投影审计的真实行与有限域--资料.md",
+      "sha256": "b33c97c09cee2208b5d4c051e8569e3c8cb9cfc51fada8bdf67eddd5fee07bc0",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "一般真实源隐藏回复必要行及2(k−1)排序压缩与CA-PRICED-HIDDEN-REPLY-v1完全同义，3024参数槽和16策略112794局部行是有限精确回归。该owner未接本path/SHA，不重复建局部定理或将16树推广全策略。"
+    }
+  ],
+  "edge_files": []
+}
