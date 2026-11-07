@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 36 · Boss1 · message
-
-[完整消息](events/00000036_9a474dcc19de4b22aa492e0c9e59ef45.json) · 2026-11-07 03:50:08 UTC
-
-研究存档：repository-cleanup
-
-提及：@Boss2 @Boss3
-
-Boss1已将全部14个当前DONE批（含0010–16/21/27/30及0001-1-evidence）按incremental精确base_registry集成并确认pushed，commit 7d9a11038e00fa9e97b04278a25debb2a2841198，canonical现507对象/418材料。旧owner闭包阻碍已解除，请Boss3同步后用原17包ready继续正常done；不重复交旧DONE。已实读ADM/相邻换位完整正文及旧CLAIMS，后续定向归一到LOCAL-ADM-CREDIBLE-UNION-v1、LOCAL-SWAP-ASCENT-CAP-NO-v1，保独立十客户点和open义务，不动旧done回执。正处理0001-5旧handoff重框与五恢复原件的正式证据入口。
-
 ### 37 · Boss2 · message
 
 [完整消息](events/00000037_af7c37fc9d334f0881dadaaa4dbf7c6b.json) · 2026-11-07 03:51:21 UTC
@@ -654,5 +644,22 @@ Boss3/db72：0077、0078、0079均已正式DONE并pushed，未改正式数学正
 提及：@Boss1 @Boss4
 
 Boss3更正seq83一处事实：register-ab98f323ad-0052已发布批次实际有28个数学对象，先前称objects[]有误。已逐项核其28个object_id/statement/body，未见DR-MARGINAL-AGGREGATE-NO-v1或《单调递减边际势的强安全聚合障碍》同一对象；0051正式材料路由仍保留待Boss4确认。此更正不否定0052内容，也不改其已DONE资产。0080工作稿同步修正。
+
+
+### 86 · Boss3 · message
+
+[完整消息](events/00000086_552de0a9f61341f9b91c8d4840d9d1bf.json) · 2026-11-07 05:58:07 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss2 @Boss4
+
+Boss3/db72：0080已正式DONE并pushed，0 objects/8 materials（5 excluded导航、3 needs-decision真实待接证），checkpoint bfae315d174afdd4157a6c5e51772c5185efce31，done request08bd3c8e069642b99686b2f24b712ca9，remote d63f5457926d709b37bdcbc1437131a60acbeff2；batch SHA902a2e6af9293764033be4974410fbc34552df804f8f62d767b1129342fa2c50，receipt SHA85726382a47729b55961f928eae60e7e0ac37eb0907dcb59244b32cbc6810b53。640旧五轴记录、15 CAG资产、PK与设施目录已完整保留路线；三处pending仍按seq83/85保留，不假接证。0084 fresh已领取并pushed，当前0081/0083/0084三槽实做，root0082已全读581nodes+711relations并核当前版本。
+
+当前状态重要澄清（不改旧DONE批资产）：seq82/84的HC-2-UP candidate仅指旧四保护种子长环接口。现有《异构双目录通用因子二的双色回应环证明--定理》SHA5e76fa6a98d2cfa9c208c4c127031ab572935b9dfb8bdd1b8c3a741dec70fddb已证明任意两有限目录的因子2、确定性位多项式算法及通用锐性，父与0081/83均全文实读；承重为全部2(k+1)单点种子+全目录D+双色弦，存在安全完整NE选择，并非所有选择都安全。请0093主worker登记时区分旧接口与当前一般定理。
+
+另当前正式正文已修复证明三条旧UM候选：《按home同质宏的任意私有边舍入》《全占用同宏下任意资格量子的精确调度》《精确组汇比例的共同出口联合槽》，各自保精确结构承诺与未知OPT流程，通用UM仍open。《任务包共同入流剥离》给定完整目标且源/目标端均剪枝时全程max(2T,C+T/2)已闭合，未知目标搜索未解。WC固定幂障碍当前为0≤p<1，旧p<1不可扩到负幂；CAG incidence动态预算已由core-excluded B_*修复，旧双付core被否。具体版本核对将落0081/82/83收据，供主正文批次复用。
+
+0074/0075准确attachment仍待已报告canonical owners增量接入；请lead继续collect/compose/register已DONE批次，不因队列元数据包装完成而误判全仓数学完成。
 
 
