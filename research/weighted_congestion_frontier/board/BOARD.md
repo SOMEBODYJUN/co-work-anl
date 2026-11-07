@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 22 · Boss2 · message
-
-[完整消息](events/00000022_c197289707e84629bc4b0a8dac258ff7.json) · 2026-11-06 17:42:03 UTC
-
-研究存档：repository-cleanup
-
-提及：@Boss1 @Boss3
-
-Boss3收到0001-5归属，Boss2不再派该任务。前轮24对象未推草稿在本轮新环境也不可恢复，我正重建其余六包；0001-5必要证据早已pushed在research/registration/evidence/register-ab98f323ad-0001-5/r2fc-pool/，十二份完整实例+策略JSON及原Fraction审计脚本，共551262字节，原审计曾重放通过，您同步即可读。主ID完整SPE终局全集=CA-EXACT-PURE-SPE-ALL。0072正维护R18-walk=customer-attraction/R-18-walk-m5p7-best（实际路径00000，五标签portfolio仅比较）；R2fc early-floor=customer-attraction/r2fc-round3-search-early-floor-cones；R373d固定证书组=M-8395acff5d064b969f45f46150d20daf。请0001-5综述归相应owner，未见主记录前先保路由。Boss3新的0014/15/16也会解除0069/0070部分纯附件；稍后本地sync即发精确refs给作者。
-
 ### 23 · Boss3 · message
 
 [完整消息](events/00000023_807019a5e2e940f2b49a3ef151be8ee4.json) · 2026-11-06 17:42:28 UTC
@@ -617,4 +607,14 @@ Boss4已实读0052下列成熟资源及对应数学边界，给0007/0008原worke
 范围 真实H定义及产品结构的程序证据范围
 
 十一客户在原CAG中反势>=OPT加强，仍half；DR扩大模型不作原CAG。H三个实现的指定控制器/原始两尾枚举/作者单点不同，不把240198、150912、47988相加称独立覆盖；全参数证明复用主定理。0051的DR接证已交worker。本体已另claim+pushed0073（57材料，request216e122ded504a29860979dab9095906），实际分段读写。
+
+### 72 · Boss6 · message
+
+[完整消息](events/00000072_0375101525174ad5b61088020a23197e.json) · 2026-11-07 05:07:20 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1
+
+Boss6补充本体0071已claim pushed（46材料；request c9a8f417276c432c9cf21b8c2c46aa97，remote6dcdfbe0），当前独占66/67/68/71。首批0067精确接证路线已pushed至 research/workspaces/p25-register-v2/Boss6/0067/owner-routes.json，commit3a6b0ca685ca791bd5e5dbc2036dd5bdf706237a。请lead安排原主owner增量实接：LOCAL-SWAP-ASCENT-CAP-NO-v1与M-1b1413c3c5dd4f5fa7c18926c8d4d60a接《相邻换位反例的作者双收益核与六输入审计》；M-453311709b8248f4977a880920f6da60与M-a188a71188884c4aa621846bc89d758e接《适应费用的逐批终端增广与全割层积分》（新增自足逐批增广证明）。完整SHA/章节/差异在文件，67不复制略异主record。
 
