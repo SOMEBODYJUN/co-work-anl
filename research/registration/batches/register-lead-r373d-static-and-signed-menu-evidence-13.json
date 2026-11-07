@@ -1,0 +1,334 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline-5cd4b9018.json",
+    "sha256": "af99fb773928f3fc6bcd577ade37fbb07e8f84befbb2304158b99894ab1e56a3"
+  },
+  "objects": [
+    {
+      "object_id": "customer-attraction/signed-menu-graph-common-customer-envelope",
+      "version": 2,
+      "title": "任意带符号真实末菜单图的共同客户SG1扣除",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空共同标签目录与覆盖映射（允许空覆盖、同覆盖异标签及重复行动），m名单位权提供者依固定顺序观察全部有序历史各选一次；客户价值在终局覆盖者之间均分。完整纯SPE定义于全部合法有序历史，任意弱平局和离轨历史保留，每次偏离沿同一张策略表的真实改变后历史继续。 m≥2；q≥1菜单索引，L≥1族，每族合法长m−2历史H_r与q合法主题Z_i^r、同一原σ真实末回复F_i^r。",
+      "statement": "任意无自环有向多重D/O图，客户间固定非负λ_e，w_e=λ_eg_src，τ_x=min_(s∈{0,1}^L)[Σ_Dw1_(s_r≠s_s)+Σ_Ow1_(s_r=s_s)]，Ξ_x=1/2[qτ_x−Σ_Dw|K_r−K_s|−Σ_Ow|q−K_r−K_s|]_+。以正文精确单边E^D/E^O，则Σ_x[Σ_DλE^D+Σ_OλE^O−Ξ_x]≥0。共同每列二元标记使真实总缺额≥Ξ，真实整行BR和非负给必要上包络。",
+      "quantifiers": "所有上述完整SPE、合法真实族、任意q/L、无自环图和全部非负实边乘子；每客户背景可不同但λ在客户间固定。",
+      "assumptions": [
+        "A_r=Σ_i f_i/(b_r+z_i+1)，K_r=Σz_i，g_r=1/((b_r+1)(b_r+2))",
+        "相同真实历史必须同回复，不按查询另选σ",
+        "单客户系数可负，非负的是全客户真实BR行总和"
+      ],
+      "scope": "任意图普遍必要扣除，不给一般多项式τ算法/完整SPE实现/根支付。",
+      "objections": "已完整读取本任务指定正式正文及共同定义，按原文复用成熟证明/精确证据；本次登记未重跑LP、SPE求解、既有核验或原程序。程序报告与PASS不另造数学节点。真实加权BR和≤收紧上包络，不能反向。所有离轨A_r仍须共同收费到根W。 R-373d定义级独立原程序核D/O真代数、Hamming缺额和共同列下界；正式SG1还用真实BR整行非负。1200个随机定义案不提供SPE实现或原题证明。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/带符号真实菜单图的共同客户扣除与精确包络--引理.md",
+        "sha256": "64d66adac6fbf71483497a62f33bcedb4b9a17cf699cb80d628fab8650fc221c"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/任意菜单图入口的有限核验与强遗漏桥版本--资源.md",
+          "sha256": "d26a2153cc73617f986c08b07e0b598c54a2131605eb859c5a1ff1496919ff9d"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/真实菜单环耦合工作区的版本与早期价格义务--资源.md",
+          "sha256": "be754d10910a47641fbc340295b120809e64a989b3071bf12055c0e308255571"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/R-373d耦合桥与计数MILP有限证书--障碍.md",
+          "sha256": "f0410daa71f6635bcddada62ef71e41b03437c48192fc1dee7f11ca5cdeb7737",
+          "section": "签名图审计"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/source/audit_signed_graph_menus.py",
+          "sha256": "8f631243af0a6a36263eca5aa1c5b36f64b67359104137a82d990e04c0485516"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/source/signed_graph_menu_audit.json",
+          "sha256": "23fa02358c4517c5b105699918fad304da62382feeb7af0b9893d62ca6f21841"
+        }
+      ],
+      "sources": [
+        "source:b84f9c32eff8743ed406",
+        "archives/customer-attraction/state/障碍/R-373d耦合桥与计数MILP有限证书--障碍.md"
+      ]
+    },
+    {
+      "object_id": "M-a040b54060bc43e68c496b6ef12f4d35",
+      "version": 2,
+      "title": "半密度带符号菜单图的精确联合重排包络及K5严格分离",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限q个索引、L族完整本地状态直方图；固定D/O图非负有效权，允许各族独立任意重排索引，保每族本地(z,f,其它私有标记)多重集。",
+      "statement": "正偶数q且每族K_r=q/2时，所有索引共同对齐的最小缺额恰qτ/2。取达到τ的标记s*，q/2列取s*、q/2取补标记即可保各族半密度且取等。q2、L5全O的K5、b0、λ1、本地(z,f)=(1,1),(0,0)给精确联合最大真实比较和−2；全部奇环分数打包最多扣5/3，十个三角形各1/3达界。",
+      "quantifiers": "每个正偶q、任意L/符号图/非负实有效权和半密度本地直方图；K5为明示局部资料例。",
+      "assumptions": [
+        "精确性仅在自由本地重排放松，不额外保跨族共同标签/同历史一致性",
+        "二元标记成本在全补下不变"
+      ],
+      "scope": "精确组合包络与严格超奇环打包局部资料；不是负值SPE实例。",
+      "objections": "已完整读取本任务指定正式正文及共同定义，按原文复用成熟证明/精确证据；本次登记未重跑LP、SPE求解、既有核验或原程序。程序报告与PASS不另造数学节点。 R-373d保150个半密度放松达到样本和同一K5的−2联合值/5/3奇环扣除。共同真实历史可行性仍有额外条件。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/带符号真实菜单图的共同客户扣除与精确包络--引理.md",
+        "sha256": "64d66adac6fbf71483497a62f33bcedb4b9a17cf699cb80d628fab8650fc221c",
+        "section": "半密度的精确联合包络"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/带符号真实菜单图的共同客户扣除与精确包络--引理.md",
+          "sha256": "64d66adac6fbf71483497a62f33bcedb4b9a17cf699cb80d628fab8650fc221c"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/任意菜单图入口的有限核验与强遗漏桥版本--资源.md",
+          "sha256": "d26a2153cc73617f986c08b07e0b598c54a2131605eb859c5a1ff1496919ff9d"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/R-373d耦合桥与计数MILP有限证书--障碍.md",
+          "sha256": "f0410daa71f6635bcddada62ef71e41b03437c48192fc1dee7f11ca5cdeb7737",
+          "section": "签名图审计"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/source/audit_signed_graph_menus.py",
+          "sha256": "8f631243af0a6a36263eca5aa1c5b36f64b67359104137a82d990e04c0485516"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/source/signed_graph_menu_audit.json",
+          "sha256": "23fa02358c4517c5b105699918fad304da62382feeb7af0b9893d62ca6f21841"
+        }
+      ],
+      "sources": [
+        "source:b84f9c32eff8743ed406",
+        "archives/customer-attraction/state/障碍/R-373d耦合桥与计数MILP有限证书--障碍.md"
+      ]
+    },
+    {
+      "object_id": "M-790b40349de64d42957e302eba3c2d8f",
+      "version": 2,
+      "title": "等密度全O完整菜单图的整数凸平衡精确债",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "q≥1个索引、L≥1族，每族K_r=k∈{0,…,q}，全O完整图每边同权w≥0，允许保完整本地直方图的各族独立索引重排。",
+      "statement": "写Lk=qt+ρ、0≤ρ<q，ell=max(0,2k−q)，则最小总缺额恰w[q C(t,2)+ρt−C(L,2)ell]。列命中数n_i总和Lk，凸性使n_i为t/t+1最优；族r选rk,…,rk+k−1模q达到平衡。q3/L4/k1时虽每对可零交叠，共同至少一次碰撞，债至少w。",
+      "quantifiers": "全部整数q≥1、L≥1、0≤k≤q、非负实同权w及所述本地直方图。",
+      "assumptions": [
+        "k0、kq、q1及w0均包括",
+        "同权精确，任意不等权不能直接声明同式取等"
+      ],
+      "scope": "自由重排组合精确值，不保证全局目录/完整SPE，非根共同付款。",
+      "objections": "已完整读取本任务指定正式正文及共同定义，按原文复用成熟证明/精确证据；本次登记未重跑LP、SPE求解、既有核验或原程序。程序报告与PASS不另造数学节点。 R-373d原脚本第三循环穷尽1≤q≤6、2≤L≤6、0≤k≤q的135个等密度全O图构造输入；固定权一验证整数凸平衡值。其全参数证明仍在主正文。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/带符号真实菜单图的共同客户扣除与精确包络--引理.md",
+        "sha256": "64d66adac6fbf71483497a62f33bcedb4b9a17cf699cb80d628fab8650fc221c",
+        "section": "等密度全 O 完整图的整数凸精确式"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/带符号真实菜单图的共同客户扣除与精确包络--引理.md",
+          "sha256": "64d66adac6fbf71483497a62f33bcedb4b9a17cf699cb80d628fab8650fc221c"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/R-373d耦合桥与计数MILP有限证书--障碍.md",
+          "sha256": "f0410daa71f6635bcddada62ef71e41b03437c48192fc1dee7f11ca5cdeb7737",
+          "section": "签名图审计"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/source/audit_signed_graph_menus.py",
+          "sha256": "8f631243af0a6a36263eca5aa1c5b36f64b67359104137a82d990e04c0485516"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/source/signed_graph_menu_audit.json",
+          "sha256": "23fa02358c4517c5b105699918fad304da62382feeb7af0b9893d62ca6f21841"
+        }
+      ],
+      "sources": [
+        "source:b84f9c32eff8743ed406",
+        "archives/customer-attraction/state/障碍/R-373d耦合桥与计数MILP有限证书--障碍.md"
+      ]
+    },
+    {
+      "object_id": "CA-SPE-NON-PNE",
+      "version": 2,
+      "title": "顺序SPE终局不必为同时PNE的两个完整证书",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限单位客户、有限非空带标签共同主题目录、单位权顺序提供者；主题允许为空、同覆盖异标签及重复选择。完整纯策略定义在全部有序历史，任意平局保留；偏离后使用同一策略的真实后继。根福利W为覆盖客户数，非零背景的未来收益和不等同于新增覆盖。",
+      "statement": "三客户a,b,c，主题A={a}、B={a,b}、C={b,c}，三名玩家。正文13个决策节点的完整策略实际CAC、每人收益1、W=OPT3=3；固定另外两位的C，第二位从A改B可得4/3，故终局不是同时PNE；顺序真实偏离CB后按原σ完成为CBB，偏离者得5/6，故不违反完整SPE。 另一完整证书有47单位客户、5标签、4人，实际(2,4,0,3)，收益(27/2,25/2,10,9)、W=45、OPT4=46。第三人改主题0→1时，冻结末位3的静态收益21/2>10，而历史(2,4,1)后原策略末位2给真实收益59/6<10。",
+      "quantifiers": "两份各自完整的指定实例和有序策略均见证存在性；被否定的是所有顺序SPE的终局均为同时PNE。",
+      "assumptions": [
+        "所有有序历史使用正文完整动作表",
+        "静态偏离与顺序真实后继严格区分"
+      ],
+      "scope": "精确反例及两种均衡概念的分离。",
+      "objections": "三客户见证福利仍最优，不推出顺序福利低于全部静态PNE；0012非PNE搜索的五人七题大实例不是同一证书。 三客户见证的W=OPT；第二见证的W=45<OPT=46。二者都只否定从顺序SPE终局到同时PNE的蕴含。47客户证书以原13个兴趣类型和156个完整历史独立核对780次比较，含自身。",
+      "body": {
+        "path": "archives/customer-attraction/state/反例/顺序SPE终局不必为同时PNE--反例.md",
+        "sha256": "0879e6843689c4978c3c44a51fe779714ca3b6290cb4778a9243126295203a99"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/祖先旁枝重置的单位客户审计与完整原报告--程序.md",
+          "sha256": "237d3437cd33c214bf6aabfd599a733f8e9088005af40e595f1bfeba7cfe0cd3"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/保留静态盈利偏离的完整策略锥搜索--程序.md",
+          "sha256": "20066b9c2ef8ec6f3e78412fd2a2d1835a858b2d98e7470a46cc6c60f8e1ca3d",
+          "section": "一、目标是保留一个非PNE顺序终局"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/R-373d耦合桥与计数MILP有限证书--障碍.md",
+          "sha256": "f0410daa71f6635bcddada62ef71e41b03437c48192fc1dee7f11ca5cdeb7737",
+          "section": "静态桥失效的精确机制"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/source/pair_interest_static_bridge_failure.json",
+          "sha256": "c424426157b6e2dcd7ca9a917929d0b35f3ce2060388b55c0f9afe26dd0da686"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/反例/顺序SPE终局不必为同时PNE--反例.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/continuation_lemmas.md#CA-SPE-NON-PNE",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/customer_attraction/continuation_lemmas.md#CA-SPE-NON-PNE",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/customer_attraction_continuations.py#run",
+        "archives/customer-attraction/state/障碍/R-373d耦合桥与计数MILP有限证书--障碍.md"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/count-policy-joint-mass-generator-and-five-player-all-common-client-point",
+      "version": 2,
+      "title": "完整计数策略的路径归一联合重数编码",
+      "kind": "equivalence",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空共同标签目录及任意覆盖映射、单位顺序玩家；允许空覆盖、重复行动、同覆盖异标签及任意弱平局。完整纯策略定义在全部合法有序历史；偏离后保同一策略于改变后的历史真实续行。终局每名客户在覆盖他的所有玩家间均分。非负质量w_J表示单位类型重数的线性延拓；具体整数构造按不同单位客户解释。",
+      "statement": "固定m≥1,p≥1及一条合法长度m路径。对全部|q|<m计数状态，one-hot z_(q,a)指定同计数唯一动作，u_(q,t)∈[0,m]存所有主题在被选真实后继的收益；传播选中孩子，且每个偏离主题用其真实孩子比较。根路径福利W=1、全部非空客户类型r_J≥0、合法比较J支持≤m。主题总质量≤m、总质量≤mp，故可取M=m。整数系统与该路径上的完整计数策略SPE存在性等价；可选轨道对称约束是每一TYPE同质量而非整轨道总质量，系数累加轨道贡献。",
+      "quantifiers": "任意m,p及固定路径与合法OPT比较支持；全部有序历史以计数函数展开，只量化计数策略子类。",
+      "assumptions": [
+        "W为路径实际覆盖并集质量而非总客户Σr",
+        "不排除全兴趣类型；全部离轨状态检查IC"
+      ],
+      "scope": "10/11两页为同一数学编码的对称/非对称版本，R171和全共同客户端点仅作校准证据。",
+      "objections": "不能把计数状态缓存等同全部完整策略终局系统。与0036 M-11aafbfbf645423198af80bd206d973e（n≥3、Σw=1、全兴趣质量0、M1、PAIR目标）域和归一不同，不误合并。AAAAB共同客户ratio1及R171 p2的3/2点没有单独数学身份；小规模无超2不证一般上界。 另一实现沿同一计数完整策略IC和真实子收益传播取M=m，且用根收益限每题质量；实际优化固定标签集合P={0,…,min(m,p)−1}的cover(P)−W−mult·u1，P的最优性另检。三次候选源均为status=1限时，精确恢复只认证所得策略点，保存(W,OPT)=(5,6),(1,1),(4,6)，不认证MILP最优。",
+      "body": {
+        "path": "archives/customer-attraction/state/程序/计数策略联合重数候选器与五人全重合端点--程序.md",
+        "sha256": "7f894f7f0adbd356c3553dbcdcaa4c9ad422339fbce994b05bba9389cda7722f"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/程序/计数策略联合重数的非对称候选器--程序.md",
+          "sha256": "e0a288e558b49f8b2b866358c60798c87651f679401b9165b4c1aa2c915553c2"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/R-171计数Markov候选--计算.md",
+          "sha256": "b27b8759e67d624aa880b54bacd3587950b00dcce57629f2de4404398a8eaeb0"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/R5e9工作区根入口的目标与模型版本--资源.md",
+          "sha256": "b2e1b212e8ffda1f4f1601776127f71697fcee2cdbd8620b1818059dd406d236"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/R-373d耦合桥与计数MILP有限证书--障碍.md",
+          "sha256": "f0410daa71f6635bcddada62ef71e41b03437c48192fc1dee7f11ca5cdeb7737",
+          "section": "三个计数 MILP 候选"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/source/count_milp.py",
+          "sha256": "b5337b09be26c7d8767d5545572a6fc951ee4f6e85842976e542590bb40fe604"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/source/count_milp_4_0-0-0-1-1.json",
+          "sha256": "cddd062c750e9b0c3bd148d3bc6fd759a56ee723f1c93884e2937ab7edbaf873"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/source/count_milp_4_0-1-1-1-1.json",
+          "sha256": "7c61bba090c214065cf29d7ab584d3336bd0e9821490368619359f9cd267fc94"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/source/count_milp_5_0-1-1-1_mult3.json",
+          "sha256": "96aac7ea8b134f29843cf92bed6d296ad6a959b6d029293023d07e288e1fbdad"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/replay/verify_candidates.py",
+          "sha256": "cb8d2215aa841c1ff94f7b1767c90257b92f0114052920234aa74b8bf2cd8d60"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/replay/candidates_verify.stdout",
+          "sha256": "6c1541dab81659791d90be20f96236373e9ab76e3a5f9562ffef0b99046974c9"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/程序/计数策略联合重数候选器与五人全重合端点--程序.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-5e9dedd2606746ff8afbbb73bf816e7a/counterexample/markov_joint.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-5e9dedd2606746ff8afbbb73bf816e7a/counterexample/symmetric_AAAAB.json",
+        "archives/customer-attraction/state/程序/计数策略联合重数的非对称候选器--程序.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/credible_search/markov_joint.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/credible_search/markov_joint.py",
+        "archives/customer-attraction/state/计算/R-171计数Markov候选--计算.md",
+        "archives/customer-attraction/state/障碍/R-373d耦合桥与计数MILP有限证书--障碍.md"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/customer-attraction/state/反例/顺序SPE终局不必为同时PNE--反例.md",
+      "sha256": "0879e6843689c4978c3c44a51fe779714ca3b6290cb4778a9243126295203a99",
+      "disposition": "objects",
+      "object_ids": [
+        "CA-SPE-NON-PNE"
+      ],
+      "reason": "沿用现有精确身份及主正文；新增R-373d独立定向证据并保精确适用边界。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/带符号真实菜单图的共同客户扣除与精确包络--引理.md",
+      "sha256": "64d66adac6fbf71483497a62f33bcedb4b9a17cf699cb80d628fab8650fc221c",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/signed-menu-graph-common-customer-envelope",
+        "M-a040b54060bc43e68c496b6ef12f4d35",
+        "M-790b40349de64d42957e302eba3c2d8f"
+      ],
+      "reason": "沿用现有精确身份及主正文；新增R-373d独立定向证据并保精确适用边界。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/计数策略联合重数候选器与五人全重合端点--程序.md",
+      "sha256": "7f894f7f0adbd356c3553dbcdcaa4c9ad422339fbce994b05bba9389cda7722f",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/count-policy-joint-mass-generator-and-five-player-all-common-client-point"
+      ],
+      "reason": "沿用现有精确身份及主正文；新增R-373d独立定向证据并保精确适用边界。"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/R-373d耦合桥与计数MILP有限证书--障碍.md",
+      "sha256": "f0410daa71f6635bcddada62ef71e41b03437c48192fc1dee7f11ca5cdeb7737",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "customer-attraction/signed-menu-graph-common-customer-envelope",
+        "M-a040b54060bc43e68c496b6ef12f4d35",
+        "M-790b40349de64d42957e302eba3c2d8f",
+        "CA-SPE-NON-PNE",
+        "customer-attraction/count-policy-joint-mass-generator-and-five-player-all-common-client-point"
+      ],
+      "reason": "本页D/O签名图、K5/完整O图、47客户静态非PNE及计数MILP精确有限点已由列明五个owner接证。仅剩固定策略锥mult=2、3的独立证书章节路由：mult=2与0031 M-ba78ec702eca4553800fa409a32f9c12为同一198客户点，冻结JSON的末mask为57（0071审查表写56）；mult=3保同策略的另一个重数点，待与该批主证据作定向追加。"
+    }
+  ],
+  "edge_files": []
+}
