@@ -1,0 +1,184 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline-5cd4b9018.json",
+    "sha256": "af99fb773928f3fc6bcd577ade37fbb07e8f84befbb2304158b99894ab1e56a3"
+  },
+  "objects": [
+    {
+      "object_id": "M-ba78ec702eca4553800fa409a32f9c12",
+      "version": 2,
+      "title": "固定六标签策略的198单位客户别名边界点",
+      "kind": "construction",
+      "truth_status": "proved",
+      "model": "有限单位客户、有限非空共同标签目录和任意覆盖映射（可有空覆盖、同覆盖异标签），m名单位提供者按全部先前有序行动各选一次标签；终局每客户在覆盖者间均分。完整纯SPE涵盖全部有序离轨历史与任意弱平局，真实偏离沿同一原策略在改变后的历史续完；计数压缩只压缩收益，不合并历史或标签身份。",
+      "statement": "兴趣型mask(2,4,11,16,25,34,36,43,45,48,57)的单位客户重数(23,28,15,23,15,7,2,21,36,7,21)共198。正文完整σ为纯SPE，actual034的收益(48,48,42)、W=138；T={1,2,4}覆盖全部198，故OPT3=198，OPT/W=33/23。唯一同覆盖标签对为0、3，其别名保留合法。",
+      "quantifiers": "指定198单位客户、全部43节点σ及其真实有序偏离；最优覆盖量化所有至多三标签集合。",
+      "assumptions": [
+        "标签0与3不同但覆盖集合恰相同",
+        "覆盖映射允许非单射"
+      ],
+      "scope": "达到固定客户锥锐值33/23的精确有限游戏。",
+      "objections": "这不是覆盖互异输入；与其后严格互异族不合并，以免把边界点误称互异类达到点。 R-373d二倍试探与本198客户别名点同一：一基mask、43历史全部动作及最优组合{1,2,4}逐项相合。审查页《精确重放》表最后一行mask56为抄写错误，应为57={0,3,4,5}，重数仍21，冻结JSON和主正文构造表一致。该点的OPT−W−2u1=−36、规范化−6/23仅是同一点的另一观测。",
+      "body": {
+        "path": "archives/customer-attraction/state/构造/六标签固定策略的客户边界与分离逼近--构造.md",
+        "sha256": "868ad2f8aef259d6a1f4a44fa69d359245eecb2722f3d64842a19be3f479d652"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/固定完整策略的七层共同客户证书--计算.md",
+          "sha256": "96cee29c07fb57653276065c73f83783f0713aa384ffd37c7b49e600df9dba36"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/同支持守恒与局部客户耦合的严格间隔--障碍.md",
+          "sha256": "9824cadf6ec0ec14ab078277b0458d10926c29f9b42a1c4388c4c1d92803de98"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/共同覆盖发现器的四层原输出与客户点同一性--程序.md",
+          "sha256": "b3f27bb155e1a6bd2aaba61da4e30b166e284ebda186da73fe22ca60321ac2a7"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/R-373d耦合桥与计数MILP有限证书--障碍.md",
+          "sha256": "f0410daa71f6635bcddada62ef71e41b03437c48192fc1dee7f11ca5cdeb7737",
+          "section": "固定 bridge attack"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/固定策略锥二倍根支付有限核验--审查.md",
+          "sha256": "2a7359d4868b6bec183a1d697ea1394fdebe198e09af39dd0cdd68cb8bb7d17e"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/Boss7-r373-fixed-bridge-20261101/source-fixed-bridge-mult2.json",
+          "sha256": "808c20a5fa44dcb11d91924a63849825e3fc7a3c984dd4433eeb5d6c5e885bbc"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/Boss7-r373-fixed-bridge-20261101/replay.py",
+          "sha256": "3088966a7c5221b16e3fbe4a8b726a346caf0509280083efa6035f1d474dce09"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/Boss7-r373-fixed-bridge-20261101/replay.json",
+          "sha256": "2a7ea5e03f543a10efe1e370ed37425b06c8ef4fb0dc285083fd04c6a0fd9d29"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/构造/六标签固定策略的客户边界与分离逼近--构造.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/tree_coupling/common_shapley_coupling.md#4-Exact-finite-hierarchy-on-that-fixed-strategy-and-comparison",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/tree_coupling/coupling_layers.json#true-nonnegative-common-customer-types",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/tree_coupling/verify_coupling.py#true_payoff",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/customer_attraction/root_stationary_kernel.json",
+        "archives/customer-attraction/state/障碍/R-373d耦合桥与计数MILP有限证书--障碍.md",
+        "archives/customer-attraction/state/审查/固定策略锥二倍根支付有限核验--审查.md"
+      ]
+    },
+    {
+      "object_id": "CA-STRATEGY-CONE",
+      "version": 2,
+      "title": "固定完整策略的精确重数锥、紧截面和有限达到性",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限单位客户和有限非空共同主题标签目录；单位提供者按完整有序历史依次选一标签，终局客户在覆盖者间均分，真实偏离按同一策略续行。",
+      "statement": "对固定(m,p)和形式完整σ，在每个有序节点h、动作a用同一σ真后继构成有理收益差G_{h,a}；Dσ={r≥0:Gσr≥0}的整数点恰是使σ成为纯SPE的客户重数。实际覆盖行w满足Σ_B r_B≤mp·wr，Pσ=Dσ∩{wr=1}紧且非空。固定m,p的最大OPT_m/W是有限max_{σ,J}max_{r∈Pσ}v^Jr，|J|=min(m,p)，有有限整数客户实现。固定(σ,J)的β上界等价于存在非负对偶乘子μ使βw−Gσᵀμ−v^J≥0；配等号原始点认证最优。",
+      "quantifiers": "任意正整数m,p，任意完整形式纯策略σ，所有非空类型非负重数；非零实例取福利正截面；所有大小min(m,p)的比较集合J。",
+      "assumptions": [
+        "允许不同标签同覆盖及空覆盖",
+        "可行整数重数表示不同的单位客户，实数点仅作归一优化",
+        "逐有序历史使用真实偏离续局，保平局"
+      ],
+      "scope": "固定人数与标签数；不推广到两两不同覆盖的强制子模型、任意目录规模的统一上界或多项式算法。",
+      "objections": "完整有理锥、非空截面、整数达到性和对偶符号见正文四定理；有限执行证据不代普遍覆盖上界。 R-373d的有限试探以同一六标签三人43历史σ换重数。三倍点共164客户，actual034的W103、OPT145、收益(69/2,73/2,32)，比较{1,2,5}确达145，目标OPT−W−3u1=−123/2、规范化−123/206。两点分别精确核258个激励比较；候选试探没有证明整个锥的该目标上界或一般根支付。",
+      "body": {
+        "path": "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md",
+        "sha256": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/R-373d耦合桥与计数MILP有限证书--障碍.md",
+          "sha256": "f0410daa71f6635bcddada62ef71e41b03437c48192fc1dee7f11ca5cdeb7737",
+          "section": "固定 bridge attack"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/R-373d耦合桥与计数MILP有限证书--障碍.md",
+          "sha256": "f0410daa71f6635bcddada62ef71e41b03437c48192fc1dee7f11ca5cdeb7737",
+          "section": "新增 `fixed_bridge_mult3.json` 版本核验"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/固定策略锥二倍根支付有限核验--审查.md",
+          "sha256": "2a7359d4868b6bec183a1d697ea1394fdebe198e09af39dd0cdd68cb8bb7d17e",
+          "section": "固定桥目标的含义与数值"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/source/fixed_bridge_attack.py",
+          "sha256": "beacb48f1036b7e694464f48b21cd625d1349d1dec547b65bb1180a94acf5ebc"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/source/fixed_bridge_mult3.json",
+          "sha256": "c3b17b2b8b9e03caafcd3656ddb6904613e1430b5e75f9c3348310e09f283d84"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/replay/fixed_bridge_mult3_validation.json",
+          "sha256": "e34de6e41884af992d0a9727e12f933c624356352a62d9850e964abfd02607d0"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/strategy_cone.md#1-每个完整策略恰对应一个有理锥",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/customer_attraction/strategy_cone.md",
+        "canonical-page-id:customer-attraction/full-strategy-multiplicity-cone",
+        "archives/customer-attraction/state/障碍/R-373d耦合桥与计数MILP有限证书--障碍.md",
+        "archives/customer-attraction/state/审查/固定策略锥二倍根支付有限核验--审查.md"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md",
+      "sha256": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39",
+      "disposition": "objects",
+      "object_ids": [
+        "CA-STRATEGY-CONE"
+      ],
+      "reason": "保原主正文及稳定ID，接入另一个历史证明或有限见证的完整证据。"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/固定策略锥二倍根支付有限核验--审查.md",
+      "sha256": "2a7359d4868b6bec183a1d697ea1394fdebe198e09af39dd0cdd68cb8bb7d17e",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ba78ec702eca4553800fa409a32f9c12",
+        "CA-STRATEGY-CONE"
+      ],
+      "reason": "同一198客户点的独立二倍支付审查。原表末mask56的抄写错误在对象证据说明中定位并以冻结JSON订正；另存同一策略的三倍试探精确范围。"
+    },
+    {
+      "path": "archives/customer-attraction/state/构造/六标签固定策略的客户边界与分离逼近--构造.md",
+      "sha256": "868ad2f8aef259d6a1f4a44fa69d359245eecb2722f3d64842a19be3f479d652",
+      "disposition": "objects",
+      "object_ids": [
+        "M-ba78ec702eca4553800fa409a32f9c12"
+      ],
+      "reason": "保原主正文及稳定ID，接入另一个历史证明或有限见证的完整证据。"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/R-373d耦合桥与计数MILP有限证书--障碍.md",
+      "sha256": "f0410daa71f6635bcddada62ef71e41b03437c48192fc1dee7f11ca5cdeb7737",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/signed-menu-graph-common-customer-envelope",
+        "M-a040b54060bc43e68c496b6ef12f4d35",
+        "M-790b40349de64d42957e302eba3c2d8f",
+        "CA-SPE-NON-PNE",
+        "customer-attraction/count-policy-joint-mass-generator-and-five-player-all-common-client-point",
+        "M-ba78ec702eca4553800fa409a32f9c12",
+        "CA-STRATEGY-CONE"
+      ],
+      "reason": "保上一补证包的签名图、非PNE与计数MILP五归属；另以实际重数和历史等同确定二倍试探归198边界点，三倍164客户为同策略另一个点，保在固定完整策略锥的有限证据，不升格为统一根支付界。"
+    }
+  ],
+  "edge_files": []
+}
