@@ -1,0 +1,115 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline.json",
+    "sha256": "5d5737ab6d07552b48925bdb936dae70490e8de1ee0da2b380bb2d16dd5690cf"
+  },
+  "objects": [
+    {
+      "object_id": "UM-OPT-HULL-CLOSED-CYCLE-WEAK-LOCAL-GAP-v1",
+      "version": 1,
+      "title": "真实最优凸包闭环的弱最大负载局部支持下界",
+      "kind": "local-repair-obstruction",
+      "truth_status": "proved",
+      "model": "闭环族k>=3,d>=1，a=b=1-1/k，delta=(k-1)/k^2，c=1/k^2，宏链D=d+k-1；两真实OPT1分量的显式凸组合。",
+      "statement": "每整数k≥3、d≥1，x=(1/k)S0+(1−1/k)S1是真实OPT1调度的正有理凸组合。对任意逐机等尺寸平局顺序，标准正交长有序单位槽的全部最小总处理时间覆盖匹配诱导同一实际σ（只激活最便宜的特殊tiny环g0），Cmax(σ)=B=2−3/k+3/(2k²)。任意不同于σ且Cmax≤B的原矩阵合法实际重分配激活至少一条此前未激活的完整环，改变任务数与其新旧端点机器并集大小都至少d+1；激活一条普通tiny环同时达到两界并严格降峰。",
+      "quantifiers": "∀整数k≥3、d≥1；∀等处理时间平局排序、∀最小总处理时间固定槽覆盖匹配；∀原矩阵非原态且峰≤B的合法完整分配。",
+      "assumptions": [
+        "处理时间为正有理，每个原任务恰两个不同机器端；1+a>B迫实际迁移位单调。",
+        "参与机数指变化任务的全部新旧端点；不限制于给定槽图。"
+      ],
+      "scope": "只阻挡该显式族的弱最大负载小支持首步。若k固定，d+1=(m+1)/(k+1)；不把变化k时的比例声称为统一常数。普通tiny环只是达到例，允许改为激活宏环。",
+      "objections": "正式冻结B与早期2−3/k+2/k²区分；槽级匹配无须唯一。原程序三例25,600完整指派、独立审查四例91,136完整指派及另两例tie-order核验皆是有限证据。M4的“必须新tiny”过强：可改成最优S1，只激活宏环并关闭g0。 本批用M4闭环章节定位精确陈述，完整承重论证在0105两份证据；保已分配任务主body路由。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/最优凸包初始化的坐标与长链修复边界--资源.md",
+        "sha256": "abccf684c33956d4ead7c0dc78a81484002fabc69cd1c627b8088c14dbf4a39a",
+        "section": "后续闭环是更强但不同的局部合同"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/最优凸包闭环的槽初始化与单任务逃逸原程序--资源.md",
+          "sha256": "3cae559e94b3427bd318757714eec0013d5a661c90724dc3d0fa3fc52a716c75"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/闭环容量释放与单任务逃逸精确阈值冻结审查--审查.md",
+          "sha256": "c8409ec01fe057385e31d97da484f13a0db5ae9f1665b85616537bac51e22cdd"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/C2单位多切片与循环批量修复双源审查--审查.md",
+          "sha256": "10bf87f67a32b97fe70b7472c174cd1634b692f4cf2e4b6e5dc84bfc151fe21d"
+        }
+      ],
+      "sources": [
+        "claim:UM-OPT-HULL-CLOSED-CYCLE-WEAK-LOCAL-GAP-v1; cyclic_batch_repair_and_fork_obstruction.md §11",
+        "source:288001c1e251d3af65d7:research/reviews/unrelated_machines/optimal_hull_closed_cycle_review.md",
+        "source:555810a28cb65428aed4:tests/audits/unrelated_machines/optimal_hull_closed_cycle_gap.py"
+      ]
+    },
+    {
+      "object_id": "UM-CLOSED-CYCLE-SINGLE-JOB-ESCAPE-THRESHOLD-v1",
+      "version": 1,
+      "title": "真实最优凸包闭环单任务逃逸的精确峰值",
+      "kind": "reconfiguration-threshold",
+      "truth_status": "proved",
+      "model": "闭环族k>=3,d>=1，a=b=1-1/k，delta=(k-1)/k^2，c=1/k^2，宏链D=d+k-1；两真实OPT1分量的显式凸组合。",
+      "statement": "对同一k≥3、d≥1闭环实例和指定坏态σ，在全部从σ出发、每步只改一件原任务、终点为任一Cmax=1最优调度的有限合法路径中，最小的全程最大峰恰为B+c，B=2−3/k+3/(2k²)，c=1/k²。任何非平凡首步峰≥B+c；按尾回根、逆序释放各home、根任务离开的顺序开启其余普通tiny环，(k−1)(d+1)步到S0达到。",
+      "quantifiers": "∀整数k≥3,d≥1；对终点属于最优集合的所有有限单任务合法路径取minimax。下界适用任一首步；上界为存在一条到S0的路径。",
+      "assumptions": [
+        "每步改恰一件原任务且使用其合法有限端；中间允许任意恶化。",
+        "采用同一闭环族的σ、a、δ、c及两个真实OPT1分量，见证据的模型定义。"
+      ],
+      "scope": "最优集合的精确逃逸阈值，未证到每个预先指定最优终点的上界。临时额外峰c随k增长趋零。",
+      "objections": "原程序核三例全首步与显式路径，不执行Dijkstra。独立冻结补审另在(3,1)、(3,2)、(4,1)运行bottleneck Dijkstra。一般最优值由解析首步和构造证明，非有限枚举外推。 本批用M4闭环章节定位精确陈述，完整承重论证在0105两份证据；保已分配任务主body路由。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/最优凸包初始化的坐标与长链修复边界--资源.md",
+        "sha256": "abccf684c33956d4ead7c0dc78a81484002fabc69cd1c627b8088c14dbf4a39a",
+        "section": "后续闭环是更强但不同的局部合同"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/闭环容量释放与单任务逃逸精确阈值冻结审查--审查.md",
+          "sha256": "c8409ec01fe057385e31d97da484f13a0db5ae9f1665b85616537bac51e22cdd",
+          "section": "4. 单任务逐步逃逸的精确阈值"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/闭环容量释放与单任务逃逸精确阈值冻结审查--审查.md",
+          "sha256": "c8409ec01fe057385e31d97da484f13a0db5ae9f1665b85616537bac51e22cdd",
+          "section": "2. 闭环构造与一般证明要点"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/闭环容量释放与单任务逃逸精确阈值冻结审查--审查.md",
+          "sha256": "c8409ec01fe057385e31d97da484f13a0db5ae9f1665b85616537bac51e22cdd",
+          "section": "5. 量词、cactus 限制与固定 k 推论"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/最优凸包闭环的槽初始化与单任务逃逸原程序--资源.md",
+          "sha256": "3cae559e94b3427bd318757714eec0013d5a661c90724dc3d0fa3fc52a716c75"
+        }
+      ],
+      "sources": [
+        "claim:UM-CLOSED-CYCLE-SINGLE-JOB-ESCAPE-THRESHOLD-v1; cyclic_batch_repair_and_fork_obstruction.md §11.4a/§11.5",
+        "source:288001c1e251d3af65d7:research/reviews/unrelated_machines/optimal_hull_closed_cycle_review.md"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/资源/最优凸包初始化的坐标与长链修复边界--资源.md",
+      "sha256": "abccf684c33956d4ead7c0dc78a81484002fabc69cd1c627b8088c14dbf4a39a",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-OPT-HULL-CLOSED-CYCLE-WEAK-LOCAL-GAP-v1",
+        "UM-CLOSED-CYCLE-SINGLE-JOB-ESCAPE-THRESHOLD-v1"
+      ],
+      "reason": "M4兼有独立开链主对象，本切片只核M4闭环两条精确Claim；并回时保原开链对象，0105的证明与原程序按精确证据保留。"
+    }
+  ],
+  "edge_files": [],
+  "reading_note": "独立定向复核切片。这里只新增或替换两条闭环草稿，保M4其余对象与其余41材料；不单独交付任务。",
+  "validation": {
+    "objects": 2,
+    "materials": 1,
+    "reused_existing_owners": [],
+    "reused_published_group_owners": []
+  }
+}
