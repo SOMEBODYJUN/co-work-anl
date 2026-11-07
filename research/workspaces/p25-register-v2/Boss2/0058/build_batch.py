@@ -218,7 +218,7 @@ attach(41,[page(39),ids[7],ids[8]],'原程序/报告/完整m5树的来源闭合�
 
 # Full mathematical bodies are now read. External owners must actually accept bytes.
 attach(20,['customer-attraction/full-spe-static-positive-regret-four-client-replication'],'已全文实读并与0057主作者比较；其主record已实际接此path/SHA。五态、全k副本和独审版本保同身份；不是half反例。')
-pending(21,'纯状态账本不造节点。高背景利润、调和逐人付款及玩家专属ghost-ticket编译的独立代数复核应归各精确原owner；尚需定位后两主ID并实际接证。')
+pending(21,'纯状态账本不造节点。高背景区间复核归0011既有customer-attraction/occupied-background-general-profit-bound；调和逐人付款与ghost-ticket编译已定向核到0072主正文《任一实际玩家的调和福利支付界》和《R-18背景利润的随机前缀表示与共同目录正性障碍》。后两页当前仍由另一Boss2执行方持有、未发布主record；需其回精确对象ID并实际接相应章节，不能借末位专用调和界替代任意玩家界，也不能将玩家专属编译视为共同目录归约。',['customer-attraction/occupied-background-general-profit-bound'])
 pending(23,'已实读完整43处方/程序合同。对称fresh证明已归本批对象；十三人SA/alpha/平均宽限主owner、C7及正性障碍的来源/范围复核尚待各主record接收精确ref。', ['customer-attraction/same-topic-frozen-deletion-static-allowance-thirteen-player-obstruction','M-5058c58fffab4700a759c7a22f763410','M-3505416cc1714c84baef9767bd1ca902'])
 pending(26,'恢复入口的独有内容为十三人三付款桥准确量词及存在平均/匹配仍未被该例反驳；应接0027既有三owner，不另造历史入口对象。',['customer-attraction/same-topic-frozen-deletion-static-allowance-thirteen-player-obstruction','M-5058c58fffab4700a759c7a22f763410','M-3505416cc1714c84baef9767bd1ca902'])
 pending(27,'已实读：439全整数候选与779精确载体同有限输入；应归24客户跨SCC可逆行主owner及原锥双向空间owner。浮点成员挑行后的精确rank不认证lineality，不另造成功日志节点。',['customer-attraction/twenty-four-customer-complete-spe-cross-SCC-reversible-row','customer-attraction/payoff-type-map-kernel-and-full-real-row-cone-lineality'])
@@ -233,6 +233,30 @@ pending(42,'原RT-r独有整标签次数证明与CC/v2逐客户饱和不同应�
 manifest=json.loads((ROOT/'archives/customer-attraction/tools/evidence/five-round2-cross-replies-regret-and-literature-primary/source-manifest.json').read_text())
 finite=next(o for o in objects if o['object_id']==page(2))
 finite['evidence'].extend(ref(x['preserved_path']) for x in manifest if 'audit_five_availability.' in x['path'])
+
+fresh = next(o for o in objects if o['object_id'] == page(24))
+fresh['evidence'].append(ref(
+    'archives/customer-attraction/state/程序/逐历史鲜动作税包络锥的原程序与十二条记录--程序.md',
+    '为什么任意逐历史鲜动作策略在种子上都是SPE'))
+
+# Complete the explicit imported proof entrances without rewriting mature bodies.
+pay_ids = {page(38), ids[6], page(39), ids[7], ids[8]}
+for obj in objects:
+    additions = []
+    if obj['object_id'] in pay_ids:
+        additions.append(ref('archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md'))
+    if obj['object_id'] in {page(38), ids[6]}:
+        additions.append(dict(refs[39]))
+    if obj['object_id'] == ids[6]:
+        additions.append(ref('archives/customer-attraction/state/反例/任意人数首步补全余额--反例.md'))
+    if obj['object_id'] in {page(39), ids[8]}:
+        additions.extend([
+            ref('archives/customer-attraction/state/算法/可信续局菜单与完整策略重构--算法.md'),
+            ref('archives/customer-attraction/state/定理/末两人逐人保底与全人数弱福利界--定理.md'),
+        ])
+    for addition in additions:
+        if addition not in obj['evidence']:
+            obj['evidence'].append(addition)
 
 def write():
     batch=dict(schema=2,baseline=definition['baseline'],objects=objects,
