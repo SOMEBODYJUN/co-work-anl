@@ -134,8 +134,9 @@ add('customer-attraction/frozen-optimal-matching-outside-credit-and-quantifier-b
 add('customer-attraction/full-spe-static-positive-regret-four-client-replication', '四客户副本全树SPE使静态正遗憾归一化无界', 'counterexample-family', 'proved', 36,
     '每k≥1，k个不交四客块X={a,b},Y={c,d},Z={b,c,d}、m2k。五态规范历史E/Y/XY/Z/ZZ加永久BI接管给完整SPE，actual全Y再全X，各人2、W=OPT4k；每Y静态正遗憾1/2、每X为0，R=k/2。因此任何固定有限C≥0的R≤CW/m被k>4C否定。',
     '每整数k≥1存在给定完整纯SPE；任何固定有限C可选择人数2k反驳该桥。', ['规范模式离开五态后永久在确切有序子树BI接管；共同全3k标签；静态遗憾冻结其他终局动作。'],
-    '归一化静态遗憾桥失败；可变人数，不直接否固定五人RT5。', '唯一危险E→Z偏离由规范ZZ给3/2，其余即时上界安全；不能简单并独立策略。全覆盖最优，不反half。',
-    extra=['archives/customer-attraction/state/资源/可信副本拼接的审查版本与低福利缺口--资源.md'])
+    '归一化静态遗憾桥失败；可变人数，不直接否固定五人RT5。', '唯一危险E→Z偏离由规范ZZ给3/2，其余即时上界安全；不能简单并独立策略。全覆盖最优，不反half。已全文实读0084的R-18 round3成熟障碍页并核精确字节：同全部k五态永久BI副本族，54891状态/行动、k1/2完整树和k5值仅作其所列有限证据，不重复造主身份或据此反固定五人RT5。',
+    extra=['archives/customer-attraction/state/资源/可信副本拼接的审查版本与低福利缺口--资源.md',
+           'archives/customer-attraction/state/障碍/R-18-round3静态总正遗憾可信副本放大族--障碍.md'])
 add('customer-attraction/five-player-frozen-regret-coverage-tax-sufficient-budget', '五人实际SPE终局的RT5静态遗憾税义务', 'open-obligation', 'open', 37,
     '每份五人完整纯SPE实际终局s，冻结其他四行动的总正遗憾R=Σ_i(max_Q u_i(Q,s_−i)−u_i(s))与Z=Σ_(c_x>0)1/(c_x+1)是否总满足R≤6Z/5？',
     '所有有限合法共同目录单位客户实例及每份五人完整历史纯SPE。', ['R含原动作故非负；Z是同一实际终局税，不能跨枝相加。'],
@@ -160,21 +161,46 @@ add('customer-attraction/five-player-strategic-normal-form-equilibrium-credibili
 # Existing mathematical owners are reused only after their actual record binds
 # these exact bytes. An unanswered request never becomes acceptance.
 all_owners = {}
-for p in [ROOT / 'research/registry.json', *sorted((ROOT / 'research/registration/batches').glob('*.json'))]:
-    if p.name == TASK + '.json':
+owner_locations = {}
+registry_path = ROOT / 'research/registry.json'
+published_records = [registry_path]
+for tp in sorted((ROOT / 'research/operations/p25-register-v2/tasks').glob('*.json')):
+    state = json.loads(tp.read_text())
+    receipt = state.get('receipt', {})
+    br = receipt.get('batch_file')
+    if state.get('state') != 'done' or not br:
         continue
+    p = ROOT / br['path']
+    if p.is_file() and ref(br['path']) == br:
+        published_records.append(p)
+for p in published_records:
     for o in json.loads(p.read_text()).get('objects', []):
-        old = all_owners.get(o['object_id'])
-        if old is None or o.get('version', 1) >= old.get('version', 1):
-            all_owners[o['object_id']] = o
+        oid = o['object_id']
+        owner_locations.setdefault(oid, []).append(ref(p.relative_to(ROOT).as_posix()))
+        # Current canonical takes precedence. A claimed draft is not an
+        # acceptance, and equal-version records are never silently overwritten.
+        if oid not in all_owners:
+            all_owners[oid] = o
 requests = json.loads((HERE / 'attachment-requests.json').read_text())['requests']
 pending = {}
 extra_owners = {}
+route_checks = []
 for r in requests:
     owner = all_owners.get(r['object_id'])
     refs = {x['path']: x['sha256'] for x in ([owner['body']] + owner['evidence'])} if owner else {}
     for ev in r['requested_evidence']:
-        if refs.get(ev['path']) == ev['sha256']:
+        assert ref(ev['path']) == ev
+        accepted = refs.get(ev['path']) == ev['sha256']
+        route_checks.append({'object_id': r['object_id'], 'material': ev,
+                             'accepted': accepted,
+                             'owner_status': 'published-main-record-missing-exact-evidence' if owner and not accepted else
+                                             'accepted' if accepted else 'main-record-not-published',
+                             'main_body': owner['body'] if owner else r.get('expected_main_body'),
+                             'owner_task': r.get('owner_task'),
+                             'next_action': r.get('next_action'),
+                             'published_owner_records': owner_locations.get(r['object_id'], []),
+                             'mathematical_reason': r['mathematical_reason']})
+        if accepted:
             extra_owners.setdefault(ev['path'], []).append(r['object_id'])
         else:
             pending.setdefault(ev['path'], []).append(r['object_id'])
@@ -199,7 +225,12 @@ for i, m in enumerate(materials, 1):
     ids = list(dict.fromkeys(owned + supported + extra_owners.get(p, [])))
     if pending.get(p):
         disposition = 'objects' if owned else 'needs-decision'
-        reason = '全文实读；已成熟本批数学已写完整记录。以下精确外owner尚未实际接收本材料path/SHA，不能用发送代替接收：' + ', '.join(pending[p]) + '。请求与数学理由见Boss2/0057/attachment-requests.json；继续由父Boss/lead协调实际owner补证后定向回写。'
+        missing = [r for r in route_checks if r['material']['path'] == p and not r['accepted']]
+        details = []
+        for r in missing:
+            status = '主record尚未published/canonical，须由其真实owner发布后接证' if not r['published_owner_records'] else '已发布主record尚缺本页精确path/SHA，须由lead定向补证'
+            details.append(r['object_id'] + '：' + status + '；' + r['mathematical_reason'])
+        reason = '沿用已完整实读成熟稿，本轮定向复核陈述/量词/条件与实际接证。' + ('本批独立成熟对象已保全；' if owned else '') + '未决仅为以下外owner路由，非数学open：' + '；'.join(details) + '。精确已发布record路径/SHA、材料字节与下一步见Boss2/0057/read-and-routing-audit.json；不能以claimed草稿、发送请求或本地peer代替接收。'
     elif owned:
         disposition = 'objects'
         reason = '全文实读；独立陈述、量词、条件及完整论证见所列对象，程序/数值和历史审查按数学owner归证，不以PASS另立节点。'
@@ -217,8 +248,26 @@ out.write_text(json.dumps(record, ensure_ascii=False, indent=2) + '\n')
 audit = {'task_id': TASK, 'read_complete_materials': list(range(1, 40)),
          'shared_definition_read': DEFINITION, 'new_object_count': len(objects),
          'unaccepted_external_owners': pending, 'batch_file': ref(out.relative_to(ROOT).as_posix()),
-         'scope': '39 mature state files fully read; existing complete proofs reused; no mathematical programs rerun; no graph edges; no canonical writes'}
+         'current_registry': ref('research/registry.json'),
+         'external_route_checks': route_checks,
+         'accepted_uv_route': {'object_id': preaccepted[34][0], 'material': mat(34),
+                               'published_owner_records': owner_locations[preaccepted[34][0]],
+                               'status': 'accepted-exact-bytes; duplicate evidence request withdrawn',
+                               'identity_boundary': 'UV不存在及完整链随机化失败沿既有主record；固定同一链非负lambda不可能性由本批M-4792b826411b402fb3a164d1d76e5526保独立范围；不把UV失败升级为SM/TB或half失败'},
+         'accepted_incoming_evidence': [{'source_task': 'register-ab98f323ad-0084',
+                                        'object_id': 'customer-attraction/full-spe-static-positive-regret-four-client-replication',
+                                        'version': 1,
+                                        'material': ref('archives/customer-attraction/state/障碍/R-18-round3静态总正遗憾可信副本放大族--障碍.md'),
+                                        'reading_scope': 'Whole mature page; exact same all-k game, five canonical states, permanent BI takeover, static R=k/2 and arbitrary fixed-C bridge failure. Finite 54891 checks and k1/2 tree counts remain finite; no mathematical run repeated.',
+                                        'status': 'accepted in this actual main record; source-task author can reverse-route exact bytes after publication'}],
+         'scope': 'Prior complete reading of 39 mature state files retained; this resumption targeted exact statements, quantifiers, conditions and carrying evidence, plus current canonical/done receipt bytes. Existing complete proofs reused; no mathematical programs rerun; no graph edges; no canonical writes'}
 (HERE / 'read-and-routing-audit.json').write_text(json.dumps(audit, ensure_ascii=False, indent=2) + '\n')
-receipt = {'task_id': TASK, 'batch_file': audit['batch_file'], 'assets': [audit['batch_file']]}
+receipt = {'task_id': TASK, 'batch_file': audit['batch_file'], 'assets': [audit['batch_file']],
+           'mathematical_open_objects': [o['object_id'] for o in objects if o['truth_status'] == 'open'],
+           'routing_pending_materials': [m['path'] for m in rows if m['disposition'] == 'needs-decision'],
+           'routing_pending_owners': sorted({oid for ids in pending.values() for oid in ids}),
+           'routing_audit': ref((HERE / 'read-and-routing-audit.json').relative_to(ROOT).as_posix()),
+           'accepted_incoming_evidence': audit['accepted_incoming_evidence'],
+           'completion_scope': 'Mature mathematics is deliverable with explicit unresolved external evidence routes; no main record duplicated, no canonical acceptance or final registration closure claimed.'}
 (ROOT / f'research/registration/receipts/{TASK}.json').write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + '\n')
 print(json.dumps({'objects': len(objects), 'materials': len(rows), 'pending_materials': len(pending), 'batch': str(out)}, ensure_ascii=False))
