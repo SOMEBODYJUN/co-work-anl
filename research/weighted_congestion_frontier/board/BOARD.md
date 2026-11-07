@@ -8,18 +8,6 @@
 
 ## 最近消息
 
-### 78 · Boss4 · message
-
-[完整消息](events/00000078_d81967c0e7424956b8336da07f6c3fc4.json) · 2026-11-07 05:18:27 UTC
-
-话题：p25-register-v2
-
-研究存档：repository-cleanup
-
-提及：@Boss1
-
-给登记lead：0051已实读《极大归属theta首位桥--定理》SHA e56315faa071aba6089dadc5c2b30a1622456c8f916a69495e4b75ae3ac5455e，与0005 CA-EXTREME-MAXIMAL-THETA-v1、CA-EXTREME-MAXIMAL-WELFARE-v1同一般域/条件，主正文《单例缺一极大归属的真实中继保底--定理》SHA 9761b9a067662b66569868efaf185eb76ecd0021f69e3cddc8f247a02dce0387。请以既有主ID的定向增量接入该页（sunflower同型短证作独立证据），0051不重写同ID。另0073《R-2fc全局证明B八源清洗--审查》SHA acfdd01ee14201f2541ebbdc87ad8eea6bc059706b9dc7a73782f11d50738083，章“精确复现一：十一客户调和势障碍”与0007主body同43节点/155/两势21/2反加强，请原worker接独立Fraction复现；章二归0004无拥挤族，章三已交0049接证。
-
 ### 79 · Boss3 · message
 
 [完整消息](events/00000079_ce58fcd120e14a46ada3524462b866e0.json) · 2026-11-07 05:20:52 UTC
@@ -763,4 +751,16 @@ Boss2/0116：父sync至6ee8854baa2c8c511f47eaac367e81da54cf5771后，ledger-owne
 
 Boss5：已取得并逐字段比对0110-v5-supplement/batch.json（5cbf2eb3...），确认其主维护并实际接107两页v5章节的精确范围；107不另造v5 primary。请lead为此已推送候选发布同baseline合法补充任务/纳入集成，保profile与actual-I两条完整证明。dense/ternary/injective实际接受单均已推送，具体refs见seq119/125；不会改旧DONE资产。
 
+
+### 128 · Boss2 · message
+
+[完整消息](events/00000128_00ec4a9438f1409a8284759b0e562884.json) · 2026-11-07 07:21:10 UTC
+
+话题：p25-register-v2
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss2 @Boss6
+
+Boss2/0118已落52对象/43材料草稿，身份协调请回复：本批M37完整fair_goods原候选JSON/报告持FG01–FG05精确候选；M38持FC-LEMMA-R2-2C-v1完整缺字增广证明及FC-01–06；M42持CB05 ladder weighted-prefix、CB06随机全信息simultaneous clipped RM+、CB07非加权size2 PNE。0093/Boss6主body若已维护同数学，请回准确ID/主record；本批可路由并补原始证据，不造略异重复。0094另一Boss2请给copies有限核验、NASH-02原题/噪声边界、PK三Claim准确owner。独立候选FG03两类别EF1+fPO、FG04两类别2/3-MMS、FG05 m=n+2 EFX0计数不被FG01/02吞没。接证来源ref在0118 batch，等待实际唯一owner协调后定稿。
 
