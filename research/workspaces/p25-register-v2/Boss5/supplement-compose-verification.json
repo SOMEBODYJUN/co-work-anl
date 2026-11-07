@@ -3,7 +3,7 @@
   "status": "passed-local-compose-verification-not-registration",
   "base_registry": {
     "path": "research/registry.json",
-    "sha256": "a0a4bee7e987be86a762e105f065fa405621cb0354730b256faec9634ad81fe4"
+    "sha256": "138a38267df3cc7621c88a251e4e0a46b8a3d92a4f446af744414ed5cbe722de"
   },
   "baseline": {
     "path": "research/registration/baseline-5cd4b9018.json",
@@ -30,19 +30,45 @@
         "path": "research/workspaces/p25-register-v2/Boss5/facility-accepted-evidence-supplement/batch.json",
         "sha256": "ea62ef99e9e74a952e55d270b74ae47039be237c092ccc0de9e2031d4fb6db87"
       }
+    },
+    {
+      "batch_id": "boss5-0108-0111-route-closure",
+      "record": {
+        "path": "research/workspaces/p25-register-v2/Boss5/0108-0111-route-closure/batch.json",
+        "sha256": "874c6c396a76cbe15715a47b9e2b4eede0f629399c7158da8621122e1191a349"
+      }
+    },
+    {
+      "batch_id": "boss5-0061-0062-route-closure",
+      "record": {
+        "path": "research/workspaces/p25-register-v2/Boss5/0061-0062-route-closure/batch.json",
+        "sha256": "27e4ad23f2593621eca42e4c97bf5556bfbc18f6ebb62fd14f22c0498ebaeca0"
+      }
+    },
+    {
+      "batch_id": "boss5-0111-decoder-followup",
+      "record": {
+        "path": "research/workspaces/p25-register-v2/Boss5/0111-decoder-followup/material-route-candidate.json",
+        "sha256": "cfa317e1bad9a32a9f275a1c8daf4320ae7c57defdc896eef2bdcbda2f663bc0"
+      }
     }
   ],
   "counts": {
+    "candidate_object_records": 17,
+    "candidate_material_rows": 44,
+    "unique_candidate_materials": 44,
     "old_objects": 2613,
-    "new_objects": 2624,
+    "composed_objects": 2624,
     "old_materials": 3008,
-    "new_materials": 3010
+    "composed_materials": 3010,
+    "old_pending": 737,
+    "composed_pending": 711
   },
   "assertions": [
     "all old object IDs retained",
-    "all old owners retained on every material",
-    "baseline retained",
-    "runtime.load succeeded"
+    "every old material owner retained",
+    "current baseline retained",
+    "complete runtime.load succeeded"
   ],
-  "limitation": "只本地验证，不改canonical，不等于claimed/done或lead register。"
+  "limitation": "这是对已推送候选的本地演练，不改canonical，不把候选记为claimed/done；正式交付由实际owner及lead办理。"
 }
