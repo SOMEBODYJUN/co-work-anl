@@ -1,0 +1,737 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline-5cd4b9018.json",
+    "sha256": "af99fb773928f3fc6bcd577ade37fbb07e8f84befbb2304158b99894ab1e56a3"
+  },
+  "objects": [
+    {
+      "object_id": "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+      "version": 1,
+      "title": "私有单位双树在C<2的mandatory-r森林精确正规形",
+      "kind": "equivalence",
+      "truth_status": "proved",
+      "model": "有限显式私有单位读出双树：整数k,h≥1；每变量两棵互不相交满k叉深h树，内部点为机器；一枚mandatory selector仅在两根时间1；内部edge任务父端1/k、子端1；叶port父端1/k或所属clause任一unit机时间1；各clause有整数A_c≥0台互异unit。全部原任务含未选轨均必须执行，无pins、预载、额外任务/资格或共享内部机。叶地址全部显式列出，A_c可二进制编码，未用原unit保精确零负载。",
+      "statement": "对有理C∈[1,2)，r=ceil(k(2−C))∈[1,k]。存在全部原jobs的实际Cmax≤C调度，当且仅当每变量恰选一个sign根、每active节点恰选r个原孩子且深h选叶共同注入原clause units的mandatory-r森林存在。给任一方向见证可确定性位多项式构造另一方向；正规化active负载恰1+(k−r)/k、inactive≤1、外unit≤1。",
+      "quantifiers": "∀有限显式P，∀有理C∈[1,2)；∀相应合法调度/森林见证，∃可构造的反向完整见证。V=∅为空调度/空森林。",
+      "assumptions": [
+        "完整显式双树与全部原任务/原资格；内部机器私有且每机唯一incoming。",
+        "不同clause外部unit互不重合、无额外任务/预载；每port在所属clause全部unit均有时间1资格。",
+        "复杂度按显式P及所给有理见证总位长；不按仅二进制k,h虚构压缩树输出。",
+        "全部变量selector mandatory；每个clause的所选真实叶必须共同满足整数注入容量A_c。"
+      ],
+      "scope": "无pins的全部变量、全部任务精确iff；k1、h1、C1、A0及空变量均包括。",
+      "objections": "不是从一个任意全局根只取部分可达变量；不以配置边际或叶数量代替真实祖先与slot注入。含私有host/pins的开底模块属于不同P，不由本iff覆盖。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md",
+        "sha256": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7",
+        "section": "3.1 定义域与 iff"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+          "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+          "section": "1. 精确Claim对象、定义和量词"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+          "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+          "section": "2. 实际调度到必选森林及完整正规化"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+          "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+          "section": "3. 必选森林到实际完整调度"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+          "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+          "section": "4. 边界、构造性和总位复杂度"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+          "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+          "section": "4. 修剪森林、半密度和 leaf-hitting"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位森林与叶Hall阈值两源精读--审查.md",
+          "sha256": "801e9b4d69612ca5b04cb8a76ad4578dd1628591fa86f1fdb20580f8b4db8990",
+          "section": "1. Mandatory pruned-forest IFF 与半密度合同"
+        }
+      ],
+      "sources": [
+        "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+        "source:b0102cb54211d9846435:research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md"
+      ]
+    },
+    {
+      "object_id": "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+      "version": 1,
+      "title": "全轨半密度单位双树的任意高度共同三半调度",
+      "kind": "algorithm-theorem",
+      "truth_status": "proved",
+      "model": "有限显式私有单位读出双树：整数k,h≥1；每变量两棵互不相交满k叉深h树，内部点为机器；一枚mandatory selector仅在两根时间1；内部edge任务父端1/k、子端1；叶port父端1/k或所属clause任一unit机时间1；各clause有整数A_c≥0台互异unit。全部原任务含未选轨均必须执行，无pins、预载、额外任务/资格或共享内部机。叶地址全部显式列出，A_c可二进制编码，未用原unit保精确零负载。",
+      "statement": "若每clause两轨所有实际叶的总arity d_c≤2A_c，则确定性位多项式输出全部原jobs的共同实际σ，内部负载≤1+floor(k/2)/k≤3/2、外unit≤1；非空OPT≥1，故也是本结构类三半近似。一次half-slot Hall matching覆盖全部任务，并可提取r=ceil(k/2)的mandatory森林。k2,h1三变量四clause14机15job split例真OPT=3/2，证绝对上界锐。",
+      "quantifiers": "∀k,h≥1、∀有限显式变量集及任意wiring，只要∀c d_c≤2A_c；∃确定性总位多项式完整σ。锐例为存在性；不声称所有算法的近似因子下界。",
+      "assumptions": [
+        "完整显式双树与全部原任务/原资格；内部机器私有且每机唯一incoming。",
+        "不同clause外部unit互不重合、无额外任务/预载；每port在所属clause全部unit均有时间1资格。",
+        "复杂度按显式P及所给有理见证总位长；不按仅二进制k,h虚构压缩树输出。",
+        "d_c计两轨全部实际ports含重复occurrence；允许自由选择selector根，不要求任意指定profile。"
+      ],
+      "scope": "任意高度/分叉/wiring的固定半密度无pin单位外端类；空变量输出0，k1上界1。",
+      "objections": "不需源赋值、YES、LP或未知OPT；不能删掉半密度条件或改成任意指定根模式。3/2锐例只证绝对T1界锐。原半密度CLI处理5001位十进制容量需PYTHONINTMAXSTRDIGITS=0；该实现环境限制不反驳数学定理。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/半密度半槽与指定根锐族的独立原程序--审查.md",
+        "sha256": "736b7f3055bba92e94dec011dc1915f1c7fa73bf1e4f5d4587b0950f22da61a3",
+        "section": "半密度程序的完整合同"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/半密度半槽与指定根锐族的独立原程序--审查.md",
+          "sha256": "736b7f3055bba92e94dec011dc1915f1c7fa73bf1e4f5d4587b0950f22da61a3",
+          "section": "半片、一次共同匹配与真实森林"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/半密度半槽与指定根锐族的独立原程序--审查.md",
+          "sha256": "736b7f3055bba92e94dec011dc1915f1c7fa73bf1e4f5d4587b0950f22da61a3",
+          "section": "半密度有限audit、锐例及真实文本限制"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md",
+          "sha256": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7",
+          "section": "3.2 半密度 universal 3/2 与叶命中门槛"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+          "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+          "section": "4. 修剪森林、半密度和 leaf-hitting"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+          "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+          "section": "6. 半密度条件下，任意深度、任意接线都不能保留近二间隙"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位森林与叶Hall阈值两源精读--审查.md",
+          "sha256": "801e9b4d69612ca5b04cb8a76ad4578dd1628591fa86f1fdb20580f8b4db8990",
+          "section": "1. Mandatory pruned-forest IFF 与半密度合同"
+        }
+      ],
+      "sources": [
+        "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+        "source:b0102cb54211d9846435:research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/unit_readout_half_density_three_halves.py"
+      ]
+    },
+    {
+      "object_id": "UM-PRUNED-TREE-LEAF-HITTING-v1",
+      "version": 1,
+      "title": "满k叉树r修剪子树的锐叶命中数与祖先证书",
+      "kind": "combinatorial-theorem",
+      "truth_status": "proved",
+      "model": "完整显式k叉深h有根树的叶子集；k,h≥1、1≤r≤k；r-pruned子树保原根、全高、每active内部恰r孩子。这个对象不要求调度任务或clause机器。",
+      "statement": "令q=k−r+1、N=k^h。命中每棵保原根、全深度且每active内部恰r个孩子的r-pruned subtree的最小叶集大小恰q^h；不含任何此子树的最大叶集大小恰N−q^h，两界逐参数可达。对任意双色叶集可后序DP提取纯蓝r子树或纯红q子树；真实叶数严格小于q^h时dummy补集必含完整r子树。",
+      "quantifiers": "∀整数k,h≥1，∀1≤r≤k；∀显式叶双色划分；存在所述可构造证书。最小/最大遍历同一完整树全部叶子集。h0仅作为递推基例1。",
+      "assumptions": [
+        "完整k叉深h树，保原根且不收缩路径；r在每个active层统一。",
+        "显式树/长度h叶地址计入输入；不承诺poly(log h)展开巨大压缩树。"
+      ],
+      "scope": "纯组合叶集合门槛与构造；k1、r1、rk、h1端点包括。dummy调度另需真实共同外部容量。",
+      "objections": "数量≥q^h不保证具体位置已经命中；等号不能改成严格小于的结论。叶定理不解决跨变量clause packing、外部容量或含pin实际调度。与0096保原根分叉估值有关，但陈述/量词不同，当前无该精确Claim主record。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md",
+        "sha256": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7",
+        "section": "3.2 半密度 universal 3/2 与叶命中门槛"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+          "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+          "section": "8. 虚拟叶补齐的精确命中门槛"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+          "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+          "section": "4. 修剪森林、半密度和 leaf-hitting"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位森林与叶Hall阈值两源精读--审查.md",
+          "sha256": "801e9b4d69612ca5b04cb8a76ad4578dd1628591fa86f1fdb20580f8b4db8990",
+          "section": "2. 精确叶 hitting 与 dummy 逃逸"
+        }
+      ],
+      "sources": [
+        "UM-PRUNED-TREE-LEAF-HITTING-v1",
+        "source:b0102cb54211d9846435:research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md"
+      ]
+    },
+    {
+      "object_id": "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+      "version": 1,
+      "title": "强全轨分数任务数证书的incoming首槽完整舍入",
+      "kind": "algorithm-theorem",
+      "truth_status": "proved",
+      "model": "有限显式私有单位读出双树：整数k,h≥1；每变量两棵互不相交满k叉深h树，内部点为机器；一枚mandatory selector仅在两根时间1；内部edge任务父端1/k、子端1；叶port父端1/k或所属clause任一unit机时间1；各clause有整数A_c≥0台互异unit。全部原任务含未选轨均必须执行，无pins、预载、额外任务/资格或共享内部机。叶地址全部显式列出，A_c可二进制编码，未用原unit保精确零负载。",
+      "statement": "给1≤r≤k，L=k−r+1。selector根质量y_vs∈[0,1]、y_v0+y_v1=1；根q=y_vs、非根q=t_parent。给所有原内部/叶任务同一有理下传t_e∈[0,1]，若逐机Σ_out t_e≥r−1+q、逐clauseΣ_ports t_e≤A_c，则确定性在P+见证总位长多项式输出全部原jobs的实际σ，内部C≤2−r/k、外unit≤1。uniform x0=1/2、x_l=(r−1+x_(l−1))/k在d_c x_h≤A_c时自产该证书；k>1有x_h=a+(1/2−a)/k^h，a=(r−1)/(k−1)。",
+      "quantifiers": "∀显式P，∀整数r∈[1,k]，∀满足共同强行/外容量的显式有理见证；∃可构造完整σ。uniform递推是足够证书，不要求给YES。",
+      "assumptions": [
+        "完整显式双树与全部原任务/原资格；内部机器私有且每机唯一incoming。",
+        "不同clause外部unit互不重合、无额外任务/预载；每port在所属clause全部unit均有时间1资格。",
+        "复杂度按显式P及所给有理见证总位长；不按仅二进制k,h虚构压缩树输出。",
+        "全部轨使用强分数任务数行q+Σ(1−t)≤整数L；q不是所有根恒1，而为两个互补selector质量。",
+        "给定t/y的编码位长计入输入；所有机器/外端共享同一t与共同容量。"
+      ],
+      "scope": "给强证书的充分舍入、uniform校准及其边界；k1仅r1、x_l=1/2；空变量先返回0。",
+      "objections": "弱Σt≥r q不够：k4h1r2真OPT7/4>目标3/2。强行亦非一般必要：k2h1r2、四叶共A2真OPT1但强行总外送≥3。额外k>1、a d_c≤A_c且真实C≤1时可推出强证书存在；该受限必要性不可用于任意阈值。原实现无通用LP/OPT后端。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+        "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4",
+        "section": "强分数任务数：充分证书及真正舍入"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+          "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4",
+          "section": "校准、条件必要性及固定密度的两分支"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+          "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4",
+          "section": "三份原矩阵证书：两种 LP 误用和一个精确失败"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+          "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+          "section": "1. 校准计数槽与有界密度"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/多小端密度流障碍与单位读出校准槽双源审查--审查.md",
+          "sha256": "ccf410a29e660aba575bf8c0df61a2b29ddd0e1ede7f68b8c1ee1203153c7a39",
+          "section": "二、单位读出校准槽与固定密度次二算法"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/unit-calibrated-originals/comparisons/unit_readout_calibrated_cardinality_slots.md",
+          "sha256": "dd33b681f22b957fecb5c4a29beca173cb7b619d77c542e99e91c0bd88b5bd88"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/Unit-readout槽与配置阈值两源精读--审查.md",
+          "sha256": "7230a61609a3e2d4d1e0a11657eda00b73a18df76327469e68fb04a002fdb9fc",
+          "section": "1. Calibrated cardinality slots 与 bounded-density"
+        }
+      ],
+      "sources": [
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+        "source:d8e44b3299441a551ae0:research/current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/unit_readout_calibrated_cardinality.py"
+      ]
+    },
+    {
+      "object_id": "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+      "version": 1,
+      "title": "固定clause密度D单位双树的统一离二实际算法",
+      "kind": "algorithm-theorem",
+      "truth_status": "proved",
+      "model": "有限显式私有单位读出双树：整数k,h≥1；每变量两棵互不相交满k叉深h树，内部点为机器；一枚mandatory selector仅在两根时间1；内部edge任务父端1/k、子端1；叶port父端1/k或所属clause任一unit机时间1；各clause有整数A_c≥0台互异unit。全部原任务含未选轨均必须执行，无pins、预载、额外任务/资格或共享内部机。叶地址全部显式列出，A_c可二进制编码，未用原unit保精确零负载。",
+      "statement": "对每固定有理D≥2、全轨实际arity满足d_c≤D A_c的P，确定性位多项式输出完整σ，Cmax≤(2−1/(4D))OPT。k≥D取r=1+floor((k−1)/(2D))、自产x0=1/2校准证书，有x_h≤1/D、r/k>1/(4D)。k<D做每变量一枚真实叶的clause容量匹配；成功沿原路径给2−1/k，失败由mandatory路径必要性证OPT=2并输出全父置最优调度。",
+      "quantifiers": "∀固定有理常数D≥2，∀满足逐clause密度的显式P；∃同一确定性总位多项式算法。D也可显式输入，运行按P,D位长多项式，但统一余量仅在D固定时成立。",
+      "assumptions": [
+        "完整显式双树与全部原任务/原资格；内部机器私有且每机唯一incoming。",
+        "不同clause外部unit互不重合、无额外任务/预载；每port在所属clause全部unit均有时间1资格。",
+        "复杂度按显式P及所给有理见证总位长；不按仅二进制k,h虚构压缩树输出。",
+        "d_c计两轨全部实际叶的总arity，逐clause而非全局平均；D≥2。"
+      ],
+      "scope": "不需给定完整YES、源赋值、未知OPT或通用LP；k1走容量匹配，空变量0，A0强制d0。",
+      "objections": "早期四源审查“固定D依赖完整YES”属摘要压缩误读，按正式材料20纠正：fixed-D自产证书无需YES；额外条件C1必要性才用YES。D随目标变化不提供类上统一ε；不是一般UM算法，1/(4D)未称最佳。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+        "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4",
+        "section": "校准、条件必要性及固定密度的两分支"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+          "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4",
+          "section": "关系解释、边界和逐源去向"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/多小端密度流障碍与单位读出校准槽双源审查--审查.md",
+          "sha256": "ccf410a29e660aba575bf8c0df61a2b29ddd0e1ede7f68b8c1ee1203153c7a39",
+          "section": "二、单位读出校准槽与固定密度次二算法"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+          "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+          "section": "1. 校准计数槽与有界密度"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/unit-calibrated-originals/comparisons/unit_readout_calibrated_cardinality_slots.md",
+          "sha256": "dd33b681f22b957fecb5c4a29beca173cb7b619d77c542e99e91c0bd88b5bd88",
+          "section": "4. 固定密度上界类的统一次二算法"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/Unit-readout槽与配置阈值两源精读--审查.md",
+          "sha256": "7230a61609a3e2d4d1e0a11657eda00b73a18df76327469e68fb04a002fdb9fc",
+          "section": "1. Calibrated cardinality slots 与 bounded-density"
+        }
+      ],
+      "sources": [
+        "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+        "source:d8e44b3299441a551ae0:research/current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md"
+      ]
+    },
+    {
+      "object_id": "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+      "version": 1,
+      "title": "单位双树CONFIG全阈值的精确正部多面体与有理分解",
+      "kind": "equivalence",
+      "truth_status": "proved",
+      "model": "有限显式私有单位读出双树：整数k,h≥1；每变量两棵互不相交满k叉深h树，内部点为机器；一枚mandatory selector仅在两根时间1；内部edge任务父端1/k、子端1；叶port父端1/k或所属clause任一unit机时间1；各clause有整数A_c≥0台互异unit。全部原任务含未选轨均必须执行，无pins、预载、额外任务/资格或共享内部机。叶地址全部显式列出，A_c可二进制编码，未用原unit保精确零负载。",
+      "statement": "对有理T∈[1,2)，s=floor(k(T−1))。CONFIG(T)可行iff存在共同y/t：y_v0+y_v1=1、y≥0、0≤t≤1；根q=y_vs、非根q=t_parent；逐内部机Σ_out(q−t_e)_+≤s q，逐clauseΣ_ports t_e≤A_c。给有理边际可位多项式构造每机精确配置分布；引z≥0,z≥q−t、Σz≤s q线性化并对1+s/k网格二分，可精确求Tconf。",
+      "quantifiers": "∀显式P，∀有理T∈[1,2)，完整通常CONFIG可行⇔所列多项式系统可行；∀可行有理共同边际，∃位多项式局部配置分解。空实例Tconf0；k1仅检1否则2。",
+      "assumptions": [
+        "完整显式双树与全部原任务/原资格；内部机器私有且每机唯一incoming。",
+        "不同clause外部unit互不重合、无额外任务/预载；每port在所属clause全部unit均有时间1资格。",
+        "复杂度按显式P及所给有理见证总位长；不按仅二进制k,h虚构压缩树输出。",
+        "CONFIG按每机概率和1、空配置允许、每原job共同边际精确覆盖1；不是跨机joint law。",
+        "局部构造用c_e=(q−t_e)_+；任意lower/sum lift须裁到合法共同概率区间，不能直接当共现。"
+      ],
+      "scope": "此私有结构类全T<2精确配置描述及求阈值的数学算法；q0/q1、s0均保留。",
+      "objections": "不直接给整数σ或一般UM小配置LP。单行源码只实现局部构造及有限正负证书，未集成全局CONFIG后端；有限PASS不承担iff。各机配置只共享同一t，不要求同一全局联合抽样。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+        "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+        "section": "2.1 模型和正部多面体的精确量词"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+          "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+          "section": "2.2 必要性和充分性"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+          "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+          "section": "单行配置凸包的正部条件"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+          "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+          "section": "行审计的正负证书与全局边界"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+          "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+          "section": "2. 配置正部、严格单位 gap 与闭合树回归"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/unit-calibrated-originals/comparisons/unit_readout_configuration_threshold_polytope.md",
+          "sha256": "b29c1500da407a86c3172c6738f22c5b10c073d0270aeac9acd668260983967a",
+          "section": "2. 每个配置阈值的精确正部多面体"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/Unit-readout槽与配置阈值两源精读--审查.md",
+          "sha256": "7230a61609a3e2d4d1e0a11657eda00b73a18df76327469e68fb04a002fdb9fc",
+          "section": "2. 正部 CONFIG、严格单位 5/3 与闭合两树"
+        }
+      ],
+      "sources": [
+        "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+        "source:40a75aa26f402db03c39:research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md"
+      ]
+    },
+    {
+      "object_id": "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+      "version": 1,
+      "title": "严格CONFIG1整轨LP等价与active-only五三承诺构造",
+      "kind": "algorithm-theorem",
+      "truth_status": "proved",
+      "model": "有限显式私有单位读出双树：整数k,h≥1；每变量两棵互不相交满k叉深h树，内部点为机器；一枚mandatory selector仅在两根时间1；内部edge任务父端1/k、子端1；叶port父端1/k或所属clause任一unit机时间1；各clause有整数A_c≥0台互异unit。全部原任务含未选轨均必须执行，无pins、预载、额外任务/资格或共享内部机。叶地址全部显式列出，A_c可二进制编码，未用原unit保精确零负载。",
+      "statement": "令n_cvs为每变量sign全轨叶接c的数目。CONFIG(1) iff整轨LP(L)：y_v0+y_v1=1、y≥0、Σ_v,s n_cvs y_vs≤A_c。若(L)可行，确定性位多项式输出完整σ：k1有C≤1，k≥2有C≤2−floor(k/2)/k≤5/3（偶k≤3/2）。k≥2选最大权重轨，d_c*≤2A_c，仅对选轨用x0=1校准槽、未选轨全父置；k1用整数容量流。结合有理LP解得YES OPT≤1/NO OPT>5/3承诺判定。",
+      "quantifiers": "∀显式P；CONFIG1与(L)可行等价；∀给定有理(L)见证有确定性位多项式完整σ；数学上可先求LP。承诺算法只在YES OPT≤1或NO OPT>5/3的指定promise上判别。",
+      "assumptions": [
+        "完整显式双树与全部原任务/原资格；内部机器私有且每机唯一incoming。",
+        "不同clause外部unit互不重合、无额外任务/预载；每port在所属clause全部unit均有时间1资格。",
+        "复杂度按显式P及所给有理见证总位长；不按仅二进制k,h虚构压缩树输出。",
+        "严格阈值恰1；n_cvs计原全轨全部叶，所有源行共用同一有理y。",
+        "active-only指定根selector incoming质量为1；未选轨固定父置，无须强全轨(S_r)行或全轨半密度。"
+      ],
+      "scope": "无需p份完整YES/固定h/固定D；严格CONFIG1消元与五三promise，非整个结构类任意OPT五三近似。",
+      "objections": "5/3未称锐。T=1+1/k允许incoming与一small共配置，不可整体缩放冒作本合同。源码只收并校验(L)见证并舍入，未集成LP/promise solver；数学LP算法与实现分开。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+        "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4",
+        "section": "严格单位整轨见证：代码实际给出的五三合同"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+          "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+          "section": "2.3 严格单位阈值、整轨 LP和五三承诺算法"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+          "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+          "section": "2. 配置正部、严格单位 gap 与闭合树回归"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/unit-calibrated-originals/comparisons/unit_readout_configuration_threshold_polytope.md",
+          "sha256": "b29c1500da407a86c3172c6738f22c5b10c073d0270aeac9acd668260983967a",
+          "section": "3. 严格单位阈值等价于整轨选择 LP"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/unit-calibrated-originals/comparisons/unit_readout_configuration_threshold_polytope.md",
+          "sha256": "b29c1500da407a86c3172c6738f22c5b10c073d0270aeac9acd668260983967a",
+          "section": "4. 整轨 LP 的确定性完整五三调度"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/Unit-readout槽与配置阈值两源精读--审查.md",
+          "sha256": "7230a61609a3e2d4d1e0a11657eda00b73a18df76327469e68fb04a002fdb9fc",
+          "section": "2. 正部 CONFIG、严格单位 5/3 与闭合两树"
+        }
+      ],
+      "sources": [
+        "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+        "source:40a75aa26f402db03c39:research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/unit_readout_literal_gap.py"
+      ]
+    },
+    {
+      "object_id": "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+      "version": 1,
+      "title": "闭合单变量双树的精确CONFIG阈值与实际OPT",
+      "kind": "exact-family-theorem",
+      "truth_status": "proved",
+      "model": "有限显式私有单位读出双树：整数k,h≥1；每变量两棵互不相交满k叉深h树，内部点为机器；一枚mandatory selector仅在两根时间1；内部edge任务父端1/k、子端1；叶port父端1/k或所属clause任一unit机时间1；各clause有整数A_c≥0台互异unit。全部原任务含未选轨均必须执行，无pins、预载、额外任务/资格或共享内部机。叶地址全部显式列出，A_c可二进制编码，未用原unit保精确零负载。本对象再限单变量；每底父k叶共享自己的独有一台terminal。",
+      "statement": "单变量双满k叉深h树中，每个底层内部父节点的k枚叶共用其独有一台terminal（A1、外端时间1），不同父节点terminal不共享。实际OPT=2−1/k；Tconf=1+s*/k，s*=min{0≤s<k:(k−s)^h≤2k^(h−1)}。k≥3且(k−1)^h≤2k^(h−1)时精确Tconf=1+1/k，逐例OPT/Tconf=2−3/(k+1)趋2。",
+      "quantifiers": "∀整数k,h≥1的该闭合原矩阵族；s*取有限网格最小值。趋二子族令k→∞并选择满足条件的h；不要求八组数值实例代表所有参数。",
+      "assumptions": [
+        "完整显式双树与全部原任务/原资格；内部机器私有且每机唯一incoming。",
+        "不同clause外部unit互不重合、无额外任务/预载；每port在所属clause全部unit均有时间1资格。",
+        "复杂度按显式P及所给有理见证总位长；不按仅二进制k,h虚构压缩树输出。",
+        "仅一个变量两sign；每个底父的全部k叶共享独有unit，末端不跨底父合并。"
+      ],
+      "scope": "同一闭合原P的实际OPT和精确配置阈值；k1为1。",
+      "objections": "八组参数仅整数算术回算，大(12,32)未展开全矩阵。含0/1 pin的开底profile、七变量unit全cube及每clause单机外端1/4分别是不同对象，保0098既有M身份，不并入本族。经典实际gap来源与本页阈值消元分别保留。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+        "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+        "section": "2.4 闭合两树族的精确配置阈值"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+          "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+          "section": "小 JSON：严格整轨见证与八组闭合参数"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+          "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+          "section": "2. 配置正部、严格单位 gap 与闭合树回归"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/unit-calibrated-originals/comparisons/unit_readout_configuration_threshold_polytope.md",
+          "sha256": "b29c1500da407a86c3172c6738f22c5b10c073d0270aeac9acd668260983967a",
+          "section": "5. 经典闭合两树的精确配置阈值"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/Unit-readout槽与配置阈值两源精读--审查.md",
+          "sha256": "7230a61609a3e2d4d1e0a11657eda00b73a18df76327469e68fb04a002fdb9fc",
+          "section": "2. 正部 CONFIG、严格单位 5/3 与闭合两树"
+        }
+      ],
+      "sources": [
+        "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+        "source:40a75aa26f402db03c39:research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md"
+      ]
+    },
+    {
+      "object_id": "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+      "version": 1,
+      "title": "任意密度显式单位双树的固定高度叶流近似",
+      "kind": "algorithm-theorem",
+      "truth_status": "proved",
+      "model": "有限显式私有单位读出双树：整数k,h≥1；每变量两棵互不相交满k叉深h树，内部点为机器；一枚mandatory selector仅在两根时间1；内部edge任务父端1/k、子端1；叶port父端1/k或所属clause任一unit机时间1；各clause有整数A_c≥0台互异unit。全部原任务含未选轨均必须执行，无pins、预载、额外任务/资格或共享内部机。叶地址全部显式列出，A_c可二进制编码，未用原unit保精确零负载。",
+      "statement": "对本模型每个显式P，确定性位多项式输出全部原jobs实际σ，Cmax≤(1+2^(−1/h))OPT。整数流求每变量共同可送真实叶的最大b；b0证OPT2并全父置；b≥1每变量保较多sign至少m=ceil(b/2)枚标记叶，N=k^h、q=floor((N−m)^(1/h))、rhat=k−q，用真实祖先DP仅删原流叶提取rhat森林、保共同slot注入并完整回填。",
+      "quantifiers": "∀显式P，∀k,h≥1与任意clause密度/wiring；∃确定性总位多项式σ。∀固定高度上界H，统一近似因子≤1+2^(−1/H)<2。",
+      "assumptions": [
+        "完整显式双树与全部原任务/原资格；内部机器私有且每机唯一incoming。",
+        "不同clause外部unit互不重合、无额外任务/预载；每port在所属clause全部unit均有时间1资格。",
+        "复杂度按显式P及所给有理见证总位长；不按仅二进制k,h虚构压缩树输出。",
+        "流须饱和每变量b，不能只取总流平均；取出的子树只保同一整数流的真实原叶和共同外机注入。"
+      ],
+      "scope": "不需给定YES、源赋值、LP或OPT oracle；算法允许h输入但保证随无界h趋2。",
+      "objections": "更早四源综述把叶流与多YES混写，正式18明确叶流无YES前提。k4h3的64-open祖先反例不能只靠叶数升级三半；当前因子未称最佳。源NO可能无YES不影响本算法，但不提供一般UM统一ε。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/单位读出叶流与选择重组的原程序及锐矩阵--审查.md",
+        "sha256": "839f4e4242eb16b000ba8f34da2f3d748c0aba40ae11a9598bed3723570214b3",
+        "section": "固定高度叶流：算法、证明和失败机制"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+          "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+          "section": "3.1 固定高度叶流近似"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+          "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+          "section": "3. 全局叶流与 selector mixing"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/um-joint-projection/original/research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+          "sha256": "425af66b7eaa6c8317398f1806aceeae869459ffb57ee9b89c2a6fd2d029070f",
+          "section": "2. 任意密度的真实叶流与祖先提取"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+          "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+          "section": "8. 虚拟叶补齐的精确命中门槛"
+        }
+      ],
+      "sources": [
+        "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+        "source:dce12333944853ff579d:research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md"
+      ]
+    },
+    {
+      "object_id": "UM-UNIT-READOUT-SELECTOR-MIXING-v1",
+      "version": 1,
+      "title": "同一P完整YES的covered-selector坐标重组及逐p锐界",
+      "kind": "algorithm-theorem",
+      "truth_status": "proved",
+      "model": "有限显式私有单位读出双树：整数k,h≥1；每变量两棵互不相交满k叉深h树，内部点为机器；一枚mandatory selector仅在两根时间1；内部edge任务父端1/k、子端1；叶port父端1/k或所属clause任一unit机时间1；各clause有整数A_c≥0台互异unit。全部原任务含未选轨均必须执行，无pins、预载、额外任务/资格或共享内部机。叶地址全部显式列出，A_c可二进制编码，未用原unit保精确零负载。",
+      "statement": "给同一原P的p≥1份完整真实C≤1调度，并指定每变量sign至少在某份selector出现；非空另需N=k^h≥p。确定性按P+全部见证总位长多项式输出保全部指定根的完整σ，C≤2−1/(2p−1)。k≥p取r=floor(k/p)给2−r/k；k<p且N≥p取r1给2−1/k；p1保原YES。完整YES迫所选整轨全外送，故指定轨d_c*≤pA_c；仅指定轨x0=1建槽，另一轨全部父置。每p有k=2p−1,h1锐指定profile族，原P全局OPT仍1。",
+      "quantifiers": "∀显式P，∀p≥1，∀属于同一P且全机峰≤1的完整σ¹…σᵖ，∀逐变量被这些selector覆盖的指定profile，在非空N≥p时有所述构造；∀p存在精确达到统一profile上界的族。",
+      "assumptions": [
+        "完整显式双树与全部原任务/原资格；内部机器私有且每机唯一incoming。",
+        "不同clause外部unit互不重合、无额外任务/预载；每port在所属clause全部unit均有时间1资格。",
+        "复杂度按显式P及所给有理见证总位长；不按仅二进制k,h虚构压缩树输出。",
+        "同一P、同一原资格/共同clause容量、每份给定见证覆盖全部原jobs与机器；局部availability或不同pin profile不足。",
+        "指定sign至少在一份完整YES出现；非空N≥p。active-only根质量1，未指定轨原任务全父置。"
+      ],
+      "scope": "给完整见证的指定模式代价；canonical shared-positive/private-negative族与原JSON双共享clause族分别保来源。",
+      "objections": "不寻找未知YES，不适用于没有完整YES的任意NO输出，也不构成一般近似困难性。N<p时k1h1两变量交叉clause例指定profile真OPT2，条件不可删；锐值是约束profile最优，非原全局OPT下界大于1。含pin三profile为不同P，不能套此重组。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/单位读出叶流与选择重组的原程序及锐矩阵--审查.md",
+        "sha256": "839f4e4242eb16b000ba8f34da2f3d748c0aba40ae11a9598bed3723570214b3",
+        "section": "多份完整 YES：指定 selector 重组"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位读出叶流与选择重组的原程序及锐矩阵--审查.md",
+          "sha256": "839f4e4242eb16b000ba8f34da2f3d748c0aba40ae11a9598bed3723570214b3",
+          "section": "完整 JSON：双共享子句锐族"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/半密度半槽与指定根锐族的独立原程序--审查.md",
+          "sha256": "736b7f3055bba92e94dec011dc1915f1c7fa73bf1e4f5d4587b0950f22da61a3",
+          "section": "独立指定根锐族生成器的实际内容"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/半密度半槽与指定根锐族的独立原程序--审查.md",
+          "sha256": "736b7f3055bba92e94dec011dc1915f1c7fa73bf1e4f5d4587b0950f22da61a3",
+          "section": "两源不能互换的量词与关系"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+          "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+          "section": "3.2 给定 p 份完整 YES 的 selector mixing"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+          "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+          "section": "3.3 锐例和边界反例"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+          "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+          "section": "3. 全局叶流与 selector mixing"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/um-joint-projection/original/research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+          "sha256": "425af66b7eaa6c8317398f1806aceeae869459ffb57ee9b89c2a6fd2d029070f",
+          "section": "3. 完整 YES 选择状态的任意坐标重组"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/um-joint-projection/original/research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+          "sha256": "425af66b7eaa6c8317398f1806aceeae869459ffb57ee9b89c2a6fd2d029070f",
+          "section": "4. 对每 p 的锐例及准确否定范围"
+        }
+      ],
+      "sources": [
+        "UM-UNIT-READOUT-SELECTOR-MIXING-v1",
+        "source:dce12333944853ff579d:research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/unit_readout_selector_profile_independent.py"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md",
+      "sha256": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1",
+        "UM-HETEROGENEOUS-MACRO-PROMISE-v1",
+        "UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1",
+        "M-36e9d6d07bed4754858f0f578f0ad101",
+        "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+        "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+        "UM-PRUNED-TREE-LEAF-HITTING-v1"
+      ],
+      "reason": "全文实读。§2异质宏/tiny、未知OPT承诺搜索及三分割残余保留原四owner；§3.1全部变量mandatory-r森林iff与§3.2半密度全jobs三半、纯树叶hitting分别由本批三主record接纳。保无pin、真实祖先及共同clause注入；不把源开放义务当身份缺口。原0098 DONE材料16及其其它范围不改。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/半密度半槽与指定根锐族的独立原程序--审查.md",
+      "sha256": "736b7f3055bba92e94dec011dc1915f1c7fa73bf1e4f5d4587b0950f22da61a3",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+        "UM-UNIT-READOUT-SELECTOR-MIXING-v1"
+      ],
+      "reason": "全文实读。半密度完整原jobs的半槽/Hall/真实森林归HALF-DENSITY；独立双共享clause锐族和指定profile上下界归SELECTOR-MIXING。自由选根与指定根、任意高度半密度与同P完整YES条件分开；5001位十进制原CLI需显式环境设置的限制保留。原0098材料17不改。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位读出叶流与选择重组的原程序及锐矩阵--审查.md",
+      "sha256": "839f4e4242eb16b000ba8f34da2f3d748c0aba40ae11a9598bed3723570214b3",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+        "UM-UNIT-READOUT-SELECTOR-MIXING-v1"
+      ],
+      "reason": "全文实读。任意密度固定高度整数叶流、最大共同b、floor-root和真实祖先提取归FIXED-HEIGHT；同一P的p份完整C≤1见证、覆盖指定sign及非空N≥p的重组与双共享clause锐族归SELECTOR-MIXING。前者无需给YES；后者的profile锐值不等于原全局OPT下界。原0098材料18不改。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+      "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+        "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+        "UM-PRUNED-TREE-LEAF-HITTING-v1",
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+        "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+        "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+        "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+        "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+        "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+        "UM-UNIT-READOUT-SELECTOR-MIXING-v1"
+      ],
+      "reason": "全文实读。§1校准强计数/固定D、§2正部CONFIG/strict1/闭合树、§3固定高度叶流/完整YES重组、§4森林/半密度/hitting由本批十个主record全部精确接证。早期压缩句“fixed-D依赖YES”及根incoming恒1须按强计数正式纠偏理解：强全轨根q=y_vs，fixed-D自产证书无需YES；有限audit不替代一般证明。原0098材料19不改。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+      "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+        "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+        "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1"
+      ],
+      "reason": "全文实读。强全轨(S_r)给定共同有理证书、uniform深度校准及其充分/受限必要边界归CALIBRATED-SLOT；固定D自产证书和小k必要路径fallback归BOUNDED-DENSITY；严格CONFIG1整轨(L)与active-only五三归STRICT-UNIT。保q根为互补质量、active-only指定根才为1；源码未集成通用LP/OPT。原0098材料20不改。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+      "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+        "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+        "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+        "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+        "UM-UNIT-READOUT-SELECTOR-MIXING-v1"
+      ],
+      "reason": "全文实读。正部CONFIG全阈值iff/有理分解、严格CONFIG1整轨消元及五三promise、闭合两树精确阈值、任意密度固定高度叶流、同P多完整YES指定selector重组分别由本批五个主record接纳。共享边际不等于joint schedule law；严格1与1+1/k、固定高度与N≥p各保自身量词。原0098材料21不改。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+      "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+      "disposition": "objects",
+      "object_ids": [
+        "M-b4a6d0d0b41c4ef2b84217f7ac101ea1",
+        "M-c663aecb01df4eefa9ed35be826cfbab",
+        "M-1b7aae02648540af8d4986eb762adaae",
+        "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+        "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1"
+      ],
+      "reason": "全文实读。原三个owner完整保留：三个不同含0/1 pin原P的精确profile、unit七变量源NO但三半上界、外端1/4不同矩阵上界。单行正部必要充分构造/lift裁剪与八组闭合阈值算术分别补给CONFIG-POSITIVE-PART/CLOSED-TREES；不由单行分解推出全局整数σ，也不把不同pin矩阵视为同P多YES。原0098材料22不改。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/多小端密度流障碍与单位读出校准槽双源审查--审查.md",
+      "sha256": "ccf410a29e660aba575bf8c0df61a2b29ddd0e1ede7f68b8c1ee1203153c7a39",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-SMALL-DENSITY-FLOW-BARRIER-v1",
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+        "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1"
+      ],
+      "reason": "全文实读。第一源逐机多小端柔性密度的容量流障碍保原SMALL-DENSITY owner；第二源强分数任务数、incoming-first槽/Hall、uniform递推及固定clause密度D两分支由CALIBRATED-SLOT/BOUNDED-DENSITY接证。逐机柔性密度与逐clause全轨arity密度不混。原0098材料23不改。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/Unit-readout槽与配置阈值两源精读--审查.md",
+      "sha256": "7230a61609a3e2d4d1e0a11657eda00b73a18df76327469e68fb04a002fdb9fc",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+        "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+        "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+        "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+        "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1"
+      ],
+      "reason": "全文实读。§1校准强计数槽/固定D与§2正部CONFIG/严格单位五三/闭合两树分别被本批五个精确Claim接纳为section evidence。保fixed-D无需YES、k<D必要匹配失败真OPT2、strict1给定整轨见证及数学有理LP与软件未集成后端、共同边际非joint law。原0107材料36中本页五类未接路由由此补齐；旧DONE及其余范围不改。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位森林与叶Hall阈值两源精读--审查.md",
+      "sha256": "801e9b4d69612ca5b04cb8a76ad4578dd1628591fa86f1fdb20580f8b4db8990",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+        "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+        "UM-PRUNED-TREE-LEAF-HITTING-v1"
+      ],
+      "reason": "全文实读。§1全部变量mandatory森林iff及半密度全jobs三半、§2纯树hitting q^h/最大r-free/dummy仅组合存在性由本批三主record精确接证。§3 Threshold leaf Hall/consistent marginals/path projection及§4有关指定partition、共同叶edge marginals而非all-core joint law的范围仍待UM-THRESHOLD-LEAF-HALL-CONSISTENT-MARGINALS-PATH-PROJECTION-GAP-v1原主作者/lead接纳本页字节；当前该record未引用本页。保needs-decision，不用局部unit接证抹掉Hall范围；原0109材料22及旧DONE不改。"
+    }
+  ],
+  "edge_files": []
+}
