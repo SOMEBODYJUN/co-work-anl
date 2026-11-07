@@ -1,0 +1,135 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline-5cd4b9018.json",
+    "sha256": "af99fb773928f3fc6bcd577ade37fbb07e8f84befbb2304158b99894ab1e56a3"
+  },
+  "objects": [
+    {
+      "object_id": "M-4e3eb073d04b4c49ac2d29e8f0980263",
+      "version": 2,
+      "title": "删除整数背景后保留原策略的路径regret上界",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限单位客户、有限非空共同标签目录、n≥0名单位权顺序提供者的辅助固定背景博弈；b,d逐客户任意非负整数，背景在尾部偏离下固定，无须可由共同目录前缀实现。完整纯策略定义于全部有序尾历史，保空主题、重复、同覆盖异标签及任意平局。应用回原全游戏时另核合法背景嵌入，非零背景尾利润不同于覆盖。",
+      "statement": "在背景b+d下的原完整SPE保留同一完整子策略，删整数背景d后，原实际尾位置j的regret ε_j≤K_j^d−δ_j^d(q)，故Σ_j ε_j≤Σ_j K_j^d−E_d(q)。以p_j为实际较早尾负载，K_j^d=max_T Σ_(x∈T)d_x/[(b_x+p_j(x)+1)(b_x+p_j(x)+d_x+1)]，δ_j^d(q)=Σ_(x∈Sj)d_x/[(b_x+c_x)(b_x+c_x+d_x)]，E_d=Σδ_j^d。单位根A特例Σ ε_j≤nK_b(A)−E_A，K_b(A)=Σ_(x∈A)1/[(b_x+1)(b_x+2)]。 更精确地，实际节点R_j=max_T[Δ_j(z_j(T))−δ_j^d(q)−Γ_j(T)]≥0，且K_j^d−δ_j^d(q)−R_j=min_T{K_j^d−Δ_j(z_j(T))+Γ_j(T)}≥0。",
+      "quantifiers": "任意有限输入、n≥0、任意b,d∈Z_≥0^N、任意在b+d下完整SPE及其实际尾q；删除d但保持同一有序尾历史策略映射，逐实际节点比较全部合法T。",
+      "assumptions": [
+        "删除d后保持原尾历史到动作映射，不调用原更短历史的另一个节点，也不要求删后仍为SPE",
+        "K_j^d对合法当前主题T的前缀分母上界取最大：分母使用b+p_j+1；真实强制叶删除收益Δ_j(z_j(T))≤该主题上界，不把K误作真实Δ叶值最大",
+        "原IC给Γ_j(T)≥0；退款只对被覆盖客户计，K分母至少1，n=0按空和"
+      ],
+      "scope": "准确缺陷界及一般背景删除扩展。",
+      "objections": "原登记把辅助域误限为合法可删背景，且K表述混同真实叶最大；v2按原完整证明恢复任意非负整数b,d及合法query的前缀分母上界。该界不证明删除后SPE、跨叶容量或half。新接定义级审计的65有限例只作实现证据，普遍结论由解析推导承担；本次未运行原审计。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/固定插入共同池与删除后的原策略激励界--引理.md",
+        "sha256": "4cc9cb7a1b8047e89004a5c23c60254ad513c87c3f7f3bb9a687af8b3e27c043"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/背景删除节点后悔的定义级精确审计--计算.md",
+          "sha256": "87bad85366c7d5ffbc44811aa1446fdb105efb4f73f78f0d9c9c0b2b43875bee"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/引理/固定插入共同池与删除后的原策略激励界--引理.md",
+        "archives/customer-attraction/state/计算/背景删除节点后悔的定义级精确审计--计算.md"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/shared-terminal-rent-full-history-repair-and-prefix-cost-domination",
+      "version": 2,
+      "title": "只需旧末位BR的共同终局租金完整修复及同合同prefix成本比较",
+      "kind": "construction",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空共同带标签目录及覆盖映射、单位权顺序提供者；完整纯策略定义于全部合法有序标签历史，保空主题、重复选择、同覆盖异标签、零客户和任意离轨平局。终局客户在所有覆盖者间均分；真实偏离后沿同一原策略在改变后的有序历史续行。",
+      "statement": "任m≥2目标路径a，只要求末位A_m为该真前缀全目录BR。每i<m及每旧合法C（包括A_i）给真正完整child-SPE η_iC，当前d_i(C)≤u_i(a)+g，g>0有理。Cartesian保险大B=m(m−1)g，小T及m−2个Z各(m−1)g；正常前m−1位B、末位T，首次任一联合标签失配永久切η_iC与后继全B。得完整SPE且W′=W+(m²−1)g，O′=O+(m−1)(2m−1)g，坏half差额稀释3(m−1)g。同一末位BR合同及已有菜单/g可由j=m−1 uniform prefix以(2m−1)g稀释实现，少(m−2)g；异质最低菜单成本另为2Σδ+maxδ。",
+      "quantifiers": "所有m≥2、任意目标路径及满足全child菜单合同的正有理g；输入前m−1位不必理性。",
+      "assumptions": [
+        "仅改保险而旧C=A_i也触发η_iAi，不能保不可信旧尾",
+        "首次退出模式永久固定；两个坐标读取各自有序后继",
+        "共同整数倍复制全部旧新客户清分母，玩家仍单位"
+      ],
+      "scope": "完整shared修复与同目标同尺度prefix攻击门槛比较，不登记普通规模校准为另一个对象。",
+      "objections": "g=0不用零银行而由末位向前贴菜单直接拼成SPE。成本支配不是逐利润点态支配或所有修复器最优性；没有满足严格half坏差额的种子。 实接共享编译原标签触发器及有限审计页：保险单独换标签仍触发C=A_i完整child，旧新客户同倍清分母；四历史报告与旧case(5)包装范围不混同。零g直接旧树逆拼/保空标签的两实现已分清，无新入口运行。",
+      "body": {
+        "path": "archives/customer-attraction/state/构造/共同终局租金的完整修复与前缀成本支配--构造.md",
+        "sha256": "94adcc34b43e67f504c8971d0cb773e615d2bd5162405a2b3be052837d4e0225"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/可信编译与Beta接续的内部审查和有限重放合同--审查.md",
+          "sha256": "4c3e1c9a5329415078ba713ece3a5e3de9fa21c4457b41fac02d4dcad4674d9b"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/真实退出缺陷的统一与异质前缀修复--定理.md",
+          "sha256": "55fed6deb6f63cf37cba1fe05ace598b7fac3d0a75062acad170c05da0eabfa6"
+        },
+        {
+          "path": "archives/customer-attraction/state/构造/共享终局租金编译的标签触发器与原有限审计--构造.md",
+          "sha256": "0c6e702d3880c04b800a4cb5556a2804a741b5a2a7d01425603e06530306a84a"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/构造/共同终局租金的完整修复与前缀成本支配--构造.md",
+        "archives/customer-attraction/state/构造/共享终局租金编译的标签触发器与原有限审计--构造.md"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/customer-attraction/state/引理/固定插入共同池与删除后的原策略激励界--引理.md",
+      "sha256": "4cc9cb7a1b8047e89004a5c23c60254ad513c87c3f7f3bb9a687af8b3e27c043",
+      "disposition": "objects",
+      "object_ids": [
+        "M-4e3eb073d04b4c49ac2d29e8f0980263"
+      ],
+      "reason": "原背景删除主证明任意整数辅助域及K的合法query前缀分母上界已实读，保持同一身份v2修正旧窄登记。"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/背景删除节点后悔的定义级精确审计--计算.md",
+      "sha256": "87bad85366c7d5ffbc44811aa1446fdb105efb4f73f78f0d9c9c0b2b43875bee",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-4e3eb073d04b4c49ac2d29e8f0980263"
+      ],
+      "reason": "逐节点精确残差、共同退款及65有限回归分开；原成熟审计证据归一般删除界，无新运行。"
+    },
+    {
+      "path": "archives/customer-attraction/state/构造/共同终局租金的完整修复与前缀成本支配--构造.md",
+      "sha256": "94adcc34b43e67f504c8971d0cb773e615d2bd5162405a2b3be052837d4e0225",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/shared-terminal-rent-full-history-repair-and-prefix-cost-domination"
+      ],
+      "reason": "共享终局租金原主body保留，标签触发完整证明与同输入prefix成本比较仍是同一数学构造。"
+    },
+    {
+      "path": "archives/customer-attraction/state/构造/共享终局租金编译的标签触发器与原有限审计--构造.md",
+      "sha256": "0c6e702d3880c04b800a4cb5556a2804a741b5a2a7d01425603e06530306a84a",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-terminal-rent-full-history-repair-and-prefix-cost-domination"
+      ],
+      "reason": "原共享编译标签触发器及历史四例审计实际接回主owner，保全部自身旧行动child合同，不造同义节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/共同末回复修复点的双格式等值与差分独审--审查.md",
+      "sha256": "855a0470799588d650a6b1797d199d1dfb9d3e3ada54fe55d7eb726cb8d5df5b",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/zz-threshold-necessary-system-rational-point"
+      ],
+      "reason": "全页与0042主点陈述已比：25模式/321坐标/42原子6552会员位精确同一，436差分行独审不冒全3949第二矩阵；已canonical接证，解除0031旧身份路由pending。"
+    }
+  ],
+  "edge_files": []
+}
