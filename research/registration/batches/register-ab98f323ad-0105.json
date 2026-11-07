@@ -1,0 +1,714 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline.json",
+    "sha256": "5d5737ab6d07552b48925bdb936dae70490e8de1ee0da2b380bb2d16dd5690cf"
+  },
+  "objects": [
+    {
+      "object_id": "UM-DENSE-GEOMETRIC-ALPHABET-EQUIVALENCE-v1",
+      "version": 1,
+      "title": "保持原机器任务数的单一对数平方字母表统一改善等价",
+      "kind": "equivalence",
+      "truth_status": "proved",
+      "model": "显式非负二进制有理UM含零端及∞；目标D_geo为m×n全有限正整数矩阵，n≥16，字母表A_n只依实际n。",
+      "statement": "令h=bitlength(n)、b=1+1/h、R_n=min{r∈Z≥0:b^r≥hn}，A_n={ceil(b^r):0≤r≤R_n}∪{n²}，去重大小O(log²n)。全UM存在确定性总位多项式统一次二实际调度算法当且仅当D_geo存在。每个先固定k≥2，给D_geo的(2−1/k) backend可构造原UM的(2−1/(2k))算法；每次backend输入保持原m、n且用同一A_n。",
+      "quantifiers": "先固定任意整数k≥2及满足全D_geo域保证的确定性backend B；对每个合法原矩阵P构造完整合法调度，所有合格backend输出均可回译。",
+      "assumptions": [
+        "先独立处理n=0及每任务有零端的OPT=0分支；其余0<L≤OPT≤U≤nL。",
+        "h<8k时固定次数穷举；h≥8k时生成从L至首个≥U的有理T网格。",
+        "原p>T或∞映n²，保留端z=hnp/T按最小整数有理幂再ceil；使用原端判哨兵。"
+      ],
+      "scope": "固定k的存在性等价；复杂度指数可依k。不同于允许padding的O(logN)字母表，亦不同于固定有限数值集合。",
+      "objections": "完整正文给z≤q≤bz+1、强式OPT(Q)≤b(hn/T)OPT+n、每个合格输出排哨兵及αb²严格回译。不实现未知B；有限2096832负载型、不同review运行范围仅作证据，不推出hardness或统一新算法。",
+      "body": {
+        "path": "archives/unrelated-machines/state/等价/同任务数对数平方字母表的调度等价--等价.md",
+        "sha256": "1736e095f721c909cb200d751cd5faa98c16977d4b4ac6dc38fb9d28bcc85393"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/同任务数几何字母表的全输出回译--资源.md",
+          "sha256": "46fdc5c826f3ebc7e57b6a22286df1c2a0e2820143a5cf5ea4ff8335efce1331"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/三种正规形的分节冻结与独立核验--审查.md",
+          "sha256": "5a6ae1d9a04783a60593ce63901dafe3582396b6a43e67123b3ab0ce55ad2b95"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/三种正规形精确测试的输入与完整分类--计算.md",
+          "sha256": "30bef1cd26a9a88307b54d0971a48880cd096f27409aac937bdc41292a2ea9be"
+        }
+      ],
+      "sources": [
+        "legacy-claim:UM-DENSE-GEOMETRIC-ALPHABET-EQUIVALENCE-v1",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/model_and_classical_barriers.md#7-单一对数平方字母表的稠密整数正规形",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/geometric_alphabet_equivalence_review.md"
+      ]
+    },
+    {
+      "object_id": "UM-DENSE-LOGARITHMIC-ALPHABET-PADDED-EQUIVALENCE-v1",
+      "version": 1,
+      "title": "私有填充后只依实际任务数的单一对数字母表等价",
+      "kind": "equivalence",
+      "truth_status": "proved",
+      "model": "原显式有理UM；D_log为N≥2、m′≥1、所有端有限正整数且来自同一A_N的显式全矩阵，允许实际机器任务数增长。",
+      "statement": "置H=bitlength(N)，A_N={1,N²}∪⋃_{j≥2,2^j≤H}{ceil((1+1/(8j))^r):0≤r≤floor(H/2^j)}，去重大小O(logN)。全UM统一次二算法存在当且仅当D_log存在。固定k≥2的α=2−1/k backend给原模型2−1/(2k)算法：ell=min{l:2^l≥8kn}，E=2^k8kell，N=2^E；新增N−n件私有dummy及同数机器，全部交叉端显式定义为N²哨兵，dummy唯一私有端1。",
+      "quantifiers": "∀先固定整数k≥2和满足D_log全域保证的B，∀原合法P；全部α合格完整N任务输出均排哨兵并正确回译。",
+      "assumptions": [
+        "空任务及OPT0先精确处理；其余L≤OPT≤U≤nL。",
+        "b=1+1/(8k)，第k网格覆盖8kn；每个T用z=8knp/T按最小整数幂再ceil。",
+        "固定k时N<(16kn)^(8k·2^k)，按实际输出(m+N−n)N矩阵与全部dummy交叉端计位复杂度。"
+      ],
+      "scope": "存在性等价，允许依固定k的极大多项式次数；不声称同n的O(logn)、poly(logk)或palette最优性。",
+      "objections": "强式OPT(Q)≤b(8kn/T)OPT+n按原active任务数n收费；任一α合格峰<N²故dummy必须唯一私有。有限审计只压缩分类全部低峰padding调度，未物化天文矩阵、未执行B；E256等是log₂N而非实际N。",
+      "body": {
+        "path": "archives/unrelated-machines/state/等价/私有填充的对数字母表调度等价--等价.md",
+        "sha256": "bd9a95d5cd9c159879bf39bee6df372cad89fd524ec2f51036e0efbf0d71f1fc"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/三种正规形的分节冻结与独立核验--审查.md",
+          "sha256": "5a6ae1d9a04783a60593ce63901dafe3582396b6a43e67123b3ab0ce55ad2b95"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/归一化门菜单福利与对数调色板padding有限审查--审查.md",
+          "sha256": "2cb3bd5dbcf56984be6875eddbe130c67d43524caaf92454fcf41c4e35566735"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/私有填充对数调色板作者版本审查--审查.md",
+          "sha256": "37e3231dde40e603e12c547f4c2dffc93ebe2e0b5e21021d63bee30f88adac2b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/三种正规形精确测试的输入与完整分类--计算.md",
+          "sha256": "30bef1cd26a9a88307b54d0971a48880cd096f27409aac937bdc41292a2ea9be"
+        }
+      ],
+      "sources": [
+        "legacy-claim:UM-DENSE-LOGARITHMIC-ALPHABET-PADDED-EQUIVALENCE-v1",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/model_and_classical_barriers.md#8-多项式私有填充与单一对数字母表正规形",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/logarithmic_palette_padding_equivalence_review.md"
+      ]
+    },
+    {
+      "object_id": "UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1",
+      "version": 1,
+      "title": "全有限1至n平方整数矩阵与原调度统一改善等价",
+      "kind": "equivalence",
+      "truth_status": "proved",
+      "model": "D是m,n≥1显式m×n全有限正整数矩阵，条目1,…,n²；原域为非负二进制有理UM含∞及零。",
+      "statement": "全原模型存在确定性位多项式统一次二实际调度算法当且仅当D存在。固定k≥2，若D有α=2−1/k backend B，则原域有2−1/(2k)算法，保持每个B输入的m、n。n≥8k时g=1+1/(4k)，T从L按g倍增至首个≥U；保留端q=max(1,ceil(4knp/T))，其余n²。",
+      "quantifiers": "∀先固定k≥2、∀保证整个D的B、∀原合法P；每个合格输出都可解码，非只存在有利YES输出。",
+      "assumptions": [
+        "空/精确零分支先行；正OPT有0<L≤OPT≤U≤nL。",
+        "n<8k时全枚举原合法分配，固定k下次数多项式。",
+        "按原p>T或∞拒坏候选；所有保留输出按原P精确回算并取最好。"
+      ],
+      "scope": "固定k总位多项式的算法存在性等价；不实现B、不提供NP源gap或近二hardness。",
+      "objections": "首个T≥OPT满足T≤gOPT；强式OPT(Q)≤(4kn/T)OPT+n不可用粗界代替。αOPT(Q)<n²排每个哨兵；回译展开为2−1/(2k)−1/(8k²)−1/(16k³)。有限全调度测试与普遍证明分开。",
+      "body": {
+        "path": "archives/unrelated-machines/state/等价/稠密小整数调度的统一改善等价--等价.md",
+        "sha256": "8155d56ba20cac4b7b05e221c17978a6dd1329cd172231d90caca0a3e266ca2b"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/三种正规形的分节冻结与独立核验--审查.md",
+          "sha256": "5a6ae1d9a04783a60593ce63901dafe3582396b6a43e67123b3ab0ce55ad2b95"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/三种正规形精确测试的输入与完整分类--计算.md",
+          "sha256": "30bef1cd26a9a88307b54d0971a48880cd096f27409aac937bdc41292a2ea9be"
+        }
+      ],
+      "sources": [
+        "legacy-claim:UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/model_and_classical_barriers.md#6-全常数否定与稠密小整数正规形",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/dense_small_integer_equivalence_review.md"
+      ]
+    },
+    {
+      "object_id": "UM-RATIO-GROUP-JOINT-SLOT-v1",
+      "version": 1,
+      "title": "共同资格精确组汇比例的宏与出口联合槽舍入",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "显式机器不交H∪Z；宏只去H，私有组J_h恰去{h}∪E_h，p_hj=w_j≥0，p_zj=ρ_hz w_j；每宏至少一有限端。",
+      "statement": "给T≥0、0≤δ<1/2，W_h≤T、w_j≤δT、所有有限宏端>T/2且ρ_max<2，确定性总位多项式返回FAIL或完整原任务调度；成功时home≤(3/2+δ)T、sink≤(1+ρ_max/2)T。若OPT≤T必成功，故合同内FAIL⇒OPT>T；成功本身不判原阈值精确可行。联合整数流同时选择宏、不同home及合法sink/零需求旁路。",
+      "quantifiers": "∀满足显式结构与数值合同的(P,T,δ)，成功输出逐home及逐sink同时有界；∀真实T可行原调度诱导同一必要LP。",
+      "assumptions": [
+        "先剪宏端p>T；d_h=(W_h−T/2)_+、c_hz=ρ_hz d_h。",
+        "共同资格且上下精确等比例；仅上界不能推出必要LP，正文有真实zero-sink三home反例。",
+        "每home宏质量≤1；d=0才可旁路，d>0无出口只迫该home不占宏。"
+      ],
+      "scope": "固定r=1/2的结构阈值算法；不扩大为一般UM、一般失真包络或隐式菜单。",
+      "objections": "正文完整LP必要性、宏-home-槽共同流、按c=ρd降序前槽收费和真实原编号前缀恢复。home承担最后单件δT误差，sink不按组叠加误差；T0/δ0/空组/零ρ/空Z另有明确分支。后续κ包络可调r是另身份。",
+      "body": {
+        "path": "archives/unrelated-machines/state/算法/精确组汇比例的共同出口联合槽--算法.md",
+        "sha256": "917894485b2d584a55d44f45048f3030637cfeb40dc3dd4a7f88801f45aabda6"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/周期峰值与稀疏流增量证据--审查.md",
+          "sha256": "07d8abb462c43a557ad9073d5198fb17315ffa6fae7bf316a4ef53f7a0a38c57"
+        }
+      ],
+      "sources": [
+        "legacy-claim:UM-RATIO-GROUP-JOINT-SLOT-v1",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/distorted_group_joint_slot_rounding.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/distorted_group_joint_slot_review.md"
+      ]
+    },
+    {
+      "object_id": "UM-RATIO-GROUP-PROMISE-APPROX-v1",
+      "version": 1,
+      "title": "未知普通OPT下精确比例共同资格组的结构承诺近似",
+      "kind": "promise-algorithm",
+      "truth_status": "proved",
+      "model": "上述精确组汇比例显式类；固定δ̄<1/2、ρ̄<2；真实普通OPT尺度承诺W_h≤OPT、w_j≤δ̄OPT、所有有限宏端>OPT/2。",
+      "statement": "存在确定性总位多项式实际调度算法，比率α=max{3/2+δ̄,1+ρ̄/2}<2。Q为全部有限分母之积，U取合法原分配总时间上界；在1/Q网格二分第一个通过W/w检查及宏剪枝LP的t*≤OPT，联合槽恢复C≤αt*≤αOPT。测试谓词不检查宏端>t/2，故单调；该条件由原OPT承诺在t*处继承。",
+      "quantifiers": "∀先固定δ̄、ρ̄，∀满足真实OPT结构承诺且ρ_max≤ρ̄的合法原矩阵，输出完整α近似；算法不输入OPT或目标调度。",
+      "assumptions": [
+        "完全保留精确比例、共同资格与显式原任务。",
+        "先精确处理空任务及每任务零端的OPT0。",
+        "二分只需O(log(QU+1))次精确有理LP，不能遍历Q或U；U不接受表示承诺不适用。"
+      ],
+      "scope": "固定参数的结构promise近似；不把逐实例参数趋边界当统一改善，不假称未知OPT软件已实现。",
+      "objections": "LP必要性在真实OPT处使用一home至多一宏，成功可靠性仅需被测试的W/w、宏剪枝和LP。与给定目标迁移路径的未知整数目标搜索、κ包络版和任意资格模型分别。",
+      "body": {
+        "path": "archives/unrelated-machines/state/算法/精确组汇比例的共同出口联合槽--算法.md",
+        "sha256": "917894485b2d584a55d44f45048f3030637cfeb40dc3dd4a7f88801f45aabda6"
+      },
+      "evidence": [],
+      "sources": [
+        "legacy-claim:UM-RATIO-GROUP-PROMISE-APPROX-v1",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/distorted_group_joint_slot_rounding.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/distorted_group_joint_slot_review.md"
+      ]
+    },
+    {
+      "object_id": "UM-UNKNOWN-TARGET-PARTITION-SEARCH-OBSTRUCTION-v1",
+      "version": 1,
+      "title": "带实际最大件初态承诺的未知精确目标生成包含PARTITION",
+      "kind": "search-obstruction",
+      "truth_status": "proved",
+      "model": "显式普通UM、给定初态σ与阈值T；目标为实际完整τ且Cmax(τ)≤T；算法有全部输入总位多项式运行界。",
+      "statement": "正整数w_j总和2B、w_j≤B的PARTITION实例映为两机各一私有anchor:B及共同残余w_j，T=2B；初态(3B,B)、每机实际最大件M_i=B，故Cmax≤2T且S_i≤T+M_i。存在τ≤T当且仅当残余可等分。任何在全部有解输入必给τ且在全部输入有总多项式界的精确finder，配输出验证即决定PARTITION；P≠NP下无此通用finder。",
+      "quantifiers": "∀此受限PARTITION输入构造；∃τ≤T iff原整数等分。只在YES终止、NO可能无限运行的过程不满足判定推论。",
+      "assumptions": [
+        "采用标准PARTITION NP-completeness导入复杂度前提；本页自足证明该受限调度归约。",
+        "输入初态完整、有限端≤T；任务不可拆且anchor只能原机。"
+      ],
+      "scope": "精确目标生成义务，含局部最大件承诺；不产生固定乘性近似困难性，也不反驳给定τ的路径定理。",
+      "objections": "给定可行τ时held-cycle的U=4B、全部h_i=0，原路径照常成立。current/review冻结版本逐字相同非两份独立审查；原408B测试只是复用partition判定，正文另注明真实anchor四例核验。",
+      "body": {
+        "path": "archives/unrelated-machines/state/障碍/给定目标路径的未知整数搜索--障碍.md",
+        "sha256": "5382e2f89ff3e70e1e6b5b75f57028312238b0b655be47ec2ef6443d3b4b1d2e"
+      },
+      "evidence": [],
+      "sources": [
+        "legacy-claim:UM-UNKNOWN-TARGET-PARTITION-SEARCH-OBSTRUCTION-v1",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/unknown_target_partition_search_obstruction.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/held_cycle_unknown_target_obstruction.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/unknown_target_partition_search_obstruction.py"
+      ]
+    },
+    {
+      "object_id": "UM-INCIDENCE-FEEDBACK-EXACT-v1",
+      "version": 1,
+      "title": "任意任务支持的关联反馈边分支与安全森林精确调度",
+      "kind": "exact-algorithm",
+      "truth_status": "proved",
+      "model": "原非负二进制有理UM含∞，m≥1、n≥0，合法任务至少一有限端；简单机器–任务二部关联图，b=|E|−|V|+c，c包含孤立点。",
+      "statement": "给T≥0，有确定性2^b poly(L)算法精确判定OPT≤T并输出全部原任务有限端。剪长边后取生成森林F，枚举所用反馈边S⊆E\\F；固定无共任务且负荷可容S、删其余反馈边，森林上任务叶强制、机器叶可容则安全吸收任务。逐分量成本可用Σ_C2^{b_C}；分量至多一环时线性两状态闭环递推。分母积网格二分给相同参数时间的精确OPT及实际最优调度。",
+      "quantifiers": "∀合法P、∀有理T≥0，不要求每任务支持≤2；∀真实T调度存在其反馈边分支成功，任一成功分支均可靠。",
+      "assumptions": [
+        "机器叶可容时搬任务仅降旧机负载，使用非负性；全部固定机包括孤立机均检查容量。",
+        "零/空及恰等容量以非严格比较；∞不相加，孤立任务拒绝。",
+        "按总编码位长计复杂度，网格二分次数依log(DU+1)，不遍历数值。"
+      ],
+      "scope": "有界二部关联环秩的精确算法；不同于二端机器多重图块秩，也不同于当前共占图。b无界时仍指数。",
+      "objections": "正文有完整反馈枚举完备性、安全叶交换、单环状态与闭边检查及实际标签恢复。材料33的五矩阵七查询只跑brute，四环T1剪枝已无环，不能声称实现了本算法或测试残余环。",
+      "body": {
+        "path": "archives/unrelated-machines/state/算法/有限反馈边与安全叶消元的精确调度--算法.md",
+        "sha256": "7f017c12fb58ece67f5bad0136cd926762c75095ff5f2c1aa6bce7d34f29e113"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/计算/关联环秩审计的七个枚举查询与实现边界--计算.md",
+          "sha256": "52684ca7aade694668ed4068644ee9d1f5f0dc4fa3cafc4e99c9d473914e5d4d"
+        }
+      ],
+      "sources": [
+        "legacy-claim:UM-INCIDENCE-FEEDBACK-EXACT-v1",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/incidence_cycle_rank_exact.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/incidence_cycle_rank_exact.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/incidence_cycle_rank_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/incidence_cycle_rank_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/incidence_cycle_rank_exact.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/incidence_cycle_rank_exact.py"
+      ]
+    },
+    {
+      "object_id": "UM-DEPTH-TWO-HALF-v1",
+      "version": 1,
+      "title": "深度二异质二进制需求的最小半配额贪心",
+      "kind": "approximation-algorithm",
+      "truth_status": "proved",
+      "model": "显式简单DAG r→U→W；根及中心正二进制整数需求，资源终端0；可缺根边、有不可达中心、死端或需求大于出度；零需求终端根另支。",
+      "statement": "存在确定性总位多项式算法返回真实根树H且b(H)≥b*/2。枚举Γ={1}∪{h/k_v:1≤h≤min(k_v,deg⁺v)}；对τ给根邻中心d_u=ceil(τk_u)、a_u=ceil(d_u/2)，反复选可领a_u个未用叶且a_u最小的中心，原资源不重用。τ=b*时首次失效收费保证2|G|≥|O|，原根及中心比例均≥b*/2。压缩任务桥给完整普通UM调度C≤2−b*/2≤(3/2)OPT。",
+      "quantifiers": "∀明示深度二输入，输出真实边集；评分按每个被选正需求原点收费，包含输出叶。一般性不由有限case外推。",
+      "assumptions": [
+        "候选只从根的实际出邻中心取；每次按最小半配额选择，不可任意贪心。",
+        "首次失效只给最先占用的a_u个基准叶收费；基准完整星叶集不交。",
+        "阈值数量≤1+|E|，成功配额≤显式资源数，不按巨大二进制需求展开。"
+      ],
+      "scope": "深度二需求桥图像的1/2树近似与3/2调度；非任意DAG或一般UM算法。",
+      "objections": "本批36给完整构造/收费/原任务恢复；稳定Claim在其冻结rooted_dag_degree_token_bridge.md §7确认为UM-DEPTH-TWO-HALF-v1。规范、独立无导入、conformance三运行域不同；129554 stars/4006 bottleneck不是通用证明，旧文档hash差不回填。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/深度二半配额贪心与双独立审计入口--资源.md",
+        "sha256": "3e85942825213fefa800b220ea5b80f88d2298f2283f053ab4f8ff8866a55e10"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/深度二配额有限核验--审查.md",
+          "sha256": "0f13c5c8082763f0198e5d9660549c8b88683cc5b31a32f9172acfbea2f96747"
+        }
+      ],
+      "sources": [
+        "legacy-claim:UM-DEPTH-TWO-HALF-v1",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/depth_two_quota_greedy.py#全文",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/depth_two_quota_conformance.py#全文",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/depth_two_quota_independent.py#全文"
+      ]
+    },
+    {
+      "object_id": "UM-GENERAL-WEIGHTED-QUERY-RETURN-THREE-HALVES-EXCHANGE-v1",
+      "version": 1,
+      "title": "任意异权私有网络的指定错配或inactive三半返回",
+      "kind": "structural-exchange",
+      "truth_status": "proved",
+      "model": "同一完整UM：内部H，任务A及k≥2对不同Q={q_i},R={b_i}；A仅内部，每个边界z有互异私有O_z:T，T>0；内部非负异权含零、∞及未用>T端。",
+      "statement": "给不同i,j及两份已核完整actual≤T，分别实现aligned X_i={q_i}∪(R\\{b_i})、X_j，确定性总位多项式输出同一原P完整τ≤3T/2，实现inactive X_∅=R或指定mismatch X_{j,i}={q_j}∪(R\\{b_i})。内部输出仅用各任务两输入实际用过端，所有私有outside同时≤T。若inactive在3T/2禁，则指定错配必已构造；反向需交换索引另运行。",
+      "quantifiers": "∀同P明示两aligned见证和有序i≠j；若只知见证存在则只有输出存在。给全k见证可输出所有k(k−1)指定对。",
+      "assumptions": [
+        "两query为b_i、q_j，分析初端时间0；旧分离v2的不交nonquery支持使至少一份保住b_j内部。",
+        "P星缩减任务后补全原任务；独立P零保全任务后须显式把q_i外移；两条完整路线均恢复原O:T。",
+        "私有O两两不同且只接受自身job是恢复全机≤T的实质条件。"
+      ],
+      "scope": "局部私有outside的任意异权三半推论；不免费拼到共享变量环，不声明本地3/2锐性或一般UM近似。",
+      "objections": "正文完整保两条分析、指定模式、全部N任务与原资格恢复，分析零机不成为物理输出端。不同于逐机统一模型的strict T交换，也不输入未知strict见证oracle；无软件或新实验。",
+      "body": {
+        "path": "archives/unrelated-machines/state/证明/私有查询返回的两种三半分析实例--证明.md",
+        "sha256": "160a4bc77633e9688dcd21c4c5a516b581c714ffc0d1f8018035b127ee17e00a"
+      },
+      "evidence": [],
+      "sources": [
+        "legacy-claim:UM-GENERAL-WEIGHTED-QUERY-RETURN-THREE-HALVES-EXCHANGE-v1",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/general_weighted_query_return_three_halves_exchange_exact_v1.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/general_weighted_query_return_three_halves_exchange_proof_v1.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/general_weighted_query_return_three_halves_exchange_exact_only_review_v1.md"
+      ]
+    },
+    {
+      "object_id": "UM-DIRECT-COHABITING-SAT-COMPILER-SHARP-THREE-HALVES-v1",
+      "version": 1,
+      "title": "固定半权直接共居矩阵的SAT一与UNSAT三半精确间隔",
+      "kind": "exact-compiler-gap",
+      "truth_status": "proved",
+      "model": "有限CNF每clause≥2真实occurrences，变量环显式padding至≥3；ρ∈(3/4,1)有理，真实q私有半权、u半权，dummy q私有1；所有原q/b/u任务保留。",
+      "statement": "非空域内SAT公式实际OPT=1，UNSAT实际OPT=3/2；空公式一idle机零任务OPT0。任意给定完整原调度C<3/2可确定性位多项式解码SAT：每M至多一q/b，q在C iff同编号b返回，且每M恰一件；变量环h_i=h_{i−1}迫共同方向，实际u目的地给真文字。任意公式的全q→M、全b→C、各u任选所属真实C给完整3/2上界。SAT单位构造使被选q+u半权共居，不是q+b。",
+      "quantifiers": "∀明示公式与ρ、∀任意未规范化完整低于3/2调度，解码共同满足赋值；∃达界原任务构造。非空及空分支分开。",
+      "assumptions": [
+        "每occurrence只属一clause且物理身份不同；重复文字/变量/clause允许。",
+        "每q仅M_i:ρ、M_i⁺:1、C_i:x_i；每b仅polarity pin:ρ、C_i:1；u仅所属真实C:1/2。",
+        "无预载、额外资格、共享私有机或分析端；按实际padding输出计规模。"
+      ],
+      "scope": "固定半权的1对3/2实际gap及strict decoder；不延伸任意异权、不关闭一般近二目标或声称新hardness。",
+      "objections": "正文同时给E⊆R包含计数/独立2N槽饱和及两种非空下界；UNSAT等号调度存在，decoder不能改≤3/2。固定8机10件5184分配只是回归；普遍结果由全公式证明承担。",
+      "body": {
+        "path": "archives/unrelated-machines/state/证明/半权直接共居的精确三半间隔与双计数--证明.md",
+        "sha256": "cf847a1013dc257b06362e11754881cdfc80229ce55af489aa5893b767484f5a"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/向量贪心填充叉与累计路径冻结审计--审查.md",
+          "sha256": "f82f811d2da1925880629339d81d862144d6688225d2384e9104b44ad1c9b955"
+        }
+      ],
+      "sources": [
+        "legacy-claim:UM-DIRECT-COHABITING-SAT-COMPILER-SHARP-THREE-HALVES-v1",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/direct_cohabiting_sat_compiler_sharp_three_halves_statement_v1.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/direct_cohabiting_sat_compiler_sharp_three_halves_proof_v1.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/direct_cohabiting_sat_compiler_sharp_three_halves_exact_only_review_v1.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/direct_cohabiting_sat_compiler_sharp_three_halves_exact_only_review_v1_final.md"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/资源/可选资源束的配额树穷举与正确计数--资源.md",
+      "sha256": "6404d75055302fa709afedcb9958c00351367bb869e9b609881d6ea726944b3c",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R01→0104；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/奇偶资源块的原始配额枚举程序与复用运行--资源.md",
+      "sha256": "40f23b61362f08b51358507dccd57b7cb33b679daa5634ae5fcc964ddc355bdb",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R02→0097；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三维匹配需求地板与三主机选择器双源审查--审查.md",
+      "sha256": "2f8c4c91af2bad2cc5f9862ff9b31c5b2f3c6e8809f4c8254713fb3f4add9335",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R03→0104,0105-R04→0102；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/闭环容量释放与单任务逃逸精确阈值冻结审查--审查.md",
+      "sha256": "c8409ec01fe057385e31d97da484f13a0db5ae9f1665b85616537bac51e22cdd",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R05→0102,0105-R06→0102；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/最优凸包闭环的槽初始化与单任务逃逸原程序--资源.md",
+      "sha256": "3cae559e94b3427bd318757714eec0013d5a661c90724dc3d0fa3fc52a716c75",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R05→0102,0105-R06→0102；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/闭环单任务逃逸的原端点与全超立方体极小峰审计--资源.md",
+      "sha256": "c936b9b6a7adfa282f8544cb7ca36720a04cd31d1211ebf6a6d1ca876937b0e5",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R06→0102；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/同任务数几何字母表的全输出回译--资源.md",
+      "sha256": "46fdc5c826f3ebc7e57b6a22286df1c2a0e2820143a5cf5ea4ff8335efce1331",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-DENSE-GEOMETRIC-ALPHABET-EQUIVALENCE-v1"
+      ],
+      "reason": "同n几何字母表的历史入口与全输出强式回译，同本批7的精确命题。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/等价/同任务数对数平方字母表的调度等价--等价.md",
+      "sha256": "1736e095f721c909cb200d751cd5faa98c16977d4b4ac6dc38fb9d28bcc85393",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-DENSE-GEOMETRIC-ALPHABET-EQUIVALENCE-v1"
+      ],
+      "reason": "本文件承载上述精确独立数学身份及全部证明，全文保留。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三种正规形的分节冻结与独立核验--审查.md",
+      "sha256": "5a6ae1d9a04783a60593ce63901dafe3582396b6a43e67123b3ab0ce55ad2b95",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-DENSE-GEOMETRIC-ALPHABET-EQUIVALENCE-v1",
+        "UM-DENSE-LOGARITHMIC-ALPHABET-PADDED-EQUIVALENCE-v1",
+        "UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1"
+      ],
+      "reason": "三种正规形的分节完整冻结审查分别归三条等价身份，保各实际运行与未读边界。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/等价/私有填充的对数字母表调度等价--等价.md",
+      "sha256": "bd9a95d5cd9c159879bf39bee6df372cad89fd524ec2f51036e0efbf0d71f1fc",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-DENSE-LOGARITHMIC-ALPHABET-PADDED-EQUIVALENCE-v1"
+      ],
+      "reason": "本文件承载上述精确独立数学身份及全部证明，全文保留。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化门菜单福利与对数调色板padding有限审查--审查.md",
+      "sha256": "2cb3bd5dbcf56984be6875eddbe130c67d43524caaf92454fcf41c4e35566735",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-DENSE-LOGARITHMIC-ALPHABET-PADDED-EQUIVALENCE-v1"
+      ],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。已有本批部分owner：UM-DENSE-LOGARITHMIC-ALPHABET-PADDED-EQUIVALENCE-v1；待接请求 0105-R07→0103；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化门控福利证明与参数互补八源溯源--审查.md",
+      "sha256": "e9456866cda488928a44cb50741a2ff05a30eb3be094d7754584a9fe6048b0a2",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R07→0103；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/门控菜单福利双原程序的证书舍入与冻结输入重放--计算.md",
+      "sha256": "2c2eaf3c7686decf35cb73ed9a03f7f00d3f844f42d8df390be70879b1cf3d7e",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R07→0103；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化门控菜单福利源判别与比例纠错最终审查--审查.md",
+      "sha256": "c8cd2d4ba0018eb7b6336da9cb0d6834604f176e638f3d3e48b94f5bf3805456",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R07→0103；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/私有填充对数调色板作者版本审查--审查.md",
+      "sha256": "37e3231dde40e603e12c547f4c2dffc93ebe2e0b5e21021d63bee30f88adac2b",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-DENSE-LOGARITHMIC-ALPHABET-PADDED-EQUIVALENCE-v1"
+      ],
+      "reason": "同一padding作者早期式号版本，无量词变化，不另建第二定理。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/等价/稠密小整数调度的统一改善等价--等价.md",
+      "sha256": "8155d56ba20cac4b7b05e221c17978a6dd1329cd172231d90caca0a3e266ca2b",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1"
+      ],
+      "reason": "本文件承载上述精确独立数学身份及全部证明，全文保留。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/三种正规形精确测试的输入与完整分类--计算.md",
+      "sha256": "30bef1cd26a9a88307b54d0971a48880cd096f27409aac937bdc41292a2ea9be",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-DENSE-GEOMETRIC-ALPHABET-EQUIVALENCE-v1",
+        "UM-DENSE-LOGARITHMIC-ALPHABET-PADDED-EQUIVALENCE-v1",
+        "UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1"
+      ],
+      "reason": "三正规形全部有限生成/完整分类与不同参数运行证据，未执行未知backend。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/完美完备随机源与拒绝种子证书--资源.md",
+      "sha256": "43c04c5ec88abcf44f2a68699a3065e6412458759d0caaa4799b072b76077a2a",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R08→0106；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/完美完备全种子拒绝证书最终读后与复杂度边界审查--审查.md",
+      "sha256": "6bd72580648672c97981ad2a48633413b23ca5cb19842015449a2cced113e815",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R08→0106；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/无目的地限制跨槽修复的全配对原审计--资源.md",
+      "sha256": "943bf97c0fe23e96904d641b929916839b90b41eba95dc867418e4498c53e8c6",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R10→0102-or-0099；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/真实凸分量固定槽的规范与独立原入口--资源.md",
+      "sha256": "b86caa2c416627440975782d5d0903553150bd4f0096858af300b08b0dcf799c",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R09→0102-or-0099,0105-R10→0102-or-0099；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/最小工作面与固定槽支撑有限审查--审查.md",
+      "sha256": "1cdd354ffea1e4a4e7c9beebe0c2ba3a799a852720386652c66fb306b9625b9a",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R11→0102-or-0099；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/最小工作面原入口的计数状态与整数独立核验--资源.md",
+      "sha256": "f441acd26da316b21c69589b4cc1b2b5f2e44d4cb0ed984b6868abd364584dca",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R11→0102-or-0099；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/padding唯一成本与同机守恒的实际审计入口--资源.md",
+      "sha256": "84cd7ca47ad36fb48f9d3f33794c2187ac10caff4f7fc04f37b6e3021b90b1b8",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R12→0102,0105-R13→0102；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/分流循环修复的冻结版本与审查先验--审查.md",
+      "sha256": "886d94effbbefb465a1593435501ad7a3a89deec664a2c47fc8e543961d8bce4",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R12→0102,0105-R13→0102,0105-R14→0102,0105-R15→0102；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/分流支持的三路枚举与严格降峰门槛--计算.md",
+      "sha256": "197e1104fcac0b90787d0c7e8b95e532a0bc4a74efaf164c1c1e2c0c507b3294",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R15→0102；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/循环批量菜单的精确实现与历史运行--资源.md",
+      "sha256": "1bc947e982bc1da885cba0b44ba4e985b1881bc9e624fab9965e425ac4970c85",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R14→0102；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/周期菜单修复与独立交叉核对--审查.md",
+      "sha256": "f3dd79e3430b0ead775fce2aa3629952fea627202a3af17c21d275984da41627",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R14→0102；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/周期峰值与稀疏流增量证据--审查.md",
+      "sha256": "07d8abb462c43a557ad9073d5198fb17315ffa6fae7bf316a4ef53f7a0a38c57",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-RATIO-GROUP-JOINT-SLOT-v1"
+      ],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。已有本批部分owner：UM-RATIO-GROUP-JOINT-SLOT-v1；待接请求 0105-R16→0095,0105-R17→0086,0105-R18→0086；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/独立菜单闭包与冻结提取交叉程序--资源.md",
+      "sha256": "3e8f2e8ba8d9facfe59dbbaa491b624f2b24cd1a74d359967af962cf236ceb42",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R14→0102；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/算法/精确组汇比例的共同出口联合槽--算法.md",
+      "sha256": "917894485b2d584a55d44f45048f3030637cfeb40dc3dd4a7f88801f45aabda6",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-RATIO-GROUP-JOINT-SLOT-v1",
+        "UM-RATIO-GROUP-PROMISE-APPROX-v1"
+      ],
+      "reason": "本文件承载上述精确独立数学身份及全部证明，全文保留。 末节κ-envelope/r可调扩展尚待0101精确owner实接，见receipt路由；本行objects仅本批r=1/2两个主Claim，不伪列未接受owner。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/障碍/给定目标路径的未知整数搜索--障碍.md",
+      "sha256": "5382e2f89ff3e70e1e6b5b75f57028312238b0b655be47ec2ef6443d3b4b1d2e",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-UNKNOWN-TARGET-PARTITION-SEARCH-OBSTRUCTION-v1"
+      ],
+      "reason": "本文件承载上述精确独立数学身份及全部证明，全文保留。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/算法/有限反馈边与安全叶消元的精确调度--算法.md",
+      "sha256": "7f017c12fb58ece67f5bad0136cd926762c75095ff5f2c1aa6bce7d34f29e113",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-INCIDENCE-FEEDBACK-EXACT-v1"
+      ],
+      "reason": "本文件承载上述精确独立数学身份及全部证明，全文保留。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/关联环秩审计的七个枚举查询与实现边界--计算.md",
+      "sha256": "52684ca7aade694668ed4068644ee9d1f5f0dc4fa3cafc4e99c9d473914e5d4d",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-INCIDENCE-FEEDBACK-EXACT-v1"
+      ],
+      "reason": "五矩阵七次brute查询，归关联反馈精确算法回归；不冒算法实现。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/低重数标签束的生产接口与原父点独立审计--资源.md",
+      "sha256": "4f9ed9e6fdceaf050476307fa669e4bb497fbd5e7b4cb6d15a1c98aeb97daa09",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R20→0097,0105-R21→0097,0105-R22→0097,0105-R23→0097；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/有向需求桥的根参数与双实现核验--计算.md",
+      "sha256": "0c053e172a13ad7adfc41af653a14811d0102674bae0d95005471886af9a88b5",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R23→0097；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/深度二半配额贪心与双独立审计入口--资源.md",
+      "sha256": "3e85942825213fefa800b220ea5b80f88d2298f2283f053ab4f8ff8866a55e10",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-DEPTH-TWO-HALF-v1"
+      ],
+      "reason": "本文件承载上述精确独立数学身份及全部证明，全文保留。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/深度二配额有限核验--审查.md",
+      "sha256": "0f13c5c8082763f0198e5d9660549c8b88683cc5b31a32f9172acfbea2f96747",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-DEPTH-TWO-HALF-v1"
+      ],
+      "reason": "三份有限half-quota证据归完整深度二贪心身份。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/KDM配额与原地拟阵指数边界两源精读--审查.md",
+      "sha256": "00889da1a785601949b18faf7c1c1d9a4d1cd2125f890b85556481f9b613cffa",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R24→0104,0105-R25→0112；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/批量全假前驱与两次正式范围的完整数学记录--审查.md",
+      "sha256": "716708163a4dc1ece4d5fe611ff31f8328f9707c5e4d702237a3adb14f44abe7",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R26→0103,0105-R27→0097,0105-R28→0097；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/私有子句全公式上界的双证明与分节认证--审查.md",
+      "sha256": "be79c0ef62c887b5e2b3192bc92dd5fd34405cf183b49871ae984c32046c705a",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R29→0097；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/私有查询返回的两种三半分析实例--证明.md",
+      "sha256": "160a4bc77633e9688dcd21c4c5a516b581c714ffc0d1f8018035b127ee17e00a",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-GENERAL-WEIGHTED-QUERY-RETURN-THREE-HALVES-EXCHANGE-v1"
+      ],
+      "reason": "本文件承载上述精确独立数学身份及全部证明，全文保留。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/半权直接共居的精确三半间隔与双计数--证明.md",
+      "sha256": "cf847a1013dc257b06362e11754881cdfc80229ce55af489aa5893b767484f5a",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-DIRECT-COHABITING-SAT-COMPILER-SHARP-THREE-HALVES-v1"
+      ],
+      "reason": "本文件承载上述精确独立数学身份及全部证明，全文保留。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/向量贪心填充叉与累计路径冻结审计--审查.md",
+      "sha256": "f82f811d2da1925880629339d81d862144d6688225d2384e9104b44ad1c9b955",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-DIRECT-COHABITING-SAT-COMPILER-SHARP-THREE-HALVES-v1"
+      ],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。已有本批部分owner：UM-DIRECT-COHABITING-SAT-COMPILER-SHARP-THREE-HALVES-v1；待接请求 0105-R12→0102,0105-R30→0102,0105-R31→0106；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/均匀线菜单原证与累计路径合并稿的版本审查--审查.md",
+      "sha256": "bb7f1680561ae39f2af050bbecd855cce3cee4f2f8b30869c628806bca59e4c7",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R31→0106,0105-R32→0094；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/直线集合打包与统一端口停车双源审查--审查.md",
+      "sha256": "3f1cc70001adac7bbbcdd5c0815a851a30fe0d92e2271cad8f534dbfcea9fe92",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "本材料已连续全文实读；实际未决仅外批精确身份/来源接证/主owner路由。待接请求 0105-R31→0106,0105-R32→0094,0105-R33→0106；具体数学范围、精确path/SHA/唯一section和待动作见本批receipt.pending_owner_routes；未声称已attachment。"
+    }
+  ],
+  "edge_files": []
+}
