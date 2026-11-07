@@ -1,0 +1,1615 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline.json",
+    "sha256": "5d5737ab6d07552b48925bdb936dae70490e8de1ee0da2b380bb2d16dd5690cf"
+  },
+  "objects": [
+    {
+      "object_id": "UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1",
+      "version": 1,
+      "title": "共同宏位置选择的独立集精确阈值",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "非空简单图G最大度Δ，k件单位宏可去全部顶点机，每机r件仅本机耗时h的私有任务，每边一件仅两端耗时h。若1≤α<2、rh=α−1、Δh≤1且k≥1，则OPT≤α iff 独立数a(G)≥k；YES恰OPT=α，NO至少α+min{1,h}。固定互异宏集合I时，边任务整数及分数通过量均为|E|−|E(G[I])|。",
+      "quantifiers": "对每个有限非空简单G、整数k≥1,r≥0及满足条件的有理α,h>0，量化全部实际调度；固定I公式另量化每个大小k的互异占位集合。",
+      "assumptions": [
+        "rh=α−1；Δh≤1；1≤α<2",
+        "所有宏端为全部顶点机，其他端按正文指定"
+      ],
+      "scope": "精确核心选择接口；固定度三给4/3或5/4局部gap，不给趋二hardness。",
+      "objections": "自足阈值/NO界为proved；NP困难性另条件于未在本批认证的最大度三独立集外部事实。k=0不保证YES恰α；r=0,h>1须保min截断。原1080报告第三实际参数是(q,r)=(4,2)，本登记不重跑。",
+      "body": {
+        "path": "archives/unrelated-machines/state/障碍/共同宏位置与边任务残余的独立集阈值--障碍.md",
+        "sha256": "32945317aa72690bf52a4e1641666a5faf9498fea0e6b0c64bea37bfec94566e"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/独立集宏残余审计的实际参数与端点补正--计算.md",
+          "sha256": "8c509b99a080f93b3c853ebc20abe854274208a5c860007e9c8f3b983261e8c7"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/common-big-residual-independent-set-threshold",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/questions/unrelated_machines/independent_set_big_residual_interface_obstruction.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/questions/unrelated_machines/independent_set_big_residual_interface_obstruction.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/independent_set_big_residual_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/independent_set_big_residual_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/independent_set_big_residual_audit.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/independent_set_big_residual_audit.py"
+      ]
+    },
+    {
+      "object_id": "UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1",
+      "version": 1,
+      "title": "冻结核心共同尺寸残余的精确未知峰值",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "给真实冻结负载f_i和共同尺寸q残余资格，先全机guard B≥max f_i，再以c_i=min(n,floor((B−f_i)/q))整数满流精确判定；候选{f_i+qt:0≤t≤n}二分求B*并输出原任务分配。不交资格组件可各有q_C，仍计孤立冻结机。",
+      "quantifiers": "对每个有限非空M、非负有理f、显式U及非空E_j、公共q>0，确定性总位多项式精确输出；空U/q=0另旁路。",
+      "assumptions": [
+        "核心固定不动",
+        "每个残余端用同一q，或机器侧互不相交的组件各同q_C"
+      ],
+      "scope": "给定核心后的精确修复与未知目标；不负责选择核心。",
+      "objections": "tiny代码只布尔谓词/穷举与候选扫描，没有完整二分及分配生产后端；1200链RecursionError限制原递归实现，不反驳迭代最大流数学算法。",
+      "body": {
+        "path": "archives/unrelated-machines/state/算法/冻结核心共同尺寸的未知阈值搜索--算法.md",
+        "sha256": "a04cd18e4b39b25f970a738741ca44871948439cb4da31574f27c65d5198aaa0"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/共同容量修复的判定与实现边界--审查.md",
+          "sha256": "38dad3d8600a40fcd8f898d2d4b0a3cbb5b5a1fc3ff7f8ff8ac2f4ba266ba460"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/冻结核心峰guard的原反例与精确容量判定--审查.md",
+          "sha256": "c06185627207af4b8459a22f21cc6c5d47e3299c5401074adf348f45f05f8ec2"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/共同容量与未知阈值的有限精确核验--计算.md",
+          "sha256": "86396e8eca5ca96dd10a1daf82f78b9fc06466aec44b1cd625df7c249ed9b8ac"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/门槛覆盖和冻结核心容量的实际恢复--资源.md",
+          "sha256": "a0b99d38171154092f21fdfae0b1562d1a101ba4107fd41039ad6bdb2c61e991"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/frozen-core-common-size-exact-unknown-threshold",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/unknown_target_common_size_exact_repair.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/unknown_target_common_size_guard_independent_review.md"
+      ]
+    },
+    {
+      "object_id": "UM-COMMON-SIZE-REOPEN-v1",
+      "version": 1,
+      "title": "给定冻结核心分数覆盖的支撑头部舍入",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "给合法分数覆盖x，ℓ_i=Σp_ijx_ij，M_i为正支撑最大处理件（空0）。若全机B≥f_i且ℓ_i+M_i≤B−f_i，则有序单位槽Hall匹配在证书总位长多项式内恢复全部原任务，核心不动、峰≤B。共同任务尺寸q_j可按支撑r_i(x)支付，统一qmax仅更保守的充分测试。",
+      "quantifiers": "对每个固定核心、残余矩阵、B及每份显式有理x满足全部列和1及头部不等式，构造实际τ。",
+      "assumptions": [
+        "全部实际冻结机器先guard",
+        "x仅合法端非零；每任务列和1"
+      ],
+      "scope": "给定证书的充分舍入合同；不声称搜索最佳核心或稀疏支持。",
+      "objections": "成熟正文给出所列域内的完整理由；本登记复用证明，未重新运行审计。外审及全球新颖性未认证；不声称一般UM统一次二目标已闭合。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/共同容量流的有序槽重开证书--定理.md",
+        "sha256": "7637a7510937f3bf722e80b814645c46232180e22fbb6af7554adb477aa7a96a"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/共同容量修复的判定与实现边界--审查.md",
+          "sha256": "38dad3d8600a40fcd8f898d2d4b0a3cbb5b5a1fc3ff7f8ff8ac2f4ba266ba460"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/共同容量与未知阈值的有限精确核验--计算.md",
+          "sha256": "86396e8eca5ca96dd10a1daf82f78b9fc06466aec44b1cd625df7c249ed9b8ac"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/门槛覆盖和冻结核心容量的实际恢复--资源.md",
+          "sha256": "a0b99d38171154092f21fdfae0b1562d1a101ba4107fd41039ad6bdb2c61e991"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/frozen-core-common-capacity-rounding-contract",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/common_size_reopen_capacity_flow.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/common_size_reopen_capacity_flow_review.md"
+      ]
+    },
+    {
+      "object_id": "M-5e3a6df0fff848f1bbea15a683d2aeb8",
+      "version": 1,
+      "title": "固定核心分数容量的机器价格充要证书",
+      "kind": "characterization",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "对残余合法矩阵及非负容量b，分数覆盖存在 iff 每个λ≥0有Σ_iλ_ib_i≥Σ_j min_{i∈E_j}(λ_ip_ij)。共同任务尺寸p_ij=q_j>0时等价有理需求最大流/全部子集加权Hall割。它只判分数容量；两机三件尺寸2容量(3,3)分数可行而整数峰4。",
+      "quantifiers": "对每个有限残余矩阵、非空E_j及b≥0，存在分数列覆盖 iff 对所有非负机器价格不等式成立。",
+      "assumptions": [
+        "每任务至少一合法端",
+        "容量非负，实际处理时间非负有理"
+      ],
+      "scope": "固定核心/容量下分数可行性与价格阻塞；不判重选核心后的全局无解。",
+      "objections": "成熟正文给出所列域内的完整理由；本登记复用证明，未重新运行审计。外审及全球新颖性未认证；不声称一般UM统一次二目标已闭合。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/共同容量流的有序槽重开证书--定理.md",
+        "sha256": "7637a7510937f3bf722e80b814645c46232180e22fbb6af7554adb477aa7a96a",
+        "section": "可分容量价格与共同尺寸最大流"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/定理/共同容量流的有序槽重开证书--定理.md",
+          "sha256": "7637a7510937f3bf722e80b814645c46232180e22fbb6af7554adb477aa7a96a",
+          "section": "反例、阻塞和用途"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/共同容量修复的判定与实现边界--审查.md",
+          "sha256": "38dad3d8600a40fcd8f898d2d4b0a3cbb5b5a1fc3ff7f8ff8ac2f4ba266ba460"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/共同容量与未知阈值的有限精确核验--计算.md",
+          "sha256": "86396e8eca5ca96dd10a1daf82f78b9fc06466aec44b1cd625df7c249ed9b8ac"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/门槛覆盖和冻结核心容量的实际恢复--资源.md",
+          "sha256": "a0b99d38171154092f21fdfae0b1562d1a101ba4107fd41039ad6bdb2c61e991"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/frozen-core-common-capacity-rounding-contract",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/common_size_reopen_capacity_flow.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/common_size_reopen_capacity_flow_review.md"
+      ]
+    },
+    {
+      "object_id": "UM-COMMON-MULTIPLIER-UNKNOWN-B-EXACT-v1",
+      "version": 1,
+      "title": "机器行常数残余时间的精确未知峰值",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "剥离零端任务后，若每参与机的所有残余资格端时间恒为s_i>0（等价组件p_ij=a_iq_C），则候选f_i+s_it的整数计数满流精确求冻结核心最优峰及原任务去向；不交组件合并并保所有孤立f_i。结构失败仅不适用。",
+      "quantifiers": "对每个给定核心及满足行常数条件的有限显式残余输入，确定性总位多项式精确求解；空残余和零端独立处理。",
+      "assumptions": [
+        "实际端时间同机恒定；s_i>0",
+        "核心不动；全机guard"
+      ],
+      "scope": "严格推广单共同尺寸；p_ij=a_iq_j而任务尺寸变化不在整数精确域。",
+      "objections": "成熟正文给出所列域内的完整理由；本登记复用证明，未重新运行审计。外审及全球新颖性未认证；不声称一般UM统一次二目标已闭合。",
+      "body": {
+        "path": "archives/unrelated-machines/state/算法/机器固定倍率残余任务的精确阈值--算法.md",
+        "sha256": "9db65509f77762981aafaf4ce1200be9b968cb7c83e68df7ed8363836b343039"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/共同容量修复的判定与实现边界--审查.md",
+          "sha256": "38dad3d8600a40fcd8f898d2d4b0a3cbb5b5a1fc3ff7f8ff8ac2f4ba266ba460"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/共同容量与未知阈值的有限精确核验--计算.md",
+          "sha256": "86396e8eca5ca96dd10a1daf82f78b9fc06466aec44b1cd625df7c249ed9b8ac"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/门槛覆盖和冻结核心容量的实际恢复--资源.md",
+          "sha256": "a0b99d38171154092f21fdfae0b1562d1a101ba4107fd41039ad6bdb2c61e991"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/machine-constant-residual-times-exact-threshold",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/unknown_target_common_multiplier_exact_repair.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/unknown_target_common_multiplier_review.md"
+      ]
+    },
+    {
+      "object_id": "UM-RANKJUMP-ONE-TRUE-SUPPORT-v1",
+      "version": 1,
+      "title": "真实正权one-hot支持的一维秩跳跃闭合与提取",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "真实有限不同one-hot原子支持S带处处正μ，给次数≤4有理矩。若rank M2=rank M1+1=R+1，则V2=R^S、|S|=R+1，可用有理共同乘法投影分裂在矩输入总位长多项式内精确恢复原子和正权；支持原子另承诺负载≤T时任一恢复原子给T调度。",
+      "quantifiers": "对每个真实有限正权支持及其显式四阶有理矩，若秩跳跃恰1则构造全部支持；负载结论另对每个有全支持≤T承诺的输入。",
+      "assumptions": [
+        "真实支持而非截断伪矩",
+        "严格正权；实际one-hot合法原子；显式四阶表"
+      ],
+      "scope": "给定真实矩的闭合/提取；不提供从普通矩阵寻找真实矩。",
+      "objections": "真实支持上的关系可逐点相乘；一般伪矩不能照搬。原稿未定义4−2√2支持常数不登记。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/真实正权支持的一维秩跳跃闭合--定理.md",
+        "sha256": "c48cb5a992f97eaa296d5398684a630fe830091f2058e906e8e8468302737bfc"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/门槛覆盖和冻结核心容量的实际恢复--资源.md",
+          "sha256": "a0b99d38171154092f21fdfae0b1562d1a101ba4107fd41039ad6bdb2c61e991"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/恢复闭包源程序与算法义务的核验--计算.md",
+          "sha256": "9266744f96712b6d45a14fcdddb9a49cb8ab94240fb9b82577ea080980b9d0cb"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/true-positive-support-rankjump-one-boolean-closure",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/questions/unrelated_machines/barrier_escape_obligations.md#真实有限支持下的一维-Boolean-闭合引理"
+      ]
+    },
+    {
+      "object_id": "M-d702c3e78d5648ac90a84fd6a8f02f7e",
+      "version": 1,
+      "title": "给定V2共同投影及负载localizer的可验原子恢复",
+      "kind": "certificate",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "给V2上与M2的V1乘法映射一致的有理P_e，精确满足Gram自伴、幂等、两两交换及每任务投影和I，再给每机TI−Σp_eP_e PSD，则共同谱分裂可提≤dimV2个正权原子，重建四阶内积并使每个原子负载≤T。此额外充分证书不由秩跳跃/普通C2免费保证。",
+      "quantifiers": "对每份显式矩表和满足全部代数及PSD条件的有理延伸证书，可确定性在证书总位长多项式内输出正权原子。",
+      "assumptions": [
+        "共同投影与输入M2乘法一致",
+        "每机V2负载localizer PSD；每任务one-hot投影和I"
+      ],
+      "scope": "没有真实支持先验时的额外给定可检验证书。",
+      "objections": "成熟正文给出所列域内的完整理由；本登记复用证明，未重新运行审计。外审及全球新颖性未认证；不声称一般UM统一次二目标已闭合。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/真实正权支持的一维秩跳跃闭合--定理.md",
+        "sha256": "c48cb5a992f97eaa296d5398684a630fe830091f2058e906e8e8468302737bfc",
+        "section": "可验证延伸证书与伪矩边界"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/门槛覆盖和冻结核心容量的实际恢复--资源.md",
+          "sha256": "a0b99d38171154092f21fdfae0b1562d1a101ba4107fd41039ad6bdb2c61e991"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/恢复闭包源程序与算法义务的核验--计算.md",
+          "sha256": "9266744f96712b6d45a14fcdddb9a49cb8ab94240fb9b82577ea080980b9d0cb"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/true-positive-support-rankjump-one-boolean-closure",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/questions/unrelated_machines/barrier_escape_obligations.md#真实有限支持下的一维-Boolean-闭合引理"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/fewer-macros-uniform-half-home-capacity-counterexample",
+      "version": 1,
+      "title": "宏数不足时统一home半容量不完备",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "T=1,δ=1/5，两home无sink，一宏在两home时间1，五件仅h0可用tiny各1/5；唯一T分配把宏给h1，真实OPT=1，而统一各home tiny容量1/2连分数也不可行。",
+      "quantifiers": "存在所列完整2×6有理矩阵满足宏>T/2、tiny≤δT且宏数少于home数，实际OPT1却半容量接口拒绝。",
+      "assumptions": [
+        "宏数1<home数2",
+        "五件tiny不可移且各1/5，非旧错误单件时间1"
+      ],
+      "scope": "否定删除全占用基数假设的额外余量接口；不否定实际调度存在。",
+      "objections": "成熟正文给出所列域内的完整理由；本登记复用证明，未重新运行审计。外审及全球新颖性未认证；不声称一般UM统一次二目标已闭合。",
+      "body": {
+        "path": "archives/unrelated-machines/state/反例/宏任务不足时统一半容量的失败--反例.md",
+        "sha256": "b0c2529fedbbf3ee78bc2bceafc48a33cec5b83ad1a510bfbac11524936621a6"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/恢复闭包源程序与算法义务的核验--计算.md",
+          "sha256": "9266744f96712b6d45a14fcdddb9a49cb8ab94240fb9b82577ea080980b9d0cb"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/异构宏三分割障碍与均匀余量有限审计--审查.md",
+          "sha256": "adbdbe7c472a97e4e4480fb7ea2b366e8555b6d2b0051d4e1a546360880f3c1a"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/异质宏残余审查来源去重登记--审查.md",
+          "sha256": "02cd7d43414e33ef26fd1fccee8572be2c7c0729b5bbd8b737196256e41433ac"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/重配置比较依赖与恢复纠错的精确核验--计算.md",
+          "sha256": "fd6214366576af695ae14dae792ed47da779e379de3be0623e8d4e590ff2bb96"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/fewer-macros-uniform-half-home-capacity-counterexample",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md#5-其他清点修复与限制",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/heterogeneous_macro_uniform_residual.py#audit_less_macro_boundary"
+      ]
+    },
+    {
+      "object_id": "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1",
+      "version": 1,
+      "title": "异质宏全占用与任意tiny的三半加δ调度",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "homes/sinks不交，宏仅home且|B|=|H|，所有宏有限边T/2<p≤T，任意tiny资格/逐边成本≤δT，0≤δ<1/2。若OPT≤T，任选宏完美匹配，tiny按home容量T/2、sink容量T的LP加ST，得home≤(3/2+δ)T、sink≤(1+δ)T的完整实际调度。",
+      "quantifiers": "对每固定δ∈[0,1/2)、每给定T>0及满足静态结构的显式输入，OPT≤T蕴含确定性位多项式构造成功；成功输出上述界。",
+      "assumptions": [
+        "恰一宏/home的基数及宏仅home",
+        "全部有限tiny端≤δT；宏有限端>T/2"
+      ],
+      "scope": "身份相关异质宏、私有资格/成本任意的受限算法；不生成一般分层。",
+      "objections": "成熟正文给出所列域内的完整理由；本登记复用证明，未重新运行审计。外审及全球新颖性未认证；不声称一般UM统一次二目标已闭合。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/异质宏残余审查来源去重登记--审查.md",
+        "sha256": "02cd7d43414e33ef26fd1fccee8572be2c7c0729b5bbd8b737196256e41433ac",
+        "section": "2.1 异质宏/tiny 结构定理"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/恢复闭包源程序与算法义务的核验--计算.md",
+          "sha256": "9266744f96712b6d45a14fcdddb9a49cb8ab94240fb9b82577ea080980b9d0cb"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/异构宏三分割障碍与均匀余量有限审计--审查.md",
+          "sha256": "adbdbe7c472a97e4e4480fb7ea2b366e8555b6d2b0051d4e1a546360880f3c1a"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md",
+          "sha256": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/异构微任务两汇点奇偶分割原程序--计算.md",
+          "sha256": "7321657f64c318ff2ec2daec31761c9132b4ccbabdebc6ba0f0ba4da18a80c73"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/任意资格三接口的来源与证明范围--审查.md",
+          "sha256": "4562de91a836862af533573912473e7b791f6b3856a24c46eeca04046ad9f874"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/heterogeneous-macro-residual-review-source-reconciliation",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/heterogeneous_macro_uniform_residual_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/heterogeneous_macro_uniform_residual_review.md",
+        "source:4a0005dd9bfe3e08bf35:research/reviews/unrelated_machines/heterogeneous_macro_uniform_residual_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/heterogeneous_macro_uniform_residual_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/heterogeneous_macro_3partition_barrier_audit.json"
+      ]
+    },
+    {
+      "object_id": "UM-HETEROGENEOUS-MACRO-PROMISE-v1",
+      "version": 1,
+      "title": "异质宏全占用的未知OPT承诺搜索",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "同一静态分层，承诺宏有限端>OPT/2、tiny有限端≤δOPT。F(t)只保宏p≤t并求home t/2/sink t的tiny LP，测试不再查宏>t/2或剪tiny>δt。单调网格首接受t*≤OPT，ST误差按δOPT付，输出≤(3/2+δ)OPT。",
+      "quantifiers": "每固定δ<1/2，对所有在真实正OPT处满足承诺的显式输入，不给OPT的确定性总位多项式算法；OPT0/空任务另直接零端分支。",
+      "assumptions": [
+        "|B|=|H|；宏仅home",
+        "关于真实OPT的全部端承诺"
+      ],
+      "scope": "未知尺度promise版本；F(t*)可先于真实整数OPT成功。",
+      "objections": "成熟正文给出所列域内的完整理由；本登记复用证明，未重新运行审计。外审及全球新颖性未认证；不声称一般UM统一次二目标已闭合。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/异质宏残余审查来源去重登记--审查.md",
+        "sha256": "02cd7d43414e33ef26fd1fccee8572be2c7c0729b5bbd8b737196256e41433ac",
+        "section": "2.2 未知 OPT 版本及量词边界"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/恢复闭包源程序与算法义务的核验--计算.md",
+          "sha256": "9266744f96712b6d45a14fcdddb9a49cb8ab94240fb9b82577ea080980b9d0cb"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md",
+          "sha256": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/异构微任务两汇点奇偶分割原程序--计算.md",
+          "sha256": "7321657f64c318ff2ec2daec31761c9132b4ccbabdebc6ba0f0ba4da18a80c73"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/任意资格三接口的来源与证明范围--审查.md",
+          "sha256": "4562de91a836862af533573912473e7b791f6b3856a24c46eeca04046ad9f874"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/heterogeneous-macro-residual-review-source-reconciliation",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/heterogeneous_macro_uniform_residual_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/heterogeneous_macro_uniform_residual_review.md",
+        "source:4a0005dd9bfe3e08bf35:research/reviews/unrelated_machines/heterogeneous_macro_uniform_residual_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/heterogeneous_macro_uniform_residual_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/heterogeneous_macro_3partition_barrier_audit.json"
+      ]
+    },
+    {
+      "object_id": "UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1",
+      "version": 1,
+      "title": "两汇点六物品的精确整数与分数分离",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "B13,K2,T26,δ1/4；一home独占宏26，两sink各13件单位填充，六item权(4,4,4,4,4,6)在home/sink等时。峰≤26调度等价子集和13；偶数性使其不存在，而各item两sink半分连填充恰26。",
+      "quantifiers": "存在该完整3机33任务输入，全部tiny≤δT、宏满足全占用，分数可行而整数T不可行。",
+      "assumptions": [
+        "item各在(B/4,B/2)；填充唯一端",
+        "本固定完整矩阵及不可拆任务"
+      ],
+      "scope": "精确有限反例存在性，proved；不将原有限scan升级一般NP困难性。",
+      "objections": "原CLI只核64子集，完整调度语义由成熟正文重建。旧JSON源码hash与当前7fadd…不同，保版本差异；无新运行。",
+      "body": {
+        "path": "archives/unrelated-machines/state/计算/异构微任务两汇点奇偶分割原程序--计算.md",
+        "sha256": "7321657f64c318ff2ec2daec31761c9132b4ccbabdebc6ba0f0ba4da18a80c73",
+        "section": "当前程序与完整有限输入"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/异构微任务两汇点奇偶分割原程序--计算.md",
+          "sha256": "7321657f64c318ff2ec2daec31761c9132b4ccbabdebc6ba0f0ba4da18a80c73",
+          "section": "为什么整数失败而分数通过"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/异构宏三分割障碍与均匀余量有限审计--审查.md",
+          "sha256": "adbdbe7c472a97e4e4480fb7ea2b366e8555b6d2b0051d4e1a546360880f3c1a"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/异质宏残余审查来源去重登记--审查.md",
+          "sha256": "02cd7d43414e33ef26fd1fccee8572be2c7c0729b5bbd8b737196256e41433ac"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md",
+          "sha256": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/heterogeneous-tiny-two-sink-parity-original-audit",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/heterogeneous_macro_3partition_barrier.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/heterogeneous_macro_3partition_barrier.py"
+      ]
+    },
+    {
+      "object_id": "M-36e9d6d07bed4754858f0f578f0ad101",
+      "version": 1,
+      "title": "强三分割输入到精确tiny残余补全的嵌入",
+      "kind": "reduction",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "固定δ>0选常数K≥2使1/(2K)<δ。对Σa=mB、B/4<a<B/2的3m item，取T=KB、一home宏T、m sink各(K−1)B单位填充，item各端时间a_j；整数T调度 iff item可分每桶和B（各恰三件），均匀分数拆分始终可行。",
+      "quantifiers": "每固定δ>0，对每个所列整数3PARTITION输入给精确等价；在B多项式有界的强受限编码中，显式任务生成量为输入多项式。",
+      "assumptions": [
+        "K固定常数；单位填充≤δT可通过相应尺度/合法参数处理",
+        "强受限编码B多项式有界方保证显式填充多项式"
+      ],
+      "scope": "精确接口的组合嵌入；外部强NP完全性并未在本批重新认证。",
+      "objections": "proved的是实际任务构造与iff；复杂性标签另依外部3PARTITION事实。δ极小时须保证单位填充满足tiny上界（可共同整数放大B），不能凭1143B有限脚本声称实现归约。",
+      "body": {
+        "path": "archives/unrelated-machines/state/计算/异构微任务两汇点奇偶分割原程序--计算.md",
+        "sha256": "7321657f64c318ff2ec2daec31761c9132b4ccbabdebc6ba0f0ba4da18a80c73",
+        "section": "与一般三分割归约及正面 ST 候选的关系"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/异质宏残余审查来源去重登记--审查.md",
+          "sha256": "02cd7d43414e33ef26fd1fccee8572be2c7c0729b5bbd8b737196256e41433ac"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md",
+          "sha256": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/heterogeneous-tiny-two-sink-parity-original-audit",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/heterogeneous_macro_3partition_barrier.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/heterogeneous_macro_3partition_barrier.py"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/native-multi-small-endpoint-two-flow-schedule",
+      "version": 1,
+      "title": "多小端原生任务的两个最小拥挤整数流",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "端时间{1,1/k},k≥2；纯unit任务的最小统一整数容量B与其余任务small图最小统一容量F分别用流求出。每fast任务至少q≥2个small端、每机至多k个small incidences时F≤ceil(k/q)，共同实际峰≤B+F/k；B≥1时比例≤1+F/(kB)。纯unit为空则OPT=F/k，因small-only峰<1而使用unit必≥1。",
+      "quantifiers": "对每个显式有限合法原矩阵及满足结构的整数k,q，确定性总位多项式输出全部原任务；空J取0不除OPT。",
+      "assumptions": [
+        "无预载；每任务至少一有限端",
+        "每fast任务≥q≥2个small端；每机small incidence≤k"
+      ],
+      "scope": "二进制k不展开k槽；相对真实OPT保证及全fast精确分支。",
+      "objections": "源proof引用的separate Exact未定位，但本成熟正文已明示并自足证明全部使用假设；没有软件运行。与逐机柔性密度γ版本不混。",
+      "body": {
+        "path": "archives/unrelated-machines/state/算法/多小端原生任务的双流实际调度--算法.md",
+        "sha256": "876f08ce9303eb2c464956510369acdb88b1fcb87dbe424e4ab05353109e89a4",
+        "section": "1. 输入与两个独立流"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/算法/多小端原生任务的双流实际调度--算法.md",
+          "sha256": "876f08ce9303eb2c464956510369acdb88b1fcb87dbe424e4ab05353109e89a4",
+          "section": "2. 全部原任务的实际调度与比率"
+        },
+        {
+          "path": "archives/unrelated-machines/state/算法/多小端原生任务的双流实际调度--算法.md",
+          "sha256": "876f08ce9303eb2c464956510369acdb88b1fcb87dbe424e4ab05353109e89a4",
+          "section": "3. 没有纯 unit 任务时精确"
+        },
+        {
+          "path": "archives/unrelated-machines/state/算法/多小端原生任务的双流实际调度--算法.md",
+          "sha256": "876f08ce9303eb2c464956510369acdb88b1fcb87dbe424e4ab05353109e89a4",
+          "section": "4. 总位复杂度、来源差异和接续"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/native-multi-small-endpoint-two-flow-schedule",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/native_small_arity_flow_source.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/native_small_arity_flow_source.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/sparse-partial-projection-scheduling-transfer-obligation",
+      "version": 1,
+      "title": "共同稀疏投影证书的近二实际调度转移义务",
+      "kind": "question",
+      "truth_status": "open",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "对固定δ∈(0,1)，待构造有限加权投影游戏G到合法有理UM P,T>0的总位多项式映射Fδ：val(G)=1须给完整实际OPT≤T调度；任意实际σ:C≤(2−δ)T须可生成全边共享顶点μ、dominated部分投影ξ、右支持L及覆盖β且β/L>γδ；并需相应source YES/NO困难性。三项同时成立才给条件近二gap。",
+      "quantifiers": "目标∀固定δ∈(0,1)∃Fδ及提取器，∀源G、∀完整低σ满足合同；当前Fδ、转移和联合source hardness均未闭合。",
+      "assumptions": [
+        "原UM所有机器/原任务共同计负载",
+        "全边共用μ，证书支持/位长多项式；严格β/L>γδ"
+      ],
+      "scope": "open归约接口；给证书decoder q2已proved，未证明本转移。",
+      "objections": "γδ≥1/R；若β=θ,L=θR只得1/R不能越NO。允许换轨但不能复制/漏任务。≤(2−δ)T与严格阈值对接须核端点；固定高度叶流与p份YES重组只按各自前提限制候选。",
+      "body": {
+        "path": "archives/unrelated-machines/state/问题/稀疏部分投影证书的近二调度转移--问题.md",
+        "sha256": "6b48892916b1d2dc6ba3c2f4248fcdb040164e22936d5a841e36d3227d2e16de"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/稀疏部分投影解码候选精确加强与开放承重义务审查--审查.md",
+          "sha256": "01d705cc76875fac82fc640112e94ef11091841fb8f7314414ea2bbc560f70a3",
+          "section": "3. 仍开放的调度承重义务"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/sparse-partial-projection-scheduling-transfer-obligation",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/questions/unrelated_machines/sparse_partial_projection_coupling_decoder_obligation.md#5-唯一仍缺的调度转移",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/questions/unrelated_machines/sparse_partial_projection_coupling_decoder_obligation.md#5-唯一仍缺的调度转移",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md"
+      ]
+    },
+    {
+      "object_id": "UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1",
+      "version": 1,
+      "title": "按home同质宏下任意私有小边LP与ST",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "宏数等home数、仅home，每home所有宏端同P_h且P_h>T/2。给T>0,δ<1，先完美匹配与P_h≤T guard；任意宏匹配保持核心P_h，私有资格任意、逐边成本≤δT，容量home T−P_h/sink T的LP加支撑头部ST得≤(1+δ)T。OPT≤T必成功，数学FAIL蕴含OPT>T。",
+      "quantifiers": "对每个给定T及满足结构的显式有理输入，确定性总位多项式返回FAIL或完整调度；保证方向按全部有限私有端小件条件。",
+      "assumptions": [
+        "|B|=|H|，宏仅home；每home宏时间与身份无关",
+        "全机P_h≤T guard；私有资格任意但p_ij≤δT"
+      ],
+      "scope": "精确残余容量保持依赖home同质性；不要求共同组资格。",
+      "objections": "成熟正文给出所列域内的完整理由；本登记复用证明，未重新运行审计。外审及全球新颖性未认证；不声称一般UM统一次二目标已闭合。",
+      "body": {
+        "path": "archives/unrelated-machines/state/算法/按home同质宏的任意私有边舍入--算法.md",
+        "sha256": "7c68cc57c1e0360ffb24a2c1f674dd726e36c4f42b992a728a2b1a25bf850451"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/任意资格三接口的来源与证明范围--审查.md",
+          "sha256": "4562de91a836862af533573912473e7b791f6b3856a24c46eeca04046ad9f874"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/home-homogeneous-macro-arbitrary-private-edge-rounding",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/questions/unrelated_machines/homogeneous_macro_private_edge_st_rounding_candidate.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/model_and_classical_barriers.md#3",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md"
+      ]
+    },
+    {
+      "object_id": "UM-HOMOGENEOUS-MACRO-PRIVATE-PROMISE-v1",
+      "version": 1,
+      "title": "按home同质宏的未知OPT承诺近似",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "同一静态结构，真实OPT处P_h>OPT/2、私有端≤δOPT，δ≤固定δbar<1。网格t只guard t≥max P、剪私有p>t及求残余LP，不测P>t/2或p≤δt。单调首接受t*≤OPT，ST加性按δOPT支付，得(1+δ)OPT。",
+      "quantifiers": "每固定δbar<1，对所有正OPT承诺实例不输入OPT总位多项式输出；零端/空任务先直接处理。",
+      "assumptions": [
+        "全部合法任务有有限端",
+        "按home宏同质及关于真实OPT的端规模承诺"
+      ],
+      "scope": "未知尺度版本；首接受不是精确OPT。",
+      "objections": "成熟正文给出所列域内的完整理由；本登记复用证明，未重新运行审计。外审及全球新颖性未认证；不声称一般UM统一次二目标已闭合。",
+      "body": {
+        "path": "archives/unrelated-machines/state/算法/按home同质宏的任意私有边舍入--算法.md",
+        "sha256": "7c68cc57c1e0360ffb24a2c1f674dd726e36c4f42b992a728a2b1a25bf850451",
+        "section": "不给OPT的承诺版本"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/任意资格三接口的来源与证明范围--审查.md",
+          "sha256": "4562de91a836862af533573912473e7b791f6b3856a24c46eeca04046ad9f874"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/home-homogeneous-macro-arbitrary-private-edge-rounding",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/questions/unrelated_machines/homogeneous_macro_private_edge_st_rounding_candidate.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/model_and_classical_barriers.md#3",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md"
+      ]
+    },
+    {
+      "object_id": "UM-WEIGHTED-GROUP-JOINT-SLOT-v1",
+      "version": 1,
+      "title": "共同资格等端私有组的加权出口联合槽",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "给T≥0,δ<1/2，宏仅home且每有限宏端>T/2；组J_h只去h及共同E_h，全部端时间w_j，W_h≤T,w_j≤δT。剪宏p>T，虚拟d=(W−T/2)+的同一宏/home/sink LP及联合整数槽同时选宏与接收端，前缀余量由home支付；OPT≤T必成功，输出home≤(3/2+δ)T,sink≤3T/2。",
+      "quantifiers": "对每给定阈值及满足静态组结构和端尺度的显式输入，确定性总位多项式数学算法返回FAIL或实际完整σ。",
+      "assumptions": [
+        "共同E_h及等端w_j",
+        "只保宏p≤T；d0允许零成本旁路"
+      ],
+      "scope": "给T的真实任务恢复；不取独立组见证事后拼接。",
+      "objections": "软件只给定精确a/y恢复，ValueError不认证OPT拒绝；没有通用LP或未知OPT后端。zero-target含0宏fixture只属更广API，非严格宏>T/2必要性域。",
+      "body": {
+        "path": "archives/unrelated-machines/state/算法/共同资格组的加权出口联合槽--算法.md",
+        "sha256": "494eef0d74c663d7049c65eb0a32b12696ec3a5c0168b47f85514305f8dfb15a"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/恢复闭包源程序与算法义务的核验--计算.md",
+          "sha256": "9266744f96712b6d45a14fcdddb9a49cb8ab94240fb9b82577ea080980b9d0cb"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/共同资格组的双实现与冻结范围--审查.md",
+          "sha256": "f12ceadba9b5b27bcd1a9da552311a57361d095dca21d75685a3c5455eb3e657"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/weighted-private-group-joint-slot-and-promise-approximation",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/weighted_group_joint_slot.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/weighted_group_joint_slot_rounding.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/weighted_group_joint_slot_review.md"
+      ]
+    },
+    {
+      "object_id": "UM-WEIGHTED-GROUP-PROMISE-APPROX-v1",
+      "version": 1,
+      "title": "共同资格加权组的单调未知OPT搜索",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "同一组结构在真实OPT处W_h≤OPT,w_j≤δOPT、宏有限端>OPT/2。测试t只查W≤t,w≤δt并剪宏p>t，d_h(t)下降、旁路增加，LP单调。分母积Q网格二分首接受t≤OPT，恢复峰≤(3/2+δ)OPT。",
+      "quantifiers": "每固定δ<1/2，对所有真实尺度承诺输入，不输入OPT的确定性总位多项式算法；OPT0/空任务直接零端。",
+      "assumptions": [
+        "唯一home共同资格等端组",
+        "关于真实OPT而非搜索t的严格宏下界"
+      ],
+      "scope": "单调LP搜索；与门槛FPTAS子集跳变的一侧完备搜索不同。",
+      "objections": "成熟正文给出所列域内的完整理由；本登记复用证明，未重新运行审计。外审及全球新颖性未认证；不声称一般UM统一次二目标已闭合。",
+      "body": {
+        "path": "archives/unrelated-machines/state/算法/共同资格组的加权出口联合槽--算法.md",
+        "sha256": "494eef0d74c663d7049c65eb0a32b12696ec3a5c0168b47f85514305f8dfb15a",
+        "section": "未知OPT：单调测试与位复杂度"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/恢复闭包源程序与算法义务的核验--计算.md",
+          "sha256": "9266744f96712b6d45a14fcdddb9a49cb8ab94240fb9b82577ea080980b9d0cb"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/共同资格组的双实现与冻结范围--审查.md",
+          "sha256": "f12ceadba9b5b27bcd1a9da552311a57361d095dca21d75685a3c5455eb3e657"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/weighted-private-group-joint-slot-and-promise-approximation",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/weighted_group_joint_slot.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/weighted_group_joint_slot_rounding.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/weighted_group_joint_slot_review.md"
+      ]
+    },
+    {
+      "object_id": "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1",
+      "version": 1,
+      "title": "全占用同宏后逐任务资格共同量子精确调度",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "宏恰等home数、全部home可用且同p,T/2<p≤T；私有j只去自身home及逐件E_j，端时间同u>0。任意宏双射无损冻结p，以home件数floor((T−p)/u)、sink件数floor(T/u)整数满流精确判T；等价每home恰外送max(0,n_h−floor((T−p)/u))件。输出完整T调度且FAIL iff无T调度。",
+      "quantifiers": "对每给定T的上述显式输入，确定性总位多项式精确判定/构造；逐件E_j可空、交叠或不交。",
+      "assumptions": [
+        "宏全资格同p且|B|=|H|",
+        "全部私有有限端共同u；没有取组E交集"
+      ],
+      "scope": "冻结共同尺寸定理的宏全占用应用。",
+      "objections": "沿旧EXACT-EQUAL-QUANTUM-ELIGIBILITY同义身份；原所谓flow脚本实为重复枚举。现有两真正流7162输入仅有限检查，不替充要证明。",
+      "body": {
+        "path": "archives/unrelated-machines/state/算法/全占用同宏下任意资格量子的精确调度--算法.md",
+        "sha256": "02a61fd5687b4039fedcf7a1353d3a314106012832c79e039fbb4781ebae712f"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/任意资格三接口的来源与证明范围--审查.md",
+          "sha256": "4562de91a836862af533573912473e7b791f6b3856a24c46eeca04046ad9f874"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/任意资格量子流的两种实现与原枚举边界--计算.md",
+          "sha256": "b559758d65344c0879dbed924aeaaba18d2a5a35bfeb0b134617c8db3ffb9688"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/full-occupancy-equal-macro-arbitrary-eligibility-quantum-exact",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/questions/unrelated_machines/equal_quantum_arbitrary_eligibility_flow_candidate.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/equal_quantum_arbitrary_eligibility_flow.py"
+      ]
+    },
+    {
+      "object_id": "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1",
+      "version": 1,
+      "title": "OPT小于两倍宏时间时的共同量子原问题精确搜索",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "不给T，同一静态全占用同p量子结构、H非空p>0。承诺OPT<2p时原最优无损冻结一宏/home；S={p+ku:0≤k≤nmax}∪{ku:0≤k≤N}∩[p,2p)首满流值恰原OPT。若区间无接受，确有OPT≥2p；不说一般无调度。",
+      "quantifiers": "对每个上述显式输入，求出区间内精确最优/实际σ或证明OPT≥2p；在promise域必给原OPT。",
+      "assumptions": [
+        "宏在全部home同p>0；H非空",
+        "OPT<2p为精确成功域，u>0；空H/u0分支另列"
+      ],
+      "scope": "原问题精确最优的promise搜索；候选O(N)，不按数值T/u展开。",
+      "objections": "成熟正文给出所列域内的完整理由；本登记复用证明，未重新运行审计。外审及全球新颖性未认证；不声称一般UM统一次二目标已闭合。",
+      "body": {
+        "path": "archives/unrelated-machines/state/算法/全占用同宏下任意资格量子的精确调度--算法.md",
+        "sha256": "02a61fd5687b4039fedcf7a1353d3a314106012832c79e039fbb4781ebae712f",
+        "section": "未知OPT及其承诺边界"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/任意资格三接口的来源与证明范围--审查.md",
+          "sha256": "4562de91a836862af533573912473e7b791f6b3856a24c46eeca04046ad9f874"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/任意资格量子流的两种实现与原枚举边界--计算.md",
+          "sha256": "b559758d65344c0879dbed924aeaaba18d2a5a35bfeb0b134617c8db3ffb9688"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/full-occupancy-equal-macro-arbitrary-eligibility-quantum-exact",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/questions/unrelated_machines/equal_quantum_arbitrary_eligibility_flow_candidate.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/equal_quantum_arbitrary_eligibility_flow.py"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/fixed-job-exact-completion-subset-sum-embedding",
+      "version": 1,
+      "title": "固定任务后两机精确补全的SUBSET-SUM嵌入",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "正整数a总和W、0<B≤W/2。两机容量C=W−B，固定任务h只在i时间W−2B≥0，其余a_j在两机等时。完整C补全 iff 分给i的子集和B；两机容量分别逼Σ_Sa≤B与≥B。",
+      "quantifiers": "对每个非平凡SUBSET-SUM输入（B>W/2先补集），多项式位长构造精确iff。",
+      "assumptions": [
+        "任务不可拆，h固定i",
+        "固定件允许零时间，未必>C/2"
+      ],
+      "scope": "精确固定任务接口的组合嵌入；非强NP/一般近二困难性。",
+      "objections": "成熟正文给出所列域内的完整理由；本登记复用证明，未重新运行审计。外审及全球新颖性未认证；不声称一般UM统一次二目标已闭合。",
+      "body": {
+        "path": "archives/unrelated-machines/state/障碍/固定任务后的精确容量补全--障碍.md",
+        "sha256": "7e84f1cb6b02691d6cb9511ea613310c4c335ad40444ef007710a8f05d586f81"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/门槛覆盖和冻结核心容量的实际恢复--资源.md",
+          "sha256": "a0b99d38171154092f21fdfae0b1562d1a101ba4107fd41039ad6bdb2c61e991"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/恢复闭包源程序与算法义务的核验--计算.md",
+          "sha256": "9266744f96712b6d45a14fcdddb9a49cb8ab94240fb9b82577ea080980b9d0cb"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/fixed-job-exact-completion-subset-sum-embedding",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/questions/unrelated_machines/barrier_escape_obligations.md#固定重边后的-knapsack-cover-义务"
+      ]
+    },
+    {
+      "object_id": "UM-THRESHOLD-COVER-JOINT-SLOT-v1",
+      "version": 1,
+      "title": "门槛覆盖的同一个原任务见证联合槽恢复",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "宏仅home，全部有限宏端T/2<p≤T；唯一home私有组共同E_h、等端w，W≤T,w≤δT。τ∈[1/2,1),η>0，取d=(W−τT)+及(1+η)最小重量精确覆盖X_h。用该同X成本e_h的宏/home/sink联合LP与整数槽，输出峰≤R(τ)T，R=max{1+τ,(1+η)(2−τ+δ)}；OPT≤T必接受。真实OPT尺度promise下，上侧全接受的非单调网格仍得R OPT。δ+η+δη<1时优化R*=(1+η)(3+δ)/(2+η)<2。",
+      "quantifiers": "给任意满足结构的显式输入、T>0及参数，数学算法总位poly(input,1/η)返回实际σ或可靠域内FAIL；未知OPT另在全部真尺度承诺下不输入OPT。",
+      "assumptions": [
+        "共同资格与等端成本；恢复LP计费的同一个X_h",
+        "宏严格大于T/2；未知搜索不检查宏>t/2；上侧t≥OPT全接受"
+      ],
+      "scope": "结构给定的给T及一侧完备未知尺度算法；现行软件为给定a/y覆盖与恢复。",
+      "objections": "低于OPT的FPTAS/LP接受可非单调，但拒绝必在真OPT以下，二分哨兵保持low<K*。软件错误见证拒绝不是OPT拒绝；无通用LP/零外层/未知OPT端到端实现。",
+      "body": {
+        "path": "archives/unrelated-machines/state/算法/门槛覆盖的同见证联合槽恢复--算法.md",
+        "sha256": "6cfbd620e67e6cd96fcdd61f26cb31b26407d9e3b7c0260c97ddd5870ae3db51"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/门槛覆盖和冻结核心容量的实际恢复--资源.md",
+          "sha256": "a0b99d38171154092f21fdfae0b1562d1a101ba4107fd41039ad6bdb2c61e991"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/恢复闭包源程序与算法义务的核验--计算.md",
+          "sha256": "9266744f96712b6d45a14fcdddb9a49cb8ab94240fb9b82577ea080980b9d0cb"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/重配置比较依赖与恢复纠错的精确核验--计算.md",
+          "sha256": "fd6214366576af695ae14dae792ed47da779e379de3be0623e8d4e590ff2bb96"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/threshold-cover-same-witness-joint-slot-recovery",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/questions/unrelated_machines/barrier_escape_obligations.md#新一轮可重开共同容量候选与支撑扩张边界",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/threshold_cover_recovery.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/threshold_cover_recovery_independent.py"
+      ]
+    },
+    {
+      "object_id": "M-99a53b4eb072418a8a291d8582a89646",
+      "version": 1,
+      "title": "保原覆盖下界的最小重量覆盖FPTAS",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "对非负有理权及需求d，返回原子集X满足d≤e(X)≤(1+η)e*，总位复杂度poly(input,1/η)。UB同时比较最小≥d单件与小于d项目首次越d前缀，e*≤UB≤2e*；ζ=ηUB/(2n)，ceil缩放成本DP在每成本保最大精确原覆盖量及回溯，覆盖约束不缩放。",
+      "quantifiers": "对每份有限非负有理权、d≥0与η>0，总量不足准确报告无覆盖；d0/零权/空集独立处理。",
+      "assumptions": [
+        "原任务0/1不可拆",
+        "η成本按1/η，非log(1/η)"
+      ],
+      "scope": "独立可复用覆盖算法；同覆盖恢复算法调用它而非精确SUBSET-SUM oracle。",
+      "objections": "成熟正文给出所列域内的完整理由；本登记复用证明，未重新运行审计。外审及全球新颖性未认证；不声称一般UM统一次二目标已闭合。",
+      "body": {
+        "path": "archives/unrelated-machines/state/算法/门槛覆盖的同见证联合槽恢复--算法.md",
+        "sha256": "6cfbd620e67e6cd96fcdd61f26cb31b26407d9e3b7c0260c97ddd5870ae3db51",
+        "section": "保精确覆盖的最小重量FPTAS"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/门槛覆盖和冻结核心容量的实际恢复--资源.md",
+          "sha256": "a0b99d38171154092f21fdfae0b1562d1a101ba4107fd41039ad6bdb2c61e991"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/恢复闭包源程序与算法义务的核验--计算.md",
+          "sha256": "9266744f96712b6d45a14fcdddb9a49cb8ab94240fb9b82577ea080980b9d0cb"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/重配置比较依赖与恢复纠错的精确核验--计算.md",
+          "sha256": "fd6214366576af695ae14dae792ed47da779e379de3be0623e8d4e590ff2bb96"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/threshold-cover-same-witness-joint-slot-recovery",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/questions/unrelated_machines/barrier_escape_obligations.md#新一轮可重开共同容量候选与支撑扩张边界",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/threshold_cover_recovery.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/threshold_cover_recovery_independent.py"
+      ]
+    },
+    {
+      "object_id": "M-031b8ef7202a4527b45d47605c6ac93a",
+      "version": 1,
+      "title": "换掉LP同覆盖为固定前缀导致无界真实出口",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "每整数r≥1：5r home共sink，s=1/(10r)，本home强制宏1/2+s；私有顺序一件1/5及3r+1件s，T1,τ1/2。正确同覆盖一小件使LP总费1/2，而固定前缀每组1/5令sink负载r。真实OPT=1；同覆盖修复sink1/2/home1+s。",
+      "quantifiers": "对所有整数r≥1的显式实际矩阵，存在所列LP见证及OPT1，错误前缀输出无界于T；每个r任务量显式多项式。",
+      "assumptions": [
+        "每组共同一个真实sink且等端重量",
+        "固定原顺序前缀替代LP计费同覆盖"
+      ],
+      "scope": "精确反例族否定该恢复替换；不否定加权组固定τ=1/2+δ另付余量的算法。",
+      "objections": "成熟正文给出所列域内的完整理由；本登记复用证明，未重新运行审计。外审及全球新颖性未认证；不声称一般UM统一次二目标已闭合。",
+      "body": {
+        "path": "archives/unrelated-machines/state/算法/门槛覆盖的同见证联合槽恢复--算法.md",
+        "sha256": "6cfbd620e67e6cd96fcdd61f26cb31b26407d9e3b7c0260c97ddd5870ae3db51",
+        "section": "撤回的前缀恢复与真实无界误差"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/门槛覆盖和冻结核心容量的实际恢复--资源.md",
+          "sha256": "a0b99d38171154092f21fdfae0b1562d1a101ba4107fd41039ad6bdb2c61e991"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/恢复闭包源程序与算法义务的核验--计算.md",
+          "sha256": "9266744f96712b6d45a14fcdddb9a49cb8ab94240fb9b82577ea080980b9d0cb"
+        },
+        {
+          "path": "archives/unrelated-machines/state/计算/重配置比较依赖与恢复纠错的精确核验--计算.md",
+          "sha256": "fd6214366576af695ae14dae792ed47da779e379de3be0623e8d4e590ff2bb96"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/threshold-cover-same-witness-joint-slot-recovery",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/questions/unrelated_machines/barrier_escape_obligations.md#新一轮可重开共同容量候选与支撑扩张边界",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/threshold_cover_recovery.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/threshold_cover_recovery_independent.py"
+      ]
+    },
+    {
+      "object_id": "M-b4a6d0d0b41c4ef2b84217f7ac101ea1",
+      "version": 1,
+      "title": "私有host真实pin开底双树的精确三半profile",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "固定一变量k4,h3，42内部机+128私有host，169树job及128唯一端pin。正轨/负轨全开放各为不同P且OPT1；仅负轨digit均<2的8host开放时真实OPT3/2：二叉pruned树达到，全闭分支不可激活迫负根留两小边给下界。",
+      "quantifiers": "存在正文完整固定显式矩阵/原任务证书；对源全部128赋值均核NO；量词仅所述固定实例及解析下界。",
+      "assumptions": [
+        "固定k4,h3及完整真实原资格/任务",
+        "共享机器全部共同计负载；不可复制/漏任务"
+      ],
+      "scope": "三个不同含pin完整矩阵；0pin仍是必须安置原任务，不能当同P多YES",
+      "objections": "成熟正文给出所列域内的完整理由；本登记复用证明，未重新运行审计。外审及全球新颖性未认证；不声称一般UM统一次二目标已闭合。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+        "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+        "section": "私有host与真实0/1 pin：三个不同原P"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/original/unit_readout_two_tree_actual_certificates.json",
+          "sha256": "b44ee0f44485f2e1497b87338106d642beaa85b96196a810c569b4d120febefd"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/unit-configuration-row-and-opened-tree-originals",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/unit_readout_configuration_row_decomposition.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/unit_readout_two_tree_certificates.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/unit_readout_two_tree_independent.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:examples/unrelated_machines/unit_readout_configuration_threshold_examples.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:examples/unrelated_machines/unit_readout_two_tree_actual_certificates.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md"
+      ]
+    },
+    {
+      "object_id": "M-c663aecb01df4eefa9ed35be826cfbab",
+      "version": 1,
+      "title": "七变量全cube源NO的单位外机实际三半逃逸",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "固定k4,h3、七变量、全部128七元masks，各clause七occurrences容量4。任意源赋值有all-true clause，源阈值6亦NO；特定叶接线下每变量负轨二叉pruned树外送8叶、共同clause≤4，给806机1183任务完整实际C≤3/2。严格C1会恢复源阈值4赋值故不存在C1；未求真实OPT。",
+      "quantifiers": "存在正文完整固定显式矩阵/原任务证书；对源全部128赋值均核NO；量词仅所述固定实例及解析下界。",
+      "assumptions": [
+        "固定k4,h3及完整真实原资格/任务",
+        "共享机器全部共同计负载；不可复制/漏任务"
+      ],
+      "scope": "无pin单位外端完整矩阵的源NO但低σ精确见证；亦在arity7≤2A半密度域",
+      "objections": "成熟正文给出所列域内的完整理由；本登记复用证明，未重新运行审计。外审及全球新颖性未认证；不声称一般UM统一次二目标已闭合。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+        "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+        "section": "七变量全cube：源NO却有实际三半"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/original/unit_readout_two_tree_actual_certificates.json",
+          "sha256": "b44ee0f44485f2e1497b87338106d642beaa85b96196a810c569b4d120febefd"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/unit-configuration-row-and-opened-tree-originals",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/unit_readout_configuration_row_decomposition.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/unit_readout_two_tree_certificates.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/unit_readout_two_tree_independent.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:examples/unrelated_machines/unit_readout_configuration_threshold_examples.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:examples/unrelated_machines/unit_readout_two_tree_actual_certificates.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md"
+      ]
+    },
+    {
+      "object_id": "M-1b7aae02648540af8d4986eb762adaae",
+      "version": 1,
+      "title": "七变量全cube源NO的四分之一外端逃逸",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "同七变量cube接线但每clause一机、叶外时间1/4，422机1183job。源NO仍成立，同一56叶外送及每clause≤4给全部真实外负载≤1、内部≤3/2的完整σ。无C1但未求1与3/2间OPT；不是单位外端模型。",
+      "quantifiers": "存在正文完整固定显式矩阵/原任务证书；对源全部128赋值均核NO；量词仅所述固定实例及解析下界。",
+      "assumptions": [
+        "固定k4,h3及完整真实原资格/任务",
+        "共享机器全部共同计负载；不可复制/漏任务"
+      ],
+      "scope": "外端时间1/4的不同原矩阵；不套unit森林iff",
+      "objections": "成熟正文给出所列域内的完整理由；本登记复用证明，未重新运行审计。外审及全球新颖性未认证；不声称一般UM统一次二目标已闭合。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+        "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+        "section": "七变量全cube：源NO却有实际三半"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/original/unit_readout_two_tree_actual_certificates.json",
+          "sha256": "b44ee0f44485f2e1497b87338106d642beaa85b96196a810c569b4d120febefd"
+        }
+      ],
+      "sources": [
+        "unrelated-machines/unit-configuration-row-and-opened-tree-originals",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/unit_readout_configuration_row_decomposition.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/unit_readout_two_tree_certificates.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/unit_readout_two_tree_independent.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:examples/unrelated_machines/unit_readout_configuration_threshold_examples.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:examples/unrelated_machines/unit_readout_two_tree_actual_certificates.json",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md"
+      ]
+    },
+    {
+      "object_id": "UM-SMALL-DENSITY-FLOW-BARRIER-v1",
+      "version": 1,
+      "title": "逐机多小端柔性密度的容量流实际调度",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限显式非负二进制有理不相关机；不可拆任务、全部真实机器共同计Cmax；本对象另有下列受限结构。",
+      "statement": "端时间仅1或1/k，k≥2。Q是无small端的纯unit任务，R为其余任务；d_j为small端数，每机small incidences t_i≤k，其中d_j≥2的个数b_i≥γt_i。若Q有容量1完整匹配，令ρ_i=Σ_{j:i∈S_j}1/d_j，small图机器整数容量ceil(ρ_i)满流给全部R实际端；与Q匹配叠加峰≤1+max_i ceil(ρ_i)/k≤2−floor(γk/2)/k。若Q无容量1匹配，则真实OPT≥2。Q空去前导1但不自动给比例。若柔性项改d_j≥D，则ρ_i≤[1−γ(1−1/D)]k。",
+      "quantifiers": "对每整数k≥2、每个有限显式{1,1/k}原矩阵及γ∈[0,1]满足逐机密度，确定性总位多项式给完整调度或Q匹配失败的OPT≥2证书；D推广对每整数D≥2。",
+      "assumptions": [
+        "每机small incidence≤k；逐机而非全局平均柔性密度",
+        "每任务合法端显式；两流覆盖互不相交原任务，所有共享机器计负载"
+      ],
+      "scope": "受限单尺度密度flow算法与近二编译结构障碍；gamma固定不代表小k取整余量必正，精确界保floor。",
+      "objections": "一般公式及实际整数恢复由成熟正文证明；有限程序不造独立新定理，未新运行。d_j=1的任务仍可另有unit端；Q空绝对界不冒充相对OPT。固定正gamma且k足够时给严格次二结构性排除，非一般UM困难性或算法。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/多小端密度流障碍与单位读出校准槽双源审查--审查.md",
+        "sha256": "ccf410a29e660aba575bf8c0df61a2b29ddd0e1ede7f68b8c1ee1203153c7a39",
+        "section": "一、多小端密度的容量流障碍"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        }
+      ],
+      "sources": [
+        "UM-SMALL-DENSITY-FLOW-BARRIER-v1"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/计算/五机树Markov主原程序的顶层枚举与完整边际--计算.md",
+      "sha256": "7f36878001d8ef587bb721ea013902c48de9c3ec642530cc2f0c9762e4754fd3",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-TREE-MARKOV-COMPLETION-NO-v1,M-02f7731efe924dbd8f703b29440b4d1f；不创建平行同ID主记录。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/独立集宏残余审计的实际参数与端点补正--计算.md",
+      "sha256": "8c509b99a080f93b3c853ebc20abe854274208a5c860007e9c8f3b983261e8c7",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/障碍/共同宏位置与边任务残余的独立集阈值--障碍.md",
+      "sha256": "32945317aa72690bf52a4e1641666a5faf9498fea0e6b0c64bea37bfec94566e",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/占位基面与残余边缺口有限审查--审查.md",
+      "sha256": "442194b369cd965ca8402011ba969a306b66f8c04fabcbc3e4d85ad5285c3951",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1,UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1,UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1,UM-RESIDUAL-THROUGHPUT-LATTICE-v1,UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1；不创建平行同ID主记录。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/算法/冻结核心共同尺寸的未知阈值搜索--算法.md",
+      "sha256": "a04cd18e4b39b25f970a738741ca44871948439cb4da31574f27c65d5198aaa0",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/共同容量流的有序槽重开证书--定理.md",
+      "sha256": "7637a7510937f3bf722e80b814645c46232180e22fbb6af7554adb477aa7a96a",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-COMMON-SIZE-REOPEN-v1",
+        "M-5e3a6df0fff848f1bbea15a683d2aeb8"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-COMMON-SIZE-REOPEN-v1,M-5e3a6df0fff848f1bbea15a683d2aeb8。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/共同容量修复的判定与实现边界--审查.md",
+      "sha256": "38dad3d8600a40fcd8f898d2d4b0a3cbb5b5a1fc3ff7f8ff8ac2f4ba266ba460",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1",
+        "UM-COMMON-SIZE-REOPEN-v1",
+        "M-5e3a6df0fff848f1bbea15a683d2aeb8",
+        "UM-COMMON-MULTIPLIER-UNKNOWN-B-EXACT-v1"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1,UM-COMMON-SIZE-REOPEN-v1,M-5e3a6df0fff848f1bbea15a683d2aeb8,UM-COMMON-MULTIPLIER-UNKNOWN-B-EXACT-v1。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/冻结核心峰guard的原反例与精确容量判定--审查.md",
+      "sha256": "c06185627207af4b8459a22f21cc6c5d47e3299c5401074adf348f45f05f8ec2",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/算法/机器固定倍率残余任务的精确阈值--算法.md",
+      "sha256": "9db65509f77762981aafaf4ce1200be9b968cb7c83e68df7ed8363836b343039",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-COMMON-MULTIPLIER-UNKNOWN-B-EXACT-v1"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-COMMON-MULTIPLIER-UNKNOWN-B-EXACT-v1。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/共同容量与未知阈值的有限精确核验--计算.md",
+      "sha256": "86396e8eca5ca96dd10a1daf82f78b9fc06466aec44b1cd625df7c249ed9b8ac",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1",
+        "UM-COMMON-SIZE-REOPEN-v1",
+        "M-5e3a6df0fff848f1bbea15a683d2aeb8",
+        "UM-COMMON-MULTIPLIER-UNKNOWN-B-EXACT-v1"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1,UM-COMMON-SIZE-REOPEN-v1,M-5e3a6df0fff848f1bbea15a683d2aeb8,UM-COMMON-MULTIPLIER-UNKNOWN-B-EXACT-v1。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/门槛覆盖和冻结核心容量的实际恢复--资源.md",
+      "sha256": "a0b99d38171154092f21fdfae0b1562d1a101ba4107fd41039ad6bdb2c61e991",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1",
+        "UM-COMMON-SIZE-REOPEN-v1",
+        "M-5e3a6df0fff848f1bbea15a683d2aeb8",
+        "UM-COMMON-MULTIPLIER-UNKNOWN-B-EXACT-v1",
+        "UM-RANKJUMP-ONE-TRUE-SUPPORT-v1",
+        "M-d702c3e78d5648ac90a84fd6a8f02f7e",
+        "unrelated-machines/fixed-job-exact-completion-subset-sum-embedding",
+        "UM-THRESHOLD-COVER-JOINT-SLOT-v1",
+        "M-99a53b4eb072418a8a291d8582a89646",
+        "M-031b8ef7202a4527b45d47605c6ac93a"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1,UM-COMMON-SIZE-REOPEN-v1,M-5e3a6df0fff848f1bbea15a683d2aeb8,UM-COMMON-MULTIPLIER-UNKNOWN-B-EXACT-v1,UM-RANKJUMP-ONE-TRUE-SUPPORT-v1,M-d702c3e78d5648ac90a84fd6a8f02f7e,unrelated-machines/fixed-job-exact-completion-subset-sum-embedding,UM-THRESHOLD-COVER-JOINT-SLOT-v1,M-99a53b4eb072418a8a291d8582a89646,M-031b8ef7202a4527b45d47605c6ac93a。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-C2-PREFIX-CONDITIONING-DEGREE-v1；不创建平行同ID主记录。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/真实正权支持的一维秩跳跃闭合--定理.md",
+      "sha256": "c48cb5a992f97eaa296d5398684a630fe830091f2058e906e8e8468302737bfc",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-RANKJUMP-ONE-TRUE-SUPPORT-v1",
+        "M-d702c3e78d5648ac90a84fd6a8f02f7e"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-RANKJUMP-ONE-TRUE-SUPPORT-v1,M-d702c3e78d5648ac90a84fd6a8f02f7e。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/恢复闭包源程序与算法义务的核验--计算.md",
+      "sha256": "9266744f96712b6d45a14fcdddb9a49cb8ab94240fb9b82577ea080980b9d0cb",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-RANKJUMP-ONE-TRUE-SUPPORT-v1",
+        "M-d702c3e78d5648ac90a84fd6a8f02f7e",
+        "unrelated-machines/fewer-macros-uniform-half-home-capacity-counterexample",
+        "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1",
+        "UM-HETEROGENEOUS-MACRO-PROMISE-v1",
+        "UM-WEIGHTED-GROUP-JOINT-SLOT-v1",
+        "UM-WEIGHTED-GROUP-PROMISE-APPROX-v1",
+        "unrelated-machines/fixed-job-exact-completion-subset-sum-embedding",
+        "UM-THRESHOLD-COVER-JOINT-SLOT-v1",
+        "M-99a53b4eb072418a8a291d8582a89646",
+        "M-031b8ef7202a4527b45d47605c6ac93a"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-RANKJUMP-ONE-TRUE-SUPPORT-v1,M-d702c3e78d5648ac90a84fd6a8f02f7e,unrelated-machines/fewer-macros-uniform-half-home-capacity-counterexample,UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1,UM-HETEROGENEOUS-MACRO-PROMISE-v1,UM-WEIGHTED-GROUP-JOINT-SLOT-v1,UM-WEIGHTED-GROUP-PROMISE-APPROX-v1,unrelated-machines/fixed-job-exact-completion-subset-sum-embedding,UM-THRESHOLD-COVER-JOINT-SLOT-v1,M-99a53b4eb072418a8a291d8582a89646,M-031b8ef7202a4527b45d47605c6ac93a。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-C2-PREFIX-CONDITIONING-DEGREE-v1,UM-RANKJUMP-ONE-EXCHANGE-v0；不创建平行同ID主记录。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/反例/宏任务不足时统一半容量的失败--反例.md",
+      "sha256": "b0c2529fedbbf3ee78bc2bceafc48a33cec5b83ad1a510bfbac11524936621a6",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/fewer-macros-uniform-half-home-capacity-counterexample"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：unrelated-machines/fewer-macros-uniform-half-home-capacity-counterexample。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/异构宏三分割障碍与均匀余量有限审计--审查.md",
+      "sha256": "adbdbe7c472a97e4e4480fb7ea2b366e8555b6d2b0051d4e1a546360880f3c1a",
+      "disposition": "attachment",
+      "object_ids": [
+        "unrelated-machines/fewer-macros-uniform-half-home-capacity-counterexample",
+        "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1",
+        "UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：unrelated-machines/fewer-macros-uniform-half-home-capacity-counterexample,UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1,UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/异质宏残余审查来源去重登记--审查.md",
+      "sha256": "02cd7d43414e33ef26fd1fccee8572be2c7c0729b5bbd8b737196256e41433ac",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/fewer-macros-uniform-half-home-capacity-counterexample",
+        "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1",
+        "UM-HETEROGENEOUS-MACRO-PROMISE-v1",
+        "UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1",
+        "M-36e9d6d07bed4754858f0f578f0ad101"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：unrelated-machines/fewer-macros-uniform-half-home-capacity-counterexample,UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1,UM-HETEROGENEOUS-MACRO-PROMISE-v1,UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1,M-36e9d6d07bed4754858f0f578f0ad101。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md",
+      "sha256": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1",
+        "UM-HETEROGENEOUS-MACRO-PROMISE-v1",
+        "UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1",
+        "M-36e9d6d07bed4754858f0f578f0ad101"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1,UM-HETEROGENEOUS-MACRO-PROMISE-v1,UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1,M-36e9d6d07bed4754858f0f578f0ad101。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1,UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1,UM-PRUNED-TREE-LEAF-HITTING-v1；不创建平行同ID主记录。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/半密度半槽与指定根锐族的独立原程序--审查.md",
+      "sha256": "736b7f3055bba92e94dec011dc1915f1c7fa73bf1e4f5d4587b0950f22da61a3",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1,UM-UNIT-READOUT-SELECTOR-MIXING-v1；不创建平行同ID主记录。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位读出叶流与选择重组的原程序及锐矩阵--审查.md",
+      "sha256": "839f4e4242eb16b000ba8f34da2f3d748c0aba40ae11a9598bed3723570214b3",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1,UM-UNIT-READOUT-SELECTOR-MIXING-v1；不创建平行同ID主记录。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+      "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-CALIBRATED-SLOT-v1,UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1,UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1,UM-UNIT-READOUT-STRICT-UNIT-GAP-v1,UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1,UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1,UM-UNIT-READOUT-SELECTOR-MIXING-v1,UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1,UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1,UM-PRUNED-TREE-LEAF-HITTING-v1；不创建平行同ID主记录。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+      "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-CALIBRATED-SLOT-v1,UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1,UM-UNIT-READOUT-STRICT-UNIT-GAP-v1；不创建平行同ID主记录。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+      "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1,UM-UNIT-READOUT-STRICT-UNIT-GAP-v1,UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1,UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1,UM-UNIT-READOUT-SELECTOR-MIXING-v1；不创建平行同ID主记录。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+      "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+      "disposition": "objects",
+      "object_ids": [
+        "M-b4a6d0d0b41c4ef2b84217f7ac101ea1",
+        "M-c663aecb01df4eefa9ed35be826cfbab",
+        "M-1b7aae02648540af8d4986eb762adaae"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：M-b4a6d0d0b41c4ef2b84217f7ac101ea1,M-c663aecb01df4eefa9ed35be826cfbab,M-1b7aae02648540af8d4986eb762adaae。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1,UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1；不创建平行同ID主记录。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/多小端密度流障碍与单位读出校准槽双源审查--审查.md",
+      "sha256": "ccf410a29e660aba575bf8c0df61a2b29ddd0e1ede7f68b8c1ee1203153c7a39",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-SMALL-DENSITY-FLOW-BARRIER-v1"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-SMALL-DENSITY-FLOW-BARRIER-v1。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-CALIBRATED-SLOT-v1,UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1；不创建平行同ID主记录。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/算法/多小端原生任务的双流实际调度--算法.md",
+      "sha256": "876f08ce9303eb2c464956510369acdb88b1fcb87dbe424e4ab05353109e89a4",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/native-multi-small-endpoint-two-flow-schedule"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：unrelated-machines/native-multi-small-endpoint-two-flow-schedule。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/问题/稀疏部分投影证书的近二调度转移--问题.md",
+      "sha256": "6b48892916b1d2dc6ba3c2f4248fcdb040164e22936d5a841e36d3227d2e16de",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/sparse-partial-projection-scheduling-transfer-obligation"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：unrelated-machines/sparse-partial-projection-scheduling-transfer-obligation。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/异构微任务两汇点奇偶分割原程序--计算.md",
+      "sha256": "7321657f64c318ff2ec2daec31761c9132b4ccbabdebc6ba0f0ba4da18a80c73",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1",
+        "UM-HETEROGENEOUS-MACRO-PROMISE-v1",
+        "UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1",
+        "M-36e9d6d07bed4754858f0f578f0ad101"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1,UM-HETEROGENEOUS-MACRO-PROMISE-v1,UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1,M-36e9d6d07bed4754858f0f578f0ad101。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/算法/按home同质宏的任意私有边舍入--算法.md",
+      "sha256": "7c68cc57c1e0360ffb24a2c1f674dd726e36c4f42b992a728a2b1a25bf850451",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1",
+        "UM-HOMOGENEOUS-MACRO-PRIVATE-PROMISE-v1"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1,UM-HOMOGENEOUS-MACRO-PRIVATE-PROMISE-v1。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/任意资格三接口的来源与证明范围--审查.md",
+      "sha256": "4562de91a836862af533573912473e7b791f6b3856a24c46eeca04046ad9f874",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1",
+        "UM-HETEROGENEOUS-MACRO-PROMISE-v1",
+        "UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1",
+        "UM-HOMOGENEOUS-MACRO-PRIVATE-PROMISE-v1",
+        "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1",
+        "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1,UM-HETEROGENEOUS-MACRO-PROMISE-v1,UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1,UM-HOMOGENEOUS-MACRO-PRIVATE-PROMISE-v1,UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1,UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/共同资格组的双实现与冻结范围--审查.md",
+      "sha256": "f12ceadba9b5b27bcd1a9da552311a57361d095dca21d75685a3c5455eb3e657",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-WEIGHTED-GROUP-JOINT-SLOT-v1",
+        "UM-WEIGHTED-GROUP-PROMISE-APPROX-v1"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-WEIGHTED-GROUP-JOINT-SLOT-v1,UM-WEIGHTED-GROUP-PROMISE-APPROX-v1。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/算法/共同资格组的加权出口联合槽--算法.md",
+      "sha256": "494eef0d74c663d7049c65eb0a32b12696ec3a5c0168b47f85514305f8dfb15a",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-WEIGHTED-GROUP-JOINT-SLOT-v1",
+        "UM-WEIGHTED-GROUP-PROMISE-APPROX-v1"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-WEIGHTED-GROUP-JOINT-SLOT-v1,UM-WEIGHTED-GROUP-PROMISE-APPROX-v1。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/算法/全占用同宏下任意资格量子的精确调度--算法.md",
+      "sha256": "02a61fd5687b4039fedcf7a1353d3a314106012832c79e039fbb4781ebae712f",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1",
+        "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1,UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/任意资格量子流的两种实现与原枚举边界--计算.md",
+      "sha256": "b559758d65344c0879dbed924aeaaba18d2a5a35bfeb0b134617c8db3ffb9688",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1",
+        "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1,UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/障碍/固定任务后的精确容量补全--障碍.md",
+      "sha256": "7e84f1cb6b02691d6cb9511ea613310c4c335ad40444ef007710a8f05d586f81",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/fixed-job-exact-completion-subset-sum-embedding"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：unrelated-machines/fixed-job-exact-completion-subset-sum-embedding。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/算法/门槛覆盖的同见证联合槽恢复--算法.md",
+      "sha256": "6cfbd620e67e6cd96fcdd61f26cb31b26407d9e3b7c0260c97ddd5870ae3db51",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-THRESHOLD-COVER-JOINT-SLOT-v1",
+        "M-99a53b4eb072418a8a291d8582a89646",
+        "M-031b8ef7202a4527b45d47605c6ac93a"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：UM-THRESHOLD-COVER-JOINT-SLOT-v1,M-99a53b4eb072418a8a291d8582a89646,M-031b8ef7202a4527b45d47605c6ac93a。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/重配置比较依赖与恢复纠错的精确核验--计算.md",
+      "sha256": "fd6214366576af695ae14dae792ed47da779e379de3be0623e8d4e590ff2bb96",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "unrelated-machines/fewer-macros-uniform-half-home-capacity-counterexample",
+        "UM-THRESHOLD-COVER-JOINT-SLOT-v1",
+        "M-99a53b4eb072418a8a291d8582a89646",
+        "M-031b8ef7202a4527b45d47605c6ac93a"
+      ],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：unrelated-machines/fewer-macros-uniform-half-home-capacity-counterexample,UM-THRESHOLD-COVER-JOINT-SLOT-v1,M-99a53b4eb072418a8a291d8582a89646,M-031b8ef7202a4527b45d47605c6ac93a。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-LOCAL-BUNDLE-SHIELD-PATH-v1,UM-PRUNED-BUNDLE-PEELING-PATH-v1,UM-PRUNED-FIRST-MOVE-BOUND-v1,UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1,UM-STRICT-SUB2-BATCH-BARRIER-v1,UM-C2-PREFIX-CONDITIONING-DEGREE-v1,UM-RANKJUMP-ONE-EXCHANGE-v0,UM-LST-SUPPORT-RELEASE-OPTIMAL-v1；不创建平行同ID主记录。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/障碍/严格次二中间态的三机批量隔离--障碍.md",
+      "sha256": "18ead3da9008ff7a5977141e030d2b9f6f8d8376f378c202bba5f0adae378538",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-STRICT-SUB2-BATCH-BARRIER-v1；不创建平行同ID主记录。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/整比双尺寸的批次边界与显式任务修复原证--证明.md",
+      "sha256": "e9e56933eb8752ca9cd75bd3178d42021ba51697687652683e59f21924361b22",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-DIVISIBLE-TWO-SIZE-NEUTRAL-REPAIR-v1；不创建平行同ID主记录。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/固定工作局部极小与真实凸包固定槽双源审查--审查.md",
+      "sha256": "40919541fb80f3562132fb920208da26f12ed7ee03850db566e1224d87badfd6",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1,UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1,UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1,UM-ONE-DESTINATION-SLOT-REPAIR-v1,UM-MIN-WORK-FACE-SUPPORT-GAP-v1；不创建平行同ID主记录。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/固定工作单步原审计与三件启动纠错的分域复核--审查.md",
+      "sha256": "af96d0d94679eddb2d4d736ca5d459f846230aef549dfb2f1574d119e9099d4d",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1；不创建平行同ID主记录。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/最小工作面正扰动的标准形与范围复核--审查.md",
+      "sha256": "d9d80421dc87caf689fa615f0bda97c57a14f3d68a8df009a098b422588f74c3",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-MIN-WORK-FACE-SUPPORT-GAP-v1；不创建平行同ID主记录。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/固定槽审查的分层先验与冻结字节恢复--审查.md",
+      "sha256": "958b44e34fb46d96f59ac9759856d48d4dcdd378b705d4a2d6e410041b654bde",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1,UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1,UM-ONE-DESTINATION-SLOT-REPAIR-v1,UM-MIN-WORK-FACE-SUPPORT-GAP-v1；不创建平行同ID主记录。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/单目的地跨槽修复的原任务割与实际批次--证明.md",
+      "sha256": "0e4c061ab2893069320dcd38c0e0181a2099865c91155794867f82c8de17844f",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-ONE-DESTINATION-SLOT-REPAIR-v1；不创建平行同ID主记录。"
+    }
+  ],
+  "edge_files": []
+}
