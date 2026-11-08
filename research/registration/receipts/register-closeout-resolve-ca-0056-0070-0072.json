@@ -1,0 +1,57 @@
+{
+  "schema": 2,
+  "task_id": "register-closeout-resolve-ca-0056-0070-0072",
+  "owner": "Boss7",
+  "workflow_run": "p25-register-v2",
+  "stage": "2.5.3 registration only",
+  "baseline": {
+    "path": "research/registration/baseline.json",
+    "sha256": "5d5737ab6d07552b48925bdb936dae70490e8de1ee0da2b380bb2d16dd5690cf"
+  },
+  "batch_file": {
+    "path": "research/registration/batches/register-closeout-resolve-ca-0056-0070-0072.json",
+    "sha256": "774f630c799f80cf1641771c77055b3e1286f23d54cfed40c3dc8e3279f86a96"
+  },
+  "assets": [
+    {
+      "path": "research/registration/batches/register-closeout-resolve-ca-0056-0070-0072.json",
+      "sha256": "774f630c799f80cf1641771c77055b3e1286f23d54cfed40c3dc8e3279f86a96"
+    }
+  ],
+  "edge_files": [],
+  "status": "ready-for-directed-integration",
+  "summary": {
+    "objects": 120,
+    "materials": 142,
+    "dispositions": {
+      "objects": 141,
+      "attachment": 1
+    },
+    "supersedes": [
+      "register-ab98f323ad-0056",
+      "register-ab98f323ad-0070",
+      "register-ab98f323ad-0072"
+    ]
+  },
+  "reading_scope": {
+    "materials_count": 142,
+    "objects_count": 120,
+    "source": "Boss7 full-read audit artifacts for all 0056/0070/0072 rows; exact frozen bytes/SHA checked",
+    "comparison": "Canonical owners reused where existing; previously unresolved rows receive distinct closeout IDs with conservative scope and explicit limitations."
+  },
+  "validation": {
+    "schema": 2,
+    "all_material_sha_verified": true,
+    "edge_files_empty": true,
+    "batch_validation": "registration.validate_batch OK",
+    "pending_rows": 0
+  },
+  "directed_replacement": {
+    "superseded_batches": [
+      "register-ab98f323ad-0056",
+      "register-ab98f323ad-0070",
+      "register-ab98f323ad-0072"
+    ],
+    "reason": "Resolve all prior needs-decision rows in one explicit replacement while preserving exact existing attachments and stable owners."
+  }
+}

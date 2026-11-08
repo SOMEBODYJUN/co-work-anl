@@ -1,0 +1,1105 @@
+{
+  "schema": 2,
+  "task_id": "register-closeout-resolve-um-0102",
+  "owner": "Boss7",
+  "workflow_run": "p25-register-v2",
+  "stage": "2.5.3 directed pending closure",
+  "baseline": {
+    "path": "research/registration/baseline.json",
+    "sha256": "5d5737ab6d07552b48925bdb936dae70490e8de1ee0da2b380bb2d16dd5690cf"
+  },
+  "objects": [
+    {
+      "object_id": "unrelated-machines/distorted-group-source-schedules-independent-joint-slot-replay",
+      "version": 1,
+      "title": "失真组真实源与非整数联合槽证书",
+      "kind": "computation",
+      "truth_status": "finite",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "从真实T调度形成共同见证，保非整数槽和实际前缀输出；独立打包oracle仅供固定输入核验。",
+      "quantifiers": "机器分不交homes和sinks。每个私有组h共home且共sink资格，home时间w_j满足W_h≤T、w_j≤δT；sink时间满足b_hz·w_j/κ≤q_hzj≤b_hz·w_j，0≤b_hz≤Bbar。宏的实际home端均>T/2。给1/2≤r<1−δ，定义d_h=(W_h−rT)_+。",
+      "assumptions": [
+        "exact-finite-certificate-with-explicit-scope",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "exact-finite-certificate-with-explicit-scope; 从真实T调度形成共同见证，保非整数槽和实际前缀输出；独立打包oracle仅供固定输入核验。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/计算/失真组实际源调度与联合槽独立程序复跑--计算.md",
+        "sha256": "0d163eaa1d2002f1ec96d81ba6ac32e8468b68f4b93d1e357c225b65b6c51341",
+        "section": "从真实源调度到实际前缀"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/计算/失真组实际源调度与联合槽独立程序复跑--计算.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/distorted-group-supplied-witness-original-interfaces",
+      "version": 1,
+      "title": "失真组给定见证舍入与有效无效证书原入口",
+      "kind": "resource",
+      "truth_status": "finite",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "完整保全规范舍入及软件审查两个原入口，说明共同槽流、真实任务前缀、全部输入输出与5有效/10无效证书；不把数学LP与未知OPT算法说成软件。",
+      "quantifiers": "homes \\(H\\) 与 sinks \\(Z\\) 不交，至少一台机器。每个非宏任务恰属一个私有组 \\(J_h\\)，有home时间 \\(w_j\\ge0\\)，共同资格集合 \\(E_h\\subseteq Z\\)，实际sink时间 \\(q_{hzj}\\)。每个宏任务只有显式home端。给 \\(T\\ge0\\)、\\(0\\le\\delta<1/2\\)、\\(\\kappa\\ge1\\)、\\(\\bar B\\ge0\\)、\\(1/2\\le r<1-\\delta\\)，输入逐项满足",
+      "assumptions": [
+        "two-primary-programs-fully-read-same-sha-evidence-reused",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "two-primary-programs-fully-read-same-sha-evidence-reused; 完整保全规范舍入及软件审查两个原入口，说明共同槽流、真实任务前缀、全部输入输出与5有效/10无效证书；不把数学LP与未知OPT算法说成软件。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/失真组给定见证舍入与有效无效证书原入口--资源.md",
+        "sha256": "f420a37fdde29f621189ffb5fd886dbf481f0c444e0e3611c12764258284e36f",
+        "section": "全部原任务及给定证书合同"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/资源/失真组给定见证舍入与有效无效证书原入口--资源.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/conditional-leaf-sink-common-joint-law-gap",
+      "version": 1,
+      "title": "条件叶边际与汇点事件的共同联合性缺口",
+      "kind": "obstacle",
+      "truth_status": "conditional",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "设核心c在状态s的边际为λ_cs。每个条件叶流y_cs的行和为λ_cs、局部资源列与本状态占用z_cs合计至多λ_cs。MC进一步要求∑_s y_cs,ℓu=y0_ℓu，所有核心平均后具有相同global叶边际。",
+      "quantifiers": "设核心c在状态s的边际为λ_cs。每个条件叶流y_cs的行和为λ_cs、局部资源列与本状态占用z_cs合计至多λ_cs。MC进一步要求∑_s y_cs,ℓu=y0_ℓu，所有核心平均后具有相同global叶边际。",
+      "assumptions": [
+        "scoped-interface-separation; no-general-UM-counterexample",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "scoped-interface-separation; no-general-UM-counterexample",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/障碍/条件叶边际与汇点事件的共同联合性缺口--障碍.md",
+        "sha256": "e7406cd8bb4261123d7207c6bc014097101689310151231f35394f2faa2f7911",
+        "section": "条件叶：每行可分解和同一联合分布不同"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/障碍/条件叶边际与汇点事件的共同联合性缺口--障碍.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/optimal-convex-fixed-slots-and-minimum-work-face-entry",
+      "version": 1,
+      "title": "真实最优凸包固定槽与最小工作量面的接续",
+      "kind": "resource",
+      "truth_status": "finite",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "区分真OPT凸包点上所有固定槽匹配的精确损失、槽外修复与另一个最小工作量面族；恢复整数迁移数q对应工作量q/m的正确预算。",
+      "quantifiers": "若额外要求每个源机器的原任务只能去一个外部目的地，big不动的最小Hamming是m(m−1)/2。单目的地功能图需从big机依次经过所有机器：第一批送m−1件，接收机超出的m−2件必须去下一机，再m−3…1，累计三角数；用各机原库存完成这些批次可达到。强制big搬走的最小值为m(m+1)/2。这个派生条件不是一般迁移限制的事实，更不能说所有合法修复都是最短；m=3存在Hamming7的合法循环。",
+      "assumptions": [
+        "exact-output-space-and-support-obstructions;general-target-open",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "exact-output-space-and-support-obstructions;general-target-open; 区分真OPT凸包点上所有固定槽匹配的精确损失、槽外修复与另一个最小工作量面族；恢复整数迁移数q对应工作量q/m的正确预算。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem. Open obligations are retained as open.",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/真实最优凸包固定槽与最小工作量面的接续--资源.md",
+        "sha256": "8c177808b3b769fc897ca7187a105210df0cb51057f5199d9e50f64c5c254f3e",
+        "section": "boss7历史工作台的实际内容"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/资源/真实最优凸包固定槽与最小工作量面的接续--资源.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/fixed-work-single-move-trap-and-batch-escape-entry",
+      "version": 1,
+      "title": "固定工作量单任务势停滞与批量逃逸",
+      "kind": "resource",
+      "truth_status": "proved",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "完整保留固定总工作量族的单任务严格局部极小、一次大支持下界及三件批量下降；撤回多轮障碍不再作为当前结论。",
+      "quantifiers": "总工作量恒定为 W=m+2−1/m，分配改变不了它。真实 OPT 恰为1+2/m：在 unit 所在的两台各配两枚 tiny，其他每台配 m+2 枚，tiny 总数4+(m−2)(m+2)=m²，需从一台减一件，得到所需 m²−1 枚且峰值1+2/m。下界若峰值严格更小，两 unit 不能同机；每个 unit 机最多1件 tiny，其他机最多m+1件，合计≤2+(m−2)(m+1)=m²−m<m²−1。故初态/OPT 比值2m/(m+2)趋2。",
+      "assumptions": [
+        "single-move-obstruction;multi-round-extrapolation-withdrawn",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "single-move-obstruction;multi-round-extrapolation-withdrawn; 完整保留固定总工作量族的单任务严格局部极小、一次大支持下界及三件批量下降；撤回多轮障碍不再作为当前结论。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/固定工作量单任务势停滞与批量逃逸--资源.md",
+        "sha256": "9fe85a19f78c2360833608d79e436462560f3f40cd66fabbae0b2abcb8382635",
+        "section": "工作区入口的准确落点"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/资源/固定工作量单任务势停滞与批量逃逸--资源.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/conditional-leaf-hall-v3-independent-exact-review",
+      "version": 1,
+      "title": "条件叶 Hall v3 新 MC 条款独立重构",
+      "kind": "review",
+      "truth_status": "conditional",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "独立审查在未读 v3 author transport proof/checker 前，重构了新 MC 条款的 hole-transport extension：任意 basic (lambda,z) 可按显式 q_(s,j) 表扩展到一致 global leaf-edge marginals，含 beta=1、d=0/1、zero lambda 边界；并记录三个 Fraction fixtures 的 matching-mixture 审计。它不重审旧 §§1–8，也不把 Q_t 的 V=1/t sharp-family 陈述升级为一般定理。",
+      "quantifiers": "title: \"条件叶 Hall v3 新 MC 条款独立重构\"",
+      "assumptions": [
+        "independent-exact-pass-v3-clause",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "independent-exact-pass-v3-clause; 独立审查在未读 v3 author transport proof/checker 前，重构了新 MC 条款的 hole-transport extension：任意 basic (lambda,z) 可按显式 q_(s,j) 表扩展到一致 global leaf-edge marginals，含 beta=1、d=0/1、zero lambda 边界；并记录三个 Fraction fixtures 的 matching-mixture 审计。它不重审旧 §§1–8，也不把 Q_t 的 V=1/t sharp-family 陈述升级为一般定理。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/条件叶Hallv3新MC独立重构--审查.md",
+        "sha256": "1b67c87f24fe5362c415d916873573b0638663e2a45d433cb95f233c001808a3"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/审查/条件叶Hallv3新MC独立重构--审查.md"
+      ]
+    },
+    {
+      "object_id": "UM-FROZEN-MARGINAL-MACRO-SUPPORT-FRONTIERS-RESOURCE-v1",
+      "version": 1,
+      "title": "固定边际宏位置与正支撑释放的精确前沿",
+      "kind": "mathematical-resource",
+      "truth_status": "finite",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "私有sink边际族、共享Z宏迁移族、独立锚块支撑族的不同预算与OPT纠错。",
+      "quantifiers": "若只保x全部边际及同sink small的两两上负相关，任输出law有E C≥2−1/k−(k−1)/(2r)，在r≥max(k,binom(k,2))可达。高阶2…d同类负相关下，成功C≤2−q/k的最大概率精确为1（t=min(d,q)=1）或min(1,binom(k,t)/(r^(t−1)binom(q,t)))。阶乘矩给上界，均匀选择宏所在组一次集中q small、其它组singleton给达到。d增长、r=k²时概率超多项式小，故只输出保持这些条件的样本之一、poly次择优仍难可靠成功；固定d只能多项式小，不能据此排任意poly次数。重新条件化后放弃原边际、重新调度、集中正相关不在此界内。",
+      "assumptions": [
+        "scoped-mathematics-reconstructed; general-UM-target-open",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "scoped-mathematics-reconstructed; general-UM-target-open; 私有sink边际族、共享Z宏迁移族、独立锚块支撑族的不同预算与OPT纠错。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem. Open obligations are retained as open.",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/固定边际宏位置与正支撑释放的精确前沿--资源.md",
+        "sha256": "3ba4bf84d43b1aa357947edf7326adaad74849905174c209c68e0e41f82219e6",
+        "section": "私有sink：固定真实OPT边际也能阻止集中撤离"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/资源/固定边际宏位置与正支撑释放的精确前沿--资源.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/um-0102-7664db98655305cb",
+      "version": 1,
+      "title": "本批完整实读并比较两个冻结来源：",
+      "kind": "review",
+      "truth_status": "proved",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "本批完整实读并比较两个冻结来源：",
+      "quantifiers": "两源均冻结于 `68fad804ec5946cb296f77dc5b336308a66abf12`（legacy-cleanup）及 `aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c`（main）。同时检查了私有汇点审查、固定槽/机器价格凸化、throughput lattice 与 occupation-induced edge-deficit 的审计脚本和冻结 JSON。第一源给出固定真实最优凸包点下的逐行负载、计数和负相关随机舍入障碍；第二源刻画固定残余任务和占位向量上的次模通过量，并把严格次二占位完成集表示为任意图独立集。它们共同说明局部边际证书与可恢复的全局容量选择之间仍有信息缺口。",
+      "assumptions": [
+        "Exact assumptions are stated in the body.",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "Exact unrelated-machines scope and evidence boundary stated in the body.",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/凸包边际与残余通过量占位双源审查--审查.md",
+        "sha256": "7664db98655305cb773a96cebc72e4e5eef0a89a119acf8a21216460f5099e60",
+        "section": "凸包边际与残余通过量占位双源审查"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/审查/凸包边际与残余通过量占位双源审查--审查.md"
+      ]
+    },
+    {
+      "object_id": "UM-MOMENT-RESET-TRUE-SOURCE-EXTRACTION-RESOURCE-v1",
+      "version": 1,
+      "title": "条件矩重置与固定阶向量提取的不同边界",
+      "kind": "mathematical-resource",
+      "truth_status": "conditional",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "固定推前、保边际重耦合、随机矩运输和真实最优源固定阶贪心不是同一义务。",
+      "quantifiers": "每个固定r≥1，令d=2r+1、B=2d=4r+2；任素数q>B有显式族n=q+1、OPT=B，同一实例对**所有任务顺序**严格把q个普通jobs放机器0，输出峰q，比值(n−1)/(4r+2)。anchor单端负载B保证真实OPT，而不是只给源态负载上界。任意合法输入的普遍上界nT给同量级，固定r的坏例不排增长阶、自适应矩或容量反馈。",
+      "assumptions": [
+        "scoped-mathematics-reconstructed; general-UM-target-open",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "scoped-mathematics-reconstructed; general-UM-target-open; 固定推前、保边际重耦合、随机矩运输和真实最优源固定阶贪心不是同一义务。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem. Open obligations are retained as open.",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/条件矩重置与固定阶向量提取的不同边界--资源.md",
+        "sha256": "876c2d37b87fbbf508fb177434bed33446403b9fa0b49297a0e7cfac9824df8b",
+        "section": "对称列与指定聚合"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/资源/条件矩重置与固定阶向量提取的不同边界--资源.md"
+      ]
+    },
+    {
+      "object_id": "UM-VECTOR-GREEDY-FIXED-ORDER-EVENT-CHAIN-TWO-SOURCE-REVIEW-v1",
+      "version": 1,
+      "title": "固定阶与事件链向量贪心双源审查",
+      "kind": "审查",
+      "truth_status": "conditional",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "两个当前正文共同研究真实最优调度分布上的压缩乘法向量贪心。第一源给任意固定截断阶、任意任务顺序的有限阶多项式独立源和线性最坏比；第二源给固定一阶指示空间上的事件链净化、有限重复实现、三机全正提升和无辅助单位任务碰撞。二者都只否定各自精确提取规则的统一近似保证，不关闭一般调度目标。",
+      "quantifiers": "summary: 两个当前正文共同研究真实最优调度分布上的压缩乘法向量贪心。第一源给任意固定截断阶、任意任务顺序的有限阶多项式独立源和线性最坏比；第二源给固定一阶指示空间上的事件链净化、有限重复实现、三机全正提升和无辅助单位任务碰撞。二者都只否定各自精确提取规则的统一近似保证，不关闭一般调度目标。",
+      "assumptions": [
+        "已整理，主目标仍开放",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "已整理，主目标仍开放; 两个当前正文共同研究真实最优调度分布上的压缩乘法向量贪心。第一源给任意固定截断阶、任意任务顺序的有限阶多项式独立源和线性最坏比；第二源给固定一阶指示空间上的事件链净化、有限重复实现、三机全正提升和无辅助单位任务碰撞。二者都只否定各自精确提取规则的统一近似保证，不关闭一般调度目标。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem. Open obligations are retained as open.",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/固定阶与事件链向量贪心双源审查--审查.md",
+        "sha256": "00b1f64341c75caa463ec421bcaa1e96abeb7212daef9535daf93c5bfdf8975f",
+        "section": "审查范围与读取记录"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/审查/固定阶与事件链向量贪心双源审查--审查.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/symmetric-reset-two-witness-review",
+      "version": 1,
+      "title": "对称重置与双见证查询双源审查",
+      "kind": "review",
+      "truth_status": "finite",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "本批完整读取两个 `clean show` 当前正文，读取其 inventory 元数据、正文链接的旧审查、主/独立审计程序及冻结证据，并与已有强配置矩、单 home 级联、共居查询和扇出收费对象比较。当前来源指纹为：`afd52ee890bac94b4bf8`，路径 `research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md`，SHA-256 `73f4e8ac7b1a01b85b854b639eee4b553ee6f50fc40bc72f0f06445fec90e739`，16793 bytes；`11cd2b24820bbbbac5c0`，路径 `research/current/unrelated_machines/two_witness_query_separation.md`，SHA-256 `bf942037e600967fa86b76c2b1f0db41673a2bae71411e1afb6527d6f332c709`，19988 bytes。两源均来自冻结提交 `aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c`。",
+      "quantifiers": "稳定身份为 `UM-SYMMETRIC-JOB-AGGREGATION-v1` 与 `UM-SINGLE-MACHINE-MOMENT-RESET-THRESHOLD-v1`。每个任务 `j` 有非空选择集 `E(j)`，选择互不相交。给定非空有界有理多面体 `P`，对一阶 `x` 和对称二阶 `Y` 要求",
+      "assumptions": [
+        "integrated-with-explicit-interface-boundaries",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "integrated-with-explicit-interface-boundaries",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/对称重置与双见证查询双源审查--审查.md",
+        "sha256": "d71d7b7e2b61120a67204a5a9a5cada047f05343206ffa09c90cf0818eb04dfa",
+        "section": "1. 阅读范围、版本身份与不可合并的量词"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/审查/对称重置与双见证查询双源审查--审查.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/query-count-fee-near-unit-version-review",
+      "version": 1,
+      "title": "单件查询计数与近单位必要条件的版本审查",
+      "kind": "review",
+      "truth_status": "conditional",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "保全计数费用v1零质量反例、v2修复及分组界、v3近单位必要条件和两个审查者的真实先后顺序，明确收费合同与软件证据边界。",
+      "quantifiers": "给 \\(D\\setminus Q\\) 上任意非负有理权，\\(W=\\sum w_j\\)、\\(f_q=\\sum_{A_q}w_j\\)，不交性给 \\(\\sum_qf_q\\le W\\)。这是指定非query改派费；若仅给旧非unit新unit任务正权，可实例化新增unit费。背景费、query自身、其它费用和退款均不在 \\(W\\) 中。",
+      "assumptions": [
+        "root-review-and-ten-frozen-dependencies-reconciled",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "root-review-and-ten-frozen-dependencies-reconciled; 保全计数费用v1零质量反例、v2修复及分组界、v3近单位必要条件和两个审查者的真实先后顺序，明确收费合同与软件证据边界。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/单件查询计数与近单位必要条件的版本审查--审查.md",
+        "sha256": "7db4a9988c5a833dfc8996727af8f970c430dededef2ce5d4e7b8d4410d87b2a",
+        "section": "1. 输入、固定构造族与两个局部不变量"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/审查/单件查询计数与近单位必要条件的版本审查--审查.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/query-count-zero-boundary-owner-filter-certificates",
+      "version": 1,
+      "title": "查询计数的零边界修复与保守筛选证书",
+      "kind": "review",
+      "truth_status": "finite",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "逐源保全计数v1的真实零端反例和两种修复措辞、v2冻结合同/作者证明/九项审查，以及typed不用生成全部调度的owner筛选和其先于作者的heavy增量。",
+      "quantifiers": "固定任务加所选新端流入是 \\(\\sigma_1\\) 子集，标色机剩余非固定旧任务仅为其它query；未标色机用初态加至多半阈值新端流入，给(1)。这里不重新证明完整染色算法，详见[分离证明及冻结边界](双见证查询分离的染色证明与冻结审查边界--审查.md)。仅知道任意某算法有相同全局峰界，不能替代(1)及机器唯一色。",
+      "assumptions": [
+        "five-frozen-count-history-sources-integrated",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "five-frozen-count-history-sources-integrated; 逐源保全计数v1的真实零端反例和两种修复措辞、v2冻结合同/作者证明/九项审查，以及typed不用生成全部调度的owner筛选和其先于作者的heavy增量。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/查询计数的零边界修复与保守筛选证书--审查.md",
+        "sha256": "4a672975c4084284e9d8f0bd137299b5340ff130c286e197d79d27ef7aec124b",
+        "section": "1. 固定族与本页所需的局部合同"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/审查/查询计数的零边界修复与保守筛选证书--审查.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/query-count-v3-endpoints-final-composition-contract",
+      "version": 1,
+      "title": "近单位查询必要条件的端点与最终组合合同",
+      "kind": "review",
+      "truth_status": "conditional",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "保全v3新增heavy条件的收费前句、零与整数端点、两个final真实先验和共同适用范围，并从当前源恢复与其声明SHA完全一致的13950字节canonical快照。",
+      "quantifiers": "使用作者分离v2同一固定 \\(I_i(q)>T/2\\) 染色。\\(A_q\\subseteq D\\setminus Q\\) 两两不交且不依赖 \\(\\beta\\)/权，\\(\\tau_q\\) 恰改派 \\(\\{q\\}\\cup A_q\\) 至原 \\(\\sigma_1\\) 端，全部其它原任务保留 \\(\\sigma_0\\)。所有原任务各一次，查询身份和目标不替换；不输出任意子集cube，不调用未知可行调度搜索。",
+      "assumptions": [
+        "five-frozen-v3-sources-integrated-with-sha-matching-final-snapshot",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "five-frozen-v3-sources-integrated-with-sha-matching-final-snapshot; 保全v3新增heavy条件的收费前句、零与整数端点、两个final真实先验和共同适用范围，并从当前源恢复与其声明SHA完全一致的13950字节canonical快照。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/近单位查询必要条件的端点与最终组合合同--审查.md",
+        "sha256": "85ac049005d314ea6445a4ee1eba727ee71ca0e0d722c522dd23d55e5a299afd",
+        "section": "1. v3保持的合同与真正新增项"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/审查/近单位查询必要条件的端点与最终组合合同--审查.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/symmetric-aggregation-nonsymmetric-counterexample-review-history",
+      "version": 1,
+      "title": "对称矩聚合的非对称反例与重置审查版本",
+      "kind": "review",
+      "truth_status": "conditional",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "保长review九节的分域独立性、无需旧补列的对称聚合证明、五literal负补列反例、固定2q/保边际q/独立随机q+2不同合同及精确格式链。",
+      "quantifiers": "凸锥求和给新真/假齐次列；任一保留job全旧列求和给$x'\\in P'$。没有保留job时不能从空真前提推出任意零维P'可行，须另查。边际0/1不除法。此证明**没有用旧补列**，但用了能推出共同整列恒等式的对称性；不主张全对称性在所有推广中逻辑最弱，不得无替代假设直接删掉。",
+      "assumptions": [
+        "full-long-review-integrated",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "full-long-review-integrated; 保长review九节的分域独立性、无需旧补列的对称聚合证明、五literal负补列反例、固定2q/保边际q/独立随机q+2不同合同及精确格式链。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/对称矩聚合的非对称反例与重置审查版本--审查.md",
+        "sha256": "d11f9d99fd7dc29cad8ac381ac6606f253bf847e68bede3b7c7300cf9cc814a1",
+        "section": "来源与分域"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/审查/对称矩聚合的非对称反例与重置审查版本--审查.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/um-0102-8cbfecb88b6d9500",
+      "version": 1,
+      "title": "本批处理三个冻结来源：",
+      "kind": "review",
+      "truth_status": "conditional",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "本批处理三个冻结来源：",
+      "quantifiers": "对每个固定 `r >= 2` 和奇数 `N >= 4r-1`，构造 `N` 个两台机器、两项任务的 `K_{2,2}` 单位块，总计 `2N` 台机器和 `2N` 项任务。源证明给出一个次数至多 `2r` 的有理伪矩泛函 `M_r`，满足：",
+      "assumptions": [
+        "Exact assumptions are stated in the body.",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "Exact unrelated-machines scope and evidence boundary stated in the body.",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/强配置矩与对称重置阈值有限审查--审查.md",
+        "sha256": "8cbfecb88b6d9500edc45cb119cb77e8745b05be2d7d371159be1045eb5c3298",
+        "section": "强配置矩与对称重置阈值有限审查"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/审查/强配置矩与对称重置阈值有限审查--审查.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/potechin-symmetric-sos-knapsack",
+      "version": 1,
+      "title": "对称平方和背包下界",
+      "kind": "literature",
+      "truth_status": "unassessed",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "Potechin以置换对称、单轨道仿真、参数有理性和分层充分多整数解证明good-story伪期望的PSD，恢复单位权等式背包下界，并处理奇阶完美匹配及Goodman三角界；显式区分索引次数、普通次数与矩阵阶数。",
+      "quantifiers": "论文研究有限顶点集 `[n]` 上的对称超图方程问题：每个可能超边 `e` 有变量 `x_e`，可能超边集合和方程集合 `{s_i=0}` 在顶点置换下不变。超边可以有序或无序；若每个变量由 `t` 个顶点索引，称arity为 `t`。背包的arity为1，匹配及三角问题的arity为2。",
+      "assumptions": [
+        "complete-frozen-paper-read-local-integration",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "complete-frozen-paper-read-local-integration; Potechin以置换对称、单轨道仿真、参数有理性和分层充分多整数解证明good-story伪期望的PSD，恢复单位权等式背包下界，并处理奇阶完美匹配及Goodman三角界；显式区分索引次数、普通次数与矩阵阶数。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/文献/对称平方和背包下界--文献.md",
+        "sha256": "cea01f0eb0dec38149ac2679384abe0c668917832310b42ad1f8828e9186da6a",
+        "section": "对称平方和背包下界"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/文献/对称平方和背包下界--文献.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/sparse-config-strong-moment-increment-review",
+      "version": 1,
+      "title": "稀疏配置与强矩匹配双源增量审查",
+      "kind": "review",
+      "truth_status": "finite",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "本批完整读取了两个冻结 canonical 正文、`clean show` 的元数据和全文、正文中链接的旧版审查、四个主/独立审计入口及冻结 JSON。inventory 给出的稳定源分别是 `6a58c5bfa643bbb8225a`（文件 SHA-256 `88af645ff4ee5bd81afdeef2b67824ca34ed9183630c180373d1efa2d63c25f2`，15103 bytes）和 `8cb84917989692a83f31`（SHA-256 `32ee2ffae069e9c24cce24ec30963246403aa1f279559232f2ce40e168b4c651`，12027 bytes）。两者均来自冻结提交 `aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c` 的 `research/current/unrelated_machines/`，不是只凭摘要登记。",
+      "quantifiers": "结论量词必须保持为：对每个 `k` 及上述合法 `H`，存在一个实例族；对每条有限边 `e=(i,j)`，可以单独选择一个完整配置点 `y^(e)`，使 `x^(e)_(ij)=1`。不同 `e` 的配置点没有共同基点、共同联合分布或交叠 bag 的联合一致性。因而“配置可行 + 逐边条件探针”合同首轮和迭代都不删边，但这不是一般配置 LP 分离算法，也不是 SA/SDP 固定层级下界。",
+      "assumptions": [
+        "integrated-with-cross-source-boundaries",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "integrated-with-cross-source-boundaries",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/稀疏配置与强矩匹配双源增量审查--审查.md",
+        "sha256": "e8f6b5ec531d5f6ba46d4e16220c684640f3fa34d41073a1cba47b63e4e21ad3",
+        "section": "1. 实读范围、版本身份与处置原则"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/审查/稀疏配置与强矩匹配双源增量审查--审查.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/odd-slice-finite-moment-checks-and-common-matching-law",
+      "version": 1,
+      "title": "半整数切片的有限矩检验与共同匹配律障碍",
+      "kind": "resource",
+      "truth_status": "finite",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "自足保三小矩阵的精确Schur实现、短柱面范围、半整数方差矛盾和锐pair修复；N5的PSD不等完整强化合同，代码不构造调度或一般求解器。",
+      "quantifiers": "这利用对称性按文字数核算，不枚举每个带标签的柱面。只在N≥4r−1时断言全部这些值严格正；一般高阶PSD证明仍需harmonic分解，不能从三例代替任意N/r。",
+      "assumptions": [
+        "complete-program-read-with-scoped-exact-replay",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "complete-program-read-with-scoped-exact-replay; 自足保三小矩阵的精确Schur实现、短柱面范围、半整数方差矛盾和锐pair修复；N5的PSD不等完整强化合同，代码不构造调度或一般求解器。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/半整数切片的有限矩检验与共同匹配律障碍--资源.md",
+        "sha256": "e85fc6994c5867058ca1a54569c75899e3afb3fa152e73054cbda4009945a477",
+        "section": "原件、真实输入与一次运行"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/资源/半整数切片的有限矩检验与共同匹配律障碍--资源.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/lovasz-schrijver-matrix-cones-setfunctions",
+      "version": 1,
+      "title": "Lovász–Schrijver：矩阵锥、N/N+层次与格上集合函数",
+      "kind": "literature",
+      "truth_status": "unassessed",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "1989 报告把 0–1 锥提升到矩阵并投影，定义 N 与 N+ 操作；N 迭代至 n 层恢复 0–1 凸锥，固定层可分离。对 stable-set polytope，N 一层恰给非负、边和奇洞约束，N+ 一层覆盖 clique/odd-hole/odd-wheel/odd-antihole 与正交约束；随后用格的 Möbius 函数统一描述更高层。",
+      "quantifiers": "本对象实际导出并通读冻结的 38 页 CWI Report BS-R8925《Cones of Matrices and Setfunctions, and 0-1 Optimization》。报告从一般 0–1 可行向量的凸锥 `K` 出发，讨论如何在 `(n+1)^2` 个矩阵变量中表达乘积 `xx^T` 的线性约束，再投影回原坐标得到保留所有 0–1 点的收紧。主要结果分三层：矩阵切割算子 `N/N+`，stable-set polytope 应用，及任意有限格上的集合函数/Möbius 统一描述。",
+      "assumptions": [
+        "complete-source-read-integrated",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "complete-source-read-integrated; 1989 报告把 0–1 锥提升到矩阵并投影，定义 N 与 N+ 操作；N 迭代至 n 层恢复 0–1 凸锥，固定层可分离。对 stable-set polytope，N 一层恰给非负、边和奇洞约束，N+ 一层覆盖 clique/odd-hole/odd-wheel/odd-antihole 与正交约束；随后用格的 Möbius 函数统一描述更高层。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/文献/Lovasz-Schrijver--矩阵锥与0-1优化--文献.md",
+        "sha256": "73ac75e123ba6abd054ba53f0363aed99e9e90dd37518b2088cbd393cabaeec2",
+        "section": "Lovász–Schrijver：矩阵锥与 0–1 优化"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/文献/Lovasz-Schrijver--矩阵锥与0-1优化--文献.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/raw-k2-14m-direct-canonical-pullback-obstruction",
+      "version": 1,
+      "title": "固定14机原始 K2 证书的同点 canonical 乘积拉回失败",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "一个固定的14台机器、13个作业、26个有限端点的物理 K2(P,7/4) 有理证书满足全局 M2、全部 raw affine load localizer 和逐机 first/same-machine-pair CONFIG 合同，且实际 OPT=1；但按指定规则把 canonical selector 与 incidence claim 直接作积拉回时，出现 -1/160 与 -1/80 的负行，故该同一点不能直接成为 plain primitive-SA1 点。",
+      "quantifiers": "模型包含 4 个 group（`M,H_u,H_v,H_r`），每组 2 个 indexed state；6 台资源机（`u,v,r,w_u,w_v,w_r`）和 8 个 private root，共 14 台机器。4 个 selector jobs 加 9 个 listed incidence jobs，共 13 个作业、26 个有限 assignment 端点；未列端点时间为无穷。每个 selector 的两端互补，每个 incidence 的 private/resource 两端互补，不能因为某个系数为零而删除原 job。",
+      "assumptions": [
+        "exact-fixed-certificate-narrow-obstruction",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "exact-fixed-certificate-narrow-obstruction; 一个固定的14台机器、13个作业、26个有限端点的物理 K2(P,7/4) 有理证书满足全局 M2、全部 raw affine load localizer 和逐机 first/same-machine-pair CONFIG 合同，且实际 OPT=1；但按指定规则把 canonical selector 与 incidence claim 直接作积拉回时，出现 -1/160 与 -1/80 的负行，故该同一点不能直接成为 plain primitive-SA1 点。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/障碍/固定14机原始K2同点canonical拉回失败--障碍.md",
+        "sha256": "0b38efeaa8802c80c56a9d0b36560fd1687632c5bb66f403e3286dd859d0cffa",
+        "section": "1. 对象范围与来源身份"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/障碍/固定14机原始K2同点canonical拉回失败--障碍.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/symmetric-fixed-pushforward-original-orbits-and-same-marginal-repair",
+      "version": 1,
+      "title": "对称固定推前独立原程序的计数轨道与同边际修复",
+      "kind": "computation",
+      "truth_status": "conditional",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "完整读独立原程序，27591下界计数轨道、41端点向量与4/6态重耦合；格式修复和另立随机运输各保范围。",
+      "quantifiers": "取整数q≥2，m=2q、n=2q²，所有任务在所有机器耗时1/q；D是每机恰q件的所有实际最优调度的均匀律，工作量给OPT1。指定任意标签包C、c=|C|，覆盖吸收后整项删除C及一台机器i，**不是将旧D条件化为C原在i**。每个保留任务a只把其旧i选择改送固定fallback φ(a)，旧其它选择保持。考察指定旧矩推前Rx、RYRᵀ的全部真/假容量，而非寻找任意新矩。",
+      "assumptions": [
+        "complete-primary-read-and-original-CLI-retained",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "complete-primary-read-and-original-CLI-retained; 完整读独立原程序，27591下界计数轨道、41端点向量与4/6态重耦合；格式修复和另立随机运输各保范围。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/计算/对称固定推前独立原程序的计数轨道与同边际修复--计算.md",
+        "sha256": "bbf36effca618b155731775b4c341d492acf66e940c6587287b499ae8db5d108",
+        "section": "原程序实际接口"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/计算/对称固定推前独立原程序的计数轨道与同边际修复--计算.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/independent-uniform-reset-two-original-programs-replay",
+      "version": 1,
+      "title": "独立均匀重置矩的双程序与精确复跑",
+      "kind": "computation",
+      "truth_status": "conditional",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "保存两原程序的全部输入、不同推导和直接世界分支权重，逐字段复现冻结输出，并明确q+2全称证明、q1/空残余及坏load2T状态的边界。",
+      "quantifiers": "主源 `26b8c482db554dac0b69`（3884B）及独立源 `ab1d41cdad23123c64a7`（7356B）均全文实读。原件和旧冻结结果见[manifest](../../tools/evidence/uniform-presence-reset/manifest.json)。两程序只用标准库，无外部输入文件、无随机seed、浮点或容差，默认循环本身就是真实输入；不是接受任意实例的CLI/API。没有修改原代码，两个原入口分别在新空cwd执行**各一次**，stdout/stderr及真实命令、源码hash、Python和返回码完整保存。",
+      "assumptions": [
+        "two-original-entry-points-replayed-once",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "two-original-entry-points-replayed-once; 保存两原程序的全部输入、不同推导和直接世界分支权重，逐字段复现冻结输出，并明确q+2全称证明、q1/空残余及坏load2T状态的边界。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/计算/独立均匀重置矩的双程序与精确复跑--计算.md",
+        "sha256": "77b2d7f0790e392d706e0184e051e19ae11e3d98be9b4f69a52ab1614c1f37ea",
+        "section": "完整原程序与输入"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/计算/独立均匀重置矩的双程序与精确复跑--计算.md"
+      ]
+    },
+    {
+      "object_id": "UM-ACTUAL-WITNESS-QUERY-FEE-CONTRACTS-RESOURCE-v1",
+      "version": 1,
+      "title": "给定实际见证的选择器查询与费用接口",
+      "kind": "mathematical-resource",
+      "truth_status": "proved",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "预载状态、同矩阵双见证查询与缺少共同全开的多见证模型分别保存。",
+      "quantifiers": "内部机器及任务资格任意，外接输入a和输出b,c各自“关闭”表示另加不可迁移T预载，“开放”表示无此预载。给only-a和only-b+c两份完整实际≤T调度。把见证端点作为带原任务身份的边，按输出种子做半权闭包；唯一含a的颜色类W恰含一个输出。新状态**只开放W里的输出，a仍关闭**，类内双端均在W的任务取第二见证，其余取第一见证，得到only-b或only-c完整≤3T/2。a的T预载不能因a∈W而删去。两任务例给锐界。Santa三特殊item的对应结论是给only-A和only-B+C两个效用≥1分配，得到only-B或only-C的效用≥1/2；效用方向不是makespan方向。",
+      "assumptions": [
+        "historical-contracts-reconciled; restricted-results-and-open-interfaces-separated",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "historical-contracts-reconciled; restricted-results-and-open-interfaces-separated; 预载状态、同矩阵双见证查询与缺少共同全开的多见证模型分别保存。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem. Open obligations are retained as open.",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/给定实际见证的选择器查询与费用接口--资源.md",
+        "sha256": "e761b2f364f5cb2f866e207d7841a35ffb418af971fa9b3e31553cc331dcb28d",
+        "section": "三外接与加权多输出"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/资源/给定实际见证的选择器查询与费用接口--资源.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/three-host-selector-one-job-port-downset-review",
+      "version": 1,
+      "title": "三外接选择器与单任务端口向下投影双源审查",
+      "kind": "review",
+      "truth_status": "finite",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "本页完整读取并比较：",
+      "quantifiers": "给内部机器集 (I)、三台不同外接机器 (a,b,c)、基础任务集 (J) 和阈值 (T\\ge0)。外接机器开放时无预载，关闭时有不可迁移的 (T)-预载；当开放 ({a}) 与开放 ({b,c}) 时，分别给定基础任务的完整实际 (T)-调度。基础任务可在任意显式有限端点运行，满预载机器的原有限端仍有效。",
+      "assumptions": [
+        "integrated-with-scoped-proofs-and-source-calibration",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "integrated-with-scoped-proofs-and-source-calibration",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/三外接选择器与单任务端口向下投影双源审查--审查.md",
+        "sha256": "373d2362b5f8fd859e3c2d8c73f1264f6aa745b197702fe4cd19c4b0b335e2fc",
+        "section": "三外接选择器与单任务端口向下投影双源审查"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/审查/三外接选择器与单任务端口向下投影双源审查--审查.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/two-level-label-fee-and-occurrence-weighted-pool-review",
+      "version": 1,
+      "title": "两层标签收费与出现异权文字池双源审查",
+      "kind": "review",
+      "truth_status": "unassessed",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "本批完整读取两个当前正文，并与直接共居 SAT、仿射线、查询级联和标签收费审查比较。两源都把源问题的标签/文字选择编译成显式 unrelated-machines 任务，随后构造一个不需要源解或 OPT 的完整实际调度；共同结论是完整的资格预算会留下至多 (3/2) 的绝对上界。第一源研究两层投影图、每边状态和标签次数的精确 (mathrm{OPT}) 恒等式；第二源研究 CNF occurrence 位置异权、每变量每极性总预算至多 1 的直接文字池。两者的机器、任务和共享关系不同，不能把一个的锐性转给另一个。",
+      "quantifiers": "对每个顶点标签 (b)，令 (c_{v,b}(a)) 为所选边端点落在该标签的次数。因为总次数不超过 (D)，至多一个标签有 (c_{v,b}\\ge\\lfloor D/2\\rfloor+1)。把重标签的 (w) 送 (B)，其 (D) 件 (f) 分别送固定 (C_{v,r})；非重标签的 (w) 留 (A)，其 (f) 留 (B)。根和 (H) 端按状态构造安排，故同一份完整调度满足",
+      "assumptions": [
+        "complete-source-read-integrated",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "complete-source-read-integrated",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/两层标签收费与出现异权文字池双源审查--审查.md",
+        "sha256": "4da3346adbf0636e155543a90eb3fab298bbe16ce4c1e7c7879379eefc43381b",
+        "section": "阅读范围与对象分离"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/审查/两层标签收费与出现异权文字池双源审查--审查.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/weighted-literal-pool-v2-three-proof-history",
+      "version": 1,
+      "title": "异权文字池的三种匹配来源与终审先验",
+      "kind": "review",
+      "truth_status": "finite",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "保全weighted direct literal-pool v2的scratch陈述、作者离散配对、typed连续槽独立/读后及root终审；与另三份已整合的独立稿和全文canonical逐份比较，区分同一保证与相同图/相同输出、作者先验与真正Exact-first及whole-file审查范围。",
+      "quantifiers": "clause节点连到包含自己真实occurrence的slots。给c的每个occurrence沿对应边质量1/k_c；clause行和一，slot最多两枚真实occurrences、每项≤1/2，列和≤1。同clause两项落同slot时质量相加，边保存一个实际occurrence witness。Hall整数matching覆盖全部clauses，匹配边固定选择其一个真实witness；每slot只用一次且每occurrence只属一个clause，无query重复。",
+      "assumptions": [
+        "five-primary-sources-fully-read-and-compared",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "five-primary-sources-fully-read-and-compared; 保全weighted direct literal-pool v2的scratch陈述、作者离散配对、typed连续槽独立/读后及root终审；与另三份已整合的独立稿和全文canonical逐份比较，区分同一保证与相同图/相同输出、作者先验与真正Exact-first及whole-file审查范围。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/异权文字池的三种匹配来源与终审先验--审查.md",
+        "sha256": "3ca62712aabf636a6f07fe93e988c9d460e25ae1bf79e403f58fdfa9b5226928",
+        "section": "1. 一个 physical 模型，三种证明实现"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/审查/异权文字池的三种匹配来源与终审先验--审查.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/weighted-literal-pool-continuous-slot-rank-proof",
+      "version": 1,
+      "title": "异权文字池的连续槽排名与共同调度",
+      "kind": "proof",
+      "truth_status": "proved",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "在每变量每极性全部eligible occurrence权总和≤1的原private-root/direct-pool矩阵中，完整展开typed先行的f半份/连续单位槽构造；正长度重叠给later-slot occurrence rank≥2ell−2，整数matching同时选择全部clauses与f，恢复全部原jobs及3/2负载界。",
+      "quantifiers": "| 每clause s_c | 该clause的每个原 R_e:1 |",
+      "assumptions": [
+        "complete-under-full-eligible-sign-budgets",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "complete-under-full-eligible-sign-budgets; 在每变量每极性全部eligible occurrence权总和≤1的原private-root/direct-pool矩阵中，完整展开typed先行的f半份/连续单位槽构造；正长度重叠给later-slot occurrence rank≥2ell−2，整数matching同时选择全部clauses与f，恢复全部原jobs及3/2负载界。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/证明/异权文字池的连续槽排名与共同调度--证明.md",
+        "sha256": "41303f6247ca02a93ec6063db619b4353621bdc6ff35482fbcd3eb31c1b55860",
+        "section": "1. 对象与用途"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/证明/异权文字池的连续槽排名与共同调度--证明.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/occurrence-weighted-direct-literal-pool-three-halves",
+      "version": 1,
+      "title": "occurrence 加权 direct literal pool 的三二上界",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "对显式 CNF occurrence、每变量正负 eligible 权总和各≤1、每 clause occurrence 数≥2 的 direct literal-pool 编译，确定性 matching 选一 occurrence/cla​​use，选中 f_v 的 literal pool query load≤1/2、另一 pool≤1，全部原 jobs 保留且 Cmax≤3/2。该证明阻断该精确 full-budget compiler 作为 near-two NO source，不扩到额外端点、大预算、一般UM或hardness。",
+      "quantifiers": "输入是显式 CNF；每 clause 至少两个 occurrence，重复变量/文字 occurrence 具有独立 physical identity。每变量 v 有两个 literal pools，各 pool 的 eligible query 权非负且总和≤1；每个变量有一枚 unit `f_v`，可去任一 pool 的第一 slot。每个 occurrence query 是原不可拆 job：自己的 private root 端时间一、对应 literal pool 端时间为其 weight；每个 clause 有 selector，可放任一 occurrence root。没有额外 guard/endpoint/隐藏 inactive 约束。",
+      "assumptions": [
+        "proved-bounded-compiler-with-explicit-scope",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "proved-bounded-compiler-with-explicit-scope; 对显式 CNF occurrence、每变量正负 eligible 权总和各≤1、每 clause occurrence 数≥2 的 direct literal-pool 编译，确定性 matching 选一 occurrence/cla​​use，选中 f_v 的 literal pool query load≤1/2、另一 pool≤1，全部原 jobs 保留且 Cmax≤3/2。该证明阻断该精确 full-budget compiler 作为 near-two NO source，不扩到额外端点、大预算、一般UM或hardness。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/障碍/occurrence加权literal-pool三二上界--障碍.md",
+        "sha256": "38234a0520ee39d0c401c045f4f0f9b66edc8dbe4d537e8e83f0581b2aa81c34",
+        "section": "对象、来源与结论范围"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/障碍/occurrence加权literal-pool三二上界--障碍.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/direct-cohabiting-strict-identity-weighted-three-halves-schedule",
+      "version": 1,
+      "title": "直接共居的严格身份与异权三半共同调度",
+      "kind": "proof",
+      "truth_status": "proved",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "同一直接共居矩阵严格峰1可双向解码SAT，但任意合法逐occurrence异权均能由共同匹配输出全任务三半；保E/R与全槽两种严格计数及作者/独立两种图。",
+      "quantifiers": "summary: 同一直接共居矩阵严格峰1可双向解码SAT，但任意合法逐occurrence异权均能由共同匹配输出全任务三半；保E/R与全槽两种严格计数及作者/独立两种图。",
+      "assumptions": [
+        "proved-for-explicit-positive-occurrence-dependent-direct-matrix",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "proved-for-explicit-positive-occurrence-dependent-direct-matrix; 同一直接共居矩阵严格峰1可双向解码SAT，但任意合法逐occurrence异权均能由共同匹配输出全任务三半；保E/R与全槽两种严格计数及作者/独立两种图。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/证明/直接共居的严格身份与异权三半共同调度--证明.md",
+        "sha256": "50bf346093ba62337fb868a59ac70891ffb0231a9bbd006e094ce23f49b45958",
+        "section": "1. 修改后的完整原矩阵"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/证明/直接共居的严格身份与异权三半共同调度--证明.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/um-0102-b78bc5b8a17db8f7",
+      "version": 1,
+      "title": "整比双尺寸中性修复与两状态多数地板双源审查",
+      "kind": "review",
+      "truth_status": "finite",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "本页完整实读并比较两个冻结来源：",
+      "quantifiers": "每个原子批次后的负载向量被上一步 majorize，因此所有对称 Schur-convex 负载势非增；批次允许一次移动多个 tiny，不能拆成逐件路径。",
+      "assumptions": [
+        "Exact assumptions are stated in the body.",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "Exact unrelated-machines scope and evidence boundary stated in the body.",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/整比双尺寸中性修复与两状态多数地板双源审查--审查.md",
+        "sha256": "b78bc5b8a17db8f7d4e86b8832af5d1df20e204c6fabd77c7c263b608d767ed9",
+        "section": "整比双尺寸中性修复与两状态多数地板双源审查"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/审查/整比双尺寸中性修复与两状态多数地板双源审查--审查.md"
+      ]
+    },
+    {
+      "object_id": "unrelated-machines/divisible-two-size-count-state-and-labeled-entrypoint-isolated-audit",
+      "version": 1,
+      "title": "整比双尺寸原入口的计数状态与带标签隔离审计",
+      "kind": "computation",
+      "truth_status": "conditional",
+      "model": "The unrelated-machines model, endpoint matrix, and input representation are exactly those specified in this body; no hidden endpoints or solver guarantees are added.",
+      "statement": "完整保count-state与独立带标签程序的全部真实输入/断言/返回身份、一次新空目录执行及冻结字段相同，独立陈述重构/读后与批次边界/位长条件分开。",
+      "quantifiers": "完全相同、全资格m≥1台机器，显式k件macro各Qδ、N件tiny各δ，Q≥1整数binary、δ>0有理，给任意完整实际初态。tick负荷ℓᵢ=Quᵢ+tᵢ。主数学已在[整比双尺寸主对象](../审查/整比双尺寸中性修复与两状态多数地板双源审查--审查.md)吸收，本页是两原程序和独立审查的完整证据资源，不再授予新定理。原件/输入/真实运行见[证据包](../../tools/evidence/two-size-schedule-audits/README.md)。",
+      "assumptions": [
+        "two-unchanged-entrypoints-replayed-once",
+        "All scope restrictions and finite evidence limits are retained."
+      ],
+      "scope": "two-unchanged-entrypoints-replayed-once; 完整保count-state与独立带标签程序的全部真实输入/断言/返回身份、一次新空目录执行及冻结字段相同，独立陈述重构/读后与批次边界/位长条件分开。",
+      "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
+      "body": {
+        "path": "archives/unrelated-machines/state/计算/整比双尺寸原入口的计数状态与带标签隔离审计--计算.md",
+        "sha256": "e9a29df70e8e0d94ba472634da06630888e0b5c3e50d734202992bea57f763b3",
+        "section": "1. 模型、全称证明与有限程序不同身份"
+      },
+      "evidence": [],
+      "sources": [
+        "archives/unrelated-machines/state/计算/整比双尺寸原入口的计数状态与带标签隔离审计--计算.md"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/计算/失真组实际源调度与联合槽独立程序复跑--计算.md",
+      "sha256": "0d163eaa1d2002f1ec96d81ba6ac32e8468b68f4b93d1e357c225b65b6c51341",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/distorted-group-source-schedules-independent-joint-slot-replay"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/失真组给定见证舍入与有效无效证书原入口--资源.md",
+      "sha256": "f420a37fdde29f621189ffb5fd886dbf481f0c444e0e3611c12764258284e36f",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/distorted-group-supplied-witness-original-interfaces"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/障碍/条件叶边际与汇点事件的共同联合性缺口--障碍.md",
+      "sha256": "e7406cd8bb4261123d7207c6bc014097101689310151231f35394f2faa2f7911",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/conditional-leaf-sink-common-joint-law-gap"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/真实最优凸包固定槽与最小工作量面的接续--资源.md",
+      "sha256": "8c177808b3b769fc897ca7187a105210df0cb51057f5199d9e50f64c5c254f3e",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/optimal-convex-fixed-slots-and-minimum-work-face-entry"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/固定工作量单任务势停滞与批量逃逸--资源.md",
+      "sha256": "9fe85a19f78c2360833608d79e436462560f3f40cd66fabbae0b2abcb8382635",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/fixed-work-single-move-trap-and-batch-escape-entry"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/条件叶Hallv3新MC独立重构--审查.md",
+      "sha256": "1b67c87f24fe5362c415d916873573b0638663e2a45d433cb95f233c001808a3",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/conditional-leaf-hall-v3-independent-exact-review"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/固定边际宏位置与正支撑释放的精确前沿--资源.md",
+      "sha256": "3ba4bf84d43b1aa357947edf7326adaad74849905174c209c68e0e41f82219e6",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-FROZEN-MARGINAL-MACRO-SUPPORT-FRONTIERS-RESOURCE-v1"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/凸包边际与残余通过量占位双源审查--审查.md",
+      "sha256": "7664db98655305cb773a96cebc72e4e5eef0a89a119acf8a21216460f5099e60",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/um-0102-7664db98655305cb"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/条件矩重置与固定阶向量提取的不同边界--资源.md",
+      "sha256": "876c2d37b87fbbf508fb177434bed33446403b9fa0b49297a0e7cfac9824df8b",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-MOMENT-RESET-TRUE-SOURCE-EXTRACTION-RESOURCE-v1"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/固定阶与事件链向量贪心双源审查--审查.md",
+      "sha256": "00b1f64341c75caa463ec421bcaa1e96abeb7212daef9535daf93c5bfdf8975f",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-VECTOR-GREEDY-FIXED-ORDER-EVENT-CHAIN-TWO-SOURCE-REVIEW-v1"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/对称重置与双见证查询双源审查--审查.md",
+      "sha256": "d71d7b7e2b61120a67204a5a9a5cada047f05343206ffa09c90cf0818eb04dfa",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/symmetric-reset-two-witness-review"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单件查询计数与近单位必要条件的版本审查--审查.md",
+      "sha256": "7db4a9988c5a833dfc8996727af8f970c430dededef2ce5d4e7b8d4410d87b2a",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/query-count-fee-near-unit-version-review"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/查询计数的零边界修复与保守筛选证书--审查.md",
+      "sha256": "4a672975c4084284e9d8f0bd137299b5340ff130c286e197d79d27ef7aec124b",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/query-count-zero-boundary-owner-filter-certificates"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/近单位查询必要条件的端点与最终组合合同--审查.md",
+      "sha256": "85ac049005d314ea6445a4ee1eba727ee71ca0e0d722c522dd23d55e5a299afd",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/query-count-v3-endpoints-final-composition-contract"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/对称矩聚合的非对称反例与重置审查版本--审查.md",
+      "sha256": "d11f9d99fd7dc29cad8ac381ac6606f253bf847e68bede3b7c7300cf9cc814a1",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/symmetric-aggregation-nonsymmetric-counterexample-review-history"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/强配置矩与对称重置阈值有限审查--审查.md",
+      "sha256": "8cbfecb88b6d9500edc45cb119cb77e8745b05be2d7d371159be1045eb5c3298",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/um-0102-8cbfecb88b6d9500"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/对称平方和背包下界--文献.md",
+      "sha256": "cea01f0eb0dec38149ac2679384abe0c668917832310b42ad1f8828e9186da6a",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/potechin-symmetric-sos-knapsack"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/稀疏配置与强矩匹配双源增量审查--审查.md",
+      "sha256": "e8f6b5ec531d5f6ba46d4e16220c684640f3fa34d41073a1cba47b63e4e21ad3",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/sparse-config-strong-moment-increment-review"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/半整数切片的有限矩检验与共同匹配律障碍--资源.md",
+      "sha256": "e85fc6994c5867058ca1a54569c75899e3afb3fa152e73054cbda4009945a477",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/odd-slice-finite-moment-checks-and-common-matching-law"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Lovasz-Schrijver--矩阵锥与0-1优化--文献.md",
+      "sha256": "73ac75e123ba6abd054ba53f0363aed99e9e90dd37518b2088cbd393cabaeec2",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/lovasz-schrijver-matrix-cones-setfunctions"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/障碍/固定14机原始K2同点canonical拉回失败--障碍.md",
+      "sha256": "0b38efeaa8802c80c56a9d0b36560fd1687632c5bb66f403e3286dd859d0cffa",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/raw-k2-14m-direct-canonical-pullback-obstruction"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/对称固定推前独立原程序的计数轨道与同边际修复--计算.md",
+      "sha256": "bbf36effca618b155731775b4c341d492acf66e940c6587287b499ae8db5d108",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/symmetric-fixed-pushforward-original-orbits-and-same-marginal-repair"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/独立均匀重置矩的双程序与精确复跑--计算.md",
+      "sha256": "77b2d7f0790e392d706e0184e051e19ae11e3d98be9b4f69a52ab1614c1f37ea",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/independent-uniform-reset-two-original-programs-replay"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/给定实际见证的选择器查询与费用接口--资源.md",
+      "sha256": "e761b2f364f5cb2f866e207d7841a35ffb418af971fa9b3e31553cc331dcb28d",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-ACTUAL-WITNESS-QUERY-FEE-CONTRACTS-RESOURCE-v1"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三外接选择器与单任务端口向下投影双源审查--审查.md",
+      "sha256": "373d2362b5f8fd859e3c2d8c73f1264f6aa745b197702fe4cd19c4b0b335e2fc",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/three-host-selector-one-job-port-downset-review"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/两层标签收费与出现异权文字池双源审查--审查.md",
+      "sha256": "4da3346adbf0636e155543a90eb3fab298bbe16ce4c1e7c7879379eefc43381b",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/two-level-label-fee-and-occurrence-weighted-pool-review"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/异权文字池的三种匹配来源与终审先验--审查.md",
+      "sha256": "3ca62712aabf636a6f07fe93e988c9d460e25ae1bf79e403f58fdfa9b5226928",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/weighted-literal-pool-v2-three-proof-history"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/异权文字池的连续槽排名与共同调度--证明.md",
+      "sha256": "41303f6247ca02a93ec6063db619b4353621bdc6ff35482fbcd3eb31c1b55860",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/weighted-literal-pool-continuous-slot-rank-proof"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/障碍/occurrence加权literal-pool三二上界--障碍.md",
+      "sha256": "38234a0520ee39d0c401c045f4f0f9b66edc8dbe4d537e8e83f0581b2aa81c34",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/occurrence-weighted-direct-literal-pool-three-halves"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/直接共居的严格身份与异权三半共同调度--证明.md",
+      "sha256": "50bf346093ba62337fb868a59ac70891ffb0231a9bbd006e094ce23f49b45958",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/direct-cohabiting-strict-identity-weighted-three-halves-schedule"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/整比双尺寸中性修复与两状态多数地板双源审查--审查.md",
+      "sha256": "b78bc5b8a17db8f7d4e86b8832af5d1df20e204c6fabd77c7c263b608d767ed9",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/um-0102-b78bc5b8a17db8f7"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/整比双尺寸原入口的计数状态与带标签隔离审计--计算.md",
+      "sha256": "e9a29df70e8e0d94ba472634da06630888e0b5c3e50d734202992bea57f763b3",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/divisible-two-size-count-state-and-labeled-entrypoint-isolated-audit"
+      ],
+      "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    }
+  ],
+  "edge_files": [],
+  "supersedes": "register-ab98f323ad-0102",
+  "resolution_note": "All 32 former needs-decision rows were read in full and resolved as distinct exact body owners using stable frontmatter IDs or a deterministic path-SHA ID for three legacy pages without frontmatter id. Finite/open/conditional statuses remain scoped."
+}
