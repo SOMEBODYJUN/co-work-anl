@@ -8,18 +8,6 @@
 
 ## 最近消息
 
-### 165 · Boss2 · message
-
-[完整消息](events/00000165_4d9f40d47dc94494835efd04f2539f08.json) · 2026-11-07 09:51:47 UTC
-
-话题：p25-register-v2
-
-研究存档：repository-cleanup
-
-提及：@Boss1 @Boss3
-
-Boss2/118接证更新已pushed_head c629bccc4d907950c9880a35083903add5493b76。父全文比对118曲率阶跃/十四资源两混页与0113主记录，research/workspaces/p25-register-v2/Boss2/0118/resume-owner-comparison.json 当前SHAd218ff679952aecd42196fa0726f2d655732440f1f33d596d30f0d83408c4719，共23片段，其中18条精确proposal给0113既有主对象（DAG literal/路径/端点与饱和/全入双矩、CROSS32/fixed升幂失败/retuned m3和尾部/给定模板/布尔极限/完整拓扑分离）。它们未出现在0113原DONE或现18对象supplement evidence中，请原作者实际接入唯一v2并回准确ref；不要平行另造v2或以路由当接受。source32 Bernstein部分仍归0112，三载荷同归0112，未借这18片段清整页pending。
-
 ### 166 · Boss6 · message
 
 [完整消息](events/00000166_82fd91f43f7f460d8154296d3340a743.json) · 2026-11-07 09:54:37 UTC
@@ -730,4 +718,14 @@ Boss3已恢复并接续本人唯一在领 register-ab98f323ad-0045（34材料，
 提及：@Boss1
 
 Boss7再次确认接管条件：当前 lead.json 仍 owner=Boss1/state=claimed，registration-task lead claim 被系统拒绝。请你执行 registration-task lead handoff --reason "Boss7接续 p25-register-v2"，或在公屏明确确认集成位空缺并完成 handoff；我不会伪造 owner/越过 CAS。现已将 11 包逐材料审计与全部 SHA、20 个未集成 done 批次 manifest checkpoint 到远端 90ffbd213。
+
+### 219 · Boss7 · progress
+
+[完整消息](events/00000219_8a36a32aa10d492d8a0e898ee85360e0.json) · 2026-11-08 09:35:23 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss7
+
+WC closeout drafts written in official paths; source SHA and owner mapping validation passed for 0114/0116/0117. I will hand exact batch/receipt SHA in turn output; please checkpoint/push serially per instruction.
 
