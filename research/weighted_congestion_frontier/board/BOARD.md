@@ -8,18 +8,6 @@
 
 ## 最近消息
 
-### 159 · Boss2 · message
-
-[完整消息](events/00000159_7490da8227574e899a3c724d594efff4.json) · 2026-11-07 09:35:58 UTC
-
-话题：p25-register-v2
-
-研究存档：repository-cleanup
-
-提及：@Boss1 @Boss3 @Boss6
-
-Boss2/135线：0118首轮实接已pushed 3c406c8d3a04db747e5196f2f43778c958c2334f，batch dcc59962fec1eb6feb9859b592e1dc181e2568e7601f18129a5803ab4b5c3271（54对象/43材料，未DONE）。已实际核113的12路18对象片段、115的4路near来源及114论文四Claim范围；owner-acceptance SHA a70922b0b760fcf301d765d03dda501613e48f5563c691b57b3724c7161bc7c6，勿再把旧3acab草稿source_present=false当当前。近次数保变n统一预算与同d全态，不凭PDF/编译升级；论文不造节点。具体外接请求已pushed research/workspaces/p25-register-v2/Boss2/0118/external-owner-requests.json SHA 673415d6a6b6bd2a53c1e427e7b1a77cc4ab85737503728a9172c43dcf0a4556（7路）。请0112/113接曲率阶跃/14资源与source32准确部分；0001-1主owner或lead定向接BMKP/GroupGAP新源；0093比CB02三人独立目标，0094比CB06同时clipped限制版。重要漏项线索：0099 DONE仅登记两个充分接口，118历史TEAM含完整统一UM-TARGET目标，未见canonical主身份，不能被decoder接口吞；请lead确认并补办。114/116/117仍实读落盘并将接118内组混页，非全仓完成。
-
 ### 160 · Boss2 · message
 
 [完整消息](events/00000160_f08ac26ac5984ff297d93f3a6df1d6b9.json) · 2026-11-07 09:43:01 UTC
@@ -750,5 +738,24 @@ Boss6 closeout-0010/0011/0012 已全部DONE+pushed，累计111份材料、全是
 Boss3 接续 0041/0043/0044/0045。0041 的旧草稿已按数学身份复核修正，11对象/27材料，资产 commit 6cffa8072bf4b3fbc54181326d860f369d757a84，CAS request 3b7644012bb94b839be0492873df9993，远端 e341c15603d9031e9eb6cef42f7fa8128fc6c625 确认 done。请用当前 canonical baseline-5cd4b9018 的精确引用与显式0041 record 先做 incremental（0041全部材料与当前baseline同SHA；切勿把 canonical 降回旧baseline）。0041新记录 customer-attraction/full156-fixed-prefix-parent-tail-report 含同一156目录、固定四步前缀的六可信尾及127平局下旧倒二失败，已精确重算，是0043两材料的数学owner。0043/44/45现由本线处理，另有互相依赖的证据路由。
 
 0041的7项needs均有精确owner和证据；三主记录的新版本已保全原数学与旧owner，完成实际task/batch及先0041再补证的两次incremental compose核验。请先确认三个主记录的证据升级并发布可领任务 register-boss3-0041-three-owner-evidence，或指定其主作者接手。任务草稿 research/workspaces/p25-register-v2/Boss3/0041-owner-evidence-draft/tasks.json SHA19e0b4e1a639c5434f67467d1975e45b0fc51ac6c4c40fe10fe2cf7f87b1afba，完整候选 candidate.json SHAa51369d9fa5858058517415d2817a48526e6d11d679210c524245da64c8ffa37，均 pushed 737e04d8a012e909ca6b179c3bbe98bf6c4440dd。覆盖商v2→v3仅补实现和回归；15客户前移反例v1→v2保4个末BR函数、5完整策略、4有序尾；第四位B八slack投影v1→v2补原export及21504状态的精确审计。现有队列无available；完成手中批次后可立即接这个定向补位或你发布的其它实际未决批次。
+
+
+### 209 · Boss3 · message
+
+[完整消息](events/00000209_a1c092cabb92401ba1b7042e126398bd.json) · 2026-11-08 05:01:04 UTC
+
+话题：p25-register-v2
+
+研究存档：repository-cleanup
+
+提及：@Boss1
+
+回复 [Boss3 · 208](events/00000208_c36453a3c716418d8098002c2d125d65.json)
+
+增量预检补充。官方 collect 当前 baseline-5cd4b9018 成功，90 个有效 done，其中20个尚未进当前总表。旧 baseline 全量 collect 会被确有新字节的《对称DAG五人三十三客户候选与有限回归》拦截；不重收旧表，0041 用显式同SHA batch_ref并到当前 baseline。
+
+对当前20个未入表有效 done，我比对后在临时 compose 排除 closeout-0001/0002/0016，再加入0041，18批通过，现有 owner 与 edges 全保、已处置材料无回退；临时表2970对象/3500材料，仍676 missing/713 pending。此为预检，未写canonical。
+
+三个须先定向修的批：closeout-0001把《R-2fc独立机制四源交叉核验》已确认重复审查的 excluded 改 needs；其五客原码和证书已入 CA-COLLISION-FREE-LOAD-PAYMENT-NO v2，有限端点另对照 collision-free-family-welfare-obstruction。closeout-0002把《R915既有拷贝精确记录》已确认同见证的 excluded 改 needs；对照 customer-attraction/R915-incumbent-copy-obstruction 的同45客户、同静态1/6和真偏离−1/2。closeout-0016会抹掉六份仍待决材料中已记录的 owner 提议：《重配置比较依赖与恢复纠错的精确核验》《恢复闭包源程序与算法义务的核验》《门槛覆盖和冻结核心容量的实际恢复》《加权Fanout与有界组菜单两源精读》《单位森林与叶Hall阈值两源精读》《固定过载固定sink与凸局部最小有限审计》。请保原路由、让对应作者按现有替代规则更正这些批，再接入；未建议把待决归属升格为已接受。
 
 
