@@ -604,6 +604,7 @@ def _published_registration_materials(root, include_completed=True):
 
 
 _CONTEXT_ENCODINGS = {}
+_TOKEN_RUNS = re.compile(r'[A-Za-z0-9_]+|[ \t]+|\r\n|\n|.', re.DOTALL)
 
 
 def _context_text(path, raw):
@@ -636,9 +637,10 @@ def text_cost(text, model='gpt-6.1-sol'):
         # Standard-library fallback for Chinese mathematical Markdown. It is a
         # deliberately padded planning estimate, never characters == tokens.
         tokens = 0
-        for run in re.findall(r'[A-Za-z0-9_]+|[ \t]+|\r\n|\n|.', text, re.DOTALL):
-            if run.isascii() and re.fullmatch(r'[A-Za-z0-9_]+', run):
-                tokens += math.ceil(len(run) / 3)
+        for run in _TOKEN_RUNS.findall(text):
+            first = run[0]
+            if first.isascii() and (first.isalnum() or first == '_'):
+                tokens += (len(run) + 2) // 3
             elif run.isspace() and '\n' not in run and '\r' not in run:
                 tokens += math.ceil(len(run) / 8)
             elif run in {'\n', '\r\n'}:
@@ -712,14 +714,16 @@ def reading_cost(root, refs, metadata=None, cache=None, model='gpt-6.1-sol'):
     cache = {} if cache is None else cache
     sources = {}
     for ref in refs:
-        path = runtime.reference(root, ref)
+        if not isinstance(ref, dict) or not {'path', 'sha256'} <= ref.keys() or ref.keys() - {'path', 'sha256', 'section'}:
+            raise ValueError('A reference needs path, sha256, and optional exact section title')
         key = (ref['path'], ref['sha256'])
         if key not in cache:
+            path = runtime.reference(root, ref)
             raw = path.read_bytes()
             if runtime.digest(raw) != ref['sha256']:
                 raise ValueError('Stale content binding: ' + ref['path'])
             text = _context_text(path, raw)
-            cache[key] = {'text': text, 'bytes': len(raw)}
+            cache[key] = {'text': text, 'bytes': len(raw), 'sections': {}}
         text = cache[key]['text']
         row = sources.setdefault(key, {'ref': {'path': key[0], 'sha256': key[1]}, 'spans': []})
         if text is None:
@@ -728,11 +732,17 @@ def reading_cost(root, refs, metadata=None, cache=None, model='gpt-6.1-sol'):
         if 'section' not in ref:
             row['spans'].append((0, len(text)))
         else:
-            selected = runtime.section(text, ref['section'])
-            positions = [start for title, _, start in runtime.heading_sections(text) if title == ref['section']]
-            if len(positions) != 1:
-                raise ValueError('Section title missing or ambiguous: ' + ref['section'])
-            row['spans'].append((positions[0], positions[0] + len(selected)))
+            title = ref['section']
+            sections = cache[key]['sections']
+            if title not in sections:
+                headings = runtime.heading_sections(text)
+                matches = [(level, start) for name, level, start in headings if name == title]
+                if len(matches) != 1:
+                    raise ValueError('Section title missing or ambiguous: ' + str(title))
+                level, start = matches[0]
+                end = next((pos for _, depth, pos in headings if pos > start and depth <= level), len(text))
+                sections[title] = (start, end)
+            row['spans'].append(sections[title])
     totals = {'chars': 0, 'utf8_bytes': 0, 'source_tokens': 0, 'metadata_tokens': 0,
               'estimated_tokens': 0, 'metadata_chars': 0, 'metadata_utf8_bytes': 0, 'distinct_files': len(sources), 'reading_segments': 0,
               'token_count_is_estimate': False, 'estimators': [], 'unmeasured_refs': []}

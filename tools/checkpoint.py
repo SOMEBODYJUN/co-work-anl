@@ -115,7 +115,40 @@ def audit_outgoing(repo, head, remote_tip, paths):
     return commits, sorted(changed)
 
 
-def audit_map_write_scope(repo, remote_tip, outgoing):
+def audit_map_projections(repo, head, paths, rows):
+    """Recheck generated projections after a concurrent merge changes HEAD."""
+    from research_runtime import _effective_map_done, pin
+
+    registries = {}
+    final_pin = None
+    for name in paths:
+        if name != "map/graph-v2.json" and not name.endswith("/map/graph-v2.json"):
+            continue
+        saved = git(repo, "show", head + ":" + name, check=False)
+        if saved.returncode:  # Removing an obsolete projection is allowed.
+            continue
+        graph = json.loads(saved.stdout)
+        registry = graph.get("registry")
+        if not isinstance(registry, str) or not registry:
+            raise Stop("Map projection has no registered input: " + name)
+        if registry not in registries:
+            registries[registry] = pin(json.loads(git(repo, "show", head + ":" + registry).stdout))
+        if graph.get("registry_pin") != registries[registry]:
+            raise Stop("Map projection has stale registry inputs after concurrent changes: " + name +
+                       ". Local checkpoint retained. Sync, assemble and rebuild before publishing.")
+        if graph.get("status") == "registered-coverage":
+            final_pin = registries[registry]
+    if final_pin is None:
+        return
+    review = json.loads(git(repo, "show", head + ":map/integration.json").stdout)
+    expected = {tid: pin(row["receipt"]) for tid, row in _effective_map_done(rows).items()}
+    if (not rows or any(row["state"] not in {"done", "withdrawn"} for row in rows)
+            or review.get("registry_pin") != final_pin or review.get("task_receipt_pins", {}) != expected):
+        raise Stop("Final map projection differs from the current published queue or integration. "
+                   "Local checkpoint retained. Sync, assemble and rebuild before publishing.")
+
+
+def audit_map_write_scope(repo, remote_tip, outgoing, head=None):
     """Check map outputs against the ownership at the tip we just fetched."""
     if not outgoing:
         return
@@ -185,6 +218,8 @@ def audit_map_write_scope(repo, remote_tip, outgoing):
     if denied:
         raise Stop("Published map task scope is not currently owned by " + actor + ": " +
                    ", ".join(denied) + ". Local checkpoint retained.")
+    if lead_files and head is not None:
+        audit_map_projections(repo, head, lead_files, rows)
 
 
 def describe_assets(repo, directory, commit, files, branch="main"):
@@ -412,7 +447,7 @@ def locked_save(repo, common, cache, args):
         result["assets"] = describe_assets(repo, record_dir, head, result["files"], branch)
         result["checked_head"] = head
         receipt.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
-        audit_map_write_scope(repo, baseline, outgoing)
+        audit_map_write_scope(repo, baseline, outgoing, head)
         pushed = git(repo, "push", "--quiet", "origin", head + ":" + ref, check=False)
         fetched = git(repo, "fetch", "--quiet", "--no-tags", "--no-write-fetch-head",
                       "origin", "+" + ref + ":" + private, check=False)

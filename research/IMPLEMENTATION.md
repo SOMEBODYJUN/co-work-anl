@@ -165,7 +165,7 @@ python work.py checkpoint research/registry.json -m 'Integrate accurately regist
 
 map lead发现漏对象，或研究Main有新成果时，由发起人负责把精确陈述、条件、正文/证据出处和需要新增/改版的理由送到现有p25登记lead并跟进；不能发完消息就当完成。只有独立可复用的数学对象需要补登记，普通证明步骤留在现有正文和边解释。原lead已交接或明确空缺，发起Boss可用本对话合适绑定clone或独立阶段clone显式`lead claim`接任；已有归属未解时先保存具体数学与待整合项、继续其它独立工作，不凭静默抢占。
 
-字节不变的既有正文可复用对应baseline，发布只含必要来源的局部批次；同SHA材料的owner列表由增量合并。新正文或改字节先明确checkpoint确认pushed，再发布新的inputs/baseline路径；全仓完成须新baseline仍覆盖当前全仓字节，但只派新增/改动部分的数学工作。用`mode:incremental`和当前`base_registry`精确引用收必要新批。需要清理重复身份时，manifest的`retired_objects`给准确去向与理由，保留独有数学和来源。涉及总表时串行安排：登记lead先完成并推送对象/材料增量，map lead再同步、重判受影响pin与关系；其余数学不等全仓重建。
+字节不变的既有正文可复用对应baseline，发布只含必要来源的局部批次；同SHA材料的owner列表由增量合并。新增独立正文可先推再登记。改动已冻结或被引用的正文、证据时先在独立工作区准备勘误，登记lead更新冻结材料及所有命中引用的SHA和对象版本，连同正文、baseline和registry一次推送。只改路径或文字时沿用准确的陈述和身份。全仓出口仍覆盖当前正式材料，只派受影响范围；普通新增批用`mode:incremental`和当前`base_registry`。清理重复身份时，`retired_objects`给出明确去向。map lead同步后只重判受影响pin与关系，其余批继续。
 
 旧核心未变而只增加已登记依赖，用`map read-add`续原批；核心版本/pin已变，作者保草稿并handoff，map lead按新版本重派交原worker接续；已done批按定向替代处理。正常完成本轮登记/构图后，准确出口已pushed并交清接续位置，lead也须`lead handoff --reason`释放集成位，后续增量才有合法接任入口；不是每包结束就重换lead。
 

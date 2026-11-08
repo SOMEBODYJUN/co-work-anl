@@ -332,7 +332,12 @@ def prepare_inputs(root, output, scope='repository', coverage_note=None, paths=N
     return registration.prepare_inputs(root, output, scope, coverage_note.strip(), paths=paths)
 
 
-def _map_queue_snapshot(root):
+def _map_registration_pin(data):
+    # Assembly may add or remove relation files before their first publication.
+    return pin({key: value for key, value in data.items() if key != 'edge_files'})
+
+
+def _map_queue_snapshot(root, registry=None):
     """Read the live bound queue, or an explicitly identified Git snapshot."""
     root = Path(root).resolve()
     top = subprocess.run(['git', 'rev-parse', '--show-toplevel'], cwd=root,
@@ -348,8 +353,12 @@ def _map_queue_snapshot(root):
 
         with map_tasks.latest(root, 'map') as (snapshot, ctx):
             tip = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=snapshot, text=True).strip()
-            return map_tasks.listing(snapshot, ctx=ctx), {
+            provenance = {
                 'source': 'latest-published-workflow', 'tip': tip, 'workflow_run': bound_run}
+            if registry is not None:
+                published = json.loads(map_tasks._ensure(snapshot, registry).read_bytes())
+                provenance['registration_input_pin'] = _map_registration_pin(published)
+            return map_tasks.listing(snapshot, ctx=ctx), provenance
 
     branch = coordination.config(root, 'wcg.branch') or subprocess.check_output(
         ['git', 'branch', '--show-current'], cwd=root, text=True).strip()
@@ -392,7 +401,10 @@ def _map_inputs_current(definition, current_pins):
 
 
 def _map_queue_final_check(root, registry, data, objects, review):
-    rows, snapshot = _map_queue_snapshot(root)
+    rows, snapshot = _map_queue_snapshot(root, registry)
+    if snapshot.get('source') == 'latest-published-workflow':
+        if snapshot['registration_input_pin'] != _map_registration_pin(data):
+            raise ValueError('Local registration input differs from the published registry; run work.py sync and review affected map tasks before final verification')
     if not rows:
         if snapshot.get('source') == 'latest-published-workflow':
             raise ValueError('Publish and complete the map task queue before final verification')
@@ -404,6 +416,11 @@ def _map_queue_final_check(root, registry, data, objects, review):
     expected = {task_id: pin(row['receipt']) for task_id, row in done.items()}
     if review.get('task_receipt_pins', {}) != expected:
         raise ValueError('Completed map receipts differ from the assembled integration; sync and map assemble again')
+    covered = {oid for row in done.values() for oid in row['receipt']['coverage']}
+    missing = sorted(objects.keys() - covered)
+    if missing:
+        raise ValueError(f'Published map receipts lack coverage for {len(missing)} registered objects; examples: '
+                         + ', '.join(missing[:5]))
     current_pins = {oid: pin(obj) for oid, obj in objects.items()}
     edge_files = set(data.get('edge_files', []))
     for task_id, row in done.items():
@@ -1123,26 +1140,31 @@ def draft_map_tasks(root, output='map/planned-tasks.json', registry=REGISTRY,
             full = texts[key]
             for start, end in registration._merged_intervals(intervals):
                 cursor = start
+                width = 2 * allowance
                 while cursor < end:
-                    if measure_text(full[cursor:end])['estimated_tokens'] <= allowance:
-                        stop = end
-                    else:
-                        low, high = cursor + 1, end
-                        while low < high:
-                            middle = (low + high + 1) // 2
-                            if measure_text(full[cursor:middle])['estimated_tokens'] <= allowance:
-                                low = middle
-                            else:
-                                high = middle - 1
-                        stop = low
+                    # Size the next pass from observed density rather than
+                    # repeatedly measuring the full unread suffix.
+                    stop = min(end, cursor + width)
+                    cost = measure_text(full[cursor:stop])
+                    while cost['estimated_tokens'] > allowance and stop > cursor + 1:
+                        width = max(1, (stop - cursor) * allowance * 9 // (cost['estimated_tokens'] * 10))
+                        stop = cursor + width
+                        cost = measure_text(full[cursor:stop])
+                    width = max(1, (stop - cursor) * allowance // max(1, cost['estimated_tokens']))
+                    if stop < end:
                         # Prefer complete paragraphs/lines. A very long line
                         # still has exact consecutive character windows.
                         boundary = full.rfind('\n\n', cursor, stop)
-                        if boundary <= cursor:
-                            boundary = full.rfind('\n', cursor, stop)
                         if boundary > cursor:
-                            stop = boundary + (2 if full[boundary:boundary + 2] == '\n\n' else 1)
-                    cost = measure_text(full[cursor:stop])
+                            boundary += 2
+                        else:
+                            boundary = full.rfind('\n', cursor, stop)
+                            if boundary > cursor:
+                                boundary += 1
+                        if cursor < boundary < stop:
+                            boundary_cost = measure_text(full[cursor:boundary])
+                            if boundary_cost['estimated_tokens'] <= allowance:
+                                stop, cost = boundary, boundary_cost
                     guide.append({'source': {'path': key[0], 'sha256': key[1]},
                                   'declared_sections': list(dict.fromkeys(originals[key])),
                                   'start_char': cursor, 'end_char_exclusive': stop,

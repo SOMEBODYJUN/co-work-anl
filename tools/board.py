@@ -49,7 +49,7 @@ def push_race(result):
     if not result.returncode:
         return False
     output = result.stdout + result.stderr
-    return bool(re.search(rb'non-fast-forward|fetch first|stale info', output, re.I) or
+    return bool(re.search(rb'non-fast-forward|fetch first|stale info|\(incorrect old value provided\)', output, re.I) or
                 re.search(rb'cannot lock ref.*?is at [0-9a-f]+ but expected [0-9a-f]+',
                           output, re.I | re.S))
 

@@ -23,6 +23,8 @@ python work.py board-init
 
 先map list --owner self恢复未完，再map lead show及实际公屏。有lead接现有任务，无lead显式lead claim；成功者发布比较范围并持续集成，也做数学。只派当前仍归本人且pushed的任务。每包用fork_turns:none的fresh worker，给Boss号、clone绝对路径、任务路径和内部词；批内反馈找原worker，完成一包立即补新worker，不把上包历史当零占用。
 
+队列没有可领时用map list看实际剩余和归属。确认原Boss无法接续且用户已授权接管时，新lead用 `map lead reclaim --from BossN --reason <原因>`，再由lead用 `map reclaim --owner BossN --reason <原因>` 一次释放该Boss的未完包，照常批领。已完成的产物保留。
+
 ## 每包怎样做数学
 
 **读清对象。** 按object_ids/read_object_ids读精确陈述、模型、域、量词、条件、objections和必要完整论证，确认已成立与未付部分。正文仍是Markdown，端点使用登记object_id。
@@ -48,9 +50,11 @@ python work.py map plan --record-file map/planned-tasks.json
 python work.py map claim-next --count <实际worker空位数>
 ```
 
-3B/3C由lead用重复--object-id或--objects-file给实际前沿。按关联和真实上下文预算整包读取，共同证据去重，不固定篇数或硬拼无关对象；超大完整对象保同任务分章节连续读写，保存成立部分与断点，不截断证明。
+3B/3C由lead用重复--object-id或--objects-file给实际前沿。按关联和真实上下文预算整包读取，共同证据去重。超大正文在同任务分章节接着读，保存已读论证与断点。机器证书读规范、相关记录、检查器和必要的核验结果，按具体数学疑点决定是否复算。
 
-缺漏独立对象或登记纠错由当前map lead追踪登记增量，具体交接按PHASE3_READINESS。增量先pushed再同步：核心未变、只加依赖时read-add；在领包的输入改版时保草稿并handoff，由lead重派；已done的包有待定或过时输入时，用 `research map-draft --repair-task <旧任务ID>` 生成明确替代批，保留仍有效的比较，逐项交代旧边去向。其余包继续推进。
+发现原文确有错，给出原位置、准确改法和受影响对象。已冻结或被引用的文件由登记lead把小改、相关SHA/版本、冻结清单和总表一次推送。只改受影响的引用及陈述，保留其余判断。独立缺漏对象也由map lead跟进补登记，细节按PHASE3_READINESS。
+
+同步新登记后，只加依赖用read-add；在领包的输入改版时保草稿并handoff，由lead重派；已done的包有待定或过时输入时，用 `research map-draft --repair-task <旧任务ID>` 定向替代，保留仍有效的比较，逐项交代旧边去向。其余包继续推进。
 
 ## 写出产物，成熟即交，持续做到准确出口
 

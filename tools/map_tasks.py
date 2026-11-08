@@ -6,6 +6,7 @@ import fcntl
 import copy
 import hashlib
 import json
+from functools import lru_cache
 from pathlib import Path, PurePosixPath
 import re
 import uuid
@@ -159,8 +160,16 @@ def _ref_bytes(root,ref):
     return research.ref_bytes(root,ref)
 
 
+@lru_cache(maxsize=2)
+def _snapshot_registry(root,name):
+    # A disposable queue checkout is bound to one published commit. All its
+    # tasks share this structural validation; per-task byte checks still run.
+    return research.load(root,name,verify=False)
+
+
 def _load(root,name,verify=False):
     _ensure(root,name)
+    if not verify and _cache_for(root) is not None:return _snapshot_registry(root,name)
     return research.load(root,name,verify=verify)
 
 
@@ -619,6 +628,7 @@ def _plan(root,records,ctx,actor,instance,request_id):
 
 def _apply(root,ctx,actor,instance,intent,request_id):
     operation=intent['operation'];task_id=intent.get('task_id');reason=intent.get('reason');rows=listing(root,ctx=ctx)
+    expected_owner=intent.get('expected_owner')
     lead=lead_record(root,ctx)
     acknowledged=[r for r in [lead,*rows] if request_id in r.get('requests',{})]
     if acknowledged:
@@ -640,6 +650,16 @@ def _apply(root,ctx,actor,instance,intent,request_id):
         require_lead(root,ctx,actor,instance)
         if not reason or not reason.strip():raise ValueError('Concrete lead handoff reason required')
         lead.update(owner=None,state='handoff',previous_owner=actor,reason=reason);_request(lead,request_id,operation);_write_json(lead_path(root,ctx),lead)
+        return [lead_path(root,ctx)],{'lead':lead}
+    if operation=='lead-reclaim':
+        if ctx['phase']!='map':raise ValueError('Lead recovery applies to the map workflow')
+        if not expected_owner or actor==expected_owner:
+            raise ValueError('Name the previous lead with --from BossN and use your own registered Boss identity')
+        if lead.get('state')!='claimed' or lead.get('owner')!=expected_owner:
+            raise TaskBusy('Published lead changed; read map lead show before recovering')
+        if not reason or not reason.strip():raise ValueError('User-authorized lead reassignment reason required')
+        lead.update(owner=actor,instance=instance,previous_owner=expected_owner,reason=reason)
+        _request(lead,request_id,operation);_write_json(lead_path(root,ctx),lead)
         return [lead_path(root,ctx)],{'lead':lead}
     if operation=='plan':return _plan(root,intent['records'],ctx,actor,instance,request_id)
     if operation=='handoff-all':
@@ -691,9 +711,12 @@ def _apply(root,ctx,actor,instance,intent,request_id):
         if set(ids)-known.keys():raise ValueError('Unknown completed batch in this workflow')
         already={item['task_id'] for item in completions if known[item['task_id']]['state']=='done'
                  and known[item['task_id']].get('owner')==actor and known[item['task_id']].get('receipt')==item['receipt']}
-        # Warm all actual delivery references together. Each transition below
-        # still validates exact bytes, ownership, baseline and mathematical refs.
-        deliveries=[(known[item['task_id']]['definition'],item['receipt']) for item in completions] if len(already)!=len(ids) else []
+        # Registration may use an acknowledged batch's owners as peers.
+        # A map acknowledgement is historical and its old assets may be retired.
+        deliveries=[]
+        if len(already)!=len(ids):
+            deliveries=[(known[item['task_id']]['definition'],item['receipt']) for item in completions
+                        if ctx['phase']=='registration' or item['task_id'] not in already]
         peers=_prefetch_done(root,deliveries,ctx['phase'])
         updated=[]
         for item in completions:
@@ -706,6 +729,18 @@ def _apply(root,ctx,actor,instance,intent,request_id):
         returned=updated+[known[tid] for tid in sorted(already)]
         return paths,{'tasks':ids,'task_records':returned,'completed_batches':len(updated),'already_done_tasks':sorted(already),
                       'material_count':_material_count(returned)}
+    if operation=='reclaim-owner':
+        if ctx['phase']!='map':raise ValueError('Bulk owner recovery applies to the map workflow')
+        require_lead(root,ctx,actor,instance)
+        if not expected_owner:raise ValueError('Name the previous owner with --owner BossN')
+        if not reason or not reason.strip():raise ValueError('Concrete coordinator reclaim reason required')
+        chosen=[row for row in rows if row.get('owner')==expected_owner and row['state'] in ACTIVE]
+        paths=[]
+        for old in chosen:
+            tid=old['definition']['task_id']
+            path=task_path(root,tid,ctx=ctx)
+            _write_json(path,_reclaim(old,actor,reason,request_id));paths.append(path)
+        return paths,{'tasks':[row['definition']['task_id'] for row in chosen]}
     matches=[r for r in rows if r['definition']['task_id']==task_id]
     if not matches:raise ValueError('Unknown task in this workflow: '+str(task_id))
     old=matches[0]
@@ -731,7 +766,7 @@ def _apply(root,ctx,actor,instance,intent,request_id):
         if old['state']=='done':raise ValueError('Do not reclaim completed mathematical work')
         if not old.get('owner') or old['state'] not in ACTIVE:raise ValueError('Only an explicitly unfinished owned task can be reclaimed')
         if not reason or not reason.strip():raise ValueError('Concrete coordinator reclaim reason required')
-        new=copy.deepcopy(old);new.update(state='handoff',owner=None,previous_owner=old['owner'],reason=reason,reclaimed_by=actor);_request(new,request_id,operation)
+        new=_reclaim(old,actor,reason,request_id)
     elif operation=='withdraw':
         require_lead(root,ctx,actor,instance)
         if old.get('owner') or old['state'] not in {'available','handoff'}:raise ValueError('Only withdraw an unowned unfinished task; hand off/reclaim active work first')
@@ -744,7 +779,13 @@ def _apply(root,ctx,actor,instance,intent,request_id):
     return [path],{'task_id':task_id,'task':new}
 
 
-def mutate(root,task_id,operation,receipt=None,reason=None,phase='map',records=None,prefix='',local=False,read_ids=None,count=1,completions=None):
+def _reclaim(old,actor,reason,request_id):
+    new=copy.deepcopy(old)
+    new.update(state='handoff',owner=None,previous_owner=old['owner'],reason=reason,reclaimed_by=actor)
+    return _request(new,request_id,'reclaim')
+
+
+def mutate(root,task_id,operation,receipt=None,reason=None,phase='map',records=None,prefix='',local=False,read_ids=None,count=1,completions=None,expected_owner=None):
     ctx=binding(root,phase,local);actor=coordination.config(root,'wcg.actor') or ('Boss1' if local else '')
     instance=coordination.config(root,'wcg.instance') or ('local-offline' if local else '')
     if not re.fullmatch(r'Boss[1-9][0-9]*',actor):raise ValueError('Explicit Boss identity required')
@@ -753,6 +794,9 @@ def mutate(root,task_id,operation,receipt=None,reason=None,phase='map',records=N
     # upgrade can recover an existing pending request unchanged.
     if count!=1:intent['count']=count
     if completions is not None:intent['completions']=completions
+    if expected_owner is not None:
+        if not re.fullmatch(r'Boss[1-9][0-9]*',expected_owner):raise ValueError('Expected a published Boss number')
+        intent['expected_owner']=expected_owner
     board.guard(intent)
     if local:
         paths,result=_apply(root,ctx,actor,instance,intent,uuid.uuid4().hex)
@@ -761,7 +805,7 @@ def mutate(root,task_id,operation,receipt=None,reason=None,phase='map',records=N
     if not branch:raise ValueError('Start this independent clone on the shared branch first')
     client=board.Board(root,branch=branch,retries=8)
     pending_dir=client.cache/'workflow-pending'/ctx['run'];pending_dir.mkdir(parents=True,exist_ok=True)
-    key=hashlib.sha256((operation+'\0'+str(task_id or prefix)).encode()).hexdigest()[:24]
+    key=hashlib.sha256((operation+'\0'+str(task_id or prefix or expected_owner or '')).encode()).hexdigest()[:24]
     pending_path=pending_dir/(key+'.json');intent_pin=research.pin(intent)
     if pending_path.exists():
         pending=json.loads(pending_path.read_text())
@@ -785,7 +829,7 @@ def mutate(root,task_id,operation,receipt=None,reason=None,phase='map',records=N
                 pending_path.unlink(missing_ok=True)
                 return dict(result,status=result.get('status','pushed'),request_id=request_id,remote_tip=board.git(directory,'rev-parse','HEAD').stdout.decode().strip())
             names=[p.relative_to(directory).as_posix() for p in paths]
-            board.git(directory,'add','--',*names);board.git(directory,'commit','--quiet','-m',f'{phase} {operation}: {actor} {task_id or prefix}')
+            board.git(directory,'add','--',*names);board.git(directory,'commit','--quiet','-m',f'{phase} {operation}: {actor} {task_id or prefix or expected_owner or ""}')
             attempted=True
             _write_json(pending_path,{'request_id':request_id,'intent_pin':intent_pin,'intent':intent,'push_attempted':True})
             pushed=board.git(directory,'push','--quiet','origin','HEAD:refs/heads/'+branch,check=False)
@@ -885,8 +929,9 @@ def assemble(root,local=False):
             if listing(root,ctx=ctx)!=remote_rows or lead_record(root,ctx)!=lead_record(snapshot,remote_ctx):
                 raise ValueError('Local workflow state is behind or differs from published batches; run work.py sync before assemble')
             remote_gathered=collect(snapshot,'map',ctx=remote_ctx)
-            remote_registry=_ensure(snapshot,remote_gathered['registry']).read_bytes()
-            if _safe_path(root,remote_gathered['registry']).read_bytes()!=remote_registry:
+            remote_registry,_=_load(snapshot,remote_gathered['registry'],verify=False)
+            local_registry=json.loads(_safe_path(root,remote_gathered['registry']).read_bytes())
+            if research._map_registration_pin(local_registry)!=research._map_registration_pin(remote_registry):
                 raise ValueError('Local registry differs from the published input; checkpoint intended edits and run work.py sync before assemble')
         try:gathered=collect(root,'map',local)
         except (ValueError,OSError) as exc:
@@ -894,7 +939,8 @@ def assemble(root,local=False):
         if gathered!=remote_gathered:raise ValueError('Local batch collection differs from remote; run work.py sync before assemble')
     else:gathered=collect(root,'map',local)
     data,objects=research.load(root,gathered['registry'])
-    data['edge_files']=sorted((set(data.get('edge_files',[]))-set(gathered['retired_edge_files']))|set(gathered['edge_files']))
+    canonical_edges=(data if local else remote_registry).get('edge_files',[])
+    data['edge_files']=sorted((set(canonical_edges)-set(gathered['retired_edge_files']))|set(gathered['edge_files']))
     relations=research.edges(root,data,objects);coverage={}
     for oid,obj in objects.items():
         rows=gathered['coverage_candidates'].get(oid,[]);incident=sorted(eid for eid,e in relations.items() if e['status']=='accepted' and oid in e['source_ids']+e['target_ids'])
@@ -1014,17 +1060,23 @@ def main(argv=None):
     sub.add_parser('status')
     q=sub.add_parser('collect');q.add_argument('--baseline',help='Registration only: published frozen baseline path for this incremental collection')
     sub.add_parser('assemble')
-    q=sub.add_parser('lead');q.add_argument('action',choices=['claim','handoff','show']);q.add_argument('--reason')
+    q=sub.add_parser('lead');q.add_argument('action',choices=['claim','handoff','show','reclaim']);q.add_argument('--reason');q.add_argument('--from',dest='expected_owner',help='Published lead being replaced after explicit user reassignment')
     q=sub.add_parser('claim-next');q.add_argument('--prefix',default='');q.add_argument('--count',type=int,default=1,help='Actual free batch slots; a batch may already contain hundreds of materials')
     q=sub.add_parser('read-add');q.add_argument('task_id');q.add_argument('--object-ids',nargs='+',required=True)
     for command in ['claim','done','handoff','reclaim','withdraw']:
-        q=sub.add_parser(command);q.add_argument('task_id',nargs='?' if command in {'handoff','done'} else None)
+        q=sub.add_parser(command);q.add_argument('task_id',nargs='?' if command in {'handoff','done','reclaim'} else None)
         if command=='done':
             source=q.add_mutually_exclusive_group(required=True);source.add_argument('--receipt-file');source.add_argument('--record-file',help='JSON list of {task_id, receipt_file}; one atomic completion transaction')
         if command in {'handoff','reclaim','withdraw'}:q.add_argument('--reason',required=True)
         if command=='handoff':q.add_argument('--all',action='store_true')
+        if command=='reclaim':q.add_argument('--owner',dest='expected_owner',help='Reclaim all unfinished map batches for this Boss in one write')
     for command_parser in sub.choices.values():command_parser.add_argument('--full',action='store_true',help='Return full definitions/receipts instead of compact batch summaries')
     a=p.parse_args(argv);root=a.repo.resolve()
+    expected_owner=getattr(a,'expected_owner',None)
+    if a.command=='lead' and bool(expected_owner)!=(a.action=='reclaim'):
+        raise ValueError('Only lead reclaim uses --from BossN')
+    if a.command=='reclaim' and bool(a.task_id)==bool(expected_owner):
+        raise ValueError('Use one task ID or --owner BossN')
     if a.command=='inventory':result=research.inventory(root,a.registry)
     elif a.command=='plan':result=plan(root,a.record_file,a.phase,a.local_only)
     elif a.command=='assemble':
@@ -1052,6 +1104,7 @@ def main(argv=None):
         with latest(root,a.phase,a.local_only) as (directory,ctx):result=lead_record(directory,ctx)
     else:
         operation='lead-'+a.action if a.command=='lead' else 'handoff-all' if a.command=='handoff' and a.all else a.command
+        if a.command=='reclaim' and expected_owner:operation='reclaim-owner'
         if a.command=='handoff' and ((a.all and a.task_id) or (not a.all and not a.task_id)):raise ValueError('Use one task ID or --all')
         receipt=None;completions=None
         if a.command=='done':
@@ -1061,7 +1114,7 @@ def main(argv=None):
             else:
                 if not a.task_id:raise ValueError('Single completion uses done TASK --receipt-file PATH')
                 receipt=json.loads(_safe_path(root,a.receipt_file).read_text())
-        result=mutate(root,getattr(a,'task_id',None),operation,receipt,getattr(a,'reason',None),a.phase,prefix=getattr(a,'prefix',''),local=a.local_only,read_ids=getattr(a,'object_ids',None),count=getattr(a,'count',1),completions=completions)
+        result=mutate(root,getattr(a,'task_id',None),operation,receipt,getattr(a,'reason',None),a.phase,prefix=getattr(a,'prefix',''),local=a.local_only,read_ids=getattr(a,'object_ids',None),count=getattr(a,'count',1),completions=completions,expected_owner=expected_owner)
     if not a.full:result=_brief(root,result,a.phase,a.local_only)
     print(json.dumps(result,ensure_ascii=False,indent=2));return 0
 
