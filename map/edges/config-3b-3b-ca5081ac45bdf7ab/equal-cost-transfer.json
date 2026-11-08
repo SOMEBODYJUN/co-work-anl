@@ -1,0 +1,73 @@
+{
+  "edge_id": "config-3b-equal-cost-rounding-to-assignment",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-81da430ecf2846f59fb645a08763dab4",
+    "M-6436d85fd0ed43b38ed3f095a89b326e"
+  ],
+  "target_ids": [
+    "M-f63f6d1bd7fc41b2a4eb5f90492a24b1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "设有限显式配置支持 E⊆{(l,S):S∈I_l}，每个 I_l 下闭、v_li≥0；输入 x 为非负有理点，满足每 bin 的配置和 ≤1、每 item 的支持边际 Σ_{e:i∈S_e}x_e≤1，且所有启用成本相同为 c。预先删除 c>B 的 bin。若 c>0，还须满足 Σ_e x_e≤k=floor(B/c)；当 B/c 为整数时该式由自然预算自动给出。若 c=0，预算和截断均不起作用。舍入只保证相对于给定支持的 L(x)，而不是隐式枚举全部 I_l 或未给定支持的整数最优值。",
+  "roles": {
+    "M-81da430ecf2846f59fb645a08763dab4": "提供在上述显式支持合同下的确定性等成本 1−1/e 舍入：同 bin 交换后保成本交换，整数截断使唯一分数配置可升为 1。",
+    "M-6436d85fd0ed43b38ed3f095a89b326e": "把每 bin 至多一配置识别为 partition 块；共同正成本的整数预算识别为秩 floor(B/c) 的截断，且说明一般 bin matroid 只是另一种整数表示。",
+    "M-f63f6d1bd7fc41b2a4eb5f90492a24b1": "目标映射：对舍入所得配置集逐 item 只保留最高利润 bin，按 I_l 下闭性删去其它配置中的该 item，得到同值、原硬预算可行的整数指派，并保留 g 的覆盖值。"
+  },
+  "explanation": "在条件成立时，算法对象先在 E 上以 item 边际约束得到 G(x)≥(1−1/e)L(x)。第一阶段把同 bin 的分数配置沿保和方向压到至多一件；第二阶段在共同正成本下沿保成本方向压到整数集 A 加至多一件分数配置 e。因为 Σx≤k 是整数截断，若余下 r 个整数配置和 q∈(0,1)，则 r+q≤k 蕴含 r+1≤k；A 与 {e} 都预算可行，单调子模性给出二者之一的 g 值至少 G 的一半，而等成本合同可直接把 e 升至 1，得到 g(A∪{e})≥G，不损失 1−1/e。c=0 时所有剩余配置可升至 1。随后用下闭性逐 item 删除冲突并保留最高 v_li，局部可行性、每 bin 至多一配置和预算均保持，利润恰为 g，所以保证转回原整数指派。这里 item 边际约束只用于初始 layer-cake 下界；交换阶段可暂时破坏它，最终去重恢复整数指派。\n\n边界必须保留：自然预算 Σ_e c x_e≤B 在 B/c 非整数时只推出 Σx≤B/c，不能推出 floor 截断；M-9ad0ca02d7d64d6ab7fe93bb91812073 的两 bin 精确反例因此只击穿未加 floor 的扩展，而不反驳本条件化对象。若省略 floor 或使用非均匀成本，只能保留 M-81 的 (1−1/e)/2 基线（或改用新点 x′ 并相对 L(x′) 比较）。M-6436d85... 的平行副本构造说明任意给定 bin matroid 的整数激活等价，但 M-81 的交换只保持共同成本/基数，不保持一般 matroid 独立性；故本边不把 1−1/e 舍入自动转移到一般 matroid 激活，需另有保 matroid 的舍入证明。完整配置地集 E 才能再把覆盖最大值与原整数 OPT 作精确双向比较；稀疏 E 下本边仅保证相对输入 L(x)。",
+  "scope": "等成本、下闭局部指派的显式支持舍入到原整数指派；覆盖共同成本 c>0 的截断 partition 激活及 c=0 分支。一般自然非整数预算、非均匀成本、隐式配置定价和任意 bin matroid 激活均不在本边保证内。",
+  "evidence": [
+    {
+      "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+      "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+      "section": "输入、输出与比较值"
+    },
+    {
+      "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+      "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+      "section": "第一阶段：同bin只留一件配置"
+    },
+    {
+      "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+      "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+      "section": "第二阶段：保持成本到至多一分数件"
+    },
+    {
+      "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+      "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+      "section": "等成本强界的修复合同"
+    },
+    {
+      "path": "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md",
+      "sha256": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+      "section": "下闭配置指派与最大值覆盖的整数等价"
+    },
+    {
+      "path": "archives/configuration-assignment/state/反例/等启用成本的自然预算LP与整数截断缺口--反例.md",
+      "sha256": "c53cd382c99d98a32a857f97cf1788dc009965135d592614fb05f89264f1d30f",
+      "section": "正确修复及不能保留的目标"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md",
+      "sha256": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+      "section": "配置指派：完整恢复本次核查所需基线"
+    }
+  ],
+  "reviewed_by": "Boss2 config-3b worker",
+  "review_note": "已全文实读三个核心对象及其证明/证据章节，并复核 M-9ad0ca02d7d64d6ab7fe93bb91812073 的两 bin 精确反例。推导在列明的显式支持、下闭、非负利润、共同成本、floor 截断、bin 单占和 item 边际条件下完整；关系保持 conditional，因为这些条件不是原始自然 LP 自动给出的，且一般 matroid 激活没有被当前交换算法保持。",
+  "review_digest": "2af56ad0ed96a40bb8c2e22de84ebb2232be1a228ec41ab4ac78f37d310ee7a1",
+  "endpoint_pins": {
+    "M-6436d85fd0ed43b38ed3f095a89b326e": "308383cc1a8b89b886baf0547670edcb92b40b857b691ba988eaa4f35e1501b3",
+    "M-81da430ecf2846f59fb645a08763dab4": "d20161ada731b6e82e89c27bc3c7a7374674b950d21e0cad9a1be961e2d22ce3",
+    "M-f63f6d1bd7fc41b2a4eb5f90492a24b1": "7e5c05f0fcd538aa08977e0029cf019d71d0258ce25308b5958911fac9e9167b"
+  },
+  "evidence_pins": {
+    "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+    "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+    "archives/configuration-assignment/state/反例/等启用成本的自然预算LP与整数截断缺口--反例.md": "c53cd382c99d98a32a857f97cf1788dc009965135d592614fb05f89264f1d30f",
+    "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1"
+  }
+}
