@@ -1,0 +1,82 @@
+{
+  "edge_id": "local-chord-poly-and-menu-to-sc-phi-a",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "LOCAL-CHORD-POLY",
+    "facility-games/common-two/golden-ratio-menu-algorithm",
+    "SC-PHI-E"
+  ],
+  "target_ids": [
+    "SC-PHI-A"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一共同目录模型和显式正二进制有理输入；LOCAL-CHORD-POLY的局部条件R≥r>φR/2、C<qr、max w_i≤q²R在每次C调用成立；固定P/E/T/C菜单先于d和响应环构造，算法在完整S上计算u,d并检查双q配额；SC-PHI-E所需全局坏环闭合及所有正/负gap、端点、默认修复和多项式位长分支均已对全部输入成立。",
+  "roles": {
+    "LOCAL-CHORD-POLY": "在固定双地点强弦域中，用盒截面局部端点交换、三混合质量界、坏正/负gap分支和纯修复，在O((k+1)^4)有理运算及多项式位长内构造达双配额的精确独立混合NE；不处理全局菜单或坏环。",
+    "facility-games/common-two/golden-ratio-menu-algorithm": "把局部C输出与P/E/T、反射一致性、完整目录d搜索、双q在轨测试和至多2|S|-2偏离证书组装成固定菜单算法；其成功证书验证不等于普遍成功。",
+    "SC-PHI-E": "提供同一模型上任意正实权输入的全局φ存在性/坏环闭合前提，仍需G1/G2/G3、C和量词审查。",
+    "SC-PHI-A": "目标算法主张：对所有显式有理输入输出有理φ-SPE证书，并给出O(|S|²(n+1)^4)运算及多项式位长界。"
+  },
+  "explanation": "三者联合形成SC-PHI-A所需的承重链：LOCAL-CHORD-POLY只付清每个满足实际reach条件的C菜单成员及其O(k^4)局部构造；golden-ratio-menu-algorithm付清固定菜单、反射、完整S的d/u精确比较和证书合同；SC-PHI-E才覆盖坏响应环的全局配额见证。只有在条件中列明的全输入菜单覆盖、分支可执行性和位长/迭代界全部成立时，才能把这些模块合成A的普遍复杂度结论。有限143次C、320目录或独立checker只验证实例，不足以解除条件。",
+  "scope": "3A common-two；条件性模块到SC-PHI-A的算法承重边。保留A未评估状态，不把局部强弦、菜单成功分支或SC-PHI-E的内部候选单独升级为A的全输入证明。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-two/state/定理/局部强弦与有理混合构造--定理.md",
+      "sha256": "3ab76aac41acc591bf6eb46bed50a53195e23336458162d93cd3b79b757d3891",
+      "section": "4. 盒切片的局部端点算法及严格运行界"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-two/state/定理/局部强弦与有理混合构造--定理.md",
+      "sha256": "3ab76aac41acc591bf6eb46bed50a53195e23336458162d93cd3b79b757d3891"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-two/state/算法/黄金比有限菜单与完整续局证书--算法.md",
+      "sha256": "679fc73ec8f9f611c71cecc513ee7a669a790f750c8e275a4a3a6e8c8d328326",
+      "section": "1. 一个无序位置对的固定菜单"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-two/state/算法/黄金比有限菜单与完整续局证书--算法.md",
+      "sha256": "679fc73ec8f9f611c71cecc513ee7a669a790f750c8e275a4a3a6e8c8d328326",
+      "section": "2. 搜索伪代码"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-two/state/定义/共同目录精确续局与菜单模型--定义.md",
+      "sha256": "6afce2194294221712300cda25cded41810cbc3e17d480049ee4ec2f45fd3b53",
+      "section": "3. 设施稳定性与菜单充分条件"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-two/state/定理/星心双锚闭环与分支排除--定理.md",
+      "sha256": "6e77e045ef596c9c17de5888efb2d73cd3139b4c097b138bf98acb54ada13747",
+      "section": "6. 依赖、量词及重写边界"
+    },
+    {
+      "path": "archives/facility-games/state/计算/双设施菜单与盒截面交换的精确复核--计算.md",
+      "sha256": "b4c12e26e1852eea31c9faae7b3560c7b078b9b039c89bfcc3a52164edc19a9e",
+      "section": "复现、证据限度和接续"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-two/state/审查/菜单量词与强弦实现审计--审查.md",
+      "sha256": "d27bea37ef40e1ae04a5d35293f19c554a4531ea553859b6c2c40c497927b104",
+      "section": "6. Remaining work boundaries"
+    }
+  ],
+  "reviewed_by": "common-two-3a-56b80f0d27ba5b30",
+  "review_note": "完整实读确认LOCAL-CHORD-POLY、固定菜单算法和SC-PHI-E各自职责；仅在所有全局条件付清时才推出A，明确保留有限实例与指数support实现不能替代O(k^4)/全输入证明。",
+  "endpoint_pins": {
+    "LOCAL-CHORD-POLY": "5b23026c01a5a3f8d4f4d2ad6bcc570f2520e1d66f35ee959a41fe8f1d34cecb",
+    "SC-PHI-A": "c09e7614069556e6a5f36ac945f705d77b442867b62d796d9e2ec3fecafcd119",
+    "SC-PHI-E": "bb1582592344584a2ff981f6957d7733d4a174bc827d281340dc7739c6d9647d",
+    "facility-games/common-two/golden-ratio-menu-algorithm": "fb4dbc9c62f6babb1e774c99bbc57441f9aed7923efd2b88b6d09f3d6f0c0c36"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-two/state/定理/局部强弦与有理混合构造--定理.md": "3ab76aac41acc591bf6eb46bed50a53195e23336458162d93cd3b79b757d3891",
+    "archives/facility-games/subarchives/common-two/state/算法/黄金比有限菜单与完整续局证书--算法.md": "679fc73ec8f9f611c71cecc513ee7a669a790f750c8e275a4a3a6e8c8d328326",
+    "archives/facility-games/subarchives/common-two/state/定义/共同目录精确续局与菜单模型--定义.md": "6afce2194294221712300cda25cded41810cbc3e17d480049ee4ec2f45fd3b53",
+    "archives/facility-games/subarchives/common-two/state/定理/星心双锚闭环与分支排除--定理.md": "6e77e045ef596c9c17de5888efb2d73cd3139b4c097b138bf98acb54ada13747",
+    "archives/facility-games/state/计算/双设施菜单与盒截面交换的精确复核--计算.md": "b4c12e26e1852eea31c9faae7b3560c7b078b9b039c89bfcc3a52164edc19a9e",
+    "archives/facility-games/subarchives/common-two/state/审查/菜单量词与强弦实现审计--审查.md": "d27bea37ef40e1ae04a5d35293f19c554a4531ea553859b6c2c40c497927b104"
+  },
+  "review_digest": "9e9a068141cd16dd5072e5e60ccff62b2f4e0000619cb5e29dcb509e5df02751"
+}
