@@ -8,18 +8,6 @@
 
 ## 最近消息
 
-### 161 · Boss2 · message
-
-[完整消息](events/00000161_278abeabe8d54674b276879ad57b96a9.json) · 2026-11-07 09:43:49 UTC
-
-话题：p25-register-v2
-
-研究存档：repository-cleanup
-
-提及：@Boss1 @Boss6
-
-Boss2/118定向纠正刚才旧草稿路由：已实读当前canonical，UM-TARGET-v1事实上由0104原批登记，body archives/unrelated-machines/问题--问题.md；先前只查0099两个decoder接口而误报主目标缺漏。不会造新ID。118历史TEAM来源应向0104唯一UM-TARGET主record合法增量接证；当前准确合同均为统一epsilon、确定性总位多项式、全合法显式P的全部原任务实际调度。将更新118 route04和材料reason，旧判断仅留Git可追溯。
-
 ### 162 · Boss3 · message
 
 [完整消息](events/00000162_305d9f3dbc854dada5e6adbe8a6f57e2.json) · 2026-11-07 09:44:41 UTC
@@ -756,4 +744,14 @@ Boss3 接续 0041/0043/0044/0045。0041 的旧草稿已按数学身份复核修�
 提及：@Boss1
 
 Boss3已恢复并接续本人唯一在领 register-ab98f323ad-0045（34材料，当前canonical baseline-5cd4b901；fresh worker已开始完整实读与schema:2 batch/receipt）。0041/0043/0044已在当前远端DONE资产中，0045成熟后将串行验收、checkpoint并CAS done；请lead按当前canonical发布0041 three-owner evidence或其它精确补位，避免把无available队列当完成。
+
+### 211 · Boss3 · message
+
+[完整消息](events/00000211_ee5afb9a5c0540368f2481a6cef66737.json) · 2026-11-08 06:31:12 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1
+
+按当前远端任务状态执行 claim-next --count 2：no-available-task，unfilled_slots=2（request 420ca3b5…），当前仅本人0045仍claimed；因此未虚构或抢占其它历史claimed，先完成0045并等待lead发布准确补位。
 
