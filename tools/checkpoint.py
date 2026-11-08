@@ -29,6 +29,10 @@ class Stop(RuntimeError):
     pass
 
 
+class MapAssemblyChanged(Stop):
+    pass
+
+
 def token(path):
     values = set(re.findall(rb"(?:github_pat_|ghp_)[A-Za-z0-9_]{12,}", Path(path).read_bytes()))
     if len(values) != 1:
@@ -115,37 +119,123 @@ def audit_outgoing(repo, head, remote_tip, paths):
     return commits, sorted(changed)
 
 
-def audit_map_projections(repo, head, paths, rows):
-    """Recheck generated projections after a concurrent merge changes HEAD."""
-    from research_runtime import _effective_map_done, pin
+MAP_REVIEW = "map/integration.json"
+MAP_COVERAGE = "map/coverage.json"
+MAP_REGISTRY = "research/registry.json"
+
+
+def map_projection(name):
+    return name == "map/graph-v2.json" or re.fullmatch(
+        r"archives/[^/]+(?:/subarchives/[^/]+)*/map/graph-v2\.json", name)
+
+
+def map_json(repo, revision, path):
+    result = git(repo, "show", revision + ":" + path, check=False)
+    return None if result.returncode else json.loads(result.stdout)
+
+
+def audit_map_projections(repo, head, remote_tip, paths, rows):
+    """Check partial assembly and final projections against the same fetched receipts."""
+    from research_runtime import _effective_map_done, _map_registration_pin, pin
 
     registries = {}
-    final_pin = None
+    needs_review = bool({MAP_REVIEW, MAP_COVERAGE} & set(paths))
+    final = False
     for name in paths:
-        if name != "map/graph-v2.json" and not name.endswith("/map/graph-v2.json"):
+        if not map_projection(name):
             continue
-        saved = git(repo, "show", head + ":" + name, check=False)
-        if saved.returncode:  # Removing an obsolete projection is allowed.
+        graph = map_json(repo, head, name)
+        if graph is None:  # Removing an obsolete projection is allowed.
             continue
-        graph = json.loads(saved.stdout)
+        needs_review = True
         registry = graph.get("registry")
         if not isinstance(registry, str) or not registry:
             raise Stop("Map projection has no registered input: " + name)
         if registry not in registries:
-            registries[registry] = pin(json.loads(git(repo, "show", head + ":" + registry).stdout))
+            registries[registry] = pin(map_json(repo, head, registry))
         if graph.get("registry_pin") != registries[registry]:
-            raise Stop("Map projection has stale registry inputs after concurrent changes: " + name +
-                       ". Local checkpoint retained. Sync, assemble and rebuild before publishing.")
+            raise MapAssemblyChanged("Map projection has stale registry inputs after concurrent changes: " + name)
         if graph.get("status") == "registered-coverage":
-            final_pin = registries[registry]
-    if final_pin is None:
+            final = True
+    done = _effective_map_done(rows)
+    registry_names = {row["definition"]["registry"] for row in done.values()} or {MAP_REGISTRY}
+    for registry in registry_names & set(paths):
+        current = map_json(repo, head, registry)
+        published = map_json(repo, remote_tip, registry)
+        if (current is not None and published is not None
+                and current.get("edge_files", []) != published.get("edge_files", [])
+                and _map_registration_pin(current) == _map_registration_pin(published)):
+            needs_review = True
+    if not needs_review:
         return
-    review = json.loads(git(repo, "show", head + ":map/integration.json").stdout)
-    expected = {tid: pin(row["receipt"]) for tid, row in _effective_map_done(rows).items()}
-    if (not rows or any(row["state"] not in {"done", "withdrawn"} for row in rows)
-            or review.get("registry_pin") != final_pin or review.get("task_receipt_pins", {}) != expected):
-        raise Stop("Final map projection differs from the current published queue or integration. "
-                   "Local checkpoint retained. Sync, assemble and rebuild before publishing.")
+    if len(registry_names | registries.keys()) != 1:
+        raise Stop("Canonical map files must refer to one registry.")
+    registry, = registry_names
+    review = map_json(repo, head, MAP_REVIEW)
+    coverage = map_json(repo, head, MAP_COVERAGE)
+    expected = {tid: pin(row["receipt"]) for tid, row in done.items()}
+    if (not done or not isinstance(review, dict) or not isinstance(coverage, dict)
+            or review.get("registry_pin") != (registries.get(registry) or pin(map_json(repo, head, registry)))
+            or review.get("task_receipt_pins", {}) != expected
+            or (final and any(row["state"] not in {"done", "withdrawn"} for row in rows))):
+        raise MapAssemblyChanged("Map assembly differs from the current published registry or receipts.")
+
+
+def recover_map_assembly(repo, head, remote_tip, outgoing, namespace):
+    """Preserve a losing integration draft, then get a clean peer snapshot."""
+    from research_runtime import _map_registration_pin
+
+    role = git(repo, "config", "--local", "--get", "wcg.role", check=False).stdout.decode().strip()
+    if (role != "mapper"
+            or not any(name in {MAP_REVIEW, MAP_COVERAGE} or map_projection(name) for name in outgoing)
+            or any(name not in {MAP_REGISTRY, MAP_REVIEW, MAP_COVERAGE} and not map_projection(name)
+                   for name in outgoing)
+            or git(repo, "status", "--porcelain", "--untracked-files=no").stdout):
+        return None
+    base = value(repo, "merge-base", head, remote_tip)
+    if MAP_REGISTRY in outgoing and (
+            _map_registration_pin(map_json(repo, head, MAP_REGISTRY))
+            != _map_registration_pin(map_json(repo, base, MAP_REGISTRY))):
+        return None
+    old, local, remote = (map_json(repo, rev, MAP_REVIEW) for rev in (base, head, remote_tip))
+    backup = "refs/wcg/map-integration-drafts/" + namespace + "/" + head
+    git(repo, "update-ref", backup, head)
+    if git(repo, "reset", "--keep", remote_tip, check=False).returncode:
+        return None
+    # Independent reviewed rows can be carried forward on identical math and
+    # receipt inputs. A disputed or stale row stays recoverable in the old ref.
+    if isinstance(local, dict) and remote is None:
+        # A registration correction can beat the first graph publication.
+        # Keep actual prose as a draft for assemble's targeted invalidation.
+        draft = repo / MAP_REVIEW
+        draft.parent.mkdir(parents=True, exist_ok=True)
+        draft.write_text(json.dumps(local, ensure_ascii=False, indent=2) + "\n")
+    elif isinstance(local, dict) and isinstance(remote, dict):
+        inputs = ("registry_pin", "edge_pins", "task_receipt_pins")
+        if all(local.get(k) == remote.get(k) for k in inputs):
+            previous = old if isinstance(old, dict) and all(old.get(k) == local.get(k) for k in inputs) else {}
+
+            def independent(row, published, original):
+                if original is not None:
+                    return row != original and published == original
+                return bool(row and row.get("comparison_scope")) and not (published or {}).get("comparison_scope")
+
+            carried = False
+            for scope, row in local.get("archive_reviews", {}).items():
+                if independent(row, remote.get("archive_reviews", {}).get(scope),
+                               previous.get("archive_reviews", {}).get(scope)):
+                    remote.setdefault("archive_reviews", {})[scope] = row
+                    carried = True
+            key = "cross_archive_review"
+            if independent(local.get(key), remote.get(key), previous.get(key)):
+                remote[key] = local[key]
+                carried = True
+            if carried:
+                for key in ("reviewed_by", "review_note"):
+                    if not remote.get(key) and local.get(key):
+                        remote[key] = local[key]
+                (repo / MAP_REVIEW).write_text(json.dumps(remote, ensure_ascii=False, indent=2) + "\n")
+    return backup
 
 
 def audit_map_write_scope(repo, remote_tip, outgoing, head=None):
@@ -187,11 +277,11 @@ def audit_map_write_scope(repo, remote_tip, outgoing, head=None):
     canonical = {"research/registry.json", "map/coverage.json", "map/integration.json",
                  "map/graph-v2.json", "map/planned-tasks.json", "map/README.md"}
     canonical.update(row["definition"]["registry"] for row in rows)
-    lead_files, task_files = [], []
+    shared_files, task_files = [], []
     for name in outgoing:
         archive_output = re.fullmatch(r"archives/[^/]+(?:/subarchives/[^/]+)*/map/(.+)", name)
         if name in canonical or (archive_output and archive_output[1] == "graph-v2.json"):
-            lead_files.append(name)
+            shared_files.append(name)
             continue
         scopes = [row for row in rows
                   if any(name == path or name.startswith(path + "/")
@@ -199,7 +289,7 @@ def audit_map_write_scope(repo, remote_tip, outgoing, head=None):
         if scopes or name.startswith("map/") or archive_output:
             owners = {row.get("owner") for row in scopes if row["state"] in {"claimed", "blocked"}}
             task_files.append((name, owners))
-    if not lead_files and not task_files:
+    if not shared_files and not task_files:
         return
 
     actor, instance = config("wcg.actor"), config("wcg.instance")
@@ -208,18 +298,12 @@ def audit_map_write_scope(repo, remote_tip, outgoing, head=None):
     registered = git(repo, "show", remote_tip + ":" + home + "/people/" + actor + ".json", check=False)
     if registered.returncode or json.loads(registered.stdout).get("instance") != instance:
         raise Stop("This conversation no longer matches the published map identity. Local checkpoint retained.")
-    if lead_files:
-        result = git(repo, "show", remote_tip + ":" + home + "/lead.json", check=False)
-        lead = {} if result.returncode else json.loads(result.stdout)
-        if (lead.get("state"), lead.get("owner"), lead.get("instance")) != ("claimed", actor, instance):
-            raise Stop("Only the current map lead may publish: " + ", ".join(lead_files) +
-                       ". Local checkpoint retained.")
     denied = [name for name, owners in task_files if owners != {actor}]
     if denied:
         raise Stop("Published map task scope is not currently owned by " + actor + ": " +
                    ", ".join(denied) + ". Local checkpoint retained.")
-    if lead_files and head is not None:
-        audit_map_projections(repo, head, lead_files, rows)
+    if shared_files and head is not None:
+        audit_map_projections(repo, head, remote_tip, shared_files, rows)
 
 
 def describe_assets(repo, directory, commit, files, branch="main"):
@@ -447,7 +531,14 @@ def locked_save(repo, common, cache, args):
         result["assets"] = describe_assets(repo, record_dir, head, result["files"], branch)
         result["checked_head"] = head
         receipt.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
-        audit_map_write_scope(repo, baseline, outgoing, head)
+        try:
+            audit_map_write_scope(repo, baseline, outgoing, head)
+        except MapAssemblyChanged as exc:
+            backup = recover_map_assembly(repo, head, baseline, outgoing, namespace)
+            if backup:
+                raise Stop(str(exc) + " Draft retained at " + backup +
+                           ". Run work.py sync, then map assemble and rebuild.") from exc
+            raise Stop(str(exc) + " Local checkpoint retained. Sync, assemble and rebuild before publishing.") from exc
         pushed = git(repo, "push", "--quiet", "origin", head + ":" + ref, check=False)
         fetched = git(repo, "fetch", "--quiet", "--no-tags", "--no-write-fetch-head",
                       "origin", "+" + ref + ":" + private, check=False)
@@ -471,6 +562,10 @@ def locked_save(repo, common, cache, args):
         if merged.returncode:
             conflicts = names(git(repo, "diff", "--name-only", "--diff-filter=U", "-z"))
             git(repo, "merge", "--abort", check=False)
+            backup = recover_map_assembly(repo, head, tip, outgoing, namespace)
+            if backup:
+                raise Stop("A peer published this map assembly first. Draft retained at " + backup +
+                           ". Run work.py sync, then map assemble and rebuild.")
             detail = SECRET.sub(b"[REDACTED]", merged.stderr).decode(errors="replace").strip()
             raise Stop("Remote merge stopped; local snapshot retained. Conflicts: " +
                        ", ".join(conflicts) + " " + detail[:500])

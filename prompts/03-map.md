@@ -21,9 +21,9 @@ python work.py board-init
 
 此后只用clone根程序，公屏wcg/board-map-v2。读AGENTS.md、实际registry/登记出口及research/IMPLEMENTATION.md的边、coverage和零边示例；worker读prompts/03-map-worker.md。全仓构图接真实完成的登记；稳定局部可明确partial先做。
 
-先map list --owner self恢复未完，再map lead show及实际公屏。有lead接现有任务，无lead显式lead claim；成功者发布比较范围并持续集成，也做数学。只派当前仍归本人且pushed的任务。每包用fork_turns:none的fresh worker，给Boss号、clone绝对路径、任务路径和内部词；批内反馈找原worker，完成一包立即补新worker，不把上包历史当零占用。
+所有Boss平权。先map list --owner self恢复未完，按实际空位领合适的包。任何Boss可以发计划、补办、回收和集成。同一批写入由当前认领者负责，共享定义和证据可同时读。每包用fork_turns:none的fresh worker，给Boss号、clone绝对路径、任务路径和内部词；批内反馈找原worker，完成一包立即补新worker。
 
-队列没有可领时用map list看实际剩余和归属。确认原Boss无法接续且用户已授权接管时，新lead用 `map lead reclaim --from BossN --reason <原因>`，再由lead用 `map reclaim --owner BossN --reason <原因>` 一次释放该Boss的未完包，照常批领。已完成的产物保留。
+队列没有可领时看实际归属和缺口。能推进的子档直接发包。确定原Boss无法接续时，可用 `map reclaim <任务ID> --reason <原因>`，或 `map reclaim --owner BossN --reason <原因>` 一次释放该Boss未完包。按已推送的证据和草稿接续。
 
 ## 每包怎样做数学
 
@@ -37,33 +37,33 @@ python work.py board-init
 
 **区分关系成立和前提成立。** 推导完整但前提未证，可accepted+relation_mode:conditional，写明未付前提，不提升终点真值；推导本身缺桥才proposed，写准确缺步。作者实读后可accepted，无固定二审；先定status、reviewed_by/review_note，再用 `research edge-bind <边文件> --write` 写回绑定，接着edge-check。某证明缺步只撤具体支持，保有效替代证明；命题被反例否定另作判断。文字/证据变化定向重核。
 
-## 从内部做到跨档，lead接续前沿
+## 从最相关的数学做到跨档
 
-3A先对象内部承重论证、同子档对象族；3B同档跨批/跨子档；3C有理由的跨档映射；3D持续集成。worker边做边给lead具体对象ID、比较问题、条件和出处，落现有比较范围/理由。lead据此主动产生下一层前沿；稳定局部即可接下一层，不等全仓一轮结束，不全仓两两枚举。
+3A先从一个子存档里已知的承重关系做起，比如同一证明链、同一反驳目标、同一模型下可直接复用的引理；没有子存档时从该存档的本地对象族做起。同一子档的几个小组可以一次认领，组内实质比较。3B用已核对的对象做同一存档内的跨包、跨子档比较。3C有明确的两方对象、映射和数学问题时才跨存档。局部稳定就接下一层，3D贯穿全程整合已有成果。
 
-仅lead发布新范围；已有计划先恢复。0任务转恢复、补比较范围或整合，不plan空表。
+已有计划先恢复。没有合适批次时从当前子档开工，下面的scope用实际目录。0任务时转恢复、补比较范围或整合。
 
 ```sh
 python work.py sync
-python work.py research map-draft --stage 3A --output map/planned-tasks.json
+python work.py research map-draft --stage 3A --scope <archives/存档/subarchives/子存档> --task-prefix <子档短名> --output map/planned-tasks.json
 python work.py map plan --record-file map/planned-tasks.json
-python work.py map claim-next --count <实际worker空位数>
+python work.py map claim-next --prefix <同一子档短名> --count <实际worker空位数>
 ```
 
-3B/3C由lead用重复--object-id或--objects-file给实际前沿。按关联和真实上下文预算整包读取，共同证据去重。超大正文在同任务分章节接着读，保存已读论证与断点。机器证书读规范、相关记录、检查器和必要的核验结果，按具体数学疑点决定是否复算。
+3B/3C用重复 `--object-id` 或 `--objects-file` 给具体对象，再用 `--comparison` 写要验证的数学问题。可用 `map claim <任务ID>` 直接接这个前沿。按关联和上下文预算整包读取，共同证据去重。超大正文在同任务分章节接着读。机器证书读规范、相关记录、检查器和必要核验结果，按具体数学疑点决定是否复算。
 
-发现原文确有错，给出原位置、准确改法和受影响对象。已冻结或被引用的文件由登记lead把小改、相关SHA/版本、冻结清单和总表一次推送。只改受影响的引用及陈述，保留其余判断。独立缺漏对象也由map lead跟进补登记，细节按PHASE3_READINESS。
+发现原文确有错，给出原位置、准确改法和受影响对象。发现者可以直接做最小勘误，把原文、相关SHA/版本、冻结清单和总表一次推送。确有独立价值的缺漏对象也由发现者或接续Boss补登记，细节按PHASE3_READINESS。
 
-同步新登记后，只加依赖用read-add；在领包的输入改版时保草稿并handoff，由lead重派；已done的包有待定或过时输入时，用 `research map-draft --repair-task <旧任务ID>` 定向替代，保留仍有效的比较，逐项交代旧边去向。其余包继续推进。
+同步新登记后，只加依赖用read-add；在领包的输入改版时保草稿并handoff，重派改版包。已done的包有待定或过时输入时，用 `research map-draft --repair-task <旧任务ID>` 定向替代，保留仍有效的比较，逐项交代旧边去向。其余包继续推进。
 
 ## 写出产物，成熟即交，持续做到准确出口
 
-按write_paths写独立边JSON及coverage收据JSON，完整模板见IMPLEMENTATION。每个core对象说明实际比较过谁、成立/不成立的理由及仍欠什么：linked要有真实accepted incident边；isolated-after-review要完成实际比较；身份/版本/交付疑点才needs-decision，明确开放数学可准确处置。
+按write_paths写独立边JSON及coverage收据JSON，完整模板见IMPLEMENTATION。每个core对象说明实际比较过谁、成立或不成立的理由及仍欠什么。linked要有核实的逻辑关系；isolated-after-review要完成实际比较。身份、版本或交付疑点写needs-decision。
 
-本包可多边或零边。有边列真实已推assets；零边以coverage承载上述实质比较，收据assets:[]，不另造边或说明文件。已读本体和必要论证、按模型/陈述/条件主动检索后确无合理候选，也可记录检索范围与原因据实isolated-after-review；未读或未检索不能当审完，不为交付凑无关比较或自环。同端点不同证明保区别，重复包装由lead实读后定向合并。
+本包可多边或零边。linked只列核实过的逻辑关系。引用、实现和计算可以保存为语境边；只发现语境边时，实读比较后以isolated-after-review交付并写清数学理由。零边写实际比较范围和结果，收据assets:[]。同端点的独立证明各保完整推导。
 
 成熟几个交几个，不等整轮。checkpoint本次准确产物确认pushed，Boss自动组成task_id/receipt_file的ready数组，用map done --record-file批交，单批done仍可用。未知回执沿原请求核远端；认证失败保local-only并停止新认领，参数按IMPLEMENTATION。
 
-lead边收边collect→保全并sync→assemble，实写各档/子档archive_reviews及cross_archive_review，消解重复、条件冲突和明确待比较线索。当前对象及已声明比较范围准确处置、交接和待整合项闭合后，research check --final、build --final；按projections显式checkpoint全部准确投影及registry/coverage/integration确认pushed，不漏archives内输出。本轮准确出口已pushed且交清接续位置后，lead用map lead handoff --reason <准确出口与增量入口>交出集成位，供后续合法接任。
+任何Boss都可边收边sync、assemble，写本次涉及的archive_reviews及cross_archive_review。若远端先有新成果，按新快照重组并接上已完成的实质审读。当前对象、明确比较线索和交付都处置后，用research check --final、build --final，按projections明确checkpoint所有投影及registry/coverage/integration。
 
-持续循环：恢复未完→补空位→实读比较→成熟保存/交付→lead接下一层并整合→接下一包。本范围仍有未处置对象、明确比较线索或未整合成果就继续，不以一次提交、一轮、队列暂空或一次check/build结束；不要求解完开放题或找尽一切潜在关系。真实暂停用map handoff --all --reason保存草稿、共享状态及下一步，lead另交接；如实区分pushed、仅本地和仍未完，不虚称后台继续。
+持续循环：恢复未完→补空位→实读比较→成熟保存和交付→接下一层或下一包。队列空时继续核对未处置对象、明确数学线索和待整合成果。开放问题可以保留，写清已成立部分和未付条件。真实暂停用map handoff --all --reason保存草稿、共享状态及下一步。

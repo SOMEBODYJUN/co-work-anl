@@ -36,6 +36,10 @@ class TaskBusy(ValueError):
     """Ordinary competition; claim-next may choose another available task."""
 
 
+class MapInputsChanged(ValueError):
+    """The draft must be regenerated against the current registration."""
+
+
 def binding(root, phase='map', local=False):
     if phase not in PHASES: raise ValueError('Unknown workflow phase')
     run = coordination.config(root, 'wcg.workflowRun')
@@ -290,9 +294,9 @@ def validate(root, definition, phase='map'):
         if not core and reads:raise ValueError('A retirement-only map task cannot have read dependencies')
         if set(core)&set(reads): raise ValueError('Read-only objects must not duplicate core coverage')
         ids=set(core+reads)
-        if ids-objects.keys(): raise ValueError('Task has unknown objects')
+        if ids-objects.keys(): raise MapInputsChanged('Task has unknown objects; re-draft on the current registry')
         if definition.get('input_pins')!={oid:research.pin(objects[oid]) for oid in ids}:
-            raise ValueError('Task input objects changed; hand off and plan a reframed task')
+            raise MapInputsChanged('Task input objects changed; hand off and plan a reframed task')
         _prefetch(root,[ref['path'] for oid in ids for ref in [objects[oid]['body'],*objects[oid]['evidence']]])
         for oid in ids:
             _ref_bytes(root,objects[oid]['body'])
@@ -526,6 +530,20 @@ def _supersession(root,definition,receipt,rows,phase):
     return retired
 
 
+def _map_receipt_coverage(definition,receipt,objects,relations):
+    coverage=receipt.get('coverage')
+    if not isinstance(coverage,dict) or set(coverage)!=set(definition['object_ids']):
+        raise ValueError('Every core object needs coverage')
+    resolved={}
+    for oid,row in coverage.items():
+        if not isinstance(row,dict) or row.get('state') not in {'linked','isolated-after-review','needs-decision'}:
+            raise ValueError('Unknown coverage outcome')
+        research.nonempty(row,['reason','comparison_scope','object_pin'])
+        if row['object_pin']!=research.pin(objects[oid]):raise ValueError('Stale coverage input: '+oid)
+        if row['state']!='needs-decision':resolved[oid]=row
+    research.validate_coverage(resolved,{oid:objects[oid] for oid in resolved},relations)
+
+
 def transition(root,old,others,actor,operation,request_id,receipt=None,reason=None,phase='map',peer_objects=None):
     new=copy.deepcopy(old);definition=old['definition']
     # Release works even after a legitimate proof/version change made old pins stale.
@@ -555,18 +573,11 @@ def transition(root,old,others,actor,operation,request_id,receipt=None,reason=No
             _supersession(root,definition,receipt,others,phase)
             if phase=='registration':_registration_done(root,definition,receipt,peer_objects)
             else:
-                if set(receipt.get('coverage',{}))!=set(definition['object_ids']):raise ValueError('Every core object needs coverage')
                 data,objects=_load(root,definition['registry'],verify=False)
                 relations,files=batch_edges(root,definition,receipt,objects)
                 edge_paths=dict(zip(relations,files))
                 _check_edge_paths(root,definition,receipt,others,edge_paths,data.get('edge_files',[]))
-                for row in receipt['coverage'].values():
-                    if row.get('state') not in {'linked','isolated-after-review','needs-decision'}:raise ValueError('Unknown coverage outcome')
-                    research.nonempty(row,['reason','comparison_scope','object_pin'])
-                for oid,row in receipt['coverage'].items():
-                    if row['object_pin']!=research.pin(objects[oid]):raise ValueError('Stale coverage input: '+oid)
-                resolved={oid:r for oid,r in receipt['coverage'].items() if r['state']!='needs-decision'}
-                research.validate_coverage(resolved,{oid:objects[oid] for oid in resolved},relations)
+                _map_receipt_coverage(definition,receipt,objects,relations)
                 new['edge_paths']=edge_paths
             new.update(state='done',receipt=receipt)
         else:raise ValueError('Unknown task operation')
@@ -582,12 +593,59 @@ def _verify_actor(caller,directory,ctx,actor,instance):
         raise ValueError('Boss identity is not registered for this workflow')
 
 
+def _map_comparison_question(definition):
+    context=definition.get('context_plan')
+    question=context.get('comparison_question') if isinstance(context,dict) else None
+    if not isinstance(question,str) or not question.strip():question=definition.get('goal','')
+    return ' '.join(question.split()) if isinstance(question,str) else ''
+
+
+def _map_plan_conflict(definition,reserved,replaced):
+    targets=set(superseded_ids(definition))
+    core=set(definition['object_ids'])
+    question=_map_comparison_question(definition)
+    conflicts={replaced[old] for old in targets if old in replaced}
+    covered=set()
+    paths=set()
+    for tid,row in reserved.items():
+        other=row['definition']
+        if targets.intersection(superseded_ids(other)):
+            conflicts.add(tid)
+        if tid in targets:
+            continue
+        if definition['registry']!=other['registry']:
+            conflicts.add(tid)
+            continue
+        if definition['stage']==other['stage']=='3A':
+            common=core.intersection(other['object_ids'])
+            if common:
+                covered.update(common)
+                conflicts.add(tid)
+        elif (definition['stage']==other['stage'] and definition['stage'] in {'3B','3C'} and question
+              and core==set(other['object_ids']) and question==_map_comparison_question(other)):
+            covered.update(core)
+            conflicts.add(tid)
+        for name in definition['write_paths']:
+            if any(name==old or name.startswith(old+'/') or old.startswith(name+'/') for old in other['write_paths']):
+                paths.add(name)
+                conflicts.add(tid)
+    if not conflicts:
+        return None
+    return {'task_id':definition['task_id'],
+            'conflicting_tasks':[{'task_id':tid,'state':reserved.get(tid,{}).get('state','done'),
+                                  'owner':reserved.get(tid,{}).get('owner')} for tid in sorted(conflicts)],
+            'overlapping_object_ids':sorted(covered),'overlapping_write_paths':sorted(paths),
+            'unplanned_object_ids':sorted(core-covered)}
+
+
 def _plan(root,records,ctx,actor,instance,request_id):
-    require_lead(root,ctx,actor,instance)
+    phase=ctx['phase']
+    if phase=='registration':require_lead(root,ctx,actor,instance)
     current=listing(root,ctx=ctx);known_rows={r['definition']['task_id']:r for r in current}
-    known={tid:row['definition'] for tid,row in known_rows.items()};new={};existing=[];refreshed={};seen=set()
+    known={tid:row['definition'] for tid,row in known_rows.items()};new={};existing=[];refreshed={};seen=set();skipped=[]
     for record in records:
-        validate(root,record,ctx['phase']);task=record['task_id']
+        task=research.identity(record['task_id'])
+        if phase=='registration':validate(root,record,phase)
         if task in seen:raise ValueError('Duplicate task in the same plan')
         seen.add(task)
         if task in known:
@@ -595,8 +653,16 @@ def _plan(root,records,ctx,actor,instance,request_id):
             after={k:v for k,v in record.items() if k!='context_plan'}
             if before!=after:raise ValueError('Existing task has changed mathematical inputs or write scope; reframe it: '+task)
             existing.append(task)
-            if known_rows[task]['state']!='done' and known[task].get('context_plan')!=record.get('context_plan'):
-                row=copy.deepcopy(known_rows[task]);row['definition']=record;refreshed[task]=row
+            old=known_rows[task]
+            can_refresh=(old['state']!='done' if phase=='registration' else
+                         old['state'] not in {'done','withdrawn'} and old.get('owner') in {None,actor})
+            if can_refresh and known[task].get('context_plan')!=record.get('context_plan'):
+                if phase=='map':
+                    try:validate(root,record,phase)
+                    except MapInputsChanged as exc:
+                        skipped.append({'task_id':task,'reason':str(exc),'unplanned_object_ids':[]})
+                        continue
+                row=copy.deepcopy(old);row['definition']=record;refreshed[task]=row
             continue
         new[task]=record
     combined={**known,**new}
@@ -605,25 +671,61 @@ def _plan(root,records,ctx,actor,instance,request_id):
         for target in superseded_ids(record):
             old=next((r for r in current if r['definition']['task_id']==target),None)
             if not old or old['state']!='done':raise ValueError('supersedes names an existing done batch: '+target)
-            _replacement_scope(root,record,old,ctx['phase'])
-    visiting=set();done=set()
+            _replacement_scope(root,record,old,phase)
+    visiting=set();done=set();order=[]
     def visit(task):
         if task in visiting:raise ValueError('Cyclic task prerequisites')
         if task in done:return
         visiting.add(task)
         for parent in dependencies(combined[task]):visit(parent)
         visiting.remove(task);done.add(task)
+        if task in new:order.append(task)
     for task in combined:visit(task)
+    if phase=='map':
+        replaced={old:tid for tid,row in known_rows.items() if row['state']=='done'
+                  for old in superseded_ids(row['definition'])}
+        reserved={tid:row for tid,row in known_rows.items() if row['state']!='withdrawn' and tid not in replaced}
+        rejected=set()
+        for task in order:
+            definition=new[task]
+            prerequisite=[tid for tid in dependencies(definition)
+                          if tid in rejected or known_rows.get(tid,{}).get('state')=='withdrawn']
+            conflict=_map_plan_conflict(definition,reserved,replaced)
+            if prerequisite or conflict:
+                result=conflict or {'task_id':task,'unplanned_object_ids':definition['object_ids']}
+                if prerequisite:result['unplanned_prerequisites']=prerequisite
+                skipped.append(result);rejected.add(task)
+                continue
+            try:validate(root,definition,phase)
+            except MapInputsChanged as exc:
+                skipped.append({'task_id':task,'reason':str(exc),'unplanned_object_ids':definition['object_ids']})
+                rejected.add(task)
+                continue
+            reserved[task]={'definition':definition,'state':'available','owner':None}
+        new={task:definition for task,definition in new.items() if task not in rejected}
     paths=[]
     for task,definition in new.items():
         row=_request({'definition':definition,'state':'available','owner':None},request_id,'plan')
         path=task_path(root,task,ctx=ctx);_write_json(path,row);paths.append(path)
     for task,row in refreshed.items():
         _request(row,request_id,'plan');path=task_path(root,task,ctx=ctx);_write_json(path,row);paths.append(path)
-    if paths:
+    if paths and phase=='registration':
         lead=lead_record(root,ctx);_request(lead,request_id,'plan');_write_json(lead_path(root,ctx),lead);paths.append(lead_path(root,ctx))
-    return paths,{'tasks':sorted(new),'existing_tasks':sorted(existing),
-                 'existing_states':{tid:known_rows[tid]['state'] for tid in existing},'refreshed_context_plans':sorted(refreshed)}
+    result={'tasks':sorted(new),'existing_tasks':sorted(existing),
+            'existing_states':{tid:known_rows[tid]['state'] for tid in existing},'refreshed_context_plans':sorted(refreshed)}
+    if phase=='map':
+        result['skipped_conflicts']=skipped
+        if skipped:
+            result['instruction']='Re-draft any uncovered objects against the latest queue and registry; existing batches and their receipts are unchanged.'
+            if not paths:result['status']='no-new-task'
+    return paths,result
+
+
+def _map_claim_order(row):
+    definition=row['definition']
+    context=definition.get('context_plan')
+    priority=context.get('comparison_priority') if isinstance(context,dict) else None
+    return (definition['stage'],priority if type(priority) is int else 2,definition['task_id'])
 
 
 def _apply(root,ctx,actor,instance,intent,request_id):
@@ -667,21 +769,24 @@ def _apply(root,ctx,actor,instance,intent,request_id):
         paths=[]
         for old in chosen:
             new=transition(root,old,rows,actor,'handoff',request_id,reason=reason,phase=ctx['phase']);path=task_path(root,old['definition']['task_id'],ctx=ctx);_write_json(path,new);paths.append(path)
-        # Persist one acknowledgement even if another Boss later claims every released task.
-        if chosen:
+        # Keep the registration coordinator's historical acknowledgement.
+        if chosen and ctx['phase']=='registration':
             lead.setdefault('requests',{})[request_id]=operation;_write_json(lead_path(root,ctx),lead);paths.append(lead_path(root,ctx))
         return paths,{'tasks':[r['definition']['task_id'] for r in chosen]}
     if operation=='claim-next':
         count=intent.get('count',1)
         if type(count) is not int or count<1:raise ValueError('Claim count is the positive number of actual free batch slots')
         owned=[r['definition']['task_id'] for r in rows if r.get('owner')==actor and r['state'] in ACTIVE]
-        reframing=[];claimed=[];paths=[];current=list(rows)
+        reframing=[];waiting=[];claimed=[];paths=[];current=list(rows)
         # Existing work is visible but does not forbid taking a second batch for a free worker.
-        choices=[r for r in rows if r['state'] in {'available','handoff'} and not r.get('owner') and r['definition']['task_id'].startswith(intent.get('prefix',''))]
+        scoped=[r for r in rows if r['definition']['task_id'].startswith(intent.get('prefix',''))]
+        choices=[r for r in scoped if r['state'] in {'available','handoff'} and not r.get('owner')]
+        if ctx['phase']=='map':choices.sort(key=_map_claim_order)
         for old in choices:
-            if old['definition'].get('stage')=='3D' and lead.get('owner')!=actor:continue
             try:new=transition(root,old,current,actor,'claim',request_id,phase=ctx['phase'])
-            except TaskBusy:continue
+            except TaskBusy as exc:
+                waiting.append({'task_id':old['definition']['task_id'],'reason':str(exc)})
+                continue
             except (ValueError,OSError,KeyError,TypeError) as exc:
                 # Keep the stale row visible and unchanged; one old version
                 # must not prevent useful work on later current batches.
@@ -700,8 +805,20 @@ def _apply(root,ctx,actor,instance,intent,request_id):
                     'owned_tasks':owned,'needs_reframing':reframing}
             if len(claimed)==1:result.update(task_id=claimed[0]['definition']['task_id'],task=claimed[0])
             return paths,result
-        return [],{'status':'no-available-task','tasks':[],'claimed_batches':0,'requested_batches':count,'unfilled_slots':count,
-                   'owned_tasks':owned,'needs_reframing':reframing,'instruction':'Resume owned work; the lead must explicitly reframe or withdraw listed stale tasks. An empty queue does not mean the phase is complete.'}
+        result={'status':'no-available-task','tasks':[],'claimed_batches':0,'requested_batches':count,'unfilled_slots':count,
+                'owned_tasks':owned,'needs_reframing':reframing,
+                'instruction':('Resume owned work; any mapper can reframe or withdraw stale tasks. An empty queue does not mean the phase is complete.'
+                               if ctx['phase']=='map' else
+                               'Resume owned work; the lead must explicitly reframe or withdraw listed stale tasks. An empty queue does not mean the phase is complete.')}
+        if ctx['phase']=='map':
+            result['waiting_tasks']=waiting
+            owners={}
+            for row in scoped:
+                owner=row.get('owner')
+                if row['state'] in ACTIVE and owner and owner!=actor:
+                    owners[owner]=owners.get(owner,0)+1
+            result['other_owner_batch_counts']=owners
+        return [],result
     if operation=='done-many':
         completions=intent.get('completions')
         if not isinstance(completions,list) or not completions:raise ValueError('Explicit completed batch receipts required')
@@ -731,9 +848,8 @@ def _apply(root,ctx,actor,instance,intent,request_id):
                       'material_count':_material_count(returned)}
     if operation=='reclaim-owner':
         if ctx['phase']!='map':raise ValueError('Bulk owner recovery applies to the map workflow')
-        require_lead(root,ctx,actor,instance)
         if not expected_owner:raise ValueError('Name the previous owner with --owner BossN')
-        if not reason or not reason.strip():raise ValueError('Concrete coordinator reclaim reason required')
+        if not reason or not reason.strip():raise ValueError('Concrete reclaim reason required')
         chosen=[row for row in rows if row.get('owner')==expected_owner and row['state'] in ACTIVE]
         paths=[]
         for old in chosen:
@@ -762,18 +878,17 @@ def _apply(root,ctx,actor,instance,intent,request_id):
             definition['context_plan']['budget_status']='reading-scope-expanded-reestimate'
         validate(root,definition,'map');_request(new,request_id,operation)
     elif operation=='reclaim':
-        require_lead(root,ctx,actor,instance)
+        if ctx['phase']=='registration':require_lead(root,ctx,actor,instance)
         if old['state']=='done':raise ValueError('Do not reclaim completed mathematical work')
         if not old.get('owner') or old['state'] not in ACTIVE:raise ValueError('Only an explicitly unfinished owned task can be reclaimed')
-        if not reason or not reason.strip():raise ValueError('Concrete coordinator reclaim reason required')
+        if not reason or not reason.strip():raise ValueError('Concrete reclaim reason required')
         new=_reclaim(old,actor,reason,request_id)
     elif operation=='withdraw':
-        require_lead(root,ctx,actor,instance)
+        if ctx['phase']=='registration':require_lead(root,ctx,actor,instance)
         if old.get('owner') or old['state'] not in {'available','handoff'}:raise ValueError('Only withdraw an unowned unfinished task; hand off/reclaim active work first')
         if not reason or not reason.strip():raise ValueError('Concrete withdrawal/replanning reason required')
         new=copy.deepcopy(old);new.update(state='withdrawn',reason=reason,withdrawn_by=actor);_request(new,request_id,operation)
     else:
-        if operation=='claim' and old['definition'].get('stage')=='3D':require_lead(root,ctx,actor,instance)
         new=transition(root,old,rows,actor,operation,request_id,intent.get('receipt'),reason,ctx['phase'])
     path=task_path(root,task_id,ctx=ctx);_write_json(path,new)
     return [path],{'task_id':task_id,'task':new}
@@ -860,7 +975,7 @@ def plan(root,record_file,phase='map',local=False):
     return mutate(root,None,'plan',phase=phase,records=records,local=local)
 
 
-def collect(root,phase='map',local=False,ctx=None,baseline_ref=None):
+def collect(root,phase='map',local=False,ctx=None,baseline_ref=None,*,tolerate_stale=True):
     ctx=ctx or binding(root,phase,local);rows=[r for r in listing(root,ctx=ctx) if r['state']=='done']
     if not rows:raise ValueError('No completed published batches to collect')
     # Supersession becomes effective only after the replacement itself is done.
@@ -893,20 +1008,39 @@ def collect(root,phase='map',local=False,ctx=None,baseline_ref=None):
         return {'baseline':baseline,'batches':[{'batch_id':r['definition']['task_id'],'record':r['receipt']['batch_file']} for r in rows], 'tasks':[r['definition']['task_id'] for r in rows], 'superseded_tasks':sorted(replaced)}
     registry=rows[0]['definition']['registry']
     if any(r['definition']['registry']!=registry for r in rows):raise ValueError('Map batches use different registries')
-    _,objects=_load(root,registry,verify=False);files=[];coverage={};edge_paths={}
+    data,objects=_load(root,registry,verify=False);files=set();coverage={};edge_paths={}
+    canonical=set(data.get('edge_files',[]));tasks=[];repair_tasks=[]
     for row in rows:
         definition=row['definition'];task_id=definition['task_id']
         try:
             validate(root,definition,'map');_asset_refs(root,definition,row['receipt'])
             relations,names=batch_edges(root,definition,row['receipt'],objects)
+            _map_receipt_coverage(definition,row['receipt'],objects,relations)
+            batch_paths=dict(zip(relations,names))
+            duplicate=next((eid for eid,name in batch_paths.items() if eid in edge_paths and edge_paths[eid]!=name),None)
+            if duplicate:raise ValueError('Duplicate edge identity across batch files: '+duplicate)
         except (ValueError,OSError,KeyError,TypeError) as exc:
-            raise ValueError(f'Map batch {task_id} needs repair: {exc}. '
-                             f'Use research map-draft --repair-task {task_id}, then publish its superseding task.') from exc
-        for name in names:
-            edge=json.loads(_safe_path(root,name).read_text());eid=edge['edge_id']
-            if eid in edge_paths and edge_paths[eid]!=name:raise ValueError('Duplicate edge identity across batch files: '+eid)
-            edge_paths[eid]=name
-            if name not in files:files.append(name)
+            error=(f'Map batch {task_id} needs repair: {exc}. '
+                   f'Use research map-draft --repair-task {task_id}, then publish its superseding task.')
+            if not tolerate_stale:raise ValueError(error) from exc
+            affected=set(row.get('edge_paths',{}).values())
+            if 'edge_paths' not in row:
+                # Early records did not store their edge-ID to path index.
+                for asset in row['receipt']['assets']:
+                    name=asset['path']
+                    if name in canonical:
+                        affected.add(name)
+                    elif name.endswith('.json'):
+                        try:edge=json.loads(_ref_bytes(root,asset))
+                        except (ValueError,OSError,UnicodeError):continue
+                        if isinstance(edge,dict) and 'edge_id' in edge:affected.add(name)
+            repair_tasks.append({'task_id':task_id,'error':error,
+                                 'core_object_ids':definition['object_ids'],
+                                 'edge_files':sorted(affected)})
+            continue
+        tasks.append(task_id)
+        edge_paths.update(batch_paths)
+        files.update(names)
         for oid,result in row['receipt']['coverage'].items():
             coverage.setdefault(oid,[]).append({'task_id':row['definition']['task_id'],'stage':row['definition']['stage'],'coverage':result})
     # A later replacement may retain an earlier file. Never remove a current
@@ -914,36 +1048,63 @@ def collect(root,phase='map',local=False,ctx=None,baseline_ref=None):
     retired.difference_update(ref['path'] for row in rows for ref in row['receipt']['assets'])
     return {'registry':registry,'edge_files':sorted(files),'retired_edge_files':sorted(retired),'coverage_candidates':coverage,
             'task_receipt_pins':{r['definition']['task_id']:research.pin(r['receipt']) for r in rows},
-            'tasks':[r['definition']['task_id'] for r in rows], 'superseded_tasks':sorted(replaced)}
+            'tasks':tasks,'repair_tasks':repair_tasks,'superseded_tasks':sorted(replaced)}
+
+
+def _collection_content(result):
+    # A local clone and a disposable remote snapshot can report different
+    # absolute paths for the same missing file. Compare every actual fact.
+    repairs=[{key:value for key,value in item.items() if key!='error'} for item in result['repair_tasks']]
+    return dict(result,repair_tasks=repairs)
 
 
 def assemble(root,local=False):
     ctx=binding(root,'map',local);actor=coordination.config(root,'wcg.actor') or ('Boss1' if local else '')
-    if local:require_lead(root,ctx,actor)
     if not local:
         # Queue CAS writes intentionally leave the worker clone untouched.
         # Never assemble that old view and silently omit other Bosses' work.
         with latest(root,'map') as (snapshot,remote_ctx):
-            require_lead(snapshot,remote_ctx,actor,coordination.config(root,'wcg.instance'))
+            _verify_actor(root,snapshot,remote_ctx,actor,coordination.config(root,'wcg.instance'))
             remote_rows=listing(snapshot,ctx=remote_ctx)
-            if listing(root,ctx=ctx)!=remote_rows or lead_record(root,ctx)!=lead_record(snapshot,remote_ctx):
+            if listing(root,ctx=ctx)!=remote_rows:
                 raise ValueError('Local workflow state is behind or differs from published batches; run work.py sync before assemble')
-            remote_gathered=collect(snapshot,'map',ctx=remote_ctx)
+            remote_gathered=collect(snapshot,'map',ctx=remote_ctx,tolerate_stale=True)
             remote_registry,_=_load(snapshot,remote_gathered['registry'],verify=False)
             local_registry=json.loads(_safe_path(root,remote_gathered['registry']).read_bytes())
             if research._map_registration_pin(local_registry)!=research._map_registration_pin(remote_registry):
                 raise ValueError('Local registry differs from the published input; checkpoint intended edits and run work.py sync before assemble')
-        try:gathered=collect(root,'map',local)
+        try:gathered=collect(root,'map',local,tolerate_stale=True)
         except (ValueError,OSError) as exc:
             raise ValueError('Local batch inputs/assets do not match the published snapshot; preserve edits and run work.py sync before assemble: '+str(exc)) from exc
-        if gathered!=remote_gathered:raise ValueError('Local batch collection differs from remote; run work.py sync before assemble')
-    else:gathered=collect(root,'map',local)
+        if _collection_content(gathered)!=_collection_content(remote_gathered):
+            raise ValueError('Local batch collection differs from remote; run work.py sync before assemble')
+        gathered=remote_gathered
+    else:gathered=collect(root,'map',local,tolerate_stale=True)
     data,objects=research.load(root,gathered['registry'])
-    canonical_edges=(data if local else remote_registry).get('edge_files',[])
-    data['edge_files']=sorted((set(canonical_edges)-set(gathered['retired_edge_files']))|set(gathered['edge_files']))
+    canonical_edges=set((data if local else remote_registry).get('edge_files',[]))
+    valid_batch_edges=set(gathered['edge_files'])
+    repairs=gathered.get('repair_tasks',[])
+    candidate_stale={name for row in repairs for name in row['edge_files']}
+    repair_paths=(canonical_edges & candidate_stale)-valid_batch_edges
+    if repair_paths:
+        valid_paths=(canonical_edges-repair_paths-set(gathered['retired_edge_files'])) | valid_batch_edges
+        edge_ids=set(research.edges(root,{'edge_files':sorted(valid_paths)},objects))
+        for name in sorted(repair_paths):
+            try:edge=research.edges(root,{'edge_files':[name]},objects)
+            except (ValueError,OSError,KeyError,TypeError):
+                canonical_edges.remove(name)
+                continue
+            if edge_ids.intersection(edge):canonical_edges.remove(name)
+            else:edge_ids.update(edge)
+    data['edge_files']=sorted((canonical_edges-set(gathered['retired_edge_files']))|valid_batch_edges)
     relations=research.edges(root,data,objects);coverage={}
+    logical_incidence={}
+    for eid,edge in relations.items():
+        if edge['status']=='accepted' and edge['kind'] in research.LOGICAL:
+            for oid in set(edge['source_ids']+edge['target_ids']):
+                logical_incidence.setdefault(oid,[]).append(eid)
     for oid,obj in objects.items():
-        rows=gathered['coverage_candidates'].get(oid,[]);incident=sorted(eid for eid,e in relations.items() if e['status']=='accepted' and oid in e['source_ids']+e['target_ids'])
+        rows=gathered['coverage_candidates'].get(oid,[]);incident=sorted(logical_incidence.get(oid,[]))
         pending=not rows or any(r['coverage']['state']=='needs-decision' for r in rows)
         row={'state':'needs-decision' if pending else 'linked' if incident else 'isolated-after-review','object_pin':research.pin(obj),
              'comparison_scope':'\n'.join(r['stage']+' '+r['task_id']+': '+r['coverage']['comparison_scope'] for r in rows) or 'No completed comparison batch yet',
@@ -963,13 +1124,24 @@ def assemble(root,local=False):
     affected=[]
     if integration_path.exists():
         previous=json.loads(integration_path.read_text())
-        if previous.get('registry_pin')==draft['registry_pin'] and previous.get('edge_pins')==draft['edge_pins']:
+        old_receipts=previous.get('task_receipt_pins',{})
+        current_receipts=draft['task_receipt_pins']
+        changed_receipts={tid for tid in old_receipts.keys()|current_receipts.keys()
+                          if old_receipts.get(tid)!=current_receipts.get(tid)}
+        if (previous.get('registry_pin')==draft['registry_pin']
+                and previous.get('edge_pins')==draft['edge_pins'] and not changed_receipts):
             draft={**draft,**previous,'task_receipt_pins':draft['task_receipt_pins']}
         else:
             changed_objects={oid for oid in set(previous.get('object_pins',{}))|objects.keys() if previous.get('object_pins',{}).get(oid)!=draft['object_pins'].get(oid)}
             changed_edges={eid for eid in set(previous.get('edge_pins',{}))|draft['edge_pins'].keys() if previous.get('edge_pins',{}).get(eid)!=draft['edge_pins'].get(eid)}
             for eid in changed_edges:
                 changed_objects.update(previous.get('edge_endpoints',{}).get(eid,[]));changed_objects.update(draft['edge_endpoints'].get(eid,[]))
+            cross_affected=bool(changed_objects or changed_edges)
+            for oid,rows in gathered['coverage_candidates'].items():
+                for row in rows:
+                    if row['task_id'] in changed_receipts:
+                        changed_objects.add(oid)
+                        cross_affected|=row['stage']=='3C'
             scopes={scope for oid in changed_objects for scope in previous.get('object_scopes',{}).get(oid,[])+draft['object_scopes'].get(oid,[])}
             if not previous.get('object_pins'):scopes=set(draft['archive_reviews'])
             affected=sorted(scopes)
@@ -979,7 +1151,8 @@ def assemble(root,local=False):
                 if scope in scopes:
                     row['unresolved']=list(dict.fromkeys(row.get('unresolved',[])+['Updated inputs/relations require this preserved comparison to be reviewed again']))
             old_cross=copy.deepcopy(previous.get('cross_archive_review',draft['cross_archive_review']))
-            old_cross['unresolved']=list(dict.fromkeys(old_cross.get('unresolved',[])+['Updated inputs/relations require cross-archive integration review']))
+            if cross_affected:
+                old_cross['unresolved']=list(dict.fromkeys(old_cross.get('unresolved',[])+['Updated inputs or comparisons require cross-archive integration review']))
             draft['cross_archive_review']=old_cross
             draft['pending_changes']={'object_ids':sorted(changed_objects),'edge_ids':sorted(changed_edges),'archive_scopes':affected}
             removed={k:v for k,v in previous.get('archive_reviews',{}).items() if k not in draft['archive_reviews']}
@@ -987,7 +1160,7 @@ def assemble(root,local=False):
     _write_json(_safe_path(root,gathered['registry']),data);_write_json(coverage_path,coverage);_write_json(integration_path,draft)
     return {'status':'assembled-local-draft-not-final','registry':gathered['registry'],'edge_files':len(data['edge_files']),
             'coverage':'map/coverage.json','integration':'map/integration.json','unresolved_objects':[oid for oid,r in coverage.items() if r['state']=='needs-decision'],
-            'affected_integration_scopes':affected,
+            'affected_integration_scopes':affected,'repair_tasks':repairs,
             'instruction':'Read actual cross-batch/cross-archive links, finish integration prose, then research check/build --final; checkpoint exact files.'}
 
 
@@ -1028,6 +1201,12 @@ def _brief(root,result,phase,local=False):
         if len(rows)>12:
             out['needs_reframing']=rows[:12]
             out['more_reframing_in_full_output']=True
+    for key in ('skipped_conflicts','waiting_tasks'):
+        if isinstance(out.get(key),list):
+            out[key+'_count']=len(out[key])
+            if len(out[key])>12:
+                out[key]=out[key][:12]
+                out['more_'+key+'_in_full_output']=True
     if isinstance(out.get('unresolved_objects'),list):
         rows=out['unresolved_objects'];out['unresolved_object_count']=len(rows)
         if len(rows)>12:

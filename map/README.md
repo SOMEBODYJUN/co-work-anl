@@ -4,24 +4,24 @@
 
 ## 按数学联系从内到外
 
-3A先看对象内部的承重论证，再比较同子档对象族；3B补同档跨批/跨子档关系；3C核明确跨档线索的模型映射与条件；3D由唯一lead持续集成。不把每步算术拆成节点，不为连通率造边。共同模型、记号和定义通常作为条件与共享阅读引用，不机械造连接全部结果的hub。
+3A先做对象内部和同子档承重数学；3B补同档跨包或跨子档；3C比较有明确对象、映射和问题的跨档线索；3D边做边整合。常用定义可以共享读。
 
-worker从证明的输入输出、共同结构、条件差异、反例目标和未付义务提出具体比较问题，即使没有旧链接也主动检索。lead据这些线索接续3B/3C范围并追踪漏对象的补登记，不让队列空代替判断完成；实际工作顺序和交接责任以完整Boss词为准。
+worker从证明的输入输出、共同结构、条件差异、反例目标和未付义务提出具体比较问题，实读后才定关系。任一Boss可据此继续3B/3C或补登记。
 
-Boss和内部处理者都做实质数学，批内反馈交原worker继续，下一包用fresh上下文补位。本人未完任务优先，成熟一批立即保存、交付并接下一批，lead同步整合，不等全轮结束。持续到准确处置本范围或真实运行边界，不以一次提交、一次build或暂时队列空结束。
+Boss和内部处理者都做实质数学。本人未完任务优先，成熟即保存交付，接下一包；任一Boss都能集成。完成以实际比较、覆盖和已推成果为准。
 
 ## 共享读取，独立写入
 
 任务在research/operations/map-v2/tasks；公屏wcg/board-map-v2只交流真实成果与依赖，不代替所有权。核心object_ids负责本批覆盖，read_object_ids是共享依赖，input_pins覆盖两者，write_paths只保留实际输出。不同批次可同时读共同定义；增加已登记只读端点用read-add，不重派整批。
 
 ```sh
-python work.py map lead show
+python work.py map list
 python work.py map list --owner self
 python work.py map claim-next --count 6
 python work.py map read-add TASK --object-ids 已登记依赖ID
 ```
 
-lead按完整Boss词用map-draft→plan发布候选比较范围；draft只在实际有新比较范围时生成，恢复时先接既有队列，空草稿不plan。lead用plan发布可执行任务并参与数学，不设常驻审批流水线。任务与结果先确认pushed再交付；响应未知核原request_id。过期输入可handoff，lead定向改版；已准确完成的批次不重扫。原样复用canonical已发布边可用其精确SHA列入assets，不占该边写范围。
+任一已登记Boss按完整Boss词用map-draft→plan发布实际比较。先接既有队列；没有合适批时可按当前子档起草。任务与结果确认pushed再交付；响应未知核原request_id。过期批交接重派或定向替代。
 
 ## 一条边保住什么
 
@@ -55,7 +55,7 @@ python work.py sync
 python work.py map assemble
 ```
 
-collect读取当前已done批次；assemble由lead合入唯一registry.edge_files并生成coverage/integration草稿，不自动接受边或编写数学理由。保留旧数学说明，输入变化时标出待复核范围；lead实读跨批/跨档内容后完善。明确替代旧批用supersedes及旧资产去向，只有新版done才替换，未受影响内容保留。
+collect读取当前已done批次，任一Boss可assemble合入registry.edge_files并生成coverage/integration草稿。保留旧数学说明，重核受影响范围。待修旧批单列，不耽误其他有效交付。
 
 最终research check --final与research build --final要求登记闭合、逐对象当前覆盖、各档/子档及跨档比较说明准确；数学开放问题可继续开放。build回执projections列出全仓、存档及子档输出，跨边界超边保全部端点。将这些实际生成路径连同registry、coverage、integration显式checkpoint确认pushed；repository-cleanup默认范围不含archives内投影，不能漏交，也不整档提交archives。
 

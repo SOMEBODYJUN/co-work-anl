@@ -39,7 +39,7 @@ init只准备packet；随后用平台真实spawn，给匹配Solver词、原题pa
 
 Solver把精确陈述、完整推导/见证、适用条件、实际证据、未付义务和下一步写入约定Markdown；重要进展立即保存，不等整题解决。Main用research save记录不可变笔记与事件，并及时checkpoint本次笔记、RUN和必要输入确认pushed。
 
-Main实质评议后，将可复用数学写入对应archives/<存档>/[subarchives/<子档>/]state/<类型>/<对象名>--<类型>.md；候选、条件、证明、有限结果和精确反例据实标明，代码/输入/证据归其数学owner。Main负责交给现有登记lead和map lead完成必要局部增量，并跟进实际登记/构图结果。对口lead明确空缺或已handoff时，用合适绑定clone或独立阶段clone按lead claim接任；归属未解就把完整成果和具体待整合项保存在现有研究笔记/next中继续跟进，原Solver照常研究，不假称已入总表或图。先推登记改版，再同步重判受影响关系；无关研究不等待全仓整合。
+Main实质评议后，将可复用数学写入对应archives/<存档>/[subarchives/<子档>/]state/<类型>/<对象名>--<类型>.md。候选、条件、证明、有限结果和精确反例据实标明，代码/输入/证据归数学owner。Main准备准确的局部登记和关系增量，可由任一已登记构图Boss直接处理。先推正确的登记，再按受影响端点重判关系，原Solver继续研究。
 
 计算服务于具体数学疑点：短计算可在当前环境，普通批量计算优先已有云端批处理；Codespaces用于确需持续交互或特殊环境。Main负责代码运行、输入及真实输出取回，Solver不承担Git/调度故障。接口与云端完整命令按需读research/GITHUB_RESOURCES.md；运行成功不代替数学论证。
 

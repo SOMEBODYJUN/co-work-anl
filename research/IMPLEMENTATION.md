@@ -19,9 +19,9 @@ python work.py registration-task done --record-file research/registration/ready.
 python work.py registration-task handoff --all --reason '实际暂停原因、草稿位置与下一步'
 ```
 
-构图换成map。lead claim以远端CAS确定唯一集成人；lead也做数学。lead用plan --record-file直接发布任务，成功即pushed，程序接回本地状态，不另手填占用日志。本人未完优先，claim-next --count N一次取得实际空位可做的N个任务；N是任务/worker数，不是材料数，不预占以后工作。单任务可含几十/几百份materials，只一次claim和一次done。本批反馈仍交原worker，整批交付后立即补fresh worker接下一批；Boss身份不变，明确复用旧worker才扣其已用历史，不等全轮。
+构图换成map。所有已登记Boss平权，可以直接plan、claim、reclaim、withdraw、assemble和checkpoint。登记旧队列另有lead；正常构图入口不需要领取lead。本人未完优先，claim-next --count N按当前worker空位批领。成熟即交，空位补fresh worker。
 
-核心对象和写范围互斥，共同只读材料不占锁。状态读最新远端；普通竞争自动重选，响应未知用原request_id确认。claimed不证明进程还活着，公屏静默不等于可抢。暂停handoff，lead另lead handoff；必要reclaim TASK --reason由lead明确收回。过期available/handoff用withdraw TASK --reason，claim-next跳过并报告needs_reframing而继续合法项，不自动吞任务。正文/批次/边/收据先checkpoint确认pushed，再done。
+同一3A核心和任务写入范围由最新远端状态排重；共享只读材料可同时读。plan并发时继续发布未冲突的包，并列出冲突或改版项。暂停用handoff；停滞批可用reclaim TASK或reclaim --owner BossN批量释放，过期未认领包可withdraw。响应未知查原request_id。正文/边/收据先checkpoint确认pushed，再done。
 
 ## 批次和上下文预算
 
@@ -163,23 +163,23 @@ python work.py checkpoint research/registry.json -m 'Integrate accurately regist
 
 `compose`只合记录，不判断数学同义。确认为同一精确命题时，登记lead先比较模型、变量对应、量词顺序、前提、结论和域，选一个主身份、主正文并合齐独立证明和必要证据；主记录由实际分配到主body材料的批次作者维护，必要时先调整批次范围，其他作者把来源归该owner，不各自写不同的同ID记录。主owner未发布时，同Boss的已推批可成组交付；跨Boss由lead先集成主owner，相关作者再续交，同时做其它独立材料。已经done的资产按现有定向替代/增量处理，不直接覆盖旧回执。
 
-map lead发现漏对象，或研究Main有新成果时，由发起人负责把精确陈述、条件、正文/证据出处和需要新增/改版的理由送到现有p25登记lead并跟进；不能发完消息就当完成。只有独立可复用的数学对象需要补登记，普通证明步骤留在现有正文和边解释。原lead已交接或明确空缺，发起Boss可用本对话合适绑定clone或独立阶段clone显式`lead claim`接任；已有归属未解时先保存具体数学与待整合项、继续其它独立工作，不凭静默抢占。
+构图中发现漏对象或研究成果时，发现者可以直接整理局部登记增量。给精确陈述、条件、正文/证据和独立价值；普通证明步骤留正文和边解释。
 
-字节不变的既有正文可复用对应baseline，发布只含必要来源的局部批次；同SHA材料的owner列表由增量合并。新增独立正文可先推再登记。改动已冻结或被引用的正文、证据时先在独立工作区准备勘误，登记lead更新冻结材料及所有命中引用的SHA和对象版本，连同正文、baseline和registry一次推送。只改路径或文字时沿用准确的陈述和身份。全仓出口仍覆盖当前正式材料，只派受影响范围；普通新增批用`mode:incremental`和当前`base_registry`。清理重复身份时，`retired_objects`给出明确去向。map lead同步后只重判受影响pin与关系，其余批继续。
+新增独立正文可先推再登记。改动已冻结或被引用的正文、证据时，先在本地准备，更新所有命中引用的SHA和受影响对象版本，连同正文、baseline和registry一次推送。只改路径或文字时沿用准确的数学陈述和身份。全仓出口仍覆盖当前正式材料，只派受影响范围。旧登记批的增量沿用mode:incremental和当前base_registry；退役对象记录明确去向。
 
-旧核心未变而只增加已登记依赖，用`map read-add`续原批；核心版本/pin已变，作者保草稿并handoff，map lead按新版本重派交原worker接续；已done批按定向替代处理。正常完成本轮登记/构图后，准确出口已pushed并交清接续位置，lead也须`lead handoff --reason`释放集成位，后续增量才有合法接任入口；不是每包结束就重换lead。
+旧核心未变而只增加依赖，用map read-add续原批。核心改版时保草稿、交接并按新版重派；已done批走定向替代。未受影响批照常领、交付和整合。
 
 ## 第三阶段：从内到外建边与整合
 
-3A先对象内部承重链，再同子档对象族；3B同档跨批/跨子档；3C真实跨档映射；3D统一投影。lead先按关联与同一预算形成草稿再发布：
+3A先对象内部承重链及同子档数学族；3B同档跨批或跨子档；3C真实跨档映射；3D统一投影。任何Boss都可以从一个明确子档开始：
 
 ```sh
 python work.py sync
-python work.py research map-draft --stage 3A --output map/planned-tasks.json
+python work.py research map-draft --stage 3A --scope <archives/存档/subarchives/子存档> --output map/planned-tasks.json
 python work.py map plan --record-file map/planned-tasks.json
 ```
 
-已有任务先恢复，不重复plan已发布草稿；0任务不plan空表，转恢复或整合。3B/3C需重复--object-id或--objects-file明确实际比较frontier；没有明确前沿就不重新全量draft。3D是lead整合，不使用map-draft。同页和正文明确链接只是优先合读线索，不自动变成数学关系。数量可能几篇、十几篇或更多，不固定3–5、9篇或对象配额。完整对象是原子阅读单位；同页不同独立sections可以分包，共同定义/证据共享读并去重。核心object_ids负责覆盖且互斥，read_object_ids共享只读，input_pins覆盖两者。pin是完整对象记录指纹，不是文件SHA；research show给registration_pin。以下三对象仅示例一条真实ALL关系，不是默认批量上限。
+先恢复已有任务。3B/3C用--object-id或--objects-file指定实际对象，再用--comparison给出具体数学问题。3D是持续整合。3A中的comparison_groups各自比较，共同定义和证据可共享读。核心object_ids负责覆盖，read_object_ids是共享依赖，input_pins覆盖两者。pin用research show返回的registration_pin。
 
 ```json
 {
@@ -208,7 +208,7 @@ edge含edge_id、kind、status、source_ids、target_ids、premises_mode:all、r
 
 作者完整实读后可accepted，无固定二次审批流水。先定最终status、reviewed_by及具体review_note，再用edge-bind --write把endpoint_pins/evidence_pins/review_digest写回同一边文件，最后edge-check。省略--write时只输出绑定字段。绑定覆盖语义文字，之后改文字、状态、端点或证据要重核。edge-check校本边而不要求已在canonical清单，程序检查不代替数学判断。前提尚未证明但“若A且B则C”的论证完整时，可以是`accepted`且`relation_mode:conditional`，不会把C提升为已证；关系论证本身还有缺步才用`proposed`。所有前提与额外条件均已付清才可作为无条件支持，`rejected`保精确失败理由。
 
-map收据含coverage对象表和assets引用数组。coverage覆盖所有核心对象，每项有state、object_pin、reason、comparison_scope；linked另列真实accepted incident edge_ids。状态为linked/isolated-after-review/needs-decision。清楚open问题和proposed联系可准确完成比较；没有accepted联系时如实记录范围和未付义务，不为完成率强造边。已发布canonical边可用精确SHA共享复用，不占原样边写范围；新文件仍保独立write_paths。
+map收据含coverage和assets。每个核心写state、object_pin、reason、comparison_scope；linked另列已接受的逻辑关系edge_ids。语境边可随assets保存，只有语境边时实读比较后用isolated-after-review。明确open问题可正常比较，身份或输入不清写needs-decision。已发布canonical边可用精确SHA共享复用。
 
 ### 一条ALL边与对应收据
 
@@ -264,7 +264,7 @@ map收据含coverage对象表和assets引用数组。coverage覆盖所有核心�
 }
 ```
 
-零边仍须真实完成本范围工作。已读对象本体与必要论证，按模型、陈述和条件主动检索后确无合理候选，可记录实际检索范围及理由据实isolated-after-review，不凑无关比较或自环；未读/未检索不能当完成。身份/输入或比较尚未弄清写needs-decision，由lead定向续办。空assets只适用于图阶段，登记仍须已推batch_file资产。需要保留有价值的候选关系时，写proposed边并把其文件列入assets，不能因不accepted就删除线索。
+零边须写实际比较范围、理由和未付条件。needs-decision由任何Boss定向续办。值得保留的候选关系可写proposed边，并将文件列入assets。
 
 ```sh
 python work.py map collect
@@ -272,9 +272,9 @@ python work.py sync
 python work.py map assemble
 ```
 
-collect默认给只读短摘要，--full才返回完整独立边和coverage候选；assemble仅lead合入registry.edge_files、map/coverage.json与map/integration.json候选。它不自动接受关系或编造数学整合。保留旧实质说明，输入变化只在受影响范围标待复核，lead接着修订。
+collect给已交付成果和待补办批，--full返回详细内容。任何Boss均可assemble生成registry.edge_files、coverage和integration。过时批单列修复，其余批照常整合。新增零边回执也须接入涉及的比较范围。
 
-lead实读并填每个当前档/子档archive_reviews及cross_archive_review，核重复、模型/版本、真实跨批联系和疑点；准确开放数学可以留图，最终清零的是未辨认身份/来源/交付疑点。research check --final及research build --final后，按回执projections显式checkpoint每个准确生成路径，连同registry、coverage、integration确认pushed。repository-cleanup默认范围不含archives内投影，不能漏交，也不宽泛提交整个archives。graph-v2是可重建三级视图，完整知识仍在正文/登记/边解释。
+实读并写受影响的archive_reviews及cross_archive_review，说明真实跨批比较和条件。完成后用research check --final与build --final，按projections明确checkpoint生成路径，连同registry、coverage和integration。远端先推进时按最新快照重组，接回仍有效的审读。
 
 ## 定向替代，不重做全仓
 
@@ -284,7 +284,7 @@ lead实读并填每个当前档/子档archive_reviews及cross_archive_review，�
 {"supersession":{"old-task":{"reason":"对象改版，仅重判相关支持","assets":{"map/edges/old.json":{"disposition":"replaced","replacement_paths":["map/edges/new.json"],"reason":"新边保完整旧关系并修正条件"}}}}}
 ```
 
-构图旧批有待定或输入过时时，用 `python work.py research map-draft --repair-task <旧任务ID>` 草拟原层替代批，再由lead发布。替代批覆盖旧批仍现役的核心；已在总表明确退役的ID可省略，若全数退役则逐项处置旧边即可。最终验收使用已发布队列与集成回执绑定，等计划范围内的在途任务及未集成交付结清再验收。
+构图旧批有待定或输入过时时，用python work.py research map-draft --repair-task <旧任务ID>起草原层替代批，任何Boss均可发布。替代批覆盖旧批仍现役的核心，并交代原有边。最终验收核对最新已发布队列及整合回执。
 
 ## 后续Main与Solver消费
 
