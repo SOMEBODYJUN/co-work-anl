@@ -1,0 +1,79 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline-5cd4b9018.json",
+    "sha256": "af99fb773928f3fc6bcd577ade37fbb07e8f84befbb2304158b99894ab1e56a3"
+  },
+  "objects": [
+    {
+      "object_id": "M-22a10c9895bd43fb83aed6e894d5aea2",
+      "version": 2,
+      "title": "非负列总量拟阵基逐行加B舍入",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限matroid基多面体B(M)，显式非负有理矩阵A，全部列总量Σ_iA_ie≤B，B≥0；给有理x∈B(M)、Ax≤b。算法需要显式总位多项式LP及坐标投影顶点接口；具体可实现域为所有parallel copies均显式列出的transversal matroid网络扩展式。",
+      "statement": "在该接口下确定性总位多项式输出实际基I，使全部行同时A1_I≤b+B。对当前分数顶点，以tight matroid行维数≤r，至少n−r条tight upper rows，且其全选亏缺总和≤B(n−r)，故可删一行亏缺≤B；结合0/1坐标固定和matroid删除/收缩，至多|E|+m轮。取投影顶点须在x坐标逐坐标lexicographic优化，任意扩展式顶点不足。rank1族A=B I、x全1/m、b全B/m使每基至少一行违约B(1−1/m)，故系数+B渐近锐。",
+      "quantifiers": "对每个上述合法输入，在明确显式LP/投影顶点接口下由同一个确定性算法同时保证全部upper rows。对每个c<1且B>0有rank1例使任何基最大行违约>cB。",
+      "assumptions": [
+        "A逐项非负、列和≤B，且起始x属于base并满足所有upper rows",
+        "必须提供显式poly-size LP及实际x投影顶点接口，不以一般implicit matroid independence oracle代替",
+        "具体transversal/parallel-copy实现按全部副本显式规模收费"
+      ],
+      "scope": "受限但闭合的逐行加性+B舍入，含具体显式transversal实现和渐近锐性。",
+      "objections": "无一般隐式matroid oracle总位多项式承诺，不含成本保持或lower rows，也不是SC/UM乘法近似。不得用任意扩展式基本解替代其x投影顶点。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/非负列总量拟阵基逐行加B舍入--定理.md",
+        "sha256": "371dd0c200f7ef3b42c9c130e4ebe44349bd2494b360283216f443b7060eeb93"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/上列预算拟阵基加B舍入双源审查--审查.md",
+          "sha256": "b2297b8dfe3c66880edcc037447ec5e24869b605e35d204362b2da12d72007e3",
+          "section": "对象和精确合同"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/上列预算拟阵基加B舍入双源审查--审查.md",
+          "sha256": "b2297b8dfe3c66880edcc037447ec5e24869b605e35d204362b2da12d72007e3",
+          "section": "紧拟阵行和删除安全性"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/上列预算拟阵基加B舍入双源审查--审查.md",
+          "sha256": "b2297b8dfe3c66880edcc037447ec5e24869b605e35d204362b2da12d72007e3",
+          "section": "显式匹配和 parallel-copy 边界"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/上列预算拟阵基加B舍入双源审查--审查.md",
+          "sha256": "b2297b8dfe3c66880edcc037447ec5e24869b605e35d204362b2da12d72007e3",
+          "section": "冻结 audit 的实际范围"
+        }
+      ],
+      "sources": [
+        "archives/unrelated-machines/state/定理/非负列总量拟阵基逐行加B舍入--定理.md",
+        "state:archives/unrelated-machines/state/审查/上列预算拟阵基加B舍入双源审查--审查.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/upper_column_budget_base_audit.json",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/upper_column_budget_base_clean_source_audit.json"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/定理/非负列总量拟阵基逐行加B舍入--定理.md",
+      "sha256": "371dd0c200f7ef3b42c9c130e4ebe44349bd2494b360283216f443b7060eeb93",
+      "disposition": "objects",
+      "object_ids": [
+        "M-22a10c9895bd43fb83aed6e894d5aea2"
+      ],
+      "reason": "全文已读；新的精确加性+B舍入Claim，明确显式polyLP/坐标投影顶点接口及transversal所有副本显式域，保渐近锐性，不扩一般implicit matroid oracle。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/上列预算拟阵基加B舍入双源审查--审查.md",
+      "sha256": "b2297b8dfe3c66880edcc037447ec5e24869b605e35d204362b2da12d72007e3",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-22a10c9895bd43fb83aed6e894d5aea2"
+      ],
+      "reason": "此页显式平行扩张子域的加+B、坐标投影顶点、紧拟阵秩链与 canonical 主定理相合。报告的同类副本容量错误给出 fake cost 0 与实际100的实现边界；两原报告的核心只差EOF单LF，187例为同一有限范围。只按本正式审查保精确证据和来源，未重跑原程序或验证生产LP后端。"
+    }
+  ],
+  "edge_files": []
+}

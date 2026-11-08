@@ -1,0 +1,391 @@
+{
+  "status": "candidate records awaiting primary assignment; not a delivered batch",
+  "basis": null,
+  "separate_record_in_closeout_0015": "UM-ONE-DESTINATION-SLOT-REPAIR-v1",
+  "objects": [
+    {
+      "object_id": "UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1",
+      "version": 1,
+      "title": "固定总工作量的两件 unit 族是严格单任务势局部极小",
+      "kind": "local-search-counterexample",
+      "truth_status": "proved",
+      "model": "相同全资格机器；两件时间1的unit及m²−1件时间1/m的tiny，初态两unit同机、其余各m+1 tiny。",
+      "statement": "每个完整分配工作量为m+2−1/m；初峰2，真实OPT=1+2/m，故比值2m/(m+2)→2。任一换机单任务动作严格增加平方负载势及降序载荷词典序。若最终峰≤2−ε，从初态算的原任务Hamming至少2+ceil(εm)。一个三件同步启动加后续逐tiny严格下降可达OPT。",
+      "quantifiers": "每整数m≥3；每个合法单任务换机；每个0<ε<1及满足该绝对峰阈值的目标分配。",
+      "assumptions": [
+        "负载精确；Hamming按原任务；势为ΣL_i²及降序词典序。"
+      ],
+      "scope": "严格单任务邻域、一次支持下界及纠错后的多轮正面构造。",
+      "objections": "一次Hamming不能外推为固定批次多轮能垒；与私有昂贵叶的可变工作量全局固定凸势对象不同。原单步有限入口没有执行后来的三件启动。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/固定工作局部极小与真实凸包固定槽双源审查--审查.md",
+        "sha256": "40919541fb80f3562132fb920208da26f12ed7ee03850db566e1224d87badfd6",
+        "section": "一、固定总工作量下的严格单任务局部极小"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/固定工作单步原审计与三件启动纠错的分域复核--审查.md",
+          "sha256": "af96d0d94679eddb2d4d736ca5d459f846230aef549dfb2f1574d119e9099d4d"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/two-size-schedule-audits/comparisons/fixed_work_convex_local_minimum_near_two.md",
+          "sha256": "36a2e934c25e0c3686a731c12bee5196b1b645f5fa2e1ca2dfab04b3eb9f4c9d"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/two-size-schedule-audits/original/fixed_work_convex_local_minimum_review.md",
+          "sha256": "f76bc09bf6f126f9512d05b01fab83eedc7ad4111d6a5982f954019734d4ddc3"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/two-size-schedule-audits/original/fixed_work_convex_local_minimum.py",
+          "sha256": "45a415b8d6facaaa05e361e70ce41da5568e2723d8e05ce087c6df1174567329"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/two-size-schedule-audits/runs/fixed-001/run.json",
+          "sha256": "bd8e0b407b4b7bb1b28dbe260b050fb29df253ddf969ef0f56a11038a4ea3bcd"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/two-size-schedule-audits/runs/fixed-001/stdout.txt",
+          "sha256": "d81f869a98c6ba69422056c526463b9c23d27baaf763f3c144ea459a0ea6ab6e"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/fixed_work_convex_local_minimum_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/fixed_work_convex_local_minimum.py"
+      ]
+    },
+    {
+      "object_id": "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1",
+      "version": 1,
+      "title": "真实最优调度凸包的固定有序单位槽匹配可精确趋二",
+      "kind": "rounding-contract-counterexample",
+      "truth_status": "proved",
+      "model": "m台完全相同且全资格机器；一个时间1的大任务、m²−1个时间1/(m+1)且有原身份的小任务。",
+      "statement": "真实OPT=1，m份每台负载1的循环最优调度的均匀平均为x_ij=1/m。给定该x，任意逐机小任务平局排序所得标准单位槽图都有覆盖匹配，而每个覆盖匹配均用满m²个槽、每机m任务、峰值恰2m/(m+1)，无固定ε>0的同接口(2−ε)保证。",
+      "quantifiers": "每整数m≥2；对每个逐机平局顺序的标准正交长槽图，存在覆盖且每个覆盖均有该值。",
+      "assumptions": [
+        "固定给定x及单位槽图；匹配边要求区间正交长严格为正。"
+      ],
+      "scope": "真OPT凸包分量的逐机任务计数被边际槽图截掉；可直接选已给最优分量，不排重选x、改槽或槽外迁移。",
+      "objections": "不是最小工作面、凸包proxy、一般调度hardness或行跨度≤2结果的反例。有限实验没有枚举所有平局组合；第37页§5.2把规范主审计误写为m=2..12，其冻结主记录实为m=1..40。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/固定工作局部极小与真实凸包固定槽双源审查--审查.md",
+        "sha256": "40919541fb80f3562132fb920208da26f12ed7ee03850db566e1224d87badfd6",
+        "section": "5. 精确构造与所有槽匹配的值"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/固定槽审查的分层先验与冻结字节恢复--审查.md",
+          "sha256": "958b44e34fb46d96f59ac9759856d48d4dcdd378b705d4a2d6e410041b654bde",
+          "section": "首次接口盲重构及原攻击范围"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/固定槽审查的分层先验与冻结字节恢复--审查.md",
+          "sha256": "958b44e34fb46d96f59ac9759856d48d4dcdd378b705d4a2d6e410041b654bde",
+          "section": "修复增补、身份拆分与规范集成"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/固定槽跨槽修复与最小工作面支撑障碍有限审查--审查.md",
+          "sha256": "029fcbb46a203747cf61c162abb52ab4ecc88bbfaefb7f2c62c5fced16635232",
+          "section": "2. 固定槽图的精确近二障碍"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/固定槽跨槽修复与最小工作面支撑障碍有限审查--审查.md",
+          "sha256": "029fcbb46a203747cf61c162abb52ab4ecc88bbfaefb7f2c62c5fced16635232",
+          "section": "5.2 `505de99a49cb4f03d070`"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/真实凸分量固定槽的规范与独立原入口--资源.md",
+          "sha256": "b86caa2c416627440975782d5d0903553150bd4f0096858af300b08b0dcf799c"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/frozen-slots-repair-audits/comparisons/optimal_convex_fixed_slot_gap.md",
+          "sha256": "37f9ae7920ff063c3cd6dcf331d974194bde2f3e5913c7ebc0a7e7e2db333e29",
+          "section": "1. Exact Claim：UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/frozen-slots-repair-audits/comparisons/optimal_convex_fixed_slot_gap.md",
+          "sha256": "37f9ae7920ff063c3cd6dcf331d974194bde2f3e5913c7ebc0a7e7e2db333e29",
+          "section": "2. 输入与真实最优凸分解"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/frozen-slots-repair-audits/comparisons/optimal_convex_fixed_slot_gap.md",
+          "sha256": "37f9ae7920ff063c3cd6dcf331d974194bde2f3e5913c7ebc0a7e7e2db333e29",
+          "section": "3. 固定槽匹配的精确整数值"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/frozen-slots-repair-audits/original/optimal_convex_slot_gap.py",
+          "sha256": "aa5ae48deb0f61b4f5e7210e381642e1d8291649393cd23539c45a9794b7c73b"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/frozen-slots-repair-audits/original/optimal_convex_slot_independent.py",
+          "sha256": "b25a8f581fd578259d4b6decbe7de0625b334fb9c90f6eb2535b8e5e97d55ddd"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/frozen-slots-repair-audits/dependencies/rounding_and_gap.py",
+          "sha256": "5ba0dc52ddbb90ffece75e5accd2e801957c1172e337b9bdf033e22a64cbd75a"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/frozen-slots-repair-audits/dependencies/optimal_convex_slot_input.json",
+          "sha256": "f3899476eb7dcb1b0475c54981f6b49e226c49344315a7933b725836f195ab20"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/frozen-slots-repair-audits/comparisons/optimal_convex_slot_witness.json",
+          "sha256": "b63874bf71fac5eb68e0f1c2ef322021c34f23c6f84b0f7027409b6b47bcd2f3"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/frozen-slots-repair-audits/historical-frozen-runs/optimal_convex_slot_gap_audit.json",
+          "sha256": "88cb594f2143186e9cc172cae50790f3c74807649ea5e9488f9aa1e3686d3a33"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/slot-repair-20261030/optimal_convex_slot_gap_audit.json",
+          "sha256": "88cb594f2143186e9cc172cae50790f3c74807649ea5e9488f9aa1e3686d3a33"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/optimal_convex_slot_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/optimal_convex_slot_gap.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/optimal_convex_slot_independent.py"
+      ]
+    },
+    {
+      "object_id": "UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1",
+      "version": 1,
+      "title": "固定槽族允许任意外部目的地时的精确最少改件修复",
+      "kind": "exact-repair-lemma",
+      "truth_status": "proved",
+      "model": "m台完全相同且全资格机器；一个时间1的大任务、m²−1个时间1/(m+1)且有原身份的小任务。",
+      "statement": "从任一固定槽覆盖分配到OPT=1的最小原任务Hamming为m−1；保留大任务为m−1，强制搬大任务的最小值为m+1。分别用从原大任务机分流各一件，或把新大任务机的m件小任务撤出、其中两件送旧大任务机其余各送一机达到界；可O(n+m)扫描和改派。m=1仅前分支，距离0。",
+      "quantifiers": "每整数m≥2，任意固定槽覆盖分配及真实峰1的目标；分支按大任务是否换机。m=1仅平凡保留分支。",
+      "assumptions": [
+        "允许槽外迁移、任一原来源可以向多台不同机器发送；按最终机器变化的有标签原任务计数。"
+      ],
+      "scope": "固定槽反例的无目的地限制修复；有限全配对仅共同索引平局m≤3。",
+      "objections": "不应用历史误标签将m−1/m+1认作单目的地三角数。第37页仅§5.2是无目的地有限证据，§3属于单目的地。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/无目的地限制跨槽修复的全配对原审计--资源.md",
+        "sha256": "943bf97c0fe23e96904d641b929916839b90b41eba95dc867418e4498c53e8c6",
+        "section": "完整原矩阵与两分支数学"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/固定工作局部极小与真实凸包固定槽双源审查--审查.md",
+          "sha256": "40919541fb80f3562132fb920208da26f12ed7ee03850db566e1224d87badfd6",
+          "section": "6. 槽图外的精确修复和单目的地派生身份"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/固定槽审查的分层先验与冻结字节恢复--审查.md",
+          "sha256": "958b44e34fb46d96f59ac9759856d48d4dcdd378b705d4a2d6e410041b654bde",
+          "section": "修复增补、身份拆分与规范集成"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/固定槽跨槽修复与最小工作面支撑障碍有限审查--审查.md",
+          "sha256": "029fcbb46a203747cf61c162abb52ab4ecc88bbfaefb7f2c62c5fced16635232",
+          "section": "5.2 `505de99a49cb4f03d070`"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/无目的地限制跨槽修复的全配对原审计--资源.md",
+          "sha256": "943bf97c0fe23e96904d641b929916839b90b41eba95dc867418e4498c53e8c6",
+          "section": "实际函数与全部有限输入"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/无目的地限制跨槽修复的全配对原审计--资源.md",
+          "sha256": "943bf97c0fe23e96904d641b929916839b90b41eba95dc867418e4498c53e8c6",
+          "section": "真实历史运行与证据归属"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/真实凸分量固定槽的规范与独立原入口--资源.md",
+          "sha256": "b86caa2c416627440975782d5d0903553150bd4f0096858af300b08b0dcf799c",
+          "section": "原矩阵、真实凸分量和所有固定槽匹配"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/真实凸分量固定槽的规范与独立原入口--资源.md",
+          "sha256": "b86caa2c416627440975782d5d0903553150bd4f0096858af300b08b0dcf799c",
+          "section": "实际矩阵、证书和历史运行身份"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/frozen-slots-repair-audits/comparisons/optimal_convex_fixed_slot_gap.md",
+          "sha256": "37f9ae7920ff063c3cd6dcf331d974194bde2f3e5913c7ebc0a7e7e2db333e29",
+          "section": "4. 跨槽修复、复杂度、边界与精确范围"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/frozen-slots-repair-audits/original/optimal_convex_slot_review.md",
+          "sha256": "891ff397c1b745af62554ca036c8d24f9d0b790786b8ed6ae2ea41bc9a324e3a",
+          "section": "修复的独立证明与攻击"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/unrestricted-minwork-row-audits/original/optimal_convex_slot_repair_independent.py",
+          "sha256": "cdeb92a90e0b9635d0f48169211a3b91ad4bba9f52e1a7b2e01db6c2d2c20bc7"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/unrestricted-minwork-row-audits/comparisons/optimal_convex_slot_gap_audit.json",
+          "sha256": "88cb594f2143186e9cc172cae50790f3c74807649ea5e9488f9aa1e3686d3a33"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/slot-repair-20261030/optimal_convex_slot_gap_audit.json",
+          "sha256": "88cb594f2143186e9cc172cae50790f3c74807649ea5e9488f9aa1e3686d3a33"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/optimal_convex_slot_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/optimal_convex_slot_repair_independent.py"
+      ]
+    },
+    {
+      "object_id": "UM-MIN-WORK-FACE-SUPPORT-GAP-v1",
+      "version": 1,
+      "title": "正扰动最小工作面整体正支撑的精确近二间隙与修复阶梯",
+      "kind": "rounding-contract-counterexample",
+      "truth_status": "proved",
+      "model": "每台home有m−1件小任务，home时间1、off-home 1+1/m；一件时间m的大任务任机可用，标准assignment LP。",
+      "statement": "OPT=T=m+1/m，LST阈值m。在T下最小工作W=m²的整面固定全部小任务在home，大任务份额Σb_i=1且1/m²≤b_i≤(m+1)/m²；整面支撑的任意整数分配峰2m−1。显式basic点的末载(m²−m+1)/m，slack1。整数q≥0下，W≤m²+q/m的最优峰为max{2m−1−min(q,m−1),m+1/m}。",
+      "quantifiers": "每整数m≥2；整个最小工作面全部点及其正支撑并集；每个只用这些边的整数分配；每个整数q≥0。",
+      "assumptions": [
+        "正处理时间、正扰动d=1/m；W(x)=m²+d S(x)，S为小任务离home的分数质量。"
+      ],
+      "scope": "固定成本最小工作面支撑限制；不能推广到真OPT凸包、CONFIG、δ=0或重新打开零质量边。少量成本增量达到真OPT。",
+      "objections": "第40页末载负号误植由第34页纠正；有m²个槽、m²−m+1件任务，覆盖后余m−1槽，坏值来自支撑而非用满槽。正确成本增量q/m而非q。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/最小工作面正扰动的标准形与范围复核--审查.md",
+        "sha256": "d9d80421dc87caf689fa615f0bda97c57a14f3d68a8df009a098b422588f74c3"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/固定工作局部极小与真实凸包固定槽双源审查--审查.md",
+          "sha256": "40919541fb80f3562132fb920208da26f12ed7ee03850db566e1224d87badfd6",
+          "section": "7. 最小工作量面的更强支撑障碍"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/固定槽审查的分层先验与冻结字节恢复--审查.md",
+          "sha256": "958b44e34fb46d96f59ac9759856d48d4dcdd378b705d4a2d6e410041b654bde",
+          "section": "修复增补、身份拆分与规范集成"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/固定槽审查的分层先验与冻结字节恢复--审查.md",
+          "sha256": "958b44e34fb46d96f59ac9759856d48d4dcdd378b705d4a2d6e410041b654bde",
+          "section": "可以精确恢复的历史字节与不能倒填的事实"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/固定槽跨槽修复与最小工作面支撑障碍有限审查--审查.md",
+          "sha256": "029fcbb46a203747cf61c162abb52ab4ecc88bbfaefb7f2c62c5fced16635232",
+          "section": "4. 最小总处理量面：`UM-MIN-WORK-FACE-SUPPORT-GAP-v1`"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/最小工作面与固定槽支撑有限审查--审查.md",
+          "sha256": "1cdd354ffea1e4a4e7c9beebe0c2ba3a799a852720386652c66fb306b9625b9a"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/frozen-slots-repair-audits/comparisons/optimal_convex_fixed_slot_gap.md",
+          "sha256": "37f9ae7920ff063c3cd6dcf331d974194bde2f3e5913c7ebc0a7e7e2db333e29",
+          "section": "6. 最小总处理量的整个最优面也可能丢掉修复边"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/frozen-slots-repair-audits/comparisons/minimum_work_face_audit.json",
+          "sha256": "1a69ae878c6aed3cb294a2aaebf98d7ec9d5c562694a56d68bd9c59aeaaa0e92"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/unrestricted-minwork-row-audits/original/minimum_work_face_audit.py",
+          "sha256": "55695ebf87c1e85c8f84cf6cf54a717e8390614da9e336e70f1f7f8b2349ce59"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/unrestricted-minwork-row-audits/original/minimum_work_face_independent.py",
+          "sha256": "02bbe8c6de0bc3a50ba1741ed618eb9543a17fd4f1f7a748d20060d50bd386c1"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/optimal_convex_slot_review.md#最小总处理量面增补",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/minimum_work_face_audit.json"
+      ]
+    }
+  ],
+  "source_material_candidates": [
+    {
+      "path": "archives/unrelated-machines/state/审查/固定工作局部极小与真实凸包固定槽双源审查--审查.md",
+      "sha256": "40919541fb80f3562132fb920208da26f12ed7ee03850db566e1224d87badfd6",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1",
+        "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1",
+        "UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1",
+        "UM-MIN-WORK-FACE-SUPPORT-GAP-v1"
+      ],
+      "reason": "一、§1–4为固定工作局部极小及三件启动纠错主正文；§5为真最优凸包固定槽主正文。§6先为无目的地限制修复、后为每原来源单目的地三角数，两精确身份分立；§7为不同矩阵的最小工作量面。每项原命题和版本见所列owner的精确主正文或证据。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/固定工作单步原审计与三件启动纠错的分域复核--审查.md",
+      "sha256": "af96d0d94679eddb2d4d736ca5d459f846230aef549dfb2f1574d119e9099d4d",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1"
+      ],
+      "reason": "固定工作单步对象的构造、势差、一次Hamming下界和纠错后三件启动；原冻结程序只验单步，fixed-001真实一次stdout与旧记录字节同。不给多轮障碍或外部审查背书。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/最小工作面正扰动的标准形与范围复核--审查.md",
+      "sha256": "d9d80421dc87caf689fa615f0bda97c57a14f3d68a8df009a098b422588f74c3",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-MIN-WORK-FACE-SUPPORT-GAP-v1"
+      ],
+      "reason": "正扰动最小工作面的整面、真实OPT/LST、basic标准形行列式、未用满槽纠正及q/m成本阶梯的完整正文；不归真OPT凸包或CONFIG。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/固定槽审查的分层先验与冻结字节恢复--审查.md",
+      "sha256": "958b44e34fb46d96f59ac9759856d48d4dcdd378b705d4a2d6e410041b654bde",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1",
+        "UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1",
+        "UM-MIN-WORK-FACE-SUPPORT-GAP-v1"
+      ],
+      "reason": "按最初固定槽盲重构、无目的地修复增补、单目的地读后纠错和新§6范围分节；准确区分初始独立scratch与规范运行、可SHA恢复8d9前缀和仅有历史指针的早期版本。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/固定槽跨槽修复与最小工作面支撑障碍有限审查--审查.md",
+      "sha256": "029fcbb46a203747cf61c162abb52ab4ecc88bbfaefb7f2c62c5fced16635232",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1",
+        "UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1",
+        "UM-MIN-WORK-FACE-SUPPORT-GAP-v1"
+      ],
+      "reason": "§2固定槽；§3及§5.1每源单目的地（§1误用无目的地旧ID，不沿用）；§4最小工作量面；§5.2是真凸包槽图及无目的地有限Hamming审计而非单目的地证明。两冻结输出身份分开；§5.2规范主审计范围以冻结JSON实记m=1..40为准，独立tie检查为m∈{1,2,3,4,5,8,12}。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/无目的地限制跨槽修复的全配对原审计--资源.md",
+      "sha256": "943bf97c0fe23e96904d641b929916839b90b41eba95dc867418e4498c53e8c6",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1"
+      ],
+      "reason": "完整原矩阵与两分支数学可作无目的地限制主正文；共同索引平局的有限全配对审计为m≤3（1/8/45360对），不升格为任意平局枚举；历史原scratch输出与聚合字段不混为原字节。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/真实凸分量固定槽的规范与独立原入口--资源.md",
+      "sha256": "b86caa2c416627440975782d5d0903553150bd4f0096858af300b08b0dcf799c",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1",
+        "UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1"
+      ],
+      "reason": "任意平局固定槽计数/Hall与真实凸分量为一般证明；程序分别验证原区间图、共同顺序枚举及有限独立匹配。两分支修复及cdeb全配对仅归无目的地；单目的地只链接另页。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/最小工作面与固定槽支撑有限审查--审查.md",
+      "sha256": "1cdd354ffea1e4a4e7c9beebe0c2ba3a799a852720386652c66fb306b9625b9a",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-MIN-WORK-FACE-SUPPORT-GAP-v1"
+      ],
+      "reason": "本页只保最小工作面有限审计、δ=0反边界与q/m阶梯；真凸包固定槽只作比较。末载(m²−m−1)/m为旧笔误，正确(m²−m+1)/m由第34页及rank_checks纠正；count-state和独立真标号全枚举不混。"
+    }
+  ],
+  "notes": [
+    "The four primary records still need an exact owner decision where alternate primary sources overlap. Existing accepted materials and their sources must be merged, not replaced.",
+    "For row 37, the exact main archived audit contains m=1..40, with exhaustive matching m=1,2,3; the independent component/tie list is {1,2,3,4,5,8,12}. Byte-identical archive aliases are not repeated runs.",
+    "The unrestricted repair uses exact distances m−1/m+1. The already separate one-destination object uses triangular distances. The entire minimum-work LP face family has a different model from the true optimal schedule hull."
+  ]
+}
