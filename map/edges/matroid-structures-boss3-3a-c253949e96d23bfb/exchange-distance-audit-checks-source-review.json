@@ -1,0 +1,43 @@
+{
+  "edge_id": "exchange-distance-audit-checks-source-review",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "matroid-structures/exchange-distance-exhaustive-five-element-audit"
+  ],
+  "target_ids": [
+    "matroid-structures/retired-matroid-exchange-distance-source-review"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "仅比较退役来源审查中所载的有限审计范围：带标号抽象拟阵 n=0,…,5、完整可行公共基单交换弧、可达不同地面元素有序对及其 dist≤k−g+3 检查；不把有限审计当作一般证明。",
+  "roles": {
+    "matroid-structures/exchange-distance-exhaustive-five-element-audit": "以基交换公理穷举和独立集/Floyd 交叉核验给出 498 个拟阵、28,424 个 profile、18,833 个图、242,976 个可达端点检查及有限域全通过结果。",
+    "matroid-structures/retired-matroid-exchange-distance-source-review": "记录退役来源的距离候选、有限审计统计及 PNE/拥塞应用边界。"
+  },
+  "explanation": "审计对象逐项重现 source-review 所引用的有限统计，并澄清 profiles 是非空基支持、reachable_pairs 是不同地面元素有序对，且只构造全部可行单交换弧的并。因而它检查 source-review 的有限证据语义和边界，而没有检查前向/反向一般证明、端点成本条件、PNE 或 PoA 应用。",
+  "scope": "仅为 n≤5 的有限枚举和统计解释提供独立语义核验；n>5、任意删弧子图、一般距离界和拥塞应用仍未付。",
+  "evidence": [
+    {
+      "path": "archives/matroid-structures/state/计算/五元以内拟阵公共基交换距离核验--计算.md",
+      "sha256": "be36ad0758bdb41b209f0ca455f01f562e319a2b100417689470dccc872bf2f8",
+      "section": "实际复现及计数语义"
+    },
+    {
+      "path": "archives/matroid-structures/state/审查/退役交换距离来源审查与应用边界--审查.md",
+      "sha256": "af8994dd13a77a31630e2048061f0fc6542856be45d330d6b8fcc402aa6439ef",
+      "section": "有限审计的准确范围"
+    }
+  ],
+  "reviewed_by": "Boss3-matroid-structures-3a-fresh-worker",
+  "review_note": "已完整对照两文的域、弧定义、统计量和边界；checks 仅覆盖有限审计语义，不把有限结果升级为一般交换距离定理。",
+  "endpoint_pins": {
+    "matroid-structures/exchange-distance-exhaustive-five-element-audit": "201f34659513fef441e88a1f60ea5f02043bdbf45ea80c0ace28042d731a7b70",
+    "matroid-structures/retired-matroid-exchange-distance-source-review": "6586927b964d821d1a8f10162c38241e10af569d623542660bc71e75f8c0565b"
+  },
+  "evidence_pins": {
+    "archives/matroid-structures/state/计算/五元以内拟阵公共基交换距离核验--计算.md": "be36ad0758bdb41b209f0ca455f01f562e319a2b100417689470dccc872bf2f8",
+    "archives/matroid-structures/state/审查/退役交换距离来源审查与应用边界--审查.md": "af8994dd13a77a31630e2048061f0fc6542856be45d330d6b8fcc402aa6439ef"
+  },
+  "review_digest": "772a7242f9998fa44325defb7b68e55d6617d299f95935b9a9985e2cb6f5c1f0"
+}

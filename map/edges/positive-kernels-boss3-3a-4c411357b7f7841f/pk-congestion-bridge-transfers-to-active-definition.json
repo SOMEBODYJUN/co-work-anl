@@ -1,0 +1,43 @@
+{
+  "edge_id": "pk-congestion-bridge-transfers-to-active-definition",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-c1e8d80912724101b8536e3934c454de"
+  ],
+  "target_ids": [
+    "positive-kernels/occupancy-active-rank"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "固定有限 Boolean 两动作逐状态成本表；每名玩家动作 0 在所有对手状态成本恒为零；费用资源为非负系数多项式，质量 w_i 严格为正；只讨论由这些资源产生的完整成本表。",
+  "roles": {
+    "M-c1e8d80912724101b8536e3934c454de": "在零动作成本、非负多项式费用及严格正权下，把每个正费用资源限制到对应动作1，并将每个单项式拆成一个正占用核，得到 K_fin 表示。",
+    "positive-kernels/occupancy-active-rank": "接收该映射后的完整 Boolean 向量表，作为 K_{S,k} 与有限非负核锥 K_fin 的目标模型。"
+  },
+  "explanation": "这是模型迁移而非同一命题的逻辑蕴含：零动作成本与正系数迫使正费用资源不能由动作0使用，故逐资源逐单项式展开正好落入 E 的 K_fin。若资源可用于动作0或两动作、系数有负值或权非正，非负差分锥的迁移失效。",
+  "scope": "从满足零动作条件的两动作非负多项式拥塞成本表到完整 Boolean 正占用核表示；不推出均衡、selector 可行性或一般博弈结论。",
+  "evidence": [
+    {
+      "path": "archives/positive-kernels/state/定义/正占用核与顶背景交互秩--定义.md",
+      "sha256": "5df74fd1780aa8027962508a4695a40dd6a6ab31d065b0c4c3b080bacf1a5dc8",
+      "section": "模型边界与可用接口"
+    },
+    {
+      "path": "archives/positive-kernels/问题--问题.md",
+      "sha256": "e43bcefe1d204cc19de222a4ee4145342d4965d9d2640d7dc7fa1db71dd665fa",
+      "section": "已有完整数学接口"
+    }
+  ],
+  "reviewed_by": "Boss3-positive-kernels-worker",
+  "review_note": "已核对资源拆分、正系数和零动作成本的逐状态映射；因模型映射依赖列出的附加合同，采用 accepted + conditional transfers。",
+  "endpoint_pins": {
+    "M-c1e8d80912724101b8536e3934c454de": "93a64d8baf5fb55bc0f8e3ee825a236d0817cd124eef5c7127b5c4de6026e400",
+    "positive-kernels/occupancy-active-rank": "5cfa308e8da57e3a316c861ad712e89678f691882acfb6f4cffd884faa606b7d"
+  },
+  "evidence_pins": {
+    "archives/positive-kernels/state/定义/正占用核与顶背景交互秩--定义.md": "5df74fd1780aa8027962508a4695a40dd6a6ab31d065b0c4c3b080bacf1a5dc8",
+    "archives/positive-kernels/问题--问题.md": "e43bcefe1d204cc19de222a4ee4145342d4965d9d2640d7dc7fa1db71dd665fa"
+  },
+  "review_digest": "37dad6c9d13bbe94fc948e6ca62a90b17c4a2961f9a4922fcc03c1d91c8a5bbe"
+}
