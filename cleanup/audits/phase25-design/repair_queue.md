@@ -173,7 +173,7 @@
 
 **对象与问题**
 
-- `archives/customer-attraction/state/资源/旧图不相关机节点和关系的量词与实现--资源.md`，第2—25行。
+- [核对时所用旧文件](https://github.com/SOMEBODYJUN/co-work-anl/blob/e07f15742/archives/customer-attraction/state/资源/旧图不相关机节点和关系的量词与实现--资源.md)，第2—25行。
 
 887383字符旧图保全页在CAG state中整体作为resource对象候选；内部旧record没有因此获得当前数学真实性或独立推理端点。
 

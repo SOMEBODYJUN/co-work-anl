@@ -2,7 +2,7 @@
 
 五主源38372B全部全文读，原字节在original/，双冻结路径、size/SHA256/blobSHA1见primary-manifest.json。parent授权认领前完整预读/独立draft，历史观察在preclaim-preparation-observation.json；实际成功只由完整FP回执和claim-observation记录：Boss4，pushed/syncedc11cfdeba4e930eab606c92f0dd3da849b1a88be，五actual/owner/SHA全核。5 semantic-receipts皆在成功后写。
 
-四自足正文：[rank-one九人障碍](../../../state/障碍/一重离轨行的九人障碍与省略偏离--障碍.md)、[无公共稀释参数](../../../state/障碍/调和均分均衡不能转移到共同稀释参数--障碍.md)、[38点对齐末回复及根补全边界](../../../state/审查/五人增强点的对齐末回复与根菜单补全边界--审查.md)、[四来源均匀锥记录](../../../state/资源/真实前缀均匀接口的四个策略锥攻击记录--资源.md)。归类按数学对象，不按研究路线统一冒结论。
+四自足正文：[rank-one九人障碍](../../../state/障碍/一重离轨行的九人障碍与省略偏离--障碍.md)、[无公共稀释参数](../../../state/障碍/调和均分均衡不能转移到共同稀释参数--障碍.md)、[38点对齐末回复及根补全边界](../../../state/审查/五人增强点的对齐末回复与根菜单补全边界--审查.md)、[四来源均匀锥记录](original/research/workspaces/customer-attraction/R-64201cd12083425899e2d643ec9bc087/independent_attack/README.md)。归类按数学对象，不按研究路线统一冒结论。
 
 ## 本轮唯一新数学入口
 

@@ -98,7 +98,7 @@
 
 ## 5. 资源层没有变成数学知识层，但它可以安全缩减
 
-`archives/customer-attraction/state/资源/旧图不相关机节点和关系的量词与实现--资源.md`
+[核对时所用旧文件](https://github.com/SOMEBODYJUN/co-work-anl/blob/e07f15742/archives/customer-attraction/state/资源/旧图不相关机节点和关系的量词与实现--资源.md)
 
 本文件887,383字符、22,210行。第17—25行明确说明后文是冻结旧图原record的完整保全，并没有逐个重新阅读全部被引文件；后面主要是大段JSON。它现在位于CAG state、使用resource身份，但实际内容涉及UM模型与大量旧节点。
 

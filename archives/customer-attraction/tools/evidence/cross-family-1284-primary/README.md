@@ -1,6 +1,6 @@
 # 六十四原子跨族闭包四主源
 
-正式数学为[1284行精确点](../../../state/计算/六十四原子跨族闭包的一千二百八十四行精确点--计算.md)，前阶段[入口资源](../../../state/资源/跨续局必要行的共同目录闭包与版本入口--资源.md)同步补明四底层证据已经取得。原437支持、规范行前缀、旧恢复helper及十行offdiagonal复用已有同SHA副本，不重复保存。完整来源、blob、双冻结commit及依赖指纹见[manifest.json](manifest.json)。
+正式数学为[1284行精确点](../../../state/计算/六十四原子跨族闭包的一千二百八十四行精确点--计算.md)，前阶段[入口资源](../full-policy-indexed-closure-primary/original/README.md)同步补明四底层证据已经取得。原437支持、规范行前缀、旧恢复helper及十行offdiagonal复用已有同SHA副本，不重复保存。完整来源、blob、双冻结commit及依赖指纹见[manifest.json](manifest.json)。
 
 | 源ID | 原件 | 字节 | 完整读取及责任 |
 |---|---|---:|---|

@@ -34,7 +34,7 @@ review_level: full-source-read-and-cross-archive-scan
 
 - `archives/weighted-congestion/state/反例/两玩家二策略无纯均衡--反例.md`：独立四状态正二次成本反例，已经给出 AG-01/AT 类候选只能作选题背景，不能从有限反例推出 PLS-hard 或一般无 PNE。
 - `archives/weighted-congestion/state/审查/原子拥塞重选题与失败路线--审查.md`、`archives/weighted-congestion/state/资料/原子拥塞候选线与37-33小证书--资料.md`：atomic 候选、37/33 与 64/59 权重势模板、旧全类量词边界已分开保存。
-- `archives/customer-attraction/state/审查/多线候选池逐卡量词与去重边界--审查.md`：当前代理已将 59 条 JSON 逐卡量词和状态整合；`archives/fair-allocation/state/审查/多线候选池实际比较与去重边界--审查.md` 仍是另一版本的排序/尺度摘要，不能把摘要文件当候选 JSON 的逐条替代。
+- [59 条候选的原始 JSON](../../tools/evidence/retired-candidate-pool-20261031/candidate_pool.json)逐条保留量词、状态和风险。公平分配审查中的排序和尺度属于另一版本。
 - `archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md`：gap/GA01 的真正分数 LP 三列反例、二维 iff 与全维充分性已有自足正文；当前 `gap.md` 的重复证明不应再建同定理。
 - `archives/budget-games/state/定理/分段线性凹偏好的共享超梯度合并判别--定理.md`、`archives/budget-games/state/等价/共同形状可分凹偏好的对数边际规划--等价.md`、`archives/budget-games/state/资料/克隆识别与Leontief均衡的不同恢复接口--资料.md`：nash/NA02–NA04 的 Leontief/Fisher、polyhedral clone 与共同形状 KKT 已有独立对象。
 - `archives/fair-allocation/state/审查/退役公平家务有限证据三源处置--审查.md` 与相邻 generator/toy review：fair lane 的 rank/图定向有限证据已有处置，但其模型与 chores rank、signed endpoint graph 不能互换。
@@ -57,7 +57,7 @@ review_level: full-source-read-and-cross-archive-scan
 
 ## `58d0751a06d2b99edbd9`：`candidate_pool.json`
 
-建议 `integrated` 到 `archives/customer-attraction/state/审查/多线候选池逐卡量词与去重边界--审查.md`，并把原 JSON 及 SHA 放入 `archives/customer-attraction/tools/evidence/retired-candidate-pool-20261031/` manifest；fair-allocation 的 `多线候选池实际比较与去重边界--审查.md` 仅作既有排序版本交叉引用。它是 59 条候选的机器可读逐项登记（atomic 14 / fair 20 / gap 19 / nash 6），而现有多线审查只引用 BATTLE 摘要且正文只点名少数 ID；两者不是逐字重复。应保留每条 `id/title/status/exact_question/known_overlap/fatal_risk/result_file`，但候选状态不可进入 theorem tree。
+[原始候选 JSON](../../tools/evidence/retired-candidate-pool-20261031/candidate_pool.json)含 atomic 14、fair 20、gap 19、nash 6 条，分别保留 id、title、status、exact_question、known_overlap、fatal_risk 和 result_file。候选状态只描述来源。
 
 状态分布：atomic `reserve=6, needs_verification=5, exclude=3`；fair `reserve=10, needs_verification=6, probe=4`；gap `reserve=12, needs_verification=3, probe=1, exclude=3`；nash `reserve=4, probe=1, exclude=1`。后续清洗以该 JSON 的精确字段为索引，BATTLE 的排序只作为版本化比较，不改写原 ID 或量词。
 

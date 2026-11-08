@@ -148,6 +148,6 @@ R'(z)=\exists t\in\{0,1\}\ R(t,t,z).
 - [稀疏 CSP 与平坦矩阵两篇文献整理](稀疏CSP与平坦矩阵两篇文献整理--文献.md)的 Kun 部分保持指定小目标上的同态可行性并提高 girth；其量词不同于每变量恰两次出现，不从稀疏性推出交换公理。
 - [Davies–Rothvoss–Zhang 拟阵 Santa Claus](Davies-Rothvoss-Zhang--Santa拟阵超图--文献.md)先选拟阵基再分配不交资源；独立集、基与超匹配有各自地面集。[私有需求组合与共享三维匹配复制](../障碍/私有需求组合与共享三维匹配复制--障碍.md)的 3DM 完全池、parity 张量也在资源互斥层工作；四条 parity 三元组的超图匹配与本页端口配对奇偶问题是不同对象。
 - [近单位 PCSP 最终范围审查](../审查/近单位PCSP蕴含与物理复制义务最终范围审查--审查.md)与[PCSP/presence 双源审查](../审查/近单位PCSP与单位presence胶合双源审查--审查.md)保留具体迁移失败：strict/weak 分别为 `b=0` 或 `Σx_i≥k−1`、`b=0` 或 `Σx_i≥r`。对 `k≥3` pin 一个出口为零、量化 `k−3` 个出口后，剩余 strict 为 `b=0` 或 `y=z=1`，weak 为 `b=0` 或 `y+z≥max(0,r−k+3)`。当 `r≤k−3`，weak 是完整三维 Boolean cube。故普通 non-delta 见证不自动保 promise soundness；端点类型、one-hot、全部 jobs 一次执行及任意低调度解码仍有独立义务。
-- [旧图不相关机节点和关系的量词与实现](../../../customer-attraction/state/资源/旧图不相关机节点和关系的量词与实现--资源.md)的 `UM-SOURCE-FEDER-ORDINARY-FANOUT` 只记定理 3–4 的 targeted primary theorem read，并把 promise/physical transfer 标为 open。本页全文阅读与旧定点阅读分别记录，不以旧图代替原件。
+- [冻结旧图](https://github.com/SOMEBODYJUN/co-work-anl/blob/68fad804ec5946cb296f77dc5b336308a66abf12/research/graph.json)的 `UM-SOURCE-FEDER-ORDINARY-FANOUT` 只记定理 3–4 的 targeted primary theorem read，并把 promise/physical transfer 标为 open。本页全文阅读与旧定点阅读分别记录，不以旧图代替原件。
 
 本对象提供固定模板、两次出现和交换闭包的普通 Boolean 约束语言。它未给一般 unrelated-machines 近二困难性、统一算法或客户纯 SPE 覆盖结论。第三阶段可分别记来源、even 子类后续进展及 promise 迁移限制；当前不凭“匹配/奇偶/扇出”同名建立推导边。
