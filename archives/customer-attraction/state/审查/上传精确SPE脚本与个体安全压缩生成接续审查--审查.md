@@ -27,6 +27,7 @@ related_objects:
   - ../反例/逐人静态安全值末位保底--反例.md
   - ../计算/完整历史求解器的精确复现--计算.md
   - ../../tools/evidence/cag-eptas-individual-20261030/individual_security_independent_review.md
+---
 
 # 上传精确 SPE 脚本与个体安全压缩生成接续审查
 
