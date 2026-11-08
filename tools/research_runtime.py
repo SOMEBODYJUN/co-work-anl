@@ -1010,6 +1010,11 @@ def draft_map_repairs(root, task_ids, output, registry, task_prefix, context_opt
                                        'note': 'Read the previous task and receipt. Carry forward valid work. '
                                                'If needed, read the same scope in ordered passes. '
                                                'A retirement-only task lists no coverage or new assets.'}})
+        old_groups = definition.get('context_plan', {}).get('comparison_groups', [])
+        groups = [[oid for oid in group if oid in inputs] for group in old_groups]
+        groups = [group for group in groups if group]
+        if len(groups) > 1:
+            tasks[-1]['context_plan']['comparison_groups'] = groups
     _write_json(_safe_path(root, output), tasks)
     return {'status': 'map-repairs-draft-local-not-pushed', 'path': output,
             'tasks': len(tasks), 'core_objects': sum(len(t['object_ids']) for t in tasks),
@@ -1252,6 +1257,37 @@ def draft_map_tasks(root, output='map/planned-tasks.json', registry=REGISTRY,
                                          max_items=max_objects or len(order), cache=cache)
         packs.extend((scope, family, pack) for pack in result['packs'])
 
+    if stage == '3A' and max_objects is None:
+        # Let one claim carry several small comparisons in the same scope.
+        # Each family remains an independent comparison group within the task.
+        small = {}
+        separate = []
+        for scope, family, pack in packs:
+            if (pack['oversized'] or pack['requires_export']
+                    or pack['reading']['estimated_tokens'] > budget['reading_tokens'] // 3
+                    or pack['estimated_output_tokens'] > budget['output_tokens'] // 3):
+                separate.append((scope, family, pack))
+                continue
+            members = pack['units']
+            small.setdefault(scope, []).append({
+                'key': members[0]['key'], 'family': family, 'members': members,
+                'refs': [ref for item in members for ref in item['refs']],
+                'metadata': [item['metadata'] for item in members],
+                'estimated_output_tokens': pack['estimated_output_tokens'],
+            })
+        # pack_units accounts for one task entry per group here. Leave room
+        # for the additional per-object entries in the expanded task.
+        object_overhead = 32 * (budget['output_tokens'] // 1200)
+        group_budget = {**budget, 'reading_tokens': max(1, budget['reading_tokens'] - object_overhead)}
+        for scope, groups in small.items():
+            result = registration.pack_units(root, groups, group_budget, max_items=len(groups), cache=cache)
+            for pack in result['packs']:
+                packed_groups = pack['units']
+                pack['comparison_groups'] = [[item['key'] for item in group['members']] for group in packed_groups]
+                pack['units'] = [item for group in packed_groups for item in group['members']]
+                separate.append((scope, packed_groups[0]['family'], pack))
+        packs = sorted(separate, key=lambda item: (item[0], item[2]['units'][0]['key']))
+
     tasks, oversize, reading_totals = [], [], {'chars': 0, 'utf8_bytes': 0, 'estimated_tokens': 0}
     for scope, family, packed in packs:
         core = [unit['key'] for unit in packed['units']]
@@ -1319,6 +1355,9 @@ def draft_map_tasks(root, output='map/planned-tasks.json', registry=REGISTRY,
                         'note': 'Source/model hints propose reading comparisons, not proved relations. '
                                 'Read any newly discovered necessary premise through read-add; '
                                 'do not truncate a proof or treat a deferred candidate as paid evidence.'}
+        if len(packed.get('comparison_groups', [])) > 1:
+            context_plan['comparison_groups'] = packed['comparison_groups']
+            context_plan['note'] += ' Compare each group separately unless there is a concrete mathematical connection across groups.'
         if oversized:
             oversize.append(task_id)
             context_plan['status'] = 'complete-object-requires-staged-reading'

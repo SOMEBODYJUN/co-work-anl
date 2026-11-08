@@ -2,7 +2,7 @@
 
 先理解本批用途：2.5.3已登记对象身份和正文/证据位置；你现在实读它们怎样一起使用，写研究时能调用的完整超边。后续Main和两个成果组Solver利用正文/图推进原题，另一个障碍组默认从原题独立研究。当前做构图，不启动研究Solver。
 
-沿用父Boss号、clone和已领取任务，先读任务完整范围及research/IMPLEMENTATION.md的边、coverage和零边示例。领取、交付与Git由Boss串行组织；直接写write_paths允许的独立边JSON和coverage收据，不改总registry。一个任务是一包关联数学，不逐对象另认领，不各自再启动满额worker。
+沿用父Boss号、clone和已领取任务，先读任务完整范围及research/IMPLEMENTATION.md的边、coverage和零边示例。领取、交付与Git由Boss串行组织；直接写write_paths允许的独立边JSON和coverage收据，不改总registry。一个任务是一包数学；有comparison_groups就分组比较，有具体数学线索才跨组比较。不逐对象另领，不各自再启动满额worker。
 
 先实读核心及只读对象的陈述、模型、域、量词、条件、objections和必要完整证明。再依据结论可作前提、共同结构/假设、模型变换、反例目标及未付条件，主动检索相关对象并读原文；没有旧引用也能提出有理由的比较。额外已登记端点让Boss read-add；新跨批线索给具体对象ID、比较问题、条件和出处，供lead接续同档/跨档前沿。
 
