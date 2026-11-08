@@ -1,0 +1,98 @@
+{
+  "purpose": "Material 19 owner repair candidate; not a batch, receipt, registration acceptance, or body edit.",
+  "observed_commit": "93a65f75a93a01d7818f383cc0cd5ccee10a4864",
+  "stable_object_id": "UM-NORMALIZED-XOS-THRESHOLD-MENU-SIZE-OBSTRUCTION-v2",
+  "current_registration_version": 1,
+  "proposed_registration_version_on_owner_revision": 2,
+  "truth_status": "proved",
+  "body_owner": {
+    "boss": "Boss1",
+    "task_id": "register-ab98f323ad-0101",
+    "task_state_observed": "done",
+    "task_material_position_one_based": 7,
+    "batch": {
+      "path": "research/registration/batches/register-ab98f323ad-0101.json",
+      "sha256": "e75198800d7e1feba931e926eeeb4bf13363bb7c9d0e4d984f93f18391515616"
+    }
+  },
+  "old_body": {
+    "path": "archives/unrelated-machines/state/障碍/归一化XOS菜单阈值规模下界--障碍.md",
+    "sha256": "4c44b7b77d84c6f42ce7bd9444df5edd881b6e94317c58f1a04e5de765f98628"
+  },
+  "complete_correct_body_option": {
+    "path": "archives/unrelated-machines/state/审查/XOS阈值规模k覆盖等价与r弱界勘误--审查.md",
+    "sha256": "69bdbb2a9c3a1db2b1cdad08ea2e23862421662357a9357ebbae38f1ec4234dd"
+  },
+  "complete_correct_body_sections": [
+    "对象、最小family方向与全部参数",
+    "Support计数、正确反向与旧r错误",
+    "两个真锐端点与固定η规模",
+    "版本与真实审读范围"
+  ],
+  "independent_full_proof_option": {
+    "path": "tools/evidence/um-following-review-primary/support/737121825175bccceb42.md",
+    "sha256": "ce1c320ecd4d3833030307e4b4e3f4959ecd187281187c5914e80bddae8d13c5",
+    "sections": [
+      "4. 同资源宇宙的逐玩家菜单规模：精确陈述",
+      "5. support计数、正规化与锐界的自足证明",
+      "6. 对源归约的准确否定范围"
+    ],
+    "note": "冻结原canonical v2 已正确；§1–3 的SC值桥是另一命题，不是规模定理的前提。实际主审来源 tools/evidence/um-following-review-primary/original/f1a0fb3e7c413630cee8.md SHA256 5432f8f5fd31aac9d753d25979cec31fdf334081fdbc759d1f4d6ae45a84a6e9。"
+  },
+  "precise_model": "固定有理0<η<1，任意整数t≥1，|U|=2t，d=floor(ηt)。K≥1个显式索引加性子句（允许零系数、重复），非负有理权重且逐子句在同一U上总和为1；f(B)=max_s Σ_{u∈B}w_{s,u}。每个t集T均f(T)=1且每个|B|≤d均f(B)≤η。令r=d+1，k=max(1,ceil(d/η))。Θ(2t,t,j)是使每个t集包含至少一个指定j集的最小j子集族大小。",
+  "counterexample": {
+    "parameters": "η=1/2，t=4，|U|=8，d=2，r=3，k=4。",
+    "uniform_reverse_fails": "任一三元素支撑上的均匀子句对其任意两个元素给值2/3>1/2；实际上任一三元素归一化正支撑的前两大权重和至少2/3，非均匀也不救。原d/r≤d/ceil(d/η)在d>0时方向反了，因为k≥r。",
+    "claimed_equality_itself_fails": "任意合法子句的支撑至少4；要见证四元T，支撑必须恰为T。因此K_min=binom(8,4)=70（每个四元集合各用一个均匀子句达到）。全体binom(8,3)=56个三元集合已经构成r-cover，故Θ(8,4,3)≤56<70。无需知道Θ(8,4,3)的精确值。"
+  },
+  "targeted_owner_edits_for_old_body": [
+    {
+      "section": "精确模型与量词",
+      "old_lines": [31, 51],
+      "replacement_instruction": "同时定义d、r、k，明确1≤r≤k≤t；d=0时r=k=1。保全部子集、非负、逐子句归一化、有限显式及同宇宙的原量词。"
+    },
+    {
+      "section": "精确规模定理",
+      "old_lines": [55, 71],
+      "replacement_instruction": "前置K_min=Θ(2t,t,k)及强计数式。§1保finite max+非负norm1推出unit T包含某完整正支撑；在r弱向后补：d>0时h≤d矛盾，前d大权重之和至少d/h且至多η，故h≥k；d=0时h≥1=k。每个子句任选其支撑内一个k集，取去重族，仍覆盖每个t集。反向任一覆盖族给每个k集上均匀1/k子句，unit和tiny分别由包含与d/k≤η成立。只保两个阈值，不声称其余B的值或逐点支配。r=d+1仅是必要下界，不能一般双向；可附上述反例。摘要同步区分精确k结果和弱r历史版本。"
+    },
+    {
+      "section": "2. 计数下界",
+      "old_lines": [75, 89],
+      "replacement_instruction": "固定j集被C(2t−j,t−j)个t集包含，纠正原‘j集包含t集’的方向。对j=k取并集计数；比值=∏_{i=0}^{k−1}(2t−i)/(t−i)≥2^k，由k≥r也得r比值及2^r。比值一般只是下界。d=0时选出的单点族至少t+1且可由t+1个单点达到（t=1即2）；ηt为正整数时k=t（r通常不等于t），须每个t集各一个，K_min=C(2t,t)。均匀1/t子句任意至多d项的质量至多d/t=η，恰取支撑内d项可达到；不得把较少项或含外部零项也写为等号。"
+    },
+    {
+      "section": "3. 锐点、浮动余数与输入规模",
+      "old_lines": [93, 100],
+      "replacement_instruction": "只有见证unit T的子句才必有h≤t；一般子句可h>t。t−k界来自参数，不需要限制全部支撑大小。保d≥1时的恒等式t−k=floor(({ηt})/η)≤c=ceil(1/η)−1与K≥4^t/[(2t+1)(2t)^c]；d=0直接处理，勿套余数恒等式。规范模型排除全零子句，仅允许在外部冗余表示中删掉而不影响下界。"
+    }
+  ],
+  "valid_and_unaffected": [
+    "v1 weak-r forward support argument and counting lower bound stay proved; it never required the false converse.",
+    "Same stable v2 Claim and its correct registry statement/model; revise the supporting body/reference and objections, not the mathematical identity. No new registration object for the erroneous auxiliary r-equality unless lead independently has reason to track it.",
+    "Fixed η gives exponential in t and superpolynomial in O(t log(t+1)) source bits, not an asserted 2^Ω(source-bit-length) bound or a polynomial Θ oracle. Auxiliary resources/players, global coupling, reachable-only thresholds, unit losses, unnormalized clauses and separately justified implicit representations are outside scope. No hardness or effect on existing explicit-XOS NSW algorithms.",
+    "Preserve frozen Exact v1, v2 author read-after and canonical §4–6 read-after (all three current object evidence refs); §1–3 SC value bridge is not certified by these scope reviews and is not used."
+  ],
+  "routing_and_prior_publication": [
+    {
+      "route": "Boss3 / register-ab98f323ad-0107 → Boss1 / register-ab98f323ad-0101",
+      "note": "0107 done with this evidence still needs-decision; exact one-based position is 39, although older workspace notes label it M38. 0101 old main body is position 7, labeled M6 in older notes. The already-published workspace erratum is a candidate only.",
+      "path": "research/workspaces/p25-register-v2/Boss3/0107-evidence-closure/threshold-erratum.json",
+      "sha256": "b49529eb3fec4fb2574f643dd4851192b12ebc5d481c86c6abc68dfdbec178c0"
+    },
+    {
+      "route": "Boss5 / register-closeout-f0a646eefb-0014 material 19 → same Boss1 body owner and registration lead",
+      "note": "This batch was observed done during the read, but M19 remains needs-decision with no material owners in the registry. Batch delivery is not acceptance of the source or correction of the old body."
+    },
+    {
+      "route": "Boss4 clean-page erratum previously pushed",
+      "note": "The pushed correction at 73b1a60f47beb16186a3a8fe3ce703ad82ff706d was for the distinct independent Exact review page, not the canonical obstruction body. The corrected review SHA256 is 30662c35b294407a8bb1ec2b694c8314c666980cc009af8fa1075c7ae444f2de; relevant heading Covering-family 计数. This is an existing proof/provenance route, not a new owner.",
+      "path": "tools/evidence/um-following-review-primary/errata/APPLIED_BY_Boss4.json",
+      "sha256": "d4a257b1f24a23dd65e3127dd2aea81e83acf70b5f3332e8d2da65e23dfbb5bd"
+    }
+  ],
+  "owner_acceptance_paths": {
+    "same_bytes": "Owner/lead can rebind full M19 as self-contained proved body (or place it as evidence and bind a complete correct body already in the baseline), make M19 an objects/attachment material as appropriate with the stable ID, and retain original provenance and only demonstrably correct portions of the legacy exposition as optional historical evidence. Publish a targeted owner/lead increment for the changed record/disposition; any same-baseline supersession must cover the old task's full material core and preserve unrelated assets, so do not supersede the entire DONE 0101/0107/0014 tasks with only M19.",
+    "changed_body_bytes": "Owner/lead can instead apply the targeted mutable archive exposition correction, then bind its actual new SHA as body and M19 as supporting evidence. Checkpoint the changed bytes, freeze new current inputs/baseline and perform the documented narrow registration increment. Do not edit frozen sources, old receipts or a prior baseline; any dependent graph pin is for the map lead to reassess after registration."
+  }
+}

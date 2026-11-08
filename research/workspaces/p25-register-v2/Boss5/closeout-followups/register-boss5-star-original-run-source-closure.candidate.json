@@ -1,0 +1,168 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline-5cd4b9018.json",
+    "sha256": "af99fb773928f3fc6bcd577ade37fbb07e8f84befbb2304158b99894ab1e56a3"
+  },
+  "objects": [
+    {
+      "object_id": "UM-MINIMAL-STAR-CONTRACTION-v1",
+      "version": 3,
+      "title": "全部邻任务极小超载星的阈值精确消元",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "在给定非负阈值T剪去不可用或p_ia>T的边后的当前UM矩阵，选机器v及其全部可用任务F≠∅；S=Σ_(a∈F)p_va>T且每a满足S−p_va≤T。",
+      "statement": "删v及F，用一件普通任务e取代；在每外机i令p′_ie=min_{a∈F可用i} p_ia并保存真实argmin（空集为∞）。原/约化T可行等价。任意约化实际分配将e@i展开为argmin任务a@i，其余F还v，旧外机负载保持且新中心负载≤T；固定T连续收缩逆序展开保持峰≤max(B,T)。若e无有限边，原实例T不可行。",
+      "quantifiers": "对每个T与当前阈值剪枝实例中满足全邻域极小超载条件的星；对任意约化实际分配及其峰B，并可逐步逆序恢复任意有限条同T有效收缩链。",
+      "assumptions": [
+        "F是当前v的全部邻域；逐项删除条件对每个a成立",
+        "记录每个有限摘要端的真实原任务argmin及各步身份/分块，以便逆序恢复"
+      ],
+      "scope": "整数T阈值可行性的局部精确规则；任意B的保证只在逆恢复方向。一般正向不保任意C>T；配置转换、容量一星的松弛gap及多外溢压缩均为独立对象。",
+      "objections": "0100历史入口资源「极小超载星：已成立的精确单任务压缩」只取开头的整数两向和逆序恢复两段：至少一项必外送，argmin恢复保外机负载；历史README检验义务已由同一成熟规则关闭。Q_F(y)≥1的配置抽质量、强制端优先、q-profile、容量一星与拟阵另有命题，不能由此整数iff推出。规则条件不成立本身不认证不可行。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/单边界森林与极小超载星双源审查--审查.md",
+        "sha256": "8776d3938fd201fbdee497489d521bf52dc11df4cfd16be01ce8e4024f7a9069",
+        "section": "1. 精确可行性保持"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/资源/单边界消元与独立配置探针的恢复合同--资源.md",
+          "sha256": "aadcf1772ba9ccd911f7a116ff483f82cff65177f335d1edf7ae8ad450856bbc",
+          "section": "极小超载星：整数iff与CONFIG条件"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/成束局部相容性与极小星消元的身份边界--资源.md",
+          "sha256": "f0d0c03bf99a4979d8dbee110602efa18b5116f6884adfb5b419bcc338b250d8",
+          "section": "极小超载星：已成立的精确单任务压缩"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/极小超载星的阈值收缩与逆序恢复原程序--资源.md",
+          "sha256": "a70e86bccad88fd38f819c517acf0590fea3b7cf1d2954b284f0e4c7086a3029",
+          "section": "2. 完整邻域极小星收缩及位复杂度"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/极小超载星的阈值收缩与逆序恢复原程序--资源.md",
+          "sha256": "a70e86bccad88fd38f819c517acf0590fea3b7cf1d2954b284f0e4c7086a3029",
+          "section": "4. 原main的全部实际有限计数"
+        },
+        {
+          "path": "tools/evidence/um-following-completion-primary/runs/eec3fb2bff408d1f3a48/input-tree/tests/audits/unrelated_machines/minimal_overload_star.py",
+          "sha256": "062b2630aded0a125dc57ab9ad14069b712eec6ab8eb3baf6dec471a9c1bb98f"
+        },
+        {
+          "path": "tools/evidence/um-following-completion-primary/runs/eec3fb2bff408d1f3a48/report.json",
+          "sha256": "a509736a09c5834dd522bd4f24beb5bb9689f91ad9f962e1df68f96f64ed9f66"
+        }
+      ],
+      "sources": [
+        "clean:8c90fcce237d7988a7a5",
+        "clean:230d4849302e1679ef5a",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/minimal_overload_star.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/minimal_overload_star.py"
+      ]
+    },
+    {
+      "object_id": "UM-CAPACITY-ONE-PAIR-GAP-v1",
+      "version": 3,
+      "title": "容量一紧凑星的全部机器对配置耦合及二倍接受间隙",
+      "kind": "construction",
+      "truth_status": "proved",
+      "model": "普通unrelated-machines；整数k≥2的k块星：V_a、k−1台G、每块k+1台R；每块X_a、k件Y、k件Z，X在V/G时间1，Y仅本块R时间1，Z在V时间1/k、在本块R时间1。GPC₂(T)保完整单机配置边际及每机器对支持不相交的联合分布。",
+      "statement": "此族有显式CONFIG(1)及全部机器对GPC₂(1)证书，整数OPT=2−1/k。四类非乘积coupling为G–G、同块R–R、V–R及V–G，其余支持任务集合分离用乘积。k≥3时极小超载星规则和单/双域基数闭包无起点；k2的G可触发而不能并入不可约域。任意GPC₂接受目标投影为CONFIG，标准槽给≤2T，若先极小星消元则逆恢复≤max(2T,T)=2T；本族T<1时Y剪空、T1接受、OPT趋2，故正OPT域该接受合同gap上确界恰2。",
+      "quantifiers": "对每整数k≥2给明确完整边际和所有无序机器对的couplings；不可约只∀k≥3。上界量化所有接受该GPC₂合同的T及正确极小星逆恢复，不假定存在多项式GPC₂求解器。",
+      "assumptions": [
+        "GPC₂多端任务只需同一pair不双选，不要求每对内部恰覆盖该job，也不要求所有pair在三机以上相容。",
+        "CONFIG逐机归一、合法配置真实负载≤T、每原job总覆盖一；所有机器/任务物理身份保持。",
+        "acceptance gap比值只在OPT>0上使用；目标取得与阈值剪枝语义按正文。"
+      ],
+      "scope": "显式特定星族一般构造/整数最优和给定接受合同的上确界；不是一般调度困难性、完整SA/SDP下界或efficient GPC₂ oracle。",
+      "objections": "m=k²+3k−1,n=2k²+k，最小资格数k。V–G公式的(k−2)项在k2为零，不强行删除边界。主程序k3..12仅核完整pair边际/支持，proved_integer_optimum字段只计算公式；一般最优性由unit容量下界和显式上界证明。factorized represented entries并非逐条展开数。与后来N=2k²、G=N−2k共享逃逸族及0099极小星/q-profile主Claims分立。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/容量一星族的全机器对原入口与符号耦合--资源.md",
+        "sha256": "86c2726661ae90b6226739a1292e3a637c3059683ba9e0215b4e4a5702723d79"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/极小超载星容量耦合与最小工作面支撑障碍有限审查--审查.md",
+          "sha256": "f55a0693a25a149bec2dc4c610e23f00e5b5412cbfefcc21b285e73be6f5e13e",
+          "section": "3.1 紧凑容量一星族"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/极小超载星容量耦合与最小工作面支撑障碍有限审查--审查.md",
+          "sha256": "f55a0693a25a149bec2dc4c610e23f00e5b5412cbfefcc21b285e73be6f5e13e",
+          "section": "3.2 GPC₂ 配置合同及两机耦合"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/极小星收缩与配置耦合有限审查--审查.md",
+          "sha256": "bfad798f54df11b5dcdc56d6504fa8978b55c153f3be9e6029765916687f91e5",
+          "section": "2. 容量一星的 pair 耦合证书"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/极小超载星容量差共享资源与拟阵外包冻结审查--审查.md",
+          "sha256": "77f88cbd3adf5bafac2923dd5ad59d39b412554ebf2de0bb62b3d2bd0289b8fc",
+          "section": "3. 紧凑共享资源族与 GPC2"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/成束局部相容性与极小星消元的身份边界--资源.md",
+          "sha256": "f0d0c03bf99a4979d8dbee110602efa18b5116f6884adfb5b419bcc338b250d8",
+          "section": "极小超载星：已成立的精确单任务压缩"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/极小超载星的阈值收缩与逆序恢复原程序--资源.md",
+          "sha256": "a70e86bccad88fd38f819c517acf0590fea3b7cf1d2954b284f0e4c7086a3029",
+          "section": "3. 紧凑容量一族与“公式输出”边界"
+        },
+        {
+          "path": "tools/evidence/um-following-completion-primary/runs/eec3fb2bff408d1f3a48/input-tree/tests/audits/unrelated_machines/minimal_overload_star.py",
+          "sha256": "062b2630aded0a125dc57ab9ad14069b712eec6ab8eb3baf6dec471a9c1bb98f"
+        },
+        {
+          "path": "tools/evidence/um-following-completion-primary/runs/eec3fb2bff408d1f3a48/report.json",
+          "sha256": "a509736a09c5834dd522bd4f24beb5bb9689f91ad9f962e1df68f96f64ed9f66"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/capacity_one_star_pair.py",
+        "source:e024705ef6909102d311:evidence/runs/unrelated_machines/minimal_star_capacity_audit.json",
+        "state:archives/unrelated-machines/state/资源/容量一星族的全机器对原入口与符号耦合--资源.md",
+        "state:archives/unrelated-machines/state/资源/成束局部相容性与极小星消元的身份边界--资源.md#极小超载星：已成立的精确单任务压缩",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/minimal_overload_star.py",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:tests/audits/unrelated_machines/minimal_overload_star.py"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/审查/单边界森林与极小超载星双源审查--审查.md",
+      "sha256": "8776d3938fd201fbdee497489d521bf52dc11df4cfd16be01ce8e4024f7a9069",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-FOREST-BOUNDARY-AUGMENT-v1",
+        "UM-MINIMAL-STAR-CONTRACTION-v1",
+        "UM-STAR-Q-JOB-COMPRESSION-NO-v1"
+      ],
+      "reason": "森林与星整数等价/多任务摘要反例主证。容量一GPC₂族、星配置转移及拟阵外包归另有规范正文的对象。 待接精确owner UM-CAPACITY-ONE-PAIR-GAP-v1, UM-STAR-CONFIGURATION-TRANSFER-v1, UM-KNAPSACK-MATROID-ENVELOPE-v1。0100星CONFIG、0110拟阵、容量一星的规范主记录需要接入本页「2. 计数型反例和配置耦合」「3. 多任务外溢、配置点与拟阵外包的边界」；森林和极小星整数主记录已独立保存。\n实读全篇。单边界森林、极小超载星整数可行性iff和q件普通任务的A/B余量障碍各自独立；本增量只从0100接后二者各自段落。容量一GPC₂、Q_F条件配置转换、静态拟阵外包仍由各自的主记录承担，保既有反向待接范围。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/容量一星族的全机器对原入口与符号耦合--资源.md",
+      "sha256": "86c2726661ae90b6226739a1292e3a637c3059683ba9e0215b4e4a5702723d79",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-CAPACITY-ONE-PAIR-GAP-v1"
+      ],
+      "reason": "已完整读取本文件全部章节；当前成熟对象的陈述、量词与完整论证位置已核。 本批维护数学owner；原始历史/有限运行/后续证明角色已逐项分清，不声称重读全部链接原件或重跑程序。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/极小超载星的阈值收缩与逆序恢复原程序--资源.md",
+      "sha256": "a70e86bccad88fd38f819c517acf0590fea3b7cf1d2954b284f0e4c7086a3029",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-MINIMAL-STAR-CONTRACTION-v1",
+        "UM-CAPACITY-ONE-PAIR-GAP-v1"
+      ],
+      "reason": "§2/§4支持全当前邻域极小星T可行性、任意约化峰B的逆序max(B,T)恢复及真实有限嵌套核验；§3只补容量一星整数构造及审计范围。k2实际枚举82944，k3..12仅边际和公式，完整pair耦合及不可约k≥3的解析证明仍由原主证据承担。源与旧stdout同字节已核，未新跑。"
+    }
+  ],
+  "edge_files": []
+}

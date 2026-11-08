@@ -1,0 +1,419 @@
+{
+  "schema": 2,
+  "baseline": {
+    "path": "research/registration/baseline-5cd4b9018.json",
+    "sha256": "af99fb773928f3fc6bcd577ade37fbb07e8f84befbb2304158b99894ab1e56a3"
+  },
+  "objects": [
+    {
+      "object_id": "UM-ONE-DESTINATION-SLOT-REPAIR-v1",
+      "version": 1,
+      "title": "固定槽族每原来源单目的地修复的三角数与整批降峰",
+      "kind": "exact-repair-lemma",
+      "truth_status": "proved",
+      "model": "m台完全相同且全资格机器；一个时间1的大任务、m²−1个时间1/(m+1)且有原身份的小任务。",
+      "statement": "留大任务时最小原任务Hamming为m(m−1)/2；若大任务必须换机，所有该分支合法OPT修复距离均为m(m+1)/2。留大任务的最短链执行第t完整批后峰(2m−t)/(m+1)，0≤t≤m−1，每整批严格降1/(m+1)；累计Hamming=tm−t(t+1)/2。",
+      "quantifiers": "每整数m≥2，每个固定槽覆盖输出；Hamming最小值量化满足每源条件且终峰1的所有目标，批序列为存在构造。",
+      "assumptions": [
+        "按原来源计，每原来源所有迁出的原任务只可去一个外部目的地；不得用接收后转发冒作原任务；允许同步批与槽外边。"
+      ],
+      "scope": "原任务前缀割与可构造整批路径；留大任务仅最小值为三角数，m=3可有带尾圈且距离7。",
+      "objections": "不声称每件单移都降峰或每台不增；强制小任务路径只适用于搬大任务分支，加入大任务边后可成圈。第37页§3旧ID误用。",
+      "body": {
+        "path": "archives/unrelated-machines/state/证明/单目的地跨槽修复的原任务割与实际批次--证明.md",
+        "sha256": "0e4c061ab2893069320dcd38c0e0181a2099865c91155794867f82c8de17844f"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/固定工作局部极小与真实凸包固定槽双源审查--审查.md",
+          "sha256": "40919541fb80f3562132fb920208da26f12ed7ee03850db566e1224d87badfd6",
+          "section": "6. 槽图外的精确修复和单目的地派生身份"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/固定槽审查的分层先验与冻结字节恢复--审查.md",
+          "sha256": "958b44e34fb46d96f59ac9759856d48d4dcdd378b705d4a2d6e410041b654bde",
+          "section": "修复增补、身份拆分与规范集成"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/固定槽审查的分层先验与冻结字节恢复--审查.md",
+          "sha256": "958b44e34fb46d96f59ac9759856d48d4dcdd378b705d4a2d6e410041b654bde",
+          "section": "单目的地追加的纠错与真实执行归属"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/固定槽审查的分层先验与冻结字节恢复--审查.md",
+          "sha256": "958b44e34fb46d96f59ac9759856d48d4dcdd378b705d4a2d6e410041b654bde",
+          "section": "可以精确恢复的历史字节与不能倒填的事实"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/固定槽跨槽修复与最小工作面支撑障碍有限审查--审查.md",
+          "sha256": "029fcbb46a203747cf61c162abb52ab4ecc88bbfaefb7f2c62c5fced16635232",
+          "section": "3. 跨槽同步修复和单目的地阈值"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/固定槽跨槽修复与最小工作面支撑障碍有限审查--审查.md",
+          "sha256": "029fcbb46a203747cf61c162abb52ab4ecc88bbfaefb7f2c62c5fced16635232",
+          "section": "5.1 `b18c04f90e7988a75faf`"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/frozen-slots-repair-audits/comparisons/optimal_convex_fixed_slot_gap.md",
+          "sha256": "37f9ae7920ff063c3cd6dcf331d974194bde2f3e5913c7ebc0a7e7e2db333e29",
+          "section": "4a. 每源一个目的地也可修复：同步阈值与逐批严格下降"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/frozen-slots-repair-audits/historical-canonical-versions/one-destination-verified-prefix.md",
+          "sha256": "8d9be0a73c77fe457e9af4771e02c6c9d386a9260807baf119d4517b5de2470f"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/frozen-slots-repair-audits/original/one_destination_slot_repair.py",
+          "sha256": "fa141f2b1d71e8ed31e10c89f0181120c4581f4188c2b31568c28b2466dea3d2"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/frozen-slots-repair-audits/original/one_destination_slot_repair_independent.py",
+          "sha256": "7facb07a9875ad4a5001482544083c73409a7e36100c8bf4386d908ca75a592b"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/frozen-slots-repair-audits/historical-frozen-runs/one_destination_slot_repair_audit.json",
+          "sha256": "b0ac1684b09ccd0abf40d921b8d5a549f7a313f9118468f0e76e8bba0a7cb82f"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/slot-repair-20261030/one_destination_slot_repair_audit.json",
+          "sha256": "b0ac1684b09ccd0abf40d921b8d5a549f7a313f9118468f0e76e8bba0a7cb82f"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/optimal_convex_slot_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/one_destination_slot_repair.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/one_destination_slot_repair_independent.py"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/审查/严格次二批量能垒与前缀原子解码双源审查--审查.md",
+      "sha256": "5520c2b2e7abe1a3d6a98c9485184648399cbdc30c77b17e0da6b9c9e24173d2",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-PREFIX-ATOMIC-DECODING-v1"
+      ],
+      "reason": "严格次二三机族与给定law解码分开；后者§2已收。§1全k数学已证明，待补独立ε冻结有限报告路径；不把旧脚本供应链异议或一般生成器说成数学待证。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/代理审计程序补档与范围--审查.md",
+      "sha256": "0012b74b4f3179e7fdb4219d23a6b3b4e0cc4ba4230e11ba583e84a5ae5bfc46",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-PREFIX-ATOMIC-FINITE-PRECISION-v1",
+        "M-6598bafb77d042b89e8d6d7396ddfd8a"
+      ],
+      "reason": "§1精度与§2 Gram现已接证。§3两退出池owner均已存在，旧缺ID诊断作废；仅缺两主记录接入原三脚本依赖边界。§4另缺既有高阶固定边际对象接入原程序有限运行。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/任意汇点价格覆盖与共同占位联合舍入最终审查--审查.md",
+      "sha256": "9a6153452d168ceb3e01feffb7e7d9e185c7c6694f68cc4eb08c8519bec7c073",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "一般列预算+B已有精确主身份M-22a10c9895bd43fb83aed6e894d5aea2，旧命名不另立。独立的任意汇点阈值算法和unknown-OPT promise仍无主记录；冻结修补和有限审计按三者定向。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/任意汇点价格覆盖最终冻结读后审查--审查.md",
+      "sha256": "3a3edde0a48bb34fbb0dccda407d271b43ee322156ecaab6205cb251b75cf026",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "同一最终正文的三条既有数学路线复查。列预算一般数学已在规范对象；另两主身份尚未发布，需按相应分节接独立冻结读后和有限参数核查。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/低组度二菜单联合舍入五源续审查--审查.md",
+      "sha256": "d441929d55c828efecf71988f93e1979ff223696bbb69f405d33defa2e4f7a52",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "主v2已经证明和登记；附页独有五份精确原件来源、v1较窄失败语义及v2正式读后尚无反向接证。历史未实现状态不覆盖当前已实现窄域后端。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/全局行计数审查的原冻结范围与多行追加证明--审查.md",
+      "sha256": "c920dda4d04f23e80bf66c50e006af66631277c92531a8f93250f38b83d688a6",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-COMPACT-COUNT-ESCAPE-GAP-v1"
+      ],
+      "reason": "原紧凑计数证据已接。精确过滤的全池证明和全量词多行追加证明/独立运行分别缺反向接受；后者不是初始每配置单行计数或新MP LP。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/槽包络稀疏配置转移与矩证书有限审查--审查.md",
+      "sha256": "d1157bcfece87df1a24e97c12f410f5486bcc133dee775b05693a4f7fab67fc6",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-SPARSE-CONDITIONED-CONFIG-GAP-v1",
+        "UM-CONTRACTED-SPARSE-CONFIG-GAP-v1",
+        "UM-STAR-CONFIG-TRANSFER-v1",
+        "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1"
+      ],
+      "reason": "§2/3/5及星A已有四主证据。尚缺§1槽包络、§4/B匿名坏点和§C多行Hall的三个分域接证；末段强同行pair只是指向既有独立主证明，不把弱H2升格为强可行。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/匿名标签四次非扩展的双Schur证据与冻结范围--审查.md",
+      "sha256": "cd4498d831d4465d63210b77233de6448a3ffbedde3b0593041948d20bea4d44",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-ANONYMOUS-TOKEN-M1-LIFT-M2-NONEXTENSION-v1"
+      ],
+      "reason": "规范匿名令牌对象已经精确引用整页；给定四阶聚合坏点不可扩展，普通13机6任务OPT=1，双Schur与历史重放范围已保。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/匿名令牌非扩展与双见证查询分离三源审查--审查.md",
+      "sha256": "3a1e0e1183ed164089045905343d35ee34b9f379f6161db94692685a92dbb9b2",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "匿名保矩坏点与同一矩阵两见证染色是不同结果，所述两份规范身份已存在；独立冻结审计的精确段仍待接入。当前页的目标端b_j措辞已纠正，不重复记录旧错误。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/双见证查询染色与固定矩阵证书的原程序核验--计算.md",
+      "sha256": "e01f8880771cf3dc6f4b0842df8bf9105f881d3e5bee3c906c18d7f92db02ac7",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "三个数学身份的可执行源补充：给定同P两见证构造、26机take/continue只核达界、8机半权UNSAT穷举。前后两个规范ID存在但缺本页精确回指，take/continue主记录尚未发布。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/半权直接共居的陈述先行与排版终稿边界--审查.md",
+      "sha256": "1cfba5d8dfbbe6f67e3f3c331ce38189cc2393b54dcb38966a1a129931ba2732",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "同一半权C的数学主证明已在册；仍待接版本差异和历史C分节认证证据，不能用同whole hash扩大到异权B或有限原软件。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/查询返回三接口的最终认证范围与历史身份--审查.md",
+      "sha256": "b11476ff68106d5f6c99622822d2a0f84f666f9659370066eb590d522e426eb2",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "终审三段分开：全公式异权B、半权C锐值和局部私有异权交换。仅B缺主记录；C/局部仍需定向回指正式范围。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/异权查询返回的双构造与指定范围审查--审查.md",
+      "sha256": "3e5db87b0034c0c7d8ab127b939b57fa15e7e29f0456d0b1e5193b527216292a",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "两种分析仅是同一局部合同的替代证明，主证明已接；本页新增指定范围认证/读取先后尚未反向绑定，不借§2–5上下文去认证全局共享外端。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/私有子句全公式上界的双证明与分节认证--审查.md",
+      "sha256": "be79c0ef62c887b5e2b3192bc92dd5fd34405cf183b49871ae984c32046c705a",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "全公式私有子句主证明已在册；本页新增原件先后及最终§2–3边界未接，不等局部私有外端、共享四环或未知strict oracle。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/向量贪心填充叉与累计路径冻结审计--审查.md",
+      "sha256": "f82f811d2da1925880629339d81d862144d6688225d2384e9104b44ad1c9b955",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-DIRECT-COHABITING-SAT-COMPILER-SHARP-THREE-HALVES-v1"
+      ],
+      "reason": "固定半权C有限证据已接；A真实最优矩向量贪心、B普通assignment-LP填充叉、C累计路径均缺各自主身份，不能并到C或把计算成功升级全称。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/均匀线菜单原证与累计路径合并稿的版本审查--审查.md",
+      "sha256": "bb7f1680561ae39f2af050bbecd855cce3cee4f2f8b30869c628806bca59e4c7",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "D均匀仿射线Hall三半与E累计反例是两个主ID，分域终审同whole hash不等共同证明；两个主记录均仍待原任务发布。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/直线集合打包与统一端口停车双源审查--审查.md",
+      "sha256": "3f1cc70001adac7bbbcdd5c0815a851a30fe0d92e2271cad8f534dbfcea9fe92",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "四个精确结果分开：仿射线正合同、累计八五失败、统一端口真实近似、余横截CONFIG缺口。原两批主身份仍未在册；保退化分支及1/D边际，不能并成一般UM结论。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/多行真实容量的原任务延伸与尖锐预算审计--资源.md",
+      "sha256": "cb7365e3c6912e47468e6502642845db5c6c386c1626ac1872848c95590cd152",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "规范多行ID已经存在；待反向收本页R固定整块inactive实现和实际有限域，不能用主正文不同R pin方案或一次必要Hall当同一程序。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/共享UD tiny状态势六源版本与k依赖审查--审查.md",
+      "sha256": "309b67d97933b3dfe855ca560a4ce8ac174c11ad5ca0d5d546a996ae94ad5abc",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4b"
+      ],
+      "reason": "v4b的精确整页证据已经接入；k⁴、k²及O(1/k)不可互换，v5全证另在规范v5，现页历史线索不另造或申请v5主证明。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/共享UD最优交换有限网络双源审查--审查.md",
+      "sha256": "8e3f8f67edb1209f35c2aff03d0dfa14d13719f46a57f9bd05c762e48579350c",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4b"
+      ],
+      "reason": "规范v4b已收整页：任意旧最优向量存在合适新最优向量只在这些有限输入实测；独立root复现不是FW、prefix-flow或端到端证明。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/共享汇点与鲁棒环审计程序补档--审查.md",
+      "sha256": "70c34be29c5351ccb2aa630ac1ecbd34dd01b5ccd778763c2b2ad2cb0e1e83c0",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "共享单sink实现和鲁棒环相位有限报告各有规范ID，尚缺按节反向引用；单sink不自动成为宏退出/多sink算法，重叠core不属环定理。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/共享汇点共同宏任务分配最终独立审查--审查.md",
+      "sha256": "8ede3ba6979c4f204774cf1a4d9622a6eda68e1e17c8b923607378536410243c",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "单sink主ID已有，但未接此实际独立global-floor/残余流证明路线与最终接口修补；不要把近似成功写成精确T判定。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/共享负载直方图v1来源与v2校正链--审查.md",
+      "sha256": "c91be09ab456b9455cd784548d9259c33e8b4cafeb57cd9769f00dd56910370c",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-SHARED-LOAD-HISTOGRAM-CONFIG-PROJECTION-v1",
+        "unrelated-machines/four-machine-six-job-weak-histogram-ghost"
+      ],
+      "reason": "两个规范owner均已收同字节整页：逐前缀弱Hhat=CONFIG投影及四机六任务弱幽灵为独立身份。v1真共同H旧措辞撤回，有限16/32/64核验不认证旧大程序或求真实调度。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/共享负载直方图弱递推v2三源实读与四机反例--审查.md",
+      "sha256": "c80cf044a1ed7e17918b58de2720b84a63fa3bee5ac1d1934c7f15197f38d854",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-SHARED-LOAD-HISTOGRAM-CONFIG-PROJECTION-v1",
+        "unrelated-machines/four-machine-six-job-weak-histogram-ghost"
+      ],
+      "reason": "两个规范owner均已收同字节整页：逐前缀弱Hhat=CONFIG投影及四机六任务弱幽灵为独立身份。v1真共同H旧措辞撤回，有限16/32/64核验不认证旧大程序或求真实调度。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/共享负载直方图配置投影纠错--审查.md",
+      "sha256": "442d77f69f7d1b7d6bebbc0c3de83cfa9899bf8a7ec9c207691ffa1386a9feec",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-SHARED-LOAD-HISTOGRAM-CONFIG-PROJECTION-v1",
+        "unrelated-machines/four-machine-six-job-weak-histogram-ghost"
+      ],
+      "reason": "两个规范owner均已收同字节整页：逐前缀弱Hhat=CONFIG投影及四机六任务弱幽灵为独立身份。v1真共同H旧措辞撤回，有限16/32/64核验不认证旧大程序或求真实调度。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/共同宏独立集阈值的原审查与代码范围--审查.md",
+      "sha256": "f8ba3723b658dcafb6d2abcb6324a05546ff4dbc1b3105e81832750c98bee030",
+      "disposition": "excluded",
+      "object_ids": [],
+      "reason": "原三源均已由主记录来源字段保留；无边r=0/k>|V|的α+min(1,h)修复和第三(q,r)=(4,2)均在已接计算/主证明中。此页为完整既有数学和勘误的重复导航，无独立对象或未决证据。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/冻结宏小实例与几何字母等价有限审计--审查.md",
+      "sha256": "55d05654f3ada9cced3e53258130aba2909b331f64d47f915469aff25cd8111e",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-FROZEN-MACRO-TINY-REOPT-GAP-v1",
+        "UM-MACRO-MIGRATION-FRONTIER-v1"
+      ],
+      "reason": "两宏族主记录已接；几何字母方法亦找到精确现有身份，剩本页有限格点与实际大分支的明确证据绑定，不能并到宏族或造有限计数对象。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/分数重匹配显式XOS-v4-v5增量--审查.md",
+      "sha256": "a579f14298c8e6234a8406ae5d5888b1c8e489d63ad920319e4eb4c8c82cc034",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-FRACTIONAL-BENCHMARK-REMATCHING-v1",
+        "UM-EXPLICIT-XOS-DETERMINISTIC-FRACTIONAL-NSW-v1",
+        "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1",
+        "UM-NORMALIZED-ROBUST-HIGH-LOW-COMPLEMENT-v1"
+      ],
+      "reason": "四个规范owner均已在册并接准确分节；一般分数重匹配、显式XOS v5、归一低端/repair与高低比例勘误分立，不把两份协作陈述当独立证明。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/分流循环修复的冻结版本与审查先验--审查.md",
+      "sha256": "886d94effbbefb465a1593435501ad7a3a89deec664a2c47fc8e543961d8bce4",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "fanout支持、LP padding、同机逐坐标守恒、循环菜单各保范围；后置长链/闭环仅比较，无新认证。四个当前缺主owner均归0102现行任务。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/分流支持的三路枚举与严格降峰门槛--计算.md",
+      "sha256": "197e1104fcac0b90787d0c7e8b95e532a0bc4a74efaf164c1c1e2c0c507b3294",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "0102的原任务批量支持主记录未发布；确切三路枚举及两个族的解析门槛需分域保留，不能把大k带二项权覆盖改称逐标号枚举。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/padding唯一成本与同机守恒的实际审计入口--资源.md",
+      "sha256": "84cd7ca47ad36fb48f9d3f33794c2187ac10caff4f7fc04f37b6e3021b90b1b8",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "两个原程序服务不同障碍，0102须各接一个精确主owner。LP padding不是CONFIG；同机真实凸分解仅排逐坐标不增，不能扩大到峰不增修复。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/固定工作局部极小与真实凸包固定槽双源审查--审查.md",
+      "sha256": "40919541fb80f3562132fb920208da26f12ed7ee03850db566e1224d87badfd6",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-ONE-DESTINATION-SLOT-REPAIR-v1"
+      ],
+      "reason": "全文分辨固定工作单步、真凸包固定槽、无目的地跨槽、单目的地跨槽、最小工作面五个命题。当前各稳定ID均未正式绑定，分别见主候选与证据节。 单目的地节已由本批M36接收；其余实际结果仍缺对应主身份。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/固定工作单步原审计与三件启动纠错的分域复核--审查.md",
+      "sha256": "af96d0d94679eddb2d4d736ca5d459f846230aef549dfb2f1574d119e9099d4d",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "主候选自足：两unit同机固定工作量族只排单任务严格势降，三件启动后可达OPT。与已在册私有昂贵叶固定凸势全局最小对象不同，待lead正式选主。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/最小工作面正扰动的标准形与范围复核--审查.md",
+      "sha256": "d9d80421dc87caf689fa615f0bda97c57a14f3d68a8df009a098b422588f74c3",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "自足主候选：末行应为(m²−m+1)/m，任务少于槽m−1个，坏峰由支撑固定并非填满槽；正扰动最小成本面不等真最优凸包。待主归属。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/固定槽审查的分层先验与冻结字节恢复--审查.md",
+      "sha256": "958b44e34fb46d96f59ac9759856d48d4dcdd378b705d4a2d6e410041b654bde",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-ONE-DESTINATION-SLOT-REPAIR-v1"
+      ],
+      "reason": "分层来源四个主身份未绑定；区分无目的地全配对、单目的地原任务割/整批、真凸包匹配及独立新增最小面。恢复的旧冻结prefix不是新实验。 单目的地节已由本批M36接收；其余实际结果仍缺对应主身份。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/单目的地跨槽修复的原任务割与实际批次--证明.md",
+      "sha256": "0e4c061ab2893069320dcd38c0e0181a2099865c91155794867f82c8de17844f",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-ONE-DESTINATION-SLOT-REPAIR-v1"
+      ],
+      "reason": "已按既有归属登记同一稳定主身份：留大任务最小m(m−1)/2、m=3可有距离7，搬大任务才强制小任务路径且所有距离m(m+1)/2；完整同步批严格降峰。与无目的地两值m−1、m+1分开。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/固定槽跨槽修复与最小工作面支撑障碍有限审查--审查.md",
+      "sha256": "029fcbb46a203747cf61c162abb52ab4ecc88bbfaefb7f2c62c5fced16635232",
+      "disposition": "needs-decision",
+      "object_ids": [
+        "UM-ONE-DESTINATION-SLOT-REPAIR-v1"
+      ],
+      "reason": "§3legacy名字误标，其三角数只归单目的地；§5.2独立全配对才支持无目的地版本。固定槽近二、两修复和最小工作面须分别有主身份。 单目的地节已由本批M36接收；其余实际结果仍缺对应主身份。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/无目的地限制跨槽修复的全配对原审计--资源.md",
+      "sha256": "943bf97c0fe23e96904d641b929916839b90b41eba95dc867418e4498c53e8c6",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "自足主候选：无目的地限制的两个准确Hamming值。程序只枚举共同平局顺序的m≤3，解析证明适用任意每机恰m任务的槽输出。待主归属。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/真实凸分量固定槽的规范与独立原入口--资源.md",
+      "sha256": "b86caa2c416627440975782d5d0903553150bd4f0096858af300b08b0dcf799c",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "任意平局的固定槽证明与无目的地跨槽支持分开，单目的地仅链接；两个原入口和历史冻结均须挂对应精确身份。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/最小工作面与固定槽支撑有限审查--审查.md",
+      "sha256": "1cdd354ffea1e4a4e7c9beebe0c2ba3a799a852720386652c66fb306b9625b9a",
+      "disposition": "needs-decision",
+      "object_ids": [],
+      "reason": "只收正扰动最小工作面有限核验/δ=0限制；尾行误号记录且保#34正号为承重证明，不能当作真凸包主证据。"
+    }
+  ],
+  "edge_files": []
+}
