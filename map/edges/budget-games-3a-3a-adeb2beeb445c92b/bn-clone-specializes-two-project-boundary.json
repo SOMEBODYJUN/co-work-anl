@@ -1,0 +1,53 @@
+{
+  "edge_id": "bn-clone-specializes-two-project-boundary",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "BN-CLONE-v1"
+  ],
+  "target_ids": [
+    "M-34251daa8d91447bb9c7c6d75e6f3c09"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一显式非负二进制有理 min-of-linear 预算聚合模型，并把 BN-CLONE-v1 的项目数限制为 m=2；保留其对全部 D、k、外部环境、外部效用和每份 NE 的量词。",
+  "roles": {
+    "BN-CLONE-v1": "给出 active 行凸包 P_I 上共同超梯度同时最大化全部 U_delta 的点态充要条件，以及枚举 active-cell 和共同最大 LP 的全局识别。",
+    "M-34251daa8d91447bb9c7c6d75e6f3c09": "在 m=2 的专门情形中证明性质 C 总成立：若 U_delta 有两个坐标，P_I 内两端差值一正一负时沿线段插值到差值零；若至多一个则直接成立。"
+  },
+  "explanation": "把 BN-CLONE-v1 的判别限制到两个项目即可得到该边界。U_delta 至多含两个坐标；两者分别可成为最大坐标时，凸集 P_I 中 g_1-g_2 的两个取值一非负一非正，线段中有共同 g 使两坐标并列最大；其余情形已有单个共同最大坐标。因此点态充要条件对每个总量成立，再由 BN-CLONE-v1 的所有预算、外部环境及每份 NE 量词推出 M-34251... 的普遍合并保持。该边不把两项目结论扩展成 NE 计算算法或一般效用模型结论。",
+  "scope": "3A budget-games；一般显式 polyhedral 凹克隆判别到 m=2 项目维度边界的专门化。",
+  "evidence": [
+    {
+      "path": "archives/budget-games/state/定理/分段线性凹偏好的共享超梯度合并判别--定理.md",
+      "sha256": "754484e9c7765984f91acb586031a4b10259552ed294fbd5b7c0e4c9549d463b",
+      "section": "三、非光滑时的点态充要条件"
+    },
+    {
+      "path": "archives/budget-games/state/定理/分段线性凹偏好的共享超梯度合并判别--定理.md",
+      "sha256": "754484e9c7765984f91acb586031a4b10259552ed294fbd5b7c0e4c9549d463b",
+      "section": "四、按片数的精确识别算法"
+    },
+    {
+      "path": "archives/budget-games/state/定理/分段线性凹偏好的共享超梯度合并判别--定理.md",
+      "sha256": "754484e9c7765984f91acb586031a4b10259552ed294fbd5b7c0e4c9549d463b",
+      "section": "五、两项目边界及仍未解决的事"
+    },
+    {
+      "path": "archives/budget-games/state/资料/克隆识别与Leontief均衡的不同恢复接口--资料.md",
+      "sha256": "32659cfae6b93456d9bb67066b213b50b096a38a605ca38920ad975e1c6b6eba",
+      "section": "min-of-linear克隆识别的全部量词"
+    }
+  ],
+  "reviewed_by": "budget-games-3a-3a-adeb2beeb445c92b",
+  "review_note": "完整实读 BN-CLONE-v1 的点态充要条件、全局量词和两项目章节；确认 M-342... 是严格 m=2 专门化，且未把边界命题误写为算法或一般效用结论。",
+  "endpoint_pins": {
+    "BN-CLONE-v1": "1f8efa757d60cfb6b0d2602aaf2b0245e3fac233fb702fa002a1fd2f931014e4",
+    "M-34251daa8d91447bb9c7c6d75e6f3c09": "d585bd911b740dbbc5c089c6c04e485d9247eff6db5112d1dc996f7c398eb19f"
+  },
+  "evidence_pins": {
+    "archives/budget-games/state/定理/分段线性凹偏好的共享超梯度合并判别--定理.md": "754484e9c7765984f91acb586031a4b10259552ed294fbd5b7c0e4c9549d463b",
+    "archives/budget-games/state/资料/克隆识别与Leontief均衡的不同恢复接口--资料.md": "32659cfae6b93456d9bb67066b213b50b096a38a605ca38920ad975e1c6b6eba"
+  },
+  "review_digest": "7f06859d307c3688b5be94173bcb15719687b9faf521cbfdeeea0d67f1844f00"
+}
