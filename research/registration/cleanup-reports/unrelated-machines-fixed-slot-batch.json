@@ -1,0 +1,245 @@
+{
+  "schema": 2,
+  "task_id": "cleanup-unrelated-fixed-slot-objects",
+  "baseline": {
+    "path": "research/registry.json",
+    "sha256": "bba0d290b0133788de75e8caaea2c62deb3b3b1fc711721039ccdf6ef617476f"
+  },
+  "objects": [
+    {
+      "object_id": "UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1",
+      "version": 1,
+      "title": "固定总工作量下二次负载势与排序势的严格单任务局部极小",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "m≥3台相同机器、两件unit任务及m²−1件1/m tiny任务的完整assignment；总工作量固定，比较二次负载势与排序负载词典序势的单任务换机邻域。",
+      "statement": "初态把两件unit置于同机、tiny均分其余机器，峰值为2且真实OPT=1+2/m；任一单任务换机均严格增加二次势并使排序负载词典序变差，故该初态是严格单任务局部极小，峰值比2m/(m+2)趋2。",
+      "quantifiers": "每个整数m≥3；结论只针对单任务邻域。",
+      "assumptions": [
+        "所有任务均可在所有机器处理且时间如正文",
+        "总工作量固定；不把多任务批次外推为单件单调。"
+      ],
+      "scope": "固定总工作量下单任务局部搜索障碍；三件启动批次可下降并到OPT，已撤回多轮不动点外推。",
+      "objections": "不证明一般算法困难性或固定批次不可达；支持下界是一次重分配支持而非多轮障碍。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/固定工作单步原审计与三件启动纠错的分域复核--审查.md",
+        "sha256": "af96d0d94679eddb2d4d736ca5d459f846230aef549dfb2f1574d119e9099d4d"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/固定工作局部极小与真实凸包固定槽双源审查--审查.md",
+          "sha256": "40919541fb80f3562132fb920208da26f12ed7ee03850db566e1224d87badfd6",
+          "section": "一、固定总工作量下的严格单任务局部极小"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/固定槽跨槽修复与最小工作面支撑障碍有限审查--审查.md",
+          "sha256": "029fcbb46a203747cf61c162abb52ab4ecc88bbfaefb7f2c62c5fced16635232",
+          "section": "第1节范围与对象分离"
+        }
+      ]
+    },
+    {
+      "object_id": "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1",
+      "version": 1,
+      "title": "真实最优凸包点的标准单位槽图固定近二间隙",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "m≥2台相同机器、一个大任务和m²−1件tiny任务，给定真实最优调度凸包点x及标准单位槽图覆盖匹配。",
+      "statement": "每个最优分量峰值为1，均匀平均属于真实最优调度凸包；但标准单位槽图每机固定使用m个槽，任意全覆盖匹配在大任务所在机产生负载2m/(m+1)，故比值趋2。",
+      "quantifiers": "每个整数m≥2；对给定x的全部标准槽覆盖匹配。",
+      "assumptions": [
+        "行跨度为m+1，固定槽接口强制逐机任务数",
+        "允许直接输出最优分量、重选x或跨槽修复则不在反例范围。"
+      ],
+      "scope": "真实最优凸包上的标准槽接口障碍。",
+      "objections": "不否定一般ST上界、槽外修复或直接返回最优分量。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/固定工作局部极小与真实凸包固定槽双源审查--审查.md",
+        "sha256": "40919541fb80f3562132fb920208da26f12ed7ee03850db566e1224d87badfd6",
+        "section": "二、真实最优凸包上的固定槽近二间隙"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/固定槽跨槽修复与最小工作面支撑障碍有限审查--审查.md",
+          "sha256": "029fcbb46a203747cf61c162abb52ab4ecc88bbfaefb7f2c62c5fced16635232",
+          "section": "第2节固定槽图的精确近二障碍"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/固定槽跨槽修复与最小工作面支撑障碍有限审查--审查.md",
+          "sha256": "029fcbb46a203747cf61c162abb52ab4ecc88bbfaefb7f2c62c5fced16635232",
+          "section": "第5.2节有限审计"
+        }
+      ]
+    },
+    {
+      "object_id": "UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1",
+      "version": 1,
+      "title": "固定槽输出的单目的地跨槽同步修复阈值",
+      "kind": "construction",
+      "truth_status": "proved",
+      "model": "同机固定槽坏匹配；每个原来源迁出的原任务至多去一个外部目的地，允许同步多件并离开槽图。",
+      "statement": "留大任务时最小Hamming距离为m(m−1)/2，搬大任务时为m(m+1)/2；留大任务沿首次访问前缀割构造整批序列，每完整批次峰值严格下降1/(m+1)并最终达到1。",
+      "quantifiers": "每个m≥2及任意给定坏槽匹配；距离结论在单目的地约束下。",
+      "assumptions": [
+        "按原任务归属计Hamming；不把收到任务再送走伪作一次原归属迁移",
+        "整批单调，拆成单任务不保证单调。"
+      ],
+      "scope": "固定槽障碍的同步修复和精确阈值。",
+      "objections": "完整迁移图可有尾循环；不主张逐单任务下降或一般调度算法。",
+      "body": {
+        "path": "archives/unrelated-machines/state/证明/单目的地跨槽修复的原任务割与实际批次--证明.md",
+        "sha256": "0e4c061ab2893069320dcd38c0e0181a2099865c91155794867f82c8de17844f",
+        "section": "对象与两种精确阈值"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/固定槽跨槽修复与最小工作面支撑障碍有限审查--审查.md",
+          "sha256": "029fcbb46a203747cf61c162abb52ab4ecc88bbfaefb7f2c62c5fced16635232",
+          "section": "第3节跨槽同步修复和单目的地阈值"
+        },
+        {
+          "path": "archives/unrelated-machines/state/证明/单目的地跨槽修复的原任务割与实际批次--证明.md",
+          "sha256": "0e4c061ab2893069320dcd38c0e0181a2099865c91155794867f82c8de17844f",
+          "section": "留大任务：前缀割，而非强称全图是路径"
+        },
+        {
+          "path": "archives/unrelated-machines/state/证明/单目的地跨槽修复的原任务割与实际批次--证明.md",
+          "sha256": "0e4c061ab2893069320dcd38c0e0181a2099865c91155794867f82c8de17844f",
+          "section": "整批顺序有严格进展，拆单件没有此保证"
+        }
+      ]
+    },
+    {
+      "object_id": "UM-ONE-DESTINATION-SLOT-REPAIR-v1",
+      "version": 1,
+      "title": "单目的地跨槽修复的原任务割与实际批次",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "m≥2台相同机器、一个1时间大任务和m²−1件1/(m+1)小任务；从标准槽匹配到峰值1的最终合法分配，原来源外度至多1。",
+      "statement": "留大任务时首次访问前缀割给出最小Hamming m(m−1)/2；搬大任务分支为m(m+1)/2。留大任务的整批构造峰值C_t=(2m−t)/(m+1)逐批下降，尾循环反例保留。",
+      "quantifiers": "每个整数m≥2；对所有满足单目的地迁移约束的最终分配。",
+      "assumptions": [
+        "同步批次可迁出源库存；原任务标签和目的地集合按证明定义。"
+      ],
+      "scope": "单目的地精确修复阈值与有限实际批次证据。",
+      "objections": "不等同于所有迁移图无环；不证明一般优化算法。",
+      "body": {
+        "path": "archives/unrelated-machines/state/证明/单目的地跨槽修复的原任务割与实际批次--证明.md",
+        "sha256": "0e4c061ab2893069320dcd38c0e0181a2099865c91155794867f82c8de17844f",
+        "section": "对象与两种精确阈值"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/证明/单目的地跨槽修复的原任务割与实际批次--证明.md",
+          "sha256": "0e4c061ab2893069320dcd38c0e0181a2099865c91155794867f82c8de17844f",
+          "section": "留大任务：前缀割，而非强称全图是路径"
+        },
+        {
+          "path": "archives/unrelated-machines/state/证明/单目的地跨槽修复的原任务割与实际批次--证明.md",
+          "sha256": "0e4c061ab2893069320dcd38c0e0181a2099865c91155794867f82c8de17844f",
+          "section": "搬大任务：小任务路径强制，完整迁移图仍可成圈"
+        },
+        {
+          "path": "archives/unrelated-machines/state/证明/单目的地跨槽修复的原任务割与实际批次--证明.md",
+          "sha256": "0e4c061ab2893069320dcd38c0e0181a2099865c91155794867f82c8de17844f",
+          "section": "整批顺序有严格进展，拆单件没有此保证"
+        }
+      ]
+    },
+    {
+      "object_id": "UM-MIN-WORK-FACE-SUPPORT-GAP-v1",
+      "version": 1,
+      "title": "最小总处理量整面的正支撑近二障碍与成本松弛修复",
+      "kind": "obstruction",
+      "truth_status": "proved",
+      "model": "m≥2台机器；一件时间m的大任务、每home m−1件home时间1/异机1+1/m的小任务；assignment-LP达到最小总工作量的整面。",
+      "statement": "最小成本整面所有点的正支撑只含home小任务边和全部大任务边；该支撑的任意整数分配峰值2m−1，而真实OPT=m+1/m，比例趋2。允许q件小任务离home后精确峰值为max{2m−1−min(q,m−1),m+1/m}。",
+      "quantifiers": "每个整数m≥2；对整面支撑中的全部整数分配及整数q≥0。",
+      "assumptions": [
+        "该整面不属于真实最优调度凸包；允许小幅工作量增加可恢复OPT。"
+      ],
+      "scope": "assignment-LP最小工作量整面的支撑障碍及修复阶梯。",
+      "objections": "不把错误“用满全部槽”断言带入；不否定CONFIG/真实凸包初始化或正成本松弛。",
+      "body": {
+        "path": "archives/unrelated-machines/state/审查/最小工作面正扰动的标准形与范围复核--审查.md",
+        "sha256": "d9d80421dc87caf689fa615f0bda97c57a14f3d68a8df009a098b422588f74c3",
+        "section": "不是最优凸包的原矩阵与整个面"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/最小工作面正扰动的标准形与范围复核--审查.md",
+          "sha256": "d9d80421dc87caf689fa615f0bda97c57a14f3d68a8df009a098b422588f74c3",
+          "section": "basic的标准形证据和分数负载正号"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/最小工作面正扰动的标准形与范围复核--审查.md",
+          "sha256": "d9d80421dc87caf689fa615f0bda97c57a14f3d68a8df009a098b422588f74c3",
+          "section": "成本松弛、历史审计和范围"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/固定槽跨槽修复与最小工作面支撑障碍有限审查--审查.md",
+          "sha256": "029fcbb46a203747cf61c162abb52ab4ecc88bbfaefb7f2c62c5fced16635232",
+          "section": "第4节最小总处理量面"
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/审查/固定工作单步原审计与三件启动纠错的分域复核--审查.md",
+      "sha256": "af96d0d94679eddb2d4d736ca5d459f846230aef549dfb2f1574d119e9099d4d",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1"
+      ]
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/固定工作局部极小与真实凸包固定槽双源审查--审查.md",
+      "sha256": "40919541fb80f3562132fb920208da26f12ed7ee03850db566e1224d87badfd6",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1",
+        "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1",
+        "UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1",
+        "UM-MIN-WORK-FACE-SUPPORT-GAP-v1"
+      ]
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/固定槽跨槽修复与最小工作面支撑障碍有限审查--审查.md",
+      "sha256": "029fcbb46a203747cf61c162abb52ab4ecc88bbfaefb7f2c62c5fced16635232",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1",
+        "UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1",
+        "UM-MIN-WORK-FACE-SUPPORT-GAP-v1"
+      ]
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/单目的地跨槽修复的原任务割与实际批次--证明.md",
+      "sha256": "0e4c061ab2893069320dcd38c0e0181a2099865c91155794867f82c8de17844f",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1",
+        "UM-ONE-DESTINATION-SLOT-REPAIR-v1"
+      ]
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/最小工作面正扰动的标准形与范围复核--审查.md",
+      "sha256": "d9d80421dc87caf689fa615f0bda97c57a14f3d68a8df009a098b422588f74c3",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-MIN-WORK-FACE-SUPPORT-GAP-v1"
+      ]
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/最小工作面与固定槽支撑有限审查--审查.md",
+      "sha256": "1cdd354ffea1e4a4e7c9beebe0c2ba3a799a852720386652c66fb306b9625b9a",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-MIN-WORK-FACE-SUPPORT-GAP-v1"
+      ]
+    }
+  ],
+  "edge_files": [],
+  "notes": "Proposed canonical batch from explicit legacy_ids and exact proof pages; root must compare object IDs and integrate serially."
+}
