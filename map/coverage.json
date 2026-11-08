@@ -10026,22 +10026,33 @@
     "reason": "Assign a concrete comparison task"
   },
   "SC-K-ADAPTIVE-DOUBLE-LPT-2": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "948faf5dbd2362c47d0a6c2d1679c2a0663b56a33bd187a5670798ed66398974",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A commonmany-3a-3a-09f4b262e1d1c160: 完整读取 AD/AR 自适应原池算法正文（原模型、AR q≥2/q=1 分支、AD 首轮/第二轮测试、严格三角实例）以及 SC-K-FORCED-FLOOR、MF-MODEL 和任务声明的全部 references；逐式比较 AD 的首轮 γ 保持、纯 Nashification、η_s→τ_s、q_s−1 删除箱、AR 转接及 MAX/RANGE 边界。",
+    "reason": "AD 成功测试是 AR 的严格特化：纯在轨 NE 可编码为退化 mixed，强制池下界与首轮 γ 给 a_f≥τ_s，第二轮箱给 AR 删除证书；FLOOR 仅承重自适应阈值步骤。失败 unknown 不等于无证书，且一般 mixed 输入、证书生成完备性和外部调度器时间结论均未被推出。",
+    "edge_ids": [
+      "commonmany-adaptive-double-lpt-specializes-adaptive-reset",
+      "commonmany-forced-floor-certifies-adaptive-threshold"
+    ]
   },
   "SC-K-ADAPTIVE-RESET": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "024c2910c386e5a58e1d8efefec4c55c48bf6efea0c4fb9eeefabca753ec1188",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A commonmany-3a-3a-09f4b262e1d1c160: 完整读取 AR 的给定在轨均衡/源池删除证书前提、q≥2 全原客户重置与 q=1 消失源分支、受帽纯 NE 完成、MAX 条件，以及 AD 通过测试后如何满足这些前提。",
+    "reason": "AD 的成功域提供 AR 所需 a_f≥γ、原池 q−1 删除箱（更强的全≤2τ_s 情形）和同布局在轨 NE；故 AR 是 AD 输出的通用完成接口。该边保留 q=1 γ 重置、纯→退化 mixed 和有限正确性边界，不把 AR 反向升级为 AD。",
+    "edge_ids": [
+      "commonmany-adaptive-double-lpt-specializes-adaptive-reset"
+    ]
   },
   "SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "71af3ccff84eb664b792d34b2b0c7000ddbb0d8c0742bece49b27476536d7249",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A commonmany-3a-3a-3639bd1ab5ec4c23: 完整读取同一15个distinct文件；重点核对ALL-OR-ONE的常q或单站/全站分量量词、任意分量大小与混合q、降序列表最小标准化负载分配、盒界、singleton私有储备、MAX/RANGE以及two-site单遍独立方法。",
+    "reason": "ALL-OR-ONE→TWO-SITE 的域包含关系已写入 accepted conditional specializes 边：常q直接满足，至多两站非恒q分量的多选客户只能选两站全集、单选客户选单站，故满足all-or-one。NESTED边同时记录其被更宽的嵌套锚点类覆盖。",
+    "edge_ids": [
+      "commonmany-all-or-one-generalizes-two-site",
+      "commonmany-nested-anchor-generalizes-all-or-one"
+    ]
   },
   "SC-K-BOX-BOUNDED-COMPLEMENT": {
     "state": "needs-decision",
@@ -10080,10 +10091,10 @@
     "reason": "Assign a concrete comparison task"
   },
   "SC-K-COMPLEMENT-GREEDY-REDUCTION": {
-    "state": "needs-decision",
+    "state": "isolated-after-review",
     "object_pin": "115cab093325511d14216c891e95b6f5962eff809f0cdea32e3d782d8eb5abb2",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A commonmany-3a-3a-06610b899db081db: 完整读取归约正文、共同目录模型、补集精确核验、障碍边界、原始补集编译器、重放 JSON/manifest、MAX/RANGE 审查、问题页、10.1–10.6 证书证明、任意设施数登记审查全部指定章节、站点字典序算法和 unrelated-machines tracker；逐式核对源排除成本、目标含自身权重的条件成本、反向仿射 W_t=q_t+δ(q_tM−Y_t)、全状态盒/H、Δ_T=δΔ_S、显式 k 输出和默认 NE 规则。",
+    "reason": "与重数边界的唯一成立联系是 contextual checks：异重 q 反例验证了归约对象明示的“不是把物理重数直接改称相关机器速度”范围警告，并支持采用取补/反向仿射接口。该边不提供对归约的 implies/equivalent/transfers 逻辑支持；归约自身仍保留其完整条件、输出敏感性、q∈{1,2} 的规模限制及无求解器/无一般位多项式保证。零逻辑边对象：本对象（仅有 checks 语境边）。"
   },
   "SC-K-COMPONENT-MULT-GREEDY-2": {
     "state": "needs-decision",
@@ -10146,10 +10157,13 @@
     "reason": "Assign a concrete comparison task"
   },
   "SC-K-FORCED-FLOOR": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "cf6aa3912a847679847c51588b2627ba768529b821a76d42d6b00ff1cca3ede7",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A commonmany-3a-3a-09f4b262e1d1c160: 完整读取强制原子池引理、AD/AR 算法、MF-MODEL、装箱/受帽证明、MAX/RANGE 审查、三角审计与任意设施数登记审查；核对 η_s 的 h、D、纯 NE 量词、q=0/残余重算边界及其在 AD τ_s=max(γ,η_s) 中的精确位置。",
+    "reason": "FLOOR 在纯 Nashification 终点给每家设施负载≥η_s，从而与首轮≥γ 合并为 AD 的 τ_s 阈值并验证第二轮删除箱接口。该逻辑不推广到 mixed NE，也不替代 AD 首轮或第二轮测试；没有额外 hub 边。",
+    "edge_ids": [
+      "commonmany-forced-floor-certifies-adaptive-threshold"
+    ]
   },
   "SC-K-FROZEN-LIGHT-FPT": {
     "state": "needs-decision",
@@ -10308,10 +10322,13 @@
     "reason": "Assign a concrete comparison task"
   },
   "SC-K-NESTED-ANCHOR-GREEDY-2": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "79464bcef6bf182edbaf27d54f56245ab9813b7e1159dc0d41ea6bfad42b7673",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A commonmany-3a-3a-3639bd1ab5ec4c23: 完整读取三项核心算法、MF-MODEL及任务声明全部15个distinct文件（含算法、模型、盒定理、MAX/RANGE审查、装箱与Nashification引理、claims登记、有限审计/示例、范围审查、默认规则证明、有限搜索算法、附录tracker）；逐项比较NESTED的共同首开锚点、非增权嵌套选项量词、W_t/q_t列表分配、末入客户NE不等式、盒保持、MAX/RANGE条件、三站严格扩大例与反向排序障碍。",
+    "reason": "NESTED→ALL-OR-ONE 的域包含关系已写入 accepted conditional specializes 边：all-or-one 的多选集均为全分量集合，自动满足共同锚点与嵌套；常q分支直接相同。三站 q=(3,2,1) 例证明严格扩大，有限审计只作上下文见证。",
+    "edge_ids": [
+      "commonmany-nested-anchor-generalizes-all-or-one"
+    ]
   },
   "SC-K-PATH-EDGE-LIGHT-GREEDY-2": {
     "state": "needs-decision",
@@ -10362,10 +10379,13 @@
     "reason": "Assign a concrete comparison task"
   },
   "SC-K-TWO-SITE-COMPONENT-GREEDY-2": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "547ae8366059c7b175334be5c7f8dffcdf883ea25e0caad57afdb462427e728c",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A commonmany-3a-3a-3639bd1ab5ec4c23: 完整读取同一15个distinct文件；核对TWO-SITE的常q/至多两站量词、不等q时按降权H→L单遍严格改善、盒保持、(9,A),(1,AB),(4,B) RANGE失败仍可处理例，以及其作为ALL-OR-ONE子域而保留独立证明。",
+    "reason": "TWO-SITE作为ALL-OR-ONE的子域被接受边覆盖；该边只传递输出域与结论，不抹去两站一次扫描的独立数学方法，也不扩大到三站混合q。",
+    "edge_ids": [
+      "commonmany-all-or-one-generalizes-two-site"
+    ]
   },
   "SC-K-UNIFORM-LIGHT-FLOW-2": {
     "state": "needs-decision",
@@ -20364,10 +20384,10 @@
     "reason": "Assign a concrete comparison task"
   },
   "facility-games/common-many/multiplicity-related-link-interface-boundary": {
-    "state": "needs-decision",
+    "state": "isolated-after-review",
     "object_pin": "04b24a598c42a85e5edbe75ff7a72133f7cc4720a053ad360c5d4f3c9afdaa27",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A commonmany-3a-3a-06610b899db081db: 完整读取障碍正文、共同目录模型、归约正文与代码、受限同链 MAX/RANGE 审查、RQ/RL Fraction 代码及运行回执、问题页、10.2–10.3 NE/偏离证明、任意设施数登记审查全部指定章节、有限完整构造算法和 tracker；复算 q_t=1,q_v=2,w_i=2,W_t=5,W_v=6 的完整三原子实例（RQ=3=3，RL 为 5>4），并对照取补归约的 Δ_T=δΔ_S。",
+    "reason": "反例只 refutes 直接 q→speed 恒等识别；它不 refute 取补/反向仿射归约，也不提供一般相关机器算法/复杂度结论。故其与归约对象之间保留 contextual checks 边，同时保留相同 q 可消分母、逐标签纯赋值导入、异重未付义务和两例脚本有限范围。零逻辑边对象：本对象（仅有 checks 语境边）。"
   },
   "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import": {
     "state": "needs-decision",
