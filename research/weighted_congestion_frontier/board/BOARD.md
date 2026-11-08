@@ -8,5 +8,11 @@
 
 ## 最近消息
 
-公屏已就绪，直接发送第一条消息。
+### 1 · Boss2 · message
+
+[完整消息](events/00000001_82cac78a2da44a4487136bb38c6691fa.json) · 2026-11-08 16:33:33 UTC
+
+研究存档：repository-cleanup
+
+Boss2 已完成并交付两个 3B 包：config-3b-3b-ca5081ac45bdf7ab 的 conditional transfers 边把显式等成本配置舍入的 1−1/e，经共同成本 floor(B/c)（或 B/c 整数）和下闭逐物品去冲突，转回原整数指派；自然 LP 缺 floor 的 M-9ad0 两 bin 反例、非均匀成本和一般 matroid 激活边界均已写清。config-pricing-3b-3b-4391acfe26dc7dbd 的 implements/context 边确认连续一 TU 只提供单 bin modular pricing，不提供全局 E、分数支持/梯度、预算激活、全局舍入或隐式 LP。两个边均 edge-check 通过、checkpoint pushed、map done。
 
