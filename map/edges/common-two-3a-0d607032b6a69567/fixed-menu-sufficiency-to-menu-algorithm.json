@@ -1,0 +1,59 @@
+{
+  "edge_id": "fixed-menu-sufficiency-to-menu-algorithm",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-aedb00bdf78c46f993df607b0d8d8375"
+  ],
+  "target_ids": [
+    "facility-games/common-two/golden-ratio-menu-algorithm"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "显式共同目录输入与固定有限非空精确 NE 菜单在计算 d 前已确定，反射保持标签一致，d 在完整 S 上取最大；搜索确实找到同一在轨成员同时满足 x≥q d(t)、y≥q d(s)，并且其余布局的确定性纯 NE 默认续局已由验证器核查。",
+  "roles": {
+    "M-aedb00bdf78c46f993df607b0d8d8375": "给出固定菜单双 q 配额的全目录充分条件：偏离者选菜单极小成员，其余布局按纯 NE 默认，即得到完整 φ-SPE。",
+    "facility-games/common-two/golden-ratio-menu-algorithm": "把该充分条件专门化为 P/E/T/C 菜单生成、精确 d 搜索、在轨双 q 配额测试和有理证书输出，并保持非自适应菜单量词。"
+  },
+  "explanation": "算法的成功分支逐项实现充分条件：P/E/T/C 成员先验证精确 NE，u 与 d 在完整目录上计算，找到双 q 配额成员后用菜单最小惩罚和默认纯续局填补所有偏离。故算法是固定菜单充分引理的构造性专门化；失败或未找到配额时，该边不宣称算法普遍成功，复杂度和有限运行记录也不替代存在性证明。",
+  "scope": "3A common-two；只连接固定菜单的数学接口与算法成功分支，不把算法输出扩展为任意真实 NE 最小值或全局坏环闭合。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-two/state/定义/共同目录精确续局与菜单模型--定义.md",
+      "sha256": "6afce2194294221712300cda25cded41810cbc3e17d480049ee4ec2f45fd3b53",
+      "section": "3. 设施稳定性与菜单充分条件"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-two/state/算法/黄金比有限菜单与完整续局证书--算法.md",
+      "sha256": "679fc73ec8f9f611c71cecc513ee7a669a790f750c8e275a4a3a6e8c8d328326",
+      "section": "1. 一个无序位置对的固定菜单"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-two/state/算法/黄金比有限菜单与完整续局证书--算法.md",
+      "sha256": "679fc73ec8f9f611c71cecc513ee7a669a790f750c8e275a4a3a6e8c8d328326",
+      "section": "2. 搜索伪代码"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-two/state/算法/黄金比有限菜单与完整续局证书--算法.md",
+      "sha256": "679fc73ec8f9f611c71cecc513ee7a669a790f750c8e275a4a3a6e8c8d328326",
+      "section": "3. 证书验证的最小语义"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-two/state/审查/菜单量词与强弦实现审计--审查.md",
+      "sha256": "d27bea37ef40e1ae04a5d35293f19c554a4531ea553859b6c2c40c497927b104",
+      "section": "2. The correct replacement for the true-m criterion"
+    }
+  ],
+  "endpoint_pins": {
+    "M-aedb00bdf78c46f993df607b0d8d8375": "5cade52501c7ac4b4e1572a2784df4aadaa2b50f8d59c4264d5882c464f60896",
+    "facility-games/common-two/golden-ratio-menu-algorithm": "fb4dbc9c62f6babb1e774c99bbc57441f9aed7923efd2b88b6d09f3d6f0c0c36"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-two/state/定义/共同目录精确续局与菜单模型--定义.md": "6afce2194294221712300cda25cded41810cbc3e17d480049ee4ec2f45fd3b53",
+    "archives/facility-games/subarchives/common-two/state/算法/黄金比有限菜单与完整续局证书--算法.md": "679fc73ec8f9f611c71cecc513ee7a669a790f750c8e275a4a3a6e8c8d328326",
+    "archives/facility-games/subarchives/common-two/state/审查/菜单量词与强弦实现审计--审查.md": "d27bea37ef40e1ae04a5d35293f19c554a4531ea553859b6c2c40c497927b104"
+  },
+  "review_digest": "fc0ed6db261ece000b4f107edc4f6155189b7569180de0b22db111ffab1eda38",
+  "reviewed_by": "common-two-family",
+  "review_note": "Algorithm success branch is an explicit specialization of the fixed-menu qd sufficiency lemma; no existence claim is made when search finds no qualifying member."
+}

@@ -1,0 +1,43 @@
+{
+  "edge_id": "local-reach-counterexample-corrects-full-d-boundary",
+  "kind": "corrects",
+  "status": "accepted",
+  "source_ids": [
+    "M-8e6e7d5938db4e19b4e50c250a0017c6"
+  ],
+  "target_ids": [
+    "M-aedb00bdf78c46f993df607b0d8d8375"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "反例中的旧两地点仍满足局部强弦，但完整目录新增 z 使 d(s)=d(t)=1000；比较对象是“把局部 reach 强配额直接替换成全目录 d 配额”的未声明桥，而不是固定菜单充分条件本身。",
+  "roles": {
+    "M-8e6e7d5938db4e19b4e50c250a0017c6": "给出 100/99 两地点加不交 1000 新站的精确反例：旧对所有 NE 收益 ≤100/99<1000q，故局部强弦不满足完整 Cover。",
+    "M-aedb00bdf78c46f993df607b0d8d8375": "明确要求 d 对完整 S 取最大，并在 objection 中禁止用局部 reach 强配额替代全目录配额。"
+  },
+  "explanation": "反例并不否定固定菜单充分引理；它精确校正引理的适用边界：满足局部 Chord 只提供实际 reach 负载，只有同一菜单成员还通过完整 S 的 d 配额测试时，充分条件才能启动。新增 z 后旧对不再达标，而整个游戏可改在 (z,z) 续局。",
+  "scope": "3A common-two；为全目录 d 与局部强弦之间的边界说明，非黄金比普遍性反例。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-two/问题--问题.md",
+      "sha256": "042ca07f543d34341cba5bb1367c2c60664fe1f6ee590a179b0aeafeb956dfb0",
+      "section": "三个必须保留的边界"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-two/state/定义/共同目录精确续局与菜单模型--定义.md",
+      "sha256": "6afce2194294221712300cda25cded41810cbc3e17d480049ee4ec2f45fd3b53",
+      "section": "3. 设施稳定性与菜单充分条件"
+    }
+  ],
+  "endpoint_pins": {
+    "M-8e6e7d5938db4e19b4e50c250a0017c6": "11e83d889feb2b1e8c35f30f960a1fee31d3d428032fb440e6e605e88b29bb7f",
+    "M-aedb00bdf78c46f993df607b0d8d8375": "5cade52501c7ac4b4e1572a2784df4aadaa2b50f8d59c4264d5882c464f60896"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-two/问题--问题.md": "042ca07f543d34341cba5bb1367c2c60664fe1f6ee590a179b0aeafeb956dfb0",
+    "archives/facility-games/subarchives/common-two/state/定义/共同目录精确续局与菜单模型--定义.md": "6afce2194294221712300cda25cded41810cbc3e17d480049ee4ec2f45fd3b53"
+  },
+  "review_digest": "18cc9172c756dc50869bf6938d4452d9a7a34800fbbd01b718dff545aeb1a94d",
+  "reviewed_by": "common-two-family",
+  "review_note": "Exact 100/99 plus disjoint 1000-site instance validates the stated boundary: local reach quota does not imply full-directory d quota."
+}
