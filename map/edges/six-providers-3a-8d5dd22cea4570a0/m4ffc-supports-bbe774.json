@@ -1,0 +1,47 @@
+{
+  "edge_id": "m4ffc-supports-bbe774",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-4ffc03d355a94ae9be25abe26b0f58f4"
+  ],
+  "target_ids": [
+    "M-bbe774381b544037af1090fb7bcb3607"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "对每条i→h存在源对象的同一σ共同终局EXCHANGE见证b,g；满足alpha(1+c_g(x))≤c*(x)于S_h、c_g(y)=0于E_h，且这些边组成I到I完美匹配，遗漏O\\C被∪E_h覆盖。",
+  "roles": {
+    "M-4ffc03d355a94ae9be25abe26b0f58f4": "由同一σ、同主题b、同终局计数q的早节点h与末位节点g给u(h)≥Σ_{x∈T}1/(1+c_x(g))，并在X/Y负载条件下给|X|/2+|Y|。",
+    "M-bbe774381b544037af1090fb7bcb3607": "把逐边交换下界按LOAD缩放为u_i≥alpha u_h+|E_h|，沿完美匹配求和得Σ|E_h|≤(1−alpha)W，再推出OPT_m≤(2−alpha)W。"
+  },
+  "explanation": "对每条匹配边i→h，M-4ffc的EXCHANGE给u_i≥Σ_{x∈S_h∪E_h}1/(1+c_x(g))。目标的LOAD条件把S_h中每项下界为alpha/c_x*，并以c_g=0在E_h给每个遗漏客户1，故u_i≥alpha u_h+|E_h|。完美匹配使Σ_h u_h=Σ_i u_i，移项得Σ_h|E_h|≤(1−alpha)Σ_Iu_i≤(1−alpha)W；若O\\C⊆∪E_h，则OPT_m−W≤|O\\C|≤Σ|E_h|，所以OPT_m≤(2−alpha)W。未证明见证、LOAD或匹配对任意SPE普遍存在，故关系保持conditional。",
+  "scope": "共同终局交换是负载匹配证书的逐边承重链；只在目标列出的匹配/遗漏条件下推出2−alpha，不升级为普遍half或3/2。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/subarchives/six-providers/state/引理/共同终局交换与负载匹配的条件福利证书--引理.md",
+      "sha256": "bc9b87bc6d18c47a175e7888daae369e0e0ee6498ee74754b37904fa7f000921",
+      "section": "两个真实节点的共同终局交换"
+    },
+    {
+      "path": "archives/customer-attraction/subarchives/six-providers/state/引理/共同终局交换与负载匹配的条件福利证书--引理.md",
+      "sha256": "bc9b87bc6d18c47a175e7888daae369e0e0ee6498ee74754b37904fa7f000921",
+      "section": "任意实际拥挤的负载匹配证书"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "six-providers-3a-fresh-worker",
+  "review_note": "完整重推EXCHANGE→LOAD缩放→完美匹配求和→遗漏集到OPT界，明确见证/匹配未被证明普遍存在。",
+  "endpoint_pins": {
+    "M-4ffc03d355a94ae9be25abe26b0f58f4": "0339be2d9030712e319da0d3eb78b26fb648b597493dc5bdff8a0b156b7d7d5d",
+    "M-bbe774381b544037af1090fb7bcb3607": "2495351d17f51f689ce3f56f88c0ad50c47bae75c09811c7da8c4a17efc58049"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/subarchives/six-providers/state/引理/共同终局交换与负载匹配的条件福利证书--引理.md": "bc9b87bc6d18c47a175e7888daae369e0e0ee6498ee74754b37904fa7f000921",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "421d8f376d953b79aca3f9e30bb8e0bdcab040336411dc2e1215d34fbc115fd0"
+}

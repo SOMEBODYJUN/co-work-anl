@@ -1,0 +1,46 @@
+{
+  "edge_id": "m397-conditional-six-half",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-397306454fcf4b6bb794a4f8f492b886"
+  ],
+  "target_ids": [
+    "customer-attraction/six-providers/exact-six-full-history-half-cover"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "将源模板参数限制为m=k+q=6，且指定两分支/共享终局/外组不变合同由同一完整σ实现；A_i全体与D_1,...,D_q构成合法六槽比较portfolio并覆盖全部客户，actual覆盖为Σx_i+|∪D_l|。",
+  "roles": {
+    "M-397306454fcf4b6bb794a4f8f492b886": "在共享终局多惩罚模板中由末位BR得x_i≥x_h/2+a_h，derangement求和给Σa_i≤Σx_i/2，并在portfolio覆盖时给OPT/W≤3/2。",
+    "customer-attraction/six-providers/exact-six-full-history-half-cover": "要求对任意六人完整历史纯SPE及任意目录证明2W≥OPT6；在源模板的六人子域上承接该不等式。"
+  },
+  "explanation": "源对象的末位真实BR门槛x_i≥x_h/2+a_h按任意无固定点置换求和，得到Σ_i a_i≤(1/2)Σ_i x_i。若A_i及D_l覆盖全部客户，则actual W=Σ_i x_i+|∪D_l|，而源对象已证明任意六槽最优覆盖满足OPT_6/W≤3/2，因此2W≥OPT_6。这个边只覆盖m=6且满足共享终局、多惩罚、外组不变和portfolio覆盖的严格子域；不对开放目标的全称量词给出证明。源正文还明确literal整数t>2扩张在末位失效，不能移除这些条件。",
+  "scope": "六人half开放问题的一个强但窄的充分模板；不反驳也不解决任意目录/任意完整SPE的普遍命题。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/subarchives/six-providers/state/障碍/共享终局多惩罚扩张的外组末位门槛--障碍.md",
+      "sha256": "d3678fef70ac59c687ae781fcb9dcc1af5f9f963471a9d237668dcfcb0cc71af"
+    },
+    {
+      "path": "archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md",
+      "sha256": "0626668e7a825108fc0b3699e42394b75b1c2e2a526df220a90d91a02afc8a0c"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "six-providers-3a-fresh-worker",
+  "review_note": "将源m=k+q模板显式限制到六人并保全覆盖条件；核对3/2推出half仅为条件子域，且正文已记录t>2扩张失败。",
+  "endpoint_pins": {
+    "M-397306454fcf4b6bb794a4f8f492b886": "899a2d80a94f9d8964f609e3b940edf27babafe1fb1f0bc6fec9422cc5d23c54",
+    "customer-attraction/six-providers/exact-six-full-history-half-cover": "2d5b191271cb052c435121a41935eb3958540d5a53cb05013f13dd45a70f6e31"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/subarchives/six-providers/state/障碍/共享终局多惩罚扩张的外组末位门槛--障碍.md": "d3678fef70ac59c687ae781fcb9dcc1af5f9f963471a9d237668dcfcb0cc71af",
+    "archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md": "0626668e7a825108fc0b3699e42394b75b1c2e2a526df220a90d91a02afc8a0c",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "56e0fd5de42f9a32bb3bcefd6c0d4452af6d14be153da5f1cde9e1c4860fd188"
+}
