@@ -196,7 +196,7 @@ python work.py map plan --record-file map/planned-tasks.json
 python work.py map plan --record-file map/planned-tasks.json
 python work.py map claim-next --count 6
 python work.py map read-add TASK --object-ids 已登记的额外共享依赖
-python work.py research edge-bind map/edges/joint-proof/support.json
+python work.py research edge-bind map/edges/joint-proof/support.json --write
 python work.py research edge-check map/edges/joint-proof/support.json
 python work.py checkpoint map/edges/joint-proof/support.json map/receipts/joint-proof.json -m 'Publish explained joint support'
 python work.py map done --record-file map/ready.json
@@ -206,7 +206,7 @@ edge含edge_id、kind、status、source_ids、target_ids、premises_mode:all、r
 
 {A,B}⇒C写一条ALL边，不能拆成A单独、B单独足够的两边；不同独立证明另写OR支持。equivalent_to表示ALL(source)⇔ALL(target)，反向要同时保全部targets。refutes多目标须逐项有否定证据，只否定合取不能宣称每项都假；迁移必须写模型映射与保留/丢失条件。各对象代表本次实际数学，示例ID不能直接写进真实任务。
 
-作者完整实读后可accepted，无固定二次审批流水。先定最终status、reviewed_by及具体review_note，再edge-bind填endpoint_pins/evidence_pins/review_digest三个字段，最后edge-check。绑定覆盖语义文字，之后改文字、状态、端点或证据要重核。edge-check校本边而不要求已在canonical清单，程序检查不代替数学判断。前提尚未证明但“若A且B则C”的论证完整时，可以是`accepted`且`relation_mode:conditional`，不会把C提升为已证；关系论证本身还有缺步才用`proposed`。所有前提与额外条件均已付清才可作为无条件支持，`rejected`保精确失败理由。
+作者完整实读后可accepted，无固定二次审批流水。先定最终status、reviewed_by及具体review_note，再用edge-bind --write把endpoint_pins/evidence_pins/review_digest写回同一边文件，最后edge-check。省略--write时只输出绑定字段。绑定覆盖语义文字，之后改文字、状态、端点或证据要重核。edge-check校本边而不要求已在canonical清单，程序检查不代替数学判断。前提尚未证明但“若A且B则C”的论证完整时，可以是`accepted`且`relation_mode:conditional`，不会把C提升为已证；关系论证本身还有缺步才用`proposed`。所有前提与额外条件均已付清才可作为无条件支持，`rejected`保精确失败理由。
 
 map收据含coverage对象表和assets引用数组。coverage覆盖所有核心对象，每项有state、object_pin、reason、comparison_scope；linked另列真实accepted incident edge_ids。状态为linked/isolated-after-review/needs-decision。清楚open问题和proposed联系可准确完成比较；没有accepted联系时如实记录范围和未付义务，不为完成率强造边。已发布canonical边可用精确SHA共享复用，不占原样边写范围；新文件仍保独立write_paths。
 
@@ -283,6 +283,8 @@ lead实读并填每个当前档/子档archive_reviews及cross_archive_review，�
 ```json
 {"supersession":{"old-task":{"reason":"对象改版，仅重判相关支持","assets":{"map/edges/old.json":{"disposition":"replaced","replacement_paths":["map/edges/new.json"],"reason":"新边保完整旧关系并修正条件"}}}}}
 ```
+
+构图旧批有待定或输入过时时，用 `python work.py research map-draft --repair-task <旧任务ID>` 草拟原层替代批，再由lead发布。替代批覆盖旧批仍现役的核心；已在总表明确退役的ID可省略，若全数退役则逐项处置旧边即可。最终验收使用已发布队列与集成回执绑定，等计划范围内的在途任务及未集成交付结清再验收。
 
 ## 后续Main与Solver消费
 

@@ -251,7 +251,7 @@ def validate(root, definition, phase='map'):
     research.identity(definition['task_id'])
     research.nonempty(definition,['goal'])
     dependencies(definition)
-    superseded_ids(definition)
+    replacements=superseded_ids(definition)
     research.strings(definition.get('write_paths'),'write_paths',True)
     for path in definition['write_paths']:
         _safe_path(root,path)
@@ -277,7 +277,8 @@ def validate(root, definition, phase='map'):
         research.nonempty(definition,['registry'])
         _,objects=_load(root,definition['registry'],verify=False)
         core=definition.get('object_ids');reads=definition.get('read_object_ids',[])
-        research.strings(core,'object_ids',True);research.strings(reads,'read_object_ids')
+        research.strings(core,'object_ids',not replacements);research.strings(reads,'read_object_ids')
+        if not core and reads:raise ValueError('A retirement-only map task cannot have read dependencies')
         if set(core)&set(reads): raise ValueError('Read-only objects must not duplicate core coverage')
         ids=set(core+reads)
         if ids-objects.keys(): raise ValueError('Task has unknown objects')
@@ -353,6 +354,39 @@ def batch_edges(root,definition,receipt,objects):
     _prefetch(root,[ref['path'] for ref in evidence])
     for ref in evidence:_ref_bytes(root,ref)
     return research.edges(root,{'edge_files':files},objects),files
+
+
+def _check_edge_paths(root,definition,receipt,others,edge_paths,canonical):
+    if not edge_paths:return
+    targets=set(superseded_ids(definition))
+    completed=[row for row in others if row['state']=='done' and row['definition']['registry']==definition['registry']]
+    for row in completed:targets.update(superseded_ids(row['definition']))
+    candidates=[row for row in completed if row['definition']['task_id'] not in targets]
+    removed=set()
+    for delivered in [receipt,*(row['receipt'] for row in completed)]:
+        for note in delivered.get('supersession',{}).values():
+            for path,decision in note['assets'].items():
+                if decision['disposition']=='retired' or (decision['disposition']=='replaced' and path not in decision['replacement_paths']):
+                    removed.add(path)
+
+    paths=set(canonical)-removed
+    for row in candidates:
+        if 'edge_paths' in row:
+            for eid,path in row['edge_paths'].items():
+                if eid in edge_paths and path!=edge_paths[eid]:
+                    raise ValueError('Duplicate edge identity across batch files: '+eid)
+        else:
+            paths.update(ref['path'] for ref in row['receipt']['assets'] if ref['path'].endswith('.json'))
+    paths-=set(edge_paths.values())
+    if _cache_for(root) is not None:
+        paths.intersection_update(_tree(root))
+        _prefetch(root,sorted(paths))
+    for path in sorted(paths):
+        try:edge=json.loads(_safe_path(root,path).read_text())
+        except (FileNotFoundError,UnicodeError,ValueError):continue
+        eid=edge.get('edge_id') if isinstance(edge,dict) else None
+        if isinstance(eid,str) and eid in edge_paths:
+            raise ValueError('Duplicate edge identity across batch files: '+eid)
 
 
 def _existing_registration_objects(root):
@@ -437,13 +471,20 @@ def superseded_ids(definition):
     return ids
 
 
-def _replacement_scope(definition,old,phase):
+def _replacement_scope(root,definition,old,phase):
     if phase=='registration':
         if definition['baseline'] != old['definition']['baseline']:
             raise ValueError('New frozen material versions use incremental composition; do not supersede registration tasks across baselines')
         current={r['path'] for r in definition['materials']};previous={r['path'] for r in old['definition']['materials']}
     else:
+        if definition['registry']!=old['definition']['registry']:
+            raise ValueError('A map replacement must use the same registry as the old batch')
         current=set(definition['object_ids']);previous=set(old['definition']['object_ids'])
+        if previous-current:
+            data,objects=_load(root,definition['registry'],verify=False)
+            retired={oid for oid,reason in data.get('retired_objects',{}).items()
+                     if oid not in objects and isinstance(reason,str) and reason.strip()}
+            previous-=retired
     if not previous<=current:raise ValueError('A replacement must cover every old core object/material; split its explicit disposition first')
 
 
@@ -453,10 +494,12 @@ def _supersession(root,definition,receipt,rows,phase):
     if set(notes)!=set(targets):raise ValueError('One explicit supersession note per replaced batch required')
     known={r['definition']['task_id']:r for r in rows}
     current={r['path']:r for r in receipt['assets']};retired=set()
+    retirement_only=phase=='map' and not definition['object_ids']
+    if retirement_only and current:raise ValueError('A retirement-only map receipt cannot add or retain assets')
     for task in targets:
         old=known.get(task)
         if not old or old['state']!='done':raise ValueError('Only a completed batch can be explicitly superseded: '+task)
-        _replacement_scope(definition,old,phase)
+        _replacement_scope(root,definition,old,phase)
         note=notes[task];research.nonempty(note,['reason'])
         dispositions=note.get('assets',{});previous={r['path']:r for r in old['receipt']['assets']}
         if set(dispositions)!=set(previous):raise ValueError('Every old batch asset needs a retained/replaced/retired disposition')
@@ -504,8 +547,10 @@ def transition(root,old,others,actor,operation,request_id,receipt=None,reason=No
             if phase=='registration':_registration_done(root,definition,receipt,peer_objects)
             else:
                 if set(receipt.get('coverage',{}))!=set(definition['object_ids']):raise ValueError('Every core object needs coverage')
-                _,objects=_load(root,definition['registry'],verify=False)
-                relations,_=batch_edges(root,definition,receipt,objects)
+                data,objects=_load(root,definition['registry'],verify=False)
+                relations,files=batch_edges(root,definition,receipt,objects)
+                edge_paths=dict(zip(relations,files))
+                _check_edge_paths(root,definition,receipt,others,edge_paths,data.get('edge_files',[]))
                 for row in receipt['coverage'].values():
                     if row.get('state') not in {'linked','isolated-after-review','needs-decision'}:raise ValueError('Unknown coverage outcome')
                     research.nonempty(row,['reason','comparison_scope','object_pin'])
@@ -513,6 +558,7 @@ def transition(root,old,others,actor,operation,request_id,receipt=None,reason=No
                     if row['object_pin']!=research.pin(objects[oid]):raise ValueError('Stale coverage input: '+oid)
                 resolved={oid:r for oid,r in receipt['coverage'].items() if r['state']!='needs-decision'}
                 research.validate_coverage(resolved,{oid:objects[oid] for oid in resolved},relations)
+                new['edge_paths']=edge_paths
             new.update(state='done',receipt=receipt)
         else:raise ValueError('Unknown task operation')
     _request(new,request_id,operation);board.guard(new);return new
@@ -550,7 +596,7 @@ def _plan(root,records,ctx,actor,instance,request_id):
         for target in superseded_ids(record):
             old=next((r for r in current if r['definition']['task_id']==target),None)
             if not old or old['state']!='done':raise ValueError('supersedes names an existing done batch: '+target)
-            _replacement_scope(record,old,ctx['phase'])
+            _replacement_scope(root,record,old,ctx['phase'])
     visiting=set();done=set()
     def visit(task):
         if task in visiting:raise ValueError('Cyclic task prerequisites')
@@ -649,8 +695,11 @@ def _apply(root,ctx,actor,instance,intent,request_id):
         # still validates exact bytes, ownership, baseline and mathematical refs.
         deliveries=[(known[item['task_id']]['definition'],item['receipt']) for item in completions] if len(already)!=len(ids) else []
         peers=_prefetch_done(root,deliveries,ctx['phase'])
-        updated=[transition(root,known[item['task_id']],rows,actor,'done',request_id,
-                            receipt=item['receipt'],phase=ctx['phase'],peer_objects=peers) for item in completions if item['task_id'] not in already]
+        updated=[]
+        for item in completions:
+            if item['task_id'] in already:continue
+            updated.append(transition(root,known[item['task_id']],rows+updated,actor,'done',request_id,
+                                      receipt=item['receipt'],phase=ctx['phase'],peer_objects=peers))
         paths=[]
         for row in updated:
             path=task_path(root,row['definition']['task_id'],ctx=ctx);_write_json(path,row);paths.append(path)
@@ -741,15 +790,21 @@ def mutate(root,task_id,operation,receipt=None,reason=None,phase='map',records=N
             _write_json(pending_path,{'request_id':request_id,'intent_pin':intent_pin,'intent':intent,'push_attempted':True})
             pushed=board.git(directory,'push','--quiet','origin','HEAD:refs/heads/'+branch,check=False)
             if board.auth_rejected(pushed):raise board.AuthenticationError('Authentication rejected; retain work and stop new claims')
-            _,tip,_=_refresh(client)
-            for name in names:
-                actual=board.git(directory,'show',tip+':'+name,check=False)
-                if actual.returncode:continue
-                row=json.loads(actual.stdout)
+            cache,tip,_=_refresh(client)
+            tree=_tree(cache,tip)
+            published=[tree[name][0] for name in names if name in tree]
+            _cache_objects(cache,published,source=root)
+            for oid in published:
+                row=json.loads(board.git(cache,'cat-file','blob',oid).stdout)
                 if request_id in row.get('requests',{}) or row.get('request_id')==request_id:
                     pending_path.unlink(missing_ok=True)
                     return dict(result,status='pushed',request_id=request_id,remote_tip=tip)
-            if pushed.returncode and not board.push_race(pushed):
+            if board.push_race(pushed):
+                # The ref update was rejected and the latest task files do not
+                # contain this request. A now-stale receipt can be corrected.
+                attempted=False
+                _write_json(pending_path,{'request_id':request_id,'intent_pin':intent_pin,'intent':intent,'push_attempted':False})
+            elif pushed.returncode:
                 raise board.BoardError('Workflow write not confirmed; rerun the same operation with its saved request_id')
     raise board.BoardError('Concurrent workflow write not confirmed; preserve local work and rerun the same operation')
 
@@ -777,9 +832,9 @@ def collect(root,phase='map',local=False,ctx=None,baseline_ref=None):
         if phase!='registration':raise ValueError('Baseline filtering applies to registration batches')
         rows=[r for r in rows if r['definition']['baseline']==baseline_ref]
         if not rows:raise ValueError('No current completed registration batch for this baseline')
-    for row in rows:
-        validate(root,row['definition'],phase);_asset_refs(root,row['definition'],row['receipt'])
     if phase=='registration':
+        for row in rows:
+            validate(root,row['definition'],phase);_asset_refs(root,row['definition'],row['receipt'])
         baseline=rows[0]['definition']['baseline']
         if any(r['definition']['baseline']!=baseline for r in rows):raise ValueError('Completed batches refer to different baselines')
         # A collected history can contain an already-integrated version and a
@@ -796,7 +851,13 @@ def collect(root,phase='map',local=False,ctx=None,baseline_ref=None):
     if any(r['definition']['registry']!=registry for r in rows):raise ValueError('Map batches use different registries')
     _,objects=_load(root,registry,verify=False);files=[];coverage={};edge_paths={}
     for row in rows:
-        relations,names=batch_edges(root,row['definition'],row['receipt'],objects)
+        definition=row['definition'];task_id=definition['task_id']
+        try:
+            validate(root,definition,'map');_asset_refs(root,definition,row['receipt'])
+            relations,names=batch_edges(root,definition,row['receipt'],objects)
+        except (ValueError,OSError,KeyError,TypeError) as exc:
+            raise ValueError(f'Map batch {task_id} needs repair: {exc}. '
+                             f'Use research map-draft --repair-task {task_id}, then publish its superseding task.') from exc
         for name in names:
             edge=json.loads(_safe_path(root,name).read_text());eid=edge['edge_id']
             if eid in edge_paths and edge_paths[eid]!=name:raise ValueError('Duplicate edge identity across batch files: '+eid)
@@ -807,7 +868,9 @@ def collect(root,phase='map',local=False,ctx=None,baseline_ref=None):
     # A later replacement may retain an earlier file. Never remove a current
     # asset just because it was retired in an older step of the replacement chain.
     retired.difference_update(ref['path'] for row in rows for ref in row['receipt']['assets'])
-    return {'registry':registry,'edge_files':sorted(files),'retired_edge_files':sorted(retired),'coverage_candidates':coverage,'tasks':[r['definition']['task_id'] for r in rows], 'superseded_tasks':sorted(replaced)}
+    return {'registry':registry,'edge_files':sorted(files),'retired_edge_files':sorted(retired),'coverage_candidates':coverage,
+            'task_receipt_pins':{r['definition']['task_id']:research.pin(r['receipt']) for r in rows},
+            'tasks':[r['definition']['task_id'] for r in rows], 'superseded_tasks':sorted(replaced)}
 
 
 def assemble(root,local=False):
@@ -844,6 +907,7 @@ def assemble(root,local=False):
     coverage_path=_safe_path(root,'map/coverage.json');integration_path=_safe_path(root,'map/integration.json')
     # Never overwrite an existing integrator's actual comparison prose.
     draft={'reviewed_by':'','review_note':'','registry_pin':research.pin(data),
+           'task_receipt_pins':gathered['task_receipt_pins'],
            'edge_pins':{eid:research.pin(e) for eid,e in relations.items() if e['status']=='accepted'},
            'object_pins':{oid:research.pin(obj) for oid,obj in objects.items()},
            'object_scopes':{oid:sorted(research.object_scopes({oid:obj})) for oid,obj in objects.items()},
@@ -854,7 +918,7 @@ def assemble(root,local=False):
     if integration_path.exists():
         previous=json.loads(integration_path.read_text())
         if previous.get('registry_pin')==draft['registry_pin'] and previous.get('edge_pins')==draft['edge_pins']:
-            draft={**draft,**previous}
+            draft={**draft,**previous,'task_receipt_pins':draft['task_receipt_pins']}
         else:
             changed_objects={oid for oid in set(previous.get('object_pins',{}))|objects.keys() if previous.get('object_pins',{}).get(oid)!=draft['object_pins'].get(oid)}
             changed_edges={eid for eid in set(previous.get('edge_pins',{}))|draft['edge_pins'].keys() if previous.get('edge_pins',{}).get(eid)!=draft['edge_pins'].get(eid)}
@@ -910,6 +974,8 @@ def _brief(root,result,phase,local=False):
     if isinstance(out.get('lead'),dict):out['lead']={k:v for k,v in out['lead'].items() if k!='requests'}
     if 'coverage_candidates' in out:
         out['coverage_object_count']=len(out.pop('coverage_candidates'))
+    if 'task_receipt_pins' in out:
+        out['task_receipt_count']=len(out.pop('task_receipt_pins'))
     if isinstance(out.get('edge_files'),list):out['edge_file_count']=len(out.pop('edge_files'))
     if isinstance(out.get('needs_reframing'),list):
         rows=out['needs_reframing'];out['needs_reframing_count']=len(rows)

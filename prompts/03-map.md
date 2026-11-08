@@ -16,6 +16,7 @@
 python <当前work.py> --repo <独立clone> start --actor BossN --role mapper --save repository-cleanup --branch rebuild/research-v2 --workflow-run map-v2 --token-file <仓库外凭据>
 cd <独立clone>
 python work.py doctor
+python work.py board-init
 ```
 
 此后只用clone根程序，公屏wcg/board-map-v2。读AGENTS.md、实际registry/登记出口及research/IMPLEMENTATION.md的边、coverage和零边示例；worker读prompts/03-map-worker.md。全仓构图接真实完成的登记；稳定局部可明确partial先做。
@@ -32,7 +33,7 @@ python work.py doctor
 
 {A,B}⇒C保一条ALL边，交清各前提作用、条件、变量对应和推导；独立证明分OR。equivalent_to须证双向，反向保全部targets。refutes逐项指明确被否命题，辅助桥失败不冒原题反例。迁移交清对象、允许选择、约束、量词和目标怎样对应、保留/损失什么；只证单向就保单向。引用、启发、实现及有限观察保语境身份，不作一般证明。
 
-**区分关系成立和前提成立。** 推导完整但前提未证，可accepted+relation_mode:conditional，写明未付前提，不提升终点真值；推导本身缺桥才proposed，写准确缺步。作者实读后可accepted，无固定二审；先定status、reviewed_by/review_note，再edge-bind、edge-check。某证明缺步只撤具体支持，保有效替代证明；命题被反例否定另作判断。文字/证据变化定向重核。
+**区分关系成立和前提成立。** 推导完整但前提未证，可accepted+relation_mode:conditional，写明未付前提，不提升终点真值；推导本身缺桥才proposed，写准确缺步。作者实读后可accepted，无固定二审；先定status、reviewed_by/review_note，再用 `research edge-bind <边文件> --write` 写回绑定，接着edge-check。某证明缺步只撤具体支持，保有效替代证明；命题被反例否定另作判断。文字/证据变化定向重核。
 
 ## 从内部做到跨档，lead接续前沿
 
@@ -49,7 +50,7 @@ python work.py map claim-next --count <实际worker空位数>
 
 3B/3C由lead用重复--object-id或--objects-file给实际前沿。按关联和真实上下文预算整包读取，共同证据去重，不固定篇数或硬拼无关对象；超大完整对象保同任务分章节连续读写，保存成立部分与断点，不截断证明。
 
-缺漏独立对象或登记纠错由当前map lead追踪登记增量，具体交接按PHASE3_READINESS：协调p25 lead；空缺/已交接位可由本Boss在独立登记clone显式接任，不抢仍绑定他人的身份。增量先pushed再同步：旧核心未变、只加依赖时read-add续原批；核心版本/pin已变时作者保草稿并handoff，lead按新版本重派，原worker接续；已done范围按定向替代处理。归属未解先保具体数学并做其它比较，不发完消息就丢、编造ID或假称已入图。
+缺漏独立对象或登记纠错由当前map lead追踪登记增量，具体交接按PHASE3_READINESS。增量先pushed再同步：核心未变、只加依赖时read-add；在领包的输入改版时保草稿并handoff，由lead重派；已done的包有待定或过时输入时，用 `research map-draft --repair-task <旧任务ID>` 生成明确替代批，保留仍有效的比较，逐项交代旧边去向。其余包继续推进。
 
 ## 写出产物，成熟即交，持续做到准确出口
 

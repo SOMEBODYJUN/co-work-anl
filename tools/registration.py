@@ -347,6 +347,16 @@ def check(root, registry=runtime.REGISTRY, final=False):
             added = sorted(current - frozen.keys())
     if final and (not baseline_ref or scope != 'repository' or missing or added or pending):
         raise ValueError('Registration coverage incomplete: frozen repository scope required; %d missing, %d new formal paths, %d pending' % (len(missing), len(added), len(pending)))
+    if final:
+        incomplete = set()
+        for oid, obj in objects.items():
+            for ref in [obj['body'], *obj['evidence']]:
+                row = rows.get(ref['path'])
+                if row and (row['disposition'] == 'excluded' or oid not in row.get('object_ids', [])):
+                    incomplete.add(ref['path'])
+        if incomplete:
+            raise ValueError('Registration has %d materials with missing or contradictory evidence owners. Examples: %s' %
+                             (len(incomplete), ', '.join(sorted(incomplete)[:5])))
     return {'status': 'registration-complete-declared-not-a-truth-verdict' if final else 'registration-partial',
             'objects': len(objects), 'materials': len(rows), 'scope': scope,
             'missing_materials': missing, 'new_formal_paths': added, 'pending_materials': pending,

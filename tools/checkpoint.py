@@ -36,11 +36,11 @@ def token(path):
     return values.pop().decode()
 
 
-def git(repo, *args, check=True):
+def git(repo, *args, check=True, input_data=None):
     env = {k: v for k, v in os.environ.items() if k not in ROUTING}
     env["GIT_TERMINAL_PROMPT"] = "0"
     try:
-        result = subprocess.run(["git", *args], cwd=repo, env=env,
+        result = subprocess.run(["git", *args], cwd=repo, env=env, input=input_data,
                                 capture_output=True, timeout=45)
     except subprocess.TimeoutExpired:
         raise Stop("Git timed out. Rerun the same command; local commits are retained.")
@@ -113,6 +113,78 @@ def audit_outgoing(repo, head, remote_tip, paths):
         raise Stop("Outgoing commits include paths outside checkpoint scope; "
                    "include these paths explicitly before pushing: " + detail)
     return commits, sorted(changed)
+
+
+def audit_map_write_scope(repo, remote_tip, outgoing):
+    """Check map outputs against the ownership at the tip we just fetched."""
+    if not outgoing:
+        return
+
+    def config(key):
+        return git(repo, "config", "--local", "--get", key, check=False).stdout.decode().strip()
+
+    workflow = config("wcg.workflowRun")
+    if not workflow or config("wcg.role") != "mapper":
+        return
+    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,95}", workflow):
+        raise Stop("Invalid map workflow binding.")
+    home = "research/operations/" + workflow
+    task_dir = home + "/tasks/"
+    if any(name == home + "/lead.json" or name.startswith(task_dir) for name in outgoing):
+        raise Stop("Publish map ownership and task state with work.py map. Local checkpoint retained.")
+
+    entries = git(repo, "ls-tree", "-r", "-z", remote_tip, "--", task_dir).stdout
+    oids = [entry.split(b"\t", 1)[0].split()[2] for entry in entries.split(b"\0")
+            if entry and entry.endswith(b".json")]
+    rows = []
+    if oids:
+        raw = git(repo, "cat-file", "--batch", input_data=b"\n".join(oids) + b"\n").stdout
+        offset = 0
+        for oid in oids:
+            end = raw.find(b"\n", offset)
+            header = raw[offset:end].split()
+            if end < 0 or len(header) != 3 or header[:2] != [oid, b"blob"]:
+                raise Stop("Cannot verify published map task ownership. Local checkpoint retained.")
+            size = int(header[2])
+            rows.append(json.loads(raw[end + 1:end + 1 + size]))
+            offset = end + size + 2
+        if offset != len(raw):
+            raise Stop("Cannot verify published map task ownership. Local checkpoint retained.")
+
+    canonical = {"research/registry.json", "map/coverage.json", "map/integration.json",
+                 "map/graph-v2.json", "map/planned-tasks.json", "map/README.md"}
+    canonical.update(row["definition"]["registry"] for row in rows)
+    lead_files, task_files = [], []
+    for name in outgoing:
+        archive_output = re.fullmatch(r"archives/[^/]+(?:/subarchives/[^/]+)*/map/(.+)", name)
+        if name in canonical or (archive_output and archive_output[1] == "graph-v2.json"):
+            lead_files.append(name)
+            continue
+        scopes = [row for row in rows
+                  if any(name == path or name.startswith(path + "/")
+                         for path in row["definition"]["write_paths"])]
+        if scopes or name.startswith("map/") or archive_output:
+            owners = {row.get("owner") for row in scopes if row["state"] in {"claimed", "blocked"}}
+            task_files.append((name, owners))
+    if not lead_files and not task_files:
+        return
+
+    actor, instance = config("wcg.actor"), config("wcg.instance")
+    if not re.fullmatch(r"Boss[1-9][0-9]*", actor) or not re.fullmatch(r"[0-9a-f]{32}", instance):
+        raise Stop("Start the registered map conversation before publishing map outputs.")
+    registered = git(repo, "show", remote_tip + ":" + home + "/people/" + actor + ".json", check=False)
+    if registered.returncode or json.loads(registered.stdout).get("instance") != instance:
+        raise Stop("This conversation no longer matches the published map identity. Local checkpoint retained.")
+    if lead_files:
+        result = git(repo, "show", remote_tip + ":" + home + "/lead.json", check=False)
+        lead = {} if result.returncode else json.loads(result.stdout)
+        if (lead.get("state"), lead.get("owner"), lead.get("instance")) != ("claimed", actor, instance):
+            raise Stop("Only the current map lead may publish: " + ", ".join(lead_files) +
+                       ". Local checkpoint retained.")
+    denied = [name for name, owners in task_files if owners != {actor}]
+    if denied:
+        raise Stop("Published map task scope is not currently owned by " + actor + ": " +
+                   ", ".join(denied) + ". Local checkpoint retained.")
 
 
 def describe_assets(repo, directory, commit, files, branch="main"):
@@ -340,6 +412,7 @@ def locked_save(repo, common, cache, args):
         result["assets"] = describe_assets(repo, record_dir, head, result["files"], branch)
         result["checked_head"] = head
         receipt.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
+        audit_map_write_scope(repo, baseline, outgoing)
         pushed = git(repo, "push", "--quiet", "origin", head + ":" + ref, check=False)
         fetched = git(repo, "fetch", "--quiet", "--no-tags", "--no-write-fetch-head",
                       "origin", "+" + ref + ":" + private, check=False)

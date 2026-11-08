@@ -332,6 +332,98 @@ def prepare_inputs(root, output, scope='repository', coverage_note=None, paths=N
     return registration.prepare_inputs(root, output, scope, coverage_note.strip(), paths=paths)
 
 
+def _map_queue_snapshot(root):
+    """Read the live bound queue, or an explicitly identified Git snapshot."""
+    root = Path(root).resolve()
+    top = subprocess.run(['git', 'rev-parse', '--show-toplevel'], cwd=root,
+                         capture_output=True, text=True)
+    if top.returncode or Path(top.stdout.strip()).resolve() != root:
+        return [], {'source': 'not-a-published-queue-snapshot'}
+    import coordination
+
+    bound_run = coordination.config(root, 'wcg.workflowRun')
+    role = coordination.config(root, 'wcg.role')
+    if bound_run and role == 'mapper':
+        import map_tasks
+
+        with map_tasks.latest(root, 'map') as (snapshot, ctx):
+            tip = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=snapshot, text=True).strip()
+            return map_tasks.listing(snapshot, ctx=ctx), {
+                'source': 'latest-published-workflow', 'tip': tip, 'workflow_run': bound_run}
+
+    branch = coordination.config(root, 'wcg.branch') or subprocess.check_output(
+        ['git', 'branch', '--show-current'], cwd=root, text=True).strip()
+    for revision in ['refs/remotes/origin/' + branch, 'HEAD']:
+        tip = subprocess.run(['git', 'rev-parse', '--verify', revision], cwd=root, capture_output=True, text=True)
+        if not tip.returncode:
+            break
+    if tip.returncode:
+        return [], {'source': 'not-a-published-queue-snapshot'}
+    commit = tip.stdout.strip()
+    prefix = 'research/operations/map-v2/tasks/'
+    names = subprocess.run(['git', 'ls-tree', '-r', '--name-only', '-z', commit, '--', prefix],
+                           cwd=root, capture_output=True)
+    if names.returncode:
+        raise ValueError('Could not read map task names from ' + revision)
+    rows = []
+    for name in names.stdout.decode('utf-8').split('\0'):
+        if name.endswith('.json'):
+            saved = subprocess.run(['git', 'show', commit + ':' + name], cwd=root, capture_output=True)
+            if saved.returncode:
+                raise ValueError('Could not read published map task: ' + name)
+            rows.append(json.loads(saved.stdout))
+    return rows, {'source': revision, 'tip': commit, 'workflow_run': 'map-v2'}
+
+
+def _effective_map_done(rows):
+    done = [row for row in rows if row['state'] == 'done']
+    replaced = {task_id for row in done for task_id in row['definition'].get('supersedes', [])}
+    return {row['definition']['task_id']: row for row in done
+            if row['definition']['task_id'] not in replaced}
+
+
+def _map_inputs_current(definition, current_pins):
+    ids = definition['object_ids'] + definition.get('read_object_ids', [])
+    try:
+        expected = {oid: current_pins[oid] for oid in ids}
+    except KeyError:
+        return False
+    return definition.get('input_pins') == expected
+
+
+def _map_queue_final_check(root, registry, data, objects, review):
+    rows, snapshot = _map_queue_snapshot(root)
+    if not rows:
+        if snapshot.get('source') == 'latest-published-workflow':
+            raise ValueError('Publish and complete the map task queue before final verification')
+        return
+    active = [row['definition']['task_id'] for row in rows if row['state'] not in {'done', 'withdrawn'}]
+    if active:
+        raise ValueError('Published map queue still has unfinished tasks: ' + ', '.join(active))
+    done = _effective_map_done(rows)
+    expected = {task_id: pin(row['receipt']) for task_id, row in done.items()}
+    if review.get('task_receipt_pins', {}) != expected:
+        raise ValueError('Completed map receipts differ from the assembled integration; sync and map assemble again')
+    current_pins = {oid: pin(obj) for oid, obj in objects.items()}
+    edge_files = set(data.get('edge_files', []))
+    for task_id, row in done.items():
+        definition = row['definition']
+        if definition['registry'] != registry or not _map_inputs_current(definition, current_pins):
+            raise ValueError('Published map receipt has stale inputs; repair task ' + task_id)
+        receipt = row['receipt']
+        if any(c['state'] == 'needs-decision' for c in receipt['coverage'].values()):
+            raise ValueError('Published map receipt has unresolved coverage; repair task ' + task_id)
+        for asset in receipt['assets']:
+            contents = ref_bytes(root, asset)
+            if asset['path'].endswith('.json'):
+                try:
+                    output = json.loads(contents)
+                except (ValueError, UnicodeError):
+                    continue
+                if isinstance(output, dict) and 'edge_id' in output and asset['path'] not in edge_files:
+                    raise ValueError('Published map edge is missing from the integration: ' + asset['path'])
+
+
 def check(root, registry=REGISTRY, final=False):
     data, objects = load(root, registry)
     relations = edges(root, data, objects)
@@ -344,7 +436,8 @@ def check(root, registry=REGISTRY, final=False):
         registration_check(root, registry, final=True)
         coverage = json.loads(_safe_path(root, 'map/coverage.json').read_text())
         validate_coverage(coverage, objects, relations)
-        integration_check(root, data, objects, relations)
+        review = integration_check(root, data, objects, relations)
+        _map_queue_final_check(root, registry, data, objects, review)
     return {'status': 'structure-valid-not-a-mathematical-verdict', 'objects': len(objects), 'edges': len(relations),
             'unregistered_materials': len(missing), 'pending_materials': len(pending), 'final_coverage': not missing and not pending}
 
@@ -388,6 +481,7 @@ def integration_check(root, data, objects, relations):
     for row in [*review['archive_reviews'].values(), review.get('cross_archive_review', {})]:
         nonempty(row, ['comparison_scope', 'outcome'])
         if row.get('unresolved') != []: raise ValueError('Integration still has unresolved relationship decisions')
+    return review
 
 
 def build(root, registry=REGISTRY, final=False):
@@ -819,6 +913,94 @@ def resume(root, run_id):
             'publication':'Local HEAD is not remote confirmation; checkpoint and verify pushed separately.'}
 
 
+def _map_repair_reasons(row, current_pins):
+    reasons = []
+    if not _map_inputs_current(row['definition'], current_pins):
+        reasons.append('changed-registration-input')
+    if any(value['state'] == 'needs-decision' for value in row['receipt']['coverage'].values()):
+        reasons.append('needs-decision')
+    return reasons
+
+
+def draft_map_repairs(root, task_ids, output, registry, task_prefix, context_options=None):
+    """Reframe whole surviving cores of specific done tasks without discarding history."""
+    import registration
+
+    root = Path(root).resolve()
+    identity(task_prefix)
+    data, objects = load(root, registry, verify=False)
+    rows, snapshot = _map_queue_snapshot(root)
+    done = _effective_map_done(rows)
+    occupied = {row['definition']['task_id'] for row in rows}
+    active_targets = {old_id for row in rows if row['state'] not in {'done', 'withdrawn'}
+                      for old_id in row['definition'].get('supersedes', [])}
+    current_pins = {oid: pin(obj) for oid, obj in objects.items()}
+    retired = data.get('retired_objects', {})
+    canonical_assets = set(data.get('edge_files', []))
+    budget = registration.context_budget(**(context_options or {}))
+    tasks = []
+    for old_id in dict.fromkeys(task_ids):
+        identity(old_id)
+        if old_id not in done or done[old_id]['definition']['registry'] != registry:
+            raise ValueError('Repair requires an effective published done task for this registry: ' + old_id)
+        if old_id in active_targets:
+            raise ValueError('A repair is already in the queue; resume it or withdraw a stale replacement: ' + old_id)
+        old = done[old_id]
+        definition = old['definition']
+        old_core = definition['object_ids']
+        removed = [oid for oid in old_core if oid not in objects]
+        if any(not isinstance(retired.get(oid), str) or not retired[oid].strip() for oid in removed):
+            raise ValueError('Repair requires explicit registry retirement for missing core IDs: ' + old_id)
+        core = [oid for oid in old_core if oid in objects]
+        reads = [oid for oid in definition.get('read_object_ids', []) if oid in objects] if core else []
+        inputs = {oid: current_pins[oid] for oid in core + reads}
+        task_id = identity(task_prefix + '-repair-' + pin({'supersedes': old_id, 'registry': registry,
+                                                            'inputs': inputs})[:16])
+        stem = task_id
+        revision = 1
+        while task_id in occupied:
+            revision += 1
+            task_id = identity(stem + '-' + str(revision))
+        assets = old['receipt']['assets']
+        write_paths = ['map/edges/' + task_id, 'map/receipts/' + task_id + '.json']
+        if core:
+            # A previous noncanonical edge can only be retained if the new
+            # task reserves its exact path. Preserve its required old SHA.
+            write_paths.extend(ref['path'] for ref in assets if ref['path'] not in canonical_assets)
+        payload = [objects[oid] for oid in core + reads]
+        refs = [ref for obj in payload for ref in [obj['body'], *obj['evidence']]]
+        reading_refs = list({json.dumps(ref, sort_keys=True): ref for ref in refs}.values())
+        reading = registration.reading_cost(root, reading_refs, metadata=payload, model=budget['model'])
+        reading['task_overhead_tokens'] = 32 * len(payload)
+        reading['estimated_tokens'] += reading['task_overhead_tokens']
+        read_changed = any(definition['input_pins'].get(oid) != current_pins.get(oid)
+                           for oid in definition.get('read_object_ids', []))
+        recheck = [oid for oid in core if read_changed
+                   or old['receipt']['coverage'][oid]['state'] == 'needs-decision'
+                   or definition['input_pins'].get(oid) != current_pins[oid]]
+        tasks.append({'task_id': task_id, 'stage': definition['stage'], 'registry': registry,
+                      'supersedes': [old_id], 'object_ids': core, 'read_object_ids': reads,
+                      'input_pins': inputs, 'write_paths': list(dict.fromkeys(write_paths)),
+                      'goal': 'Resolve the changed inputs or unanswered comparison in ' + old_id
+                              + '; reuse still valid coverage, and explicitly dispose each prior asset.',
+                      'context_plan': {'budget': budget, 'reading': reading,
+                                       'reading_refs': reading_refs,
+                                       'oversized': reading['estimated_tokens'] > budget['reading_tokens'],
+                                       'requires_export': bool(reading['unmeasured_refs']),
+                                       'prior_assets': assets, 'retired_core_object_ids': removed,
+                                       'recheck_core_object_ids': recheck,
+                                       'repair_reasons': _map_repair_reasons(old, current_pins),
+                                       'note': 'Read the previous task and receipt. Carry forward valid work. '
+                                               'If needed, read the same scope in ordered passes. '
+                                               'A retirement-only task lists no coverage or new assets.'}})
+    _write_json(_safe_path(root, output), tasks)
+    return {'status': 'map-repairs-draft-local-not-pushed', 'path': output,
+            'tasks': len(tasks), 'core_objects': sum(len(t['object_ids']) for t in tasks),
+            'queue_snapshot': snapshot,
+            'instruction': 'Review the complete surviving scope and prior assets, then map plan. '
+                           'Receipt supersession must list retained/replaced/retired for each old asset.'}
+
+
 def draft_map_tasks(root, output='map/planned-tasks.json', registry=REGISTRY,
                     stage='3A', object_ids=None, task_prefix='map',
                     context_options=None, max_objects=None):
@@ -849,66 +1031,32 @@ def draft_map_tasks(root, output='map/planned-tasks.json', registry=REGISTRY,
     measure_text = lambda text: registration.text_cost(text, budget['model'])
     queue_snapshot = {'source': 'not-a-published-queue-snapshot', 'skipped_current_core_objects': 0}
     if stage == '3A' and object_ids is None:
-        # Planning is not claiming. A bound mapper reads the current lightweight
-        # remote queue, not a potentially old origin tracking ref or a local
-        # task-shaped draft. Standalone tools have no workflow authentication
-        # binding and explicitly report their tracking-snapshot fallback.
-        import coordination
-        top = subprocess.run(['git', 'rev-parse', '--show-toplevel'], cwd=root,
-                             capture_output=True, text=True)
-        if not top.returncode and Path(top.stdout.strip()).resolve() == root:
-            bound_run = coordination.config(root, 'wcg.workflowRun')
-            run = bound_run or 'map-v2'
-            config_path = _safe_path(root, 'research/operations/' + identity(run) + '/run.json')
-            bound_mapper = bool(bound_run and config_path.exists()
-                                and json.loads(config_path.read_text()).get('phase') == 'map')
-            if not bound_mapper:
-                run = 'map-v2'
-            rows, snapshot_source, snapshot_tip = [], None, None
-            if bound_mapper:
-                import map_tasks
-                with map_tasks.latest(root, 'map') as (snapshot, ctx):
-                    rows = map_tasks.listing(snapshot, ctx=ctx)
-                    snapshot_tip = subprocess.check_output(['git', 'rev-parse', 'HEAD'],
-                                                           cwd=snapshot, text=True).strip()
-                snapshot_source = 'latest-published-workflow'
-            else:
-                branch = coordination.config(root, 'wcg.branch') or subprocess.run(
-                    ['git', 'branch', '--show-current'], cwd=root, capture_output=True, text=True).stdout.strip()
-                tracking = 'refs/remotes/origin/' + branch
-                tip = subprocess.run(['git', 'rev-parse', '--verify', tracking], cwd=root,
-                                     capture_output=True, text=True)
-                if not tip.returncode:
-                    snapshot_tip, snapshot_source = tip.stdout.strip(), tracking
-                    prefix = 'research/operations/' + run + '/tasks/'
-                    names = subprocess.run(['git', 'ls-tree', '-r', '--name-only', '-z',
-                                            snapshot_tip, '--', prefix], cwd=root, capture_output=True)
-                    for name in names.stdout.decode('utf-8').split('\0'):
-                        if not name.endswith('.json'):
-                            continue
-                        saved = subprocess.run(['git', 'show', snapshot_tip + ':' + name],
-                                               cwd=root, capture_output=True)
-                        if not saved.returncode:
-                            rows.append(json.loads(saved.stdout))
-            if snapshot_source:
-                already = set()
-                for row in rows:
-                    definition = row.get('definition', {})
-                    inputs = definition.get('input_pins', {})
-                    if (row.get('state') in {'available', 'claimed', 'blocked', 'done', 'handoff'}
-                            and definition.get('stage') == stage and definition.get('registry') == registry
-                            and inputs and all(oid in objects and pin(objects[oid]) == value
-                                               for oid, value in inputs.items())):
-                        already.update(definition.get('object_ids', []))
-                selected = [oid for oid in selected if oid not in already]
-                queue_snapshot = {'source': snapshot_source, 'tip': snapshot_tip, 'workflow_run': run,
-                                  'skipped_current_core_objects': len(already & objects.keys()),
-                                  'note': 'These cores belong to published current-input tasks; explicit object frontiers request deliberate recomparison. Bound workflows use the fresh remote queue; standalone fallback uses the reported tracking snapshot.'}
+        rows, queue_snapshot = _map_queue_snapshot(root)
+        rows = [row for row in rows if row['definition'].get('registry') == registry]
+        done = _effective_map_done(rows)
+        active = [row['definition'] for row in rows if row['state'] not in {'done', 'withdrawn'}]
+        active_targets = {task_id for definition in active for task_id in definition.get('supersedes', [])}
+        current_pins = {oid: pin(obj) for oid, obj in objects.items()}
+        repairs = {task_id: reasons for task_id, row in done.items()
+                   if (reasons := _map_repair_reasons(row, current_pins))}
+        reserved = {oid for definition in active for oid in definition['object_ids']}
+        reserved.update(oid for task_id, row in done.items() for oid in row['definition']['object_ids']
+                        if row['definition']['stage'] == stage or task_id in repairs)
+        selected = [oid for oid in selected if oid not in reserved]
+        queue_snapshot.update(skipped_current_core_objects=len(reserved & objects.keys()),
+                              repair_task_ids=sorted(repairs.keys() - active_targets),
+                              repair_in_progress_task_ids=sorted(repairs.keys() & active_targets),
+                              stale_active_task_ids=sorted(d['task_id'] for d in active
+                                                           if not _map_inputs_current(d, current_pins)),
+                              note='Published cores are reserved. Use --repair-task for changed inputs or '
+                                   'unresolved done coverage. Hand off and reframe stale active work.')
     if not selected:
         _write_json(_safe_path(root, output), [])
-        return {'status': 'no-new-map-tasks', 'path': output, 'tasks': 0, 'core_objects': 0,
+        return {'status': 'map-repairs-needed' if queue_snapshot.get('repair_task_ids') else 'no-new-map-tasks',
+                'path': output, 'tasks': 0, 'core_objects': 0,
                 'queue_snapshot': queue_snapshot,
-                'instruction': 'Resume the published queue or finish integration; do not map plan an empty task array.'}
+                'instruction': 'Resume the published queue, draft --repair-task for listed IDs, or finish '
+                               'integration; do not map plan an empty task array.'}
     cache, units, refs_for, neighbors = {}, {}, {}, {}
     body_owners = {}
     for oid, obj in objects.items():
@@ -1226,6 +1374,7 @@ def main(argv=None):
     q.add_argument('--stage', choices=['3A', '3B', '3C'], default='3A')
     q.add_argument('--object-id', action='append')
     q.add_argument('--objects-file')
+    q.add_argument('--repair-task', action='append', help='Replace this effective done task on current inputs')
     q.add_argument('--task-prefix', default='map')
     q.add_argument('--max-objects', type=int)
     reading_options(q)
@@ -1246,7 +1395,7 @@ def main(argv=None):
     q = sub.add_parser('context'); q.add_argument('ids', nargs='+'); q.add_argument('--hops', type=int, default=0)
     q.add_argument('--edge', action='append'); q.add_argument('--edge-status', action='append', choices=['accepted','proposed','rejected'])
     q.add_argument('--relation-kind', action='append', choices=sorted(LOGICAL|CONTEXT))
-    q = sub.add_parser('edge-bind'); q.add_argument('edge_file')
+    q = sub.add_parser('edge-bind'); q.add_argument('edge_file'); q.add_argument('--write', action='store_true')
     q = sub.add_parser('edge-check'); q.add_argument('edge_file')
     q = sub.add_parser('packet'); q.add_argument('spec'); q.add_argument('--profile', choices=['obstacle', 'full'], required=True)
     q = sub.add_parser('init'); q.add_argument('run_id'); q.add_argument('--spec', required=True)
@@ -1279,9 +1428,15 @@ def main(argv=None):
             if isinstance(selected, dict): selected = selected.get('object_ids')
             strings(selected, 'selected object IDs', True)
             ids = list(dict.fromkeys([*(ids or []), *selected]))
-        result = draft_map_tasks(root, output=a.output, registry=a.registry,
-            stage=a.stage, object_ids=ids, task_prefix=a.task_prefix,
-            context_options=reading_plan(a), max_objects=a.max_objects)
+        if a.repair_task:
+            if ids or a.max_objects is not None:
+                raise ValueError('Repair uses the complete surviving scope of the named task; omit object selection and limits')
+            result = draft_map_repairs(root, a.repair_task, a.output, a.registry, a.task_prefix,
+                                       context_options=reading_plan(a))
+        else:
+            result = draft_map_tasks(root, output=a.output, registry=a.registry,
+                stage=a.stage, object_ids=ids, task_prefix=a.task_prefix,
+                context_options=reading_plan(a), max_objects=a.max_objects)
     elif a.command in {'freeze', 'compose', 'registration-check', 'assignments-draft', 'assignments-check', 'new-id'}:
         import registration
         if a.command == 'freeze': result = registration.freeze(root, a.inputs_file, a.out)
@@ -1303,9 +1458,13 @@ def main(argv=None):
         result = context(root,a.ids,a.registry,a.hops,edge_ids=a.edge,edge_statuses=a.edge_status,relation_kinds=a.relation_kind)
     elif a.command == 'edge-bind':
         _, objs = load(root,a.registry,verify=False)
-        edge = json.loads(_safe_path(root,a.edge_file).read_text())
+        path = _safe_path(root,a.edge_file)
+        edge = json.loads(path.read_text())
         verify_endpoints(root,edge,objs)
         result = edge_bindings(root,edge,objs)
+        if a.write:
+            edge.update(result)
+            _write_json(path, edge)
     elif a.command == 'edge-check': result = check_edge(root, a.edge_file, a.registry)
     elif a.command == 'packet': result = packet(root, json.loads(_safe_path(root, a.spec).read_text()), a.profile, a.registry)
     elif a.command == 'init': result = init_run(root, a.run_id, a.spec, a.registry)

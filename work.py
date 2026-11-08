@@ -702,11 +702,12 @@ def main():
     repo = checked_repo(a.repo)
     if a.command == 'research':
         registry = ['--registry', a.registry] if a.registry else []
-        # Bound planners read the latest shared task metadata to avoid
-        # duplicating batches assigned by another clone. Other local reading
-        # commands, and help, do not need authentication.
+        # Bound planners and map final checks read the latest shared queue.
+        # Local reads and help do not need authentication.
         planner = a.args and a.args[0] in {'batches-draft', 'map-draft'}
-        workflow = run(repo, 'config', '--local', '--get', 'wcg.workflowRun', check=False).stdout.decode().strip() if planner else ''
+        map_final = (a.args and a.args[0] in {'check', 'build'} and '--final' in a.args
+                     and run(repo, 'config', '--local', '--get', 'wcg.role', check=False).stdout.decode().strip() == 'mapper')
+        workflow = run(repo, 'config', '--local', '--get', 'wcg.workflowRun', check=False).stdout.decode().strip() if planner or map_final else ''
         env = auth(repo, a) if workflow and not any(x in a.args for x in ('-h', '--help')) else None
         return subprocess.call([sys.executable, str(repo / TOOLS / 'research_runtime.py'), '--repo', str(repo), *registry, *a.args], env=env)
     if a.command == 'compute':
