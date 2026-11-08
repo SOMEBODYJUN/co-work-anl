@@ -156,11 +156,94 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss3",
-  "request_id": "e5e1920b697a40a2b7a4c54df9321282",
+  "request_id": "1ee326ecea664ecbb6a777d229b7e582",
   "requests": {
     "11923b0ee0bd402ea98c18ed7a906446": "plan",
-    "e5e1920b697a40a2b7a4c54df9321282": "claim"
+    "e5e1920b697a40a2b7a4c54df9321282": "claim",
+    "1ee326ecea664ecbb6a777d229b7e582": "done"
+  },
+  "edge_paths": {
+    "equal-theta-exact-witnesses-checks-ledger-candidate": "map/edges/matroid-structures-boss3-3a-c253949e96d23bfb/equal-theta-exact-witnesses-checks-ledger-candidate.json",
+    "equal-theta-independent-audit-checks-exact-report": "map/edges/matroid-structures-boss3-3a-c253949e96d23bfb/equal-theta-independent-audit-checks-exact-report.json",
+    "exchange-distance-audit-checks-source-review": "map/edges/matroid-structures-boss3-3a-c253949e96d23bfb/exchange-distance-audit-checks-source-review.json",
+    "exchange-distance-source-review-sourced-from-ledger": "map/edges/matroid-structures-boss3-3a-c253949e96d23bfb/exchange-distance-source-review-sourced-from-ledger.json"
+  },
+  "receipt": {
+    "coverage": {
+      "matroid-structures/exchange-distance-exhaustive-five-element-audit": {
+        "state": "isolated-after-review",
+        "object_pin": "201f34659513fef441e88a1f60ea5f02043bdbf45ea80c0ace28042d731a7b70",
+        "comparison_scope": "完整阅读五元以内公共基交换距离审计与退役来源审查；逐项比较 n=0,…,5 的抽象拟阵、完整可行单交换弧、可达有序对、dist≤k−g+3 检查及两文统计/应用边界。",
+        "reason": "审计复现 source-review 所依赖的有限统计和距离语义，但不证明 n>5、删弧子图、一般距离界或 PNE/PoA 应用；保留 checks 语境边。"
+      },
+      "matroid-structures/retired-matroid-exchange-distance-source-review": {
+        "state": "isolated-after-review",
+        "object_pin": "6586927b964d821d1a8f10162c38241e10af569d623542660bc71e75f8c0565b",
+        "comparison_scope": "完整阅读退役交换距离来源审查、有限审计和交换距离/theta ledger 接口；核对前向闭包、反向秩稳定重构、有限审计 provenance 及拥塞/PNE/PoA 未闭合边界。",
+        "reason": "source-review 对 ledger 的交换距离子接口补充 provenance 与应用边界，并由 n≤5 审计检查有限统计；不新增一般距离定理，分别保 sourced_from 与 checks 语境边。"
+      },
+      "matroid-structures/equal-theta-exact-witnesses-and-floating-concave-envelope-report": {
+        "state": "isolated-after-review",
+        "object_pin": "0b8748be9d4e89dc7c91a526c7b6a4b437bb45132dec2faefaa03f774a7ca4b0",
+        "comparison_scope": "完整阅读等长 theta 精确见证/浮点凹包报告、theta ledger 接口及独立 Fraction/LP 核验；比较六行候选 ratio、support s、active q、916 子集秩与168次 LP 的有限范围。",
+        "reason": "报告给 ledger 候选公式的有限精确上界见证；独立审计在六个小实例复现报告字段。两者都不承担全参数下界、argmin 分类或不等长路径证明，故仅 checks 语境边。"
+      },
+      "matroid-structures/equal-theta-independent-correlation-gap-audit": {
+        "state": "isolated-after-review",
+        "object_pin": "f5bd75453ca395a90df63c01f5275cea6a1edcdf5937e1fb9f82fed2a700301f",
+        "comparison_scope": "完整阅读并核对独立 equal_theta_independent.py 的 union-find、Fraction 候选比值和28样本凹延拓 LP，与精确见证报告的六个(k,length)实例逐项对照。",
+        "reason": "独立程序复现报告的六行候选值、支持路径和 active 参数，并记录浮点误差；有限核验不升级为全参数相关间隙定理，保 checks 语境。"
+      },
+      "matroid-structures/exchange-distance-and-equal-theta-ledger-interfaces": {
+        "state": "isolated-after-review",
+        "object_pin": "920b41fc14c0b9f107e95bc9f6f0fbaf1b459a0f633464c82d101c130806f16d",
+        "comparison_scope": "完整阅读 ledger 的交换距离与等长 theta 两半、退役来源审查和精确见证报告；确认来源审查仅承载距离子接口 provenance，theta 报告只检查有限候选上界。",
+        "reason": "ledger 是两个候选接口的承载记录；当前实读只核实距离来源边界与 theta 有限见证/审计，不把共存或有限数值升级为跨组件逻辑推导。"
+      },
+      "matroid-structures/combinatorial-submodular-k2k-numerical-probe-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "0c74e453dc492608179dd2dd8300dc319bc28cdbec9d704c0aedbe55de3fd47a",
+        "comparison_scope": "完整阅读 k=2..16 SLSQP 探针、k≤4 显式 rank enumeration 及浮点误差边界，并与本包交换距离/theta 对象比较。",
+        "reason": "该对象只有有限数值证据，未提供可与本包其它对象保持模型、量词和目标的逻辑映射；不把探针或有限 rank 检查冒作全局次模/拟阵定理。"
+      },
+      "matroid-structures/goemans-and-even-delta-matroid-literature-scope": {
+        "state": "isolated-after-review",
+        "object_pin": "039592b2eb49605440b8e7134ca8a32bf0c7927a78b76b51b94375ed55ac243c",
+        "comparison_scope": "完整阅读两份拟阵/ even Δ-matroid 文献范围记录及本包对象的模型与目标；比较其定义、算法和表示是否给出当前交换距离或 theta 候选的直接桥。",
+        "reason": "文献对象明确是来源语境和适用边界，不承载本仓库的新定理或当前对象的完整量词；未找到可接受的端点映射，保孤立。"
+      },
+      "matroid-structures/cost-preserving-chernoff-corollary-audit-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "ec5ec3b27681b7b464b8158ee28ae6268b2fcbc5e789f59d57eb7f3ce835d734",
+        "comparison_scope": "完整阅读成本保留 Chernoff 舍入推论审查及其四项技术门，并与本包有限交换距离、theta 和投影对象比较。",
+        "reason": "该审查仍是待 oracle 核验的标准推论候选，没有与本包端点相同的成本、量词或目标映射；有限审查不形成逻辑超边。"
+      },
+      "matroid-structures/centered-face-independent-projection-finite-audit": {
+        "state": "isolated-after-review",
+        "object_pin": "50a4757c3bf57248d6387ef61305ce01c8b43b5e842be79a1fa9227925c8178c",
+        "comparison_scope": "完整阅读中心面独立投影有限审计的冻结模型、有限对象和反例种子，并与其它交换距离/theta 对象逐项比较。",
+        "reason": "该对象只保留有限精确反例/审计范围，没有可迁移到本包其它目标的普遍命题或量词保持；不将有限计算升级为逻辑支持。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/matroid-structures-boss3-3a-c253949e96d23bfb/equal-theta-exact-witnesses-checks-ledger-candidate.json",
+        "sha256": "75d1e60ff89cc10d248658c25ea614839e4604ef6d1807f6604f625aefb4e30a"
+      },
+      {
+        "path": "map/edges/matroid-structures-boss3-3a-c253949e96d23bfb/equal-theta-independent-audit-checks-exact-report.json",
+        "sha256": "2a765519849e88654a4f8b4cdd5c67342a1b318b5afaaad602d1c74e78d34020"
+      },
+      {
+        "path": "map/edges/matroid-structures-boss3-3a-c253949e96d23bfb/exchange-distance-audit-checks-source-review.json",
+        "sha256": "33bca663c6af6ab19a73a29b51df0d71db4afa115034b22361407dc0e4f0e9e7"
+      },
+      {
+        "path": "map/edges/matroid-structures-boss3-3a-c253949e96d23bfb/exchange-distance-source-review-sourced-from-ledger.json",
+        "sha256": "3b5bd45a530e57ab3a4666bf1eb62b5becdaeabe74a80145388e4fb0c895056a"
+      }
+    ]
   }
 }
