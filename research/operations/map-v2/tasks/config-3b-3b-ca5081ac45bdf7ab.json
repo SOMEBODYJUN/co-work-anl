@@ -121,12 +121,53 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss2",
-  "request_id": "1e422580ddce4031979aa055645857ea",
+  "request_id": "0710d08bce214488836ffaef4a18df7e",
   "requests": {
     "8070aa340a644d178e1e63018f477c64": "plan",
     "5ed62578b49d462caac7ca1aafa2b34b": "claim",
-    "1e422580ddce4031979aa055645857ea": "read-add"
+    "1e422580ddce4031979aa055645857ea": "read-add",
+    "0710d08bce214488836ffaef4a18df7e": "done"
+  },
+  "edge_paths": {
+    "config-3b-equal-cost-rounding-to-assignment": "map/edges/config-3b-3b-ca5081ac45bdf7ab/equal-cost-transfer.json"
+  },
+  "receipt": {
+    "coverage": {
+      "M-6436d85fd0ed43b38ed3f095a89b326e": {
+        "state": "linked",
+        "object_pin": "308383cc1a8b89b886baf0547670edcb92b40b857b691ba988eaa4f35e1501b3",
+        "comparison_scope": "已读 M-6436 的完整登记正文及等价证明；比较共同 c>0 时 floor(B/c) 截断 partition matroid、c=0 分支和一般 bin matroid 平行副本表示，并与 M-81 的同 bin/保成本交换逐项对照。另读 M-9ad0 的自然 LP 缺 floor 精确反例。",
+        "reason": "边 config-3b-equal-cost-rounding-to-assignment 使用该表示确认整数 budget 的精确截断条件，同时明确一般 matroid 激活只得到整数表示，未得到当前算法的舍入保持。",
+        "edge_ids": [
+          "config-3b-equal-cost-rounding-to-assignment"
+        ]
+      },
+      "M-81da430ecf2846f59fb645a08763dab4": {
+        "state": "linked",
+        "object_pin": "d20161ada731b6e82e89c27bc3c7a7374674b950d21e0cad9a1be961e2d22ce3",
+        "comparison_scope": "已读算法正文的输入合同、item 边际 layer-cake、同 bin 交换、保成本交换、精确实现和等成本强界修复合同；核对显式有限支持、每 bin ≤1、每 item marginal ≤1、共同成本、floor 截断、c=0 与一般成本半损失边界。",
+        "reason": "边把 M-81 的等成本 1−1/e 舍入解释为配置层保证，并经下闭去重转回原硬预算指派；自然预算未加 floor 时不纳入保证。",
+        "edge_ids": [
+          "config-3b-equal-cost-rounding-to-assignment"
+        ]
+      },
+      "M-f63f6d1bd7fc41b2a4eb5f90492a24b1": {
+        "state": "linked",
+        "object_pin": "7e5c05f0fcd538aa08977e0029cf019d71d0258ce25308b5958911fac9e9167b",
+        "comparison_scope": "已读下闭局部指派与最大值覆盖整数等价全文及交叉审查证据；核对逐 item 留最高利润、下闭删除冲突、非负利润、每 bin 单配置、预算/激活独立性保持及仅整数等价范围。",
+        "reason": "作为目标映射，M-f63 将舍入配置集的 g 值转成同值原整数指派；同时保留其对自然分数预算不属于截断 matroid、多项式隐式 pricing 未被提供的限制。",
+        "edge_ids": [
+          "config-3b-equal-cost-rounding-to-assignment"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/config-3b-3b-ca5081ac45bdf7ab/equal-cost-transfer.json",
+        "sha256": "4e099561525441d4c9d0809e85a3b7191ed2dfed319b0d40beec46f380740594"
+      }
+    ]
   }
 }
