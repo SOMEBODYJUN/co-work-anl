@@ -5985,6 +5985,42 @@
       ]
     },
     {
+      "object_id": "CA-PREFIX-BALANCE-NO",
+      "version": 1,
+      "title": "每个n≥4都有完整SPE使真实首步总覆盖补全余额为负",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空共同带标签目录及任意覆盖映射；单位权提供者依次观察全部有序历史各选一次，客户在所有覆盖者间均分。完整纯SPE在全部合法有序节点按同一原策略真实续局满足单步偏离IC；允许空主题、同覆盖异标签、重复行动及任意历史依赖平局。",
+      "statement": "令F_r(C)=max_{T_1,…,T_r}|C∪T_1∪…∪T_r|，B_t=Σ_{i≤t}u_i+F_{n−t}(C_t)−OPT_n。每个整数n≥4，正文的A,B,L_1,…,L_n单位客户族及全部有序历史策略为完整纯SPE，actual=(A,B^{n−1})，u_1=n−1/n、W=n²−2、OPT_n=2n²−2n−2、F_{n−1}(A)=2(n−1)²，故B_1=4−n−1/n<0；但2W−OPT_n=2(n−1)>0。",
+      "quantifiers": "对每个整数n≥4存在给定有限目录、单位客户输入与明示完整有序历史纯SPE；反驳全实例/全SPE/全actual前缀B_t≥0。",
+      "assumptions": [
+        "F_r(C)为总覆盖补全，非合法背景剩余利润F_r(b)。",
+        "策略在非末位按是否全B/是否已有A或叶动作分类，末位以真实份额最大化并固定B,A,L_1,…,L_n平局优先序。"
+      ],
+      "scope": "只否真实首步/逐前缀总覆盖余额不变量；不否half、实际根总税、总路径可跨步补偿预算，亦不同于最优全前缀插入账单UP。",
+      "objections": "解析证明覆盖全部有序历史，有限n4…8回放不是普遍结论的依据。固定n4证书独有259字面动作及两独立枚举，保作证据。使用正文legacy CA-PREFIX-BALANCE-NO，未将不同命题R22-OPTIMAL-PREFIX-BILL-UP-NO-v1吞并。",
+      "body": {
+        "path": "archives/customer-attraction/state/反例/任意人数首步补全余额--反例.md",
+        "sha256": "b42e57e311686c2d737d6ade6642efaa05caa28dded02c9cf035ef0ed9c70072"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/四人首步余额完整策略证书--计算.md",
+          "sha256": "60616835c921d4c336019b9f5e107980ac35db330d9c78c3244057327a0e7a9c"
+        }
+      ],
+      "sources": [
+        "canonical:archives/customer-attraction/state/反例/任意人数首步补全余额--反例.md",
+        "legacy:CA-PREFIX-BALANCE-NO",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/prefix_balance_family.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/prefix_balance_counterexample.md"
+      ]
+    },
+    {
       "object_id": "CA-PRESCRIBED-STATIC-KERNELS-NO/empirical-iid",
       "version": 1,
       "title": "实际终局经验独立核不能按W除以n减半封顶",
@@ -9827,6 +9863,220 @@
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-731efdb50dd844178e597d804bdd4596/root_review/fixed_background_rank_review.md",
         "archives/customer-attraction/state/审查/固定背景收益切片的后继独立秩审查--审查.md",
         "archives/customer-attraction/state/程序/固定背景收益切片的有理秩与核基审计程序--程序.md"
+      ]
+    },
+    {
+      "object_id": "FC-01",
+      "version": 1,
+      "title": "秩至多二 matroid chores 的 EFX 分类",
+      "kind": "open problem",
+      "truth_status": "open",
+      "model": "不可分割家务：任意有限人数n和物品集M，各观察者成本c_i是其自己的秩至多2拟阵秩函数，允许异质拟阵及loops；完整分配，EFX按删除自身任意物品（含零边际）定义，不附PO。",
+      "statement": "问每个所列rank≤2 matroid chores实例是否存在完整EFX分配，即∀i,j及g∈X_i有c_i(X_i\\{g})≤c_i(X_j)。首个受限义务为无loops三平行类的秩截断成本（触达类数与2取最小）的构造/精确反例，再处理loops；两平行类无loops局部结论不等于本题总解。",
+      "quantifiers": "对所列输入域中的每个有限实例；若问算法则要求输入bit长度的多项式时间",
+      "assumptions": [
+        "c_i为拟阵秩且总秩≤2；loops的边际为0。",
+        "EFX删除own bundle中的每件物品；完整分配；不要求PO。"
+      ],
+      "scope": "冻结候选域；不把二平行类局部引理扩为其总解。",
+      "objections": "一般rank≤2目标open；两平行类的缺字/Hall论证不自动推广三类或loops。已全文实读rank_toys.py：它计算非负label触达类数，k=3时无min(2,·)，故三类行通常是秩3 partition成本，不能计作FC-01的rank-cap-2正面证据；loops用label=-1跳过。该实现语义作为研究路线边界接证，不改变有限结果等级。",
+      "body": {
+        "path": "archives/weighted-congestion/state/审查/退役公平家务候选三源处置--审查.md",
+        "sha256": "9b1388d9c3c24d343aa102d3d2c96d5f0ef25108ca46cfbbc4fe344079752324",
+        "section": "候选报告与 candidates.json 的独有内容"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/tools/evidence/retired-fair-chores-20261031/candidates.json",
+          "sha256": "c677873a97dfb56ed86ae94a051c52aa8feed250f953e83ee83406291d551bac"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/退役跨域工具迁移候选注册表与处置边界--资料.md",
+          "sha256": "350c9765d07baebacc2bf870f039e9cef11a9afbb473e49151bed434927d534a",
+          "section": "七个候选的精确内容与当前映射"
+        },
+        {
+          "path": "archives/fair-allocation/state/审查/公平玩具生成脚本三源审查--审查.md",
+          "sha256": "781e0c3e848fb0491bc875f0b09303606ab7ecb835a9806b086b2a19f5a46b6b",
+          "section": "3. `rank_toys.py`：class-touch 成本与 loops 编码"
+        },
+        {
+          "path": "archives/fair-allocation/tools/evidence/retired-fair-toy-scripts-20261031/rank_toys.py",
+          "sha256": "878e8f5fccf285c7fd86421250229e6045a5c9813555da55dde0b200f4fa5c6e"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/审查/退役公平家务候选三源处置--审查.md",
+        "archives/weighted-congestion/state/资料/退役跨域工具迁移候选注册表与处置边界--资料.md",
+        "archives/fair-allocation/state/审查/公平玩具生成脚本三源审查--审查.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/independent_review/tests/audits/topic_selection/fair_chores/rank_toys.py"
+      ]
+    },
+    {
+      "object_id": "FG01",
+      "version": 1,
+      "title": "四人laminar完整EF1的两个ordered key问题",
+      "kind": "open problem",
+      "truth_status": "open",
+      "model": "公平商品：四名代理、任意非负实可加估值（含零与ties）；K8/K12共同类别容量约束，完整分配，并按任意预定人序要求单向无嫉妒。",
+      "statement": "要求任意给定人序下K8（类大小3,3,2，每类cap1、总cap2）和K12（四类各3，每类cap1、总cap3）均有完整可行EF1且i<j时vi(Ai)≥vi(Aj)，进而接回四人laminar目标。",
+      "quantifiers": "两个明确key域中∀非负实估值，含零和ties，分别∃完整有序EF1分配。",
+      "assumptions": [
+        "完整性与各容量可行",
+        "EF1和ordered no-envy同时成立"
+      ],
+      "scope": "只登记K8/K12两个联合ordered-EF1开放目标。一般共同4可着色laminar的完整ordered-EF1目标另用fair-allocation/laminar-four-ordered-ef1-and-copies-sdef1分立；源述归约在本批未审定，不声明二者等价。5000/500整数profile及各6/256个最坏见证数均只属有限证据；独立来源的84/16样本不与之合并算覆盖。",
+      "objections": "连续估值全称目标仍open。toy_checks.py确已恢复代码谓词：四种owner颜色下{a2,a4,a5}须三异色且{a0,a1,a4,a5}须四异色（索引从0）；又a0,a1,a2同属首类别须三异色，故a2只能取a4或a5的颜色，矛盾。这证明该实际代码谓词在K8无解；代码谓词与旧论文Lemma12原文的精确对应仍未由本批核定，不能把原0字段升级成未定义外部命题的反例。普通EF1、两个key的ordered加强版和一般laminar目标分开。",
+      "body": {
+        "path": "archives/weighted-congestion/state/审查/退役公平商品候选三源处置--审查.md",
+        "sha256": "884fabbe490151b23a6fbd315f5c4badbce21f7aadeb10c808052bfeb2cc443b",
+        "section": "FG01：四人 laminar EF1 的 key 实例"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/tools/evidence/retired-fair-goods-20261031/candidates.json",
+          "sha256": "89442a34791086e3030aeb5b21e264bfe8bf267d23ee7646adc7d6030fe77c32"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/主攻问题范围价值与旧原子NE课题的关系--资料.md",
+          "sha256": "a6f0f07c4a9882dc9b850722563c7b3db554fb144118ba91d3f498eb048f3be8",
+          "section": "来源中的主目标合同"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/跨域工具迁移与独立反方候选地图--资料.md",
+          "sha256": "3aaaf4c1c0d03554c61587992fa14290b31e3a7931bd1e949e4b10ef764a8764",
+          "section": "CB03：K8/K12 只保存障碍和候选覆盖路线"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/退役跨域工具迁移候选注册表与处置边界--资料.md",
+          "sha256": "350c9765d07baebacc2bf870f039e9cef11a9afbb473e49151bed434927d534a",
+          "section": "七个候选的精确内容与当前映射"
+        },
+        {
+          "path": "archives/fair-allocation/state/问题/四人层流约束有序EF1与副本SD-EF1--问题.md",
+          "sha256": "b9002a70648f38943081da442c014b72786d6a4c75fcac85f00a2181ff98a9a5",
+          "section": "四人共同laminar约束"
+        },
+        {
+          "path": "archives/fair-allocation/state/审查/退役公平商品有限玩具结果--审查.md",
+          "sha256": "f8eeb13b0f9730b956390a28f8c897f3ca7b781a410ad9a24af42a730ed414fa"
+        },
+        {
+          "path": "archives/fair-allocation/state/审查/公平玩具生成脚本三源审查--审查.md",
+          "sha256": "781e0c3e848fb0491bc875f0b09303606ab7ecb835a9806b086b2a19f5a46b6b",
+          "section": "1. `toy_checks.py`：K8/K12 与 copies 的实际 checker"
+        },
+        {
+          "path": "archives/fair-allocation/tools/evidence/retired-fair-toy-scripts-20261031/toy_checks.py",
+          "sha256": "0dd9b02ab90c72c308186f73ff94f315d2b6953ea3e1340b20a86fbab7b4cb22"
+        },
+        {
+          "path": "archives/fair-allocation/tools/evidence/retired-fair-goods-toy-results-20261031/toy_results.json",
+          "sha256": "13294bd3aafa5814a4f0570ef6c23da512e29ce53e88a1a055dafa41bcb5300c"
+        },
+        {
+          "path": "archives/fair-allocation/state/资料/可加公平与副本前缀目标的候选反例分层--资料.md",
+          "sha256": "f871cd1cc5160e0753f9913b1d02991cf081529ff9dd87dddd9f071cba4cfccc",
+          "section": "四人laminar两个key：同目标、两来源证据"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/审查/退役公平商品候选三源处置--审查.md",
+        "archives/weighted-congestion/state/资料/主攻问题范围价值与旧原子NE课题的关系--资料.md",
+        "archives/weighted-congestion/state/资料/跨域工具迁移与独立反方候选地图--资料.md",
+        "archives/weighted-congestion/state/资料/退役跨域工具迁移候选注册表与处置边界--资料.md",
+        "archives/fair-allocation/state/问题/四人层流约束有序EF1与副本SD-EF1--问题.md",
+        "archives/fair-allocation/state/审查/公平玩具生成脚本三源审查--审查.md",
+        "archives/fair-allocation/state/审查/退役公平商品有限玩具结果--审查.md",
+        "archives/fair-allocation/state/资料/可加公平与副本前缀目标的候选反例分层--资料.md",
+        "SEL-LAMINAR4-KEY-v1",
+        "TS-LAMINAR-4-KEY-v1",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/independent_review/tests/audits/topic_selection/fair_goods/toy_checks.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/independent_review/evidence/runs/topic_selection/fair_goods/toy_results.json"
+      ]
+    },
+    {
+      "object_id": "FG02",
+      "version": 1,
+      "title": "等值副本任意类型数的SD-EF1目标",
+      "kind": "open problem",
+      "truth_status": "open",
+      "model": "等值副本公平商品：任意有限n≥1、有限类型集G，每型整数1≤c_g≤n；同型对同一观察者等值，每人每型≤1，全部副本完整分配；每观察者给定严格类型全序，不附PO。",
+      "statement": "求对所有观察者i、比较者j及i价值排序前缀P满足|Ai∩P|≥|Aj∩P|−1的完整分配；先n3任意类型数，再一般n。",
+      "quantifiers": "∀整数n≥1、∀有限G、∀1≤c_g≤n、∀n名观察者各自的严格类型全序，问∃二元完整分配x使∀i,j及i的全部类型前缀P，Σ_(g∈P)x_ig≥Σ_(g∈P)x_jg−1。n=1平凡；c_g=0可删的扩展另明示，不靠它改变正副本合同。",
+      "assumptions": [
+        "同型副本等值",
+        "非universal三人型可归c_g∈{1,2}"
+      ],
+      "scope": "任意n的母问题，与已登记TS-COPIES-3-SDEF1-v1（三人任意类型）分立。三人四非全体类型的9216严格profile、三人5000/四人2000随机排序样本均为有限证据；不把严格次序静默扩大到含ties目标，不附加PO。",
+      "objections": "母问题及三人任意类型交换不变量仍open；逐人舍入误差1只给成对误差2。copies_exhaustive.py实际固定第一人的四类型排序，枚举16×24²=9216个profile；全体副本在每个前缀差抵消。有限穷举不证明任意类型或人数；含ties须先约定弱序前缀，未在本批作全称闭合。",
+      "body": {
+        "path": "archives/weighted-congestion/state/审查/退役公平商品候选三源处置--审查.md",
+        "sha256": "884fabbe490151b23a6fbd315f5c4badbce21f7aadeb10c808052bfeb2cc443b",
+        "section": "FG02：goods-with-copies 的 SD-EF1"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/tools/evidence/retired-fair-goods-20261031/candidates.json",
+          "sha256": "89442a34791086e3030aeb5b21e264bfe8bf267d23ee7646adc7d6030fe77c32"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/主攻问题范围价值与旧原子NE课题的关系--资料.md",
+          "sha256": "a6f0f07c4a9882dc9b850722563c7b3db554fb144118ba91d3f498eb048f3be8",
+          "section": "来源中的主目标合同"
+        },
+        {
+          "path": "archives/fair-allocation/state/问题/四人层流约束有序EF1与副本SD-EF1--问题.md",
+          "sha256": "b9002a70648f38943081da442c014b72786d6a4c75fcac85f00a2181ff98a9a5",
+          "section": "任意人数goods-with-copies"
+        },
+        {
+          "path": "archives/fair-allocation/state/审查/退役公平商品有限玩具结果--审查.md",
+          "sha256": "f8eeb13b0f9730b956390a28f8c897f3ca7b781a410ad9a24af42a730ed414fa",
+          "section": "3. Goods-with-copies 随机样本"
+        },
+        {
+          "path": "archives/fair-allocation/state/审查/退役公平商品有限玩具结果--审查.md",
+          "sha256": "f8eeb13b0f9730b956390a28f8c897f3ca7b781a410ad9a24af42a730ed414fa",
+          "section": "5. 固定见证的定义级解释"
+        },
+        {
+          "path": "archives/fair-allocation/state/审查/公平玩具生成脚本三源审查--审查.md",
+          "sha256": "781e0c3e848fb0491bc875f0b09303606ab7ecb835a9806b086b2a19f5a46b6b",
+          "section": "1.2 copies allocation 和 SD-EF1"
+        },
+        {
+          "path": "archives/fair-allocation/state/审查/公平玩具生成脚本三源审查--审查.md",
+          "sha256": "781e0c3e848fb0491bc875f0b09303606ab7ecb835a9806b086b2a19f5a46b6b",
+          "section": "2. `copies_exhaustive.py`：9216 profiles 的严格穷举"
+        },
+        {
+          "path": "archives/fair-allocation/tools/evidence/retired-fair-toy-scripts-20261031/toy_checks.py",
+          "sha256": "0dd9b02ab90c72c308186f73ff94f315d2b6953ea3e1340b20a86fbab7b4cb22"
+        },
+        {
+          "path": "archives/fair-allocation/tools/evidence/retired-fair-toy-scripts-20261031/copies_exhaustive.py",
+          "sha256": "f9bfecf8ad21c76b61db78709e5343b909bc304a07507ba456a32cdfac9c173d"
+        },
+        {
+          "path": "archives/fair-allocation/tools/evidence/retired-fair-goods-toy-results-20261031/toy_results.json",
+          "sha256": "13294bd3aafa5814a4f0570ef6c23da512e29ce53e88a1a055dafa41bcb5300c"
+        },
+        {
+          "path": "archives/fair-allocation/state/审查/退役公平商品copies穷举结果--审查.md",
+          "sha256": "18717ca343af41ada7ea348219f19f510ed4e9878c53a39d426d669f5d840847"
+        }
+      ],
+      "sources": [
+        "archives/weighted-congestion/state/审查/退役公平商品候选三源处置--审查.md",
+        "archives/weighted-congestion/state/资料/主攻问题范围价值与旧原子NE课题的关系--资料.md",
+        "archives/fair-allocation/state/问题/四人层流约束有序EF1与副本SD-EF1--问题.md",
+        "archives/fair-allocation/state/审查/公平玩具生成脚本三源审查--审查.md",
+        "archives/fair-allocation/state/审查/退役公平商品有限玩具结果--审查.md",
+        "archives/fair-allocation/state/审查/退役公平商品copies穷举结果--审查.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/independent_review/tests/audits/topic_selection/fair_goods/toy_checks.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/independent_review/tests/audits/topic_selection/fair_goods/copies_exhaustive.py",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/independent_review/evidence/runs/topic_selection/fair_goods/toy_results.json"
       ]
     },
     {
@@ -23783,7 +24033,7 @@
     },
     {
       "object_id": "M-39efbd59b255457e82303be3881f54d5",
-      "version": 1,
+      "version": 2,
       "title": "对称独立储备C后D真策略族的3/2覆盖限制",
       "kind": "lemma",
       "truth_status": "proved",
@@ -23795,7 +24045,7 @@
         "不扩任意交叠储备、非均匀或异顺序"
       ],
       "scope": "任意正文整数参数、指定C-then-D完整SPE路径。",
-      "objections": "完整读取正式正文，核对精确陈述、条件和承重证明位置；复用成熟解析论证与已有证据。此登记未重跑数学程序，未新增外审或新颖性认证；不将辅助合同升级为一般六人半覆盖。",
+      "objections": "完整读取正式正文，核对精确陈述、条件和承重证明位置；复用成熟解析论证与已有证据。此登记未重跑数学程序，未新增外审或新颖性认证；不将辅助合同升级为一般六人半覆盖。 本次全文比较主body与新增审查：保作者b+x/(s+1)=H精确式及独立重构b+x/3<H弱上界两条收束；二者均只针对指定C-then-D族和全部真实离轨后继。仅接现存数学证明，不重跑有限5412B程序，不把旧内部statement-first先验冒本次盲审。",
       "body": {
         "path": "archives/customer-attraction/state/引理/新鲜储备的真实尾部保护与旧独占负信用门槛--引理.md",
         "sha256": "ef7a98508fcd9f990cf751f26ecfc75a6287fdf3bdd992f685fb30bb05052ed3",
@@ -23825,10 +24075,16 @@
         {
           "path": "archives/customer-attraction/tools/evidence/extra-iid-aggregation-and-reserve-primary/runs/new-bank-iid/event.json",
           "sha256": "4ce305d909921fc089790a5c6918bd715d877b88df32fc52545cdfd093c7b0c5"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/对称终末储备的全历史容量归纳与独审先验--审查.md",
+          "sha256": "bab83635b0523959154389bda088ee0440bdc7a2c4c9d132c12511e2325ab88e"
         }
       ],
       "sources": [
-        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-6cf1f30515fe44eeba28d5390d6940e7/coordination_2026_10_23_followup/reserve_state_review.md"
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-6cf1f30515fe44eeba28d5390d6940e7/coordination_2026_10_23_followup/reserve_state_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-7eb35cf5aa0f402c892d23bc658a0639/reserve/uniform_reserve_obstruction.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-7eb35cf5aa0f402c892d23bc658a0639/reviews/uniform_reserve_independent_review.md"
       ]
     },
     {
@@ -25935,7 +26191,7 @@
     },
     {
       "object_id": "M-453311709b8248f4977a880920f6da60",
-      "version": 3,
+      "version": 4,
       "title": "实际Hall取消集合的终端rank-base与贪心支持函数",
       "kind": "method",
       "truth_status": "proved",
@@ -25970,6 +26226,11 @@
         {
           "path": "archives/customer-attraction/state/算法/适应费用的逐批终端增广与全割层积分--算法.md",
           "sha256": "36be6dc0128e3ca5a12dc532114a142c8446ecf18fdd390682ab2ac24e4d6d5e"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/入密度共同账的陈述后重构与补充分层--审查.md",
+          "sha256": "3f05fba7456fee1f03b3c7f7d7a7b649d9a661c77fb7629ad248618686a8f274",
+          "section": "补审对裸Gamma与残余Gamma_delta的精确校正"
         }
       ],
       "sources": [
@@ -25978,7 +26239,8 @@
         "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round4/shared/net_dynamic_rank.md#1-6",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round4/credible/review_net_dynamic_rank.md#1-3",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-b6d636d360e14c11aeb4b76415ed422b/direction_review/continuation_general_scope/incoming_payment.md#五",
-        "archives/customer-attraction/state/算法/自然捕获路由的Bellman价格与Hall取消--算法.md"
+        "archives/customer-attraction/state/算法/自然捕获路由的Bellman价格与Hall取消--算法.md",
+        "canonical:archives/customer-attraction/state/审查/入密度共同账的陈述后重构与补充分层--审查.md#补审对裸Gamma与残余Gamma_delta的精确校正"
       ]
     },
     {
@@ -37068,7 +37330,7 @@
     },
     {
       "object_id": "M-8118ec4080264955bbda39b072df36a2",
-      "version": 1,
+      "version": 2,
       "title": "同节点最大标量CLIP与重算的gross支配",
       "kind": "theorem",
       "truth_status": "proved",
@@ -37094,11 +37356,17 @@
           "path": "archives/customer-attraction/state/定理/同节点安全净券与最大标量剪枝--定理.md",
           "sha256": "10f9a70752e2b014434ffc0cff2c3bfe10ab5a45724e088bbb76cac073158892",
           "section": "仅fresh利润分母的独立合同"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/混合方剪枝停点与第二缺陷重构的读序--审查.md",
+          "sha256": "1b63da0aac11a790ee7d4b1258d3d94647c54c0862f004afe12cf7a2f66edde7",
+          "section": "同一context的退款与剪枝合同"
         }
       ],
       "sources": [
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round6/credible/safe_coupon_netting.md",
-        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round6/credible/safe_coupon_netting.md"
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round6/credible/safe_coupon_netting.md",
+        "canonical:archives/customer-attraction/state/审查/混合方剪枝停点与第二缺陷重构的读序--审查.md#同一context的退款与剪枝合同"
       ]
     },
     {
@@ -59189,7 +59457,7 @@
     },
     {
       "object_id": "M-ead54e488b984a12a91635e679fbe55c",
-      "version": 1,
+      "version": 2,
       "title": "全比较来源SAFE后的共同角色CAP2义务",
       "kind": "open-obligation",
       "truth_status": "open",
@@ -59215,11 +59483,17 @@
           "path": "archives/customer-attraction/state/定理/同节点安全净券与最大标量剪枝--定理.md",
           "sha256": "10f9a70752e2b014434ffc0cff2c3bfe10ab5a45724e088bbb76cac073158892",
           "section": "同一当前整行安全退款"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/第六轮共同容量根稿与角色归池的精确合同--资源.md",
+          "sha256": "724397215d551ffecaff1f7421d06ca5c89c2498cc49b066fdab35680173f855",
+          "section": "同角色归池、全O cap2与fresh核分别初始化"
         }
       ],
       "sources": [
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round6/credible/safe_coupon_netting.md",
-        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round6/credible/safe_coupon_netting.md"
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round6/credible/safe_coupon_netting.md",
+        "canonical:archives/customer-attraction/state/资源/第六轮共同容量根稿与角色归池的精确合同--资源.md#同角色归池、全O cap2与fresh核分别初始化"
       ]
     },
     {
@@ -73228,7 +73502,7 @@
     },
     {
       "object_id": "TS-COPIES-3-SDEF1-v1",
-      "version": 1,
+      "version": 2,
       "title": "三人任意类型数等值副本的完整SD-EF1前缀目标",
       "kind": "question",
       "truth_status": "open",
@@ -73261,6 +73535,42 @@
         {
           "path": "archives/weighted-congestion/state/资料/退役跨域工具迁移候选注册表与处置边界--资料.md",
           "sha256": "350c9765d07baebacc2bf870f039e9cef11a9afbb473e49151bed434927d534a"
+        },
+        {
+          "path": "archives/fair-allocation/state/审查/退役公平商品有限玩具结果--审查.md",
+          "sha256": "f8eeb13b0f9730b956390a28f8c897f3ca7b781a410ad9a24af42a730ed414fa",
+          "section": "3. Goods-with-copies 随机样本"
+        },
+        {
+          "path": "archives/fair-allocation/state/审查/退役公平商品有限玩具结果--审查.md",
+          "sha256": "f8eeb13b0f9730b956390a28f8c897f3ca7b781a410ad9a24af42a730ed414fa",
+          "section": "5. 固定见证的定义级解释"
+        },
+        {
+          "path": "archives/fair-allocation/state/审查/公平玩具生成脚本三源审查--审查.md",
+          "sha256": "781e0c3e848fb0491bc875f0b09303606ab7ecb835a9806b086b2a19f5a46b6b",
+          "section": "1.2 copies allocation 和 SD-EF1"
+        },
+        {
+          "path": "archives/fair-allocation/state/审查/公平玩具生成脚本三源审查--审查.md",
+          "sha256": "781e0c3e848fb0491bc875f0b09303606ab7ecb835a9806b086b2a19f5a46b6b",
+          "section": "2. `copies_exhaustive.py`：9216 profiles 的严格穷举"
+        },
+        {
+          "path": "archives/fair-allocation/tools/evidence/retired-fair-toy-scripts-20261031/toy_checks.py",
+          "sha256": "0dd9b02ab90c72c308186f73ff94f315d2b6953ea3e1340b20a86fbab7b4cb22"
+        },
+        {
+          "path": "archives/fair-allocation/tools/evidence/retired-fair-toy-scripts-20261031/copies_exhaustive.py",
+          "sha256": "f9bfecf8ad21c76b61db78709e5343b909bc304a07507ba456a32cdfac9c173d"
+        },
+        {
+          "path": "archives/fair-allocation/tools/evidence/retired-fair-goods-toy-results-20261031/toy_results.json",
+          "sha256": "13294bd3aafa5814a4f0570ef6c23da512e29ce53e88a1a055dafa41bcb5300c"
+        },
+        {
+          "path": "archives/fair-allocation/state/审查/退役公平商品copies穷举结果--审查.md",
+          "sha256": "18717ca343af41ada7ea348219f19f510ed4e9878c53a39d426d669f5d840847"
         }
       ],
       "sources": [
@@ -73268,7 +73578,11 @@
         "CB02",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/CLAIMS.md",
         "archives/weighted-congestion/state/资料/跨域工具迁移与独立反方候选地图--资料.md",
-        "archives/weighted-congestion/state/资料/退役跨域工具迁移候选注册表与处置边界--资料.md"
+        "archives/weighted-congestion/state/资料/退役跨域工具迁移候选注册表与处置边界--资料.md",
+        "archives/fair-allocation/state/审查/公平玩具生成脚本三源审查--审查.md",
+        "archives/fair-allocation/state/审查/退役公平商品有限玩具结果--审查.md",
+        "archives/fair-allocation/state/审查/退役公平商品copies穷举结果--审查.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/independent_review/evidence/runs/topic_selection/fair_goods/toy_results.json"
       ]
     },
     {
@@ -92697,7 +93011,7 @@
     },
     {
       "object_id": "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance",
-      "version": 3,
+      "version": 4,
       "title": "最优混合替换下同时局部取消、Hall流及SOURCE-NET共钱包付款",
       "kind": "theorem",
       "truth_status": "proved",
@@ -92725,11 +93039,17 @@
         {
           "path": "archives/customer-attraction/state/审查/R4运输路线接口与未解条件--审查.md",
           "sha256": "4b1b9815701c0fa4c99ad4de91fa9e1ac6fee0629836a050abf08ec70c3d0b03"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/入密度共同账的陈述后重构与补充分层--审查.md",
+          "sha256": "3f05fba7456fee1f03b3c7f7d7a7b649d9a661c77fb7629ad248618686a8f274",
+          "section": "补审对裸Gamma与残余Gamma_delta的精确校正"
         }
       ],
       "sources": [
         "archives/customer-attraction/state/定理/实际取消的同时源付款与入流余额--定理.md",
-        "archives/customer-attraction/state/候选/真实查询自由指派与残源净钱包的共同接口--候选.md"
+        "archives/customer-attraction/state/候选/真实查询自由指派与残源净钱包的共同接口--候选.md",
+        "canonical:archives/customer-attraction/state/审查/入密度共同账的陈述后重构与补充分层--审查.md#补审对裸Gamma与残余Gamma_delta的精确校正"
       ]
     },
     {
@@ -95063,6 +95383,43 @@
         "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-ffea274483aa4105a317300038fe04ce/aggregate_security/first_pair_iid_attack.py",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-ffea274483aa4105a317300038fe04ce/aggregate_security/first_pair_iid_numerical.json",
         "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-ffea274483aa4105a317300038fe04ce/aggregate_security/first_pair_iid_numerical.json"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/arbitrary-background-pair-extra-slot-counterexample",
+      "version": 1,
+      "title": "任意合法背景的完整子SPE可使前两人利润低于两倍extra槽静态安全值",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限不同单位客户、有限非空共同带标签目录及任意覆盖映射；单位权提供者依次观察全部有序历史各选一次，客户在所有覆盖者间均分。完整纯SPE在全部合法有序节点按同一原策略真实续局满足单步偏离IC；允许空主题、同覆盖异标签、重复行动及任意历史依赖平局。 固定合法单位玩家前缀的客户整数负载b后，剩r名玩家。",
+      "statement": "存在正文明确48,495,120单位客户的PB实例、合法singleton实现背景b和r=2475名剩余玩家的完整纯SPE。令v_{r+1}(b)=max_p min_{B∈S^r} E_{T∼p}Σ_{x∈T}1/(b_x+1+c_x(B))。前两位均得u=dkf(k)，同一合法regular查询分布保证s=d[f(1+rk/Q)+(k−1)g(r+1)]≤v_{r+1}(b)，且s−u=655518746053822970420433555247437051305/604541061548383275389777051408169916255944671102717364>0，因此u_1+u_2=2u<2v_{r+1}(b)。",
+      "quantifiers": "存在该固定有限单位客户共同目录、合法非零背景和完整有序历史纯子SPE，否定每个合法背景/每份完整子SPE的前两人extra静态安全值付款桥。",
+      "assumptions": [
+        "k3,d20,q12,t10,r2475,Q2063,H100000,M10^9；regular主题为各段一至三R块加其余D块的完整Cartesian目录，另含全部单位客户singleton。",
+        "v_{r+1}竞争者有r槽且在查询实现前固定；不是r−1槽标准安全值。",
+        "固定最近偏离者优先的Greedy平局；首次singleton子树各自逆向归纳补齐。"
+      ],
+      "scope": "任意合法背景PB-extra pair桥反例；背景已覆盖所有客户，且合法背景不保证为原SPE实际根前缀；不否actual/root pair弱化、LAST、half或恰六人目标。",
+      "objections": "完整SPE合法性由正文全部模式真实续局解析证明承担；双标量页仅负责给定参数的G/P/F/singleton/静态s−u余量，不能把scalar true当巨大树枚举。正文stable namespace ID优先于模糊历史别名PB/PB-extra。",
+      "body": {
+        "path": "archives/customer-attraction/state/反例/任意合法背景的前两人额外槽安全值--反例.md",
+        "sha256": "0701ae9959fd048cd50268a63c72b48f098dad1d3922c2e44c29ce41075a4016"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/PB背景双独立标量程序的范围与报告绑定--计算.md",
+          "sha256": "831ab164ab7720be8e9370414ad9c020144cdacf2d31f25ac48756406509370c"
+        }
+      ],
+      "sources": [
+        "canonical:archives/customer-attraction/state/反例/任意合法背景的前两人额外槽安全值--反例.md",
+        "legacy:PB",
+        "legacy:PB-extra",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round5/menu/pair_attack.md"
       ]
     },
     {
@@ -107399,7 +107756,7 @@
     },
     {
       "object_id": "customer-attraction/free-source-trimming-total-price-and-sufficient-half-coverage-interface",
-      "version": 1,
+      "version": 2,
       "title": "自由trim下最低保留源价与TOTAL-TRIM充分义务",
       "kind": "open-obligation",
       "truth_status": "open",
@@ -107440,13 +107797,31 @@
           "path": "archives/customer-attraction/state/候选/自由删源总价与半覆盖的充分接口--候选.md",
           "sha256": "e5b2063dcb83728fe5087fb350df9f6ced0a015048b2735baf40408b49f5e844",
           "section": "固定未取消失败不反驳任意gamma：portfolio的明确对照"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/入密度共同账的陈述后重构与补充分层--审查.md",
+          "sha256": "3f05fba7456fee1f03b3c7f7d7a7b649d9a661c77fb7629ad248618686a8f274",
+          "section": "补审对裸Gamma与残余Gamma_delta的精确校正"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/入密度共同账的陈述后重构与补充分层--审查.md",
+          "sha256": "3f05fba7456fee1f03b3c7f7d7a7b649d9a661c77fb7629ad248618686a8f274",
+          "section": "有限回归的真实零域和固定失败范围"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/入密度共同账的陈述后重构与补充分层--审查.md",
+          "sha256": "3f05fba7456fee1f03b3c7f7d7a7b649d9a661c77fb7629ad248618686a8f274",
+          "section": "来源修正和当前停点"
         }
       ],
       "sources": [
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round5/rank/incoming_density_diagonal_ledger.md#7",
         "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round5/rank/incoming_density_diagonal_ledger.md#7",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round5/dynamic/review_density_ledger_supplement.md#3-4",
-        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-b6d636d360e14c11aeb4b76415ed422b/direction_review/continuation_general_scope/incoming_payment.md#四"
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-b6d636d360e14c11aeb4b76415ed422b/direction_review/continuation_general_scope/incoming_payment.md#四",
+        "canonical:archives/customer-attraction/state/审查/入密度共同账的陈述后重构与补充分层--审查.md#补审对裸Gamma与残余Gamma_delta的精确校正",
+        "canonical:archives/customer-attraction/state/审查/入密度共同账的陈述后重构与补充分层--审查.md#有限回归的真实零域和固定失败范围",
+        "canonical:archives/customer-attraction/state/审查/入密度共同账的陈述后重构与补充分层--审查.md#来源修正和当前停点"
       ]
     },
     {
@@ -112993,7 +113368,7 @@
     },
     {
       "object_id": "customer-attraction/natural-capture-routing-bellman-prices-and-hall-cancellation",
-      "version": 1,
+      "version": 2,
       "title": "固定继承真实query的自然recipient集中路由Bellman精确达到",
       "kind": "algorithm",
       "truth_status": "proved",
@@ -113014,18 +113389,24 @@
         {
           "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
           "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/入密度共同账的陈述后重构与补充分层--审查.md",
+          "sha256": "3f05fba7456fee1f03b3c7f7d7a7b649d9a661c77fb7629ad248618686a8f274",
+          "section": "补审实际放宽了什么"
         }
       ],
       "sources": [
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round5/rank/incoming_density_diagonal_ledger.md#6",
         "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round5/rank/incoming_density_diagonal_ledger.md#6",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round5/dynamic/review_density_ledger_supplement.md#2-4",
-        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round4/shared/net_dynamic_rank.md#2-4"
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round4/shared/net_dynamic_rank.md#2-4",
+        "canonical:archives/customer-attraction/state/审查/入密度共同账的陈述后重构与补充分层--审查.md#补审实际放宽了什么"
       ]
     },
     {
       "object_id": "customer-attraction/natural-captured-mass-redistribution-and-common-density-diagonal-ledger",
-      "version": 1,
+      "version": 2,
       "title": "自然recipient重分配下的M−H对角消元与有符号余账",
       "kind": "theorem",
       "truth_status": "proved",
@@ -113075,6 +113456,26 @@
         {
           "path": "archives/customer-attraction/state/计算/自然入流密度协方差与共同对角账的精确回归--计算.md",
           "sha256": "2906a0585f2517cb865de9c7b92285006a7ebfbb7ad035a15e41a63708cfb32a"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/入密度共同账的陈述后重构与补充分层--审查.md",
+          "sha256": "3f05fba7456fee1f03b3c7f7d7a7b649d9a661c77fb7629ad248618686a8f274",
+          "section": "初始重构的两个承重条件"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/入密度共同账的陈述后重构与补充分层--审查.md",
+          "sha256": "3f05fba7456fee1f03b3c7f7d7a7b649d9a661c77fb7629ad248618686a8f274",
+          "section": "独立证明形式的符号与共同计数"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/入密度共同账的陈述后重构与补充分层--审查.md",
+          "sha256": "3f05fba7456fee1f03b3c7f7d7a7b649d9a661c77fb7629ad248618686a8f274",
+          "section": "补审实际放宽了什么"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/入密度共同账的陈述后重构与补充分层--审查.md",
+          "sha256": "3f05fba7456fee1f03b3c7f7d7a7b649d9a661c77fb7629ad248618686a8f274",
+          "section": "有限回归的真实零域和固定失败范围"
         }
       ],
       "sources": [
@@ -113082,7 +113483,11 @@
         "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round5/rank/incoming_density_diagonal_ledger.md#1-6",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round5/dynamic/review_density_ledger_blind.md",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round5/dynamic/review_density_ledger.md",
-        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round5/dynamic/review_density_ledger_supplement.md#1"
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round5/dynamic/review_density_ledger_supplement.md#1",
+        "canonical:archives/customer-attraction/state/审查/入密度共同账的陈述后重构与补充分层--审查.md#初始重构的两个承重条件",
+        "canonical:archives/customer-attraction/state/审查/入密度共同账的陈述后重构与补充分层--审查.md#独立证明形式的符号与共同计数",
+        "canonical:archives/customer-attraction/state/审查/入密度共同账的陈述后重构与补充分层--审查.md#补审实际放宽了什么",
+        "canonical:archives/customer-attraction/state/审查/入密度共同账的陈述后重构与补充分层--审查.md#有限回归的真实零域和固定失败范围"
       ]
     },
     {
@@ -113123,7 +113528,7 @@
     },
     {
       "object_id": "customer-attraction/natural-incoming-true-history-slack-and-per-recipient-half-coefficient",
-      "version": 2,
+      "version": 3,
       "title": "自然incoming的OFF-IC全动作恒等与同A逐recipient多父半系数",
       "kind": "lemma",
       "truth_status": "proved",
@@ -113157,6 +113562,11 @@
         {
           "path": "archives/customer-attraction/state/审查/自然入流余额的作者版本与资金合同史--审查.md",
           "sha256": "2f26dcd5615793830c854c502e01fd13a576efcac8909e2b811a23221057da8f"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/混合方剪枝停点与第二缺陷重构的读序--审查.md",
+          "sha256": "1b63da0aac11a790ee7d4b1258d3d94647c54c0862f004afe12cf7a2f66edde7",
+          "section": "fresh停点的真实off-history方向"
         }
       ],
       "sources": [
@@ -113164,7 +113574,8 @@
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round4/relay/review_incoming_slack_transport.md",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round4/credible/incoming_slack_transport.md",
         "archives/customer-attraction/state/计算/自然入流松弛账的双版本精确回归--计算.md",
-        "archives/customer-attraction/state/审查/自然入流余额的作者版本与资金合同史--审查.md"
+        "archives/customer-attraction/state/审查/自然入流余额的作者版本与资金合同史--审查.md",
+        "canonical:archives/customer-attraction/state/审查/混合方剪枝停点与第二缺陷重构的读序--审查.md#fresh停点的真实off-history方向"
       ]
     },
     {
@@ -119667,7 +120078,7 @@
     },
     {
       "object_id": "customer-attraction/same-context-safe-net-coupons-and-maximal-scalar-clipping",
-      "version": 2,
+      "version": 3,
       "title": "同一真实重置行的SAFE非负净券",
       "kind": "theorem",
       "truth_status": "proved",
@@ -119701,11 +120112,17 @@
         {
           "path": "archives/customer-attraction/state/计算/鲜利润计数与非零两层图的精确复现--计算.md",
           "sha256": "5fdada142ee8dfe12388062dcf0f02bf0ba71ad456b5eb098a6b7d8ffb26635b"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/混合方剪枝停点与第二缺陷重构的读序--审查.md",
+          "sha256": "1b63da0aac11a790ee7d4b1258d3d94647c54c0862f004afe12cf7a2f66edde7",
+          "section": "同一context的退款与剪枝合同"
         }
       ],
       "sources": [
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round6/credible/safe_coupon_netting.md",
-        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round6/credible/safe_coupon_netting.md"
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round6/credible/safe_coupon_netting.md",
+        "canonical:archives/customer-attraction/state/审查/混合方剪枝停点与第二缺陷重构的读序--审查.md#同一context的退款与剪枝合同"
       ]
     },
     {
@@ -131763,6 +132180,45 @@
       ]
     },
     {
+      "object_id": "fair-allocation/laminar-four-ordered-ef1-and-copies-sdef1",
+      "version": 1,
+      "title": "四人共同层流约束的完整有序EF1开放目标",
+      "kind": "question",
+      "truth_status": "open",
+      "model": "有限不可分goods、四名代理、任意非负实可加估值；同一个可四着色laminar独立集系统约束每名代理的包，全部物品完整分配。",
+      "statement": "给定任意预定代理次序，问是否存在完整可行分配X同时满足：对全部i,j，若X_j非空则存在g∈X_j使v_i(X_i)≥v_i(X_j\\{g})；并且在给定次序i先于j时v_i(X_i)≥v_i(X_j)。空包比较自动成立。",
+      "quantifiers": "∀有限goods集、∀共同可四着色laminar系统、∀四人非负实可加估值、∀预定四人次序，问∃同一份完整可行分配同时满足全部EF1及向后无嫉妒不等式。",
+      "assumptions": [
+        "各包满足同一laminar可行系统；可四着色保证存在某个完整可行四分配。",
+        "只按给定次序较早者对较晚者要求no-envy；并非双向完全无嫉妒。"
+      ],
+      "scope": "本稳定namespace ID只绑定问题页第一节的一般四人laminar有序目标；同页copies母问题由FG02、三人限制由TS-COPIES-3-SDEF1-v1分别承载。FG01只承载K8/K12双key；一般目标蕴含两个特殊key目标，但本批无逆向约化证明，不能登记等价。",
+      "objections": "明确数学open。源述母论文约化尚非本批已审证明；双key有限整数profile不能解决连续估值、更不能解决一般laminar有序目标。普通EF1目标与本有序加强版不能混同。",
+      "body": {
+        "path": "archives/fair-allocation/state/问题/四人层流约束有序EF1与副本SD-EF1--问题.md",
+        "sha256": "b9002a70648f38943081da442c014b72786d6a4c75fcac85f00a2181ff98a9a5",
+        "section": "四人共同laminar约束"
+      },
+      "evidence": [
+        {
+          "path": "archives/fair-allocation/state/资料/可加公平与副本前缀目标的候选反例分层--资料.md",
+          "sha256": "f871cd1cc5160e0753f9913b1d02991cf081529ff9dd87dddd9f071cba4cfccc",
+          "section": "四人laminar两个key：同目标、两来源证据"
+        },
+        {
+          "path": "archives/weighted-congestion/state/审查/退役公平商品候选三源处置--审查.md",
+          "sha256": "884fabbe490151b23a6fbd315f5c4badbce21f7aadeb10c808052bfeb2cc443b",
+          "section": "FG01：四人 laminar EF1 的 key 实例"
+        }
+      ],
+      "sources": [
+        "archives/fair-allocation/state/问题/四人层流约束有序EF1与副本SD-EF1--问题.md",
+        "archives/fair-allocation/state/资料/可加公平与副本前缀目标的候选反例分层--资料.md",
+        "archives/weighted-congestion/state/审查/退役公平商品候选三源处置--审查.md",
+        "frontmatter:fair-allocation/laminar-four-ordered-ef1-and-copies-sdef1"
+      ]
+    },
+    {
       "object_id": "fair-allocation/three-player-common-marginal-conditional-cost",
       "version": 1,
       "title": "三人共同边际独立扰动的条件成本恒等式与非减有效延迟",
@@ -135861,6 +136317,15 @@
       "reason": "全文；十二客户三极大主题的全部有序终局分类，并支持删位章的人口候选边界。\n全文；十二客户三极大主题的全部有序终局分类，并支持删位章的人口候选边界。 本27保当前全部主body owner；六主身份仅补证/范围说明，body、数学陈述、状态和既有证据均保持，未重证或扩域。"
     },
     {
+      "path": "archives/customer-attraction/state/反例/任意人数首步补全余额--反例.md",
+      "sha256": "b42e57e311686c2d737d6ade6642efaa05caa28dded02c9cf035ef0ed9c70072",
+      "disposition": "objects",
+      "object_ids": [
+        "CA-PREFIX-BALANCE-NO"
+      ],
+      "reason": "本次全文实读并直接登记成熟任意n≥4负首步余额族；补回缺失稳定legacy Claim CA-PREFIX-BALANCE-NO。全部历史解析证明在本正文；R22-UP是另一命题，未合并。"
+    },
+    {
       "path": "archives/customer-attraction/state/反例/任意冻结组合最小利润的星形静态保底失败--反例.md",
       "sha256": "d14d37a521df08ca6540411fffa345a908a68e26dd99cfc294a0aac0bcc42620",
       "disposition": "objects",
@@ -135868,6 +136333,15 @@
         "customer-attraction/frozen-portfolio-minimum-profit-star-static-floor-failure"
       ],
       "reason": "全文给星形全背景最小性及空主题端点；非SPE任意冻结组合范围。"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/任意合法背景的前两人额外槽安全值--反例.md",
+      "sha256": "0701ae9959fd048cd50268a63c72b48f098dad1d3922c2e44c29ce41075a4016",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/arbitrary-background-pair-extra-slot-counterexample"
+      ],
+      "reason": "完整实读成熟全历史PB证明后直接补缺失主身份，使用原正文stable namespace ID；与标准/额外分数平台及actual-prefix障碍保持不同命题。"
     },
     {
       "path": "archives/customer-attraction/state/反例/任意干预流的当前客户分享损失越过覆盖钱包--反例.md",
@@ -139707,9 +140181,15 @@
     {
       "path": "archives/customer-attraction/state/审查/入密度共同账的陈述后重构与补充分层--审查.md",
       "sha256": "3f05fba7456fee1f03b3c7f7d7a7b649d9a661c77fb7629ad248618686a8f274",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "density共同账/trim主body0003 Boss1 claimed未交；自然query Bellman主body0047 available，旧rank/world/Hall各owner0017/0020未实际收本页SHA。陈述后重构不另造独审数学节点。"
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/natural-captured-mass-redistribution-and-common-density-diagonal-ledger",
+        "customer-attraction/natural-capture-routing-bellman-prices-and-hall-cancellation",
+        "M-453311709b8248f4977a880920f6da60",
+        "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance",
+        "customer-attraction/free-source-trimming-total-price-and-sufficient-half-coverage-interface"
+      ],
+      "reason": "全文实读按精确数学分节接证：全行动μ/真父IC/M−H/较宽captured域归density，兼容自然Bellman归算法；裸Gamma与保delta残网校正分别归rank/SOURCE-NET；自由trim与固定rho非最优纠错归TOTAL-TRIM。所有证据以唯一标题定位，原对象模型/量词/真值和旧证据全保；不把历史盲审标签或共同费用开放当未辨身份。"
     },
     {
       "path": "archives/customer-attraction/state/审查/全历史后悔稳定界与真实后缀退出的解析复核--审查.md",
@@ -140428,9 +140908,11 @@
     {
       "path": "archives/customer-attraction/state/审查/对称终末储备的全历史容量归纳与独审先验--审查.md",
       "sha256": "bab83635b0523959154389bda088ee0440bdc7a2c4c9d132c12511e2325ab88e",
-      "disposition": "excluded",
-      "object_ids": [],
-      "reason": "fresh本次连续实读成熟正式正文全文（含模型、精确量词/条件、解析论证、表格、来源和纠错），复用成熟证明；原大JSON/代码/程序输出仅按正式正文定位，不冒作本次原字节全文审查或重跑。 未闭跨owner证据：M-39efbd59b255457e82303be3881f54d5：与已登记M-39ef精确同一C后D结构和3/2结论，当前页保作者精确收益及原statement-first重构两种证明。。精确路由见receipt.owner_routes；尚未接证不称已完成来源归一。"
+      "disposition": "attachment",
+      "object_ids": [
+        "M-39efbd59b255457e82303be3881f54d5"
+      ],
+      "reason": "主body已保同一严格集合目录C-then-D族的3/2限制。本页含原作者精确B收益与statement-first独立弱上界两种完整收束，实读对照后接作必要独立证明附件；原excluded误把未接来源当无数学，现改正。完整真实后继、fresh容量、a=0与d=0边界保留。"
     },
     {
       "path": "archives/customer-attraction/state/审查/局部势排除接口的反驳与望远镜范围--审查.md",
@@ -140736,9 +141218,13 @@
     {
       "path": "archives/customer-attraction/state/审查/混合方剪枝停点与第二缺陷重构的读序--审查.md",
       "sha256": "1b63da0aac11a790ee7d4b1258d3d94647c54c0862f004afe12cf7a2f66edde7",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "mixed/CLIP及fresh ν=vS−X+ell仍含未付款ell；0003 SAFE/CLIP及0013第二缺陷owner尚未实际接本页SHA。需要按实际数学owner接证，不另造审查节点。"
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/same-context-safe-net-coupons-and-maximal-scalar-clipping",
+        "M-8118ec4080264955bbda39b072df36a2",
+        "customer-attraction/natural-incoming-true-history-slack-and-per-recipient-half-coefficient"
+      ],
+      "reason": "全文实读后仅把“同一context的退款与剪枝合同”接SAFE/CLIP，把“fresh停点的真实off-history方向”接自然OFF-IC；每个object都保原精确数学，追加唯一标题evidence。末节second审查先验/原读序是来源解释，不充当另份构造证明，不整页泛挂未知owner。"
     },
     {
       "path": "archives/customer-attraction/state/审查/源金额与坐标双预算的内部续审和有限校准--审查.md",
@@ -149571,9 +150057,11 @@
     {
       "path": "archives/customer-attraction/state/计算/PB背景双独立标量程序的范围与报告绑定--计算.md",
       "sha256": "831ab164ab7720be8e9370414ad9c020144cdacf2d31f25ac48756406509370c",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "完整逐段实读。两独立标量程序及全部原报告仅核PB算术，并非另份全树认证；路由0002完整反例，精确合同/运行界保原文。"
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/arbitrary-background-pair-extra-slot-counterexample"
+      ],
+      "reason": "全文实读。同一PB输入的G/P/F/S/singleton七有理余量与两个不同入口/报告；dynamic2292≥Q弱于parent2292>Q+k，PB主证明用后者，保精确责任。仅作同一主对象的固定参数证据，不另登记PASS/标量节点。"
     },
     {
       "path": "archives/customer-attraction/state/计算/PEEL有限回归与负漂移见证--计算.md",
@@ -151414,9 +151902,11 @@
     {
       "path": "archives/customer-attraction/state/计算/四人首步余额完整策略证书--计算.md",
       "sha256": "60616835c921d4c336019b9f5e107980ac35db330d9c78c3244057327a0e7a9c",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "完整逐段实读。22客户四人完整259动作策略是0009一般族特化；独有全字面策略与两原核验须主owner接收，禁止重复独立主record。"
+      "disposition": "attachment",
+      "object_ids": [
+        "CA-PREFIX-BALANCE-NO"
+      ],
+      "reason": "全文实读。是同n≥4族在n4/叶重命名后的固定22单位客户实例；独有259项字面完整策略、1554真实续局比较、两种补全枚举和全F/B/δ序列，直接接CA-PREFIX-BALANCE-NO证据；不另造计算节点，不等待外部owner回执。"
     },
     {
       "path": "archives/customer-attraction/state/计算/四十客户根尾付款保存点的完整策略补全--计算.md",
@@ -155813,9 +156303,9 @@
     {
       "path": "archives/customer-attraction/state/资源/安全聚合工作区的CCE交付登记与历史身份--资源.md",
       "sha256": "7920dd7eae188d54ff698177493711be57ae350a08e32e37746331639d553823",
-      "disposition": "needs-decision",
+      "disposition": "excluded",
       "object_ids": [],
-      "reason": "fresh本次连续实读成熟正式正文全文（含模型、精确量词/条件、解析论证、表格、来源和纠错），复用成熟证明；原大JSON/代码/程序输出仅按正式正文定位，不冒作本次原字节全文审查或重跑。 未闭跨owner证据：CA-WORST-CCE-WELFARE-NO：原CCE入口的八客户交付身份及理性证书合同，非第二个反例。。精确路由见receipt.owner_routes；尚未接证不称已完成来源归一。"
+      "reason": "全文对读当前CA-WORST-CCE-WELFARE-NO主正文：八客户输入/21节点策略、W6/OPT8、544/87锐原始/对偶、v3=44/23与非half范围均已完整承载；42客户发现链另有已登记计算/程序正文。其余仅README交付意向、旧actor/workspace身份和读序，无独立数学或未完草稿；不为历史身份包装再造证据owner。"
     },
     {
       "path": "archives/customer-attraction/state/资源/安全聚合探索与银行任务的分段证据身份--资源.md",
@@ -157189,9 +157679,11 @@
     {
       "path": "archives/customer-attraction/state/资源/第六轮共同容量根稿与角色归池的精确合同--资源.md",
       "sha256": "724397215d551ffecaff1f7421d06ca5c89c2498cc49b066fdab35680173f855",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "数学本体已读；尚有主owner或必要证据接收/原件恢复未闭合：全客户SAFE/CLIP/HIT、分数归属与full-O ROLE-CAP2主0003；这里只保资源合同的准确差异：full-O需全客户核、fresh-only不能换入，ΣA=OPT不等于各A_j≤2u_j。等待0003主ID与证据接收。"
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ead54e488b984a12a91635e679fbe55c"
+      ],
+      "reason": "全文实读。实接“同角色归池、全O cap2与fresh核分别初始化”作为既有ROLE-CAP2开放义务的输入/分域证据；其SAFE、CLIP、HIT、凸包及自然密度段已明确是各正式主正文重述，不另造身份/新证明。未授予whole页多个泛owner，未将ΣA=OPT提升为逐角色cap。"
     },
     {
       "path": "archives/customer-attraction/state/资源/第十一轮共享负载的凸信用与共同付款停界--资源.md",
@@ -162191,9 +162683,14 @@
     {
       "path": "archives/fair-allocation/state/审查/公平玩具生成脚本三源审查--审查.md",
       "sha256": "781e0c3e848fb0491bc875f0b09303606ab7ecb835a9806b086b2a19f5a46b6b",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "已按实际数学部分核对本批归属；待0118既有主owner精确接收 FG01,FG02,FC-01：laminar/copies生成器及三类触达计数边界；未截断三类成本不是rank cap二的证据。 未复制主记录；详receipt内逐项路由。"
+      "disposition": "attachment",
+      "object_ids": [
+        "FG01",
+        "FG02",
+        "FC-01",
+        "TS-COPIES-3-SDEF1-v1"
+      ],
+      "reason": "Boss1全文实读三种脚本方法页及三原脚本；FG01/FG02/FC-01复用0118成熟草稿稳定ID与主正文，TS为既有三人限制目标。ordered no-envy仅i<j、copies严格排序前缀、类触达成本/loops语义分别接证；k3未截断不是rank≤2证据。方法依赖有独有模型语义，不能当纯日志删除；不新造程序节点。"
     },
     {
       "path": "archives/fair-allocation/state/审查/公平跨域底层与冻结核验三脚本审查--审查.md",
@@ -162292,9 +162789,13 @@
     {
       "path": "archives/fair-allocation/state/审查/退役公平商品有限玩具结果--审查.md",
       "sha256": "f8eeb13b0f9730b956390a28f8c897f3ca7b781a410ad9a24af42a730ed414fa",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "已按实际数学部分核对本批归属；待0118既有主owner精确接收 FG01,FG02：K8/K12固定见证、5000/500整数profile、copies5000/2000排序样本及前缀亏额；旧Lemma12 top-separation=0缺完整谓词/程序，仅保来源字段，不能独立当已恢复方法反例。 未复制主记录；详receipt内逐项路由。"
+      "disposition": "attachment",
+      "object_ids": [
+        "FG01",
+        "FG02",
+        "TS-COPIES-3-SDEF1-v1"
+      ],
+      "reason": "Boss1全文读冻结结果和固定见证解释，复核K8/K12两个显示见证以及n3/n4 copies显示矩阵的全部定义不等式；5000/500与5000/2000样本、seed、最坏值和源0字段保有限等级。代码实际分离谓词已定位并给出四着色矛盾，旧论文谓词对应未审，非身份缺口；保留原页独有输入/见证，不视同纯包装。"
     },
     {
       "path": "archives/fair-allocation/state/审查/退役公平家务有限证据三源处置--审查.md",
@@ -162371,9 +162872,11 @@
         "SEL-FAIR-FPO-PROBE-v1",
         "SEL-PB-EFX-MONOTONE-COMPLETION-OBSTRUCTION-v1",
         "M-16fa0689a0bb44c087d58a8f94933c21",
-        "TS-COPIES-3-SDEF1-v1"
+        "TS-COPIES-3-SDEF1-v1",
+        "FG01",
+        "fair-allocation/laminar-four-ordered-ef1-and-copies-sdef1"
       ],
-      "reason": "本页已分别定位四条可加固定反例／方法障碍与三人copies独立开放目标；三人任意类型数TS-COPIES-3-SDEF1-v1用本页精确既有ID补漏登记，与一般人数FG02分立。K8/K12的FG01来源仍待0118主owner精确接证；不能把两key与一般四人laminar主目标或未审约化当等价。"
+      "reason": "本页已分别定位四条可加固定反例／方法障碍与三人copies独立开放目标；三人任意类型数TS-COPIES-3-SDEF1-v1用本页精确既有ID补漏登记，与一般人数FG02分立。K8/K12的FG01来源仍待0118主owner精确接证；不能把两key与一般四人laminar主目标或未审约化当等价。\n本页已分别定位四条可加固定反例／方法障碍与三人copies独立开放目标；三人任意类型数TS-COPIES-3-SDEF1-v1用本页精确既有ID补漏登记，与一般人数FG02分立。K8/K12的FG01来源仍待0118主owner精确接证；不能把两key与一般四人laminar主目标或未审约化当等价。 Boss1补接FG01双key及一般laminar独立目标的共同定义/边界证据；三人copies v2仅补有限输入与方法证据，主命题/量词不变。"
     },
     {
       "path": "archives/fair-allocation/state/资料/图定向残差与两平行类秩成本的独立合同--资料.md",
@@ -162396,9 +162899,14 @@
     {
       "path": "archives/fair-allocation/state/问题/四人层流约束有序EF1与副本SD-EF1--问题.md",
       "sha256": "b9002a70648f38943081da442c014b72786d6a4c75fcac85f00a2181ff98a9a5",
-      "disposition": "needs-decision",
-      "object_ids": [],
-      "reason": "已按实际数学部分核对本批归属；待0118既有主owner精确接收 FG01,FG02：两独立开放目标的专题补正文：共同四着色laminar指定次序EF1+ordered no-envy；等值copies严格次序前缀SD-EF1不附PO。 未复制主记录；详receipt内逐项路由。"
+      "disposition": "objects",
+      "object_ids": [
+        "fair-allocation/laminar-four-ordered-ef1-and-copies-sdef1",
+        "FG01",
+        "FG02",
+        "TS-COPIES-3-SDEF1-v1"
+      ],
+      "reason": "Boss1按两个章节完整辨认：一般四人laminar有序目标沿页稳定namespace单立，双key、一般copies和三人copies分别沿既有ID；清楚open正常交付，不留来源needs-decision。一般laminar到双key只有显然的特殊化方向，本批不冒作等价。"
     },
     {
       "path": "archives/resource-activation/state/计算/固定激活统一化反例程序重放--计算.md",
@@ -169512,6 +170020,25 @@
       "reason": "固定玩家乘子障碍与多项式端点归约的完整条件证明及 750/7488/153 项精确回归范围；两个对象直接引用。 Lead accepted existing owner after full worker read."
     },
     {
+      "path": "archives/weighted-congestion/state/审查/退役公平商品候选三源处置--审查.md",
+      "sha256": "884fabbe490151b23a6fbd315f5c4badbce21f7aadeb10c808052bfeb2cc443b",
+      "disposition": "objects",
+      "object_ids": [
+        "FG01",
+        "FG02"
+      ],
+      "reason": "Boss1实际接入已完整阅读的FG01/FG02两节主正文；源于仍由Boss2 claimed的0118成熟draft，原draft未改且未替其done。此页FG03–FG05等其他候选仍由0118原范围续交；本增量仅声明所列已接入对象，后续materials按owner并集合并。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/退役公平家务候选三源处置--审查.md",
+      "sha256": "9b1388d9c3c24d343aa102d3d2c96d5f0ef25108ca46cfbbc4fe344079752324",
+      "disposition": "objects",
+      "object_ids": [
+        "FC-01"
+      ],
+      "reason": "Boss1实际接入已读rank≤2候选主正文的FC-01；主记录复用0118稳定ID并补完整EFX定义与三类未截断方法边界。0118的局部两类引理及FC02–06等其他对象保持原worker未完范围，未冒称该任务done。"
+    },
+    {
       "path": "archives/weighted-congestion/state/引理/乘法权窗密度的锐幂矩--引理.md",
       "sha256": "43c435eb211eb87560341b52aa6161e145db8b044b2611079aa52dd6f883f6e9",
       "disposition": "objects",
@@ -171047,6 +171574,27 @@
       "record": {
         "path": "research/registration/batches/register-ab98f323ad-0044.json",
         "sha256": "aa790b762715abf9d9087e5538f2eef8771e3aedff3082b26c4f6583796e5ae9"
+      }
+    },
+    {
+      "batch_id": "register-lead-reserve-proof-preservation-20261108",
+      "record": {
+        "path": "research/registration/batches/register-lead-reserve-proof-preservation-20261108.json",
+        "sha256": "88b0597274a2c0a5cd6d0ef464fdbfbaf658d8d890ee4f4d7516cd9e5965da2b"
+      }
+    },
+    {
+      "batch_id": "register-lead-closeout-a-01-20261108",
+      "record": {
+        "path": "research/registration/batches/register-lead-closeout-a-01-20261108.json",
+        "sha256": "e8db0810ede675ef8f348557e7fd4fba316482983b03f8a328a3356ef5a7870c"
+      }
+    },
+    {
+      "batch_id": "register-lead-fair-closure-20261108",
+      "record": {
+        "path": "research/registration/batches/register-lead-fair-closure-20261108.json",
+        "sha256": "f286e862873cab38a308745b1a729283fda58f4aee93b2de2ed73126e03ebcee"
       }
     }
   ],
