@@ -1,0 +1,63 @@
+{
+  "edge_id": "commonmany-nested-anchor-generalizes-all-or-one",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-NESTED-ANCHOR-GREEDY-2"
+  ],
+  "target_ids": [
+    "SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一 MF-MODEL、同一规范 SC-K-GREEDY-BUDGET 贪心占位、显式正二进制有理权、k≥2 带标签设施、正最大站点可达；只比较两对象各自声明的输出子类，且完整因子二续局仍按双方共同列明的 MAX（及常 q 分支所需 RANGE）调度合同。",
+  "roles": {
+    "SC-K-NESTED-ANCHOR-GREEDY-2": "源域：每个重叠分量常 q，或首开站 H 属于每个多选客户的全部已占选项，并可按非增权排序使选项集嵌套扩张；按当前 W_t/q_t 最小站做列表分配，末入客户不等式给原子 NE，锚点盒界给完整续局接口。",
+    "SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2": "目标域：每个分量常 q，或每个客户的已占选项为单站或分量全站；其 all-or-one 列表构造和因子二续局被源域覆盖。"
+  },
+  "explanation": "ALL-OR-ONE 的 mixed 分量中，多选客户的已占选项都等于该分量全站集合，因而共同首开站 H 在每个多选集内，且这些集合相等、自然满足非增权嵌套条件；单选客户不进入列表分配。常 q 分量直接落入两者共同的常 q 分支。因此每个 ALL-OR-ONE 输出都满足 NESTED 的识别条件，NESTED 的列表证明和锚点盒证明专门化为 ALL-OR-ONE 结论。严格性由三站 q=(3,2,1) 的 H-M 与 H-M-L 两个共享选项集：它满足嵌套锚点但不是 all-or-one；有限审计只作该域分离的见证，不承担普遍证明。反向交换 5/3 选项集会使无嵌套列表规则产生改善边，说明共同锚点本身不足，但不反驳此域包含。",
+  "scope": "3A common-many；仅记录 NESTED 对 ALL-OR-ONE 的输出域包含/方法专门化。保留全部客户原已占选项、未开站覆盖不受限、盒内站纯/站内独立均匀 NE、完整续局和 factor-two 条件；不扩展到一般三站部分重叠或任意输入。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/共同锚点嵌套选项的降序列表均衡--算法.md",
+      "sha256": "5e6a5d49b38f480490a4c8d255aa9deb6a10eae9590277447d046bcb8a706f4c"
+    },
+    {
+      "path": "tools/evidence/common-many-primary-register/original/research/current/multi_facility/claims.md",
+      "sha256": "3ebdc5ee98b8dbd847e06e26e1fc6b708002e485fe2b31abb9ee1ae491d26e89",
+      "section": "SC-K-NESTED-ANCHOR-GREEDY-2 -- ordered partial overlaps around one anchor"
+    },
+    {
+      "path": "tools/evidence/common-many-primary-register/original/research/current/multi_facility/claims.md",
+      "sha256": "3ebdc5ee98b8dbd847e06e26e1fc6b708002e485fe2b31abb9ee1ae491d26e89",
+      "section": "SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2 -- arbitrary-size mixed multiplicities"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/审查/任意设施数命题登记与证据分层--审查.md",
+      "sha256": "f08b7bff2d2e89cedf745454a4f3112cb9be0b67e1e5d17ce7dca582923c7f62",
+      "section": "可识别输出类的选择器"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/tools/evidence/facility-selector-frontier/original/tests/audits/kfac_nested_anchor.py",
+      "sha256": "4b701bdf231c346ec6ca5f46103edf10c35a4070a748c8e30cac9ee84cd19313"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/tools/evidence/facility-selector-frontier/original/examples/multi_facility/greedy_nested_anchor.json",
+      "sha256": "52ccd06bb807f8ef309e44bf6567ae575281c6b297b9cde489349bbaeb11954b"
+    }
+  ],
+  "reviewed_by": "Boss3-common-many-3A-fresh-worker",
+  "review_note": "完整读取三项 core 对象、MF-MODEL shared read 及任务声明全部 references；逐项核对 ALL-OR-ONE 的单站/全站选项条件如何满足 NESTED 的共同锚点与嵌套条件，并核对 q=(3,2,1) 三站例确实给出严格扩大域。relation_mode 取 conditional 是因为两对象的 factor-two 完成都保留共同 MAX/RANGE 调度合同；边本身的域包含与列表不等式推导已完整。有限脚本只验证示例、反向排序障碍，不被当作普遍证据。",
+  "endpoint_pins": {
+    "SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2": "71af3ccff84eb664b792d34b2b0c7000ddbb0d8c0742bece49b27476536d7249",
+    "SC-K-NESTED-ANCHOR-GREEDY-2": "79464bcef6bf182edbaf27d54f56245ab9813b7e1159dc0d41ea6bfad42b7673"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/算法/共同锚点嵌套选项的降序列表均衡--算法.md": "5e6a5d49b38f480490a4c8d255aa9deb6a10eae9590277447d046bcb8a706f4c",
+    "tools/evidence/common-many-primary-register/original/research/current/multi_facility/claims.md": "3ebdc5ee98b8dbd847e06e26e1fc6b708002e485fe2b31abb9ee1ae491d26e89",
+    "archives/facility-games/subarchives/common-many/state/审查/任意设施数命题登记与证据分层--审查.md": "f08b7bff2d2e89cedf745454a4f3112cb9be0b67e1e5d17ce7dca582923c7f62",
+    "archives/facility-games/subarchives/common-many/tools/evidence/facility-selector-frontier/original/tests/audits/kfac_nested_anchor.py": "4b701bdf231c346ec6ca5f46103edf10c35a4070a748c8e30cac9ee84cd19313",
+    "archives/facility-games/subarchives/common-many/tools/evidence/facility-selector-frontier/original/examples/multi_facility/greedy_nested_anchor.json": "52ccd06bb807f8ef309e44bf6567ae575281c6b297b9cde489349bbaeb11954b"
+  },
+  "review_digest": "8ab74ce7fe4a70a5eb6f55ec4aa67b4db62f6a1f98c9183db783f2bf5a1855ce"
+}

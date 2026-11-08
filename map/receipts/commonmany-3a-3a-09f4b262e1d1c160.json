@@ -1,0 +1,61 @@
+{
+  "task_id": "commonmany-3a-3a-09f4b262e1d1c160",
+  "stage": "3A",
+  "object_ids": [
+    "SC-K-ADAPTIVE-DOUBLE-LPT-2",
+    "SC-K-FORCED-FLOOR",
+    "SC-K-ADAPTIVE-RESET"
+  ],
+  "read_object_ids": [
+    "MF-MODEL"
+  ],
+  "input_pins": {
+    "SC-K-ADAPTIVE-DOUBLE-LPT-2": "948faf5dbd2362c47d0a6c2d1679c2a0663b56a33bd187a5670798ed66398974",
+    "SC-K-FORCED-FLOOR": "cf6aa3912a847679847c51588b2627ba768529b821a76d42d6b00ff1cca3ede7",
+    "SC-K-ADAPTIVE-RESET": "024c2910c386e5a58e1d8efefec4c55c48bf6efea0c4fb9eeefabca753ec1188",
+    "MF-MODEL": "1ca8c08397c3ec2c0a05b8eecb18e5e1de2b3e863c5f73f8c6eaf6b6fdf05bec"
+  },
+  "status": "complete",
+  "coverage": {
+    "SC-K-ADAPTIVE-DOUBLE-LPT-2": {
+      "state": "linked",
+      "object_pin": "948faf5dbd2362c47d0a6c2d1679c2a0663b56a33bd187a5670798ed66398974",
+      "comparison_scope": "完整读取 AD/AR 自适应原池算法正文（原模型、AR q≥2/q=1 分支、AD 首轮/第二轮测试、严格三角实例）以及 SC-K-FORCED-FLOOR、MF-MODEL 和任务声明的全部 references；逐式比较 AD 的首轮 γ 保持、纯 Nashification、η_s→τ_s、q_s−1 删除箱、AR 转接及 MAX/RANGE 边界。",
+      "reason": "AD 成功测试是 AR 的严格特化：纯在轨 NE 可编码为退化 mixed，强制池下界与首轮 γ 给 a_f≥τ_s，第二轮箱给 AR 删除证书；FLOOR 仅承重自适应阈值步骤。失败 unknown 不等于无证书，且一般 mixed 输入、证书生成完备性和外部调度器时间结论均未被推出。",
+      "edge_ids": [
+        "commonmany-adaptive-double-lpt-specializes-adaptive-reset",
+        "commonmany-forced-floor-certifies-adaptive-threshold"
+      ]
+    },
+    "SC-K-FORCED-FLOOR": {
+      "state": "linked",
+      "object_pin": "cf6aa3912a847679847c51588b2627ba768529b821a76d42d6b00ff1cca3ede7",
+      "comparison_scope": "完整读取强制原子池引理、AD/AR 算法、MF-MODEL、装箱/受帽证明、MAX/RANGE 审查、三角审计与任意设施数登记审查；核对 η_s 的 h、D、纯 NE 量词、q=0/残余重算边界及其在 AD τ_s=max(γ,η_s) 中的精确位置。",
+      "reason": "FLOOR 在纯 Nashification 终点给每家设施负载≥η_s，从而与首轮≥γ 合并为 AD 的 τ_s 阈值并验证第二轮删除箱接口。该逻辑不推广到 mixed NE，也不替代 AD 首轮或第二轮测试；没有额外 hub 边。",
+      "edge_ids": [
+        "commonmany-forced-floor-certifies-adaptive-threshold"
+      ]
+    },
+    "SC-K-ADAPTIVE-RESET": {
+      "state": "linked",
+      "object_pin": "024c2910c386e5a58e1d8efefec4c55c48bf6efea0c4fb9eeefabca753ec1188",
+      "comparison_scope": "完整读取 AR 的给定在轨均衡/源池删除证书前提、q≥2 全原客户重置与 q=1 消失源分支、受帽纯 NE 完成、MAX 条件，以及 AD 通过测试后如何满足这些前提。",
+      "reason": "AD 的成功域提供 AR 所需 a_f≥γ、原池 q−1 删除箱（更强的全≤2τ_s 情形）和同布局在轨 NE；故 AR 是 AD 输出的通用完成接口。该边保留 q=1 γ 重置、纯→退化 mixed 和有限正确性边界，不把 AR 反向升级为 AD。",
+      "edge_ids": [
+        "commonmany-adaptive-double-lpt-specializes-adaptive-reset"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/commonmany-3a-3a-09f4b262e1d1c160/adaptive-double-lpt-specializes-adaptive-reset.json",
+      "sha256": "044de804d807cfe146e9450665f3ecae08262674e09dc43787f526cfe9228157"
+    },
+    {
+      "path": "map/edges/commonmany-3a-3a-09f4b262e1d1c160/forced-floor-certifies-adaptive-threshold.json",
+      "sha256": "0f08947c6c40228a30ec071e72cb042ea3a6f77275cf051fe59251e6ca60e724"
+    }
+  ],
+  "reviewed_by": "Boss3-common-many-3A-fresh-worker",
+  "review_note": "已完整读取 3 个 core 对象、1 个 shared read 对象及任务列出的全部 references（含算法/定义/审查/定理/引理/计算、原始审计 JSON 与 manifest、跨档 tracker 和精确续局证明章节）。发布两条条件逻辑边：AD 成功识别域 specializes AR；FLOOR 仅 certifies AD 的纯 NE 自适应阈值。所有关系均保留 MF-MODEL 的带标签共同目录量词、纯与 mixed 分离、q=0/残余重算、γ/η/τ、MAX/RANGE 及 unknown 边界；未付义务为一般证书生成、一般位多项式选择和未直接核定的外部 RANGE 导入。"
+}
