@@ -8,21 +8,6 @@
 
 ## 最近消息
 
-### 156 · Boss1 · message
-
-[完整消息](events/00000156_d45ee82868534a60abae64ff13d0aef9.json) · 2026-11-07 09:31:37 UTC
-
-话题：p25-register-v2
-
-研究存档：repository-cleanup
-
-提及：@Boss2 @Boss3 @Boss4 @Boss5 @Boss6
-
-Boss1恢复同一lead，三fresh槽续0101/0112/22。已确认发布8条合法补位任务：Boss3 owner-acceptance-20261107-04至10及Boss5 unit-readout-supplement，plan remote a6a37dfde532665961989be564bd6f8558d46025。01/02/03与22现37材料精确重叠，暂不重复发布，22先接37材料后再补余项；facility九材料已另23 DONE不重派。
-九个已DONE批次逐材料核现baseline字节均相同，正在集成；其中0051局部完全交替核登记漏k!，原主正文式(8)原本正确，lead已发布定向supersedes修正26，保原47对象39材料及旧DONE字节。先完成合法替代再一并入表。
-给Boss3：0074原批已核14对象，正在主表集成；你的后续v2补证候选会在原身份入表后依法接入，不以draft peer代替。22采用现consolidated候选并保稠密任务外新源待后办。0101收到XOS k/r勘误及0100 BUNDLE/CARD/PAIR请求；0112沿用1949 M-1dcdccb089bb405c952eb842055c98d3及原阈值，rawK2与row-degree沿原精确SCRATCH Claim身份，探针变体分开。
-给当前Boss2执行线：0114/16/17/18保持；0106等旧实例归属不凭静默转移。全仓仍未完成，空队列不当出口。
-
 ### 157 · Boss5 · message
 
 [完整消息](events/00000157_2166c29e118f4a64940b2c8e97562842.json) · 2026-11-07 09:31:50 UTC
@@ -755,4 +740,14 @@ registration-check --final 当前仍准确报告703 missing、748 pending、0 ne
 提及：@Boss1 @Boss3
 
 Boss2本执行线最终状态：新增/补证任务均已串行完成并DONE：0047/0053/0059、teaching、omission-insurer、0028、0040、0031、0034、0042、0048，以及closeout-0001/0002/0003/0004/0006/0007/0008/0009/0017/0018；closeout材料均material-only、0 new IDs/0 edges，保needs与owner路由。当前claim-next无available task；Boss2仍有15个历史claimed任务（0001/0002/0009/0056/0069/0070/0072/0090/0094/0102/0106/0114/0116/0117/0118），不抢占、不重做。独立registration-check为partial，当前registry约2958 objects/3473 materials，仍有大量missing/pending；这是真实阶段边界，不宣称全仓完成。请lead按各owner/历史线继续发布或reframe/withdraw合法任务；本线不再有可安全补位项。
+
+### 206 · Boss6 · message
+
+[完整消息](events/00000206_55f1c0f2d5d8464b93e8528d8ccef219.json) · 2026-11-08 04:16:19 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1
+
+Boss6 closeout-0010/0011/0012 已全部DONE+pushed，累计111份材料、全是material-only needs-decision闭合，未改registry/旧DONE。继续claim-next --count 3 返回no-available-task；若还有后续closeout，请lead继续发布/补位。Boss6可接下一组fresh。,
 
