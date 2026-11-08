@@ -1,0 +1,54 @@
+{
+  "edge_id": "config-pricing-local-tu-implements-pricing-component",
+  "kind": "implements",
+  "status": "accepted",
+  "source_ids": [
+    "M-ada741cd5e634934805d83850dd7cd1f"
+  ],
+  "target_ids": [
+    "M-f63f6d1bd7fc41b2a4eb5f90492a24b1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "仅在每个 bin 的局部族确实可写成显式有限 0/1 资源矩阵 A_l 的可行 0/1 支持、每列的一在资源行顺序中连续、每 item 为单位需求、所有容量 u_t 与给定模权 w_i 为非负有理数且保留全部行约束和端点约定时，M-ada 的 oracle 才能作为该 bin 的 modular pricing_l(w)=max_{S∈I_l}Σ_{i∈S}w_i。它逐 bin、逐次给定显式 w；不假定也不证明跨 bin 共享约束、全局配置地集的显式列举或稀疏支持。",
+  "roles": {
+    "M-ada741cd5e634934805d83850dd7cd1f": "在上述 interval/unit-demand 显式局部模型中，以 floor(u) 和连续一矩阵 TU 证明精确位多项式地求一个 bin 的非负模权最大可行集合；这只是所需 pricing 接口的一项局部实现。",
+    "M-f63f6d1bd7fc41b2a4eb5f90492a24b1": "提供完整配置地集 E={(l,S):S∈I_l} 上的整数配置—指派价值等价及下闭去冲突映射；其定理本身不提供 E 的隐式生成、全局 pricing、分数点/梯度或预算舍入算法。"
+  },
+  "explanation": "固定 bin l、把局部下闭族准确编码为连续一 0/1 资源约束且给定 item 权重时，M-ada 的 TU LP 确实返回该 bin 的精确 modular pricing 值，因此可实现隐式配置接口中“单 bin 非负模权 pricing”这一局部部件。这个关系仅为实现/接口语境，不能推出 M-f63 的整数等价定理已有算法化实现。M-f63 的配置等价以完整 E 为前提，而 E 可能有 |L|2^{|P|} 个配置；仍未交付（i）每个 I_l 的访问模型及其与优化 oracle 的可用映射，（ii）所有 bin 的全局配置枚举或多项式稀疏支持，（iii）共同预算、非均匀 opening cost、每 bin 至多一配置及一般 bin-matroid/截断激活的联合可行性，（iv）满足 item marginal/预算约束的分数点构造，（v）multilinear G 及候选依赖梯度的精确/近似计算，（vi）从分数支持到整数配置/指派的实际舍入，以及（vii）相对紧输入的隐式配置 LP 求解。M-ada 也不覆盖 nonunit demands、重复占用或非interval supports；这些情形不能由 TU 结论自动继承。故不能把这条局部 oracle 边升级成全局 pricing、完整配置支持或隐式 LP solver，也不能把 M-f63 的整数值等价提升为紧输入多项式算法。",
+  "scope": "第三阶段 3B；configuration-assignment 的接口范围审计。仅确认显式连续一、单位需求局部族的单 bin modular-pricing 实现；不提供全局配置地集、预算/激活、分数支持、梯度、舍入或隐式 LP 的逻辑支持。",
+  "evidence": [
+    {
+      "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+      "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+      "section": "指数地集必须交付的五个接口"
+    },
+    {
+      "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+      "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+      "section": "consecutive-ones局部oracle的准确条件"
+    },
+    {
+      "path": "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md",
+      "sha256": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+      "section": "下闭配置指派与最大值覆盖的整数等价"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md",
+      "sha256": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+      "section": "配置指派：完整恢复本次核查所需基线"
+    }
+  ],
+  "reviewed_by": "Boss2 config-pricing worker",
+  "review_note": "已完整实读任务列出的三份正文/证据和两个登记对象。数学比较只确认 M-ada 在显式连续一、单位需求单 bin 中实现 modular pricing 的局部接口；全局 E 枚举、共同预算/激活、稀疏分数支持、梯度、舍入和隐式 LP 均未由该 oracle 或 M-f63 交付。因而采用 accepted + relation_mode=context 的 implements，不写 implies/equivalent_to。",
+  "endpoint_pins": {
+    "M-ada741cd5e634934805d83850dd7cd1f": "a5b3e151e5f809e6ad470c957e0aeef24c8e7975c1a48a3a3487f4c0e72be19b",
+    "M-f63f6d1bd7fc41b2a4eb5f90492a24b1": "7e5c05f0fcd538aa08977e0029cf019d71d0258ce25308b5958911fac9e9167b"
+  },
+  "evidence_pins": {
+    "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+    "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+    "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1"
+  },
+  "review_digest": "43545bcc3b162c141bca1b97db18868370cc4f451520d9aed5d2603b491659fd"
+}
