@@ -1,0 +1,67 @@
+{
+  "edge_id": "commonmany-type-support-and-greedy-existence-imply-frozen-light-fpt",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-BOX-NE-FPT-TYPES",
+    "SC-K-GREEDY-BOX-EXISTS"
+  ],
+  "target_ids": [
+    "SC-K-FROZEN-LIGHT-FPT"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同有限目录，逐名显式客户与覆盖关系，正二进制有理原子权 w_i，显式带标签设施 k≥2。取同一真实规范贪心正覆盖运行所得标签布局、原池、占站 O、重数 q_s 及末分数 γ>0。冻结恰好被覆盖的 w_i≥γ 或仅有一个已占选项的客户于其原站，保留全部原已占选项。其余轻多选客户的菜单生成站点分量，每分量至多 c 个站及 d 种精确不同轻权。固定维整数规划使用源对象显式导入的标准 Lenstra 合同。",
+  "roles": {
+    "SC-K-BOX-NE-FPT-TYPES": "给出支持/计数整数规划、活动客户对完整原菜单的精确 NE 表示、固定变量数位复杂度及逐名见证恢复。给定额外冻结多选客户时，其稳定性由本边拼合步骤单独支付。",
+    "SC-K-GREEDY-BOX-EXISTS": "对真实规范贪心的同一布局和同一冻结集合给出完整盒 NE 的存在性；只用其见证来保证每个轻分量 IP 有解。",
+    "SC-K-FROZEN-LIGHT-FPT": "对每个满足 (c,d) 界的真实贪心承诺输入，必成功选择并逐名恢复同标签布局的完整盒与站纯/站内独立均匀精确客户 NE。"
+  },
+  "explanation": "设 A_i 为客户 i 的完整已占站菜单。在站 s 站内独立均匀时，客户 i 留在本站的外部负载是 (W_s−w_i)/q_s，改选异站 t 的外部负载是 W_t/q_t。加回相同的自身全重即原条件成本，同站各设施成本相同，故全部异站不等式足以检查原设施动作。在可动轻客户的菜单内连边后，每个完整菜单恰在一个分量。对分量 C，令 F_s 为冻结原客户在 s 的总重，U_C 为该分量固定客户及可动客户的总重；按精确权 w_a 和完整菜单 A_a 分类型，原标签保留，重数 n_a。每个 a,s∈A_a 置整数 x_as,y_as，令 0≤y_as≤1、y_as≤x_as≤n_a y_as、Σ_{s∈A_a}x_as=n_a。以 W_s=F_s+Σ_{a:s∈A_a}w_a x_as 写完整上下盒 q_sγ≤W_s≤(q_s+1)γ，并对 s,t∈A_a、s≠t 加 q_t(W_s−w_a)≤q_sW_t+q_t U_C(1−y_as)。y_as=1 恰为有该类型客户落在 s，式中扣一名原子自重；y_as=0 时由 0≤W_t 及 W_s≤U_C 自然放松。真实贪心原池满足完整盒，且首覆盖归属的重数不小于该客户任一已占备选的重数。冻结指定原客户后，以 γ 归一化，轻权在 (0,1)，原池超额在 [0,1]，所以截断归位存在证明适用于同一数据。将其全局见证限制到各分量，冻结量、盒和全部局部活动比较均保留，故每个 IP 可行。可行性只使用存在定理，不需运行其有限改善序列。分量有 m≤c 个站时，每个轻权的菜单关联数至多 m2^{m−1}−m（去掉单选），故变量数 ≤2d(c2^{c−1}−c)。负载为线性表达式。权重、贪心得分和各行清分母后的系数均有输入多项式位长；Lenstra 固定变量数算法给 f(c,d)poly(L) 可行见证，即使采用决策版本也可对有界整数坐标二分并固定。分量数至多显式站数，按整数计数将每类原标签分派，再输出概率 1/q_s，总时间仍为 f(c,d)poly(L)。没有可动客户的孤立站保持原贪心盒。拼合后可动客户的全部原已占选项在同一分量，单已占选项客户在本站设施间无差异，未覆盖者无动作。任一冻结重客户当前在 s 且 w_i≥γ，完整盒给 (W_s−w_i)/q_s≤γ≤W_t/q_t，适用于任一原备选 t，包括跨轻分量的 t。因此恢复的是全部原客户的精确 NE。显式有理编码、(c,d) 界及真实贪心均为目标定义域，固定维 ILP 是源对象已证的标准算法导入，这条在轨推导无未付的研究前提。",
+  "scope": "在轨选择限同一正覆盖规范贪心布局及给定的轻分量参数域。任意预设占用的完整盒判定仍可不可行，跨站任意混合与一般无界参数的位多项式选择均在此结论域外。此输出和同次贪心原池、重数、γ 可直接交数学 BOX-TO-2；另用已证 MAX 才构造全实际标签偏离纯 NE 与位多项式默认查询。该完成链及要求额外归位保护 H 的现行 verify_on_path 软件接口分别处理。",
+  "whole_result": "由全部两个源命题得到 SC-K-FROZEN-LIGHT-FPT v3 的完整在轨选择结论。对每个逐名显式正二进制有理且满足真实规范贪心正 γ 和每轻分量 (c,d) 界的输入，在 f(c,d)poly(L) 时间内必输出同一带标签布局上逐名可恢复的站纯/站内独立均匀精确客户 NE，保持全部站点完整上下盒以及指定重/单选原客户的归属。这个见证满足独立数学 BOX-TO-2 的在轨输入，偏离和默认续局求值由该接口与 MAX 另行完成。",
+  "reviewed_by": "Boss1",
+  "review_note": "对照当前三个端点及旧边，重核了原条件成本、规范贪心原池/最大可达重数映射、截断归位存在、局部 IP 双向恢复与冻重客户的跨分量比较。调用已证标准 Lenstra 合同，依据仓库所列来源，未重读 Lenstra 原文或运行 ILP 实现。另核 BOX-TO-2 与现有 MAX 完成链的输入输出及软件 H 边界。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/客户类型支持整数规划与有限目录选择--算法.md",
+      "sha256": "91f596960bff1f8fec521a1f6ed468aed409c2a34cdb07f2d880ca9fff663fdd",
+      "section": "固定占用的完整站纯盒NE程序"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/客户类型支持整数规划与有限目录选择--算法.md",
+      "sha256": "91f596960bff1f8fec521a1f6ed468aed409c2a34cdb07f2d880ca9fff663fdd",
+      "section": "冻重客户后的局部FPT与后续存在性更新"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/客户类型支持整数规划与有限目录选择--算法.md",
+      "sha256": "91f596960bff1f8fec521a1f6ed468aed409c2a34cdb07f2d880ca9fff663fdd",
+      "section": "任意占用的难度及两设施旧算法比较"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/阈值截断与归位计数的严格推进--引理.md",
+      "sha256": "9d84b47d3e7fdd71a3a25d82f5c1c8b65a3e8088ad1610c09e19794bbfb87015",
+      "section": "完整存在性、步数界和交错版本"
+    }
+  ],
+  "endpoint_pins": {
+    "SC-K-BOX-NE-FPT-TYPES": "a25ce679a6fb384cad89743a0638dcb334c4751b231615a3ad46eda20fd5958b",
+    "SC-K-FROZEN-LIGHT-FPT": "35aad9a197254ead30134dd90701d1de4d79e9ab664a3c861b39c824c2c5443f",
+    "SC-K-GREEDY-BOX-EXISTS": "1734aef77d4e8a53a08935117a99c442bbbb5190a21570b036ab13ea96efc448"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/算法/客户类型支持整数规划与有限目录选择--算法.md": "91f596960bff1f8fec521a1f6ed468aed409c2a34cdb07f2d880ca9fff663fdd",
+    "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+    "archives/facility-games/subarchives/common-many/state/引理/阈值截断与归位计数的严格推进--引理.md": "9d84b47d3e7fdd71a3a25d82f5c1c8b65a3e8088ad1610c09e19794bbfb87015"
+  },
+  "review_digest": "f7efda48d67dcd41c9fac9336aace5779eb3a19d6ccf932870339d2166a7981a"
+}

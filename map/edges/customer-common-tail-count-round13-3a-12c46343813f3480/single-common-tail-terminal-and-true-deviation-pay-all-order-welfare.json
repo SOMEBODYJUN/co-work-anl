@@ -1,0 +1,43 @@
+{
+  "edge_id": "single-common-tail-terminal-and-true-deviation-pay-all-order-welfare",
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "source_ids": [
+    "M-723b5ee6fbd8437eadfa97b816d04478"
+  ],
+  "target_ids": [
+    "customer-attraction/single-common-tail-target-count-half-for-all-orders"
+  ],
+  "conditions": "m=k+r非负整数，独立客户块，原单公共D目录，R仅在D，完整有序纯SPE的实际计数每C_i一次与D恰r次。块质量非负实；比值仅W>0。",
+  "roles": {
+    "M-723b5ee6fbd8437eadfa97b816d04478": "给实际末D的两个精确门槛；该末节点收益只依前缀动作计数，因此可转到同计数的任意顺序。",
+    "customer-attraction/single-common-tail-target-count-half-for-all-orders": "任意可实现顺序的半覆盖、正尾数更强界和r=0或k=0最优。"
+  },
+  "explanation": "k=0仅有D。r=0时末C可查A_i、B_i、D，迫a=b=0及d≤x，故W=OPT=kx。k,r≥1时W=kx+b+d、OPT=k(x+a)+b+d。反设a>x/2，末C会改A_i，所以实际末D，原门槛给b+d>rx及d≥rx/2。最后C_i强制D后，若后继全D，源和末各得(b+d)/(r+1)，真实末位可查未服务A_i获x+a，与源实际x不偏离冲突。若有至少两非D，源D得至少b/(r+1)+d/(r−1)，从而b+d≤(r+1)x−2d/(r−1)≤rx。若恰一个非D且不盖B，则B,R都恰由r位覆盖，也给b+d≤rx。故后继恰一个B_j且其余D。末若D，收益等源至多x，改A_i至少得x/2+a。末若B_j，改未服务A_i得x+a，规定B_j至多x+b/(r+1)，因此a≤b/(r+1)≤x−d/r≤x/2。都矛盾。故a≤x/2。用b+d≥r(x/2+a)与ka/(kx+r(x/2+a))对a单调给比值界。x=0则a=0，已最优。",
+  "whole_result": "对实现指定计数的任何完整纯SPE与顺序，W≥OPT_m/2。r=0或k=0有W=OPT_m。k,r≥1时a≤x/2，r≥1且W>0时OPT_m/W≤1+k/[2(k+r)]≤3/2。",
+  "scope": "结论量化指定计数而不付可实现性。不同计数、多个R可覆盖主题和交叠块是不同数学模型。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/单组锚点原策略基点与单公共主题多尾探针--资源.md",
+      "sha256": "62d9c7c63861bfd2821c5e4990329ad3e5dcaa2d1f70ffb9378e613af17b3318",
+      "section": "单个D重复r次的末节点必要条件"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/单公共主题族目标计数的全顺序半覆盖--定理.md",
+      "sha256": "e578186c562ea17bbef39efdb1b5f1da8c241c7dde77bdac7dced4273845f2d1"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐分支核最后C_i的真实偏离、非D数量及唯一B回复的末位比较。另有独立有理小例检查实际末两节点的必要条件。",
+  "endpoint_pins": {
+    "M-723b5ee6fbd8437eadfa97b816d04478": "2f112824cb9c2a070eacba52c5c622848e926064c74c436ae827963d323c93c8",
+    "customer-attraction/single-common-tail-target-count-half-for-all-orders": "2ec2b3a228814c27885a416f459b7b1465b15b4135924dadc885e7d263c73421"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/单组锚点原策略基点与单公共主题多尾探针--资源.md": "62d9c7c63861bfd2821c5e4990329ad3e5dcaa2d1f70ffb9378e613af17b3318",
+    "archives/customer-attraction/state/定理/单公共主题族目标计数的全顺序半覆盖--定理.md": "e578186c562ea17bbef39efdb1b5f1da8c241c7dde77bdac7dced4273845f2d1"
+  },
+  "review_digest": "9760ef67d288b5cf42d5e52c3e237e4c3a34f3fbbe48082a21dc52e17ea6ee73"
+}
