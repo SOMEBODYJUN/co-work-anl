@@ -1,0 +1,51 @@
+{
+  "edge_id": "um-k5-bad-complete-match-caps-factorial-slack",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-4803f99cd96f4e83ad8d2a7252a0564c"
+  ],
+  "target_ids": [
+    "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一 15 件有标号原任务、16 台机器、T=1 的 CONFIG 点，正权配置最大基数 K=5，边是分数区间与单位槽的严格正交长。比较的是给定这个同一个点后所有覆盖匹配的最大峰值。",
+  "roles": {
+    "M-4803f99cd96f4e83ad8d2a7252a0564c": "给出在同一槽图上的一好一坏两份实际完整匹配和精确 OPT。",
+    "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1": "支付登记定理中 K=5 阶乘式强化的反例子句，并定位已证余量。"
+  },
+  "explanation": "中心五类时间 (1,1/3,1/4,2/9,3/16)，类质量 (1/144,1,1,1,1)；各类末件跨到对应不同的中心槽，严格交长都是 1/144。选五件去五槽，其余去各自私有槽，中心实际负载 287/144。所有件去各自私有槽的好匹配峰为 1，且首任务两个有限端都是单位，给 OPT=T_CONF=1。统一任意匹配余量至多 2−287/144=1/144，小于阶乘猜测 1/120。已证一般余量 K^{−(K−1)} 在 K=5 为 1/625，小于 1/144，因此同例与已证上界相容。",
+  "scope": "只攻击该点上对全部完整 ST 匹配的阶乘式上界，并给同类包络下界。保留择优、修复、固定 K 结构承诺算法；没有证明 K5 最坏值恰 287/144。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/计算/五类配置槽包络的实际好坏匹配原程序--计算.md",
+      "sha256": "948b5b667f52022563b4f03cbe608b4cca44d4177830d542103526701bab6eea"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有界配置基数的严格槽余量与承诺搜索--定理.md",
+      "sha256": "29740fdc4ca1461600f22b2b517c2f458a1208863626e09d0f29f4399abb4817",
+      "section": "合同与实际数学身份"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有界配置基数的严格槽余量与承诺搜索--定理.md",
+      "sha256": "29740fdc4ca1461600f22b2b517c2f458a1208863626e09d0f29f4399abb4817",
+      "section": "小K完整实例和锐性层级"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "检查严格正交长、全部原任务身份、好坏匹配和真实 OPT；比较没有把坏输出冒称配置整性间隙。",
+  "contribution": {
+    "result": "K=5 时普遍任意匹配上界 (2−1/5!)T 为假，所有此类统一上界的余量至多 1/144；它是有界基数槽理论中的独立有限下界。",
+    "remaining": "一般余量的 Cramer/Hadamard 上界、小 K 锐性和固定 K 阈值搜索来自另证；K=5 最优余量和最佳匹配选择不由本例决定。"
+  },
+  "endpoint_pins": {
+    "M-4803f99cd96f4e83ad8d2a7252a0564c": "5cbb54ac472736fb776c347f17b32c5f34e796efeb1749ffab0a884f7bbe9fee",
+    "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1": "1446c2007dc779eda52b67f522d737cb36c852c2601220adbca4e3bf3b35d890"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/计算/五类配置槽包络的实际好坏匹配原程序--计算.md": "948b5b667f52022563b4f03cbe608b4cca44d4177830d542103526701bab6eea",
+    "archives/unrelated-machines/state/定理/有界配置基数的严格槽余量与承诺搜索--定理.md": "29740fdc4ca1461600f22b2b517c2f458a1208863626e09d0f29f4399abb4817"
+  },
+  "review_digest": "ca71fafab8b8efa9446185983b8be14ad7f750268811a028adba915a6623fd99"
+}

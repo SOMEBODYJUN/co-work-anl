@@ -1,0 +1,61 @@
+{
+  "edge_id": "um-long-path-forest-couplings-give-sublinear-machine-cc-gap",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-LONG-PATH-GAP-v1",
+    "UM-COALITION-PROJECTION-GAP-v1"
+  ],
+  "target_ids": [
+    "UM-SUBLINEAR-CC-PROJECTION-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "每任务恰有两个不同有限端，每机器对至多一任务；CC_q(T) 对各 1≤|U|≤min(q,M) 分别要求两两不相交的完整配置 law μ_U，同一 CONFIG 点给全部单机分布，不要求各 μ_U 在多机交集一致。任意 r:N→N 且 r(M)/M→0（无需单调、可计算）。",
+  "roles": {
+    "UM-LONG-PATH-GAP-v1": "给同一 k、ℓ 族的围长 2ℓ、真实 OPT=2−1/k、完整配置证书 T_k=1+1/k。",
+    "UM-COALITION-PROJECTION-GAP-v1": "给所有有限 q 的局部机制：每个 U 诱导森林时，用父共享任务的互补条件构造完整 μ_U。",
+    "UM-SUBLINEAR-CC-PROJECTION-GAP-v1": "给真实机器数下所有子线性 r 的逐族参数选择。"
+  },
+  "explanation": "每侧 I=(k^h−1)/(k−1) 个树主干点、L=k^{h−1} 个共用终端、k^h 条各新增 ℓ−1 内点的路径，故 M=2[I+L+k^h(ℓ−1)]，N=1+2[I−1+k^hℓ]，连通图环秩 N−M+1=2(k−1)L。旧计数按每路径另算终端，多算 2(k−1)L；没有加入孤立点。先取固定 k≥4 使 3/(k+1)<ε。此时 M/ℓ→2k^h，故 r(M)/ℓ=(r(M)/M)(M/ℓ)→0，取充分长 ℓ 使 2ℓ>r(M)。每个受限 U 都诱导森林；子端按唯一父共享任务是否被选的互补状态条件抽取，逐边边际和一保证子端仍有整个原 y_i。于是同一 CONFIG 点在 T_k 给独立全部 μ_U，T_CC≤T_k；比值至少 (2−1/k)/(1+1/k)=2−3/(k+1)>2−ε。",
+  "scope": "排除相对独立机器联盟投影阈值的统一严格次二，亦排除拿任一此种证书直接保证该倍数的接口。若所有至多三机袋 law 在全部交集上有完整一致配置边际，宽2树分解可依二机 separator 条件粘合，获得真实 T 调度。没有按输入位长的子线性版本、r 的统一高效选择器、CC 求解器或相对真实 OPT 算法下界。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/长链联合投影与子线性联盟高围长双源审查--审查.md",
+      "sha256": "b453e8bc763c897684ab95b940ccba4f1e93d56ea3a280baf8544315c3cad816",
+      "section": "3. 长链族：构造、阈值和整数值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/长链联合投影与子线性联盟高围长双源审查--审查.md",
+      "sha256": "b453e8bc763c897684ab95b940ccba4f1e93d56ea3a280baf8544315c3cad816",
+      "section": "2. 联合投影对象与森林耦合"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/长链联合投影与子线性联盟高围长双源审查--审查.md",
+      "sha256": "b453e8bc763c897684ab95b940ccba4f1e93d56ea3a280baf8544315c3cad816",
+      "section": "4. 固定 r 的高围长 coalition gap"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/长链联合投影与子线性联盟高围长双源审查--审查.md",
+      "sha256": "b453e8bc763c897684ab95b940ccba4f1e93d56ea3a280baf8544315c3cad816",
+      "section": "5. r(M)=o(M) 的子线性提升"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/子线性联盟长链的算术核验与机器计数修复--资源.md",
+      "sha256": "42791775c5c873eb1b38e719a57124497e52926b96b9d6ced294e0d49cda8058"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对先 k 后 ℓ、共享终端与正确环秩、逐 U 量词及真实阈值的单向不等式。",
+  "whole_result": "对每个机器数子线性 r 和 ε>0，有合法简单二端长链实例围长 2ℓ>r(M)，且上述真实 M、N 与环秩恒等式成立；其同一完整配置证书在 T_k 通过 CC_r(M)，实际 OPT/T_CC,r(M)>2−ε。",
+  "endpoint_pins": {
+    "UM-COALITION-PROJECTION-GAP-v1": "dcfc25cc82d73f4fcfc1af5c796156b86f20cd92f32cab7f309165465ae9a0d8",
+    "UM-LONG-PATH-GAP-v1": "477a37d1820e834d3e2f6245913d40710ce83de016e252f6be7afe358d37e3a4",
+    "UM-SUBLINEAR-CC-PROJECTION-GAP-v1": "522515d70acafc54873cff35e5c8845d4a985d31a9edecb4492b44c42bac790c"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/长链联合投影与子线性联盟高围长双源审查--审查.md": "b453e8bc763c897684ab95b940ccba4f1e93d56ea3a280baf8544315c3cad816",
+    "archives/unrelated-machines/state/资源/子线性联盟长链的算术核验与机器计数修复--资源.md": "42791775c5c873eb1b38e719a57124497e52926b96b9d6ced294e0d49cda8058"
+  },
+  "review_digest": "3cd3d28601cff8136cb51f7e51a193b2cfa18e7ed4cff8d4f0beb4bb0d21fdba"
+}

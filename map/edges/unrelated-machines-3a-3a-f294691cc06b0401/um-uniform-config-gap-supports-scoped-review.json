@@ -1,0 +1,47 @@
+{
+  "edge_id": "um-uniform-config-gap-supports-scoped-review",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-COTRANSVERSAL-UNIFORM-CONFIG-SHARP-GAP-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/uniform-port-gap-and-actual-approximation-review-scopes"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "显式统一端口，D≥3，m=D+1 个主点且每点 D 个标签，每主点一枚 selector；每状态一个私有 parent 及 D 个不同资源端口。全体 mandatory unit aux 各有资格 {自己的 g_{u,a,j}, A_{u,a}, B_j}，全部未选状态端口同样进入原调度。",
+  "roles": {
+    "UM-COTRANSVERSAL-UNIFORM-CONFIG-SHARP-GAP-v1": "提供解析余横截实例、CONFIG=1 及整数达界。",
+    "unrelated-machines/uniform-port-gap-and-actual-approximation-review-scopes": "被支持的是锐配置间隙及其与整数完整性不同的那一段。"
+  },
+  "explanation": "删除任何单一完整状态 C，可把该状态对应的 D 件 aux 分别送到 D 个 B_j；按固定坐标 j 一起删除所有 g_{u,a,j} 时，受影响 aux 可分别送各自 A_{u,a}，均混 D 种情形得真实边际 1/D。完整 CONFIG(1) 的 parent 取单 selector 质量 1/D、全 D ports 质量 1−1/D；每 g 取 port 质量 1/D、aux 质量 1−1/D；每 A 的 D 个 aux 单件配置各 1/D；每 B 为空。故逐任务恰覆盖一，unit selector 给 T_CONF≥1。峰低于 2−1/D 时每个 selected parent 必须外送至少两件 port，挪开的至少 2m 件 unit aux 只能用 m 个对应 A 与 D 个 B；2m>m+D，低于2时不能同机，违反 Hall。每组只外送一件且该 aux 去相应 A 则全部原任务达到 2−1/D。",
+  "scope": "证明分数配置和逐状态独立性不能推出共同真实保留，亦未给整数 YES 对照。D3/D4 程序只核有限证书。与相对真实 OPT 的算法可以同时成立。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/直线集合打包与统一端口停车双源审查--审查.md",
+      "sha256": "3f1cc70001adac7bbbcdd5c0815a851a30fe0d92e2271cad8f534dbfcea9fe92",
+      "section": "3. 每个配置都独立仍不足以保留共同资源"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/统一端口配置间隙与实际近似的分域审查--审查.md",
+      "sha256": "e04ec5de4f7f313784903f18f81351d2521352f44f7839824574b44f87a8e19e",
+      "section": "m=D+1配置间隙及完整调度"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "重算 m=D+1 时 Hall 严格短缺及逐行覆盖，保留每主点恰一 selector；无需有限扫描推出一般式。",
+  "contribution": {
+    "result": "同一显式族 β*=1/D、T_CONF=1、OPT=2−1/D，故对任何固定 δ>0，取充分大 D 即排除对每份 CONFIG(T) 证书都能输出峰≤(2−δ)T 的合同。",
+    "remaining": "另一段相对 OPT 的算法、审查分工及 D3/D4 原程序 provenance 分别取证；此处不给整数 YES/NO hardness。"
+  },
+  "endpoint_pins": {
+    "UM-COTRANSVERSAL-UNIFORM-CONFIG-SHARP-GAP-v1": "29d521a2b7516b4ed7802c0487306b2173ce121690c1a7301f7688c8da9ac494",
+    "unrelated-machines/uniform-port-gap-and-actual-approximation-review-scopes": "fd6e0e43a98b499c0a28a54791d5bda8d35732ca13bfd121e7f78d509faa18e0"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/直线集合打包与统一端口停车双源审查--审查.md": "3f1cc70001adac7bbbcdd5c0815a851a30fe0d92e2271cad8f534dbfcea9fe92",
+    "archives/unrelated-machines/state/审查/统一端口配置间隙与实际近似的分域审查--审查.md": "e04ec5de4f7f313784903f18f81351d2521352f44f7839824574b44f87a8e19e"
+  },
+  "review_digest": "1d855ee66108eb40ac96c1861a2a83df7eb4487bd637b5d086dcd727b19a025c"
+}

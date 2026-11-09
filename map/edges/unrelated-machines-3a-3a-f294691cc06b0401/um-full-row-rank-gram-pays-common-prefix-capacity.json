@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-full-row-rank-gram-pays-common-prefix-capacity",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-6598bafb77d042b89e8d6d7396ddfd8a"
+  ],
+  "target_ids": [
+    "UM-PREFIX-ATOMIC-DECODING-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一显式合法普通 UM 矩阵与一份真正共同的、在完整合法分配上有有限正支撑的概率 law，wσ>0。全部机器对同一 F 和权重构造相对 Gram，F 在该共同支撑上满行秩，K_i+Δ_iM⪰0。另给按总位多项式访问的同一 law 守恒前缀查询器。精确 T 取 Δ_i=0，或 Δ_i<1/Q（Q 为原时间和 T 的分母乘积）。",
+  "roles": {
+    "M-6598bafb77d042b89e8d6d7396ddfd8a": "把同一联合支撑的相对 PSD 解码为全部正质量原子的逐机容量。",
+    "UM-PREFIX-ATOMIC-DECODING-v1": "该容量是正前缀逐任务贪心的原子局部化前提。"
+  },
+  "explanation": "用 Fcσ=eσ 代入二次型给 (T+Δ_i−L_i(σ))wσ≥0，正权相除得 L_i≤T+Δ_i；零权的局部化自动为零。若用有理网格且 Δ_i<1/Q，严格正的 L_i−T 至少 1/Q，故仍有 L_i≤T。守恒查询从正前缀在每项有限端中选正孩子，最多 |E| 次，终点是真实完整分配；若不满足精确网格条件则给逐机 T+Δ_i 界。M 可奇异，不要求 F 方阵。低秩常数基的 0/2 负载给 PSD 仍有坏叶；可逆共同换基是同余，绝对 I 容差不会普遍保持。",
+  "scope": "先要共同 law，再讨论相对 PSD 的载荷证明及查询。机器小联盟的不同 μ_U 各自可用完整指示基检查本地容量，但这不产生全局相容原子或可查询前缀；对每个 U 单独加这种 PSD 检查仍不会删掉长链的 CC 见证。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/有限精度前缀原子解码与Gram满行秩边界冻结审查--审查.md",
+      "sha256": "e3a0db8a5ae132bc0e9a887bdd3ab73f748bb991ee560fbe59d3e031d1292c3e",
+      "section": "5. Gram 满行秩的必要条件与精确反例"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/宽仿射矩形与前缀原子解码双源审查--审查.md",
+      "sha256": "e0a28887fb19ba29977b86ced57519a8511123848e114d0a787fe0a237a9739d",
+      "section": "3. 前缀原子证书：查询式确定性解码"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/prefix-atomic-finite-precision-original-primary/source-root/research/current/unrelated_machines/succinct_prefix_atomic_decoding_bridge.md",
+      "sha256": "a17bde448cd58ab9b637a6050837153006423cf8097b078621bcb302031ff02b"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对 PSD 正反向、所有机器共用 law、满秩不等于可查询；512 次冻结核验只作为有限回归。",
+  "contribution": {
+    "result": "相对 Gram 在明确的同一 law 与满行秩条件下支付前缀法所需的逐原子容量，不损失原子权；加查询器即可实际输出相应阈值的全任务调度。",
+    "remaining": "由原矩阵生成/检验共同 law、满行秩表示及可靠查询/失败的总位多项式算法仍未给出。不同联盟的局部 Gram 不能替代这些条件。"
+  },
+  "endpoint_pins": {
+    "M-6598bafb77d042b89e8d6d7396ddfd8a": "31084dff8f5f0fba000043c178b02ca486a4cd1be9a89e48e0607d05e9c82af8",
+    "UM-PREFIX-ATOMIC-DECODING-v1": "8a54b4990271f92b3532688d041d6e81792fa3cc5a4fe8db671c45d50864f528"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/有限精度前缀原子解码与Gram满行秩边界冻结审查--审查.md": "e3a0db8a5ae132bc0e9a887bdd3ab73f748bb991ee560fbe59d3e031d1292c3e",
+    "archives/unrelated-machines/state/审查/宽仿射矩形与前缀原子解码双源审查--审查.md": "e0a28887fb19ba29977b86ced57519a8511123848e114d0a787fe0a237a9739d",
+    "archives/unrelated-machines/tools/evidence/prefix-atomic-finite-precision-original-primary/source-root/research/current/unrelated_machines/succinct_prefix_atomic_decoding_bridge.md": "a17bde448cd58ab9b637a6050837153006423cf8097b078621bcb302031ff02b"
+  },
+  "review_digest": "78f4303903cac6f0c318dfa1bc99c6a9f6551551e61e64e884441ec6ed84eec9"
+}

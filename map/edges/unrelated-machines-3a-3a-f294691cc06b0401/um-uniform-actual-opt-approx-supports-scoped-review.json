@@ -1,0 +1,47 @@
+{
+  "edge_id": "um-uniform-actual-opt-approx-supports-scoped-review",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-UNIFORM-PORT-PARKING-PAPER-APPROX-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/uniform-port-gap-and-actual-approximation-review-scopes"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "显式统一 D≥1，每主点非空标签且一枚 selector，各状态 D 个不同 cheap 资源、1/D 私端、unit 外端，附加作业是仅在显式资源机有资格的 mandatory unit；固定 η>0，按显式展开位长。非空主点且 aux 自身整数瓶颈 B≤1 时取对偶 transversal vacancy matroid。",
+  "roles": {
+    "UM-UNIFORM-PORT-PARKING-PAPER-APPROX-v1": "提供 Rado 与 restricted two-value resource-polymatroid 后端的实际算法界。",
+    "unrelated-machines/uniform-port-gap-and-actual-approximation-review-scopes": "被支持的是相对实际 OPT 的算法段，包括退化分支。"
+  },
+  "explanation": "每个 variant p=(u,a) 的资源束 C_p 诱导 f(X)=rank_M(∪_{p∈X}C_p)。Rado 将整数 counts 的全部 x(X)≤f(X) 等价为真实互不交且并集 M-独立的资源代表，eligible-pair matroid intersection 回填资源。每组为 |L_u| 个 variants 加 |L_u|−1 件价值 D 的组内 rank-1 大资源，其余 cheap 价值 1；至少一个 variant 无大资源，反向在每组取其一并丢弃其余 cheap，故真实两值问题的值等于 Dβ*。已发表的固定 η 的 (4+η) 后端给 β_alg≥β*/(4+η)。B≤1 时 S∈M 正是 aux 可在资源补集全匹配，完整原任务停车给 OPT≤2−β*；任一峰<2的调度在资源机不许两件 unit 共驻，从每枚 selector 的实际 parent 读出合法 S，给反向。若 OPT=2，则由正 β* 会构造峰<2 可知 β*=0。β*∈[0,1] 上 (2−β*/(4+η))/(2−β*) 递增。B≥2 时用 b-matching 达到 B，所有 ports 留 parent；无主点精确匹配 aux，全空峰 0。",
+  "scope": "绝对峰 2−β*/(4+η) 和相对真实 OPT 保证 2−1/(4+η)。结构必须已给，统一 D 保证 restricted 两值条件。无需生成或舍入 CONFIG；该后端的理论引用和仓库实现是两个问题。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/直线集合打包与统一端口停车双源审查--审查.md",
+      "sha256": "3f1cc70001adac7bbbcdd5c0815a851a30fe0d92e2271cad8f534dbfcea9fe92",
+      "section": "2. 两值 Santa Claus 归约和实际普通 UM"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/统一端口配置间隙与实际近似的分域审查--审查.md",
+      "sha256": "e04ec5de4f7f313784903f18f81351d2521352f44f7839824574b44f87a8e19e",
+      "section": "两个合同的完整数学区别"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对真实计数 lifting、组内大资源鸽笼、vacancy 匹配和 OPT 反向，未把论文算法算作仓库已实现。",
+  "contribution": {
+    "result": "在指定统一端口类中，确定性位多项式算法返回全部原任务的实际调度，峰≤(2−1/(4+η))OPT，空/高辅助瓶颈分支可精确解。",
+    "remaining": "锐间隙与有限核验另证；变 D_u、一般 UM、实际后端实现和任意输入结构识别不在该结果中。"
+  },
+  "endpoint_pins": {
+    "UM-UNIFORM-PORT-PARKING-PAPER-APPROX-v1": "ffbda798edcc4ef1b9b218f099c67d46a941c6aff5067a8098348b9e61e7a8eb",
+    "unrelated-machines/uniform-port-gap-and-actual-approximation-review-scopes": "fd6e0e43a98b499c0a28a54791d5bda8d35732ca13bfd121e7f78d509faa18e0"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/直线集合打包与统一端口停车双源审查--审查.md": "3f1cc70001adac7bbbcdd5c0815a851a30fe0d92e2271cad8f534dbfcea9fe92",
+    "archives/unrelated-machines/state/审查/统一端口配置间隙与实际近似的分域审查--审查.md": "e04ec5de4f7f313784903f18f81351d2521352f44f7839824574b44f87a8e19e"
+  },
+  "review_digest": "3d1261f1bd7d85dbe36e063aa26d565583e6a5829df8e3d2cce1cc889b3c2c96"
+}

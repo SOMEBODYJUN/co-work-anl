@@ -1,0 +1,47 @@
+{
+  "edge_id": "um-feder-ordinary-fanout-does-not-preserve-minrep-list-coverage",
+  "kind": "transfers",
+  "status": "rejected",
+  "source_ids": [
+    "UM-SOURCE-FEDER-ORDINARY-FANOUT"
+  ],
+  "target_ids": [
+    "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "被检验的是直接把 v3 的每个顶点标签拆为 incidence copies 并用 ordinary 等值/蕴含 fanout 粘合，再将局部列表覆盖当作共同标签或费用保持。Feder 的输入是固定 Boolean 模板含 0/1，一次外端、两次内部，图 CSP 每变量恰两次；二部实现另要求外端同侧。",
+  "roles": {
+    "UM-SOURCE-FEDER-ORDINARY-FANOUT": "提供普通赋值的二次出现和在指定 Schaefer 及交换失败条件下的复用。",
+    "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3": "要求显式 Q 元全投影、每顶点 d 个 incidence、任意低总费用 copy lists 的 simultaneous soundness。"
+  },
+  "explanation": "二部性/围长并不改变 d 个端口，也不把可能随显式输入增长的 Q 化为固定 Boolean 模板。将变量改成每条 incidence 的独立副本，只是把一致性义务转入新的约束。最小的直接失败已发生在三点路径的两条 identity 投影：依次给 {0}、{0,1}、{1}，总费用4（g≥2时不超过 g·3），两边均有兼容对，但没有一个标签能同时属于三个列表。普通等值关系的传递是对同一个单标签赋值成立；逐边列表覆盖可以在中央点使用不同标签，不能借它保证 copy 解码、跨边标签费用或固定模板的 promise soundness。三点路径是这个粘合推理的反例，不是 v3 低值源的反例。",
+  "scope": "拒绝直接迁移。Feder 的定理3只实现子句，定理4的普通困难性另依交换失败恢复 fanout；不能把共独立的超立方体图性质换成 vacancy matroid，也不能从 v3 的高围长或 regularity 推出物理端口、全部作业和实际载荷桥。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Feder--扇出受限约束系统与广义拟阵--文献.md",
+      "sha256": "03a40a54f09080a3fcea99ccecd040916d4e1b46b83dc5817e9e6bb414e42f64",
+      "section": "4. 图模型的广义拟阵奇偶：定理 4"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Feder--扇出受限约束系统与广义拟阵--文献.md",
+      "sha256": "03a40a54f09080a3fcea99ccecd040916d4e1b46b83dc5817e9e6bb414e42f64",
+      "section": "6. 历史开放范围、后续比较与接续"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/partial-minrep-high-girth-v3-sources-20261031/exact_v3.md",
+      "sha256": "0e2b614ae0a0af12c592d3b57558e2c3baf13cf4377b90b26769fc6e5d24cc61"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核了 Feder 冻结转换本印刷 pp.7–11 和 v3 Exact；按 edge-cover 与共同赋值的不同量词拒绝这条特定桥。",
+  "endpoint_pins": {
+    "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3": "aa0c830fb9e1a2837f12f4fd8f2817ae9405e87d266774fbb2520418ee16e974",
+    "UM-SOURCE-FEDER-ORDINARY-FANOUT": "6c9b67be0c02766cd773864a2b5e6a4b27c66be85f603e103955baf0fb6a8a68"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/Feder--扇出受限约束系统与广义拟阵--文献.md": "03a40a54f09080a3fcea99ccecd040916d4e1b46b83dc5817e9e6bb414e42f64",
+    "archives/unrelated-machines/tools/evidence/partial-minrep-high-girth-v3-sources-20261031/exact_v3.md": "0e2b614ae0a0af12c592d3b57558e2c3baf13cf4377b90b26769fc6e5d24cc61"
+  },
+  "review_digest": "07253332f8bdc417534f9993ef04e39288a61b9bdfb16420bf0bc40015dfb1e7"
+}
