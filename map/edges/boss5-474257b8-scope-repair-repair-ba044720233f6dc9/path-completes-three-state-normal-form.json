@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-real-path-reduction-completes-three-state-normal-form",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1"
+  ],
+  "target_ids": [
+    "UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "源 P 是有限非空显式完整 flat ordinary UM，每组有非空 indexed 菜单，每 state 私有质量恰为 1。保留零 incidence、重复 indexed states、unused 资源及未选 state 的全部原任务。允许新增真实组、selector、singleton incidence 和机器。T 在 K_g>1 时改变原 selector 资格。D 保持其输入全部旧菜单、旧 selector 资格和 incidence 的 private 端，仅将 incidence 的资源端按原资源和组映到 port。",
+  "roles": {
+    "UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1": "D 施于 T 之后的全部资源。D 的实际低峰合同适用于 W≤1，此处 T 的输出为 W=1，同时满足 D 的正 partial 合同。D 的二态 helper 使资源跨组度≤3，并保留其输入的各旧菜单、selector 资格和全部旧任务身份。",
+    "UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1": "目标 N 是 N(P)=D(T(P)) 的完整归一化三态资源度三保值正规形。边内逐任务支付选择树 T 的正反向映射，再接来源定理 D。"
+  },
+  "explanation": "先对每个旧组g的K_g个indexed states建立K_g叶满二叉树，每顶点一新组且恰一selector；每非root顶点v有fresh own资源a_v。internal root两个child-own singleton态；非root internal有own及两个child-own共3态；非root leaf有own singleton及完整原state共2态；K=1 root即leaf只保原state且不造singleton。所有singleton私端/资源端均1、每state私机独立，原incidences与它们实际private/原资源两端保持；旧selector作为root selector，其资格改变，非root新添selector。对正partial阈值v≤1，源选态沿root-to-leaf选child-own，终leaf领原子集，off-path选own；own资源由parent或自身各恰领取一次。反向root所领child-own使child不能选own获得正值，沿迫出链提取一个实际选择的原state；off-path可额外激活，原资源不交性直接继承，不合并多个states。任意源实际峰C<2调度读取旧selector所在leaf，K>1把旧selector置root、新leaf selector替代旧单位负载，路径internal选child、off-path选own；所有原incidence的实际private/外送选择不动，选中singleton外送、未选留private，每新增机峰≤1≤C。K=1全部原任务原位不动。反向任意树调度C<2时所选singleton必须外送，root占child-own后迫使child向下，最终选择原state；删全部新任务并把旧root selector移回该leaf替代新selector，全部旧incidence实际端保留、负载不增。第一阶段每state质量1、菜单≤3，数量为2S−n组、5S−4n态、2S−2n own资源、4S−4n新singleton incidence、全部I+6S−5n件任务，K1也匹配。随后对 T(P) 的全部旧资源、own 资源及含零项的 membership 应用 D。D 保持 T(P) 的各组 indexed 菜单结构、state 私有质量、selector 资格与旧 incidence 的身份及 private 端。对每个有 d≥1 个接触组的资源，按组将全部旧 incidence 的外端统一映到各自 port，外端时间仍为 1。每个相邻 port 对加一个二态 helper 组，恰有两台 private 机、一件可在两台机执行的 unit selector 和两件不同的 unit incidence，每 state 对应一件。d=1 无 helper，d=0 保留 unused 机器。正向每个资源的实际旧外送（包括未选态和零权任务）至多一件，据此留孔，selector 放选中 private，选中 incidence 送匹配 port，未选 incidence 留其 private。逆向每个 helper 的实际选中 incidence 被 C<2 强制外送，d−1 个互异占用使至多一件旧任务外送。未选 helper 额外外送只会多占 port。partial 正阈值用领取整个 helper singleton 作同一占位约束，合回旧资源时继承真实不交性。每个 port 仅接一旧组及至多两相邻 helper，最终资源跨组度≤3，二态 helper 使最终 Kmax≤3。必须先树后路径，树分组会提高旧资源组度；先降度不保证最终界。每state总质量1使v>1时两侧均无partial可行解；对0<v≤1已有两阶段证明。串接两阶段全部C<2调度与全部正partial阈值双向，且两边全private≤2、selector≥1、有限最优值达到；若一边OPT2而另一边<2会逆向矛盾，故OPT全值保持。正partial双向和有限最大值同样保V0，不用OPT=2−V跳过全部任务。对给定 C≥2 只承诺以另一侧的全 private 基线输出峰不超过 C 的完整调度。树规模显式线性于 S，路径helper数至多中间incidence数，新时间仅1，原有理数复制，构造和映射均总位多项式且不输入OPT/源见证。",
+  "scope": "N 的显式完整 flat 输入须逐 state 质量恰为 1。D 单独适用于 W≤1 的完整调度保值，D 的正 partial 合同在 W=1 陈述。N 的全部实际峰 C<2 调度及全部正 partial 阈值两向，含 OPT=2 和 V=0。一般 UM、未归一化 Santa、隐式菜单、固定 M、全正权与固定 heavy 角色分别需要额外条件。",
+  "whole_result": "真实选择树第一阶段与来源路径第二阶段共同得到目标完整结论：任意每state质量1的显式完整flat P可确定性总位多项式构造P*，Kmax(P*)≤3、资源组度≤3，OPT(P*)=OPT(P)、V(P*)=V(P)，对全部实际C<2调度及全部正partial阈值两向转换，含OPT2/V0端点。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/归一化菜单的三态资源度三正规形--定理.md",
+      "sha256": "31f1fb774f856f42255d1cd8b56c7a77d8396b2417b05e4d0b2f1d32e1195d1a"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/完整菜单的资源度三路径归约--定理.md",
+      "sha256": "afb7a6751e65f5e968a2b8798b8ba284983d64694fde1a463dae991b0018bb34"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化flat菜单三态资源度三正规形最终章节与版本边界审查--审查.md",
+      "sha256": "5ad1a19022528e977ce28915d798314109223f7021552cd0b60996307a094a31"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三坐标与三态路径正规形范围审查--审查.md",
+      "sha256": "1239534319b20364efc91d34af78913b3dfe1b8898a1949c0c9d119c6dc025e0"
+    }
+  ],
+  "reviewed_by": "Boss1/um-normal-forms-nsw-round16",
+  "review_note": "本轮复核 D 与 N 的完整定理和新版范围审查，逐项对照 D 的原组菜单、原 selector 资格、port 外端和每 helper 一 selector 两 incidences。T 仅在 K_g>1 改旧 selector 资格，K_g=1 原位不动。另核原未选任务、两向低峰映射、正 partial、2/0 端点和树规模。较早 read-after §2 的 private 负载合写按 D 主文 §3 的逐件放置理解。",
+  "endpoint_pins": {
+    "UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1": "6d6c9ec1568c6a873c70234f3bec4ed8f68ce523228936b3a8a6575b180d69c7",
+    "UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1": "90151b0b805a9fb10bde855a89b069771b031383ce88493450dfb04c6269858c"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/归一化菜单的三态资源度三正规形--定理.md": "31f1fb774f856f42255d1cd8b56c7a77d8396b2417b05e4d0b2f1d32e1195d1a",
+    "archives/unrelated-machines/state/定理/完整菜单的资源度三路径归约--定理.md": "afb7a6751e65f5e968a2b8798b8ba284983d64694fde1a463dae991b0018bb34",
+    "archives/unrelated-machines/state/审查/归一化flat菜单三态资源度三正规形最终章节与版本边界审查--审查.md": "5ad1a19022528e977ce28915d798314109223f7021552cd0b60996307a094a31",
+    "archives/unrelated-machines/state/审查/三坐标与三态路径正规形范围审查--审查.md": "1239534319b20364efc91d34af78913b3dfe1b8898a1949c0c9d119c6dc025e0"
+  },
+  "review_digest": "b0fbff5a1fbb36039e8ef546e3c61e75caf0605efeb719e827d87233dc3ed324"
+}

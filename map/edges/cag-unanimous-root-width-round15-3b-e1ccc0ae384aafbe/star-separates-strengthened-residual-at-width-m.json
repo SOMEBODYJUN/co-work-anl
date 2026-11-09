@@ -1,0 +1,78 @@
+{
+  "edge_id": "cag-unanimous-star-separates-strengthened-residual-at-width-m",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/constant-center-full-tree-local-moment-half-tight-pseudofamily"
+  ],
+  "target_ids": [
+    "customer-attraction/unanimous-actual-terminal-explicit-local-half-residual"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "整数m≥4。目录为A与m个不同叶T_i，固定完整形式策略σ在每个有序非终局历史都选A，比较查询恰取全部m叶。只对非空且支持至多m标签的交集矩要求每个局部子目录可有非负客户表示，另要求同一σ的完整有序Γ≥0。",
+  "roles": {
+    "customer-attraction/constant-center-full-tree-local-moment-half-tight-pseudofamily": "提供全树形式IC与宽度至多m客户正性均可行、W=1及OPT_m=2的有理分离点，同时以全目录Q排除共同真客户表示。",
+    "customer-attraction/unanimous-actual-terminal-explicit-local-half-residual": "确定已证局部half余项R的宽度边界：该R可局部支付，增强行的真Boolean余项R−x/m在此宽度无法局部支付。"
+  },
+  "explanation": "取t_A=1、t_{T_i}=a=2/m、t_{A,T_i}=v=1/(m−1)，其余不同标签二阶及全部已见三阶以上矩为零。只见叶时用互不交质量a；见A与k≤m−1叶时用中心私有1−kv、各叶私有a−v、每对A与叶共有v。由这些非负局部实现，任何依赖至多m标签、在局部Boolean域非负且在全零点为零的余项都有非负求值，包括所有局部原子L_{D,C}。全树IC按任意有序历史的既往叶次数n_i核对。令q=m−Σ_i n_i，依σ选A的终局中心负载为q，当前收益U_A=(1−vΣ_i n_i/(q+n_i))/q。改选叶T_j并按原σ继续时，q≥2给U_j=(a−v)/(n_j+1)+v/(q+n_j)，q=1给U_j=a/(n_j+1)。以Σ_i n_i/(q+n_i)≤(m−q)/(q+1)及n_j=0处的偏离上界相减。q≥2时，差下界乘正数mq(m−1)(q+1)为(m−q)((m−2)q−2)≥0；q=1时U_A≥1/2≥a≥U_j。公式覆盖所有有序节点，因为σ在所有历史都恒A，自比较为零。根W=1；k叶并集为ka，A加k叶为1+k(a−v)，故最多m个标签的最大比较覆盖为max{2,2−2/m}=2，由全部m叶达到。于是目标(2−1/m)W−OPT_m在此点为−1/m，而任何非负全树Γ和局部非负余项组合的值都≥0。实际末位全部m条叶比较恰为1/m−a+(m−1)v/m=0，故该点也直接给R−x/m求值−1/m、R求值0。全目录分离式Q=x−Σ_i xz_i+Σ_{i<j}z_iz_j在x=0时为binom(r,2)，在x=1时为(r−1)(r−2)/2，r=Σ_i z_i，皆非负；伪矩却给Q=1−mv<0，所以不存在任何同一份非负客户表。Q是二次，但其支持是全部m+1个标签。m≥5时q<m的叶偏离严格，half等号额外强制该固定策略的非负证书中这些离轨行系数为零；m=4允许离轨平局，增强目标的负值不依赖严格性。",
+  "scope": "固定恒中心完整形式策略及全部不同叶查询的m≥4宽度障碍，适用于任意非负组合的完整形式IC与宽度≤m真局部余项。该伪矩恰满足half等号，且不能粘成真客户；不产生合法游戏或SPE反例。并不要求任意别的查询也需m+1标签，也不判断任意非同主题路径的局部half。",
+  "contribution": {
+    "result": "证明目标对象所述宽度边界：R−x/m的真Boolean非负性不能普遍由宽度≤m的局部非负余项代替；对同一固定策略及全部叶查询，补入任何完整有序IC的非负组合仍无法证明增强目标。结合显式全Boolean余项，在此m+1标签查询上把可用支持上界与宽度排除对齐。",
+    "remaining": "星形仅给该余项加强与证书域的排除。已证局部half构造仍由目标对象的显式分解独立支付；真客户上界及锐性另由真Boolean证明和合法锐例支付。"
+  },
+  "reviewed_by": "Boss1",
+  "review_note": "核当前两端登记、原始星形稿及承重公式。重新按q=1与q≥2核对全部形式IC和局部表示，再求增强目标、末位余项和二次分离式的精确值。严格离轨只用于m≥5的half乘子结论，增强宽度障碍使用m≥4。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/全树恒中心的局部客户伪矩与二倍紧点--障碍.md",
+      "sha256": "9641fa81b55ac6a453ed6c21b6c9d168a7859b2f620da139f166b25b3799a7dd",
+      "section": "放松的精确对象"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/全树恒中心的局部客户伪矩与二倍紧点--障碍.md",
+      "sha256": "9641fa81b55ac6a453ed6c21b6c9d168a7859b2f620da139f166b25b3799a7dd",
+      "section": "星形参数与全部局部实现"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/全树恒中心的局部客户伪矩与二倍紧点--障碍.md",
+      "sha256": "9641fa81b55ac6a453ed6c21b6c9d168a7859b2f620da139f166b25b3799a7dd",
+      "section": "恒中心完整形式策略的充要条件"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/全树恒中心的局部客户伪矩与二倍紧点--障碍.md",
+      "sha256": "9641fa81b55ac6a453ed6c21b6c9d168a7859b2f620da139f166b25b3799a7dd",
+      "section": "二倍紧点、小人数边界和严格离轨"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/全树恒中心的局部客户伪矩与二倍紧点--障碍.md",
+      "sha256": "9641fa81b55ac6a453ed6c21b6c9d168a7859b2f620da139f166b25b3799a7dd",
+      "section": "二次全目录分离与固定策略的乘子限制"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/单主题实际终局的显式局部半覆盖余项--引理.md",
+      "sha256": "92bd65b374e1a1138a0c097b9b296f4838c6866a0d0ca88e8b388147ccc97fa2",
+      "section": "显式局部非负余项，无须Farkas"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/单主题实际终局的显式局部半覆盖余项--引理.md",
+      "sha256": "92bd65b374e1a1138a0c097b9b296f4838c6866a0d0ca88e8b388147ccc97fa2",
+      "section": "已有更强锐界及其正性域"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/local-moment-star-boundary-and-certificate-primary/primary-original/research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/round3_moments/local_positive_boundary.md",
+      "sha256": "943f38199001fa575189584d6bf1de0595c0d779e6770ec8e985020e54eea4ec",
+      "section": "m≥4 的 half 紧伪矩"
+    }
+  ],
+  "endpoint_pins": {
+    "customer-attraction/constant-center-full-tree-local-moment-half-tight-pseudofamily": "26524ec45185b31d822db96d7d38fd94fbd155131b405b7e73cc774b629fe501",
+    "customer-attraction/unanimous-actual-terminal-explicit-local-half-residual": "ed27c7f70a4bc13ea6419773279e1934dbb5f5d1d7a7d359f0699d7089adb14a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/全树恒中心的局部客户伪矩与二倍紧点--障碍.md": "9641fa81b55ac6a453ed6c21b6c9d168a7859b2f620da139f166b25b3799a7dd",
+    "archives/customer-attraction/state/引理/单主题实际终局的显式局部半覆盖余项--引理.md": "92bd65b374e1a1138a0c097b9b296f4838c6866a0d0ca88e8b388147ccc97fa2",
+    "archives/customer-attraction/tools/evidence/local-moment-star-boundary-and-certificate-primary/primary-original/research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/round3_moments/local_positive_boundary.md": "943f38199001fa575189584d6bf1de0595c0d779e6770ec8e985020e54eea4ec"
+  },
+  "review_digest": "58872c6af4e5d5208d0fe869fc26659609d7ce64cd240d629209f7529e12ae8b"
+}
