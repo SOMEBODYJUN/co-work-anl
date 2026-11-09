@@ -1,0 +1,59 @@
+{
+  "edge_id": "bn-clone-checks-three-project-counterexample",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "BN-CLONE-v1"
+  ],
+  "target_ids": [
+    "M-3e521f1040c04fb0b6582670f4ad71bd"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "同一预算聚合模型及显式非负有理 min-of-linear 语言；采用反例 A=((2,0,3/2),(0,2,3/2))、总量 delta=(1/4,1/4,1/2)、active 行 I={1,2} 和正支持 S={1,2}，并保留反例对所有连续单纯形偏离的 NE 证明。",
+  "roles": {
+    "BN-CLONE-v1": "提供 K 条件和点态合并判别：各正支持坐标可由不同 active 超梯度分别最大，但合并需要一个共同 active 凸组合同时最大；共同 LP 不可行时给出等预算失败构造。",
+    "M-3e521f1040c04fb0b6582670f4ad71bd": "实例化该失败分支：两 clone 分别纯投项目 1、2，各自由一条 active 行证实最优；合并支持 {1,2} 没有共同最大超梯度，且实际 NE 的合并偏离全投项目 3 将效用从 5/4 提升到 3/2。"
+  },
+  "explanation": "该精确三项目实例检查 BN-CLONE-v1 的必要性/失败接口，而不是反驳 BN-CLONE-v1。两 active 行分别为 (2,0,3/2) 与 (0,2,3/2)，其差异使 g_1 与 g_2 可分别最大，但任意 active 凸组合不能令两者同时达到全三坐标最大；对应的 Farkas/共同 LP 失败由正文和有理证书给出。正文还证明两个 clone 和 outsider 构成真实连续策略 NE，合并后存在严格改善，因此实例确实落在一般判别的失败侧。附件中的 Fraction 网格、Farkas toy 和浮点原型只作复现证据，不扩大为所有三项目输入均失败或一般效用结论。",
+  "scope": "3A budget-games；一般共同超梯度判别与其三项目精确失败见证的机制检查。",
+  "evidence": [
+    {
+      "path": "archives/budget-games/state/定理/分段线性凹偏好的共享超梯度合并判别--定理.md",
+      "sha256": "754484e9c7765984f91acb586031a4b10259552ed294fbd5b7c0e4c9549d463b",
+      "section": "三、非光滑时的点态充要条件"
+    },
+    {
+      "path": "archives/budget-games/state/定理/分段线性凹偏好的共享超梯度合并判别--定理.md",
+      "sha256": "754484e9c7765984f91acb586031a4b10259552ed294fbd5b7c0e4c9549d463b",
+      "section": "一、凹性本身不保证合并"
+    },
+    {
+      "path": "archives/budget-games/state/证明/合并不变性的短失败证书与有理位长--证明.md",
+      "sha256": "e4731c9d7c4c7d0126fb182a094f7cd9c57611886f06a121432f21bb895016c2",
+      "section": "五、完整有理toy及限度"
+    },
+    {
+      "path": "archives/budget-games/state/计算/三项目合并失败的精确验证输入与输出--计算.md",
+      "sha256": "30774a2ab349a34de94291f507a7ec1e455aba32b656519abbb71a29745e9b38"
+    },
+    {
+      "path": "archives/budget-games/state/审查/克隆精确证书与识别原型三源复现--审查.md",
+      "sha256": "03856cbecd11438296ff1dfa6e8bbd6c890d911dc34a449bf66389190fdf2c78",
+      "section": "1. `cloning_certificate.py`：三项目等预算克隆的 Fraction 证书"
+    }
+  ],
+  "reviewed_by": "budget-games-3a-3a-adeb2beeb445c92b",
+  "review_note": "完整实读一般判别、连续 NE 反例、Farkas 短证书和 Fraction 复现；确认该边是 checks 语境，明确反例只击穿广泛凹性充分性，不否定 BN-CLONE-v1。",
+  "endpoint_pins": {
+    "BN-CLONE-v1": "1f8efa757d60cfb6b0d2602aaf2b0245e3fac233fb702fa002a1fd2f931014e4",
+    "M-3e521f1040c04fb0b6582670f4ad71bd": "1b13546dd3874f5ec4d368592ae9e2fe9242c31311803e880a5507860a05723a"
+  },
+  "evidence_pins": {
+    "archives/budget-games/state/定理/分段线性凹偏好的共享超梯度合并判别--定理.md": "754484e9c7765984f91acb586031a4b10259552ed294fbd5b7c0e4c9549d463b",
+    "archives/budget-games/state/证明/合并不变性的短失败证书与有理位长--证明.md": "e4731c9d7c4c7d0126fb182a094f7cd9c57611886f06a121432f21bb895016c2",
+    "archives/budget-games/state/计算/三项目合并失败的精确验证输入与输出--计算.md": "30774a2ab349a34de94291f507a7ec1e455aba32b656519abbb71a29745e9b38",
+    "archives/budget-games/state/审查/克隆精确证书与识别原型三源复现--审查.md": "03856cbecd11438296ff1dfa6e8bbd6c890d911dc34a449bf66389190fdf2c78"
+  },
+  "review_digest": "5357d987661b7cc380e230cfc86a739ea876faf6ff77bbf4129df0321f607e5c"
+}

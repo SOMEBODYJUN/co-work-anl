@@ -1,0 +1,81 @@
+{
+  "edge_id": "commonmany-adaptive-double-lpt-specializes-adaptive-reset",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-ADAPTIVE-RESET",
+    "SC-K-FORCED-FLOOR"
+  ],
+  "target_ids": [
+    "SC-K-ADAPTIVE-DOUBLE-LPT-2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "固定 MF-MODEL、规范贪心原池、正显式有理权及 γ>0。首轮 q_s 箱全≥γ；每个 q_s≥2 的第二轮 q_s−1 箱全≤2τ_s，τ_s=max(γ,η_s)。位多项式的在轨与离轨/默认求值分别须 RANGE 与 MAX。失败为 unknown。",
+  "roles": {
+    "SC-K-ADAPTIVE-RESET": "从给定在轨 NE、ρ_s 和原池删除证书构造同布局完整因子二续局。",
+    "SC-K-FORCED-FLOOR": "在精确纯 NE 下为当前强制池给每家 η_s。",
+    "SC-K-ADAPTIVE-DOUBLE-LPT-2": "用双 LPT 与有限纯改善产生 AR 所需输入，给出成功时的因子二保证。"
+  },
+  "explanation": "由 W_s⁰≤(q_s+1)γ 和首轮其他 q_s−1 箱均≥γ，每箱均≤2γ。对严格纯改善 L_g+w_i<L_f，移动后源载 L_f−w_i>L_g、目标载 L_g+w_i<L_f，故全局最小不减、最大不增，平方负载势严格下降；有限赋值达到纯 NE 且 a_f≥γ。强制池引理在该纯 NE 上又给 a_f≥η_s，故 a_f≥τ_s。成功的第二轮箱恰构成 AR 的 ρ_s=τ_s 删除证书，q_s=1 用 γ 分支，纯 NE 作为退化独立 mixed 输入。AR 逐个真实偏离补齐完整因子二续局。LPT、η_s 与箱检验本身位多项式；有限严格改善没有多项式步数承诺，若采用 RANGE/MAX 才得到目标的位多项式强化。正文八设施例 H 的删除箱上界220；四个均>100的私有原子不能在旧帽200下放进三箱。",
+  "scope": "从给定均衡与删除证书的 AR 接口及强制池下界，证明成功的自适应双 LPT 检验给出完整因子二续局。限定 MF-MODEL 的规范贪心原池和正覆盖输入。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/强制负载下界的自适应原池重置--算法.md",
+      "sha256": "86287a5ef01a657d547a78e2900ed3d86d27483d322697736bcc3f077c6dbc76",
+      "section": "AD：可计算的自适应双LPT充分测试"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/强制负载下界的自适应原池重置--算法.md",
+      "sha256": "86287a5ef01a657d547a78e2900ed3d86d27483d322697736bcc3f077c6dbc76",
+      "section": "AR：给定在轨均衡与源池删除证书"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/强制原子池的纯均衡设施负载下界--引理.md",
+      "sha256": "f52ac3cbca886828fe6ec8a3fb63c922ca712004d47ffba09e6e700a35aeda2a"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md",
+      "sha256": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/审查/受限同链调度导入的最大值与范围义务--审查.md",
+      "sha256": "0f112e754fd5c918a7bbc5791cc31af95345e91dc27c90e3f49cc322a3b99ddb"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/计算/补集编译与条件离轨补全的精确核验--计算.md",
+      "sha256": "304e46772fb00d680126bb697e791f99cfc21610e1fb65b5b7c276246a469369"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/审查/任意设施数命题登记与证据分层--审查.md",
+      "sha256": "f08b7bff2d2e89cedf745454a4f3112cb9be0b67e1e5d17ce7dca582923c7f62",
+      "section": "重置、强制下界与允许静止超帽"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/强制负载下界的自适应原池重置--算法.md",
+      "sha256": "86287a5ef01a657d547a78e2900ed3d86d27483d322697736bcc3f077c6dbc76",
+      "section": "严格分离三角实例"
+    }
+  ],
+  "reviewed_by": "Codex maintenance",
+  "review_note": "重推首轮纯改善的极值和势、纯 NE 强制池下界、删除箱证书以及 AR 的完整续局。保留独立的 RANGE/MAX 位复杂度义务和八设施例的严格域差。",
+  "endpoint_pins": {
+    "SC-K-ADAPTIVE-DOUBLE-LPT-2": "948faf5dbd2362c47d0a6c2d1679c2a0663b56a33bd187a5670798ed66398974",
+    "SC-K-ADAPTIVE-RESET": "024c2910c386e5a58e1d8efefec4c55c48bf6efea0c4fb9eeefabca753ec1188",
+    "SC-K-FORCED-FLOOR": "cf6aa3912a847679847c51588b2627ba768529b821a76d42d6b00ff1cca3ede7"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/算法/强制负载下界的自适应原池重置--算法.md": "86287a5ef01a657d547a78e2900ed3d86d27483d322697736bcc3f077c6dbc76",
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+    "archives/facility-games/subarchives/common-many/state/引理/强制原子池的纯均衡设施负载下界--引理.md": "f52ac3cbca886828fe6ec8a3fb63c922ca712004d47ffba09e6e700a35aeda2a",
+    "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+    "archives/facility-games/subarchives/common-many/state/审查/受限同链调度导入的最大值与范围义务--审查.md": "0f112e754fd5c918a7bbc5791cc31af95345e91dc27c90e3f49cc322a3b99ddb",
+    "archives/facility-games/subarchives/common-many/state/计算/补集编译与条件离轨补全的精确核验--计算.md": "304e46772fb00d680126bb697e791f99cfc21610e1fb65b5b7c276246a469369",
+    "archives/facility-games/subarchives/common-many/state/审查/任意设施数命题登记与证据分层--审查.md": "f08b7bff2d2e89cedf745454a4f3112cb9be0b67e1e5d17ce7dca582923c7f62"
+  },
+  "review_digest": "25ba748fa65ceb835ea1983173e3ee0652255c145d960dc2d269afac1c072f38"
+}

@@ -9,6 +9,7 @@ import json
 from functools import lru_cache
 from pathlib import Path, PurePosixPath
 import re
+import tempfile
 import uuid
 
 import board
@@ -325,9 +326,9 @@ def _request(row,request_id,operation):
 
 
 def _task_keys(definition,phase):
-    # The same source may contain several Claims. Reading it is shared; only
-    # explicit output paths (and map core objects) are exclusive.
-    return set() if phase=='registration' else set(definition['object_ids'])
+    # Initial object coverage has a single owner. Later comparison questions
+    # may share endpoints and still reserve distinct output paths.
+    return set(definition['object_ids']) if phase=='map' and definition['stage']=='3A' else set()
 
 
 def _material_count(rows):
@@ -578,6 +579,7 @@ def transition(root,old,others,actor,operation,request_id,receipt=None,reason=No
                 edge_paths=dict(zip(relations,files))
                 _check_edge_paths(root,definition,receipt,others,edge_paths,data.get('edge_files',[]))
                 _map_receipt_coverage(definition,receipt,objects,relations)
+                research.validate_map_follow_ups(definition,receipt,others,objects)
                 new['edge_paths']=edge_paths
             new.update(state='done',receipt=receipt)
         else:raise ValueError('Unknown task operation')
@@ -728,6 +730,123 @@ def _map_claim_order(row):
     return (definition['stage'],priority if type(priority) is int else 2,definition['task_id'])
 
 
+def _compactable(row, depended_on):
+    definition=row['definition']
+    context=definition.get('context_plan',{})
+    return (row['state']=='available' and not row.get('owner') and definition['stage']=='3A'
+            and len(definition['object_ids'])==1 and not superseded_ids(definition)
+            and not dependencies(definition) and definition['task_id'] not in depended_on
+            and isinstance(context,dict) and isinstance(context.get('budget'),dict)
+            and context.get('oversized') is False and context.get('requires_export') is False
+            and not context.get('comparison_question')
+            and re.fullmatch(r'.+-3a-[0-9a-f]{16}',definition['task_id'])
+            and definition['goal'].startswith('Read and compare the complete assigned mathematical objects in '))
+
+
+def draft_compaction(root,ctx,scope=None):
+    """Repack ordinary singleton 3A work with the same planner used for fresh work."""
+    if scope and not re.fullmatch(r'archives/[^/]+(?:/subarchives/[^/]+)*',scope):
+        raise ValueError('Compact scope must be an archive or subarchive path')
+    rows=listing(root,ctx=ctx)
+    depended_on={parent for row in rows if row['state']!='withdrawn' for parent in dependencies(row['definition'])}
+    _,objects=_load(root,research.REGISTRY,verify=False)
+    groups={};needed=set()
+    for row in rows:
+        if not _compactable(row,depended_on):continue
+        definition=row['definition'];context=definition['context_plan'];local_scope=context.get('scope_hint','')
+        if (definition['registry']!=research.REGISTRY or not local_scope.startswith('archives/')
+                or (scope and local_scope!=scope and not local_scope.startswith(scope+'/'))):
+            continue
+        budget=context['budget']
+        options={key:budget[key] for key in ('context_tokens','window_source','used_tokens','reserve_tokens','output_tokens','model')}
+        options['inherited']=budget['history_mode']=='inherited'
+        prefix=definition['task_id'].rsplit('-3a-',1)[0]
+        key=(local_scope,prefix,research.pin(options))
+        core=definition['object_ids'][0]
+        if any(oid not in objects or research.pin(objects[oid])!=pin for oid,pin in definition['input_pins'].items()):
+            continue
+        groups.setdefault(key,(options,{}))[1][core]=definition
+        needed.update(definition['input_pins'])
+    # Batch materialization before drafting. Direct matched evidence/body
+    # neighbors are eligible for normal planner read dependencies.
+    exact=lambda ref:(ref['path'],ref['sha256'],ref.get('section'))
+    evidence={exact(ref) for oid in needed for ref in objects[oid]['evidence']}
+    needed.update(oid for oid,obj in objects.items() if exact(obj['body']) in evidence)
+    _prefetch(root,[ref['path'] for oid in needed for ref in [objects[oid]['body'],*objects[oid]['evidence']]])
+    manifest=[]
+    with tempfile.TemporaryDirectory(prefix='map-compact-',dir=root) as temporary:
+        output=(Path(temporary)/'draft.json').relative_to(root).as_posix()
+        for (local_scope,prefix,_),(options,old) in sorted(groups.items()):
+            if len(old)<2:continue
+            sources={definition['task_id'] for definition in old.values()}
+            research.draft_map_tasks(root,output=output,object_ids=sorted(old),scope=local_scope,
+                                     task_prefix=prefix,context_options=options,
+                                     queue_rows=[r for r in rows if r['definition']['task_id'] not in sources],
+                                     required_reads={oid:d.get('read_object_ids',[]) for oid,d in old.items()})
+            for task in json.loads(_safe_path(root,output).read_text()):
+                core=task['object_ids'];context=task['context_plan']
+                if len(core)<2 or context['oversized'] or context['requires_export']:continue
+                manifest.append({'sources':{old[oid]['task_id']:research.pin(old[oid]) for oid in core},
+                                 'replacement':task})
+    return manifest
+
+
+def apply_compaction(root,ctx,actor,request_id,manifest):
+    """Validate each group against the current CAS snapshot before any writes."""
+    if ctx['phase']!='map':raise ValueError('Compaction applies only to map 3A')
+    known={row['definition']['task_id']:row for row in listing(root,ctx=ctx)}
+    depended_on={parent for row in known.values() if row['state']!='withdrawn' for parent in dependencies(row['definition'])}
+    replaced={old:tid for tid,row in known.items() if row['state']=='done' for old in superseded_ids(row['definition'])}
+    reserved={tid:row for tid,row in known.items() if row['state']!='withdrawn' and tid not in replaced}
+    _,objects=_load(root,research.REGISTRY,verify=False)
+    skipped=[];updates={};published=[];withdrawn=[]
+    for item in manifest:
+        sources=item['sources'];task=item['replacement'];tid=task['task_id']
+        changed=[name for name,pin in sources.items() if name not in reserved or
+                 not _compactable(reserved[name],depended_on) or research.pin(reserved[name]['definition'])!=pin]
+        if changed:
+            skipped.append({'task_id':tid,'changed_source_tasks':changed})
+            continue
+        old=[reserved[name]['definition'] for name in sources]
+        core=task['object_ids']
+        if (len(old)<2 or tid in known or tid in updates or task['stage']!='3A' or task['registry']!=research.REGISTRY
+                or dependencies(task) or superseded_ids(task)
+                or sorted(core)!=sorted(definition['object_ids'][0] for definition in old)
+                or any(task['input_pins'].get(oid)!=pin for definition in old
+                       for oid,pin in definition['input_pins'].items())
+                or any(definition['registry']!=task['registry'] or
+                       definition['context_plan']['scope_hint']!=task['context_plan']['scope_hint'] for definition in old)):
+            raise ValueError('Compaction must preserve exact core, input pins and local scope: '+tid)
+        groups=task['context_plan'].get('comparison_groups',[core])
+        if sorted(oid for group in groups for oid in group)!=sorted(core):
+            raise ValueError('Compaction comparison groups must partition the assigned core: '+tid)
+        conflict=_map_plan_conflict(task,{name:row for name,row in reserved.items() if name not in sources},replaced)
+        if conflict:
+            skipped.append(conflict)
+            continue
+        try:validate(root,task,'map')
+        except MapInputsChanged as exc:
+            skipped.append({'task_id':tid,'reason':str(exc)})
+            continue
+        scope=task['context_plan']['scope_hint']
+        if any(max(research.object_scopes({oid:objects[oid]}),key=len,default='.')!=scope for oid in core):
+            raise ValueError('Compaction must stay within one deepest registered scope: '+tid)
+        for name in sources:
+            row=copy.deepcopy(reserved.pop(name))
+            row.update(state='withdrawn',reason='Repacked as '+tid,withdrawn_by=actor,compacted_into=tid)
+            updates[name]=_request(row,request_id,'compact')
+        row=_request({'definition':task,'state':'available','owner':None,'compacted_from':sorted(sources)},
+                     request_id,'compact')
+        updates[tid]=reserved[tid]=row
+        withdrawn.extend(sources);published.append(tid)
+    paths=[task_path(root,tid,ctx=ctx) for tid in updates]
+    for path,row in zip(paths,updates.values()):_write_json(path,row)
+    result={'tasks':published,'withdrawn_tasks':withdrawn,'skipped_conflicts':skipped,
+            'compacted_batches':len(withdrawn),'replacement_batches':len(published)}
+    if not paths:result['status']='no-compaction'
+    return paths,result
+
+
 def _apply(root,ctx,actor,instance,intent,request_id):
     operation=intent['operation'];task_id=intent.get('task_id');reason=intent.get('reason');rows=listing(root,ctx=ctx)
     expected_owner=intent.get('expected_owner')
@@ -735,6 +854,11 @@ def _apply(root,ctx,actor,instance,intent,request_id):
     acknowledged=[r for r in [lead,*rows] if request_id in r.get('requests',{})]
     if acknowledged:
         recovered=[r for r in acknowledged if 'definition' in r]
+        if operation=='compact':
+            withdrawn=[r['definition']['task_id'] for r in recovered if 'compacted_into' in r]
+            published=[r['definition']['task_id'] for r in recovered if 'compacted_from' in r]
+            return [],{'recovered_acknowledgement':True,'tasks':published,'withdrawn_tasks':withdrawn,
+                       'compacted_batches':len(withdrawn),'replacement_batches':len(published)}
         if operation=='done-many':
             requested={item['task_id']:item['receipt'] for item in intent.get('completions',[])}
             recovered=[r for r in rows if r['definition']['task_id'] in requested and r.get('receipt')==requested[r['definition']['task_id']]]
@@ -764,6 +888,7 @@ def _apply(root,ctx,actor,instance,intent,request_id):
         _request(lead,request_id,operation);_write_json(lead_path(root,ctx),lead)
         return [lead_path(root,ctx)],{'lead':lead}
     if operation=='plan':return _plan(root,intent['records'],ctx,actor,instance,request_id)
+    if operation=='compact':return apply_compaction(root,ctx,actor,request_id,intent['records'])
     if operation=='handoff-all':
         chosen=[r for r in rows if r.get('owner')==actor and r['state'] in ACTIVE]
         paths=[]
@@ -900,6 +1025,12 @@ def _reclaim(old,actor,reason,request_id):
     return _request(new,request_id,'reclaim')
 
 
+def _pending_request_path(client,ctx,operation,selector):
+    pending_dir=client.cache/'workflow-pending'/ctx['run'];pending_dir.mkdir(parents=True,exist_ok=True)
+    key=hashlib.sha256((operation+'\0'+str(selector)).encode()).hexdigest()[:24]
+    return pending_dir/(key+'.json')
+
+
 def mutate(root,task_id,operation,receipt=None,reason=None,phase='map',records=None,prefix='',local=False,read_ids=None,count=1,completions=None,expected_owner=None):
     ctx=binding(root,phase,local);actor=coordination.config(root,'wcg.actor') or ('Boss1' if local else '')
     instance=coordination.config(root,'wcg.instance') or ('local-offline' if local else '')
@@ -919,9 +1050,8 @@ def mutate(root,task_id,operation,receipt=None,reason=None,phase='map',records=N
     branch=coordination.config(root,'wcg.branch')
     if not branch:raise ValueError('Start this independent clone on the shared branch first')
     client=board.Board(root,branch=branch,retries=8)
-    pending_dir=client.cache/'workflow-pending'/ctx['run'];pending_dir.mkdir(parents=True,exist_ok=True)
-    key=hashlib.sha256((operation+'\0'+str(task_id or prefix or expected_owner or '')).encode()).hexdigest()[:24]
-    pending_path=pending_dir/(key+'.json');intent_pin=research.pin(intent)
+    pending_path=_pending_request_path(client,ctx,operation,task_id or prefix or expected_owner or '')
+    intent_pin=research.pin(intent)
     if pending_path.exists():
         pending=json.loads(pending_path.read_text())
         if pending['intent_pin']!=intent_pin and pending.get('push_attempted',True):
@@ -973,6 +1103,25 @@ def plan(root,record_file,phase='map',local=False):
     if isinstance(records,dict):records=[records]
     if not isinstance(records,list) or not records:raise ValueError('Explicit task definitions required')
     return mutate(root,None,'plan',phase=phase,records=records,local=local)
+
+
+def compact(root,scope=None,phase='map',local=False):
+    if phase!='map':raise ValueError('Compaction applies only to map 3A')
+    manifest=None
+    if not local:
+        ctx=binding(root,phase)
+        branch=coordination.config(root,'wcg.branch')
+        if not branch:raise ValueError('Start this independent phase clone first')
+        client=board.Board(root,branch=branch,retries=8)
+        pending=_pending_request_path(client,ctx,'compact',scope or '')
+        if pending.exists():
+            saved=json.loads(pending.read_text())
+            if saved.get('push_attempted',True):manifest=saved['intent']['records']
+    if manifest is None:
+        with latest(root,phase,local) as (snapshot,ctx):
+            manifest=draft_compaction(snapshot,ctx,scope)
+    if not manifest:return {'status':'no-compaction','tasks':[],'compacted_batches':0,'replacement_batches':0}
+    return mutate(root,None,'compact',phase=phase,records=manifest,prefix=scope or '',local=local)
 
 
 def collect(root,phase='map',local=False,ctx=None,baseline_ref=None,*,tolerate_stale=True):
@@ -1235,6 +1384,8 @@ def main(argv=None):
     sub=p.add_subparsers(dest='command',required=True)
     q=sub.add_parser('inventory');q.add_argument('--registry',default=research.REGISTRY)
     q=sub.add_parser('plan');q.add_argument('--record-file',required=True)
+    q=sub.add_parser('compact',help='Repack only unclaimed ordinary singleton 3A work')
+    q.add_argument('--scope',help='An archive/subarchive path; omit to compact all eligible local scopes')
     q=sub.add_parser('list');q.add_argument('--owner',help='self resumes only claimed/blocked work; an explicit Boss number includes history');q.add_argument('--available',action='store_true')
     sub.add_parser('status')
     q=sub.add_parser('collect');q.add_argument('--baseline',help='Registration only: published frozen baseline path for this incremental collection')
@@ -1258,6 +1409,7 @@ def main(argv=None):
         raise ValueError('Use one task ID or --owner BossN')
     if a.command=='inventory':result=research.inventory(root,a.registry)
     elif a.command=='plan':result=plan(root,a.record_file,a.phase,a.local_only)
+    elif a.command=='compact':result=compact(root,a.scope,a.phase,a.local_only)
     elif a.command=='assemble':
         if a.phase!='map':raise ValueError('Registration collects batches for research compose')
         result=assemble(root,a.local_only)

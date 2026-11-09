@@ -1,0 +1,48 @@
+{
+  "edge_id": "bn-separable-specializes-ba-ordgrad",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "BN-SEPARABLE-v1"
+  ],
+  "target_ids": [
+    "BA-ORDGRAD-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "BA-ORDGRAD-v1 的选定形状族把共同 C² 形状作为允许的 player-specific 特例，并采用与 BN-SEPARABLE 相同的有限玩家/项目预算聚合模型；在该特例中每个玩家使用同一个 f∈C²([0,1])，f′>0、f″<0，预算 b_i>0 且总和为 1，所有 v_ij>0。",
+  "roles": {
+    "BN-SEPARABLE-v1": "在共同 f、严格正估值的严格子类中，以逐玩家最大边际 KKT 条件和 G′=log f′ 把 NE 充要地等价为 P(x)=Σ_j∫_0^{δ_j}log f′(s)ds+Σ_{i,j}x_ij log v_ij 的全局凹最大化，并证明 NE 的 aggregate δ 唯一。",
+    "BA-ORDGRAD-v1": "提出更宽的 player-specific f_i / 统一 log-gradient 分类及精确或近似位复杂度合同；该开放对象的全部分类、最小坏例、函数表示与 oracle 义务仍未解决。"
+  },
+  "explanation": "将 BA-ORDGRAD 的形状族限制为 f_i=f，并付清 C²、严格递增严格凹、v_ij>0 与正预算条件后，BN-SEPARABLE 的逐行边际最优性给出统一 log-gradient；因 G′(t)=log f′(t)、G″(t)=f″(t)/f′(t)<0，联合 KKT 正好是 P 在乘积预算单纯形上的全局最大条件，且严格凹的总量项使所有 NE 的 δ 相同。因此 BN-SEPARABLE 是宽候选的已证共同形状特例。该边不宣称 player-specific f_i 的必要充分分类，不把 P 当作精确势，也不补齐函数表示、精确有理或近似位复杂度；这些仍是 BA-ORDGRAD 的开放义务。",
+  "scope": "3A archives/budget-games；仅记录共同形状可分凹偏好对 BA-ORDGRAD 宽分类目标的数学特例关系。零估值、f′为零、f″非负、player-specific 形状及算法/位复杂度合同均在边外。",
+  "evidence": [
+    {
+      "path": "archives/budget-games/state/等价/共同形状可分凹偏好的对数边际规划--等价.md",
+      "sha256": "9a2ac9d6639aa52c7c8af7d97a36030b091c2a151949100c974af8d1a7306544",
+      "section": "共同形状可分凹偏好的对数边际规划"
+    },
+    {
+      "path": "archives/budget-games/state/等价/共同形状可分凹偏好的对数边际规划--等价.md",
+      "sha256": "9a2ac9d6639aa52c7c8af7d97a36030b091c2a151949100c974af8d1a7306544",
+      "section": "证明：逐行最大边际与联合KKT"
+    },
+    {
+      "path": "archives/budget-games/state/审查/多线Nash候选卡与动态选择边界--审查.md",
+      "sha256": "73c44244089318c1f57503f5344975fd5046c8f260cebb016e9b70e845c93c4a",
+      "section": "N4：非 binary 可分偏好与 log-gradient 规划"
+    }
+  ],
+  "reviewed_by": "budget-games-3a-3a-52101512e436dcda",
+  "review_note": "完整读取两份指定引用；逐项核对共同形状定理的模型、量词、KKT 推导、aggregate 唯一性与适用边界，并与 N4 宽候选的 player-specific 分类及算法开放义务比较。边仅承认共同 f 的条件性特例，不扩大到宽候选。",
+  "endpoint_pins": {
+    "BA-ORDGRAD-v1": "d294390187ac1edbf98a3212453b573dbe1bbd0f6ebe85b516dd65864e37a21d",
+    "BN-SEPARABLE-v1": "513b07fe84cfe81e9f89bb5bf985157b7e45aaff04eee504fddb71f62b02a3c8"
+  },
+  "evidence_pins": {
+    "archives/budget-games/state/等价/共同形状可分凹偏好的对数边际规划--等价.md": "9a2ac9d6639aa52c7c8af7d97a36030b091c2a151949100c974af8d1a7306544",
+    "archives/budget-games/state/审查/多线Nash候选卡与动态选择边界--审查.md": "73c44244089318c1f57503f5344975fd5046c8f260cebb016e9b70e845c93c4a"
+  },
+  "review_digest": "2b0764305f3d8abe1bccc2c06da5f643ce87b4ad230341f5ef45282eddbd458a"
+}

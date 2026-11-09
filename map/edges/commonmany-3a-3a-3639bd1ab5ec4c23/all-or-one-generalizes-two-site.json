@@ -1,0 +1,58 @@
+{
+  "edge_id": "commonmany-all-or-one-generalizes-two-site",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2"
+  ],
+  "target_ids": [
+    "SC-K-TWO-SITE-COMPONENT-GREEDY-2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一 MF-MODEL、同一规范 SC-K-GREEDY-BUDGET 贪心占位、显式正二进制有理权、k≥2 带标签设施、正最大站点可达；TWO-SITE 的“常 q 或至多两站”输出条件按其 occupied-site overlap components 解释，完整 factor-two 续局沿用共同 MAX/RANGE 合同。",
+  "roles": {
+    "SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2": "源域：每个分量常 q，或每个客户已占选项为单站/该分量全站；任意大小和混合 q 的 all-or-one 列表分配给出盒内独立均匀 NE 与完整 factor-two 续局。",
+    "SC-K-TWO-SITE-COMPONENT-GREEDY-2": "目标域：每个分量常 q 或至多两站；不等 q 两站用降权 H→L 单遍严格改善扫描，常 q 用相同机器导入。"
+  },
+  "explanation": "TWO-SITE 的常 q 分量直接满足 ALL-OR-ONE 的第一分支。至多两站且非恒 q 的分量中，任一多选客户的已占选项只能是两站全集 {H,L}，而单选客户只能是一个站，因此满足 ALL-OR-ONE 的“单站或全站”第二分支；组件图的连通定义排除了带第三占站的多选集。故 ALL-OR-ONE 的任意大小列表证明专门化到 TWO-SITE 输出类，并保留同一盒界、站纯/站内均匀客户 NE、空目标偏离的 packing/capped/MAX 完成。TWO-SITE 的单遍 H→L 算法仍是独立短证明，不能因域包含而删除；其 (9,A),(1,AB),(4,B) 例说明它可覆盖 RANGE 失败的两站输入。ALL-OR-ONE 还覆盖严格三站 all-or-one 例，故源域更宽。",
+  "scope": "3A common-many；仅记录 ALL-OR-ONE 对 TWO-SITE 输出域的包含/方法专门化。保留两站独立一次扫描、常 q RANGE 分支、MAX 完整续局及任意更大混合分量边界；不宣称一般 mixed-q 多站部分重叠。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/共同锚点嵌套选项的降序列表均衡--算法.md",
+      "sha256": "5e6a5d49b38f480490a4c8d255aa9deb6a10eae9590277447d046bcb8a706f4c"
+    },
+    {
+      "path": "tools/evidence/common-many-primary-register/original/research/current/multi_facility/claims.md",
+      "sha256": "3ebdc5ee98b8dbd847e06e26e1fc6b708002e485fe2b31abb9ee1ae491d26e89",
+      "section": "SC-K-TWO-SITE-COMPONENT-GREEDY-2 -- polynomial mixed-multiplicity pair repair"
+    },
+    {
+      "path": "tools/evidence/common-many-primary-register/original/research/current/multi_facility/claims.md",
+      "sha256": "3ebdc5ee98b8dbd847e06e26e1fc6b708002e485fe2b31abb9ee1ae491d26e89",
+      "section": "SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2 -- arbitrary-size mixed multiplicities"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/审查/任意设施数命题登记与证据分层--审查.md",
+      "sha256": "f08b7bff2d2e89cedf745454a4f3112cb9be0b67e1e5d17ce7dca582923c7f62",
+      "section": "可识别输出类的选择器"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b"
+    }
+  ],
+  "reviewed_by": "Boss3-common-many-3A-fresh-worker",
+  "review_note": "完整读取三项 core 对象、MF-MODEL shared read 及任务声明全部 references；逐项验证 TWO-SITE 的常 q/至多两站分量如何落入 ALL-OR-ONE 的常 q/单站或全站分支，并保留两站 H→L 单遍扫描作为独立方法。relation_mode 取 conditional 是因为完整 factor-two 完成仍依共同 MAX/RANGE 调度合同；域包含推导本身无未付数学步。",
+  "endpoint_pins": {
+    "SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2": "71af3ccff84eb664b792d34b2b0c7000ddbb0d8c0742bece49b27476536d7249",
+    "SC-K-TWO-SITE-COMPONENT-GREEDY-2": "547ae8366059c7b175334be5c7f8dffcdf883ea25e0caad57afdb462427e728c"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/算法/共同锚点嵌套选项的降序列表均衡--算法.md": "5e6a5d49b38f480490a4c8d255aa9deb6a10eae9590277447d046bcb8a706f4c",
+    "tools/evidence/common-many-primary-register/original/research/current/multi_facility/claims.md": "3ebdc5ee98b8dbd847e06e26e1fc6b708002e485fe2b31abb9ee1ae491d26e89",
+    "archives/facility-games/subarchives/common-many/state/审查/任意设施数命题登记与证据分层--审查.md": "f08b7bff2d2e89cedf745454a4f3112cb9be0b67e1e5d17ce7dca582923c7f62",
+    "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b"
+  },
+  "review_digest": "e99c0423272d4a7ce1f6c9dd07584f1761b49419f92d02bf07a946962dcd7abf"
+}

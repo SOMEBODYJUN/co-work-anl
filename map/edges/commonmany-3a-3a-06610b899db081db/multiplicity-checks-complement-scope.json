@@ -1,0 +1,88 @@
+{
+  "edge_id": "commonmany-multiplicity-checks-complement-scope",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "facility-games/common-many/multiplicity-related-link-interface-boundary"
+  ],
+  "target_ids": [
+    "SC-K-COMPLEMENT-GREEDY-REDUCTION"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "共同目录 MF-MODEL 的有限非空地点、带标签设施、正不可拆原子客户、强制服务和独立混合保持不变；边界对象的 RQ/RL 比较只把同一站点分配与同一负载作为相关机器候选接口，补集对象则须使用源排除策略、反向仿射负载 W_t=q_t+δ(q_tM−Y_t)、显式 k=1+Σq_t 的真实设施实例。仅在全部原可达选项、站内均匀客户 NE 和正有理输入合同下解释这条范围检查；不把相关机器模型当作 MF-MODEL 的等价目标。",
+  "roles": {
+    "facility-games/common-many/multiplicity-related-link-interface-boundary": "给出 RQ:(W_t−w_i)/q_t≤W_v/q_v 与 RL:W_t/q_t≤(W_v+w_i)/q_v 的精确差异，并以 q_t=1,q_v=2,w_i=2,W_t=5,W_v=6 的三原子完整实例证明 RQ 为等式而 RL 有严格改善；同时保留相同 q 时可消分母的受限同机接口。",
+    "SC-K-COMPLEMENT-GREEDY-REDUCTION": "给出正确的取补/反向仿射归约：源排除态映为目标整站分配，W_t=q_t+δ(q_tM−Y_t)，每条真实偏离差满足 Δ_i^T=δΔ_i^S，所有合法态保完整盒与严格归位保护；正文明确这不是把物理重数直接改称相关机器速度。"
+  },
+  "explanation": "逐式代入边界对象的完整反例：原站点纯、站内均匀客户模型中，移动客户留在 t 的外部平均成本为 (5−2)/1=3，移到 v 为 6/2=3，因此 RQ 允许该客户 NE；若直接把 q 当相关机器速度，当前延迟为 5，迁移后为 (6+2)/2=4，故 RL 严格改善。该反例精确检查了补集归约正文的范围警告：其保真桥不是同一负载上的 q→speed 恒等替换，而是先取补，再以 δ 的反向仿射变换嵌入真实 MF-MODEL，并逐偏离保留差值符号。因而该边保存 B 对 A 的适用域检查和正确接口选择；B 不否定 A 的归约，也不由有限算术脚本推出一般相关机器复杂度结论。",
+  "scope": "3A archives/facility-games/subarchives/common-many；只连接混合站点重数障碍与共单例补集归约的接口边界。覆盖相同 q 的局部受限同机等价、异 q 的直接识别失败、反向仿射取补的保偏离条件；不覆盖一般 NE 求解、PLS 困难性、位多项式时间或任意相关机器调度算法。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/障碍/混合重数与相关机器成本的转换边界--障碍.md",
+      "sha256": "a1e360aa3d1ff7fea0921a95ad72856a69c786022083b496832b2594469282f8"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/归约/共单例搜索的真实贪心全状态嵌入--归约.md",
+      "sha256": "ded938512252cace2902bbb44a68311da1bb56580b87830197f95d98e246d3f6"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/tools/evidence/multiplicity-speed-interface/restricted_related_formula.py",
+      "sha256": "a61855c813389b795848948b597e34210c00234a058ddf115e8cef9b32a198fc"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/tools/evidence/multiplicity-speed-interface/formula_run.json",
+      "sha256": "b3f74b216c17231259613557291a8e4e441d3fdc9b0c41b6e95b2f0d4385abec"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/tools/evidence/facility-complement-reset/original/multi_facility_spe/complement_reduction.py",
+      "sha256": "4fa7e4d51ab330474976b3a47fb235246b05c73be78fb5cf91a3d27675692e57"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/审查/受限同链调度导入的最大值与范围义务--审查.md",
+      "sha256": "0f112e754fd5c918a7bbc5791cc31af95345e91dc27c90e3f49cc322a3b99ddb"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/问题--问题.md",
+      "sha256": "ff8f52c8601f98366cd5735c102c71b46fcd017757bbe5147d1a74d5ea2b7aad"
+    },
+    {
+      "path": "archives/facility-games/state/证明/精确续局证书的条件成本与默认规则--证明.md",
+      "sha256": "0ea2c580e10c02f0b45cbdc7628ee03579c431dc38d15728a2c8d4264ac5ef99",
+      "section": "10.2 对一份概率策略逐客户检查"
+    },
+    {
+      "path": "archives/facility-games/state/证明/精确续局证书的条件成本与默认规则--证明.md",
+      "sha256": "0ea2c580e10c02f0b45cbdc7628ee03579c431dc38d15728a2c8d4264ac5ef99",
+      "section": "10.3 怎样检查设施的完整搬迁目录"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/审查/任意设施数命题登记与证据分层--审查.md",
+      "sha256": "f08b7bff2d2e89cedf745454a4f3112cb9be0b67e1e5d17ce7dca582923c7f62",
+      "section": "五处必须保持的后续判断"
+    }
+  ],
+  "reviewed_by": "Boss3-common-many-3A-fresh-worker",
+  "review_note": "完整读取任务声明的两个 core 对象、MF-MODEL shared read 对象及29条 declared references。逐项复算 RQ/RL 反例和补集归约的 Δ_T=δΔ_S、完整盒/H、显式设施输出条件；确认边界对象只检查并限制直接 q→speed 解释，未反驳取补/反向仿射归约。因该联系是适用域与实现接口检查而非逻辑蕴含，采用 accepted + relation_mode=context。",
+  "endpoint_pins": {
+    "SC-K-COMPLEMENT-GREEDY-REDUCTION": "115cab093325511d14216c891e95b6f5962eff809f0cdea32e3d782d8eb5abb2",
+    "facility-games/common-many/multiplicity-related-link-interface-boundary": "04b24a598c42a85e5edbe75ff7a72133f7cc4720a053ad360c5d4f3c9afdaa27"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/障碍/混合重数与相关机器成本的转换边界--障碍.md": "a1e360aa3d1ff7fea0921a95ad72856a69c786022083b496832b2594469282f8",
+    "archives/facility-games/subarchives/common-many/state/归约/共单例搜索的真实贪心全状态嵌入--归约.md": "ded938512252cace2902bbb44a68311da1bb56580b87830197f95d98e246d3f6",
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+    "archives/facility-games/subarchives/common-many/tools/evidence/multiplicity-speed-interface/restricted_related_formula.py": "a61855c813389b795848948b597e34210c00234a058ddf115e8cef9b32a198fc",
+    "archives/facility-games/subarchives/common-many/tools/evidence/multiplicity-speed-interface/formula_run.json": "b3f74b216c17231259613557291a8e4e441d3fdc9b0c41b6e95b2f0d4385abec",
+    "archives/facility-games/subarchives/common-many/tools/evidence/facility-complement-reset/original/multi_facility_spe/complement_reduction.py": "4fa7e4d51ab330474976b3a47fb235246b05c73be78fb5cf91a3d27675692e57",
+    "archives/facility-games/subarchives/common-many/state/审查/受限同链调度导入的最大值与范围义务--审查.md": "0f112e754fd5c918a7bbc5791cc31af95345e91dc27c90e3f49cc322a3b99ddb",
+    "archives/facility-games/subarchives/common-many/问题--问题.md": "ff8f52c8601f98366cd5735c102c71b46fcd017757bbe5147d1a74d5ea2b7aad",
+    "archives/facility-games/state/证明/精确续局证书的条件成本与默认规则--证明.md": "0ea2c580e10c02f0b45cbdc7628ee03579c431dc38d15728a2c8d4264ac5ef99",
+    "archives/facility-games/subarchives/common-many/state/审查/任意设施数命题登记与证据分层--审查.md": "f08b7bff2d2e89cedf745454a4f3112cb9be0b67e1e5d17ce7dca582923c7f62"
+  },
+  "review_digest": "b30de0eaf7cf9421ab829db43ef7e60a3c4b0cbb57d33daa7c9a469f96d0d27f"
+}

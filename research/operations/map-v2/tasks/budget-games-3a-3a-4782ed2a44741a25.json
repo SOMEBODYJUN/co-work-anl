@@ -87,11 +87,36 @@
       "note": "Local proof families are scheduled first. Informal links are separate discovery hints. Read any newly discovered necessary premise through read-add; do not truncate a proof or treat a deferred candidate as paid evidence."
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss2",
-  "request_id": "91aef99402a44cfdb4478504d05b1145",
+  "request_id": "1114c707072b4c298b343b61dd173819",
   "requests": {
     "3565940ab26b4f9cb22903647f5d40f4": "plan",
-    "91aef99402a44cfdb4478504d05b1145": "claim"
+    "91aef99402a44cfdb4478504d05b1145": "claim",
+    "1114c707072b4c298b343b61dd173819": "done"
+  },
+  "edge_paths": {},
+  "receipt": {
+    "task_id": "budget-games-3a-3a-4782ed2a44741a25",
+    "stage": "3A",
+    "object_ids": [
+      "CG-PAIR2T-v1"
+    ],
+    "input_pins": {
+      "CG-PAIR2T-v1": "0566b1a4f5579b11ef6313db86c49fc2e6d3d61e4e31143f74a2489100403c05"
+    },
+    "status": "complete",
+    "coverage": {
+      "CG-PAIR2T-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "0566b1a4f5579b11ef6313db86c49fc2e6d3d61e4e31143f74a2489100403c05",
+        "comparison_scope": "完整阅读 archives/budget-games/state/审查/多线Nash候选卡与动态选择边界--审查.md 的 N6：两类 pair-strategy 纯 NE 复杂度、七卡总览、证据等级/模型边界与接续三部分（文件SHA256=73c44244089318c1f57503f5344975fd5046c8f260cebb016e9b70e845c93c4a）。保留精确模型：有限无权原子拥塞，资源成本对负载非负且非降，每个策略恰为两个不同资源的子集，玩家分为两类且每类共享一个显式 pair-family；输入按显式有限位长给出，目标是对所有输入输出任意纯NE，或证明同一受限类的PLS-hardness。严格区分局部Rosenthal势极小/PNE与全局势最小。另读 archives/weighted-congestion/tools/evidence/atomic-games/candidate_report.md（SHA256=e3896b75aa9e83a78872c275e0f2ad3044edc88af60aa16608e613eff116addc）中AG-01宽候选：每个玩家显式策略表含大小至多2的资源集；其文献边界只报告对称size=2全局最小势matching、一般size=2全局NP-hard及一般size=2局部PNE仍为开放题。比较确认CG是该宽语言的两type/恰二资源窄化线索，但AG-01仅是未登记候选报告，不作为本任务已付端点。任务列出的 deferred_candidate_ids（BA-L1-SELECT-v1、BA-ORDGRAD-v1、FT-SMOOTH-v1、PS-CAC-v1）未作为本批逻辑输入，也未把预算聚合、Leontief、cactus动态或双权smoothed问题按共享术语连接到CG。",
+        "reason": "本批只有CG-PAIR2T-v1一个核心端点且read_object_ids为空；其正文是开放问题审查记录，没有独立算法、PLS归约或可重放toy证书可以在本批内部形成承重边。数学比较排除了三种错误推导： (1) 全局Rosenthal势最小化的NP-hard性不能推出局部PNE搜索的PLS-hardness，因为全局最小点虽为PNE，但任意PNE搜索是不同的局部目标；(2) 对称size=2的matching只处理特定全局势模型，不能保持两type显式pair-family的类型配额/策略族；(3) 退化到不相交资源或公共必选资源的子类不能代表完整两type模型。AG-01/CB07式宽模型关系若要登记为specializes，仍需Boss通过read-add付清正式端点及其当前pin；本收据不把未登记候选报告升级为逻辑边。CG的未付义务保留为：恢复母文Theorem 2的matching归约，逐边追踪type标签与资源重复是否破坏增广回路，并核对2025--2026后续工作；没有完成这些义务前，不宣称算法、PLS-hardness或反例。按3A规则不造自环、不以共同拥塞定义造hub边，因此本批无逻辑边、assets为空。",
+        "edge_ids": []
+      }
+    },
+    "assets": [],
+    "reviewed_by": "Boss2-budget-games-3a-fresh-worker",
+    "review_note": "完整实读任务指定的N6、七卡总览和证据边界；对照AG-01候选报告的全局/局部复杂度边界并保留两type窄化、全局matching不可迁移和未付归约义务。未发布自环或未经read-add的跨对象边。"
   }
 }

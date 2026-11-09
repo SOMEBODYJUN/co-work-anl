@@ -1,0 +1,82 @@
+{
+  "task_id": "maintenance-scope-b14a7d50ed966b",
+  "stage": "3A",
+  "object_ids": [
+    "SC-K-ADAPTIVE-DOUBLE-LPT-2",
+    "SC-K-FORCED-FLOOR",
+    "SC-K-ADAPTIVE-RESET"
+  ],
+  "read_object_ids": [
+    "MF-MODEL"
+  ],
+  "input_pins": {
+    "SC-K-ADAPTIVE-DOUBLE-LPT-2": "948faf5dbd2362c47d0a6c2d1679c2a0663b56a33bd187a5670798ed66398974",
+    "SC-K-FORCED-FLOOR": "cf6aa3912a847679847c51588b2627ba768529b821a76d42d6b00ff1cca3ede7",
+    "SC-K-ADAPTIVE-RESET": "024c2910c386e5a58e1d8efefec4c55c48bf6efea0c4fb9eeefabca753ec1188",
+    "MF-MODEL": "1ca8c08397c3ec2c0a05b8eecb18e5e1de2b3e863c5f73f8c6eaf6b6fdf05bec"
+  },
+  "status": "complete",
+  "coverage": {
+    "SC-K-ADAPTIVE-DOUBLE-LPT-2": {
+      "state": "linked",
+      "object_pin": "948faf5dbd2362c47d0a6c2d1679c2a0663b56a33bd187a5670798ed66398974",
+      "comparison_scope": "完整读取 AD/AR 自适应原池算法正文（原模型、AR q≥2/q=1 分支、AD 首轮/第二轮测试、严格三角实例）以及 SC-K-FORCED-FLOOR、MF-MODEL 和任务声明的全部 references；逐式比较 AD 的首轮 γ 保持、纯 Nashification、η_s→τ_s、q_s−1 删除箱、AR 转接及 MAX/RANGE 边界。 复核已交付关系的实际端点和可用证明范围。",
+      "reason": "实际证明方向是 AR 完成接口加强制池下界与双 LPT 检验推出 AD 的成功保证。旧 AD→AR 的解释实际上调用 AR 来证明 AD；不应把它读为 AD 证明了更宽的 mixed AR。 证明到首轮后的阈值和第二轮测试如何充当 AR 入口，不单独证明双 LPT 因子二完整算法。",
+      "edge_ids": [
+        "commonmany-adaptive-double-lpt-specializes-adaptive-reset",
+        "commonmany-forced-floor-certifies-adaptive-threshold"
+      ]
+    },
+    "SC-K-FORCED-FLOOR": {
+      "state": "linked",
+      "object_pin": "cf6aa3912a847679847c51588b2627ba768529b821a76d42d6b00ff1cca3ede7",
+      "comparison_scope": "完整读取强制原子池引理、AD/AR 算法、MF-MODEL、装箱/受帽证明、MAX/RANGE 审查、三角审计与任意设施数登记审查；核对 η_s 的 h、D、纯 NE 量词、q=0/残余重算边界及其在 AD τ_s=max(γ,η_s) 中的精确位置。 复核已交付关系的实际端点和可用证明范围。",
+      "reason": "证明到首轮后的阈值和第二轮测试如何充当 AR 入口，不单独证明双 LPT 因子二完整算法。",
+      "edge_ids": [
+        "commonmany-forced-floor-certifies-adaptive-threshold"
+      ]
+    },
+    "SC-K-ADAPTIVE-RESET": {
+      "state": "linked",
+      "object_pin": "024c2910c386e5a58e1d8efefec4c55c48bf6efea0c4fb9eeefabca753ec1188",
+      "comparison_scope": "完整读取 AR 的给定在轨均衡/源池删除证书前提、q≥2 全原客户重置与 q=1 消失源分支、受帽纯 NE 完成、MAX 条件，以及 AD 通过测试后如何满足这些前提。 复核已交付关系的实际端点和可用证明范围。",
+      "reason": "实际证明方向是 AR 完成接口加强制池下界与双 LPT 检验推出 AD 的成功保证。旧 AD→AR 的解释实际上调用 AR 来证明 AD；不应把它读为 AD 证明了更宽的 mixed AR。",
+      "edge_ids": [
+        "commonmany-adaptive-double-lpt-specializes-adaptive-reset"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/maintenance-scope-b14a7d50ed966b/adaptive-double-lpt-specializes-adaptive-reset.json",
+      "sha256": "6ccdcc8133c55a537dcc86d3ce58b8fc8e12839e98e405dfc8671386ae1e41a0"
+    },
+    {
+      "path": "map/edges/maintenance-scope-b14a7d50ed966b/forced-floor-certifies-adaptive-threshold.json",
+      "sha256": "02dec39af047d2afc16a52aba13864737cc0a4d6a9a21d6c72f4fd2e405a1d25"
+    }
+  ],
+  "reviewed_by": "Codex maintenance",
+  "review_note": "只重审受影响边的实际推导和覆盖。其它产物沿用原作者的精确引用。",
+  "supersession": {
+    "commonmany-3a-3a-09f4b262e1d1c160": {
+      "reason": "复核原超边的端点、逻辑方向和实际证明范围，原交付留存。",
+      "assets": {
+        "map/edges/commonmany-3a-3a-09f4b262e1d1c160/adaptive-double-lpt-specializes-adaptive-reset.json": {
+          "disposition": "replaced",
+          "replacement_paths": [
+            "map/edges/maintenance-scope-b14a7d50ed966b/adaptive-double-lpt-specializes-adaptive-reset.json"
+          ],
+          "reason": "实际证明方向是 AR 完成接口加强制池下界与双 LPT 检验推出 AD 的成功保证。旧 AD→AR 的解释实际上调用 AR 来证明 AD；不应把它读为 AD 证明了更宽的 mixed AR。"
+        },
+        "map/edges/commonmany-3a-3a-09f4b262e1d1c160/forced-floor-certifies-adaptive-threshold.json": {
+          "disposition": "replaced",
+          "replacement_paths": [
+            "map/edges/maintenance-scope-b14a7d50ed966b/forced-floor-certifies-adaptive-threshold.json"
+          ],
+          "reason": "证明到首轮后的阈值和第二轮测试如何充当 AR 入口，不单独证明双 LPT 因子二完整算法。"
+        }
+      }
+    }
+  }
+}

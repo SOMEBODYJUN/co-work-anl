@@ -268,6 +268,12 @@ def edges(root, data, objects, verify=True):
             (ref_bytes if verify else reference)(root, ref)
         if edge.get('relation_mode') not in {'unconditional', 'conditional', 'context'}:
             raise ValueError('Explicit relation_mode required')
+        if 'contribution' in edge:
+            contribution = edge['contribution']
+            if (edge['kind'] not in LOGICAL or edge['relation_mode'] == 'context'
+                    or not isinstance(contribution, dict) or set(contribution) != {'result', 'remaining'}):
+                raise ValueError('A logical contribution requires result and remaining: ' + eid)
+            nonempty(contribution, ['result', 'remaining'])
         if edge['status'] == 'accepted':
             nonempty(edge, ['reviewed_by', 'review_note'])
             if edge['kind'] in LOGICAL and set(edge['source_ids']) == set(edge['target_ids']):
@@ -402,6 +408,61 @@ def _map_inputs_current(definition, current_pins):
     return definition.get('input_pins') == expected
 
 
+def validate_map_follow_ups(definition, receipt, rows, objects, *, final=False):
+    """A confirmed deferred comparison names a real task in the same queue."""
+    requested = receipt.get('follow_up_tasks', [])
+    strings(requested, 'follow_up_tasks')
+    if not requested:
+        return
+    origin = definition['task_id']
+    origin_core = set(definition['object_ids'])
+    published = {row['definition']['task_id']: row for row in rows}
+    replacements = {old: row for row in published.values() if row['state'] == 'done'
+                    for old in row['definition'].get('supersedes', [])}
+
+    def question(task):
+        plan = task.get('context_plan')
+        value = plan.get('comparison_question') if isinstance(plan, dict) else None
+        return ' '.join(value.split()) if isinstance(value, str) else ''
+
+    for task_id in requested:
+        identity(task_id)
+        label = f'Map follow-up {task_id} from {origin}'
+        if task_id not in published or task_id == origin:
+            raise ValueError(label + ' must be a different published comparison task')
+        task_row = published[task_id]
+        original = task_row['definition']
+        seen = {task_id}
+        while task_row['definition']['task_id'] in replacements:
+            task_row = replacements[task_row['definition']['task_id']]
+            replacement_id = task_row['definition']['task_id']
+            if replacement_id in seen or replacement_id == origin:
+                raise ValueError(label + ' has an invalid supersession chain')
+            seen.add(replacement_id)
+        target = task_row['definition']
+        ids = set(target['object_ids'] + target.get('read_object_ids', []))
+        original_ids = set(original['object_ids'] + original.get('read_object_ids', []))
+        comparison_ids = set(original['object_ids']) if len(original['object_ids']) > 1 else original_ids
+        stage = original['stage']
+        if (stage not in {'3B', '3C'} or stage != target['stage']
+                or definition['registry'] != original['registry']
+                or definition['registry'] != target['registry']
+                or not question(original) or question(original) != question(target)
+                or len(comparison_ids) < 2 or not comparison_ids & origin_core
+                or not comparison_ids <= ids or ids - objects.keys()):
+            raise ValueError(label + ' must retain the same scoped 3B/3C question with a related registered endpoint')
+        paths = [objects[oid]['body']['path'] for oid in comparison_ids]
+        archives = {path.split('/')[1] for path in paths if path.startswith('archives/')}
+        if (not all(path.startswith('archives/') for path in paths)
+                or (stage == '3B' and len(archives) != 1)
+                or (stage == '3C' and len(archives) < 2)):
+            raise ValueError(label + ' must use 3B within one archive or 3C across archives')
+        if task_row['state'] == 'withdrawn' or (final and task_row['state'] != 'done'):
+            raise ValueError(label + ' has no completed successor. Publish the comparison or repair its originating receipt.')
+        if not _map_inputs_current(target, {oid: pin(objects[oid]) for oid in ids}):
+            raise ValueError(label + ' has stale registered inputs. Reframe the comparison on the current versions.')
+
+
 def _map_queue_final_check(root, registry, data, objects, relations, review):
     rows, snapshot = _map_queue_snapshot(root, registry)
     if snapshot.get('source') == 'latest-published-workflow':
@@ -432,6 +493,7 @@ def _map_queue_final_check(root, registry, data, objects, relations, review):
         receipt = row['receipt']
         if any(c['state'] == 'needs-decision' for c in receipt['coverage'].values()):
             raise ValueError('Published map receipt has unresolved coverage; repair task ' + task_id)
+        validate_map_follow_ups(definition, receipt, rows, objects, final=True)
         try:
             validate_coverage(receipt['coverage'], {oid: objects[oid] for oid in definition['object_ids']}, relations)
         except ValueError as exc:
@@ -656,7 +718,7 @@ def context(root, ids, registry=REGISTRY, hops=0, *, edge_ids=None, edge_statuse
     for eid, (_, edge) in catalog.items():
         for oid in set(edge['source_ids'] + edge['target_ids']):
             incident.setdefault(oid,set()).add(eid)
-        if edge.get('status') != 'accepted' or edge.get('kind') not in positive:
+        if edge.get('status') != 'accepted' or edge.get('kind') not in positive or 'contribution' in edge:
             continue
         sources, targets = set(edge['source_ids']), set(edge['target_ids'])
         # A shared endpoint is already an assumption in either direction.
@@ -730,11 +792,12 @@ def context(root, ids, registry=REGISTRY, hops=0, *, edge_ids=None, edge_statuse
                          + '. Seed one of their endpoints or increase navigation hops.')
     picked = [ev(eid) for eid in sorted(related)]
     return {'seed_ids': ids, 'hops': hops, 'navigation_only': True, 'registry': registry, 'registry_pin': pin(data),
-            'support_semantics': 'OR between support_options; ALL within each option. Conditions and unpaid premises remain explicit. This is not automated proof acceptance.',
+            'support_semantics': 'OR between support_options; ALL within each option. Conditions and unpaid premises remain explicit. Proof-step contributions stay in research_leads with their result and remaining obligations.',
             'proof_closure_object_ids': sorted(proof_objects), 'support_options': support,
             'objects': [ov(i) for i in sorted(required)], 'edges': picked,
-            'refutations': [e for e in picked if e.get('kind') == 'refutes'],
-            'research_leads': [e for e in picked if e['edge_id'] not in proof_edges and e.get('kind') != 'refutes'],
+            'refutations': [e for e in picked if e.get('kind') == 'refutes' and 'contribution' not in e],
+            'research_leads': [e for e in picked if e['edge_id'] not in proof_edges
+                               and (e.get('kind') != 'refutes' or 'contribution' in e)],
             'unavailable_edge_files': unreadable,
             'instruction': 'Read the selected body and exact evidence on demand. Accepted is an author declaration, not a mathematical verdict. Navigation hops do not truncate selected logical ALL-premise closure. Context links and proposed/rejected relations never supply proved premises.'}
 
@@ -1047,9 +1110,98 @@ def draft_map_repairs(root, task_ids, output, registry, task_prefix, context_opt
                            'Receipt supersession must list retained/replaced/retired for each old asset.'}
 
 
+def map_overlap_candidates(objects, deepest=None):
+    """Assign exact proof references to one core's comparison."""
+    if deepest is None:
+        deepest = {oid: max(object_scopes({oid: obj}), key=len, default='.')
+                   for oid, obj in objects.items()}
+
+    def locator(ref):
+        return ref['path'], ref['sha256'], ref.get('section')
+
+    owners, directed = {}, {}
+    for oid, obj in objects.items():
+        owners.setdefault(locator(obj['body']), []).append(oid)
+        if obj['kind'].casefold() not in {'definition', 'model', '定义', '模型'}:
+            directed[oid] = {}
+    for oid, targets in directed.items():
+        for ref in objects[oid]['evidence']:
+            matches = owners.get(locator(ref), ())
+            if len(matches) == 1:
+                peer = matches[0]
+                if (peer in directed and peer != oid
+                        and deepest[oid].startswith('archives/') and deepest[peer].startswith('archives/')):
+                    targets[peer] = ref
+    return {oid: {peer: ref for peer, ref in targets.items()
+                  if oid < peer or oid not in directed[peer]}
+            for oid, targets in directed.items()}
+
+
+def plan_map_overlap(root, objects, core, read_ids, groups, budget, output_tokens,
+                     overlaps, *, contextual=(), cache=None, deepest=None):
+    """Measure shared reads and keep exact comparisons that need a separate pass."""
+    import registration
+
+    cache = {} if cache is None else cache
+    reads = list(read_ids)
+    assigned = set(core + reads)
+    group_of = {oid: i for i, group in enumerate(groups) for oid in group}
+    comparisons = [{'core_id': oid, 'peer_id': peer, 'basis': ref, 'status': 'follow-up'}
+                   for oid in core for peer, ref in overlaps.get(oid, {}).items()
+                   if group_of.get(peer) != group_of[oid]]
+    comparisons.sort(key=lambda item: (
+        objects[item['core_id']]['body']['path'] != item['basis']['path'],
+        'section' not in item['basis'], item['core_id'], item['peer_id']))
+    scopes = deepest if deepest is not None else {
+        oid: max(object_scopes({oid: objects[oid]}), key=len, default='.')
+        for item in comparisons for oid in (item['core_id'], item['peer_id'])}
+
+    def local(item):
+        return scopes[item['core_id']] == scopes[item['peer_id']]
+
+    for item in comparisons:
+        core_archive = scopes[item['core_id']].split('/')[:2]
+        peer_archive = scopes[item['peer_id']].split('/')[:2]
+        item['stage'] = '3B' if core_archive == peer_archive else '3C'
+
+    def measure(ids):
+        payload = [objects[oid] for oid in ids]
+        refs = [ref for obj in payload for ref in [obj['body'], *obj['evidence']]]
+        metadata = {'objects': payload, 'overlap_comparisons': comparisons} if comparisons else payload
+        reading = registration.reading_cost(root, refs, metadata=metadata, cache=cache, model=budget['model'])
+        reading['task_overhead_tokens'] = 32 * len(ids)
+        reading['estimated_tokens'] += reading['task_overhead_tokens']
+        return payload, refs, reading
+
+    payload, refs, reading = measure(core + reads)
+    oversized = (output_tokens > budget['output_tokens']
+                 or reading['estimated_tokens'] > budget['reading_tokens'])
+    issues = {}
+    if not oversized and not reading['unmeasured_refs']:
+        peers = dict.fromkeys([item['peer_id'] for item in comparisons if local(item)] + list(contextual))
+        for oid in peers:
+            if oid in assigned:
+                continue
+            try:
+                trial_payload, trial_refs, trial = measure(core + reads + [oid])
+            except (ValueError, OSError) as exc:
+                issues[oid] = str(exc)
+                continue
+            if not trial['unmeasured_refs'] and trial['estimated_tokens'] <= budget['reading_tokens']:
+                reads.append(oid)
+                assigned.add(oid)
+                payload, refs, reading = trial_payload, trial_refs, trial
+    for item in comparisons:
+        item['status'] = 'in-packet' if item['peer_id'] in assigned else 'follow-up'
+        if item['status'] == 'in-packet':
+            item.pop('stage')
+    return reads, payload, refs, reading, oversized, comparisons, issues
+
+
 def draft_map_tasks(root, output='map/planned-tasks.json', registry=REGISTRY,
                     stage='3A', object_ids=None, task_prefix='map',
-                    context_options=None, max_objects=None, scope=None, comparison=None):
+                    context_options=None, max_objects=None, scope=None, comparison=None, *,
+                    queue_rows=None, required_reads=None):
     """Draft bounded reading comparisons; never infer or accept a relation.
 
     One complete registered object is a unit. The first layer drafts local
@@ -1091,10 +1243,14 @@ def draft_map_tasks(root, output='map/planned-tasks.json', registry=REGISTRY,
     elif comparison is not None:
         raise ValueError('Use --comparison for the explicitly selected 3B/3C frontier')
     budget = registration.context_budget(**(context_options or {}))
+    required_reads = required_reads or {}
     measure_text = lambda text: registration.text_cost(text, budget['model'])
     queue_snapshot = {'source': 'not-a-published-queue-snapshot', 'skipped_current_core_objects': 0}
     if stage == '3A':
-        rows, queue_snapshot = _map_queue_snapshot(root)
+        if queue_rows is None:
+            rows, queue_snapshot = _map_queue_snapshot(root)
+        else:
+            rows, queue_snapshot = queue_rows, {'source': 'compaction-pinned-queue'}
         rows = [row for row in rows if row['definition'].get('registry') == registry]
         done = _effective_map_done(rows)
         active = [row['definition'] for row in rows if row['state'] not in {'done', 'withdrawn'}]
@@ -1102,9 +1258,10 @@ def draft_map_tasks(root, output='map/planned-tasks.json', registry=REGISTRY,
         current_pins = {oid: pin(obj) for oid, obj in objects.items()}
         repairs = {task_id: reasons for task_id, row in done.items()
                    if (reasons := _map_repair_reasons(row, current_pins))}
-        reserved = {oid for definition in active for oid in definition['object_ids']}
-        reserved.update(oid for task_id, row in done.items() for oid in row['definition']['object_ids']
-                        if row['definition']['stage'] == stage or task_id in repairs)
+        reserved = {oid for definition in active if definition['stage'] == '3A'
+                    for oid in definition['object_ids']}
+        reserved.update(oid for row in done.values() if row['definition']['stage'] == '3A'
+                        for oid in row['definition']['object_ids'])
         skipped = len(reserved.intersection(selected))
         selected = [oid for oid in selected if oid not in reserved]
         queue_snapshot.update(skipped_current_core_objects=skipped,
@@ -1121,7 +1278,7 @@ def draft_map_tasks(root, output='map/planned-tasks.json', registry=REGISTRY,
                 'queue_snapshot': queue_snapshot,
                 'instruction': 'Resume the published queue, draft --repair-task for listed IDs, or finish '
                                'integration; do not map plan an empty task array.'}
-    cache, units, refs_for, neighbors, candidates_for = {}, {}, {}, {}, {}
+    cache, units, neighbors, candidates_for = {}, {}, {}, {}
     body_owners, exact_owners = {}, {}
 
     def exact_ref(ref):
@@ -1158,10 +1315,9 @@ def draft_map_tasks(root, output='map/planned-tasks.json', registry=REGISTRY,
             hints.update(body_owners.get(name, ()))
         return exact - {oid}, hints - {oid}
 
-    def continued_reading(refs, payload):
+    def continued_reading(refs, reading):
         """Exact, ordered reading windows; the original mathematical refs stay intact."""
-        allowance = budget['reading_tokens'] - measure_text(
-            json.dumps(payload, ensure_ascii=False))['estimated_tokens'] - 32 * len(payload)
+        allowance = budget['reading_tokens'] - reading['metadata_tokens'] - reading['task_overhead_tokens']
         if allowance < 5:
             raise ValueError('The object metadata leaves no reading window; narrow the complete comparison or increase the real context budget')
         spans, originals, guide = {}, {}, []
@@ -1229,11 +1385,13 @@ def draft_map_tasks(root, output='map/planned-tasks.json', registry=REGISTRY,
                    if re.search(r'沿用该正文|exact.*(?:cited|frozen) body|exact.*in the.*body', label)}
     definitions = {oid for oid, obj in objects.items()
                    if obj['kind'].casefold() in {'definition', 'model', '定义', '模型'}}
+    overlaps = map_overlap_candidates(objects, deepest) if stage == '3A' else {}
     for oid in selected:
         obj = objects[oid]
         refs = [obj['body'], *obj['evidence']]
-        refs_for[oid] = refs
-        units[oid] = {'key': oid, 'refs': refs, 'metadata': obj,
+        shared_refs = [ref for peer in required_reads.get(oid, ()) for ref in
+                       [objects[peer]['body'], *objects[peer]['evidence']]]
+        units[oid] = {'key': oid, 'refs': [*refs, *shared_refs], 'metadata': obj,
                       'estimated_output_tokens': max(1200, measure_text(
                           json.dumps(obj, ensure_ascii=False))['estimated_tokens'] + 400)}
         exact, hints = reading_links(oid) if stage == '3A' else (set(), set())
@@ -1311,7 +1469,7 @@ def draft_map_tasks(root, output='map/planned-tasks.json', registry=REGISTRY,
             return 0
         return 1
 
-    if stage == '3A' and max_objects is None:
+    if stage == '3A' and max_objects != 1:
         # Let one claim carry several small comparisons in the same scope.
         # Each family remains an independent comparison group within the task.
         small = {}
@@ -1347,40 +1505,34 @@ def draft_map_tasks(root, output='map/planned-tasks.json', registry=REGISTRY,
                 order.append(pending.popleft())
                 if pending:
                     order.append(pending.pop())
-            result = registration.pack_units(root, order, group_budget, max_items=len(order), cache=cache)
-            for pack in result['packs']:
-                packed_groups = sorted(pack['units'], key=lambda group: group['priority'])
-                pack['comparison_groups'] = [[item['key'] for item in group['members']] for group in packed_groups]
-                pack['units'] = [item for group in packed_groups for item in group['members']]
-                separate.append((scope, packed_groups[0]['family'], pack))
+            windows = [[]]
+            core_count = 0
+            for group in order:
+                size = len(group['members'])
+                if max_objects is not None and core_count + size > max_objects:
+                    windows.append([])
+                    core_count = 0
+                windows[-1].append(group)
+                core_count += size
+            for window in windows:
+                result = registration.pack_units(root, window, group_budget, max_items=len(window), cache=cache)
+                for pack in result['packs']:
+                    packed_groups = sorted(pack['units'], key=lambda group: group['priority'])
+                    pack['comparison_groups'] = [[item['key'] for item in group['members']] for group in packed_groups]
+                    pack['units'] = [item for group in packed_groups for item in group['members']]
+                    separate.append((scope, packed_groups[0]['family'], pack))
         packs = sorted(separate, key=lambda item: (item[0], item[2]['units'][0]['key']))
 
     tasks, oversize, reading_totals = [], [], {'chars': 0, 'utf8_bytes': 0, 'estimated_tokens': 0}
     for scope, family, packed in packs:
         core = [unit['key'] for unit in packed['units']]
-        reads, deferred_issues = [], {}
-        mandatory_refs = [ref for oid in core for ref in refs_for[oid]]
-        payload = [objects[oid] for oid in core]
-        reading = registration.reading_cost(root, mandatory_refs, metadata=payload, cache=cache, model=budget['model'])
-        reading['task_overhead_tokens'] = 32 * len(payload)
-        reading['estimated_tokens'] += reading['task_overhead_tokens']
-        oversized = (packed['estimated_output_tokens'] > budget['output_tokens']
-                     or reading['estimated_tokens'] > budget['reading_tokens'])
-        candidates = sorted(set().union(*(neighbors[oid] for oid in core)) - set(core))
+        groups = packed.get('comparison_groups', [core])
+        reads = sorted({peer for oid in core for peer in required_reads.get(oid, ())} - set(core))
+        common_context = sorted(set().union(*(neighbors[oid] for oid in core)) & definitions)
+        reads, payload, mandatory_refs, reading, oversized, boundary, deferred_issues = plan_map_overlap(
+            root, objects, core, reads, groups, budget, packed['estimated_output_tokens'],
+            overlaps, contextual=common_context, cache=cache, deepest=deepest)
         deferred = set().union(*(candidates_for[oid] for oid in core)) - set(core)
-        if not oversized and not reading['unmeasured_refs']:
-            for oid in candidates:
-                obj = objects[oid]
-                trial_refs = [*mandatory_refs, obj['body'], *obj['evidence']]
-                try:
-                    trial = registration.reading_cost(root, trial_refs, metadata=[*payload, obj], cache=cache, model=budget['model'])
-                except (ValueError, OSError) as exc:
-                    deferred_issues[oid] = str(exc)
-                    continue
-                trial['task_overhead_tokens'] = 32 * (len(core) + len(reads) + 1)
-                trial['estimated_tokens'] += trial['task_overhead_tokens']
-                if not trial['unmeasured_refs'] and trial['estimated_tokens'] <= budget['reading_tokens']:
-                    reads.append(oid); mandatory_refs = trial_refs; payload.append(obj); reading = trial
         all_ids = [*core, *reads]
         pins = {oid: pin(objects[oid]) for oid in all_ids}
         task_key = {'stage': stage, 'core': core, 'inputs': pins}
@@ -1388,8 +1540,8 @@ def draft_map_tasks(root, output='map/planned-tasks.json', registry=REGISTRY,
             task_key['comparison'] = comparison
         task_id = task_prefix + '-' + stage.lower() + '-' + pin(task_key)[:16]
         unique_refs = {json.dumps(ref, sort_keys=True): ref for ref in mandatory_refs}
-        groups = packed.get('comparison_groups', [core])
-        priority = min(map(comparison_priority, groups))
+        priority = (0 if any(item['status'] == 'in-packet' for item in boundary)
+                    else min(map(comparison_priority, groups)))
         context_plan = {'budget': budget, 'reading': reading,
                         'estimated_output_tokens': packed['estimated_output_tokens'],
                         'oversized': oversized,
@@ -1409,12 +1561,15 @@ def draft_map_tasks(root, output='map/planned-tasks.json', registry=REGISTRY,
         if len(groups) > 1:
             context_plan['comparison_groups'] = groups
             context_plan['note'] += ' Compare each group separately unless there is a concrete mathematical connection across groups.'
+        if boundary:
+            context_plan['overlap_comparisons'] = boundary
+            context_plan['note'] += ' The core owns its exact overlap comparison. Inspect the cited dependency; carry a confirmed unfinished comparison forward as a named task.'
         if oversized:
             oversize.append(task_id)
             context_plan['status'] = 'complete-object-requires-staged-reading'
             context_plan['note'] += ' Preserve this complete object/comparison frontier; read its exact declared sections in successive turns, '
             context_plan['note'] += 'saving the hypotheses, established steps and remaining obligations between turns.'
-            context_plan['reading_passes'] = continued_reading(mandatory_refs, payload)
+            context_plan['reading_passes'] = continued_reading(mandatory_refs, reading)
         if reading['unmeasured_refs']:
             context_plan['status'] = 'complete-object-requires-readable-evidence'
             context_plan['note'] += ' Read/export the actual non-text evidence with its appropriate tool; '
