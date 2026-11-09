@@ -1,0 +1,53 @@
+{
+  "edge_id": "facb1af-single-overlap-spectrum-to-identical-instance-optimum",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "facility-games/common-catalog-location-cost-diagonal-normal-form-and-tight-two",
+    "HC-MONOTONE"
+  ],
+  "target_ids": [
+    "M-4c0491ded97f432790aeb8cbfa062dfb"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同目录、每对不同地点共享至多一名客户。同一客户在各地点用同一个严格递增实现负载函数；不同客户的函数可不同。",
+  "roles": {
+    "facility-games/common-catalog-location-cost-diagonal-normal-form-and-tight-two": "真正的异址谱与同址对半即足以计算最优值和完成规则。",
+    "M-4c0491ded97f432790aeb8cbfa062dfb": "在单交叠中比较全部异址NE并转移实例最优值。",
+    "HC-MONOTONE": "给定布局中，严格单调保留纯条件成本次序；唯一公共客户没有其他战略客户，故连全部概率与收益谱都保留。"
+  },
+  "explanation": "异址无公共客户时没有可选行动。有唯一公共客户 i 时，其他客户只可达一侧；i 的两反事实负载恒为 R_s,R_t。严格递增保留小于、大于与等号，因此 p_i 仍分别只许1、只许0或可取整个[0,1]。设施收益按权重和概率计算，异址全谱和端点见证完全相同，故两模型的 H、R、G 及每个 F 完全相同。用同址对半及正规形把同一异址最优见证或安全替代同址补成完整规则。无需调用 h_i；同址有任意多客户也不需要比较其全谱。",
+  "scope": "逐实例相同，比较所有异址独立混合NE。地点偏置和非严格单调造成的额外平局均不在假设中。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md",
+      "sha256": "d1a1c3e352427b09e3821451f4fbb79e709611b41365f346cc777d3ad22949cc",
+      "section": "A12.5 从全部异址收益谱得到实例最优值"
+    },
+    {
+      "path": "archives/facility-games/state/算法/异址双交叠非线性均衡的九矩形精确优化--算法.md",
+      "sha256": "cd40a2f9e10044613c662e7d8477722b02f31ce10246204d528ec97d768327bf",
+      "section": "A13.2 一名公共客户：不必计算非线性函数"
+    },
+    {
+      "path": "archives/facility-games/state/引理/客户相关续局与纯负载费用变换的精确边界--引理.md",
+      "sha256": "c8ce76fffd5a4a946383b3b07e71629d32f3094b7e114c732de1cc3514b80f73",
+      "section": "纯NE与逐实现严格占优的单调变换"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对严格次序和平局的三个状态，以及同址替换只用于全局最优。",
+  "whole_result": "满足单交叠与同客户同严格递增费用的线性和非线性模型，全部异址NE及收益谱相同，真实实例最优倍率相等，并能用共同的异址见证与同址对半构造规则。",
+  "endpoint_pins": {
+    "HC-MONOTONE": "06dbc73396cb6e3e7454579a92992fa380ade0df9e52f69532e98d0196029a5c",
+    "M-4c0491ded97f432790aeb8cbfa062dfb": "e793a000ee45c0a3cc84e1846c8c107b9c8a59939cb050a1ea5383a27ce60b45",
+    "facility-games/common-catalog-location-cost-diagonal-normal-form-and-tight-two": "47d79a1929c7066a8a090fd5e273e180d3f4237c63ff93c6b076f4841bf42fe5"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md": "d1a1c3e352427b09e3821451f4fbb79e709611b41365f346cc777d3ad22949cc",
+    "archives/facility-games/state/算法/异址双交叠非线性均衡的九矩形精确优化--算法.md": "cd40a2f9e10044613c662e7d8477722b02f31ce10246204d528ec97d768327bf",
+    "archives/facility-games/state/引理/客户相关续局与纯负载费用变换的精确边界--引理.md": "c8ce76fffd5a4a946383b3b07e71629d32f3094b7e114c732de1cc3514b80f73"
+  },
+  "review_digest": "58f30e4a14e33dd647cf18c4803d7d447f5e58dfe2b27e2315e457b314eab70b"
+}

@@ -1,0 +1,75 @@
+{
+  "edge_id": "static-occupancy-dual-specializes-to-eight-and-thirteen-cce-values",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-60cc776fc561460eba78d5c348e4d9b2"
+  ],
+  "target_ids": [
+    "CA-WORST-CCE-WELFARE-NO"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限共同标签目录、三名单位玩家，静态偏离事前固定自己的标签且冻结另两人的终局标签。占用分布按玩家置换均匀展开；不限制CCE原分布的对称性。",
+  "roles": {
+    "M-60cc776fc561460eba78d5c348e4d9b2": "给一般占用计数LP、逐客户查询和及对偶的精确等价。",
+    "CA-WORST-CCE-WELFARE-NO": "给8、13客户具体收益、全列乘子与达到分布，并另给完整真实顺序策略。"
+  },
+  "explanation": "代m=3得b₃(0)=3、b₃(d)=4/(d+1)。固定查询T的聚合松弛是G_T=W−H_T，通用对偶列等于D_λ=W−Σ_Tλ_TG_T。在4和5主题的两输入中，分别用λ=(0,9/29,20/87,20/87)及(0,38/99,1/11,1/11,28/99)检查20与35占用列，最小为544/87和2785/297。输入表的占用概率均匀展开为11、18有序支持，其聚合期望松弛为(220/87,0,0,0)与(277/99,0,0,0,0)，逐玩家除3即证明原始可行；达到值与对偶匹配。",
+  "scope": "确切求两个固定输入的任意静态CCE福利最低值，和顺序SPE的激励约束分开。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/较弱CCE福利桥的占用LP表示与边界--候选.md",
+      "sha256": "fdfb9a495a92df874869a8510aecbdce23d1c09b04873e06a62a6b8b624f554c"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/三人顺序SPE低于全部静态CCE福利--反例.md",
+      "sha256": "ea818193bb21bf1e05d40e87ebe9ed2f9e70aba6133fe20dfb270b4e9de57e4e"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/三人静态CCE福利原始对偶精确核验--计算.md",
+      "sha256": "572187f1a5f387fa408927296f9aa59f72fc98e519bbaa6bff2535f408cc3d4a"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/cce-welfare-counterexamples/source/examples/customer_attraction/eight_cce_welfare_gap.json",
+      "sha256": "e5ca31a0e87cd6ae7f8489bb5d600cc729bd0a1c0a50298e59c185b1032dfa26"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/cce-welfare-counterexamples/source/examples/customer_attraction/worst_cce_welfare_failure.json",
+      "sha256": "720df3be13bdf5a3fc0d27bf5cfa7c52ef1deb62b6d55341490b198cb81383b2"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/cce-welfare-counterexamples/source/evidence/certificates/customer_attraction/eight_cce_welfare_gap.json",
+      "sha256": "4e5d00a6859049809f687f11409735550cf55f83a5019d51a493493972b5645d"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/cce-welfare-counterexamples/source/evidence/certificates/customer_attraction/worst_cce_welfare_failure.json",
+      "sha256": "210c5cfd6fb3ab8dc13fe76068e6f45132b09e94942bfb39e03aa33ef4bf9c04"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "以Fraction重算两例全部64和125有序对偶列、12和15个体原始偏离，以及独立的84和155项真实顺序比较。",
+  "contribution": {
+    "result": "精确取得8、13客户两输入的静态部分，最小值544/87、2785/297及各自达到分布。",
+    "remaining": "顺序策略的存在和实际W=6、9，以及OPT=8、12，分别依赖完整有序策略表和覆盖计算。"
+  },
+  "endpoint_pins": {
+    "CA-WORST-CCE-WELFARE-NO": "455165a9fe118021cae40e073f856c78becdd3f78a4974da2949f38b8ff72412",
+    "M-60cc776fc561460eba78d5c348e4d9b2": "6132060befc8c47680cfd3327bf0286857ac5029bbb1357a05f06acef5920b46"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/较弱CCE福利桥的占用LP表示与边界--候选.md": "fdfb9a495a92df874869a8510aecbdce23d1c09b04873e06a62a6b8b624f554c",
+    "archives/customer-attraction/state/反例/三人顺序SPE低于全部静态CCE福利--反例.md": "ea818193bb21bf1e05d40e87ebe9ed2f9e70aba6133fe20dfb270b4e9de57e4e",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/计算/三人静态CCE福利原始对偶精确核验--计算.md": "572187f1a5f387fa408927296f9aa59f72fc98e519bbaa6bff2535f408cc3d4a",
+    "archives/customer-attraction/tools/evidence/cce-welfare-counterexamples/source/examples/customer_attraction/eight_cce_welfare_gap.json": "e5ca31a0e87cd6ae7f8489bb5d600cc729bd0a1c0a50298e59c185b1032dfa26",
+    "archives/customer-attraction/tools/evidence/cce-welfare-counterexamples/source/examples/customer_attraction/worst_cce_welfare_failure.json": "720df3be13bdf5a3fc0d27bf5cfa7c52ef1deb62b6d55341490b198cb81383b2",
+    "archives/customer-attraction/tools/evidence/cce-welfare-counterexamples/source/evidence/certificates/customer_attraction/eight_cce_welfare_gap.json": "4e5d00a6859049809f687f11409735550cf55f83a5019d51a493493972b5645d",
+    "archives/customer-attraction/tools/evidence/cce-welfare-counterexamples/source/evidence/certificates/customer_attraction/worst_cce_welfare_failure.json": "210c5cfd6fb3ab8dc13fe76068e6f45132b09e94942bfb39e03aa33ef4bf9c04"
+  },
+  "review_digest": "b5c4ee6ec302ee10b916118810e12a4d61169b2c0fb5af4eaaa581b591303a58"
+}

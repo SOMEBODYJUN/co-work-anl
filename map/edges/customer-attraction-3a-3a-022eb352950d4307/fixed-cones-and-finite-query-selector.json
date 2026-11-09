@@ -1,0 +1,55 @@
+{
+  "edge_id": "cag-022-fixed-cones-and-finite-query-selector",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/fixed-complete-policy-finite-price-contract",
+    "PRICE-QUERY-VERTICES-v1"
+  ],
+  "target_ids": [
+    "customer-attraction/complete-history-terminal-selector-union"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "p≥2，m≥1，固定根动作a、根终局计数q，非空兴趣总质量1。价格模式使用全V_p，覆盖模式使用大小至多m的组合。",
+  "roles": {
+    "customer-attraction/fixed-complete-policy-finite-price-contract": "固定完整有序σ后给出真实IC的有理客户锥及价格目标坐标。",
+    "PRICE-QUERY-VERTICES-v1": "把任意非负分数查询的最优值精确限制到仅依标签数的V_p。",
+    "customer-attraction/complete-history-terminal-selector-union": "用全历史一热变量表示各固定锥的并，并编入标准目标。"
+  },
+  "explanation": "固定A选择后，末层T=A，(2)由下向上唯一传播同一σ真终局。被激活的三指标行恰是Γ_σr≥0，未激活行由单纯形上收益差≤1保证。遍历A得全部根切片锥的并。固定叶时价格非负，V_p给两个价格目标的有限列表。另两目标用组合C(z)。标准c_z坐标≤1，故未激活行可用M_z=1+max(0,−min c_z)安全松弛；两个价格模式可选零查询，half目标≥−2，weakfloor由W≥[1+(m−1)q_a/m]u_a≥(2m−1)u_a/m保证目标≥−m，因而标准g下界−(m+2)不丢最优值。严格正差可在所选策略和查询的有理固定锥切片取有理正点清分母。首层Y只精确乘积，正物理距离则真的切小域。",
+  "scope": "固定根切片及标准目标。没有联合全策略的有理最优上证书。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/等价/固定完整SPE策略锥的有限价格合同--等价.md",
+      "sha256": "8664984e80081e1bc83093fc93ea90bfe224f82f659ac980ff1515113c9abf9b"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/非负分数价格的有限普适顶点--定理.md",
+      "sha256": "d2d398a68d2202bcb957758f3aab70ec142cf7d2f1c021c9658736b17504ba8a"
+    },
+    {
+      "path": "archives/customer-attraction/state/等价/完整有序历史终局选择的整数投影--等价.md",
+      "sha256": "3fde5af8b1826f0942362580440ee55f9f26b58da80f9d771e64fbfd8c4b3493"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/full-history-selection/original/credible2/full_tree_milp_contract.md",
+      "sha256": "cb83376ed16bed7c7621328fbbdc23645782f43a07d9e3c4a494ea6dc2fd8149"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本批实读固定登记版本和对应主证据，重核此边所列的模型、量词、推导及未付条件。",
+  "whole_result": "全历史整数选择器精确投影到固定(a,q)的全部完整纯SPE锥并。其标准有限查询选择、合法失活常数与严格正差的单位客户恢复都成立。",
+  "endpoint_pins": {
+    "PRICE-QUERY-VERTICES-v1": "45db365cccfd95e5dc74594756f908f2ee6510d498b14ba9601a5c770e7082d1",
+    "customer-attraction/complete-history-terminal-selector-union": "a67a56e72afe7c20a87b9bca758987e8346541cd02379a01d0eef36518be20a8",
+    "customer-attraction/fixed-complete-policy-finite-price-contract": "00ae148fa8caecc9b0612e910913b6888f19a046a0eddf66dd2d6229cde43ec9"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/等价/固定完整SPE策略锥的有限价格合同--等价.md": "8664984e80081e1bc83093fc93ea90bfe224f82f659ac980ff1515113c9abf9b",
+    "archives/customer-attraction/state/定理/非负分数价格的有限普适顶点--定理.md": "d2d398a68d2202bcb957758f3aab70ec142cf7d2f1c021c9658736b17504ba8a",
+    "archives/customer-attraction/state/等价/完整有序历史终局选择的整数投影--等价.md": "3fde5af8b1826f0942362580440ee55f9f26b58da80f9d771e64fbfd8c4b3493",
+    "archives/customer-attraction/tools/evidence/full-history-selection/original/credible2/full_tree_milp_contract.md": "cb83376ed16bed7c7621328fbbdc23645782f43a07d9e3c4a494ea6dc2fd8149"
+  },
+  "review_digest": "15bfb60f7228fe698ed89039073f745c4c662248bdb1e26fe33b74daac36bb3f"
+}

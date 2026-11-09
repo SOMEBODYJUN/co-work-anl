@@ -1,0 +1,48 @@
+{
+  "edge_id": "facb1af-normal-form-evaluates-cyclic-travel-bias",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "facility-games/common-catalog-location-cost-diagonal-normal-form-and-tight-two"
+  ],
+  "target_ids": [
+    "M-a6537b738f484012a55a432d820821f0"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "三客户权均为1/2，覆盖AB、BC、CA。在各自有向边起终点分别付0、ε，比较任意 ε>0 及 ε=0。",
+  "roles": {
+    "facility-games/common-catalog-location-cost-diagonal-normal-form-and-tight-two": "把真实异址全谱、H及R映为覆盖所有在轨布局与续局的最优值。",
+    "M-a6537b738f484012a55a432d820821f0": "供给循环偏置模型及其欧氏实现，检验正偏置和零偏置的精确最优。"
+  },
+  "explanation": "正偏置时每个异址的公共客户两侧实现负载均为1，唯一严格选本边起点。故每个站的两个异址回应收益为1和1/2，所有 H=1；所有 R=1，给 G=2，且唯一异址收益(1,1/2)或反射也给 F=2。零偏置时每个异址第一收益的完整谱为[1/2,1]，故 H=1/2、G=1；异址平分给(3/4,3/4)，配合全部同址对半也直接达1。几何取边长2等边三角形，每名客户位于其有向边距起点1/4边长处，三距离为1/2、3/2、√13/2。统一半径8/5只取边两端，费用 z+εd 减去客户行动无关常数 ε/2 正好是同一偏置表。",
+  "scope": "三地点六个有序异址及三个同址、所有精确续局；跳变发生于地点依赖偏置。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md",
+      "sha256": "d1a1c3e352427b09e3821451f4fbb79e709611b41365f346cc777d3ad22949cc",
+      "section": "A12.5 从全部异址收益谱得到实例最优值"
+    },
+    {
+      "path": "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md",
+      "sha256": "d1a1c3e352427b09e3821451f4fbb79e709611b41365f346cc777d3ad22949cc",
+      "section": "A12.3 不能通过改换续局化解的三客户反例"
+    },
+    {
+      "path": "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md",
+      "sha256": "d1a1c3e352427b09e3821451f4fbb79e709611b41365f346cc777d3ad22949cc",
+      "section": "A12.4 欧氏距离实现与零偏置边界"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "用真正的 m₁ 在偏置为零时重算威胁，不延用正偏置时的唯一收益表。欧氏可达性通过平方比较核对。",
+  "whole_result": "任意正偏置实例的真实最优倍率为2，零偏置恰为1。给定统一半径欧氏实现具有相同的九布局游戏。",
+  "endpoint_pins": {
+    "M-a6537b738f484012a55a432d820821f0": "d102b07ebc1cc3b7b7405ea984610270d75154aa30210bcf838955a5f46dd1f4",
+    "facility-games/common-catalog-location-cost-diagonal-normal-form-and-tight-two": "47d79a1929c7066a8a090fd5e273e180d3f4237c63ff93c6b076f4841bf42fe5"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md": "d1a1c3e352427b09e3821451f4fbb79e709611b41365f346cc777d3ad22949cc"
+  },
+  "review_digest": "347d07b5cb91ae4210c358f828a9f45ad41579ca0d85a98d791a77b647810bf8"
+}

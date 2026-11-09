@@ -1,0 +1,54 @@
+{
+  "edge_id": "cag-022-conditional-raw-swap-budget-for-replay",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/same-prefix-action-balanced-swap-half-reserve",
+    "customer-attraction/fixed-entering-role-real-replay-and-once-only-potential-budget"
+  ],
+  "target_ids": [
+    "customer-attraction/real-replay-covariance-amount-and-prefix-payment-gap"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一实际行、固定前缀、同一显式净cap对偶，raw域包含全部交换端点。另需把需要支付的有符号分量落实为满足逐主题平衡和逐原源容量的非负交换流。",
+  "roles": {
+    "customer-attraction/same-prefix-action-balanced-swap-half-reserve": "同一多重集第一后继交换的固定行约化成本恒等式和半库存界。",
+    "customer-attraction/fixed-entering-role-real-replay-and-once-only-potential-budget": "指定实际重放的起点、端点、真IC以及一份固定有符号势预算。",
+    "customer-attraction/real-replay-covariance-amount-and-prefix-payment-gap": "给开放金额接口提供一项条件化支付工具，显式保留真流到raw交换的映射缺口。"
+  },
+  "explanation": "固定行中r(zswap)−r(z)=2μ(v−d)+P(B)−P(A)。主题平衡逐主题消去P；交换端r≥0给 μΣθ(d−v)≤½Σθr(z)，逐源容量再给≤½E_pr(z_A)。真重放的p_AQ_i(y)只守阶段状态质量。即使两人不交主题A有2客户、B有1客户，规定根A，末位在A后选B（平局）、在B后选A，完整SPE亦允许p=(3/4,1/4)，两原源的直接第一后继交换流量为A→B的3/4与B→A的1/4，原源质量并不自动给主题平衡。对更深角色交换还有中间门槛项，故不能用真流存在或一次固定势望远镜代付。",
+  "scope": "对所述raw交换子流的有符号预算，保留全真流的原始选定目标和单一库存。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/同前缀行动平衡交换的半份约化成本界--引理.md",
+      "sha256": "22498aa8e1710cd1f4b118fa5d81f06a39f5466ca8a38b274b4e1ca6dc62ab34"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/固定进入槽的真实后继重放与一次势预算--算法.md",
+      "sha256": "8eaf25b4b724f19ef98e4a58876484540fbd424f1df23c87a80ae32a50fed10b"
+    },
+    {
+      "path": "archives/customer-attraction/state/问题/真实重放协方差的定量付款--问题.md",
+      "sha256": "80d1c50eaeabe78a57c76d4395319109c5e3187a5d26dd20cf6fa487eb07ae85",
+      "section": "一个自足的half充分金额接口"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本批实读固定登记版本和对应主证据，重核此边所列的模型、量词、推导及未付条件。",
+  "contribution": {
+    "result": "如存在兼容同一对偶、目标、逐前缀平衡及逐源容量的交换分解，该有符号交换工作至多用原源约化成本的半份。",
+    "remaining": "对固定GLOBAL-NET原目标构造合法映射，定量支付Cov的其余切线项、较深祖先损失及所有未配对边，才能推出候选统一金额界。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/fixed-entering-role-real-replay-and-once-only-potential-budget": "242e85e429f195fb7cdf9b97499721fb5386c0f8c114edbec31a68825aa7b489",
+    "customer-attraction/real-replay-covariance-amount-and-prefix-payment-gap": "3f9483702998761200408326e06a181ae6b5fb67b6d1e74140be0ce004a7a1b2",
+    "customer-attraction/same-prefix-action-balanced-swap-half-reserve": "5a4533859f954bad2f2d8753e7488d07d778d3b9270257708e35eb072da449c2"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/同前缀行动平衡交换的半份约化成本界--引理.md": "22498aa8e1710cd1f4b118fa5d81f06a39f5466ca8a38b274b4e1ca6dc62ab34",
+    "archives/customer-attraction/state/算法/固定进入槽的真实后继重放与一次势预算--算法.md": "8eaf25b4b724f19ef98e4a58876484540fbd424f1df23c87a80ae32a50fed10b",
+    "archives/customer-attraction/state/问题/真实重放协方差的定量付款--问题.md": "80d1c50eaeabe78a57c76d4395319109c5e3187a5d26dd20cf6fa487eb07ae85"
+  },
+  "review_digest": "995688f7d943a850a1bf14e6a80320a2bea5049f5f0a1443d866f00e93e4171b"
+}

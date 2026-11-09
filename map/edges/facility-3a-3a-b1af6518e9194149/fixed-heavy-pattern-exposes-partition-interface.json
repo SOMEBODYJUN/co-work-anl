@@ -1,0 +1,50 @@
+{
+  "edge_id": "facb1af-fixed-heavy-pattern-exposes-partition-interface",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-TWO-NEAR-BAND-REP"
+  ],
+  "target_ids": [
+    "SC-FOUR-NO-FPTAS"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "四地点归约的核心BC，未整数缩放的 H=τ=1/(2n)，或对阈值和客户权统一正比例缩放。指定大客户真混合，所有变量客户预先逐名指定纯侧。",
+  "roles": {
+    "SC-TWO-NEAR-BAND-REP": "固定重支持恒等式、重纯与重混合在近带的自动合法性。",
+    "SC-FOUR-NO-FPTAS": "在核心用仅一名真混合者编码源等分。"
+  },
+  "explanation": "核心两侧背景都是n，每个变量 w_i≥1−1/(16n²)>H，宏客户 M=5n/2>H。故 S=0、k=1 且 D=Σ_i σ_i w_i。近带恒等式变成0=D，规定的支持可行当且仅当 D=0。若等于零，任取 |Δ|≤H，以 p_M=(1+Δ/M)/2 恢复大客户概率，其余都是重纯、自动满足精确条件；目标 Δ=τ 给 p_M=1/2+1/(10n²)。按近单位编码，变量符号中存在 D=0 等价于源PARTITION。位多项式检查一个已给的符号向量并不决定是否存在某个向量；在取此窄带时所有 n+1 个公共客户都是重的。",
+  "scope": "只支付核心中指定宏客户唯一真混合时的近带等价及目标见证。不能由固定支持选择器推出全局最优近似。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/算法/固定重支持近平衡精确补全的位多项式选择--算法.md",
+      "sha256": "0b116c5637f6c6ae6447cabccb794dadbbc646c981b6577c928b3ba077c2e35e"
+    },
+    {
+      "path": "archives/facility-games/state/定理/四共同地点实例最优倍率的无FPTAS间隙--定理.md",
+      "sha256": "507515ba508682a6c4b21f1df309d3d15a90a6b358876074f0f368f73c073a47"
+    },
+    {
+      "path": "archives/facility-games/state/证明/四地点无FPTAS间隙的全支持与编码核算--证明.md",
+      "sha256": "34f728801f56e616be2e6cdf3c82c8cbe52f3f5a79c46ede308204f3578e9db1"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对真混合严格域、近带阈值、统一整数缩放和非零D的两种反射。",
+  "contribution": {
+    "result": "对预先给定的纯变量侧，在归约核心检验宏客户唯一真混合的带内精确NE恰为检验签名和为零；成立时目标τ有明确有理见证。",
+    "remaining": "还须单独排除变量是唯一混合者和m≠1的任意实概率NE，检验非核心全布局守卫，把负载差空隙提升为设施倍率gap并核输出合同。"
+  },
+  "endpoint_pins": {
+    "SC-FOUR-NO-FPTAS": "38cc1d6a3e3c26269d140f85bfdb2a0514549bc7a43b21a3d94c68e3b4285634",
+    "SC-TWO-NEAR-BAND-REP": "fca1bd35cbbdc18ba74641a7d103dcefe48712a33b218a909b4de0a64e89b5e4"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/算法/固定重支持近平衡精确补全的位多项式选择--算法.md": "0b116c5637f6c6ae6447cabccb794dadbbc646c981b6577c928b3ba077c2e35e",
+    "archives/facility-games/state/定理/四共同地点实例最优倍率的无FPTAS间隙--定理.md": "507515ba508682a6c4b21f1df309d3d15a90a6b358876074f0f368f73c073a47",
+    "archives/facility-games/state/证明/四地点无FPTAS间隙的全支持与编码核算--证明.md": "34f728801f56e616be2e6cdf3c82c8cbe52f3f5a79c46ede308204f3578e9db1"
+  },
+  "review_digest": "0f69de40cd8c52d9acb9c6d8972978d3d57497602431069d158af2f501bb4c6d"
+}

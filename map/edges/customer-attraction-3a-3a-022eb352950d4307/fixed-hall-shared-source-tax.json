@@ -1,0 +1,48 @@
+{
+  "edge_id": "cag-022-fixed-hall-shared-source-tax",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/fixed-capture-prices-hall-deficits-and-joint-payment-dual"
+  ],
+  "target_ids": [
+    "M-c7df4547baf9487daa9972a8ee832145"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "固定合法共享R/I激活、整数owner、同一菜单和路由。I采购基线B^I、同源质量κ^-固定。两类吸收均用同一 D_s，I源全吸收用于税非负。",
+  "roles": {
+    "customer-attraction/fixed-capture-prices-hall-deficits-and-joint-payment-dual": "给出同一Hall满取消集合、贪心支持及固定价行差判别。",
+    "M-c7df4547baf9487daa9972a8ee832145": "在合法固定系统上导出R/I合并之后的总费与新增源税。"
+  },
+  "explanation": "先合 A_s^R+A_s^I 再用唯一 w_s；费用按来源线性分拆 K_i=B_i^I+Σ_xp_ix(1−γ_x)。同一Γ和M不变，将 d_i 平移 B_i^I−κ_i^-。总价最小化中固定项可提出，R变动项等于 Σv_x−h_Γ(v)，按嵌套价格层写为∫(|S_t|−r(S_t))dt。I源全吸收时，原IC u_i≥D_s 使每份源的整行采购至少其质量，故 ΣB_i^I−κ^-≥0。",
+  "scope": "已合法建立的固定R/I系统。角色碰撞和真正I源构造仍需其他证明。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/固定捕获价格的Hall缺额与共同付款对偶--定理.md",
+      "sha256": "20c5d8e42adb6442879aa5f57fbf73f3b99a9ad68cb7356806de425786b50e45"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/分数归属捕获与共同激活付款接口--候选.md",
+      "sha256": "d440e9c9810589f18f20f975fa25febece02c2d6e32a107080050eab5194aec6",
+      "section": "另一接口：R/I来源合并后只有一个激活系数"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/net-rank-incoming-payment-primary/original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round4/shared/net_dynamic_rank.md",
+      "sha256": "589c914d597513c06714c6e17640ced146e782d86fee67d27805e49ad591baf9"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本批实读固定登记版本和对应主证据，重核此边所列的模型、量词、推导及未付条件。",
+  "whole_result": "在给定共同激活合同下，扣除同一新增I源后的最小总费恰为 ΣB_i^I−κ^- 加原R端 Hall缺额层积分，且全吸收时前项非负。",
+  "endpoint_pins": {
+    "M-c7df4547baf9487daa9972a8ee832145": "a8fbd6c3c55672d970cd9d0e061ebb894a8916d9519b29ebea74ea3910fcbbf7",
+    "customer-attraction/fixed-capture-prices-hall-deficits-and-joint-payment-dual": "347386eb2daa9e596ea040085ce66bcf521d59e7e23228b7d4b96b0ca4e905d8"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/固定捕获价格的Hall缺额与共同付款对偶--定理.md": "20c5d8e42adb6442879aa5f57fbf73f3b99a9ad68cb7356806de425786b50e45",
+    "archives/customer-attraction/state/候选/分数归属捕获与共同激活付款接口--候选.md": "d440e9c9810589f18f20f975fa25febece02c2d6e32a107080050eab5194aec6",
+    "archives/customer-attraction/tools/evidence/net-rank-incoming-payment-primary/original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round4/shared/net_dynamic_rank.md": "589c914d597513c06714c6e17640ced146e782d86fee67d27805e49ad591baf9"
+  },
+  "review_digest": "9a66721cc06f6ba758f90aac0b1d3d4daaec6cf0f0338e905958befa7a4a9c8b"
+}

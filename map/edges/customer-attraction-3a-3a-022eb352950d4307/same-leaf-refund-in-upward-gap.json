@@ -1,0 +1,50 @@
+{
+  "edge_id": "cag-022-same-leaf-refund-in-upward-gap",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "B16-AVERAGED-SUFFIX-DELETION"
+  ],
+  "target_ids": [
+    "customer-attraction/actual-root-deletion-small-regret-upward-credible-repair-gap"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "原m≥3完整SPE实际AB^(m−1)，每客户价值一。删除第二角色B，后续角色仍按原因果回放。",
+  "roles": {
+    "B16-AVERAGED-SUFFIX-DELETION": "给出实际叶上固定原后缀删除的共同退款逐客户公式。",
+    "customer-attraction/actual-root-deletion-small-regret-upward-credible-repair-gap": "用公式核回放叶的确切退款，随后独立比较真正删后SPE。"
+  },
+  "explanation": "原叶每名B客户负载m−1，删角色无独占。任一存活B角色的退款 A_2j=|B|/[(m−1)(m−2)]=2a/(m−2)，全部m−2名合计2a，等于同一原叶被删者收益。总覆盖不变。此退款仅针对同一回放叶；强制历史下的实际regret与可信重选均需读原策略。",
+  "scope": "实际删第二位这一固定叶上的精确退款贡献。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/实际单删后缀的共同退款与全回放界--引理.md",
+      "sha256": "9e683915e03af1573fce2fbd03d05afd52e7261d9fd410d4f007c0b7c1cc52ba"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/真实根删位的小后悔与向上可信修复差--障碍.md",
+      "sha256": "310b8e3df9e6d040e8fb2c9ee2d94265e91b680b20ec72937a24178ce8eb4de8"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/root-deletion-and-true-query-primary/original/research/workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/actual_root_deletion_upward_repair_obstruction.md",
+      "sha256": "f3c84f2cc505428ee4fb39474acabae1a938de3d35d2ef332df4f736fa826b96"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本批实读固定登记版本和对应主证据，重核此边所列的模型、量词、推导及未付条件。",
+  "contribution": {
+    "result": "同一实际叶上回放福利保持W=2ma，每个存活B退款2a/(m−2)，全体恰一份2a。",
+    "remaining": "分别验证回放根和末层regret以及删后全部SPE恰有一Q，才可排除绝对常数UP。"
+  },
+  "endpoint_pins": {
+    "B16-AVERAGED-SUFFIX-DELETION": "1c54e05f2854a355aff6c6754ca37fc40eee85178f65e6b8cc3c625db4a30ed7",
+    "customer-attraction/actual-root-deletion-small-regret-upward-credible-repair-gap": "aab6d4a943d4d55d6211ea50512982e6bdd211ecb796ede4823fc890cb993d9a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/实际单删后缀的共同退款与全回放界--引理.md": "9e683915e03af1573fce2fbd03d05afd52e7261d9fd410d4f007c0b7c1cc52ba",
+    "archives/customer-attraction/state/障碍/真实根删位的小后悔与向上可信修复差--障碍.md": "310b8e3df9e6d040e8fb2c9ee2d94265e91b680b20ec72937a24178ce8eb4de8",
+    "archives/customer-attraction/tools/evidence/root-deletion-and-true-query-primary/original/research/workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/actual_root_deletion_upward_repair_obstruction.md": "f3c84f2cc505428ee4fb39474acabae1a938de3d35d2ef332df4f736fa826b96"
+  },
+  "review_digest": "2163a31f20525e42c71b0dea1177d34c309689d499855ef7ed725d9194ef0547"
+}

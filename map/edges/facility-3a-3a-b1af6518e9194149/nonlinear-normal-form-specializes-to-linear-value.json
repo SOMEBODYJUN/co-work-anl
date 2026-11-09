@@ -1,0 +1,52 @@
+{
+  "edge_id": "facb1af-nonlinear-normal-form-specializes-to-linear-value",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "facility-games/common-catalog-location-cost-diagonal-normal-form-and-tight-two"
+  ],
+  "target_ids": [
+    "SC-DIAG-NORMAL"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取同一共同目录、覆盖、强制服务和正二进制有理权，将所有客户地点费用设为 h_{i,s}(z)=z。",
+  "roles": {
+    "facility-games/common-catalog-location-cost-diagonal-normal-form-and-tight-two": "给真正全局最优候选式、同址平分和异址过帽时替代在轨。",
+    "SC-DIAG-NORMAL": "提供线性正规形、异址闭支持算法与其独立复杂度。"
+  },
+  "explanation": "线性费用就是任意有限地点费用模型的精确特例，客户概率和收益映射取恒等。真实异址m₁、H、R及候选G、F均逐项相同。若最小异址值a严格小于最小同址值，则两个同址平分偏离都安全：否则H(u)≤a·当前相应收益<R_u/2，产生G_u=1≤a，与严格小于所有G矛盾。平局取同址。四单位同覆盖例在异址取(1,1/4,1/4,1/4)的收益(7/4,9/4)，放松a=1仍无法维持原位的平分同址惩罚；正规形允许换布局。其余未列同址也可无冲突对半。",
+  "scope": "只专化线性最优值、同址正常形式及达到结论；证明和原程序达到核验分别处理。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md",
+      "sha256": "d1a1c3e352427b09e3821451f4fbb79e709611b41365f346cc777d3ad22949cc",
+      "section": "A12.5 从全部异址收益谱得到实例最优值"
+    },
+    {
+      "path": "archives/facility-games/state/算法/同址平衡正规形与异址交叠参数精确优化--算法.md",
+      "sha256": "a6f4b4e6867015bfd4e6a94a5af7c23bfb20cca28503bdce31eee6f65ed4e136",
+      "section": "对角正规形的完整理由"
+    },
+    {
+      "path": "archives/facility-games/state/算法/同址平衡正规形与异址交叠参数精确优化--算法.md",
+      "sha256": "a6f4b4e6867015bfd4e6a94a5af7c23bfb20cca28503bdce31eee6f65ed4e136",
+      "section": "完整规则与位复杂度"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对正威胁零收益、平局和严格改善，区分实际续局达到与参数算法。",
+  "contribution": {
+    "result": "以h=z专化得到线性共同目录的真实最优公式、所有同址可平分及严格改善时可保异址在轨。",
+    "remaining": "线性 O(N²(n+1+κ≠3^κ≠)) 位算法另依其闭支持恒等式、区间求解、有理位长和见证恢复；任意有限实费用的存在性不提供该算法。"
+  },
+  "endpoint_pins": {
+    "SC-DIAG-NORMAL": "189121f846bc729cda90154050071daf3a31cf29d9a0ffb62de69467f64ed3ac",
+    "facility-games/common-catalog-location-cost-diagonal-normal-form-and-tight-two": "47d79a1929c7066a8a090fd5e273e180d3f4237c63ff93c6b076f4841bf42fe5"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md": "d1a1c3e352427b09e3821451f4fbb79e709611b41365f346cc777d3ad22949cc",
+    "archives/facility-games/state/算法/同址平衡正规形与异址交叠参数精确优化--算法.md": "a6f4b4e6867015bfd4e6a94a5af7c23bfb20cca28503bdce31eee6f65ed4e136"
+  },
+  "review_digest": "3f52af902f923da20b7f86caf76c59268611c747957c73975eb4ecc131b7d281"
+}

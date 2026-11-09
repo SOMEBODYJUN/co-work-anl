@@ -1,0 +1,68 @@
+{
+  "edge_id": "cag-022-full-high-tail-positive-debt",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/same-multiset-root-swap-strict-gain-and-real-reset-debt",
+    "B10-VARIATIONAL-WATERFILL-v1",
+    "CA-INDIVIDUAL-SECURITY-NO"
+  ],
+  "target_ids": [
+    "customer-attraction/all-high-tail-zero-pool-positive-switch-debt"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "空背景，旧34客户完整策略，三人真正静态阈值 t=2411/246，真实尾各≥67/6。虚拟叶保 Z0，多重集与真实强制 Y0 后的 Z_Y0 分别归一化。",
+  "roles": {
+    "customer-attraction/same-multiset-root-swap-strict-gain-and-real-reset-debt": "给出严格换根及真实重置债的符号和归一化。",
+    "B10-VARIATIONAL-WATERFILL-v1": "高单位尾保持权1，由此确定六个真实池全零。",
+    "CA-INDIVIDUAL-SECURITY-NO": "提供该固定完整策略、单位客户及真正 v3 的匹配证书。",
+    "customer-attraction/all-high-tail-zero-pool-positive-switch-debt": "将三项精确结合同一34客户实例，得严格正债和零真实池。"
+  },
+  "explanation": "六个真实根均 29/3<t、尾均>t，全1为盒上KKT点，故 J=H=Γ=0，M=2。Z0=(X0,Y0,Y1)换标记后令原根权ρ=99/100。其客户谱12个原负载2、11个原负载3，g(ρ)=12/(1+ρ)+11/(2+ρ)。g随ρ降，故积分增益至少 (1−ρ)(t−g(ρ))=1342711/1463724600。真实Y0池仍零，所以 Debt=Gain；原策略的 Y0 真实叶也含权1的 X0，可组成两边闭循环并且每边正债。",
+  "scope": "固定三人真策略与真正 t=v3。已知 W−3v3=213/82、2W−OPT3=30，其他真实剩余利润仍可作为另证资金。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/同多重集根交换的严格增益与真实重置债务--引理.md",
+      "sha256": "a47d0ca49b4480d6b79876bf6f104a9b06b6bde83ec2e770e060b3861c3fc0af"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/变分水位的规范负载与一次联合预算--定理.md",
+      "sha256": "edbc820d11984095dad2534f3ed567bca21f0387cba5f7e250ecd4f7c4ebc2be"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/三人逐人混合安全值--反例.md",
+      "sha256": "34c7dd12ea1390e5f8b26134cc17380fa4354d46cb76ccf88d630b37f2675ed2"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/全高尾零信用池的正交换债务--障碍.md",
+      "sha256": "c3d70dcf0997378ad58d808afde5763b257c34d5a4f144722890fc34c70a0c41"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/variational-waterfill-and-switch-debt-primary/original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/shared/variational_spe_switch_debt.md",
+      "sha256": "a0c0a2e4851ad9953f8d25e340c0bfe1e22582cc3bfc6475a60b7dda2cc9bb13"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/waterfill-credit-and-sharpness-primary/original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/tail/zero_pool_switch_debt.md",
+      "sha256": "cdf1435618c157b56a667a7f1220560ac69ef30bfbeb8e04a58973a6e300c189"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本批实读固定登记版本和对应主证据，重核此边所列的模型、量词、推导及未付条件。",
+  "whole_result": "原34单位完整SPE和真正 v3 上，六个真实变分池均 J=H=Γ=0，而 X0→Y0 的 Gain 与 Debt 至少 1342711/1463724600。该例排除真实 H 独付 κ=0 接口。",
+  "endpoint_pins": {
+    "B10-VARIATIONAL-WATERFILL-v1": "0f957a7fc0b5333f20e25efdb0f703287fbf431820d35401ada41fc4c3e6ecb6",
+    "CA-INDIVIDUAL-SECURITY-NO": "258b7de7a1d0d670f9b0d42806bc55a548ccce2f5df7f27cb273a5909bea534e",
+    "customer-attraction/all-high-tail-zero-pool-positive-switch-debt": "1c3b7d3bd4e408a85f630208816127cacbf80fb2dc1ce31cc6b0edf27a3c608e",
+    "customer-attraction/same-multiset-root-swap-strict-gain-and-real-reset-debt": "c3569a481395d6ddb0e4dfd632595c713ba0a121cc3cb7d643c40f0986238a0b"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/同多重集根交换的严格增益与真实重置债务--引理.md": "a47d0ca49b4480d6b79876bf6f104a9b06b6bde83ec2e770e060b3861c3fc0af",
+    "archives/customer-attraction/state/定理/变分水位的规范负载与一次联合预算--定理.md": "edbc820d11984095dad2534f3ed567bca21f0387cba5f7e250ecd4f7c4ebc2be",
+    "archives/customer-attraction/state/反例/三人逐人混合安全值--反例.md": "34c7dd12ea1390e5f8b26134cc17380fa4354d46cb76ccf88d630b37f2675ed2",
+    "archives/customer-attraction/state/障碍/全高尾零信用池的正交换债务--障碍.md": "c3d70dcf0997378ad58d808afde5763b257c34d5a4f144722890fc34c70a0c41",
+    "archives/customer-attraction/tools/evidence/variational-waterfill-and-switch-debt-primary/original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/shared/variational_spe_switch_debt.md": "a0c0a2e4851ad9953f8d25e340c0bfe1e22582cc3bfc6475a60b7dda2cc9bb13",
+    "archives/customer-attraction/tools/evidence/waterfill-credit-and-sharpness-primary/original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/tail/zero_pool_switch_debt.md": "cdf1435618c157b56a667a7f1220560ac69ef30bfbeb8e04a58973a6e300c189"
+  },
+  "review_digest": "e69a7f2116fb9d42bca22e34f33a820aababa8481438e8e28d161d54d2cd49fa"
+}

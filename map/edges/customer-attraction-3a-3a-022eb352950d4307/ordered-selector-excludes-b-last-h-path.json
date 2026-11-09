@@ -1,0 +1,45 @@
+{
+  "edge_id": "cag-022-ordered-selector-excludes-b-last-h-path",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/complete-history-terminal-selector-union"
+  ],
+  "target_ids": [
+    "customer-attraction/ordered-terminal-tax-boundary"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取显式H、B和n−1叶目录的 p=n+1 标签、m=n≥4；所有客户质量总和归一。另对指定顺序固定沿路A变量。",
+  "roles": {
+    "customer-attraction/complete-history-terminal-selector-union": "真终局传播与每个有序偏离IC在整数选择器中全部激活。",
+    "customer-attraction/ordered-terminal-tax-boundary": "同一PNE计数的不可重排部分由指定有序路径下的真倒二行排除。"
+  },
+  "explanation": "指定路径 B^(n−1)H，倒二遵从后得 v=2n−3。若在 B^(n−2) 后改叶L_i，子历史的末位选择必须为另一叶：收益 h=2(n−1)，大于H的h−1、重复L_i的h/2和B的v。由父子终局一致性，每个可选偏离叶给倒二 h。对应激活的行要求 v≥h，故该有序赋值不可行。q相同只固定收益计算和终局，不固定这些有序节点约束。",
+  "scope": "同一多重集的指定重排；并未排除 q_H=1,q_B=n−1 在另一真实顺序下可行。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/等价/完整有序历史终局选择的整数投影--等价.md",
+      "sha256": "3fde5af8b1826f0942362580440ee55f9f26b58da80f9d771e64fbfd8c4b3493"
+    },
+    {
+      "path": "archives/customer-attraction/state/构造/终局重排税差--构造.md",
+      "sha256": "8b458502bda859ac5a835fa04f55327fbf8e2f1a779a13327863f2d287cc9279"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本批实读固定登记版本和对应主证据，重核此边所列的模型、量词、推导及未付条件。",
+  "contribution": {
+    "result": "强制 B^(n−1)H 的完整有序选择器在倒二真偏离行严格不可行，给原构造的有序不可实现部分。",
+    "remaining": "同计数PNE、H B^(n−1) 的完整策略以及两个前缀税数值由该构造其余独立论证完成。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/complete-history-terminal-selector-union": "a67a56e72afe7c20a87b9bca758987e8346541cd02379a01d0eef36518be20a8",
+    "customer-attraction/ordered-terminal-tax-boundary": "e67fb7d481a898bb2da7eb9d3ed80c785a6a5305bc280dbd18a540593e25f914"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/等价/完整有序历史终局选择的整数投影--等价.md": "3fde5af8b1826f0942362580440ee55f9f26b58da80f9d771e64fbfd8c4b3493",
+    "archives/customer-attraction/state/构造/终局重排税差--构造.md": "8b458502bda859ac5a835fa04f55327fbf8e2f1a779a13327863f2d287cc9279"
+  },
+  "review_digest": "ac363b580de1f1c10c974b2684afd59b1db4341dd85b5c590d76c97aeb689e40"
+}

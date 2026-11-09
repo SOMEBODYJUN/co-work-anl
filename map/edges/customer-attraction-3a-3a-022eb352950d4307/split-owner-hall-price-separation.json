@@ -1,0 +1,51 @@
+{
+  "edge_id": "cag-022-split-owner-hall-price-separation",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/fixed-capture-prices-hall-deficits-and-joint-payment-dual"
+  ],
+  "target_ids": [
+    "customer-attraction/fractional-owner-capture-and-joint-activation-payment-interface"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定原完整策略、最优有序T、固定捕获采购列及一个合法分数归属α。所有价格和 I 边容量都在同一 α、同一 actual 网络上取。",
+  "roles": {
+    "customer-attraction/fixed-capture-prices-hall-deficits-and-joint-payment-dual": "固定整数归属时的 Hall base、支持函数与角色价格对偶，提供可加权的最小割结构。",
+    "customer-attraction/fractional-owner-capture-and-joint-activation-payment-interface": "把固定 α 的所有取消精确解为拆标签终端的同一 Hall base 和共同角色分离。"
+  },
+  "explanation": "把每个R客户的终端拆为 e=(i,x)，容量a_e=α_ix且只依附角色i。I容量改为α_ix/c_x。合法整数owner饱和流平均保证总流g。对开放端集S，最小割为 r_α(S)=min_J[g(J^c)+c_I^α(J,J^c)+Σ_{e∈S:o(e)∈J}a_e]。原rank证明逐元素乘a_e后仍成立，非负终端向量由γ(S)≤r_α(S)刻画，满取消另加γ(E)=g。置 d^α_k=Σ_ep_{k;e}a_e−I_k，M_{ke}=p_{k;e}+1_{o(e)=k}，NET-FRAC角色行即 Mγ≥d^α。用原凸分离与嵌套层贪心得同一固定α的精确条件 h_{Γ_α}(M^Tλ)≥λ·d^α 对所有λ≥0。取λ=1仅验总费。允许共同选α时，(α,f,γ)的所有非预算条件是有界线性约束，故所有可实现的行余量Mγ−d^α构成同一紧凸集。再以该联合集合做分离，精确得到对所有λ≥0都有 max_α[h_{Γ_α}(M^Tλ)−λ·d^α]≥0。这里可逐方向取不同最优α，联合凸性才允许推回同一可行(α,γ)。这一换序依赖固定捕获价和完整联合线性域。",
+  "scope": "固定α和联合可变α的两个精确角色判别。联合分离保同一固定采购价与实际Hall网络，费用p仍含真实整行IC税。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/固定捕获价格的Hall缺额与共同付款对偶--定理.md",
+      "sha256": "20c5d8e42adb6442879aa5f57fbf73f3b99a9ad68cb7356806de425786b50e45"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/分数归属捕获与共同激活付款接口--候选.md",
+      "sha256": "d440e9c9810589f18f20f975fa25febece02c2d6e32a107080050eab5194aec6",
+      "section": "固定捕获路由的NET-FRAC"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/net-rank-incoming-payment-primary/original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round4/shared/net_dynamic_rank.md",
+      "sha256": "589c914d597513c06714c6e17640ced146e782d86fee67d27805e49ad591baf9"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本批实读固定登记版本和对应主证据，重核此边所列的模型、量词、推导及未付条件。",
+  "contribution": {
+    "result": "固定α后的Hall base及greedy支持仍精确；联合域是紧凸集，给出可变α的全部非负角色方向判别，且保同一归属、取消和钱包。",
+    "remaining": "证明联合分离的每个方向都通过，或找一个使所有合法α的支持余量严格为负的λ。固定价格路由也必须合法预先给定。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/fixed-capture-prices-hall-deficits-and-joint-payment-dual": "347386eb2daa9e596ea040085ce66bcf521d59e7e23228b7d4b96b0ca4e905d8",
+    "customer-attraction/fractional-owner-capture-and-joint-activation-payment-interface": "c55e2bbd36dc0aad304dc7c398b4dbb9bb00085cde465e8ee61bdfbb75786a59"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/固定捕获价格的Hall缺额与共同付款对偶--定理.md": "20c5d8e42adb6442879aa5f57fbf73f3b99a9ad68cb7356806de425786b50e45",
+    "archives/customer-attraction/state/候选/分数归属捕获与共同激活付款接口--候选.md": "d440e9c9810589f18f20f975fa25febece02c2d6e32a107080050eab5194aec6",
+    "archives/customer-attraction/tools/evidence/net-rank-incoming-payment-primary/original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round4/shared/net_dynamic_rank.md": "589c914d597513c06714c6e17640ced146e782d86fee67d27805e49ad591baf9"
+  },
+  "review_digest": "35b9a2f2846a504aad03637de0a1311cbfc3b22525f6fc7c21f7d6a14ce5351a"
+}
