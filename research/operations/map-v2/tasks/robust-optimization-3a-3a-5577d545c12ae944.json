@@ -86,11 +86,51 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss1",
-  "request_id": "98a575ff87a4425a8a418dc79a6d5265",
+  "request_id": "2fcb17bcccfd47a1b43307b8610dd38d",
   "requests": {
     "036df007b60e4852973efb9f4d114169": "plan",
-    "98a575ff87a4425a8a418dc79a6d5265": "claim"
+    "98a575ff87a4425a8a418dc79a6d5265": "claim",
+    "2fcb17bcccfd47a1b43307b8610dd38d": "done"
+  },
+  "edge_paths": {
+    "robust-candidate-lane-motivates-bounded-fixed-mean-w1-maximum": "map/edges/robust-optimization-3a-3a-5577d545c12ae944/bounded-w1-candidate-resolution-context.json"
+  },
+  "receipt": {
+    "task_id": "robust-optimization-3a-3a-5577d545c12ae944",
+    "stage": "3A",
+    "status": "complete",
+    "object_ids": [
+      "robust-optimization/bounded-fixed-mean-w1-convex-order-maximum",
+      "robust-optimization/random-convex-order-candidate-lane"
+    ],
+    "read_object_ids": [],
+    "input_pins": {
+      "robust-optimization/bounded-fixed-mean-w1-convex-order-maximum": "b4cb736886b298e2071f1df65cb1e8e61d2c283f8bf57699535f60c82743bead",
+      "robust-optimization/random-convex-order-candidate-lane": "06ece76ecabef5555da5df7f55737c2b3f5cb80b65149491b136ba38292cf668"
+    },
+    "coverage": {
+      "robust-optimization/bounded-fixed-mean-w1-convex-order-maximum": {
+        "state": "isolated-after-review",
+        "object_pin": "b4cb736886b298e2071f1df65cb1e8e61d2c283f8bf57699535f60c82743bead",
+        "comparison_scope": "核对积分分位下界、总变差可行性、call 比较及有限有理输入构造，与旧候选的共同最坏分布目标精确对应。",
+        "reason": "例如参考 (δ₁+δ₃)/2、区间 [0,4]、均值 2、半径 1/2 时，三分支交点给 (δ₀+δ₁+δ₃+δ₄)/4，移动两端各四分之一质量共用满半径。该 theorem 自足证明，当前连接为问题来源语境。"
+      },
+      "robust-optimization/random-convex-order-candidate-lane": {
+        "state": "isolated-after-review",
+        "object_pin": "06ece76ecabef5555da5df7f55737c2b3f5cb80b65149491b136ba38292cf668",
+        "comparison_scope": "比对候选线的 W₁、W∞、鞅输运及风险变换边界，与新定理的实直线 W₁ 定均值公式。",
+        "reason": "W₁ 有界支撑同均值子问题已有明确构造，原资料保留问题来源。W∞ 对应另一度量，weighted-congestion 的稳健参数和 unrelated-machines 的稳健束也不具有这一分布约束。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/robust-optimization-3a-3a-5577d545c12ae944/bounded-w1-candidate-resolution-context.json",
+        "sha256": "e8bc36582253a3c58f76bbb7a6675e48ffe542fb43a443ed57e816dc391f126a"
+      }
+    ],
+    "reviewed_by": "Boss1",
+    "review_note": "保留实际结论的独立证明、完整定均值域和候选方向的关系。"
   }
 }
