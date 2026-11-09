@@ -1281,10 +1281,14 @@
     "reason": "Assign a concrete comparison task"
   },
   "DP-W": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "d99cd765793b6068c0c96dfd8e767e48dabe37cbb0520001b3ca997297b76d84",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-76480373938c02e2: 实读闭谱、阈值DP-W、A11.2、权类FPT-D及530有限谱对照。比较完整谱输出、位/数值参数、单混合整段。",
+    "reason": "重前缀把轻客户强制到低侧，三态可按(m,z)合并，m=1且分子零保整个闭段。整数W控制状态格并得到弱困难局部阈值的伪多项式上界。不同于权类ILP只求极值/配额；有理权清分母不提供一般位多项式界。",
+    "edge_ids": [
+      "closed-support-threshold-to-integer-spectrum-dp",
+      "integer-spectrum-dp-pseudopolynomial-half-of-local-hardness"
+    ]
   },
   "DR-MARGINAL-AGGREGATE-NO-v1": {
     "state": "needs-decision",
@@ -1329,10 +1333,15 @@
     "reason": "Assign a concrete comparison task"
   },
   "EXACT-KAPPA": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "821c943834f19e41a55c9f276b6993e277ea91affd872bf6f9bf6aa4c3c81e1b",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-650824f39253ba6d: 完整闭支持谱的点与区间、A11.6、POLY-CONT、独立D接口、bounded_overlap.py及−O窄核。与MITM、共同目录正规形精确比较。",
+    "reason": "全合法布局的真谱、独立两个坐标极小与全目录D再逐片夹点给全局最优，不靠黄金比。达到检查不支持负报告或最优性。共同目录才可以消掉同址指数。原局部谱显式重叠在本包实读并构成联合支撑。",
+    "edge_ids": [
+      "fac6508-mitm-local-oracle-for-exact-continuations",
+      "fac6508-offdiagonal-normal-form-refines-exact-kappa",
+      "fac6508-spectrum-and-polyhedral-optimum"
+    ]
   },
   "FA-EXPLICIT-XOS-FRACTIONAL-NSW-ROBUST-INTERFACE-RESOURCE-v1": {
     "state": "needs-decision",
@@ -1581,10 +1590,13 @@
     "reason": "Assign a concrete comparison task"
   },
   "FPT-D": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "3aedc3e33f5c05ef993d8e8cb4ee710642ee9fdb042e874c6f0962ca6a243a50",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-76480373938c02e2: 实读FPT-D、阈值压缩、A11.3和DP-W；核显式客户、d+1截断、固定总混合人数、分母符号与外部ILP接口。",
+    "reason": "同权前缀的三态人数决定(m,z)，每支至多2d个整数变量，K≠1时仿射代入且负分母翻不等号，K=1时零分子与完整阈值/配额区间分开。它允许大的有理权分母而不按数值W展开；固定维算法是外部导入，未交规范实现，也不等同输出完整谱。 一个可复用的全局算法后果是：先取每格两坐标极值形成全目录D，再对正威胁和的单谷中心Δ₀，各支分别求Δ≤Δ₀时最大Δ及Δ≥Δ₀时最小Δ（ILP多一条线性约束，K=1直接截闭段）。扫描全布局、按各自极小值补两类真实偏离，可用全局权种数作真α*的位FPT参数，无需全谱输出或任何φ定理。此为数学组合，现有MITM程序并未运行该ILP替代。",
+    "edge_ids": [
+      "closed-support-threshold-to-weight-type-ilp"
+    ]
   },
   "FT-SMOOTH-v1": {
     "state": "linked",
@@ -1687,22 +1699,32 @@
     "reason": "Assign a concrete comparison task"
   },
   "HC-2-LOW": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "91de9a1ca510eced667d03c8e983f32ab0252de1cb593a60f152ef5faa8ae4c1",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-76480373938c02e2: 实读六顶点趋二族、A10名单、HC-MONOTONE（指定in-packet overlap）、ρ版本、相关分布和跨CAG模型审查、M=1000冻结运行。",
+    "reason": "每格两步逐实现严格占优，CCE及其子类都只能取同一个纯分配。相同两端严格单调变换保表中结果与收益。四个改善比最小在BC，等于2−18/(M+14)；每格另一个偏离收益下降。κ=2不属单交叠ρ，CAG顺序福利量词不同。与一般全singleton上界的常数一致不意味着固定四种子上界从下界推出。",
+    "edge_ids": [
+      "same-client-monotonicity-preserves-six-vertex-dominance"
+    ]
   },
   "HC-2-UP": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "7614c64a8523e519d147c1849b04e1c977eb2e6deb9e4e343e8c9c15d3379df0",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-76480373938c02e2: 实读A09两分支、守卫四种子算法、指定in-packet回应核心长环审查、历史六环/独立最终审计和实际程序。核全目录威胁、全局ID、纯转移X与合法两弦。\n3B hetero-guarded-cycle-3b-3b-a0dca5e2d4920bd0: 实读固定四种子候选、守卫算法和全singleton通用二的正文、原始A08/A09、双目录模型及3A先行收据；按固定菜单自身威胁独立重构每个简单回应环的矩形失败反证，并对照六环历史、长环审查、主稿审查和精确实现合同。",
+    "reason": "固定F的两环及零威胁已证；任意长环若找到同一配额见证，完整规则可补全。归一化后最大客户传播须成为每边预定同一h，X必须是实原子，C–F与B–G分别保持全域d；不能用较大全singleton菜单的更小威胁或旧六环证明替代。现行四种子全称状态保候选，现有异构3B负责独立核任意长度两分支。\n同一按(w,−ID)取到的环可见最大重客户被迫覆盖全环，恰是每条边预设的共同最大者。直接NE或通过守卫并保持低侧的修复使预定singleton的输出实际进入该格F。重原子排除后，纯转移集X、C–F的纯极小见证与跨色归纳、B–G的尾部集合容量矛盾均只用F自身的全目录u/d和矩形失败量词，覆盖任意长度偶环。源算法随后把任意达标见证补成全目录完整纯续局，显式二进制正有理输入下全矩形构造为O(|U₁||U₂|(n+1)²)有理操作且位时间多项式。本边给出完整内部推导，保留注册版本与原始候选状态的来源差异。",
+    "edge_ids": [
+      "exact-quotas-to-four-seed-base-cycles-and-lift",
+      "fixed-guarded-four-seed-bad-cycle"
+    ]
   },
   "HC-MONOTONE": {
     "state": "needs-decision",
     "object_pin": "06dbc73396cb6e3e7454579a92992fa380ade0df9e52f69532e98d0196029a5c",
     "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "reason": "Assign a concrete comparison task",
+    "edge_ids": [
+      "same-client-monotonicity-preserves-six-vertex-dominance"
+    ]
   },
   "HC-RHO": {
     "state": "needs-decision",
@@ -1741,10 +1763,13 @@
     "reason": "Assign a concrete comparison task"
   },
   "LOCAL-ATOM-WARDROP-k": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "9a8140369e14f0e4a514e672c6ae515d475f1fee033d27f7c7975898147e1722",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-650824f39253ba6d: 任意K固定布局运输矩阵、相邻差界及等号链，双设施定义、SC-GRANULAR-APPROX及其同址对半选择。",
+    "reason": "正运输边净误差差≤θ，前缀割排除大邻隙，零和给(K−1)θ/2。链实现等号。K=2且异址精确复用，θ的异址/固定布局量词不同。它不否定选择好的原子续局。",
+    "edge_ids": [
+      "fac6508-wardrop-k-two-local-error"
+    ]
   },
   "LOCAL-CHORD-IFF": {
     "state": "needs-decision",
@@ -1766,10 +1791,13 @@
     ]
   },
   "LOCAL-HARD": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "65e871985012643bd6e357d711f57d7bb061f208d91da96a794795afb1d87f3a",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-76480373938c02e2: 实读指定设施弱NP归约、A11.4、完整闭支持、DP-W及原入口。比较同包单位权族和LOCAL-HARD的量词。",
+    "reason": "五进制低位无进位且每对重数和恰1；Q锚排掉Δ<−Q，等号时2Q(n+1−r)=Σt_i a_i−R的右侧绝对值<2Q，反向补锚。t↦2−t后以小共同原子模拟非负私有差，闭支持给短有理证书。DP-W负责按W数值的伪多项式一半。单位权族只排常数混合人数，不是NP难归约；取一个NE或共同目录单地点全局SPE也不是这个局部坐标问题。",
+    "edge_ids": [
+      "integer-spectrum-dp-pseudopolynomial-half-of-local-hardness"
+    ]
   },
   "LOCAL-I-COMPLEMENT-COORD-v1": {
     "state": "needs-decision",
@@ -2595,10 +2623,10 @@
     "reason": "Assign a concrete comparison task"
   },
   "M-18b71cdbe2b54e35be141a35b86d884b": {
-    "state": "needs-decision",
+    "state": "isolated-after-review",
     "object_pin": "3b4858a6f3f2f36b1e8bb993be7549a7c21e2755be8176d3be75deff2b1803c3",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-650824f39253ba6d: 费用扩展审查4.1的二值度量构造，和双目录模型的固定可达表、强制服务、布局标签。对照SC-PHI-SHARP有理族。",
+    "reason": "把原客户端及站点取不同点，单位闭球原样得到覆盖，原续局与倍率逐布局保留。因此五/六站下界见证可原样成为一般有限度量例。现批登记的阈值本已在任意可达表中陈述，未有一个独立几何或距离费用的目标可作同批迁移终点。固定维欧氏与以距离作费用均需另桥。"
   },
   "M-18d502affd5b4b0d88aab591394cd384": {
     "state": "needs-decision",
@@ -3524,10 +3552,13 @@
     "reason": "Assign a concrete comparison task"
   },
   "M-364184f6b6324e008109f0ce4ea6c4a5": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "f98e486d0e77cec28a3ebf48bef765290fb58fcc18cee02dd3530b9d76793d41",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-650824f39253ba6d: 显式多面体正文的两战略客户有限费用分支、A11.7和全局真实配额，核独立Bernoulli条件费用、≤8求值、九个闭状态和精确概率恢复。",
+    "reason": "将每位成本差写为另一个共同客户概率的仿射式，全部支持为有理多面体，POLY-CONT能求真正最优。限全部合法布局（含同址）战略客户≤2。三混合例有三共同者，不能反驳此对象。",
+    "edge_ids": [
+      "fac6508-finite-cost-nine-support-reduction"
+    ]
   },
   "M-36e5796ad5ca4528b78f9eba59b68937": {
     "state": "needs-decision",
@@ -4478,10 +4509,10 @@
     "reason": "Assign a concrete comparison task"
   },
   "M-552b11dcefc0459db013a72f08704648": {
-    "state": "needs-decision",
+    "state": "isolated-after-review",
     "object_pin": "732134e58c615de4669412c6d1a2b267bdae9c08c0c437a16438fbbf8e692618",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-650824f39253ba6d: 费用扩展4.2，原强弦最大原子判据的强制服务及正配额域，以及退出加权势。",
+    "reason": "每一服务成本至少该客户权重，退出费用1/10严格更低，故全退出唯一且收益(0,0)。这只排强制服务域的旧正reach配额迁往退出模型，不否定退出纯NE存在、原强弦或任何设施层倍率。语境校正保留两个命题各自有效。"
   },
   "M-557f282fbcf0416489c028a25dd674e9": {
     "state": "needs-decision",
@@ -4568,10 +4599,10 @@
     "reason": "Assign a concrete comparison task"
   },
   "M-5855218e1d9d4d2a86f44ee7906e9806": {
-    "state": "needs-decision",
+    "state": "isolated-after-review",
     "object_pin": "2dbd0f0926c2270122c8f524a87392eb91f5e95d8ba1181e22d59fcdb4a7561a",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-650824f39253ba6d: 费用扩展审查4.2的固定退出势差及第1、2节强制服务成本与常和假设，比较M-552b的三客户退出反例。",
+    "reason": "纯换设施和进出各项势差均为自身费用差乘2w。有限严格改善给纯NE。全退出的实例仍满足它，只排除正reach配额的延伸。任意精确费用九支持要求两个可用服务策略且强制参与，退出另增策略。没有可用普遍设施倍率逻辑边。"
   },
   "M-58900f64112a40bc9246942cf510da8c": {
     "state": "needs-decision",
@@ -4811,10 +4842,10 @@
     "reason": "Assign a concrete comparison task"
   },
   "M-613302aba5ba48ac8b629aa729ee2564": {
-    "state": "needs-decision",
+    "state": "isolated-after-review",
     "object_pin": "bc8b94f3458d75824c2ea1361ede6de5c922226b19bd6f99eb721592100d7164",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-76480373938c02e2: 实读A12.1、12.1及线性双目录和二次费用对象；比较非线性条件期望、同址标签对称、设施收益及跨地点函数差。",
+    "reason": "一般费用比较是E[h_{i,s}(L)]。权1自身、另一权2客户对半时，E[L²]=5而(E[L])²=4；同址分布对称独立保证半分NE，异址可按地点改变排序。同客户跨两设施同函数是严格单调迁移/二次等价的附加条件。h(z)=z给共同目录线性特例，定义本身不推出任意费用均衡等价、纯NE或位多项式，故不造定义枢纽边。"
   },
   "M-6172df58039e44beb3fda5a2f5c9034b": {
     "state": "needs-decision",
@@ -5145,6 +5176,8 @@
     "comparison_scope": "No completed comparison batch yet",
     "reason": "Assign a concrete comparison task",
     "edge_ids": [
+      "exact-quotas-to-four-seed-base-cycles-and-lift",
+      "full-directory-quotas-to-single-overlap-clamp",
       "menu-quotas-and-response-core-to-heterogeneous-factor-two"
     ]
   },
@@ -5251,10 +5284,10 @@
     "reason": "Assign a concrete comparison task"
   },
   "M-707659a8561e42c2be6284b589d15d99": {
-    "state": "needs-decision",
+    "state": "isolated-after-review",
     "object_pin": "920fc928ce2b8760a4c2e1b1d165f08d8ef08a9a191954f3bcbf239158cb3c3b",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-76480373938c02e2: 实读完整阅读导出的1.2站内均匀、1.3受限相同/相关机器、另一章1.2相关机器双向表；与两设施模型中的自重条件比较。",
+    "reason": "相关速度取q时比较W_t/q_t与(W_v+w_i)/q_v，站纯站内均匀原子比较(W_t−w_i)/q_t与W_v/q_v；等重数才等价。三个客户的(4,12,5)及重数(2,1)给8≤9但10>9，精确否定直接均匀展开的方向；另一手算值方向相反。无登记端点声称这条错误直接变换，且反例含三设施，故不伪造反驳双设施算法或计算困难的边。"
   },
   "M-708d628df607454c922e30e32384bdd1": {
     "state": "needs-decision",
@@ -5479,10 +5512,14 @@
     "reason": "Assign a concrete comparison task"
   },
   "M-78b5c8b948b14f799fb5849a464c17a7": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "4a29420b9d60762f0cdbbffe8ba072f5c8af662403763b1474a586205fb1f5f7",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-76480373938c02e2: 实读阈值半表局部查询（指定in-packet overlap）、全布局及lazy同族正文、A11.5/A11.6与局部原入口，按共同目录和全部合法同址核量词。",
+    "reason": "半表先取真实两向m及全目录d，再对每个格的单谷倍率精确搜索；两偏离族带标签且在轨外不交。可用逐列合法剪枝精确替换d及惩罚见证，但不能由此输出被剪项的真实m表。全布局达到α*，单环至多给α_K。原参数含同址，异址正规形是后续方法，短达到证书自身不证最优。",
+    "edge_ids": [
+      "pruned-exact-threats-reusable-in-all-layout-search",
+      "single-valley-half-table-to-common-catalog-instance-optimum"
+    ]
   },
   "M-78df1e63ca304353af17b6b597129503": {
     "state": "needs-decision",
@@ -5581,11 +5618,12 @@
     "reason": "Assign a concrete comparison task"
   },
   "M-7c7cfc38cb10411e8b8b5f9ee5747b77": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "c26a5ac9fc69994ac6f2a5c0bb5ed4909d19371f41874b8f92e141b02dca60a0",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task",
+    "comparison_scope": "3B hetero-guarded-cycle-3b-3b-a0dca5e2d4920bd0: 对照原A08逐名严格改善、守卫、原低侧首次翻转及非空性证明，A09重客户单点负载，原实现maximum_only与all_singletons的种子与全目录补全，以及A08有理位长。",
+    "reason": "已证的逐种子接口可在固定四种子坏环中使用，因为守卫修复保证s侧负载不降，已NE分支直接入菜单，所需种子已按同一个客户ID预制。按同一逐种子接口枚举所有共同客户也得到3A已登记的全singleton菜单局部构造。给定达标菜单成员的补全和全矩形代价均复用本对象。",
     "edge_ids": [
+      "fixed-guarded-four-seed-bad-cycle",
       "guarded-repair-to-heterogeneous-all-singleton-menu"
     ]
   },
@@ -6887,10 +6925,14 @@
     "reason": "Assign a concrete comparison task"
   },
   "M-a3b7e30967de4437804952f7d528d207": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "705cbc0c7698d40153313be1a9914648d720322c8c1bbea6957be5fcc9c376b0",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-650824f39253ba6d: 三四地点阈值正文的同一固定纯异址菜单、可实现同址δ、三地点严格失败链、h=1/√2与有理化。对照≤2和四站族。",
+    "reason": "三站由d1=B、d2=C及r²=2得13、23后侧安全，二者都失败与d3实际来源矛盾。实权三客户例给等号，有理扰动仅逼近。其√2上界只支付四站对象较小目录分支。菜单d与真实全谱极小保持区别。",
+    "edge_ids": [
+      "fac6508-three-site-threshold-smaller-catalog-branch",
+      "fac6508-two-site-base-of-three-site-threshold"
+    ]
   },
   "M-a3feff9f6a574834925528d0f9d9d658": {
     "state": "needs-decision",
@@ -6911,10 +6953,13 @@
     "reason": "Assign a concrete comparison task"
   },
   "M-a4510cf6b0ee470384411c5b272b372b": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "07ebeeba9159256894ad650a0ebafc629188e2fa63d9c8613c21b2a86e1b5198",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-76480373938c02e2: 实读响应剪枝正文、两设施纯改善与降序低侧插入（指定follow-up）、惰性原CLI/测试和抽象闭核心反例。比较精确m、可实现上界U和环搜索域。",
+    "reason": "给定一列的真实D，U来自具体纯NE且m≤U≤D时能剪并保有效偏离见证。逐列展开可与全布局最优模块组合。环内只访问r列时查询O(Nr+k²)，d始终是全目录；共同目录绝对标签第二方须反射概率。降序低侧插入给U，任意改善及最大权移动步数非承重；指定重叠已按精确输入和算法处置。φ断言另依待审全称环结论。",
+    "edge_ids": [
+      "pruned-exact-threats-reusable-in-all-layout-search"
+    ]
   },
   "M-a4546084e30f41a68cb0fbdffbf3f15b": {
     "state": "needs-decision",
@@ -7377,10 +7422,13 @@
     "reason": "Assign a concrete comparison task"
   },
   "M-b2bcfe1f64ee4a7799a58ef2609d04dd": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "0379369f9a22a46a427e57edacac3d447144ba50a46e824d86a4d7c83d968d00",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-76480373938c02e2: 实读同一归约中的无界混合者单位权例、A11.5例及完整闭支持；比较真实混合人数、名义端点和LOCAL-HARD。",
+    "reason": "把m作为真正混合人数后，纯NE只Δ=0，单混合由奇偶排除。负差公式的分子与分母奇偶相反，按m≤r和m≥r+1分别夹，只有m=r+1,b=0能取−(r−1)/r，且实际p=1/(2r)。这使常数混合截断失败，但d=1仍可按权类有效求解；它不说明局部阈值普遍NP难。",
+    "edge_ids": [
+      "closed-support-unit-weights-force-unbounded-mixing"
+    ]
   },
   "M-b2caba393dd44957a70bea0e8f272a40": {
     "state": "needs-decision",
@@ -7482,7 +7530,16 @@
     "state": "needs-decision",
     "object_pin": "a5548e0aafb7ae3c7d4143b189e5f8a84d5b33957f2427fa3dc60658139aeff0",
     "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "reason": "Assign a concrete comparison task",
+    "edge_ids": [
+      "closed-support-covers-exact-outer-band-menu",
+      "closed-support-threshold-to-integer-spectrum-dp",
+      "closed-support-threshold-to-weight-type-ilp",
+      "closed-support-unit-weights-force-unbounded-mixing",
+      "fac6508-full-support-certifies-three-mixer-counterexample",
+      "fac6508-spectrum-and-polyhedral-optimum",
+      "fac6508-spectrum-threshold-half-table-reduction"
+    ]
   },
   "M-b5c874abb5b04ee9817066846b68b14a": {
     "state": "needs-decision",
@@ -9089,10 +9146,10 @@
     "reason": "Assign a concrete comparison task"
   },
   "M-ea99eafd412b440a861bb28b8d74ea01": {
-    "state": "needs-decision",
+    "state": "isolated-after-review",
     "object_pin": "7de1fba827758fff6bcd8b81453c7015d506caeb9e862c34be5e57a88efe17ed",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-650824f39253ba6d: 盒截面确定初始化、相邻坐标各端点、平方值582/654。比对强弦内分支、3529例的范围和26页稿附录C。",
+    "reason": "三方向无严格改进而全局顶点有更大值，确切排除全局最大输出的加强。以最大权19添回强弦时仍给合法初始NE，故没有反驳局部算法、强弦或设施φ。注册目标中无错误的全局输出主张，保留语境边。"
   },
   "M-eabd8ca00d134e4f9a6ad619dfb35e3b": {
     "state": "needs-decision",
@@ -9708,12 +9765,13 @@
     "reason": "两个单位箱、两件尺寸2/5与3/5。覆盖目标让(x,i),(y,j)共享同一原子，让(x,j),(y,i)各覆盖另外两个不同原子。两种合法安置选同样两件却分别值1和2，且前者两个跨箱边间确有边际递减。仅两尺寸不足以投影为SMKP物品集合或独立箱值之和。两列射线启用LP也不提供跨箱次模assignment rounding。"
   },
   "MF-CONT-COMPLETE": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "749dad55c2ae74db4f443c5adb20553c8aced4cf785ecf7f1a75fe28613b24d6",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task",
+    "comparison_scope": "3B commonmany-fixed-lex-sharp-3b-3b-605bc46b112a9bfe: v2；共同目录定义、主定理第六节、保存证书的默认补全段、固定字典序障碍全文。分别核一般上界、坏占用达到 β_h、好占用达到 1 的带标签布局拼接。",
+    "reason": "每个实际 (f,r) 只改 f 坐标且 r≠s_f，故与在轨及其他实际偏离布局互异。相同物理重数并不合并子博弈。每个剩余布局由确定严格纯改善给纯 NE，离轨只需客户最优性。局部 NE 可以是同址不对称的纯选择，客户平局不妨碍精确性。上界复用已发布 ALL 边；新边完成同一显式族坏、好占用的两份独立可达到规则。",
     "edge_ids": [
-      "commonmany-global-lex-budgets-and-finite-repair-imply-factor-two"
+      "commonmany-global-lex-budgets-and-finite-repair-imply-factor-two",
+      "commonmany-labeled-completion-attains-both-lex-barrier-witnesses"
     ]
   },
   "MF-FROZEN-OVERLOAD-POLY": {
@@ -9734,20 +9792,20 @@
     ]
   },
   "MF-PACK-2": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "3e2f063fa6b0a94baf9bbeb5d7ba6ab12f3edbb06a0d3791c6af7194f5d87923",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task",
+    "comparison_scope": "3B commonmany-fixed-lex-sharp-3b-3b-605bc46b112a9bfe: v2；引理全文、主定理第四节。比较逐站合法性、普通 2a 箱、单个已服务超帽原子、偏离者初始≤a 与标量子二反例的作用域。",
+    "reason": "源存续时原源剩 h_u=q_u−1 家静止设施，W_u=(h_u+1)a。各其他存续站依四预算及源消失时的重挂得到 W'_t≤(h_t+1)a。逐站装箱，只把箱放在同站静止标签，故每个原子可达。空箱、等号和独占超帽原子均合法。h_t+1 个 a 重原子阻挡同一标量接口缩帽，但完整固定占用的阈值下界需要障碍族的精确 NE 论证。",
     "edge_ids": [
       "commonmany-global-lex-budgets-and-finite-repair-imply-factor-two",
       "commonmany-greedy-box-packing-reset-max-to-complete-continuation"
     ]
   },
   "MF-PURE-CAP": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "f76c7824a76fe19b7f752116af4086a6f5d7fcfc68ef51ff6a82cc9d3dd4c4df",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task",
+    "comparison_scope": "3B commonmany-fixed-lex-sharp-3b-3b-605bc46b112a9bfe: v2；引理全文、主定理第五节和模型纯势段。复核超帽隔离、可达动作、严格而非平局移动、偏离者负载的严格上界。",
+    "reason": "取 B=2a。重客户现成本等于自重，普通客户加入重设施无严格改善；普通改善新目标 L_g+w_i<L_old≤2a，平方势在有限纯分配上严格下降。从偏离者初始≤a<2a 出发，若它接客，新的负载严格<2a，若它失客负载下降。因此它一直严格<2a，即使其他普通设施可以取等号。全游戏的全部原可达动作已检查，终点为精确纯 NE。正覆盖时对有限真实偏离取最大所需倍率，可得该实例、该最大候选的倍率<2；零覆盖及无真实偏离均取 1。",
     "edge_ids": [
       "commonmany-global-lex-budgets-and-finite-repair-imply-factor-two",
       "commonmany-greedy-box-existence-and-completion-to-finite-two"
@@ -9883,10 +9941,14 @@
     "reason": "Assign a concrete comparison task"
   },
   "POLY-CONT": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "46fce4d3af6e393cda83c7f032104d2f60cd83d5656148322b46bb3d94417614",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-650824f39253ba6d: 显式多面体全文、独立续局抽象配额与双色核、A11.7非线性分支，以及任意双目录全谱的线段特例。",
+    "reason": "显式有理非空单元、所有收益覆盖及有理实现器给坐标LP，再以λ求最优，零威胁不妨碍有理达到。九支持可满足输入合同。完整线性谱进一步专化到区间clamp。闭核旧四环加新精确格的抽象反例只排全局最优保留。",
+    "edge_ids": [
+      "fac6508-finite-cost-nine-support-reduction",
+      "fac6508-spectrum-and-polyhedral-optimum"
+    ]
   },
   "POPULATION-DELETION-ALL-v1": {
     "state": "needs-decision",
@@ -9943,22 +10005,31 @@
     ]
   },
   "Q-SC-ALPHA-EPTAS": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "8f6d882a4640ee44974d6385def3a520511216de8d4e75c7dc9a42b91b428e17",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-76480373938c02e2: 实读EPTAS候选、SC-TWO-NEAR-BAND-REP（指定follow-up）、两路局部审计、四地点近/远菜单原报告及版本接续；比较闭支持外带与固定重支持带内。",
+    "reason": "严格外带迫轻客户纯低侧，重支持的m=1零分子保整闭段，边界不属该外片时交闭近带。近带所有收益夹[(1−η)V/2,(1+η)V/2]，使真最小m≤菜单最小≤Cm且在轨换代表至多再损C，η=ε/16、α*≤2给C²误差小于ε。已证外带及带内局部接口仍须组合全目录、零值、逐格确切输出及位长，交所发布3B；186旧有限实例不是已交付的通用算法。",
+    "edge_ids": [
+      "closed-support-covers-exact-outer-band-menu"
+    ]
   },
   "QUAD-EQ": {
     "state": "needs-decision",
     "object_pin": "ca1db56141291f190131dfd0ee56a95187f80e6e74b5346d3fc2637183d93101",
     "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "reason": "Assign a concrete comparison task",
+    "edge_ids": [
+      "linear-phi-and-quadratic-equivalence-transfer"
+    ]
   },
   "QUAD-PHI": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "912f53c968376758f413f8f28425f84ac0831029f9d8e01776dafde4fbacb667",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-76480373938c02e2: 实读二次费用等价、A11.8、12.5、线性SC-PHI-E及HC-MONOTONE（指定in-packet overlap）；检查独立NE、CE、CCE量词。",
+    "reason": "同一二次函数的正乘子a_i(V+w_i)+b_i与其他实现无关，保全布局分布及设施收益。迁移上界须同时使用尚待审的原线性存在性和已证的等价桥；线性下界族可独立按同一桥保留。一般严格单调只有纯NE及逐实现严格占优保持；立方例中重2客户的90>86只排一般混合集合保持。",
+    "edge_ids": [
+      "linear-phi-and-quadratic-equivalence-transfer"
+    ]
   },
   "R-18-NREP-20261031": {
     "state": "needs-decision",
@@ -10099,16 +10170,24 @@
     "reason": "Assign a concrete comparison task"
   },
   "SC-DIAG-NORMAL": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "189121f846bc729cda90154050071daf3a31cf29d9a0ffb62de69467f64ed3ac",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-650824f39253ba6d: 异址全谱、同址与异址放松极值、严格替换和平局危险，原shared_offdiag.py及bounded_overlap.py、达到检查边界。对照两reach、14/13及双目录优化。",
+    "reason": "最优同址对半且由H给下界。仅当放松异址严格更优才可保证同址偏离安全，否则保持平衡同址。任意非空共同目录中消去同址支持枚举，不能套到U1≠U2。原continuation不自行验result，verify只认证达到。",
+    "edge_ids": [
+      "fac6508-diagonal-evaluation-of-two-reach-example",
+      "fac6508-diagonal-upgrade-for-two-reach",
+      "fac6508-offdiagonal-normal-form-refines-exact-kappa"
+    ]
   },
   "SC-EQUAL-REACH-EXACT": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "b4ebd7dbaf97cd738355de2edae3460895b65cd71a76ed5048eae1d298ee86bb",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-650824f39253ba6d: 少地点/两reach定理的全部分支，双目录定义与共同目录正规形。对照任意交叠、恰一个reach及零覆盖的公式。",
+    "reason": "公共客户独立半分时两条件成本相等。最小交叠的在轨对逐坐标支配全目录偏离，给两reach定理的一值基例。两个不同reach时交叠人数条件仍承重。",
+    "edge_ids": [
+      "fac6508-equal-reach-base-of-two-reach"
+    ]
   },
   "SC-FIVE-DECa-HARD": {
     "state": "needs-decision",
@@ -10123,16 +10202,19 @@
     "reason": "Assign a concrete comparison task"
   },
   "SC-GRANULAR-APPROX": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "a8d08cdbb65f9f99a88608a429a90f88f1ced3a9fc8523040110ea73782e46bb",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-650824f39253ba6d: 粒度证明的Wardrop显式clamp/字典序、正负端区、任意异址NE误差、同址对半及二进制有理贪心。对照K设施运输界、结构教学与有限279/148例。",
+    "reason": "K=2局部误差的θ恰为该异址最大共有权。全局θ只计不同地点，同址通过主动对半实现零误差。对照在轨收益≥R/2及R>θ才把局部误差变成(R+θ)/(R−θ)，θ=0精确。不能将任意同址NE纳入更小θ或外推K>2。",
+    "edge_ids": [
+      "fac6508-wardrop-k-two-local-error"
+    ]
   },
   "SC-K-2-E": {
     "state": "linked",
     "object_pin": "c345b8c200578a44af61428a9f884e66590756578c6dd85c96faf49e60fbd0cd",
-    "comparison_scope": "3A commonmany-3a-3a-7fbed9462b1600ef: 实读 SC-K-2-E v2 模型、完整站点字典序正文与当前连续 TeX，复核 SC-K-LEX-BUDGET、MF-PACK-2、MF-PURE-CAP、MF-CONT-COMPLETE v2 的准确域，并实读 SC-K-GREEDY-BOX-FINITE-2 v2 的贪心原池、交错势和全布局完成。逐项核有理和实权的量词、四类源/目标布局、未覆盖客户、在轨混合和离轨纯性、完整标签拼接。检查有限构造与证书入口、定义级验证、冻结审计范围、稿件修订与后续选择器边界；比较同址对称菜单障碍、固定全局字典序布局趋二障碍及统一最佳常数问题。证据中有限数据按已保存字段和审查口径核对，未把重复样本、有限纯 NE 极值或排版/审查状态升级为一般证明。",
-    "reason": "字典序路线由全局候选最大性同时交付在轨 NE 与四预算，再联合逐站装箱、普通帽有限修复和带标签全布局拼接。源站消失用当前字典序原源池 J_u 的交集预算。独立的规范贪心路线选固定占用，交错势保证完整盒，消失源另需全原贪心池重置。两条路线共享有限装箱、纯修复和带标签拼接接口，任何一条都完整证明存在目标。贪心有理见证的全布局离散有限性及固定支持下闭合线性约束给正实权域；正文的实权有限比较也直接适用。两种选择器可严格不同。例如 k=2，两站 A、B 各有私有权重 5、3，另有可到两站的原子权重 2。贪心先开 A 得 7，第二家去 A 得 7/2>3；全局字典序最优各站一家、共享原子给 B，升序负载 (5,5)>(7/2,7/2)。同址对称菜单障碍仅否定附加对称的离轨选择。固定字典序占用的最佳倍率 2h/(h+1) 可趋二，但同实例换占用有精确 SPE，因此整体统一上界为二，尖锐性仍待证。有限核验的 1319 指抽查在轨见证，612 输入的逆向审计是另一批；完整构造、短证书和给定种子的多项式 MAX 完成均与一般位多项式在轨搜索分开。 跨档学习导引的压缩段把截断归位和纯受帽改善并提，实际承重位置须分开：截断归位产生规范贪心的站内均匀在轨盒 NE，平方势严格纯改善产生偏离后的纯 NE。当前稿有限重构记录的权重 (1,100) 例中重原子在全目录无动作，四个标签布局仍可补全，正对应受帽条件只涉及实际被服务客户。",
+    "comparison_scope": "3A commonmany-3a-3a-7fbed9462b1600ef: 实读 SC-K-2-E v2 模型、完整站点字典序正文与当前连续 TeX，复核 SC-K-LEX-BUDGET、MF-PACK-2、MF-PURE-CAP、MF-CONT-COMPLETE v2 的准确域，并实读 SC-K-GREEDY-BOX-FINITE-2 v2 的贪心原池、交错势和全布局完成。逐项核有理和实权的量词、四类源/目标布局、未覆盖客户、在轨混合和离轨纯性、完整标签拼接。检查有限构造与证书入口、定义级验证、冻结审计范围、稿件修订与后续选择器边界；比较同址对称菜单障碍、固定全局字典序布局趋二障碍及统一最佳常数问题。证据中有限数据按已保存字段和审查口径核对，未把重复样本、有限纯 NE 极值或排版/审查状态升级为一般证明。\n3B commonmany-fixed-lex-sharp-3b-3b-605bc46b112a9bfe: v2；主定理正文和连续稿相应构造、已发布的四前提 ALL 边、障碍正文及 Boss2 v2 收据。比较总体存在量词与固定全局字典序占用后再选全规则的量词。",
+    "reason": "字典序路线由全局候选最大性同时交付在轨 NE 与四预算，再联合逐站装箱、普通帽有限修复和带标签全布局拼接。源站消失用当前字典序原源池 J_u 的交集预算。独立的规范贪心路线选固定占用，交错势保证完整盒，消失源另需全原贪心池重置。两条路线共享有限装箱、纯修复和带标签拼接接口，任何一条都完整证明存在目标。贪心有理见证的全布局离散有限性及固定支持下闭合线性约束给正实权域；正文的实权有限比较也直接适用。两种选择器可严格不同。例如 k=2，两站 A、B 各有私有权重 5、3，另有可到两站的原子权重 2。贪心先开 A 得 7，第二家去 A 得 7/2>3；全局字典序最优各站一家、共享原子给 B，升序负载 (5,5)>(7/2,7/2)。同址对称菜单障碍仅否定附加对称的离轨选择。固定字典序占用的最佳倍率 2h/(h+1) 可趋二，但同实例换占用有精确 SPE，因此整体统一上界为二，尖锐性仍待证。有限核验的 1319 指抽查在轨见证，612 输入的逆向审计是另一批；完整构造、短证书和给定种子的多项式 MAX 完成均与一般位多项式在轨搜索分开。 跨档学习导引的压缩段把截断归位和纯受帽改善并提，实际承重位置须分开：截断归位产生规范贪心的站内均匀在轨盒 NE，平方势严格纯改善产生偏离后的纯 NE。当前稿有限重构记录的权重 (1,100) 例中重原子在全目录无动作，四个标签布局仍可补全，正对应受帽条件只涉及实际被服务客户。\n主定理只需每个实例存在布局与完整规则。其字典序证明实际对每个达到全局最大向量的候选独立给出上界，连同障碍族可定固定选择类的尖锐统一阈值。另一贪心支持路线可改变占用，不能用于指定 lexmax 占用的逐点保证。障碍族在 A/T 分处的另一个占用有精确 SPE，故它不抬升全模型的最佳因子下界，也未判定全模型锐性或一般位多项式搜索。",
     "edge_ids": [
       "commonmany-canonical-greedy-finite-implies-factor-two",
       "commonmany-depth-three-home-ne-has-exact-continuation",
@@ -10335,18 +10417,20 @@
   "SC-K-GREEDY-BOX-EXISTS": {
     "state": "linked",
     "object_pin": "1734aef77d4e8a53a08935117a99c442bbbb5190a21570b036ab13ea96efc448",
-    "comparison_scope": "3B commonmany-box-home-3b-e76445c54d0d7383: 核读截断—归位引理的抽象域、严格改善及归位的固定交错势、上下盒、任意合法顺序和精确位长，并与定理归一化、冻结重客户和全部原选项成本逐式比较。",
-    "reason": "抽象引理是联合前提。实际得到的是原规范布局的完整盒、全部客户精确 NE 与有限终止，作为完整因子二定理的在轨贡献。一般抽象输入无须由真实贪心产生。离轨装箱、重置和默认布局，以及统一总位时间分别需要进一步的论证。",
+    "comparison_scope": "3A commonmany-3a-3a-a345a0b0ea654f9a: 完整实读 v2 抽象截断归位引理、共同目录原子模型、规范贪心定理、一般异权目标和工作坊路线 A。按本任务固定出处对照历史 claims.md 中本证明族及相邻选择器、反例和时间边界，阅读登记审查的指定段落、六套有限原审计、浅层复现的用户摘录与复用段、五份输入中的四赋值和轻量回归段、全局有限审计、规范程序合同及冻结 greedy_box.py、四文件 manifest、运行记录、讲义页29可见内容及盲读证据边界。核对 BUDGET 与 MAX-MULT 对真实规范贪心的联合映射、SINGLETON-RESET 的原池作用、BOX-TO-2/FINITE-2 的时间与全标签范围。对两个声明跨批端点分别给出数学闭合。\n3B commonmany-box-home-3b-e76445c54d0d7383: 核读截断—归位引理的抽象域、严格改善及归位的固定交错势、上下盒、任意合法顺序和精确位长，并与定理归一化、冻结重客户和全部原选项成本逐式比较。",
+    "reason": "同一真实贪心运行中，原池盒给 c_t∈[0,1]，最大重数归属给 Home。冻结单选及 u_i≥γ 客户后用 w_i=u_i/γ，W_t=γ(q_t+X_t)；重客户外部成本≤γ而替代站每设施收益≥γ，单选项客户无异站选择。合法严格改善—归位通过截断负载和本组离家数交错势达完整盒、全原选项 NE、H，最多 Π_i|A_i|−1 微步；无移动者零步、零覆盖单独全未服务。原模型在轨到完整续局已有精确联合边。抽象 RQ 令 h=min A_i、q 非增即可直接应用同一势，盒和 H 下的改进加至多 n 次归位给位多项式局部改进预言机和 PLS 上界，仍需解决一般总时间。冻结软件另要求 H、有限纯离轨且有大整数报告故障；历史有限审计和页29只支持实际版本及实见范围。旧盒内普通势最小、未截断收益字典序和仅向低重数改善的反例各针对不同规则。\n抽象引理是联合前提。实际得到的是原规范布局的完整盒、全部客户精确 NE 与有限终止，作为完整因子二定理的在轨贡献。一般抽象输入无须由真实贪心产生。离轨装箱、重置和默认布局，以及统一总位时间分别需要进一步的论证。",
     "edge_ids": [
       "commonmany-greedy-box-existence-and-completion-to-finite-two",
-      "commonmany-greedy-budget-home-onpath-box"
+      "commonmany-greedy-budget-home-onpath-box",
+      "commonmany-greedy-clipped-progress-rq-local-search",
+      "commonmany-greedy-componentwise-microstep-bound"
     ]
   },
   "SC-K-GREEDY-BOX-FINITE-2": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "0e3f0944b8ebe9195ae24070478d8e8d9a9c1568202317acab01d7a516eff027",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task",
+    "comparison_scope": "3A commonmany-3a-3a-8d70a70fdfc80a85: 实读 SC-K-GREEDY-BOX-FINITE-2 v2 的登记、主定理、共同目录模型、原子装箱与受帽纯修复、截断交错势及相关原稿，复核冻结原池预算、最大重数归属、抽象归位、给定盒见证的补全接口及单源重置。核同一规范贪心运行、全原菜单、显式有理输入、零覆盖和无轻客户两种分支、存续或消失源与已占或未开目标的四类标签偏离、完整规则表示和默认求值。登记历史索引定位到任意设施数相应命题和统一位复杂度问题。核分层审查、六套复现、浅层摘录、轻量回归、原版全局审计、程序正文和固定源码、依赖与运行记录，以及指定讲义复查段落。有限审计按现有运行记录审读，未重新运行。另检已整合的完整推导、在轨子步骤、位多项式完成接口及结构化轻分量贡献。",
+    "reason": "既有完整边在同一规范贪心实例上合取原预算、最大重数归属、抽象盒构造、两类离轨种子与有限受帽修复，给全原动作精确 NE 和同一份全标签续局，覆盖整个目标 v2。已有在轨贡献把重客户冻结和原条件成本比较单独核清。本批新边将任意守护微步投影到唯一轻客户关联分量，每步仍严格推进固定局部交错势，故微步上界可由全局乘积减一改为各分量乘积减一之和。若该和对输入位长有统一多项式界，例如每个轻分量的可移动客户数有固定上界，原在轨算术构造与数学 MAX 离轨完成可组合成位多项式完整续局。完整一般有限结果、这个限域时间强化、一般在轨总时间开放及冻结软件有限纯改善和报告异常各自区分。历史可读讲义和有限审计提供准确范围证据。",
     "edge_ids": [
       "commonmany-canonical-greedy-finite-implies-factor-two",
       "commonmany-converging-path-four-move-box-to-factor-two",
@@ -10354,7 +10438,8 @@
       "commonmany-directed-path-box-to-factor-two",
       "commonmany-early-center-star-box-to-factor-two",
       "commonmany-greedy-box-existence-and-completion-to-finite-two",
-      "commonmany-greedy-budget-home-onpath-box"
+      "commonmany-greedy-budget-home-onpath-box",
+      "commonmany-greedy-componentwise-microstep-bound"
     ]
   },
   "SC-K-GREEDY-BOX-TO-2": {
@@ -10370,7 +10455,8 @@
       "commonmany-early-center-star-box-to-factor-two",
       "commonmany-equal-flow-and-max-complete-uniform-factor-two",
       "commonmany-greedy-box-existence-and-completion-to-finite-two",
-      "commonmany-greedy-box-packing-reset-max-to-complete-continuation"
+      "commonmany-greedy-box-packing-reset-max-to-complete-continuation",
+      "commonmany-greedy-componentwise-microstep-bound"
     ]
   },
   "SC-K-GREEDY-BUDGET": {
@@ -10381,7 +10467,8 @@
     "edge_ids": [
       "commonmany-greedy-box-existence-and-completion-to-finite-two",
       "commonmany-greedy-box-packing-reset-max-to-complete-continuation",
-      "commonmany-greedy-budget-home-onpath-box"
+      "commonmany-greedy-budget-home-onpath-box",
+      "commonmany-greedy-componentwise-microstep-bound"
     ]
   },
   "SC-K-GREEDY-CAP-INFEASIBLE": {
@@ -10425,7 +10512,8 @@
     "reason": "q_{h_i}≥q_t 使超盒外来客户违反自身归位守卫。重数相同时首开次序使 home 为首选项。归属结论约束同一运行的初始 home，终态赋值不须保留这个序关系。\nSC-K-GREEDY-MAX-MULT确实为SC-K-GREEDY-BUDGET同一贪心输出建立Home最大可达重数条件，这是截断归位引理的必要结构输入；但它本身既不蕴含q_tγ≤W_t^0≤(q_t+1)γ/N_v≤γ，也不蕴含客户NE或因子二续局。它与BUDGET的联合结论只能在另读SC-K-GREEDY-BOX-EXISTS抽象引理后得到：MAX-MULT负责Home，BUDGET负责归一化盒/γ；该正式联合比较在任务中明确标为stage 3B follow-up，故本3A批不宣称已建立逻辑边。保留严格反例边界：不能给任意任命的归属加最大重数，也不能把达到原NE后的迁移归属继续当作MAX-MULT结论。一般位多项式选择、MAX/RANGE完成器和全局最佳常数仍开放。 3B承接任务已发布，保留待付的正式联合比较。",
     "edge_ids": [
       "commonmany-greedy-box-existence-and-completion-to-finite-two",
-      "commonmany-greedy-budget-home-onpath-box"
+      "commonmany-greedy-budget-home-onpath-box",
+      "commonmany-greedy-componentwise-microstep-bound"
     ]
   },
   "SC-K-GREEDY-REPAIR-ORDER-NO": {
@@ -10483,19 +10571,22 @@
     "reason": "Assign a concrete comparison task"
   },
   "SC-K-LEX-BUDGET": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "420f34e52ec452843993adf640e5dc699a2f99bb297de382077f7009ce68a0da",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task",
+    "comparison_scope": "3B commonmany-fixed-lex-sharp-3b-3b-605bc46b112a9bfe: v2；主定理第一至四节、模型和引理正文、障碍候选同域核查。排序比较族包含全部带标签布局及全部合法站点纯/站内均匀赋值，允许同址、相同覆盖不同地点及并列最大。",
+    "reason": "R>0 时，全放最大覆盖站给每家 R/k，故每个最大候选的各收益正。在轨严格改善恰要求 (W_t−w_i)/q_t>W_v/q_v，整原子换站会改善排序，矛盾。令 a=W_u/q_u，N_r 为 r 覆盖且旧布局全未覆盖的重量。q_u≥2 时，对其他已占 t 有 W_t≤(q_t+1)a，对未占 r 有 N_r≤a。q_u=1 时，令 J=J_u，分别为 W_t+w(J∩C_t)≤(q_t+1)a、N_r+w(J∩C_r)≤a。已占目标的原负载比较用 w(J∩C_t)≤a；未占目标的两批客户互不相交。源消失时 J 优先重挂到静止可达站，其次给目标偏离者，失去覆盖者才不服务；J 外旧客户保留原站。已占目标偏离者初始空载，未占目标初始≤a。四预算对固定的每个最大候选及全目录真实偏离同时成立，不取决于平局破法。",
     "edge_ids": [
       "commonmany-global-lex-budgets-and-finite-repair-imply-factor-two"
     ]
   },
   "SC-K-LEXMAX-BARRIER": {
-    "state": "isolated-after-review",
+    "state": "linked",
     "object_pin": "d39f1686436350b5f3e616e74683752d3042f2262904f8b0ac5844a8cb10b958",
-    "comparison_scope": "3A commonmany-3a-3a-60cbb895818fca33: 按任务声明顺序完整阅读8个distinct文件及10个staged reading passes：固定字典序障碍正文、因子二逆向审查、构造/交付检查验证边界、逐项证据口径、共同目录模型、replayed_lexmax_barrier.json全527821字节/29286行、barrier_replay_comparison.json，以及任意设施数登记审查指定section group（共同合同、复杂度、模型/预算、lexmax/PLS、选择器、等重流、重置、严格反例、后续判断、证据接续）。逐项保留模型、量词、坏/好占用、beta_h下界与达到、有限证据范围和未付义务。",
-    "reason": "核心对象是自足的proved obstruction，且本任务没有read_object_ids；未发现可在本批已付端点间成立的承重逻辑边。SC-K-LEXMAX-BARRIER的结论是：对每个k>=2、h>=2的显式实例，固定全局站内均匀lexmax占用对任意在轨/离轨精确客户NE的最优完整倍率恰2h/(h+1)->2；改换占用可达exact SPE、全实例最优为1。因此它只refute‘仅在固定lexmax占用内换NE选择器即可统一得到亚二’的过强路线，不refute MF-MODEL的因子二存在性，也不推出全模型二下界。共同MF-MODEL是定义背景而非hub端点；有限replay/审计只作证据，不是额外数学前提。SC-K-LEX-BUDGET、SC-K-LEXMAX-STRONG-HARD、MF-PACK-2、MF-PURE-CAP、SC-K-SYMMETRIC-MENU-OBSTRUCTION、SC-K-2-E等未作为本批已付read端点，不创建未经read-add的边。"
+    "comparison_scope": "3A commonmany-3a-3a-60cbb895818fca33: 按任务声明顺序完整阅读8个distinct文件及10个staged reading passes：固定字典序障碍正文、因子二逆向审查、构造/交付检查验证边界、逐项证据口径、共同目录模型、replayed_lexmax_barrier.json全527821字节/29286行、barrier_replay_comparison.json，以及任意设施数登记审查指定section group（共同合同、复杂度、模型/预算、lexmax/PLS、选择器、等重流、重置、严格反例、后续判断、证据接续）。逐项保留模型、量词、坏/好占用、beta_h下界与达到、有限证据范围和未付义务。\n3B commonmany-fixed-lex-sharp-3b-3b-605bc46b112a9bfe: v2；障碍正文全文、模型、主定理、原 claims 精确条目及 Boss2 同对象已完成收据。核每固定 k,h、每个最大占用的标签实现、任意在轨/离轨精确独立混合 NE、坏占用显式达到与另一占用精确 SPE。",
+    "reason": "核心对象是自足的proved obstruction，且本任务没有read_object_ids；未发现可在本批已付端点间成立的承重逻辑边。SC-K-LEXMAX-BARRIER的结论是：对每个k>=2、h>=2的显式实例，固定全局站内均匀lexmax占用对任意在轨/离轨精确客户NE的最优完整倍率恰2h/(h+1)->2；改换占用可达exact SPE、全实例最优为1。因此它只refute‘仅在固定lexmax占用内换NE选择器即可统一得到亚二’的过强路线，不refute MF-MODEL的因子二存在性，也不推出全模型二下界。共同MF-MODEL是定义背景而非hub端点；有限replay/审计只作证据，不是额外数学前提。SC-K-LEX-BUDGET、SC-K-LEXMAX-STRONG-HARD、MF-PACK-2、MF-PURE-CAP、SC-K-SYMMETRIC-MENU-OBSTRUCTION、SC-K-2-E等未作为本批已付read端点，不创建未经read-add的边。\n族 A,T,Z_2,…,Z_{k−1}，H(h) 可到 A,T，e(1) 只到 A，z_j(3(h+1)/4) 只到 Z_j。令 a=(h+1)/2、M=3a/2。锚点重占会给负载≤M/2<a，A/T 至少三家会因总重≤2a 使最小坐标<a；两家全在 T 得 h/2<a，A/T 分处时 H 整原子选一站导致最小≤1<a。只有两家在 A、锚点各一家达到 (a,a,M,…)；全部并列者只是标签置换。任意在轨 NE 的两家 A 收益之和为 2a，取较低的一家 f。f→T 时 e 被迫留 A，H 在 T 的成本 h 严格低于 A 的 h+1，故任意离轨 NE 给 f 收益 h，有限倍率至少 h/a=β_h；在轨 f 零收益则无有限倍率。显式纯偏离与带标签补全达到 β_h，另一个 A/T 分处占用的完整倍率为 1。Boss2 回放的 20 个参数对、1552 次偏离及 6 次全标签枚举为有限核验，量词由上述一般证明承担。",
+    "edge_ids": [
+      "commonmany-labeled-completion-attains-both-lex-barrier-witnesses"
+    ]
   },
   "SC-K-LEXMAX-STRONG-HARD": {
     "state": "linked",
@@ -10574,7 +10665,8 @@
     "reason": "确定性等权或空客户子域已有位多项式算法。兼容的带区间共单例搜索可在全抽象输入域与 RQ 双向位多项式变换。一般异权选择仍开放，有限归位只给 ∏|A_i|−1 微步上界。两个异权的内部返路项虽为零，总势差仍为 8/2025，不能由等权返路证明一般时间或存在性反例。",
     "edge_ids": [
       "commonmany-bounded-complement-reexpresses-rq-search",
-      "commonmany-equal-flow-solves-equal-slice-of-rq"
+      "commonmany-equal-flow-solves-equal-slice-of-rq",
+      "commonmany-greedy-clipped-progress-rq-local-search"
     ]
   },
   "SC-K-STAR-LIGHT-GREEDY-2": {
@@ -10642,23 +10734,27 @@
     "reason": "G1重客户结构与G2/G3星心双锚闭环在完整S的d域、固定P/E/T/C菜单、受保护修复和局部强弦前提下共同排除无Cover回应环；再由固定菜单充分条件把双q·d成员完成为SC-PHI-E。该逻辑边是条件性承重链，当前fcf稿仍有guard/反射、首边/双锚无循环、C正负gap和等号退化端点的定向复审义务，故目标继续unassessed。未把有限3529/320/753等程序结果、PDF/TeX可读或历史候选标签冒作普遍证明。",
     "edge_ids": [
       "global-g1-g3-l1-l2-to-sc-phi-e",
+      "linear-phi-and-quadratic-equivalence-transfer",
       "local-chord-poly-and-menu-to-sc-phi-a"
     ]
   },
   "SC-PHI-SHARP": {
     "state": "linked",
     "object_pin": "df0afd48885fe2cf793412ec09ad8fc9db555cccb49c8360536cd37fa23c3428",
-    "comparison_scope": "3B cubic-phi-lower-3b-3b-eeadc83c13155dae: 实读 v2 下界正文并核对原有理整数输入与目录入口，重算六客户覆盖和严格覆盖总重次序、十五个异址及六个同址表项的指定偏离与收益，核十个异址及五个同址偏离在五地点限制下仍可执行。分开比较符号族、共同有理化及固定整数例。",
-    "reason": "异址的唯一续局和指定异址偏离收益都保持。同址见证只消耗服务总重和较小标签收益上界，原正权、覆盖总重次序和收益余量可同时有理化。整数例的固定最优值也迁移，达到规则使用各异址唯一均衡及各同址独立对半。",
+    "comparison_scope": "3B cubic-phi-lower-3b-3b-eeadc83c13155dae: 实读 v2 下界正文并核对原有理整数输入与目录入口，重算六客户覆盖和严格覆盖总重次序、十五个异址及六个同址表项的指定偏离与收益，核十个异址及五个同址偏离在五地点限制下仍可执行。分开比较符号族、共同有理化及固定整数例。\n3A facility-3a-3a-650824f39253ba6d: 六/五站下界正文完整权表、十五异址/六同址排除、统一有理化、五站限制与整数例，比较三四地点阈值及当前一般φ待审稿。",
+    "reason": "异址的唯一续局和指定异址偏离收益都保持。同址见证只消耗服务总重和较小标签收益上界，原正权、覆盖总重次序和收益余量可同时有理化。整数例的固定最优值也迁移，达到规则使用各异址唯一均衡及各同址独立对半。\n每个a<φ先选余量再统一扰动，严格reach保证异址唯一、同址按总重下界，无需NE连续。五站保全实际偏离，对所有N≥5给τ_N≥φ。四站严格更低。与一般φ上界配对仍需后者自己的证明。",
     "edge_ids": [
       "rational-five-six-site-phi-lower-transfers-to-cubic"
     ]
   },
   "SC-SPARSE-4": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "722b249e45b0b056c4856c714a2d0f07dd7a98eee53c2f048197f65d06085e05",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-650824f39253ba6d: 同一阈值正文的四地点失败链、两个五客户族，核原ε=1/1000、z=19/12例及无损有理z域。比较三地点及五地点φ下界。",
+    "reason": "至多三地点由已证√2覆盖。恰四站r³=4给B>rD>r²C/2>r³B/4=B，独立的五客户AD在轨族给正有理最优值趋∛4。6327/4000严格大于√2。五站已知下界不解除一般φ上界。",
+    "edge_ids": [
+      "fac6508-three-site-threshold-smaller-catalog-branch"
+    ]
   },
   "SC-THREE-DEC1-HARD": {
     "state": "needs-decision",
@@ -10679,16 +10775,23 @@
     "reason": "Assign a concrete comparison task"
   },
   "SC-TWO-REACH-SPARSE": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "792b16587b8324da1bdef34b6257c114892f75bb43fb036e1495c1f5a4c97889",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-650824f39253ba6d: 两reach定理的高高a≤2(R−L)、H(h)=L、高低与低低分支、真威胁补全和14/13反例。对照全同reach、两站和正规形。",
+    "reason": "等reach单交叠可用全概率区间，高低唯一客户严格选低侧。高高小a时两方候选都够。其余先使高站威胁恰L，再比较低站最高高低收益与低低威胁。对照正规形必要时换对半同址。14/13只排删除单交叠的加强式。",
+    "edge_ids": [
+      "fac6508-diagonal-upgrade-for-two-reach",
+      "fac6508-equal-reach-base-of-two-reach"
+    ]
   },
   "SC-TWO-SITE-EXACT": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "5a96f7ea9a0f12be208706d256b52832509e411a33cf22b2375fbcdab3b5eed0",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-650824f39253ba6d: 最多两站证明、四个有序布局的纯异址/反射与同址对半，以及三站阈值正文的≤2基例。",
+    "reason": "任取一个异址纯NE，若两同址偏离均不超当前收益便保持该对。若一方会提高则改该对手地点同址，两家外移都由原异址与反射压住。异址不需要单交叠，故在稀疏目录中给更强基例。",
+    "edge_ids": [
+      "fac6508-two-site-base-of-three-site-threshold"
+    ]
   },
   "SEALED-CAP-WELFARE-v1": {
     "state": "needs-decision",
@@ -20614,10 +20717,13 @@
     "reason": "Assign a concrete comparison task"
   },
   "facility-games/all-cross-single-overlap-interval-optimum-and-attainment-check": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "8ba3d044e8d0d140b814be35856e73cfa7ee92af3b1e74c6b327058094e3bfc2",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-76480373938c02e2: 实读全交叉单交叠正文、全目录威胁配额、显式多面体、A06实例最优接口、同址正规形版本及单交叠原入口审查。",
+    "reason": "每格的唯一共同客户比较确定A+w和B+w，平局保整区间；同客户同两端严格单调变换也保这一局部比较及平局。全域极小后夹平衡点，标签偏离分别取对应端点。合法同址亦受一客户限制，不覆盖仅异址单交叠的大同址。历史104输入611布局、399证书profile是有限检查，verify只认证达到，非最优或否定报告。",
+    "edge_ids": [
+      "full-directory-quotas-to-single-overlap-clamp"
+    ]
   },
   "facility-games/box-slice-square-endpoint-exchange": {
     "state": "needs-decision",
@@ -20690,10 +20796,10 @@
     "reason": "shared-model 仅定义所有对象共用的博弈、NE 和 d/u 语义；按任务要求不因共享定义机械建立 hub 边。其定义已作为 heavy→star、menu→algorithm 和两条 contextual 边的条件/证据读取，无独立逻辑结论需链接。"
   },
   "facility-games/common-two/shared-phi-manuscript-source-and-pdf-continuation-review-20261031": {
-    "state": "needs-decision",
+    "state": "isolated-after-review",
     "object_pin": "b481f5d8ac17a1779bbe07a6e10ca31902bd7998fdd9cc191e1d6c820b95121a",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-650824f39253ba6d: 25页旧冻结稿接续审查全部数学域与状态、26页修订稿资源中的菜单充分性、当前版本指纹与待付义务。",
+    "reason": "两版共同承重是固定反射菜单及全目录d、两偏离族不相交、双配额的充分性。25页TeX/PDF的审查证据不同于26页修订版。任意坏环/两锚/构造位长须按本版检查，未由通读或局部有限实验升级。只有语境关系。"
   },
   "facility-games/common-two/star-anchor-closure": {
     "state": "linked",
@@ -20706,10 +20812,10 @@
     ]
   },
   "facility-games/fixed-heavy-support-near-band-branches-and-precision-boundary": {
-    "state": "needs-decision",
+    "state": "isolated-after-review",
     "object_pin": "a55790744b94164ffcca6bc1058f31bbe8ed83dfc20397ac276e77681c4d7e06",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-650824f39253ba6d: A15全四分支与十份示例，比较完整闭支持/MITM精确单谷、同布局目标代表和证书。核固定重支持与全局候选的区分。",
+    "reason": "k=0列表残差，|D|≤S用一个轻混合校准，D>S用t≤t*保持完备并处理k=1，D<−S反射。用A15.3的同支持Δ=3/8与对半Δ=0精确说明不能替代指定差或极值查询。C²近似尚需全布局/位长/输出复核。"
   },
   "facility-games/general-construction-workshop-and-frozen-certificate-contract": {
     "state": "needs-decision",
@@ -20724,10 +20830,10 @@
     "reason": "Assign a concrete comparison task"
   },
   "facility-games/heterogeneous-four-seed-runtime-and-five-fixtures": {
-    "state": "needs-decision",
+    "state": "isolated-after-review",
     "object_pin": "221b80d8d1ad525764e67f2ecab55607d6feb77fccb4a63888f269cd1de97a5d",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-76480373938c02e2: 实读maximum_only原suite、五份冻结输入及守卫/核验合同，并分开后续four_seed运行；比较HC-2-UP及HC-2-LOW。",
+    "reason": "500随机例、其内150完整支持比较、1500一般目录与五份定向完整默认是有限证据。M=1000两文件同数学输入，335/169由唯一续局使菜单等于真最优；六环精确稳定、八环亚ρ坏例分别不能冒作普遍反例或上界。-O拒六种篡改，说明字段不在verify合同，未获普遍四种子覆盖。仅有语境检查边。"
   },
   "facility-games/heterogeneous-hardness-appendices-final-audit-continuation-20261031": {
     "state": "needs-decision",
@@ -20754,26 +20860,26 @@
     "reason": "Assign a concrete comparison task"
   },
   "facility-games/heterogeneous/response-core-and-long-cycle-sources-independent-review-20261031": {
-    "state": "needs-decision",
+    "state": "isolated-after-review",
     "object_pin": "8dc72fb6d9e336f31f74dc54e00680e7eff4cb5f9b55fc764b0deed9f137e5f0",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-650824f39253ba6d: 三源补充审查的§1.1–1.3与§2–3，抽象配额/双色核心、POLY-CONT的闭核失最优及MITM精确查询。",
+    "reason": "全目录D在双色闭核内保留且可以提升给定证书，不保证固定小核心或保全局最优。M=4n²普通长环不反驳ρ。单侧目标严格轻权可吸入低侧背景、边界不能删，压缩后可用MITM但战略客户数仍指数。四种子候选和已登记的其他因子二证明边界分开。"
   },
   "facility-games/heterogeneous/universal-factor-two-response-cycle": {
     "state": "linked",
     "object_pin": "e06e043ab74b0966287adfaed99980b43b3c8a9a20c5d7e2b994ab49893bc205",
-    "comparison_scope": "3A facility-3a-3a-2caa6864ec2d626e: 实读v2通用定理正文、双目录模型、异构入口「一般异构目录：普遍尖锐常数二」、总入口「现行结果和各分支去向」及独立审计第2节；并比较抽象配额M-6bc68711d244467dbdb4cf0cdd0fc085、双色闭核心CORE-LIFT和守卫修复M-7c7cfc38cb10411e8b8b5f9ee5747b77。逐项复核全singleton种子及纯NE、坏环正归一化、半重客户沿环传播、最大回应边的真实原子转移集X、C–F及B–G合法异色弦和h≥e/2、h<e/2两分支，保任意目录、同址、相等reach、空覆盖/零威胁与全部实际偏离。旁读HC-2-LOW六顶点和HC-2-UP固定四种子，比较共同目录与单交叠ρ的模型域。",
-    "reason": "两条独立的局部贡献分别给非空全singleton菜单构造和从达标纯菜单成员向全目录的精确补全。取E为全singleton纯菜单并使每个环点保有全目录最大最小回应，不能用真实全混合NE极小值取代菜单极小；重客户排除及双弦两分支才保证任意输入有达标见证。有理复杂度另要求显式覆盖与二进制正有理权。HC-2-LOW以各格唯一NE、CE、CCE的两共同客户族给同模型的独立下界，α*(M)=2−18/(M+14)，与本上界闭合为锐常数2；下界既不推出上界，也不在每格至多一共同客户的ρ类。U1=U2=S且复制两设施标签只给共同双设施因子2纯续局特例，无法推出共同目录φ或多设施k>2结论；顺序CAG的历史、客户行为和覆盖目标没有对应。四种子F虽包含于全singleton菜单R，但一般u_F≥u_R且D_F≥D_R，R见证可能不在F，不能从菜单包含推出HC-2-UP。原文「有限纯均衡菜单和守卫修复」的“此前移动客户重量不降”应为“移动客户重量不增”：首次翻转前差递减，原高侧候选集合嵌套递减，逐步最大权不增，故先前移动权均至少为最后一步；A08与独立审计2.1给出正确方向。原文YAML头缺少闭合分隔符，边证据使用全文指纹，审读说明精确标出正文节。 已发布的3B定向比较使用F的自身威胁，核对环可见最大重客户能否精确对应每边事先规定的singleton，以及两条弦是否只依赖纯菜单和全目录威胁。",
+    "comparison_scope": "3A facility-3a-3a-2caa6864ec2d626e: 实读v2通用定理正文、双目录模型、异构入口「一般异构目录：普遍尖锐常数二」、总入口「现行结果和各分支去向」及独立审计第2节；并比较抽象配额M-6bc68711d244467dbdb4cf0cdd0fc085、双色闭核心CORE-LIFT和守卫修复M-7c7cfc38cb10411e8b8b5f9ee5747b77。逐项复核全singleton种子及纯NE、坏环正归一化、半重客户沿环传播、最大回应边的真实原子转移集X、C–F及B–G合法异色弦和h≥e/2、h<e/2两分支，保任意目录、同址、相等reach、空覆盖/零威胁与全部实际偏离。旁读HC-2-LOW六顶点和HC-2-UP固定四种子，比较共同目录与单交叠ρ的模型域。\n3B hetero-guarded-cycle-3b-3b-a0dca5e2d4920bd0: 实读v2通用定理的全singleton种子、威胁配额、重客户、最大边、两弦与位长，对照历史universal_two_prior正文和原A08/A09；共享3A已证的逐种子守卫修复贡献。",
+    "reason": "两条独立的局部贡献分别给非空全singleton菜单构造和从达标纯菜单成员向全目录的精确补全。取E为全singleton纯菜单并使每个环点保有全目录最大最小回应，不能用真实全混合NE极小值取代菜单极小；重客户排除及双弦两分支才保证任意输入有达标见证。有理复杂度另要求显式覆盖与二进制正有理权。HC-2-LOW以各格唯一NE、CE、CCE的两共同客户族给同模型的独立下界，α*(M)=2−18/(M+14)，与本上界闭合为锐常数2；下界既不推出上界，也不在每格至多一共同客户的ρ类。U1=U2=S且复制两设施标签只给共同双设施因子2纯续局特例，无法推出共同目录φ或多设施k>2结论；顺序CAG的历史、客户行为和覆盖目标没有对应。四种子F虽包含于全singleton菜单R，但一般u_F≥u_R且D_F≥D_R，R见证可能不在F，不能从菜单包含推出HC-2-UP。原文「有限纯均衡菜单和守卫修复」的“此前移动客户重量不降”应为“移动客户重量不增”：首次翻转前差递减，原高侧候选集合嵌套递减，逐步最大权不增，故先前移动权均至少为最后一步；A08与独立审计2.1给出正确方向。原文YAML头缺少闭合分隔符，边证据使用全文指纹，审读说明精确标出正文节。 已发布的3B定向比较使用F的自身威胁，核对环可见最大重客户能否精确对应每边事先规定的singleton，以及两条弦是否只依赖纯菜单和全目录威胁。\n全singleton证明只有重客户排除需要定向singleton。固定四种子须先证明环中最大(w,−ID)客户恰为各边预定者，再在该菜单自己的最大极小回应图上重做纯见证与两弦。较大菜单的定理陈述不是四种子证明前提。菜单极小值确能不同：仅一合法布局，三名共同客户重1、1、2，第一端无独占、第二端有独占重1；两全侧种子修复和重2的两singleton都给(2,3)，全singleton另保留一名重1客户独在第二端的(3,2)纯NE，故第二端全目录威胁从较大菜单的2变为四种子的3。这个例子区分威胁而保留两种算法的存在性。共享3A边的作用仍限较大菜单的构造及局部复杂度。",
     "edge_ids": [
       "guarded-repair-to-heterogeneous-all-singleton-menu",
       "menu-quotas-and-response-core-to-heterogeneous-factor-two"
     ]
   },
   "facility-games/lazy-maximin-ring-original-entry-and-finite-regression": {
-    "state": "needs-decision",
+    "state": "isolated-after-review",
     "object_pin": "098361c9894aa7bcc2ba77eded80e2bf8e3c3518acd1a8622150d6939e013038",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-76480373938c02e2: 实读lazy入口回归、MITM剪枝、贪心默认与抽象多面体闭核限制；对照原测试和独立tiny证书补全。",
+    "reason": "30例和350剪枝核已访问列d与full相等及α*≤α_K，未核两路径tie-map一致。tiny独立脚本重算1在轨、8偏离、16默认，转回第二设施须反射。原输出不带可执行默认；末尾φ断言与有限运行不提供环普遍证明。仅有语境核验边。"
   },
   "facility-games/learning-core-02-04-mathematics-review": {
     "state": "needs-decision",
@@ -20798,22 +20904,22 @@
     "reason": "Assign a concrete comparison task"
   },
   "facility-games/shared-catalog-five-repairs-proof-review-scope": {
-    "state": "needs-decision",
+    "state": "isolated-after-review",
     "object_pin": "1597d7c611f4d8d30a9fd546050cd176d2c4726b7da9eff335167fd6abc90a2f",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-76480373938c02e2: 实读五处修订审查、冻结SC-PHI-E存在性陈述及旁支程序的真实验证合同；比较源报告的1项S1、4项S2。",
+    "reason": "E弱配额与强reach误用区分；大对弦依全无见证域；正gap前先排除reach不降；固定x的L_B−L_A<x是全中间态不变量；强弦有新增分支说明而仍须核时间及等号。局部重推/有限支持不能推出任意环与一般构造；语境边精确定位所查修订。"
   },
   "facility-games/shared-catalog-golden-ratio-current-manuscript": {
-    "state": "needs-decision",
+    "state": "isolated-after-review",
     "object_pin": "c6da2b4e7782c188c8ca5ec602f683b0c53990842d0e5ea2e8b165773e4b20fa",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-650824f39253ba6d: 1125行26页修订稿的登记正文数学合同，25页不同版审查、定向强弦与盒截面证明、三混合、五/六站独立下界及有限模块说明。",
+    "reason": "固定P/E/T/C、双qd见证和全目录离轨补全的充分性可用。F=582/654和40/39只限制局部解释，五站族只给全称上界的下界配对。完整全局任意环覆盖、cycle transport、星/双锚等号与构造的定向审查仍按版本保留。"
   },
   "facility-games/shared-catalog-side-code-contracts-and-exact-replay": {
-    "state": "needs-decision",
+    "state": "isolated-after-review",
     "object_pin": "5b07d1d333bab1c7506c42d206338df91d94225e6f9d60cebed5d862e2af9acc",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-76480373938c02e2: 实读共享旁支计算、当前修订审查及随后取回依赖的原入口接续；对照生产者、异址全支持与独立verify_phi三个合同。",
+    "reason": "生产者全目录扫固定菜单、不能当真实α*优化。异址求解器依正规形求真正α*、其短证书只证达到。独立verify_phi还重建指定纯默认，检查整个规则及精确φ，但不证一般存在或菜单最优。旧批缺依赖未跑原三suite，后续确实通过753、6和11项；两阶段不混成同一次运行。只建语境检查边。"
   },
   "facility-games/shared-four-site-fptas-and-menu-source-review-20261031": {
     "state": "needs-decision",
@@ -20828,10 +20934,13 @@
     "reason": "Assign a concrete comparison task"
   },
   "facility-games/three-mixers-needed-for-local-cross-quota": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "3abb96f75d874b3a667dfe7b1190d8a9881b82cebaa6b60e8d99912e7c473b53",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-650824f39253ba6d: 三混合必要例全文、完整闭支持方程、计算中7类精确枚举和on_path_chord、页24示例的不同初始种子作用、独立攻击审计相应局部小节。",
+    "reason": "40/39及三权20的全部NE分型为3纯、0单混合、3双混合、1三混合。只有(277/4,279/4)满足两强配额。≤2实际混合不是合法局部截断。负载不是概率网格所得，且不排其他全局在轨选择。",
+    "edge_ids": [
+      "fac6508-full-support-certifies-three-mixer-counterexample"
+    ]
   },
   "facility-games/three-teaching-blind-reviews-full-evidence-boundaries": {
     "state": "needs-decision",
@@ -20840,10 +20949,15 @@
     "reason": "Assign a concrete comparison task"
   },
   "facility-games/threshold-meet-in-middle-objectives-and-response-pruning": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "52c837474f6bfe98b72a3b9069775c4d15ab71b091afa040eee0ef709ea73930",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-650824f39253ba6d: 半表正文全部接口、闭支持谱、阈值DP重前缀、A11.5/6/7、435+12有限核验、异构目标压缩和原lazy求值的确切tie-break。",
+    "reason": "半表给同(m,z)等价和两侧最近点，m=1核零分子保区间。可替代EXACT-KAPPA的局部两极值/一次在轨目标，不替代全目录拼接。新增六客户(B,D,A,C)例中原lazy环[0,2,3]为14/13而全局1，运行两MITM入口和闭支持核合。仅限制环内最优的加强解释。",
+    "edge_ids": [
+      "fac6508-mitm-local-oracle-for-exact-continuations",
+      "fac6508-spectrum-threshold-half-table-reduction",
+      "single-valley-half-table-to-common-catalog-instance-optimum"
+    ]
   },
   "facility-games/two-facility-pure-improvement-move-bounds-and-default": {
     "state": "needs-decision",
@@ -20852,16 +20966,19 @@
     "reason": "Assign a concrete comparison task"
   },
   "facility-games/two-facility-two-catalog-model-and-complete-exact-continuation": {
-    "state": "needs-decision",
+    "state": "isolated-after-review",
     "object_pin": "d4a962894463c9a641484232eff48bfae3a3e4b84421b27ba5176867d9ee28b5",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-76480373938c02e2: 实读双目录模型、局部条件成本、完整规则、配额接口；与共同目录MITM、全交叉单交叠、地点费用和四种子比较。",
+    "reason": "自重修正给差Δ+w_i(1−2p_i)，精确续局逐U1×U2布局，实际偏离排不动项。U1≠U2时反射布局可非法，真实极小与菜单极小须分别使用；共同目录与特殊费用的应用各有额外假设。保留模型作为证据和条件，不给所有后续对象挂定义边。"
   },
   "facility-games/two-reach-three-site-multiple-overlap-no-exact-stability": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "a997bcf0c2e890b2eb354c2f3e39b0aeaa5ac5aaca9f9fd73adb34a844d0c3ec",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A facility-3a-3a-650824f39253ba6d: 五客户反例三种异址全谱、六类倍率下界、BC达到、真H及对角公式。对照删单交叠的两reach加强式、固定菜单运行及MITM补充实例。",
+    "reason": "14/13严格大于1，AB/BC分别两个共同客户，完整全部有序布局/连续独立混合已排除。正规形的同址及严格异址替换确认达到。在另加私有站D后原三站恰成旧回应环，核不保全局最优的精确作用域。",
+    "edge_ids": [
+      "fac6508-diagonal-evaluation-of-two-reach-example"
+    ]
   },
   "fair-allocation/complete-coverage-rounding-obstruction": {
     "state": "needs-decision",
