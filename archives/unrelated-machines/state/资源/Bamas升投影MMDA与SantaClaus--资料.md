@@ -38,12 +38,16 @@ Sherali–Adams (SA) 的分布判据（文中 Theorem 6）是：若对每个至�
 
 # 3. 深度 3 的一轮 SA 间隙
 
-固定小常数 (\rho>0)、地面集 (U=[m])。四层 (L_0,L_1,L_2,L_3) 的顶点分别标记为空集、大小 (\rho m) 的子集、大小 (2\rho m) 的子集、大小 (\rho m) 的子集；相邻层只有包含关系的边（扩张段为 (S_u\subseteq S_v)，收缩段为 (S_v\subseteq S_u)）。需求 (k_s,k_1,k_2) 选成二项式比值，使整数解在三层分别需要
+固定小常数 (\rho>0)、地面集 (U=[m])。四层 (L_0,L_1,L_2,L_3) 的顶点分别标记为空集、大小 (\rho m) 的子集、大小 (2\rho m) 的子集、大小 (\rho m) 的子集；相邻层只有包含关系的边（扩张段为 (S_u\subseteq S_v)，收缩段为 (S_v\subseteq S_u)）。需求 (k_s,k_1,k_2) 选成二项式比值。由同冻结原件第 19 页的
+\(k_s=\binom m{\rho m}/\binom{(1-\rho)m}{\rho m}\)、
+\(k_1=\binom{(1-\rho)m}{\rho m}/\binom{2\rho m}{\rho m}\)、
+\(k_2=\binom{2\rho m}{\rho m}\)，无损分支需求的三层规模基准分别为
 \[
-|T\cap L_1|=\binom{m}{\rho m}/\binom{(1-\rho)m}{\rho m},\quad
-|T\cap L_2|=\binom{m}{2\rho m}/\binom{\rho m}{\rho m},\quad
-|T\cap L_3|=\binom{m}{\rho m}.
+N_1=k_s=\binom{m}{\rho m}/\binom{(1-\rho)m}{\rho m},\quad
+N_2=k_sk_1=\binom{m}{\rho m}/\binom{2\rho m}{\rho m},\quad
+N_3=k_sk_1k_2=\binom{m}{\rho m}.
 \]
+这是需求连乘的基准，不是任意有损解的等式。若每个已选非汇点只需满足需求除以 \(\alpha\)，单父性给各层规模至少 \(N_1/\alpha,N_2/\alpha^2,N_3/\alpha^3\)；实际整数度数还须向上取整。
 图规模 n = 2^(Theta(m))，所有非汇点需求为 n^(Omega(1))。
 
 **Theorem 1（作者主结果）。** 对充分大 (n)，存在深度 3、规模 \(\Theta(n)\) 的 MMDA 图，所有 (k_u=n^{\Omega(1)})，其 assignment LP 的一轮 SA 仍有至少 (n^{\Omega(1)}) 的 integrality gap。该轮数下界对一般 SA 也成立，且作者指出深度 3 上两轮已知把 gap 降到 polylog，因此在轮数意义上是紧的（此处“已知”来自论文引用，本批没有外部复核）。
@@ -59,7 +63,7 @@ SA 可行性的核心不是独立边抽样，也不是直接复现已有 roundin
 
 # 4. 任意深度的 lift、path hierarchy 和局部好解
 
-取参数 (\varepsilon=3/\ell)，令 (\ell=3/\varepsilon=o(\log n/\log\log n))，并要求 \(\varepsilon m=\omega(\log m))。扩张阶段 (i<2/\varepsilon) 的标签集大小为 (i\varepsilon\rho m)，收缩阶段 (2/\varepsilon\le i\le3/\varepsilon) 的标签集大小为 (4\rho m-i\varepsilon\rho m)。相邻标签仍以包含关系连边；分层需求 (k_i) 通过三段常数 \(\gamma'_1,\gamma'_2,\gamma'_3) 校准，使整数解在 (L_{1/\varepsilon},L_{2/\varepsilon},L_{3/\varepsilon}) 的规模分别等于上述三项二项式比值。
+取参数 (\varepsilon=3/\ell)，令 (\ell=3/\varepsilon=o(\log n/\log\log n))，并要求 \(\varepsilon m=\omega(\log m))。扩张阶段 (i<2/\varepsilon) 的标签集大小为 (i\varepsilon\rho m)，收缩阶段 (2/\varepsilon\le i\le3/\varepsilon) 的标签集大小为 (4\rho m-i\varepsilon\rho m)。相邻标签仍以包含关系连边；分层需求 (k_i) 通过三段常数 \(\gamma'_1,\gamma'_2,\gamma'_3) 校准，使无损分支需求在 (L_{1/\varepsilon},L_{2/\varepsilon},L_{3/\varepsilon}) 的规模基准分别为上述 N_1、N_2、N_3；带损失参数的整数树仍须逐层支付相应因子。
 
 文中 Theorem 2：存在绝对常数 (c>0)，对充分大 (n) 与 (\ell\in\Omega(1)\cap o(\log n/\log\log n))，有规模 \(\Theta(n)\)、深度 \ell 的图，其 path hierarchy 在至少 \(\ell/c\) 轮后仍有 (n^{\Omega(1/\ell)}) 的 integrality gap。该结论基于路径变量
 \[
@@ -99,3 +103,7 @@ Theorem 4：存在多项式算法，把 restricted-assignment 实例变成 canon
 Boss3 的[定点核验记录](../../../customer-attraction/tools/evidence/cag-um-direct-encoding-review-primary/bamas-frozen-metadata-review.json)对应同一源 `80209b36a2ca6ee50b17`、825616B、SHA `e1120098a847eb10689c529579af5d44b93ee5f6e655eae7621a2333bf76e8de`；[只读原件](../../../customer-attraction/tools/evidence/cag-um-direct-encoding-review-primary/related-original/bamas-frozen-v2.pdf)的页树 `/Count` 与 pypdf 页数均为 56。本次 `pdfinfo` 因环境缺少 `libpoppler.so.160` 返回 127，实际成功依据是 PDF 页树与 pypdf，不倒填 Poppler 成功。公开 PDF 的二进制没有下载比较，因此不声称公开文件与冻结副本字节相同。
 
 第 1 页的定义和第 3 页脚注确认：需求写成 (k_v/alpha) 时 (alpha) 是越小越好的损失；MMDA 实例归约到 Santa Claus，因此 Santa Claus 算法给 MMDA 算法。第 44 页 Questions 3、4 与第 56 页末页也已定点读取。本文其它完整证明阅读继续保留其先前清洗的证据身份，本次没有重做 SA/path hierarchy 证明或重新完成该来源。与 CAG 的接口见[直接编码与原文献审查](../../../customer-attraction/state/审查/客户吸引与不相关机的归约边界及原文献核对--审查.md)。
+
+## 2026-11-09：同冻结原件的第二层需求连乘勘误
+
+Boss5/474257b8 定点复核同一 SHA `e1120098a847eb10689c529579af5d44b93ee5f6e655eae7621a2333bf76e8de` 的 PDF 第 19、33、34 页，并对第 19、34 页渲染核式。原本页第二层式误写为 `C(m,2ρm)/C(ρm,ρm)`；正确连乘为 `k_s k_1=C(m,ρm)/C(2ρm,ρm)`，第 34 页末式亦直接给此值。本次只修正文献转录及无损基准与有损树下界的区分，不修改冻结 PDF，不改变 Theorem 1 的一轮 SA 间隙陈述，也不把它转成一般不相关机困难性。

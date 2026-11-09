@@ -1,0 +1,43 @@
+---
+id: "unrelated-machines/distorted-group-source-schedules-independent-joint-slot-replay"
+kind: "computation"
+type_tag: "计算"
+title: "失真组真实源与非整数联合槽证书"
+status: "exact-finite-certificate-with-explicit-scope"
+summary: "从真实T调度形成共同见证，保非整数槽和实际前缀输出；独立打包oracle仅供固定输入核验。"
+source_refs:
+  - "clean:37be961c18178db990e0"
+  - "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/distorted_group_independent.py"
+legacy_ids:
+  - "UM-DISTORTED-GROUP-JOINT-SLOT-v1"
+  - "UM-DISTORTED-GROUP-PROMISE-APPROX-v1"
+---
+
+# 从真实源调度到实际前缀
+
+机器分不交homes和sinks。每个私有组h共home且共sink资格，home时间w_j满足W_h≤T、w_j≤δT；sink时间满足b_hz·w_j/κ≤q_hzj≤b_hz·w_j，0≤b_hz≤Bbar。宏的实际home端均>T/2。给1/2≤r<1−δ，定义d_h=(W_h−rT)_+。
+
+对一组真实T源调度作均匀混合；宏位置给a。对每个源态中d_h>0的被占home，宏>T/2迫实际出口e_h>W_h−T/2≥d_h>0，按各sink出口home体积归一给y，所以正需求的归一没有0/0；d_h=0的被占home走私有零成本旁路。对这些y取同一均匀混合，得到逐sink预算Σ_h b_hz d_h y_hz≤κT。
+
+按实际token成本c_hz=b_hz d_h降序切单位槽；d_h=0使用各home私有dummy。独立有限oracle枚举宏的正a home及正交槽，要求home和槽均不重复。它是指数打包检查器；一般算法使用整数流，见[失真组联合槽证明](../审查/失真组联合槽舍入与固定汇点占位双源审查--审查.md)。
+
+占宏home沿原任务顺序送一个前缀到所选sink，直至余量≤(r+δ)T。最后一件≤δT保证总出口≤d_h，故真实sink成本≤token成本。逐槽收费给
+
+\[
+L_{home}\le(1+r+\delta)T,\qquad
+L_{sink}\le[\kappa+\bar B(1-r)]T.
+\]
+
+[完整16份有限证书](../../tools/evidence/um-following-actual-code-primary/README.md)包含原input、真实source_schedules、共同a/y、macro_home_slot和每件private_assignment，全部宏和私有任务从原矩阵重新累加。对应五组参数如下。
+
+| δ,κ,Bbar | r | 负载界max(home,sink)/T |
+| --- | --- | --- |
+| 1/4,5/4,3/2 | 3/5 | 37/20 |
+| 1/5,6/5,2 | 2/3 | 28/15 |
+| 1/10,1,4 | 39/50 | 47/25 |
+| 0,3/2,5 | 11/12 | 23/12 |
+| 1/4,5/4,0 | 1/2 | 7/4 |
+
+确定性双home例的源分别向两个sink送2与1枚quarter任务，token质量4/3、2/3；恢复前缀首件实际成本3/10，虚拟预算1/2，覆盖了非整数末槽。另有127bit分母缩放、零目标私有全零、空任务与零profile资格的边界。旧“正需求无sink”诊断把W−T/2=1/2写入说明；其r=3/5的实际d=2/5，两者均正，守恒拒绝0=1不受影响。
+
+这些证书从真实源导出，并未枚举任意LP伪见证或实现通用LP/未知OPT搜索；固定参数检查不构成结构类最优近似因子的下界。

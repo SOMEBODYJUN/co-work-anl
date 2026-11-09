@@ -102,7 +102,7 @@ own-unit helper 的质量、gate 和 box 行给 `EA=EZ`，home cap 给 fallback 
 
 随后用固定中心平方势 `Psi=sum_i(W_i-mu_i)^2` 做条件期望去随机化，依次固定 helper states、正 request coins 和 resource rules，只在原条件概率为正的分支中选最小 conditional `E Psi`。single-resource 与 two-resource winner-pair moments 足够计算；同一 helper 在双资源事件中必须共享一个 state，若要求不兼容则该项为零。最终 `Psi<1/25` 给所有 `W_i>1/5`。
 
-取 `Good={j:Q_j>=1/10}`，由 `W_i<=z_i+(1/10)(1-z_i)` 得每个 outer 的 Good home mass `z_i>1/10`。Good helper 的实际 winner B bundle 交给其 outer，其他 helper 回 own home；全局 homes 互异、B 与 homes 不交、winner resources 单占。最后把完整普通 P(Q) 回填：selected-state 真 bundle 的正 incidence 送 exact resource，所有其它 incidence、inactive state payload、duplicate jobs、zero jobs 留 private。active private 至多 `19/10`，inactive private 至多 1，resource 至多 1。
+取 `Good={j:Q_j>=1/10}`，由 `W_i<=z_i+(1/10)(1-z_i)` 得每个 outer 的 Good home mass `z_i>1/10`。Good helpers 保留各自的实际 winner B bundle，并把各自 home 交给其 outer；其他 helper 回 own home；全局 homes 互异、B 与 homes 不交、winner resources 单占。最后把完整普通 P(Q) 回填：selected-state 真 bundle 的正 incidence 送 exact resource，所有其它 incidence、inactive state payload、duplicate jobs、zero jobs 留 private。active private 至多 `19/10`，inactive private 至多 1，resource 至多 1。
 
 `ec150` 明确自己是作者 proof read-after：未读取作者 `.py`、stdout 或运行日志。它支持这条数学承重链和全 jobs 语义，但不构成端到端软件验证、外部审查或一般 UM 证明。
 
@@ -165,3 +165,8 @@ W_i\ge\frac14-kd=\frac{1023}{4096}>\frac{19}{100}.
 **缺口。** 没有端到端实现、全 tiny-domain 重放、外部评审、全球新颖性或一般 UM 算法；没有把 source-gap 推论升级为 hardness。后续要完善，需实现并审计 common SA1 LP、requester winner oracle、MW/CE 或独立强凸路线、完整 all-job compiler，并分别处理 v4/k²/O(1/k) 扩域和多 state/重合-home 模型。
 
 本批三源正文、证据和 receipt 均不执行 commit、push 或 clean done；由 Boss2 在 checkpoint/pushed 后串行登记。
+
+
+## 第三阶段资源分配对象勘误
+
+本页原有回填段落误把 Good helper 的 B fallback bundle 写成 outer 的所得；现明确 Good helper 保留 B bundle，outer 取得对应 home。该处只更正资源领取对象；Good 阈值、福利界、完整原 jobs 回填和限定域均不变，冻结原证明与历史审查字节不改。

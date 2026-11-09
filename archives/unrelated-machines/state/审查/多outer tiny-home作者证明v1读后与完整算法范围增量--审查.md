@@ -140,8 +140,8 @@ selected state，若 requirements 不相容该项为零；这避免了把 shared
 重抽，也避免枚举指数 profile。全部概率和比较为有理，位长随输入与 LP 点多项式增长。
 
 最终 `Psi<1/25` 给 `W_i>1/5`。取 `q=1/10`，以 `Q_j>=q` 的 helpers 为 Good，有
-`W_i<=z_i+q(1-z_i)`，故每个 outer 的 Good home weight `z_i>1/9>1/10`。Good
-fallback winner bundles 交给 outer，其余 helper 回 own，得到每个 group value 至少
+`W_i<=z_i+q(1-z_i)`，故每个 outer 的 Good home weight `z_i>1/9>1/10`。Good helpers 保留各自的
+fallback winner bundles，并把各自 home 交给 outer；其余 helper 回 own，得到每个 group value 至少
 1/10；完整回填所有 jobs 产生 `C_max<=2-1/10=19/10`，而 `OPT>=1`，所以是
 19/10 approximation。
 
@@ -165,3 +165,8 @@ ordinary jobs。它没有覆盖多 state outer、重合 homes、一般 non-UD gr
 CE/Good 回填链均归档；既有 finite backend 审查保留软件运行和 hash，二者不合并为
 两份一般证明。第三阶段可建立“Exact → Author Proof → finite backend”关系，但必须
 保留作者先读 Exact、未实现 whole scheduler、有限 backend 不覆盖 tiny-home 全域等事实。
+
+
+## 第三阶段资源分配对象勘误
+
+本页原有回填段落误把 Good helper 的 B fallback bundle 写成 outer 的所得；现明确 Good helper 保留 B bundle，outer 取得对应 home。该处只更正资源领取对象；Good 阈值、福利界、完整原 jobs 回填和限定域均不变，冻结原证明与历史审查字节不改。

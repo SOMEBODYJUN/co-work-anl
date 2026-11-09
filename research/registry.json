@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-map-config-and-customer-round12-v1.json",
-    "sha256": "f795e0cc698164c8e0c07a92fc367d960f89d1f2c7465142f54b78e78f06ced1"
+    "path": "research/registration/baseline-map-um-errata-474257b8.json",
+    "sha256": "e0fe50a4d6685a55603f6337e682041e25e0f8d39c053e7e9d5bae74b64021d2"
   },
   "objects": [
     {
@@ -29464,7 +29464,7 @@
       "evidence": [
         {
           "path": "archives/unrelated-machines/state/审查/联合槽位与均匀束匹配有限审查--审查.md",
-          "sha256": "e302b076daaae47a01f5ec7cfebebf35405cb1104843b562111d094c5caa51b9",
+          "sha256": "c64cbd43bbba1451876ee4b6614af03d1aa9304f1e191f3ac0fac8e35221e152",
           "section": "3. 五任务配置：ST 槽位阶乘界的精确反例"
         },
         {
@@ -29473,14 +29473,14 @@
         },
         {
           "path": "archives/unrelated-machines/state/审查/联合槽位与均匀束匹配有限审查--审查.md",
-          "sha256": "e302b076daaae47a01f5ec7cfebebf35405cb1104843b562111d094c5caa51b9"
+          "sha256": "c64cbd43bbba1451876ee4b6614af03d1aa9304f1e191f3ac0fac8e35221e152"
         }
       ],
       "truth_status": "proved",
       "kind": "counterexample",
       "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。完整输入、配置权与实际图/好坏匹配在body三节；0095一般有界基数槽定理提及此例但无独立反例ID，本批保独立可引用身份。未把287/144当整数最优或配置gap。",
       "object_id": "M-4803f99cd96f4e83ad8d2a7252a0564c",
-      "version": 2,
+      "version": 3,
       "sources": [
         "archives/unrelated-machines/state/计算/五类配置槽包络的实际好坏匹配原程序--计算.md",
         "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
@@ -30008,6 +30008,53 @@
         "archives/customer-attraction/state/计算/条件尾负载全价格加强的二十客户精确诊断--计算.md",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round3/relay/audit_conditional_transport.py",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round3/relay/conditional_transport_audit.json"
+      ]
+    },
+    {
+      "object_id": "M-4aa4bcc7358b4ab8bf1bc53f57d3f1d1",
+      "version": 1,
+      "title": "任意资源度完整菜单到固定三坐标零格的精确保值迁移",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "显式完整flat菜单普通UM：有限非空组，每组非空indexed states；每state独立private机、每资源独立资源机，每组一件在本组各private耗时1的selector；每个(g,s,u)为不同原incidence，只在自身private耗非负有理p_gsu或真实共享资源机耗1；未列端∞，所有未选state/零权任务也保留，无隐藏预载。",
+      "statement": "对任意有限非空、每组非空indexed菜单、每state非负二进制有理private总质量W≤1的显式完整flat普通UM P，无资源跨组度限制，可确定性总位多项式构造E(P)=C(D(P))。目标每变量为独立tag的完整[3]^3资源，每state在每个本组变量取完整九格切片，允许零cell及同label向量异成本；资源组度≤3，Kmax(E)≤max(Kmax(P),2)。全部实际C<2完整调度双向峰不增，OPT(E)=OPT(P)含端点2；C≥2可改用两侧全private≤2基线。仅当原输入逐state W=1时，还保持全部正partial阈值及V(E)=V(P)含零。",
+      "quantifiers": "∀上述显式完整P，无需OPT或源见证，∃总位多项式真实普通UM构造及逐原任务调度转换；低峰阈值双向，归一化域∀v∈(0,1]partial可行性等价。",
+      "assumptions": [
+        "保留所有原selector、incidence、零权、未选state任务和unused资源，原incidence按身份映射",
+        "目标允许private零权辅助任务与indexed同label异成本，资源端时间为1",
+        "路径降度先于切片表示；后一步的度≤3前件由前一步实际保证",
+        "正partial/V保持只在原输入逐state W=1时使用；一般W≤1不附加V_raw或V_base等式"
+      ],
+      "scope": "正文既有组成推论的独立可复用目标；消除原三坐标表示的输入资源度限制。保菜单大小上界而不保原组数、组交互度M或正权畸变κ；固定几何维数与标签数三不产生困难性源、全正权表示或label唯一定价。",
+      "objections": "完整路径正文§8已有复合接口，结合两正文完整两向证明核对；不是把解码桥本身当最终调度命题。高峰分支的全private替代不保给定调度的外送决定。新增零格对unit阈值不提供额外一致性。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/完整菜单的资源度三路径归约--定理.md",
+        "sha256": "afb7a6751e65f5e968a2b8798b8ba284983d64694fde1a463dae991b0018bb34"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定理/三坐标零权切片的精确菜单嵌入--定理.md",
+          "sha256": "986db069a11f89723aa3378bee60252d9a2e89bc807ecabe759973f8797861e9"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/flat_menu_resource_degree_three_path_reduction_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/flat_menu_resource_degree_three_path_reduction_exact_v1.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/flat_menu_resource_degree_three_path_reduction_exact_v1.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/flat_menu_resource_degree_three_path_reduction_proof_v1.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/flat_menu_resource_degree_three_path_reduction_proof_v1.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/flat_menu_resource_degree_three_path_reduction_rainbow_canonical_sections6_7_read_after.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/flat_menu_resource_degree_three_path_reduction_rainbow_canonical_sections6_7_read_after.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/flat_menu_resource_degree_three_path_reduction_rainbow_exact_only_review.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/flat_menu_resource_degree_three_path_reduction_rainbow_exact_only_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/flat_menu_resource_degree_three_path_reduction_rainbow_final_attribution_note.md",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/flat_menu_resource_degree_three_path_reduction_rainbow_final_attribution_note.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/degree_three_weighted_menu_cube_embedding_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/weighted_menu_bounded_group_interaction_rounding.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/normalized_flat_menu_three_state_degree_three_normal_form_review.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/normalized_weighted_menu_santa_value_and_size.md"
       ]
     },
     {
@@ -36278,7 +36325,7 @@
     },
     {
       "object_id": "M-68e534b8b5c1428d990961b1dfae1cb2",
-      "version": 1,
+      "version": 2,
       "title": "受限Santa Claus 的高轮SA间隙",
       "kind": "literature-obstruction",
       "truth_status": "proved",
@@ -36290,7 +36337,7 @@
       "objections": "按所列模型、量词和证据范围使用。",
       "body": {
         "path": "archives/unrelated-machines/state/资源/Bamas升投影MMDA与SantaClaus--资料.md",
-        "sha256": "ca4aeec52e027d9422e1519df4eca40932c4538c3820a267c82a55540521d817",
+        "sha256": "82b415629a91f831b0a5b78c359340dd40195cf66955d35e8005366ea60e8b6c",
         "section": "5. restricted-assignment 附录的独立结果"
       },
       "evidence": [],
@@ -52625,7 +52672,7 @@
     },
     {
       "object_id": "M-b51f7575d2f44fe3a73e3ad594af67c6",
-      "version": 1,
+      "version": 2,
       "title": "Bamas 深度相关 path hierarchy 间隙及局部好解",
       "kind": "literature-obstruction",
       "truth_status": "proved",
@@ -52637,18 +52684,18 @@
       "objections": "按所列模型、量词和证据范围使用。",
       "body": {
         "path": "archives/unrelated-machines/state/资源/Bamas升投影MMDA与SantaClaus--资料.md",
-        "sha256": "ca4aeec52e027d9422e1519df4eca40932c4538c3820a267c82a55540521d817",
+        "sha256": "82b415629a91f831b0a5b78c359340dd40195cf66955d35e8005366ea60e8b6c",
         "section": "4. 任意深度的 lift、path hierarchy 和局部好解"
       },
       "evidence": [
         {
           "path": "archives/unrelated-machines/state/资源/Bamas升投影MMDA与SantaClaus--资料.md",
-          "sha256": "ca4aeec52e027d9422e1519df4eca40932c4538c3820a267c82a55540521d817",
+          "sha256": "82b415629a91f831b0a5b78c359340dd40195cf66955d35e8005366ea60e8b6c",
           "section": "2. MMDA 模型和松弛"
         },
         {
           "path": "archives/unrelated-machines/state/资源/Bamas升投影MMDA与SantaClaus--资料.md",
-          "sha256": "ca4aeec52e027d9422e1519df4eca40932c4538c3820a267c82a55540521d817",
+          "sha256": "82b415629a91f831b0a5b78c359340dd40195cf66955d35e8005366ea60e8b6c",
           "section": "2026-11-02：同冻结原件的页数与损失参数更正"
         }
       ],
@@ -57199,7 +57246,7 @@
     },
     {
       "object_id": "M-c99f51ac275e4ac09e860f75a108d704",
-      "version": 1,
+      "version": 2,
       "title": "受限Santa Claus的canonical化与一轮SA控制",
       "kind": "literature-theorem",
       "truth_status": "proved",
@@ -57211,7 +57258,7 @@
       "objections": "按所列模型、量词和证据范围使用。",
       "body": {
         "path": "archives/unrelated-machines/state/资源/Bamas升投影MMDA与SantaClaus--资料.md",
-        "sha256": "ca4aeec52e027d9422e1519df4eca40932c4538c3820a267c82a55540521d817",
+        "sha256": "82b415629a91f831b0a5b78c359340dd40195cf66955d35e8005366ea60e8b6c",
         "section": "5. restricted-assignment 附录的独立结果"
       },
       "evidence": [],
@@ -79532,7 +79579,7 @@
     },
     {
       "object_id": "UM-CLOSED-CYCLE-SINGLE-JOB-ESCAPE-THRESHOLD-v1",
-      "version": 2,
+      "version": 3,
       "title": "真实最优凸包闭环单任务逃逸的精确峰值",
       "kind": "reconfiguration-threshold",
       "truth_status": "proved",
@@ -79580,7 +79627,7 @@
         },
         {
           "path": "archives/unrelated-machines/state/审查/最优凸包长链与闭环逃逸有限审查--审查.md",
-          "sha256": "781f3f942fdeaede8c7dd7ab62ed973f9369fc2ff5fbc3bb14441361d0c5a0e7"
+          "sha256": "3f7432b2c5f5668e3570434a91e817f49c858bdd7c5e2fa3b234fcb1f62a63ed"
         }
       ],
       "sources": [
@@ -81528,7 +81575,7 @@
     },
     {
       "object_id": "UM-DISTORTED-GROUP-JOINT-SLOT-v1",
-      "version": 2,
+      "version": 3,
       "title": "组内异端畸变上下面包络的共同LP和槽流实际输出",
       "kind": "approximation-algorithm",
       "truth_status": "proved",
@@ -81555,7 +81602,7 @@
         },
         {
           "path": "archives/unrelated-machines/state/审查/联合槽位与均匀束匹配有限审查--审查.md",
-          "sha256": "e302b076daaae47a01f5ec7cfebebf35405cb1104843b562111d094c5caa51b9"
+          "sha256": "c64cbd43bbba1451876ee4b6614af03d1aa9304f1e191f3ac0fac8e35221e152"
         }
       ],
       "sources": [
@@ -81565,7 +81612,7 @@
     },
     {
       "object_id": "UM-DISTORTED-GROUP-PROMISE-APPROX-v1",
-      "version": 2,
+      "version": 3,
       "title": "组内异端畸变真实OPT承诺下的未知阈值近似",
       "kind": "promise-algorithm",
       "truth_status": "proved",
@@ -81587,7 +81634,7 @@
       "evidence": [
         {
           "path": "archives/unrelated-machines/state/审查/联合槽位与均匀束匹配有限审查--审查.md",
-          "sha256": "e302b076daaae47a01f5ec7cfebebf35405cb1104843b562111d094c5caa51b9"
+          "sha256": "c64cbd43bbba1451876ee4b6614af03d1aa9304f1e191f3ac0fac8e35221e152"
         }
       ],
       "sources": [
@@ -84369,7 +84416,7 @@
     },
     {
       "object_id": "UM-K-UNIFORM-BUNDLE-FLOOR-v1",
-      "version": 3,
+      "version": 4,
       "title": "可选资源束需求树的分层匹配精确值",
       "kind": "identity",
       "truth_status": "proved",
@@ -84424,7 +84471,7 @@
         },
         {
           "path": "archives/unrelated-machines/state/审查/联合槽位与均匀束匹配有限审查--审查.md",
-          "sha256": "e302b076daaae47a01f5ec7cfebebf35405cb1104843b562111d094c5caa51b9"
+          "sha256": "c64cbd43bbba1451876ee4b6614af03d1aa9304f1e191f3ac0fac8e35221e152"
         }
       ],
       "sources": [
@@ -84674,7 +84721,7 @@
     },
     {
       "object_id": "UM-LITERATURE-MMDA-SA-GAP-BAMAS-V2",
-      "version": 1,
+      "version": 2,
       "title": "Bamas 深度三 MMDA 的一轮SA间隙",
       "kind": "literature-obstruction",
       "truth_status": "proved",
@@ -84686,18 +84733,18 @@
       "objections": "按所列模型、量词和证据范围使用。",
       "body": {
         "path": "archives/unrelated-machines/state/资源/Bamas升投影MMDA与SantaClaus--资料.md",
-        "sha256": "ca4aeec52e027d9422e1519df4eca40932c4538c3820a267c82a55540521d817",
+        "sha256": "82b415629a91f831b0a5b78c359340dd40195cf66955d35e8005366ea60e8b6c",
         "section": "3. 深度 3 的一轮 SA 间隙"
       },
       "evidence": [
         {
           "path": "archives/unrelated-machines/state/资源/Bamas升投影MMDA与SantaClaus--资料.md",
-          "sha256": "ca4aeec52e027d9422e1519df4eca40932c4538c3820a267c82a55540521d817",
+          "sha256": "82b415629a91f831b0a5b78c359340dd40195cf66955d35e8005366ea60e8b6c",
           "section": "2. MMDA 模型和松弛"
         },
         {
           "path": "archives/unrelated-machines/state/资源/Bamas升投影MMDA与SantaClaus--资料.md",
-          "sha256": "ca4aeec52e027d9422e1519df4eca40932c4538c3820a267c82a55540521d817",
+          "sha256": "82b415629a91f831b0a5b78c359340dd40195cf66955d35e8005366ea60e8b6c",
           "section": "2026-11-02：同冻结原件的页数与损失参数更正"
         },
         {
@@ -85298,7 +85345,7 @@
     },
     {
       "object_id": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1",
-      "version": 2,
+      "version": 3,
       "title": "无额外叶single-state多outer旧k四次域19/10实际近似",
       "kind": "theorem",
       "truth_status": "proved",
@@ -85323,11 +85370,11 @@
         },
         {
           "path": "archives/unrelated-machines/state/审查/多outer tiny-home三源实际重读与版本边界增量--审查.md",
-          "sha256": "e2df323ff8dfb2e301c6293d0bc38bc3f971b847a6ff76dc1232482ca5160885"
+          "sha256": "f60a2c766fd86b6043e8c096fa5b80013cc24551b0ccfbcf1f521984d86b3a90"
         },
         {
           "path": "archives/unrelated-machines/state/审查/多outer tiny-home作者证明v1读后与完整算法范围增量--审查.md",
-          "sha256": "096b89fc8877455efe83ce134403cc796be1bacd6bc731f255dfe61eebb9c8ca"
+          "sha256": "0c95c432460594f87b37cf16ef506c519af242018380ea606215e9b02956e20d"
         },
         {
           "path": "archives/unrelated-machines/state/审查/多outer双资源后端与tiny-home算法边界有限审查--审查.md",
@@ -85358,7 +85405,7 @@
     },
     {
       "object_id": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4",
-      "version": 2,
+      "version": 3,
       "title": "有共享UD叶的单态多外层 tiny-home 19/10 v4",
       "kind": "algorithm",
       "truth_status": "proved",
@@ -85385,11 +85432,11 @@
         },
         {
           "path": "archives/unrelated-machines/state/审查/多outer tiny-home三源实际重读与版本边界增量--审查.md",
-          "sha256": "e2df323ff8dfb2e301c6293d0bc38bc3f971b847a6ff76dc1232482ca5160885"
+          "sha256": "f60a2c766fd86b6043e8c096fa5b80013cc24551b0ccfbcf1f521984d86b3a90"
         },
         {
           "path": "archives/unrelated-machines/state/审查/多outer tiny-home作者证明v1读后与完整算法范围增量--审查.md",
-          "sha256": "096b89fc8877455efe83ce134403cc796be1bacd6bc731f255dfe61eebb9c8ca"
+          "sha256": "0c95c432460594f87b37cf16ef506c519af242018380ea606215e9b02956e20d"
         },
         {
           "path": "archives/unrelated-machines/state/审查/多outer双资源后端与tiny-home算法边界有限审查--审查.md",
@@ -85406,7 +85453,7 @@
     },
     {
       "object_id": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4b",
-      "version": 2,
+      "version": 3,
       "title": "共享UD叶single-state tiny-home的k平方域19/10全任务实际近似",
       "kind": "theorem",
       "truth_status": "proved",
@@ -85448,11 +85495,11 @@
         },
         {
           "path": "archives/unrelated-machines/state/审查/多outer tiny-home三源实际重读与版本边界增量--审查.md",
-          "sha256": "e2df323ff8dfb2e301c6293d0bc38bc3f971b847a6ff76dc1232482ca5160885"
+          "sha256": "f60a2c766fd86b6043e8c096fa5b80013cc24551b0ccfbcf1f521984d86b3a90"
         },
         {
           "path": "archives/unrelated-machines/state/审查/多outer tiny-home作者证明v1读后与完整算法范围增量--审查.md",
-          "sha256": "096b89fc8877455efe83ce134403cc796be1bacd6bc731f255dfe61eebb9c8ca"
+          "sha256": "0c95c432460594f87b37cf16ef506c519af242018380ea606215e9b02956e20d"
         },
         {
           "path": "archives/unrelated-machines/state/审查/多outer双资源后端与tiny-home算法边界有限审查--审查.md",
@@ -85491,7 +85538,7 @@
     },
     {
       "object_id": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5",
-      "version": 2,
+      "version": 3,
       "title": "共享阈值UD叶、O(1/k)小home的单态多outer确定性19/10算法",
       "kind": "algorithm",
       "truth_status": "proved",
@@ -85549,11 +85596,11 @@
         },
         {
           "path": "archives/unrelated-machines/state/审查/多outer tiny-home三源实际重读与版本边界增量--审查.md",
-          "sha256": "e2df323ff8dfb2e301c6293d0bc38bc3f971b847a6ff76dc1232482ca5160885"
+          "sha256": "f60a2c766fd86b6043e8c096fa5b80013cc24551b0ccfbcf1f521984d86b3a90"
         },
         {
           "path": "archives/unrelated-machines/state/审查/多outer tiny-home作者证明v1读后与完整算法范围增量--审查.md",
-          "sha256": "096b89fc8877455efe83ce134403cc796be1bacd6bc731f255dfe61eebb9c8ca"
+          "sha256": "0c95c432460594f87b37cf16ef506c519af242018380ea606215e9b02956e20d"
         },
         {
           "path": "archives/unrelated-machines/state/审查/多outer双资源后端与tiny-home算法边界有限审查--审查.md",
@@ -86694,7 +86741,7 @@
     },
     {
       "object_id": "UM-OPT-HULL-CLOSED-CYCLE-WEAK-LOCAL-GAP-v1",
-      "version": 3,
+      "version": 4,
       "title": "真实最优凸包闭环的弱最大负载局部支持下界",
       "kind": "local-repair-obstruction",
       "truth_status": "proved",
@@ -86731,7 +86778,7 @@
         },
         {
           "path": "archives/unrelated-machines/state/审查/最优凸包长链与闭环逃逸有限审查--审查.md",
-          "sha256": "781f3f942fdeaede8c7dd7ab62ed973f9369fc2ff5fbc3bb14441361d0c5a0e7"
+          "sha256": "3f7432b2c5f5668e3570434a91e817f49c858bdd7c5e2fa3b234fcb1f62a63ed"
         }
       ],
       "sources": [
@@ -86806,7 +86853,7 @@
     },
     {
       "object_id": "UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1",
-      "version": 3,
+      "version": 4,
       "title": "真实最优凸包槽初始化的严格lex长链支持下界",
       "kind": "local-repair-obstruction",
       "truth_status": "proved",
@@ -86827,7 +86874,7 @@
       "evidence": [
         {
           "path": "archives/unrelated-machines/state/审查/最优凸包长链与私有汇点边界两源精读--审查.md",
-          "sha256": "e35fcdd1daa6e043eb1150988cb4248910658b3d5a0d3f5dbb3677c2306ff20f"
+          "sha256": "2bffd80cd1c1c7d28b499b1b07ac888f9214b33144d2c1f41958fc3e44e73654"
         },
         {
           "path": "archives/unrelated-machines/state/审查/C2单位多切片与循环批量修复双源审查--审查.md",
@@ -86835,7 +86882,7 @@
         },
         {
           "path": "archives/unrelated-machines/state/审查/最优凸包长链与闭环逃逸有限审查--审查.md",
-          "sha256": "781f3f942fdeaede8c7dd7ab62ed973f9369fc2ff5fbc3bb14441361d0c5a0e7"
+          "sha256": "3f7432b2c5f5668e3570434a91e817f49c858bdd7c5e2fa3b234fcb1f62a63ed"
         },
         {
           "path": "archives/unrelated-machines/state/资源/最优凸包开链三原入口的单个最优解与全匹配计数--资源.md",
@@ -152531,7 +152578,7 @@
     },
     {
       "object_id": "unrelated-machines/distorted-group-source-schedules-independent-joint-slot-replay",
-      "version": 1,
+      "version": 2,
       "title": "失真组真实源与非整数联合槽证书",
       "kind": "computation",
       "truth_status": "finite",
@@ -152546,7 +152593,7 @@
       "objections": "Scope is restricted to the exact model, finite evidence, and proof obligations stated in this body; it is not promoted to a general unrelated-machines theorem.",
       "body": {
         "path": "archives/unrelated-machines/state/计算/失真组实际源调度与联合槽独立程序复跑--计算.md",
-        "sha256": "0d163eaa1d2002f1ec96d81ba6ac32e8468b68f4b93d1e357c225b65b6c51341",
+        "sha256": "3ff4fc9e22775b542dd600a8b01787c3f8d6fb180b4ea550f8564ec278f56a78",
         "section": "从真实源调度到实际前缀"
       },
       "evidence": [],
@@ -193796,9 +193843,10 @@
       "object_ids": [
         "UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1",
         "UM-DEGREE-THREE-WEIGHTED-MENU-CUBE-EMBEDDING-v1",
-        "UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1"
+        "UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1",
+        "M-4aa4bcc7358b4ab8bf1bc53f57d3f1d1"
       ],
-      "reason": "全文实读；承载本批独立数学主对象并按精确Claim分开陈述/模型/量词，成熟完整证明复用。"
+      "reason": "全文实读；承载本批独立数学主对象并按精确Claim分开陈述/模型/量词，成熟完整证明复用。 第三阶段补登记正文既有复合推论：先路径降度再三坐标零格嵌入，得到无输入资源度限制的精确保值迁移；非归一化域不保Santa值，亦不保组交互度或正权畸变。"
     },
     {
       "path": "archives/unrelated-machines/state/定理/三端单位选择器正规形--定理.md",
@@ -194037,9 +194085,10 @@
       "object_ids": [
         "UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1",
         "UM-DEGREE-THREE-WEIGHTED-MENU-CUBE-EMBEDDING-v1",
-        "UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1"
+        "UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1",
+        "M-4aa4bcc7358b4ab8bf1bc53f57d3f1d1"
       ],
-      "reason": "全文实读；承载本批独立数学主对象并按精确Claim分开陈述/模型/量词，成熟完整证明复用。\n增量精确范围：UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
+      "reason": "全文实读；承载本批独立数学主对象并按精确Claim分开陈述/模型/量词，成熟完整证明复用。\n增量精确范围：UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。 第三阶段补登记正文既有复合推论：先路径降度再三坐标零格嵌入，得到无输入资源度限制的精确保值迁移；非归一化域不保Santa值，亦不保组交互度或正权畸变。"
     },
     {
       "path": "archives/unrelated-machines/state/定理/小任务联合槽稳定性与选择边界--定理.md",
@@ -196433,7 +196482,7 @@
     },
     {
       "path": "archives/unrelated-machines/state/审查/多outer tiny-home三源实际重读与版本边界增量--审查.md",
-      "sha256": "e2df323ff8dfb2e301c6293d0bc38bc3f971b847a6ff76dc1232482ca5160885",
+      "sha256": "f60a2c766fd86b6043e8c096fa5b80013cc24551b0ccfbcf1f521984d86b3a90",
       "disposition": "attachment",
       "object_ids": [
         "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1",
@@ -196445,7 +196494,7 @@
     },
     {
       "path": "archives/unrelated-machines/state/审查/多outer tiny-home作者证明v1读后与完整算法范围增量--审查.md",
-      "sha256": "096b89fc8877455efe83ce134403cc796be1bacd6bc731f255dfe61eebb9c8ca",
+      "sha256": "0c95c432460594f87b37cf16ef506c519af242018380ea606215e9b02956e20d",
       "disposition": "attachment",
       "object_ids": [
         "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1",
@@ -197056,7 +197105,7 @@
     },
     {
       "path": "archives/unrelated-machines/state/审查/最优凸包长链与私有汇点边界两源精读--审查.md",
-      "sha256": "e35fcdd1daa6e043eb1150988cb4248910658b3d5a0d3f5dbb3677c2306ff20f",
+      "sha256": "2bffd80cd1c1c7d28b499b1b07ac888f9214b33144d2c1f41958fc3e44e73654",
       "disposition": "attachment",
       "object_ids": [
         "UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1"
@@ -197065,7 +197114,7 @@
     },
     {
       "path": "archives/unrelated-machines/state/审查/最优凸包长链与闭环逃逸有限审查--审查.md",
-      "sha256": "781f3f942fdeaede8c7dd7ab62ed973f9369fc2ff5fbc3bb14441361d0c5a0e7",
+      "sha256": "3f7432b2c5f5668e3570434a91e817f49c858bdd7c5e2fa3b234fcb1f62a63ed",
       "disposition": "attachment",
       "object_ids": [
         "UM-CLOSED-CYCLE-SINGLE-JOB-ESCAPE-THRESHOLD-v1",
@@ -197831,7 +197880,7 @@
     },
     {
       "path": "archives/unrelated-machines/state/审查/联合槽位与均匀束匹配有限审查--审查.md",
-      "sha256": "e302b076daaae47a01f5ec7cfebebf35405cb1104843b562111d094c5caa51b9",
+      "sha256": "c64cbd43bbba1451876ee4b6614af03d1aa9304f1e191f3ac0fac8e35221e152",
       "disposition": "attachment",
       "object_ids": [
         "M-4803f99cd96f4e83ad8d2a7252a0564c",
@@ -199129,7 +199178,7 @@
     },
     {
       "path": "archives/unrelated-machines/state/计算/失真组实际源调度与联合槽独立程序复跑--计算.md",
-      "sha256": "0d163eaa1d2002f1ec96d81ba6ac32e8468b68f4b93d1e357c225b65b6c51341",
+      "sha256": "3ff4fc9e22775b542dd600a8b01787c3f8d6fb180b4ea550f8564ec278f56a78",
       "disposition": "objects",
       "object_ids": [
         "unrelated-machines/distorted-group-source-schedules-independent-joint-slot-replay"
@@ -199799,7 +199848,7 @@
     },
     {
       "path": "archives/unrelated-machines/state/资源/Bamas升投影MMDA与SantaClaus--资料.md",
-      "sha256": "ca4aeec52e027d9422e1519df4eca40932c4538c3820a267c82a55540521d817",
+      "sha256": "82b415629a91f831b0a5b78c359340dd40195cf66955d35e8005366ea60e8b6c",
       "disposition": "objects",
       "object_ids": [
         "UM-LITERATURE-MMDA-SA-GAP-BAMAS-V2",
