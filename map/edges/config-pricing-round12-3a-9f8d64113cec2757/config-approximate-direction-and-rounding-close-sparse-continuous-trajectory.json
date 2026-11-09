@@ -1,0 +1,59 @@
+{
+  "edge_id": "config-approximate-direction-and-rounding-close-sparse-continuous-trajectory",
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "source_ids": [
+    "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing",
+    "M-d05829d1479f4b8aad94f3953ab9ffc4",
+    "M-81da430ecf2846f59fb645a08763dab4"
+  ],
+  "target_ids": [
+    "configuration-assignment/sparse-continuous-greedy-hard-budget-from-modular-pricing"
+  ],
+  "conditions": "同一硬预算下闭配置模型、逐bin非负模权oracle返回实际α近似配置，给定有理0<α≤1及0<ε<1。共同正成本强界使用整数截断，所有可行方向含item行。",
+  "roles": {
+    "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing": "每步真实可行的α近似真梯度基本方向，支持至多原行数，坐标统一有理位界。",
+    "M-d05829d1479f4b8aad94f3953ab9ffc4": "给L(y)≤4OPT归一化曲率，并从终点G本身取原硬预算内的半值指派。",
+    "M-81da430ecf2846f59fb645a08763dab4": "共同正成本整数截断或共同零成本时，保终点全部G。",
+    "configuration-assignment/sparse-continuous-greedy-hard-budget-from-modular-pricing": "O(1/ε)步的实际短支持非线性轨迹，终点近似值及两类解码。"
+  },
+  "explanation": "设T=⌈2/ε⌉、δ=1/T，从零按x_{t+1}=x_t+δy_t累加。每步方向可行，整数最优配置指示也可行。由单调及边际递减，∇G(x_t)·y_t≥α(OPT−G(x_t))。两配置对同一item的条件二阶差为−min((v_e−M)_+,(v_f−M)_+)；以每item边际至多一计和，得0≤−D_y²G≤L(y)≤4OPT。故每步余项最多2δ²OPT，累计至多2/T OPT，乘法项为1−(1−α/T)^T≥1−e^(−α)。各y是固定可行域顶点，累计T个短支持的分母位长至多短分母总和加log T。最后从同bin交换开始保终点G，按成本交换、可负担singleton比较或整数截断向上，再由下闭去重。",
+  "whole_result": "确定性输入和1/ε多项式时间构造配置LP可行点x，其支持至多⌈2/ε⌉(|L|+|P|+1)，G(x)≥(1−e^(−α)−ε)OPT。可直接解码原硬预算指派，非均匀成本至少G(x)/2，共同正成本截断或共同零成本至少G(x)。",
+  "scope": "α=1为精确定价特例。线性配置LP是另一独立路线，任意额外matroid或随机约束仍需新证明。",
+  "evidence": [
+    {
+      "path": "archives/configuration-assignment/state/定理/近似模权定价恢复短支持真梯度方向--定理.md",
+      "sha256": "705b0b05ea3454a2b9c1ad36a2c9c28d92dc8ba923f5c1d7fa0830f354f7cddc"
+    },
+    {
+      "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+      "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+      "section": "输入、输出与比较值"
+    },
+    {
+      "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+      "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+      "section": "等成本强界的修复合同"
+    },
+    {
+      "path": "archives/configuration-assignment/state/定理/近似模权定价下的确定性离散连续贪心--定理.md",
+      "sha256": "e1f327bd8ea37e2d370bd6461e902c639e9fafc05890c80f75d337d2fcdc5575"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复核逐物品曲率、有理位长、α递推累计误差及给定支持舍入直接从G开始。独立有理小例核余项。",
+  "endpoint_pins": {
+    "M-81da430ecf2846f59fb645a08763dab4": "d20161ada731b6e82e89c27bc3c7a7374674b950d21e0cad9a1be961e2d22ce3",
+    "M-d05829d1479f4b8aad94f3953ab9ffc4": "23bb2ddcdcb76320fa48b9c4a1ff525b126121d0cdc06b55232dd73098e7ca09",
+    "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing": "ac7d3a5d3bfb07d1ea36407d51142652241c93cff63505fe18c8aa180de86312",
+    "configuration-assignment/sparse-continuous-greedy-hard-budget-from-modular-pricing": "1356e96ba6444ef152923d773ab0654b6229977e824bf126d5053d15141fd789"
+  },
+  "evidence_pins": {
+    "archives/configuration-assignment/state/定理/近似模权定价恢复短支持真梯度方向--定理.md": "705b0b05ea3454a2b9c1ad36a2c9c28d92dc8ba923f5c1d7fa0830f354f7cddc",
+    "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+    "archives/configuration-assignment/state/定理/近似模权定价下的确定性离散连续贪心--定理.md": "e1f327bd8ea37e2d370bd6461e902c639e9fafc05890c80f75d337d2fcdc5575"
+  },
+  "review_digest": "43c9a6c95230c569bc48ff09b3fc64daf1729563b85415490e44b6c64decfb9a"
+}

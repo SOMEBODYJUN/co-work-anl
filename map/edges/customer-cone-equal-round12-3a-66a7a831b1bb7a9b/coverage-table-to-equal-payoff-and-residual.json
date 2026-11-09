@@ -1,0 +1,74 @@
+{
+  "edge_id": "cag-66a7a8-coverage-table-to-equal-payoff-and-residual",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/two-complete-strategy-cones-all-cover-supports-8over5"
+  ],
+  "target_ids": [
+    "customer-attraction/two-complete-strategy-cones-equal-payoff-and-residual"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定五位单位提供者、共同七标签0,…,6、按终局覆盖者均分。两份策略固定为所绑定的48客户与252客户原件，各策略在全部有序历史使用原动作。客户向量r为127种非空兴趣掩码的非负实重数。C₄₈、C₂₅₂各取自己的全部真实偏离IC，共同松弛C_S只保两套整数行交集S。等收益不要求正福利，精确最优值都在wr=1切片上。",
+  "roles": {
+    "customer-attraction/two-complete-strategy-cones-all-cover-supports-8over5": "固定两策略、真实IC行约定、21个支持各自的完整锥覆盖最优及取等，另提供共同松弛的覆盖对偶。",
+    "customer-attraction/two-complete-strategy-cones-equal-payoff-and-residual": "真实IC推出逐人等收益，经换元得到两类辅助目标的整表，并精确定位共同松弛的失效与差距。"
+  },
+  "explanation": "令P_a(z)_B=1[a∈B]/Σ_{b∈z}1[b∈B]，分子为零时系数为零。对每份σ逐有序历史按实际动作及六个替代沿同一σ的真实后继到终局，构造H(h,b)=60(P_a(z)−P_b(z′))。每份策略的2801个历史共产生16806项非自身比较，去零去重并按字典序从0编号，得1912、1867行，交集1753行。两实际路径01010、00011与根偏离1的真实路径11000、10010均有计数q=(3,2,0,0,0,0,0)，故根行g=60(u₀−u₁)，在两完整锥及共同松弛均有gr≥0。\n\nσ₄₈中74号为历史0110偏离0，实际标签2与终局01102对偏离终局01100。237号为010偏离2，实际标签1与01010对01021。两项标签2的终局同计数，相消后两行之和为−g。σ₂₅₂的真实六行为67号101偏离0（2:10120对0:10100），71号01偏离0（1:01104对0:01004），116号020偏离1（4:02041对1:02011），188号001偏离4（3:00131对4:00141），206号100偏离2（1:10010对2:10024），688号010偏离3（0:01004对3:01031）。标签0在01004的项相消，标签3在00131与01031的项按终局计数相消。剩下的中间项成三对，对应公共前缀多重集001后末两标签(4,2)、(2,1)、(1,4)。对类型B，任一对(a,b)的分摊差为(1[a∈B]−1[b∈B])/(h_B+1)，h_B为公共前缀对B的命中数。双命中时差为零，单命中时分母即h_B+1，故三差逐列相消，六行之和仍为−g。两完整锥遂有gr=0，福利守恒w=3u₀+2u₁给u₀r=u₁r=wr/5。\n\n对任一J及实际标签a=0,1，两个辅助目标在完整锥都等于(v_J−2w)r。更具体地，各目标行为v_J−2w+k g/60，individual的k依a=0,1为−4、6，residual为−2、3。若覆盖对偶是βw−Σ_j μ_jH_j/60≥v_J，则把β减2，k<0时给根行增加−k的权重，k>0时给反向链每行增加k的权重，即得相应辅助目标对偶。覆盖原始取等点可直接沿用。两完整锥各21个支持按同时含0和1、只含0、只含1、均不含的10、5、5、1项，精确最大依次为−2/5、−1/2、−7/15、−17/40。\n\n共同松弛保g，但σ₄₈反链237号及σ₂₅₂反链206、688号各自不在S。按掩码(1,2,4,8,16,32,64,125)取重数(9,11,3,3,3,3,3,10)，其余为零，1753行非负且wr=30、u₁r=11/2，故S不推出等收益。对J*=(2,3,4,5,6)及c=v_J*−w−5u₁，共同覆盖对偶给207/130。共同残差对偶按补充核验器的21个正整数n_j逐列满足(−53/130)w−Σ_j n_j H_j/3900≥c，最小余项为0。核验器所列整数取等点满足共同最小整数余额0，且(wr,v_J*r,u₁r,cr)=(130,207,26,−53)，两完整行集的最小乘60余额均为−90。除以130同时达到两个共同上界，分别严格超过完整锥值63/40、−17/40，差均为9/520。该取等点本身等收益，所以即使在共同松弛补gr=0，这两个指定最优值也仍保持严格差距。共同全支持最优8/5由旧表的共同上界和48客户原点取等，和逐项差距兼容。",
+  "scope": "只比较两份冻结完整策略的客户锥与其指定共同行集。辅助表覆盖两实际标签及每个五标签支持，共同松弛的精确差距仅针对J*覆盖和标签1 residual。共同全支持锐值不提供一般SPE界。",
+  "whole_result": "旧全支持覆盖表结合两条独立核实的真实反向IC链、共同行精确对偶与原始点，推出两完整锥的逐人等收益、21支持两辅助目标精确表，以及指定共同松弛中等收益失效和覆盖、残差最大207/130、−53/130的完整结论。",
+  "reviewed_by": "Boss1",
+  "review_note": "重走两原件全部有序历史和真实偏离，核根与反向链全部127列。标准库精确重放通过63覆盖对偶、42匹配原始点和共同残差对偶。另按乘子加法独立核168个完整锥、支持、实际标签及辅助目标组合的逐列对偶与取等。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/两份显式完整策略锥的逐人等收益与辅助目标--定理.md",
+      "sha256": "1675d4e71c30db2e3e7675514a8388bc6f4476ee251708fd789b8b4493ee2d76",
+      "section": "真实偏离行给等收益"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/两份显式完整策略锥的逐人等收益与辅助目标--定理.md",
+      "sha256": "1675d4e71c30db2e3e7675514a8388bc6f4476ee251708fd789b8b4493ee2d76",
+      "section": "共同IC松弛的严格差距"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/两份显式完整策略锥的全支持精确最大覆盖比--定理.md",
+      "sha256": "a3f068792465f4353382e35547827b95f41b42c54912b5566f089c70a84e1d94",
+      "section": "两份显式完整策略锥的全支持精确最大覆盖比"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-strategy-cones-all-cover-supports-v1/certificates.json",
+      "sha256": "009baddfcf1780cb73dcd5c85be94a389329643da3b70371adaaacb1350ecac8"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-strategy-cones-all-cover-supports-v1/verify_certificates.py",
+      "sha256": "456bafa89d04fe25f397783cdd9bc6660300f545a7d52912afb80861f63827ea"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-strategy-cones-all-cover-supports-v1/verify_equal_payoff_and_residual.py",
+      "sha256": "3e1f158dcd81715d101a44c4a4bc3d1bcf08e886b6e680641508c00788e9051a"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_reentry_incumbent_half.json",
+      "sha256": "e6269ea7551820d0d2c6192dd96d60b7bd2ce1f92b6ffd463fd8a13f89da0565"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_residual.json",
+      "sha256": "2a154303b023acfdc7b09c8576f63b3acb50abb02bd8e3cca6a793152ad07233"
+    }
+  ],
+  "endpoint_pins": {
+    "customer-attraction/two-complete-strategy-cones-all-cover-supports-8over5": "a15c3064ddc2945834fd716dc4e33f8876a2d32e78a25c52ad6d0e6702a5f3f4",
+    "customer-attraction/two-complete-strategy-cones-equal-payoff-and-residual": "1ebf5f73caf82ba44dbf6eb1bca70c9b681040489979a08ba8cd48702d5f1d27"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/两份显式完整策略锥的逐人等收益与辅助目标--定理.md": "1675d4e71c30db2e3e7675514a8388bc6f4476ee251708fd789b8b4493ee2d76",
+    "archives/customer-attraction/state/定理/两份显式完整策略锥的全支持精确最大覆盖比--定理.md": "a3f068792465f4353382e35547827b95f41b42c54912b5566f089c70a84e1d94",
+    "archives/customer-attraction/tools/evidence/fixed-strategy-cones-all-cover-supports-v1/certificates.json": "009baddfcf1780cb73dcd5c85be94a389329643da3b70371adaaacb1350ecac8",
+    "archives/customer-attraction/tools/evidence/fixed-strategy-cones-all-cover-supports-v1/verify_certificates.py": "456bafa89d04fe25f397783cdd9bc6660300f545a7d52912afb80861f63827ea",
+    "archives/customer-attraction/tools/evidence/fixed-strategy-cones-all-cover-supports-v1/verify_equal_payoff_and_residual.py": "3e1f158dcd81715d101a44c4a4bc3d1bcf08e886b6e680641508c00788e9051a",
+    "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_reentry_incumbent_half.json": "e6269ea7551820d0d2c6192dd96d60b7bd2ce1f92b6ffd463fd8a13f89da0565",
+    "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_residual.json": "2a154303b023acfdc7b09c8576f63b3acb50abb02bd8e3cca6a793152ad07233"
+  },
+  "review_digest": "e4785b472540930da257e17bc719eabb1eb402939b5a07d4617f5e3349bb760d"
+}

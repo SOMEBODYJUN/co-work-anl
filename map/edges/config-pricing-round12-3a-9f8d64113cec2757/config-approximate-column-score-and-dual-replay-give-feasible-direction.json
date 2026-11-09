@@ -1,0 +1,51 @@
+{
+  "edge_id": "config-approximate-column-score-and-dual-replay-give-feasible-direction",
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "source_ids": [
+    "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing",
+    "configuration-assignment/exact-pricing-sparse-configuration-lp"
+  ],
+  "target_ids": [
+    "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing"
+  ],
+  "conditions": "有限非空下闭局部族，最高利润覆盖的独立多线性延拓，非负有理利润及自然硬预算或共同正成本整数截断。给稀疏有理点、非负有理模权上返回实际配置的确定性α近似oracle，已知有理0<α≤1。先删超预算bin。",
+  "roles": {
+    "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing": "付共同背景分数恒等式、显式正坐标真导数与统一有理位界。这里只用其恒等式和精确有限计算。",
+    "configuration-assignment/exact-pricing-sparse-configuration-lp": "付同一维数的原始与对偶、强分离驱动器、删列回放和固定多面体基本支持。无需精确定价oracle作为当前实例的假设。",
+    "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing": "所有约束均真实可行、值至少α倍且显式短支持的原始方向。"
+  },
+  "explanation": "对每个对偶查询先扣非负item价b。共同背景非负截权定价后删负项得到该模权最大值的α倍，再比较所有正支持的真减价得分，可找到真实列得分至少αH_l(b)，其中H_l是扣item价后的真实最大值且空列使它非负。若该列违反a_l+c_lγ即给合法真割。全部未切时H_l(b/α)≤H_l(b)≤(a_l+c_lγ)/α，故全体对偶缩放1/α合法。给目标阈值θ，在统一最优顶点盒内运行精确可行性驱动器，第一次通过即中断并得θ≥αV；若全真割到不可行，重放仅保返回列，得到受限最优V′>θ。二分只维持下端受限证书与上端缩放证书，分类无需单调。令间隔小于1/(den(α)D²)，克拉默的最优分母界D迫使V′≥αV。显式受限原始基本解补零给至多d项并保所有原约束。线性配置利润以v为共同模权，省去正支持扫描。",
+  "whole_result": "用逐bin实际α近似模权定价，在确定性位多项式时间获得真梯度方向LP的可行α近似方向，或线性配置LP的可行α近似解。支持至多|L|+|P|+1，坐标位长由固定可行域统一控制。",
+  "scope": "允许空地集和零目标。逐查询扣固定bin/预算价的乘法误差仍未传递，只给数值的oracle不足以回放原始列。",
+  "evidence": [
+    {
+      "path": "archives/configuration-assignment/state/定理/稀疏点处的精确隐式配置梯度定价--定理.md",
+      "sha256": "0265f06dd6695cd2d42793391766d39aa0bc624238a59acb4d6a79f576172e62"
+    },
+    {
+      "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+      "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+      "section": "从对偶证书恢复最优支持"
+    },
+    {
+      "path": "archives/configuration-assignment/state/定理/近似模权定价恢复短支持真梯度方向--定理.md",
+      "sha256": "705b0b05ea3454a2b9c1ad36a2c9c28d92dc8ba923f5c1d7fa0830f354f7cddc"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复核每个返回割在真实系统有效、通过后缩放、盒外缩放的弱对偶、非单调二分的不变量与严格有理间隔。",
+  "endpoint_pins": {
+    "configuration-assignment/exact-pricing-sparse-configuration-lp": "847bf3f41064526e222270532908a4a4dfb56a063ffae9b48ac817957fbf0bcb",
+    "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing": "ac7d3a5d3bfb07d1ea36407d51142652241c93cff63505fe18c8aa180de86312",
+    "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing": "8edd0b73d5d1c7b89d92c0d34547a5adb488d8abca4299fc41f2cbda30d70c23"
+  },
+  "evidence_pins": {
+    "archives/configuration-assignment/state/定理/稀疏点处的精确隐式配置梯度定价--定理.md": "0265f06dd6695cd2d42793391766d39aa0bc624238a59acb4d6a79f576172e62",
+    "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+    "archives/configuration-assignment/state/定理/近似模权定价恢复短支持真梯度方向--定理.md": "705b0b05ea3454a2b9c1ad36a2c9c28d92dc8ba923f5c1d7fa0830f354f7cddc"
+  },
+  "review_digest": "1ef6b539cd962d3fe31f30ab5bf91f60fd297856841987833c6073528ea6e4fc"
+}
