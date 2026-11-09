@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-map-um-tiny-vacancy-rank-round27-v1.json",
-    "sha256": "bf3f2c8b9f24bcdc356a8942d814ad2ff024547b52249a9e77251295cec7740c"
+    "path": "research/registration/baseline-map-two-provider-omission-gap-round28-v1.json",
+    "sha256": "217821c020d127dad415bbad53e46e7338cccb4189e3dd44f59a00693adeab91"
   },
   "objects": [
     {
@@ -146331,6 +146331,45 @@
       ]
     },
     {
+      "object_id": "customer-attraction/two-provider-omission-gap-sharp-tradeoff",
+      "version": 1,
+      "kind": "theorem",
+      "truth_status": "proved",
+      "title": "两提供者比较覆盖差距与遗漏的锐权衡",
+      "model": "两名有序单位提供者、有限共同目录、单位客户等分的任意完整纯SPE。",
+      "statement": "实际W>0，比较对遗漏R及其对所有其它无序可重复对的最小覆盖差G。若实际末标签不在比较对，22G+13R≤14W。包含实际末标签时R/W≤5/9且可达。对每个有理r∈[8/9,14/13]，约束R/W≥r时全域最大G/W恰(14−13r)/22，由两固定回复整数端点组合达到。",
+      "quantifiers": "每个具有至少两个主题标签的有限共同目录、每份正福利完整纯SPE及每个无序可重复比较对；整段达界覆盖上述每个有理阈值。",
+      "assumptions": [
+        "比较差G相对于全部其他无序主题对。",
+        "上式权衡要求实际末标签不在比较对，R/W>5/9自动保证。"
+      ],
+      "scope": "任意完整策略的两提供者界与指定高遗漏阈值整段锐性。另保旧同一固定ρ对偶作为独立子范围。",
+      "objections": "含实际末标签时可违背22G+13R≤14W；固定锥对偶独立复现旧阈值101/100。",
+      "body": {
+        "path": "archives/customer-attraction/state/定理/两提供者比较覆盖差距与遗漏的锐权衡--定理.md",
+        "sha256": "ec059c2306778601c42324e16b72403497da512a739210d391e36de451657a03"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/两提供者真实续局的最优遗漏锐界14比13--定理.md",
+          "sha256": "c396bde3e30671c55d2437499472aa287a19a8d5712f12bdc79af56aa1b8428e"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/R-373d固定响应锥唯一静态最优与残余覆盖--审查.md",
+          "sha256": "57864adbb2bf2316f4985622fdf7d2f2c358fe2a6eb09a9d97ae9f3303c26197"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-373d-unique-optimizer-20261031/replay/exact_dual_check.py",
+          "sha256": "09f7e30c41fd4a41755ac44d0af8281b83e1d66e13d4a06202bbb7fc31045c7b"
+        },
+        {
+          "path": "archives/customer-attraction/tools/verify-two-provider-omission-gap-tradeoff.py",
+          "sha256": "d36fa21fbc0d7e476cb438ff221a3353bc496f7f05aa48a1352b50495d76c11e"
+        }
+      ],
+      "sources": []
+    },
+    {
       "object_id": "customer-attraction/two-provider-sharp-omission-fourteen-thirteenths",
       "version": 1,
       "kind": "theorem",
@@ -166174,10 +166213,20 @@
       "reason": "结合两人遗漏等号结构和显式唯一最优逼近族给锐上确界。"
     },
     {
+      "path": "archives/customer-attraction/state/定理/两提供者比较覆盖差距与遗漏的锐权衡--定理.md",
+      "sha256": "ec059c2306778601c42324e16b72403497da512a739210d391e36de451657a03",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/two-provider-omission-gap-sharp-tradeoff"
+      ],
+      "reason": "合并实际末位、最大主题及真实强制后继不等式，并给全局精确覆盖差与遗漏前沿。"
+    },
+    {
       "path": "archives/customer-attraction/state/定理/两提供者真实续局的最优遗漏锐界14比13--定理.md",
       "sha256": "c396bde3e30671c55d2437499472aa287a19a8d5712f12bdc79af56aa1b8428e",
       "disposition": "objects",
       "object_ids": [
+        "customer-attraction/two-provider-omission-gap-sharp-tradeoff",
         "customer-attraction/two-provider-sharp-omission-fourteen-thirteenths",
         "customer-attraction/two-provider-unique-optimum-omission-sharp-supremum"
       ],
@@ -168160,6 +168209,7 @@
       "disposition": "objects",
       "object_ids": [
         "customer-attraction/R-373d-fixed-response-cone-unique-static-gap",
+        "customer-attraction/two-provider-omission-gap-sharp-tradeoff",
         "customer-attraction/two-provider-sharp-omission-fourteen-thirteenths",
         "customer-attraction/two-provider-unique-optimum-omission-sharp-supremum"
       ],
