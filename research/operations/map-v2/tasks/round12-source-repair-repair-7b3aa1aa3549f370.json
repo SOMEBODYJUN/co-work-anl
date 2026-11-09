@@ -1,0 +1,208 @@
+{
+  "definition": {
+    "task_id": "round12-source-repair-repair-7b3aa1aa3549f370",
+    "stage": "3A",
+    "registry": "research/registry.json",
+    "supersedes": [
+      "customer-attraction-3a-3a-09a6865b803ce780"
+    ],
+    "object_ids": [
+      "customer-attraction/same-source-requery-and-capacity-price-three-cut-packs",
+      "customer-attraction/closeout-45713eb3e7b095f5dfee683f"
+    ],
+    "read_object_ids": [
+      "customer-attraction/shared-true-terminal-reply-query-portfolio-and-reweighted-requery",
+      "CAG-MODEL",
+      "CA-SAME-SOURCE-REQUERY-v1",
+      "M-754ec9998ee4470baedc8aef884316f5"
+    ],
+    "input_pins": {
+      "customer-attraction/same-source-requery-and-capacity-price-three-cut-packs": "8ee1cafae1c788b440171444160548b431f6633f0ff57ce2c98e3f359a52bd77",
+      "customer-attraction/closeout-45713eb3e7b095f5dfee683f": "14ea6cb252c564530c75878fe655bb08a4d77070fe4d781c62b21c1c2459d02b",
+      "customer-attraction/shared-true-terminal-reply-query-portfolio-and-reweighted-requery": "fbb4178dc3912c766be9526dcbd2b686c9cd79c0f6cbc47f723d078e954af4f9",
+      "CAG-MODEL": "3216d1db43ff83e0e0c9cf2479e79611277c9d9291a68e7f9b85ec4bb299dc5c",
+      "CA-SAME-SOURCE-REQUERY-v1": "54fdaca8bc88a3fbc1cdd4fa344dfbe445e5180754f446f102bfb458c82a6c28",
+      "M-754ec9998ee4470baedc8aef884316f5": "fe873e1c600ed21b77ce7857b4554757c6e9dafaa2cb681067bd9d423007bc96"
+    },
+    "write_paths": [
+      "map/edges/round12-source-repair-repair-7b3aa1aa3549f370",
+      "map/receipts/round12-source-repair-repair-7b3aa1aa3549f370.json",
+      "map/edges/customer-attraction-3a-3a-09a6865b803ce780/capacity-price-excludes-fixed-5692-z.json"
+    ],
+    "goal": "Resolve the changed inputs or unanswered comparison in customer-attraction-3a-3a-09a6865b803ce780; reuse still valid coverage, and explicitly dispose each prior asset.",
+    "context_plan": {
+      "budget": {
+        "context_tokens": 500000,
+        "window_source": "official-default",
+        "model": "gpt-6.1-sol",
+        "used_tokens": null,
+        "history_mode": "fresh-worker",
+        "reserve_tokens": 200000,
+        "reading_tokens": 300000,
+        "output_tokens": 100000,
+        "runtime_remaining_tokens": null,
+        "declared_remaining_before_reserve_tokens": null,
+        "assumptions": [
+          "Window source is declared, not discovered from this conversation.",
+          "Reading budget includes source text and object/task metadata.",
+          "Reserved context includes expected generated records and later reasoning/tool growth.",
+          "Fresh worker assumed; actual system/prefix usage is unknown and covered only by the engineering reserve."
+        ],
+        "budget_is_runtime_measurement": false
+      },
+      "reading": {
+        "chars": 312218,
+        "utf8_bytes": 370018,
+        "source_tokens": 216325,
+        "metadata_tokens": 13429,
+        "estimated_tokens": 229946,
+        "metadata_chars": 14849,
+        "metadata_utf8_bytes": 20153,
+        "distinct_files": 21,
+        "reading_segments": 22,
+        "token_count_is_estimate": true,
+        "estimators": [
+          "conservative-math-text-estimate-v1; not a tokenizer count"
+        ],
+        "unmeasured_refs": [],
+        "measurement_scope": "Requested complete text spans plus supplied metadata; binary evidence is not token-counted from raw bytes.",
+        "task_overhead_tokens": 192
+      },
+      "reading_refs": [
+        {
+          "path": "archives/customer-attraction/state/计算/同源再查询与容量报价的三份冻结切面包--计算.md",
+          "sha256": "a246e9abe3549f7547a843441f6d7b9ed5133c8c4d6c61d9bb75440e7cb772f6"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/共享末回复组合查询的发现与有限精化程序--程序.md",
+          "sha256": "eda318a663fc2d91d2ac48c1e242db50974fce980f4d33559afa5032599e3f48"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/共享真实末回复的组合查询投影与同源重配权--引理.md",
+          "sha256": "a3e5fdcf1e47c919d5b6f500b07d4fc371ac482c924b39213c6fb2d591f3c08c",
+          "section": "同一真实源的组合查询恒等式"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/实际末主题分支分离器与四菜单补价原点核验--计算.md",
+          "sha256": "f8710e7c826831cc22f9d7d22f84f24e6fbdf403c6ff4c41ed4f215f419cae26"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/requery-capacity-cut-packs-boss3/source-manifest.json",
+          "sha256": "eb2dc526e17653c1beb6d6f68853bd615bc97d1f7c4e335d0a77c20ff0e410b9"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/requery-capacity-cut-packs-boss3/runs/exact-cut-audit.json",
+          "sha256": "dc3424387a8b1df877fd0d6d72132eea684bb687a1db762054318bb1c4c9c2f6"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/requery-capacity-cut-packs-boss3/runs/all-sparse-row-coefficients.json",
+          "sha256": "8e004991ddda4ff0931f843504af020166eb6619aa4b8b9da1a3ace33b597717"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/requery-capacity-cut-packs-boss3/runs/pending-at-5692-and-record-identities.json",
+          "sha256": "e32abc30657f1677a63f15940aa28475b2534e87d0fdc90718f0ae09e3e8b368"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/requery-capacity-cut-packs-boss3/audit_cut_packs.py",
+          "sha256": "0320f43c0e39772f468e801e4ccb8dc5a7e8ecd4ab99142047342c09b85b478c"
+        },
+        {
+          "path": "archives/customer-attraction/state/反例/动态信用一步闭合标量反例--反例.md",
+          "sha256": "8dd16cc8df1c5d8b818de3df2a657410399ccdac82880bd6f0130c4f4e7ab33c",
+          "section": "动态信用一步闭合标量反例"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/共同末位报价与隐藏回复投影--引理.md",
+          "sha256": "5a4a02c618b296478ba6a40cb3700b81a83e27a5f207a5b587ce38593a27d0c9"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/五人局部关系来源与未复跑边界--审查.md",
+          "sha256": "e73c2b30b333d5e71ba132a376573bfe9a16a6c5be2f056c4f223320451f06e4",
+          "section": "60 行同源再查询关系"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/十三查询末回复投影的原独立局部核验--计算.md",
+          "sha256": "a26944ab552cebba7e7f49008fcb186a878108c1517f00d638c7b63141f7655a"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/同源回复再查询的分离程序--程序.md",
+          "sha256": "66542db64a4eb1e8092a1929b760f04ab5c298af6ab3f7df3ddb8d1891d03120"
+        },
+        {
+          "path": "archives/customer-attraction/state/方法/同源末主题重查询与共享变量消元--方法.md",
+          "sha256": "264c44926b610199ef4c5868485fbc680443052d7c9b07c777222dad77a8322b"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/共享真实末回复的组合查询投影与同源重配权--引理.md",
+          "sha256": "a3e5fdcf1e47c919d5b6f500b07d4fc371ac482c924b39213c6fb2d591f3c08c",
+          "section": "同源重查询的任意非负重配权"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/七极大直接私有与同源重查的三份原始行锥--程序.md",
+          "sha256": "5e4408df48cfb8490f32d67c38efa7446abc12a4c3d676e1b745350bb31ffa32"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/六人研究简报的证明范围与席位报告版本账本--资源.md",
+          "sha256": "dd3ccd6f06cbf293d782321ae2d77625018c16fdc23664fb83e2ca119a33603d"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/R12动态信用查询分支容量与覆盖付款义务--审查.md",
+          "sha256": "cd4a19dd5e1294523c609ef86c62fcde9cdb1ac43293573e028c7cfae19c0eb6"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R12-dynamic-credit-20261031/original/audit_one_step_closure.py",
+          "sha256": "b9673e22d12c709c525c1cc5bdc08f7312fa355cce24c49c553365b6b75176d4"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R12-dynamic-credit-20261031/replay/one_step_closure_output.json",
+          "sha256": "d72cada94e17d905aaaa3035815cf84210e267bfab7a0e8b6c5563543f133674"
+        }
+      ],
+      "oversized": false,
+      "requires_export": false,
+      "prior_assets": [
+        {
+          "path": "map/edges/customer-attraction-3a-3a-09a6865b803ce780/capacity-price-excludes-fixed-5692-z.json",
+          "sha256": "d3e06f5d64edd37f5e1cfe95e3bd0d4e04c0a4bb134703a368b76d7448074cbd"
+        },
+        {
+          "path": "map/edges/customer-attraction-3a-3a-09a6865b803ce780/exact-dynamic-witness-separates-scalar-closure.json",
+          "sha256": "faf14067565d6eefad58f2884c3baebc2f9207d1b35236259a9318e0c0ee2309"
+        },
+        {
+          "path": "map/edges/customer-attraction-3a-3a-09a6865b803ce780/same-source-requery-excludes-fixed-5692-r.json",
+          "sha256": "7bf8e29f0d5a50d404240c7373f7e5f7b888b9a5aae5139b924519165bfeceff"
+        }
+      ],
+      "retired_core_object_ids": [],
+      "recheck_core_object_ids": [
+        "customer-attraction/same-source-requery-and-capacity-price-three-cut-packs",
+        "customer-attraction/closeout-45713eb3e7b095f5dfee683f"
+      ],
+      "repair_reasons": [
+        "changed-registration-input"
+      ],
+      "note": "Read the previous task and receipt. Carry forward valid work. If needed, read the same scope in ordered passes. A retirement-only task lists no coverage or new assets.",
+      "comparison_priority": 0,
+      "scope_hint": "archives/customer-attraction",
+      "comparison_groups": [
+        [
+          "customer-attraction/same-source-requery-and-capacity-price-three-cut-packs"
+        ],
+        [
+          "customer-attraction/closeout-45713eb3e7b095f5dfee683f"
+        ]
+      ]
+    }
+  },
+  "state": "available",
+  "owner": null,
+  "request_id": "f0dbefd84282453ca1eefa0ea200e9f7",
+  "requests": {
+    "f0dbefd84282453ca1eefa0ea200e9f7": "plan"
+  }
+}
