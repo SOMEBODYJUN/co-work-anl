@@ -1,0 +1,52 @@
+{
+  "edge_id": "fac9f5e52-nine-rectangles-resolve-cubic-closed-branches",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "facility-games/offdiagonal-two-overlap-nonlinear-nine-rectangle-exact-optimum"
+  ],
+  "target_ids": [
+    "facility-games/two-overlap-linear-cubic-equilibrium-exact-boundary"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定两设施、强制服务，私有背景 A,B≥0，恰两共同正权客户 u≤v。交换标签令 A−B=d≥0，p₁,p₂ 是小、大客户选第一家的独立概率。两设施对同一客户共同使用线性费用 z 或三次实现费用 z³。A13.3 的局部仿射求解只需这些数据。任意此类背景可由两异址和各侧至多一名私有正权客户实现，零背景用空私有集。",
+  "roles": {
+    "facility-games/offdiagonal-two-overlap-nonlinear-nine-rectangle-exact-optimum": "A13.3 给出费用差仿射式及 P₁、P₂、M 的闭矩形完备分解，M 保留自身概率端点。",
+    "facility-games/two-overlap-linear-cubic-equilibrium-exact-boundary": "以线性、三次两种实际费用分别代入，求出全部独立均衡和集合改变的两个分支。"
+  },
+  "explanation": "令 wᵢ 是本客户重量、wⱼ 是另一客户重量，Sᵢ=A+B+2wᵢ+wⱼ。九矩形的 dᵢ⁰、dᵢ¹ 分别取负载差 d₋=d−wⱼ、d₊=d+wⱼ，三次替换为 D±=d±(3Sᵢ²+d±²)/4。两模型的端点符号相同且费用差 gᵢ(pⱼ) 严格递增。若 d<u，两根均在 (0,1)，闭单元只给 (1,0)、(0,1) 及 M×M 的 (t₂,t₁)。d=0 时两根均为 1/2。0<d<u 时 tᵢ=−D₋/(D₊−D₋)，三次正端乘子大于负端乘子，故两根严格小于各自的线性根 (wⱼ−d)/(2wⱼ)。若 d=u<v，则 g₂(0)=0 且 g₂(p₁)>0 对所有 p₁>0 成立，给孤立纯点 (1,0) 及 P₂×M 的 {0}×[t₁,1]，三次的 t₁ 严格较小。若 d>u，则 p₂=0，由 d−v 的负、零、正号分别得到 (1,0)、[0,1]×{0}、(0,0)。若 d=u=v，则闭单元并为 p₁p₂=0 的两坐标轴。当至多一共同客户时 gᵢ 为常数，严格递增的共同费用保持符号，故完整独立概率集合保持。",
+  "scope": "只使用 A13.3 的固定布局局部环节。实权适用于局部公式，全目录位复杂度和最优倍率需要各自条件。",
+  "contribution": {
+    "result": "从仿射闭状态逐坐标求得线性与三次的完整独立混合 NE 集。纯点始终相同，集合差异精确出现在 0<d<u 的全混合点和 d=u<v 的闭区间端点。",
+    "remaining": "CE 与 CCE 是联合分布上的偏离约束。需按两动作的推荐事件重写无条件偏离式，再核各保持分支和失效见证。"
+  },
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/算法/异址双交叠非线性均衡的九矩形精确优化--算法.md",
+      "sha256": "cd40a2f9e10044613c662e7d8477722b02f31ce10246204d528ec97d768327bf",
+      "section": "A13.3 两名公共客户：逐实现推导仿射费用差"
+    },
+    {
+      "path": "archives/facility-games/state/定理/两名共同客户的线性与三次费用均衡保持边界--定理.md",
+      "sha256": "d9c404fcd5645fedb52c2cb432339f72a93259a6f463ae8cbd01305a1c82830c",
+      "section": "两点反事实比较"
+    },
+    {
+      "path": "archives/facility-games/state/定理/两名共同客户的线性与三次费用均衡保持边界--定理.md",
+      "sha256": "d9c404fcd5645fedb52c2cb432339f72a93259a6f463ae8cbd01305a1c82830c",
+      "section": "独立混合的完整分支"
+    }
+  ],
+  "review_note": "逐个核对两个负载端点、七个背景差情形和 P₂×M 的闭端点。A13.3 的异址局部模型可实现所需的每组固定布局数据。",
+  "reviewed_by": "Boss1",
+  "endpoint_pins": {
+    "facility-games/offdiagonal-two-overlap-nonlinear-nine-rectangle-exact-optimum": "135d412720444b396513e09794a3095d6f602c259eca25614d914aba3222e376",
+    "facility-games/two-overlap-linear-cubic-equilibrium-exact-boundary": "f951ba29d8605736148d4b547597294c071c1b184184d7a84cdfc955b1c8e6c9"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/算法/异址双交叠非线性均衡的九矩形精确优化--算法.md": "cd40a2f9e10044613c662e7d8477722b02f31ce10246204d528ec97d768327bf",
+    "archives/facility-games/state/定理/两名共同客户的线性与三次费用均衡保持边界--定理.md": "d9c404fcd5645fedb52c2cb432339f72a93259a6f463ae8cbd01305a1c82830c"
+  },
+  "review_digest": "1f502716e62140e610f62da8dff654431499a5fbfaba91a287b175b6d30409e5"
+}

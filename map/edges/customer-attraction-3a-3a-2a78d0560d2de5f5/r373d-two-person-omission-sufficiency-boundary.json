@@ -10,17 +10,17 @@
   ],
   "premises_mode": "all",
   "relation_mode": "context",
-  "conditions": "六标签、两单位提供者，取固定响应rho及登记14支持有理点的2200倍整数重数。玩家位置i由源码的(a,b)[i]选行动。",
+  "conditions": "六个共同标签0至5，两名单位提供者按完整有序历史各行动一次，每位客户的价值按终局覆盖人数均分。空根选0，六个末位历史固定响应ρ=(1,4,4,4,5,4)，将固定锥的14个非零有理权重乘2200实现为单位客户。",
   "roles": {
-    "customer-attraction/R-373d-fixed-response-cone-unique-static-gap": "其冻结有理点经整数化和真实42行复核提供指定两人完整SPE。",
-    "M-89514c19df3e46919505ed6e1ce0e82f": "其每人无后继拥挤遗漏分割条件要求总最优遗漏至多W。"
+    "customer-attraction/R-373d-fixed-response-cone-unique-static-gap": "提供七个有序决策节点上的完整纯SPE及其唯一静态最优覆盖，也给出固定锥间隙的有理原对偶证书。",
+    "M-89514c19df3e46919505ed6e1ce0e82f": "给出逐人无后继拥挤的遗漏分割一旦存在便有总遗漏≤W的条件充分推导。"
   },
-  "explanation": "固定空根0和六个末位行动rho，源码36个末位比较另加6个根比较恰穷尽7个节点。Fraction重算所有松弛非负，实际收益(1002,1198)，W=2200。唯一最优无序对(2,3)覆盖2396，其中2222实际未覆盖。若能作登记的无后继拥挤分割，按原IC逐人支付后遗漏≤W=2200，与2222矛盾。尽管如此，2396≤4400，故这只检充分条件未必必要。",
-  "scope": "固定响应LP的指定点能读为两提供者完整树；唯一的是静态最优标签对，不能升为严格均衡或六提供者结论。",
+  "explanation": "源码用(a,b)[i]按玩家位置取行动，先检查6×6条真实末位比较，再按同一ρ检查6条空根比较。清分母后4422名单位客户的42条比较均非负，实际(0,1)给收益(1002,1198)及W=2200。21个无序含重标签对中，唯一最优(2,3)覆盖2396，其中2222未被实际路径覆盖。若这些遗漏客户可分为P_i且每人有一次真实偏离覆盖P_i而后继无人覆盖P_i，则前缀本已遗漏它们，偏离者独得其价值。真实激励给|P_i|≤u_i，故总遗漏≤2200，与2222矛盾。因此两人域存在完整纯SPE使该付款前件无法实现。该例仍有2396<2W，条件充分引理适用于付款前件成立的情形。归一化C₀₁=1且R−C₀₁≥1/100的原固定锥由精确原点与有理对偶共同给出最大间隙87/2200。",
+  "scope": "七节点见证限两名提供者，唯一性只适用于该实例的无序静态最优标签对。有理最优间隙限所编码的固定响应锥。六提供者的完整策略树与逐节点真实激励需另证。",
   "evidence": [
     {
       "path": "archives/customer-attraction/state/审查/R-373d固定响应锥唯一静态最优与残余覆盖--审查.md",
-      "sha256": "6bed75084732faeef2c8fccb7381b8a994c8349a70a3a91bcda46a3bf8724f08"
+      "sha256": "57864adbb2bf2316f4985622fdf7d2f2c358fe2a6eb09a9d97ae9f3303c26197"
     },
     {
       "path": "archives/customer-attraction/tools/evidence/R-373d-unique-optimizer-20261031/original/unique_optimizer_probe.py",
@@ -35,23 +35,33 @@
       "sha256": "ca443e53acdbca172fe54f7a337b51530e013c47ae36a724318fc8b647cec30b"
     },
     {
+      "path": "archives/customer-attraction/tools/evidence/R-373d-unique-optimizer-20261031/replay/exact_dual_check.py",
+      "sha256": "09f7e30c41fd4a41755ac44d0af8281b83e1d66e13d4a06202bbb7fc31045c7b"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-373d-unique-optimizer-20261031/replay/exact_dual_check.stdout.txt",
+      "sha256": "35c15206e3c47bf1e5392f263f1f8ed65adeb9f8649fbdc88b0aba9a603efc1f"
+    },
+    {
       "path": "archives/customer-attraction/state/障碍/单公共奖金重复尾部的末位互斥--障碍.md",
       "sha256": "b2dae758dcb66b45bae70c54ecbe842c8e4ae3d799c9b5112b9943a09b4c7bd2",
       "section": "一个有条件的half支付"
     }
   ],
   "reviewed_by": "Boss1",
-  "review_note": "按冻结源的实际行动位置独立重算42条IC，纠清v1正文合计36、未编码完整历史的表述。",
+  "review_note": "实读R-373d v2正文、冻结源码和条件付款原段，重放Fraction原点与有理对偶，并按源码位置独立重算整数客户的七节点激励及静态遗漏。",
   "endpoint_pins": {
     "M-89514c19df3e46919505ed6e1ce0e82f": "60b7136a07c2ed2759fa7ebfb44879de0b0d02d766013262010053fd51687c8a",
-    "customer-attraction/R-373d-fixed-response-cone-unique-static-gap": "68eb11a4c020a886eb1ad2aaf6ba83a1217acb2710cfe87831ac4c8546a2b382"
+    "customer-attraction/R-373d-fixed-response-cone-unique-static-gap": "35ef5744182889fac1452c2711e6ea857390023001022524922120f94308b9c6"
   },
   "evidence_pins": {
-    "archives/customer-attraction/state/审查/R-373d固定响应锥唯一静态最优与残余覆盖--审查.md": "6bed75084732faeef2c8fccb7381b8a994c8349a70a3a91bcda46a3bf8724f08",
+    "archives/customer-attraction/state/审查/R-373d固定响应锥唯一静态最优与残余覆盖--审查.md": "57864adbb2bf2316f4985622fdf7d2f2c358fe2a6eb09a9d97ae9f3303c26197",
     "archives/customer-attraction/tools/evidence/R-373d-unique-optimizer-20261031/original/unique_optimizer_probe.py": "2348814955099606d05e4fda5216706300a1559827f2eee6df5f28946add567c",
     "archives/customer-attraction/tools/evidence/R-373d-unique-optimizer-20261031/replay/exact_fraction_recheck.py": "2fdabc86bfe872f98c2ae504d3c00640632745d3db146cf97ffc3c6a3e94d853",
     "archives/customer-attraction/tools/evidence/R-373d-unique-optimizer-20261031/replay/exact_fraction_recheck.stdout.txt": "ca443e53acdbca172fe54f7a337b51530e013c47ae36a724318fc8b647cec30b",
+    "archives/customer-attraction/tools/evidence/R-373d-unique-optimizer-20261031/replay/exact_dual_check.py": "09f7e30c41fd4a41755ac44d0af8281b83e1d66e13d4a06202bbb7fc31045c7b",
+    "archives/customer-attraction/tools/evidence/R-373d-unique-optimizer-20261031/replay/exact_dual_check.stdout.txt": "35c15206e3c47bf1e5392f263f1f8ed65adeb9f8649fbdc88b0aba9a603efc1f",
     "archives/customer-attraction/state/障碍/单公共奖金重复尾部的末位互斥--障碍.md": "b2dae758dcb66b45bae70c54ecbe842c8e4ae3d799c9b5112b9943a09b4c7bd2"
   },
-  "review_digest": "2ef44da83650c4e1e81d32e291a80a6ecf4f3020e1f2e18cf91c4b331ff6453b"
+  "review_digest": "b18cde5cc3ba7c394c944774fcd0e54d6d71f04353e9908f9c00ec6164c8edec"
 }

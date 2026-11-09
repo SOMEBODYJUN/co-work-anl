@@ -1,0 +1,52 @@
+{
+  "edge_id": "fac9f5e52-quadratic-scaling-on-balanced-cubic-layouts",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "QUAD-EQ"
+  ],
+  "target_ids": [
+    "facility-games/two-overlap-linear-cubic-equilibrium-exact-boundary"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定两设施、强制服务，恰两共同正权客户，私有背景 A=B≥0。三次费用是实现负载的立方取期望。同一客户在两设施使用同一个函数。",
+  "roles": {
+    "QUAD-EQ": "保证任一同客户、两设施共同二次费用的逐实现偏离差正比例，从而保持全部四类均衡。",
+    "facility-games/two-overlap-linear-cubic-equilibrium-exact-boundary": "d=0 分支的每名客户有且仅有两个互换负载的反事实，产生可匹配的共同乘子。"
+  },
+  "explanation": "记另一客户重量为 wⱼ，Sᵢ=A+B+2wᵢ+wⱼ>0。平衡背景下两反事实负载差为 ±wⱼ，且负载和均为 Sᵢ。三次差于是恰为 (3Sᵢ²+wⱼ²)(X−Y)/4。对本布局取每名共同客户的二次代理 hᵢ(z)=aᵢz²，其中 aᵢ=(3Sᵢ²+wⱼ²)/(4Sᵢ)>0。它满足 QUAD-EQ，且其任一纯偏离费用差恰等于三次差，因此两模型的独立期望、推荐条件和无条件偏离式逐条相同。由 QUAD-EQ，这些分布集合又与线性模型相同。私有客户始终只有一个合法行动。",
+  "scope": "仅固定背景平衡的两共同客户布局，二次代理的系数按该布局选取。",
+  "contribution": {
+    "result": "d=0 的线性与三次纯 NE、独立混合 NE、CE、CCE 分布集合分别相同。",
+    "remaining": "d>0 两端立方乘子不同，需按 d 与 u,v 的关系逐分支检验最佳回复、相关分布支持及严格偏离。"
+  },
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/等价/两设施同客户二次费用的均衡集合保持--等价.md",
+      "sha256": "72975462df6994e12097f47e8cf2bbf37523e31a6625eca6f533e33ba6967aff",
+      "section": "全部条件与代数"
+    },
+    {
+      "path": "archives/facility-games/state/定理/两名共同客户的线性与三次费用均衡保持边界--定理.md",
+      "sha256": "d9c404fcd5645fedb52c2cb432339f72a93259a6f463ae8cbd01305a1c82830c",
+      "section": "两点反事实比较"
+    },
+    {
+      "path": "archives/facility-games/state/定理/两名共同客户的线性与三次费用均衡保持边界--定理.md",
+      "sha256": "d9c404fcd5645fedb52c2cb432339f72a93259a6f463ae8cbd01305a1c82830c",
+      "section": "相关和粗相关的边界"
+    }
+  ],
+  "review_note": "逐实现核算两个反事实差，并检查代理二次系数为正且与对方实现和推荐无关。",
+  "reviewed_by": "Boss1",
+  "endpoint_pins": {
+    "QUAD-EQ": "fc4cf53aa1fda34e1c3d1a94236de94431c22bfe1fef91c70776ec8d0141e54f",
+    "facility-games/two-overlap-linear-cubic-equilibrium-exact-boundary": "f951ba29d8605736148d4b547597294c071c1b184184d7a84cdfc955b1c8e6c9"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/等价/两设施同客户二次费用的均衡集合保持--等价.md": "72975462df6994e12097f47e8cf2bbf37523e31a6625eca6f533e33ba6967aff",
+    "archives/facility-games/state/定理/两名共同客户的线性与三次费用均衡保持边界--定理.md": "d9c404fcd5645fedb52c2cb432339f72a93259a6f463ae8cbd01305a1c82830c"
+  },
+  "review_digest": "1843c4f6cf9cbc3221a7dca14791495852a1fac4347afccb6707ca6faae08bf0"
+}
