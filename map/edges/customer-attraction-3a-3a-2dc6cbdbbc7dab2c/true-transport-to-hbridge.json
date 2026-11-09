@@ -1,0 +1,50 @@
+{
+  "edge_id": "cag-r27-true-transport-to-hbridge",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/true-query-role-transport-full-payoff-dual-and-tangent-error-contract"
+  ],
+  "target_ids": [
+    "M-047f2a1c742146efa5b0ce49f28e2e04"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意固定p与原完整纯SPE；L*取K上F_p极小。真实d_i保原标签和同一策略。",
+  "roles": {
+    "customer-attraction/true-query-role-transport-full-payoff-dual-and-tangent-error-contract": "提供同一p、K和L*的真收益对偶与预算不变性",
+    "M-047f2a1c742146efa5b0ce49f28e2e04": "分离已证上界、可证低维及开放的普遍下界"
+  },
+  "explanation": "各行u_i直接给H≤W，且在自由符号对偶取(α_i=u_i,β_A=0)。本完整非负d矩阵还可规范化：a=min_iα_i，改(α−a,β+a)保所有约束及目标，取达到a的行便知所有β+a≥d_i(A)≥0。由T−mF=D−C，下界mF≤H当且仅当某同容量运输C≤D。若p为δ_A，用L_diag=m⁻¹Σ_iL_i(A)及Jensen得下界；若每行L_i(A)在p支上恒为L_i，则用相同的Jensen在该混合p成立。",
+  "scope": "自由变量形式是等式LP的原始对偶；非负规范化依完整非负矩阵。p纯或支上响应负载不变是已证范围。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/真实查询运输的完整收益对偶与切线误差合同--引理.md",
+      "sha256": "aa8cf1f3d5db18932c2331a35893bace476b843eea57a379d3e3b3799d6c3c34",
+      "section": "最大真收益银行H与正确自由符号对偶"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/真实查询运输的完整收益对偶与切线误差合同--引理.md",
+      "sha256": "aa8cf1f3d5db18932c2331a35893bace476b843eea57a379d3e3b3799d6c3c34",
+      "section": "真正主题—角色运输及精确账"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/真实查询运输的完整收益对偶与切线误差合同--引理.md",
+      "sha256": "aa8cf1f3d5db18932c2331a35893bace476b843eea57a379d3e3b3799d6c3c34"
+    }
+  ],
+  "contribution": {
+    "result": "证明任意p的H≤W、混合下界的精确C≤D等价和纯p/每行支上负载固定子范围；并给无损对偶规范化。",
+    "remaining": "普遍混合p的真收益下界m min_K F_p≤H未由同一运输对偶或最小C给出；完整余额含IC松弛，是另一个较弱目标。"
+  },
+  "reviewed_by": "Boss1",
+  "review_note": "实读端点及承重公式，逐步核对真实策略、条件、精确常数和结论范围。",
+  "endpoint_pins": {
+    "M-047f2a1c742146efa5b0ce49f28e2e04": "2efc922d66afc20cbe979d0b8040c9c84fa051aa39eba074b51a4dee1af126cc",
+    "customer-attraction/true-query-role-transport-full-payoff-dual-and-tangent-error-contract": "08151569d2b64cb722e2c1561edb79e66b76210e02f1c77084570b44727a9aea"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/真实查询运输的完整收益对偶与切线误差合同--引理.md": "aa8cf1f3d5db18932c2331a35893bace476b843eea57a379d3e3b3799d6c3c34"
+  },
+  "review_digest": "791746ae96b2f6f45879180f5421aeb262e2013ec082656526ae59ec4f13f91c"
+}

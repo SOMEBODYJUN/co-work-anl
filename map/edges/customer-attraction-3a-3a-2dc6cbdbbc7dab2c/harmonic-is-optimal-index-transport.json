@@ -1,0 +1,61 @@
+{
+  "edge_id": "cag-r27-harmonic-is-optimal-index-transport",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "B6-HARMONIC-MATCHING-FLOOR-v1",
+    "customer-attraction/true-query-role-transport-full-payoff-dual-and-tangent-error-contract"
+  ],
+  "target_ids": [
+    "Q-CAG-HALF"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "零根背景，同一完整纯SPE、任意带索引的比较m槽。p_O是该m槽的均匀标签边际，同覆盖不同标签分别计。",
+  "roles": {
+    "B6-HARMONIC-MATCHING-FLOOR-v1": "给保比较重数的同一原策略查询下界",
+    "customer-attraction/true-query-role-transport-full-payoff-dual-and-tangent-error-contract": "证明m索引边际恰为整数完美指派H(p_O)",
+    "Q-CAG-HALF": "将真实查询付款边转到该输运坐标"
+  },
+  "explanation": "把一个合并标签的各行质量平均分到同标签重复列，行列和均1；反向按标签合并。于是H(p_O)=M，既无1/m折扣也无去重改容量。令c_x为实际负载，d_x为比较重数，H(p_O)≥m⁻¹Σ_(x∈O)d_x[c_x/m+H_m−H_(c_x)]。如果此数达到O−W，真实IC使H≤W，付同一最优元组净差。",
+  "scope": "从真实索引匹配到保容量LP，针对固定最优元组可实际检验的较强充分式。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/真实偏离最优匹配的调和下界--引理.md",
+      "sha256": "0da66c8c92bc2c6a8e90016aab7329333972865442f39eb86a238bb7eb92deb2"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/reserve-harmonic-workspace-ledger-primary/original/research/workspaces/customer-attraction/R-7eb35cf5aa0f402c892d23bc658a0639/CLAIMS.md",
+      "sha256": "aac68ea11fc3a8f17f212995fd79cc47ab968464c5add30b56b69e1c1415b473",
+      "section": "B6-HARMONIC-MATCHING-FLOOR-v1"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/真实查询运输的完整收益对偶与切线误差合同--引理.md",
+      "sha256": "aa8cf1f3d5db18932c2331a35893bace476b843eea57a379d3e3b3799d6c3c34",
+      "section": "最大真收益银行H与正确自由符号对偶"
+    },
+    {
+      "path": "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md",
+      "sha256": "bc5add8e880e83c3ed799f457607103532aa9120018c862ae3ac869f2ed34d15",
+      "section": "净遗漏是一般付款的准确对象"
+    }
+  ],
+  "contribution": {
+    "result": "同一最优元组p_O的真收益运输有保重数调和下界；该下界若至少OPT_m−W便给half。",
+    "remaining": "均匀最优索引p_O不一定是共享安全最优p；下界不给普遍H-BRIDGE或任意实例的净差。"
+  },
+  "reviewed_by": "Boss1",
+  "review_note": "实读端点及承重公式，逐步核对真实策略、条件、精确常数和结论范围。",
+  "endpoint_pins": {
+    "B6-HARMONIC-MATCHING-FLOOR-v1": "900666bdea49368eab935b32042c7b62179c7f94d1142b64271b01578810a9c1",
+    "Q-CAG-HALF": "dccd5277f7b0c1bb4dcac17287010f1d012bb40c6244c51f24808c1519a4b5ea",
+    "customer-attraction/true-query-role-transport-full-payoff-dual-and-tangent-error-contract": "08151569d2b64cb722e2c1561edb79e66b76210e02f1c77084570b44727a9aea"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/真实偏离最优匹配的调和下界--引理.md": "0da66c8c92bc2c6a8e90016aab7329333972865442f39eb86a238bb7eb92deb2",
+    "archives/customer-attraction/tools/evidence/reserve-harmonic-workspace-ledger-primary/original/research/workspaces/customer-attraction/R-7eb35cf5aa0f402c892d23bc658a0639/CLAIMS.md": "aac68ea11fc3a8f17f212995fd79cc47ab968464c5add30b56b69e1c1415b473",
+    "archives/customer-attraction/state/引理/真实查询运输的完整收益对偶与切线误差合同--引理.md": "aa8cf1f3d5db18932c2331a35893bace476b843eea57a379d3e3b3799d6c3c34",
+    "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md": "bc5add8e880e83c3ed799f457607103532aa9120018c862ae3ac869f2ed34d15"
+  },
+  "review_digest": "fff1c5d104094e8dc7d5aa151611d475e53e63829c7d16f40cc21bea0e666916"
+}

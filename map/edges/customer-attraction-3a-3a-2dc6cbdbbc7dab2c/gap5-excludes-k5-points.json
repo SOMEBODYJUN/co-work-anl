@@ -1,0 +1,51 @@
+{
+  "edge_id": "cag-r27-gap5-excludes-k5-points",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-2d7d3ce540cd41c29ba621b69774c3e0"
+  ],
+  "target_ids": [
+    "customer-attraction/287-client-k5-pair-point-late-deviation-exclusion"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "两固定整数输入；反设完整SPE实现A0A1A2A3A4。取第三位真实前缀h=A0A1，C=A4，D为任一纯经济配对。",
+  "roles": {
+    "M-2d7d3ce540cd41c29ba621b69774c3e0": "给以同一实际位置利润为源的跨真实历史必要行",
+    "customer-attraction/287-client-k5-pair-point-late-deviation-exclusion": "提供精确候选类型和不可实现性的独立对照"
+  },
+  "explanation": "A4的60名银行客户与前缀A0A1及经济R均不交，所以k=3、s_C=60/3=20、F_h(C,D)=60；目标u=u₃=20。GAP5的A₃=8、a₃=25给2F≤320+15u_j−460。287点选j=1得u_j=12，强制F≤20；295点加的8客户仅提高A0实际利润，选j=2仍u_j=15，强制F≤85/2。两者都小于60。",
+  "scope": "独立于严格配对推理的候选路径不可实现性；一次GAP5只使用同一源收益一次。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/五人共同大小帽转移的真实历史交换--引理.md",
+      "sha256": "6eb76d436a6aac2ac9e3537dcd801398e002e5ec8afb929dd2ae67ae448cd06a"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/五块新遗漏的末两人不交配对保护--引理.md",
+      "sha256": "c232858e03be08bec381368184f91eedf20f07660b174201a5bde8bcb5666b3c",
+      "section": "二十主题、287客户必要点的解析排除"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/五块新遗漏的末两人不交配对保护--引理.md",
+      "sha256": "c232858e03be08bec381368184f91eedf20f07660b174201a5bde8bcb5666b3c",
+      "section": "Specialist扩展与实际执行"
+    }
+  ],
+  "contribution": {
+    "result": "287/295客户两个指定实际路径都违反一条精确五人真实历史必要行，因此均不可实现。",
+    "remaining": "GAP5本身不计算偏离实际收益恰60或每个最优末位选项；这些由严格配对和末位逐题比较恢复。"
+  },
+  "reviewed_by": "Boss1",
+  "review_note": "实读端点及承重公式，逐步核对真实策略、条件、精确常数和结论范围。",
+  "endpoint_pins": {
+    "M-2d7d3ce540cd41c29ba621b69774c3e0": "c36dbd06125fe8cfd304714663dc51e633b0860bd10547718ac11278de4669e7",
+    "customer-attraction/287-client-k5-pair-point-late-deviation-exclusion": "a75224b6c86220380f815966d8471cbab6ffd9b30d6e1c56ff8c8decce9b7d80"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/五人共同大小帽转移的真实历史交换--引理.md": "6eb76d436a6aac2ac9e3537dcd801398e002e5ec8afb929dd2ae67ae448cd06a",
+    "archives/customer-attraction/state/引理/五块新遗漏的末两人不交配对保护--引理.md": "c232858e03be08bec381368184f91eedf20f07660b174201a5bde8bcb5666b3c"
+  },
+  "review_digest": "a3d6b7211e857cb3738a8cb444f734ea8f6ec8f4ce26877b0d6215aa9655a7d7"
+}

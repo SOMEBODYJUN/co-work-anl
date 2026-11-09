@@ -1,0 +1,60 @@
+{
+  "edge_id": "cag-r27-average-menu-payment-to-half-if-paid",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/optimal-union-tax-average-menu-payment-interface",
+    "M-708d628df607454c922e30e32384bdd1"
+  ],
+  "target_ids": [
+    "Q-CAG-HALF"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "对给定原完整SPE，假设存在同一平均菜单META分布p及真正最优元组O，满足TREE-PAY/PAY。保V,S和所有e来自同一Q_p与原策略。",
+  "roles": {
+    "customer-attraction/optimal-union-tax-average-menu-payment-interface": "提供同一META分布及真实IC松弛e_i",
+    "M-708d628df607454c922e30e32384bdd1": "给同一完整槽分布的静态并集预算",
+    "Q-CAG-HALF": "目标为同一原根福利"
+  },
+  "explanation": "由CAP和Kbar的META条件有O≤2mC−V−S。再用mD=W−Σe及PAY，得2mC−V−S≤2mD+2Σe=2W。",
+  "scope": "明确的条件归约；该充分条件不与half等价，也不从低值根META或槽核平稳性推出。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/最优并集税与平均真实菜单的付款接口--候选.md",
+      "sha256": "39824535bf2bc06cf08603cc58eeb8b10fa7167c0c35d48ed767299ad33953e2",
+      "section": "平均菜单的内生对称Nash与同一分布"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/最优并集税与平均真实菜单的付款接口--候选.md",
+      "sha256": "39824535bf2bc06cf08603cc58eeb8b10fa7167c0c35d48ed767299ad33953e2",
+      "section": "联合后继势：尾部必须排除当前A"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/最优并集税与平均真实菜单的付款接口--候选.md",
+      "sha256": "39824535bf2bc06cf08603cc58eeb8b10fa7167c0c35d48ed767299ad33953e2",
+      "section": "任意完整列分布的精确最优并集预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md",
+      "sha256": "bc5add8e880e83c3ed799f457607103532aa9120018c862ae3ac869f2ed34d15",
+      "section": "完整量词和目标"
+    }
+  ],
+  "contribution": {
+    "result": "若每一原完整SPE均可找到同一p/O付清PAY，则一般half。",
+    "remaining": "一般选择性PAY仍开放；需要真实跨角色付款或一个真正分离该存在式的例子。"
+  },
+  "reviewed_by": "Boss1",
+  "review_note": "实读端点及承重公式，逐步核对真实策略、条件、精确常数和结论范围。",
+  "endpoint_pins": {
+    "M-708d628df607454c922e30e32384bdd1": "9be5982065b049f81e1156b01e5734bf7fa74449c88c98a73c0fabfbf0880bb2",
+    "Q-CAG-HALF": "dccd5277f7b0c1bb4dcac17287010f1d012bb40c6244c51f24808c1519a4b5ea",
+    "customer-attraction/optimal-union-tax-average-menu-payment-interface": "47c3396b8b95ec13b364eadbf899407201491b182c2b6baf3ee98bc5afa2ad5c"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/最优并集税与平均真实菜单的付款接口--候选.md": "39824535bf2bc06cf08603cc58eeb8b10fa7167c0c35d48ed767299ad33953e2",
+    "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md": "bc5add8e880e83c3ed799f457607103532aa9120018c862ae3ac869f2ed34d15"
+  },
+  "review_digest": "0a98d6a40178700f9fa7bfe29cb2e2e29c3ae398529d3788eceb4532de70a9b1"
+}

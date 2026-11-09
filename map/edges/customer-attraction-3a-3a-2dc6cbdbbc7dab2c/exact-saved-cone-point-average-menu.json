@@ -1,0 +1,96 @@
+{
+  "edge_id": "cag-r27-exact-saved-cone-point-average-menu",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/strict-full-history-cone-and-alternating-menu-floating-records"
+  ],
+  "target_ids": [
+    "customer-attraction/optimal-union-tax-average-menu-payment-interface"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "仅针对保存点w₂=1/4、w₆₁=1；以4倍整数化为四个广主题客户与一个独立B客户。用原依赖重构的CDAA动作图，或任何实现同一实际经济路径的完整SPE；归一W=1。",
+  "roles": {
+    "customer-attraction/strict-full-history-cone-and-alternating-menu-floating-records": "提供报告保存的唯一质量点及原CDAA固定动作图复现入口",
+    "customer-attraction/optimal-union-tax-average-menu-payment-interface": "在同一实际完整策略上识别平均真菜单及精确价格差"
+  },
+  "explanation": "真IC逐节点Fraction核实259有序节点、1295非自身行，最小0。实际四位均选广主题，各得1/4。任一历史已有B，选广至少1/3而再选B至多1/8，因此其后的真正策略均选广；强制B必到3广1B。任一实际前缀强制广的可信叶若后来选B，当前将得1/3>1/4，违反cap；故固定动作图强制广总到4广。全cap尾和固定真菜单虽然分别有781与21个有序叶，插入核都只两种经济列，按广/B行和4广/3广1B列是[[1/5,1/4],[1/4,1/8]]。查询广总质量5/7、对手4广质量5/7给相同精确minimax值3/14。该矩阵也恰是平均真Kbar的广/B经济商；两个纯分布都不满足META，混合支持等价迫广质量5/7。此时C=3/14、D=1/4、各e_i=0，故PAY在此点成立。",
+  "scope": "同一保存点的数学精确化，保两种抽样机制一般不同；不复跑原浮点LP，也不认证全锥精确strict最优值、所有p/w或一般ADM与MENU。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/完整有序策略的严格裕量与交替菜单浮点记录--程序.md",
+      "sha256": "110e89342134b9d6b727866b47b5927e1d2ae1f3e176e3e5e352c7b68ba578bd"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/adm-seed-mutations-and-strict-cone-four-primary/original/strict_cone_attack.py",
+      "sha256": "ad4531d58f34b5abecf27e8805fcd27222421b4a8aecf0e2718e88703ebb797e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/adm-seed-mutations-and-strict-cone-four-primary/original/strict_cone_discovery.json",
+      "sha256": "c44b527c7ae773739d35b83a339014850b85a9bbc56d8689800de290e88d8be5"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/adm-seed-mutations-and-strict-cone-four-primary/dependency-manifest.json",
+      "sha256": "25b693d396902b000febe860336c3c2cbe9b8be6038d6727bb93c45556a53190"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/terminal-query-probes/original/customer_attraction/__init__.py",
+      "sha256": "284282dfb35d5612734b979d691d57be9808c07a03857b533248eb2cbd5079ca"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/terminal-query-probes/original/customer_attraction/model.py",
+      "sha256": "ac28fc1a3837954ab9b8fc658701f53aecf0a1da059e316158aab7565dc5f6a8"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/terminal-query-probes/original/customer_attraction/exact.py",
+      "sha256": "a4c76d77fd6c8d18ac668ce2070a65f927d9dca6bbe3cdd36f467d1598b4a892"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/terminal-query-probes/original/customer_attraction/certificate.py",
+      "sha256": "a269b532260b537e67879eba609ef23e046e8f7303458ecf11271c4673aecc45"
+    },
+    {
+      "path": "archives/customer-attraction/evidence/tax-interfaces/inputs/root_tax_failure.json",
+      "sha256": "864eca4cc1d5df2d039704eb444863405298e6fc6746efb18c49035a801a7ce6"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-2dc6cbdbbc7dab2c/fixed-adm-exact-audit.py",
+      "sha256": "c33e40eb2bb67f9e77b6eeef2c859249ff7b9daabfb260910f3ccfff91c9c183"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-2dc6cbdbbc7dab2c/fixed-adm-exact-audit.json",
+      "sha256": "e31ed4e15a6dc6077364632dfb8c52d63bb00b3438ef25ec6bfe7f968e7425d0"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/最优并集税与平均真实菜单的付款接口--候选.md",
+      "sha256": "39824535bf2bc06cf08603cc58eeb8b10fa7167c0c35d48ed767299ad33953e2",
+      "section": "平均菜单的内生对称Nash与同一分布"
+    }
+  ],
+  "contribution": {
+    "result": "把该点的固定菜单与全cap菜单都核成精确3/14，并验证同一平均真菜单的META差C−D=−1/28，从而该点PAY已付。",
+    "remaining": "报告中原严格LP只留−0.0；精确点自身有零IC。其它同锥客户权重、其它策略和一般PAY/ADM仍需独立证明。"
+  },
+  "reviewed_by": "Boss1",
+  "review_note": "按冻结五依赖SHA重构原种子策略，使用独立Fraction逐历史核所有非自身IC并重新枚举保存点全可信cap端点；另按两个经济列解析核价格和META。",
+  "endpoint_pins": {
+    "customer-attraction/optimal-union-tax-average-menu-payment-interface": "47c3396b8b95ec13b364eadbf899407201491b182c2b6baf3ee98bc5afa2ad5c",
+    "customer-attraction/strict-full-history-cone-and-alternating-menu-floating-records": "5c15693d602a82838dd3effb940777a65ebb78477ae7a8e135a9d3f9bbdf66ce"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/完整有序策略的严格裕量与交替菜单浮点记录--程序.md": "110e89342134b9d6b727866b47b5927e1d2ae1f3e176e3e5e352c7b68ba578bd",
+    "archives/customer-attraction/tools/evidence/adm-seed-mutations-and-strict-cone-four-primary/original/strict_cone_attack.py": "ad4531d58f34b5abecf27e8805fcd27222421b4a8aecf0e2718e88703ebb797e",
+    "archives/customer-attraction/tools/evidence/adm-seed-mutations-and-strict-cone-four-primary/original/strict_cone_discovery.json": "c44b527c7ae773739d35b83a339014850b85a9bbc56d8689800de290e88d8be5",
+    "archives/customer-attraction/tools/evidence/adm-seed-mutations-and-strict-cone-four-primary/dependency-manifest.json": "25b693d396902b000febe860336c3c2cbe9b8be6038d6727bb93c45556a53190",
+    "archives/customer-attraction/tools/evidence/terminal-query-probes/original/customer_attraction/__init__.py": "284282dfb35d5612734b979d691d57be9808c07a03857b533248eb2cbd5079ca",
+    "archives/customer-attraction/tools/evidence/terminal-query-probes/original/customer_attraction/model.py": "ac28fc1a3837954ab9b8fc658701f53aecf0a1da059e316158aab7565dc5f6a8",
+    "archives/customer-attraction/tools/evidence/terminal-query-probes/original/customer_attraction/exact.py": "a4c76d77fd6c8d18ac668ce2070a65f927d9dca6bbe3cdd36f467d1598b4a892",
+    "archives/customer-attraction/tools/evidence/terminal-query-probes/original/customer_attraction/certificate.py": "a269b532260b537e67879eba609ef23e046e8f7303458ecf11271c4673aecc45",
+    "archives/customer-attraction/evidence/tax-interfaces/inputs/root_tax_failure.json": "864eca4cc1d5df2d039704eb444863405298e6fc6746efb18c49035a801a7ce6",
+    "map/edges/customer-attraction-3a-3a-2dc6cbdbbc7dab2c/fixed-adm-exact-audit.py": "c33e40eb2bb67f9e77b6eeef2c859249ff7b9daabfb260910f3ccfff91c9c183",
+    "map/edges/customer-attraction-3a-3a-2dc6cbdbbc7dab2c/fixed-adm-exact-audit.json": "e31ed4e15a6dc6077364632dfb8c52d63bb00b3438ef25ec6bfe7f968e7425d0",
+    "archives/customer-attraction/state/候选/最优并集税与平均真实菜单的付款接口--候选.md": "39824535bf2bc06cf08603cc58eeb8b10fa7167c0c35d48ed767299ad33953e2"
+  },
+  "review_digest": "d1ef9731bca98661f1af25a08846ce4e7a5586ce5dcb4b4ed273c6e97acd12c8"
+}

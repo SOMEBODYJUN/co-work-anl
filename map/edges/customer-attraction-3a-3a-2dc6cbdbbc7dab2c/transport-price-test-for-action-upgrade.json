@@ -1,0 +1,62 @@
+{
+  "edge_id": "cag-r27-transport-price-test-for-action-upgrade",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/true-query-role-transport-full-payoff-dual-and-tangent-error-contract"
+  ],
+  "target_ids": [
+    "customer-attraction/distinct-action-query-aggregation-action-upgrade-interface"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一σ、各角色i的真query向量z_i,A,x及非负需求g_i,x，固定可用整行预算1和主题边际p；不随检验价改变需求、角色、分支或p。",
+  "roles": {
+    "customer-attraction/true-query-role-transport-full-payoff-dual-and-tangent-error-contract": "保留同一真实query矩阵的行列运输可行域",
+    "customer-attraction/distinct-action-query-aggregation-action-upgrade-interface": "对跨动作逐客户需求给出一份共同系数的支撑函数检验"
+  },
+  "explanation": "设可达向量Y(q)_{i,x}=Σ_A q_i(A)z_i,A,x，q取运输多面体。Y集紧凸，减去非负正交锥后是闭凸向下集。g被一份共同运输逐坐标支配当且仅当所有非负价格t_i,x有Σ_(i,x)t_i,x g_i,x≤max_q Σ_(i,A)q_i(A)Σ_x t_i,x z_i,A,x：必要直接乘价；充分由闭凸分离，负价格会使向下集支持函数为+∞，故只需非负价。右端是同一行列等式LP的自由符号对偶，矩阵成本换为加权真实分母。若可行，最后回到无权真实IC，每角色用Σ_A q_i(A)=1付Σ_x g_i,x≤u_i；若已有独立初值d_i≤u_i，则同一2u_i足。更一般固定非负行预算λ_i及匹配列总容量可用同一分离法。",
+  "scope": "固定需求和预算的解析LP等价；加权价格只用于对偶分离，最后支付仅使用原非加权whole IC。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/真实查询运输的完整收益对偶与切线误差合同--引理.md",
+      "sha256": "aa8cf1f3d5db18932c2331a35893bace476b843eea57a379d3e3b3799d6c3c34",
+      "section": "真正主题—角色运输及精确账"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/真实查询运输的完整收益对偶与切线误差合同--引理.md",
+      "sha256": "aa8cf1f3d5db18932c2331a35893bace476b843eea57a379d3e3b3799d6c3c34",
+      "section": "最大真收益银行H与正确自由符号对偶"
+    },
+    {
+      "path": "archives/customer-attraction/state/想法/不同动作查询聚合的动作升级接点--想法.md",
+      "sha256": "54543242d7242e753df0decb1ecdef4ed264bce0ba753a923df04d4109f92528",
+      "section": "真正缺少的是一个共同系数预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/想法/不同动作查询聚合的动作升级接点--想法.md",
+      "sha256": "54543242d7242e753df0decb1ecdef4ed264bce0ba753a923df04d4109f92528",
+      "section": "同题利润相等的动作升级接点"
+    },
+    {
+      "path": "archives/customer-attraction/state/想法/不同动作查询聚合的动作升级接点--想法.md",
+      "sha256": "54543242d7242e753df0decb1ecdef4ed264bce0ba753a923df04d4109f92528",
+      "section": "四真叶与需求几何不能免费补总账"
+    }
+  ],
+  "contribution": {
+    "result": "共同跨动作系数存在性，在固定行质量/列容量下等价于全部非负客户价的同一运输支撑检验，并保零预算边界。",
+    "remaining": "尚需从真实来源证明所有价格的不等式或给精确分离价格；不能逐价换最优元组、需求归属、p或另发一份IC。"
+  },
+  "reviewed_by": "Boss1",
+  "review_note": "实读端点及承重公式，逐步核对真实策略、条件、精确常数和结论范围。",
+  "endpoint_pins": {
+    "customer-attraction/distinct-action-query-aggregation-action-upgrade-interface": "fc7b8060b741b234e918e71286cc252614bdbd3a24141a5b5952bb78e018481b",
+    "customer-attraction/true-query-role-transport-full-payoff-dual-and-tangent-error-contract": "08151569d2b64cb722e2c1561edb79e66b76210e02f1c77084570b44727a9aea"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/真实查询运输的完整收益对偶与切线误差合同--引理.md": "aa8cf1f3d5db18932c2331a35893bace476b843eea57a379d3e3b3799d6c3c34",
+    "archives/customer-attraction/state/想法/不同动作查询聚合的动作升级接点--想法.md": "54543242d7242e753df0decb1ecdef4ed264bce0ba753a923df04d4109f92528"
+  },
+  "review_digest": "3917ff6faf4ccde5a983ae54421d6ca6b8295b116d719a8d96b284176dede12a"
+}

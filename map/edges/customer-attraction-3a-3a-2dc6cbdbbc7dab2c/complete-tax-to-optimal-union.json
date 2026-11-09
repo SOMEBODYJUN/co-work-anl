@@ -1,0 +1,44 @@
+{
+  "edge_id": "cag-r27-complete-tax-to-optimal-union",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/complete-slot-insertion-tax-cross-role-price-identities"
+  ],
+  "target_ids": [
+    "M-708d628df607454c922e30e32384bdd1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "在同一完整Q取空背景、r=m；T为一个合法达到OPT_m的m槽元组，保重复。q_Q均匀抽完整槽后独立查列。",
+  "roles": {
+    "customer-attraction/complete-slot-insertion-tax-cross-role-price-identities": "给任意完整列独立重抽与同列查询之间的精确分散差",
+    "M-708d628df607454c922e30e32384bdd1": "把同一完整负载接入最优并集的逐客户预算"
+  },
+  "explanation": "令h_x=E[1/(1+n_x)]，d_x为最优索引重数。由INS的逐客户差，m k(q_Q)=Σ_x E[n_x/(1+n_x)]+mΓ。另一项m k(p_O)=Σ_x d_x h_x。扣V=mΓ及S_O=Σ_(x∈O)(d_x−1)h_x+Σ_(x∉O)E[n_x/(1+n_x)]，O内每客户余h_x+E[n_x/(1+n_x)]=1，O外余0。两个查询各≤M(Q)，给CAP。",
+  "scope": "任意完整合法m槽分布，列无需来自SPE；同一分散只扣一次。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/完整槽插入税与跨角色价格恒等式--引理.md",
+      "sha256": "056d2ef5f04886dc12723b8edad4def7f38eb6d248637efecee83a6d986d0cb6",
+      "section": "插入税、负载分散和精确恒等式"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/最优并集税与平均真实菜单的付款接口--候选.md",
+      "sha256": "39824535bf2bc06cf08603cc58eeb8b10fa7167c0c35d48ed767299ad33953e2",
+      "section": "任意完整列分布的精确最优并集预算"
+    }
+  ],
+  "whole_result": "完整零背景COV恒等式OPT_m=m k(p_O)+m k(q_Q)−V−S_O，V=mΓ，及CAP上界。",
+  "reviewed_by": "Boss1",
+  "review_note": "实读端点及承重公式，逐步核对真实策略、条件、精确常数和结论范围。",
+  "endpoint_pins": {
+    "M-708d628df607454c922e30e32384bdd1": "9be5982065b049f81e1156b01e5734bf7fa74449c88c98a73c0fabfbf0880bb2",
+    "customer-attraction/complete-slot-insertion-tax-cross-role-price-identities": "dba64b86d5d099f79bec31b4eb4c368a3c1a5a0225b13cb7fa0816a95ee02f50"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/完整槽插入税与跨角色价格恒等式--引理.md": "056d2ef5f04886dc12723b8edad4def7f38eb6d248637efecee83a6d986d0cb6",
+    "archives/customer-attraction/state/候选/最优并集税与平均真实菜单的付款接口--候选.md": "39824535bf2bc06cf08603cc58eeb8b10fa7167c0c35d48ed767299ad33953e2"
+  },
+  "review_digest": "16f3a4903640fab58390f8683fd1e5cc93baedcf4f5417a87a4714b8b1bc44fa"
+}

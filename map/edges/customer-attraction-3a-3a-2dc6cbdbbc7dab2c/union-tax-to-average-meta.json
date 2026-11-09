@@ -1,0 +1,55 @@
+{
+  "edge_id": "cag-r27-union-tax-to-average-meta",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-708d628df607454c922e30e32384bdd1",
+    "customer-attraction/complete-slot-insertion-tax-cross-role-price-identities"
+  ],
+  "target_ids": [
+    "customer-attraction/optimal-union-tax-average-menu-payment-interface"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定一份完整原SPE；Q_p先均匀抽actual角色，再独立抽该位置强制A~p，保持完整m槽与指定源身份。p为同一平均矩阵Kbar的对称Nash。",
+  "roles": {
+    "M-708d628df607454c922e30e32384bdd1": "给同Q的最优并集COV及CAP",
+    "customer-attraction/complete-slot-insertion-tax-cross-role-price-identities": "固定完整槽分散的身份及同列/独立抽样",
+    "customer-attraction/optimal-union-tax-average-menu-payment-interface": "把静态账代入同一平均真实菜单的META分布"
+  },
+  "explanation": "对称Nash给Kbar p≤C且p正支取等；每个合法T的k_Qp(T)正是(Kbar p)_T，故M(Q_p)=C。COV/CAP把OPT_m控制在2mC−V−S_O。展开COV，还得到精确同分布恒等式2W−O=V+S_O+2Σ_i e_i−2m(C−D)+m[(C−k_Qp(p_O))+(C−k_Qp(q_Qp))]。两个最后的价格松弛均非负，一般不能删去后宣称PAY与half等价。",
+  "scope": "同一p、Q_p、最优元组及原全历史策略。源边际p、完整槽q_Qp和最优p_O一般各不相同。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/最优并集税与平均真实菜单的付款接口--候选.md",
+      "sha256": "39824535bf2bc06cf08603cc58eeb8b10fa7167c0c35d48ed767299ad33953e2",
+      "section": "任意完整列分布的精确最优并集预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/完整槽插入税与跨角色价格恒等式--引理.md",
+      "sha256": "056d2ef5f04886dc12723b8edad4def7f38eb6d248637efecee83a6d986d0cb6",
+      "section": "插入税、负载分散和精确恒等式"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/最优并集税与平均真实菜单的付款接口--候选.md",
+      "sha256": "39824535bf2bc06cf08603cc58eeb8b10fa7167c0c35d48ed767299ad33953e2",
+      "section": "平均菜单的内生对称Nash与同一分布"
+    }
+  ],
+  "contribution": {
+    "result": "给完整MCAP及包含两项最大价格替换松弛的实际2W−OPT恒等式，准确指出充分PAY如何接入。",
+    "remaining": "必须由同一META分布的真实IC给C−D付款，或由真实输入证明不足；静态恒等式和Nash存在性均没有支付该差。"
+  },
+  "reviewed_by": "Boss1",
+  "review_note": "实读端点及承重公式，逐步核对真实策略、条件、精确常数和结论范围。",
+  "endpoint_pins": {
+    "M-708d628df607454c922e30e32384bdd1": "9be5982065b049f81e1156b01e5734bf7fa74449c88c98a73c0fabfbf0880bb2",
+    "customer-attraction/complete-slot-insertion-tax-cross-role-price-identities": "dba64b86d5d099f79bec31b4eb4c368a3c1a5a0225b13cb7fa0816a95ee02f50",
+    "customer-attraction/optimal-union-tax-average-menu-payment-interface": "47c3396b8b95ec13b364eadbf899407201491b182c2b6baf3ee98bc5afa2ad5c"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/最优并集税与平均真实菜单的付款接口--候选.md": "39824535bf2bc06cf08603cc58eeb8b10fa7167c0c35d48ed767299ad33953e2",
+    "archives/customer-attraction/state/引理/完整槽插入税与跨角色价格恒等式--引理.md": "056d2ef5f04886dc12723b8edad4def7f38eb6d248637efecee83a6d986d0cb6"
+  },
+  "review_digest": "13b6051438ea62457bd91e64aaa0617e63d7edb32ade7014e94f6d53b40714c5"
+}

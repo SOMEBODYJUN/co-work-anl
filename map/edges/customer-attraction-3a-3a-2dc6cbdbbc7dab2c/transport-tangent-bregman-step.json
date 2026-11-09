@@ -1,0 +1,46 @@
+{
+  "edge_id": "cag-r27-transport-tangent-bregman-step",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-b4579532821a4db6a45694cb07398037"
+  ],
+  "target_ids": [
+    "customer-attraction/true-query-role-transport-full-payoff-dual-and-tangent-error-contract"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定一个L*和p，取任何满足行质量1和题容量mp(A)的p_i。第i行用同一原策略actual前缀强制A的真实L_i(A)。",
+  "roles": {
+    "M-b4579532821a4db6a45694cb07398037": "提供同一固定t在各真实分支的逐客户精确展开",
+    "customer-attraction/true-query-role-transport-full-payoff-dual-and-tangent-error-contract": "将逐叶误差加权为运输总账"
+  },
+  "explanation": "逐客户把切线写为t_x−t_x²(L_i−L*)，并保实际D_i(A)。对所有i,A乘p_i(A)求和，第一项借列容量恰mΣ_xρ_xt_x，线性部分是−C，误差为+D。每行一次whole IC给I_i=u_i−E d_i，故W−mF=ΣI_i−C+D。改运输导致ΣI_i和C−D同变−ΔT，完整余额固定。",
+  "scope": "真实分支误差逐客户身份到完整Bregman账。不存在免费把原策略移作切线游戏SPE的步骤。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/真实查询运输的完整收益对偶与切线误差合同--引理.md",
+      "sha256": "aa8cf1f3d5db18932c2331a35893bace476b843eea57a379d3e3b3799d6c3c34",
+      "section": "PSD切线表达仍携带真实分支误差"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/真实查询运输的完整收益对偶与切线误差合同--引理.md",
+      "sha256": "aa8cf1f3d5db18932c2331a35893bace476b843eea57a379d3e3b3799d6c3c34",
+      "section": "真正主题—角色运输及精确账"
+    }
+  ],
+  "contribution": {
+    "result": "完整推出T=mF−C+D及W−mF=ΣI_i−C+D和运输不变性。",
+    "remaining": "H的自由符号对偶和索引指派特化还需各自有限LP/Birkhoff；逐叶切线误差本身不保证C≤D。"
+  },
+  "reviewed_by": "Boss1",
+  "review_note": "实读端点及承重公式，逐步核对真实策略、条件、精确常数和结论范围。",
+  "endpoint_pins": {
+    "M-b4579532821a4db6a45694cb07398037": "0b0cff97a85d3f8ab283fac9d5adaf51d8c89e9322a08b1da8529cfda00973ac",
+    "customer-attraction/true-query-role-transport-full-payoff-dual-and-tangent-error-contract": "08151569d2b64cb722e2c1561edb79e66b76210e02f1c77084570b44727a9aea"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/真实查询运输的完整收益对偶与切线误差合同--引理.md": "aa8cf1f3d5db18932c2331a35893bace476b843eea57a379d3e3b3799d6c3c34"
+  },
+  "review_digest": "d18931a8f2fbbbce3c0af8d15c217f83dc6de96191cd64acc20b7a60a5ce4a16"
+}
