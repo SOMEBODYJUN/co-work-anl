@@ -1,0 +1,53 @@
+{
+  "edge_id": "single-terminal-exchange-to-all-cross-coverage",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/single-terminal-responder-exchange-and-coverage"
+  ],
+  "target_ids": [
+    "M-c4cec4b46d424f159e18aace660715b3"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m=k+1，k≥1；实际早期主题与末位D两两不交；存在一个最优索引元组，每个早期i强制其中每个T_j后均按原σ保持其余早期动作。R可逐枝改变。",
+  "roles": {
+    "customer-attraction/single-terminal-responder-exchange-and-coverage": "每个实际早期角色与单一保早期动作的强制查询给精确三松弛界。",
+    "M-c4cec4b46d424f159e18aace660715b3": "要求存在同一最优m槽元组满足所有早期角色×所有比较查询的保持条件，并推出福利界。"
+  },
+  "explanation": "令P为实际早期并集大小、L=|D|。对每个T_j按i加总单枝查询界，再按j加总，由并集至少一重覆盖得到k|O∖U|+(k/2)|O∩D|+((k+1)/2)|O∩E|≤3mP/2，于是OPT≤(2+1/k)P+L/2。实际末位对每个T_j的真实最佳回复给OPT≤P/2+(k+1)L。用权λ=k(2k+1)/(2(k+1)²)和1−λ凸合，两系数均为β=(8k²+11k+4)/(4(k+1)²)。2−β=(5k+4)/(4(k+1)²)>0。",
+  "scope": "条件性覆盖子类；W=0时乘法式给OPT=0，实际仅本组配对而非全交叉的策略不能调用。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/末位响应者可行性与交换--定理.md",
+      "sha256": "09280ade523eda5a90fd1fb3034fdfc0819214ea4d908edddb32379ab4cf5587",
+      "section": "全交叉查询的条件福利界"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末位响应者可行性与交换--定理.md",
+      "sha256": "09280ade523eda5a90fd1fb3034fdfc0819214ea4d908edddb32379ab4cf5587",
+      "section": "单末位响应的交换恒等式"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末位响应者可行性与交换--定理.md",
+      "sha256": "09280ade523eda5a90fd1fb3034fdfc0819214ea4d908edddb32379ab4cf5587",
+      "section": "与现有数学和证据的关系"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末位响应者可行性与交换--定理.md",
+      "sha256": "09280ade523eda5a90fd1fb3034fdfc0819214ea4d908edddb32379ab4cf5587",
+      "section": "两项局部构造边界"
+    }
+  ],
+  "reviewed_by": "customer-attraction-3a-3a-00c291811e5de4b9",
+  "review_note": "实读对应正文、承重推导和相关证书后核对本边的量词、方向与作用范围。",
+  "whole_result": "在实际两两不交且同一个最优m元组满足全交叉保持合同的每份原σ中，OPT_m≤β_k W，W>0时严格小于2W。",
+  "endpoint_pins": {
+    "M-c4cec4b46d424f159e18aace660715b3": "246aa113d727a36b884da3d6a79649e81fa440444f317fcff17df35dc7575411",
+    "customer-attraction/single-terminal-responder-exchange-and-coverage": "fb30f194fe9f37a8e1fa9d8cbb69c633fc4597cce9c48cf869f6500bcaf38424"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/末位响应者可行性与交换--定理.md": "09280ade523eda5a90fd1fb3034fdfc0819214ea4d908edddb32379ab4cf5587"
+  },
+  "review_digest": "5b28ab74e3645140e9a1b19d54c2e6a036aecf154307d24e75151230bd3e7774"
+}

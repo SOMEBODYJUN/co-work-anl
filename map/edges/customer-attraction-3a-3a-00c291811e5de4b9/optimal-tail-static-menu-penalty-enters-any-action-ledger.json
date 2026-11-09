@@ -1,0 +1,51 @@
+{
+  "edge_id": "optimal-tail-static-menu-penalty-enters-any-action-ledger",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-425fa58f82324fee96bc65a77ecb333a"
+  ],
+  "target_ids": [
+    "CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一原有序历史，r≥2；A属于原P的最优首动作菜单，B₁,…,B_(r−1)取该原σ强制A的真实尾。将每个B_ℓ当作原历史的合法当前查询，而非移植A枝的整个尾。",
+  "roles": {
+    "M-425fa58f82324fee96bc65a77ecb333a": "对同一原P、最优首动作A及给定合法尾元组控制Σλ_B。",
+    "CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1": "任意合法动作的账中λ_B与强制B真实孩子损失R_B是两个独立量。"
+  },
+  "explanation": "把尾引理的λ_B=G−F_(r−1)(P∪B)逐项代入ANY的菜单外罚项rλ_B。于是至少一个真实尾主题的rλ_B≤r(t+η_A)，t=η_A=0时全部尾主题在原菜单。对重新强制该B，若真实叶覆盖为C_B，则R_B=ρ_A−λ_B+(C_A−C_B)；已付静态罚项不能控制有符号的跨真枝覆盖差。例中同尾ξ_A是P∪S静态搬运，不是C_A−C_B。",
+  "scope": "同一节点内的静态查询选择贡献。未给新查询真实孩子优良性或全路径付款。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/最优动作真实尾的菜单损失与重置差--引理.md",
+      "sha256": "749ed5a9dea686bee784a5fa108540b3fa513b5a54a29476f4e8476dcb1d0bbd",
+      "section": "完整逐客户证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优动作真实尾的菜单损失与重置差--引理.md",
+      "sha256": "749ed5a9dea686bee784a5fa108540b3fa513b5a54a29476f4e8476dcb1d0bbd",
+      "section": "最优动作真实尾的静态菜单罚可联合控制"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优首动作菜单与真实孩子损失--引理.md",
+      "sha256": "0a19af6f0b2a834ad342f9f482fd3427f82fe18d5fb7bd4753a9fa6540166e69"
+    }
+  ],
+  "reviewed_by": "customer-attraction-3a-3a-00c291811e5de4b9",
+  "review_note": "实读对应正文、承重推导和相关证书后核对本边的量词、方向与作用范围。",
+  "contribution": {
+    "result": "在ANY的原菜单外损失项中找到至少一个尾主题B使λ_B≤t+η_A，零信用情形下全尾主题都在原菜单。",
+    "remaining": "完整主恒等式仍依赖源真实IC和同尾覆盖代数；用于付款还须控制C_A−C_B，不能用小λ_B代替。"
+  },
+  "endpoint_pins": {
+    "CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1": "b5527d01c1d45eacbe55919048baf775d46be5939ec165721390fb086d4caaa9",
+    "M-425fa58f82324fee96bc65a77ecb333a": "6152acb116be6ecf44ef666c67951170436a8645e7a5f213f1eda8e1b9839e78"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/最优动作真实尾的菜单损失与重置差--引理.md": "749ed5a9dea686bee784a5fa108540b3fa513b5a54a29476f4e8476dcb1d0bbd",
+    "archives/customer-attraction/state/引理/最优首动作菜单与真实孩子损失--引理.md": "0a19af6f0b2a834ad342f9f482fd3427f82fe18d5fb7bd4753a9fa6540166e69"
+  },
+  "review_digest": "3ce9a14ca8b40cb2a068e60d53feb2daf0658ce090ae9b9b160981905e03fb6e"
+}

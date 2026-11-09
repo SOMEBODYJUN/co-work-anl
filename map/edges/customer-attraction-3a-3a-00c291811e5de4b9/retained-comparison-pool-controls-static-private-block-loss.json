@@ -1,0 +1,56 @@
+{
+  "edge_id": "retained-comparison-pool-controls-static-private-block-loss",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "optimal-comparison-pool-net-exchange-and-random-retention-identity"
+  ],
+  "target_ids": [
+    "customer-attraction/optimal-completion-private-block-ledger"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意合法实际前缀C_t及初始最优m槽索引元组，删除随机排列的前t个索引。局部公式重新以当前过去P及一份当前最优r槽元组初始化；不需均衡。",
+  "roles": {
+    "optimal-comparison-pool-net-exchange-and-random-retention-identity": "给出固定最优索引池随机删除的期望净损失及单槽lost−new恒等式。",
+    "customer-attraction/optimal-completion-private-block-ledger": "在每步真正最优余槽补全上使用单槽替换来确定静态交换信用ε。"
+  },
+  "explanation": "任一保留的m−t索引给F_(m−t)(C_t)的可行补全，取期望得OPT−F_(m−t)(C_t)≤L_t，末期等号。在局部一槽交换中，lost=|D_j∖S|、new=e，因原池包括P且只移除j；故lost−new=δ_i+ε_ij，对均匀j取均值得本节点的L_1=δ_i+平均ε。初始固定池不能在中间自行换成每位置独立重选的最优池。",
+  "scope": "纯静态净覆盖比较，保重复索引与原比较并集外退款；不需要支付任何真实收益。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/最优比较池的净交换与随机保留恒等式--引理.md",
+      "sha256": "aeb776e8877dadb113c2039c34007a2a5509a77dfea8231a3ce485216eeeb218"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优补全私有块交换与分支账本--引理.md",
+      "sha256": "5bdc6de1c6e8aa7163903d8339badd8b757e8c1836c21ae6d320c4fe99cc2d8e",
+      "section": "对象和总覆盖机会损失"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优补全私有块交换与分支账本--引理.md",
+      "sha256": "5bdc6de1c6e8aa7163903d8339badd8b757e8c1836c21ae6d320c4fe99cc2d8e",
+      "section": "不需要均衡假设的交换关系"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优补全私有块交换与分支账本--引理.md",
+      "sha256": "5bdc6de1c6e8aa7163903d8339badd8b757e8c1836c21ae6d320c4fe99cc2d8e",
+      "section": "一个真实强制分支的无重计恒等式"
+    }
+  ],
+  "reviewed_by": "customer-attraction-3a-3a-00c291811e5de4b9",
+  "review_note": "实读对应正文、承重推导和相关证书后核对本边的量词、方向与作用范围。",
+  "contribution": {
+    "result": "由随机保留和单槽净交换得到LEDGER的静态信用ε_ij≥0及其单槽均值，并给实际补全损失对固定比较池期望净损失的上界。",
+    "remaining": "完整LEDGER还需真实强制分支上私有块份额守恒、原σ的当前IC与沿实际路径望远镜；随机池本身不给跨步实际付款。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/optimal-completion-private-block-ledger": "b8ef6b0b5064d9918e270459f616577f4908c5284dd91336563c7b40b07d133c",
+    "optimal-comparison-pool-net-exchange-and-random-retention-identity": "38e6d2a40b21871b26c4c206333f740613ae4b7cc07e2e5dcb73d202f08c0c84"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/最优比较池的净交换与随机保留恒等式--引理.md": "aeb776e8877dadb113c2039c34007a2a5509a77dfea8231a3ce485216eeeb218",
+    "archives/customer-attraction/state/引理/最优补全私有块交换与分支账本--引理.md": "5bdc6de1c6e8aa7163903d8339badd8b757e8c1836c21ae6d320c4fe99cc2d8e"
+  },
+  "review_digest": "fb8a05b3e8f1eb2e27c9a1183d6243e2b59988662ae3fdcfff85789127a179c9"
+}

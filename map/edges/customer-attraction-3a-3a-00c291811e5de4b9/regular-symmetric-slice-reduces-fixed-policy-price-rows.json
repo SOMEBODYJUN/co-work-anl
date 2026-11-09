@@ -1,0 +1,50 @@
+{
+  "edge_id": "regular-symmetric-slice-reduces-fixed-policy-price-rows",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "B7-EARLY-REGULAR-PRICE-v1"
+  ],
+  "target_ids": [
+    "customer-attraction/fixed-complete-policy-finite-price-contract"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定完整有序策略σ及已占用标签a，同时仅取满足REG的重数子锥；采用原结构价格的两两不同实际覆盖域，或另用同一Jensen计算直接验证别名点。REG可逐主题逐层写成线性等式。",
+  "roles": {
+    "B7-EARLY-REGULAR-PRICE-v1": "给REG约束上的统一实权最优查询与转折点，不依赖当前策略。",
+    "customer-attraction/fixed-complete-policy-finite-price-contract": "要求在固定有序策略锥上核全分数查询价格。"
+  },
+  "explanation": "给定非负r，u_a=ℓ_a·r，W=w·r。结构定理的候选z=0或z_b=1/h对全部标签b，h=1,…,p。故在该子锥上全实权弱目标逐点等价于有限行[ (min(1,|B|/h))_B−(p/h)ℓ_a−w]·r≤0及零候选−W≤0。强目标B(u_a)+u_a≤W同理将ℓ_a系数换为1−p/h，零候选为u_a−W≤0。要在整子锥认证需继续逐行核精确上证书，使用REG等式时可给自由乘子。",
+  "scope": "仅固定完整策略锥的REG切片，保留所有已占用标签、全部有序历史Γ和零福利边界。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/关联度正则分数价格与对称单占主题块预算--定理.md",
+      "sha256": "eedf3431f68ecd37c4163b453a22c1070b99f25e908b0fe73eb12c24007abf38"
+    },
+    {
+      "path": "archives/customer-attraction/state/等价/固定完整SPE策略锥的有限价格合同--等价.md",
+      "sha256": "8664984e80081e1bc83093fc93ea90bfe224f82f659ac980ff1515113c9abf9b"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/非负分数价格的有限普适顶点--定理.md",
+      "sha256": "d2d398a68d2202bcb957758f3aab70ec142cf7d2f1c021c9658736b17504ba8a"
+    }
+  ],
+  "reviewed_by": "customer-attraction-3a-3a-00c291811e5de4b9",
+  "review_note": "实读对应正文、承重推导和相关证书后核对本边的量词、方向与作用范围。",
+  "contribution": {
+    "result": "在REG切片以最多p+1个同向均匀查询准确取代通用V_p，得到弱/强价格目标的显式线性行。",
+    "remaining": "任意非正则客户质量仍需V_p。固定策略的Γ及逐目标行的全锥证书也需另行给出。"
+  },
+  "endpoint_pins": {
+    "B7-EARLY-REGULAR-PRICE-v1": "6824c3e9e4e6f848ebb182ff2fc38fb7729f2f671d6e9f785558ad5cb3d359bc",
+    "customer-attraction/fixed-complete-policy-finite-price-contract": "00ae148fa8caecc9b0612e910913b6888f19a046a0eddf66dd2d6229cde43ec9"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/关联度正则分数价格与对称单占主题块预算--定理.md": "eedf3431f68ecd37c4163b453a22c1070b99f25e908b0fe73eb12c24007abf38",
+    "archives/customer-attraction/state/等价/固定完整SPE策略锥的有限价格合同--等价.md": "8664984e80081e1bc83093fc93ea90bfe224f82f659ac980ff1515113c9abf9b",
+    "archives/customer-attraction/state/定理/非负分数价格的有限普适顶点--定理.md": "d2d398a68d2202bcb957758f3aab70ec142cf7d2f1c021c9658736b17504ba8a"
+  },
+  "review_digest": "02c5f14cca41eeed15da11530fe77c4f9f27fc0f7754e11153a5cfcee403c017"
+}

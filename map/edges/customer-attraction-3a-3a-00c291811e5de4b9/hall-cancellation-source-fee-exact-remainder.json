@@ -1,0 +1,48 @@
+{
+  "edge_id": "hall-cancellation-source-fee-exact-remainder",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance"
+  ],
+  "target_ids": [
+    "M-52e03c80736c4387b26cf4854c185efc"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定原σ（仅代数恒等式无需SPE）、同一实际叶Z、最优T、owner和一次合法Hall取消γ。源查询为完整合法T_i沿同σ的真叶B_i。",
+  "roles": {
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance": "同一最优元组、owner分割、实际Hall取消与钱包，给完整源查询费用及同时预取消的存在性。",
+    "M-52e03c80736c4387b26cf4854c185efc": "在同一固定取消见证下将源查询的剩余钱包和未吸收利润精确分项。"
+  },
+  "explanation": "若D_i>0，η_i=u_i−g_i+γ_i，K_src=u_i s_i/D_i，直接相减得到η_i−K_src=(u_i/D_i)(D_i−s_i)−(g_i−γ_i)。因T_i⊂O=I⊔R，在R的本owner客户用1−ρ_x=γ_x，逐客户从D_i减s_i，余量恰为I全份额、R的非owner全份额及R的本owner已取消份额，分母一律取同B_i。D_i=0必有s_i=0，定义费用0，余钱包η_i。只有定理给的共同预取消二分才能进一步得到全部源费用同时不超过钱包。",
+  "scope": "固定一份实际取消下的源查询余池。另一合法查询的真实分母或incoming价格没有由本式购买。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/审查/R4捕获占用与源边际运输式--审查.md",
+      "sha256": "07005b67743fcfd14bdf8466b1d5fce259013b597dd0284b466806d8954bf8e0",
+      "section": "SRC-MARGIN和POOL：同一行的精确余池"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R4捕获占用与源边际运输式--审查.md",
+      "sha256": "07005b67743fcfd14bdf8466b1d5fce259013b597dd0284b466806d8954bf8e0",
+      "section": "固定对象、一次取消与合法查询"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/实际取消的同时源付款与入流余额--定理.md",
+      "sha256": "5759f87d02d0bacc5c61a5472806d6f464192bb97bcb18a1a3bf1e156a02ad7a"
+    }
+  ],
+  "reviewed_by": "customer-attraction-3a-3a-00c291811e5de4b9",
+  "review_note": "实读对应正文、承重推导和相关证书后核对本边的量词、方向与作用范围。",
+  "whole_result": "在同一实际取消和同一完整源查询上，SRC-MARGIN与三项POOL以及D_i=0的边界全部成立；给定同时最大局部预取消时各源余钱包非负。",
+  "endpoint_pins": {
+    "M-52e03c80736c4387b26cf4854c185efc": "5960c40434fb7270fdd936b1cb4eed43f7523e8290e45206a32c6da8bcf987b6",
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance": "6301d3ef5ca152ec47607ffd3a061649bb168671ccaaab725d8f88bd9d7f9257"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/审查/R4捕获占用与源边际运输式--审查.md": "07005b67743fcfd14bdf8466b1d5fce259013b597dd0284b466806d8954bf8e0",
+    "archives/customer-attraction/state/定理/实际取消的同时源付款与入流余额--定理.md": "5759f87d02d0bacc5c61a5472806d6f464192bb97bcb18a1a3bf1e156a02ad7a"
+  },
+  "review_digest": "e14ce8cffec8d95fa31f9bcab7007aac454a423334439590f969527d1fbcd154"
+}

@@ -1,0 +1,58 @@
+{
+  "edge_id": "local-potential-reset-sums-all-actual-rows",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "B20-POT-RESET-REP-v1"
+  ],
+  "target_ids": [
+    "customer-attraction/all-actual-position-rollout-substitution-and-single-extra-slot-tax-ledger"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定原完整σ和实际路径，同一p逐位置独立同分布抽A,T。把局部b设为该位置的实际过去，原强制A与T后的真实尾按原σ逐位移植。",
+  "roles": {
+    "B20-POT-RESET-REP-v1": "每个合法固定历史的POT与RESET、一次碰撞税和最后一次删位余项为零。",
+    "customer-attraction/all-actual-position-rollout-substitution-and-single-extra-slot-tax-ledger": "同一目录分布下全部实际位置的W−ΣC_i精确账与末两行可付款。"
+  },
+  "explanation": "局部Φ_b和整局Φ只差由固定过去决定的常数；在各删位势差中该常数相消。于是局部Γ_j=全局γ_(i,j)，E_j=−d_(i,j)，且C为同一保留当前A的完整m槽再插T。每位置u_i−C_i=e_i+J_i+EΣ_j(γ−d)，沿实际位置相加用Σu_i=W即(4)。末位无尾，J由A,T独立成平方命中概率；倒二唯一重置是删末位，d=0，原真实IC非负，故末两行分别可付款。",
+  "scope": "已证全位置恒等式和末两行。较早位置的有符号重置总预算未付，个体全p弱推送的反例也不改写该恒等式。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/后继联合调和势后悔与真实删位重置--引理.md",
+      "sha256": "048e39f3e08af10994d7f6f9028411336e8c780b000f427b35a485e88b862618",
+      "section": "POT：势后悔与一次碰撞折扣"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/后继联合调和势后悔与真实删位重置--引理.md",
+      "sha256": "048e39f3e08af10994d7f6f9028411336e8c780b000f427b35a485e88b862618",
+      "section": "全历史对象与保留当前人的菜单"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/后继联合调和势后悔与真实删位重置--引理.md",
+      "sha256": "048e39f3e08af10994d7f6f9028411336e8c780b000f427b35a485e88b862618",
+      "section": "RESET：只对真实历史使用整主题IC"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/后继联合调和势后悔与真实删位重置--引理.md",
+      "sha256": "048e39f3e08af10994d7f6f9028411336e8c780b000f427b35a485e88b862618",
+      "section": "旧34客户：R和reset不是同一个数"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/全实际位置真换枝的有符号重置与一次额外槽税--引理.md",
+      "sha256": "207ef734c243a77f530eed148056fcefc352b5a0e6fa8375dd0b1aa7e5928023"
+    }
+  ],
+  "reviewed_by": "customer-attraction-3a-3a-00c291811e5de4b9",
+  "review_note": "实读对应正文、承重推导和相关证书后核对本边的量词、方向与作用范围。",
+  "whole_result": "在同一原σ及同一iid目录分布下，局部POT/RESET逐实际位置相加推出全位置真换枝税总账和末两行可付性。",
+  "endpoint_pins": {
+    "B20-POT-RESET-REP-v1": "2c5026997d6e2aeab39d035ebc4a3e3e01af6508c471f2e6c4c87ce37dc312a2",
+    "customer-attraction/all-actual-position-rollout-substitution-and-single-extra-slot-tax-ledger": "0ca6c08e3ad860279657b3e192a1c77512351e1cfb973ed5e1d834ac7c1f7a3e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/后继联合调和势后悔与真实删位重置--引理.md": "048e39f3e08af10994d7f6f9028411336e8c780b000f427b35a485e88b862618",
+    "archives/customer-attraction/state/引理/全实际位置真换枝的有符号重置与一次额外槽税--引理.md": "207ef734c243a77f530eed148056fcefc352b5a0e6fa8375dd0b1aa7e5928023"
+  },
+  "review_digest": "8a9a97423beb966d1bafcb1f34c50858adf8e8f268c2fcd6dedd671206f12e76"
+}

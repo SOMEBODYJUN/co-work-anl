@@ -1,0 +1,52 @@
+{
+  "edge_id": "universal-price-vertices-give-fixed-policy-contract",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "PRICE-QUERY-VERTICES-v1"
+  ],
+  "target_ids": [
+    "customer-attraction/fixed-complete-policy-finite-price-contract"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "p,m≥1，固定每个有序历史的纯策略σ；类型重数r≥0为代数变量，原单位客户为整数点；查询价格为已占用标签实际u_a(r)≥0。",
+  "roles": {
+    "PRICE-QUERY-VERTICES-v1": "将全部非负查询权的最大值精确化为只依p的有限有理V_p。",
+    "customer-attraction/fixed-complete-policy-finite-price-contract": "固定全有序σ的SPE锥、有限价格行和包括零福利的上证书。"
+  },
+  "explanation": "固定各真分支终局后，所有IC逐类型线性化为Γσr≥0，实际w、ℓ_a也固定。代入普适顶点式使B_r(u_a)−W=max_(z∈V_p)(g(z)−τ(z)ℓ_a−w)·r，从而有限行与全实权检查等价。若μ≥0且βw−Γσᵀμ−c≥0，点乘r得到c·r≤βW−μ·Γσr≤βW。没有除以W，且任一其它线性支付右侧只需替换目标行。",
+  "scope": "完整固定σ和全非负重数锥上的检查合同。输入可允许同覆盖异标签和零类型。只有给定目标行各自的证书才建立其数值预算。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/等价/固定完整SPE策略锥的有限价格合同--等价.md",
+      "sha256": "8664984e80081e1bc83093fc93ea90bfe224f82f659ac980ff1515113c9abf9b"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fractional-query-vertices/frozen/credible/fractional_price_query_reduction.md",
+      "sha256": "c56e595f82591d139324d2e7049b210f43eb32bbd82ac0b6a7f02e41a3339a7b"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fractional-query-vertices/frozen/independent/fractional_price_vertex_audit.md",
+      "sha256": "7a3af2f12d6d0849f582a45b9d1ad1994032319b3585776ad68a924a9cf735ab"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/非负分数价格的有限普适顶点--定理.md",
+      "sha256": "d2d398a68d2202bcb957758f3aab70ec142cf7d2f1c021c9658736b17504ba8a"
+    }
+  ],
+  "reviewed_by": "customer-attraction-3a-3a-00c291811e5de4b9",
+  "review_note": "实读对应正文、承重推导和相关证书后核对本边的量词、方向与作用范围。",
+  "whole_result": "普适V_p与固定有序策略逐类型IC的线性化给出固定策略锥的有限全分数价格合同，并验证其零福利亦适用的精确上证书规则。",
+  "endpoint_pins": {
+    "PRICE-QUERY-VERTICES-v1": "45db365cccfd95e5dc74594756f908f2ee6510d498b14ba9601a5c770e7082d1",
+    "customer-attraction/fixed-complete-policy-finite-price-contract": "00ae148fa8caecc9b0612e910913b6888f19a046a0eddf66dd2d6229cde43ec9"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/等价/固定完整SPE策略锥的有限价格合同--等价.md": "8664984e80081e1bc83093fc93ea90bfe224f82f659ac980ff1515113c9abf9b",
+    "archives/customer-attraction/tools/evidence/fractional-query-vertices/frozen/credible/fractional_price_query_reduction.md": "c56e595f82591d139324d2e7049b210f43eb32bbd82ac0b6a7f02e41a3339a7b",
+    "archives/customer-attraction/tools/evidence/fractional-query-vertices/frozen/independent/fractional_price_vertex_audit.md": "7a3af2f12d6d0849f582a45b9d1ad1994032319b3585776ad68a924a9cf735ab",
+    "archives/customer-attraction/state/定理/非负分数价格的有限普适顶点--定理.md": "d2d398a68d2202bcb957758f3aab70ec142cf7d2f1c021c9658736b17504ba8a"
+  },
+  "review_digest": "9c9dbda4a8ad02d7faa9e15280c09c84deda171b9e6802b27c81666cacd3443e"
+}

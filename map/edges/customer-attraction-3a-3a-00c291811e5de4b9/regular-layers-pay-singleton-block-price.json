@@ -1,0 +1,42 @@
+{
+  "edge_id": "regular-layers-pay-singleton-block-price",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "B7-EARLY-REGULAR-PRICE-v1"
+  ],
+  "target_ids": [
+    "B7-SINGLETON-BLOCK-PRICE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "p=ck个两两不同覆盖的真实主题。每个兴趣mask的非负整数重数在块间置换及块内置换下不变，i所在块总选择次数恰为1，且唯一选择者为i。",
+  "roles": {
+    "B7-EARLY-REGULAR-PRICE-v1": "提供REG下全实权价格的精确一维式及逐层LAYER充分条件。",
+    "B7-SINGLETON-BLOCK-PRICE-v1": "全块置换且该玩家块严格单占时的任意终局强价格预算。"
+  },
+  "explanation": "置换群在主题上传递，逐关联度层双计数得REG。固定任一兴趣轨道，d为该轨道总关联度，a₀为i块关联度，G是客户避开其它各块已用主题的概率。条件a₀由a升到b时，可将其余块条件多重集的唯一新增元素由b改为a并放在同一均匀块，其余保持同排列；各避开概率随关联度非增，故E[G|a₀]非减。于是E[a₀G]≥(d/c)EG。因i块严格单占，遗漏比例q=E[(1−a₀/k)G]，i独占比例L₀=E[(a₀/k)G]，推出dq≤(p−d)L₀≤(p−d)L；按轨道客户数还原、对同d求和即LAYER。调用REG定理逐层付款得结论，空轨道直接省去。",
+  "scope": "所有有限c,k、人数、其它块重复计数和满足单占的终局。论证没有SPE前提，有限直接mask审计只检有限实现。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/关联度正则分数价格与对称单占主题块预算--定理.md",
+      "sha256": "eedf3431f68ecd37c4163b453a22c1070b99f25e908b0fe73eb12c24007abf38"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/对称单占主题块价格的直接mask有限审计合同--资源.md",
+      "sha256": "8fee0b9e2830c1bd52c722fc111731a81a08603d8c8eec05c5acc40946bb3046"
+    }
+  ],
+  "reviewed_by": "customer-attraction-3a-3a-00c291811e5de4b9",
+  "review_note": "实读对应正文、承重推导和相关证书后核对本边的量词、方向与作用范围。",
+  "whole_result": "在全块置换对称目录中，任意终局的严格单占块玩家i满足全实权价格B(u_i)≤W−u_i。",
+  "endpoint_pins": {
+    "B7-EARLY-REGULAR-PRICE-v1": "6824c3e9e4e6f848ebb182ff2fc38fb7729f2f671d6e9f785558ad5cb3d359bc",
+    "B7-SINGLETON-BLOCK-PRICE-v1": "5c33de355df30c8bae5bee2f69f4091695fffc3b8277f16532246efb76573497"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/关联度正则分数价格与对称单占主题块预算--定理.md": "eedf3431f68ecd37c4163b453a22c1070b99f25e908b0fe73eb12c24007abf38",
+    "archives/customer-attraction/state/资源/对称单占主题块价格的直接mask有限审计合同--资源.md": "8fee0b9e2830c1bd52c722fc111731a81a08603d8c8eec05c5acc40946bb3046"
+  },
+  "review_digest": "7cc98099811ae86233a93e603478616b800d0601086c034a6c962422de01c964"
+}

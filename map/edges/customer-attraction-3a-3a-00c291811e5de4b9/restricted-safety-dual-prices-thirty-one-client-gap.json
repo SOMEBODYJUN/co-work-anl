@@ -1,0 +1,45 @@
+{
+  "edge_id": "restricted-safety-dual-prices-thirty-one-client-gap",
+  "kind": "refutes",
+  "status": "accepted",
+  "source_ids": [
+    "M-8ab129ea8bb24b11bb4b11b06fefb6e2",
+    "customer-attraction/two-player-thirty-one-client-unique-safety-optimal-query-static-cost-overrun"
+  ],
+  "target_ids": [
+    "customer-attraction/safety-optimal-query-face-aggregate-static-no-regret-budget"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "保原31客户真实策略及W31。Q在合法背景0、2上各半，λ=1/8，费用和收益均为原31客户矩阵的精确数。",
+  "roles": {
+    "M-8ab129ea8bb24b11bb4b11b06fefb6e2": "把SSR精确转为v_sr=v_m，并给同一静态矩阵的费用拉格朗日对偶。",
+    "customer-attraction/two-player-thirty-one-client-unique-safety-optimal-query-static-cost-overrun": "提供完整真SPE、实际叶及其六行安全矩阵和冻结费用系数。",
+    "customer-attraction/safety-optimal-query-face-aggregate-static-no-regret-budget": "该全称存在性主张被v_sr<v_m否定。"
+  },
+  "explanation": "对偶的六个E_Q f_B(a)−λR_z(a)依次为(10,133/16,10,10,11/8,133/16)，故v_sr≤31/8+10=111/8。令p=(21,0,19,8,0,0)/48，R_z(p)=31，其六个合法背景收益为(111/8,273/16,111/8,519/32,801/32,473/32)，故v_sr=111/8。未限制费用的真静态值由原匹配证书为14，严格差1/8。此对偶证书无需先证明整个P*是单点。",
+  "scope": "同一EXISTS-SSR反例的独立认证方式。经验查询仍低费，其安全值并未因此达到14。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/安全最优查询面的聚合静态无悔预算--候选.md",
+      "sha256": "69d70344e5e8a20f57108f6a49c93890e52f296dd6ba13b2310841c60de96692"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/两人三十一客户的唯一安全最优查询静态费用超支--反例.md",
+      "sha256": "efd39ed76eb9524574cface69f56fbb5b78313985455603f96c865ca28219415"
+    }
+  ],
+  "reviewed_by": "customer-attraction-3a-3a-00c291811e5de4b9",
+  "review_note": "实读对应正文、承重推导和相关证书后核对本边的量词、方向与作用范围。",
+  "whole_result": "31客户的原完整SPE具有精确受限值111/8<14，故不存在安全最优且费用不超过31的分布，并否定一般SSR。",
+  "endpoint_pins": {
+    "M-8ab129ea8bb24b11bb4b11b06fefb6e2": "48e36006107961dccc61202fe48e4a48b875d65b3012d1eb52475f2e6b98d16c",
+    "customer-attraction/safety-optimal-query-face-aggregate-static-no-regret-budget": "dc6eb4b9c238defd1e1f323c03a296a46e50b3f3181b632bbcd071ca6790a983",
+    "customer-attraction/two-player-thirty-one-client-unique-safety-optimal-query-static-cost-overrun": "f2ea8151e538902b4d6c3752cef2bb5009397e27e5ab6c07f4160e6a3304518f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/安全最优查询面的聚合静态无悔预算--候选.md": "69d70344e5e8a20f57108f6a49c93890e52f296dd6ba13b2310841c60de96692",
+    "archives/customer-attraction/state/反例/两人三十一客户的唯一安全最优查询静态费用超支--反例.md": "efd39ed76eb9524574cface69f56fbb5b78313985455603f96c865ca28219415"
+  },
+  "review_digest": "e6da06383400949185537c2a04f930ee00752319bed4a92a04f06533a6ad3882"
+}
