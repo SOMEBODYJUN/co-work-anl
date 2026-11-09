@@ -1,0 +1,45 @@
+{
+  "edge_id": "b5-real-path-and-zero-cell-cube-give-unrestricted-degree-transfer",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1",
+    "UM-DEGREE-THREE-WEIGHTED-MENU-CUBE-EMBEDDING-v1"
+  ],
+  "target_ids": [
+    "M-4aa4bcc7358b4ab8bf1bc53f57d3f1d1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "输入为有限非空显式完整flat普通UM：每组非空indexed菜单，所有private权非负二进制有理，逐state W≤1；原incidence资源集合不重复、资源宇宙显式含unused，全部未选任务实际存在。目标允许private零权、同label向量不同indexed成本表；资源端时间1，不加预载/附加资格。partial/V附加结论仅用于原输入逐state W=1。",
+  "roles": {
+    "UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1": "先将任意资源组度降到三的真实D，含全部helper任务、低峰两向与归一化partial证明。",
+    "UM-DEGREE-THREE-WEIGHTED-MENU-CUBE-EMBEDDING-v1": "在D(P)已满足资源组度三后作完整零格C；保各state质量和菜单，任意完整调度两向峰合同。",
+    "M-4aa4bcc7358b4ab8bf1bc53f57d3f1d1": "实际转移终点：任意源资源度到固定三坐标完整切片的OPT及归一化partial保证。"
+  },
+  "whole_result": "对每个合同内P，E(P)=C(D(P))可按总显式位长确定性多项式构造，目标每变量完整带tag[3]^3、每state每变量完整九格切片，资源跨组度≤3且Kmax(E)≤max(Kmax(P),2)。任意实际峰C<2完整调度双向峰不增，OPT(E)=OPT(P)含端点2；C≥2两侧可输出全private≤2。仅在原输入逐state W=1时全部正partial阈值及V含零精确保留。",
+  "explanation": "先应用D：每个原资源u的d_u个组邻接改成d_u个ports，并在相邻ports间加d_u−1个真实二态singleton helper；d_u=0保unused资源，d_u=1不加helper。原组菜单和旧selector资格不变（旧资源端映到本组port），每helper组恰两台state私有机、一件可去这两机的unit selector，以及两件不同incidence；每state只含一件private权1／对应port端1的incidence，因此输出W≤1、资源组度≤3、Kmax≤max(Kmax(P),2)。这已经支付C的全部输入结构前件，不能省去D把任意度输入直接交C。\n\nD的低峰扩展按源每资源至多一件外送unit选择空port，沿路径匹配全部helpers；原与helper全部未选任务均按证明回填。反向中每个选中helper因selector+incidence同机等于2而被迫外送，d_u−1件helper在C<2时占不同ports，故全部原组在这条资源路径至多一件真实外送；投影回R_u合法且峰不增。随后C把D每资源认成独立cube的active格z*=(1,2,3)，每组赋互异index，各state在同组每变量用对应完整九格切片，缺失位置/非active格添private0任务；原零任务按身份保留，空组资源并集添独立dummy。C扩展保每原job端、全部辅助留private0，峰完全相同；任意C目标调度按身份删除辅助及非active机器，得到D调度峰不增。按两个映射的正确顺序复合得到所有低峰实际调度双向。\n\n所有三模型都有全private峰≤2且非空selector给OPT≥1。若任一侧有OPT<2，其最优调度经上述低峰映射给另一侧不大于该OPT；若一侧OPT=2而另一侧<2，反向产生矛盾。故OPT精确相等含2。给定峰≥2的调度时，直接输出另一侧全private基线已峰不增，但不声称保给定外送决定。\n\n在原输入每state W=1时，D输出旧组和所有helper仍W=1，D保持每个v∈(0,1]的partial领取可行性。C仅增加private0格：原正权领取映到active资源且保互不交、每组质量不变；反向删除辅助零领取，再按原active资源投影，同样保质量与不交。因而全部正阈值可行性双向；有限离散allocation的最大值包括零整体相等。一般W≤1只保上述OPT和state质量，不套OPT=2−V_raw。\n\n令原组n、state总数a、incidence数L，p=Σd_u，h=Σ(d_u−1)_+，u0为unused资源数，q_g为组资源并集大小，e为q_g=0的组数，T0=Σ_g K_g max(1,q_g)。D后组n+h、states a+2h、资源p+u0；每helper的两state在D中各只含一个port，其组资源并集恰为两个ports，C则在该组每个state补齐这两个变量的完整切片。C后资源恰27(p+u0+e)，incidence恰9(T0+4h)，selectors n+h，private a+2h；有限处理时间条目a+2h+18(T0+4h)。p,h≤L、e≤n、T0≤a max(1,|U|)，时间只复制旧有理数或0/1，连dense矩阵也为总显式位长多项式；不把K_g q_g误写成原incidence数或线性规模。\n\nC保持的是D(P)的完整组交互图，不是P的图。两组各一state共用r≥2资源、每private权1/r的归一化族有原M=κ=1；D添r个helpers，每旧组邻接r个helper，port同时含1/r与1，得到M=κ=r，其中κ按每资源正private权的最大／最小比定义；C只增加零权且精确保D的图，最后仍为r。故固定三坐标/三标签没有支付原M或正权比保持，也没有提供近二hardness源或全正权/label唯一定价窄域。",
+  "scope": "正文§8已列的真实组成推论，终点是经过两桥的新实际调度保证。不给源gap、原M/κ保持、无条件V_raw关系或更窄全正权几何域。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/完整菜单的资源度三路径归约--定理.md",
+      "sha256": "afb7a6751e65f5e968a2b8798b8ba284983d64694fde1a463dae991b0018bb34"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/三坐标零权切片的精确菜单嵌入--定理.md",
+      "sha256": "986db069a11f89723aa3378bee60252d9a2e89bc807ecabe759973f8797861e9"
+    }
+  ],
+  "reviewed_by": "Boss5/474257b8",
+  "review_note": "本轮完整实读现行D与C全文、目标M的整条登记陈述、N正文与范围审查，并补读D新增read-after第2节；复用当前SHA b64fb9d7beb861a0b065d8770b22045008b93ffda44cae58751455d127397d51草稿，核输入域、先D后C、全部原与辅助任务、任意C<2低峰两向、OPT=2、仅原W=1的partial/V和总显式位规模。每D helper为一件共享selector及两件incidence、每state一件incidence；C再对该组两states各补齐两个变量，故T0+4h。read-after关于选中incidence也在private的合写按D第3节解释为送匹配port；本轮不重复有限审计、未作新文献核验。独立复核两组r资源族对原M及κ的失真，不声称原参数保持或新hardness。",
+  "endpoint_pins": {
+    "M-4aa4bcc7358b4ab8bf1bc53f57d3f1d1": "605f7df776117f3e7945a1b80142f36dc7f34a283943c8bf4e51f6445f5c97de",
+    "UM-DEGREE-THREE-WEIGHTED-MENU-CUBE-EMBEDDING-v1": "b954ded9d5a540dae787733019f51904d64f4ebd2ebb3f1b3490d9935c1b889c",
+    "UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1": "6d6c9ec1568c6a873c70234f3bec4ed8f68ce523228936b3a8a6575b180d69c7"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/完整菜单的资源度三路径归约--定理.md": "afb7a6751e65f5e968a2b8798b8ba284983d64694fde1a463dae991b0018bb34",
+    "archives/unrelated-machines/state/定理/三坐标零权切片的精确菜单嵌入--定理.md": "986db069a11f89723aa3378bee60252d9a2e89bc807ecabe759973f8797861e9"
+  },
+  "review_digest": "243869e234f6d4445add9f15c1deaaed194368c215b323390182f9dd39607671"
+}
