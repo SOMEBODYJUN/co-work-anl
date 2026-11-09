@@ -1,0 +1,49 @@
+{
+  "edge_id": "bn-clone-shared-supergradient-implies-conp-certificate",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "BN-CLONE-v1"
+  ],
+  "target_ids": [
+    "BN-CLONE-v2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "两端使用同一显式非负二进制有理矩阵 A∈Q_+^{R×m}、总预算1、实数可行贡献及等预算1/D的共同效用 clones。对每个整数D≥1、1≤k≤D、任意符合剩余正有理预算的有限外部玩家及任意外部效用，合并性质量化每份原 NE。",
+  "roles": {
+    "BN-CLONE-v1": "在每个总量 δ 给出行最优的 (K) 充要条件与共同最大超梯度判别。点态失败可用小等预算纯投 clones 和常效用外部玩家实现。",
+    "BN-CLONE-v2": "将判别的失败分支写成有理证书，验证其健全性、完备性和总位长，得到 CLONE-INVARIANT∈coNP。"
+  },
+  "explanation": "给定失败 NE，取 I 为 δ 的全部 active 行，S 为被合并 clones 的正支出并。由 (K)，每个 j∈S 有 active 行凸组合令 j 在全部 m 坐标中最大。合并行严格可改善，故不存在一份凸组合让 S 同时最大。写 M_{(j,s),r}=a_rs−a_rj。对 Mξ≤0、ξ≥0、1ᵀξ=1 用 Farkas 变换得到 y≥0、Mᵀy≥1。给定这样的 y，若共同凸组合存在，就会同时有 yᵀMξ≤0 与 yᵀMξ≥1。保持 I 的 active 等式、外行正间隔及 S 上正坐标的 margin LP 有正最优值，可用有理最优 BFS 替换可能无理的 δ。逐 j 凸组合的紧多面体和非负 y 的 pointed 多面体也可取有理 BFS。清分母后维度、系数位长均为输入位长 L 的多项式，Cramer/Hadamard 控制各分量，至多 m 份凸组合与 m² 个 y 分量给总位长 poly(L)。反过来，从任一合格证书取 1/D 小于所有 δ_j (j∈S) 且 |S|/D<1。各纯投 clone 由 (K) 最优，剩余贡献由效用恒定的一名外部玩家提供，合并因共同 LP 不可行而严格可改善。验证只需对短有理数检查符号、严格间隔、等式和乘加。",
+  "scope": "同一显式矩阵语言的每 NE 合并性质。全输入证书证明由点态几何加有理 LP 完成，三项目 toy 只实例化证书，所得复杂性是 coNP 包含。",
+  "whole_result": "由 BN-CLONE-v1 的点态 (K) 判别，经上述 Farkas、正 margin 有理 BFS 与位长论证，推出 BN-CLONE-v2 的完整结论。对每个显式 A，性质 C 失败当且仅当存在总位长 poly(L)、可确定性位多项式验证的 (I,S,δ,z,(ξ^(j)),y)，且任一合格证书构造真实等预算失败 NE。因此 CLONE-INVARIANT∈coNP。",
+  "evidence": [
+    {
+      "path": "archives/budget-games/state/定理/分段线性凹偏好的共享超梯度合并判别--定理.md",
+      "sha256": "754484e9c7765984f91acb586031a4b10259552ed294fbd5b7c0e4c9549d463b",
+      "section": "预算模型及普遍性质"
+    },
+    {
+      "path": "archives/budget-games/state/定理/分段线性凹偏好的共享超梯度合并判别--定理.md",
+      "sha256": "754484e9c7765984f91acb586031a4b10259552ed294fbd5b7c0e4c9549d463b",
+      "section": "三、非光滑时的点态充要条件"
+    },
+    {
+      "path": "archives/budget-games/state/证明/合并不变性的短失败证书与有理位长--证明.md",
+      "sha256": "e4731c9d7c4c7d0126fb182a094f7cd9c57611886f06a121432f21bb895016c2",
+      "section": "合并不变性的短失败证书与有理位长"
+    }
+  ],
+  "reviewed_by": "budget-games-3a-3a-feff53cdb880eb43",
+  "review_note": "核对共用预算量词、(K) 的必要和充分性、支持并与失败实例的双向恢复、严格 margin 的有理替换、Farkas 方向及全部位长。用冻结脚本的 verify 对字面三项目输入重算得到 Mᵀy=(1,1)，与冻结 JSON 相同，普遍证明不依赖该次计算。",
+  "endpoint_pins": {
+    "BN-CLONE-v1": "1f8efa757d60cfb6b0d2602aaf2b0245e3fac233fb702fa002a1fd2f931014e4",
+    "BN-CLONE-v2": "abcee8338458d8899260ec78267f7e584fd514c0b4f2fc04f7c2c278d122ec1c"
+  },
+  "evidence_pins": {
+    "archives/budget-games/state/定理/分段线性凹偏好的共享超梯度合并判别--定理.md": "754484e9c7765984f91acb586031a4b10259552ed294fbd5b7c0e4c9549d463b",
+    "archives/budget-games/state/证明/合并不变性的短失败证书与有理位长--证明.md": "e4731c9d7c4c7d0126fb182a094f7cd9c57611886f06a121432f21bb895016c2"
+  },
+  "review_digest": "b616a0eef9ffa44c9e1b436fcc2b7d316bdc78f0697efeebb41dee5447ab10b9"
+}

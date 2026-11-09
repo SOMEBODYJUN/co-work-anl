@@ -1,0 +1,51 @@
+{
+  "edge_id": "bn-clone-differentiability-certifies-linear-active-cells",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-d411dec3eeda4c5ca40bc73b0af39d54"
+  ],
+  "target_ids": [
+    "BN-CLONE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "总预算归一为1，A 为 BN-CLONE-v1 的显式矩阵。在非空 active cell C_I 中，I 只有一个矩阵行，或 I 中各行的系数向量逐项相同。原 NE 中拟合并者共同使用 u_A，预算为任意正数。",
+  "roles": {
+    "M-d411dec3eeda4c5ca40bc73b0af39d54": "用当前点的共同梯度证明原 NE 各 clone 只在梯度的最大坐标支出，并保证合并行仍最优。",
+    "BN-CLONE-v1": "需要在每个 active cell 检验所有可达到的逐坐标最大值能否由同一 active 超梯度实现。"
+  },
+  "explanation": "固定满足条件的 C_I。每个 δ∈C_I 与所有非 active 行之间都有严格间隔，故在 δ 的邻域内 u_A 由 I 的共同线性式决定，梯度就是该行 g。每个最佳响应 clone 的支持都落在 argmax g，任意合并保留这一支持且其他玩家的单行偏离域不变。对目标的点态判别，P_I={g}，所以 U_δ 中每个坐标都由同一 g 见证。若从识别算法的 J_I 出发，U_I=J_I∩argmax g，该共同 LP 对整个 cell 一次成立。",
+  "scope": "显式矩阵识别的单一 active 系数向量情形，允许重复行。可微源引理本身也适用于矩阵之外的共同凹效用。",
+  "contribution": {
+    "result": "单一 active 系数向量的每个 cell 都在共同 LP 的保持分支。当前点任意正预算的共同效用 clones 可合并，且该类 cell 可跳过失败分支检索。",
+    "remaining": "多种不同 active 系数向量的 cell 还需逐坐标与共同凸组合的 LP 判别、严格 margin 的可达性和全局枚举分析。"
+  },
+  "evidence": [
+    {
+      "path": "archives/budget-games/state/定理/分段线性凹偏好的共享超梯度合并判别--定理.md",
+      "sha256": "754484e9c7765984f91acb586031a4b10259552ed294fbd5b7c0e4c9549d463b",
+      "section": "二、可微凹正类"
+    },
+    {
+      "path": "archives/budget-games/state/定理/分段线性凹偏好的共享超梯度合并判别--定理.md",
+      "sha256": "754484e9c7765984f91acb586031a4b10259552ed294fbd5b7c0e4c9549d463b",
+      "section": "三、非光滑时的点态充要条件"
+    },
+    {
+      "path": "archives/budget-games/state/定理/分段线性凹偏好的共享超梯度合并判别--定理.md",
+      "sha256": "754484e9c7765984f91acb586031a4b10259552ed294fbd5b7c0e4c9549d463b",
+      "section": "四、按片数的精确识别算法"
+    }
+  ],
+  "reviewed_by": "budget-games-3a-3a-feff53cdb880eb43",
+  "review_note": "逐项核对严格间隔、单一系数向量、共同梯度和等预算量词。一般不同 active 行的共同最大判别仍需其自身 LP 论证。",
+  "endpoint_pins": {
+    "BN-CLONE-v1": "1f8efa757d60cfb6b0d2602aaf2b0245e3fac233fb702fa002a1fd2f931014e4",
+    "M-d411dec3eeda4c5ca40bc73b0af39d54": "ac4487c16fdab8f7522d7d8ec1fdde6cc5ebdbfae230ee6afccd431cb9f16640"
+  },
+  "evidence_pins": {
+    "archives/budget-games/state/定理/分段线性凹偏好的共享超梯度合并判别--定理.md": "754484e9c7765984f91acb586031a4b10259552ed294fbd5b7c0e4c9549d463b"
+  },
+  "review_digest": "1395bf080266813b18694d6085ec660ec5740d3be4894e9107db8d06a5e1469f"
+}

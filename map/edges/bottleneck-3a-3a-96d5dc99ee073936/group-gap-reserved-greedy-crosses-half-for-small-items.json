@@ -1,0 +1,63 @@
+{
+  "edge_id": "group-gap-reserved-greedy-crosses-half-for-small-items",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-6b2b6c8e6aa544d2b5153eca1033a12f"
+  ],
+  "target_ids": [
+    "bottleneck-knapsack/group-gap-beyond-half-capacity"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "标准Group GAP：m个单位包，正有理公共尺寸s_i≤1/3、非负有理包依赖利润、全物品–包均允许，无额外同组同包互斥。组为不交的all-or-nothing集合，每组总尺寸≤7m/12。取δ=7/12, ρ=2/3。",
+  "roles": {
+    "M-6b2b6c8e6aa544d2b5153eca1033a12f": "在完整组为地集、组总尺寸为成本、分数指派LP值为ψ时支付选择阶段。",
+    "bottleneck-knapsack/group-gap-beyond-half-capacity": "得到严格越过m/2阈值且保实际利润的确定性硬容量子类。"
+  },
+  "explanation": "在全物品–包可指派的标准Group GAP中，用ψ(A)表示并集物品的分数指派最优值（每物品列和≤1，每箱载重≤1）。它单调且子模：仅为证明取公分母D，把物品i分为Ds_i个质量1/D的副本，给每个包D个槽，副本在j获利v_ij/(Ds_i)。运输多面体整数性使最大加权匹配值等于原分数LP。并集与交集的两个最优匹配叠加后沿交替路径/圈重染成各集合的匹配；任何只能出现在并集一侧匹配的独占左端点，所在路径不可能另有这样的左端点，因为连接两个左端点的路径长度为偶数且首尾匹配颜色相异。逐分量选方向即可保两侧可用性和总价值。把地集换成不交的完整组保子模，计算值用原紧LP，无需扩张D。以组总尺寸为成本，比较预算B=m下的ψ最优值，至少为整数OPT。用C03按ρ=2/3选择完整组。所选总尺寸≤2m/3，全资格且利润非负使任一最优分数解可填满所选每件的单位份额而不降值。逐包按尺寸递减排列分数份额，按单位份额分槽；物品到槽的最大权匹配可完整分配并保LP价值，且除首槽外每槽的匹配物品尺寸≤前一满槽承载质量，故去掉首槽件后余量≤1。每超载包先保首槽件与其余集合中价值较大者，至少保留一半价值。再把所有暂移物品逐件放进任一可容纳包。若尺寸≤1/3的物品无法放，所有包现载均>2/3，与现载总和≤所选总尺寸≤2m/3矛盾。重新放入的利润非负，最终每个所选组全放入，逐包硬容量。对有限有理输入，使用多项式次紧LP、槽匹配及包扫描，给确定性总位多项式实现。 因ρ−δ=1/12，近似比至少(1−e^(−1/12))/2。",
+  "scope": "C02的P01全资格且所有物品尺寸≤1/3切片。组总尺寸阈值为7m/12=(1/2+1/12)m。",
+  "evidence": [
+    {
+      "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+      "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+      "section": "C03：reserved-capacity 小物品引理"
+    },
+    {
+      "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+      "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+      "section": "5. 已完成：小物品reserved-capacity的greedy引理"
+    },
+    {
+      "path": "archives/bottleneck-knapsack/state/问题/组广义指派越过半容量阈值--问题.md",
+      "sha256": "69fe94a187bbc141a9b4f019216ed8f9d8449ab7f10efdff0c54a329666ed77f",
+      "section": "开放合同及尚需恢复的模型接口"
+    },
+    {
+      "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+      "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+      "section": "C02. Group GAP 的组总尺寸阈值越过 m/2【B；作者明确 open + 限域新切口】"
+    },
+    {
+      "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+      "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+      "section": "1. Primary 文献与文章定性（已打开正文）"
+    }
+  ],
+  "reviewed_by": "bottleneck-3a-3a-96d5dc99ee073936",
+  "review_note": "核对与P01 Theorems 1和3一致的分数激活、保利润槽舍入，以及新2m/3留量的完整组重插。分母扩张只用在证明。",
+  "contribution": {
+    "result": "每件尺寸≤1/3且每组总尺寸≤7m/12时得到(1−e^(−1/12))/2近似，输出完整组和硬容量实际指派。",
+    "remaining": "一般越过m/2模型仍要恢复全部母接口，并处理无单件1/3上界、不同资格或同组互斥时的盈利修复。"
+  },
+  "endpoint_pins": {
+    "M-6b2b6c8e6aa544d2b5153eca1033a12f": "2d93ca132aedee910338aee7ebd0b54a82a133770e2fe60190070c0346c517a4",
+    "bottleneck-knapsack/group-gap-beyond-half-capacity": "058578c3c4f29f2de150b2163c2f9d294767576c8a4ff41f56786803341132f2"
+  },
+  "evidence_pins": {
+    "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+    "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+    "archives/bottleneck-knapsack/state/问题/组广义指派越过半容量阈值--问题.md": "69fe94a187bbc141a9b4f019216ed8f9d8449ab7f10efdff0c54a329666ed77f"
+  },
+  "review_digest": "3e12672335417d6bc77a2b71b6ce1965d2c5277560082e0b2a384d92b52aba48"
+}

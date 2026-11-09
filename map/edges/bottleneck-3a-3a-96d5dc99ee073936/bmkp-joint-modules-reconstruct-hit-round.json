@@ -1,0 +1,68 @@
+{
+  "edge_id": "bmkp-joint-modules-reconstruct-hit-round",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "GA-03-L1",
+    "GA-03-L2",
+    "GA-03-L3"
+  ],
+  "target_ids": [
+    "TS-BMKP-2CAP-APPROX-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "两容量公共正有理重/非负有理利，有限非空背包，允许物品未用。对T>0按min(p_e/T,1)归一化，ζ=1/ceil(max(100,20/ε)), U=1−ζ, γ=Uζ, δ=Uζ², K=1/ζ, q_pre=2/3−8ζ, Q=2/3−11ζ。假设枚举轮命中一份互不交的合法结构见证，联合标签有正确有限上舍入重及共同利润桶，全部long昂贵项为critical且每long至多K，long的上舍入重量及下舍入利润满足硬容量与Q，原short至多两项且利润至少q_pre。",
+  "roles": {
+    "GA-03-L1": "固定命中标签和全局槽重数后，按两容量总需求选每型最重原物，保持各long便宜集与舍入重量/利润式。",
+    "GA-03-L2": "在非critical昂贵池以不同dummy表示singleton，经固定基数最大权一般图matching一次恢复所有short。",
+    "GA-03-L3": "对严格p<γ的池在long残容量上做逐包利润LP舍入，只损各包最多4pmax，不用掉其他池原物。",
+    "TS-BMKP-2CAP-APPROX-v1": "此处交付其命中轮的可执行恢复及利润预算。"
+  },
+  "explanation": "L1按全局供给交换，short重量不增且利润损失<2δ，long原便宜集给剩余LP见证，负利润下界可截为0。short中有p≥Q则留该singleton且Q>γ。否则它必有两件，各件利润大于q_pre−2δ−Q=3ζ−2Uζ²>γ，故L2的整个short见证属于同一非critical昂贵池。L2在B2可行边上最大化B1资格边数，恢复利润至少Q的short。L3只使用不相交的便宜池，pmax<γ<ζ，故long实际利润至少Q−4ζ；昂贵项实际重量不超过上舍入重且实际利润不低于桶下界。L1、L2、L3分别支付规范化、短包和长包恢复，三者合取并保供给互斥。若对所有T≤OPT确有命中轮，公比1+ζ网格挑最高实绩得(2/3−15ζ)OPT/(1+ζ)≥(2/3−16ζ)OPT≥(2/3−ε)OPT；成功轮只担保输出，不用于反推T≤OPT。",
+  "scope": "只担保两容量BMKP已命中结构的硬容量、整数、互斥恢复。B1=B2、无short或无long时对相应空模块用空解。后段全域及总位时间另外取决于见证覆盖与枚举域。",
+  "evidence": [
+    {
+      "path": "archives/bottleneck-knapsack/state/引理/联合类型交换与允许弃置的背包恢复--引理.md",
+      "sha256": "122fcdf542aa5a1f5593139d2f2d395c0b2b32c4f765eab69a1ae80498c6dc44",
+      "section": "L1：固定联合标签的全局critical恢复"
+    },
+    {
+      "path": "archives/bottleneck-knapsack/state/引理/联合类型交换与允许弃置的背包恢复--引理.md",
+      "sha256": "122fcdf542aa5a1f5593139d2f2d395c0b2b32c4f765eab69a1ae80498c6dc44",
+      "section": "L2：两个容量的short恢复恰是嵌套配额匹配"
+    },
+    {
+      "path": "archives/bottleneck-knapsack/state/引理/联合类型交换与允许弃置的背包恢复--引理.md",
+      "sha256": "122fcdf542aa5a1f5593139d2f2d395c0b2b32c4f765eab69a1ae80498c6dc44",
+      "section": "L3：列和≤1、允许unused的$4p_{max}$硬容量舍入"
+    },
+    {
+      "path": "archives/bottleneck-knapsack/state/候选/双容量瓶颈背包的profile标签与完整枚举--候选.md",
+      "sha256": "33f014ef81660868e4169c2b950ad2fae73a1a256c93b23fe28f4a3d19031b6c",
+      "section": "五、枚举、物品池与完整成功轮"
+    },
+    {
+      "path": "archives/bottleneck-knapsack/state/候选/双容量瓶颈背包的profile标签与完整枚举--候选.md",
+      "sha256": "33f014ef81660868e4169c2b950ad2fae73a1a256c93b23fe28f4a3d19031b6c",
+      "section": "六、正OPT几何网格与最终误差"
+    }
+  ],
+  "reviewed_by": "bottleneck-3a-3a-96d5dc99ee073936",
+  "review_note": "核对三引理的实际入口、short分池代数、一般图matching资格、逐包残余利润及几何网格方向。轮前profile和枚举覆盖保持未付。",
+  "contribution": {
+    "result": "每个符合上述输入合同的命中轮可恢复全部包，原利润阈值保证为(2/3−15ζ)T；若每个T≤OPT均可命中，已核实后续网格比值。",
+    "remaining": "需要从所有阈值见证逐式导入母Lemma8，证明profile自代表/零尺度/无效标签规则、昂贵件规范后slack、有限标签与配置数界、至少一个联合枚举轮命中，并完成总位复杂度和通用实现。"
+  },
+  "endpoint_pins": {
+    "GA-03-L1": "45ca66bf555a55d33ec61b65d41200fd73c8cc34aaf257fea6ac2059a5f5c2dc",
+    "GA-03-L2": "21e597580f4a015bf60b14845d2ca507c708717c85eea72815f22e0b8c4c7160",
+    "GA-03-L3": "ab017830b408a684ebdd2e2b86f5b831c631ea5449b423a36d8a1975a8c86fd0",
+    "TS-BMKP-2CAP-APPROX-v1": "6bacc3103a39e7c9244e9b96c408061b886c75b134499f1daa540b825b5ff87f"
+  },
+  "evidence_pins": {
+    "archives/bottleneck-knapsack/state/引理/联合类型交换与允许弃置的背包恢复--引理.md": "122fcdf542aa5a1f5593139d2f2d395c0b2b32c4f765eab69a1ae80498c6dc44",
+    "archives/bottleneck-knapsack/state/候选/双容量瓶颈背包的profile标签与完整枚举--候选.md": "33f014ef81660868e4169c2b950ad2fae73a1a256c93b23fe28f4a3d19031b6c"
+  },
+  "review_digest": "413f1d41dcea025910f199dc2b29d34f9738e82d92af829f16dafaf71b04e90e"
+}

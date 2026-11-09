@@ -1,0 +1,62 @@
+{
+  "edge_id": "poisson-binomial-smoothing-gives-simple-cactus-gap",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-032553bc20c040618a69609cb0f5b63a"
+  ],
+  "target_ids": [
+    "M-214bf81eea8f433e9fca948a00cf87e0"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "取无平行边的简单cactus，任意非负边权与任意cycle-matroid独立集多面体边缘x，独立激活。应用C09恢复的固定均值离散凹平滑和G随λ单调性，两项及其他两式均在本边独立证明。",
+  "roles": {
+    "M-032553bc20c040618a69609cb0f5b63a": "提供并支付截断Binomial有限样本平滑与均值单调性，后者的有限形式保留每个圈的实际边数。",
+    "M-214bf81eea8f433e9fca948a00cf87e0": "取得简单cactus子类的锐性相关缺口常数，作为series-parallel 2-sum问题的可检验基线。"
+  },
+  "explanation": "先恢复Sergeev论文§4.1 Conjecture 4.1（arXiv:2404.00041，印刷页24）：k≥1、n≥k+1、0≤λ≤k+1，(3)为G(k,n,λ)随整数n不增且下界F(k,λ)，(4)为G随λ不增，(5)为F(k,k+1)随整数k≥1不减，(6)为其论文定义的连续实形状扩展在k≥1不减。在λ=0按连续极限取1。以下独立支付四式，无需把当前登记的开放义务当定理。令φ(z)=min(z,k)。给定其余计数Z，固定p+q，Eφ(Z+Ber(p)+Ber(q))中可变项是pq·EΔ²φ(Z)≤0。两概率取平均不增期望；反复取最小和最大概率平均可收敛到全相等（离均差平方和每步降当次极差平方的一半）。补一零概率并平滑给(3)相邻n比较；n→∞的Poisson极限给F。对h(p)=Eφ(Bin(n,p))，二阶导数为n(n−1)EΔ²φ(Bin(n−2,p))≤0，n=1为线性。h(0)=0故h(p)/p不增，代p=λ/n即(4)。对于实k≥1，论文的上不完全Gamma扩展等于λ⁻¹∫_0^λ Γ(k,t)/Γ(k)dt=E[min(Y_k,λ)]/λ，Y_k为形状k、速率1的Gamma变量。分部积分并用Γ(k+1,λ)=kΓ(k,λ)+λ^k e^(−λ)即得论文公式。对1≤a<b令Y_b=Y_a+Y_{b−a}，两个增量独立。变换到总和及比值后，Gamma密度分解成总和的Gamma(b)与独立Beta(a,b−a)，其比值均值a/b，故E[Y_a/a|Y_b]=Y_b/b。对递增凹ψ(z)=min(z,1)用条件Jensen，Eψ(Y_a/(a+1))≤Eψ((a/(a+1))Y_b/b)≤Eψ(Y_b/(b+1))，给(6)，整数限制给(5)。此外所有尺寸在(1/(k+1),1/k]时可行族为均匀拟阵，权阈值边缘质量≤k+1；同一截断计数平滑和均值单调给F(k,k+1)，以等尺寸趋近左端点和等权等边缘Poisson极限达锐。 对简单cactus，cycle matroid是桥coloops与各长度k+1≥3的圈U_{k,k+1}直和。对某圈和任意权阈值，层积分使用min(k,激活计数)；阈值边缘总质量λ≤k。 保留圈的k+1个概率坐标（阈值之外补零），平滑并用(4)得E rank≥λG(k,k+1,k)。 因Bin(k+1,k/(k+1))只有全成功时超过k，G(k,k+1,k)=1−k^k/(k+1)^(k+1)。 log损失项的实导数为log(k/(k+1))<0，故k≥2最小保证为k=2的23/27。 对权阈值积分，再对直和部件相加；桥保持1。等权三角形x_e=2/3达到23/27。",
+  "scope": "简单cactus的全部权重与合法边缘。任意简单series-parallel不一定是圈直和，2-sum耦合不在此保证内。",
+  "evidence": [
+    {
+      "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+      "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+      "section": "15 项候选的准确状态"
+    },
+    {
+      "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+      "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+      "section": "C09. Sergeev Conjecture4.1 的 Binomial–Poisson 极值不等式【C/辅助；作者明确 conjecture】"
+    },
+    {
+      "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+      "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+      "section": "15 项候选的准确状态"
+    },
+    {
+      "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+      "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+      "section": "C10. Graphic matroid 的2-sum结构能否给强 correlation gap【B；作者明确类问题 + 新 idea】"
+    },
+    {
+      "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+      "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+      "section": "1. Primary 文献与文章定性（已打开正文）"
+    }
+  ],
+  "reviewed_by": "bottleneck-3a-3a-96d5dc99ee073936",
+  "review_note": "实读主论文Conjecture 4.1的四条准确不等式及Gamma扩展。核对独立证明、有限k+1平滑、三角形等号与直和量词。保现行端点pin。",
+  "contribution": {
+    "result": "简单cactus graphic matroid的sharp weighted-rank correlation gap是23/27。另完整恢复并证明C09登记所指Conjecture 4.1 (3)–(6)。",
+    "remaining": "仍须解决一般简单series-parallel 2-sum如何组合边缘、能否统一严格超过1−1/e及其sharp常数。若允许任意多平行边，需另区分多图域。"
+  },
+  "endpoint_pins": {
+    "M-032553bc20c040618a69609cb0f5b63a": "d4b7c48122c70642a66bd280aefb1cd33b5d15b7b780405f58205ae4cb49313c",
+    "M-214bf81eea8f433e9fca948a00cf87e0": "f8a400e2116a06ac2de1055b63cf749c5527f0a87386dae56271b2b95fa21e64"
+  },
+  "evidence_pins": {
+    "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+    "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e"
+  },
+  "review_digest": "c29c0608675cebdaff83d7aa8516091f4af62affeb5f28f1018c8290c3691410"
+}

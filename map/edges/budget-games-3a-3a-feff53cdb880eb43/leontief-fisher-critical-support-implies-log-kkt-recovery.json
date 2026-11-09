@@ -1,0 +1,62 @@
+{
+  "edge_id": "leontief-fisher-critical-support-implies-log-kkt-recovery",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "NE-FISHER-TRANSFER-v1"
+  ],
+  "target_ids": [
+    "M-e55e34f66b7b4eaaabe0b54bc1aa6d74"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取两端共有的正有理预算、总预算1、非负有理 v、每行列非空的 public Leontief 模型。对数规划将每行 v 正比例归一到行和1，保持 critical 与 Fisher 最大单位价格效用的坐标集。",
+  "roles": {
+    "NE-FISHER-TRANSFER-v1": "临界支持引理给逐行贡献最优性的充要条件以及所有保留 δ_j>0。市场侧同一支出矩阵的条件是行和 b_i、列和 p_j、支出仅在最大 v_ij/p_j 的边上。",
+    "M-e55e34f66b7b4eaaabe0b54bc1aa6d74": "通过同一临界支出条件建立 (P) 的 KKT 解与 NE 矩阵之间的恢复，最后在精确临界图上求有理流。"
+  },
+  "explanation": "从任一 NE 取 u_i=min_{v_ij>0} δ_j/v_ij、λ_ij=X_ij/δ_j、τ=1。行和、列和及临界边等式 v_ij u_i=δ_j 给出 b_i/u_i=Σ_j λ_ij v_ij、Σ_i λ_ij=τ 及互补松弛。反过来，(P) 的任一 KKT 点有 u_i>0、δ_j>0。逐行一阶条件乘 u_i 求和并用互补松弛，得到 1=Σ_ij λ_ij δ_j=τ。取 X_ij=λ_ijδ_j 得行和 b_i、列和 δ_j。每行至少一项 λ_ij>0，故 u_i=U_i(δ)，而正 X 只出现在临界边。该 X 由临界支持引理是原游戏 NE，也见证精确 u、δ 已恢复时临界图上的运输流可行。",
+  "scope": "只连接同一 Leontief 输入上的临界支持、KKT 与有理运输流接口。Fisher 价格 p 对应 δ，支出 X 对应贡献，货物数量 y 不充当贡献。",
+  "contribution": {
+    "result": "用 λ_ij=X_ij/δ_j 和 X_ij=λ_ijδ_j 将任一 NE 与 (P) 最优点的 KKT 贡献恢复逐式对应，并给精确临界图上的可行流。",
+    "remaining": "完整备线还需唯一坐标、分母界 D、弱优化后端及其 oracle 和几何合同、曲率导出的坐标精度与连分数精确恢复。"
+  },
+  "evidence": [
+    {
+      "path": "archives/budget-games/state/等价/Leontief贡献矩阵与线性Fisher支出的精确对应--等价.md",
+      "sha256": "9a263af9f27b14572ea9bb746b8265aae95fd7db57322519c778aea1e46d05da",
+      "section": "输入与要输出的对象"
+    },
+    {
+      "path": "archives/budget-games/state/等价/Leontief贡献矩阵与线性Fisher支出的精确对应--等价.md",
+      "sha256": "9a263af9f27b14572ea9bb746b8265aae95fd7db57322519c778aea1e46d05da",
+      "section": "临界支持引理"
+    },
+    {
+      "path": "archives/budget-games/state/等价/Leontief贡献矩阵与线性Fisher支出的精确对应--等价.md",
+      "sha256": "9a263af9f27b14572ea9bb746b8265aae95fd7db57322519c778aea1e46d05da",
+      "section": "同矩阵linear Fisher合同"
+    },
+    {
+      "path": "archives/budget-games/state/证明/Leontief对数规划的有理坐标恢复接口--证明.md",
+      "sha256": "aeaf96be45acf228964be698abba7845b4783b183dd8c5b425ba6d43ceac3935",
+      "section": "对数规划、KKT与唯一性"
+    },
+    {
+      "path": "archives/budget-games/state/证明/Leontief对数规划的有理坐标恢复接口--证明.md",
+      "sha256": "aeaf96be45acf228964be698abba7845b4783b183dd8c5b425ba6d43ceac3935",
+      "section": "从目标误差恢复精确坐标"
+    }
+  ],
+  "reviewed_by": "budget-games-3a-3a-feff53cdb880eb43",
+  "review_note": "核对正价格与总量、逐行归一化、行列守恒及 KKT 两个方向。两条求解路线分别导入 Fisher 求解器和弱凸优化后端，临界支持子结论不使用任何一个外部后端。",
+  "endpoint_pins": {
+    "M-e55e34f66b7b4eaaabe0b54bc1aa6d74": "12073ff62133aa89bddd82076e4dcb9d4411393c13ff1fddb77477445dfe6868",
+    "NE-FISHER-TRANSFER-v1": "8d7e3cacbb31c3f4433722d4156bed739ac5f3854b9dd53da287a2e5acd51617"
+  },
+  "evidence_pins": {
+    "archives/budget-games/state/等价/Leontief贡献矩阵与线性Fisher支出的精确对应--等价.md": "9a263af9f27b14572ea9bb746b8265aae95fd7db57322519c778aea1e46d05da",
+    "archives/budget-games/state/证明/Leontief对数规划的有理坐标恢复接口--证明.md": "aeaf96be45acf228964be698abba7845b4783b183dd8c5b425ba6d43ceac3935"
+  },
+  "review_digest": "4f0d953ac5013e02f56bf4b148122a4dd870b94a3b6be0e36c15fce4ddffddae"
+}

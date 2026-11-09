@@ -1,0 +1,63 @@
+{
+  "edge_id": "commonmany-weak-unopened-cap-supplies-range-singleton-seed",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-GREEDY-UNOPENED-2"
+  ],
+  "target_ids": [
+    "SC-K-RANGE-GREEDY-2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一 MF-MODEL 和实际规范贪心占位，有限非空共同目录、显式 k≥2 家带标签设施、强制服务及独立混合，正覆盖时末分数 γ>0。时间结论使用显式正二进制有理权。输入通过 (R)，在轨使用逐重数组的有限严格改善达到原 NE，考察 q_u=1 的源搬往原未开目标 r。",
+  "roles": {
+    "SC-K-GREEDY-UNOPENED-2": "严格改善前缀保收益下界 a≥γ 与固定占用的新覆盖 N_r≤γ，给局部二帽。",
+    "SC-K-RANGE-GREEDY-2": "除共享原池重置外，另有保持最终重数组客户并重挂单源孤儿的独立构造；其中未开目标偏离者需普通帽。"
+  },
+  "explanation": "组内同 q 的严格改善也是原条件成本意义下的严格改善，逐组轨迹可依次拼接，故 UNOPENED 的不变量适用。单源 u 的当前池总重 a；按当前组内分配处理偏离，仍有静止可达选项的孤儿重挂，留给新目标的旧源客户只是 J_u∩C_r 的子集。新覆盖 N_r 与这些旧客户不交，偏离标签初始负载至多 N_r+w(J_u∩C_r)≤γ+a≤2a。正文同样可对任何 RANGE 输出直接核 a≥γ 与 N_r≤γ；此处的推导使用可自足的严格改善实现。",
+  "scope": "仅证明偏离者初始帽。静止 E 的 20+24>41 和某任意严格修复终点 B→G 的 176>2·(165/2) 都保留该弱不变量，同时限定从它单独推全局普通帽或稳定续局的尝试。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/重数分组范围证书与轻客户分量选择--算法.md",
+      "sha256": "8633e6a21234d029f1bdf6a2f31a2ed7ff9119fc4874cd7aa56b51090bf3a2d0",
+      "section": "原始预算与严格修复的边界"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/重数分组范围证书与轻客户分量选择--算法.md",
+      "sha256": "8633e6a21234d029f1bdf6a2f31a2ed7ff9119fc4874cd7aa56b51090bf3a2d0",
+      "section": "以最终重数分组的范围检验"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "规范贪心、冻结原池及预算"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/反例/固定贪心均衡的坏选择与静止超帽边界--反例.md",
+      "sha256": "f17a382546c11c8ee4157c911e7262023c4d35426bd29a6f66c4ef47fae8988c",
+      "section": "静止站冻结不能装箱"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/反例/固定贪心均衡的坏选择与静止超帽边界--反例.md",
+      "sha256": "f17a382546c11c8ee4157c911e7262023c4d35426bd29a6f66c4ef47fae8988c",
+      "section": "任意严格修复顺序可到无法因子二支撑的NE"
+    }
+  ],
+  "contribution": {
+    "result": "完成 RANGE 独立单源构造里搬往未开目标时的偏离者纯种子普通帽 2a。",
+    "remaining": "还须用原归属最大重数与首个单重数站的 P 并池界 w(P∩C_t)≤2γ 处理静止单站，用完整盒给高重数站装箱预算，再完成全部客户 NE、其它偏离类别和默认布局。位多项式另付 RANGE 与 MAX。"
+  },
+  "reviewed_by": "Boss1-common-many-3A-worker",
+  "review_note": "实读所列选择器、固定布局条件成本及依赖证明。逐项核定这里实际得到的局部结论，保留目标其余义务和相应时间合同。",
+  "endpoint_pins": {
+    "SC-K-GREEDY-UNOPENED-2": "fd532e9507e48e0b8fe8e5f2f75f8d31c93e60146fd28e31cf7d03f577b52d8b",
+    "SC-K-RANGE-GREEDY-2": "a75e6fd1bd73eab1b3b4b13b5268515b2151d02364710bc03dfcaa1dd4e28524"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/算法/重数分组范围证书与轻客户分量选择--算法.md": "8633e6a21234d029f1bdf6a2f31a2ed7ff9119fc4874cd7aa56b51090bf3a2d0",
+    "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+    "archives/facility-games/subarchives/common-many/state/反例/固定贪心均衡的坏选择与静止超帽边界--反例.md": "f17a382546c11c8ee4157c911e7262023c4d35426bd29a6f66c4ef47fae8988c"
+  },
+  "review_digest": "59855ca01f449dc5699d84cb93fb196d456a7c64fdb67b729532a6dd7b60a9ab"
+}

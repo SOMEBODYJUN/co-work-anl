@@ -1,0 +1,57 @@
+{
+  "edge_id": "vector-activation-defect-transfers-to-opening-recourse",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-db748b49766141e79b7ab59a27ad25bb"
+  ],
+  "target_ids": [
+    "M-3957aaaa66f24a77bf0a6a6ecde37f66"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取源族ε=0。目标是三单位容量bin H,L,R，开启费(2,1,1)，B=4，各bin仅一个资源位置。三个独立Bernoulli活跃物品a,b,c，各指派利润为1。H可放a,b,c，尺寸分别为1,1/2,1/2；L仅b，R仅c，尺寸1/2。各活跃概率p_a,p_b,p_c∈(0,1)。",
+  "roles": {
+    "M-db748b49766141e79b7ab59a27ad25bb": "其ε=0的φ在每个活跃子集上等于H的整数最优，因为a独占，b,c可同放且均为单位利润。给出全活跃时四值差的精确证书。",
+    "M-3957aaaa66f24a77bf0a6a6ecde37f66": "在两费、树eligibility、一位置interval容量切片，得到事前开启集合的期望整数补救值严格非子模。"
+  },
+  "explanation": "将开启L/R表示为相应私有物品集合S⊆{b,c}。给定活跃A，开启H与私有箱后可不损价值将S∩A每项移到其专用箱，再对H独立优化。于是V_A(H加S)=|S∩A|+φ(A\\S)。当A={a,b,c}，四个开启集合H,HL,HR,HLR的值为2,2,2,3，违反次模不等式的缺口为1。若b或c不活跃，其专用箱无作用而缺口为0；若仅a不活跃，H可容纳两件小物，无论是否开专用箱均可安置所有活跃物，缺口亦为0。故期望缺口等于p_a p_b p_c>0。资格图有H–a、H–b–L、H–c–R三分支，为树。所有四个开启集均在硬预算内。",
+  "scope": "只传递ε=0的整数可解子集值，给出C07精确非子模见证；无须把一般向量LP当作标量GAP，也不推出所有补救值缺口大小。",
+  "evidence": [
+    {
+      "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+      "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+      "section": "已有独立对象与本稿的去向"
+    },
+    {
+      "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+      "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+      "section": "4. 已完成：consecutive-ones向量LP的精确反例"
+    },
+    {
+      "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+      "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+      "section": "15 项候选的准确状态"
+    },
+    {
+      "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+      "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+      "section": "C07. Stochastic-appearance GBAP 的两阶段 opening/recourse【B；作者明确方向】"
+    }
+  ],
+  "reviewed_by": "bottleneck-3a-3a-96d5dc99ee073936",
+  "review_note": "逐一核对两模型的子集值和四个开启集合、各活跃情景、预算、树资格和单位置区间，证明可直接复现。",
+  "contribution": {
+    "result": "在C07目标切片内取p_a=p_b=p_c=1/2即得到期望次模缺口1/8的精确反例。",
+    "remaining": "仍需近似子模或替代结构、非自适应事前开启算法和实际期望近似保证。"
+  },
+  "endpoint_pins": {
+    "M-3957aaaa66f24a77bf0a6a6ecde37f66": "d1d3ea200cbdd6a4043be43f0602f70d7982719bac19e7eb5b0f66c25fe70a1f",
+    "M-db748b49766141e79b7ab59a27ad25bb": "5a60e13901b27d4e87aef6be9901899f614886beaef1347faba801fd9489453a"
+  },
+  "evidence_pins": {
+    "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+    "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e"
+  },
+  "review_digest": "1eeda7e587a5349a6cc6909e73b7e1d510435a51796eec81d33eb095418d2ded"
+}

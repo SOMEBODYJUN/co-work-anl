@@ -1,0 +1,64 @@
+{
+  "edge_id": "commonmany-equal-flow-solves-equal-slice-of-rq",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-EQUAL-LIGHT-FLOW-BOX"
+  ],
+  "target_ids": [
+    "SC-K-RQ-MIXED-BOX"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "SC-K-RQ-MIXED-BOX 的显式抽象输入，m≥1，q 非增正二进制整数，c_t∈[0,1] 有理，菜单非空且 h_i=min A_i。此边只取 n=0 或每名逐名客户的输入权重 w_i=δ∈(0,1) 的子域，保留单选、任意重数和任意原可达图。",
+  "roles": {
+    "SC-K-EQUAL-LIGHT-FLOW-BOX": "在全部合法赋值上最小化无约束 Ψ，保证每个全局极小者自动全盒、全部原选项 NE 和 H；给出有理位复杂度界。",
+    "SC-K-RQ-MIXED-BOX": "要求一个统一确定性位多项式算法解全部有序异权盒输入。该贡献支付等权/无客户子域的选择，保留一般异权义务。"
+  },
+  "explanation": "两个对象的 h、X、输出和 NE 逐项相同。任一严格改善的原动作都会降低无约束 Ψ。归属到终站的边严格增序，等权返路使中间站负载不变。负 X 的起点前向追到无出边站，端点差为负；违反 H 的离家客户逆追到无入边且有出边的站，得起点 X≤1−δ、q 不小于该客户 home，再同时返路也严格降势。任一超上盒站有入边，立即违反该离家客户的 H。N 次精确最短增广经整数费用缩放在联合输入位长内给一个极小点，客户单位容量保持逐名原子且无需展开 q，故在所列子域满足目标合同。n=0 直接返回 X=c。",
+  "scope": "抽象等权 RQ 子域和空客户，不附物理贪心实现要求。全极小者量词来自路径证明，软件/审计只覆盖其实际输入，不把任意局部 NE 当成该选择器。",
+  "contribution": {
+    "result": "存在确定性位多项式算法解决一般盒问题的等权及空客户子域，输出逐名原子赋值，满足 0≤X≤1 与全部原菜单 NE；等权输出还满足可选的 H。",
+    "remaining": "一般异权仍欠适用于所有输入、与权重数值无关的统一多项式选择算法。可变权使端点权和 H 阈值不再相同，路径内部净项即使为零也不能保证返路降势。该限制不构成一般搜索下界。"
+  },
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/等重轻客户下盒流与无约束细化--算法.md",
+      "sha256": "82abd37faab9e81b4fc3f4e302e8b2f704e8c5f2ccb0287f57527b2db3b99245",
+      "section": "后续无约束Ψ及所有最优解的等价"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/问题/一般异权盒选择的统一位复杂度目标--问题.md",
+      "sha256": "321b36b0574063b359700751b1206400c134de698365598a4fdca7832dc10a3e",
+      "section": "精确抽象合同"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/问题/一般异权盒选择的统一位复杂度目标--问题.md",
+      "sha256": "321b36b0574063b359700751b1206400c134de698365598a4fdca7832dc10a3e",
+      "section": "已知有限算法及尚缺的总界"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/资料/等权流对抗审计的全极小与残图边界--资料.md",
+      "sha256": "5aac61cb284873271b726537696fb2cff4800f17f25657b32341ba90e790d2d7",
+      "section": "异权端点与路径恒等式的独有边界"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/审查/结构盒选择与等权流的源版本及接口闭合--审查.md",
+      "sha256": "57a3cfe2f233eabf721530b1a946681d848708d9a3cba40e3d553c112b120d5c",
+      "section": "等流原件补足的实现论证"
+    }
+  ],
+  "reviewed_by": "Boss1-common-many-light-flow-worker",
+  "review_note": "核对逐名输入、空客户、完整盒与全部原行动，重读下盒和 H 的两条端点交换、整数单位残图位界。异权归路的内部项为零而净势增加 8/2025 只限制直接推广。",
+  "endpoint_pins": {
+    "SC-K-EQUAL-LIGHT-FLOW-BOX": "59fb7a83a717b9e9a5ee546139f18665dcd1134c99d55ff8d10b9bff949d345a",
+    "SC-K-RQ-MIXED-BOX": "3e2eefe4dd01bd22f50a521cb1d77b9ab32320d11a491f1dec390379ce5b3c48"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/算法/等重轻客户下盒流与无约束细化--算法.md": "82abd37faab9e81b4fc3f4e302e8b2f704e8c5f2ccb0287f57527b2db3b99245",
+    "archives/facility-games/subarchives/common-many/state/问题/一般异权盒选择的统一位复杂度目标--问题.md": "321b36b0574063b359700751b1206400c134de698365598a4fdca7832dc10a3e",
+    "archives/facility-games/subarchives/common-many/state/资料/等权流对抗审计的全极小与残图边界--资料.md": "5aac61cb284873271b726537696fb2cff4800f17f25657b32341ba90e790d2d7",
+    "archives/facility-games/subarchives/common-many/state/审查/结构盒选择与等权流的源版本及接口闭合--审查.md": "57a3cfe2f233eabf721530b1a946681d848708d9a3cba40e3d553c112b120d5c"
+  },
+  "review_digest": "6dcd57bbc92dd6d9234c39c67553fda1626ba344a5665e361d38945492c86330"
+}

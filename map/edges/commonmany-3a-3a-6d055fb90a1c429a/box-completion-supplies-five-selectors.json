@@ -1,0 +1,92 @@
+{
+  "edge_id": "commonmany-box-completion-supplies-five-selectors",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-GREEDY-BOX-TO-2"
+  ],
+  "target_ids": [
+    "SC-K-COMPONENT-MULT-GREEDY-2",
+    "SC-K-EQUAL-MULT-GREEDY-2",
+    "SC-K-GREEDY-HEAVY-OVERLAP-2",
+    "SC-K-LIGHT-COMPONENT-GREEDY-2",
+    "SC-K-RANGE-GREEDY-2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一 MF-MODEL 和实际规范贪心占位，有限非空共同目录、显式 k≥2 家带标签设施、强制服务及独立混合，正覆盖时末分数 γ>0。时间结论使用显式正二进制有理权。各目标独立提供同一次规范贪心占位的原精确站纯/站内独立均匀 NE，以及每站 q_tγ≤W_t≤(q_t+1)γ。显式标签、原池与重数可用；位多项式离轨和默认调用 MAX。",
+  "roles": {
+    "SC-K-GREEDY-BOX-TO-2": "以给定完整盒原 NE 为入口，处理存续源当前池装箱、消失源原池重置、受帽纯 NE 及默认查询。",
+    "SC-K-COMPONENT-MULT-GREEDY-2": "以完整关联分量常 q 和 q=1 单站条件，逐分量给盒内原 NE。",
+    "SC-K-EQUAL-MULT-GREEDY-2": "以全已占站同 q≥2 的 RANGE 给盒内原 NE。",
+    "SC-K-GREEDY-HEAVY-OVERLAP-2": "原共享客户均至少 γ，原贪心赋值即时提供盒内原 NE。",
+    "SC-K-LIGHT-COMPONENT-GREEDY-2": "以轻分量常 q、冻结重者再恢复全部原菜单给盒内原 NE。",
+    "SC-K-RANGE-GREEDY-2": "以各最终重数组 RANGE 及逐客户异组不等式 (R) 给盒内原 NE。"
+  },
+  "explanation": "对每个目标各自固定其给出的在轨见证。源 u 若有 q_u≥2，当前池重 q_ua，按 q_u−1 家静止设施装箱；其它站池重≤(q_t+1)γ≤(q_t+1)a；移动者在旧占目标起初为空，新站新增重量≤γ≤a。受帽纯改善使偏离者终态≤2a。若 q_u=1，重置所有旧客户到原贪心池；失站原客户有静止选项时重挂单重数静止站，无静止选项时由覆盖它的新开目标上的移动者服务，否则失去覆盖，P 并池界保静止单站≤2γ，原新目标预算保偏离者≤2γ≤2a。实际偏离标签布局各异，逐项纯 NE 加固定默认规则构成完整续局。每个目标分别适用同一接口，目标间无联合前提。",
+  "scope": "适用于五个明确输出类的同一离轨补全接口。全异址二/三的各自离轨证明与任意严格修复的未开弱帽在各自覆盖条目单独处理。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/重数分组范围证书与轻客户分量选择--算法.md",
+      "sha256": "8633e6a21234d029f1bdf6a2f31a2ed7ff9119fc4874cd7aa56b51090bf3a2d0",
+      "section": "以最终重数分组的范围检验"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/重数分组范围证书与轻客户分量选择--算法.md",
+      "sha256": "8633e6a21234d029f1bdf6a2f31a2ed7ff9119fc4874cd7aa56b51090bf3a2d0",
+      "section": "轻客户连通分量"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "存续源：按当前在轨池装箱"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "单设施源：重置全部原客户池"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "完整续局和时间层级"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md",
+      "sha256": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+      "section": "受帽纯均衡修复引理"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/审查/受限同链调度导入的最大值与范围义务--审查.md",
+      "sha256": "0f112e754fd5c918a7bbc5791cc31af95345e91dc27c90e3f49cc322a3b99ddb",
+      "section": "两个明确合同"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+      "section": "一份完整续局的量词"
+    }
+  ],
+  "contribution": {
+    "result": "从这五个选择器各自交付的完整盒原 NE 统一构造全部实际偏离及默认续局，每个移动标签收益至多原收益两倍。有限实现由装箱与严格纯改善给出；MAX 给离轨及默认的位时间层。",
+    "remaining": "各目标仍须分别证明其识别条件、初始范围保持以及恢复所有原可达行动后的在轨 NE；四个含非平凡在轨范围调度的目标的位时间仍依 RANGE，重共享即时分支在轨无需调度。"
+  },
+  "reviewed_by": "Boss1-common-many-3A-worker",
+  "review_note": "实读所列选择器、固定布局条件成本及依赖证明。逐项核定这里实际得到的局部结论，保留目标其余义务和相应时间合同。",
+  "endpoint_pins": {
+    "SC-K-COMPONENT-MULT-GREEDY-2": "71a71953f4084c7a24d43f674b0ed3f89d5733321af3e4f32e9e35ba14dad069",
+    "SC-K-EQUAL-MULT-GREEDY-2": "10fd6e5bad059b2d3fed28946f9a34585f1ce30952928115b94c5eb33cb9b0a0",
+    "SC-K-GREEDY-BOX-TO-2": "c5f0af766e5c2d960dc7f4b714189e568990f1165bbaeefba51b7a0d89a3ce14",
+    "SC-K-GREEDY-HEAVY-OVERLAP-2": "7eb9b17458f801a98e0d2184d2c726facbade330719c6e87bafea16d9fb1811b",
+    "SC-K-LIGHT-COMPONENT-GREEDY-2": "193da9bf544d4ec040ee08f05d8b19599ffd65bf95c5120797dad0ead1406cdc",
+    "SC-K-RANGE-GREEDY-2": "a75e6fd1bd73eab1b3b4b13b5268515b2151d02364710bc03dfcaa1dd4e28524"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/算法/重数分组范围证书与轻客户分量选择--算法.md": "8633e6a21234d029f1bdf6a2f31a2ed7ff9119fc4874cd7aa56b51090bf3a2d0",
+    "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+    "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+    "archives/facility-games/subarchives/common-many/state/审查/受限同链调度导入的最大值与范围义务--审查.md": "0f112e754fd5c918a7bbc5791cc31af95345e91dc27c90e3f49cc322a3b99ddb",
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+  },
+  "review_digest": "e61d4ee61fdd3dedf11a283b0f5c8f9b48adf6b24f060ed89c5bfd2ac4943625"
+}

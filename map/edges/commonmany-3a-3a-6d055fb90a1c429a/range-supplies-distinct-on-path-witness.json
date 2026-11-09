@@ -1,0 +1,58 @@
+{
+  "edge_id": "commonmany-range-supplies-distinct-on-path-witness",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-RANGE-GREEDY-2"
+  ],
+  "target_ids": [
+    "SC-K-DISTINCT-GREEDY-2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一 MF-MODEL 和实际规范贪心占位，有限非空共同目录、显式 k≥2 家带标签设施、强制服务及独立混合，正覆盖时末分数 γ>0。时间结论使用显式正二进制有理权。实际规范贪心的 k 家设施占 k 个不同地点。位多项式在轨选择保留 RANGE。",
+  "roles": {
+    "SC-K-RANGE-GREEDY-2": "当唯一的重数组是 q=1 时，跨重数检验为空，全菜单范围求解给纯 NE。",
+    "SC-K-DISTINCT-GREEDY-2": "利用所选在轨 NE 的每设施收益下界，再用真实贪心首站结构保证全部离轨收益。"
+  },
+  "explanation": "全异址使每站 q=1，所以只有一个重数组。全部已占选项均为组内选项，(R) 自动满足，初始 q=1 盒给 [γ,2γ]。保范围求出的精确站点 NE 就是纯标签设施 NE，且每家收益 a_f≥γ。这个调用给全异址证明所需在轨输入。离轨的任意均衡保证另由真实首站 R=max_r w(C_r)、始终可用的追加候选 R/2 和末分数 γ≥R/2 给出。",
+  "scope": "仅给目标的在轨选择步骤。一般完整盒补全给可选离轨 NE，而目标的首站证明对每个离轨 NE 有界。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/重数分组范围证书与轻客户分量选择--算法.md",
+      "sha256": "8633e6a21234d029f1bdf6a2f31a2ed7ff9119fc4874cd7aa56b51090bf3a2d0",
+      "section": "以最终重数分组的范围检验"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/重数分组范围证书与轻客户分量选择--算法.md",
+      "sha256": "8633e6a21234d029f1bdf6a2f31a2ed7ff9119fc4874cd7aa56b51090bf3a2d0",
+      "section": "全异址输出：因子三旧证明与因子二加强"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "规范贪心、冻结原池及预算"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/审查/受限同链调度导入的最大值与范围义务--审查.md",
+      "sha256": "0f112e754fd5c918a7bbc5791cc31af95345e91dc27c90e3f49cc322a3b99ddb",
+      "section": "两个明确合同"
+    }
+  ],
+  "contribution": {
+    "result": "对实际全异址贪心占位给出纯精确客户 NE，各家收益在 [γ,2γ]，并保留全部原可达已占行动。",
+    "remaining": "DISTINCT-2 的离轨全选择保证仍要用首站最大可达重 R 及 γ≥R/2，再用 L'_f≤w(C_r)；须对所有其余标签布局给默认精确 NE，位多项式查询另按 MAX 合同。"
+  },
+  "reviewed_by": "Boss1-common-many-3A-worker",
+  "review_note": "实读所列选择器、固定布局条件成本及依赖证明。逐项核定这里实际得到的局部结论，保留目标其余义务和相应时间合同。",
+  "endpoint_pins": {
+    "SC-K-DISTINCT-GREEDY-2": "4fcc7f58082f1232b15c8f51aed2e4b34fe48cedd608e2ad0f062d7b2d6439d3",
+    "SC-K-RANGE-GREEDY-2": "a75e6fd1bd73eab1b3b4b13b5268515b2151d02364710bc03dfcaa1dd4e28524"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/算法/重数分组范围证书与轻客户分量选择--算法.md": "8633e6a21234d029f1bdf6a2f31a2ed7ff9119fc4874cd7aa56b51090bf3a2d0",
+    "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+    "archives/facility-games/subarchives/common-many/state/审查/受限同链调度导入的最大值与范围义务--审查.md": "0f112e754fd5c918a7bbc5791cc31af95345e91dc27c90e3f49cc322a3b99ddb"
+  },
+  "review_digest": "77b541cd5512cca42f4cc4e212f9a8245b50832130bcd40d5742fab616f6a102"
+}

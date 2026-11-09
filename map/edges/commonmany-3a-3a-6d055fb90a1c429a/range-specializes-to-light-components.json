@@ -1,0 +1,55 @@
+{
+  "edge_id": "commonmany-range-specializes-to-light-components",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-RANGE-GREEDY-2"
+  ],
+  "target_ids": [
+    "SC-K-LIGHT-COMPONENT-GREEDY-2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一 MF-MODEL 和实际规范贪心占位，有限非空共同目录、显式 k≥2 家带标签设施、强制服务及独立混合，正覆盖时末分数 γ>0。时间结论使用显式正二进制有理权。有限在轨计算可用同重数子问题的严格改善；位多项式在轨按所述 RANGE 合同，离轨及默认按 MAX 合同。每个由 w_i<γ 且有多个已占选项的客户连接的分量重数恒定。",
+  "roles": {
+    "SC-K-RANGE-GREEDY-2": "以每个最终重数组的初始收益区间及逐客户跨重数检验 (R) 给完整盒。",
+    "SC-K-LIGHT-COMPONENT-GREEDY-2": "按轻客户分量保范围，在调度器中冻结重客户和单选项客户后恢复所有原选项。"
+  },
+  "explanation": "若轻客户有异重数选项，它的全部已占选项会连接不同重数站，违反分量假设。因此跨重数客户均 w_i≥γ。初盒给 β_q≤(1+1/q)γ 和 α_{q'}≥γ，所以 β_q−w_i/q≤γ≤α_{q'}，逐项通过 (R)。可把范围调度收窄到轻分量，保留每名可动轻客户的全部原选项，给冻结客户单选项菜单。各分量初始区间包含于其重数组区间，故输出仍在完整盒。恢复重客户菜单后，(W_s−w_i)/q_s≤γ≤W_t/q_t 保证包括跨分量和跨 q 的全部原行动稳定。单选项客户只有本站，同站标签条件成本相同。共同盒接口完成全部标签偏离及默认续局。反向严格性由正文 k=5、q=(2,2,1)、γ=12 的实例给出。重 5 的 A/C 客户连接异 q，仍通过 29/2−5/2=12≤14。",
+  "scope": "包括 q=1 的多站轻分量。量词为每个满足轻分量条件的实际规范贪心输入。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/重数分组范围证书与轻客户分量选择--算法.md",
+      "sha256": "8633e6a21234d029f1bdf6a2f31a2ed7ff9119fc4874cd7aa56b51090bf3a2d0",
+      "section": "以最终重数分组的范围检验"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/重数分组范围证书与轻客户分量选择--算法.md",
+      "sha256": "8633e6a21234d029f1bdf6a2f31a2ed7ff9119fc4874cd7aa56b51090bf3a2d0",
+      "section": "轻客户连通分量"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "规范贪心、冻结原池及预算"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/审查/受限同链调度导入的最大值与范围义务--审查.md",
+      "sha256": "0f112e754fd5c918a7bbc5791cc31af95345e91dc27c90e3f49cc322a3b99ddb",
+      "section": "两个明确合同"
+    }
+  ],
+  "whole_result": "重数范围选择器在轻图分量常 q 的域上满足逐项范围检验，并可分量化、冻结重者得到该类原精确 NE、完整盒及完整因子二续局，位时间层保留 RANGE 与 MAX。",
+  "reviewed_by": "Boss1-common-many-3A-worker",
+  "review_note": "实读同一规范贪心模型、选择器正文和导入审查，核对适用域、原客户菜单、完整续局量词及所列推导。有限正确性与调度器位时间分层记录。",
+  "endpoint_pins": {
+    "SC-K-LIGHT-COMPONENT-GREEDY-2": "193da9bf544d4ec040ee08f05d8b19599ffd65bf95c5120797dad0ead1406cdc",
+    "SC-K-RANGE-GREEDY-2": "a75e6fd1bd73eab1b3b4b13b5268515b2151d02364710bc03dfcaa1dd4e28524"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/算法/重数分组范围证书与轻客户分量选择--算法.md": "8633e6a21234d029f1bdf6a2f31a2ed7ff9119fc4874cd7aa56b51090bf3a2d0",
+    "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+    "archives/facility-games/subarchives/common-many/state/审查/受限同链调度导入的最大值与范围义务--审查.md": "0f112e754fd5c918a7bbc5791cc31af95345e91dc27c90e3f49cc322a3b99ddb"
+  },
+  "review_digest": "a6bc6184b9d32889691d25f51d093e232028a6bbb1f85b5fd0255a5a88ac90a4"
+}

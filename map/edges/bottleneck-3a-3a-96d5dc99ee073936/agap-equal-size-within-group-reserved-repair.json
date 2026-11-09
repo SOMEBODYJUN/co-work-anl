@@ -1,0 +1,62 @@
+{
+  "edge_id": "agap-equal-size-within-group-reserved-repair",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-6b2b6c8e6aa544d2b5153eca1033a12f"
+  ],
+  "target_ids": [
+    "M-45fdfcf5a51a491a9bdb56cc5c53f8ee"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "单位容量AGAP、所有物品可去所有箱、非负有理箱依赖利润。每组至多floor(m/2)件，同组每件共同正有理尺寸s_G≤1/3，组间尺寸可不同。所选组必须完整放入，且每箱同组至多一件。",
+  "roles": {
+    "M-6b2b6c8e6aa544d2b5153eca1033a12f": "以组总尺寸为成本、冲突感知分数LP为价值，B=m、ρ=1/3、δ=1/6选完整组并保(1−e^(−1/6))价值。",
+    "M-45fdfcf5a51a491a9bdb56cc5c53f8ee": "为所登记的两个自然限制的交集给出严格超过1/19的确定性硬容量修复。"
+  },
+  "explanation": "分数LP在普通指派LP中加每个(G,j)的Σ_{i∈G}x_ij≤1。令流y_ij=s_G x_ij，构造item→(G,j)→bin→sink网络，物品激活供给上限s_G，(G,j)出弧上限s_G，bin出弧上限1，首弧单位利润v_ij/s_G。流最优值φ的对偶是min_u [Σ_{i活跃}s_G u_i + D(u)]，物品势u_i≥0、汇点势0，D(u)=Σ弧 cap·(密度−u_尾+u_头)_+，只含非供给弧；负物品势可抬至0而不增对偶。凸函数的势差项对逐坐标min/max子模（交叉时两极端差值换为同总和的两个中间差值）。两激活集的最优势u,v，用u∧v于并集、u∨v于交集，供给项逐点不增，故φ子模。再取不交完整组并集，C03选总尺寸≤m/3的组。整数OPT分配的组总尺寸≤m且是冲突LP见证，因此LP值≥(1−e^(−1/6))OPT。 每组的x矩阵是双边度≤1的分数匹配，补dummy为双随机矩阵再分解为有理多项式支持的部分匹配，保每条边边缘。独立为每组取匹配和均匀优先级t∈{1/300,…,1}，按优先级与固定破平局处理组，每条抽中边能放则保留。对于本组已抽中目标(i,j)，前序其他组H在j抽中尺寸记Z_H∈[0,1/3]；独立且给定本组t有Σ E Z_H≤t（每组前序概率≤t，原LP负载≤1）。阻挡要求Σ Z_H>2/3，从而Σ_{H<K}Z_H Z_K=((ΣZ_H)^2−ΣZ_H²)/2>1/9。对每条目标边定义保留指标下界：t≤1/3取1−9Σ_{H<K}Z_H Z_K，1/3<t≤2/3取1−(3/2)Σ_H Z_H，否则0。受阻时该下界≤0，未受阻时≤1。给定t，期望下界分别≥1−(9/2)t²、1−(3/2)t和0；这个单调函数积分13/36，右端网格均值≥13/36−1/300=161/450。 按原利润对抽中目标边加权求和，得到实际保留利润的下界估计量。每项展开只含最多三个组的选择（目标组和最多两个前序组）。逐组枚举优先级×有理匹配支持，用各项支持上的精确条件期望固定不低于当前均值的选择，确定性多项式得到≥161/450倍LP价值。最后补齐每件未放物品：至多floor(m/2)−1个箱已有同组成员，若其余箱均放不下尺寸≤1/3的件，则至少ceil(m/2)+1个箱各载>2/3，与所选总尺寸≤m/3矛盾。每件合法补齐且利润不减。用1−e^(−1/6)≥11/72，得1771/32400>1/19。",
+  "scope": "C04两个候选切片的交集：单件≤1/3且组内等尺寸。涵盖不同组的尺寸和箱利润异质性，不使用随机结果代替确定性实现。",
+  "evidence": [
+    {
+      "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+      "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+      "section": "C03：reserved-capacity 小物品引理"
+    },
+    {
+      "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+      "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+      "section": "5. 已完成：小物品reserved-capacity的greedy引理"
+    },
+    {
+      "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+      "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+      "section": "15 项候选的准确状态"
+    },
+    {
+      "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+      "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+      "section": "C04. 保留容量修复能否改进 AGAP 的 1/19【B；作者明确方向】"
+    },
+    {
+      "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+      "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+      "section": "1. Primary 文献与文章定性（已打开正文）"
+    }
+  ],
+  "reviewed_by": "bottleneck-3a-3a-96d5dc99ee073936",
+  "review_note": "复核流LP对偶子模性、三组条件期望的可计算性、对偶和分解有理位复杂度、同组互斥与重插账目，并用有理常数比较1/19。",
+  "contribution": {
+    "result": "所述AGAP切片获得确定性1771/32400近似，完整组选取、逐箱硬容量和同组至多一件全部保留。",
+    "remaining": "组内异尺寸会破坏把冲突配额化为同一个流容量的换元，组内同尺寸但单件超过1/3也超出此修复；C04各备选完整域仍待处理。"
+  },
+  "endpoint_pins": {
+    "M-45fdfcf5a51a491a9bdb56cc5c53f8ee": "be7ad9523fd8508979f2de33d93a1d06fbc0b63bdc60919c46c045f64ee371f8",
+    "M-6b2b6c8e6aa544d2b5153eca1033a12f": "2d93ca132aedee910338aee7ebd0b54a82a133770e2fe60190070c0346c517a4"
+  },
+  "evidence_pins": {
+    "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+    "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e"
+  },
+  "review_digest": "2bb127c709091b4fc448c8bef68fc9ae83c9a8e21159c049dc41c0efeac144f8"
+}

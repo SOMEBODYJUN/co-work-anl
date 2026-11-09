@@ -1,0 +1,52 @@
+{
+  "edge_id": "bmkp-two-capacity-restricts-fixed-type-contract",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "SEL-BMKP-CONST-K-v1"
+  ],
+  "target_ids": [
+    "TS-BMKP-2CAP-APPROX-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "将固定容量种类问题的K取2，同一有限非空包集、公共正二进制有理重量、非负有理利润、可unused且全包硬容量；取同一固定0<ε<2/3。",
+  "roles": {
+    "SEL-BMKP-CONST-K-v1": "若完整固定K目标成立，取K=2直接取得同模型、同近似比的算法合同。",
+    "TS-BMKP-2CAP-APPROX-v1": "登记了同一两容量合同以及一个具体的profile/标签/全局枚举候选。所继承仅为存在此近似算法，不指定该实现。"
+  },
+  "explanation": "固定K的算法量化每个固定整数K≥1，故可直接传入K=2，无需修改容量、重/利或OPT。原输入即两容量输入，解码取原各包的物品集，所以同一硬容量和相对OPT保证直接继承。反向只有两容量不能推出K≥3；两种容量不限制背包数或容量比。",
+  "scope": "条件性的算法合同限制。它与具体profile候选是否正确是两个问题。",
+  "evidence": [
+    {
+      "path": "archives/bottleneck-knapsack/state/问题/固定容量种类瓶颈背包的硬容量近似--问题.md",
+      "sha256": "54f3849883c99d54d1d72343d42745afb0a834c292386ad3cee824259feeb5bd",
+      "section": "模型与完整输出"
+    },
+    {
+      "path": "archives/bottleneck-knapsack/state/候选/双容量瓶颈背包的profile标签与完整枚举--候选.md",
+      "sha256": "33f014ef81660868e4169c2b950ad2fae73a1a256c93b23fe28f4a3d19031b6c",
+      "section": "模型、目标和真正状态"
+    },
+    {
+      "path": "archives/bottleneck-knapsack/state/候选/双容量瓶颈背包的profile标签与完整枚举--候选.md",
+      "sha256": "33f014ef81660868e4169c2b950ad2fae73a1a256c93b23fe28f4a3d19031b6c",
+      "section": "七、版本比较、未决义务和证据"
+    }
+  ],
+  "reviewed_by": "bottleneck-3a-3a-96d5dc99ee073936",
+  "review_note": "核对固定K量词、限制域后OPT相同、零OPT与硬容量输出。解释明确固定K开放且不能推出指定候选实现。",
+  "contribution": {
+    "result": "若固定K合同成立，则两容量域中存在确定性总位多项式(2/3−ε)硬容量近似算法。",
+    "remaining": "不能由此确定现有候选的profile、标签、全局枚举及实现正确性；本边也不提供K≥3的构造。"
+  },
+  "endpoint_pins": {
+    "SEL-BMKP-CONST-K-v1": "edc670dd95a85a851923292b28f507cf19994b02cc092f808098bdc2f5b07d06",
+    "TS-BMKP-2CAP-APPROX-v1": "6bacc3103a39e7c9244e9b96c408061b886c75b134499f1daa540b825b5ff87f"
+  },
+  "evidence_pins": {
+    "archives/bottleneck-knapsack/state/问题/固定容量种类瓶颈背包的硬容量近似--问题.md": "54f3849883c99d54d1d72343d42745afb0a834c292386ad3cee824259feeb5bd",
+    "archives/bottleneck-knapsack/state/候选/双容量瓶颈背包的profile标签与完整枚举--候选.md": "33f014ef81660868e4169c2b950ad2fae73a1a256c93b23fe28f4a3d19031b6c"
+  },
+  "review_digest": "a60e2855141c27bea2d2820a154898cdf29cff79f4951ac76964b923aaa71661"
+}

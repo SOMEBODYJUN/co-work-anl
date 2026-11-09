@@ -1,0 +1,47 @@
+{
+  "edge_id": "bmkp-small-profits-give-hard-capacity-approximation",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "GA-03-L3"
+  ],
+  "target_ids": [
+    "SEL-BMKP-CONST-K-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同固定容量种类BMKP的有理输入、硬容量、物品至多使用一次、全背包max-min。附加pmax≤(1/12+ε/4)OPT，或单独保留全域加性界。",
+  "roles": {
+    "GA-03-L3": "对输入原物品和各包原容量，保持硬容量，逐包最多损4pmax。",
+    "SEL-BMKP-CONST-K-v1": "取得不依容量种类或容量比的受限乘法保证和全域加性保证。"
+  },
+  "explanation": "把各包利润下界都设为可变公共t并最大化t；此紧LP可行（t=0）且最优t*有限，任何整数最优解是LP见证，故t*≥OPT。以t*喂给L3，无须事先知道OPT。它给min_j p(T_j)≥t*−4pmax≥OPT−4pmax；在附加条件下至少为(2/3−ε)OPT。求有理LP和L3均在输入总位长多项式时间内。零OPT仍输出可行解。",
+  "scope": "结论对任意容量种类数成立；乘法保证只用于单件利润相对于全实例OPT足够小的域。",
+  "evidence": [
+    {
+      "path": "archives/bottleneck-knapsack/state/引理/联合类型交换与允许弃置的背包恢复--引理.md",
+      "sha256": "122fcdf542aa5a1f5593139d2f2d395c0b2b32c4f765eab69a1ae80498c6dc44",
+      "section": "L3：列和≤1、允许unused的$4p_{max}$硬容量舍入"
+    },
+    {
+      "path": "archives/bottleneck-knapsack/state/问题/固定容量种类瓶颈背包的硬容量近似--问题.md",
+      "sha256": "54f3849883c99d54d1d72343d42745afb0a834c292386ad3cee824259feeb5bd",
+      "section": "模型与完整输出"
+    }
+  ],
+  "reviewed_by": "bottleneck-3a-3a-96d5dc99ee073936",
+  "review_note": "核对公共阈值松弛、L3有理接口、容量类型无关性和常数1/12+ε/4。",
+  "contribution": {
+    "result": "确定性多项式硬容量分配保证OPT−4pmax；若pmax≤(1/12+ε/4)OPT则满足固定K目标的近似比。",
+    "remaining": "一般实例中须先结构化处理大单件利润与全局供给，再为小件建立适用的剩余LP；该边不付通用固定K结果。"
+  },
+  "endpoint_pins": {
+    "GA-03-L3": "ab017830b408a684ebdd2e2b86f5b831c631ea5449b423a36d8a1975a8c86fd0",
+    "SEL-BMKP-CONST-K-v1": "edc670dd95a85a851923292b28f507cf19994b02cc092f808098bdc2f5b07d06"
+  },
+  "evidence_pins": {
+    "archives/bottleneck-knapsack/state/引理/联合类型交换与允许弃置的背包恢复--引理.md": "122fcdf542aa5a1f5593139d2f2d395c0b2b32c4f765eab69a1ae80498c6dc44",
+    "archives/bottleneck-knapsack/state/问题/固定容量种类瓶颈背包的硬容量近似--问题.md": "54f3849883c99d54d1d72343d42745afb0a834c292386ad3cee824259feeb5bd"
+  },
+  "review_digest": "1674df4ace73dac680dbf8c91efef10c056299b067ccb16de72ea15b3686ecc5"
+}

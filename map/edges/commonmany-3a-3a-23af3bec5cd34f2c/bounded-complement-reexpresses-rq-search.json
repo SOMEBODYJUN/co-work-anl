@@ -1,0 +1,69 @@
+{
+  "edge_id": "commonmany-bounded-complement-reexpresses-rq-search",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-BOX-BOUNDED-COMPLEMENT"
+  ],
+  "target_ids": [
+    "SC-K-RQ-MIXED-BOX"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "原问题全部抽象有序 q、c∈[0,1]、逐名 0<w_i<1、非空 A_i 与 h_i=min A_i。反向限于给出同序 q、同权区间、非负 B 和有理 M 且 c_t=q_tM−Y_t(h)∈[0,1] 的兼容共单例实例。区间仅验输出，仍逐项检查全部原偏离。",
+  "roles": {
+    "SC-K-BOX-BOUNDED-COMPLEMENT": "保留排除赋值 a 和每个真实偏离差的位多项式带区间编译及解码，无需展开 q。",
+    "SC-K-RQ-MIXED-BOX": "对所有显式抽象异权输入求任意完整盒原 NE 的统一位多项式义务。该边给等价搜索接口和精确的可调用条件。"
+  },
+  "explanation": "设 b_t=c_t−Σ_{h_i=t}w_i、T_t=Σ_{i:t∈A_i}w_i、M=1+max_t(b_t+T_t)/q_t、B_t=q_tM−b_t−T_t≥q_t。源用 A_i 除去被排除的 a_i；同一 a 得 Y_t=q_tM−X_t，从排除 s 改排除 v 的成本差为 (Y_s+w_i)/q_s−Y_v/q_v=X_v/q_v−(X_s−w_i)/q_s。因而 NE 与逐站区间 q_tM−1≤Y_t≤q_tM 一起精确解码。若在兼容源上重新规范 M，则背景加 q_tΔM、客户成本加状态常数，区间同步平移。额外可用的目标对应是，令 G=Σ_t[Y_t²+Σ_{i 使用 t}w_i²]/(2q_t)、Φ=Σ_t[X_t²−Σ_{a_i=t}w_i²]/(2q_t)，展开后 G−Φ=Σ_t[q_tM²/2+Σ_{i:t∈A_i}w_i²/(2q_t)−M c_t]，使用 Σ_tX_t=Σ_tc_t，故两侧最小化在对应可行域上保持全部最优者。但任意无区间 NE 仍可错：q=(1,1,1)、c=(1/2,1/4,0)、两权均 3/4、菜单 01 与 12 时，a=(1,2) 的两原改排除均增成本 1/4，Y_0=9/4 超区间上端 2。",
+  "scope": "有序抽象盒与兼容带区间共单例纯搜索；有理编译、解码和目标对应不展开重数。保全部原菜单及区间输出，未假定任意抽象输入可实现为真实规范贪心或把 q 当原布局相关机速度。",
+  "contribution": {
+    "result": "整个抽象 RQ 任务有双向位多项式搜索合同转换，等价于在兼容共单例输入上找满足指定负载区间的精确纯 NE。偏离差、平局、全部最优赋值的势对应和带区间验收可同时复用。",
+    "remaining": "仍须为所有兼容带区间输入构造统一位多项式求解器，或直接求 RQ 盒 NE。任意无区间 NE oracle 不保证输出合格，最小化对应普通势也须另证可用性和时间；编译及有限审计均未提供该算法。"
+  },
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/等价/完整盒与带区间共单例的保偏离转换--等价.md",
+      "sha256": "97cf1bc19ea385626edd9685df53eeb6250e01ec435f9db02152744b5a41b677",
+      "section": "正向构造及精确NE"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/等价/完整盒与带区间共单例的保偏离转换--等价.md",
+      "sha256": "97cf1bc19ea385626edd9685df53eeb6250e01ec435f9db02152744b5a41b677",
+      "section": "反向兼容条件"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/等价/完整盒与带区间共单例的保偏离转换--等价.md",
+      "sha256": "97cf1bc19ea385626edd9685df53eeb6250e01ec435f9db02152744b5a41b677",
+      "section": "严格无区间NE仍可破盒"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/问题/一般异权盒选择的统一位复杂度目标--问题.md",
+      "sha256": "321b36b0574063b359700751b1206400c134de698365598a4fdca7832dc10a3e",
+      "section": "精确抽象合同"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/计算/补集编译与条件离轨补全的精确核验--计算.md",
+      "sha256": "304e46772fb00d680126bb697e791f99cfc21610e1fb65b5b7c276246a469369",
+      "section": "补集原程序和两历史报告"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/资料/等权流对抗审计的全极小与残图边界--资料.md",
+      "sha256": "5aac61cb284873271b726537696fb2cff4800f17f25657b32341ba90e790d2d7",
+      "section": "主源、实际依赖和抽象输入"
+    }
+  ],
+  "reviewed_by": "Boss1-common-many-light-flow-worker",
+  "review_note": "逐项复算反向仿射负载、全部偏离差、区间与反向兼容常数，并展开同域两侧势差。严格无区间 NE 例以精确有理算术复核；程序复用等权模块的数值 I/O 不表示编译器调用了流优化器。",
+  "endpoint_pins": {
+    "SC-K-BOX-BOUNDED-COMPLEMENT": "c5888dea27dfdcb7e3773a11452679c512f50230fffada9d0bad314b0a3a3470",
+    "SC-K-RQ-MIXED-BOX": "3e2eefe4dd01bd22f50a521cb1d77b9ab32320d11a491f1dec390379ce5b3c48"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/等价/完整盒与带区间共单例的保偏离转换--等价.md": "97cf1bc19ea385626edd9685df53eeb6250e01ec435f9db02152744b5a41b677",
+    "archives/facility-games/subarchives/common-many/state/问题/一般异权盒选择的统一位复杂度目标--问题.md": "321b36b0574063b359700751b1206400c134de698365598a4fdca7832dc10a3e",
+    "archives/facility-games/subarchives/common-many/state/计算/补集编译与条件离轨补全的精确核验--计算.md": "304e46772fb00d680126bb697e791f99cfc21610e1fb65b5b7c276246a469369",
+    "archives/facility-games/subarchives/common-many/state/资料/等权流对抗审计的全极小与残图边界--资料.md": "5aac61cb284873271b726537696fb2cff4800f17f25657b32341ba90e790d2d7"
+  },
+  "review_digest": "bfa36530df5200cc6e0f6eee0acae5eb103cc6c16caf900b06ec118eda31a4a7"
+}

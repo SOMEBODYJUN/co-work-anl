@@ -1,0 +1,57 @@
+{
+  "edge_id": "leontief-critical-support-implies-clone-invariance-subfamily",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "NE-FISHER-TRANSFER-v1"
+  ],
+  "target_ids": [
+    "BN-CLONE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "将 A 限制为行可写作 e_j/v_j 的矩阵，j 遍历非空项目子集 J、v_j>0 且为有理数。重复行可删。同一项目多行时可先仅保该项目系数最小的一行。外部玩家效用和任意可行预算仍按 BN-CLONE-v1，使用 Fisher 正文临界支持引理的单行版本。",
+  "roles": {
+    "NE-FISHER-TRANSFER-v1": "给出公共 Leontief 最佳响应的单行临界支持充要条件，证明只依赖其他行的总贡献。",
+    "BN-CLONE-v1": "该目标的普遍性质 C 需要任意外部效用环境和每一份原 NE 都可合并。这里对单坐标线性片子类精确验证该性质。"
+  },
+  "explanation": "共同效用 u_A(δ)=min_{j∈J}δ_j/v_j 的 clones 共享同一临界集 T=argmin_{j∈J}δ_j/v_j。若某 clone 正投 T 外，可从其行移出小量，按 v_j 比例分到全部临界项目并严格增效用。因此任一 NE 的每行 clone 只投 T，合并行仍只投 T，任何严格改善都需同时增加全部临界坐标，固定合并预算下不可能。其他玩家的策略和其偏离所见总量保持。等价地，在 P_I 中按 v_j/Σ_{k∈T}v_k 混合 active 行 e_j/v_j，使 g 在每个 T 坐标值为 1/Σ_{k∈T}v_k、其他坐标为0，共同最大 LP 成立。",
+  "scope": "得到单坐标线性片的 Leontief 子类保持合并，允许非光滑临界面及任意正 clone 预算。一般线性片可混合多个坐标，三项目失败矩阵不在此子类。",
+  "contribution": {
+    "result": "对每个非空单坐标线性片的 Leontief 矩阵，任意外部效用环境和每份原 NE 中，任意正预算的共同效用 clones 合并后仍为 NE。该子类中每个 active cell 的共同最大超梯度显式可构造。",
+    "remaining": "一般含多坐标混合线性片的矩阵还要用 (K)、可达 active cell 和共同 LP 完成精确判别及 2^R 位复杂度论证。"
+  },
+  "evidence": [
+    {
+      "path": "archives/budget-games/state/等价/Leontief贡献矩阵与线性Fisher支出的精确对应--等价.md",
+      "sha256": "9a263af9f27b14572ea9bb746b8265aae95fd7db57322519c778aea1e46d05da",
+      "section": "临界支持引理"
+    },
+    {
+      "path": "archives/budget-games/state/定理/分段线性凹偏好的共享超梯度合并判别--定理.md",
+      "sha256": "754484e9c7765984f91acb586031a4b10259552ed294fbd5b7c0e4c9549d463b",
+      "section": "预算模型及普遍性质"
+    },
+    {
+      "path": "archives/budget-games/state/定理/分段线性凹偏好的共享超梯度合并判别--定理.md",
+      "sha256": "754484e9c7765984f91acb586031a4b10259552ed294fbd5b7c0e4c9549d463b",
+      "section": "一、凹性本身不保证合并"
+    },
+    {
+      "path": "archives/budget-games/state/定理/分段线性凹偏好的共享超梯度合并判别--定理.md",
+      "sha256": "754484e9c7765984f91acb586031a4b10259552ed294fbd5b7c0e4c9549d463b",
+      "section": "三、非光滑时的点态充要条件"
+    }
+  ],
+  "reviewed_by": "budget-games-3a-3a-feff53cdb880eb43",
+  "review_note": "核对局部单行引理对其他玩家效用无要求，检查稀疏矩阵的效用对应、合并后偏离域及共同 active 凸组合。无需调用 private Fisher 市场或其求解器。",
+  "endpoint_pins": {
+    "BN-CLONE-v1": "1f8efa757d60cfb6b0d2602aaf2b0245e3fac233fb702fa002a1fd2f931014e4",
+    "NE-FISHER-TRANSFER-v1": "8d7e3cacbb31c3f4433722d4156bed739ac5f3854b9dd53da287a2e5acd51617"
+  },
+  "evidence_pins": {
+    "archives/budget-games/state/等价/Leontief贡献矩阵与线性Fisher支出的精确对应--等价.md": "9a263af9f27b14572ea9bb746b8265aae95fd7db57322519c778aea1e46d05da",
+    "archives/budget-games/state/定理/分段线性凹偏好的共享超梯度合并判别--定理.md": "754484e9c7765984f91acb586031a4b10259552ed294fbd5b7c0e4c9549d463b"
+  },
+  "review_digest": "0b85757480ac0058cd95c4fe2f69d7317392b6b4a7b69e170f1cc71bfab35605"
+}

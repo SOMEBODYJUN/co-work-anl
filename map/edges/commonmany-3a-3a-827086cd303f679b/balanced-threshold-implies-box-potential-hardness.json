@@ -1,0 +1,54 @@
+{
+  "edge_id": "commonmany-lex-threshold-implies-real-greedy-box-potential-hardness",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-LEXMAX-STRONG-HARD"
+  ],
+  "target_ids": [
+    "SC-K-BOX-POTENTIAL-STRONG-HARD"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一 MF-MODEL 的显式正整数共同目录输入，按源强有界 3-PARTITION 归约像取 m=k≥2、公共总重 X=mB、每站仅该站覆盖的私有原子 P=X+1、每一公共原子 a_i 可达全部站，B/4<a_i<B/2。保留逐名原子、全部原菜单和带标签设施，按任意固定规范平局序执行贪心。源阈值固定为 T=P+B。",
+  "roles": {
+    "SC-K-LEXMAX-STRONG-HARD": "源归约证明上述受限实例上的全布局升序设施收益第一坐标阈值已强 NP 困难；其候选先不附客户 NE 条件。",
+    "SC-K-BOX-POTENTIAL-STRONG-HARD": "目标在规范贪心真实占位的完整盒内，以正权原子改善势的精确全局最小值为阈值判定。"
+  },
+  "explanation": "恒等保留物理博弈，只把阈值 T 改为 K=PX+(mB²−Σ_i a_i²)/2。先开的站得 P+X=2X+1，其冻结池下一家分数至多 (2X+1)/2<P。后续每未开站新增恰 P，每已开站下一家分数均小于 P，所以 k=m 时每站一家、末分数 γ=P。私有原子固定，公共原子均轻且全部原菜单保留。设 S_s 为分给 s 的公共总重，则所有赋值满足 P≤P+S_s≤P+X=2P−1，故完整盒不删除任何公共赋值。对全布局阈值，任何重数 q≥2 站每家收益至多 (P+X)/2<P，达 T 的布局只能占齐每站一家；总重固定使各站收益至少 T 当且仅当每站 S_s=B。对同一站点赋值，Φ−K=½Σ_s(S_s−B)²，故达 K 也当且仅当每站 S_s=B。因而在此归约像上两个指定阈值同答，成功赋值可原样用于两端，布局标签仅按每站唯一设施恢复。K 是整数（平方与原整数同奇偶），并在源强有界族上仍为多项式数值。一般目标的 NP 证书为合法赋值，可按确定贪心重算占位、逐站核上下盒及精确势。固定真实盒在归约像等于全部可行赋值，且每个单客户严格改善都会严格降势，所以该像内任一全局势极小点是全部原选项上的客户 NE。 如只求一个原 NE，可把公共权按非增序放入当前最低负载站；任一站最后放入其最轻公共原子之前曾为全局最低，其他站之后不减，故逐名无严格改善。",
+  "scope": "3A common-many。利用源对象已经强困难的受限归约像，推出目标完整盒精确阈值的强 NP 完全性。双向同答仅限所列 T、K 和该归约像，未建立任意阈值、一般布局、两种目标的排序或最优输出之间的等价。",
+  "whole_result": "源的受限全局收益第一坐标阈值经上述保承诺归约推出固定真实贪心完整盒的精确全局势阈值强 NP 困难，加上目标证书得到强 NP 完全；在这族的全局势极小者也都是原客户 NE。该结论相对于两端共用的标准强 3-PARTITION 合同。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/归约/全局均衡选择的精确优化困难与局部搜索上界--归约.md",
+      "sha256": "2bc857ddfe6e801f164d5366a6cfa0e67a2f201e6de5276c827cf76986710426",
+      "section": "全局字典序第一坐标的强NP完全性"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/归约/全局均衡选择的精确优化困难与局部搜索上界--归约.md",
+      "sha256": "2bc857ddfe6e801f164d5366a6cfa0e67a2f201e6de5276c827cf76986710426",
+      "section": "固定真实贪心盒的精确势最小化"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/审查/任意设施数命题登记与证据分层--审查.md",
+      "sha256": "f08b7bff2d2e89cedf745454a4f3112cb9be0b67e1e5d17ce7dca582923c7f62",
+      "section": "选择复杂性与固定参数"
+    }
+  ],
+  "reviewed_by": "Boss1-common-many-3A-worker",
+  "review_note": "重算首次及其余贪心分数、完整盒承诺、源目标迫使全异址、Σ(S_s−B)² 恒等式、K 奇偶与强有界性。使用源对象登记的具体归约像，未仅从抽象 NP 完全标签推导保承诺迁移。",
+  "endpoint_pins": {
+    "SC-K-BOX-POTENTIAL-STRONG-HARD": "52e48c0e5e5ddf4a31852242a1028f5f3243ec6d137924ba665a875b4aaaf132",
+    "SC-K-LEXMAX-STRONG-HARD": "369e46d81ce30af943221a75d155932d773efa1daa410893fa31ff4e1fdc3f53"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/归约/全局均衡选择的精确优化困难与局部搜索上界--归约.md": "2bc857ddfe6e801f164d5366a6cfa0e67a2f201e6de5276c827cf76986710426",
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+    "archives/facility-games/subarchives/common-many/state/审查/任意设施数命题登记与证据分层--审查.md": "f08b7bff2d2e89cedf745454a4f3112cb9be0b67e1e5d17ce7dca582923c7f62"
+  },
+  "review_digest": "4817ec9c1f9e260b799c9571757b11fa58406689516cddcf90dfdc3dcda64ad8"
+}

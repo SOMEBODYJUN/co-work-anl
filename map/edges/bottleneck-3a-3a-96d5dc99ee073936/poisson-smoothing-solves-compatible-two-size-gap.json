@@ -1,0 +1,57 @@
+{
+  "edge_id": "poisson-smoothing-solves-compatible-two-size-gap",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-032553bc20c040618a69609cb0f5b63a"
+  ],
+  "target_ids": [
+    "M-1e98f0c71a6846b08ae6a93cd1b8dd0c"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "自然容量一背包LP，a∈(1/2,1], b∈(1/3,1/2]，a+b≤1。边缘任意且满足aΣ_A x+bΣ_B x≤1，非负权，w·x>0，独立激活。使用C09中固定均值的Binomial–Poisson平滑子式；该子式的证明在本边给出。",
+  "roles": {
+    "M-032553bc20c040618a69609cb0f5b63a": "其(3)的离散凹平滑证明可用于任意Poisson-binomial类计数，也给纯类F(k,1/s)极限。",
+    "M-1e98f0c71a6846b08ae6a93cd1b8dd0c": "对a+b≤1的任意混合激活及任意非负权，得到固定(a,b)的sharp correlation gap。"
+  },
+  "explanation": "给定其余Bernoulli计数Z、固定p+q，测试函数φ的期望含唯一可变量pq·E[Δ²φ(Z)]；离散凹使取平均不增期望。补零并在同类平滑到均匀概率，再取n→∞，给定均值的Poisson测试期望因此下界原期望。a+b≤1时可行集为至多两件且至多一件大物的laminar matroid。对权阈值t按激活的w_i≥t物品计数N_A,N_B，最优权重按层积分该matroid rank=min(2,1_{N_A>0}+N_B)。该rank分别对两类计数离散凹；阈值下两类独立，故可分别作上述平滑，得到期望rank≥H(u,v)=2−e^(−v)−(1+v)e^(−u−v)，其中u,v为阈值类边缘质量。H的负Hessian是e^(−u−v)乘[[1+v,v],[v,e^u−1+v]]，其主对角非负且行列式为(1+v)(e^u−1)+v≥0，故H联合凹。三角形au+bv≤1的三个顶点(0,0),(1/a,0),(0,1/b)代入，得H(u,v)≥u F(1,1/a)+v F(2,1/b)，其中F(k,λ)=E[min(Pois(λ),k)]/λ。对t积分得到min{F(1,1/a),F(2,1/b)}·(w·x)。对给较小常数的尺寸类，n个单位权同尺寸物品、x_i=1/(ns)，用Poisson极限达到下界；另一类可放零边缘零权物品。层积分使用matroid greedy保留任意非负权，未对一般非matroid可行族假设相同公式。 同常数也有单调CRS。给定x，对每个固定优先序π，按π对独立活跃集做matroid greedy；某活跃物保留当且仅当它不在较早活跃物的闭包中，因而逐物对活跃集包含关系单调。记无条件保留概率向量p^π。任意w≥0按w递减的π实现最大期望权重，故max_π w·p^π≥β w·x。若βx不在conv{p^π}的坐标向下闭包，分离超平面可取w≥0并矛盾。因此某个独立于活跃集的有限优先序混合给p≥βx，保持单调。有理x时求最大共同系数的LP有指数列、m个保留约束和一个混合归一约束（m为物品数）。其非负权对偶分离只需按权排序给最优列；给定π时，每列坐标从较早大件是否出现、较早小件出现数0、1或≥2的独立计数多项式有理计算。用有理LP分离与原始恢复得到稀疏混合，无须数值计算含指数的β，故对显式有理x可多项式构造同常数CRS。",
+  "scope": "完全解决C08兼容分支a+b≤1的固定尺寸参数weighted correlation gap及同常数单调CRS。仍用自然LP，精确算法合同用显式有理x。",
+  "evidence": [
+    {
+      "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+      "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+      "section": "15 项候选的准确状态"
+    },
+    {
+      "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+      "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+      "section": "C09. Sergeev Conjecture4.1 的 Binomial–Poisson 极值不等式【C/辅助；作者明确 conjecture】"
+    },
+    {
+      "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+      "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+      "section": "15 项候选的准确状态"
+    },
+    {
+      "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+      "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+      "section": "C08. 两种尺寸混合 knapsack 的 correlation gap 与 CRS【A；作者大 conjecture 的可控截面】"
+    }
+  ],
+  "reviewed_by": "bottleneck-3a-3a-96d5dc99ee073936",
+  "review_note": "逐式核对Sergeev Conjecture 4.1固定均值单调性所用的离散凹机制、两类rank、Hessian和锐性极限。C09端点保当前登记版本，应用所需子式在此给出。 同时核对了单调性、非负权分离与有理优先序列的对偶实现。",
+  "contribution": {
+    "result": "对每个兼容(a,b)精确下界是min{F(1,1/a),F(2,1/b)}，覆盖混合物品及任意非负权，并有等权纯类渐近证书。同常数单调CRS可用优先序混合获得，有理x时可多项式构造。",
+    "remaining": "a+b>1时可行族不满足交换公理，层积分和matroid greedy优先序构造均不能直接迁移；不兼容分支的sharp bound及monotone CRS仍待处理。"
+  },
+  "endpoint_pins": {
+    "M-032553bc20c040618a69609cb0f5b63a": "d4b7c48122c70642a66bd280aefb1cd33b5d15b7b780405f58205ae4cb49313c",
+    "M-1e98f0c71a6846b08ae6a93cd1b8dd0c": "69832df9d40d35ff49439dcdaab8c79439816ac55f73333dcc336622d8235f81"
+  },
+  "evidence_pins": {
+    "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+    "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e"
+  },
+  "review_digest": "01dc52fdd6f4777fc7bc87f84e9f06e882f968ea880763dc4ebfb3f35cf60bd3"
+}

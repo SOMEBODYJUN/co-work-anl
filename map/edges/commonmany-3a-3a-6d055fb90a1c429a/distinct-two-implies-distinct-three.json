@@ -1,0 +1,55 @@
+{
+  "edge_id": "commonmany-distinct-two-implies-distinct-three",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-DISTINCT-GREEDY-2"
+  ],
+  "target_ids": [
+    "SC-K-DISTINCT-GREEDY-3"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一 MF-MODEL 和实际规范贪心占位，有限非空共同目录、显式 k≥2 家带标签设施、强制服务及独立混合，正覆盖时末分数 γ>0。时间结论使用显式正二进制有理权。有限在轨计算可用同重数子问题的严格改善；位多项式在轨按所述 RANGE 合同，离轨及默认按 MAX 合同。本次规范贪心全异址，q_s=1；采用同一个保 [γ,2γ] 的纯在轨 NE。",
+  "roles": {
+    "SC-K-DISTINCT-GREEDY-2": "首站最大可达重 R 和未选的 R/2 候选给每个离轨 NE 的倍率二。",
+    "SC-K-DISTINCT-GREEDY-3": "同一输入域中保留旧的 [γ,2γ] 及显式离轨纯种子上界 a+2γ。"
+  },
+  "explanation": "首站覆盖最大重 R，后续由于全异址始终可追加第二家的候选 R/2 未被选走，故 γ≥R/2。所选在轨 NE 每家 a≥γ，对任一真实偏离 r 及任一离轨客户 NE，偏离标签负载至多 w(C_r)≤R≤2a≤3a。旧构造也在同一纯在轨输入上直接保留。让仍受覆盖的旧源孤儿任选可达设施，其总重至多 a；让新覆盖客户只给偏离者，新增总重 N_r≤γ（旧占目标时为 0）。静止家负载至多 2γ+a，初始为空的偏离者至多 a+γ。有限纯改善保最大值，或由 MAX 完成旧上界 a+2γ≤3a 的纯离轨续局。补默认规则即覆盖全部标签布局。",
+  "scope": "标量族的 3−1/M 只限制用 [γ,2γ] 与 N_r≤γ 作出的推理。其真实贪心首选 B 后再次选 B，因 3M/2>M，故该族在共同全异址域外。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/重数分组范围证书与轻客户分量选择--算法.md",
+      "sha256": "8633e6a21234d029f1bdf6a2f31a2ed7ff9119fc4874cd7aa56b51090bf3a2d0",
+      "section": "全异址输出：因子三旧证明与因子二加强"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/重数分组范围证书与轻客户分量选择--算法.md",
+      "sha256": "8633e6a21234d029f1bdf6a2f31a2ed7ff9119fc4874cd7aa56b51090bf3a2d0",
+      "section": "原始预算与严格修复的边界"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/审查/受限同链调度导入的最大值与范围义务--审查.md",
+      "sha256": "0f112e754fd5c918a7bbc5791cc31af95345e91dc27c90e3f49cc322a3b99ddb",
+      "section": "两个明确合同"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+      "section": "一份完整续局的量词"
+    }
+  ],
+  "whole_result": "在完全相同的真实贪心全异址域上，因子二结果推出旧完整因子三结果；保留旧纯种子/受最大值约束的实现，同时给任意离轨 NE 的更强二倍界。",
+  "reviewed_by": "Boss1-common-many-3A-worker",
+  "review_note": "实读同一规范贪心模型、选择器正文和导入审查，核对适用域、原客户菜单、完整续局量词及所列推导。有限正确性与调度器位时间分层记录。",
+  "endpoint_pins": {
+    "SC-K-DISTINCT-GREEDY-2": "4fcc7f58082f1232b15c8f51aed2e4b34fe48cedd608e2ad0f062d7b2d6439d3",
+    "SC-K-DISTINCT-GREEDY-3": "05d5b9c87f19002b2952f63c5108acb1b4f63987abe1b4d5abded7cea3ad1aeb"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/算法/重数分组范围证书与轻客户分量选择--算法.md": "8633e6a21234d029f1bdf6a2f31a2ed7ff9119fc4874cd7aa56b51090bf3a2d0",
+    "archives/facility-games/subarchives/common-many/state/审查/受限同链调度导入的最大值与范围义务--审查.md": "0f112e754fd5c918a7bbc5791cc31af95345e91dc27c90e3f49cc322a3b99ddb",
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+  },
+  "review_digest": "519e954282bb4e1f6d575ea8356855d6f98a075af5e8837fa718c345fc270bbe"
+}
