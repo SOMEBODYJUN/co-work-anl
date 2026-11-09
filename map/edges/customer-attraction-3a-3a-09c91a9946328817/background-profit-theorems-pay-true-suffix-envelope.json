@@ -1,0 +1,61 @@
+{
+  "edge_id": "ca-background-profit-theorems-pay-true-suffix-envelope",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-TWO-REMAINING-TAX",
+    "CA-THREE-REMAINING-PROFIT-5-3",
+    "CA-FOUR-REMAINING-PROFIT-1499-750"
+  ],
+  "target_ids": [
+    "M-f4d1a1c9df134392856f390bd58de4b7"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意完整原纯SPE、任意合法源h和强制主题T。r是强制T后的真实剩余人数，b+t是该合法有序分支的背景，ℓ及u_m来自整局实际末位。比较元组合法，α、γ是整行共同非负标量，零分子份额取0。",
+  "roles": {
+    "CA-TWO-REMAINING-TAX": "在r=2的强制分支给F₂≤V₂+g(A,A)≤(3/2)V₂。",
+    "CA-THREE-REMAINING-PROFIT-5-3": "在r=3的强制分支支付F₃≤(5/3)V₃。",
+    "CA-FOUR-REMAINING-PROFIT-1499-750": "在r=4的强制分支支付F₄≤(1499/750)V₄，其证明中的背景校正适用于此真实整数前缀。",
+    "M-f4d1a1c9df134392856f390bd58de4b7": "把真源IC、相应背景比例与共同实际末位报价相加，逐客户消去真实z得必要下包络。"
+  },
+  "explanation": "对r=2，税项仅在真实第一尾主题A覆盖处为1/[(p+1)(p+2)]，该客户实际两尾重数e≥1，e/(p+e)≥1/(p+1)，故逐客户税≤一半实际尾利润。r=3和4直接调用各自在背景p=b+t的定理，r=1由该分支真实末位BR给β₁=1。此处三定理各支付其不同r的分支，非同一r的三份可叠加预算。对任意合法比较r元组重数q，将源真IC C₀=v−Σt/(b+t+z)、背景行 C₁=β_rΣz/(b+t+z)−Σq/(b+t+q)、实际末位逐个查询每个真后继主题的 C₂=r u_m−Σz/(ℓ+1)按1、γ、α相加。每客户再加真实括号值与z∈{0,…,r}最小值之差，得到登记公式。z逐客的最小取值无需共同实现，末位价格节点仅给同一目录的合法查询，不移植该节点的回复。六个比较索引独立取强制槽和均匀r索引子集，固定客户得到Bernoulli(d/6)与Hypergeom(6,d,r)的准确平均，重复标签不减少槽。",
+  "scope": "把任意合法前缀的r=1、2、3、4切片无条件付清。恰六人时可用于实际第2、3、4、5位，也保留具有同剩余人数的离轨源。各行的左侧预算仍是各自v+rαu_m。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/真实后继利润与共同末价的离散下包络--引理.md",
+      "sha256": "c19f2ec1dd32b72444443c005d00e74e117ade4f65d2a06fd830dd1235bc29a8"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+      "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定背景三人利润界--定理.md",
+      "sha256": "b684d60a67c3164a3cd69177a1c8bda2a328125b9eab62f2c8ab0fb83091a47b"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定背景四人利润界--定理.md",
+      "sha256": "f769c0c114a4f4639d660a068fac80d355fc997515a60af8bbe9e10e85613fff"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对三份固定背景证明的作用域、两人税的逐客比例与源IC/分支利润/整局实际末价三个不同历史的角色。确认三四人证书以全部背景的非负系数证明，不是背景抽样。",
+  "contribution": {
+    "result": "对r=1,2,3,4代入β=(1,3/2,5/3,1499/750)后，整条离散下包络及六索引超几何平均对所有指定合法源、强制和比较成立。",
+    "remaining": "登记对象还给任意r的条件式。若γ>0，r≥5的相应背景尾利润界仍需另付。六人根只需一合法旧主题产生的混合0/1背景域；零背景五人half和统一高背景子域无法覆盖该域。若γ=0，背景比较项本身不参与。"
+  },
+  "endpoint_pins": {
+    "CA-FOUR-REMAINING-PROFIT-1499-750": "9918c769098c2af8f94b8d5d0e20026378c2f5cf765b7286972e8a6b148f142e",
+    "CA-THREE-REMAINING-PROFIT-5-3": "575cf03e1f3b30d2f2fc33c33048f95a716132fbf0b002381bba366cff3a2a53",
+    "CA-TWO-REMAINING-TAX": "eb63a8d1cd934879f5f7f25f633b4bf753973f405a7b8db91bed63f633de7d15",
+    "M-f4d1a1c9df134392856f390bd58de4b7": "0efeed064d3c40f6188e883e6c443ccf857dc2171312655342adeffda981846a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/真实后继利润与共同末价的离散下包络--引理.md": "c19f2ec1dd32b72444443c005d00e74e117ade4f65d2a06fd830dd1235bc29a8",
+    "archives/customer-attraction/state/引理/固定背景两人税界--引理.md": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+    "archives/customer-attraction/state/定理/固定背景三人利润界--定理.md": "b684d60a67c3164a3cd69177a1c8bda2a328125b9eab62f2c8ab0fb83091a47b",
+    "archives/customer-attraction/state/定理/固定背景四人利润界--定理.md": "f769c0c114a4f4639d660a068fac80d355fc997515a60af8bbe9e10e85613fff"
+  },
+  "review_digest": "31d0f438f914147e362dc6f98f7984c62382614d1ca327899f1fae7e30be59d3"
+}

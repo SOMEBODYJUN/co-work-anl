@@ -1,0 +1,68 @@
+{
+  "edge_id": "cag-saturation-round10-private-single-label-completion-obstruction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-4b6ebc6e36f341ff8c9f7bec506ae78d"
+  ],
+  "target_ids": [
+    "customer-attraction/greedy-admissible-catalog-completion-late-menu-floating-obstruction-contract"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "六人固定旧十八标签、每个旧兴趣型的旧会员与质量 m_i 完全保留，actual 路径固定 0,1,2,3,4,5（0基）。仅增加 Z=18，允许每类型任意实质量分裂 0≤z_i≤m_i，允许重选全部续局与平局。",
+  "roles": {
+    "M-4b6ebc6e36f341ff8c9f7bec506ae78d": "固定十八标签的有理质量和七个旧严格倒二偏离给出实例与必要报价阈值。",
+    "customer-attraction/greedy-admissible-catalog-completion-late-menu-floating-obstruction-contract": "将单主题分裂报价、实际安全下界和指定末位 BR 写成仿射约束；逐枝贪心未处理全域。"
+  },
+  "explanation": "令 p_i=Σ_{j<4}b_ij，u_j 是实际利润，a∈{5,12,…,17} 的全部旧末位最佳回复都给倒二严格增益。新增主题不改变纯旧终局收益与旧回复排序，故欲支持实际路径，每个这种分支必须选 Z 回复，至少须有 B_a: −Σ z_i/(p_i+b_ia+1)≤−θ_a，θ_a 为旧回复最大价。记 S_j: Σ z_i/(Σ_{l<j}b_il+6−j)≤u_j，为 actual 偏离 Z 的必要安全下界行。倒二自己改 Z，设最后回复 b。必须有 U_b: Σ z_i/(p_i+1+β_ib)≤u_4，其中旧 b 的 β_ib=b_ib，Z 的 β_iZ=1；并有 R_{b,a}: L_b(z)≥L_a(z) 对每个旧 a，其中 L_b(z)=Σ m_i b_ib/(p_i+1)−Σ z_i b_ib/[(p_i+1)(p_i+2)] 对旧 b，L_Z(z)=Σ z_i/(p_i+2)。\n将选用行统一写 c_s·z≤d_s。非负加权得到 C·z≤D，而盒给 C·z≥Σ m_i min(0,C_i)。直接代入 117 型（各对称质量按其比较子集数均分）得到以下所有正差 gap=Σ m_i min(0,C_i)−D：\nb=0,1,2,3 用 (U_b+2Σ_{a=6}^{11}R_{b,a})/13，各 gap 依次为 57717224941/787279088063、同值、59021226681/787279088063、412900756571/4723674528378。\nb=4 用 (B_16+U_b+R_{b,16})/3，gap=12649356467/726719158212。\nb=5 用 (B_b+U_b)/2，gap=32131453849/1453438316424。\nb=6,…,11 用 (B_a+U_b+R_{b,a})/3，a 依次为 16,12,12,12,16,17，统一 gap=84264935023/4360314949272。\nb=12,…,17 用 (B_b+U_b)/2，统一 gap=34953296381/1937917755232。\nb=18 用 (33S_3+17S_5+8Σ_{a=6}^{11}R_{18,a})/98，gap=39334587019/1937917755232。\n因此对每个可能可信末位回复 b，已有一组必要行不可兼容，足以排除任意单标签补全；无需使用旧坏枝的交叠减税行。",
+  "scope": "仅固定 private 输入、固定 actual 路径且只增一个标签的修补；覆盖任意分裂及任意真实续局。无须保扩目录后的私有谱或势假设。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/整终局势与真倒二菜单联合停界--障碍.md",
+      "sha256": "cdcbf05d5f7b0294409e08a992c3b808eaac389cc821103d6b5e6efe683cb8f3",
+      "section": "加入私有席位谱的点：更强仍非 SPE"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/保实际路径安全报价的补目录贪心探针与新偏离--程序.md",
+      "sha256": "1e96803a99ed6eb1dc0b60c3d47f2037f361dd182a37621972a08c0233b314fe",
+      "section": "新主题的线性构造及其推导"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/保实际路径安全报价的补目录贪心探针与新偏离--程序.md",
+      "sha256": "1e96803a99ed6eb1dc0b60c3d47f2037f361dd182a37621972a08c0233b314fe",
+      "section": "原两步报告的完整状态"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/十八主题控制器与按客户定价的大目录浮点攻击--程序.md",
+      "sha256": "204191adbfb019f6cf30a76c32ac9602aff1fa7cda031e58321b780eded020da",
+      "section": "真实输入和目标分母"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/potential-menu-joint/replay/potential_menu_joint_private.json",
+      "sha256": "08ca100b2cfa8b5e878193c49b27bb73b0cdbb2addb7fefe52cdfecfe8b95b5f"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/potential-menu-joint/replay/audit_private.json",
+      "sha256": "3c7eaf5ad9db7d09cdeb95dd093bfd491aa11c1d5578555237f6643d993847d0"
+    }
+  ],
+  "reviewed_by": "Boss1-customer-saturated-round10",
+  "review_note": "从精确输入独立重建七个旧菜单增益，用 Fraction 重算全部19个回复盒差；浮点只用于寻找乘子。严格结论与原第二步浮点不可行分开。",
+  "contribution": {
+    "result": "固定 private 点的任意单标签 Z 扩充，即使可任意重选续局，也不能以原 actual 路径形成完整SPE。该结论补齐单主题修补中 Z 本身的倒二行动义务。",
+    "remaining": "贪心对象的一般单分支LP等价仍按其原公式。多个新增标签可互作回复，改旧质量或实际路径也另需分析。"
+  },
+  "endpoint_pins": {
+    "M-4b6ebc6e36f341ff8c9f7bec506ae78d": "7db5936439878a975faa37ecb6acf89bc8b5a711df166d85b35d623896ed3048",
+    "customer-attraction/greedy-admissible-catalog-completion-late-menu-floating-obstruction-contract": "553a1503c82e434413ee0ea37856b7ee3c7ae803111e741e865271d1a9e293fc"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/整终局势与真倒二菜单联合停界--障碍.md": "cdcbf05d5f7b0294409e08a992c3b808eaac389cc821103d6b5e6efe683cb8f3",
+    "archives/customer-attraction/state/程序/保实际路径安全报价的补目录贪心探针与新偏离--程序.md": "1e96803a99ed6eb1dc0b60c3d47f2037f361dd182a37621972a08c0233b314fe",
+    "archives/customer-attraction/state/程序/十八主题控制器与按客户定价的大目录浮点攻击--程序.md": "204191adbfb019f6cf30a76c32ac9602aff1fa7cda031e58321b780eded020da",
+    "archives/customer-attraction/tools/evidence/potential-menu-joint/replay/potential_menu_joint_private.json": "08ca100b2cfa8b5e878193c49b27bb73b0cdbb2addb7fefe52cdfecfe8b95b5f",
+    "archives/customer-attraction/tools/evidence/potential-menu-joint/replay/audit_private.json": "3c7eaf5ad9db7d09cdeb95dd093bfd491aa11c1d5578555237f6643d993847d0"
+  },
+  "review_digest": "48dbf346469eff65302a029395bdeae5de12bcf2c3293b2039e60eb6cc566511"
+}

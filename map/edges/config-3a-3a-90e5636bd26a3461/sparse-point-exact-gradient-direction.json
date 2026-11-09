@@ -1,0 +1,72 @@
+{
+  "edge_id": "config-sparse-point-exact-gradient-pricing-and-direction",
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "source_ids": [
+    "M-a8a3062b0ff9434fa078140f5b654163",
+    "configuration-assignment/exact-pricing-sparse-configuration-lp"
+  ],
+  "target_ids": [
+    "M-42d1210a93e94042833e75a1a80545ea"
+  ],
+  "conditions": "显式有限物品及 bin，每个局部配置族非空且下闭，利润为非负有理数，逐 bin 可在输入及查询位长的确定性多项式时间内按任意非负有理模权返回一个实际最优配置。给定标准独立配置 multilinear extension 的点 z∈[0,1]^E，显式输入包含完整正支持 K 及其有理坐标。定价查询给定任意有理的 bin 常数 a_ℓ 和逐物品价格 π_ℓi。方向问题采用非负有理成本和预算，预删 c_ℓ>B 的 bin，按保留地集取 E，并保留每 bin、每物品的单位边际行及预算行。共同正成本时也允许用 Σx≤⌊B/c⌋ 替换预算行。",
+  "roles": {
+    "M-a8a3062b0ff9434fa078140f5b654163": "给出候选删除背景的正确导数公式、零坐标共用背景的精确适用域，以及固定背景不能同时表示所有正坐标真导数的反例。",
+    "configuration-assignment/exact-pricing-sparse-configuration-lp": "提供可复用的有理对偶不可行阈值、实际配置切面重放及受限原始基本最优解恢复。梯度目标另行建立精确强分离和统一位界。",
+    "M-42d1210a93e94042833e75a1a80545ea": "取紧输入五接口合同中的固定稀疏点梯度查询，以及给定该点后构造一个精确短支持 LP 方向的部分。"
+  },
+  "explanation": "对同一个完整独立背景 R_z，令 b_ℓi=E[(v_ℓi−M_i(R_z))_+]。对 e=(ℓ,S)，条件化 e 是否出现。出现时每个 i∈S 的残余为零，未出现时是排除 e 的背景，故 Σ_{i∈S}b_ℓi=(1−z_e)∂_eG(z)。零坐标的真导数恰为共用背景和。正坐标逐个直接在 K∖{e} 上用原导数公式计算，含 z_e=1 时也如此。每个残余期望是在 [0,v_ℓi] 上积分 Pr[M_i<t]，按覆盖利润分段，每段概率是背景中覆盖 i 且利润≥t 的配置的 ∏(1−z_f)。令 Q_v、Q_z 分别为输入利润和支持坐标的分母乘积，所有导数分母均整除 Q_vQ_z，且 0≤∂_eG≤Σ_{i∈S}v_ℓi。设 U 为 K 内最大的真减价导数 ∂_eG−a_ℓ−Σπ_ℓi，K 空时为 −∞。设 V 为所有配置的共用背景减价分数的最大值。各 bin 以 (b_ℓi−π_ℓi)_+ 定价，从返回集合删去负真实权项，再减 a_ℓ。下闭性保证返回的实际配置达到带符号模权最优。正坐标真分数由 U 控制，零坐标真分数由 V 控制。反向，U 由真分数达到，而 V 的达到配置因 ∂_eG≥Σb_ℓi 有至少 V 的真分数。故真全局最优恰为 max(U,V)。若 U≥V 返回 K 内达到者。若 U<V，V 的达到配置必为零坐标，否则其真分数超过 U。该比较保留原反例的两个正坐标真导数 1/5 与 4/5，其共用背景和同为 4/25。对 max ⟨∇G(z),x⟩，令 a_ℓ 等于 bin 行对偶加预算行对偶乘 c_ℓ，令 π_ℓi 等于 item 行对偶。截断版用预算系数 1。检查显式行后，正的最大减价返回一条实际违反的配置对偶不等式，从而得到精确强分离。梯度与约束系数的统一多项式位界适用于任意保留列子系统。应用已有有理最优值间距和阈值不可行重放，记录返回列，求受限原始 LP 的基本最优解，得到至多 |L|+|P|+1 个实际列。若没有配置，定价报告无配置，方向取零。",
+  "contribution": {
+    "result": "对任意给定显式有理正支持的固定独立配置点，可用逐 bin 精确非负模权定价和支持内显式导数，在确定性位多项式时间返回真实最大加性减价梯度及其配置。在上述自然硬预算配置 LP 或共同正成本截断版，可精确线性优化该真梯度并返回最多 |L|+|P|+1 个配置的最优有理方向。",
+    "remaining": "如需一条使用梯度的完整隐式算法，还须给出如何构造迭代点、离散步长或误差保证、全程支持及位复杂度、终点舍入和整体近似分析。近似定价损失、其他激活约束或随机需求仍需按各自模型验证。"
+  },
+  "scope": "固定且已显式给定完整短支持的标准独立 extension 点。方向是所述自然或截断线性松弛的最优点，保每物品边际约束。只支付五接口中的固定点真梯度定价及一次 LP 方向恢复。",
+  "evidence": [
+    {
+      "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+      "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+      "section": "梯度是模权和，不代表所有候选共享同一背景"
+    },
+    {
+      "path": "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md",
+      "sha256": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+      "section": "下闭配置指派与最大值覆盖的整数等价"
+    },
+    {
+      "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+      "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+      "section": "指数地集必须交付的五个接口"
+    },
+    {
+      "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+      "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+      "section": "配置 LP 和精确对偶分离"
+    },
+    {
+      "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+      "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+      "section": "从对偶证书恢复最优支持"
+    },
+    {
+      "path": "tools/evidence/retired-config-certificates/original/history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md",
+      "sha256": "c145b86c33e935cb3aa721992454d56a531dd17153566d0c55e6c7d6e86df052",
+      "section": "3. 梯度的可分解形式"
+    }
+  ],
+  "reviewed_by": "Boss1-config-3A-fresh-worker",
+  "review_note": "独立核对了完整共同背景与去候选背景的耦合，逐项验证 z_e=1、带符号价格、全地集最大值及达到配置、有理统一分母、强分离和受限原始支持恢复。原反例仍否定以同一剩余权直接表示全部活跃真导数。",
+  "endpoint_pins": {
+    "M-42d1210a93e94042833e75a1a80545ea": "b05256c0fbf0a3aaadabf7be137ab1258e8b67ab039a0f7b6588be0fcdecda27",
+    "M-a8a3062b0ff9434fa078140f5b654163": "0753bd142ddb39e53be2c685ecbcc9d29bc35af348823ab7a3b11a8f425d002c",
+    "configuration-assignment/exact-pricing-sparse-configuration-lp": "847bf3f41064526e222270532908a4a4dfb56a063ffae9b48ac817957fbf0bcb"
+  },
+  "evidence_pins": {
+    "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+    "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+    "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+    "tools/evidence/retired-config-certificates/original/history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md": "c145b86c33e935cb3aa721992454d56a531dd17153566d0c55e6c7d6e86df052"
+  },
+  "review_digest": "7421e300d3bf335c1e2e25e563122b893301dceca1aca6ebc5a65b090733b40a"
+}

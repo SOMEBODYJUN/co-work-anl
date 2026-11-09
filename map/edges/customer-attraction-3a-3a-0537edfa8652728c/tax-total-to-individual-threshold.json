@@ -1,0 +1,48 @@
+{
+  "edge_id": "cag-saturation-round10-tax-total-to-individual-threshold",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/independent-topic-saturated-padding-actual-fractional-tax-family"
+  ],
+  "target_ids": [
+    "M-f9ecd599b3ce4fa4870449fb46bb0707"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "每个 k≥1 的同一指定完整纯SPE，m=k+3，Δ_k=mM−W−G，α=(m−1)/m。",
+  "roles": {
+    "customer-attraction/independent-topic-saturated-padding-actual-fractional-tax-family": "同一策略族、M=6、G 显式式、W=5m+1 及精确 Δ_k。",
+    "M-f9ecd599b3ce4fa4870449fb46bb0707": "指定 k+2 个收益 5 的人的严格逐人失败阈值。"
+  },
+  "explanation": "代入 W=5m+1 得 m(M−G/m−5)=Δ_k+1；对最后玩家门槛差为 −G/m<0。分母 D=(3k+7)(2k+5)(k²+3k+3)>0。Δ_k+1 的分子代 k=z+9 化成 6z⁵+267z⁴+4478z³+33878z²+102102z+41256，z≥0 全正。1≤k≤8 时已给九点表前八项均 Δ_k/2<−1/2。k=9 时逐人差 573/14467>0 而 Δ_9=−7591/14467<0，所以逐人条件求和推出总式，反向逐实例失败。",
+  "scope": "精确阈值只对本族的 k+2 个收益 5 的人；M 是实际分数负载报价。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/独立主题饱和续局的全人数实际分数税反族--反例.md",
+      "sha256": "ee485429bf1bea9d5e576c95a74e8beb51f4020f35a91d2ff33a6b9d3f6666b4",
+      "section": "6. 实际税查询、总桥及逐人桥的精确阈值"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/独立主题饱和续局的全人数实际分数税反族--反例.md",
+      "sha256": "ee485429bf1bea9d5e576c95a74e8beb51f4020f35a91d2ff33a6b9d3f6666b4",
+      "section": "7. 半覆盖与真正静态安全值仍保留"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/独立主题填充完整策略的三个有限审计点--计算.md",
+      "sha256": "9af1eb917b7a3995a715c8750d578c641831083a13e2cdc79c329f33e14036bc"
+    }
+  ],
+  "reviewed_by": "Boss1-customer-saturated-round10",
+  "review_note": "核算 Δ 与逐人差的代数转换、k=9 严格相反符号及最后一位边界。",
+  "whole_result": "对本完整策略族的每个 k≥1，全部 k+2 位收益5的玩家恰在 k≥9 严格违反 u_i≥M−G/m，k=9 差573/14467，末位从不违反。k=9 已否逐人式但总式仍成立。",
+  "endpoint_pins": {
+    "M-f9ecd599b3ce4fa4870449fb46bb0707": "8ea3cbda170e8a93a4c681df23b847751203ac7fb90b137c97d46db5c6e9a198",
+    "customer-attraction/independent-topic-saturated-padding-actual-fractional-tax-family": "4c66e9c59da0d9f01498290e9f527a4a9ea5609e3c6fb79461e45e8042e2b5b1"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/独立主题饱和续局的全人数实际分数税反族--反例.md": "ee485429bf1bea9d5e576c95a74e8beb51f4020f35a91d2ff33a6b9d3f6666b4",
+    "archives/customer-attraction/state/计算/独立主题填充完整策略的三个有限审计点--计算.md": "9af1eb917b7a3995a715c8750d578c641831083a13e2cdc79c329f33e14036bc"
+  },
+  "review_digest": "61ff0c093f07eaf82243fd19c3323fb84c8cbb4a2e883f85784957d92c781e52"
+}

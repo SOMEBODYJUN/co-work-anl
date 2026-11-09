@@ -1,0 +1,61 @@
+{
+  "edge_id": "ca-one-tail-unit-price-separates-aeu-but-not-abc-or-abe",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-f4d1a1c9df134392856f390bd58de4b7"
+  ],
+  "target_ids": [
+    "customer-attraction/three-penultimate-obstructions-in-joint-terminal-catalog"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "对每个规定两人尾分别假设其在固定合法前三历史后能补成完整子SPE。以该局部子博弈中规定尾的末位为实际末价参考节点，r=1、α=γ=β₁=1。β₁=1在强制T后的真实末位由BR直接支付。不假设AEU或ABE在原五人根实际发生。",
+  "roles": {
+    "M-f4d1a1c9df134392856f390bd58de4b7": "给出可实现两尾的共同实际末价必要条件，取单后继的单位价格端点。",
+    "customer-attraction/three-penultimate-obstructions-in-joint-terminal-catalog": "在同一物化目录比较该端点能排除哪些指定尾，并与真正两人BR-floor判据的分离能力对照。"
+  },
+  "explanation": "令p为指定前三历史的逐客户负载，a,c为指定倒二和末位会员位，t,q为任意合法强制与比较主题会员位，D=(p+1)(p+2)。因局部实际末位背景为p+a，包络括号的z=0值减z=1值恰a/D≥0，故z=1取到min。归一化余量为Σ_x[(a+c)/(p+a+c)+(a+tq)/D−(t+q)/(p+1)]/W，零分子份额取0。它对t,q对称。按绑定的1180类型，对每个0≤i≤j<65的标签对、每个mask逐项取位并乘整数重数；p≤3使60倍份额全为整数。分别对ABC的(D,E)、AEU的(V,W)、ABE的(X,Y)取最小，60W倍余量为1284615754929618195566344898656511302004186040、−594557833800201384109496646872019417921036720、2513079480097308700803429867484615632077324520。三者全部达到的无序对依次是{W,L_third_i}、{AE_R_i,AE_S_i}、{L_third_i,second_J_i}，各i=0,…,4。第二个最小值严格负，直接排除AEU的规定尾。其余两个最小值正，故这两个不可补尾仍通过此固定端点的所有合法比较对。",
+  "scope": "固定同一65主题目录、三个规定尾、局部参考末位及α=γ=β₁=1的一整个比较对切片。涵盖每个前三历史各2145个含重复无序对，因对称也涵盖全部有序对。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/真实后继利润与共同末价的离散下包络--引理.md",
+      "sha256": "c19f2ec1dd32b72444443c005d00e74e117ade4f65d2a06fd830dd1235bc29a8"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/联合终局骨架在倒二层的三份严格偏离--障碍.md",
+      "sha256": "c03df0906a2c6cb105509ad37526344105e15356572931bf0b47fbe33d9c861d"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/three-penultimate-obstructions-in-joint-catalog-primary/input/materialized-unit-type-instance.json",
+      "sha256": "c0ddd984a33a4b3bb80a86ea9f9311ace43af68eed12ca6e2422e116680dae77"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/three-penultimate-obstructions-in-joint-catalog-primary/current-check-001/certificate.json",
+      "sha256": "978d4ed245147624f0d43d7d94c0223753e0f7f5f0e262071547890eebdf4ce1"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/显式回复真尾利润投影的有理切面--计算.md",
+      "sha256": "63256342d43d8dcbb59acf533acde05fceb17d4b553ed2f1efbdf5f6bfaa696f",
+      "section": "r=1端点恰为已有强PAIR"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "以全部1180类型的整数60倍份额独立计算三个全对最小值，并用Fraction直接重算原三个强制见证对的值，精确相等。仅重算该固定端点，不重演原195个floor、708行或完整策略。",
+  "contribution": {
+    "result": "共同实际末价在这一端点已排除AEU的V→W。ABC的D→E和ABE的X→Y通过全部同端点的强PAIR比较但仍各自被真末位BR-floor严格排除。",
+    "remaining": "完整三尾不可补全需要另外两份BR-floor证据。其他α、γ或另一参考节点不在当前端点全对检验范围。"
+  },
+  "endpoint_pins": {
+    "M-f4d1a1c9df134392856f390bd58de4b7": "0efeed064d3c40f6188e883e6c443ccf857dc2171312655342adeffda981846a",
+    "customer-attraction/three-penultimate-obstructions-in-joint-terminal-catalog": "844e874f05fbd60b9704c002da27abf0d3baa10cf05a65bf95a87da2fc4484f8"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/真实后继利润与共同末价的离散下包络--引理.md": "c19f2ec1dd32b72444443c005d00e74e117ade4f65d2a06fd830dd1235bc29a8",
+    "archives/customer-attraction/state/障碍/联合终局骨架在倒二层的三份严格偏离--障碍.md": "c03df0906a2c6cb105509ad37526344105e15356572931bf0b47fbe33d9c861d",
+    "archives/customer-attraction/tools/evidence/three-penultimate-obstructions-in-joint-catalog-primary/input/materialized-unit-type-instance.json": "c0ddd984a33a4b3bb80a86ea9f9311ace43af68eed12ca6e2422e116680dae77",
+    "archives/customer-attraction/tools/evidence/three-penultimate-obstructions-in-joint-catalog-primary/current-check-001/certificate.json": "978d4ed245147624f0d43d7d94c0223753e0f7f5f0e262071547890eebdf4ce1",
+    "archives/customer-attraction/state/计算/显式回复真尾利润投影的有理切面--计算.md": "63256342d43d8dcbb59acf533acde05fceb17d4b553ed2f1efbdf5f6bfaa696f"
+  },
+  "review_digest": "79630c63a3c3bde5cfe7f61f4cc580e92a11cc215456c47975b454649c7d4e3d"
+}
