@@ -621,12 +621,72 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss1",
-  "request_id": "bbc0fc1a720149c08ff9ab21d25f1f69",
+  "request_id": "5419ab6d8c054f2c86d0d4b9d04ec7e6",
   "requests": {
     "e9833af382477f025b7c6e5cc152b467": "plan",
     "18a80f7545cb485281be8a464cc4ab8a": "claim",
-    "bbc0fc1a720149c08ff9ab21d25f1f69": "read-add"
+    "bbc0fc1a720149c08ff9ab21d25f1f69": "read-add",
+    "5419ab6d8c054f2c86d0d4b9d04ec7e6": "done"
+  },
+  "edge_paths": {
+    "commonmany-greedy-budget-home-onpath-box": "map/edges/commonmany-box-home-3b-e76445c54d0d7383/budget-home-box-contribution.json"
+  },
+  "receipt": {
+    "task_id": "commonmany-box-home-3b-e76445c54d0d7383",
+    "stage": "3B",
+    "object_ids": [
+      "SC-K-GREEDY-BOX-EXISTS",
+      "SC-K-GREEDY-BUDGET",
+      "SC-K-GREEDY-MAX-MULT"
+    ],
+    "read_object_ids": [
+      "SC-K-GREEDY-BOX-FINITE-2"
+    ],
+    "input_pins": {
+      "SC-K-GREEDY-BOX-EXISTS": "1734aef77d4e8a53a08935117a99c442bbbb5190a21570b036ab13ea96efc448",
+      "SC-K-GREEDY-BUDGET": "5c08688db4620c0cd4fe6d2c03e61e444fec71aa1bd30ee430061dee1a6a1b83",
+      "SC-K-GREEDY-MAX-MULT": "b2ee941db2e2116d5d0191c6f77d88e0dbc98609d8d87ac25960c5b143e2f564",
+      "SC-K-GREEDY-BOX-FINITE-2": "0e3f0944b8ebe9195ae24070478d8e8d9a9c1568202317acab01d7a516eff027"
+    },
+    "status": "complete",
+    "coverage": {
+      "SC-K-GREEDY-BOX-EXISTS": {
+        "state": "linked",
+        "object_pin": "1734aef77d4e8a53a08935117a99c442bbbb5190a21570b036ab13ea96efc448",
+        "comparison_scope": "核读截断—归位引理的抽象域、严格改善及归位的固定交错势、上下盒、任意合法顺序和精确位长，并与定理归一化、冻结重客户和全部原选项成本逐式比较。",
+        "reason": "抽象引理是联合前提。实际得到的是原规范布局的完整盒、全部客户精确 NE 与有限终止，作为完整因子二定理的在轨贡献。一般抽象输入无须由真实贪心产生。离轨装箱、重置和默认布局，以及统一总位时间分别需要进一步的论证。",
+        "edge_ids": [
+          "commonmany-greedy-budget-home-onpath-box"
+        ]
+      },
+      "SC-K-GREEDY-BUDGET": {
+        "state": "linked",
+        "object_pin": "5c08688db4620c0cd4fe6d2c03e61e444fec71aa1bd30ee430061dee1a6a1b83",
+        "comparison_scope": "比对规范贪心定理的预算、归一化与退化三节，以及抽象引理的初态盒条件。核对同一运行的非增得分、本站末插入、最终候选与未覆盖分支。",
+        "reason": "q_tγ≤W_t^0≤(q_t+1)γ 给 c_t∈[0,1]。冻结后仍用原池总重作为基线，不能假定在轨重分配保留消失源 G1。此预算与 Home、截断引理共同生成原布局的精确盒内在轨 NE。",
+        "edge_ids": [
+          "commonmany-greedy-budget-home-onpath-box"
+        ]
+      },
+      "SC-K-GREEDY-MAX-MULT": {
+        "state": "linked",
+        "object_pin": "b2ee941db2e2116d5d0191c6f77d88e0dbc98609d8d87ac25960c5b143e2f564",
+        "comparison_scope": "比对原归属节中先开 h、后开 t 的候选池包含关系、正权 i 带来的严格比较，以及 t 最后插入的矛盾。逐个检查归一化后保留的 A_i。",
+        "reason": "q_{h_i}≥q_t 使超盒外来客户违反自身归位守卫。重数相同时首开次序使 home 为首选项。归属结论约束同一运行的初始 home，终态赋值不须保留这个序关系。",
+        "edge_ids": [
+          "commonmany-greedy-budget-home-onpath-box"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/commonmany-box-home-3b-e76445c54d0d7383/budget-home-box-contribution.json",
+        "sha256": "c2eb85d0c23cc63cd722611782e16caddc14b223a39ee19d71595a3461e53b7f"
+      }
+    ],
+    "reviewed_by": "Boss1",
+    "review_note": "区分抽象引理、真实贪心的在轨应用、全布局因子二和位多项式选择，明确联合前提与方向。"
   }
 }
