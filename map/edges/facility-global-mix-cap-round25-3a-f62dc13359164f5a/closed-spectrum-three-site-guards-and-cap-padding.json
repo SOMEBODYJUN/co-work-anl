@@ -1,0 +1,88 @@
+{
+  "edge_id": "fac-f62d-closed-spectrum-three-site-guards-and-cap-padding",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-b5488c2696964ec58745ce5426f2b777",
+    "SC-THREE-DEC1-HARD",
+    "facility-games/common-catalog-empty-sites-preserve-full-continuation-ratio"
+  ],
+  "target_ids": [
+    "facility-games/three-site-complete-rules-require-unbounded-mixing"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "两家带标签设施同时从同一有限目录选址，允许同址和空覆盖。客户权严格正，覆盖后必须参与，独立混合，成本是含自身完整原子重量的实际条件期望负载。每一带标签布局均指定精确客户 NE，设施用期望服务权检验实际单方换址。限额按每个布局中概率严格介于 0 与 1 的客户人数计。",
+  "roles": {
+    "M-b5488c2696964ec58745ce5426f2b777": "以完整闭支持式和实际混合的严格不等式核任意客户 NE。给出 BC 单位群的两端点计算以及 AB、AC 的全部收益，而闭标签的退化端点仍按实际概率计数。",
+    "SC-THREE-DEC1-HARD": "提供 a=1 证明中的三站覆盖公式与 AA、BB、CC、AB、AC、BC 的真实偏离守卫。只用这段参数化布局论证，单位群端点、r 人限制下的守卫比较和证书均另行证明。",
+    "facility-games/common-catalog-empty-sites-preserve-full-continuation-ratio": "提供空地点正向纯补全及原布局限制的迁移机制。在本族由各站遗漏正私有客户排除空点在轨，逐布局保持实际混合人数限额。",
+    "facility-games/three-site-complete-rules-require-unbounded-mixing": "获得完整精确稳定证书的最少最大实际混合数、逐布局 r 人限额的精确最优倍率，以及两结论在空点添加和统一整数缩放下的保持。"
+  },
+  "explanation": "局部端点。令整数 r≥2、W=2r、δ=1/2、q=1−1/(2r)、s=1/[4r(r−1)]。在固定 BC 中有 W 名单位公共客户，B 对 C 的独占背景差为 δ。设 Δ=L_B−L_C，m 是实际混合人数，b 是纯去 C 的人数。对每个混合者，条件成本无差异给 p_B=(1+Δ)/2。完整谱的负载恒等式于是给 (1−m)Δ=δ+2r−m−2b。m=0 的负差至多 −3/2，必有纯 C 客户违反 Δ≥−1。m=1 的右边是半整数而不为零。对负差 y=−Δ>0，余下 m≥2 且 0<y<1。若 m≤r，整数 2r−m−2b 严格小于 m−1−δ，故至多 m−2，于是 y≤1−1/[2(m−1)]≤1−1/[2(r−1)]=q−2s。取 m=r、b=1、其余 r−1 人纯 B，混合者各以 1/[4(r−1)] 选 B，全部纯与混合条件同时成立。若 m≥r+1，由 b≥0 得 y≤(2r−m+δ)/(m−1)。右端严格随 m 下降，在 m=r+1 为 q，比受限端点严格大。等号恰为 m=r+1、b=0、其余 r−1 人纯 B，混合者各以 1/(4r) 选 B。此见证也逐人满足 NE，因而两个差距 −q 与 −q+2s 分别是完整域与逐布局 r 人限额下的真最小差。\n\n全布局守卫的实例化。将 a=1 模板的 BC 硬群换为上述 W 名单位客户，并取其端点参数 Q=q。两名 AB 客户各重 x=(W+δ−q)/2，一名 AC 客户重 c=(W+δ+q)/2，A、B、C 的私有客户分别重 u=(W−δ+3q)/2、v=2q、z=(W−δ+q)/2，均为正。设 M=2W+δ+q、N=2W+q、h=(3W+δ+q)/2、k=(3W+δ+3q)/2。单站覆盖总重依次为 M、M、N。AB 两侧独占背景 u+c 与 v+W 相等，公共客户等重。零混合时一边一名才是 NE，实际一混合的谱等式要求另一个纯客户的非零符号权消失，实际两混合由式得 Δ=0，故所有 AB NE 收益均为 (k,k) 且可纯。AC 仅一名公共客户，选 A 与选 C 的条件成本差恰为独占背景差 u+2x−(z+W)=δ>0，故严格选 C，唯一收益为 (h,N)。BC 的独占背景是 W+δ+q 与 W+q，服务总重 h+k。由前段，B 的最小收益在完整域为 h，在 r 人限额下为 h+s，分别对应 C 的 k 与 k−s。\n\n任意完整精确稳定证书。AA 和 BB 中较低一家至多 M/2，换到另一站必得 k>M/2。CC 中较低一家至多 N/2，换 A 必得 h>N/2。AB 中 B 家换 C 得 N>k。这四类在任意合法离轨 NE 下均排除。AC 中 A 家换 B 的 BC 续局必须给 B 至多 h，只有真极小值 h 可行。BC 在轨时 C 家换 A 必得 k，故在轨 C 至少为 k，而 B 至少为 h、两者和为 h+k，只能是 (h,k)。反射也分别成立，覆盖九个带标签布局。因此每份稳定证书必在其相应的有序 BC 布局达到负端点，恰有 r+1 人实际混合。达到规则取 AC 在轨。A→B 在 BC 用端点见证，C→B 在 AB 用纯均衡并得 k<N。A→C 到 CC、C→A 到 AA，各在任一纯 NE 中以标签对称性给偏离方较低收益，分别至多 N/2<h、M/2<N。四项实际偏离到不同的带标签布局。任何固定布局的纯分配可用最小化负载平方和取得纯 NE，因为权 w 的客户换址使势改变 2w 倍的条件成本差。其它布局一律补纯 NE，其中包括未用到的 BC 标签反射。\n\nr 人限额下的达到与下界。取 BC 在轨且收益为 (h+s,k−s)。B→A 得 h，B→C 到 CC 取偏离方至多 N/2 的纯 NE。C→A 得 k，C→B 到 BB 取偏离方至多 M/2 的纯 NE。因 h+s>N/2 且 k−s>M/2，唯有 C→A 改善，给倍率 k/(k−s)。四个偏离格和其它布局均可选纯 NE。反向任意限额证书在 BC 的 C 收益至多 k−s，C→A 给 k，迫使倍率至少 k/(k−s)。其反射同理。AC 的 A→B 给下界 1+s/h，因 k−s>h 严格更大。AA、BB、CC、AB 的守卫分别给 2k/M、2k/M、2h/N、N/k。若在轨收益为零则同一正收益偏离直接排除有限倍率。由 2k−M=W+2q>2s、2h−N=W+δ>2s 及 k>h 得三个同址下界都严格大于 k/(k−s)。由 N<2k 和 N−k=(W−δ−q)/2>2s 得 N/k 也严格更大。反射保全部比较。差距 k/(k−s)−1=s/(k−s) 的阶为 r⁻³。r=2 时 k=59/8、s=1/8，倍率为 59/58。\n\n空地点及整数化。按空地点迁移的正向规则，保留原九格，新格没有共同客户而用强制纯 NE，搬去空站的偏离收益为零。逆向若一家在空站而另一家在任一旧站，空站设施可换到覆盖一名未被另一家覆盖的正私有客户的旧站，因强制服务从零变正。两家都在空站时换到任一旧站亦从零变正。故任何有限倍率的扩展证书都在旧九格内上轨，限制回原目录保每格混合人数和每项旧偏离。正反均保每个整数限额，因而也保最少最大实际混合人数。全部权重乘 4r 后为正整数，条件成本与设施收益同乘而最优反应、概率及倍率不变。客户数为 W+6=2r+6。",
+  "scope": "对每个 r≥2 的显式三共同地点族，量化该实例所有带标签在轨布局与实际单家偏离。无界人数发生在每份精确稳定证书中相应的关键有序 BC 格。其余格可纯。结论亦适用于在该族上任意有限空点添加。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md",
+      "sha256": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1",
+      "section": "三态闭单元精确覆盖"
+    },
+    {
+      "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+      "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+      "section": "三地点a=1：六类在轨布局的精确守卫"
+    },
+    {
+      "path": "archives/facility-games/state/定理/共同目录添加空地点的完整续局倍率保持--定理.md",
+      "sha256": "81ac4a0744aa6a44e5970dec4d3c394ddd2832acabaaa702516b64f1f0689c10",
+      "section": "共同目录加空地点保持完整续局的实例最优倍率"
+    },
+    {
+      "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+      "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09",
+      "section": "固定布局上的精确客户NE"
+    },
+    {
+      "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+      "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09",
+      "section": "完整规则与设施稳定的量词"
+    },
+    {
+      "path": "archives/facility-games/state/定理/三共同地点完整精确续局的无界混合人数与限混倍率--定理.md",
+      "sha256": "68a62a66a9ec7750c06891a0c6e0b4cd58a5eebcaaa38c82b0a116ef07711abc",
+      "section": "关键的正背景差单位群"
+    },
+    {
+      "path": "archives/facility-games/state/定理/三共同地点完整精确续局的无界混合人数与限混倍率--定理.md",
+      "sha256": "68a62a66a9ec7750c06891a0c6e0b4cd58a5eebcaaa38c82b0a116ef07711abc",
+      "section": "三地点构造与完整精确规则"
+    },
+    {
+      "path": "archives/facility-games/state/定理/三共同地点完整精确续局的无界混合人数与限混倍率--定理.md",
+      "sha256": "68a62a66a9ec7750c06891a0c6e0b4cd58a5eebcaaa38c82b0a116ef07711abc",
+      "section": "空地点与整数实例"
+    },
+    {
+      "path": "archives/facility-games/state/定理/三共同地点完整精确续局的无界混合人数与限混倍率--定理.md",
+      "sha256": "68a62a66a9ec7750c06891a0c6e0b4cd58a5eebcaaa38c82b0a116ef07711abc",
+      "section": "\\(r\\) 人限制的精确倍率"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐式核完整闭谱、两支正背景差端点、九个带标签布局和两份可同时补全的规则。a=1 归约只提供可参数化守卫，重新支付全部限额不等式。反向空点排除逐格保人数。原分组有理程序复核 18 个目录及限额组合、226 个布局，解析证明给任意 r。",
+  "whole_result": "对每个整数 r≥2，上述 2r+6 客户、两家设施、恰三共同地点实例存在完整精确稳定证书，且每份证书在其关键有序 BC 布局恰需 r+1 名实际混合者。有证书在其余布局全纯，故最少最大实际混合数恰为 r+1。逐布局限 r 人时真最优倍率恰为 k/(k−s)>1，其中 k=(6r+1/2+3q)/2、q=1−1/(2r)、s=1/[4r(r−1)]。任意添加有限个空地点及统一乘 4r 整数化保持这些结论。",
+  "endpoint_pins": {
+    "M-b5488c2696964ec58745ce5426f2b777": "2611ce2df7c0a747fd7d6943fd03d557d87ae8e08af35622ed0d6d6161725b6e",
+    "SC-THREE-DEC1-HARD": "7c168e01f188cc9fda95a5cf1371cc876eec56185ac435042f48a64aacaf66fb",
+    "facility-games/common-catalog-empty-sites-preserve-full-continuation-ratio": "0ab59afbcbc4e75ce78152ab96ecfda7545101c45f21c6c189c6b62db2e236f3",
+    "facility-games/three-site-complete-rules-require-unbounded-mixing": "675f9955d5dd5d5eaa5ba290dd68e880d9a4b7f1771ae5b4779fbf45a174d4bc"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1",
+    "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+    "archives/facility-games/state/定理/共同目录添加空地点的完整续局倍率保持--定理.md": "81ac4a0744aa6a44e5970dec4d3c394ddd2832acabaaa702516b64f1f0689c10",
+    "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09",
+    "archives/facility-games/state/定理/三共同地点完整精确续局的无界混合人数与限混倍率--定理.md": "68a62a66a9ec7750c06891a0c6e0b4cd58a5eebcaaa38c82b0a116ef07711abc"
+  },
+  "review_digest": "28e9a73a1b01c75de0031a1945ef027a948836f5266bf415f198b85dd9ed63b7"
+}

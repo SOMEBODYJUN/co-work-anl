@@ -1,0 +1,60 @@
+{
+  "edge_id": "facb1af-cubic-example-checks-disconnected-exact-spectrum",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-970991e8661942cca3a1f9e3a5587f63"
+  ],
+  "target_ids": [
+    "facility-games/offdiagonal-two-overlap-nonlinear-nine-rectangle-exact-optimum"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "固定异址布局，独占背景(1,0)，两个公共权(2,3)，地点无关费用 z³。",
+  "roles": {
+    "M-970991e8661942cca3a1f9e3a5587f63": "提供原线性混合点及两客户立方费用的精确局部例。",
+    "facility-games/offdiagonal-two-overlap-nonlinear-nine-rectangle-exact-optimum": "用真实闭矩形并计算坐标极值与在轨区间。"
+  },
+  "explanation": "令 p₁、p₂ 分别为权2、3的公共客户选第一家的概率，另一侧没有私有客户。固定自身行动、仅对另一名客户随机实现取期望，四个含自重的费用差端点是 (3³−5³,6³−2³)=(-98,208) 与 (4³−5³,6³−3³)=(-61,189)，故 g₁=-98+306p₂、g₂=-61+250p₁。两根严格在(0,1)，一人内点强制另一人内点。四角只保(1,0)、(0,1)，两混合根为(61/250,49/153)，其他六种闭状态为空。总服务重为6，第一收益谱恰为{15611/6375,3,4}，因而7/2虽在凸包内却没有独立NE见证。原线性点(1/4,1/3)给条件成本4=4和9/2=9/2。改用立方后权2客户选第一的条件成本90、选第二86，该点既不满足NE，也违反收到第一推荐的CE条件；看推荐前无条件改选第二仍可把期望成本降低(1/4)(90−86)=1，因此不满足CCE。",
+  "scope": "已穷尽这个双交叠有理例的九状态，精确检查凸包会引入假收益；一般九矩形算法另靠全支持论证。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/等价/两设施同客户二次费用的均衡集合保持--等价.md",
+      "sha256": "72975462df6994e12097f47e8cf2bbf37523e31a6625eca6f533e33ba6967aff"
+    },
+    {
+      "path": "archives/facility-games/state/算法/异址双交叠非线性均衡的九矩形精确优化--算法.md",
+      "sha256": "cd40a2f9e10044613c662e7d8477722b02f31ce10246204d528ec97d768327bf",
+      "section": "A13.4 手算全部九种状态，而不是只算混合根"
+    },
+    {
+      "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+      "sha256": "97ecba6feca16fb7302e2454e785f2d84240a8e2c7a2a561f3bbb278217d15ab",
+      "section": "A11.8 二次费用为何保留均衡，三次费用为何没有同样结论"
+    },
+    {
+      "path": "archives/facility-games/state/证明/地点费用推广的条件期望与完整续局教学推导--证明.md",
+      "sha256": "f00befec59c4e8205511c2abdc0e09022fc4a95e120306f79dfba6252b87eaaf",
+      "section": "12.6 立方费用失去的是哪一项结论"
+    },
+    {
+      "path": "archives/facility-games/state/审查/成本扩展、CCE与异构ρ边界的独立整理--审查.md",
+      "sha256": "b26f5769897f647a47ae86a8863d758fcee490fee848ceb99d4504a6e1d97d9e",
+      "section": "1. 二次成本：为什么恰两家且同一客户函数时均衡集合保持"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按当前证据逐实现重算闭状态、异址收益和偏离。三次费用严格递增，纯策略排序仍保留；此检查仅展示本局部混合谱及一般严格单调迁移的边界。独立NE的洞不能用相关随机化填补，局部算例也不判定立方共同目录的普遍黄金比问题。",
+  "endpoint_pins": {
+    "M-970991e8661942cca3a1f9e3a5587f63": "ec83d394ec5fe4d6c6b684f6f3f022b98166b9cbeff9d12b057a57d1df410ad7",
+    "facility-games/offdiagonal-two-overlap-nonlinear-nine-rectangle-exact-optimum": "135d412720444b396513e09794a3095d6f602c259eca25614d914aba3222e376"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/等价/两设施同客户二次费用的均衡集合保持--等价.md": "72975462df6994e12097f47e8cf2bbf37523e31a6625eca6f533e33ba6967aff",
+    "archives/facility-games/state/算法/异址双交叠非线性均衡的九矩形精确优化--算法.md": "cd40a2f9e10044613c662e7d8477722b02f31ce10246204d528ec97d768327bf",
+    "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md": "97ecba6feca16fb7302e2454e785f2d84240a8e2c7a2a561f3bbb278217d15ab",
+    "archives/facility-games/state/证明/地点费用推广的条件期望与完整续局教学推导--证明.md": "f00befec59c4e8205511c2abdc0e09022fc4a95e120306f79dfba6252b87eaaf",
+    "archives/facility-games/state/审查/成本扩展、CCE与异构ρ边界的独立整理--审查.md": "b26f5769897f647a47ae86a8863d758fcee490fee848ceb99d4504a6e1d97d9e"
+  },
+  "review_digest": "26d331edb3e914e3c6292a65bcaee49a36e15a7bf6066a849dcd78d745009735"
+}

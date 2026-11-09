@@ -1,0 +1,65 @@
+{
+  "edge_id": "facb1af-strict-monotonicity-gives-quadratic-pure-branch",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "HC-MONOTONE"
+  ],
+  "target_ids": [
+    "QUAD-EQ"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "恰两设施、强制服务，同一客户两设施用同一个 f_i(z)=a_i z²+b_i z+c_i，a_i,b_i≥0且a_i+b_i>0。",
+  "roles": {
+    "HC-MONOTONE": "任意同客户同严格递增费用的纯最佳反应和逐实现严格占优等价。",
+    "QUAD-EQ": "进一步证整个混合及相关均衡集合完全等价。"
+  },
+  "explanation": "对 0≤x<y，有 f_i(y)−f_i(x)=(y−x)[a_i(x+y)+b_i]>0，因此 HC-MONOTONE 直接保持纯最佳反应、纯NE及逐实现严格占优。QUAD-EQ 的混合及相关分支另有独立代数。固定布局总覆盖重 V 和其他客户一次实现，其两侧负载之和是 V−w_i，自重在两个反事实中各计一次，故 X+Y=V+w_i。这给 f_i(X)−f_i(Y)=[a_i(V+w_i)+b_i](X−Y)，同一正系数与实现、推荐和合法偏离无关。独立混合的条件期望差、CE 按推荐分组的加权差和、CCE 的无条件偏离差和逐条保号。只有此恒等式才得到完整集合等价，并因设施仍按期望服务重计收益而保持逐布局收益与完整规则倍率。",
+  "scope": "二次等价的纯分支，在任意布局及共同或异构目录内；纯菜单存在结论也只沿原菜单合同迁移。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/引理/客户相关续局与纯负载费用变换的精确边界--引理.md",
+      "sha256": "c8ce76fffd5a4a946383b3b07e71629d32f3094b7e114c732de1cc3514b80f73",
+      "section": "纯NE与逐实现严格占优的单调变换"
+    },
+    {
+      "path": "archives/facility-games/state/等价/两设施同客户二次费用的均衡集合保持--等价.md",
+      "sha256": "72975462df6994e12097f47e8cf2bbf37523e31a6625eca6f533e33ba6967aff",
+      "section": "全部条件与代数"
+    },
+    {
+      "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+      "sha256": "97ecba6feca16fb7302e2454e785f2d84240a8e2c7a2a561f3bbb278217d15ab",
+      "section": "A11.8 二次费用为何保留均衡，三次费用为何没有同样结论"
+    },
+    {
+      "path": "archives/facility-games/state/证明/地点费用推广的条件期望与完整续局教学推导--证明.md",
+      "sha256": "f00befec59c4e8205511c2abdc0e09022fc4a95e120306f79dfba6252b87eaaf",
+      "section": "12.5 二次费用为何保持全部客户均衡"
+    },
+    {
+      "path": "archives/facility-games/state/审查/成本扩展、CCE与异构ρ边界的独立整理--审查.md",
+      "sha256": "b26f5769897f647a47ae86a8863d758fcee490fee848ceb99d4504a6e1d97d9e",
+      "section": "1. 二次成本：为什么恰两家且同一客户函数时均衡集合保持"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复读当前 A11.8、12.5 和成本扩展§1，区分纯分支的直接专化与完整等价的另证。二次对象不需要共同目录或交叠上限，但需恰两设施、强制服务、同一客户同一费用。任何普遍倍率转移还要支付相应线性原命题。",
+  "contribution": {
+    "result": "在二次系数域内，纯最佳反应、全部纯客户NE及逐实现严格占优由一般严格单调性直接保留。",
+    "remaining": "全部独立混合NE、CE、CCE的双向集合等价需逐实现相同正乘子 a_i(V+w_i)+b_i，并继续保全完整续局和设施收益量词。"
+  },
+  "endpoint_pins": {
+    "HC-MONOTONE": "06dbc73396cb6e3e7454579a92992fa380ade0df9e52f69532e98d0196029a5c",
+    "QUAD-EQ": "fc4cf53aa1fda34e1c3d1a94236de94431c22bfe1fef91c70776ec8d0141e54f"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/引理/客户相关续局与纯负载费用变换的精确边界--引理.md": "c8ce76fffd5a4a946383b3b07e71629d32f3094b7e114c732de1cc3514b80f73",
+    "archives/facility-games/state/等价/两设施同客户二次费用的均衡集合保持--等价.md": "72975462df6994e12097f47e8cf2bbf37523e31a6625eca6f533e33ba6967aff",
+    "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md": "97ecba6feca16fb7302e2454e785f2d84240a8e2c7a2a561f3bbb278217d15ab",
+    "archives/facility-games/state/证明/地点费用推广的条件期望与完整续局教学推导--证明.md": "f00befec59c4e8205511c2abdc0e09022fc4a95e120306f79dfba6252b87eaaf",
+    "archives/facility-games/state/审查/成本扩展、CCE与异构ρ边界的独立整理--审查.md": "b26f5769897f647a47ae86a8863d758fcee490fee848ceb99d4504a6e1d97d9e"
+  },
+  "review_digest": "a539f13ed60523d21156d5d55bb435f221270557c374bde4be9f6330c7b2f1b0"
+}
