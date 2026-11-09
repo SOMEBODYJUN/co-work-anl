@@ -1,0 +1,45 @@
+{
+  "edge_id": "um-280160f5-target-and-token-identity-give-dag-ratio",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-TARGET-v1",
+    "UM-DAG-DEGREE-TOKEN-IDENTITY-v1"
+  ],
+  "target_ids": [
+    "UM-TARGET-IMPLIES-DAG-DEGREE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一显式简单DAG：根入度0，原零需求只在原终端，正二进制需求允许大于出度及正需求死端。假设UM-TARGET中同一个固定0<ε<1的确定性总位多项式实际(2−ε)算法A存在；压缩双向桥全域已证。",
+  "roles": {
+    "UM-TARGET-v1": "提供仍属开放前提的同一个一般UM实际算法A及统一ε。",
+    "UM-DAG-DEGREE-TOKEN-IDENTITY-v1": "提供按min(k_v,d_v)压缩的普通UM矩阵、OPT=2−b*和任意C<2输出的实际树解码。",
+    "UM-TARGET-IMPLIES-DAG-DEGREE-v1": "目标是有限Γ枚举和改需求后按原k评分的ε比例树算法。"
+  },
+  "explanation": "任意正最优b*由某最优树的截1或整数出度比取得，故在Γ={1}∪{h/k_v:1≤h≤min(k_v,d_v)}，|Γ|≤1+|E|。对每τ∈Γ令k′_v=ceil(τk_v)，零需求原终端保持0。整数出度使b*_{k′}=1 iff τ≤b*_k；逐树又有b_k(H)≥τb_{k′}(H)。逐τ构造压缩桥实例并调用同一A，只有实际完整输出C<2时才解码，按原k计算分数并保留最好树；C≥2不当作不可行证书。在τ=b*>0时新树最优1，所以D给新调度OPT=1，A输出C≤2−ε<2，D解码新评分≥ε，旧评分≥εb*。b*=0用默认根单点，根终端直接得1。压缩任务≤1+|E|+|V|，Γ只按显式出度枚举，不按需求数值展开；ceil及有理负载精确计算、O(|E|+1)次固定算法调用保持位多项式。",
+  "scope": "整条条件性方向：一般UM统一严格次二实际算法，加压缩恒等式，推出该DAG域对原需求的ε比例实际根树。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/有向需求与调度的压缩双向任务桥--定理.md",
+      "sha256": "47052b1eb3dfa67b095bbdb1ef86b80f108c6bb71b1e8d0210649b13092b130e"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有向需求与调度的压缩双向任务桥--定理.md",
+      "sha256": "47052b1eb3dfa67b095bbdb1ef86b80f108c6bb71b1e8d0210649b13092b130e",
+      "section": "有限Γ及条件比例转移"
+    }
+  ],
+  "reviewed_by": "Boss3 / um_config_interfaces",
+  "review_note": "已实读当前登记对象及所引自足证明，逐项核对模型、量词、全任务身份、同时全机负载和位复杂度。本边只在列明条件内覆盖目标整条陈述；不升级未付的算法前提。",
+  "whole_result": "在一般UM算法A这一开放前提下，对每个桥域DAG可确定性位多项式输出真实根树H，b_k(H)≥ε b*_k；Γ规模、ceil阈值等价、全部边界及原需求择优均成立。",
+  "endpoint_pins": {
+    "UM-DAG-DEGREE-TOKEN-IDENTITY-v1": "86d52277f0b5f722b353c5cb383b2c5a059c33fce3e58b45c92b353f77c95a39",
+    "UM-TARGET-IMPLIES-DAG-DEGREE-v1": "7f4b709c2155e629b8b14146bb661438a6a93155cdd568317c79c01b4520bad6",
+    "UM-TARGET-v1": "1d9a8ab835f9a0e4076886ab7ae61928042d9d113480d6eb2f1bf6e34af73f6a"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/有向需求与调度的压缩双向任务桥--定理.md": "47052b1eb3dfa67b095bbdb1ef86b80f108c6bb71b1e8d0210649b13092b130e"
+  },
+  "review_digest": "291248af858089010d51ee1a4d55aea19bae82fe4a5c557f906b542b1c29bea6"
+}

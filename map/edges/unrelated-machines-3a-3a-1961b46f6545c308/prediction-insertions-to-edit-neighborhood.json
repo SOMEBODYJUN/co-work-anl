@@ -1,0 +1,53 @@
+{
+  "edge_id": "um-1961b46f-prediction-insertions-to-edit-neighborhood",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/learning-augmented-makespan-prediction-guided-search"
+  ],
+  "target_ids": [
+    "M-d32a4146dbbd4c0197c815d139d7c500"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一正二进制UM、部分预测、T>0、ε∈(0,1)，只保p>εT的重端；可编辑邻域允许至多K次插入/删除/改派。每个候选ψ的两误差必须在同一ψ上计算。",
+  "roles": {
+    "unrelated-machines/learning-augmented-makespan-prediction-guided-search": "对任意部分预测的K0内层误差界和无需成功单调性的临界阈值外层/LST兜底。",
+    "M-d32a4146dbbd4c0197c815d139d7c500": "枚举重投影编辑邻域后将同一候选的复合误差取最小。"
+  },
+  "explanation": "对每个ψ∈E_T,K(φhat)运行L的内层但增补预算设0。其任意比较σ保证C≤Cmax(σ)+max(εT,R_T^−(ψ,σ))+R_T^+(ψ,σ)。编辑候选可枚举为至多K个原job的插入/删除/新机选项，规模O((mn)^K)乘多项式；取实际输出峰最小，得到同一ψ复合误差的最小Δ_edit，不能分开最小化R−和R+。同一临界集合在相邻T*≤OPT无p/ε断点时保重/轻分类、预测投影及合法重编辑邻域一致，按L的同步论证把误差在OPT评估；加原LST输出封顶2OPT，不假设内层成功单调。每候选调用预算0，所以总时间仍O((mn)^K poly(m,n,logP,1/ε))。若最优重投影距预测≤K，该最优投影在邻域中且R−=R+=0，得(1+ε)OPT。随K增大邻域嵌套，复合最小值不增；各单独误差分量不保证单调，删除假阳性可制造遗漏。",
+  "scope": "整条附录D编辑版由任意预测的预算0基例及明确邻域枚举迁移；只固定K时位多项式，不给无预测统一次二。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/学习增强非相关机makespan--文献.md",
+      "sha256": "248cedcccfa539d19964d3950092d5c01bc9f45d3e38641ea88e8ccb683b422f",
+      "section": "内层算法：局部补回遗漏重作业"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/学习增强非相关机makespan--文献.md",
+      "sha256": "248cedcccfa539d19964d3950092d5c01bc9f45d3e38641ea88e8ccb683b422f",
+      "section": "外层算法：临界阈值同步"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/学习增强非相关机makespan--文献.md",
+      "sha256": "248cedcccfa539d19964d3950092d5c01bc9f45d3e38641ea88e8ccb683b422f",
+      "section": "误差量与主保证"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/学习增强非相关机makespan--文献.md",
+      "sha256": "248cedcccfa539d19964d3950092d5c01bc9f45d3e38641ea88e8ccb683b422f",
+      "section": "可编辑预测变体（附录 D）"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "本包worker实读当前登记、端点正文与所列承重证明，逐项核对完整/局部作用域、同一实际输出及模型边界；未将历史软件计数当新运行。",
+  "whole_result": "编辑版内层≤Cmax(σ)+Δ_edit，外层≤min(OPT+Δ_edit(OPT,σ*),2OPT)，时间同阶；最优重投影编辑距≤K给1+ε，复合误差随K单调而单分量未必。",
+  "endpoint_pins": {
+    "M-d32a4146dbbd4c0197c815d139d7c500": "8557bea1c1778eb407d5a557c6b230285c99d153d7a66399d893da20b7582be6",
+    "unrelated-machines/learning-augmented-makespan-prediction-guided-search": "d99f1411d318de1abc2c9714bb5c40797448598ff17af6fa59576c9ed772bfe0"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/学习增强非相关机makespan--文献.md": "248cedcccfa539d19964d3950092d5c01bc9f45d3e38641ea88e8ccb683b422f"
+  },
+  "review_digest": "e0e9506c10d001689b7490483fa1e1fa399705e72b31b1d28f57b35bf135856c"
+}

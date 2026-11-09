@@ -1,0 +1,47 @@
+{
+  "edge_id": "um-280160f5-one-global-slot-matching-for-bounded-config",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-COMMON-SIZE-REOPEN-v1"
+  ],
+  "target_ids": [
+    "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "给定等式覆盖CONFIG(T)显式有理点；先删去整件有零端任务并独立回填。以其原边际x在每行按p非增排序，只以严格正交长建槽；冻结核心取0。",
+  "roles": {
+    "UM-COMMON-SIZE-REOPEN-v1": "提供原任务—有序单位槽的分数匹配、Hall整化和位多项式实际恢复。",
+    "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1": "其严格K余量证明需要同一个覆盖全部任务的匹配来同时兑现所有行包络。"
+  },
+  "explanation": "CONFIG边际满足每列Σ_i x_ij=1，各机配置归一且负载≤T给ℓ_i≤T、全部正支撑p_ij≤T。沿源的区间构造，每任务送槽总质量1，每槽容量≤1；任意任务子集S送出的质量|S|只能进入N(S)，故Hall成立。一次整数匹配覆盖全部原任务。设E_i为该行各槽最大邻接时间之和，则匹上该行每一槽的原任务时间均≤该槽最大值，故同一份分配对所有机器同时有L_i≤E_i。源的前槽收费另给基础L_i≤ℓ_i+M_i≤2T。图规模及有理端点运算按显式证书位长多项式；没有逐行分别挑互不一致的输出。此步骤不使用K，也不推出严格余量。",
+  "scope": "给定CONFIG点的共同实际恢复步骤；仅比较同一标准槽图，T=0在删零预处理后为空。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/共同容量流的有序槽重开证书--定理.md",
+      "sha256": "7637a7510937f3bf722e80b814645c46232180e22fbb6af7554adb477aa7a96a",
+      "section": "给定分数覆盖的支撑头部合同"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有界配置基数的严格槽余量与承诺搜索--定理.md",
+      "sha256": "29740fdc4ca1461600f22b2b517c2f458a1208863626e09d0f29f4399abb4817",
+      "section": "整数行列式余量与同一个实际匹配"
+    }
+  ],
+  "reviewed_by": "Boss3 / um_config_interfaces",
+  "review_note": "已实读当前登记对象及所引自足证明，逐项核对模型、量词、全任务身份、同时全机负载和位复杂度。只登记明确的局部步骤，不把它提升为目标整条结论。",
+  "contribution": {
+    "result": "目标的“同一个全局覆盖匹配同时满足全部机器 L_i≤E_i”由源的Hall槽构造成立，且可按证书总位长多项式恢复。",
+    "remaining": "目标整条还需每个正权配置≤K的整数最早类型、严格前缀H_t>t、紧多面体Abel与Cramer/Hadamard证明 E_i≤(2−K^{−(K−1)})T，以及各小K锐性/反例；基础2T收费不支付这些。"
+  },
+  "endpoint_pins": {
+    "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1": "1446c2007dc779eda52b67f522d737cb36c852c2601220adbca4e3bf3b35d890",
+    "UM-COMMON-SIZE-REOPEN-v1": "13f879efccfd171131274893926621ecc2aa7b5c5128fa8fd238510745e77409"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/共同容量流的有序槽重开证书--定理.md": "7637a7510937f3bf722e80b814645c46232180e22fbb6af7554adb477aa7a96a",
+    "archives/unrelated-machines/state/定理/有界配置基数的严格槽余量与承诺搜索--定理.md": "29740fdc4ca1461600f22b2b517c2f458a1208863626e09d0f29f4399abb4817"
+  },
+  "review_digest": "b1d47347be9a7f4956fde0dc67886150dafaf371e2596dad84f9268529e756b8"
+}

@@ -1,0 +1,37 @@
+{
+  "edge_id": "um-280160f5-dense-backend-yields-uniform-original-scheduler",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1"
+  ],
+  "target_ids": [
+    "UM-TARGET-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "存在先固定整数k≥2和单一确定性位多项式backend B，保证每个全有限m×n正整数条目1,…,n²矩阵的实际峰≤(2−1/k)OPT；该backend仍是本边明确未付的假设。",
+  "roles": {
+    "UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1": "提供保持每次backend输入m,n的稠密小整数编译、每个合格输出的哨兵排除及回译。",
+    "UM-TARGET-v1": "目标是一般非负有理/∞UM上的统一次二实际调度，所得ε=1/(2k)。"
+  },
+  "explanation": "空/零分支直接处理。正OPT取0<L≤OPT≤U0≤nL；n<8k时按固定指数枚举原合法分配。其余g=1+1/(4k)，从L倍增生成T至首个≥U0；每T令保留端q=max(1,ceil(4knp/T))，p>T或∞端取哨兵n²，所有q均在1,…,n²且m,n保持。首个T≥OPT满足T≤gOPT，原最优映到Q给OPT(Q)≤(4kn/T)OPT+n。所有B合格输出峰≤(2−1/k)(4k+1)n=(8k−2−1/k)n<n²，故每个均不含哨兵。按原p回算保留候选，有C_P≤(2−1/k)[OPT+T/(4k)]≤(2−1/(2k)−1/(8k²)−1/(16k³))OPT。其它候选若用了原坏端直接丢弃，不把它当FAIL；最终取最好。g^(4k)≥2给O_k(log n)候选，有理生成、ceil、B调用和原负载求和总位多项式。",
+  "scope": "稠密正规形到一般UM的完整条件方向；反向限制域虽成立，本边不把开放的B存在性当已证，也不写为已实现迁移后端。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/等价/稠密小整数调度的统一改善等价--等价.md",
+      "sha256": "8155d56ba20cac4b7b05e221c17978a6dd1329cd172231d90caca0a3e266ca2b"
+    }
+  ],
+  "reviewed_by": "Boss3 / um_config_interfaces",
+  "review_note": "已实读当前登记对象及所引自足证明，逐项核对模型、量词、全任务身份、同时全机负载和位复杂度。本边只在列明条件内覆盖目标整条陈述；不升级未付的算法前提。",
+  "whole_result": "假定D上固定(2−1/k)backend B存在，则全原模型有同一确定性位多项式实际(2−1/(2k))算法，完整成立UM-TARGET所需统一ε=1/(2k)。",
+  "endpoint_pins": {
+    "UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1": "9ef64dd1417524ea23b7962df6106a0d8d3cbcd089f32fb8fd1cbc27f8ac1b3b",
+    "UM-TARGET-v1": "1d9a8ab835f9a0e4076886ab7ae61928042d9d113480d6eb2f1bf6e34af73f6a"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/等价/稠密小整数调度的统一改善等价--等价.md": "8155d56ba20cac4b7b05e221c17978a6dd1329cd172231d90caca0a3e266ca2b"
+  },
+  "review_digest": "2c483f1586876ad986a635534022a6d7572695d73fce1b4d68b24d34ed6f0f15"
+}
