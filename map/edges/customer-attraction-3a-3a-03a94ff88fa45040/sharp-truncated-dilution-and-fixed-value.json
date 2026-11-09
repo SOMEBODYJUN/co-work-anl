@@ -1,0 +1,55 @@
+{
+  "edge_id": "cag-03a94-sharp-truncated-dilution-and-fixed-value",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "TC-DIL-1",
+    "M-007d5a5ed7834d05ba9c0528a35c9d72"
+  ],
+  "target_ids": [
+    "customer-attraction/common-truncated-submodular-dilution-redundancy"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限共同标签目录；C在|S|≤m内归一、单调、截断次模。两负载含a，均为总人数≤m的整数计数，或实速率的其他标签支持分别≤m−1。数值3/2使用固定三人六标签的同一43节点σ、T={1,2,4}和C({0,3,4})=1。",
+  "roles": {
+    "TC-DIL-1": "提供任意非负递减共同边际的锐比较。",
+    "M-007d5a5ed7834d05ba9c0528a35c9d72": "提供含sharp的固定σ/T系统的有理达到点和匹配对偶值3/2；这里仅调用有sharp系统的数值部分。",
+    "customer-attraction/common-truncated-submodular-dilution-redundancy": "证明截断表示中全部sharp自动成立，故在固定σ/T及任何其他相同约束下删除它们保持可行域，并保所述精确值。"
+  },
+  "explanation": "令g_a(R)=C(R∪{a})−C(R)。单调给g_a≥0，截断次模给已定义R⊆S上的g_a(R)≥g_a(S)；令未定义|R|≥m的边际为零仍保持递减。对整数q，以独立单位速率指数优先级产生均匀玩家次序：被标记a的密度乘其余q_a−1名a未到的概率给e^(−q_a t)，各其他标签b的激活相互独立且概率1−e^(−q_b t)，所以收益正是L_a(q;g_a)。实速率用同一积分定义，双方支持限制保证不访问补零部分。TC-DIL-1给全部同a锐不等式；它们在共同C基础系统上恒成立，删除后可行域逐点相同。固定值由含sharp系统的有理原始与对偶共同认证，因此在删sharp系统仍恰为3/2。",
+  "scope": "补零只扩张边际函数；截断C无需全域次模扩张，且一般截断C无需真实共同非负客户实现。固定3/2不量化其他σ、T或六人half。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/推论/共同截断次模收益中的稀释约束冗余--推论.md",
+      "sha256": "0b7a7f5f2f1e6e93ac80ef6fcec5555d5debb0567ba70ea89e97b6160489335c"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/递减共同边际的锋利同主题稀释--定理.md",
+      "sha256": "66819a598209005d3f73924428bec88eddc16a7e2120c1f09f94408a4fc3323d"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/同支持守恒与局部客户耦合的严格间隔--障碍.md",
+      "sha256": "9824cadf6ec0ec14ab078277b0458d10926c29f9b42a1c4388c4c1d92803de98"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/固定完整策略的七层共同客户证书--计算.md",
+      "sha256": "96cee29c07fb57653276065c73f83783f0713aa384ffd37c7b49e600df9dba36"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "区分全域边际、截断支持和三人固定证书；未将其他矩层或旧15/7层纳入推断。",
+  "whole_result": "同一归一单调截断次模C在所述全部负载对上自动满足锐稀释；删除全部终局sharp保持固定完整策略的整个可行域，特定固定σ/T的最大比较值仍为3/2。",
+  "endpoint_pins": {
+    "M-007d5a5ed7834d05ba9c0528a35c9d72": "2304e79e62f7db3ac2a0970211932ec6d421e7ed0494730e2a0635e747a692e1",
+    "TC-DIL-1": "c689e33e8fae78a234902dfe95ff1679653ab6876d7cb395d4c9787d7f7bfc12",
+    "customer-attraction/common-truncated-submodular-dilution-redundancy": "5ca3a93e0bdef4e3ee3263b373979a8375a572a2aef5d492ca87fcba0f1bea87"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/推论/共同截断次模收益中的稀释约束冗余--推论.md": "0b7a7f5f2f1e6e93ac80ef6fcec5555d5debb0567ba70ea89e97b6160489335c",
+    "archives/customer-attraction/state/定理/递减共同边际的锋利同主题稀释--定理.md": "66819a598209005d3f73924428bec88eddc16a7e2120c1f09f94408a4fc3323d",
+    "archives/customer-attraction/state/障碍/同支持守恒与局部客户耦合的严格间隔--障碍.md": "9824cadf6ec0ec14ab078277b0458d10926c29f9b42a1c4388c4c1d92803de98",
+    "archives/customer-attraction/state/计算/固定完整策略的七层共同客户证书--计算.md": "96cee29c07fb57653276065c73f83783f0713aa384ffd37c7b49e600df9dba36"
+  },
+  "review_digest": "51e5f274e4184020cf0627e09563466fef507c94dc30676a526b3b73402726e2"
+}

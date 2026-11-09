@@ -1,0 +1,45 @@
+{
+  "edge_id": "cag-04606e-incumbent-envelope-pays-actual-prefix-term",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/ordered-prefix-incumbent-two-sided-terminal-payoff-envelope"
+  ],
+  "target_ids": [
+    "CA-FRACTIONAL-COVER-PATH-BUDGET"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一个实际根终局及第i位前的有序前缀h，|h|=i−1，r=m−i+1。C为任意可覆盖客户子集。旧标签S_j真实在h出现，j<i。",
+  "roles": {
+    "customer-attraction/ordered-prefix-incumbent-two-sided-terminal-payoff-envelope": "对每个旧玩家及任意合法完成给逐类型分母上界所对应的收益下界。",
+    "CA-FRACTIONAL-COVER-PATH-BUDGET": "其实际前缀付款项可用该包络的下界逐旧玩家求和。"
+  },
+  "explanation": "保原策略与实际叶，只用C中的客户作为收益加权求和。对兴趣类型B用C中该型人数作非负重数，令b_B等于该型在h中的负载。旧玩家包络取未来k=r，即得g_i(S_j)=Σ_{x∈S_j∩C}1/(b_i(x)+r)≤u_j|_C≤u_j。各j<i相加为Σg_i(S_j)≤P_(i−1)。i=1时为空和，直接取0。无需把截取C后的收益当成另一个游戏的SPE。包络上半边在此付款中没有使用。",
+  "scope": "同一真实叶的实际旧玩家利润，独立于特定分数覆盖或离轨回复。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/有序前缀旧玩家的双边终局收益包络--引理.md",
+      "sha256": "e6691da63272f589f8dfd5f22ad05e4c949d5a967c87044a45a4dc86a58f493a"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/分数覆盖的真实前缀利润预算--引理.md",
+      "sha256": "755cb6963539c054a1314ea514bdffa5a7a49226a03efed2197b1e35facb97e3"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核对两个引理的旧负载、未来人数、C截取、同叶收益和首位空和。",
+  "contribution": {
+    "result": "实际路径预算所需的旧项精确付款Σ_{j<i}g_i(S_j)≤P_(i−1)。",
+    "remaining": "当前玩家的真偏离下界、比较覆盖逐客户加权、非负因子递推与乘积比较由路径预算自身继续完成。"
+  },
+  "endpoint_pins": {
+    "CA-FRACTIONAL-COVER-PATH-BUDGET": "55702a54ae6a8ce7ba1746357a747120bae031b90583ca139c4b962769804592",
+    "customer-attraction/ordered-prefix-incumbent-two-sided-terminal-payoff-envelope": "4ed4202871ea4ccde595e9fc181dd303d848793c55f8a37eb22542066ab0c51f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/有序前缀旧玩家的双边终局收益包络--引理.md": "e6691da63272f589f8dfd5f22ad05e4c949d5a967c87044a45a4dc86a58f493a",
+    "archives/customer-attraction/state/引理/分数覆盖的真实前缀利润预算--引理.md": "755cb6963539c054a1314ea514bdffa5a7a49226a03efed2197b1e35facb97e3"
+  },
+  "review_digest": "8402a1fbfe2ce57330e750233019fa31d9bad23c7f8ef1fb2bd13179ea8cfecd"
+}

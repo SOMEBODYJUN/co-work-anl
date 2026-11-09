@@ -1,0 +1,43 @@
+{
+  "edge_id": "ca-rd9-cap-example-checks-unrestricted-floor",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-36f14d3a58914546b7b36129ad249b45"
+  ],
+  "target_ids": [
+    "ancestor-realized-path-promise-unrestricted-offpath-reset"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "A={a}, B={a,b}, C={b,c}的指定三人完整策略，历史C，Π为祖先根收益≤1。",
+  "roles": {
+    "M-36f14d3a58914546b7b36129ad249b45": "三客户完整SPE对错误全旁枝cap给精确分离。",
+    "ancestor-realized-path-promise-unrestricted-offpath-reset": "准确受限查询递推只给所选实现叶传Π，旁枝使用无约束floor。"
+  },
+  "explanation": "全体可信孩子给无约束floor向量(1/2,5/6,5/6)。有序实际CAC满足Π且当前得1，故正确门槛5/6保留它。若先过滤所有旁枝，B子树的CBB被删除，B最低收益升至4/3，错误门槛排除CAC。这个有理实例检验必须保留的旁枝边界。",
+  "scope": "固定三客户实现对正确递推的定义级回归及错误算法的分离，不作为通用公式的证明。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/祖先路径承诺的无约束旁枝重置--引理.md",
+      "sha256": "709204d09385769a9895d7ef8bc605d16246e951cff67a1f3d462e790f7aef42",
+      "section": "三客户完整SPE：cap把门槛虚升至4/3"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/祖先旁枝重置的单位客户审计与完整原报告--程序.md",
+      "sha256": "237d3437cd33c214bf6aabfd599a733f8e9088005af40e595f1bfeba7cfe0cd3",
+      "section": "字面有序树BI与两套过滤"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读当前绑定正文及证据，按本边的适用域逐式复核。固定三客户实现对正确递推的定义级回归及错误算法的分离，不作为通用公式的证明。",
+  "endpoint_pins": {
+    "M-36f14d3a58914546b7b36129ad249b45": "3fd1dfb88ee3e5defaa7fd74c0212d234cd84e2fda8041d82a475b9c9aff0825",
+    "ancestor-realized-path-promise-unrestricted-offpath-reset": "75d0381a100c8630469b67e8341b7cfad3d8816b6a661fd6e5250308d4edf9fb"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/祖先路径承诺的无约束旁枝重置--引理.md": "709204d09385769a9895d7ef8bc605d16246e951cff67a1f3d462e790f7aef42",
+    "archives/customer-attraction/state/程序/祖先旁枝重置的单位客户审计与完整原报告--程序.md": "237d3437cd33c214bf6aabfd599a733f8e9088005af40e595f1bfeba7cfe0cd3"
+  },
+  "review_digest": "ac968d27f34f809a5486e5a3f0bd48f2ddfada5a084a5471b5112a383879b6d7"
+}

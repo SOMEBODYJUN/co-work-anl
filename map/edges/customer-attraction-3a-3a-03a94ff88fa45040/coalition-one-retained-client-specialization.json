@@ -1,0 +1,45 @@
+{
+  "edge_id": "cag-03a94-coalition-one-retained-client-specialization",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-6c00c3f200054a5199b3a60078211e76"
+  ],
+  "target_ids": [
+    "customer-attraction/same-branch-deletion-refund-and-old-prefix-positive-loss-sharp-common-credit"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "仅限a=1的同枝标量合同，0≤p≤c，p+1≤d0≤d≤m；c为原实际负载，d为强制分支删前负载。",
+  "roles": {
+    "M-6c00c3f200054a5199b3a60078211e76": "给固定负载的删后端点法和a=1的全参数最大值1−1/m。",
+    "customer-attraction/same-branch-deletion-refund-and-old-prefix-positive-loss-sharp-common-credit": "将一名当前者的精确逐枝信用用于旧退款和条件跨枝容量。"
+  },
+  "explanation": "令a=1。若p=0，左端d0=1给精确K=1−1/d。若p≥1且p+1≤c，左端给1/(p+1)−1/d、右端给[p(1/c−1/d)]_+；若p+1>c，则右端不低于左端，且不低于形式候选1/(p+1)−1/d，因为p/c≥p/(p+1)、p≥1、d≥p+1。因此端点公式恰给单人a=1的K。若c≤d，用最大参数m=d得K≤1−1/d；若c>d，则旧损失恒零，同一界直接来自退款。m=d=1时合同迫p=0，B=0。",
+  "scope": "是单人a=1的逐客户端点上界。a=0、旧损失退款抵扣、(N)/(CK)以及是否存在真实遗漏支付保持各自义务。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/同枝共同信用与纯孩子阈值的工作区命题账本--资源.md",
+      "sha256": "401f48e3e88c73a0c026f80482d4df15fc88852c367a3e0f34989971b2a33236"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/同枝删除返还与旧前缀正损失的锐共同信用--引理.md",
+      "sha256": "cb215f17594e876c2c8202875dc82cfe758e95e08974bfe05096dbddf7bdc56d"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "比较分支负载d与实际c允许不同，单列c>d和m=d=1避免参数收缩越界。",
+  "contribution": {
+    "result": "从联盟端点和锐上界推出单人实际覆盖a=1的精确K及逐枝1−1/d界。",
+    "remaining": "单当前者不覆盖客户的a=0分支、先扣退款恒等式及跨枝归一的充分条件由原单人引理另证；联盟结论不承担实际遗漏支付。"
+  },
+  "endpoint_pins": {
+    "M-6c00c3f200054a5199b3a60078211e76": "baf82bdd04e7ce4cc0f8b05990c4d77be5a3721d4930c17957b42f751e2ffd1c",
+    "customer-attraction/same-branch-deletion-refund-and-old-prefix-positive-loss-sharp-common-credit": "1da79bec655169381ba9b73c518c185f59e40fa09bf9903e519c8c74f85a5349"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/同枝共同信用与纯孩子阈值的工作区命题账本--资源.md": "401f48e3e88c73a0c026f80482d4df15fc88852c367a3e0f34989971b2a33236",
+    "archives/customer-attraction/state/引理/同枝删除返还与旧前缀正损失的锐共同信用--引理.md": "cb215f17594e876c2c8202875dc82cfe758e95e08974bfe05096dbddf7bdc56d"
+  },
+  "review_digest": "5c263f06c6384004b7cc3b38949d326cbadcab9998de8e1aaade9bbbaf397ac0"
+}

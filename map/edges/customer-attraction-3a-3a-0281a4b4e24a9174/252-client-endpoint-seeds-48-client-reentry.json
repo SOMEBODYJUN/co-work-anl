@@ -1,0 +1,62 @@
+{
+  "edge_id": "cag-0281-252-client-endpoint-seeds-48-client-reentry",
+  "kind": "sourced_from",
+  "status": "accepted",
+  "source_ids": [
+    "cag-whole-subtree-nine-exact-endpoints-and-reentry"
+  ],
+  "target_ids": [
+    "M-b97a40a962c34f848cc8dcaf8b05a1f1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "仅限带已知可行floor的回流运行记录。原252端点归一后的比较覆盖为252/160=63/40，按初始J=(2,3,4,5,6)作half目标；48端点最终对偶用后扫J=(0,1,2,4,5)。",
+  "roles": {
+    "cag-whole-subtree-nine-exact-endpoints-and-reentry": "明确被引用的252客户完整SPE及额外菜单几何种子，提供初始J下已知可行值63/40。",
+    "M-b97a40a962c34f848cc8dcaf8b05a1f1": "回流产物，使用不同的完整策略和客户表，须重验共同IC，并另取最终J的有理对偶。"
+  },
+  "explanation": "48客户原件的source_result与known_incumbent_source均指向252客户原件，且三份实际选中子树带m5p7_residual:min/max来源标签。程序先重验所给旧完整策略，再以其客户表生成额外子树，记录63/40为可行下界且明确MIP_start_not_available。两端点实际计数同为(3,2,0,0,0,0,0)，完整有序路径和92个历史动作有别。旧residual对偶的c=v_(2,3,4,5,6)−w−5u，不能支付新策略上c=v_(0,1,2,4,5)的约束。独立的普通回流端点虽同样实际01010，只有一个客户并无对偶，也不能代替48客户证书。",
+  "scope": "明确的种子、初始目标可行floor及后扫目标分界。旧策略最优、菜单最优和新策略固定目标的数学证书各自分开。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/完整子树联合菜单的九份精确端点与回流试验--计算.md",
+      "sha256": "32b023f3598ab81bcedac631ae9cf69040164eae6cd0f7e92ccac117dfd88e75",
+      "section": "九份来源的精确内容和独有差别"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/完整子树联合菜单的九份精确端点与回流试验--计算.md",
+      "sha256": "32b023f3598ab81bcedac631ae9cf69040164eae6cd0f7e92ccac117dfd88e75",
+      "section": "回流、时限、支持扫描及认证范围"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/完整子树联合菜单的九份精确端点与回流试验--计算.md",
+      "sha256": "32b023f3598ab81bcedac631ae9cf69040164eae6cd0f7e92ccac117dfd88e75",
+      "section": "本轮完整读取、精确重建及接续"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_residual.json",
+      "sha256": "2a154303b023acfdc7b09c8576f63b3acb50abb02bd8e3cca6a793152ad07233"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_reentry_incumbent_half.json",
+      "sha256": "e6269ea7551820d0d2c6192dd96d60b7bd2ce1f92b6ffd463fd8a13f89da0565"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_reentry_half.json",
+      "sha256": "65bdcc3e8d7bb995d108af444913a8dac487fc508c64d98cdb9fdf51bf110f20"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项对照两份主要原件和退化回流原件，并实读来源再验、重采样、floor与后扫的程序路径。未复现原随机菜单或浮点MILP发现过程。",
+  "endpoint_pins": {
+    "M-b97a40a962c34f848cc8dcaf8b05a1f1": "9b6c5365282d5110872445456b2bf4c996b09ed77c3a7140230866375303f54b",
+    "cag-whole-subtree-nine-exact-endpoints-and-reentry": "b0447cbacf30e53975163239049cdf4d1931665fca00dc7b7f653d46cd306193"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/完整子树联合菜单的九份精确端点与回流试验--计算.md": "32b023f3598ab81bcedac631ae9cf69040164eae6cd0f7e92ccac117dfd88e75",
+    "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_residual.json": "2a154303b023acfdc7b09c8576f63b3acb50abb02bd8e3cca6a793152ad07233",
+    "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_reentry_incumbent_half.json": "e6269ea7551820d0d2c6192dd96d60b7bd2ce1f92b6ffd463fd8a13f89da0565",
+    "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_reentry_half.json": "65bdcc3e8d7bb995d108af444913a8dac487fc508c64d98cdb9fdf51bf110f20"
+  },
+  "review_digest": "2f8b8bd02d0443eaeb95481b6b252d8089ca24dc3352634c895ee42aee96ccad"
+}

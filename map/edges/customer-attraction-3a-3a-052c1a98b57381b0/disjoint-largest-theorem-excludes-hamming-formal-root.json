@@ -1,0 +1,50 @@
+{
+  "edge_id": "cag-052c1a-disjoint-largest-theorem-excludes-hamming-formal-root",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-6c18d29fcbdb49ce999605a42d706789"
+  ],
+  "target_ids": [
+    "customer-attraction/fixed-label-hamming-neighborhood-and-complete-tail-row-truncation"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "用Hamming族全部m,k,r及d=m−k−r；n个A_i和m个B_j两两不交，B均大小L，A_i≤L，允许额外空主题。",
+  "roles": {
+    "M-6c18d29fcbdb49ce999605a42d706789": "≥m个两两不交的最大主题时，任意真实前缀的区间eligible恰为fresh且大小L，真SPE根福利mL。",
+    "customer-attraction/fixed-label-hamming-neighborhood-and-complete-tail-row-truncation": "给定保护带加尾行的形式策略，比较同一目录在全树激励下究竟能否实现其低福利。"
+  },
+  "explanation": "直接代入全效率目录类，根区间下界G_I=mL，所有完整SPE的每步均选此前未用的最大主题。d≥2时指定形式路径第一步A₁大小L/d<L，根已被全树条件排除。d=1时所有主题大小L且早期保护带覆盖整个早期树，配真尾后该指定形式策略自身就是完整SPE，W=mL。大小L的后段A也可被选，合法最大题不只限B。",
+  "scope": "同一客户目录的真SPE与固定形式σ的保留行分开；此全效率结论只用到不交且≥m最大题。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/区间终局剪枝的上界比较与全效率目录类--定理.md",
+      "sha256": "398ae2b6a7151c5f4a182fb7072939792b25e7e84f22f85d91fdf0d1e2501d16"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/标签汉明邻域与完整末尾的删行障碍--障碍.md",
+      "sha256": "41f34008b98b9fda077fe5895707d6f5a15a71db92bc7548550ae0d97c573611"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R51汉明尾部审计器--审查.md",
+      "sha256": "2c3c1cd96860f22630e8868418c5fcfea21b1251243db3399aeb4ce0e3d17e2b"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读全历史区间归纳及固定标签Hamming域；以d≥2的A₁上界与d=1全树边界明确分开。",
+  "contribution": {
+    "result": "同一Hamming构造的所有目录在全有序IC下均全效率，且d≥2的给定低效形式根行动A₁不可能成为SPE根行动。",
+    "remaining": "保留行全部非负、特定被省略行L/d−L及锥分离仍由Hamming策略逐历史证明，不能从全效率结果逆推出。"
+  },
+  "endpoint_pins": {
+    "M-6c18d29fcbdb49ce999605a42d706789": "949e78ffcaee29f446a4e194f8e23e4b6c5b8438484a56eeaf30cfedc514e86e",
+    "customer-attraction/fixed-label-hamming-neighborhood-and-complete-tail-row-truncation": "8f123f80d698f72c3bad6467c5361aca10217997bde2685f91c2ca589837480d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/区间终局剪枝的上界比较与全效率目录类--定理.md": "398ae2b6a7151c5f4a182fb7072939792b25e7e84f22f85d91fdf0d1e2501d16",
+    "archives/customer-attraction/state/障碍/标签汉明邻域与完整末尾的删行障碍--障碍.md": "41f34008b98b9fda077fe5895707d6f5a15a71db92bc7548550ae0d97c573611",
+    "archives/customer-attraction/state/审查/R51汉明尾部审计器--审查.md": "2c3c1cd96860f22630e8868418c5fcfea21b1251243db3399aeb4ce0e3d17e2b"
+  },
+  "review_digest": "945aabbb8d3cdb687c928fa71eff0875cf953b01db9f52559d2f3f4e39706714"
+}

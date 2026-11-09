@@ -1,0 +1,72 @@
+{
+  "edge_id": "wc-stage3b-two-column-finite-and-sharp-source-transfer",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "WC-ENVELOPE-CEILING",
+    "WC-R3-FULL-TOPOLOGY-REDUCTION-v3",
+    "R3-SOURCE-SHARP-ASYMPTOTIC-v1"
+  ],
+  "target_ids": [
+    "weighted-congestion/symmetric-two-column-finite-and-sharp-ceiling"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定整数 d≥1。原游戏一名权 1 玩家选整列 {a_0,…,a_n} 或 {b_0,…,b_n}，n≥1 为整数，第 i 名同轻权 w>0 玩家选 {a_0,b_i} 或 {b_0,a_i}。两主资源共用 F，所有卫星共用 G，均为非负实系数次数≤d 的多项式，允许常数和零。成本直接求和，真实偏离负载包含偏离者。弱 α-PNE 对每次真实单方偏离满足旧成本≤α·新成本。显式有限界取 ln d≥16，锐渐近沿全整数 d→∞。",
+  "roles": {
+    "WC-ENVELOPE-CEILING": "C2 对全部合法源参数给 R≤A(d)，因此有限迁移可以直接覆盖 C1 门槛 R≥e² 之外的参数。",
+    "WC-R3-FULL-TOPOLOGY-REDUCTION-v3": "在 α≥ρ 时把任一原游戏无弱 α-PNE 迁为两个同时严格的合法单项式成本测试，并提供源证书全状态覆盖到类阈值的反向比较。",
+    "R3-SOURCE-SHARP-ASYMPTOTIC-v1": "对同一闭 β 域的 F_d 给全整数锐渐近，其合法整数取整下界和近上确界序列上界共同确定首项常数。",
+    "weighted-congestion/symmetric-two-column-finite-and-sharp-ceiling": "所得完整对称同轻权类的逐实例有限弱均衡保证及类阈值锐渐近。"
+  },
+  "explanation": "归约把原游戏无弱 α-PNE 送到可能改变人数、共同权和费用的源游戏 F(x)=x^k、G(x)=βx^d，参数 (N,k,ω,β) 对应源公式 (n,k,w,β)。严格 S1、S2 的偏离后成本分别为 (1+Nω)^k+Nβ 与 (Nω)^k+β(1+ω)^d，在 N≥1、ω>0、k≥1 时均正，所以两式同时严格通过恰为 R=min(H,L)>α。ρ=(1+√3)/2 的边界来自右支 Nα(α−1)<1，α≥ρ 迫使右支 N=1，可倒权转为左测试再抽取合法源。设 D=ln d≥16、S=e^(D/2)√ln D/D。S 的对数导数为 1/2+1/(2D ln D)−1/D>0，且 S(16)>e²，故 A(d)=√128 S>ρ。若某原游戏在 α=A(d) 无弱 PNE，归约给 R>A(d)，与 C2 矛盾，从而直接包含 α=A(d) 本身。对每个固定 d,N,k,ω，两分母在 β∈[0,1] 仍为正，连续的 R 在开闭 β 区间的上确界相等，再取 N,k,ω 上确界得 T_source(d)=F_d。源游戏中 m=0 由权 1 玩家提供重测试，m≥1 时任一同主轻玩家的旧成本至少为轻测试分子、新成本至多为其分母，交换两列覆盖另一重动作。因此 1≤α<R 时每态有严格偏离，给 F_d≤T_top(d)。重商 H≤(1+ω)^d≤2^d 给 F_d 有限。反方向在 α=max{ρ,F_d} 可直接用严格 R>α 排除无弱均衡，得 T_top(d)≤max{ρ,F_d}。锐源定理给 F_d∼(2/√e)S→∞，所以全部充分大整数 d 都有 T_top(d)=F_d，并迁得同一锐常数。",
+  "scope": "原游戏任意有限 n、任意同轻权 w>0 与同费主/侧多项式。归约中的源权 ω≤1 是输出条件。R 是源元组所给的两指定攻击共同比，固定实例的最优倍率由该实例全部真实偏离及状态决定。T_top 与 F_d 都是类或参数域的上确界，论证无需上确界取到。",
+  "whole_result": "对每个整数 d 满足 ln d≥16，该完整对称同轻权两列类的每个游戏在 A(d)=√128·√(d ln ln d)/ln d 本身有弱 A(d)-PNE。其最佳弱 PNE 倍率的类上确界 T_top(d) 对全部充分大整数 d 恰等于合法源上确界 F_d，故 T_top(d)∼(2/√e)·√(d ln ln d)/ln d。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/两攻击源参数包络的全域对数上限--定理.md",
+      "sha256": "8e80108e590c7d3ded9c78ecff650b388d2e222591156ddf7ff10f2430b23e57",
+      "section": "标量最大化与显式常数"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/对称两列拓扑的单项式两攻击归约--定理.md",
+      "sha256": "6d6ffc835804eec4e380e086b818d8e022dc1c0d70d505d31a09873766b7d6d9",
+      "section": "模型、结论与用途"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/对称两列拓扑的单项式两攻击归约--定理.md",
+      "sha256": "6d6ffc835804eec4e380e086b818d8e022dc1c0d70d505d31a09873766b7d6d9",
+      "section": "源阈值与拓扑阈值"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/两攻击源参数包络的锐渐近--定理.md",
+      "sha256": "dfbc9a01472bc4c9015b0eec4dd2b4fefd2384fae1ad52425c93df8a7b3bedca",
+      "section": "精确定义、结论和模型接口"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/对称同轻权两列拓扑的有限次数上界与锐渐近--定理.md",
+      "sha256": "6a966cf2f895083e3cc0f4295255c56fecda241a534cf82d9e38a3051d05320c",
+      "section": "两种源域的对应"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/对称同轻权两列拓扑的有限次数上界与锐渐近--定理.md",
+      "sha256": "6a966cf2f895083e3cc0f4295255c56fecda241a534cf82d9e38a3051d05320c",
+      "section": "有限次数端点及锐常数"
+    }
+  ],
+  "reviewed_by": "Boss1-weighted-topology-round9",
+  "review_note": "独立核对 C1/C2、归约稳定整数区间、ρ 等号处右支、单项式抽取与开 β 上端、合法锐下界取整和任意近上确界序列。逐一核过严格源成本与弱目标端点、两分母的正性、开闭域上确界以及类与实例的量词。",
+  "endpoint_pins": {
+    "R3-SOURCE-SHARP-ASYMPTOTIC-v1": "39e7566e36d24e8b8de2aa7c18dd24decec8254a888a11668003b98f0a8e2a3c",
+    "WC-ENVELOPE-CEILING": "c8a063ed62861ac99787fb4a069adb3c773c6a8a6089dbcb61b7ba020381fe9c",
+    "WC-R3-FULL-TOPOLOGY-REDUCTION-v3": "cd9c56dbad4a1760d545b3dce0028cb43947151508b9821d251f5b37df350e0a",
+    "weighted-congestion/symmetric-two-column-finite-and-sharp-ceiling": "bfc22f4726366889680c43be3c28bf6d5bc3e40614ab327a59b2d4e27e981bdc"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/两攻击源参数包络的全域对数上限--定理.md": "8e80108e590c7d3ded9c78ecff650b388d2e222591156ddf7ff10f2430b23e57",
+    "archives/weighted-congestion/state/定理/对称两列拓扑的单项式两攻击归约--定理.md": "6d6ffc835804eec4e380e086b818d8e022dc1c0d70d505d31a09873766b7d6d9",
+    "archives/weighted-congestion/state/定理/两攻击源参数包络的锐渐近--定理.md": "dfbc9a01472bc4c9015b0eec4dd2b4fefd2384fae1ad52425c93df8a7b3bedca",
+    "archives/weighted-congestion/state/定理/对称同轻权两列拓扑的有限次数上界与锐渐近--定理.md": "6a966cf2f895083e3cc0f4295255c56fecda241a534cf82d9e38a3051d05320c"
+  },
+  "review_digest": "a890e648c51eadc9a962d01dd2d296a37d715532268a79e100545829136197ff"
+}

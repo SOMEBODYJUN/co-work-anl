@@ -1,0 +1,56 @@
+{
+  "edge_id": "cag-052c1a-last-reply-tax-slack-accounts-for-real-root-failure",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/last-player-tax-diagnostic"
+  ],
+  "target_ids": [
+    "CA-ROOT-TAX-NO"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "τ只计前m−1个实际槽；T_j为同一最优m槽组，f_b为真实实际末位前缀的查询；各d_x计最优组覆盖重数。",
+  "roles": {
+    "customer-attraction/last-player-tax-diagnostic": "给实际末位BR足以证明的OPT≤m u_m+τ及逐客户放松。",
+    "CA-ROOT-TAX-NO": "提供61客户完整四人SPE、实际前3步税及唯一最优支持ABCD。"
+  },
+  "explanation": "由末位BR及逐客户式令S=Σ_j(u_m−f_b(T_j))≥0，R=τ+Σ_j f_b(T_j)−OPT≥0，则OPT−W−τ=(m u_m−W)−S−R。61客户例ABCD分割全体，故d_x=1且R=0。查询(15/2,10,11,10)给S=11/2，小于末位过均值金额4·11−38=6，准确留1/2；OPT≤4u₄+τ仍成立。",
+  "scope": "严格缺口发生在以实际总收益代m倍末位收益的加强；末位高于平均是必要条件，但不能单独充分推出根税失败。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/末位收益税诊断--引理.md",
+      "sha256": "3e796de1ed6f116a14f2f4f95eaa5feb933ccf393d036ea476a4f8fd03227ac8"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/四人实际根总税--反例.md",
+      "sha256": "2efa02ba1a7186cf23fcc29e0f70f6cbeb36ce5db6614960091b3233e5b5aab4"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/重复奖励尾目录扩展与前缀收费的原始合同--资源.md",
+      "sha256": "1647d9285cd6fdc9d1dab6e12b318b38d2318e406b284d9b48be68e2d9153ca2",
+      "section": "61客户原路径的收费可逐式核对"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/root-tax-upload-20261030/RootTax-summary.raw",
+      "sha256": "c4e005ef63dbfaad8395ff39ae782217aae02800355c113d0b3dd5a1665e9de0"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "从单位客户输入复核全部259节点、1295非自身偏离及56静态背景的冻结数值；公式只计前三步。",
+  "contribution": {
+    "result": "对固定四人完整SPE，先用实际末位BR拆松弛，再核过平均量6只被最优主题BR松弛11/2支付，客户比较余项为0，精确失败1/2。",
+    "remaining": "客户表、完整SPE真实性和OPT=61仍由实例证书承担；该诊断并不替代实例或推广到全部终局税。"
+  },
+  "endpoint_pins": {
+    "CA-ROOT-TAX-NO": "9ccf2e6812603affa30850cacbcb50b716f4ddfbebd1f38ab7243559c859c29a",
+    "customer-attraction/last-player-tax-diagnostic": "5dc7e7bb00dfd3c9eaf66688c7c9faaaa0191be40e6edda7ee3d6d7b2a3dbd9d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/末位收益税诊断--引理.md": "3e796de1ed6f116a14f2f4f95eaa5feb933ccf393d036ea476a4f8fd03227ac8",
+    "archives/customer-attraction/state/反例/四人实际根总税--反例.md": "2efa02ba1a7186cf23fcc29e0f70f6cbeb36ce5db6614960091b3233e5b5aab4",
+    "archives/customer-attraction/state/资源/重复奖励尾目录扩展与前缀收费的原始合同--资源.md": "1647d9285cd6fdc9d1dab6e12b318b38d2318e406b284d9b48be68e2d9153ca2",
+    "archives/customer-attraction/tools/evidence/root-tax-upload-20261030/RootTax-summary.raw": "c4e005ef63dbfaad8395ff39ae782217aae02800355c113d0b3dd5a1665e9de0"
+  },
+  "review_digest": "b601f14c10b98f7c45430e3ecbd5214f71b0df704fcd8e27d3facc19a942ab26"
+}

@@ -1,0 +1,50 @@
+{
+  "edge_id": "cag-052c1a-root-tax-witness-satisfies-free-column-budget-at-equality",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-ROOT-TAX-NO"
+  ],
+  "target_ids": [
+    "customer-attraction/actual-position-aggregate-free-column-budget"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定61单位客户、目录A…F与该完整有序策略。前3位恒选A，末位在全部3步历史按F,E,D,C,B,A打破最优平局。",
+  "roles": {
+    "CA-ROOT-TAX-NO": "给61客户、四人完整SPE、AAAF真实叶与所有首三位强制偏离的真实末位选法。",
+    "customer-attraction/actual-position-aggregate-free-column-budget": "比较一般CAG自由删槽的最小列和及不观察查询的共同列证书。"
+  },
+  "explanation": "在实际位置i≤3强制标签T后，其余前3位两槽都是A；末位当且仅当T=F时取E，其余取F。删当前槽故三菜单均{AAE,AAF}；末位菜单仅AAA。前三位固定取AAF，末位取AAA，则A至F六纯查询的和依次为(69/2,37,38,37,38,32)，给同一组列的上界38。查询p=δ_C时AAE、AAF均给9，AAA给11，故任意逐位置自由列都至少给和38。",
+  "scope": "精确实例minimax值为38=W，真实静态安全v₄=9另有独立证书。该实例虽违反实际根总税1/2，AFC对所有查询均成立。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/四人实际根总税--反例.md",
+      "sha256": "2efa02ba1a7186cf23fcc29e0f70f6cbeb36ce5db6614960091b3233e5b5aab4"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/实际位置自由删槽列的聚合查询预算--候选.md",
+      "sha256": "e71619fb84fadc640e8cc0de46c7c1081233f876d010353acaa22b624bb7d522"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/root-tax-upload-20261030/RootTax-static_safety_56_multisets.raw",
+      "sha256": "9c1f49dcbf4857d01ae7fa9146e734002cc4376e69514e3bb3533b77c3f81b59"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "从单位客户输入、实际末位规则独立复算四菜单、六纯查询上界及δ_C匹配下界。",
+  "contribution": {
+    "result": "在CA-ROOT-TAX-NO的固定61客户完整策略上，max_pΣ_iH_i(p)=W=38，且纯列选择和纯查询已构成匹配证书。",
+    "remaining": "目标要求每个目录及每份完整SPE的统一自由列预算；本例的相同首三菜单来自特定策略，不能推广。"
+  },
+  "endpoint_pins": {
+    "CA-ROOT-TAX-NO": "9ccf2e6812603affa30850cacbcb50b716f4ddfbebd1f38ab7243559c859c29a",
+    "customer-attraction/actual-position-aggregate-free-column-budget": "20553bc0513e372a911d962e6bc7450a0502d05c4dc53f6fc6cb0ab5d9aace2a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/四人实际根总税--反例.md": "2efa02ba1a7186cf23fcc29e0f70f6cbeb36ce5db6614960091b3233e5b5aab4",
+    "archives/customer-attraction/state/候选/实际位置自由删槽列的聚合查询预算--候选.md": "e71619fb84fadc640e8cc0de46c7c1081233f876d010353acaa22b624bb7d522",
+    "archives/customer-attraction/tools/evidence/root-tax-upload-20261030/RootTax-static_safety_56_multisets.raw": "9c1f49dcbf4857d01ae7fa9146e734002cc4376e69514e3bb3533b77c3f81b59"
+  },
+  "review_digest": "c4e72651e93e65fdd001c877131a44128b515f7994120774caaa14d608145219"
+}

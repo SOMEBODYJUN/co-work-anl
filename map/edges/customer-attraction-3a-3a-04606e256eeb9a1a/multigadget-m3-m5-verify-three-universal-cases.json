@@ -1,0 +1,97 @@
+{
+  "edge_id": "cag-04606e-multigadget-m3-m5-verify-three-universal-cases",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/multigadget-spe-certificates",
+    "M-16b390c1707a48e2b2de67e945ed9c01",
+    "customer-attraction/R275-direct-global-multigadget-m5"
+  ],
+  "target_ids": [
+    "M-cc7c84bc2a6741f0ae9a164cc9e1e456"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定登记家族。k=m−1，目录为0,…,3k+1，B=3k，全部客户重数均代表不同单位客户。证书的纯策略量化全部有序历史。",
+  "roles": {
+    "customer-attraction/multigadget-spe-certificates": "给m=3这一精确路径谓词的完整有序见证。",
+    "M-16b390c1707a48e2b2de67e945ed9c01": "给m=4这一精确路径谓词的完整有序见证。",
+    "M-cc7c84bc2a6741f0ae9a164cc9e1e456": "目标量化所有整数m≥3；本边支付三个有限取值。",
+    "customer-attraction/R275-direct-global-multigadget-m5": "给m=5这一精确路径谓词的独立冻结完整有序见证。"
+  },
+  "explanation": "三文件客户表逐类型吻合：每个i的两片私有块各2，B/T单题各3，B/T各与所有叶共享2，目录分别有8、11、14个标签。定义级验证器在每个合法有序历史，逐合法替代沿该历史下的完整策略走到终局比较。m=3实际路径(0,1,6)，收益(4,4,5)，W=13、OPT=14，核73个节点/511项替代。m=4实际路径(0,1,2,9)，收益(4,4,4,5)，W=17、OPT=18，核1464节点/14640项替代。m=5实际路径(0,1,2,3,12)，收益(4,4,4,4,5)，W=21、OPT=22，核41371个节点/537823项替代。前缀计数只缓存终局收益，动作表的键是有序历史。三例满足同一个参数族的指定有序路径谓词。",
+  "scope": "三个已认证的有限取值。证书支持实际指定路径；各固定目录上的最小SPE福利是不同问题。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/多装置锥候选的三四人完整SPE证书--计算.md",
+      "sha256": "8c48a86f0bc6f7bfadbfb945600df3f15f59c0b67e7df5e8b5d8bf8f91965962",
+      "section": "4. 与已有对象的衔接"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/多装置锥候选的三四人完整SPE证书--计算.md",
+      "sha256": "8c48a86f0bc6f7bfadbfb945600df3f15f59c0b67e7df5e8b5d8bf8f91965962",
+      "section": "2. 完整证书和独立核验"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/多装置锥候选的三四人完整SPE证书--计算.md",
+      "sha256": "8c48a86f0bc6f7bfadbfb945600df3f15f59c0b67e7df5e8b5d8bf8f91965962",
+      "section": "2. 完整证书和独立核验"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R275-multigadget-spe-certificates-20261031/source/multigadget.py",
+      "sha256": "436d0c66f47c3299e7a8b9a91b51f2a526566c3d016b3cbfc6d98ff704fabd9e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R275-multigadget-spe-certificates-20261031/source/multigadget_m3.json",
+      "sha256": "d2dc89325a20910d7c160d320d4aa7f73e8a76a5e22710ba1a69892e5f2f810d"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R275-multigadget-spe-certificates-20261031/replay/verification.json",
+      "sha256": "e718acdb1ddfc6f71a334126d26276fe86d8683b188a40fa2d08e79038f3be27"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/exact-spe/customer_attraction/certificate.py",
+      "sha256": "a269b532260b537e67879eba609ef23e046e8f7303458ecf11271c4673aecc45"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R275-multigadget-spe-certificates-20261031/source/multigadget_m4.json",
+      "sha256": "91030115baa9db8a04cf5385b3396be14340e59caed6e4213945b837213b0b6f"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R275直接全局multigadget-m5--审查.md",
+      "sha256": "393776b22f807c30bf3ba9acc202e214b33d5dcbceece781ce913dcd4f491b2f"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R275-direct-m5-agent/multigadget_m5.json",
+      "sha256": "82a019ae9164dd2c24416d35408341f1bcad6cd41e93e4c3157f77091de331d6"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R275-direct-m5-agent/verification.json",
+      "sha256": "beece7c2cda01e8bb679a886fbf3375ab14de525fc89ad35685d9b4aaaa5b15a"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "独立读取冻结实例与策略，通过已有定义级核验器重新检查全部有序决策及非自身替代，另按覆盖支持精确枚举OPT。",
+  "contribution": {
+    "result": "在同一登记家族下，指定路径π_m确有完整纯SPE见证对m∈{3,4,5}成立。",
+    "remaining": "本边的冻结证书只付m=3,4,5。其他人数由独立正文构造处理；最小SPE福利需另证。"
+  },
+  "endpoint_pins": {
+    "M-16b390c1707a48e2b2de67e945ed9c01": "aee339f7246eb0abec38ca29caf13a4dc3f2d66da92aeb6b6b8723c96401954f",
+    "M-cc7c84bc2a6741f0ae9a164cc9e1e456": "d451041f131296f8c47c384075986c40a78b389e1ac1ae06e46a4d69a174d563",
+    "customer-attraction/R275-direct-global-multigadget-m5": "4d681b7a991d60774a0eb517991933d09b7b094a9f8cf2d80096da9a94533f6f",
+    "customer-attraction/multigadget-spe-certificates": "6cc50a7b0d9fb380b18fac75c8d5d7d79804d25bbbe926a8f1c7c87cbb026a5c"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/多装置锥候选的三四人完整SPE证书--计算.md": "8c48a86f0bc6f7bfadbfb945600df3f15f59c0b67e7df5e8b5d8bf8f91965962",
+    "archives/customer-attraction/tools/evidence/R275-multigadget-spe-certificates-20261031/source/multigadget.py": "436d0c66f47c3299e7a8b9a91b51f2a526566c3d016b3cbfc6d98ff704fabd9e",
+    "archives/customer-attraction/tools/evidence/R275-multigadget-spe-certificates-20261031/source/multigadget_m3.json": "d2dc89325a20910d7c160d320d4aa7f73e8a76a5e22710ba1a69892e5f2f810d",
+    "archives/customer-attraction/tools/evidence/R275-multigadget-spe-certificates-20261031/replay/verification.json": "e718acdb1ddfc6f71a334126d26276fe86d8683b188a40fa2d08e79038f3be27",
+    "archives/customer-attraction/tools/evidence/exact-spe/customer_attraction/certificate.py": "a269b532260b537e67879eba609ef23e046e8f7303458ecf11271c4673aecc45",
+    "archives/customer-attraction/tools/evidence/R275-multigadget-spe-certificates-20261031/source/multigadget_m4.json": "91030115baa9db8a04cf5385b3396be14340e59caed6e4213945b837213b0b6f",
+    "archives/customer-attraction/state/审查/R275直接全局multigadget-m5--审查.md": "393776b22f807c30bf3ba9acc202e214b33d5dcbceece781ce913dcd4f491b2f",
+    "archives/customer-attraction/tools/evidence/R275-direct-m5-agent/multigadget_m5.json": "82a019ae9164dd2c24416d35408341f1bcad6cd41e93e4c3157f77091de331d6",
+    "archives/customer-attraction/tools/evidence/R275-direct-m5-agent/verification.json": "beece7c2cda01e8bb679a886fbf3375ab14de525fc89ad35685d9b4aaaa5b15a"
+  },
+  "review_digest": "e9fdb05d34933e75c2987f2c646faa52eba828d7f647a645733ebc212833006b"
+}

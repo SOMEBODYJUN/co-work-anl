@@ -1,0 +1,41 @@
+{
+  "edge_id": "cag-052c1a-all-outcome-bi-audits-quadratic-floor-contract",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/symmetric-quadratic-fresh-all-outcome-BI-fixed-policy-floor-probe"
+  ],
+  "target_ids": [
+    "customer-attraction/auxiliary-symmetric-quadratic-fresh-individual-static-floor-candidate"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "两边用相同的有理对称二次fresh模型及全有序历史。只通过允许不同有序孩子独立选可信终局而复用占用集合缓存。",
+  "roles": {
+    "customer-attraction/symmetric-quadratic-fresh-all-outcome-BI-fixed-policy-floor-probe": "给出fresh子博弈的集合值BI与固定完整策略/静态见证的有界LP，区分浮点与有理证明。",
+    "customer-attraction/auxiliary-symmetric-quadratic-fresh-individual-static-floor-candidate": "比较候选所需每个完整SPE和每个实际位置的真实逐人θ_m合同。"
+  },
+  "explanation": "R(H)=⋃_a{S∈R(H+a):v_a(S)≥max_b min_{T∈R(H+b)}v_b(T)}由真实孩子拼接精确。固定σ与每背景报价只给单个方向的可验反例搜索；浮点成功须精确核，有限报告不支撑全称。另在m=2可直接付解析基例：首位试α最大标签a；其真实末位最佳b有v_b≥θ₂，而β_ab=β_ba给v_a−v_b=α_a−α_b≥0；首位真实IC得u₁≥θ₂，末位按定义满足。",
+  "scope": "有限探针覆盖每个被抽样实例的全部可实现根终局和实际角色。解析m=2不依有限阴性，仍未涉及m≥3的所有早期角色。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/对称二次无重复辅助博弈的集合值逆推与固定策略保底探针--程序.md",
+      "sha256": "e3006efd7ba6cc7a797c88dd593a18cd2ed1fb4b9d8f1173e199b876824f63da"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/对称二次无重复辅助博弈的逐人静态保底--候选.md",
+      "sha256": "b60bddb0cc951df86d7cce0054f21106e51781befb8fc249faff38814d831b6f"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对探针正确性及近零浮点输出，独立证明m=2时的两角色保底。",
+  "endpoint_pins": {
+    "customer-attraction/auxiliary-symmetric-quadratic-fresh-individual-static-floor-candidate": "a45164a06c227c8b03de28c7f8ab6f1f25ca7f4c33feb7b26f43537a625afbfe",
+    "customer-attraction/symmetric-quadratic-fresh-all-outcome-BI-fixed-policy-floor-probe": "a3bee2865aa14c6d31b06c6bb70a6d41ef05e2ccb18a2f0b64b57b99b8f37699"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/对称二次无重复辅助博弈的集合值逆推与固定策略保底探针--程序.md": "e3006efd7ba6cc7a797c88dd593a18cd2ed1fb4b9d8f1173e199b876824f63da",
+    "archives/customer-attraction/state/候选/对称二次无重复辅助博弈的逐人静态保底--候选.md": "b60bddb0cc951df86d7cce0054f21106e51781befb8fc249faff38814d831b6f"
+  },
+  "review_digest": "30c6f240979163fb7dbe446932396a8f6c19b5b77af5ff002caa2617d64d7c62"
+}

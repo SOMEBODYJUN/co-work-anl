@@ -1,0 +1,61 @@
+{
+  "edge_id": "cag-04606e-finite-extreme-replay-checks-relay-floors",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/closeout-808d2c78b00fba7f6d359019"
+  ],
+  "target_ids": [
+    "CA-EXTREME-MAXIMAL-THETA-v1",
+    "CA-EXTREME-MAXIMAL-WELFARE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "合法前缀、客户极大归属大小仅1、k−1或k。审计为13个有限输入及指定标量边界。",
+  "roles": {
+    "customer-attraction/closeout-808d2c78b00fba7f6d359019": "记录13项有限复现、标量和利润恒等式，以及非SPE中间归属菜单的准确资格。",
+    "CA-EXTREME-MAXIMAL-THETA-v1": "提供真实中继与逐人θ阈值，对应各有限背景的首位最低可实现收益。",
+    "CA-EXTREME-MAXIMAL-WELFARE-v1": "提供同背景剩余利润比较，对应P_r≥rθ和F_r≤(2r−1)θ的有限回归。"
+  },
+  "explanation": "脚本记录6,895个标量支付边界、770个同背景利润恒等式、10个种子加3个边界实例。逐例保单位客户类型、前缀、人数、θ、终局数和最小/最优剩余利润。冻结报告与重放逐字段相同。中间归属−1/8菜单明确未认证为SPE。两个结构审计共用规范求解器；平稳矩阵支付的全称证明由定理正文承担。",
+  "scope": "极端归属定理的有限实现核验，非零背景比较的是剩余者利润；仅零背景才对比全部覆盖。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/极大关联结构保底的精确复现--计算.md",
+      "sha256": "d90ea4d56f93a832bc641c54f4617edf252102c99cc6897c5cf5d397f52314ee",
+      "section": "极大关联结构保底的精确复现与正文指纹差异"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/单例缺一极大归属的真实中继保底--定理.md",
+      "sha256": "9761b9a067662b66569868efaf185eb76ecd0021f69e3cddc8f247a02dce0387",
+      "section": "1. 输入类及结论"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/单例缺一极大归属的真实中继保底--定理.md",
+      "sha256": "9761b9a067662b66569868efaf185eb76ecd0021f69e3cddc8f247a02dce0387",
+      "section": "5. 共同核心改进与逐人数锐性"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/maximal-incidence/replay/comparison.json",
+      "sha256": "516ca5902669e86deff2bf9530dafc5e329242eba6c8e955f68aed009999b948"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/maximal-incidence/replay/extreme.json",
+      "sha256": "7c52f31bbee5c053aaeb8385d3a6ae41a640694e0b3a08362bcd56724b1900fd"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "对读有限输入与合法背景、最小坏剩余人数、无自路由平稳支付和根核心范围，核对回放字段。",
+  "endpoint_pins": {
+    "CA-EXTREME-MAXIMAL-THETA-v1": "7d388e494493eb414870103a536a57af477d25d53a464be2f6fd24506d3c9a9e",
+    "CA-EXTREME-MAXIMAL-WELFARE-v1": "fa5f20092e5fe4dbe99563bf0fa5b28a8c4385cfaa7a7e23977cd72ebc3357ee",
+    "customer-attraction/closeout-808d2c78b00fba7f6d359019": "683dd83b3f4687cfaf844b731b6374fedce455e6844974bdbd1cbffbb662b566"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/极大关联结构保底的精确复现--计算.md": "d90ea4d56f93a832bc641c54f4617edf252102c99cc6897c5cf5d397f52314ee",
+    "archives/customer-attraction/state/定理/单例缺一极大归属的真实中继保底--定理.md": "9761b9a067662b66569868efaf185eb76ecd0021f69e3cddc8f247a02dce0387",
+    "archives/customer-attraction/tools/evidence/maximal-incidence/replay/comparison.json": "516ca5902669e86deff2bf9530dafc5e329242eba6c8e955f68aed009999b948",
+    "archives/customer-attraction/tools/evidence/maximal-incidence/replay/extreme.json": "7c52f31bbee5c053aaeb8385d3a6ae41a640694e0b3a08362bcd56724b1900fd"
+  },
+  "review_digest": "807718baa426e5a614fa8f0ad7694fb6ac01d81251f6509db97548525c15ae66"
+}

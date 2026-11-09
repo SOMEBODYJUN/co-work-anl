@@ -1,0 +1,55 @@
+{
+  "edge_id": "cag-04606e-path-product-and-four-root-pay-all-horizons",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-FRACTIONAL-COVER-PATH-BUDGET",
+    "CA-FOUR-UPPER-1499-750"
+  ],
+  "target_ids": [
+    "CA-FRACTIONAL-COVER-7-2-HALF"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、非空共同标签目录、完整有序历史纯SPE、零根背景。某一个最优m槽并集C有τ_C≤7/2。四人源定理只用于单射覆盖的集合目录，其与原带标签策略的对应在下文构造。",
+  "roles": {
+    "CA-FRACTIONAL-COVER-PATH-BUDGET": "给任意人数F_m(τ_C)产品。用最优元组自身可行的τ_C≤m支付m≤3，用τ_C≤7/2支付m≥5。",
+    "CA-FOUR-UPPER-1499-750": "支付产品在τ=7/2处尚未跨半的m=4分支，保同一实际福利。",
+    "CA-FRACTIONAL-COVER-7-2-HALF": "对每个正整数m及每份策略的条件half。"
+  },
+  "explanation": "若C空，OPT_m=0。否则τ_C≥1，且最优元组本身给τ_C≤m；m=1,2,3分别有F_1(1)=1、F_2(2)=5/8、F_3(3)=41/81，均≥1/2。m≥5由F_m随m不减、随τ不增以及F_5(7/2)=8656/16807>1/2得结论。m=4时F_4(7/2)=1166/2401<1/2。给任意带标签完整纯SPE σ，把集合目录定义为全部不同覆盖。递归嵌入集合历史，根映射空历史；在已嵌入历史h上，对σ在h所选动作的覆盖，选其实际标签为代表，其他覆盖任选一个原标签为代表。每个集合动作子历史映到h连接该代表，并在集合树选择σ在h的覆盖。于是从每个集合节点的规定完成、及每个集合替代后的规定完成，都逐层映为σ的真实叶；原标签覆盖相同使所有分母和对应收益完全相同。全部集合节点IC由σ的对应比较成立。重复覆盖、空覆盖和不同节点平局均保留，集合化不要求原σ在同覆盖标签的兄弟节点作同样回复。实际W和比较OPT_4保持，因此四人源给W≥(750/1499)OPT_4≥OPT_4/2。",
+  "scope": "完整条件half。四人零背景源精确使用；任意非零背景利润、所有目录的一般half及六人9/2条件均未由此得到。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/分数覆盖的真实前缀利润预算--引理.md",
+      "sha256": "755cb6963539c054a1314ea514bdffa5a7a49226a03efed2197b1e35facb97e3"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/四人真实根偏离福利界--定理.md",
+      "sha256": "ef0479f6a155fd078fdb7b99cf65666a7f98b7b98380330041ecc4f1bef2e802"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/分数覆盖的真实前缀利润预算--引理.md",
+      "sha256": "755cb6963539c054a1314ea514bdffa5a7a49226a03efed2197b1e35facb97e3",
+      "section": "结构条件、全人数推论与一般弱界"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "对读分数产品、四人完整12条真实slack和128项余项、共同带标签模型。逐层核对历史代表、实际路径与每个对应偏离，精确复算各人数端点。",
+  "whole_result": "对每个m≥1和每份完整带标签根纯SPE，若存在一个最优m槽并集C使τ_C≤7/2，则W≥OPT_m/2。m≤3、m=4和m≥5分别由上述三段支付。",
+  "endpoint_pins": {
+    "CA-FOUR-UPPER-1499-750": "d761ca025c265c7123a76fd74102c59d66b62c220bb22362edac275f0249d507",
+    "CA-FRACTIONAL-COVER-7-2-HALF": "787bc6dcdb0631f5b46a1a9a39c4618c14e11841ebe13074fdfe9ac0e67e63d3",
+    "CA-FRACTIONAL-COVER-PATH-BUDGET": "55702a54ae6a8ce7ba1746357a747120bae031b90583ca139c4b962769804592"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/分数覆盖的真实前缀利润预算--引理.md": "755cb6963539c054a1314ea514bdffa5a7a49226a03efed2197b1e35facb97e3",
+    "archives/customer-attraction/state/定理/四人真实根偏离福利界--定理.md": "ef0479f6a155fd078fdb7b99cf65666a7f98b7b98380330041ecc4f1bef2e802",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "c6d16c872a16694819826d3966b2a1772abaacb6bcc6a5f07876a77a01d82e69"
+}

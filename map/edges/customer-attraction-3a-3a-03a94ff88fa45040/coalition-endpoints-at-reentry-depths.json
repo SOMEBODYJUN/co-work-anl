@@ -1,0 +1,50 @@
+{
+  "edge_id": "cag-03a94-coalition-endpoints-at-reentry-depths",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-6c00c3f200054a5199b3a60078211e76"
+  ],
+  "target_ids": [
+    "M-b349be0d16a24aeeb74f3d6be397397a"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "使用一个客户、唯一覆盖标签的m人完整策略；在实际第i深度强制自身动作，删除全部未来者。m≥2时固定a=1，其余参数取p=i−1、c=d=m；m=1直接为零。",
+  "roles": {
+    "M-6c00c3f200054a5199b3a60078211e76": "提供固定(p,c,a,d)时B最大值的两个删后端点和a=1的全参数上限。",
+    "M-b349be0d16a24aeeb74f3d6be397397a": "提供同一完整策略中的指定访问序列及其累计支出。"
+  },
+  "explanation": "在指定参数下p+a=i。左端d0=i时旧前缀正损失为零，当前退款为1/i−1/m；右端d0=m时两项都为零。因此精确固定参数包络K_i=1/i−1/m且每次所取删除都达到它。i=1达到a=1的全参数上限1−1/m，其后仍逐项达到各自的精确包络。这里最大化的是每一深度的d0，不提供客户在不同深度间的访问归一。",
+  "scope": "逐深度局部等号，保留无归一重复计价与合法全局支付的差别。联盟a≥2的代数取等与此真实单人族是不同结论。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/同枝共同信用与纯孩子阈值的工作区命题账本--资源.md",
+      "sha256": "401f48e3e88c73a0c026f80482d4df15fc88852c367a3e0f34989971b2a33236"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r8fc5-root-and-r868-binding-primary/related-original/590efd6d8305d6308d74/same_branch_common_credit.md",
+      "sha256": "c3a14940de11c135b7409fcee156e9651d34eba4b37ecb83944908d6a8b8fc80"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/单主题真实均衡逐深度删除信用的调和重入--障碍.md",
+      "sha256": "2176bf1e361ce6ad1612304f4630566700cdeb29c4dc8273e319f57b56dbf5d4"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "比较固定参数端点与全参数最大，核实在同一客户上逐层取等。",
+  "contribution": {
+    "result": "从联盟端点公式在a=1的特化得到重入实例中每一深度的精确K_i，并验证该深度实取的B_i=K_i。",
+    "remaining": "同一完整SPE的合法性、单位访问的跨深度求和H_m−1、严格阈值不触发与无遗漏边界由重入构造的独立论证承担。"
+  },
+  "endpoint_pins": {
+    "M-6c00c3f200054a5199b3a60078211e76": "baf82bdd04e7ce4cc0f8b05990c4d77be5a3721d4930c17957b42f751e2ffd1c",
+    "M-b349be0d16a24aeeb74f3d6be397397a": "8e22bf7a7e896d2c7c641376b271d339902ba7945c2ed17e671cef31015286ff"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/同枝共同信用与纯孩子阈值的工作区命题账本--资源.md": "401f48e3e88c73a0c026f80482d4df15fc88852c367a3e0f34989971b2a33236",
+    "archives/customer-attraction/tools/evidence/r8fc5-root-and-r868-binding-primary/related-original/590efd6d8305d6308d74/same_branch_common_credit.md": "c3a14940de11c135b7409fcee156e9651d34eba4b37ecb83944908d6a8b8fc80",
+    "archives/customer-attraction/state/障碍/单主题真实均衡逐深度删除信用的调和重入--障碍.md": "2176bf1e361ce6ad1612304f4630566700cdeb29c4dc8273e319f57b56dbf5d4"
+  },
+  "review_digest": "c999088eff47595158ef889895dbc698fc84e1a59fbf2dedb8fa4931dbf25aec"
+}

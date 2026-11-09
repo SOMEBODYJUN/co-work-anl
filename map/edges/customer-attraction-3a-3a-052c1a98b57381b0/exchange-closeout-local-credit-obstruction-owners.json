@@ -1,0 +1,50 @@
+{
+  "edge_id": "cag-052c1a-exchange-closeout-local-credit-obstruction-owners",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/normalized-load-additive-credit-with-uncovered-old-customers-obstruction",
+    "customer-attraction/old-customer-full-histogram-universal-credit-obstruction"
+  ],
+  "target_ids": [
+    "customer-attraction/closeout-c6ea13547dc53c82cb81ae04"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "两对象共享T与L尾/首步合同和空根归零。H包含b≥1的每个旧客户及其真实尾负载c，含c=0，排除b=0。",
+  "roles": {
+    "customer-attraction/normalized-load-additive-credit-with-uncovered-old-customers-obstruction": "给归一化可加模板的三族反例，在同r=63对两个函数值逼出17/252矛盾。",
+    "customer-attraction/old-customer-full-histogram-universal-credit-obstruction": "给任意只见旧客户H的非可加模板反例，同H=4032(1,63)+4032(1,0)要求G₆₃≥−2898且≤−3170。",
+    "customer-attraction/closeout-c6ea13547dc53c82cb81ae04": "资源中的两条旧信用障碍的数学入口，以及没有共同真实IC付款的三种交换停点。"
+  },
+  "explanation": "任意满足f_r(0,c)=0的可加信用都可写G_r(H)=Σ_(b,c) H(b,c)f_r(b,c)，故非可加旧H产品障碍确实覆盖可加模板；三族解析证明仍独立给17/252和允许未被尾覆盖客户信用的AB输入。两项均保真实有序SPE并限定信息域。",
+  "scope": "资源页来源核对。扩充状态至少要区分两个同H产品或改变合同；读取b=0、更多目录结构或真实分支可能区分输入，支付所有客户共用的真实IC行仍欠证明。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/允许未覆盖旧客户的归一化负载可加信用--障碍.md",
+      "sha256": "b8e17113557db4e83db4e1fcfa11c6d7c0c65b61e807ebaabaccf87582ba46e4"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/只见旧客户完整直方图的通用信用不可能性--障碍.md",
+      "sha256": "6cecfeda50dc371672fa54f8c8c80e4db2038542fdb0f834bb617f73bdf81559"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/一般覆盖交换的跨枝信用停点--资源.md",
+      "sha256": "9697fb00efc4ac454fea6334c96c54c8b04d1d5e186a2cc880cd568fbb0f0e51",
+      "section": "两个障碍与三个尚未支付的交换方向"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读两个障碍的量词和同一递推合同，分开旧客户c=0与被排除的b=0。",
+  "endpoint_pins": {
+    "customer-attraction/closeout-c6ea13547dc53c82cb81ae04": "26b4798033c488b35cda1dc293f987a1e389867fd8e393d1c6dbe8041438c578",
+    "customer-attraction/normalized-load-additive-credit-with-uncovered-old-customers-obstruction": "c9e49bb9e2b374d9e224f9f24029e8242a9ab2d2fe99880a44ee1bee8aa3f725",
+    "customer-attraction/old-customer-full-histogram-universal-credit-obstruction": "4c59fa5889152ebbf2e22e10e05db564e1f6975d374d82e8b52e139d678f22b7"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/允许未覆盖旧客户的归一化负载可加信用--障碍.md": "b8e17113557db4e83db4e1fcfa11c6d7c0c65b61e807ebaabaccf87582ba46e4",
+    "archives/customer-attraction/state/障碍/只见旧客户完整直方图的通用信用不可能性--障碍.md": "6cecfeda50dc371672fa54f8c8c80e4db2038542fdb0f834bb617f73bdf81559",
+    "archives/customer-attraction/state/资源/一般覆盖交换的跨枝信用停点--资源.md": "9697fb00efc4ac454fea6334c96c54c8b04d1d5e186a2cc880cd568fbb0f0e51"
+  },
+  "review_digest": "a2388265ebb66c532d5f11a13f0f3265699b3388f13bf851c80be102743869c5"
+}
