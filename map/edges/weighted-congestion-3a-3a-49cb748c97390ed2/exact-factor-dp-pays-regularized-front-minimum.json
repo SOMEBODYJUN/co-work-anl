@@ -1,0 +1,55 @@
+{
+  "edge_id": "wc-3a-exact-factor-dp-pays-regularized-front-minimum",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "wc-common-scale-regularization-exact-factor-optimization"
+  ],
+  "target_ids": [
+    "WC-REGULARIZED-CORE-REPAIR-QUALITY-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "对目标定理已给的基体、原完整门分解及有限有理η，再要求每类有序同权二动作、前沿域显式可生成2n_a态；每个基体资源因子F_e及完整社会因子x_ec_e(x_e)可用位多项式精确有理评价；每因子触及类在类变量图成团，输入给有效固定宽k树分解。域和分解大小显式计入输入L；不假设提供任意实oracle就满足位复杂度合同。",
+  "roles": {
+    "wc-common-scale-regularization-exact-factor-optimization": "准确分隔消息最小化给定的局部因子和并恢复真实赋值；固定类图宽度允许类数和每类人数增长。",
+    "WC-REGULARIZED-CORE-REPAIR-QUALITY-v1": "其s_eta∈argmin_front(Φ_B+ηW^B)这一全局最小性前提在上述额外输入域中可准确计算。"
+  },
+  "explanation": "每类用相位x_a∈Z/(2n_a)生成至多2n_a个真实前沿位串，O(n_a²)写出域，无需2^(n_a)枚举。给资源e定义H_e=F_e+ηx_ec_e(x_e)，固定/必用用户若存在均在真实x_e和完整W^B中；恢复的势常数按实际因子保留。每因子分配给一个包含其作用域的袋，只计一次。对子树与父袋交集I_t的每个赋值τ，消息保存该子树已分配因子的准确最小和及见证；袋中枚举赋值、加局部因子和孩子消息、对忘记变量取min。分隔外子树不共享变量，所以最优见证能拼合；根恢复一个真正全局最小s_eta。每袋≤(max_a2n_a)^(k+1)赋值，有理和及比较位长按输入多项式增长，固定k得到位多项式时间。前沿不是个体策略积，但优化变量是每类的显式域，因子算法并未把一整类变化当作一次合法单人偏离。这里Φ_B+ηW^B准确最小性供目标定理随后对真实两端前沿边和社会最优作比较；门的前沿社会常数K不是W^B的一部分，输出完整成本时由目标定理另加K。",
+  "scope": "这是目标定理在固定类因子图树宽、显式有理输入下的计算前提；不是目标定理全部稳定/质量结论的单源证明。一般无树宽/有理比较合同的前沿优化仍可指数大。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/算法/共同尺度正则化的精确因子优化--算法.md",
+      "sha256": "be3b2a6d333ee7c0ff069b452cc15bdf9aeaa113fd4e0b3a44201b3a471067cb"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/正则化核心的稳定与社会质量联合转移--定理.md",
+      "sha256": "b30c141a5a855315fca9713b4abfbdf73f456993594aed8782b1895c73d42cb3"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md",
+      "sha256": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/锚定门的社会费用分解与最优压缩--定理.md",
+      "sha256": "dc6b751a584d2f2bc89e8aa092c8d5c2bcf6339c1d108f3499d85d96115e8f1d"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "完整实读所列正文并重推该关系；数学量词、全部共同条件与贡献剩余项按本边明确范围审定。未把历史审计当本轮程序执行。",
+  "contribution": {
+    "result": "在额外固定类图树宽及准确有理因子合同下，位多项式生成一个满足目标定理所需全局argmin条件的真实前沿状态s_eta。",
+    "remaining": "目标整体保证还需已给跨资源共同h_i的全部合法插入夹逼、全部前沿态对完整W^B的0<m≤M包络、在新β_eta验证的RD以及独立SD；这些不由DP认证。目标定理的真实偏离转移、完整OPT压缩及λ_eta成本链由其联合证明另付。只求局部最小或相对近似目标不能替代本边的准确全局最小。"
+  },
+  "endpoint_pins": {
+    "WC-REGULARIZED-CORE-REPAIR-QUALITY-v1": "864c3e829ebea513947dc13232660647e486dad29697a2b4dfc17c90670fb324",
+    "wc-common-scale-regularization-exact-factor-optimization": "8be9a46bc9049facb4aa20d9956699f1d5ee26aed66f8172d19cbf207ce54b51"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/算法/共同尺度正则化的精确因子优化--算法.md": "be3b2a6d333ee7c0ff069b452cc15bdf9aeaa113fd4e0b3a44201b3a471067cb",
+    "archives/weighted-congestion/state/定理/正则化核心的稳定与社会质量联合转移--定理.md": "b30c141a5a855315fca9713b4abfbdf73f456993594aed8782b1895c73d42cb3",
+    "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f",
+    "archives/weighted-congestion/state/定理/锚定门的社会费用分解与最优压缩--定理.md": "dc6b751a584d2f2bc89e8aa092c8d5c2bcf6339c1d108f3499d85d96115e8f1d"
+  },
+  "review_digest": "46a1b64dbf4c943900af819fae87f27c357892360b8cd02c09fbc2433aa276e3"
+}

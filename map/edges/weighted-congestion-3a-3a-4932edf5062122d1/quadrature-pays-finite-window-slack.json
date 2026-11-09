@@ -1,0 +1,57 @@
+{
+  "edge_id": "wc-boss5-4932-quadrature-pays-finite-window-slack",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/right-endpoint-area-quadrature"
+  ],
+  "target_ids": [
+    "WC-ENDPOINT-AREA-WINDOW-CERTIFICATE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "整数d,K≥1、R>0、m=K/R，已明确局部表重(P,1)、轻(Y,X)，P=(1+m)^d、X=Σ(1+j/R)^d、Y=Σ(j/R)^d。α≥1；Γ=(αX−Y)/(R H)仅在H=P−α>0域。κ≥1可另使用；本边只支付有限求积误差合同。",
+  "roles": {
+    "weighted-congestion/right-endpoint-area-quadrature": "给任意网格右和误差及非减凸半常数细化，代入两等步长窗口。",
+    "WC-ENDPOINT-AREA-WINDOW-CERTIFICATE-v1": "获得Γ有限上下界、D/R严格安全余量与κ的一项收缩预算；不把这一局部步称为整条窗口/游戏结论。"
+  },
+  "explanation": "将右和式分别用于[1,1+m]与[0,m]，最大格宽1/R，得到A≤X/R≤A+(P−1)/R、B≤Y/R≤B+m^d/R，其中A=((1+m)^(d+1)−1)/(d+1)、B=m^(d+1)/(d+1)。在H>0域逐项代入给(αA−B−m^d/R)/H≤Γ≤(αA−B+α(P−1)/R)/H。若D=P+B−α(1+A)>0，则α<(P+B)/(1+A)<P，因为A>B且P>1；因此H自动正，L=αX−Y>0。再有R>α(P−1)/D、mR=K∈N即得1−Γ≥[D−α(P−1)/R]/H>0。非减凸细化在[1,1+m]给e_X=min{(P−1)/R,(P−1)/(2R)+d[(1+m)^(d−1)−1]/(8R²)}；若Dκ=P−α−κ(αA−B)>καe_X，则1−κΓ≥(Dκ−καe_X)/H>0。细化保f′≥0和f″≥0，不能只写凸性。",
+  "scope": "局部费用表的有限有理安全余量。数值网格不是已实现的玩家资源关联；没有支付重端点、return、全相位或同次数时钟。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/右端离散面积的网格误差与最优采样--定理.md",
+      "sha256": "cbdb0a71ada8f10a75ac76a1e98f0eac7c604e3a20ab89a52a661344f61ea0bf",
+      "section": "任意网格与精确单格效率"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/右端离散面积的网格误差与最优采样--定理.md",
+      "sha256": "cbdb0a71ada8f10a75ac76a1e98f0eac7c604e3a20ab89a52a661344f61ea0bf",
+      "section": "非减凸函数的半常数细化及真实修正"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/等权窗口传播的精确阈值与安全余量--定理.md",
+      "sha256": "af010b359f1f608ce0e9e4960c23bd3c8fad2f2f03ec5916c2e1e2f08c22ae45",
+      "section": "对象、实际费用表与不混用的尺度"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/等权窗口传播的精确阈值与安全余量--定理.md",
+      "sha256": "af010b359f1f608ce0e9e4960c23bd3c8fad2f2f03ec5916c2e1e2f08c22ae45",
+      "section": "有限面积误差与可执行证书"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "逐式实读本边列明的现行自足证明，核模型、量词、全部真实偏离、零费与严格/弱端点；历史审查和有限计数不充当一般证明。本轮未运行旧审计程序。",
+  "contribution": {
+    "result": "两组右和粗/细误差、所列Γ有限上下界及D/R、Dκ/e_X的严格收缩证书已经证明，整数网格/有理参数时可有限精确核验。",
+    "remaining": "整目标还含α_grid,κ的精确等价阈值、面积最优与大次数/晶格/临界质量极限、κ≥d无用域，以及独立重margin(κ−1)(αX−Y)>Y；这些在目标正文另证。真实游戏还必须验证局部表关联、return、全部前沿和非法态同次预算，求积单独不提供。"
+  },
+  "endpoint_pins": {
+    "WC-ENDPOINT-AREA-WINDOW-CERTIFICATE-v1": "4eeb733b487cb597891c96c63b55053d05dfc37ab5cdb5b3aee7120ae6a6cc02",
+    "weighted-congestion/right-endpoint-area-quadrature": "dd1d43cf35fee099fb6bf65dc1f2c35ac35504fc1a23893a14d5d61c6892d44f"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/右端离散面积的网格误差与最优采样--定理.md": "cbdb0a71ada8f10a75ac76a1e98f0eac7c604e3a20ab89a52a661344f61ea0bf",
+    "archives/weighted-congestion/state/定理/等权窗口传播的精确阈值与安全余量--定理.md": "af010b359f1f608ce0e9e4960c23bd3c8fad2f2f03ec5916c2e1e2f08c22ae45"
+  },
+  "review_digest": "e5fa2bf4e45eb557a3819d8f6847d8ee337b363552bb003cdebf54dc4fad3466"
+}

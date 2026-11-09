@@ -1,0 +1,56 @@
+{
+  "edge_id": "wc-boss5-4932-root-and-uniform-bound-give-all-in",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/extremal-all-in-root-rational-bound",
+    "weighted-congestion/extremal-all-in-uniform-square-root-bound"
+  ],
+  "target_ids": [
+    "WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "非空有限simple DAG的原对称双列binary策略；根权1、正轻权W<1、t_v=Σ_out w_u<w_v，δ_v=w_v−t_v；非零非负系数费用次数≤整数d≥1。共同A>0使p0(1)=A、pv(1+w_v)=Ah_v(q)，q>1、qh_v=1+Σ_in h_u、Σh=q−1。只能整体除以A，不能分别重定卫星幅度。 d≥16时另使用对全部实q>1成立的统一标量估计。",
+  "roles": {
+    "weighted-congestion/extremal-all-in-root-rational-bound": "支付真实游戏的根与全部轻玩家偏离，得具体α_d(q)。",
+    "weighted-congestion/extremal-all-in-uniform-square-root-bound": "支付∀实q>1、∀整数d≥16的α_d(q)≤4√(d/ln d)。",
+    "WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1": "合成主对象的d≥1具体因子与d≥16统一存在保证。"
+  },
+  "explanation": "根对象已给所有真实偏离的α_d(q)=max{1+1/q,B_d(q)}-PNE，适用于每个d≥1。统一标量引理独立控制其数值：L=ln d、K=4√(d/L)>2。q≤K时B≤q≤K；q>K时q(q−1)>q²/2>8d/L，ln(1+x)≤x给B≤q/[1+(q−1)e^(−d/[q(q−1)])]<2d^(1/8)≤4d^(1/4)<K，且1+1/q<2<K。故对d≥16把同一个真实状态的倍率放宽为K。两源共同使用；纯标量界不独自给任何游戏状态，根界不独自给统一常数。",
+  "scope": "只封闭主对象所写极值幅度DAG子类；全部实q的估计没有被限成有限可达q样本。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+      "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c",
+      "section": "根偏离的Jensen包络"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+      "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c",
+      "section": "所有轻玩家的真实偏离"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+      "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c",
+      "section": "对所有实 $q>1$ 的统一常数"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+      "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c",
+      "section": "对象、实际幅度条件和结论"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "逐式实读本边列明的现行自足证明，核模型、量词、全部真实偏离、零费与严格/弱端点；历史审查和有限计数不充当一般证明。本轮未运行旧审计程序。",
+  "whole_result": "主目标全条：每个d≥1指定全入真实状态是max{1+1/q,B_d(q)}-PNE；每个整数d≥16同态是4√(d/ln d)-PNE。",
+  "endpoint_pins": {
+    "WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1": "004126f839faa99f37c6f3ddadc923a38115cf82406dc1c3f38de49eee36d5c7",
+    "weighted-congestion/extremal-all-in-root-rational-bound": "b8e5124ca65e1572215dce130eec46ad59db895567247d935f8fe398dcd02127",
+    "weighted-congestion/extremal-all-in-uniform-square-root-bound": "787870f4ed2febfc2ee43def2bcd1c01182114d21f2087feae6574a353326bb6"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c"
+  },
+  "review_digest": "225f3c8e42a7d984b0ffab33774e71296bf294adb39363c6bb9790623460cd19"
+}

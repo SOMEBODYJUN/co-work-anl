@@ -1,0 +1,42 @@
+{
+  "edge_id": "wc-6350-cubic-base-pads-to-every-degree-margin-obstruction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/anchored-cubic-clock-retention-obstruction"
+  ],
+  "target_ids": [
+    "weighted-congestion/anchored-clock-true-margin-dependence"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定源四玩家权(1,1/2,1/4,1/8)、α=21/20、两动作和全部旧资源；新增clock只许anchor0、T012/T013/T023、010/101相位、互补两侧同费、次数≤整数D≥0，并要求保留全部八条严格环边。",
+  "roles": {
+    "weighted-congestion/anchored-cubic-clock-retention-obstruction": "提供正三次literal基体、八条正环余量γ_i及0101/1010的正稳定gap K_i。",
+    "weighted-congestion/anchored-clock-true-margin-dependence": "用private三次padding把任意预定次数预算压成∀D∃G_D的障碍。"
+  },
+  "explanation": "令η=minγ_i>0、K_min=minK_i>0、Q_D=(3/2)^D，ε_D=min{η/2,(α−1)K_min/(8Q_D)}。给i两动作共同private资源费t_i(x/w_i)^3，t_i=(γ_i−ε_D)/(α−1)>0。实际占用费恒t_i，所有八环margin变ε_D，b=0101的gap变K_i+γ_i−ε_D>K_min，互补态同理。对每三元总多项式f_T令S_T为三个pair负载处费用之和；它在三名参与者指定环边的margin精确和为−(α−1)S_T，故保全部严格边迫Σ_T S_T<4ε_D/(α−1)。任一三元总权W与最大pair权m满足m≥2W/3；非负系数、k≤D给任何状态clock的单人正margin≤Σ_k a_kW^k≤Q_D S_T（k=0也成立）。故在b总clock正margin<Q_D4ε_D/(α−1)≤K_min/2，总margin<−K_min/2。两动作穷尽偏离，因此b及互补仍α-PNE。共同private可换成两个动作专属同费private资源而逐状态/偏离费用完全不变，给每人非空不交动作的正三次实现。",
+  "scope": "源固定degree≤3的同基体障碍并不单凭特化推出任意D；这里完整给出D依赖padding及必要总预算。固定结构参数下∀D∃G_D，不能交换为∃同一G∀D，也不排不同anchor/phase/异费/辅助玩家或非保环构造。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/障碍/同费锚定三元时钟的三次保边障碍--障碍.md",
+      "sha256": "af97063b5a506da4f022889cc4b2b456f86fe4647ccbb0f9ad7f66c04444770f"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/锚定保环时钟的真实余量依赖--障碍.md",
+      "sha256": "4ccdb88a3c2dde2e6441eabeac710d1c2546a678be3f4abedd57900b8ac204fc"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "本任务worker实读精确登记正文及承重证据，逐项核模型、全部量词、方向、弱端点、零成本和目标范围；程序绑定只校结构，不代数学判断。",
+  "whole_result": "对每个预定D≥0，源literal正三次基体经有理private正三次padding成为G_D，任意该固定架构的degree≤D非负clock若保八条严格环边，则0101与1010全部翻位margin仍<−K_min/2，故真实环余量依赖不能由固定次数/人数/权/倍率参数消去。",
+  "endpoint_pins": {
+    "weighted-congestion/anchored-clock-true-margin-dependence": "7622feb2e92852a510fc79671d7d7024e38e6c35f2e59f11fc4d8ae62a828518",
+    "weighted-congestion/anchored-cubic-clock-retention-obstruction": "30e053d8d0c51c409afc3dff358614ecfbfae2b0ced0b70c8b4b208bdec6cc8a"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/障碍/同费锚定三元时钟的三次保边障碍--障碍.md": "af97063b5a506da4f022889cc4b2b456f86fe4647ccbb0f9ad7f66c04444770f",
+    "archives/weighted-congestion/state/障碍/锚定保环时钟的真实余量依赖--障碍.md": "4ccdb88a3c2dde2e6441eabeac710d1c2546a678be3f4abedd57900b8ac204fc"
+  },
+  "review_digest": "89356074132d4281b8368f1730523c8cb4e8864b59553508f5c04455a8186720"
+}

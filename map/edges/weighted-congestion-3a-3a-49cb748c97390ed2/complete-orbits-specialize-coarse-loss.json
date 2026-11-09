@@ -1,0 +1,43 @@
+{
+  "edge_id": "wc-3a-complete-orbits-specialize-coarse-loss",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R2-ORBIT"
+  ],
+  "target_ids": [
+    "WC-R2-COARSE-LOSS"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定 n=3,w=1/5,P(x)=x,Q(x)=x²/2；主玩家权1、三名等权侧玩家、完全对称的两列及每人原两个动作，成本不乘权且偏离包含自身。比较的是同一个固定实例；α≥1用弱均衡端点。",
+  "roles": {
+    "WC-R2-ORBIT": "穷尽列交换和同权标签对称后的四轨道，给三类真实偏离的精确最大值。",
+    "WC-R2-COARSE-LOSS": "该固定合法二次实例的完整阈值157/156及两指定攻击证书61/66<1的严格损失。"
+  },
+  "explanation": "按轨道公式逐项代入，m=0,1,2,3的主玩家比依次为158/155,157/156,156/157,155/158；同侧比依次为缺项,61/66,71/56,81/46；异侧比依次为66/61,56/71,46/81,缺项。因此q依次为66/61,157/156,71/56,81/46，min q=157/156且在m=1取得。全部偏离已被三类穷尽，故1≤α<157/156每态有严格出口，α=157/156有弱PNE。原两指定攻击只用min(h0/h3,L1)=min(158/155,61/66)=61/66，低于合法倍率1。此处不否定该值作为充分保守证书的正确性，而完整得到目标所陈述的证书损失反例。",
+  "scope": "逐实例完整轨道公式的精确二次特化；未求全参数上确界，未把两攻击端点归约变成完整游戏必要条件。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/对称两列实例的完整轨道均衡阈值--定理.md",
+      "sha256": "376c334d4f834013b9184fba081ac0d9d14a29a6c2f35822b9fdad5dd29b1871"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/两列轨道与局部权带三源审查--审查.md",
+      "sha256": "b59b7ed7923b95a517e8178cfdb5e6000138ab57a2ef7a5561787e24862a80dc",
+      "section": "两列对称游戏：完整轨道公式"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "完整实读所列正文并重推该关系；数学量词、全部共同条件与贡献剩余项按本边明确范围审定。未把历史审计当本轮程序执行。",
+  "whole_result": "WC-R2-ORBIT在所列固定参数下推出WC-R2-COARSE-LOSS的完整陈述：四轨道值、真实最佳倍率157/156及其弱端点、保守两攻击仅61/66<1。",
+  "endpoint_pins": {
+    "WC-R2-COARSE-LOSS": "dc704d0256464284e2559af69077f4add1a5cfbf4276bfde98a321d39afd514c",
+    "WC-R2-ORBIT": "63c1f91a22c0d0e926a85e2f11775bbc58760a49e8bec54464953fc51b4b960c"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/对称两列实例的完整轨道均衡阈值--定理.md": "376c334d4f834013b9184fba081ac0d9d14a29a6c2f35822b9fdad5dd29b1871",
+    "archives/weighted-congestion/state/审查/两列轨道与局部权带三源审查--审查.md": "b59b7ed7923b95a517e8178cfdb5e6000138ab57a2ef7a5561787e24862a80dc"
+  },
+  "review_digest": "84a9647bcb6a9db1a508055d57223bdad51b6f3de23cc692d00137c287a89693"
+}

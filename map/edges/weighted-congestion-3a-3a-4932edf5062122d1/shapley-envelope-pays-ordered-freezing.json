@@ -1,0 +1,54 @@
+{
+  "edge_id": "wc-boss5-4932-shapley-envelope-pays-ordered-freezing",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R3-DENSE-SHARE-v1"
+  ],
+  "target_ids": [
+    "WC-ORDERED-COHORT-FREEZING-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意有限MODEL游戏、非负系数次数≤整数d≥0、任意非空组有序划分B1…Bm。a_ej、b_ej、L_ej以资源当前组全部潜在用户及全部晚组潜在总权固定；β_ej=(1+L_ej/a_ej)^d、A=max(b_ej/a_ej)β_ej。无人可用资源另取A=1。",
+  "roles": {
+    "WC-R3-DENSE-SHARE-v1": "提供H精确边际φ、效率及a g(W)≤φ≤b g(W)，包含平移后所有非负多项式。",
+    "WC-ORDERED-COHORT-FREEZING-v1": "阶段用同资源固定β/a缩放，按任意阶段全局最小点冻结，得到全部可能最终输出的A-PNE。"
+  },
+  "explanation": "阶段j早组负载h固定，先令g(x)=c(h+x)，非负系数/次数不变，再取F=xg及标准Shapley H；不能用(h+x)c(h+x)−hc(h)。潜在用户包络覆盖当前与全部偏离集合。同资源统一缩放β/a给精确ΔΦ_j=D_i(new)−D_i(old)，故任意全局最小点D_i(old)≤D_i(stage dev)。当前使用资源冻结负载z≥w_i≥a，晚组实际增量0≤y≤L，逐次数给c(z+y)≤βc(z)。由份额下界最终C_i≤D_i(old)；由上界D_i(stage dev)≤A C_i(stage dev)。假想最终Nash偏离固定全部晚组，他们只增加非负负载，故C_i(stage dev)≤C_i(final dev)。完整链C_final≤D_old≤D_dev≤A C_stage_dev≤A C_final_dev，对每阶段任意平局最小点、每玩家每合法多资源偏离成立。未除费用，空动作/双零/保留资源/d=0均覆盖。",
+  "scope": "阶段存在性选择接口；不要求按权降序，不证明同一原游戏势对全部严格A改善下降，也无多项式时间结论。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/局部窄权带的Shapley份额势--定理.md",
+      "sha256": "d1551d41cd6f3a625359dde38498d557a2ff46331049ee4284a0c908244af24d",
+      "section": "集函数、精确边际和效率"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/局部窄权带的Shapley份额势--定理.md",
+      "sha256": "d1551d41cd6f3a625359dde38498d557a2ff46331049ee4284a0c908244af24d",
+      "section": "两种权序与局部包络"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有序权组尾部冻结--定理.md",
+      "sha256": "9021bb82f8b30debc6d82f157ca4f63b49370ae9aa066d60ce9d59011d11f748",
+      "section": "对象、参数与程序的全部量词"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有序权组尾部冻结--定理.md",
+      "sha256": "9021bb82f8b30debc6d82f157ca4f63b49370ae9aa066d60ce9d59011d11f748",
+      "section": "阶段势及比较链"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "逐式实读本边列明的现行自足证明，核模型、量词、全部真实偏离、零费与严格/弱端点；历史审查和有限计数不充当一般证明。本轮未运行旧审计程序。",
+  "whole_result": "任意有序非空组划分的每阶段任意全局最小点选择，最终所有输出均为所定义A-PNE；无人可用资源为全零精确PNE。",
+  "endpoint_pins": {
+    "WC-ORDERED-COHORT-FREEZING-v1": "6b64f0ca298fb90cf312e4473c33a12f38c4ecb8207a7de2ff5ce2b832f04d84",
+    "WC-R3-DENSE-SHARE-v1": "bac86f71e93f496bbf35ccf460d4b60da2e22e7388261f3b759149e4e6ca9b32"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/局部窄权带的Shapley份额势--定理.md": "d1551d41cd6f3a625359dde38498d557a2ff46331049ee4284a0c908244af24d",
+    "archives/weighted-congestion/state/定理/有序权组尾部冻结--定理.md": "9021bb82f8b30debc6d82f157ca4f63b49370ae9aa066d60ce9d59011d11f748"
+  },
+  "review_digest": "0bbc5954499631078291f5245b09750b3f8f7edcdb6f076ad7fe63657b592999"
+}
