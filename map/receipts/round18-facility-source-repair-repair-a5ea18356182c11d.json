@@ -1,0 +1,65 @@
+{
+  "task_id": "round18-facility-source-repair-repair-a5ea18356182c11d",
+  "stage": "3A",
+  "object_ids": [
+    "MF-CONT-COMPLETE",
+    "SC-K-LEX-BUDGET"
+  ],
+  "read_object_ids": [
+    "MF-MODEL",
+    "SC-K-2-E",
+    "MF-PACK-2",
+    "MF-PURE-CAP"
+  ],
+  "input_pins": {
+    "MF-CONT-COMPLETE": "749dad55c2ae74db4f443c5adb20553c8aced4cf785ecf7f1a75fe28613b24d6",
+    "SC-K-LEX-BUDGET": "e467f05f9359fdfdc25d73ee33d183123ce2aa83e7cb72408f6dedad53c35e20",
+    "MF-MODEL": "1ca8c08397c3ec2c0a05b8eecb18e5e1de2b3e863c5f73f8c6eaf6b6fdf05bec",
+    "SC-K-2-E": "44bbf9c50401621d6d51854a25284c7658e195a6491071c7f01a1ec97ee752cd",
+    "MF-PACK-2": "886033f8e4edd344e6b9a859f840ac742a27cdd67ab0bb4875ebc0137ee223cb",
+    "MF-PURE-CAP": "0a5cd5c8a91a1eb2f9d3ac2f3d643d914957d408a42eab86168205f2e1203cda"
+  },
+  "status": "complete",
+  "coverage": {
+    "MF-CONT-COMPLETE": {
+      "state": "linked",
+      "object_pin": "749dad55c2ae74db4f443c5adb20553c8aced4cf785ecf7f1a75fe28613b24d6",
+      "comparison_scope": "复核 MF-CONT-COMPLETE v2 对任意固定带标签在轨布局、任意指定在轨精确客户 NE 及每项真实单方偏离的任意指定精确客户 NE 的延伸量词。实读共同目录模型、因子二定理第五至七节、原子引理的受帽修复段和精确续局证书 §10.1–10.6，并与 v3 全局词典序、装箱、保帽三个前提所给的策略输入对照。",
+      "reason": "同设施不同目标改变同一坐标为不同值，不同设施的实际偏离改变不同标签坐标，且每项偏离布局均异于在轨布局。拼接因此逐点保留全部指定策略，即使物理占用相同。其余布局从最小标签可达纯初态做确定的严格改善，由有限半平方负载势给精确纯默认。套用时在轨由词典序前提给定，实际偏离由装箱及完整菜单修复得到各自的 L_f′≤2L_f，故同一续局同时满足全部约束，所有离轨可纯。拼接只支付全域兼容性和默认存在，默认查询的位复杂度另有合同。",
+      "edge_ids": [
+        "commonmany-global-lex-budgets-and-finite-repair-imply-factor-two-source-repair-v3"
+      ]
+    },
+    "SC-K-LEX-BUDGET": {
+      "state": "linked",
+      "object_pin": "e467f05f9359fdfdc25d73ee33d183123ce2aa83e7cb72408f6dedad53c35e20",
+      "comparison_scope": "复核 SC-K-LEX-BUDGET v3 对正最大覆盖的全部全局并列最大者和每个源的全目录预算。实读因子二定理第一至五节、两条原子引理、当前 TeX 对应证明和改版证据的多设施局部引理段，并与 SC-K-2-E v3 的正实权存在量词及 MF-CONT-COMPLETE v2 的接口对照。",
+      "reason": "同址最大覆盖候选给最小收益下界 R/k>0。客户跨站严格改善须扣源站均摊自重 w_i/q_u，若发生便能提高升序向量。源存续时其他占站及原未占站分别有 W_t≤(q_t+1)a 与 N_r≤a；源消失时须在左侧分别加 w(J_u∩C_t) 和 w(J_u∩C_r)，其中 N_r 只计原全局未覆盖客户。单设施源向已占目标反证还用 w(J_u) = a 推出原目标负载 W_t/q_t>a。实际源消失先将可达静止站的源客户重挂，余下能到新开目标者才给偏离设施。各存续站的实际池重均≤(h+1)a，装到 h 家静止设施时超 2a 者只能是孤立原子；偏离者初始≤a，原菜单中的有限严格改善保持其≤2a。四前提合取再经带标签拼接给出完整因子二。R=0 由全空服务单独处理，单地点没有真实偏离。一般位多项式在轨搜索和统一常数锐性另有合同。",
+      "edge_ids": [
+        "commonmany-global-lex-budgets-and-finite-repair-imply-factor-two-source-repair-v3"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/round18-facility-source-repair-repair-fae63cc091ae6f35/global-lex-budgets-and-finite-repair-to-factor-two.json",
+      "sha256": "0a0f98185457fe48374d5e4e614301c7de2e7bc217a100ea7f8381cb80bf4302"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "定向复核旧任务与旧收据、当前六项登记、共同目录模型、主定理、两项引理、当前 TeX、历史 claim 对应段及证书检查与审查的承重段。五地点阈值勘误刷新了共享审查页的全文 SHA，多设施局部引理段保持原文。TeX 的 lem:capped 与 lem:deviation 有将已服务重客户简写为全部重客户的用词，受帽前提以定理第四、五节、引理正文和现行边的已服务、孤立条件为准。有限证书及审计作边界对照。",
+  "supersession": {
+    "commonmany-3a-3a-6551dba0c3ad3ad4": {
+      "reason": "刷新受共享审查页全文 SHA 变更影响的对象绑定，保留旧收据中同一个四前提 ALL 证明链及两项核心覆盖。",
+      "assets": {
+        "map/edges/commonmany-3a-3a-7fbed9462b1600ef/global-lex-budgets-and-finite-repair-to-factor-two.json": {
+          "disposition": "replaced",
+          "replacement_paths": [
+            "map/edges/round18-facility-source-repair-repair-fae63cc091ae6f35/global-lex-budgets-and-finite-repair-to-factor-two.json"
+          ],
+          "reason": "原借用边由其拥有任务完成替换，后继已进入当前 canonical 清单并匹配本包的全部边端点 pin。后继保持原全局四预算、装箱、有限纯修复和带标签拼接的完整数学关系，由两项核心共享引用。"
+        }
+      }
+    }
+  }
+}

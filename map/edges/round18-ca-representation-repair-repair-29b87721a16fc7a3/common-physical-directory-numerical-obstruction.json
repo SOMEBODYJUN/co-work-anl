@@ -1,0 +1,61 @@
+{
+  "edge_id": "cag-r20-29b87721-common-physical-directory-numerical-obstruction",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-2f9f2a76bfdf4ff2a3c4f295f5d5582a"
+  ],
+  "target_ids": [
+    "R-18-NREP-20261031"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "原两标签 A、B 分别覆盖一名单位客户与空集，合法背景为 b≥1 次 A，余 r≥2 人。所比较的额外要求是无背景编译使用同一 r、同一 A/B 标签、共同物理目录及同一正比例 λ，匹配每个固定对手配置的 A 减 B 收益差。允许有限期望质量的非负随机混合。",
+  "roles": {
+    "M-2f9f2a76bfdf4ff2a3c4f295f5d5582a": "从冻结对手的两端方程排除非负共同目录的精确数值匹配，并给出有符号内部残差和非负锐相对误差。",
+    "R-18-NREP-20261031": "保留固定玩家顺序与全部标签历史，通过正掩码构造玩家专属物理覆盖，并将全部终局收益及真实偏离同比例缩放。"
+  },
+  "explanation": "原博弈固定 j−1 位对手选 A 时，目标差为 λ/(b+j)。共同物理目录中 A 私有、B 私有、A/B 共有质量分别为 α、β、γ。共有项在两个行动中均为 γ/r，故候选差 g_j=α/j−β/(r+1−j)。两端给 g_1−r g_r=β(r−1/r)，从而唯一解为 α=λr(b+r+1)/D、β=−λrb/D<0，其中 D=(r+1)(b+1)(b+r)。对有符号端点解先取 λ=1。将 g_j−1/(b+j) 乘正分母 j(r+1−j)(b+j)，得到在 1、r 为零的二次式，首项系数为 b(b+r+1)/[(b+1)(b+r)]，故 r≥3 时每个内部点的残差严格为负。非负情形亦归一至 λ=1，误差 ε=max_j|(b+j)g_j−1| 由 (1+ε)/(b+1)≥g_1≥r g_r≥r(1−ε)/(b+r) 得下界 ε*=b(r−1)/[b(r+1)+2r]。取 β=0、α=2r/[b(r+1)+2r] 时比值随 j 递减、两端恰为 1±ε*，故达到下界。正掩码编译把同一客户的资格固定在每位玩家的所有标签上，取 L=(max_x b_x+r)! 清分母，副本数 Lq 为非负整数。同一终局有 u′_i(s)=L u_i(s)、W′(s)=L P_b(s)、OPT′_r=L F_r(b)，故每个有序历史中沿同一完整策略实际行动与偏离所得的两个续局收益均乘 L>0，保全部弱比较和平局，SPE 双向等价。",
+  "scope": "共同目录障碍只约束同标签、同人数的静态精确数值匹配，锐误差只计固定对手的激励差。r=2 时有符号两端可匹配。仅保 SPE 或福利的构造及半覆盖界是另行义务。逐掩码随机表示只给期望激励；确定单位客户编译的物理覆盖可依玩家而异。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/表示/R-18背景利润的随机前缀表示与共同目录正性障碍--表示.md",
+      "sha256": "a8d43bde91b70977570f5b39d074ec94a04b5827040239d8e0007b1f1c1250cb",
+      "section": "4. 共同目录正性数值表示的不可能性"
+    },
+    {
+      "path": "archives/customer-attraction/state/表示/R-18背景利润的随机前缀表示与共同目录正性障碍--表示.md",
+      "sha256": "a8d43bde91b70977570f5b39d074ec94a04b5827040239d8e0007b1f1c1250cb",
+      "section": "3. 确定单位客户编译及完整 SPE 保留"
+    },
+    {
+      "path": "archives/customer-attraction/state/表示/R-18背景利润的随机前缀表示与共同目录正性障碍--表示.md",
+      "sha256": "a8d43bde91b70977570f5b39d074ec94a04b5827040239d8e0007b1f1c1250cb",
+      "section": "5. 期望 SPE 与逐掩码 SPE 不可交换"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/背景稀疏化的独立表示与锐编译误差--审查.md",
+      "sha256": "d6a953c32b84178e95a1ec85b495681bb538f9c040d3fd4128ed771d47e89041"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-18-new-representation-20261031/background_thinning.md",
+      "sha256": "e8c7e78f82cb5683beacfddc77aac6d34689de1fb9da2934c3bcd3f5ffe104ae"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "定向核对两份 v2 登记、现行正文和已归档的原作者及独立审查。确定编译逐终局式为 L u_i(s)，共同项 γ 在 A 与 B 两边均为 γ/r，有符号残差先取 λ=1。承重结论由真实续局的同倍缩放、两端方程与锐误差夹逼承担。沿用原有限证据记录。",
+  "contribution": {
+    "result": "给出 R-18 正单位客户编译的物理目录边界。同标签、同人数的无背景共同物理目录即使允许非负混合，也无法精确匹配固定对手收益差；最优最大相对误差为 b(r−1)/[b(r+1)+2r]。R-18 确定编译在玩家专属物理覆盖上保同一完整标签树的全部真实偏离和双向 SPE。",
+    "remaining": "若用无背景结论处理背景半覆盖，须覆盖这些玩家专属掩码目录，或另证一种保持完整历史 SPE 的共同目录归约。"
+  },
+  "endpoint_pins": {
+    "M-2f9f2a76bfdf4ff2a3c4f295f5d5582a": "1c7f7ed2f018d723f06869ea9b0701819fde072cc36ff43c4e0759c8092ac15a",
+    "R-18-NREP-20261031": "a55f2492f3475fd1727664c1df1d25e3902f37cb81c57cde0c51a25bd532f270"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/表示/R-18背景利润的随机前缀表示与共同目录正性障碍--表示.md": "a8d43bde91b70977570f5b39d074ec94a04b5827040239d8e0007b1f1c1250cb",
+    "archives/customer-attraction/state/审查/背景稀疏化的独立表示与锐编译误差--审查.md": "d6a953c32b84178e95a1ec85b495681bb538f9c040d3fd4128ed771d47e89041",
+    "archives/customer-attraction/tools/evidence/R-18-new-representation-20261031/background_thinning.md": "e8c7e78f82cb5683beacfddc77aac6d34689de1fb9da2934c3bcd3f5ffe104ae"
+  },
+  "review_digest": "86ed5f0564631896badbcb93c9a2f80da53e626040538a644ff400d90b69013c"
+}
