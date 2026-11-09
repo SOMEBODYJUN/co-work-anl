@@ -1,0 +1,48 @@
+{
+  "coverage": {
+    "customer-attraction/mixed-cut-legal-leaf-amount-cap-sharp-harmonic": {
+      "state": "linked",
+      "object_pin": "7c2cf9706cac1c2d9556af824397af70c186920d66c4607337c2950bb53ec007",
+      "comparison_scope": "实读混切合法叶 v1 与固定同切合法叶 v1、末层上界 v2、固定正尾长真 SPE 下界 v1，核对各登记版本及任务阅读引用。另核共同目录完整历史定义、R5a 总账末层小节、COPY2/PCAP 的精确量词及原末层代数稿。逐一比较固定 m,ℓ 与跨人数、切点可混与同切、完整合法计划与真实 SPE。",
+      "reason": "混切上界保逐 sender 一份共享金额。固定目标客户 x，把实际更早覆盖者依位置排为 j₁<⋯<j_s。对 sender j_k 的每个有价孩子，前 j_k 位保留故 c_α(x)≥k；各 sender 的孩子利润至少 p_j(B)/(m−j+1)。在涉及该 x 的孩子上，因原交叠 c_B(x)≥2，比较严格，有限非负共享预算使相关 λ 和严格小于 m−j_k+1。j_k≥k，再补齐非负项得到每客户严格界 C_{m,ℓ}/c_B(x)，其中 C_{m,ℓ}=(m+1)H_{ℓ−1}−(ℓ−1)。无更早覆盖的客户输出为零，正目标且 ℓ≥2 时仍严格；ℓ=1 或空目标整列为零。\n\n固定 m,ℓ 的锐族以 X={x}、互不相交且与 X 不交的 |Y_j|=L，原叶逐位 A_j=X∪Y_j、D=X、空尾。在不同 i_j=j+1 强制 T_j=Y_j，后继也取 T_j，强制子树两两不交且与原路径不交，故可由同一任意完整计划实现。逐 sender 取等预算，列比为 Σ_{j<ℓ}(L+1/ℓ)/[j(L/(m−j+1)+1/j)]，趋 C_{m,ℓ}。实际末位改 T_j 得 L/2，严格超过原空尾收益 0 或末位 D 的 1/ℓ，故该合法锐族在 SPE 之外。\n\n共同切点为目标时，专门化证明给固定 m,ℓ 的完整 r+2 定理；仅 ℓ=2 时混切合同自身只有该一个有价切点。仅末位切点 i_α=ℓ=m 时，已核 cag-6eade5-fixed-cut-legal-leaf-specializes-to-terminal-amount-cap 的 whole 关系，逐客户支撑的末层上界为 2Σ_{x∈B_m:c_B≥2}1/c_B(x)；全人数真实末层锐性另由全 n 家族保证。m=ℓ≥3 且允许更早切点时，合法常数 C_{m,m}>2，末层负载最多增一和移出后恰少一的两步均不能直接使用。\n\n固定任意 r≥1 的真下界采用另一完整策略。n≥max(3,r)、m=n+1+r、ℓ=n+1，前 n 位各取 A_j，实际 D 及同一切点各强制 T_j 后都沿同一策略接独立 Z 尾。其完整性来自规定节点真最优、默认子树逆推，以及根改 D 后的真实末位优先 A/D 比较。逐源预算恰满的比为 2−3/(n+1)，固定 r 跨人数趋二。同切真子域的跨人数上确界在 [2,r+2]，混切合法定理给每个固定 m,ℓ 的真实分支代数上界；两族不能互换。一般真实多切 CAP2 仍开放。",
+      "edge_ids": [
+        "cag-1a77f7-mixed-cut-proof-specializes-to-fixed-cut-legal-sharpness"
+      ]
+    },
+    "customer-attraction/two-player-spe-terminal-amount-column-sharp-constant": {
+      "state": "linked",
+      "object_pin": "19b1a3754431282b3393985e5b962e3aadf722fda4e8f22de9f7b431cdd1d846",
+      "comparison_scope": "实读二人真 SPE v1、末层多孩子代数 v2、同切合法叶 v1、共同目录完整历史及末层原稿。对照恰二人与全人数、真实与合法、唯一切点及首位跨枝共享预算。",
+      "reason": "末层负载计数在二人域推出逐枝 q=s/2 与 p₁(A,T)≥(a+b+s)/2，给 Q₂≤(b+a/2)a/(2a+b) 对 a>0 成立；a=0 或目标利润零则输出零。真实实际末位在 (A) 可以复制 A，故 d≥b/2。除以 p₂=d+a/2，设 t=b/a，得上界 (2t+1)/[(1+t)(2+t)]。差额的分子为 (4−2√3)(t−(√3−1)/2)²；有限单位客户使 t 有理，无法取等。\n\n锐族用两两不交 X,Y,Z，大小 a,b,b/2，其中 b 为正偶数。目录 A=X∪Y、D=X∪Z、T=Y。三行末位候选收益按 A,D,T 顺序为 (a/2+b/2,a/2+b/2,b/2)、(a/2+b,a/2+b/4,b)、(a+b/2,a+b/2,b/2)。因此在三种第一位历史 (A),(D),(T) 分别选 D,A,A 都最优。根 A,D,T 沿同一策略分别得 b+a/2、b/2+a/2、b/2，故根 A 最优，已覆盖全部有序历史。只在实际第二位强制 T 并投满第一位金额，列比等于该有理函数。取偶 b 使 b/a 趋 (√3−1)/2，达上确界 4−2√3。\n\n固定同切合法定理取 m=ℓ=2 仍给锐常数二，其合法 A/D/T/空主题逼近计划在实际历史 (A) 有严格可获利的末位偏离，故不能产生二人真实下界。全人数末层真 SPE 族的 n≥3 随人数增长，亦不能提供固定二人尖锐性。",
+      "edge_ids": [
+        "cag-1a77f7-terminal-amount-pays-two-player-branch-step"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/customer-amount-parity-extensions-round18-3a-1a77f739e77d40c2/mixed-cut-proof-specializes-to-fixed-cut-legal-sharpness.json",
+      "sha256": "8aec9f543fa2f5364301b8a28c757d44b5617ce81f4620b05b19c6af8cb72bed"
+    },
+    {
+      "path": "map/edges/customer-amount-parity-extensions-round18-3a-1a77f739e77d40c2/terminal-amount-pays-two-player-branch-step.json",
+      "sha256": "95150db8b62547d5074d39b9eebea1971668e114682bd8c724c4b2565c6bd07c"
+    }
+  ],
+  "object_ids": [
+    "customer-attraction/mixed-cut-legal-leaf-amount-cap-sharp-harmonic",
+    "customer-attraction/two-player-spe-terminal-amount-column-sharp-constant"
+  ],
+  "read_object_ids": [
+    "customer-attraction/terminal-multichild-amount-normalized-sharp-column-cap-two",
+    "customer-attraction/fixed-cut-legal-leaf-amount-cap-sharp-r-plus-two",
+    "customer-attraction/nonterminal-amount-column-cap-two-lower-at-every-fixed-tail-length"
+  ],
+  "input_pins": {
+    "customer-attraction/mixed-cut-legal-leaf-amount-cap-sharp-harmonic": "7c2cf9706cac1c2d9556af824397af70c186920d66c4607337c2950bb53ec007",
+    "customer-attraction/two-player-spe-terminal-amount-column-sharp-constant": "19b1a3754431282b3393985e5b962e3aadf722fda4e8f22de9f7b431cdd1d846",
+    "customer-attraction/terminal-multichild-amount-normalized-sharp-column-cap-two": "a0b865b2a5f452b5d75309fa669b2c6a935fa064b630da71712df13be8aa49d0",
+    "customer-attraction/fixed-cut-legal-leaf-amount-cap-sharp-r-plus-two": "cdf0cdd8050ea83356c74bcec456b1e71e98da2a8e1b2e1257e5b1079afdacf3",
+    "customer-attraction/nonterminal-amount-column-cap-two-lower-at-every-fixed-tail-length": "65dfafb814e294ed5c5e7e96467d87b3d4bf3e9a33f0b10acf8d41467acb90f8"
+  }
+}

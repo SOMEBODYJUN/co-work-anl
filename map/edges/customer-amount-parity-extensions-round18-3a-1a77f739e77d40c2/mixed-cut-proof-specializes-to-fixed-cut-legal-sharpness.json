@@ -1,0 +1,47 @@
+{
+  "edge_id": "cag-1a77f7-mixed-cut-proof-specializes-to-fixed-cut-legal-sharpness",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/mixed-cut-legal-leaf-amount-cap-sharp-harmonic"
+  ],
+  "target_ids": [
+    "customer-attraction/fixed-cut-legal-leaf-amount-cap-sharp-r-plus-two"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、有限非空共同标签目录、m≥1 名有序玩家、终局均分。任意合法基叶 B，有限多个合法孩子在同一个切点 i_α=ℓ 之前逐位置保留 B，各 sender 跨孩子共用一份非负 AMOUNT。目标为该切点，正价按两叶的完整负载及实际交集差取值。",
+  "roles": {
+    "customer-attraction/mixed-cut-legal-leaf-amount-cap-sharp-harmonic": "提供逐 sender 金额控制、按实际目标客户计切前覆盖者的证明及 ℓ′=2 的单源锐族。",
+    "customer-attraction/fixed-cut-legal-leaf-amount-cap-sharp-r-plus-two": "接收在固定共同切点 i_α=ℓ 重新精化该证明所得的零端点、严格 r+2 上界及每个固定 m,ℓ 的合法锐性。"
+  },
+  "explanation": "把混切证明中的保留位置从逐源前 j 位换成统一的全部 ℓ−1 个切前位置。写 r=m−ℓ。每个孩子至多改 r+1 个位置，故对 y∈B_j 有 c_α(y)≤c_B(y)+r+1≤(r+2)c_B(y)。固定 x∈B_ℓ，记切前覆盖者数 k_x。若 k_x=0，x 无正价。若 k_x>0，在 x 的任一正价枝上 c_α(x)≥k_x，且 c_B(x)≥2，使 c_α(x)<(r+2)c_B(x)。所以每个含 x 的 sender 在这些孩子上的完整利润严格大于 p_j(B)/(r+2)。有限枝与逐源共享金额使该 sender 这部分非负系数之和严格小于 r+2。按全部 k_x 个 sender 相加，x 的总正价严格小于 (r+2)/c_B(x)。无切前覆盖的客户也满足该严格比较。有限非空 B_ℓ 上求和得严格列界。无切前 sender 或 B_ℓ 为空直接给零，空 sender 不做除法。\n\n尖锐性取混切定理的 ℓ′=2、m′=r+2 的一客户 X 与 L 客户 Y 锐族。保留位置 1 的 A=X∪Y，插入 ℓ−2 个两叶共有的空动作，把原第二位 D=X 及其唯一强制孩子的 T=Y 移到 ℓ。实际尾部仍为空，孩子尾部 r 人仍全取 T。插入空动作保持两叶每位旧角色的客户负载、价格和利润。p_1(B)=L+1/2，p_1(W)=1+L/(r+2)，q=p_ℓ(B)=1/2，令唯一正 λ 饱和逐源 AMOUNT，列比 (L+1/2)/(1+L/(r+2)) 随 L 趋 r+2。原路径和强制子树不相交，可以用同一份完整行动计划同时实现。r>0 时实际末位从空动作改取 T 收益 L/2，严格提高。",
+  "scope": "从混切对象的证明专门化到每个固定 m、固定共同切点及目标 ℓ。上界使用统一切前人数 k_x 和 r+1 个可变位置。混切的终值常数只在 ℓ=2 本身等于 r+2。尖锐性在合法叶及同一任意完整行动计划域，r>0 的锐族违反末位最优性。",
+  "whole_result": "专门化混切证明的逐源预算和切前计数，并把其 ℓ′=2 锐族以空前缀位置嵌入，完整得到同切目标 i=ℓ 的定理。ℓ=1 或 p_ℓ(B)=0 时列输出为零。每个固定 m、2≤ℓ≤m、正目标的有限实例列比严格小于 r+2，合法输入的上确界恰为 r+2，单 sender 和单孩子已可逼近，且同一任意完整计划可实现。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/多切点的合法叶金额列精确调和常数--定理.md",
+      "sha256": "a8d7bbc2893a1fa4f4dd0eeb6ac4100f586106e735057d4efeff4b6d06d9a72c"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/同一切点的合法叶金额列精确常数--定理.md",
+      "sha256": "549af79035511f2942c76090cb3f49ee89025342b6402a39a6492d3ea062224e"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读混切 v1、固定同切 v1 及共同完整历史定义，逐项核前缀保留、两叶负载、有限支撑严格性、跨孩子逐源共享金额及空动作嵌入的锐族。作用来自证明的共同切点特化，直接代入混切的较松终值只在 ℓ=2 恢复精确常数。",
+  "endpoint_pins": {
+    "customer-attraction/fixed-cut-legal-leaf-amount-cap-sharp-r-plus-two": "cdf0cdd8050ea83356c74bcec456b1e71e98da2a8e1b2e1257e5b1079afdacf3",
+    "customer-attraction/mixed-cut-legal-leaf-amount-cap-sharp-harmonic": "7c2cf9706cac1c2d9556af824397af70c186920d66c4607337c2950bb53ec007"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/多切点的合法叶金额列精确调和常数--定理.md": "a8d7bbc2893a1fa4f4dd0eeb6ac4100f586106e735057d4efeff4b6d06d9a72c",
+    "archives/customer-attraction/state/定理/同一切点的合法叶金额列精确常数--定理.md": "549af79035511f2942c76090cb3f49ee89025342b6402a39a6492d3ea062224e",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "1acc9668e00dad9cb9f3e06a3c4a5a7f2094b02c76317349930b1df9e573bd94"
+}

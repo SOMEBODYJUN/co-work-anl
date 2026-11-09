@@ -1,0 +1,50 @@
+{
+  "edge_id": "wc-3a-monomial-marginals-to-weighted-cycle-dual",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R1-MULTIPLIER-BARRIER"
+  ],
+  "target_ids": [
+    "weighted-congestion/cycle-support-weighted-dual-for-degree-ratio"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任取有限二动作模板的一个给定真实简单闭环Q。移动者i(s)权重w_{i(s)}>0，非移动者保持动作，资源用户集沿环回到起点。固定完整或proper列系，列为使用指示量乘实际负载的k次幂之旧项减β倍新项，0≤k≤d，β≥1。首次可行倍率下界另假定某固定a≥0在原α≥1的每个环行有严格正余量。",
+  "roles": {
+    "WC-R1-MULTIPLIER-BARRIER": "复用正文匹配上界中以移动者实际权w_i校准的显式单资源集合势和逐项式边际夹逼。该对象的多尺度下障碍用于辨别量词范围。",
+    "weighted-congestion/cycle-support-weighted-dual-for-degree-ratio": "把单列边际势的环上望远镜变为同一移动者权重概率，并由严格余量和有限概率单纯形给固定环的首次可行倍率区间。"
+  },
+  "explanation": "固定一个签名和一个次数k≥1，记用户集U的负载L(U)=Σ_{i∈U}w_i。用匹配上界的势Φ_k(U)=[L(U)^{k+1}+kΣ_{i∈U}w_i^{k+1}]/(k+1)。置x=L(U)/w_i，加入i的增量除以w_i^{k+1}为1+Σ_{j=1}^k binom(k,j)x^j/(k+1−j)。由于各系数位于(1+x)^k相应系数的1/k和1倍之间，得w_i L(U+i)^k/k≤Δ_iΦ_k≤w_i L(U+i)^k。k=1时两端相等。每个移出行用较大真实用户集的旧负载，故加权旧成本≤k倍该行势降。每个移入行用加入后的真实新负载，故该行势增≤加权新成本。闭环上总势降等于总势增，于是移出加权旧成本之和≤k倍移入加权新成本之和。两端都使用的行因对手固定且移动者继续使用，用户集和负载相同，加权旧新项相等，加入两侧仍保持该不等式。两端都不用时两成本均为零。k=0用Φ_0(U)=L(U)，移出与移入的加权常数项恰好相等，使用指示量确定是否收费。故每个列的加权旧总额≤max(1,k)倍加权新总额。逐列同时取λ_s=w_{i(s)}/Σ_{t∈Q}w_{i(t)}，环外为零，在β≥max(1,d)得到B_H(β)^Tλ≤0。第二句固定严格见证a≥0并记b_β(s)=(B_H(β)a)_s。原α时η=min_{s∈Q}b_α(s)>0。到达成本非负使b_β(s)随β非增，故在1≤β≤α，任一环上概率的b_β期望至少η，而对偶要求该期望a^TB_H(β)^Tλ≤0，矛盾。若β_n为环支撑的可行倍率且趋于有限β，环上有限概率单纯形给概率子列收敛，列约束连续，极限仍可行。可行集合因此闭，且由新成本非负而向上。它包含max(1,d)，与[1,α]不交，故首次可行倍率存在并属于(α,max(1,d)]。",
+  "scope": "同一给定闭环内逐真实资源签名及逐非负单项式检验，包含正实权、保留资源、零费、常数与仿射边界。有限正余量在原α逐环行检验，低倍率仅给排除区间。d=0或1时显式环对偶已经覆盖所有β≥1，因而没有该种严格见证环。",
+  "whole_result": "每个给定真实闭环Q在所有β≥max(1,d)均有同一环上概率对偶λ_s∝w_{i(s)}。若某非负系数向量在原α≥1对该环逐行严格改善，固定模板与Q的环支撑可行倍率集合为[β_Q,∞)，并有α<β_Q≤max(1,d)。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/障碍/任意玩家乘子的多尺度边际夹逼--障碍.md",
+      "sha256": "a8a81a49e28d9aa79571dda74c10e0ac45123f3ed2298b8625a1cfb3794e13ac",
+      "section": "近线性量级与匹配的夹逼上界"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/奇偶暂态支撑的精确次数和闭环对偶的倍率界--定理.md",
+      "sha256": "6beb765ddfb66d880ad69f95a3ae505c266b4a0bd210cdd29bf062a37fe6defa",
+      "section": "任意闭环在倍率至少 max(1,d) 时有按移动者权重的概率对偶"
+    },
+    {
+      "path": "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md",
+      "sha256": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a",
+      "section": "精确矩阵与全部量词"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐单项式验了k=0、k=1和一般k，核对加入、移出、保留、未用四种真实负载及环回同一用户集。下端排除直接对任意环上的非负严格见证证明，有限单纯形给端点闭性，植入合同无需作为一般环的附加假设。",
+  "endpoint_pins": {
+    "WC-R1-MULTIPLIER-BARRIER": "e6fb48b0e56b2ea9614281bab93077f5c5a2a9be25a88f66b7728a85ad0c84cf",
+    "weighted-congestion/cycle-support-weighted-dual-for-degree-ratio": "8235f060341973f62c6a6cc71cf7e850978aa22fce4f17d728c679ea42b57ea6"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/障碍/任意玩家乘子的多尺度边际夹逼--障碍.md": "a8a81a49e28d9aa79571dda74c10e0ac45123f3ed2298b8625a1cfb3794e13ac",
+    "archives/weighted-congestion/state/定理/奇偶暂态支撑的精确次数和闭环对偶的倍率界--定理.md": "6beb765ddfb66d880ad69f95a3ae505c266b4a0bd210cdd29bf062a37fe6defa",
+    "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a"
+  },
+  "review_digest": "c86aae3468669fc640c82716b52875f0bc01ac3772922756733658a29febe410"
+}

@@ -1,0 +1,57 @@
+{
+  "edge_id": "three-facility-disjoint-coverage-solves-repeated-site-subdomain",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "facility-games/common-many/three-facility-disjoint-repeated-sharp-two"
+  ],
+  "target_ids": [
+    "facility-games/common-many/three-facility-repeated-site-factor-two-question"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取恰三家带标签设施、有限非空共同目录 S、有限正实权原子客户。不同物理站的覆盖集两两不交，允许空站。保留同时纯选址、强制服务、独立混合、实际线性含自重成本和全 S³ 的精确客户 NE 规则。可在同一原目录中选重复布局，实际偏离遍历全部原目录。",
+  "roles": {
+    "facility-games/common-many/three-facility-disjoint-repeated-sharp-two": "给出不交覆盖时全布局站内独立均匀的精确续局、最高两站的重复选址分支，以及任意真实续局下三个单位独占站的锐例。",
+    "facility-games/common-many/three-facility-repeated-site-factor-two-question": "收到允许全共址或恰两家同址的二倍完整续局在两两不交子域的肯定结论。原问题的交叠覆盖量词仍待处理。"
+  },
+  "explanation": "令 M_t=Σ_{i∈C_t}w_i，q_t 为任一给定标签布局在站 t 的设施数。因站间覆盖不交，若 i 的唯一可达物理站 t 已占，i 在本站 q_t 家独立均匀选一家；其任一可达行动的条件成本均为 w_i+(M_t−w_i)/q_t。站未占或无可达站的客户未被服务。故同一规则在全 S³ 逐点给精确客户 NE，每个已占站的各标签收益 M_t/q_t。\n\n将站按总重排序，写 s₁、s₂ 为前两站，M₁≥M₂≥M₃ 为前三站总重，不足三站的缺项记零。若只有一站或 M₁=0，全共址精确稳定，分别因为没有实际换址及全部收益为零。否则当 M₂≤M₁/3，三家放在 s₁，各得 M₁/3；任何真实换址到空站 r 只得 M_r≤M₂，故精确稳定。若 M₂>M₁/3，取 (s₁,s₁,s₂)，在轨收益 (M₁/2,M₁/2,M₂)。成对者移到 s₂ 得 M₂/2≤M₁/2，移到未占站得 M_r≤M₃。单例移到 s₁ 得 M₁/3<M₂，移到未占站得 M_r≤M₃≤M₂。两个分支均使用同一完整规则，故 M₁>0 时达到倍率 max{1,2M₃/M₁}≤2。\n\n下界允许任意完整精确独立混合续局。当 M₃>0，任一重复布局最多占两站，前三站中存在空站 r 且 M_r≥M₃。任一共址组至少两家，强制服务及不交性使其在轨收益总和为该站总重，故有一家 f 收益 L_f≤M₁/2。f 搬至 r 后，所有 C_r 客户只可选 f，任一离轨 NE 均给 f 收益 M_r。设施稳定必有 M₃≤M_r≤αL_f≤αM₁/2。与 α≥1 合并即得上述精确最优倍率；M₃=0 时上界为1，M₁=0 时亦取1。三个等重独占站给 M₁=M₃>0，故重复形式的统一倍率恰2。此例三家全异址时各自独占一个单位客户，在同一站内均匀规则下移到另一已占站只得1/2，故无布局限制时此例精确稳定。",
+  "scope": "目标问题的两两不交覆盖子域，目录规模任意，存在域保正实权。最优倍率按一份可选完整规则与一个重复在轨布局取最优，上界显式给出规则，下界容许任意真实续局。",
+  "contribution": {
+    "result": "两两不交覆盖的每个恰三家合法输入都有重复坐标布局及全 S³ 精确客户 NE 续局，所有真实换址收益至多在轨两倍。设 M₁、M₃ 为第一、第三大站重，不足三站令 M₃=0，则 M₁>0 时可达到的最佳重复倍率恰为 max{1,2M₃/M₁}，零覆盖时为1。三个单位独占站使统一常数恰2。",
+    "remaining": "结合既有至多两站的肯定特例，尚须处理至少三站且至少一对覆盖集相交的合法输入。共享客户可跨已占站改变最优行动，空站开设也未必强制其全部覆盖客户去偏离者。肯定解仍须给同一重复在轨 NE 和一份全 S³ 续局，反例须排除全部重复布局及所有可选独立混合精确续局。"
+  },
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/三设施两两不交覆盖的重复占位锐二界--定理.md",
+      "sha256": "617ded89400e9b49f0a1c14f8a8213561f01ad9b567036263c3e0ea4a74e7c57"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+      "section": "输入、时序与实际成本"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+      "section": "一份完整续局的量词"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/问题/三设施重复占位的二倍完整续局--问题.md",
+      "sha256": "9d2d304cd595b8f17adfbbae80436f54bf5fb70885681ab184b667668f13980b",
+      "section": "独立问题和已解决的原旗舰目标"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读核心定理、共同模型、一般重复问题及全共址基线。逐客户核条件成本并复算全目录四类换址，用共址组收益和及空站客户唯一可达证明任意续局的精确下界。独立精确分数复算保存的两站例8布局和24次实际换址，并抽查1554个不交站重向量的均匀规则；一般结论由边内上下界证明。",
+  "endpoint_pins": {
+    "facility-games/common-many/three-facility-disjoint-repeated-sharp-two": "981b2f786be3ac9a24164b5760dbb488ee14f342a037942d0b85f0afca58e6db",
+    "facility-games/common-many/three-facility-repeated-site-factor-two-question": "9afa13c7e12a39e39330c4429e9822041827225e8bd4d0ef9e45fd5c7ad71e5d"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/定理/三设施两两不交覆盖的重复占位锐二界--定理.md": "617ded89400e9b49f0a1c14f8a8213561f01ad9b567036263c3e0ea4a74e7c57",
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+    "archives/facility-games/subarchives/common-many/state/问题/三设施重复占位的二倍完整续局--问题.md": "9d2d304cd595b8f17adfbbae80436f54bf5fb70885681ab184b667668f13980b"
+  },
+  "review_digest": "4b9a2e19229327e635b097f8accb1969b39bfd92a656d2b35141defa47e11a72"
+}

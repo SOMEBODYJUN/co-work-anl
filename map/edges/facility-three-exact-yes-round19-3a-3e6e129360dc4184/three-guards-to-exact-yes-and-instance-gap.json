@@ -1,0 +1,67 @@
+{
+  "edge_id": "fac-3e6e-three-guards-to-exact-yes-and-instance-gap",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-THREE-DECa-HARD",
+    "facility-games/common-catalog-empty-sites-preserve-full-continuation-ratio"
+  ],
+  "target_ids": [
+    "facility-games/three-site-low-threshold-reduction-exact-yes-factor"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定有理 1<a<σ=(1+√3)/2，取原 SUBSET SUM 归约的 R_B=R>R_A=J>R_C=L 模板输出及其原补数和正权守卫。两带标签设施共享目录，允许同址和空覆盖，正权原子客户被覆盖即须服务，独立混合精确 NE 逐有序布局补全。添加的是两家均可访问的两个不同新空点。",
+  "roles": {
+    "SC-THREE-DECa-HARD": "提供原构造、BC 的全 NE 局部谱 (L)、(T3) 的精确恒等式、(G3) 的严格守卫与源 YES 的 AC 规则。逐有序布局重用守卫以得到三地点下界和 NO 的显式正间隙。",
+    "facility-games/common-catalog-empty-sites-preserve-full-continuation-ratio": "在三地点的实际倍率及正间隙已证明后，用对每个有限 α 的稳定存在性双向等价逐实例保持该倍率。",
+    "facility-games/three-site-low-threshold-reduction-exact-yes-factor": "接收原三地点输出的 YES 恰为 a、NO 逐实例显式正间隙、统一清分母的不变性及同一输出加两空点后的精确保留。"
+  },
+  "explanation": "记 V=R+L−W=2J−W 为 BC 覆盖并集总重，m₀=(V−Q)/2，h=m₀/a，k=βW。BC 的独占背景为 R−W 与 L−W，差 δ=R−L，故 (L) 适用于 BC 的完整精确 NE 谱。以 B 方减 C 方为 Δ，B 方的真实最小收益 μ=(V+min Δ)/2≥m₀，且等号当且仅当源 YES。最小值由有限维闭 NE 集的紧性达到。(T3) 给 V−m₀=J/a 和 m₀=ah。AB 唯一公共客户严格选较小 reach 的 A，收益 (J,k)。AC 唯一公共客户严格选 C，收益 (h,L)。\n\n源 YES 的 AC 上界。选有序在轨 (A,C) 及其精确 NE。A 方去 B 时在 (B,C) 指定达到 μ 的续局，收益 μ=m₀=ah，去 C 时在 (C,C) 对半得 L/2<m₀。C 方去 B 时在 (A,B) 得 k<aL，去 A 时在 (A,A) 对半得 J/2<aL。同址每个客户取 1/2 时两条件成本相等。四个目的布局互异，其余布局各自补精确 NE，故有完整 a 稳定规则。\n\n三地点下界。任取在轨精确 NE 和全部离轨精确 NE。令 x 为所选偏离方的当前收益、v 为该实际偏离的收益。AA 取较低方 x≤J/2，去 C 得 v=L>aJ/2。BB 取较低方 x≤R/2，去 A 得 v=J>aR/2。CC 取较低方 x≤L/2，去 B 保 v≥μ≥m₀>aL/2。AB 的 B 方有 x=k，去 C 得 v=L>ak。AC 的 A 方有 x=h，去 B 保 v≥μ≥m₀=ah。BC 中 B 方收益 x_B≥μ，C 方当前收益 x=V−x_B≤V−m₀=J/a，去 A 得 v=J≥ax。这些保证对偏离目的布局中的每个精确 NE 成立。交换两设施标签并反射续局得到 BA、CA、CB 三种有序布局，覆盖共九种。每一行 v>0 且 v≥ax，所以任意 α<a 违背 v≤αx，也覆盖 x=0。与 AC 上界合并得到三地点源 YES 的 α*=a。\n\n三地点 NO 的显式间隙。令 g=μ−m₀>0。AA、BB、CC、AB 分别给乘法下界 v≥(a+δ_row)x，其中 δ_row 依次是 2L/J−a、2J/R−a、2m₀/L−a、L/k−a，均由 (G3) 严格为正。AC 以 v≥ah+g 给 δ_AC=g/h>0。BC 写 C 方收益 y=V−x_B，则 0≤y≤J/a−g，故 J−ay≥ag≥(a²g/J)y。这样 v=J≥(a+a²g/J)y，在 y=0 时仍有 v>0。六行各给正的倍率余量，反射保持每一余量。因此 α*−a≥min{2L/J−a, 2J/R−a, 2m₀/L−a, L/k−a, g/h, a²g/J}>0。此下界随实例变化。\n\n统一清分母。用同一个正整数乘所有客户权，每名客户在原混合概率向量下的两条件成本同倍缩放，因此全部布局的精确 NE 集不变。设施在轨及偏离收益、μ、m₀、g 同倍缩放，所有乘法约束等价，六项倍率余量逐项不变。原固定参数构造的分母总位长为多项式，得到正二进制整数输出。\n\n空点迁移。三地点的等式和间隙成立后，加入两个不同的空覆盖地点。旧上轨可保留原规则并给新增布局指定强制纯 NE，去空点收益为零。逆向，旧上轨可直接限制规则。若双方上轨都在新增空点，零收益稳定要求每个旧点都空，原实例有倍率 1。若一方在新空点、另一方在旧 t，零方去任一旧 s 要仍能得零，迫 C_s⊆C_t。偏离到同址 (t,t) 时零收益迫全体选另一方。若 C_t 有至少两名正权客户，任何一人改去空载侧严格降成本，故 C_t 至多一名客户。原目录以 (t,t) 上轨，把至多一名客户都交给另一方。零方去任一旧点时仍可指定这个纯去向，另一方已取得最大可能收益，其余布局可补纯 NE，得到倍率 1。故逐个有限 α 的存在性双向保持，实际 α* 及 NO 下界原样迁到恰五地点。",
+  "whole_result": "从 SC-THREE-DECa-HARD 的原三地点低段构造与空点保持定理推出目标整条结论。对每个固定有理 1<a<σ 及该 R>J>L 模板的每个输出，源 YES 的 α*=a，源 NO 的 α* 至少为 a 加六类守卫的显式正最小间隙。统一清分母保等式与该下界，再加两空点逐实例保持实际 α*。",
+  "scope": "限原 R>J>L 三地点模板的低段和该输出的两空点扩展。五地点中心宏／桥宏构造独立覆盖固定 1<a<φ。三地点 σ≤a<φ 仍待分类。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+      "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+      "section": "局部源的精确接口"
+    },
+    {
+      "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+      "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+      "section": "三地点固定1<a<σ：改变reach顺序后的守卫"
+    },
+    {
+      "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+      "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+      "section": "位长、NO间隙、NP成员性与“弱”"
+    },
+    {
+      "path": "archives/facility-games/state/定理/共同目录添加空地点的完整续局倍率保持--定理.md",
+      "sha256": "81ac4a0744aa6a44e5970dec4d3c394ddd2832acabaaa702516b64f1f0689c10"
+    },
+    {
+      "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+      "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09",
+      "section": "完整规则与设施稳定的量词"
+    },
+    {
+      "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+      "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09",
+      "section": "固定布局上的精确客户NE"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "用原 (L)、(T3)、(G3) 逐类核四个固定正余量及 AC、BC 两个 g 余量。先完成三地点 YES 的两向夹逼，再核空点桥的三类逆向在轨及统一缩放。对 BC 零收益直接使用乘法式，对三种异址均反射设施标签。",
+  "endpoint_pins": {
+    "SC-THREE-DECa-HARD": "715f0caa2bde967e8793b399b51e2102f07bd4b7ddf237636359cc5621b6541e",
+    "facility-games/common-catalog-empty-sites-preserve-full-continuation-ratio": "0ab59afbcbc4e75ce78152ab96ecfda7545101c45f21c6c189c6b62db2e236f3",
+    "facility-games/three-site-low-threshold-reduction-exact-yes-factor": "690962784f021ce5d9bbb4bf9d10dcf84557f65ac7d2eed7b109f237a30061d7"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+    "archives/facility-games/state/定理/共同目录添加空地点的完整续局倍率保持--定理.md": "81ac4a0744aa6a44e5970dec4d3c394ddd2832acabaaa702516b64f1f0689c10",
+    "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09"
+  },
+  "review_digest": "312644ec6f69bfbc353f8d0d321e9e8be6d1f6d47fffcddd1094fdf4dde82f49"
+}

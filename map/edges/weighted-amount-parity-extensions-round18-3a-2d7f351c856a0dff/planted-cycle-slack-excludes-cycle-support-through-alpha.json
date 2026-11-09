@@ -1,0 +1,57 @@
+{
+  "edge_id": "wc-3a-planted-cycle-slack-excludes-cycle-support-through-alpha",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1"
+  ],
+  "target_ids": [
+    "weighted-congestion/cycle-support-weighted-dual-for-degree-ratio"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "采用必要暂态质量对象的严格α≥1输入环、proper正费用资源、补权、旗标和完整proper列锥。固定植入选择器H及其唯一真实闭环Q，并把同一原非负系数向量a零延拓到该锥。只在1≤β≤α使用该见证。",
+  "roles": {
+    "WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1": "给植入后每个环行的严格余量、暂态行的有限负部界，以及同一面上的全暂态可行对偶。",
+    "weighted-congestion/cycle-support-weighted-dual-for-degree-ratio": "接受固定植入环在原倍率及以下全部环支撑失效的下端证明。"
+  },
+  "explanation": "写b_β=B_H(β)a，η=min_Q b_α>0，M=max_{s∉Q}(-b_α(s))_+。同一非负见证a逐行给b_β=b_α+(α−β)C_new，其中C_new是所选玩家沿真实偏离的新成本，非负。故1≤β≤α时，b_β在环上≥η，环外≥−M。任取β的概率对偶μ，令t为暂态质量，0≥a^TB_H(β)^Tμ=E_μ b_β≥η(1−t)−Mt，遂t≥η/(η+M)>0。M=0给t=1。旧对象的固定奇偶分布在全proper列仍可行，所以低倍率约束的是对偶质量的摆放，且排除给定Q上的任何支撑概率。目标的高倍率显式环概率与这个区间相容。若扩至完整签名列系，限制回proper列可同样排除低倍率的环上概率，因为零延拓的a仍合法。",
+  "scope": "固定植入模板及其唯一环，次数帽保持d。对全部1≤β≤α有效，原η/(η+M)仍可用。较高倍率需另外验证环上分布，精确恢复值随环与列系而定。",
+  "contribution": {
+    "result": "给定植入环的每个1≤β≤α概率对偶仍至少有η/(η+M)暂态质量，故该闭环支撑在这些倍率全部不可行。",
+    "remaining": "整条目标还需对任意真实闭环构造β≥max(1,d)的移动者权重概率，并用一般闭环严格见证和固定环概率单纯形的紧性得到首次可行倍率区间。"
+  },
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/奇偶暂态层与完整锥必要质量--定理.md",
+      "sha256": "9c7c399a3d42d6a1e3a7921221e504bf3784145ed1cead3fdd553c036dc8f01e"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/奇偶暂态层与完整锥必要质量--定理.md",
+      "sha256": "9c7c399a3d42d6a1e3a7921221e504bf3784145ed1cead3fdd553c036dc8f01e",
+      "section": "构造、分离和质量界"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/奇偶暂态支撑的精确次数和闭环对偶的倍率界--定理.md",
+      "sha256": "6beb765ddfb66d880ad69f95a3ae505c266b4a0bd210cdd29bf062a37fe6defa",
+      "section": "任意闭环在倍率至少 max(1,d) 时有按移动者权重的概率对偶"
+    },
+    {
+      "path": "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md",
+      "sha256": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a",
+      "section": "精确矩阵与全部量词"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对了原proper费用系数的零延拓、β变化的方向、环上和暂态余量界及期望分离。此边只把必要暂态质量延伸到原倍率以下，并把植入实例的下端排除交给目标。",
+  "endpoint_pins": {
+    "WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1": "d6e6f6cdd404dc1193d945982774ec476a9f29d91249f6672daa69f5037d6479",
+    "weighted-congestion/cycle-support-weighted-dual-for-degree-ratio": "8235f060341973f62c6a6cc71cf7e850978aa22fce4f17d728c679ea42b57ea6"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/奇偶暂态层与完整锥必要质量--定理.md": "9c7c399a3d42d6a1e3a7921221e504bf3784145ed1cead3fdd553c036dc8f01e",
+    "archives/weighted-congestion/state/定理/奇偶暂态支撑的精确次数和闭环对偶的倍率界--定理.md": "6beb765ddfb66d880ad69f95a3ae505c266b4a0bd210cdd29bf062a37fe6defa",
+    "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a"
+  },
+  "review_digest": "a199cc57ab92ccee7773cbe541dba472b4a73b49997ef79a362737aa3b104ff7"
+}

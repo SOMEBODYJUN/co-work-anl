@@ -1,0 +1,56 @@
+{
+  "edge_id": "wc-3a-parity-columns-to-exact-fixed-support-recovery",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-TRANSIENT-PARITY-SELECTOR-DUAL-v1"
+  ],
+  "target_ids": [
+    "weighted-congestion/parity-transient-support-exact-degree-at-one"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定旗标为0且非活跃位固定的偶活跃面S。取r=d+1≥1个活跃对手位y，移动者1的当前位为Σ_j y_j模2，其权w>0，对手权v_j>0。面上选择器行均真翻移动者1，旧、新成本按各端实际负载求值。固定完整或proper非空签名列系，含移动者仅在一个动作使用的两种配对列。倍率β≥1，初始次数帽为d，恢复问题的次数帽恰为r。",
+  "roles": {
+    "WC-TRANSIENT-PARITY-SELECTOR-DUAL-v1": "给原偶活跃面、翻1的真实行和β=1时低阶奇偶抵消，支付均匀概率的可行性。固定背景时保留同一消元机制。",
+    "weighted-congestion/parity-transient-support-exact-degree-at-one": "在同一面和选择器行上，确定次数d的唯一解、升一次后的精确违例与恢复倍率。"
+  },
+  "explanation": "令p(y)=(-1)^{Σ_j y_j}，故移动者在动作0当且仅当p(y)=1。原对象在β=1把旧费用的偶活跃和与翻1后奇活跃和配对。冻结用户只加固定背景b≥0。对签名使用谓词f_j，任一单项式的用者成本函数f_1(x_1)(w+b+Σ_j v_j f_j(y_j))^k在活跃布尔位上的多线性次数≤k+1≤d+1<r+1。其每项遗漏一活跃位，沿该位配对消去交替和，故均匀概率在β=1的全部列恰为零。对任意T⊆[r]，选T中的对手仅在动作1使用，其余对手及冻结者不用，移动者仅在动作0或仅在动作1使用。对应次数|T|的两列，在β=1恰为±p(y)F_T(y)，F_T=(w+Σ_{j∈T}v_j y_j)^{|T|}，F_∅=1。每个非零旧项或新项的真实负载都含移动者自己的w。布尔多线性化后，F_T的满积系数为|T|!∏_{j∈T}v_j>0，余项只用T的真子集。由归一化概率λ的两列非正得Σ_y p(y)λ_y F_T(y)=0，按|T|三角消元等价于相应的布尔单项式矩均为零。次数帽d=r−1时，真子集单项式张成2^r−1维空间，其对普通点积的正交余空间由p张成。因此pλ为p的标量倍数，λ由归一化确定为均匀。升到r时两列再强制满积矩为零，所有布尔单项式正交使pλ=0，违背归一化。均匀概率对全活跃配对列的一正一负期望绝对值为C/2^r，C=r!∏v_j，来自满积项在y=1^r的贡献。对一般β，翻任意一组活跃对手位并在翻位数为奇数时交换移动者动作。此置换保持S、把每个行的两个真实端点一同重标记，并置换完整或proper列，冻结位不动。任一可行λ的各置换像仍可行，群在S上传递，平均给均匀概率。接着逐列检验均匀概率。移动者只在一动作使用时，其使用端费用为(w+b+Σ_j v_j z_j(y_j))^k，z_j取0、1、y_j或1−y_j。比较同一函数在两对手奇偶类的和，两种移动者用法给互为倒数的约束。若k<r或有z_j恒定，至少一位在每项中缺失，两和相等。否则k=r且每位非恒定，重标记后差的绝对值为C，总和为M(b)=Σ_y(w+b+Σ_jv_j y_j)^r。两奇偶和皆正，故较大比为(M(b)+C)/(M(b)−C)。M(b)随b增加，比例随M(b)下降，冻结用户全不用的合法全活跃proper列在b=0达到最坏比。移动者两动作均使用时用户集不变，列为(1−β)乘同一非负成本，两动作均不用时列为零。由此获得完整和proper列系的同一闭门槛。",
+  "scope": "每个整数d≥0、任意所列正实权，原旗标面或植入后同样固定背景的偶活跃面。恢复门槛仅量化该面的归一化概率，适用于所给选择器的同一组行与最高次数恰为d+1的两种列系。",
+  "whole_result": "固定S，在β=1和次数至多d时均匀概率是唯一对偶。次数增至r=d+1时β=1无S支撑概率对偶，旧均匀概率的一个合法全活跃proper列违例恰为r!∏v_j/2^r。次数帽恰为r时，对同一S存在概率对偶当且仅当β≥(M+C)/(M−C)，其中M=Σ_y(w+Σ_j v_j y_j)^r，C=r!∏v_j，端点由均匀概率达到。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/奇偶暂态层与完整锥必要质量--定理.md",
+      "sha256": "9c7c399a3d42d6a1e3a7921221e504bf3784145ed1cead3fdd553c036dc8f01e",
+      "section": "公共模型和原始奇偶身份"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/奇偶暂态支撑的精确次数和闭环对偶的倍率界--定理.md",
+      "sha256": "6beb765ddfb66d880ad69f95a3ae505c266b4a0bd210cdd29bf062a37fe6defa",
+      "section": "固定奇偶支撑在倍率1时的精确次数边界"
+    },
+    {
+      "path": "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md",
+      "sha256": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a",
+      "section": "精确矩阵与全部量词"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有限动作资源签名压缩--定理.md",
+      "sha256": "b65ee24853893fbba0259ebbd6352505d5ddbd54c47253fe417605cf11e758e2",
+      "section": "模型和精确合同"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复核了proper配对列的实际新旧负载、满积唯一系数、真子集余空间、对手翻位诱导的行列置换，以及冻结背景从零增加时最坏比的单调性。原奇偶对象只支付低阶可行性，新增部分由本边自足证明。",
+  "endpoint_pins": {
+    "WC-TRANSIENT-PARITY-SELECTOR-DUAL-v1": "518b9658c8dd423aebc80bb0f0467568c28c628d3c8c60ee9f2fe4b6437d7505",
+    "weighted-congestion/parity-transient-support-exact-degree-at-one": "0bb286dd1c6595a9ab723617c9cef74f5c0b358ff523b9e53b6018c4e95bca11"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/奇偶暂态层与完整锥必要质量--定理.md": "9c7c399a3d42d6a1e3a7921221e504bf3784145ed1cead3fdd553c036dc8f01e",
+    "archives/weighted-congestion/state/定理/奇偶暂态支撑的精确次数和闭环对偶的倍率界--定理.md": "6beb765ddfb66d880ad69f95a3ae505c266b4a0bd210cdd29bf062a37fe6defa",
+    "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a",
+    "archives/weighted-congestion/state/定理/有限动作资源签名压缩--定理.md": "b65ee24853893fbba0259ebbd6352505d5ddbd54c47253fe417605cf11e758e2"
+  },
+  "review_digest": "5d3b7792a5ddb91fe557f7dcdcf1b87aa5a1d04e468e1cddf16f9d81764bdcf7"
+}

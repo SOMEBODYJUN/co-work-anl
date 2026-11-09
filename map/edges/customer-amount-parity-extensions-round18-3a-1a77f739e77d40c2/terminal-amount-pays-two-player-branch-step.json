@@ -1,0 +1,61 @@
+{
+  "edge_id": "cag-1a77f7-terminal-amount-pays-two-player-branch-step",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/terminal-multichild-amount-normalized-sharp-column-cap-two"
+  ],
+  "target_ids": [
+    "customer-attraction/two-player-spe-terminal-amount-column-sharp-constant"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、有限非空共同标签目录、终局均分。取 m=2，原叶 (A,D)，孩子 (A,T_α) 仅强制第二位，有限孩子共用第一位的一份非负 AMOUNT。此步也适用于任意合法基叶。",
+  "roles": {
+    "customer-attraction/terminal-multichild-amount-normalized-sharp-column-cap-two": "末层客户移出后负载恰为原负载减一，保留第一位固定覆盖及跨所有孩子的金额预算。",
+    "customer-attraction/two-player-spe-terminal-amount-column-sharp-constant": "接收二人上界中先于末位复制 IC 的精确逐枝价格与预算归并步骤。"
+  },
+  "explanation": "写 a=|A∩D|、b=|A∖D|、s_α=|(A∩D)∖T_α|。原交叠客户原负载为 2，从第二位移出的 s_α 个客户在孩子中恰有第一位覆盖，故 q_{α,1,2}=s_α/2。它们各给第一位一单位收益，余下 a+b−s_α 个 A 客户各至少给一半，故 p_1(A,T_α)≥(a+b+s_α)/2。a>0 时逐枝 q_{α,1,2}/p_1(A,T_α)≤s_α/(a+b+s_α)≤a/(2a+b)。以同一 AMOUNT 对全部枝求和，得到 Q₂≤p_1(A,D)a/(2a+b)=(b+a/2)a/(2a+b)。若 a=0，全 q 为零，亦包含空 sender 和零目标。这一步不使用基叶的最优性。",
+  "scope": "末层上界 v2 的负载恒等式及 AMOUNT 在二人域的细化。输出是相对于第一位原利润的上界和零交叠端点。全人数统一二及固定二人真实锐值各有自己的量词和尖锐性。",
+  "contribution": {
+    "result": "在二人合法基叶和任意有限第二位孩子中，q=s/2、p_1(A,T)≥(a+b+s)/2。跨枝共享一份第一位 AMOUNT 推出 Q₂≤(b+a/2)a/(2a+b) 对 a>0 成立，a=0 时 Q₂=0。",
+    "remaining": "要得到完整二人真实定理，还需由实际末位复制 A 的合法偏离给 d=|D∖A|≥b/2，以 p₂=d+a/2 归一并最大化 (2t+1)/[(1+t)(2+t)]，用整数客户的有理 t=b/a 排除等号。还须给出全部第二位有序历史及根均满足真实最优性的三主题逼近策略，确认固定二人常数为 4−2√3。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/末层多孩子金额预算的锐两倍列容量--定理.md",
+      "sha256": "dae097bf1c0576d6ab8b417505f0b99280192fd80b11571d5f190ed8e78766c3",
+      "section": "任意多个孩子共享一份金额预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末层多孩子金额预算的锐两倍列容量--定理.md",
+      "sha256": "dae097bf1c0576d6ab8b417505f0b99280192fd80b11571d5f190ed8e78766c3",
+      "section": "自足证明及全部零端点"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/二人真实SPE金额列的精确常数--定理.md",
+      "sha256": "050633073ac546d6dbe0e6982d0c2b56caab91c67d1698ef88b2e7ec4a449e73"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/terminal-amount-cap-and-audit-primary/original/research/workspaces/customer-attraction/R-5a15745a45ba44adb7d26c0557faacb7/parent/terminal_amount_cap.md",
+      "sha256": "cbd126cde77a5d8cb9fb3665c11829b28a2a8a418fe1590c5d5f185af61d3153"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读末层 v2、原末层代数、二人 v1 和共同历史定义，核对逐枝两个负载、覆盖大小与唯一 sender 的共享 AMOUNT。末位复制的激励条件、严格极值与全历史锐性由二人原证明另外支付。",
+  "endpoint_pins": {
+    "customer-attraction/terminal-multichild-amount-normalized-sharp-column-cap-two": "a0b865b2a5f452b5d75309fa669b2c6a935fa064b630da71712df13be8aa49d0",
+    "customer-attraction/two-player-spe-terminal-amount-column-sharp-constant": "19b1a3754431282b3393985e5b962e3aadf722fda4e8f22de9f7b431cdd1d846"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/末层多孩子金额预算的锐两倍列容量--定理.md": "dae097bf1c0576d6ab8b417505f0b99280192fd80b11571d5f190ed8e78766c3",
+    "archives/customer-attraction/state/定理/二人真实SPE金额列的精确常数--定理.md": "050633073ac546d6dbe0e6982d0c2b56caab91c67d1698ef88b2e7ec4a449e73",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/tools/evidence/terminal-amount-cap-and-audit-primary/original/research/workspaces/customer-attraction/R-5a15745a45ba44adb7d26c0557faacb7/parent/terminal_amount_cap.md": "cbd126cde77a5d8cb9fb3665c11829b28a2a8a418fe1590c5d5f185af61d3153"
+  },
+  "review_digest": "e2939fc9697ffe831704107d95e87361e3852be72147bc08a53f403c0fae7f4d"
+}
