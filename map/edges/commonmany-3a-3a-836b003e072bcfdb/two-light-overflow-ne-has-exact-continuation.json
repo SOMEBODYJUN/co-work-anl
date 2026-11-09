@@ -1,0 +1,61 @@
+{
+  "edge_id": "commonmany-two-light-overflow-ne-has-exact-continuation",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-TWO-LIGHT-LOWER-POTENTIAL-NO",
+    "MF-MODEL"
+  ],
+  "target_ids": [
+    "SC-K-2-E"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "反例的整个严格贪心整数族 n≥45 且 5|n，γ=n，q=(3,2,1,1)，地点顺序 H,M,L,R。 固定见证的贪心占位和任一固定带标签实现，客户在其所选站的同址设施之间独立均匀。用所有目录地点作实际偏离目标。",
+  "roles": {
+    "SC-K-TWO-LIGHT-LOWER-POTENTIAL-NO": "给唯一加权下盒势极小点 X=M,Y=L，虽 L 超上盒 1 但该点是全部原选项上的精确在轨客户 NE；各站负载为 (16n/5−1,14n/5,2n+1,n)。",
+    "MF-MODEL": "每个固定标签布局都有纯精确客户 NE；同一物理地点的两个设施标签交换不改变可达性，故同时交换纯赋值标签仍得同布局的精确 NE。",
+    "SC-K-2-E": "要求同一带标签在轨布局有完整精确客户续局，并同时控制所有设施的单方迁址收益。此边构造见证实例上的更强逐偏离严格不等式。"
+  },
+  "explanation": "在轨每家设施收益至少 γ。任一 f 迁往 r≠s_f，r 原已占，迁入后有 q_r+1 家。对所有 r，(该站覆盖人数；迁入后的设施数) 依正文顺序分别为 (2,3,2,1；4,3,2,2)。在任一纯精确续局中，r 若有空设施即取它；否则每家至少一名客户，而 r 最多覆盖 q_r+1 名，故每家恰一名。r 只覆盖一名私有客户，q_r+1≥2，于是某家只负载一个轻原子，其重最多 n−1。把 f 与所取设施的标签在客户赋值内交换，f 得到该负载，其余客户的可达成本比较也只被重命名。故 L_f'≤n−1<γ≤L_f。源站即使消失，这个按目标站全部覆盖人数作的论证也不变。每个实际偏离改变唯一标签坐标，各布局互异；逐点保存其纯 NE，其他布局以确定纯改善默认，得到同一完整续局。",
+  "scope": "对该反例全整数族和所选溢出 NE 成立。其 L 上盒溢出为选择器失败，但这一在轨 NE 在原游戏有精确 SPE 续局。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/反例/两种轻权的下盒势极小值溢出族--反例.md",
+      "sha256": "bb57ab9f39fa61e23b1cc1f3eefe0d5b222e49e0a8bb8885b66c5e1c3c0d407a",
+      "section": "四赋值的全称代数"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/反例/两种轻权的下盒势极小值溢出族--反例.md",
+      "sha256": "bb57ab9f39fa61e23b1cc1f3eefe0d5b222e49e0a8bb8885b66c5e1c3c0d407a",
+      "section": "无平局真实贪心输入"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+      "section": "每个布局都可明确指定纯客户均衡"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+      "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+      "section": "六、把全部局部选择拼成一个完整函数"
+    }
+  ],
+  "reviewed_by": "Boss1-common-many-certificate-counterexamples-worker",
+  "review_note": "从正文原子菜单逐站核覆盖基数、轻权上界和在轨最小收益。设施重标记仅用于各单独偏离布局中的客户纯赋值，既不把在轨标签布局取商，也不要求离轨采取同址对称混合。",
+  "contribution": {
+    "result": "该整数族的唯一溢出势极小者本身能用纯离轨续局支持精确 SPE；每次实际偏离严格降低该偏离者收益。",
+    "remaining": "这里只证反例指定的实例与在轨 NE。覆盖人数的充分条件不覆盖任意共同目录输入，任意实例的统一因子二定理另有独立证明。"
+  },
+  "endpoint_pins": {
+    "MF-MODEL": "1ca8c08397c3ec2c0a05b8eecb18e5e1de2b3e863c5f73f8c6eaf6b6fdf05bec",
+    "SC-K-2-E": "c345b8c200578a44af61428a9f884e66590756578c6dd85c96faf49e60fbd0cd",
+    "SC-K-TWO-LIGHT-LOWER-POTENTIAL-NO": "04e8d8a3b33a2ca82e7ee67fda56b3aa80e95735663a824006bac2176cde7195"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/反例/两种轻权的下盒势极小值溢出族--反例.md": "bb57ab9f39fa61e23b1cc1f3eefe0d5b222e49e0a8bb8885b66c5e1c3c0d407a",
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+    "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3"
+  },
+  "review_digest": "224fb09985e8dd0a13b3307b6ab3074627610d5b043b7b0a9b80b3e7511eead6"
+}

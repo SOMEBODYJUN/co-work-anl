@@ -1,0 +1,74 @@
+{
+  "edge_id": "commonmany-factor-two-existence-yields-rational-certificate",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-2-E",
+    "MF-MODEL"
+  ],
+  "target_ids": [
+    "M-897ec3f17ea34dd6a96c4b26fd205fe7"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限非空共同地点目录、有限逐名正二进制有理原子客户、显式地点及覆盖关系、显式列出 k≥2 家有标签设施；成本按独立随机化的含自重条件负载。令 n 为客户数、m 为地点数。",
+  "roles": {
+    "SC-K-2-E": "给某带标签布局、每个已覆盖客户选一站再均匀混合的在轨精确 NE，以及每个实际单设施偏离的纯精确 NE，且逐偏离保证收益不超过在轨两倍。",
+    "MF-MODEL": "给合法纯和站内均匀表示、客户条件成本及设施收益；固定编号的有限严格纯改善为所有未列布局给纯精确 NE。",
+    "M-897ec3f17ea34dd6a96c4b26fd205fe7": "输出有限精确生成、短显式档案、显式档案的位多项式检查和确定的默认续局规则。"
+  },
+  "explanation": "在固定总序中枚举 S^k 及每布局的合法在轨站点分配，按模型检查在轨精确 NE。对每个 f 及 r≠s_f，在 s[f←r] 中枚举合法纯分配，接受第一个同时通过客户 NE 和偏离收益 L_f'≤2L_f 的分配；若某偏离无通过者则弃此在轨候选。SC-K-2-E 保证至少一个候选的全部枚举均成功，因此是有限的精确生成法，且不要求在轨候选是特定势或字典序最优者。不同实际偏离改变不同标签坐标或同坐标的不同目标，档案键恰 k(m−1) 个且互异；在轨和这些布局之外用 MF-MODEL 的固定编号纯改善规则。概率矩阵至多 nk 项，每项 0 或 1/q（q≤k），每偏离每客户至多一个设施标签或未覆盖标记，规则描述固定，故档案长度为 O(nk log(k+1)+nk(m−1)log(k+1)) 加布局、键与索引的多项式开销。取输入分母乘积 D，D 的位长至多各输入分母位长之和；本类档案每一设施概率列有同一个站重数 q，负载及含自重的客户条件成本分母可取 Dq（纯列取 D）。以精确有理算术检查覆盖与概率行、所有原可达设施比较、完整偏离键集和每条两倍不等式。默认规则在每个布局的正确性由平方负载势严格下降给出。",
+  "scope": "正有理显式编码的全目标。m=1 时实际偏离档案为空，零覆盖时允许零负载且直接检验乘法不等式。位多项式针对档案长度和显式档案检查；生成和默认求值仅保证有限。以单个二进制整数隐式指定大量未列地点或设施标签时，k(m−1) 条显示档案未必仍为输入位长的多项式。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+      "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+      "section": "精确陈述"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+      "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+      "section": "六、把全部局部选择拼成一个完整函数"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+      "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+      "section": "七、有限精确程序、短证书与算法边界"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+      "section": "每个布局都可明确指定纯客户均衡"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/审查/有理证书命题的独立审查与有限程序边界--审查.md",
+      "sha256": "9fbe8a22a7f89c3760d05775db0c2bafe59d94f3764ec1fb1f4265a07624cfc8",
+      "section": "证书命题的精确结论"
+    },
+    {
+      "path": "archives/facility-games/state/证明/精确续局证书的条件成本与默认规则--证明.md",
+      "sha256": "0ea2c580e10c02f0b45cbdc7628ee03579c431dc38d15728a2c8d4264ac5ef99",
+      "section": "10.3 怎样检查设施的完整搬迁目录"
+    },
+    {
+      "path": "archives/facility-games/state/证明/精确续局证书的条件成本与默认规则--证明.md",
+      "sha256": "0ea2c580e10c02f0b45cbdc7628ee03579c431dc38d15728a2c8d4264ac5ef99",
+      "section": "10.6 独立检查器认证到哪一步"
+    }
+  ],
+  "reviewed_by": "Boss1-common-many-certificate-counterexamples-worker",
+  "review_note": "对照主稿 prop:certificate、定理中的纯离轨输出和显式档案检查条件。直接枚举合法有限表示即可从存在性提取短证书；主稿实现的 lexmax、原子装箱和受帽改善是另一个具体生成方式。",
+  "whole_result": "SC-K-2-E 的纯离轨与站内均匀在轨存在性，联合 MF-MODEL 的精确成本和确定默认规则，推出每个显式正有理输入都有位多项式长且显式档案可位多项式核验的完整因子二证书，并有有限精确生成过程。",
+  "endpoint_pins": {
+    "M-897ec3f17ea34dd6a96c4b26fd205fe7": "6cfdbcb5049ba768af47bed3b1c6ba82ca8bb1c0b2d65d57bc4cfdc0972b3e37",
+    "MF-MODEL": "1ca8c08397c3ec2c0a05b8eecb18e5e1de2b3e863c5f73f8c6eaf6b6fdf05bec",
+    "SC-K-2-E": "c345b8c200578a44af61428a9f884e66590756578c6dd85c96faf49e60fbd0cd"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+    "archives/facility-games/subarchives/common-many/state/审查/有理证书命题的独立审查与有限程序边界--审查.md": "9fbe8a22a7f89c3760d05775db0c2bafe59d94f3764ec1fb1f4265a07624cfc8",
+    "archives/facility-games/state/证明/精确续局证书的条件成本与默认规则--证明.md": "0ea2c580e10c02f0b45cbdc7628ee03579c431dc38d15728a2c8d4264ac5ef99"
+  },
+  "review_digest": "659ffc32403abb6760d37995e6f444af79a3752e57a4092455eee030dfdc3300"
+}

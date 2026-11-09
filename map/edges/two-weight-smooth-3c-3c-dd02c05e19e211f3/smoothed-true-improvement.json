@@ -1,0 +1,52 @@
+{
+  "edge_id": "two-weight-potential-smoothed-true-improvement-and-bit-output",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/two-weight-quadratic-common-type-scaled-potential"
+  ],
+  "target_ids": [
+    "FT-SMOOTH-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限原子拥塞博弈，权重在 {1,2}，每条资源延迟为非负二次式。固定零系数，其余 M≤3m 个系数的联合分布支撑于 [0,1]^M，每个边际密度≤φ；允许相关。以 α=64/59，ε>0。真成本严格比较在精确实数模型中解释；有效位算法另要求可一致揭示这些同一联合样本的 dyadic 前缀，前缀联合抽样开销对其位数与输入长度为多项式，策略显式列出，ε 为有理数。",
+  "roles": {
+    "weighted-congestion/two-weight-quadratic-common-type-scaled-potential": "给所有资源、各分项共同的 λ_i∈{1,59/32} 边际上下夹逼和显式非负势。",
+    "FT-SMOOTH-v1": "给该明确扰动合同下的真实改善长度界，以及位算法对同一真样本的近似均衡输出。精确实数比较路径与位算法路径分别记录。"
+  },
+  "explanation": "设真成本 C=C_-+C_∩ 和 C′=C_++C_∩，共享资源成本非负且相消。显式夹逼给势降 D≥λ_i(C_-−αC_+)≥λ_i(C−αC′)。真严格 α(1+ε) 改善给 D>λε C/(1+ε)。发生改善则 C>0，已用资源负载是至少 1 的整数，故 C≥X=min 正系数。每个资源的二次排列积分至多 8n³，线性积分至多 4n²，常数至多 2n，故 Φ≤14mn³。令 A=14mn³(1+1/ε)，K=2^(nm)，全部路径长度 T≤min(K,A/X)；势严格下降排除重访，策略子集给 K。联合边际并界 P(X<x)≤Mφx。以 E[T]=∫ P(T>t)dt，对 0≤t≤1 用 1，其余至 K 用 MφA/t，得到 E[T]≤1+MφA ln K，对每个初态和每个改善选择顺序同时成立。所有系数固定为零时无需步进。若 dyadic 向上舍入，每个正系数仍≥原样本的 X 且≤1，同一长度界适用。若要为同一真样本给位可核的输出，取 η=ε/(2+ε)<1。逐位共同细化，直到每个正系数的上端 U_j≤(1+η)下端 L_j，使用 U_j 作精确有理系数并执行 α(1+ε/2) 的严格动态。上端不小于原系数且相对高估≤η，故真旧成本≤有理旧成本≤α(1+ε/2)有理新成本≤α(1+ε)真新成本，对所有可偏离策略成立。所需精度 b≤ceil(log₂(2/(ηX)))+1；令 Y=log₂(1/X)，有 P(Y>u)≤Mφ2^(−u)。在 Y≤log₂K 区域，每步位长与抽样代价有统一多项式上界，再乘已有的 E[T]；在 Y>log₂K 区域以 K 步上界乘 b 的多项式，边界项 K·poly(log₂K)P(Y>log₂K) 与截尾积分 K∫_{log₂K}^∞poly(u)2^(−u)du 均为 log K 与输入参数的多项式。严格比较在有理上端输入上精确，显式菜单可逐一检查。",
+  "scope": "非负二次 1/2 双权模型，噪声正系数边际有界密度。固定初态可任取，真实实数动力学的长度上界对选择顺序一致。位算法在有理代表上运行但可输出真样本 α(1+ε)-PNE。固定为零的位置不会在舍入时改成正系数。",
+  "contribution": {
+    "result": "真 α(1+ε) 改善的最长路径期望至多 1+Mφ·14mn³(1+1/ε)·nm ln 2。对显式策略和可多项式成本一致揭示 dyadic 前缀的联合样本，位算法的期望总时间为输入规模、φ 和 1/ε 的多项式，输出同一实数样本的 α(1+ε)-PNE。",
+    "remaining": "若另要求在位模型逐步精确复现原始实数路径，仍须给真实成本差的精确比较合同或适合联合分布的近阈值分离界。边际密度可允许系数相关，无法自行保证成本差分离；隐式策略枚举及任意有界密度联合分布的高效抽样也分别需要输入合同。"
+  },
+  "evidence": [
+    {
+      "path": "archives/budget-games/state/审查/多线Nash候选卡与动态选择边界--审查.md",
+      "sha256": "73c44244089318c1f57503f5344975fd5046c8f260cebb016e9b70e845c93c4a",
+      "section": "N7：有限双权势与 smoothed 动态的组合风险"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/双权二次延迟的共同类型缩放近似势--定理.md",
+      "sha256": "1d85f6987eb065398ce83115f943318fc986afa85bcee6504704e81ea5d9eeab",
+      "section": "模型与严格改善合同"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/双权二次延迟的共同类型缩放近似势--定理.md",
+      "sha256": "1d85f6987eb065398ce83115f943318fc986afa85bcee6504704e81ea5d9eeab",
+      "section": "所有资源和所有分项必须共享同一缩放"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐步用共同缩放夹逼核对真实旧、新成本；用状态数截断密度积分并处理零项。相对上端舍入分开核对真样本输出与位时间的高精度尾部。",
+  "endpoint_pins": {
+    "FT-SMOOTH-v1": "65f16c21ab0b93eeba4c968fd478be09eb02b10b7f172bfda1df8b1105860a7e",
+    "weighted-congestion/two-weight-quadratic-common-type-scaled-potential": "7df271eea4af4bccbebfec92454b547f60cfd2365883d3011a949af497de3ccc"
+  },
+  "evidence_pins": {
+    "archives/budget-games/state/审查/多线Nash候选卡与动态选择边界--审查.md": "73c44244089318c1f57503f5344975fd5046c8f260cebb016e9b70e845c93c4a",
+    "archives/weighted-congestion/state/定理/双权二次延迟的共同类型缩放近似势--定理.md": "1d85f6987eb065398ce83115f943318fc986afa85bcee6504704e81ea5d9eeab"
+  },
+  "review_digest": "00fcf4cd1c34200abef6c718efaaf63829dab6533ece90597c248f8b67e636c1"
+}

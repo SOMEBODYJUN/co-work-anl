@@ -1,0 +1,50 @@
+{
+  "edge_id": "resource-three-ray-transfers-to-exact-vector-defect",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "SEL-RESOURCE-LP-SUBMODULAR-v2"
+  ],
+  "target_ids": [
+    "M-db748b49766141e79b7ab59a27ad25bb"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "对每个实数 ε∈[0,1) 固定二维非负三列 Aε，物品按 a=(1,1)、b=(1,ε)、c=(ε,1) 排列。容量向量 B=(1,1)，三物品利润 w=(1,1,1)，变量连续且 0≤x_i≤1_{i∈U}。源和目标的资源坐标、物品、利润、变量、启用集 U 都用恒等映射。",
+  "roles": {
+    "SEL-RESOURCE-LP-SUBMODULAR-v2": "二维全容量全利润分类的必要性证明提供中列 d=λe+μf 的三射线证书，给出容量、利润、两对及交集的最优值和并集可行解。",
+    "M-db748b49766141e79b7ab59a27ad25bb": "要求在指定单位容量、单位利润的对称参数族上得到精确启用最优值和子模缺口。并集的反向上界由本边对固定两条资源约束求和给出。"
+  },
+  "explanation": "在源证明中取中列 d=a、端列 e=b、f=c。端列行列式为 1−ε²>0，d=λe+μf 的系数 λ=μ=1/(1+ε)>0；两端各自的主资源比 1 大于另一资源比 ε，故是三条不同射线。取 α=1，满足 α≤min(1,1/λ,1/μ)，于是源容量 αd=(1,1)，利润 (1,e₁/d₁,f₂/d₂)=(1,1,1)。取 S={a,b}、T={a,c}，交集 {a}、并集 {a,b,c}。在 S 中第一资源给 x_a+x_b≤1，在 T 中第二资源给 x_a+x_c≤1，交集也有 x_a≤1；三者均由 x_a=1 达到。并集令 x_a=0，x_b=λ，x_c=μ，两条容量恰饱和且每个变量不超过 1。任一并集可行点满足 2x_a+(1+ε)(x_b+x_c)≤2，由 x_a≥0 和 2≥1+ε 得 x_a+x_b+x_c≤2/(1+ε)，所以上下界相等。同一最优见证也适用于启用集 {b,c}。空集值 0，另外两个单物品集均可取满且受单件上界限制为 1。按右侧减左侧的约定，缺口为 2/(1+ε)+1−1−1=(1−ε)/(1+ε)。",
+  "scope": "源分类固定 A 并量化全部非负容量和利润；其否定支只保证存在反例，精确值使用了本边的特定选择和并集上界。每个 ε 用同一物品全集、同一容量和利润。0<ε<1 时所有列坐标和利润严格正，三列均有完整资源支撑；ε↑1 时列趋同且缺口趋零，任意小的偏离仍能破坏精确子模。ε=1 的同射线矩阵给每个非空启用集值 1。把同一 Aε 的两容量提高到 2+ε 就可取满所有启用物品，值变为模函数，故此边不提供固定容量的普遍分类。适用域限于连续的单个向量容量 packing LP。",
+  "whole_result": "将资源启用 v2 必要性证书按恒等映射用于瓶颈背包档的 Aε 启用 LP，再加上两容量约束之和，完整得到任意 ε∈[0,1) 的 φ(S)=φ(T)=φ(S∩T)=1、φ(S∪T)=2/(1+ε)，从而缺口严格为 (1−ε)/(1+ε)。有理 ε 给有理最优见证；正 ε 可任意接近共同射线。",
+  "evidence": [
+    {
+      "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+      "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+      "section": "五、二维必要性与有理禁形证书"
+    },
+    {
+      "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+      "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+      "section": "C01：两资源启用值的分类"
+    },
+    {
+      "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+      "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+      "section": "4. 已完成：consecutive-ones向量LP的精确反例"
+    }
+  ],
+  "reviewed_by": "Boss1-bmkp-vector-ray-3c-3c-102e1b4aa5138a4c",
+  "review_note": "核对二维必要性中 λ、μ、α 的选择和各利润比，逐一检查启用上界、容量和精确值的两向证明，另核同射线边界、固定支撑与固定容量量词。",
+  "endpoint_pins": {
+    "M-db748b49766141e79b7ab59a27ad25bb": "5a60e13901b27d4e87aef6be9901899f614886beaef1347faba801fd9489453a",
+    "SEL-RESOURCE-LP-SUBMODULAR-v2": "76c9e60f78b3cf56f25ac4ef67e7c75f41f668d648dafd44cea144160b7b8e5e"
+  },
+  "evidence_pins": {
+    "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+    "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+    "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e"
+  },
+  "review_digest": "d56ecb125fb11652ebd616730885a0868e20dc8bda55869f196b0c7156d5b8e9"
+}

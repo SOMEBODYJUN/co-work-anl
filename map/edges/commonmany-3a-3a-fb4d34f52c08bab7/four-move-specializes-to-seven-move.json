@@ -1,0 +1,75 @@
+{
+  "edge_id": "commonmany-four-move-specializes-to-seven-move-converging-path",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-CONVERGING-PATH-4MOVE-2"
+  ],
+  "target_ids": [
+    "SC-K-CONVERGING-PATH-BOX-2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一 MF-MODEL 的有限非空共同目录、显式 k≥2 家带标签设施和显式正二进制有理原子权重。实际规范贪心末分数 γ>0，保同一次贪心的原池、开站次序和重数。冻结只有一个已占选项的客户与权至少 γ 的客户。分量恰为 D→B→A←C，各边恰一名轻客户，T、X、Z 各仅有 D/B、B/A、C/A 两个已占选项，分别原属 D、B、C，0<t,x,z<γ。初始站重 (P_A,K+x,c+z,d+t) 在完整盒内，q_D=Q≥q_B=p≥q_A=r，q_C=R≥r。另取七步定理的紧中心等重数子域 R=r、P_A=rγ。",
+  "roles": {
+    "SC-K-CONVERGING-PATH-4MOVE-2": "五次检查及逐客户永久稳定引理，给共同域的四步上界和全部原动作比较。",
+    "SC-K-CONVERGING-PATH-BOX-2": "共同域中的旧三分支程序，允许在选定首步后任选其允许的严格改善后缀。"
+  },
+  "explanation": "在 R=r、P_A=rγ 时，Z 的首检 c/R>P_A/r 恰是旧检验 c/r>γ。首检后 Z 稳定。若 T 先进入 B，则 T 在 B 的外部成本至多 (K+x)/p<d/Q，不会返回 D。只要 X 未动，A/C 未变，故 Z 仍稳定，旧后缀若还有一步，只能是 X:B→A。X 进入 A 后，其外部成本至多进入前 A 价 A₀，而 B 价固定为 (K+t)/p>A₀，所以 X 不返回。此后唯一可能的严格动作是 Z:A→C。Z 若原留 C，A 价只增，仍稳定；Z 若返回，A/C 不再变化，不能再反向严格改善。若 T 首检失败而 X 先进入 A，旧程序固定 X，且 X 始终有 A 外部成本≤A₀<K/p≤B 价。Z 若原留 C 也仍稳定。其余可能的严格动作 T:D→B 和 Z:A→C 分别只作用于 B/D 与 A/C，严格性互不改变，发生后也无法反向严格改善，故任一允许顺序和五检查程序同终点。若 T 和 X 均无严格改善，首检后的状态已是 NE。逐步盒界沿用四步证法，任意严格移动保持下盒，三个向前动作由 q_source≥q_target 保上盒，Z 返回仅恢复 C 原重。所有冻结单选项客户自动稳定，冻结重客户的外部成本至多 γ，其他可达已占站价格至少 γ。站内独立均匀使同站标签无差别，外部成本两端加同一自重即原模型成本。在旧域，上界 4 也可达到。取 k=7，A/B/C/D 的私有权依次 100、200、107、340，X=20、Z=5、T=50。唯一最高贪心顺序为 D390、B220、D195、D130、C112、B110、A100，故 q=(1,2,1,3)、γ=100，A 初重 100。四步依次比较 107>100、340/3>110、125>105、120>107，终重为 (120,250,112,340)，全盒且三名轻客户的终外部价/备选价分别为 T 的 100≤340/3、X 的 100≤125、Z 的 107≤120。另有正文 k=9 严格贪心例 A 初重 105>q_Aγ=100 且 q_C=2>q_A=1，证明新域严格更大。",
+  "scope": "共同域保留旧程序的全部允许严格后缀，两个可能末动作只存在交换顺序的自由。旧势论证仍为独立的八状态有限证明。此处比较在轨组件合同，完整离轨续局另按 BOX-TO-2。",
+  "whole_result": "从四步证明的逐客户稳定不变量与旧前缀逐分支对应，得到旧陈述的完整保证。对每个旧域分量，旧三分支程序的任一允许严格后缀终止于完整盒原客户 NE，冻结及全部原菜单不变。每个旧程序执行至多四次严格站点迁移，故满足登记的七步界。其他合法分量可以按同一完整盒合同独立拼合。",
+  "reviewed_by": "Boss1-common-many-3A-worker",
+  "review_note": "对照两份冻结原稿和现行合并正文。逐分支排除后缀中额外返回，验证 T/Z 末动作可交换，并用精确 Fraction 复算旧域 k=7 的严格贪心、四次移动、每步完整盒和最终全部客户比较。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/四站汇聚轻路径的四步盒均衡--算法.md",
+      "sha256": "b81e825938958ccce3bd983889f913948ada26c9314471737002381aaaf11fb8",
+      "section": "原模型与全部输入条件"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/四站汇聚轻路径的四步盒均衡--算法.md",
+      "sha256": "b81e825938958ccce3bd983889f913948ada26c9314471737002381aaaf11fb8",
+      "section": "每一步保持完整盒"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/四站汇聚轻路径的四步盒均衡--算法.md",
+      "sha256": "b81e825938958ccce3bd983889f913948ada26c9314471737002381aaaf11fb8",
+      "section": "三名客户的永久稳定"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/四站汇聚轻路径的四步盒均衡--算法.md",
+      "sha256": "b81e825938958ccce3bd983889f913948ada26c9314471737002381aaaf11fb8",
+      "section": "四步上界确实达到"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/四站汇聚轻路径的四步盒均衡--算法.md",
+      "sha256": "b81e825938958ccce3bd983889f913948ada26c9314471737002381aaaf11fb8",
+      "section": "保留旧七步论证的独立内容"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/tools/evidence/facility-box-geometry/original/research/current/multi_facility/converging_path_box.md",
+      "sha256": "982685616d38bfa515bf1907b2288bc7fb465c081228d266be7a2d6add9ad9e3",
+      "section": "Construction"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/tools/evidence/facility-box-geometry/original/research/current/multi_facility/converging_four_moves.md",
+      "sha256": "cf56860a77e24d66ddd9a3d4993a7996706b00e1a3cb9fe1e08a59655bac585d",
+      "section": "Permanent stability of T and X"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/tools/evidence/facility-box-geometry/original/research/current/multi_facility/converging_four_moves.md",
+      "sha256": "cf56860a77e24d66ddd9a3d4993a7996706b00e1a3cb9fe1e08a59655bac585d",
+      "section": "Final stability of Z"
+    }
+  ],
+  "endpoint_pins": {
+    "SC-K-CONVERGING-PATH-4MOVE-2": "9aa03fac5dd0c8ada7c73cfdca15bf16cf55e5492f9ec4734bfe3993d249ad7d",
+    "SC-K-CONVERGING-PATH-BOX-2": "4918751d827c4a828951eec27b63688eb46b85f48045ae8f2ff3fb054072f744"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/算法/四站汇聚轻路径的四步盒均衡--算法.md": "b81e825938958ccce3bd983889f913948ada26c9314471737002381aaaf11fb8",
+    "archives/facility-games/subarchives/common-many/tools/evidence/facility-box-geometry/original/research/current/multi_facility/converging_path_box.md": "982685616d38bfa515bf1907b2288bc7fb465c081228d266be7a2d6add9ad9e3",
+    "archives/facility-games/subarchives/common-many/tools/evidence/facility-box-geometry/original/research/current/multi_facility/converging_four_moves.md": "cf56860a77e24d66ddd9a3d4993a7996706b00e1a3cb9fe1e08a59655bac585d"
+  },
+  "review_digest": "f043161943e5c36652c421e8559078859783448cae73ecd587a6251afaea3cae"
+}

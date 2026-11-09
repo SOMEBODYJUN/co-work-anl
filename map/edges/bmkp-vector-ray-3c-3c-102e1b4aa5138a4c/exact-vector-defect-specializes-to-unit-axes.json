@@ -1,0 +1,55 @@
+{
+  "edge_id": "exact-vector-defect-specializes-to-unit-axes",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-db748b49766141e79b7ab59a27ad25bb"
+  ],
+  "target_ids": [
+    "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "在源族直接取 ε=0。两资源容量同为 1，三件物品 a=(1,1)、b=(1,0)、c=(0,1)，利润全 1，连续变量的启用上界 0≤x_i≤1_{i∈U}。保持物品、资源和启用集标签不变。",
+  "roles": {
+    "M-db748b49766141e79b7ab59a27ad25bb": "覆盖 ε=0，提供单位容量、单位利润下两对、交集和并集的精确值。",
+    "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1": "轴向矩阵上的一个存在性反例，精确否定任意向量容量的启用值均子模。"
+  },
+  "explanation": "ε=0 时源 LP 两行恰为 x_a+x_b≤1、x_a+x_c≤1，源构造的 λ=μ=1。取 S={a,b}、T={a,c}；S、T、交集 {a} 的值各为 1，并集在 (0,1,1) 达到 2，上界由 x_a+x_b+x_c≤2−x_a≤2 给出。因此左侧为 2，右侧为 3。物品 b、c 的支撑各由两坐标降为一坐标，但三列利润仍严格正。原精确 Fraction 枚举中对应掩码为 3、5、1、7，值与直接代入一致。该点的 0–1 矩阵有连续 1 列。严格正消耗由源族 0<ε<1 的单独见证给出，轴向实例本身只需非负消耗。",
+  "scope": "由瓶颈背包档的整个参数族推出资源启用档的一个固定轴向反例，直接包含端点 ε=0。轴向实例只支持一个存在性结论；正参数的定量缺口、保持完整资源支撑的近共线障碍及全容量全利润的二维分类均需各自的证明。",
+  "whole_result": "在瓶颈背包档参数族中取 ε=0，得到资源启用档的完整轴向见证，φ({a,b})+φ({a,c})=2<3=φ({a})+φ({a,b,c})，缺口恰为 1。",
+  "evidence": [
+    {
+      "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+      "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+      "section": "4. 已完成：consecutive-ones向量LP的精确反例"
+    },
+    {
+      "path": "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md",
+      "sha256": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4",
+      "section": "三个不能合并的陈述"
+    },
+    {
+      "path": "archives/bottleneck-knapsack/state/审查/向量容量启用值子模性失败三源复现--审查.md",
+      "sha256": "13b607c971691b207e37569e60887c5055a1b5fe50dd8456311a2ed6256cdb15",
+      "section": "1. Exact Fraction 顶点枚举"
+    },
+    {
+      "path": "archives/bottleneck-knapsack/tools/evidence/retired-topic-selection-vector-capacity-20261031/exact_vector_lp_results.json",
+      "sha256": "c47f7034083e450b9e2215ad4656ce9362000c482ecbf4b60d60be476418eca9"
+    }
+  ],
+  "reviewed_by": "Boss1-bmkp-vector-ray-3c-3c-102e1b4aa5138a4c",
+  "review_note": "核对 ε=0 的矩阵、容量、上界、四个掩码及缺口方向，分别核实正利润与正消耗；轴向精确结果独立于中断的 scalar assignment GAP 搜索。",
+  "endpoint_pins": {
+    "M-db748b49766141e79b7ab59a27ad25bb": "5a60e13901b27d4e87aef6be9901899f614886beaef1347faba801fd9489453a",
+    "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1": "16d144d3e59bf43a8087069c301df2d65f68205b0c9f1cce3ba994cf489a5540"
+  },
+  "evidence_pins": {
+    "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+    "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4",
+    "archives/bottleneck-knapsack/state/审查/向量容量启用值子模性失败三源复现--审查.md": "13b607c971691b207e37569e60887c5055a1b5fe50dd8456311a2ed6256cdb15",
+    "archives/bottleneck-knapsack/tools/evidence/retired-topic-selection-vector-capacity-20261031/exact_vector_lp_results.json": "c47f7034083e450b9e2215ad4656ce9362000c482ecbf4b60d60be476418eca9"
+  },
+  "review_digest": "3529b1834f5c0a27bddfa89d0956ae75e2bef6f12d6a5c6d3e74b84dc6cf0758"
+}

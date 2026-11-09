@@ -1,0 +1,58 @@
+{
+  "edge_id": "commonmany-two-light-overflow-limits-weighted-flow-extension",
+  "kind": "motivates",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-TWO-LIGHT-LOWER-POTENTIAL-NO",
+    "SC-K-EQUAL-LIGHT-FLOW-BOX"
+  ],
+  "target_ids": [
+    "SC-K-RQ-MIXED-BOX"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "真实贪心 n≥45、5|n 族，按非增 q 及同重数开站次序用 (H,M,L,R) 排序。固定全部私有客户；u_i=w_i/γ，X_t=W_t/γ−q_t，c_t=X_t(home)。比较等权无盒 Ψ 与其按原原子加权客户势得出的自然加权版本。",
+  "roles": {
+    "SC-K-TWO-LIGHT-LOWER-POTENTIAL-NO": "在真实可实现的两异权输入上，全部原合法分配均满足下盒，唯一全局加权 P 极小者超 L 上盒并仍为原 NE。",
+    "SC-K-EQUAL-LIGHT-FLOW-BOX": "同一轻权 δ 时，无约束 Ψ 的每一个全局极小者满足完整盒、全原 NE 及 H；同权回路径交换提供证明。",
+    "SC-K-RQ-MIXED-BOX": "要求一般异权上的确定性位多项式选择。该比较排除直接用加权原势做无约束或仅下盒的输出选择器。"
+  },
+  "explanation": "置 b_t=c_t−Σ_{h_i=t}u_i，则 X_t=b_t+Σ_{a_i=t}u_i。原加权势 P/γ² 去掉不随 a 变化的项，等于 G(a)=Σ_t(b_tΣ_{a_i=t}u_i+Σ_{i<j:a_i=a_j=t}u_i u_j)/q_t：展开 (q_t+X_t)^2，Σ_t X_t 与冻结原子的平方和都固定，剩下的变量平方对角项被逐原子自重平方抵消。等权 u_i=δ 时 G=δΨ。两轻权族给 c=(1−1/n,1−1/n,2/n,0)，u=(4/5,1−1/n)，两菜单 HM/ML，原 home 为 (H,M)。四赋值全在下盒，故唯一加权 G 极小点 (M,L) 同时是无盒与仅下盒优化的唯一输出。其 X_L=1+1/n，且 Y 的 H 左侧为 2/n、右侧为 1/(2n)；其原 NE 条件仍通过。n=45 的同时返路内部势差恰零、端点净差 8/2025>0，故仅修正路径内部不能恢复自动全盒。",
+  "scope": "在异权域上排除两个特定加权原势选择器。等权定理保留共同 δ 的输入条件；一般位多项式见证搜索、盒 NE 存在和原游戏续局是各自的命题。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/反例/两种轻权的下盒势极小值溢出族--反例.md",
+      "sha256": "bb57ab9f39fa61e23b1cc1f3eefe0d5b222e49e0a8bb8885b66c5e1c3c0d407a",
+      "section": "四赋值的全称代数"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/等重轻客户下盒流与无约束细化--算法.md",
+      "sha256": "82abd37faab9e81b4fc3f4e302e8b2f704e8c5f2ccb0287f57527b2db3b99245",
+      "section": "后续无约束Ψ及所有最优解的等价"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/问题/一般异权盒选择的统一位复杂度目标--问题.md",
+      "sha256": "321b36b0574063b359700751b1206400c134de698365598a4fdca7832dc10a3e",
+      "section": "精确抽象合同"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/资料/等权流对抗审计的全极小与残图边界--资料.md",
+      "sha256": "5aac61cb284873271b726537696fb2cff4800f17f25657b32341ba90e790d2d7",
+      "section": "异权端点与路径恒等式的独有边界"
+    }
+  ],
+  "reviewed_by": "Boss1-common-many-certificate-counterexamples-worker",
+  "review_note": "归一化前后保留四个原赋值与严格次序。等权已证域无异权输入；这里说明异权推广应避开的具体目标函数/域，而非把正定理或开放 RQ 当成被否定的命题。",
+  "endpoint_pins": {
+    "SC-K-EQUAL-LIGHT-FLOW-BOX": "59fb7a83a717b9e9a5ee546139f18665dcd1134c99d55ff8d10b9bff949d345a",
+    "SC-K-RQ-MIXED-BOX": "3e2eefe4dd01bd22f50a521cb1d77b9ab32320d11a491f1dec390379ce5b3c48",
+    "SC-K-TWO-LIGHT-LOWER-POTENTIAL-NO": "04e8d8a3b33a2ca82e7ee67fda56b3aa80e95735663a824006bac2176cde7195"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/反例/两种轻权的下盒势极小值溢出族--反例.md": "bb57ab9f39fa61e23b1cc1f3eefe0d5b222e49e0a8bb8885b66c5e1c3c0d407a",
+    "archives/facility-games/subarchives/common-many/state/算法/等重轻客户下盒流与无约束细化--算法.md": "82abd37faab9e81b4fc3f4e302e8b2f704e8c5f2ccb0287f57527b2db3b99245",
+    "archives/facility-games/subarchives/common-many/state/问题/一般异权盒选择的统一位复杂度目标--问题.md": "321b36b0574063b359700751b1206400c134de698365598a4fdca7832dc10a3e",
+    "archives/facility-games/subarchives/common-many/state/资料/等权流对抗审计的全极小与残图边界--资料.md": "5aac61cb284873271b726537696fb2cff4800f17f25657b32341ba90e790d2d7"
+  },
+  "review_digest": "e88f2cbe2403df76d5a9639c0871b939d607ee3d4824ff8b2693409ffb84f276"
+}

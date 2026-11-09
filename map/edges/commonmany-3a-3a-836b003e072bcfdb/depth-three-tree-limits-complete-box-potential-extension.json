@@ -1,0 +1,57 @@
+{
+  "edge_id": "commonmany-depth-three-tree-limits-complete-box-potential-extension",
+  "kind": "motivates",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-DEPTH-THREE-BOX-POTENTIAL-NO",
+    "SC-K-HEIGHT-TWO-BOX-EXISTS"
+  ],
+  "target_ids": [
+    "SC-K-RQ-MIXED-BOX"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "正覆盖规范贪心，保全部原原子选项，冻重及单选项，其余客户每名两站，按首开顺序定向；比较深度≤2的完整盒内 P 最小化与保留其余条件、改深度≤3的推广。",
+  "roles": {
+    "SC-K-DEPTH-THREE-BOX-POTENTIAL-NO": "严格深度三、无向树且每边仅一个轻原子的精确反例。唯一完整盒全局 P 极小者非原 NE，而原归属是唯一盒 NE。",
+    "SC-K-HEIGHT-TWO-BOX-EXISTS": "在深度≤2时，入邻无入边使源池返回可行且严格降势，故每个完整盒全局 P 极小者均为原 NE。",
+    "SC-K-RQ-MIXED-BOX": "统一异权盒选择可以使用其他目标或修复路线；完整盒原势最小化在深度三树上已不能作为通用输出选择器。"
+  },
+  "explanation": "按正文首开次序，六站 q=(4,4,3,2,1,1) 且 c=(999,998,945,150,451,0)/1000，逐名归一化轻权 (400,400,900,150)/1000。十六种原合法分配恰六种完整盒，唯一 P 极小者 (B,B,C,D) 的 P=5948950/3。Z 的源外部 1451>目标外部 1450；改回 C 后 C=3050>上盒 3000，但盒约束不是原游戏的容量，故该赋值不满足 RQ 要求的全原选项 NE。源端入邻可带外来轻原子，深度二整池式 A_h+S_h≤W_h^0 不再由图合同保证。本例一次递归返回恢复完整盒和原 NE，但势增 650/3；全局极小性排除了任何保盒严格降势交换。正深度二结论仍适用于其全部原域。",
+  "scope": "精准排除深度≤2的完整盒 P 选择器仅放宽为深度≤3的推广。反例有分叉；不否定有向路径算法、一般盒 NE 存在或统一位多项式问题的其他路线。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/反例/有向深度三树的盒势最小失稳--反例.md",
+      "sha256": "86282647d45eccb112e6621a23893ae6aee5239efedf9a808ff40127f7a327d7",
+      "section": "全部盒内分配的解析穷尽"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/反例/有向深度三树的盒势最小失稳--反例.md",
+      "sha256": "86282647d45eccb112e6621a23893ae6aee5239efedf9a808ff40127f7a327d7",
+      "section": "递归整池交换具体失去的是什么"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/开站有向深度二的整池交换盒均衡--定理.md",
+      "sha256": "f8444a6566044c5749edda255101fd9e901f6edc43e363c8ca3857a85d691a7b",
+      "section": "按原来源整池退回，再完成被挡的返回"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/问题/一般异权盒选择的统一位复杂度目标--问题.md",
+      "sha256": "321b36b0574063b359700751b1206400c134de698365598a4fdca7832dc10a3e",
+      "section": "精确抽象合同"
+    }
+  ],
+  "reviewed_by": "Boss1-common-many-certificate-counterexamples-worker",
+  "review_note": "核原客户严格改善、六个盒态和递归返回的确切势差。对端的深度二前提没有被违反为假；这个边界比较给 RQ 保留替代选择方向。",
+  "endpoint_pins": {
+    "SC-K-DEPTH-THREE-BOX-POTENTIAL-NO": "ab3dbb229991a44060f808af8c21e1cd9185e936bb691cc445a77f058a667dd7",
+    "SC-K-HEIGHT-TWO-BOX-EXISTS": "4e7c51c17d1677bf6af0ac0db5fe735ec5736f2f424bb8f3b484e9b7ab7a4f04",
+    "SC-K-RQ-MIXED-BOX": "3e2eefe4dd01bd22f50a521cb1d77b9ab32320d11a491f1dec390379ce5b3c48"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/反例/有向深度三树的盒势最小失稳--反例.md": "86282647d45eccb112e6621a23893ae6aee5239efedf9a808ff40127f7a327d7",
+    "archives/facility-games/subarchives/common-many/state/定理/开站有向深度二的整池交换盒均衡--定理.md": "f8444a6566044c5749edda255101fd9e901f6edc43e363c8ca3857a85d691a7b",
+    "archives/facility-games/subarchives/common-many/state/问题/一般异权盒选择的统一位复杂度目标--问题.md": "321b36b0574063b359700751b1206400c134de698365598a4fdca7832dc10a3e"
+  },
+  "review_digest": "a352978c37a2c77aa3daa3e398ec6df4b46a09fa60fc5dd0a6cc8333af21d849"
+}
