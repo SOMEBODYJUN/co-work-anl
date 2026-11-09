@@ -1,0 +1,62 @@
+{
+  "edge_id": "commonmany-early-center-star-box-to-factor-two",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-STAR-LIGHT-GREEDY-2",
+    "SC-K-GREEDY-BOX-TO-2",
+    "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import"
+  ],
+  "target_ids": [
+    "SC-K-GREEDY-BOX-FINITE-2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限非空共同目录、显式 k≥2 家带标签设施及正二进制有理原子权重。同一次规范贪心有正末分数 γ，保留固定原池、实际开站次序和最终重数。冻结只有一个已占选项的客户及权重至少 γ 的客户。每个非平凡轻分量为中心 H 早于每个叶 t 开站的外向星，每个变量恰有 H、t 两个已占选项且原属 H。同边允许任意异权。",
+  "roles": {
+    "SC-K-STAR-LIGHT-GREEDY-2": "降权叶队列及最小改善叶价选择，给同一规范贪心布局完整盒在轨见证。",
+    "SC-K-GREEDY-BOX-TO-2": "用盒内真实在轨 NE 及原贪心数据完成每个带标签实际偏离和默认纯续局。",
+    "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import": "仅用 MAX 部分完成受帽离轨及默认纯求值，保证位多项式而保持偏离设施之帽。",
+    "SC-K-GREEDY-BOX-FINITE-2": "收到早开中心轻星分量输入类的一条直接完整因子二构造。"
+  },
+  "explanation": "以固定原池为初态，原归属给 q_H≥q_t。严格出星迁移使中心仍在下盒之上。若迁移后叶超过上盒，其迁移前 W_t/q_t>γ+(γ−w)/q_t≥γ+(γ−w)/q_H≥(W_H−w)/q_H，矛盾。永久跳过的不改善队首以后也不会改善，因为中心负载只降而其叶负载只升。每次在仍可改善的队首中选最小叶价，使历次实际迁移前的叶价非减，理由是其他叶价不变，所选叶的队列仅在该叶价格上涨后揭示新队首，不改善队首被删。每叶已迁客户按权非增到达，因此每名旧迁者的终态外部成本至多该叶最后到达前的叶价，进而至多全星最后一次迁移前的叶价，后者严格小于终态中心价。留中心、已迁及所有冻结客户在原菜单均稳定。冻结重客户即使连接不同轻分量，也由完整盒保证其外部成本≤γ≤其他站价格。站内独立均匀后得到原模型精确 NE。BOX-TO-2 把真实在轨收益 a 与同一贪心原池对应，存续源按当前客户池装箱，消失源把全部原客户池重置，以 2γ≤2a 保帽。每个真实带标签偏离单独完成纯 NE，其余布局按固定规则求纯 NE。MAX 只作用于固定布局的相同标签机器，受帽时先隔离再恢复独占重原子，保住所有原动作的最优性。每人至多一次跳过或迁移，叶价扫描与降权排序均位多项式。",
+  "scope": "正覆盖且全部非平凡轻分量适用早开中心星规则的规范贪心输入。星可有多个叶，且各边内部和各边之间的轻权都可不同。中心晚开时需要不同的迁移证明。",
+  "contribution": {
+    "result": "对上述每个显式有理输入，在该规范贪心布局位多项式构造一份完整续局的紧凑表示。每个布局返回精确客户 NE，全部真实带标签单设施偏离同时满足 L_f′≤2L_f。实际偏离条目可纯，默认单次求值位多项式。",
+    "remaining": "此星选择步骤依赖共同原归属和外向叶结构，未覆盖有向链、向内汇聚或更一般轻菜单。目标对全部输入的有限保证已由一般交错势获得。若要沿这条快速路线覆盖全部显式输入，仍须证明一般在轨完整盒选择的统一位多项式时间。"
+  },
+  "reviewed_by": "Boss1",
+  "review_note": "分开核对保盒、永久跳过、全星单调叶价及每叶降权比较。离轨完成沿用同一真实贪心数据，文献 MAX 的位保证限于纯客户固定布局。按 v4 源复核外向星论证。晚开星另取最大动态键，逐名决定入中心或留叶，每人处理一次，已移客户的返回阈值始终严格高于当前中心总重。此比较用于辨清方向与源勘误。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/早开中心星与同边等重有向路径的单次迁移--算法.md",
+      "sha256": "a2817c28eb72ba7a311af12dfaa2f71ede4bfd69ea095cae8265ffdc0f760a11",
+      "section": "早开中心星：每边任意异权"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/早开中心星与同边等重有向路径的单次迁移--算法.md",
+      "sha256": "a2817c28eb72ba7a311af12dfaa2f71ede4bfd69ea095cae8265ffdc0f760a11",
+      "section": "完整续局与准确状态"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md",
+      "sha256": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a"
+    }
+  ],
+  "endpoint_pins": {
+    "SC-K-GREEDY-BOX-FINITE-2": "0e3f0944b8ebe9195ae24070478d8e8d9a9c1568202317acab01d7a516eff027",
+    "SC-K-GREEDY-BOX-TO-2": "c5f0af766e5c2d960dc7f4b714189e568990f1165bbaeefba51b7a0d89a3ce14",
+    "SC-K-STAR-LIGHT-GREEDY-2": "7b4ff4f11e5ae5731b6cc9dbb077d0c64c93d242285b802d2bc7bed4254544f6",
+    "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import": "5f2019da9ff05afa3a2e57eb2cf96d8c63eef19e66208bb0290ce535628737f6"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/算法/早开中心星与同边等重有向路径的单次迁移--算法.md": "a2817c28eb72ba7a311af12dfaa2f71ede4bfd69ea095cae8265ffdc0f760a11",
+    "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+    "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a"
+  },
+  "review_digest": "164a0c6106cfccbb56453ff9d8ae7c93886576f9721ba8cbdbf512f046e4e5f0"
+}
