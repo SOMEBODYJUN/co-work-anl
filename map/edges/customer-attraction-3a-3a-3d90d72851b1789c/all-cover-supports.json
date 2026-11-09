@@ -1,0 +1,70 @@
+{
+  "edge_id": "cag-3d90d7-two-frozen-cones-exact-all-cover-supports",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-b97a40a962c34f848cc8dcaf8b05a1f1",
+    "cag-whole-subtree-nine-exact-endpoints-and-reentry",
+    "M-89dbfd00382f4513a7d7f618dca24dab"
+  ],
+  "target_ids": [
+    "customer-attraction/two-complete-strategy-cones-all-cover-supports-8over5"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "五位单位提供者共享七个固定标签，客户按终局覆盖者均分。两份完整策略按所绑定原件固定，r在全部127个非空兴趣类型上非负且归一wr=1。按绑定附件使用对应行集上的新有理证书。",
+  "roles": {
+    "M-b97a40a962c34f848cc8dcaf8b05a1f1": "固定实际路径01010的完整策略σ48及原48客户表。该客户表在共同IC松弛与两完整锥均给全支持下界8/5。",
+    "cag-whole-subtree-nine-exact-endpoints-and-reentry": "固定实际路径00011的另一完整策略σ252及原252客户表。其完整动作表而非旧残差目标给第二锥的IC行。",
+    "M-89dbfd00382f4513a7d7f618dca24dab": "给出同一客户向量上的全部有序真实IC与逐类型非负对偶的上界推理。",
+    "customer-attraction/two-complete-strategy-cones-all-cover-supports-8over5": "目标是两份显式策略各自全锥的21项覆盖最优、共同IC全支持上界以及两锥互不包含。"
+  },
+  "explanation": "原件各有2801个有序历史。对每个历史及六个非自身替代分别沿同一完整策略走真实终局。真实收益差乘60后去零去重并作字典序排列，分别得1912、1867行，交集1753行。两实际路径计数皆为(3,2,0,0,0,0,0)，实际福利行w_B=1[B与{0,1}相交]。若H为对应的整数IC行集，绑定附件的63组有理乘子逐类型给βw−Σ_j μ_j H_j/60≥v_J，其中v_{J,B}=1[B与J相交]。乘r≥0并用Hr≥0即得各上界。两完整锥各21个有理原始点满足全行和wr=1，逐项达到β。按J同时含0、1，只含0，只含1，两者皆无分组，10、5、5、1项的精确值依次为8/5、3/2、23/15、63/40。五玩家任一支持可扩到五标签，覆盖不降，故21项的最大给OPT₅。共同集的21个对偶中最大亦为8/5，原48点除以30在两全锥及共同松弛均可行且在J=(0,1,2,4,5)取等。原252点除以160也在两锥可行。两策略在92个历史动作不同。48侧分离点在σ252的历史(0,1)实际选1、偏离2，真实终局01104与01203给差−1/45。252侧分离点在σ48的历史(0,0)实际选0、偏离1，真实终局00012与00131也给差−1/45。",
+  "scope": "任意可行非负客户重数，策略仅限所绑定的σ48和σ252。所有比例取W>0。共同IC交集指行集合，所定义客户松弛包含两完整锥。各有理取等点均可清分母化为不同单位客户。浮点菜单仅提供发现过程。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_reentry_incumbent_half.json",
+      "sha256": "e6269ea7551820d0d2c6192dd96d60b7bd2ce1f92b6ffd463fd8a13f89da0565"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_residual.json",
+      "sha256": "2a154303b023acfdc7b09c8576f63b3acb50abb02bd8e3cca6a793152ad07233"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/完整子树联合菜单的九份精确端点与回流试验--计算.md",
+      "sha256": "32b023f3598ab81bcedac631ae9cf69040164eae6cd0f7e92ccac117dfd88e75",
+      "section": "完整子树菜单如何保真"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/两份显式完整策略锥的全支持精确最大覆盖比--定理.md",
+      "sha256": "a3f068792465f4353382e35547827b95f41b42c54912b5566f089c70a84e1d94",
+      "section": "精确验证"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-strategy-cones-all-cover-supports-v1/certificates.json",
+      "sha256": "009baddfcf1780cb73dcd5c85be94a389329643da3b70371adaaacb1350ecac8"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-strategy-cones-all-cover-supports-v1/verify_certificates.py",
+      "sha256": "456bafa89d04fe25f397783cdd9bc6660300f545a7d52912afb80861f63827ea"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项重建两份完整策略的全有序历史、全部偏离、三套对偶、42组取等、两原点交叉可行及两个分离点，核了所有证据SHA。",
+  "whole_result": "结合旧原件固定的两策略与真实IC对偶合同，绑定新证书给两个完整锥各21项精确覆盖值和同一全支持锐值8/5。1753条共同行的松弛仍给全支持锐值8/5。两归一完整锥互不包含。",
+  "endpoint_pins": {
+    "M-89dbfd00382f4513a7d7f618dca24dab": "9830a200aa04e18e7f8972026b9cb9717e9f4c233fc699608c4897bc8bcfd79b",
+    "M-b97a40a962c34f848cc8dcaf8b05a1f1": "9b6c5365282d5110872445456b2bf4c996b09ed77c3a7140230866375303f54b",
+    "cag-whole-subtree-nine-exact-endpoints-and-reentry": "b0447cbacf30e53975163239049cdf4d1931665fca00dc7b7f653d46cd306193",
+    "customer-attraction/two-complete-strategy-cones-all-cover-supports-8over5": "a15c3064ddc2945834fd716dc4e33f8876a2d32e78a25c52ad6d0e6702a5f3f4"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_reentry_incumbent_half.json": "e6269ea7551820d0d2c6192dd96d60b7bd2ce1f92b6ffd463fd8a13f89da0565",
+    "archives/customer-attraction/tools/evidence/whole-subtree-nine-endpoints-primary/original/m5p7_residual.json": "2a154303b023acfdc7b09c8576f63b3acb50abb02bd8e3cca6a793152ad07233",
+    "archives/customer-attraction/state/计算/完整子树联合菜单的九份精确端点与回流试验--计算.md": "32b023f3598ab81bcedac631ae9cf69040164eae6cd0f7e92ccac117dfd88e75",
+    "archives/customer-attraction/state/定理/两份显式完整策略锥的全支持精确最大覆盖比--定理.md": "a3f068792465f4353382e35547827b95f41b42c54912b5566f089c70a84e1d94",
+    "archives/customer-attraction/tools/evidence/fixed-strategy-cones-all-cover-supports-v1/certificates.json": "009baddfcf1780cb73dcd5c85be94a389329643da3b70371adaaacb1350ecac8",
+    "archives/customer-attraction/tools/evidence/fixed-strategy-cones-all-cover-supports-v1/verify_certificates.py": "456bafa89d04fe25f397783cdd9bc6660300f545a7d52912afb80861f63827ea"
+  },
+  "review_digest": "bfbbbb871ed4aa0464185cb949a74992ed22edb77811546c5717137ed602f43d"
+}
