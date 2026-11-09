@@ -1,0 +1,54 @@
+{
+  "edge_id": "localpot-finite-v2-checks-nash04-displayed-cases",
+  "kind": "checks",
+  "source_ids": [
+    "local-potential-games/nash-finite-toy-audit-v2-localized-squaring"
+  ],
+  "target_ids": [
+    "local-potential-games/nash-04-independent-review-source",
+    "local-potential-games/local-cubic-squaring-precision-ledger"
+  ],
+  "relation_mode": "context",
+  "conditions": "固定v2 JSON列出的n=1,…,12和每n三次显示扰动检查；z_i=x′_i=y_i。仅核对相同局部收益与单项式interaction graph，v2用收益u_v=a_v∂_vΨ/4，正比例缩放保留原/扰动NE，但其绝对界不是[0,1]范围。",
+  "roles": {
+    "local-potential-games/nash-finite-toy-audit-v2-localized-squaring": "提供有限n的梯度符号、路径袋、K4 minor和范围字段。",
+    "local-potential-games/nash-04-independent-review-source": "提供这些样本之外的完整梯度、全ε区间和全部原NE论证，并给图证的一般模式。",
+    "local-potential-games/local-cubic-squaring-precision-ledger": "保留工具引理及有限证据/全称推导之间的分层。"
+  },
+  "explanation": "v2的梯度区间与源审查逐项同形：t∈[−3,−1]、c,d∈[−1,1]、非末端x∈[−5/2,5/2]、y∈[−3/2,3/2]、末端x∈[−7/2,−1/2]、y∈[−5/2,−3/2]；t1/c1另有固定x0y0=1/4的窄区间。其局部收益/4得|u|≤7/8，与目标“除4不保证[0,1]”兼容。各n≥2列出的A/C/D袋及固定四branch sets，与审查给出的全n图证模式相符。JSON明确只在显示profile精确核KKT，并写geometric separation from every exact NE requires separate universal REPORT argument。因此本边只对显示的有限例、记录的图证和符号范围作checks；源审查中将最佳回应和反证归纳推广到全n/全ε/全原NE的步骤，由另一逻辑contribution边单独承担，不能由本边代付。",
+  "scope": "仅有限样本和图字段的审查语境。对n≥2的精确图宽使用JSON明确给出的bags和minor；不把样本KKT当全部扰动NE/全部原NE证明，也不把必要精度解释成NE求解时间下界。",
+  "evidence": [
+    {
+      "path": "archives/local-potential-games/state/审查/Nash有限玩具审计v2局部重复平方修订--审查.md",
+      "sha256": "d06362864e994992fbea57c5f1a24542ef8cbf3c715412a43bdc052537dfcd14"
+    },
+    {
+      "path": "archives/local-potential-games/state/审查/Nash-04独立审查报告与候选边界--审查.md",
+      "sha256": "362a218808e9d893da5a96e08e6db31f23fe10d7a88d21e9c093b06246422ebf"
+    },
+    {
+      "path": "archives/local-potential-games/state/资料/局部三次势扰动精度的候选与半球修订--资料.md",
+      "sha256": "1a04a6fb5a04644f19d243e21801f1614e898adc8c70a3651dc3b7815363a10c"
+    },
+    {
+      "path": "archives/local-potential-games/tools/evidence/retired-topic-selection-20261031/nash_toy_results_v2.json",
+      "sha256": "2a08aba541bf1cc78052f99042a191d56b6552381b936eb2b2335be4ddbee3f5"
+    }
+  ],
+  "status": "accepted",
+  "premises_mode": "all",
+  "reviewed_by": "Boss5-worker-474257b8",
+  "review_note": "完整实读v2与两个目标正文，逐项核导数/收益缩放、z/y命名和路径袋、minor范围；已将有限显示例与全称代数论证严格分开，仅提交checks语境。",
+  "endpoint_pins": {
+    "local-potential-games/local-cubic-squaring-precision-ledger": "6a43dd802a836b01d5d526f3c157195ba2cfb873239babae05ac82c2332151a1",
+    "local-potential-games/nash-04-independent-review-source": "43a1123924993780a743343cbb502332f5b8a58e4e4f0725a23ced6dd824eeec",
+    "local-potential-games/nash-finite-toy-audit-v2-localized-squaring": "7add02029ecffe23719f184e3ac4adc6d6eaa553a9b29da104a6001ab123cb7a"
+  },
+  "evidence_pins": {
+    "archives/local-potential-games/state/审查/Nash有限玩具审计v2局部重复平方修订--审查.md": "d06362864e994992fbea57c5f1a24542ef8cbf3c715412a43bdc052537dfcd14",
+    "archives/local-potential-games/state/审查/Nash-04独立审查报告与候选边界--审查.md": "362a218808e9d893da5a96e08e6db31f23fe10d7a88d21e9c093b06246422ebf",
+    "archives/local-potential-games/state/资料/局部三次势扰动精度的候选与半球修订--资料.md": "1a04a6fb5a04644f19d243e21801f1614e898adc8c70a3651dc3b7815363a10c",
+    "archives/local-potential-games/tools/evidence/retired-topic-selection-20261031/nash_toy_results_v2.json": "2a08aba541bf1cc78052f99042a191d56b6552381b936eb2b2335be4ddbee3f5"
+  },
+  "review_digest": "9cfac32aef24e341e48cd4e1008f9d108c6585dcfc6a8c6cd23751a3a6c1ffc6"
+}

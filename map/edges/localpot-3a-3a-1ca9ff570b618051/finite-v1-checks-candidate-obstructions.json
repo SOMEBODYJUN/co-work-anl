@@ -1,0 +1,54 @@
+{
+  "edge_id": "localpot-finite-v1-checks-candidate-obstructions",
+  "kind": "checks",
+  "source_ids": [
+    "local-potential-games/nash-finite-toy-audit-v1"
+  ],
+  "target_ids": [
+    "local-potential-games/nash-candidate-map-and-literature-boundaries",
+    "local-potential-games/nash-candidate-registry-json-and-selection-boundaries"
+  ],
+  "relation_mode": "context",
+  "conditions": "只比较冻结v1 JSON及其审查中已显示的Fraction有限记录，与两个候选地图对应的RM+一步、NASH-02噪声障碍和NASH-03网格玩具。噪声例初态r=(1,0)、x=(1,0)、真实全动作收益u=(1/2,0)，两个观测(0,1/2)、(1,−1/2)各概率1/2，更新r⁺=[r+û−〈x,û〉1]_+并归一化。",
+  "roles": {
+    "local-potential-games/nash-finite-toy-audit-v1": "保存275+3750个一步检查、两点无偏噪声例和25个有理Minty anchors的精确有限输出。",
+    "local-potential-games/nash-candidate-map-and-literature-boundaries": "记录这些有限例约束的候选推理和未付算法义务。",
+    "local-potential-games/nash-candidate-registry-json-and-selection-boundaries": "将同一有限证据纳入NASH-01/02/03候选的范围说明，不将它们记为已完成定理。"
+  },
+  "explanation": "逐项读取v1原JSON：二元275、三元3750的一步identity记录。噪声观测均值为真实u；第一分支ĝ=(0,1/2)，r⁺=(1,1/2)，x⁺=(2/3,1/3)，真实势Φ(x)=x1/2故ΔΦ=−1/6，真实gap=1/6；第二分支ĝ=(0,−3/2)，截断后r⁺=(1,0)，ΔΦ=gap=0。等概率均值分别−1/12与1/12，精确击穿的是“条件无偏全动作估计必使RM+一步真实势条件期望非降”这一Lyapunov步骤；它没有击穿任一候选的收敛可能性。Minty段只显示网格{0,1/4,1/2,3/4,1}²上25行两个值，其均值均−1；字段名universal_symbolic_average不是额外连续域证明。4025次单步数值与25网格点分别不替代零初始化长期速率或全部连续anchors的量词。两个目标已准确保留这些有限数值及对应限制，本边仅核其一致性。",
+  "scope": "精确有限语境：对应候选的算术核验与一个错误Lyapunov步骤的显式反例。无随机RM+高概率ε-NE/样本复杂度定理，无Minty可行性分类或复杂度定理，无新颖性结论。",
+  "evidence": [
+    {
+      "path": "archives/local-potential-games/state/审查/Nash有限玩具审计v1--审查.md",
+      "sha256": "6d96501b7df415ef4f48980dd47acebd1e19e44ec84c528c50a52fac14851eed"
+    },
+    {
+      "path": "archives/local-potential-games/state/资料/Nash候选报告与近期排雷边界--资料.md",
+      "sha256": "7d28a9a0b90b553c99222cb098a16fc096e5c93fe602381d878dfbc58a7faf5e"
+    },
+    {
+      "path": "archives/local-potential-games/state/资料/Nash候选登记JSON与取舍边界--资料.md",
+      "sha256": "a49fa50118f1145c3d7a107b98b5b5c1d2f8704e65e613c48508f6857587b522"
+    },
+    {
+      "path": "archives/local-potential-games/tools/evidence/retired-topic-selection-20261031/nash_toy_results_v1.json",
+      "sha256": "de596c41b04878990b835e9b344c714bcd448db8b38be8f327ad2bedc6667c8a"
+    }
+  ],
+  "status": "accepted",
+  "premises_mode": "all",
+  "reviewed_by": "Boss5-worker-474257b8",
+  "review_note": "实读v1 JSON全部字段，独立按正部更新与真实势重算两分支；与两个地图的NASH-01/02/03范围逐项比较。这里只保存checks语境，不把有限枚举升级成普遍算法保证；反例的被否步骤明确写在explanation。",
+  "endpoint_pins": {
+    "local-potential-games/nash-candidate-map-and-literature-boundaries": "b4ac3aa920ddc9270d629dee0e1caa60818b59cc046aea0fd8d6fdd0a00ecf69",
+    "local-potential-games/nash-candidate-registry-json-and-selection-boundaries": "f8e48b1c018901a2627f72504a061523e1c33c2c01cbc381ade0f2fbd5279f26",
+    "local-potential-games/nash-finite-toy-audit-v1": "abd3fb3021e50d6a1a0511971f3b013b6f786106e6f211763d6da4d6d9f3927c"
+  },
+  "evidence_pins": {
+    "archives/local-potential-games/state/审查/Nash有限玩具审计v1--审查.md": "6d96501b7df415ef4f48980dd47acebd1e19e44ec84c528c50a52fac14851eed",
+    "archives/local-potential-games/state/资料/Nash候选报告与近期排雷边界--资料.md": "7d28a9a0b90b553c99222cb098a16fc096e5c93fe602381d878dfbc58a7faf5e",
+    "archives/local-potential-games/state/资料/Nash候选登记JSON与取舍边界--资料.md": "a49fa50118f1145c3d7a107b98b5b5c1d2f8704e65e613c48508f6857587b522",
+    "archives/local-potential-games/tools/evidence/retired-topic-selection-20261031/nash_toy_results_v1.json": "de596c41b04878990b835e9b344c714bcd448db8b38be8f327ad2bedc6667c8a"
+  },
+  "review_digest": "2de993c210baa2e08a6b499801cc2cbf18175a5440f5f7eff8a4181b3cd0c2cf"
+}
