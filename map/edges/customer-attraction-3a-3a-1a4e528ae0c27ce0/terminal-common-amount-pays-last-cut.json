@@ -1,0 +1,56 @@
+{
+  "edge_id": "cag-1a4e52-terminal-common-amount-pays-last-cut",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/terminal-multichild-amount-normalized-sharp-column-cap-two"
+  ],
+  "target_ids": [
+    "M-13abd453b1044dfb8a1691935a2659d1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "目标l=m，所有参与该目标的非零请求来自cut iα=m，保持SRC与真实分支索引。末层代数甚至允许任意合法B。",
+  "roles": {
+    "customer-attraction/terminal-multichild-amount-normalized-sharp-column-cap-two": "任意合法末层多孩子共同金额支付、统一系数2锐及同一λ的总预算。",
+    "M-13abd453b1044dfb8a1691935a2659d1": "PCAP限制到末位cut等于末位目标的已付部分。"
+  },
+  "explanation": "末层T替换使所有旧源cα≤c_B+1≤2c_B，因此正预算源Σαλ_αj≤2。对实际末位失去的x，cα=c_B−1且实际前缀恰c_B−1个覆盖源，把其全部加权请求合计至多2/c_B，求和得到2u_m。锐族m=n+1的完整SPE使同一合同输出为(2−3/(n+1))u_m，故任何跨人数统一常数小于2均失败。另任意cut时，固定同一α,j,x，全部目标失去覆盖数r⁻≤c_B−1，故Σ_l q⁺_{αj,l}≤u_j(Wα)。对同一λ应用SRC得Σ_l out_l≤Σ_j u_j(B)≤W，不可再把分别最大化的Σ_lL_l当成这一合计。",
+  "scope": "已付i=m子域含所有末位孩子、重复孩子和零源。对于一般cut只有同一λ的合计金额。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/末层多孩子金额预算的锐两倍列容量--定理.md",
+      "sha256": "dae097bf1c0576d6ab8b417505f0b99280192fd80b11571d5f190ed8e78766c3",
+      "section": "任意多个孩子共享一份金额预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末层多孩子金额预算的锐两倍列容量--定理.md",
+      "sha256": "dae097bf1c0576d6ab8b417505f0b99280192fd80b11571d5f190ed8e78766c3",
+      "section": "统一系数二的完整SPE锐家族"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末层多孩子金额预算的锐两倍列容量--定理.md",
+      "sha256": "dae097bf1c0576d6ab8b417505f0b99280192fd80b11571d5f190ed8e78766c3",
+      "section": "所有recipient合计的基线预算仍只是一份旧钱"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/复制全利润两倍失败与前缀请求cap2的精确量词--资源.md",
+      "sha256": "40263113dddb913da280d01f2d209c56760fb04552897e45dee7b55bf1e0603b"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读所列原模型、数学正文及承重证据，核对有序真实续局、作用范围、精确推导和未付义务。",
+  "contribution": {
+    "result": "真末位cut的全部多孩子共同列界为2u_m，且系数跨人数锐。任意深cut下，对一份固定λ有跨列合计预算。",
+    "remaining": "当l=m但有iα<m，或l<m时，多人动作可变，两个末层负载等式不再适用。合计金额也不控制每列2u_l。"
+  },
+  "endpoint_pins": {
+    "M-13abd453b1044dfb8a1691935a2659d1": "e60ec1b4e9cc80a90226a54d4d832da7208eb651a74a605506750606cc539c74",
+    "customer-attraction/terminal-multichild-amount-normalized-sharp-column-cap-two": "a0b865b2a5f452b5d75309fa669b2c6a935fa064b630da71712df13be8aa49d0"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/末层多孩子金额预算的锐两倍列容量--定理.md": "dae097bf1c0576d6ab8b417505f0b99280192fd80b11571d5f190ed8e78766c3",
+    "archives/customer-attraction/state/资源/复制全利润两倍失败与前缀请求cap2的精确量词--资源.md": "40263113dddb913da280d01f2d209c56760fb04552897e45dee7b55bf1e0603b"
+  },
+  "review_digest": "e3bc64557d949cadcb4802030e2dd87ac8b8a904470b5fda17034883610bf668"
+}

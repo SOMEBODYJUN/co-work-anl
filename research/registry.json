@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-map-um-scope-decoder-474257b8.json",
-    "sha256": "1982787005ef833ccfc0c540fb289492ad56e8ce391d7cacfeb0ff0625df7568"
+    "path": "research/registration/baseline-map-nonterminal-cap-round14-v1.json",
+    "sha256": "c8f032f5f5a62a0e7dc4d301cd6d4de8e3835434a8a7a4405ac51c672c47adf5"
   },
   "objects": [
     {
@@ -30266,6 +30266,47 @@
         "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/questions/unrelated_machines/heavy_light_joint_residual_minmax_obstruction.md#可继续攻的自适应残余引理",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/heavy_light_price_convexification.md#8-自适应-anchor-为什么仍须新的共同信息",
         "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/heavy_light_price_convexification.md#8-自适应-anchor-为什么仍须新的共同信息"
+      ]
+    },
+    {
+      "object_id": "M-4bfb99ccca4f4f77a6aaee6882ef1170",
+      "version": 1,
+      "title": "CONFIG保真低峰解码的私有树参数障碍",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "源为全部原任务的normalized flat普通UM Q_D(D≥2整数)；目标为非空有限、全局d,h≥1、每root非空indexed菜单、各state满d叉高h完全私有内部机的v3普通UM。root selector unit；内部job父端1/d及子端1，leaf job父端1/d及唯一unit外端，外部可跨root/state共享，无其它jobs、预载或资格。μ为每完整state最大叶资源重数。",
+      "statement": "对每个D≥2和此域目标P′，若完整CONFIG(1)可行且每份峰C<2的完整目标实际调度均存在峰不增的完整Q_D调度解码，则D·ceil(d/(μ+2))≤d，故d≥D、μ≥D−2。该域内低峰解码合同等价于OPT(Q_D)≤OPT(P′)。若仅已知μ≤μ0，可代入μ0得同式；D>μ0+2不可能，D=μ0+2还必有D整除d，但这些只为必要条件。固定d0亦排D>d0，故固定μ0或固定d0的该类编译不能覆盖全部Q_D。",
+      "quantifiers": "∀整数D≥2，∀所列显式非空完整P′(全局整数d,h≥1、实际重数μ≥1)，在CONFIG1和低峰完整解码前件下给参数必要条件；无需统一或可计算映射、前向实际调度保持、高峰解码或复杂性假设。",
+      "assumptions": [
+        "CONFIG1覆盖所有原jobs，不能只保selected子实例；source Q_D各state质量1且OPT=2−1/D。",
+        "目标严格在v3完全私有、统一父端时间1/d、唯一单位叶外端结构内；d既是统一分叉数又指定该处理时间。",
+        "解码输出安排源全部原jobs且峰不增；只需要目标C<2域，不要求算法性。",
+        "参数界仅必要；低峰解码与单向OPT不等式的等价利用目标CONFIG1→OPT′<2及有限最优值达到。"
+      ],
+      "scope": "Q_D与已证配置上界共同给具体结构编译的必要参数增长。准确切断同时保CONFIG1和峰不增低峰解码的固定μ或固定d路线；不否定N二叉selector/port正规形，不推出一般UM hardness、一般近二近似不可能、参数充分性或锐利性。",
+      "objections": "Haxell/私有树存在定理按v3的既有已证合同调用，未重证外部文献或宣称位多项式输出σ。共享内部机、异构树、非均匀时间、多单位叶端、额外任务/预载、有损解码及不保CONFIG1均须另作比较。独立批内核对与root全任务重算一致，无新增有限枚举。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/CONFIG保真低峰解码的私有树参数障碍--定理.md",
+        "sha256": "e3e985e7d838474c692d633a77041dad85375b337ba704877376d73955f60f21"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定理/规范化平菜单的CONFIG与正支撑LP双向保持--定理.md",
+          "sha256": "8bfbaa80b98546b6d1320e9760bb9491165e26a6cef1b6cd35eb86116c822f66"
+        },
+        {
+          "path": "archives/unrelated-machines/state/定理/私有菜单树有界叶重数配置界--定理.md",
+          "sha256": "5b810c65140f9581fb362f8ff739b09f019a7c435a1bc2eb3d7a34d42c3041d3"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资料/加权菜单Santa值桥与不相关机转换--资料.md",
+          "sha256": "d01ac63a4da47c8cfaed8ed296efa00ea4b375ef8b567c0338c938d6d175aa8c"
+        }
+      ],
+      "sources": [
+        "Stage 3 Boss5/474257b8 cross-batch derivation from M-9452d445c1744d5eaac946ee974d2162 and UM-Q-PRIVATE-TREE-BOUNDED-MULTIPLICITY-CONFIGURATION-FLOOR-v3",
+        "research/workspaces/map-v2/Boss5/qd-private-tree-decoder-obstruction-474257b8.md",
+        "research/workspaces/map-v2/Boss5/integration-um-current-wave-474257b8.md"
       ]
     },
     {
@@ -128642,6 +128683,35 @@
       ]
     },
     {
+      "object_id": "customer-attraction/nonterminal-amount-column-cap-two-lower-at-every-fixed-tail-length",
+      "version": 1,
+      "title": "任意固定正尾长的非末位金额列系数二下界",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限单位客户、共同有限标签目录、完整有序纯SPE、终局均分。所有孩子在同一实际非末位cut强制合法主题后沿同一σ完成。",
+      "statement": "对任意固定正整数r和n≥max(3,r)，有m=n+1+r人的完整纯SPE及位置ℓ=n+1，实际在其后恰留r位。跨全部真实孩子每sender仅有一份原金额预算，统一ℓ列输出除以p_ℓ恰为2−3/(n+1)。故每个固定正尾长的全人数统一列系数至少2。",
+      "quantifiers": "任意正整数r，任意n≥max(3,r)。每个子终局采用同一cut和同一真实策略，sender预算分别跨全部孩子合计。",
+      "assumptions": [
+        "原末层族的独立X/Y客户块，新增r个各有n客户且全不交的Z主题。",
+        "只要求cut强制合法主题，cut后的后继必须是真实续局。",
+        "完整策略包含所有有序历史，默认末位平局先选可触X的A或D。"
+      ],
+      "scope": "非末位列统一常数的下界，固定任意正尾长。实际福利达到最优。",
+      "objections": "一般深层列的二倍上界仍开放。此族给趋二而非每固定人数的最优常数。",
+      "body": {
+        "path": "archives/customer-attraction/state/定理/任意固定正尾长的非末位金额列系数二下界--定理.md",
+        "sha256": "4be4c1db6dd8c5be4ced85995688c5530d888092b6de6057fb4f5bdb8605e6e6"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/末层多孩子金额预算的锐两倍列容量--定理.md",
+          "sha256": "dae097bf1c0576d6ab8b417505f0b99280192fd80b11571d5f190ed8e78766c3",
+          "section": "任意多个孩子共享一份金额预算"
+        }
+      ],
+      "sources": []
+    },
+    {
       "object_id": "customer-attraction/nonuniform-independent-reserve-last-core-exact-finite-diagnostic",
       "version": 2,
       "title": "非均匀独立储备末个C子局的239输入精确有限诊断",
@@ -160137,47 +160207,6 @@
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/density_padding/review.md#6",
         "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/weighted_congestion/density_padding/review.md#6"
       ]
-    },
-    {
-      "object_id": "M-4bfb99ccca4f4f77a6aaee6882ef1170",
-      "version": 1,
-      "title": "CONFIG保真低峰解码的私有树参数障碍",
-      "kind": "theorem",
-      "truth_status": "proved",
-      "model": "源为全部原任务的normalized flat普通UM Q_D(D≥2整数)；目标为非空有限、全局d,h≥1、每root非空indexed菜单、各state满d叉高h完全私有内部机的v3普通UM。root selector unit；内部job父端1/d及子端1，leaf job父端1/d及唯一unit外端，外部可跨root/state共享，无其它jobs、预载或资格。μ为每完整state最大叶资源重数。",
-      "statement": "对每个D≥2和此域目标P′，若完整CONFIG(1)可行且每份峰C<2的完整目标实际调度均存在峰不增的完整Q_D调度解码，则D·ceil(d/(μ+2))≤d，故d≥D、μ≥D−2。该域内低峰解码合同等价于OPT(Q_D)≤OPT(P′)。若仅已知μ≤μ0，可代入μ0得同式；D>μ0+2不可能，D=μ0+2还必有D整除d，但这些只为必要条件。固定d0亦排D>d0，故固定μ0或固定d0的该类编译不能覆盖全部Q_D。",
-      "quantifiers": "∀整数D≥2，∀所列显式非空完整P′(全局整数d,h≥1、实际重数μ≥1)，在CONFIG1和低峰完整解码前件下给参数必要条件；无需统一或可计算映射、前向实际调度保持、高峰解码或复杂性假设。",
-      "assumptions": [
-        "CONFIG1覆盖所有原jobs，不能只保selected子实例；source Q_D各state质量1且OPT=2−1/D。",
-        "目标严格在v3完全私有、统一父端时间1/d、唯一单位叶外端结构内；d既是统一分叉数又指定该处理时间。",
-        "解码输出安排源全部原jobs且峰不增；只需要目标C<2域，不要求算法性。",
-        "参数界仅必要；低峰解码与单向OPT不等式的等价利用目标CONFIG1→OPT′<2及有限最优值达到。"
-      ],
-      "scope": "Q_D与已证配置上界共同给具体结构编译的必要参数增长。准确切断同时保CONFIG1和峰不增低峰解码的固定μ或固定d路线；不否定N二叉selector/port正规形，不推出一般UM hardness、一般近二近似不可能、参数充分性或锐利性。",
-      "objections": "Haxell/私有树存在定理按v3的既有已证合同调用，未重证外部文献或宣称位多项式输出σ。共享内部机、异构树、非均匀时间、多单位叶端、额外任务/预载、有损解码及不保CONFIG1均须另作比较。独立批内核对与root全任务重算一致，无新增有限枚举。",
-      "body": {
-        "path": "archives/unrelated-machines/state/定理/CONFIG保真低峰解码的私有树参数障碍--定理.md",
-        "sha256": "e3e985e7d838474c692d633a77041dad85375b337ba704877376d73955f60f21"
-      },
-      "evidence": [
-        {
-          "path": "archives/unrelated-machines/state/定理/规范化平菜单的CONFIG与正支撑LP双向保持--定理.md",
-          "sha256": "8bfbaa80b98546b6d1320e9760bb9491165e26a6cef1b6cd35eb86116c822f66"
-        },
-        {
-          "path": "archives/unrelated-machines/state/定理/私有菜单树有界叶重数配置界--定理.md",
-          "sha256": "5b810c65140f9581fb362f8ff739b09f019a7c435a1bc2eb3d7a34d42c3041d3"
-        },
-        {
-          "path": "archives/unrelated-machines/state/资料/加权菜单Santa值桥与不相关机转换--资料.md",
-          "sha256": "d01ac63a4da47c8cfaed8ed296efa00ea4b375ef8b567c0338c938d6d175aa8c"
-        }
-      ],
-      "sources": [
-        "Stage 3 Boss5/474257b8 cross-batch derivation from M-9452d445c1744d5eaac946ee974d2162 and UM-Q-PRIVATE-TREE-BOUNDED-MULTIPLICITY-CONFIGURATION-FLOOR-v3",
-        "research/workspaces/map-v2/Boss5/qd-private-tree-decoder-obstruction-474257b8.md",
-        "research/workspaces/map-v2/Boss5/integration-um-current-wave-474257b8.md"
-      ]
     }
   ],
   "materials": [
@@ -165455,6 +165484,15 @@
       "reason": "完整实读本材料全部正文；复用成熟证明，本轮数学程序0运行，未冒称逐字重读全部原附件。任意给定旧完整SPE在所有纯旧历史字面保留；与独审同命题合一。原证明集合目录且物理去重，大小guard含m1/K0；不自动声称同覆盖异标签扩张版。"
     },
     {
+      "path": "archives/customer-attraction/state/定理/任意固定正尾长的非末位金额列系数二下界--定理.md",
+      "sha256": "4be4c1db6dd8c5be4ced85995688c5530d888092b6de6057fb4f5bdb8605e6e6",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/nonterminal-amount-column-cap-two-lower-at-every-fixed-tail-length"
+      ],
+      "reason": "由末层金额族独立延长至任意固定正尾长的完整策略及精确列下界。"
+    },
+    {
       "path": "archives/customer-attraction/state/定理/任意背景两尾产品门槛与可信叶过滤--定理.md",
       "sha256": "0719b4e1618346e9abf437101274d9bd0d7abf64669207c9a888a1a7cf724a8b",
       "disposition": "objects",
@@ -166580,10 +166618,11 @@
       "sha256": "dae097bf1c0576d6ab8b417505f0b99280192fd80b11571d5f190ed8e78766c3",
       "disposition": "objects",
       "object_ids": [
-        "customer-attraction/terminal-multichild-amount-normalized-sharp-column-cap-two",
         "M-5bf5060ef8314afa872530593ddf9a65",
+        "M-67562654305f41c2b0dd47b3a39810e6",
         "M-a1cb1e0cef2641d1b1d03e7ec046f446",
-        "M-67562654305f41c2b0dd47b3a39810e6"
+        "customer-attraction/nonterminal-amount-column-cap-two-lower-at-every-fixed-tail-length",
+        "customer-attraction/terminal-multichild-amount-normalized-sharp-column-cap-two"
       ],
       "reason": "全文区分无SPE末层容量、存在完整SPE的全人数锐族、真实深层开放义务及固定单列精确优化。TOTAL 源池的独立主body在 0085；本页只给同一已知源池的粗化推论，待主owner确认接证。"
     },
@@ -193906,6 +193945,15 @@
       "reason": "全文定义模型、零值分支、剪枝LST及向下封闭CONFIG；保留已直接引用本页的全部现有owner。"
     },
     {
+      "path": "archives/unrelated-machines/state/定理/CONFIG保真低峰解码的私有树参数障碍--定理.md",
+      "sha256": "e3e985e7d838474c692d633a77041dad85375b337ba704877376d73955f60f21",
+      "disposition": "objects",
+      "object_ids": [
+        "M-4bfb99ccca4f4f77a6aaee6882ef1170"
+      ],
+      "reason": "第三阶段实读Q_D完整整数值/逐任务CONFIG与私有均匀树配置上界后独立推出并复核的参数障碍；正式正文给单向低峰解码、全部原任务、Dr<=d及准确不可能范围。"
+    },
+    {
       "path": "archives/unrelated-machines/state/定理/七态原星全局二次负载局部核--定理.md",
       "sha256": "755f74fcc24ddf06995bedd65fb9e6ce4529c6676b6dd1036d7513669657f351",
       "disposition": "objects",
@@ -203974,15 +204022,6 @@
         "weighted-congestion/problem"
       ],
       "reason": "已连续实读本文完整正文及其实际模型、精确陈述、全部条件、证明位置、版本与审查边界；此文件承载所列数学身份。复用成熟论证，未重跑数学程序。"
-    },
-    {
-      "path": "archives/unrelated-machines/state/定理/CONFIG保真低峰解码的私有树参数障碍--定理.md",
-      "sha256": "e3e985e7d838474c692d633a77041dad85375b337ba704877376d73955f60f21",
-      "disposition": "objects",
-      "object_ids": [
-        "M-4bfb99ccca4f4f77a6aaee6882ef1170"
-      ],
-      "reason": "第三阶段实读Q_D完整整数值/逐任务CONFIG与私有均匀树配置上界后独立推出并复核的参数障碍；正式正文给单向低峰解码、全部原任务、Dr<=d及准确不可能范围。"
     }
   ],
   "edge_files": [
@@ -204431,7 +204470,6 @@
     "map/edges/unrelated-machines-3a-3a-280160f5f3f5d37d/target-and-token-identity-give-dag-ratio.json",
     "map/edges/unrelated-machines-3a-3a-2cf9efe56bf3d79c/um-blmrs-theorem-and-bit-contract-give-conditional-santa-barrier.json",
     "map/edges/unrelated-machines-3a-3a-2cf9efe56bf3d79c/um-cartesian-free-and-coordinate-quota-imply-no-constant-repair.json",
-    "map/edges/unrelated-machines-3a-3a-2cf9efe56bf3d79c/um-cartesian-reverse-values-transfer-through-three-state-normal-form.json",
     "map/edges/unrelated-machines-3a-3a-2cf9efe56bf3d79c/um-dag-token-endpoint-values-obstruct-restricted-santa.json",
     "map/edges/unrelated-machines-3a-3a-2cf9efe56bf3d79c/um-shared-sparse-decoder-pays-final-step-of-scheduling-transfer.json",
     "map/edges/unrelated-machines-3a-3a-3f971da9d312cddb/chromatic-complement-pays-clique-cover.json",
@@ -204443,8 +204481,6 @@
     "map/edges/unrelated-machines-3a-3a-3f971da9d312cddb/total-reduction-framework-pays-gap-contract.json",
     "map/edges/unrelated-machines-3a-3a-3f971da9d312cddb/uniform-odd-k-pays-tiny-sharpness.json",
     "map/edges/unrelated-machines-3a-3a-4b528c45d7d1e1f8/activation-safe-unlock.json",
-    "map/edges/unrelated-machines-3a-3a-4b528c45d7d1e1f8/nsw-to-normalized-quality-repair.json",
-    "map/edges/unrelated-machines-3a-3a-4b528c45d7d1e1f8/path-completes-three-state-normal-form.json",
     "map/edges/unrelated-machines-3a-3a-4b528c45d7d1e1f8/pruned-sharp-path-all.json",
     "map/edges/weighted-congestion-3a-3a-02f33da9f4716703/anchored-compiler-budget-forces-weight-ratio-loss.json",
     "map/edges/weighted-congestion-3a-3a-02f33da9f4716703/box-stopping-versus-robust-residual.json",

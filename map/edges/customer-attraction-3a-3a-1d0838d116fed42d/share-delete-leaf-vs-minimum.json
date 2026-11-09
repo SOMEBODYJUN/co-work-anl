@@ -1,0 +1,55 @@
+{
+  "edge_id": "cag-1d0838-share-delete-leaf-vs-minimum",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/share-deletion-static-preservation-and-sequential-closure-failure"
+  ],
+  "target_ids": [
+    "M-c5dcfeb52be64bdbbe96f0d903ab69ee"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "按原实际叶的c_x冻结降权，固定同一删人操作。不同删除分别新求完整有序历史纯SPE。",
+  "roles": {
+    "customer-attraction/share-deletion-static-preservation-and-sequential-closure-failure": "给每个删后冻结实际叶的收益保持与准确福利W−u_i。",
+    "M-c5dcfeb52be64bdbbe96f0d903ab69ee": "用实际SPE集合反驳把该保留提升到顺序与平均闭包。"
+  },
+  "explanation": "静态恒等式给冻结叶总和Σ_i(W−u_i)=(n−1)W。若每个删后冻结叶均可实现为SPE，则L_i≤W−u_i而给DEL。实际34客户输入第一叶(1,4,5)的原最小收益者61/6被删后，冻结剩余叶不在新SPE集合。另一原福利32叶的三次重选最坏值总和65，严格超过冻结三叶的总和64。冻结叶和可信最小值因此需要分别求证。",
+  "scope": "精确分离静态保留、顺序保叶与平均最坏续局闭包。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/份额删除的静态保持与跨人数可信闭包失败--障碍.md",
+      "sha256": "e989079bafac587aa98339a79014273d11b1b9ee251d1f73649fef0199f13a47"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/boss5-parent-resume-primary/original/f7c463370d24081cd537/audit_share_deletion.py",
+      "sha256": "63e03139bf2c93b730ff6cb74e9038b05ed160ad437520b5dcb309ae3abbc0d6"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/boss5-parent-resume-primary/original/8df67c3df81f28a815b5/audit_share_deletion.json",
+      "sha256": "8ff1be411935b45239666b304dbd7deccfee56faf620e0715124dd881caf70b6"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/boss5-parent-resume-primary/replay-tree/examples/customer_attraction/individual_security_failure.json",
+      "sha256": "bc5202502faa778fae402da4d74a4da8971ffa30bd712423147555b6e15a437a"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "读降权代数、两份原叶、父审Python/JSON和报告。静态保持只给冻结参照值，反例的可实现集合靠独立全树证书。",
+  "contribution": {
+    "result": "DEL的右侧正是所有冻结删后叶的福利之和，并且若每次均有保叶SPE则DEL成立。",
+    "remaining": "实际保叶与DEL失效仍依赖两份不同原SPE及删后完整终局集合。"
+  },
+  "endpoint_pins": {
+    "M-c5dcfeb52be64bdbbe96f0d903ab69ee": "159adea44f7e2925fab76eef3263473acdac89247f833e12364544eedd487e37",
+    "customer-attraction/share-deletion-static-preservation-and-sequential-closure-failure": "a7370c418dc035cc515a7109b9741f6b5c342770f798fd02a1630741f395118d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/份额删除的静态保持与跨人数可信闭包失败--障碍.md": "e989079bafac587aa98339a79014273d11b1b9ee251d1f73649fef0199f13a47",
+    "archives/customer-attraction/tools/evidence/boss5-parent-resume-primary/original/f7c463370d24081cd537/audit_share_deletion.py": "63e03139bf2c93b730ff6cb74e9038b05ed160ad437520b5dcb309ae3abbc0d6",
+    "archives/customer-attraction/tools/evidence/boss5-parent-resume-primary/original/8df67c3df81f28a815b5/audit_share_deletion.json": "8ff1be411935b45239666b304dbd7deccfee56faf620e0715124dd881caf70b6",
+    "archives/customer-attraction/tools/evidence/boss5-parent-resume-primary/replay-tree/examples/customer_attraction/individual_security_failure.json": "bc5202502faa778fae402da4d74a4da8971ffa30bd712423147555b6e15a437a"
+  },
+  "review_digest": "3e41faf94cd681c8926bbb1811086d8f197f5a93f60f7bf5acceb99b6a8f9896"
+}

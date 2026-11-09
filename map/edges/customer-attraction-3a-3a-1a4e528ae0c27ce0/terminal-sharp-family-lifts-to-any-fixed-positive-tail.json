@@ -1,0 +1,51 @@
+{
+  "edge_id": "cag-1a4e52-terminal-sharp-family-lifts-to-any-fixed-positive-tail",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/terminal-multichild-amount-normalized-sharp-column-cap-two"
+  ],
+  "target_ids": [
+    "M-13abd453b1044dfb8a1691935a2659d1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任取固定正尾长r≥1，取任意整数n≥max(3,r)。保原互不相交单位块X_j大小2、Y_j大小2(n−1)，A_j=X_j∪Y_j、T_j=Y_j、D=∪X_j。向目录添r个互不相交且与原块不交的合法主题Z_a，各大小n。人数m=n+1+r。",
+  "roles": {
+    "customer-attraction/terminal-multichild-amount-normalized-sharp-column-cap-two": "原末层锐族的A_j、T_j、D结构、真SPE思路及同一SRC金额。",
+    "M-13abd453b1044dfb8a1691935a2659d1": "把锐下界迁到真正非末位目标，后面可有任意指定正人数。"
+  },
+  "explanation": "给完整策略如下。前缀只含互异A且长度t<n时选最小未用A。恰n个互异A后规定选D。在任一n个互异A后紧接D或T_j的整棵有序尾树中，每个后继选最小未用Z。其余节点依真实已构子树逆向选BR，末位平局先取A或D。特殊尾中每步必有未用Z，选后再无后继重复，利润恰n。任何旧题因全部A已在背景，利润至多n，已用Z利润至多n/2，另一未用Z也只获n，故整个特殊尾可信。恰n个A后，规定D得n；改任一A得至多n、T至多n−1、Z至多n。更早fresh节点规定新A的真收益为2n−1，另选新A不变、改旧A至多n、T至多2n−2、Z至多n。已有任一A时改D因至少一块X_j已有覆盖至多2n−1。根改D若在真正末位之前已有其它选择触X，同界已成立；否则除该根外，末位前的n+r−1<2n次动作全为T或Z，至少一个T_j被选至多一次，末位试A_j得至少1+(2n−2)/2=n。所有T_j在末位被A_j严格支配，Z至多n，故默认真BR选A或D，触及X，根D仍至多2n−1。由此所有指定节点及所有离轨子局均可信。实际为(A₁,…,A_n,D,Z₁,…,Z_r)。对目标l=n+1，每个源j≤n在该同一切点强制T_j，真正尾全Z，原u_j=2n−1、子u_j=n+1、q⁺=1。独立饱和λ=(2n−1)/(n+1)给输出n(2n−1)/(n+1)=(2−3/(n+1))u_l。",
+  "scope": "任意固定正尾长r的完整原模型SPE，所有使用的分支均在目标当位、同一原策略真续，W=OPT=2n²+rn。尾用真正合法共同主题，未加虚拟空位或冻结行为。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/末层多孩子金额预算的锐两倍列容量--定理.md",
+      "sha256": "dae097bf1c0576d6ab8b417505f0b99280192fd80b11571d5f190ed8e78766c3",
+      "section": "任意多个孩子共享一份金额预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末层多孩子金额预算的锐两倍列容量--定理.md",
+      "sha256": "dae097bf1c0576d6ab8b417505f0b99280192fd80b11571d5f190ed8e78766c3",
+      "section": "统一系数二的完整SPE锐家族"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/复制全利润两倍失败与前缀请求cap2的精确量词--资源.md",
+      "sha256": "40263113dddb913da280d01f2d209c56760fb04552897e45dee7b55bf1e0603b"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读所列原模型、数学正文及承重证据，核对有序真实续局、作用范围、精确推导和未付义务。",
+  "contribution": {
+    "result": "对于每个指定正尾长r，所有统一PCAP系数小于2都被该真SPE族否定。即使只允许cut等于非末位目标也成立。",
+    "remaining": "只证明下界，未证明2在该子域或一般深切域总足够。未求固定m最优系数或同一控制器其它目标的最大比。"
+  },
+  "endpoint_pins": {
+    "M-13abd453b1044dfb8a1691935a2659d1": "e60ec1b4e9cc80a90226a54d4d832da7208eb651a74a605506750606cc539c74",
+    "customer-attraction/terminal-multichild-amount-normalized-sharp-column-cap-two": "a0b865b2a5f452b5d75309fa669b2c6a935fa064b630da71712df13be8aa49d0"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/末层多孩子金额预算的锐两倍列容量--定理.md": "dae097bf1c0576d6ab8b417505f0b99280192fd80b11571d5f190ed8e78766c3",
+    "archives/customer-attraction/state/资源/复制全利润两倍失败与前缀请求cap2的精确量词--资源.md": "40263113dddb913da280d01f2d209c56760fb04552897e45dee7b55bf1e0603b"
+  },
+  "review_digest": "5d28a04e96a306fd9a947cece59b66be4d78b82a4848a22ab10ba173bae893b9"
+}

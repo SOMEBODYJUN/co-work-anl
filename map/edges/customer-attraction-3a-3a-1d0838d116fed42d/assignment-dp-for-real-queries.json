@@ -1,0 +1,50 @@
+{
+  "edge_id": "cag-1d0838-assignment-dp-for-real-queries",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/optimal-frozen-matching-exact-dynamic-program-and-unique-support-policy-cone"
+  ],
+  "target_ids": [
+    "customer-attraction/true-net-matching-seven-input-cone-catalog-and-quantifier-boundaries"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定完整有序策略σ、其实际有序终局z、一个带重复索引的指定最优元组T及同一客户权w，真实查询价先在原actual前缀全部计算。",
+  "roles": {
+    "customer-attraction/optimal-frozen-matching-exact-dynamic-program-and-unique-support-policy-cone": "固定角色×槽成本矩阵的逐槽删除递推覆盖全部指派。",
+    "customer-attraction/true-net-matching-seven-input-cone-catalog-and-quantifier-boundaries": "把同一离散递推迁移到固定权点的真实查询最大和及净差评价。"
+  },
+  "explanation": "对每个槽标签a，用−V_i,a(σ,w)替代冻结费用F_i(a;z)。令q为未分配最优槽计数，i=m−|q|，则D(q)=min_(a:q_a>0)[−V_(i+1),a+D(q−e_a)]且D(0)=0。递推覆盖全部指派，不变动实际前缀也不排序实际角色。因此LP的排列约束在固定w上的最小余量恰OPT−W+D(q_T)，可作精确分离/复查。独立地遍历全部最优元组才可审存在量词。",
+  "scope": "迁移仅涉及固定真实收益矩阵的组合优化，不沿用冻结静态收益、静态反例或跨策略终局压缩。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/最优冻结匹配的精确动态规划与唯一支持策略锥--程序.md",
+      "sha256": "7b4cad20961d6ad0271c47b742c3d14b11577adfd5d430fdc1576b0cc99ad303"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/真实净差匹配七输入锥探针的目录与量词边界--程序.md",
+      "sha256": "076431db9be1f325098ba947d754080a58c9f2028a687fb861dd0cf95271c4e9"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r92-global-coverage-primary/original/b2c84ae20e2ebd5179a1/net_matching_cone_probe.py",
+      "sha256": "560e29bbcff404d80afa239d425ce1d06cca7ef6125b9e0a1373d5ab032c8f17"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "分别核冻结两个DP与真实锥脚本各排列的符号、槽重复与最优元组量词。",
+  "contribution": {
+    "result": "给指定真实查询矩阵一个无需显式列所有排列的精确缺口求值递推。",
+    "remaining": "仍须支付全部真实IC、非负客户和全最优元组量词；该递推不决定整个客户锥的最优值。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/optimal-frozen-matching-exact-dynamic-program-and-unique-support-policy-cone": "000356c76cea7b83dfa949c722994690289618e5c1e910537b28620494377e4c",
+    "customer-attraction/true-net-matching-seven-input-cone-catalog-and-quantifier-boundaries": "cfe56fa6d8d654e690da73a0eab5f27a03e8c92430dd41c22cf88b39ef08cd9f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/最优冻结匹配的精确动态规划与唯一支持策略锥--程序.md": "7b4cad20961d6ad0271c47b742c3d14b11577adfd5d430fdc1576b0cc99ad303",
+    "archives/customer-attraction/state/程序/真实净差匹配七输入锥探针的目录与量词边界--程序.md": "076431db9be1f325098ba947d754080a58c9f2028a687fb861dd0cf95271c4e9",
+    "archives/customer-attraction/tools/evidence/r92-global-coverage-primary/original/b2c84ae20e2ebd5179a1/net_matching_cone_probe.py": "560e29bbcff404d80afa239d425ce1d06cca7ef6125b9e0a1373d5ab032c8f17"
+  },
+  "review_digest": "fa8112b4aeb90563e626b37f2da790590e3604d6004b967bc5a5e6520c9881f4"
+}

@@ -1,0 +1,45 @@
+{
+  "edge_id": "cag-1d0838-fractional-prefix-pay-range",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-FRACTIONAL-COVER-PATH-BUDGET"
+  ],
+  "target_ids": [
+    "M-39733c91afe1408f86effa7888f32759"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定恰五人完整纯SPE，非空最优并集O的某个合法分数覆盖总权τ≤13/6。O=0时直接用非负收益和势缺口。",
+  "roles": {
+    "CA-FRACTIONAL-COVER-PATH-BUDGET": "同一真实路径的前三条前缀利润预算，余槽数5、4、3。",
+    "M-39733c91afe1408f86effa7888f32759": "取得一个分数覆盖范围内的23/72下界。"
+  },
+  "explanation": "由O≤P_(i−1)+rτu_i逐步展开，P≥O[1−(1−1/(5τ))(1−1/(4τ))(1−1/(3τ))]。各因子随τ非减，τ=13/6时右侧系数恰7043/21970=23/72+893/790920。实际Γ≥0，故所给范围内P+Γ支付23O/72。只取前三步，未用后两位收益冒充前三预算。",
+  "scope": "最优并集的低分数覆盖权重子类；一般τ≤5不够。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/分数覆盖的真实前缀利润预算--引理.md",
+      "sha256": "755cb6963539c054a1314ea514bdffa5a7a49226a03efed2197b1e35facb97e3"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/五人实际末尾势缺口的共同付款接口--候选.md",
+      "sha256": "a370b1569ae5c2bdbfffbf12174841a6cd0477dd0691f0cd08614698a6db50d8"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "保留实际利润路径及同一个比较集。精确复核前三因子及与23/72之差。",
+  "contribution": {
+    "result": "当最优并集有τ≤13/6的分数覆盖时，P单独就达到PAY所需下界。",
+    "remaining": "仍需处理该阈值之外且没有其他已证充分条件的实例。"
+  },
+  "endpoint_pins": {
+    "CA-FRACTIONAL-COVER-PATH-BUDGET": "55702a54ae6a8ce7ba1746357a747120bae031b90583ca139c4b962769804592",
+    "M-39733c91afe1408f86effa7888f32759": "e069f9db7b4bc99c6acb9eee60e7bb498f82784e7ecd6a2f97b328e0cf3d04c5"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/分数覆盖的真实前缀利润预算--引理.md": "755cb6963539c054a1314ea514bdffa5a7a49226a03efed2197b1e35facb97e3",
+    "archives/customer-attraction/state/候选/五人实际末尾势缺口的共同付款接口--候选.md": "a370b1569ae5c2bdbfffbf12174841a6cd0477dd0691f0cd08614698a6db50d8"
+  },
+  "review_digest": "ebe47e004208863927c4a96990967cb673d482d537270fd936448af6c5b51eb7"
+}

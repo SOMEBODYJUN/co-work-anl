@@ -1,0 +1,54 @@
+{
+  "edge_id": "cag-1a4e52-five-provider-witness-strict-earlier-cut-credit",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/five-provider-seven-topic-nonpne-exact-fixed-witness",
+    "M-ddd87cdc712c4ac68ec926984d718726"
+  ],
+  "target_ids": [
+    "M-13abd453b1044dfb8a1691935a2659d1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "正文1992009单位客户完整五人七标签策略，角色从1起、动作标签从0起。目标l=3、源j=1、cut i=2。",
+  "roles": {
+    "customer-attraction/five-provider-seven-topic-nonpne-exact-fixed-witness": "1992009客户完整σ的有序动作表、兴趣类型、真实actual与利润。",
+    "M-ddd87cdc712c4ac68ec926984d718726": "按真实子利润计算此支的可行权重与请求贡献。",
+    "M-13abd453b1044dfb8a1691935a2659d1": "明确较早cut产生正请求，不能把该域删成cut=target。"
+  },
+  "explanation": "实际00466。强制位置2取3，按附录得到真实叶03605，目标动作6。实际源0与实际目标4交叠的类型为{0,4}、{0,4,5}、{0,4,5,6}。末类型仍被孩子目标6覆盖，前两类进入q⁺。其原负载都是3，孩子负载分别2、3，故q⁺=4740/(3·2)+12600/(3·3)=2190。同一叶源利润623205/2，实际源利润251678，单独设λ=503356/623205，饱和其SRC，给严格正信用73489976/41547。逐附录核位置3强制2得到00260，源1的比为373657/1860345，高于2190/(623205/2)=292/41547。因此这是早切正贡献而非早切主导见证。逐个真切点及7个合法动作取最大，目标2的各源最大比为(129179/624835)，目标3为(373657/1860345,373657/1860345)，目标4为(120699/622175,120699/622175,120839/617615)，目标5在目标4三个比后再加135479/633195。各数严格小于11/50，而u_j(B)≤251678、u_l(B)≥248858、每目标至多4源。故L_l/u_l≤(11/50)·4·251678/248858<1。",
+  "scope": "单一完整五人见证。所有目标均支付cap1/2。其中i<l<m真分叉给明确正项但不支配对应目标切。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/五人七主题非静态均衡完整策略的整数见证--计算.md",
+      "sha256": "addbe8021888b92a6822628afaeef7e2e6b751c8b35e31721e16bf178263389c",
+      "section": "四、原非PNE偏离真实成立，真实续局恰消去静态增益"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/复制全利润两倍失败与前缀请求cap2的精确量词--资源.md",
+      "sha256": "40263113dddb913da280d01f2d209c56760fb04552897e45dee7b55bf1e0603b"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/nonpne-fixed-policy-primary/exact-ic-data.json",
+      "sha256": "0df2e8bb296f9ae0df554ba2d7df1cfdbd0abfb5a4f6963048dfd7274e3af21b"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读所列原模型、数学正文及承重证据，核对有序真实续局、作用范围、精确推导和未付义务。",
+  "contribution": {
+    "result": "该完整五人控制器对全部目标的L_l<u_l，且存在i<l<m的严格正SRC请求，给定交集、分母及饱和金额。",
+    "remaining": "只付该指定控制器，未建立其它实例、更早cut支配对应目标切或一般深cut的列上界。"
+  },
+  "endpoint_pins": {
+    "M-13abd453b1044dfb8a1691935a2659d1": "e60ec1b4e9cc80a90226a54d4d832da7208eb651a74a605506750606cc539c74",
+    "M-ddd87cdc712c4ac68ec926984d718726": "240b6f95b102ba7eb435bf8798aa3a28e1ed35ea8e50556be0a2bb7f36d613a3",
+    "customer-attraction/five-provider-seven-topic-nonpne-exact-fixed-witness": "a7e35d7930fe7431badf56175c9d2fce317e62254427e00b138d864240bc599f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/五人七主题非静态均衡完整策略的整数见证--计算.md": "addbe8021888b92a6822628afaeef7e2e6b751c8b35e31721e16bf178263389c",
+    "archives/customer-attraction/state/资源/复制全利润两倍失败与前缀请求cap2的精确量词--资源.md": "40263113dddb913da280d01f2d209c56760fb04552897e45dee7b55bf1e0603b",
+    "archives/customer-attraction/tools/evidence/nonpne-fixed-policy-primary/exact-ic-data.json": "0df2e8bb296f9ae0df554ba2d7df1cfdbd0abfb5a4f6963048dfd7274e3af21b"
+  },
+  "review_digest": "1d2f0d3600a5c682ceb2ec3f793bb9bf80a22d36e50a131361540f7fa0236c51"
+}

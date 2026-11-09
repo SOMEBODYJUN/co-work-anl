@@ -1,0 +1,61 @@
+{
+  "edge_id": "cag-1d0838-credible-exit-minimax-for-reservoir",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/fixed-entering-role-real-replay-and-once-only-potential-budget"
+  ],
+  "target_ids": [
+    "customer-attraction/pair-reservoir-target-credible-floor-all-k"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定成对水库精确目录、正常前缀h_i及任意完整有序历史纯尾SPE，目标前部可不满足SPE。规范门槛仅用有限子树的所有可信子SPE。",
+  "roles": {
+    "customer-attraction/fixed-entering-role-real-replay-and-once-only-potential-budget": "规范门槛M(h)=max_A min_(z∈R(h,A))u_i(z)等于该历史当前人的最小完整SPE收益。",
+    "customer-attraction/pair-reservoir-target-credible-floor-all-k": "把对新鲜P_ab的所有真续局保护用于相应目标位置的修复缺陷。"
+  },
+  "explanation": "令R(h_i,P_ab)为所有强制P_ab后的可信尾叶，水库归纳的严格外选项使这些叶上的后继均不碰所选组。于是该孩子最小值仍为P_ab插入时的8、9或10，M(h_i)至少该值。与目标收益2比较给δ_i≥6，或用好组分别给较早位置≥8和倒二≥7。这里没有把目标前缀误作原完整SPE，也没有用重放的任意raw目标律代替真实孩子全集。",
+  "scope": "固定水库路径的可信门槛部分；修复费用还依赖其异质编译及好组归纳。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/固定进入槽的真实后继重放与一次势预算--算法.md",
+      "sha256": "8eaf25b4b724f19ef98e4a58876484540fbd424f1df23c87a80ae32a50fed10b"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/成对主题水库路径的全参数可信缺陷收费--障碍.md",
+      "sha256": "57f4e4ac785241f507053b28d10d73ed3a613a50f8864e8791ab3ee2e06bb5aa"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/固定进入槽的真实后继重放与一次势预算--算法.md",
+      "sha256": "8eaf25b4b724f19ef98e4a58876484540fbd424f1df23c87a80ae32a50fed10b",
+      "section": "模型、规范门槛与分析端点"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/共享遗漏惩罚与无背景移植的真实末位障碍--资源.md",
+      "sha256": "f9e8b8605276efab816d8f73fe07ef568ea9a91237a577b1dbb28161d38c5dbb"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/重复惩罚的末位外选项与无背景移植--障碍.md",
+      "sha256": "972c61faa099fa2893f6f3fa9d0dd737d81c38293907a50aedc4232f16882123",
+      "section": "合法共享遗漏路径：明确给目录，但威胁未构造"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "对读规范门槛的有序子树拼接与水库真实后继归纳，区分目标缺陷和真实SPE。",
+  "contribution": {
+    "result": "在每个水库正常前缀，可将一个合法成对主题上对全部真子SPE的收益地板直接转成M(h_i)和δ_i的下界。",
+    "remaining": "地板本身须由水库新鲜组或好组归纳支付，最终2R+Δ还须指定编译的精确差额式。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/fixed-entering-role-real-replay-and-once-only-potential-budget": "242e85e429f195fb7cdf9b97499721fb5386c0f8c114edbec31a68825aa7b489",
+    "customer-attraction/pair-reservoir-target-credible-floor-all-k": "c1b6d0a896dcea2633ad6032ad6d40d0ef5b191c050817a762c829d003083479"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/固定进入槽的真实后继重放与一次势预算--算法.md": "8eaf25b4b724f19ef98e4a58876484540fbd424f1df23c87a80ae32a50fed10b",
+    "archives/customer-attraction/state/障碍/成对主题水库路径的全参数可信缺陷收费--障碍.md": "57f4e4ac785241f507053b28d10d73ed3a613a50f8864e8791ab3ee2e06bb5aa",
+    "archives/customer-attraction/state/资源/共享遗漏惩罚与无背景移植的真实末位障碍--资源.md": "f9e8b8605276efab816d8f73fe07ef568ea9a91237a577b1dbb28161d38c5dbb",
+    "archives/customer-attraction/state/障碍/重复惩罚的末位外选项与无背景移植--障碍.md": "972c61faa099fa2893f6f3fa9d0dd737d81c38293907a50aedc4232f16882123"
+  },
+  "review_digest": "9c1d80bc83d12b4ee0d2489cc3ced1f119d66fbfd3402c0b4cf48d3948e2cfbd"
+}

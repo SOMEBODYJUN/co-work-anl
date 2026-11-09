@@ -1,0 +1,48 @@
+{
+  "edge_id": "cag-1d0838-free-requery-fee-reduction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-c23e7a26f5de43eba968dde88a372d35",
+    "customer-attraction/shared-priority-free-legal-requery-terminal-absorption-bound"
+  ],
+  "target_ids": [
+    "M-7dfb82b1b3b74b7a87f72c5f1e872f9b"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定原完整SPE、同一最优元组/owner、合法裸Hall-A满额取消集合Γ_A。每个源一单位，按共用iid连续角色优先级，仅严格未来活跃真实覆盖者可接续，有活跃者必须继续。只按原actual前缀重查。",
+  "roles": {
+    "M-c23e7a26f5de43eba968dde88a372d35": "每个遗漏客户、每个优先级世界的最小终端价，原owner初始查询固定。",
+    "customer-attraction/shared-priority-free-legal-requery-terminal-absorption-bound": "终止事件边际控制与一次整行IC的合法容量。",
+    "M-7dfb82b1b3b74b7a87f72c5f1e872f9b": "固定元组和owner后消去路径，再精确表达最小共同费用。"
+  },
+  "explanation": "固定优先级排列π，DP的每客户最小值V_x(π)可同时实现，因为路径规则不设共享路由容量。对每个γ∈Γ_A，保留量1−γ_x非负，先逐客户最小化路径再从同一Γ_A最小化，与联合最小化相同。所有合同只依优先级排序，每个排列概率1/m!，故取每排列的取消最小值再平均。终点A_s≤Σ_(x∈R∩a)1/c_s(x)≤D_s：CAP仍在适应取消后逐源成立，实际过去不覆盖遗漏源，因而1/c_s(x)是查询整人利润中的该客份额。取期望后常数A_s/D_s乘原整行IC；总费用至少O−W。同角色仍可有多个不同查询。",
+  "scope": "固定有限输入、固定同一最优元组和owner的自由重查及裸Hall域。既不借局部SOURCE-NET预付，也不假设条件未来独立。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/共同优先级下自由合法重查的终端吸收界--定理.md",
+      "sha256": "065c26c799834bf295692aba4cce99dbbae871970bbdc9cf5fdf63a961c5ea07"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/第五轮一般半覆盖根稿的付款合同与证据时序--资源.md",
+      "sha256": "40cdbf2e89a2ff7d3ae383be4a943d3e168cb66a092c40c0da2502b4d0956cf7"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "对读吸收定理中的强制终止、DP、Hall取消和整行IC。核对先消路径与取消联立的最小化方向及共用随机排序。",
+  "contribution": {
+    "result": "最小共同费用精确等于(1/m!)Σ_π min_(γ∈Γ_A)Σ_(x∈R)(1−γ_x)V_x(π)，可逐排序求同一Hall集合的线性最小值。",
+    "remaining": "仍须对每份原SPE证明存在最优元组/owner使这个值≤W，或找出该量词下反例。"
+  },
+  "endpoint_pins": {
+    "M-7dfb82b1b3b74b7a87f72c5f1e872f9b": "fe58a8912e96f0b9af7879eecd2bacd75c28c25988a38c855d2161dc9f7d600d",
+    "M-c23e7a26f5de43eba968dde88a372d35": "e7817c994848d193130e4bf1c9013e59dba770bcc9aec21cdc979d7e846cafe2",
+    "customer-attraction/shared-priority-free-legal-requery-terminal-absorption-bound": "3ebe1acbab71170cb3b7b26d578f791f6a95ea1d6d5d1f85cde978d255b27334"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/共同优先级下自由合法重查的终端吸收界--定理.md": "065c26c799834bf295692aba4cce99dbbae871970bbdc9cf5fdf63a961c5ea07",
+    "archives/customer-attraction/state/资源/第五轮一般半覆盖根稿的付款合同与证据时序--资源.md": "40cdbf2e89a2ff7d3ae383be4a943d3e168cb66a092c40c0da2502b4d0956cf7"
+  },
+  "review_digest": "86d24e6f37d5c0f0d24b3f0c5037142e1c67dce82d66e9aaa440d4f63b55f9f8"
+}
