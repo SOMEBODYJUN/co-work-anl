@@ -1,0 +1,60 @@
+{
+  "edge_id": "um-92cefcd9-config-two-tree-and-st-give-sharp-price-bound",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-CONF-GAP-v1",
+    "UM-ST-ROUND-v1"
+  ],
+  "target_ids": [
+    "UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定 T>0、β∈[1/2,1)，使用原 E_T={p≤T} 和固定角色 B={p>βT}∩E_T；Q 非空且讨论 τ≤T 的实例，Γ 固定一个 admissible 整数 big 匹配后只在 light 上做分数补全。",
+  "roles": {
+    "UM-CONF-GAP-v1": "给任意 k≥4 的二端异速双树、完整 CONFIG(T_k) 可行点和实际 OPT=2−1/k，提供下界实例。",
+    "UM-ST-ROUND-v1": "给剪枝分数点的真实逐机槽舍入界；非增加工序使每台机器所有 big 区间只能占第一槽。",
+    "UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1": "支付其固定剪枝价格凸化相对共同重匹配的锐二上确界子结论。"
+  },
+  "explanation": "若 τ≤T，取Q内负载≤T的点，把 big/light 边的相应分数合并为原 x。ST按时间非增切槽，每机 big 总质量≤1、big时间严格大于light，故 big 只触首槽。整数匹配每机至多一件 big，且负载≤原分数负载+正支撑最大件≤2T。选中big就是同一个 admissible H，余件给真实light补全，得到Γ≤2T。反向每固定β，取 k≥4 且 k>β/(1−β)。双树 T_k=1+1/k 下全部边保留，时间1为big，时间1/k为light。配置每机至多一个big（2>T_k），故完整配置边际给τ≤T_k。根间件只有big端，其他任务未入H时恰一light端，故每个共同H的分数补全已是实际整数分配。又因最优峰2−1/k<2，最优调度也每机至多一条时间1的big边，故Γ=OPT=2−1/k。比值Γ/T_k=2−3/(k+1)趋2。",
+  "scope": "按固定剪枝与固定角色量化，每固定β的阈值保证Γ/T的上确界；双树只需要 CONFIG(T_k)可行，无需证明该T_k是精确配置阈值。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/障碍/双树配置证书的趋二整数间隙--障碍.md",
+      "sha256": "9df495ce6a36239df905c8a8b6b4b7dc29778e68679e0c23f5ba79777dce73cf"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md",
+      "sha256": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+      "section": "槽、任务匹配及逐机收费"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/重轻森林整数性与价格凸化双源审查--审查.md",
+      "sha256": "0a4457b2f1a9d5e5b8e6dac3ef6b7e49f5898d34c3b0ecd52ea9c9fa87fa73fe",
+      "section": "3. 先固定 (E_T) 和 big/light 角色"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/重轻森林整数性与价格凸化双源审查--审查.md",
+      "sha256": "0a4457b2f1a9d5e5b8e6dac3ef6b7e49f5898d34c3b0ecd52ea9c9fa87fa73fe",
+      "section": "6. 剪枝后的 sharp factor-two bound"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "单独核对了CONFIG边际和Q的包含、ST保big容量，以及双树整数最优可被admissible H表达。",
+  "contribution": {
+    "result": "若τ≤T则有共同Γ≤2T；对任意固定β，双树使Γ/T_k=2−3/(k+1)趋2。于是该固定剪枝接口的最坏阈值比上确界恰为2。",
+    "remaining": "目标对象的网络流凸包与价格对偶、未剪枝的m界及精确最优价格共同big面的充分条件，仍由目标正文中的相应独立论证承担。"
+  },
+  "endpoint_pins": {
+    "UM-CONF-GAP-v1": "d31eb419867e4badefa2ebc32ad88924ca17ef1b81727067e1c89c072108130f",
+    "UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1": "14801a1c69e0f7b929c4d2f2c843e2c01bf52e528afac96a1a84828643349319",
+    "UM-ST-ROUND-v1": "8c4662c822ebd204e3b095934f8745464426df43fc2328a6bbc35063e4148ea1"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/障碍/双树配置证书的趋二整数间隙--障碍.md": "9df495ce6a36239df905c8a8b6b4b7dc29778e68679e0c23f5ba79777dce73cf",
+    "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+    "archives/unrelated-machines/state/审查/重轻森林整数性与价格凸化双源审查--审查.md": "0a4457b2f1a9d5e5b8e6dac3ef6b7e49f5898d34c3b0ecd52ea9c9fa87fa73fe"
+  },
+  "review_digest": "3230f7b78341fab218c713ab444aac374624f90a0d5122c1c08cc714f0feb495"
+}

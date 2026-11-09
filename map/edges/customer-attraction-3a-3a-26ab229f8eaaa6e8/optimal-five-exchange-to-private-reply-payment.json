@@ -1,0 +1,58 @@
+{
+  "edge_id": "ca-r22-optimal-five-exchange-to-private-reply-payment",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/optimal-five-query-indexed-exchange-and-outside-tax"
+  ],
+  "target_ids": [
+    "M-50220f26588849e58ef854fd2b297686"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "roles": {
+    "customer-attraction/optimal-five-query-indexed-exchange-and-outside-tax": "将真实后继落在OPT外的加权税，定向转移到互斥的最优私有块J_i。",
+    "M-50220f26588849e58ef854fd2b297686": "把私有块容量进一步支付到真实第三位查询份额与实际前两位份额。"
+  },
+  "conditions": "任意五人完整纯SPE，T_i是达到OPT_5的五槽元组，b是实际前两位负载；R_i,S_i是强制T_i后的真后继。",
+  "scope": "只付OPT外交叉税；保重复索引、空块、零客户及真实第四位复位的独立用途。",
+  "explanation": "成对替换给𝒯_out≤(2/25)Σ|J_i|。每个x∈J_i满足t_i=1、r_i=0，查询份额≥1/(b+2)，实际前两位份额≥b/(b+3)。逐一代b=0,1,2，前者加3/8后者分别为1/2、41/96、2/5，故2/25≤(1/5)查询份额+(3/40)过去份额。J_i两两不交，过去份额只计一次；五条真实第三位IC使(1/5)Σd_i≤u3。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/第三位交叉回复税的复位与最优私有块钱包--引理.md",
+      "sha256": "e0b3f36afb375d972b41f9f26ab10fe749515927c9d03edb58e170b838f8ec40",
+      "section": "3. 最优私有块上界：只付 OPT 外的税"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优五查询的索引替换与外部回复税--引理.md",
+      "sha256": "b4e7e3b4686ed38c2531c9d8ed98d49a2b362c42dcd48cab792d5af8b22b6f3a"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/双后继交叉末回复的去相关税--引理.md",
+      "sha256": "ae3ef743b3df3bcf1ea4b87e247c18cf886b523b1813214f484f0cfd9b496767"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/第三位交叉回复税的复位与最优私有块钱包--引理.md",
+      "sha256": "e0b3f36afb375d972b41f9f26ab10fe749515927c9d03edb58e170b838f8ec40",
+      "section": "1. 历史、税与两种回复必须分开"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对成对替换而非全25行、每个实际份额分母和五条真实查询IC的平均次数。",
+  "whole_result": "在共同五人SPE条件下，最优交换及逐客户实际份额推出完整PRIVATE界𝒯_out≤u3+(3/40)(u1+u2)，并保留按J_i分配的中间界。",
+  "endpoint_pins": {
+    "M-50220f26588849e58ef854fd2b297686": "63daa5df44e5f8e4c5b1c21767e8ca2ba34bf815716f7df314dd65bd3db84ae2",
+    "customer-attraction/optimal-five-query-indexed-exchange-and-outside-tax": "db79e6c2139ce4085c0893e625fc1ef59858d004bcb5b3016ecb07ad65d597e6"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/引理/第三位交叉回复税的复位与最优私有块钱包--引理.md": "e0b3f36afb375d972b41f9f26ab10fe749515927c9d03edb58e170b838f8ec40",
+    "archives/customer-attraction/state/引理/最优五查询的索引替换与外部回复税--引理.md": "b4e7e3b4686ed38c2531c9d8ed98d49a2b362c42dcd48cab792d5af8b22b6f3a",
+    "archives/customer-attraction/state/引理/双后继交叉末回复的去相关税--引理.md": "ae3ef743b3df3bcf1ea4b87e247c18cf886b523b1813214f484f0cfd9b496767"
+  },
+  "review_digest": "3e352f8be48ad9fc7ae7243f8bb6e0bb35fa8dbf8e8fc2a345882d2017e34cbf"
+}

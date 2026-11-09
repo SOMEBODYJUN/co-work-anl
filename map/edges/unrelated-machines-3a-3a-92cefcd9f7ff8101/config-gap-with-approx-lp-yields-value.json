@@ -1,0 +1,43 @@
+{
+  "edge_id": "um-92cefcd9-config-gap-with-approx-lp-yields-value",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/jansen-rohwedder-restricted-configuration-eleven-sixths"
+  ],
+  "target_ids": [
+    "M-4e5b42fa948d49d4a4defd4259802258"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "受限指派 p_ij∈{p_j,∞}，每任务有合法端；固定ε>0。调用2017 Corollary 1.2所引配置LP近似阈值后端：每个固定有理δ>0可在总位多项式时间给阈值 T̂，OPT*≤T̂≤(1+δ)OPT*。",
+  "roles": {
+    "unrelated-machines/jansen-rohwedder-restricted-configuration-eleven-sixths": "给整数最优与同一配置松弛的完整间隙上界 OPT≤(11/6)OPT*。",
+    "M-4e5b42fa948d49d4a4defd4259802258": "目标是输出一个带上下保证的数 E 及固定精度的总位多项式复杂度。"
+  },
+  "explanation": "真实调度给各机一个配置，故 OPT*≤OPT。空任务或全零任务直接给 E=0；其余按固定有理 0<δ≤6ε/11 调用后端。若后端表述为 L≤OPT*≤(1+δ)L，可取 T̂=(1+δ)L 得所需上估阈值；只保证 T̂≤(1+δ)OPT* 而无 T̂≥OPT* 不足以保证估值的下侧。取 E=(11/6)T̂，则 OPT≤(11/6)OPT*≤E≤(11/6)(1+δ)OPT*≤(11/6+ε)OPT。固定精度的后端和有理数乘法给所需总位复杂度。这个数值算法无需执行 blocker 搜索。",
+  "scope": "受限同速输入与固定ε；近似阈值后端是精度和运行时间的额外外引成分，本边支付阈值到估值的传递。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/配置松弛的局部搜索与图平衡界--资源.md",
+      "sha256": "785ff3e9f85b43508f866deca775e2a3ff88bc875adf6268aa2c79298e45d2a2",
+      "section": "1. 模型、配置LP及准确结果"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/配置松弛的局部搜索与图平衡界--资源.md",
+      "sha256": "785ff3e9f85b43508f866deca775e2a3ff88bc875adf6268aa2c79298e45d2a2",
+      "section": "4. 有限终止为何不等于多项式复杂度"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复核两侧阈值、误差重标及输出种类；按外引后端合同使用，不将有限签名作为位复杂度界。",
+  "whole_result": "有上述固定精度配置阈值后端时，11/6间隙推出每固定ε>0的总位多项式数值估计 OPT≤E≤(11/6+ε)OPT。",
+  "endpoint_pins": {
+    "M-4e5b42fa948d49d4a4defd4259802258": "b18cbf85b1343b5025cceb1ff644282af69d188c01117e4b9fa1b06104b96cbe",
+    "unrelated-machines/jansen-rohwedder-restricted-configuration-eleven-sixths": "a3a5cb329599525146d82f63fde7338e2e5e5a2d0e48d5da60ac8513f7ac9dd4"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/配置松弛的局部搜索与图平衡界--资源.md": "785ff3e9f85b43508f866deca775e2a3ff88bc875adf6268aa2c79298e45d2a2"
+  },
+  "review_digest": "915071ca60927f1ef60b660a189a8ad648afa3331b54228735c934e9a2c31693"
+}

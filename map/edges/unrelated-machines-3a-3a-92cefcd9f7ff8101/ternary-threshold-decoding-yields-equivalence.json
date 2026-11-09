@@ -1,0 +1,53 @@
+{
+  "edge_id": "um-92cefcd9-ternary-threshold-decoding-yields-equivalence",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-TERNARY-UNIT-SELECTOR-NORMAL-FORM-v1"
+  ],
+  "target_ids": [
+    "UM-TARGET-TERNARY-SELECTOR-EQUIVALENCE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "一般显式非负有理UM及定理定义的三端unit normal类，所有有限原端经当前阈值剪至≤b。算法存在性按固定正余量、确定性总位多项式与实际完整调度比较。",
+  "roles": {
+    "UM-TERNARY-UNIT-SELECTOR-NORMAL-FORM-v1": "提供尺寸按有限端数线性的前向扩张及 C<2b 时保逐原机负载的原任务收缩。",
+    "UM-TARGET-TERNARY-SELECTOR-EQUIVALENCE-v1": "结论是三端normal类与一般UM有统一次二实际算法的存在性等价，给出有损但正余量的转换。"
+  },
+  "explanation": "假设 normal 类有固定ε>0的(2−ε)实际算法F。空任务和每任务都有零端时先给零调度。否则设 a_j=min_i p_ij、L₀=max_j a_j>0、U=Σ_j a_j≤nL₀。取固定有理0<η<min(ε,1)、g=1+η/4，枚举 b=L₀g^t 至首次≥U。每个b剪 p_ij>b，失端跳过，构造 normal 矩阵并运行F，仅回算新峰严格<2b时按占用路径收缩，取实际原峰最小者。首次 b≥OPT 保留一个原最优调度，前向扩张给新OPT≤b，故F输出≤(2−η)b<2b；原峰≤(2−η)b≤(2−η)(1+η/4)OPT≤(2−η/2)OPT。O(log(n+1))个阈值，各有多项式位长。反向是把任一一般UM次二算法限制到其normal子类。",
+  "scope": "算法存在性双向；正向余量可损失，解码严格小于2b；没有把构造用于要求 OPT 逐值保真的转换。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/三端单位选择器正规形--定理.md",
+      "sha256": "be6ed8ed35e2511dff65b0eb94c43e2f9128d40825791337d4adfec700370b59",
+      "section": "1. 模型与构造"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/三端单位选择器正规形--定理.md",
+      "sha256": "be6ed8ed35e2511dff65b0eb94c43e2f9128d40825791337d4adfec700370b59",
+      "section": "2. 从原调度到新调度"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/三端单位选择器正规形--定理.md",
+      "sha256": "be6ed8ed35e2511dff65b0eb94c43e2f9128d40825791337d4adfec700370b59",
+      "section": "3. 严格阈值下的收缩"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/三端单位选择器正规形--定理.md",
+      "sha256": "be6ed8ed35e2511dff65b0eb94c43e2f9128d40825791337d4adfec700370b59",
+      "section": "4. 由正规形近似器转移到原模型"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复核 d_j=1、零最优、剪枝失端和首次过OPT网格点；假设F是目标等价命题自身的前件。",
+  "whole_result": "一般UM与三端unit正规形存在固定正余量的确定性总位多项式次二实际近似算法当且仅当彼此成立。由normal算法向一般实例可保因子≤2−η/2。",
+  "endpoint_pins": {
+    "UM-TARGET-TERNARY-SELECTOR-EQUIVALENCE-v1": "12873cbbebefaaf919dc80eb2316d0d603b5dc180657a9e85ffa1c624f950aba",
+    "UM-TERNARY-UNIT-SELECTOR-NORMAL-FORM-v1": "a2b782cd64276b3cd9968d5d59371f628d0f82b94d53eaa0f85640360b05d32c"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/三端单位选择器正规形--定理.md": "be6ed8ed35e2511dff65b0eb94c43e2f9128d40825791337d4adfec700370b59"
+  },
+  "review_digest": "7f9227307801295ed9cd3887e408d9b3f1fdefe5f9b49265240a3c705d76db43"
+}

@@ -1,0 +1,45 @@
+{
+  "edge_id": "ca-r22-optimal-five-exchange-bounds-cross-tax-outside",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/optimal-five-query-indexed-exchange-and-outside-tax"
+  ],
+  "target_ids": [
+    "customer-attraction/crossed-last-reply-decorrelation-tax"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "roles": {
+    "customer-attraction/optimal-five-query-indexed-exchange-and-outside-tax": "给五槽覆盖最优下逐索引合法替换及OPT外回复容量。",
+    "customer-attraction/crossed-last-reply-decorrelation-tax": "真实交叉去相关式的均匀五查询特化，外部税是其中一部分。"
+  },
+  "conditions": "五个比较索引T_i达到OPT_5，同一真实三人余局、同一完整SPE；取均匀p，背景逐客户非负。",
+  "scope": "只收紧均匀五查询交叉式的O外税，保留O内税；成对替换不可改用无索引边缘。",
+  "explanation": "均匀p_i=1/5给式(1)的每个税系数4/25。O外t_i=0且τ_i(x)≤r_i(x)/2。以真实合法R_i只替换其配对槽i，新增R_i\\O不超过丢失J_i=T_i\\(R_i∪其它T)。据此将原式的O外税上界替为(2/25)Σ_i|J_i|；原式非负性仍独立来自交叉节点三条真IC及相同p的势相消。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/最优五查询的索引替换与外部回复税--引理.md",
+      "sha256": "b4e7e3b4686ed38c2531c9d8ed98d49a2b362c42dcd48cab792d5af8b22b6f3a"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/双后继交叉末回复的去相关税--引理.md",
+      "sha256": "ae3ef743b3df3bcf1ea4b87e247c18cf886b523b1813214f484f0cfd9b496767"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐索引核对新增和失去覆盖，核对未乘5的4/25与直方图式乘5后的4/5。",
+  "contribution": {
+    "result": "在交叉去相关的均匀五索引特化中，外部惩罚项𝒯_out≤(2/25)Σ_i|R_i\\O|≤(2/25)Σ_i|J_i|。",
+    "remaining": "原去相关全命题仍需K_ij的真实IC、对角消除和势相消；该交换也不控制O内税或共同预算。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/crossed-last-reply-decorrelation-tax": "c900e9e888c6b712663e70965b096c38f7b9c14c6fb3b28376bd3b1ba1dbfb49",
+    "customer-attraction/optimal-five-query-indexed-exchange-and-outside-tax": "db79e6c2139ce4085c0893e625fc1ef59858d004bcb5b3016ecb07ad65d597e6"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/最优五查询的索引替换与外部回复税--引理.md": "b4e7e3b4686ed38c2531c9d8ed98d49a2b362c42dcd48cab792d5af8b22b6f3a",
+    "archives/customer-attraction/state/引理/双后继交叉末回复的去相关税--引理.md": "ae3ef743b3df3bcf1ea4b87e247c18cf886b523b1813214f484f0cfd9b496767"
+  },
+  "review_digest": "8e6bd5dc3d512e6cd712adc2bdfae10c7cb6c8d64c67c47c3bfaaf96c7182292"
+}

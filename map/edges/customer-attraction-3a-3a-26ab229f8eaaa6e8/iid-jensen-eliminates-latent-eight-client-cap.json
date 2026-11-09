@@ -1,0 +1,56 @@
+{
+  "edge_id": "ca-r22-iid-jensen-eliminates-latent-eight-client-cap",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "cag-common-marginal-iid-mixture-static-cap"
+  ],
+  "target_ids": [
+    "M-22cc1ddc40364bcba33c8a66276089f4"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "roles": {
+    "cag-common-marginal-iid-mixture-static-cap": "任意查询前固定的潜变量共同iid背景，可用同一平均边缘逐查询压低收益。",
+    "M-22cc1ddc40364bcba33c8a66276089f4": "固定八客户、两槽实例的共同iid混合限制与不同边缘独立产品分离。"
+  },
+  "conditions": "两槽、零预置背景，目录A、B、A∪{c}、A∪{d}，|A|=2、|B|=4；背景不观察查询。",
+  "scope": "只在共同边缘的独立条件抽样类内压缩潜变量；不同槽可取不同边缘的独立产品。",
+  "explanation": "凸G_(0,2)(t)=1−t+t²/3给每个固定查询同一均值q的Jensen界；单点潜变量给反向包含。因此八客户的单一共同边缘最优值ρ=(1448−52√669)/49同时是所有此类潜变量混合的最优值，严格超过2。ρ的计算依赖该例把0质量移到超集、对称平均2/3、再取两个反向单调查询的唯一交点；不同边缘产品则另由(26,44,44,44)/23的显式代入给出。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/静态独立同分布安全基准--定理.md",
+      "sha256": "1a79c786e8fed1c7dbefff583922350f6148b35375bd00d3df91cfbc9f11cbf0"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/共同边缘独立背景混合的静态封顶--定理.md",
+      "sha256": "4a551e51c55ce2ce8ead7690fd91ca5b2a67232ace366fc4624e7221cb98448e"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/八客户静态封顶与花瓣弱桥的原始精确审计--程序.md",
+      "sha256": "0f8ac8ba94bdcc12f459810787955cf3eb2489734d9f4e9712c3cba271ee3345"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/独立包络复核的局部匹配与静态封顶合同--审查.md",
+      "sha256": "5060c57df829b9fc9528416acc10ba2a70ac0ad0f21d887249ec9c74afd18881",
+      "section": "八客户共同iid封顶的独立二次数域"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "对读一般积分凸性、同一均值的量词、单变量精确交点和二次数域有限审计，未从有限检查外推。",
+  "contribution": {
+    "result": "共同iid混合的最优八客户封顶等于单一共同边缘的ρ>2，所有潜变量混合均过不了2。",
+    "remaining": "ρ的全q最优性须另用本例移质量和对称化的解析计算；不同边缘产品及真正安全值下界也有独立证据。"
+  },
+  "endpoint_pins": {
+    "M-22cc1ddc40364bcba33c8a66276089f4": "c74f9b67b7230aca7e0ca7091c009ce4219dbd5b1e095a7672996b45d5940d61",
+    "cag-common-marginal-iid-mixture-static-cap": "d4d614ec175c248da53eeb96f8a4e98355cce7ed1cbd904468ae841474a9d571"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/静态独立同分布安全基准--定理.md": "1a79c786e8fed1c7dbefff583922350f6148b35375bd00d3df91cfbc9f11cbf0",
+    "archives/customer-attraction/state/定理/共同边缘独立背景混合的静态封顶--定理.md": "4a551e51c55ce2ce8ead7690fd91ca5b2a67232ace366fc4624e7221cb98448e",
+    "archives/customer-attraction/state/程序/八客户静态封顶与花瓣弱桥的原始精确审计--程序.md": "0f8ac8ba94bdcc12f459810787955cf3eb2489734d9f4e9712c3cba271ee3345",
+    "archives/customer-attraction/state/审查/独立包络复核的局部匹配与静态封顶合同--审查.md": "5060c57df829b9fc9528416acc10ba2a70ac0ad0f21d887249ec9c74afd18881"
+  },
+  "review_digest": "40bcfa796e295335143f61b58eeb3ed4cf55113be5cff9bae38c97270e47b5e5"
+}
