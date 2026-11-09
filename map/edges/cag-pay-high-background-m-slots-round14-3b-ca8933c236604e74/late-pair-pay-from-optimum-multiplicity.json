@@ -1,0 +1,46 @@
+{
+  "edge_id": "cag-pay-m-slots-ca8933c236604e74-late-pair-pay-from-optimum-multiplicity",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-fba1c001a1cd4e05b5cdb4285ab6215c"
+  ],
+  "target_ids": [
+    "M-fec05c0478c149c09227f2c9dc18748a"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "原共同单位客户模型，m≥2，任意完整纯SPE；固定一份真最优m槽组合J。统一充分条件为所有d_x>0均有d_x/m≥1/3，或采用按实际末二类型的弱条件。",
+  "roles": {
+    "M-fba1c001a1cd4e05b5cdb4285ab6215c": "给原m槽q的两个端点，以k=2代入共用t=3得对客户负载类型的付款阈值。",
+    "M-fec05c0478c149c09227f2c9dc18748a": "证明真最优比较组有充分客户重数时，所有完整SPE的真实末二前缀支付。"
+  },
+  "explanation": "在真实末二前缀以b表示客户已覆盖次数、a∈{0,1,2}表示末两次实际行动的覆盖次数，u=d/m。客户过去玩家最终利润记s=b/(b+a)（b=0时记0）。取全体共同t=3，q=min{3u/(b+1),(3u+1)/(b+2)}。若b≥2，或b=1且a≤1，则2s≥1且q≥0。若b=0，则q≥1恰当u≥1/3；若b=1,a=2，则2s=2/3，所需q≥1/3恰当u≥2/9。于是在这两类分别满足阈值时，每个正d客户都有1−q≤2s；对U求和并加上U外过去玩家的非负利润给原PAY。若某个最大覆盖并集可由两个主题实现，把两题分别重复⌊m/2⌋与⌈m/2⌉次。其并集及O不变，所有正d至少⌊m/2⌋≥m/3（m≥2）。一题时重复m次；O=0时空收费。三个实现主题且3整除m时也可各重复m/3次，其余三主题情形不由该重复构造获得。另在同一末对前缀，t=2时q=2d/[m(b+1)]，因为第一支不大于第二支恰当d/m≤b+1。故若2E+(2/m)Σ_{d_x>0}d_x/(b_x+1)≥O，也直接支付，可允许不同客户的超额抵偿。",
+  "scope": "原m槽真最优组合的次数和真实终局利润；统一t=3的不同背景阈值适用于全部完整SPE，且不预设曾覆盖最优支持。",
+  "contribution": {
+    "result": "统一最小正次数≥m/3时每份完整SPE的末二前缀支付。特别，原最优并集可由至多两个主题实现的实例满足PAY；另给更弱的分型阈值及可单独核的t=2聚合条件。",
+    "remaining": "一般原最优并集可能需要更多主题，且无同一真最优组合满足这些次数或聚合条件。结论未覆盖一般的实际前缀选择。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/真实前缀支付的加权分位与完整路径切断--算法.md",
+      "sha256": "85a0b934af56c9eaee00fc4ac7c42d4eb90c9a5d8e87342df24989ca272f8852",
+      "section": "固定输入和原收费"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项验算共用参数两支、实际过去份额及整槽重复，不借用高背景条件或逐客户各选t。",
+  "endpoint_pins": {
+    "M-fba1c001a1cd4e05b5cdb4285ab6215c": "d354c31b3fa6f438006e6ccac60e792cd37054cf1a9edf1bd6799fb5dac1f82f",
+    "M-fec05c0478c149c09227f2c9dc18748a": "a950698327d11c9b9827c24a08628997cd458901d7246dc77e0b690db7f6ecb1"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/真实前缀支付的加权分位与完整路径切断--算法.md": "85a0b934af56c9eaee00fc4ac7c42d4eb90c9a5d8e87342df24989ca272f8852",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "12a4e41ca1d30a52763abd4de5b342297da78a4c23ac5d51d75740616de64486"
+}

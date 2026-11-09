@@ -1,0 +1,64 @@
+{
+  "edge_id": "cag-pay-m-slots-ca8933c236604e74-same-count-normalization-loss",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-fba1c001a1cd4e05b5cdb4285ab6215c",
+    "customer-attraction/joint-background-profit-signed-endpoint-defect",
+    "customer-attraction/joint-minimum-denominator-and-last-floor-high-background-half-profit"
+  ],
+  "target_ids": [
+    "M-fec05c0478c149c09227f2c9dc18748a"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "整数k≥12、m>k、b=k−5、d=1；比较保留同一客户计数d、同一背景及剩余人数。原模型合法前缀还须有b≤m−k。t为全体客户共用且在[0,4]。",
+  "roles": {
+    "M-fba1c001a1cd4e05b5cdb4285ab6215c": "给原m槽端点价格q及固定前缀、固定真最优比较组时的最左最优断点。",
+    "customer-attraction/joint-background-profit-signed-endpoint-defect": "定义k槽带符号缺口e，并定位须迁移的是同背景的剩余利润证书。",
+    "customer-attraction/joint-minimum-denominator-and-last-floor-high-background-half-profit": "给高背景整数域中共同参数t₀与边界b=k−5、d=1处的零缺口。",
+    "M-fec05c0478c149c09227f2c9dc18748a": "比较目的地是原m槽收费的一个逐客户代数步骤与真实前缀的总支付差；目标存在量词保留。"
+  },
+  "explanation": "设r_n(t)=2(k−2)d/[n(b+k)]+q^{(n)}_{b,d}(t)，其中q^{(n)}=min{td/[n(b+1)],(td/n+4−t)/(b+k)}。k槽证书参数t₀=(7k−16)/(2k−5)，取n=k、b=k−5、d=1。由h=0端点等号与h=k−1端点严格正裕量，r_k(t₀)=d/(b+d)=1/(k−4)，故e_{k,t₀}=0。原m槽的单类型价格折点τ=4m(k−4)/[k−1+m(k−4)]，两段斜率为1/[m(k−4)]>0、(1−m)/[m(2k−5)]<0，故最优总价L(m)=2(k−2)/[m(2k−5)]+4/[k−1+m(k−4)]。由q^{(m)}≤4/[m(k−4)]，有(k−4)L(m)≤[k+(k−4)/(2k−5)]/m<1，因为m≥k+1且(k−4)/(2k−5)<1。单类型的最优值也是任何全局共用t对该类型所能给的上界。k=12,m=19,b=7时，t₀=68/19，q^{(m)}两候选为17/722与220/6859，所以r_m(t₀)=3/38，严格小于r_k(t₀)=1/8，差7/152；重优τ=608/163，L(19)=4704/58843，和1/8的差为21211/470744。前缀长m−k，单个客户的b=k−5只有m≥2k−5才可能由合法历史形成，且该单坐标可由含B={x}和空题的目录实现。多客户坐标仍须由同一历史联合实现。一般对同一实际前缀及一份真最优J，若其正计数都满足d≤k，则每个正d客户的原收费精确为1−r_m(t)=b/(b+d)+e_{k,t}(b,d)+r_k(t)−r_m(t)。首项是把比较利润补至一单位覆盖的比较侧背景份额；真实E却由实际末叶的未来负载a_x决定，E=Σ_{b_x>0}b_x/(b_x+a_x)。因此整笔差为Σ_{d_x>0}[b_x/(b_x+d_x)+e_{k,t}(b_x,d_x)+r_k(t)−r_m(t)]−2E；须共用同一t并保带符号抵偿，逐客户的差无法直接充抵E。",
+  "scope": "同计数归一化的代数迁移边界。k<m<2k−5时给形式价格反例；在m≥2k−5时该单坐标可属合法背景。此处不凭计数坐标认定SPE路径或原最优支持。",
+  "contribution": {
+    "result": "即使d=1≤k，原m槽逐客户最大端点价也严格低于高背景边界需要的1/(k−4)。给出同t、重优t及真实PAY的精确总支付差分解。",
+    "remaining": "原PAY仍需选同一实际SPE的允许前缀、一份真最优m槽组合及共用参数t，使该总差≤0。k槽证书既不供真最优m槽组合，又不付比较侧背景份额或归一化价差。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/真实前缀支付的加权分位与完整路径切断--算法.md",
+      "sha256": "85a0b934af56c9eaee00fc4ac7c42d4eb90c9a5d8e87342df24989ca272f8852"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/联合背景利润的有符号端点缺口--引理.md",
+      "sha256": "5fced08686fa22819628eeaded4e6deedf9eee897a407b86e02a3a8b6207af30",
+      "section": "任意非负背景的合法比较"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/联合最小分母与末位保底的高背景半利润--定理.md",
+      "sha256": "b9bda1b37c8e3c16ac27dc6af6cd3b1164b2187f3c21fe9056100bad912519e2",
+      "section": "联合逐客户端点证书"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/重复奖励尾目录扩展与前缀收费的原始合同--资源.md",
+      "sha256": "1647d9285cd6fdc9d1dab6e12b318b38d2318e406b284d9b48be68e2d9153ca2",
+      "section": "原PAY与联合背景缺口的两种计数"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "独立逐式核算单类型折点、同参数两端点与严格界，并分清合法历史、实际路径和真最优原组合。",
+  "endpoint_pins": {
+    "M-fba1c001a1cd4e05b5cdb4285ab6215c": "d354c31b3fa6f438006e6ccac60e792cd37054cf1a9edf1bd6799fb5dac1f82f",
+    "M-fec05c0478c149c09227f2c9dc18748a": "a950698327d11c9b9827c24a08628997cd458901d7246dc77e0b690db7f6ecb1",
+    "customer-attraction/joint-background-profit-signed-endpoint-defect": "87d3b637060b965fab2c10547a06d06a326e38f1317cfd10c144ee25cf859fcf",
+    "customer-attraction/joint-minimum-denominator-and-last-floor-high-background-half-profit": "314b95c6e0fa8f59508a78aaf1ab9d3d495f90939468922ee638144a408f3ce7"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/真实前缀支付的加权分位与完整路径切断--算法.md": "85a0b934af56c9eaee00fc4ac7c42d4eb90c9a5d8e87342df24989ca272f8852",
+    "archives/customer-attraction/state/引理/联合背景利润的有符号端点缺口--引理.md": "5fced08686fa22819628eeaded4e6deedf9eee897a407b86e02a3a8b6207af30",
+    "archives/customer-attraction/state/定理/联合最小分母与末位保底的高背景半利润--定理.md": "b9bda1b37c8e3c16ac27dc6af6cd3b1164b2187f3c21fe9056100bad912519e2",
+    "archives/customer-attraction/state/资源/重复奖励尾目录扩展与前缀收费的原始合同--资源.md": "1647d9285cd6fdc9d1dab6e12b318b38d2318e406b284d9b48be68e2d9153ca2"
+  },
+  "review_digest": "9f6faed98fc58beebbb3366c562f9dd3cd32391ab354e586fd7901759dd4c176"
+}
