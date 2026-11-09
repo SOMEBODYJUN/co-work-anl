@@ -1,0 +1,68 @@
+{
+  "edge_id": "commonmany-equal-flow-identifies-uniform-on-path-optimizers",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-EQUAL-LIGHT-FLOW-BOX"
+  ],
+  "target_ids": [
+    "SC-K-UNIFORM-LIGHT-FLOW-2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限非空共同目录及显式 k≥2 家带标签设施，正二进制有理原子，规范贪心末分数 γ>0。把已占站按重数非增、同重数首开先后排列，并冻结单已占选项及 u_i≥γ 的客户。其余逐名轻客户要么为空，要么共有物理权 u∈(0,γ)，且保留全部已占原菜单。",
+  "roles": {
+    "SC-K-EQUAL-LIGHT-FLOW-BOX": "抽象无约束 Ψ 的全部全局极小者都满足完整盒、全部原选项 NE 和 H，并可经 N 次单位最短增广位多项式选出其中一个。",
+    "SC-K-UNIFORM-LIGHT-FLOW-2": "原共同目录等重轻客户类的完整因子二构造。此边支付两种流选择器的在轨对应、最优集相同和完整盒原 NE，离轨补全另需接口。"
+  },
+  "explanation": "记 H_t 为移动客户原属人数，N_t 为终态人数，P_t=W_t⁰−uH_t 为冻结物理重。取 δ=u/γ、c_t=W_t⁰/γ−q_t、b_t=c_t−δH_t，则 P_t/γ=q_t+b_t，W_t/γ=q_t+X_t。旧下盒目标 F=Σ_t[P_tN_t+uN_t(N_t−1)/2]/q_t 在每个合法赋值满足 F/γ=N+Ψ。抽象定理给所有无约束极小者的下盒，因此旧约束最小值达到同一归一化值，且任一旧极小者也必是新全局极小者。由此得到完全相同的逐名最优赋值集合；不同平局规则可以选不同赋值。全盒化回 q_tγ≤W_t≤(q_t+1)γ。对移动客户抽象比较乘 γ 后在两边同加 γ，得到物理比较 (W_s−u)/q_s≤W_v/q_v；冻结重客户由源上盒给外部成本≤γ，目标下盒给外部成本≥γ。冻结单选客户无跨站行动。站内各标签的独立均匀选择因而是原精确 NE。无移动客户时直接保原赋值，零覆盖时直接全零服务。",
+  "scope": "同一真实规范贪心输入类上的在轨选解及目标等价，保原标签和全部客户动作。数学上付清在轨位界。离轨/默认时间及构造本身交跨批联合前提比较。",
+  "contribution": {
+    "result": "正 γ 的同一原输入上，旧下盒 F 与新无约束 Ψ 有相同的全部最优赋值；所选赋值位多项式给原标签占位的完整盒精确在轨 NE，并对所有最优赋值有归位保护 H。N=0 和零覆盖可直接处理。",
+    "remaining": "完整因子二还要对 q_u≥2 的源以当前池装箱、q_u=1 的源重置全部原池，为所有实际偏离及其余标签布局补精确 NE。位多项式生成及默认求值另用 BOX-TO-2 与显式同链 MAX；现行软件使用有限纯改善。"
+  },
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/等重轻客户下盒流与无约束细化--算法.md",
+      "sha256": "82abd37faab9e81b4fc3f4e302e8b2f704e8c5f2ccb0287f57527b2db3b99245",
+      "section": "原模型同一输入类"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/等重轻客户下盒流与无约束细化--算法.md",
+      "sha256": "82abd37faab9e81b4fc3f4e302e8b2f704e8c5f2ccb0287f57527b2db3b99245",
+      "section": "后续无约束Ψ及所有最优解的等价"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "规范贪心、冻结原池及预算"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "原归属具有最大可达重数"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "归一化并证明全部客户NE"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/计算/规范贪心完整续局程序与选择器接口--计算.md",
+      "sha256": "0fa6549c64b7b2e402c696140c6cf97bcc8fa2d3131f02051b299f23c3efbdc4",
+      "section": "等重流接回完整续局的条件链"
+    }
+  ],
+  "reviewed_by": "Boss1-common-many-light-flow-worker",
+  "review_note": "核对旧 F 与新 Ψ 每个合法赋值上的常数差、双向最优集等同、物理自重扣除及冻结重稳定。保留理论在轨位界、历史原枚举、规范流实现和当前有限离轨的分别范围。 源文件勘误后重核正文、当前端点版本和原证明条件。",
+  "endpoint_pins": {
+    "SC-K-EQUAL-LIGHT-FLOW-BOX": "59fb7a83a717b9e9a5ee546139f18665dcd1134c99d55ff8d10b9bff949d345a",
+    "SC-K-UNIFORM-LIGHT-FLOW-2": "a38def20d1e5f745b568ef9855ec243b0d55c4976bde2b379831829ee2e1941c"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/算法/等重轻客户下盒流与无约束细化--算法.md": "82abd37faab9e81b4fc3f4e302e8b2f704e8c5f2ccb0287f57527b2db3b99245",
+    "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+    "archives/facility-games/subarchives/common-many/state/计算/规范贪心完整续局程序与选择器接口--计算.md": "0fa6549c64b7b2e402c696140c6cf97bcc8fa2d3131f02051b299f23c3efbdc4"
+  },
+  "review_digest": "d334299bfb23da25f8f3f49b86763d433025950cf880494d43b60723cf4ac65e"
+}
