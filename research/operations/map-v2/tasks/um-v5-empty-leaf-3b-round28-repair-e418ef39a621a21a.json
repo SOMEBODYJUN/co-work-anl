@@ -167,11 +167,179 @@
       "scope_hint": "archives/unrelated-machines"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss1",
-  "request_id": "a361d74ba5c74210b7ae4072e8139c4c",
+  "request_id": "dec5aa17f5f14faf87fa51e4976ed33e",
   "requests": {
     "a2839cdd1b56487584ef424e4b928ac0": "plan",
-    "a361d74ba5c74210b7ae4072e8139c4c": "claim"
+    "a361d74ba5c74210b7ae4072e8139c4c": "claim",
+    "dec5aa17f5f14faf87fa51e4976ed33e": "done"
+  },
+  "edge_paths": {
+    "um-multiouter-v5-actual-i-output-specializes-v4b": "map/edges/boss5-474257b8-multiouter-3b-34f286ae1d151cdb/v5-actual-i-output-specializes-v4b.json",
+    "um-multiouter-v5-profile-output-specializes-v4b": "map/edges/boss5-474257b8-multiouter-3b-34f286ae1d151cdb/v5-profile-output-specializes-v4b.json"
+  },
+  "receipt": {
+    "schema": 2,
+    "task_id": "um-v5-empty-leaf-3b-round28-repair-e418ef39a621a21a",
+    "stage": "3B",
+    "input_pins": {
+      "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4b": "38f18be1bef497dfbdc81040d275c0d374f43942d08fd0b706de5dbdbc667d5b",
+      "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5": "e73a93ab52cb8c683baee06f9714619772d70cf026954acf9605731e237a9845"
+    },
+    "coverage": {
+      "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4b": {
+        "state": "linked",
+        "object_pin": "38f18be1bef497dfbdc81040d275c0d374f43942d08fd0b706de5dbdbc667d5b",
+        "comparison_scope": "核当前两登记version5、v4b主证明§1–6及原追加§13、§14/14.1、§18–19，承接round27同一Q/P(Q)和vacancy对偶秩比较，复核v5两原证输出在v4b域的限制及k=1边界。",
+        "reason": "k≥2时ν≤1/(16384k²)蕴含ν≤1/(1024k)，k=1同样无tiny前提。原homes、B-only菜单与threshold-UD叶、重复indexed state、显式零、未用资源及所有原jobs逐一保留。两条源算法分别支付同一P(Q)的完整19/10输出step。v4b原追加§13也允许空叶的完整空匹配；原§14.1、§18–19和主证明§3–6自证其整数k1 greedy、平方缺口势、固定ceil(4k/ξ)步FW、25/128成功门槛、严格V<15/16失败及一张共同prefix-flow。完整叶匹配下vacancy秩|B|−ℓ的原核对有效。",
+        "edge_ids": [
+          "um-multiouter-v5-actual-i-output-specializes-v4b",
+          "um-multiouter-v5-profile-output-specializes-v4b"
+        ]
+      },
+      "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5": {
+        "state": "linked",
+        "object_pin": "e73a93ab52cb8c683baee06f9714619772d70cf026954acf9605731e237a9845",
+        "comparison_scope": "重读修正正文及原Exact全文、作者profile全文和独立actual-I全文，核作者§1/3/9/10与独立§2/3/8–10的预处理、k=1、失败/成功阈值和完整回填。比较同一Q、P(Q)与v4b登记version5的全部输入合同。",
+        "reason": "预处理只在无完整叶匹配时以V<15/16走完整baseline；空叶有完整空匹配，vacancy为free matroid。k=1取单位home g和唯一helper，helper有own=g及单位fallback=b，B={b}且无额外叶，outer取g、helper取b得到V=1。作者整数greedy给W=1；独立actual-I的线性势从L_1=0改进到1。两枚selector放outer和fallback private，两枚所选incidence送g和b，剩余own incidence留own private，五原jobs均一次且Cmax=OPT=1。若强制预处理baseline，outer private会达2。空B、秩零与缺fallback继续按真实匹配及后续分支。作者路线保持固定profile LP、reciprocal-log/FW、共同prefix-flow，失败严格V<15/16，取整W_i>19/100；独立路线保持真实I、weighted matroid rank与有理分段势，后续失败V≤18/19、成功L_i≥19/100均允许等号。两条同域输出各自成立。",
+        "edge_ids": [
+          "um-multiouter-v5-actual-i-output-specializes-v4b",
+          "um-multiouter-v5-profile-output-specializes-v4b"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/boss5-474257b8-multiouter-3b-34f286ae1d151cdb/v5-actual-i-output-specializes-v4b.json",
+        "sha256": "14f0dae5f5e2bad50b2fdc5e9400fcb928b7ae227ccd70692b5b65d243c164c7"
+      },
+      {
+        "path": "map/edges/boss5-474257b8-multiouter-3b-34f286ae1d151cdb/v5-profile-output-specializes-v4b.json",
+        "sha256": "f0c1b6241163edab35a91cc59e2fddf1a8a030ed68e106998b80b59786609412"
+      }
+    ],
+    "reviewed_by": "Boss1",
+    "read_refs": [
+      {
+        "path": "archives/unrelated-machines/state/审查/相对曲率O1k候选三源精读与19比10范围--审查.md",
+        "sha256": "a1d115eafbc21e5ebf3c34afc496310016e9ea11bb0e5bfe50d30fd8b1f26f8b",
+        "read_scope": "全文，并逐句对照勘误前后的值桥、叶匹配和baseline段。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/证明/共享UD tiny状态势与19比10回填--证明.md",
+        "sha256": "e857e20f4498aef53ebe9c3ef0a9f3bc7f5937c5cd3fb554365c1d3e553a2868",
+        "read_scope": "§1–6，核typed域、值桥、固定profile、平方势/固定FW、共同prefix-flow及k=1。"
+      },
+      {
+        "path": "archives/unrelated-machines/tools/evidence/relative-curvature-o1k-working-sources-20261031/8c25fd6cf42c368b8efb--exact-working-v1.md",
+        "sha256": "504e4d8e13b847aa7ec10f2bb3afa874389a76b6cc0962abfe979a985238a99f",
+        "read_scope": "全文，核typed Q、同一P(Q)、全jobs及确定性总位量词。"
+      },
+      {
+        "path": "archives/unrelated-machines/tools/evidence/relative-curvature-o1k-working-sources-20261031/c8f99fb9dc315aa27225--author-proof-working-v1.md",
+        "sha256": "0f5e322441789f5d2dae8fb0592fff86aede3d71f093cb727e2ea78b0f1b2593",
+        "read_scope": "全文，重点核§1/3空叶及k=1、§9严格FAIL与§10完整输出。"
+      },
+      {
+        "path": "archives/unrelated-machines/tools/evidence/relative-curvature-o1k-working-sources-20261031/58de49571a4172661609--independent-exact-first.md",
+        "sha256": "074556f862b8548349f1710caa540f0a45c18f08a3f42822208ed9eb39d89583",
+        "read_scope": "全文，重点核§2–4空叶与实际I、§8–10阈值等号及完整输出。"
+      },
+      {
+        "path": "archives/unrelated-machines/tools/evidence/shared-ud-tiny-potential-20261031/source/0eb8b34fa84864a54169.md",
+        "sha256": "1e3710870c8fbef4d4235cf2f90fe2d8ec6ca84b99ec6cd234464cc9d260df44",
+        "read_scope": "原追加§13、§14及14.1、§18–19，核空叶、匹配oracle、k1 greedy、原FAIL和全jobs机制。"
+      },
+      {
+        "path": "archives/unrelated-machines/tools/evidence/shared-ud-tiny-potential-20261031/source/e2370ab75fef1534990c.md",
+        "sha256": "409ce88433cd698d477862098023f7e064dbe7a75426117f3c617e70aad7f435",
+        "read_scope": "§1–2，核原值桥、叶对偶、共同参考和匹配oracle。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/资料/shared-UDtiny-home-v4势函数与完整回填--资料.md",
+        "sha256": "abae1a8e42715fe4279f6649eef56700b5a6566df6e0a9c52de9d91ddfb4f462",
+        "read_scope": "全文，核原秩勘误有效及辅助§3的停止阈值措辞。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/Shared-UD-v4v5两源实际读后--审查.md",
+        "sha256": "d4fab8a61f1dd51f0286ed860939ad38df1c18262c6779c2c2e7d703b948eef0",
+        "read_scope": "§3，核v5 actual-I的阈值及分数最优面措辞。"
+      }
+    ],
+    "reused_context": [
+      {
+        "path": "map/receipts/um-vacancy-rank-3b-round27-repair-a70b50c3fc29a1ad.json",
+        "sha256": "508e43479e349cc78b476122f68861ad07549cde9052ccabc3b38e0bb7fe5664",
+        "scope": "实读实际supersedes旧回执，承接秩修正、两条独立输出比较及旧资产去向。"
+      },
+      {
+        "path": "research/operations/map-v2/tasks/um-vacancy-rank-3b-round27-repair-a70b50c3fc29a1ad.json",
+        "sha256": "90e2ca59cdc20fa7c58edc1293b04b11c9faafc7c35723b4d0a68dcb0fd7e2e7",
+        "scope": "核旧done任务的定义、覆盖、资产与内嵌回执逐项一致。"
+      }
+    ],
+    "source_wording_notes": [
+      {
+        "path": "archives/unrelated-machines/state/审查/相对曲率O1k候选三源精读与19比10范围--审查.md",
+        "sha256": "a1d115eafbc21e5ebf3c34afc496310016e9ea11bb0e5bfe50d30fd8b1f26f8b",
+        "section": "值桥、叶匹配和 baseline",
+        "previous_sha256": "9ec4fa091292b29036803cbf31998662b668797e89b32aec6f04c6912e3d6192",
+        "state": "published-corrected-and-delta-rechecked",
+        "source_correction_commit": "20ce102b3d300e10133da5af3d8d429fe23e9e30",
+        "registration_correction_commit": "a1f3b982da5486ede0a20d5d54ff3148b25ddf44",
+        "direct_core_evidence_owners": [
+          "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5"
+        ],
+        "actual_impact": "摘要按作者原§1及独立原§3恢复精确预处理判定。v5 version4→5刷新正文和pin，v4b pin及v5三份直接原件的SHA保持。两输出贡献只重绑原路径。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/资料/shared-UDtiny-home-v4势函数与完整回填--资料.md",
+        "sha256": "abae1a8e42715fe4279f6649eef56700b5a6566df6e0a9c52de9d91ddfb4f462",
+        "section": "3. FW、prefix-flow 和 19/10 实际回填",
+        "state": "existing-summary-wording-reported-outside-write-scope",
+        "actual_impact": "辅助摘要在作者v4b profile/FW段写V≤18/19。此界是较弱的真推论，主证明§4及原追加§18直接给严格V<15/16；非严格18/19是独立actual-I分析的阈值。本批采用各自原机制的精确界。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/审查/Shared-UD-v4v5两源实际读后--审查.md",
+        "sha256": "d4fab8a61f1dd51f0286ed860939ad38df1c18262c6779c2c2e7d703b948eef0",
+        "section": "3. v5 O(1/k) relative-curvature actual allocation",
+        "state": "existing-summary-wording-reported-outside-write-scope",
+        "actual_impact": "摘要把独立v5 actual-I的weighted-rank比较与optimal fractional face连写。独立原稿§4式(3)从当前实际独立I出发，不假设分数或全ground线性最优。本批使用独立原证明。"
+      }
+    ],
+    "validation": {
+      "edge_bind": "两个预留同路径在解除硬链接后，以work.py调用的tools/research_runtime.py原生edge-bind --write重绑。端点与任务input_pins精确一致。",
+      "edge_check": "两条均为accepted、unconditional、proof_scope=step，原生结构校验通过。",
+      "receipt_check": "用外置镜像的全部实际map-v2任务行调用原生map_tasks.transition(operation=done)内存校验。",
+      "witness_check": "穷举两资源分配和五原jobs的有限端点，核V=1、OPT=1及给定调度峰1；用Fraction核两路线FAIL阈值和成功下界。",
+      "overlap_disposition": "任务无overlap_comparisons或follow-up对象对。"
+    },
+    "supersession": {
+      "um-vacancy-rank-3b-round27-repair-a70b50c3fc29a1ad": {
+        "reason": "v5空叶预处理摘要勘误触发v5 version5，沿用round27的两项有效输出专化、v4b机制及原路径，逐条重绑。",
+        "assets": {
+          "map/edges/boss5-474257b8-multiouter-3b-34f286ae1d151cdb/v5-actual-i-output-specializes-v4b.json": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/boss5-474257b8-multiouter-3b-34f286ae1d151cdb/v5-actual-i-output-specializes-v4b.json"
+            ],
+            "reason": "原SHA 5b881cea6a49e79a1569d7b0ebc308a9543bd49f88d2f67594175a9ffc542e7a，沿用edge_id和原预留路径，重绑v5登记version5及勘误正文，补明空叶预处理和本路线k1成功见证，保留原输出步骤及目标剩余机制。"
+          },
+          "map/edges/boss5-474257b8-multiouter-3b-34f286ae1d151cdb/v5-profile-output-specializes-v4b.json": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/boss5-474257b8-multiouter-3b-34f286ae1d151cdb/v5-profile-output-specializes-v4b.json"
+            ],
+            "reason": "原SHA d604e2d0adb36d7f5e28b997e83d63f1ab83cda1133b91e519a31870ede23bd2，沿用edge_id和原预留路径，重绑v5登记version5及勘误正文，补明空叶预处理和本路线k1成功见证，保留原输出步骤及目标剩余机制。"
+          }
+        }
+      }
+    },
+    "object_ids": [
+      "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4b",
+      "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5"
+    ],
+    "read_object_ids": []
   }
 }
