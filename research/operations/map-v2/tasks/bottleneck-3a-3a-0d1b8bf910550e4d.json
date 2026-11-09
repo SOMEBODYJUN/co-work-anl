@@ -77,11 +77,62 @@
       "note": "Local proof families are scheduled first. Informal links are separate discovery hints. Read any newly discovered necessary premise through read-add; do not truncate a proof or treat a deferred candidate as paid evidence."
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss1",
-  "request_id": "a579078e69e14a4484579b40f0e8e557",
+  "request_id": "c1208708838a478494a51ab18d7cc544",
   "requests": {
     "bd92acd2544c437f8d5cbf1327874c0d": "plan",
-    "a579078e69e14a4484579b40f0e8e557": "claim"
+    "a579078e69e14a4484579b40f0e8e557": "claim",
+    "c1208708838a478494a51ab18d7cc544": "done"
+  },
+  "edge_paths": {},
+  "receipt": {
+    "task_id": "bottleneck-3a-3a-0d1b8bf910550e4d",
+    "stage": "3A",
+    "object_ids": [
+      "GA-08"
+    ],
+    "input_pins": {
+      "GA-08": "fcbf0b71846d459e32d0b4400b2c09b9c53070c7918f7e1162c97c0babe6d17f"
+    },
+    "status": "complete",
+    "coverage": {
+      "GA-08": {
+        "state": "isolated-after-review",
+        "object_pin": "fcbf0b71846d459e32d0b4400b2c09b9c53070c7918f7e1162c97c0babe6d17f",
+        "comparison_scope": "完整实读两个指定 section：archives/bottleneck-knapsack/state/审查/广义指派候选池的状态与证据边界--审查.md §GA-08（lines 66-68，SHA-256 15ebb51bee034ac2fda32fecaa16fce4803675f0dae83442b7bd587f99694ad7）与 archives/bottleneck-knapsack/state/审查/广义指派候选报告的深入状态与BMKP舍入边界--审查.md §八条候选的精确状态（lines 33-46，SHA-256 a9a733a7ca331d092090b7f09ac9423ee2e4a31a195b0810eb27f04feaa2947d）。保留 GA-08 的 online max-GAP、均匀随机到达、不可撤销指派/拒绝、硬容量、每固定实例对随机顺序与算法随机性取期望且目标 ≥0.16OPT、每步多项式量词；保留 HOLD 状态、历史约(1−ln2)/2基线仅作来源记录，以及 adaptive stopping-time／residual-capacity probability／online-order enumeration 未付义务。只读比较同档 GA-03-L1/L2/L3、TS-BMKP-2CAP-APPROX-v1、SEL-BMKP-CONST-K-v1 与 GA-06：它们分别是条件化双容量 BMKP 模块、中央离线 BMKP 候选/固定容量种类问题、或离线 degree-2 max-GAP，均不保持 GA-08 的随机在线到达和不可撤销量词。",
+        "reason": "两个来源都明确 GA-08 仍是 HOLD 候选：medium-item reserve 只给研究方向，未完成自适应停止时刻下剩余容量概率证明，不能升级为 0.16 竞争比。与同档 BMKP/离线 GAP 对象比较后，没有共享随机在线过程、stopping-time 变量或可保持的前提映射；共同的 GAP/容量/舍入词汇不足以生成 hub 或逻辑边。来源还明确指出不得把 offline 近似与 GA-08 混写，且未发现可无条件迁移的证明边，故本对象在本任务范围内零逻辑边。",
+        "edge_ids": []
+      }
+    },
+    "reading_passes": [
+      {
+        "source": {
+          "path": "archives/bottleneck-knapsack/state/审查/广义指派候选池的状态与证据边界--审查.md",
+          "sha256": "15ebb51bee034ac2fda32fecaa16fce4803675f0dae83442b7bd587f99694ad7"
+        },
+        "declared_sections": [
+          "GA-08：random-order online GAP 竞争比 \\(0.16\\)"
+        ],
+        "start_line": 66,
+        "end_line": 68,
+        "continuation": "Complete section read; model, quantifiers, HOLD status and unpaid stopping-time obligation retained.",
+        "pass": 1
+      },
+      {
+        "source": {
+          "path": "archives/bottleneck-knapsack/state/审查/广义指派候选报告的深入状态与BMKP舍入边界--审查.md",
+          "sha256": "a9a733a7ca331d092090b7f09ac9423ee2e4a31a195b0810eb27f04feaa2947d"
+        },
+        "declared_sections": [
+          "八条候选的精确状态"
+        ],
+        "start_line": 33,
+        "end_line": 46,
+        "continuation": "Complete table read; GA-08 state and boundary retained and compared with same-archive objects.",
+        "pass": 2
+      }
+    ],
+    "assets": []
   }
 }
