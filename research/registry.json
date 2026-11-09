@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-map-gradient-label-v1.json",
-    "sha256": "4160f714c20513cf021109daed94c4aa8dfbd2537845f5cf2a663dc45b6a49ef"
+    "path": "research/registration/baseline-map-additive-recount-v1.json",
+    "sha256": "285c85dbac89bc1c9ad088228eeb3d00225c7d202e4422862a518d8610cefaa9"
   },
   "objects": [
     {
@@ -48969,7 +48969,7 @@
     },
     {
       "object_id": "M-a49d79da09f0479f9f325fa38fcc6242",
-      "version": 2,
+      "version": 3,
       "title": "AP-01共同相对内点的纯perfect计算候选",
       "kind": "candidate algorithm",
       "truth_status": "conjecture",
@@ -48985,7 +48985,7 @@
       "objections": "尚欠全支持分布构造、slot交优化正确性、oracle规模/系数位长及统一充分小epsilon固定纯核。有限epsilon检查不证明perfect。 原引用U(2,4)表与加性模型不一致，已另保来源疑点；不将该表作为候选正确性或错误性的证据。",
       "body": {
         "path": "archives/weighted-congestion/state/资料/非对称拟阵纯精炼均衡候选与证明承重边界--资料.md",
-        "sha256": "12a5aa1e599da208e56e6248c1687eaf4130460be827faa212a3cdbb98f5eac3"
+        "sha256": "aa806ba79b0e46a0e51cf8ed75539be06f194e4ae7d3f21c02bcee4ebeabca94"
       },
       "evidence": [],
       "sources": [
@@ -51447,7 +51447,7 @@
     },
     {
       "object_id": "M-aef49c1daf6b4ab4a4cff57b92f27f9a",
-      "version": 2,
+      "version": 3,
       "title": "AP-02任意非对称仿射拟阵纯perfect计算候选",
       "kind": "candidate algorithm",
       "truth_status": "conjecture",
@@ -51463,7 +51463,7 @@
       "objections": "需补统一小epsilon、全支持与拟阵交/编码证明；高阶延迟身份交互不服从仿射公式。 原引用U(2,4)表与加性模型不一致，已另保来源疑点；不将该表作为候选正确性或错误性的证据。",
       "body": {
         "path": "archives/weighted-congestion/state/资料/非对称拟阵纯精炼均衡候选与证明承重边界--资料.md",
-        "sha256": "12a5aa1e599da208e56e6248c1687eaf4130460be827faa212a3cdbb98f5eac3"
+        "sha256": "aa806ba79b0e46a0e51cf8ed75539be06f194e4ae7d3f21c02bcee4ebeabca94"
       },
       "evidence": [],
       "sources": [
@@ -77580,7 +77580,7 @@
     },
     {
       "object_id": "SEL-MATROID-PERFECT-ASYM-v1",
-      "version": 3,
+      "version": 4,
       "title": "非对称拟阵纯trembling-hand perfect的位多项式输出问题",
       "kind": "open problem",
       "truth_status": "open",
@@ -77600,7 +77600,7 @@
       "evidence": [
         {
           "path": "archives/weighted-congestion/state/资料/非对称拟阵纯精炼均衡候选与证明承重边界--资料.md",
-          "sha256": "12a5aa1e599da208e56e6248c1687eaf4130460be827faa212a3cdbb98f5eac3"
+          "sha256": "aa806ba79b0e46a0e51cf8ed75539be06f194e4ae7d3f21c02bcee4ebeabca94"
         },
         {
           "path": "archives/weighted-congestion/state/资料/主攻问题范围价值与旧原子NE课题的关系--资料.md",
@@ -156324,28 +156324,28 @@
     },
     {
       "object_id": "weighted-congestion/atomic-tremble-audit-and-local-obstruction",
-      "version": 2,
-      "title": "U(2,4)单交换局部反例的原目标聚合未明",
-      "kind": "obstacle-candidate",
-      "truth_status": "unassessed",
+      "version": 3,
+      "title": "U(2,4) 历史单交换费用表的加性重算",
+      "kind": "source-audit",
+      "truth_status": "finite",
       "model": "U(2,4)的六个二元素基；原JSON给资源向量(2,2,1,1)，但未定义基成本的聚合函数。不能默认视为本档加性资源费用。",
-      "statement": "冻结源声称基{0,1}及四个单交换邻居费用2、全局最优费用1。若成本为资源费用之和，六基费用依次4,3,3,3,3,2，当前基有严格改善单交换；若取最大资源费用才得到原2/2/1表。因此此源不能认证加性拟阵单交换局部/全局分离，须先确认原目标。",
+      "statement": "六个二元素基 ab、ac、ad、bc、bd、cd 的加性费用依次为 4、3、3、3、3、2，故 ab 存在严格改善的单交换。取最大资源费用可复现历史 2/2/1 表，原件未给出基成本聚合函数。原表仅作来源记录，不为加性单交换局部最优反例提供证据。",
       "quantifiers": "仅这份固定U(2,4)源证书；没有推广或复杂度结论。",
       "assumptions": [
-        "保留原字节，尚未取得定义该cost的原始证明/函数"
+        "重算分别明确采用资源费用之和和最大资源费用。历史原件保持原字节。"
       ],
-      "scope": "身份/来源模型待确认的局部障碍候选；不影响AP-01/AP-02仍为候选，也不否定拟阵线性权基交换定理。",
-      "objections": "本轮定向枚举全部六基确定加性矛盾；max聚合只是解释数值的可能性，非已确认原作者模型。3750/3000有限检查缺完整策略/延迟输入，不另造日志节点。",
+      "scope": "仅核对固定 U(2,4) 的历史费用表及两种聚合下的六基数值。AP-01/AP-02 的候选状态独立。",
+      "objections": "历史 3750/3000 个有限检查按原记录保留，适用范围为该固定输入。",
       "body": {
         "path": "archives/weighted-congestion/state/资料/非对称拟阵纯精炼均衡候选与证明承重边界--资料.md",
-        "sha256": "12a5aa1e599da208e56e6248c1687eaf4130460be827faa212a3cdbb98f5eac3",
+        "sha256": "aa806ba79b0e46a0e51cf8ed75539be06f194e4ae7d3f21c02bcee4ebeabca94",
         "section": "已有有限证据和原子审计的边界"
       },
       "evidence": [
         {
           "path": "archives/weighted-congestion/state/审查/原子扰动审计与单交换局部障碍--审查.md",
-          "sha256": "6714a2b5c9ffac5a14a3de9eb79ad8655978763d57f0ad829720cbeedc966a86",
-          "section": "严格局部反例"
+          "sha256": "aacb4c8e5bc01c9f5e3c75ea8654e697759d5727695c3958e8c856cd07357995",
+          "section": "历史单交换表与加性重算"
         },
         {
           "path": "archives/weighted-congestion/tools/evidence/retired-topic-selection-20261031/atomic_tremble_audit.json",
@@ -202224,12 +202224,12 @@
     },
     {
       "path": "archives/weighted-congestion/state/审查/原子扰动审计与单交换局部障碍--审查.md",
-      "sha256": "6714a2b5c9ffac5a14a3de9eb79ad8655978763d57f0ad829720cbeedc966a86",
+      "sha256": "aacb4c8e5bc01c9f5e3c75ea8654e697759d5727695c3958e8c856cd07357995",
       "disposition": "attachment",
       "object_ids": [
         "weighted-congestion/atomic-tremble-audit-and-local-obstruction"
       ],
-      "reason": "Directly read this review/data source. Its finite audit, boundary, or cross-domain scope is supporting evidence for the listed canonical mathematical owners; the source does not add a new theorem or alter their model/quantifiers. Canonical owner evidence was updated in this directed closeout batch."
+      "reason": "Directly read this review/data source. Its finite audit, boundary, or cross-domain scope is supporting evidence for the listed canonical mathematical owners; the source does not add a new theorem or alter their model/quantifiers. Canonical owner evidence was updated in this directed closeout batch. 保留有限审计和已完成的加性重算，原聚合未声明的历史表仅作来源。"
     },
     {
       "path": "archives/weighted-congestion/state/审查/奇环放大器的独立攻击与来源范围--审查.md",
@@ -203472,7 +203472,7 @@
     },
     {
       "path": "archives/weighted-congestion/state/资料/非对称拟阵纯精炼均衡候选与证明承重边界--资料.md",
-      "sha256": "12a5aa1e599da208e56e6248c1687eaf4130460be827faa212a3cdbb98f5eac3",
+      "sha256": "aa806ba79b0e46a0e51cf8ed75539be06f194e4ae7d3f21c02bcee4ebeabca94",
       "disposition": "objects",
       "object_ids": [
         "M-a49d79da09f0479f9f325fa38fcc6242",

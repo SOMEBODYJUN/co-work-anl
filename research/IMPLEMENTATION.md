@@ -167,7 +167,7 @@ python work.py checkpoint research/registry.json -m 'Integrate accurately regist
 
 新增独立正文可先推再登记。改动已冻结或被引用的正文、证据时，先在本地准备，更新所有命中引用的SHA和受影响对象版本，连同正文、baseline和registry一次推送。只改路径或文字时沿用准确的数学陈述和身份。全仓出口仍覆盖当前正式材料，只派受影响范围。旧登记批的增量沿用mode:incremental和当前base_registry；退役对象记录明确去向。
 
-旧核心未变而只增加依赖，用map read-add续原批。核心改版时保草稿、交接并按新版重派；已done批走定向替代。未受影响批照常领、交付和整合。
+发现者负责把已核实的错误在原处修正并接回登记和图。计算证据不足时，直接标清可用范围并收回不受支持的用法。若有可验证的数学缺口，连到实际比较。只增加依赖时用map read-add；旧输入改版时按下节成组刷新或定向替代。受影响的原worker沿原问题复用草稿，其余批持续推进。
 
 ## 第三阶段：从内到外建边与整合
 
@@ -294,7 +294,7 @@ collect给已交付成果和待补办批，--full返回详细内容。status与d
 {"supersession":{"old-task":{"reason":"对象改版，仅重判相关支持","assets":{"map/edges/old.json":{"disposition":"replaced","replacement_paths":["map/edges/new.json"],"reason":"新边保完整旧关系并修正条件"}}}}}
 ```
 
-构图旧批有待定或输入过时时，用python work.py research map-draft --repair-task <旧任务ID>起草原层替代批，任何Boss均可发布。替代批覆盖旧批仍现役的核心，并交代原有边。最终验收核对最新已发布队列及整合回执。
+构图旧批有待定或输入过时时，可在一次 `python work.py research map-draft --repair-task <任务ID> --repair-task <任务ID> --output map/repairs.json` 中成组起草，再用 `map plan --record-file map/repairs.json` 发布。范围相同的未完批刷新原任务的版本，保留归属和写入路径。若对象已退休或范围实际改变，保全草稿后重派该范围。已done批仍按原层定向替代，覆盖仍现役的核心并交代原边。发现者核对刷新、替代和整合的实际结果。
 
 ## 后续Main与Solver消费
 

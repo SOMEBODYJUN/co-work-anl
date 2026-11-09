@@ -648,6 +648,7 @@ def _plan(root,records,ctx,actor,instance,request_id):
     if phase=='registration':require_lead(root,ctx,actor,instance)
     current=listing(root,ctx=ctx);known_rows={r['definition']['task_id']:r for r in current}
     known={tid:row['definition'] for tid,row in known_rows.items()};new={};existing=[];refreshed={};seen=set();skipped=[]
+    reframed=[]
     for record in records:
         task=research.identity(record['task_id'])
         if phase=='registration':validate(root,record,phase)
@@ -656,18 +657,27 @@ def _plan(root,records,ctx,actor,instance,request_id):
         if task in known:
             before={k:v for k,v in known[task].items() if k!='context_plan'}
             after={k:v for k,v in record.items() if k!='context_plan'}
-            if before!=after:raise ValueError('Existing task has changed mathematical inputs or write scope; reframe it: '+task)
-            existing.append(task)
             old=known_rows[task]
+            version_refresh=(phase=='map' and before.get('input_pins')!=after.get('input_pins')
+                             and {k:v for k,v in before.items() if k!='input_pins'}=={k:v for k,v in after.items() if k!='input_pins'})
+            if version_refresh and old['state'] not in (ACTIVE|{'available','handoff'}):
+                skipped.append({'task_id':task,'reason':'Task state changed; draft a replacement if now done',
+                                'unplanned_object_ids':[]})
+                continue
+            repin=version_refresh
+            if before!=after and not repin:
+                raise ValueError('Existing task has changed mathematical inputs or write scope; reframe it: '+task)
+            existing.append(task)
             can_refresh=(old['state']!='done' if phase=='registration' else
                          old['state'] not in {'done','withdrawn'} and old.get('owner') in {None,actor})
-            if can_refresh and known[task].get('context_plan')!=record.get('context_plan'):
+            if repin or (can_refresh and known[task].get('context_plan')!=record.get('context_plan')):
                 if phase=='map':
                     try:validate(root,record,phase)
                     except MapInputsChanged as exc:
                         skipped.append({'task_id':task,'reason':str(exc),'unplanned_object_ids':[]})
                         continue
                 row=copy.deepcopy(old);row['definition']=record;refreshed[task]=row
+                if repin:reframed.append(task)
             continue
         new[task]=record
     combined={**known,**new}
@@ -720,6 +730,7 @@ def _plan(root,records,ctx,actor,instance,request_id):
             'existing_states':{tid:known_rows[tid]['state'] for tid in existing},'refreshed_context_plans':sorted(refreshed)}
     if phase=='map':
         result['skipped_conflicts']=skipped
+        result['reframed_tasks']=sorted(reframed)
         if skipped:
             result['instruction']='Re-draft any uncovered objects against the latest queue and registry; existing batches and their receipts are unchanged.'
             if not paths:result['status']='no-new-task'
