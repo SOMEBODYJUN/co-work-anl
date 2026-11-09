@@ -1,0 +1,61 @@
+{
+  "edge_id": "localpot-nash04-review-supplies-scoped-geometric-tool",
+  "kind": "implies",
+  "source_ids": [
+    "local-potential-games/nash-04-independent-review-source"
+  ],
+  "target_ids": [
+    "local-potential-games/local-cubic-squaring-precision-ledger",
+    "local-potential-games/nash-candidate-map-and-literature-boundaries",
+    "local-potential-games/nash-candidate-registry-json-and-selection-boundaries"
+  ],
+  "relation_mode": "conditional",
+  "conditions": "采用源审查明确给出的binary graphical exact potential构造：n≥1，5n个二动作玩家，x0=y0=1/2，局部收益u_v(a)=a_v∂_vΨ(a_-v)（或同一玩家的正仿射变换），相互作用图由非零势单项式的primal graph定义。扰动域为[ε,1−ε]，an=2^(−2^n)，ε∈[an,1/2]；原NE指未扰动[0,1]策略域内所有混合NE。几何与扰动论证对n≥1；最大度恰6及图宽恰3只对n≥2。固定δ<1/2，编码位数的表述以玩家数N=5n或明确声明的结构编码为准。源登记为finite内部审查，本边保持conditional，不提升源/目标的注册truth_status；只采用其完整代数证明，不以有限JSON代替该证明。",
+  "roles": {
+    "local-potential-games/nash-04-independent-review-source": "提供同一势的完整梯度、全ε区间候选最佳回应、对所有原NE的反证链、袋分解与K4 minor以及归一化和编码界。",
+    "local-potential-games/local-cubic-squaring-precision-ledger": "接收局部三次势几何精度工具引理的数学部分，仍保留其候选/降级、半径与模型边界。",
+    "local-potential-games/nash-candidate-map-and-literature-boundaries": "仅接收NASH-04一节的相同工具引理，不接收其他五候选的算法或选题结论。",
+    "local-potential-games/nash-candidate-registry-json-and-selection-boundaries": "仅接收NASH-04候选条目的相同几何/图宽陈述，不由此推出其余候选合同或优先级。"
+  },
+  "explanation": "令pi=x_{i−1}y_{i−1}，势Ψ=Σ_i[(ti−ci)(xi−pi)+(di−1/2)(xi−yi)−2ti]−2xn−2yn。其导数为Ψ_ti=xi−pi−2<0，Ψ_ci=pi−xi，Ψ_di=xi−yi；Ψ_xi=ti−ci+di−1/2−1_(i<n)(t_{i+1}−c_{i+1})yi−2·1_(i=n)，Ψ_yi=−di+1/2−1_(i<n)(t_{i+1}−c_{i+1})xi−2·1_(i=n)。每位玩家收益对本人概率仿射，故这些符号给充分且必要的最佳回应。设ai=2^(−2^i)、qi=max(ε,ai)，取ti=ci=ε，di=1/2，xi=yi=qi。qi≤1−ε；qi≥q_{i−1}²（首层用q0=1/2；其余层分别用ai=a_{i−1}²或ε≥ε²）。所以ti、ci在下界有非正导数，di无差异，非末端x/y导数为零，末端qn=ε且导数为−2，给整个ε区间的扰动NE；ε=1/2时可行集为单点。任意原NE由Ψ_ti<0有ti=0，末端x/y导数严格负给xn=yn=0。若所有di在(0,1)且ci<1，则di无差异强制xi=yi，ci最优性强制xi≥x_{i−1}²；归纳得xn≥an>0，矛盾。故任意原NE有某di∈{0,1}或ci=1，与候选的di=1/2、ci=ε≤1/2相距至少1/2。因此任意固定δ<1/2，要求每个扰动NE均在某原NE的闭δ球内必须ε<an，log2(1/ε)>2^n=2^(N/5)；这只是必要几何精度条件。对图，A_i={x_{i−1},y_{i−1},ti,xi}、C_i={x_{i−1},y_{i−1},ci,xi}、D_i={xi,di,yi}按层顺序排列，首层删常量。单项式支持被覆盖且变量连续，给pw≤3；四个两两相邻的连通branch sets {x1},{y1},{c2},{t2,x2}给K4 minor，故3≤tw≤pw≤3。非末端xi有六个邻居，其他度不超过六，故n≥2时最大度恰6。偏导绝对值≤7/2；u/4只保证绝对值≤7/8，(u+7/2)/7才保证[0,1]且保原/扰动NE。绝对编号邻接编码L=O(n log n)，故不未经声明地把精度2^n改写成2^(Ω(L))。这些推导逐条落在三个目标的NASH-04数学片段中。",
+  "scope": "三个目标各自NASH-04片段的同一显式构造：扰动与几何部分全n≥1（目标共同片段至少n≥2），全ε∈[an,1/2]、全部原NE。最大度6和图宽3限n≥2。图宽只针对单项式primal interaction graph，非完整payoff-scope图；分离只否定δ<1/2的闭球保证，不排除闭半径1/2球，不给一般NE求解时间下界。",
+  "contribution": {
+    "result": "对三个目标的NASH-04片段，得到同一5n玩家构造（扰动/分离对n≥1，三目标共同工具片段至少n≥2）的：全区间扰动NE q_i=max(ε,2^(−2^i))；它距每个原NE的ℓ∞距离≥1/2；固定δ<1/2的全扰动NE贴近性质必须用ε<2^(−2^n)，即精度bits>2^n；n≥2时最大度6、treewidth=pathwidth=3；正仿射收益归一化和以玩家数/明确编码计费的边界。",
+    "remaining": "local-cubic ledger的历史独立性、外部出版覆盖、新颖性与论文价值不由该代数工具引理推出，且必要阈值不等于充分阈值或NE计算时间下界。两个候选地图中：NASH-01仍缺零初始化且不依赖最小首激活量的统一best-iterate界；NASH-02仍缺clipping相关噪声罚项、总oracle计费与高概率实际profile保证；NASH-03仍缺具体Minty识别/证书算法及与既有LP+DP的差额；NASH-05仍缺无输出LP段控制与全部/第二NE的output-polynomial保证；NASH-06仍缺对ε答案集合量化的高概率实例采样上下界。六候选排序、文献排雷与新颖性判断也须各自证据，均不由本边证明。treewidth≤2或Berge-acyclic三元势的正向精度界仍开放。"
+  },
+  "evidence": [
+    {
+      "path": "archives/local-potential-games/state/审查/Nash-04独立审查报告与候选边界--审查.md",
+      "sha256": "362a218808e9d893da5a96e08e6db31f23fe10d7a88d21e9c093b06246422ebf"
+    },
+    {
+      "path": "archives/local-potential-games/state/资料/局部三次势扰动精度的候选与半球修订--资料.md",
+      "sha256": "1a04a6fb5a04644f19d243e21801f1614e898adc8c70a3651dc3b7815363a10c"
+    },
+    {
+      "path": "archives/local-potential-games/state/资料/Nash候选报告与近期排雷边界--资料.md",
+      "sha256": "7d28a9a0b90b553c99222cb098a16fc096e5c93fe602381d878dfbc58a7faf5e"
+    },
+    {
+      "path": "archives/local-potential-games/state/资料/Nash候选登记JSON与取舍边界--资料.md",
+      "sha256": "a49fa50118f1145c3d7a107b98b5b5c1d2f8704e65e613c48508f6857587b522"
+    }
+  ],
+  "status": "accepted",
+  "premises_mode": "all",
+  "reviewed_by": "Boss5-worker-474257b8",
+  "review_note": "完整实读四端点v1正文，逐项重算全区间最佳回应、原NE反证、图袋连续性和K4 minor，核δ严格小于1/2、收益平移和编码量词。目标是三份复合资源中的共同NASH-04数学片段，故用contribution而非whole_result。源端点现行身份仍是finite内部审查，三个目标仍为finite/候选资源，因此关系保持conditional且不改注册状态。有限n样本、论文状态和候选排序均未作为该全称推导的逻辑前提。",
+  "endpoint_pins": {
+    "local-potential-games/local-cubic-squaring-precision-ledger": "6a43dd802a836b01d5d526f3c157195ba2cfb873239babae05ac82c2332151a1",
+    "local-potential-games/nash-04-independent-review-source": "43a1123924993780a743343cbb502332f5b8a58e4e4f0725a23ced6dd824eeec",
+    "local-potential-games/nash-candidate-map-and-literature-boundaries": "b4ac3aa920ddc9270d629dee0e1caa60818b59cc046aea0fd8d6fdd0a00ecf69",
+    "local-potential-games/nash-candidate-registry-json-and-selection-boundaries": "f8e48b1c018901a2627f72504a061523e1c33c2c01cbc381ade0f2fbd5279f26"
+  },
+  "evidence_pins": {
+    "archives/local-potential-games/state/审查/Nash-04独立审查报告与候选边界--审查.md": "362a218808e9d893da5a96e08e6db31f23fe10d7a88d21e9c093b06246422ebf",
+    "archives/local-potential-games/state/资料/局部三次势扰动精度的候选与半球修订--资料.md": "1a04a6fb5a04644f19d243e21801f1614e898adc8c70a3651dc3b7815363a10c",
+    "archives/local-potential-games/state/资料/Nash候选报告与近期排雷边界--资料.md": "7d28a9a0b90b553c99222cb098a16fc096e5c93fe602381d878dfbc58a7faf5e",
+    "archives/local-potential-games/state/资料/Nash候选登记JSON与取舍边界--资料.md": "a49fa50118f1145c3d7a107b98b5b5c1d2f8704e65e613c48508f6857587b522"
+  },
+  "review_digest": "3e94391f6897375d805edcfd1fb02ef4ecbfd1b390279f868e8cf2abe9db0e18"
+}

@@ -1,0 +1,51 @@
+{
+  "edge_id": "localpot-v2-refines-v1-finite-width-certificate",
+  "kind": "corrects",
+  "source_ids": [
+    "local-potential-games/nash-finite-toy-audit-v2-localized-squaring"
+  ],
+  "target_ids": [
+    "local-potential-games/nash-finite-toy-audit-v1"
+  ],
+  "relation_mode": "context",
+  "conditions": "v1和v2是两个不同冻结JSON版本；仅比较其n=1,…,12局部重复平方记录。用z_i=x′_i=y_i识别变量；interaction graph为非零单项式primal graph。",
+  "roles": {
+    "local-potential-games/nash-finite-toy-audit-v2-localized-squaring": "保留相同一步/噪声/Minty结果，新增每n的完整path-bag顺序与n≥2的K4 branch sets。",
+    "local-potential-games/nash-finite-toy-audit-v1": "保留历史粗路径宽上界n=1时4、n≥2时6，以及当时有限KKT/梯度检查范围。"
+  },
+  "explanation": "逐项比较两个完整JSON：arithmetic、one_step_identity、noise_breaks_expected_potential_ascent、minty_two_player_coordination以及symbolic_gradient_bounds相同；v2的12个记录沿用5n玩家、n=1度3/次数2及n≥2度6/次数3、每n三个扰动测试。变化在图证：v1只有上界4/6；v2对n=1列三个袋{t1,x1},{c1,x1},{d1,x1,z1}给上界2；n=2,…,12每层依次ti、ci、di袋，最大袋4，给上界3，并在各n≥2列{x1},{z1},{c2},{t2,x2}作为K4 minor，记录精确宽3。3≤6、2≤4，故旧宽上界并非数学假话；修订的是其证书精度和可复用结构，不反驳v1。v2新增precision_statement的半径1/4及闭半径1/2警告，也不等于在有限JSON中补齐对全部原NE的分离证明；两版仍显式要求独立REPORT全称论证。",
+  "scope": "版本修订语境：共同有限证据保留，局部重复平方图证由粗上界细化为n=2,…,12的袋/ minor证书。保留v1来源；不将v2新字段倒写进v1，不由12个n外推全n几何。",
+  "evidence": [
+    {
+      "path": "archives/local-potential-games/state/审查/Nash有限玩具审计v1--审查.md",
+      "sha256": "6d96501b7df415ef4f48980dd47acebd1e19e44ec84c528c50a52fac14851eed"
+    },
+    {
+      "path": "archives/local-potential-games/state/审查/Nash有限玩具审计v2局部重复平方修订--审查.md",
+      "sha256": "d06362864e994992fbea57c5f1a24542ef8cbf3c715412a43bdc052537dfcd14"
+    },
+    {
+      "path": "archives/local-potential-games/tools/evidence/retired-topic-selection-20261031/nash_toy_results_v1.json",
+      "sha256": "de596c41b04878990b835e9b344c714bcd448db8b38be8f327ad2bedc6667c8a"
+    },
+    {
+      "path": "archives/local-potential-games/tools/evidence/retired-topic-selection-20261031/nash_toy_results_v2.json",
+      "sha256": "2a08aba541bf1cc78052f99042a191d56b6552381b936eb2b2335be4ddbee3f5"
+    }
+  ],
+  "status": "accepted",
+  "premises_mode": "all",
+  "reviewed_by": "Boss5-worker-474257b8",
+  "review_note": "实读两JSON全部字段（v2长bags逐n完整读取），核对共同字段与12个记录的改动；明确corrects是更精确证书的版本语境，旧6上界仍正确，故没有refutes逻辑边。",
+  "endpoint_pins": {
+    "local-potential-games/nash-finite-toy-audit-v1": "abd3fb3021e50d6a1a0511971f3b013b6f786106e6f211763d6da4d6d9f3927c",
+    "local-potential-games/nash-finite-toy-audit-v2-localized-squaring": "7add02029ecffe23719f184e3ac4adc6d6eaa553a9b29da104a6001ab123cb7a"
+  },
+  "evidence_pins": {
+    "archives/local-potential-games/state/审查/Nash有限玩具审计v1--审查.md": "6d96501b7df415ef4f48980dd47acebd1e19e44ec84c528c50a52fac14851eed",
+    "archives/local-potential-games/state/审查/Nash有限玩具审计v2局部重复平方修订--审查.md": "d06362864e994992fbea57c5f1a24542ef8cbf3c715412a43bdc052537dfcd14",
+    "archives/local-potential-games/tools/evidence/retired-topic-selection-20261031/nash_toy_results_v1.json": "de596c41b04878990b835e9b344c714bcd448db8b38be8f327ad2bedc6667c8a",
+    "archives/local-potential-games/tools/evidence/retired-topic-selection-20261031/nash_toy_results_v2.json": "2a08aba541bf1cc78052f99042a191d56b6552381b936eb2b2335be4ddbee3f5"
+  },
+  "review_digest": "ab09e0443f60e5e87eb9ab2cf1e5bb4dbb254d05cddfecb356dca47726f13646"
+}
