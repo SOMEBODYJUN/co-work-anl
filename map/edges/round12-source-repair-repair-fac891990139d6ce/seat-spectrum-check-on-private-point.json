@@ -1,0 +1,68 @@
+{
+  "edge_id": "cag-saturation-round10-seat-spectrum-check-on-private-point",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-ACTUAL-PRIVATE-SEAT-SPECTRUM-v1"
+  ],
+  "target_ids": [
+    "M-4b6ebc6e36f341ff8c9f7bec506ae78d"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "冻结private有理质量、真实原十八标签及A1…A6路径。十八主题均为不同极大覆盖。固定实际遗漏的极大全局私有块，清分母同比例缩放。",
+  "roles": {
+    "CA-ACTUAL-PRIVATE-SEAT-SPECTRUM-v1": "对完整纯SPE的实际遗漏谱给出按位和总预算公式，提供本有限点上逐值核对的必要不等式。",
+    "M-4b6ebc6e36f341ff8c9f7bec506ae78d": "冻结十八标签、117型质量和给定路径供实例化，目标其余超二、势与真菜单结论各有独立证据。"
+  },
+  "explanation": "对每一极大主题B_j，a_j为只属于该极大主题且被原路径遗漏的客户量。本实例十八标签均极大，因此与原目录私有客户计法一致。实例化 λ_{j,h}=a_j/h+(|B_j|−a_j)/6（h=1,…,6），得到108个带重数席位。六个最高值均为16501268475/121119859702，按位置u_i≥λ_{7−i}，前四等号，末两余量为15857109695/181679789553及17311263583/181679789553。总预算为W−Σ_{r=1}^6 λ_r=11056124426/60559929851>0。这里对已知非SPE的固定数据直接检验公式给出的六个个体不等式和一个总预算。恢复LP另用由六个对称比较主题形成的七条私有预算，完整谱核查则对十八主题全部带重数席位排序。",
+  "scope": "固定private点上对席位必要不等式的精确数值核查，限定原目录和实际路径。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/实际遗漏私有席位谱与锐界--定理.md",
+      "sha256": "aa4b81ffda0f492eedaf8ad691acf68703d7ff8502a91b37d0eeea1461230719",
+      "section": "固定实际遗漏后的完整谱预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/整终局势与真倒二菜单联合停界--障碍.md",
+      "sha256": "3f09aade80c8e87f86f8ff8513888f7bbe99b53b848b06f0d28c1a0ff856bd43",
+      "section": "加入私有席位谱的点：更强仍非 SPE"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/potential-menu-joint/replay/potential_menu_joint_private.json",
+      "sha256": "08ca100b2cfa8b5e878193c49b27bb73b0cdbb2addb7fefe52cdfecfe8b95b5f"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/potential-menu-joint/replay/audit_private.json",
+      "sha256": "3c7eaf5ad9db7d09cdeb95dd093bfd491aa11c1d5578555237f6643d993847d0"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/条件总势与真实末两位菜单的有理恢复程序--程序.md",
+      "sha256": "9aa64a54af672774f26b8b72535a4987f0364f7b37c92a87936bdff69d664581",
+      "section": "Private模式增加什么"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/potential-menu-joint/replay/audit_potential_menu_joint.py",
+      "sha256": "245483e74f526dccfb0e0bcf5346afb0fdabd2d91a09fa7592bea3dd83becdf3"
+    }
+  ],
+  "reviewed_by": "Boss1-customer-potential-source-repair-round13",
+  "review_note": "从冻结类型重建标签支持，逐对核十八覆盖确实互异且极大。按实际遗漏重建108个席位、前六带重数谱及六个个体与总预算，另对照原恢复LP的七条对称比较预算。",
+  "contribution": {
+    "result": "以席位谱公式在固定输入计算全部108个席位，精确通过由前六大席位给出的全部个体及总预算。",
+    "remaining": "点的精确超二比、整终局势/真末菜单和严格倒二异议仍来自其独立数据核验。"
+  },
+  "endpoint_pins": {
+    "CA-ACTUAL-PRIVATE-SEAT-SPECTRUM-v1": "1733c01c62805cd6c898046e75d2e2a9bc10db740480b56267fe9c400d1ecaf3",
+    "M-4b6ebc6e36f341ff8c9f7bec506ae78d": "7e0b63fb5dad3f65d49584e5ec7cdc3a7caa1606ef56b52f8d6a223f8ace1ae0"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/实际遗漏私有席位谱与锐界--定理.md": "aa4b81ffda0f492eedaf8ad691acf68703d7ff8502a91b37d0eeea1461230719",
+    "archives/customer-attraction/state/障碍/整终局势与真倒二菜单联合停界--障碍.md": "3f09aade80c8e87f86f8ff8513888f7bbe99b53b848b06f0d28c1a0ff856bd43",
+    "archives/customer-attraction/tools/evidence/potential-menu-joint/replay/potential_menu_joint_private.json": "08ca100b2cfa8b5e878193c49b27bb73b0cdbb2addb7fefe52cdfecfe8b95b5f",
+    "archives/customer-attraction/tools/evidence/potential-menu-joint/replay/audit_private.json": "3c7eaf5ad9db7d09cdeb95dd093bfd491aa11c1d5578555237f6643d993847d0",
+    "archives/customer-attraction/state/程序/条件总势与真实末两位菜单的有理恢复程序--程序.md": "9aa64a54af672774f26b8b72535a4987f0364f7b37c92a87936bdff69d664581",
+    "archives/customer-attraction/tools/evidence/potential-menu-joint/replay/audit_potential_menu_joint.py": "245483e74f526dccfb0e0bcf5346afb0fdabd2d91a09fa7592bea3dd83becdf3"
+  },
+  "review_digest": "6f638200303e767248b1879a97faf3e03ad7b7cca015c5bc28bcd49c54e170b5"
+}

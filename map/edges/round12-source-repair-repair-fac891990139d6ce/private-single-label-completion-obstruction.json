@@ -1,0 +1,78 @@
+{
+  "edge_id": "cag-saturation-round10-private-single-label-completion-obstruction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-4b6ebc6e36f341ff8c9f7bec506ae78d"
+  ],
+  "target_ids": [
+    "customer-attraction/greedy-admissible-catalog-completion-late-menu-floating-obstruction-contract"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "六人固定旧十八标签、每个旧兴趣型的旧会员与质量 m_i 完全保留，actual 路径固定 0,1,2,3,4,5（0基）。仅增加 Z=18，允许每类型任意实质量分裂 0≤z_i≤m_i，允许重选全部续局与平局。",
+  "roles": {
+    "M-4b6ebc6e36f341ff8c9f7bec506ae78d": "固定十八标签的有理质量和七个旧严格倒二偏离给出实例与必要报价阈值。",
+    "customer-attraction/greedy-admissible-catalog-completion-late-menu-floating-obstruction-contract": "原单枝BR、交叠减税和在轨安全下界的仿射接口。针对固定输入补入新增标签本身的真实倒二行动义务。"
+  },
+  "explanation": "令 p_i=Σ_{j<4}b_ij，u_j 是实际利润，a∈{5,12,…,17} 的全部旧末位最佳回复都给倒二严格增益。新增主题不改变纯旧终局收益与旧回复排序，故欲支持实际路径，每个这种分支必须选 Z 回复，至少须有 B_a: −Σ z_i/(p_i+b_ia+1)≤−θ_a，θ_a 为旧回复最大价。记 S_j: Σ z_i/(Σ_{l<j}b_il+6−j)≤u_j，为 actual 偏离 Z 的必要安全下界行。倒二自己改 Z，设最后回复 b。必须有 U_b: Σ z_i/(p_i+1+β_ib)≤u_4，其中旧 b 的 β_ib=b_ib，Z 的 β_iZ=1；并有 R_{b,a}: L_b(z)≥L_a(z) 对每个旧 a，其中 L_b(z)=Σ m_i b_ib/(p_i+1)−Σ z_i b_ib/[(p_i+1)(p_i+2)] 对旧 b，L_Z(z)=Σ z_i/(p_i+2)。\n将选用行统一写 c_s·z≤d_s。非负加权得到 C·z≤D，而盒给 C·z≥Σ m_i min(0,C_i)。直接代入 117 型（各对称质量按其比较子集数均分）得到以下所有正差 gap=Σ m_i min(0,C_i)−D：\nb=0,1,2,3 用 (U_b+2Σ_{a=6}^{11}R_{b,a})/13，各 gap 依次为 57717224941/787279088063、同值、59021226681/787279088063、412900756571/4723674528378。\nb=4 用 (B_16+U_b+R_{b,16})/3，gap=12649356467/726719158212。\nb=5 用 (B_b+U_b)/2，gap=32131453849/1453438316424。\nb=6,…,11 用 (B_a+U_b+R_{b,a})/3，a 依次为 16,12,12,12,16,17，统一 gap=84264935023/4360314949272。\nb=12,…,17 用 (B_b+U_b)/2，统一 gap=34953296381/1937917755232。\nb=18 用 (33S_3+17S_5+8Σ_{a=6}^{11}R_{18,a})/98，gap=39334587019/1937917755232。\n因此对每个可能可信末位回复 b，已有一组必要行不可兼容，足以排除任意单标签补全；无需使用旧坏枝的交叠减税行。\n同一固定点的正式证书已在 c335f597b7a5c0f6 交付，十九个盒差用其冻结有理核验器逐一复算。本次席位表述勘误不影响这十九个证书。此边保留对旧程序接口的方向和局部贡献，原程序两步浮点贪心的记录和一般单枝公式仍各有其独立证据。",
+  "scope": "仅固定旧117型private输入和原实际路径，且只增一个标签的修补，量化全实质量盒及所有完整纯策略的历史依赖弱平局。C(A)与私有席位只用于识别旧点，扩目录后无需保留这些约束。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/整终局势与真倒二菜单联合停界--障碍.md",
+      "sha256": "3f09aade80c8e87f86f8ff8513888f7bbe99b53b848b06f0d28c1a0ff856bd43",
+      "section": "加入私有席位谱的点：更强仍非 SPE"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/保实际路径安全报价的补目录贪心探针与新偏离--程序.md",
+      "sha256": "1e96803a99ed6eb1dc0b60c3d47f2037f361dd182a37621972a08c0233b314fe",
+      "section": "新主题的线性构造及其推导"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/保实际路径安全报价的补目录贪心探针与新偏离--程序.md",
+      "sha256": "1e96803a99ed6eb1dc0b60c3d47f2037f361dd182a37621972a08c0233b314fe",
+      "section": "原两步报告的完整状态"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/十八主题控制器与按客户定价的大目录浮点攻击--程序.md",
+      "sha256": "204191adbfb019f6cf30a76c32ac9602aff1fa7cda031e58321b780eded020da",
+      "section": "真实输入和目标分母"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/potential-menu-joint/replay/potential_menu_joint_private.json",
+      "sha256": "08ca100b2cfa8b5e878193c49b27bb73b0cdbb2addb7fefe52cdfecfe8b95b5f"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/potential-menu-joint/replay/audit_private.json",
+      "sha256": "3c7eaf5ad9db7d09cdeb95dd093bfd491aa11c1d5578555237f6643d993847d0"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/十八主题固定路径单标签扩充障碍--反例.md",
+      "sha256": "d3eeafa3012f4860bc7206340d3cabf4f4a153175d642a393475ce877af11a9c"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/eighteen-topic-one-new-label-v1/verify.py",
+      "sha256": "86d78ed28c40b2259273cfa5c4e08fc01085c94897c4646386001316eec9c519"
+    }
+  ],
+  "reviewed_by": "Boss1-customer-potential-source-repair-round13",
+  "review_note": "以通用终局份额重算旧18×18菜单的七个严格偏离及旧收益不变性，运行现行标准库核验器复算19个有理盒差。区分新定理的独立完整证明边、此旧合同的固定实例贡献，以及贪心原报告的浮点失败。",
+  "contribution": {
+    "result": "固定 private 点的任意单标签 Z 扩充，即使可任意重选续局，也不能以原 actual 路径形成完整SPE。该结论补齐单主题修补中 Z 本身的倒二行动义务。",
+    "remaining": "目标对象的一般单枝线性接口（包括减税行与目标）和原两步浮点报告仍取自身证据。多标签、改旧质量或改实际路径另需分析。"
+  },
+  "endpoint_pins": {
+    "M-4b6ebc6e36f341ff8c9f7bec506ae78d": "7e0b63fb5dad3f65d49584e5ec7cdc3a7caa1606ef56b52f8d6a223f8ace1ae0",
+    "customer-attraction/greedy-admissible-catalog-completion-late-menu-floating-obstruction-contract": "0c2280daffeff18aeb09922cc229c32f505b9b5019b3b7759cfbd9320ba3345a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/整终局势与真倒二菜单联合停界--障碍.md": "3f09aade80c8e87f86f8ff8513888f7bbe99b53b848b06f0d28c1a0ff856bd43",
+    "archives/customer-attraction/state/程序/保实际路径安全报价的补目录贪心探针与新偏离--程序.md": "1e96803a99ed6eb1dc0b60c3d47f2037f361dd182a37621972a08c0233b314fe",
+    "archives/customer-attraction/state/程序/十八主题控制器与按客户定价的大目录浮点攻击--程序.md": "204191adbfb019f6cf30a76c32ac9602aff1fa7cda031e58321b780eded020da",
+    "archives/customer-attraction/tools/evidence/potential-menu-joint/replay/potential_menu_joint_private.json": "08ca100b2cfa8b5e878193c49b27bb73b0cdbb2addb7fefe52cdfecfe8b95b5f",
+    "archives/customer-attraction/tools/evidence/potential-menu-joint/replay/audit_private.json": "3c7eaf5ad9db7d09cdeb95dd093bfd491aa11c1d5578555237f6643d993847d0",
+    "archives/customer-attraction/state/反例/十八主题固定路径单标签扩充障碍--反例.md": "d3eeafa3012f4860bc7206340d3cabf4f4a153175d642a393475ce877af11a9c",
+    "archives/customer-attraction/tools/evidence/eighteen-topic-one-new-label-v1/verify.py": "86d78ed28c40b2259273cfa5c4e08fc01085c94897c4646386001316eec9c519"
+  },
+  "review_digest": "2a4fe4add1edb50807e02622a8f8aa06ad01b1d0b7daf3600861517bd1d37ae0"
+}

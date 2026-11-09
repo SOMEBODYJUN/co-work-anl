@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-map-tail-and-seats-round13-v1.json",
-    "sha256": "31390663cdfcaac7ddd3d1d530dcf19ed55a7d0904f37d86c44729cec330c0d7"
+    "path": "research/registration/baseline-map-tail-uniform-round13-v2.json",
+    "sha256": "23734f69a506c49875561c510578b83b029b99969a30f514f7744054c7b6387b"
   },
   "objects": [
     {
@@ -138904,22 +138904,22 @@
     },
     {
       "object_id": "customer-attraction/single-common-tail-target-count-half-for-all-orders",
-      "version": 1,
+      "version": 2,
       "title": "单公共主题族目标计数的全顺序半覆盖",
       "kind": "theorem",
       "truth_status": "proved",
       "model": "共同标签目录的有序完整纯SPE，独立客户块 X_i,H_i,B,R，C_i=X_i、A_i=X_i∪H_i、B_i=X_i∪B、唯一 D=B∪R。m=k+r 位单位玩家。",
-      "statement": "若完整纯SPE的实际路径每个C_i恰一次且D恰r次，任意次序都有 W≥OPT_m/2。r=0或k=0时W=OPT_m。W>0时，r=1有OPT_m/W≤3/2，r≥2有OPT_m/W≤3/2+1/(2r)。",
+      "statement": "若完整纯SPE实际每个C_i恰一次、D恰r次，任意次序都有W≥OPT_m/2。r=0或k=0时W=OPT_m。k,r≥1时还必有a≤x/2；r≥1且W>0时OPT_m/W≤1+k/[2(k+r)]≤3/2。",
       "quantifiers": "每个非负整数 k,r，任意相应非负实客户块质量，以及实现指定计数的每个完整纯SPE和每个实际顺序。",
       "assumptions": [
         "客户块两两不交，R只被D覆盖，完整共同目录为列出主题。",
         "同一组块质量x,a跨组一致，单位玩家各选一次并观察全有序历史。"
       ],
-      "scope": "指定目标计数的全部次序。r=1用强制D后的真实末回复分支，r≥2用最后C_i的真实D偏离与末位必要门槛。",
+      "scope": "指定目标计数的全部次序。实际末门槛和最后C_i改D的真实分支按非D数量分尽，统一支付所有正尾数的参数界。",
       "objections": "未保证指定计数可实现。其他实际计数、多个D型或交叠块另行核对。",
       "body": {
         "path": "archives/customer-attraction/state/定理/单公共主题族目标计数的全顺序半覆盖--定理.md",
-        "sha256": "c72be497c5ea12ab18c409527eec363ad01470dfb7117e864bcad6d2a84782e3"
+        "sha256": "e578186c562ea17bbef39efdb1b5f1da8c241c7dde77bdac7dced4273845f2d1"
       },
       "evidence": [
         {
@@ -165774,12 +165774,12 @@
     },
     {
       "path": "archives/customer-attraction/state/定理/单公共主题族目标计数的全顺序半覆盖--定理.md",
-      "sha256": "c72be497c5ea12ab18c409527eec363ad01470dfb7117e864bcad6d2a84782e3",
+      "sha256": "e578186c562ea17bbef39efdb1b5f1da8c241c7dde77bdac7dced4273845f2d1",
       "disposition": "objects",
       "object_ids": [
         "customer-attraction/single-common-tail-target-count-half-for-all-orders"
       ],
-      "reason": "固定目标计数的全顺序半覆盖及不同尾数的确切证明。"
+      "reason": "固定目标计数的全顺序半覆盖及所有正尾数的统一显式比值界。"
     },
     {
       "path": "archives/customer-attraction/state/定理/双侧有符号缺陷的真实供给修复与有限字典最小性--定理.md",
