@@ -110,7 +110,7 @@ E X_l\le NtS/(t-G)\le2NS,
 
 ## 3.4 同 type/layer repair
 
-同一 bucket 始终有 (z) 条 matching edges；短环边占用至多 (GB)，端点 G-balls 贡献至多 (4U)，而 (z>GB+4U+1)，故 clean edge 必存在。交换保持每层 matching、bucket 大小、projection type；不生新短环：含一条新边会形成旧短路径，含两条新边则违反远距或 clean edge 非短环条件。每次至少消除一条旧短环，至多 B 次。
+同一 bucket 始终有 (z) 条 matching edges；短环边占用至多 (GB)，端点 G-balls 贡献至多 (4U)，而 (z≥GB+4U+1)，故 clean edge 必存在。交换保持每层 matching、bucket 大小、projection type；不生新短环：含一条新边会形成旧短路径，含两条新边则违反远距或 clean edge 非短环条件。每次至少消除一条旧短环，至多 B 次。
 
 每次 repair 改两条边，任意固定 lists 的 covered 数至多增加2。(t\ge8B/(\rho m_*)) 支付 repair 误差，使最终同时覆盖严格小于 (3\rho M'/4<\rho M')。
 
