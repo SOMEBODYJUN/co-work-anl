@@ -1,0 +1,53 @@
+{
+  "edge_id": "commonmany-directed-path-solves-edge-uniform-three-site-slice",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-PATH-EDGE-LIGHT-GREEDY-2"
+  ],
+  "target_ids": [
+    "M-5f6a6e775ed04aebb768fb5444607893"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取目标的真实正 γ 规范贪心三已占站，按实际开站为 U→V→W。冻单已占选项和权重至少 γ 的客户。两边均有轻客户，每人恰其边两端两已占选项。再要求每条边内部权相同，允许两条边的共同权不同。权为显式正二进制有理数，沿用原标签、重数和全部菜单。",
+  "roles": {
+    "SC-K-PATH-EDGE-LIGHT-GREEDY-2": "任意顺序的严格向前一人一次迁移，直接构造完整盒原客户 NE。",
+    "M-5f6a6e775ed04aebb768fb5444607893": "收到三站链开放义务的逐边等权子域算法，任意边内异权仍是剩余义务。"
+  },
+  "explanation": "将三站的两个轻客户菜单分别识别为 U→V、V→W 两边，首开原属和最大重数原样保留。每条边移动时，相同原子权使该边所有旧迁移者的外部成本同时等于该次迁移前头站价格。另一边的移动只增本边尾站负载或只减本边头站负载，故全程不回返。于是有限次扫描在联合输入位长内得到完整盒及全原选项 NE，输出与目标所求相同的站点整原子赋值。该子域容许跨边异权。实际六设施例取 U、V、W 私有权 140、89、41，UV 轻权 10，VW 轻权 6。规范贪心开设/增站依次为 U150、V95、U75、U50、V95/2、W41，故 q=(3,2,1)、γ=41，先移 6 后移 10 得 (140,99,47) 的完整盒 NE。精确的顺序障碍也落在目标三站域。三设施、三站私有权 24、20、19，UV 有权 2、6 两人，VW 有权 1 一人。严格规范贪心为 U32、V21、W19，q=(1,1,1)、γ=19。依次严格向前移动 2、6、1 得 (32,21,19)→(30,23,19)→(24,29,19)→(24,28,20)。各状态在 [19,38] 内，所有人已移动一次，但权 2 的客户留在 V 的外部成本 26>24，严格想回 U。若先移权 6 再移 VW 权 1 则得到 (26,26,20) 的完整盒 NE。因此受阻的是保任意迁移顺序的一人一次扩张。",
+  "scope": "三站顺开两边均非空的目标域中，允许两条边权不同但各边内部同权。末段异权真例只定位原路径证明所用的同边权假设。",
+  "contribution": {
+    "result": "对每个逐边等权的真实三站链实例，给统一位多项式算法，返回目标所要求的完整盒站点赋值与全部原客户的精确最佳反应。",
+    "remaining": "须为同一边允许任意多名异权客户构造统一位多项式选择器。若仍走单次迁移路线，必须重新处理后到的重原子可能使先到的轻原子严格想返回的问题。已证的整池势极小者为 NE 仍不给该范围的位多项式选择。"
+  },
+  "reviewed_by": "Boss1",
+  "review_note": "实读开放问题的全部输入量词及三站整池证明定位。复算两个真实贪心输入的开站比分、移动成本、盒界和终态稳定性，用异权真例只排除任意顺序的原规则推广。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/早开中心星与同边等重有向路径的单次迁移--算法.md",
+      "sha256": "04c5e966b2fdd0c50778b50650436b1f0e02a94d9263eb87570d94df37513cd5",
+      "section": "开站有向路径：同边等权，不同边可异权"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/问题/一般构造工作坊与安全冻结证书的完整任务合同--问题.md",
+      "sha256": "53663903a43cd211b4b7f5a9feba62942a72d326c8a9dbd2a69a659fe464b059",
+      "section": "路线 A：一般盒内均衡的位多项式选择"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/开站有向深度二的整池交换盒均衡--定理.md",
+      "sha256": "f8444a6566044c5749edda255101fd9e901f6edc43e363c8ca3857a85d691a7b",
+      "section": "三站链的独立单池证明"
+    }
+  ],
+  "endpoint_pins": {
+    "M-5f6a6e775ed04aebb768fb5444607893": "eb082b9766ceb6fb3007e0db99cc14086997c20e8dfa36e0818d02dc563a7761",
+    "SC-K-PATH-EDGE-LIGHT-GREEDY-2": "099e35ed57151e1c07c82ddea0c40d0d059c90549354ccbeec7a81e30836a553"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/算法/早开中心星与同边等重有向路径的单次迁移--算法.md": "04c5e966b2fdd0c50778b50650436b1f0e02a94d9263eb87570d94df37513cd5",
+    "archives/facility-games/subarchives/common-many/state/问题/一般构造工作坊与安全冻结证书的完整任务合同--问题.md": "53663903a43cd211b4b7f5a9feba62942a72d326c8a9dbd2a69a659fe464b059",
+    "archives/facility-games/subarchives/common-many/state/定理/开站有向深度二的整池交换盒均衡--定理.md": "f8444a6566044c5749edda255101fd9e901f6edc43e363c8ca3857a85d691a7b"
+  },
+  "review_digest": "d082591c89c1e123b39b90ef0d504eb9184672661aef41e09b748876b1997f2e"
+}

@@ -1,0 +1,50 @@
+{
+  "coverage": {
+    "SC-K-PATH-EDGE-LIGHT-GREEDY-2": {
+      "state": "linked",
+      "object_pin": "099e35ed57151e1c07c82ddea0c40d0d059c90549354ccbeec7a81e30836a553",
+      "comparison_scope": "实读 v3 单次迁移算法两分支及公共冻结、MF-MODEL v2、BOX-TO-2 v2、BOX-FINITE-2 v2、当前双端 Nashification 导入和三站异权开放合同。比较开站定向、边内权种、重数、完整上下盒、全部真实成本、保护 H 与续局量词。对照路径原 Fraction 审计的四站 k10 真例和星原审计的三站 k6 真例及已保存的有限重放范围。另用精确有理数重算两个三站链见证。",
+      "reason": "一致有向路径的每条边至多一条前驱和一条后继，非本边的移动只帮已迁者留在头站。同边下一次移入等权客户时同时重建旧迁者外部成本，结合完整盒与冻结得到精确原 NE。最近一次本边迁移的迁移前头价严格小于 γ+(γ−δ_e)/q_tail，之后外部成本只降，所以也满足原始阈值 H。全部轻分量为此类时可拼合，逐分量可与早开星算法混用，冻结重客户即使跨分量也由完整盒稳定。两类分量交集恰为同边等权的单边非平凡分量，四站一致有向路径见证严格超出星域。路径算法与盒续局接口和 MAX 联合给受限完整因子二。三站异权目标的逐边等权切片在相同接口下闭合，跨边仍可不同。真实异权三站反例只否定沿用任意合法顺序的前向一人一次规则，三站的一般位多项式选择及一般同边异权路径仍待证。有限原审计只核具体输入，数学续局不声称现有有限纯改善软件已实现 MAX。",
+      "edge_ids": [
+        "commonmany-directed-path-box-to-factor-two",
+        "commonmany-directed-path-solves-edge-uniform-three-site-slice"
+      ]
+    },
+    "SC-K-STAR-LIGHT-GREEDY-2": {
+      "state": "linked",
+      "object_pin": "c6c3d3907e3b683b10ffc88bdbccf3e2d1865b967a563d22d4e525ca6baab4a4",
+      "comparison_scope": "实读 v3 早开中心外向星及同边等权路径正文、MF-MODEL v2、BOX-TO-2 v2、BOX-FINITE-2 v2、当前 MAX/RANGE 导入及盒几何有限审计。比较同边可异权、共同原属、叶价顺序、各原动作、H、全部偏离和默认查询。核对生产在轨验证器的附加 H 与数学 BOX-TO-2 的较弱输入要求。",
+      "reason": "队首一旦不改善便永远不改善，因为中心只降、本叶只升。出星前各叶价按算法的最小选择非减，已移者在其叶的外部成本由每叶降权顺序控制，故不返回。进一步设其叶最新到达权 w_j、该次迁移前叶价 β、客户权 w_i≥w_j。最终外部成本为 β+(w_j−w_i)/q_t，且 β<γ+(γ−w_j)/q_H、q_t≤q_H，合得小于 γ+(γ−w_i)/q_H，故满足 H。留原站客户直接由上盒满足 H。三站严格星例的中心出度为二，排除一致路径规则。相反路径的中点可同时有进出边且不共享早开中心，不能沿用永久跳过。共同轻分量交集恰为单边且同边等权，此时两规则每次用同一严格迁移测试，平局只影响客户标签。晚开星的入向最大键有不同阈值，旧外向星的单实例程序不核入向。早开星盒见证与 BOX-TO-2 和 MAX 联合给受限完整因子二。数学结论与冻结软件的有限离轨实现分开。",
+      "edge_ids": [
+        "commonmany-early-center-star-box-to-factor-two"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/commonmany-3a-3a-6e262425576aef93/directed-path-box-to-factor-two.json",
+      "sha256": "0739e0e20046311a3de18b19b05c4a669b373f262dc7278012e9b174eda7c4b0"
+    },
+    {
+      "path": "map/edges/commonmany-3a-3a-6e262425576aef93/directed-path-solves-edge-uniform-three-site-slice.json",
+      "sha256": "1b20840691536745a01ad0393c2aed8c3e120a1b4537488eb3c8d8e9f8f5323e"
+    },
+    {
+      "path": "map/edges/commonmany-3a-3a-6e262425576aef93/early-center-star-box-to-factor-two.json",
+      "sha256": "ae22463e29ee483009a99ef3af1d55b29a498ef45b0f07e5c2be30c10ca25586"
+    }
+  ],
+  "closed_overlaps": [
+    {
+      "core_id": "SC-K-PATH-EDGE-LIGHT-GREEDY-2",
+      "peer_id": "SC-K-GREEDY-BOX-TO-2",
+      "reason": "同次贪心原池、重数及正 γ 保留。路径原 NE 的站内独立均匀成本和完整上下盒正满足 BOX-TO-2，存续源按当前池、消失源按全原池分别补全。在本批直接登记了该联合前提给规范有限因子二定理的受限证明，并核 MAX 的位多项式完成。"
+    },
+    {
+      "core_id": "SC-K-STAR-LIGHT-GREEDY-2",
+      "peer_id": "SC-K-GREEDY-BOX-TO-2",
+      "reason": "早开星迁移后保完整上下盒和全原选项精确 NE。虽当前池改变，消失源依 BOX-TO-2 重置同次原贪心池，预算合法。已在本批登记给规范有限因子二定理的受限证明，并核全部带标签偏离及默认求值。"
+    }
+  ],
+  "follow_up_tasks": []
+}
