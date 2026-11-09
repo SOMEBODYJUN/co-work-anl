@@ -1,0 +1,53 @@
+{
+  "edge_id": "ca-r23-two-complete-families-force-affine-region",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "R7-ALL-BIG-FLOW-v1",
+    "customer-attraction/missed-source-share-identity-and-fixed-bank-controller-capital-bound"
+  ],
+  "target_ids": [
+    "M-a8745297421b4143a22d2fa455d63fc4"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "若常数 A,B 对任意人数、目录及完整纯SPE均有 OPT≤A W+B m min_i u_i。",
+  "roles": {
+    "R7-ALL-BIG-FLOW-v1": "提供全历史真实 all-big 族，W=m、OPT=2m−1、min u=1。",
+    "customer-attraction/missed-source-share-identity-and-fixed-bank-controller-capital-bound": "取 a=1,b=2，可信资本条件对各 m≥3 成立，给 W=2m、OPT=3m−2、min u=m/(m−1)。",
+    "M-a8745297421b4143a22d2fa455d63fc4": "接收两条不同的渐近必要系数约束与 A=1 时的严格反例。"
+  },
+  "explanation": "将两个可对所有 m 增长的真实完整族分别代入并除 m，得到 2−1/m≤A+B 和 3−2/m≤2A+B m/(m−1)。取极限得 A+B≥2 及 2A+B≥3。A=1、B=κ<1 时第二族的右界极限低于左边，因而足够大有限 m 已严格违反。",
+  "scope": "两个独立族共同支持必要区域的合取；不宣称这一区域充分，也不以 all-big 的调和前缀账替代该族实际利润。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/跨枝共同付款与调和全深度支付障碍--障碍.md",
+      "sha256": "77fd16dc97e552cdb2b93c8828ed18eaef9351716299f7d082e892ad80a2d490",
+      "section": "全人数、全历史账本与排序无关的锐族（来源全文补全）"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/遗漏源份额恒等式与固定银行控制器的资本界--引理.md",
+      "sha256": "508ffd22c89c48795ea6f0f409b8c84f167cc972f4c6cf5259aa3f25c9895326",
+      "section": "同一完整银行控制器的必要且充分资本条件"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/原资源核与净缺口工作区的二次接续--资源.md",
+      "sha256": "6010375161d7071eaccade130d486faf0558222d0fd1feb9a17f53ec8d410efd",
+      "section": "净缺口及其锐性必要系数"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "在同一全称仿射主张上分别代入两个完整SPE，核两条约束各自出处及 m min_i u_i 的除 m 尺度。",
+  "whole_result": "统一仿射式必有 A+B≥2 和 2A+B≥3，任意固定 κ<1 的 OPT≤W+κ m min_i u_i 被足够大 m 的可信保险族否定。",
+  "endpoint_pins": {
+    "M-a8745297421b4143a22d2fa455d63fc4": "20e0e9101b4ebfeeaa81e77ea7cb09f15418b700f816ed7d99bf1ad20574fd26",
+    "R7-ALL-BIG-FLOW-v1": "2ff20c2dca46ee7b554cd2b2ea0f0983f20ab072ea2a2b7b1db78995a6ca3103",
+    "customer-attraction/missed-source-share-identity-and-fixed-bank-controller-capital-bound": "8024cadae47c54eaedcc804c50b9d6fef7bc8ab24b2cb26de3ec9a3ff3ee7f60"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/跨枝共同付款与调和全深度支付障碍--障碍.md": "77fd16dc97e552cdb2b93c8828ed18eaef9351716299f7d082e892ad80a2d490",
+    "archives/customer-attraction/state/引理/遗漏源份额恒等式与固定银行控制器的资本界--引理.md": "508ffd22c89c48795ea6f0f409b8c84f167cc972f4c6cf5259aa3f25c9895326",
+    "archives/customer-attraction/state/资源/原资源核与净缺口工作区的二次接续--资源.md": "6010375161d7071eaccade130d486faf0558222d0fd1feb9a17f53ec8d410efd"
+  },
+  "review_digest": "dd3a2f172023c66eb8e3348b163d797dff182662e7545b865eebc7cfffdeb2c2"
+}

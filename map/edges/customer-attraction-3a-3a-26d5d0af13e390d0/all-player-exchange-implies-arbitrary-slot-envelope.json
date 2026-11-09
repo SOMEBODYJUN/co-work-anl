@@ -1,0 +1,49 @@
+{
+  "edge_id": "ca-r23-all-player-exchange-implies-arbitrary-slot-envelope",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/penultimate-floor-max-topic-exchange-any-actual-player"
+  ],
+  "target_ids": [
+    "M-d8a310c6e8d54b0b983bcba067b86823"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m≥3，原完整纯SPE，固定最大主题 M 大小 K，首位实际收益 r；任意正整数比较槽 s，允许主题重复。",
+  "roles": {
+    "customer-attraction/penultimate-floor-max-topic-exchange-any-actual-player": "对每个实际位置和同一最大 M 的任意合法 D 给逐主题较强交换式。",
+    "M-d8a310c6e8d54b0b983bcba067b86823": "接收取首位并对任意比较槽求和的旧完整根包络。"
+  },
+  "explanation": "取 i=1 并除以 m，得 |D∖M|+|D∩M|/m≤K/m+c_m(r−K/m)。首位可强制 M，终局每客户分母≤m，故 r≥K/m。正文 c_m=(m−1)²−m²(m−3)²/[2(3m²−7m+2)]≤(m−1)²，故每主题均≤H。对任意 s 槽求和，设其并集的 M 内/外质量为 I/J，则 J+I/m≤sH；一次 I≤K 给 I+J≤sH+(m−1)K/m。",
+  "scope": "恢复旧包络的任意比较槽量词。m=3 系数相同，m≥4 且 r>K/m 时较强交换线严格改善；s 不变更实际人数。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/最大主题倒二保底交换的任意实际玩家界与锐投影--引理.md",
+      "sha256": "189b0a4b548dcd15a570ada39b72457ed134bb2a5f50ab4a47332d566da0946c",
+      "section": "精确模型与界"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最大主题倒二保底交换的任意实际玩家界与锐投影--引理.md",
+      "sha256": "189b0a4b548dcd15a570ada39b72457ed134bb2a5f50ab4a47332d566da0946c",
+      "section": "并集求和与尚未解决的全局误差"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/旧最大根包络的任意比较槽与DIRECT接续--资源.md",
+      "sha256": "15a34cb795596426321857796d36d573d610dac2122343aeb37fd7ee9cfc887e",
+      "section": "与当前更强全玩家交换界的精确关系"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核同一最大主题信用只用一次，逐主题交换未要求比较最优槽等于实际人数。",
+  "whole_result": "更强逐主题交换式推出对每个 s≥1 的完整旧包络 OPT_s≤s[(m−1)²r−(m−2)K]+(m−1)K/m。",
+  "endpoint_pins": {
+    "M-d8a310c6e8d54b0b983bcba067b86823": "0df510d979aff8b021e91a64fd988e880c817a38586a18b46cf2eea057000dae",
+    "customer-attraction/penultimate-floor-max-topic-exchange-any-actual-player": "76d3acf2cf6c2252722f46990ce66e5f528d7b2db4510004a12a88cd1088ac7e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/最大主题倒二保底交换的任意实际玩家界与锐投影--引理.md": "189b0a4b548dcd15a570ada39b72457ed134bb2a5f50ab4a47332d566da0946c",
+    "archives/customer-attraction/state/资源/旧最大根包络的任意比较槽与DIRECT接续--资源.md": "15a34cb795596426321857796d36d573d610dac2122343aeb37fd7ee9cfc887e"
+  },
+  "review_digest": "7a570619a84a44f073d82000d9adfe7ac46d2cff77d8f3b84777f707fa195e91"
+}

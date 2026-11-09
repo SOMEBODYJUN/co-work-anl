@@ -1,0 +1,47 @@
+{
+  "edge_id": "ca-r23-no-future-copy-gives-deterministic-cover",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-2e228c0975fa44bf9469b463af6b9992"
+  ],
+  "target_ids": [
+    "M-498cd5d02a3b4718840496fd9c49fc43"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "固定原完整SPE和欲比较的最优元组。另给一次合法匹配及遗漏分割 R_i⊆T_i，使各原实际强制叶的 P_i=0。",
+  "roles": {
+    "M-2e228c0975fa44bf9469b463af6b9992": "给每个遗漏客户恰由一个 owner 查询覆盖且其余负载只能来自未来的分解。",
+    "M-498cd5d02a3b4718840496fd9c49fc43": "获得该已满足无未来复制条件的同一比较元组的真实行覆盖。"
+  },
+  "explanation": "对 x∈R_i，过去 actual 从未覆盖，当前 T_i 覆盖，P_i=0 又排除任何后继覆盖 x，因为每项份额严格为正。于是该查询的 v_{i,T_i}(x)=1。取每行确定查询 T_i 和 γ=0，全部遗漏坐标逐客满足 COVER，原完整IC不重权。",
+  "scope": "无未来复制是额外足够条件，通常不能从源恒等式推出；一份最优比较的匹配不能代替任意最优比较量词。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/遗漏源份额恒等式与固定银行控制器的资本界--引理.md",
+      "sha256": "508ffd22c89c48795ea6f0f409b8c84f167cc972f4c6cf5259aa3f25c9895326",
+      "section": "任意目录的遗漏源等式"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/真实遗漏查询的自由取消覆盖与全价格分离--候选.md",
+      "sha256": "529684fde892efa05ae86d7a5d382b7bf66b0d0d2fe6456b30864258434ed71c",
+      "section": "自由取消的逐客充分条件"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐客用负载一验证整行 q_i，没有以 P_i 的净量式冒充一般 PRICE 可行性。",
+  "contribution": {
+    "result": "任意给定比较的匹配若满足全部 P_i=0，该比较就有无取消、每行确定的 COVER 证书。",
+    "remaining": "对任意原SPE和任意最优比较，该无复制选择或其它可行共同行混合仍须另证。"
+  },
+  "endpoint_pins": {
+    "M-2e228c0975fa44bf9469b463af6b9992": "fc1fcdae790500cbef50aad5600cc43e5f1df917d4153dc46d7402a36a8eac33",
+    "M-498cd5d02a3b4718840496fd9c49fc43": "8406bf0420efccdef0744dd47584d9a0e1f1d88e1b2f866011d89d19d8c4b8fe"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/遗漏源份额恒等式与固定银行控制器的资本界--引理.md": "508ffd22c89c48795ea6f0f409b8c84f167cc972f4c6cf5259aa3f25c9895326",
+    "archives/customer-attraction/state/候选/真实遗漏查询的自由取消覆盖与全价格分离--候选.md": "529684fde892efa05ae86d7a5d382b7bf66b0d0d2fe6456b30864258434ed71c"
+  },
+  "review_digest": "8e115b14649ec051d2b6cbc3eca90cd600a0b1b060be6c346ca236c7926376f4"
+}

@@ -1,0 +1,52 @@
+{
+  "edge_id": "ca-r23-all-big-pays-omission-cover-on-actual-prefix",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "R7-ALL-BIG-FLOW-v1"
+  ],
+  "target_ids": [
+    "M-498cd5d02a3b4718840496fd9c49fc43"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取全历史规定 B 的 all-big 族，任一最优比较都含 B 和 m−1 个互不相交 singleton。",
+  "roles": {
+    "R7-ALL-BIG-FLOW-v1": "给真实 all-big 完整SPE及所有最优比较的遗漏集合。其实际前缀查询沿原策略永久回到 B。",
+    "M-498cd5d02a3b4718840496fd9c49fc43": "收取该完整实例族任意最优比较的整行逐客证书。"
+  },
+  "explanation": "O 包含所有客户，G 空，R 由 m−1 个 singleton 构成。将 singleton 一对一分给 m−1 个实际位置。该位置强制所分 singleton 后，原过去和全部后继都选 B，故该客户仅由当前人覆盖，v=1。各行用一个确定查询，剩一行任取合法主题，令 γ=0。于是所有遗漏客户都被足额购买。",
+  "scope": "all-big 专门族。全深度最优比较前缀的调和付款仍可能超过 W；这里实际前缀行是另一合同。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/跨枝共同付款与调和全深度支付障碍--障碍.md",
+      "sha256": "77fd16dc97e552cdb2b93c8828ed18eaef9351716299f7d082e892ad80a2d490",
+      "section": "全人数、全历史账本与排序无关的锐族（来源全文补全）"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/真实遗漏查询的自由取消覆盖与全价格分离--候选.md",
+      "sha256": "529684fde892efa05ae86d7a5d382b7bf66b0d0d2fe6456b30864258434ed71c",
+      "section": "同一完整策略上的整行购买"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/真实遗漏查询的自由取消覆盖与全价格分离--候选.md",
+      "sha256": "529684fde892efa05ae86d7a5d382b7bf66b0d0d2fe6456b30864258434ed71c",
+      "section": "自由取消的逐客充分条件"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实测两种前缀选择：全比较前缀与原 actual B^{i−1} 不同，后一种不重复向已改动分支购买。",
+  "contribution": {
+    "result": "对 all-big 每个最优比较有确定的零取消 COVER，虽其全比较前缀调和费用可无界超 W。",
+    "remaining": "其它完整SPE中的真后继可复制遗漏客户，多角色共享整行容量的一般可行性仍未付。"
+  },
+  "endpoint_pins": {
+    "M-498cd5d02a3b4718840496fd9c49fc43": "8406bf0420efccdef0744dd47584d9a0e1f1d88e1b2f866011d89d19d8c4b8fe",
+    "R7-ALL-BIG-FLOW-v1": "2ff20c2dca46ee7b554cd2b2ea0f0983f20ab072ea2a2b7b1db78995a6ca3103"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/跨枝共同付款与调和全深度支付障碍--障碍.md": "77fd16dc97e552cdb2b93c8828ed18eaef9351716299f7d082e892ad80a2d490",
+    "archives/customer-attraction/state/候选/真实遗漏查询的自由取消覆盖与全价格分离--候选.md": "529684fde892efa05ae86d7a5d382b7bf66b0d0d2fe6456b30864258434ed71c"
+  },
+  "review_digest": "4bfed07c0f7f6e56cb2a9efd4cfceb631f20afa318595cec450cc8110158e335"
+}

@@ -1,0 +1,63 @@
+{
+  "edge_id": "ca-r23-hall-and-activation-pay-joint-initialization",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/optimal-owner-all-subset-harmonic-transport-and-anchor-isolation",
+    "customer-attraction/shared-activation-joint-marginals-for-omissions-and-owner-errors"
+  ],
+  "target_ids": [
+    "customer-attraction/joint-query-inventory-hall-cancellation-and-initialization-payment"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一原完整SPE的 actual 叶、最优 T/owner 和共享激活实验，固定 Hall-B 取消先于激活或统一排序。",
+  "roles": {
+    "customer-attraction/optimal-owner-all-subset-harmonic-transport-and-anchor-isolation": "给固定 actual Hall-B 的调和 source、全部角色割和带标签终端的有理满流。",
+    "customer-attraction/shared-activation-joint-marginals-for-omissions-and-owner-errors": "精确给 R/I-query 库存 1/κ，并在同一真实查询叶给初始化 A_i^src≤D_i。",
+    "customer-attraction/joint-query-inventory-hall-cancellation-and-initialization-payment": "合成满取消、一次净收入和全角色同时初始化付款。"
+  },
+  "explanation": "先按 source 分解 B 满流，缩各角色路径总量 b_i^H 至实际普通 G 收益 g_i。每角色先直送本地任意 δ_i≤min(g_i,β_i)，各割两侧需求和本地库存同减，故仍可补足余流；取 δ_i=min(g_i,β_i)。固定 λ 后，R 删 λ、I 仅在 query 事件中条件删 λ/κ，故恰减期望 |G| 且 actual 停止信用未动。守恒给 η_i=u_i−g_i+λ_i，Ση=W。g_i≤β_i 时 η_i≥u_i，正分母由边际 cap 给 K_i^src≤u_i；g_i>β_i 时初始化全删，费用为零。",
+  "scope": "任意有限单位共同目录、任意最优 T/owner，付完固定 Hall-B 初始化合同；incoming 与总预算仍独立。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/最优归属的全子集调和运输与锚定隔离--定理.md",
+      "sha256": "5835b444b326109957567f0e599b7d075f2cdbdfa0c879dbe0f0590faea88a04",
+      "section": "Hall-B：调和外部份额到missing-owner价格"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/共享激活的遗漏与归属误差联合边际--定理.md",
+      "sha256": "2e5172e333c9a31c707ab225607e180562f93ca63746e06bea198373dfd3c8ac",
+      "section": "I^-的精确actual信用与query库存"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/共享激活的遗漏与归属误差联合边际--定理.md",
+      "sha256": "2e5172e333c9a31c707ab225607e180562f93ca63746e06bea198373dfd3c8ac",
+      "section": "事件包含给固定state的真实边际cap"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/联合查询库存的Hall取消与初始化付款--定理.md",
+      "sha256": "b5050f5745d549cecea7542a6bad2374b8cf0a8c225409ee5cef6f37b2828311",
+      "section": "Hall-B降source，只使用一份actual G"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/联合查询库存的Hall取消与初始化付款--定理.md",
+      "sha256": "b5050f5745d549cecea7542a6bad2374b8cf0a8c225409ee5cef6f37b2828311",
+      "section": "所有R/I初始化source同时付款"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按同一客户终点标签核 κ；预送残网须同时控制局部 β_i 和 g_i。把 source 与 incoming 的分子拆分保在同一份完整IC。",
+  "whole_result": "激活前固定的联合取消总量 |G|、净 query 库存 |R|+κ⁻−|G|、Ση=W 及每角色 K_i^src≤η_i 同时成立。",
+  "endpoint_pins": {
+    "customer-attraction/joint-query-inventory-hall-cancellation-and-initialization-payment": "1fe55a334740cb0d2310d5db2ee622873dae8f1ca6045d8adcf2b6c9902f70a2",
+    "customer-attraction/optimal-owner-all-subset-harmonic-transport-and-anchor-isolation": "36ad485b36f1ca2442d27e7de8e0cfa86a85c3cab0880f55efcd2dd4bc8190b0",
+    "customer-attraction/shared-activation-joint-marginals-for-omissions-and-owner-errors": "7ae84ccb28a3e14db04526822aee4234c46673f2335d91fec6b7c2147628dd8f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/最优归属的全子集调和运输与锚定隔离--定理.md": "5835b444b326109957567f0e599b7d075f2cdbdfa0c879dbe0f0590faea88a04",
+    "archives/customer-attraction/state/定理/共享激活的遗漏与归属误差联合边际--定理.md": "2e5172e333c9a31c707ab225607e180562f93ca63746e06bea198373dfd3c8ac",
+    "archives/customer-attraction/state/定理/联合查询库存的Hall取消与初始化付款--定理.md": "b5050f5745d549cecea7542a6bad2374b8cf0a8c225409ee5cef6f37b2828311"
+  },
+  "review_digest": "5cb05c081a97640faf4d40c08c26f90e6e697cb4a50cdaaf7a0d0fd472eaa4bf"
+}

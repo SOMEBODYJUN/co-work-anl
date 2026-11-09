@@ -1,0 +1,53 @@
+{
+  "edge_id": "ca-r23-fixed-hall-flows-give-positive-fee-projection",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/optimal-owner-all-subset-harmonic-transport-and-anchor-isolation",
+    "customer-attraction/joint-query-inventory-hall-cancellation-and-initialization-payment"
+  ],
+  "target_ids": [
+    "customer-attraction/fixed-and-worldwise-joint-positive-fee-omission-projection"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "在原完整SPE固定最优 T/owner、actual g 和一份激活前固定 Hall-B 满流 λ；沿同一既有 R 路线逐单位计未冲抵的完整IC正价，至少为1。",
+  "roles": {
+    "customer-attraction/optimal-owner-all-subset-harmonic-transport-and-anchor-isolation": "提供固定 Hall-A 对 g 的满流及 A 中 I 边容量 1/c。",
+    "customer-attraction/joint-query-inventory-hall-cancellation-and-initialization-payment": "提供同一 g 的固定 B 满流合同，I 边和 I-query 库存 κ=1/(c+1)。",
+    "customer-attraction/fixed-and-worldwise-joint-positive-fee-omission-projection": "按相同 R 路线对固定满流进行逐终端单调投影并比较总正费。"
+  },
+  "explanation": "去掉 B 中终于 I-query 的路径，剩余 R 子流按相同标签嵌入 A，因 I 边容量 1/(c+1)≤1/c 且 R 库存相同。从该部分流在 A 增广至 |G|，每条简单路到 sink 即停，故既有 R 终点均不减。新增 R 取消恰为 λ_I，节费至少 λ_I；停止未取消 I-query 另至少省 κ⁻−λ_I。因此 K_R≤K_J−κ⁻。",
+  "scope": "固定等分 A/B 的正费用比较。不要求固定 λ 可以逐 world lift，不移植逐角色 η、局部预取消或负信用费用。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/最优归属的全子集调和运输与锚定隔离--定理.md",
+      "sha256": "5835b444b326109957567f0e599b7d075f2cdbdfa0c879dbe0f0590faea88a04",
+      "section": "Hall-A：普通外部利润到真实遗漏"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/联合查询库存的Hall取消与初始化付款--定理.md",
+      "sha256": "b5050f5745d549cecea7542a6bad2374b8cf0a8c225409ee5cef6f37b2828311",
+      "section": "激活前固定取消与唯一净收入"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定与逐世界联合正费用的遗漏投影--定理.md",
+      "sha256": "cc185fb7530488cb49997710ce419f8f5d1f368fff45ac36cae4f448687291e6",
+      "section": "后加固定lambda版：无须随机lift"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "同时核 A/B 的同一 g、R 终点和有向 I 容量。逆向边只允许重排中间流，终点增广不回撤；正价来自未改原IC。",
+  "whole_result": "任一固定 B 满流的 R 终端量可在固定 A 中逐点不减扩充为 γ，额外取消 λ_I，并有 K_R(1−γ)≤K_J−κ⁻。",
+  "endpoint_pins": {
+    "customer-attraction/fixed-and-worldwise-joint-positive-fee-omission-projection": "26ea31c78dffee42d5c5e3517404121421c3e4bbf0867cd16252747aff20bd35",
+    "customer-attraction/joint-query-inventory-hall-cancellation-and-initialization-payment": "1fe55a334740cb0d2310d5db2ee622873dae8f1ca6045d8adcf2b6c9902f70a2",
+    "customer-attraction/optimal-owner-all-subset-harmonic-transport-and-anchor-isolation": "36ad485b36f1ca2442d27e7de8e0cfa86a85c3cab0880f55efcd2dd4bc8190b0"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/最优归属的全子集调和运输与锚定隔离--定理.md": "5835b444b326109957567f0e599b7d075f2cdbdfa0c879dbe0f0590faea88a04",
+    "archives/customer-attraction/state/定理/联合查询库存的Hall取消与初始化付款--定理.md": "b5050f5745d549cecea7542a6bad2374b8cf0a8c225409ee5cef6f37b2828311",
+    "archives/customer-attraction/state/定理/固定与逐世界联合正费用的遗漏投影--定理.md": "cc185fb7530488cb49997710ce419f8f5d1f368fff45ac36cae4f448687291e6"
+  },
+  "review_digest": "2210a9c2006a2ea9a437c0e0a6d98390e830c0d268120388059f34f51cc9105b"
+}

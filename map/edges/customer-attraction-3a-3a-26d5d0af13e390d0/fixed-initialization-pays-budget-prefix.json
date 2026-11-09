@@ -1,0 +1,51 @@
+{
+  "edge_id": "ca-r23-fixed-initialization-pays-budget-prefix",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/joint-query-inventory-hall-cancellation-and-initialization-payment"
+  ],
+  "target_ids": [
+    "M-e9165326b31d45028180e0ad89b7c1dd"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "激活前固定同一 Hall-B 取消 λ，最优 T/owner 与原完整SPE不换，所有合法查询沿原 actual 前缀完成。",
+  "roles": {
+    "customer-attraction/joint-query-inventory-hall-cancellation-and-initialization-payment": "构造可行固定取消和同一净角色资金 η，逐角色仅预付初始化吸收。",
+    "M-e9165326b31d45028180e0ad89b7c1dd": "总正费全称义务所需的相容库存/初始化付款部分。"
+  },
+  "explanation": "局部同时预送 min(g_i,β_i)。g_i≤β_i 时 λ_i≥g_i、η_i≥u_i，MARG-CAP 给 K_i^src≤u_i；g_i>β_i 时其源全删、K_i^src=0。全角色同一 λ 给 Ση_i=W，根无 incoming。",
+  "scope": "只给固定联合正费用合同的选择及初始化费用。不能把平均取消换成自适应逐世界规则。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/联合查询库存的Hall取消与初始化付款--定理.md",
+      "sha256": "b5050f5745d549cecea7542a6bad2374b8cf0a8c225409ee5cef6f37b2828311",
+      "section": "Hall-B降source，只使用一份actual G"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/联合查询库存的Hall取消与初始化付款--定理.md",
+      "sha256": "b5050f5745d549cecea7542a6bad2374b8cf0a8c225409ee5cef6f37b2828311",
+      "section": "所有R/I初始化source同时付款"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/联合查询库存的Hall取消与初始化付款--定理.md",
+      "sha256": "b5050f5745d549cecea7542a6bad2374b8cf0a8c225409ee5cef6f37b2828311",
+      "section": "余下总预算与自适应边界"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核两种局部情形、同一 λ 与一次 W。未将每状态 w≤1 外推为逐角色多查询已付。",
+  "contribution": {
+    "result": "存在同一固定 Hall-B 满取消及 Ση_i=W，使每角色 K_i^src≤η_i 同时成立。",
+    "remaining": "仍须为同一选择构造合法全吸收路线，并把所有 incoming 与已付 source 的总正费共同控制在 W+κ⁻。"
+  },
+  "endpoint_pins": {
+    "M-e9165326b31d45028180e0ad89b7c1dd": "57c6f31bb8f741f04815bfa625d7231f948cc872f67776294c1377f7f84e2501",
+    "customer-attraction/joint-query-inventory-hall-cancellation-and-initialization-payment": "1fe55a334740cb0d2310d5db2ee622873dae8f1ca6045d8adcf2b6c9902f70a2"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/联合查询库存的Hall取消与初始化付款--定理.md": "b5050f5745d549cecea7542a6bad2374b8cf0a8c225409ee5cef6f37b2828311"
+  },
+  "review_digest": "23684aa33dbbbe9372a36344aec321f669e293408901f122d1d56ea75e3580c9"
+}

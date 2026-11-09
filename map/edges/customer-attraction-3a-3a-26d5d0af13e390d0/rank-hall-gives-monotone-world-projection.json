@@ -1,0 +1,63 @@
+{
+  "edge_id": "ca-r23-rank-hall-gives-monotone-world-projection",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/optimal-owner-all-subset-harmonic-transport-and-anchor-isolation",
+    "customer-attraction/random-rank-joint-query-inventory-and-worldwise-hall-cancellation"
+  ],
+  "target_ids": [
+    "customer-attraction/monotone-projection-from-joint-query-to-omitted-customer-cancellation"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一最优 T/owner、actual 叶和无并列 U；原完整SPE为真实查询定价，保持同 world 原 R 路线不换。",
+  "roles": {
+    "customer-attraction/optimal-owner-all-subset-harmonic-transport-and-anchor-isolation": "给任意角色割的最优 HYB 覆盖差界，保证同赢家 source 的 A(U) 可满流。",
+    "customer-attraction/random-rank-joint-query-inventory-and-worldwise-hall-cancellation": "给 B(U) 的整数满流、同一赢家 source，以及确实存在的 I-query unit 库存。",
+    "customer-attraction/monotone-projection-from-joint-query-to-omitted-customer-cancellation": "把 B(U) 的 R 子流逐点单调扩充，并支付全部当 world I-query 正费差。"
+  },
+  "explanation": "固定 U，HYB 对任意角色集 L 给出 G 赢家 source≤M(L)。每个 M 客户在 A(U) 提供一个 R sink 或指向 L 外实际赢家的单位出边，故 A(U) 满流。保 B 送 R 路径，在 A 普通残网由 λ_R 扩充至 |G|；到 sink 即停使已有 R 终点量不减，额外取消数为 λ_I。每单位真实正价≥1，新增 R 取消和剩余 I-query 的删除合省至少 N_I(U)。期望 N_I=κ⁻，而 A(U) 流均值才进入固定 actual Hall-A。",
+  "scope": "逐世界整数图可按同 U 原路线作价格比较，不能用平均取消量乘平均价格或把赢家券替换原完整IC。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/最优归属的全子集调和运输与锚定隔离--定理.md",
+      "sha256": "5835b444b326109957567f0e599b7d075f2cdbdfa0c879dbe0f0590faea88a04",
+      "section": "全角色子集的混合不等式"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/随机排序的联合查询库存与逐世界Hall取消--定理.md",
+      "sha256": "e0304497482a27ba8b10d0b7a168a53d5c542be7a9d9170ae59d6bbfae4e967d",
+      "section": "全部角色割保证逐world整数取消"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/随机排序的联合查询库存与逐世界Hall取消--定理.md",
+      "sha256": "e0304497482a27ba8b10d0b7a168a53d5c542be7a9d9170ae59d6bbfae4e967d",
+      "section": "均值恰回到actual Hall-B"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/联合查询取消向遗漏客户取消的单调投影--算法.md",
+      "sha256": "4f6f0cd8ee572b01c9ce0f7dcf662e4747d80d7a99a692db0f31953e4c74a10a",
+      "section": "保住已有R取消的residual构造"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/联合查询取消向遗漏客户取消的单调投影--算法.md",
+      "sha256": "4f6f0cd8ee572b01c9ce0f7dcf662e4747d80d7a99a692db0f31953e4c74a10a",
+      "section": "至少节省全部I-query token的价格"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐 world 检查 cut 与整数路径、价格固定于同一真实查询、平均固定容量只作期望陈述。",
+  "whole_result": "对每 world 得 γ_R≥λ_R，新增 R 取消总量为 λ_I，K_R(U)≤K_J(U)−N_I(U)，期望节费至少 κ⁻。",
+  "endpoint_pins": {
+    "customer-attraction/monotone-projection-from-joint-query-to-omitted-customer-cancellation": "17e081bc8608a393db1efa17dd4db119d0c6a4df2adfbdac7af760a7c824737e",
+    "customer-attraction/optimal-owner-all-subset-harmonic-transport-and-anchor-isolation": "36ad485b36f1ca2442d27e7de8e0cfa86a85c3cab0880f55efcd2dd4bc8190b0",
+    "customer-attraction/random-rank-joint-query-inventory-and-worldwise-hall-cancellation": "8b359d56419056cadbea7c6c1c40e0ae42e25b0ceee7fe0a364dd4f6f6ba5e3c"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/最优归属的全子集调和运输与锚定隔离--定理.md": "5835b444b326109957567f0e599b7d075f2cdbdfa0c879dbe0f0590faea88a04",
+    "archives/customer-attraction/state/定理/随机排序的联合查询库存与逐世界Hall取消--定理.md": "e0304497482a27ba8b10d0b7a168a53d5c542be7a9d9170ae59d6bbfae4e967d",
+    "archives/customer-attraction/state/算法/联合查询取消向遗漏客户取消的单调投影--算法.md": "4f6f0cd8ee572b01c9ce0f7dcf662e4747d80d7a99a692db0f31953e4c74a10a"
+  },
+  "review_digest": "22d88cc7cef956dc40538a95ce605d63756b2444d6f8485673a2c9af7a5440c5"
+}
