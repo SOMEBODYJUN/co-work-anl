@@ -1,0 +1,98 @@
+{
+  "edge_id": "cag-04606e-multigadget-m3-m5-verify-three-universal-cases",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/multigadget-spe-certificates",
+    "M-16b390c1707a48e2b2de67e945ed9c01",
+    "customer-attraction/R275-direct-global-multigadget-m5"
+  ],
+  "target_ids": [
+    "M-cc7c84bc2a6741f0ae9a164cc9e1e456"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定登记家族，k=m−1，目录为0,…,3k+1，B=3k。客户类型重数代表不同单位客户，根背景为空。各冻结策略定义于全部合法有序历史，含重复动作和任意弱平局，偏离后按该策略在改变后的历史续完。",
+  "roles": {
+    "customer-attraction/multigadget-spe-certificates": "给m=3这一精确路径谓词的完整有序见证。",
+    "M-16b390c1707a48e2b2de67e945ed9c01": "给m=4这一精确路径谓词的完整有序见证。",
+    "M-cc7c84bc2a6741f0ae9a164cc9e1e456": "v2目标量化全部整数m≥3，并由独立正文给出证明。本边给同一指定有序路径谓词的三个冻结有限见证。",
+    "customer-attraction/R275-direct-global-multigadget-m5": "给m=5这一精确路径谓词的独立冻结完整有序见证。"
+  },
+  "explanation": "冻结实例逐类对齐登记家族：每个中心与两片叶各共享2个私有客户，B/T各独占3个客户，并分别与全部叶共享2个客户。用整数倍精确均分收益，按原有序历史动作表沿每个替代动作续完。m=3实现(0,1,6)，收益(4,4,5)，W=13、OPT=14，通过73个节点和511项非自身替代。m=4实现(0,1,2,9)，收益(4,4,4,5)，W=17、OPT=18，通过1464个节点和14640项非自身替代。m=5实现(0,1,2,3,12)，收益(4,4,4,4,5)，W=21、OPT=22，通过41371个节点和537823项非自身替代。三例各实现π_m，且所有最优并集的分数覆盖数分别为3、4、5。v2正文另用收益上界和互不相交的离轨子树拼接给出全m构造。",
+  "scope": "有限见证限于m∈{3,4,5}的指定路径和所给目录。福利比OPT/W分别为14/13、18/17、22/21。各目录上所有纯SPE中的最小福利仍是独立开放义务。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/多装置锥候选的三四人完整SPE证书--计算.md",
+      "sha256": "8c48a86f0bc6f7bfadbfb945600df3f15f59c0b67e7df5e8b5d8bf8f91965962",
+      "section": "4. 与已有对象的衔接"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/多装置锥候选的三四人完整SPE证书--计算.md",
+      "sha256": "8c48a86f0bc6f7bfadbfb945600df3f15f59c0b67e7df5e8b5d8bf8f91965962",
+      "section": "2. 完整证书和独立核验"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R275-multigadget-spe-certificates-20261031/source/multigadget.py",
+      "sha256": "436d0c66f47c3299e7a8b9a91b51f2a526566c3d016b3cbfc6d98ff704fabd9e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R275-multigadget-spe-certificates-20261031/source/multigadget_m3.json",
+      "sha256": "d2dc89325a20910d7c160d320d4aa7f73e8a76a5e22710ba1a69892e5f2f810d"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R275-multigadget-spe-certificates-20261031/replay/verification.json",
+      "sha256": "e718acdb1ddfc6f71a334126d26276fe86d8683b188a40fa2d08e79038f3be27"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/exact-spe/customer_attraction/certificate.py",
+      "sha256": "a269b532260b537e67879eba609ef23e046e8f7303458ecf11271c4673aecc45"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R275-multigadget-spe-certificates-20261031/source/multigadget_m4.json",
+      "sha256": "91030115baa9db8a04cf5385b3396be14340e59caed6e4213945b837213b0b6f"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R275直接全局multigadget-m5--审查.md",
+      "sha256": "393776b22f807c30bf3ba9acc202e214b33d5dcbceece781ce913dcd4f491b2f"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R275-direct-m5-agent/multigadget_m5.json",
+      "sha256": "82a019ae9164dd2c24416d35408341f1bcad6cd41e93e4c3157f77091de331d6"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R275-direct-m5-agent/verification.json",
+      "sha256": "beece7c2cda01e8bb679a886fbf3375ab14de525fc89ad35685d9b4aaaa5b15a"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/多装置家族任意人数的指定路径完全均衡--定理.md",
+      "sha256": "286d52eeb013da650f766a1f0b0dc0557572ea8a056f258368cc3f22ffb58bf8",
+      "section": "多装置家族任意人数的指定路径"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "重新读取三份冻结客户表和策略表，独立按客户类型负载用整数倍收益逐项验证全部有序历史和真实偏离，精确枚举至多m标签的覆盖最优支持。另核v2正文各前缀的收益上界、拼接和全部最优并集的分数覆盖下界。",
+  "contribution": {
+    "result": "m∈{3,4,5}时，冻结策略各在同一登记家族实现π_m的完整纯SPE见证。",
+    "remaining": "从本边的有限结论推广到其余m仍需统一离轨构造，v2正文已独立完成该步骤。各目录上所有纯SPE的最小福利另待证明。"
+  },
+  "endpoint_pins": {
+    "M-16b390c1707a48e2b2de67e945ed9c01": "aee339f7246eb0abec38ca29caf13a4dc3f2d66da92aeb6b6b8723c96401954f",
+    "M-cc7c84bc2a6741f0ae9a164cc9e1e456": "6562dd6056c5aaa611562afcd1f5c45907cec33a4eb088c1b8f230a3dd732fa7",
+    "customer-attraction/R275-direct-global-multigadget-m5": "4d681b7a991d60774a0eb517991933d09b7b094a9f8cf2d80096da9a94533f6f",
+    "customer-attraction/multigadget-spe-certificates": "6cc50a7b0d9fb380b18fac75c8d5d7d79804d25bbbe926a8f1c7c87cbb026a5c"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/多装置锥候选的三四人完整SPE证书--计算.md": "8c48a86f0bc6f7bfadbfb945600df3f15f59c0b67e7df5e8b5d8bf8f91965962",
+    "archives/customer-attraction/tools/evidence/R275-multigadget-spe-certificates-20261031/source/multigadget.py": "436d0c66f47c3299e7a8b9a91b51f2a526566c3d016b3cbfc6d98ff704fabd9e",
+    "archives/customer-attraction/tools/evidence/R275-multigadget-spe-certificates-20261031/source/multigadget_m3.json": "d2dc89325a20910d7c160d320d4aa7f73e8a76a5e22710ba1a69892e5f2f810d",
+    "archives/customer-attraction/tools/evidence/R275-multigadget-spe-certificates-20261031/replay/verification.json": "e718acdb1ddfc6f71a334126d26276fe86d8683b188a40fa2d08e79038f3be27",
+    "archives/customer-attraction/tools/evidence/exact-spe/customer_attraction/certificate.py": "a269b532260b537e67879eba609ef23e046e8f7303458ecf11271c4673aecc45",
+    "archives/customer-attraction/tools/evidence/R275-multigadget-spe-certificates-20261031/source/multigadget_m4.json": "91030115baa9db8a04cf5385b3396be14340e59caed6e4213945b837213b0b6f",
+    "archives/customer-attraction/state/审查/R275直接全局multigadget-m5--审查.md": "393776b22f807c30bf3ba9acc202e214b33d5dcbceece781ce913dcd4f491b2f",
+    "archives/customer-attraction/tools/evidence/R275-direct-m5-agent/multigadget_m5.json": "82a019ae9164dd2c24416d35408341f1bcad6cd41e93e4c3157f77091de331d6",
+    "archives/customer-attraction/tools/evidence/R275-direct-m5-agent/verification.json": "beece7c2cda01e8bb679a886fbf3375ab14de525fc89ad35685d9b4aaaa5b15a",
+    "archives/customer-attraction/state/定理/多装置家族任意人数的指定路径完全均衡--定理.md": "286d52eeb013da650f766a1f0b0dc0557572ea8a056f258368cc3f22ffb58bf8"
+  },
+  "review_digest": "d8ca4617aeb25326071698defc82014da1c78a3e9db249c2988be319a55361fc"
+}

@@ -1,0 +1,58 @@
+{
+  "edge_id": "um-0195479a-two-size-replay-ownership",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/divisible-two-size-count-state-and-labeled-entrypoint-isolated-audit"
+  ],
+  "target_ids": [
+    "unrelated-machines/um-0102-b78bc5b8a17db8f7"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "m≥1台完全相同且全资格的机器，显式k≥0件Qδ macro和N≥0件δ tiny，整数Q≥1、正有理δ。从任意完整初态开始，负载不增保证以原子批次边界计。",
+  "roles": {
+    "unrelated-machines/divisible-two-size-count-state-and-labeled-entrypoint-isolated-audit": "保存两冻结程序、不同状态空间、隔离复跑与精确返回对象。",
+    "unrelated-machines/um-0102-b78bc5b8a17db8f7": "具有整比双尺寸中性换形的全称证明；同页另载多数状态结论，复跑只涉及第一部分。"
+  },
+  "explanation": "设ℓ_i=Qu_i+t_i。阶段A选macro件数差d=u_s−u_v≥2的一对，记D=ℓ_s−ℓ_v。D≥Q时只迁一件macro，新负荷落在旧两端之间。D<Q时另反迁q=Q−D=t_v−(d−1)Q−t_s∈[1,t_v]件tiny，恰交换负荷，即使D<0亦可行。每个macro批次使Σu_i²下降2(d−1)，负载平方和非增。停止时各机macro数相差至多1。写k=am+r（0≤r<m），有r台为a+1、其余为a，故最大值为ceil(k/m)。阶段B设M=max{Qceil(k/m),ceil((kQ+N)/m)}。因Qu_i≤M，任一超M源有tiny，且总负荷≤mM确保有低于M的接收机。单tiny迁移前两端分别≥M+1和≤M−1，迁后分别≥M和≤M。因此ΔΣℓ_i²=−2(ℓ_s−ℓ_v−1)≤−2，且E=Σ(ℓ_i−M)_+恰减1。阶段A后E≤N，尾段结束时峰值≤M。macro鸽巢和整数平均两下界给OPT=δM。作者count-state入口返回M与批次负荷历史，独立带标签入口返回实际原任务去向。冻结有限范围分别覆盖50,925计数初态、15,045带标签初态，后者另核201位Q。",
+  "scope": "有限复跑核查双尺寸部分的真实输入、输出和批次边界。合法原子包、势与整数下界承担全称OPT及显式输入位复杂度。一般异端矩阵、包内逐件峰值、压缩计数的显式标签输出与同页两状态多数地板属于本边范围之外。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/计算/整比双尺寸原入口的计数状态与带标签隔离审计--计算.md",
+      "sha256": "e9a29df70e8e0d94ba472634da06630888e0b5c3e50d734202992bea57f763b3",
+      "section": "1. 模型、全称证明与有限程序不同身份"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/整比双尺寸原入口的计数状态与带标签隔离审计--计算.md",
+      "sha256": "e9a29df70e8e0d94ba472634da06630888e0b5c3e50d734202992bea57f763b3",
+      "section": "3. 作者count-state程序全部职责与真实输入"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/整比双尺寸原入口的计数状态与带标签隔离审计--计算.md",
+      "sha256": "e9a29df70e8e0d94ba472634da06630888e0b5c3e50d734202992bea57f763b3",
+      "section": "4. 独立带标签程序全部职责与真实输入"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/整比双尺寸中性修复与两状态多数地板双源审查--审查.md",
+      "sha256": "87da08f3b23e19c432a38751c26e98b487110c5264ca2c06574142be16329bd0",
+      "section": "2. 阶段 A：macro 平衡与中性换形"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/整比双尺寸中性修复与两状态多数地板双源审查--审查.md",
+      "sha256": "87da08f3b23e19c432a38751c26e98b487110c5264ca2c06574142be16329bd0",
+      "section": "3. 阶段 B：tiny 削平与最优性"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读当前主审查第2、3节及两种原入口。独立推导平衡余数分布、迁移前后整数界、负载平方严格下降及OPT，并分别核对两原入口的有限输出身份。",
+  "endpoint_pins": {
+    "unrelated-machines/divisible-two-size-count-state-and-labeled-entrypoint-isolated-audit": "2cb5c0f175817a565b8688f845cfd74f38b10dcdea6067148c46abbfb40f8dfd",
+    "unrelated-machines/um-0102-b78bc5b8a17db8f7": "8cd06e01070fe2c06fbe5385f4c52c396ba1a9055b399db1b51bfc90b9db8d6b"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/计算/整比双尺寸原入口的计数状态与带标签隔离审计--计算.md": "e9a29df70e8e0d94ba472634da06630888e0b5c3e50d734202992bea57f763b3",
+    "archives/unrelated-machines/state/审查/整比双尺寸中性修复与两状态多数地板双源审查--审查.md": "87da08f3b23e19c432a38751c26e98b487110c5264ca2c06574142be16329bd0"
+  },
+  "review_digest": "8a0717d973ba64c6f2831261456ac4303dda24487d0aede802f8f2a8a826375e"
+}
