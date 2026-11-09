@@ -1,0 +1,56 @@
+{
+  "edge_id": "greedy-box-runtime-boundary-checks-box-lexmax-scope",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "facility-games/common-many/greedy-box-arithmetic-implementation-boundary"
+  ],
+  "target_ids": [
+    "SC-K-BOX-LEXMAX-NO"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "两端均在 MF-MODEL 的有限非空共同目录、带标签设施、正不可拆原子客户、强制服务、独立混合和含自身权重条件成本语义下比较；目标 A 是固定规范贪心盒内收益 lexmax 选择器的数学反例，源 B 的算术边界只针对其冻结源码 b3b391f6e4c1efd8e56c036d3d588f191959504aede58e686c3bfcb291f6ef35、Python 3.12.14 默认十进制转换上限 D=4300 及显式逐名输入，不把报告异常推广为数学终止或一般复杂度结论。",
+  "roles": {
+    "facility-games/common-many/greedy-box-arithmetic-implementation-boundary": "给出 N 名双选项共同客户、两名私有客户、k=3 的合法族：canonical greedy 恒为 (0,0,1)，gamma=2，初态已是完整盒精确客户 NE 且微步数为 0；但 assignment_move_bound=2^N-1 在指定源码的 str(int) 报告处于 N=15000（阈值 N_D=14285）触发 ValueError，并明确把此软件/序列化边界与旧盒选择器反例分开。",
+    "SC-K-BOX-LEXMAX-NO": "给出五站 k=11、gamma=100 的 64 个轻客户二选项赋值中 24 个入盒的解析反例：唯一盒内未截断设施收益 lexmax 赋值负载为 (448,358,300,163,100)，Z=4 从 L 到 N 严格改善（159>150）并把 N 推到 304 出盒；同一占位的原贪心赋值仍是完整盒 NE。"
+  },
+  "explanation": "B 的完整审查明确把 A 列为“旧选择器反例”：A 否定的是在固定盒中最大化未截断设施收益后就可得到客户 NE 的数学推断，且必须检查可能出盒的原偏离；B 的新族则在数学终检 exact_ne、full_boxes、frozen_clients、home_inequality 全为 true 且微步为零之后，仅因把 2^N−1 转成十进制报告字段而失败。于是 B 检查并分离了两种边界：报告层的宿主整数转换失败既不推出 A 的选择器结论，也不被 A 的数学改善反例推出。两者没有 implies、refutes、specializes 或 transfers 逻辑边，仅有防止混淆的上下文检查关系。",
+  "scope": "3A archives/facility-games/subarchives/common-many；仅保存规范贪心盒选择器数学失稳与 greedy_box 报告字段序列化边界的范围检查。覆盖 A 的精确五站反例和 B 的固定源码/解释器 N 族；不覆盖盒 NE 的一般存在性、全模型因子二证明、一般位多项式搜索、所有 Python 运行时或下游超长整数解析。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/审查/规范贪心归位构造的算术与实现边界--审查.md",
+      "sha256": "70352b5fb368b4632055ffc67c2cd3c4ac8443debb8f2491df5329d7e1de7de8"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/反例/固定贪心盒内收益字典序失稳--反例.md",
+      "sha256": "0b42f1912f664815a692f5a343dbd5f0e4943e4d96aaafa18e229039a8858a54"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/tools/evidence/greedy-box-finite-progress/integer_bound_serialization_check.json",
+      "sha256": "ea1523f2af1e0fac5f2b98fdcfa75735eea4cb9815054b1d6f721c49eda9841e"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/tools/evidence/facility-box-geometry/original/tests/audits/kfac_box_lexmax.py",
+      "sha256": "6a880fe55686c6edf070c153065565a11d40fd508f9b9cbd30120d341b4e8636"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+    }
+  ],
+  "reviewed_by": "Boss3-common-many-3A-fresh-worker",
+  "review_note": "完整读取两个 core 对象、MF-MODEL 及任务声明的全部 reading_refs；逐式复算 A 的唯一盒内收益 lexmax 非 NE（Z:159>150，N 由300变304）与 B 的 N 族 canonical layout/gamma/零微步及 2^N−1 十进制阈值。确认 B 仅是固定源码/解释器的报告序列化边界，A 仅是否定特定数学选择器；保留 checks/context 关系，不宣称任何逻辑蕴含。",
+  "endpoint_pins": {
+    "SC-K-BOX-LEXMAX-NO": "abd82ff08f08f5324b6d9605d929d9881073b1f5a665bc155782657288131d9a",
+    "facility-games/common-many/greedy-box-arithmetic-implementation-boundary": "508051d0a3a6697e5436c23f3560b6558ffe6740c251a4d700efbf3194543b7a"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/审查/规范贪心归位构造的算术与实现边界--审查.md": "70352b5fb368b4632055ffc67c2cd3c4ac8443debb8f2491df5329d7e1de7de8",
+    "archives/facility-games/subarchives/common-many/state/反例/固定贪心盒内收益字典序失稳--反例.md": "0b42f1912f664815a692f5a343dbd5f0e4943e4d96aaafa18e229039a8858a54",
+    "archives/facility-games/subarchives/common-many/tools/evidence/greedy-box-finite-progress/integer_bound_serialization_check.json": "ea1523f2af1e0fac5f2b98fdcfa75735eea4cb9815054b1d6f721c49eda9841e",
+    "archives/facility-games/subarchives/common-many/tools/evidence/facility-box-geometry/original/tests/audits/kfac_box_lexmax.py": "6a880fe55686c6edf070c153065565a11d40fd508f9b9cbd30120d341b4e8636",
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+  },
+  "review_digest": "588c83796ff16b8ebab4900c8eb551848ce9589c916378025cb74ba22a579517"
+}
