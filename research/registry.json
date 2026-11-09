@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-map-multigadget-v1.json",
-    "sha256": "52a6f4b8dd53f2b81788db4866a473d670dcda73f8c3c21bc7ef3dcffcb9e578"
+    "path": "research/registration/baseline-map-gradient-label-v1.json",
+    "sha256": "4160f714c20513cf021109daed94c4aa8dfbd2537845f5cf2a663dc45b6a49ef"
   },
   "objects": [
     {
@@ -100760,6 +100760,40 @@
       ]
     },
     {
+      "object_id": "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing",
+      "version": 1,
+      "title": "稀疏点处的精确隐式配置梯度定价",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "显式物品和 bin，非空下闭局部族，独立配置 multilinear 最高利润覆盖。给定有理稀疏点和任意有理可加扣价。",
+      "statement": "用逐 bin 精确非负模权定价与显式正支持扫描，在确定性位多项式时间精确最大化全隐式地集上的真减价导数并回传达到配置。共用背景得分为 (1−z_e)∂_eG；z_e=1 时直接去除 e 计算。配合精确对偶分离和稀疏原始恢复，能对该真梯度线性优化自然硬预算配置 LP 或共同成本截断版并返回短支持。无价格时逐 bin α 近似定价给全地集真导数最大值的 α 倍。",
+      "quantifiers": "对每个满足合同的有限局部族、显式有理正支持、利润和扣价。若地集为空，返回无配置和零 LP 方向。",
+      "assumptions": [
+        "利润非负有理，配置独立采样。",
+        "给定短正支持。逐 bin oracle 返回可行配置而非只有数值。",
+        "自然配置 LP 保持物品、bin、预算行，先删成本超过预算的 bin。"
+      ],
+      "scope": "固定稀疏点的精确方向和位长。全程连续算法的轨迹、误差和支撑增长仍是另一个合同。",
+      "objections": "旧正坐标真梯度共用权重的反例仍成立。任意扣价下不继承乘法近似。未将配置 LP 等同于整数凸包。",
+      "body": {
+        "path": "archives/configuration-assignment/state/定理/稀疏点处的精确隐式配置梯度定价--定理.md",
+        "sha256": "0265f06dd6695cd2d42793391766d39aa0bc624238a59acb4d6a79f576172e62"
+      },
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+          "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+          "section": "梯度是模权和，不代表所有候选共享同一背景"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "从对偶证书恢复最优支持"
+        }
+      ],
+      "sources": []
+    },
+    {
       "object_id": "coverage-alias-complete-strategy-descent-condition",
       "version": 1,
       "title": "指定标签完整策略覆盖兼容时的直接下降及固定代表反向提升",
@@ -113643,6 +113677,41 @@
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-c8ca54e5f2854c2c93bf83abc2f24f5c/n5/direct_coverage/materialize_row3_relaxation.py",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-c8ca54e5f2854c2c93bf83abc2f24f5c/n5/direct_coverage/materialized_relaxation_audit.json"
       ]
+    },
+    {
+      "object_id": "customer-attraction/eighteen-topic-private-point-one-new-label-obstruction",
+      "version": 1,
+      "title": "十八主题固定路径单标签扩充障碍",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "六位单位提供者、18 个原标签及一个新标签、终局按覆盖者均分。冻结原 private 点的 117 个物化类型及质量，每类只允许拆出一部分加入新标签。",
+      "statement": "保持原实际路径 (0,1,2,3,4,5) 与全部旧兴趣型质量，只增一个标签且可任意拆分每种旧类型质量加入它，则任何完整纯 SPE 都不能实现该路径。十九种倒二改新标签后的末位回复各有严格有理必要行证书。",
+      "quantifiers": "对原冻结点、每个实拆分盒内选择、任意完整有序策略和任意弱平局。因实域无解，亦覆盖相应有理清分母及整数拆分。",
+      "assumptions": [
+        "新标签只由既有类型拆分加入，无新增客户质量和旧成员资格变化。",
+        "保持实际有序路径。"
+      ],
+      "scope": "固定原 private 点的单标签扩充。多标签、质量或路径变化仍为独立问题。",
+      "objections": "原七个严格偏离只可由新增标签接末回复。对新增标签本身倒二偏离的十九种回复，各选非负必要行组合，严格小于拆分盒下界。",
+      "body": {
+        "path": "archives/customer-attraction/state/反例/十八主题固定路径单标签扩充障碍--反例.md",
+        "sha256": "d3eeafa3012f4860bc7206340d3cabf4f4a153175d642a393475ce877af11a9c"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/障碍/整终局势与真倒二菜单联合停界--障碍.md",
+          "sha256": "cdcbf05d5f7b0294409e08a992c3b808eaac389cc821103d6b5e6efe683cb8f3"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/potential-menu-joint/replay/potential_menu_joint_private.json",
+          "sha256": "08ca100b2cfa8b5e878193c49b27bb73b0cdbb2addb7fefe52cdfecfe8b95b5f"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/eighteen-topic-one-new-label-v1/verify.py",
+          "sha256": "86d78ed28c40b2259273cfa5c4e08fc01085c94897c4646386001316eec9c519"
+        }
+      ],
+      "sources": []
     },
     {
       "object_id": "customer-attraction/eighteen-unit-client-full-strategy-all-tree-cycle-space-strict-expansion",
@@ -160165,12 +160234,22 @@
       "reason": "全文实读；精确两bin反例及趋2族归反例对象，修复合同和比较值边界同时作为等成本强舍入对象证据。未把原自然LP被否结论登记为已证强定理。"
     },
     {
+      "path": "archives/configuration-assignment/state/定理/稀疏点处的精确隐式配置梯度定价--定理.md",
+      "sha256": "0265f06dd6695cd2d42793391766d39aa0bc624238a59acb4d6a79f576172e62",
+      "disposition": "objects",
+      "object_ids": [
+        "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing"
+      ],
+      "reason": "精确固定稀疏梯度定价与配置 LP 的短支持方向。"
+    },
+    {
       "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
       "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
       "disposition": "objects",
       "object_ids": [
         "configuration-assignment/exact-pricing-sparse-configuration-lp",
-        "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing"
+        "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing",
+        "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing"
       ],
       "reason": "新证实的原始稀疏支持恢复算法及单硬预算指派定理共用正文，保留两个独立可复用对象。"
     },
@@ -160182,7 +160261,8 @@
         "M-42d1210a93e94042833e75a1a80545ea",
         "M-a8a3062b0ff9434fa078140f5b654163",
         "M-ada741cd5e634934805d83850dd7cd1f",
-        "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing"
+        "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing",
+        "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing"
       ],
       "reason": "全文实读；分出候选依赖梯度的精确障碍、显式连续列局部pricing定理和全隐式算法的开放实现义务。历史文献报告与未提供Algorithm1的查重问题保留在来源/异议，不为审查日志或外部未实读定理造节点。"
     },
@@ -161566,6 +161646,15 @@
         "customer-attraction/fifteen-unit-five-provider-all-root-last-profit-separation"
       ],
       "reason": "精确十五客户完整121节点σ、363IC、全部根L分离及非插入反例边界归一。\n复用十五单位客户、五人、三个合法标签（含空标签）的完整 121 节点策略与精确比较；全部根分支真实末位收益严格超过根收益。额外插入菜单仍有安全列，故只反驳所述末位利润助手，不扩大到插入查询或 half。"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/十八主题固定路径单标签扩充障碍--反例.md",
+      "sha256": "d3eeafa3012f4860bc7206340d3cabf4f4a153175d642a393475ce877af11a9c",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/eighteen-topic-private-point-one-new-label-obstruction"
+      ],
+      "reason": "固定十八标签点在单标签扩充下的十九份精确排除证书。"
     },
     {
       "path": "archives/customer-attraction/state/反例/十单位五人完整策略的末位份额反例--反例.md",
@@ -189488,9 +189577,10 @@
       "sha256": "cdcbf05d5f7b0294409e08a992c3b808eaac389cc821103d6b5e6efe683cb8f3",
       "disposition": "objects",
       "object_ids": [
-        "customer-attraction/potential-menu-joint-obstruction",
         "M-4b6ebc6e36f341ff8c9f7bec506ae78d",
-        "customer-attraction/greedy-admissible-catalog-completion-late-menu-floating-obstruction-contract"
+        "customer-attraction/eighteen-topic-private-point-one-new-label-obstruction",
+        "customer-attraction/greedy-admissible-catalog-completion-late-menu-floating-obstruction-contract",
+        "customer-attraction/potential-menu-joint-obstruction"
       ],
       "reason": "全文实读成熟正文，逐对象登记精确模型、量词、状态及证据。关联文档未重复授予主身份。"
     },
@@ -203683,6 +203773,7 @@
     "map/edges/commonmany-box-home-3b-e76445c54d0d7383/budget-home-box-contribution.json",
     "map/edges/commonmany-fixed-lex-sharp-3b-3b-605bc46b112a9bfe/labeled-completion-attains-both-barrier-factors.json",
     "map/edges/config-3a-3a-46c37e399c1f5186/exact-pricing-sparse-lp-and-rounding.json",
+    "map/edges/config-3a-3a-90e5636bd26a3461/sparse-point-exact-gradient-direction.json",
     "map/edges/config-pricing-3b-3b-4391acfe26dc7dbd/local-tu-implements-pricing-component.json",
     "map/edges/cubic-phi-lower-3b-3b-eeadc83c13155dae/five-six-site-lower-transfers-to-cubic.json",
     "map/edges/cubic-two-overlap-3b-3b-47cfa125acf70f8e/cubic-two-overlap-exact-instance-optimum.json",
@@ -203791,6 +203882,27 @@
     "map/edges/customer-attraction-3a-3a-052c1a98b57381b0/last-reply-tax-slack-accounts-for-real-root-failure.json",
     "map/edges/customer-attraction-3a-3a-052c1a98b57381b0/quadratic-fresh-floor-translates-to-restricted-compiled-menu.json",
     "map/edges/customer-attraction-3a-3a-052c1a98b57381b0/root-tax-witness-satisfies-free-column-budget-at-equality.json",
+    "map/edges/customer-attraction-3a-3a-0537edfa8652728c/activation-to-tax-family.json",
+    "map/edges/customer-attraction-3a-3a-0537edfa8652728c/compiled-assignment-exact-replay.json",
+    "map/edges/customer-attraction-3a-3a-0537edfa8652728c/private-projects-to-ordinary-obstruction.json",
+    "map/edges/customer-attraction-3a-3a-0537edfa8652728c/private-single-label-completion-obstruction.json",
+    "map/edges/customer-attraction-3a-3a-0537edfa8652728c/same-support-ceiling-transfers-to-monotone.json",
+    "map/edges/customer-attraction-3a-3a-0537edfa8652728c/same-support-to-pair-array.json",
+    "map/edges/customer-attraction-3a-3a-0537edfa8652728c/saturated-family-time-menu.json",
+    "map/edges/customer-attraction-3a-3a-0537edfa8652728c/seat-spectrum-check-on-private-point.json",
+    "map/edges/customer-attraction-3a-3a-0537edfa8652728c/tax-total-to-individual-threshold.json",
+    "map/edges/customer-attraction-3a-3a-077dc913e2cf9718/all-big-root-family-extends-to-quarter-prefix-debt.json",
+    "map/edges/customer-attraction-3a-3a-077dc913e2cf9718/five-player-local-failure-still-pays-at-root.json",
+    "map/edges/customer-attraction-3a-3a-09a6865b803ce780/capacity-price-excludes-fixed-5692-z.json",
+    "map/edges/customer-attraction-3a-3a-09a6865b803ce780/exact-dynamic-witness-separates-scalar-closure.json",
+    "map/edges/customer-attraction-3a-3a-09a6865b803ce780/same-source-requery-excludes-fixed-5692-r.json",
+    "map/edges/customer-attraction-3a-3a-09c91a9946328817/background-profit-theorems-pay-true-suffix-envelope.json",
+    "map/edges/customer-attraction-3a-3a-09c91a9946328817/one-tail-unit-price-separates-aeu-but-not-abc-or-abe.json",
+    "map/edges/customer-attraction-3a-3a-09c91a9946328817/original-five-root-audits-check-exact-cuts.json",
+    "map/edges/customer-attraction-3a-3a-09c91a9946328817/original-thinning-audit-checks-thirteen-client-witness.json",
+    "map/edges/customer-attraction-3a-3a-09c91a9946328817/same-terminal-skeleton-exact-two-tail-noncompletion.json",
+    "map/edges/customer-attraction-3a-3a-09c91a9946328817/strong-pair-is-actual-one-tail-envelope-endpoint.json",
+    "map/edges/customer-attraction-3a-3a-09c91a9946328817/two-player-tax-pays-root-audit-index-pairs.json",
     "map/edges/facility-3a-3a-215587c18b6fe501/cubic-cross-quota-to-top-two-complete-rule.json",
     "map/edges/facility-3a-3a-650824f39253ba6d/box-local-max-is-sufficient-for-initial-ne-only.json",
     "map/edges/facility-3a-3a-650824f39253ba6d/diagonal-evaluation-of-two-reach-example.json",

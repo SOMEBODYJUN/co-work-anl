@@ -235,13 +235,77 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss2",
-  "request_id": "f040e1d538d64ac1bf534c3410507b12",
+  "request_id": "58d1ff5d4f2a4c378d81d4018dd42e57",
   "requests": {
     "55e9c621713643808b628f10d1389774": "plan",
     "ec7132ae12304a55bf51400f370828e8": "claim",
     "6eba53b1c75f4da5b51aea565c802bc4": "read-add",
-    "f040e1d538d64ac1bf534c3410507b12": "read-add"
+    "f040e1d538d64ac1bf534c3410507b12": "read-add",
+    "58d1ff5d4f2a4c378d81d4018dd42e57": "done"
+  },
+  "edge_paths": {
+    "commonmany-local-weight-dp-covers-incidence-domain": "map/edges/commonmany-3a-3a-e41a1f33282daba3/local-weight-dp-covers-incidence-domain.json",
+    "commonmany-incidence-dp-depth-two-to-complete-two": "map/edges/commonmany-3a-3a-e41a1f33282daba3/incidence-dp-depth-two-to-complete-two.json"
+  },
+  "receipt": {
+    "coverage": {
+      "SC-K-INCIDENCE-BOX-DP": {
+        "state": "linked",
+        "object_pin": "641eaecea297d796aa22c31f799b04bed5ee3264ce28178d4c5d9c872bc6a8c1",
+        "comparison_scope": "同一任务全部核心/共享依赖的当前input_pins；所列正式正文的模型、量词、完整假设、证明与有限程序边界。其他deferred对象仅作为导航，不冒称已付读取。",
+        "reason": "A-DP与深度二可行性及盒完成联合给旧HEIGHT-TWO-INCIDENCE-2；B算法还覆盖其适用域但不替代A更细状态界。",
+        "edge_ids": [
+          "commonmany-local-weight-dp-covers-incidence-domain",
+          "commonmany-incidence-dp-depth-two-to-complete-two"
+        ]
+      },
+      "SC-K-LOCAL-WEIGHT-BOX-DP": {
+        "state": "linked",
+        "object_pin": "a2ae05baa98735ff3d62e31251b5efa7602a485f0150031fe3281a2d33124aef",
+        "comparison_scope": "同一任务全部核心/共享依赖的当前input_pins；所列正式正文的模型、量词、完整假设、证明与有限程序边界。其他deferred对象仅作为导航，不冒称已付读取。",
+        "reason": "B以最终/部分权计数检查所有原NE；适用域严格包含A固定参数输入。每袋与时间指数原样保留，未外推单独有界树宽。",
+        "edge_ids": [
+          "commonmany-local-weight-dp-covers-incidence-domain"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/commonmany-3a-3a-e41a1f33282daba3/local-weight-dp-covers-incidence-domain.json",
+        "sha256": "bfc7509ee5ca3a56c9293d75bbc85380ab57a61d7b36f8ffb1dca66eb5bbb957"
+      },
+      {
+        "path": "map/edges/commonmany-3a-3a-e41a1f33282daba3/incidence-dp-depth-two-to-complete-two.json",
+        "sha256": "2f2d874d8b45fb012fe4c035f53a8d35726337cf2f6cb93b7cd60b984c6d29df"
+      }
+    ],
+    "reviewed_by": "Boss2-local-algorithms-draft",
+    "review_note": "本收据是本地候选，资产路径仍在drafts；未提交map done，未写canonical。全部核心精确覆盖，逻辑关系和仅语境关系分开。原审计只复用保存报告，无新实验运行。 Boss2复核全部逻辑边的目标范围，并实读BOX-TO-2及原池双装箱全文处理延后比较；本地提升到本任务write_paths，尚未推送或map done。",
+    "closed_overlaps": [],
+    "task_id": "commonmany-3a-3a-e41a1f33282daba3",
+    "stage": "3A",
+    "status": "complete",
+    "object_ids": [
+      "SC-K-INCIDENCE-BOX-DP",
+      "SC-K-LOCAL-WEIGHT-BOX-DP"
+    ],
+    "read_object_ids": [
+      "MF-MODEL",
+      "SC-K-HEIGHT-TWO-INCIDENCE-2",
+      "SC-K-HEIGHT-TWO-BOX-EXISTS",
+      "SC-K-GREEDY-BOX-TO-2",
+      "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import"
+    ],
+    "input_pins": {
+      "SC-K-INCIDENCE-BOX-DP": "641eaecea297d796aa22c31f799b04bed5ee3264ce28178d4c5d9c872bc6a8c1",
+      "SC-K-LOCAL-WEIGHT-BOX-DP": "a2ae05baa98735ff3d62e31251b5efa7602a485f0150031fe3281a2d33124aef",
+      "MF-MODEL": "1ca8c08397c3ec2c0a05b8eecb18e5e1de2b3e863c5f73f8c6eaf6b6fdf05bec",
+      "SC-K-HEIGHT-TWO-INCIDENCE-2": "1146868d64d9159df615551edac840e0ec6d00c85f83cea01d9e3c2cfbd7d7f3",
+      "SC-K-HEIGHT-TWO-BOX-EXISTS": "4e7c51c17d1677bf6af0ac0db5fe735ec5736f2f424bb8f3b484e9b7ab7a4f04",
+      "SC-K-GREEDY-BOX-TO-2": "c5f0af766e5c2d960dc7f4b714189e568990f1165bbaeefba51b7a0d89a3ce14",
+      "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import": "5f2019da9ff05afa3a2e57eb2cf96d8c63eef19e66208bb0290ce535628737f6"
+    }
   }
 }

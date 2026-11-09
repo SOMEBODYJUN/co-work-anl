@@ -1,0 +1,49 @@
+{
+  "edge_id": "resource-c01-price-split-implies-full-two-ray-sufficiency",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "C01-v3.L1"
+  ],
+  "target_ids": [
+    "SEL-RESOURCE-LP-SUBMODULAR-v3"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意有限d,n≥1，A≥0的非零列至多两条正比例射线，容量b≥0、利润w≥0；连续启用LPφ(S)=max{wᵀx:Ax≤b,0≤x≤1_S}。零列另给模函数；零行、零容量和列方向的零坐标均允许。",
+  "roles": {
+    "C01-v3.L1": "给两个非负二维价格的互补min/max分裂，并用同一系数分裂两个原d维对偶向量以保持其和。",
+    "SEL-RESOURCE-LP-SUBMODULAR-v3": "由该分裂和启用LP对偶hinge逐件比较，得到任意资源维数的两射线归一、单调、子模充分性。"
+  },
+  "explanation": "剥离零列的模贡献。两列方向写为u,v∈R_+^d，每个非零A_i=s_i u或s_i v，s_i>0；一射线可令v=u。原LP非空紧，有限维LP强对偶及达到性给φ(S)=min_(y≥0)D_S(y)，D_S(y)=bᵀy+Σ_(i∈S)(w_i−A_iᵀy)_+，且存在最优y_S,y_T。令z=(uᵀy_S,vᵀy_S)、z′=(uᵀy_T,vᵀy_T)。C01给λ,μ∈[0,1]；取y_∧=λy_S+μy_T、y_∨=(1−λ)y_S+(1−μ)y_T。两者非负，其价格为z∧z′及z∨z′，且y_∧+y_∨=y_S+y_T，故原d维bᵀ成本和保持。每件物品hinge只读一个价格坐标且递减：交集物品的两hinge之和在min/max前后相等；S或T独有物品在union所用较大价格处不增。故φ(S)+φ(T)=D_S(y_S)+D_T(y_T)≥D_(S∪T)(y_∨)+D_(S∩T)(y_∧)≥φ(S∪T)+φ(S∩T)。空启用只有零x故φ(∅)=0；启用扩大使可行域扩大故单调。没有非零列时纯模。所有分裂和对偶步骤允许退化零边界，从而完整得到v3。",
+  "scope": "仅充分性：非零列至多两射线推出全b,w归一单调子模。高维A=I3仍可有三射线模函数，故不主张高维必要性；该结果不提供AW/OCRS、指派算法或新颖性结论。",
+  "whole_result": "C01互补分裂在原d维对偶上保持y_S+y_T，连同强对偶、递减hinge比较和零列剥离，完整推出SEL-RESOURCE-LP-SUBMODULAR-v3的任意d、全b,w两射线充分性及归一单调性。",
+  "evidence": [
+    {
+      "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+      "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+      "section": "一、对偶、达到与零列"
+    },
+    {
+      "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+      "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+      "section": "三、保持原对偶之和的全维分裂"
+    },
+    {
+      "path": "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md",
+      "sha256": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4",
+      "section": "全维充分性的关键证明"
+    }
+  ],
+  "reviewed_by": "Boss2-local-draft-resource-3a-3a-6690dabdf05908fb",
+  "review_note": "完整核强对偶达到性、原d维对偶之和保持、两类列hinge及union/intersection分配、归一/单调和零边界；未把高维bᵀy误作两个价格的线性函数。",
+  "endpoint_pins": {
+    "C01-v3.L1": "7e10c37c032063fdf89402e59eac599c48df45d56dd9b7cbb4d9664e0f5675d7",
+    "SEL-RESOURCE-LP-SUBMODULAR-v3": "2288bb14fc30a91426cc00107c084fac7a405022953e5142d262014ca328b442"
+  },
+  "evidence_pins": {
+    "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+    "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4"
+  },
+  "review_digest": "e81ac97314e9c87ffbe9457abdedddef457282f4f727695f673f69d8e3947e0e"
+}

@@ -1,0 +1,42 @@
+{
+  "edge_id": "commonmany-heaviest-checks-arbitrary-order-boundary",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-GREEDY-HEAVIEST-NO"
+  ],
+  "target_ids": [
+    "SC-K-GREEDY-REPAIR-ORDER-NO"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "比较原32/40输入与只改为39/35的最大权规则输入；二者保原子身份差异，设施q同为(1,1,2,1,3,0)。",
+  "roles": {
+    "SC-K-GREEDY-HEAVIEST-NO": "给每步最大权身份唯一的具体规则反例。",
+    "SC-K-GREEDY-REPAIR-ORDER-NO": "给任意严格修复规则不能普遍保证安全的原不同输入见证。"
+  },
+  "explanation": "原坏顺序不能直接宣称满足最重优先。修改39/35后，五步最大权身份唯一，终B86而偏G强迫176，比88/43>2；原32/40终B165/2且比32/15。二者都限制选择规则，不是同一审计样本或所有NE皆坏。",
+  "scope": "只作两种规则与原子参数分界核查，不用一个数值见证替代另一个。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/反例/固定贪心均衡的坏选择与静止超帽边界--反例.md",
+      "sha256": "f17a382546c11c8ee4157c911e7262023c4d35426bd29a6f66c4ef47fae8988c",
+      "section": "最重改善者优先也失败：本批新原审计"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/反例/固定贪心均衡的坏选择与静止超帽边界--反例.md",
+      "sha256": "f17a382546c11c8ee4157c911e7262023c4d35426bd29a6f66c4ef47fae8988c",
+      "section": "任意严格修复顺序可到无法因子二支撑的NE"
+    }
+  ],
+  "reviewed_by": "Boss2-local-algorithms-draft",
+  "review_note": "本地候选：逐项复核所引正式正文的完整推导、端点陈述及任务输入pin；已有有限审计仅按其真实范围复用，未重跑。accepted表示本地数学判断，未发布、未写canonical、未提交任务。",
+  "endpoint_pins": {
+    "SC-K-GREEDY-HEAVIEST-NO": "be04a1bf03e86235f940612cdbfec68569abeb49697b309db7cc3847e8a4b685",
+    "SC-K-GREEDY-REPAIR-ORDER-NO": "0378b77ce3932ed1d133ad76fb79e2d7aebb2ec1f40a8fbf36f562b294ace775"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/反例/固定贪心均衡的坏选择与静止超帽边界--反例.md": "f17a382546c11c8ee4157c911e7262023c4d35426bd29a6f66c4ef47fae8988c"
+  },
+  "review_digest": "963381d822a7720422a392c4d99b21ebc059e6ce91af05baa0bb0a49224d2db3"
+}

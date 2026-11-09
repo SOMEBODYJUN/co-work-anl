@@ -1,0 +1,46 @@
+{
+  "edge_id": "commonmany-local-weight-dp-covers-incidence-domain",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-LOCAL-WEIGHT-BOX-DP"
+  ],
+  "target_ids": [
+    "SC-K-INCIDENCE-BOX-DP"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一次规范贪心、同一指定冻结、完整盒及扣自身重NE比较。关联图B_inc树宽≤固定τ、双侧度≤固定d；提供合法树分解，N个逐名变量客户。",
+  "roles": {
+    "SC-K-LOCAL-WEIGHT-BOX-DP": "用站点原图固定树宽/局部不同权值数，精确判定并恢复盒NE。",
+    "SC-K-INCIDENCE-BOX-DP": "在个体客户关联图固定宽度及双侧度域内精确判定并恢复同一盒NE。"
+  },
+  "explanation": "把B_inc树分解袋内每个客户顶点替换为其全部站邻居；袋至多d(τ+1)个站，站的出现子树由原站子树与相交邻客子树并合而连通，得到站点原图宽≤d(τ+1)−1。每站相邻客户至多d，局部精确不同权值数也≤d。故A域输入同时满足B的固定参数域；B判定同一完整盒和全部真实NE并回溯原客户标签。B容许同权客户数量和站度无界，反向不成立。",
+  "scope": "是算法适用域和多项式可解性的包含，不用B的较大状态界替换A直接子集表示的更细界。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/推论/结构参数下完整盒均衡的多项式选择--推论.md",
+      "sha256": "9d02870fb31e12e603886b503b39ca7fc396fa15e888d6f2643bb678a25e8863",
+      "section": "分解转换、DP和界"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/推论/结构参数下完整盒均衡的多项式选择--推论.md",
+      "sha256": "9d02870fb31e12e603886b503b39ca7fc396fa15e888d6f2643bb678a25e8863",
+      "section": "树分解输入、比较与准确边界"
+    }
+  ],
+  "reviewed_by": "Boss2-local-algorithms-draft",
+  "review_note": "本地候选：逐项复核所引正式正文的完整推导、端点陈述及任务输入pin；已有有限审计仅按其真实范围复用，未重跑。accepted表示本地数学判断，未发布、未写canonical、未提交任务。",
+  "contribution": {
+    "result": "B算法覆盖A的全部固定参数输入，给同一判定/构造语义和位多项式可解性。",
+    "remaining": "A的逐站子集表示及2^{d²(τ+1)}每袋状态界仍由A自身的直接DP论证提供，未从B的计数状态界推出。"
+  },
+  "endpoint_pins": {
+    "SC-K-INCIDENCE-BOX-DP": "641eaecea297d796aa22c31f799b04bed5ee3264ce28178d4c5d9c872bc6a8c1",
+    "SC-K-LOCAL-WEIGHT-BOX-DP": "a2ae05baa98735ff3d62e31251b5efa7602a485f0150031fe3281a2d33124aef"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/推论/结构参数下完整盒均衡的多项式选择--推论.md": "9d02870fb31e12e603886b503b39ca7fc396fa15e888d6f2643bb678a25e8863"
+  },
+  "review_digest": "8a276247038c842f0a9b4ccbbd0564708f3ef95d77dee55c00f1c625bea1615b"
+}

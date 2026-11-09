@@ -87,11 +87,58 @@
       "note": "Local proof families are scheduled first. Informal links are separate discovery hints. Read any newly discovered necessary premise through read-add; do not truncate a proof or treat a deferred candidate as paid evidence."
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss2",
-  "request_id": "c55cf42aa9464b1ba160fcf3d98d29bd",
+  "request_id": "58d1ff5d4f2a4c378d81d4018dd42e57",
   "requests": {
     "41f87b13e0264ed185386ab930122020": "plan",
-    "c55cf42aa9464b1ba160fcf3d98d29bd": "claim"
+    "c55cf42aa9464b1ba160fcf3d98d29bd": "claim",
+    "58d1ff5d4f2a4c378d81d4018dd42e57": "done"
+  },
+  "edge_paths": {
+    "resource-v3-sufficiency-specializes-to-v2-sufficient-clause": "map/edges/resource-3a-3a-7b3c562d1a327a4d/resource-v3-sufficiency-specializes-to-v2-sufficient-clause.json"
+  },
+  "receipt": {
+    "task_id": "resource-3a-3a-7b3c562d1a327a4d",
+    "stage": "3A",
+    "status": "complete",
+    "object_ids": [
+      "SEL-RESOURCE-LP-SUBMODULAR-v2",
+      "SEL-RESOURCE-LP-SUBMODULAR-v3"
+    ],
+    "read_object_ids": [],
+    "input_pins": {
+      "SEL-RESOURCE-LP-SUBMODULAR-v2": "76c9e60f78b3cf56f25ac4ef67e7c75f41f668d648dafd44cea144160b7b8e5e",
+      "SEL-RESOURCE-LP-SUBMODULAR-v3": "2288bb14fc30a91426cc00107c084fac7a405022953e5142d262014ca328b442"
+    },
+    "coverage": {
+      "SEL-RESOURCE-LP-SUBMODULAR-v2": {
+        "state": "linked",
+        "comparison_scope": "完整实读两价格分裂证明、两射线账本及第二轮GAP C01。逐项比较v2的二维全b,w iff与v3的全维两射线充分性，含三射线必要性和I3高维边界。",
+        "reason": "v3限制d=2后给v2充分半边，保持同一连续LP、全容量全利润及零边界。v2必要半边需三射线中间列禁形，故此处仅登记充分性贡献，不由v3单独宣称v2完整iff。",
+        "edge_ids": [
+          "resource-v3-sufficiency-specializes-to-v2-sufficient-clause"
+        ],
+        "object_pin": "76c9e60f78b3cf56f25ac4ef67e7c75f41f668d648dafd44cea144160b7b8e5e"
+      },
+      "SEL-RESOURCE-LP-SUBMODULAR-v3": {
+        "state": "linked",
+        "comparison_scope": "完整实读任意d原对偶互补分裂与退化边界；比较二维价格格证明、全维有效价格成本接口和v2/v3量词。",
+        "reason": "v3通过原d维对偶和保持证明充分性；其d=2切片完整复现v2的充分子句。A=I3三射线而模值说明高维必要性不随维数特化自动成立；固定容量分类与算法义务均独立。",
+        "edge_ids": [
+          "resource-v3-sufficiency-specializes-to-v2-sufficient-clause"
+        ],
+        "object_pin": "2288bb14fc30a91426cc00107c084fac7a405022953e5142d262014ca328b442"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/resource-3a-3a-7b3c562d1a327a4d/resource-v3-sufficiency-specializes-to-v2-sufficient-clause.json",
+        "sha256": "a5723d8affcee98d02e708e1b4061e012049a15abde8159b8edfef8d520445e5"
+      }
+    ],
+    "reviewed_by": "Boss2-local-draft-resource",
+    "review_note": "完整核对本包当前对象版本、正文/必要证据及数学承重；局部贡献与完整结果分列，开放算法义务不升级为逻辑边。仅保存本地草稿。 Boss2已审读并提升到本任务本地write_paths；尚未推送或map done。",
+    "execution_scope": "Read complete mature mathematical sources and exact task/registry pins; no rerun of historical LP/random/AW/OCRS programs. Local edge bind/check and SHA/structure checks only."
   }
 }

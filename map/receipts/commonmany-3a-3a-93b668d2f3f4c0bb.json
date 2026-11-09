@@ -1,0 +1,81 @@
+{
+  "task_id": "commonmany-3a-3a-93b668d2f3f4c0bb",
+  "stage": "3A",
+  "object_ids": [
+    "M-57da53da3efa46998555bccf77c69d35",
+    "SC-K-BOX-NE-FPT-TYPES",
+    "SC-K-CATALOG-WEIGHT-XP-2",
+    "SC-K-FROZEN-LIGHT-FPT"
+  ],
+  "read_object_ids": [
+    "MF-MODEL",
+    "SC-K-GREEDY-BOX-EXISTS",
+    "SC-K-2-E",
+    "SC-K-GREEDY-BOX-TO-2",
+    "SC-K-LEX-BUDGET"
+  ],
+  "input_pins": {
+    "M-57da53da3efa46998555bccf77c69d35": "dcc60adbdf8b7c23be791bd43530306a3189250c3a0d3e7c2c57be6b884d8b79",
+    "SC-K-BOX-NE-FPT-TYPES": "a25ce679a6fb384cad89743a0638dcb334c4751b231615a3ad46eda20fd5958b",
+    "SC-K-CATALOG-WEIGHT-XP-2": "a85a05646f591c74ee66369dc7861a7d121830acc4da53eef197ac05c845d818",
+    "SC-K-FROZEN-LIGHT-FPT": "35aad9a197254ead30134dd90701d1de4d79e9ab664a3c861b39c824c2c5443f",
+    "MF-MODEL": "1ca8c08397c3ec2c0a05b8eecb18e5e1de2b3e863c5f73f8c6eaf6b6fdf05bec",
+    "SC-K-GREEDY-BOX-EXISTS": "1734aef77d4e8a53a08935117a99c442bbbb5190a21570b036ab13ea96efc448",
+    "SC-K-2-E": "c345b8c200578a44af61428a9f884e66590756578c6dd85c96faf49e60fbd0cd",
+    "SC-K-GREEDY-BOX-TO-2": "c5f0af766e5c2d960dc7f4b714189e568990f1165bbaeefba51b7a0d89a3ce14",
+    "SC-K-LEX-BUDGET": "420f34e52ec452843993adf640e5dc699a2f99bb297de382077f7009ce68a0da"
+  },
+  "status": "complete",
+  "coverage": {
+    "M-57da53da3efa46998555bccf77c69d35": {
+      "state": "isolated-after-review",
+      "object_pin": "dcc60adbdf8b7c23be791bd43530306a3189250c3a0d3e7c2c57be6b884d8b79",
+      "comparison_scope": "核 q=1 私有γ与公共物品、上盒迫使等和、逆向NE及 NP 证书；区分站纯/站内均匀与任意 mixed。",
+      "reason": "3-PARTITION 编码给任意预设占用完整盒 NE 可行性的 NP 完全；不保 canonical greedy 输出承诺，不能 refute 一般贪心盒存在或承诺 FPT。参数 m,d 在困难族不固定，故与固定参数支持 IP 无冲突。"
+    },
+    "SC-K-BOX-NE-FPT-TYPES": {
+      "state": "linked",
+      "object_pin": "a25ce679a6fb384cad89743a0638dcb334c4751b231615a3ad46eda20fd5958b",
+      "comparison_scope": "对比任意占用判定、合法贪心冻结承诺、分量 IP、恢复标签及冻结重客户的跨分量原动作；全部比较含自重扣除。",
+      "reason": "一般支持 IP 的精确可行性与同冻结域的贪心盒存在性联合，支付轻分量 FPT 必成功；源条件的固定变量 ILP 导入仍显式保留。",
+      "edge_ids": [
+        "commonmany-type-support-and-greedy-existence-imply-frozen-light-fpt"
+      ]
+    },
+    "SC-K-CATALOG-WEIGHT-XP-2": {
+      "state": "isolated-after-review",
+      "object_pin": "a85a05646f591c74ee66369dc7861a7d121830acc4da53eef197ac05c845d818",
+      "comparison_scope": "核全物理覆盖类型、显式k计费、全布局lexmax四预算、O(kpN logk)真实偏离证书与默认非全表输出；完整完成另依MAX。",
+      "reason": "全物理目录 p 和全输入权种 d 固定时枚举占用及负载顺序、固定维计数优化得全局 lexmax；界 (k+1)^(p−1)p!p f(p,d)poly(L) 是 XP，k 指数依 p，不是 FPT(p,d)。它不由轻分量 FPT 推出，也不推一般贪心 promise 搜索困难。"
+    },
+    "SC-K-FROZEN-LIGHT-FPT": {
+      "state": "linked",
+      "object_pin": "35aad9a197254ead30134dd90701d1de4d79e9ab664a3c861b39c824c2c5443f",
+      "comparison_scope": "对比任意占用判定、合法贪心冻结承诺、分量 IP、恢复标签及冻结重客户的跨分量原动作；全部比较含自重扣除。",
+      "reason": "一般支持 IP 的精确可行性与同冻结域的贪心盒存在性联合，支付轻分量 FPT 必成功；源条件的固定变量 ILP 导入仍显式保留。",
+      "edge_ids": [
+        "commonmany-type-support-and-greedy-existence-imply-frozen-light-fpt"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/commonmany-3a-3a-93b668d2f3f4c0bb/type-support-and-greedy-existence-to-frozen-light-fpt.json",
+      "sha256": "ce346e51d2964fd2be7c3fb4916a0e3f4d65c16432814c3446fb30b74ee71c17"
+    }
+  ],
+  "reviewed_by": "Boss2-commonmany-core-report",
+  "review_note": "本地编录草稿：依据本轮已完成 commonmany_core 数学报告，核对任务定义、当前对象记录、证据 SHA 与相关完整正文；未运行 map done、checkpoint、push、sync 或其他远端写入。此 status 不表示远端交付。 Boss2核对结论范围后提升至本任务本地write_paths；尚未推送或map done。",
+  "closed_overlaps": [
+    {
+      "core_id": "SC-K-CATALOG-WEIGHT-XP-2",
+      "peer_id": "SC-K-2-E",
+      "reason": "全目录 XP 是同一全局 lexmax 因子二存在证明在固定 p,d 域的搜索实现；存在定理不单独提供位多项式搜索，XP 算法亦不证明全参数 FPT。数学对应与复杂度区别已核，MAX 完成仍按条件，不须因共同正文再发一条弱存在性重复边。"
+    },
+    {
+      "core_id": "SC-K-FROZEN-LIGHT-FPT",
+      "peer_id": "SC-K-GREEDY-BOX-TO-2",
+      "reason": "FPT输出完整上下盒及全部原动作精确 NE，与抽象 BOX-TO-2 输入完全一致；H 不是数学接口前提，现行软件 verify_on_path 仍需适配。接续后的位多项式离轨和默认要另用 MAX，不能把支持 IP 或有限软件成功冒作该合同。"
+    }
+  ]
+}

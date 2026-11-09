@@ -1,0 +1,57 @@
+{
+  "edge_id": "commonmany-double-lpt-supplies-fixed-gamma-reset-interface",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-RESET-PACK-INTERFACE",
+    "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import"
+  ],
+  "target_ids": [
+    "SC-K-DOUBLE-LPT-GREEDY-2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一显式正有理共同目录输入；每原池按非增权/输入编号做确定LPT。首轮q_t箱每箱≥γ，第二轮q_t−1箱每箱≤2γ；失败只返回unknown。首轮在每家真实设施一台相同机器的完整覆盖游戏用RANGE，离轨/默认使用MAX。",
+  "roles": {
+    "SC-K-RESET-PACK-INTERFACE": "给定在轨收益下界及原池删除箱后保在轨完成因子二。",
+    "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import": "RANGE保持首轮最小设施负载≥γ，并用MAX支付全部离轨及默认完成。",
+    "SC-K-DOUBLE-LPT-GREEDY-2": "两轮LPT成功域上的纯在轨NE及完整因子二续局。"
+  },
+  "explanation": "首轮总重≤(q_t+1)γ且q_t个箱均≥γ，故每箱≤2γ。RANGE只保持全部真实设施的最小值≥γ并输出纯NE；它不保每个站总重上盒。纯NE作为退化独立mixed输入，满足接口a_f≥γ。第二轮从同一原池重新装箱，直接给接口要求的删除证书，且比允许孤立巨原子的原接口更强。于是直接调用固定γ接口。三角例的M总430>400只证明选定NE在盒外，不否定其他盒NE。原main只运行triangle=True的16实际偏离，最大移动者110，未跑base/split且未实现RANGE/MAX。",
+  "scope": "完整覆盖双LPT成功域；不把它反推成一般删除箱接口或完整识别器。首轮需RANGE，单有MAX不足。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/原池双装箱证书与盒外纯均衡续局--算法.md",
+      "sha256": "9cc6ab5dabf876015419f5c5483ac27c30bd0aa46bc619991e6060c0d1b9f0d0",
+      "section": "双LPT充分测试"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/原池双装箱证书与盒外纯均衡续局--算法.md",
+      "sha256": "9cc6ab5dabf876015419f5c5483ac27c30bd0aa46bc619991e6060c0d1b9f0d0",
+      "section": "三角异权例与真实审计"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md",
+      "sha256": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a",
+      "section": "输入与准确结论"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/tools/evidence/facility-selector-frontier/replay/double_lpt.stdout.txt",
+      "sha256": "a7f5c4846fd6f6abb6cca671f0c9771d5a864ffd6805d3756fe8841f072bfdbd"
+    }
+  ],
+  "reviewed_by": "Boss2-local-algorithms-draft",
+  "review_note": "本地候选：逐项复核所引正式正文的完整推导、端点陈述及任务输入pin；已有有限审计仅按其真实范围复用，未重跑。accepted表示本地数学判断，未发布、未写canonical、未提交任务。",
+  "whole_result": "在全部LPT测试成功并支付明确RANGE/MAX合同的输入上，得到a_f≥γ的纯在轨NE及同一在轨策略的完整因子二续局；失败仍为unknown。该识别类允许输出在轨站总重在完整上盒之外。",
+  "endpoint_pins": {
+    "SC-K-DOUBLE-LPT-GREEDY-2": "61e6f2df65e49700880f88a3dd3d54f27afe778529400bc4e491597e19085675",
+    "SC-K-RESET-PACK-INTERFACE": "2c75aea8b4ed97b9dcd66ffffcc9aba85c83ed69d3f8647eb24571c88d7404ef",
+    "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import": "5f2019da9ff05afa3a2e57eb2cf96d8c63eef19e66208bb0290ce535628737f6"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/算法/原池双装箱证书与盒外纯均衡续局--算法.md": "9cc6ab5dabf876015419f5c5483ac27c30bd0aa46bc619991e6060c0d1b9f0d0",
+    "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a",
+    "archives/facility-games/subarchives/common-many/tools/evidence/facility-selector-frontier/replay/double_lpt.stdout.txt": "a7f5c4846fd6f6abb6cca671f0c9771d5a864ffd6805d3756fe8841f072bfdbd"
+  },
+  "review_digest": "9e1b0117552416371494e8cefa4edc7c5862bad609815a5a593883c0a3f3ac36"
+}

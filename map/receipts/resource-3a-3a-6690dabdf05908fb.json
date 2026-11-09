@@ -1,0 +1,92 @@
+{
+  "task_id": "resource-3a-3a-6690dabdf05908fb",
+  "stage": "3A",
+  "status": "complete",
+  "object_ids": [
+    "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1",
+    "M-ed52023e7ef545d79147e2b65482dd89",
+    "C01-v3.L1",
+    "M-caef92af522b43f18a8c58e97acc3d58",
+    "M-2811342f46434965bf98081115bedcde",
+    "M-8e21b2ce4dec4976a576924f343e8742"
+  ],
+  "read_object_ids": [
+    "SEL-RESOURCE-LP-SUBMODULAR-v2",
+    "SEL-RESOURCE-LP-SUBMODULAR-v3"
+  ],
+  "input_pins": {
+    "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1": "16d144d3e59bf43a8087069c301df2d65f68205b0c9f1cce3ba994cf489a5540",
+    "M-ed52023e7ef545d79147e2b65482dd89": "a54f803b6d34877e53d5dfa183d7a9532373bbd0158cb038b3ee640cb2efa551",
+    "C01-v3.L1": "7e10c37c032063fdf89402e59eac599c48df45d56dd9b7cbb4d9664e0f5675d7",
+    "M-caef92af522b43f18a8c58e97acc3d58": "6edc9c55f92074030d4670662f7cb8cd24e329f0938d2cb98cbe852e524e86f4",
+    "M-2811342f46434965bf98081115bedcde": "af60ec8280f2b7a60d2ab12ee00d70801c1f43af00ba182f7a0f6f835e81f2fb",
+    "M-8e21b2ce4dec4976a576924f343e8742": "88c1e8e9eec40179286ffb50db5db346c2b7b24bc51e51be793a57f7ac924e9c",
+    "SEL-RESOURCE-LP-SUBMODULAR-v2": "76c9e60f78b3cf56f25ac4ef67e7c75f41f668d648dafd44cea144160b7b8e5e",
+    "SEL-RESOURCE-LP-SUBMODULAR-v3": "2288bb14fc30a91426cc00107c084fac7a405022953e5142d262014ca328b442"
+  },
+  "coverage": {
+    "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1": {
+      "state": "linked",
+      "comparison_scope": "实读轴向反例账本、三源复现全文、退役GAP C01及v2三射线证明；对照当前已发表3C参数族→轴向边，但本包只使用已固定v2与反例端点。",
+      "reason": "直接将v2三射线构造取d=(1,1)、e=(1,0)、f=(0,1)、λ=μ=α=1，得到指定两pair、交集各1、并集2和缺口1。不从单个轴向例推出任意矩阵分类，也不把中断的scalar assignment搜索作为证据。",
+      "edge_ids": [
+        "resource-v2-three-ray-certificate-specializes-to-axial-obstruction"
+      ],
+      "object_pin": "16d144d3e59bf43a8087069c301df2d65f68205b0c9f1cce3ba994cf489a5540"
+    },
+    "M-ed52023e7ef545d79147e2b65482dd89": {
+      "state": "isolated-after-review",
+      "comparison_scope": "实读第二轮GAP C18全节，核固定L≥3、每独立batch至多q=2互斥alternatives、每产品占至多L个单位资源及自然exante LP；与本包启用LP/两射线结果和C17/C19作模型比较。",
+      "reason": "两射线φ子模性没有给在线selectability、pair-blocker或small-hard-LP桥；q=2不蕴含L-partite，排除某个affine-plane硬例也不支付全称算法。L=3的正blocker引理或精确hard LP、再到全L量词仍待解，因此本次有界比较不造逻辑边。",
+      "object_pin": "a54f803b6d34877e53d5dfa183d7a9532373bbd0158cb038b3ee640cb2efa551"
+    },
+    "C01-v3.L1": {
+      "state": "linked",
+      "comparison_scope": "完整实读互补分裂引理、原d维对偶分裂和二维凸齐次成本证明；核交叉公式λ、μ的零坐标、可比点和零缩放。",
+      "reason": "同一分裂系数一方面完整推出二维凸锥成本格不等式及LP有效成本特例，另一方面保持原d维对偶之和并经hinge比较完整推出v3；两条关系保各自的全结果范围。",
+      "edge_ids": [
+        "resource-c01-price-split-implies-convex-homogeneous-cost",
+        "resource-c01-price-split-implies-full-two-ray-sufficiency"
+      ],
+      "object_pin": "7e10c37c032063fdf89402e59eac599c48df45d56dd9b7cbb4d9664e0f5675d7"
+    },
+    "M-caef92af522b43f18a8c58e97acc3d58": {
+      "state": "isolated-after-review",
+      "comparison_scope": "实读C19全节与登记的rank-one独立激活合同：Σx≤1、循环路线、r个切点及reverse共≤2r个orders，分布依x而不可依activation；比较启用LP、C18和C17的不同时间/可行性合同。",
+      "reason": "连续packing启用值子模没有构造限支持arrival分布或无未来信息policy，q=2 OCRS也没有给同一rank-one route合同。r=2四order的准确算法、small-LP对偶障碍及α_r最优量词仍未付；不能用offline weighted gap代替该在线问题。本次范围无成立逻辑边。",
+      "object_pin": "6edc9c55f92074030d4670662f7cb8cd24e329f0938d2cb98cbe852e524e86f4"
+    },
+    "M-2811342f46434965bf98081115bedcde": {
+      "state": "linked",
+      "comparison_scope": "完整实读二维凸齐次成本接口与C01分裂；核K对min/max封闭、次可加性、c(0)=0、LP特例达到/凸/齐次及非唯一实现/折点。",
+      "reason": "C01互补系数将两个点分为min/max，凸锥闭合及有限凸一次齐次性给两项成本不等式，相加即完整目标。有限非负P和b的LP特例再由强对偶/达到及实现缩放保证；不依光滑crosspartial猜想。",
+      "edge_ids": [
+        "resource-c01-price-split-implies-convex-homogeneous-cost"
+      ],
+      "object_pin": "af60ec8280f2b7a60d2ab12ee00d70801c1f43af00ba182f7a0f6f835e81f2fb"
+    },
+    "M-8e21b2ce4dec4976a576924f343e8742": {
+      "state": "isolated-after-review",
+      "comparison_scope": "实读C17全节及登记完整合同；核AW在k拟阵交的既定过程、归一单调coverage且单物品边际≤1、F(x)=E f(R(x))和目标维数无关尾界。比较两射线启用LP与C18/C19。",
+      "reason": "本包φ子模定理不提供AW随机过程的非线性期望接口、conditional drift或quadratic variation控制；固定modular下界可远小于F(x)。真实variance lemma（可先bounded-overlap）和输入合同仍未闭合；不能把线性a直接换成f或以conditional标签掩盖缺证。因此本次不造算法/概率逻辑边。",
+      "object_pin": "88c1e8e9eec40179286ffb50db5db346c2b7b24bc51e51be793a57f7ac924e9c"
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/resource-3a-3a-6690dabdf05908fb/resource-c01-price-split-implies-convex-homogeneous-cost.json",
+      "sha256": "e47b4db8ee03ced32d98887c8fa0fd149462df8581f8388bd7cf4b52fd9cfffb"
+    },
+    {
+      "path": "map/edges/resource-3a-3a-6690dabdf05908fb/resource-c01-price-split-implies-full-two-ray-sufficiency.json",
+      "sha256": "06b6fc1351ea36a52fc479ed12c278ff33c7a6fa4187058d0143472d6073ef3d"
+    },
+    {
+      "path": "map/edges/resource-3a-3a-6690dabdf05908fb/resource-v2-three-ray-certificate-specializes-to-axial-obstruction.json",
+      "sha256": "1e39aa15365e305a271c73a9260e35a79091b42c87ddc64e4ec6b97c789e46b0"
+    }
+  ],
+  "reviewed_by": "Boss2-local-draft-resource",
+  "review_note": "完整核对本包当前对象版本、正文/必要证据及数学承重；局部贡献与完整结果分列，开放算法义务不升级为逻辑边。仅保存本地草稿。 Boss2已审读并提升到本任务本地write_paths；尚未推送或map done。",
+  "execution_scope": "Read complete mature mathematical sources and exact task/registry pins; no rerun of historical LP/random/AW/OCRS programs. Local edge bind/check and SHA/structure checks only."
+}

@@ -1,0 +1,61 @@
+{
+  "edge_id": "commonmany-type-support-and-greedy-existence-imply-frozen-light-fpt",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-BOX-NE-FPT-TYPES",
+    "SC-K-GREEDY-BOX-EXISTS"
+  ],
+  "target_ids": [
+    "SC-K-FROZEN-LIGHT-FPT"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "MF-MODEL 的逐名显式正二进制有理原子、显式 k≥2 家设施和真实 canonical greedy 正末分数 γ。冻结恰好 w_i≥γ 及单已占选项的原客户，保留所有原已占选项。由其余轻多选客户连接的每个站点分量站数≤c、精确不同轻权值数≤d，参数 c,d 固定；采用 SC-K-BOX-NE-FPT-TYPES 所列标准固定变量 ILP 算法合同。这里只支付在轨 FPT 必成功选择；完整位多项式离轨/默认完成另保留 BOX-TO-2/MAX 合同，不主张生产代码已经实现 ILP 或去除 verify_on_path 的 H 要求。",
+  "roles": {
+    "SC-K-BOX-NE-FPT-TYPES": "支持/计数整数规划在给定占用和冻结量下精确表示每个活动类型的原菜单 NE，固定变量数给 FPT 判定与逐名见证恢复；额外固定多选客户的稳定性须另证。",
+    "SC-K-GREEDY-BOX-EXISTS": "对真实规范贪心输出，在恰同一批固定重/单选客户下保证完整盒 NE 存在；它把任意占用 IP 的条件可行性升级为该承诺域必成功。",
+    "SC-K-FROZEN-LIGHT-FPT": "收到按轻分量独立运行支持 IP 的 f(c,d)poly(L) 完整在轨盒/原客户 NE 选择器；盒/NE 输出可交抽象 BOX-TO-2，未附软件 H。"
+  },
+  "explanation": "对轻客户站点分量 C，用 F_s 表示同批冻结客户在 s 的原负载，并令 U_C 为分量内冻结与可动客户总重。每个类型是精确轻权 w_a 与其完整已占菜单 A_a；一个多选轻客户的全部 A_a 恰落在单一分量。支持变量 y_as∈{0,1} 与计数 x_as 满足 y_as≤x_as≤n_a y_as、Σ_s x_as=n_a，并以 W_s=F_s+Σ_a w_a x_as 加完整上下盒及 q_t(W_s−w_a)≤q_s W_t+q_t U_C(1−y_as)。活动位置的全部比较恰为原条件成本；非活动位置由总重上界正确关闭。至多 2d(c2^{c−1}−c) 个整数变量，固定维合同给局部 f(c,d)poly(L) 判定/见证；清分母与标签恢复位长多项式。SC-K-GREEDY-BOX-EXISTS 给同一冻结集合的全局解，其限制满足各分量 IP，所以所有局部 IP 必可行；并非由算法返回一次可行推出普遍存在。反向拼合时每个可动客户所有原选项在本分量，冻结单选自动稳定，冻结重客户即使其原备选跨分量也有 (W_s−w_i)/q_s≤γ≤W_t/q_t，因此全部客户的全部原动作均满足 NE。无轻邻居的孤立占站保原固定盒。由此总时间仍为 f(c,d)poly(L)，恢复站点纯/站内独立均匀在轨精确 NE 和完整盒。任意预设占用的 IP 仍可 infeasible；3-PARTITION 困难归约不保真实贪心承诺，故与此必成功结论无冲突。",
+  "scope": "仅合法规范贪心承诺域的在轨参数 FPT，参数为每轻分量站数和轻权种；不主张任意占用普遍可行、不求任意跨站 mixed NE，也不把固定全目录/全权种的 XP 叫 FPT。",
+  "whole_result": "ALL(SC-K-BOX-NE-FPT-TYPES, SC-K-GREEDY-BOX-EXISTS) 在上述固定维 ILP 合同和真实贪心分量 (c,d) 界下推出 SC-K-FROZEN-LIGHT-FPT 的必成功在轨结论：时间 f(c,d)poly(L) 输出同布局完整盒、冻结客户不动及全部原客户的站点纯/站内独立均匀精确 NE；其 BOX-TO-2/MAX 完成仍按目标明确的独立合同。",
+  "reviewed_by": "Boss2-commonmany-core-report",
+  "review_note": "编录本轮已完成 core 报告，完整核读类型支持正文的任意占用 IP、冻结轻分量更新、全目录 XP 和 3-PARTITION 比较；核每个活动类型扣一名原子自重、冻结重客户跨分量稳定及任意占用/真实贪心承诺区别。只导入标准固定变量 ILP 合同，不冒称全文审查 Lenstra 或实现 ILP。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/客户类型支持整数规划与有限目录选择--算法.md",
+      "sha256": "91f596960bff1f8fec521a1f6ed468aed409c2a34cdb07f2d880ca9fff663fdd",
+      "section": "固定占用的完整站纯盒NE程序"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/客户类型支持整数规划与有限目录选择--算法.md",
+      "sha256": "91f596960bff1f8fec521a1f6ed468aed409c2a34cdb07f2d880ca9fff663fdd",
+      "section": "冻重客户后的局部FPT与后续存在性更新"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/客户类型支持整数规划与有限目录选择--算法.md",
+      "sha256": "91f596960bff1f8fec521a1f6ed468aed409c2a34cdb07f2d880ca9fff663fdd",
+      "section": "任意占用的难度及两设施旧算法比较"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+    }
+  ],
+  "endpoint_pins": {
+    "SC-K-BOX-NE-FPT-TYPES": "a25ce679a6fb384cad89743a0638dcb334c4751b231615a3ad46eda20fd5958b",
+    "SC-K-FROZEN-LIGHT-FPT": "35aad9a197254ead30134dd90701d1de4d79e9ab664a3c861b39c824c2c5443f",
+    "SC-K-GREEDY-BOX-EXISTS": "1734aef77d4e8a53a08935117a99c442bbbb5190a21570b036ab13ea96efc448"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/算法/客户类型支持整数规划与有限目录选择--算法.md": "91f596960bff1f8fec521a1f6ed468aed409c2a34cdb07f2d880ca9fff663fdd",
+    "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+  },
+  "review_digest": "71b7d3011bff2fa3f8b8d14c0ca5d7256eaf99342ad41be305e3ee33d5b4c824"
+}

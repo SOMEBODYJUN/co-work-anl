@@ -1,0 +1,38 @@
+{
+  "edge_id": "commonmany-bad-order-witness-certifies-fixed-layout-lexmax",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-GREEDY-REPAIR-ORDER-NO"
+  ],
+  "target_ids": [
+    "SC-K-GREEDY-FIXED-LEXMAX-NO"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "只取正文原十客户k8输入：权80/A、32/AB、96/BEG、81/B、40/AC、120/C、52/BD、268/D、82/E、80/G。同一固定规范贪心q=(1,1,2,1,3,0)、γ80；对全部合法站纯赋值取升序设施收益字典序最大，不加完整盒过滤且不搜索其他占位。",
+  "roles": {
+    "SC-K-GREEDY-REPAIR-ORDER-NO": "给同一固定布局坏NE的明确原子、收益165/2及每个mixed偏离NE强迫176，并给同占位好NE。",
+    "SC-K-GREEDY-FIXED-LEXMAX-NO": "进一步证明固定布局所有合法赋值的收益lexmax唯一选择该坏NE。"
+  },
+  "explanation": "源坏NE最小设施收益165/2>82。要任何赋值最小收益>82，96必须在E，否则E仅82；32与52必须都在B，否则B每家至多133/2或113/2；40必须在A，否则A仅80。故唯一能超过82的候选正是坏NE(120,178,165,120,268,0)，所以它唯一固定布局lexmax。源已证该状态的B家a=165/2偏G，在所有独立mixed NE中96因G成本176而B/E至少177/178被强迫至G，收益比176/(165/2)=32/15>2。同占位只先移动40即有安全NE，故不否定贪心占位或一般因子二存在。",
+  "scope": "覆盖目标的原精确输入及全部赋值lexmax量词；未迁移成跨布局全局字典序选择。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/反例/固定贪心均衡的坏选择与静止超帽边界--反例.md",
+      "sha256": "f17a382546c11c8ee4157c911e7262023c4d35426bd29a6f66c4ef47fae8988c",
+      "section": "任意严格修复顺序可到无法因子二支撑的NE"
+    }
+  ],
+  "reviewed_by": "Boss2-local-algorithms-draft",
+  "review_note": "本地候选：逐项复核所引正式正文的完整推导、端点陈述及任务输入pin；已有有限审计仅按其真实范围复用，未重跑。accepted表示本地数学判断，未发布、未写canonical、未提交任务。",
+  "whole_result": "同一原十客户坏顺序见证加上述全部赋值比较，完整推出固定贪心布局收益lexmax唯一选择坏NE，其在每个mixed离轨NE中的收益比32/15>2，而同占位有安全NE。",
+  "endpoint_pins": {
+    "SC-K-GREEDY-FIXED-LEXMAX-NO": "1fcbc4a4e5a483373acf9950b8e8a3b8ac306a31a6205c7f6748e26530062f11",
+    "SC-K-GREEDY-REPAIR-ORDER-NO": "0378b77ce3932ed1d133ad76fb79e2d7aebb2ec1f40a8fbf36f562b294ace775"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/反例/固定贪心均衡的坏选择与静止超帽边界--反例.md": "f17a382546c11c8ee4157c911e7262023c4d35426bd29a6f66c4ef47fae8988c"
+  },
+  "review_digest": "da3fbf43ce521c991d4914c9889de616591d5dda6f834ace59c17b8cf1a76cbf"
+}
