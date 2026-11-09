@@ -18,7 +18,7 @@
     "SC-K-GREEDY-BUDGET": {
       "state": "isolated-after-review",
       "object_pin": "5c08688db4620c0cd4fe6d2c03e61e444fec71aa1bd30ee430061dee1a6a1b83",
-      "comparison_scope": "完整读取本任务声明的13个distinct文件：规范贪心完整盒定理及其‘规范贪心、冻结原池及预算’、‘原归属具有最大可达重数’、‘归一化并证明全部客户NE’、存续源、单设施源、完整续局与退化输入段；共同目录MF-MODEL定义；问题页；claims.md全文中SC-K-GREEDY-BUDGET/MAX-MULT/BOX-EXISTS/BOX-FINITE-2及相关边界；任意设施数登记审查的共同合同、复杂度、结构选择器、重置/静止超帽、反例和接续段；六套选择器复现记录；规范贪心程序合同；greedy_box.py全322行；snapshot_manifest；精确续局证书10.1–10.6；站点字典序有限构造；unrelated-machines附录tracker。逐项核对规范贪心输入、原池冻结、末次分数γ、q_tγ≤W_t^0≤(q_t+1)γ、N_v≤γ、单设施源G1，以及这些只是初始原池预算且初始分配未必客户NE。",
+      "comparison_scope": "完整读取本任务声明的13个distinct文件：规范贪心完整盒定理及其‘规范贪心、冻结原池及预算’、‘原归属具有最大可达重数’、‘归一化并证明全部客户NE’、存续源、单设施源、完整续局与退化输入段；共同目录MF-MODEL定义；问题页；claims.md全文中SC-K-GREEDY-BUDGET/MAX-MULT/BOX-EXISTS/BOX-FINITE-2及相关边界；任意设施数登记审查的共同合同、复杂度、结构选择器、重置/静止超帽、反例和接续段；六套选择器复现记录；规范贪心程序合同；greedy_box.py全322行；snapshot_manifest；精确续局证书10.1–10.6；站点字典序有限构造；unrelated-machines附录tracker。逐项核对规范贪心输入、原池冻结、末次分数γ、q_tγ≤W_t^0≤(q_t+1)γ、N_v≤γ、单设施源G1，以及这些只是初始原池预算且初始分配未必客户NE。 其量词为：对所有有限共同目录、正权、正最大覆盖且显式有理输入及任意固定平局序，执行k≥2次插入；对每个最终占站t和未占站v均给出对应不等式。",
       "reason": "SC-K-GREEDY-BUDGET在固定MF-MODEL和同一规范贪心运行下给初始占站、重数、末分数及四类转移预算（含源消失孤儿项），但不提供客户NE，也不保证任何修复后的客户池继续满足盒或预算。SC-K-GREEDY-MAX-MULT的结论是另一条关于原归属重数的时间序关系，不能由预算不等式单独推出；反向也不由MAX-MULT推出预算。两者只作为SC-K-GREEDY-BOX-EXISTS归一化的共同前提：BUDGET给c_t∈[0,1]、γ和初始盒/冻结数据，MAX-MULT给Home条件q_{h_i}≥q_t；截断—归位引理才给盒内NE。该组合按任务的overlap_comparisons列为3B follow-up，当前3A不把尚未承接的组合升格为已交逻辑边。未付义务包括3B对BOX-EXISTS的正式联合边、BOX-TO-2/单设施重置对完整续局的后续条件、一般输入位多项式总时间及MAX/RANGE调度导入；有限程序和报告适配不改变这些边界。",
       "edge_ids": [],
       "unlinked_relations": [
@@ -30,7 +30,7 @@
     "SC-K-GREEDY-MAX-MULT": {
       "state": "isolated-after-review",
       "object_pin": "b2ee941db2e2116d5d0191c6f77d88e0dbc98609d8d87ac25960c5b143e2f564",
-      "comparison_scope": "同一13个distinct文件全文实读；重点逐式核对每名客户首次覆盖home=h_i、晚开可达站的W_t^0<W_h^0、最后插入时的次得分比较、推出q_{h_i}≥q_t及按重数/开设次序可写h_i=min A_i；并核对其严格范围：只约束规范贪心的初始客户归属，不约束后续任意客户NE、静止超载或站点修复。",
+      "comparison_scope": "同一13个distinct文件全文实读；重点逐式核对每名客户首次覆盖home=h_i、晚开可达站的W_t^0<W_h^0、最后插入时的次得分比较、推出q_{h_i}≥q_t及按重数/开设次序可写h_i=min A_i；并核对其严格范围：只约束规范贪心的初始客户归属，不约束后续任意客户NE、静止超载或站点修复。 其量词为：对所有正覆盖规范贪心输出（任意k、正权和确定性平局规则）、每个已覆盖客户i及其每个可达最终占站t，都有q_{h_i}≥q_t。",
       "reason": "SC-K-GREEDY-MAX-MULT确实为SC-K-GREEDY-BUDGET同一贪心输出建立Home最大可达重数条件，这是截断归位引理的必要结构输入；但它本身既不蕴含q_tγ≤W_t^0≤(q_t+1)γ/N_v≤γ，也不蕴含客户NE或因子二续局。它与BUDGET的联合结论只能在另读SC-K-GREEDY-BOX-EXISTS抽象引理后得到：MAX-MULT负责Home，BUDGET负责归一化盒/γ；该正式联合比较在任务中明确标为stage 3B follow-up，故本3A批不宣称已建立逻辑边。保留严格反例边界：不能给任意任命的归属加最大重数，也不能把达到原NE后的迁移归属继续当作MAX-MULT结论。一般位多项式选择、MAX/RANGE完成器和全局最佳常数仍开放。",
       "edge_ids": [],
       "unlinked_relations": [
