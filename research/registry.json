@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-map-mitm-rational-center-round24-v1.json",
-    "sha256": "30e111321a1d75506cb5dd9b887f8b082825396faeae1ce7c1353e06a2bc0d64"
+    "path": "research/registration/baseline-map-mitm-algebraic-center-round25-v1.json",
+    "sha256": "f14a20beb4cb2546f37816d9f023cdc3d09b8c37c141bcfd0c486167078d92d7"
   },
   "objects": [
     {
@@ -150456,6 +150456,42 @@
       ]
     },
     {
+      "object_id": "facility-games/threshold-half-table-with-isolated-algebraic-center",
+      "version": 1,
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "title": "单谷半表的实代数目标中心与精确仿射见证",
+      "model": "两家设施的实际条件负载成本，非负有理私有背景和正有理公共原子独立混合。",
+      "statement": "给显式平方自由整数多项式及有效有理隔离区间中的唯一实中心θ，单谷半表在poly(n,L)3^ceil(n/2)位时间和空间（目标比较成本另计）恢复真精确最优NE。候选差距仅有理或θ，概率和负载都可用同一θ的有理仿射式输出。绝对距离目标可仅用同一根比较器精确比较。",
+      "quantifiers": "每个有限有理局部输入、每个有效稠密代数中心描述、每个中心两侧单谷且对实际候选可精确比较的目标。",
+      "assumptions": [
+        "中心多项式显式稠密、平方自由，给端点非根的有效有理开隔离区间。",
+        "一般目标的精确比较成本单列，代数输出以一个共享根和有理仿射系数表示。"
+      ],
+      "scope": "精确局部单谷查询的表示迁移，保完整闭支持以及各侧候选，不给整个谱。",
+      "objections": "无理中心时有理输出可能不可能。现有Fraction程序适用其有理接口；此证明给另一个精确代数表示合同。",
+      "body": {
+        "path": "archives/facility-games/state/算法/单谷半表的实代数目标中心与精确仿射见证--算法.md",
+        "sha256": "4ffd279eaa5924aa22d2c7e776ea83afaf74a9a9e4f4ea079d7c866124d4348a"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
+          "sha256": "3f89e2adde3fd647ec4834d9955d1441f79cd6c7e2b7be3d735b4c9f624dcc49",
+          "section": "局部查询的确切输入与保证"
+        },
+        {
+          "path": "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md",
+          "sha256": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1"
+        },
+        {
+          "path": "archives/facility-games/tools/verify-algebraic-center-half-table.py",
+          "sha256": "3af86e6b64b380cd4741e7cb1c9745b9530669be2b2f40d6c5d57e914ffc5106"
+        }
+      ],
+      "sources": []
+    },
+    {
       "object_id": "facility-games/threshold-meet-in-middle-objectives-and-response-pruning",
       "version": 4,
       "title": "局部阈值半表对单谷目标的精确NE优化",
@@ -191774,8 +191810,9 @@
       "sha256": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1",
       "disposition": "objects",
       "object_ids": [
+        "EXACT-KAPPA",
         "M-b5488c2696964ec58745ce5426f2b777",
-        "EXACT-KAPPA"
+        "facility-games/threshold-half-table-with-isolated-algebraic-center"
       ],
       "reason": "独立完整闭支持谱主body；m=1整区间、n=0、端点/重复支持、任意实际混合人数及有理位长完整保全。"
     },
@@ -192326,6 +192363,15 @@
       "reason": "全NE区间上的实例最优完整续局算法；原有限检查器边界保留。\n增量精确范围：facility-games/all-cross-single-overlap-interval-optimum-and-attainment-check: 保留当前canonical的精确主身份与完整body；增量版本补接已经实际阅读的证据。。同页其余独有数学继续由原任务/实际owner处理；本条不宣称整页其它Claim均已被本组接收。 本22沿用现行consolidated成熟候选，按实际body与所列evidence完整支持章节定向核对；保全部canonical原owner，不以本次哈希/路由核验冒充程序新运行、原图片新查看或原始证明新盲审。"
     },
     {
+      "path": "archives/facility-games/state/算法/单谷半表的实代数目标中心与精确仿射见证--算法.md",
+      "sha256": "4ffd279eaa5924aa22d2c7e776ea83afaf74a9a9e4f4ea079d7c866124d4348a",
+      "disposition": "objects",
+      "object_ids": [
+        "facility-games/threshold-half-table-with-isolated-algebraic-center"
+      ],
+      "reason": "有理单谷半表的精确实代数表示迁移与独立补核。"
+    },
+    {
       "path": "archives/facility-games/state/算法/双目录交叠参数下的实例最优续局--算法.md",
       "sha256": "4bb199d4ca50c5c4fc56955db0238b4a831e4ce9d9f1e2a8b44d1932a72e8274",
       "disposition": "objects",
@@ -192391,9 +192437,10 @@
       "sha256": "3f89e2adde3fd647ec4834d9955d1441f79cd6c7e2b7be3d735b4c9f624dcc49",
       "disposition": "objects",
       "object_ids": [
-        "facility-games/threshold-meet-in-middle-objectives-and-response-pruning",
         "M-78b5c8b948b14f799fb5849a464c17a7",
-        "M-a4510cf6b0ee470384411c5b272b372b"
+        "M-a4510cf6b0ee470384411c5b272b372b",
+        "facility-games/threshold-half-table-with-isolated-algebraic-center",
+        "facility-games/threshold-meet-in-middle-objectives-and-response-pruning"
       ],
       "reason": "本批主body数学已按独立模型/命题分清，保完整证明及必要证据；不由容器页ID吞不同量词。"
     },
