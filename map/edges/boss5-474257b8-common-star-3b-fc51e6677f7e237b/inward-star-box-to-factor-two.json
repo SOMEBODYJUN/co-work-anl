@@ -1,0 +1,101 @@
+{
+  "edge_id": "commonmany-inward-star-box-to-factor-two",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-INWARD-STAR-2",
+    "SC-K-GREEDY-BOX-TO-2",
+    "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import"
+  ],
+  "target_ids": [
+    "SC-K-GREEDY-BOX-FINITE-2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同目录 MF-MODEL，显式有限非空目录 S、k≥2 家带标签设施及逐名正二进制有理原子客户。保留同一次规范贪心的设施插入标签、首次开站次序、原归属与原池、最终重数 q 和正末分数 γ。冻结只有一个已占选项或权重至少 γ 的已覆盖客户。每个非平凡轻客户分量是星，每名轻客户恰有该星中心 c 和一个叶 ℓ 两个原已占选项，所有叶都早于 c 首开。故这些客户原属叶，q_ℓ≥r=q_c。冻结客户可另有跨轻分量的原选项。",
+  "roles": {
+    "SC-K-INWARD-STAR-2": "以原池全盒为初态，用最大动态键逐名处理轻客户，构造同一带标签布局的完整盒和全部原动作精确在轨 NE。额外满足软件终检所查的归位保护 H。",
+    "SC-K-GREEDY-BOX-TO-2": "给定同一贪心数据和完整盒原 NE，支付所有实际标签偏离的可行受帽种子与完整续局规则。存续源取当前客户池，消失源重置全部原客户池。",
+    "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import": "取导入引理已证的 MAX 部分。对每个固定布局的相同单位容量标签设施求精确纯 NE，保持普通设施最大负载上界，并支付默认查询的位多项式时间。",
+    "SC-K-GREEDY-BOX-FINITE-2": "得到其在晚开中心轻星输入域上的完整因子二结论，且本域具有位多项式构造与默认单次求值。"
+  },
+  "explanation": "从原归属开始，逐叶按轻权非增排队，取最大队首键 U=r(A_ℓ−w)/q_ℓ+w，仅在 (A_ℓ−w)/q_ℓ>C/r 时移入中心。两种结果均弹出该客户。严格移动后叶价仍大于旧中心价≥γ，故保叶下盒。若中心新重 C+w>(r+1)γ，则旧价 C/r>γ+(γ−w)/r≥γ+(γ−w)/q_ℓ≥(A_ℓ−w)/q_ℓ，矛盾。其余盒端点由叶只减、中心只增自动保持。叶拒绝者永久稳定。更新后的叶队首键不增，因为下一权不增、1−r/q_ℓ≥0、叶总重不增，故全星弹出键非增。对已迁入 j 的原返回动作，以 V_j=rA_ℓ/q_ℓ+w_j 比较。每次处理后 V_j≥本次最近键 U 且 C<V_j。若移动，C_new=C_old+w<U，新客户 V=U，旧的异叶 V 维持原值，同叶旧客户新 V_j=U+(w_j−w)≥U。拒绝时各 V 与 C 不变。此处只需最近键，同叶后续移入可使旧 V_j 低于其入场键。最终孤立站保原池。轻客户的留叶和原返回动作均已验证。冻结重客户在任一原已占备选 t 的比较由 (W_s−w_i)/q_s≤γ≤W_t/q_t 给出，跨分量也成立。单站客户的同址设施条件成本相同。客户先整原子选站，再在该站实际标签设施间独立均匀，原始条件成本为同一自重加外部成本，故对全部原设施动作均为精确 NE。无可达设施者未服务。固定实际偏离 f:u→v，令 a=W_u/q_u≥γ。q_u≥2 时全部旧站存续，当前源池重 q_u a 恰是 q_u−1 家静止设施的装箱预算，其它当前池重≤(q_t+1)γ≤(q_t+1)a。目标原已占时 f 初始为空，目标原未开时只给它真正新增客户，重 N_v≤γ。得到帽 B=2a。q_u=1 时恢复全部原池，原归到最终单设施站的客户并 P 的旧已占选项也都是单设施站。第一次开此类站时的竞价给各静止单设施站 w(P∩C_t)≤2γ，高重数静止站保原池并按 γ 装箱。消失源的原客户优先挂可达静止站。目标原已占时 f 初始为空，目标原未开时 f 初重≤N_v+w(J_u^0∩C_v)≤2γ。无新可达设施者未服务。此支用 B=2γ≤2a。两支中 f 均为普通设施。受帽种子暂移全部超 B 的独占原子及其设施。每名普通客户保有种子标签，MAX 使用其全部原可达普通标签。恢复后，普通客户去超帽设施成本>B，孤立重客户已经只付自重。故还原的是原固定布局的精确纯 NE，偏离设施终收益≤B≤2a。其余布局从固定可行纯赋值在全原标签设施上用 MAX 求默认纯 NE。每个实际偏离布局只改一个标签坐标，k(|S|−1) 项各异，可同时指定，默认只对未列布局调用。分量识别、规范贪心、降权排序及堆维护只需多项式操作，每名轻客户最多一次决定和移动。原权分母积 D 的位长受输入分母总位长控制，D 倍池总重为整数，贪心分数、键和帽的比较至多再除以显式重数并作交叉乘法。装箱次数和原子/标签数多项式，MAX 用整数权的总重对数给位界。保留每家实际标签为一台单位容量机器，可局部重编号后逐标签映回。H 是星算法的附加保证。留叶者由上盒给出。已移 j 的外部成本 (C−w_j)/r<A_ℓ/q_ℓ≤γ+(γ−w_j)/q_ℓ。故对原物理标签、原 home 和 γ 一致的赋值可满足 verify_on_path 的额外数学条件。数学 BOX-TO-2 的输入是同一布局的完整盒与精确 NE，无 H 条件。当前软件的有限 pure_improve 与文献 MAX 的数学位界分别计。",
+  "scope": "正覆盖且全部非平凡轻分量都是规范贪心的晚开中心两选项星。叶数、同边人数及轻权种数可随输入增长，空轻集也可。三已占选项、同一星内混合开站方向或一般轻分量超出此边。零覆盖在 FINITE-2 的退化分支另行处理。",
+  "contribution": {
+    "result": "在本域的每个显式有理输入上，位多项式构造同一规范贪心标签布局及一份完整精确客户续局的紧凑表示。全部 k(|S|−1) 个实际偏离可同时列出精确纯 NE，并逐项满足 L_f′≤2L_f。任意未列布局的默认纯 NE 可按查询在位多项式时间求值。",
+    "remaining": "一般输入的有限因子二保证已有交错势构造。此快捷选择器只支付所述晚开星域。若要把这里的总位多项式时间扩到任意合法轻菜单，仍需域外的统一完整盒精确在轨选择器。"
+  },
+  "reviewed_by": "Boss1",
+  "review_note": "沿用现行四个登记版本，实读并重建当前键归纳、完整盒保真和原动作比较。分开核实原池及当前池、四类实际偏离、标签默认及正有理缩放。查对作者期刊稿 Theorem 6.5 的 MAX 合同，本组合只用最大端。旧早开中心边按自身最小叶价算法已收录，当前晚开证据逐客户只弹出一次。有限补证与规范有限软件均未充当多项式 MAX 的实现证据。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/晚开中心星形的最大键盒均衡--算法.md",
+      "sha256": "2eca6591d675afaa727d8fda3b944945f09bcfa501bb64f21a42ef5aa9300443",
+      "section": "精确域与算法"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/晚开中心星形的最大键盒均衡--算法.md",
+      "sha256": "2eca6591d675afaa727d8fda3b944945f09bcfa501bb64f21a42ef5aa9300443",
+      "section": "已移客户的正确不变量"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/晚开中心星形的最大键盒均衡--算法.md",
+      "sha256": "2eca6591d675afaa727d8fda3b944945f09bcfa501bb64f21a42ef5aa9300443",
+      "section": "输出的归位保护H"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "存续源：按当前在轨池装箱"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "单设施源：重置全部原客户池"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "完整续局和时间层级"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md",
+      "sha256": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+      "section": "受帽纯均衡修复引理"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md",
+      "sha256": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a",
+      "section": "输入与准确结论"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md",
+      "sha256": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a",
+      "section": "有理位长与分量版"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/计算/规范贪心完整续局程序与选择器接口--计算.md",
+      "sha256": "0fa6549c64b7b2e402c696140c6cf97bcc8fa2d3131f02051b299f23c3efbdc4",
+      "section": "规范贪心与在轨终检"
+    }
+  ],
+  "endpoint_pins": {
+    "SC-K-GREEDY-BOX-FINITE-2": "0e3f0944b8ebe9195ae24070478d8e8d9a9c1568202317acab01d7a516eff027",
+    "SC-K-GREEDY-BOX-TO-2": "c5f0af766e5c2d960dc7f4b714189e568990f1165bbaeefba51b7a0d89a3ce14",
+    "SC-K-INWARD-STAR-2": "f470d00c42a284499ab5ac6b8833d1929ba11b0693878e1a3b41461fbb936a46",
+    "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import": "5f2019da9ff05afa3a2e57eb2cf96d8c63eef19e66208bb0290ce535628737f6"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+    "archives/facility-games/subarchives/common-many/state/算法/晚开中心星形的最大键盒均衡--算法.md": "2eca6591d675afaa727d8fda3b944945f09bcfa501bb64f21a42ef5aa9300443",
+    "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+    "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+    "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a",
+    "archives/facility-games/subarchives/common-many/state/计算/规范贪心完整续局程序与选择器接口--计算.md": "0fa6549c64b7b2e402c696140c6cf97bcc8fa2d3131f02051b299f23c3efbdc4"
+  },
+  "review_digest": "a30f2a52dbc6bb5b8f17ea755a0722c65fb6f77dc6647ed7767ba5ba4727df7e"
+}

@@ -1,0 +1,51 @@
+{
+  "edge_id": "cag-pay-m-slots-ca8933c236604e74-actual-prefix-fixed-optimum-shortfall",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-fba1c001a1cd4e05b5cdb4285ab6215c"
+  ],
+  "target_ids": [
+    "M-fec05c0478c149c09227f2c9dc18748a"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意整数k≥12，取m=2k−5。唯一单位客户x，有限共同目录{A,B}，A为空，B={x}。令完整策略在每个有序历史都选择B。",
+  "roles": {
+    "M-fba1c001a1cd4e05b5cdb4285ab6215c": "给固定合法m槽真最优组合的折点及全t优化，用于对指定实际前缀的严格短付作精确认证。",
+    "M-fec05c0478c149c09227f2c9dc18748a": "被比较的是要求指定实际前缀、指定真最优m元组支付的较强命题；原PAY端点只作局部边界。"
+  },
+  "explanation": "任意历史若已有j次B、余r位，当前按策略选B的终局利润为1/(j+r)>0，选A的终局利润为0，后继照原策略选B。故每个历史严格最优，构成完整纯SPE。实际B^m中长度k−5的前缀正余k位，b=k−5、E=(k−5)/m、W=O=1。J=(B,A,…,A)恰m槽且确为覆盖最优，给d=1。固定J及此实际前缀时，最优总价L(m)=2(k−2)/[m(2k−5)]+4/[k−1+m(k−4)]，由单类型断点求得；又由q≤4/[m(k−4)]知(k−4)L(m)≤[k+(k−4)/(2k−5)]/m<1。因为1/(k−4)≤5/(2k−5)=1−2E（等价3k≥15），最小收费1−L(m)>2E。k=12,m=19的最小收费、2E与短差依次为54139/58843、43358/58843、10781/58843。改选另一真最优J′=(B,…,B)，同一实际前缀上d=m，第一项价格2(k−2)/(2k−5)>1，q≥0，故任意t已能支付。该子局的剩余利润最优是k次B、F_k(b)=k/m=P；d=1的原真最优J没有被当成F_k的最优组合。",
+  "scope": "全历史完整SPE的一族真实实际前缀、一个固定原真最优m元组及全部参数t。原存在式允许同前缀改选J′，而且可以另选前缀。",
+  "contribution": {
+    "result": "给出原PAY之固定实际前缀、固定真最优J强化的解析反例，且同一输入和实际前缀另有真最优J′支付。",
+    "remaining": "一般反PAY需某份完整SPE在所有允许实际前缀、所有真最优组合和所有t均短付。此族在所展示前缀已有可支付的J′，没有这项结论。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/真实前缀支付的加权分位与完整路径切断--算法.md",
+      "sha256": "85a0b934af56c9eaee00fc4ac7c42d4eb90c9a5d8e87342df24989ca272f8852"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/联合最小分母与末位保底的高背景半利润--定理.md",
+      "sha256": "b9bda1b37c8e3c16ac27dc6af6cd3b1164b2187f3c21fe9056100bad912519e2",
+      "section": "同背景的利润和精确条件"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐历史激励、原真最优覆盖、固定前缀最终E和有理最优收费均已独立重算。",
+  "endpoint_pins": {
+    "M-fba1c001a1cd4e05b5cdb4285ab6215c": "d354c31b3fa6f438006e6ccac60e792cd37054cf1a9edf1bd6799fb5dac1f82f",
+    "M-fec05c0478c149c09227f2c9dc18748a": "a950698327d11c9b9827c24a08628997cd458901d7246dc77e0b690db7f6ecb1"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/真实前缀支付的加权分位与完整路径切断--算法.md": "85a0b934af56c9eaee00fc4ac7c42d4eb90c9a5d8e87342df24989ca272f8852",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/定理/联合最小分母与末位保底的高背景半利润--定理.md": "b9bda1b37c8e3c16ac27dc6af6cd3b1164b2187f3c21fe9056100bad912519e2"
+  },
+  "review_digest": "1a404243079664342613f7953b4a03364a6823a49702cde78cf613c49b2582e6"
+}

@@ -1,0 +1,52 @@
+{
+  "edge_id": "cag-pay-m-slots-ca8933c236604e74-late-pair-pay-from-double-covered-support",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-fba1c001a1cd4e05b5cdb4285ab6215c"
+  ],
+  "target_ids": [
+    "M-fec05c0478c149c09227f2c9dc18748a"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "给定原单位共同目录的一份完整纯SPE及一份真最优m槽组合J，m≥2。设U={x:d_x>0}。假定沿这份SPE的同一实际路径，某个余至少两人前缀已使每个x∈U至少被覆盖两次。",
+  "roles": {
+    "M-fba1c001a1cd4e05b5cdb4285ab6215c": "固定实际前缀时提供PAY内层q；非负性给每个正d客户收费≤1，足用于末对总账。",
+    "M-fec05c0478c149c09227f2c9dc18748a": "证明原实际前缀存在义务在最优支持已双重覆盖的条件类上成立。"
+  },
+  "explanation": "沿同一实际路径延到正余两人前缀；令b′_x为该前缀负载，a′_x∈{0,1,2}为最后两次实际行动负载。对U内客户，b′_x≥2，故该客户给过去玩家的最终利润为b′_x/(b′_x+a′_x)≥1/2。其它过去利润非负，所以2E′≥|U|=O。末对k=2时，q两支在[0,4]均非负，收费1−q≤1，故同一真最优J在这个实际前缀对任意t都支付。此时W=O也成立，因为实际前缀已覆盖U且原m槽覆盖最大值为O；该覆盖等式本身不替代对PAY的2E′证明。若高背景已经验证在某原真最优J的全部支持上，则k≥12、b≥k−5给此前置双重覆盖。高背景定理只给某最优剩余k槽比较组的支持条件时，另须证明该支持包含某原真最优m槽组合的支持，或直接验证后者的背景。U为空时不等式由空收费及E′≥0成立。",
+  "scope": "同一路径上的真实末二前缀、同一个原真最优J及任意共同t。已有实际高背景且涉及原最优支持时可调用，离轨合法高背景或仅剩余最优组的背景条件不够。",
+  "contribution": {
+    "result": "此前实际双覆盖某个原真最优支持时，最后两人前缀以同一J支付，故该条件类满足原PAY。",
+    "remaining": "一般PAY还需处理实际此前缺少对任意真最优支持的双重覆盖的SPE；单有某个剩余k槽最优组高背景不建立该条件。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/真实前缀支付的加权分位与完整路径切断--算法.md",
+      "sha256": "85a0b934af56c9eaee00fc4ac7c42d4eb90c9a5d8e87342df24989ca272f8852",
+      "section": "固定输入和原收费"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/联合最小分母与末位保底的高背景半利润--定理.md",
+      "sha256": "b9bda1b37c8e3c16ac27dc6af6cd3b1164b2187f3c21fe9056100bad912519e2",
+      "section": "同背景的利润和精确条件"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "以真实末叶客户份额核2E，条件只用同一实际路径的覆盖单调性，未用剩余利润结论替代原账。",
+  "endpoint_pins": {
+    "M-fba1c001a1cd4e05b5cdb4285ab6215c": "d354c31b3fa6f438006e6ccac60e792cd37054cf1a9edf1bd6799fb5dac1f82f",
+    "M-fec05c0478c149c09227f2c9dc18748a": "a950698327d11c9b9827c24a08628997cd458901d7246dc77e0b690db7f6ecb1"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/真实前缀支付的加权分位与完整路径切断--算法.md": "85a0b934af56c9eaee00fc4ac7c42d4eb90c9a5d8e87342df24989ca272f8852",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/定理/联合最小分母与末位保底的高背景半利润--定理.md": "b9bda1b37c8e3c16ac27dc6af6cd3b1164b2187f3c21fe9056100bad912519e2"
+  },
+  "review_digest": "cf5deaf6b59d9087575ebe807747516c932bac5359b821e4df3715ad77323f77"
+}
