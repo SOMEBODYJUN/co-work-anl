@@ -1,0 +1,54 @@
+{
+  "edge_id": "um-e826f610-one-boundary-oracle-to-fixed-q-joint-menu",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-FOREST-BOUNDARY-AUGMENT-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/fixed-many-boundary-forest-joint-menu-from-one-boundary"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "普通显式非负有理不相关机。每项原任务有一或两有限端，去平行后的简单支撑为森林。挂件只有一个无帽边界 a，另有 q 个互异受限边界 b_j；比较 ρ 在原内部 V 和所有 b_j 各自负载≤T。T≥0，0<η≤1；仅处理挂件原任务，外部贡献不进变换后的局部 oracle。",
+  "roles": {
+    "UM-FOREST-BOUNDARY-AUGMENT-v1": "提供唯一无帽根 a 的一侧精确支配和统一阈值 T 的真实全任务回溯。",
+    "unrelated-machines/fixed-many-boundary-forest-joint-menu-from-one-boundary": "用同一个预算向量和同一个回溯 τ 同时给出全部原边界坐标及固定 q 的位复杂度。"
+  },
+  "explanation": "取 ε=η/3。T>0 时，对 b_j 以最小正有限端 δ_j 起步生成比例 1+ε 的几何格点，截于 T 并补 T，另含 0；无正端时只留 0，δ_j>T 时没有正比较负载，可省略冗余 T。对每份比较，正负载 x_j 有 x_j≤C_j≤(1+ε)x_j，零坐标取 C_j=0，笛卡尔积包含这个联合预算。每向量对 C_j>0 的行只把挂件的有限 p_{b_j,e} 乘 T/C_j；C_j=0 删正端且保零端。某项任务失去所有端则跳过。缩放不添边，删端只能删边或变单端，故可将全部 b_j 作为内部并对 a 调一次单边界算法，精度 ε。匹配预算下 ρ 不用删端且变换后每个内部负载≤T，故不能错误拒绝。输出 τ 直接沿原任务标签与端点还原。a 和原 V 时间未改，故 L_a(τ)≤L_a(ρ)，V≤(1+ε)T；每个正预算行恢复乘 C_j/T，得 L_{b_j}(τ)≤(1+ε)C_j≤(1+ε)^2x_j≤(1+η)x_j，且每个返回项的该坐标≤(1+η)T。零预算行恰零。T=0 只有零向量，删全部非 a 正端；逐任务优先选非 a 零端，其次原 a 端，无剩余端则无比较。这样内部与受限边界全零，a 精确最小，仍可有正的 a 私人负载。q=0 取空预算向量一个，空任务给空分配。对输入位长 L，正格点指数 h=O(1+L/ε)，每个格点编码位长至多随 h 乘比例编码位长增长，行比值及 oracle 输入因此位多项式。最多 ∏_j|G_j|=[O(1+L/ε)]^q 项与调用，每项至多保存全部原任务的一个完整赋值。",
+  "scope": "这是全部 b_j 的同项联合保证。对任意有限 q 构造仍成立，复杂度的统一多项式结论只在 q 固定时成立。a 无帽；有环、共享边界外部共同选择和任意串行摘要各有额外义务。空菜单只证无原比较，非空可仅为放大后可行。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/单边界森林与极小超载星双源审查--审查.md",
+      "sha256": "8776d3938fd201fbdee497489d521bf52dc11df4cfd16be01ce8e4024f7a9069",
+      "section": "1. 定义域与精确合同"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单边界森林与极小超载星双源审查--审查.md",
+      "sha256": "8776d3938fd201fbdee497489d521bf52dc11df4cfd16be01ce8e4024f7a9069",
+      "section": "2. 森林动态规划与归纳证明"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/固定多个受限边界的森林联合真实菜单--定理.md",
+      "sha256": "1cbc84ee5f2f0d6581bbbbbb1b9b3ab921476b4db767774d2ebac436fdf34af7"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/森林边界审查源e279补录--审查.md",
+      "sha256": "a541011ce4b4f96ed104d399b7906189b2cc15f85169e9d0b4c6855a9ca7a402",
+      "section": "七、恢复、共享边界与误差去向"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "独立核算缩放不新增可用端、零帽保零、T=0 及 q=0，并以原标签同一 τ 回算各坐标；格点个数与有理数编码分开计。",
+  "whole_result": "由单边界真实一侧支配，按每个联合预算至多一次调用构造 q 受限边界真实菜单。每个原比较存在同一 τ，使 a 精确不增、各 b_j 相对对应原负载至多放大 1+η 且保零，每个返回项的 V 和全部 b_j 均≤(1+η)T。菜单/调用数为预算数乘积，固定 q 时总位多项式。",
+  "endpoint_pins": {
+    "UM-FOREST-BOUNDARY-AUGMENT-v1": "f2adb07c45bd67c5983ed2fe6c06d9a49d3d4de67d178a75618905897e3731de",
+    "unrelated-machines/fixed-many-boundary-forest-joint-menu-from-one-boundary": "2ae298d303bc7f0b6eaa769e734dedfacc6cedcbb105e7de78ed706f39d7b6d9"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/单边界森林与极小超载星双源审查--审查.md": "8776d3938fd201fbdee497489d521bf52dc11df4cfd16be01ce8e4024f7a9069",
+    "archives/unrelated-machines/state/定理/固定多个受限边界的森林联合真实菜单--定理.md": "1cbc84ee5f2f0d6581bbbbbb1b9b3ab921476b4db767774d2ebac436fdf34af7",
+    "archives/unrelated-machines/state/审查/森林边界审查源e279补录--审查.md": "a541011ce4b4f96ed104d399b7906189b2cc15f85169e9d0b4c6855a9ca7a402"
+  },
+  "review_digest": "bc0b69e362ee9f4932e30b928be6f34d5e3e3ec98867f84a8aab2905d223153a"
+}

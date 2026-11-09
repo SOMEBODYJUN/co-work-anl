@@ -1,0 +1,51 @@
+{
+  "edge_id": "um-e826f610-prefix-conditioning-pays-moment-order-upper-bounds",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-C2-PREFIX-CONDITIONING-DEGREE-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/conditional-moment-orders-sharp-at-every-prefix-depth"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "普通显式不相关机中真实有限完整分配来源。F 为正概率相容 t-literal 前缀，真实端指标是 one-hot。使用同一个来源的原负载系数及矩，局部化器为两个至多一次索引乘线性负载松弛量，M₂索引至多二次。",
+  "roles": {
+    "UM-C2-PREFIX-CONDITIONING-DEGREE-v1": "给出旧条件满载恒等式、真实 one-hot 乘积约化以及局部化器和 M₂ 的度数接口。",
+    "unrelated-machines/conditional-moment-orders-sharp-at-every-prefix-depth": "获得任意 t 三种指定来源条件量的逐项精确恢复上界。"
+  },
+  "explanation": "对原端集合 S，条件乘积为 y_{F∪S}/y_F，重复端只计一次，不相容乘积为零。于是原完整 L_i=Σ_e p_e x_e 的每个条件项最多看 t+1 阶。degree-one 局部化器每条目先乘两个至多一次索引，再乘 T−L_i，分子最多看 t+3 阶。完整 M₂ 每条目是两个至多二次索引的乘积，最多看 t+4 阶。三者的分母 y_F 只用 t 阶且严格正。公式对含零及全正有理处理时间同样适用。旧 t=4 的修复只直接给标量紧性专例；固定余项抵消的旧互补 3/2 见证不支持完整条件负载差。",
+  "scope": "来源固定时的精确上界。已付度数计算不生成真实最优来源，不给更高阶矩 oracle，也不排算法另选耦合。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/障碍/四阶矩与指定前缀的整机负载--障碍.md",
+      "sha256": "74ab67dd4109eca5822f1e14c3ada3af9af8f5b42a3aefe79b61f05ecd294760",
+      "section": "矩阶数与真实条件量"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/真实最优来源条件矩阶的逐前缀深度锐性--定理.md",
+      "sha256": "bac073fd77692f4b9b47aefcb255809ca434d3991d8ea84c6c3edec3585c1a63"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "分别展开标量、degree-one slack 条目及 M₂ 条目，核了分母和 one-hot 冲突，区分旧 t=4 见证与全深度锐性。",
+  "contribution": {
+    "result": "给定正概率前缀及相应原矩表，完整条件标量负载、degree-one 负载局部化器与完整 M₂ 分别由最高 t+1、t+3、t+4 阶精确恢复。",
+    "remaining": "逐 t 的低一阶非识别须分别构造同一矩阵两份真实 OPT=2 来源，证明全部低阶端矩一致和指定条件条目确有差，并验证全正有限端的改写。旧四阶标量例本身只完成一个深度和一种条件量。"
+  },
+  "endpoint_pins": {
+    "UM-C2-PREFIX-CONDITIONING-DEGREE-v1": "daacd691bd442a3162297122bea447d133ea2a583689a6bb5201344465b7b71b",
+    "unrelated-machines/conditional-moment-orders-sharp-at-every-prefix-depth": "28ffa1091359d2eda031901a1b1a16676deb0ebac7a634fe230c6c71425fe5cf"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/障碍/四阶矩与指定前缀的整机负载--障碍.md": "74ab67dd4109eca5822f1e14c3ada3af9af8f5b42a3aefe79b61f05ecd294760",
+    "archives/unrelated-machines/state/定理/真实最优来源条件矩阶的逐前缀深度锐性--定理.md": "bac073fd77692f4b9b47aefcb255809ca434d3991d8ea84c6c3edec3585c1a63",
+    "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+  },
+  "review_digest": "60c1c4a1ed191387661eaa33250558b47d096bacebef105e8f6c9a73d895f7d8"
+}

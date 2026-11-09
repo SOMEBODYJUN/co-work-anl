@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-e826f610-sharp-moment-orders-specialize-to-four-step-load",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/conditional-moment-orders-sharp-at-every-prefix-depth"
+  ],
+  "target_ids": [
+    "UM-C2-PREFIX-CONDITIONING-DEGREE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取逐深度定理的 t=4、n=5 标量奇偶构造的原非负时长版本。前四 bit 的 1 选 A，末位的 1 选 B，C-only 锚点时长 2；再加一项 A/B 双端均零且两个来源都固定到 A 的原任务。",
+  "roles": {
+    "unrelated-machines/conditional-moment-orders-sharp-at-every-prefix-depth": "提供通用奇偶真实 OPT=2 来源构造、低一阶一致性、实际条件负载差及一般次数上界。",
+    "UM-C2-PREFIX-CONDITIONING-DEGREE-v1": "落在旧对象要求的精确七任务矩阵、指定四步前缀及 16 项来源。"
+  },
+  "explanation": "按旧编号将强制 C 任务列为 7，补加的零任务列为 6。其 A、B 端指标在来源上分别恒 1、0，对任何≤4 阶端乘积只会删去一个常数因子或归零，故仍全部匹配；C 端恒 1。原五位偶/奇类各 16 项，仍是同一矩阵的完整分配；C 强制给下界 2，A/B 只分一件时长 1，全部支持达到峰 2。F 把四位钉为 1，两类均恰一项，概率 1/16，偶类末位 0、奇类末位 1，完整条件负载向量分别为 (1,0,2)、(0,1,2)，对应 B5 的五阶联合分别 0、1/16。通用公式也保留旧对象的 t+1/t+3/t+4 计数；需要时逐深度定理给一般下界。",
+  "scope": "这是旧整机条件负载存在性及矩阶接口的精确特化。旧特定向量使用零时长版本；全正时长版仍分离 B，但不声称保留旧 A 的数值。有限 PSD/程序统计不作为数学端点，结论只关乎指定来源信息。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/真实最优来源条件矩阶的逐前缀深度锐性--定理.md",
+      "sha256": "bac073fd77692f4b9b47aefcb255809ca434d3991d8ea84c6c3edec3585c1a63"
+    },
+    {
+      "path": "archives/unrelated-machines/state/障碍/四阶矩与指定前缀的整机负载--障碍.md",
+      "sha256": "74ab67dd4109eca5822f1e14c3ada3af9af8f5b42a3aefe79b61f05ecd294760",
+      "section": "同一矩阵、两份真实最优来源"
+    },
+    {
+      "path": "archives/unrelated-machines/state/障碍/四阶矩与指定前缀的整机负载--障碍.md",
+      "sha256": "74ab67dd4109eca5822f1e14c3ada3af9af8f5b42a3aefe79b61f05ecd294760",
+      "section": "矩阶数与真实条件量"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "独立按旧编号补零任务、按 parity 计数支持和前缀概率，并按全部七任务回算 A/B/C，未使用只查一枚 literal 的旧互补见证。",
+  "whole_result": "逐深度锐性定理的 t=4 标量构造经一个固定的零任务填充，给出旧三机七任务同矩阵的两份 16 支撑真实 OPT=2 来源，全部≤4 阶端矩相同，但同一概率 1/16 的四步前缀下完整条件负载向量分别为 (1,0,2) 与 (0,1,2)，并保留旧一般条件矩阶公式。",
+  "endpoint_pins": {
+    "UM-C2-PREFIX-CONDITIONING-DEGREE-v1": "daacd691bd442a3162297122bea447d133ea2a583689a6bb5201344465b7b71b",
+    "unrelated-machines/conditional-moment-orders-sharp-at-every-prefix-depth": "28ffa1091359d2eda031901a1b1a16676deb0ebac7a634fe230c6c71425fe5cf"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/真实最优来源条件矩阶的逐前缀深度锐性--定理.md": "bac073fd77692f4b9b47aefcb255809ca434d3991d8ea84c6c3edec3585c1a63",
+    "archives/unrelated-machines/state/障碍/四阶矩与指定前缀的整机负载--障碍.md": "74ab67dd4109eca5822f1e14c3ada3af9af8f5b42a3aefe79b61f05ecd294760"
+  },
+  "review_digest": "5e17a8958f57dece04fbce09947c46a23622f38547e6ed41d421507ea8c3c492"
+}
