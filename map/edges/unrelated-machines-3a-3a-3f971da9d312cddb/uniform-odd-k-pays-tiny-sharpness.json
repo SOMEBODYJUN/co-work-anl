@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-a-474257b8-uniform-odd-k-pays-tiny-sharpness",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-TWO-MEASUREMENT-UNIT-PRESENCE-SHARP-GLUING-v1"
+  ],
+  "target_ids": [
+    "UM-TWO-MEASUREMENT-TINY-PRESENCE-GLUING-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取任意奇整数k≥3，令a=1/k、T=1+a；U的四机2k+6任务两端锐族全部有限时间属于{1}∪[0,a]，输入同一实例两份完整00/11实际见证。",
+  "roles": {
+    "UM-TWO-MEASUREMENT-UNIT-PRESENCE-SHARP-GLUING-v1": "提供逐k四机原任务族及两mixed实际最优峰恰B(k)。",
+    "UM-TWO-MEASUREMENT-TINY-PRESENCE-GLUING-v1": "其中统一系数3/2的不可降低性由此精确子族支付。"
+  },
+  "explanation": "U给四机P,Q,M,N，unit-only x可P/M、y可Q/N，两组各k+2件tiny分别只可M/Q与P/N、时间1/k。两一致见证每机恰T，全部原job各一次。mixed10强制x在M、y在Q，第一组的两个接收机均已有unit，故一机至少ceil((k+2)/2)件tiny；两组均匀分配达到此下界，mixed01对称。对奇k，ceil((k+2)/2)=(k+3)/2，所以B(k)=1+(k+3)/(2k)=3(1+1/k)/2=3T/2，精确不是渐近近似。任一统一c<3/2的A类算法均在这个合法子族某mixed输出上失败。k=3对应a=1/3的mixed峰2；k→∞时a→0，仍保持精确比3/2。a=0处的≤1和任意不等tiny的上界不是本关系从U推出。",
+  "scope": "A的锐性子结论及a=1/3绝对次二端点；不声称每个固定a都锐，不导出一般UM近似困难性。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/单位占位两见证胶合的原证与范围推进--审查.md",
+      "sha256": "37b6eedd567c910448011535b24956e2b05c07dbf33fa29037cc4762662b5ccd"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/uniform-presence-reset/comparisons/unit_presence_two_witness_sharp_gluing.md",
+      "sha256": "0b9ab7d50bba3b4b7c5825c6208e51d23d20cdb5460d8e7478a6ef866f986e00",
+      "section": "5. 四机锐族与全部mixed最优值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/tiny配对槽独立证明与重中端胶合的分域审查--审查.md",
+      "sha256": "2ab2890104c9a4c5100861da1c071262591c95586bd8b82561a7b52a158bc9b5",
+      "section": "Tiny：直接对原jobs配对槽，不靠virtual任务证明"
+    }
+  ],
+  "reviewed_by": "Boss5/474257b8/um-families-a",
+  "review_note": "完整实读当前端点记录、所列承重正文与必要证据；独立核对模型、量词、每件原任务及所有机器同时负载。此审读不继承历史PASS为证明，不新增程序运行或外部评审。",
+  "contribution": {
+    "result": "奇k≥3、a=1/k的合法tiny两见证族使两mixed最小峰恰3T/2；故A跨全部a∈[0,1)的统一系数3/2不可降低，a=1/3不能保证绝对峰<2。",
+    "remaining": "任意不等tiny、零tiny与tiny/unit切换下的完整构造及全机3T/2上界，仍由A的独立配对槽费用流或加权二染色证明；a=0实际≤1亦独立。"
+  },
+  "endpoint_pins": {
+    "UM-TWO-MEASUREMENT-TINY-PRESENCE-GLUING-v1": "f0fd0c30ad875e145d94752dab5243b00b5e447f1657c668cc492e3203d0c235",
+    "UM-TWO-MEASUREMENT-UNIT-PRESENCE-SHARP-GLUING-v1": "91e31c897fe93ab16c01e384d366f34ea0e9d78aaf4f1d42f7d4cf43e5eb47fb"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/单位占位两见证胶合的原证与范围推进--审查.md": "37b6eedd567c910448011535b24956e2b05c07dbf33fa29037cc4762662b5ccd",
+    "archives/unrelated-machines/tools/evidence/uniform-presence-reset/comparisons/unit_presence_two_witness_sharp_gluing.md": "0b9ab7d50bba3b4b7c5825c6208e51d23d20cdb5460d8e7478a6ef866f986e00",
+    "archives/unrelated-machines/state/审查/tiny配对槽独立证明与重中端胶合的分域审查--审查.md": "2ab2890104c9a4c5100861da1c071262591c95586bd8b82561a7b52a158bc9b5"
+  },
+  "review_digest": "517231b8f3085ba17990bb098809cbbe656e2f0545748994c1e28c9cf8a0d696"
+}

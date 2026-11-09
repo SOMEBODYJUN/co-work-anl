@@ -1,0 +1,58 @@
+{
+  "edge_id": "um-1766-pin-capacity-to-saturated-exact-family",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-f29705998fe1454684aa05ffc1c1b037"
+  ],
+  "target_ids": [
+    "M-bccef18806c942b7bc2e90b8ac2bb0e4"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "实例化同一真实singleton-pin核：q=D≥2，一个fee顶点、q标签、每标签q端口且a=1/q，β∈(1−1/q,1)；分别考察全部q²请求和仅一标签q请求，两者是不同pin任务集合。保所有guard/w/f及固定编号pool。",
+  "roles": {
+    "M-f29705998fe1454684aa05ffc1c1b037": "全部阈值的必要且同时充分容量判定及原任务回填。",
+    "M-bccef18806c942b7bc2e90b8ac2bb0e4": "所列全饱和/单标签两输入的精确实际OPT和显式规模。"
+  },
+  "explanation": "令C*=2−1/q。因C*<1+β，容量公式适用。全请求时每个m_b=1；在任意1≤C<C*处都有m_b>C−1，故n=q，而k=floor(q(C−1))≤q−2，源必要条件q(q−k)≤q失败。这覆盖任意非规范完整调度；C<1由源unit任务下界排除。在C=C*处k=q−1，条件q·1≤q成立；按源同时充分回填为标签b取原编号集合R_b={b}，guard去A、w去B、仅f_bb去C_b，得到峰C*。仅一标签请求时C=1、k=0、n=1，n(q−k)=q满足源充要条件，完整回填峰1；有unit w又给下界1。机器为q²个H+2q个A/B+q个C=q²+3q；原任务为q²guard+q²pin+q w+q² f=3q²+q；有限端为2q²+q²+2q+2q²=5q²+2q。两输入共享internal jobs但请求集合不同，推导不包含NP源强制请求或YES/NO编译。",
+  "whole_result": "对每q≥2及β∈(1−1/q,1)，全q²真实pins的完整原核OPT恰2−1/q、规模m=q²+3q/n=3q²+q/有限端5q²+2q；同internal核仅一标签q真实pins时OPT恰1，且下界量化任意完整实际调度。",
+  "scope": "完整目标精确族；源容量判定实例化和显式计数。不是hardness或免费pin请求桥。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/真实请求pin核的全阈值容量判定与饱和值--审查.md",
+      "sha256": "e99e7cf1390154e25e2f44fe2e674770f3c3a07ad9071598d2987836d5944b81",
+      "section": "普通UM核和真实请求"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/真实请求pin核的全阈值容量判定与饱和值--审查.md",
+      "sha256": "e99e7cf1390154e25e2f44fe2e674770f3c3a07ad9071598d2987836d5944b81",
+      "section": "全阈值充要条件及边界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/真实请求pin核的全阈值容量判定与饱和值--审查.md",
+      "sha256": "e99e7cf1390154e25e2f44fe2e674770f3c3a07ad9071598d2987836d5944b81",
+      "section": "任意实际查询调度给出的有限质量列表"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/真实请求pin核的全阈值容量判定与饱和值--审查.md",
+      "sha256": "e99e7cf1390154e25e2f44fe2e674770f3c3a07ad9071598d2987836d5944b81",
+      "section": "本批精确证据与成熟度"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/真实请求pin核的全阈值容量判定与饱和值--审查.md",
+      "sha256": "e99e7cf1390154e25e2f44fe2e674770f3c3a07ad9071598d2987836d5944b81",
+      "section": "显式饱和请求的实际近二值"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "逐段实读当前核定义、全阈值充要证明、查询列表、饱和值和有限证据；核k的严格端点、所有未请求jobs同时回填、固定原编号以及两个不同pin输入。仅复用解析证明，无新程序运行。",
+  "endpoint_pins": {
+    "M-bccef18806c942b7bc2e90b8ac2bb0e4": "54ddcc5c8bcc752aadff7494d8a8a48ba67c3547ebec15478e563d513c2ff316",
+    "M-f29705998fe1454684aa05ffc1c1b037": "4bd93335f0a8d33e47259cc88ae5a976ea91d7ffd671096bd98430b30ae25499"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/真实请求pin核的全阈值容量判定与饱和值--审查.md": "e99e7cf1390154e25e2f44fe2e674770f3c3a07ad9071598d2987836d5944b81"
+  },
+  "review_digest": "5e890aa347cd5be212607d8bd7330fad0e8196e5691456c75afbd123f8c3ef98"
+}

@@ -1,0 +1,43 @@
+{
+  "edge_id": "um-a-474257b8-given-target-path-pays-target-free-first-move",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-PRUNED-BUNDLE-PEELING-PATH-v1"
+  ],
+  "target_ids": [
+    "UM-PRUNED-FIRST-MOVE-BOUND-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "显式有限非负二进制有理/∞普通UM；0≤T≤C≤2T；输入完整合法σ，全部σ端≤T、峰≤C；U=max(2T,C+T/2)。目标τ只在存在性证明中使用，不作为扫描器输入。",
+  "roles": {
+    "UM-PRUNED-BUNDLE-PEELING-PATH-v1": "对每份给定完整T调度τ，构造每个改变任务直接到τ且每前缀守U的排列。",
+    "UM-PRUNED-FIRST-MOVE-BOUND-v1": "继承安全第一步的存在性；用全有限p≤T候选扫描实现不输入τ的单向正确拒绝。"
+  },
+  "explanation": "若存在不同τ且峰≤T，它的目标端自动≤T，故P适用。改变集非空，P排列第一件j产生的完整分配正是σ仅把j迁到τ(j)，峰≤U；这一步属于全部任务/不同机器的p≤T有限端扫描。扫描先在峰≤T时返回DONE，否则若OPT≤T，任取实际最优T调度必与σ不同，前述第一步保证至少一守U候选，因此无候选或最小新峰>U时NO_T_SCHEDULE⇒完整原矩阵OPT>T，原矩阵另有p>T端不影响此逆否。存在安全候选时按新峰、任务号、目的号取最小者并返回完整MOVE调度。至多mn个候选、至多n个有理数求和、全机比较，分母乘积位长由输入总位长控制，故总位多项式。T=0迫C=0，任意所用源端/τ端均0，存在不同τ时第一步仍安全；空任务/当前≤T由DONE覆盖。P的输入τ仅作数学存在证人，未调用目标搜索oracle；MOVE不推出OPT≤T、不保证势下降或重复调用收敛。",
+  "scope": "覆盖F的首步存在性、无τ扫描算法、完整原矩阵上的sound单向拒绝及其边界；不给未知目标全程算法。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/任务包共同入流剥离--定理.md",
+      "sha256": "5e52df538e2eb9187c6a302f731057b713b6fa6b9790ff59ad7328613e72c24d"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/剪枝首步与固定批量环能垒--定理.md",
+      "sha256": "64c68eded8f6ccb18e8902992130f94feaff1b6953a41eceb43d02f8cd6d01cc",
+      "section": "首步存在性与可算的单向拒绝"
+    }
+  ],
+  "reviewed_by": "Boss5/474257b8/um-families-a",
+  "review_note": "完整实读当前端点记录、所列承重正文与必要证据；独立核对模型、量词、每件原任务及所有机器同时负载。此审读不继承历史PASS为证明，不新增程序运行或外部评审。",
+  "whole_result": "在F全部剪枝输入域，存在不同峰≤T目标⇒存在直接单件首步守U；不输入目标的确定性总位多项式全候选扫描返回DONE、守U的完整MOVE，或NO_T_SCHEDULE且该拒绝蕴含完整原矩阵OPT>T。T=0、空任务及长边端均按原合同处理，MOVE不认证OPT≤T或收敛。",
+  "endpoint_pins": {
+    "UM-PRUNED-BUNDLE-PEELING-PATH-v1": "81e425ca24a1284b857d9a672ab3716d58d2fa1b9311bae0984036ba1e2017b7",
+    "UM-PRUNED-FIRST-MOVE-BOUND-v1": "c47a8ab12411c79f09b8b83b3f6a6c8d43b8f151fefa7b847ab09c63ed3af6e0"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/任务包共同入流剥离--定理.md": "5e52df538e2eb9187c6a302f731057b713b6fa6b9790ff59ad7328613e72c24d",
+    "archives/unrelated-machines/state/定理/剪枝首步与固定批量环能垒--定理.md": "64c68eded8f6ccb18e8902992130f94feaff1b6953a41eceb43d02f8cd6d01cc"
+  },
+  "review_digest": "b804107dbbefc54e0e5cce027997b43f7f9f639d53342d2e34ae9f1e40e98c4e"
+}

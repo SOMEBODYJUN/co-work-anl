@@ -1,0 +1,42 @@
+{
+  "edge_id": "um0066-shared-fee-checks-common-two-witness-scope",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "UM-MULTIWITNESS-SHARED-JOB-FEE-CAPACITY-v2"
+  ],
+  "target_ids": [
+    "UM-TWO-WITNESS-QUERY-SEPARATION-v2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "共享费族取p>=2、全部b_r=c=1、任意正a_r<=1；初态sigma0与每个singleton独立sigma_r均为完整实际峰1。比较一般双见证定理要求同一个完整sigma1并令所有queries处于其新端的假设。",
+  "roles": {
+    "UM-MULTIWITNESS-SHARED-JOB-FEE-CAPACITY-v2": "给出各singleton峰1且都收费同一f、但任意共同大小至少二pattern最优2的精确显式家族。",
+    "UM-TWO-WITNESS-QUERY-SEPARATION-v2": "被核对的是其共同两份实际见证与不交费用支持的输入合同，不是一个已登记的弱化定理。"
+  },
+  "explanation": "源公式对每singleton给B=1、OPT=1、1<=beta<2时fee1；对|K|>=2给B>=2、OPT_K=2。因此sigma_r列表不能作为T=1的同一全开sigma1供目标读取。当只用sigma0和某sigma_r时，目标query集合只有该q_r，可支付f的W=1而不冲突；若把p个独立pair都相加成总费用<=W，则p份都会重复f，但那已经更换了目标共同见证量词。该家族检查目标的适用前提必要区别，不反驳目标。",
+  "scope": "共享费用和共同双见证的合同核对；不宣称generic reduction、共同全开见证、NP-hardness或OPT gap。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/多见证共享作业费用与共同容量精确合同--审查.md",
+      "sha256": "26da3e81c2fef7b812c74b07af3b957e59c854f851b9ffab423b4a1b33929c83",
+      "section": "3.4 多 singleton 的共享收费边界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/双见证查询分离的染色证明与冻结审查边界--审查.md",
+      "sha256": "878018b18a1a8d425ca75187a352599c0ca22af15e9c436298c8d5587d363671"
+    }
+  ],
+  "reviewed_by": "Boss5/um0066-474257b8",
+  "review_note": "完整实读共享费用全部证明/版本/113与359两JSON声明证据，以及双见证对象全部正文和必要替代证明、冻结范围、程序审查引用。独立逐式比较同一sigma1与p个互斥sigma_r的不同量词：b=c1时大小至少二pattern最优2，目标T1前提缺失。仅为checks语境，不把此族误作目标定理反例或有限枚举推全称。",
+  "endpoint_pins": {
+    "UM-MULTIWITNESS-SHARED-JOB-FEE-CAPACITY-v2": "e09e1f04392200c001a906ca1eb20b6f86ea894758efe7eb1497e41b55cd5a4b",
+    "UM-TWO-WITNESS-QUERY-SEPARATION-v2": "06c8efe1249249949c418be69c17b2f4b8eda20030551950aaae3415abbdff8f"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/多见证共享作业费用与共同容量精确合同--审查.md": "26da3e81c2fef7b812c74b07af3b957e59c854f851b9ffab423b4a1b33929c83",
+    "archives/unrelated-machines/state/审查/双见证查询分离的染色证明与冻结审查边界--审查.md": "878018b18a1a8d425ca75187a352599c0ca22af15e9c436298c8d5587d363671"
+  },
+  "review_digest": "c13859897491a7cadf94143642b88f0cfa597d5605f89d5b796f7a3426ce1e96"
+}

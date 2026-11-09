@@ -1,0 +1,175 @@
+{
+  "scope": "Read-only local clone snapshot; no Git, remote refresh, queue mutation, canonical source edit or registry mutation performed. Root must recheck authoritative remote state before publishing.",
+  "records": [
+    {
+      "source_path": "archives/unrelated-machines/state/审查/多outer tiny-home三源实际重读与版本边界增量--审查.md",
+      "source_sha256": "e2df323ff8dfb2e301c6293d0bc38bc3f971b847a6ff76dc1232482ca5160885",
+      "corrected_copy_path": "research/workspaces/map-v2/Boss5/um0066-474257b8-multiouter-final-read.corrected.md",
+      "corrected_sha256": "f60a2c766fd86b6043e8c096fa5b80013cc24551b0ccfbcf1f521984d86b3a90",
+      "replacement_before": "Good helper 的实际 winner B bundle 交给其 outer，其他 helper 回 own home",
+      "replacement_after": "Good helpers 保留各自的实际 winner B bundle，并把各自 home 交给其 outer；其他 helper 回 own home",
+      "unified_diff": "--- archives/unrelated-machines/state/审查/多outer tiny-home三源实际重读与版本边界增量--审查.md\n+++ research/workspaces/map-v2/Boss5/um0066-474257b8-multiouter-final-read.corrected.md\n@@ -102,7 +102,7 @@\n \n 随后用固定中心平方势 `Psi=sum_i(W_i-mu_i)^2` 做条件期望去随机化，依次固定 helper states、正 request coins 和 resource rules，只在原条件概率为正的分支中选最小 conditional `E Psi`。single-resource 与 two-resource winner-pair moments 足够计算；同一 helper 在双资源事件中必须共享一个 state，若要求不兼容则该项为零。最终 `Psi<1/25` 给所有 `W_i>1/5`。\n \n-取 `Good={j:Q_j>=1/10}`，由 `W_i<=z_i+(1/10)(1-z_i)` 得每个 outer 的 Good home mass `z_i>1/10`。Good helper 的实际 winner B bundle 交给其 outer，其他 helper 回 own home；全局 homes 互异、B 与 homes 不交、winner resources 单占。最后把完整普通 P(Q) 回填：selected-state 真 bundle 的正 incidence 送 exact resource，所有其它 incidence、inactive state payload、duplicate jobs、zero jobs 留 private。active private 至多 `19/10`，inactive private 至多 1，resource 至多 1。\n+取 `Good={j:Q_j>=1/10}`，由 `W_i<=z_i+(1/10)(1-z_i)` 得每个 outer 的 Good home mass `z_i>1/10`。Good helpers 保留各自的实际 winner B bundle，并把各自 home 交给其 outer；其他 helper 回 own home；全局 homes 互异、B 与 homes 不交、winner resources 单占。最后把完整普通 P(Q) 回填：selected-state 真 bundle 的正 incidence 送 exact resource，所有其它 incidence、inactive state payload、duplicate jobs、zero jobs 留 private。active private 至多 `19/10`，inactive private 至多 1，resource 至多 1。\n \n `ec150` 明确自己是作者 proof read-after：未读取作者 `.py`、stdout 或运行日志。它支持这条数学承重链和全 jobs 语义，但不构成端到端软件验证、外部审查或一般 UM 证明。\n \n@@ -165,3 +165,8 @@\n **缺口。** 没有端到端实现、全 tiny-domain 重放、外部评审、全球新颖性或一般 UM 算法；没有把 source-gap 推论升级为 hardness。后续要完善，需实现并审计 common SA1 LP、requester winner oracle、MW/CE 或独立强凸路线、完整 all-job compiler，并分别处理 v4/k²/O(1/k) 扩域和多 state/重合-home 模型。\n \n 本批三源正文、证据和 receipt 均不执行 commit、push 或 clean done；由 Boss2 在 checkpoint/pushed 后串行登记。\n+\n+\n+## 第三阶段资源分配对象勘误\n+\n+本页原有回填段落误把 Good helper 的 B fallback bundle 写成 outer 的所得；现明确 Good helper 保留 B bundle，outer 取得对应 home。该处只更正资源领取对象；Good 阈值、福利界、完整原 jobs 回填和限定域均不变，冻结原证明与历史审查字节不改。\n"
+    },
+    {
+      "source_path": "archives/unrelated-machines/state/审查/多outer tiny-home作者证明v1读后与完整算法范围增量--审查.md",
+      "source_sha256": "096b89fc8877455efe83ce134403cc796be1bacd6bc731f255dfe61eebb9c8ca",
+      "corrected_copy_path": "research/workspaces/map-v2/Boss5/um0066-474257b8-author-proof-v1.corrected.md",
+      "corrected_sha256": "0c95c432460594f87b37cf16ef506c519af242018380ea606215e9b02956e20d",
+      "replacement_before": "Good\nfallback winner bundles 交给 outer，其余 helper 回 own",
+      "replacement_after": "Good helpers 保留各自的\nfallback winner bundles，并把各自 home 交给 outer；其余 helper 回 own",
+      "unified_diff": "--- archives/unrelated-machines/state/审查/多outer tiny-home作者证明v1读后与完整算法范围增量--审查.md\n+++ research/workspaces/map-v2/Boss5/um0066-474257b8-author-proof-v1.corrected.md\n@@ -140,8 +140,8 @@\n 重抽，也避免枚举指数 profile。全部概率和比较为有理，位长随输入与 LP 点多项式增长。\n \n 最终 `Psi<1/25` 给 `W_i>1/5`。取 `q=1/10`，以 `Q_j>=q` 的 helpers 为 Good，有\n-`W_i<=z_i+q(1-z_i)`，故每个 outer 的 Good home weight `z_i>1/9>1/10`。Good\n-fallback winner bundles 交给 outer，其余 helper 回 own，得到每个 group value 至少\n+`W_i<=z_i+q(1-z_i)`，故每个 outer 的 Good home weight `z_i>1/9>1/10`。Good helpers 保留各自的\n+fallback winner bundles，并把各自 home 交给 outer；其余 helper 回 own，得到每个 group value 至少\n 1/10；完整回填所有 jobs 产生 `C_max<=2-1/10=19/10`，而 `OPT>=1`，所以是\n 19/10 approximation。\n \n@@ -165,3 +165,8 @@\n CE/Good 回填链均归档；既有 finite backend 审查保留软件运行和 hash，二者不合并为\n 两份一般证明。第三阶段可建立“Exact → Author Proof → finite backend”关系，但必须\n 保留作者先读 Exact、未实现 whole scheduler、有限 backend 不覆盖 tiny-home 全域等事实。\n+\n+\n+## 第三阶段资源分配对象勘误\n+\n+本页原有回填段落误把 Good helper 的 B fallback bundle 写成 outer 的所得；现明确 Good helper 保留 B bundle，outer 取得对应 home。该处只更正资源领取对象；Good 阈值、福利界、完整原 jobs 回填和限定域均不变，冻结原证明与历史审查字节不改。\n"
+    }
+  ],
+  "mathematical_reason": "Outer states have only home support; Good helpers retain their attained B fallback bundles while releasing their own homes to the corresponding outer. Giving a B bundle to the outer would provide it no outer-state value. Both full v5 proofs, author §10 and independent §10, state the correct allocation; no new quantitative result is asserted.",
+  "registry_owners": [
+    {
+      "object_id": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1",
+      "version": 2,
+      "registration_pin": "5be489c74b5d9d5b69372593f5754678e7e3045c999743b33814c5108576592d",
+      "references": [
+        {
+          "path": "archives/unrelated-machines/state/审查/多outer tiny-home三源实际重读与版本边界增量--审查.md",
+          "sha256": "e2df323ff8dfb2e301c6293d0bc38bc3f971b847a6ff76dc1232482ca5160885"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/多outer tiny-home作者证明v1读后与完整算法范围增量--审查.md",
+          "sha256": "096b89fc8877455efe83ce134403cc796be1bacd6bc731f255dfe61eebb9c8ca"
+        }
+      ]
+    },
+    {
+      "object_id": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4",
+      "version": 2,
+      "registration_pin": "8b7a9ad782b185aacc5ad83ce1df6c6747e6d83a48679bdf2faa5f6d5d881537",
+      "references": [
+        {
+          "path": "archives/unrelated-machines/state/审查/多outer tiny-home三源实际重读与版本边界增量--审查.md",
+          "sha256": "e2df323ff8dfb2e301c6293d0bc38bc3f971b847a6ff76dc1232482ca5160885"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/多outer tiny-home作者证明v1读后与完整算法范围增量--审查.md",
+          "sha256": "096b89fc8877455efe83ce134403cc796be1bacd6bc731f255dfe61eebb9c8ca"
+        }
+      ]
+    },
+    {
+      "object_id": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4b",
+      "version": 2,
+      "registration_pin": "10b5d27719d2301aaa354665ca9cbe927b3b7d1233b29066ace30f5e8f900d8b",
+      "references": [
+        {
+          "path": "archives/unrelated-machines/state/审查/多outer tiny-home三源实际重读与版本边界增量--审查.md",
+          "sha256": "e2df323ff8dfb2e301c6293d0bc38bc3f971b847a6ff76dc1232482ca5160885"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/多outer tiny-home作者证明v1读后与完整算法范围增量--审查.md",
+          "sha256": "096b89fc8877455efe83ce134403cc796be1bacd6bc731f255dfe61eebb9c8ca"
+        }
+      ]
+    },
+    {
+      "object_id": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5",
+      "version": 2,
+      "registration_pin": "f41654d899a1c44b1056091969ff987099413658c027b6e8045193336e932020",
+      "references": [
+        {
+          "path": "archives/unrelated-machines/state/审查/多outer tiny-home三源实际重读与版本边界增量--审查.md",
+          "sha256": "e2df323ff8dfb2e301c6293d0bc38bc3f971b847a6ff76dc1232482ca5160885"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/多outer tiny-home作者证明v1读后与完整算法范围增量--审查.md",
+          "sha256": "096b89fc8877455efe83ce134403cc796be1bacd6bc731f255dfe61eebb9c8ca"
+        }
+      ]
+    }
+  ],
+  "canonical_edge_count_scanned": 450,
+  "affected_canonical_edges": [],
+  "affected_noncanonical_local_edges": [],
+  "nonedge_json_skipped_in_extra_scan": [
+    "map/edges/customer-717-final61-3b-7d8a3b4523f231ac/exact-comparison.json"
+  ],
+  "affected_map_tasks": [
+    {
+      "path": "research/operations/map-v2/tasks/unrelated-machines-3a-3a-0066175b7e3c8a0d.json",
+      "task_id": "unrelated-machines-3a-3a-0066175b7e3c8a0d",
+      "stage": "3A",
+      "state": "claimed",
+      "owner": "Boss5",
+      "objects_hit": [
+        "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5"
+      ],
+      "direct_read_refs": [
+        {
+          "path": "archives/unrelated-machines/state/审查/多outer tiny-home三源实际重读与版本边界增量--审查.md",
+          "sha256": "e2df323ff8dfb2e301c6293d0bc38bc3f971b847a6ff76dc1232482ca5160885"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/多outer tiny-home作者证明v1读后与完整算法范围增量--审查.md",
+          "sha256": "096b89fc8877455efe83ce134403cc796be1bacd6bc731f255dfe61eebb9c8ca"
+        }
+      ]
+    },
+    {
+      "path": "research/operations/map-v2/tasks/unrelated-machines-3a-3a-6992d380256546e6.json",
+      "task_id": "unrelated-machines-3a-3a-6992d380256546e6",
+      "stage": "3A",
+      "state": "available",
+      "owner": null,
+      "objects_hit": [
+        "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4b"
+      ],
+      "direct_read_refs": [
+        {
+          "path": "archives/unrelated-machines/state/审查/多outer tiny-home三源实际重读与版本边界增量--审查.md",
+          "sha256": "e2df323ff8dfb2e301c6293d0bc38bc3f971b847a6ff76dc1232482ca5160885"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/多outer tiny-home作者证明v1读后与完整算法范围增量--审查.md",
+          "sha256": "096b89fc8877455efe83ce134403cc796be1bacd6bc731f255dfe61eebb9c8ca"
+        }
+      ]
+    },
+    {
+      "path": "research/operations/map-v2/tasks/unrelated-machines-3a-3a-6cef82148f2404c9.json",
+      "task_id": "unrelated-machines-3a-3a-6cef82148f2404c9",
+      "stage": "3A",
+      "state": "available",
+      "owner": null,
+      "objects_hit": [
+        "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1"
+      ],
+      "direct_read_refs": [
+        {
+          "path": "archives/unrelated-machines/state/审查/多outer tiny-home三源实际重读与版本边界增量--审查.md",
+          "sha256": "e2df323ff8dfb2e301c6293d0bc38bc3f971b847a6ff76dc1232482ca5160885"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/多outer tiny-home作者证明v1读后与完整算法范围增量--审查.md",
+          "sha256": "096b89fc8877455efe83ce134403cc796be1bacd6bc731f255dfe61eebb9c8ca"
+        }
+      ]
+    },
+    {
+      "path": "research/operations/map-v2/tasks/unrelated-machines-3a-3a-aa15ae15f8c96819.json",
+      "task_id": "unrelated-machines-3a-3a-aa15ae15f8c96819",
+      "stage": "3A",
+      "state": "available",
+      "owner": null,
+      "objects_hit": [
+        "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4"
+      ],
+      "direct_read_refs": [
+        {
+          "path": "archives/unrelated-machines/state/审查/多outer tiny-home三源实际重读与版本边界增量--审查.md",
+          "sha256": "e2df323ff8dfb2e301c6293d0bc38bc3f971b847a6ff76dc1232482ca5160885"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/多outer tiny-home作者证明v1读后与完整算法范围增量--审查.md",
+          "sha256": "096b89fc8877455efe83ce134403cc796be1bacd6bc731f255dfe61eebb9c8ca"
+        }
+      ]
+    }
+  ],
+  "worker_state": "Original six-core declared reading completed. Edge/coverage drafts remain local and will be rebound only after root-directed source/pin revision and task reframing."
+}

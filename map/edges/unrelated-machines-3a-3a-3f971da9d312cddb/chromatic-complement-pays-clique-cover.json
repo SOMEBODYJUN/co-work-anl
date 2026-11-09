@@ -1,0 +1,56 @@
+{
+  "edge_id": "um-a-474257b8-chromatic-complement-pays-clique-cover",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-97c2a4fb184f49c68d364f3298bfbbfb",
+    "M-7499b4fd61604920822feedbce117033"
+  ],
+  "target_ids": [
+    "M-0ede807e67284a13a13645bbf33c0b74"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "显式有限简单无向图，二进制阈值；C为k>0的≤k正常着色语言，Q为ℓ≥0的至多ℓ个团覆盖全部顶点语言。Cook SAT完全性只按C已明列的外部起点使用。",
+  "roles": {
+    "M-97c2a4fb184f49c68d364f3298bfbbfb": "提供全部合法输入下正常着色的NP完全性及已重构SAT→≤3SAT→着色承重链。",
+    "M-7499b4fd61604920822feedbce117033": "提供全串位多项式many-one复合、YES/NO等价和NP存在证书合同。",
+    "M-0ede807e67284a13a13645bbf33c0b74": "补图预算保持及重叠删减后得到完整精确NP完全语言。"
+  },
+  "explanation": "对合法着色输入(G,k>0)输出(补图G,k)，边在原两点非边时存在，构造O(|V|²)且不按k数值展开。若G有≤k色，每个色类是补图团，其并覆盖全V。若补图有≤k团K1,…,Kt覆盖V，依次把每个顶点归给第一个含它的团，得到互不交子集K_i′⊆K_i；删空集后仍≤k，每个子集在补图仍是团，故在G为独立色类。两向保持YES/NO，R的复合把C的SAT归约传到Q。Q在NP：非空图可把任何覆盖删为至多n个非空团，以每顶点一个团号的n·O(log(n+1))位证书验证所有同号点相邻及团数≤ℓ；ℓ二进制与n比较，不输出ℓ份对象。空图对任意ℓ≥0是YES；非空图ℓ=0为NO，ℓ≥n为YES，可先常量处理。C非法编码统一映到Q的固定NO（一点图ℓ0）；合法空图k>0映空补图仍YES，保证全二进制串有统一多项式延拓。结论是顶点团覆盖，不是edge clique cover，不把重叠团覆盖与CLIQUE、NODE COVER混同；未加入度数/gap/计数或分布保持。",
+  "scope": "Q原statement全部：精确判定NP完全、补图保持阈值、允许重叠与团分割等价及全部边界。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "1. 先固定语言、量词和编码"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "4.1 SAT到至多3文字SAT"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "4.2 至多3文字SAT到着色：原印符号必须校正"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "4.3 着色到团覆盖、到精确覆盖"
+    }
+  ],
+  "reviewed_by": "Boss5/474257b8/um-families-a",
+  "review_note": "完整实读当前端点记录、所列承重正文与必要证据；独立核对模型、量词、每件原任务及所有机器同时负载。此审读不继承历史PASS为证明，不新增程序运行或外部评审。",
+  "whole_result": "Q的显式简单无向图、binary ℓ≥0顶点团覆盖语言在NP且SAT≤p Q，故NP完全；着色输入(G,k)以(补图G,k)保持YES/NO，任意重叠团覆盖可逐点删减为不增团数的团分割，全部二进制边界与非法编码均总位多项式处理。",
+  "endpoint_pins": {
+    "M-0ede807e67284a13a13645bbf33c0b74": "bd6c85f53e857f5254a4adfe10cc6f270d32276cfb832690e7a0ac3dd3330824",
+    "M-7499b4fd61604920822feedbce117033": "c40152efb4426bf3cd9dc724fb6554b728958c3727efca0fc839e6110e366c41",
+    "M-97c2a4fb184f49c68d364f3298bfbbfb": "3f567e17c1642b9760d60629dc7f08f22a8c2917d633442565863b2f21fe7a44"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d"
+  },
+  "review_digest": "5c76eac347b81a44a874109aa4069720bea2219438111c715cea0350de76f095"
+}

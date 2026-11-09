@@ -1,0 +1,63 @@
+{
+  "edge_id": "um-1766-qary-fixed-affine-to-every-binary-coordinate-quota",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-QARY-AFFINE-MENU-RECOUPLING-CONSISTENCY-v1"
+  ],
+  "target_ids": [
+    "UM-COORDINATE-OBLIVIOUS-CARTESIAN-MENU-QUOTA-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "源取有限域F2、t≥1、N=D=2^t，保同一完整indexed菜单及真实共享资源；目标对每个固定共同函数族f_i:F2→F2。领取集合任意形状，可闲置，资源不可拆。",
+  "roles": {
+    "UM-QARY-AFFINE-MENU-RECOUPLING-CONSISTENCY-v1": "提供每个固定A,c的精确floorΛ、所有Hall子集和整数流；不只使用优化coordinatewise的最后数值。",
+    "UM-COORDINATE-OBLIVIOUS-CARTESIAN-MENU-QUOTA-v1": "二元域中每个固定f的精确整数配额、同构及显式整数构造。"
+  },
+  "explanation": "F2上每个局部函数唯一写为f_i(x)=α_i x+c_i，其中c_i=f_i(0)、α_i=f_i(0)+f_i(1)。故对任意固定f取A=diag(α_i)，源固定A公式适用而不需要优化f。A−diag(a)是对角矩阵，ν_a=#{i:a_i=α_i}，所以Λ(A)=Σ_a 2^−ν_a=∏_i(1+1/2)=(3/2)^t，源全部Hall子集条件给共同整数配额floorΛ并由整数流达到；全组union给相同上界。另对全部资源统一平移a_i′=a_i+α_i、b_i′=b_i+c_i。它不依g，是F2^(2t)的双射，并把b_i+g_i a_i=f_i(g_i)同时变成b_i′+g_i a_i′=0；因而每固定f的完整可行配额谱与零标签同构。零标签每坐标两条线的并集有三符号，支持union恰3^t；含h个公共符号的资源有2^h邻组，向每边给2^−h，则每资源总量1、每组总量(3/2)^t，再次逐任意组子集给Hall。容量流源→组k、组→资源1、资源→汇1，共D²+D+3^t边；或每组k槽作Hall，至多D³邻边。整数增广后逆平移回原资源，即确定性完整显式输入位多项式的真实不交bundles；没有把连续配额直接领取，也没有把同一资源按组分别重命名。",
+  "whole_result": "∀t≥1∀固定共同f_i:F2→F2，真实不交资源的最优共同整数配额k=floor((3/2)^t)、V=k/2^t；优化f亦不变。上述单一全局平移保完整可行配额谱，三符号/2^−h证书控制所有Hall子集，整数槽或等价D²边容量流在完整显式输入位多项式内构造并返回原标签。",
+  "scope": "完整目标的二元固定函数量词及构造。源的一般q>2优化函数结论不被误改成每固定非线性f同值；目标一致性仍是附加选择域语义，未成为普通UM资格。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/笛卡尔分块一致性与二度菜单联合取整双源审查--审查.md",
+      "sha256": "36d607e8a6c0b60893c29cc66f1a107bcac427cb25e4b71d1b469156c38309bc",
+      "section": "一、笛卡尔菜单的精确值与一致性边界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/q元仿射菜单重选的证明分工与受限域审查--审查.md",
+      "sha256": "7dc2fa43731b9eed4607345cb32d60293311ccde2416b4811dc08379d2b5f5a1"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/逐坐标一致菜单的整数资源配额--定理.md",
+      "sha256": "550311920338bd6da98a8fb6b56ec6c4c780d0e11c11a8b3f1295935b0c0a7ec"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/q元仿射菜单缺项与重选两源精读--审查.md",
+      "sha256": "73b277eaf68431c72c7f41e094798a9db62658a71e9ed18bdc75f7e4e07c5152"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/裸菜单与逐坐标配额的分域审查--审查.md",
+      "sha256": "875cc639ec96d34044303012155e672dfe189492dffd2268cb70639d6b55939c"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/逐坐标配额读后与统一保值修复界限--审查.md",
+      "sha256": "bd724ffaef05fb65e6ace58e4b2691a44048c0bbdba8b47a1fe8824e47f4044c"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "实读三域定义/固定A秩公式/奇异层/全部Hall子集、二元固定f定理及两项分域与读后证据；用F2对角A逐项证明每固定f，核全局共享资源平移与整数构造规模。未把源仅优化f的数值误当全称固定f结论，无新运行。",
+  "endpoint_pins": {
+    "UM-COORDINATE-OBLIVIOUS-CARTESIAN-MENU-QUOTA-v1": "ea3d4f6579be1c34dfb18208ba8a905c326089874074f0c3ee2422d932bed386",
+    "UM-QARY-AFFINE-MENU-RECOUPLING-CONSISTENCY-v1": "d6606dfceb8f44ac5bf0c573f15fc65b4f3869e6cc4af5424633497c7e653664"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/笛卡尔分块一致性与二度菜单联合取整双源审查--审查.md": "36d607e8a6c0b60893c29cc66f1a107bcac427cb25e4b71d1b469156c38309bc",
+    "archives/unrelated-machines/state/审查/q元仿射菜单重选的证明分工与受限域审查--审查.md": "7dc2fa43731b9eed4607345cb32d60293311ccde2416b4811dc08379d2b5f5a1",
+    "archives/unrelated-machines/state/定理/逐坐标一致菜单的整数资源配额--定理.md": "550311920338bd6da98a8fb6b56ec6c4c780d0e11c11a8b3f1295935b0c0a7ec",
+    "archives/unrelated-machines/state/审查/q元仿射菜单缺项与重选两源精读--审查.md": "73b277eaf68431c72c7f41e094798a9db62658a71e9ed18bdc75f7e4e07c5152",
+    "archives/unrelated-machines/state/审查/裸菜单与逐坐标配额的分域审查--审查.md": "875cc639ec96d34044303012155e672dfe189492dffd2268cb70639d6b55939c",
+    "archives/unrelated-machines/state/审查/逐坐标配额读后与统一保值修复界限--审查.md": "bd724ffaef05fb65e6ace58e4b2691a44048c0bbdba8b47a1fe8824e47f4044c"
+  },
+  "review_digest": "3c97a37a2fed5d472e43d67019ebdc3fa9707b4c2de39eb3f7dd8585e772088d"
+}

@@ -1,0 +1,45 @@
+{
+  "edge_id": "um-a-474257b8-fixed-residual-lattice-specializes-occupation",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-RESIDUAL-THROUGHPUT-LATTICE-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/occupation-induced-edge-deficit-matrix-program"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "O的固定α∈[1,2)、δ>0图构造及全部占位I⊆V；残余R始终是同一组全部tiny、资格/时间不变，仅图机容量c_v(I)=α−1[v∈I]变化，辅助机可无tiny资格。",
+  "roles": {
+    "UM-RESIDUAL-THROUGHPUT-LATTICE-v1": "对同一R所有非负容量向量提供F的格次模不等式。",
+    "unrelated-machines/occupation-induced-edge-deficit-matrix-program": "实例化为固定tiny宏占位容量族；此处仅支付该F的格结构，不支付精确诱导边计数。"
+  },
+  "explanation": "占位的容量映射反序满足c(I)∨c(J)=c(I∩J)、c(I)∧c(J)=c(I∪J)，且α−1≥0。将其整体代入L得g(I)+g(J)≥g(I∩J)+g(I∪J)，g(I)=F(c(I))；由容量单调性g非增，D=|R|−g非减且超模。对偶可独立核：F(c)=min Σa_j+Σc_i u_i，a_j+p_ij u_i≥1。两最优对偶(u,a),(v,b)的(min(u,v),max(a,b))及(max(u,v),min(a,b))可行；以min价配c∨d、max价配c∧d逐坐标重排，费用不超过原两费用，得格不等式，允许零时间/无tiny资格机器。此实例的固定R条件由O全部tiny始终保留明确支付；若以后宏选择同时移除不同任务成为R(H)，上述代入不成立，2×2动态值2,1,1,2是域外负控。O的实际D(I)=|E(G[I])|还要I内容量割上界及外端定向达界，不能从一般超模性推得；精确独立集补全、OPT1与星图无固定p-exchange也仍由图证明承担。",
+  "scope": "关闭本任务唯一in-packet overlap：固定R格结构确实适用，但不把一般不等式误称精确图缺口、整数性或可求联合占位选择。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/残余通过量格结构与占位图表示最终独立审查--审查.md",
+      "sha256": "29fc22ffccfdfe0256718691a88ef3a4418280f60f6168c25fcfab3dea1d0ed6"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/占位诱导边缺口的实际矩阵与最大流原程序--资源.md",
+      "sha256": "e4f3c0af812342c77a971e9ef77cd1004e53efad222480efc9751e1eb9b0dd85"
+    }
+  ],
+  "reviewed_by": "Boss5/474257b8/um-families-a",
+  "review_note": "完整实读当前端点记录、所列承重正文与必要证据；独立核对模型、量词、每件原任务及所有机器同时负载。此审读不继承历史PASS为证明，不新增程序运行或外部评审。",
+  "contribution": {
+    "result": "在O的全部占位子集上，同一tiny通过量g(I)非增且次模，D(I)=|R|−g(I)非减且超模；L的全部模型假设被该固定R容量映射满足。",
+    "remaining": "O整条精确等式D(I)=|E(G[I])|、完整整数补全iff独立集、真实OPT1及无统一固定p-extendibility，仍需图容量割与达界定向/星图构造，不由格不等式单独推出。"
+  },
+  "endpoint_pins": {
+    "UM-RESIDUAL-THROUGHPUT-LATTICE-v1": "cd32211f2543cc3adaac3ff33e6915177a411ca8b38f0b4067d35b0e7e385f45",
+    "unrelated-machines/occupation-induced-edge-deficit-matrix-program": "3fd6ef7c597e6df97f2af1c0314e6aa2ab8210b01b3c08cb13b6cf3b6b9f94d3"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/残余通过量格结构与占位图表示最终独立审查--审查.md": "29fc22ffccfdfe0256718691a88ef3a4418280f60f6168c25fcfab3dea1d0ed6",
+    "archives/unrelated-machines/state/资源/占位诱导边缺口的实际矩阵与最大流原程序--资源.md": "e4f3c0af812342c77a971e9ef77cd1004e53efad222480efc9751e1eb9b0dd85"
+  },
+  "review_digest": "202f052628b17069bce2628fc4befbfd77639e7e8037afb4b6628260a69a9ded"
+}

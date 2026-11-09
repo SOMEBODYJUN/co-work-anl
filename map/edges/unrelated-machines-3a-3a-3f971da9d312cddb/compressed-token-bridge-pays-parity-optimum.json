@@ -1,0 +1,50 @@
+{
+  "edge_id": "um-a-474257b8-compressed-token-bridge-pays-parity-optimum",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-DAG-DEGREE-TOKEN-IDENTITY-v1"
+  ],
+  "target_ids": [
+    "UM-KDM-PARITY-PARTIAL-ESCAPE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "K的显式四层简单DAG：q=2s、s≥1；根需求q、选择点需求1、标签需求d、资源需求0；各选择点的标签为a+Σb_j奇数。偶d≥2或奇d≥3。按D的原压缩token构造P，不按每条x→label弧另造任务。",
+  "roles": {
+    "UM-DAG-DEGREE-TOKEN-IDENTITY-v1": "将已核树值b*精确转成全部原不可拆任务的OPT=2−b*，并提供任意低峰调度的反向解码。",
+    "UM-KDM-PARITY-PARTIAL-ESCAPE-v1": "其中实际UM值与完整原任务身份是本关系支付的子结论；各ν层由奇偶资源论证另证。"
+  },
+  "explanation": "先独立核K的树侧输入：每块两点，偶d时两个完整束若不交则互补，而互补不改d位和的奇偶，不能满足a0/a1相反条件，因此ν_d=s。a0选只一位1、a1全1，删除唯一共同坐标即各领d−1个不交资源；逐层截取得ν_t=q对1≤t<d。任意正评分b树可每x保一个label并取ceil(db)资源，单父性给ν_t；反向不交t束直接造树，故b*=max_t min(ν_t/q,t/d)=(d−1)/d。奇d互补翻转奇偶，每块两完整束同时可取，b*=1。此DAG正需求不超过原出度，无filler；根g一件在r时间1，q枚根token家端1/q且可选任意x子端1，每x恰一token家端1且可选自己任一label子端1，每label恰d枚token家端1/d且可选本束任一资源子端1；未选label所有job保留。将上述b*代入D，偶d得OPT=1+1/d，奇d得OPT=1。反向对任意完整C<2实际分配，D解码b(H)≥2−C，因此没有只对规范调度下界的漏步。直接上界全部x激活、选定label各送d−1枚到不同资源、余一枚留home，未选label全home，完整峰1+1/d；奇d全送得1。标签数L=s2^d，机器1+2s+L+2ds、job1+4s+dL，按展开输入总位长收费，非poly(log d)。原39行资源DFS只算ν后打印2−b，不当作全调度枚举。",
+  "scope": "支付K的完整实际UM精确值、全调度下界和原token身份；不提供source hardness、SA保真或近二NO。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/有向需求与调度的压缩双向任务桥--定理.md",
+      "sha256": "47052b1eb3dfa67b095bbdb1ef86b80f108c6bb71b1e8d0210649b13092b130e"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/KDM奇偶块的近满配额逃逸与压缩任务身份--审查.md",
+      "sha256": "1b3c6d820cb2ad48347cecc0b6f5565b28755c1f40c14330b21fac2a0db3f647"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/奇偶资源块的原始配额枚举程序与复用运行--资源.md",
+      "sha256": "40f23b61362f08b51358507dccd57b7cb33b679daa5634ae5fcc964ddc355bdb"
+    }
+  ],
+  "reviewed_by": "Boss5/474257b8/um-families-a",
+  "review_note": "完整实读当前端点记录、所列承重正文与必要证据；独立核对模型、量词、每件原任务及所有机器同时负载。此审读不继承历史PASS为证明，不新增程序运行或外部评审。",
+  "contribution": {
+    "result": "对K实际四层DAG的压缩原UM，偶d≥2有真实全任务OPT=1+1/d，奇d≥3有OPT=1；下界覆盖全部合法完整实际分配，且每x仅一token、根token时间1/q。",
+    "remaining": "本边不把桥单独当作ν层求解器。ν_d=s、ν_t=q(t<d)及b*的奇偶资源/全层公式证明由K主文承担；上述解释已独立核该输入计算，但整条K的资源层结论不改标为桥的whole_result。"
+  },
+  "endpoint_pins": {
+    "UM-DAG-DEGREE-TOKEN-IDENTITY-v1": "86d52277f0b5f722b353c5cb383b2c5a059c33fce3e58b45c92b353f77c95a39",
+    "UM-KDM-PARITY-PARTIAL-ESCAPE-v1": "1e5cee5ede667f08996125ab03a9df2980159394d82a162e6f4ffe4bfb9c2284"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/有向需求与调度的压缩双向任务桥--定理.md": "47052b1eb3dfa67b095bbdb1ef86b80f108c6bb71b1e8d0210649b13092b130e",
+    "archives/unrelated-machines/state/审查/KDM奇偶块的近满配额逃逸与压缩任务身份--审查.md": "1b3c6d820cb2ad48347cecc0b6f5565b28755c1f40c14330b21fac2a0db3f647",
+    "archives/unrelated-machines/state/资源/奇偶资源块的原始配额枚举程序与复用运行--资源.md": "40f23b61362f08b51358507dccd57b7cb33b679daa5634ae5fcc964ddc355bdb"
+  },
+  "review_digest": "d3c47ced97786b2edc12185d6639a9edc5a233a3e11bc02a2af9e7b8a6faf36a"
+}

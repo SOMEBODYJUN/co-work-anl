@@ -1,0 +1,43 @@
+{
+  "edge_id": "um-a-474257b8-forest-gap-checks-safe-elimination-boundary",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "UM-HEAVY-LIGHT-FOREST-INTEGRALITY-BARRIER-v1"
+  ],
+  "target_ids": [
+    "UM-INCIDENCE-FEEDBACK-EXACT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "H的中心z时间β∈[1/2,1)、私有u_i时间a=1−β/m、m≥2、阈值1；使用机器–任务二部关联图，不使用每任务两端的机器图。",
+  "roles": {
+    "UM-HEAVY-LIGHT-FOREST-INTEGRALITY-BARRIER-v1": "提供b=0、分数值1而整数OPT=a+β>1的明确全参数回归族。",
+    "UM-INCIDENCE-FEEDBACK-EXACT-v1": "其精确阈值算法必须在T1拒绝；安全叶消元并未许诺LP整数性。"
+  },
+  "explanation": "该关联图2m+1顶点、2m边连通，b0。先强制各私有任务到自身机，容量只余1−a=β/m；中心z的任一端耗β>β/m，均不可用，故安全消元FAIL。任一整数调度把z放一机得到且必须峰a+β，而中心均分有每机a+β/m=1。按严格p>β分类，z始终light，私有边heavy时唯一强制；均匀价给纯saddle不影响这个整数拒绝。m2、β2/3统一乘3是T3/OPT4，不采用旧乘9/2。该比较是可复用实际阈值回归与模型范围核对，不把一个反例家族称为I一般算法的证明，也不声称运行了算法。",
+  "scope": "语境checks；H不反驳I，I不把assignment LP变成整数。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/重轻森林整数性与价格凸化双源审查--审查.md",
+      "sha256": "0a4457b2f1a9d5e5b8e6dac3ef6b7e49f5898d34c3b0ecd52ea9c9fa87fa73fe",
+      "section": "2. 准确失败机制与正面反馈算法边界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/算法/有限反馈边与安全叶消元的精确调度--算法.md",
+      "sha256": "7f017c12fb58ece67f5bad0136cd926762c75095ff5f2c1aa6bce7d34f29e113",
+      "section": "森林上的安全消元"
+    }
+  ],
+  "reviewed_by": "Boss5/474257b8/um-families-a",
+  "review_note": "完整实读当前端点记录、所列承重正文与必要证据；独立核对模型、量词、每件原任务及所有机器同时负载。此审读不继承历史PASS为证明，不新增程序运行或外部评审。",
+  "endpoint_pins": {
+    "UM-HEAVY-LIGHT-FOREST-INTEGRALITY-BARRIER-v1": "316620475ede3d79b9c60f4032577452f6b9f2a7dd92c8de6068dec474708cc2",
+    "UM-INCIDENCE-FEEDBACK-EXACT-v1": "0dd8d305ff09d267b2c4ba779dc81c2d2b9c6d1f23bd7b20563c201580be7734"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/重轻森林整数性与价格凸化双源审查--审查.md": "0a4457b2f1a9d5e5b8e6dac3ef6b7e49f5898d34c3b0ecd52ea9c9fa87fa73fe",
+    "archives/unrelated-machines/state/算法/有限反馈边与安全叶消元的精确调度--算法.md": "7f017c12fb58ece67f5bad0136cd926762c75095ff5f2c1aa6bce7d34f29e113"
+  },
+  "review_digest": "540c829e81152d7837f283118ac58ba0c6385a30800cd4a8d9ef0e33b7b78902"
+}

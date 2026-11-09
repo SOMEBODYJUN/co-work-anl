@@ -1,0 +1,42 @@
+{
+  "edge_id": "um-a-474257b8-shared-outside-motivates-port-scope",
+  "kind": "motivates",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/shared-outside-four-job-complete-load-spectrum"
+  ],
+  "target_ids": [
+    "UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "S按全部真实H/I/E1/E2容量计峰，0<ε<1；J只对内部容量投影、每port唯一内部端且固定外部容量完全排除。",
+  "roles": {
+    "unrelated-machines/shared-outside-four-job-complete-load-spectrum": "展示把外部两job共享机计回后，内部可行cross不能完整延伸。",
+    "UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1": "向下闭推理必须保留“外部容量排除”的承重域；不被S反驳。"
+  },
+  "explanation": "S四job每件一个内端/一个外端，其内部位(x1,x2,y1,y2)负载x1+x2与y1+(1−ε)y2。cross内部各至多1，却在某真实E_i把q_i,b_i两unit同时外送，外负载2；严格低于2−ε时全四机恰一job，只有两个aligned。删除外部容量后，外送一个port只减非负内部项，这正是J的向下闭机制，cross/其它outward模式不会因此失败。S的两aligned在四位上的外部编码也非J的两个全一致态（互补符号需要另定），不以两份aligned冒充J的0^k/1^k假设。故精确区别在共享外机容量，不存在对J原statement的反例，也不能从S标准四环推出任意多次出现复制器或源NO。",
+  "scope": "语境motivates，记录真实外部共同容量的应用边界；不写refutes、不造模型hub或hardness。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/构造/共享外端四任务环的完整负载谱--构造.md",
+      "sha256": "64755ab426534bfde30d30d4ea6559b164aa6e6c509e2c6ddd8f0537ea9eda89"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单端口向下闭集与单home级联双源审查--审查.md",
+      "sha256": "404eec6e411300bc21c39f39de854e388ad148ba690728bc47575df0f3ead95c",
+      "section": "1. 单内部端口投影是向下闭集"
+    }
+  ],
+  "reviewed_by": "Boss5/474257b8/um-families-a",
+  "review_note": "完整实读当前端点记录、所列承重正文与必要证据；独立核对模型、量词、每件原任务及所有机器同时负载。此审读不继承历史PASS为证明，不新增程序运行或外部评审。",
+  "endpoint_pins": {
+    "UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1": "66b704006e6f8d69422578c25df277299bc0a753525544fb9aac6eab744497ce",
+    "unrelated-machines/shared-outside-four-job-complete-load-spectrum": "620b447a3f0663facabf14c31af5780cce0c67cf48718e363a8f712826a75fff"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/构造/共享外端四任务环的完整负载谱--构造.md": "64755ab426534bfde30d30d4ea6559b164aa6e6c509e2c6ddd8f0537ea9eda89",
+    "archives/unrelated-machines/state/审查/单端口向下闭集与单home级联双源审查--审查.md": "404eec6e411300bc21c39f39de854e388ad148ba690728bc47575df0f3ead95c"
+  },
+  "review_digest": "50abd2b3095768404d1991d2e1cdd0edc831a067eeb37547f4c868681b142774"
+}

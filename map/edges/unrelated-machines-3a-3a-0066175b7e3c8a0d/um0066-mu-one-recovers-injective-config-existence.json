@@ -1,0 +1,50 @@
+{
+  "edge_id": "um0066-mu-one-recovers-injective-config-existence",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-Q-PRIVATE-TREE-BOUNDED-MULTIPLICITY-CONFIGURATION-FLOOR-v3"
+  ],
+  "target_ids": [
+    "UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一完整显式私有满d叉高h菜单树P，d,h>=1，非空roots及非空menus；v3的每完整state最大叶资源重数取mu=1，等价每state leafmap单射。保原selector unit、父端1/d、唯一unit叶外端及全部原jobs。",
+  "roles": {
+    "UM-Q-PRIVATE-TREE-BOUNDED-MULTIPLICITY-CONFIGURATION-FLOOR-v3": "提供有界完整state叶重数下的rainbow blocker、共同容量及全CONFIG(T)存在界；取mu=1。",
+    "UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2": "接收其B项：注入state的每个可行CONFIG阈值T对应完整实际调度存在及5/3配置间隙。"
+  },
+  "explanation": "mu=1时任意state及其辅助a树均叶资源互异，rainbow条件自动；v3条件mu(r-1)<a等价r<=a，blocker[a-mu(r-1)]^h变为(a-r+1)^h。故v3对1<=T<2、a=d-floor(d(T-1))、(a-r+1)^h>=2r^h-1给出的全root不交选择，回填同一原d树，正好得到v2 B的C<=2-r/d。默认r=ceil(a/(mu+2))变为ceil(a/3)，alpha_mu=2-1/(mu+2)变为5/3；T>=2时原全父置构造给C<=2。这里专化的是实际存在保证；精确CONFIG行和严格过滤判定另由v2自己的证明负责。",
+  "scope": "v2 B全阈值实际存在界的精确专化。没有把mu无界推广为统一离二常数，没有把变rank/隐式Haxell存在性提升为位多项式输出sigma。",
+  "contribution": {
+    "result": "v3取mu=1恢复v2 B的全部T配置可行=>完整全jobs实际C<=2-r/d条件界及OPT<=5T/3。",
+    "remaining": "v2整条登记还含精确CONFIG边际系统/小型有理LP、CONFIG(1)共同lambda等价和任意非注入输入的严格(1,5/3)过滤promise判定；它们不能由mu=1数值代入单独推出，仍依赖v2独立证明。"
+  },
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/私有菜单树有界叶重数配置界--定理.md",
+      "sha256": "5b810c65140f9581fb362f8ff739b09f019a7c435a1bc2eb3d7a34d42c3041d3"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/私有注入树配置五三界与非注入承诺判定--定理.md",
+      "sha256": "bd34a6d2deb59d34f42e2849fd2b75fefb4af2ad29060e74e89b96c3059e704e"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/私有树有界重数v3四源精读与证明边界--审查.md",
+      "sha256": "fad498824aa96153a0ef0c0b4fdfd9cfac56bf0018abe8c48b2712a4cc1805f9"
+    }
+  ],
+  "reviewed_by": "Boss5/um0066-474257b8",
+  "review_note": "完整实读两对象全部绑定正文与必要证据；共享主定理的v2/v3全证明、精确CONFIG行、mu1资源单射、Haxell总rank及严格阈值、全原d树回填与默认r算术均已逐项核对。新增v3四源审查的d1可行前提修正已保留。只接受B项的精确专化贡献；未把v2独立的LP等价/非注入promise或sigma算法包含在本边结论中。",
+  "endpoint_pins": {
+    "UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2": "c249e9e68c1636a571d9d47b51dd08c1436d03d4420cbe8949e88fddadf1a3f9",
+    "UM-Q-PRIVATE-TREE-BOUNDED-MULTIPLICITY-CONFIGURATION-FLOOR-v3": "ac628d8a3fbf87017b10a2aa913e6d6485c9f01ae2a3175f276c5017bb28a5a1"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/私有菜单树有界叶重数配置界--定理.md": "5b810c65140f9581fb362f8ff739b09f019a7c435a1bc2eb3d7a34d42c3041d3",
+    "archives/unrelated-machines/state/定理/私有注入树配置五三界与非注入承诺判定--定理.md": "bd34a6d2deb59d34f42e2849fd2b75fefb4af2ad29060e74e89b96c3059e704e",
+    "archives/unrelated-machines/state/审查/私有树有界重数v3四源精读与证明边界--审查.md": "fad498824aa96153a0ef0c0b4fdfd9cfac56bf0018abe8c48b2712a4cc1805f9"
+  },
+  "review_digest": "989db436895f06b737f707158bbb627ff10b37782fc73469597247e6cfcd5147"
+}
