@@ -10,18 +10,18 @@
   ],
   "premises_mode": "all",
   "relation_mode": "conditional",
-  "conditions": "固定 G≥2、显式无权平衡 D-正规二部全投影原图，原 edge types 可平行，共同字母表 Q≥2，g≥2、0<ρ≤1、γ=ρ³/(10⁹g⁸)、Qγ≥1。限于原 val≤γ 且 v3 非 FAIL 同时 soundness 成立的输出。另假定一个真实编译，对目标每份低峰完整调度 σ 可读出列表，covered≥ρM′、cost≤N′+B(σ)/F、0≤B(σ)≤cM′，其中 F>0 且 F≥cd/[2(g−1)]。",
+  "conditions": "固定 G≥2，原图为显式无权平衡 D-正规二部全投影游戏，原平行边按 type 区分，共同字母表 Q≥2，g≥2、0<ρ≤1、γ=ρ³/(10⁹g⁸)、Qγ≥1。固定一个原 val≤γ 且满足 v3 全列表 soundness 的非 FAIL 输出。假定真实编译给出合法完整矩阵 P、正有理 T 和所需弱阈值 βT，其中 β>0（如 §2.3 的 β_k=2−1/k）。对每个合法完整调度 σ，若 Cmax(σ)<βT，则能读出输出 copy lists，且 covered≥ρM′、cost≤N′+B(σ)/F、0≤B(σ)≤cM′，其中 c≥0、F>0、F≥cd/[2(g−1)]。",
   "roles": {
-    "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3": "提供好输出上的全 copy-lists 严格禁令与 M′=dN′/2。",
-    "unrelated-machines/partial-minrep-pdm-threshold-review": "局部得到第2.3节费用条件排除低峰真实调度。"
+    "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3": "给每个好 NO 输出上的严格、同时的 copy-list 禁令，及输出恒等式 M′=dN′/2。",
+    "unrelated-machines/partial-minrep-pdm-threshold-review": "贡献是 §2.3 的条件费用代数与排除完整低峰调度。"
   },
-  "explanation": "代入复制后顶点/边数得 cost≤N′+cdN′/(2F)≤gN′，而 covered≥ρM′ 正好与好输出上严格 covered<ρM′ 矛盾。每个固定好 seed 的 source 事件同时量化全部 lists，因此也覆盖依赖随机输出以及依赖任一 σ 的列表；不对各 σ 重新并界。原图 D 不能替代输出 d，且高围长不构造 B 或支付 F。逐 seed 的完美完备性只在 source 赋值复制，目标 strict YES 仍须完整调度。",
-  "scope": "确立源侧计费代数和严格边界。v3 合法输入 FAIL<0.1，NO 好事件至少 0.8，目标决策可将 FAIL 接受；条件中的真实矩阵、YES、全部低峰调度解码与外部 PCP 起点须另立证明。",
+  "explanation": "同型同层修复用 z≥GB+4U+1>GB+4U 并保持输出 d-正规，故 M′=dN′/2。每个假定的低峰 σ 都给 cost≤N′+cM′/F=N′+cdN′/(2F)≤gN′；费用恰等于 gN′ 仍在禁令域内，而 covered≥ρM′ 与严格 covered<ρM′ 矛盾。于是每个这样的好 seed 都给 OPT≥βT，允许等号。source 好事件同时覆盖全部列表，允许列表依赖随机输出与 σ，无需对调度再并界。这里 B(σ) 是待证的物理费用，和 v3 的短环预算 B 不同；源 d 也不可替换为原图 D。",
+  "scope": "只确立源侧代数和弱阈值的条件排除。全部合法源输入 FAIL<0.1，NO 好且非 FAIL 的联合概率至少 0.8；v3 的完美完备逐非 FAIL seed 保持在源标签上。目标完备 OPT≤T、阈值、每份完整低峰排程的 decoder、触发和无重计费用及外部 PCP 起点各须证明。",
   "evidence": [
     {
-      "path": "archives/unrelated-machines/state/审查/部分MinRep高围长v3三源精读与随机repair边界--审查.md",
-      "sha256": "3e2a28467b8719945222816b364c1e7dd3440cb5fd4b7397e0bd444b9a3b905e",
-      "section": "2. v3 Exact 的对象、参数和随机算法"
+      "path": "archives/unrelated-machines/tools/evidence/partial-minrep-high-girth-v3-sources-20261031/exact_v3.md",
+      "sha256": "0e2b614ae0a0af12c592d3b57558e2c3baf13cf4377b90b26769fc6e5d24cc61",
+      "section": "精确结论"
     },
     {
       "path": "archives/unrelated-machines/tools/evidence/partial-minrep-high-girth-v3-sources-20261031/proof_v3.md",
@@ -29,25 +29,48 @@
       "section": "3. 全部copy lists同时NO"
     },
     {
+      "path": "archives/unrelated-machines/tools/evidence/partial-minrep-high-girth-v3-sources-20261031/proof_v3.md",
+      "sha256": "f43e32fa61899de87121c161e3ca51ac76dbaa47daccef5fce7a02ba8609e646",
+      "section": "6. bounded bits、FAIL与总位复杂度"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/部分MinRep高围长v3三源精读与随机repair边界--审查.md",
+      "sha256": "7f7940ad9bafacd5d6e3f2493a06711f526753543e915642937d4c2cac9c1902",
+      "section": "3.4 同 type/layer repair"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/partial-minrep-high-girth-v3-suffix-20261031/read_after_pcsp_v3.md",
+      "sha256": "8db3a1405825c243a21c57b7e603b72bcbcba43c48c78732cda8424366474fc0",
+      "section": "5. 对本人旧 Exact-first 稿的非致命勘误"
+    },
+    {
       "path": "archives/unrelated-machines/state/审查/部分MinRep费用桥与pDM阈值双源审查--审查.md",
       "sha256": "d06c02676387e11070a7e9f803591336ac661a2ec7c8782331c446af6a1adec8",
       "section": "2.3 费用桥和种子复杂度后果"
+    },
+    {
+      "path": "tools/evidence/um-conditional-capacity-cyclic-and-geometric-entries-primary/necessary-original/research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md",
+      "sha256": "33f5fb337e3d002e91aad79c6fb99f273ed01c1978d02fd0131e995a948e2114",
+      "section": "费用桥、最近文献和仍缺的实际义务"
     }
   ],
   "reviewed_by": "Boss1",
-  "review_note": "从冻结 Exact/Proof 与第2.3节重算参数、阈值及同时量词；无实际费用 gadget。",
+  "review_note": "用冻结 Exact、Proof §3/§6、后缀 §5 及费用原文复算 M′=dN′/2、费用等号、covered 的严格边界和全低峰量词。证据只支付 review §2.3 的条件步骤。",
   "contribution": {
-    "result": "给定所述全输出 decoder 和费用界，v3 好 NO seed 的目标矩阵不可能有任何达到 decoder 阈值的完整实际调度。",
-    "remaining": "仍需显式总位多项式编译、实际 YES、按任务/共享容量证明 decoder 和无重计费用，及适用的外部 promise 难性；pDM 阈值的另一段没有参与。"
+    "result": "若全输出 decoder 和费用合同成立，任何好 NO 输出的目标矩阵都排除 Cmax<βT 的完整实际调度，因而 OPT≥βT。",
+    "remaining": "仍需显式总位多项式编译、实际 YES、按任务和共享容量证明 decoder、触发和无重计费用，并为复杂度推论接外部 promise。pDM 阈值另证。"
   },
   "endpoint_pins": {
-    "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3": "aa0c830fb9e1a2837f12f4fd8f2817ae9405e87d266774fbb2520418ee16e974",
+    "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3": "49526ecced6cea0e70b066af67a5f49a07cb454ce91cc373658f2f73578015c6",
     "unrelated-machines/partial-minrep-pdm-threshold-review": "9f7e26a89cc004d4a9b8df47d2fd73b603e21e9af244aad9e960f42a152866f0"
   },
   "evidence_pins": {
-    "archives/unrelated-machines/state/审查/部分MinRep高围长v3三源精读与随机repair边界--审查.md": "3e2a28467b8719945222816b364c1e7dd3440cb5fd4b7397e0bd444b9a3b905e",
+    "archives/unrelated-machines/tools/evidence/partial-minrep-high-girth-v3-sources-20261031/exact_v3.md": "0e2b614ae0a0af12c592d3b57558e2c3baf13cf4377b90b26769fc6e5d24cc61",
     "archives/unrelated-machines/tools/evidence/partial-minrep-high-girth-v3-sources-20261031/proof_v3.md": "f43e32fa61899de87121c161e3ca51ac76dbaa47daccef5fce7a02ba8609e646",
-    "archives/unrelated-machines/state/审查/部分MinRep费用桥与pDM阈值双源审查--审查.md": "d06c02676387e11070a7e9f803591336ac661a2ec7c8782331c446af6a1adec8"
+    "archives/unrelated-machines/state/审查/部分MinRep高围长v3三源精读与随机repair边界--审查.md": "7f7940ad9bafacd5d6e3f2493a06711f526753543e915642937d4c2cac9c1902",
+    "archives/unrelated-machines/tools/evidence/partial-minrep-high-girth-v3-suffix-20261031/read_after_pcsp_v3.md": "8db3a1405825c243a21c57b7e603b72bcbcba43c48c78732cda8424366474fc0",
+    "archives/unrelated-machines/state/审查/部分MinRep费用桥与pDM阈值双源审查--审查.md": "d06c02676387e11070a7e9f803591336ac661a2ec7c8782331c446af6a1adec8",
+    "tools/evidence/um-conditional-capacity-cyclic-and-geometric-entries-primary/necessary-original/research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md": "33f5fb337e3d002e91aad79c6fb99f273ed01c1978d02fd0131e995a948e2114"
   },
-  "review_digest": "fd296ef59c9fcb91bcbaaa947898fcba592449bd5e775ca312cc70949b169a82"
+  "review_digest": "785f96d6cdfc284061d0e94f25df54195bd2d14283e0c256d06127303ac2079a"
 }

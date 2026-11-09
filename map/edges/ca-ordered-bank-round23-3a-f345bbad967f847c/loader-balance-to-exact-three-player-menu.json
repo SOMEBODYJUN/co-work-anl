@@ -1,0 +1,48 @@
+{
+  "edge_id": "ca-r24-full-code-loader-balance-to-exact-three-player-menu",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/binary-full-code-bank-loader-real-deviation"
+  ],
+  "target_ids": [
+    "customer-attraction/full-code-bank-exact-three-player-ordered-menu"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "roles": {
+    "customer-attraction/binary-full-code-bank-loader-real-deviation": "§3提供银行收益保底、末位逐位少数位与倒二补串偏离三个步骤。其最终释放X_j的步骤另用j≠i。",
+    "customer-attraction/full-code-bank-exact-three-player-ordered-menu": "把平衡候选按非银行份额精确筛选，再逐历史拼合，推出全部有序续局、计数阈值与首尾收益比锐界。"
+  },
+  "conditions": "共同目录、单位客户、d≥2、全码银行及等大银行块。组核X_j非空互斥，Y_j可任意共享并避开组核和银行，G=max_j|X_j∪Y_j|，h>6G。固定合法前缀各C_j(j≠i)、A_i、L_i后剩三人，旧银行串ℓ=bar i。",
+  "scope": "固定合法前缀后的完整三人子博弈及其所有离轨历史，允许任意历史依赖平局。比值界允许比较同一前缀后的不同真SPE。",
+  "explanation": "旧§3的逐坐标三步在释放X_j之前只用全码、旧ℓ和首位银行串，故把旧偏离B_j的串换为任一银行首串P。任一银行主题给余两位至少dh/4>G。倒二选银行串Q后，末位任何异于少数位串的行动若仍在银行，会在至少一位损失h/6>G，故少数位串是真实唯一回复。倒二改选bar P即可逐位2:2；若ℓ、P、Q在某位同位，倒二银行至多dh/2−h/6，加全部非银行也达不到dh/2。故真倒二必在ℓ_a=P_a时取Q_a=1−P_a，末位取R=ℓ⊕P⊕Q。此后每人的银行收益为B=dh/2。\n\n以下新增筛选。首位选L_j时首收益恒B。首位选B_j时Q与R首位相反，在同一子立方交换两串仍给倒二B。如果原Q为纯银行，交换后倒二取得一个带非空组核的B_s，严格增加实际收益。故真倒二只能选B_s，其中s属于S_j={s:s_1=0，i_a≠j_a时s_a=i_a}，末位必为L_{bar R}。令N_j=X_j∪Y_j、b_x为非银行客户旧负载，倒二额外收益F_{j,s}=Σ_{x∈N_s}1/(b_x+1+1_{x∈N_j})，首位额外收益F_{s,j}。倒二的非银行行动和不平衡银行行动已被严格排除，其余平衡行动都已比较，所以真倒二恰取A_j=argmax_{s∈S_j}F_{j,s}。每个最大者均可在所有倒二离轨行动后补真实末位回复，成为完整两人SPE。\n\n根拼接。每个B_j分支给首位的最小真收益为B+m_j，m_j=min_{s∈A_j}F_{s,j}>0。L分支恒B，非银行首行动至多G<B。首位可强制任一分支，故真收益至少B+M，M=max_j m_j。反向固定任一B_j,B_s,L_{bar R}且s∈A_j、F_{s,j}≥M，给其它B首行动各放一份达到该分支最小首收益的完整两人SPE，给各L和非银行分支放任意真SPE。各有序子树独立拼合，所有首位偏离均不超过B+M，证得菜单的充要性与门槛H=B+M。\n\n计数。目标多重集{B_i,B_i,L_i}只能按B_i,B_i,L_i实现。菜单判据即F_{i,i}=max_{s∈S_i}F_{i,s}且F_{i,i}≥max_{j≠i}m_j。无遗漏时旧负载皆1，非对角F_{j,s}=x_s/2，对角F_{j,j}=x_j/3，其中x_j=|X_j|。S_i含所有目标，S_j对j≠i排除j，故m_j=x_j/2。两条件均等价于2x_i≥3max_{j≠i}x_j。严格时A_i仅含i且其它B首动作收益严格低于B+x_i/3，指定顺序唯一。等号时i仍为最大者且达到门槛。\n\n首尾比较。所有真在轨收益在[B,B+G]，任意两个实际在轨收益的比值至少B/(B+G)>3d/(3d+1)。末位恰得B。任取一个真倒二B_s，额外收益f=F_{j,s}。反向强制首选B_s时，任一真倒二B_t给该首位F_{t,s}≥(1/2)Σ_{x∈N_s}1/(b_x+1)≥f/2，故M≥f/2，任意真首位至少达到这份真续局的尾部均值。由f≤G、B>3dG，d≥3时实际首位/倒二比严格超过(6d+1)/(6d+2)。d=2时，若s≠i则j=i、S_s={i}，故M≥F_{i,s}=f；若s=i则N_i的b_x≥1，每项给F_{t,i}≥(2/3)F_{j,i}，且f≤G/2。由B>6G得比值严格超过38/39。与末位相比比值至少1。\n\n锐族。d=2时取G为正的3倍数、h=6G+1、|X_i|=G、Y_i空，另一目标j取|X_j|=2、|Y_j|=G/3−1。F_{i,i}=F_{i,j}=G/3，F_{j,i}=G/2；A_i={i,j}、A_j={i}，故M=G/3。B_j,B_i,L_j达到门槛并使首位/倒二比为(B+G/3)/(B+G/2)，趋于38/39。任意固定d≥3取i=全零、s,t分别在不同非首坐标单独取1，h=6G+1、|X_i|=G≥2、其余核各一人，只有Y_s=Y_t为同一组G−1个客户。首位B_i后，倒二仅s,t同为最大者，额外收益G−1/2，首位额外收益G/2。首位B_s后可选的i,t同为最大者，各给倒二G/2；选t时首位也得额外G/2，选i时为G−1/2。对B_t对称。其余首位B_j只有单核且无遗漏，额外收益至多1/2，故M=G/2。B_i,B_s开头可真拼接，其首位/倒二比(B+G/2)/(B+G−1/2)趋于(6d+1)/(6d+2)。",
+  "whole_result": "由旧全码证明的可推广逐位平衡机制，加上上述精确二人收益比较、分支拼接与显式锐族，推出新定理v1整条陈述：固定合法前缀后的H=B+max_j min_{s∈A_j}F_{s,j}与全部真实有序续局B_j,B_s,L_{bar R}，指定计数判据，无遗漏时2x_i≥3max_{j≠i}x_j且严格时指定顺序唯一，跨策略首位至少达任一尾部实际均值，并给首位/任一尾位的固定d下确界38/39或(6d+1)/(6d+2)，各有限输入均严格。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/二进制全码银行的加载者真实偏离--障碍.md",
+      "sha256": "ee64bec3f0fbd3e98fb8180e6f6595590da668564e78b5c18b6a7810e96083a5"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/二进制全码银行的三人有序续局与精确根门槛--定理.md",
+      "sha256": "26cb54184783f358a0edeb80efc39db80ebb4a98718b7bf6681df406bb438caf"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐步核对旧证明§§1–3与新正文“两人银行子博弈”“根门槛和全部真实在轨顺序”“指定计数何时可实现”“对真实收益分离的限制”。旧释放X_j另需j≠i，只在旧结论使用。覆盖别名A_j=C_j时同为非银行候选，银行动作仍逐码唯一。",
+  "endpoint_pins": {
+    "customer-attraction/binary-full-code-bank-loader-real-deviation": "edddbb8de52edfae651b16c8d092118dc734de1b9bc1cc917ccedd05316b05e4",
+    "customer-attraction/full-code-bank-exact-three-player-ordered-menu": "98366c80e4989f8ad1e182040c87f4263f0438d365f7b0c59715d98be525bc8a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/二进制全码银行的加载者真实偏离--障碍.md": "ee64bec3f0fbd3e98fb8180e6f6595590da668564e78b5c18b6a7810e96083a5",
+    "archives/customer-attraction/state/定理/二进制全码银行的三人有序续局与精确根门槛--定理.md": "26cb54184783f358a0edeb80efc39db80ebb4a98718b7bf6681df406bb438caf",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "16c12c4cadf4bbb5b680c7c4fc4c5955ae4bf6e7af6d7ac064d3849be419f0fa"
+}

@@ -10,13 +10,13 @@
   ],
   "premises_mode": "all",
   "relation_mode": "conditional",
-  "conditions": "被检验的是直接把 v3 的每个顶点标签拆为 incidence copies 并用 ordinary 等值/蕴含 fanout 粘合，再将局部列表覆盖当作共同标签或费用保持。Feder 的输入是固定 Boolean 模板含 0/1，一次外端、两次内部，图 CSP 每变量恰两次；二部实现另要求外端同侧。",
+  "conditions": "待检验的迁移是把 v3 顶点标签拆成 incidence copies，加 ordinary 等值或蕴含扇出，再由每条新旧边各自存在兼容列表标签对推出一个共同标签。Feder 的普通图 CSP 使用固定 Boolean 模板与常量 0、1，每变量恰两次出现。实现关系的外端只出现一次、内部变量恰出现两次，二部实现要求外端同侧。定理 3 的子句实现需排除 Schaefer 易解支，定理 4 的扇出恢复还需非广义拟阵交换失败。",
   "roles": {
-    "UM-SOURCE-FEDER-ORDINARY-FANOUT": "提供普通赋值的二次出现和在指定 Schaefer 及交换失败条件下的复用。",
-    "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3": "要求显式 Q 元全投影、每顶点 d 个 incidence、任意低总费用 copy lists 的 simultaneous soundness。"
+    "UM-SOURCE-FEDER-ORDINARY-FANOUT": "给指定固定模板下普通单标签赋值的存在性及出现次数控制。",
+    "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3": "被尝试迁移的对象要求保 d 个 incidence 端口、显式 Q 元全投影和任意低费用 copy lists 的同时 soundness。"
   },
-  "explanation": "二部性/围长并不改变 d 个端口，也不把可能随显式输入增长的 Q 化为固定 Boolean 模板。将变量改成每条 incidence 的独立副本，只是把一致性义务转入新的约束。最小的直接失败已发生在三点路径的两条 identity 投影：依次给 {0}、{0,1}、{1}，总费用4（g≥2时不超过 g·3），两边均有兼容对，但没有一个标签能同时属于三个列表。普通等值关系的传递是对同一个单标签赋值成立；逐边列表覆盖可以在中央点使用不同标签，不能借它保证 copy 解码、跨边标签费用或固定模板的 promise soundness。三点路径是这个粘合推理的反例，不是 v3 低值源的反例。",
-  "scope": "拒绝直接迁移。Feder 的定理3只实现子句，定理4的普通困难性另依交换失败恢复 fanout；不能把共独立的超立方体图性质换成 vacancy matroid，也不能从 v3 的高围长或 regularity 推出物理端口、全部作业和实际载荷桥。",
+  "explanation": "取 Boolean 三点路径 x–y–w，两边均为 identity 投影，列表依次为 {0}、{0,1}、{1}。边 xy 的见证是 (0,0)，边 yw 的见证是 (1,1)，但共同标签集合的三重交为空。每条边各自存在的见证可在 y 处用不同值，故不能推出存在一个由各列表选取并满足两边的赋值。列表总费用 4≤3g（g≥2）。该路径是逐边覆盖推出共同标签的精确反例，原无列表限制的 identity 路径可完美满足，路径也不具备 v3 的正规平衡输入合同。现行 v3 修复用 z≥GB+4U+1>GB+4U 保 clean edge，只保原 type/layer 并维持全列表 soundness，不引入共同标签见证。",
+  "scope": "仅拒绝 ordinary 等值/蕴含扇出保共同标签的直接迁移。三点证据不否定 v3 源定理、Feder 的 ordinary 定理或另行证明的 promise/物理编译。高围长不限制模板 arity、端口数或 Q，超立方体共独立也不等同停车 vacancy 拟阵。",
   "evidence": [
     {
       "path": "archives/unrelated-machines/state/文献/Feder--扇出受限约束系统与广义拟阵--文献.md",
@@ -31,17 +31,29 @@
     {
       "path": "archives/unrelated-machines/tools/evidence/partial-minrep-high-girth-v3-sources-20261031/exact_v3.md",
       "sha256": "0e2b614ae0a0af12c592d3b57558e2c3baf13cf4377b90b26769fc6e5d24cc61"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/部分MinRep高围长v3三源精读与随机repair边界--审查.md",
+      "sha256": "7f7940ad9bafacd5d6e3f2493a06711f526753543e915642937d4c2cac9c1902",
+      "section": "3.4 同 type/layer repair"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/partial-minrep-high-girth-v3-suffix-20261031/read_after_pcsp_v3.md",
+      "sha256": "8db3a1405825c243a21c57b7e603b72bcbcba43c48c78732cda8424366474fc0",
+      "section": "5. 对本人旧 Exact-first 稿的非致命勘误"
     }
   ],
   "reviewed_by": "Boss1",
-  "review_note": "核了 Feder 冻结转换本印刷 pp.7–11 和 v3 Exact；按 edge-cover 与共同赋值的不同量词拒绝这条特定桥。",
+  "review_note": "复读 Feder 印刷 pp.7–11 的端口定义、定理 3–5 和普通扇出分支，逐边算两条 identity 的见证与空三重交。对照 v3 Exact、修正后的 §3.4 和冻结读后 §5，维持这条 rejected transfer 的原方向与目标范围。",
   "endpoint_pins": {
-    "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3": "aa0c830fb9e1a2837f12f4fd8f2817ae9405e87d266774fbb2520418ee16e974",
+    "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3": "49526ecced6cea0e70b066af67a5f49a07cb454ce91cc373658f2f73578015c6",
     "UM-SOURCE-FEDER-ORDINARY-FANOUT": "6c9b67be0c02766cd773864a2b5e6a4b27c66be85f603e103955baf0fb6a8a68"
   },
   "evidence_pins": {
     "archives/unrelated-machines/state/文献/Feder--扇出受限约束系统与广义拟阵--文献.md": "03a40a54f09080a3fcea99ccecd040916d4e1b46b83dc5817e9e6bb414e42f64",
-    "archives/unrelated-machines/tools/evidence/partial-minrep-high-girth-v3-sources-20261031/exact_v3.md": "0e2b614ae0a0af12c592d3b57558e2c3baf13cf4377b90b26769fc6e5d24cc61"
+    "archives/unrelated-machines/tools/evidence/partial-minrep-high-girth-v3-sources-20261031/exact_v3.md": "0e2b614ae0a0af12c592d3b57558e2c3baf13cf4377b90b26769fc6e5d24cc61",
+    "archives/unrelated-machines/state/审查/部分MinRep高围长v3三源精读与随机repair边界--审查.md": "7f7940ad9bafacd5d6e3f2493a06711f526753543e915642937d4c2cac9c1902",
+    "archives/unrelated-machines/tools/evidence/partial-minrep-high-girth-v3-suffix-20261031/read_after_pcsp_v3.md": "8db3a1405825c243a21c57b7e603b72bcbcba43c48c78732cda8424366474fc0"
   },
-  "review_digest": "07253332f8bdc417534f9993ef04e39288a61b9bdfb16420bf0bc40015dfb1e7"
+  "review_digest": "d27d31727f57f368da9a562137452961f5ddb3d061b12162cafd69839b993952"
 }
