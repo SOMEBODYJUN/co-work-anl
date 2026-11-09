@@ -1,0 +1,123 @@
+{
+  "edge_id": "cag-early-717-point-lower-bound-and-terminal-cut-separation",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/five-player-717-row-floating-trace-and-exact-sixty-one-atom-point"
+  ],
+  "target_ids": [
+    "customer-attraction/three-cross-family-terminal-templates-matching-exact-certificates-and-floating-traces"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "五人必要直方图松弛。原子为ABCDEUVWXY十位、共同首位重数d的8/8/16桶直方图（各和5）及旧菜单actual、second、third，其中0≤h≤d且0≤ℓ−h≤5−d。非负质量x满足W=wᵀx=1，w为ABCDE覆盖指示，O=oᵀx，o为d>0指示。717＝437旧行＋10同族末位去对角＋110同族末两人五等号型＋160个AB/AE-source常锚点跨族五等号型，PAIR保一份交叠。727追加十条AB-source单菜单D/O，728再追加AB→Sbranch坐标2/3等权共同OO。",
+  "roles": {
+    "customer-attraction/five-player-717-row-floating-trace-and-exact-sixty-one-atom-point": "早期558列恢复的61个正有理质量提供同一717矩阵上的固定可行向量xₑ及比较覆盖Oₑ。它也是检验后续行系的固定输入。",
+    "customer-attraction/three-cross-family-terminal-templates-matching-exact-certificates-and-floating-traces": "提供待比较的717/727/728行公式和匹配证书。早期点独立给717的有理下界，并作727、728加强严格排点的见证。"
+  },
+  "explanation": "两个717精确恢复入口都调用同一份exact_cross_primal.evaluator和verify_atom。evaluator取overlap=1，先继承canonical 437、10条末位去对角和110条同族PAIR，再由CrossUniverse枚举AB/AE源、两个异族目标、可重复位置对及五个等号型得到160行。对每客户背景pᵢ=p固定+tᵢ，保t的任何配对给同一五型代价。对实际源末对份额加self-tax的Hᵢ，每个(i,j,k)项为Hᵢ−(zⱼᵘ+zₖᵛ)/(pᵢ+1)+zⱼᵘzₖᵛ/((pᵢ+1)(pᵢ+2))。后续两个evaluator都调用这同一717前缀。冻结的三CG行序、两61点全部717有理总值逐项吻合，各71零。早期61支持映入695列的前558，最高零基索引545。早期与最终各61支持只共享38个结构原子，Oₑ与最终值严格不同。对十条新增单菜单和共同OO，AB源同一t组内枚举目标tuple的查询分数分派。令dᵢ=1/(η_A+η_B+tᵢ+rᵢ+1)，A=Σᵢsᵢdᵢ，D=Σᵢdᵢ。对加权D/O列表，常数项为(Σ_D权+4Σ_O权)A−DΣ_O(权·菜单总数)，运输项为各t组max_πΣᵢdᵢΣ_c(权_c·sign_c·z_{π(i),c})，其中D取负、O取正。将每原子最大值乘以原精确质量再相加，早期点恰有AE坐标2O、Sbranch坐标1O和2O三条single为负，其余七条严格为正，共同OO也负。旧162个候选由两个不同(pos,kind)组件及权(1,m)，m∈{1,2,3}生成。将Sbranch译成原程序second后，新增共同OO与旧AB:second:2O+1*3O在全型域逐原子同式，早期值同为−2077584977289403003484846729438625517851993874103077687/11825165338140383405648264466486213176917214448811183044。在这61个合法原子上逐系数排除十条single与旧162条的任何正比例，故全域也无相同约束行；在旧162条中，共同OO的唯一正比例匹配是上述等权同式。本点的2O已经为负，3O为正，故旧报告的“两component皆非负而共同为负”空表与新算一致。旧220跨族PAIR逐行通过与末位排点相容。把早期有理O与已认证的三个匹配证书逐分数比较，严格有V717>Oₑ>V727>V728>2；四个精确正差、两点十一条有理值、162行重算与输入字节绑定见同目录精确核验。",
+  "scope": "同一五人必要客户类型域上的固定两点和三个指定模板。早期点独立给V717≥Oₑ>2，并从717可行集中具体排除于727及728。精确全域上界沿用对应全型对偶认证；O始终是指定五个比较主题的覆盖。",
+  "contribution": {
+    "result": "早期xₑ在717可行，故V717≥Oₑ>2。该xₑ的三条727单菜单和一条728共同OO严格负，故727和728都严格缩小717可行集。共同OO与旧162报告的唯一同式负行精确对应，十条新增single和旧162两组件系数行逐项区分。",
+    "remaining": "要得到目标的三个精确最优及严格数值顺序，分别使用最终61、69、65原始点以及各自逐全型非负的非负权有理对偶。早期固定点只提供717下界与具体排点。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/五人七百一十七行浮点轨迹与六十一原子精确点--计算.md",
+      "sha256": "4268af41534584a65edde3867be932240a9c765cde2c884d73b6964d815bccf3",
+      "section": "系统与版本身份"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/五人七百一十七行浮点轨迹与六十一原子精确点--计算.md",
+      "sha256": "4268af41534584a65edde3867be932240a9c765cde2c884d73b6964d815bccf3",
+      "section": "61原子的准确有理点"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/五人七百一十七行浮点轨迹与六十一原子精确点--计算.md",
+      "sha256": "4268af41534584a65edde3867be932240a9c765cde2c884d73b6964d815bccf3",
+      "section": "额外分离报告的实际机制"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/跨族末位三系统的匹配双证书与浮点轨迹--计算.md",
+      "sha256": "27c5aa682eec8f9a33ab7cf63177130d108fd9119cf44f3f538e4d6df226a79d",
+      "section": "精确值及其类型域"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/跨族末位三系统的匹配双证书与浮点轨迹--计算.md",
+      "sha256": "27c5aa682eec8f9a33ab7cf63177130d108fd9119cf44f3f538e4d6df226a79d",
+      "section": "对偶全部字段与全型求和"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/跨族末位三系统的匹配双证书与浮点轨迹--计算.md",
+      "sha256": "27c5aa682eec8f9a33ab7cf63177130d108fd9119cf44f3f538e4d6df226a79d",
+      "section": "最终61与69原始点的成熟结果"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/末位负载签名条件定价与三系统精确恢复--程序.md",
+      "sha256": "380e98f92afc1d6323b9999cabc7cea4b38edbaefe26b326fd0d66bb763101e3",
+      "section": "十条单菜单与一条共同OO"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/round4-pricing-resumed-boss2/original/exact_primal_cross_pair.json",
+      "sha256": "7d58f6ca319c527bfd7b2922fb1178759a08c8e2cffdfa5a799d534704711197"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/round4-pricing-resumed-boss2/original/cross_point_separation.json",
+      "sha256": "174a7388413942b9324e328ac528c9eb8c2db496f0092c219ef156b95fa0efac"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/round4-pricing-resumed-boss2/original/exact_cross_primal.py",
+      "sha256": "7418a39f215c852725d827581ea0f984e57d79a72c9a22e61a9fb693932556b2"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/round4-pricing-resumed-boss2/original/cross_pair_pricing.py",
+      "sha256": "b7a32c8c67ff81dcefef597e19d44487b10f3a4df639cb3a1ed80356933806ef"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/round5-terminal-pricing-resumed-boss2/original/exact_cross_optimum.py",
+      "sha256": "2948e75a978e138c0c76ac5aa7e7583b9a8bf0a38d218044303fe6bd8bae5bf4"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/round5-terminal-pricing-resumed-boss2/original/terminal_cross_pricing.py",
+      "sha256": "066dbbaa51edc48186c345d73a3387bc1e2ff5162e5fd34470b2a3a5c69c9d3c"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/round5-terminal-pricing-resumed-boss2/original/joint_terminal_pricing.py",
+      "sha256": "87799194def05729e51159dad3abafc753cd7682fe0ab1c3950563f4e015b258"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/round5-terminal-pricing-resumed-boss2/dependency-manifest.json",
+      "sha256": "44812a47f4f17171b8bc8c86599d143de7b9d2a7b18ca6149bd6b3d3c84de8ad"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/round4-joint-transport-resumed-boss2/original/research/workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round4_coupling/joint_transport.py",
+      "sha256": "eeb84516d6e10261e1912fc4ab747c804d471b6718096dbf89451de8fc1943b0"
+    },
+    {
+      "path": "map/edges/customer-717-final61-3b-7d8a3b4523f231ac/exact-comparison.json",
+      "sha256": "5e485d917439fb53d17beaf995a075a751a52da9cdd73fcaebec5308ba2894f5"
+    }
+  ],
+  "reviewed_by": "Boss1/customer-717-final61-3b-7d8a3b4523f231ac",
+  "review_note": "实读原模型、两原始点与三全型证书的承重段落及生成源码，核对27计划跨度的冻结字节。复算两个61点的逐原子公共行与十一新增行，逐精确分数重现旧162联合行判号；沿用已认证的全型整数定价。",
+  "endpoint_pins": {
+    "customer-attraction/five-player-717-row-floating-trace-and-exact-sixty-one-atom-point": "e0efb7afd1bcc00c36c543a28a98c118bee0b1676e21f048b7ce21990139bdcc",
+    "customer-attraction/three-cross-family-terminal-templates-matching-exact-certificates-and-floating-traces": "cf619efbbeb49431c5e2ca98d5e939db45e34e65e15d1ba03d55e1d24205ca06"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/五人七百一十七行浮点轨迹与六十一原子精确点--计算.md": "4268af41534584a65edde3867be932240a9c765cde2c884d73b6964d815bccf3",
+    "archives/customer-attraction/state/计算/跨族末位三系统的匹配双证书与浮点轨迹--计算.md": "27c5aa682eec8f9a33ab7cf63177130d108fd9119cf44f3f538e4d6df226a79d",
+    "archives/customer-attraction/state/程序/末位负载签名条件定价与三系统精确恢复--程序.md": "380e98f92afc1d6323b9999cabc7cea4b38edbaefe26b326fd0d66bb763101e3",
+    "archives/customer-attraction/tools/evidence/round4-pricing-resumed-boss2/original/exact_primal_cross_pair.json": "7d58f6ca319c527bfd7b2922fb1178759a08c8e2cffdfa5a799d534704711197",
+    "archives/customer-attraction/tools/evidence/round4-pricing-resumed-boss2/original/cross_point_separation.json": "174a7388413942b9324e328ac528c9eb8c2db496f0092c219ef156b95fa0efac",
+    "archives/customer-attraction/tools/evidence/round4-pricing-resumed-boss2/original/exact_cross_primal.py": "7418a39f215c852725d827581ea0f984e57d79a72c9a22e61a9fb693932556b2",
+    "archives/customer-attraction/tools/evidence/round4-pricing-resumed-boss2/original/cross_pair_pricing.py": "b7a32c8c67ff81dcefef597e19d44487b10f3a4df639cb3a1ed80356933806ef",
+    "archives/customer-attraction/tools/evidence/round5-terminal-pricing-resumed-boss2/original/exact_cross_optimum.py": "2948e75a978e138c0c76ac5aa7e7583b9a8bf0a38d218044303fe6bd8bae5bf4",
+    "archives/customer-attraction/tools/evidence/round5-terminal-pricing-resumed-boss2/original/terminal_cross_pricing.py": "066dbbaa51edc48186c345d73a3387bc1e2ff5162e5fd34470b2a3a5c69c9d3c",
+    "archives/customer-attraction/tools/evidence/round5-terminal-pricing-resumed-boss2/original/joint_terminal_pricing.py": "87799194def05729e51159dad3abafc753cd7682fe0ab1c3950563f4e015b258",
+    "archives/customer-attraction/tools/evidence/round5-terminal-pricing-resumed-boss2/dependency-manifest.json": "44812a47f4f17171b8bc8c86599d143de7b9d2a7b18ca6149bd6b3d3c84de8ad",
+    "archives/customer-attraction/tools/evidence/round4-joint-transport-resumed-boss2/original/research/workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round4_coupling/joint_transport.py": "eeb84516d6e10261e1912fc4ab747c804d471b6718096dbf89451de8fc1943b0",
+    "map/edges/customer-717-final61-3b-7d8a3b4523f231ac/exact-comparison.json": "5e485d917439fb53d17beaf995a075a751a52da9cdd73fcaebec5308ba2894f5"
+  },
+  "review_digest": "48634aca8319c11768941215c10cf1f0a12d0908c00855eee44acb10add7c0cb"
+}
