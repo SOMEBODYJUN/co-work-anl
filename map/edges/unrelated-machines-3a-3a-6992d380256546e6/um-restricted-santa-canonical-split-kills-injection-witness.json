@@ -1,0 +1,46 @@
+{
+  "edge_id": "um-restricted-santa-canonical-split-kills-injection-witness",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-68e534b8b5c1428d990961b1dfae1cb2"
+  ],
+  "target_ids": [
+    "M-c99f51ac275e4ac09e860f75a108d704"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "取附录 A.1 的 k+1 个玩家、k 件价值 1 大物与每玩家一件私有价值 3ε 小物；εk∈ℕ，0<ε<1/3。以 T=1 和 3ε<α≤1 为分类阈值 αT，按附录 A.2 对每原玩家拆大小两玩家并各添同一独占耦合物，耦合物和大物价值均 1。前后都检验目标 T=1。",
+  "roles": {
+    "M-68e534b8b5c1428d990961b1dfae1cb2": "给原实例的均匀大物注入 law、原整数最优 3ε 及原 assignment LP 的高轮 SA witness。",
+    "M-c99f51ac275e4ac09e860f75a108d704": "给实际 canonical 拆分和一轮约束的精确形式，解释同一来源实例何以不传递该间隙。"
+  },
+  "explanation": "在未拆原实例，把 k 个大物均匀注入 k+1 个玩家，私有小物确定给其主人。对至多 r=εk 个变量文字的任一正概率事件，按事件中涉及的每个大物的完整接收者再细分；每细分至多固定 r 个大物，未固定玩家获得大物概率至少 (k−r)/(k+1−r)，加 3ε 至少为 1。固定获大物的玩家直接满足目标。容量逐原子成立，覆盖只在这些条件期望成立；每个原子仍有一玩家只得 3ε。按原文 Theorem 6 的轮次约定，r 是乘子文字数，所需矩至多 r+1。拆分后，小玩家仅可获私有小物 s 和自己的耦合物 c；用 SA(1) 将覆盖 3εx_s+x_c≥1 与 1−x_c 相乘，得 3ε(y_s−y_{sc})≥1−y_c。盒约束 x_s≤1 用同一乘子给 y_s−y_{sc}≤1−y_c；又 0≤y_c≤1，因 3ε<1，必有 y_c=1。每枚耦合物容量遂迫对应大玩家的耦合边际为零，k+1 个大玩家覆盖行合计至少 k+1，k 件单位大物的容量合计至多 k，矛盾。",
+  "scope": "只比较明确的 A.1 witness 经 A.2 拆分后的 A.2 输入，且在目标 1 上测试。α 是分类阈值；若另在目标 α 检验，乘子右端是 α(1−y_c)，仍强制小玩家耦合但大玩家合计仅需 (k+1)α，不能机械沿用目标 1 的矛盾。文献的通用 canonical 结果走 SA(1)→DRZ LP 与 ≤4 间隙；本边的具体拒绝只需原文约束。两结果都在受限 Santa 的最大最小覆盖模型内。",
+  "contribution": {
+    "result": "在 3ε<α 的原间隙实例上，canonical 化把原 law 能通过多轮的目标 1 变成一轮 SA 已不可行；给出导致变化的显式覆盖、盒约束和容量账本。",
+    "remaining": "整个 canonical 域的常数间隙仍需文献给的普遍 SA(1)→DRZ 以及 DRZ 间隙结果；本计算仅核指定注入族。"
+  },
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/Bamas升投影MMDA与SantaClaus--资料.md",
+      "sha256": "82b415629a91f831b0a5b78c359340dd40195cf66955d35e8005366ea60e8b6c",
+      "section": "5. restricted-assignment 附录的独立结果"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/cag-um-direct-encoding-review-primary/related-original/bamas-frozen-v2.pdf",
+      "sha256": "e1120098a847eb10689c529579af5d44b93ee5f6e655eae7621a2333bf76e8de"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读冻结 PDF v2 论文页 6、14 及 45–47，按原文乘子轮次复算注入条件与 split 后一轮矛盾。",
+  "endpoint_pins": {
+    "M-68e534b8b5c1428d990961b1dfae1cb2": "d3213e114c8e9da97b2321378832f5a19c68fc78fce8fe1332f49d4b37607659",
+    "M-c99f51ac275e4ac09e860f75a108d704": "6c02dc817330275f911ff5ac2ce9139213ff8c5cf7c4054fd91f5e84a0c523fe"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/Bamas升投影MMDA与SantaClaus--资料.md": "82b415629a91f831b0a5b78c359340dd40195cf66955d35e8005366ea60e8b6c",
+    "archives/customer-attraction/tools/evidence/cag-um-direct-encoding-review-primary/related-original/bamas-frozen-v2.pdf": "e1120098a847eb10689c529579af5d44b93ee5f6e655eae7621a2333bf76e8de"
+  },
+  "review_digest": "fd299f227a37f4f8e486a6eb83c0013115a3b7012f32f4ed8f9080b47f2fe524"
+}

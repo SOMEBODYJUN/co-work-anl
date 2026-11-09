@@ -1,0 +1,71 @@
+{
+  "edge_id": "um-typed-tiny-home-specializes-no-repair-quality-separation",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4b"
+  ],
+  "target_ids": [
+    "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "原显式 norm-one Q 还满足 v4b 的 single-state outers、互异 homes、每 home own helper、B-only fallback 及阈值 15/16 的 B-only UD 叶合同；k≥2 时 ν≤1/(16384k²)，k=1 无 tiny 上界。归一菜单 promise 取 D=0，YES 原全部组 unit；NO 任一原分配至少 γ_lo n 个组质量≤δ_q，γ_lo>0，0≤δ_q<1/10。",
+  "roles": {
+    "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4b": "给该 typed 域上可直接执行的 19/10 实际算法，处理无完整叶匹配及内部分支。",
+    "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1": "给同一全原任务 P(Q) 与 D=0 的 YES/NO 质量合同，供比较其实际输出与 LP 筛选。"
+  },
+  "explanation": "两输入用相同原 indexed states、同一资源列、原单位 selectors、每个正或显式零 incidence 的原 private p 和 resource 端 1；给不交实际 bundles 的标准回填得到 peak≤2−V，任意 peak C<2 的完整调度可由 resource unit capacity 及 selector 所选 state 回读质量≥2−C 的同一原分配，故 OPT=2−V。YES 下 V=1，运行 v4b 得实际 C≤19/10；NO 至少一个低组，V≤δ_q，因而任何调度 C≥2−δ_q>19/10。重算实际峰值即可分离。v4b 的成功分支利用共同叶匹配、一个 helper 一个 state 的固定 profile matching oracle、同一高 V 参考、最优面稳定交换及一张共同 circulation，保证所有组 r_g≥1/10；无完整匹配或无足够进展时只得 V<15/16 与 baseline≤2。k=1 用整数 submodular greedy 的 1/2 界和 ≥1/6 Good-home 质量，不付 ν 损失。这个相对近似的 promise 判定不依赖把 unit-FSLP 当作高 V。具体地，给每个 outer 偶数 H 个等重互异 homes（k≥2 可取 H=16384k²），无额外叶；把同一 outer 的 helpers 两两成对，每对有独享的四个 B 资源 a,b,c,d。第一 helper 的两个等权 fallback 支持为 {a,b},{c,d}，第二为 {a,c},{b,d}，另保各自 own-unit state。FSLP 给每 outer 唯一 state 权一、各 helper 的两个 fallback 各 1/2，home 列与 B 列均恰一。每对 fallback supports 总相交，固定 profile 下二 helper 的 B 质量和≤3/2，故每 outer W_i≤3/4< (15/16)²。若所有组质量>1/2，每 outer 必取逾 H/2 homes，某对两 helpers 都失去 home 且都须完整 fallback，矛盾。反向每对只取一个 home，失去 home 的 helper 取完整 fallback，另一个留 own，故 V=1/2。",
+  "scope": "只迁移 D=0 promise 的实际判定步骤，NO 低组计数沿同一原 n 且 γ_lo>0 即至少一组。不能推出 typed 例中 LP 不可行，尤其反例参数 δ_q=1/2 超出分离域。D>0 一般会给 outer 增加 state，增强菜单未必仍在 v4b 单态域。v4b profile/FW 与 v1 无叶 k⁴ SA1/MW、v5 O(1/k) actual-I 的证明和有限软件证据分别保留。",
+  "contribution": {
+    "result": "在真实 typed 交集和 D=0 下，实际 v4b 19/10 输出给 δ_q<1/10 的组质量 promise 判定。显式成对菜单同时证明 unit-FSLP 不能支付 v4b 的高 V 共同参考前提。",
+    "remaining": "一般 Q、D>0 共享 REPAIR 及增强 unit-FSLP 的判定和几乎全部组 NSW 界仍由归一化对象自己的 C–E 论证承担。"
+  },
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/证明/共享UD tiny状态势与19比10回填--证明.md",
+      "sha256": "e857e20f4498aef53ebe9c3ef0a9f3bc7f5937c5cd3fb554365c1d3e553a2868"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/Boss11共享UD叶tiny-home-k二次扩域三源审查--审查.md",
+      "sha256": "6696f6d2b5f525afaca1cdfe98a0e211c599a363d834f4d618026805ef3a8cbf"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资料/shared-UDtiny-home-v4势函数与完整回填--资料.md",
+      "sha256": "b59fe67581587417b9b8570bd7fd24700b3eb3d9db917eb69cd9d34b24c9f2f6"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/共享UD最优交换有限网络双源审查--审查.md",
+      "sha256": "8e3f8f67edb1209f35c2aff03d0dfa14d13719f46a57f9bd05c762e48579350c"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化菜单高低比例互补的实质纠错及修复边界--审查.md",
+      "sha256": "ad299d925721db08eadd2eb530a07871dab58aff5d739d591a32335c40eeea8d"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分数重匹配与归一化XOS稳健缺口边界--定理.md",
+      "sha256": "05d4fbbde010e55a6b1fbb920d2f7e4d84743d1c8e50a3392a3d6918249a829b",
+      "section": "5. D：共享 singleton REPAIR 的组合推论"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分数重匹配与归一化XOS稳健缺口边界--定理.md",
+      "sha256": "05d4fbbde010e55a6b1fbb920d2f7e4d84743d1c8e50a3392a3d6918249a829b",
+      "section": "6. E：完整普通 flat-UM 调度接口"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐任务核相同 P(Q)、从相对峰值导出 promise test，并复算 typed 四资源成对实例的列容量、最优 max-min 和 profile 福利上界。",
+  "endpoint_pins": {
+    "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4b": "2e3fbcf45b4149c037d1b6444992ff6a0f3722ae7e7fa70d6ecc6a6e361328c7",
+    "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1": "11f3c88941c445e15d3aa420062c609fe02b7f94a3533769d8c7676b728865c5"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/证明/共享UD tiny状态势与19比10回填--证明.md": "e857e20f4498aef53ebe9c3ef0a9f3bc7f5937c5cd3fb554365c1d3e553a2868",
+    "archives/unrelated-machines/state/审查/Boss11共享UD叶tiny-home-k二次扩域三源审查--审查.md": "6696f6d2b5f525afaca1cdfe98a0e211c599a363d834f4d618026805ef3a8cbf",
+    "archives/unrelated-machines/state/资料/shared-UDtiny-home-v4势函数与完整回填--资料.md": "b59fe67581587417b9b8570bd7fd24700b3eb3d9db917eb69cd9d34b24c9f2f6",
+    "archives/unrelated-machines/state/审查/共享UD最优交换有限网络双源审查--审查.md": "8e3f8f67edb1209f35c2aff03d0dfa14d13719f46a57f9bd05c762e48579350c",
+    "archives/unrelated-machines/state/审查/归一化菜单高低比例互补的实质纠错及修复边界--审查.md": "ad299d925721db08eadd2eb530a07871dab58aff5d739d591a32335c40eeea8d",
+    "archives/unrelated-machines/state/定理/分数重匹配与归一化XOS稳健缺口边界--定理.md": "05d4fbbde010e55a6b1fbb920d2f7e4d84743d1c8e50a3392a3d6918249a829b"
+  },
+  "review_digest": "467af6a1da91bc0881d4debc3552ef38652640d2675b70a9a2c1caa66ad7e34e"
+}

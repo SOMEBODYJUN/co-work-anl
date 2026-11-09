@@ -1,0 +1,61 @@
+{
+  "edge_id": "um-prefix-finite-precision-recovers-exact-decoding",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-PREFIX-ATOMIC-FINITE-PRECISION-v1"
+  ],
+  "target_ids": [
+    "UM-PREFIX-ATOMIC-DECODING-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一合法普通 UM 矩阵和同一非负、根归一、精确守恒的前缀 law。每件任务有限资格端非空；有限精度端只需给固定任务顺序的查询。对每个完整原子和每台机器的局部化残差均约束真实质量。查询时间和输出按精度的二进制编码长度计费。",
+  "roles": {
+    "UM-PREFIX-ATOMIC-FINITE-PRECISION-v1": "给最大估计子端的锐质量界，以及绝对残差、相对残差和有理网格的恢复预算。",
+    "UM-PREFIX-ATOMIC-DECODING-v1": "给比较的精确阈值及正完整原子的解释，并区分任意相容部分查询和固定次序路径。"
+  },
+  "explanation": "固定顺序，令第 j 项有 d_j 个合法端、D_k=∏_{j≤k}d_j、N=D_n。若所选真实子质量为 w，其他子质量至多 w+2a_k，故乘 D_k 后得 D_k q_k≥D_{k−1}q_{k−1}−2a_k(D_k−D_{k−1})。望远镜并用非负性得到常精度锐界 b=max(0,[1−2a(N−1)]/N)。N>1 时把固定平局优先叶的质量置为 u=[1−2a(N−1)]/N，其他叶同取 v=(1+2a)/N，每个分支兄弟的真实差正好 2a；相反方向误差造平局，在临界得零，再用临界 law 覆盖更宽误差预算。N=1 质量恒一。精确查询和零残差时，最大真子端保持正质量，正原子按精确桥解释。有限误差时，b>0 给 L_i≤T+τ_i/b。a=1/(4N) 给 b=(N+1)/(2N²)，若 τ_i≤1/(4QN)，则超载严格小于 1/(2Q)，而 Q(L_i−T) 整数，故仍输出精确 T 调度。相对残差直接给 T+Δ_i；若用 Gram 表示，必须在正支撑原子上有评价矩阵满行秩才可反推逐原子约束。两件仅能在 A 各耗 3/4 的任务与 k 件可在 B/C 零时执行的任务，在 T=1 给所有原子同一 1/2 超载，均匀 law 使绝对残差仅 1/(2N)，确认不能直接抹掉质量分母。",
+  "scope": "两种访问方式共享同一 law，不枚举 N 或 Q。精确接口要求任意相容部分 S 的精确查询，并可选任一正孩子；上述映射只恢复固定次序取最大者的精确调度结论。有限精度的固定次序访问不提供精确 Eval、一般生成器或全承诺验证器。Fraction 核验为有限证据。",
+  "contribution": {
+    "result": "同一真实 law 的固定次序有限精度访问在明确网格预算内交付原阈值 T 的真实调度；精确最大子端是此固定次序推导的零误差情形。",
+    "remaining": "精确对象的任意相容部分访问需单独具备。两接口各自的一般生成、全叶承诺验证及可靠 FAIL 仍未由该关系构造。"
+  },
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/宽仿射矩形与前缀原子解码双源审查--审查.md",
+      "sha256": "e0a28887fb19ba29977b86ced57519a8511123848e114d0a787fe0a237a9739d",
+      "section": "3. 前缀原子证书：查询式确定性解码"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/prefix-atomic-finite-precision-original-primary/source-root/research/current/unrelated_machines/succinct_prefix_atomic_decoding_bridge.md",
+      "sha256": "a17bde448cd58ab9b637a6050837153006423cf8097b078621bcb302031ff02b"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/有限精度前缀原子解码与Gram满行秩边界冻结审查--审查.md",
+      "sha256": "e3a0db8a5ae132bc0e9a887bdd3ab73f748bb991ee560fbe59d3e031d1292c3e"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/agent_um-20261101/prefix-atomic/prefix_atomic_finite_precision_independent.py",
+      "sha256": "19180aa9322c8d05cbb8e04aef8d3d29095d82414303d778b663df23f4f5d77c"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/agent_um-20261101/prefix-atomic/prefix_atomic_finite_precision_independent.json",
+      "sha256": "e826c557f836bd38b94333d6893856f179221c1a92589bc31a76835185a84c74"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对精确/固定序合同、逐层望远镜与最坏平局构造、真实残差的分母及严格格点，源码/报告只用于有限边界。",
+  "endpoint_pins": {
+    "UM-PREFIX-ATOMIC-DECODING-v1": "8a54b4990271f92b3532688d041d6e81792fa3cc5a4fe8db671c45d50864f528",
+    "UM-PREFIX-ATOMIC-FINITE-PRECISION-v1": "0df86729284f62fbb46dd46df842bd3312dade067517255d4d65a4b8c1beede2"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/宽仿射矩形与前缀原子解码双源审查--审查.md": "e0a28887fb19ba29977b86ced57519a8511123848e114d0a787fe0a237a9739d",
+    "archives/unrelated-machines/tools/evidence/prefix-atomic-finite-precision-original-primary/source-root/research/current/unrelated_machines/succinct_prefix_atomic_decoding_bridge.md": "a17bde448cd58ab9b637a6050837153006423cf8097b078621bcb302031ff02b",
+    "archives/unrelated-machines/state/审查/有限精度前缀原子解码与Gram满行秩边界冻结审查--审查.md": "e3a0db8a5ae132bc0e9a887bdd3ab73f748bb991ee560fbe59d3e031d1292c3e",
+    "archives/unrelated-machines/tools/evidence/agent_um-20261101/prefix-atomic/prefix_atomic_finite_precision_independent.py": "19180aa9322c8d05cbb8e04aef8d3d29095d82414303d778b663df23f4f5d77c",
+    "archives/unrelated-machines/tools/evidence/agent_um-20261101/prefix-atomic/prefix_atomic_finite_precision_independent.json": "e826c557f836bd38b94333d6893856f179221c1a92589bc31a76835185a84c74"
+  },
+  "review_digest": "02734c7561d4028b5864534dc0feccdff3fcb7795d938d4eaff0ef16f0dd3229"
+}
