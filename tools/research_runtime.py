@@ -268,6 +268,12 @@ def edges(root, data, objects, verify=True):
             (ref_bytes if verify else reference)(root, ref)
         if edge.get('relation_mode') not in {'unconditional', 'conditional', 'context'}:
             raise ValueError('Explicit relation_mode required')
+        if 'contribution' in edge:
+            contribution = edge['contribution']
+            if (edge['kind'] not in LOGICAL or edge['relation_mode'] == 'context'
+                    or not isinstance(contribution, dict) or set(contribution) != {'result', 'remaining'}):
+                raise ValueError('A logical contribution requires result and remaining: ' + eid)
+            nonempty(contribution, ['result', 'remaining'])
         if edge['status'] == 'accepted':
             nonempty(edge, ['reviewed_by', 'review_note'])
             if edge['kind'] in LOGICAL and set(edge['source_ids']) == set(edge['target_ids']):
@@ -656,7 +662,7 @@ def context(root, ids, registry=REGISTRY, hops=0, *, edge_ids=None, edge_statuse
     for eid, (_, edge) in catalog.items():
         for oid in set(edge['source_ids'] + edge['target_ids']):
             incident.setdefault(oid,set()).add(eid)
-        if edge.get('status') != 'accepted' or edge.get('kind') not in positive:
+        if edge.get('status') != 'accepted' or edge.get('kind') not in positive or 'contribution' in edge:
             continue
         sources, targets = set(edge['source_ids']), set(edge['target_ids'])
         # A shared endpoint is already an assumption in either direction.
@@ -730,11 +736,12 @@ def context(root, ids, registry=REGISTRY, hops=0, *, edge_ids=None, edge_statuse
                          + '. Seed one of their endpoints or increase navigation hops.')
     picked = [ev(eid) for eid in sorted(related)]
     return {'seed_ids': ids, 'hops': hops, 'navigation_only': True, 'registry': registry, 'registry_pin': pin(data),
-            'support_semantics': 'OR between support_options; ALL within each option. Conditions and unpaid premises remain explicit. This is not automated proof acceptance.',
+            'support_semantics': 'OR between support_options; ALL within each option. Conditions and unpaid premises remain explicit. Proof-step contributions stay in research_leads with their result and remaining obligations.',
             'proof_closure_object_ids': sorted(proof_objects), 'support_options': support,
             'objects': [ov(i) for i in sorted(required)], 'edges': picked,
-            'refutations': [e for e in picked if e.get('kind') == 'refutes'],
-            'research_leads': [e for e in picked if e['edge_id'] not in proof_edges and e.get('kind') != 'refutes'],
+            'refutations': [e for e in picked if e.get('kind') == 'refutes' and 'contribution' not in e],
+            'research_leads': [e for e in picked if e['edge_id'] not in proof_edges
+                               and (e.get('kind') != 'refutes' or 'contribution' in e)],
             'unavailable_edge_files': unreadable,
             'instruction': 'Read the selected body and exact evidence on demand. Accepted is an author declaration, not a mathematical verdict. Navigation hops do not truncate selected logical ALL-premise closure. Context links and proposed/rejected relations never supply proved premises.'}
 
@@ -1049,7 +1056,8 @@ def draft_map_repairs(root, task_ids, output, registry, task_prefix, context_opt
 
 def draft_map_tasks(root, output='map/planned-tasks.json', registry=REGISTRY,
                     stage='3A', object_ids=None, task_prefix='map',
-                    context_options=None, max_objects=None, scope=None, comparison=None):
+                    context_options=None, max_objects=None, scope=None, comparison=None, *,
+                    queue_rows=None, required_reads=None):
     """Draft bounded reading comparisons; never infer or accept a relation.
 
     One complete registered object is a unit. The first layer drafts local
@@ -1091,10 +1099,14 @@ def draft_map_tasks(root, output='map/planned-tasks.json', registry=REGISTRY,
     elif comparison is not None:
         raise ValueError('Use --comparison for the explicitly selected 3B/3C frontier')
     budget = registration.context_budget(**(context_options or {}))
+    required_reads = required_reads or {}
     measure_text = lambda text: registration.text_cost(text, budget['model'])
     queue_snapshot = {'source': 'not-a-published-queue-snapshot', 'skipped_current_core_objects': 0}
     if stage == '3A':
-        rows, queue_snapshot = _map_queue_snapshot(root)
+        if queue_rows is None:
+            rows, queue_snapshot = _map_queue_snapshot(root)
+        else:
+            rows, queue_snapshot = queue_rows, {'source': 'compaction-pinned-queue'}
         rows = [row for row in rows if row['definition'].get('registry') == registry]
         done = _effective_map_done(rows)
         active = [row['definition'] for row in rows if row['state'] not in {'done', 'withdrawn'}]
@@ -1121,7 +1133,7 @@ def draft_map_tasks(root, output='map/planned-tasks.json', registry=REGISTRY,
                 'queue_snapshot': queue_snapshot,
                 'instruction': 'Resume the published queue, draft --repair-task for listed IDs, or finish '
                                'integration; do not map plan an empty task array.'}
-    cache, units, refs_for, neighbors, candidates_for = {}, {}, {}, {}, {}
+    cache, units, neighbors, candidates_for = {}, {}, {}, {}
     body_owners, exact_owners = {}, {}
 
     def exact_ref(ref):
@@ -1232,8 +1244,9 @@ def draft_map_tasks(root, output='map/planned-tasks.json', registry=REGISTRY,
     for oid in selected:
         obj = objects[oid]
         refs = [obj['body'], *obj['evidence']]
-        refs_for[oid] = refs
-        units[oid] = {'key': oid, 'refs': refs, 'metadata': obj,
+        shared_refs = [ref for peer in required_reads.get(oid, ()) for ref in
+                       [objects[peer]['body'], *objects[peer]['evidence']]]
+        units[oid] = {'key': oid, 'refs': [*refs, *shared_refs], 'metadata': obj,
                       'estimated_output_tokens': max(1200, measure_text(
                           json.dumps(obj, ensure_ascii=False))['estimated_tokens'] + 400)}
         exact, hints = reading_links(oid) if stage == '3A' else (set(), set())
@@ -1311,7 +1324,7 @@ def draft_map_tasks(root, output='map/planned-tasks.json', registry=REGISTRY,
             return 0
         return 1
 
-    if stage == '3A' and max_objects is None:
+    if stage == '3A' and max_objects != 1:
         # Let one claim carry several small comparisons in the same scope.
         # Each family remains an independent comparison group within the task.
         small = {}
@@ -1347,26 +1360,37 @@ def draft_map_tasks(root, output='map/planned-tasks.json', registry=REGISTRY,
                 order.append(pending.popleft())
                 if pending:
                     order.append(pending.pop())
-            result = registration.pack_units(root, order, group_budget, max_items=len(order), cache=cache)
-            for pack in result['packs']:
-                packed_groups = sorted(pack['units'], key=lambda group: group['priority'])
-                pack['comparison_groups'] = [[item['key'] for item in group['members']] for group in packed_groups]
-                pack['units'] = [item for group in packed_groups for item in group['members']]
-                separate.append((scope, packed_groups[0]['family'], pack))
+            windows = [[]]
+            core_count = 0
+            for group in order:
+                size = len(group['members'])
+                if max_objects is not None and core_count + size > max_objects:
+                    windows.append([])
+                    core_count = 0
+                windows[-1].append(group)
+                core_count += size
+            for window in windows:
+                result = registration.pack_units(root, window, group_budget, max_items=len(window), cache=cache)
+                for pack in result['packs']:
+                    packed_groups = sorted(pack['units'], key=lambda group: group['priority'])
+                    pack['comparison_groups'] = [[item['key'] for item in group['members']] for group in packed_groups]
+                    pack['units'] = [item for group in packed_groups for item in group['members']]
+                    separate.append((scope, packed_groups[0]['family'], pack))
         packs = sorted(separate, key=lambda item: (item[0], item[2]['units'][0]['key']))
 
     tasks, oversize, reading_totals = [], [], {'chars': 0, 'utf8_bytes': 0, 'estimated_tokens': 0}
     for scope, family, packed in packs:
         core = [unit['key'] for unit in packed['units']]
-        reads, deferred_issues = [], {}
-        mandatory_refs = [ref for oid in core for ref in refs_for[oid]]
-        payload = [objects[oid] for oid in core]
+        reads = sorted({peer for oid in core for peer in required_reads.get(oid, ())} - set(core))
+        deferred_issues = {}
+        payload = [objects[oid] for oid in core + reads]
+        mandatory_refs = [ref for obj in payload for ref in [obj['body'], *obj['evidence']]]
         reading = registration.reading_cost(root, mandatory_refs, metadata=payload, cache=cache, model=budget['model'])
         reading['task_overhead_tokens'] = 32 * len(payload)
         reading['estimated_tokens'] += reading['task_overhead_tokens']
         oversized = (packed['estimated_output_tokens'] > budget['output_tokens']
                      or reading['estimated_tokens'] > budget['reading_tokens'])
-        candidates = sorted(set().union(*(neighbors[oid] for oid in core)) - set(core))
+        candidates = sorted(set().union(*(neighbors[oid] for oid in core)) - set(core) - set(reads))
         deferred = set().union(*(candidates_for[oid] for oid in core)) - set(core)
         if not oversized and not reading['unmeasured_refs']:
             for oid in candidates:

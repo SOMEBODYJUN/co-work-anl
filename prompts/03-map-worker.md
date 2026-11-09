@@ -10,6 +10,8 @@
 
 联合前提保ALL，独立证明分OR；解释各前提作用、变量对应、完整推导和适用边界。equivalent_to双向都保整组前提；refutes多目标逐项否定，不把否定合取当每项为假、辅助桥失败当原题反例。迁移交清对象、选择、约束、量词和目标如何对应及条件损失；只证单向就保单向。定义通常作条件/引用，实际有数学作用才连，不造模型hub。
 
+先写下边实际证明的句子，再对照目标的全部量词和输出。若只得到阈值、分支、不等式或算法部件，用 `contribution.result` 写精确局部结论，用 `contribution.remaining` 写还欠的步骤或假设。已有独立节点的局部结论直接指向该节点。迁移用到的等价或编译桥是前提，目标是迁移之后得到的结果。
+
 推导完整而前提未证，可accepted+relation_mode:conditional，明确未付前提且不提升终点真值；推导本身缺桥才proposed，写具体缺步。作者实读后先定status、reviewed_by/review_note，再 `research edge-bind <边文件> --write`、edge-check；语义或证据变化定向重核。某证明失效只撤具体支持，保替代证明，不把所有后继判假。
 
 每个core对象的coverage保当前object_pin、实际comparison_scope、reason和准确状态。linked列成立的逻辑关系。只找到引用、程序或计算语境时，保留有用语境边，覆盖写isolated-after-review并交代比较过谁、为何没有逻辑边和仍欠什么。身份、版本或交付去向未清才needs-decision。

@@ -181,6 +181,8 @@ python work.py map plan --record-file map/planned-tasks.json
 
 先恢复已有任务。3B/3C用--object-id或--objects-file指定实际对象，再用--comparison给出具体数学问题。3D是持续整合。3A中的comparison_groups各自比较，共同定义和证据可共享读。核心object_ids负责覆盖，read_object_ids是共享依赖，input_pins覆盖两者。pin用research show返回的registration_pin。
 
+已有普通单对象可领包时，用 `python work.py map compact --scope <实际存档路径>`。程序按最深子档、任务前缀和实际预算合包，保留每个旧对象的必读依赖。撤下旧包和发布新包在同一次队列写入完成。遇到同时认领的包，保留该认领并继续处理其它组。
+
 ```json
 {
   "task_id":"joint-proof", "stage":"3A", "registry":"research/registry.json",
@@ -205,6 +207,8 @@ python work.py map done --record-file map/ready.json
 edge含edge_id、kind、status、source_ids、target_ids、premises_mode:all、relation_mode、conditions、roles、explanation、scope、evidence。逻辑种类implies/refutes/specializes/transfers/equivalent_to；语境种类motivates/cites/sourced_from/implements/checks/corrects/supersedes。定义通常作条件和正文引用，不机械造模型hub。引用、相似度、目录从属不冒作推导。
 
 {A,B}⇒C写一条ALL边，不能拆成A单独、B单独足够的两边；不同独立证明另写OR支持。equivalent_to表示ALL(source)⇔ALL(target)，反向要同时保全部targets。refutes多目标须逐项有否定证据，只否定合取不能宣称每项都假；迁移必须写模型映射与保留/丢失条件。各对象代表本次实际数学，示例ID不能直接写进真实任务。
+
+完整关系以目标对象的整条陈述为准。逻辑边只完成目标的一步时，加 `"contribution":{"result":"实际推出的局部结论","remaining":"整条目标仍需要的前提或步骤"}`。已成立的局部贡献可作为真实比较成果写入coverage，Solver将它列在研究线索中。迁移以原结果和用于解码或等价的桥为前提，结论定位到迁移后得到的结果。
 
 作者完整实读后可accepted，无固定二次审批流水。先定最终status、reviewed_by及具体review_note，再用edge-bind --write把endpoint_pins/evidence_pins/review_digest写回同一边文件，最后edge-check。省略--write时只输出绑定字段。绑定覆盖语义文字，之后改文字、状态、端点或证据要重核。edge-check校本边而不要求已在canonical清单，程序检查不代替数学判断。前提尚未证明但“若A且B则C”的论证完整时，可以是`accepted`且`relation_mode:conditional`，不会把C提升为已证；关系论证本身还有缺步才用`proposed`。所有前提与额外条件均已付清才可作为无条件支持，`rejected`保精确失败理由。
 

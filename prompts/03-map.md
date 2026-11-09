@@ -37,6 +37,8 @@ python work.py board-init
 
 **决定关系和粒度。** 一条边可承载完整多步论证；常规代入、记账和算术写进explanation及证据，不逐步造节点，不为自足证明造自环。确有独立复用价值的缺漏引理，才给Boss精确陈述、条件、完整出处及单独登记理由。
 
+**先定实际结论，再选端点。** 逐句对照目标的陈述、量词和输出。能推出整个目标才交作整结论支持。只证明一个阈值、分支或算法部件时，用 `contribution.result` 写出这一步实际得到的结论，用 `contribution.remaining` 写清全目标还需要什么。已有独立登记的局部结论可直接作端点。做迁移时，把被迁移的结果和所用等价或编译桥放在前提，终点放迁移后真正得到的结果。
+
 {A,B}⇒C保一条ALL边，交清各前提作用、条件、变量对应和推导；独立证明分OR。equivalent_to须证双向，反向保全部targets。refutes逐项指明确被否命题，辅助桥失败不冒原题反例。迁移交清对象、允许选择、约束、量词和目标怎样对应、保留/损失什么；只证单向就保单向。引用、启发、实现及有限观察保语境身份，不作一般证明。
 
 **区分关系成立和前提成立。** 推导完整但前提未证，可accepted+relation_mode:conditional，写明未付前提，不提升终点真值；推导本身缺桥才proposed，写准确缺步。作者实读后可accepted，无固定二审；先定status、reviewed_by/review_note，再用 `research edge-bind <边文件> --write` 写回绑定，接着edge-check。某证明缺步只撤具体支持，保有效替代证明；命题被反例否定另作判断。文字/证据变化定向重核。
@@ -45,7 +47,7 @@ python work.py board-init
 
 3A先从一个子存档里已知的承重关系做起，比如同一证明链、同一反驳目标、同一模型下可直接复用的引理；没有子存档时从该存档的本地对象族做起。同一子档的几个小组可以一次认领，组内实质比较。3B用已核对的对象做同一存档内的跨包、跨子档比较。3C有明确的两方对象、映射和数学问题时才跨存档。局部稳定就接下一层，3D贯穿全程整合已有成果。
 
-已有计划先恢复。没有合适批次时从当前子档开工，下面的scope用实际目录。0任务时转恢复、补比较范围或整合。
+已有计划先恢复。没有合适批次时，按同一最深子档把本轮已知的相关对象一起草拟，使用默认合包。较短的独立组可以在同一批各自比较，大对象按实际阅读和交付量单独处理。发现同一子档积了很多普通单对象可领包，用 `map compact --scope <实际目录>` 合并后再分派。0任务时转恢复、补比较范围或整合。
 
 ```sh
 python work.py sync
@@ -66,7 +68,7 @@ python work.py map claim-next --prefix <同一子档短名> --count <实际worke
 
 本包可多边或零边。linked只列核实过的逻辑关系。引用、实现和计算可以保存为语境边；只发现语境边时，实读比较后以isolated-after-review交付并写清数学理由。零边写实际比较范围和结果，收据assets:[]。同端点的独立证明各保完整推导。
 
-成熟几个交几个，不等整轮。checkpoint本次准确产物确认pushed，Boss自动组成task_id/receipt_file的ready数组，用map done --record-file批交，单批done仍可用。未知回执沿原请求核远端；认证失败保local-only并停止新认领，参数按IMPLEMENTATION。
+成熟几个交几个，不等整轮。Boss在现有交付复核里核准前提和结论方向、整结论或局部贡献、条件和缺口，再checkpoint本次产物确认pushed。用task_id/receipt_file的ready数组执行map done --record-file，单批也可直接交。未知回执沿原请求核远端，认证失败保local-only并停止新认领，参数按IMPLEMENTATION。
 
 任何Boss都可边收边sync、assemble，写本次涉及的archive_reviews及cross_archive_review。若远端先有新成果，按新快照重组并接上已完成的实质审读。当前对象、明确比较线索和交付都处置后，用research check --final、build --final，按projections明确checkpoint所有投影及registry/coverage/integration。
 

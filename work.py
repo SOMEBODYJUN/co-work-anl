@@ -712,7 +712,7 @@ def main():
         return subprocess.call([sys.executable, str(repo / TOOLS / 'research_runtime.py'), '--repo', str(repo), *registry, *a.args], env=env)
     if a.command == 'compute':
         return subprocess.call([sys.executable, str(repo / TOOLS / 'compute.py'), '--repo', str(repo), *a.args])
-    task_commands = {'inventory', 'lead', 'plan', 'list', 'claim', 'claim-next', 'done',
+    task_commands = {'inventory', 'lead', 'plan', 'compact', 'list', 'claim', 'claim-next', 'done',
                      'handoff', 'reclaim', 'withdraw', 'status', 'collect', 'assemble', 'read-add'}
     if a.command == 'registration-task' or (a.command == 'map' and a.args and a.args[0] in task_commands):
         phase = 'registration' if a.command == 'registration-task' else 'map'
