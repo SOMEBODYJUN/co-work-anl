@@ -1,0 +1,45 @@
+{
+  "edge_id": "wc-stage3a-two-attack-to-homogeneous-odd-ring",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/conservative-two-attack-polynomial-monomial-reduction"
+  ],
+  "target_ids": [
+    "weighted-congestion/odd-ring-uniform-fixed-hub-amplification-family"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定任意整数d≥2、n≥1、任意α>1，通过对称两列严格保守H/L测试；用归约输出w∈(0,1]、P=x^k、Q=b x^d。目标保留任意奇数m≥3及真实单人偏离。",
+  "roles": {
+    "weighted-congestion/conservative-two-attack-polynomial-monomial-reduction": "给同n,d,α的严格单项式两攻击参数及两个真实/保守费用差。",
+    "weighted-congestion/odd-ring-uniform-fixed-hub-amplification-family": "给奇数枢纽拓扑的合法资源实现及同位light与全反位后的hub两层覆盖。"
+  },
+  "explanation": "对每个枢纽取u_i=1，对每群取v_i=w、n_i=n、k_i=k、main系数1、side系数b。每个light的侧对由下一枢纽使用，令其自身动作取互补侧。此时x_i=t_i=w，权闭环自动成立。记P_i=α(1+w)^d−w^d、Q_i=(1+w)^d−α。保守L是N_i−bP_i>0，H是nbQ_i−M_i>0。于是每块两严格测试同时满足。若有同位light则L给真偏离；否则全反位，在奇环必有相邻同位hub，后者的incoming项正好给H。该构造将一组合法源参数迁移为任意奇环长的全态反例，原单hub实例的其他实际边及端点不随之保持。",
+  "scope": "同质奇环子族；α>1、全部严格、真偏离含自身。允许改变人数为m(n+1)，不声称保持原单游戏阈值。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/保守两攻击证书的单项式费用归约--定理.md",
+      "sha256": "0d876f1420c6bcb1a48bfc81d8c45da7d504033737c534637d9a332a3b6654e0"
+    },
+    {
+      "path": "archives/weighted-congestion/state/构造/奇数枢纽群组的显式均匀放大族--构造.md",
+      "sha256": "ea945b9122367a32b6b2386df6e75628e446e54cacfa31f3b3c92054698c9e4f"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对正文各端模型与量词、推导中的真实新负载及本边实际结论范围。",
+  "contribution": {
+    "result": "任意通过两攻击测试的非负多项式输入，均给同d、α和任意奇m≥3的合法同质群组环无α-PNE实例。",
+    "remaining": "目标的非同质重置群、G≥16/e、d≥4096时随m的显示增长率及固定m=3幂次下界由独立参数乘积证明承担。"
+  },
+  "endpoint_pins": {
+    "weighted-congestion/conservative-two-attack-polynomial-monomial-reduction": "acb50ebdc5c66db86127c9b34c6b974e3b2c807281fd9b3732aed4d44ec8d960",
+    "weighted-congestion/odd-ring-uniform-fixed-hub-amplification-family": "a4be2e2466ca75ae794d5a347d8677c3d375f0e584fa0141f71c0cb5814c8feb"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/保守两攻击证书的单项式费用归约--定理.md": "0d876f1420c6bcb1a48bfc81d8c45da7d504033737c534637d9a332a3b6654e0",
+    "archives/weighted-congestion/state/构造/奇数枢纽群组的显式均匀放大族--构造.md": "ea945b9122367a32b6b2386df6e75628e446e54cacfa31f3b3c92054698c9e4f"
+  },
+  "review_digest": "2723dd98f695f033600a50144d4876e00429b27e735ff4da8baeb6fdb111cfec"
+}

@@ -1,0 +1,52 @@
+{
+  "edge_id": "wc-map-linear-family-negates-model-contract",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1"
+  ],
+  "target_ids": [
+    "weighted-congestion/frontier-model-and-validation-contract"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "使用验收合同原模型及实α≥1。任意C≥1和整数d_0≥2，选整数d≥max(d_0,2^20)使 ln d>10C。",
+  "roles": {
+    "WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1": "给该实际整数次数的合法有限游戏，每个纯状态有真实严格d/10出口。",
+    "weighted-congestion/frontier-model-and-validation-contract": "目标合同式(3)的精确反量词式(4)及其后续状态。"
+  },
+  "explanation": "令α_0=Cd/ln d<d/10。每态给的原偏离新成本C_new≥0，所以 C_old>(d/10)C_new≥α_0 C_new。由同一个游戏逐态证明反量词式(4)。包括新成本为零的边界，权/策略/实际次数来自同一族。",
+  "scope": "精确否定固定Cd/ln d的全类普遍存在保证；后续加性近次数下界与独立正向上界均另证。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/全状态线性次数无均衡族--定理.md",
+      "sha256": "fd1208e470d12721ed79fea67fbd43221c432a95fc0433ac3df2d5f0573c7d9b",
+      "section": "结论及适用边界"
+    },
+    {
+      "path": "archives/weighted-congestion/state/资料/全类近似门槛的模型与研究验收合同--资料.md",
+      "sha256": "d9a1e227ff9c9439d06f9f3b80654d494f17685dd76b1ff1d86d30575ed97ec6",
+      "section": "一般目标与本次具体命题的量词"
+    },
+    {
+      "path": "archives/weighted-congestion/state/资料/全类近似门槛的模型与研究验收合同--资料.md",
+      "sha256": "d9a1e227ff9c9439d06f9f3b80654d494f17685dd76b1ff1d86d30575ed97ec6",
+      "section": "源状态页已关闭的目标及其后续加强"
+    }
+  ],
+  "reviewed_by": "Boss1-weighted-congestion-2e6caa865d8f839c-worker",
+  "review_note": "核对每个C,d_0的次数选择、Cd/ln d与d/10的严格比较及零新费。",
+  "contribution": {
+    "result": "证明合同原命题(3)的否定式(4)，而非仅给一个无均衡游戏或一条循环。",
+    "remaining": "模型合同的其他部分包括闭端点、近次数加性强化、一般上界和算法质量，均有各自的前提及正文。"
+  },
+  "endpoint_pins": {
+    "WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1": "b99e4039057606211ffe22eee6040a8380373552ae9ed39b19619c84c56e7bd2",
+    "weighted-congestion/frontier-model-and-validation-contract": "b945c1843ad3d36787a3c0eefa81035b2aa763d749cbba5f0ec1f8a79619affc"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/全状态线性次数无均衡族--定理.md": "fd1208e470d12721ed79fea67fbd43221c432a95fc0433ac3df2d5f0573c7d9b",
+    "archives/weighted-congestion/state/资料/全类近似门槛的模型与研究验收合同--资料.md": "d9a1e227ff9c9439d06f9f3b80654d494f17685dd76b1ff1d86d30575ed97ec6"
+  },
+  "review_digest": "83b37c64d06fd6b14049d968910b23a006544389d18844318bdac64a89c82f95"
+}

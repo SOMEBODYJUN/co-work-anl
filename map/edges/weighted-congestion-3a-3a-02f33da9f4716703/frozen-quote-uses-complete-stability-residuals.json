@@ -1,0 +1,41 @@
+{
+  "edge_id": "wc-stage3a-frozen-quote-uses-complete-stability-residuals",
+  "kind": "implements",
+  "status": "accepted",
+  "source_ids": [
+    "wc-treewidth-frozen-quote-dp-stable-cost-bicriteria"
+  ],
+  "target_ids": [
+    "weighted-congestion/common-scale-stability-quality-certificate"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "显式合法菜单，真实潜在玩家图固定树宽k，每人动作数固定q，非负有理冻结报价，给β与ε。社会目标采用全体加权成本W，含固定玩家。",
+  "roles": {
+    "wc-treewidth-frozen-quote-dp-stable-cost-bicriteria": "冻结每个原动作的真实偏离费用并保零上取整，输出带稳定性与成本的双准则结果。",
+    "weighted-congestion/common-scale-stability-quality-certificate": "区分全部真实偏离残差与社会质量证书，允许零、空策略和平局。"
+  },
+  "explanation": "忘记玩家时全部动作报价已经聚齐，由C≤r≤ΓC及r_current≤βΓr_alt得每个真实残差R_{β(1+ε)}≥0，零替代费保零。独立最小准确W给比较基准OPT_β，只在β-PNE存在时适用。该DP的NO是因为所有β-PNE必存活而排原游戏β-PNE，和指定势接口NO不同。",
+  "scope": "对证书定义的算法应用。没有共同尺度作为前提，亦不把全体W换为只计可动玩家的W_M。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/算法/非负冻结报价的树宽稳定成本双准则--算法.md",
+      "sha256": "c54cb454198edf1b7b68f4d06d43834c096470baec8b59dbf8d24383ae0eee09"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定义/共同尺度稳定与社会质量的证书接口--定义.md",
+      "sha256": "c17d6fb0d93bd42814ce807198beee8fc96217c38d317228ea52b3dbfb1c9a23"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对正文各端模型与量词、推导中的真实新负载及本边实际结论范围。",
+  "endpoint_pins": {
+    "wc-treewidth-frozen-quote-dp-stable-cost-bicriteria": "4223e03fdcd0c17a9562f2fd6e231dbeb0cb638d3f79cb2f38f4afe89cd0c6f3",
+    "weighted-congestion/common-scale-stability-quality-certificate": "1baca79767c93a4b31e14622290ce30b6893f29247ef83f82902e07d3b9a44e4"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/算法/非负冻结报价的树宽稳定成本双准则--算法.md": "c54cb454198edf1b7b68f4d06d43834c096470baec8b59dbf8d24383ae0eee09",
+    "archives/weighted-congestion/state/定义/共同尺度稳定与社会质量的证书接口--定义.md": "c17d6fb0d93bd42814ce807198beee8fc96217c38d317228ea52b3dbfb1c9a23"
+  },
+  "review_digest": "7679f96407d0cb80b6ab323b5c83853f202d21ff52105ff1f099f0c003931f56"
+}

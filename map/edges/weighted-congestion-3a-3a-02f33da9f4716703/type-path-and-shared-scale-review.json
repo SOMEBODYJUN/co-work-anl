@@ -1,0 +1,43 @@
+{
+  "edge_id": "wc-stage3a-type-path-and-shared-scale-review",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/shared-type-scale-cycle-review"
+  ],
+  "target_ids": [
+    "weighted-congestion/type-path-cycle-mismatch-bound"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "同一降权类型DAG，H计边，至少一边，整数d≥2；每资源最多两个可动权型才可将合同应用于游戏。",
+  "roles": {
+    "weighted-congestion/shared-type-scale-cycle-review": "核同一双排序拼接、全环阈值、森林与合同NO的范围。",
+    "weighted-congestion/type-path-cycle-mismatch-bound": "从连续顺/逆段和路径层数得到ρ_G≤H及可直接输出的尺度。"
+  },
+  "explanation": "审查的约束log β≥ρ_G log((d−1)/(β−1))正是路径正文使用的边界。每个环的顺向段数≤逆向步数且每段≤H，反向同理；给β_H后由终止最长路层数差1至H直接构造t_v=L^δ_v。森林虽可有大H，仍ρ_G=1；链加捷径才达到H。该审查还核出合同失败与原均衡存在可共存。",
+  "scope": "共同定理的适用域与审查范围；原游戏最佳倍率与玩家身份高度另计。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/审查/共同类型尺度与环失配合同的审查范围--审查.md",
+      "sha256": "40c6f16cc9c7186d5edabec00c38fc31beaeac5cede7dbf1b96e170afc27663f",
+      "section": "共同类型尺度与环失配合同的审查范围"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/降权类型路径的环失配上界--定理.md",
+      "sha256": "eb74974a594b2ac2ac02583655bc53ffde1007adf6ed91c29ce227f707f90126",
+      "section": "降权类型路径的环失配上界"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对正文各端模型与量词、推导中的真实新负载及本边实际结论范围。",
+  "endpoint_pins": {
+    "weighted-congestion/shared-type-scale-cycle-review": "0fc5cb186d8656b7923ab8f3e8a659cc0da86691b764795c4ca0d289e496cbfb",
+    "weighted-congestion/type-path-cycle-mismatch-bound": "6a991e4869ce2a318df9de81808720312d3a08621ba853baaf9febd9ff9c0664"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/审查/共同类型尺度与环失配合同的审查范围--审查.md": "40c6f16cc9c7186d5edabec00c38fc31beaeac5cede7dbf1b96e170afc27663f",
+    "archives/weighted-congestion/state/定理/降权类型路径的环失配上界--定理.md": "eb74974a594b2ac2ac02583655bc53ffde1007adf6ed91c29ce227f707f90126"
+  },
+  "review_digest": "da19f37e53dbbe89d15a7a02721a02289eb312fbc5da0f9784f159f376203ca7"
+}

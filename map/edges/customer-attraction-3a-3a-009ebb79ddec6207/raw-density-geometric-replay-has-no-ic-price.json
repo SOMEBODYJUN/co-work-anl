@@ -1,0 +1,51 @@
+{
+  "edge_id": "cag-009e-raw-density-geometric-replay-has-no-ic-price",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/client-density-aggregation-original-diagnostic-and-root-replay-versions"
+  ],
+  "target_ids": [
+    "M-ed6ce7eb7c804d109aae04aeaa084b42"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "固定单客户4角色15历史的RAW行动表，比较真实actual前缀query的捕获几何。该行动表明确不满足完整SPE。",
+  "roles": {
+    "customer-attraction/client-density-aggregation-original-diagnostic-and-root-replay-versions": "给出四context、5/12合计current、7/6粗跨context密度及非SPE表。",
+    "M-ed6ce7eb7c804d109aae04aeaa084b42": "最小费用需严格未来真实query与D≤u，未声称跨context粗密度自动受限。"
+  },
+  "explanation": "以0为首角色、查a，真叶aaba吸收1/3，余量等分给角色1、3。角色1的actual前缀查询叶baab，捕获角色2；角色2的叶bbaa捕获角色3；角色3的叶bbba全吸收。于是角色3合计current=1/3+1/12=5/12，与RAW表相同，但其两个RAW来源context的旧叶分母给1+1/6=7/6。原actual全空u_i=0，而query a给正收益，不能以u_i/D_i作为该最优性定理的合法≥1费率。",
+  "scope": "只校准一个固定单客例的质量路由、context密度及价格前提，不迁移RAW的定义域或定价结论。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/客户密度聚合原诊断与两类根重放版本--计算.md",
+      "sha256": "7d216d2ec1ba759ac442720f01ec79a4d06fdee67be370706613fd4e51c42f53"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/同客重置父审的纯流范围与核版本--审查.md",
+      "sha256": "2a643b3273ec88b300e8d3e266eb6cf60418b415faff56e8aea9536c79b921ae"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/自然捕获的共同配对最优价与固定尾重置--资料.md",
+      "sha256": "6d5ca7562108870357e57b9bba4ab8172f127fffbff41a8d23e0bc17d513f187"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/自然捕获路由的Bellman价格与Hall取消--算法.md",
+      "sha256": "79857e8db085c5d83a35c9062cacc4ea031e974cc8cbed2fd057668e346a5451"
+    }
+  ],
+  "reviewed_by": "Boss1-customer-attraction-map-worker",
+  "review_note": "对读端点正文及所列承重段落，逐项核原模型、真实分支、条件和结论作用范围。",
+  "endpoint_pins": {
+    "M-ed6ce7eb7c804d109aae04aeaa084b42": "fc6db3e7e4cde7977c8b59c26e7c3a81cceb86f894d58578bf2f623752a8e5a5",
+    "customer-attraction/client-density-aggregation-original-diagnostic-and-root-replay-versions": "41582a708a8cb897072ea0395bfd49aa9f4273dc018e670f62c6ed09f42e0634"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/客户密度聚合原诊断与两类根重放版本--计算.md": "7d216d2ec1ba759ac442720f01ec79a4d06fdee67be370706613fd4e51c42f53",
+    "archives/customer-attraction/state/审查/同客重置父审的纯流范围与核版本--审查.md": "2a643b3273ec88b300e8d3e266eb6cf60418b415faff56e8aea9536c79b921ae",
+    "archives/customer-attraction/state/资料/自然捕获的共同配对最优价与固定尾重置--资料.md": "6d5ca7562108870357e57b9bba4ab8172f127fffbff41a8d23e0bc17d513f187",
+    "archives/customer-attraction/state/算法/自然捕获路由的Bellman价格与Hall取消--算法.md": "79857e8db085c5d83a35c9062cacc4ea031e974cc8cbed2fd057668e346a5451"
+  },
+  "review_digest": "5a2ee31daf1e6df84945b69658eeb5610625769bbde5c16e2cd83f7032988009"
+}

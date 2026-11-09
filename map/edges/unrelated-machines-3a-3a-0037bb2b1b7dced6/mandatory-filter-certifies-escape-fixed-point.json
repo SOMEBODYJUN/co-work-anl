@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-3a-mandatory-filter-certifies-escape-fixed-point",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-HEAVY-MATCH-FILTER-v1"
+  ],
+  "target_ids": [
+    "UM-ESCAPE-MATCH-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "共享 z 的 path-occupancy 矩阵，k≥4，h 为源给定阈值树高，T0=1+1/k；大端恰 unit 边，1/k 与共同 z 上的 1/2 都为小端；每次强制单一大边并覆盖全部 mandatory。",
+  "roles": {
+    "UM-HEAVY-MATCH-FILTER-v1": "给出 N、U_i、F_i、W_ij 的查询规则、接受的精确含义和零删除的固定点判据。",
+    "UM-ESCAPE-MATCH-GAP-v1": "为每次查询在同一个原矩阵上给独立可行匹配，取得固定点部分。"
+  },
+  "explanation": "新增 z 后每个路径占位任务已有小端，故 N 只剩两根间 bridge。核心父 i 的唯一小端任务 U_i 恰为 k 件子边任务；它们可同时匹配到不同孩子或不同终端，并可与强制入边及 bridge 共存。若强制 bridge 于 i 则其位置已定；若非 bridge 查询需要另放 bridge，则选择另一可用根。于是查询的卸载权 W_ij=F_i=1。终端没有唯一小端任务，强制大端和 bridge 可并存；z 没有大端查询。每次判据通过，首轮零删除即为闭包。",
+  "scope": "只证明此 GHMR 的独立强制查询固定点。没有假设把各查询共享的 z 负载合并成一份调度。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/重边匹配过滤与重轻对偶循环双源审查--审查.md",
+      "sha256": "a64e057608e03086a2e929dfad5b345e2698c618e5a1878bb76c449a94dc5fd6",
+      "section": "1. 过滤器定义与安全性"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/重边匹配过滤与重轻对偶循环双源审查--审查.md",
+      "sha256": "a64e057608e03086a2e929dfad5b345e2698c618e5a1878bb76c449a94dc5fd6",
+      "section": "3. 共享小端逃逸与过滤固定点"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/大边匹配残余原程序的安全过滤与共享逃逸核验--计算.md",
+      "sha256": "bc7e1a8bef5167cfcfad8044c4c253121e8667da6677e25398e0d3ef70a2cdb2",
+      "section": "原族、路径占位与共享逃逸是三个不同输入"
+    }
+  ],
+  "reviewed_by": "Boss1-unrelated-machines-3A-worker",
+  "review_note": "以独立查询实际可匹配为承重，分开经典两树、无 z 的路径占位和本三端共享 z 矩阵。",
+  "contribution": {
+    "result": "在 T0 完整覆盖 mandatory 的 GHMR 首轮不删任何边，得到固定点。",
+    "remaining": "CONFIG(T0) 仍需路径占位配置加 z 空配置；真实 OPT=2−1/k 仍需树激活迫至少四个末组送不同占位入同一 z 的下界，以及原单路径上界调度。"
+  },
+  "endpoint_pins": {
+    "UM-ESCAPE-MATCH-GAP-v1": "f106c89b7e2f62ae48f39481aaf8d89ea6934d05c7986ab94a11b86cb0682507",
+    "UM-HEAVY-MATCH-FILTER-v1": "1419af104ee6c6baaaf9aea35ba94d38f08743797cf2caeaccfce08cedd050ca"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/重边匹配过滤与重轻对偶循环双源审查--审查.md": "a64e057608e03086a2e929dfad5b345e2698c618e5a1878bb76c449a94dc5fd6",
+    "archives/unrelated-machines/state/计算/大边匹配残余原程序的安全过滤与共享逃逸核验--计算.md": "bc7e1a8bef5167cfcfad8044c4c253121e8667da6677e25398e0d3ef70a2cdb2"
+  },
+  "review_digest": "5d4306452f08a647ae83e9e2dc6802b7bc043b14c8d821790a8fea400759deb9"
+}

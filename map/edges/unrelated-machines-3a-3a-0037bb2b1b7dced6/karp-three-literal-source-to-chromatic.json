@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-3a-karp-three-literal-source-to-chromatic",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SOURCE-KARP-THREE-SAT"
+  ],
+  "target_ids": [
+    "M-97c2a4fb184f49c68d364f3298bfbbfb"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "显式至多三文字 CNF；目标显式简单无向图和正二进制 k。补空变量使 m≥4，k=m+1；空子句/非法编码映固定 NO，零子句映固定 YES。",
+  "roles": {
+    "UM-SOURCE-KARP-THREE-SAT": "提供至多三文字 CNF 的精确 NP 完全源。",
+    "M-97c2a4fb184f49c68d364f3298bfbbfb": "以正确调色板和正负对称子句邻接取得完整目标 NP 完全性。"
+  },
+  "explanation": "令 m 个 palette 点成团。每变量的两文字点互邻，且都邻接除本变量 palette 点外的全部 palette 点，所以该对一真一假，分别使用本变量颜色和唯一额外色 *。每子句点邻接全部未在该子句出现的文字点；因至多三个变量且 m≥4，有一个未出现变量的假文字堵 *。某变量色可用当且仅当带此色的真文字出现在子句中，故各子句点可着色恰当且仅当赋值满足全部子句。子句点之间不邻接；图、k、证书可位多项式表示。着色证书验逐边与颜色范围，大 k 可直接截到 |V|。",
+  "scope": "一般显式 CHROMATIC NUMBER 带预算判定语言；只用修正 m+1 与对称邻接，不采用原印 r+1 和非对称负文字规则。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "4.1 SAT到至多3文字SAT"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "4.2 至多3文字SAT到着色：原印符号必须校正"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "1. 先固定语言、量词和编码"
+    }
+  ],
+  "reviewed_by": "Boss1-unrelated-machines-3A-worker",
+  "review_note": "逐项核对每个子句的额外色阻挡、变量色可用充要性、两向见证与目标 NP 成员。",
+  "whole_result": "至多三文字 SAT 的完全性经此总位多项式归约给 CHROMATIC NUMBER 的 NP 硬度，结合显式着色证书验证得该带预算语言 NP 完全。",
+  "endpoint_pins": {
+    "M-97c2a4fb184f49c68d364f3298bfbbfb": "3f567e17c1642b9760d60629dc7f08f22a8c2917d633442565863b2f21fe7a44",
+    "UM-SOURCE-KARP-THREE-SAT": "b932ca164ad03169f16e371455e99a3b869f7eb55d9338724f485b3f38d86409"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d"
+  },
+  "review_digest": "63dd2073a99601199ad81821497056213508d9d05fecf25d20c11d7d602e0f4b"
+}

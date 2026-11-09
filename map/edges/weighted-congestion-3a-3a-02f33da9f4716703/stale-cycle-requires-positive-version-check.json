@@ -1,0 +1,42 @@
+{
+  "edge_id": "wc-stage3a-stale-cycle-requires-positive-version-check",
+  "kind": "motivates",
+  "status": "accepted",
+  "source_ids": [
+    "M-c4b11d299c8b44e491820c7d01a4a7d8"
+  ],
+  "target_ids": [
+    "wc-box-safe-reference-potential-versioned-asynchronous-repair"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "两单位权玩家、两相同费用x^d资源，原子串行提交，但早期规则接受跨一次提交且不核资源版本的建议。",
+  "roles": {
+    "M-c4b11d299c8b44e491820c7d01a4a7d8": "两人同读2^d→1，第二次真实提交为1→2^d，反复闭环。",
+    "wc-box-safe-reference-potential-versioned-asynchronous-repair": "正提案对原动作及删除、加入资源版本进行验证。"
+  },
+  "explanation": "第一条提交同时修改删除和加入资源版本，第二条旧提案必被现行条件拦下。这个反例命中旧正提案规则，不把本例误标为对修正协议的反驳，也不以负面报告所需的全局验证取代正提案的局部验证。",
+  "scope": "协议设计的反例语境；任意整数d≥1，延迟恰跨一次已接受提交。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/反例/过期移动与漂移环境下的修复边界--反例.md",
+      "sha256": "2ba959ccfd8c8371f369ca81b5f0306d50b125f2bb771e8ad8b2a0cf0ff7ab6e",
+      "section": "一条过期提交已足以制造循环"
+    },
+    {
+      "path": "archives/weighted-congestion/state/算法/全盒安全下降与带版本的异步修复--算法.md",
+      "sha256": "ec527695e15fe57afafb76aabf5efbfa603051ce90f27528eb47607a72ac0b0c"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对正文各端模型与量词、推导中的真实新负载及本边实际结论范围。",
+  "endpoint_pins": {
+    "M-c4b11d299c8b44e491820c7d01a4a7d8": "5a1dbcea7e836b77fdcd041f759b62367641b94a82c6af67ac74ebdd3b26b695",
+    "wc-box-safe-reference-potential-versioned-asynchronous-repair": "952764b6c0ab21913797f2c6afe3f0ef9e28bfb0205f96ca32dc0a3e3d1ce348"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/反例/过期移动与漂移环境下的修复边界--反例.md": "2ba959ccfd8c8371f369ca81b5f0306d50b125f2bb771e8ad8b2a0cf0ff7ab6e",
+    "archives/weighted-congestion/state/算法/全盒安全下降与带版本的异步修复--算法.md": "ec527695e15fe57afafb76aabf5efbfa603051ce90f27528eb47607a72ac0b0c"
+  },
+  "review_digest": "c7a6566530d46d9ba69cc38d8ff867ddcba777995007204fd06a24084db09657"
+}

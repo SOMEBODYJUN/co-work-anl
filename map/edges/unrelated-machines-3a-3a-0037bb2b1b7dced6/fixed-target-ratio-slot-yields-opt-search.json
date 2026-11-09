@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-3a-fixed-target-ratio-slot-yields-opt-search",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-RATIO-GROUP-JOINT-SLOT-v1"
+  ],
+  "target_ids": [
+    "UM-RATIO-GROUP-PROMISE-APPROX-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "原显式精确比例且组共同资格，宏只去 homes；固定 0≤δ̄<1/2、ρ_max≤ρ̄<2，未知原 OPT 满足 W_h≤OPT、w_j≤δ̄OPT、所有有限宏端>OPT/2。",
+  "roles": {
+    "UM-RATIO-GROUP-JOINT-SLOT-v1": "给固定目标 LP 必要性、共同 macro/home/sink-slot 整数流和逐私有任务前缀恢复的负载界。",
+    "UM-RATIO-GROUP-PROMISE-APPROX-v1": "去掉 OPT 输入，保结构承诺及总位多项式实际近似。"
+  },
+  "explanation": "先检查每原任务是否有零端，若都有则输出零调度；空任务同理。令 Q 为全部有限时间分母之积，U 为任一合法原分配的总时间，OPT 在网格 [0,QU] 的 1/Q 点上。定义 P(t) 为 W/w 检查和剪 p_hb>t 的联合槽必要 LP 可行，d_h=(W_h−t/2)_+。P 不测试宏边>t/2；t 上升使宏域扩大、d_h 与 ρ_hz d_h 非增、sink 容量放宽、零需求旁路只增加，故 P 单调。P(OPT) 有真实最优见证。O(log(QU+1)) 次精确 LP 二分给首个接受 t*≤OPT。承诺使所有有限宏端>OPT/2≥t*/2，且 P(t*) 已有舍入所需 witness；即使 t* 低于真实 OPT，固定目标成功界也只使用该 LP、W/w 和宏剪枝。共同槽和原前缀恢复给 αt*，α=max{3/2+δ̄,1+ρ̄/2}<2。",
+  "scope": "结构承诺在真实 OPT 尺度。U 未通过只标输入承诺不适用；处理时间二进制有理，位复杂度按分母总位长而不按 Q 或 U 的数值。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/算法/精确组汇比例的共同出口联合槽--算法.md",
+      "sha256": "917894485b2d584a55d44f45048f3030637cfeb40dc3dd4a7f88801f45aabda6",
+      "section": "同一必要LP"
+    },
+    {
+      "path": "archives/unrelated-machines/state/算法/精确组汇比例的共同出口联合槽--算法.md",
+      "sha256": "917894485b2d584a55d44f45048f3030637cfeb40dc3dd4a7f88801f45aabda6",
+      "section": "真实前缀和全部任务的恢复"
+    },
+    {
+      "path": "archives/unrelated-machines/state/算法/精确组汇比例的共同出口联合槽--算法.md",
+      "sha256": "917894485b2d584a55d44f45048f3030637cfeb40dc3dd4a7f88801f45aabda6",
+      "section": "未知OPT及总位复杂度"
+    }
+  ],
+  "reviewed_by": "Boss1-unrelated-machines-3A-worker",
+  "review_note": "分别核对了原 OPT 处的接受见证、单调性与首个接受点的实际解码，未把成功解释为精确 T 可行。",
+  "whole_result": "固定目标共同槽与单调网格搜索给每个满足承诺的实例一个确定性总位多项式完整调度，Cmax≤max{3/2+δ̄,1+ρ̄/2}OPT。",
+  "endpoint_pins": {
+    "UM-RATIO-GROUP-JOINT-SLOT-v1": "80776c7e3bb9cf105ff29e228453b31108fd780a29924240f5f0ae8f7b029210",
+    "UM-RATIO-GROUP-PROMISE-APPROX-v1": "dd38bfbda8630dc6e75fc5bd3939171572d0d9f65cdda9be1f878fc00ba02ec4"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/算法/精确组汇比例的共同出口联合槽--算法.md": "917894485b2d584a55d44f45048f3030637cfeb40dc3dd4a7f88801f45aabda6"
+  },
+  "review_digest": "950055e627c67a225b5caaed240cd54fb46eb5128bb98fcd4769120883ab5b85"
+}

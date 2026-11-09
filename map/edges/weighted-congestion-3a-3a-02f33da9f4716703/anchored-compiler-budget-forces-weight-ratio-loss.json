@@ -1,0 +1,46 @@
+{
+  "edge_id": "wc-stage3a-anchored-compiler-budget-forces-weight-ratio-loss",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-ANCHORED-POLYNOMIAL-CYCLE-LOCK-v1"
+  ],
+  "target_ids": [
+    "weighted-congestion/uniform-anchored-clock-budget-efficiency"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同序严格α双轮、n≥3、固定全状态B及η，全部首位锚定三元，取D≥1满足统一充分预算；先考虑R>1。",
+  "roles": {
+    "WC-ANCHORED-POLYNOMIAL-CYCLE-LOCK-v1": "给(U)公式、恰全部三元及原环合法态和非法态的两段充分证明。",
+    "weighted-congestion/uniform-anchored-clock-budget-efficiency": "要界定该充分预算的精确次数效率，而非真实最小锁定次数。"
+  },
+  "explanation": "设R=max w/min w，任意anchor都可与极端权凑成含最大和最小权的三元，第三权至少最小权，故δ≥(R+1)/(R+2)。由(U)、η≤B和ln(1+1/(R+1))<1/(R+1)，得D≥ln(4α²BL/η)/ln(1/δ)>(R+1)ln(4α²BL/η)≥(R+1)ln(4α²L)。推导允许任意锚点、B非紧及(U)等号，不把(U)变为必要全态锁定条件。",
+  "scope": "统一(U)的次数下界链；原游戏是否有其它时钟方案与本推导无关。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/双轮改善环的锚定三元全状态编译--定理.md",
+      "sha256": "01951fc300c6bf4092d14290629359729272348928d1a8f45ecfcea533a24016"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/统一低泄漏锚定预算的次数效率--障碍.md",
+      "sha256": "39319c53ffdad9fefd4738d8ea4e9e1c2f5bc38e9899b59cec64a13af9d3ef1d",
+      "section": "统一低泄漏锚定预算的次数效率"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对正文各端模型与量词、推导中的真实新负载及本边实际结论范围。",
+  "contribution": {
+    "result": "在R>1时从全部锚定三元与(U)直接推出D>(R+1)ln(4α²BL/η)≥(R+1)ln(4α²L)。",
+    "remaining": "障碍完整结论还用窄权带全改善势推出R>α（从而R>1），并证明全部实q≥D的αln q/q<α/(α+1)。"
+  },
+  "endpoint_pins": {
+    "WC-ANCHORED-POLYNOMIAL-CYCLE-LOCK-v1": "60761c755abbd218ef90b78ea9271c5443c7b08aebb987209de3ea331fb0d505",
+    "weighted-congestion/uniform-anchored-clock-budget-efficiency": "c28a8a922cbed52b680a317de4e571c5a6d8e101e69942a75c1e36c2920bebe7"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/双轮改善环的锚定三元全状态编译--定理.md": "01951fc300c6bf4092d14290629359729272348928d1a8f45ecfcea533a24016",
+    "archives/weighted-congestion/state/障碍/统一低泄漏锚定预算的次数效率--障碍.md": "39319c53ffdad9fefd4738d8ea4e9e1c2f5bc38e9899b59cec64a13af9d3ef1d"
+  },
+  "review_digest": "2a49a9769380086490c911f7238c8bcf118e9f9e4e210a8d37658104ac006328"
+}

@@ -1,0 +1,42 @@
+{
+  "edge_id": "cag-009e-bellman-prices-to-common-slot-initialization",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/natural-capture-routing-bellman-prices-and-hall-cancellation"
+  ],
+  "target_ids": [
+    "M-ed6ce7eb7c804d109aae04aeaa084b42"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定σ及实际叶、同一个合法比较元组。规定自然未来捕获动作，保持当前吸收和整行IC；无额外跨客户钱包。",
+  "roles": {
+    "customer-attraction/natural-capture-routing-bellman-prices-and-hall-cancellation": "提供固定真实query、客户、owner的精确线性Bellman成本。",
+    "M-ed6ce7eb7c804d109aae04aeaa084b42": "新增一个对全体客户共同的比较槽到角色配对，以及该配对下逐客户的owner选择。"
+  },
+  "explanation": "对任意比较元组T，只须令O为该元组并集、R=O∖C。固定共同双射π后，每个x∈R在有限非空集合{j:x∈T_j}选择使V_{(π(j),T_j,x)}最小的owner；线性Bellman允许这些独立选择及同一最优路由同时实现。再对有限π取最小，即min_π Σ_x min_j V。这个Bellman步骤只依原σ、R及自然后继，固定最优元组的Hall割付款假设未参与，可取任意比较元组。R空为零；重复主题槽仍为分立索引。",
+  "scope": "共同初始化的完整最优性。不能把共同π移进逐客求和，也未取得含共享角色cap或Hall变动owner的统一付款。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资料/自然捕获的共同配对最优价与固定尾重置--资料.md",
+      "sha256": "6d5ca7562108870357e57b9bba4ab8172f127fffbff41a8d23e0bc17d513f187"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/自然捕获路由的Bellman价格与Hall取消--算法.md",
+      "sha256": "79857e8db085c5d83a35c9062cacc4ea031e974cc8cbed2fd057668e346a5451"
+    }
+  ],
+  "reviewed_by": "Boss1-customer-attraction-map-worker",
+  "review_note": "对读端点正文及所列承重段落，逐项核原模型、真实分支、条件和结论作用范围。",
+  "whole_result": "固定完整σ及任意合法比较元组时，按自然捕获合同在共同π、逐客户owner及真实捕获边上的最小总整行IC费用恰为min_π Σ_{x∈R} min_{j:x∈T_j}V_{(π(j),T_j,x)}。",
+  "endpoint_pins": {
+    "M-ed6ce7eb7c804d109aae04aeaa084b42": "fc6db3e7e4cde7977c8b59c26e7c3a81cceb86f894d58578bf2f623752a8e5a5",
+    "customer-attraction/natural-capture-routing-bellman-prices-and-hall-cancellation": "db72e964b7a58bf6bb2ac62142002f0aa6a1a419c052ab99b74e69d6fd75b7c1"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资料/自然捕获的共同配对最优价与固定尾重置--资料.md": "6d5ca7562108870357e57b9bba4ab8172f127fffbff41a8d23e0bc17d513f187",
+    "archives/customer-attraction/state/算法/自然捕获路由的Bellman价格与Hall取消--算法.md": "79857e8db085c5d83a35c9062cacc4ea031e974cc8cbed2fd057668e346a5451"
+  },
+  "review_digest": "c1d96a248752ac759243002c4ef2a2636a23489c99e25d5ce2b72cb7690407d2"
+}

@@ -1,0 +1,44 @@
+{
+  "edge_id": "wc-stage3a-exact-cycle-contract-to-longest-type-path",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-TYPE-CYCLE-IMBALANCE-CONTRACT-v1"
+  ],
+  "target_ids": [
+    "weighted-congestion/type-path-cycle-mismatch-bound"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有序简单类型图至少一条边，严格降序定向，整数d≥2，H为最长有向路径边数；原游戏推论还要求全部潜在可动用户每资源至多两个权型。",
+  "roles": {
+    "WC-TYPE-CYCLE-IMBALANCE-CONTRACT-v1": "给统一双排序合同的精确根、森林取ρ=1、尺度拼接及非均衡必要性的边界。",
+    "weighted-congestion/type-path-cycle-mismatch-bound": "给出只知H时的明确充分阈值、层数尺度及链加捷径锐性。"
+  },
+  "explanation": "简单环的p条顺向边分成至多q个连续段，各段是长度≤H的真实有向路径；逆向同理，故ρ_G≤H。β_H(β_H−1)^H=(d−1)^H时lnβ_H=H ln L≥ρ_G ln L，故精确合同可行。令δ_v为终止于v的最长路径边数，每边1≤δ_b−δ_a≤H，直接取t_v=L^δ_v，给各边比例[L,β_H]。任意有理β∈(1,d)通过β(β−1)^H≥(d−1)^H时同法给有理尺度；β≥d取全1。降链H条加首尾捷径的唯一环有(H,1)，H=1取单边，故只凭H不能改善统一合同。森林可有长链仍ρ=1；空边图单类型势给倍率1。",
+  "scope": "由精确环合同推出完整H结论与独立可算尺度。类型层数不等于玩家链，专属对构造可保全空精确PNE。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/两类型资源的共同尺度拼接与环失配阈值--定理.md",
+      "sha256": "26fd8be4e82f5c84fbe7cf7c657f1036f0dc7680c3e0cb00dc412efac3dde1e1",
+      "section": "全环条件与精确合同阈值"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/降权类型路径的环失配上界--定理.md",
+      "sha256": "eb74974a594b2ac2ac02583655bc53ffde1007adf6ed91c29ce227f707f90126",
+      "section": "降权类型路径的环失配上界"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对正文各端模型与量词、推导中的真实新负载及本边实际结论范围。",
+  "whole_result": "有边类型图满足ρ_G≤H、统一合同在β_H及更大倍率可行、t_v=L^δ_v为明确证书，且按H统一给出的合同界由长链加捷径达到。",
+  "endpoint_pins": {
+    "WC-TYPE-CYCLE-IMBALANCE-CONTRACT-v1": "101acf3016c075a91a4d738fd518105971d8c9adb9bf796533720b009e8df17d",
+    "weighted-congestion/type-path-cycle-mismatch-bound": "6a991e4869ce2a318df9de81808720312d3a08621ba853baaf9febd9ff9c0664"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/两类型资源的共同尺度拼接与环失配阈值--定理.md": "26fd8be4e82f5c84fbe7cf7c657f1036f0dc7680c3e0cb00dc412efac3dde1e1",
+    "archives/weighted-congestion/state/定理/降权类型路径的环失配上界--定理.md": "eb74974a594b2ac2ac02583655bc53ffde1007adf6ed91c29ce227f707f90126"
+  },
+  "review_digest": "2a55a182806015cef4c2aa986a4b6158a48aef9227b60d4eb0bd39f4ef23f0c6"
+}

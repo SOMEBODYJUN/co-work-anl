@@ -1,0 +1,41 @@
+{
+  "edge_id": "cag-009e-fixed-circuit-policy-outside-count-controller",
+  "kind": "corrects",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/positive-two-support-circuit-fixed-policy-factor-two-repair-and-sparse-certificates"
+  ],
+  "target_ids": [
+    "M-11aafbfbf645423198af80bd206d973e"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "三人六标签策略图，与固定路径计数MILP的单一one-hot z_{q,a}比较。",
+  "roles": {
+    "customer-attraction/positive-two-support-circuit-fixed-policy-factor-two-repair-and-sparse-certificates": "两个同计数不同顺序的真末位历史，用不同规定动作给G₁/G₂。",
+    "M-11aafbfbf645423198af80bd206d973e": "每计数层只允许一个规定标签，提升后仍是完整SPE的计数子类。"
+  },
+  "explanation": "固定图在有序历史(2,4)后取3，在(4,2)后取0。二者计数同为e₂+e₄，故单个one-hot控制器无法编码这份策略表。G₁和G₂比较的是这两个原真节点，而不是两个可合并的计数节点。这个结论不要求某个客户点具有严格动作或这两个回复不可由另一计数策略替代。",
+  "scope": "精确排除编码指定策略，不排除其他计数策略、固定组合二倍界或计数搜索的正确性。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/固定路径计数策略与客户质量的两步安全联合搜索--程序.md",
+      "sha256": "8a31fa794e2a6737a3bd86d7dd98a63fe7730cb870cd1d314f4365a2dfa2d2be"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/双支持正项回路的固定图二倍修复与稀疏证书--程序.md",
+      "sha256": "c7d1e9a7bb4e484e1b8685436c846c6a9bfeff96573e64f0c9af8b4e82d778aa"
+    }
+  ],
+  "reviewed_by": "Boss1-customer-attraction-map-worker",
+  "review_note": "对读端点正文及所列承重段落，逐项核原模型、真实分支、条件和结论作用范围。",
+  "endpoint_pins": {
+    "M-11aafbfbf645423198af80bd206d973e": "ec6f07dbd1cd5da3b320f3b17e7283fd87a270cab5449dd33d3200d53beb31a2",
+    "customer-attraction/positive-two-support-circuit-fixed-policy-factor-two-repair-and-sparse-certificates": "03ced00189a1c48e7233416c3f3f0417005311f19cdcdc60ba7428f14baf31d3"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/固定路径计数策略与客户质量的两步安全联合搜索--程序.md": "8a31fa794e2a6737a3bd86d7dd98a63fe7730cb870cd1d314f4365a2dfa2d2be",
+    "archives/customer-attraction/state/程序/双支持正项回路的固定图二倍修复与稀疏证书--程序.md": "c7d1e9a7bb4e484e1b8685436c846c6a9bfeff96573e64f0c9af8b4e82d778aa"
+  },
+  "review_digest": "682fb5458bf6b9400a5a5bf47cdf83291cd815eea60010969667dc0cd2f19a85"
+}

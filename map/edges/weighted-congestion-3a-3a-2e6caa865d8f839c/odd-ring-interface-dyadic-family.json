@@ -1,0 +1,54 @@
+{
+  "edge_id": "wc-map-odd-ring-interface-dyadic-family",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "OC-INTERFACE-v1"
+  ],
+  "target_ids": [
+    "M-dec88dc2302a46e384b5111e8e5ed2a2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "整数s≥6，r=2^s，d=2sr，α=r/4，奇整数m≥s，L=2m−1。t_i=1/r，x_0=r^(−L)，n_0=floor(r^L/s)，k_0=s；其余x_i=r,n_i=1,k_i=d；全部side次数d。",
+  "roles": {
+    "OC-INTERFACE-v1": "由权闭环与G>1构造正系数并支付全部混合/全反位纯态的真实出口。",
+    "M-dec88dc2302a46e384b5111e8e5ed2a2": "按显示二进制参数取得无限有理游戏并用次数帽补齐所有D≥768。"
+  },
+  "explanation": "两串比的积均r^(−m)。取 z=(1+1/r)^d、F=(z−α)/(αz−r^(−d))。由 n_0>r^L/(2s)、n_0x_0≤1/s 得 N_0>1/2、M_0<3α。z>r² 给 F>4/r−1/r²>2/r，普通main比和全部side比都为F。于是 G=(n_0N_0/M_0)F^L>2^L/(3sr)≥r/(6s)>1，且所有N/M/P/Q为正。OC严格系数构造给有理正费和两类全态覆盖。给D≥768取最大s使2sr≤D，则 D<4(s+1)r 且 log₂D>s+1，所以 D/(16 log₂D)<r/4；以次数≤D包含该游戏即得严格全类下界。",
+  "scope": "同权cohort的全部单人动作和明确增长奇m均保留；不使用线性reset k_0=1，不使用有限s=6,7,8代替统一乘积论证。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md",
+      "sha256": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6"
+    },
+    {
+      "path": "archives/weighted-congestion/state/构造/奇数枢纽群组的显式均匀放大族--构造.md",
+      "sha256": "ea945b9122367a32b6b2386df6e75628e446e54cacfa31f3b3c92054698c9e4f",
+      "section": "真实游戏和全态证书"
+    },
+    {
+      "path": "archives/weighted-congestion/state/构造/奇数枢纽群组的显式均匀放大族--构造.md",
+      "sha256": "ea945b9122367a32b6b2386df6e75628e446e54cacfa31f3b3c92054698c9e4f",
+      "section": "原二进制族的独立常数证明"
+    },
+    {
+      "path": "archives/weighted-congestion/state/计算/奇环四程序的实际实例与精确复算--计算.md",
+      "sha256": "66eb0e7953c7547f9bf7c2cdb649e4e0ec9aed473ecde428d77799d57cf7136b",
+      "section": "audit_checks.py：精确系数与有限Decimal诊断分别计数"
+    }
+  ],
+  "reviewed_by": "Boss1-weighted-congestion-2e6caa865d8f839c-worker",
+  "review_note": "重核floor、严格两测试、奇数性和所有2m−1个普通/side损失；次数帽D的严格比较不依赖有某个全类sup取得。",
+  "whole_result": "所有指定(s,m)给实际有限游戏无(r/4)-PNE，且对每个整数D≥768有 a_*(D)>D/(16 log₂D)。",
+  "endpoint_pins": {
+    "M-dec88dc2302a46e384b5111e8e5ed2a2": "88b5a9e26d6eb2ea1150cf645eca0a21e72b28f4963a70a1bc8d090b423a4676",
+    "OC-INTERFACE-v1": "2632cfb87681d8d959b5e44f47d114e30bacc287bba2a931798524c44c6be252"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6",
+    "archives/weighted-congestion/state/构造/奇数枢纽群组的显式均匀放大族--构造.md": "ea945b9122367a32b6b2386df6e75628e446e54cacfa31f3b3c92054698c9e4f",
+    "archives/weighted-congestion/state/计算/奇环四程序的实际实例与精确复算--计算.md": "66eb0e7953c7547f9bf7c2cdb649e4e0ec9aed473ecde428d77799d57cf7136b"
+  },
+  "review_digest": "c4ff4f81e1ca6c2244c1de285c16d2899c909d0808b9f772709843a94fd4cee4"
+}

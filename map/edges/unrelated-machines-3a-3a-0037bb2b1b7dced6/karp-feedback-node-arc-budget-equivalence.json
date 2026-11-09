@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-3a-karp-feedback-node-arc-budget-equivalence",
+  "kind": "equivalent_to",
+  "status": "accepted",
+  "source_ids": [
+    "M-818d12b7b63c42ff87792e422d66e263"
+  ],
+  "target_ids": [
+    "M-1b6ccc3bd9ce46caadada7ecb2f03046"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有向图显式列点和弧，预算为二进制非负 k；有向环含二环。使用全串多项式 many-one 合同，非法编码映到目标固定 NO。",
+  "roles": {
+    "M-818d12b7b63c42ff87792e422d66e263": "反馈点集的证书及 NP 完全性可经原图分裂转给反馈弧语言。",
+    "M-1b6ccc3bd9ce46caadada7ecb2f03046": "反馈弧集的证书及 NP 完全性可经有向线图转给反馈点语言。"
+  },
+  "explanation": "FVS→FAS：每原点 u 拆成 u_in→u_out，每原弧 u→v 改成 u_out→v_in，预算 k 保持。删点证书改删其内部弧；剩余分裂环会交替走内部与跨弧并投影成未删点有向闭走。反向将每条已删内部弧映到对应原点、每条已删跨弧映到其原尾点，去重后大小≤k；任一幸存原有向环会提升成未删弧分裂环，矛盾。FAS→FVS：取有向线图，以原弧为点，头尾相接时加弧；删原弧与删对应线图点严格对应。原有向环给线图环；线图环投影成原有向闭走，含有向环。分裂图规模 O(|V|+|E|)，线图至多 |E|² 条弧，原 k 只复制。两语言分别验证删去预算内顶点或弧后的无环性并在 NP。",
+  "scope": "双向保可行性和最小删除数。它扩展 Karp 来源 §3.3 的顶点覆盖特例为两个登记语言之间的直接构造，不把反馈点/弧的证书当成同一种对象。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "1. 先固定语言、量词和编码"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "2. 主定理的21个判定问题及历史术语"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "3.3 两个反馈集归约"
+    }
+  ],
+  "reviewed_by": "Boss1-unrelated-machines-3A-worker",
+  "review_note": "从原分裂构造独立核任意有向图的两向证书，再核线图中闭走与环的转换及二进制预算。",
+  "whole_result": "预算 k 不变的两条总位多项式归约给 FVS≤p FAS 与 FAS≤p FVS；各自在 NP，任一登记语言的 NP 完全性推出另一登记语言的完整 NP 完全性。",
+  "endpoint_pins": {
+    "M-1b6ccc3bd9ce46caadada7ecb2f03046": "48bcb198cbd6ffc9328681d40a22f5edca1f8fa80f53a46fcfaa60aad508b203",
+    "M-818d12b7b63c42ff87792e422d66e263": "e1fa1304b90162d920a5eaf30dd5833ed6afd784596edb8cb532e3cbe7a1b31f"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d"
+  },
+  "review_digest": "40fccba6ec7b2236414ccf9d3ab171155ef363439b013e2a0ed70eaa526621b9"
+}

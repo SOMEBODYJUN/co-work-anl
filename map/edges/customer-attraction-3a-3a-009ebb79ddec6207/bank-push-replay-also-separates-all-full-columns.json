@@ -1,0 +1,46 @@
+{
+  "edge_id": "cag-009e-bank-push-replay-also-separates-all-full-columns",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/response-condition-and-full-push-counterexample-hierarchy"
+  ],
+  "target_ids": [
+    "customer-attraction/full-endpoint-diagonal-and-safety-optimal-true-decorrelation-diagnostics"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "沿同一个四人银行完整策略，零背景，查询p在12个产品主题均匀。",
+  "roles": {
+    "customer-attraction/response-condition-and-full-push-counterexample-hierarchy": "给出12个真实根端点、真实根d_A=4/3和平均负载后的F=383/280。",
+    "customer-attraction/full-endpoint-diagonal-and-safety-optimal-true-decorrelation-diagnostics": "第一探针衡量完整端点全列最小减真实偏离均值；第二探针删当前槽且固定安全鞍点。"
+  },
+  "explanation": "任一真实完整端点的经济客户负载为(3,1,0,0)的一个排列，银行为(2,1,1)。均匀查询固定该列额外插入值的经济份额(1/4+1/2+1+1)/4=11/16，银行份额(2/3)(1/3+1/2+1/2)=8/9；所有列均为227/144。因此该输入准确DB差为35/144>0，强于仅得均值负载后F−u=29/840>0的推断。原有限32行不含本输入；删当前槽和固定安全最优鞍点的第二切片也不由此判定。",
+  "scope": "独立评估同一根菜单在完整列的真实定义，有限历史诊断的字段与观察保持原样。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/完整端点对角预算与安全最优去相关的有限诊断--程序.md",
+      "sha256": "190e9d53901e1a7f5bcab2fa0eb912821128fda10e6962994b159c7628c11f23"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/逐客户条件与完整推送桥的反例层级--反例.md",
+      "sha256": "d21d062aceb37761e21d306ff3caa98f3aa6b1b43440090666a79a25fec4abf9"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/完整终局推送的协方差响应恒等式--引理.md",
+      "sha256": "2d5507f6933a3317499fc5efadd3c049e78ff73d82707de427f22a886b7c844b"
+    }
+  ],
+  "reviewed_by": "Boss1-customer-attraction-map-worker",
+  "review_note": "对读端点正文及所列承重段落，逐项核原模型、真实分支、条件和结论作用范围。",
+  "endpoint_pins": {
+    "customer-attraction/full-endpoint-diagonal-and-safety-optimal-true-decorrelation-diagnostics": "ab9b97de1b24eb03e9923b10a6228155494858f68dc376413e7e92688f066e2b",
+    "customer-attraction/response-condition-and-full-push-counterexample-hierarchy": "f51390ede6a1daf4e9a3784260d9439a49d747e3ab49c7ae6bda2a3172cd4201"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/完整端点对角预算与安全最优去相关的有限诊断--程序.md": "190e9d53901e1a7f5bcab2fa0eb912821128fda10e6962994b159c7628c11f23",
+    "archives/customer-attraction/state/反例/逐客户条件与完整推送桥的反例层级--反例.md": "d21d062aceb37761e21d306ff3caa98f3aa6b1b43440090666a79a25fec4abf9",
+    "archives/customer-attraction/state/引理/完整终局推送的协方差响应恒等式--引理.md": "2d5507f6933a3317499fc5efadd3c049e78ff73d82707de427f22a886b7c844b"
+  },
+  "review_digest": "19b500ccda1899fb5f410ab51c84099bba28a3e16f2efd6b5ca3b061f624723d"
+}

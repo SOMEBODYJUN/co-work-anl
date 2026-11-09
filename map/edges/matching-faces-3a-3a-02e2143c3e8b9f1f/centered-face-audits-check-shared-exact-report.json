@@ -1,0 +1,74 @@
+{
+  "edge_id": "centered-face-audits-check-shared-exact-report",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "local-potential-games/centered-face-independent-projection-audit",
+    "matroid-structures/centered-face-independent-projection-finite-audit"
+  ],
+  "target_ids": [
+    "matching-faces/three-exact-affine-projections-and-equal-dimension-obstruction"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "两侧各 n 个顶点的二部支持图，全部允许边均被某个完美匹配覆盖。边坐标按零基字典序，采用平方欧氏范数。中心性表示原点在排列顶点仿射包上的正交投影属于匹配面，允许投影坐标为零。",
+  "roles": {
+    "local-potential-games/centered-face-independent-projection-audit": "记录同一 Fraction 程序的历史实际运行，保存完整三例输出及边界控制说明。",
+    "matroid-structures/centered-face-independent-projection-finite-audit": "保存同源程序和输出，并用明确列出的两组匹配顶点及其差向量解析核对投影。",
+    "matching-faces/three-exact-affine-projections-and-equal-dimension-obstruction": "重述同一三例的全部字段，并用 Gram 正定性和正交性写出中心性同维反例。"
+  },
+  "explanation": "两档的生成器字节相同。local-potential-games 的运行 JSON、matroid-structures 的存档 JSON 与历史原件也逐字节相同，SHA-256 均为 b483766160f4484c709dd00aa719fc609cb6ce0890fb4a2ec1c9e1c77e0a4016。三份正文采用相同的允许边、全排列顶点与仿射欧氏投影。对 singleton 得维数 0、最小坐标 1。对 star4 和 odd_subdivision 得四个匹配与维数 3，允许边 (0,0) 分别取 0 和 −1/28，平方范数分别为 2 和 71/28。前者投影在面的边界，后者离开匹配面。两份审计共同记录一份有限输出的来历与复核，匹配面正文自身的 Gram 论证承担同维反例。",
+  "scope": "仅核对三个固定支持的仿射投影及共同计算证据。反例针对在所述二部匹配面模型内用仿射维数唯一决定中心性的陈述。约束最小范数计算和一般支持图分类各有自己的论证范围。",
+  "evidence": [
+    {
+      "path": "archives/matching-faces/state/计算/匹配面仿射投影的三例精确报告与同维反例--计算.md",
+      "sha256": "ec6e97ad90c07d3f799e1dab83b3525cd02c98d9f4f5d015eac18c7d15ab7af6"
+    },
+    {
+      "path": "archives/local-potential-games/state/计算/中心面独立投影的有限精确核验--计算.md",
+      "sha256": "922ab978106a7cf5323963a74b2812538b294535e8005436d1b224adb9ba0931"
+    },
+    {
+      "path": "archives/matroid-structures/state/计算/中心面独立投影有限审计--计算.md",
+      "sha256": "9c7681214765ba0ae9d5f1942a117496dc31273c738b7f65a69e74b2cca2bf09"
+    },
+    {
+      "path": "archives/local-potential-games/tools/evidence/retired-topic-selection-20261031/centered_face_independent.py",
+      "sha256": "8c4290a55b565056972f821900e10af6d96fb89010ec6b04a501f90762e9bc28"
+    },
+    {
+      "path": "archives/matroid-structures/tools/evidence/retired-topic-selection-20261031/centered_face_independent.py",
+      "sha256": "8c4290a55b565056972f821900e10af6d96fb89010ec6b04a501f90762e9bc28"
+    },
+    {
+      "path": "archives/local-potential-games/tools/evidence/retired-topic-selection-20261031/centered_face_independent_output.json",
+      "sha256": "b483766160f4484c709dd00aa719fc609cb6ce0890fb4a2ec1c9e1c77e0a4016"
+    },
+    {
+      "path": "archives/matroid-structures/tools/evidence/retired-topic-selection-20261031/centered_face_output.json",
+      "sha256": "b483766160f4484c709dd00aa719fc609cb6ce0890fb4a2ec1c9e1c77e0a4016"
+    },
+    {
+      "path": "tools/evidence/retired-final-independent-reports/original/history/retired_topic_selection/multi_lane/research/topic_selection/probes/results/centered_face_independent.json",
+      "sha256": "b483766160f4484c709dd00aa719fc609cb6ce0890fb4a2ec1c9e1c77e0a4016"
+    }
+  ],
+  "reviewed_by": "Boss1-matching-faces-3A-worker",
+  "review_note": "完整实读三个 v1 端点、两个同源程序及三份相同输出，独立用 Fraction 枚举与点积复核三例。已核定共同输出的证据身份，覆盖仅为 checks 语境。",
+  "endpoint_pins": {
+    "local-potential-games/centered-face-independent-projection-audit": "e2e6fe359f81cfdf7617142263d056ed69e76bcf8303de0e305921582e596603",
+    "matching-faces/three-exact-affine-projections-and-equal-dimension-obstruction": "497c7e9cc17c9c3130c2cdf5d7be1569fb071cc1a8408b416308df53f6ca1d8c",
+    "matroid-structures/centered-face-independent-projection-finite-audit": "50a4757c3bf57248d6387ef61305ce01c8b43b5e842be79a1fa9227925c8178c"
+  },
+  "evidence_pins": {
+    "archives/matching-faces/state/计算/匹配面仿射投影的三例精确报告与同维反例--计算.md": "ec6e97ad90c07d3f799e1dab83b3525cd02c98d9f4f5d015eac18c7d15ab7af6",
+    "archives/local-potential-games/state/计算/中心面独立投影的有限精确核验--计算.md": "922ab978106a7cf5323963a74b2812538b294535e8005436d1b224adb9ba0931",
+    "archives/matroid-structures/state/计算/中心面独立投影有限审计--计算.md": "9c7681214765ba0ae9d5f1942a117496dc31273c738b7f65a69e74b2cca2bf09",
+    "archives/local-potential-games/tools/evidence/retired-topic-selection-20261031/centered_face_independent.py": "8c4290a55b565056972f821900e10af6d96fb89010ec6b04a501f90762e9bc28",
+    "archives/matroid-structures/tools/evidence/retired-topic-selection-20261031/centered_face_independent.py": "8c4290a55b565056972f821900e10af6d96fb89010ec6b04a501f90762e9bc28",
+    "archives/local-potential-games/tools/evidence/retired-topic-selection-20261031/centered_face_independent_output.json": "b483766160f4484c709dd00aa719fc609cb6ce0890fb4a2ec1c9e1c77e0a4016",
+    "archives/matroid-structures/tools/evidence/retired-topic-selection-20261031/centered_face_output.json": "b483766160f4484c709dd00aa719fc609cb6ce0890fb4a2ec1c9e1c77e0a4016",
+    "tools/evidence/retired-final-independent-reports/original/history/retired_topic_selection/multi_lane/research/topic_selection/probes/results/centered_face_independent.json": "b483766160f4484c709dd00aa719fc609cb6ce0890fb4a2ec1c9e1c77e0a4016"
+  },
+  "review_digest": "e9a69293fddcea160f632f25b15df4de7a14081b3d7a71c239e0d04c3eba954b"
+}

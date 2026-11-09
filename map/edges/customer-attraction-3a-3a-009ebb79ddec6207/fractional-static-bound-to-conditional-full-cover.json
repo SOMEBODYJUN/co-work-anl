@@ -1,0 +1,41 @@
+{
+  "edge_id": "cag-009e-fractional-static-bound-to-conditional-full-cover",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/fractional-set-cover-static-security-lower-bound"
+  ],
+  "target_ids": [
+    "M-5c61b8e33f844e8498ea4d5865b1f7bd"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一固定单位客户目录、U>0、n≥1，零背景安全值。对所给完整SPE另付强桥W≥nv_n或弱桥W≥(n−1/2)v_n。",
+  "roles": {
+    "customer-attraction/fractional-set-cover-static-security-lower-bound": "证明查询与对手独立的静态安全值下界U/(n+τ*−1)。",
+    "M-5c61b8e33f844e8498ea4d5865b1f7bd": "另有动态付款时的整数福利下界和严格人数阈值。"
+  },
+  "explanation": "把静态下界乘相应n或n−1/2并用整数W取上整。两个未取整右端超过U−1分别等价于n>(U−1)(τ*−1)与n>(U−1)(τ*−1)+U/2。此时W≤U迫W=U。对一份策略支付只覆盖这份策略；所有完整SPE结论需逐一有桥。",
+  "scope": "同目录的条件推论。静态查询不提供隐藏的动态承诺，临界等号不够。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/分数集合覆盖数的静态安全值下界--引理.md",
+      "sha256": "364c4716daa32bf6c677c777ae89eaf73515a1ed931569c8a84f2fc588c193a6"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/分数集合覆盖数的静态安全值下界--引理.md",
+      "sha256": "364c4716daa32bf6c677c777ae89eaf73515a1ed931569c8a84f2fc588c193a6"
+    }
+  ],
+  "reviewed_by": "Boss1-customer-attraction-map-worker",
+  "review_note": "对读端点正文及所列承重段落，逐项核原模型、真实分支、条件和结论作用范围。",
+  "whole_result": "在各自已给动态付款前提下分别得到所登记的上整界及严格人数阈值，从而强制该份完整SPE覆盖全部U。",
+  "endpoint_pins": {
+    "M-5c61b8e33f844e8498ea4d5865b1f7bd": "69e60e6cabe910150355acaecb7eae23f079577f976ad90d36a9a096eb5dc05a",
+    "customer-attraction/fractional-set-cover-static-security-lower-bound": "5df2fb84ed38e70c0cbdb6bce118370fc9d681c98c5dba89a8dca1be6f78f230"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/分数集合覆盖数的静态安全值下界--引理.md": "364c4716daa32bf6c677c777ae89eaf73515a1ed931569c8a84f2fc588c193a6"
+  },
+  "review_digest": "96ce013d55ad15c904487c0eb812ddafd796ebf8d659c999e1240fcf77637394"
+}

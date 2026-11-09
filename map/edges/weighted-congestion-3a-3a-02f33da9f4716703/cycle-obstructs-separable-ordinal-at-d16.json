@@ -1,0 +1,46 @@
+{
+  "edge_id": "wc-stage3a-cycle-obstructs-separable-ordinal-at-d16",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/four-hundred-player-degree-sixteen-cycle-executable-resource"
+  ],
+  "target_ids": [
+    "weighted-congestion/game-specific-separable-ordinal"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "只取d=16及1≤α≤2。保留固定400人和800资源，费用系数z_e>0；要统一成全部x^16，先使用有理z_e公分母，再用资源克隆，最后将策略扩至全部子集。",
+  "roles": {
+    "weighted-congestion/four-hundred-player-degree-sixteen-cycle-executable-resource": "提供正有理z_e x^16费用和800步真实严格2改善闭环。",
+    "weighted-congestion/game-specific-separable-ordinal": "在指定次数和倍率下要求相同纯单项式、全子集菜单、有精确PNE且无可分全边下降势。"
+  },
+  "explanation": "取正整数Q使每个Qz_e为正整数，把资源e替成Qz_e个相同x^16克隆。原动作使用一个资源时改用整包，原闭环每步合法，包内负载相同，当前及偏离成本同乘Q，保持严格2改善。加入全子集动作后同一闭环仍真实，且全空成为精确PNE。沿环求和排除任意严格下降势，因而也排除依整个游戏选择的可分势。",
+  "scope": "一个固定次数的独立构造。α=2已严格通过，故对所有1≤α≤2同样成立。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/计算/四百玩家十六次改善环的字面程序资源--计算.md",
+      "sha256": "2860f40bf673dc40a5d4f109d4aeb4e7d95129c1bb5186c1513cdd8dbb28d4a9"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/依游戏资源可分全改善序势--障碍.md",
+      "sha256": "0f2f070f80abaa6359243336104aeaeb0417930e8cf4cf5ba7dbb1df5fced48d",
+      "section": "依游戏资源可分全改善序势"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对正文各端模型与量词、推导中的真实新负载及本边实际结论范围。",
+  "contribution": {
+    "result": "d=16、任意1≤α≤2时得到纯x^16全子集游戏，有精确PNE但连任意实值全边下降势也不存在。",
+    "remaining": "本固定轨迹不覆盖其他次数或2<α<ρ_16；全域需要一般循环窗口构造或共同乘子加有限复制证明。"
+  },
+  "endpoint_pins": {
+    "weighted-congestion/four-hundred-player-degree-sixteen-cycle-executable-resource": "5dd3c62d042148270bcee6ba50051fd1e0250633868fb1aea73b66a49212b6f5",
+    "weighted-congestion/game-specific-separable-ordinal": "d192a2a97b8d426ae9b86e325fd7570f321d4e96455aa995671f130be1d1fb66"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/计算/四百玩家十六次改善环的字面程序资源--计算.md": "2860f40bf673dc40a5d4f109d4aeb4e7d95129c1bb5186c1513cdd8dbb28d4a9",
+    "archives/weighted-congestion/state/障碍/依游戏资源可分全改善序势--障碍.md": "0f2f070f80abaa6359243336104aeaeb0417930e8cf4cf5ba7dbb1df5fced48d"
+  },
+  "review_digest": "d0fb42772bbb7e06428ededb20fec7474d1839a4bc2f64cea8a80d7b3d82da93"
+}

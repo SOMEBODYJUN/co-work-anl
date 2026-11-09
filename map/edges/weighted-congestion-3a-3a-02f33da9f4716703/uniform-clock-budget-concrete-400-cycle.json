@@ -1,0 +1,46 @@
+{
+  "edge_id": "wc-stage3a-uniform-clock-budget-concrete-400-cycle",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/four-hundred-player-degree-sixteen-cycle-executable-resource"
+  ],
+  "target_ids": [
+    "weighted-congestion/uniform-anchored-clock-budget-efficiency"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "对固定400人严格2同序双轮环，采用首位权1为锚点，所有锚定三元，非负成本，全状态cap B，原环最小余量η>0及统一预算(U)。",
+  "roles": {
+    "weighted-congestion/four-hundred-player-degree-sixteen-cycle-executable-resource": "给出每类100人、权1,1/10,1/100,1/1000的真实双轮环。",
+    "weighted-congestion/uniform-anchored-clock-budget-efficiency": "给出统一低泄漏充分预算对任意输入的次数效率限制。"
+  },
+  "explanation": "此首位锚点可与另一权1玩家及一权1/1000玩家同组三元；最小权分数恰1/2001，其他三元不能更小，因为另外两权各≤1而最小权≥1/1000。所以δ=2000/2001、L=binom(399,2)=79401、0<η≤B。由(U)取对数及ln(1+1/2000)<1/2000，D>2000 ln(16·79401)，因而也满足一般障碍在α=2的充分预算效率界。在t=6ln4有t>3且ln t<ln16=2ln4，故t−3ln t>0；q≥D>t而q−3ln q在q>3递增，因此2ln q/q<2/3。",
+  "scope": "固定α=2、p=16、400人有理双轮基体的预算限制。即便完整输出另有低次全态证书，本边也只约束采用(U)的统一编译。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/计算/四百玩家十六次改善环的字面程序资源--计算.md",
+      "sha256": "2860f40bf673dc40a5d4f109d4aeb4e7d95129c1bb5186c1513cdd8dbb28d4a9"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/统一低泄漏锚定预算的次数效率--障碍.md",
+      "sha256": "39319c53ffdad9fefd4738d8ea4e9e1c2f5bc38e9899b59cec64a13af9d3ef1d",
+      "section": "统一低泄漏锚定预算的次数效率"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对正文各端模型与量词、推导中的真实新负载及本边实际结论范围。",
+  "contribution": {
+    "result": "给出该实际严格双轮输入的精确δ及统一预算次数下界D>2000 ln(1270416)，并推出所有实q≥D的2ln q/q<2/3。",
+    "remaining": "K对象量化任意真实输入和α；还须一般Shapley权比障碍、任意锚点存在含极端权三元以及统一实变量估计。"
+  },
+  "endpoint_pins": {
+    "weighted-congestion/four-hundred-player-degree-sixteen-cycle-executable-resource": "5dd3c62d042148270bcee6ba50051fd1e0250633868fb1aea73b66a49212b6f5",
+    "weighted-congestion/uniform-anchored-clock-budget-efficiency": "c28a8a922cbed52b680a317de4e571c5a6d8e101e69942a75c1e36c2920bebe7"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/计算/四百玩家十六次改善环的字面程序资源--计算.md": "2860f40bf673dc40a5d4f109d4aeb4e7d95129c1bb5186c1513cdd8dbb28d4a9",
+    "archives/weighted-congestion/state/障碍/统一低泄漏锚定预算的次数效率--障碍.md": "39319c53ffdad9fefd4738d8ea4e9e1c2f5bc38e9899b59cec64a13af9d3ef1d"
+  },
+  "review_digest": "50350415bd4e3464d47b7683114e0e9ba57bdbfb9e24f08763d01a1b7a084a27"
+}

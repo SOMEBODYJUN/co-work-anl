@@ -1,0 +1,43 @@
+{
+  "edge_id": "wc-map-monomial-zero-strategy-lift",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/nonnegative-polynomial-positive-monomial-reduction"
+  ],
+  "target_ids": [
+    "M-f308c64eadcc4812a08c6de8178ae6f6"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定整数d≥1和有限α≥1。结论是一条蕴涵：若全部该次数帽下正系数正次数单项式、每动作正费用实例都存在α-PNE，则整个原MODEL也存在。",
+  "roles": {
+    "weighted-congestion/nonnegative-polynomial-positive-monomial-reduction": "拆项保持真实状态及偏离成本。",
+    "M-f308c64eadcc4812a08c6de8178ae6f6": "正费用存在保证向含零、常数、空动作的原全类提升。"
+  },
+  "explanation": "逐资源共享克隆承载所有正次数正项；对每潜在使用者i以仅其可用的 (a_(e,0)/w_i)x 承载正的常数项。真实状态与每条合法偏离成本逐项相等。 先同时固定有一条仅含恒零资源（或为空）动作的所有玩家。这些固定者成本0，满足全部弱式，并不改变任何正费用资源负载。无人剩余则直接精确稳定；否则剩余每动作含正项，拆项后每动作正费。调用给定存在保证，任选合并动作原像再加入固定者；对所有剩余偏离和固定者同时得到原弱式。",
+  "scope": "这是存在性传递。只在不删玩家的拆项阶段有稳定集合双向对应，固定玩家提升不声称任意状态双射。d=0由独立最小常费动作处理。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/归约/非负多项式费用的正单项式恒等转换--归约.md",
+      "sha256": "1b9f26c2d04511476c2b497a00f851ce9d86aaa2a2d0636c66b6b7a9003f6287",
+      "section": "拆项与私有常数资源：全部成本恒等"
+    },
+    {
+      "path": "archives/weighted-congestion/state/归约/非负多项式费用的正单项式恒等转换--归约.md",
+      "sha256": "1b9f26c2d04511476c2b497a00f851ce9d86aaa2a2d0636c66b6b7a9003f6287",
+      "section": "恒零策略预处理：得到每动作正费用的输入"
+    }
+  ],
+  "reviewed_by": "Boss1-weighted-congestion-2e6caa865d8f839c-worker",
+  "review_note": "检查空策略、全零结果、合并动作的偏离原像和固定者不占用正资源。",
+  "whole_result": "固定d≥1和α≥1，正系数正次数单项式且每动作正费的全称α-PNE保证推出允许空/零/常数的原模型全称保证。",
+  "endpoint_pins": {
+    "M-f308c64eadcc4812a08c6de8178ae6f6": "63831d314aec4127287f352d52dbb21e57adc0d0deaaf93a4684797b7c129012",
+    "weighted-congestion/nonnegative-polynomial-positive-monomial-reduction": "54a2ff957111887778f13c68be623d50f65062a23f620d2c059e191db4a86bf6"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/归约/非负多项式费用的正单项式恒等转换--归约.md": "1b9f26c2d04511476c2b497a00f851ce9d86aaa2a2d0636c66b6b7a9003f6287"
+  },
+  "review_digest": "2e1d51fec092b086cbd5538abc1700996cad5d51fc53658f9d2c8ff811595d60"
+}

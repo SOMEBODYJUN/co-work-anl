@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-3a-raw-branching-valuation-supplies-colored-tree-upper-bound",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-PRIVATE-TREE-Q-VALUATION-v1"
+  ],
+  "target_ids": [
+    "UM-SINGLE-PINNED-TREE-MULTIPLICITY-EXACT-CONFIGURATION-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "单强制根、显式完整 d 叉 h 树，d≥2、h≥1；每色整树出现≤μ。估值输入的资源先用相互不同的叶出现 ID，映射为单射；颜色只用于分桶及最终颜色机。",
+  "roles": {
+    "UM-PRIVATE-TREE-Q-VALUATION-v1": "在叶出现集上给 q 的次可加性，以及给定有理价格的显式同深子树见证。",
+    "UM-SINGLE-PINNED-TREE-MULTIPLICITY-EXACT-CONFIGURATION-GAP-v1": "把一桶内叶色单射的同深子树变成原调度上界，并用 pin 给 CONFIG 下界。"
+  },
+  "explanation": "令 U 为全部叶出现、单状态且 λ 为恒等，故 q(U)=d。每色的第 b 次出现进入第 b 桶，非空桶 m≤μ。由 q 次可加有 d≤Σ_b q(B_b)，选 q(B_b)≥ceil(d/m) 的桶。可用 Q 的 demand 见证子程序求任一桶 q 值：桶内价格 0、桶外价格 d+1；含桶外出现的集合目标≤−1，空集目标 0，故最优证书在桶内且可输出达到 q 的子树。将子树边 job 送子端，末边送互异颜色机，余 job 留父机且 pin 留根；活动机负载≤2−ceil(d/m)/d，其他机≤1。Tconf≥1，得同系数 gap 上界。",
+  "scope": "只借单射的叶出现估值；不会把同色全部出现识别为一个估值资源。显式树、实际出现数和真实原任务恢复都按输入计。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/分叉树估值与单状态支持多面体--定理.md",
+      "sha256": "1269318f583984d08b2b1f54b1f3f4831cb77c3713ab90b44d499e8cdea8e8f4",
+      "section": "UM-PRIVATE-TREE-Q-VALUATION-v1"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/单强制根树精确配置间隙--定理.md",
+      "sha256": "2fc20d220e85740eaebe9ff656fc6a03cc97c58b019916317b0a141e81b0a536",
+      "section": "S2. 原始分叉函数的次可加性"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/单强制根树精确配置间隙--定理.md",
+      "sha256": "2fc20d220e85740eaebe9ff656fc6a03cc97c58b019916317b0a141e81b0a536",
+      "section": "S3. 全树 μ 分桶给出的实际上界"
+    }
+  ],
+  "reviewed_by": "Boss1-unrelated-machines-3A-worker",
+  "review_note": "核对叶 occurrence 的单射和桶外高价的整型阈值，另核原任务负载与 pin 配置下界。",
+  "contribution": {
+    "result": "通过次可加性和真实同深树见证给 Cmax≤2−1/μ 和 OPT/Tconf≤2−1/μ；μ=1 时逐例等于 1。",
+    "remaining": "任意单树的 OPT=2−q_rainbow/d 反向提取、显式底层同色组的 CONFIG 阈值及 μ≥2 的锐上确界仍依赖目标独立构造。"
+  },
+  "endpoint_pins": {
+    "UM-PRIVATE-TREE-Q-VALUATION-v1": "5ba8e192bbdbc159a36e27f74b5d4ec618aee3e020c3352139c1f7fc19c8ecbe",
+    "UM-SINGLE-PINNED-TREE-MULTIPLICITY-EXACT-CONFIGURATION-GAP-v1": "9a712c975eb61cbcaa1872761a8dbfe2f8f09352b26c8e0a66bad057d185d446"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/分叉树估值与单状态支持多面体--定理.md": "1269318f583984d08b2b1f54b1f3f4831cb77c3713ab90b44d499e8cdea8e8f4",
+    "archives/unrelated-machines/state/定理/单强制根树精确配置间隙--定理.md": "2fc20d220e85740eaebe9ff656fc6a03cc97c58b019916317b0a141e81b0a536"
+  },
+  "review_digest": "4166c91f27e07ee1268ad2ae93bd90f569fa69e7d7b755011712dda76db27465"
+}

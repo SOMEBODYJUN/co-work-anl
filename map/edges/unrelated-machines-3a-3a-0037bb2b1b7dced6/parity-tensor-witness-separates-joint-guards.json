@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-3a-parity-tensor-witness-separates-joint-guards",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-RESOURCE-REPETITION-SOUNDNESS-NO-v1"
+  ],
+  "target_ids": [
+    "UM-TENSOR-JOINT-GUARD-ESCAPE-q1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "仅 parity 源 A={000,011,101,110}⊂F₂³ 的显式坐标张量。三个完整轴词投影须双射；guard 在 s 个不同层选非空轴值，只按层收费 2^(t−s)。",
+  "roles": {
+    "UM-RESOURCE-REPETITION-SOUNDNESS-NO-v1": "提供 ν(A)=1、每 t≥2 的真实 perfect tensor matching 模板及 B、I+B 可逆的充分性。",
+    "UM-TENSOR-JOINT-GUARD-ESCAPE-q1": "在同一模板内另选 B，要求一个真实匹配同时通过全部至多 L 层的共同 guard。"
+  },
+  "explanation": "沿用 F_B={(x,Bx,(I+B)x)}。B、I+B 可逆时三轴全词都双射，故单轴任意长 ℓ prefix 恰出现 2^(t−ℓ)，单层 joint guard 亦自动成立。取偶 t 的普通二维块对角 B，第一块有 Y_0=X_1，于是跨两层 pattern Y_0=X_1=0 命中 2^(t−1) 条，高于 2^(t−2)；所以一般 perfect tensor 见证未给 L≥2 的共同 guard。目标重选 B 为块 B0 的 GL 共轭，保持三轴双射，再用 t=6L 的计数排除至多 L 层中每层一轴的全部非零低支撑关系；同层额外轴值只会缩小原像。因此完成同一个 F 的增强存在结论需目标的额外选择证明。",
+  "scope": "准确比较普通坐标张量与固定层加强合同；完整克隆池的分母等价、实际矩阵 Kronecker 和未实现的 UM 编译不进入此推导。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/障碍/私有需求组合与共享三维匹配复制--障碍.md",
+      "sha256": "da6f58070683de34c4dfffd68179201c60d1ee3a81ee97f2f487c236449cfc7a",
+      "section": "5. 同一身份的四三元组、实际需求树与张量反例"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/固定层共同上容量的整数张量逃逸--定理.md",
+      "sha256": "4d90dbc700bd79d003e8298dc5b9d8af7ee07fb483464282cba00ac6719d965c",
+      "section": "随机共轭排除全部低支持关系"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/固定层共同上容量的整数张量逃逸--定理.md",
+      "sha256": "4d90dbc700bd79d003e8298dc5b9d8af7ee07fb483464282cba00ac6719d965c",
+      "section": "一个全局整数matching兑现全部约束"
+    }
+  ],
+  "reviewed_by": "Boss1-unrelated-machines-3A-worker",
+  "review_note": "实读两源的量词和有限域构造。二维块的跨层等式是直接计数；未把相异 guard 的见证混拼。",
+  "contribution": {
+    "result": "普通 parity 张量构造给真正整数匹配模板、全部单轴 prefix 和单层 guard；同一普通块对角见证可精确违反两层 guard。",
+    "remaining": "要得到任意固定 L 的共同 guard 全通过，另需共轭选择和低支撑关系 union bound；真实 UM 物理接口是额外开放问题。"
+  },
+  "endpoint_pins": {
+    "UM-RESOURCE-REPETITION-SOUNDNESS-NO-v1": "674a4987a5a56361afc876c3ab8a141084dcf57daef1178cd0999b40ee0b7cef",
+    "UM-TENSOR-JOINT-GUARD-ESCAPE-q1": "33e285e024ece5ccdcf81e299c86cd58cf8830c518d137502a2526251bb202af"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/障碍/私有需求组合与共享三维匹配复制--障碍.md": "da6f58070683de34c4dfffd68179201c60d1ee3a81ee97f2f487c236449cfc7a",
+    "archives/unrelated-machines/state/定理/固定层共同上容量的整数张量逃逸--定理.md": "4d90dbc700bd79d003e8298dc5b9d8af7ee07fb483464282cba00ac6719d965c"
+  },
+  "review_digest": "c4e0261d7238834d4419a23a18d886b19de1a9c477d7f2f29e6295d7e799fcb7"
+}

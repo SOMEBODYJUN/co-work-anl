@@ -1,0 +1,58 @@
+{
+  "edge_id": "wc-map-local-calibration-enables-full-welfare",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/finite-common-scale-calibration"
+  ],
+  "target_ids": [
+    "weighted-congestion/common-scale-full-welfare-regularization"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "给定有限原游戏，若字典或自由资源集合势接口经全部真实可选插入边验证为YES。采用其跨全部资源共同的正h_i和α，保全部玩家的W。对任意有限η≥0。",
+  "roles": {
+    "weighted-congestion/finite-common-scale-calibration": "提供局部集合势、同一玩家跨资源的h_i和全部可选插入边的双侧边际；状态图单独YES没有该数据。",
+    "weighted-congestion/common-scale-full-welfare-regularization": "将该局部YES转为全体W的正则化稳定和全局质量保证。"
+  },
+  "explanation": "按本地校准的必用集合B_e、固定负载b_e，令 q_min=min h_i/w_i、q_max=max h_i/w_i。把F_e^opt恢复为 F_e^opt+q_min b_e c_e(b_e)，常数不改偏离势差。由右端和/积分及单调性得 m=q_min/(d+1)、M=αq_max 的完整W包络。Ψ=Φhat+ηW以 h_i+ηw_i 为下尺度、αh_i+η(d+1)w_i为上尺度。原游戏局部最小稳定于β=max_i两尺度之比；全局最小进一步有 W≤(M+η)/(m+η) OPT，OPT=0直接得W=0。",
+  "scope": "这是对具体局部YES输入的实例化，不用图YES代替局部边际。U和W_M均不是本结论的完整W。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/算法/共同玩家尺度的三层有理校准--算法.md",
+      "sha256": "c70e8dd505148b21b99d265ad74bf1b56bface22a2f4c2219cd1346a09293577",
+      "section": "固定有理α≥1的三种线性可行性接口"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/共同尺度势的稳定与全社会成本正则化--定理.md",
+      "sha256": "c55c041ea1d065a2b74e19ebb84a36cc1e53b42f62f37380a5ad1da07cd29a5f",
+      "section": "逐资源必用背景的全社会成本修复"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/共同尺度势的稳定与全社会成本正则化--定理.md",
+      "sha256": "c55c041ea1d065a2b74e19ebb84a36cc1e53b42f62f37380a5ad1da07cd29a5f",
+      "section": "共同边际与完整证明"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定义/共同尺度稳定与社会质量的证书接口--定义.md",
+      "sha256": "c17d6fb0d93bd42814ce807198beee8fc96217c38d317228ea52b3dbfb1c9a23",
+      "section": "5. 社会目标：只能在写明的成本上使用包络"
+    }
+  ],
+  "reviewed_by": "Boss1-weighted-congestion-2e6caa865d8f839c-worker",
+  "review_note": "比较可选用户背景、同一h_i及图接口的较弱约束；恢复mandatory基线后才继承全体W上下界。",
+  "contribution": {
+    "result": "每个通过完整局部校准的输入提供合法正则化势，得到上述β和完整社会质量比。",
+    "remaining": "应用时需实际获得局部YES，质量还需求全局最小。定理其余实数可行接口及更紧m/M独立于有限校准器。"
+  },
+  "endpoint_pins": {
+    "weighted-congestion/common-scale-full-welfare-regularization": "2064d4dcea77a85b0b3d5cd4a82fa4f44edcbc717a4f920fcc146fc65e9fe005",
+    "weighted-congestion/finite-common-scale-calibration": "a889a899835cf0deeee9d780c85caf1a2bebb7c434d62b846548a185995fff0a"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/算法/共同玩家尺度的三层有理校准--算法.md": "c70e8dd505148b21b99d265ad74bf1b56bface22a2f4c2219cd1346a09293577",
+    "archives/weighted-congestion/state/定理/共同尺度势的稳定与全社会成本正则化--定理.md": "c55c041ea1d065a2b74e19ebb84a36cc1e53b42f62f37380a5ad1da07cd29a5f",
+    "archives/weighted-congestion/state/定义/共同尺度稳定与社会质量的证书接口--定义.md": "c17d6fb0d93bd42814ce807198beee8fc96217c38d317228ea52b3dbfb1c9a23"
+  },
+  "review_digest": "3d402aa7dc11a7d6e16ac0b27251feed234653ef2b2253bf925d6a8080f700d1"
+}

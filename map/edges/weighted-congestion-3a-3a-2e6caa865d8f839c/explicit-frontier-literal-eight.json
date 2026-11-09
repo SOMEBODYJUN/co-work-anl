@@ -1,0 +1,54 @@
+{
+  "edge_id": "wc-map-explicit-frontier-literal-eight",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/explicit-stability-cost-frontier"
+  ],
+  "target_ids": [
+    "M-4ae04fa3f5dc4436a5869f82003945b7"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "相同有限有理 m=3 odd-ring literal 游戏，完整输入取 verify.py 固定数据和 Fraction 系数；阈值α=11/10。",
+  "roles": {
+    "weighted-congestion/explicit-stability-cost-frontier": "从全部状态成本和全部真实偏离计算精确 β(G) 与逐态无解证书。",
+    "M-4ae04fa3f5dc4436a5869f82003945b7": "指定8人16资源输入的全部256状态及2048条偏离和精确阈值。"
+  },
+  "explanation": "按原菜单建立 A_i^h 和 B_ij^h，权(32,2,8,1,1,1,4,16)，各玩家两个动作。每个已占资源费用严格正，全部新成本正；A(s)取1与八个旧/新比的最大。逐位重算真实负载和费用，得到 min_s A(s)=1677156492182507717953258425353716518539/1422139621021019872923783670016457177603>11/10。全部256×8真实边覆盖，且原分类中640个同位light检查和12个全反位状态的相邻同位hub检查也严格通过。",
+  "scope": "精确固定实例；不能用8400个局部标量回归或另一个大游戏替代。β(G)在自身弱端点可行。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/算法/有限显式游戏的稳定成本前沿与完整证书--算法.md",
+      "sha256": "b479f0f16728f75619d8e05070aa8dcd88fef625af1cd2483fceb62595fc476c",
+      "section": "完整枚举、前沿及YES/NO证明"
+    },
+    {
+      "path": "archives/weighted-congestion/state/计算/奇环四程序的实际实例与精确复算--计算.md",
+      "sha256": "66eb0e7953c7547f9bf7c2cdb649e4e0ec9aed473ecde428d77799d57cf7136b",
+      "section": "verify.py：精确标量与一个8人真实游戏"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/odd-ring-audit-residual/original/tests/audits/weighted_congestion/odd_ring/verify.py",
+      "sha256": "0c7a86bdac91325343bc7fcfc53c56b6036782a49fd64a21a988ad9b5999de31"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/odd-ring-audit-residual/replay/literal.json",
+      "sha256": "10d96e8d7d7322f3c209fa01cce3c220a1e5cb58757f8242f6479d5954d0d226"
+    }
+  ],
+  "reviewed_by": "Boss1-weighted-congestion-2e6caa865d8f839c-worker",
+  "review_note": "按已读 literal 纯函数重放，不写入冻结目录，实际核输出与冻结 literal_game 全字段相同。每个资源负载按真实成员重算，严格大于11/10。",
+  "whole_result": "将显式有理前沿算法限制为给定8人16资源游戏，精确求得目标分数并证明全部256态有严格11/10出口。",
+  "endpoint_pins": {
+    "M-4ae04fa3f5dc4436a5869f82003945b7": "10c69fc429f8157b6b897379b95cfb962e48ceaadaa27431dd2d8ff0e8fb5189",
+    "weighted-congestion/explicit-stability-cost-frontier": "7f8494c6b3e99eb048ab1db093ef91d58403033d697cf4dc5cb500d19272e7b9"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/算法/有限显式游戏的稳定成本前沿与完整证书--算法.md": "b479f0f16728f75619d8e05070aa8dcd88fef625af1cd2483fceb62595fc476c",
+    "archives/weighted-congestion/state/计算/奇环四程序的实际实例与精确复算--计算.md": "66eb0e7953c7547f9bf7c2cdb649e4e0ec9aed473ecde428d77799d57cf7136b",
+    "archives/weighted-congestion/tools/evidence/odd-ring-audit-residual/original/tests/audits/weighted_congestion/odd_ring/verify.py": "0c7a86bdac91325343bc7fcfc53c56b6036782a49fd64a21a988ad9b5999de31",
+    "archives/weighted-congestion/tools/evidence/odd-ring-audit-residual/replay/literal.json": "10d96e8d7d7322f3c209fa01cce3c220a1e5cb58757f8242f6479d5954d0d226"
+  },
+  "review_digest": "0a2242e33cada3fbfff7664ec34b57da2a63238e9b91b7511108ec6d5c6e6fa4"
+}

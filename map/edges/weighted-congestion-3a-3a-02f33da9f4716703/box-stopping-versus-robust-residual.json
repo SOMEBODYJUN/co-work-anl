@@ -1,0 +1,42 @@
+{
+  "edge_id": "wc-stage3a-box-stopping-versus-robust-residual",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-88fe48e2daa84b559fbea750e4c62659"
+  ],
+  "target_ids": [
+    "wc-box-safe-reference-potential-versioned-asynchronous-repair"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "盒[1,4]²、一个单位权玩家两私人常费动作，1≤β<4，保留集为空。",
+  "roles": {
+    "M-88fe48e2daa84b559fbea750e4c62659": "给出安全停点与共同稳定分离的完整两状态反例。",
+    "wc-box-safe-reference-potential-versioned-asynchronous-repair": "分别提供式(regret)和真正共同稳定用的式(full)。"
+  },
+  "explanation": "两方向G_i^−=1−4β<0，算法立即停；但对任一终点，另一动作的完整最大差额U_i=4−β>0，由当前费4、新费1同时达到，所以必须输出违例或加性界，不能仅由停止给共同β-PNE。",
+  "scope": "逐偏离全盒端点回归，保留式(full)中的一般保留成本项和独立资源假设。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/反例/过期移动与漂移环境下的修复边界--反例.md",
+      "sha256": "2ba959ccfd8c8371f369ca81b5f0306d50b125f2bb771e8ad8b2a0cf0ff7ab6e",
+      "section": "没有全盒安全移动不等于全盒共同稳定"
+    },
+    {
+      "path": "archives/weighted-congestion/state/算法/全盒安全下降与带版本的异步修复--算法.md",
+      "sha256": "ec527695e15fe57afafb76aabf5efbfa603051ce90f27528eb47607a72ac0b0c"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对正文各端模型与量词、推导中的真实新负载及本边实际结论范围。",
+  "endpoint_pins": {
+    "M-88fe48e2daa84b559fbea750e4c62659": "a041710ef54e8ece1c5fd9b96dc98821dd76508a6d0a928d6f544f2f1c716f01",
+    "wc-box-safe-reference-potential-versioned-asynchronous-repair": "952764b6c0ab21913797f2c6afe3f0ef9e28bfb0205f96ca32dc0a3e3d1ce348"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/反例/过期移动与漂移环境下的修复边界--反例.md": "2ba959ccfd8c8371f369ca81b5f0306d50b125f2bb771e8ad8b2a0cf0ff7ab6e",
+    "archives/weighted-congestion/state/算法/全盒安全下降与带版本的异步修复--算法.md": "ec527695e15fe57afafb76aabf5efbfa603051ce90f27528eb47607a72ac0b0c"
+  },
+  "review_digest": "296aa93689eede7ef2520b075a1d8120dd930bc8c1120c012cbdcabd31618ff6"
+}

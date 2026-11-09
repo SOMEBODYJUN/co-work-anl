@@ -1,0 +1,49 @@
+{
+  "edge_id": "um-3a-single-sink-exit-transfers-to-profile-pool",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SHARED-SINK-MACRO-EXIT-v1"
+  ],
+  "target_ids": [
+    "UM-BOUNDED-PROFILE-EXIT-POOL-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一显式不可拆原任务。home/sink 不交，私有任务最多一个 home，宏的全部有限 home 时间>T/2。原 pool 非空，任务可退出当且仅当在全部 pool 机上有端；每 pool 端有 a_z c_j≤p_zj≤ρ a_z c_j 且 p_zj≤βT，a_z>0，ρ≥1，β≥0，T≥0，0<η≤1。",
+  "roles": {
+    "UM-SHARED-SINK-MACRO-EXIT-v1": "在虚拟单 sink 共同决定宏、home、exit、dummy 和私有真实退出集合，保 home≤T 及可行输入的无误拒。",
+    "UM-BOUNDED-PROFILE-EXIT-POOL-v1": "以标量 work 解码为完整原 pool 分配，证明实际机器负载界。"
+  },
+  "explanation": "令 S=Σ_z 1/a_z>0，保每个原任务及全部 home 端，只将 pool 端替换为共同虚拟端 c_j/S。原 T 调度使每 pool 的 work≤T/a_z，因此保同一批宏/私有退出、总虚拟负载≤T，虚拟 FAIL 蕴含原 OPT>T。虚拟成功给退出集合 E、总 work≤(1+η)TS、home≤T。按原任务身份逐件把 E 分到当前实际负载最低的 pool 机。放置前若每机都超过 ρ(1+η)T，则由 L_z≤ρ a_z·work_z 反推已分配 work 超过 (1+η)TS，矛盾；增加一件至多 βT，故所有实际 pool 机≤[ρ(1+η)+β]T。分母合成位长与原编码总长多项式，恢复至多 |E||Z| 次精确比较。",
+  "scope": "适用完整 pool 资格及上下 profile；保零 work、空 home、T=0、β=0 以及宏可退出和 b>h。虚拟退出位置共用一个容量账本。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/私有组退出池共同宏任务与有界profile联合选择最终审查--审查.md",
+      "sha256": "d290afc529015c1d9cae422a705cb76e22aee2d6096be6f85e4392d3dd5353f9",
+      "section": "1. §8 宏任务退出与共同 home/exit 匹配"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/私有组退出池共同宏任务与有界profile联合选择最终审查--审查.md",
+      "sha256": "d290afc529015c1d9cae422a705cb76e22aee2d6096be6f85e4392d3dd5353f9",
+      "section": "2. §9 完整 profile pool 的有界畸变恢复"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/共享汇点宏任务与占位基的联合选择--资源.md",
+      "sha256": "7d94de601b4926bdeaaa791c8306c965ffcb8c3f4ad43607af206467929d54f9",
+      "section": "完整profile pool扩展"
+    }
+  ],
+  "reviewed_by": "Boss1-unrelated-machines-3A-worker",
+  "review_note": "实读 §8 共同匹配和 §9 双向证书；逐项检查了同一退出集合、实际负载最小恢复及零值合同。",
+  "whole_result": "单 sink 宏退出算法经上述虚拟映射和真实恢复，给全部原任务的确定性算法：成功时 home≤T、pool≤[ρ(1+η)+β]T，FAIL 则原 OPT>T。",
+  "endpoint_pins": {
+    "UM-BOUNDED-PROFILE-EXIT-POOL-v1": "9e64531a29280962b14d5e5739bf8bc0d76f45858ce260820606ae9390c9523f",
+    "UM-SHARED-SINK-MACRO-EXIT-v1": "b7cd33c2c9444a9415dc59b7d0f4514799de14061e0cb792aa6a003224dc7c12"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/私有组退出池共同宏任务与有界profile联合选择最终审查--审查.md": "d290afc529015c1d9cae422a705cb76e22aee2d6096be6f85e4392d3dd5353f9",
+    "archives/unrelated-machines/state/资源/共享汇点宏任务与占位基的联合选择--资源.md": "7d94de601b4926bdeaaa791c8306c965ffcb8c3f4ad43607af206467929d54f9"
+  },
+  "review_digest": "2655f744cb8121e48a083faaf5afd291b64d24fb40fb64a3bf63acf9ea92b02e"
+}

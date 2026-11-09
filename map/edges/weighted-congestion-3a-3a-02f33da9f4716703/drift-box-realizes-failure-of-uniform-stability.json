@@ -1,0 +1,43 @@
+{
+  "edge_id": "wc-stage3a-drift-box-realizes-failure-of-uniform-stability",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-393fbea2ffc844b0a4762dd1d5972139"
+  ],
+  "target_ids": [
+    "M-88fe48e2daa84b559fbea750e4c62659"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "一名单位权玩家、两条私有常数费资源，系数独立取[1,4]，1≤β<4。安全改善要求一个方向对每个参数均严格β改善，共同稳定要求同一个状态对每个参数均稳定。",
+  "roles": {
+    "M-393fbea2ffc844b0a4762dd1d5972139": "给出在各自盒端点两个反向最佳反应，各可使当前费4、偏离费1。",
+    "M-88fe48e2daa84b559fbea750e4c62659": "记录同一盒既无全盒安全方向、也无共同β-PNE。"
+  },
+  "explanation": "漂移见证在每次选择当前动作时取该资源费4、另一资源费1。固定任一动作，取它作为当前的端点，差4−β>0反驳共同稳定。对同一个动作的偏离方向，交换端点得差1−4β<0，且它是独立盒内最小值，所以该方向不是全盒安全。两方向穷尽合法偏离。这里使用同一显式见证的参数实现，不从抽象存在一个改善环就推出所有状态均可失稳。",
+  "scope": "固定两状态盒，在完整β∈[1,4)范围内；β=4时两动作都满足共同弱式。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/反例/过期移动与漂移环境下的修复边界--反例.md",
+      "sha256": "2ba959ccfd8c8371f369ca81b5f0306d50b125f2bb771e8ad8b2a0cf0ff7ab6e",
+      "section": "逐时各有精确势仍可漂移循环"
+    },
+    {
+      "path": "archives/weighted-congestion/state/反例/过期移动与漂移环境下的修复边界--反例.md",
+      "sha256": "2ba959ccfd8c8371f369ca81b5f0306d50b125f2bb771e8ad8b2a0cf0ff7ab6e",
+      "section": "没有全盒安全移动不等于全盒共同稳定"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对正文各端模型与量词、推导中的真实新负载及本边实际结论范围。",
+  "whole_result": "漂移例的两个具体参数端点同时证明，对于每个1≤β<4，两个方向都没有全盒安全严格β改善，也没有一个状态在全部参数下为β-PNE。",
+  "endpoint_pins": {
+    "M-393fbea2ffc844b0a4762dd1d5972139": "1eb378112564bc7ae07ca74c09f4766a04a1f81c1a3eb0befd280ee5109d1ad1",
+    "M-88fe48e2daa84b559fbea750e4c62659": "a041710ef54e8ece1c5fd9b96dc98821dd76508a6d0a928d6f544f2f1c716f01"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/反例/过期移动与漂移环境下的修复边界--反例.md": "2ba959ccfd8c8371f369ca81b5f0306d50b125f2bb771e8ad8b2a0cf0ff7ab6e"
+  },
+  "review_digest": "30952dc466a9575760987875a89d368116c452a3be08e6a94e7139a69077b5f1"
+}

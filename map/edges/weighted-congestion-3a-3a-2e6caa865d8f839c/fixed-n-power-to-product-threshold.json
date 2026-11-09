@@ -1,0 +1,43 @@
+{
+  "edge_id": "wc-map-fixed-n-power-to-product-threshold",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-88529b26211042a2b53a1a8f8f5a8add"
+  ],
+  "target_ids": [
+    "M-5525ddc99d93462ba7e275aaadb46749"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "整数 d,n≥1；所有权为1，n名固定用户共享e且费用 x^d，另一个玩家在e和私有常数K>0间选。固定n先取p↓0，随后才令n增长。",
+  "roles": {
+    "M-88529b26211042a2b53a1a8f8f5a8add": "给同一两态模型及严格幂和最小点的精确阈值 A_(n,d,p)。",
+    "M-5525ddc99d93462ba7e275aaadb46749": "同一输入、同一状态与偏离下，输出乘积和对数和最小选择的严格端点与反例。"
+  },
+  "explanation": "令 r=n/(n+1)。由 A^p=1+n(1-r^(dp)) 得 lim_(p↓0) ln A=−dn ln r，故固定n的极限是 B=(1+1/n)^(dn)。在正成本域，(sum C_i^p−(n+1))/p→sum ln C_i。为确保极限比较仍严格，直接在同一两态相减：坏态减好态的对数和是 ln[K/((n+1)^d B)]，严格负当且仅当 K<(n+1)^d B。乘积和对数的最小点相同。B<e^d 且 B→e^d，所以每个 1≤α<e^d 可先选有限 n 使 B>α，再选 α(n+1)^d<K<(n+1)^d B；坏态唯一最小，主动者严格改善，另一态精确PNE。",
+  "scope": "保留同一实际两态、正费及严格K窗口。非正成本时不定义该实对数；有限n只逼近e^d。非均衡存在下界。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/障碍/幂和与正成本乘积的最小选态障碍--障碍.md",
+      "sha256": "d510339161f30d3e3a6d34e9bcb27b69040220e4632e493a39f420a73e6dff77",
+      "section": "0<p≤1：单项式族的精确有限阈值及极限"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/幂和与正成本乘积的最小选态障碍--障碍.md",
+      "sha256": "d510339161f30d3e3a6d34e9bcb27b69040220e4632e493a39f420a73e6dff77",
+      "section": "正成本乘积及对数和：e^d的上确界障碍"
+    }
+  ],
+  "reviewed_by": "Boss1-weighted-congestion-2e6caa865d8f839c-worker",
+  "review_note": "检查固定n的p极限、严格目标差及独立的n极限；仅取极限中的弱不等式无法认证唯一最小。",
+  "whole_result": "在同一真实两态族，幂和阈值的 p↓0 极限给精确乘积/对数阈值 B_(n,d)=(1+1/n)^(dn)。所有 1≤α<e^d 有有限唯一坏最小点及另一精确PNE，e^d不在本族有限严格端点内。",
+  "endpoint_pins": {
+    "M-5525ddc99d93462ba7e275aaadb46749": "4fa750088cb7d62150cf636db2c90f776fbc578f07cdfda03d169e6488b9126f",
+    "M-88529b26211042a2b53a1a8f8f5a8add": "285ac1b49f7c1c3b34859ebba0d7c9590035704601dbebdeddb3a880ea869958"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/障碍/幂和与正成本乘积的最小选态障碍--障碍.md": "d510339161f30d3e3a6d34e9bcb27b69040220e4632e493a39f420a73e6dff77"
+  },
+  "review_digest": "939eb33acdb412034d9fd4cdca36fc8cd0a42ed2c73c9facff9b9e5814d00a34"
+}

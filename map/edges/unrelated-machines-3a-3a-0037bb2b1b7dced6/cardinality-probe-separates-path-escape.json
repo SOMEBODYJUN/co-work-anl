@@ -1,0 +1,49 @@
+{
+  "edge_id": "um-3a-cardinality-probe-separates-path-escape",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "UM-ESCAPE-MATCH-GAP-v1"
+  ],
+  "target_ids": [
+    "UM-BIG-CARDINALITY-PROBE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "用 ESCAPE 的 k≥4、h≥3、k 个终端和 k−1 路径占位任务的单 z 矩阵，在固定 T0=1+1/k 上运行 BIG 的逐边强制同条件 assignment LP，加每机 unit 大端质量≤1，按轮删除不可行边。",
+  "roles": {
+    "UM-ESCAPE-MATCH-GAP-v1": "提供通过 CONFIG 与 GHMR 的三端路径占位原矩阵和 T0。",
+    "UM-BIG-CARDINALITY-PROBE-v1": "提供同条件容量、每机大端基数与强制边的具体探针。"
+  },
+  "explanation": "令 X_g 为末组普通任务送终端的总质量，Z_g 为该组占位送共享 z 的总质量。相加 k 个终端的大边基数得 X_g+(k−1−Z_g)≤k，故 Z_g≥X_g−1；z 的同一容量给 Σ_g Z_g≤2T0。对核心父入边质量 y，单位入边加留下的 (k−X)/k 容量给 X≥ky−1。若 k≥5，强制末父入边 y=1 给 Z_g≥k−2≥3>2T0，全部末父入边删去。若 k=4，强制末父上一层节点入边为 1，其四个末父的入边总质量≥3；四组相加得 Σ X_g≥4·3−4=8，再得 Σ Z_g≥4>2T0，故这一层全部入边删去。此后向上每次强制单位入边会与不可下传的 k 件小任务合载 2>T0，直至 bridge 两端无域。",
+  "scope": "比较只及 path-occupancy 三端族在 T0 的拒绝，保 BIG 的无 z 稀释底座精确阈值合同；不推断共享 z 族所有 C<2−1/k 都拒绝，也不外推到密阻塞矩阵。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md",
+      "sha256": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+      "section": "7. 加入大边基数不等式后的准确修复边界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/重边匹配过滤与重轻对偶循环双源审查--审查.md",
+      "sha256": "a64e057608e03086a2e929dfad5b345e2698c618e5a1878bb76c449a94dc5fd6",
+      "section": "3. 共享小端逃逸与过滤固定点"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/大边匹配残余原程序的安全过滤与共享逃逸核验--计算.md",
+      "sha256": "bc7e1a8bef5167cfcfad8044c4c253121e8667da6677e25398e0d3ef70a2cdb2",
+      "section": "原族、路径占位与共享逃逸是三个不同输入"
+    }
+  ],
+  "reviewed_by": "Boss1-unrelated-machines-3A-worker",
+  "review_note": "逐个审查 LP 质量守恒、严格 T0/2 大边分类、k=4 与 k≥5 的不同初始删除层以及后续传播。",
+  "endpoint_pins": {
+    "UM-BIG-CARDINALITY-PROBE-v1": "605b6579801e34bbd52b8be461716530aba9da89b0341d80da715adb8de9bbd3",
+    "UM-ESCAPE-MATCH-GAP-v1": "f106c89b7e2f62ae48f39481aaf8d89ea6934d05c7986ab94a11b86cb0682507"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+    "archives/unrelated-machines/state/审查/重边匹配过滤与重轻对偶循环双源审查--审查.md": "a64e057608e03086a2e929dfad5b345e2698c618e5a1878bb76c449a94dc5fd6",
+    "archives/unrelated-machines/state/计算/大边匹配残余原程序的安全过滤与共享逃逸核验--计算.md": "bc7e1a8bef5167cfcfad8044c4c253121e8667da6677e25398e0d3ef70a2cdb2"
+  },
+  "review_digest": "b558788b7ad29f22dba99d08c7f3b00bd46f88261897c5ccd1663269b8cc3eac"
+}

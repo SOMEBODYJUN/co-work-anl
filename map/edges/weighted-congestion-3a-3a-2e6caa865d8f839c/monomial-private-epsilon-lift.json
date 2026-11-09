@@ -1,0 +1,43 @@
+{
+  "edge_id": "wc-map-monomial-private-epsilon-lift",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/nonnegative-polynomial-positive-monomial-reduction"
+  ],
+  "target_ids": [
+    "M-f308c64eadcc4812a08c6de8178ae6f6"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定整数d≥1及不依赖ε的有限α≥1。若每个正系数正次数单项式且每动作正费实例都存在α-PNE，考虑任一有限原模型实例。",
+  "roles": {
+    "weighted-congestion/nonnegative-polynomial-positive-monomial-reduction": "给拆项后全部真实成本恒等，保留动作标签时仍成立。",
+    "M-f308c64eadcc4812a08c6de8178ae6f6": "不用冻结玩家的另一条完整存在性提升。"
+  },
+  "explanation": "逐资源共享克隆承载所有正次数正项；对每潜在使用者i以仅其可用的 (a_(e,0)/w_i)x 承载正的常数项。真实状态与每条合法偏离成本逐项相等。 不合并原动作标签。每个(i,a)加独享一次标记(ε/w_i)x，每个实际成本及每个真实偏离成本都恰加ε。对ε_j=1/j依次调用给定存在保证。原标签状态有限，存在单一状态s*的无限恒定子列，全部偏离弱式 C_i(s*)+ε_j≤α[C_i(t_i,s*_-i)+ε_j] 在同一子列成立。令j→∞，全部弱式同时保留。",
+  "scope": "正私有标记可能改变有限ε的α稳定集合；只证明统一α的存在性提升，保留所有玩家与标签，无有效收敛轮数承诺。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/归约/非负多项式费用的正单项式恒等转换--归约.md",
+      "sha256": "1b9f26c2d04511476c2b497a00f851ce9d86aaa2a2d0636c66b6b7a9003f6287",
+      "section": "拆项与私有常数资源：全部成本恒等"
+    },
+    {
+      "path": "archives/weighted-congestion/state/归约/非负多项式费用的正单项式恒等转换--归约.md",
+      "sha256": "1b9f26c2d04511476c2b497a00f851ce9d86aaa2a2d0636c66b6b7a9003f6287",
+      "section": "保留全部玩家的另一提升：私有微标记与有限状态极限"
+    }
+  ],
+  "reviewed_by": "Boss1-weighted-congestion-2e6caa865d8f839c-worker",
+  "review_note": "独立于固定零策略路线。检查极限用同一状态、同一有限倍率及同一组全部真实偏离。",
+  "whole_result": "固定d≥1和有限α≥1，正费单项式子类的全称α-PNE保证经私有ε标记及有限状态子列推出原宽模型的全称保证。",
+  "endpoint_pins": {
+    "M-f308c64eadcc4812a08c6de8178ae6f6": "63831d314aec4127287f352d52dbb21e57adc0d0deaaf93a4684797b7c129012",
+    "weighted-congestion/nonnegative-polynomial-positive-monomial-reduction": "54a2ff957111887778f13c68be623d50f65062a23f620d2c059e191db4a86bf6"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/归约/非负多项式费用的正单项式恒等转换--归约.md": "1b9f26c2d04511476c2b497a00f851ce9d86aaa2a2d0636c66b6b7a9003f6287"
+  },
+  "review_digest": "a44a7518b0b2b7da9777801ff0aeb4bcaf3240300949f90398c33d4cf7d2fa3f"
+}

@@ -1,0 +1,62 @@
+{
+  "edge_id": "wc-map-odd-ring-interface-literal-eight",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "OC-INTERFACE-v1"
+  ],
+  "target_ids": [
+    "M-4ae04fa3f5dc4436a5869f82003945b7"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定 m=3，u=(32,2,8)、v=(1,4,16)、n=(3,1,1)、k=(2,10,10)、D_i=10，α=11/10。使用 verify.py 中 coefficients 得到的同一组 a,b 和 literal 动作。",
+  "roles": {
+    "OC-INTERFACE-v1": "通过正系数两严格测试和奇数环两类出口推出全状态非存在。",
+    "M-4ae04fa3f5dc4436a5869f82003945b7": "该精确输入8玩家16资源的严格11/10非存在是目标的一部分。"
+  },
+  "explanation": "x=(1/32,2,2)、t=(1/2,1/2,1/2)，两乘积均1/8。N、M、P、Q均正，G=2110683850987194565301612665993248/373996050144031939197214119729515>1。源码用 p_0=1、p_i=(1−δ)r_i p_(i−1)，δ=(G−1)/(2mG)；(1−δ)^(m−1)G>1 由 Bernoulli 给出，故三个 p_i 区间均严格可行，取其中点主幅度 q_i，代码还逐项反验原两测试。有同位light时其翻位严格改善；余下全反位状态中相邻同位hub由奇数性存在，后一hub翻位严格改善。",
+  "scope": "用接口推出原系数游戏无11/10-PNE。正系数由原程序确定，不替换为同权几何但不同幅度的1949人游戏。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md",
+      "sha256": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6",
+      "section": "混合群组也被覆盖的证明"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md",
+      "sha256": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6",
+      "section": "权重闭环与系数可行性的充分必要条件"
+    },
+    {
+      "path": "archives/weighted-congestion/state/计算/奇环四程序的实际实例与精确复算--计算.md",
+      "sha256": "66eb0e7953c7547f9bf7c2cdb649e4e0ec9aed473ecde428d77799d57cf7136b",
+      "section": "verify.py：精确标量与一个8人真实游戏"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/odd-ring-audit-residual/original/tests/audits/weighted_congestion/odd_ring/verify.py",
+      "sha256": "0c7a86bdac91325343bc7fcfc53c56b6036782a49fd64a21a988ad9b5999de31"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/odd-ring-audit-residual/replay/literal.json",
+      "sha256": "10d96e8d7d7322f3c209fa01cce3c220a1e5cb58757f8242f6479d5954d0d226"
+    }
+  ],
+  "reviewed_by": "Boss1-weighted-congestion-2e6caa865d8f839c-worker",
+  "review_note": "逐真实菜单确认两测试，重算接口乘积和原程序 literal 输出。闭环上源码先传播 side 尺度，正文先传播 main 尺度，实际只要求原不等式一致。",
+  "contribution": {
+    "result": "精确八人literal输入满足奇环接口，故每个纯态都有一条严格11/10单人翻位。",
+    "remaining": "完整目标还需在全部256×8翻位上取min-max，得到所列精确分数；保守接口不计算这个值。"
+  },
+  "endpoint_pins": {
+    "M-4ae04fa3f5dc4436a5869f82003945b7": "10c69fc429f8157b6b897379b95cfb962e48ceaadaa27431dd2d8ff0e8fb5189",
+    "OC-INTERFACE-v1": "2632cfb87681d8d959b5e44f47d114e30bacc287bba2a931798524c44c6be252"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6",
+    "archives/weighted-congestion/state/计算/奇环四程序的实际实例与精确复算--计算.md": "66eb0e7953c7547f9bf7c2cdb649e4e0ec9aed473ecde428d77799d57cf7136b",
+    "archives/weighted-congestion/tools/evidence/odd-ring-audit-residual/original/tests/audits/weighted_congestion/odd_ring/verify.py": "0c7a86bdac91325343bc7fcfc53c56b6036782a49fd64a21a988ad9b5999de31",
+    "archives/weighted-congestion/tools/evidence/odd-ring-audit-residual/replay/literal.json": "10d96e8d7d7322f3c209fa01cce3c220a1e5cb58757f8242f6479d5954d0d226"
+  },
+  "review_digest": "df911a3fb9ba097cdd751aeb120b87ec8c561a7f5928d5abbcf5f822521be6d6"
+}

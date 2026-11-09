@@ -1,0 +1,41 @@
+{
+  "edge_id": "cag-009e-strict-example-attains-tail-credit-tax",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/potential-maximizing-first-action-strict-selected-tail-credit-example"
+  ],
+  "target_ids": [
+    "customer-attraction/potential-maximizing-tail-real-reply-selected-credit-single-tax"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "指定五人两标签完整SPE，实际前三槽AAA，主题A有5客户、B有1客户，二者不交。",
+  "roles": {
+    "customer-attraction/potential-maximizing-first-action-strict-selected-tail-credit-example": "完整31节点真实策略及精确势最大首题和利润。",
+    "customer-attraction/potential-maximizing-tail-real-reply-selected-credit-single-tax": "单次税控制Γ与最坏首题选择信用K_sel的普遍局部界。"
+  },
+  "explanation": "A后真回复B，B后真回复A，两对同为势最大。Γ=0，δ_A=5/4、δ_B=1，τ=5/(4·5)=1/4，故K_sel=τ=1/4且K_sel>Γ。固定四个A恰给两个纯查询值1，查A又对所有四槽保证1，v₅=1。",
+  "scope": "验证上界K_sel≤τ的取等性并分离Γ与K_sel，不替代全称证明。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/最大势末对真实回复的选择信用与单次尾税--引理.md",
+      "sha256": "f43e7e6654164f1ba6c77ad273470124e90d1014947f5e859061ca705980333f"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/势最优首题选择的严格尾部信用--反例.md",
+      "sha256": "3293e4959492cc15873a868993cffabb71424614ca4491a76e3b65e5304aebf8"
+    }
+  ],
+  "reviewed_by": "Boss1-customer-attraction-map-worker",
+  "review_note": "对读端点正文及所列承重段落，逐项核原模型、真实分支、条件和结论作用范围。",
+  "endpoint_pins": {
+    "customer-attraction/potential-maximizing-first-action-strict-selected-tail-credit-example": "0465aa21c3d42d635e732abb9aa270d20d83dff401bcf9544a0035a833b163e3",
+    "customer-attraction/potential-maximizing-tail-real-reply-selected-credit-single-tax": "5a2986651adecb3cf5f7d0dbbea02f32d5545b919b7573b7f36b65291ba7ca06"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/最大势末对真实回复的选择信用与单次尾税--引理.md": "f43e7e6654164f1ba6c77ad273470124e90d1014947f5e859061ca705980333f",
+    "archives/customer-attraction/state/反例/势最优首题选择的严格尾部信用--反例.md": "3293e4959492cc15873a868993cffabb71424614ca4491a76e3b65e5304aebf8"
+  },
+  "review_digest": "591cb5ca16420c4bc94d64d9c403d4b286a9f2928c84acd738322f65d0c13fb7"
+}

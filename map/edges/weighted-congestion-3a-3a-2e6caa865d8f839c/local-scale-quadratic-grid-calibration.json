@@ -1,0 +1,57 @@
+{
+  "edge_id": "wc-map-local-scale-quadratic-grid-calibration",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/two-weight-quadratic-common-scale-finite-exact-verification"
+  ],
+  "target_ids": [
+    "weighted-congestion/finite-common-scale-calibration"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "权值仅1和2、非负有理二次多项式费用、有限显式策略，且每资源每类型潜在用户≤100（含必用者）。对校准目标 α=64/59；字典若使用，须包含指定F,H_1,H_0的背景平移版本。",
+  "roles": {
+    "weighted-congestion/two-weight-quadratic-common-scale-finite-exact-verification": "对三单项式和两权类给起点0..100的六组有理双侧夹逼，共同尺度(1,59/32)。",
+    "weighted-congestion/finite-common-scale-calibration": "全资源自由局部接口，或含该势字典的接口，得到完整有理YES。"
+  },
+  "explanation": "计数(k,l)按实际必用者和已加入可选用户取值；插入起点落在有限已核网格，插后费用用L+w。逐非负系数相加得到该资源所有插入边的夹逼；跨资源始终采用同一类型尺度。校准器用可选子集势时从 F(B_e∪T) 减 F(B_e)，常数差不改边际。h_i≥1已经满足有理标准化。再按局部YES⇒状态图YES⇒α-PNE推出每次严格目标改善下降。",
+  "scope": "有限网格已核部分的可计算用途。无限人数由独立解析不等式支付，不能由有限次数或网格外推。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/计算/双权二次共同缩放的有限精确核验--计算.md",
+      "sha256": "487f790add28b261d7a84682753e92e5611b49c6eadba35fc293daf5954138f3",
+      "section": "六类真实差分与极值"
+    },
+    {
+      "path": "archives/weighted-congestion/state/计算/双权二次共同缩放的有限精确核验--计算.md",
+      "sha256": "487f790add28b261d7a84682753e92e5611b49c6eadba35fc293daf5954138f3",
+      "section": "精确运行范围和输出行为"
+    },
+    {
+      "path": "archives/weighted-congestion/state/算法/共同玩家尺度的三层有理校准--算法.md",
+      "sha256": "c70e8dd505148b21b99d265ad74bf1b56bface22a2f4c2219cd1346a09293577",
+      "section": "固定有理α≥1的三种线性可行性接口"
+    },
+    {
+      "path": "archives/weighted-congestion/state/算法/共同玩家尺度的三层有理校准--算法.md",
+      "sha256": "c70e8dd505148b21b99d265ad74bf1b56bface22a2f4c2219cd1346a09293577",
+      "section": "真实偏离、终止与终点证书"
+    }
+  ],
+  "reviewed_by": "Boss1-weighted-congestion-2e6caa865d8f839c-worker",
+  "review_note": "核起点覆盖、必用者仍计入原真实负载、共同h与字典成员条件。有限检查仅用于所写有限人数组合。",
+  "contribution": {
+    "result": "在明示双权及潜在人数限制下，指定有理势直接给自由局部校准YES，且该保证以共同尺度跨资源成立。",
+    "remaining": "更广人数由另外的无限域证明处理；任意权谱、其他倍率/字典与LP求解能力不由此实例给出。"
+  },
+  "endpoint_pins": {
+    "weighted-congestion/finite-common-scale-calibration": "a889a899835cf0deeee9d780c85caf1a2bebb7c434d62b846548a185995fff0a",
+    "weighted-congestion/two-weight-quadratic-common-scale-finite-exact-verification": "4d6f33afa019f224605a1595b16177901dd738de6e21da55c07f4b74bc1a64b6"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/计算/双权二次共同缩放的有限精确核验--计算.md": "487f790add28b261d7a84682753e92e5611b49c6eadba35fc293daf5954138f3",
+    "archives/weighted-congestion/state/算法/共同玩家尺度的三层有理校准--算法.md": "c70e8dd505148b21b99d265ad74bf1b56bface22a2f4c2219cd1346a09293577"
+  },
+  "review_digest": "b0abace50c911e3421c4e345ba55e34cc6940b9b103521bf5268b6b990becd75"
+}

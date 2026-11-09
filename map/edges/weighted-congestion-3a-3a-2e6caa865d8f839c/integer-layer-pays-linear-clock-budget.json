@@ -1,0 +1,53 @@
+{
+  "edge_id": "wc-map-integer-layer-pays-linear-clock-budget",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/linear-clock-budget-integer-layer-proof"
+  ],
+  "target_ids": [
+    "WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一窗口构造，整数p≥2^20，α=p/10，Q=p^4，m−1最小满足2^(m−1)≥p²，N=p^(4m−5)，L_c=binom(N−1,2)，B_*=mQ^(m−1)2^p，η_0=(2^p−α)/4。",
+  "roles": {
+    "weighted-congestion/linear-clock-budget-integer-layer-proof": "给严格 (2/3)^p·4α²B_*L_c/η_0<1 的独立整数分层链。",
+    "WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1": "全态定理在同次数p支付锚定门泄漏与合法输出次数的一步。"
+  },
+  "explanation": "置R=4α²B_*L_c/η_0。由H≥(9/10)2^p与L_c≤N²得R≤mp^(12(m−1))。2^k≤p<2^(k+1) 时 m≤2^k、m−1≤2(k+1)，所以R<2^(24(k+1)²+k)。F(20)=10604<2^19，2F(k)−F(k+1)=24k²+k−49>0 保全部k≥20有F(k)<2^(k−1)，再用 (3/2)^p≥(9/4)^(2^(k−1))>2^(2^(k−1))。因此幅度M=2αB_*时前沿出边的新增负担 α L_c M (2/3)^p<η_0/2，门可仍用原次数p。",
+  "scope": "只承担同次数泄漏子预算；健康环、真实全态基体上界、每个product-front出边及非法态修复分别验证。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/证明/线性族同次数时钟预算的整数分层--证明.md",
+      "sha256": "bff5989b2faf2c2e33f996500bed49a3461569c83418d66eb1656a08d11033f5",
+      "section": "线性族同次数时钟预算的整数分层"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/全状态线性次数无均衡族--定理.md",
+      "sha256": "fd1208e470d12721ed79fea67fbd43221c432a95fc0433ac3df2d5f0573c7d9b",
+      "section": "三元锚定补全"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/线性全状态族的三路独立攻击范围--审查.md",
+      "sha256": "90cd47fde92f518a2b1968dc2ad688ea08e4dbb539ac327dd81d20af09c70cc4",
+      "section": "一般主论证的承重接口"
+    }
+  ],
+  "reviewed_by": "Boss1-weighted-congestion-2e6caa865d8f839c-worker",
+  "review_note": "核目标正文与独立证明的同一R、L_c与H/4，算出严格负担小于H/8；不从环或有限端点推出全态。",
+  "contribution": {
+    "result": "对所有p≥2^20，目标同次数锚定三元构造的泄漏预算在次数p本身严格满足。",
+    "remaining": "完整目标还要给健康窗口基体、B_*全状态证明、每个product-front的统一真实偏离和非法态单人修复。"
+  },
+  "endpoint_pins": {
+    "WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1": "b99e4039057606211ffe22eee6040a8380373552ae9ed39b19619c84c56e7bd2",
+    "weighted-congestion/linear-clock-budget-integer-layer-proof": "afe62d579b68d8812aeca9e23ce0e39b73cee56964cb3fd794937fa04a6ef775"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/证明/线性族同次数时钟预算的整数分层--证明.md": "bff5989b2faf2c2e33f996500bed49a3461569c83418d66eb1656a08d11033f5",
+    "archives/weighted-congestion/state/定理/全状态线性次数无均衡族--定理.md": "fd1208e470d12721ed79fea67fbd43221c432a95fc0433ac3df2d5f0573c7d9b",
+    "archives/weighted-congestion/state/审查/线性全状态族的三路独立攻击范围--审查.md": "90cd47fde92f518a2b1968dc2ad688ea08e4dbb539ac327dd81d20af09c70cc4"
+  },
+  "review_digest": "5b894916dc9c9d3699b4b15dc80c01b7e24092ab844ee890ca41e65f10a01977"
+}

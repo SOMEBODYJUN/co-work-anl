@@ -1,0 +1,42 @@
+{
+  "edge_id": "wc-stage3a-side-endpoint-completes-two-attack-reduction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/side-polynomial-endpoint-maximal-lower-load"
+  ],
+  "target_ids": [
+    "weighted-congestion/conservative-two-attack-polynomial-monomial-reduction"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "整数d≥2,n≥1、w>0、α>1、非负系数P,Q且H/L均严格正。端点极值本身仅用于规范化后的0<w≤1。",
+  "roles": {
+    "weighted-congestion/side-polynomial-endpoint-maximal-lower-load": "固定P、n,w,α，把Q换成D_0x^d并保持两原始margin严格正。",
+    "weighted-congestion/conservative-two-attack-polynomial-monomial-reduction": "保持n,d,α的完整主副单项式归约，输出k≥1、0<b<1、0<w′≤1。"
+  },
+  "explanation": "若w>1且n≥2，则nw≥1+w及单调性使L不可能；若n=1且w>1，则交换玩家、w′=1/w、P′(x)=Q(wx)、Q′(x)=P(wx)，两个margin互换。现可先用端点定理。令P(1)=1，P(x)=Σp_jx^j，r=nw、A=(1+w)^d、ρ=(w/(1+w))^d；写新侧Q=b x^d、z=bA，H/L给n(1−α/A)z>αP(1+r)−1及(α−ρ)z<P(1+w)−αP(r)。H先保证A>α、两分母正。消去z等价于Σp_j F_j>0，F_j=n(1−α/A)[(1+w)^j−αr^j]−(α−ρ)[α(1+r)^j−1]。因F_0<0，取k≥1使F_k>0，令P=x^k且在所得严格上下界之间取z。下界正，而上界除以A严格小于(A−w^d)/(αA−w^d)<1，利用r≥w和(1+w)^k−w^k≤A−w^d。故0<b<1；反向单项式是非负多项式特例。",
+  "scope": "完整的严格保守证书归约；固定P的副定理不扩到w>1，且不声称保持原游戏或实际minimax。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/两端取值固定时副费用的端点极值--定理.md",
+      "sha256": "a8796c55b5d7fbedfae8fdfa36a68589653108046b4557bc76f9c3dc411dd63b"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/保守两攻击证书的单项式费用归约--定理.md",
+      "sha256": "0d876f1420c6bcb1a48bfc81d8c45da7d504033737c534637d9a332a3b6654e0"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对正文各端模型与量词、推导中的真实新负载及本边实际结论范围。",
+  "whole_result": "对每个原域内严格H/L可行输入，保持n,d,α能构造合法w′、主x^k及副b x^d并保持两margin严格为正。",
+  "endpoint_pins": {
+    "weighted-congestion/conservative-two-attack-polynomial-monomial-reduction": "acb50ebdc5c66db86127c9b34c6b974e3b2c807281fd9b3732aed4d44ec8d960",
+    "weighted-congestion/side-polynomial-endpoint-maximal-lower-load": "dacdcb6601a6af8f7167ee79eb58430812875728674ee860e3612ff2ac14b364"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/两端取值固定时副费用的端点极值--定理.md": "a8796c55b5d7fbedfae8fdfa36a68589653108046b4557bc76f9c3dc411dd63b",
+    "archives/weighted-congestion/state/定理/保守两攻击证书的单项式费用归约--定理.md": "0d876f1420c6bcb1a48bfc81d8c45da7d504033737c534637d9a332a3b6654e0"
+  },
+  "review_digest": "b00a2f99be6ed868f217989efc72e9048b92027489d23445ae7d006df4372fb4"
+}

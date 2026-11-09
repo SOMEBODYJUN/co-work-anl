@@ -1,0 +1,46 @@
+{
+  "edge_id": "wc-stage3a-two-parallel-class-efx-supports-exact-subdomain",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "FC-LEMMA-R2-2C-v1"
+  ],
+  "target_ids": [
+    "FC-01"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "不可分家务，异质观察者各至多两个容量1平行类、无loops、完整分配，无PO要求；EFX对每个owner物品逐一删除。",
+  "roles": {
+    "FC-LEMMA-R2-2C-v1": "给同一模型下m≥n的完全EF构造，及m<n的至多一物分配。",
+    "FC-01": "要求任意rank≤2拟阵秩，包括三类或更多及loops。"
+  },
+  "explanation": "若全部二进制词出现，给每人一组互补词，则全部bundle从任何观察者看都触两类。否则构造missing-word邻接图；匹配不足时交替可达集S,T有|T|<|S|，若每个单坐标翻词出现则T含|S|个不同物品，故存在仍缺的翻词。先沿路使该坐标玩家未匹配，再取全局未匹配物品（m≥n），翻位后可增广。得到每人自己的非空单类bundle，其他非空bundle在任何无loops观察者下至少成本1，故EF，经秩单调性即EFX。m<n时删除任意唯一自有物后成本零，亦为EFX。",
+  "scope": "FC-01的真实二类无loops子域；异质二类保留，不能用三类不截断的toy程序覆盖三类rank cap2。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/审查/退役公平家务候选三源处置--审查.md",
+      "sha256": "9b1388d9c3c24d343aa102d3d2c96d5f0ef25108ca46cfbbc4fe344079752324",
+      "section": "FC-LEMMA-R2-2C-v1：两平行类无 loops 的局部引理"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/退役公平家务候选三源处置--审查.md",
+      "sha256": "9b1388d9c3c24d343aa102d3d2c96d5f0ef25108ca46cfbbc4fe344079752324",
+      "section": "候选报告与 candidates.json 的独有内容"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对正文各端模型与量词、推导中的真实新负载及本边实际结论范围。",
+  "contribution": {
+    "result": "所有无loops、每观察者至多两个平行类的rank≤2家务实例有完整EFX；m≥n时还有完整EF。",
+    "remaining": "三类及以上截断拟阵、尤其loops，仍需构造或反例；二元缺词、owner单类和非空他包成本至少1不再同时成立。"
+  },
+  "endpoint_pins": {
+    "FC-01": "10c695e38ef722c892617f49b811f01fc85e2dfa8d4ebd3901ed99b1c9463889",
+    "FC-LEMMA-R2-2C-v1": "53c714ef8ec6c54573514aac6e6fbffde9c57c657533a8685132e775690e85e4"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/审查/退役公平家务候选三源处置--审查.md": "9b1388d9c3c24d343aa102d3d2c96d5f0ef25108ca46cfbbc4fe344079752324"
+  },
+  "review_digest": "f222d01571683b70340b697039e682f1c131ddb58193ef46f64fb9b757ebe15c"
+}

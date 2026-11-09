@@ -1,0 +1,43 @@
+{
+  "edge_id": "wc-stage3a-multiscale-multipliers-to-game-specific-ordinal",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R1-MULTIPLIER-BARRIER"
+  ],
+  "target_ids": [
+    "weighted-congestion/game-specific-separable-ordinal"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定d≥2及1≤α<ρ_d，先选α<R<ρ_d，再取乘子障碍给的有限正权向量；以下仅用同一固定游戏的全部资源子集菜单与相同费用x^d。",
+  "roles": {
+    "WC-R1-MULTIPLIER-BARRIER": "给因子R的任意集合函数及正共同乘子夹逼不可行权向量。",
+    "weighted-congestion/game-specific-separable-ordinal": "把局部夹逼障碍扩成先固定游戏、后量化任意资源函数的全边势障碍。"
+  },
+  "explanation": "令η=(w_min/Σw)^d，L_0>1/((R−α)η)为整数，先固定M=L_0+floor(αL_0/η)+1个资源。若存在可分下降势，在这一游戏内平均全部资源置换得到共同H，删到空动作使每个q_i(S)=Δ_iH(S)/(w(S)+w_i)^d>0。对同一玩家的两上下文单价A,B，选m=floor(αL_0B/A)+1；B/A∈[η,1/η]保证m+L_0≤M且αB/A<m/L_0<RB/A。由真实偏离m资源到L_0资源的严格改善得q_i(T)<R q_i(S)。取有限上下文的正最小h_i，便得全部局部插入h_i≤q_i≤R h_i，矛盾。全空动作组合为精确PNE。",
+  "scope": "原乘子到同游戏有限复制证明；M的选择不依候选F_e，且M与新增比例不量化到不同游戏。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/障碍/任意玩家乘子的多尺度边际夹逼--障碍.md",
+      "sha256": "a8a81a49e28d9aa79571dda74c10e0ac45123f3ed2298b8625a1cfb3794e13ac"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/依游戏资源可分全改善序势--障碍.md",
+      "sha256": "0f2f070f80abaa6359243336104aeaeb0417930e8cf4cf5ba7dbb1df5fced48d",
+      "section": "依游戏资源可分全改善序势"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对正文各端模型与量词、推导中的真实新负载及本边实际结论范围。",
+  "whole_result": "乘子障碍结合资源自同构平均和预先固定的有限复制，推出所有d≥2、1≤α<ρ_d的同一游戏可分严格全边序势障碍，同时该游戏具有全空精确PNE。",
+  "endpoint_pins": {
+    "WC-R1-MULTIPLIER-BARRIER": "e6fb48b0e56b2ea9614281bab93077f5c5a2a9be25a88f66b7728a85ad0c84cf",
+    "weighted-congestion/game-specific-separable-ordinal": "d192a2a97b8d426ae9b86e325fd7570f321d4e96455aa995671f130be1d1fb66"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/障碍/任意玩家乘子的多尺度边际夹逼--障碍.md": "a8a81a49e28d9aa79571dda74c10e0ac45123f3ed2298b8625a1cfb3794e13ac",
+    "archives/weighted-congestion/state/障碍/依游戏资源可分全改善序势--障碍.md": "0f2f070f80abaa6359243336104aeaeb0417930e8cf4cf5ba7dbb1df5fced48d"
+  },
+  "review_digest": "72f6552745792787688b0f44f7efb8b538887f498fc5e77e8d0a4f8c6dd8af32"
+}
