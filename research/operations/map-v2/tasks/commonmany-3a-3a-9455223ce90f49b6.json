@@ -270,13 +270,92 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss2",
-  "request_id": "edc9db5e697f4cc6ad24552bbe00e531",
+  "request_id": "58d1ff5d4f2a4c378d81d4018dd42e57",
   "requests": {
     "55e9c621713643808b628f10d1389774": "plan",
     "bf2d45494261405790def290dd10acc3": "claim",
     "151cac7235fa43f9b9258558f0826672": "read-add",
-    "edc9db5e697f4cc6ad24552bbe00e531": "read-add"
+    "edc9db5e697f4cc6ad24552bbe00e531": "read-add",
+    "58d1ff5d4f2a4c378d81d4018dd42e57": "done"
+  },
+  "edge_paths": {
+    "commonmany-packing-cap-reset-to-fixed-gamma-interface": "map/edges/commonmany-3a-3a-9455223ce90f49b6/packing-cap-reset-to-fixed-gamma-interface.json",
+    "commonmany-double-lpt-supplies-fixed-gamma-reset-interface": "map/edges/commonmany-3a-3a-9455223ce90f49b6/double-lpt-supplies-reset-interface.json"
+  },
+  "receipt": {
+    "coverage": {
+      "SC-K-DOUBLE-LPT-GREEDY-2": {
+        "state": "linked",
+        "object_pin": "61e6f2df65e49700880f88a3dd3d54f27afe778529400bc4e491597e19085675",
+        "comparison_scope": "同一任务全部核心/共享依赖的当前input_pins；所列正式正文的模型、量词、完整假设、证明与有限程序边界。其他deferred对象仅作为导航，不冒称已付读取。",
+        "reason": "两轮成功测试和RANGE构造接口所需纯在轨NE；MAX只负责离轨。三角16偏离是有限验证，失败仍unknown。",
+        "edge_ids": [
+          "commonmany-double-lpt-supplies-fixed-gamma-reset-interface"
+        ]
+      },
+      "SC-K-RESET-PACK-INTERFACE": {
+        "state": "linked",
+        "object_pin": "2c75aea8b4ed97b9dcd66ffffcc9aba85c83ed69d3f8647eb24571c88d7404ef",
+        "comparison_scope": "同一任务全部核心/共享依赖的当前input_pins；所列正式正文的模型、量词、完整假设、证明与有限程序边界。其他deferred对象仅作为导航，不冒称已付读取。",
+        "reason": "原池预算、q−1删除箱、装箱及受帽修复联合支持成功证书接口；无需完整在轨上盒。",
+        "edge_ids": [
+          "commonmany-packing-cap-reset-to-fixed-gamma-interface",
+          "commonmany-double-lpt-supplies-fixed-gamma-reset-interface"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/commonmany-3a-3a-9455223ce90f49b6/packing-cap-reset-to-fixed-gamma-interface.json",
+        "sha256": "e6e035cfb69b60cdebeecce71d0c9ac078c0a53c8ac1b04db0b78c784e239713"
+      },
+      {
+        "path": "map/edges/commonmany-3a-3a-9455223ce90f49b6/double-lpt-supplies-reset-interface.json",
+        "sha256": "3c908d78a58b36955646ad8b68e3371e4f4b8d41bf7467802628e76c5a978e0c"
+      }
+    ],
+    "reviewed_by": "Boss2-local-algorithms-draft",
+    "review_note": "本收据是本地候选，资产路径仍在drafts；未提交map done，未写canonical。全部核心精确覆盖，逻辑关系和仅语境关系分开。原审计只复用保存报告，无新实验运行。 Boss2复核全部逻辑边的目标范围，并实读BOX-TO-2及原池双装箱全文处理延后比较；本地提升到本任务write_paths，尚未推送或map done。",
+    "closed_overlaps": [
+      {
+        "core_id": "SC-K-DOUBLE-LPT-GREEDY-2",
+        "peer_id": "SC-K-GREEDY-BOX-TO-2",
+        "reason": "已实读双LPT正文和BOX-TO-2完整原池/当前池补全证明。双LPT首轮经RANGE只保逐家收益≥γ，三角实例的所选NE可有M总重430>400，因而不满足BOX-TO-2当前站点完整上盒前提；第二轮原池删除证书转接RESET-PACK另一个充分接口。该实例不否定另一盒NE存在；两条充分路线的假设和输出边界已核清，无须另立同一比较。"
+      },
+      {
+        "core_id": "SC-K-RESET-PACK-INTERFACE",
+        "peer_id": "SC-K-GREEDY-BOX-TO-2",
+        "reason": "已实读两接口全文。RESET-PACK接收任意显式独立mixed精确在轨NE、逐家a_f≥γ及原池删除箱，存续源也全原池重置；BOX-TO-2接收站点纯/站内均匀完整盒NE，存续源按当前池装箱、仅单设施源全原池重置。完整盒不自动给固定γ删除箱，固定γ原池接口也不保证完整上盒，故不写相互蕴含。共同受帽/MAX/标签拼接及本包两个不同充分构造已准确说明，此问题已比较完成。"
+      }
+    ],
+    "task_id": "commonmany-3a-3a-9455223ce90f49b6",
+    "stage": "3A",
+    "status": "complete",
+    "object_ids": [
+      "SC-K-DOUBLE-LPT-GREEDY-2",
+      "SC-K-RESET-PACK-INTERFACE"
+    ],
+    "read_object_ids": [
+      "MF-MODEL",
+      "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import",
+      "SC-K-GREEDY-BUDGET",
+      "SC-K-GREEDY-MAX-MULT",
+      "SC-K-GREEDY-SINGLETON-RESET",
+      "MF-PACK-2",
+      "MF-PURE-CAP"
+    ],
+    "input_pins": {
+      "SC-K-DOUBLE-LPT-GREEDY-2": "61e6f2df65e49700880f88a3dd3d54f27afe778529400bc4e491597e19085675",
+      "SC-K-RESET-PACK-INTERFACE": "2c75aea8b4ed97b9dcd66ffffcc9aba85c83ed69d3f8647eb24571c88d7404ef",
+      "MF-MODEL": "1ca8c08397c3ec2c0a05b8eecb18e5e1de2b3e863c5f73f8c6eaf6b6fdf05bec",
+      "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import": "5f2019da9ff05afa3a2e57eb2cf96d8c63eef19e66208bb0290ce535628737f6",
+      "SC-K-GREEDY-BUDGET": "5c08688db4620c0cd4fe6d2c03e61e444fec71aa1bd30ee430061dee1a6a1b83",
+      "SC-K-GREEDY-MAX-MULT": "b2ee941db2e2116d5d0191c6f77d88e0dbc98609d8d87ac25960c5b143e2f564",
+      "SC-K-GREEDY-SINGLETON-RESET": "c74f548d525defcce261f99ca99377fdf67dd9292fe5a9ea9f13fc9881f1ca86",
+      "MF-PACK-2": "3e2f063fa6b0a94baf9bbeb5d7ba6ab12f3edbb06a0d3791c6af7194f5d87923",
+      "MF-PURE-CAP": "f76c7824a76fe19b7f752116af4086a6f5d7fcfc68ef51ff6a82cc9d3dd4c4df"
+    }
   }
 }
