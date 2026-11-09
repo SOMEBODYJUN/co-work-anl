@@ -1,0 +1,56 @@
+{
+  "edge_id": "integer-spectrum-dp-pseudopolynomial-half-of-local-hardness-round19",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "DP-W"
+  ],
+  "target_ids": [
+    "LOCAL-HARD"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定两设施、公共权为正整数、背景A,B为非负精确有理数、阈值Q为正整数；在全部独立精确客户NE上判定。",
+  "roles": {
+    "DP-W": "枚举完整闭谱并用数值总重W合并状态。",
+    "LOCAL-HARD": "接受局部阈值判定的伪多项式时间上界。"
+  },
+  "explanation": "DP-W的每个非空差距片与(−∞,−Q]作交，任一片交非空即YES；也可取全谱最小Δ比较阈值。片可为点或一名指定混合者的闭区间，均覆盖真实NE。时间按公共总重W的数值计O(n²W+n log n)有理运算，背景分子、分母和阈值按二进制位成本处理。A=B=0仍满足该算法的输入域。 归约产生Q=2U+R+1并把任何可行解迫到Δ=−Q，所以此处Q是每个输入给定的二进制正整数。固定布局阈值判定的弱NP完全性还分别依赖归约与短支持证书。",
+  "scope": "给固定布局的指定坐标阈值判定一个伪多项式上界。NP难、NP成员、选址均衡和寻找任一客户NE分别具有自己的量词。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/归约/指定设施均衡负载极小值的弱NP完全性--归约.md",
+      "sha256": "aa398a78b53b28adfdc71c5a17e016b6323854b14d7a0fa14d9cb25401e685df"
+    },
+    {
+      "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+      "sha256": "241e8015a7d6af25108a68619fd17e8c38dadcebae00d0a34ecdcb45eb9aa3eb",
+      "section": "A11.4 LOCAL-HARD：极值为什么不能被当作免费子程序"
+    },
+    {
+      "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+      "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc"
+    },
+    {
+      "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+      "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+      "section": "整数总重DP-W"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复核A11.4的阈值量词、Q锚、背景差模拟与NP证书，并分开DP-W的数值W上界及二进制位成本。",
+  "contribution": {
+    "result": "LOCAL-HARD的决定问题有数值W伪多项式算法，这一半与已证NP难、NP成员性合成弱NP完全分类。",
+    "remaining": "仍由LOCAL-HARD自身的五进制归约给NP难，由闭支持的短有理见证给NP成员性；本算法不推出这些结论。"
+  },
+  "endpoint_pins": {
+    "DP-W": "06c7da8b6e40efc8737ac77476ed8fef8308fef3dd44d85225227de706524701",
+    "LOCAL-HARD": "740ca98c11174290921ecbf86f560b57dcfd9e0bbd2540c3e6976ffa3d1213f6"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/归约/指定设施均衡负载极小值的弱NP完全性--归约.md": "aa398a78b53b28adfdc71c5a17e016b6323854b14d7a0fa14d9cb25401e685df",
+    "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md": "241e8015a7d6af25108a68619fd17e8c38dadcebae00d0a34ecdcb45eb9aa3eb",
+    "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc"
+  },
+  "review_digest": "4da4c8ba6d80c7f9e4de1d149e1b539231ffbaa4e26509cfe70920049b03c00f"
+}

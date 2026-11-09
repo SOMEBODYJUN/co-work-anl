@@ -1,0 +1,57 @@
+{
+  "edge_id": "pruned-exact-threats-reusable-in-all-layout-search-round19",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-a4510cf6b0ee470384411c5b272b372b"
+  ],
+  "target_ids": [
+    "M-78b5c8b948b14f799fb5849a464c17a7"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一共同目录输入和完整客户NE集合；对每一列独立运行实际NE见证的精确剪枝，不在环内重定全域最大。",
+  "roles": {
+    "M-a4510cf6b0ee470384411c5b272b372b": "跳过m(s,t)的合法前提U(s,t)≤D及其可执行惩罚见证；一列结束得到真实d(t)。",
+    "M-78b5c8b948b14f799fb5849a464c17a7": "可复用为全布局精确搜索中计算d及实际惩罚的替代步骤。"
+  },
+  "explanation": "当一列已有精确局部值D时，被剪候选有m≤U≤D，且U来自合法纯NE。对每列扫描保持D为已知精确最大，最终D=d(t)。若把此步骤用于全部列并在轨仍扫全部布局，则每个在轨目标和不剪枝的真实d相同。实际偏离使用保留的纯NE或已求极小NE，收益都不超过各自d；无需每个被剪候选自己的极小值。 对称目录允许将第二设施的偏离局面反射为第一设施的同列查询，复用见证时须交换负载与p↦1−p。真实离轨惩罚仍不超过同一d；这一步不要求被剪项恰达到m。",
+  "scope": "可替换全局优化的威胁/见证步骤；不输出被剪项的真实m矩阵，不从lazy的一条环得全局最优。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
+      "sha256": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65",
+      "section": "真正实例最优与环内最优"
+    },
+    {
+      "path": "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
+      "sha256": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65",
+      "section": "响应剪枝的真实证明"
+    },
+    {
+      "path": "archives/facility-games/state/引理/两设施纯改善的移动界与默认续局--引理.md",
+      "sha256": "d765eaf078a7832bdf4d177bb25dfd24dfe6aeb2fc4bc151d88faa95a4340012"
+    },
+    {
+      "path": "archives/facility-games/state/计算/惰性最大最小回应环的原入口与有限回归--计算.md",
+      "sha256": "fef2d1dfd467dc3913b745facb4e12a72b8ae98e6a6a325914c69da29903e712",
+      "section": "惰性最大最小回应环的原入口与有限回归"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复核当前全布局MITM端点与原剪枝正文。已精确D、合法可实现U、列内扫描、标签反射和全布局在轨搜索各承担不同步骤。",
+  "contribution": {
+    "result": "给全体共同目录行动列提供与全搜索相同的真实d及可执行偏离见证，因而可无损替代全局在轨优化的威胁输入。",
+    "remaining": "仍须对每个合法在轨布局优化完整NE目标并取全域最小；原game_solve自己的逐格m输出不可从被剪数据恢复。"
+  },
+  "endpoint_pins": {
+    "M-78b5c8b948b14f799fb5849a464c17a7": "6e129d7301782ef6778b55b66f6f72e28a5c666e7fe6acba8a65c3e75749bea8",
+    "M-a4510cf6b0ee470384411c5b272b372b": "07ebeeba9159256894ad650a0ebafc629188e2fa63d9c8613c21b2a86e1b5198"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65",
+    "archives/facility-games/state/引理/两设施纯改善的移动界与默认续局--引理.md": "d765eaf078a7832bdf4d177bb25dfd24dfe6aeb2fc4bc151d88faa95a4340012",
+    "archives/facility-games/state/计算/惰性最大最小回应环的原入口与有限回归--计算.md": "fef2d1dfd467dc3913b745facb4e12a72b8ae98e6a6a325914c69da29903e712"
+  },
+  "review_digest": "d8516b5d09966290d182d3a3f3d3b86ec16ceea40bc9b4fdf5df016446c879f1"
+}

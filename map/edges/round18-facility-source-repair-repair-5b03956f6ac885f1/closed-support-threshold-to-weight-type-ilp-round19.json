@@ -1,0 +1,61 @@
+{
+  "edge_id": "closed-support-threshold-to-weight-type-ilp-round19",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-b5488c2696964ec58745ce5426f2b777"
+  ],
+  "target_ids": [
+    "FPT-D"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定两设施的独立线性负载闭支持模型，私有背景A,B为非负有理数，逐名显式正有理共同客户分为d个精确权类。局部目标是坐标极值或有理配额可行性；固定黄金比二次代数配额采用精确比较。",
+  "roles": {
+    "M-b5488c2696964ec58745ce5426f2b777": "提供依靠Δ的完整支持条件及名义混合恢复公式。",
+    "FPT-D": "按权类计数转成固定维有理ILP。"
+  },
+  "explanation": "固定符号ε及重类型前缀，轻类型置低侧。重类型h只需纯第二人数b_h及名义混合人数m_h，纯第一人数为n_h−b_h−m_h；z=Σv_h(n_h−2b_h−m_h)。固定Σm_h=K后，K≠1时Δ为整数计数的仿射函数，乘负分母时翻转比较；K=1时要求分子0并直接在完整闭阈值区间上与配额相交。任意整数见证可分配回显式同权客户，反向将每个NE的闭支持计数。 重类计数约束为b_h,m_h≥0、b_h+m_h≤n_h、Σ_h m_h=K。每符号最多d+1个阈值、K取0到n；没有共同客户时直接处理。清除有理系数分母后位长为输入的多项式；若配额含固定黄金比二次代数数，整数线性左端可用精确floor/ceil后的右端比较。",
+  "scope": "固定维ILP精确局部归约及数学见证，输入为显式正有理客户。所求为极值和配额见证，未实现通用ILP程序或完整谱输出。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md",
+      "sha256": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1"
+    },
+    {
+      "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+      "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc"
+    },
+    {
+      "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+      "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+      "section": "阈值压缩是完整谱的等价表示"
+    },
+    {
+      "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+      "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+      "section": "不同权种FPT-D"
+    },
+    {
+      "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+      "sha256": "241e8015a7d6af25108a68619fd17e8c38dadcebae00d0a34ecdcb45eb9aa3eb",
+      "section": "A11.3 FPT-D：不同重量少时，按人数代替逐人状态"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复核A11.1改版后整数DP和有理权类各自的域，A11.3的负分母、K=1、分支数及代数配额比较。",
+  "contribution": {
+    "result": "坐标极值和双配额见证完全等价于O((d+1)(n+1))个分支中的固定维ILP和K=1闭区间检查。",
+    "remaining": "FPT-D的参数时间来自外部固定维ILP算法和分支位长分析，规范ILP程序尚未实现。"
+  },
+  "endpoint_pins": {
+    "FPT-D": "a8d4f751dafe4a29bfe75fd3cc8263bbcb3394359e5a61277551799d8ca5f98f",
+    "M-b5488c2696964ec58745ce5426f2b777": "e95f9b903e7263f62fbf3effe4a7b07cfb422af25c9a115a45da96173f780cf8"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1",
+    "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+    "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md": "241e8015a7d6af25108a68619fd17e8c38dadcebae00d0a34ecdcb45eb9aa3eb"
+  },
+  "review_digest": "8b4baa5850b28532e3c06f3aa344535ed2ff402802fe8d98b99efc8fff67e00a"
+}

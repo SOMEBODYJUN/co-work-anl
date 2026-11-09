@@ -1,0 +1,59 @@
+{
+  "edge_id": "single-valley-half-table-to-common-catalog-instance-optimum-round19",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "facility-games/threshold-meet-in-middle-objectives-and-response-pruning"
+  ],
+  "target_ids": [
+    "M-78b5c8b948b14f799fb5849a464c17a7"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同有限非空目录S、显式正有理原子权、强制服役与独立实际条件负载NE，保留同址。全布局均可独立选精确续局。",
+  "roles": {
+    "facility-games/threshold-meet-in-middle-objectives-and-response-pruning": "对固定布局的单谷目标精确优化，返回见证，包括完整m=1段。",
+    "M-78b5c8b948b14f799fb5849a464c17a7": "拼接全部布局的真实两向极小、全目录威胁及最优完整规则。"
+  },
+  "explanation": "先以f=Δ与f=−Δ求每格两侧真极小。共同目录允许交换两设施标签及p↦1−p，可扫含同址的无序对还原两向m(s,t)。对全目录每列取d(t)=max_s m(s,t)。在(s,t)上目标为max{1,2d(t)/(V+Δ),2d(s)/(V−Δ)}：首个比值非增，第二个比值非减，两威胁和为正时以Δ₀=V(d(t)−d(s))/(d(t)+d(s))为单谷中心，两威胁为零时目标恒1。零分子按0，正分子除零按∞，V=0时仅检Δ=0。半表对单谷目标查两侧最近可行值，m=1且分子零时在完整可行段夹中心。全布局取最小；两类真实偏离的目的布局在排除不动后不交，分别用各自坐标极小NE，其他格用确定性贪心纯NE补全。把在轨一项也算入全目录d至多额外要求倍率1，因为在轨坐标已不小于该格极小。每格常数次半表查询且有理位长多项式。",
+  "scope": "共同目录完整精确客户NE及原MITM算法，包括同址在交叠参数κ之内；达到短证书自身仅核可达。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+      "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09"
+    },
+    {
+      "path": "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
+      "sha256": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65",
+      "section": "真正实例最优与环内最优"
+    },
+    {
+      "path": "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
+      "sha256": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65",
+      "section": "局部查询的确切输入与保证"
+    },
+    {
+      "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+      "sha256": "241e8015a7d6af25108a68619fd17e8c38dadcebae00d0a34ecdcb45eb9aa3eb",
+      "section": "A11.6 EXACT-KAPPA：把所有局部谱拼成真正最优证书"
+    },
+    {
+      "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+      "sha256": "241e8015a7d6af25108a68619fd17e8c38dadcebae00d0a34ecdcb45eb9aa3eb",
+      "section": "A11.5 MITM：用两半支持避免全笛卡尔积"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复核改版A11.5/A11.6、两侧极小及完整单谷目标，包括空覆盖、单侧威胁、同址、真实偏离及标签反射。",
+  "whole_result": "对全部共同目录有理输入，原全布局MITM搜索返回真实α*及达到续局，耗时N²poly(κ)3^ceil(κ/2)加多项式覆盖处理。",
+  "endpoint_pins": {
+    "M-78b5c8b948b14f799fb5849a464c17a7": "6e129d7301782ef6778b55b66f6f72e28a5c666e7fe6acba8a65c3e75749bea8",
+    "facility-games/threshold-meet-in-middle-objectives-and-response-pruning": "eb3813a5a7912d9255ea445613de1941d3accddda79929f453a4e7933802fcbf"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09",
+    "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65",
+    "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md": "241e8015a7d6af25108a68619fd17e8c38dadcebae00d0a34ecdcb45eb9aa3eb"
+  },
+  "review_digest": "897512cf7f3ff440009faf6f6027e3d989fa7acba8075ea424de2016fd342a85"
+}

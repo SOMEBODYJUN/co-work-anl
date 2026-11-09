@@ -1,0 +1,89 @@
+{
+  "edge_id": "commonmany-global-lex-budgets-and-finite-repair-imply-factor-two-source-repair-v3",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-LEX-BUDGET",
+    "MF-PACK-2",
+    "MF-PURE-CAP",
+    "MF-CONT-COMPLETE"
+  ],
+  "target_ids": [
+    "SC-K-2-E"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意有限客户集、任意有限非空共同目录及任意 k≥2 家带标签设施，允许同址，覆盖关系任意，客户权重严格正实，费用为线性总负载。已覆盖客户强制选择一家可达设施并独立混合，成本是含自身全部原子重量的条件期望负载。设施收益为其期望负载。",
+  "roles": {
+    "SC-K-LEX-BUDGET": "在正最大覆盖时，有限全布局可行站点赋值族的每个升序设施负载字典序全局最大者都给出精确在轨 NE、严格正的基准收益和每个源的四类全目录预算。",
+    "MF-PACK-2": "以该偏离者的 a 为尺度，把每个存续站总重至多 (h+1)a 的原子放到 h 家静止设施上。普通箱不超过 2a，超帽箱仅含一名自身重于 2a 的实际客户。",
+    "MF-PURE-CAP": "从整个新布局的可行纯种子出发，在原有完整可达菜单上有限严格改善，保孤立重原子和全体普通设施的 2a 帽。",
+    "MF-CONT-COMPLETE": "把所选在轨 NE 和每个互异实际标签偏离的指定纯 NE 同时嵌入一个全 S^k 的客户续局。其余布局用有限势取得纯默认。",
+    "SC-K-2-E": "收到原共同目录正实权域上的完整存在结论。"
+  },
+  "explanation": "设 R=max_t w(C_t)。R=0 时正权性给全部菜单为空，任意布局及全未服务规则精确稳定。R>0 时，全体 k 家同放最大覆盖站的候选有最小收益 R/k>0，有限候选族的每个全局并列最大者都保这个下界。客户 i 从 t 到另一个可达占站 v 的严格改善恰为 (W_t−w_i)/q_t>W_v/q_v。将 i 整体重分到 v 后，两站新坐标都严格高于 v 的旧坐标，原 t 坐标也高于该层，所以升序向量严格字典序增加。对任一移动者 f 的源站 u，置 a=W_u/q_u>0。若 q_u≥2，每个其他已占站 t 有 W_t≤(q_t+1)a，每个原未占站 r 的真正新增覆盖重量 N_r≤a。若 q_u=1，令 J=J_u，w(J)=a。两界分别变为 W_t+w(J∩C_t)≤(q_t+1)a、N_r+w(J∩C_r)≤a。四预算均来自同一个全局最大者。特别是单设施源向已占 t 的预算若被违反，则 w(J∩C_t)≤a 保证旧目标的每家收益也严格大于 a，从而搬走唯一旧 a 坐标能使向量严格提高。预算的比较候选只需可行。固定一项实际偏离。源存续时所有旧客户保原站，源有 h=q_u−1 家静止设施且 W_u=(h+1)a。源消失时保留 J 外客户的旧站分配。J 中有静止可达站的客户先重挂到其中一站，其余若能到目标便给 f，最后无行动者不服务。新增覆盖客户只在新开目标出现，与 J 不交。于是每个存续站的实际待装池满足各自 (h+1)a 界，箱内客户可达该站每家静止设施。原已占目标的 f 初始空载，原未占目标的 f 初始负载至多 a。取 B=2a。孤立重客户成本等于自身权，普通客户加入重设施不能严格改善，普通严格改善后的目标负载严格小于旧源负载≤2a。半平方负载势严格下降，有限状态给原完整菜单中的纯 NE，f 仍≤2a。每个真实偏离只改一个标签坐标，所有偏离布局两两互异且异于 s，即使物理占用向量相同也不合并。保留各指定 NE，其余布局从最小编号可达初态做有限严格改善取得纯默认。于是同一完整续局同时支付全部偏离。",
+  "scope": "共同目录线性负载成本、正实权的完整存在性。零覆盖和单地点均包含。正覆盖时证明适用于每个全局字典序最大候选及其带标签布局，包含平局及同址。局部预算只能提供相应种子的输入，有限保帽纯修复和全标签拼接分别支付其余步骤。该关系的 k=3 特例覆盖三设施线性存在性。固定两设施三次费用的最坏常数、统一上界的锐性与一般位多项式在轨选择另有合同。",
+  "whole_result": "对每个上述输入，存在纯带标签布局 s 和一份定义在全部 S^k 上的精确客户 NE 续局 σ。在轨各客户可选一个站点并在本站独立均匀混合，每个离轨布局可取纯 NE，且同时对每家设施 f 和每个真实目的地 r≠s_f 有 L_f(σ(s[f←r]))≤2L_f(σ(s))。",
+  "reviewed_by": "Boss1",
+  "review_note": "复核 v3 四端点与 v2 完成器。变更证据的四局部引理章节内容未动，全文 SHA 随五地点阈值端点勘误刷新。完整线性结论依据定理第一至六节和原子引理，局部审查用于对照。核对全候选族、条件成本自重、单设施源旧目标坐标、孤立重客户及按标签默认补全。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+      "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+      "section": "一、有限站点分配族与升序字典序最大者"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+      "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+      "section": "二、所选在轨策略是精确客户 NE"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+      "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+      "section": "三、同一个最大者给出全部转移预算"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+      "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+      "section": "四、每次实际偏离都有受帽可行纯初态"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md",
+      "sha256": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+      "section": "原子装箱引理"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md",
+      "sha256": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+      "section": "受帽纯均衡修复引理"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+      "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+      "section": "六、把全部局部选择拼成一个完整函数"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/papers/factor-two-current/main.tex",
+      "sha256": "e745ec526dccb9f874837729c6ec3d092ea6ea9e44edf602a749cef9f18fe922"
+    },
+    {
+      "path": "archives/facility-games/state/审查/设施流与多地点复杂度补充复核--审查.md",
+      "sha256": "2d62d84d756e77340f24698201683d924c6293be8ffac575c1a3bfd1dc99d317",
+      "section": "多设施主稿的四个局部引理"
+    }
+  ],
+  "endpoint_pins": {
+    "MF-CONT-COMPLETE": "749dad55c2ae74db4f443c5adb20553c8aced4cf785ecf7f1a75fe28613b24d6",
+    "MF-PACK-2": "886033f8e4edd344e6b9a859f840ac742a27cdd67ab0bb4875ebc0137ee223cb",
+    "MF-PURE-CAP": "0a5cd5c8a91a1eb2f9d3ac2f3d643d914957d408a42eab86168205f2e1203cda",
+    "SC-K-2-E": "44bbf9c50401621d6d51854a25284c7658e195a6491071c7f01a1ec97ee752cd",
+    "SC-K-LEX-BUDGET": "e467f05f9359fdfdc25d73ee33d183123ce2aa83e7cb72408f6dedad53c35e20"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+    "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+    "archives/facility-games/subarchives/common-many/papers/factor-two-current/main.tex": "e745ec526dccb9f874837729c6ec3d092ea6ea9e44edf602a749cef9f18fe922",
+    "archives/facility-games/state/审查/设施流与多地点复杂度补充复核--审查.md": "2d62d84d756e77340f24698201683d924c6293be8ffac575c1a3bfd1dc99d317"
+  },
+  "review_digest": "68b7e17634ffe64df147c000ea523de3ba342c2a6dddbb5a8e2b74903da41763"
+}
