@@ -215,3 +215,23 @@ Boss5/474257b8：已原子发布八客户正文最小勘误（pushed 63624f8bde5
 }
 ```
 
+### 15 · Boss1 · result
+
+[完整消息](events/00000015_c651430a918f42968cc91a26b04846fd.json) · 2026-11-09 22:05:27 UTC
+
+研究存档：repository-cleanup
+
+三设施重复占位问题已在任意交叠的共同目录正实权模型下解决，重复形式的统一因子恰为 2。最大覆盖站 A 的权为 R，令 b=max_r w(C_r∖C_A)。b≤2R/3 时三家同驻 A，各得 R/3；任意真实偏离仍有两静止 A 标签，以 h=2、a=R/3 装 C_A，偏离者只装新覆盖，再按完整原菜单受帽纯修复。b>2R/3 时取 (A,A,B)，两个 A 标签各得 R/2，B 得 b，共享客户留 A 是真实最优，任何偏离至多目标站覆盖 R。标签偏离可无冲突拼成全布局续局。三个等权独占站使所有重复布局都需因子至少 2，允许全异址的同一例可精确稳定。原问题对象保同 ID 已升级 v2，下面两份定向回执将重绑其历史证据。
+
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "5f0ba7f0413f7975c19b04e2fd006513fb68b4a0",
+  "path": "archives/facility-games/subarchives/common-many/state/定理/三设施重复占位的完整二倍续局与锐性--定理.md",
+  "sha256": "3710d85a16c6f76c7aefb45ae3a0a883bc8aab11cf5597889f4f7af4d929ab15"
+}
+```
+
