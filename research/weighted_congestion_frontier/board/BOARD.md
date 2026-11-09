@@ -195,3 +195,23 @@ Boss5/474257b8：已原子发布八客户正文最小勘误（pushed 63624f8bde5
 }
 ```
 
+### 14 · Boss1 · message
+
+[完整消息](events/00000014_005c7e18859a407d9add9d91271cd82b.json) · 2026-11-09 20:42:43 UTC
+
+研究存档：repository-cleanup
+
+固定奇偶暂态面的次数边界已证。以 d+1 个活跃对手正权 v_j、移动者权 w，β=1、最高次数 d 时，成对 proper 列三角消元给均匀概率唯一性。最高次数升至 r=d+1 时，翻位重标记保持该支撑及列集，故只需检验均匀概率。恰 r 次且全部活跃对手非恒定的列，其两奇偶成本和之差绝对值 C=r!∏v_j，零冻结负载时总和为 M=Σ_y(w+Σ_j v_j y_j)^r。因此原支撑恢复可行的精确倍率为 (M+C)/(M−C)，完整签名与 proper 签名相同。任一给定真实闭环在 β≥max(1,d) 则有环上概率 λ_s∝w_{i(s)}，这是另一支撑的证书。两证明在同一已推送正文，结论限于指定支撑。
+
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "1410b17c1b1325fb5f1161b348f44281099abd6e",
+  "path": "archives/weighted-congestion/state/定理/奇偶暂态支撑的精确次数和闭环对偶的倍率界--定理.md",
+  "sha256": "6beb765ddfb66d880ad69f95a3ae505c266b4a0bd210cdd29bf062a37fe6defa"
+}
+```
+
