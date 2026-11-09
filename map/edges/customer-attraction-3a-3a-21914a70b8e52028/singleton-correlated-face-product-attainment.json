@@ -1,0 +1,54 @@
+{
+  "edge_id": "cag-clone-menu-21914-singleton-correlated-face-product-attainment",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-c1378ac0032541debbf6702ad5efa426"
+  ],
+  "target_ids": [
+    "M-64d638d96fb64c1fa45fd17638164363"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "K≥1个互不相交的单客户主题，r=qK+s个独立静态竞争槽，0≤s<K。每槽可用不同边缘，且不观察查询抽取。",
+  "roles": {
+    "M-c1378ac0032541debbf6702ad5efa426": "全部相关最优的整数支持与逐主题高负载边缘，提供独立取等的必要条件和构造验收。",
+    "M-64d638d96fb64c1fa45fd17638164363": "独立不同边缘达到真安全值的分类。"
+  },
+  "explanation": "任一最优相关负载的纯查询值都是 V=[(K−s)/(q+1)+s/(q+2)]/K。若s=0，H_j=q几乎处处。独立命中Bernoulli和的方差为零，故全部命中均确定，每主题恰q槽，确定构造取等。若s>0，每个H_j只在q、q+1取值，且二者都有正概率。独立Bernoulli和的正支持从确定命中数到该数加非退化项数，所有中间整数都有正概率。因此每主题恰q个确定命中和一个概率s/K的非退化槽。确定席位不再给别的主题质量，余s槽的支持两两不交且并为全目录，每一槽的概率和1迫其支持恰K/s个主题。反向在各主题放q个确定槽，把余主题分成s个大小K/s的块，每余槽独立均匀选一块内主题，所得负载恰满足原相关最优面。若不整除，连续cap在紧概率乘积上取最小，故严格大于V。",
+  "scope": "全部K和r，包括r=0、K=1及s=0。这里的独立性只跨槽，不要求各主题负载独立。K=3、r=2的根式构造仍仅是可行上界。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/三十六客户静态安全最优分布与相关性--定理.md",
+      "sha256": "a60137fc7bc1553802ffdc0862641e3f5c5103226106509ae9781bc9888480d6",
+      "section": "单客户目录的全部最优面及已有正文分工"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/不交单客户安全值的独立背景取等分类--定理.md",
+      "sha256": "1f6b837ea0f3b5ec05714d74bbaabecbdfffc1c27f2a2ecc689930fcf5196ef5",
+      "section": "真值的逐整数弦证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/不交单客户安全值的独立背景取等分类--定理.md",
+      "sha256": "1f6b837ea0f3b5ec05714d74bbaabecbdfffc1c27f2a2ecc689930fcf5196ef5",
+      "section": "必要性与严格gap"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/不交单客户安全值的独立背景取等分类--定理.md",
+      "sha256": "1f6b837ea0f3b5ec05714d74bbaabecbdfffc1c27f2a2ecc689930fcf5196ef5",
+      "section": "product达到真值的构造"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读端点的承重正文和所列证据，逐式核对域、方向和所支付义务；有限点按有理系数核。",
+  "whole_result": "全部相关最优面的平衡负载和边缘条件推出独立不同边缘取等当且仅当s=0或s整除K，以及取等席位结构和不可取等时的严格gap。",
+  "endpoint_pins": {
+    "M-64d638d96fb64c1fa45fd17638164363": "c4b90c219b5d6a430913be673c32d668fbec8ca0bfd41a91eabfaa08d875550d",
+    "M-c1378ac0032541debbf6702ad5efa426": "d9785e9e5d3df193b05f714f83273eb29d4458bde87c60f8ff0aac5f7e8415ab"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/三十六客户静态安全最优分布与相关性--定理.md": "a60137fc7bc1553802ffdc0862641e3f5c5103226106509ae9781bc9888480d6",
+    "archives/customer-attraction/state/定理/不交单客户安全值的独立背景取等分类--定理.md": "1f6b837ea0f3b5ec05714d74bbaabecbdfffc1c27f2a2ecc689930fcf5196ef5"
+  },
+  "review_digest": "97ed7f8b967921673f98f01e2841e112f424c6a23b3dbd309f607f641d20108c"
+}

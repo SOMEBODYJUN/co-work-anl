@@ -1,0 +1,44 @@
+{
+  "edge_id": "cag-clone-menu-21914-beta-multiplicity-tail-order",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/beta-clone-positive-static-background-profit-representation"
+  ],
+  "target_ids": [
+    "M-f3c17c66128943339d2a2f16babc26ff"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定标签提升及其原主题投影，权重为全局标签出现次数的任意非负非降函数。",
+  "roles": {
+    "customer-attraction/beta-clone-positive-static-background-profit-representation": "同叶Beta条件独立和总覆盖概率。",
+    "M-f3c17c66128943339d2a2f16babc26ff": "每个次数上尾折扣、非降权比较及全局最高次数组逐人折扣。"
+  },
+  "explanation": "固定客户和P=p。对相关次数n_j≥n_l的两标签，条件两者同含或同不含的个体份额差为零，仅一含给p(1−p)E[1/(n_j+Z)−1/(n_l+Z)]≤0。积分后各组逐人份额随次数非增。任意上尾相关组的次数加权平均不超过全组加权平均。设其覆盖次数为C_t、全次数K、不同标签d，则上尾份额≤(C_t/K)d/(b+d)≤C_t/(b+K)，零相关项直接记0。末式是同叶原背景份额。求和客户得上尾比较；非降权按非负的阈值增量展开。全局最高次数的任一玩家在其相关客户上的份额不超过全相关组平均，故也逐人取同一上界。",
+  "scope": "同叶任意阈值和任意非负非降权。只给最大次数组普遍逐人结论，不能把其他重复组上尾总额改成逐人结论。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/等价/Beta克隆对背景利润的非负静态表示--等价.md",
+      "sha256": "7e70b53ae9263858c67b38760260812c29d67d8b71e7680462cbaf39b3c3aebe",
+      "section": "全鲜终局逐人精确相等"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/Beta克隆的单次增益与复用上尾债务--引理.md",
+      "sha256": "155601280593e5df8d2ff53bdc04ae3c0d27019193838c7166479616539f92b4",
+      "section": "每个复用次数上尾都折扣"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读端点的承重正文和所列证据，逐式核对域、方向和所支付义务；有限点按有理系数核。",
+  "whole_result": "Beta表示在同叶推出全部次数上尾折扣、任意非负非降次数权折扣和全局最高次数玩家逐人折扣。",
+  "endpoint_pins": {
+    "M-f3c17c66128943339d2a2f16babc26ff": "8f367f05ec2e32619d1d72594c477189a255dc3f26001388d208125d8452df54",
+    "customer-attraction/beta-clone-positive-static-background-profit-representation": "cf604027c73eb86ab975fbc4e9495289bd0687a90a46f6d50ea91d357b0d609c"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/等价/Beta克隆对背景利润的非负静态表示--等价.md": "7e70b53ae9263858c67b38760260812c29d67d8b71e7680462cbaf39b3c3aebe",
+    "archives/customer-attraction/state/引理/Beta克隆的单次增益与复用上尾债务--引理.md": "155601280593e5df8d2ff53bdc04ae3c0d27019193838c7166479616539f92b4"
+  },
+  "review_digest": "93d910ed3d0a62aa04251ac5ba3a6f83d462340ab6e0b808e23ce56768034426"
+}

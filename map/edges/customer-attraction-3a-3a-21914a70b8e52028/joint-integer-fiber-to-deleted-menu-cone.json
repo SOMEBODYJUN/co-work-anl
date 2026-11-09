@@ -1,0 +1,52 @@
+{
+  "edge_id": "cag-clone-menu-21914-joint-integer-fiber-to-deleted-menu-cone",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-CREDIBLE-CONTINUATIONS/JOINT-MILP"
+  ],
+  "target_ids": [
+    "customer-attraction/actual-path-all-deviation-deleted-slot-menu-cone-probe"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定正人数n、m个共同标签、一份完整有序策略σ及其实际路径。JOINT的参数m,p分别对应探针的n,m。只比较固定整数动作纤维。",
+  "roles": {
+    "CA-CREDIBLE-CONTINUATIONS/JOINT-MILP": "动作指示固定后用PROP回代真实终局份额，所有IC变为客户重数的精确线性差。",
+    "customer-attraction/actual-path-all-deviation-deleted-slot-menu-cone-probe": "实际删位菜单LP的客户锥域，另加静态菜单行。"
+  },
+  "explanation": "固定z为σ全历史动作表后，由终局向上回代，U_{h,t}是Z(h)中t的真收益。激活的IC行就是每一有序历史每个a在Z(h)与Z(h,a)的当前位份额差，乘L=lcm(1,…,n)并删重复或零行即探针的Γ。JOINT在W=1截面使用M=n；在探针总质量1截面，任一可行非零w都有W>0，因为正重数类型至少含一标签，根选该标签能得正收益。因而齐次缩放在两个截面间一一对应；禁全兴趣类型是探针另加的坐标限制。已付的是完整σ的真实IC域，不是全局混合整数优化或菜单minimax保证。",
+  "scope": "同一固定完整策略、全有序历史、零根背景、无空兴趣类型。标签可以同覆盖；不固定计数等价的有序节点。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/等价/有界联合策略与客户重数表示--等价.md",
+      "sha256": "1411a568b0fab2a8c97d9fa16a2f4effe95affe49d1ef61a8f6b50d6afd8ae15",
+      "section": "全节点约束和等价性"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/实际路径全部删位菜单的完整策略锥探针--程序.md",
+      "sha256": "69f591bc08fdc03e03f3c526811c213c1f80dac082316604fc3343971a030d9d",
+      "section": "模型和完整策略锥"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/实际路径全部删位菜单的完整策略锥探针--程序.md",
+      "sha256": "69f591bc08fdc03e03f3c526811c213c1f80dac082316604fc3343971a030d9d",
+      "section": "两个块LP及保存字段"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读端点的承重正文和所列证据，逐式核对域、方向和所支付义务；有限点按有理系数核。",
+  "contribution": {
+    "result": "固定整数动作指示的联合表示在消去U后，与删位探针的完整σ重数锥一致；非零两截面按齐次缩放对应。",
+    "remaining": "真实终局删槽、各菜单列的独立查询张量、交替LP与其有理后核由探针另外承担，不由PROP或IC保证菜单cap。"
+  },
+  "endpoint_pins": {
+    "CA-CREDIBLE-CONTINUATIONS/JOINT-MILP": "74e0f74b8dff2f4bf3f7d9fd44c40d0272274abb5076e81eaff0bbf949049efe",
+    "customer-attraction/actual-path-all-deviation-deleted-slot-menu-cone-probe": "825974091c67e7420c3d8cb2475ce2a39991f518f26ea6fc91284c33970afe17"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/等价/有界联合策略与客户重数表示--等价.md": "1411a568b0fab2a8c97d9fa16a2f4effe95affe49d1ef61a8f6b50d6afd8ae15",
+    "archives/customer-attraction/state/程序/实际路径全部删位菜单的完整策略锥探针--程序.md": "69f591bc08fdc03e03f3c526811c213c1f80dac082316604fc3343971a030d9d"
+  },
+  "review_digest": "6ce57b9600443612eec742288ba9693974d60dd0d28704d0190cdb8177e74f70"
+}
