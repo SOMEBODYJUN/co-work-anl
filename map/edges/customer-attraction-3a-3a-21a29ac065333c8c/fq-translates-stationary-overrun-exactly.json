@@ -1,0 +1,51 @@
+{
+  "edge_id": "cag-21a29a-fq-translates-stationary-overrun-exactly",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-2bb83ad6aeeb4150a42f31814c595a19"
+  ],
+  "target_ids": [
+    "customer-attraction/stationary-successor-occupation-cap-counterexample-and-amplification-remainder"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定八人两块、零背景完整策略，使用原报告的真实根列；P仅数七个后继，K对包含根的八个原槽另加查询。独立p=δ_{D0}，Q取由P唯一归一解给出的Qstat。",
+  "roles": {
+    "M-2bb83ad6aeeb4150a42f31814c595a19": "提供任意真实源Q的尾预算减slack加signed AMP账。",
+    "customer-attraction/stationary-successor-occupation-cap-counterexample-and-amplification-remainder": "提供固定真实DAG、唯一Qstat及D0行精确超额。"
+  },
+  "explanation": "固定例中pᵀKQstat=2773/840且u=13/4；FQ的真实有符号右端必等于2773/120，比7u多43/120。八个强制枝均覆盖32，每块只有强制B的原根利润为9/4，其余为13/4，Qstat对B总概率1/7，故E_QΣ_jw_j=32−87/28=809/28。于是−ΣE slack+ΣE ε=2773/120−809/28=−4859/840。该净修正为负而封顶仍失败，因此不能从signed修正的非正号单独推出stationary cap。逐客户AMP只保证末后继ε≤0；早期依真实改题后尾部负载而定。",
+  "scope": "指定八人例及单个反驳查询。一般FQ对任意p,Q成立；其账面等式没有免费选择Q或共同付款。自由Q在此例由独立的匹配行列给851/280。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/真实后继占用平稳分布的付款失效与放大余项--反例.md",
+      "sha256": "62da891e1e92c00aefbc3e01f9286689ec15c7125ff735830ae2a2fb6fdb547f",
+      "section": "列、平稳解及查询价的自足计算"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/真实后继占用平稳分布的付款失效与放大余项--反例.md",
+      "sha256": "62da891e1e92c00aefbc3e01f9286689ec15c7125ff735830ae2a2fb6fdb547f",
+      "section": "FQ：自由Q下仍有效的真实后继有符号恒等式"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/stationary-successor-source-and-independent-five-primary/original/research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/independent/stationary_source_independent_audit.json",
+      "sha256": "79104247d3ff330fa448a028644a6c8aeec1ff69cd632dc051125bdfea7f9eff"
+    }
+  ],
+  "reviewed_by": "Boss1-customer-risk-potentials-round16",
+  "review_note": "逐项核P/K的不同槽集合、真实根列的覆盖/利润、D0行以及符号账的两个有理差。",
+  "contribution": {
+    "result": "FQ把固定驻留源的D0行反驳精确转为真实账超7u达43/120，尽管净signed修正为负。",
+    "remaining": "驻留解的唯一性和每列/自由minimax的上下证仍来自固定原输入及独立的P/K解析，FQ不承担这些数值或完整SPE认证。"
+  },
+  "endpoint_pins": {
+    "M-2bb83ad6aeeb4150a42f31814c595a19": "43a479bf2a7d5657962bee0c9add5c6d429876a36e712ed37f5995210c7fef27",
+    "customer-attraction/stationary-successor-occupation-cap-counterexample-and-amplification-remainder": "1e815c377e3a3f316b142b91b464d3396a369febfef45785734a743fc33e168e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/真实后继占用平稳分布的付款失效与放大余项--反例.md": "62da891e1e92c00aefbc3e01f9286689ec15c7125ff735830ae2a2fb6fdb547f",
+    "archives/customer-attraction/tools/evidence/stationary-successor-source-and-independent-five-primary/original/research/workspaces/customer-attraction/R-6bb0323d87294932af2aa23b47b9d4ad/independent/stationary_source_independent_audit.json": "79104247d3ff330fa448a028644a6c8aeec1ff69cd632dc051125bdfea7f9eff"
+  },
+  "review_digest": "023e825647ffa64b4eaa2723ab287a6516d9c36050e37d32aef230b53d6193bd"
+}
