@@ -137,11 +137,74 @@
       "comparison_question": "在独立激活的二尺寸单背包中核对不相容 a+b>1 时的固定 x 类内权均匀化和逐次同尺寸拆分。精确验证 117253/187500 上界见证与同均值同分母却上升 1/600 的拆分见证，区分各自否定的证明步骤、兼容分支和允许 x 变化的全局极值。"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss1",
-  "request_id": "4ace1a24e091418ab99108596d55d73f",
+  "request_id": "4d0c94071aa04c07bd219e3a4f8f6542",
   "requests": {
     "4accb0d688a84a6eac9498814f9ecc4a": "plan",
-    "4ace1a24e091418ab99108596d55d73f": "claim"
+    "4ace1a24e091418ab99108596d55d73f": "claim",
+    "4d0c94071aa04c07bd219e3a4f8f6542": "done"
+  },
+  "edge_paths": {
+    "two-size-fixed-x-witness-gives-gap-upper-bound": "map/edges/bmkp-knapsack-fixedx-3c-3c-1c59f08adae9851d/fixed-x-uniformization-upper-bound.json",
+    "two-size-bernoulli-split-blocks-stepwise-poisson-reduction": "map/edges/bmkp-knapsack-fixedx-3c-3c-1c59f08adae9851d/bernoulli-splitting-direction-obstruction.json"
+  },
+  "receipt": {
+    "task_id": "bmkp-knapsack-fixedx-3c-3c-1c59f08adae9851d",
+    "stage": "3C",
+    "status": "complete",
+    "object_ids": [
+      "M-1e98f0c71a6846b08ae6a93cd1b8dd0c",
+      "M-82d4ebf16f4b4dc9b7d41b564b9031df",
+      "SEL-KNAPSACK-FIXED-X-OBSTRUCTION-v1"
+    ],
+    "read_object_ids": [],
+    "input_pins": {
+      "M-1e98f0c71a6846b08ae6a93cd1b8dd0c": "69832df9d40d35ff49439dcdaab8c79439816ac55f73333dcc336622d8235f81",
+      "M-82d4ebf16f4b4dc9b7d41b564b9031df": "3bdfff588586f5b75d4c5e47a9bb9ffed501b891419b0b1d57b4b5bd2b5eb0be",
+      "SEL-KNAPSACK-FIXED-X-OBSTRUCTION-v1": "6d8ec3539b0dd8ca77de2366535cdc1883c345babaf3e5671e003f869596e7eb"
+    },
+    "coverage": {
+      "M-1e98f0c71a6846b08ae6a93cd1b8dd0c": {
+        "state": "linked",
+        "object_pin": "69832df9d40d35ff49439dcdaab8c79439816ac55f73333dcc336622d8235f81",
+        "comparison_scope": "C08 v1的钉住审查正文及冻结gap.md C08，对照两条反例v2及其资源启用复核。核对两尺寸严格区间、自然LP/整数凸包、独立激活、期望最优与正分母，并与已成边poisson-smoothing-solves-compatible-two-size-gap的a+b≤1范围核对。",
+        "reason": "五物品给117253/187500的上界，排除严格更高的统一保证，且否定固定x统一权归约。全等权拆分例独立排除每次保期望拆分均不升的路线。两项都在a+b>1。兼容a+b≤1保留既有固定尺寸锐界与同常数单调CRS；大件单件和两小件在不相容分支出现交换失败。后者的sharp下界、对应CRS及允许x变化的全局极值比较仍待证明。",
+        "edge_ids": [
+          "two-size-fixed-x-witness-gives-gap-upper-bound",
+          "two-size-bernoulli-split-blocks-stepwise-poisson-reduction"
+        ]
+      },
+      "M-82d4ebf16f4b4dc9b7d41b564b9031df": {
+        "state": "linked",
+        "object_pin": "3bdfff588586f5b75d4c5e47a9bb9ffed501b891419b0b1d57b4b5bd2b5eb0be",
+        "comparison_scope": "拆分反例v2的钉住正文、模型节、历史§3及资源启用C08节，与目标v1相同自然LP域直接代入；完全枚举拆分前后的活跃集，并单独复核至少两小件活跃事件。",
+        "reason": "两实例分别有3件、4件，全部单位权；期望尺寸39/50及分母6/5保持，ρ从101/120严格增至253/300。它关闭普遍逐次不升合同，即使已限制类内统一权，所需的全局比较仍未推出。",
+        "edge_ids": [
+          "two-size-bernoulli-split-blocks-stepwise-poisson-reduction"
+        ]
+      },
+      "SEL-KNAPSACK-FIXED-X-OBSTRUCTION-v1": {
+        "state": "linked",
+        "object_pin": "6d8ec3539b0dd8ca77de2366535cdc1883c345babaf3e5671e003f869596e7eb",
+        "comparison_scope": "固定x反例v2的钉住模型、五物品证书、独立跨模型复核、资源启用精确复核和程序/冻结JSON，直接对照C08 v1。另算最优值的三个尾事件与连续统一权族的四端点支撑概率。",
+        "reason": "输入成本99/100，期望最优2462313/1250000、分母63/20，给C08不相容切片的117253/187500上界。全部统一类正权子支撑最小值52726561/84062500严格较高，故仅固定x归约失败，开放目标的全域最小值没有由此确定。",
+        "edge_ids": [
+          "two-size-fixed-x-witness-gives-gap-upper-bound"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/bmkp-knapsack-fixedx-3c-3c-1c59f08adae9851d/fixed-x-uniformization-upper-bound.json",
+        "sha256": "401289809710201eb0df159a1aa3968376448cb2c8d63726e0827abd73bce5dc"
+      },
+      {
+        "path": "map/edges/bmkp-knapsack-fixedx-3c-3c-1c59f08adae9851d/bernoulli-splitting-direction-obstruction.json",
+        "sha256": "90469dd1f09aea474885979c7c9bfcbb9135f3a66499151f5e92eaa0a3401bba"
+      }
+    ],
+    "reviewed_by": "Boss1",
+    "review_note": "实读任务全部钉住证据区段并核SHA。两条跨档逻辑边分别给合法上界见证及准确的方法失败范围，兼容分支沿用既有结果。"
   }
 }
