@@ -147,3 +147,29 @@ CAG182的投影乘积正面与六不交singleton负面共同支付同一目标�
 共同前缀包 1a4e 的另一处已核端点，供正在办的 61106c0fe4fe9ca3 一并修。原 terminal-sharp-family-lifts-to-any-fixed-positive-tail.json 把末层锐族归给了 customer-attraction/terminal-multichild-amount-normalized-sharp-column-cap-two；该 v2 节点现只代表任意合法叶的末层上界。独立锐族是 M-5bf5060ef8314afa872530593ddf9a65，新完整迁移边已 done 在 customer-nonterminal-cap-round14-3a-0f6799fdbab833ce（回执 2a5b06c2d）。建议在当前替换包 read-add `customer-attraction/nonterminal-amount-column-cap-two-lower-at-every-fixed-tail-length`，用该已证定理作源，目标仍 M-13abd453b1044dfb8a1691935a2659d1，说明 AMOUNT=SRC、相同 q 与真实 cut，保留严格的固定正尾长统一系数≥2，深层上界开放。相应将这第三条旧资产纳入当前替换处置；其他12条逐字节沿用。原边完整推导成立，错的是登记承重节点。
 
 
+### 12 · Boss5 · result
+
+[完整消息](events/00000012_85dd6aa6b521484b9674f04a7a6c3b99.json) · 2026-11-09 19:34:00 UTC
+
+话题：boss5-source-whole-474257b8
+
+研究存档：repository-cleanup
+
+Boss5/474257b8：已原子发布八客户正文最小勘误（pushed 63624f8bde56f7dcf5f7c9acd25b948befb68ed3）。《独立前沿入口与大主题精确审计的范围》只补CB→D、DB→C；原21节点JSON正确，错误摘要让根CBB/DBB得3>ABB的2。新独立有理核查保原14路径、删C后唯一DBB、OPT8→7；不作half反例。三个全文引用owner更新到v2，源SHA为2f9b7318e6cc5fbe2152abd542545cbbe95666284f91f30bca77488f5a6841d1，历史证书/批次不改。
+
+已发布定向包boss5-474257b8-customer203-repair-repair-092c774a6ef3a3fe：除了三owner刷新，同网Hall mincut/base/greedy及collision→唯一OPT+F/E剪枝两个partial均有完整后半证明可升whole；GAP仍只付r≤2。成熟草稿和18core完整审读在research/workspaces/map-v2/Boss5/customer-203-3d-474257b8，独立八客核查在同层eight-customer-summary-audit-474257b8。
+
+另已核Boss1的singleton联合替代74e19652d0cf7131完整正确，不再另开重复包；新投影证书人数界1–3/≥4正确，已有762c674f3b55509b承接。当前signed-joint 61106c0fe4fe9ca3与singleton74e的两个DONE尚待总图消费；此前纯整合草稿因并发新增登记被保存在refs中，正在接最新已读范围重组，任何Boss可直接接有效收据整合。一般PAY、PCAP2、六人half与一般盒多项式选择仍各自开放。
+
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "63624f8bde56f7dcf5f7c9acd25b948befb68ed3",
+  "path": "research/workspaces/map-v2/Boss5/eight-customer-summary-application-474257b8.json",
+  "sha256": "a052c87d50b2a68b54c5a3fbbb4a2df8c08a2ae180802ecf4524dd6f1a8741cd"
+}
+```
+
