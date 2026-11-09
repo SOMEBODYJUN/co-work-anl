@@ -1,0 +1,60 @@
+{
+  "edge_id": "fac-bdb0-strict-high-entry-to-input-priority-rho",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SPARSE-HIGH-ACYCLIC",
+    "SPARSE-RHO-ALL"
+  ],
+  "target_ids": [
+    "facility-games/sparse-rho-strict-by-smaller-side-tie-priority"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "全交叉单交叠含合法同址，两家带标签任意有限非空目录，正实原子权。r=ρ；每格唯一共同客户按同一 (reach,优先级) 全序去较小行动。",
+  "roles": {
+    "SPARSE-HIGH-ACYCLIC": "提供固定 P 的精确回应和旧高区下降结构；新反设下需将非严格高阈值改为严格高并复算。",
+    "SPARSE-RHO-ALL": "提供任意长目录高→低入口的同一原子身份链及 r=ρ 的临界根比较，复算弱等号边界。",
+    "facility-games/sparse-rho-strict-by-smaller-side-tie-priority": "得到输入后一次选定全局平局优先级的点态严格上界、两种任意固定序的严格子域及精确有理扫描。"
+  },
+  "explanation": "若一方最大 reach 为零，任选其行动并令另一家取全目录最佳回应即倍率 1。其余反设每格所需倍率≥r，逐格阻碍必须同时有 v≥ru、v>u。称本方 reach R>M_i/r 的行动严格高。其指向另一方的全目录最佳回应时，回应方已最大；若源行动拿全 reach 则它所有偏离≤M_i<rR。故源行动丢唯一共同客户，回应行动严格先于它。严格高区非空，若没有出口，有限出度一有向图含环，违全序下降。交换设施标签，把入口记为严格高列 C→B，a=R_A=M₁、b=R_B≤a/r、c=R_C>M₂/r。直接用 F₁(C)=P₁(B,C)≤b<a，所以 AC 行方无法得全 a，必失共同客户 x，权 X。列遂得全 c，排除列作阻碍，得 b≥F₁(C)≥r(a−X)，即 X≥a(1−1/r²)>a/r≥b。B 无法覆盖同一 x，故 BC 列得至少 X。BC 行已最佳，列回应 D 给 d′=R_D≥F₂(B)≥rX>a，所以行方最大 reach 严格较小。AD 行得全 a，行无改善。令 E=b₂(A)，A 严格高故 E≺A 且 AE 列得全 e=R_E=F₂(A)≤a。AD 共有权 Z 暂可为 0，坏格要求 d′−Z≤e/r≤a/r；Z=0 不可能，若 Z 对应不同原子，则 X+Z≤a 而 d′−Z≥d′−a+X>a/r，亦不可能。于是 AD 的共同原子正是 x，根恒等式给 r(r−1)X≤r(d′−X)≤e≤a≤r²X/(r²−1)=r(r−1)X。必须 e=a 且 E≺A，并且 AE 有共同客户。现在全局跨方同 reach 按较小最大 reach 优先，行方因此在 AE 先于 E，矛盾。若两方最大 reach 相等，d′>a 已矛盾；若所有实际共同客户所在跨对 reach 不等，AE 的 e=a 已矛盾。这两种情形任意固定全序均可点态严格。构造逐格算 P、全目录 F_i 并扫描。对 v>u≥0 检 v³−v²u−2vu²+u³<0，v≤u 直接过；u=0<v 拒绝。保 O((n+1)|U₁||U₂|) 有理运算和多项式位长。",
+  "scope": "从旧任意固定序的弱 ρ 证明提升到输入后选一次全局优先级的点态严格 ρ。全目录最佳回应始终取固定 P，未代成全 NE 的真实极小威胁。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/定理/单交叠任意目录的ρ纯续局与高区障碍--定理.md",
+      "sha256": "0ba344a265f574511e7348825a2d010d80a0343cbcf6c506a17a01032aea12d3",
+      "section": "任意r的高区下降与平衡子类"
+    },
+    {
+      "path": "archives/facility-games/state/定理/单交叠任意目录的ρ纯续局与高区障碍--定理.md",
+      "sha256": "0ba344a265f574511e7348825a2d010d80a0343cbcf6c506a17a01032aea12d3",
+      "section": "首个高→低入口的排除：r≥ρ"
+    },
+    {
+      "path": "archives/facility-games/state/定理/单交叠任意双目录的点态严格ρ与固定优先级等号例--定理.md",
+      "sha256": "87015fbe92bf6ce78edb1fec6e3856a7093289e4ee62bf98289566c1797f98fc",
+      "section": "严格高区与入口"
+    },
+    {
+      "path": "archives/facility-games/state/定理/单交叠任意双目录的点态严格ρ与固定优先级等号例--定理.md",
+      "sha256": "87015fbe92bf6ce78edb1fec6e3856a7093289e4ee62bf98289566c1797f98fc",
+      "section": "等号链与优先级"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "重核 v2 修正的 AC 入口。F₁(C)=P₁(B,C)≤b<a 先迫行方丢掉共同原子，列才得全 c，其最佳偏离上界 M₂<rc。其余严格高区、同原子身份、临界等号和零收益分支逐式核对。",
+  "contribution": {
+    "result": "逐输入选最大 reach 较小方为跨方同 reach 的优先方，所得固定全局纯规则在原全目录至少一格的所需倍率严格小于 ρ；最大 reach 同值或有交叠跨对无 reach 平局时任意全序亦严格。显式有理输入可精确扫描构造。",
+    "remaining": "目标还含一个固定不利全序恰达 ρ 的五正权见证；统一常数无法减小则仍需全续局近锐族。"
+  },
+  "endpoint_pins": {
+    "SPARSE-HIGH-ACYCLIC": "05238e3c86fea0fb268dc78176039a42dfd09f3ac0c923b9becf8cdc7abbf07d",
+    "SPARSE-RHO-ALL": "e87216506cac7f64305e561daa73e4e0edefec9e6bd38207f7d16113a00781e7",
+    "facility-games/sparse-rho-strict-by-smaller-side-tie-priority": "e90a5de07f51cd49ab1524bca0434b794aa255d4f7c160a2670d0e3a3ff22b2c"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/定理/单交叠任意目录的ρ纯续局与高区障碍--定理.md": "0ba344a265f574511e7348825a2d010d80a0343cbcf6c506a17a01032aea12d3",
+    "archives/facility-games/state/定理/单交叠任意双目录的点态严格ρ与固定优先级等号例--定理.md": "87015fbe92bf6ce78edb1fec6e3856a7093289e4ee62bf98289566c1797f98fc"
+  },
+  "review_digest": "8e43d01ef50799239ca1fd55cbcefe4c73f830ef2fcee8c7b0ebb788aa6c6fd8"
+}

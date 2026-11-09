@@ -1,0 +1,85 @@
+{
+  "edge_id": "fac-bdb0-three-dec1-padding-and-closed-spectrum-to-five-dec1",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "SC-THREE-DEC1-HARD",
+    "facility-games/common-catalog-empty-sites-preserve-full-continuation-ratio",
+    "DP-W",
+    "facility-games/two-facility-two-catalog-model-and-complete-exact-continuation"
+  ],
+  "target_ids": [
+    "facility-games/common-catalog-five-sites-exact-stability-weak-np-complete"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "两家带标签设施共享恰五个合法地点，允许同址和空覆盖，正二进制整数原子权。固定 a=1，逐有序布局为独立混合精确客户 NE。",
+  "roles": {
+    "SC-THREE-DEC1-HARD": "给恰三地点 DEC₁ 的全部九个带标签布局守卫及正二进制整数权 SUBSET SUM 归约。",
+    "facility-games/common-catalog-empty-sites-preserve-full-continuation-ratio": "对两设施共同添加两个空地点逐实例保固定有限倍率可行性及 α*，所以源 YES/NO 完整搬到恰五。",
+    "DP-W": "逐有序布局求全部闭负载谱及两坐标真实极小值，公共整数总重不超过全实例客户总重 B。",
+    "facility-games/two-facility-two-catalog-model-and-complete-exact-continuation": "给闭支持下的线性客户 NE 条件、同址与零收益乘法约束，以及互不相交偏离族的完整规则补全接口。",
+    "facility-games/common-catalog-five-sites-exact-stability-weak-np-complete": "在恰五共同地点、允许空覆盖的显式正二进制整数模型内同时接受 NP 困难性、NP 成员性与整数伪多项式算法。"
+  },
+  "explanation": "困难性：从恰三实例加两个不同的新空地点，客户和权不变。旧在轨及 S² 的原续局照用，新布局无共同客户，强制纯 NE 补齐，新增偏离到空点得 0。逆向两家旧点在轨时限制至 S²；两家新空点在轨时任何非空旧点都会给零收益方正偏离，故旧覆盖全空。若仅一家占新空点而另一家在旧 t，任何有限倍率迫零方在每个旧偏离 (s,t) 仍得 0；严格正权和强制服务给 C_s⊆C_t。同址 (t,t) 的偏离 NE 必把每名共同客户以概率一给另一家；两名以上时任一名换到空载侧仅付自身权，严格改善，故 |C_t|≤1。在原 (t,t) 把该至多一名客户全给另一家；零收益方每个旧偏离保持同样分配（若可选两家则成本相同），另一家已得原全实例可服务最大权。其余原布局取纯分配中最小负载平方和，单个权 w 客户的严格降本使平方和改变 2w 倍成本差，故为纯 NE。这一逆向甚至给倍率 1 的全纯完整续局。因而任意固定有限倍率的两向等价对独立混合和全纯分别成立，包含两类各自的 α*，且恰三 DEC₁ 的 YES 与 NO 逐实例传至恰五。NP：猜在轨 (s,t) 和该布局及每个真实偏离的闭支持标签（纯 1、纯 2、名义混合）。共同客户条件成本差 g_i=Δ+w_i(1−2p_i)；三种分别用 p_i=1,g_i≤0；p_i=0,g_i≥0；0≤p_i≤1,g_i=0。两类真实偏离的收益与在轨收益乘法比较均线性。固定这些标签后，实可行证书给 [0,1] 中非空有界有理多面体；顶点由满秩活跃行确定，系数位长多项式，Cramer 行列式界给多项式位长有理概率。名义混合端点仍满足 NE，其余格用纯 NE 补全。伪多项式：每个带标签布局的 DP-W 闭 Δ 谱经 L₁=(V+Δ)/2 得第一负载闭谱，局部 m₁=min L₁、m₂=V−max L₁ 可由不同 NE 达到。给定在轨 (s,t)，沿原目录实际偏离分别取这些极小值的最大 D₁,D₂，空最大值取 0；无须同时最小化两坐标。第一家 (r,t) 与第二家 (s,u) 的真正偏离互不重合，分别选相应极小见证。故倍率 1 当且仅当存在闭谱负载 x∈[D₁,V−D₂]。若求倍率，某闭片上的平衡点 VD₁/(D₁+D₂) 截到片内给两单调项最大值的最小点；D₁=D₂=0 时倍率 1，零收益直接检乘法约束。整数公共总重≤B，逐布局 O((n+1)²(B+1)+(n+1)log(n+1)) 级有理运算及多项式位长，恰五仅 25 带标签布局。",
+  "scope": "恰五共同地点固定 a=1 的弱 NP 完全分类。困难性逐实例保持倍率；DP 运行时间按整数总重的数值。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+      "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+      "section": "三地点a=1：六类在轨布局的精确守卫"
+    },
+    {
+      "path": "archives/facility-games/state/定理/共同目录添加空地点的完整续局倍率保持--定理.md",
+      "sha256": "81ac4a0744aa6a44e5970dec4d3c394ddd2832acabaaa702516b64f1f0689c10"
+    },
+    {
+      "path": "archives/facility-games/state/定理/共同目录添加空地点的完整续局倍率保持--定理.md",
+      "sha256": "81ac4a0744aa6a44e5970dec4d3c394ddd2832acabaaa702516b64f1f0689c10",
+      "section": "恰五地点精确稳定的弱 NP 完全性"
+    },
+    {
+      "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+      "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09",
+      "section": "固定布局上的精确客户NE"
+    },
+    {
+      "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
+      "sha256": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09",
+      "section": "真实坐标极小与全目录威胁接口"
+    },
+    {
+      "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+      "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+      "section": "阈值压缩是完整谱的等价表示"
+    },
+    {
+      "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+      "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+      "section": "整数总重DP-W"
+    },
+    {
+      "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+      "sha256": "241e8015a7d6af25108a68619fd17e8c38dadcebae00d0a34ecdcb45eb9aa3eb",
+      "section": "A11.6 EXACT-KAPPA：把所有局部谱拼成真正最优证书"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核新空点逆向的三种在轨和两种续局合同，逐项重算固定闭支持的线性式、全带标签偏离独立性及闭谱夹区；局部 DP 与困难性互补。",
+  "whole_result": "对恰五共同地点的显式正二进制整数权输入，DEC₁ 弱 NP 完全。联合恰三整数归约与保实例倍率填充给 NP 困难性，闭支持有理顶点给 NP 成员性，整数闭谱与全目录夹区给伪多项式算法。",
+  "endpoint_pins": {
+    "DP-W": "06c7da8b6e40efc8737ac77476ed8fef8308fef3dd44d85225227de706524701",
+    "SC-THREE-DEC1-HARD": "7c168e01f188cc9fda95a5cf1371cc876eec56185ac435042f48a64aacaf66fb",
+    "facility-games/common-catalog-empty-sites-preserve-full-continuation-ratio": "0ab59afbcbc4e75ce78152ab96ecfda7545101c45f21c6c189c6b62db2e236f3",
+    "facility-games/common-catalog-five-sites-exact-stability-weak-np-complete": "4021591cc3f18a27242b0bce729bdfdf4bf377b645b6675cb6fdfa657ed2108d",
+    "facility-games/two-facility-two-catalog-model-and-complete-exact-continuation": "d4a962894463c9a641484232eff48bfae3a3e4b84421b27ba5176867d9ee28b5"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+    "archives/facility-games/state/定理/共同目录添加空地点的完整续局倍率保持--定理.md": "81ac4a0744aa6a44e5970dec4d3c394ddd2832acabaaa702516b64f1f0689c10",
+    "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09",
+    "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+    "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md": "241e8015a7d6af25108a68619fd17e8c38dadcebae00d0a34ecdcb45eb9aa3eb"
+  },
+  "review_digest": "0a80c61c141c83e36b82254f7a8b74fe8b329a36da5898b7564853459afec95c"
+}

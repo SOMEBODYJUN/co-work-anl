@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-map-amount-parity-round18-v1.json",
-    "sha256": "a274adc11cf0caed0c8e977a755d17c8d689187cb39562d7422254205b6b9222"
+    "path": "research/registration/baseline-map-three-disjoint-repeat-round19-v1.json",
+    "sha256": "abbddfba50bdeba049fbae85e4671264abfb9d6bc344194b4b5f5437333ac380"
   },
   "objects": [
     {
@@ -149116,6 +149116,41 @@
       ]
     },
     {
+      "object_id": "facility-games/common-many/three-facility-disjoint-repeated-sharp-two",
+      "version": 1,
+      "kind": "theorem",
+      "truth_status": "proved",
+      "title": "三设施两两不交覆盖的重复占位锐二界",
+      "model": "有限正实原子、三家带标签设施、共用有限非空目录、线性成本、允许同址、完整独立混合精确客户NE。",
+      "statement": "若不同物理地点的覆盖集两两不交，必有重复布局和一份完整续局使设施倍率至多二。每个布局按站内设施独立均匀即可。恰三等权独占站使任一重复布局需要至少二，任意续局选择均如此。",
+      "quantifiers": "每个恰三家两两不交覆盖输入；下界为一个整数权目录中全部重复布局和全部完整独立混合续局。",
+      "assumptions": [
+        "不同物理站客户集不交，可含空覆盖。"
+      ],
+      "scope": "只限定所求布局重复，涵盖全共址和恰两个同址；统一二为锐。",
+      "objections": "一般交叠覆盖的重复布局存在性仍开放。",
+      "body": {
+        "path": "archives/facility-games/subarchives/common-many/state/定理/三设施两两不交覆盖的重复占位锐二界--定理.md",
+        "sha256": "617ded89400e9b49f0a1c14f8a8213561f01ad9b567036263c3e0ea4a74e7c57"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+          "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+        },
+        {
+          "path": "archives/facility-games/subarchives/common-many/state/问题/三设施重复占位的二倍完整续局--问题.md",
+          "sha256": "9d2d304cd595b8f17adfbbae80436f54bf5fb70885681ab184b667668f13980b"
+        },
+        {
+          "path": "archives/facility-games/subarchives/common-many/state/问题/三设施重复占位的二倍完整续局--问题.md",
+          "sha256": "9d2d304cd595b8f17adfbbae80436f54bf5fb70885681ab184b667668f13980b",
+          "section": "仍有独立用途的共址三倍基线"
+        }
+      ],
+      "sources": []
+    },
+    {
       "object_id": "facility-games/common-many/three-facility-repeated-site-factor-two-question",
       "version": 1,
       "title": "恰三家是否总有重复坐标布局的二倍完整续局",
@@ -192509,37 +192544,24 @@
       "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
       "disposition": "objects",
       "object_ids": [
-        "MF-MODEL",
-        "SC-K-2-E",
-        "MF-CONT-COMPLETE",
-        "SC-K-LEXMAX-BARRIER",
-        "SC-K-SYMMETRIC-MENU-OBSTRUCTION",
-        "SC-K-GREEDY-MAX-MULT",
-        "SC-K-GREEDY-BOX-EXISTS",
-        "SC-K-GREEDY-BOX-TO-2",
-        "SC-K-GREEDY-BOX-FINITE-2",
-        "MF-FROZEN-OVERLOAD-POLY",
-        "SC-K-TWO-SITE-COMPONENT-GREEDY-2",
-        "SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2",
-        "SC-K-NESTED-ANCHOR-GREEDY-2",
-        "SC-K-UNIFORM-LIGHT-FLOW-2",
-        "SC-K-INCIDENCE-BOX-DP",
-        "SC-K-LOCAL-WEIGHT-BOX-DP",
-        "SC-K-BOX-STRUCTURED-POLY-2",
-        "facility-games/common-many/three-facility-repeated-site-factor-two-question",
-        "M-b6645751e3fb47d1a3038d76b0796633",
-        "M-d1dc877d3e8944449eb1befe931d180d",
-        "SC-K-HEIGHT-TWO-INCIDENCE-2",
         "M-306e4a2a13234a759f50236322dd308d",
         "M-57da53da3efa46998555bccf77c69d35",
         "M-5f6a6e775ed04aebb768fb5444607893",
         "M-7374105d950741278d7a8c7f278b88ba",
+        "M-b6645751e3fb47d1a3038d76b0796633",
+        "M-d1dc877d3e8944449eb1befe931d180d",
+        "MF-CONT-COMPLETE",
+        "MF-FROZEN-OVERLOAD-POLY",
+        "MF-MODEL",
         "SC-GRANULAR-APPROX",
+        "SC-K-2-E",
         "SC-K-ADAPTIVE-DOUBLE-LPT-2",
         "SC-K-ADAPTIVE-RESET",
+        "SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2",
         "SC-K-BOX-LEXMAX-NO",
         "SC-K-BOX-NE-FPT-TYPES",
         "SC-K-BOX-POTENTIAL-STRONG-HARD",
+        "SC-K-BOX-STRUCTURED-POLY-2",
         "SC-K-CATALOG-WEIGHT-XP-2",
         "SC-K-COMPLEMENT-GREEDY-REDUCTION",
         "SC-K-COMPONENT-MULT-GREEDY-2",
@@ -192553,30 +192575,53 @@
         "SC-K-EQUAL-MULT-GREEDY-2",
         "SC-K-FORCED-FLOOR",
         "SC-K-FROZEN-LIGHT-FPT",
+        "SC-K-GREEDY-BOX-EXISTS",
+        "SC-K-GREEDY-BOX-FINITE-2",
+        "SC-K-GREEDY-BOX-TO-2",
         "SC-K-GREEDY-CAP-INFEASIBLE",
         "SC-K-GREEDY-FIXED-LEXMAX-NO",
         "SC-K-GREEDY-FIXED-POTENTIAL-NO",
         "SC-K-GREEDY-HEAVIEST-NO",
         "SC-K-GREEDY-HEAVY-OVERLAP-2",
+        "SC-K-GREEDY-MAX-MULT",
         "SC-K-GREEDY-REPAIR-ORDER-NO",
         "SC-K-GREEDY-STATIC-PACK-NO",
         "SC-K-GREEDY-UNOPENED-2",
         "SC-K-HEIGHT-TWO-BOX-EXISTS",
+        "SC-K-HEIGHT-TWO-INCIDENCE-2",
+        "SC-K-INCIDENCE-BOX-DP",
         "SC-K-INWARD-STAR-2",
+        "SC-K-LEXMAX-BARRIER",
         "SC-K-LEXMAX-STRONG-HARD",
         "SC-K-LIGHT-COMPONENT-GREEDY-2",
         "SC-K-LOCAL-PLS",
+        "SC-K-LOCAL-WEIGHT-BOX-DP",
+        "SC-K-NESTED-ANCHOR-GREEDY-2",
         "SC-K-PATH-EDGE-LIGHT-GREEDY-2",
         "SC-K-RANGE-GREEDY-2",
         "SC-K-RESET-PACK-INTERFACE",
         "SC-K-STAR-LIGHT-GREEDY-2",
+        "SC-K-SYMMETRIC-MENU-OBSTRUCTION",
         "SC-K-THREE-SITE-CHAIN-BOX-EXISTS",
         "SC-K-TWO-LIGHT-LOWER-POTENTIAL-NO",
+        "SC-K-TWO-SITE-COMPONENT-GREEDY-2",
+        "SC-K-UNIFORM-LIGHT-FLOW-2",
         "facility-games/common-many/greedy-box-arithmetic-implementation-boundary",
         "facility-games/common-many/multiplicity-related-link-interface-boundary",
+        "facility-games/common-many/three-facility-disjoint-repeated-sharp-two",
+        "facility-games/common-many/three-facility-repeated-site-factor-two-question",
         "facility-games/general-construction-workshop-and-frozen-certificate-contract"
       ],
       "reason": "承载独立正文：MF-MODEL。"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/三设施两两不交覆盖的重复占位锐二界--定理.md",
+      "sha256": "617ded89400e9b49f0a1c14f8a8213561f01ad9b567036263c3e0ea4a74e7c57",
+      "disposition": "objects",
+      "object_ids": [
+        "facility-games/common-many/three-facility-disjoint-repeated-sharp-two"
+      ],
+      "reason": "精确重复布局子域与上下界。"
     },
     {
       "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
@@ -193363,9 +193408,10 @@
       "sha256": "9d2d304cd595b8f17adfbbae80436f54bf5fb70885681ab184b667668f13980b",
       "disposition": "objects",
       "object_ids": [
-        "facility-games/common-many/three-facility-repeated-site-factor-two-question",
         "M-b6645751e3fb47d1a3038d76b0796633",
-        "M-d1dc877d3e8944449eb1befe931d180d"
+        "M-d1dc877d3e8944449eb1befe931d180d",
+        "facility-games/common-many/three-facility-disjoint-repeated-sharp-two",
+        "facility-games/common-many/three-facility-repeated-site-factor-two-question"
       ],
       "reason": "承载独立正文：facility-games/common-many/three-facility-repeated-site-factor-two-question, M-b6645751e3fb47d1a3038d76b0796633, M-d1dc877d3e8944449eb1befe931d180d。"
     },
