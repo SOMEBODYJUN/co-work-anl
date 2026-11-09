@@ -1,0 +1,53 @@
+{
+  "edge_id": "commonmany-continuation-gluing-to-symmetric-menu-exact-stability",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "MF-CONT-COMPLETE"
+  ],
+  "target_ids": [
+    "SC-K-SYMMETRIC-MENU-OBSTRUCTION"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "在 MF-MODEL 中固定任意整数 q≥3。地点 A,B,T；三名原子 H,e,b 的权重依次为 q²,1,a=q−1/4，可达地点依次为 {A,T},{A},{B}。在轨带标签布局为 A 上 q 家、B 上一家；H,e 各自独立均匀选 A 的 q 家，b 选 B。这些输入及下面显式局部客户 NE 均已逐项验证，不是开放前提。",
+  "roles": {
+    "MF-CONT-COMPLETE": "把已核实的在轨精确客户 NE 与每次实际带标签偏离的零收益纯 NE 档案无冲突延伸为一个全布局精确客户 NE 函数，取 α=1。",
+    "SC-K-SYMMETRIC-MENU-OBSTRUCTION": "获得“同一指定在轨布局与同一在轨 NE 可被非对称纯离轨续局支持为精确 SPE”的局部结论；对称菜单强制下界与全局 lexmax 身份另有显式证明。"
+  },
+  "explanation": "在轨 H,e 仅能到 A 的 q 家，且对每名客户各家排除自身的背景负载相等；b 仅能到 B，故指定独立均匀策略为精确 NE，设施收益为 A 上各 q+1/q、B 上 a，全部为正。每次实际偏离属于 A→B、A→T、B→A、B→T 之一。若 A 设施移动，仍有 q−1≥2 家静止 A；若 B 设施移动，仍有 q≥3 家静止 A。取两家不同静止 A，分别只放 H、e；若原 B 设施仍在，令 b 单独留在那里，否则 B 已无人而 b 未覆盖。不给偏离者任何客户。每个已服务客户的当前成本恰为其自身全部权重，而任何合法纯行动的条件成本均至少为自身权重，因此这份纯分配对原游戏全部可达行动都是精确客户 NE；平局不构成严格改善。该构造覆盖全部 2(q+1) 次实际标签偏离，每次偏离者收益均为0≤其正的在轨收益。源拼接引理适用：不同实际偏离改变的标签坐标或目标坐标不同，故所给布局两两不同且都不同于在轨；其余布局按最小标签初态与确定严格纯改善默认规则给精确纯 NE。于是单个完整函数同时保留指定在轨与全部零收益离轨，满足 α=1。因模型要求 α≥1，此族实例最优倍率也恰为1。",
+  "scope": "只贡献目标命题中显式 q≥3 族的完整精确 SPE 半部，保持同一在轨布局及概率矩阵；既不在离轨施加同址对称，也不把拼接本身称为全局最优布局或无界威胁证明。不声称确定默认规则有一般位多项式运行时间。",
+  "contribution": {
+    "result": "对每个 q≥3，目标指定的 A^qB 在轨布局与独立站内均匀客户 NE 可延伸为完整精确 SPE；全部实际偏离可取非对称纯 NE 且偏离者收益为0，故该显式族的全实例最优因子为1。",
+    "remaining": "整条目标仍须独立证明该在轨候选是全部布局/站点纯分配候选族的全局升序收益 lexmax，以及 B→T 后每个同址对称精确客户 NE 都强迫 H 选 T、产生 q²/(q−1/4)>q。这两步在目标正文的对应两节已给解析证明，但不由此拼接边单独推出。"
+  },
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+      "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+      "section": "六、把全部局部选择拼成一个完整函数"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/障碍/同址对称续局的无界假威胁--障碍.md",
+      "sha256": "695b0530af4bc49381086d9fa412db3d4fc07d0357f73944f1846472fe0145cf",
+      "section": "同一在轨见证的完整精确 SPE"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+      "section": "每个布局都可明确指定纯客户均衡"
+    }
+  ],
+  "reviewed_by": "Boss3-menu-obstruction-worker",
+  "review_note": "实读源拼接引理及默认势证明，逐类核四种实际偏离、q=3的两静止A边界、强制服务与失覆盖、独占客户的自重成本下界、标签布局互异及 α=1。全局 lexmax 与所有对称混合 NE 的无界倍率在核心正文另行完整核过，本边严格限定为已成立的完整精确稳定局部贡献；七值有限冻结检查不作为全称证明。",
+  "endpoint_pins": {
+    "MF-CONT-COMPLETE": "749dad55c2ae74db4f443c5adb20553c8aced4cf785ecf7f1a75fe28613b24d6",
+    "SC-K-SYMMETRIC-MENU-OBSTRUCTION": "d0eec3de015fb3e6d864306044aa2d6a43e192c2f5e2349af541f3cfcbe9e873"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+    "archives/facility-games/subarchives/common-many/state/障碍/同址对称续局的无界假威胁--障碍.md": "695b0530af4bc49381086d9fa412db3d4fc07d0357f73944f1846472fe0145cf",
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+  },
+  "review_digest": "4d73864b964d0b88661fa4b6e247e4ba64f09f8b6157578b1479ed5cce61013b"
+}

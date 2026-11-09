@@ -1,0 +1,68 @@
+{
+  "edge_id": "commonmany-greedy-original-budget-maxmult-packing-cap-to-singleton-reset",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-GREEDY-BUDGET",
+    "SC-K-GREEDY-MAX-MULT",
+    "MF-PACK-2",
+    "MF-PURE-CAP"
+  ],
+  "target_ids": [
+    "SC-K-GREEDY-SINGLETON-RESET"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同目录 MF-MODEL：有限非空地点、显式 k≥2 家带标签设施、有限逐名正实权原子，覆盖强制服务，独立客户混合及含自身全重的实际线性负载成本。固定同一次规范贪心的最终占站 O、原池 J_t^0、重数 q_t、正末分数 γ。指定 q_u=1 的源设施 f，并给任意在轨独立混合精确客户 NE，其 f 收益 a≥γ。对每个合法目标 v≠u 分别构造离轨纯NE。此边仅给有限数学正确性，不要求有理权、在轨盒、H、当前源池私有储备或多项式调度器。",
+  "roles": {
+    "SC-K-GREEDY-BUDGET": "同一规范原池的 W_t^0≤(q_t+1)γ，最早单设施站原池≤2γ，以及新开目标 N_v+w(J_u^0∩C_v)≤W_u^0≤2γ。用原贪心竞价比较建立单设施并池界。",
+    "SC-K-GREEDY-MAX-MULT": "原home属于最终单设施站的客户只能到最终单设施已占站；保证失站旧客户不进入高重数站，并证明最早单设施开站之前全部此类客户仍未覆盖。",
+    "MF-PACK-2": "将高重数静止站的原池按 h=q_t、a=γ 装入同址 q_t 家真实静止设施，普通箱≤2γ，所有超帽箱只能有一个自身>2γ的原始原子。",
+    "MF-PURE-CAP": "从整个新布局的完整可行受帽纯种子出发，在保留全部真实允许动作下有限修复到精确纯NE，保持指定普通偏离者≤2γ。",
+    "SC-K-GREEDY-SINGLETON-RESET": "任意单设施源和任意目标均可全原池重置后取得完整原客户游戏纯NE，偏离收益≤2γ≤2a，不承担在轨选择责任。"
+  },
+  "explanation": "令 K={t∈O:q_t=1}，P=并_{t∈K}J_t^0，取 K 中最早开设站 s。对 i∈P，MAX-MULT给 q_{h_i}=1≥q_t，所以其全部可达已占站都在K；因此s开设之前没有P客户被较早高重数站覆盖，也没有更早K站。全部P当时仍未覆盖。对每个t∈K，P∩C_t均包含在t当时的未覆盖候选内，而贪心此步选择s；故 w(P∩C_t)≤W_s^0≤2γ。记此为并池界(K)，它控制整份重挂池，不能由逐个原池界随意相加替代。固定f:u→v，把全部旧已服务客户重置到原home，只有J_u^0原站消失。其客户若有静止已占选项则任选一个，这些选项由MAX-MULT必在K；无静止选项而v可覆盖者给f，否则它在新布局确实未覆盖。原未覆盖而被v新覆盖者也给f。所有新布局被覆盖客户均已服务，且原动作没有删去。每个静止高重数站t保原池，W_t^0≤(q_t+1)γ，应用PACK-2于q_t家同址静止设施。每个静止单设施站t的总池是P∩C_t的子集，故由(K)≤2γ，整池直接放其唯一静止设施。目标v原已占时，能给f的旧客户都已有静止选项，且没有真正新增客户，所以f初始空置；v原未开时，f初重至多N_v+w(J_u^0∩C_v)≤W_u^0≤2γ。由此每家设施普通负载≤2γ或恰有一个自身>2γ的孤立原子，而f普通。对改变后的完整标签布局使用MF-PURE-CAP：巨原子恰付自身重，不能严格改；普通客户加入巨设施必付>2γ；普通到普通严格改善的新目标总负载小于旧源总负载≤2γ。半平方负载势每步变化 w_i(L_g+w_i−L_h)<0，有限纯赋值保证终止，终点排除全部原合法纯行动改善，故也排除其凸组合混合改善。得到完整原游戏纯NE，且L_f′≤2γ≤2a。构造只依赖原池、实际覆盖和γ；给定在轨策略只用源收益a≥γ，所以允许任意给定独立混合NE，无需让当前池保原贪心预算。",
+  "scope": "完整覆盖 SC-K-GREEDY-SINGLETON-RESET v2 的正γ有限结论。允许正实权、任意单设施源、已占及未开目标，以及任意给定独立混合在轨NE只要源收益a≥γ。中间重置不是需要客户服从的均衡策略，真正指定的是修复后的NE。有限势证明没有一般位多项式迭代界；有理MAX导入和当前有限软件分开由共享完成边说明。",
+  "whole_result": "ALL(BUDGET, MAX-MULT, PACK-2, PURE-CAP) 推出完整单设施源全原池重置接口：对每个合格规范贪心布局、每个q_u=1的源设施及其任意给定在轨独立混合精确NE收益a≥γ、每个真实目标v≠u，显式可行重置种子经有限严格纯改善得到新布局完整客户游戏的精确纯NE，偏离设施收益L_f′≤2γ≤2a。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "规范贪心、冻结原池及预算"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "原归属具有最大可达重数"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "单设施源：重置全部原客户池"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md",
+      "sha256": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+      "section": "原子装箱引理"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md",
+      "sha256": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+      "section": "受帽纯均衡修复引理"
+    }
+  ],
+  "reviewed_by": "Boss3-singleton-reset-worker",
+  "review_note": "实读本对象完整承重正文及指定调度、证据分层、程序合同、原源码。按原池而非当前池逐项核对K界、最高重数的用途、新旧目标、强制服务、同址装箱、巨原子严格隔离和全部动作修复；单源在轨只用a≥γ。四项前提共同足够且均已证，有限结论无未付步骤。历史claims仅精读141–286的相关登记及上下文，未冒称全异题文件实读；阅读范围和独立的软件/一般选择复杂度义务保存在reading-notes.md。",
+  "endpoint_pins": {
+    "MF-PACK-2": "3e2f063fa6b0a94baf9bbeb5d7ba6ab12f3edbb06a0d3791c6af7194f5d87923",
+    "MF-PURE-CAP": "f76c7824a76fe19b7f752116af4086a6f5d7fcfc68ef51ff6a82cc9d3dd4c4df",
+    "SC-K-GREEDY-BUDGET": "5c08688db4620c0cd4fe6d2c03e61e444fec71aa1bd30ee430061dee1a6a1b83",
+    "SC-K-GREEDY-MAX-MULT": "b2ee941db2e2116d5d0191c6f77d88e0dbc98609d8d87ac25960c5b143e2f564",
+    "SC-K-GREEDY-SINGLETON-RESET": "c74f548d525defcce261f99ca99377fdf67dd9292fe5a9ea9f13fc9881f1ca86"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+    "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db"
+  },
+  "review_digest": "64fbba57a343a31f21a3d571db2ad8b95c910286f1b6625d1d85e848b8ad80d5"
+}

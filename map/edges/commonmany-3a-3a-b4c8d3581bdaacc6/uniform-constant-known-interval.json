@@ -1,0 +1,66 @@
+{
+  "edge_id": "commonmany-uniform-constant-known-interval-from-general-upper-and-two-facility-lower",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-2-E",
+    "SC-PHI-SHARP"
+  ],
+  "target_ids": [
+    "M-f33cc518f28045e1809c8b3113999135"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同目录 MF-MODEL：有限非空地点目录、有限正实权原子客户、任意整数 k≥2 家带标签设施，允许同址；已覆盖客户强制服务，客户独立混合，条件成本含自身完整重量，设施收益为期望负载。α*(I,k) 是在所有纯带标签在轨布局及定义于全部 S^k 的精确客户 NE 续局中可达稳定倍率的下确界，倍率至少为 1；C_unif=sup_{k≥2,I} α*(I,k)。下界使用其中正有理权、k=2、五共同地点的子类。",
+  "roles": {
+    "SC-K-2-E": "对每个合法 I 和每个 k≥2，给一份完整精确客户续局与在轨布局，使全部实际单方设施偏离收益至多在轨收益的两倍，故逐实例 α*(I,k)≤2。",
+    "SC-PHI-SHARP": "对每个 1≤a<φ，给正有理共同目录双设施实例 I_a，且其所有布局及全部完整精确客户续局的最优倍率下确界严格大于 a。该 k=2 子类直接包含于 C_unif 的上确界域。",
+    "M-f33cc518f28045e1809c8b3113999135": "由两个独立界获得开放常数问题的已证区间 φ≤C_unif≤2；本边不求出区间内的精确值。"
+  },
+  "explanation": "首先，SC-K-2-E 的量词为对所有 k≥2 及所有合法输入存在一个纯布局和一份覆盖所有带标签布局的精确客户续局，同时控制每个实际偏离。该见证属于定义 α*(I,k) 的可行集合，所以 α*(I,k)≤2 对整个上确界域逐点成立，取上确界即 C_unif≤2。其次，SC-PHI-SHARP 对任意 1≤a<φ 构造五共同地点、正有理权且 k=2 的输入 I_a，并用全部异址布局的唯一 NE、全部同址 NE 的半总重界及保严格余量的共同有理化，保证 α*(I_a,2)>a；这不是只排除某个在轨见证或某个离轨菜单。把该实例原封不动视为任意设施数模型中 k=2 的输入，标签、强制服务、独立原子成本、全部布局和完整续局的量词均相同，故 C_unif≥α*(I_a,2)>a。令 a 从下方趋近 φ，得到 C_unif≥φ。两个前提共同给出整个已知区间，任一单独都不提供另一侧。下界只依赖总体包含 k=2，不把 φ 下界赋给每个固定 k>2；上界也不说明 2 尖锐。",
+  "scope": "对求跨全部设施数的尖锐普遍常数作一个已成立的局部贡献。没有改变模型、增加设施或借用双设施黄金比上界；有限审计计数、指定字典序占位趋二和受限对称菜单的无界倍率均不是本边前提。",
+  "contribution": {
+    "result": "在目标精确相同的存在型完整续局量词下，φ=(1+√5)/2≤C_unif=sup_{k≥2,I} α*(I,k)≤2。上界适用于每个 k≥2；下界由共同目录 k=2 正有理五地点实例族嵌入同一上确界域得到。",
+    "remaining": "M-f33cc518f28045e1809c8b3113999135 仍要求确定 C_unif 的精确值。本边没有统一亚二存在定理、覆盖全部布局及合法完整续局的趋二实例族、或严格高于 φ 的全模型下界，也没有给每个固定 k>2 的相同下界。"
+  },
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+      "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+      "section": "精确陈述"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+      "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+      "section": "八、结论边界、出处与接续"
+    },
+    {
+      "path": "archives/facility-games/state/定理/共同目录黄金比下界的有理六地点与五地点族--定理.md",
+      "sha256": "d6da289ea0636830fae204b32fb28e1f854ff1ffdf84a3a58b988c45a9de0fbb"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+      "section": "一份完整续局的量词"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/问题--问题.md",
+      "sha256": "ff8f52c8601f98366cd5735c102c71b46fcd017757bbe5147d1a74d5ea2b7aad",
+      "section": "最佳常数与相邻问题"
+    }
+  ],
+  "reviewed_by": "Boss3-menu-audit-worker",
+  "review_note": "完整实读目标及两界的自足数学正文，核对 k=2 共同目录模型嵌入、α* 的下确界与 C_unif 的上确界次序、下界统一严格余量及有理化；上界和下界两前提保为 ALL。目标是开放的精确常数问题，所以只标 contribution，不以已知区间冒充 whole_result。菜单和固定占位障碍的实例各有 α*=1，不用于推出全模型趋二下界。",
+  "endpoint_pins": {
+    "M-f33cc518f28045e1809c8b3113999135": "c2b3de0808995fe5a5440c1d5a30ca30d77f82a949fc7b852d2a818d6735e043",
+    "SC-K-2-E": "c345b8c200578a44af61428a9f884e66590756578c6dd85c96faf49e60fbd0cd",
+    "SC-PHI-SHARP": "df0afd48885fe2cf793412ec09ad8fc9db555cccb49c8360536cd37fa23c3428"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+    "archives/facility-games/state/定理/共同目录黄金比下界的有理六地点与五地点族--定理.md": "d6da289ea0636830fae204b32fb28e1f854ff1ffdf84a3a58b988c45a9de0fbb",
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+    "archives/facility-games/subarchives/common-many/问题--问题.md": "ff8f52c8601f98366cd5735c102c71b46fcd017757bbe5147d1a74d5ea2b7aad"
+  },
+  "review_digest": "3cbf5cc21d52964568a8445a455836d71931a57ae019c08a3b3044dfe18ce72a"
+}
