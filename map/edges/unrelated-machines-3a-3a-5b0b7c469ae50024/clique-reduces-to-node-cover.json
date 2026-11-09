@@ -1,0 +1,51 @@
+{
+  "edge_id": "um-5b0b7c-clique-reduces-to-node-cover",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-7499b4fd61604920822feedbce117033",
+    "M-062d170b27bb407b9ca6b47b115e37c8"
+  ],
+  "target_ids": [
+    "M-0f5677f8a2b14360a537da0bee40d3b9"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "显式简单无向G，正k；NODE COVER预算为非负二进制整数。",
+  "roles": {
+    "M-7499b4fd61604920822feedbce117033": "全串位多项式many-one复合和NP存在证书的严格合同。",
+    "M-062d170b27bb407b9ca6b47b115e37c8": "提供团完全性及原输入阈值k。",
+    "M-0f5677f8a2b14360a537da0bee40d3b9": "接收补图点覆盖和预算n−k。"
+  },
+  "explanation": "非平凡1≤k≤n时构造补图并取预算n−k。原k团在补图独立，其补集命中每条补图边，恰n−k点；反向任意预算内点覆盖的补集是大小≥k的补图独立集，截取k点给原团。n−k=0合法，若采用正预算子编码可先直接处理；k>n或非法串映固定NO。补图显式平方规模。NP证书为预算内点集，逐边核端点覆盖；复合给目标完全性。",
+  "scope": "仅原Karp图论/集合精确判定语言的NP完全性链。无近似gap、强数值界或普通UM编译。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "1. 先固定语言、量词和编码"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "2. 主定理的21个判定问题及历史术语"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "3.2 SAT到CLIQUE，再到packing和cover"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按当前登记实读对象及所列证据，复核共同模型、量词、整数见证、版本和未闭合范围。",
+  "whole_result": "CLIQUE≤p NODE COVER，补图和互补顶点集保YES/NO，目标属于NP并为NP完全。",
+  "endpoint_pins": {
+    "M-062d170b27bb407b9ca6b47b115e37c8": "39d07dd73d5bb42268d4612d43d8e564b23824fa2bd052d68bbc02b3328bff12",
+    "M-0f5677f8a2b14360a537da0bee40d3b9": "e84876a062d21b3aca21ebde7d1add4f88bc430c27cdca95b6eebe01450ff620",
+    "M-7499b4fd61604920822feedbce117033": "c40152efb4426bf3cd9dc724fb6554b728958c3727efca0fc839e6110e366c41"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d"
+  },
+  "review_digest": "43da2677f53a4ddb21aadf192ccc8b195e9e24ed37c160d0761147b1c3871ffd"
+}

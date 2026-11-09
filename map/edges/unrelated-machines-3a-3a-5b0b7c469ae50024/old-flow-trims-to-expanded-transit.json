@@ -1,0 +1,47 @@
+{
+  "edge_id": "um-5b0b7c-old-flow-trims-to-expanded-transit",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-DAG-CONGESTION-FLOW-v1"
+  ],
+  "target_ids": [
+    "UM-DAG-TRANSIT-CONGESTION-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一显式非空简单DAG、同一含根W和整数K≥1。旧流是共同非负流，所有非根总入≤K。",
+  "roles": {
+    "UM-DAG-CONGESTION-FLOW-v1": "旧固定W/K证书把k≥K的点作为无条件供给点。",
+    "UM-DAG-TRANSIT-CONGESTION-v1": "扩大守恒区到1≤k≤2K−1，保持同W/K共同可行性并有严格新增实例。"
+  },
+  "explanation": "沿拓扑序仅减旧边流。新高点可保足原k，新非根低点转发已经缩小的当前输入。若旧为低点，原出流等于旧入流，足以覆盖新输入；若旧为高点且现在改成低点，原出流≥k≥K≥旧输入。新低根可取原出流内的K。终端入流不增。原f可能不满足新守恒，例如K2的k1根送2到k3中间，该点旧发三个各1终端，必须减掉其中一单位。反向严格：K>1、单边k_r=2K−1到零终端，新低根送K即证书，旧高根需送2K−1而唯一终端容量K。",
+  "scope": "同一固定W/K的存在性包含，允许逐边裁流。新单边提取比例达1/(2K−1)。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/算法/根DAG守恒证书与非单位需求参数精确算法--算法.md",
+      "sha256": "1fe87cb01507074a17633cd3eb8590e64747c4d2d53e47c069bc5f7969e934ca",
+      "section": "3. 最小K、旧合同和锐界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/共同拥塞的支撑搜索与非单位分叉参数--资源.md",
+      "sha256": "cb185760afd237127e3dd7505bb828bf4ad02f5a737c69cd39fccead3a404d2b",
+      "section": "2K新合同：免费补守恒点，不免费补分叉点"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按当前登记实读对象及所列证据，复核共同模型、量词、整数见证、版本和未闭合范围。",
+  "contribution": {
+    "result": "每个旧证书可构造同支撑同K的新证书，并由单边实例证得严格包含及该比例可达。",
+    "remaining": "新合同的独立固定支撑拆点饱和判定、整数提取、K上闭二分与仅枚举高点的总时间界仍由新对象的完整证明支付。"
+  },
+  "endpoint_pins": {
+    "UM-DAG-CONGESTION-FLOW-v1": "4225f45cf4dc52e20ccb9518c005ea31c7087b31e81091336cf6224d986b31b9",
+    "UM-DAG-TRANSIT-CONGESTION-v1": "5bf4f236585647a4f3f792ca2edadbf0068302b357e27ddbbe6505d1613e2dfd"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/算法/根DAG守恒证书与非单位需求参数精确算法--算法.md": "1fe87cb01507074a17633cd3eb8590e64747c4d2d53e47c069bc5f7969e934ca",
+    "archives/unrelated-machines/state/资源/共同拥塞的支撑搜索与非单位分叉参数--资源.md": "cb185760afd237127e3dd7505bb828bf4ad02f5a737c69cd39fccead3a404d2b"
+  },
+  "review_digest": "4ce37258a9ce674a36c8ecfadaa6c1c6c8b664c8ebf8f391ba8010da4de2a83d"
+}

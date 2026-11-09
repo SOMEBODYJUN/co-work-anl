@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-5b0b7c-held-cycle-pays-safe-unlock-path",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1"
+  ],
+  "target_ids": [
+    "UM-PERMANENT-BUFFER-UNLOCK-PATH-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一给定σ/τ与阈值U。安全解锁可达成立时，每个h_i>0源至少一件改变任务满足a_j≥h_i。",
+  "roles": {
+    "UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1": "用非所选任务支付坏环顶点源补集，同时用暂留环入流预留共同接收空间。",
+    "UM-PERMANENT-BUFFER-UNLOCK-PATH-v1": "仅取可达证书成功后有直接单次守U路径的部分。"
+  },
+  "explanation": "可达G要求每个H源至少有一条eligible出边，故可对每个H源选边并用保留坏环算法。若实际选出坏环，暂留其边，环顶点i的所选入流β_i>U−S_i≥T/2≥h_i，使它能共同接收所有其它入流；在释放坏环边前迁完所有非所选任务，并用A_i−a_j≥A_i−T≥h_i永久激活。随后全部坏环边可放。旧可达失败的两机实例每侧a=1大件唯一eligible，另一端3/5>U−S_i=1/2，故G空；暂留大件先迁两侧各四小件，按两方向交替，峰至多12/5，严格低于5/2。",
+  "scope": "同一源端剪枝、同一指定目标的路径部分被严格推广。可达是否成立仍可独立判验。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/保留坏环与实际最大件初态--定理.md",
+      "sha256": "1b468234c0c1cc0209794a9582de86eb019cd5582a1cc295e9f18486f2d6db6c",
+      "section": "无安全断口时的保留环机制"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/永久缓冲激活与安全解锁--定理.md",
+      "sha256": "306a38a217c29b88ca8d79e38f256376606609ab20ad241f345fb2ceb9ab1c23",
+      "section": "可检验的单件安全解锁条件"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/永久缓冲激活与安全解锁--定理.md",
+      "sha256": "306a38a217c29b88ca8d79e38f256376606609ab20ad241f345fb2ceb9ab1c23",
+      "section": "证书失败与后续推广"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按当前登记实读对象及所列证据，复核共同模型、量词、整数见证、版本和未闭合范围。",
+  "contribution": {
+    "result": "在旧可达条件成功的全部输入上，通过更弱的一件eligible条件仍构造同一守U的完整实际路径，而且可达失败的明确实例也在该推广域内。",
+    "remaining": "旧G可达与每环存在初态安全断口的函数图证书等价，以及每源两件eligible充分的计数，仍由旧对象的BFS与不可达集证明承担。"
+  },
+  "endpoint_pins": {
+    "UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1": "8ed1d2751ce657b09f7312679b26ef6306e2f0604f0024894fb935a7ceb1a897",
+    "UM-PERMANENT-BUFFER-UNLOCK-PATH-v1": "6715357e78454b26ba33fc5cd8dc293c24db658ed771bc94fec20a358975627b"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/保留坏环与实际最大件初态--定理.md": "1b468234c0c1cc0209794a9582de86eb019cd5582a1cc295e9f18486f2d6db6c",
+    "archives/unrelated-machines/state/定理/永久缓冲激活与安全解锁--定理.md": "306a38a217c29b88ca8d79e38f256376606609ab20ad241f345fb2ceb9ab1c23"
+  },
+  "review_digest": "adf1b6e1cd0112bf2dbf1a5a1b1132add111aaae9cec455932768d46f59fc36c"
+}

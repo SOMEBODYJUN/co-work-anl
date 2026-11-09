@@ -1,0 +1,43 @@
+{
+  "edge_id": "cag-227-harmonic-row-profile-rules-out-fixed-chain-nonnegative-weights",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/optimal-prefix-customer-variation-harmonic-obstruction"
+  ],
+  "target_ids": [
+    "M-4792b826411b402fb3a164d1d76e5526"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m≥4，只允许一条固定最优排列链的真实IC及客户非负性，乘子可依链选择。",
+  "roles": {
+    "customer-attraction/optimal-prefix-customer-variation-harmonic-obstruction": "固定全大题SPE族及所有最优排列下的真实前缀行。",
+    "M-4792b826411b402fb3a164d1d76e5526": "把同一固定链的单步IC按非负乘子重赋，检验能否逐客户证明2W−OPT。"
+  },
+  "explanation": "强制B的行全零。每个单例的客户只在该单例被强制的那一行贡献−1，要求该列2y⁰−yᵐ−Σλd≥0迫使λ_k≥1。每个B客户在B负载为k的对应行贡献1/k，其列迫使Σ_{k=2}^m λ_k/k≤1。下界H_m−1>1严格矛盾；任意最优排列都出现完全相同的负载序列。",
+  "scope": "固定链逐列证书；任意挑选链外IC、带符号信用及多枝共同付款各有自己的域。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/最优前缀逐客户变分的调和障碍--障碍.md",
+      "sha256": "885f4f57a7eae478626a891ec2c4e8e605e8a9094b20dc289574b0cdecfe06b0",
+      "section": "全大主题策略与全部最优排列的精确值"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/最优前缀逐客户变分的调和障碍--障碍.md",
+      "sha256": "885f4f57a7eae478626a891ec2c4e8e605e8a9094b20dc289574b0cdecfe06b0",
+      "section": "固定同一条链重赋非负IC乘子仍有障碍"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "已实读目标、来源及所引证据，逐项核对本边的量词、分支身份和承重式。",
+  "whole_result": "从调和族每条最优链的真实客户行得到完整固定链非负重赋不可能性。",
+  "endpoint_pins": {
+    "M-4792b826411b402fb3a164d1d76e5526": "bee945433d7f5910f26f6513a3897fd2e7a9f1b8ea6a5c4434f09b5aa315397d",
+    "customer-attraction/optimal-prefix-customer-variation-harmonic-obstruction": "34bcf310b23e3688154bc4bd56356ab76bc89366a47dfad9a5ae28774a39838a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/最优前缀逐客户变分的调和障碍--障碍.md": "885f4f57a7eae478626a891ec2c4e8e605e8a9094b20dc289574b0cdecfe06b0"
+  },
+  "review_digest": "6d757635d667e850bda4dc3a167d03f2bb55d15ed3ea41306dfac9d02406f6dc"
+}

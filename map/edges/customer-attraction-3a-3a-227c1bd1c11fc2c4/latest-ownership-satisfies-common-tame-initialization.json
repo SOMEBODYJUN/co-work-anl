@@ -1,0 +1,52 @@
+{
+  "edge_id": "cag-227-latest-ownership-satisfies-common-tame-initialization",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/variable-ownership-payment-and-tame-coordinate-initialization"
+  ],
+  "target_ids": [
+    "customer-attraction/latest-ownership-nested-missing-support-and-same-query-refund"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一完整SPE、同一实际叶及同一有序比较元组。I=C∩O保p=1/c_T(x)，R=O∖C取最后包含x的槽q(x)，p=1_{i=q(x)}。",
+  "roles": {
+    "customer-attraction/variable-ownership-payment-and-tame-coordinate-initialization": "给p_ix k_ix≤1时用同一真实query完成INIT、H与I-PAY的构造。",
+    "customer-attraction/latest-ownership-nested-missing-support-and-same-query-refund": "用LAST及I的canonical归属选择初始化，再另以strict future推出嵌套支持和同动作退款。"
+  },
+  "explanation": "对x∈I，k_ix≤c_T(x)使p_ix k_ix≤1；对x∈R，实际负载0使δ_ix=k_ix=1，LAST的0/1分配也满足TAME。两部分属于同一p，按源取a_ix=min(r_ix,Qhat_ix)、比例拆边，当前付款逐客≤对应真实query份额；求和只用一次完整IC同时支付I/R的source-current，H与I-PAY随p更新。",
+  "scope": "只付初始化，不把TAME当全部ROLE可行。R的同动作压缩须另用旧uniform-reset，合流权重须保真实来源。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/可变归属付款与逐客户初始化条件--候选.md",
+      "sha256": "418b99c6c2b0c94908c59b9ef7c1e7aef567ca1e879126fa8a8d8ac68c487b7b",
+      "section": "逐客户条件保证给定归属可初始化"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最后归属的嵌套遗漏支持与同查询退款--引理.md",
+      "sha256": "2076386e393c4d20650a4c21b42cc748ad91b67d7e034eb4dbb089dfb89562b4",
+      "section": "固定模型、归属及可初始化性"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最后归属的嵌套遗漏支持与同查询退款--引理.md",
+      "sha256": "2076386e393c4d20650a4c21b42cc748ad91b67d7e034eb4dbb089dfb89562b4",
+      "section": "uniform同action合并及μ的来源证明"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "已实读目标、来源及所引证据，逐项核对本边的量词、分支身份和承重式。",
+  "contribution": {
+    "result": "LAST和I的canonical可通过同一TAME构造同时初始化，原完整query IC无需按客户组分别重用。",
+    "remaining": "嵌套零支持还需唯一LAST origin与strict future，μ的合流上界需守恒反链，同query精确退款再用完整IC；不同action的共同ROLE尚未支付。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/latest-ownership-nested-missing-support-and-same-query-refund": "020bf3bc9db958513b6a383ea2056d86ed7b671701b544f9ac0307936052b450",
+    "customer-attraction/variable-ownership-payment-and-tame-coordinate-initialization": "b4a19f3fb1a4ed168b1271850513233b45aadde47cf3588374dfa8b8db7c8b9d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/可变归属付款与逐客户初始化条件--候选.md": "418b99c6c2b0c94908c59b9ef7c1e7aef567ca1e879126fa8a8d8ac68c487b7b",
+    "archives/customer-attraction/state/引理/最后归属的嵌套遗漏支持与同查询退款--引理.md": "2076386e393c4d20650a4c21b42cc748ad91b67d7e034eb4dbb089dfb89562b4"
+  },
+  "review_digest": "0126afa10d162b93a7d5990a8feec8a66bd276062c0cdcf39024906e950f4cb4"
+}

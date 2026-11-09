@@ -1,0 +1,52 @@
+{
+  "edge_id": "cag-227-shared-omissions-also-exclude-universal-uv-chain",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/fully-shared-actual-omission-constant-SPE-near-two-family"
+  ],
+  "target_ids": [
+    "CA-VARIATION-BRIDGE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m≥4、a≥1，使用双锚构造的原完整恒A策略；固定一个非锚银行客户x。",
+  "roles": {
+    "customer-attraction/fully-shared-actual-omission-constant-SPE-near-two-family": "供应双锚、实际全部遗漏共享、无actual独有浪费的完整恒A实例。",
+    "CA-VARIATION-BRIDGE-v1": "固定真实最优前缀链的净变分及逐客户UV。"
+  },
+  "explanation": "非锚银行客户只属于A，因此每个最优m槽元组必须含A；每个外块至少占一槽，恰是一份A与每块一个B_j或C_j。对任意标签选择及顺序，强制A行两真实叶相同，强制外块各使A的终局出现次数少一。对x，强制前的规定当前份额依次1/m,…,1/2，强制外块后的当前份额均0，故d_x=H_m−1。由于两端覆盖x，V_x=H_m−2>0。这一值对全部最优元组和排列相同，任何整链混合仍保严格正超额。",
+  "scope": "对实际遗漏全共享、极大主题互异且零浪费的完整SPE也成立。最优标签可在双锚间变化。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/构造/实际遗漏全共享的常值均衡近二族--构造.md",
+      "sha256": "56f3958367d991ba303da1aa63923974b76029b3cdf6757cbe6a8f2c9666eb86",
+      "section": "全部遗漏都共享的合法整数族"
+    },
+    {
+      "path": "archives/customer-attraction/state/构造/实际遗漏全共享的常值均衡近二族--构造.md",
+      "sha256": "56f3958367d991ba303da1aa63923974b76029b3cdf6757cbe6a8f2c9666eb86",
+      "section": "常值策略的全部历史判据"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优前缀链的净变分与静态报复松弛--引理.md",
+      "sha256": "876c01dc59c2ae70e86701028b4b4840cea8f86638469fcb1cad8f238518fb1b",
+      "section": "单位净变分UV及half的条件推论"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "已实读目标、来源及所引证据，逐项核对本边的量词、分支身份和承重式。",
+  "contribution": {
+    "result": "真实双锚族独立排除即便实际遗漏全部共享且无浪费时仍普遍存在UV最优链的加强。",
+    "remaining": "应用条件桥仍需实际满足UV；该族内W=ma+1，OPT=(2m−1)a+1，half有正余量。"
+  },
+  "endpoint_pins": {
+    "CA-VARIATION-BRIDGE-v1": "a3f112fa78227a4ecb209a48ed0d328abbb32337aa8b46929919f8991f3ca1a6",
+    "customer-attraction/fully-shared-actual-omission-constant-SPE-near-two-family": "10bd50fedad8eb5fa1cb2e3a4598eeb52ed87cda2618a7b93b44eadc6137b36b"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/构造/实际遗漏全共享的常值均衡近二族--构造.md": "56f3958367d991ba303da1aa63923974b76029b3cdf6757cbe6a8f2c9666eb86",
+    "archives/customer-attraction/state/引理/最优前缀链的净变分与静态报复松弛--引理.md": "876c01dc59c2ae70e86701028b4b4840cea8f86638469fcb1cad8f238518fb1b"
+  },
+  "review_digest": "625b72b32f3effa5b81855dbe9bf1c89f678ece6cf6d435089804518d421c70d"
+}

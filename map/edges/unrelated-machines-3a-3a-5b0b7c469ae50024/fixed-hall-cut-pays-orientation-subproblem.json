@@ -1,0 +1,56 @@
+{
+  "edge_id": "um-5b0b7c-fixed-hall-cut-pays-orientation-subproblem",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-TWO-STATE-QUOTA-HALL-CUT-v1"
+  ],
+  "target_ids": [
+    "UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "两rail模型同一变量只选一个标签；全局资源至多一个0标签和一个1标签。固定S及α，令t_{x,α(x)}=ceil(δK_{x,α(x)})，并已检查|S|≥ceil(δq_r)。",
+  "roles": {
+    "UM-TWO-STATE-QUOTA-HALL-CUT-v1": "为已固定标签与整数配额求一次整数全局不交支付，或返回显式正Hall割。",
+    "UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1": "其根树方向接口中，给定S,α后的资源支付与拒绝证书。"
+  },
+  "explanation": "设每个已选标签为左节点，源容量t，标签到其真实资格资源容量1+Σ_L t，资源到汇容量1。饱和全部源弧给不交phi；反向任何phi给满流。无满流时最小割容量小于Σ_L t，因而不会割掉高容量资格弧。取残余可达标签集合U，其所有邻资源仍在源侧，得到Δ(U)=Σ_U t−p(U)−e(U)−∂(U)>0。边界项含连接未选标签的资源，不能误删。随后把S、所选rails及支付的实际资源逐条接为根树，根、变量和标签分数均≥δ。缺口仅反驳此固定S,α。",
+  "scope": "固定两状态方向、部分或整束配额的精确多项式子问题。所有变量全束时另可通过禁止共享资源的二元子句求方向，部分支付须保高阶割。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/两状态配额Hall切与方向义务双源审查--审查.md",
+      "sha256": "3191cef6678c1888d1bebc5c4a3f93b4021f3831f7b8e7d95434c9415a2c6e95",
+      "section": "1. 精确对象和等价条件"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/两状态配额Hall切与方向义务双源审查--审查.md",
+      "sha256": "3191cef6678c1888d1bebc5c4a3f93b4021f3831f7b8e7d95434c9415a2c6e95",
+      "section": "2. 完整支付与部分支付的分界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/两状态配额Hall切与方向义务双源审查--审查.md",
+      "sha256": "3191cef6678c1888d1bebc5c4a3f93b4021f3831f7b8e7d95434c9415a2c6e95",
+      "section": "4. 残余模型和 orientation"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/两状态配额Hall切与方向义务双源审查--审查.md",
+      "sha256": "3191cef6678c1888d1bebc5c4a3f93b4021f3831f7b8e7d95434c9415a2c6e95",
+      "section": "5. 根树存在性当且仅当 orientation"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按当前登记实读对象及所列证据，复核共同模型、量词、整数见证、版本和未闭合范围。",
+  "contribution": {
+    "result": "用固定Hall割精确支付给定S、α的所有t配额，成功恢复给定方向的真实δ根树，失败给只否定该方向的正缺口。",
+    "remaining": "全局选S与方向α、任意根树反向读出方向的完整等价仍须保方向对象的树结构证明，不能用一次割推出所有方向失败或原OPT>T。"
+  },
+  "endpoint_pins": {
+    "UM-TWO-STATE-QUOTA-HALL-CUT-v1": "cabf8f30a9c7d5c2cae9655e2c5324133f81559ba2bcba2fcb78cfe0b7a240bc",
+    "UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1": "879ac79d8df789338c1de4f06570b371821d9a606c4016d84bf95a4ad85e0fe9"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/两状态配额Hall切与方向义务双源审查--审查.md": "3191cef6678c1888d1bebc5c4a3f93b4021f3831f7b8e7d95434c9415a2c6e95"
+  },
+  "review_digest": "8f36d3da3c08dc2e04f8843cb22eece0a916d7eca1b4446e86873d132fcd2846"
+}

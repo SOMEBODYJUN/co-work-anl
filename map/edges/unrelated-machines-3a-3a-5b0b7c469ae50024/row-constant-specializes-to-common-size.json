@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-5b0b7c-row-constant-specializes-to-common-size",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-COMMON-MULTIPLIER-UNKNOWN-B-EXACT-v1"
+  ],
+  "target_ids": [
+    "UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "真实冻结核心不动、非空有限机器，显式逐件资格；同一个含任务连通组件内各资格端同为q_C>0。零量子另按零负载分支处理。",
+  "roles": {
+    "UM-COMMON-MULTIPLIER-UNKNOWN-B-EXACT-v1": "允许每台参与机时间s_i独立，先全机冻结峰guard再按整件容量满流。",
+    "UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1": "每资格组件公共量子q_C的固定和未知峰值分支。"
+  },
+  "explanation": "在每组件取s_i=q_C，候选f_i+s_it即共同尺寸候选，容量min(n_C,floor((B−f_i)/s_i))即共同尺寸槽数。整数满流逐件保资格；各组件最优峰及所有孤立f_i一并取最大。空残余返回全机冻结峰，零端任务先放真实零端即可。真实矩阵[[1,1],[2,2]]的每个原任务均有两机资格，属于单一组件且行常数；同组件却无公共q，故推广严格。",
+  "scope": "限定真实固定核心和实际残余资格。行常数结构失败只拒接口；不得当作原矩阵阈值不可行。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/算法/机器固定倍率残余任务的精确阈值--算法.md",
+      "sha256": "9db65509f77762981aafaf4ce1200be9b968cb7c83e68df7ed8363836b343039"
+    },
+    {
+      "path": "archives/unrelated-machines/state/算法/冻结核心共同尺寸的未知阈值搜索--算法.md",
+      "sha256": "a04cd18e4b39b25f970a738741ca44871948439cb4da31574f27c65d5198aaa0",
+      "section": "组件推广与冻结峰修复"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/共同容量修复的判定与实现边界--审查.md",
+      "sha256": "38dad3d8600a40fcd8f898d2d4b0a3cbb5b5a1fc3ff7f8ff8ac2f4ba266ba460"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按当前登记实读对象及所列证据，复核共同模型、量词、整数见证、版本和未闭合范围。",
+  "whole_result": "机器行常数精确判定及未知峰搜索在s_i=q_C时给共同尺寸对象的完整结论，保全机guard、组件合并和实际任务恢复。",
+  "endpoint_pins": {
+    "UM-COMMON-MULTIPLIER-UNKNOWN-B-EXACT-v1": "af8f97e7b24e74f7ba5954756bdce07b2edddbf1abe7db3d95b8b6936ebb8203",
+    "UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1": "c6a4faf21ec8a27785151e3d79df3fa6bf518106be33f71db6a7139c66385236"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/算法/机器固定倍率残余任务的精确阈值--算法.md": "9db65509f77762981aafaf4ce1200be9b968cb7c83e68df7ed8363836b343039",
+    "archives/unrelated-machines/state/算法/冻结核心共同尺寸的未知阈值搜索--算法.md": "a04cd18e4b39b25f970a738741ca44871948439cb4da31574f27c65d5198aaa0",
+    "archives/unrelated-machines/state/审查/共同容量修复的判定与实现边界--审查.md": "38dad3d8600a40fcd8f898d2d4b0a3cbb5b5a1fc3ff7f8ff8ac2f4ba266ba460"
+  },
+  "review_digest": "a137132097a7377a80f19bbd7e8fa92b7e552668c739a035f0054787fd63fe45"
+}

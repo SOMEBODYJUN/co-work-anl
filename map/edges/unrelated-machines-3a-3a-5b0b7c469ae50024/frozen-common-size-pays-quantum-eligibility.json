@@ -1,0 +1,49 @@
+{
+  "edge_id": "um-5b0b7c-frozen-common-size-pays-quantum-eligibility",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1"
+  ],
+  "target_ids": [
+    "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "每件宏仅在全部home上可用且耗同一p，宏数=home数，T/2<p≤T；私有j耗同一u>0，资格恰为其home及E_j⊆sinks。",
+  "roles": {
+    "UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1": "给固定核心、逐件资格和公共正量子的整数件数满流，当且仅当真实阈值可行。",
+    "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1": "由原大宏全占用的无损冻结，恢复完整原调度并给等价恰需出口流。"
+  },
+  "explanation": "原阈值T调度中每台home至多一宏，数量相等迫每home恰一宏。宏完全同质及全home资格保证任意固定双射无损。把f_h设p、f_z设0，剩余任务原资格逐件带入来源流，机器容量分别floor((T−p)/u)、floor(T/u)，全机冻结guard保孤立home。保留整数流并加回实际宏得到全任务调度；反向任意原T调度删宏给同一残余见证。每home须送至少k_h=max(0,n_h−floor((T−p)/u))件，若某可行流多送，删除该home多余的完整送出路径并将这些任务留home，正好到k_h，sink不增，home仍守容量。反向恰需出口流留其余件在原home即满任务解。两种网络都逐件保原E_j，不能换共同交集。",
+  "scope": "固定阈值原问题的精确结构分支；宏冻结由本边支付，源冻结算法不选择一般核心。原枚举脚本与新增两种网络的有限核对各归原证据。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/算法/冻结核心共同尺寸的未知阈值搜索--算法.md",
+      "sha256": "a04cd18e4b39b25f970a738741ca44871948439cb4da31574f27c65d5198aaa0",
+      "section": "判定、候选与证明"
+    },
+    {
+      "path": "archives/unrelated-machines/state/算法/全占用同宏下任意资格量子的精确调度--算法.md",
+      "sha256": "02a61fd5687b4039fedcf7a1353d3a314106012832c79e039fbb4781ebae712f",
+      "section": "强制占位和两种等价整数流"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/任意资格量子流的两种实现与原枚举边界--计算.md",
+      "sha256": "b559758d65344c0879dbed924aeaaba18d2a5a35bfeb0b134617c8db3ffb9688"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按当前登记实读对象及所列证据，复核共同模型、量词、整数见证、版本和未闭合范围。",
+  "whole_result": "给所述原实例和T，确定性位多项式判定；FAIL当且仅当无真实T调度，成功恢复全部原任务。全任务满流与每home恰需外送流准确等价。",
+  "endpoint_pins": {
+    "UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1": "c6a4faf21ec8a27785151e3d79df3fa6bf518106be33f71db6a7139c66385236",
+    "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1": "7b24dcdbe3ea28d00d07a8027dc9954d3df12b91eae48ce1364e07bcd48a2d0a"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/算法/冻结核心共同尺寸的未知阈值搜索--算法.md": "a04cd18e4b39b25f970a738741ca44871948439cb4da31574f27c65d5198aaa0",
+    "archives/unrelated-machines/state/算法/全占用同宏下任意资格量子的精确调度--算法.md": "02a61fd5687b4039fedcf7a1353d3a314106012832c79e039fbb4781ebae712f",
+    "archives/unrelated-machines/state/计算/任意资格量子流的两种实现与原枚举边界--计算.md": "b559758d65344c0879dbed924aeaaba18d2a5a35bfeb0b134617c8db3ffb9688"
+  },
+  "review_digest": "8960021e8d4c6690d686768fcfb3ae02a495b3416e9cabe76e40f90c8d34de31"
+}

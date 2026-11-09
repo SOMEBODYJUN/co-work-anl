@@ -1,0 +1,47 @@
+{
+  "edge_id": "cag-227-last-slot-counting-supplies-real-branch-lower-bound",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/last-slot-value-and-catalog-counting"
+  ],
+  "target_ids": [
+    "M-351f7152cf334c779e64cc9381d8b343"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m≥2取全局总人数；固定任意合法有序历史与其完整SPE，强制最大主题A后仍沿同一策略走完。",
+  "roles": {
+    "customer-attraction/last-slot-value-and-catalog-counting": "给任一合法m−1槽背景的末位真实BR下界θ_m≥OPT_m/(2m−1)。",
+    "M-351f7152cf334c779e64cc9381d8b343": "在任意有序历史当前真改最大题的完整分支中比较同一叶的两位玩家。"
+  },
+  "explanation": "该真实分支末位过去恰是m−1个合法共同主题，其规定动作确为最佳回复，故v≥θ_m≥L。对末位当前直接t≥L；对更早当前，应把该v同一终局里的偏离者份额z联用，而不是使用另一个背景或冻结尾。",
+  "scope": "只供应真实末位下界；背景不要求走在原actual上，后继理性要求真实SPE。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md",
+      "sha256": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d",
+      "section": "3. 空背景的两个数值下界"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/独立重构与合法背景工作区的证据版本--资源.md",
+      "sha256": "b252bee9b798249381765bc00f71c3e99479eabb0492502877ff58a45cea92fd",
+      "section": "任意历史最大主题偏离的近饱和必要式"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "已实读目标、来源及所引证据，逐项核对本边的量词、分支身份和承重式。",
+  "contribution": {
+    "result": "末位目录计数供应最大主题必要式中强制A分支的v≥L与当前已是末位时的全部结论。",
+    "remaining": "较早当前位置仍须用同一叶交换v≤(m−1)^2z−(m−2)M及真实当前IC z≤t，才能得该必要式。"
+  },
+  "endpoint_pins": {
+    "M-351f7152cf334c779e64cc9381d8b343": "c32013694fc9ad8285444bb3ed85b91e56d402b2d397fc13c7411622f4954f0e",
+    "customer-attraction/last-slot-value-and-catalog-counting": "5b963d828efa40aaa81e50a9a4937656777103dfa5ab0414369926b475f1585e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d",
+    "archives/customer-attraction/state/资源/独立重构与合法背景工作区的证据版本--资源.md": "b252bee9b798249381765bc00f71c3e99479eabb0492502877ff58a45cea92fd"
+  },
+  "review_digest": "8adcd8d55d2975ce721289b7572b1ef805192deeb92116121a3b2a936e9aafa1"
+}

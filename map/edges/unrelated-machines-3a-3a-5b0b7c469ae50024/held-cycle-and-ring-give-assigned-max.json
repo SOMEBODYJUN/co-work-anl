@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-5b0b7c-held-cycle-and-ring-give-assigned-max",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1",
+    "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1"
+  ],
+  "target_ids": [
+    "UM-ASSIGNED-MAX-TRANSIENT-PATH-SHARP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限显式普通UM、给定完整实际σ、τ，源使用端≤T，S_i≤C，F_i≤T，0≤T≤C≤2T，U=max(2T,C+T/2)。锐性取正有理T和指定不同τ。槽应用输入为T剪枝分数覆盖及标准按处理时间非增、按单位分数质量切槽的任意全覆盖匹配。",
+  "roles": {
+    "UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1": "给每个正阈值源有一件可激活任务时的完整原任务直接路径。",
+    "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1": "取k=1的两支环实例，为相同局部promise提供逐参数下界。",
+    "UM-ASSIGNED-MAX-TRANSIENT-PATH-SHARP-v1": "实际已分配最大件给可激活性，排序槽给该初态条件，锐性另在局部promise类内。"
+  },
+  "explanation": "h_i>0给S_i>T+f_i及h_i≤S_i−T−f_i。S_i≤T+M_i使实际最大件M_i≥S_i−T>f_i，故该件不可能是不动任务，而且a_j=M_i≥h_i。调用保留坏环路径得全程U。对每个槽r≥2所匹配的原任务，前一完整槽r−1的质量1且各支撑时间不小于该任务，故可按该前槽分数负载支付，且每个前槽只用一次。槽1若匹配，按非增顺序其任务是该机实际分配最大件；删去它后全部其它件可收费。若槽1未匹配，全部实际任务可收费。两者均得S_i−M_i≤ℓ_i≤T。再取环下界k=1：低支C≤3T/2时M_i=T，高支C>3T/2时M_i=C/2且C≤T+C/2，因此两支都满足局部最大件promise，OPT=T，到指定不同τ的首步必须支付U。T=0所有已用端为零，锐下界只量化T>0。",
+  "scope": "槽输出只继承全程上界。环锐例属于最大件局部promise类，是否为同一实际分数点的标准槽输出不由环证明提供。给定τ是承重输入。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/保留坏环与实际最大件初态--定理.md",
+      "sha256": "1b468234c0c1cc0209794a9582de86eb019cd5582a1cc295e9f18486f2d6db6c",
+      "section": "实际分配最大件promise与槽输出"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/保留坏环与实际最大件初态--定理.md",
+      "sha256": "1b468234c0c1cc0209794a9582de86eb019cd5582a1cc295e9f18486f2d6db6c",
+      "section": "无安全断口时的保留环机制"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/剪枝首步与固定批量环能垒--定理.md",
+      "sha256": "64c68eded8f6ccb18e8902992130f94feaff1b6953a41eceb43d02f8cd6d01cc",
+      "section": "每个固定批量的参数锐环"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按当前登记实读对象及所列证据，复核共同模型、量词、整数见证、版本和未闭合范围。",
+  "whole_result": "保留坏环路径和k=1环族共同推出完整最大件定理：局部promise及每个所述标准槽输出都有确定性位多项式全程直接路径，峰至多U；对每个正有理T及T≤C≤2T，promise类到指定不同τ的最坏minimax峰恰U。",
+  "endpoint_pins": {
+    "UM-ASSIGNED-MAX-TRANSIENT-PATH-SHARP-v1": "fcffa8bbf1390156b7f756d4058895467e9fc221988038ee99b802c850d3fd8b",
+    "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1": "8c88acc631512166ee0042e884ccf9da2291145ead82c06a3fbc5cd66171b251",
+    "UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1": "8ed1d2751ce657b09f7312679b26ef6306e2f0604f0024894fb935a7ceb1a897"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/保留坏环与实际最大件初态--定理.md": "1b468234c0c1cc0209794a9582de86eb019cd5582a1cc295e9f18486f2d6db6c",
+    "archives/unrelated-machines/state/定理/剪枝首步与固定批量环能垒--定理.md": "64c68eded8f6ccb18e8902992130f94feaff1b6953a41eceb43d02f8cd6d01cc"
+  },
+  "review_digest": "d3f35f5595eaeb712c0795e5d250aebf9a61ad371bb99f2d710c59f9d1f5e1de"
+}

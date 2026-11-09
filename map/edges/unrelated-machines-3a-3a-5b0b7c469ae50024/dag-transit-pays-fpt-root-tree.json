@@ -1,0 +1,49 @@
+{
+  "edge_id": "um-5b0b7c-dag-transit-pays-fpt-root-tree",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-DAG-TRANSIT-CONGESTION-v1"
+  ],
+  "target_ids": [
+    "UM-DAG-NONUNIT-PARAMETER-EXACT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "显式非空简单DAG，根无原入边，需求为非负二进制整数，零需求仅原终端，正需求叶也计入评分。",
+  "roles": {
+    "UM-DAG-TRANSIT-CONGESTION-v1": "固定K新证书判定、整数提树、免费补入低点/终端，剩余只枚举高点。",
+    "UM-DAG-NONUNIT-PARAMETER-EXACT-v1": "K=1满比例等价与有限缩放阈值给精确最优根树。"
+  },
+  "explanation": "取K=1，来源提树给b≥1，故即满比例。反向给满比例树，在每个高点选恰k_v条不同树子边，各送1；单位非根按已收0或1决定是否沿一个孩子转送，单位根发1。树单父给全体非根入流≤1，高点供给与其入流独立，即同一证书。补入低点与零终端后仅枚举k_v≥2的高点。任何正树分数位于Γ={1}∪{a/k_v:1≤a≤min(k_v,deg_D^+(v))}，最多|E|+1；对τ把需求改ceil(τk_v)，原值≥τ当且仅当缩放后满比例，且新非单位点数≤h。逐τ调用K1、保存原图树及原k的最佳分数；零根直接单点1，全无正可行阈值则正根单点0。二进制k不展开，只枚举显式度数和高点子集，故2^h poly总位长。",
+  "scope": "参数h针对输入图的非单位需求点，算法返回一棵真实原边树。有限oracle不能替代满比例的反向构造。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/算法/根DAG守恒证书与非单位需求参数精确算法--算法.md",
+      "sha256": "1fe87cb01507074a17633cd3eb8590e64747c4d2d53e47c069bc5f7969e934ca",
+      "section": "4. 免费低点补入与2^h精确算法"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/共同拥塞的支撑搜索与非单位分叉参数--资源.md",
+      "sha256": "cb185760afd237127e3dd7505bb828bf4ad02f5a737c69cd39fccead3a404d2b",
+      "section": "非单位点数h的精确树算法"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/根DAG守恒支撑双实现与不同枚举域--资源.md",
+      "sha256": "3fbd46852b42359df0224cc383f8e9ac46e6c70f8a1622806b4b99f18ada6a64"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按当前登记实读对象及所列证据，复核共同模型、量词、整数见证、版本和未闭合范围。",
+  "whole_result": "共同守恒流K=1及高点支撑搜索配合阈值缩放，确定性2^h poly(B_in)时间精确求原b*并输出达到它的根树。",
+  "endpoint_pins": {
+    "UM-DAG-NONUNIT-PARAMETER-EXACT-v1": "7cb3ffbbf0029d150203e7a890ad71cd92dc815dd174c434b1bb91ac1e302de8",
+    "UM-DAG-TRANSIT-CONGESTION-v1": "5bf4f236585647a4f3f792ca2edadbf0068302b357e27ddbbe6505d1613e2dfd"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/算法/根DAG守恒证书与非单位需求参数精确算法--算法.md": "1fe87cb01507074a17633cd3eb8590e64747c4d2d53e47c069bc5f7969e934ca",
+    "archives/unrelated-machines/state/资源/共同拥塞的支撑搜索与非单位分叉参数--资源.md": "cb185760afd237127e3dd7505bb828bf4ad02f5a737c69cd39fccead3a404d2b",
+    "archives/unrelated-machines/state/资源/根DAG守恒支撑双实现与不同枚举域--资源.md": "3fbd46852b42359df0224cc383f8e9ac46e6c70f8a1622806b4b99f18ada6a64"
+  },
+  "review_digest": "e0902bf0d9929c7c7f295d92d8e079bfc8d4199f903864bd1d0c848766fc31ef"
+}

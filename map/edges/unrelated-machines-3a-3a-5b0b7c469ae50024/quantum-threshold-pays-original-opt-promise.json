@@ -1,0 +1,44 @@
+{
+  "edge_id": "um-5b0b7c-quantum-threshold-pays-original-opt-promise",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1"
+  ],
+  "target_ids": [
+    "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一H非空、p,u>0的全占用同宏及逐件资格模型，不输入T。测试区间为[p,2p)。",
+  "roles": {
+    "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1": "对每个p≤t<2p准确判原阈值，并返回原资格下全任务解。",
+    "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1": "对未输入T的静态模型，在严格小于2p时恢复原整数最优峰。"
+  },
+  "explanation": "每个区间内的可行原调度均能无损改为固定宏双射。其峰一定是某个home的p+ku或sink的ku，k分别≤n_max或N。用该区间内的显式有理候选，排序后二分单调满流谓词；候选首成功处的完整原调度及任意更低可行峰必在候选集的事实给精确OPT。若没有成功，任何真实峰<2p会由冻结转换产生遗漏的候选，矛盾，所以原OPT≥2p。集合至多O(N+1)，不按p/u展开。",
+  "scope": "严格小于2p是恢复原OPT的边界；拒绝仅认证达不到这一区间。H空和u=0按源退化分支，不除零。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/算法/全占用同宏下任意资格量子的精确调度--算法.md",
+      "sha256": "02a61fd5687b4039fedcf7a1353d3a314106012832c79e039fbb4781ebae712f",
+      "section": "未知OPT及其承诺边界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/任意资格量子流的两种实现与原枚举边界--计算.md",
+      "sha256": "b559758d65344c0879dbed924aeaaba18d2a5a35bfeb0b134617c8db3ffb9688",
+      "section": "真正的两个整数流和独立oracle"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按当前登记实读对象及所列证据，复核共同模型、量词、整数见证、版本和未闭合范围。",
+  "whole_result": "给静态全占用同p共同量子实例，若OPT<2p则返回恰达原OPT的完整原任务分配；区间无通过时认证OPT≥2p。",
+  "endpoint_pins": {
+    "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1": "4f66fab54e65d8812036d3482b47b83673664d71eaa80765218863da446ec187",
+    "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1": "7b24dcdbe3ea28d00d07a8027dc9954d3df12b91eae48ce1364e07bcd48a2d0a"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/算法/全占用同宏下任意资格量子的精确调度--算法.md": "02a61fd5687b4039fedcf7a1353d3a314106012832c79e039fbb4781ebae712f",
+    "archives/unrelated-machines/state/计算/任意资格量子流的两种实现与原枚举边界--计算.md": "b559758d65344c0879dbed924aeaaba18d2a5a35bfeb0b134617c8db3ffb9688"
+  },
+  "review_digest": "a4954e0f01330837122849e6b621458d9e146312782048cf2716385b51ec2e3d"
+}
