@@ -1,0 +1,53 @@
+{
+  "edge_id": "um-permanent-threshold-shield-and-cycle-give-pruned-sharp-path",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-PERMANENT-BUFFER-ACTIVATION-v1",
+    "UM-LOCAL-BUNDLE-SHIELD-PATH-v1",
+    "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1"
+  ],
+  "target_ids": [
+    "UM-PRUNED-BUNDLE-PEELING-PATH-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限显式 ordinary UM、同一完整实际初态σ和给定完整实际目标τ；改变任务保持独立身份且只直接迁至τ一次。0≤T≤C≤2T，所有被用源/目标端a_j,b_j≤T，S_i=f_i+A_i≤C、F_i=f_i+Q_i≤T，U=max(2T,C+T/2)。最坏minimax锐性仅对T>0的有理(T,C)及指定不同τ；C=T时不指零步到最优集合。",
+  "roles": {
+    "UM-PERMANENT-BUFFER-ACTIVATION-v1": "给L_i=S_i+Q_i−D_i−B_i及D_i≥h_i的永久安全等价刻画、h_i≤T/2；不是把普适分数λ证书当整数包。",
+    "UM-LOCAL-BUNDLE-SHIELD-PATH-v1": "给逐机U_i、两侧源量均≥h_i的实际包P_i的五阶段共同入流屏蔽全程构造及总位复杂度。",
+    "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1": "取k=1、m=2的逐参数环实例，给任何首次非空单件改变的峰下界U，以及真实OPT=T。",
+    "UM-PRUNED-BUNDLE-PEELING-PATH-v1": "目标整条结论：每份剪枝给定σ/τ的全程直接单次排列上界U，且对每个正有理(T,C)全类最坏minimax恰U。"
+  },
+  "explanation": "令h_i=(S_i+Q_i−U)_+，H={h_i>0}。阈值源给永久安全不变量及h_i≤T/2；U−S_i≥U−C≥T/2，故h_i≤U−S_i。又h_i=A_i+F_i−U≤A_i−T，因F_i≤T、U≥2T。对每个i∈H，若某件a_j≥h_i，按编号取一件；源剪枝保证a(P_i)≤T。否则按编号累加正源任务到首次达到h_i；A_i≥T+h_i保证存在，末件<h_i使h_i≤a(P_i)<2h_i≤T。两种情形均有A_i−a(P_i)≥A_i−T≥h_i，精确满足屏蔽源的三个合同。令全部U_i=U，应用五阶段：0先迁全部所选H外出口；1仅按当前W中所选共同内部入流β_v(W)<h_v剥离；保留核心Z的全部β_i一次预留，给S_i+Q_i−β_i≤U；2逆删除序完成非核心包；3迁非所选补集，使核心各自源移出至少h_i；4释放P[Z]。每件恰迁一次、每个前缀各机同时守U，不重复花各来源的共同容量，不要求单件eligible或静态原预算整数cover。T=0时全部被用量与f均0，任意排列；H空、空改变集、零端、平行任务均由同一构造覆盖。阈值/累计、至多m次剥离及至多n步输出均只用输入有理数的多项式次精确运算，满足总位多项式。对任意正有理T≤C≤2T，第三源取k=1。若C≤3T/2，两机各固定padding C−T及一件源T/对侧2T−C的任务；若C>3T/2，两机各两件源C/2/对侧T/2的任务。它们均初峰C、目标T、真实OPT=T，且任何首个非空单件变化峰至少U。因此任意到指定不同τ的路径（即使允许回搬或绕路）峰≥U；前面构造给直接单次路径≤U，精确闭合整条最坏minimax锐性。三个源分担不变量、全程屏蔽及必要下界，不能拆作三个各自完整支持。",
+  "scope": "给定目标且源端剪枝的全部实际全调度路径与逐参数最坏锐性。既不寻找未知τ，也不提供一般近二近似、sound FAIL、实际ST输出初始化或无界同步批量能垒。",
+  "whole_result": "ALL(永久激活阈值、逐机共同入流屏蔽、固定批量环锐界) ⇒ 对每份满足剪枝合同的完整σ与给定完整τ，确定性总位多项式输出每件直接迁τ一次的排列，全程峰≤max(2T,C+T/2)；且对每个正有理T≤C≤2T，该域到指定不同τ的最坏minimax峰恰该U。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/永久缓冲激活与安全解锁--定理.md",
+      "sha256": "306a38a217c29b88ca8d79e38f256376606609ab20ad241f345fb2ceb9ab1c23"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/任务包共同入流剥离--定理.md",
+      "sha256": "5e52df538e2eb9187c6a302f731057b713b6fa6b9790ff59ad7328613e72c24d"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/剪枝首步与固定批量环能垒--定理.md",
+      "sha256": "64c68eded8f6ccb18e8902992130f94feaff1b6953a41eceb43d02f8cd6d01cc"
+    }
+  ],
+  "reviewed_by": "Boss5/474257b8/um-families-b",
+  "review_note": "完整实读三份自足数学正文并逐式复核h界、源剪枝选包、五阶段共同容量及阶段0、k=1两支下界、T=0与C=T指定目标边界。有限审计只作版本/范围比较，没有重跑或用计数代替全域证明。",
+  "endpoint_pins": {
+    "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1": "8c88acc631512166ee0042e884ccf9da2291145ead82c06a3fbc5cd66171b251",
+    "UM-LOCAL-BUNDLE-SHIELD-PATH-v1": "cfbe7ae462c8ea3eda7963aabf0b0a6da1a479a7c7cdf776b47072118892ea83",
+    "UM-PERMANENT-BUFFER-ACTIVATION-v1": "94cf06761cfc0272321297101c8a558bf6b213de93daaa9aab756846c72a206c",
+    "UM-PRUNED-BUNDLE-PEELING-PATH-v1": "81e425ca24a1284b857d9a672ab3716d58d2fa1b9311bae0984036ba1e2017b7"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/永久缓冲激活与安全解锁--定理.md": "306a38a217c29b88ca8d79e38f256376606609ab20ad241f345fb2ceb9ab1c23",
+    "archives/unrelated-machines/state/定理/任务包共同入流剥离--定理.md": "5e52df538e2eb9187c6a302f731057b713b6fa6b9790ff59ad7328613e72c24d",
+    "archives/unrelated-machines/state/定理/剪枝首步与固定批量环能垒--定理.md": "64c68eded8f6ccb18e8902992130f94feaff1b6953a41eceb43d02f8cd6d01cc"
+  },
+  "review_digest": "2c48bc4543021b59fdf9d4a183b1d5f6ca2a7b24cf4b328c7b68fb8d4d373358"
+}

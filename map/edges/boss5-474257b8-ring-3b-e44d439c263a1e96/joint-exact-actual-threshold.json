@@ -1,0 +1,80 @@
+{
+  "edge_id": "b5-odd-ring-joint-exact-actual-threshold",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1",
+    "WC-R3-ODD-RING-ENVELOPE-v1",
+    "WC-R3-ODD-RING-LOWER-v1"
+  ],
+  "target_ids": [
+    "WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "整数d≥2、奇数m≥3、n_i≥1；hub H_i权u_i>0，群i的n_i个独立行动light同权v_i>0。H_i动作h用A_i^h及上一群B_(i−1),j^h，light ij动作l用A_i^l及B_ij^(1−l)。同组A双副本同F_i、所有B副本同G_i；F_i,G_i为次数≤d的非负系数多项式，允许零或常数。个人费用为资源费用之和，不乘权；真实单方偏离重算含自身新负载。α-PNE采用弱式C_old≤αC_new，所有零费用情况直接用乘法不等式。",
+  "roles": {
+    "WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1": "排除α≥T_d时非零、非负混合形状在缩减群组上同时通过全部strict两测试；只在由实际候选失败重新导出完整测试后调用。",
+    "WC-R3-ODD-RING-ENVELOPE-v1": "提供同一f_d/T_d的标量域、次数单调界和H_d上界及渐近；用来验证反向标量不等式及d/ln d比较。",
+    "WC-R3-ODD-RING-LOWER-v1": "对每个1≤α<T_d另给同一拓扑内正有理纯d次有限全态严格反例，支付实际最坏阈值的下界方向。",
+    "WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2": "稳定计数和单双中心代表把证书边界接到真实均衡存在；联合下界得到整个拓扑的精确最坏阈值、有限候选池和显式标量上界。"
+  },
+  "whole_result": "对每个上述合法同权cohort同费副本奇环，存在T_d-PNE；对任意α≥T_d可从至多2m个light稳定的单缺陷计数候选中选到α-PNE，其中T_d=sup_(R>1)[R(1+R)^d+1]/[(1+R)^d+R^(d+1)]。该拓扑有限实例的最优PNE倍率之上确界恰T_d，且T_d<d/ln d；阈值是弱式存在端点，每个α<T_d可另选有限正有理纯d次反例，不声称单一有限实例达到上确界。",
+  "explanation": "先固定α≥T_d>1。以下实际候选构造是必要的附加推导；原游戏正测试不可行本身不推出存在均衡。\n\n1. 实际稳定计数。令k_i为与本hub同位的light数，z_i=h_i xor h_(i+1)，q_i=G_i(v_i)，V_i=G_i(v_i+u_(i+1))，D_i=V_i−q_i≥0。对有同位light的计数k，其当前/偏离成本为F_i(u_i+kv_i)+q_i+z_iD_i与F_i((n_i−k+1)v_i)+q_i+(1−z_i)D_i；反位light用相邻k+1的反向两式。前一稳定条件随k向下闭，后一条件向上闭。取最小满足后一条件的k，若k>0，k−1处的严格失败立即保证此k的前一条件；故I_i(z)是非空整数区间。令I_i(0)=[a_i,b_i]，c_i=min I_i(1)，可由单调性核c_i≤a_i及c_i≤floor(n_i/2)。若a_i>n_i/2，还由a_i−1的真实反位严格改善得c_i≤n_i−a_i。\n\n2. 至多2m个真实候选。每次仅令一个z_i=0，其余z_j=1；m奇保证z的异或和为0，存在hub配置。两组互补hub标签费用相同，固定h_0=0取一组即可。非缺陷群取k_j=c_j；缺陷群在I_i(0)中，若有不大于floor(n_i/2)的计数则取min(b_i,floor(n_i/2))，若有不小于ceil(n_i/2)的计数则取max(a_i,ceil(n_i/2))。每群固定选择前k_i名light同位，得到至多2m个合法纯态。全部light均α稳定。真实hub费用为F_i(u_i+k_iv_i)+n_(i−1)W_(i−1)+r_(i−1)Δ_(i−1)，偏离时k_i换为n_i−k_i、r_(i−1)换为n_(i−1)−r_(i−1)，其中W=G(u_next)、Δ=G(u_next+v)−W≥0，r=z k+(1−z)(n−k)。由c≤half，仅缺陷两侧hub可能不稳；缺陷k≤half时仅下一hub可能不稳，k≥half时仅本hub可能不稳。偶数群若中心在区间，二者也稳定。\n\n3. 反设全部候选不稳。稳定区间若全在half下方标L，代表为真正右端b_i；若全在half上方标R，代表为真正左端a_i；奇数群跨中心时可以同时取L/R两个中央标签。若相邻i可取L、i+1可取R，分别以i和i+1为缺陷的两个候选S,T只有同一hub H_(i+1)可能不稳。用c_i≤b_i和c_(i+1)≤n_(i+1)−a_(i+1)，及F,G单调性，逐项得到C_H(T)≤C_H(Sflip)、C_H(S)≤C_H(Tflip)。两次严格α改善将推出C_H(S)>αC_H(T)且C_H(T)>αC_H(S)，与α≥1和非负成本矛盾。任何非恒定循环L/R串都有L→R；若某群可双标，翻转该群即产生非恒定串。因此只剩全L或全R且均为真正端点，不能对奇中央代表冒用端点strict边界。\n\n4. 全L缩减。设n'_i=n_i−2b_i≥1、F'_i(x)=F_i(x+b_iv_i)。非负平移保持次数≤d和非负系数。b_i+1处light严格改善给F'_i(u_i+v_i)+G_i(v_i)>α[F'_i(n'_iv_i)+G_i(v_i+u_(i+1))]。缺陷i的下一hub严格改善，结合c_(i+1)≤b_(i+1)，并删除两边共有的非负成对side费用，得到F'_(i+1)(u_(i+1))+n'_iG_i(u_(i+1)+v_i)>α[F'_(i+1)(u_(i+1)+n'_(i+1)v_(i+1))+n'_iG_i(u_(i+1))]。这恰是新合法参数、幅度全为1的完整strict两测试；F'为零或G为零分别使对应严格式不可能，所以非零条件已由真实失败推出。POLYNOMIAL-ENVELOPE前提因此强制α<T_d，矛盾。\n\n5. 全R缩减与反向不等式。设r_i=n_i−a_i、n'_i=2a_i−n_i≥1、F'_i(x)=F_i(x+r_iv_i)。定义NF_i=F'_i(u_i+n'_iv_i)−αF'_i(u_i)，MF_i=αF'_i(u_i+n'_iv_i)−F'_i(v_i)，NG_i=G_i(v_i+u_(i+1))−αG_i(v_i)，MG_i=αG_i(v_i+u_(i+1))−G_i(u_(i+1))。真正左端a_i−1的light严格改善给NG_i>MF_i；缺陷i的本hub严格改善、c_(i−1)≤r_(i−1)及删除公共side项给NF_i>n'_(i−1)MG_(i−1)。非负单调性与α>1先给MF,MG≥0，严格式排除零形状，再给四量严格正，故乘积Π_i NF_i NG_i/(n'_i MF_i MG_i)>1。\n对任意次数≤d非负多项式P，标量包络逐单项式给x[P(x+y)−αP(x)]≤y[αP(x+y)−P(y)]：令R=x/y，单项式条件正是α≥f_k(R)；R≤1时f_k≤1，R>1时f_k≤f_d≤T_d，k=0,1亦有f_k=1。对F'_i代x=u_i,y=n'_iv_i并用F'_i(v_i)≤F'_i(n'_iv_i)，得到NF_i/MF_i≤n'_iv_i/u_i；对G_i代x=v_i,y=u_(i+1)，得到NG_i/MG_i≤u_(i+1)/v_i。乘积至多Π_i u_(i+1)/u_i=1，矛盾。故至少一个有限候选为α-PNE，取α=T_d即得弱式端点存在，完全覆盖零/常数形状。\n\n6. 下界、量词和显式上界。LOWER前提给每个α<T_d一个同样资源关联、同群同权、正有理纯d次有限游戏G_(α,d)，所有态都有严格α改善；这是允许零/混合费用的上界类中的合法子类。于是所有有限实例最佳倍率的上确界≥T_d，结合第1—5步≤T_d即相等。这里允许G随α变化，并未从标量sup取得推断某一有限游戏取得。ENVELOPE的H_d=d/[(d+1)d^(1/(d+1))−d]及T_d≤H_d+1/(2^d+1)给H_d≤d/(1+ln d)；又d/[ln d(1+ln d)]≥1/(d−1)>1/(2^d+1)，故T_d<d/ln d。相同标量前提还给T_d~d/ln d。",
+  "scope": "完整同权cohort、同群side费用、二元同费动作副本和单源/下一hub关联的奇环；不假设全局light强迫，不要求light轻于hub。此处2m池是稳定计数单缺陷池，不是singleton资源缺陷环。改变同权性、形状副本或资源关联后须重证；不对全类加权拥塞给O(d/ln d)上界，也不声称实参数输入的位多项式算法。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+      "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+      "section": "2. The actual game"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+      "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+      "section": "3. Coverage of every state and the coefficient cycle"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+      "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+      "section": "4. The exact necessary envelope"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+      "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+      "section": "5. Rational attaining families below the envelope"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+      "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+      "section": "6. Growth and sharpness of this certificate's leading constant"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+      "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+      "section": "8. Nonnegative mixtures do not enlarge the certificate envelope"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的实际均衡阈值--定理.md",
+      "sha256": "be95074d21cb73e09b587ef9057e33fd7069383f2e185e46e98cc8a97569549d",
+      "section": "标量引理与正测试包络的本页证明"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的实际均衡阈值--定理.md",
+      "sha256": "be95074d21cb73e09b587ef9057e33fd7069383f2e185e46e98cc8a97569549d",
+      "section": "10. 一般群组奇环实际阈值与正测试包络一致"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "本会话完整实读两份现行主正文，独立重排真实计数、双中央标签、L/R缩减和正因子闭环。核查零费用不用商、测试不可行的逻辑方向、有限候选计数及每α另选实例的sharpness量词；未以有限扫描替代一般证明。",
+  "endpoint_pins": {
+    "WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2": "d787206e9b5010b763e977d93acce3c0d7900cac5603f1ad6613ff2c6519d50f",
+    "WC-R3-ODD-RING-ENVELOPE-v1": "23416caba4ecae1dbb476057f10f92f737f0c994988cda10a43ac1540417cb4d",
+    "WC-R3-ODD-RING-LOWER-v1": "c660cebb885ec7e95a98ef0179a2aad45782825c931adb9b0ea6108fcb748d7d",
+    "WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1": "fd14a44994955fb5ff9f4e2318b4b847ee18d1011a527b3e93e6ea77ec225162"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+    "archives/weighted-congestion/state/定理/同权群组奇环的实际均衡阈值--定理.md": "be95074d21cb73e09b587ef9057e33fd7069383f2e185e46e98cc8a97569549d"
+  },
+  "review_digest": "1bcc2917c4a52dc52736c94f46ce90b0a8456c660c1b8b96dd2f5061c632b2ec"
+}
