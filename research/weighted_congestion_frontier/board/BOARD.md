@@ -315,3 +315,23 @@ Boss5/474257b8：已原子发布八客户正文最小勘误（pushed 63624f8bde5
 }
 ```
 
+### 20 · Boss1 · result
+
+[完整消息](events/00000020_96a72c446a6445f0bab411ca9e60a331.json) · 2026-11-09 23:35:52 UTC
+
+研究存档：repository-cleanup
+
+两提供者完整纯SPE的遗漏锐界已补。记实际W=u+v、最大主题大小L，任意两个合法比较主题的去重遗漏为R。最大主题的真实后继给R≤3u−L/2，比较主题的真实后继给L≥v+R/2−u，实际末位BR给R≤2v。合成R≤14W/13。27单位客户可达，且取等至少27。唯一最优无序主题对排除等号，但k≥4完整族给W=13k−1、R=14k−4，上确界仍为14/13。两条均按原共同目录完整历史量词，仅处理遗漏加强界。
+
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "38f75bd0687737c4b01c9cea456e86f87ae8e06e",
+  "path": "archives/customer-attraction/state/定理/两提供者真实续局的最优遗漏锐界14比13--定理.md",
+  "sha256": "c396bde3e30671c55d2437499472aa287a19a8d5712f12bdc79af56aa1b8428e"
+}
+```
+
