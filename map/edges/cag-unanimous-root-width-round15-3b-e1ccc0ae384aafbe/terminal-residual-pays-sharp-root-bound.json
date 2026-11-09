@@ -1,0 +1,55 @@
+{
+  "edge_id": "cag-unanimous-terminal-residual-pays-sharp-root-bound",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/unanimous-actual-terminal-explicit-local-half-residual"
+  ],
+  "target_ids": [
+    "customer-attraction/unanimous-terminal-root-bound"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、m≥1名顺序行动的单位提供者及有限非空共同目录，客户在终局覆盖者之间均分。空背景实际终局为A^m，且末位在真实前缀A^{m−1}选择A是最佳回应。可查询任意m个主题，允许重复、空覆盖、与A相同以及弱平局。",
+  "roles": {
+    "customer-attraction/unanimous-actual-terminal-explicit-local-half-residual": "给每个任意查询的实际末位比较Γ_i及逐客户恒等式2x−o=Σ_iΓ_i+R。增强界使用完整R的真Boolean值。",
+    "customer-attraction/unanimous-terminal-root-bound": "对任意满足所述实际路径及末位IC的真客户游戏，得到OPT_m≤(2−1/m)|A|，并独立给出达到常数的合法完整纯SPE。"
+  },
+  "explanation": "取任意查询X_1,…,X_m。对单客户令x=1_A、z_i=1_{X_i}、r=Σ_i z_i、o=1[r>0]、E=r−o。在真实末位，留在A每个A客户给1/m；偏离X_i时，X_i在A外客户给1、交集客户给1/m。因此逐客户行是Γ_i=x/m−z_i+(m−1)xz_i/m，其客户和由末位最佳回应非负。由R=x−(m−1)xr/m+E直接得(2−1/m)x−o=Σ_iΓ_i+(R−x/m)。当x=0时R−x/m=E≥0；当x=1且r=0时为(m−1)/m≥0；当x=1且r≥1时为(r−1)/m≥0。这在同一份真实客户Boolean会员表逐客户成立，识别重复标签只限制可见赋值。求和给|⋃_i X_i|≤(2−1/m)|A|，再取最优即得根上界。A空时末位IC迫所有主题覆盖为空，仍以原不等式成立。锐性独立核对原稿的真客户例：取A含m名客户，目录其余恰有m−1个相互不交且与A不交的单位单例。定义完整策略在每个有序历史恒选A。任意历史照选A并继续该策略，A最终负载至多m，当前收益m/负载≥1；改选任何单例后亦沿同一策略续局，偏离收益为1/(此前该单例负载+1)≤1。因此每个有序节点的一步IC均成立，此策略为完整纯SPE。根实际W=m，m个不同主题合计覆盖全部2m−1个客户，故OPT_m=2m−1。m=1时此构造只有A，同样达到1。",
+  "scope": "真共同客户域、空根、实际同主题终局。上界仅用末位IC，无需整份策略恒A；恒A只用于锐例。该证法需要R−x/m的全Boolean正性。非零背景和一般非同主题终局不在此范围。",
+  "whole_result": "给定真实空根A^m终局及其实际末位最佳回应，对每个m≥1证明OPT_m≤(2−1/m)W，W=|A|；合法单位客户的大主题与不交单例完整纯SPE对每个m达到等号。",
+  "reviewed_by": "Boss1",
+  "review_note": "核对当前两端登记、显式余项、根定理直接按外部覆盖求和的独立证明及余项冻结原稿第5节的锐例。逐项重建真末位收益、Boolean三情形、所有历史下锐例策略的两类动作收益和根最优覆盖。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/单主题实际终局的显式局部半覆盖余项--引理.md",
+      "sha256": "92bd65b374e1a1138a0c097b9b296f4838c6866a0d0ca88e8b388147ccc97fa2",
+      "section": "实际同主题路径，只用一个真实末节点"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/单主题实际终局的显式局部半覆盖余项--引理.md",
+      "sha256": "92bd65b374e1a1138a0c097b9b296f4838c6866a0d0ca88e8b388147ccc97fa2",
+      "section": "已有更强锐界及其正性域"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/同主题终局根覆盖界--定理.md",
+      "sha256": "a52a47cf2b31f3e15124a2146406b5317e33f93a1372f75571619295a2697036",
+      "section": "证明"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/local-moment-star-boundary-and-certificate-primary/primary-original/research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/round3_moments/local_positive_boundary.md",
+      "sha256": "943f38199001fa575189584d6bf1de0595c0d779e6770ec8e985020e54eea4ec",
+      "section": "5. 实际终局 A^m 的构造性证书"
+    }
+  ],
+  "endpoint_pins": {
+    "customer-attraction/unanimous-actual-terminal-explicit-local-half-residual": "ed27c7f70a4bc13ea6419773279e1934dbb5f5d1d7a7d359f0699d7089adb14a",
+    "customer-attraction/unanimous-terminal-root-bound": "a60d79577f6645764740e39f549c7cd0759061aa99b4ff2d2a543a1a89c0759b"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/单主题实际终局的显式局部半覆盖余项--引理.md": "92bd65b374e1a1138a0c097b9b296f4838c6866a0d0ca88e8b388147ccc97fa2",
+    "archives/customer-attraction/state/定理/同主题终局根覆盖界--定理.md": "a52a47cf2b31f3e15124a2146406b5317e33f93a1372f75571619295a2697036",
+    "archives/customer-attraction/tools/evidence/local-moment-star-boundary-and-certificate-primary/primary-original/research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/round3_moments/local_positive_boundary.md": "943f38199001fa575189584d6bf1de0595c0d779e6770ec8e985020e54eea4ec"
+  },
+  "review_digest": "03f28e84b95929a50977d74d35820845d06af00f10e491989561a78e2fcb05a8"
+}

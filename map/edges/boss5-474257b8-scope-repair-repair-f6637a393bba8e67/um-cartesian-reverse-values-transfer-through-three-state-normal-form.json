@@ -1,0 +1,60 @@
+{
+  "edge_id": "um-cartesian-reverse-values-transfer-through-three-state-normal-form",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-NORMALIZED-FLAT-CARTESIAN-TENSOR-REVERSE-AMPLIFICATION-v1",
+    "UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/bare-cartesian-read-after-normal-form-palette-scope"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "对每个整数t≥1令D=2^t，以完整裸菜单编译P_t作为N的源：每state恰D项各1/D，原D³+D件任务包含全部selector与全部state的incidences。按N先用选择树T、再对全部中间资源做路径归约，输出允许新增组、own资源、helper和selector。",
+  "roles": {
+    "UM-NORMALIZED-FLAT-CARTESIAN-TENSOR-REVERSE-AMPLIFICATION-v1": "给P_t的完整普通调度精确OPT=1+1/D及partial值V=1−1/D，证明输入确在显式normalized flat域。",
+    "UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1": "给无OPT输入的总位多项式构造P→P*，Kmax≤3、全部states上资源组度≤3；保全部实际OPT及partial V。",
+    "unrelated-machines/bare-cartesian-read-after-normal-form-palette-scope": "其§2–5的实际后果：P_t*仍V=1−2^(−t)、OPT=1+2^(−t)，保值压态/降度不能恢复裸乘积已丢的NO。"
+  },
+  "explanation": "裸族中任意补组两态恰交一个真实资源，故有组最多领取D−1项。循环标签ℓ_i(g)=g_(i+1)并排除a=全1给各组D−1项的不交领取。完整调度只外送这些已选任务，其余全部原任务照常安排；任意C<2调度中，共同资源对应的两件实际任务至多一件外送，另一件与其selector同机，给峰下界1+1/D。每state的质量D·1/D=1，故P_t在N的输入域。\n\nN先以T把每旧组的indexed states置于满二叉树的叶。每顶点恰一selector；K>1时旧selector的资格改至root菜单，新leaf selector在原private替换其单位负载；K=1时根叶保原菜单和任务原位。给任意源C<2调度沿其实际所选叶安排树辅助，原incidence的全部private／外送决定保持。反向，所选singleton必外送，root占用child的own资源迫使其沿真实链下降至一个所选原state。投影保全部原incidences，off-path额外活动与未选state的实际外送也在量词内。\n\n随后在全部中间旧资源和own资源上作路径归约。该步保留输入旧组的indexed菜单和selector资格，各旧incidence只将资源端映到对应组的port，身份、private端及处理时间保持。一个资源接触d≥1组时加d−1个二态helper，每helper一件unit selector和两件不同incidences，每state各一件。正向按实际外送给其port留孔，再沿路径安放其余完整任务；反向每个helper的所选unit必外送，d−1件占不同ports，至多一件旧外送，合回原资源后峰不增。归一化保证各阶段有全private≤2基线，有限最优性与严格低峰双向给OPT相等含2；给定C≥2时可用该基线。partial合同对每个0<v≤1双向，所选singleton必须领取且其质量1足以达到v，v>1两侧均不可行，有限最大值包含V=0。精确OPT来自全部任务的两向映射。代入裸族两值即得P_t*的精确数值，构造时间按原显式总位长计。",
+  "contribution": {
+    "result": "read对象§2–5的迁移后果完整成立：∀t≥1可显式总位多项式构造normalized flat P_t*，Kmax≤3且Δ_resource≤3，同时V(P_t*)=1−2^(−t)、OPT(P_t*)=1+2^(−t)。因此先裸乘积再精确保值压态/降度仍保留已改善的NO值。",
+    "remaining": "本边认证§2–5的数学后果与实际双向合同。历史读序、旧palette操作的YES失真及其它章节来源各有自己的证据；源hardness与普通矩阵内的逐坐标一致性仍需独立构造。"
+  },
+  "scope": "源P_t先将菜单支持作Cartesian积，再编译全部selectors与incidences；完整处理矩阵的Kronecker平方还保留mixed任务与机器，属于另一对象。输出P_t*在归一化flat域，Kmax及资源跨组度均≤3，允许改变原组数和组交互度M，T可改变旧selector资格。T引入的权1 singleton经路径映port仍是singleton，而任一裸族P_s（s≥1）的每state都有2^s≥2项；因此P_t*脱离了裸Cartesian族，保值合同也未给出一般UM到flat的转换或新的NO源。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/反例/裸笛卡尔菜单乘积的精确反向放大--反例.md",
+      "sha256": "02240942660772bf7a74c05b59ce17fbccd32f7ae1ac5814713a98c906693d7d",
+      "section": "5. 显式规模、位长与参数"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/归一化菜单的三态资源度三正规形--定理.md",
+      "sha256": "31f1fb774f856f42255d1cd8b56c7a77d8396b2417b05e4d0b2f1d32e1195d1a"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/完整菜单的资源度三路径归约--定理.md",
+      "sha256": "afb7a6751e65f5e968a2b8798b8ba284983d64694fde1a463dae991b0018bb34"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/裸菜单读后与保值降度及调色板障碍--审查.md",
+      "sha256": "b3992320e4be05d46ccde5c4bcd20ba1b458f6fb7b17fe1203ed99e64c9393bd",
+      "section": "5. 对裸菜单的实际后果"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "定向续审当前三端登记、裸族主正文、N及路径主证明、已勘误的三坐标／三态路径范围审查和目标审查。范围审查§2现与路径原证明一致：路径D保持旧菜单和selector资格，旧incidence资源端按组映port；每helper组一selector、两incidences，每state各一incidence。树T在K>1才改变原selector资格。核对全部C<2实际调度、归一化正partial阈值、OPT=2与V=0端点，以及输出含singleton而脱离裸族。原两源ALL仅支付目标§2–5的局部贡献。",
+  "endpoint_pins": {
+    "UM-NORMALIZED-FLAT-CARTESIAN-TENSOR-REVERSE-AMPLIFICATION-v1": "d81f97599f437f633889dd1bbb6df2f76d3f2c3e1e9de833eaf7f0a4f02832aa",
+    "UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1": "90151b0b805a9fb10bde855a89b069771b031383ce88493450dfb04c6269858c",
+    "unrelated-machines/bare-cartesian-read-after-normal-form-palette-scope": "d0d9349eb730f070e4774f2d76db2af9d4d16911f76e542df5181532d3006bd8"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/反例/裸笛卡尔菜单乘积的精确反向放大--反例.md": "02240942660772bf7a74c05b59ce17fbccd32f7ae1ac5814713a98c906693d7d",
+    "archives/unrelated-machines/state/定理/归一化菜单的三态资源度三正规形--定理.md": "31f1fb774f856f42255d1cd8b56c7a77d8396b2417b05e4d0b2f1d32e1195d1a",
+    "archives/unrelated-machines/state/定理/完整菜单的资源度三路径归约--定理.md": "afb7a6751e65f5e968a2b8798b8ba284983d64694fde1a463dae991b0018bb34",
+    "archives/unrelated-machines/state/审查/裸菜单读后与保值降度及调色板障碍--审查.md": "b3992320e4be05d46ccde5c4bcd20ba1b458f6fb7b17fe1203ed99e64c9393bd"
+  },
+  "review_digest": "56baa320d0ca066d5c774a6e913d6f17f371f132fb58721b64935fcf45387cd1"
+}

@@ -1,0 +1,72 @@
+{
+  "edge_id": "commonmany-bad-on-track-ne-excludes-all-frozen-seeds-for-b-to-g",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-GREEDY-REPAIR-ORDER-NO",
+    "MF-FROZEN-OVERLOAD-POLY"
+  ],
+  "target_ids": [
+    "M-306e4a2a13234a759f50236322dd308d"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定原十客户和原完整客户行动集。采用共同目录正原子模型，设施带标签，覆盖即强制服务，客户独立混合。固定原规范贪心占位及五步严格修复所得站纯、站内独立均匀的坏在轨NE。标签0–7的在轨布局为(A,E,B,B,C,D,D,D)，只改动标签3从B到G，偏离者在轨收益a=165/2，帽取2a=165。每个候选纯种子须在该偏离布局对全部实际覆盖客户分配原可达设施；超帽静止设施及其种子客户冻结，移动者普通，冻结安全比较按全部原可达动作检验。",
+  "roles": {
+    "SC-K-GREEDY-REPAIR-ORDER-NO": "提供原十客户、精确坏在轨NE、指定标签偏离和偏离后每个独立混合NE中的强制收益176。",
+    "MF-FROZEN-OVERLOAD-POLY": "给任何通过冻结合同的纯种子一个恢复全部原客户动作的精确纯NE，且同一偏离者终点负载不超过其帽。有限纯势版足够。",
+    "M-306e4a2a13234a759f50236322dd308d": "收到一个可严格排除的在轨选择与指定偏离的局部结论；联合选在轨NE并生成每项证书的普遍问题仍待处理。"
+  },
+  "explanation": "在轨按站序A,E,B,C,D,G的总重为(120,178,165,120,268,0)。共享权32、96、40、52的当前成本及另一开放站备选成本依次为197/2≤152、178<357/2、120<160、217/2<424/3。用同站各标签的独立均匀策略时，这些比较覆盖全部其他开放站的标签，同站动作同成本。标签3从B换到G，保留B的标签2及其他未搬迁设施。G私有80从未服务变为强制服务；离轨B/E/G各一家，分别有强制私有81/82/80。权96的原菜单恰B/E/G，G只有它与私有80可达。故给定其他客户任意合法独立混合，权96选择G的条件成本恰176，选择B/E分别至少177/178。严格最优令每个精确独立混合离轨NE都以概率1把96送往同一移动者，移动者收益恒176。\n\n若任一纯种子通过冻结合同，普通残余的严格改善使平方负载势下降且最大负载不增，终点各普通设施仍≤165。复位冻结部分时，普通到普通由残余NE排除，普通到冻结因目标初负载>165排除，冻结到冻结及冻结到普通由逐人比较(C)及普通终点下界排除。由此得到该原偏离布局的精确纯NE，含全部原可达动作，标签3仍≤165。它按点质量策略也是原独立混合NE，必须给同标签3收益176，矛盾。此蕴涵无须多项式MAX或RANGE导入。\n\n还可在种子层逐项排除。若96分到G，则标签3初负载176>165，移动者不普通；若分到B或E，则其设施负载至少177或178，故该设施和96都必须冻结。此时G是普通设施，残余游戏中只有强制私有80能去G，始终负载80，故基本η_G=80，任何真实终点下界也不能超过80。冻结96的外部负载至少81或82，超过其原可达G的下界，(C)必失败。三支覆盖所有合法纯种子，结果不取决于其他静止设施怎样超帽。独立精确枚举交叉核对了144个带标签纯种子，按96的位置分成三个48项类，全部拒绝；其中6个原纯NE的标签3均为176。混合全称来自前述严格成本证明。\n\n另一个同占位精确在轨NE只把原贪心池的40从C改到A，站总重(120,82,209,120,320,0)。同一标签3的帽因此为209。对同一B→G布局，按原十客户次序分配标签(0,2,3,2,0,4,5,6,1,3)，负载为(120,82,113,176,120,52,268,0)。只冻结标签6独占的268客户，外部负载0通过全部安全比较，其余普通设施均≤209，因此本次偏离有成功种子。这个对照只核同一项偏离；它也与帽41、G仅收20的另一十客户示例有不同权重和量词。",
+  "scope": "原十客户、原五步修复所得固定坏在轨NE、单项带标签B→G及帽165。全部原客户动作、实际服务集合和独立混合量词保留。排除任何能为这一固定在轨选择完成全部偏离的生成器，开放路线允许联合另选在轨NE。另一个在轨NE的对照只为同项偏离给种子。",
+  "contribution": {
+    "result": "同一坏在轨NE的指定B→G偏离没有任何通过冻结合同的纯种子。成功本应产生完整原游戏的精确纯NE并令同一偏离者≤165，而原全部独立混合NE均令它获176；三种种子落点亦可直接逐一排除。这排除了先固定这一坏NE再为全部偏离找证书的做法。",
+    "remaining": "路线C允许先联合选择在轨NE，仍须对每个原输入证明存在统一位多项式生成方法，同时选出合适在轨状态并为它的每项实际带标签偏离给成功种子，或证明这一原量词下的否定结论。当前反例仅排除一个明确固定在轨选择。"
+  },
+  "reviewed_by": "Boss1-facility-frozen-seed-round16",
+  "review_note": "核对当前三个核心对象的任务pin、明确构造、原标签和合同。独立按精确分数重算规范贪心、五步成本及两个在轨NE，另穷举指定偏离144个合法带标签纯赋值并逐人逐动作核冻结比较与纯NE。全独立混合NE结论由严格成本推出；没有用纯枚举代替它。对照核同标签同偏离一份帽209的成功证书。有限补全足够，无新登记端点；没有运行旧审计入口。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/反例/固定贪心均衡的坏选择与静止超帽边界--反例.md",
+      "sha256": "f17a382546c11c8ee4157c911e7262023c4d35426bd29a6f66c4ef47fae8988c",
+      "section": "任意严格修复顺序可到无法因子二支撑的NE"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/冻结静止超载的偏离者受帽补全--定理.md",
+      "sha256": "6be181b8a474095c33d8168852a1093eeae1937e91cfe52ebff3953be18b5cff",
+      "section": "固定布局的完整证书"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/冻结静止超载的偏离者受帽补全--定理.md",
+      "sha256": "6be181b8a474095c33d8168852a1093eeae1937e91cfe52ebff3953be18b5cff",
+      "section": "残余完成与重新接纳全部原动作"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/问题/一般构造工作坊与安全冻结证书的完整任务合同--问题.md",
+      "sha256": "53663903a43cd211b4b7f5a9feba62942a72d326c8a9dbd2a69a659fe464b059",
+      "section": "路线 C：偏离者专属安全超载证书"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/计算/补集编译与条件离轨补全的精确核验--计算.md",
+      "sha256": "304e46772fb00d680126bb697e791f99cfc21610e1fb65b5b7c276246a469369",
+      "section": "冻结超载审计与四只读失败边界"
+    }
+  ],
+  "endpoint_pins": {
+    "M-306e4a2a13234a759f50236322dd308d": "7d9e93e302fee4b28b79c11e38b3679d21ea8d2186a5024b041ad97e3aa1afa1",
+    "MF-FROZEN-OVERLOAD-POLY": "12c781557aa7a410319297e4fe672e7a17384024673e17698e7724b8ed4bcad7",
+    "SC-K-GREEDY-REPAIR-ORDER-NO": "0378b77ce3932ed1d133ad76fb79e2d7aebb2ec1f40a8fbf36f562b294ace775"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/反例/固定贪心均衡的坏选择与静止超帽边界--反例.md": "f17a382546c11c8ee4157c911e7262023c4d35426bd29a6f66c4ef47fae8988c",
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+    "archives/facility-games/subarchives/common-many/state/定理/冻结静止超载的偏离者受帽补全--定理.md": "6be181b8a474095c33d8168852a1093eeae1937e91cfe52ebff3953be18b5cff",
+    "archives/facility-games/subarchives/common-many/state/问题/一般构造工作坊与安全冻结证书的完整任务合同--问题.md": "53663903a43cd211b4b7f5a9feba62942a72d326c8a9dbd2a69a659fe464b059",
+    "archives/facility-games/subarchives/common-many/state/计算/补集编译与条件离轨补全的精确核验--计算.md": "304e46772fb00d680126bb697e791f99cfc21610e1fb65b5b7c276246a469369"
+  },
+  "review_digest": "d46ed8f50df9a5b7583c7dfa5dae9c35e4b465df5e891156d0127d0b21f56fc0"
+}
