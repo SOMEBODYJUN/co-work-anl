@@ -127,11 +127,53 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss1",
-  "request_id": "5aa0be8cca6d49f6bee010bab522a378",
+  "request_id": "1b15668710474ef686924b095cc4bd3d",
   "requests": {
     "6bf1072eeee34982998ded00762dd22b": "plan",
-    "5aa0be8cca6d49f6bee010bab522a378": "claim"
+    "5aa0be8cca6d49f6bee010bab522a378": "claim",
+    "1b15668710474ef686924b095cc4bd3d": "done"
+  },
+  "edge_paths": {
+    "config-gradient-rescaling-and-sparse-pricing-give-exact-direction": "map/edges/config-3a-3a-ebfa317b38f504d6/exact-sparse-gradient-and-direction.json"
+  },
+  "receipt": {
+    "task_id": "config-3a-3a-ebfa317b38f504d6",
+    "stage": "3A",
+    "status": "complete",
+    "object_ids": [
+      "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing"
+    ],
+    "read_object_ids": [
+      "M-a8a3062b0ff9434fa078140f5b654163",
+      "configuration-assignment/exact-pricing-sparse-configuration-lp"
+    ],
+    "input_pins": {
+      "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing": "8edd0b73d5d1c7b89d92c0d34547a5adb488d8abca4299fc41f2cbda30d70c23",
+      "M-a8a3062b0ff9434fa078140f5b654163": "0753bd142ddb39e53be2c685ecbcc9d29bc35af348823ab7a3b11a8f425d002c",
+      "configuration-assignment/exact-pricing-sparse-configuration-lp": "847bf3f41064526e222270532908a4a4dfb56a063ffae9b48ac817957fbf0bcb"
+    },
+    "coverage": {
+      "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing": {
+        "state": "linked",
+        "object_pin": "8edd0b73d5d1c7b89d92c0d34547a5adb488d8abca4299fc41f2cbda30d70c23",
+        "comparison_scope": "逐坐标排除背景公式、独立采样缩放、共同模权定价及精确 LP 原始恢复。",
+        "reason": "两个 in-packet 对端实际共同支付完整固定点定理。精确方向保达到配置和短支持，z=1 直接去除坐标，无扣价近似与任意扣价分别处理。",
+        "edge_ids": [
+          "config-gradient-rescaling-and-sparse-pricing-give-exact-direction"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/config-3a-3a-ebfa317b38f504d6/exact-sparse-gradient-and-direction.json",
+        "sha256": "981fa8e4dea1fe1630deecba2bb9247ed73603adabab0503c8d841e2ec1962e8"
+      }
+    ],
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "reviewed_by": "Boss1",
+    "review_note": "精确固定点算法已复核，连续过程合同保开放。"
   }
 }
