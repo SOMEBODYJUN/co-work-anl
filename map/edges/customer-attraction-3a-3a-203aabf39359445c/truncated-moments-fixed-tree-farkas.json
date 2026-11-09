@@ -1,0 +1,43 @@
+{
+  "edge_id": "cag-203a-truncated-moments-fixed-tree-farkas",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/truncated-intersection-moments-full-payoff-and-boolean-positivity"
+  ],
+  "target_ids": [
+    "M-37b7d7de813c4ff69c63fcb679950f36"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定有限标签p、单位提供者m、完整有序形式策略σ和至多m个比较标签J。先允许非负实客户重数刻画锥，再清分母回同一标签域的单位客户。",
+  "roles": {
+    "customer-attraction/truncated-intersection-moments-full-payoff-and-boolean-positivity": "显式完整终局收益系数、容斥反演及全部真IC的有理坐标。",
+    "M-37b7d7de813c4ff69c63fcb679950f36": "在这些坐标上精确区分可实现正锥、固定完整策略IC交锥和非负付款证书。"
+  },
+  "explanation": "用显式终局收益系数对每个有序节点h和行动a的两个真完成叶取同位差，得全部有理g_{h,a}。实际与比较支持的覆盖容斥给目标h·t=2Wσ−C(J)。写t=Σ_B r_B v(B)，其中v(B)_A=1[A⊆B]，非空B。θ·v(B)=Pθ(1_B)，空点自动为零，故M_d^*恰为全Boolean点非负的截断多项式。固定σ可行域为t∈M_d且所有g·t≥0，有限有理Farkas等价于h−Σλg∈M_d^*，λ可取有理非负。若实可行客户有严格负目标，将r齐次放大到h·t≤−1，取有理可行点、统一清分母给整数反例，全部IC保持。p=3,d=2取t_1=t_2=t_3=t_12=t_13=1,t_23=0，所有局部会员行通过；P=z_1−z_1z_2−z_1z_3+z_2z_3在z_1=0与1时分别等于z_2z_3及(1−z_2)(1−z_3)，矩值却为−1。",
+  "scope": "任意固定σ/J的精确充要式及低次局部正性反例。σ无须预先是某给定实例的SPE。未对全部σ/J构造付款乘子。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/有限阶交集矩的全收益表示与布尔正性--定理.md",
+      "sha256": "c6f61661e403b1336b0668ff5ef8f77ea3398878d16e64e5ddbb996918fadd30",
+      "section": "全部终局表的精确数据"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/有限阶交集矩的全收益表示与布尔正性--定理.md",
+      "sha256": "c6f61661e403b1336b0668ff5ef8f77ea3398878d16e64e5ddbb996918fadd30",
+      "section": "精确客户实现锥与固定全树证书"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "重建每个比较叶的同位差和Farkas符号方向，核实有理严格点回到单位客户以及非法三标签矩点。",
+  "whole_result": "固定σ/J在所有使其为SPE的单位客户输入上支付h≥0，当且仅当存在有理非负λ使剩余多项式在全Boolean立方非负。全部Boolean行刻画实可实现矩锥，局部会员行不够。",
+  "endpoint_pins": {
+    "M-37b7d7de813c4ff69c63fcb679950f36": "5329e1cd6176147be295fc12f2f201e020a27181836b63fe2456b0468a8538aa",
+    "customer-attraction/truncated-intersection-moments-full-payoff-and-boolean-positivity": "bf391d85318999305c13ee8edf8565fa42904ebf8cd1730eec0952e60b0f046d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/有限阶交集矩的全收益表示与布尔正性--定理.md": "c6f61661e403b1336b0668ff5ef8f77ea3398878d16e64e5ddbb996918fadd30"
+  },
+  "review_digest": "0ef6466a159c9a89c9eba063bbfc04f4fe701c4d42c1d33cf4b0f861b5446c32"
+}

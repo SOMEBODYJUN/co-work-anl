@@ -1,0 +1,52 @@
+{
+  "edge_id": "cag-203a-boolean-positivity-exposes-original-types",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-37b7d7de813c4ff69c63fcb679950f36",
+    "customer-attraction/truncated-intersection-moments-full-payoff-and-boolean-positivity"
+  ],
+  "target_ids": [
+    "CA-COVERAGE-MOMENT-EXTREME-RAYS"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定p标签形式目录，允许空覆盖和同覆盖异标签；m≥2可见二次矩。m=1、p=1分别处理。",
+  "roles": {
+    "M-37b7d7de813c4ff69c63fcb679950f36": "给出原类型列的全Boolean非负对偶判别。",
+    "customer-attraction/truncated-intersection-moments-full-payoff-and-boolean-positivity": "给交集矩、并集坐标及完整终局收益表间的可逆线性转换。",
+    "CA-COVERAGE-MOMENT-EXTREME-RAYS": "构造二次暴露泛函，排除预先删去任一原非空类型。"
+  },
+  "explanation": "在交集坐标令P_B(z)=Σ_{a∉B}z_a+Σ_{{a,b}⊆B}(z_a+z_b−2z_az_b)。它在任意非空C的值是|C∖B|+r(|B|−r)，r=|B∩C|，仅C=B为零。对偶式使P_B暴露对应单列面。覆盖坐标中y_ab=t_a+t_b−t_ab，故这正是Σ_{a∉B}y_a+Σ_{{a,b}⊆B}(2y_ab−y_a−y_b)。有限生成锥的极射线必含列，故共有2^p−1条；完整终局表和覆盖矩的线性同构保这些射线。p=1是唯一一列而P_B恒零。m=1时所有多元素列拆成单点列，恰p条。极射线排斥固定删类型，却不排每份输入选不同支持。进一步截取σ的SPE半空间可能改变极射线。",
+  "scope": "全合法实客户矩锥、覆盖并集坐标及完整终局收益像；不对固定σ的SPE可行截锥数极射线。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/有限阶交集矩的全收益表示与布尔正性--定理.md",
+      "sha256": "c6f61661e403b1336b0668ff5ef8f77ea3398878d16e64e5ddbb996918fadd30",
+      "section": "精确客户实现锥与固定全树证书"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/有限阶交集矩的全收益表示与布尔正性--定理.md",
+      "sha256": "c6f61661e403b1336b0668ff5ef8f77ea3398878d16e64e5ddbb996918fadd30",
+      "section": "全部终局表的精确数据"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/覆盖矩锥极射线与自适应类型稀疏化--定理.md",
+      "sha256": "9487ae82f6a3133f6d54b42ca7a515bd5040ae96e9819dfaa9e06954b14bcb96",
+      "section": "2. CR-3：全部类型的极射线"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐Boolean类型核暴露泛函及换基方向，分开原列固定压缩与逐输入核消元。",
+  "whole_result": "m≥2时全覆盖矩锥恰有2^p−1条不同原类型极射线，p≥2逐列由所列二次泛函暴露；m=1为正正交象限，p=1是单列边界。完整终局收益表像保留这些射线，故不可固定删任何原类型并非负生成全部资料。",
+  "endpoint_pins": {
+    "CA-COVERAGE-MOMENT-EXTREME-RAYS": "10b8558791a78f72e7df0e0a25746af7895653486eb089ee03eaf583111bb7ce",
+    "M-37b7d7de813c4ff69c63fcb679950f36": "5329e1cd6176147be295fc12f2f201e020a27181836b63fe2456b0468a8538aa",
+    "customer-attraction/truncated-intersection-moments-full-payoff-and-boolean-positivity": "bf391d85318999305c13ee8edf8565fa42904ebf8cd1730eec0952e60b0f046d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/有限阶交集矩的全收益表示与布尔正性--定理.md": "c6f61661e403b1336b0668ff5ef8f77ea3398878d16e64e5ddbb996918fadd30",
+    "archives/customer-attraction/state/定理/覆盖矩锥极射线与自适应类型稀疏化--定理.md": "9487ae82f6a3133f6d54b42ca7a515bd5040ae96e9819dfaa9e06954b14bcb96"
+  },
+  "review_digest": "6ce3607a6d6c39238219dc2a046738184d3365d72dd341f420f5d5527a1d885b"
+}

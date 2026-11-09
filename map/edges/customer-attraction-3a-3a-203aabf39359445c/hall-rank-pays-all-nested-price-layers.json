@@ -1,0 +1,50 @@
+{
+  "edge_id": "cag-203a-hall-rank-pays-all-nested-price-layers",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-453311709b8248f4977a880920f6da60"
+  ],
+  "target_ids": [
+    "M-a188a71188884c4aa621846bc89d758e"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定原完整SPE、同一最优T和owner、同一actual I/G网络以及预先给定的非负线性严格未来捕获规则，whole-IC列价v_x≥1。",
+  "roles": {
+    "M-453311709b8248f4977a880920f6da60": "固定actual取消base和同一贪心点对全部价格前缀的精确支持。",
+    "M-a188a71188884c4aa621846bc89d758e": "把固定整列采购的最小总费写成真正Hall缺额的层积分。"
+  },
+  "explanation": "K(γ)=Σ_x v_x−v·γ，故min_Γ K=Σ_x v_x−h_Γ(v)。按降序价格的层差展开，单个贪心γ同时饱和各前缀rank，得到∫(|S_t|−r(S_t))dt。以L=J^c改写开放终端割，并用Q分割R，得|S|−r(S)=max_L[|S∩Q(L)|−g(L)−c_I(L^c,L)]。0<t≤1时S_t=R，贡献|R|−g=OPT−W，剩余为t>1的高价层。",
+  "scope": "同一固定T/owner和同一价格的裸actual Hall总价优化。单一γ覆盖全部价格层，不重新领source；高价层≤2W−OPT仍须另外证明。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/固定捕获价格的Hall缺额与共同付款对偶--定理.md",
+      "sha256": "20c5d8e42adb6442879aa5f57fbf73f3b99a9ad68cb7356806de425786b50e45",
+      "section": "支持函数、总费及真正缺额"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/自然捕获路由的Bellman价格与Hall取消--算法.md",
+      "sha256": "79857e8db085c5d83a35c9062cacc4ea031e974cc8cbed2fd057668e346a5451",
+      "section": "同一套价格上的共同最优取消"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/适应费用的逐批终端增广与全割层积分--算法.md",
+      "sha256": "36be6dc0128e3ca5a12dc532114a142c8446ecf18fdd390682ab2ac24e4d6d5e",
+      "section": "一份流同时饱和全部价格前缀"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对割补集方向、层阈值和单位层正好是OPT−W，逐批增广是同结论的独立实现证明。",
+  "whole_result": "固定线性真实捕获规则的最小总价恰等于Hall缺额的价格层积分，含低价层OPT−W与其余高价层的精确分解。",
+  "endpoint_pins": {
+    "M-453311709b8248f4977a880920f6da60": "5b969c5ec4d5e59db748a603e96a7699b2b6ff75511f16437fdcfc1a5c9eb59b",
+    "M-a188a71188884c4aa621846bc89d758e": "e2df4cc3c4f81ac1f48eab01b39c3ddf47949177cb46f5c7990a822a16052c0a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/固定捕获价格的Hall缺额与共同付款对偶--定理.md": "20c5d8e42adb6442879aa5f57fbf73f3b99a9ad68cb7356806de425786b50e45",
+    "archives/customer-attraction/state/算法/自然捕获路由的Bellman价格与Hall取消--算法.md": "79857e8db085c5d83a35c9062cacc4ea031e974cc8cbed2fd057668e346a5451",
+    "archives/customer-attraction/state/算法/适应费用的逐批终端增广与全割层积分--算法.md": "36be6dc0128e3ca5a12dc532114a142c8446ecf18fdd390682ab2ac24e4d6d5e"
+  },
+  "review_digest": "44a1bd7f141b59808cb176258156257016c436f8bb3ac7f4dff1663e41966591"
+}

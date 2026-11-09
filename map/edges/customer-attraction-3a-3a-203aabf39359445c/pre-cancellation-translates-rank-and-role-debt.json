@@ -1,0 +1,53 @@
+{
+  "edge_id": "cag-203a-pre-cancellation-translates-rank-and-role-debt",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-453311709b8248f4977a880920f6da60",
+    "customer-attraction/fixed-capture-prices-hall-deficits-and-joint-payment-dual"
+  ],
+  "target_ids": [
+    "M-828910414bb2445085f019be9ba7560e"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一固定T、owner、actual I边和固定采购列p；给定逐客户0≤δ_x≤1且δ_i=Σ_{o(x)=i}δ_x≤g_i，先从owner预送这份δ。",
+  "roles": {
+    "M-453311709b8248f4977a880920f6da60": "原终端rank、需求割及层贪心，允许按剩余终端库存作加权扩展。",
+    "customer-attraction/fixed-capture-prices-hall-deficits-and-joint-payment-dual": "固定价格NET的行差仿射式及全部方向支持判别。",
+    "M-828910414bb2445085f019be9ba7560e": "在保同一局部预取消的残余base上同时重算最小总费及逐角色右端。"
+  },
+  "explanation": "残源g'_i=g_i−δ_i，库存a_x=1−δ_x，I边不变。全R时每个角色割容量恰少δ(R)，所以满残流仍存在。开放S的割改为r_δ(S)=min_J[g'(J^c)+c_I(J,J^c)+a(S∩Q(J))]，原逐客户子模证明按a_x加权。任意满γ≥δ的终端需求切条件γ(R∖Q(J))≤g(J^c)+c_I(J,J^c)，扣δ(J^c)后正是残余z=γ−δ的割条件，故两种写法精确对应。价格层中Σv_x a_x−h_{Γ_δ^res}(v)=∫[a(S_t)−r_δ(S_t)]dt。将γ=δ+z代入原Mγ≥d，得Mz≥d−Mδ，逐行d_i^δ=Σ_x p_ix(1−δ_x)−I_i−δ_i，M完全不变。",
+  "scope": "同一给定逐客户δ的残余总价及共同逐角色判别。只改rank或拿裸最优γ领取另一δ的source信用都会改变实际系统。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/固定捕获价格的Hall缺额与共同付款对偶--定理.md",
+      "sha256": "20c5d8e42adb6442879aa5f57fbf73f3b99a9ad68cb7356806de425786b50e45",
+      "section": "保指定局部预取消时，rank和行差都要平移"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/自然捕获路由的Bellman价格与Hall取消--算法.md",
+      "sha256": "79857e8db085c5d83a35c9062cacc4ea031e974cc8cbed2fd057668e346a5451",
+      "section": "保SOURCE-NET局部delta须换残余rank"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/实际取消的同时源付款与入流余额--定理.md",
+      "sha256": "5759f87d02d0bacc5c61a5472806d6f464192bb97bcb18a1a3bf1e156a02ad7a",
+      "section": "任意局部预送可以同时扩充"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "分别检查库存、source割、平移后的需求割及逐角色右端，保留单个共同取消。",
+  "whole_result": "合法固定局部δ后，Γ∩{γ≥δ}精确平移为残余rank base。最小总价是库存减rank的层积分，逐角色NET恰是同一M对残取消向量支付平移后的d^δ。",
+  "endpoint_pins": {
+    "M-453311709b8248f4977a880920f6da60": "5b969c5ec4d5e59db748a603e96a7699b2b6ff75511f16437fdcfc1a5c9eb59b",
+    "M-828910414bb2445085f019be9ba7560e": "af6636ed18d9c43f435e8784b66171016a09e3269559c455c67362b5a64f27fc",
+    "customer-attraction/fixed-capture-prices-hall-deficits-and-joint-payment-dual": "347386eb2daa9e596ea040085ce66bcf521d59e7e23228b7d4b96b0ca4e905d8"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/固定捕获价格的Hall缺额与共同付款对偶--定理.md": "20c5d8e42adb6442879aa5f57fbf73f3b99a9ad68cb7356806de425786b50e45",
+    "archives/customer-attraction/state/算法/自然捕获路由的Bellman价格与Hall取消--算法.md": "79857e8db085c5d83a35c9062cacc4ea031e974cc8cbed2fd057668e346a5451",
+    "archives/customer-attraction/state/定理/实际取消的同时源付款与入流余额--定理.md": "5759f87d02d0bacc5c61a5472806d6f464192bb97bcb18a1a3bf1e156a02ad7a"
+  },
+  "review_digest": "653d066fdfc61982b5932d4c20c83c46661fda7245d08a7adc452c996054b634"
+}

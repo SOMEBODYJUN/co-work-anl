@@ -1,0 +1,44 @@
+{
+  "edge_id": "cag-203a-truncated-payoffs-preserved-by-adaptive-support",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/truncated-intersection-moments-full-payoff-and-boolean-positivity"
+  ],
+  "target_ids": [
+    "CA-ADAPTIVE-TYPE-SPARSIFICATION"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定m,p，输入已经有共同非负有理客户重数。令d=min(m,p)，D=Σ_{j=1}^d binom(p,j)。",
+  "roles": {
+    "customer-attraction/truncated-intersection-moments-full-payoff-and-boolean-positivity": "截断交集列有D维，矩等值保持同标签全部终局数值和真实IC。",
+    "CA-ADAPTIVE-TYPE-SPARSIFICATION": "在原正类型支持上选依赖并保非负，得到有理压缩及同比例单位实现。"
+  },
+  "explanation": "当正支持超过D，取只在该支持上的非零有理核向量z。列均非负非零，z有两种符号。ε=min_{z_B>0}r_B/z_B，使r−εz非负、矩不动、至少删一个原正类型且不增加新类型。迭代至多D型，再统一乘清分母倍数L，可展开为单位客户且每条终局收益、IC、覆盖和OPT均同比。m≥2时单题大小和对称差t_a+t_b−2t_ab保空题及覆盖相同/不同。m=1可另用p个私有块保一人收益，但可能改同覆盖关系。m≥p时上集Möbius反演固定每一非空类型重数，原正类型不可删。",
+  "scope": "逐有理实例的支持选择；保持全部有序完整SPE及福利比。没有支持最小性、总客户数不增或统一固定类型字典。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/有限阶交集矩的全收益表示与布尔正性--定理.md",
+      "sha256": "c6f61661e403b1336b0668ff5ef8f77ea3398878d16e64e5ddbb996918fadd30",
+      "section": "自适应支持稀疏化与已知覆盖矩的关系"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/覆盖矩锥极射线与自适应类型稀疏化--定理.md",
+      "sha256": "9487ae82f6a3133f6d54b42ca7a515bd5040ae96e9819dfaa9e06954b14bcb96",
+      "section": "3. CR-5：每份有理实例仍可自适应稀疏化"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核对符号、删除和有理倍数；五组输出仅作有限见证，类型数和展开人数分列。",
+  "whole_result": "每份固定m,p的非负有理实例可在原正支持中有理消元至多D个非空类型，统一清分母后保持完整策略集合及同倍的全终局数值，含m=1和m≥p边界。",
+  "endpoint_pins": {
+    "CA-ADAPTIVE-TYPE-SPARSIFICATION": "2f372d5d7d18b6fa8e620bceda31f3b9ffe3c923a088b3f5e85bf04c7cdac075",
+    "customer-attraction/truncated-intersection-moments-full-payoff-and-boolean-positivity": "bf391d85318999305c13ee8edf8565fa42904ebf8cd1730eec0952e60b0f046d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/有限阶交集矩的全收益表示与布尔正性--定理.md": "c6f61661e403b1336b0668ff5ef8f77ea3398878d16e64e5ddbb996918fadd30",
+    "archives/customer-attraction/state/定理/覆盖矩锥极射线与自适应类型稀疏化--定理.md": "9487ae82f6a3133f6d54b42ca7a515bd5040ae96e9819dfaa9e06954b14bcb96"
+  },
+  "review_digest": "76899fa356817048202f913d6c3ecc38f4254c2212bf7c0a161abcd69f0d1627"
+}

@@ -1,0 +1,50 @@
+{
+  "edge_id": "cag-203a-hall-support-function-tests-common-role-wallet",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-453311709b8248f4977a880920f6da60"
+  ],
+  "target_ids": [
+    "customer-attraction/fixed-capture-prices-hall-deficits-and-joint-payment-dual"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一原实际策略、最优T、owner和整行采购列p≥0，p不随待优化γ改变。η_i=I_i+Σ_{o(x)=i}γ_x。",
+  "roles": {
+    "M-453311709b8248f4977a880920f6da60": "给同一固定网络上紧凸满取消base与h_Γ在所有非负价格的精确支持函数。",
+    "customer-attraction/fixed-capture-prices-hall-deficits-and-joint-payment-dual": "推出同一取消的逐角色NET充要分离与最坏margin。"
+  },
+  "explanation": "逐行K_i−η_i=Σ_xp_ix−I_i−Σ_x[p_ix+1_{o(x)=i}]γ_x=d_i−(Mγ)_i。Γ紧凸，MΓ−R_+^m为闭凸下闭域；若d不在其中，严格分离法向必非负。由此d可满足当且仅当h_Γ(M^Tλ)≥λ·d对全部λ≥0成立，各支持值由rank贪心算出。对γ与单位单纯形上的λ作双线性极小极大，得min_γ max_i(d_i−(Mγ)_i)=max_{λ∈Δ_m}[λ·d−h_Γ(M^Tλ)]。λ全1只检查总费≤W，逐角色分别优化只检查坐标方向；全方向分离才给一份共同取消。",
+  "scope": "固定T、owner及固定价格的角色NET；一个固定系统的正margin只否定这个系统。各λ可用不同支持最优γ，但不可按λ另选owner并拼接。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/固定捕获价格的Hall缺额与共同付款对偶--定理.md",
+      "sha256": "20c5d8e42adb6442879aa5f57fbf73f3b99a9ad68cb7356806de425786b50e45",
+      "section": "逐角色NET的共同对偶与精确margin"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/固定归属NET诊断的精确原始对偶与早停范围--程序.md",
+      "sha256": "224f12009ce435a551f884bd7c80c996897db37c2ca361d66eef73584000defc",
+      "section": "全λ、首匹配及执行入口边界"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/三个既存完整策略的NET见证与分层总价--计算.md",
+      "sha256": "ab951fce6da887bd59b6b653c6b373d47c518b4ba28b4d90c8ab33ac03bd7ad7",
+      "section": "86客户：一份NET点与另一个总价最优点"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "重建下闭域严格分离和单纯形margin，核对86客NET点费用40/39与独立总价最优1的证据身份。",
+  "whole_result": "在同一固定Γ、p下，存在一份γ给全部角色同时付款，等价Mγ≥d可行，等价全部λ≥0的精确支持函数判别；最坏行差由单位单纯形最大分离量给出。",
+  "endpoint_pins": {
+    "M-453311709b8248f4977a880920f6da60": "5b969c5ec4d5e59db748a603e96a7699b2b6ff75511f16437fdcfc1a5c9eb59b",
+    "customer-attraction/fixed-capture-prices-hall-deficits-and-joint-payment-dual": "347386eb2daa9e596ea040085ce66bcf521d59e7e23228b7d4b96b0ca4e905d8"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/固定捕获价格的Hall缺额与共同付款对偶--定理.md": "20c5d8e42adb6442879aa5f57fbf73f3b99a9ad68cb7356806de425786b50e45",
+    "archives/customer-attraction/state/程序/固定归属NET诊断的精确原始对偶与早停范围--程序.md": "224f12009ce435a551f884bd7c80c996897db37c2ca361d66eef73584000defc",
+    "archives/customer-attraction/state/计算/三个既存完整策略的NET见证与分层总价--计算.md": "ab951fce6da887bd59b6b653c6b373d47c518b4ba28b4d90c8ab33ac03bd7ad7"
+  },
+  "review_digest": "03883339b94e9790907baa9ab25a0771707b0f62c0629a5478281589c4d69eed"
+}

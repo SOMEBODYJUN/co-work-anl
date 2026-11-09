@@ -1,0 +1,47 @@
+{
+  "edge_id": "cag-203a-actual-hybrid-cuts-supply-full-hall-rank",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance"
+  ],
+  "target_ids": [
+    "M-453311709b8248f4977a880920f6da60"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定一个最优有序元组T、其owner分块及同一合法actual叶Z，source g_i为actual外部G份额，I边使用同叶份额，遗漏R终端为单位容量。",
+  "roles": {
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance": "合法替换HYB给同一actual图的全部饱和source割条件和总质量g。",
+    "M-453311709b8248f4977a880920f6da60": "终端限制rank的满质量前提r(R)=g以及Γ非空。"
+  },
+  "explanation": "对任意角色集J，用actual Z_J替换T的同槽可保全部owner在J^c的客户。最优性使G新客户数不超过owner在J且未被Z_J覆盖的O损失；这类I损失每客户全部actual coverer均在J^c，恰有一单位出割，R损失受其单位终端数约束。g(J)不超过新增G数，故g(J)≤c_I(J,J^c)+|R∩Q(J)|。在开放全部R时，每个角色割的容量至少g(J^c)+g(J)=g，source总容量恰g。于是r(R)=g且存在同一满取消向量。",
+  "scope": "给rank/base结论中的全开放饱和前提，不要求SPE。后续采购非负和真实查询另有SPE条件。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/实际取消的同时源付款与入流余额--定理.md",
+      "sha256": "5759f87d02d0bacc5c61a5472806d6f464192bb97bcb18a1a3bf1e156a02ad7a",
+      "section": "全角色集合的合法混合替换"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定捕获价格的Hall缺额与共同付款对偶--定理.md",
+      "sha256": "20c5d8e42adb6442879aa5f57fbf73f3b99a9ad68cb7356806de425786b50e45",
+      "section": "实际Hall网络、rank及base"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对每个J的替换槽、I边方向以及owner的分析子集未被当作新合法行动。",
+  "contribution": {
+    "result": "同一固定T/owner的actual Hall网络在全部R开放时送满|G|，且base非空。",
+    "remaining": "开放任意S时还须使用对应最小割、终端需求充要和子模贪心，才能得到完整rank-base及支持函数。"
+  },
+  "endpoint_pins": {
+    "M-453311709b8248f4977a880920f6da60": "5b969c5ec4d5e59db748a603e96a7699b2b6ff75511f16437fdcfc1a5c9eb59b",
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance": "6301d3ef5ca152ec47607ffd3a061649bb168671ccaaab725d8f88bd9d7f9257"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/实际取消的同时源付款与入流余额--定理.md": "5759f87d02d0bacc5c61a5472806d6f464192bb97bcb18a1a3bf1e156a02ad7a",
+    "archives/customer-attraction/state/定理/固定捕获价格的Hall缺额与共同付款对偶--定理.md": "20c5d8e42adb6442879aa5f57fbf73f3b99a9ad68cb7356806de425786b50e45"
+  },
+  "review_digest": "eba0d3a2b6ec0d1a4a704b232119d0935e47feead90d74c01463b7743fca8872"
+}
