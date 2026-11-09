@@ -535,13 +535,286 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss1",
-  "request_id": "108ee82be9164ac880731c75d9cd0388",
+  "request_id": "25d33d92fc384777b03eb2ed103b6547",
   "requests": {
     "81a0648c3de14140a1ae6370812f33c4": "plan",
     "0af93a8461234dce808be7cb80cd93b6": "claim",
     "7822f84458dd4b61b00982c4e750feea": "read-add",
-    "108ee82be9164ac880731c75d9cd0388": "read-add"
+    "108ee82be9164ac880731c75d9cd0388": "read-add",
+    "25d33d92fc384777b03eb2ed103b6547": "done"
+  },
+  "edge_paths": {
+    "um-3a-single-sink-exit-transfers-to-profile-pool": "map/edges/unrelated-machines-3a-3a-0037bb2b1b7dced6/single-sink-exit-transfers-to-profile-pool.json",
+    "um-3a-mandatory-filter-certifies-escape-fixed-point": "map/edges/unrelated-machines-3a-3a-0037bb2b1b7dced6/mandatory-filter-certifies-escape-fixed-point.json",
+    "um-3a-cardinality-probe-separates-path-escape": "map/edges/unrelated-machines-3a-3a-0037bb2b1b7dced6/cardinality-probe-separates-path-escape.json",
+    "um-3a-two-copy-witness-motivates-circuit-restriction": "map/edges/unrelated-machines-3a-3a-0037bb2b1b7dced6/two-copy-witness-motivates-circuit-restriction.json",
+    "um-3a-karp-feedback-node-arc-budget-equivalence": "map/edges/unrelated-machines-3a-3a-0037bb2b1b7dced6/karp-feedback-node-arc-budget-equivalence.json",
+    "um-3a-fixed-target-ratio-slot-yields-opt-search": "map/edges/unrelated-machines-3a-3a-0037bb2b1b7dced6/fixed-target-ratio-slot-yields-opt-search.json",
+    "um-3a-karp-three-literal-source-to-chromatic": "map/edges/unrelated-machines-3a-3a-0037bb2b1b7dced6/karp-three-literal-source-to-chromatic.json",
+    "um-3a-parity-tensor-witness-separates-joint-guards": "map/edges/unrelated-machines-3a-3a-0037bb2b1b7dced6/parity-tensor-witness-separates-joint-guards.json",
+    "um-3a-raw-branching-valuation-supplies-colored-tree-upper-bound": "map/edges/unrelated-machines-3a-3a-0037bb2b1b7dced6/raw-branching-valuation-supplies-colored-tree-upper-bound.json",
+    "um-3a-polynomial-audits-check-true-moment-construction": "map/edges/unrelated-machines-3a-3a-0037bb2b1b7dced6/polynomial-audits-check-true-moment-construction.json"
+  },
+  "receipt": {
+    "coverage": {
+      "UM-DUAL-RAIL-FULLCUBE-EXACT-FAILURE-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "6829a44ba035614708e64123bd5ffc3352b7ef7339b37ff542424cbc958eed46",
+        "comparison_scope": "与指定单例外匹配、完整 cube 全割/流构造、A3 两份真实 42 机 165 任务证书作同轨比较。",
+        "reason": "每变量轨 W=1，任何指定例外 w_e=1/k，单例外只保证 ρ≥2−1/k 时 clause≤1；A=3 给 31/16，精确 cube 是 9/8。cube 需按 B 在 clause 侧一次选 (s−B)_+ 个内留端并在变量侧均衡，且以完整符号对称性正规化任意调度；它没有检验 2A+1 arity 上的单例外合同。两源重叠以各自可行阈值区分。"
+      },
+      "UM-RATIO-GROUP-PROMISE-APPROX-v1": {
+        "state": "linked",
+        "object_pin": "dd38bfbda8630dc6e75fc5bd3939171572d0d9f65cdda9be1f878fc00ba02ec4",
+        "comparison_scope": "固定半截断精确组汇比例 LP 与未知 OPT、共同 sink 退出、完整 profile pool、预测引导阈值搜索。",
+        "reason": "固定目标联合槽加单调有理网格给本承诺 α<2。此处宏无 sink 端、组比例可随 h,z，资格按组；完整 profile pool 要求每个 enabled 任务具全 pool 端及共同 a_z·c_j 包络且允许宏退出。预测内层基于误差，不具本搜索所用单调性。",
+        "edge_ids": [
+          "um-3a-fixed-target-ratio-slot-yields-opt-search"
+        ]
+      },
+      "UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2": {
+        "state": "isolated-after-review",
+        "object_pin": "ded973103913d8f0476436daa5bd8c88be562935a75b2fd9573a2d25f7874861",
+        "comparison_scope": "v2 正规 total-projection game、陈述先行概率账和两种归一化；对照 v3 高围长、v5 typed 度数质量补录和 Karp 显式确定归约。",
+        "reason": "每 seed 的 degree cap 与 perfect completeness、NO 至少 0.9 的全 cheap-list 条件及严格 Δmax>(2g−1)/ρ 分别成立。一次 trim 给不出高围长或 v5 fiber 修复；Karp 的确定性完全性不给 perfect-complete PCP/重复和随机 gap。物理 fee ≥cΔ/[2(g−1)] 仍需真实调度解码实现。"
+      },
+      "UM-LITERATURE-MATROID-MAXMIN-DRZ": {
+        "state": "isolated-after-review",
+        "object_pin": "0e46566e2a980228194f9bec53e2c7f4d9f657d432444954cb9cb1b174ca0fab",
+        "comparison_scope": "DRZ v4 的 Q(T)、拟阵交换、加权增广树、签名势及 Santa 的 6+ε，与 Annamalai 固定 rank 命中数合同对读。",
+        "reason": "DRZ 的选择对象为一个拟阵基并给每项不可拆资源最小值 (1/5−ε)T−p_max/5；用基多面体和资源值作扩张。Annamalai 固定给定左侧全覆盖、靠强化 τ 条件，无一般拟阵交换也没有隐式可变 rank 边枚举。共同增广形式不提供双向算法迁移。"
+      },
+      "UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "3c26d9092f84f8b36ae1d6912bea7d65813f70e8124c2865e21bbf570ac3c50c",
+        "comparison_scope": "一般 r 真实源、q13 规范导出和分层 Gram 审计，与同机槽修复、预测引导残余 LP 对照。",
+        "reason": "此源的专用 anchor 把所有最优原子峰固定为 B，固定全空间投影的每步评分严格偏向合并类机0，给 q/B 无界。坐标单调障碍需要固定槽初态和全机工作量恒定，预测舍入使用固定预测和不同残余 LP，均不以该评分规则为前提。程序边只核指定有限输入。"
+      },
+      "UM-COORDINATE-REPAIR-ST-GAP-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "b768398a953ec3c65f1f0bfb7dceac6f4f9613260c8a0baf6b5e96ec198d2c7a",
+        "comparison_scope": "同机原矩阵、真实最优均匀边际、标准固定槽与守恒程序；对照三机 padding、真实矩贪心及两种 CONFIG 删零端。",
+        "reason": "固定槽每机 m 件，峰 2m/(m+1)，在相同机工作量 m 恒定下逐坐标非增必保所有载荷；固定正余量循环不能启动。单件小任务迁移会提高接收机到 1 而降低峰，故不排峰值非增修复；padding 的分流结论使用不同矩阵和非 CONFIG 的 LP 起点。"
+      },
+      "UM-CONFIG-PRESERVING-CIRCUIT-TWO-SIGN-SUPPORT-LOSS-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "09c80ff911d250245fb0931617c6703d7e591a3acd6ac7ce38b591e7456cc554",
+        "comparison_scope": "三个真实原子构造、同步旋转、4N 单环秩、整段完整 CONFIG 与两端全部补全；对照双副本直和。",
+        "reason": "支撑内核一维且极小，箱端先碰零并且每任务仍至少两正端。两端硬复制同一 rail 的至少两件 port 挤 H 去同一 Q，完整端点最优恰 2−1/D。直和的每一分量已经在核中，故其数学接续为问题动机，不能用它证明本 circuit。"
+      },
+      "UM-BIG-CARDINALITY-PROBE-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "605b6579801e34bbd52b8be461716530aba9da89b0341d80da715adb8de9bbd3",
+        "comparison_scope": "无 z 稀释底座精确阈值、密阻塞共享 z 审查与 path-occupancy 三端 ESCAPE，在同一条件容量和大边基数探针下比较。",
+        "reason": "底座 N−1 个 blocker 占 N−1 unit slots，严格阈值可逐层删到 bridge；与独立匹配/独立 LST 不同。在本批三端 path-occupancy 族也能在 T0 拒绝（两种 k 起始删除层），共享 z 的全 C 阈值与密阻塞矩阵须分别证明。该比较没有用接受性导出实际调度。"
+      },
+      "UM-ESCAPE-MATCH-GAP-v1": {
+        "state": "linked",
+        "object_pin": "f106c89b7e2f62ae48f39481aaf8d89ea6934d05c7986ab94a11b86cb0682507",
+        "comparison_scope": "经典两树、仅路径占位、三端 path-occupancy 共享 z、另一个密阻塞共享 z 的身份分离；核 GHMR 同一合同和大边基数探针。",
+        "reason": "三端族 CONFIG 的 z 为空，GHMR 每次各自覆盖 mandatory 且首轮零删；真峰低于 θ 迫四个不同末簇同时占 z 造成至少 2，故 OPT=θ。新比较给 T0 的同条件基数探针拒绝，限定在该矩阵和 T0，不扩大为其他强化系统。",
+        "edge_ids": [
+          "um-3a-mandatory-filter-certifies-escape-fixed-point"
+        ]
+      },
+      "UM-CONFIG-PRESERVING-TWO-SIGN-SUPPORT-LOSS-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "a14e52130d1b81966f6fdf8c225f899a88c1751ca29d0944c75091fc75bb12ef",
+        "comparison_scope": "真实二色核心、两个直和副本的公共 CDF、两端补全与真单环端点比较。",
+        "reason": "同色至多一正端保证公共区间各自给完整真实峰1 原子，最大双符号端点恰 max(1,OPT(P+))。两分量分别已为更小核支撑；这使 circuit 成为准确的下一约束，却不派生真单环对象的原矩阵和精确端点值。"
+      },
+      "UM-DUAL-RAIL-ONE-EXCEPTION-FLOOR-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "0b5dfcf552f8dff92c8e877dd0b6b34e0919458e2ac8e31dd85e3d1aa8f226d5",
+        "comparison_scope": "两指定真实例外的半量容量匹配、arity 2A+1 两 clause 尖锐例、完整 cube 映射与 A3 有限证书。",
+        "reason": "只有自由选端才可用 max_e，指定端要检验 W−w_e≤ρ−1。完整 cube 的 W=1、w_e=1/k 给 ρ≥2−1/k 的弱重叠，且 arity 2A−1 不验证越界尖锐例；从 A3 两证书或 cube 正规化也推不出任意两指定例外的匹配。"
+      },
+      "M-818d12b7b63c42ff87792e422d66e263": {
+        "state": "linked",
+        "object_pin": "e1fa1304b90162d920a5eaf30dd5833ed6afd784596edb8cb532e3cbe7a1b31f",
+        "comparison_scope": "Karp §1、§2、§3.2–3.3 与直接反馈点/弧预算归约。",
+        "reason": "双向预算保持、可证书转换，顶点覆盖二环和四环作为原独立证明保留。精确判定域是删不超过 k 个点，必须保二环。",
+        "edge_ids": [
+          "um-3a-karp-feedback-node-arc-budget-equivalence"
+        ]
+      },
+      "UM-RESOURCE-REPETITION-SOUNDNESS-NO-v1": {
+        "state": "linked",
+        "object_pin": "674a4987a5a56361afc876c3ab8a141084dcf57daef1178cd0999b40ee0b7cef",
+        "comparison_scope": "完全克隆池分母充要式、parity r=2 的原需求树/实际 OPT、直接坐标张量各 t≥2，与固定层共同 guard 的同一整数见证比较。",
+        "reason": "克隆池和坐标张量各有实际 NO→YES，未混成原处理矩阵 Kronecker。B 模板只免费给轴 prefix/单层 guard；二维块跨层等式明确展示为何须重选共轭 B。guard 解析证明已核，具名 overlap 在本批闭合。",
+        "edge_ids": [
+          "um-3a-parity-tensor-witness-separates-joint-guards"
+        ]
+      },
+      "M-97c2a4fb184f49c68d364f3298bfbbfb": {
+        "state": "linked",
+        "object_pin": "3f567e17c1642b9760d60629dc7f08f22a8c2917d633442565863b2f21fe7a44",
+        "comparison_scope": "Karp §4.1/4.2 的 exact 3-CNF 源、修正 m+1 palette 与目标 NP 证书，核原印失效的两个独立符号。",
+        "reason": "全输入多项式归约保 YES/NO，每子句点许可色 iff 至少一真文字。原印按子句数阈值会连 palette 容量都不足，负文字不对称边也不能改靠重复文字补位。",
+        "edge_ids": [
+          "um-3a-karp-three-literal-source-to-chromatic"
+        ]
+      },
+      "UM-HEAVY-MATCH-FILTER-v1": {
+        "state": "linked",
+        "object_pin": "1419af104ee6c6baaaf9aea35ba94d38f08743797cf2caeaccfce08cedd050ca",
+        "comparison_scope": "同一强制大端、必选任务收缩后的横截拟阵最大任务权、精确查询数；对照路径和密共享 z、逐边同条件 LP。",
+        "reason": "所有真实 T 调度使用边逐轮保留；证书是同一轮每一查询各自一份覆盖 N 的匹配。此定义和安全性不把通过变成可行，path-occupancy z 矩阵给精确固定点，强基数探针则在 T0 拒绝。",
+        "edge_ids": [
+          "um-3a-mandatory-filter-certifies-escape-fixed-point"
+        ]
+      },
+      "unrelated-machines/annamalai-bipartite-hypergraph-perfect-matching-algorithm-2016": {
+        "state": "isolated-after-review",
+        "object_pin": "b60b0046cd893f1bef2cd2bbea4acf7df766ff07a00c61dd0beb0b9386be02f3",
+        "comparison_scope": "Annamalai Theorem 1.3/5.4、固定 r 和 ε、强化 τ 条件及失败集合，与 DRZ 和单强制根树的真实构造比较。",
+        "reason": "左侧全覆盖和显式固定 rank 匹配可用 BuildLayer、collapse 与签名势求解；DRZ 的资源子集最小价值和拟阵交换没有自动给出强化 τ，单树分桶直接给同深子树，无需列指数辅助超边。没有迁移为一般 UM 调度。"
+      },
+      "UM-BOUNDED-PROFILE-EXIT-POOL-v1": {
+        "state": "linked",
+        "object_pin": "9e64531a29280962b14d5e5739bf8bc0d76f45858ce260820606ae9390c9523f",
+        "comparison_scope": "共享单 sink 的宏/真实 exit/dummy 匹配 §8、完整 profile pool §9、原 Hall 与精确组比例联合槽的合同。",
+        "reason": "用 c_j/S 构造虚拟单 sink 并按最小实际负载恢复；必要性用下包络、成功用上包络和每件 βT。所有宏与私有任务身份保留，FAIL 原 OPT>T；只对完整 pool 资格。",
+        "edge_ids": [
+          "um-3a-single-sink-exit-transfers-to-profile-pool"
+        ]
+      },
+      "M-1b6ccc3bd9ce46caadada7ecb2f03046": {
+        "state": "linked",
+        "object_pin": "48bcb198cbd6ffc9328681d40a22f5edca1f8fa80f53a46fcfaa60aad508b203",
+        "comparison_scope": "Karp §1、§2、§3.2–3.3，与 FVS 的分裂图及有向线图归约。",
+        "reason": "反馈弧证书允许删任意弧，分裂图反向把跨弧映到原尾点，逐条原环给严密预算保持；线图反向用原有向闭走中含环。保留原顶点覆盖四环证明。",
+        "edge_ids": [
+          "um-3a-karp-feedback-node-arc-budget-equivalence"
+        ]
+      },
+      "UM-SINGLE-PINNED-TREE-MULTIPLICITY-EXACT-CONFIGURATION-GAP-v1": {
+        "state": "linked",
+        "object_pin": "9a712c975eb61cbcaa1872761a8dbfe2f8f09352b26c8e0a66bad057d185d446",
+        "comparison_scope": "单强制根完整树、全树叶色重数、原始 q 的次可加/见证、底层色组显式 CONFIG、path-occupancy 双根及 Annamalai。",
+        "reason": "叶出现先单射，分桶取得互异颜色的同深 q 树并输出全部原任务。真实 OPT 的任意调度反向提取及固定 μ 的 gap 上确界由单根、全树重数、专用底层族的完整证书支撑；两根 bridge 或按状态限制的类不能代替这一步。",
+        "edge_ids": [
+          "um-3a-raw-branching-valuation-supplies-colored-tree-upper-bound"
+        ]
+      },
+      "unrelated-machines/learning-augmented-makespan-prediction-guided-search": {
+        "state": "isolated-after-review",
+        "object_pin": "d99f1411d318de1abc2c9714bb5c40797448598ff17af6fa59576c9ed772bfe0",
+        "comparison_scope": "学习增强内层 K 项遗漏重任务、机器相关假阳性载荷、ST/LST 残余与外层临界阈值；对照精确比例的真实 OPT 网格及真矩源。",
+        "reason": "部分预测加预算枚举的误差界在 OPT 处评估、任意预测以 2OPT 封顶。外层依重轻分类在相邻临界值不变，内层失败可能由错误预测造成，不是比例 LP 的单调测试。源也无给定完整最优分配分布或固定阶范数选择要求。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-0037bb2b1b7dced6/single-sink-exit-transfers-to-profile-pool.json",
+        "sha256": "06dc3273d63d1ab1cfc5e2600ab118c56022c801d3184fa260b4a8171385f41a"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-0037bb2b1b7dced6/mandatory-filter-certifies-escape-fixed-point.json",
+        "sha256": "92f16d20bbe64e8a085e7984afb103ab296d81cb734810f0da4b8319e4499cee"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-0037bb2b1b7dced6/cardinality-probe-separates-path-escape.json",
+        "sha256": "7e3547b3de7a03805aa65d074dff0047ad037d45b9782d6b5dad281f228cbb53"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-0037bb2b1b7dced6/two-copy-witness-motivates-circuit-restriction.json",
+        "sha256": "b391ee51733026f062f6478663ae1aa9fee4358ffaa0d5e042adbdbab6df2b5d"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-0037bb2b1b7dced6/karp-feedback-node-arc-budget-equivalence.json",
+        "sha256": "147c2aed1f676085e15194696eb919831c95e70d734b23e48d3b87a259074e21"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-0037bb2b1b7dced6/fixed-target-ratio-slot-yields-opt-search.json",
+        "sha256": "ba9c993c6aed454540409eebebef16b64d2befa0dc563eaf817fc4bfc073b194"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-0037bb2b1b7dced6/karp-three-literal-source-to-chromatic.json",
+        "sha256": "50060465afb85b29a3669f2b41f4ea9b156ab8ac0cf84c7772996790be605ee7"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-0037bb2b1b7dced6/parity-tensor-witness-separates-joint-guards.json",
+        "sha256": "71b62954afcd344e79e64191dc05c3c96aa5d040f92080918f8bd0a657167b85"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-0037bb2b1b7dced6/raw-branching-valuation-supplies-colored-tree-upper-bound.json",
+        "sha256": "258cdc96e3451fad6319ebb36e56834352e7af4ac016282e2d450b658fcd438d"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-0037bb2b1b7dced6/polynomial-audits-check-true-moment-construction.json",
+        "sha256": "504fc563047a0def42618af55239d79305e5d138a1c4fcb0aaa8a0b18e694c24"
+      }
+    ],
+    "closed_overlaps": [
+      {
+        "core_id": "UM-RESOURCE-REPETITION-SOUNDNESS-NO-v1",
+        "peer_id": "UM-TENSOR-JOINT-GUARD-ESCAPE-q1",
+        "reason": "已比较相同 parity 源、完整词双射与同一匹配的层收费：普通二维块含 Y₀=X₁，可同时满足全部单轴 prefix 却违反两层容量；共轭低支撑排除另证固定 L 的同一匹配，t=6L。完整池与 actual UM 接口不属于这个已闭对象对。"
+      }
+    ],
+    "object_ids": [
+      "UM-DUAL-RAIL-FULLCUBE-EXACT-FAILURE-v1",
+      "UM-RATIO-GROUP-PROMISE-APPROX-v1",
+      "UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2",
+      "UM-LITERATURE-MATROID-MAXMIN-DRZ",
+      "UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1",
+      "UM-COORDINATE-REPAIR-ST-GAP-v1",
+      "UM-CONFIG-PRESERVING-CIRCUIT-TWO-SIGN-SUPPORT-LOSS-v1",
+      "UM-BIG-CARDINALITY-PROBE-v1",
+      "UM-ESCAPE-MATCH-GAP-v1",
+      "UM-CONFIG-PRESERVING-TWO-SIGN-SUPPORT-LOSS-v1",
+      "UM-DUAL-RAIL-ONE-EXCEPTION-FLOOR-v1",
+      "M-818d12b7b63c42ff87792e422d66e263",
+      "UM-RESOURCE-REPETITION-SOUNDNESS-NO-v1",
+      "M-97c2a4fb184f49c68d364f3298bfbbfb",
+      "UM-HEAVY-MATCH-FILTER-v1",
+      "unrelated-machines/annamalai-bipartite-hypergraph-perfect-matching-algorithm-2016",
+      "UM-BOUNDED-PROFILE-EXIT-POOL-v1",
+      "M-1b6ccc3bd9ce46caadada7ecb2f03046",
+      "UM-SINGLE-PINNED-TREE-MULTIPLICITY-EXACT-CONFIGURATION-GAP-v1",
+      "unrelated-machines/learning-augmented-makespan-prediction-guided-search"
+    ],
+    "read_object_ids": [
+      "UM-SHARED-SINK-MACRO-EXIT-v1",
+      "M-7499b4fd61604920822feedbce117033",
+      "UM-TENSOR-JOINT-GUARD-ESCAPE-q1",
+      "UM-RATIO-GROUP-JOINT-SLOT-v1",
+      "UM-SOURCE-KARP-THREE-SAT",
+      "UM-PRIVATE-TREE-Q-VALUATION-v1",
+      "unrelated-machines/polynomial-source-two-canonical-audits-and-q13-export"
+    ],
+    "input_pins": {
+      "UM-DUAL-RAIL-FULLCUBE-EXACT-FAILURE-v1": "6829a44ba035614708e64123bd5ffc3352b7ef7339b37ff542424cbc958eed46",
+      "UM-RATIO-GROUP-PROMISE-APPROX-v1": "dd38bfbda8630dc6e75fc5bd3939171572d0d9f65cdda9be1f878fc00ba02ec4",
+      "UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2": "ded973103913d8f0476436daa5bd8c88be562935a75b2fd9573a2d25f7874861",
+      "UM-LITERATURE-MATROID-MAXMIN-DRZ": "0e46566e2a980228194f9bec53e2c7f4d9f657d432444954cb9cb1b174ca0fab",
+      "UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1": "3c26d9092f84f8b36ae1d6912bea7d65813f70e8124c2865e21bbf570ac3c50c",
+      "UM-COORDINATE-REPAIR-ST-GAP-v1": "b768398a953ec3c65f1f0bfb7dceac6f4f9613260c8a0baf6b5e96ec198d2c7a",
+      "UM-CONFIG-PRESERVING-CIRCUIT-TWO-SIGN-SUPPORT-LOSS-v1": "09c80ff911d250245fb0931617c6703d7e591a3acd6ac7ce38b591e7456cc554",
+      "UM-BIG-CARDINALITY-PROBE-v1": "605b6579801e34bbd52b8be461716530aba9da89b0341d80da715adb8de9bbd3",
+      "UM-ESCAPE-MATCH-GAP-v1": "f106c89b7e2f62ae48f39481aaf8d89ea6934d05c7986ab94a11b86cb0682507",
+      "UM-CONFIG-PRESERVING-TWO-SIGN-SUPPORT-LOSS-v1": "a14e52130d1b81966f6fdf8c225f899a88c1751ca29d0944c75091fc75bb12ef",
+      "UM-DUAL-RAIL-ONE-EXCEPTION-FLOOR-v1": "0b5dfcf552f8dff92c8e877dd0b6b34e0919458e2ac8e31dd85e3d1aa8f226d5",
+      "M-818d12b7b63c42ff87792e422d66e263": "e1fa1304b90162d920a5eaf30dd5833ed6afd784596edb8cb532e3cbe7a1b31f",
+      "UM-RESOURCE-REPETITION-SOUNDNESS-NO-v1": "674a4987a5a56361afc876c3ab8a141084dcf57daef1178cd0999b40ee0b7cef",
+      "M-97c2a4fb184f49c68d364f3298bfbbfb": "3f567e17c1642b9760d60629dc7f08f22a8c2917d633442565863b2f21fe7a44",
+      "UM-HEAVY-MATCH-FILTER-v1": "1419af104ee6c6baaaf9aea35ba94d38f08743797cf2caeaccfce08cedd050ca",
+      "unrelated-machines/annamalai-bipartite-hypergraph-perfect-matching-algorithm-2016": "b60b0046cd893f1bef2cd2bbea4acf7df766ff07a00c61dd0beb0b9386be02f3",
+      "UM-BOUNDED-PROFILE-EXIT-POOL-v1": "9e64531a29280962b14d5e5739bf8bc0d76f45858ce260820606ae9390c9523f",
+      "M-1b6ccc3bd9ce46caadada7ecb2f03046": "48bcb198cbd6ffc9328681d40a22f5edca1f8fa80f53a46fcfaa60aad508b203",
+      "UM-SINGLE-PINNED-TREE-MULTIPLICITY-EXACT-CONFIGURATION-GAP-v1": "9a712c975eb61cbcaa1872761a8dbfe2f8f09352b26c8e0a66bad057d185d446",
+      "unrelated-machines/learning-augmented-makespan-prediction-guided-search": "d99f1411d318de1abc2c9714bb5c40797448598ff17af6fa59576c9ed772bfe0",
+      "UM-SHARED-SINK-MACRO-EXIT-v1": "b7cd33c2c9444a9415dc59b7d0f4514799de14061e0cb792aa6a003224dc7c12",
+      "M-7499b4fd61604920822feedbce117033": "c40152efb4426bf3cd9dc724fb6554b728958c3727efca0fc839e6110e366c41",
+      "UM-TENSOR-JOINT-GUARD-ESCAPE-q1": "33e285e024ece5ccdcf81e299c86cd58cf8830c518d137502a2526251bb202af",
+      "UM-RATIO-GROUP-JOINT-SLOT-v1": "80776c7e3bb9cf105ff29e228453b31108fd780a29924240f5f0ae8f7b029210",
+      "UM-SOURCE-KARP-THREE-SAT": "b932ca164ad03169f16e371455e99a3b869f7eb55d9338724f485b3f38d86409",
+      "UM-PRIVATE-TREE-Q-VALUATION-v1": "5ba8e192bbdbc159a36e27f74b5d4ec618aee3e020c3352139c1f7fc19c8ecbe",
+      "unrelated-machines/polynomial-source-two-canonical-audits-and-q13-export": "d0eda5606b6e6167687bfa9d517320ddc46fd20eb6a26ab67648a580aeb8f3e2"
+    }
   }
 }
