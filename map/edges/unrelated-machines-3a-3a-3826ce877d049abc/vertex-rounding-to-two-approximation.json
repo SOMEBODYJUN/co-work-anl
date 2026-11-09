@@ -1,0 +1,43 @@
+{
+  "edge_id": "um-3826ce-vertex-rounding-to-two-approximation",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/lst-vertex-pseudoforest-rounding"
+  ],
+  "target_ids": [
+    "unrelated-machines/lst-two-approximation"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "显式正整数不相关机矩阵；阈值d先删除p_ij>d端。调用显式有理LP可行性及顶点恢复的标准多项式算法；有理输入用分母乘积整数化，空/OPT0单列。",
+  "roles": {
+    "unrelated-machines/lst-vertex-pseudoforest-rounding": "在剪枝LP顶点上同时输出逐机≤d_i+t的完整实际调度。",
+    "unrelated-machines/lst-two-approximation": "令d_i=t=d得可靠NO/峰≤2d松弛判定，并用正确二分不变量得2近似。"
+  },
+  "explanation": "若真实d调度存在，它的0/1点在剪枝LP内，所以LP不可行推出可靠NO。可行时取顶点，设各d_i=d、单件t=d，源给全原任务实际σ且每机≤2d。先最快端分配得整数上界U；若W为最快端总工作，U≤W≤mOPT，故U/m≤OPT≤U。整数阈值二分维护下界≤OPT、所存实际调度峰≤2倍当前上界：NO只能上移下界；成功返回合法σ时下移上界并存σ。最后整数最小阈值上界≤OPT，输出≤2OPT。此证明不要求算法返回调度的阈值集合单调。共同分母Q位长≤输入分母位长和，整数二分迭代取对数位长；OPT0逐任务零端输出，空任务空输出。",
+  "scope": "整条LST松弛判定与数学二近似；不是仅给定分数点的软件恢复器，也不把顶点趋二锐例当计算困难性。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/LST不相关机二近似与硬度--资源.md",
+      "sha256": "2197637438ed2fdfe40d4eb21ba2f86a6d9fd4dde4211b01fb253e38a7489969",
+      "section": "1. 顶点支撑伪森林与逐机加性舍入"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/LST不相关机二近似与硬度--资源.md",
+      "sha256": "2197637438ed2fdfe40d4eb21ba2f86a6d9fd4dde4211b01fb253e38a7489969",
+      "section": "2. 松弛判定、一般二近似和趋二实例"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "本次恢复worker实读两端当前登记、所列完整数学正文及承重章节，逐项核模型、量词、方向和作用范围；沿用成熟解析证明，没有重跑历史数学程序、没有外审或新颖性升级。整条LST松弛判定与数学二近似；不是仅给定分数点的软件恢复器，也不把顶点趋二锐例当计算困难性。",
+  "whole_result": "顶点伪森林舍入在t=d_i=d给剪枝LP的可靠NO或完整峰≤2d实际调度；整数/有理网格二分及零端边界恢复一般数学2近似。",
+  "endpoint_pins": {
+    "unrelated-machines/lst-two-approximation": "5771433d59066caee67ea38680fecaca5af89e91b7370b31d54ba9af99818374",
+    "unrelated-machines/lst-vertex-pseudoforest-rounding": "ca67d1006655773be27e6d03aefd2b218be2477ecfd9e77a773fbce9f102fafa"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/LST不相关机二近似与硬度--资源.md": "2197637438ed2fdfe40d4eb21ba2f86a6d9fd4dde4211b01fb253e38a7489969"
+  },
+  "review_digest": "a4740f34b9cc0471f7cb5a29cc17fec2c67769a954d8ea9ee55d5d497f0ad330"
+}

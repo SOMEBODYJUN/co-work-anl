@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-3826ce-exact-minion-to-general-pcsp-hardness",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-NEAR-UNIT-PCSP-EXACT-MINION-v1"
+  ],
+  "target_ids": [
+    "UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "固定整数k≥2、1≤r≤k−1；一般Boolean promise模板(A_k,B_{k,r},AMO₂,ONE)，变量出现次数不限。使用正文已明确导入的BBKO v3 Definition5.16/Proposition5.17：到Boolean strongly C-fixing minion的minion homomorphism给该一般PCSP的NP-hardness；本边条件使用这个外部硬性定理，不重构其完整文献证明。",
+  "roles": {
+    "UM-NEAR-UNIT-PCSP-EXACT-MINION-v1": "给任意arity的精确minion分类，并给大小≤C=k−r的minimal winning supports。",
+    "UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1": "在BBKO强C-fixing硬性定理的条件下得到同一一般promise模板的NP-hardness。"
+  },
+  "explanation": "令C=k−r≥1。对任一polymorphism f，ONE保证winning族非空，有限arity下取一个极小winner S，|S|≤C。把S坐标全置1，由单调性强迫f=1；把S坐标全置0，若其余坐标还能使f=1，就有一个与S不交的winning support，违背两两相交。因此同一个S双侧fixing。每个f都有大小≤C的此证书；C只依赖固定模板而非arity。恒等映射保全部minors，是进入strongly C-fixing minion的homomorphism。调用明确列出的BBKO定理即得strict可满足/weak不可满足的promise区分NP-hard。C≥2时x1 AND OR(x2,…,xn)有无界essential arity，不以bounded-essential theorem替代该调用。模板一般约束图允许任意fanout；没有构造物理UM编译器。",
+  "scope": "整条一般PCSP hardness的函数层推导及外部定理调用条件；conditional仅保所列文献工具依赖，不付UM物理复制、低载解码或近二困难性。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/近单位PCSP蕴含与物理复制义务最终范围审查--审查.md",
+      "sha256": "05f56de06de9c6a087704dff698cc949df910695f6073d1d622b4ccc3d06f9f2",
+      "section": "1. Strict/weak near-unit PCSP 与精确 minion"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/近单位PCSP蕴含与物理复制义务最终范围审查--审查.md",
+      "sha256": "05f56de06de9c6a087704dff698cc949df910695f6073d1d622b4ccc3d06f9f2",
+      "section": "2. 一般 PCSP NP-hardness 与普通 CSP 迁移边界"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/near-unit-implication-pcsp-20261031/original/near_unit_implication_pcsp_review.md",
+      "sha256": "9ee1c800ceccb7d49dcd5addc9c80ce927ec66a7399cc05077f89e7792fb1749"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "本次恢复worker实读两端当前登记、所列完整数学正文及承重章节，逐项核模型、量词、方向和作用范围；沿用成熟解析证明，没有重跑历史数学程序、没有外审或新颖性升级。整条一般PCSP hardness的函数层推导及外部定理调用条件；conditional仅保所列文献工具依赖，不付UM物理复制、低载解码或近二困难性。",
+  "whole_result": "精确minion的minimal winners给强C-fixing与恒等minion homomorphism；条件于所列BBKO定理，对每个固定k,r，一般模板的strict YES/weak NO区分NP-hard。",
+  "endpoint_pins": {
+    "UM-NEAR-UNIT-PCSP-EXACT-MINION-v1": "761b51f2ad55ed124afa6c9925fac09e0b318876f3a35afacfff5e903a14952a",
+    "UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1": "905c58fa9b11b6bb9fadbf532251fbd54d1cbf5e1bb54aa1132984666ffc98ef"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/近单位PCSP蕴含与物理复制义务最终范围审查--审查.md": "05f56de06de9c6a087704dff698cc949df910695f6073d1d622b4ccc3d06f9f2",
+    "archives/unrelated-machines/tools/evidence/near-unit-implication-pcsp-20261031/original/near_unit_implication_pcsp_review.md": "9ee1c800ceccb7d49dcd5addc9c80ce927ec66a7399cc05077f89e7792fb1749"
+  },
+  "review_digest": "1aea88faeaddd80238cdc3ac0cd7c527557096e5e886f81608fd0ee7995d9d63"
+}

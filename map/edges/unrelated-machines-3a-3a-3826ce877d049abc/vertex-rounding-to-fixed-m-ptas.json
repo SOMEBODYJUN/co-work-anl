@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-3826ce-vertex-rounding-to-fixed-m-ptas",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/lst-vertex-pseudoforest-rounding"
+  ],
+  "target_ids": [
+    "unrelated-machines/lst-fixed-machines-small-space-ptas"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定机器数m与固定ε>0；源允许逐机剩余截止量d_i和单件上界t；输入正整数，有理/零扩展只按同一证明处理。",
+  "roles": {
+    "unrelated-machines/lst-vertex-pseudoforest-rounding": "对剩余短任务LP顶点给加性εd的同时全机舍入。",
+    "unrelated-machines/lst-fixed-machines-small-space-ptas": "枚举长指派、复用LP/舍入空间，得到固定m的(1+ε)松弛判定与优化。"
+  },
+  "explanation": "给试验d>0，把端耗时>εd的实际指派叫长指派。任何峰d调度在每机只有至多1/ε个此指派，逐机枚举其任务及归属，拒绝重复任务冲突或长负载a_i>d；至少一个枚举与真实d调度长部分相同。对剩余任务只允许p_ij≤εd端，以逐机容量d_i=d−a_i解LP。可行时取顶点，源以t=εd输出短部分负载≤d−a_i+εd，加回长部分得(1+ε)d。全部枚举不可行即真实d不可行。因此有(1+ε)松弛判定；按源同章的整数阈值优化不变量给近似方案。枚举数约(n+1)^(m/ε)，固定m,ε才为多项式；逐项生成枚举、复用LP空间，无须同时存全部枚举，空间多项式。零阈值直接检查零端，不除d。",
+  "scope": "整条固定m小空间PTAS，不声称可变m PTAS、FPTAS或关于1/ε的多项式时间。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/LST不相关机二近似与硬度--资源.md",
+      "sha256": "2197637438ed2fdfe40d4eb21ba2f86a6d9fd4dde4211b01fb253e38a7489969",
+      "section": "1. 顶点支撑伪森林与逐机加性舍入"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/LST不相关机二近似与硬度--资源.md",
+      "sha256": "2197637438ed2fdfe40d4eb21ba2f86a6d9fd4dde4211b01fb253e38a7489969",
+      "section": "3. 固定机器数的小空间PTAS"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/LST不相关机二近似与硬度--资源.md",
+      "sha256": "2197637438ed2fdfe40d4eb21ba2f86a6d9fd4dde4211b01fb253e38a7489969",
+      "section": "2. 松弛判定、一般二近似和趋二实例"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "本次恢复worker实读两端当前登记、所列完整数学正文及承重章节，逐项核模型、量词、方向和作用范围；沿用成熟解析证明，没有重跑历史数学程序、没有外审或新颖性升级。整条固定m小空间PTAS，不声称可变m PTAS、FPTAS或关于1/ε的多项式时间。",
+  "whole_result": "逐机长指派枚举与源的逐机加性舍入共同给固定m、固定ε的(1+ε)松弛判定和优化，时间含约(n+1)^(m/ε)，空间多项式。",
+  "endpoint_pins": {
+    "unrelated-machines/lst-fixed-machines-small-space-ptas": "d1c61354cc26b85b34a8a4397f81efa2d3284f3843494cc337c8561e6fd9dc30",
+    "unrelated-machines/lst-vertex-pseudoforest-rounding": "ca67d1006655773be27e6d03aefd2b218be2477ecfd9e77a773fbce9f102fafa"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/LST不相关机二近似与硬度--资源.md": "2197637438ed2fdfe40d4eb21ba2f86a6d9fd4dde4211b01fb253e38a7489969"
+  },
+  "review_digest": "9cac7dfef4967981292d5190cd134578ef7c319421ba60c4335089dc9cbd1180"
+}

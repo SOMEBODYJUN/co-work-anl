@@ -1,0 +1,42 @@
+{
+  "edge_id": "um-3826ce-label-fee-escape-to-second-multiplicity",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-TWO-LEVEL-LABEL-FEE-ESCAPE-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/two-level-label-fee-second-multiplicity"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一完整显式R/H/A/B/C两层收费矩阵；D≥2、degree≤D、全定义投影可非单射并允许平行边；所有D个f逐标签展开、顶点C池按原编号固定。",
+  "roles": {
+    "UM-TWO-LEVEL-LABEL-FEE-ESCAPE-v1": "给任意边状态的全任务构造、任意低实际调度的反向计数、严格解码与奇q移位列表族。",
+    "unrelated-machines/two-level-label-fee-second-multiplicity": "取t_{v,b}=c_{v,b}、L(a)=max_v c_{v,(2)}(a)、L*=μ，得到所列完整子定理。"
+  },
+  "explanation": "固定状态a，源把每顶点最大重数标签的w放B、其全部f送固定C，其他标签w留A、f留B，未选状态任务和guards全部付清，峰≤1+max_v c_{v,(2)}(a)/D。对a最小化给OPT≤1+μ/D。反向若实际C<1+μ/D≤3/2，selector迫两个半query外送，H上的guard迫到A，读出的每个选中标签给A至少c/D。令m=floor(D(C−1))<μ，某顶点两个标签次数≥m+1，两w都去B；每B最多留m枚f，合计外送2(D−m)>D件unit到同一D台原C池，C<2不容纳，矛盾。故非空顶点OPT=1+μ/D，正是L*=μ的身份对应；μ0下界由非空w/selector的unit给OPT≥1。C<1+1/D时m0，至多一激活标签，给完整singleton解码；等号不提升。奇q移位π_t(a)=a+t、D=q，取a_t=t后两侧标签重数均1，源unsat又由严格decoder给OPT=1+1/q；总列表长≤2g覆盖差集数≤|L_u||L_v|≤g²，覆盖率≤g²/q。空完整顶点OPT0、有孤点无边OPT1均保留。",
+  "scope": "整条第二重数恒等式/严格解码/移位列表边界作为源完整结果的子定理；不作反向等价，不声称μ的多项式优化。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/两层标签费用逃逸与真实最优值增量审计--审查.md",
+      "sha256": "f41bb03f293f9bcd9a89db3268562090643147bfdd337e32b2740f4b0371ed4e"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/两层标签收费第二重数恒等式--定理.md",
+      "sha256": "1ea40ebba29c5603340dc3bd6af7d2e2e7476f30c6c22f2452ae5851d6c0ee0d"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "本次恢复worker实读两端当前登记、所列完整数学正文及承重章节，逐项核模型、量词、方向和作用范围；沿用成熟解析证明，没有重跑历史数学程序、没有外审或新颖性升级。整条第二重数恒等式/严格解码/移位列表边界作为源完整结果的子定理；不作反向等价，不声称μ的多项式优化。",
+  "whole_result": "在完全相同物理矩阵以L*=μ重命名，源推出非空OPT=1+L*/D、严格C<1+1/D singleton解码与奇q移位族OPT=1+1/q及g²/q列表上界，并保空顶点/孤点边界。",
+  "endpoint_pins": {
+    "UM-TWO-LEVEL-LABEL-FEE-ESCAPE-v1": "88061e3d9b8ba35fa98f9194c8cc12a8bbb490e166728b74a4585afb2dc59034",
+    "unrelated-machines/two-level-label-fee-second-multiplicity": "b4cc1f38ae0ca6ff60bb97cb11c94717d8181f948bea166097750e92e070a7db"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/两层标签费用逃逸与真实最优值增量审计--审查.md": "f41bb03f293f9bcd9a89db3268562090643147bfdd337e32b2740f4b0371ed4e",
+    "archives/unrelated-machines/state/定理/两层标签收费第二重数恒等式--定理.md": "1ea40ebba29c5603340dc3bd6af7d2e2e7476f30c6c22f2452ae5851d6c0ee0d"
+  },
+  "review_digest": "8b8d01e5a4ae45a59417162ab6669287fe1a036a9f9ab9b771ba456168adaab5"
+}

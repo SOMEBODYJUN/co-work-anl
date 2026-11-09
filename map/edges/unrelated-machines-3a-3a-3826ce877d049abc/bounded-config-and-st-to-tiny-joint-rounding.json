@@ -1,0 +1,56 @@
+{
+  "edge_id": "um-3826ce-bounded-config-and-st-to-tiny-joint-rounding",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1",
+    "UM-ST-ROUND-v1"
+  ],
+  "target_ids": [
+    "UM-TINY-WORK-STABILITY-JOINT-ROUND-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "给显式有理CONFIG(T)、K≥1及δ≥0。先把任意位置有零端的全部任务真实安置到零端并从所有配置删除，再重算r_i,s_i,b_i,K。每个正权残余配置big(p>δT)数≤K；r_i为配置tiny-work最小值，s_i为其均值，b_i为正tiny支撑最大件。",
+  "roles": {
+    "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1": "仅复用其逐行数值包络证明：删除tiny后的本行配置big部分≤K且容量U_i=T−r_i，给big槽最大件和≤α_K U_i；不要求big列单独覆盖1。",
+    "UM-ST-ROUND-v1": "复用tiny槽前一满槽收费≤s_i+b_i，并把全部两类边际放同一原作业—槽图作一次Hall匹配。",
+    "UM-TINY-WORK-STABILITY-JOINT-ROUND-v1": "在同一整数匹配中同时兑现big/tiny逐行界和完整原任务身份。"
+  },
+  "explanation": "任一残余配置的big工作≤T−τ_i(C)≤U_i=T−r_i。U_i>0时以U_i归一：本行删tiny所得配置分布质量仍1、每配置big数≤K、工作≤1。源B的严格正交长前缀、最早整数类型、紧多面体Abel与Cramer/Hadamard是逐行包络论证，故适用该本行分布，得E_i^big≤α_K U_i，α_K=2−K^{−(K−1)}（K1=1）。这里没有把仅big边际当成列和1的新全局CONFIG问题，也没有单独运行B的全局舍入。U_i=0时残余任务无任何零端、big正时间，故big边际为空。Tiny按时间非增切单位槽，第二槽起的匹配件各收费给前一完整槽，得E_i^tiny≤s_i+b_i。对每台机每一类按严格正交长连边，全部big/tiny槽一次放同图，每原任务只一个左节点；任务到两类所有机器的质量总和1，每槽质量≤1。因此Hall给覆盖全部残余任务的一个匹配，哪怕同任务在不同机器切换角色也只执行一次。该共同匹配同时使L_i≤α_K(T−r_i)+s_i+b_i。若s_i−r_i≤ωT且b_i≤δT，则L_i≤α_K T+(s_i−r_i)+b_i−(α_K−1)r_i≤(α_K+ω+δ)T。最后加回实际零端任务仍是零负载；T0或全部已零端安置直接输出。构图槽数按显式边/证书多项式，证明不枚举K或求CONFIG。",
+  "scope": "ALL完整支撑给定CONFIG的稳定联合槽舍入；B付局部big包络，S付tiny收费与同一全局Hall。没有稳定证书生成或未知OPT承诺，K3锐系数11/6未偷换本目标一般α_K。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/有界配置基数的严格槽余量与承诺搜索--定理.md",
+      "sha256": "29740fdc4ca1461600f22b2b517c2f458a1208863626e09d0f29f4399abb4817"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md",
+      "sha256": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/小任务联合槽稳定性与选择边界--定理.md",
+      "sha256": "5a3c005ace1b821da1409b30246879992b40094a8ed61940aeb6753aff71619e"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/小任务联合槽与加权小端ST双源续审查--审查.md",
+      "sha256": "e51a9f639bc40bdc64af9185604a672378c624bdf6154de6e566c521bd0dc4a7",
+      "section": "2. 小任务工作量的联合槽舍入"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "本次恢复worker实读两端当前登记、所列完整数学正文及承重章节，逐项核模型、量词、方向和作用范围；沿用成熟解析证明，没有重跑历史数学程序、没有外审或新颖性升级。ALL完整支撑给定CONFIG的稳定联合槽舍入；B付局部big包络，S付tiny收费与同一全局Hall。没有稳定证书生成或未知OPT承诺，K3锐系数11/6未偷换本目标一般α_K。",
+  "whole_result": "给定合法显式CONFIG且全局零端预处理后，每配置big数≤K，单次全局big/tiny槽匹配输出全部原任务，所有机器同时L_i≤α_K(T−r_i)+s_i+b_i；稳定差≤ωT时≤(α_K+ω+δ)T，包含T0/OPT0/空支撑。",
+  "endpoint_pins": {
+    "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1": "1446c2007dc779eda52b67f522d737cb36c852c2601220adbca4e3bf3b35d890",
+    "UM-ST-ROUND-v1": "8c4662c822ebd204e3b095934f8745464426df43fc2328a6bbc35063e4148ea1",
+    "UM-TINY-WORK-STABILITY-JOINT-ROUND-v1": "b2e79b0228f25fbe87aafca29ffece76b35bd67560c5364b4a768dfa5ef6babc"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/有界配置基数的严格槽余量与承诺搜索--定理.md": "29740fdc4ca1461600f22b2b517c2f458a1208863626e09d0f29f4399abb4817",
+    "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+    "archives/unrelated-machines/state/定理/小任务联合槽稳定性与选择边界--定理.md": "5a3c005ace1b821da1409b30246879992b40094a8ed61940aeb6753aff71619e",
+    "archives/unrelated-machines/state/审查/小任务联合槽与加权小端ST双源续审查--审查.md": "e51a9f639bc40bdc64af9185604a672378c624bdf6154de6e566c521bd0dc4a7"
+  },
+  "review_digest": "2bc5374d19b934bd41082865e520eae67fa18a335ffe654b272fe2c87663612e"
+}

@@ -1,0 +1,51 @@
+{
+  "edge_id": "um-3826ce-matroid-threshold-and-st-to-anchor-rounding",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-1897918adee04da6b33243c8ca95c6b9",
+    "UM-ST-ROUND-v1"
+  ],
+  "target_ids": [
+    "UM-ANCHOR-DEFICIENCY-JOINT-ROUNDING-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定输入身份B/S，T>0，0≤α<1/2，h=(1−α)T；所有anchor有限端∈[h,T]，所有tiny有限端≤βT；anchor资格分量缺额d_c=m_c−k_c∈[0,d0]。保原有限资格，tiny可跨分量。",
+  "roles": {
+    "M-1897918adee04da6b33243c8ca95c6b9": "在每个anchor横截拟阵base点y上，严格删y_i<1/(d_c+1)保完整base；锐性只属于该删阈值。",
+    "UM-ST-ROUND-v1": "冻结共同anchor匹配后，对全部tiny的同一x一次ST，机器tiny负载≤ℓ_i+正支撑最大件。",
+    "UM-ANCHOR-DEFICIENCY-JOINT-ROUNDING-v1": "联合LP sound FAIL、保留机器anchor matching及真实逐机合并得到缺额负载界。"
+  },
+  "explanation": "联合LP为每anchor列Σ_i z_ib=1、每tiny列Σ_i x_ij=1、y_i=Σ_b z_ib≤1、ℓ_i=Σ_jp_ijx_ij且ℓ_i+h y_i≤T。若真实T调度存在，h>T/2保证每机至多一个anchor，真实0/1投影满足LP，故LP不可行才可FAIL⇒OPT>T。LP可行时，每分量z是饱和全部anchor的fractional matching，其机器占用y是该横截拟阵base点（整数二部matching多面体的凸组合）。由D删除L_c={i:y_i<1/(d_c+1)}后仍有满base，且y(L_c)<1；等价Hall检查是若某A保留邻居≤|A|−1，则|A|≤|N(A)\\L_c|+y(L_c)<|A|，矛盾。d_c0时所有y_i=1，删集空，质量0<1；等号阈值保留。各分量机器不交，共同给一份anchor匹配，原资格内不要求匹配留在z正支撑。匹配机有y_i≥1/(d_c+1)，故ℓ_i≤T−h/(d_c+1)。冻结anchors，tiny保持原x，在全部机器一次调用S的同槽匹配；其证明只需非负有理边际/行负载，逐机误差≤βT，即使β>1也用原收费ℓ_i+q_i而不套2T剪枝结论。Anchor实际端≤T，故有anchor机L_i≤[2−(1−α)/(d_c+1)+β]T；其他机≤(1+β)T不超过全局界。全原任务恰一次，得[2−(1−α)/(d0+1)+β]T。显式有理LP、连通分量、matching及ST位多项式；B空/S空/空任务按同公式退化。严格次二仅在β<(1−α)/(d0+1)。",
+  "scope": "ALL完整支撑固定角色、给定T的缺额算法；不把阈值锐性升级为近似比锐性，不涵盖同任务跨机变角色或未知OPT承诺版本。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/仿射固定基数边界与锚任务缺额联合舍入双源审查--审查.md",
+      "sha256": "8a37f91432549ca280f8defc5d4ee0baf1d46a31b81ab67a8bf4ef73fb3c2b6c",
+      "section": "3.5 真实边界、matroid 抽象与可复用机制"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md",
+      "sha256": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/仿射固定基数边界与锚任务缺额联合舍入双源审查--审查.md",
+      "sha256": "8a37f91432549ca280f8defc5d4ee0baf1d46a31b81ab67a8bf4ef73fb3c2b6c",
+      "section": "3. 对象二：近单位锚任务的分量缺额与全局联合舍入（ID `78b4b3116ebe9be9ccd3`）"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "本次恢复worker实读两端当前登记、所列完整数学正文及承重章节，逐项核模型、量词、方向和作用范围；沿用成熟解析证明，没有重跑历史数学程序、没有外审或新颖性升级。ALL完整支撑固定角色、给定T的缺额算法；不把阈值锐性升级为近似比锐性，不涵盖同任务跨机变角色或未知OPT承诺版本。",
+  "whole_result": "固定锚/tiny身份及有界资格分量缺额下，联合LP不可行可靠推出OPT>T；可行则严格删低占位、共同anchor匹配和一次全局tiny ST输出完整实际峰≤[2−(1−α)/(d0+1)+β]T。",
+  "endpoint_pins": {
+    "M-1897918adee04da6b33243c8ca95c6b9": "b38003e0a3abb6dbae3c2b0963b9cd28cc0eab4643940de93e2956e42941856c",
+    "UM-ANCHOR-DEFICIENCY-JOINT-ROUNDING-v1": "625952e118e0c3e74adf7e33174a415287acb87129e09ff8df21ebf6632b4d58",
+    "UM-ST-ROUND-v1": "8c4662c822ebd204e3b095934f8745464426df43fc2328a6bbc35063e4148ea1"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/仿射固定基数边界与锚任务缺额联合舍入双源审查--审查.md": "8a37f91432549ca280f8defc5d4ee0baf1d46a31b81ab67a8bf4ef73fb3c2b6c",
+    "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6"
+  },
+  "review_digest": "3af5cd0445ccc93136b7ee27f0e037f7c57e50b02cb86f39ead262a3054e6559"
+}

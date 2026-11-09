@@ -1,0 +1,49 @@
+{
+  "edge_id": "um-3826ce-incidence-flows-to-native-exact-fast-branch",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-MULTISMALL-INCIDENCE-FLOW-APPROX-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/native-multi-small-endpoint-two-flow-schedule"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一显式普通UM原矩阵，有限时间{1,1/k}、k≥2；Q无small端，其余R有small集合S_j；目标子域每j∈R至少q≥2个small端，每机small关联≤k。",
+  "roles": {
+    "UM-MULTISMALL-INCIDENCE-FLOW-APPROX-v1": "给保原任务身份的两个整数容量流，最小统一拥挤B/F与共同峰B+F/k及密度上界。",
+    "unrelated-machines/native-multi-small-endpoint-two-flow-schedule": "在q≥2子域，补用OPT≥B和small-only峰<1，得到相对比率与全fast精确分支。"
+  },
+  "explanation": "对Q的unit图以统一整数容量二分求最小B、对R的small图求最小F并恢复各自整数指派；两类任务不交但共享同一原机器，逐机负载真实相加≤B+F/k。源的均匀证书每small端质量1/|S_j|，行密度ρ_i≤k/q，整数容量ceil(k/q)故给F≤ceil(k/q)。若Q非空，任意实际完整调度限制到Q便是unit指派，所以OPT≥B≥1，得C/OPT≤1+F/(kB)≤1+ceil(k/q)/k（偶k≤3/2、奇k≤5/3）。若Q空且任务非空，最小F的small-only调度恰峰F/k；q≥2,k≥2使F/k≤ceil(k/2)/k<1，任何使用unit端的调度峰至少1，所以一般完整OPT也恰F/k。这一最优性是本边明确补出的阈值推导，绝非由一个任意分数上界自动推出。空任务F=B0、OPT0不除。q≥k时F≤1，Q有unit matching则完整峰≤1+1/k；若无unit matching则B≥2、OPT≥2。容量都截至相关任务数，用整数流二分而非展开k槽；负载、输入检查按log k和显式资格位长。",
+  "scope": "整条目标两最小拥挤流、相对真实OPT保证与全fast精确性；不反向推出源在d_j1域的逐机柔性密度界，不混每机最多两条small资格的另一容量表。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/近单位PCSP与单位presence胶合双源审查--审查.md",
+      "sha256": "fce35ad0eff41983cc776e569a91ea0e5375d5c0a6ca0cf7a7c3eb6c0453f3ad",
+      "section": "2.4 native 多 small 的流边界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/算法/多小端原生任务的双流实际调度--算法.md",
+      "sha256": "876f08ce9303eb2c464956510369acdb88b1fcb87dbe424e4ab05353109e89a4"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/近单位PCSP蕴含与物理复制义务最终范围审查--审查.md",
+      "sha256": "05f56de06de9c6a087704dff698cc949df910695f6073d1d622b4ccc3d06f9f2",
+      "section": "3.3 Native multi-small flow"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "本次恢复worker实读两端当前登记、所列完整数学正文及承重章节，逐项核模型、量词、方向和作用范围；沿用成熟解析证明，没有重跑历史数学程序、没有外审或新颖性升级。整条目标两最小拥挤流、相对真实OPT保证与全fast精确性；不反向推出源在d_j1域的逐机柔性密度界，不混每机最多两条small资格的另一容量表。",
+  "whole_result": "源两整数流在每fast任务≥q≥2 small端、每机small关联≤k子域给最小B/F、完整实际峰≤B+F/k及相对比率≤1+F/(kB)；纯unit为空时OPT=F/k，空输入值0，二进制k不展开槽。",
+  "endpoint_pins": {
+    "UM-MULTISMALL-INCIDENCE-FLOW-APPROX-v1": "228342d73de3732a43c56e26961ffe80edf2cec32ae6fb5675df4e1a7889b2c8",
+    "unrelated-machines/native-multi-small-endpoint-two-flow-schedule": "589f2bd27c78cbf302751559524c44102f32c647f78a284054c436b9dcaf8cfc"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/近单位PCSP与单位presence胶合双源审查--审查.md": "fce35ad0eff41983cc776e569a91ea0e5375d5c0a6ca0cf7a7c3eb6c0453f3ad",
+    "archives/unrelated-machines/state/算法/多小端原生任务的双流实际调度--算法.md": "876f08ce9303eb2c464956510369acdb88b1fcb87dbe424e4ab05353109e89a4",
+    "archives/unrelated-machines/state/审查/近单位PCSP蕴含与物理复制义务最终范围审查--审查.md": "05f56de06de9c6a087704dff698cc949df910695f6073d1d622b4ccc3d06f9f2"
+  },
+  "review_digest": "6194bc1b233dacac1c4c65b9f87d11ef89e8d83311864c82fbbff93a40bb446f"
+}
