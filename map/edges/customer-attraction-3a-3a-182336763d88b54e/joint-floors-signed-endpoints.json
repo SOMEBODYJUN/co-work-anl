@@ -1,0 +1,56 @@
+{
+  "edge_id": "cag-direct-and-terminal-floors-to-common-signed-endpoints",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/legal-background-direct-denominator-security",
+    "CA-LAST-TWO-FLOOR"
+  ],
+  "target_ids": [
+    "customer-attraction/joint-background-profit-signed-endpoint-defect"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户共同标签目录。固定任一合法有序前缀，旧负载 b 为非负整数，尚余整数 k≥2。P 为同一份完整纯 SPE 从此前缀继续的未来总利润。比较 T 恰 k 个合法主题，重复允许，客户 d∈{0,…,k}。t∈[0,4] 必须是整个比较组共用的参数。",
+  "roles": {
+    "customer-attraction/legal-background-direct-denominator-security": "在各较早真实节点给出直接分母保底，转成同一基准 K。",
+    "CA-LAST-TWO-FLOOR": "真实末两人各获局部 θ₂，将该阈值嵌入起始背景的 k−1 竞争主题得两份同一 θ_k。",
+    "customer-attraction/joint-background-profit-signed-endpoint-defect": "得到任意比较元组的有符号端点上界以及全体共用 t 的最优剩余利润充分条件。"
+  },
+  "explanation": "开始后已进行 i−1 个未来行动时，其新增客户负载 p_x≤i−1，余 r=k−i+1，因此当前直接分母 b_x+p_x+r≤b_x+k；以开始时的 K=max_A∑_{x∈A}1/(b_x+k) 统一保底。真实倒二之前的 k−2 个未来主题与任一合法候选 A 组成 θ_k 定义中的 k−1 个竞争主题，故其 θ₂(b+p)≥θ_k(b)，末两人各得一份。于是 P≥(k−2)K+2θ_k。给定 t，取 A₀=2(k−2)/k、B_t=t/k、C_t=(4−t)/(k−1)。对任意 k−1 元竞争组 H，设 h 为其客户计数。分式 (B_t d+C_t h)/(b+1+h) 关于 h 的导数符号固定，最小值是 h=0 或 h=k−1 的端点。逐客户用 e 吸收端点差，d=0 直接记零。展开 d/h 为主题会员和，再用 Ak=2(k−2)、B_t k+C_t(k−1)=4，得到 R_b(T)≤2(k−2)K+4 max_A f_H(A)+∑e。对 H 取 θ_k 的有限最小者，再代 P 的共同下界；每个 t 都有效，故可取共同 t 的最小值。k=12 例中每组首席的边际至少 10/11、大组次席仅 25/33，因此 12 组各一次最优；代 t=68/19 得 137/171−110·5/418=−88/171。",
+  "scope": "所有合法共同目录背景、任意完整有序历史子 SPE 和恰 k 个比较主题。仅最终未来利润。k=2 时 A₀=0，早期份数为零；端点分母仍正。无原 m 槽 PAY 或跨前缀付款结论。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/任意合法背景的直接分母保底--引理.md",
+      "sha256": "db141effb93732f44599c142a3f6aeb4f730bdba2a3e968bcbb225a325176064"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末两人逐人保底与全人数弱福利界--定理.md",
+      "sha256": "204030503c37b18f8d26ce664b9cb99afc688fed77c8221a00cf0d8d7b21b34b"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/联合背景利润的有符号端点缺口--引理.md",
+      "sha256": "5fced08686fa22819628eeaded4e6deedf9eee897a407b86e02a3a8b6207af30",
+      "section": "任意非负背景的合法比较"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/联合背景利润的有符号端点缺口--引理.md",
+      "sha256": "5fced08686fa22819628eeaded4e6deedf9eee897a407b86e02a3a8b6207af30",
+      "section": "异质负信用严格扩大充分域"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核对同一真实续局的两类保底、k−1 竞争组嵌入及共同 t 的端点求和；当代解析域 k≥2，保留独立旧报告原 k≥4 字段与不同稿件 SHA。",
+  "whole_result": "对每个恰 k 元组 T，R_b(T)≤2P+min_{0≤t≤4}∑_x e_{k,t}(b_x,d_x)，其中 d>0 的 e=d/(b+d)−2(k−2)d/[k(b+k)]−min{td/[k(b+1)],(td/k+4−t)/(b+k)}，d=0 记零。存在一个 F_k 最优 T 及共同 t 使总缺口≤0 即有 F_k(b)≤2P，并包含所给低背景与高背景客户混合实例。",
+  "endpoint_pins": {
+    "CA-LAST-TWO-FLOOR": "ac27b3c3c7d9e7ef7b09029a442931c402af6718aaa86500f0f8e3d303d226e1",
+    "customer-attraction/joint-background-profit-signed-endpoint-defect": "87d3b637060b965fab2c10547a06d06a326e38f1317cfd10c144ee25cf859fcf",
+    "customer-attraction/legal-background-direct-denominator-security": "44b99563e1c28b58d5ff5c2ff4eec80d236931a788ee369a39dae4e6c1bb81ad"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/任意合法背景的直接分母保底--引理.md": "db141effb93732f44599c142a3f6aeb4f730bdba2a3e968bcbb225a325176064",
+    "archives/customer-attraction/state/定理/末两人逐人保底与全人数弱福利界--定理.md": "204030503c37b18f8d26ce664b9cb99afc688fed77c8221a00cf0d8d7b21b34b",
+    "archives/customer-attraction/state/引理/联合背景利润的有符号端点缺口--引理.md": "5fced08686fa22819628eeaded4e6deedf9eee897a407b86e02a3a8b6207af30"
+  },
+  "review_digest": "aa6d828dedbfdea26ecd82aa7513efd0a18c1c57266f496b8e2fe8bc200d1cae"
+}

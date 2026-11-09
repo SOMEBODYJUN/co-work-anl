@@ -1,0 +1,61 @@
+{
+  "edge_id": "cag-regret-product-and-projection-credit-retain-paid-welfare",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-22df1141090140a88fd6a1d5a7f41040",
+    "customer-attraction/customer-projection-all-history-regret-and-shared-external-credit"
+  ],
+  "target_ids": [
+    "customer-attraction/closeout-6fbd2261f5604c3196038854"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定任一原空根完整有序历史纯 SPE σ、客户子集 O 及其给定非负分数主题覆盖，总权 κ≥1；投影保留所有原标签与同一完整 σ 的真实后继。信用和误差仅取同一实际路径。",
+  "roles": {
+    "M-22df1141090140a88fd6a1d5a7f41040": "对任意完整计划及其实际后悔给乘积弱界，因而可合法作用于投影后的 σ。",
+    "customer-attraction/customer-projection-all-history-regret-and-shared-external-credit": "给投影的逐位精确后悔 δ_i、保留信用 c_i 和同一实际路径预算 ∑(δ_i+c_i)=E。",
+    "customer-attraction/closeout-6fbd2261f5604c3196038854": "保留信用加早期后悔折扣的正面推论；该记录另包含一个独立填差反例。"
+  },
+  "explanation": "记 I=|C∩O|、E=|C∖O|、r_i=m−i+1、F_m(κ)=1−∏_{r=1}^m(1−1/(rκ))、w_r=∏_{s<r}(1−1/(sκ))。将鲁棒乘积界用于保留原标签/σ 的投影计划，得 I≥|O|F_m(κ)−∑_i w_{r_i}δ_i。由精确投影账，δ_i+c_i=e_i(B)，其和为 E，其中 c_i=min_A(e_i(A)+Γ_i(A))。加 E 得 W≥|O|F_m(κ)+∑c_i+∑(1−w_{r_i})δ_i；每个权重在[0,1]，故 C_κ=E−∑ w_{r_i}δ_i∈[0,E]。若 O 为空，各投影后悔为零且信用恰为 W，可直接验证。",
+  "scope": "任意可分数覆盖的 O、任意合法 κ≥1 及每份原根完整纯 SPE。乘积输入量化任意完整计划，故投影无需仍为 SPE。不给各层离轨后悔一起支用 E。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/审查/全历史后悔稳定界与真实后缀退出的解析复核--审查.md",
+      "sha256": "2de2dcd4f7418455fd740170bcf74d9a2c24388df19fd93d30b22db2ce9814ac",
+      "section": "保留误差的有效乘积界"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/客户投影的全历史后悔与共同外部信用--引理.md",
+      "sha256": "125be2f9201e3c84148ed41d42f78293c67be6041142d3d91a67defdfd0d4793",
+      "section": "全历史精确后悔及保留信用"
+    },
+    {
+      "path": "archives/customer-attraction/state/推论/投影后悔乘积界的外部保留信用与填差边界--推论.md",
+      "sha256": "99e36227c4ad33e598f7274fa38c2c6081d282a39f2e6a91dff637f9744e904f",
+      "section": "加强的乘积下界"
+    },
+    {
+      "path": "archives/customer-attraction/state/推论/投影后悔乘积界的外部保留信用与填差边界--推论.md",
+      "sha256": "99e36227c4ad33e598f7274fa38c2c6081d282a39f2e6a91dff637f9744e904f",
+      "section": "不能把纯外部填差继续列作普遍待证条件"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐式核了投影计划的量词、同一实际路径的 W=I+E 与精确信用；目标记录的反面付款边界需单独的六单例完整策略。",
+  "contribution": {
+    "result": "得到 W≥|O|F_m(κ)+∑_i c_i+∑_i(1−w_{r_i})δ_i，且额外总信用在[0,E]。",
+    "remaining": "目标记录还包含独立反例：六个不交单例、全历史总选未出现主题的完整 SPE，使 W=OPT=6、E=0、κ≥6 且 F_6(κ)≤49/120<1/2，从而反驳仅外部信用总能填足至半覆盖。这一否定由目标正文的直接实例提供，正面两前提的组合不推出它。"
+  },
+  "endpoint_pins": {
+    "M-22df1141090140a88fd6a1d5a7f41040": "d57307b10f06dafe060e4580f518efedc1c3be811c88bf77f490bdb797c90d23",
+    "customer-attraction/closeout-6fbd2261f5604c3196038854": "39ab3078b99495e32037cef44ae885567794d2fb007d62e85e18daa51432648b",
+    "customer-attraction/customer-projection-all-history-regret-and-shared-external-credit": "b8a2a42b1d341acdcabf50c910f30f8accd62be7b6380704749f5db80cc559ca"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/审查/全历史后悔稳定界与真实后缀退出的解析复核--审查.md": "2de2dcd4f7418455fd740170bcf74d9a2c24388df19fd93d30b22db2ce9814ac",
+    "archives/customer-attraction/state/引理/客户投影的全历史后悔与共同外部信用--引理.md": "125be2f9201e3c84148ed41d42f78293c67be6041142d3d91a67defdfd0d4793",
+    "archives/customer-attraction/state/推论/投影后悔乘积界的外部保留信用与填差边界--推论.md": "99e36227c4ad33e598f7274fa38c2c6081d282a39f2e6a91dff637f9744e904f"
+  },
+  "review_digest": "982c52e18ebaabf6d90d3c70bb96f7f324ace56a455776b5927691547ccc2b52"
+}

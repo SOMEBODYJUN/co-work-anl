@@ -1,0 +1,57 @@
+{
+  "edge_id": "cag-k-minus-six-disjoint-checks-limits-of-joint-floors",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-bff12d3602f84eeabb2049029c30a6dc"
+  ],
+  "target_ids": [
+    "customer-attraction/joint-minimum-denominator-and-last-floor-high-background-half-profit",
+    "customer-attraction/joint-background-profit-signed-endpoint-defect"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "整数 k≥6、q≥1；目录恰 k 个两两不交主题各 q 名单位客户，每题在合法旧前缀重复 k−6 次。与高背景定理的统一阈值比较限于 k≥12。",
+  "roles": {
+    "M-bff12d3602f84eeabb2049029c30a6dc": "给旧背景 k−6 的联合两保底桥精确反模型。",
+    "customer-attraction/joint-minimum-denominator-and-last-floor-high-background-half-profit": "定位 k−5 统一阈值的数值证明机制在低一单位时遇到的障碍。",
+    "customer-attraction/joint-background-profit-signed-endpoint-defect": "在同一个低背景族上检查全体共用参数的有符号充分条件可严格失败。"
+  },
+  "explanation": "k−1 个竞争主题必遗漏一题，故 θ=q/(k−5)，K=q/(2k−6)。最优各取一题，F=kq/(k−5)，桥差为 2q/[(k−5)(k−3)]。k>6 由严格递减的同题边际得最优各一次，k=6 用覆盖直接验证。所有最优组的正 d 都等于 1，最好的共同参数恰取两端点交点 t=4k(k−5)/(k²−4k−1)，每客户端点价格为 4/(k²−4k−1)。故最小总 e 比正的桥差还多 4q(k−1)/[(k−5)(k²−4k−1)]。另一方面，未来人数至多 k，每个未来阶段总有未被任何未来历史动作选过的题。末位严格偏好这类题；从后向前归纳，后继各选相对于自己的未来历史尚未被选的题，因而不重用当前动作，当前选新题得到 q/(k−5)，重复任何已用题只能更低。任意完整子 SPE 的未来路径于是各选一题，P=F。两个检验分别钉住数值桥和端点充分条件，真实半利润仍成立。",
+  "scope": "指定不交目录与合法旧历史，后者可以离轨。共同参数最优值只在该族上计算；不用该反模型否定高背景定理的适用域、signed 上界或任何真实 SPE 半利润。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/联合背景利润的有符号端点缺口--引理.md",
+      "sha256": "5fced08686fa22819628eeaded4e6deedf9eee897a407b86e02a3a8b6207af30",
+      "section": "更低一单位的联合两保底桥确实失败"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/联合背景利润的有符号端点缺口--引理.md",
+      "sha256": "5fced08686fa22819628eeaded4e6deedf9eee897a407b86e02a3a8b6207af30",
+      "section": "任意非负背景的合法比较"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/联合最小分母与末位保底的高背景半利润--定理.md",
+      "sha256": "b9bda1b37c8e3c16ac27dc6af6cd3b1164b2187f3c21fe9056100bad912519e2",
+      "section": "同背景的利润和精确条件"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/联合高背景证书的独立端点分解与整系数审查--审查.md",
+      "sha256": "d31a810f380cd87262034e3f15a96d473591738308f5f00e15565975ba4c6f0d",
+      "section": "更低背景的桥失败与signed补充"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核 k=6 零旧背景和 d=1 的断点最小值，另以倒推验证此反模型上 P=F；所反命题精确为 F≤2(k−2)K+4θ 在低一单位背景上的统一延伸。",
+  "endpoint_pins": {
+    "M-bff12d3602f84eeabb2049029c30a6dc": "93ee1a6daa7d7f08c77c7688857ec00538109184ce98cc7d8189db04f70c58a2",
+    "customer-attraction/joint-background-profit-signed-endpoint-defect": "87d3b637060b965fab2c10547a06d06a326e38f1317cfd10c144ee25cf859fcf",
+    "customer-attraction/joint-minimum-denominator-and-last-floor-high-background-half-profit": "314b95c6e0fa8f59508a78aaf1ab9d3d495f90939468922ee638144a408f3ce7"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/联合背景利润的有符号端点缺口--引理.md": "5fced08686fa22819628eeaded4e6deedf9eee897a407b86e02a3a8b6207af30",
+    "archives/customer-attraction/state/定理/联合最小分母与末位保底的高背景半利润--定理.md": "b9bda1b37c8e3c16ac27dc6af6cd3b1164b2187f3c21fe9056100bad912519e2",
+    "archives/customer-attraction/state/审查/联合高背景证书的独立端点分解与整系数审查--审查.md": "d31a810f380cd87262034e3f15a96d473591738308f5f00e15565975ba4c6f0d"
+  },
+  "review_digest": "97dfaf88144d782f1c7363a9f45845756d135dfdbc0407b42b6f6f547d80984e"
+}

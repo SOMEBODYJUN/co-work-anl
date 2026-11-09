@@ -1,0 +1,55 @@
+{
+  "edge_id": "cag-signed-endpoints-specialize-to-k-minus-five-half-profit",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/joint-background-profit-signed-endpoint-defect"
+  ],
+  "target_ids": [
+    "customer-attraction/joint-minimum-denominator-and-last-floor-high-background-half-profit"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任合法有序背景及每份完整子 SPE，整数 k≥12，存在一个 F_k(b) 最优 k 元组 T 的所有 d>0 客户有 b≥k−5。固定共同 t*= (7k−16)/(2k−5)∈[0,4]，d 保持整数。",
+  "roles": {
+    "customer-attraction/joint-background-profit-signed-endpoint-defect": "给合法背景同一实际 P 的比较不等式，允许对任意固定最优组用共同 t。",
+    "customer-attraction/joint-minimum-denominator-and-last-floor-high-background-half-profit": "给目标客户高背景的完整半利润定理，且不额外限制目录其他客户。"
+  },
+  "explanation": "置 A=2(k−2)/k、B=t*/k、C=(4−t*)/(k−1)。对 d≥1，h=0 的端点条件由 1/(b+d)≤1/(b+1) 化为 (1−B)(b+k)≤A(b+1)，在 b=k−5 取等，之后差的斜率 A+B−1>0。h=k−1 的端点条件是 d(k−d)/(b+d)≤(A+B−1)d+C(k−1)；左式随 b 不增，代 b=k−5 后清正分母得到 Q=(4k²−11k+4)d²−10(k−1)(k−2)d+k(k−4)(k−5)。对整数 d≥1，Q=Q(1)+(d−1)(2k²−3k−8)+(4k²−11k+4)(d−1)(d−2)，而 Q(1) 在 s=k−12≥0 时为 s³+21s²+111s+20。两端均成立，故对该组正 d 客户 e≤0。未被该组覆盖的客户 d=0，按定义 e=0。代 signed 的共参上界即得目标。独立审查的清分母端点分解核的是同一 Q 和插值；有限参数检查只作实现核对。",
+  "scope": "全部整数 k≥12、合法整数背景、该背景的每份完整子 SPE。实 b≥k−5 与实 h∈[0,k−1] 只属点态代数放宽；d∈{0,…,k} 不可连续化，也不是原 m 槽 PAY。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/联合背景利润的有符号端点缺口--引理.md",
+      "sha256": "5fced08686fa22819628eeaded4e6deedf9eee897a407b86e02a3a8b6207af30",
+      "section": "任意非负背景的合法比较"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/联合最小分母与末位保底的高背景半利润--定理.md",
+      "sha256": "b9bda1b37c8e3c16ac27dc6af6cd3b1164b2187f3c21fe9056100bad912519e2",
+      "section": "联合逐客户端点证书"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/联合最小分母与末位保底的高背景半利润--定理.md",
+      "sha256": "b9bda1b37c8e3c16ac27dc6af6cd3b1164b2187f3c21fe9056100bad912519e2",
+      "section": "一份比较元组求和"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/联合高背景证书的独立端点分解与整系数审查--审查.md",
+      "sha256": "d31a810f380cd87262034e3f15a96d473591738308f5f00e15565975ba4c6f0d",
+      "section": "全参数端点分解：独审的实际数学"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核了 h 两端及整数 Newton 差分，保持最优比较组 d>0 的背景条件；k=12、B=7 时原分别比较的 c=4948/10203<1/2，只是同一数值问题的旧界比较，不作为前提。",
+  "whole_result": "对每个合法前缀、每个整数 k≥12 和每份完整子 SPE，若有一个 F_k(b) 最优组的正计数客户都满足 b≥k−5，则 F_k(b)≤2P；其余目录客户可有任意合法背景。",
+  "endpoint_pins": {
+    "customer-attraction/joint-background-profit-signed-endpoint-defect": "87d3b637060b965fab2c10547a06d06a326e38f1317cfd10c144ee25cf859fcf",
+    "customer-attraction/joint-minimum-denominator-and-last-floor-high-background-half-profit": "314b95c6e0fa8f59508a78aaf1ab9d3d495f90939468922ee638144a408f3ce7"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/联合背景利润的有符号端点缺口--引理.md": "5fced08686fa22819628eeaded4e6deedf9eee897a407b86e02a3a8b6207af30",
+    "archives/customer-attraction/state/定理/联合最小分母与末位保底的高背景半利润--定理.md": "b9bda1b37c8e3c16ac27dc6af6cd3b1164b2187f3c21fe9056100bad912519e2",
+    "archives/customer-attraction/state/审查/联合高背景证书的独立端点分解与整系数审查--审查.md": "d31a810f380cd87262034e3f15a96d473591738308f5f00e15565975ba4c6f0d"
+  },
+  "review_digest": "c00c2cbf83c83493c8521372efaca049532b840d7d7ccaa54d0d97ccfda44ef8"
+}

@@ -1,0 +1,47 @@
+{
+  "edge_id": "cag-disjoint-six-boundary-excludes-external-credit-payment",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-bff12d3602f84eeabb2049029c30a6dc"
+  ],
+  "target_ids": [
+    "customer-attraction/closeout-6fbd2261f5604c3196038854"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取低背景反模型族的 k=6、每题 q=1 特例，因此合法旧前缀为空。采用同一六单例目录的原根完整纯 SPE，比较集为最优并集 O=N，取任意可行的非负分数覆盖。",
+  "roles": {
+    "M-bff12d3602f84eeabb2049029c30a6dc": "指定一个恰为六个互不交单例主题、六人空根的合法实例；该实例同时是低背景数值桥反模型。",
+    "customer-attraction/closeout-6fbd2261f5604c3196038854": "在这一准确共同实例上得到其纯外部信用填差条件失败的独立否定分支。"
+  },
+  "explanation": "规定每一合法历史都选尚未出现的最小标签。任何固定历史和任何当前改题以后，后继继续选各自此前未用的题，因此不会分食当前动作；有空题时改重复只能将当前收益降到至多 1/2，选任何新题均得 1。空根实际覆盖全体六客户，W=OPT=6，最优并集 O=N，故无外部客户、E=0，保留信用与实际投影后悔均为0。由于每客户只在自己的单例主题，每个分数覆盖主题权重至少为1，总权 κ≥6。设乘积系数 G_6(κ)=1−∏_{r=1}^6(1−1/(rκ))，由 1−∏(1−a_r)≤∑a_r 得 G_6(κ)≤H_6/6=49/120<1/2。于是仅用这笔 E 或由它产生的信用永远填不上该例的乘积界与 half 之间的正差。",
+  "scope": "仅此固定合法六人实例，全部合法分数覆盖 κ；证明中构造一份定义于全部有序历史的完整纯 SPE。反的是“外部信用必须填差”这一通用数值要求，该实例本身满足半覆盖。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/联合背景利润的有符号端点缺口--引理.md",
+      "sha256": "5fced08686fa22819628eeaded4e6deedf9eee897a407b86e02a3a8b6207af30",
+      "section": "更低一单位的联合两保底桥确实失败"
+    },
+    {
+      "path": "archives/customer-attraction/state/推论/投影后悔乘积界的外部保留信用与填差边界--推论.md",
+      "sha256": "99e36227c4ad33e598f7274fa38c2c6081d282a39f2e6a91dff637f9744e904f",
+      "section": "不能把纯外部填差继续列作普遍待证条件"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核实两材料确用同一空根六单例实例；从全历史选新规则直接验证真实偏离与 κ 的下界，不将两个付款公式混用。",
+  "contribution": {
+    "result": "将低背景族特化到 k=6、q=1，给出一份 W=OPT=6、E=0 的完整纯 SPE，并证明所有可行分数覆盖的乘积系数均小于 1/2，从而否定纯外部信用普遍填差。",
+    "remaining": "目标记录的正面加强乘积不等式仍需任意计划的乘积界与同一策略的客户投影精确账；本有限反例不推出该一般不等式。"
+  },
+  "endpoint_pins": {
+    "M-bff12d3602f84eeabb2049029c30a6dc": "93ee1a6daa7d7f08c77c7688857ec00538109184ce98cc7d8189db04f70c58a2",
+    "customer-attraction/closeout-6fbd2261f5604c3196038854": "39ab3078b99495e32037cef44ae885567794d2fb007d62e85e18daa51432648b"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/联合背景利润的有符号端点缺口--引理.md": "5fced08686fa22819628eeaded4e6deedf9eee897a407b86e02a3a8b6207af30",
+    "archives/customer-attraction/state/推论/投影后悔乘积界的外部保留信用与填差边界--推论.md": "99e36227c4ad33e598f7274fa38c2c6081d282a39f2e6a91dff637f9744e904f"
+  },
+  "review_digest": "88174a826778fa7a2775262aff1f002476e44dc2baefe08ce4a94f782dcfd85b"
+}
