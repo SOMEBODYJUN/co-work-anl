@@ -1,0 +1,41 @@
+{
+  "edge_id": "fairalloc-family-three-agent-identical-specializes-to-cactus-uniform-slice",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "FA05"
+  ],
+  "target_ids": [
+    "FA03"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "条件前提为FA05的三人相同非负可加值任意冲突图全称正存在性成立；仅把该存在性用于cactus和每件值1，不额外假定算法已证。",
+  "roles": {
+    "FA05": "假设所有三人identical-additive冲突图都有maximal EF1。",
+    "FA03": "得到其n=3的uniform cactus存在性切片。"
+  },
+  "explanation": "给任意cactus G和三名统一基数代理，令三人的相同可加权均为1，直接是FA05输入。该正存在性若成立返回三不交独立集，maximal仍指未分配点不能加入任何包（含空包）。统一基数EF1等价任意包大小差≤1，因此恰是FA03的n=3存在性。FA05只固定三人，不能替代FA03所有n；假设只有存在性时也不能推出多项式构造。",
+  "scope": "真正模型包含下的条件局部关系；未把两开放问题等同或宣称任一已解决。",
+  "evidence": [
+    {
+      "path": "archives/fair-allocation/state/审查/近似公平分配首轮候选池与边界--审查.md",
+      "sha256": "19d9f289c9553358a51d98250709fdc9151346072e04576e01facc50779614ec",
+      "section": "十六个候选的精确身份"
+    }
+  ],
+  "reviewed_by": "Boss3 fairalloc-family worker",
+  "review_note": "按冻结对象逐式核对模型、量词和承重证据；这是完整的条件推导，开放源前提未获证明。",
+  "contribution": {
+    "result": "若FA05的全称存在性为真，则每个cactus在n=3统一基数模型下存在maximal均衡部分着色。",
+    "remaining": "FA03仍要求所有n≥1及多项式构造；FA05的非uniform值和任意图全称也仍是开放前提。"
+  },
+  "endpoint_pins": {
+    "FA03": "e83400c90f3a78d4c77f2244c65da4b73a93a519caf248b5b923ebf39a904e93",
+    "FA05": "73a3861bd42a8ecb140ebeb5f241421e15a3a36176ad5e871d19c664cbfc6116"
+  },
+  "evidence_pins": {
+    "archives/fair-allocation/state/审查/近似公平分配首轮候选池与边界--审查.md": "19d9f289c9553358a51d98250709fdc9151346072e04576e01facc50779614ec"
+  },
+  "review_digest": "5c99268fd4d161f4b72bbee062aad7c2d9edf8060567fb2a89059ad0277d7bd5"
+}

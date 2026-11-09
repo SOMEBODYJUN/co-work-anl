@@ -1,0 +1,52 @@
+{
+  "edge_id": "fairalloc-family-forest-solves-unit-forest-heavy-subclass",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "FP-FOREST-THRESHOLD-v1"
+  ],
+  "target_ids": [
+    "FA01"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "FA01的非负整数端点goods、完整EF；安全固定零/单正端边，枚举剩余heavy两方向；额外限制剩下(1,1)单位包的简单支持为forest。heavy图可任意、同pair可有heavy与单位包。",
+  "roles": {
+    "FP-FOREST-THRESHOLD-v1": "任意二进制s,h,m的森林残差精确判定及计数构造。",
+    "FA01": "得到其unit-support-forest子域的2^k位多项式算法；一般多重图问题仍开放。"
+  },
+  "explanation": "任何完整EF可安全把单正端边改给正端，零边任放；此操作提高接收者而对另一端的可见值为零。其余非heavy正端边均(1,1)。每个heavy方向分支汇总s_i和全部有序h_ij，保留非邻接h。残差严格为s_i+Σ_jx_ij≥h_ij+m_ij−x_ij。森林定根后子树可扩展父输入为[L_i,m_ip]整数上闭区间；子包对父贡献同时取m_ic−L_c最有利，无权衡，显示阈值递推必要且充分。每分支只对编码整数做加减max及除二上取整，恢复包计数；2^k分支覆盖所有heavy方向。若一个分支可行则还原完整EF，反向任何EF落入某分支。",
+  "scope": "只给FA01的明确子域算法，不能删除单位支持forest假设或从显式边推广免费输出巨大逐边列表。",
+  "evidence": [
+    {
+      "path": "archives/fair-allocation/state/算法/端点图公平残差的森林阈值与最小删除--算法.md",
+      "sha256": "8f656eba95d554148532ec85ad7e3977cc18fb45badf7942522e6ab0217cd1fe",
+      "section": "二、森林上的上阈值消息"
+    },
+    {
+      "path": "archives/fair-allocation/state/算法/端点图公平残差的森林阈值与最小删除--算法.md",
+      "sha256": "8f656eba95d554148532ec85ad7e3977cc18fb45badf7942522e6ab0217cd1fe",
+      "section": "一、固定残差与全平分反例"
+    },
+    {
+      "path": "archives/fair-allocation/state/审查/近似公平分配首轮候选池与边界--审查.md",
+      "sha256": "19d9f289c9553358a51d98250709fdc9151346072e04576e01facc50779614ec",
+      "section": "十六个候选的精确身份"
+    }
+  ],
+  "reviewed_by": "Boss3 fairalloc-family worker",
+  "review_note": "按冻结对象逐式核对模型、量词和承重证据；范围及未付义务按本边明确限制；程序计数不替代一般证明。",
+  "contribution": {
+    "result": "单位包简单支持为forest的FA01输入可在2^k poly(input bits)时间精确判定并构造完整EF，输出压缩单位包计数。",
+    "remaining": "FA01还要求处理任意单位支持、尤其有环多接口分量；森林的一维上闭消息尚无一般环块替代。"
+  },
+  "endpoint_pins": {
+    "FA01": "fa5fc0a87f27f75c82dc8c0c91c11206a34fedf3233a7551a6b4b0c2a8065b2b",
+    "FP-FOREST-THRESHOLD-v1": "48a58f48d9433181d08ec87b9a1a8849a89efb8a3b3a2775d21f1495f96fde4c"
+  },
+  "evidence_pins": {
+    "archives/fair-allocation/state/算法/端点图公平残差的森林阈值与最小删除--算法.md": "8f656eba95d554148532ec85ad7e3977cc18fb45badf7942522e6ab0217cd1fe",
+    "archives/fair-allocation/state/审查/近似公平分配首轮候选池与边界--审查.md": "19d9f289c9553358a51d98250709fdc9151346072e04576e01facc50779614ec"
+  },
+  "review_digest": "01492b1e9e30e2af5ddaf071f74dfbdac2d89a94c465010129a2dfc1e0539cad"
+}

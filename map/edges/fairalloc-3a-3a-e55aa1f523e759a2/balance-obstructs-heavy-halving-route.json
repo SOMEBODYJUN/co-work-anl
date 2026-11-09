@@ -1,0 +1,43 @@
+{
+  "edge_id": "fairalloc-family-balance-obstructs-heavy-halving-route",
+  "kind": "corrects",
+  "status": "accepted",
+  "source_ids": [
+    "FP-COUNTER-BALANCE-v1"
+  ],
+  "target_ids": [
+    "FA01"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "仅审计FA01拟用的“普通内部平行包先全部平分、只在heavy端点留变量”捷径；不把该捷径当FA01登记命题。",
+  "roles": {
+    "FP-COUNTER-BALANCE-v1": "k=1五顶点的精确可行输入及压缩不可行证书。",
+    "FA01": "保存对该算法路线的必要修正，一般FPT问题未被反驳。"
+  },
+  "explanation": "原输入vu两端值87，uw,wz,zt各100单位边。heavy给v，uw给u87、wz给w74、zt给z50时收入(87,87,87,76,50)，逐pairEF成立。叶v迫使heavy给v。若wz、zt均50/50，uw给u数a，由u看v得a≥87，由w看u得150−a≥a即a≤75，矛盾。更精确地只固定zt平分，设wz给w数b：u→v给a≥87，w→u给b≥2a−100，z→w给b≤75，故整数a=87且b=74或75，余比较均成立。wz至少向w偏置24条，普通奇偶信息不能代表此必要响应。",
+  "scope": "accepted语境纠错：被否的是指定平分压缩，不是FA01完整目标、所有压缩或一般FPT。",
+  "evidence": [
+    {
+      "path": "archives/fair-allocation/state/算法/端点图公平残差的森林阈值与最小删除--算法.md",
+      "sha256": "8f656eba95d554148532ec85ad7e3977cc18fb45badf7942522e6ab0217cd1fe",
+      "section": "一、固定残差与全平分反例"
+    },
+    {
+      "path": "archives/fair-allocation/state/审查/近似公平分配首轮候选池与边界--审查.md",
+      "sha256": "19d9f289c9553358a51d98250709fdc9151346072e04576e01facc50779614ec",
+      "section": "工具本质与可接续边界"
+    }
+  ],
+  "reviewed_by": "Boss3 fairalloc-family worker",
+  "review_note": "按冻结对象逐式核对模型、量词和承重证据；范围及未付义务按本边明确限制；程序计数不替代一般证明。",
+  "endpoint_pins": {
+    "FA01": "fa5fc0a87f27f75c82dc8c0c91c11206a34fedf3233a7551a6b4b0c2a8065b2b",
+    "FP-COUNTER-BALANCE-v1": "0217e35b1643cee587a2829ae9925aceb2323b44dd60301ab0018032d324bfc1"
+  },
+  "evidence_pins": {
+    "archives/fair-allocation/state/算法/端点图公平残差的森林阈值与最小删除--算法.md": "8f656eba95d554148532ec85ad7e3977cc18fb45badf7942522e6ab0217cd1fe",
+    "archives/fair-allocation/state/审查/近似公平分配首轮候选池与边界--审查.md": "19d9f289c9553358a51d98250709fdc9151346072e04576e01facc50779614ec"
+  },
+  "review_digest": "da5ba02bbb8b0742fa0205f2e45df9f46625740cfd56171c4e5544d329bae5c1"
+}

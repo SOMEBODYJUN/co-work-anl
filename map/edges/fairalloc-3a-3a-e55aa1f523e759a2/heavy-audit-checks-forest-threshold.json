@@ -1,0 +1,47 @@
+{
+  "edge_id": "fairalloc-family-heavy-audit-checks-forest-threshold",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "fair-allocation/heavy-edge-charity-and-forest-residual-v1"
+  ],
+  "target_ids": [
+    "FP-FOREST-THRESHOLD-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "仅固定残差森林模块：seed37042026，n=1..7，m=1..4，s,h=0..7，4200随机forests，逐计数穷举为oracle。",
+  "roles": {
+    "fair-allocation/heavy-edge-charity-and-forest-residual-v1": "保存brute/forest程序比较和固定87/100残差见证。",
+    "FP-FOREST-THRESHOLD-v1": "实现级有限一致性证据；全域位多项式结论由上闭性归纳承担。"
+  },
+  "explanation": "probe.verify对所有有序pair检查s_i+Σx_ij≥h_ij+x_ji，包含非邻接h。brute枚举每包0..m整数计数；forest拒绝cycle并实现孩子上限和父二分之一阈值。冻结4200测试、2395可行、0可行性差异，以及87/100固定见证；这不测试cactus、删除优化或任意巨大m的运行上界。算法位复杂度来自主证明而非这些有界样本。",
+  "scope": "有限checks；同一review的charity模块不充作森林证明的第二独立理论前提。",
+  "evidence": [
+    {
+      "path": "archives/fair-allocation/state/审查/重边慈善与森林残差公平三源处置--审查.md",
+      "sha256": "16cc0eff59f979942fb534d03c16fcea84f62e7c5169ea059e6c67c32eb07871",
+      "section": "3. `probe.py`：固定 heavy residual 与森林动态规划"
+    },
+    {
+      "path": "archives/fair-allocation/tools/evidence/retired-heavy-edge-fairness-20261031/probe.py",
+      "sha256": "42e30ce279197f7ef176f7eefd2a7b6f5986200d921949eab34271a13c857981"
+    },
+    {
+      "path": "archives/fair-allocation/tools/evidence/retired-heavy-edge-fairness-20261031/results.json",
+      "sha256": "60be72944ce162aea2849a59aea089cef91189eabb08a920602e7f2be161afc6"
+    }
+  ],
+  "reviewed_by": "Boss3 fairalloc-family worker",
+  "review_note": "按冻结对象逐式核对模型、量词和承重证据；范围及未付义务按本边明确限制；程序计数不替代一般证明。",
+  "endpoint_pins": {
+    "FP-FOREST-THRESHOLD-v1": "48a58f48d9433181d08ec87b9a1a8849a89efb8a3b3a2775d21f1495f96fde4c",
+    "fair-allocation/heavy-edge-charity-and-forest-residual-v1": "789ae807919a5ebd7708ce2b15dced46ce4dea22dc9a44655f288953e32a33c5"
+  },
+  "evidence_pins": {
+    "archives/fair-allocation/state/审查/重边慈善与森林残差公平三源处置--审查.md": "16cc0eff59f979942fb534d03c16fcea84f62e7c5169ea059e6c67c32eb07871",
+    "archives/fair-allocation/tools/evidence/retired-heavy-edge-fairness-20261031/probe.py": "42e30ce279197f7ef176f7eefd2a7b6f5986200d921949eab34271a13c857981",
+    "archives/fair-allocation/tools/evidence/retired-heavy-edge-fairness-20261031/results.json": "60be72944ce162aea2849a59aea089cef91189eabb08a920602e7f2be161afc6"
+  },
+  "review_digest": "5344f8dd509310566e9c791b8226d098ee795a31ec53cc9be8502c6102ee7ea8"
+}

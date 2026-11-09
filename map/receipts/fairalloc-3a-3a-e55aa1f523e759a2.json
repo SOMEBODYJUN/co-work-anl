@@ -1,0 +1,295 @@
+{
+  "coverage": {
+    "FA02": {
+      "state": "isolated-after-review",
+      "object_pin": "03813a9a26c6586810e4bb5aff1d85959196552f4bf6b47cb8c64bbbec85f098",
+      "comparison_scope": "已完整读候选池审查、参数化战报、多线比较中本模型段及当前registry；candidate_pool.json只完整读FA01–FA20记录，未把其余39条异题记录称为已读。 实际比较FP-FOREST、FP-CHARITY、FP-COUNTER及FA01/FA18。",
+      "reason": "本目标是tw+单边Wmax的EF、EFX、min-charity三个任务。forest阈值只给固定残差和枚举heavy的子域，3^k charity只覆盖simple且k不受tw+Wmax限制；87/100路径只否定平分压缩，既不证明参数困难性也不提供EFX算法。原图tw不控制自然pair-count ILP的primal/dual treedepth，Wshared不能改名Wmax。本范围未得本目标的非平凡逻辑支持或反驳；真实下一步仍是带二进制平行重数的有限接口或严格困难性。"
+    },
+    "fair-chores/rank-toy-mms-and-graph-results-v1": {
+      "state": "isolated-after-review",
+      "object_pin": "cf80ec45dcbd37086a127c4baea448235fca8036ccfd41c51121668d392f9385",
+      "comparison_scope": "完整读本review全部107行、restricted放大引理全部、signed双三角完整解析证明、toy_search.py全部；比较class-touch/rank-cap2、quota MMS、signed EFXplus0和OPT-Delta各自域。",
+      "reason": "同一review的四模块不互为前提。三类class-touch未截断，不是rank≤2；无loops两类样本不能推出loops或三类全称；三人九件恰三件quota MMS不解FA15mixed exact MMS。C=5,c=1的两个OPT样本与一般restricted解析族有具体来源启发，已记motivates语境边；有限cycle正面与含零双三角负例的值域/图类不同，不能相互推翻。只有语境边，未制造跨模块逻辑边。"
+    },
+    "FA18": {
+      "state": "linked",
+      "object_pin": "82f8f6efa07e7d4aaea4a81601c9188c697f3e00718cb911ace486b56254ae67",
+      "comparison_scope": "已完整读候选池审查、参数化战报、多线比较中本模型段及当前registry；candidate_pool.json只完整读FA01–FA20记录，未把其余39条异题记录称为已读。 完整读森林算法§一/二及任意s,h二进制位长证明、残差probe和results；核战报单环两条1/2系数不等式。",
+      "reason": "同一s,h,m和所有pair比较下，FP-FOREST完全支付cactus中无环支持的残差判定与计数恢复；主边明确只是局部贡献。环块的双接口不能由独立孩子全取上限归纳消掉，普通real LP及伪多项式TVPI尚不付清binary位多项式义务。",
+      "edge_ids": [
+        "fairalloc-family-forest-is-paid-base-of-cactus-residual"
+      ]
+    },
+    "fair-allocation/restricted-chores-binary-scaling-and-optimal-cost": {
+      "state": "isolated-after-review",
+      "object_pin": "a554899d5366a0e9f6e46dae5638162d25611ffbb66baf852133529cdd996313",
+      "comparison_scope": "完整读本30行引理、rank-toy review的sharp-Delta模块与toy_search.py optimal_alpha_demo；逐式核binary EFX+PO条件转移及C≥c>0两最优分配。",
+      "reason": "给定binary EFX+PO解时，cmax/cmin链和PO把可避免件归零均完整；一般binary解存在/构造未由本包支付，因此不会把条件转移登记为无条件算法。OPT紧族删除自身零成本件后保C、他包成本c，因子恰Delta，只有OPT约束下结论。与三值正成本13件、FA08五人双值及FA15mixed MMS合同均不同；本包只有来源motivates，未给能完整支持这些目标的逻辑边。"
+    },
+    "FA01": {
+      "state": "linked",
+      "object_pin": "fa5fc0a87f27f75c82dc8c0c91c11206a34fedf3233a7551a6b4b0c2a8065b2b",
+      "comparison_scope": "已完整读候选池审查、参数化战报、多线比较中本模型段及当前registry；candidate_pool.json只完整读FA01–FA20记录，未把其余39条异题记录称为已读。 完整读算法页三项证明、图/rank独立合同、慈善与森林三源review及全部四个相应.py/.json；只按端点完整EF比较。",
+      "reason": "forest子域由FP-FOREST给2^k poly(bits)，simple子域由成本1的最优charity是否0给3^k poly(bits)判定及完整见证，两边contribution逐项保剩余一般unit-support环块义务。FP-COUNTER精确否定内部包预平分路线：a≥87而a≤75；只固定末包平分时a=87、b=74或75，至少24偏置。该context纠错不反驳FA01全称FPT。",
+      "edge_ids": [
+        "fairalloc-family-forest-solves-unit-forest-heavy-subclass",
+        "fairalloc-family-simple-charity-decides-complete-ef-subclass"
+      ]
+    },
+    "fair-allocation/heavy-edge-charity-and-forest-residual-v1": {
+      "state": "isolated-after-review",
+      "object_pin": "789ae807919a5ebd7708ce2b15dced46ce4dea22dc9a44655f288953e32a33c5",
+      "comparison_scope": "完整读本review98行、charity_probe.py/charity_results.json、probe.py/results.json和主算法页完整证明；分别比较simple删除条数与固定残差森林可行性。",
+      "reason": "两条checks只核1200 simple成本1实例与4200随机forest、2395可行和0差异；它们不相互作为理论前提，不证明任意非负成本或巨大binary重数的复杂度。任意成本simple最优性、森林位复杂度由主证明独立承担。只有有限实现语境边，本review不是新的普遍数学定理节点。"
+    },
+    "SEL-CHORES-TRIVALUED-AUDIT-v1": {
+      "state": "isolated-after-review",
+      "object_pin": "68301edbfab487d21019561e29b9338022149749d96184deb0f24cc8317b68a2",
+      "comparison_scope": "完整读固定证书、三值/fPO审查、删除网格审查、程序输出审查、退休三值/FPO/拟阵三源审查；完整读type_audit.py、exact_probe.py、全部142删除行、473网格行及完整冻结type-audit JSON。",
+      "reason": "固定商域62720恰覆盖所有标号分配，最优23/22、4最优、0EFX及删最小自身成本1见证均保精确；作为FA07已知基点仅写checks语境，不从一点推出连续分类或少于13件结论。142删除子实例与21/473失败不证全局最小或全连续带。源码5固定+18随机和冻结independent_labelled_controls实际均23，未沿用《退役三值家务FPO与拟阵交换结果三源复现》§1“24个”非承重笔误。与纯restricted{0,cg}、五人双值或signed端点模型无直接推导。"
+    },
+    "FA-EXPLICIT-XOS-FRACTIONAL-NSW-ROBUST-INTERFACE-RESOURCE-v1": {
+      "state": "isolated-after-review",
+      "object_pin": "6efe7c436e6fc5dbb0eda424858bcad0c98116725f9f1e95a3539bac900d8b48",
+      "comparison_scope": "完整读取本资源全部67行，实读重匹配补假设/反例、显式XOS确定化承重链与norm1高低比例接口的本页重构；比较FA09/FA10的EFX目标及本包树/多state资源。未重读其列出的UM长篇原Proof或67–70正文，未把这些未付原证明当本包已证前提。",
+      "reason": "本页合同是显式XOS、同一输出对所有正分数benchmark的常数NSW，以及带条件的菜单promise接口；不自动保证EFX、普通PO或FA10的degree≤2相关支持。树资源一般q仅次可加且有XOS包络损失，不能当精确XOS函数输入；多state图虽有显式edge clauses，但本包未展开跨档完整算法证明或具体NSW→公平桥，未造逻辑边。inactive residual补假设和归一化严格高低计数均保留，不把几乎所有好组改成UM全机sub2。"
+    },
+    "FA15": {
+      "state": "isolated-after-review",
+      "object_pin": "d35b9226bff84c7b14179ff485db6d1af1cc84e47264a30e470686f9d10db2e3",
+      "comparison_scope": "已完整读候选池审查、参数化战报、多线比较中本模型段及当前registry；candidate_pool.json只完整读FA01–FA20记录，未把其余39条异题记录称为已读。 完整读rank-toy三人九件quota MMS模块及相关toy_search.py定义；比较restricted成本与signed端点EFXplus0。",
+      "reason": "FA15是任意n、一objective goods类型一chores类型再加一exception的无quota exact MMS，基准可正/负/零。三人三件quota纯chores样本的min-max成本量词与FA15 max-min混合效用及无quota域不同；signed图EFXplus0和OPT约束Delta亦无MMS桥。这里保exact MMS存在性分支，未定义乘法比率不混入本对象。有限无失败或二类型资料引用不能替代三类型exception证明。"
+    },
+    "fair-goods/copies-sd-ef1-exhaustive-result-v1": {
+      "state": "isolated-after-review",
+      "object_pin": "9a0157a64d54742bc20b78405e808e1b41b860ce6d649f8739875c2aa9fa21d0",
+      "comparison_scope": "完整读本review75行、copies问题页及前缀资料段；额外完整读toy_checks.py、copies_exhaustive.py和693B冻结结果；精确SHA复用已发表finite-four-type-checks-ts.json。",
+      "reason": "已核16×24²=9216是恰四非全体列、每profile81合法分配；最少9证人数只属四列域。较短profile可向排序末尾补列再限制，c=3列在前缀差抵消；这些不推广任意列数或未约定weak-order合同。复用边为checks/context，故本核心仍isolated-after-review，不把有限证据升级一般SD-EF1定理；它与numeric有序EF1的普通laminar目标也不等同。"
+    },
+    "FA10": {
+      "state": "isolated-after-review",
+      "object_pin": "fd8faf10af4b2467ffe08993f5ce436506ea73b8e22b1f5ef447a08c7aba3829",
+      "comparison_scope": "已完整读候选池审查、参数化战报、多线比较中本模型段及当前registry；candidate_pool.json只完整读FA01–FA20记录，未把其余39条异题记录称为已读。 比较完整signed双三角反例、非负端点EF算法和树/多state资源全部正文所给估值合同。",
+      "reason": "FA10允许把物品给非端点且要求degree≤2相关支持的monotone submodular函数；signed端点反例含负值又限制接收端，不是其反例。FP-FOREST/CHARITY只有可加端点EF且接收域更窄。树q一般只证明次可加，多state f_G=max_e|e∩S|也不总次模：取两条不交边ab,cd，A={a,c},B={b,c}则f(A)=f(B)=f(A∩B)=1而f(A∪B)=2，违反次模。资源还未限制物品对多代理的相关数。因此本范围无可保假设的EFX推导或精确反例。"
+    },
+    "FA-TREE-GRAPH-SUPPORT-DOMAINS-CARRIER-RESOURCE-v1": {
+      "state": "isolated-after-review",
+      "object_pin": "44524e166a384069e56bc35b60308bf5ab8b5eece323aa9907bf93ff0448fcd6",
+      "comparison_scope": "完整读本资源45行的单state树递推、XOS包络损失、minorant LP及多state图separator/指定集合区别；与本包显式XOS NSW资源和FA10逐合同比较。原资源所列树550行/图173行跨档正文未在本包重读，未借此资源摘要交付其独立全证明边。",
+      "reason": "单state的leaf单射、显式树预算、H-index/negative-price demand和unit-colouring LP与多state图的全subset分离困难是不同接口。多state图在指定0/1集合有精确包络不等于完整支持域分离易，更不推出图支撑EFX或UM hardness。一般树q的次可加/近似XOS不能直接输入精确显式XOS算法；NSW也无公平桥。本范围不造共享graph/tree定义hub。"
+    },
+    "FA07": {
+      "state": "isolated-after-review",
+      "object_pin": "8b4ee17777f425edf9b6245555811144b9ed46757d2302ab08b882a6b7cef8ab",
+      "comparison_scope": "已完整读候选池审查、参数化战报、多线比较中本模型段及当前registry；candidate_pool.json只完整读FA01–FA20记录，未把其余39条异题记录称为已读。 完整读同模板固定证书、两个枚举源码、五固定参数表、全部142删除行和473网格行；比对SEL-CHORES。",
+      "reason": "仅得到已知13件点及其精确23/22证书和有限邻域checks；不完成少于13件目标，也没有必要充分连续参数/重数区域。R=19、20、21在q=7下的12、0、4 EFX计数直接拒绝简单R单调推断，21失败点的2q+6≤R≤3q−1形状保观察状态。没有把有限格点当FA07全域支持。"
+    },
+    "fair-allocation/laminar-four-ordered-ef1-and-copies-sdef1": {
+      "state": "linked",
+      "object_pin": "7e0157bed1ed3f6c3c8578d2714b8abfdc2ab58a9fc58ac85ecf4b9523176ac6",
+      "comparison_scope": "完整读本问题页全部21行、laminar/copies资料全文、FG01精确登记及候选review全部；完整读K8顺序独裁审查、枚举合同和源码。",
+      "reason": "K8/K12均是共同可四着色laminar系统，已给显式四着色；假设一般有序目标正面成立，则两key对任意非负实估值及预定顺序成立，这是完整accepted conditional特例方向。反向两个key→一般laminar依赖未审原文约化，未写等价。顺序独裁(6,4,3,2)必非EF1但(4,4,4,3)见证存在仅作context方法障碍；本稳定namespace不承载同页copies母题。",
+      "edge_ids": [
+        "fairalloc-family-general-ordered-laminar-specializes-to-both-keys"
+      ]
+    },
+    "FA19": {
+      "state": "isolated-after-review",
+      "object_pin": "9c5c758490117fb4fdf1608b8ab0b0bafa2b2bcd2f229bcf78e5be06f0d49682",
+      "comparison_scope": "已完整读候选池审查、参数化战报、多线比较中本模型段及当前registry；candidate_pool.json只完整读FA01–FA20记录，未把其余39条异题记录称为已读。 实读战报FP05补贴式，与完整EF/charity/固定残差的可见值及flow接口比较。",
+      "reason": "补贴须同时保p_i与右侧p_j，独立deficit不是正确优化。无补贴EF只对应OPT补贴0的特殊情形，forest阈值和simple charity都未给含所有补贴差的定向最优算法、正环处理或k参数界。保留fixed-heavy的potential/flow耦合义务；没有把摘要/未读后续文献当hardness或覆盖证明。"
+    },
+    "fair-allocation/complete-coverage-rounding-obstruction": {
+      "state": "linked",
+      "object_pin": "99135bbfa83a18cf1261224139bce13060ee80bfb122fcccedf24e28791d22f9",
+      "comparison_scope": "完整读70行反例页和445B JSON、两容量审查全篇尤其§6；与rank1两精确预算证书逐变量双向比较。",
+      "reason": "唯一重量2物品进箱2/箱1与rank1第一/第二元素一一对应，负载列(0,2),(2,0)、分数中点及预算1完全相同。利润1/100只添targets1/200，不改硬容量不可行；双向边交付完整固定证书而非泛泛相似。允许弃置加入零选择、资源增强改变预算，都不能由该边判败。",
+      "edge_ids": [
+        "fairalloc-family-two-budget-and-complete-coverage-fixed-certificate"
+      ]
+    },
+    "FA04": {
+      "state": "linked",
+      "object_pin": "d261266b4dd052f8b13351ae1d68a86b9d6b01e146fe34ea646d8afd6bac499a",
+      "comparison_scope": "已完整读候选池审查、参数化战报、多线比较中本模型段及当前registry；candidate_pool.json只完整读FA01–FA20记录，未把其余39条异题记录称为已读。 完整读独立multipartite引理全部证明及shared multipartite-to-fa04.json，核complete multipartite为无边parts的join因而cograph。",
+      "reason": "精确SHA复用已发布局部贡献：任意n、显式complete multipartite cograph的maximal均衡部分分配及多项式构造已付，空包和partial语义保留。一般嵌套union/join须同时保持可实现颜色容量、空色及未分配点全色邻接，源前缀一次join不付清这些义务；固定modular-width亦未解。",
+      "edge_ids": [
+        "fairalloc-multipartite-solves-fa04-join-independent-subclass"
+      ]
+    },
+    "fair-allocation/three-player-common-marginal-conditional-cost": {
+      "state": "isolated-after-review",
+      "object_pin": "45c2cf6c3f90f747cca81ff0e87abc775fea91fbd603279520d52187d5f913d4",
+      "comparison_scope": "完整读36行共同边际/K4引理、103行有限Nash审查和两容量审查；逐式核四个独立玩家事件、同q偏离差1−epsilon及Bernoulli单调耦合。",
+      "reason": "共同边际条件足以给精确资源条件成本、公共有效延迟和非减性；它不需要K4强交换，也不能重建缺失基族/字典序的5625和5/11/3有限计数。K4 Hall证书只阻断SBO拼接，不否定恒等式或Nash存在；与goods普通PO/fPO没有共同成本域。本包没有另一完整已登记目标由该恒等式付清，未强连同页独立K4对象。"
+    },
+    "FA09": {
+      "state": "isolated-after-review",
+      "object_pin": "3a4459871b9414ea0406ec1b79163ae5fd115540e12124a68e1e3c9e64b4ed5a",
+      "comparison_scope": "已完整读候选池审查、参数化战报、多线比较中本模型段及当前registry；candidate_pool.json只完整读FA01–FA20记录，未把其余39条异题记录称为已读。 完整读单调补全参数族、243全分配/8family/3boundary/3degenerate报告及源码、FPO解析10/11段与完整Fraction脚本/冻结JSON。",
+      "reason": "单调补全只否定更强任意EFX起点不降终点路线，基例仍13份EFX+普通PO，故只记corrects context。两人fPO冲突也不是普通PO反例：整数弱支配(1,1)需x+10y≥11、x+9y≤10，唯一整数解仍(1,1)，故该唯一EFX实际普通PO。两类边界为具体可复用的模型/方法筛选，未给任意人数的EFX+普通PO全称存在或负例。"
+    },
+    "M-40daa04f14844ec7b708ca9bbc6f0671": {
+      "state": "linked",
+      "object_pin": "d6f34fb1dadd4e2c27fcee72dde4c5a300ed571ef6f912112a783dcf3216faab",
+      "comparison_scope": "完整读两容量审查全部107行尤其§6两预算矩阵和完整覆盖页/JSON；两整数基及分数中点逐项映射。",
+      "reason": "rank1基选择的两成本列与唯一物品入两箱的两负载列完全相同，中点均为(1,1)，每整数选择一行2>1。双向equivalent_to明确固定证书而非任意单预算定理；不据此声称BMKP间隙、独立configuration sampling损失或一般预算舍入不可能。",
+      "edge_ids": [
+        "fairalloc-family-two-budget-and-complete-coverage-fixed-certificate"
+      ]
+    },
+    "FA14": {
+      "state": "isolated-after-review",
+      "object_pin": "92a1b03dd814b2f5e3ef8b22a376b0caa062cd921628ae7512bee3b64040e5b1",
+      "comparison_scope": "已完整读候选池审查、参数化战报、多线比较中本模型段及当前registry；candidate_pool.json只完整读FA01–FA20记录，未把其余39条异题记录称为已读。 比较共同laminar有序EF1/K8、goods-with-copies前缀约束与两个硬容量舍入证书。",
+      "reason": "本题是binary additive+正有理entitlements的完整WEFX分类，删比较包每件且分母不同。普通四人EF1存在目标不保证WEFX；copies同型等值前缀和每型cap1也不等于任意partition容量。单重量2容量反例无binary公平实例/权重，不能充作FA14负例。本范围无必要充分割条件或精确WEFX负例；未假定总有解。"
+    },
+    "M-16fa0689a0bb44c087d58a8f94933c21": {
+      "state": "isolated-after-review",
+      "object_pin": "1cd69c67402cd6c8a8430f8010bb8e5dbd0a29a6c2c53e96d8d38c9e4bc9e106",
+      "comparison_scope": "完整读K8审查64行、枚举合同41行、boss0_laminar_keys.py126行及laminar目标；解析核所有并列serial效用与目标见证。",
+      "reason": "共同估值(1,2,3,1,2,3,1,2)中首两最高物强取后，全部serial给(6,4,3,2)，末人删首包一3后仍3>2；给定(4,4,4,3)分配完整可行、ordered且EF1。其用处是排除顺序独裁模板，在本包写corrects context；没有“所有serial成功”这一登记目标可被逻辑refutes，也不把一个好profile变成FG01连续全称。"
+    },
+    "FA05": {
+      "state": "linked",
+      "object_pin": "73a3861bd42a8ecb140ebeb5f241421e15a3a36176ad5e871d19c664cbfc6116",
+      "comparison_scope": "已完整读候选池审查、参数化战报、多线比较中本模型段及当前registry；candidate_pool.json只完整读FA01–FA20记录，未把其余39条异题记录称为已读。 完整读multipartite独立引理、shared multipartite-to-fa05.json；对FA03只核n=3、每件值1的真实包含关系。",
+      "reason": "复用无条件局部解：三人、complete multipartite、共同常数单件值lambda≥0，源均衡构造给EF1（lambda=0单列）和maximal。另有accepted conditional：若FA05任意图/任意相同值全称正存在性成立，则FA03的n=3统一基数cactus存在性随之成立；它不付所有n或算法。非均匀共同物品值不能用包大小平衡取代。",
+      "edge_ids": [
+        "fairalloc-multipartite-solves-fa05-three-uniform-subclass",
+        "fairalloc-family-three-agent-identical-specializes-to-cactus-uniform-slice"
+      ]
+    },
+    "M-de5640c7494749f3ae167da4231f416e": {
+      "state": "isolated-after-review",
+      "object_pin": "09cd646a8725accadc7b2974ebe03e3a45be36f2615cbdfe1b0ed15c2b2bf6af",
+      "comparison_scope": "完整读K4引理§K4的强交换Hall证书、Nash有限审查K4段及两容量审查graphic段，按六边编号与两棵树逐项核对。",
+      "reason": "N(0)={2,3,5}，N(1)=N(4)={5}，Hall子集{1,4}只有一邻居，完整排除同时单交换双射及SBO。共同边际恒等式不以SBO为前提，两个预算/完整覆盖反例也不是graphic基。多页同一K4证书已合并唯一数学身份，本包不以共享见证另造重复证明或Nash/BMKP不可能边。"
+    },
+    "FA03": {
+      "state": "linked",
+      "object_pin": "e83400c90f3a78d4c77f2244c65da4b73a93a519caf248b5b923ebf39a904e93",
+      "comparison_scope": "已完整读候选池审查、参数化战报、多线比较中本模型段及当前registry；candidate_pool.json只完整读FA01–FA20记录，未把其余39条异题记录称为已读。 核与FA05的三人统一基数cactus切片；同时比较multipartite构造的图类及端点EF/FA18 residual的不同分配域。",
+      "reason": "FA05的全称正存在性若成立，专取三人、cactus、每件值1即给本目标n=3的maximal均衡部分着色；这是accepted conditional局部贡献，开放源前提未获证明。FA03还要求所有n及多项式构造。complete multipartite并非cactus全类，端点EF残差也不是顶点冲突独立集分配，不能借forest/cactus同名求全解。",
+      "edge_ids": [
+        "fairalloc-family-three-agent-identical-specializes-to-cactus-uniform-slice"
+      ]
+    },
+    "fair-allocation/double-triangle-signed-endpoint-efxplus0": {
+      "state": "isolated-after-review",
+      "object_pin": "74f46f0798d3385ba49c5c0871c34d0c726f59bcda9d1b17ca8611a751da99d9",
+      "comparison_scope": "完整读29行固定反例的非枚举强迫证明、三份signed/rank生成与底层审查全文、mixed_extension_results.json138行和toy_search.py100行；与rank-toy cycle域及FA03/FA08/FA10比较。",
+      "reason": "解析链是第二三角迫0收一负边，继而01给0、12给2、20给0，0删任一负边仍负而至少一他包对0为0，故仅自身非正删除半条件就矛盾。64方向、trial686、687/1000只为原生成记录；证明不靠未完成313样本。它精确否定signed cactus普遍定向，不否定纯chores/rank2、非负monotone allocation、冲突cactus着色或pseudoforest；本包没有该被否全称的独立登记端点，不错连同名cactus节点。"
+    },
+    "FA08": {
+      "state": "isolated-after-review",
+      "object_pin": "ff98bee694fd91731b876f7caae73d7f82e9ab3312c2037fb0ea9d24e8314e78",
+      "comparison_scope": "已完整读候选池审查、参数化战报、多线比较中本模型段及当前registry；candidate_pool.json只完整读FA01–FA20记录，未把其余39条异题记录称为已读。 比较四人正三值counterexample、restricted{0,cg}放大、signed端点强迫反例和端点goods forest算法。",
+      "reason": "FA08恰五人公共{1,r}成本，每件至多两名large、关联支持forest/cactus，但接收者不受端点限制。四人三值13件不是双值，restricted含零且有公共每件cg，signed有负效用且强制定向，均未保本题全部假设。large-incidence≠endpoint-goods可接收图，不能把已证EF残差算法迁作chores逐删自身EFX。首个未付义务仍是五人deficient-set/matching结构。"
+    },
+    "SEL-PB-EFX-MONOTONE-COMPLETION-OBSTRUCTION-v1": {
+      "state": "isolated-after-review",
+      "object_pin": "7d9c4619f310816e8e3ed30cce756de2ced8449883d3af8f2114ab3c7b9e4f63",
+      "comparison_scope": "完整读本参数族52行、全分配报告102行、4034B生成器及完整6620B冻结JSON；对每参数条件、两支配者和边界(c=2,a=b=2)分别核对，比较FA09与SELFPO。",
+      "reason": "两严格支配者穷尽和c+1>c证明完整，目标同效用的PO终点也被严格支配排除；因此阻断任意EFX起点单调补全。基例21EFX、13EFX+PO与参数族同存，不是目标不存在。八family两false点本身PO，c=2多出EFX支配者；单点a=3/2观察不扩张解析域。只有context纠错到FA09，未将方法反例当全称反例。"
+    },
+    "FP-CHARITY-SIMPLE-v1": {
+      "state": "linked",
+      "object_pin": "1e065fdedd6ea4cd132c991d8deb6557dfdb71152bb21bf21ba73218b9ba9197",
+      "comparison_scope": "完整读主算法§三的零/单正预处理、anchored补回、无anchor树必全删、quota流、分支最优及位长分析；完整读有限1200例实现和聚合，比较FA01/FA19。",
+      "reason": "非负成本下任何分支可行部分解均可补全全部非被迫单位边，故唯一单位损失为无anchor树，结合heavy三态给真3^k最优；simple可见值≤1承重。向FA01的逻辑贡献取每边成本1且OPT=0，准确恢复simple完整EF。任意成本结论由证明，不沿称1200例已测试任意成本；多重图/补贴项均不继承。",
+      "edge_ids": [
+        "fairalloc-family-simple-charity-decides-complete-ef-subclass"
+      ]
+    },
+    "SEL-FAIR-FPO-PROBE-v1": {
+      "state": "isolated-after-review",
+      "object_pin": "ce4af17cff62c44088c9c10acf23804bbb3c2a381e660ff2a8ce32fd4bb3f991",
+      "comparison_scope": "完整读FPO审查和10/11解析节、Fraction支持区间/支配多边形源码及全部冻结JSON；比较FA09 ordinary PO、单调补全和三值chores删除方向。",
+      "reason": "交换斜率(9,10)完整排除x>0,y<2的fPO；五边界点公平质量0,10/11,2/9,1/18,0给固定精确最优。唯一EFX(1,1)虽被分数支配，却经整数不等式证ordinary PO，故用motivates/context保FA09不被该强反例否定。256/1600和参数/权重族都是有限记录，不变成一般近似界；共享三值review写24controls不影响本goods主声明，按真实23记账。"
+    },
+    "FP-FOREST-THRESHOLD-v1": {
+      "state": "linked",
+      "object_pin": "48a58f48d9433181d08ec87b9a1a8849a89efb8a3b3a2775d21f1495f96fde4c",
+      "comparison_scope": "完整读主算法§一/二及图/rank资料、probe.py/results.json全部；逐式核上闭性、所有孩子同时最大、父/子/远端h门槛、根0、恢复及二进制算术界。",
+      "reason": "完整必要充分阈值算法给FA01的unit-forest 2^k子类和FA18的无环残差子类，所有非邻接/跨树h保留。两条accepted contribution不把unit-support forest扩成一般multigraph或cactus全域。4200有界oracle只是checks语境；simple charity的补回依赖不能替代该整数包归纳。",
+      "edge_ids": [
+        "fairalloc-family-forest-solves-unit-forest-heavy-subclass",
+        "fairalloc-family-forest-is-paid-base-of-cactus-residual"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/fairalloc-3a-3a-e55aa1f523e759a2/balance-obstructs-heavy-halving-route.json",
+      "sha256": "b2f5e250b2c205867935afee93ca75d838cb736a0027016da74d42295aedefb7"
+    },
+    {
+      "path": "map/edges/fairalloc-3a-3a-e55aa1f523e759a2/forest-is-paid-base-of-cactus-residual.json",
+      "sha256": "79c1cde338f38bd6484e21f393ecc2e6055b2d66c93942d69db0e3e083ed5eca"
+    },
+    {
+      "path": "map/edges/fairalloc-3a-3a-e55aa1f523e759a2/forest-solves-unit-forest-heavy-subclass.json",
+      "sha256": "c107d0c98a72db510dc6965c59a138bbedf742e6088901bb48af1c3371347f0f"
+    },
+    {
+      "path": "map/edges/fairalloc-3a-3a-e55aa1f523e759a2/fractional-po-obstruction-does-not-refute-ordinary-po.json",
+      "sha256": "30af339a1ae2333d562e0f17d6436d58cee4010a7464828a52f7aaf3b427dae7"
+    },
+    {
+      "path": "map/edges/fairalloc-3a-3a-e55aa1f523e759a2/general-ordered-laminar-specializes-to-both-keys.json",
+      "sha256": "6e6495ec4a1589dcbfc0e36558b0db2124a8b3c662982792084bc30466ce581a"
+    },
+    {
+      "path": "map/edges/fairalloc-3a-3a-e55aa1f523e759a2/heavy-audit-checks-forest-threshold.json",
+      "sha256": "8b329a4ee2943ac496f6ce9f487811869fbbe4eef56b13d48aeb2634c6b6720d"
+    },
+    {
+      "path": "map/edges/fairalloc-3a-3a-e55aa1f523e759a2/heavy-audit-checks-simple-charity.json",
+      "sha256": "40c20bd0f149e3fa449e1ef02b2ef3fcd93565b25672d0dde8f801e91453cd64"
+    },
+    {
+      "path": "map/edges/fairalloc-3a-3a-e55aa1f523e759a2/monotone-completion-obstructs-fair-po-method.json",
+      "sha256": "ccf75e001acb6d95de09e453baba4b598c8c38300bd8aca7dce84eb4d9061cc9"
+    },
+    {
+      "path": "map/edges/fairalloc-3a-3a-e55aa1f523e759a2/restricted-toy-motivates-exact-scaling-family.json",
+      "sha256": "0b2dfc1e9ae01640a01684fa6a3e7183b3097e67b19c1bfa04b50d7c80571b71"
+    },
+    {
+      "path": "map/edges/fairalloc-3a-3a-e55aa1f523e759a2/serial-dictatorship-obstructs-key-method.json",
+      "sha256": "689c8aca578994852dd32a20a342b208018fb6de3888d9e06fe549f262843c47"
+    },
+    {
+      "path": "map/edges/fairalloc-3a-3a-e55aa1f523e759a2/simple-charity-decides-complete-ef-subclass.json",
+      "sha256": "dc92621aef7171fb796cdbf5a6b599c50e1bb35ce813052e4738d607d51724ae"
+    },
+    {
+      "path": "map/edges/fairalloc-3a-3a-e55aa1f523e759a2/three-agent-identical-specializes-to-cactus-uniform-slice.json",
+      "sha256": "e88f43ffdf26482af00cbe6a55a4909d95700f12190af8347e2c8062ea461b83"
+    },
+    {
+      "path": "map/edges/fairalloc-3a-3a-e55aa1f523e759a2/trivalued-certificate-checks-fa07-boundary.json",
+      "sha256": "941f5969fd6bec2cac8c4207c8c93ca5f07d38a16630c4a0422e6eb841b26284"
+    },
+    {
+      "path": "map/edges/fairalloc-3a-3a-e55aa1f523e759a2/two-budget-and-complete-coverage-fixed-certificate.json",
+      "sha256": "afcf13f0948aa57bbf068ce9bfa82d868d85409f46ffae8a5ab93f8903ce16bf"
+    },
+    {
+      "path": "map/edges/fairalloc-3a-3a-735a352799f0258b/multipartite-to-fa04.json",
+      "sha256": "f54b8b300e3c0570d63cdda1455d2a69f6f65692b7048c852a9edb43be4df340"
+    },
+    {
+      "path": "map/edges/fairalloc-3a-3a-735a352799f0258b/multipartite-to-fa05.json",
+      "sha256": "dc58a835e0f6c18dca4d0e75f23696a157202e990e23735a3eb5b93a92faa449"
+    },
+    {
+      "path": "map/edges/fairalloc-3a-3a-735a352799f0258b/finite-four-type-checks-ts.json",
+      "sha256": "9e89cc08a7d5cb8e01a86c619396ba52912da1080654cf9d57dd59cb50f58407"
+    }
+  ],
+  "follow_up_tasks": [],
+  "closed_overlaps": []
+}
