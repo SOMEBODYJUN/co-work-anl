@@ -1,0 +1,37 @@
+{
+  "edge_id": "um-280160f5-packing-interface-a-gives-weighted-partial-schedule",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-728d3dad4021433e8c24fafe49f45bf5"
+  ],
+  "target_ids": [
+    "M-40e85c8c72ef4059a9a87c5997372717"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "把开放义务A作为实际可用算法前提：对原任务和每次真实剩余任务，在OPT≤T承诺下总位多项式返回显式poly支撑、原容量精确≤T、每机质量≤1、每任务覆盖≤1、目标≥(1−η)子集总权的CONFIG packing primal，η=1/100000；原P合法、权非负。",
+  "roles": {
+    "M-728d3dad4021433e8c24fafe49f45bf5": "唯一未闭合的算法前提A；弱knapsack分离讨论不是A的完成证明。",
+    "M-40e85c8c72ef4059a9a87c5997372717": "目标是A成立时3T/2容量、至少2W/3任务权的部分实际调度。"
+  },
+  "explanation": "先调用A。每T配置至多一件p>T/2的大任务，big边际为二部任务—机器分数匹配；最大任务权整数匹配M至少其分数权。若w(M)≥2W/3直接输出。否则small覆盖权≥(1/3−η)W。每配置small子集由next-fit分成至多三个T/2包；四包会由第1包+第2包首件和第3包+第4包首件两组互不相交的> T/2工作迫总和>T。每机独立抽配置再均匀选包，去重后任务j被覆盖概率≥1−exp(−s_j/3)≥c s_j，c=283/1000。有理条件期望只计算1−∏(1−q_ij)，确定实际S0，各机≤T/2且w(S0)≥c(1/3−η)W。在真正未覆盖任务重新调用A，原T调度删除S0仍可行；同理以a=79/125得到负载≤T的S1，w(S1)≥a(1−η)(W−w(S0))。两域不交，同一S0∪S1逐机≤3T/2，权比≥a(1−η)+(1−a(1−η))c(1/3−η)=2/3+154630232929/3750000000000000。条件期望状态只枚举显式支撑，各乘积≤m有理因子，位长/时间多项式。W0或空任务返空；T0且OPT≤0逐件选零端。",
+  "scope": "整条目标条件定理，允许遗漏任务；不从两次packing、部分质量或概率保证推出全任务统一调度。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/加权部分调度的三半容量与三分之二质量条件链--审查.md",
+      "sha256": "3a287e0bf950053d9a14c8ca905c9e31b0bf198a72e5e7b2e410704b9f659c40"
+    }
+  ],
+  "reviewed_by": "Boss3 / um_config_interfaces",
+  "review_note": "已实读当前登记对象及所引自足证明，逐项核对模型、量词、全任务身份、同时全机负载和位复杂度。本边只在列明条件内覆盖目标整条陈述；不升级未付的算法前提。",
+  "whole_result": "若开放接口A实际可用，则每个OPT≤T的合法UM和非负任务权输入均可确定性总位多项式输出部分实际调度，全部机器负载≤3T/2、覆盖权≥2W/3，且全部零边界和真实剩余集第二次调用成立。",
+  "endpoint_pins": {
+    "M-40e85c8c72ef4059a9a87c5997372717": "4c85160ac0d99595008f4106c51907e5400293baff9c4aea51a304f05e42ba8f",
+    "M-728d3dad4021433e8c24fafe49f45bf5": "1fdf511136fef87b0e7d441b5a597ef359ee8f1d77c062237d2531a0bae71011"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/加权部分调度的三半容量与三分之二质量条件链--审查.md": "3a287e0bf950053d9a14c8ca905c9e31b0bf198a72e5e7b2e410704b9f659c40"
+  },
+  "review_digest": "c00e02f1df1b2586c89bb31c151e9be9b81f963cf1648c209cec82a064e8bb1d"
+}

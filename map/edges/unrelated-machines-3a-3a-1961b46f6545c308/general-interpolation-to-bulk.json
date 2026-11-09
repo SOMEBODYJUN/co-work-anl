@@ -1,0 +1,58 @@
+{
+  "edge_id": "um-1961b46f-general-interpolation-to-bulk",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-TWO-ACTUAL-INTERPOLATION-BULK-FALSE-ESCAPE-v4"
+  ],
+  "target_ids": [
+    "M-323585b750674648b8347bd7b753c430"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "完整原ring/pool矩阵：r≥2、偶k≥2、1/2<ρ<1；给同一P仅u真与仅v真的两完整峰≤1actual。F为全部f，ν把f固定到各正pool；全部q,b,J同一次插值。",
+  "roles": {
+    "UM-TWO-ACTUAL-INTERPOLATION-BULK-FALSE-ESCAPE-v4": "同一次整数流/双色同时给ceil(N_i/2)件数与(L_i0+L_i1+d_i)/2负荷。",
+    "M-323585b750674648b8347bd7b753c430": "bulk两类J域的allFalse上界与阈值/真实used任务必要条件。"
+  },
+  "explanation": "一般I取T1。非pool没有新固定负载，故≤3/2。J不接pool时pool只有q/f，q各1/k：特殊u/v正池一份被f1占满，双出现数≤k，同一输出件数≤k/2，连新f恰≤3/2；其它正池无正q出现，连f负载1。特殊负池≤k/2枚q，其它负池≤k枚q。偶k消掉ceil；仅用负荷式会多1/(2k)，须用同输出件数式。允许任意pool J时，一般件数仍保留，但q专用计数不能用。定义d仅取u/v正pool在两actual真正执行的非f最大原时间。一旧f1使该非f L0，另一L≤1，因此加新f后≤3/2+d/2；其它正池两L0，负载恰1可有zero J；负池及非pool≤3/2。β=2−δ>3/2：d≤1−2δ构造C≤β、d<1−2δ构造C<β，故排全部C<β须d≥1−2δ，排全部C≤β须d>1−2δ。若1/k<1−2δ，达到必要d的原job不能是q/b/f，只能used J；另一actual同池有f1，原p固定为正，所以同一J必须实际改目的地。unused大资格、fee、固定branch或source标签均未推出。沿I验证/排序/flow或双色和原job恢复为位多项式；两见证仅存在时只得存在结论。",
+  "scope": "完整bulk特化，不继承v3的M/C≤1、branch gate或每机恰一job加强。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/证明/两实际见证插值的流与双色完整证明--证明.md",
+      "sha256": "9f0e8e81dd698ba10d97b28a6744bd200e6bb9c9314208802af601927cf48028",
+      "section": "5. 完整bulk矩阵与两actual特化"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/两实际见证插值的流与双色完整证明--证明.md",
+      "sha256": "9f0e8e81dd698ba10d97b28a6744bd200e6bb9c9314208802af601927cf48028",
+      "section": "6. 非pool J：q专用件数加强给精确三半"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/两实际见证插值的流与双色完整证明--证明.md",
+      "sha256": "9f0e8e81dd698ba10d97b28a6744bd200e6bb9c9314208802af601927cf48028",
+      "section": "7. 任意pool J：负荷界与取消的特定加强"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/两实际见证插值的流与双色完整证明--证明.md",
+      "sha256": "9f0e8e81dd698ba10d97b28a6744bd200e6bb9c9314208802af601927cf48028",
+      "section": "8. 弱阈值等号与同一原J的实际移位"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/两实际见证插值的流与双色完整证明--证明.md",
+      "sha256": "9f0e8e81dd698ba10d97b28a6744bd200e6bb9c9314208802af601927cf48028",
+      "section": "9. 总位复杂度、扣除和接续"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "本包worker实读当前登记、端点正文与所列承重证明，逐项核对完整/局部作用域、同一实际输出及模型边界；未将历史软件计数当新运行。",
+  "whole_result": "一般同输出插值在完整bulk中给nonpool-J allFalse峰≤3/2；任意pool-J峰≤3/2+d/2；准确开/闭β阈值必要条件及在1/k<1−2δ时同一实际used J移位必要性全部成立。",
+  "endpoint_pins": {
+    "M-323585b750674648b8347bd7b753c430": "ebe3e8dc291a399a4c2ddebdc1d8dae40e368fd93c7ffd72032d59e2d0dd1cd0",
+    "UM-TWO-ACTUAL-INTERPOLATION-BULK-FALSE-ESCAPE-v4": "52ec5762785d9a93142d696d0b16ceff021b553f4e69fb02807cab584d598c3e"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/证明/两实际见证插值的流与双色完整证明--证明.md": "9f0e8e81dd698ba10d97b28a6744bd200e6bb9c9314208802af601927cf48028"
+  },
+  "review_digest": "7c2a4c3670e3cc3538c280cb48ad1aaea59e8db4e6dddbdea4f07262574e1199"
+}

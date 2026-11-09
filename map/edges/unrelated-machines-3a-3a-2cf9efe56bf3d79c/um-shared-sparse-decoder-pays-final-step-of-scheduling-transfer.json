@@ -1,0 +1,57 @@
+{
+  "edge_id": "um-shared-sparse-decoder-pays-final-step-of-scheduling-transfer",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SPARSE-PARTIAL-PROJECTION-BRIDGE-q2"
+  ],
+  "target_ids": [
+    "unrelated-machines/sparse-partial-projection-scheduling-transfer-obligation"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "固定δ∈(0,1)。若一个待建F_δ及提取器已经从同一合法P的任意完整实际σ:Cmax≤(2−δ)T给出同顶点全边共用的有理μ、投影支持且两侧逐点dominated的ξ_e、右支撑s_v≤L≥1、β=Σw_e|ξ_e|，总支持/位长多项式且β/L>γ_δ，则可调用q2。w_e≥0且Σw_e=1；源NO承诺val(G)≤γ_δ。这里只条件使用提取合同，不主张它已实现。",
+  "roles": {
+    "UM-SPARSE-PARTIAL-PROJECTION-BRIDGE-q2": "给定完整共同稀疏证书后，确定性总位多项式输出值≥Σw_eτ_e/s_v≥β/L的实际单标签赋值；shift族提供精确参数锐性。",
+    "unrelated-machines/sparse-partial-projection-scheduling-transfer-obligation": "从任意低实际调度到共同证书的构造、YES全任务调度及source hardness仍开放；本边付清的是证书之后的soundness解码及阈值审查。"
+  },
+  "explanation": "q2先按μ_u在左抽样、右在共同支撑S_v均匀，ξ的投影支持与左domination给α_e=Σ_{a:π_e(a)∈S_v}μ_u(a)≥τ_e，故期望≥Σw_eτ_e/s_v≥β/L。左顶点逐个argmax后右顶点最佳响应，得到同一全局单标签赋值，显式有理求和位长多项式。因此若NO源有上述低σ并且候选提取合同成立，会导出值>γ_δ，矛盾。再与YES实际OPT≤T及相应source困难性联合，才给条件近二gap。右字母数R时，对固定任意左标签在右均匀抽样给val(G)≥1/R，非空NO须γ_δ≥1/R；所以严格成功必须L<β/γ_δ≤βR。若只提取β=θ、L=θR，则β/L=1/R，不能越NO。q2的所有整数R≥L≥1的subset-shift族以β=L/R、val=1/R恰达，说明仅凭这些参数不能普遍提高；它没有排除额外调度结构更强的decoder。",
+  "contribution": {
+    "result": "在开放转移所要求的共同μ/部分ξ/稀疏L/质量β证书已给定时，q2完整付清最终soundness步骤：β/L>γ_δ排除每份所述低σ；并给γ_δ≥1/R、L<β/γ_δ≤βR及比例quota仅得1/R的精确必要检查。",
+    "remaining": "F_δ的合法完整矩阵、源YES的全任务T调度、对所有实际C≤(2−δ)T调度共同生成证书的提取证明与位复杂度，以及与γ_δ和R(δ)匹配的source YES/NO困难性，均未由本边获得。"
+  },
+  "scope": "已证解码器对开放归约的局部条件贡献；不将q2工具加强、有限36组fixture或逐边不同μ升级为调度转移、一般UM困难性或主目标反面。≤低峰与严格β/L>γ两处端点均保留。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/共同稀疏边际的线性质量投影解码--定理.md",
+      "sha256": "e05e3f0ec96c46cfceba4f7843cb439e4ec8f06e418cc7cca391feb49f3289a8"
+    },
+    {
+      "path": "archives/unrelated-machines/state/问题/稀疏部分投影证书的近二调度转移--问题.md",
+      "sha256": "6b48892916b1d2dc6ba3c2f4248fcdb040164e22936d5a841e36d3227d2e16de",
+      "section": "必须共同闭合的三个合同"
+    },
+    {
+      "path": "archives/unrelated-machines/state/问题/稀疏部分投影证书的近二调度转移--问题.md",
+      "sha256": "6b48892916b1d2dc6ba3c2f4248fcdb040164e22936d5a841e36d3227d2e16de",
+      "section": "字母、覆盖与支撑必须同步"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/稀疏部分投影解码候选精确加强与开放承重义务审查--审查.md",
+      "sha256": "01d705cc76875fac82fc640112e94ef11091841fb8f7314414ea2bbc560f70a3",
+      "section": "3. 仍开放的调度承重义务"
+    }
+  ],
+  "reviewed_by": "Boss3 / um_cartesian worker",
+  "review_note": "完整核q2的两阶段确定化、全部R/L锐族、原μ实际期望可更高的非均匀边界和开放转移v3。仅将已闭合decoder写contribution；Fδ/YES/统一提取/source hardness四项均明列未付。",
+  "endpoint_pins": {
+    "UM-SPARSE-PARTIAL-PROJECTION-BRIDGE-q2": "d179da7b5dd667ef3bb84e1c5616b667c3f4683d851022c6445538e2c2191986",
+    "unrelated-machines/sparse-partial-projection-scheduling-transfer-obligation": "a31a222ecea32fed30168dec52cfed7694841bad42d61f584d1b73b2cd19bb39"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/共同稀疏边际的线性质量投影解码--定理.md": "e05e3f0ec96c46cfceba4f7843cb439e4ec8f06e418cc7cca391feb49f3289a8",
+    "archives/unrelated-machines/state/问题/稀疏部分投影证书的近二调度转移--问题.md": "6b48892916b1d2dc6ba3c2f4248fcdb040164e22936d5a841e36d3227d2e16de",
+    "archives/unrelated-machines/state/审查/稀疏部分投影解码候选精确加强与开放承重义务审查--审查.md": "01d705cc76875fac82fc640112e94ef11091841fb8f7314414ea2bbc560f70a3"
+  },
+  "review_digest": "1af462493d44bf5f10878b2a7600f8c3f01d0ea16604231b40be92b35ad83ff7"
+}

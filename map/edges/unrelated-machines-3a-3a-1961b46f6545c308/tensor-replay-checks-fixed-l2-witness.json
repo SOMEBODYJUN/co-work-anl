@@ -1,0 +1,42 @@
+{
+  "edge_id": "um-1961b46f-tensor-replay-checks-fixed-l2-witness",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/fixed-two-level-tensor-integer-audit-replay"
+  ],
+  "target_ids": [
+    "UM-TENSOR-JOINT-GUARD-ESCAPE-q1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "固定F2 parity源q2、t4、L2矩阵B；同层多轴只收费一层，同一个16边matching供全部检查。",
+  "roles": {
+    "unrelated-machines/fixed-two-level-tensor-integer-audit-replay": "保存固定B的原代码、16边和全部322 guard计数、12 prefix、912 clone不交分配及三层失败。",
+    "UM-TENSOR-JOINT-GUARD-ESCAPE-q1": "∀固定L可另选t/B的一般存在定理；本边只检查其显式L2实例。"
+  },
+  "explanation": "B²=I+B且B(I+B)=I使三个完整word投影双射，16条(x,Bx,(I+B)x)均逐层parity合法。12个形式非零互异，任意跨两层各取一轴秩2；额外同层轴只删原像，故28个一层和294个两层families同时过上容量。12单轴prefix另核，不加进322同型计数。54对层/轴族各pattern分4个clones，连3 word资源每边57件，16 bundles共912原资源互不交。固定B有X0+X1+Y2=0，三层4次>容量2，是准确预期断点。一般L的随机共轭低支持排除与t=6L并非此程序结论；也没有actual UM编译、一般找B或低σ解码器。",
+  "scope": "固定有限整数证书检查关系；不将L2外推∀L，不把源资源clones当UM机器/任务。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/计算/固定两层张量逃逸的整数边与资源克隆复跑--计算.md",
+      "sha256": "24f200d1b4753f539fff7bf7bab7e83bcc1bcc668b60ae566925266d70660fbf"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/固定层共同上容量的整数张量逃逸--定理.md",
+      "sha256": "4d90dbc700bd79d003e8298dc5b9d8af7ee07fb483464282cba00ac6719d965c",
+      "section": "显式二层见证及其三层断点"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "本包worker实读当前登记、端点正文与所列承重证明，逐项核对完整/局部作用域、同一实际输出及模型边界；未将历史软件计数当新运行。",
+  "endpoint_pins": {
+    "UM-TENSOR-JOINT-GUARD-ESCAPE-q1": "33e285e024ece5ccdcf81e299c86cd58cf8830c518d137502a2526251bb202af",
+    "unrelated-machines/fixed-two-level-tensor-integer-audit-replay": "f7a9d261cf20a40331b17b00b1fbac68290153f81e9661c8f91890264727960a"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/计算/固定两层张量逃逸的整数边与资源克隆复跑--计算.md": "24f200d1b4753f539fff7bf7bab7e83bcc1bcc668b60ae566925266d70660fbf",
+    "archives/unrelated-machines/state/定理/固定层共同上容量的整数张量逃逸--定理.md": "4d90dbc700bd79d003e8298dc5b9d8af7ee07fb483464282cba00ac6719d965c"
+  },
+  "review_digest": "032e27ec34c9fba28ba66d89f27546ca3360831fbbbe052c624dc57f6e47f8df"
+}

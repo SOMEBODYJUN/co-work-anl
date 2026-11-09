@@ -1,0 +1,44 @@
+{
+  "edge_id": "um-280160f5-reliable-threshold-interface-solves-uniform-target",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-5af596d5d75441cba006ff7ba31a19a4"
+  ],
+  "target_ids": [
+    "UM-TARGET-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "存在某个固定整数k≥2、ρ=2−1/k，并有源所要求的单一总位多项式接口，对每个合法原P及有理T≥0返回完整峰≤ρT调度或可独立验证D⇒OPT>T；不得把局部证书拒绝替换为此可靠FAIL。",
+  "roles": {
+    "M-5af596d5d75441cba006ff7ba31a19a4": "证明一侧完备的放宽阈值接口经分母整数网格搜索可优化。",
+    "UM-TARGET-v1": "目标是全合法UM域的同一统一ε=1/k实际近似算法存在。"
+  },
+  "explanation": "先判空任务/每任务零端并输出零调度。否则令Q为全部有限端分母乘积，U0=Σ_j min_i p_ij，则QOPT和QU0均为整数，logQ及log(QU0+1)对输入多项式。T=U0必成功并保存调度。初始化a=0,b=QU0，维护a≤QOPT及一份峰≤ρb/Q的已存全调度。中点t测试失败时，由可靠FAIL及网格性有QOPT≥t+1，置a=t+1；成功时置b=t并保存。两分支维持非空a≤b；成功时即使b<QOPT仍保持所需见证不变量。终止a=b≤QOPT，已存输出峰≤ρb/Q≤ρOPT。共O(log(QU0+1))次调用，每T编码位长多项式，逐任务原负载核算和证书核验亦多项式。",
+  "scope": "源的充分接口到一般目标的完整条件蕴含；接受集无需单调、OPT>T时允许返回放宽调度。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/问题/不相关机的统一整数输出与全调度解码--问题.md",
+      "sha256": "c09bd8cd373f12e4452d2685c37d3ffacfc58e851d0da1f05d1712202d1457c8",
+      "section": "阈值接口与可靠失败"
+    },
+    {
+      "path": "archives/unrelated-machines/问题--问题.md",
+      "sha256": "749b6baf3b85ea0ca8f9c7f47f0f1b33ede6beb452da2fcb04b12554e00fddcf",
+      "section": "阈值、比较对象与可靠失败"
+    }
+  ],
+  "reviewed_by": "Boss3 / um_config_interfaces",
+  "review_note": "已实读当前登记对象及所引自足证明，逐项核对模型、量词、全任务身份、同时全机负载和位复杂度。本边只在列明条件内覆盖目标整条陈述；不升级未付的算法前提。",
+  "whole_result": "若该统一可靠阈值接口存在，则一般UM目标成立，ε=1/k；输出全部原任务合法调度且Cmax≤(2−1/k)OPT，时间按全输入总位长多项式。",
+  "endpoint_pins": {
+    "M-5af596d5d75441cba006ff7ba31a19a4": "84bf6f6aab1273c02dc7d58faeab6eab21396e4341f9018bcd6fc43fe2fcbd50",
+    "UM-TARGET-v1": "1d9a8ab835f9a0e4076886ab7ae61928042d9d113480d6eb2f1bf6e34af73f6a"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/问题/不相关机的统一整数输出与全调度解码--问题.md": "c09bd8cd373f12e4452d2685c37d3ffacfc58e851d0da1f05d1712202d1457c8",
+    "archives/unrelated-machines/问题--问题.md": "749b6baf3b85ea0ca8f9c7f47f0f1b33ede6beb452da2fcb04b12554e00fddcf"
+  },
+  "review_digest": "728341bf1253182e3cc393c562fb83c93d28d5e34004d0765db9a74017964dbd"
+}
