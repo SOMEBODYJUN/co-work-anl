@@ -1,0 +1,73 @@
+{
+  "edge_id": "commonmany-three-facility-repeated-sharp-two-v2",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "MF-PACK-2",
+    "MF-PURE-CAP",
+    "MF-CONT-COMPLETE",
+    "facility-games/common-many/three-facility-disjoint-repeated-sharp-two"
+  ],
+  "target_ids": [
+    "facility-games/common-many/three-facility-repeated-site-factor-two-question"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "恰三家带标签设施共用有限非空站点目录 S，允许重复站点与任意相交覆盖。客户为有限正实权原子，覆盖时必从原可达菜单选一家，各客户独立混合。条件成本为 w_i+Σ_{j≠i}w_jp_jf，设施收益为 L_f=Σ_iw_ip_if。给每个 S³ 标签布局选精确客户 NE，对在轨全部实际单设施换址检验不等式。",
+  "roles": {
+    "MF-PACK-2": "当最大站点 A 保留两个静止标签时，取 h=2、a=R/3，将总重 R 的全部 C_A 原子装入静止两箱，普通箱受 2a 帽，超帽原子单独成箱。",
+    "MF-PURE-CAP": "小新增分支的可行纯种子上，对原完整菜单作有限严格改善，保静止重原子孤立和普通帽，从而偏离者的精确纯 NE 负载仍不超过 2a。",
+    "MF-CONT-COMPLETE": "给定在轨和各实际偏离的精确客户 NE，按带标签布局逐点合并，剩余布局取有限平方势纯 NE 默认，形成一份覆盖 S³ 的规则。",
+    "facility-games/common-many/three-facility-disjoint-repeated-sharp-two": "提供三个互不相交等权独占站的锐性见证。该输入属于任意覆盖域，且下界对其所有重复布局及所有续局选择成立。",
+    "facility-games/common-many/three-facility-repeated-site-factor-two-question": "得到恰三家、任意覆盖关系下重复占位的完整二倍续局，以及重复占位约束下的统一常数 2 锐性。"
+  },
+  "explanation": "取最大覆盖站 A，R=w(C_A)，b=max_{r∈S}w(C_r\\C_A)。R=0 时正权性使所有覆盖为空，任取全共址和全零规则。若 R>0 且 b≤2R/3，三家同在 A，C_A 内客户独立均匀选三个标签，各可达行动的真实条件成本均为 w_i+(R−w_i)/3，故在轨精确且每家负载 R/3。任意 f 改到 r≠A 后两静止标签仍覆盖 C_A。按 MF-PACK-2 取 h=2、a=R/3，将 C_A 的全部原子合法分给静止标签。把 C_r\\C_A 全给 f，f 的种子负载≤b≤2a。新布局已覆盖客户恰为这两个不交组之并，未覆盖者没有动作。重原子只可能单独留在静止标签，f 属普通设施。MF-PURE-CAP 在原菜单上有限修复到精确纯 NE，且 L_f≤2a。若 b>2R/3，取达到 b 的 B≠A，以 (A,A,B) 在轨。C_A 客户独立均匀选两个 A 标签，C_B\\C_A 客户只选 B。交叠客户 i 在 A 付 w_i+(R−w_i)/2，在 B 的偏离成本为 w_i+b，因 (R−w_i)/2≤R/2<b 而保持最优。A 专属客户对两个 A 标签无差异，B 专属客户只有 B 可达，未覆盖者无动作。因此在轨精确、负载为 (R/2,R/2,b)。任何站点、任何客户均衡中每家负载至多该站覆盖权重≤R，且三个在轨负载的两倍都≥R，每次离轨可取任一精确纯 NE。对同一带标签在轨布局，对不同设施 f≠g，f 的偏离把第 f 坐标改成 r≠s_f，g 的偏离把该坐标保为 s_f。同一设施的不同目标也产生不同布局，且均不同于在轨。用 MF-CONT-COMPLETE 合并各见证与其余布局的纯 NE。锐例三个站各仅覆盖一个不同的单位客户。任一重复布局有一共址组和一个空站，共址组负载之和为 1，至少一家负载≤1/2。该家改到空站后独占其单位客户，任意离轨精确客户 NE 都给负载 1，排除每个 α<2。若同一输入允许三家全异址，每站一家即可精确稳定。",
+  "scope": "任意有限非空共同目录和任意有限正实权原子，含零覆盖及一般覆盖交叠。二倍锐性只针对必须重复的在轨布局。有限纯改善给存在与有限构造。",
+  "whole_result": "MF-PACK-2、MF-PURE-CAP、MF-CONT-COMPLETE 和不交覆盖锐定理共同推出：每个恰三家的共同目录输入均有可经一致标签重排写成 (s,s,t) 的在轨布局（允许 s=t），其在轨精确独立混合 NE 可取站点纯、站内均匀，非在轨可全取精确纯 NE。同一份 S³ 续局使每个实际单设施偏离的收益至多其在轨收益两倍。对重复在轨布局约束，统一因子 2 可由三个等权独占站取到。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/三设施重复占位的完整二倍续局与锐性--定理.md",
+      "sha256": "3710d85a16c6f76c7aefb45ae3a0a883bc8aab11cf5597889f4f7af4d929ab15"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md",
+      "sha256": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+      "section": "原子装箱引理"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md",
+      "sha256": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+      "section": "受帽纯均衡修复引理"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+      "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+      "section": "六、把全部局部选择拼成一个完整函数"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/三设施两两不交覆盖的重复占位锐二界--定理.md",
+      "sha256": "617ded89400e9b49f0a1c14f8a8213561f01ad9b567036263c3e0ea4a74e7c57"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项独立核对双分支、零覆盖、原菜单条件成本、重原子孤立、标签拼接及对任意续局的独占站下界。大新增构造在 b≥R/2 已成立，与小新增分支有重叠。复跑登记补核的三站 2187 个整数实例仅作有限复验，解析证明覆盖任意有限目录和正实权。",
+  "endpoint_pins": {
+    "MF-CONT-COMPLETE": "749dad55c2ae74db4f443c5adb20553c8aced4cf785ecf7f1a75fe28613b24d6",
+    "MF-PACK-2": "886033f8e4edd344e6b9a859f840ac742a27cdd67ab0bb4875ebc0137ee223cb",
+    "MF-PURE-CAP": "0a5cd5c8a91a1eb2f9d3ac2f3d643d914957d408a42eab86168205f2e1203cda",
+    "facility-games/common-many/three-facility-disjoint-repeated-sharp-two": "981b2f786be3ac9a24164b5760dbb488ee14f342a037942d0b85f0afca58e6db",
+    "facility-games/common-many/three-facility-repeated-site-factor-two-question": "7681f4c742ff98f1dd65fcfd05def6484b1ea173a8cbc67d5ffb6d4cd2176b82"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/定理/三设施重复占位的完整二倍续局与锐性--定理.md": "3710d85a16c6f76c7aefb45ae3a0a883bc8aab11cf5597889f4f7af4d929ab15",
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+    "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+    "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+    "archives/facility-games/subarchives/common-many/state/定理/三设施两两不交覆盖的重复占位锐二界--定理.md": "617ded89400e9b49f0a1c14f8a8213561f01ad9b567036263c3e0ea4a74e7c57"
+  },
+  "review_digest": "e64d2ae1d2f6fe1f8a331a5a00a551671262ba32bddf352db694f32db71f7da2"
+}

@@ -1,0 +1,66 @@
+{
+  "task_id": "three-repeat-disjoint-round23-repair-b7a29ba9131c629e",
+  "stage": "3A",
+  "object_ids": [
+    "facility-games/common-many/three-facility-disjoint-repeated-sharp-two"
+  ],
+  "read_object_ids": [
+    "M-b6645751e3fb47d1a3038d76b0796633",
+    "facility-games/common-many/three-facility-repeated-site-factor-two-question",
+    "MF-MODEL"
+  ],
+  "input_pins": {
+    "facility-games/common-many/three-facility-disjoint-repeated-sharp-two": "981b2f786be3ac9a24164b5760dbb488ee14f342a037942d0b85f0afca58e6db",
+    "M-b6645751e3fb47d1a3038d76b0796633": "d763320c24a1a28379d6cbf088799bec9d81313797473baaa7292ac1cca10d41",
+    "facility-games/common-many/three-facility-repeated-site-factor-two-question": "7681f4c742ff98f1dd65fcfd05def6484b1ea173a8cbc67d5ffb6d4cd2176b82",
+    "MF-MODEL": "1ca8c08397c3ec2c0a05b8eecb18e5e1de2b3e863c5f73f8c6eaf6b6fdf05bec"
+  },
+  "status": "complete",
+  "coverage": {
+    "facility-games/common-many/three-facility-disjoint-repeated-sharp-two": {
+      "state": "linked",
+      "object_pin": "981b2f786be3ac9a24164b5760dbb488ee14f342a037942d0b85f0afca58e6db",
+      "comparison_scope": "定向复读旧边、旧收据、不交定理 v1、共同模型 v2、全共址基线 v1 及旧问题原页，与同 ID 已证目标 v2 的两个覆盖分支和完整规则、锐性对照。核对全 k 存在定理及规范贪心的选址范围，查看两箱与受帽纯修复引理及有限核算合同。两站单位证据复算，另用精确分数枚举不交站重作交叉检查。",
+      "reason": "唯一可达的是物理站，站内独立均匀是一份逐布局精确 NE 选择。两单位客户在同站两标签分别纯选一家，原成本 1，移向另一标签成本 2，也构成精确 NE。统一规则给不交覆盖的所有真实偏离收益。正覆盖时，缺失的 M₂、M₃ 记零，最佳重复倍率恰为 max{1,2M₃/M₁}，最佳全共址倍率恰为 max{1,3M₂/M₁}。零覆盖时二者都为 1。三个单位独占站依组总收益和移至空站的强制服务，对所有重复布局和所有可选完整续局强制 α≥2。这一合法实例将下界传给一般覆盖域。一般覆盖上界已由 v2 的最大新增覆盖双分支证明。",
+      "edge_ids": [
+        "three-facility-disjoint-coverage-solves-repeated-site-subdomain"
+      ]
+    }
+  },
+  "in_packet_comparisons": [
+    {
+      "core_id": "facility-games/common-many/three-facility-disjoint-repeated-sharp-two",
+      "peer_id": "M-b6645751e3fb47d1a3038d76b0796633",
+      "reason": "固定正重共址站 t，若 H_t=max_{r≠t}M_r（无实际目标时取零），则任意在轨 NE 有弱标签收益≤M_t/3，移到另一站即独得该站重。同一站内均匀规则达到 max{1,3H_t/M_t}。选择最大站达到全共址最优 max{1,3M₂/M₁}。正覆盖时在空站共址无法以有限倍率支撑，零覆盖倍率为 1。两站各一独占单位客户给全共址锐 3，而 (A,A,B) 的全部实际偏离均不改善。该基线保留为对不同选址类的精确比较。"
+    },
+    {
+      "core_id": "facility-games/common-many/three-facility-disjoint-repeated-sharp-two",
+      "peer_id": "facility-games/common-many/three-facility-repeated-site-factor-two-question",
+      "reason": "当前目标同 ID v2 已证明一般覆盖的重复二倍。不交覆盖的逐实例阈值及三独占站的任意续局下界在相同模型和共同目录中有效。相交覆盖可能让共享客户跨站，站内均匀规则和空站整覆盖收益的论证只用于不交范围。全域上界由最大新增覆盖的两个分支给出。同一锐例若允许全异址可精确稳定。全 k 存在及规范贪心保一般选址量词，三等重独占站的规范贪心会选三站。"
+    }
+  ],
+  "closed_overlaps": [],
+  "follow_up_tasks": [],
+  "assets": [
+    {
+      "path": "map/edges/three-repeat-disjoint-round23-repair-b7a29ba9131c629e/disjoint-coverage-repeated-site-factor-two.json",
+      "sha256": "4067176c5f034c94db26945e294971e3ed0b47820a772ef54f53ee19c4875d67"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "旧问题页与不交核心 v1 末段的开放措辞对应 v2 证明以前。本次沿用不交核心的现行绑定，将目标改绑同 ID 已证 v2。独立精确分数核算 780 个不交站重向量、43,580 个标签布局、380,850 次实际换址，并重放既有两站单位证据的 8 布局、24 次实际换址。精确阈值及任意续局的下界依据解析论证。",
+  "supersession": {
+    "three-disjoint-repeat-round19-3a-1a6fe321788c75bd": {
+      "reason": "目标对象同 ID 由旧问题更新到一般覆盖已证定理 v2。继续交付原不交子域的精确阈值和共址比较，更新三独占站对全域重复布局锐性下界的作用。",
+      "assets": {
+        "map/edges/three-disjoint-repeat-round19-3a-1a6fe321788c75bd/disjoint-coverage-repeated-site-factor-two.json": {
+          "disposition": "replaced",
+          "replacement_paths": [
+            "map/edges/three-repeat-disjoint-round23-repair-b7a29ba9131c629e/disjoint-coverage-repeated-site-factor-two.json"
+          ],
+          "reason": "后继保留旧边身份及不交子域构造，重绑已证目标 v2。后继区分不交逐实例精确值、全域重复布局的通用下界及 v2 另证的通用上界。"
+        }
+      }
+    }
+  }
+}

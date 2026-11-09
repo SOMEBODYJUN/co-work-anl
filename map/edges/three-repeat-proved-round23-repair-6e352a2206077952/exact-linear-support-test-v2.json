@@ -1,0 +1,62 @@
+{
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss1",
+  "edge_id": "commonmany-linear-model-to-exact-repeated-site-support-test",
+  "source_ids": [
+    "MF-MODEL"
+  ],
+  "target_ids": [
+    "facility-games/common-many/three-facility-repeated-site-factor-two-question"
+  ],
+  "conditions": "恰三家、共同有限非空S、有限逐名正原子客户，客户独立混合、强制服务、实际线性条件成本 c_if=w_i+Σ_{j≠i}w_j p_jf，完整规则在带标签S³逐点选精确NE。坐标极小接口允许正实权；有限有理LP判定的编码要求显式覆盖和正二进制有理权。倍率α≥1，目标测试取α=2。",
+  "roles": {
+    "MF-MODEL": "提供含自身重量的真实线性条件成本、合法概率域、每布局精确NE条件，以及平方势保证的非空纯NE/default。",
+    "facility-games/common-many/three-facility-repeated-site-factor-two-question": "收到固定同一在轨 NE 的续局可延伸充要判据和覆盖全部独立混合 NE 的闭支持 LP。可用来检验具体布局、指定在轨 NE 或给定倍率。"
+  },
+  "explanation": "固定布局s，概率单纯形积紧。NE可用有限条件 p_if(c_if−c_ig)≤0（各可达f,g）刻画为闭集，故N(s)紧；源模型的纯改善半平方势变化 w_i(L_g+w_i−L_f)<0、有限纯赋值保证N(s)非空。于是 m_f(t)=min_{e∈N(t)}L_f(e) 对每标签布局t达到，定义 D_f(s_{−f})=max_{r∈S}m_f(s[f←r])。给定同一在轨e∈N(s)，完整α续局存在当且仅当全部 D_f≤αL_f(e)：必要性由任一所选离轨负载≥m_f，原址项由 m_f(s)≤L_f(e)≤αL_f(e)；充分性在每真实(f,r)的布局取实现m_f的NE。若f≠g，第f坐标分别为r≠s_f与s_f，故两实际偏离布局不同；同f不同目标也不同，且均非在轨。因此这些逐点极小选择绝无冲突，剩余布局用确定有限纯改善补全。接着对每个已覆盖i枚举非空B_i⊆A_i(t)，设B_i外p=0、B_i内p≥0、行和1，对每f∈B_i和g∈A_i加Σ_{j≠i}w_jp_jf≤Σ_{j≠i}w_jp_jg。这些闭线性约束保证真实正支持都是最佳反应；反向任意NE取真实正支持便落入一个单元，所以有限并恰N(t)。声明B_i内允许零，保留退化端点，不能加严格p>0。每客户至多7种非空支持，单布局至多7^n有界单元；有理输入时逐单元最小化线性L_f并跨单元取最小，可精确算m_f和有理见证。算全D后，对每个重复布局、每个支持单元加三行L_f≥D_f/2；任一可行点给完整二倍重复见证，全部不可行才排除该输入全部重复布局与全部混合NE。空客户/零覆盖给零行零负载直接处理，空支持单元剔除。",
+  "scope": "具体恰三家输入的精确全混合判定合同。m³ 个标签布局，每布局至多 7^n 个支持单元，重复在轨布局 3m²−2m 个。坐标极小判据适用于正实权。有效精确有理 LP 编码限显式有理输入。",
+  "contribution": {
+    "result": "从真实线性原子模型严格推出一个充要检验：重复布局s可支持二倍完整续局，当且仅当N(s)含e满足L_f(e)≥D_f(s_{−f})/2全部三行；有理输入可用有限闭支持LP族精确求全部威胁及检验所有重复布局。该检验保全部独立混合NE和单一全布局续局量词。",
+    "remaining": "本判别给指定输入及在轨 NE 的充要条件，单独不能由有限可检推出所有输入都存在可行重复布局，也不提供统一锐下界。两项由 v2 的全结果边另付。实际计算须逐布局保全闭支持 LP 单元，非线性 E[L³] 及位多项式求解不在本接口内。"
+  },
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+      "section": "输入、时序与实际成本"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+      "section": "一份完整续局的量词"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+      "section": "每个布局都可明确指定纯客户均衡"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/问题/三设施重复占位的二倍完整续局--问题.md",
+      "sha256": "9d2d304cd595b8f17adfbbae80436f54bf5fb70885681ab184b667668f13980b",
+      "section": "真坐标极小的充分必要接口"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/问题/三设施重复占位的二倍完整续局--问题.md",
+      "sha256": "9d2d304cd595b8f17adfbbae80436f54bf5fb70885681ab184b667668f13980b",
+      "section": "三家线性成本的有限全支持检验合同"
+    }
+  ],
+  "review_note": "逐式复核 NE 非空紧致、α≥1 时含原址项的等价性、不同真实偏离的标签互异、声明支持内允许零及有理极值。尤其固定在轨 e 时选不同离轨 NE 可以改变稳定性，坐标极小回答的是可延伸性。按现行 v2 端点重绑，解析存在证明并不调用 LP。",
+  "endpoint_pins": {
+    "MF-MODEL": "1ca8c08397c3ec2c0a05b8eecb18e5e1de2b3e863c5f73f8c6eaf6b6fdf05bec",
+    "facility-games/common-many/three-facility-repeated-site-factor-two-question": "7681f4c742ff98f1dd65fcfd05def6484b1ea173a8cbc67d5ffb6d4cd2176b82"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+    "archives/facility-games/subarchives/common-many/state/问题/三设施重复占位的二倍完整续局--问题.md": "9d2d304cd595b8f17adfbbae80436f54bf5fb70885681ab184b667668f13980b"
+  },
+  "review_digest": "f701686961071d56091625759a15cf923d8e33e0486b69fe8d19f75597bbddc4"
+}

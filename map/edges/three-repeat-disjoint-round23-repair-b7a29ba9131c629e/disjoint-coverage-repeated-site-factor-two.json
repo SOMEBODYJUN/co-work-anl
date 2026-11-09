@@ -1,0 +1,73 @@
+{
+  "edge_id": "three-facility-disjoint-coverage-solves-repeated-site-subdomain",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "facility-games/common-many/three-facility-disjoint-repeated-sharp-two"
+  ],
+  "target_ids": [
+    "facility-games/common-many/three-facility-repeated-site-factor-two-question"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取恰三家带标签设施、有限非空共同目录 S 和有限个正实权原子客户。设施同时纯选址，允许同址、空覆盖站和无可达站的客户。各物理站覆盖集两两不交，已覆盖客户必须服务并独立随机化，条件成本含自重。倍率 α≥1，比较范围是选定的重复在轨布局及同一份定义于全部 S³ 的精确客户 NE 规则，偏离遍历每个设施的全部实际换址。",
+  "roles": {
+    "facility-games/common-many/three-facility-disjoint-repeated-sharp-two": "给出两两不交覆盖下逐布局可选的站内独立均匀 NE、重复布局的精确逐实例倍率，以及三个单位独占站上对任意完整续局的强制下界。",
+    "facility-games/common-many/three-facility-repeated-site-factor-two-question": "接收不交子域的重复布局构造及逐实例倍率。三个单位独占站作为全域的合法输入，证明一般覆盖重复布局统一倍率的下界 2。"
+  },
+  "explanation": "令 M_t=Σ_{i∈C_t}w_i，q_t 为某给定带标签布局在站 t 的设施数。两两不交保证每个客户至多可达一个物理站。若其站 t 已占，客户 i 在 q_t 个标签间独立均匀选取。任一可达行动的含自重条件成本均为 w_i+(M_t−w_i)/q_t。唯一覆盖站未占或无覆盖站的客户无动作。故该规则为全部 S³ 指定精确客户 NE，每个已占站的各标签收益为 M_t/q_t。按同一规则，真实偏离到 r 的收益为 M_r/(q_r+1)，这里 q_r 是偏离前目标站的重数。\n\n将目录站重降序记为 M₁≥M₂≥M₃≥⋯，对应真实站点为 s₁,s₂,s₃ 等。不足两站或三站时缺失的 M₂ 或 M₃ 记零，缺位不作偏离目标。若 M₁=0，全部布局收益恒零，任取全共址，倍率为 1。若仅一站且 M₁>0，无真实换址，倍率亦为 1。其余输入若 M₂≤M₁/3，三家同在 s₁，各得 M₁/3，任一真实换址收益 M_r≤M₂，故倍率为 1。该条件蕴含 2M₃/M₁≤2/3。\n\n若 M₂>M₁/3，真实站 s₂ 存在，取 (s₁,s₁,s₂)。在轨收益为 (M₁/2,M₁/2,M₂)。成对者到 s₂ 的收益为 M₂/2≤M₁/2，到任一未占站 r 的收益为 M_r≤M₃。单例者到 s₁ 的收益为 M₁/3<M₂，到任一未占站 r 的收益为 M_r≤M₃≤M₂。真实偏离仅这四类。两个选址分支都使用上面同一份全 S³ 规则。M₁>0 时因此达到 max{1,2M₃/M₁}。\n\n对任意完整精确续局和任意重复在轨布局，当 M₃>0，最多两站被占，所以前三站有一未占站 r，M_r≥M₃。选一个至少两家的共址组。强制服务和不交覆盖使组内标签在轨收益之和等于该站重，故组内有 f 的在轨收益 L_f≤M₁/2。f 真实移到 r 后独占该站，所有 C_r 客户仅能选 f，其他客户不可达 f。任意离轨精确续局均给 f 收益 M_r。α 稳定要求 M₃≤M_r≤αL_f≤αM₁/2，连同 α≥1 即为下界。M₃=0 时下界 α≥1 已足。恰三个等重独占站令 M₁=M₃>0，该下界对全域重复布局的统一常数成立。这个实例在全异址时用同一均匀规则可精确稳定，各标签收益等于其独占站重，移到另一站只得其一半。\n\n作为全共址基线的逐实例比较，固定正重站 t，令 H_t=max_{r≠t}M_r，无其他站时取零。全共址在任意在轨 NE 中至少一家收益≤M_t/3，移往另一站后强制取得该站重。均匀规则在轨平分 M_t，故该站的最佳全共址倍率为 max{1,3H_t/M_t}。若正覆盖输入选空站共址，零在轨收益不能支撑移往正重站的实际偏离。选最大站有 H_{s₁}=M₂。若选非最大正重站，则 H_t=M₁ 且 3H_t/M_t≥3≥3M₂/M₁。故全共址形式的最优值为 max{1,3M₂/M₁}，全零时为 1。两单位独占站使其锐常数为 3，同例的最佳重复倍率为 1。\n\n一般交叠会使客户可跨已占物理站，开空站也未必强制其全部覆盖客户去偏离者。全域上界由同 ID 的 v2 正文另证。它以最大覆盖重 R 及最大新增覆盖 b=max_r w(C_r∖C_A) 分支，小新增 b≤2R/3 使用共址及受帽离轨修复，大新增使用 (A,A,B) 及全目录的收益上界。此处的三独占站下界保留原共同目录及任意完整续局量词。",
+  "scope": "上界和逐实例精确阈值限于两两不交覆盖。三个独占站见证适用于含该子域的全域重复布局统一下界。最优倍率在允许的在轨布局和完整精确客户续局上共同取最优，允许任意正实原子权。",
+  "contribution": {
+    "result": "两两不交覆盖时，M₁>0 的最优重复倍率恰为 max{1,2M₃/M₁}，最优全共址倍率恰为 max{1,3M₂/M₁}，缺失的 M₂、M₃ 记零，M₁=0 时二者均为 1。三个单位独占站对任意完整精确续局和任意重复布局强制 α≥2，因此全域重复布局统一常数至少 2。",
+    "remaining": "目标 v2 的全域上界由其另立的最大新增覆盖双分支支付。该证明需在小新增分支选受帽精确离轨续局，在大新增分支核共享客户的在轨条件成本与全目录偏离收益上界，并拼成全 S³ 的一份规则。"
+  },
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/三设施两两不交覆盖的重复占位锐二界--定理.md",
+      "sha256": "617ded89400e9b49f0a1c14f8a8213561f01ad9b567036263c3e0ea4a74e7c57"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+      "section": "输入、时序与实际成本"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+      "section": "一份完整续局的量词"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/问题/三设施重复占位的二倍完整续局--问题.md",
+      "sha256": "9d2d304cd595b8f17adfbbae80436f54bf5fb70885681ab184b667668f13980b",
+      "section": "仍有独立用途的共址三倍基线"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/三设施重复占位的完整二倍续局与锐性--定理.md",
+      "sha256": "3710d85a16c6f76c7aefb45ae3a0a883bc8aab11cf5597889f4f7af4d929ab15",
+      "section": "小新增覆盖"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/三设施重复占位的完整二倍续局与锐性--定理.md",
+      "sha256": "3710d85a16c6f76c7aefb45ae3a0a883bc8aab11cf5597889f4f7af4d929ab15",
+      "section": "大新增覆盖"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/三设施重复占位的完整二倍续局与锐性--定理.md",
+      "sha256": "3710d85a16c6f76c7aefb45ae3a0a883bc8aab11cf5597889f4f7af4d929ab15",
+      "section": "完整规则和锐性"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复读不交核心 v1、共同模型 v2、共址基线 v1、旧问题页及同 ID 已证目标 v2。逐项核独立均匀规则的条件成本、全目录真实偏离、全零和缺站，并用组总收益及空站唯一标签核任意续局下界。核心 v1 末段沿用旧问题页当时的开放判断，现行一般覆盖结论依目标 v2。",
+  "endpoint_pins": {
+    "facility-games/common-many/three-facility-disjoint-repeated-sharp-two": "981b2f786be3ac9a24164b5760dbb488ee14f342a037942d0b85f0afca58e6db",
+    "facility-games/common-many/three-facility-repeated-site-factor-two-question": "7681f4c742ff98f1dd65fcfd05def6484b1ea173a8cbc67d5ffb6d4cd2176b82"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/定理/三设施两两不交覆盖的重复占位锐二界--定理.md": "617ded89400e9b49f0a1c14f8a8213561f01ad9b567036263c3e0ea4a74e7c57",
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+    "archives/facility-games/subarchives/common-many/state/问题/三设施重复占位的二倍完整续局--问题.md": "9d2d304cd595b8f17adfbbae80436f54bf5fb70885681ab184b667668f13980b",
+    "archives/facility-games/subarchives/common-many/state/定理/三设施重复占位的完整二倍续局与锐性--定理.md": "3710d85a16c6f76c7aefb45ae3a0a883bc8aab11cf5597889f4f7af4d929ab15"
+  },
+  "review_digest": "a45505bf7993b30b78f18f87478741debd5f88c8ddaf07f2871f2b905e3f2969"
+}

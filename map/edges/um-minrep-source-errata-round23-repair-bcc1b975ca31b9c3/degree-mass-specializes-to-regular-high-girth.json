@@ -1,0 +1,72 @@
+{
+  "edge_id": "um-6f774a03-degree-mass-specializes-to-regular-high-girth",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-PARTIAL-MINREP-DEGREE-MASS-REGULARIZATION-v5"
+  ],
+  "target_ids": [
+    "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取显式无权、两侧各 n≥1 点且同为 D-regular 的二部全投影多重图，D≥1，共同非空字母表大小 Q≥2，保留平行原边的不同 type。固定整数 G≥2，二进制整数 g≥2，有理 0<ρ≤1，γ=ρ³/(10⁹g⁸)，Qγ≥1。",
+  "roles": {
+    "UM-PARTIAL-MINREP-DEGREE-MASS-REGULARIZATION-v5": "给出按原度复制的 typed 源构造、度数质量归一、同 type/layer 修复和有界随机位证明。",
+    "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3": "取平衡 D-正规和共同字母子域，得到现行登记版本 2 的精确随机高围长源合同。"
+  },
+  "explanation": "在 v3 的输入子域令 N=N₀=2n、M₀=DN/2，所有 t_v=deg(v)z=t=Dz。共同 ℓ=⌊log₂g⌋、λ=1+⌈log₂Q⌉、τ=ρ/(100g²)、γ 和 d=⌈1000gλ/(ρℓ)⌉。每层每个原点的一份 length-t 置换给其所有 copies 一个匹配端点，每个原 type 在每层恰有 z 条 matching 边。均匀原边的一侧端点 copy 质量是 D/(M₀t)=1/(M₀z)=2/N′，故 v5 的度数质量与 v3 的同长 fiber 一致。N′=2M₀z=Nt，M′=dM₀z=(dN/2)t=dN′/2。\n\n令 B=B₀=40NΣ_(j=2)^G d^j，U=Σ_(j=0)^(G+1)d^j。v3 用 m*₃=dN/2 及 z=⌈max{2G+1, GB+4U+1, 8B/(ρm*₃)}⌉，v5 的同项分母用 m*₅=dM₀=Dm*₃。由 2^ℓ≥2ℓ（整数 ℓ≥1）、g≥2^ℓ、λ≥2、N≥2 得 ρm*₃≥4000，所以两版的第三项均小于 B。由 d≥1 得 U≥G+2，故两版实际取同一个整数 z=GB+4U+1。当前图至多 B 个短环，每个 bucket 至多有 GB 条边位于短环上。待换边两端的 G-ball 合计至多 2Σ_(j=0)^G d^j 个顶点，每个顶点至多排除一条 bucket 边，故总计至多 GB+4U 条。冻结后缀 §5 给出正确的不等式 z≥GB+4U+1>GB+4U，足以选取干净边。同 type/layer 交换保持匹配与投影，远距和干净条件排除新短环。至多 B 次交换，每次对任意固定列表最多增加 2 条覆盖，且 M′=zm*₅=tm*₃ 使 2B/M′≤ρ/4。\n\n有界拒绝采样的实际 dN 份置换共 K₀=dN(t−1) 个 Fisher–Yates draws，每个最多 R=⌈log₂(2000K₀)⌉ 次，耗尽返回 FAIL，全部采样成功时仍是独立均匀置换。短环上限的 Markov 估计及复制质量给出的全列表 factorial-moment 并界照用。每个非 FAIL 输出简单、平衡、exact d-regular、girth>G，继承原投影和共同字母表，复制原完美赋值逐种子保 YES。所有合法输入 Pr[FAIL]<.1。若原 val≤γ，至少 .8 概率同时得到非 FAIL 输出且全部总成本≤gN′ 的列表均覆盖严格少于 ρM′ 条边。固定 G 时，Qγ≥1 和显式投影表使输出规模、最坏时间及随机位数均关于总输入位长多项式。",
+  "scope": "v5 限于 v3 的平衡 D-正规共同字母子域，得到 v3 的完整随机 source 合同。关系在同一参数和数学采样合同下成立，历史随机种子、原实现字节及同类型交换的具体选择可独立。FAIL 和非 FAIL 的不良 NO 输出都计入 NO 的失败事件。普通 UM compiler、费用、低负载 decoder 和外部 PCP 均为独立义务。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/部分MinRep度数质量v4-v5陈述与域修复补充--审查.md",
+      "sha256": "24b15cd40d02332551b759068fa839c5f7f250ad683ebdaa2e53eacb60eb79bc",
+      "section": "v4/v5 的共同数学合同（v5 为字面接受版本）"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/部分MinRep高围长v3三源精读与随机repair边界--审查.md",
+      "sha256": "7f7940ad9bafacd5d6e3f2493a06711f526753543e915642937d4c2cac9c1902",
+      "section": "2. v3 Exact 的对象、参数和随机算法"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/部分MinRep高围长v3三源精读与随机repair边界--审查.md",
+      "sha256": "7f7940ad9bafacd5d6e3f2493a06711f526753543e915642937d4c2cac9c1902",
+      "section": "3. Proof/独立重构的承重步骤"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/partial-minrep-high-girth-v3-sources-20261031/exact_v3.md",
+      "sha256": "0e2b614ae0a0af12c592d3b57558e2c3baf13cf4377b90b26769fc6e5d24cc61"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/partial-minrep-high-girth-v3-sources-20261031/proof_v3.md",
+      "sha256": "f43e32fa61899de87121c161e3ca51ac76dbaa47daccef5fce7a02ba8609e646",
+      "section": "5. 同type、同layer交换总可选且不生短cycle"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/partial-minrep-high-girth-v3-suffix-20261031/read_after_pcsp_v3.md",
+      "sha256": "8db3a1405825c243a21c57b7e603b72bcbcba43c48c78732cda8424366474fc0",
+      "section": "5. 对本人旧 Exact-first 稿的非致命勘误"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/部分MinRep线性degree综合审查源7e补录--审查.md",
+      "sha256": "f713a3ecb1abdb6e2296ad11ea8ffec1d2721b63177779a02347f2686c0ed4cc",
+      "section": "2. v3 高围长与 v5 度数质量的分离"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读 v5 度数质量现行正文、v3 Exact、冻结 Proof、当前三源正文和冻结后缀 §5。复核 N、M₀、t、两版 m*、实际相同 z、干净边整数余量、同型交换、随机抽样与 YES/NO 量词。当前正文唯一字节变更是修正阈值不等式，冻结原字节及原随机合同保留。",
+  "whole_result": "在 v3 的显式平衡 D-正规共同字母子域，v5 以同一 d 和 z 实现现行 v3 的完整随机高围长 source 合同。每个非 FAIL 输出简单、平衡、exact d-regular 且 girth>G，原完美赋值逐种子复制保持。所有合法输入 FAIL 概率小于 .1，NO 时至少 .8 概率返回使所有成本≤gN′ 的列表同时严格覆盖少于 ρM′ 条边的非 FAIL 输出。固定 G 时总位复杂度、输出和随机位多项式。",
+  "endpoint_pins": {
+    "UM-PARTIAL-MINREP-DEGREE-MASS-REGULARIZATION-v5": "484b9038fac0574cc01bb1f9b7a25042c9df466ca7fb23d7e70b06362bc544d6",
+    "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3": "49526ecced6cea0e70b066af67a5f49a07cb454ce91cc373658f2f73578015c6"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/部分MinRep度数质量v4-v5陈述与域修复补充--审查.md": "24b15cd40d02332551b759068fa839c5f7f250ad683ebdaa2e53eacb60eb79bc",
+    "archives/unrelated-machines/state/审查/部分MinRep高围长v3三源精读与随机repair边界--审查.md": "7f7940ad9bafacd5d6e3f2493a06711f526753543e915642937d4c2cac9c1902",
+    "archives/unrelated-machines/tools/evidence/partial-minrep-high-girth-v3-sources-20261031/exact_v3.md": "0e2b614ae0a0af12c592d3b57558e2c3baf13cf4377b90b26769fc6e5d24cc61",
+    "archives/unrelated-machines/tools/evidence/partial-minrep-high-girth-v3-sources-20261031/proof_v3.md": "f43e32fa61899de87121c161e3ca51ac76dbaa47daccef5fce7a02ba8609e646",
+    "archives/unrelated-machines/tools/evidence/partial-minrep-high-girth-v3-suffix-20261031/read_after_pcsp_v3.md": "8db3a1405825c243a21c57b7e603b72bcbcba43c48c78732cda8424366474fc0",
+    "archives/unrelated-machines/state/审查/部分MinRep线性degree综合审查源7e补录--审查.md": "f713a3ecb1abdb6e2296ad11ea8ffec1d2721b63177779a02347f2686c0ed4cc"
+  },
+  "review_digest": "c393687f0e6e846c47321bebf37d3cc338455af631ed4d3c61ca7a97f78505f5"
+}
