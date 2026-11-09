@@ -1,0 +1,58 @@
+{
+  "edge_id": "cag-product-projection-and-disjoint-six-prove-complete-retained-credit-result",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-22df1141090140a88fd6a1d5a7f41040",
+    "customer-attraction/customer-projection-all-history-regret-and-shared-external-credit",
+    "M-bff12d3602f84eeabb2049029c30a6dc"
+  ],
+  "target_ids": [
+    "customer-attraction/closeout-6fbd2261f5604c3196038854"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同有限非空标签目录、有限单位客户、单位提供者、无外部旧玩家的原根。正面条款：任意m≥1、任意定义于全部合法有序历史的原纯SPE σ、任意O⊆N及给定可行非负分数主题覆盖z，总质量κ=Σz≥1；只将客户价值投影至O，保全部原标签和同一σ整棵真实后继树。负面条款：在低背景不交族取k=6、q=1、合法旧前缀为空，六主题恰为六个不同单例；另构造该实例的一份完整纯SPE，O为其唯一最优客户并集N，量化全部可行分数覆盖κ。空覆盖、同覆盖异标签、重复、零客户与任意历史依赖弱平局均在正面域中保留。",
+  "roles": {
+    "M-22df1141090140a88fd6a1d5a7f41040": "任意完整计划而非仅SPE的鲁棒分数覆盖乘积界，可作用于一般不再为SPE的原策略客户投影。",
+    "customer-attraction/customer-projection-all-history-regret-and-shared-external-credit": "同一原完整SPE的全历史真实偏离恒等式；在同一actual路径给δ_i+c_i=e_i及Σe_i=E。",
+    "M-bff12d3602f84eeabb2049029c30a6dc": "其k=6、q=1特化给合法空根六单例实例；下面直接补全全部有序历史策略与所有分数覆盖的填差否定，不把两保底桥失效当half反例。",
+    "customer-attraction/closeout-6fbd2261f5604c3196038854": "目标是加强乘积通式与纯外部填差普遍要求失败的合取；三前提分别支付两互补条款，合起来支持整条目标。"
+  },
+  "explanation": "第一条款：令原actual叶B覆盖C，I=|C∩O|、E=|C∖O|，W=I+E。actual位置i记r_i=m−i+1，原收益u_i=v_i+e_i；在该实际有序前缀强制任意合法A后沿原σ真实续行，记v_i(A)、e_i(A)、Γ_i(A)=u_i−u_i(A)≥0。定义δ_i=max_A(v_i(A)−v_i)≥0、c_i=min_A(e_i(A)+Γ_i(A))≥0。规定动作在查询集合内，故投影精确账逐位给δ_i+c_i=e_i，并且只沿同一actual路径有Σδ_i+Σc_i=E。设F_m(κ)=1−Π_{r=1}^m(1−1/(rκ))，w_r(κ)=Π_{s=1}^{r−1}(1−1/(sκ))。将任意完整计划的乘积界用于保留原label与原σ全部后继的投影计划，合法得到I≥|O|F_m(κ)−Σ_i w_{r_i}(κ)δ_i；此处不要求投影后仍为SPE。加E并用精确账，得W≥|O|F_m(κ)+Σc_i+Σ(1−w_{r_i}(κ))δ_i。额外信用Cκ=E−Σwδ=Σc+Σ(1−w)δ，因κ≥1使0≤w≤1，故0≤Cκ≤E。若O为空，则v=δ=0而Σc=E=W，式子直接成立；若O=N，则E=c=δ=0。第二条款：由第三源取k=6,q=1，背景为空且目录为六个互不交单例。定义每个合法长度t<6的历史上都选此前未出现的最小标签；至少6−t个标签尚未使用。当前选任一新标签后，后继仍选各自历史未用标签而不分食当前客户，当前得1。改为已用标签后，后继仍有足够新标签可选，当前得至多1/2；改另一未用标签也得1。于是每个有序离轨节点、重复历史和所有合法当前偏离均满足弱最优性，给一份完整纯SPE，无需固定统一平局来代表全部SPE。该策略根覆盖六客户，W=OPT6=6，O=N唯一，E=δ_i=c_i=Cκ=0。每个客户只在自己的单例标签中，所以任一可行非负分数覆盖都有每个z_j≥1及κ≥6。所有乘积因子非负，F_6(κ)≤Σ_{r=1}^6 1/(rκ)≤H_6/6=49/120<1/2。因此在此完整SPE上，全部允许最优O和全部可行分数覆盖均有Cκ=0<(1/2−F_6(κ))OPT6，否定只靠同一笔外部信用总能补足乘积界至half的普遍数值要求。该实例自身满足half。正、负两个条款已共同推出目标原句的完整合取；它们不是两个替代证明。",
+  "whole_result": "完整推出目标的两条合取结论：(i) 对每个m≥1原根完整纯SPE、每个O⊆N及每个给定可行κ≥1的非负分数主题覆盖，保原标签/同一真实后继的投影满足W≥|O|F_m(κ)+Σ_i c_i+Σ_i(1−w_{m−i+1}(κ))δ_i，且额外总信用Cκ∈[0,E]；(ii) 存在合法六单例空根实例及一份全部有序历史纯SPE，W=OPT6=6、唯一最优O=N、E=δ=c=Cκ=0，而全部可行κ≥6满足F6(κ)≤49/120<1/2，故纯外部信用普遍填差要求为假。目标原句没有未付条款。",
+  "scope": "整条目标：任意计划乘积定理与同一完整SPE投影账支付一般正面通式；六单例存在性构造支付方法边界。一般六人half、SHARED、把所有离轨层最大regret塞入同一E或跨前缀付款均在目标之外，不能把这些另题写为本目标仍欠证明，也不能由此边宣称它们成立。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/审查/全历史后悔稳定界与真实后缀退出的解析复核--审查.md",
+      "sha256": "2de2dcd4f7418455fd740170bcf74d9a2c24388df19fd93d30b22db2ce9814ac",
+      "section": "保留误差的有效乘积界"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/客户投影的全历史后悔与共同外部信用--引理.md",
+      "sha256": "125be2f9201e3c84148ed41d42f78293c67be6041142d3d91a67defdfd0d4793",
+      "section": "全历史精确后悔及保留信用"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/联合背景利润的有符号端点缺口--引理.md",
+      "sha256": "5fced08686fa22819628eeaded4e6deedf9eee897a407b86e02a3a8b6207af30",
+      "section": "更低一单位的联合两保底桥确实失败"
+    },
+    {
+      "path": "archives/customer-attraction/state/推论/投影后悔乘积界的外部保留信用与填差边界--推论.md",
+      "sha256": "99e36227c4ad33e598f7274fa38c2c6081d282a39f2e6a91dff637f9744e904f",
+      "section": "加强的乘积下界"
+    },
+    {
+      "path": "archives/customer-attraction/state/推论/投影后悔乘积界的外部保留信用与填差边界--推论.md",
+      "sha256": "99e36227c4ad33e598f7274fa38c2c6081d282a39f2e6a91dff637f9744e904f",
+      "section": "不能把纯外部填差继续列作普遍待证条件"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "fresh 3D实读当前三源完整登记陈述、全部目标正文及承重证明，逐式核任意计划乘积输入、保原标签/同一完整策略的投影账、同一actual E及κ≥1非负传播；六单例逐所有有序历史直接检当前偏离，任意可行分数覆盖κ≥6的否定也已解析付清。原两条partial是目标两互补条款，不是替代支持；合在ALL三源下整个目标已无欠条款，故本草稿用whole_result。建议正式定向替代182中两项projection资产，保其余三资产原SHA。本文件仅为获准工作区草稿，尚未映入正式新任务write_paths、未edge-bind/edge-check、未发布或canonical；0原审计/LP/SPE枚举/有限扫描运行。"
+}
