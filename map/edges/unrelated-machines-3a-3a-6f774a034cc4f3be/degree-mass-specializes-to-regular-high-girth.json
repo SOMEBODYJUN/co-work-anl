@@ -1,0 +1,60 @@
+{
+  "edge_id": "um-6f774a03-degree-mass-specializes-to-regular-high-girth",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-PARTIAL-MINREP-DEGREE-MASS-REGULARIZATION-v5"
+  ],
+  "target_ids": [
+    "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取非空显式、两侧平衡且同为 D-regular 的二部全投影多重图，D≥1、共同非空字母表 Q≥2，保原边 type。G≥2 固定，binary g≥2、0<ρ≤1 有理，γ=ρ³/(10⁹g⁸)，Qγ≥1。",
+  "roles": {
+    "UM-PARTIAL-MINREP-DEGREE-MASS-REGULARIZATION-v5": "给出每原点按度复制、各层独立置换、同 type/layer 修复及有界随机位的一般 typed 源保证。",
+    "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3": "取平衡 D-正规与共同字母子域，得到其精确的高围长随机输出数学合同。"
+  },
+  "explanation": "原点数 N=N₀、M₀=DN/2，因此 v5 的 t_v=deg(v)z 在所有点统一为 t=Dz，N′=2M₀z=Nt，M′=dM₀z=dNt/2。两版 ℓ、λ、γ、d=ceil(1000gλ/(ρℓ)) 相同。每个原 type 在每层仍恰有 z 条 matching 边。写 B₀=40NΣ_(j=2)^G d^j，m*_3=dN/2。v3 Exact 取 z=ceil max{2G+1,GB₀+4U+1,8B₀/(ρm*_3)}。由于 dM₀=Dm*_3≥m*_3，它不小于 v5 的 z 下界，故 v5 同一证明在该明确 z 上成立。每 bucket 排除至多 GB₀+4U 条边，非严格的 z≥GB₀+4U+1 已给干净边。短环估计、repair 误差和全列表概率均保，且 v5 的拒绝采样 K₀=dΣ_v(t_v−1) 在此正好是 dN(t−1)。v5 非 FAIL 输出保原投影、两侧平衡、简单、exact d-regular 及 girth>G。复制完美原赋值逐个 nonFAIL seed 保完美，所有合法输入 FAIL 概率<.1。在 val≤γ 的 NO 输入上，至少 .8 概率同时非FAIL且全部成本≤gN′的 lists 覆盖数严格<ρM′。输入显式且 Qγ≥1 约束 g 和 1/ρ 的数值规模，固定G时输出、运行与随机位均在总位长上多项式。",
+  "scope": "特化到 v3 的数学输出保证，保同一 d、真实概率和严格覆盖阈值。可用 v3 Exact 的 z 选择及有界抽样合同，不要求历史置换实现字节或原随机种子逐一相同。FAIL 与某些非FAIL坏 NO seed 仍有区分。外部 PCP 接口和实际 UM compiler/decoder 各有另外的合同。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/部分MinRep度数质量v4-v5陈述与域修复补充--审查.md",
+      "sha256": "24b15cd40d02332551b759068fa839c5f7f250ad683ebdaa2e53eacb60eb79bc",
+      "section": "v4/v5 的共同数学合同（v5 为字面接受版本）"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/部分MinRep高围长v3三源精读与随机repair边界--审查.md",
+      "sha256": "3e2a28467b8719945222816b364c1e7dd3440cb5fd4b7397e0bd444b9a3b905e",
+      "section": "2. v3 Exact 的对象、参数和随机算法"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/部分MinRep高围长v3三源精读与随机repair边界--审查.md",
+      "sha256": "3e2a28467b8719945222816b364c1e7dd3440cb5fd4b7397e0bd444b9a3b905e",
+      "section": "3. Proof/独立重构的承重步骤"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/partial-minrep-high-girth-v3-sources-20261031/exact_v3.md",
+      "sha256": "0e2b614ae0a0af12c592d3b57558e2c3baf13cf4377b90b26769fc6e5d24cc61"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/部分MinRep线性degree综合审查源7e补录--审查.md",
+      "sha256": "f713a3ecb1abdb6e2296ad11ea8ffec1d2721b63177779a02347f2686c0ed4cc",
+      "section": "2. v3 高围长与 v5 度数质量的分离"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对输入域包含、共同 d、t 与输出尺寸、修复门槛和两个概率事件。保留 typed v5 与共同字母 v3 的实现及版本界线。",
+  "whole_result": "在 v3 的显式平衡 D-regular 共同字母子域，v5 构造以同 d 实现 v3 的完整随机高围长源合同。每个 nonFAIL 输出 simple、balanced、exact d-regular 且 girth>G，并保持完美 YES。FAIL<.1，NO 时至少 .8 概率返回对全部廉价列表同时严格 sound 的 nonFAIL 输出。固定 G 时总位复杂度、输出和随机位多项式。",
+  "endpoint_pins": {
+    "UM-PARTIAL-MINREP-DEGREE-MASS-REGULARIZATION-v5": "484b9038fac0574cc01bb1f9b7a25042c9df466ca7fb23d7e70b06362bc544d6",
+    "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3": "aa0c830fb9e1a2837f12f4fd8f2817ae9405e87d266774fbb2520418ee16e974"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/部分MinRep度数质量v4-v5陈述与域修复补充--审查.md": "24b15cd40d02332551b759068fa839c5f7f250ad683ebdaa2e53eacb60eb79bc",
+    "archives/unrelated-machines/state/审查/部分MinRep高围长v3三源精读与随机repair边界--审查.md": "3e2a28467b8719945222816b364c1e7dd3440cb5fd4b7397e0bd444b9a3b905e",
+    "archives/unrelated-machines/tools/evidence/partial-minrep-high-girth-v3-sources-20261031/exact_v3.md": "0e2b614ae0a0af12c592d3b57558e2c3baf13cf4377b90b26769fc6e5d24cc61",
+    "archives/unrelated-machines/state/审查/部分MinRep线性degree综合审查源7e补录--审查.md": "f713a3ecb1abdb6e2296ad11ea8ffec1d2721b63177779a02347f2686c0ed4cc"
+  },
+  "review_digest": "855812bfa6374305e9221d76de39196a824c8d9fe3119fffdb07e9687137ff3a"
+}

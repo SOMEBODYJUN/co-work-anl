@@ -1,0 +1,58 @@
+{
+  "edge_id": "um-6f774a03-single-config-path-pays-double-endpoints",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-CONFIG-PRESERVING-ACTIVATION-SUPPORT-LOSS-v1"
+  ],
+  "target_ids": [
+    "UM-CONFIG-PRESERVING-TWO-SIGN-SUPPORT-LOSS-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一完整显式 CONFIG(1) 核 y*，m≥2,n≥1,0<ε<1，β=(1−ε)/4，只留原正边 E+ 得 P+。目标额外要求正支撑 core 二分色，每 job 每色至多一正端。取两份任务、机器和单位 anchor 均互不交的单次 lift。",
+  "roles": {
+    "UM-CONFIG-PRESERVING-ACTIVATION-SUPPORT-LOSS-v1": "给出参数化配置路径、保护负载、λ=0 的完整 OPT1 整数分配和 λ=1 的精确支撑补全。",
+    "UM-CONFIG-PRESERVING-TWO-SIGN-SUPPORT-LOSS-v1": "将路径及端点机制作为反向参数直和的两端支撑补全步骤。"
+  },
+  "explanation": "令 λ_A=1/2+θ、λ_B=1/2−θ。每副本 core 配置为 λy_i* 加权 (1−λ) 的 singleton filler，外端按相应 singleton/empty，anchor固定。任务等式与每 core 的 λℓ_i+(1−λ)ℓ_i=ℓ_i 始终成立。0≤λ≤1 给整段，初点非 anchor 活端分数，原任务的私有端与 filler home 在各自 λ=1 处到0，故沿给定方向两个首箱边界都是 |θ|=1/2。正端 A=1、B=0，负端交换。λ=0 副本在原私有端和 filler home 有完整峰1分配。λ=1 副本的原任务仅剩 E+，其它任务去固定独立端，最佳补全为 max(1,OPT(P+))。不交副本可分别最优并合，合并峰为两最优值的最大值。这个方向含两个非零核分量，任一分量本身支撑更小。",
+  "scope": "只复用同一指定方向的两符号路径及端点，不用单次构造的 λ₀=1/m 充当真实半激活初态。不推出每方向、真 circuit、恢复已删端或一般算法的结论。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/完整配置单次激活提升的精确支撑端点与两种初态--审查.md",
+      "sha256": "bf722ac2df040ae83f7ae2b089721813db506a07b72107e21d452dc2a89ecddd",
+      "section": "完整配置路径、合法删行和最大步"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/完整配置双符号直和提升的真实耦合与审查先验--审查.md",
+      "sha256": "bfd688c7bcd456f6d3396beaf65d46914075d47680c7c231fc72f6f3a442b101",
+      "section": "半激活必须由同一份真实分布实现"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/完整配置双符号直和提升的真实耦合与审查先验--审查.md",
+      "sha256": "bfd688c7bcd456f6d3396beaf65d46914075d47680c7c231fc72f6f3a442b101",
+      "section": "同一方向两个最大符号与精确秩"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/配置激活提升的一步与双符号支撑删除复跑--计算.md",
+      "sha256": "5fa8dbfbec65cee62c1b36318b558cb69b2987edd46b7d04ac544a27fa8d8817",
+      "section": "3. 双符号：半激活真原子与精确非circuit秩"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对 canonical 一步反向是 λ=0 的好端，双符号坏性来自不交副本反向参数。公共逆CDF是真实初态的额外构造。",
+  "contribution": {
+    "result": "单次 lift 的完整配置路径和 λ=0/1 端点可在两不交副本直和中复用，给指定 θ=±1/2 两端各自的最佳全任务正支撑补全 max(1,OPT(P+))。",
+    "remaining": "目标的 λ_A=λ_B=1/2 真实共同最优初态须额外用二色正支撑、每色公共逆CDF区间和两副本复用同一原子来证明。单次真实分解只给 λ₀=1/m。有限 4core/7job 的5/4及秩核值依赖其独立种子证据。"
+  },
+  "endpoint_pins": {
+    "UM-CONFIG-PRESERVING-ACTIVATION-SUPPORT-LOSS-v1": "4d8b5059f3fdf444088ed83f9e84293786a83da21ff15b0098a42b2fc3ec3305",
+    "UM-CONFIG-PRESERVING-TWO-SIGN-SUPPORT-LOSS-v1": "a14e52130d1b81966f6fdf8c225f899a88c1751ca29d0944c75091fc75bb12ef"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/完整配置单次激活提升的精确支撑端点与两种初态--审查.md": "bf722ac2df040ae83f7ae2b089721813db506a07b72107e21d452dc2a89ecddd",
+    "archives/unrelated-machines/state/审查/完整配置双符号直和提升的真实耦合与审查先验--审查.md": "bfd688c7bcd456f6d3396beaf65d46914075d47680c7c231fc72f6f3a442b101",
+    "archives/unrelated-machines/state/计算/配置激活提升的一步与双符号支撑删除复跑--计算.md": "5fa8dbfbec65cee62c1b36318b558cb69b2987edd46b7d04ac544a27fa8d8817"
+  },
+  "review_digest": "5282ac624867a110e2a56c7ac289727b6e3462a84430e7d052a4500fa08a6206"
+}

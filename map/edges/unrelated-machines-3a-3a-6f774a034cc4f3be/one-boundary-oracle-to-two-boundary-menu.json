@@ -1,0 +1,70 @@
+{
+  "edge_id": "um-6f774a03-one-boundary-oracle-to-two-boundary-menu",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-FOREST-BOUNDARY-AUGMENT-v1"
+  ],
+  "target_ids": [
+    "UM-FOREST-TWO-BOUNDARY-MENU-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "输入显式非负有理森林，每件一或两有限端、平行任务保身份，a≠b，内部 V 与外部任务隔离。原比较域限制 V 和 b 各自负载≤T，a 无容量限制。0<η≤1、T≥0。使用同一个实际返回分配给两端真实负载。",
+  "roles": {
+    "UM-FOREST-BOUNDARY-AUGMENT-v1": "在适当行缩放或删去零预算机的正时间端后，把 a 当唯一边界，供给真实 a 负载一侧支配的恢复分配。",
+    "UM-FOREST-TWO-BOUNDARY-MENU-v1": "由几何预算把固定预算分配组成同项支配菜单，保持实际任务与两边界真实恢复。"
+  },
+  "explanation": "设 ε=η/3。每次调用仅处理挂件的原任务。外部用 b 的任务留给核心，既不缩放也不进入局部 oracle。T>0 时对每个正预算 C，仅将 b 的有限处理时间乘 T/C，把 b 与 V 一起当内部机并对统一阈值 T 调单边界算法。原 b≤C 的参考恰满足变换后 b≤T。a 端及其它机器时间不变，返回 τ 按原标签恢复且 b 负载乘回 C/T，故 V≤(1+ε)T、b≤(1+ε)C，a 对该预算下每一真实参考一侧精确支配。局部 floor 下 b 的消息、残量和包步长同比缩放，取整比不变。若 b 是父机，父端节省统一乘正常数，最优选择仍可用。全局 ceil 下 b 的权等于 ceil(p/(εC/N))，其它内部权及共同整数容量不变。C=0 时只删除 b 的正时间有限端，保全部零端，仍以 a 为根并保 b 为内部。某任务无剩余端则该预算失败。可行参考不使用任何被删端，恢复时 b 恰零。T=0 时只需预算0，同时删除 V 和 b 的正时间端，逐任务优先选非 a 零端，否则给其原合法 a 端，无剩余端则菜单为空。a 仍可有正负载。空任务给空调度一项。正预算自 b 的最小正有限时间 p_min≤T 起逐次乘1+ε，直至首个 C≥T，另含0。对原参考 x=L_b(ρ)>0，首个 C≥x 满足 C≤(1+ε)x。同一 τ 同时有 a 不增、b≤(1+ε)^2x≤(1+η)x，x=0 用零预算。最大预算也≤(1+ε)T，故每项 b≤(1+η)T，空菜单只证无原参考。预算个数及有理编码长度在输入位长和数值1/η上多项式。选定菜单项后原样展开全部任务，两端负载均与所选项的真实值相同，因此恢复峰≤max(B,(1+η)T)。",
+  "scope": "这给出单边界 oracle 的两种实现都可调用的双边界构造，保同一真实见证及零端。预算变换不要求两个实现有相同输出或逐项复刻历史程序。外部需共同选择相容菜单项，任意串行嵌套和普通任务压缩仍需另外论证。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/单边界森林与极小超载星双源审查--审查.md",
+      "sha256": "8776d3938fd201fbdee497489d521bf52dc11df4cfd16be01ce8e4024f7a9069",
+      "section": "1. 定义域与精确合同"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单边界森林与极小超载星双源审查--审查.md",
+      "sha256": "8776d3938fd201fbdee497489d521bf52dc11df4cfd16be01ce8e4024f7a9069",
+      "section": "2. 森林动态规划与归纳证明"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/单边界森林双向格点程序的真实负载与恢复--计算.md",
+      "sha256": "ead70ce57bdb92a79809da61d463aea02db8dc8cfac108e705c50b901d2fe242",
+      "section": "3. Global ceil：内部整数目标和根Fraction目标分开"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/森林边界审查源e279补录--审查.md",
+      "sha256": "a541011ce4b4f96ed104d399b7906189b2cc15f85169e9d0b4c6855a9ca7a402",
+      "section": "二、两种算法共用的几何预算"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/森林边界审查源e279补录--审查.md",
+      "sha256": "a541011ce4b4f96ed104d399b7906189b2cc15f85169e9d0b4c6855a9ca7a402",
+      "section": "三、局部 floor：真实消息的支配归纳"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/森林边界审查源e279补录--审查.md",
+      "sha256": "a541011ce4b4f96ed104d399b7906189b2cc15f85169e9d0b4c6855a9ca7a402",
+      "section": "四、全局 ceil：先定逐机尺度，再精确优化 \\(a\\)"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/森林边界审查源e279补录--审查.md",
+      "sha256": "a541011ce4b4f96ed104d399b7906189b2cc15f85169e9d0b4c6855a9ca7a402",
+      "section": "七、恢复、共享边界与误差去向"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "独立核对仅 b 缩放、两种格点与零预算、T=0、原任务恢复以及参考域和成功域的方向。",
+  "whole_result": "单边界支配 oracle 分别用局部 floor 或全局 ceil 实现，按给定的行变换与几何预算获得双边界真实菜单。每份原参考由同一项精确支配 a、在 b 上乘性放大至多1+η且保零。每项内部与 b 均≤(1+η)T，逆恢复原峰≤max(B,(1+η)T)。",
+  "endpoint_pins": {
+    "UM-FOREST-BOUNDARY-AUGMENT-v1": "f2adb07c45bd67c5983ed2fe6c06d9a49d3d4de67d178a75618905897e3731de",
+    "UM-FOREST-TWO-BOUNDARY-MENU-v1": "8b22275cf84e94eb38a7ac69d4b13416e97302157c01985bc7892f5fca7bb0ac"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/单边界森林与极小超载星双源审查--审查.md": "8776d3938fd201fbdee497489d521bf52dc11df4cfd16be01ce8e4024f7a9069",
+    "archives/unrelated-machines/state/计算/单边界森林双向格点程序的真实负载与恢复--计算.md": "ead70ce57bdb92a79809da61d463aea02db8dc8cfac108e705c50b901d2fe242",
+    "archives/unrelated-machines/state/审查/森林边界审查源e279补录--审查.md": "a541011ce4b4f96ed104d399b7906189b2cc15f85169e9d0b4c6855a9ca7a402"
+  },
+  "review_digest": "efdfffe2cc1e5ec04633d83d874732e27004cce4155719acf7081e39fa52d3e7"
+}

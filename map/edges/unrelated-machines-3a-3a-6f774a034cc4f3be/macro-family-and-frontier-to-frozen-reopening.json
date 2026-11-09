@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-6f774a03-macro-family-and-frontier-to-frozen-reopening",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SHARED-SINK-MACRO-FAMILY-v1",
+    "UM-MACRO-MIGRATION-FRONTIER-v1"
+  ],
+  "target_ids": [
+    "UM-FROZEN-MACRO-TINY-REOPT-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "每整数 r≥1，k=r(r+1)，2r 台 H/Q/Z 原机器和全部带标签原任务。每宏在全部 H/Q 时间1、不可去Z，每 tiny 在自身H和共享Z均为1/k。固定母族显式给出的最优平均点及指定 ST 输出 σ。冻结指每宏 b_i 的最终原目的地 H_i 保持，tiny 可用全部原有限端。",
+  "roles": {
+    "UM-SHARED-SINK-MACRO-FAMILY-v1": "给出同一原矩阵及可复用的 r² 个实际最优分量、ST 正交槽和真实成本见证。",
+    "UM-MACRO-MIGRATION-FRONTIER-v1": "给出相对同一 σ 的最终宏变更预算前沿，取 d=0 即冻结全部宏。",
+    "UM-FROZEN-MACRO-TINY-REOPT-GAP-v1": "得到原 OPT、实际最优分解、给定坏槽、全开 tiny 的精确冻结最优值及趋二阈值。"
+  },
+  "explanation": "每次选一台 H_h，将全部 r 枚宏轮转地安排到 (H_h,Q_1,…,Q_(r−1))，h 组 tiny 全去 Z，其余回各自 H。每台负载1，r²个分量均真实最优，因为单位宏迫 OPT≥1。均匀平均给每宏每 H 质量1/r²、每 Q 质量1/r，tiny 的 H/Z 质量为 (r−1)/r、1/r。r=1 只在此固定 x 的正支撑中删掉 home-tiny 边，原矩阵仍有该 1/k 端。对处理时间降序、同时间标签顺序的正交槽，宏 b_i 选 H_i 的槽0。用零起点组号 i 和 u=ar+b 标记 tiny，0≤a≤r、0≤b<r。b=0 取 Z 槽 i(r+1)+a，b>0 取 H_i 槽 a(r−1)+b，后者的区间减去槽号端点为 (1−b)/r、(r−b)/r。所有所选槽不同且与相应区间正交，给每组 r+1 枚外送、H 峰 2−1/r。每件任务的所有原有限端处理时间相同，故任意合法完整槽匹配真实成本同为2r。再对同一 σ 在前沿取 d=0、s=r，ceil(2rk/(r+1))=2r² 是整数，故全开 tiny 的最小峰为 2r/(r+1)。逐组外送2r枚 tiny 使每台 H 和 Z 同取此峰。先固定 δ,ε∈(0,1)，再取 r 使 1/k≤δ、2/(r+1)<ε。",
+  "scope": "指定共享汇点母族的一个最小真实成本坏槽及其冻结子问题。原 OPT=1 与冻结值分开。量化存在坏槽，冻结值则量化其全部 tiny 合法重分配。可以换 x、换匹配或共同迁移宏。该边不给任意 UM 实例的算法下界。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/计算/冻结宏后微任务重开与迁移前沿双原程序复跑--计算.md",
+      "sha256": "51402da16fc5ed68b4955d4bc828fbc21d31a7c48c625157c36a68eb1122a284",
+      "section": "1. 实际原矩阵、凸分解和一个真实槽匹配"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/冻结宏小实例重开与迁移前沿冻结审查--审查.md",
+      "sha256": "3b22e61bdd40c8dcfb29ba74c3d6f4abc67cb87c390130f7c947a7e57ba41c6a",
+      "section": "2.1 冻结宏、tiny 全开重优化"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/冻结宏小实例重开与迁移前沿冻结审查--审查.md",
+      "sha256": "3b22e61bdd40c8dcfb29ba74c3d6f4abc67cb87c390130f7c947a7e57ba41c6a",
+      "section": "2.2 宏迁移格点前沿"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核对母族原端、真凸分解、ST 槽注入与真实成本。独立代入整数 d=0，r=1 的原资格和点支撑分开。",
+  "whole_result": "对每个 r≥1，母族原 OPT=1，存在所给均匀真实最优平均 x 的合法最小真实成本 ST 匹配，峰 2−1/r。冻结其中每宏 b_i→H_i 后，tiny 全开最优峰精确为 2r/(r+1)。先给定 δ,ε∈(0,1) 可选 r 令 tiny≤δ 且冻结值>2−ε。",
+  "endpoint_pins": {
+    "UM-FROZEN-MACRO-TINY-REOPT-GAP-v1": "1ed71427dfb23efc304fcc9fd098dd22cd2a73fc6d872207f330037b1d4296de",
+    "UM-MACRO-MIGRATION-FRONTIER-v1": "b99e924cdb478c7261f14c4236d07d9f6ea1665ce45342a715024c5f68d6c01e",
+    "UM-SHARED-SINK-MACRO-FAMILY-v1": "359aecfb836f029cfc2aa2fd63cbef8141ca48fc50d1a5a0bb742bf1f2dbc313"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/计算/冻结宏后微任务重开与迁移前沿双原程序复跑--计算.md": "51402da16fc5ed68b4955d4bc828fbc21d31a7c48c625157c36a68eb1122a284",
+    "archives/unrelated-machines/state/审查/冻结宏小实例重开与迁移前沿冻结审查--审查.md": "3b22e61bdd40c8dcfb29ba74c3d6f4abc67cb87c390130f7c947a7e57ba41c6a"
+  },
+  "review_digest": "78ee9750d7437b20b0309021cd4b1d99fc26548df091314e4d422096ff595454"
+}

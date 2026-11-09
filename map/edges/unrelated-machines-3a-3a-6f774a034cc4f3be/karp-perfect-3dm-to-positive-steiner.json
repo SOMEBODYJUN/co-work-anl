@@ -1,0 +1,53 @@
+{
+  "edge_id": "um-6f774a03-karp-perfect-3dm-to-positive-steiner",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SOURCE-KARP-3DM"
+  ],
+  "target_ids": [
+    "M-fd3326bca40840a99b7ff8c50ce6000c"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "三个等大带位置标签的显式坐标集，各 q 个元素。给显式索引 triples。目标为显式无向图、指定终端、正二进制整数边权、总边权预算，终端允许为内部点。",
+  "roles": {
+    "UM-SOURCE-KARP-3DM": "提供精确 perfect 3DM 的 NP 完全性，包括显式、位置标记三坐标与所有合法输入。",
+    "M-fd3326bca40840a99b7ff8c50ce6000c": "得到正权 Steiner Tree 精确判定语言的 NP 完全性，困难性已在全单位权构造上成立。"
+  },
+  "explanation": "对 q>0，建根 r、3q 个带位置标签的元素点及每条 triple 的单独节点。用全 unit 的根至 triple 边、triple 至三个元素的 incidence 边。终端为根和全部元素，预算4q。含终端的任何树使用 s 个 triple 点，顶点数1+3q+s、边数及成本3q+s。每个元素至少接一个所用 triple，故 s≥q，而预算给 s≤q。此时 q 个 triples 的并恰覆盖3q个不同元素，所以两两不交，按三坐标回读完美匹配。反向选完美匹配的 q 条根边和3q条 incidence 边构成树。空坐标映到固定合法 YES，非法源编码在全串上延拓到固定合法 NO。建图及二进制预算位多项式。任意合法目标的树证书可检查顶点终端、连通无环及精确整数权和。旧直接 Exact Cover 构造在 U={a,b,c}、两集合 {a,b},{b,c} 时可用总权2的树穿过公共终端 b 到第二集合，却无精确覆盖。当前归约允许同样的终端内部语义并使用正权。",
+  "scope": "仅保存源内精确语言与确定性多项式 many-one 归约。外部 Cook 起点沿保存来源，未引入近似、计数、有界度或调度困难性结论。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "1. 先固定语言、量词和编码"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "2. 主定理的21个判定问题及历史术语"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "5.2 原3DM归约的全部坐标与循环一致性"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "5.3 原Steiner直接构造的反例与有效替代"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "只用冻结 Karp 来源及其明确读后修复，核对两方向、全串退化和原零权反例。未把所印直接归约写成已证。",
+  "whole_result": "标准 perfect 3DM 通过全单位权二层无向图与预算4q的确定性位多项式归约保持 YES/NO。目标正权 Steiner Tree 以实际树为 NP 证书，因此该登记语言 NP 完全。",
+  "endpoint_pins": {
+    "M-fd3326bca40840a99b7ff8c50ce6000c": "f3e103d2331eb8b236da233892e5d2abcefe23e6de779aa95c07e6eabaecdd36",
+    "UM-SOURCE-KARP-3DM": "2b455afb721fc3404464bed6944c36df19220c296dae72d7d0e9af032179e171"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d"
+  },
+  "review_digest": "ef0fd4d8eee8d82fcce1a55d85e764edeb72bc119fba948dddcd102da5db15ae"
+}

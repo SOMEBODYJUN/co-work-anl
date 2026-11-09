@@ -1,0 +1,53 @@
+{
+  "edge_id": "um-6f774a03-kronecker-replay-checks-fixed-certificates",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/actual-kronecker-full-matrix-two-certificates-audit"
+  ],
+  "target_ids": [
+    "UM-ACTUAL-KRONECKER-NO-TO-YES-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "固定原 8×10 种子 P。完整坐标乘积保所有机器和任务元组，mixed 任务均执行。算术按原有限处理时间精确重算。",
+  "roles": {
+    "unrelated-machines/actual-kronecker-full-matrix-two-certificates-audit": "保存完整平方输入、两份不同实际分配、结构改派核验及一次冻结重放。",
+    "UM-ACTUAL-KRONECKER-NO-TO-YES-v1": "其固定种子、平方和四次幂的实际调度与数值受到有限核查。"
+  },
+  "explanation": "枚举原种子全部1024个合法分配得 OPT(P)=3/2。从两个坐标的原资格重建平方的64机、100任务、400条有限边。两份保存证书分别逐项检查资格和64个负载1，目的地差29行。结构初态与十五枚同时改派另行通过。四次幂按平方结构调度相乘，只展开10000个实际任务的目的地和4096机负载，不展开全160000条有限边。全 selector 元组的合法时间恒1，给两个已检幂的下界。冻结报告仅回算种子的未剪枝 assignment LP 原初/对偶各1。",
+  "scope": "仅固定 P 和 t=2、4 的有限证书证据。全部偶次幂仍由实际调度乘积分解和单位下界证明。无奇次幂、任意种子、一般 LP 可乘性或剪枝 LST/CONFIG 的核验证据。十五步为同时改派，不认证中间峰。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/计算/完整Kronecker矩阵与双平方证书核验--计算.md",
+      "sha256": "0a330bb8bd172a45de68dae1ce0bafd9da462c58913781ebebcf30bdc67cc258",
+      "section": "规范程序的有限核验链"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/完整Kronecker矩阵与双平方证书核验--计算.md",
+      "sha256": "0a330bb8bd172a45de68dae1ce0bafd9da462c58913781ebebcf30bdc67cc258",
+      "section": "冻结报告逐字段范围与重放"
+    },
+    {
+      "path": "archives/unrelated-machines/state/反例/完整矩阵Kronecker偶次幂坍缩--反例.md",
+      "sha256": "00a109165edfd79f53228093c81558d83f24954323a5a9a3b069b8baf041f538",
+      "section": "7.1 对象与精确身份"
+    },
+    {
+      "path": "archives/unrelated-machines/state/反例/完整矩阵Kronecker偶次幂坍缩--反例.md",
+      "sha256": "00a109165edfd79f53228093c81558d83f24954323a5a9a3b069b8baf041f538",
+      "section": "7.2 平方的全任务公式与有限交换"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "从保存审计正文、重放范围与精确反例正文核对。本批未重跑原优化器或旧程序。",
+  "endpoint_pins": {
+    "UM-ACTUAL-KRONECKER-NO-TO-YES-v1": "96493046f63e60400cc24c71213d73e1f41c73b24e8d543653ce4d73dfc020de",
+    "unrelated-machines/actual-kronecker-full-matrix-two-certificates-audit": "971502966fa6391be49782cf1a6bbdb2400982d3f465bde5584239d17a0bbc13"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/计算/完整Kronecker矩阵与双平方证书核验--计算.md": "0a330bb8bd172a45de68dae1ce0bafd9da462c58913781ebebcf30bdc67cc258",
+    "archives/unrelated-machines/state/反例/完整矩阵Kronecker偶次幂坍缩--反例.md": "00a109165edfd79f53228093c81558d83f24954323a5a9a3b069b8baf041f538"
+  },
+  "review_digest": "0caaa7a4bc42e97ffda490eae80a4cfeb5380a68d71cac56ef05c397582846ec"
+}

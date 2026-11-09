@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-map-facility-served-lex-round20-v1.json",
-    "sha256": "e19c9f90cf6f8f495721812e02e25822f40468007bf3c181341ec0584b235722"
+    "path": "research/registration/baseline-map-um-conditioned-forest-round22-v1.json",
+    "sha256": "c5ee2cf28d4231db3db14b9a29f9b2ed710a4664ba162bf33674f657eb222d95"
   },
   "objects": [
     {
@@ -152853,6 +152853,37 @@
       ]
     },
     {
+      "object_id": "unrelated-machines/conditional-moment-orders-sharp-at-every-prefix-depth",
+      "title": "真实最优来源条件矩阶的逐前缀深度锐性",
+      "model": "显式普通不相关机，有限真实完整分配概率来源，原合法端one-hot矩，正概率相容t-literal前缀。",
+      "statement": "任意整数t≥0，完整条件标量负载、degree-one负载局部化器与完整M₂分别可由原至多t+1,t+3,t+4阶矩精确恢复。各阈值逐t锐，分别有同一三机矩阵的两份真实OPT=2来源在全部低一阶原矩相同但对应条件量不同。所有有限处理端均可取严格正有理时间。",
+      "quantifiers": "每个t和三种条件量分别；给定正概率原来源前缀。反例保所有低阶one-hot矩。",
+      "assumptions": [
+        "原矩按真实任务端，重复幂幂等且互斥项为零。",
+        "局部化器用两个degree-one索引乘线性负载，M₂每项最高二次索引。"
+      ],
+      "scope": "逐前缀深度的精确可识别矩阶和低阶障碍。",
+      "objections": "仅排识别指定原分布的条件量；重新耦合及高阶oracle的效率单独。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/真实最优来源条件矩阶的逐前缀深度锐性--定理.md",
+        "sha256": "bac073fd77692f4b9b47aefcb255809ca434d3991d8ea84c6c3edec3585c1a63"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/障碍/四阶矩与指定前缀的整机负载--障碍.md",
+          "sha256": "74ab67dd4109eca5822f1e14c3ada3af9af8f5b42a3aefe79b61f05ecd294760"
+        },
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        }
+      ],
+      "version": 1,
+      "kind": "theorem",
+      "truth_status": "proved",
+      "sources": []
+    },
+    {
       "object_id": "unrelated-machines/coordinate-slice-physical-configuration-audit",
       "version": 1,
       "title": "坐标切片原任务与配置覆盖的有限精确核验",
@@ -153406,6 +153437,38 @@
         "0106",
         "obstruction"
       ]
+    },
+    {
+      "object_id": "unrelated-machines/fixed-many-boundary-forest-joint-menu-from-one-boundary",
+      "title": "固定多个受限边界的森林联合真实菜单",
+      "model": "显式普通不相关机的森林挂件，每项真实原任务最多两有限端，唯一无帽边界a及q个受限边界b_j。",
+      "statement": "给T≥0与0<η≤1，对每个内部及全部b_j负载≤T的真实比较，菜单含同一个原任务分配，精确不增a、每个b_j至多(1+η)倍对应原负载并保零，所有内部和b_j≤(1+η)T。菜单每个向量只调一次单边界oracle，固定q时位多项式，变参为[poly(L,1/η)]^q。",
+      "quantifiers": "每有限q≥0、每个合法显式二进制有理输入和每份真实比较。q固定才给统一该q的多项式。",
+      "assumptions": [
+        "机器支撑去平行后为森林；其它组件任务不计入局部缩放。",
+        "仅对正预算b_j缩放，零预算删该处正处理端并保零端。"
+      ],
+      "scope": "单边界算法的精确映射给固定多个边界的相关菜单，保相同真实τ和恢复原处理时间。",
+      "objections": "q变参的统一多项式、有环模型及任意外部共同选择仍各有合同。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/固定多个受限边界的森林联合真实菜单--定理.md",
+        "sha256": "1cbc84ee5f2f0d6581bbbbbb1b9b3ab921476b4db767774d2ebac436fdf34af7"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/单边界森林与极小超载星双源审查--审查.md",
+          "sha256": "8776d3938fd201fbdee497489d521bf52dc11df4cfd16be01ce8e4024f7a9069",
+          "section": "1. 定义域与精确合同"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/森林边界审查源e279补录--审查.md",
+          "sha256": "a541011ce4b4f96ed104d399b7906189b2cc15f85169e9d0b4c6855a9ca7a402"
+        }
+      ],
+      "version": 1,
+      "kind": "theorem",
+      "truth_status": "proved",
+      "sources": []
     },
     {
       "object_id": "unrelated-machines/fixed-two-level-tensor-integer-audit-replay",
@@ -194468,10 +194531,10 @@
       "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b",
       "disposition": "objects",
       "object_ids": [
-        "UM-MODEL-v1",
         "M-031b8ef7202a4527b45d47605c6ac93a",
         "M-1b7aae02648540af8d4986eb762adaae",
         "M-36e9d6d07bed4754858f0f578f0ad101",
+        "M-4b838ba4c29d4f0592cfc241cf9ef1a3",
         "M-5e3a6df0fff848f1bbea15a683d2aeb8",
         "M-99a53b4eb072418a8a291d8582a89646",
         "M-b4a6d0d0b41c4ef2b84217f7ac101ea1",
@@ -194482,15 +194545,19 @@
         "UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1",
         "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1",
         "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1",
+        "UM-FINITE-PALETTE-GCD-BARRIER-v1",
         "UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1",
         "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1",
         "UM-HETEROGENEOUS-MACRO-PROMISE-v1",
         "UM-HOMOGENEOUS-MACRO-PRIVATE-PROMISE-v1",
         "UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1",
         "UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1",
+        "UM-LARGE-BUNDLE-COLLISION-FLOOR-v1",
+        "UM-MODEL-v1",
         "UM-PRUNED-TREE-LEAF-HITTING-v1",
         "UM-RANKJUMP-ONE-TRUE-SUPPORT-v1",
         "UM-SMALL-DENSITY-FLOW-BARRIER-v1",
+        "UM-ST-ROUND-v1",
         "UM-THRESHOLD-COVER-JOINT-SLOT-v1",
         "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
         "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
@@ -194503,31 +194570,27 @@
         "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
         "UM-WEIGHTED-GROUP-JOINT-SLOT-v1",
         "UM-WEIGHTED-GROUP-PROMISE-APPROX-v1",
-        "unrelated-machines/fewer-macros-uniform-half-home-capacity-counterexample",
-        "unrelated-machines/fixed-job-exact-completion-subset-sum-embedding",
-        "unrelated-machines/native-multi-small-endpoint-two-flow-schedule",
-        "unrelated-machines/sparse-partial-projection-scheduling-transfer-obligation",
-        "M-4b838ba4c29d4f0592cfc241cf9ef1a3",
-        "UM-FINITE-PALETTE-GCD-BARRIER-v1",
-        "UM-LARGE-BUNDLE-COLLISION-FLOOR-v1",
-        "UM-ST-ROUND-v1",
         "bare-cartesian-menu-original-matrix-audit-entry",
         "unrelated-machines/actual-kronecker-full-matrix-two-certificates-audit",
         "unrelated-machines/actual-kronecker-reconstruction-and-staged-reviews",
         "unrelated-machines/arbitrary-sink-cover-mw-frozen-audit-replay",
         "unrelated-machines/bare-cartesian-read-after-normal-form-palette-scope",
         "unrelated-machines/bounded-config-slots-and-independent-replay",
+        "unrelated-machines/conditional-moment-orders-sharp-at-every-prefix-depth",
         "unrelated-machines/coordinate-slice-physical-configuration-audit",
         "unrelated-machines/coordinate-slice-private-output-padding-v3-source-review",
         "unrelated-machines/cotransversal-gap-original-program-replay-and-marginal-correction",
         "unrelated-machines/cumulative-path-proof-aware-correction-and-statement-first-certificate",
         "unrelated-machines/degree-three-normal-form-author-and-canonical-read-after",
         "unrelated-machines/dualrail-rowuniform-20261030",
+        "unrelated-machines/fewer-macros-uniform-half-home-capacity-counterexample",
+        "unrelated-machines/fixed-job-exact-completion-subset-sum-embedding",
         "unrelated-machines/fixed-literal-sa-unit-assignment-gap-two",
         "unrelated-machines/fixed-two-level-tensor-integer-audit-replay",
         "unrelated-machines/fractional-rematching-normalized-xos-robust-gap",
         "unrelated-machines/half-unit-two-original-source-and-scheduling-audits",
         "unrelated-machines/hall-joint-flow-and-opt-promise-original-independent-audits",
+        "unrelated-machines/native-multi-small-endpoint-two-flow-schedule",
         "unrelated-machines/normalized-flat-menu-degree3-normal-form-v1",
         "unrelated-machines/one-primary-pi-onehot-unit-escape-proof-and-review",
         "unrelated-machines/partial-minrep-pdm-threshold-review",
@@ -194542,6 +194605,7 @@
         "unrelated-machines/seven-state-star-global-quadratic-local",
         "unrelated-machines/slot-envelope-configuration-identity-20261031",
         "unrelated-machines/slot-envelope-exact-program-resource",
+        "unrelated-machines/sparse-partial-projection-scheduling-transfer-obligation",
         "unrelated-machines/tiny-work-joint-slot-stability-and-selection",
         "unrelated-machines/truncated-multiplication-vector-greedy-true-source",
         "unrelated-machines/two-level-label-fee-second-multiplicity",
@@ -194755,6 +194819,15 @@
       "reason": "全文读，整棵single-pinned tree的mu限制、OPT等式、构造性桶分解、精确配置gap上确界与达到/逼近条件独立保留，不冒称多root固定mu精确G。"
     },
     {
+      "path": "archives/unrelated-machines/state/定理/固定多个受限边界的森林联合真实菜单--定理.md",
+      "sha256": "1cbc84ee5f2f0d6581bbbbbb1b9b3ab921476b4db767774d2ebac436fdf34af7",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/fixed-many-boundary-forest-joint-menu-from-one-boundary"
+      ],
+      "reason": "第三阶段精确扩张及适用边界。"
+    },
+    {
       "path": "archives/unrelated-machines/state/定理/固定层共同上容量的整数张量逃逸--定理.md",
       "sha256": "4d90dbc700bd79d003e8298dc5b9d8af7ee07fb483464282cba00ac6719d965c",
       "disposition": "objects",
@@ -194905,6 +194978,15 @@
         "UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1"
       ],
       "reason": "全文实读；承载本批独立数学主对象并按精确Claim分开陈述/模型/量词，成熟完整证明复用。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/真实最优来源条件矩阶的逐前缀深度锐性--定理.md",
+      "sha256": "bac073fd77692f4b9b47aefcb255809ca434d3991d8ea84c6c3edec3585c1a63",
+      "disposition": "objects",
+      "object_ids": [
+        "unrelated-machines/conditional-moment-orders-sharp-at-every-prefix-depth"
+      ],
+      "reason": "第三阶段精确扩张及适用边界。"
     },
     {
       "path": "archives/unrelated-machines/state/定理/真实正权支持的一维秩跳跃闭合--定理.md",
@@ -196821,7 +196903,8 @@
       "object_ids": [
         "UM-FOREST-BOUNDARY-AUGMENT-v1",
         "UM-MINIMAL-STAR-CONTRACTION-v1",
-        "UM-STAR-Q-JOB-COMPRESSION-NO-v1"
+        "UM-STAR-Q-JOB-COMPRESSION-NO-v1",
+        "unrelated-machines/fixed-many-boundary-forest-joint-menu-from-one-boundary"
       ],
       "reason": "森林与星整数等价/多任务摘要反例主证。容量一GPC₂族、星配置转移及拟阵外包归另有规范正文的对象。 待接精确owner UM-CAPACITY-ONE-PAIR-GAP-v1, UM-STAR-CONFIGURATION-TRANSFER-v1, UM-KNAPSACK-MATROID-ENVELOPE-v1。0100星CONFIG、0110拟阵、容量一星的规范主记录需要接入本页「2. 计数型反例和配置耦合」「3. 多任务外溢、配置点与拟阵外包的边界」；森林和极小星整数主记录已独立保存。\n实读全篇。单边界森林、极小超载星整数可行性iff和q件普通任务的A/B余量障碍各自独立；本增量只从0100接后二者各自段落。容量一GPC₂、Q_F条件配置转换、静态拟阵外包仍由各自的主记录承担，保既有反向待接范围。"
     },
@@ -198124,7 +198207,8 @@
       "sha256": "a541011ce4b4f96ed104d399b7906189b2cc15f85169e9d0b4c6855a9ca7a402",
       "disposition": "objects",
       "object_ids": [
-        "UM-FOREST-TWO-BOUNDARY-MENU-v1"
+        "UM-FOREST-TWO-BOUNDARY-MENU-v1",
+        "unrelated-machines/fixed-many-boundary-forest-joint-menu-from-one-boundary"
       ],
       "reason": "本页§一至七为双边界菜单完整数学主体，正文身份在本批。§六中单边界/fixed-B比较只作区别与反例来源，UM-FOREST-BOUNDARY-AUGMENT-v1另路由0099，不能由双边界容器吞并。"
     },
@@ -201798,7 +201882,8 @@
       "sha256": "74ab67dd4109eca5822f1e14c3ada3af9af8f5b42a3aefe79b61f05ecd294760",
       "disposition": "objects",
       "object_ids": [
-        "UM-C2-PREFIX-CONDITIONING-DEGREE-v1"
+        "UM-C2-PREFIX-CONDITIONING-DEGREE-v1",
+        "unrelated-machines/conditional-moment-orders-sharp-at-every-prefix-depth"
       ],
       "reason": "Boss2 root fragment/independent review claims root read through index 18; no complete final mapping in fragment. SHA verified against current checkout."
     },
