@@ -1,0 +1,115 @@
+{
+  "definition": {
+    "task_id": "ca-two-tail-tax-min-round27-3b-533b7187478538d0",
+    "stage": "3B",
+    "registry": "research/registry.json",
+    "object_ids": [
+      "CA-TWO-REMAINING-TAX",
+      "M-7cb4c41cb57e4e1f81d6d70c7befac71",
+      "M-9a01587f3f3c4924a7b145df31ada227"
+    ],
+    "read_object_ids": [],
+    "input_pins": {
+      "CA-TWO-REMAINING-TAX": "eb63a8d1cd934879f5f7f25f633b4bf753973f405a7b8db91bed63f633de7d15",
+      "M-7cb4c41cb57e4e1f81d6d70c7befac71": "e5772fbd4ecb148388753287196beafd5d5ee817f17937c21fff2fa1da5b0938",
+      "M-9a01587f3f3c4924a7b145df31ada227": "934579080b1612f4215fd799b31fe49f7c7c70074ce038b1a7172b300368717f"
+    },
+    "write_paths": [
+      "map/edges/ca-two-tail-tax-min-round27-3b-533b7187478538d0",
+      "map/receipts/ca-two-tail-tax-min-round27-3b-533b7187478538d0.json"
+    ],
+    "goal": "固定同一合法整数背景和完整两人SPE。旧普通税给R≤u+v+g(C,C)。在真实末位节点对T₁,T₂分别用BR，逐客户核g(T₁,C)+g(T₂,C)−2g(T₁,T₂)≤g(C,C)，给R≤2v+g(C,C)。比较两界最小值及3/4、1/4加权怎样推出新重叠税上界。核严格差、零背景锐性见证与上界推导的不同作用。保背景剩余利润和根福利边界，不把新上界外推至更长后缀。",
+    "context_plan": {
+      "budget": {
+        "context_tokens": 500000,
+        "window_source": "official-default",
+        "model": "gpt-6.1-sol",
+        "used_tokens": null,
+        "history_mode": "fresh-worker",
+        "reserve_tokens": 200000,
+        "reading_tokens": 300000,
+        "output_tokens": 100000,
+        "runtime_remaining_tokens": null,
+        "declared_remaining_before_reserve_tokens": null,
+        "assumptions": [
+          "Window source is declared, not discovered from this conversation.",
+          "Reading budget includes source text and object/task metadata.",
+          "Reserved context includes expected generated records and later reasoning/tool growth.",
+          "Fresh worker assumed; actual system/prefix usage is unknown and covered only by the engineering reserve."
+        ],
+        "budget_is_runtime_measurement": false
+      },
+      "reading": {
+        "chars": 28491,
+        "utf8_bytes": 49292,
+        "source_tokens": 37860,
+        "metadata_tokens": 6076,
+        "estimated_tokens": 44032,
+        "metadata_chars": 7432,
+        "metadata_utf8_bytes": 9566,
+        "distinct_files": 6,
+        "reading_segments": 6,
+        "token_count_is_estimate": true,
+        "estimators": [
+          "conservative-math-text-estimate-v1; not a tokenizer count"
+        ],
+        "unmeasured_refs": [],
+        "measurement_scope": "Requested complete text spans plus supplied metadata; binary evidence is not token-counted from raw bytes.",
+        "task_overhead_tokens": 96
+      },
+      "estimated_output_tokens": 7270,
+      "oversized": false,
+      "requires_export": false,
+      "reading_refs": [
+        {
+          "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+          "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md",
+          "sha256": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/末两人新生重叠的顺序利润税界--定理.md",
+          "sha256": "5a97f86be20de9e0e6be6df59c49e1b3a0a1642c7b9e4b794bdcd354245f07a1"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/R51重叠敏感末尾审计器--审查.md",
+          "sha256": "c362683fe0b78e16c777ce8fe302217025f09ab08c27c603c082dbf16409816e"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/两人重叠税逐客户恒等式与锐端点的精确重放--计算.md",
+          "sha256": "6760be9c3994daa80ffe4463177cde99ce818d05a6ee1232efd97a14f93d6c1c"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/末两人新生重叠的顺序利润税界--定理.md",
+          "sha256": "5a97f86be20de9e0e6be6df59c49e1b3a0a1642c7b9e4b794bdcd354245f07a1",
+          "section": "零背景锐重叠界及根版证书"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/末两人新生重叠的顺序利润税界--定理.md",
+          "sha256": "5a97f86be20de9e0e6be6df59c49e1b3a0a1642c7b9e4b794bdcd354245f07a1",
+          "section": "两个完整SPE端点与每个有理比例"
+        }
+      ],
+      "deferred_candidate_ids": [],
+      "deferred_candidate_issues": {},
+      "comparison_priority": 0,
+      "family_hint": "CA-TWO-REMAINING-TAX",
+      "scope_hint": "archives/customer-attraction",
+      "status": "complete-declared-references-planned",
+      "note": "Compare the stated mathematical question on all selected endpoints; if large, resume the same question in reading passes.",
+      "comparison_question": "固定同一合法整数背景和完整两人SPE。旧普通税给R≤u+v+g(C,C)。在真实末位节点对T₁,T₂分别用BR，逐客户核g(T₁,C)+g(T₂,C)−2g(T₁,T₂)≤g(C,C)，给R≤2v+g(C,C)。比较两界最小值及3/4、1/4加权怎样推出新重叠税上界。核严格差、零背景锐性见证与上界推导的不同作用。保背景剩余利润和根福利边界，不把新上界外推至更长后缀。"
+    }
+  },
+  "state": "available",
+  "owner": null,
+  "request_id": "a3c8a128c3454ad589e53be046df3846",
+  "requests": {
+    "a3c8a128c3454ad589e53be046df3846": "plan"
+  }
+}
