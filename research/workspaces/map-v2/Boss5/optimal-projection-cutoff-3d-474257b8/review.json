@@ -1,0 +1,229 @@
+{
+  "schema": 1,
+  "review_type": "actual-3D-incremental-mathematical-comparison",
+  "boss": "Boss5",
+  "conversation_tag": "474257b8",
+  "verdict": "correct-no-mathematical-erratum-required",
+  "core_object_id": "customer-attraction/optimal-projection-external-credit-certificate-exact-player-cutoff",
+  "comparison_object_ids": [
+    "customer-attraction/closeout-6fbd2261f5604c3196038854",
+    "customer-attraction/all-prefix-budget-abstract-lp-sharpness"
+  ],
+  "input_pins": {
+    "customer-attraction/all-prefix-budget-abstract-lp-sharpness": "0927bf792ef3ed5e737f4565ca951fc6d1ce795d9e171ddc2dd62215ada2b912",
+    "customer-attraction/closeout-6fbd2261f5604c3196038854": "39ab3078b99495e32037cef44ae885567794d2fb007d62e85e18daa51432648b",
+    "customer-attraction/optimal-projection-external-credit-certificate-exact-player-cutoff": "3959749987e877f60545045ba3e0f2aa6f6ab7d09dfc1c7144378a09df013da5"
+  },
+  "canonical_joint": {
+    "task_id": "boss5-474257b8-projection-joint-repair-bf4d0de6d1f33ed2",
+    "task_state": "done",
+    "owner": "Boss5",
+    "edge_id": "cag-product-projection-and-disjoint-six-prove-complete-retained-credit-result",
+    "edge_path": "map/edges/boss5-474257b8-projection-joint-repair-bf4d0de6d1f33ed2/projection-retained-credit-whole.json",
+    "edge_sha256": "0d21e5a993396897793e9163f067362d2bb4f9eaab8942e9dece58b5729534a8",
+    "edge_is_canonical": true,
+    "task_in_integration": true,
+    "task_receipt_pin": "a0612d784f28f58de70448f702391395e4ba625dccafc3a2675e54503fb61794",
+    "integrated_edge_pin": "96b1bea9628efd95a4d8f7f5a8fb94f5abe6aa4d96a0de7e6557743d2a30390a",
+    "disposition": "retained; full old conjunction remains valid; new cutoff core is not covered by the old receipt"
+  },
+  "continuation": {
+    "task_id": "customer-optimal-projection-cutoff-round16-3a-762c674f3b55509b",
+    "state_at_read": "available",
+    "owner_at_read": null,
+    "input_pins_match_current_selected_objects": true,
+    "action": "existing 3A task owns the new core and both overlap comparisons; this 3D worker performs no queue or 3A delivery actions",
+    "requires_new_duplicate_task": false
+  },
+  "quantifiers": {
+    "positive": "For each m in {1,2,3}, every instance, every full pure SPE, and in fact every genuinely optimal m-tuple union O, its per-slot unit cover with total kappa=m pays OPT_m/2 under the exact same retained-credit certificate.",
+    "negative": "For each m>=4 there exists an m-singleton instance such that every full pure SPE, every genuinely optimal union, and every feasible fractional cover with kappa>=1 strictly fails to pay OPT_m/2; all of those SPE have W=OPT_m=m."
+  },
+  "certificate": {
+    "formula": "B_kappa=|O|*(1-product_{r=1}^m(1-1/(r*kappa)))+E-sum_i w_{m-i+1}(kappa)*delta_i",
+    "credit": "C_kappa=E-sum_i w_{m-i+1}delta_i=sum_i c_i+sum_i(1-w_{m-i+1})delta_i, 0<=C_kappa<=E",
+    "identity": "delta_i+c_i=e_i on the same actual path; sum_i e_i=E",
+    "kappa_optimization": "For fixed sigma,O, delta and E are kappa-independent, F is nonincreasing and each w is nondecreasing; hence the entire B_kappa is nonincreasing. For O nonempty, the best feasible kappa is the attained fractional cover number tau(O)>=1. Singleton O=N has tau=m."
+  },
+  "proof_steps": [
+    "Use arbitrary-complete-plan robust product bound on the exact original-label/original-successor projection, not a presumed projected SPE; add E and use exact same-path credit identity.",
+    "For m=1,2,3 use a true optimal m-tuple per-slot unit cover of mass m, including repeated labels; positive constants are >=1/2.",
+    "For every m-singleton instance, induct backwards over every ordered history: unused labels are present, yield one under all SPE continuations, while used labels yield at most one half; thus all SPE always choose unused.",
+    "At the root all m customers are covered and the sole optimal union is N; E=delta=c=C=0. Singleton cover constraints force every z_j>=1, so all admissible kappa>=m.",
+    "For m>=2, P_(m+1)/P_m=[1-(m+1)^(-2)]/[1-m^(-2)] times product_{r=2}^m[(1-1/(r(m+1)))/(1-1/(rm))]>1; P1=0<P2. Hence F_m(m) strictly decreases and F4=893/2048 gives all m>=4."
+  ],
+  "exact_short_arithmetic": [
+    {
+      "m": 1,
+      "F_m_m": "1",
+      "margin_over_half": "1/2"
+    },
+    {
+      "m": 2,
+      "F_m_m": "5/8",
+      "margin_over_half": "1/8"
+    },
+    {
+      "m": 3,
+      "F_m_m": "41/81",
+      "margin_over_half": "1/162"
+    },
+    {
+      "m": 4,
+      "F_m_m": "893/2048",
+      "margin_over_half": "-131/2048"
+    },
+    {
+      "m": 5,
+      "F_m_m": "6049/15625",
+      "margin_over_half": "-3527/31250"
+    },
+    {
+      "m": 6,
+      "F_m_m": "2352949/6718464",
+      "margin_over_half": "-1006283/6718464"
+    }
+  ],
+  "boundary_checks": {
+    "empty_optimal_union": "Use the inherited kappa>=1 convention, e.g. mass m. v=delta=0, C=E=W. Do not substitute LP mass zero into the product.",
+    "zero_optimum": "Trivial payment to target zero; nonempty catalog still supplies a legal weight choice.",
+    "root_background": "No external old players; W=sum of all m players profits. Internal ordered prefixes do not alter this original-root scope.",
+    "nonzero_external_background_diagnostic": "One singleton customer, external old load b=1, one remaining player: tail profit=1/2 whereas |O|F1(1)=1. Thus replacing root welfare by remaining profit would be an unsupported extension, not a counterexample to the current theorem.",
+    "six_singletons": "Special case m=6; old H6/6=49/120<1/2 is a valid loose bound and the exact F6=2352949/6718464 is also below 1/2. W=OPT=6 throughout.",
+    "abstract_lp": "Same F sequence and scalar method limit only; LP tight vectors are not claimed implementable and singleton actual profits are not asserted to be LP tight."
+  },
+  "required_corrections": [],
+  "optional_display_only_correction": {
+    "path": "archives/customer-attraction/state/定理/最优并集投影信用证书的精确人数分界--定理.md",
+    "replace": "(kappage1)",
+    "with": "\\(\\kappa\\ge1\\)",
+    "mathematical_effect": "none; inherited domain is already kappa>=1; no source edit performed"
+  },
+  "archive_review_append": {
+    "comparison_scope": "本次3D完整实读新最优并集投影信用人数阈值定理、旧投影保留信用推论、全前缀抽象标量极值、同一策略投影精确账与任意完整计划乘积证明；核canonical projection-joint联合whole边及新对象已发布3A承接。逐项比较真最优O、同一原σ真实后继、全部有序历史、同一Cκ及全部合法κ，另核空O、OPT=0和原根无外部旧玩家边界。",
+    "outcome": "新阈值定理正确：每个实例每份完整纯SPE在m=1,2,3用任意真最优m元组逐槽单位权κ=m，F1=1、F2=5/8、F3=41/81及Cκ≥0普遍付款。每个m≥4取m个不交单位单例，全部完整SPE在全部历史都选未用标签，W=OPT=m且唯一最优O=N，全部合法分数覆盖κ≥m、同一E=δ=c=Cκ=0；F4=893/2048且F_m(m)严格递减，故全部合法选择严格短付。固定σ,O时整个右端随κ非增，不能靠优化κ逃出单例障碍。旧六单例只反纯外部信用普遍填差，不反half；抽象LP紧向量没有被当SPE实现。已DONE canonical joint目标仍完整有效，无需数学修订。",
+    "unresolved": [],
+    "open_mathematical_obligations": [
+      "一般六人half、SHARED、内部覆盖信用和其它付款路线仍按各自原问题保留，不能由本证书边界推出或否定。",
+      "带外部旧玩家的非零背景尾利润问题须另证，不能将原根W=Σu和投影覆盖恒等式直接搬用。"
+    ],
+    "application_limit": "只追加本次实际3D数学比较；不清除其它批次未完成审查。新核心主覆盖仍由已发布customer-optimal-projection-cutoff-round16-3a-762c674f3b55509b承接，本报告不认领、不done、不代写其edge/receipt，也不将available任务视作已覆盖。"
+  },
+  "cross_archive_review_append": {
+    "comparison_scope": "本次只比较顾客吸引档内最优并集投影信用证书、其canonical联合whole推导及同一F_m(m)抽象前缀标量极值，未实读其它存档新的数学端点。",
+    "outcome": "所得关系均属同档的原完整历史均分模型。抽象LP给同一数值序列及接口强度，未提供客户/策略实现桥；m单例真实障碍本身福利最优。此次没有新增跨档逻辑迁移，不能由标量公式相同推出其它模型的坏均衡或half失败。",
+    "unresolved": [],
+    "application_limit": "只陈述本次实读范围没有新增跨档关系；不排除未读关系，不关闭既有跨档义务。"
+  },
+  "reading_boundary": {
+    "full_mathematical_text_refs": [
+      {
+        "path": "archives/customer-attraction/state/定理/最优并集投影信用证书的精确人数分界--定理.md",
+        "sha256": "1f56f94c4d599d7d061dd50d9e277ec298d92f8fbec61d68c9bb156a2506bd56",
+        "bytes": 3692,
+        "lines": 44,
+        "read_scope": "full-mathematical-text"
+      },
+      {
+        "path": "archives/customer-attraction/state/推论/投影后悔乘积界的外部保留信用与填差边界--推论.md",
+        "sha256": "99e36227c4ad33e598f7274fa38c2c6081d282a39f2e6a91dff637f9744e904f",
+        "bytes": 6997,
+        "lines": 153,
+        "read_scope": "full-mathematical-text"
+      },
+      {
+        "path": "archives/customer-attraction/state/障碍/全部真实前缀预算行的抽象线性极值--障碍.md",
+        "sha256": "3d9e1d9f029d28f923ec54061abce741ab76c36a65308edd1e5178280d76547e",
+        "bytes": 3650,
+        "lines": 60,
+        "read_scope": "full-mathematical-text"
+      },
+      {
+        "path": "archives/customer-attraction/state/引理/客户投影的全历史后悔与共同外部信用--引理.md",
+        "sha256": "125be2f9201e3c84148ed41d42f78293c67be6041142d3d91a67defdfd0d4793",
+        "bytes": 8473,
+        "lines": 147,
+        "read_scope": "full-mathematical-text"
+      },
+      {
+        "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+        "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+        "bytes": 7598,
+        "lines": 129,
+        "read_scope": "full-mathematical-text"
+      },
+      {
+        "path": "archives/customer-attraction/state/审查/全历史后悔稳定界与真实后缀退出的解析复核--审查.md",
+        "sha256": "2de2dcd4f7418455fd740170bcf74d9a2c24388df19fd93d30b22db2ce9814ac",
+        "bytes": 5915,
+        "lines": 69,
+        "read_scope": "full-mathematical-text"
+      },
+      {
+        "path": "map/edges/boss5-474257b8-projection-joint-repair-bf4d0de6d1f33ed2/projection-retained-credit-whole.json",
+        "sha256": "0d21e5a993396897793e9163f067362d2bb4f9eaab8942e9dece58b5729534a8",
+        "bytes": 9002,
+        "lines": 72,
+        "read_scope": "full-mathematical-edge-text"
+      }
+    ],
+    "control_text_refs": [
+      {
+        "path": "AGENTS.md",
+        "sha256": "a24b90db5ceabf26f4db3b831a4d63d121133ecc35b283ed5dd334c77cb38c92",
+        "bytes": 5245,
+        "lines": 40,
+        "read_scope": "full-control-text"
+      },
+      {
+        "path": "research/IMPLEMENTATION.md",
+        "sha256": "28bdc88dd144cad15c2081b2f00a3d1a7023792a0dde04c37831944d49e56632",
+        "bytes": 30678,
+        "lines": 322,
+        "read_scope": "full-control-text"
+      },
+      {
+        "path": "prompts/03-map-worker.md",
+        "sha256": "6629f71923c54d994297d54c3737b285227b72c463641d318c3f61c9342d07b2",
+        "bytes": 2559,
+        "lines": 11,
+        "read_scope": "full-control-text"
+      }
+    ],
+    "selected_metadata_refs": [
+      {
+        "path": "research/operations/map-v2/tasks/boss5-474257b8-projection-joint-repair-bf4d0de6d1f33ed2.json",
+        "sha256": "e1d5012cf9fe2eb0abf00c31122ae5cf4dbb11aaad1acc9fa5fedb994dadd498",
+        "bytes": 40891,
+        "lines": 613,
+        "read_scope": "selected-definition-state-receipt-fields"
+      },
+      {
+        "path": "map/receipts/boss5-474257b8-projection-joint-repair-bf4d0de6d1f33ed2.json",
+        "sha256": "872c8becf124ea857a890ab30db9900b6ae8377ceec039a6eca5b2553157c0f8",
+        "bytes": 14373,
+        "lines": 176,
+        "read_scope": "cutoff-related-coverage-assets-supersession-fields"
+      }
+    ],
+    "registry_scope": "Only the three selected object records were mathematically reviewed; no claim of full registry reading or global snapshot finality.",
+    "integration_scope": "Only selected canonical task receipt/edge fields and current archive/cross review structure for append semantics.",
+    "not_read_or_rerun": [
+      "Other original joint-task mathematical families and their old audits",
+      "Original LP/MIP programs, SPE enumeration, finite scans or mathematical checkers",
+      "Any new external archive endpoint"
+    ],
+    "calculation_scope": "Python Fraction: six exact displayed constants for m=1,...,6; all-population conclusions proved analytically."
+  },
+  "actions": {
+    "git": false,
+    "network": false,
+    "queue_write": false,
+    "repository_write": false,
+    "spawn": false,
+    "output_directory": "/workspace/scratch/a70fb040a4fc/optimal-projection-cutoff-3d-474257b8"
+  },
+  "source_manifest": "source-manifest.json",
+  "companion_report": "review.md",
+  "exact_append_file": "actual-review-appends.json"
+}
