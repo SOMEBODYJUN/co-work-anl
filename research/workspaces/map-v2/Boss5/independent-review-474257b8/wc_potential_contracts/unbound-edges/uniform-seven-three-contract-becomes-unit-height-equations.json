@@ -1,0 +1,36 @@
+{
+  "edge_id": "wc-stage3a-uniform-seven-three-contract-becomes-unit-height-equations",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-TYPE-SCALE-COMPATIBLE-POTENTIAL-v1"
+  ],
+  "target_ids": [
+    "wc-uniform-two-order-deletion-maxcut-exact-reduction"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定d=7、β=3，资源只用源的统一双排序包络，未改费用资源按重a到轻b连类型边。只讨论这个指定包络，不换成有限人数精确D/U合同。",
+  "roles": {
+    "WC-TYPE-SCALE-COMPATIBLE-POTENTIAL-v1": "可变统一包络要求r≥1、r≤β、1+(d−1)/r≤β，及正尺度拼接。",
+    "wc-uniform-two-order-deletion-maxcut-exact-reduction": "六边MaxCut归约中强制单位高度差的承重接口步骤。"
+  },
+  "explanation": "代入d−1=6、β−1=2，统一条件给r≥6/2=3同时r≤3，故每条保留资源边恰t_b/t_a=3。令h_v=log_3 t_v，等价h_b−h_a=1，混合可取(2/3)D+(1/3)U再乘t_b。对固定局部形状，源乘积拼接判据也等价沿所有资源闭游走的单位有向高度增量总和为0；存在高度时t_v=3^(h_v)恢复正尺度。常数化资源可用玩家可分势去约束，但六边gadget的最大保留4+1[|h_x−h_y|=1]和floor(h) mod2割证明仍需目标正文。各资源本身一重一轻、空动作可用，原全空精确PNE不能被证书冲突否定。",
+  "scope": "MaxCut目标的统一合同到精确单位高度等式步骤；不外推到实际有限人数D/U最优、一般势、均衡搜索或无均衡。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/两类型资源的共同尺度拼接与环失配阈值--定理.md",
+      "sha256": "26fd8be4e82f5c84fbe7cf7c657f1036f0dc7680c3e0cb00dc412efac3dde1e1"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/统一双排序合同资源删除的MaxCut归约--定理.md",
+      "sha256": "77ccb6da02d1d55a014435d12d3a6db069209781eb34c754be8bb3674572f661"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "完整实读本包当前登记、端点正文与必要证据；核对模型、全部量词、真实偏离、弱端点/严格下降及作用范围。候选正确性保持条件，未把有限审计当全称证明。",
+  "contribution": {
+    "result": "d=7、β=3的指定统一双排序共同尺度合同逐保留资源恰等价于h_light−h_heavy=1；这给六边gadget归约所用的精确线性高度约束。",
+    "remaining": "完整目标还需两私有三边路径的计数、max_h#{|h_x−h_y|=1}=MaxCut、合法多项式输入与NP成员证明；NP-complete标签另以未核一手原文的无权简单MaxCut复杂度前提为条件。"
+  }
+}

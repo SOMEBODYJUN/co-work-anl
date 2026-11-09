@@ -1,0 +1,36 @@
+{
+  "edge_id": "wc-stage3a-ap02-affine-restricted-perfect-target",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-aef49c1daf6b4ab4a4cff57b92f27f9a"
+  ],
+  "target_ids": [
+    "SEL-MATROID-PERFECT-ASYM-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "原题有限无权拟阵基游戏；延迟限定a_e k+b_e且a_e,b_e为非负有理数，各人p_i∈ri(P_i)可不同。以AP-02完整算法主张为未证前提。",
+  "roles": {
+    "M-aef49c1daf6b4ab4a4cff57b92f27f9a": "允许不同rank/loops/coloops且不要求共同ri的affine候选。",
+    "SEL-MATROID-PERFECT-ASYM-v1": "任意非负非减有理延迟的一般纯perfect计算目标。"
+  },
+  "explanation": "非负affine延迟属于原题的非负非减表。对独立全支持扰动x_i^epsilon=(1−epsilon)delta_(B_i)+epsilon q_i，记P_e=Σ_j p_je，名义使用e者的有效延迟为a_e(1−epsilon)k+b_e+epsilon a_e(1+P_e−p_ie)，身份差异只进入个人资源常数。因此候选若把其势最优化、oracle编码和统一小epsilon稳定性完整证明，就直接完成一般目标的affine子域，输出和精炼定义不变。AP-01可覆盖共同ri下的非affine费用，而AP-02可覆盖无共同ri的affine输入，两域互不包含；在共同ri且affine的交集，令p_i=p，共同有效延迟的期望按线性期望恰等于上述公式。高次延迟的身份交互不能由此消去。正文旧U(2,4)误表不作为证据。",
+  "scope": "原题的affine受限条件贡献；不把势存在、有限epsilon或普通PNE升级为纯perfect算法。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/资料/非对称拟阵纯精炼均衡候选与证明承重边界--资料.md",
+      "sha256": "12a5aa1e599da208e56e6248c1687eaf4130460be827faa212a3cdbb98f5eac3"
+    },
+    {
+      "path": "archives/weighted-congestion/state/问题/非对称拟阵拥塞的纯精炼均衡计算--问题.md",
+      "sha256": "1b872fd3acb54fa78231dffde4f9708e9bed2a4fe7a8d0864773882cd423236a"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "完整实读本包当前登记、端点正文与必要证据；核对模型、全部量词、真实偏离、弱端点/严格下降及作用范围。候选正确性保持条件，未把有限审计当全称证明。",
+  "contribution": {
+    "result": "假设AP-02完整正确，则一般纯perfect输出目标在任意非对称affine输入域可位多项式完成；不要求共同ri。",
+    "remaining": "AP-02仍须全支持构造、精确战略等价、slot优化/oracle位复杂度和统一小epsilon固定纯核；一般非affine且共同ri为空的输入仍未覆盖。"
+  }
+}

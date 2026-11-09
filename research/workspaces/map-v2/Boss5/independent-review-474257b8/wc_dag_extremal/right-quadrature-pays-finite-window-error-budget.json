@@ -1,0 +1,43 @@
+{
+  "edge_id": "wc-b5-4932-right-quadrature-pays-finite-window-error-budget",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/right-endpoint-area-quadrature"
+  ],
+  "target_ids": [
+    "WC-ENDPOINT-AREA-WINDOW-CERTIFICATE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "整数d,K≥1、R>0、m=K/R、α≥1、κ≥1。只分析明确的重(P,1)、轻(Y,X)局部费用表；P=(1+m)^d，X=Σ(1+j/R)^d、Y=Σ(j/R)^d，H=P−α>0，Γ=(αX−Y)/(RH)。",
+  "roles": {
+    "weighted-congestion/right-endpoint-area-quadrature": "任意网格望远镜误差及非减凸二阶细化，在[1,1+m]与[0,m]的等步长1/R实例提供可执行误差。",
+    "WC-ENDPOINT-AREA-WINDOW-CERTIFICATE-v1": "把误差代入局部传播分式，给有限R的严格收缩余量；并保留目标中的原任意网格基本界。"
+  },
+  "explanation": "以格宽1/R分别对t^d求积，得A≤X/R≤A+(P−1)/R和B≤Y/R≤B+m^d/R，其中A=((1+m)^(d+1)−1)/(d+1)、B=m^(d+1)/(d+1)。对X的误差还可取eX=min{(P−1)/R,(P−1)/(2R)+d[(1+m)^(d−1)−1]/(8R²)}。因此Γ≤[αA−B+αeX]/H，Dκ=P−α−κ(αA−B)>καeX时1−κΓ≥(Dκ−καeX)/H>0。κ=1用粗界给D=P+B−α(1+A)>0、R>α(P−1)/D时的原有限证书；D>0还自动给H>0，因为(P+B)/(1+A)<P。对任意b≥0、正严格网格，以原quad直接保0≤Σa_j t_j^d−∫t^d≤h(T^d−b^d)。",
+  "scope": "成立的局部贡献；细误差可认证粗界失败的参数，但不承担整个窗口对象的精确κ阈值/优化/所有极限，更不支付真实全游戏实现。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/右端离散面积的网格误差与最优采样--定理.md",
+      "sha256": "cbdb0a71ada8f10a75ac76a1e98f0eac7c604e3a20ab89a52a661344f61ea0bf",
+      "section": "任意网格与精确单格效率"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/右端离散面积的网格误差与最优采样--定理.md",
+      "sha256": "cbdb0a71ada8f10a75ac76a1e98f0eac7c604e3a20ab89a52a661344f61ea0bf",
+      "section": "非减凸函数的半常数细化及真实修正"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/等权窗口传播的精确阈值与安全余量--定理.md",
+      "sha256": "af010b359f1f608ce0e9e4960c23bd3c8fad2f2f03ec5916c2e1e2f08c22ae45",
+      "section": "有限面积误差与可执行证书"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "已逐段完整实读当前对象及必需证据，重核模型、全部真实偏离、量词、边界和本边承重推导；历史有限审计仅保其实际范围，本轮未以计数替代一般证明。",
+  "contribution": {
+    "result": "付清窗口对象的任意网格基本误差、等权X/Y右和误差、粗/细eX以及Dκ>καeX所给的显式有限严格余量；κ=1恢复D与R的原有限合同。",
+    "remaining": "目标全句其余部分仍须有限阈值α<(P+κY/R)/(1+κX/R)的精确等价、独立重端点margin、连续最优与有理参数选择、晶格/临界质量极限和κ≥d无用区；实际游戏还须资源关联、return、全部前沿及同次数非法态修复。本边不宣称这些步骤由面积误差单独推出。"
+  }
+}

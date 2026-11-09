@@ -1,0 +1,33 @@
+{
+  "edge_id": "wc-stage3a-cubic-certified-base-pads-to-all-cap-margin-obstruction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/anchored-cubic-clock-retention-obstruction"
+  ],
+  "target_ids": [
+    "weighted-congestion/anchored-clock-true-margin-dependence"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定四玩家权(1,1/2,1/4,1/8)、两动作、α=21/20；新增时钟仍限anchor0、T012/T013/T023、010/101互补两侧同费。任意整数次数上限D≥0。",
+  "roles": {
+    "weighted-congestion/anchored-cubic-clock-retention-obstruction": "提供实际三次四玩家基体G、八条严格改善margin gamma_i>0及0101/1010的严格稳定gap K_i>0和互补对称。",
+    "weighted-congestion/anchored-clock-true-margin-dependence": "对每个D构造仍阻止任意degree≤D保环同架构时钟清除这两个均衡的游戏G_D。"
+  },
+  "explanation": "源对象的真实基体数据给eta=min gamma_i=49676111/6750000000、K_min=1009308211/6750000000。置Q=(3/2)^D、epsilon=min{eta/2,(α−1)K_min/(8Q)}>0，给玩家i两动作共同私人费用t_i=(gamma_i−epsilon)/(α−1)>0，以t_i(x/w_i)^3实现。每条对应环margin变epsilon，环外b=0101稳定gap K_i+gamma_i−epsilon>K_min；全部旧/新费用仍正三次。任意合法时钟同三元费用合并为f_T，令S_T为其三个pair负载费用之和。真实资源逐项相加有Σ_i clockmargin_i=−(α−1)Σ_T S_T；若八环边保严格，则Σ_T S_T<4epsilon/(α−1)。三元总权W、最大pair权m满足W/m≤3/2；每个k≤D和每个参与者任一状态的clock改善margin≤W^k≤Q m^k≤QΣ_pair pair^k，非负系数求和给b处任何clockmargin≤QΣ_T S_T<K_min/2。总margin因此<−K_min/2，b所有翻位稳定；互补给1010。共同private可换成两个分别仅在动作0/1用的同费private，逐状态及偏离成本相同，给非空不交反链动作。故∀D∃有理三次G_D阻止所有此degree≤D保环时钟；固定结构参数不能代替真实margin输入。",
+  "scope": "完整全次数量词障碍仅限指定保环锚定同费架构；α=1不适用，不排异费/换相位/辅助玩家/不保环等构造，也不否定同一未padding基体的D80证书。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/障碍/同费锚定三元时钟的三次保边障碍--障碍.md",
+      "sha256": "af97063b5a506da4f022889cc4b2b456f86fe4647ccbb0f9ad7f66c04444770f"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/锚定保环时钟的真实余量依赖--障碍.md",
+      "sha256": "4ccdb88a3c2dde2e6441eabeac710d1c2546a678be3f4abedd57900b8ac204fc"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "完整实读本包当前登记、端点正文与必要证据；核对模型、全部量词、真实偏离、弱端点/严格下降及作用范围。候选正确性保持条件，未把有限审计当全称证明。",
+  "whole_result": "源的有理三次基体经显式正三次私人padding，对每个D≥0产生四玩家同权/倍率/动作数的G_D；任意次数≤D同费anchor0三元时钟若保留八条严格α环边，则0101与1010的全部翻位margin仍<−K_min/2，故仍α-PNE。可实现两动作非空不交；因此通用保环次数预算不能消去真实环余量或等价实例数据依赖。"
+}
