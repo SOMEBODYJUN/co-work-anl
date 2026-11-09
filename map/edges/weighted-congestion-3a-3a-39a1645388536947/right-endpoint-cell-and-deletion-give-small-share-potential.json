@@ -1,0 +1,56 @@
+{
+  "edge_id": "wc-3a-right-endpoint-cell-and-deletion-give-small-share-potential",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/right-endpoint-area-quadrature",
+    "weighted-congestion/actual-deletion-efficiency-integral-potential"
+  ],
+  "target_ids": [
+    "WC-ACTUAL-SMALL-SHARE-INTEGRAL-POTENTIAL-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限标准正权游戏，非负系数费用次数≤d，整数d≥1，保实际固定背景b_e。任意可动玩家在任意可占资源及任意完整占用态的真实w_i/L_e(s)≤η，0<η≤1。",
+  "roles": {
+    "weighted-congestion/right-endpoint-area-quadrature": "供给实际删除对应的一格效率恒等式和K_r随相对宽度、次数非增的性质。",
+    "weighted-congestion/actual-deletion-efficiency-integral-potential": "将全部真实删除效率的统一下界κ转换为同一积分势的完整偏离不等式、局部最小点与严格改善终止。",
+    "WC-ACTUAL-SMALL-SHARE-INTEGRAL-POTENTIAL-v1": "给显式κ=K_d(η)的全部小原子近似PNE、FIP与极限。"
+  },
+  "explanation": "对每个实际占用态和资源，取求积单格[b,T]=[L_e(s)−w_i,L_e(s)]，宽w_i、右端L_e(s)，不改变真实用户。次数r项积分等于w_i L_e(s)^r K_r(w_i/L_e(s))，其中K_r≥K_d(η)；常数项K₀=1。非负逐项相加后，正费删除效率J_ie≥K_d(η)，零费项直接为零。以κ=K_d(η)代入删除势差合同，得ΔΦ≤w_i[C_i(new)−κ C_i(old)]。因此任一局部最小点为1/κ-PNE，全部严格1/κ改善均令Φ严格下降且在有限状态中终止。κ=∫₀¹(1−ηv)^d dv，故1/κ=(d+1)η/[1−(1−η)^{d+1}]。Bernoulli界1−dη/2≤κ≤1给dη→0的极限；η=a/d时(1−a/d)^{d+1}→e^(−a)，故1/κ→a/(1−e^(−a))。η=0按连续值理解；无任何可用占用资源时可动费用全零。",
+  "scope": "数值右和只用来评估真实的一格删除区间。占用份额包含背景和自身，须遍历全部合法占用态，不能用潜在用户质量或只查一个候选态替代。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/右端离散面积的网格误差与最优采样--定理.md",
+      "sha256": "cbdb0a71ada8f10a75ac76a1e98f0eac7c604e3a20ab89a52a661344f61ea0bf"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/真实删除效率的积分势与小原子保证--定理.md",
+      "sha256": "be1b4220f6fb63f78306201bd3a1c0f11f98b82d7a0e15b645731df51a49c48f",
+      "section": "完整势差推导"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/真实删除效率的积分势与小原子保证--定理.md",
+      "sha256": "be1b4220f6fb63f78306201bd3a1c0f11f98b82d7a0e15b645731df51a49c48f",
+      "section": "模型、精确量词和正向结论"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/真实删除效率的积分势与小原子保证--定理.md",
+      "sha256": "be1b4220f6fb63f78306201bd3a1c0f11f98b82d7a0e15b645731df51a49c48f",
+      "section": "尺度、锐性范围与失败边界"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对单格端点与实际删除负载、非负混合、全部真实偏离和零费用边界，及两个渐近缩放。",
+  "whole_result": "在所列全部真实小原子份额条件下，给同一积分势所有局部最小点的ρ_d(η)-PNE和全部严格ρ_d(η)改善有限终止，并得到两个登记极限。",
+  "endpoint_pins": {
+    "WC-ACTUAL-SMALL-SHARE-INTEGRAL-POTENTIAL-v1": "1d808e720cc9bda4484739a33c6760b3a0a35d400cfb85b9e2a39a57339d1a35",
+    "weighted-congestion/actual-deletion-efficiency-integral-potential": "35cd0a981bddfbc79fd138c1cd1460f7fe71e54b03b17a90cb017002f37c6b2f",
+    "weighted-congestion/right-endpoint-area-quadrature": "dd1d43cf35fee099fb6bf65dc1f2c35ac35504fc1a23893a14d5d61c6892d44f"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/右端离散面积的网格误差与最优采样--定理.md": "cbdb0a71ada8f10a75ac76a1e98f0eac7c604e3a20ab89a52a661344f61ea0bf",
+    "archives/weighted-congestion/state/定理/真实删除效率的积分势与小原子保证--定理.md": "be1b4220f6fb63f78306201bd3a1c0f11f98b82d7a0e15b645731df51a49c48f"
+  },
+  "review_digest": "a23e46bb155fc4446758e6bafa1143ba27dfa3269abe46b8485b9aa1c4fc0c4d"
+}

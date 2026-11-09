@@ -1,0 +1,45 @@
+{
+  "edge_id": "wc-3a-clock-sweep-gives-fixed-scale-negative-cycle",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-CLASS-INTERNAL-CLOCK-FRONT-OBSTRUCTION-v1"
+  ],
+  "target_ids": [
+    "weighted-congestion/fixed-scale-graph-potential-cycle-threshold"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "严格双扫反例的原12玩家、24资源、八次基体，α=21/20，使用其完整真实单人偏离图。任取对每玩家固定的正尺度h_i。",
+  "roles": {
+    "WC-CLASS-INTERNAL-CLOCK-FRONT-OBSTRUCTION-v1": "同序两扫的24条真实边均有严格α-margin>3/40，第二扫回原状态。",
+    "weighted-congestion/fixed-scale-graph-potential-cycle-threshold": "将同一图中每条有标签边转为预算b=h_i(α C_i(new)−C_i(old))，以闭圈判差分势可行。"
+  },
+  "explanation": "保留逐人mover标签，原报告的两轮同序翻位路径是闭圈Γ。每边预算<−(3/40)h_i；每名玩家两次移动，ΣΓ b<−(3/20)Σ_i h_i<0，故对每个固定h均不可行。实际每人新旧费用为正，B_Γ>0，圈比A_Γ/B_Γ=21/20−ΣΓ b/B_Γ>21/20，因此固定h的全图阈值至少此圈比。相位(0,4,0)的六条保前沿端点稳定及两条离前沿严格改善是同一原游戏的另一事实，均无需用来组成Γ。",
+  "scope": "真实完整图的一个负圈和阈值严格下界；六条端点不是全偏离，且此证明只用原基体，不假定追加clock以后保环。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/反例/严格双扫环的不同步稳定前沿--反例.md",
+      "sha256": "73b56bd164a0606141655f111ff2e40f797a2a140dadb3acf62199416ba12f4d"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/固定玩家尺度图势的圈比阈值--定理.md",
+      "sha256": "994e0040a4f753076e18dedaf06b4b52368aa0b11cde407e844c4ab7eae6c4ac"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐资源用Fraction独立重算24条原环边的严格margin及正的偏离后费用，另核六个端点和两名内部clone；保留每人恰两次移动并核负预算对每组正h均成立。",
+  "contribution": {
+    "result": "在该12玩家实例，任何正固定h于α=21/20均有显式负预算圈，因而无该类全状态差分势，且α_h>21/20。",
+    "remaining": "其余简单圈仍可能给更高圈比，故未算出α_h的精确数值。负圈也不回答原游戏有没有α-PNE。"
+  },
+  "endpoint_pins": {
+    "WC-CLASS-INTERNAL-CLOCK-FRONT-OBSTRUCTION-v1": "431364a106fcc79ca38944f83ff661368e92a00bdc1892d065824b852f188f31",
+    "weighted-congestion/fixed-scale-graph-potential-cycle-threshold": "8f9df33785ef3b7afa02f41eb71a1cef67db68e706719278c4fe12282a93e4be"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/反例/严格双扫环的不同步稳定前沿--反例.md": "73b56bd164a0606141655f111ff2e40f797a2a140dadb3acf62199416ba12f4d",
+    "archives/weighted-congestion/state/定理/固定玩家尺度图势的圈比阈值--定理.md": "994e0040a4f753076e18dedaf06b4b52368aa0b11cde407e844c4ab7eae6c4ac"
+  },
+  "review_digest": "a371fb938ba19f31817cd5891c59ad980f0b67480c49154e8fca8102775ce8f0"
+}

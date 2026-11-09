@@ -1,0 +1,51 @@
+{
+  "edge_id": "wc-3a-sorted-side-bounds-asymmetric-two-attacks",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-HETEROGENEOUS-HUB-SORTED-SIDE-v2"
+  ],
+  "target_ids": [
+    "weighted-congestion/asymmetric-two-column-complementary-two-attack-certificate"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "异权双列模型保留原主费x^k、各自卫星费β_i x^d、w_i>0及独立动作；取最高次数D=max{k,d}≥2。定义τ_L为各轻玩家所列L_i括号左项与右括号的比的最小值，分母因W>0为正。",
+  "roles": {
+    "WC-HETEROGENEOUS-HUB-SORTED-SIDE-v2": "在ατ≥D、UFhet_τ且R=K=1时给所有反位局部最小点的α-PNE。",
+    "weighted-congestion/asymmetric-two-column-complementary-two-attack-certificate": "异权一主及每light私有卫星的严格H和L_i是所比较的全态充分证书。"
+  },
+  "explanation": "把整列主玩家作为唯一hub，a=1，F=x^k；每个卫星pair视为side j=i，H_j={hub}、L_j={light i}、G_j=β_i x^d，故A_j=U_j=1、T_j=w_i、W=Σw_i、R=K=1。UFhet_τ的精确式是L_i的同一两端换成弱τ，因此所有严格L_i给τ_L>α且允许τ=τ_L。全反位时两个互补hub标签的E_het相同，二者皆为单hub局部最小点。若ατ_L≥D，新定理使两态稳定；在这种态H恰是hub真实α偏离，不能严格成立。于是完整严格证书须ατ_L<D，特别α²<D。",
+  "scope": "只限制给定严格H/L证书的可行域；允许零β_i和任意正w_i，不需要轻权相同。D=1未调用异权定理，完整拓扑的必要性也不由该比较取得。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/局部异权共享侧资源的排序势乘积预算--定理.md",
+      "sha256": "836aefe187cdff8b97074ce328f4af43a8600be2a7f8e4b9ca8f9929a5160e72"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/跨源共享侧资源的重置增量乘积预算--定理.md",
+      "sha256": "de331c8c8a94552d1cd3cd4d5180ad169fa3543af59b424df03a5e53c77ba81c",
+      "section": "源主增量引理"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/异权双列互补资源的两攻击证书--定理.md",
+      "sha256": "d0397129e0c5598f9d782bc4814217ca805faad9b72aa466f09b9eb0b1d0539a"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核对互补卫星和唯一源的资源对应，尤其UF右端是全source主负载与单light侧负载。反位状态仍按冻结他人的原hub偏离检验。",
+  "contribution": {
+    "result": "在D≥2时，H及全部L_i能严格成立的必要条件是ατ_L<D，因此α≥√D时该双攻击证书不可行。",
+    "remaining": "精确可行阈值、充分证书在整个异权拓扑中的必要性，以及低于界时的可行参数优化仍需另证。"
+  },
+  "endpoint_pins": {
+    "WC-HETEROGENEOUS-HUB-SORTED-SIDE-v2": "1c3383e59080e8923fe2ad2cd6af83dcbde299a7628542f8abb0b51897ee5e22",
+    "weighted-congestion/asymmetric-two-column-complementary-two-attack-certificate": "022d90e5a88751b2a5b4009add4ef388bc46a4af498f37430c89221215911e0d"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/局部异权共享侧资源的排序势乘积预算--定理.md": "836aefe187cdff8b97074ce328f4af43a8600be2a7f8e4b9ca8f9929a5160e72",
+    "archives/weighted-congestion/state/定理/跨源共享侧资源的重置增量乘积预算--定理.md": "de331c8c8a94552d1cd3cd4d5180ad169fa3543af59b424df03a5e53c77ba81c",
+    "archives/weighted-congestion/state/定理/异权双列互补资源的两攻击证书--定理.md": "d0397129e0c5598f9d782bc4814217ca805faad9b72aa466f09b9eb0b1d0539a"
+  },
+  "review_digest": "aed62df772e6332b913bd425f4fe127cd6e7d19dccd2be7537f7da47d3a6fcdd"
+}

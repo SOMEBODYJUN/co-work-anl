@@ -1,0 +1,53 @@
+{
+  "edge_id": "um-0195479a-config-independent-retention",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-8dec531708464aaa87be325982ae38fc"
+  ],
+  "target_ids": [
+    "M-50c2c45b506146c4877862acc3a258be"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "给定可行等式覆盖CONFIG(T)的一组有限支撑y_i，局部配置是合法0/1子集，逐任务列和恰一。独立采样后允许删去重复副本和未覆盖任务。",
+  "roles": {
+    "M-8dec531708464aaa87be325982ae38fc": "把合法的每机配置凸组合与逐任务列覆盖一起交给独立采样。",
+    "M-50c2c45b506146c4877862acc3a258be": "完整双标准还需大边匹配、小边贪心和数量优化。"
+  },
+  "explanation": "对任意任务j令x_ij=Σ_{C含j}y_iC，独立从每行y_i取一配置。未覆盖概率Π_i(1−x_ij)≤exp(−Σ_i x_ij)=e^(−1)。每个重复任务只保一个真实端，每机剩余任务仍为抽中配置的子集，故峰≤T。对全部任务用线性期望。配置投影的逐行凸性给出采样合同，不要求不同机器配置事先全局不交。Markov坏态展示的是要求保全部任务时冻结导致的冲突，DGR子步骤明确允许丢弃未覆盖任务。",
+  "scope": "给定配置证书时的一次随机局部舍入保证；保留比例是期望，峰T对每个输出成立。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/配置LP在图平衡及不相关机中的间隙--资源.md",
+      "sha256": "0fcfc44edf52bb6f1d0bf459c9847540342f55c9f4d681588f32670d1c64de26",
+      "section": "配置松弛、单机凸包与局部切割"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/Davies-Guruswami-Ren受限拒绝双标准--资料.md",
+      "sha256": "fe965bdbfc10b9a3bfe9cdae6eb50227937df375fd1980a0978fdb9c4e3ce90f",
+      "section": "3. Makespan 的 (0.6533,1.5) 算法"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-tree-matching-and-configuration-primary/comparison/research/current/unrelated_machines/tree_markov_completion.md",
+      "sha256": "73628429e0c9773a3cfc083a8b3d87ef3b20004a583df6f5dce2492309a31817",
+      "section": "3. 再耦合产生的四个态"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按本批固定正文、承重原件与端点身份核对量词、变量对应和适用域。",
+  "contribution": {
+    "result": "从显式等式覆盖CONFIG(T)证书得到实际峰≤T、期望保留至少(1−1/e)n个原任务的子调度。",
+    "remaining": "完整(6e−5)/(6e+1)比例还要大边最大匹配的m*候选、从可行源取(n−m*)/6小边前缀，在剩余容量上用配置舍入，并核对生产算法取得所需证书的位复杂度。"
+  },
+  "endpoint_pins": {
+    "M-50c2c45b506146c4877862acc3a258be": "cd2879e51939280f5acf657df52aaca159d1f39b723d73c265cecc4eabc032e5",
+    "M-8dec531708464aaa87be325982ae38fc": "6e4c72c1c0ced384bcb18335e603bb25356f27d1e46ca793abdd4ed08bad883b"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/配置LP在图平衡及不相关机中的间隙--资源.md": "0fcfc44edf52bb6f1d0bf459c9847540342f55c9f4d681588f32670d1c64de26",
+    "archives/unrelated-machines/state/资源/Davies-Guruswami-Ren受限拒绝双标准--资料.md": "fe965bdbfc10b9a3bfe9cdae6eb50227937df375fd1980a0978fdb9c4e3ce90f",
+    "archives/unrelated-machines/tools/evidence/um-tree-matching-and-configuration-primary/comparison/research/current/unrelated_machines/tree_markov_completion.md": "73628429e0c9773a3cfc083a8b3d87ef3b20004a583df6f5dce2492309a31817"
+  },
+  "review_digest": "6386dc98c90468a3ef4d25225bd4cd83caa8c6284eeebc563889afe9a181041d"
+}

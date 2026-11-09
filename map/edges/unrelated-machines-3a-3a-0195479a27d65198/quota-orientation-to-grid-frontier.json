@@ -1,0 +1,57 @@
+{
+  "edge_id": "um-0195479a-quota-orientation-to-grid-frontier",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-TWO-STATE-QUOTA-HALL-CUT-v1",
+    "UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1"
+  ],
+  "target_ids": [
+    "UM-TWO-STATE-POOL-EXACT-FRONTIER-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "显式s×s单位网格，整数s≥1、K≥s；根需2s，每个变量需1，真实标签需求K；每行和每列分别作为一个不同变量的真实rail，另一rail可取空邻域，对正δ不可选。",
+  "roles": {
+    "UM-TWO-STATE-QUOTA-HALL-CUT-v1": "固定选集的配额与逐子集Hall判据，资源度二含指向未选标签的边界。",
+    "UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1": "把选变量、给rail、全局不交支付转换为真实树阈值。",
+    "UM-TWO-STATE-POOL-EXACT-FRONTIER-v1": "在行列对称结构下可精确优化选集及配额，纠正旧锐性。"
+  },
+  "explanation": "选a行b列，对其中u行v列，邻域s(u+v)−uv；uv/(u+v)随两坐标不减，最强Hall式在全选集，统一最大t=floor(s−ab/(a+b))。固定k=a+b，在0≤a,b≤s中取最小ab，得到h_k=min(s,floor(s²/k))。也可对k>s选全行及k−s列，各列循环领t=floor(s²/k)格，每行被占≤ceil((k−s)t/s)≤s−t，余格逐行补足。方向等价把k,t读为min(k/(2s),t/K)，枚举2s个k给前沿。K≥2s取全行达s/K；2s−2≤K<2s时k≤s根比≤1/2、k>s有h_k≤s−1≤K/2，全行达1/2；s≤K<2s−2取k=s+1使两比例严格过半。s=K=4，k=5配额3达5/8，k≥6不能让每标签均取3格，故该值最优。",
+  "scope": "行列池可裁剪、可部分支付，空选择值0。固定方向失败仅否该方向；此处可重选优化依赖网格对称。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/两状态配额Hall切与方向义务双源审查--审查.md",
+      "sha256": "3191cef6678c1888d1bebc5c4a3f93b4021f3831f7b8e7d95434c9415a2c6e95",
+      "section": "1. 精确对象和等价条件"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/两状态配额Hall切与方向义务双源审查--审查.md",
+      "sha256": "3191cef6678c1888d1bebc5c4a3f93b4021f3831f7b8e7d95434c9415a2c6e95",
+      "section": "4. 残余模型和 orientation"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/行列残余池的匹配与三路独立核验--资源.md",
+      "sha256": "d52d2326acd36bd9c2a380ca39769da19b10f9652e337b3220eda3e95cc36290",
+      "section": "精确值为何成立"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/行列残余池的匹配与三路独立核验--资源.md",
+      "sha256": "d52d2326acd36bd9c2a380ca39769da19b10f9652e337b3220eda3e95cc36290",
+      "section": "selected-set 克隆槽规范审计"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按本批固定正文、承重原件与端点身份核对量词、变量对应和适用域。",
+  "whole_result": "在该显式网格中由固定Hall与根树方向等价得到固定选集t_ab、可重选h_k及精确b*=max_k min(k/(2s),h_k/K)，并确立旧min(1/2,s/K)的准确域K≥2s−2以及s=K=4的5/8。",
+  "endpoint_pins": {
+    "UM-TWO-STATE-POOL-EXACT-FRONTIER-v1": "28a6942a893678c7e417ae3ee63b511c34cbbbf0aef9624c9955fedac6e1d4a3",
+    "UM-TWO-STATE-QUOTA-HALL-CUT-v1": "cabf8f30a9c7d5c2cae9655e2c5324133f81559ba2bcba2fcb78cfe0b7a240bc",
+    "UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1": "879ac79d8df789338c1de4f06570b371821d9a606c4016d84bf95a4ad85e0fe9"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/两状态配额Hall切与方向义务双源审查--审查.md": "3191cef6678c1888d1bebc5c4a3f93b4021f3831f7b8e7d95434c9415a2c6e95",
+    "archives/unrelated-machines/state/资源/行列残余池的匹配与三路独立核验--资源.md": "d52d2326acd36bd9c2a380ca39769da19b10f9652e337b3220eda3e95cc36290"
+  },
+  "review_digest": "412778b9e2673c6d86b4f13d79b5474e9236a454b304c8565eb0188b42f8e72d"
+}

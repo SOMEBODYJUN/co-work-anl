@@ -1,0 +1,51 @@
+{
+  "edge_id": "um-0195479a-tree-valuation-global-xos",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-PRIVATE-TREE-Q-VALUATION-v1",
+    "UM-TREE-Q-XOS-ENVELOPE-v1"
+  ],
+  "target_ids": [
+    "UM-PRIVATE-TREE-GLOBAL-XOS-LOSS-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "显式非空状态族，共同k,h≥1，每个state内叶到U单射，跨态任意共享；minorant约束量化所有子集。",
+  "roles": {
+    "UM-PRIVATE-TREE-Q-VALUATION-v1": "用值DP/回溯找到达到r=f(S)的state和真实同深r叉树。",
+    "UM-TREE-Q-XOS-ENVELOPE-v1": "为任何分叉参数r给uniform全域minorant及单状态全叶等号。",
+    "UM-PRIVATE-TREE-GLOBAL-XOS-LOSS-v1": "把局部树支持嵌入多状态f并保逐点锐因子和实际有理输出。"
+  },
+  "explanation": "r=0返零。否则选中实际r叉深h树T′的r^h个不同资源，均在S内，仅这些资源赋1/[r^h−(r−1)^h]。任意B上由单树uniform式给w(B)≤q_T′(B∩L′)≤q_a(B)≤f(B)，中间因T′任一真正同深子树仍是原树子树。目标权重r/G(r,h)，而G(d,h)=Σ_{j=0}^{h−1}(1−1/d)^j对整数d不减且r≤k，故至少f(S)/G(k,h)。全叶单态给反向等号；分母位长O(hlog(r+1))，逐state回溯按显式总位长多项式。",
+  "scope": "逐点构造全域有效加性支持，含跨state共享、k=1/h=1和空目标；固定参数统一因子锐。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/分叉树估值与单状态支持多面体--定理.md",
+      "sha256": "1269318f583984d08b2b1f54b1f3f4831cb77c3713ab90b44d499e8cdea8e8f4",
+      "section": "3. 带任意有理价格的精确demand"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分叉树估值与单状态支持多面体--定理.md",
+      "sha256": "1269318f583984d08b2b1f54b1f3f4831cb77c3713ab90b44d499e8cdea8e8f4",
+      "section": "4. 全叶XOS包络的精确值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分叉树估值与单状态支持多面体--定理.md",
+      "sha256": "1269318f583984d08b2b1f54b1f3f4831cb77c3713ab90b44d499e8cdea8e8f4",
+      "section": "任意资源集合的锐XOS损失与实际支持构造"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按本批固定正文、承重原件与端点身份核对量词、变量对应和适用域。",
+  "whole_result": "联合得到多状态f上任意指定S的实际有理全域minorant w，w(S)≥f(S)/G(k,h)，从而f(S)/G≤E_f(S)≤f(S)；每固定(k,h)的统一因子由单状态全叶例达到，支持可确定性位多项式构造。",
+  "endpoint_pins": {
+    "UM-PRIVATE-TREE-GLOBAL-XOS-LOSS-v1": "a85de97ad64f77b573407a55e0249f5d39b97bfb4eacd0cca577120f34edee67",
+    "UM-PRIVATE-TREE-Q-VALUATION-v1": "5ba8e192bbdbc159a36e27f74b5d4ec618aee3e020c3352139c1f7fc19c8ecbe",
+    "UM-TREE-Q-XOS-ENVELOPE-v1": "d2b7fd1dc2b1f46746bc4085dd38c86e5283d7ba75570b965c25b72be810b31b"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/分叉树估值与单状态支持多面体--定理.md": "1269318f583984d08b2b1f54b1f3f4831cb77c3713ab90b44d499e8cdea8e8f4"
+  },
+  "review_digest": "b48970dd02711d744e1a8d6f7535a7aae0464a7cb895967afe0a91bc8702b6bc"
+}

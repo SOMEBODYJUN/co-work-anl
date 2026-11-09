@@ -1,0 +1,52 @@
+{
+  "edge_id": "wc-stage3a-tree-quotes-discharge-frozen-module-hypotheses",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "wc-one-player-tree-private-lift"
+  ],
+  "target_ids": [
+    "weighted-congestion/one-root-frozen-module-lift"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "附属潜在二部图为森林，每分量至多接一个保留玩家；非负非减费用。无根分量独立固定精确均衡。",
+  "roles": {
+    "wc-one-player-tree-private-lift": "每个根边有两 bit 精确稳定延续及当前报价/冻结进入下界。",
+    "weighted-congestion/one-root-frozen-module-lift": "一般模块接口用 q_M(a) 与逐根偏离冻结成本 D_M(a,b)；可含环但需证书。"
+  },
+  "explanation": "按根边分支对每个根原动作 a 选择对应 bit 的延续。根在模块上的当前费为被 a 使用的边报价之和 q_M(a)。对偏离 b，a、b 均使用的边保持报价，新加入边冻结于未使用延续后费用 ≥报价，离开边付零，逐项相加得 D_M(a,b)≥q_M(b)。全部被删玩家 β=1 稳定。每原动作私有标记表示同一总报价，避免只投影核心导致动作合并。",
+  "scope": "挂树给一般报价接口的有证特例；同一 lift 对全部 α≥1 且 β=1。没有证明任意有环模块都存在这张表。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/归约/单核心挂树的私人成本提升--归约.md",
+      "sha256": "456b96fc3baea68a591e7deec3c327cf0f6a144016fc020fc3d96ba08308e454",
+      "section": "构造及逐状态证明"
+    },
+    {
+      "path": "archives/weighted-congestion/state/归约/单根模块的冻结报价与固定延续提升--归约.md",
+      "sha256": "ed30e3c941bf27844059c4985ba012b50059f4276d6d6b21c4ec1af183f3bb5f",
+      "section": "模块分解与完整合同"
+    },
+    {
+      "path": "archives/weighted-congestion/state/归约/单根模块的冻结报价与固定延续提升--归约.md",
+      "sha256": "ed30e3c941bf27844059c4985ba012b50059f4276d6d6b21c4ec1af183f3bb5f",
+      "section": "逐真实偏离证明"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按冻结正文复核模型、逐状态量词和承重计算；有限记录只佐证其中明示输入。",
+  "contribution": {
+    "result": "在附属森林域由逐边阈值构造全部原根动作的合法冻结报价表，因而兑现一般接口的 β=1 前件。",
+    "remaining": "一般模块（尤其有环）的每个动作稳定延续和交叉冻结报价仍需分别验证；不推出反向投影。"
+  },
+  "endpoint_pins": {
+    "wc-one-player-tree-private-lift": "1b165f7949ba989d4544be59766a4941571c8262e5975e8d32729f238e657c63",
+    "weighted-congestion/one-root-frozen-module-lift": "f1bffccced6e4a927b3f43ae0397d61e9853a5d006f2d9923a413703727d2056"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/归约/单核心挂树的私人成本提升--归约.md": "456b96fc3baea68a591e7deec3c327cf0f6a144016fc020fc3d96ba08308e454",
+    "archives/weighted-congestion/state/归约/单根模块的冻结报价与固定延续提升--归约.md": "ed30e3c941bf27844059c4985ba012b50059f4276d6d6b21c4ec1af183f3bb5f"
+  },
+  "review_digest": "43868187fa8045fc91e010fe4b8c669847f9583a7fa9112b15ccdcac073d840a"
+}

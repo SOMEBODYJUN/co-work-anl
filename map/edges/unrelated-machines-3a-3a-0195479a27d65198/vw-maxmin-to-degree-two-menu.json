@@ -1,0 +1,59 @@
+{
+  "edge_id": "um-0195479a-vw-maxmin-to-degree-two-menu",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-VW2010-THEOREM12-BACKEND-PRECHECK-v1"
+  ],
+  "target_ids": [
+    "UM-DEGREE-TWO-BOUNDED-MENU-JOINT-ROUNDING-v2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "非空显式groups、每组非空indexed state菜单、非负二进制有理p、W≤1、resource端unit、private机器独占；每resource跨至多两组，完整原矩阵及结构给定。",
+  "roles": {
+    "UM-VW2010-THEOREM12-BACKEND-PRECHECK-v1": "确定性位多项式输出每加性玩家价值至少其整数MaxMin最优的一半；成功与失败保持单侧阈值语义。",
+    "UM-DEGREE-TWO-BOUNDED-MENU-JOINT-ROUNDING-v2": "用W=1的真实UM/XOS恒等、平均加性桥、最优保持bonus与实际全任务回填迁移后端。"
+  },
+  "explanation": "每个W<1的state加独占unit出口的bonus incidence，私有权1−W。删bonus可收回原调度；任一原调度峰≥1，bonus全部送各自独占资源可等峰扩展，包括未选态。故OPT不变。归一后，给不交资源集合B_g，选最大a_gs(B_g)态并仅导出选中态的对应incidence，selector加剩余private峰为2−a_gs(B_g)，未选态全留。反向从峰<2读各selector态及实际unit导出的不交资源；OPT=2对应V=0。得到OPT=2−V。定义v_g(u)=Σ_s p_gsu/K_g，每resource正支持≤2，每组有f_g(B)/K≤v_g(B)≤f_g(B)。VW所得完整分配每组v_g≥V/(2K)，按组取最大态、回填原任务后删bonus。OPT≥1给两种负载界的比较。后端以清分母后位长二分，只用拒绝推出OPT<T，保存实际成功分配，不要求成功判词单调。",
+  "scope": "只用于显式二度结构菜单。K增长仍位多项式；固定K时有统一正改进。空/零/重复state和零支持资源按原合同处理。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/VW2010 Theorem12双端价值后端与新桥接口预核--审查.md",
+      "sha256": "fbbe4ca060d00910f3679c128355a9427adc6e887bdfa0890ad51d2ba023bb81",
+      "section": "2. Theorem 12 的精确语义"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/VW2010 Theorem12双端价值后端与新桥接口预核--审查.md",
+      "sha256": "fbbe4ca060d00910f3679c128355a9427adc6e887bdfa0890ad51d2ba023bb81",
+      "section": "5. 二分、整数化与位复杂度"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/笛卡尔分块一致性与二度菜单联合取整双源审查--审查.md",
+      "sha256": "36d607e8a6c0b60893c29cc66f1a107bcac427cb25e4b71d1b469156c38309bc",
+      "section": "8. 归一化菜单的真实 UM/XOS 恒等式"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/笛卡尔分块一致性与二度菜单联合取整双源审查--审查.md",
+      "sha256": "36d607e8a6c0b60893c29cc66f1a107bcac427cb25e4b71d1b469156c38309bc",
+      "section": "9. 辅助平均、二度 MaxMin 和实际保证"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/笛卡尔分块一致性与二度菜单联合取整双源审查--审查.md",
+      "sha256": "36d607e8a6c0b60893c29cc66f1a107bcac427cb25e4b71d1b469156c38309bc",
+      "section": "10. W<1 的精确保 OPT 归一化"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按本批固定正文、承重原件与端点身份核对量词、变量对应和适用域。",
+  "whole_result": "把双正价值端加性MaxMin二近似迁入所有所述显式度二菜单，构造确定性位多项式全任务调度 Cmax≤2−(2−OPT)/(2K)≤(2−1/(2K))OPT，输入不需OPT、最优态或YES见证。",
+  "endpoint_pins": {
+    "UM-DEGREE-TWO-BOUNDED-MENU-JOINT-ROUNDING-v2": "93425906de31854b445fa525b7e186d4c83d9d3e9d7c12c794204fc51baa89fc",
+    "UM-VW2010-THEOREM12-BACKEND-PRECHECK-v1": "16a2920abfebbaed76d2492aee350d1b801fcfe5eb40c65c9a4f33ddddb02584"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/VW2010 Theorem12双端价值后端与新桥接口预核--审查.md": "fbbe4ca060d00910f3679c128355a9427adc6e887bdfa0890ad51d2ba023bb81",
+    "archives/unrelated-machines/state/审查/笛卡尔分块一致性与二度菜单联合取整双源审查--审查.md": "36d607e8a6c0b60893c29cc66f1a107bcac427cb25e4b71d1b469156c38309bc"
+  },
+  "review_digest": "96be1d539467a3a9c739f97150b6aa06350c62573a6cc38d3c70995a50c1845e"
+}

@@ -1,0 +1,46 @@
+{
+  "edge_id": "wc-3a-deletion-efficiency-calibrates-full-graph-potential",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/actual-deletion-efficiency-integral-potential"
+  ],
+  "target_ids": [
+    "weighted-congestion/fixed-scale-graph-potential-cycle-threshold"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取有限原游戏全部真实单人偏离图，固定0<κ≤1，并满足一般真实删除效率定理的统一下界或逐状态当前总费用加权下界。",
+  "roles": {
+    "weighted-congestion/actual-deletion-efficiency-integral-potential": "给同一积分势对每条真实偏离的统一不等式ΔΦ≤w_i[C_i(new)−κ C_i(old)]。",
+    "weighted-congestion/fixed-scale-graph-potential-cycle-threshold": "接受同一图上每个玩家固定尺度h_i>0及倍率α的全边差分势证书。"
+  },
+  "explanation": "固定α=1/κ、h_i=κ w_i。删除势差式对每条真实边逐项就是ΔΦ≤h_i[α C_i(new)−C_i(old)]，且h_i与资源和状态无关。沿任意圈望远镜得Σb≥0，故这一h的阈值α_h≤1/κ；由于任一边的新费用非负，同一Φ对全部α≥1/κ也满足预算。",
+  "scope": "是全图差分接口的一族可行证书，保完整原动作和固定玩家尺度。允许费用加权删除条件，零当前费用项由原势差式直接覆盖。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/真实删除效率的积分势与小原子保证--定理.md",
+      "sha256": "be1b4220f6fb63f78306201bd3a1c0f11f98b82d7a0e15b645731df51a49c48f",
+      "section": "完整势差推导"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/固定玩家尺度图势的圈比阈值--定理.md",
+      "sha256": "994e0040a4f753076e18dedaf06b4b52368aa0b11cde407e844c4ab7eae6c4ac"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对尺度乘κ的方向、共同资源回填和完整原偏离上零费用的合法性。",
+  "contribution": {
+    "result": "真实删除效率假设给出显式全状态φ=Φ、固定尺度h_i=κw_i及可行倍率α=1/κ，因此不存在负预算圈且α_h≤1/κ。",
+    "remaining": "该充分证书不计算α_h的精确圈比，也不识别任意图上可行的全部玩家尺度。"
+  },
+  "endpoint_pins": {
+    "weighted-congestion/actual-deletion-efficiency-integral-potential": "35cd0a981bddfbc79fd138c1cd1460f7fe71e54b03b17a90cb017002f37c6b2f",
+    "weighted-congestion/fixed-scale-graph-potential-cycle-threshold": "8f9df33785ef3b7afa02f41eb71a1cef67db68e706719278c4fe12282a93e4be"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/真实删除效率的积分势与小原子保证--定理.md": "be1b4220f6fb63f78306201bd3a1c0f11f98b82d7a0e15b645731df51a49c48f",
+    "archives/weighted-congestion/state/定理/固定玩家尺度图势的圈比阈值--定理.md": "994e0040a4f753076e18dedaf06b4b52368aa0b11cde407e844c4ab7eae6c4ac"
+  },
+  "review_digest": "dca03711604be6e847d48c5f0185e80a93e6f9dd7df6bb4ef84e51d9a5c6a5eb"
+}

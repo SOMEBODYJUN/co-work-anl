@@ -1,0 +1,52 @@
+{
+  "edge_id": "wc-stage3a-reset-and-scalar-squeeze-pay-old-envelope",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/odd-ring-reset-envelope-second-order",
+    "OC-AMPLIFIER-v1"
+  ],
+  "target_ids": [
+    "OC-AMPLIFIER-ENVELOPE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "每个整数 d≥2，0<t<1；有限 reset 实例需 1<α<H_d(t) 的严格余量。标量用实数参数。",
+  "roles": {
+    "weighted-congestion/odd-ring-reset-envelope-second-order": "给 E_d<H_d(t_d) 及内部取得的 U_d、指数窄夹逼和二阶式。",
+    "OC-AMPLIFIER-v1": "把严格低于 H_d(t) 的 α 实现为有限合法全态反例。",
+    "OC-AMPLIFIER-ENVELOPE-v1": "原有限 E_d 非存在与一阶包络记录。"
+  },
+  "explanation": "t_d=d^(1/(d+1))−1∈(0,1)，g 的正修正给 1<E_d<H_d(t_d)。以 α=E_d 直接调用有限 reset 构造，得到每个 d 一个真实无 E_d-PNE 实例；不通过逼近 U_d 取得端点。标量严格夹逼给 E_d<U_d<E_d+2^(−d)，二阶式蕴含 E_d∼d/ln d。",
+  "scope": "原 reset 下界机制的全结论；U_d 在标量 t 中取到不蕴含有一个有限游戏在 U_d 无均衡。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/奇环放大包络的二阶渐近--定理.md",
+      "sha256": "58f63d8fef6703168f87ffea7955b48fb8cc329865852cd1456e96a9e8cf9fea",
+      "section": "有限次数的完整夹逼"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/奇环放大包络的二阶渐近--定理.md",
+      "sha256": "58f63d8fef6703168f87ffea7955b48fb8cc329865852cd1456e96a9e8cf9fea",
+      "section": "一般二阶展开"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/奇环线性重置的有限参数下界--定理.md",
+      "sha256": "d4051f72542451e5011cfce6fe2879ee2bfc2c914bfa9021ec62c1e32e458521",
+      "section": "可达到的严格阈值及有限选择"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按冻结正文复核模型、逐状态量词和承重计算；有限记录只佐证其中明示输入。",
+  "whole_result": "两联合前提给每个 d≥2 的有限无 E_d-PNE 实例、E_d>1、严格 E_d<U_d<E_d+2^(−d) 及 E_d∼d/ln d，因而全类阈值至少 E_d。",
+  "endpoint_pins": {
+    "OC-AMPLIFIER-ENVELOPE-v1": "2896dbf17f9d62d49a7e165b8e2a856a65e02f8fe29069361c6ee94660831baa",
+    "OC-AMPLIFIER-v1": "c10a0b52906ebf2713b4e73820ee44397f9a62ec85effbd4d47c7ea38775f86d",
+    "weighted-congestion/odd-ring-reset-envelope-second-order": "06e1332a7902281b1ac97caa0d51a0ae82604f5f85174989dd9447c7cec2f83e"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/奇环放大包络的二阶渐近--定理.md": "58f63d8fef6703168f87ffea7955b48fb8cc329865852cd1456e96a9e8cf9fea",
+    "archives/weighted-congestion/state/定理/奇环线性重置的有限参数下界--定理.md": "d4051f72542451e5011cfce6fe2879ee2bfc2c914bfa9021ec62c1e32e458521"
+  },
+  "review_digest": "eeb70c02f8f457e0060e00a2383ff7fb4d4b2efd5b2acec228e0328f21ce46ba"
+}

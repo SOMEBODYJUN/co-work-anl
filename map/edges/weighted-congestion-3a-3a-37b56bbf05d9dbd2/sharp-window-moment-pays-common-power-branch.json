@@ -1,0 +1,57 @@
+{
+  "edge_id": "wc-stage3a-sharp-window-moment-pays-common-power-branch",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R2-DENSITY-MOMENT"
+  ],
+  "target_ids": [
+    "WC-R2-RESOURCE-POWER-BRIDGE"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "每资源取固定的潜在用户半开窗重数 K_e；任意共同 R>1 与 0<p<1；有限正权、非负多项式费用。",
+  "roles": {
+    "WC-R2-DENSITY-MOMENT": "相同半开窗口、重数、上确界锐性，允许按加入者权归一。",
+    "WC-R2-RESOURCE-POWER-BRIDGE": "提供幂矩分支与降序分支共同尺度的更强逐资源界。"
+  },
+  "explanation": "在 Ψ_e^P(J)=(∑_J w_j^p)c_e(W) 中精确插入边际为 v^p c_e(W+v)+(∑_J w_j^p)[c_e(W+v)−c_e(W)]。第二项用窗口锐矩乘真实共享核；非负性给同一 v^p c_e(W+v) 下界，上界常数 1+A_R K_e^(1−p)H_d(p)。桥的尾和归纳给的是同一矩不等式；不视为另一个结论。",
+  "scope": "只交幂矩分支；降序分支必须用 m_e c_e(Y) 强下界并乘 M_e^p/m_e，逐资源静态选择且保持共同 p。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/引理/乘法权窗密度的锐幂矩--引理.md",
+      "sha256": "43c435eb211eb87560341b52aa6161e145db8b044b2611079aa52dd6f883f6e9",
+      "section": "半开端点给出的K链"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/资源幂矩与降序边际势的共同尺度桥--定理.md",
+      "sha256": "49ad923c7cb04046516270424c8e683d048dd99c939c00a0a5605130e1ad002c",
+      "section": "窗口打包的完整证明与锐常数"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/资源幂矩与降序边际势的共同尺度桥--定理.md",
+      "sha256": "49ad923c7cb04046516270424c8e683d048dd99c939c00a0a5605130e1ad002c",
+      "section": "幂矩势及核函数"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/资源幂矩与降序边际势的共同尺度桥--定理.md",
+      "sha256": "49ad923c7cb04046516270424c8e683d048dd99c939c00a0a5605130e1ad002c",
+      "section": "降序边际势与不可丢失的强下界"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按冻结正文复核模型、逐状态量词和承重计算；有限记录只佐证其中明示输入。",
+  "contribution": {
+    "result": "建立桥第二候选的同一玩家尺度双边夹逼，系数恰为 1+A_R K_e^(1−p)H_d(p)。",
+    "remaining": "仍需降序强下界与 Q_e 分支、静态取较小界、全偏离汇总和 κ_p 对 H_d 的严格界及渐近。"
+  },
+  "endpoint_pins": {
+    "WC-R2-DENSITY-MOMENT": "03a92ae56c28a1a4be362c7f3a5ad09242089b7c398090cb781fc672f01e4053",
+    "WC-R2-RESOURCE-POWER-BRIDGE": "c7895b86c7fbeaf3d8c4e57ca4f737571970edaf05620c0400ebae9e7a090fd8"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/引理/乘法权窗密度的锐幂矩--引理.md": "43c435eb211eb87560341b52aa6161e145db8b044b2611079aa52dd6f883f6e9",
+    "archives/weighted-congestion/state/定理/资源幂矩与降序边际势的共同尺度桥--定理.md": "49ad923c7cb04046516270424c8e683d048dd99c939c00a0a5605130e1ad002c"
+  },
+  "review_digest": "920d1a7e291561000d17f965af5ef7a4659f0158d1cb250240e7c8b016e9498b"
+}

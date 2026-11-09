@@ -1,0 +1,47 @@
+{
+  "edge_id": "wc-stage3a-degree-space-compresses-existing-selector-duals",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-DEGREE-LOCAL-COST-COMPRESSION-v1"
+  ],
+  "target_ids": [
+    "weighted-congestion/selector-local-moment-interface"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定正权、动作标签、次数 d、目标 α 与真实全状态选择器；已给定概率对偶，不预设每个选择器可行。",
+  "roles": {
+    "WC-DEGREE-LOCAL-COST-COMPRESSION-v1": "成本向量属于 D 维 categorical 张量空间 W，合法资源列均在其中。",
+    "weighted-congestion/selector-local-moment-interface": "把每条选中偏离看作 W 的线性泛函，并保全部允许资源列的概率期望。"
+  },
+  "explanation": "在 W 的基中每个状态的选中真实偏离 C_i(s)−αC_i(t_i,s_{−i}) 由 Ψ_h(s)∈R^D 表示。已有对偶若支持超过 D+1 态，取增广向量 (Ψ_h(s),1) 的非零线性关系，翻向后减去首个碰零的非负步长。总概率和全特征均值保持，故全部合法资源列期望保持，迭代得 ≤D+1 态。",
+  "scope": "保全部列的已存在对偶支撑，不以某一个游戏的压缩资源字典代替全列约束。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/有限次全成本空间与正资源压缩--定理.md",
+      "sha256": "ac5a9ce583b8196645e2c3694ab2722abd7492824c611540a6168bdd52b43660",
+      "section": "成本空间的精确维数"
+    },
+    {
+      "path": "archives/weighted-congestion/state/等价/低阶转移矩极锥与单移动者分离--等价.md",
+      "sha256": "cc5c7ff8f30c41f3e03091e272184569928cb59d7ff526172d0a31465f76b269",
+      "section": "精确凸包接口"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按冻结正文复核模型、逐状态量词和承重计算；有限记录只佐证其中明示输入。",
+  "contribution": {
+    "result": "由成本空间维数推出所有已有固定选择器概率对偶可压成至多 D+1 个状态，并保全允许资源的期望。",
+    "remaining": "完整目标还需负极锥相交等价、各原始非负矩测试及 α=1 单移动者的矩匹配和严格分离刻画。"
+  },
+  "endpoint_pins": {
+    "WC-DEGREE-LOCAL-COST-COMPRESSION-v1": "5b3ed480fbaefb0206f982627ac1ffe88c5d19b4e2ee688d8ad0715bca01271f",
+    "weighted-congestion/selector-local-moment-interface": "c99b07214091eea9205f7f810aa0771c63cfc5eea8805fb35c76921935fe2b17"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/有限次全成本空间与正资源压缩--定理.md": "ac5a9ce583b8196645e2c3694ab2722abd7492824c611540a6168bdd52b43660",
+    "archives/weighted-congestion/state/等价/低阶转移矩极锥与单移动者分离--等价.md": "cc5c7ff8f30c41f3e03091e272184569928cb59d7ff526172d0a31465f76b269"
+  },
+  "review_digest": "a8a174b7a4b8d1bb387fb00f296df1b6ae8893d55de61b42696ba77d52ef274c"
+}

@@ -1,0 +1,57 @@
+{
+  "edge_id": "wc-stage3a-reset-second-order-scalar-calibrates-cohort-threshold",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/odd-ring-reset-envelope-second-order"
+  ],
+  "target_ids": [
+    "WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "整数 d≥2。接收对象指定奇数单环、每个 cohort 内同权、同费副本、侧资源唯一 light 邻 next hub；任意实正权、非负次数≤d 多项式。",
+  "roles": {
+    "weighted-congestion/odd-ring-reset-envelope-second-order": "提供 H_d 在 t∈(0,1) 的二阶展开及有限严格夹逼。",
+    "WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2": "其独立真实状态证明识别 T_d 为精确最坏实际阈值。"
+  },
+  "explanation": "令 R=1/t，分子分母同乘 t^(d+1)，得 f_d(R)=H_d(t)；两参数开区间一一对应，所以 T_d=U_d。由此得到 T_d=d/(ln d+1)−1/2+o(1) 与 E_d<T_d<E_d+2^(−d)。进一步 E_d≤d/(1+ln d)，且 d/[ln d(1+ln d)]≥1/(d−1)>2^(−d)，故 T_d<d/ln d。",
+  "scope": "只计算目标的标量阈值和显式上包络；应用到实际最坏阈值使用接收对象另外完成的全状态证明。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/奇环放大包络的二阶渐近--定理.md",
+      "sha256": "58f63d8fef6703168f87ffea7955b48fb8cc329865852cd1456e96a9e8cf9fea",
+      "section": "一般二阶展开"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/奇环放大包络的二阶渐近--定理.md",
+      "sha256": "58f63d8fef6703168f87ffea7955b48fb8cc329865852cd1456e96a9e8cf9fea",
+      "section": "与后来实际拓扑阈值的精确身份关系"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的实际均衡阈值--定理.md",
+      "sha256": "be95074d21cb73e09b587ef9057e33fd7069383f2e185e46e98cc8a97569549d",
+      "section": "10.1 精确命题与范围"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的实际均衡阈值--定理.md",
+      "sha256": "be95074d21cb73e09b587ef9057e33fd7069383f2e185e46e98cc8a97569549d",
+      "section": "10.8 显式 (d/ln d) 子类上界"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按冻结正文复核模型、逐状态量词和承重计算；有限记录只佐证其中明示输入。",
+  "contribution": {
+    "result": "换元把指数窄夹逼和二阶式无损移给真实拓扑定理使用的 T_d，并给该式本身严格低于 d/ln d。",
+    "remaining": "T_d 是实际最坏阈值须另证每个游戏的 T_d-PNE（稳定计数、中央双标签及全 L/全 R）及每 α<T_d 的同拓扑下界。"
+  },
+  "endpoint_pins": {
+    "WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2": "d787206e9b5010b763e977d93acce3c0d7900cac5603f1ad6613ff2c6519d50f",
+    "weighted-congestion/odd-ring-reset-envelope-second-order": "06e1332a7902281b1ac97caa0d51a0ae82604f5f85174989dd9447c7cec2f83e"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/奇环放大包络的二阶渐近--定理.md": "58f63d8fef6703168f87ffea7955b48fb8cc329865852cd1456e96a9e8cf9fea",
+    "archives/weighted-congestion/state/定理/同权群组奇环的实际均衡阈值--定理.md": "be95074d21cb73e09b587ef9057e33fd7069383f2e185e46e98cc8a97569549d"
+  },
+  "review_digest": "d525820fe9c226801ef36b93029aaacb471aeabcf15d6b6ba78818d3be517d5d"
+}

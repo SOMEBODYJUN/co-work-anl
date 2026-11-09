@@ -1,0 +1,54 @@
+{
+  "edge_id": "um-0195479a-true-source-distortion-check",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/distorted-group-source-schedules-independent-joint-slot-replay"
+  ],
+  "target_ids": [
+    "UM-DISTORTED-GROUP-JOINT-SLOT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "有限输入有真实峰≤T原调度，宏全部相关home端>T/2，组及包络为失真组定理的显式域。",
+  "roles": {
+    "unrelated-machines/distorted-group-source-schedules-independent-joint-slot-replay": "核真实调度→共同a/y→实际宏home槽及原任务去向的16份有限证书。",
+    "UM-DISTORTED-GROUP-JOINT-SLOT-v1": "提供从真实调度形成LP和共同整数流/前缀负载的一般数学合同。"
+  },
+  "explanation": "逐个源态以宏归属形成a；同态被占home的真实出口超过W_h−T/2≥d_h，按其各sink体积分配y，平均保守恒和由下包络得到的κT预算。有限独立oracle枚举正a及正交槽且不复用home和槽。二home夹具的虚拟token质量4/3、2/3，实际首前缀成本3/10受1/2 token支配，确认非整数末槽与真实q加工的分离。两程序的算法域有交集，任意给定合法a/y与由真实源调度导出a/y的输入合同不同。",
+  "scope": "仅有限实际输入的独立检查；指数打包oracle不承担通用整数流/LP/未知OPT搜索的位复杂度。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/计算/失真组实际源调度与联合槽独立程序复跑--计算.md",
+      "sha256": "0d163eaa1d2002f1ec96d81ba6ac32e8468b68f4b93d1e357c225b65b6c51341",
+      "section": "从真实源调度到实际前缀"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/失真组给定见证舍入与有效无效证书原入口--资源.md",
+      "sha256": "f420a37fdde29f621189ffb5fd886dbf481f0c444e0e3611c12764258284e36f",
+      "section": "全部原任务及给定证书合同"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/失真组联合槽舍入与固定汇点占位双源审查--审查.md",
+      "sha256": "7a3644e31616ec18cd434ab73163ea073cf7ba11dca8cdaac2c9ea406c961b29",
+      "section": "一、组内异端畸变的共同槽合同"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-following-actual-code-primary/original/tests/audits/unrelated_machines/distorted_group_independent.py",
+      "sha256": "5ee207d75e09db05cacebcc5c9d560a9bbce6bd897556488a5d7aad84f09029c"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对来源证据及其支撑范围；此边记录证据或相邻边界。",
+  "endpoint_pins": {
+    "UM-DISTORTED-GROUP-JOINT-SLOT-v1": "f3d75df5a26fcf4d57cf754c13123eb898e2fbf8091f1a185e2e1558bfaf2653",
+    "unrelated-machines/distorted-group-source-schedules-independent-joint-slot-replay": "282a327578461d0e06b51f6f02fcbaa16b0dda520109ae5a3602657bb2ba3dc8"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/计算/失真组实际源调度与联合槽独立程序复跑--计算.md": "0d163eaa1d2002f1ec96d81ba6ac32e8468b68f4b93d1e357c225b65b6c51341",
+    "archives/unrelated-machines/state/资源/失真组给定见证舍入与有效无效证书原入口--资源.md": "f420a37fdde29f621189ffb5fd886dbf481f0c444e0e3611c12764258284e36f",
+    "archives/unrelated-machines/state/审查/失真组联合槽舍入与固定汇点占位双源审查--审查.md": "7a3644e31616ec18cd434ab73163ea073cf7ba11dca8cdaac2c9ea406c961b29",
+    "archives/unrelated-machines/tools/evidence/um-following-actual-code-primary/original/tests/audits/unrelated_machines/distorted_group_independent.py": "5ee207d75e09db05cacebcc5c9d560a9bbce6bd897556488a5d7aad84f09029c"
+  },
+  "review_digest": "55b99301180fb178b02b5b4daa4a144b973f67230f67e9672978c69f4177c9df"
+}

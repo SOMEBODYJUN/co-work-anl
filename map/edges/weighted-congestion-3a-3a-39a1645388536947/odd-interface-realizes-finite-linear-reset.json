@@ -1,0 +1,49 @@
+{
+  "edge_id": "wc-3a-odd-interface-realizes-finite-linear-reset",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "OC-INTERFACE-v1"
+  ],
+  "target_ids": [
+    "OC-AMPLIFIER-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "整数d≥1、0<t<1、1<α<H_d(t)；奇环资源及全态测试采用OC-INTERFACE的有限正权二动作模型。",
+  "roles": {
+    "OC-INTERFACE-v1": "按实际用户核两类真实偏离，并在权比闭环、N_i,Q_i>0及G>1下构造全部正系数。",
+    "OC-AMPLIFIER-v1": "给每个合法t,α选有限奇环、线性重置主资源和其余d次资源，使接口的所有严格式成立。"
+  },
+  "explanation": "置y=(1+t)^d、P=αy−t^d>0、Q=y−α、B=Q/P，则α<H_d(t)当且仅当Q>tP。选R≥5且R≡1 mod 4使t^R<1/(4α)和(B/t)^R>8α²；两侧分别趋0和∞，逐同余检查必停。m=(R+1)/2为奇数，令x=t^R、n=floor[1/(2αx)]；u₀=1,v₀=x,k₀=1，普通点u_i=t^{2(m−i)},v_i=t^{2(m−i)−1},n_i=1,k_i=d。于是t_i=t、x₀=t^R、其余x_i=1/t，Πx=t^{R−m+1}=t^m=Πt_i。n>1/(4αx)、n≤1/(2αx)给N₀>1/2和0<M₀<α，故nN₀/M₀>1/(8α²x)。普通点N_i=t^(−d)Q、M_i=t^(−d)P。全部侧次数d，G=(nN₀/M₀)B^R>(B/t)^R/(8α²)>1，且全部N_i,Q_i>0。接口给正系数与每态真实严格偏离；有理输入时同余整数检验、权与中点取系数均可有理，开区间严格性保证有理δ搜索停止。",
+  "scope": "对每个给定t,α分别构造有限游戏，允许人数和位长随参数增长。d=1时H₁=1，量词内没有α。各cohort成员独立行动。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md",
+      "sha256": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/奇环线性重置的有限参数下界--定理.md",
+      "sha256": "d4051f72542451e5011cfce6fe2879ee2bfc2c914bfa9021ec62c1e32e458521",
+      "section": "可达到的严格阈值及有限选择"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/奇环状态接口的独立重构范围--审查.md",
+      "sha256": "93b21456afd98ba979b447e6cd1226cdfe8a38ac7043e9f42086633a603fb38d",
+      "section": "数学审查的实际承重处"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对权比闭合、floor余量、正系数严格性和全状态两分支，特别核对侧费Q_i减α及混合群翻入自身。",
+  "whole_result": "对每个1<α<H_d(t)完整实现有限线性重置奇环并排除该α-PNE，有理t,α时可取全部参数有理。",
+  "endpoint_pins": {
+    "OC-AMPLIFIER-v1": "c10a0b52906ebf2713b4e73820ee44397f9a62ec85effbd4d47c7ea38775f86d",
+    "OC-INTERFACE-v1": "2632cfb87681d8d959b5e44f47d114e30bacc287bba2a931798524c44c6be252"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6",
+    "archives/weighted-congestion/state/定理/奇环线性重置的有限参数下界--定理.md": "d4051f72542451e5011cfce6fe2879ee2bfc2c914bfa9021ec62c1e32e458521",
+    "archives/weighted-congestion/state/审查/奇环状态接口的独立重构范围--审查.md": "93b21456afd98ba979b447e6cd1226cdfe8a38ac7043e9f42086633a603fb38d"
+  },
+  "review_digest": "6055e7877f637d5ef18245c180e8b0c77d50134b8299d5051a95c3d85ed7dc3e"
+}

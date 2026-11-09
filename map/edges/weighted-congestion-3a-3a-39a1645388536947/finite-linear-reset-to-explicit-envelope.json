@@ -1,0 +1,48 @@
+{
+  "edge_id": "wc-3a-finite-linear-reset-to-explicit-envelope",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "OC-AMPLIFIER-v1"
+  ],
+  "target_ids": [
+    "OC-AMPLIFIER-ENVELOPE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一H_d及有限线性重置构造，整数d≥2；参数、费用可为实数。U_d专指H_d在0<t<1的最大值。",
+  "roles": {
+    "OC-AMPLIFIER-v1": "只在给定α严格低于H_d(t)时提供有限无α-PNE构造。",
+    "OC-AMPLIFIER-ENVELOPE-v1": "给严格可排除的E_d端点、标量U_d夹逼及E_d渐近。"
+  },
+  "explanation": "令g(t)=t+(1+t)^(−d)。g严格凸，g′=1−d(1+t)^(−d−1)，故在[0,1]唯一极小点t_d=d^(1/(d+1))−1∈(0,1)，且E_d=1/g(t_d)=d/[(d+1)d^(1/(d+1))−d]>1，因为g(t_d)<g(0)=1。恒等式H_d(t)=1/g(t)+t^(d+1)/[1+t(1+t)^d]给E_d<H_d(t_d)，所以可把α=E_d代入有限构造。修正严格小于(t/(1+t))^d<2^(−d)；H_d两端值1而内部有值>E_d>1，最大值在内部取得，故E_d<U_d<E_d+2^(−d)。令L=ln d，E_d分母展开为1+L+O(L²/d)，故E_d∼d/ln d。",
+  "scope": "夹逼只作用于H_d标量包络。有限E_d排除与U_d的最大点是不同量词，未声称存在无U_d-PNE的单个游戏。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/奇环线性重置的有限参数下界--定理.md",
+      "sha256": "d4051f72542451e5011cfce6fe2879ee2bfc2c914bfa9021ec62c1e32e458521",
+      "section": "统一下界与显式有限次数强化"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/奇环线性重置的有限参数下界--定理.md",
+      "sha256": "d4051f72542451e5011cfce6fe2879ee2bfc2c914bfa9021ec62c1e32e458521",
+      "section": "可达到的严格阈值及有限选择"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/奇环放大器的独立攻击与来源范围--审查.md",
+      "sha256": "7b04ad596915f175434d8d46d3e7106db08528dbcc54a3865ca4b82c83759759"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "验证内部极值、正修正的严格性及渐近余项；Decimal诊断不承担这些严格比较。",
+  "whole_result": "每个d≥2有有限游戏无E_d-PNE，E_d<U_d<E_d+2^(−d)，且E_d∼d/ln d。",
+  "endpoint_pins": {
+    "OC-AMPLIFIER-ENVELOPE-v1": "2896dbf17f9d62d49a7e165b8e2a856a65e02f8fe29069361c6ee94660831baa",
+    "OC-AMPLIFIER-v1": "c10a0b52906ebf2713b4e73820ee44397f9a62ec85effbd4d47c7ea38775f86d"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/奇环线性重置的有限参数下界--定理.md": "d4051f72542451e5011cfce6fe2879ee2bfc2c914bfa9021ec62c1e32e458521",
+    "archives/weighted-congestion/state/审查/奇环放大器的独立攻击与来源范围--审查.md": "7b04ad596915f175434d8d46d3e7106db08528dbcc54a3865ca4b82c83759759"
+  },
+  "review_digest": "bffa5525a3c656c83e9ddc7e32f3dd31d6d288dbd420181f9c6bd1d5cd2d81e9"
+}

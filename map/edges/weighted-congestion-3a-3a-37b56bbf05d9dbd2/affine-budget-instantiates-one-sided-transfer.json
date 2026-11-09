@@ -1,0 +1,49 @@
+{
+  "edge_id": "wc-stage3a-affine-budget-instantiates-one-sided-transfer",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "wc-source-sublevel-global-minorant-one-sided-transfer"
+  ],
+  "target_ids": [
+    "wc-seed-affine-budget-high-degree-tail-near-exact-repair"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "n≥1、d≥2、正有理 w_i∈[1,2]，ℓ_e=x+a_e x^d，0≤a_e≤1/(dB^(d−1))，B=ceil√(8n)，给 Ψ(s⁰)≤4n。",
+  "roles": {
+    "wc-source-sublevel-global-minorant-one-sided-transfer": "固定源子水平、全目标下界、带余量步数及零预算分支。",
+    "wc-seed-affine-budget-high-degree-tail-near-exact-repair": "用同菜单仿射基准和平方负载预算付清全部条件。"
+  },
+  "explanation": "取基准 c̄=x、q_i=w_i、β₀=1，插入权 v 的势差 v(X+v) 给全部真实边的合同。原费用全负载 ≥x；Ψ≤4n 迫 L_e≤B，故源域 ℓ_e≤(1+1/d)x，取 κ=1+1/d。任一严格改善源非空，q_iC̄_i≥w_i²≥1。用 Ψ_min=0、μ=1、ε=1/d 得 α=(1+1/d)^2、N<4n(d+1)，零预算直接 N=0。精确扫描原菜单或有适用最佳响应 oracle；稠密编码保每轮有理求值位长。",
+  "scope": "完整原菜单上的真实严格 α 改善与终点，目标自动入域；不对原尾项费用作全状态近线性假设。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/源子水平费用下界的单侧转移--定理.md",
+      "sha256": "be47c84c3328e0f878ea765fe5e75f349fe45c906f5ed6c935323023ff929d85",
+      "section": "同一完整策略空间上的固定合同"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/源子水平费用下界的单侧转移--定理.md",
+      "sha256": "be47c84c3328e0f878ea765fe5e75f349fe45c906f5ed6c935323023ff929d85",
+      "section": "带余量步数及零预算端点"
+    },
+    {
+      "path": "archives/weighted-congestion/state/算法/有种子势预算的高次尾项近精确修复--算法.md",
+      "sha256": "aaba05f88681d208932caaac4f3fa6a9878b2a30f4a1bf623b75863104c17660",
+      "section": "基准势、源域比较和严格步数"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按冻结正文复核模型、逐状态量词和承重计算；有限记录只佐证其中明示输入。",
+  "whole_result": "一般单侧转移在该仿射种子预算类上给原 (1+1/d)^2-PNE，任意原严格同倍率改善路径少于 4n(d+1) 步，合法菜单与精确求值条件下得到所述算法。",
+  "endpoint_pins": {
+    "wc-seed-affine-budget-high-degree-tail-near-exact-repair": "37db4fb2d105d280006420538f0120c876350185aae29fab3721fc0c5b927bd5",
+    "wc-source-sublevel-global-minorant-one-sided-transfer": "6a97da92273ff1191247cd5569f26c4f1dcdc7831a26cb453515c0fe7f283ad7"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/源子水平费用下界的单侧转移--定理.md": "be47c84c3328e0f878ea765fe5e75f349fe45c906f5ed6c935323023ff929d85",
+    "archives/weighted-congestion/state/算法/有种子势预算的高次尾项近精确修复--算法.md": "aaba05f88681d208932caaac4f3fa6a9878b2a30f4a1bf623b75863104c17660"
+  },
+  "review_digest": "599319e7e2d07e6fb740b6993672209fc2f31bc55be99cdb03289118914b7880"
+}

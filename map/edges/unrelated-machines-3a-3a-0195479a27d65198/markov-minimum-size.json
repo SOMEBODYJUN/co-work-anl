@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-0195479a-markov-minimum-size",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-02f7731efe924dbd8f703b29440b4d1f"
+  ],
+  "target_ids": [
+    "UM-TREE-MARKOV-COMPLETION-NO-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "真实全局峰≤T的调度分布D；每任务恰有两有限端，每机器对至多一任务；固定连通生成树F，保完整单机和树边pair配置边际，冻结F任务。",
+  "roles": {
+    "M-02f7731efe924dbd8f703b29440b4d1f": "给同一合同在至多四机的所有正概率态的补全保证。",
+    "UM-TREE-MARKOV-COMPLETION-NO-v1": "给五机路径的一个正概率坏态及精确补全下界。"
+  },
+  "explanation": "至多四机时，星中心或四点路径中央边的两个端点覆盖每条树边。保边际使这一配置或pair在原D中出现，按每树任务恰有一端取它读取方向，再用该真实支持态补全。五机1–2–3–4–5中第3机恒空，左右两个分支独立，四组合各1/4；左B右A使a和e分别占满1与5，非树c只能在两端加一单位。两项合读确定失败的最小机器数为五。坏态移a到2即可恢复峰1，表明冻结条件承重。",
+  "scope": "只确定该固定树、逐正概率态、冻结树任务且要求严格低于2T的补全边界。原D真实、普通OPT=1；换树、择态或允许迁移仍是别的合同。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-tree-matching-and-configuration-primary/comparison/research/current/unrelated_machines/tree_markov_completion.md",
+      "sha256": "73628429e0c9773a3cfc083a8b3d87ef3b20004a583df6f5dce2492309a31817",
+      "section": "3. 再耦合产生的四个态"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-tree-matching-and-configuration-primary/comparison/research/current/unrelated_machines/tree_markov_completion.md",
+      "sha256": "73628429e0c9773a3cfc083a8b3d87ef3b20004a583df6f5dce2492309a31817",
+      "section": "4. 小机器数的准确边界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/五机树Markov再耦合补全反例最终审查--审查.md",
+      "sha256": "a39e260294b92937a9d22d383d78da8fa5e6ab6b7a6bb8c11afca4c7f910bb2c",
+      "section": "3. 反例的修复事实与至多四机边界"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对来源证据及其支撑范围；此边记录证据或相邻边界。",
+  "endpoint_pins": {
+    "M-02f7731efe924dbd8f703b29440b4d1f": "91deaeaf8c4c086f54d22cfbd208b9d11846c69fa33774aa3543e3bf89f6fdb3",
+    "UM-TREE-MARKOV-COMPLETION-NO-v1": "49e2aacea67ff34a8b4fced4a34ae38f59d72f65867e80cf21cd835279103519"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/tools/evidence/um-tree-matching-and-configuration-primary/comparison/research/current/unrelated_machines/tree_markov_completion.md": "73628429e0c9773a3cfc083a8b3d87ef3b20004a583df6f5dce2492309a31817",
+    "archives/unrelated-machines/state/审查/五机树Markov再耦合补全反例最终审查--审查.md": "a39e260294b92937a9d22d383d78da8fa5e6ab6b7a6bb8c11afca4c7f910bb2c"
+  },
+  "review_digest": "8712d61dbafcdcf7232316c3e5c183128cb957f624f238499a32cd0128514260"
+}

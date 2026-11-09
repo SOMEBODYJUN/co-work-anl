@@ -1,0 +1,51 @@
+{
+  "edge_id": "um-0195479a-tree-full-threshold-to-unit-test",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-TREE-Q-MINORANT-LP-v1"
+  ],
+  "target_ids": [
+    "UM-TREE-Q-ONE-THRESHOLD-MINORANT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "单显式满k叉深h树，k,h≥1，w≥0，C_s使用真实同深s叉树；k=1以C_0=0处理。",
+  "roles": {
+    "UM-TREE-Q-MINORANT-LP-v1": "给全部阈值的精确违反量恒等及最小子树费用DP。",
+    "UM-TREE-Q-ONE-THRESHOLD-MINORANT-v1": "用实际单位色类分解付清只检验一层、并把扩展非零规模降到O(|V|)。"
+  },
+  "explanation": "在旧全阈值恒等中取s=k−1，得单位层的最大权重max_{q(B)≤1}w(B)=W−C_(k−1)(w)，故单位层必要约束恰为C_(k−1)≥W−1，旧树DP可给该层的真实最坏B。要把这一步变成全部minorant的充要条件，还需将任意A分解为q(A)个互不交的q≤1色类，逐类相加后才有w(A)≤q(A)。目标的新W/F/Z系统另通过非负递推和投影两向校核去掉多层块。",
+  "scope": "全阈值LP到单位层条件的局部证明；旧O(k|V|)扩展仍正确，新的线性非零计数由额外结构证明。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/分叉树估值与单状态支持多面体--定理.md",
+      "sha256": "1269318f583984d08b2b1f54b1f3f4831cb77c3713ab90b44d499e8cdea8e8f4",
+      "section": "5. 强分离与紧凑LP"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分叉树估值与单状态支持多面体--定理.md",
+      "sha256": "1269318f583984d08b2b1f54b1f3f4831cb77c3713ab90b44d499e8cdea8e8f4",
+      "section": "3. 全部 minorant 约束缩为单位阈值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分叉树估值与单状态支持多面体--定理.md",
+      "sha256": "1269318f583984d08b2b1f54b1f3f4831cb77c3713ab90b44d499e8cdea8e8f4",
+      "section": "5. 线性规模扩展 LP 的投影恒等"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按本批固定正文、承重原件与端点身份核对量词、变量对应和适用域。",
+  "contribution": {
+    "result": "识别唯一候选检验层的必要式 C_(k−1)(w)≥W−1，并由原同深树DP精确给该层的最大权重及其实际集合。",
+    "remaining": "付清任意A的q(A)色类分解后才能删除其他阈值；还须证明W/F/Z的O(|V|)表示两向投影与位复杂度。"
+  },
+  "endpoint_pins": {
+    "UM-TREE-Q-MINORANT-LP-v1": "4a4575c627897fbacb2d569da9914c202faae39233debdd9735433e799a1d079",
+    "UM-TREE-Q-ONE-THRESHOLD-MINORANT-v1": "bd0fadff72a0ec91f311b0f5dfafebdeb2fe2105f70d9ce448fdbf37b88f5771"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/分叉树估值与单状态支持多面体--定理.md": "1269318f583984d08b2b1f54b1f3f4831cb77c3713ab90b44d499e8cdea8e8f4"
+  },
+  "review_digest": "18835b9b12c989a031e3ef42522ac60ee0dc9ed7e8495d30b06ddbcb3ad1ab53"
+}

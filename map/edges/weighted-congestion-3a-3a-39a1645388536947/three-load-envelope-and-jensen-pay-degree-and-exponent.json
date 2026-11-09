@@ -1,0 +1,51 @@
+{
+  "edge_id": "wc-3a-three-load-envelope-and-jensen-pay-degree-and-exponent",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/nonnegative-polynomial-three-load-envelope",
+    "weighted-congestion/three-load-log-convexity"
+  ],
+  "target_ids": [
+    "weighted-congestion/three-load-minimum-degree-and-exponent"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "0<L<H<U，r=L/H、s=U/H、γ=ln(s)/ln(1/r)。p为非零有限非负系数多项式，0<ε≤1，整数次数帽D≥0。三载荷精确离散式在0<ε<1调用，ε=1单独处理。",
+  "roles": {
+    "weighted-congestion/nonnegative-polynomial-three-load-envelope": "给相邻整数次数凸组合的最优过冲M(ε)及全部极小者，保留格点的单项式退化。",
+    "weighted-congestion/three-load-log-convexity": "给最优值的统一幂式下界和严格Jensen等号条件。",
+    "weighted-congestion/three-load-minimum-degree-and-exponent": "刻画可行的最小整数次数、何时已取得无次数限制的离散最优值及最大统一指数。"
+  },
+  "explanation": "按H归一系数q_k=a_k H^k/p(H)，于是p(L)/p(H)=Σq_k r^k≥r^D，故可行必有D≥ceil[ln(1/ε)/ln(1/r)]。对0<ε<1，精确离散包络的唯一形状是θ(x/H)^n+(1−θ)(x/H)^{n+1}，其中r^{n+1}≤ε≤r^n。去掉零系数后最高次数恰等于该ceil，故每个足够预算均已达到M(ε)，较低预算无可行p。ε=1的常数使最小次数0和最优值1，ε=0由正载荷上的p(L)>0排除。连续凸性给p(U)/p(H)≥ε^(−γ)，对0<ε<1的极小者等号只在ε=r^k（整数k≥1）取到。取任意k≥1及p=(x/H)^k，在ε=r^k有p(U)/p(H)=ε^(−γ)，因而任何更大统一指数必失败。",
+  "scope": "离散精确包络与连续幂下界分工；适用于单个合法多项式的三个载荷，未承诺可实现的博弈平台或所有资源成本和。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/非负多项式三载荷精确包络--定理.md",
+      "sha256": "ea6102021ba0a2ad8d7e628d2be1a99b80d0f04eb572b8984188f982e620cad1",
+      "section": "精确离散包络及所有等号"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/非负多项式三载荷精确包络--定理.md",
+      "sha256": "ea6102021ba0a2ad8d7e628d2be1a99b80d0f04eb572b8984188f982e620cad1",
+      "section": "连续指数接口"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/非负多项式三载荷精确包络--定理.md",
+      "sha256": "ea6102021ba0a2ad8d7e628d2be1a99b80d0f04eb572b8984188f982e620cad1",
+      "section": "次数预算和最优指数"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读并核对相邻割线全格点支持、Jensen严格等号、次数端点及ε=0/1退化。",
+  "whole_result": "最小可行整数次数精确为ceil[ln(1/ε)/ln(H/L)]，所有达到该次数帽的预算均实现同一个离散最优过冲。γ是全部泄漏率统一可用的最大幂指数。",
+  "endpoint_pins": {
+    "weighted-congestion/nonnegative-polynomial-three-load-envelope": "fdc074d06505b4ec5ea98288ed7d9aded35feef2c5a0e0fc827cd9e7bc52fab9",
+    "weighted-congestion/three-load-log-convexity": "d72d0f4acb5eb12824748ca37d9c899587eb5649124281c2e8f11f272385cc4a",
+    "weighted-congestion/three-load-minimum-degree-and-exponent": "cf021df97184bee4ea68567cfa3694649074daac32067d29f7be343a3cc50624"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/非负多项式三载荷精确包络--定理.md": "ea6102021ba0a2ad8d7e628d2be1a99b80d0f04eb572b8984188f982e620cad1"
+  },
+  "review_digest": "d071c0a15d78cf9cce533007605bce958130d32879cdc4597dc76bd45973f399"
+}

@@ -1,0 +1,57 @@
+{
+  "edge_id": "wc-3a-sorted-side-bounds-private-side-odd-interface",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-HETEROGENEOUS-HUB-SORTED-SIDE-v2"
+  ],
+  "target_ids": [
+    "OC-INTERFACE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "OC-INTERFACE的每个light只用自己的一对侧资源，侧资源另一可能用户是下一hub。取最高次数D=max_i{k_i,D_i}≥2、K=max({1}∪{u_i/u_(i+1)})。保持α≥1和每组正主/侧系数。",
+  "roles": {
+    "WC-HETEROGENEOUS-HUB-SORTED-SIDE-v2": "任意hub拓扑在UFhet_τ、α≥R和ατ≥KD下存在全部light反位的真实α-PNE。",
+    "OC-INTERFACE-v1": "正系数严格两测试能实现时给原环全部状态严格出口。"
+  },
+  "explanation": "映射hub权a_i=u_i（这里的a为hub权记号），每个light (i,j)源为i，取对应侧pair的H={i+1}、L={(i,j)}；R=1，且源不必使用该侧pair，故K含u_i/u_(i+1)。以τ代入UFhet所得两端之比恰为[q_i(1+x_i)^{k_i}+p_i t_i^{D_i}]/[q_i(n_i x_i)^{k_i}+p_i(1+t_i)^{D_i}]，分母为正。各L_i严格给这些比的最小值τ_L>α。若ατ_L≥KD，有限E_het有局部最小点，新定理给α-PNE，和全套严格L_i/H_i矛盾。故权比闭合及N_i,Q_i>0下，要有G>1就必须α²<KD；对任何实际实现的系数，更精确地有ατ_L<KD。",
+  "scope": "这是有向环与一般共享side拓扑的实际资源级映射。异权势的R=1不控制跨源K。在线性重置族，K=t^(1−R_reset)，其中R_reset=2m−1；两种R记号含义不同。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/局部异权共享侧资源的排序势乘积预算--定理.md",
+      "sha256": "836aefe187cdff8b97074ce328f4af43a8600be2a7f8e4b9ca8f9929a5160e72"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/跨源共享侧资源的重置增量乘积预算--定理.md",
+      "sha256": "de331c8c8a94552d1cd3cd4d5180ad169fa3543af59b424df03a5e53c77ba81c",
+      "section": "源主增量引理"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md",
+      "sha256": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/奇环线性重置的有限参数下界--定理.md",
+      "sha256": "d4051f72542451e5011cfce6fe2879ee2bfc2c914bfa9021ec62c1e32e458521",
+      "section": "可达到的严格阈值及有限选择"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对每一对侧资源仅有一名light、源到下一hub的权比方向，以及正系数实现在环乘积论证中的量词。",
+  "contribution": {
+    "result": "对D≥2的奇环私有侧接口，正系数严格两测试可行必有α²<KD；实现后还必须ατ_L<KD。",
+    "remaining": "此条件是严格两测试的必要条件。权比实现、N_i,Q_i正性与G>1的充要刻画仍由接口证明；条件失败以外也不能由该界反推全拓扑实际均衡。"
+  },
+  "endpoint_pins": {
+    "OC-INTERFACE-v1": "2632cfb87681d8d959b5e44f47d114e30bacc287bba2a931798524c44c6be252",
+    "WC-HETEROGENEOUS-HUB-SORTED-SIDE-v2": "1c3383e59080e8923fe2ad2cd6af83dcbde299a7628542f8abb0b51897ee5e22"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/局部异权共享侧资源的排序势乘积预算--定理.md": "836aefe187cdff8b97074ce328f4af43a8600be2a7f8e4b9ca8f9929a5160e72",
+    "archives/weighted-congestion/state/定理/跨源共享侧资源的重置增量乘积预算--定理.md": "de331c8c8a94552d1cd3cd4d5180ad169fa3543af59b424df03a5e53c77ba81c",
+    "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6",
+    "archives/weighted-congestion/state/定理/奇环线性重置的有限参数下界--定理.md": "d4051f72542451e5011cfce6fe2879ee2bfc2c914bfa9021ec62c1e32e458521"
+  },
+  "review_digest": "a0cfb30a5ac7da75a67eec47f975342d90333cb5646b3af01e80bb301b1a6618"
+}

@@ -1,0 +1,50 @@
+{
+  "edge_id": "um-0195479a-karp-to-half-choice",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SOURCE-KARP-3DM"
+  ],
+  "target_ids": [
+    "UM-JOINT-HALF-CHOICE-NP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "显式 perfect 3DM 的三个等大小位置标记坐标集与按索引三元组列表；δ为任意固定有理0≤δ<1/2，T=1，每任务唯一half端且其它有限端为unit。",
+  "roles": {
+    "UM-SOURCE-KARP-3DM": "提供精确 perfect 3DM 判定语言的 NP 完全性及坐标路由。",
+    "UM-JOINT-HALF-CHOICE-NP-v1": "转到同一 half-unit 子类的共同 H 与余量(Aδ)判定。"
+  },
+  "explanation": "每x的R_x有3个half激活任务，分别可去包含x的S_a取unit；每S_a的两件half关联任务分别可去其y和z元素机取unit。增一闲置机。显式规模为m=s+3q+1、n=3q+2s、有限端3q+7s。任何(Aδ)可行解的余任务在唯一小端取质量一，负载为半整数，≤1+δ<3/2即≤1。反向从峰≤1分配读unit匹配H和0/1小端余量。每R_x至多留2件，故激活数r≥q；已激活S_a迫两件关联任务外送，2r≤2q，得到不交三元组。完美匹配给每x留两件并把第三件及两关联件按匹配移动，给全任务峰≤1。H证书长度多项式，唯一小端可直接补并验证。重复项按索引，q=0由空调度与闲置机覆盖。",
+  "scope": "该半单位输入子类的判定，固定δ严格低于1/2。δ=1/2时所有small给原归约可行；该等价与端点不能外推。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "5.2 原3DM归约的全部坐标与循环一致性"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md",
+      "sha256": "8cf637c20618062a98d4038e7873987acf06bf426a583a6a678d974d7b103ba3",
+      "section": "3a. 半单位任务封闭共同见证的整个低于2窗口"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/联合选择槽舍入三源精读--审查.md",
+      "sha256": "46153e968f420228c6720dd4edd2025c1521fcbb527830de60792c01d161f258",
+      "section": "2. Half-unit joint-choice 与 3DM/promise 障碍"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按本批固定正文、承重原件与端点身份核对量词、变量对应和适用域。",
+  "whole_result": "从 perfect 3DM 作确定性多项式 many-one 归约，得每固定有理δ∈[0,1/2)的上述(Aδ)判定 NP 完全；在整个该 half-unit 唯一small子类，(Aδ)存在当且仅当实际OPT≤1。",
+  "endpoint_pins": {
+    "UM-JOINT-HALF-CHOICE-NP-v1": "e87cc44f226c8cd77cbeafe7184b610a415ec7fdf48dc8ace9d149e91f6e22bf",
+    "UM-SOURCE-KARP-3DM": "2b455afb721fc3404464bed6944c36df19220c296dae72d7d0e9af032179e171"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+    "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md": "8cf637c20618062a98d4038e7873987acf06bf426a583a6a678d974d7b103ba3",
+    "archives/unrelated-machines/state/审查/联合选择槽舍入三源精读--审查.md": "46153e968f420228c6720dd4edd2025c1521fcbb527830de60792c01d161f258"
+  },
+  "review_digest": "b86d729ae7db9533d2dd6706c54db1e311f17177a2a1005ef47938a0a6486fe8"
+}

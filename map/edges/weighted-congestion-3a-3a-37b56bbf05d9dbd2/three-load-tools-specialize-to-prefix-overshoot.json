@@ -1,0 +1,57 @@
+{
+  "edge_id": "wc-stage3a-three-load-tools-specialize-to-prefix-overshoot",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/three-load-log-convexity",
+    "weighted-congestion/three-load-minimum-degree-and-exponent"
+  ],
+  "target_ids": [
+    "WC-R1-PREFIX-SMOOTHING"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m≥3，前缀二列、玩家权 2^(−i) 与原真实动作不变；p 是非零有限非负系数多项式，0<ε<1。",
+  "roles": {
+    "weighted-congestion/three-load-log-convexity": "提供所有三正载荷上的精确幂指数不等式。",
+    "weighted-congestion/three-load-minimum-degree-and-exponent": "提供低泄漏可行性的最小整数次数。",
+    "WC-R1-PREFIX-SMOOTHING": "固定前缀资源实际可达三点上的平台保真障碍。"
+  },
+  "explanation": "根位 0，a_1 由根、位 1 的玩家 1 和位 0 的后续玩家使用，故三组位 (0,0,0…), (0,1,1…), (0,1,0…) 给 L=3/2−δ,H=3/2,U=2−δ，δ=2^(−m)。γ=ln(U/H)/ln(H/L)≥(3/16)/(8δ/11)=33/(128δ)>1/(4δ)=2^(m−2)。应用第一前提并用低泄漏得到 p(U)/p(H)≥ε^(−γ)≥ε^(−2^(m−2))；第二前提给次数必要条件。m=2 时 p=x、ε=5/6 反驳粗指数扩域，精确 γ 仍有效。",
+  "scope": "只阻断同一资源在实际三点上兼顾固定泄漏和有界平台；未阻断改费用尺度、拓扑或另一个全状态构造。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/非负多项式三载荷精确包络--定理.md",
+      "sha256": "ea6102021ba0a2ad8d7e628d2be1a99b80d0f04eb572b8984188f982e620cad1",
+      "section": "连续指数接口"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/非负多项式三载荷精确包络--定理.md",
+      "sha256": "ea6102021ba0a2ad8d7e628d2be1a99b80d0f04eb572b8984188f982e620cad1",
+      "section": "次数预算和最优指数"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/前缀阶跃平台的三载荷过冲--障碍.md",
+      "sha256": "61117a8e46ac2a2d347eb53027f47dccbc5df1dc1e090da7be76b870f1616587",
+      "section": "三点的真实状态证书"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/前缀阶跃平台的三载荷过冲--障碍.md",
+      "sha256": "61117a8e46ac2a2d347eb53027f47dccbc5df1dc1e090da7be76b870f1616587",
+      "section": "指数的完整推导与边界"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按冻结正文复核模型、逐状态量词和承重计算；有限记录只佐证其中明示输入。",
+  "whole_result": "两个三载荷通用结论在实际 dyadic 前缀三点上推出全部 m≥3、p、ε 的指数过冲与实际次数下界，并保留 m=2 的精确边界。",
+  "endpoint_pins": {
+    "WC-R1-PREFIX-SMOOTHING": "ca66f902a4a1e1bb27946b9b3b8c0584e245817fa7adcc77d4095b13f856280b",
+    "weighted-congestion/three-load-log-convexity": "d72d0f4acb5eb12824748ca37d9c899587eb5649124281c2e8f11f272385cc4a",
+    "weighted-congestion/three-load-minimum-degree-and-exponent": "cf021df97184bee4ea68567cfa3694649074daac32067d29f7be343a3cc50624"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/非负多项式三载荷精确包络--定理.md": "ea6102021ba0a2ad8d7e628d2be1a99b80d0f04eb572b8984188f982e620cad1",
+    "archives/weighted-congestion/state/障碍/前缀阶跃平台的三载荷过冲--障碍.md": "61117a8e46ac2a2d347eb53027f47dccbc5df1dc1e090da7be76b870f1616587"
+  },
+  "review_digest": "266c097e37d3942399c37d8f29e0edd3543d1f6f819e309eb506556c4696ac43"
+}

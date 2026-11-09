@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-0195479a-private-tree-demand-to-graph-case",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-PRIVATE-TREE-Q-VALUATION-v1"
+  ],
+  "target_ids": [
+    "UM-MULTISTATE-Q-MINORANT-GRAPH-HARDNESS-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "无孤立点显式简单图至少两点；每边是k=2,h=1状态，两片叶单射到两端，资源全集为顶点。",
+  "roles": {
+    "UM-PRIVATE-TREE-Q-VALUATION-v1": "给此显式逐态单射输入的任意有理signed demand及达到值的实际state。",
+    "UM-MULTISTATE-Q-MINORANT-GRAPH-HARDNESS-v1": "同一子类还区分全支持域分离困难与指定集合包络易解。"
+  },
+  "explanation": "深1二叉状态的分叉值恰为选中该边端点数，故f_G(S)=max_e|e∩S|。把图转为边状态，再用已证位多项式signed demand，包括先收所有负价顶点及跨边资源共享，即给实际最优集合。独立集阈值刻画的是最大w(S)−f_G(S)，方向相反，不能交换两个最大值来消掉共用blocking。完整图定理另可逐目标扫描取达到f_G(S)的边向量。",
+  "scope": "只承接图对象中value与signed demand的可解部分。完整minorant的NP/coNP门槛、包络和有效扩展LP后果各有自己的证明。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/分叉树估值与单状态支持多面体--定理.md",
+      "sha256": "1269318f583984d08b2b1f54b1f3f4831cb77c3713ab90b44d499e8cdea8e8f4",
+      "section": "3. 带任意有理价格的精确demand"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/多状态图估值支持域计算障碍--定理.md",
+      "sha256": "2406ce4fbb2c1bbfc3d1c83a1cd56061a1a556d6628c030da52b8d6a75037cea",
+      "section": "Objects / Domain / Definitions"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/多状态图估值支持域计算障碍--定理.md",
+      "sha256": "2406ce4fbb2c1bbfc3d1c83a1cd56061a1a556d6628c030da52b8d6a75037cea",
+      "section": "Exact Statement / Quantifiers / Conclusion"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按本批固定正文、承重原件与端点身份核对量词、变量对应和适用域。",
+  "contribution": {
+    "result": "图端点单射代入私有树估值，给f_G的准确value与任意有限有理signed demand的位多项式具体输出。",
+    "remaining": "图的最大违反量恒等、严格正uniform权的Independent Set归约、逐点精确包络与有效LP扩展的条件后果须分别证明。"
+  },
+  "endpoint_pins": {
+    "UM-MULTISTATE-Q-MINORANT-GRAPH-HARDNESS-v1": "598de44a47d0f9356f425d496f133233a105f07876cb2ba6125059d98ee77869",
+    "UM-PRIVATE-TREE-Q-VALUATION-v1": "5ba8e192bbdbc159a36e27f74b5d4ec618aee3e020c3352139c1f7fc19c8ecbe"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/分叉树估值与单状态支持多面体--定理.md": "1269318f583984d08b2b1f54b1f3f4831cb77c3713ab90b44d499e8cdea8e8f4",
+    "archives/unrelated-machines/state/定理/多状态图估值支持域计算障碍--定理.md": "2406ce4fbb2c1bbfc3d1c83a1cd56061a1a556d6628c030da52b8d6a75037cea"
+  },
+  "review_digest": "a130470782b634e0256baeb954a8ea2988fe18851696ca058fbff2573aed7397"
+}

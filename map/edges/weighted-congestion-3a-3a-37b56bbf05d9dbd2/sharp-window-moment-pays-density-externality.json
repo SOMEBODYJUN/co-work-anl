@@ -1,0 +1,52 @@
+{
+  "edge_id": "wc-stage3a-sharp-window-moment-pays-density-externality",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R2-DENSITY-MOMENT"
+  ],
+  "target_ids": [
+    "WC-R2-WEIGHT-DENSITY"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一资源潜在用户的半开 [x,Rx) 窗计玩家重数至多 K_R，R>1、0<p<1；费用非负系数、次数至多 d≥1。K_R=0 单列。",
+  "roles": {
+    "WC-R2-DENSITY-MOMENT": "提供所有有限实际用户子集的锐幂和界。",
+    "WC-R2-WEIGHT-DENSITY": "以共同 w_i^p 的势把单资源外部性传到真实多资源偏离。"
+  },
+  "explanation": "设新用户权 v，旧集合 J，S=∑_J w_j/v。J 是潜在用户子集，除以 v 保半开窗口条件；故 ∑_J(w_j/v)^p≤A_R(p)K_R^(1−p)S^p。旧用户共享同一个费用增量 Δc，非负系数给 Δc≤c(Y)[1−(S/(1+S))^d]。两式相乘，旧用户总外部性至多 A_R K_R^(1−p)H_d(p)v^p c(Y)，用 min{1,d/(1+S)} 又得 d^p 版本。J=∅ 则外部性零，无须除 c(Y)。",
+  "scope": "单资源上界为全局 Ψ_p 的承重输入；幂矩锐性不传给复合外部性或实际均衡阈值。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/引理/乘法权窗密度的锐幂矩--引理.md",
+      "sha256": "43c435eb211eb87560341b52aa6161e145db8b044b2611079aa52dd6f883f6e9",
+      "section": "有限尾和望远镜"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/潜在用户权密度的幂权成本势--定理.md",
+      "sha256": "4d0c2495460f54a724f8603b6545d43f000e076ec3f291ba38ddc0f8ab2eba22",
+      "section": "实际总负载控制的单资源外部性"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/潜在用户权密度的幂权成本势--定理.md",
+      "sha256": "4d0c2495460f54a724f8603b6545d43f000e076ec3f291ba38ddc0f8ab2eba22",
+      "section": "次数端点与可复用的常数细化"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按冻结正文复核模型、逐状态量词和承重计算；有限记录只佐证其中明示输入。",
+  "contribution": {
+    "result": "得到加入时 incumbent 幂权总费用增加的界，另加新用户项后即有 (1+A_R K_R^(1−p)H_d)v^p c(Y) 的插入上界。",
+    "remaining": "整体定理还需反向删除下界、保留资源恒等式、用同一 v^p 汇总全部真实偏离，以及 d 与 R,p 的端点和稀疏选择。"
+  },
+  "endpoint_pins": {
+    "WC-R2-DENSITY-MOMENT": "03a92ae56c28a1a4be362c7f3a5ad09242089b7c398090cb781fc672f01e4053",
+    "WC-R2-WEIGHT-DENSITY": "8994e6bfdead6d070c6e1e0535ef66f1f39eb7300bc77319a22a01c330bf150e"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/引理/乘法权窗密度的锐幂矩--引理.md": "43c435eb211eb87560341b52aa6161e145db8b044b2611079aa52dd6f883f6e9",
+    "archives/weighted-congestion/state/定理/潜在用户权密度的幂权成本势--定理.md": "4d0c2495460f54a724f8603b6545d43f000e076ec3f291ba38ddc0f8ab2eba22"
+  },
+  "review_digest": "2df8f58d0d87afc52f10965a87b508ef3425fb1e4f11df7fafe99019ecc490c6"
+}

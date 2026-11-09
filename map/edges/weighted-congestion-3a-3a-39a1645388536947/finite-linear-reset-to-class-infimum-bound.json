@@ -1,0 +1,48 @@
+{
+  "edge_id": "wc-3a-finite-linear-reset-to-class-infimum-bound",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "OC-AMPLIFIER-v1"
+  ],
+  "target_ids": [
+    "OC-AMPLIFIER-LIMIT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "全类阈值a_*(d)取有限标准加权拥塞游戏的普遍α-PNE存在倍率下确界。d≥2使用上确界下界，d≥4另取显式有限倍率。",
+  "roles": {
+    "OC-AMPLIFIER-v1": "对每个t和低于严格触发H_d(t)的α提供实际全态反例。",
+    "OC-AMPLIFIER-LIMIT-v1": "把各有限反例用于全类阈值下界，并给d≥4的显式端点。"
+  },
+  "explanation": "d≥2时H_d(t)>1（分子减分母为(1−t)(1+t)^d+t^{d+1}−1，对d严格增，d=2为t−t²）。对每个t，任意1<α<H_d(t)均被某个合法有限子类实例排除，故a_*(d)≥sup_t H_d(t)。对d≥4令t=(ln d)/d。由ln(1+t)>t−t²/2及(ln d)²/(2d)≤2/e²<ln 2，有y=(1+t)^d>d/2，因而H_d(t)>1/(t+1/y)>d/(ln d+2)>1。将最后这个显式值作为有限定理的α，得到在该值本身无均衡的实例。每个显式端点单独支付严格触发，sup仅为阈值下界。",
+  "scope": "同一成本与真实偏离的二动作正费用子类包含在全类。全类下确界量词和有限反例端点是不同结论；本边不判sup处是否有单一有限见证。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/奇环线性重置的有限参数下界--定理.md",
+      "sha256": "d4051f72542451e5011cfce6fe2879ee2bfc2c914bfa9021ec62c1e32e458521",
+      "section": "统一下界与显式有限次数强化"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/奇环线性重置的有限参数下界--定理.md",
+      "sha256": "d4051f72542451e5011cfce6fe2879ee2bfc2c914bfa9021ec62c1e32e458521",
+      "section": "可达到的严格阈值及有限选择"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md",
+      "sha256": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对in-packet的OC-INTERFACE通过有限构造供给全部真实偏离，及d≥4对数严格估计和全类取下确界的方向。",
+  "whole_result": "每个整数d≥2有a_*(d)≥sup_{0<t<1}H_d(t)；每个d≥4均存在一个有限游戏，在α=d/(ln d+2)本身无α-PNE，给d/ln d量级全类下界。",
+  "endpoint_pins": {
+    "OC-AMPLIFIER-LIMIT-v1": "cbad62311f364d629fb93a3fa86a1cbd00e64512a35214cc98af1a29bde074ec",
+    "OC-AMPLIFIER-v1": "c10a0b52906ebf2713b4e73820ee44397f9a62ec85effbd4d47c7ea38775f86d"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/奇环线性重置的有限参数下界--定理.md": "d4051f72542451e5011cfce6fe2879ee2bfc2c914bfa9021ec62c1e32e458521",
+    "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6"
+  },
+  "review_digest": "4164034efe2c3f8abf84624e5100da3f07aca934c29252dfb29d9b8b5ec06d11"
+}
