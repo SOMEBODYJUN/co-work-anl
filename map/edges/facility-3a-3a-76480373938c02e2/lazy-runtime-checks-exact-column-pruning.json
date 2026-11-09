@@ -15,34 +15,49 @@
     "facility-games/lazy-maximin-ring-original-entry-and-finite-regression": "30例值比较、350条剪枝及tiny独立完整规则补全的有限运行记录。",
     "M-a4510cf6b0ee470384411c5b272b372b": "验证访问列真实d、环限制倍率和具体偏离见证。"
   },
-  "explanation": "原测试只逐访问列比对lazy的d与full全目录d，并断言全局倍率不大于环限倍率。tiny以独立脚本检查1在轨、8偏离并以降序贪心补16其他格，转回第二设施的全局标签时同时取1−p及交换负载。full/lazy tie-map可不同；原CLI未输出默认接口。",
+  "explanation": "原test_lazy_ring.py调用共用optimize_pair的full与lazy，只比较被访问列的lazy d等于full d、以及α*≤α_K；30例累计350个剪枝。两者平局winner可不同，测试没有比较回应图、环、布局或概率。tiny的原CLI核验与独立补全分开：独立脚本重算1个在轨、8项实际偏离和16个贪心默认，合计25个有序布局。第二设施的偏离记录相对偏离者，转全局有序坐标须同时反射p↦1−p和交换负载。原CLI未给默认字段，末尾φ断言依赖独立全称环结论。",
   "scope": "有限回归和一份完整规则达到的独立重算，普遍剪枝及环内最优仍由解析证明给出。",
   "evidence": [
     {
       "path": "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
-      "sha256": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65",
+      "sha256": "3f89e2adde3fd647ec4834d9955d1441f79cd6c7e2b7be3d735b4c9f624dcc49",
+      "section": "局部查询的确切输入与保证"
+    },
+    {
+      "path": "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
+      "sha256": "3f89e2adde3fd647ec4834d9955d1441f79cd6c7e2b7be3d735b4c9f624dcc49",
       "section": "真正实例最优与环内最优"
     },
     {
       "path": "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
-      "sha256": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65",
+      "sha256": "3f89e2adde3fd647ec4834d9955d1441f79cd6c7e2b7be3d735b4c9f624dcc49",
       "section": "响应剪枝的真实证明"
     },
     {
       "path": "archives/facility-games/state/计算/惰性最大最小回应环的原入口与有限回归--计算.md",
       "sha256": "fef2d1dfd467dc3913b745facb4e12a72b8ae98e6a6a325914c69da29903e712",
-      "section": "惰性最大最小回应环的原入口与有限回归"
+      "section": "原测试实际检查什么"
+    },
+    {
+      "path": "archives/facility-games/state/计算/惰性最大最小回应环的原入口与有限回归--计算.md",
+      "sha256": "fef2d1dfd467dc3913b745facb4e12a72b8ae98e6a6a325914c69da29903e712",
+      "section": "原CLI的完整输出及新独立核查"
+    },
+    {
+      "path": "tools/evidence/lazy-ring-original-entry/replay/tests/test_lazy_ring.py",
+      "sha256": "a2bc2b6355ef89f72be2e3a4040971d77d837fc6a580b5eee837791eb1f1745d"
     }
   ],
   "reviewed_by": "facility-3a-3a-76480373938c02e2",
-  "review_note": "校对30/350与25格补全为不同运行；原末尾φ断言不作全称证明。",
+  "review_note": "对照当前v4算法的有理中心与剪枝段、原测试两条assert及tiny独立记录；30/350为同一有限回归，25格为另一份证书的独立补全。未以回归认证普遍环结论。",
   "endpoint_pins": {
-    "M-a4510cf6b0ee470384411c5b272b372b": "07ebeeba9159256894ad650a0ebafc629188e2fa63d9c8613c21b2a86e1b5198",
+    "M-a4510cf6b0ee470384411c5b272b372b": "6d90359ee84ca94495d9d9112a1cfd037af370ae3a82ce5b64e1434ca1b3e652",
     "facility-games/lazy-maximin-ring-original-entry-and-finite-regression": "098361c9894aa7bcc2ba77eded80e2bf8e3c3518acd1a8622150d6939e013038"
   },
   "evidence_pins": {
-    "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65",
-    "archives/facility-games/state/计算/惰性最大最小回应环的原入口与有限回归--计算.md": "fef2d1dfd467dc3913b745facb4e12a72b8ae98e6a6a325914c69da29903e712"
+    "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md": "3f89e2adde3fd647ec4834d9955d1441f79cd6c7e2b7be3d735b4c9f624dcc49",
+    "archives/facility-games/state/计算/惰性最大最小回应环的原入口与有限回归--计算.md": "fef2d1dfd467dc3913b745facb4e12a72b8ae98e6a6a325914c69da29903e712",
+    "tools/evidence/lazy-ring-original-entry/replay/tests/test_lazy_ring.py": "a2bc2b6355ef89f72be2e3a4040971d77d837fc6a580b5eee837791eb1f1745d"
   },
-  "review_digest": "a7b894b22000677fabb4e6208634b52c0a3ed82e2cd8650a180502c25f9c1995"
+  "review_digest": "99dea54b064583b88aedf253d459b3b11234842ee5140d951b67f54ff34ef83a"
 }

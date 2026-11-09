@@ -15,17 +15,17 @@
     "facility-games/threshold-meet-in-middle-objectives-and-response-pruning": "给精确单谷gap目标的局部最优值与NE见证。",
     "EXACT-KAPPA": "利用真实坐标极小、全目录D和全部在轨候选拼接实例最优。"
   },
-  "explanation": "先对每个(s,t)用f=Δ及f=−Δ分别求m1=(V+min Δ)/2和m2=(V−max Δ)/2。D1,D2在原全部行列上形成后，每布局用f(Δ)=max{1,2D1/(V+Δ),2D2/(V−Δ)}，它以V(D1−D2)/(D1+D2)为单谷，双零取常值1。三次查询均可返回实际见证，保零收益的扩展实数约定。可复用纯默认和偏离端点恢复。 令V为本格总服务重，目标max(1,2D1/(V+Δ),2D2/(V−Δ))在Δ0=V(D1−D2)/(D1+D2)两侧分别非增、非减。全部D由有理局部谱求得，故该中心有理；两威胁均0取中心0，端点用零分子0、正分子除零无穷或直接核乘法约束。异构目录需逐有序布局调用局部oracle，不能把共同目录game_solve或标签反射原样使用。",
+  "explanation": "对每个合法带标签布局，取中心 −V 和 V 分别最小化 f(Δ)=Δ、f(Δ)=−Δ，得到真实 m1=(V+min Δ)/2 与 m2=(V−max Δ)/2。先按原全部行列形成 D1、D2，再逐布局最小化 f(Δ)=max{1,2D1/(V+Δ),2D2/(V−Δ)}。D1+D2>0 时中心为 V(D1−D2)/(D1+D2)，两项分别单调降、升且在该中心交接；双零取中心 0、f 恒为 1。全用有理输入和有理极值，三类中心均符合 v4，正威胁除零作无穷，零威胁项作零，亦可核乘法约束。局部见证可用于在轨和偏离；异构目录需按标签写外层全枚举。",
   "scope": "替换局部查询而不需要完整谱输出。原MITM game_solve的API只接受共同目录，任意双目录须外层按标签写完整循环。",
   "evidence": [
     {
       "path": "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
-      "sha256": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65",
+      "sha256": "3f89e2adde3fd647ec4834d9955d1441f79cd6c7e2b7be3d735b4c9f624dcc49",
       "section": "局部查询的确切输入与保证"
     },
     {
       "path": "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
-      "sha256": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65",
+      "sha256": "3f89e2adde3fd647ec4834d9955d1441f79cd6c7e2b7be3d735b4c9f624dcc49",
       "section": "真正实例最优与环内最优"
     },
     {
@@ -40,24 +40,24 @@
     },
     {
       "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
-      "sha256": "241e8015a7d6af25108a68619fd17e8c38dadcebae00d0a34ecdcb45eb9aa3eb",
+      "sha256": "97ecba6feca16fb7302e2454e785f2d84240a8e2c7a2a561f3bbb278217d15ab",
       "section": "A11.5 MITM：用两半支持避免全笛卡尔积"
     }
   ],
   "reviewed_by": "Boss1",
-  "review_note": "按v3两端点核两极值与有理单谷中心。共同目录原game_solve与逐标签异构调用分别列明。",
+  "review_note": "核 MITM v4 的两极值与有理平衡中心、EXACT-KAPPA v4 的真实全目录威胁及零收益分支。局部调用与完整带标签外层拼接分开。",
   "contribution": {
     "result": "两极值和一次在轨单谷优化可用精确半表作为局部oracle，局部公共客户指数从全三态枚举换为poly(κ)3^ceil(κ/2)。",
     "remaining": "仍须计算每个标签布局的私有背景及全目录D，遍历全部在轨布局、核零威胁并拼全部偏离/默认，不能用仅访问的回应环代替。"
   },
   "endpoint_pins": {
-    "EXACT-KAPPA": "c073797e1706bcfa1880b37618a4f1df47ef5a0a907a0297e6f65c64a263f4ac",
-    "facility-games/threshold-meet-in-middle-objectives-and-response-pruning": "eb3813a5a7912d9255ea445613de1941d3accddda79929f453a4e7933802fcbf"
+    "EXACT-KAPPA": "f6066f5712b34d7af8b22ad278faf1df6bc9a4efd04cbb738f04ae24a50a8e10",
+    "facility-games/threshold-meet-in-middle-objectives-and-response-pruning": "9e83c78342505c7400edc47f214924566a92f38eadd4877e8e8f4c6af45c5a8a"
   },
   "evidence_pins": {
-    "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65",
+    "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md": "3f89e2adde3fd647ec4834d9955d1441f79cd6c7e2b7be3d735b4c9f624dcc49",
     "archives/facility-games/state/算法/双目录交叠参数下的实例最优续局--算法.md": "4bb199d4ca50c5c4fc56955db0238b4a831e4ce9d9f1e2a8b44d1932a72e8274",
-    "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md": "241e8015a7d6af25108a68619fd17e8c38dadcebae00d0a34ecdcb45eb9aa3eb"
+    "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md": "97ecba6feca16fb7302e2454e785f2d84240a8e2c7a2a561f3bbb278217d15ab"
   },
-  "review_digest": "0e162502b59eae7c45315423450d86e1a98890c6ddb02b357e71f7dc2905bd7e"
+  "review_digest": "424a663a7eb7ad9649ab865b9dd309421cb7e13992e5a915a029422e8f9eeb05"
 }

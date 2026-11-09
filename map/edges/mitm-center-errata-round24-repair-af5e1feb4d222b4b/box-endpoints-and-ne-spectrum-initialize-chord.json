@@ -1,0 +1,77 @@
+{
+  "edge_id": "facr18-box-endpoints-and-ne-spectrum-initialize-chord",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "facility-games/box-slice-square-endpoint-exchange",
+    "M-b5488c2696964ec58745ce5426f2b777"
+  ],
+  "target_ids": [
+    "LOCAL-CHORD-POLY"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定线性含完整自重的带标签双设施布局，共同原子正权、强制服务且独立混合。令覆盖总重R≥r>φR/2、共同总重0<C<qr，q=1/φ，私有背景A=R−C、B=r−C。记δ=R−r，选任一最大共同权客户x，令S=C−x。本边取内分支S≥δ（含等号），无需额外限制x≤(1−q)R。存在性和代数恢复用实输入，算术与位长用显式二进制有理输入。",
+  "roles": {
+    "facility-games/box-slice-square-endpoint-exchange": "给两坐标交换的顶点局部最优、终止界及正负端点不等式。",
+    "M-b5488c2696964ec58745ce5426f2b777": "用含自重的条件成本与闭三态充要条件，将选出的差距逐名恢复为精确独立NE。",
+    "LOCAL-CHORD-POLY": "目标是固定双地点的完整强配额判定与构造，本边交付内分支初始化、直接达标门槛和后续分组。"
+  },
+  "explanation": "去掉最大权客户后，−δ∈[−S,S]，故截面Σcᵢ=−δ、|cᵢ|≤wᵢ可行。若返回全端点，纯端点和P=−δ，指定x为唯一名义混合者，m=1且δ+P=0。闭区间包含Δ=0，取pₓ=1/2；空截面S=δ=0也按此处理。若唯一内点枢轴的权为z、坐标为d，则令cₓ=d。因|d|<z≤x，x和枢轴均真混合，其余纯端点和P=−δ−d。m=2时(1−m)Δ=δ+P=−d，故Δ=d。交换输出的正端点d≤v和负端点d≥−v给逐名纯最优反应，指定者按pᵢ=(1+d/wᵢ)/2独立抽样给精确NE。d>0时交换还给纯+v的权≥z、纯−v中v<z者有v≤d；d<0时反号。令V=R+r−C，X=(V+Δ)/2、Y=(V−Δ)/2。初始化见证直接同时达到X≥qr、Y≥qR当且仅当2qr−V≤Δ≤V−2qR；该区间包含0，盒分支的非零d仍须过此门槛。盒枢轴严格降权、同枢轴反号用权严格递增给算术界，坐标始终是输入端点或目标减带符号输入和，除以正权即恢复概率。",
+  "scope": "固定强弦内分支的一个真实独立NE及其分组和直接达标检查。闭支持点或区间在实数域成立；有理输入才给有理端点与多项式位长。两坐标端点局部最优只用于取得该见证及必要分组；求盒全局平方最大、整个NE谱及其坐标极小、全目录倍率均为不同问题。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/算法/盒截面平方和的两坐标端点交换--算法.md",
+      "sha256": "739a955e044f6092f3de5a71e067e9137a639c850f82dc14662e5e723131b535",
+      "section": "供两设施混合坐标使用的强不等式"
+    },
+    {
+      "path": "archives/facility-games/state/算法/盒截面平方和的两坐标端点交换--算法.md",
+      "sha256": "739a955e044f6092f3de5a71e067e9137a639c850f82dc14662e5e723131b535",
+      "section": "多项式移动数的完整理由"
+    },
+    {
+      "path": "archives/facility-games/state/定理/双地点强交叉配额的最大原子判据--定理.md",
+      "sha256": "abf2193390d535e2ec238ed9ec71381948b1ccf0b9d15a85677ec8d4045e2484",
+      "section": "内分支的初始NE与局部交换"
+    },
+    {
+      "path": "archives/facility-games/state/定理/双地点强交叉配额的最大原子判据--定理.md",
+      "sha256": "abf2193390d535e2ec238ed9ec71381948b1ccf0b9d15a85677ec8d4045e2484",
+      "section": "统一数值裕量与混合质量"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-two/state/定理/局部强弦与有理混合构造--定理.md",
+      "sha256": "3ab76aac41acc591bf6eb46bed50a53195e23336458162d93cd3b79b757d3891",
+      "section": "4. 盒切片的局部端点算法及严格运行界"
+    },
+    {
+      "path": "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md",
+      "sha256": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1"
+    },
+    {
+      "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+      "sha256": "97ecba6feca16fb7302e2454e785f2d84240a8e2c7a2a561f3bbb278217d15ab",
+      "section": "A11.1 先把一个局部博弈化成一条差距坐标"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "对比旧新教学全文字节。A11.1引理和双向证明相同，算法表及A11.5修正MITM的中心编码和比较成本；本边使用闭支持充要条件和盒算法独立运行界。逐项核S=δ及空截面、m=1零分子、m=2符号、两名真混合、端点纯最优反应和实际双配额门槛。",
+  "contribution": {
+    "result": "内分支S≥δ产生Δ=0或Δ=d的精确独立NE。直接达到两强配额的差距门槛为[2qr−V,V−2qR]，并保后续坏正/坏负差用的端点分组。显式二进制有理输入下，初始化及恢复用O((n+1)^4)有理运算和多项式位长。",
+    "remaining": "完整局部判据还需目标正文的C=0、S<δ的构造及不可行性、以及初始差距越过任一门槛时的坏正或坏负差修复和三指定者质量界。宽条件下的坏负差另须x<R−qr修正。"
+  },
+  "endpoint_pins": {
+    "LOCAL-CHORD-POLY": "5b23026c01a5a3f8d4f4d2ad6bcc570f2520e1d66f35ee959a41fe8f1d34cecb",
+    "M-b5488c2696964ec58745ce5426f2b777": "2611ce2df7c0a747fd7d6943fd03d557d87ae8e08af35622ed0d6d6161725b6e",
+    "facility-games/box-slice-square-endpoint-exchange": "798786a62f35d554e87cfc433ecde3eb0ea0b8df2d8ed39bc814aeea3aebace6"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/算法/盒截面平方和的两坐标端点交换--算法.md": "739a955e044f6092f3de5a71e067e9137a639c850f82dc14662e5e723131b535",
+    "archives/facility-games/state/定理/双地点强交叉配额的最大原子判据--定理.md": "abf2193390d535e2ec238ed9ec71381948b1ccf0b9d15a85677ec8d4045e2484",
+    "archives/facility-games/subarchives/common-two/state/定理/局部强弦与有理混合构造--定理.md": "3ab76aac41acc591bf6eb46bed50a53195e23336458162d93cd3b79b757d3891",
+    "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1",
+    "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md": "97ecba6feca16fb7302e2454e785f2d84240a8e2c7a2a561f3bbb278217d15ab"
+  },
+  "review_digest": "422f1a2247ddbdc4db2f4f62323fea6dcd77bd99fb5e80e908ef3bca4ea4a634"
+}

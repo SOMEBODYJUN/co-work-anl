@@ -10,13 +10,13 @@
   ],
   "premises_mode": "all",
   "relation_mode": "unconditional",
-  "conditions": "固定双设施布局，非负有理私有背景、正有理公共权、独立混合和线性含自重条件成本。目标中心t0为精确编码有理数，目标在两闭侧单谷且可精确比较；计入t0输入位长和实际目标求值、比较成本。",
+  "conditions": "固定双设施布局，私有背景 A,B≥0 和正公共权 w_i 均为二进制有理输入，独立混合、含自重的实际线性负载成本。给二进制有理中心 t0，f 可精确求值和比较，且在 t0 左侧（含中心）非增、右侧（含中心）非减。计入中心位长，目标表示、求值和比较成本另计。",
   "roles": {
     "M-b5488c2696964ec58745ce5426f2b777": "给出全部闭支持条件及单混合者的闭区间。",
     "facility-games/threshold-meet-in-middle-objectives-and-response-pruning": "以符号和重量阈值压缩支持，再折半查单谷目标最优。"
   },
-  "explanation": "固定ε=sign Δ和排序重前缀h，使w_{h+1}≤εΔ≤w_h。尾部可固定低侧，重者各闭状态重量不等式自动满足。全谱恒等式变为(1−m)Δ=A−B−εℓ+z，所有前缀同(m,z)可用同一个支持。分半后对固定左状态和右混合数，m≠1时二分右z的可行区间和距目标两侧最近点。负分母仅反转顺序。m=1只核分子零，并将t0夹到完整可行闭区间。跨前缀、符号和两半状态求最优并恢复概率。每半至多3^ceil(n/2)个状态，加多项式组合开销。 原optimize_pair先把t0转Fraction。A=B=0、唯一公共权1时全区间Δ∈[−1,1]均为NE。取目标在Δ≤0时f(Δ)=−Δ，Δ≥0时f(Δ)=Δ³/3−Δ/2。有理查询值均为有理且可精确比较；由导数Δ²−1/2和两段在0相接可知唯一单谷中心和最优Δ均为√(1/2)。其唯一最优概率p=(1+√(1/2))/2非有理；仅有可精确比较不能推出有理见证。",
-  "scope": "有理编码中心的单谷优化，包括极值与全局精确算法所用有理平衡中心。保n=0、Δ=0、等权端点及m=1闭片；不输出完整谱。",
+  "explanation": "记 V=A+B+Σw_i、δ=A−B，公共权非增排序。在每个 h=0,…,n 和 ε∈{−1,1} 取有符号闭区间 J=[L,U]，由 w_{h+1}≤εΔ≤w_h 给出（w_0=V、w_{n+1}=0，负号分支反射端点）。由闭支持条件，严格轻于 |Δ| 的客户只能纯低侧。把整个轻尾固定低侧在等号仍合法，重前缀三态都满足个体重量界。任一 NE 可取含全部 w_i≥|Δ| 的前缀，特别 Δ=0 取 h=n；等重只重复表示。令 ℓ 为轻尾总权，则 (1−m)Δ=δ−εℓ+z。空公共集直接给 Δ=δ、负载(A,B)。\n\n将长度 h 的重前缀分成 floor(h/2) 和 ceil(h/2) 两半，每名客户贡献纯第一 (0,+w_i)、纯第二 (0,−w_i) 或名义混合 (1,0)。同半的 (m,z) 去重仅保一个原标签支持见证。闭阈值内，未来可行性与目标只依赖两半状态的和，去重不丢任何 gap。右表按 m_R 分组并将 z_R 排序。固定一个左状态 (m_L,z_L) 及一个右组，设 m=m_L+m_R、d=1−m、K=δ−εℓ+z_L。\n\n若 m≠1，唯一 gap 为 Δ=(K+z_R)/d。取 a=min(dL−K,dU−K)、b=max(dL−K,dU−K)，用 lower_bound(a) 与 upper_bound(b) 保留闭区间 [a,b] 中的右和。令 q=d t0−K，在该可行片内找 q 的最大前驱 ≤q 与最小后继 ≥q，缺边则只用另一侧，命中可去重。d>0 时 z_R 的左右与 gap 左右一致，d<0 时互换，因而它们分别是两侧最靠近 t0 的可行 gap。单谷的两侧单调性保证两个候选中至少一个为本组最优，中心落在可行范围外、平局和端点也成立。\n\n若 m=1，用精确二分只查 z_R=−K。未命中无解；命中时整个 J=[L,U] 都可行，包括 L=U。取 min(U,max(L,t0))，它由闭区间两侧单调性达到本组目标最小。跨全部前缀、符号、左状态和右组精确比较目标。重建双方保存的支持，轻尾纯低侧、纯者取 0/1，名义混合者 p_i=(1+Δ/w_i)/2，再按原索引恢复，得完整精确 NE。覆盖全部闭阈值分支，故输出是全部独立混合 NE 上的一个最优见证。\n\n每半状态数至多 3^ceil(n/2)。枚举前缀与符号、分组、排序、扫左表和右混合人数、二分与复制支持，只增加 poly(n+1) 因子。以 A,B,w_i,t0 所有分母的积作为共同分母，其位长由总输入位长 L 控制。纯符号和、尾和与二分键只做有限求和或乘绝对值至多 n+1 的整数，分子位长也关于 L,n 为多项式。恢复 gap 至多再除 |d|≤max(1,n)，截点只选已有端点或 t0，恢复概率再除正 w_i 及 2，负载同样可精确有理恢复。若 M=poly(n+1)3^ceil(n/2)，候选求值与最优比较各至多 O(M) 次。位成本为 poly(n+1,L)3^ceil(n/2) 加这些实际目标求值、精确比较成本；目标值及比较器工作空间按其实际表示另计。\n\n旧 v3 漏写有理中心时的边界仍成立。A=B=0、唯一公共权 1 时任意 p∈[0,1] 均为 NE，Δ=2p−1。设 Δ≤0 时 f=−Δ，Δ≥0 时 f=Δ³/3−Δ/2。有理查询值均为有理，两段在 0 相接，右段导数 Δ²−1/2，故唯一最优 gap 为 √(1/2)，唯一最优概率 (1+√(1/2))/2 无理。原 optimize_pair 将中心转为 Fraction。这个旧合同反例界定有理编码条件的必要范围。",
+  "scope": "现 MITM v4 的完整局部优化合同。保空公共集、零差、等权端点和单混合连续闭片，输出一个精确有理最优 NE；完整谱、全目录搜索与回应剪枝是各自独立的结果。",
   "evidence": [
     {
       "path": "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md",
@@ -30,7 +30,7 @@
     },
     {
       "path": "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
-      "sha256": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65",
+      "sha256": "3f89e2adde3fd647ec4834d9955d1441f79cd6c7e2b7be3d735b4c9f624dcc49",
       "section": "局部查询的确切输入与保证"
     },
     {
@@ -40,7 +40,7 @@
     },
     {
       "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
-      "sha256": "241e8015a7d6af25108a68619fd17e8c38dadcebae00d0a34ecdcb45eb9aa3eb",
+      "sha256": "97ecba6feca16fb7302e2454e785f2d84240a8e2c7a2a561f3bbb278217d15ab",
       "section": "A11.5 MITM：用两半支持避免全笛卡尔积"
     },
     {
@@ -49,21 +49,18 @@
     }
   ],
   "reviewed_by": "Boss1",
-  "review_note": "实读v3原正文、A11.5、阈值闭片及冻结optimize_pair。两侧最近可行右和足够，单混合连续片需要按实际编码恢复中心。",
+  "review_note": "逐步核完整谱 v3、MITM v4 的正文与 A11.5、阈值闭片及冻结 optimize_pair 的精确转换、左右二分、单混合截点和客户索引恢复。登记已明确有理中心，原 proof-step 的域缺口在现合同内闭合。",
   "endpoint_pins": {
-    "M-b5488c2696964ec58745ce5426f2b777": "e95f9b903e7263f62fbf3effe4a7b07cfb422af25c9a115a45da96173f780cf8",
-    "facility-games/threshold-meet-in-middle-objectives-and-response-pruning": "eb3813a5a7912d9255ea445613de1941d3accddda79929f453a4e7933802fcbf"
+    "M-b5488c2696964ec58745ce5426f2b777": "2611ce2df7c0a747fd7d6943fd03d557d87ae8e08af35622ed0d6d6161725b6e",
+    "facility-games/threshold-meet-in-middle-objectives-and-response-pruning": "9e83c78342505c7400edc47f214924566a92f38eadd4877e8e8f4c6af45c5a8a"
   },
   "evidence_pins": {
     "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1",
-    "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65",
+    "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md": "3f89e2adde3fd647ec4834d9955d1441f79cd6c7e2b7be3d735b4c9f624dcc49",
     "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
-    "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md": "241e8015a7d6af25108a68619fd17e8c38dadcebae00d0a34ecdcb45eb9aa3eb",
+    "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md": "97ecba6feca16fb7302e2454e785f2d84240a8e2c7a2a561f3bbb278217d15ab",
     "archives/facility-games/tools/evidence/local-exact/original/facility_spe/exact/mitm.py": "948b57a1bc1f052bdce9a2fcf136a2cf43d8d7c84e01e99d8b8601d7ed37e37d"
   },
-  "review_digest": "389d23aecfb757aaf7ab2532e0a9d09deddf7d1843cc1a88a9268fe37fe5ee3f",
-  "contribution": {
-    "result": "对有理输入和有理编码t0，以poly(n)3^ceil(n/2)表操作求局部单谷精确最优NE及见证，精确有理运算的位长按客户与t0输入位长多项式控制，实际目标求值和比较成本另计。",
-    "remaining": "登记v3未明确限制t0的编码。若容许任意精确可比较目标及无理中心，原分数程序与有理见证保证须缩域；推广时须另声明代数或实数表示、运算成本和可输出见证类型。"
-  }
+  "review_digest": "57c6cb8e55703e53333aed44fb63ac3ffc748687a4a315bf1e1d4328b9e23b7b",
+  "whole_result": "完整闭支持谱推出 MITM v4：对每个符合有理编码中心合同的局部单谷目标，以 poly(n+1)3^ceil(n/2) 个有理运算和存储单元求全部独立混合 NE 上的一个最优有理见证。有理中间量及概率位长按含中心的总输入位长为多项式，目标表示、精确求值和比较成本另计。"
 }

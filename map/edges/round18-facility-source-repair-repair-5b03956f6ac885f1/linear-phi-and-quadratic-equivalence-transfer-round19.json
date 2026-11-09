@@ -17,7 +17,7 @@
     "QUAD-EQ": "给逐布局全部NE分布及相同设施收益的等价桥。",
     "QUAD-PHI": "保留相同φ上界的条件迁移。"
   },
-  "explanation": "固定布局、客户i与其他客户实现，i两种反事实含自身负载X+Y=V+w_i。费用差为[a_i(V+w_i)+b_i](X−Y)，系数严格正，且仅依布局和客户。纯偏离和全部独立NE、CE、CCE的比较逐条同乘此正数。将原线性见证的覆盖、权重、目录、设施标签、在轨布局及每格完整客户分布恒等复制到二次模型。每个带标签实际偏离的前后设施收益原样保留，故所有线性φ不等式逐项保持，含同址和零收益。",
+  "explanation": "固定布局及客户i，覆盖总重V固定。任取其他客户一次实现，i两种反事实含自身负载X+Y=V+w_i，故f_i(X)−f_i(Y)=[a_i(V+w_i)+b_i](X−Y)，正系数与其他客户实现、推荐或选择无关。独立NE逐客户条件偏离、CE按推荐加权偏离、CCE无条件固定偏离分别同乘此系数，全部对应局部集合一致。以SC-PHI-E给定的原线性独立NE完整见证为输入，恒等复制覆盖、权、标签、在轨布局及每格概率；设施仍收期望服务重，全部实际偏离的不等式逐项保持，包括同址与零收益。原线性下界族的转移可只用逐布局等价和原下界，不依赖线性上界。",
   "scope": "把SC-PHI-E的独立NE见证从线性模型迁到二次模型；局部等价也保CE/CCE，但本边给出的存在见证仍是原独立NE选择。",
   "evidence": [
     {
@@ -27,7 +27,8 @@
     },
     {
       "path": "archives/facility-games/state/等价/两设施同客户二次费用的均衡集合保持--等价.md",
-      "sha256": "72975462df6994e12097f47e8cf2bbf37523e31a6625eca6f533e33ba6967aff"
+      "sha256": "72975462df6994e12097f47e8cf2bbf37523e31a6625eca6f533e33ba6967aff",
+      "section": "全部条件与代数"
     },
     {
       "path": "archives/facility-games/state/审查/成本扩展、CCE与异构ρ边界的独立整理--审查.md",
@@ -40,38 +41,33 @@
       "section": "2. CE/CCE 与共同目录黄金比：条件性延伸"
     },
     {
-      "path": "archives/facility-games/state/引理/客户相关续局与纯负载费用变换的精确边界--引理.md",
-      "sha256": "c8ce76fffd5a4a946383b3b07e71629d32f3094b7e114c732de1cc3514b80f73"
-    },
-    {
       "path": "archives/facility-games/state/证明/地点费用推广的条件期望与完整续局教学推导--证明.md",
       "sha256": "f00befec59c4e8205511c2abdc0e09022fc4a95e120306f79dfba6252b87eaaf",
       "section": "12.5 二次费用为何保持全部客户均衡"
     },
     {
       "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
-      "sha256": "241e8015a7d6af25108a68619fd17e8c38dadcebae00d0a34ecdcb45eb9aa3eb",
+      "sha256": "97ecba6feca16fb7302e2454e785f2d84240a8e2c7a2a561f3bbb278217d15ab",
       "section": "A11.8 二次费用为何保留均衡，三次费用为何没有同样结论"
     }
   ],
   "reviewed_by": "Boss1",
-  "review_note": "对照SC-PHI-E登记的全称和待审状态、QUAD-EQ改版及审查§§1–2；审查§3的单交叠ρ和多交叠趋二是独立异构下界，未用作二次Φ迁移的输入。",
+  "review_note": "复读A11.8、12.5、二次等价正文和成本审查§§1–2，核SC-PHI-E待审的存在量词。对相关续局的下界需原线性下界自身排除相关分布；保原NE见证的迁移不升级为任意相关规则的保证。",
   "contribution": {
     "result": "若原线性SC-PHI-E成立，二次同客户费用模型逐布局使用同一在轨点与精确规则，得到完整φ稳定续局。",
     "remaining": "QUAD-PHI还记录独立线性下界族可由同一等价桥迁移；该下界另取原线性下界证明，无须SC-PHI-E上界前提。"
   },
   "endpoint_pins": {
-    "QUAD-EQ": "bf5371a00f34a9e22df455f2696156991960742c91797f1decc2144d0053020c",
-    "QUAD-PHI": "3c96819cd9529a15668c3b7ce29bcedfbfe7ae9d02f1158a65303a4d27c292df",
+    "QUAD-EQ": "fc4cf53aa1fda34e1c3d1a94236de94431c22bfe1fef91c70776ec8d0141e54f",
+    "QUAD-PHI": "a93c7cd78db3997d56d514e46912a0c2623a72cda52b03f7879cb8259b491677",
     "SC-PHI-E": "bb1582592344584a2ff981f6957d7733d4a174bc827d281340dc7739c6d9647d"
   },
   "evidence_pins": {
     "archives/facility-games/subarchives/common-two/state/定理/共同目录黄金比存在与有理构造--定理.md": "fa7a7a6429bbe429d35f2a5dcad07163aab8df1cf828b72f735cd2c96d1e8ff6",
     "archives/facility-games/state/等价/两设施同客户二次费用的均衡集合保持--等价.md": "72975462df6994e12097f47e8cf2bbf37523e31a6625eca6f533e33ba6967aff",
     "archives/facility-games/state/审查/成本扩展、CCE与异构ρ边界的独立整理--审查.md": "b26f5769897f647a47ae86a8863d758fcee490fee848ceb99d4504a6e1d97d9e",
-    "archives/facility-games/state/引理/客户相关续局与纯负载费用变换的精确边界--引理.md": "c8ce76fffd5a4a946383b3b07e71629d32f3094b7e114c732de1cc3514b80f73",
     "archives/facility-games/state/证明/地点费用推广的条件期望与完整续局教学推导--证明.md": "f00befec59c4e8205511c2abdc0e09022fc4a95e120306f79dfba6252b87eaaf",
-    "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md": "241e8015a7d6af25108a68619fd17e8c38dadcebae00d0a34ecdcb45eb9aa3eb"
+    "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md": "97ecba6feca16fb7302e2454e785f2d84240a8e2c7a2a561f3bbb278217d15ab"
   },
-  "review_digest": "76f12fec3ff0d602f91feb3a5206b6668fb291e2590c9cb9189785a440f41802"
+  "review_digest": "9e66e3f3739cf0d83b2462a62b579daeb507324b23e9738dea54559a2ae5db27"
 }

@@ -15,21 +15,28 @@
     "DP-W": "枚举完整闭谱并用数值总重W合并状态。",
     "LOCAL-HARD": "接受局部阈值判定的伪多项式时间上界。"
   },
-  "explanation": "DP-W的每个非空差距片与(−∞,−Q]作交，任一片交非空即YES；也可取全谱最小Δ比较阈值。片可为点或一名指定混合者的闭区间，均覆盖真实NE。时间按公共总重W的数值计O(n²W+n log n)有理运算，背景分子、分母和阈值按二进制位成本处理。A=B=0仍满足该算法的输入域。 归约产生Q=2U+R+1并把任何可行解迫到Δ=−Q，所以此处Q是每个输入给定的二进制正整数。固定布局阈值判定的弱NP完全性还分别依赖归约与短支持证书。",
+  "explanation": "DP-W输出每个非空闭片及见证，逐片交(−∞,−Q]或比较全谱最小Δ即可判定。A、B非负二进制有理、Q为输入的正整数，状态数按正整数共同总重W的数值为O(n²W+n log n)，并乘每次精确比较的多项式位成本。A=B=0仍在此域。归约的Q随输入构造；五进制低位编码、Q锚排除Δ<−Q、整倍数等号及两向补锚负责NP难；闭支持有理点或与阈值相交的有理端点负责NP成员性。DP只付伪多项式一半。",
   "scope": "给固定布局的指定坐标阈值判定一个伪多项式上界。NP难、NP成员、选址均衡和寻找任一客户NE分别具有自己的量词。",
   "evidence": [
     {
       "path": "archives/facility-games/state/归约/指定设施均衡负载极小值的弱NP完全性--归约.md",
-      "sha256": "aa398a78b53b28adfdc71c5a17e016b6323854b14d7a0fa14d9cb25401e685df"
+      "sha256": "aa398a78b53b28adfdc71c5a17e016b6323854b14d7a0fa14d9cb25401e685df",
+      "section": "从SUBSET SUM到二次有界源"
+    },
+    {
+      "path": "archives/facility-games/state/归约/指定设施均衡负载极小值的弱NP完全性--归约.md",
+      "sha256": "aa398a78b53b28adfdc71c5a17e016b6323854b14d7a0fa14d9cb25401e685df",
+      "section": "局部博弈编码及两个方向"
+    },
+    {
+      "path": "archives/facility-games/state/归约/指定设施均衡负载极小值的弱NP完全性--归约.md",
+      "sha256": "aa398a78b53b28adfdc71c5a17e016b6323854b14d7a0fa14d9cb25401e685df",
+      "section": "无私有者也足够"
     },
     {
       "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
-      "sha256": "241e8015a7d6af25108a68619fd17e8c38dadcebae00d0a34ecdcb45eb9aa3eb",
+      "sha256": "97ecba6feca16fb7302e2454e785f2d84240a8e2c7a2a561f3bbb278217d15ab",
       "section": "A11.4 LOCAL-HARD：极值为什么不能被当作免费子程序"
-    },
-    {
-      "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
-      "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc"
     },
     {
       "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
@@ -38,19 +45,19 @@
     }
   ],
   "reviewed_by": "Boss1",
-  "review_note": "复核A11.4的阈值量词、Q锚、背景差模拟与NP证书，并分开DP-W的数值W上界及二进制位成本。",
+  "review_note": "复读A11.4、指定设施归约与DP-W章节。归约可将目标镜像到R′≥U并用小共同客户模拟私有背景，但DP边不承担归约；常数混合截断与任选NE均是不同问题。",
   "contribution": {
     "result": "LOCAL-HARD的决定问题有数值W伪多项式算法，这一半与已证NP难、NP成员性合成弱NP完全分类。",
     "remaining": "仍由LOCAL-HARD自身的五进制归约给NP难，由闭支持的短有理见证给NP成员性；本算法不推出这些结论。"
   },
   "endpoint_pins": {
-    "DP-W": "06c7da8b6e40efc8737ac77476ed8fef8308fef3dd44d85225227de706524701",
-    "LOCAL-HARD": "740ca98c11174290921ecbf86f560b57dcfd9e0bbd2540c3e6976ffa3d1213f6"
+    "DP-W": "6f4e4750b24f9fb26357c4c18d8b39e36d9db6b7b33e2d4349b62d7b04d16ff5",
+    "LOCAL-HARD": "3b3d23234f79d2e8914d9a2d2c2efa9ded3bad50b8d5facbaf4d71f703806435"
   },
   "evidence_pins": {
     "archives/facility-games/state/归约/指定设施均衡负载极小值的弱NP完全性--归约.md": "aa398a78b53b28adfdc71c5a17e016b6323854b14d7a0fa14d9cb25401e685df",
-    "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md": "241e8015a7d6af25108a68619fd17e8c38dadcebae00d0a34ecdcb45eb9aa3eb",
+    "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md": "97ecba6feca16fb7302e2454e785f2d84240a8e2c7a2a561f3bbb278217d15ab",
     "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc"
   },
-  "review_digest": "4da4c8ba6d80c7f9e4de1d149e1b539231ffbaa4e26509cfe70920049b03c00f"
+  "review_digest": "62a46ccd18afee2d7b26652fe63d81a3012154cc878df14f7f4aeb104c488d53"
 }

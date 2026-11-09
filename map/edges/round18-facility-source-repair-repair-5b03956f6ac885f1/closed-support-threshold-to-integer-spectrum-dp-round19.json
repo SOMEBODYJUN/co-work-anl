@@ -15,21 +15,13 @@
     "M-b5488c2696964ec58745ce5426f2b777": "提供完整闭谱关系和逐名恢复条件。",
     "DP-W": "在重前缀上按(m,z)合并状态得整数总重算法。"
   },
-  "explanation": "按权非增排序，固定符号ε和截断j，要求w_{j+1}≤εΔ≤w_j。尾部轻客户置低侧，前缀任一纯/名义混合态均满足个体阈值。闭支持恒等式变为(1−m)Δ=δ−εℓ_j+z，因而在同一前缀上可按(m,z)无损去重。m=1且右端零保整闭片，边界等权客户的其他NE由更长前缀保留；回溯概率由Δ恢复。 状态由D₀={(0,0)}开始，每插入w转移到(m,z+w)、(m,z−w)、(m+1,z)。第j层至多(j+1)(2W+1)项，每态检查两个符号，求和为O(n²W+n log n)有理运算。所有父层占O(n²W)，只取极值时滚动为O(nW)，可逐片交[2a−V,V−2b]找双配额见证。n=0直接取Δ=A−B。",
+  "explanation": "非增排序后在符号ε和前缀j上限制w_{j+1}≤εΔ≤w_j，取w_0=∞、w_{n+1}=0。尾部轻客户置低侧，前缀个体的三态均满足阈值，故只需保(1−m)Δ=δ−εℓ_j+z。相等权在闭阈值造成重复，任何NE可取含全部w_i≥|Δ|的前缀，Δ=0在全前缀覆盖。D_0={(0,0)}，读w转移(m,z+w)、(m,z−w)、(m+1,z)；同层同状态保一个父指针。m=1且右端为0必须保整片，非零舍弃。每层至多(j+1)(2W+1)态，两个符号、常数转移，共O(n²W+n log n)有理运算。全父层O(n²W)，仅极值滚动O(nW)。与[2a−V,V−2b]相交找双配额，选定片后回溯并逐客户恢复概率。n=0直接取Δ=A−B。",
   "scope": "显式正整数公共权与有理背景的数学DP，给有理谱端点和见证。W为公共总重数值；清分母可使一般有理权的W指数大。",
   "evidence": [
     {
       "path": "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md",
-      "sha256": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1"
-    },
-    {
-      "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
-      "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc"
-    },
-    {
-      "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
-      "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
-      "section": "整数总重DP-W"
+      "sha256": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1",
+      "section": "三态闭单元精确覆盖"
     },
     {
       "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
@@ -37,22 +29,32 @@
       "section": "阈值压缩是完整谱的等价表示"
     },
     {
+      "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+      "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+      "section": "整数总重DP-W"
+    },
+    {
       "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
-      "sha256": "241e8015a7d6af25108a68619fd17e8c38dadcebae00d0a34ecdcb45eb9aa3eb",
+      "sha256": "97ecba6feca16fb7302e2454e785f2d84240a8e2c7a2a561f3bbb278217d15ab",
+      "section": "A11.1 先把一个局部博弈化成一条差距坐标"
+    },
+    {
+      "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+      "sha256": "97ecba6feca16fb7302e2454e785f2d84240a8e2c7a2a561f3bbb278217d15ab",
       "section": "A11.2 DP-W：轻客户先固定，重客户按状态合并"
     }
   ],
   "reviewed_by": "Boss1",
-  "review_note": "逐项核对A11.1修正后的输入域、A11.2前缀闭阈值、m=1整闭片、转移及空间计数。",
+  "review_note": "复读A11.1–A11.2及算法两个实际章节，核闭阈值含等号、符号后缀、整片、数值W与分母位长。A11.5/6的t0修订不改变DP状态转移。",
   "endpoint_pins": {
-    "DP-W": "06c7da8b6e40efc8737ac77476ed8fef8308fef3dd44d85225227de706524701",
-    "M-b5488c2696964ec58745ce5426f2b777": "e95f9b903e7263f62fbf3effe4a7b07cfb422af25c9a115a45da96173f780cf8"
+    "DP-W": "6f4e4750b24f9fb26357c4c18d8b39e36d9db6b7b33e2d4349b62d7b04d16ff5",
+    "M-b5488c2696964ec58745ce5426f2b777": "2611ce2df7c0a747fd7d6943fd03d557d87ae8e08af35622ed0d6d6161725b6e"
   },
   "evidence_pins": {
     "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1",
     "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
-    "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md": "241e8015a7d6af25108a68619fd17e8c38dadcebae00d0a34ecdcb45eb9aa3eb"
+    "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md": "97ecba6feca16fb7302e2454e785f2d84240a8e2c7a2a561f3bbb278217d15ab"
   },
-  "review_digest": "3c6bb31dfda5f39a34ce841db1f784833e1e5432e72d11d482313ca24cf3d692",
+  "review_digest": "636792248d04eaacc37e5028ca1cd3efd59aaea22344794fe676f41f63dbdc31",
   "whole_result": "对显式正整数公共权和非负有理背景，按前缀可达(m,z)求完整闭谱、两坐标极值及双配额见证，耗时O(n²W+n log n)有理运算；全部父层回溯占O(n²W)，只求极值用O(nW)滚动空间。空共同集常数处理。"
 }
