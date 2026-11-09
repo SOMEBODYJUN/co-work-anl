@@ -1,0 +1,40 @@
+{
+  "edge_id": "wc-b5-4932-finite-fourteen-resource-definition-pays-boolean-limit",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/scaled-fourteen-resource-family-and-limit"
+  ],
+  "target_ids": [
+    "M-30d382c7f97c48eea789aed8e8f93eed"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定t=(a,b,c,d,e,f,g)∈Q_(>0)^7，整数m→∞；七互补mask及全部二动作固定，权(1,1/(10m),1/(20m),1/(50m))；前六对degree32m²，第七对degree2。振幅固定而展开系数可随m变。",
+  "roles": {
+    "weighted-congestion/scaled-fourteen-resource-family-and-limit": "给全部合法有限资源、支持总权T_j(m)、真实负载、固定状态集及次数/权随m的具体量化。",
+    "M-30d382c7f97c48eea789aed8e8f93eed": "从有限资源逐项成本极限得到完整16态/全部冻结翻位表，并取有限minimax的极限。"
+  },
+  "explanation": "前六对若全支持同侧，x=T_j故费用恰t_j；否则缺权至少1/(50m)，而T_j≤1+17/(100m)≤117/100，故(x/T_j)^(32m²)≤exp(−32m²/[50m·117/100])=exp(−64m/117)。第七对若重者同侧，归一负载趋1；无重者时负载O(1/m)，故费用分别趋g或0。逐mask枚举八互补代表得到正文四人成本表，其他八态由全位互补同费对称得到；每个翻位的成本就是对应新状态该玩家表项。因此全部16态和64次翻位逐项收敛。正t使每个极限当前与偏离成本严格正，除法连续；固定有限集上的max_i和min_s连续，遂B(G_m(t))→B∞(t)。",
+  "scope": "完整有限表极限定理；辅助布尔表本身不是目标多项式游戏，不把任意α的极限无均衡直接误报为每个有限m无均衡。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md",
+      "sha256": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df",
+      "section": "有限游戏的完整定义"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md",
+      "sha256": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df",
+      "section": "布尔极限的来由"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/十四资源缩权族的独立审查与量词修正--审查.md",
+      "sha256": "799c690767e9c827e895f6f2e9f9947692700943a8bb7ae0d16c3b90c0c9f8c5",
+      "section": "真正新增及修正的内容"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "已逐段完整实读当前对象及必需证据，重核模型、全部真实偏离、量词、边界和本边承重推导；历史有限审计仅保其实际范围，本轮未以计数替代一般证明。",
+  "whole_result": "每个固定正有理七振幅t，前六对全支持费用恒t_j、未全支持费用≤t_j exp(−64m/117)趋0；第七对仅与重玩家同侧用户费用趋g，其余趋0。八代表及互补给全部正成本极限表，全部16态和全部真实偏离逐项收敛，且B(G_m(t))→B∞(t)。"
+}

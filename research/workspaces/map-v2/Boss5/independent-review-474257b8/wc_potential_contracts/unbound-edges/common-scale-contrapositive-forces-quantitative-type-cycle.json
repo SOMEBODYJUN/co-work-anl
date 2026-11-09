@@ -1,0 +1,36 @@
+{
+  "edge_id": "wc-stage3a-common-scale-contrapositive-forces-quantitative-type-cycle",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-TYPE-SCALE-COMPATIBLE-POTENTIAL-v1"
+  ],
+  "target_ids": [
+    "wc-near-linear-type-cycle-necessity-single-feedback"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "次数d≥2、每资源至多两种可动权值、吸收全局固定背景；A_d≤α<d且游戏无α-PNE。类型图按重到轻定向。",
+  "roles": {
+    "WC-TYPE-SCALE-COMPATIBLE-POTENTIAL-v1": "可变双排序比例的充分原游戏PNE/终止合同及固定局部正倍数拼接。",
+    "wc-near-linear-type-cycle-necessity-single-feedback": "无均衡迫使定量长方向失配类型环的必要条件半部。"
+  },
+  "explanation": "置L=(d−1)/(α−1)>1。α≥A_d保证L≤α，故每条边区间[L,α]非空。如果存在共同尺度L≤t_b/t_a≤α，源定理取F_r并求和即有α-PNE，与假设矛盾。取log，差分弧重到轻权logα、逆向−logL；不可行必有负简单圈。单边往返权logα−logL≥0，故负圈对应无向简单类型环。选遍历方向使其p个降权、q个升权满足L^p>α^q；严格权序不允许纯降/纯升闭合，p,q≥1。于是p>q logα/logL，α^q(α−1)^p<(d−1)^p；置R=logα/logL≥1，p≥floorR+1且q≥1，环长≥floorR+2。固定c∈(0,1)、α=cd时R/logd→1/log(1/c)，给Ω_c(logd)必要长环。推理是“尺度可行⇒有PNE”的逆否，未将尺度NO反推无PNE。",
+  "scope": "完整目标中的必要失配环、量化长度及严格有理证书部分；图环是类型图环，非改善环。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/两类型资源的共同尺度拼接与环失配阈值--定理.md",
+      "sha256": "26fd8be4e82f5c84fbe7cf7c657f1036f0dc7680c3e0cb00dc412efac3dde1e1"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/近线性失稳的类型失配环与单反馈障碍--定理.md",
+      "sha256": "fb2d5c36f75fa51c343d3670f27eb8657826630d5a2c5b2d9379b6bf84300f71"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "完整实读本包当前登记、端点正文与必要证据；核对模型、全部量词、真实偏离、弱端点/严格下降及作用范围。候选正确性保持条件，未把有限审计当全称证明。",
+  "contribution": {
+    "result": "若A_d≤α<d且无α-PNE，则存在p,q≥1的简单类型环满足α^q(α−1)^p<(d−1)^p，长度至少floor(logα/log((d−1)/(α−1)))+2；固定cd失稳需Ω_c(logd)环。",
+    "remaining": "反馈数1/树宽2仍可无cd-PNE的充分坏族另需完整全状态参数化构造及实际资源类型边账本；本边不由坏环单独生成无均衡游戏。"
+  }
+}

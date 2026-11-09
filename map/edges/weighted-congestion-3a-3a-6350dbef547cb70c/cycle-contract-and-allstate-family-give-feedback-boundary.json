@@ -1,0 +1,51 @@
+{
+  "edge_id": "wc-6350-cycle-contract-and-allstate-family-give-feedback-boundary",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-TYPE-CYCLE-IMBALANCE-CONTRACT-v1",
+    "WC-NEAR-UNIT-ALLSTATE-NONEXISTENCE-v1"
+  ],
+  "target_ids": [
+    "wc-near-linear-type-cycle-necessity-single-feedback"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限非负系数次数≤整数d≥2游戏，先吸收全局单策略玩家，每资源潜在可动权值至多两种，类型边从重到轻。必要性限A_d≤α<d；单环坏族对每固定c∈(0,1)的全部充分大整数d另选实例，无统一有界权比承诺。",
+  "roles": {
+    "WC-TYPE-CYCLE-IMBALANCE-CONTRACT-v1": "统一区间L≤t_light/t_heavy≤α可行时给真实α-PNE，其全环充要性供逆否。",
+    "WC-NEAR-UNIT-ALLSTATE-NONEXISTENCE-v1": "给任意固定c<1、充分大全部整数d的完整全状态坏族及实际资源/权型账本。",
+    "wc-near-linear-type-cycle-necessity-single-feedback": "接收无均衡的定量长失配环必要性，以及反馈数1类型图中的近线性坏族。"
+  },
+  "explanation": "置L=(d−1)/(α−1)>1。α≥A_d使L≤α，逐边往返条件已付。若所有无向简单环两方向均L^p≤α^q，则源全环定理给共同尺度和α-PNE。因此无α-PNE必有一环反转后L^p>α^q；严格权序给p,q≥1，故p>q lnα/lnL，环长≥floor(lnα/lnL)+2。有理α清分母为α^q(α−1)^p<(d−1)^p。这是充分存在性的逆否，不是合同NO⇒无均衡。固定c时lnα~ln d、lnL→ln(1/c)，故长环Ω_c(ln d)。另一方面，选整数n>1/(1−c)、d≥max{2^20,(600n)^2,ceil(1/c)}，源全态族每态有严格(1−1/n)d改善，因新费非负故无cd-PNE。其权型恰1,R^(−1),…,R^(−g)，R=8nd^4、g≥2；每个邻接测试非空且仅连a,a+1，返回测试仅连0,g，同权锚定门不增跨型边。故简单类型图恰长度g+1的无弦环，树宽2、最大度2，反馈边/顶点数恰1。参数权比R^g可增长，未得有界权比反例。若这个图类普遍有o(d)保证，固定c=1/2的大d坏族即矛盾。",
+  "scope": "必要环条件与特定单环坏族须ALL合并；不把任意长链或任意失配环说成坏游戏，不把简单类型图结构移作玩家关联图结构。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/两类型资源的共同尺度拼接与环失配阈值--定理.md",
+      "sha256": "26fd8be4e82f5c84fbe7cf7c657f1036f0dc7680c3e0cb00dc412efac3dde1e1",
+      "section": "全环条件与精确合同阈值"
+    },
+    {
+      "path": "archives/weighted-congestion/state/构造/短窗网格分离的全状态近一反例--构造.md",
+      "sha256": "fb94d8287c034a822bde2a44f27e03501d9d9babbe1f53ab4e6e460dae9f523c"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/近线性失稳的类型失配环与单反馈障碍--定理.md",
+      "sha256": "fb2d5c36f75fa51c343d3670f27eb8657826630d5a2c5b2d9379b6bf84300f71"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "本任务worker实读精确登记正文及承重证据，逐项核模型、全部量词、方向、弱端点、零成本和目标范围；程序绑定只校结构，不代数学判断。",
+  "whole_result": "无α-PNE在A_d≤α<d必迫使所述定量长方向失配简单类型环；同时每固定c<1的充分大所有d有真实全态无cd-PNE、简单类型图恰单无弦环的游戏，故反馈边/顶点数1和树宽2不能给此域o(d)普遍保证。",
+  "endpoint_pins": {
+    "WC-NEAR-UNIT-ALLSTATE-NONEXISTENCE-v1": "a82a291cc20ead016fb7403b724b64e9040a7c1af478d362a5021cbe92e074a3",
+    "WC-TYPE-CYCLE-IMBALANCE-CONTRACT-v1": "101acf3016c075a91a4d738fd518105971d8c9adb9bf796533720b009e8df17d",
+    "wc-near-linear-type-cycle-necessity-single-feedback": "11427a8ece8c437fb5bd705e8881e772863dfed99564a7f7b36648e6f4fc3eb8"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/两类型资源的共同尺度拼接与环失配阈值--定理.md": "26fd8be4e82f5c84fbe7cf7c657f1036f0dc7680c3e0cb00dc412efac3dde1e1",
+    "archives/weighted-congestion/state/构造/短窗网格分离的全状态近一反例--构造.md": "fb94d8287c034a822bde2a44f27e03501d9d9babbe1f53ab4e6e460dae9f523c",
+    "archives/weighted-congestion/state/定理/近线性失稳的类型失配环与单反馈障碍--定理.md": "fb2d5c36f75fa51c343d3670f27eb8657826630d5a2c5b2d9379b6bf84300f71"
+  },
+  "review_digest": "775cb799577d960cc8e9cc72d81dcfc3df31937335723e3f4920f8383b651fd9"
+}

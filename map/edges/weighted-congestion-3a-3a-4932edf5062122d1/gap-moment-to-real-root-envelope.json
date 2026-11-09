@@ -1,0 +1,53 @@
+{
+  "edge_id": "wc-boss5-4932-gap-moment-to-real-root-envelope",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/extremal-DAG-weight-gap-moment"
+  ],
+  "target_ids": [
+    "weighted-congestion/extremal-all-in-root-rational-bound"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "非空有限simple DAG的原对称双列binary策略；根权1、正轻权W<1、t_v=Σ_out w_u<w_v，δ_v=w_v−t_v；非零非负系数费用次数≤整数d≥1。共同A>0使p0(1)=A、pv(1+w_v)=Ah_v(q)，q>1、qh_v=1+Σ_in h_u、Σh=q−1。只能整体除以A，不能分别重定卫星幅度。",
+  "roles": {
+    "weighted-congestion/extremal-DAG-weight-gap-moment": "提供严格μ=Σh_vδ_v≤W/q<1/q；路径展开和独立双重和均已核。",
+    "weighted-congestion/extremal-all-in-root-rational-bound": "通过真实新负载、逐项次数界和Jensen得到严格根界；另实算全部轻玩家得到弱1+1/q界。"
+  },
+  "explanation": "先把全部费用除共同A。全入根当前成本1+Σh=q，根真实翻后为p0(1+W)+Σpv(1+t_v)，故≥1+Σh_v(1+δ_v)^(−d)。这里pv(1+t_v)≥h_v[(1+t_v)/(1+w_v)]^d≥h_v(1+δ_v)^(−d)，没有把根负载错算成1+w_v+t_v。令T=Σh=q−1，g(x)=(1+x)^(−d)严格递减且凸。Jensen和μ<1/q给Σh g(δ)≥Tg(μ/T)>Tg(1/(qT))，故根当前/真实偏离严格小于B_d(q)。轻v当前完整成本p0(W)+Σ_in pv_pred(t_pred)+pv(1+w_v)≤(q+1)h_v；真实翻后是p0(1+w_v)+Σ_in p_pred(1+w_pred+w_v)+pv(w_v+t_v)≥qh_v>0。每人恰两动作，所以全部轻玩家比≤1+1/q；保留原动作自明。严格根界与弱轻界合成目标登记的完整比较，不调用阶跃零漏近似。",
+  "scope": "固定幅度(N)和合法权的真实多项式子类，根严格界保留；所有费用分母正。没有任意幅度归一化或全类归约。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+      "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c",
+      "section": "总权重的缺口矩"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+      "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c",
+      "section": "根偏离的Jensen包络"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+      "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c",
+      "section": "所有轻玩家的真实偏离"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+      "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c",
+      "section": "对象、实际幅度条件和结论"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "逐式实读本边列明的现行自足证明，核模型、量词、全部真实偏离、零费与严格/弱端点；历史审查和有限计数不充当一般证明。本轮未运行旧审计程序。",
+  "whole_result": "完整目标：根旧成本qA、新成本≥A[1+Σh_v(1+δ_v)^(−d)]>A[1+(q−1)(1+1/[q(q−1)])^(−d)]，故根比<B_d(q)；全部轻玩家比≤1+1/q，指定全入态满足max{1+1/q,B_d(q)}的全部弱稳定不等式。",
+  "endpoint_pins": {
+    "weighted-congestion/extremal-DAG-weight-gap-moment": "18e99307e2db848b260b6caecdd6ea35350d7c6340375b5c93d4f2245cb0dbe2",
+    "weighted-congestion/extremal-all-in-root-rational-bound": "b8e5124ca65e1572215dce130eec46ad59db895567247d935f8fe398dcd02127"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c"
+  },
+  "review_digest": "95d02059ffdc08fd794610267be9dfbdaef3e62e7997b2e18cb016f8f3a8649a"
+}

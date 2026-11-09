@@ -1,0 +1,48 @@
+{
+  "edge_id": "wc-b5-4932-forest-recursion-supplies-tree-frozen-quotes",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "wc-incidence-forest-exact"
+  ],
+  "target_ids": [
+    "wc-one-player-tree-private-lift"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限正实权、任意有限耦合资源子集策略，费用逐点有限非负非减。根为玩家，每条附属根边下是互不交子树；固定阈值平局顺序独立于背景。",
+  "roles": {
+    "wc-incidence-forest-exact": "调用证明中的星形阈值贪心与背景反单调性，提供构造性根bit接口；仅存在一个森林PNE的裸结论不足。",
+    "wc-one-player-tree-private-lift": "需要根使用价等于报价、冻结未使用延续后进入价不小于报价，及后代对全部原偏离精确稳定。"
+  },
+  "explanation": "对每个资源e，先按子玩家使用bit条件最小化其他树枝报价，得到h_i(0),h_i(1)与阈值t_i；不可行bit不作无穷相减。按阈值非增贪心接受，拒绝者之后进入费只增，接受者用最后接受者阈值支付退出，故虚拟星形精确稳定。分别在根背景0和w_r运行同序贪心，其最终子权L_1≤L_0。置p_e=c_e(w_r+L_1)，两延续y_e^0,y_e^1中根使用时真实费=p_e，根从未使用态冻结y_e^0后加入费=c_e(w_r+L_0)≥p_e。树分枝不交使递归良定；任一子玩家保留费用=报价、新进入费用≥报价，故任意真实耦合偏离不优于对应虚拟偏离，后代全部原策略稳定。无根分量另由森林存在结论选精确PNE。",
+  "scope": "只提取挂树提升所需的全部冻结报价证书，不把任意条件均衡当作交叉报价，也不让根偏离后重新求后代均衡。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/潜在使用森林的精确均衡--定理.md",
+      "sha256": "403e5541be23f8315b202bf29c9ac9012d5d861818d05d99dfee99a0a1ca8932",
+      "section": "资源星形的降阈值贪心"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/潜在使用森林的精确均衡--定理.md",
+      "sha256": "403e5541be23f8315b202bf29c9ac9012d5d861818d05d99dfee99a0a1ca8932",
+      "section": "根资源的两种延续和同一报价"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/潜在使用森林的精确均衡--定理.md",
+      "sha256": "403e5541be23f8315b202bf29c9ac9012d5d861818d05d99dfee99a0a1ca8932",
+      "section": "从接口得到森林均衡"
+    },
+    {
+      "path": "archives/weighted-congestion/state/归约/单核心挂树的私人成本提升--归约.md",
+      "sha256": "456b96fc3baea68a591e7deec3c327cf0f6a144016fc020fc3d96ba08308e454",
+      "section": "构造及逐状态证明"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "已逐段完整实读当前对象及必需证据，重核模型、全部真实偏离、量词、边界和本边承重推导；历史有限审计仅保其实际范围，本轮未以计数替代一般证明。",
+  "contribution": {
+    "result": "森林证明的特定递归为每条单根附属边构造两bit延续：后代全部精确稳定，根当前使用费=p、冻结未使用延续再进入费≥p；无根分量可固定精确PNE。",
+    "remaining": "完整挂树归约仍须把这些逐边证书与可有环保留核心拼接，保持原策略映射单射，证明同一lift对全部实α≥1的成本等式/偏离下界，并核常数替代不升次数；已有目标正文完成这些后续步骤，本边只承担证书构造。"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "edge_id": "wc-6350-positive-cycle-interface-forces-degree-budget",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "OC-INTERFACE-v1"
+  ],
+  "target_ids": [
+    "weighted-congestion/odd-ring-interface-degree-barrier"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "奇数m≥3、n_i≥1、权比闭环∏x_i=∏t_i；主/侧次数1≤k_i,D_i≤d，d≥1，α>1；只论N_i,Q_i>0及严格正系数闭环G>1的证书接口。",
+  "roles": {
+    "OC-INTERFACE-v1": "定义真实资源、N/M/P/Q与权比闭环及G>1的正系数充要合同。",
+    "weighted-congestion/odd-ring-interface-degree-barrier": "从该合同推出(α−1)(α^(1/d)−1)<1及渐近方法上限。"
+  },
+  "explanation": "置z=α^(1/d)>1、L=z−1。N_i>0给n_ix_i<(1+x_i)α^(−1/k_i)≤(1+x_i)/z，由n_i≥1得x_i<1/L；Q_i>0给t_i>α^(1/D_i)−1≥L。因此∏n_i<∏(1+x_i)/(z^m∏x_i)<L^(−2m)，其中用∏x_i=∏t_i>L^m及1+1/L=z/L。另一方面M_i≥(α−1)(1+x_i)^k_i、N_i<(1+x_i)^k_i，且P_i−(α−1)Q_i=(1+t_i)^D_i−t_i^D_i+α(α−1)>0，故G<∏n_i/(α−1)^(2m)<[(α−1)L]^(−2m)。G>1强迫(α−1)L<1。再由e^s−1≥s得(α−1)lnα<d；任意固定ε>0时α=(1+ε)d/ln d充分大违反此式，故该强迫证书不能渐近超过首项d/ln d。全部推导在正量上进行，α=1不作非法除法。",
+  "scope": "必要性只限制接口正系数严格两测试；不把测试失败作为整个拓扑均衡证明，更不是全类PNE上界。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md",
+      "sha256": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/奇环正系数接口的次数上限--障碍.md",
+      "sha256": "6432a09c208cfd826dbfd4dc30a083b6b71c90c9ae089fb0c7178d0135a88411"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "本任务worker实读精确登记正文及承重证据，逐项核模型、全部量词、方向、弱端点、零成本和目标范围；程序绑定只校结构，不代数学判断。",
+  "whole_result": "任何该闭环正系数严格证书均满足(α−1)(α^(1/d)−1)<1，因而(α−1)lnα<d；证书渐近倍率至多(1+o(1))d/ln d，范围严格限所列接口。",
+  "endpoint_pins": {
+    "OC-INTERFACE-v1": "2632cfb87681d8d959b5e44f47d114e30bacc287bba2a931798524c44c6be252",
+    "weighted-congestion/odd-ring-interface-degree-barrier": "550edf346e2d0f3bc445a5d0dfc6048c9a6d091898c55eb4c29304e14711a27b"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6",
+    "archives/weighted-congestion/state/障碍/奇环正系数接口的次数上限--障碍.md": "6432a09c208cfd826dbfd4dc30a083b6b71c90c9ae089fb0c7178d0135a88411"
+  },
+  "review_digest": "e3a190bd4f1f653dcd9dddf052d81c056641c16216ad8dd567e1a17e50e12a79"
+}

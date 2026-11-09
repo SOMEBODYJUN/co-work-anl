@@ -1,0 +1,42 @@
+{
+  "edge_id": "wc-b5-4932-root-and-scalar-bound-pay-full-all-in-theorem",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/extremal-all-in-root-rational-bound",
+    "weighted-congestion/extremal-all-in-uniform-square-root-bound"
+  ],
+  "target_ids": [
+    "WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "沿用极值DAG同一(N)、正权与真实binary偏离合同，整数d≥1。统一平方根推论仅在整数d≥16使用；q=q_D>1是统一标量对象所量化的实q的子域。",
+  "roles": {
+    "weighted-congestion/extremal-all-in-root-rational-bound": "为每个d≥1提供全部玩家真实偏离的max{1+1/q,B_d(q)}界。",
+    "weighted-congestion/extremal-all-in-uniform-square-root-bound": "对每个d≥16及全部实q>1提供同一标量倍率≤4√(d/ln d)。",
+    "WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1": "合并实际游戏稳定保证和大次数统一常数，两个部分均保留。"
+  },
+  "explanation": "根对象同时给根严格比<B_d(q)与全部轻玩家比≤1+1/q；因此每个d≥1，所有合法偏离均满足弱α_d(q)-PNE不等式。对d≥16，统一标量对象对本实例q_D也适用，α_d(q_D)≤4√(d/ln d)。两者是联合前提：纯标量界没有游戏偏离保证；根包络本身没有与q无关的平方根估计。统一标量证明把q≤K与q>K分开，K=4√(d/ln d)>2；后域B_d≤q exp(d/[q(q−1)])/(q−1)<2d^(1/8)<K，故不是有限DAG样本外推。",
+  "scope": "完整目标陈述；次数16下界只附统一部分，未将其加到所有d≥1的精细倍率上。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+      "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c",
+      "section": "对象、实际幅度条件和结论"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+      "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c",
+      "section": "根偏离的Jensen包络"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+      "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c",
+      "section": "对所有实 $q>1$ 的统一常数"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "已逐段完整实读当前对象及必需证据，重核模型、全部真实偏离、量词、边界和本边承重推导；历史有限审计仅保其实际范围，本轮未以计数替代一般证明。",
+  "whole_result": "对每个有限非空simple DAG、合法正实权、整数d≥1及满足同一极值幅度(N)的任意合法费用形状，真实全入状态是max{1+1/q,B_d(q)}-PNE；每个整数d≥16统一为4√(d/ln d)-PNE。"
+}

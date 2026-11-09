@@ -1,0 +1,36 @@
+{
+  "edge_id": "wc-stage3a-ap01-common-interior-restricted-perfect-target",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-a49d79da09f0479f9f325fa38fcc6242"
+  ],
+  "target_ids": [
+    "SEL-MATROID-PERFECT-ASYM-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "有限无权玩家、各自拟阵全部基与独立性oracle、非负非减有理延迟表；另要求存在共同有理相对内点p∈∩ri(P_i)。本边以AP-01尚待证明的完整算法主张为假设，不能把候选状态消去。",
+  "roles": {
+    "M-a49d79da09f0479f9f325fa38fcc6242": "受共同相对内点限制的位多项式纯perfect计算候选；完整正确性仍未证明。",
+    "SEL-MATROID-PERFECT-ASYM-v1": "不加共同内点的一般原normal-form纯perfect位多项式输出问题。"
+  },
+  "explanation": "AP-01输入域是一般目标输入域的子集，且输出合同完全相同：打印每人一个合法基，并有完全混合独立玩家策略列趋向该纯核，使核基始终对对手混合最佳回应。若AP-01的全支持构造、slot拟阵交、位长及统一小epsilon固定核等义务全部闭合，则把任一满足共同ri假设的原题输入交给该算法，就得到原题在此子域的所需输出。对一般非减延迟无需再加affine假设。AP-02的任意个人内点不能替换本边共同p条件。旧正文U(2,4)成本表在当前registry已明确排除，其声称的单交换障碍与加性模型不相容，本边不使用该段。",
+  "scope": "只给共同ri受限目标的条件贡献，不证明AP-01正确，也不解决一般任意非对称拟阵。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/资料/非对称拟阵纯精炼均衡候选与证明承重边界--资料.md",
+      "sha256": "12a5aa1e599da208e56e6248c1687eaf4130460be827faa212a3cdbb98f5eac3"
+    },
+    {
+      "path": "archives/weighted-congestion/state/问题/非对称拟阵拥塞的纯精炼均衡计算--问题.md",
+      "sha256": "1b872fd3acb54fa78231dffde4f9708e9bed2a4fe7a8d0864773882cd423236a"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "完整实读本包当前登记、端点正文与必要证据；核对模型、全部量词、真实偏离、弱端点/严格下降及作用范围。候选正确性保持条件，未把有限审计当全称证明。",
+  "contribution": {
+    "result": "假设AP-01完整正确，则一般纯perfect计算目标在共同有理相对内点子域可位多项式完成。",
+    "remaining": "候选自身尚欠每合法基全支持分布、有效延迟精确卷积/位长、slot交正确性及统一充分小epsilon固定核证明；即使这些完成，还未覆盖共同ri交为空的任意非对称非减延迟实例。"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "edge_id": "wc-6350-finite-contract-supports-fixed-charge-residual",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "wc-finite-instance-two-order-exact-scale-interval"
+  ],
+  "target_ids": [
+    "wc-fixed-charge-strengthened-stability-original-game-residual"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限原游戏、β≥1。选择真实D后，其余资源在源非负D/U字典已取得共同q_i=w_it_(w_i)；所选资源改非负p_e。原占用范围m_e≤c_e≤M_e，费率桥限p_e∈[m_e,M_e]，全部范围相对原完整菜单。",
+  "roles": {
+    "wc-finite-instance-two-order-exact-scale-interval": "为未干预资源提供共同玩家尺度的插入夹逼，并准确限定字典NO。",
+    "wc-fixed-charge-strengthened-stability-original-game-residual": "把常数费资源补成玩家可分势，输出强化稳定及原游戏误差桥和低振幅分支。"
+  },
+  "explanation": "对e∈D取H_e=p_eΣ_(i使用e)q_i，插入边际恰q_ip_e，对任意类型尺度均可。与未改资源求和，任一真实偏离ΔΦ≤q_i(βC_join^p−C_leave^p)，故势局部最小满足所有动作对leave^p≤βjoin^p，严格违反者下降且有限终止。返回原成本，保留项贡献−(β−1)C_keep≤0，选中删除误差≤M_e−p_e、选中加入误差≤β(p_e−m_e)，相加即R_i(S,T)。若只给任意修改后β-PNE，则原/修改的共有资源差另需(β−1)Σ_(D∩S∩T)(p_e−m_e)；不能省去。对单资源最大包络max{M−p,β(p−m)}，两单调分支交于p*=(M+βm)/(β+1)，半径β(M−m)/(β+1)；对固定D枚举全部显式菜单动作对得到有理费率LP及取得的包络最优。正目标成本下界b_i>0时才由ε_i加性界转换β+ε_i/b_i。另对不改游戏的低振幅资源，H_e=M_eΣ_(可选i使用e)q_i有q_ic_e≤ΔH_e≤(M_e/m_e)q_ic_e，m_e>0；与其余合同合成γ=max{β₀,max M_e/m_e}给原γ-PNE及严格改善终止。零资源用零势。",
+  "scope": "只给明示改费、强化停点、包络预算及计数势接口；不承诺任意修改后PNE都达到对称差误差，也不承诺位多项式终点搜索、最优真实遗憾或物理社会成本。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/有限实例双排序尺度区间的精确校准--定理.md",
+      "sha256": "fa74aa7084c29253386b97d82c0f2ea52b6e1f4db913d4f01123f3994ae4a2ac"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/固定费干预的强化稳定与原游戏残差--定理.md",
+      "sha256": "a996ab033b11de96836d4aeb131e0d6b23601110db91fa01ec6d81a67ea2352c"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "本任务worker实读精确登记正文及承重证据，逐项核模型、全部量词、方向、弱端点、零成本和目标范围；程序绑定只校结构，不代数学判断。",
+  "whole_result": "经剩余资源共同尺度校准，真实固定费常数化具有强化leave/join终点与全部原偏离的对称差加性残差；任意修改后β-PNE需另计共有误差，且低振幅计数势分支在不改游戏时给所述原乘性稳定。",
+  "endpoint_pins": {
+    "wc-finite-instance-two-order-exact-scale-interval": "f0fac67dc6cf276ca43896cc8437990657f2a5019d4ee064cb557fc66f3af392",
+    "wc-fixed-charge-strengthened-stability-original-game-residual": "a1f1ab1df37ad6d3989fc805597dca2b995772764a2965e55e4a38795a5b8645"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/有限实例双排序尺度区间的精确校准--定理.md": "fa74aa7084c29253386b97d82c0f2ea52b6e1f4db913d4f01123f3994ae4a2ac",
+    "archives/weighted-congestion/state/定理/固定费干预的强化稳定与原游戏残差--定理.md": "a996ab033b11de96836d4aeb131e0d6b23601110db91fa01ec6d81a67ea2352c"
+  },
+  "review_digest": "ea8341c85926e3d591f882525e035a8c3518c1cd226f58bff628571da298be37"
+}

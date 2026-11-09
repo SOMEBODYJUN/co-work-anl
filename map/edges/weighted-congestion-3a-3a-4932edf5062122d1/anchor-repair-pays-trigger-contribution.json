@@ -1,0 +1,57 @@
+{
+  "edge_id": "wc-boss5-4932-anchor-repair-pays-trigger-contribution",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-FRONT-CORE-STABLE-SET-TRANSFER-v1"
+  ],
+  "target_ids": [
+    "WC-SOCIALLY-DESCENDING-REPAIR-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "相同完整等权类、完整(0,j,k)同费非减锚定三元门；W=Σ_iw_iC_i。此局部结构贡献不需要RD或SD；门值z=c(w)、u=c(2w)、v=c(3w)，ν为010/101触发数、L=C(n−1,2)。",
+  "roles": {
+    "WC-FRONT-CORE-STABLE-SET-TRANSFER-v1": "提供合法门关联、触发等价非前沿、最早异位修复的逐incident门三分结构与指定步数。",
+    "WC-SOCIALLY-DESCENDING-REPAIR-v1": "获得全态门社会分解及修复消触发这一部分；基体外部性尚需独立支付。"
+  },
+  "explanation": "每个门未触发时2+1分侧，社会成本w(2u+z)；触发时三人同侧，成本3wv。因此逐门求和在全部状态得到W+=W_B+K+Σ_a w_aν_a(3v_a−2u_a−z_a)，K=Σ_aw_aL_a(2u_a+z_a)。最早异位i翻回anchor位：不含i的门不变；i居中时翻后与anchor同位，i居末时中位比i早而原已同anchor，翻后均不触发；至少一门原触发。故各步只消触发、不新增，几何调度≤Σmax(n_a−2,0)步。此分解和计数本身不控制基体其他用户的社会外部性。",
+  "scope": "目标的结构贡献；RD仅控制个体稳定修复，不能据此声称社会下降或完整OPT在前沿。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md",
+      "sha256": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f",
+      "section": "完整等权类门及强支配"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md",
+      "sha256": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f",
+      "section": "全部稳定集合的三分支证明"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md",
+      "sha256": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f",
+      "section": "指定修复、全出口和输出预算"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/锚定门的社会费用分解与最优压缩--定理.md",
+      "sha256": "dc6b751a584d2f2bc89e8aa092c8d5c2bcf6339c1d108f3499d85d96115e8f1d",
+      "section": "固定社会目标和全状态分解"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "逐式实读本边列明的现行自足证明，核模型、量词、全部真实偏离、零费与严格/弱端点；历史审查和有限计数不充当一般证明。本轮未运行旧审计程序。",
+  "contribution": {
+    "result": "目标的全态社会门分解、K常数、最早异位每步严格消触发而不增触发及指定步数界已由完整门构造支付。",
+    "remaining": "还须基体次数p的真实完整社会外部性ΔW_B≤(p+1)w_iC_i^B(new)，再用SD:3v−2u−z>(p+1)B付清社会下降/完整OPT；稳定及质量还要目标RD和容差稳定/核心质量。六玩家RD成立但社会OPT核外的反例阻止省略。"
+  },
+  "endpoint_pins": {
+    "WC-FRONT-CORE-STABLE-SET-TRANSFER-v1": "f784bf003aec5e448acc4942163bf0653cb8a0549b31383d3b26c53e779153c5",
+    "WC-SOCIALLY-DESCENDING-REPAIR-v1": "7a4a6f8c4cc8b73e935e0f26487e186911e7f24bd987b9e3c18c39a053a50b94"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f",
+    "archives/weighted-congestion/state/定理/锚定门的社会费用分解与最优压缩--定理.md": "dc6b751a584d2f2bc89e8aa092c8d5c2bcf6339c1d108f3499d85d96115e8f1d"
+  },
+  "review_digest": "fadde37f966f796bfcd9014fcfee32079caa6e442b5007bac912e4316c485081"
+}

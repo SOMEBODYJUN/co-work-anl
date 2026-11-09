@@ -1,0 +1,45 @@
+{
+  "edge_id": "wc-3a-fixed-hub-response-specializes-light-orbit-feasibility",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/fixed-hub-light-threshold-response"
+  ],
+  "target_ids": [
+    "WC-R2-ORBIT"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "在目标对称两列模型中固定唯一权1主玩家朝向；n≥1名侧玩家共同权w>0，主费P、每个侧费Q为任意非负系数有限多项式，含零/常数。映射到source定理：一个hub，所有light有同一source，F=P，每light恰一条unique-light side且H_j={hub}，G_j=Q；只准light真实单方移动。",
+  "roles": {
+    "weighted-congestion/fixed-hub-light-threshold-response": "冻结hub后全部light的保符号/平局序势及有限精确响应存在；含F为常数的独立分支。",
+    "WC-R2-ORBIT": "对称两列light稳定约束确有可行m；完整实例仍需另外同时检查主玩家偏离。"
+  },
+  "explanation": "将hub动作归为0，所有其他选0的light总权为x。其唯一side在light选0时无hub、费Q(w)，选1时与hub同侧、费Q(1+w)。source真实差于是D_i(x)=P(1+x+w)+Q(w)−P(nw−x)−Q(1+w)，新目标nw−x包含移动者自身。若该light是m名同位者之一，x=(m−1)w，D_i=A_m−D_m；若原在异侧，检查反向即D_(m+1)−A_(m+1)。source阈值序势全局最小点或排序删除给一个精确light响应，因此存在m使A_m≤D_m（m≥1）及D_(m+1)≤A_(m+1)（m<n）；端点删缺项，零费用直接比较。该m对每个β≥1也满足light弱β条件。ORBIT中L_m=A_m/D_m非减、反向1/L_(m+1)非增的独立公式又把这些可行m描述为整数区间。source仅固定hub，故不推出该m还满足h_m≤βh_(n−m)，更不推出完整两列有exact PNE；粗证书损失例正表明该区别实质。",
+  "scope": "冻结hub的精确响应对称特化，局部贡献只在light子系统；没有交换“每个固定hub有响应”与“全游戏有共同稳定朝向”的量词。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/固定主玩家的轻玩家阈值响应--定理.md",
+      "sha256": "bc2b7717ea9455eabc29f3abceaadb2e1f2338d43cf829dc340fdc8a38f33676"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/对称两列实例的完整轨道均衡阈值--定理.md",
+      "sha256": "376c334d4f834013b9184fba081ac0d9d14a29a6c2f35822b9fdad5dd29b1871"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "完整实读所列正文并重推该关系；数学量词、全部共同条件与贡献剩余项按本边明确范围审定。未把历史审计当本轮程序执行。",
+  "contribution": {
+    "result": "每个固定主玩家朝向下，对称两列至少存在一个light精确稳定轨道m；故所有β≥1的light可行m集合非空。",
+    "remaining": "目标完整轨道定理还需主玩家真实偏离公式、三类偏离穷尽、min_m q_m阈值及light区间单调性；source响应不能使hub稳定，也不计算全实例minimax。"
+  },
+  "endpoint_pins": {
+    "WC-R2-ORBIT": "63c1f91a22c0d0e926a85e2f11775bbc58760a49e8bec54464953fc51b4b960c",
+    "weighted-congestion/fixed-hub-light-threshold-response": "8551362f8b9bc40231bfc536149fa6f520f2d534197f8f8c9c022105f7425818"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/固定主玩家的轻玩家阈值响应--定理.md": "bc2b7717ea9455eabc29f3abceaadb2e1f2338d43cf829dc340fdc8a38f33676",
+    "archives/weighted-congestion/state/定理/对称两列实例的完整轨道均衡阈值--定理.md": "376c334d4f834013b9184fba081ac0d9d14a29a6c2f35822b9fdad5dd29b1871"
+  },
+  "review_digest": "6140cdf09d83b879f133ce0d56271fd45bb099baeb640272b300667a250a27cd"
+}

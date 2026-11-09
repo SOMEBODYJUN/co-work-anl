@@ -1,0 +1,34 @@
+{
+  "edge_id": "wc-b5-4932-ordered-parameter-specialization-sharp-limit",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "WC-ORDERED-COHORT-FREEZING-v1"
+  ],
+  "target_ids": [
+    "WC-ORDERED-TAIL-PARAMETER-LIMIT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "一名权H≥1和整数K≥1名单位权玩家，单资源c=x^d、整数d≥1，人人菜单{空,{e}}；优化全部有序非空划分，潜在用户始终为全体玩家。",
+  "roles": {
+    "WC-ORDERED-COHORT-FREEZING-v1": "给被优化的固定潜在参数A及先后选择阶段全局最小的具体程序。",
+    "WC-ORDERED-TAIL-PARAMETER-LIMIT-v1": "精确求此参数在全部划分的最优值并区分参数发散与真实输出性能。"
+  },
+  "explanation": "任意划分穷尽三类：重者与轻者同组时该组b/a=H，故A≥H；重者独组而有轻组在前时，该轻组a=1且L≥H，故A≥(1+H)^d≥H；重者独占首组时其尾重K，故A≥(1+K/H)^d。全体同一组给A=H，重首/全轻末给A=(1+K/H)^d，故精确最小值为二者之min。K=ceil(H²)时后项≥H，最优参数恰H随H无界。另一方面每阶段全空的H势为0；任一非空资源用户集W>0使F(W)=W(h+W)^d>0，子集势系数为正，故本单资源阶段任意全局最小点都全空，逐阶段归纳最终全空。全空成本0，所以精确PNE。",
+  "scope": "精确特例与参数边界；不反驳冻结定理，不称算法输出差，不扩到d=0（该端点最佳参数为1）。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/有序权组尾部冻结--定理.md",
+      "sha256": "9021bb82f8b30debc6d82f157ca4f63b49370ae9aa066d60ce9d59011d11f748",
+      "section": "对象、参数与程序的全部量词"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/潜在尾部参数的锐界--障碍.md",
+      "sha256": "5265d994fbc6a5fd81ec4e4854b769427bfc927cb58eaf8d6612a9ff0f2eb2f1"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "已逐段完整实读当前对象及必需证据，重核模型、全部真实偏离、量词、边界和本边承重推导；历史有限审计仅保其实际范围，本轮未以计数替代一般证明。",
+  "whole_result": "对每个实H≥1、整数K≥1及d≥1，全部有序非空划分的最小A恰min{H,(1+K/H)^d}，分别由同组和重首轻末取得；K=ceil(H²)时最优参数H无界。同一游戏全空为精确PNE且所有阶段法输出均全空。"
+}

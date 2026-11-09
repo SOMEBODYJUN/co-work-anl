@@ -1,0 +1,50 @@
+{
+  "edge_id": "wc-6350-interval-and-residual-jointly-give-resource-optimization",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "wc-finite-instance-two-order-exact-scale-interval",
+    "wc-fixed-charge-strengthened-stability-original-game-residual"
+  ],
+  "target_ids": [
+    "wc-resource-conflict-hitting-fixed-charge-budget-optimization"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "目标有理β固定；有限有理显式原菜单、费用稠密；原资源身份（含平行资源）保留。未选资源用非负D/U、同权共尺度、全部局部人数插入合同；选中资源用固定费玩家可分势。外生κ_e≥0与残差包络预算分立。",
+  "roles": {
+    "wc-finite-instance-two-order-exact-scale-interval": "给每个原资源精确空集或[l_e,β]、有理尺度和乘积冲突环。",
+    "wc-fixed-charge-strengthened-stability-original-game-residual": "说明真实常数化去该资源的尺度限制，给费率域及全部菜单对原游戏误差。",
+    "wc-resource-conflict-hitting-fixed-charge-budget-optimization": "联合优化部署集合、固定费与所给包络预算，并保真实资源计数。"
+  },
+  "explanation": "空区间资源必须常数化。其余每条原资源产生乘数β、1/l_e两弧；常数化同时去这两弧。若D漏击一个乘积<1简单环，则沿尺度相乘矛盾；反之击中全部冲突环，任何负闭游走可分解出负简单环，故残图无负环，最短乘积给正有理t并恢复每资源D/U混合，D资源用固定费势。因此最小外生费用恰hit整数优化，有限2^|E|枚举取得最优。修改资源基数≤k时每个冲突环至少需选其一个原资源，简单环至多|V|个资源，分支深度k得O(|V|^k poly)的XP；仅有固定h环长承诺才得O(h^k poly)。对非负y_C、Σ_(C含e)y_C≤κ_e，交换求和给Σ_Cy_C≤每个可行部署费。每轮对一个未击中环增y直到某资源紧，选入紧资源，最多|E|轮；若每环资源数≤h，则所选资源全紧，费用Σ_C y_C|D∩Q(C)|≤hΣ_Cy_C≤hOPT，局部强制项另精确计入。最后逐D用固定费定理的完整动作对残差LP核p∈[m,M]及ε_i；原残差全部可加且非负，若某超集D′有可行费率，限制到D删除非负项仍可行。因此D的残差LP失败可剪全部超集，而尺度可行性方向相反。",
+  "scope": "精确指定合同的有限优化、XP、h近似下界与包络预算剪枝；全部一般量词由以上双向/对偶论证支付。既非原游戏必须干预的判据，也不把统一包络MaxCut硬度迁给更紧有限区间。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/有限实例双排序尺度区间的精确校准--定理.md",
+      "sha256": "fa74aa7084c29253386b97d82c0f2ea52b6e1f4db913d4f01123f3994ae4a2ac"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/固定费干预的强化稳定与原游戏残差--定理.md",
+      "sha256": "a996ab033b11de96836d4aeb131e0d6b23601110db91fa01ec6d81a67ea2352c"
+    },
+    {
+      "path": "archives/weighted-congestion/state/算法/冲突资源删除与固定费预算的证书优化--算法.md",
+      "sha256": "3b45e16b893826cd7451914afb258eeaa421b35b6cfe07b62ed3e3554746191d"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "本任务worker实读精确登记正文及承重证据，逐项核模型、全部量词、方向、弱端点、零成本和目标范围；程序绑定只校结构，不代数学判断。",
+  "whole_result": "精确有限区间与固定费强化/残差联合刻画目标算法的全部可行真实资源集合，并给hit优化、XP分支、h近似可核对偶及反向单调的残差预算剪枝，输出的稳定和误差范围与原文一致。",
+  "endpoint_pins": {
+    "wc-finite-instance-two-order-exact-scale-interval": "f0fac67dc6cf276ca43896cc8437990657f2a5019d4ee064cb557fc66f3af392",
+    "wc-fixed-charge-strengthened-stability-original-game-residual": "a1f1ab1df37ad6d3989fc805597dca2b995772764a2965e55e4a38795a5b8645",
+    "wc-resource-conflict-hitting-fixed-charge-budget-optimization": "f5fdef81ccf62f50bbcecf0b89204615b8edc5fb4cb34e557ad6ac5dbc53be1d"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/有限实例双排序尺度区间的精确校准--定理.md": "fa74aa7084c29253386b97d82c0f2ea52b6e1f4db913d4f01123f3994ae4a2ac",
+    "archives/weighted-congestion/state/定理/固定费干预的强化稳定与原游戏残差--定理.md": "a996ab033b11de96836d4aeb131e0d6b23601110db91fa01ec6d81a67ea2352c",
+    "archives/weighted-congestion/state/算法/冲突资源删除与固定费预算的证书优化--算法.md": "3b45e16b893826cd7451914afb258eeaa421b35b6cfe07b62ed3e3554746191d"
+  },
+  "review_digest": "753d4f053a2e19b5e31bdf8df228583d453c60dc850ceabf395bdc7b18e11b0a"
+}

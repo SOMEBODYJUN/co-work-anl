@@ -1,0 +1,330 @@
+{
+  "task_id": "weighted-congestion-3a-3a-49cb748c97390ed2",
+  "integration_status": "unsubmitted-independent-review",
+  "edges": [
+    {
+      "edge_id": "boss5-independent-orbit-specialization-coarse-loss",
+      "kind": "specializes",
+      "status": "proposed",
+      "recommended_status": "accepted",
+      "source_ids": [
+        "WC-R2-ORBIT"
+      ],
+      "target_ids": [
+        "WC-R2-COARSE-LOSS"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "direct",
+      "conditions": "n=3,w=1/5,P(x)=x,Q(x)=x²/2，固定完整对称两列模型；弱PNE端点、真实自负载偏离。",
+      "explanation": "ORBIT公式的主比为158/155,157/156,156/157,155/158；同侧依次61/66,71/56,81/46，异侧依次66/61,56/71,46/81。逐行取max(1,存在偏离)再取min；其有限状态商穷尽性支付实例真实阈值，不能从两攻击值<1推出exact PNE。",
+      "scope": "完整四轨道q依次66/61,157/156,71/56,81/46；实例最佳倍率157/156且m=1达到，而指定两攻击证书B=min(h0/h3,L1)=61/66<1，完整推出COARSE-LOSS整条statement。",
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/对称两列实例的完整轨道均衡阈值--定理.md",
+          "sha256": "376c334d4f834013b9184fba081ac0d9d14a29a6c2f35822b9fdad5dd29b1871"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/对称两列实例的完整轨道均衡阈值--定理.md",
+          "sha256": "376c334d4f834013b9184fba081ac0d9d14a29a6c2f35822b9fdad5dd29b1871",
+          "section": "精确二次反例：保守证书损失"
+        }
+      ],
+      "not_for_direct_integration": "独立数学审读候选；未在原任务路径写入，未edge-bind或checkpoint，原任务由另一活跃会话续交。",
+      "whole_result": "完整四轨道q依次66/61,157/156,71/56,81/46；实例最佳倍率157/156且m=1达到，而指定两攻击证书B=min(h0/h3,L1)=61/66<1，完整推出COARSE-LOSS整条statement。"
+    },
+    {
+      "edge_id": "boss5-independent-phase-local-front-tests-to-fqdp",
+      "kind": "implies",
+      "status": "proposed",
+      "recommended_status": "accepted",
+      "source_ids": [
+        "weighted-congestion/clone-front-phase-quotient"
+      ],
+      "target_ids": [
+        "wc-front-endpoint-quote-dp-class-treewidth-stable-cost"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "direct",
+      "conditions": "对每个FQDP有序同权类分别取相位局部公式N=n_a；只复用一维前沿表示与邻居完备性，不复用跨类扭转商。",
+      "explanation": "B_x给恰2n个不同串，x→x+1翻x mod n，x→x−1翻x−1 mod n；全同位仅首/末位，一次变化仅边界两侧仍在前沿，其他翻位产生两次变化。对每个类独立应用∀N局部结论，允许不同n_a；加锚门后一般破坏全局T对称，不能用(2N)^(m−1)当FQDP总域。",
+      "scope": "每个源前沿串至多两个保持前沿的真实单bit翻位；n=1时仅一个。固定源σ_a即固定mover身份，故每类只需两测试的old/new共4个非负报价坐标。",
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/循环窗口前沿的扭转相位商--定理.md",
+          "sha256": "a2f68516b4ca46f8173fa3dce5e1d7bd74cb435ce70f0090eb5094ab5198c011",
+          "section": "循环窗口前沿的扭转相位商"
+        },
+        {
+          "path": "archives/weighted-congestion/state/算法/前沿双端点报价的类图树宽求解--算法.md",
+          "sha256": "100b77bc9c147c19c39a8fc11750b18a22130548ce3684aea140d867724881e7"
+        }
+      ],
+      "not_for_direct_integration": "独立数学审读候选；未在原任务路径写入，未edge-bind或checkpoint，原任务由另一活跃会话续交。",
+      "contribution": {
+        "result": "每个源前沿串至多两个保持前沿的真实单bit翻位；n=1时仅一个。固定源σ_a即固定mover身份，故每类只需两测试的old/new共4个非负报价坐标。",
+        "remaining": "FQDP完整结论还需原游戏完整门RD_beta、精确真实新负载报价、保零网格误差、固定类图树宽、同签名最小社会Z、遗忘过滤及对全部beta-PNE的保留证明。本边不单独证明算法输出/NO/成本双准则。"
+      }
+    },
+    {
+      "edge_id": "boss5-independent-endpoint-example-blocks-frozen-response-lift",
+      "kind": "specializes",
+      "status": "proposed",
+      "recommended_status": "accepted",
+      "source_ids": [
+        "weighted-congestion/heterogeneous-endpoint-integer-reduction"
+      ],
+      "target_ids": [
+        "weighted-congestion/fixed-hub-light-threshold-response"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "direct",
+      "conditions": "合法一hub一light：hub权1、light权1/2、主P=x、sideQ=(9/20)x²，alpha=51/50；两列对称、side唯一light/source。",
+      "explanation": "H=161/156>51/50、L=129/121>51/50，满足HET指定严格(H)(L)，且n=W/w=1取整无损。同位light成本129/80、翻反位121/80；反位light成本121/80、翻同位129/80，故固定hub唯一响应是反位。反位hub旧161/80、新156/80，严格比161/156。全局互补覆盖四态。更换hub后再选light响应不是合法单方偏离成本。",
+      "scope": "给出fixed-hub对象statement中“不能自动lift”的精确两玩家反边界：每个固定hub位的唯一exact light响应是反位，反位时hub真实偏离仍严格改善，因而全游戏无51/50-PNE。",
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/归约/异权两列端点证书的同权整数化--归约.md",
+          "sha256": "64957afa7b236bc90b036ac3edf3ac5718ce77f7716541f87c8690cc6907aa4a",
+          "section": "异权两列端点证书的同权整数化"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/固定主玩家的轻玩家阈值响应--定理.md",
+          "sha256": "bc2b7717ea9455eabc29f3abceaadb2e1f2338d43cf829dc340fdc8a38f33676",
+          "section": "固定主玩家的轻玩家阈值响应"
+        }
+      ],
+      "not_for_direct_integration": "独立数学审读候选；未在原任务路径写入，未edge-bind或checkpoint，原任务由另一活跃会话续交。",
+      "contribution": {
+        "result": "给出fixed-hub对象statement中“不能自动lift”的精确两玩家反边界：每个固定hub位的唯一exact light响应是反位，反位时hub真实偏离仍严格改善，因而全游戏无51/50-PNE。",
+        "remaining": "这只支付冻结响应不能自动提升的边界部分；任意unique-light/unique-source冻结子游戏的阈值全符号势、常数分支、全部平局、FIP及有序一次删除仍由T自身一般证明承担。"
+      }
+    },
+    {
+      "edge_id": "boss5-independent-fixed-hub-response-to-two-column-light-feasibility",
+      "kind": "specializes",
+      "status": "proposed",
+      "recommended_status": "accepted",
+      "source_ids": [
+        "weighted-congestion/fixed-hub-light-threshold-response"
+      ],
+      "target_ids": [
+        "WC-R2-ORBIT"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "direct",
+      "conditions": "ORBIT同权对称两列，冻结主玩家在A；source唯一，light_i的side只有该light与冻结hub。beta>=1。",
+      "explanation": "令W=nw,q_i^0=Q(w),q_i^1=Q(1+w)。T中D_i(x)=P(1+x+w)+Q(w)-P(nw-x)-Q(1+w)。同位共m人时x=(m−1)w，故D_i=A_m−D_m。T给一个全部light exact PNE，其m必满足ORBIT两类light弱式。任意exact light稳定也满足beta>=1，故非空。主玩家费用比h_m/h_(n−m)未受冻结响应控制。",
+      "scope": "ORBIT模型的全部light精确稳定m集合非空，因此其beta-light可行区间对每个beta>=1非空；这不保证主玩家稳定。",
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/固定主玩家的轻玩家阈值响应--定理.md",
+          "sha256": "bc2b7717ea9455eabc29f3abceaadb2e1f2338d43cf829dc340fdc8a38f33676",
+          "section": "固定主玩家的轻玩家阈值响应"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/对称两列实例的完整轨道均衡阈值--定理.md",
+          "sha256": "376c334d4f834013b9184fba081ac0d9d14a29a6c2f35822b9fdad5dd29b1871"
+        }
+      ],
+      "not_for_direct_integration": "独立数学审读候选；未在原任务路径写入，未edge-bind或checkpoint，原任务由另一活跃会话续交。",
+      "contribution": {
+        "result": "ORBIT模型的全部light精确稳定m集合非空，因此其beta-light可行区间对每个beta>=1非空；这不保证主玩家稳定。",
+        "remaining": "完整q_m和min_m q_m仍需主玩家真实换列成本、全部轨道/偏离穷尽、扩展零比约定及弱端点证明；本边不推出完整游戏exact PNE。"
+      }
+    },
+    {
+      "edge_id": "boss5-independent-multiplier-barrier-to-copy-rule-obstruction",
+      "kind": "implies",
+      "status": "proposed",
+      "recommended_status": "accepted",
+      "source_ids": [
+        "WC-R1-MULTIPLIER-BARRIER"
+      ],
+      "target_ids": [
+        "WC-R1-ORDINAL-COPY-BRIDGE"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "direct",
+      "conditions": "固定d>=2、有限1<=alpha<rho_d；复制桥规则先给H_(d,w,c)，不得依策略族、资源数/身份或其他资源，相同c复制用同H；须对该w所有有限游戏成立。",
+      "explanation": "M先选有限w，使任意F及正h不能对c=x^d全部i,S夹逼。若有统一规则，删除到空令q_i(c,S)>0；任意上下文两束m/n有限复制迫q_i(c′,T)<=alpha q_i(c,S)；正参考q0保证h_i=inf_(c,S)q_i>=q0/alpha>0，从而h_i c<=ΔH<=alpha h_i c。取F=H_(x^d)与M矛盾。全部最小点假设用同规则限制到两态先推出严格下降。每个复制游戏有限，不用势对系数线性，也不从单个游戏失败推出统一量词结论。",
+      "scope": "对每个d>=2及1<=alpha<rho_d，存在有限w，不存在满足复制桥统一合同的规则（全部严格alpha改善下降，或每游戏全部全局最小点稳定）。这是COPY-BRIDGE整statement的线性障碍部分。",
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/障碍/任意玩家乘子的多尺度边际夹逼--障碍.md",
+          "sha256": "a8a81a49e28d9aa79571dda74c10e0ac45123f3ed2298b8625a1cfb3794e13ac"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/跨游戏统一可加序势的复制夹逼桥--定理.md",
+          "sha256": "d16921f2bda7ba392bf01e8fae5efa91d1f4dd675bbfcfa53fab372cc06181c5"
+        }
+      ],
+      "not_for_direct_integration": "独立数学审读候选；未在原任务路径写入，未edge-bind或checkpoint，原任务由另一活跃会话续交。",
+      "contribution": {
+        "result": "对每个d>=2及1<=alpha<rho_d，存在有限w，不存在满足复制桥统一合同的规则（全部严格alpha改善下降，或每游戏全部全局最小点稳定）。这是COPY-BRIDGE整statement的线性障碍部分。",
+        "remaining": "M本身不提供复制桥的一般等价性；删除正性、任意费用/上下文有限复制、正下确界和全部最小点等价四步，仍需B自身完整证明。本边不否定逐游戏任选势、某个最小点、非可分势或均衡存在。"
+      }
+    },
+    {
+      "edge_id": "boss5-independent-exact-optimizer-implements-s7-minimizer",
+      "kind": "implements",
+      "status": "proposed",
+      "recommended_status": "accepted",
+      "source_ids": [
+        "wc-common-scale-regularization-exact-factor-optimization"
+      ],
+      "target_ids": [
+        "WC-REGULARIZED-CORE-REPAIR-QUALITY-v1"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "context",
+      "conditions": "共同尺度、完整前沿社会包络mW_B<=Φ_B<=MW_B、有限有理eta、可准确有理评价因子及给定固定宽类变量图分解；算法返回前沿精确全局最小；门本已存在或明确求扩充游戏；在新beta_eta核RD且独立SD成立。",
+      "explanation": "显式2n_a前沿类域、基体资源因子H_e=F_e+ηx_ec_e及给定固定宽类变量图分解，使精确DP返回S7所需s_eta，而不枚举类笛卡尔积。S7在共同尺度、完整W_B包络、目标beta_eta的RD与独立SD成立后，将这个精确极小点提升为beta_eta-PNE且W_+<=lambda_eta OPT_+。这是目标最小点的实现关系；全数学保证、位复杂度及额外证书各自按对应正文承担，不以context边宣布完整逻辑推导。",
+      "scope": "固定宽有理因子DP实现S7前沿精确全局最小点这一输入；S7在额外完整合同下给稳定与质量，算法不认证这些合同。",
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/正则化核心的稳定与社会质量联合转移--定理.md",
+          "sha256": "b30c141a5a855315fca9713b4abfbdf73f456993594aed8782b1895c73d42cb3"
+        },
+        {
+          "path": "archives/weighted-congestion/state/算法/共同尺度正则化的精确因子优化--算法.md",
+          "sha256": "be3b2a6d333ee7c0ff069b452cc15bdf9aeaa113fd4e0b3a44201b3a471067cb"
+        }
+      ],
+      "not_for_direct_integration": "独立数学审读候选；未在原任务路径写入，未edge-bind或checkpoint，原任务由另一活跃会话续交。"
+    },
+    {
+      "edge_id": "boss5-independent-relative-objective-gap-requires-exact-or-residual",
+      "kind": "motivates",
+      "status": "proposed",
+      "recommended_status": "accepted",
+      "source_ids": [
+        "M-577ad8a145af49a2bc6c4fc8cc9d27de"
+      ],
+      "target_ids": [
+        "wc-common-scale-regularization-exact-factor-optimization"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "context",
+      "conditions": "任意tau>0，私人0/1可动玩家与不交固定背景K>=1/tau。",
+      "explanation": "坏态K+1<=(1+tau)K可任意接近相对最优，但移动者1→0，违反每个有限倍率稳定。背景不进入可动者成本；若把K改成可动者两动作必用则不再是同反例。它限制把相对目标近似解直接当稳定解，不反驳正确精确DP。",
+      "scope": "精确优化与逐真实偏离余量合同的必要性语境。",
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/算法/共同尺度正则化的精确因子优化--算法.md",
+          "sha256": "be3b2a6d333ee7c0ff069b452cc15bdf9aeaa113fd4e0b3a44201b3a471067cb",
+          "section": "为什么一般目标近似最优不足以调用稳定"
+        },
+        {
+          "path": "archives/weighted-congestion/state/算法/共同尺度正则化的精确因子优化--算法.md",
+          "sha256": "be3b2a6d333ee7c0ff069b452cc15bdf9aeaa113fd4e0b3a44201b3a471067cb"
+        }
+      ],
+      "not_for_direct_integration": "独立数学审读候选；未在原任务路径写入，未edge-bind或checkpoint，原任务由另一活跃会话续交。"
+    },
+    {
+      "edge_id": "boss5-independent-private-penalty-requires-original-game-contract",
+      "kind": "motivates",
+      "status": "proposed",
+      "recommended_status": "accepted",
+      "source_ids": [
+        "weighted-congestion/private-penalty-compilation-original-regret"
+      ],
+      "target_ids": [
+        "wc-front-endpoint-quote-dp-class-treewidth-stable-cost",
+        "wc-common-scale-regularization-exact-factor-optimization"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "context",
+      "conditions": "任意K>1，一人原两动作费用分别为1和K，仅向便宜动作加私有常数K。",
+      "explanation": "新两动作费用分别为K+1和K，唯一PNE为原贵动作，回原游戏遗憾K无界。因此FQDP/精确正则算法只有门原本存在时才称原游戏求解；新增门则S7保证扩充游戏，除非额外有原游戏真实偏离合同。不否定所有合法编译或固定lift。",
+      "scope": "原实例已有门与明确扩充游戏必须分别解释的合同语境。",
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/反例/私有惩罚编译不能保持原游戏稳定--反例.md",
+          "sha256": "6e63cd4383281cbee12e60676a01ffc428825d46244d6ec0f1e8deed81d2a2b1"
+        },
+        {
+          "path": "archives/weighted-congestion/state/算法/前沿双端点报价的类图树宽求解--算法.md",
+          "sha256": "100b77bc9c147c19c39a8fc11750b18a22130548ce3684aea140d867724881e7"
+        },
+        {
+          "path": "archives/weighted-congestion/state/算法/共同尺度正则化的精确因子优化--算法.md",
+          "sha256": "be3b2a6d333ee7c0ff069b452cc15bdf9aeaa113fd4e0b3a44201b3a471067cb"
+        }
+      ],
+      "not_for_direct_integration": "独立数学审读候选；未在原任务路径写入，未edge-bind或checkpoint，原任务由另一活跃会话续交。"
+    },
+    {
+      "edge_id": "boss5-independent-frozen-ledger-cites-two-distinct-interfaces",
+      "kind": "cites",
+      "status": "proposed",
+      "recommended_status": "accepted",
+      "source_ids": [
+        "weighted-congestion/frontier-claims-resource-4"
+      ],
+      "target_ids": [
+        "weighted-congestion/anchored-clock-directed-margin-interface",
+        "weighted-congestion/clone-front-phase-quotient"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "context",
+      "conditions": "冻结账本673–844行保留所有原记录，按各Claim精确模型。",
+      "explanation": "ACTUAL-MARGIN条目给g_i+ΣΔ、n+L充分LP、必要Σg及43/91固定证据；PHASE-QUOTIENT条目给每类覆盖、同费扭转、2N自由作用和端点表。账本是历史陈述资源，不能替代两正文的完整证明，不能从相位表示推出全部front出口或由充分LP失败推时钟不可能。",
+      "scope": "账本引用真实有向clock预算和循环窗口相位商的来源关系。",
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/资料/拥塞时钟与局部矩账本的全部陈述--资料.md",
+          "sha256": "5c7b615f4237edf437219a3f51070497011fadf3b3c3651a3a97b373d7319b4f",
+          "section": "拥塞时钟与局部矩账本的全部陈述"
+        },
+        {
+          "path": "archives/weighted-congestion/state/等价/锚定时钟的真实有向差分与线性预算--等价.md",
+          "sha256": "f8661cec962dbaae258add4fd5b162baba90dee1ea61c42ac39759409a216a31",
+          "section": "锚定时钟的真实有向差分与线性预算"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/循环窗口前沿的扭转相位商--定理.md",
+          "sha256": "a2f68516b4ca46f8173fa3dce5e1d7bd74cb435ce70f0090eb5094ab5198c011",
+          "section": "循环窗口前沿的扭转相位商"
+        }
+      ],
+      "not_for_direct_integration": "独立数学审读候选；未在原任务路径写入，未edge-bind或checkpoint，原任务由另一活跃会话续交。"
+    },
+    {
+      "edge_id": "boss5-independent-compiler-reuses-integer-triad-not-new-instance",
+      "kind": "checks",
+      "status": "proposed",
+      "recommended_status": "accepted",
+      "source_ids": [
+        "weighted-congestion/anchored-compiler-and-conditional-geometry-code-scope"
+      ],
+      "target_ids": [
+        "weighted-congestion/integer-quadratic-triad-exact-audit",
+        "weighted-congestion/anchored-clock-directed-margin-interface"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "context",
+      "conditions": "同一整数基体权(16,2,5)，mask(0,1,1):13x²，(1,1,2):59x，(1,2,1):2x²；alpha21/20，原010异或重标000。",
+      "explanation": "六步环010→110→100→101→001→011→010，重复真实比286/267,1507/1403,963/898，与I的完整8态24偏离固定游戏一致。D新增62次两资源时钟，B2002、eta677/20、delta21/23、M21021/5，逐8态指定出口；原输出仅保存8行成本表digest，不能谎称JSON含完整8行。另60例geometry假定B1 eta1/4且未建基体/核真环，只支持条件几何。K一般g/Δ与预算由证明承担，43稀疏/80uniform/91预算另属四玩家对象。",
+      "scope": "同一既有triad的重标/编译与uniform时钟子接口的有限实现核查；不是一般定理推导。",
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/计算/锚定编译器与条件几何的源码覆盖--计算.md",
+          "sha256": "d992d526c00ea3536a597cc1fc0a971f3e7d59568f4b780c69ca224418ab52d9",
+          "section": "锚定编译器与条件几何的源码覆盖"
+        },
+        {
+          "path": "archives/weighted-congestion/state/计算/三玩家整数二次例的完整阈值核验--计算.md",
+          "sha256": "e356300913a7de4584b7b7bb25d0102d53ea384540ad68a012afe82e32d9c4ce",
+          "section": "三玩家整数二次例的完整阈值核验"
+        },
+        {
+          "path": "archives/weighted-congestion/state/等价/锚定时钟的真实有向差分与线性预算--等价.md",
+          "sha256": "f8661cec962dbaae258add4fd5b162baba90dee1ea61c42ac39759409a216a31",
+          "section": "锚定时钟的真实有向差分与线性预算"
+        }
+      ],
+      "not_for_direct_integration": "独立数学审读候选；未在原任务路径写入，未edge-bind或checkpoint，原任务由另一活跃会话续交。"
+    }
+  ]
+}

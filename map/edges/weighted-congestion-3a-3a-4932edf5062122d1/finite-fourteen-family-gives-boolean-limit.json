@@ -1,0 +1,43 @@
+{
+  "edge_id": "wc-boss5-4932-finite-fourteen-family-gives-boolean-limit",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/scaled-fourteen-resource-family-and-limit"
+  ],
+  "target_ids": [
+    "M-30d382c7f97c48eea789aed8e8f93eed"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定t=(a,b,c,d,e,f,g)∈Q_(>0)^7不随m变，m∈N≥1。四玩家七对互补mask、权(1,1/(10m),1/(20m),1/(50m))，前六对degree32m²、第七对degree2；真实费用不乘玩家权，全部16标签状态固定。",
+  "roles": {
+    "weighted-congestion/scaled-fourteen-resource-family-and-limit": "提供每有限m合法游戏的完整权、mask、归一费用与固定振幅序列，支持真正的逐状态成本比较。",
+    "M-30d382c7f97c48eea789aed8e8f93eed": "导出八代表及互补的全部正成本极限表和有限minimax阈值收敛。"
+  },
+  "explanation": "前六对全支持到齐时归一负载1，费用恒t_j；少一名支持者缺权≥1/(50m)，支持总权≤117/100，故每个缺席资源费用≤t_j exp(−64m/117)→0。第七对所有玩家有支持：重玩家同侧负载/T7→1，另一侧≤17/(100m)，因此向与重者同侧的用户费用→g，其余→0。按有限mask逐资源相加得到正文完整八代表表，另八态全位互补同成本；t严格正使每个当前/翻位极限成本严格正。真实单方偏离只是在同一固定16态中改一bit，故其成本同步逐项收敛。由有限分母正性及连续性，所有当前/偏离比一致收敛，有限max及min可逐次交换极限，得到B(G_m(t))→B∞(t)（B保倍率至少1的约定）。这里没有交换无限状态域，也没有让t随m优化。",
+  "scope": "目标是有限费用表极限及阈值收敛；极限表不被宣称为目标多项式类内游戏。任何无均衡反例还须选有限m并保严格余量，本边不提供特定最优振幅或固定模板阈值。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md",
+      "sha256": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df",
+      "section": "有限游戏的完整定义"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md",
+      "sha256": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df",
+      "section": "布尔极限的来由"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "逐式实读本边列明的现行自足证明，核模型、量词、全部真实偏离、零费与严格/弱端点；历史审查和有限计数不充当一般证明。本轮未运行旧审计程序。",
+  "whole_result": "对每个固定正有理t，全部16态及全部真实偏离成本按八代表/互补正成本表收敛，前六对缺席误差有t_j exp(−64m/117)界，第七对为重者同侧极限；由固定有限状态和正分母得B(G_m(t))→B∞(t)。",
+  "endpoint_pins": {
+    "M-30d382c7f97c48eea789aed8e8f93eed": "fb6e6bd6176d964c50523a06c177620c05d0ab1f7438f6cf2fa54f7442c4d178",
+    "weighted-congestion/scaled-fourteen-resource-family-and-limit": "16c24fd8cd5ed3faf83ef291afc719f326d9f0627aaef6ad07b9994340b948e5"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df"
+  },
+  "review_digest": "a82f8e398572bafde7898b450560d9dc574a71b7aacb01a359602077f33fbadc"
+}
