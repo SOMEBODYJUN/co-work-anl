@@ -1,0 +1,52 @@
+{
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "fair-allocation/complete-multipartite-uniform-maximal-ef1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss3",
+  "edge_id": "fairalloc-multipartite-solves-fa04-join-independent-subclass",
+  "target_ids": [
+    "FA04"
+  ],
+  "conditions": "只取FA04的cograph目标中complete multipartite冲突图子类，任意整数n≥1，统一基数价值，允许未分配物品；空包也参与maximal判定。输入为显式图/part划分。没有假设FA04的开放全类结论成立。",
+  "roles": {
+    "fair-allocation/complete-multipartite-uniform-maximal-ef1": "提供每个complete multipartite图及每个正整数人数的maximal EF1部分分配及多项式构造。",
+    "FA04": "接收cograph目标的complete multipartite子类解；一般cograph union/join及固定modular-width扩展仍待证明。"
+  },
+  "explanation": "complete multipartite图恰是若干无边图I_si的join：各I_si内部无边、不同I_si之间全相邻。无边图由单点的disjoint union得到，再做join即为cograph，因此源引理的全部输入属于FA04的cograph域。源引理的三个分支保持同一个maximal partial、独立集包和统一基数EF1合同：M<n时全分为0/1包；最大part s1≥n时仅均分最大part为n个非空包，所有未选part均完全邻接每包；其余情形取总量首次达到n的降序parts前缀。令末part为r、先前总量Sprev≤n−1，则Σceil(si/2)≤Sprev−(l−2)floor(r/2)+(r mod 2)≤n≤Σsi。故可选ceil(si/2)≤ki≤si、Σki=n。每part分成si−ki个二件包和2ki−si个一件包，所有代理非空，未选点邻接每包。EF1由包大小差≤1成立，maximal由不可加入成立。排序、前缀和及显式分包均为poly(M,n)；343536次有限核验不是证明前提。 这给FA04一个已闭合的join-of-independent-parts子类，而不是任意嵌套union/join模块的合成定理。",
+  "scope": "3A同档实读比较：由已证complete multipartite定理向FA04的精确子域贡献；不把cograph全类、modular-width全类、EFX、异质价值或完整覆盖提升为已证。",
+  "contribution": {
+    "result": "对所有由无边parts的join组成的cograph、每个n≥1，可在显式输入多项式时间构造n个互不交独立集包，大小差≤1，且每个未分配顶点不能加入任何包（包括空包）。这完整解决FA04的complete multipartite子类。",
+    "remaining": "FA04仍需一般cograph的嵌套disjoint union/join合成：各模块可实现的颜色容量、空颜色与未分配点对全部颜色类的邻接必须同时保持；随后才能处理其固定modular-width扩展。源引理的单次join前缀分拆不承担这些义务。"
+  },
+  "evidence": [
+    {
+      "path": "archives/fair-allocation/state/引理/完全多部图均匀最大EF1--引理.md",
+      "sha256": "b93d6bf3cf0cb74e983d7ad4008ea181a03e91237c60d2f2df98c89f3d46dda1",
+      "section": "证明"
+    },
+    {
+      "path": "archives/fair-allocation/state/引理/完全多部图均匀最大EF1--引理.md",
+      "sha256": "b93d6bf3cf0cb74e983d7ad4008ea181a03e91237c60d2f2df98c89f3d46dda1",
+      "section": "算法与复杂度"
+    },
+    {
+      "path": "archives/fair-allocation/state/审查/近似公平分配首轮候选池与边界--审查.md",
+      "sha256": "19d9f289c9553358a51d98250709fdc9151346072e04576e01facc50779614ec",
+      "section": "十六个候选的精确身份"
+    }
+  ],
+  "review_note": "实读源引理全证明及FA04精确目标，逐项核M<n、s1≥n及最短前缀分支；用明确join构造核complete multipartite⊂cograph。无开放前提，已付清子类结论；一般模块目标仍open，故以contribution而非whole_result交付。",
+  "endpoint_pins": {
+    "FA04": "d261266b4dd052f8b13351ae1d68a86b9d6b01e146fe34ea646d8afd6bac499a",
+    "fair-allocation/complete-multipartite-uniform-maximal-ef1": "c47d5ba9bce0d8f562790bfdde3d87cd5dc1b20e1cfe6baab7f560ec04003979"
+  },
+  "evidence_pins": {
+    "archives/fair-allocation/state/引理/完全多部图均匀最大EF1--引理.md": "b93d6bf3cf0cb74e983d7ad4008ea181a03e91237c60d2f2df98c89f3d46dda1",
+    "archives/fair-allocation/state/审查/近似公平分配首轮候选池与边界--审查.md": "19d9f289c9553358a51d98250709fdc9151346072e04576e01facc50779614ec"
+  },
+  "review_digest": "887b78e07d889ab321cc32bc2aeccb26671074ae7fcaf7ced05d19f234d2d62c"
+}

@@ -1,0 +1,63 @@
+{
+  "edge_id": "fairalloc-four-type-exhaustive-checks-three-copies-prefix-target",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "fair-goods/copies-sd-ef1-exhaustive-result-v1"
+  ],
+  "target_ids": [
+    "TS-COPIES-3-SDEF1-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "仅为既有冻结有限穷举的模型及覆盖核对：三人、四个非全体类型、每型重数1/2、严格次序，按同时类型重命名归一化；本次实读生成脚本和冻结JSON，未重新运行全穷举。",
+  "roles": {
+    "fair-goods/copies-sd-ef1-exhaustive-result-v1": "提供有限9216个归一化四类型profile、81个完整合法分配/profile的全部前缀检查和最少9个证人的聚合记录。",
+    "TS-COPIES-3-SDEF1-v1": "接收其四非全体类型截面的正面有限证据；任意类型数的交换/增广存在性仍开放。"
+  },
+  "explanation": "copies_allocations对每型取c_g个不同代理的组合，枚举全部合法0/1列选择，n=3且c_g∈{1,2}时各列有3种，四列共3^4=81。copies_exhaustive实际枚举恰四列：16个重数模式，固定第一人顺序后另两人各24种排列，故16×24²=9216。每agent/order的可接受bitset由该观察者排序下全部前缀计数逐一与全部j比较得到，再交三个agent的bitset；冻结JSON报每profile非空、四列域最少9个证人，worst重数(1,1,2,2)、第一序(0,1,2,3)、后两序(0,2,1,3)。较少非全体类型的存在可通过向每个排序末尾补至四列c=1类型、取得四列证人后删除补列解释；最少9个证人的数值不随此限制传给小类型实例。任意c=3列可各给每人一件并在前缀差中抵消。上述有限化与归一化均保持copies同型等值和全部前缀语义；没有量词步骤允许从至多四列推出任意列数，也没有由严格序推出未约定的weak-order前缀目标。",
+  "scope": "有限验证语境，不是逻辑implies：只核四类型扫描怎样命中TS的有限截面，以及删/补全体列和短实例padding的确切边界。未独立复跑9216profiles，不声称外部审稿、形式化证明或一般存在定理。",
+  "evidence": [
+    {
+      "path": "archives/fair-allocation/state/审查/退役公平商品copies穷举结果--审查.md",
+      "sha256": "18717ca343af41ada7ea348219f19f510ed4e9878c53a39d426d669f5d840847",
+      "section": "1. 精确有限域"
+    },
+    {
+      "path": "archives/fair-allocation/state/审查/退役公平商品copies穷举结果--审查.md",
+      "sha256": "18717ca343af41ada7ea348219f19f510ed4e9878c53a39d426d669f5d840847",
+      "section": "2. 结果的数学状态"
+    },
+    {
+      "path": "archives/fair-allocation/tools/evidence/retired-fair-toy-scripts-20261031/toy_checks.py",
+      "sha256": "0dd9b02ab90c72c308186f73ff94f315d2b6953ea3e1340b20a86fbab7b4cb22"
+    },
+    {
+      "path": "archives/fair-allocation/tools/evidence/retired-fair-toy-scripts-20261031/copies_exhaustive.py",
+      "sha256": "f9bfecf8ad21c76b61db78709e5343b909bc304a07507ba456a32cdfac9c173d"
+    },
+    {
+      "path": "archives/fair-allocation/tools/evidence/retired-fair-goods-copies-results-20261031/copies_exhaustive_results.json",
+      "sha256": "6698e99b16641989d53412fd86a3ad1da67160868e262e0d7baedb0e269059b8"
+    },
+    {
+      "path": "archives/fair-allocation/state/资料/可加公平与副本前缀目标的候选反例分层--资料.md",
+      "sha256": "f871cd1cc5160e0753f9913b1d02991cf081529ff9dd87dddd9f071cba4cfccc",
+      "section": "三人copies SD-EF1：独立的前缀问题"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "完整实读两个生成/判定脚本和冻结693-byte结果，核列枚举、全部前缀bitset交集、同时重命名、9的准确域及与TS关系。有限结果保持context，明确任意类型交换不变量未付；没有把JSON boundary中weak orders的措辞扩大为现行严格序合同。",
+  "endpoint_pins": {
+    "TS-COPIES-3-SDEF1-v1": "20ae51fe496d27b2836c173c07287ef3c4746bf1c876c2c9bb5a3d8c0eadbf0f",
+    "fair-goods/copies-sd-ef1-exhaustive-result-v1": "9a0157a64d54742bc20b78405e808e1b41b860ce6d649f8739875c2aa9fa21d0"
+  },
+  "evidence_pins": {
+    "archives/fair-allocation/state/审查/退役公平商品copies穷举结果--审查.md": "18717ca343af41ada7ea348219f19f510ed4e9878c53a39d426d669f5d840847",
+    "archives/fair-allocation/tools/evidence/retired-fair-toy-scripts-20261031/toy_checks.py": "0dd9b02ab90c72c308186f73ff94f315d2b6953ea3e1340b20a86fbab7b4cb22",
+    "archives/fair-allocation/tools/evidence/retired-fair-toy-scripts-20261031/copies_exhaustive.py": "f9bfecf8ad21c76b61db78709e5343b909bc304a07507ba456a32cdfac9c173d",
+    "archives/fair-allocation/tools/evidence/retired-fair-goods-copies-results-20261031/copies_exhaustive_results.json": "6698e99b16641989d53412fd86a3ad1da67160868e262e0d7baedb0e269059b8",
+    "archives/fair-allocation/state/资料/可加公平与副本前缀目标的候选反例分层--资料.md": "f871cd1cc5160e0753f9913b1d02991cf081529ff9dd87dddd9f071cba4cfccc"
+  },
+  "review_digest": "0aafccda3226026c745f3e6c6e6d4269ef31ecaef822043b321797a485121109"
+}

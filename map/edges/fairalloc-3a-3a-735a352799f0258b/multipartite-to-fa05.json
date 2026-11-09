@@ -1,0 +1,52 @@
+{
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "fair-allocation/complete-multipartite-uniform-maximal-ef1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss3",
+  "edge_id": "fairalloc-multipartite-solves-fa05-three-uniform-subclass",
+  "target_ids": [
+    "FA05"
+  ],
+  "conditions": "把FA05限制为恰三名代理、complete multipartite冲突图、所有代理对每件物品同取一个常数λ≥0。每包独立，允许partial，maximal照常检查空包。该子类包含统一基数λ=1。",
+  "roles": {
+    "fair-allocation/complete-multipartite-uniform-maximal-ef1": "任意n的统一基数构造取n=3，保独立性、maximal及包大小差≤1。",
+    "FA05": "接收三人相同additive目标的constant-item-value/complete multipartite子类；任意物品值和任意冲突图部分仍开放。"
+  },
+  "explanation": "取源引理n=3。源引理的三个分支保持同一个maximal partial、独立集包和统一基数EF1合同：M<n时全分为0/1包；最大part s1≥n时仅均分最大part为n个非空包，所有未选part均完全邻接每包；其余情形取总量首次达到n的降序parts前缀。令末part为r、先前总量Sprev≤n−1，则Σceil(si/2)≤Sprev−(l−2)floor(r/2)+(r mod 2)≤n≤Σsi。故可选ceil(si/2)≤ki≤si、Σki=n。每part分成si−ki个二件包和2ki−si个一件包，所有代理非空，未选点邻接每包。EF1由包大小差≤1成立，maximal由不可加入成立。排序、前缀和及显式分包均为poly(M,n)；343536次有限核验不是证明前提。 当各人的共同单件值为λ>0时，任意两包的大小a≤b且b−a≤1，有λa≥λ(b−1)，从较大包删一件即消妒忌；若λ=0则每个EF1比较两侧均为零。maximal只取决于独立性而不依赖λ，故同一构造适用全部λ≥0。源构造允许不分配未选parts，符合FA05的partial合同。不同物品共同价值不等时，大小均衡不再推出价值EF1；任意图也不再具有跨parts完全邻接保证。",
+  "scope": "3A同档：FA05在恰三人、共同常数单件值、complete multipartite冲突域的已证存在与poly(M,3)构造；不推出不同物品价值或一般图的FA05。",
+  "contribution": {
+    "result": "每个complete multipartite图、恰三名代理、共同常数单件值λ≥0的FA05实例，都有可在显式输入多项式时间构造的maximal EF1部分分配，且未分配点对所有包的不可加入性和所有EF1比较同时成立。",
+    "remaining": "FA05要求所有任意冲突图及所有相同非负additive物品值。仍须处理非均匀物品值下的价值而非基数平衡，以及一般图中未分配点对每包的邻接接口；本边不解决outerplanar或小treewidth全类。"
+  },
+  "evidence": [
+    {
+      "path": "archives/fair-allocation/state/引理/完全多部图均匀最大EF1--引理.md",
+      "sha256": "b93d6bf3cf0cb74e983d7ad4008ea181a03e91237c60d2f2df98c89f3d46dda1",
+      "section": "证明"
+    },
+    {
+      "path": "archives/fair-allocation/state/引理/完全多部图均匀最大EF1--引理.md",
+      "sha256": "b93d6bf3cf0cb74e983d7ad4008ea181a03e91237c60d2f2df98c89f3d46dda1",
+      "section": "适用范围和缺口"
+    },
+    {
+      "path": "archives/fair-allocation/state/审查/近似公平分配首轮候选池与边界--审查.md",
+      "sha256": "19d9f289c9553358a51d98250709fdc9151346072e04576e01facc50779614ec",
+      "section": "十六个候选的精确身份"
+    }
+  ],
+  "review_note": "实读完整三分支证明、统一价值EF1定义和FA05精确量词。n=3特化没有改变partial/maximal合同；λ=0、λ>0分别核EF1。仅为目标子类贡献，不把uniform结论扩为任意共同additive值。",
+  "endpoint_pins": {
+    "FA05": "73a3861bd42a8ecb140ebeb5f241421e15a3a36176ad5e871d19c664cbfc6116",
+    "fair-allocation/complete-multipartite-uniform-maximal-ef1": "c47d5ba9bce0d8f562790bfdde3d87cd5dc1b20e1cfe6baab7f560ec04003979"
+  },
+  "evidence_pins": {
+    "archives/fair-allocation/state/引理/完全多部图均匀最大EF1--引理.md": "b93d6bf3cf0cb74e983d7ad4008ea181a03e91237c60d2f2df98c89f3d46dda1",
+    "archives/fair-allocation/state/审查/近似公平分配首轮候选池与边界--审查.md": "19d9f289c9553358a51d98250709fdc9151346072e04576e01facc50779614ec"
+  },
+  "review_digest": "ccd90eb8154b0828dc33decf3a4913f4936d4d23addf2264e9ee5ce343d1ee3b"
+}
