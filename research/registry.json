@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-map-source-errata-v2.json",
-    "sha256": "9634ba7b9f7892fcfceb9e1be1779a1410c3b1c3ee2c2da56409f3b5566e4d0c"
+    "path": "research/registration/baseline-map-config-pricing-v1.json",
+    "sha256": "11ba9b1949193abea83c14c76bca2c5fb78d19c084b577166b232459a60862ca"
   },
   "objects": [
     {
@@ -100693,6 +100693,105 @@
       ]
     },
     {
+      "object_id": "configuration-assignment/exact-pricing-sparse-configuration-lp",
+      "version": 1,
+      "title": "精确定价恢复线性配置 LP 的最优稀疏支持",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "有限物品和 bin，各局部配置族非空、下闭，给定精确模权最大配置 oracle；利润、启用成本和硬预算是有理数。",
+      "statement": "对硬预算、每 bin 至多一个和每 item 边际至多一个的线性配置 LP，精确非负模权定价给确定性位多项式原始算法，输出精确最优值及至多 |L|+|P|+1 个实际列的最优有理解。同一结论适用把共同正成本预算替换为整数截断行。",
+      "quantifiers": "对每个符合合同的有限紧输入，含零成本、非均匀成本及零最优值。",
+      "assumptions": [
+        "所有输入成本、利润、预算为非负有理数。",
+        "每个局部族非空且下闭，任意非负有理权重的精确定价返回实际最优配置，耗时对输入与查询位长为确定性多项式。",
+        "先删除超过硬预算的 bin；LP 保留每 bin 和每 item 的单位边际约束。"
+      ],
+      "scope": "线性利润和显式全局约束行。可用于其他以这份线性配置 LP 作输入的算法。",
+      "objections": "精确对偶值本身不给原始支持。阈值不可行的强分离重放与统一分母间距恢复多项式列集；再取受限原始 LP 的基本最优解。",
+      "body": {
+        "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+        "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+        "section": "从对偶证书恢复最优支持"
+      },
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "模型与结论"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "配置 LP 和精确对偶分离"
+        }
+      ],
+      "sources": [
+        "Grötschel–Lovász–Schrijver, Geometric Algorithms and Combinatorial Optimization, theorem 6.4.9, https://www.zib.de/userpage/groetschel/pubnew/paper/groetschellovaszschrijver1988.pdf"
+      ]
+    },
+    {
+      "object_id": "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing",
+      "version": 1,
+      "title": "精确模权定价下的紧输入配置 LP 与硬预算指派",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限物品和 bin，各局部配置族非空、下闭，给定精确模权最大配置 oracle；利润、启用成本和硬预算是有理数。",
+      "statement": "有确定性位多项式算法以精确稀疏最优配置 LP 为中间解，输出硬预算可行原指派，利润至少 (1−1/e)OPT/2。共同正成本时使用整数截断，共同成本为零时直接舍入，均可达 (1−1/e)OPT。显式 0/1 连续列、单位需求资源局部族满足精确定价合同。",
+      "quantifiers": "对每个满足精确定价合同的下闭配置输入，OPT 是同一原硬预算模型的整数最优；等成本提升仅对共同成本分支。",
+      "assumptions": [
+        "所有输入成本、利润、预算为非负有理数。",
+        "每个局部族非空且下闭，任意非负有理权重的精确定价返回实际最优配置，耗时对输入与查询位长为确定性多项式。",
+        "先删除超过硬预算的 bin；LP 保留每 bin 和每 item 的单位边际约束。"
+      ],
+      "scope": "单硬启用预算，可非均匀成本。连续一应用另需显式 0/1 单位需求和非负有理容量。",
+      "objections": "共同正成本强界相对截断后的 LP 或原整数 OPT。近似定价、任意 bin matroid、随机需求仍为独立模型。",
+      "body": {
+        "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+        "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+        "section": "模型与结论"
+      },
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "配置 LP 和精确对偶分离"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "从对偶证书恢复最优支持"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "转回整数指派及局部资源应用"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "输入、输出与比较值"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "精确实现与位复杂度"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "等成本强界的修复合同"
+        },
+        {
+          "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+          "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+          "section": "consecutive-ones局部oracle的准确条件"
+        }
+      ],
+      "sources": [
+        "Grötschel–Lovász–Schrijver, Geometric Algorithms and Combinatorial Optimization, theorem 6.4.9, https://www.zib.de/userpage/groetschel/pubnew/paper/groetschellovaszschrijver1988.pdf"
+      ]
+    },
+    {
       "object_id": "coverage-alias-complete-strategy-descent-condition",
       "version": 1,
       "title": "指定标签完整策略覆盖兼容时的直接下降及固定代表反向提升",
@@ -159172,6 +159271,60 @@
       ]
     },
     {
+      "object_id": "weighted-congestion/symmetric-two-column-finite-and-sharp-ceiling",
+      "version": 1,
+      "title": "对称同轻权两列拓扑的有限次数上界与锐渐近",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "完整对称两列原子加权拥塞。一名权 1 玩家选整列，n 名同权玩家各选一个主资源和对侧私有资源。两主资源共用 F，其他共用 G，均为非负实系数次数≤d的多项式。",
+      "statement": "整数 d 满足 ln d≥16 时，每个该拓扑游戏有倍率 A(d)=√128√(d ln ln d)/ln d 的弱纯均衡。该拓扑最佳纯倍率的上确界在整数 d→∞ 时锐渐近于 (2/√e)√(d ln ln d)/ln d。",
+      "quantifiers": "有限界对每个 d、每个有限 n≥1、每个实 w>0 与每对允许费用。锐渐近是同一完整对称类的上确界，d 沿全整数序列。",
+      "assumptions": [
+        "主/侧资源费用对称、全部轻玩家同权。",
+        "成本按原资源费用求和，真实偏离负载含自身，等号允许稳定。"
+      ],
+      "scope": "同轻权完整对称两列的类阈值。允许常数和零费用，不保留归约前后单实例最优倍率。",
+      "objections": "合法源公式两个分母严格正，固定 n,k,w 后 β 开闭上确界同一。有限端点由严格双攻击产生 R>A 的矛盾，锐常数用充分大 d 时源阈值超过 ρ。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/对称同轻权两列拓扑的有限次数上界与锐渐近--定理.md",
+        "sha256": "6a966cf2f895083e3cc0f4295255c56fecda241a534cf82d9e38a3051d05320c",
+        "section": "模型与陈述"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/对称同轻权两列拓扑的有限次数上界与锐渐近--定理.md",
+          "sha256": "6a966cf2f895083e3cc0f4295255c56fecda241a534cf82d9e38a3051d05320c",
+          "section": "两种源域的对应"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/对称同轻权两列拓扑的有限次数上界与锐渐近--定理.md",
+          "sha256": "6a966cf2f895083e3cc0f4295255c56fecda241a534cf82d9e38a3051d05320c",
+          "section": "有限次数端点及锐常数"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/两攻击源参数包络的全域对数上限--定理.md",
+          "sha256": "8e80108e590c7d3ded9c78ecff650b388d2e222591156ddf7ff10f2430b23e57",
+          "section": "标量最大化与显式常数"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/对称两列拓扑的单项式两攻击归约--定理.md",
+          "sha256": "6d6ffc835804eec4e380e086b818d8e022dc1c0d70d505d31a09873766b7d6d9",
+          "section": "模型、结论与用途"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/对称两列拓扑的单项式两攻击归约--定理.md",
+          "sha256": "6d6ffc835804eec4e380e086b818d8e022dc1c0d70d505d31a09873766b7d6d9",
+          "section": "源阈值与拓扑阈值"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/两攻击源参数包络的锐渐近--定理.md",
+          "sha256": "dfbc9a01472bc4c9015b0eec4dd2b4fefd2384fae1ad52425c93df8a7b3bedca",
+          "section": "精确定义、结论和模型接口"
+        }
+      ],
+      "sources": []
+    },
+    {
       "object_id": "weighted-congestion/three-hub-degree-ten-exact-finite-threshold",
       "version": 1,
       "title": "1949玩家三枢纽十次游戏的精确无均衡阈值",
@@ -159989,13 +160142,24 @@
       "reason": "全文实读；精确两bin反例及趋2族归反例对象，修复合同和比较值边界同时作为等成本强舍入对象证据。未把原自然LP被否结论登记为已证强定理。"
     },
     {
+      "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+      "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+      "disposition": "objects",
+      "object_ids": [
+        "configuration-assignment/exact-pricing-sparse-configuration-lp",
+        "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing"
+      ],
+      "reason": "新证实的原始稀疏支持恢复算法及单硬预算指派定理共用正文，保留两个独立可复用对象。"
+    },
+    {
       "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
       "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
       "disposition": "objects",
       "object_ids": [
+        "M-42d1210a93e94042833e75a1a80545ea",
         "M-a8a3062b0ff9434fa078140f5b654163",
         "M-ada741cd5e634934805d83850dd7cd1f",
-        "M-42d1210a93e94042833e75a1a80545ea"
+        "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing"
       ],
       "reason": "全文实读；分出候选依赖梯度的精确障碍、显式连续列局部pricing定理和全隐式算法的开放实现义务。历史文献报告与未提供Algorithm1的查重问题保留在来源/异议，不为审查日志或外部未实读定理造节点。"
     },
@@ -160019,10 +160183,11 @@
       "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
       "disposition": "objects",
       "object_ids": [
-        "M-d05829d1479f4b8aad94f3953ab9ffc4",
-        "M-81da430ecf2846f59fb645a08763dab4",
         "M-116e32ea4721479daac94b00a0bd9758",
-        "M-42d1210a93e94042833e75a1a80545ea"
+        "M-42d1210a93e94042833e75a1a80545ea",
+        "M-81da430ecf2846f59fb645a08763dab4",
+        "M-d05829d1479f4b8aad94f3953ab9ffc4",
+        "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing"
       ],
       "reason": "全文实读；一般成本半损失算法、修复后等成本强算法与可独立引用的初始layer-cake引理分开保存，精确值评估与位长证明随算法归属，不按每一步交换造节点。给定支持已解基线亦为隐式开放合同的边界证据。"
     },
@@ -200965,7 +201130,8 @@
       "sha256": "8e80108e590c7d3ded9c78ecff650b388d2e222591156ddf7ff10f2430b23e57",
       "disposition": "objects",
       "object_ids": [
-        "WC-ENVELOPE-CEILING"
+        "WC-ENVELOPE-CEILING",
+        "weighted-congestion/symmetric-two-column-finite-and-sharp-ceiling"
       ],
       "reason": "完整实读；按精确模型/量词/结论分成独立稳定对象，正文及独有证明均由所列body/evidence入口保全。\n完整实读；按精确模型/量词/结论分成独立稳定对象，正文及独有证明均由所列body/evidence入口保全。\n0079增量候选：保持canonical全部原owner；本次只补旧资产精确scope/provenance证据，不改正文、模型、量词、条件、状态。"
     },
@@ -200974,7 +201140,8 @@
       "sha256": "dfbc9a01472bc4c9015b0eec4dd2b4fefd2384fae1ad52425c93df8a7b3bedca",
       "disposition": "objects",
       "object_ids": [
-        "R3-SOURCE-SHARP-ASYMPTOTIC-v1"
+        "R3-SOURCE-SHARP-ASYMPTOTIC-v1",
+        "weighted-congestion/symmetric-two-column-finite-and-sharp-ceiling"
       ],
       "reason": "成熟完整数学正文及所载证明；原有限程序和冻结证据依实际范围引用。"
     },
@@ -201308,10 +201475,20 @@
       "sha256": "6d6ffc835804eec4e380e086b818d8e022dc1c0d70d505d31a09873766b7d6d9",
       "disposition": "objects",
       "object_ids": [
+        "WC-R3-CROSS32-TOPOLOGY-SEPARATION-v1",
         "WC-R3-FULL-TOPOLOGY-REDUCTION-v3",
-        "WC-R3-CROSS32-TOPOLOGY-SEPARATION-v1"
+        "weighted-congestion/symmetric-two-column-finite-and-sharp-ceiling"
       ],
       "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/对称同轻权两列拓扑的有限次数上界与锐渐近--定理.md",
+      "sha256": "6a966cf2f895083e3cc0f4295255c56fecda241a534cf82d9e38a3051d05320c",
+      "disposition": "objects",
+      "object_ids": [
+        "weighted-congestion/symmetric-two-column-finite-and-sharp-ceiling"
+      ],
+      "reason": "完整对称拓扑的弱 PNE 有限次数端点和类阈值锐渐近的联合迁移。"
     },
     {
       "path": "archives/weighted-congestion/state/定理/局部异权共享侧资源的排序势乘积预算--定理.md",
