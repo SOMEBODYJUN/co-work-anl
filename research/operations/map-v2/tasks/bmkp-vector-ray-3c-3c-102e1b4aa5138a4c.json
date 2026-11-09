@@ -114,11 +114,72 @@
       "comparison_question": "按二维三射线禁形，把中射线 (1,1)、两外射线 (1,ε),(ε,1) 和容量 (1,1) 代入资源激活 LP，核对同一物品集合上的精确最优值及 (1−ε)/(1+ε) 子模缺陷，验证 ε=0 如何专门给出单位坐标反例并区分严格正权版本。"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss1",
-  "request_id": "de1d24e703034376b9c30e7d655bd745",
+  "request_id": "87ac2449e2694ace99da252731bb427f",
   "requests": {
     "4accb0d688a84a6eac9498814f9ecc4a": "plan",
-    "de1d24e703034376b9c30e7d655bd745": "claim"
+    "de1d24e703034376b9c30e7d655bd745": "claim",
+    "87ac2449e2694ace99da252731bb427f": "done"
+  },
+  "edge_paths": {
+    "resource-three-ray-transfers-to-exact-vector-defect": "map/edges/bmkp-vector-ray-3c-3c-102e1b4aa5138a4c/resource-three-ray-transfers-to-exact-vector-defect.json",
+    "exact-vector-defect-specializes-to-unit-axes": "map/edges/bmkp-vector-ray-3c-3c-102e1b4aa5138a4c/exact-vector-defect-specializes-to-unit-axes.json"
+  },
+  "receipt": {
+    "task_id": "bmkp-vector-ray-3c-3c-102e1b4aa5138a4c",
+    "stage": "3C",
+    "object_ids": [
+      "M-db748b49766141e79b7ab59a27ad25bb",
+      "SEL-RESOURCE-LP-SUBMODULAR-v2",
+      "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1"
+    ],
+    "read_object_ids": [],
+    "input_pins": {
+      "M-db748b49766141e79b7ab59a27ad25bb": "5a60e13901b27d4e87aef6be9901899f614886beaef1347faba801fd9489453a",
+      "SEL-RESOURCE-LP-SUBMODULAR-v2": "76c9e60f78b3cf56f25ac4ef67e7c75f41f668d648dafd44cea144160b7b8e5e",
+      "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1": "16d144d3e59bf43a8087069c301df2d65f68205b0c9f1cce3ba994cf489a5540"
+    },
+    "status": "complete",
+    "coverage": {
+      "M-db748b49766141e79b7ab59a27ad25bb": {
+        "state": "linked",
+        "object_pin": "5a60e13901b27d4e87aef6be9901899f614886beaef1347faba801fd9489453a",
+        "comparison_scope": "对照瓶颈背包 C01 审查和 GAP 底稿 §4，比较资源启用三射线证书与单位容量、单位利润参数族的物品、变量上界和启用集；另比较固定支撑和 ε=0、ε↑1 两端边界。",
+        "reason": "资源启用必要性证书取 α=1、λ=μ=1/(1+ε)，再把两条容量约束相加补齐精确并集上界。由四值所得缺口是 (1−ε)/(1+ε)，严格正且可趋零。0<ε<1 维持全部列的完整资源支撑和全部单位利润；直接取 ε=0 得轴向反例。以有理顶点枚举复核 ε=0、1/7、1/2、999/1000、1 的全部八个启用集。",
+        "edge_ids": [
+          "resource-three-ray-transfers-to-exact-vector-defect",
+          "exact-vector-defect-specializes-to-unit-axes"
+        ]
+      },
+      "SEL-RESOURCE-LP-SUBMODULAR-v2": {
+        "state": "linked",
+        "object_pin": "76c9e60f78b3cf56f25ac4ef67e7c75f41f668d648dafd44cea144160b7b8e5e",
+        "comparison_scope": "核读二维分类正文、两列射线账本与第二轮 GAP C01；把必要性中间列证书和瓶颈背包参数族逐项代入，并区分二维全量词、固定容量和全维充分性。",
+        "reason": "二维全容量全利润分类的构造性必要方向可迁移，证书给两对及交集值和并集可行解；精确并集值另由归一化容量上界完成。一个参数族只见证一类固定矩阵的失败，无法承担任意二维矩阵的分类。对同一矩阵提高容量可得模值。高维只读到充分性及 I₃ 边界。",
+        "edge_ids": [
+          "resource-three-ray-transfers-to-exact-vector-defect"
+        ]
+      },
+      "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1": {
+        "state": "linked",
+        "object_pin": "16d144d3e59bf43a8087069c301df2d65f68205b0c9f1cce3ba994cf489a5540",
+        "comparison_scope": "核对资源启用账本三个陈述、瓶颈背包三源复现的精确枚举和底稿 §4，比较 ε=0 的轴向矩阵、利润、容量和四个掩码。",
+        "reason": "直接专门化 ε=0 给同一 LP 与全部所需最优值，缺口 1。原 Fraction 枚举独立核对该证书。中断的 HiGHS 程序有逐物品 assignment simplex 和逐 bin 标量容量，属不同模型，空结果未作为支持。",
+        "edge_ids": [
+          "exact-vector-defect-specializes-to-unit-axes"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/bmkp-vector-ray-3c-3c-102e1b4aa5138a4c/resource-three-ray-transfers-to-exact-vector-defect.json",
+        "sha256": "59ef5b4d4d8a81b6dde264e0c85a67d8cd301cca6d882e38d0bb0645541b8d27"
+      },
+      {
+        "path": "map/edges/bmkp-vector-ray-3c-3c-102e1b4aa5138a4c/exact-vector-defect-specializes-to-unit-axes.json",
+        "sha256": "e5788c9cafc6133655378231555d6143282de0ec10559fc81a969c3b435116db"
+      }
+    ]
   }
 }
