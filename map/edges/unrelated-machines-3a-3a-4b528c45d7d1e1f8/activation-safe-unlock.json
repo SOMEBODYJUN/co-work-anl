@@ -1,0 +1,37 @@
+{
+  "edge_id": "um-permanent-activation-threshold-gives-safe-function-graph-unlock",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-PERMANENT-BUFFER-ACTIVATION-v1"
+  ],
+  "target_ids": [
+    "UM-PERMANENT-BUFFER-UNLOCK-PATH-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一给定完整实际σ、τ及f,A,Q,S,F；0≤T≤C≤2T，源实际用端a_j≤T，S_i≤C、F_i≤T，U=max(2T,C+T/2)。改变弧无自环；eligible为a_j≥h_source，保全部平行任务身份。目标的可达条件是可检验的充分证书，不是未付猜想。",
+  "roles": {
+    "UM-PERMANENT-BUFFER-ACTIVATION-v1": "支付D_i≥h_i后局部全部未来排列均安全的精确不变量、初始h_i=0安全根及h_i≤T/2。",
+    "UM-PERMANENT-BUFFER-UNLOCK-PATH-v1": "由eligible可达/函数图安全断口合同得到守U的全任务单次直接路径，另给两件eligible的充分判据与可达失败的范围。"
+  },
+  "explanation": "置H={h_i>0}、R0=M\\H，G为存在eligible弧到R0或初态安全b_j≤U−S_target的H源。若H每点在eligible图内可达G，对G点选一个见证，对其余点选使到G距离严格下降的eligible弧。选边函数图不可能有避开G的环；环内G见证不可能到R0，所以每环含初态安全边。反向任意此函数图，从任何点沿选边最终到R0或进入含安全边的环，从而沿原eligible图可达G。执行时暂留所有未选弧与附树入流，先在每环迁一条安全断口；目标尚无所选流入，负载≤S_target+b_j≤U。源移出≥h_source，按来源永久激活。逆环迁余下选边，每步目标已激活、源随之激活；再从R0/已激活环向外按树逆拓扑迁所选边，全部H激活后任意完成其余任务。每个改变任务恰一次、所有前缀全机守U，最后为原τ。若每H源有至少两件不同eligible任务而可达失败，令W为全部不能到G的点；所有这些eligible弧都留W且不初态安全。因b_j>U−S_target≥T/2，每个W目标由F_i≤T至多接收一条；每W源至少发两条，矛盾2|W|≤|arcs|≤|W|。这保留平行任务身份且必须取全部不可达集，不能随取不可达子集。BFS/函数图和最多n步直接排列为总位多项式；T=0时H空。证书非必要：两机每侧大件a1/b3/5和四小件a1/4/b1/10，T1/C2时h1/2、G空，但先八小件后两大件峰12/5<5/2。此失败不否定路径，也不要求更晚任务包算法。",
+  "scope": "完整输入与给定目标下的单件eligible安全解锁证书及其判证；不寻找未知目标，不把可达失败当OPT>T，不把两eligible条件当路径必要条件。",
+  "whole_result": "永久安全阈值加上上述有限图构造，推出目标完整声明：eligible可达G等价于每源选一边且每个函数图环有初态安全断口；满足时确定性总位多项式输出全程守U、每件直接迁τ一次的完整路径；每H源两件不同eligible是充分条件，可达失败只排本证书。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/永久缓冲激活与安全解锁--定理.md",
+      "sha256": "306a38a217c29b88ca8d79e38f256376606609ab20ad241f345fb2ceb9ab1c23"
+    }
+  ],
+  "reviewed_by": "Boss5/474257b8/um-families-b",
+  "review_note": "全文实读阈值和解锁证明，核局部排列含零前缀、不按他机安全过滤、全部不可达集计数及先环后附树/未选流暂留；另核G空仍有低峰路径反例。没有把有限fixture计数代替证明。",
+  "endpoint_pins": {
+    "UM-PERMANENT-BUFFER-ACTIVATION-v1": "94cf06761cfc0272321297101c8a558bf6b213de93daaa9aab756846c72a206c",
+    "UM-PERMANENT-BUFFER-UNLOCK-PATH-v1": "6715357e78454b26ba33fc5cd8dc293c24db658ed771bc94fec20a358975627b"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/永久缓冲激活与安全解锁--定理.md": "306a38a217c29b88ca8d79e38f256376606609ab20ad241f345fb2ceb9ab1c23"
+  },
+  "review_digest": "17659e1068883ac5d33fcd31f5b5b85010b302c555a74f45aea99cdc291b813a"
+}

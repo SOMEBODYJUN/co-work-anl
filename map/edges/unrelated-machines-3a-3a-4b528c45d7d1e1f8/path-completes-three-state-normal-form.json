@@ -1,0 +1,47 @@
+{
+  "edge_id": "um-real-path-reduction-completes-three-state-normal-form",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1"
+  ],
+  "target_ids": [
+    "UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "源P为有限非空显式完整flat ordinary UM，非空indexed菜单，每state私有质量恰1；保留零incidence、重复indexed states、unused资源、全部未选state原jobs。允许新增真实组、selector、singleton incidence与机器；不要求保持原selector资格、原组数或组交互M。",
+  "roles": {
+    "UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1": "在真实选择树中间矩阵的全部资源（旧、own及零membership）上提供资源度≤3、二态真实helpers、C<2全调度和正partial双向映射及OPT2/V0闭合。",
+    "UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1": "目标整条三态且资源度三的归一化保值正规形；选择树第一阶段在边解释中逐任务支付，第二阶段调用来源定理。"
+  },
+  "explanation": "先对每个旧组g的K_g个indexed states建立K_g叶满二叉树，每顶点一新组且恰一selector；每非root顶点v有fresh own资源a_v。internal root两个child-own singleton态；非root internal有own及两个child-own共3态；非root leaf有own singleton及完整原state共2态；K=1 root即leaf只保原state且不造singleton。所有singleton私端/资源端均1、每state私机独立，原incidences与它们实际private/原资源两端保持；旧selector作为root selector，其资格改变，非root新添selector。对正partial阈值v≤1，源选态沿root-to-leaf选child-own，终leaf领原子集，off-path选own；own资源由parent或自身各恰领取一次。反向root所领child-own使child不能选own获得正值，沿迫出链提取一个实际选择的原state；off-path可额外激活，原资源不交性直接继承，不合并多个states。任意源实际峰C<2调度读取旧selector所在leaf，K>1把旧selector置root、新leaf selector替代旧单位负载，路径internal选child、off-path选own；所有原incidence的实际private/外送选择不动，选中singleton外送、未选留private，每新增机峰≤1≤C。K=1全部原任务原位不动。反向任意树调度C<2时所选singleton必须外送，root占child-own后迫使child向下，最终选择原state；删全部新任务并把旧root selector移回该leaf替代新selector，全部旧incidence实际端保留、负载不增。第一阶段每state质量1、菜单≤3，数量为2S−n组、5S−4n态、2S−2n own资源、4S−4n新singleton incidence、全部I+6S−5n件任务，K1也匹配。随后把来源路径归约施于全部旧/own资源；helpers只有2态，故最终Kmax≤3且资源跨全部菜单组度≤3。必须先树后路径，树分组会提高旧资源组度；先降度不保证最终界。每state总质量1使v>1时两侧均无partial可行解；对0<v≤1已有两阶段证明。串接两阶段全部C<2调度与全部正partial阈值双向，且两边全private≤2、selector≥1、有限最优值达到；若一边OPT2而另一边<2会逆向矛盾，故OPT全值保持。正partial双向和有限最大值同样保V0，不用OPT=2−V跳过全部任务。树规模显式线性于S，路径helper数至多中间incidence数，新时间仅1，原有理数复制，构造和映射均总位多项式且不输入OPT/源见证。",
+  "scope": "归一化显式完整flat域的三态/资源度三正规形，含OPT2/V0。没有把一般UM、未归一化Santa、隐式菜单、固定M、全正权或固定heavy角色免费转入；不提供源NO或软件实现。",
+  "whole_result": "真实选择树第一阶段与来源路径第二阶段共同得到目标完整结论：任意每state质量1的显式完整flat P可确定性总位多项式构造P*，Kmax(P*)≤3、资源组度≤3，OPT(P*)=OPT(P)、V(P*)=V(P)，对全部实际C<2调度及全部正partial阈值两向转换，含OPT2/V0端点。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/归一化菜单的三态资源度三正规形--定理.md",
+      "sha256": "31f1fb774f856f42255d1cd8b56c7a77d8396b2417b05e4d0b2f1d32e1195d1a"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/完整菜单的资源度三路径归约--定理.md",
+      "sha256": "afb7a6751e65f5e968a2b8798b8ba284983d64694fde1a463dae991b0018bb34"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化flat菜单三态资源度三正规形最终章节与版本边界审查--审查.md",
+      "sha256": "5ad1a19022528e977ce28915d798314109223f7021552cd0b60996307a094a31"
+    }
+  ],
+  "reviewed_by": "Boss5/474257b8/um-families-b",
+  "review_note": "完整实读两定理、三源范围审查、最终K1版本/selector/off-path纠正；核精确树计数、低峰逐原任务映射、全部正partial及2/0端点。路径文献归属只沿已登记历史范围，不作新外部文献核验或原创性判断。",
+  "endpoint_pins": {
+    "UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1": "569e14cabd1548df03018f27c0a26c962c6d672d03993a1f9cd9d20d09a0229b",
+    "UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1": "39894bf5f31e3ec3f64cf181949cce8e05522a1ee2564ac13d9b1c6ffacb8ff1"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/归一化菜单的三态资源度三正规形--定理.md": "31f1fb774f856f42255d1cd8b56c7a77d8396b2417b05e4d0b2f1d32e1195d1a",
+    "archives/unrelated-machines/state/定理/完整菜单的资源度三路径归约--定理.md": "afb7a6751e65f5e968a2b8798b8ba284983d64694fde1a463dae991b0018bb34",
+    "archives/unrelated-machines/state/审查/归一化flat菜单三态资源度三正规形最终章节与版本边界审查--审查.md": "5ad1a19022528e977ce28915d798314109223f7021552cd0b60996307a094a31"
+  },
+  "review_digest": "2989bad149e4219ff90bcb64d4ecae27bffc852e76a16c0edfdae4143f7abc99"
+}
