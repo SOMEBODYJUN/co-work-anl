@@ -1,0 +1,52 @@
+{
+  "edge_id": "singleton-ring-defect-envelope-and-support-give-minimum-threshold",
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "source_ids": [
+    "WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1",
+    "WC-R1-RESOURCE-SUPPORT"
+  ],
+  "target_ids": [
+    "weighted-congestion/singleton-cohort-ring-defect-graph-equilibrium"
+  ],
+  "conditions": "奇m≥3、d≥2。单成员群组的真实有限双动作环，正实权重，同一资源位置的两副本同费，非负系数次数≤d且允许零费。用真实自身负载计不乘权成本，弱α稳定排全部严格α改善。",
+  "roles": {
+    "WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1": "排α≥T_d的全环严格两测试，配实际缺陷图支付单冲突池T_d-PNE。",
+    "weighted-congestion/singleton-cohort-ring-defect-graph-equilibrium": "以缺陷图和资源支持的两项存在结果取较小倍率，同时保单冲突池内的T_d。",
+    "WC-R1-RESOURCE-SUPPORT": "每资源潜在用户至多2时的总成本势界。"
+  },
+  "explanation": "A_i冲突当且仅当h_i=l_i，B_i冲突当且仅当l_i≠h_(i+1)。无冲突要求沿环恰有奇数m次反转，不能闭合。固定唯一冲突位置后逐边定值，恰有两个全位互补且等成本的状态。2m个商状态成缺陷周期。非冲突相邻者翻转会将两项solo改shared，不可能严格改善；冲突相邻的两人分别把冲突搬到左右相邻位置。每条无向边对应同一玩家的两种真实成本，α≥1和非负成本排双向严格。若每顶点都有严格出边，周期2m条边必全部取且同向。正向A_i→B_i比较F_i(u_i+v_i)+G_i(v_i)与F_i(v_i)+G_i(u_(i+1)+v_i)。正向B_i→A_(i+1)比较F_(i+1)(u_(i+1))+G_i(u_(i+1)+v_i)与F_(i+1)(u_(i+1)+v_(i+1))+G_i(u_(i+1))，正是n_i=1的两严格测试。F_i恒零时A_i→B_i不能严格改善，G_i恒零时B_i→A_(i+1)不能严格改善。反向取新j对应旧i=−j，互换H与L和权重，保位，A′_j^b=A_i^b、B′_j^b=B_(i−1)^(1−b)，保资源、真实成本和同费形状，旧反向成新正向。由T_d的标量函数在R=1右导正（2^d>d+1）知T_d>1，故可用包络在弱端点T_d排两种全strict方向。某个池内状态无严格移动。\n\nA_i的两个副本各只有H_i、L_i为潜在用户，B_i的两个副本各只有L_i、H_(i+1)。非负系数多项式在非负负载上非负非减。在总成本最小的纯状态，玩家改动若把自身成本严格降到一半以下，退出资源不增加任何他人成本，每个新资源至多一位原用户且其增量至多改动者新延迟，共同资源不变，故总成本变化至多2C_new−C_old−C_common<0，矛盾。得到整域2-PNE。两条存在保证取较小倍率，所用纯状态可依分支改变。 因而每份输入都有整域min(2,T_d)-PNE，并另有单冲突池内T_d-PNE。",
+  "whole_result": "对每个奇m≥3、d≥2及每份同费副本、正实权重、非负次数≤d且允许零费用的真实有限单成员群组环，存在整域min(2,T_d)-PNE，同时存在2m个单冲突商状态之一的T_d-PNE。",
+  "scope": "T_d≤2时可同时选缺陷池状态。2<T_d时整域2-PNE可来自另一状态。全称只覆盖单成员群组环；阈值锐性是独立问题。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+      "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+      "section": "8. Nonnegative mixtures do not enlarge the certificate envelope"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/单成员群组奇环的缺陷图均衡--定理.md",
+      "sha256": "e1d6929f5c72b2982607ca45d56cb1aa8532530361d17391b1980efca9ea4243",
+      "section": "单成员群组奇环的缺陷图均衡"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/资源潜在用户支持的总成本势--定理.md",
+      "sha256": "4f252181961ef4fdda7e02f6ee460861b4d52c1271d85c8d1dd1242ef8f42844"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "两个独立构造分别重核。任一原局部边在所有d上只支付完整目标的一部分，两份已证前提在此同付完整合取。",
+  "endpoint_pins": {
+    "WC-R1-RESOURCE-SUPPORT": "f3251dcce0ad8790ada62d0e325c4c6f79efe3a9be7f5b8da0db2c4be09b27d0",
+    "WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1": "fd14a44994955fb5ff9f4e2318b4b847ee18d1011a527b3e93e6ea77ec225162",
+    "weighted-congestion/singleton-cohort-ring-defect-graph-equilibrium": "8ecd54dc4822bd40aec9d69056abba72674e218ad85adb0d2ba55622d7cfe0af"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+    "archives/weighted-congestion/state/定理/单成员群组奇环的缺陷图均衡--定理.md": "e1d6929f5c72b2982607ca45d56cb1aa8532530361d17391b1980efca9ea4243",
+    "archives/weighted-congestion/state/定理/资源潜在用户支持的总成本势--定理.md": "4f252181961ef4fdda7e02f6ee460861b4d52c1271d85c8d1dd1242ef8f42844"
+  },
+  "review_digest": "aafafa36e3e27a256561bd2a94a4d87ce9c7ef345b950453c63dd183b873d46e"
+}

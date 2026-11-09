@@ -1,0 +1,76 @@
+{
+  "task_id": "round15-exact-edge-corrections-repair-74e19652d0cf7131",
+  "stage": "3B",
+  "status": "complete",
+  "object_ids": [
+    "WC-R1-RESOURCE-SUPPORT",
+    "WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1",
+    "weighted-congestion/singleton-cohort-ring-defect-graph-equilibrium"
+  ],
+  "read_object_ids": [],
+  "input_pins": {
+    "WC-R1-RESOURCE-SUPPORT": "f3251dcce0ad8790ada62d0e325c4c6f79efe3a9be7f5b8da0db2c4be09b27d0",
+    "WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1": "fd14a44994955fb5ff9f4e2318b4b847ee18d1011a527b3e93e6ea77ec225162",
+    "weighted-congestion/singleton-cohort-ring-defect-graph-equilibrium": "8ecd54dc4822bd40aec9d69056abba72674e218ad85adb0d2ba55622d7cfe0af"
+  },
+  "coverage": {
+    "WC-R1-RESOURCE-SUPPORT": {
+      "state": "linked",
+      "object_pin": "f3251dcce0ad8790ada62d0e325c4c6f79efe3a9be7f5b8da0db2c4be09b27d0",
+      "comparison_scope": "同一单成员环的真实成本、缺陷图两取向及整域支持势。",
+      "reason": "每资源潜在用户至多2时的总成本势界。",
+      "edge_ids": [
+        "singleton-ring-defect-envelope-and-support-give-minimum-threshold"
+      ]
+    },
+    "WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1": {
+      "state": "linked",
+      "object_pin": "fd14a44994955fb5ff9f4e2318b4b847ee18d1011a527b3e93e6ea77ec225162",
+      "comparison_scope": "同一单成员环的真实成本、缺陷图两取向及整域支持势。",
+      "reason": "排α≥T_d的全环严格两测试，配实际缺陷图支付单冲突池T_d-PNE。",
+      "edge_ids": [
+        "singleton-ring-defect-envelope-and-support-give-minimum-threshold"
+      ]
+    },
+    "weighted-congestion/singleton-cohort-ring-defect-graph-equilibrium": {
+      "state": "linked",
+      "object_pin": "8ecd54dc4822bd40aec9d69056abba72674e218ad85adb0d2ba55622d7cfe0af",
+      "comparison_scope": "同一单成员环的真实成本、缺陷图两取向及整域支持势。",
+      "reason": "以缺陷图和资源支持的两项存在结果取较小倍率，同时保单冲突池内的T_d。",
+      "edge_ids": [
+        "singleton-ring-defect-envelope-and-support-give-minimum-threshold"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/round15-exact-edge-corrections-repair-74e19652d0cf7131/singleton-ring-defect-envelope-and-support-give-minimum-threshold.json",
+      "sha256": "0b5330ed7b04c09fbed03fc79be6d4ed7d7683c8847d7602e6ca8fc9c161741e"
+    }
+  ],
+  "closed_overlaps": [],
+  "follow_up_tasks": [],
+  "supersession": {
+    "boss5-474257b8-singleton-3b-602e0414fba69244": {
+      "reason": "两条真局部构造在同一份联合边中支付完整登记目标。",
+      "assets": {
+        "map/edges/boss5-474257b8-singleton-3b-602e0414fba69244/singleton-ring-defect-envelope-gives-single-conflict-pool-threshold.json": {
+          "disposition": "replaced",
+          "replacement_paths": [
+            "map/edges/round15-exact-edge-corrections-repair-74e19652d0cf7131/singleton-ring-defect-envelope-and-support-give-minimum-threshold.json"
+          ],
+          "reason": "保留该原证明的全部适用域、证据和推导，合入同一整条目标。"
+        },
+        "map/edges/boss5-474257b8-singleton-3b-602e0414fba69244/singleton-ring-resource-support-gives-global-factor-two.json": {
+          "disposition": "replaced",
+          "replacement_paths": [
+            "map/edges/round15-exact-edge-corrections-repair-74e19652d0cf7131/singleton-ring-defect-envelope-and-support-give-minimum-threshold.json"
+          ],
+          "reason": "保留该原证明的全部适用域、证据和推导，合入同一整条目标。"
+        }
+      }
+    }
+  },
+  "reviewed_by": "Boss1",
+  "review_note": "完整目标同时含整域较小倍率和池内T_d保证，分别按真实成本核。"
+}
