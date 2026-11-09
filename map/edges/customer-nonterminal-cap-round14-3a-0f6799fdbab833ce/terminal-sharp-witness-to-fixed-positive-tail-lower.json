@@ -1,0 +1,53 @@
+{
+  "edge_id": "cag-0f6799-terminal-sharp-witness-to-fixed-positive-tail-lower",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-5bf5060ef8314afa872530593ddf9a65"
+  ],
+  "target_ids": [
+    "customer-attraction/nonterminal-amount-column-cap-two-lower-at-every-fixed-tail-length"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、共同有限标签目录、全部有序历史上的纯SPE及终局均分。任取整数r≥1和n≥max(3,r)，保留原n+1人锐族的X_j、Y_j、A_j、T_j、D，新增r位玩家及r个大小各为n、与旧块和彼此均不交的合法共同主题Z_a。cut i=ℓ=n+1处的强制动作只需合法，后继沿同一扩展策略。每个sender的非负系数跨全部孩子共享一份原利润金额。",
+  "roles": {
+    "M-5bf5060ef8314afa872530593ddf9a65": "提供全n≥3末层锐族的旧客户块与目录、真末层SPE策略构造及对角sender/孩子的金额取等。迁移保留其旧客户两叶负载、旧角色利润和q，另重建扩展全策略。",
+    "customer-attraction/nonterminal-amount-column-cap-two-lower-at-every-fixed-tail-length": "每个固定正尾长和每个允许n的完整纯SPE、同一非末位cut的多主题真孩子、精确列比和统一系数下界。"
+  },
+  "explanation": "在每个仅含互异A的有序历史，长度t<n时选最小未用A，长度n时选D。以前n个互异A紧接D或任一T_j为前缀的整棵尾部子树，每个决策历史选最小未用Z，含尾部既有动作任意偏离的历史。其余节点按已定义的真实后继逆向最大化，末位平局优先A或D。默认历史一旦出现，必已破坏前n个互异A或第n+1个D/T的必要前缀，后代不能重入任何规定区；故默认子树由逆向最优性覆盖。\n\n任一规定尾部历史此前的尾行动数小于r，故总有未用Z；沿规定后继它不重复，得n。每一旧主题的所有客户已被前n个A覆盖，任何旧题收益至多n，已用Z至多n/2，未用Z至多n。长度n的全A历史，D沿规定尾得n；任何A/T已有覆盖，收益至多n及n−1，Z至多n。更早全A历史，任一未用A引出旧路径与独立Z尾，得2n−1；重用A至多n，T至多2n−2，Z至多n。若t≥1，偏离D因某一整块X_j已有覆盖，至多2n−1。\n\n在根偏离D后的实际续局，若末位以前已有另一动作覆盖某X_j整块，同一上界即成立。否则根与末位之间的n+r−1<2n个动作都取T或Z，故存在被选至多一次的T_j。真实末位试A_j，两个X_j客户与根D均分得1，Y_j收益至少n−1，合计至少n。每个T_j在此节点被其A_j严格支配，每个Z至多n，因此按默认平局次序，真实末位最佳回复必为A或D，覆盖至少一整块X_j，根D最终仍至多2n−1。规定动作均为真最佳回复，给出全部有序历史上的一份纯SPE。\n\n实际B=(A₁,…,A_n,D,Z₁,…,Z_r)，p_j(B)=2n−1(j≤n)、p_ℓ(B)=n，每位尾玩家得n。对每个j，在同一cut i=ℓ强制不同T_j，此历史进入规定尾，沿同一σ得到W^j=(A₁,…,A_n,T_j,Z₁,…,Z_r)。Z客户与旧题不交，原/子叶在X_j的负载是2/1，在Y_j的负载是1/2，故p_j(W^j)=n+1且q_{α_j,jℓ}=Σ_{x∈X_j}1/(2·1)=1。仅令λ_{α_j,j}=(2n−1)/(n+1)，每个sender的AMOUNT恰等于p_j(B)，统一ℓ列总额为n(2n−1)/(n+1)。除以p_ℓ(B)得2−3/(n+1)，固定r并令n增大即排除每个小于二的统一列系数。B覆盖全部客户，W(B)=OPT_m=2n²+rn。",
+  "scope": "原末层实例与其r个正收益合法后继主题之间的构造迁移。结论是每个固定正尾长的全人数统一列系数下界，使用同一个真实非末位cut及不同合法T_j。一般DEEP-CAP2、指定正尾长下的二倍上界和固定人数最优值均在此结论范围之外。",
+  "whole_result": "由全n末层SPE锐族及独立Z尾的完整策略提升，得到每个整数r≥1、每个n≥max(3,r)的m=n+1+r人纯SPE见证。位置ℓ=n+1后恰余r人；同一实际cut的多个强制合法主题有同一策略的真实子续局，跨孩子每sender共享一份AMOUNT，ℓ列比恰为2−3/(n+1)。因此任一固定正尾长的全人数统一列系数至少为二，且这些实例实际福利达到最优。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/末层多孩子金额预算的锐两倍列容量--定理.md",
+      "sha256": "dae097bf1c0576d6ab8b417505f0b99280192fd80b11571d5f190ed8e78766c3",
+      "section": "统一系数二的完整SPE锐家族"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/amount-cap-one-family-certificate-and-reviews-primary/original/research/workspaces/customer-attraction/R-5a15745a45ba44adb7d26c0557faacb7/coupling/amount_cap1_family.md",
+      "sha256": "8a9519bb7e9682adafbbdca3cb622fe8212607c17f2905c8a92513a2c8e19c67"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/任意固定正尾长的非末位金额列系数二下界--定理.md",
+      "sha256": "4be4c1db6dd8c5be4ced85995688c5530d888092b6de6057fb4f5bdb8605e6e6"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对末层锐族v2和非末位下界v1的精确登记身份及原文。逐类核有序历史的完整策略、默认子树封闭、真正末位平局、根改D的计数界、旧客户负载和跨不同孩子的逐源取等。末层上界v2是并列合同背景，原1a4e前缀包的一般PCAP2终点只获下界贡献。本边完成独立下界定理。",
+  "endpoint_pins": {
+    "M-5bf5060ef8314afa872530593ddf9a65": "c5eb0db9c66664954529a61eae851c132db045225d4eb2d9922b2e2d03388e91",
+    "customer-attraction/nonterminal-amount-column-cap-two-lower-at-every-fixed-tail-length": "65dfafb814e294ed5c5e7e96467d87b3d4bf3e9a33f0b10acf8d41467acb90f8"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/末层多孩子金额预算的锐两倍列容量--定理.md": "dae097bf1c0576d6ab8b417505f0b99280192fd80b11571d5f190ed8e78766c3",
+    "archives/customer-attraction/tools/evidence/amount-cap-one-family-certificate-and-reviews-primary/original/research/workspaces/customer-attraction/R-5a15745a45ba44adb7d26c0557faacb7/coupling/amount_cap1_family.md": "8a9519bb7e9682adafbbdca3cb622fe8212607c17f2905c8a92513a2c8e19c67",
+    "archives/customer-attraction/state/定理/任意固定正尾长的非末位金额列系数二下界--定理.md": "4be4c1db6dd8c5be4ced85995688c5530d888092b6de6057fb4f5bdb8605e6e6",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "07776b2268b2c09b0a9be5da45927acd4c08e3580d2a9998b99c14d964d539cd"
+}

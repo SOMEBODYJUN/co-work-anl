@@ -1,0 +1,47 @@
+{
+  "edge_id": "singleton-ring-defect-envelope-gives-single-conflict-pool-threshold",
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "source_ids": [
+    "WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1"
+  ],
+  "target_ids": [
+    "weighted-congestion/singleton-cohort-ring-defect-graph-equilibrium"
+  ],
+  "conditions": "奇m≥3、d≥2。单成员群组的真实有限双动作环，正实权重，同一资源位置的两副本同费，非负系数次数≤d且允许零费。用真实自身负载计不乘权成本，弱α稳定排全部严格α改善。",
+  "roles": {
+    "WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1": "排α≥T_d的全环严格两测试，配实际缺陷图支付单冲突池T_d-PNE。",
+    "weighted-congestion/singleton-cohort-ring-defect-graph-equilibrium": "完成池内T_d的存在保证。"
+  },
+  "explanation": "A_i冲突当且仅当h_i=l_i，B_i冲突当且仅当l_i≠h_(i+1)。无冲突要求沿环恰有奇数m次反转，不能闭合。固定唯一冲突位置后逐边定值，恰有两个全位互补且等成本的状态。2m个商状态成缺陷周期。非冲突相邻者翻转会将两项solo改shared，不可能严格改善；冲突相邻的两人分别把冲突搬到左右相邻位置。每条无向边对应同一玩家的两种真实成本，α≥1和非负成本排双向严格。若每顶点都有严格出边，周期2m条边必全部取且同向。正向A_i→B_i比较F_i(u_i+v_i)+G_i(v_i)与F_i(v_i)+G_i(u_(i+1)+v_i)。正向B_i→A_(i+1)比较F_(i+1)(u_(i+1))+G_i(u_(i+1)+v_i)与F_(i+1)(u_(i+1)+v_(i+1))+G_i(u_(i+1))，正是n_i=1的两严格测试。F_i恒零时A_i→B_i不能严格改善，G_i恒零时B_i→A_(i+1)不能严格改善。反向取新j对应旧i=−j，互换H与L和权重，保位，A′_j^b=A_i^b、B′_j^b=B_(i−1)^(1−b)，保资源、真实成本和同费形状，旧反向成新正向。由T_d的标量函数在R=1右导正（2^d>d+1）知T_d>1，故可用包络在弱端点T_d排两种全strict方向。某个池内状态无严格移动。",
+  "contribution": {
+    "result": "在2m个单冲突商状态中存在真实T_d-PNE。T_d≤2时同一个状态也满足min(2,T_d)-PNE。",
+    "remaining": "当2<T_d时需要独立的整域2-PNE存在保证以取得完整的min(2,T_d)结论。"
+  },
+  "scope": "仅单成员缺陷图，无该子类锐性。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+      "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+      "section": "8. Nonnegative mixtures do not enlarge the certificate envelope"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/单成员群组奇环的缺陷图均衡--定理.md",
+      "sha256": "e1d6929f5c72b2982607ca45d56cb1aa8532530361d17391b1980efca9ea4243",
+      "section": "单成员群组奇环的缺陷图均衡"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐资源核两个移动的真实新成本、奇环唯一冲突、全strict循环计数、反向保成本同构及零费与弱端点。",
+  "endpoint_pins": {
+    "WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1": "fd14a44994955fb5ff9f4e2318b4b847ee18d1011a527b3e93e6ea77ec225162",
+    "weighted-congestion/singleton-cohort-ring-defect-graph-equilibrium": "8ecd54dc4822bd40aec9d69056abba72674e218ad85adb0d2ba55622d7cfe0af"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+    "archives/weighted-congestion/state/定理/单成员群组奇环的缺陷图均衡--定理.md": "e1d6929f5c72b2982607ca45d56cb1aa8532530361d17391b1980efca9ea4243"
+  },
+  "review_digest": "620ffb13fa863026eb80466588ba1107ebb8ddd3b354b94e4f57421584c3d490"
+}

@@ -1,0 +1,46 @@
+{
+  "edge_id": "singleton-ring-resource-support-gives-global-factor-two",
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "source_ids": [
+    "WC-R1-RESOURCE-SUPPORT"
+  ],
+  "target_ids": [
+    "weighted-congestion/singleton-cohort-ring-defect-graph-equilibrium"
+  ],
+  "conditions": "目标的奇数单成员双动作环，有限状态、正实权重，计自身负载的不乘权非负非减延迟。",
+  "roles": {
+    "WC-R1-RESOURCE-SUPPORT": "每资源潜在用户至多2时的总成本势界。",
+    "weighted-congestion/singleton-cohort-ring-defect-graph-equilibrium": "完成整状态域2-PNE的存在保证。"
+  },
+  "explanation": "A_i的两个副本各只有H_i、L_i为潜在用户，B_i的两个副本各只有L_i、H_(i+1)。非负系数多项式在非负负载上非负非减。在总成本最小的纯状态，玩家改动若把自身成本严格降到一半以下，退出资源不增加任何他人成本，每个新资源至多一位原用户且其增量至多改动者新延迟，共同资源不变，故总成本变化至多2C_new−C_old−C_common<0，矛盾。得到整域2-PNE。两条存在保证取较小倍率，所用纯状态可依分支改变。",
+  "contribution": {
+    "result": "整状态域存在真实2-PNE。2≤T_d时该状态满足min(2,T_d)-PNE。",
+    "remaining": "需独立的缺陷图论证给出单冲突池T_d-PNE，并覆盖T_d<2时的min(2,T_d)保证。"
+  },
+  "scope": "2-PNE取自整状态域。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/资源潜在用户支持的总成本势--定理.md",
+      "sha256": "4f252181961ef4fdda7e02f6ee460861b4d52c1271d85c8d1dd1242ef8f42844"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/单成员群组奇环的缺陷图均衡--定理.md",
+      "sha256": "e1d6929f5c72b2982607ca45d56cb1aa8532530361d17391b1980efca9ea4243",
+      "section": "单成员群组奇环的缺陷图均衡"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐位置核潜在用户及实际新增、退出、保持资源的总成本变化。",
+  "endpoint_pins": {
+    "WC-R1-RESOURCE-SUPPORT": "f3251dcce0ad8790ada62d0e325c4c6f79efe3a9be7f5b8da0db2c4be09b27d0",
+    "weighted-congestion/singleton-cohort-ring-defect-graph-equilibrium": "8ecd54dc4822bd40aec9d69056abba72674e218ad85adb0d2ba55622d7cfe0af"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/资源潜在用户支持的总成本势--定理.md": "4f252181961ef4fdda7e02f6ee460861b4d52c1271d85c8d1dd1242ef8f42844",
+    "archives/weighted-congestion/state/定理/单成员群组奇环的缺陷图均衡--定理.md": "e1d6929f5c72b2982607ca45d56cb1aa8532530361d17391b1980efca9ea4243"
+  },
+  "review_digest": "69b5a22ecfd969a2f6573bb1eda955f11fc3a465aa3a80546363e97532a5fe15"
+}
