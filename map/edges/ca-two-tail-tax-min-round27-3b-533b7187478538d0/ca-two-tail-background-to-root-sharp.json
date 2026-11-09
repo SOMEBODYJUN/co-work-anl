@@ -1,0 +1,63 @@
+{
+  "edge_id": "ca-two-tail-background-to-root-sharp",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-7cb4c41cb57e4e1f81d6d70c7befac71"
+  ],
+  "target_ids": [
+    "M-9a01587f3f3c4924a7b145df31ada227"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "两名依次行动的单位提供者从根开始，没有背景客户负载。有限单位客户，有限非空共同标签目录，所有有序历史完整指定纯策略。取比例时要求实际福利 W>0。",
+  "roles": {
+    "M-7cb4c41cb57e4e1f81d6d70c7befac71": "在空背景给出逐比较对的新生重叠利润上界，代入根覆盖恒等式并最大化得根上界。",
+    "M-9a01587f3f3c4924a7b145df31ada227": "根上界通过空背景专门化获得，边中另行验证两个端点的完整 IC 及不交产品与复制，以完成每个有理 I/W 的取等。"
+  },
+  "whole_result": "每份零背景根两人完整纯 SPE 均满足 8OPT₂≤10W+2I。两个完整纯 SPE 分别实现 (W,I,OPT₂)=(4,0,5) 与 (2,2,3)。不交客户的笛卡尔积与单位客户复制实现 (4p+2q,2q,5p+3q)，进而每个有理 I/W∈[0,1] 都有正福利等号实例。",
+  "explanation": "上界来自源定理在 b_x=0 的专门化。每个被两主题至少其一覆盖的客户给两位提供者的总份额为 1。因此实际 u+v=W=|C∪D|，I_new=I=|C∩D|，比较 R_0(T₁,T₂)=|T₁∪T₂|。源式对任意比较对给 R_0≤5W/4+I/4。对有限共同目录的全部有序比较对取最大值得 OPT₂≤5W/4+I/4。W=0 时也直接有 OPT₂=0，比例只在 W>0 时使用。\n\n锐性另由以下完整策略证明。无重叠组件有五个客户 0,…,4，依序 A={0,1,2},B={0,1,3},C={0,1},D={3,4}，根选 C，末位在 A,B,C,D 后分别选 B,A,D,A。末位收益矩阵按同一顺序为 ((3/2,2,1,2),(2,3/2,1,3/2),(2,2,1,2),(3,5/2,2,1))。规定回复都达行最大，根四种真实收益均 2。实际 (C,D) 给 (u,v)=(2,2)，W=4,I=0。比较 (A,D) 覆盖全部五个客户，故 OPT₂=5。全重叠组件有 E={0,1},F={2}，根 E，末位见 E,F 都选 E。末位矩阵为 ((1,1),(2,1/2))，两个规定回复都达行最大，根两种真实收益均 1。实际 (E,E) 给 (u,v)=(1,1)，W=I=2，比较 (E,F) 覆盖全部三客户，故 OPT₂=3。两个组件皆满足等号。\n\n复制组件的每个单位客户为同覆盖类型的不同单位客户，同时保留该组件标签和策略。复制正整数次使其所有节点的收益等比例放大，故保持全部 IC。用 p 次无重叠组件和 q 次全重叠组件且 p,q 至少一个为正，零次的组件直接省略。两个正组件取不交客户，联合目录为各自标签的笛卡尔积，联合主题覆盖两个分量覆盖集的并。每个联合历史投影到各组件历史，联合策略逐分量执行其完整策略。任一节点的联合偏离在每个分量沿对应真实续局进行，收益加和，故不能盈利。仍只有两名单位提供者。实际并集、交集各自在不交客户上可加，故 W=4p+2q,I=2q。每个联合比较对投影后各组件覆盖不超过各自 OPT，反向可把各组件一对最优主题按两槽位拼成两个联合主题，所以 OPT₂=5p+3q=5W/4+I/4。对于 θ=a/b∈[0,1]，a,b 为整数且 b>0，取 p=b−a,q=2a 则 W=4b>0，I=4a，比例 θ 取等。\n\n同包分段式还给根上界额外扣除 δ=3(u−v)₊/4+(v−u)₊/4，所以根式取等必有 u=v。上面两个组件实际利润相等，复制与不交产品保持这一点。完整上界来自背景税，端点及产品提供独立的存在性论证。有限端点和比例扫描只交叉核验列出的实例。",
+  "scope": "全称上界与取等族均为零背景的两人根模型。无重叠只约束实际两主题，离轨允许重叠。非零背景只可应用源对象的剩余利润结论；更长后缀的完整根策略需要额外 IC。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/末两人新生重叠的顺序利润税界--定理.md",
+      "sha256": "5a97f86be20de9e0e6be6df59c49e1b3a0a1642c7b9e4b794bdcd354245f07a1",
+      "section": "完整域与两个准确结论"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末两人新生重叠的顺序利润税界--定理.md",
+      "sha256": "5a97f86be20de9e0e6be6df59c49e1b3a0a1642c7b9e4b794bdcd354245f07a1",
+      "section": "零背景锐重叠界及根版证书"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末两人新生重叠的顺序利润税界--定理.md",
+      "sha256": "5a97f86be20de9e0e6be6df59c49e1b3a0a1642c7b9e4b794bdcd354245f07a1",
+      "section": "两个完整SPE端点与每个有理比例"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R51重叠敏感末尾审计器--审查.md",
+      "sha256": "c362683fe0b78e16c777ce8fe302217025f09ab08c27c603c082dbf16409816e"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/两人重叠税逐客户恒等式与锐端点的精确重放--计算.md",
+      "sha256": "6760be9c3994daa80ffe4463177cde99ce818d05a6ee1232efd97a14f93d6c1c"
+    }
+  ],
+  "reviewed_by": "Boss1/ca-two-tail-tax-min-round27-fresh-worker",
+  "review_note": "逐比较对核零背景利润与覆盖的识别，逐动作独立重算两个端点的完整收益表，并证明任意复制和不交产品保持完整 IC 及比较最优值可加。登记中的每个有理比例均由参数显式给出，有限审计仅核相应有限实例。",
+  "endpoint_pins": {
+    "M-7cb4c41cb57e4e1f81d6d70c7befac71": "e5772fbd4ecb148388753287196beafd5d5ee817f17937c21fff2fa1da5b0938",
+    "M-9a01587f3f3c4924a7b145df31ada227": "934579080b1612f4215fd799b31fe49f7c7c70074ce038b1a7172b300368717f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/末两人新生重叠的顺序利润税界--定理.md": "5a97f86be20de9e0e6be6df59c49e1b3a0a1642c7b9e4b794bdcd354245f07a1",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/审查/R51重叠敏感末尾审计器--审查.md": "c362683fe0b78e16c777ce8fe302217025f09ab08c27c603c082dbf16409816e",
+    "archives/customer-attraction/state/计算/两人重叠税逐客户恒等式与锐端点的精确重放--计算.md": "6760be9c3994daa80ffe4463177cde99ce818d05a6ee1232efd97a14f93d6c1c"
+  },
+  "review_digest": "35422d1208e4159c4cbaa81d073e6c6cf073d37ae4c7c4ba9b252857de7b3267"
+}

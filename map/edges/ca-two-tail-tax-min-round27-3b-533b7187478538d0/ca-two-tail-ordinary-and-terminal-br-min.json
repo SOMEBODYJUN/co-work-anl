@@ -1,0 +1,61 @@
+{
+  "edge_id": "ca-two-tail-ordinary-and-terminal-br-min",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-TWO-REMAINING-TAX"
+  ],
+  "target_ids": [
+    "M-7cb4c41cb57e4e1f81d6d70c7befac71"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户和非空有限共同标签目录。固定同一合法有序前缀 h，恰余两名依次行动的单位提供者，任取一份完整纯 SPE。背景负载 b_x 为非负整数，实际尾部为 (C,D)，比较 T₁,T₂ 任取合法目录标签，允许空覆盖、重复选择及任意离轨平局。",
+  "roles": {
+    "CA-TWO-REMAINING-TAX": "用同一策略在首位偏离后的真实回复证明普通税 H=u+v+g_b(C,C)，供与实际末位节点的两次独立查询共同取最小值。",
+    "M-7cb4c41cb57e4e1f81d6d70c7befac71": "新生重叠定理的两级剩余利润上界由较强的分段式推出，整数条件用于筛出背景修正的正项。"
+  },
+  "whole_result": "普通固定背景两人税加上完整纯 SPE 自带的真实末位最优性，推出对每个比较对 R_b(T₁,T₂)≤min{u+v,2v}+g_b(C,C)≤(3u+5v)/4+g_b(C,C)≤5(u+v)/4+I_new/4。其中 I_new=|{x∈C∩D:b_x=0}|。由此完整推出固定合法整数背景的新生重叠顺序利润税界。",
+  "explanation": "令 f_b(X)=Σ_{x∈X}1/(b_x+1)，g_b(X,Y)=Σ_{x∈X∩Y}g_x，其中 g_x=1/[(b_x+1)(b_x+2)]。记 U_b(X,Y)=f_b(X)−g_b(X,Y)，R=R_b(T₁,T₂)=f_b(T₁)+f_b(T₂)−2g_b(T₁,T₂)，u=U_b(C,D)，v=U_b(D,C)，V=u+v，G=g_b(C,C)。源引理取 (A,B,T,S)=(C,D,T₁,T₂)，给 R≤H=V+G。源证明中的 Q 是同一 σ 在 (h,T₁) 后的实际指定回复。\n\n在同一个实际末位节点 (h,C)，D 对共同目录最优。分别比较 T₁、T₂，令 p_j=v−U_b(T_j,C)≥0。由 g_b 对称性，K−R=p₁+p₂+G−g_b(T₁,C)−g_b(T₂,C)+2g_b(T₁,T₂)，其中 K=2v+G。设 c,t,s 为客户对 C,T₁,T₂ 的三个会员位，最后四项的该客户系数除以 g_x 为 c−ct−cs+2ts=c(1−(t∨s))+(2−c)ts≥0。因此 R≤K。K=R 当且仅当两个末位比较都取等，比较对不交且 C⊆T₁∪T₂。该论证的两个查询始终保留同一实际前缀和实际末位收益 v。\n\n设 E=(3H+K)/4=(3u+5v)/4+G。取两界最小值给 R≤min{H,K}=E−δ，其中 δ=3(u−v)₊/4+(v−u)₊/4。u>v 时 K 较小，v>u 时 H 较小，两者相等时 δ=0。故 u≠v 时分段右端严格小于 E，且 E−H=(v−u)/4。背景修正精确为 E−5V/4=G−u/2=½Σ_{x∈C}g_x(1_D(x)−b_x)。若 b_x=0，只有 x∈C∩D 贡献 1/4。若 b_x≥1，b_x−1_D(x)≥0。记 L=½Σ_{x∈C:b_x≥1}g_x(b_x−1_D(x))≥0，便有 R≤5V/4+I_new/4−L−δ，舍去两个非负扣减即登记第二式。整数条件用于此符号分解，逐客户 BR 余项本身只用 g_x≥0。\n\n两个零背景完整策略还显示两个严格分支都可以取到分段上界。第一例目录 C={0,1},D={2}，根选 C，末位在 C,D 后分别选 D,C。末位收益矩阵按首位行和末位列 C,D 排列为 ((1,1),(2,1/2))，根真实收益为 (2,1)，故所有节点满足 IC。实际 (u,v)=(2,1)，(H,K,E)=(4,3,15/4)，比较 (C,D) 覆盖全部三客户，R=OPT₂=K=3。第二例目录依序 C={0,1},A={0,1,2},B={0,1,3,4},D={3,4,5}，根选 C，末位依序回复 D,B,B,B。末位矩阵为 ((1,2,3,3),(1,3/2,3,3),(1,2,2,2),(2,3,3,3/2))，规定回复都达行最大，根四个真实收益均为 2。实际 (u,v)=(2,3)，(H,K,E)=(6,7,25/4)，比较 (A,D) 覆盖全部六客户，R=OPT₂=H=6。两例核分段式与加权式的真实策略差异，根重叠界的全比例锐性另由 u=v 的端点及乘积承担。",
+  "scope": "结论在同一合法背景、同一完整纯 SPE 的真实末两人子局，对每个比较对成立，因而也界住该背景的二人最大剩余利润。背景有正负载时 R_b 计算两人份额。更长后缀与跨不同前缀的累加需要各自的证明。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+      "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+      "section": "完整证明：必须使用同一策略的真实离轨回复"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md",
+      "sha256": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee",
+      "section": "剩余收益不是根覆盖"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末两人新生重叠的顺序利润税界--定理.md",
+      "sha256": "5a97f86be20de9e0e6be6df59c49e1b3a0a1642c7b9e4b794bdcd354245f07a1",
+      "section": "完整域与两个准确结论"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末两人新生重叠的顺序利润税界--定理.md",
+      "sha256": "5a97f86be20de9e0e6be6df59c49e1b3a0a1642c7b9e4b794bdcd354245f07a1",
+      "section": "每客户恒等式及背景无关余项"
+    }
+  ],
+  "reviewed_by": "Boss1/ca-two-tail-tax-min-round27-fresh-worker",
+  "review_note": "实读三对象的完整声明和六份不同来源文件，核旧税的真实续局、实际末位两条 BR 的精确差式及整数修正。两个严格分支逐项核完根和全部末位动作，分段上界均达到。登记定理原八比较证书独立保留。",
+  "endpoint_pins": {
+    "CA-TWO-REMAINING-TAX": "eb63a8d1cd934879f5f7f25f633b4bf753973f405a7b8db91bed63f633de7d15",
+    "M-7cb4c41cb57e4e1f81d6d70c7befac71": "e5772fbd4ecb148388753287196beafd5d5ee817f17937c21fff2fa1da5b0938"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/固定背景两人税界--引理.md": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee",
+    "archives/customer-attraction/state/定理/末两人新生重叠的顺序利润税界--定理.md": "5a97f86be20de9e0e6be6df59c49e1b3a0a1642c7b9e4b794bdcd354245f07a1"
+  },
+  "review_digest": "04e684360d38594523b45f83d061c316922c8ec117f38bfbd9a9997c4f586e20"
+}
