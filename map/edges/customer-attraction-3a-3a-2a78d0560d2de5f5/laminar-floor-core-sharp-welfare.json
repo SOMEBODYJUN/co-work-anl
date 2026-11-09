@@ -1,0 +1,52 @@
+{
+  "edge_id": "cag-2a78d056-laminar-floor-core-sharp-welfare",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-LAMINAR-INCIDENCE-THETA",
+    "customer-attraction/last-slot-value-and-catalog-counting"
+  ],
+  "target_ids": [
+    "CA-LAMINAR-INCIDENCE-MAXIMA-2M1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "客户极大关联成层族，n≥1；以不同极大覆盖B_j的交集C为共同核心。内部子主题无需含C。",
+  "roles": {
+    "CA-LAMINAR-INCIDENCE-THETA": "在全部真实历史向每个剩余人传播全局θ_n，根相加给W≥nθ_n。",
+    "customer-attraction/last-slot-value-and-catalog-counting": "对原目录和删除共同核心的残余目录给θ的统一计数下界。",
+    "CA-LAMINAR-INCIDENCE-MAXIMA-2M1": "共同核心强化、根比值及每人数的匹配构造。"
+  },
+  "explanation": "全历史θ定理在原策略根给每人至少θ_n。对合法长度n−1的任一历史删C，残余历史仍由残余合法标签组成；最优组合可逐项扩成原极大主题，故残余OPT恰OPT_n−c。计数界给残余最大即时收益至少(OPT_n−c)/(2n−1)。把对应原查询扩为极大主题只增残余部分，并增全部核心；每个核心客户旧负载≤n−1，核心部分≥c/n。对全部历史取最小得到θ_n≥c/n+(OPT_n−c)/(2n−1)，与根收益和合并得到OPT_n≤c+(2−1/n)(W−c)。锐性用n客户大题、n−1不交单例与共同核心。全历史总选大题，非核心遵从≥1而改单例≤1，且核心贡献恒c/n；取实际W=c+n、最优c+2n−1。重复大题的长度n−1背景也达到该θ下界。n=1直接最优。",
+  "scope": "任意n的有限共同目录结构类及每份完整有序SPE；零客户、任意内部子主题和同覆盖异标签。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/层族极大关联的锐福利界--定理.md",
+      "sha256": "ef256f1ff6c927a8f164abee226cfd4768c237939d226f5791768b6695f47be3",
+      "section": "4. 保底在全部历史上传播"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md",
+      "sha256": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d",
+      "section": "3. 空背景的两个数值下界"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/层族极大关联的锐福利界--定理.md",
+      "sha256": "ef256f1ff6c927a8f164abee226cfd4768c237939d226f5791768b6695f47be3",
+      "section": "5. 严格推广、锐性与两个机制边界"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核核心从目录删去只作静态计数，真实SPE仍在原目录；锐性实例用完整全树策略。",
+  "whole_result": "层族全历史保底和目录计数联合推出含共同核心的θ及根福利强化，显式全历史策略证明该常数逐人数锐。",
+  "endpoint_pins": {
+    "CA-LAMINAR-INCIDENCE-MAXIMA-2M1": "0acb17e3897f66751a2e917a2948302af21fd77e278b9cae5eb936dfaea3c364",
+    "CA-LAMINAR-INCIDENCE-THETA": "23c716f520d8e56b67c271dc8c24f8b45a1a12391f914eabb8add355d9c0e4a6",
+    "customer-attraction/last-slot-value-and-catalog-counting": "5b963d828efa40aaa81e50a9a4937656777103dfa5ab0414369926b475f1585e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/层族极大关联的锐福利界--定理.md": "ef256f1ff6c927a8f164abee226cfd4768c237939d226f5791768b6695f47be3",
+    "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d"
+  },
+  "review_digest": "ea9f407107574c9bb77b3af48bba9222170f92f3085ff5247d111c3d02e05891"
+}

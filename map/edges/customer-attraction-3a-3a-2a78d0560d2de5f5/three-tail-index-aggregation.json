@@ -1,0 +1,50 @@
+{
+  "edge_id": "cag-2a78d056-three-tail-index-aggregation",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-THREE-REMAINING-PROFIT-5-3"
+  ],
+  "target_ids": [
+    "M-f692b7e160e94b8d82b8da87066d6247"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一完整五人σ；五个固定合法T_i允许重复。Sbranch背景p_i=a+t_i，共同T位总重数d；第j比较三主题的客户命中数c_j来自实际登记的联合直方图。",
+  "roles": {
+    "CA-THREE-REMAINING-PROFIT-5-3": "对每个合法前缀截取的真实三人子局，支付任意合法比较三元组。",
+    "M-f692b7e160e94b8d82b8da87066d6247": "将固定背景或共享T位的三人比较逐固定索引聚合。"
+  },
+  "explanation": "对每条真实子树i、每个合法比较j分别写(5/3)R_actual,i−R_{a+t_i}(c_j)≥0（逐客户式求和）。全积对所有i,j求和，每个j恰d次遇p=a+1，余5−d次遇a；实际每个i重复5次，得25/3系数。同索引先固定i=j，比较和Σ_j R_{a+t_j}(c_j)，实际系数5/3。异索引先固定i≠j，其比较和为全积减对角，每个i出现4次，实际系数20/3；非负性来自20条原不等式。AB与AE固定背景每条子局的五个比较直接求和，系数25/3。",
+  "scope": "同一五人索引合同的200条三人背景利润必要行。R_p(0)=0，非零背景用剩余总利润，未知跨族相关性不造配对。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/固定背景三人利润界--定理.md",
+      "sha256": "b684d60a67c3164a3cd69177a1c8bda2a328125b9eab62f2c8ab0fb83091a47b",
+      "section": "1. 利润对象与结论"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/五人增强必要行的索引恒等式与2396行审查边界--审查.md",
+      "sha256": "dca6b4aa0506fae22bac22703fdfa09cf8aeae655aff0a5adec4dd728e4de7e2",
+      "section": "三剩余利润行的完整推导"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/五人不增坐标的五族必要行生成器--程序.md",
+      "sha256": "6c6fb4294497401ee6f84b5e5b3317fd7322d9a87c13548743342c7ff5d9a89e",
+      "section": "五、200条背景三人利润行"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐节点区分真实子树和比较元组，复核实际系数和固定索引的量词。",
+  "whole_result": "背景三人5/3定理逐次实例化和非负求和，推出全部已登记的三人固定背景、全积、同索引及异索引聚合。",
+  "endpoint_pins": {
+    "CA-THREE-REMAINING-PROFIT-5-3": "575cf03e1f3b30d2f2fc33c33048f95a716132fbf0b002381bba366cff3a2a53",
+    "M-f692b7e160e94b8d82b8da87066d6247": "1394586fc691bda5ef49280ef6c46112dc6f370b1574165afc2ba4a0b22af058"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/固定背景三人利润界--定理.md": "b684d60a67c3164a3cd69177a1c8bda2a328125b9eab62f2c8ab0fb83091a47b",
+    "archives/customer-attraction/state/审查/五人增强必要行的索引恒等式与2396行审查边界--审查.md": "dca6b4aa0506fae22bac22703fdfa09cf8aeae655aff0a5adec4dd728e4de7e2",
+    "archives/customer-attraction/state/程序/五人不增坐标的五族必要行生成器--程序.md": "6c6fb4294497401ee6f84b5e5b3317fd7322d9a87c13548743342c7ff5d9a89e"
+  },
+  "review_digest": "1e474ffe41d58e909d4322680124600ab35c187436b4de373b6e7583f8575235"
+}

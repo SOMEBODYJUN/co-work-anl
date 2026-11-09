@@ -1,0 +1,42 @@
+{
+  "edge_id": "cag-2a78d056-crossing-breaks-greedy-step",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-12030903d7bc43fe996343be66c547f8"
+  ],
+  "target_ids": [
+    "CA-LAMINAR-INCIDENCE-THETA"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "空背景，四个不交块大小4,4,3,3，三极大主题首个唯一即时最优。",
+  "roles": {
+    "M-12030903d7bc43fe996343be66c547f8": "给交叉关联三主题合法尾的反例。",
+    "CA-LAMINAR-INCIDENCE-THETA": "层族保护量化任意未来序列，该保护只在交集链条件下成立。"
+  },
+  "explanation": "首选X∪Y、后两位依次选X∪Z与Y∪V时，首位在X,Y上都仅得一半，共4；两个后继分别得到各自共享块2和私有块3，共5。其关联{1,2}和{1,3}交叉，所得4<min(5,5)检出删除层族假设时贪心保护公式的失败。后续收益传播还需要真实SPE，任意合法尾不支付该条件。",
+  "scope": "只检去掉结构条件后的中间保护式，保留层族定理的原量词。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/层族极大关联的锐福利界--定理.md",
+      "sha256": "ef256f1ff6c927a8f164abee226cfd4768c237939d226f5791768b6695f47be3",
+      "section": "5. 严格推广、锐性与两个机制边界"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/层族极大关联的锐福利界--定理.md",
+      "sha256": "ef256f1ff6c927a8f164abee226cfd4768c237939d226f5791768b6695f47be3",
+      "section": "3. 任意未来序列下的贪心保护"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复算(4,5,5)，明确合法未来动作不等于完整策略。",
+  "endpoint_pins": {
+    "CA-LAMINAR-INCIDENCE-THETA": "23c716f520d8e56b67c271dc8c24f8b45a1a12391f914eabb8add355d9c0e4a6",
+    "M-12030903d7bc43fe996343be66c547f8": "3a203419a8dbb1c6b0678c3ac49e00b47b6701fd0bca90af355a6d66110649ad"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/层族极大关联的锐福利界--定理.md": "ef256f1ff6c927a8f164abee226cfd4768c237939d226f5791768b6695f47be3"
+  },
+  "review_digest": "0ac17edb0360f5b36d384ec474d51976a51e448b4c280f4fbbc0f984d77bcabc"
+}
