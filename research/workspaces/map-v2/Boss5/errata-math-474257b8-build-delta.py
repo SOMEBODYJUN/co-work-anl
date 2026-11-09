@@ -3,6 +3,7 @@ from pathlib import Path
 import copy
 import hashlib
 import json
+import sys
 
 ROOT = Path(__file__).resolve().parents[4]
 OUT = ROOT / 'research/workspaces/map-v2/Boss5'
@@ -61,6 +62,10 @@ supplement = [
      'research/workspaces/map-v2/Boss5/um1766-474257b8-long-chain-owner-corrected.md'),
     ('long-chain-repair', 'archives/unrelated-machines/state/审查/最优凸包长链与闭环逃逸有限审查--审查.md',
      'research/workspaces/map-v2/Boss5/um1766-474257b8-long-chain-explicit-repair-corrected.md'),
+]
+seventh = [
+    ('joint-slot-zero-demand-branch', 'archives/unrelated-machines/state/计算/失真组实际源调度与联合槽独立程序复跑--计算.md',
+     'research/workspaces/map-v2/Boss5/errata-math-474257b8-seventh-source-corrected.md'),
 ]
 
 def audit(pairs, label):
@@ -172,9 +177,13 @@ def audit(pairs, label):
             'unfinished_refreshes': sum(t['recommended_action'] == 'refresh-same-unfinished-task' for t in tasks)}}
     return result
 
-for pairs, suffix, label in [(primary, 'registry-delta.json', '四canonical源的三类最小数学勘误'),
-                            (supplement, 'long-chain-supplement-delta.json', '1766追加两处long-chain转述勘误'),
-                            (primary + supplement, 'final-six-source-delta.json', '根确认同批的六canonical源最小数学勘误；每个owner仅增version一次')]:
+outputs = [(primary, 'registry-delta.json', '四canonical源的三类最小数学勘误'),
+           (supplement, 'long-chain-supplement-delta.json', '1766追加两处long-chain转述勘误'),
+           (primary + supplement, 'final-six-source-delta.json', '根确认同批的六canonical源最小数学勘误；每个owner仅增version一次')]
+if '--seven-only' in sys.argv:
+    outputs = [(primary + supplement + seventh, 'final-seven-source-delta.json',
+                '根确认同批的七canonical源最小数学勘误；沿相同identity，每个owner仅增version一次')]
+for pairs, suffix, label in outputs:
     result = audit(pairs, label)
     path = save(suffix, result)
     print(json.dumps({'path': path, 'summary': result['summary'], 'repair_task_ids': result['grouped_repair_task_ids']}, ensure_ascii=False))
