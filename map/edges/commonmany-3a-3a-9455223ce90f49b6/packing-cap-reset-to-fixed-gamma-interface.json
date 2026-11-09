@@ -1,0 +1,76 @@
+{
+  "edge_id": "commonmany-packing-cap-reset-to-fixed-gamma-interface",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-GREEDY-BUDGET",
+    "SC-K-GREEDY-MAX-MULT",
+    "MF-PACK-2",
+    "MF-PURE-CAP",
+    "SC-K-GREEDY-SINGLETON-RESET",
+    "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import"
+  ],
+  "target_ids": [
+    "SC-K-RESET-PACK-INTERFACE"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一正覆盖规范贪心的原池J_t^0、重数q_t及γ>0。给定任意显式有理独立mixed精确在轨NE，逐家a_f≥γ；每q_u≥2原池另给q_u−1个删除箱，每箱≤2γ或单个原子>2γ。所有设施有标签，覆盖时强制服务。MAX只负责离轨和默认时间层。",
+  "roles": {
+    "SC-K-GREEDY-BUDGET": "给原池W_t^0≤(q_t+1)γ及未开站新增重量≤γ。",
+    "SC-K-GREEDY-MAX-MULT": "保原归属与原已占选项的最大重数约束。",
+    "MF-PACK-2": "给未删席原池q_t箱的普通帽或孤立重原子种子。",
+    "MF-PURE-CAP": "从孤立重原子/普通帽种子有限完成原全动作纯NE。",
+    "SC-K-GREEDY-SINGLETON-RESET": "支付q_u=1消失源的全部原池重置分支。",
+    "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import": "MAX在每个真实标签设施上保普通最大负载，提供位多项式完成和默认查询。",
+    "SC-K-RESET-PACK-INTERFACE": "接给定在轨NE及原池删除证书，保在轨并给全部实际偏离的因子二续局。"
+  },
+  "explanation": "固定实际f:u→v。q_u≥2时丢弃新在轨分配，重置全部原客户：u以给定q_u−1删除箱服务，其他t由原池预算和MF-PACK-2装q_t箱。目标原已占时f初空，未占时只取新增覆盖≤γ，故f是帽2γ下普通设施。临时删去孤立超帽客户和设施，保其余客户全部普通选项；自己的种子选项保证菜单非空。MAX给普通负载≤2γ的纯NE，放回重客户仍无改善，且f≤2γ≤2a_f。q_u=1使用单设施源原池重置的同一帽结论。不同实际偏离的标签布局互异；其余布局固定MAX默认规则，拼成一份完整续局。没有使用新在轨站总重的完整上盒。",
+  "scope": "覆盖成功证书接口的正确性；未证明所有输入有删除证书，unknown不作不可行判定。数学MAX导入与现有有限改善软件保持区别。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/原池双装箱证书与盒外纯均衡续局--算法.md",
+      "sha256": "9cc6ab5dabf876015419f5c5483ac27c30bd0aa46bc619991e6060c0d1b9f0d0",
+      "section": "可核验的证书合同"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md",
+      "sha256": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+      "section": "原子装箱引理"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md",
+      "sha256": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+      "section": "受帽纯均衡修复引理"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "单设施源：重置全部原客户池"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md",
+      "sha256": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a",
+      "section": "输入与准确结论"
+    }
+  ],
+  "reviewed_by": "Boss2-local-algorithms-draft",
+  "review_note": "本地候选：逐项复核所引正式正文的完整推导、端点陈述及任务输入pin；已有有限审计仅按其真实范围复用，未重跑。accepted表示本地数学判断，未发布、未写canonical、未提交任务。",
+  "whole_result": "所列预算、删席箱、受帽修复及MAX共同实现固定γ原池重置接口：任意给定合格独立mixed在轨NE均可保留，全部实际偏离与默认布局返回原完整客户游戏精确NE，实际偏离者收益≤2a_f。成功证书生成不在结论内。",
+  "endpoint_pins": {
+    "MF-PACK-2": "3e2f063fa6b0a94baf9bbeb5d7ba6ab12f3edbb06a0d3791c6af7194f5d87923",
+    "MF-PURE-CAP": "f76c7824a76fe19b7f752116af4086a6f5d7fcfc68ef51ff6a82cc9d3dd4c4df",
+    "SC-K-GREEDY-BUDGET": "5c08688db4620c0cd4fe6d2c03e61e444fec71aa1bd30ee430061dee1a6a1b83",
+    "SC-K-GREEDY-MAX-MULT": "b2ee941db2e2116d5d0191c6f77d88e0dbc98609d8d87ac25960c5b143e2f564",
+    "SC-K-GREEDY-SINGLETON-RESET": "c74f548d525defcce261f99ca99377fdf67dd9292fe5a9ea9f13fc9881f1ca86",
+    "SC-K-RESET-PACK-INTERFACE": "2c75aea8b4ed97b9dcd66ffffcc9aba85c83ed69d3f8647eb24571c88d7404ef",
+    "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import": "5f2019da9ff05afa3a2e57eb2cf96d8c63eef19e66208bb0290ce535628737f6"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/算法/原池双装箱证书与盒外纯均衡续局--算法.md": "9cc6ab5dabf876015419f5c5483ac27c30bd0aa46bc619991e6060c0d1b9f0d0",
+    "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+    "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+    "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a"
+  },
+  "review_digest": "78eb32231cffb7d5ed2d0ba786e6d4c6040796089100132fdf9d65ab5638495e"
+}
