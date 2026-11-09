@@ -1,0 +1,56 @@
+{
+  "edge_id": "cag-21a29a-alternating-moments-project-to-monotone-layer",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-7b40b385825b4d0fb4cf7f881e01b7a4"
+  ],
+  "target_ids": [
+    "M-1599de30a5974ebf92f28a5f362f4e99"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "相同43节点完整策略、R=C({0,3,4})=1、固定比较T={1,2,4}。两层共用41个截断C、同一收益映射和全部终局sharp。",
+  "roles": {
+    "M-7b40b385825b4d0fb4cf7f881e01b7a4": "给出含所有局部覆盖交替约束的3/2可行原始点。",
+    "M-1599de30a5974ebf92f28a5f362f4e99": "保留全部截断单调约束及同一目标，固定域的独立最优值为198/127。"
+  },
+  "explanation": "局部交替式取A={a}即C(S∪{a})−C(S)≥0，逐项覆盖全部96条单调行；其它共有行保持，故局部交替层的有理最优点也是单调层的可行点。严格性可直接从保存单调点核：S={1}, A={2,4}时C({1,2})+C({1,4})−C({1})−C({1,2,4})=(110+110−88−198)/127=−66/127。该分离已在二阶行发生，不能凭局部交替与单调次模都报3/2就宣称两层可行域相等。",
+  "scope": "只在同一固定策略、比较和C坐标下给出可行域包含与证据点；单调层不要求局部覆盖交替全部成立。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/同支持守恒与局部客户耦合的严格间隔--障碍.md",
+      "sha256": "9824cadf6ec0ec14ab078277b0458d10926c29f9b42a1c4388c4c1d92803de98",
+      "section": "2. 七个约束系统及精确值"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/同支持守恒与局部客户耦合的严格间隔--障碍.md",
+      "sha256": "9824cadf6ec0ec14ab078277b0458d10926c29f9b42a1c4388c4c1d92803de98",
+      "section": "5. 共同局部覆盖矩仍不保证共同非负客户"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/common-shapley-coupling/original/coupling_layers.json",
+      "sha256": "184a07294fed638d4202e153da4fd691e2349225041574bd8943193d834ef281"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/common-shapley-coupling/original/verify_coupling.py",
+      "sha256": "d0e9b0d11cb24c971078d433ebb1cfb9f94ca3eb79043da24beefb69afc348ef"
+    }
+  ],
+  "reviewed_by": "Boss1-customer-risk-potentials-round16",
+  "review_note": "核对A单点的行映射和保存单调原始点的四个掩码坐标，并对同一R/T核原始-对偶层名。",
+  "contribution": {
+    "result": "局部交替层的3/2点给共同单调层一个可行下界；保存的单调最优点以−66/127违反一条指定交替行。",
+    "remaining": "198/127的下界见单调层原始点，上界需单调层自身的有理对偶；3/2层对偶不能跨该违约点。"
+  },
+  "endpoint_pins": {
+    "M-1599de30a5974ebf92f28a5f362f4e99": "a0ca418abf4bb6d36d7d1f9342eaa9259badbd28f8787f9489ca09967b90dfc3",
+    "M-7b40b385825b4d0fb4cf7f881e01b7a4": "0bc8fce01bcad2e4bfa2939d4247f084855561d74979ea6cba41d05244ff524d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/同支持守恒与局部客户耦合的严格间隔--障碍.md": "9824cadf6ec0ec14ab078277b0458d10926c29f9b42a1c4388c4c1d92803de98",
+    "archives/customer-attraction/tools/evidence/common-shapley-coupling/original/coupling_layers.json": "184a07294fed638d4202e153da4fd691e2349225041574bd8943193d834ef281",
+    "archives/customer-attraction/tools/evidence/common-shapley-coupling/original/verify_coupling.py": "d0e9b0d11cb24c971078d433ebb1cfb9f94ca3eb79043da24beefb69afc348ef"
+  },
+  "review_digest": "f2c1fdf5817cbdd8df2c7b45fd35de7f79981f5da7cfdd57786eb181f3c83267"
+}
