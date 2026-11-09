@@ -119,7 +119,7 @@ sum_i Var(W_i) <= 129 delta k^4 <= 129/4096 < 1/25。
 
 固定中心平方势 Psi=sum_i(W_i−mu_i)^2。条件期望依次固定 helper states、正 incidence request coins、resource rounds；每步只在原条件概率为正的选项中选精确 conditional E Psi 最小者。单资源 winner events 与双资源 winner-pair events 足以计算一二阶矩；同一 helper 在两个资源上必须共享同一 selected state，不得独立重抽。所有计算使用显式 state/requester 数和有理公共分母，不列举指数 helper profiles。
 
-最终 Psi<1/25，从而所有 W_i>1/5。取 Good={j:Q_j>=1/10}，由 W_i<=z_i+(1/10)(1−z_i) 得每个 outer 的 Good home weight z_i>1/10。Good helpers 的实际 fallback winner bundles 交给相应 outer，其余 helpers 回 own home；再按原有限端点回填所有 selectors、inactive/duplicate/zero payload 和未选 state jobs，得到 Cmax<=19/10。由于 OPT>=1，输出满足 19/10 相对比。
+最终 Psi<1/25，从而所有 W_i>1/5。取 Good={j:Q_j>=1/10}，由 W_i<=z_i+(1/10)(1−z_i) 得每个 outer 的 Good home weight z_i>1/10。Good helpers 保留各自实际 fallback winner bundles，相应 outer 取得这些 helpers 的 homes，其余 helpers 回 own home；再按原有限端点回填所有 selectors、inactive/duplicate/zero payload 和未选 state jobs，得到 Cmax<=19/10。由于 OPT>=1，输出满足 19/10 相对比。
 
 # 4. Exact、proof、independent/canonical/read-after 的关系
 

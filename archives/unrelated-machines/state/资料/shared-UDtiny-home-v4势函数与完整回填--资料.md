@@ -4,7 +4,7 @@ kind: "algorithm-review"
 type_tag: "资料"
 title: "shared-UD tiny-home v4 势函数与完整回填"
 status: "proved-under-k1-k2-typed-scope"
-summary: "v4/v4b 在单 state outer、互异 homes、own-unit helpers、B-only fallback、ε=15/16 exact-threshold leaves 且 k≥2 ν≤1/(16384k²)（k=1解除ν约束）域中，给出 profile fractional potential、stable matroid updates、FW、prefix-flow 和完整原 jobs 回填，保证实际 19/10 分支或 sound baseline。仍不扩 multi-outer、home overlap、general UM 或 true hardness。"
+summary: "v4/v4b 在单 state outer、互异 homes、own-unit helpers、B-only fallback、ε=15/16 exact-threshold leaves 且 k≥2 ν≤1/(16384k²)（k=1解除ν约束）域中，给出 profile fractional potential、stable matroid updates、FW、prefix-flow 和完整原 jobs 回填，保证实际 19/10 分支或 sound baseline。仍不扩 multi-state outer、home overlap、general UM 或 true hardness。"
 source_refs:
   - "clean:21215d01058e9a688caa"
   - "clean:fa6e0b78d63a7f8dc785"

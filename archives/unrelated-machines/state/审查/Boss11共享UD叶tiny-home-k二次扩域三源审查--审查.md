@@ -28,7 +28,7 @@ evidence_manifest: ../../tools/evidence/boss11-shared-ud-tiny-home-k2-20261031/m
 - \(k=1\)：每个 home 的最大正权重 \(\le 1/4096\)；
 - \(k\ge2\)：最大正权重 \(\le 1/(16384k^2)\)。
 
-每个 outer 的正 home 权重和为 1，homes 物理互异、每 home 一个 own-unit helper；shared B fallback 状态彼此 disjoint。允许任意多个 B-only exact-threshold-UD extra leaves，但要满足固定 \(\epsilon=15/16\) 的 \(H_l\) 条件：叶可达最高 \(p_{lsu}\) 至少 \(\epsilon\) 的 outer 集合之外的总值小于 \(\epsilon\)。所有菜单必须非空且显式，zero/incidence/duplicate/unused 均保留，不能偷删。
+每个 outer 的正 home 权重和为 1，homes 物理互异、每 home 一个 own-unit helper；shared B 与 homes 不交，fallback states 的正支持可任意重叠。允许任意多个 B-only exact-threshold-UD extra leaves，但要满足固定 \(\epsilon=15/16\) 的 \(H_l\) 条件：令 \(H_l=\{u:\max_s p_{lsu}\ge\epsilon\}\) 为资源集合，并要求 \(\max_s\sum_{u\notin H_l}p_{lsu}<\epsilon\)。所有菜单必须非空且显式，zero/incidence/duplicate/unused 均保留，不能偷删。
 
 目标是固定确定性、总位多项式算法：对每个合法 \(Q\) 输出全部原 jobs 的合法调度，满足
 

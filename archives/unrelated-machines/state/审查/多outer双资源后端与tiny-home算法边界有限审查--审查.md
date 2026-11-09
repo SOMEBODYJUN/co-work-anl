@@ -41,7 +41,7 @@ evidence_manifest: "../../tools/evidence/multi-outer-backend-20261030/source-man
 
 每个资源的 order 独立均匀取保存的轮次，且必须保留 whole-helper profile 的相关性。规范 Efron–Stein 计算把一个 helper 的整块 state/coins 作为独立块，得到 `sum_i Var(W_i)<=129/4096<1/25`；不能把每个 state 或每个 resource coin 当作互相独立的新 helper。随后固定 state、request coins、resource rules 的条件期望，平方势只需要 single-resource winner 和 two-resource winner-pair 的一、二阶矩。CE 完成后必须按已固定的实际请求者输出 winner，不能把未请求的 chosen state 重新加入 max。
 
-回填阈值取 `q=1/10`。平方势给 `W_i>1/5` 后，`Good={j:Q_j>=q}` 在每个 outer 中留下正质量的 home；Good helpers 的 fallback winner bundle 交给 outer，其余 helper 回 own state，再把全部原 jobs（包括 inactive、duplicate、zero payload）编译回有限端点，得到 `C_max<=19/10`。这也是限定域的算法结论，不是本批有限 JSON 的新算法。
+回填阈值取 `q=1/10`。平方势给 `W_i>1/5` 后，`Good={j:Q_j>=q}` 在每个 outer 中留下正质量的 home；Good helpers 保留各自的 fallback winner bundle，outer 取得这些 helpers 的 homes，其余 helper 回 own state，再把全部原 jobs（包括 inactive、duplicate、zero payload）编译回有限端点，得到 `C_max<=19/10`。这也是限定域的算法结论，不是本批有限 JSON 的新算法。
 
 ## 2.3 量词边界
 
