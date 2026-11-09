@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-map-additive-recount-v1.json",
-    "sha256": "285c85dbac89bc1c9ad088228eeb3d00225c7d202e4422862a518d8610cefaa9"
+    "path": "research/registration/baseline-map-config-and-customer-round12-v1.json",
+    "sha256": "f795e0cc698164c8e0c07a92fc367d960f89d1f2c7465142f54b78e78f06ced1"
   },
   "objects": [
     {
@@ -30132,7 +30132,7 @@
     },
     {
       "object_id": "M-4b6ebc6e36f341ff8c9f7bec506ae78d",
-      "version": 2,
+      "version": 3,
       "title": "十八主题加入私有席位谱的精确超二点与倒二异议",
       "kind": "obstruction",
       "truth_status": "proved",
@@ -30148,7 +30148,7 @@
       "objections": "扩目录可能改变私有性和末位BR。精确原始可行性不推出精确最优。",
       "body": {
         "path": "archives/customer-attraction/state/障碍/整终局势与真倒二菜单联合停界--障碍.md",
-        "sha256": "cdcbf05d5f7b0294409e08a992c3b808eaac389cc821103d6b5e6efe683cb8f3"
+        "sha256": "bab886eda3104f82eeaab86239c3c175526c6909b2a037831b8a17c28daac465"
       },
       "evidence": [
         {
@@ -56077,7 +56077,7 @@
     },
     {
       "object_id": "M-c4916b968f50407b97f444c52a503372",
-      "version": 3,
+      "version": 4,
       "title": "同查询全终局推送的全查询付款充分推出自由extra门槛",
       "kind": "conditional-implication",
       "truth_status": "proved",
@@ -56110,7 +56110,7 @@
         },
         {
           "path": "archives/customer-attraction/state/障碍/真实终局推送构造与自由背景义务--障碍.md",
-          "sha256": "2932342a842efba75e0ff7c7987d550c3eaf3858ffd4d7e074efd6f1d4ef1d44",
+          "sha256": "73d9fe5b47a80be4383d876df6397e0830e792f4528dce5908047dc0d377a5cc",
           "section": "两个不同的候选构造"
         }
       ],
@@ -100760,6 +100760,76 @@
       ]
     },
     {
+      "object_id": "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing",
+      "version": 1,
+      "title": "近似模权定价恢复短支持真梯度方向",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限隐式下闭配置最高利润覆盖。给定稀疏有理点，真梯度方向域有每 bin、每物品及硬预算行。",
+      "statement": "逐 bin 对任意非负有理模权返回实际 α 近似配置时，可在确定性位多项式时间恢复真实可行的 α 近似真梯度方向，支持至多 |L|+|P|+1，坐标位长仅依固定可行域。先扣物品价格，真列或统一对偶缩放给双证书，再重放失败列与有理间隔恢复原始解。线性配置利润也同样可恢复 α 近似值。",
+      "quantifiers": "每个满足合同的有理实例、稀疏有理点及已知有理 0<α≤1。覆盖零预算、零梯度与空地集。",
+      "assumptions": [
+        "每个局部族非空下闭，oracle 返回实际配置并接受任意非负有理权重。",
+        "预删成本超硬预算 bin，预算行非负；共同正成本可用整数截断。"
+      ],
+      "scope": "固定点完整可行方向及原始有限列恢复，或线性配置列利润。方向的基本解不要求在整个指数 LP 全局最优。",
+      "objections": "逐查询扣除固定 bin/预算价后仍无乘法误差传递。缩放通过证书与实际真列切面分别使用。未认证只给数值的 oracle 或额外耦合。",
+      "body": {
+        "path": "archives/configuration-assignment/state/定理/近似模权定价恢复短支持真梯度方向--定理.md",
+        "sha256": "705b0b05ea3454a2b9c1ad36a2c9c28d92dc8ba923f5c1d7fa0830f354f7cddc"
+      },
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/定理/稀疏点处的精确隐式配置梯度定价--定理.md",
+          "sha256": "0265f06dd6695cd2d42793391766d39aa0bc624238a59acb4d6a79f576172e62"
+        },
+        {
+          "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+          "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+          "section": "从对偶证书恢复最优支持"
+        }
+      ],
+      "sources": []
+    },
+    {
+      "object_id": "configuration-assignment/sparse-continuous-greedy-hard-budget-from-modular-pricing",
+      "version": 1,
+      "title": "近似模权定价下的确定性离散连续贪心",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限显式物品和 bin，非空下闭隐式局部族，独立配置最高利润覆盖，自然硬预算配置 LP 或共同正成本整数截断。",
+      "statement": "给定逐 bin 确定性 α 近似模权定价与有理 0<ε<1，构造配置 LP 有理点 x，G(x)≥(1−e^(−α)−ε)OPT，支持至多 ⌈2/ε⌉(|L|+|P|+1)。每步用短支持 α 近似真梯度方向，item 行给相对方向曲率至多 L(y)≤4OPT。时间关于输入位长和 1/ε 多项式。舍入保原硬预算，非均匀成本至少 G(x)/2，共同正成本截断或共同零成本至少 G(x)。",
+      "quantifiers": "任意满足合同的有理实例、已知有理 0<α≤1 和有理 0<ε<1。OPT 为原硬预算整数最优。",
+      "assumptions": [
+        "局部定价返回实际配置，利润、成本、预算非负有理。",
+        "先删成本大于预算的 bin，保每 bin 及每物品边际至多一。",
+        "共同正成本保值舍入使用整数截断。"
+      ],
+      "scope": "完整近似定价多线性轨迹及舍入。α=1 给精确子类，原精确线性 LP 同时保有相应整数比值且无 ε 损失。",
+      "objections": "必须给可返回配置的非负模权 oracle。非均匀更强舍入、额外 matroid 和随机模型各独立。",
+      "body": {
+        "path": "archives/configuration-assignment/state/定理/近似模权定价下的确定性离散连续贪心--定理.md",
+        "sha256": "e1f327bd8ea37e2d370bd6461e902c639e9fafc05890c80f75d337d2fcdc5575"
+      },
+      "evidence": [
+        {
+          "path": "archives/configuration-assignment/state/定理/近似模权定价恢复短支持真梯度方向--定理.md",
+          "sha256": "705b0b05ea3454a2b9c1ad36a2c9c28d92dc8ba923f5c1d7fa0830f354f7cddc"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "输入、输出与比较值"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+          "section": "等成本强界的修复合同"
+        }
+      ],
+      "sources": []
+    },
+    {
       "object_id": "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing",
       "version": 1,
       "title": "稀疏点处的精确隐式配置梯度定价",
@@ -108136,7 +108206,7 @@
     },
     {
       "object_id": "customer-attraction/closeout-947159efdbfc80250a5ab937",
-      "version": 2,
+      "version": 3,
       "title": "额外质量扫描与真实终局推送探针的精确范围",
       "kind": "computation",
       "truth_status": "finite",
@@ -108150,13 +108220,13 @@
       "objections": "This closeout preserves the exact source bytes and records open/finite limits from the full read; it does not generalize beyond the body.",
       "body": {
         "path": "archives/customer-attraction/state/计算/额外质量扫描与终局推送探针的精确范围--计算.md",
-        "sha256": "217bf5216ce3ebbfcd9570bc78862a313fa26824ff7933372d25e31dc2c45871",
+        "sha256": "115a561364c8dd9bab21645d24d5b1afb8c53ceaa97baa8074a91729a47c5bab",
         "section": "额外质量扫描与真实终局推送探针的精确范围"
       },
       "evidence": [
         {
           "path": "archives/customer-attraction/state/障碍/真实终局推送构造与自由背景义务--障碍.md",
-          "sha256": "2932342a842efba75e0ff7c7987d550c3eaf3858ffd4d7e074efd6f1d4ef1d44",
+          "sha256": "73d9fe5b47a80be4383d876df6397e0830e792f4528dce5908047dc0d377a5cc",
           "section": "已保存扫描及其真实范围"
         }
       ],
@@ -113680,7 +113750,7 @@
     },
     {
       "object_id": "customer-attraction/eighteen-topic-private-point-one-new-label-obstruction",
-      "version": 1,
+      "version": 2,
       "title": "十八主题固定路径单标签扩充障碍",
       "kind": "counterexample",
       "truth_status": "proved",
@@ -113700,7 +113770,7 @@
       "evidence": [
         {
           "path": "archives/customer-attraction/state/障碍/整终局势与真倒二菜单联合停界--障碍.md",
-          "sha256": "cdcbf05d5f7b0294409e08a992c3b808eaac389cc821103d6b5e6efe683cb8f3"
+          "sha256": "bab886eda3104f82eeaab86239c3c175526c6909b2a037831b8a17c28daac465"
         },
         {
           "path": "archives/customer-attraction/tools/evidence/potential-menu-joint/replay/potential_menu_joint_private.json",
@@ -123895,7 +123965,7 @@
     },
     {
       "object_id": "customer-attraction/greedy-admissible-catalog-completion-late-menu-floating-obstruction-contract",
-      "version": 2,
+      "version": 3,
       "title": "固定前缀补单主题作为指定真末回复的线性可行接口",
       "kind": "method",
       "truth_status": "proved",
@@ -123920,7 +123990,7 @@
         },
         {
           "path": "archives/customer-attraction/state/障碍/整终局势与真倒二菜单联合停界--障碍.md",
-          "sha256": "cdcbf05d5f7b0294409e08a992c3b808eaac389cc821103d6b5e6efe683cb8f3"
+          "sha256": "bab886eda3104f82eeaab86239c3c175526c6909b2a037831b8a17c28daac465"
         },
         {
           "path": "archives/customer-attraction/tools/evidence/catalog-completion-greedy-probe-primary/README.md",
@@ -132076,7 +132146,7 @@
     },
     {
       "object_id": "customer-attraction/potential-menu-joint-obstruction",
-      "version": 2,
+      "version": 3,
       "title": "十八主题普通总势及真实末菜单的精确超二点",
       "kind": "obstruction",
       "truth_status": "proved",
@@ -132092,7 +132162,7 @@
       "objections": "该点达不到私有席位完整预算。比较O为指定并集；本证明不依赖LP对偶最优。",
       "body": {
         "path": "archives/customer-attraction/state/障碍/整终局势与真倒二菜单联合停界--障碍.md",
-        "sha256": "cdcbf05d5f7b0294409e08a992c3b808eaac389cc821103d6b5e6efe683cb8f3"
+        "sha256": "bab886eda3104f82eeaab86239c3c175526c6909b2a037831b8a17c28daac465"
       },
       "evidence": [
         {
@@ -138301,12 +138371,12 @@
     },
     {
       "object_id": "customer-attraction/shared-true-terminal-reply-query-portfolio-and-reweighted-requery",
-      "version": 2,
+      "version": 3,
       "title": "同一真实末回复对组合查询菜单的一次联合投影",
       "kind": "lemma",
       "truth_status": "proved",
       "model": "CAG共同目录完整历史模型：有限单位客户；有限非空带标签共同目录，覆盖映射可不单射；n名单位提供者按固定顺序各选一次，观察全部有序历史；终局客户在覆盖者间均分。完整纯SPE在全部合法有序历史给行动，含空覆盖、重复选择、同覆盖异标签、零客户和历史依赖弱平局。真实偏离后继必须取同一σ，不把计数相同历史合并。根W=Σu_i，有背景剩余利润不当作新覆盖。",
-      "statement": "任意真实源强制T后真中间F1..Fn−1及末G，对有限合法查询Q_l取μ_l≥0，M=Σμ_l。实际末价/容量对各真后继给成本，末回复查询全部Q_l的IC先共享同一g合账，客户项中−Mg/(p+t+Σf+g)+Σ_l μ_l q_l/(p+t+Σf+1)共同最小化，所得仍为源r加全部实际u_m/K成本的合法必要行。中间同价时只依人数s、末位g共2n候选；保PAIR端点。六比较索引的13查询是actual6+Ti/Bi/Ci旧三族指定6+自身1；16查询追加第三索引剩余4者的统一平均，每项仅付其一个均值权。",
+      "statement": "任意真实源强制T后真中间F1..Fn−1及末G，对有限合法查询Q_l取μ_l≥0，M=Σμ_l。实际末价/容量对各真后继给成本，末回复查询全部Q_l的IC先共享同一g合账，客户项中−Mg/(p+t+Σf+g)+Σ_l μ_l q_l/(p+t+Σf+1)共同最小化，所得仍为源r加全部实际u_m/K成本的合法必要行。中间同价时只依人数s、末位g共2n候选；保PAIR端点。六比较索引的13查询是actual6+指定i,j各(T,B,C)共6项+自身1项，保留重复索引。16查询对未选索引的T、B、C各添一个均匀平均项，i=j时未选5个，否则4个，每项仅付其一个均值权。",
       "quantifiers": "任意有限人数完整σ、真实源及有限可重复共同目录查询菜单，所有非负参数。",
       "assumptions": [
         "一个G由同一σ给出，所有查询共同用该G",
@@ -145180,6 +145250,43 @@
           "path": "archives/customer-attraction/state/计算/完整子树联合菜单的九份精确端点与回流试验--计算.md",
           "sha256": "32b023f3598ab81bcedac631ae9cf69040164eae6cd0f7e92ccac117dfd88e75",
           "section": "九份来源的精确内容和独有差别"
+        }
+      ],
+      "sources": []
+    },
+    {
+      "object_id": "customer-attraction/two-complete-strategy-cones-equal-payoff-and-residual",
+      "version": 1,
+      "title": "两份显式完整策略锥的逐人等收益与辅助目标",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "五人七标签共同均分，冻结完整策略 σ48、σ252 的127型客户重数真实 IC 锥及1753条共同IC松弛。",
+      "statement": "两完整锥内实际标签0、1每位收益均为 W/5。两辅助目标 v_J−10u_a 和 v_J−W−5u_a 在 W=1 上的精确最大随支持含0/1分四类 −2/5、−1/2、−7/15、−17/40。1753共同IC松弛不保等收益，在指定不含0/1支持上覆盖、残差最大为207/130、−53/130，严格超过完整锥63/40、−17/40。",
+      "quantifiers": "任意一个指定完整策略锥及所有非负实客户型质量；辅助目标量化任一实际标签及五标签支持。共同松弛只认证指定不含0/1的支持及标签1残差。",
+      "assumptions": [
+        "冻结两份完整策略原件。",
+        "两个实际终局均为三次0与两次1。",
+        "目标值在 W=1 切片求；等收益覆盖零点。"
+      ],
+      "scope": "只针对两个给定策略与共同松弛。逐人等收益可把旧残差定价精确移到覆盖目标。",
+      "objections": "共同行松弛保全支持8/5，但不保逐项或逐人最优。无任意完整策略统一结论。",
+      "body": {
+        "path": "archives/customer-attraction/state/定理/两份显式完整策略锥的逐人等收益与辅助目标--定理.md",
+        "sha256": "1675d4e71c30db2e3e7675514a8388bc6f4476ee251708fd789b8b4493ee2d76"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/两份显式完整策略锥的全支持精确最大覆盖比--定理.md",
+          "sha256": "a3f068792465f4353382e35547827b95f41b42c54912b5566f089c70a84e1d94",
+          "section": "两份显式完整策略锥的全支持精确最大覆盖比"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/fixed-strategy-cones-all-cover-supports-v1/certificates.json",
+          "sha256": "009baddfcf1780cb73dcd5c85be94a389329643da3b70371adaaacb1350ecac8"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/fixed-strategy-cones-all-cover-supports-v1/verify_equal_payoff_and_residual.py",
+          "sha256": "3e1f158dcd81715d101a44c4a4bc3d1bcf08e886b6e680641508c00788e9051a"
         }
       ],
       "sources": []
@@ -160238,6 +160345,7 @@
       "sha256": "0265f06dd6695cd2d42793391766d39aa0bc624238a59acb4d6a79f576172e62",
       "disposition": "objects",
       "object_ids": [
+        "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing",
         "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing"
       ],
       "reason": "精确固定稀疏梯度定价与配置 LP 的短支持方向。"
@@ -160249,9 +160357,29 @@
       "object_ids": [
         "configuration-assignment/exact-pricing-sparse-configuration-lp",
         "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing",
+        "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing",
         "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing"
       ],
       "reason": "新证实的原始稀疏支持恢复算法及单硬预算指派定理共用正文，保留两个独立可复用对象。"
+    },
+    {
+      "path": "archives/configuration-assignment/state/定理/近似模权定价下的确定性离散连续贪心--定理.md",
+      "sha256": "e1f327bd8ea37e2d370bd6461e902c639e9fafc05890c80f75d337d2fcdc5575",
+      "disposition": "objects",
+      "object_ids": [
+        "configuration-assignment/sparse-continuous-greedy-hard-budget-from-modular-pricing"
+      ],
+      "reason": "短支持近似真梯度方向与逐物品曲率及硬预算舍入组合。"
+    },
+    {
+      "path": "archives/configuration-assignment/state/定理/近似模权定价恢复短支持真梯度方向--定理.md",
+      "sha256": "705b0b05ea3454a2b9c1ad36a2c9c28d92dc8ba923f5c1d7fa0830f354f7cddc",
+      "disposition": "objects",
+      "object_ids": [
+        "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing",
+        "configuration-assignment/sparse-continuous-greedy-hard-budget-from-modular-pricing"
+      ],
+      "reason": "近似模权 oracle 通过对偶缩放及真实列证书恢复短支持原始方向。"
     },
     {
       "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
@@ -160290,7 +160418,8 @@
         "M-42d1210a93e94042833e75a1a80545ea",
         "M-81da430ecf2846f59fb645a08763dab4",
         "M-d05829d1479f4b8aad94f3953ab9ffc4",
-        "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing"
+        "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing",
+        "configuration-assignment/sparse-continuous-greedy-hard-budget-from-modular-pricing"
       ],
       "reason": "全文实读；一般成本半损失算法、修复后等成本强算法与可独立引用的初始layer-cake引理分开保存，精确值评估与位长证明随算法归属，不按每一步交换造节点。给定支持已解基线亦为隐式开放合同的边界证据。"
     },
@@ -165012,9 +165141,19 @@
       "sha256": "a3f068792465f4353382e35547827b95f41b42c54912b5566f089c70a84e1d94",
       "disposition": "objects",
       "object_ids": [
-        "customer-attraction/two-complete-strategy-cones-all-cover-supports-8over5"
+        "customer-attraction/two-complete-strategy-cones-all-cover-supports-8over5",
+        "customer-attraction/two-complete-strategy-cones-equal-payoff-and-residual"
       ],
       "reason": "保存全部比较支持的有理原始与对偶证明，并绑定两份完整策略和复算代码。"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/两份显式完整策略锥的逐人等收益与辅助目标--定理.md",
+      "sha256": "1675d4e71c30db2e3e7675514a8388bc6f4476ee251708fd789b8b4493ee2d76",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/two-complete-strategy-cones-equal-payoff-and-residual"
+      ],
+      "reason": "两完整锥的反向IC链及共同IC松弛的两项精确差距。"
     },
     {
       "path": "archives/customer-attraction/state/定理/两名剩余三比较任意背景半覆盖--定理.md",
@@ -182971,7 +183110,7 @@
     },
     {
       "path": "archives/customer-attraction/state/计算/额外质量扫描与终局推送探针的精确范围--计算.md",
-      "sha256": "217bf5216ce3ebbfcd9570bc78862a313fa26824ff7933372d25e31dc2c45871",
+      "sha256": "115a561364c8dd9bab21645d24d5b1afb8c53ceaa97baa8074a91729a47c5bab",
       "disposition": "objects",
       "object_ids": [
         "customer-attraction/closeout-947159efdbfc80250a5ab937"
@@ -189574,7 +189713,7 @@
     },
     {
       "path": "archives/customer-attraction/state/障碍/整终局势与真倒二菜单联合停界--障碍.md",
-      "sha256": "cdcbf05d5f7b0294409e08a992c3b808eaac389cc821103d6b5e6efe683cb8f3",
+      "sha256": "bab886eda3104f82eeaab86239c3c175526c6909b2a037831b8a17c28daac465",
       "disposition": "objects",
       "object_ids": [
         "M-4b6ebc6e36f341ff8c9f7bec506ae78d",
@@ -189859,7 +189998,7 @@
     },
     {
       "path": "archives/customer-attraction/state/障碍/真实终局推送构造与自由背景义务--障碍.md",
-      "sha256": "2932342a842efba75e0ff7c7987d550c3eaf3858ffd4d7e074efd6f1d4ef1d44",
+      "sha256": "73d9fe5b47a80be4383d876df6397e0830e792f4528dce5908047dc0d377a5cc",
       "disposition": "attachment",
       "object_ids": [
         "M-c4916b968f50407b97f444c52a503372",
@@ -203902,16 +204041,12 @@
     "map/edges/customer-attraction-3a-3a-052c1a98b57381b0/root-tax-witness-satisfies-free-column-budget-at-equality.json",
     "map/edges/customer-attraction-3a-3a-0537edfa8652728c/activation-to-tax-family.json",
     "map/edges/customer-attraction-3a-3a-0537edfa8652728c/compiled-assignment-exact-replay.json",
-    "map/edges/customer-attraction-3a-3a-0537edfa8652728c/private-projects-to-ordinary-obstruction.json",
-    "map/edges/customer-attraction-3a-3a-0537edfa8652728c/private-single-label-completion-obstruction.json",
     "map/edges/customer-attraction-3a-3a-0537edfa8652728c/same-support-ceiling-transfers-to-monotone.json",
     "map/edges/customer-attraction-3a-3a-0537edfa8652728c/same-support-to-pair-array.json",
     "map/edges/customer-attraction-3a-3a-0537edfa8652728c/saturated-family-time-menu.json",
-    "map/edges/customer-attraction-3a-3a-0537edfa8652728c/seat-spectrum-check-on-private-point.json",
     "map/edges/customer-attraction-3a-3a-0537edfa8652728c/tax-total-to-individual-threshold.json",
     "map/edges/customer-attraction-3a-3a-077dc913e2cf9718/all-big-root-family-extends-to-quarter-prefix-debt.json",
     "map/edges/customer-attraction-3a-3a-077dc913e2cf9718/five-player-local-failure-still-pays-at-root.json",
-    "map/edges/customer-attraction-3a-3a-09a6865b803ce780/capacity-price-excludes-fixed-5692-z.json",
     "map/edges/customer-attraction-3a-3a-09a6865b803ce780/exact-dynamic-witness-separates-scalar-closure.json",
     "map/edges/customer-attraction-3a-3a-09a6865b803ce780/same-source-requery-excludes-fixed-5692-r.json",
     "map/edges/customer-attraction-3a-3a-09c91a9946328817/background-profit-theorems-pay-true-suffix-envelope.json",
