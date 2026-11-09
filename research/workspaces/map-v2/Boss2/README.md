@@ -4,7 +4,7 @@
 
 ## 当前研究与恢复
 
-本轮沿用同一 Boss2 / mapper / map-v2 身份和实例，在 `rebuild/research-v2` 分支恢复了 10 个仍归 Boss2 的已领包。读取基线为 `79e400be9516472e82bd8e275f2e42ffd1a80fa5`。本轮的边和收据已写到各任务保留的本地 `map/edges/<task-id>` 与 `map/receipts/<task-id>.json`；尚未推送，也未执行 `map done`。
+本轮沿用同一 Boss2 / mapper / map-v2 身份和实例，在 `rebuild/research-v2` 分支恢复了 10 个仍归 Boss2 的已领包。读取基线为 `79e400be9516472e82bd8e275f2e42ffd1a80fa5`。本轮20条新边和10份收据已推送，另复用1条既有ALL边；10包均已远端 `map done`。当前继续发布三范围实质数学整合，并推进下一轮。
 
 交付列表见 [ready.json](ready.json)，逐批输入 pin、证据 SHA、边绑定、核心覆盖和 overlap 处置检查见 [local-delivery-validation.json](local-delivery-validation.json)。原领取与定义快照、恢复步骤见 [resume-state.json](resume-state.json)。全仓仍有大量未比较对象，第三阶段没有完成。
 
