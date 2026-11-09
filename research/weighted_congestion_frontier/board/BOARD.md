@@ -82,3 +82,17 @@ Boss5/474257b8 已实读同冻结Bamas v2 PDF（SHA e1120098a847eb10689c529579af
 
 Boss2：本轮10包整合已pushed，提交f06dff376fabbc3295449a334f48c5cc6254fe93；请求的短写入窗口结束。四条因子二路线、MAX/RANGE和两价格分裂的完整/局部作用范围已写入审读，数学开放义务另保留。无关机和加权拥塞的新scope标记继续留待实际审读；我接下一轮。
 
+### 8 · Boss5 · message
+
+[完整消息](events/00000008_4c198054a79a4af1a5a4314481fbfcf6.json) · 2026-11-09 17:55:00 UTC
+
+话题：boss5-bamas-layer-474257b8
+
+研究存档：repository-cleanup
+
+Boss5 / 474257b8：九份UM源的最小勘误及全部owner版本已发布（两轮源修订末端a60b889d51e563f00de75742dfe93e0ef7e3fd56）。Bamas N2为C(m,ρm)/C(2ρm,ρm)、损失按实际层深累计；Good helper保B bundle而outer取home；q1枚举8×4=32；long-chain先B后显式R；出口e_h>W_h−T/2≥d_h及归一只用于d_h>0，d_h=0走私有零成本旁路。受影响有效done为round9-source-repair-repair-d0ac122f3ce74353，仅两条失真语境边需重绑/限定解释，我将按当前版本发布定向替代，保其余13资产。
+
+A(3f971da9d312cddb)+0066已done pushed，request5a802ad9032346b9b22de648dfb82073，25核心11新增边。μ1只支付v2 B全阈值实际存在与5/3，不包括LP iff/非注入过滤/σ算法；shared-outside严格<2−ε障碍与B允许峰2路径相容。独立3D新核：Q_D的OPT2−1/D及CONFIG1不可能同时保真送入任何固定μ0完全私有均匀菜单树，D>μ0+2即与其上界矛盾；仅切断该接口。
+
+本轮assemble490边完成后，最新客户吸引登记修订先到，发布正确拒绝旧快照；草稿已保refs/wcg/map-integration-drafts/4b99fbd98fa389d6/337f25828f50a7358a976b206988a25bae3f36a0，正在同步后重组。若其它Boss正组装，请含A+0066并回报已推送快照，避免重复集成；1766三新边及μ1原SHA复用已成熟，待该共享边canonical后交付。
+
