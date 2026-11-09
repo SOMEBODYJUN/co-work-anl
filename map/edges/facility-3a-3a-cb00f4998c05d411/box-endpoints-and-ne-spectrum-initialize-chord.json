@@ -1,0 +1,61 @@
+{
+  "edge_id": "faccb00-box-endpoints-and-ne-spectrum-initialize-chord",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "facility-games/box-slice-square-endpoint-exchange",
+    "M-b5488c2696964ec58745ce5426f2b777"
+  ],
+  "target_ids": [
+    "LOCAL-CHORD-POLY"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定双设施R≥r>φR/2、共同总重C<qr，q=1/φ；δ=R−r，最大共同权x，S=C−x≥δ。显式二进制有理输入下使用算法界。",
+  "roles": {
+    "facility-games/box-slice-square-endpoint-exchange": "用两坐标端点局部最优生成盒截面坐标，提供两类端点不等式和位时间。",
+    "M-b5488c2696964ec58745ce5426f2b777": "将差距、纯不等式和名义混合坐标解码成精确独立混合NE。",
+    "LOCAL-CHORD-POLY": "局部强弦内分支的初始NE及后续坏gap所用权重分组。"
+  },
+  "explanation": "去掉最大客户，在其余共同坐标c_i∈[−w_i,w_i]的截面Σc_i=−δ运行端点交换。全端点时给最大客户c_x=0，得Δ=δ+Σc_i=0，纯及混合条件全满足。若有枢轴权z、值d，令c_x=d，因|d|<z≤x合法，恒等式给Δ=d，枢轴和最大客户均无差异。其他正端点的d≤v、负端点的d≥−v恰是其纯NE不等式。坏正差下局部端点最优另给正端点权≥z和负端点权v<z⇒v≤d；坏负差对称。这些不等式加O((n+1)^4)算术和多项式位长供后继分支，初始NE若差距已在目标区间即可使用。",
+  "scope": "只在强弦的内分支构造初始NE及分组。截面局部F最大与原全局平方目标、任意局部NE坐标极小及全局设施倍率都是不同问题。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/算法/盒截面平方和的两坐标端点交换--算法.md",
+      "sha256": "739a955e044f6092f3de5a71e067e9137a639c850f82dc14662e5e723131b535",
+      "section": "供两设施混合坐标使用的强不等式"
+    },
+    {
+      "path": "archives/facility-games/state/定理/双地点强交叉配额的最大原子判据--定理.md",
+      "sha256": "abf2193390d535e2ec238ed9ec71381948b1ccf0b9d15a85677ec8d4045e2484",
+      "section": "内分支的初始NE与局部交换"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-two/state/定理/局部强弦与有理混合构造--定理.md",
+      "sha256": "3ab76aac41acc591bf6eb46bed50a53195e23336458162d93cd3b79b757d3891",
+      "section": "4. 盒切片的局部端点算法及严格运行界"
+    },
+    {
+      "path": "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md",
+      "sha256": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核未删客户Σc_i=−δ、最大权可补d、两纯端点逐项正确，以及局部/全局与差距分支范围。",
+  "contribution": {
+    "result": "在S≥R−r的内分支，多项式时间构造Δ=0或两名指定混合者且Δ=d的初始精确NE，并提供坏gap分支所需的正、负端点分组约束。",
+    "remaining": "若初始差距未达双强配额，还需目标正文独立的坏正、坏负gap修复与三名指定混合者质量界，且坏负差宽域修正及外分支须另核。"
+  },
+  "endpoint_pins": {
+    "LOCAL-CHORD-POLY": "5b23026c01a5a3f8d4f4d2ad6bcc570f2520e1d66f35ee959a41fe8f1d34cecb",
+    "M-b5488c2696964ec58745ce5426f2b777": "a5548e0aafb7ae3c7d4143b189e5f8a84d5b33957f2427fa3dc60658139aeff0",
+    "facility-games/box-slice-square-endpoint-exchange": "798786a62f35d554e87cfc433ecde3eb0ea0b8df2d8ed39bc814aeea3aebace6"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/算法/盒截面平方和的两坐标端点交换--算法.md": "739a955e044f6092f3de5a71e067e9137a639c850f82dc14662e5e723131b535",
+    "archives/facility-games/state/定理/双地点强交叉配额的最大原子判据--定理.md": "abf2193390d535e2ec238ed9ec71381948b1ccf0b9d15a85677ec8d4045e2484",
+    "archives/facility-games/subarchives/common-two/state/定理/局部强弦与有理混合构造--定理.md": "3ab76aac41acc591bf6eb46bed50a53195e23336458162d93cd3b79b757d3891",
+    "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1"
+  },
+  "review_digest": "01c3e235a801140f2ea5ac844cd1cddcd5ffb86c91b99a040ed066fe4e5cb1f6"
+}

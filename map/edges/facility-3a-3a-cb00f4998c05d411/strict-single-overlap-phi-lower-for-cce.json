@@ -1,0 +1,56 @@
+{
+  "edge_id": "faccb00-strict-single-overlap-phi-lower-for-cce",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-PHI-SHARP",
+    "HC-MONOTONE"
+  ],
+  "target_ids": [
+    "M-22f7fa31a92b484b93e676c99abc1e68"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "两设施共同目录，客户正权且覆盖后强制服务，设施收益为期望服务重。取冻结六地点六客户修正版（w₅含+ε），q=1/φ，1≤α<φ且0<ε<min(1/16,q(φ−α))；若讨论费用变换，每名客户在两边使用同一严格递增实际负载函数。",
+  "roles": {
+    "SC-PHI-SHARP": "提供同一修正版六地点权重、严格reach顺序、每格真实偏离及统一有理化裕量。",
+    "HC-MONOTONE": "把唯一战略客户的严格占优提升为唯一CCE，亦给同客户严格单调费用的范围。",
+    "M-22f7fa31a92b484b93e676c99abc1e68": "将下界量词扩展到全部CE/CCE规则及每个在轨布局。"
+  },
+  "explanation": "冻结覆盖的每个异址对至多一名公共客户，严格reach顺序2>2−ε>φ>φ²/2>2q>2q²使公共客户比较两确定条件负载。CCE若给劣侧正概率，无条件改去优侧会逐实现降低该部分成本且不增加其余成本，故异址服务分配及收益与唯一纯NE一致；NE的纯分配自身又是CCE。用原标签反射，异址偏离12/13/14/23/24/34中前站去5，25/35/45中前站去1，15中5去2，16/26/36/46中6去5，56中6去1。除15外保证倍率至少φ；15给(2−ε)/(2q)>α。同址任意相关分布两收益和恒为reach，较弱设施可分别去2,3,4,5,1,2，目的布局异址唯一；只需其当前收益≤一半。统一有理化保正权、严格reach方向及全部真实偏离的正裕量，清分母保相同服务分配和倍率。CE⊆CCE，故全部36个标签布局都被排除。以上只用单客确定比较和覆盖总量，所以同一证据也排除同客户两边共用任意严格递增fᵢ时的全部CCE；无需同址CCE集合不变。",
+  "scope": "每个1≤α<φ的存在性下界，量化全部完整CE/CCE规则。六地点结论自足；同样的排除见证若限制目录至1–5仍保留，但客户6保留。未使用共同目录φ上界。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/定理/共同目录黄金比下界的有理六地点与五地点族--定理.md",
+      "sha256": "d6da289ea0636830fae204b32fb28e1f854ff1ffdf84a3a58b988c45a9de0fbb"
+    },
+    {
+      "path": "archives/facility-games/state/反例/相关客户续局与异构双目录的下界边界--反例.md",
+      "sha256": "cfc1669f6f8fd6c4d9fe2969c159e84f5a7a70fc0563dc70182b150abaaf7952"
+    },
+    {
+      "path": "archives/facility-games/state/引理/客户相关续局与纯负载费用变换的精确边界--引理.md",
+      "sha256": "c8ce76fffd5a4a946383b3b07e71629d32f3094b7e114c732de1cc3514b80f73",
+      "section": "相关分布的完整条件"
+    },
+    {
+      "path": "archives/facility-games/state/引理/客户相关续局与纯负载费用变换的精确边界--引理.md",
+      "sha256": "c8ce76fffd5a4a946383b3b07e71629d32f3094b7e114c732de1cc3514b80f73",
+      "section": "纯NE与逐实现严格占优的单调变换"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核修正w₅、十五异址与六同址的类别及相同客户同函数只作用于严格比较；同址用守恒而非唯一性。",
+  "whole_result": "任给亚黄金比倍率，有六地点六正有理客户（可同比缩放为正整数）使所有带标签在轨布局在每份完整客户CE、乃至每份完整客户CCE规则下都有严格超过该倍率的真实偏离。",
+  "endpoint_pins": {
+    "HC-MONOTONE": "06dbc73396cb6e3e7454579a92992fa380ade0df9e52f69532e98d0196029a5c",
+    "M-22f7fa31a92b484b93e676c99abc1e68": "f294a067fbc73b1ed2659b1aba7fcdd0f495e0d013d5460eba63318dd956945f",
+    "SC-PHI-SHARP": "df0afd48885fe2cf793412ec09ad8fc9db555cccb49c8360536cd37fa23c3428"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/定理/共同目录黄金比下界的有理六地点与五地点族--定理.md": "d6da289ea0636830fae204b32fb28e1f854ff1ffdf84a3a58b988c45a9de0fbb",
+    "archives/facility-games/state/反例/相关客户续局与异构双目录的下界边界--反例.md": "cfc1669f6f8fd6c4d9fe2969c159e84f5a7a70fc0563dc70182b150abaaf7952",
+    "archives/facility-games/state/引理/客户相关续局与纯负载费用变换的精确边界--引理.md": "c8ce76fffd5a4a946383b3b07e71629d32f3094b7e114c732de1cc3514b80f73"
+  },
+  "review_digest": "b9cac533be0b7294f74cecf4b247dce4cbb81d7c3a2aada58f4a89ed4df1c9bc"
+}

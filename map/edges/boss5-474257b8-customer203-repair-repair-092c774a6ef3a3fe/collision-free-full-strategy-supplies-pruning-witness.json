@@ -1,0 +1,53 @@
+{
+  "edge_id": "cag-203a-collision-free-full-strategy-supplies-pruning-witness",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/collision-free-family-welfare-obstruction"
+  ],
+  "target_ids": [
+    "ACTUAL-OPTIMUM-PRUNING"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "每k≥1、m=k+1，沿用源对象的两名组客户X_i、私有客户a_i及公共b,d的同一A_i/B_i/C_i/D族。剪枝保一份原完整SPE的实际支持和一个最优有序m元组的支持。",
+  "roles": {
+    "customer-attraction/collision-free-family-welfare-obstruction": "同一A/B/C/D全人数族在原目录有B/Q构造的完整低福利SPE。",
+    "ACTUAL-OPTIMUM-PRUNING": "原SPE存在性与删除B后全部SPE跃升的证明链。"
+  },
+  "explanation": "源族的B/Q构造给原目录完整纯SPE，空根沿C₁…C_k,D而W=2m。Q允许多个旧A，fresh A偏离后将指定末位惩罚组改成新组；fresh B偏离由单独B状态填真实续局。不同有序行动孩子的子树分开粘合，保证全历史最优。全A加D覆盖全部3m−1客户。每个a_i仅A_i可覆盖，d仅D可覆盖，覆盖全部客户须取这m个主题，故全部最优元组支持唯一。实际与最优支持并集恰保A/C/D并删去全部B_i。缩减目录的F/E增强域中，已触组各恰选过一次A或C，未触组数为g；E中过去恰一次D且余g位，F中无D且余g+1位。g=0时E已终局；F末位选D或此前旧C对应的A均得2，且恰为最佳回复，旧A重复得3/2，任意C得1。g>0时强制任一fresh A后，其真实孩子仍在对应F/E域且未触组少一。归纳适用于该孩子的每份完整子SPE：后续全为其它fresh A，F的末位选D或此前旧C对应的A。因此刚选的A_i不再被碰，当前最终得3。对其它所有行动，fresh C和D自身至多2，旧组A因X_i已有覆盖者至多1再加a_i至多1，旧组C至多1；这些上界对任意真实后继成立。故每份完整子SPE当前严格选择某个fresh A。任意fresh次序及F合法末位又可实现，因为每步规定fresh A可得目录上界3，其他有序子树可用有限纯BI的存在性补全。空根是无旧C的F，故所有缩减SPE恰为全A任意排列再D，W=OPT=3m−1>2m。",
+  "scope": "同一碰撞自由单位客户家族的全人数根命题，并保原F/E增强域的全部真实续局量词；反驳指定免费删B的支持剪枝。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/三人碰撞自由族福利障碍--反例.md",
+      "sha256": "588764de045e2a55362773dc9b83d3f10cadb47e22d8feeac0c4e342cc4836ad"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/实际与唯一最优支持剪枝的全人数福利跃升--障碍.md",
+      "sha256": "0f93e7c2fa8308fe85ef0861f4e92daf3108f31283264ba94c1ee0dff1b92f5a",
+      "section": "全人数实例与原完整SPE"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/实际与唯一最优支持剪枝的全人数福利跃升--障碍.md",
+      "sha256": "0f93e7c2fa8308fe85ef0861f4e92daf3108f31283264ba94c1ee0dff1b92f5a",
+      "section": "原F/E增强域：每份子SPE的全部后缀"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/实际与唯一最优支持剪枝的全人数福利跃升--障碍.md",
+      "sha256": "0f93e7c2fa8308fe85ef0861f4e92daf3108f31283264ba94c1ee0dff1b92f5a",
+      "section": "根结论与最小域证明"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "续接Boss5 203包3D候选，核对B/Q原存在量词、私有客户固定唯一OPT、F/E每个fresh A真实孩子及其它动作与后继无关的上界，并核任意合法后缀可实现。",
+  "whole_result": "每m≥2的原目录存在完整SPE实际C₁…C_k,D且福利2m，唯一最优支持是全A加D。只保两种支持后，每份完整SPE均实现全A的某一排列再D，全部排列可实现，且福利同为OPT=3m−1，严格高于所给原SPE。",
+  "endpoint_pins": {
+    "ACTUAL-OPTIMUM-PRUNING": "f35feef2b50d880a4b6c707187f3737c81baef0f17bb28981fe1fd9642312a42",
+    "customer-attraction/collision-free-family-welfare-obstruction": "9fbfbcfd4a941c4d6f0bf5de7788ff53f90c8f8c7ab0b505effef487d4980d6a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/三人碰撞自由族福利障碍--反例.md": "588764de045e2a55362773dc9b83d3f10cadb47e22d8feeac0c4e342cc4836ad",
+    "archives/customer-attraction/state/障碍/实际与唯一最优支持剪枝的全人数福利跃升--障碍.md": "0f93e7c2fa8308fe85ef0861f4e92daf3108f31283264ba94c1ee0dff1b92f5a"
+  },
+  "review_digest": "aa6c36773e41b4e7d92b3bc58319abe2eff0a6d6d61c19e5ee78116e8b2e8ff1"
+}

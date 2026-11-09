@@ -1,0 +1,55 @@
+{
+  "edge_id": "cag-203a-actual-hybrid-cuts-supply-full-hall-rank",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance"
+  ],
+  "target_ids": [
+    "M-453311709b8248f4977a880920f6da60"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定一个最优合法有序元组T、分析分割O=⊔ᵢQ_i及其owner、同一合法actual叶Z。令C为Z的覆盖，G=C∖O、I=O∩C、R=O∖C。源到角色i容量g_i=u_i(G)，g=∑ᵢg_i；每个x∈I由owner向每个非owner实际覆盖者各提供容量1/c_Z(x)，每个x∈R在owner处设单位终端。",
+  "roles": {
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance": "合法替换HYB给同一actual图的全部饱和source割条件和总质量g。",
+    "M-453311709b8248f4977a880920f6da60": "同一网络的任意终端集合rank、全部可行需求base及单一greedy支持函数。"
+  },
+  "explanation": "任取角色集J，以实际Z_J替换T的同槽完整主题。owner在J^c的客户都保留，owner在J且被Z_J覆盖的也保留；最优性使G新增数不超过其余O客户的潜在损失。每个潜在损失I客户的全部actual覆盖者均在J^c，向割外恰提供一单位容量；R损失由|R∩Q(J)|上界。g(J)至多为新增G数，故g(J)≤c_I(J,J^c)+|R∩Q(J)|。对只开放S⊆R的同一图，以J为源侧角色集，最小割为r(S)=min_J[f(J)+|S∩Q(J)|]，f(J)=g(J^c)+c_I(J,J^c)，Q(J)=∪_{i∈J}Q_i。取S=R时每个割至少g，源总容量恰g，故r(R)=g。最大流定义还给r(∅)=0、单调及r(S)≤min(g,|S|)。f是有向割函数加模函数，因而次模。取终端集S、U的最小割J_S、J_U。对终端属于S∩U的客户，其owner在J_S、J_U的两个会员位之和恰等于交集和并集的会员位之和；若只属于S或U，则相应会员位至少为交集会员位。因此两终端项之和至少为|(S∪U)∩Q(J_S∩J_U)|+|(S∩U)∩Q(J_S∪J_U)|。加f的次模式，再以交割和并割分别上界r(S∪U)、r(S∩U)，即得r次模。非负需求γ若可实现，分解其流并取终点在S的路径子流，给γ(S)≤r(S)。反向逐个终端把容量设为γ_x，γ_x≤1由单点约束保证。对任意J，取S=R∖Q(J)，有γ(S)≤r(S)≤f(J)，因此该割容量f(J)+γ(R∩Q(J))至少γ(R)，一份流就能饱和全部需求。加γ(R)=g恰为满取消base Γ。对任意降序非负价格z，令S_k为其前k个终端，γ_(x_k)=r(S_k)−r(S_(k−1))。单调给非负，总量为g；对子集U，任一x_k∈U的该边际由次模性至多为r(U∩S_k)−r(U∩S_(k−1))，求和给γ(U)≤r(U)。这份γ同时饱和全部前缀，其他可行γ在每个前缀至多r(S_k)。以z_(n+1)=0分层求和，得到h_Γ(z)=Σ_k(z_k−z_(k+1))r(S_k)。空R时g=0，空和取0，G空时仅有零取消，并列价格可任意排序。",
+  "scope": "固定任意合法actual叶、同一最优T及同一owner的分数容量Hall网络，无需SPE。结论含全部非负终端需求和每个非负价格的单一贪心见证。incoming及普遍采购预算仍开放。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/实际取消的同时源付款与入流余额--定理.md",
+      "sha256": "5759f87d02d0bacc5c61a5472806d6f464192bb97bcb18a1a3bf1e156a02ad7a",
+      "section": "全角色集合的合法混合替换"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定捕获价格的Hall缺额与共同付款对偶--定理.md",
+      "sha256": "20c5d8e42adb6442879aa5f57fbf73f3b99a9ad68cb7356806de425786b50e45",
+      "section": "实际Hall网络、rank及base"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/自然捕获路由的Bellman价格与Hall取消--算法.md",
+      "sha256": "79857e8db085c5d83a35c9062cacc4ea031e974cc8cbed2fd057668e346a5451",
+      "section": "裸actual Hall取消的精确网络"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/自然捕获路由的Bellman价格与Hall取消--算法.md",
+      "sha256": "79857e8db085c5d83a35c9062cacc4ea031e974cc8cbed2fd057668e346a5451",
+      "section": "同一套价格上的共同最优取消"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "续接Boss5 203包3D候选，重核HYB出割、同图mincut、交叉割逐客户不等式、需求两向及全部前缀由同一base贪心饱和。",
+  "whole_result": "同一actual Hall图的终端rank为r(S)=min_J[g(J^c)+c_I(J,J^c)+|S∩Q(J)|]，归一、单调、次模且r(R)=g。任非负需求γ可实现当且仅当所有γ(S)≤r(S)，满取消再加γ(R)=g恰为Γ。每个非负价格由单一前缀贪心取得h_Γ(z)=Σ_k(z_k−z_(k+1))r(S_k)。",
+  "endpoint_pins": {
+    "M-453311709b8248f4977a880920f6da60": "5b969c5ec4d5e59db748a603e96a7699b2b6ff75511f16437fdcfc1a5c9eb59b",
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance": "6301d3ef5ca152ec47607ffd3a061649bb168671ccaaab725d8f88bd9d7f9257"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/实际取消的同时源付款与入流余额--定理.md": "5759f87d02d0bacc5c61a5472806d6f464192bb97bcb18a1a3bf1e156a02ad7a",
+    "archives/customer-attraction/state/定理/固定捕获价格的Hall缺额与共同付款对偶--定理.md": "20c5d8e42adb6442879aa5f57fbf73f3b99a9ad68cb7356806de425786b50e45",
+    "archives/customer-attraction/state/算法/自然捕获路由的Bellman价格与Hall取消--算法.md": "79857e8db085c5d83a35c9062cacc4ea031e974cc8cbed2fd057668e346a5451"
+  },
+  "review_digest": "ce38b252cfbd60c1ec94a4f603d762a768bb787d4850e43d0b786717ee1dda3e"
+}

@@ -1,0 +1,58 @@
+{
+  "edge_id": "cag-retained-projection-credit-implies-exact-player-cutoff",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/closeout-6fbd2261f5604c3196038854"
+  ],
+  "target_ids": [
+    "customer-attraction/optimal-projection-external-credit-certificate-exact-player-cutoff"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "每个整数m≥1，有限单位客户、有限非空共同标签目录，原根无既有玩家，玩家在全部合法有序历史中依次行动一次，终局客户价值按覆盖者均分。σ为一份定义于全部有序历史的原纯SPE。O取真正最优m元组的客户并集，z为O的合法非负分数主题覆盖，总权κ≥1。投影保留原全部标签与同一σ的全部真实后继，信用Cκ与实际外部覆盖E=|cov(B)∖O|取自同一实际路径。证书支付指右端|O|F_m(κ)+Cκ至少为OPT_m/2。",
+  "roles": {
+    "customer-attraction/closeout-6fbd2261f5604c3196038854": "提供真实投影不等式W≥|O|F_m(κ)+Cκ及0≤Cκ≤E。其六人不交单例构造给真实短付原型，原文只需一份完整纯SPE。",
+    "customer-attraction/optimal-projection-external-credit-certificate-exact-player-cutoff": "把合法见证的普遍支付范围定为m∈{1,2,3}，并把六人短付原型扩展为每个m≥4都存在一个实例，在全部完整纯SPE及全部合法选择下严格短付。"
+  },
+  "explanation": "正向：固定任意原实例和任意完整纯SPE σ。有限非空目录保证存在最优m元组(T₁,…,T_m)，取其并集O，令z_T为标签T在元组中的次数。即使有重复标签、同覆盖异标签或空O，Σ_Tz_T=m，每个x∈O至少被一个槽位覆盖，所以κ=m合法且|O|=OPT_m。用源对象的真实投影界，C_m≥0。直接代入F_m(κ)=1−∏_{r=1}^m(1−1/(rκ))，得F₁(1)=1、F₂(2)=5/8、F₃(3)=41/81，故对每个m∈{1,2,3}这份选择支付半覆盖。空O时目标为0，同一构造仍有效。反向：对每个m≥4构造N=[m]且目录恰为m个互不交单位单例。任意长度t<m的合法有序历史至多用t个标签，故至少剩m−t个新标签。对任何完整纯SPE按剩余人数逆归纳。末位任取新标签得1，选旧标签至多1/2。更早的节点强制任一新标签后，归纳对该离轨或在轨后继及其后各节点逐次适用，后来者都选各自历史尚未出现的标签，当前得1。选旧标签已有至少一位共同覆盖者，最终仍至多1/2。故所有SPE在每个节点都必须选新标签。任一按此规则定义的全历史策略也由同一收益比较满足逐节点最优性，完整纯SPE确实存在。从根出发每位选择不同单例，W=OPT_m=m，唯一真最优并集O=N，E=0故对全部合法覆盖Cκ=0。每个客户只在自己的标签，逐标签z_T≥1故κ≥m，全1权可达κ=m。固定m，各乘积因子在κ≥1非负且非减，故证书右端至多mF_m(m)。令P_m=1−F_m(m)，对m≥2将r=1比值与新增r=m+1因子合并，得P_{m+1}/P_m=[(1−(m+1)^{-2})/(1−m^{-2})]∏_{r=2}^m[(1−1/[r(m+1)])/(1−1/(rm))]>1，每个因子正且比值严格大于1。又P₁=0<P₂，故F_m(m)随m严格递减。F₄(4)=1−(3/4)(7/8)(11/12)(15/16)=893/2048<1/2，给出所有m≥4、所有完整纯SPE、所有真最优并集及所有合法分数覆盖的严格短付。旧六人实例由此被包含，其H₆/6上界足够核六人短付。抽象PB的紧向量仅核对同一F_m(m)的标量值，真实障碍由上述单例策略的全部有序子博弈证明。",
+  "whole_result": "由已证真实投影公式和上述全历史构造，完整得到目标的双向人数分界。对每个m∈{1,2,3}，每个合法实例及其每份完整纯SPE均存在真正最优m元组并集O及合法覆盖使|O|F_m(κ)+Cκ≥OPT_m/2。对每个m≥4，存在同模型的不交m单例实例，任一完整纯SPE均有W=OPT_m=m，且其每个真最优并集及每个合法分数覆盖都满足|O|F_m(κ)+Cκ≤mF_m(m)≤m·893/2048<OPT_m/2。",
+  "scope": "原标签、原完整SPE和同一外部信用的固定最优并集投影证书。实际低福利、加入独立内部覆盖信用后的证书和其他half证明不属于这个人数分界。PB极值只量化抽象非负标量向量，真实单例族的根收益向量为全1。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/推论/投影后悔乘积界的外部保留信用与填差边界--推论.md",
+      "sha256": "99e36227c4ad33e598f7274fa38c2c6081d282a39f2e6a91dff637f9744e904f",
+      "section": "对象、定义域与两个已证输入"
+    },
+    {
+      "path": "archives/customer-attraction/state/推论/投影后悔乘积界的外部保留信用与填差边界--推论.md",
+      "sha256": "99e36227c4ad33e598f7274fa38c2c6081d282a39f2e6a91dff637f9744e904f",
+      "section": "加强的乘积下界"
+    },
+    {
+      "path": "archives/customer-attraction/state/推论/投影后悔乘积界的外部保留信用与填差边界--推论.md",
+      "sha256": "99e36227c4ad33e598f7274fa38c2c6081d282a39f2e6a91dff637f9744e904f",
+      "section": "不能把纯外部填差继续列作普遍待证条件"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/全部真实前缀预算行的抽象线性极值--障碍.md",
+      "sha256": "3d9e1d9f029d28f923ec54061abce741ab76c36a65308edd1e5178280d76547e"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/最优并集投影信用证书的精确人数分界--定理.md",
+      "sha256": "68f71def2380427a78e585ea33b4bb800355f5eb4b793b6f1477b97bf1ecba92"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐一实读三份pinned对象正文并核源文件SHA、登记版本和定向任务。核对最优元组的逐槽赋权、同一完整策略信用的[0,E]、不交单例逆归纳适用任意有序历史，以及各人数端点和全κ严格不等式。用有理数复算F₁至F₄；全人数结论来自解析证明。PB仅作数值对照，六人原型的存在量词与新族的全SPE量词各依其证明。 对照并实读v2修订全文，确认仅恢复行内数学排版，含明确κ≥1；正反量词、公式及证明与原边一致。",
+  "endpoint_pins": {
+    "customer-attraction/closeout-6fbd2261f5604c3196038854": "39ab3078b99495e32037cef44ae885567794d2fb007d62e85e18daa51432648b",
+    "customer-attraction/optimal-projection-external-credit-certificate-exact-player-cutoff": "7e8b6faaa671c6425ad7aba1d3c3026fa2a102c25af7b06fdaf3f8a1162a9f9f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/推论/投影后悔乘积界的外部保留信用与填差边界--推论.md": "99e36227c4ad33e598f7274fa38c2c6081d282a39f2e6a91dff637f9744e904f",
+    "archives/customer-attraction/state/障碍/全部真实前缀预算行的抽象线性极值--障碍.md": "3d9e1d9f029d28f923ec54061abce741ab76c36a65308edd1e5178280d76547e",
+    "archives/customer-attraction/state/定理/最优并集投影信用证书的精确人数分界--定理.md": "68f71def2380427a78e585ea33b4bb800355f5eb4b793b6f1477b97bf1ecba92"
+  },
+  "review_digest": "4195b190031592c520cd65a462268e00dc8cddc9d158c1f59d83bb695910b0f7"
+}
