@@ -1,0 +1,52 @@
+{
+  "edge_id": "config-gradient-rescaling-and-sparse-pricing-give-exact-direction",
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "source_ids": [
+    "M-a8a3062b0ff9434fa078140f5b654163",
+    "configuration-assignment/exact-pricing-sparse-configuration-lp"
+  ],
+  "target_ids": [
+    "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing"
+  ],
+  "conditions": "有限非空下闭局部配置族与非负有理利润，独立 multilinear 覆盖，显式给定有理正支持和任意有理加性扣价。逐 bin 精确定价返回实际配置。LP 保自然每 bin、每 item、预算行并剔除超预算 bin，也可取共同正成本整数截断。近似分支仅限无价格且 α∈(0,1]。",
+  "roles": {
+    "M-a8a3062b0ff9434fa078140f5b654163": "给真实导数的逐配置排除背景公式及正坐标共用真导数的精确障碍。",
+    "configuration-assignment/exact-pricing-sparse-configuration-lp": "给精确对偶分离后的共同分母间距、不可行证书重放和稀疏原始最优恢复。",
+    "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing": "固定稀疏点上全隐式地集的精确减价导数最大值与达到配置，以及精确短支持 LP 方向和无价近似。"
+  },
+  "explanation": "先生成去掉 e 的背景，再独立决定是否加入 e。加入时每个 i∈S 的残余为零，故共同背景模权和恰是 (1−z_e)∂_eG。零坐标相等，正坐标真导数支配共同值，z_e=1 时仍直接在去掉 e 的短支持精确积分，不作除法。各期望按利润阈值排序分段，用未出现概率的有限乘积计算。令 U 为正支持最佳真减价分数，V 为所有配置最佳共同背景减价分数。下闭性容许用非负权 oracle 后删负项实现 V。任意零坐标真分数≤V，正坐标≤U。V 的达到者真分数≥V，故真实最大值是 max(U,V)。若 V>U，V 达到者必是零坐标；否则返回 U 达到者。地集空时返回无配置，LP 方向为零。把对偶 bin、预算和 item 价格代入同一 oracle 即给真梯度目标的精确强分离。每个导数分母整除所有支持概率分母和全部输入利润分母的公共乘积，因此全部列的位长统一多项式。原线性 LP 的分母间距与不可行重放适用，取得短支持基本最优方向。无价格时若共同 oracle 只有 α-近似，精确比较正支持和候选真导数至少给 max(U,αV)≥αmax(U,V)。",
+  "whole_result": "给定短有理支持后，逐 bin 精确模权定价可在确定性位多项式时间求任意加性扣价下的全隐式真梯度最大方向及实际达到配置。配合精确对偶分离与稀疏恢复，获得自然硬预算配置 LP 或共同成本截断的短支持最优方向。无价格时逐 bin α-近似给全地集真梯度最大值的 α 倍。",
+  "scope": "固定点方向及原始短支持，开放的连续多步误差和支持增长仍分别证明。原来正坐标真梯度共用一组权重的反例保持；任意扣价不传递乘法误差。",
+  "evidence": [
+    {
+      "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+      "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+      "section": "梯度是模权和，不代表所有候选共享同一背景"
+    },
+    {
+      "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+      "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+      "section": "从对偶证书恢复最优支持"
+    },
+    {
+      "path": "archives/configuration-assignment/state/定理/稀疏点处的精确隐式配置梯度定价--定理.md",
+      "sha256": "0265f06dd6695cd2d42793391766d39aa0bc624238a59acb4d6a79f576172e62"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐式复核 z_e=0 与 1、真减价达到者、空地集、分母统一界及近似方向。独立有理小例仅复核代数，不作为证明前提。",
+  "endpoint_pins": {
+    "M-a8a3062b0ff9434fa078140f5b654163": "0753bd142ddb39e53be2c685ecbcc9d29bc35af348823ab7a3b11a8f425d002c",
+    "configuration-assignment/exact-pricing-sparse-configuration-lp": "847bf3f41064526e222270532908a4a4dfb56a063ffae9b48ac817957fbf0bcb",
+    "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing": "8edd0b73d5d1c7b89d92c0d34547a5adb488d8abca4299fc41f2cbda30d70c23"
+  },
+  "evidence_pins": {
+    "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+    "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+    "archives/configuration-assignment/state/定理/稀疏点处的精确隐式配置梯度定价--定理.md": "0265f06dd6695cd2d42793391766d39aa0bc624238a59acb4d6a79f576172e62"
+  },
+  "review_digest": "7586ec29fff3c41c7d010bee051b70af18ba6c0cd686bb7cd6c669b7b20a0d2c"
+}
