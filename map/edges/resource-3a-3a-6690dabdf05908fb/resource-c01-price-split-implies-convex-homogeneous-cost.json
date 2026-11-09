@@ -1,0 +1,49 @@
+{
+  "edge_id": "resource-c01-price-split-implies-convex-homogeneous-cost",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "C01-v3.L1"
+  ],
+  "target_ids": [
+    "M-2811342f46434965bf98081115bedcde"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "K⊆R_+²是凸锥，c:K→R有限、凸、一次正齐次且c(0)=0。LP特例取任意有限非负价格映射P与b≥0，K=P(R_+^d)，c_b(z)=min{bᵀy:y≥0,P(y)=z}。",
+  "roles": {
+    "C01-v3.L1": "提供任意两非负二维点的min/max互补非负系数；相同系数相加保持两个原点之和。",
+    "M-2811342f46434965bf98081115bedcde": "将分裂用于凸一次齐次成本得格子不等式，并以有限LP给有效价格成本特例的达到性、凸性和齐次性。"
+  },
+  "explanation": "对z,z′∈K，C01给z∧z′=λz+μz′、z∨z′=(1−λ)z+(1−μ)z′，λ,μ∈[0,1]。K是凸锥，故两组合仍在K；有限凸一次齐次性给c(αz+βz′)≤αc(z)+βc(z′)，适用于每个非负α,β，零和用c(0)=0处理。把两互补组合的不等式相加即得c(z∧z′)+c(z∨z′)≤c(z)+c(z′)。LP特例对每个z∈K可行、目标≥0且有限，由有限维LP取到最优；实现的凸组合与正缩放/反缩放分别给凸性和齐次性，c_b(0)=0由y=0达成。源分裂因而完整推出目标的一般成本不等式和该LP实现特例。",
+  "scope": "第一象限二维凸锥上的有限成本；不要求可微性、不要求唯一实现或严格正价格，覆盖折点、零坐标和零缩放。",
+  "whole_result": "由C01-v3.L1的互补分裂，完整得到M-281：K对逐坐标min/max封闭，c在K上满足子模格不等式；有效价格LP成本c_b的最优值达到且满足同一凸齐次子模接口。",
+  "evidence": [
+    {
+      "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+      "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+      "section": "三、保持原对偶之和的全维分裂"
+    },
+    {
+      "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+      "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+      "section": "四、最小实现成本及更一般的二维凸齐次接口"
+    },
+    {
+      "path": "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md",
+      "sha256": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4",
+      "section": "全维充分性的关键证明"
+    }
+  ],
+  "reviewed_by": "Boss2-local-draft-resource-3a-3a-6690dabdf05908fb",
+  "review_note": "实读并核互补分裂的零坐标/可比边界、凸锥闭合、次可加性及LP实现特例；零缩放以c(0)=0单独支付。",
+  "endpoint_pins": {
+    "C01-v3.L1": "7e10c37c032063fdf89402e59eac599c48df45d56dd9b7cbb4d9664e0f5675d7",
+    "M-2811342f46434965bf98081115bedcde": "af60ec8280f2b7a60d2ab12ee00d70801c1f43af00ba182f7a0f6f835e81f2fb"
+  },
+  "evidence_pins": {
+    "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+    "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4"
+  },
+  "review_digest": "91068cd435cbf0ea04b3bae3f6b76bb7c726ae9a6368222c8716e4e99ce024c9"
+}

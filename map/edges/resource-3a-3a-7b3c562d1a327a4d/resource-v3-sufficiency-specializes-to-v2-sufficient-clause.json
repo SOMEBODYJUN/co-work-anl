@@ -1,0 +1,52 @@
+{
+  "edge_id": "resource-v3-sufficiency-specializes-to-v2-sufficient-clause",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "SEL-RESOURCE-LP-SUBMODULAR-v3"
+  ],
+  "target_ids": [
+    "SEL-RESOURCE-LP-SUBMODULAR-v2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一连续packing启用LP与同一非负有限矩阵A；把v3的全维结论限制到d=2，并只比较“非零列至多两条正比例射线⇒对所有b,w≥0的启用值子模”这一充分方向。v2的二维全容量全利润必要性（反向三射线禁形）不由该限制推出。",
+  "roles": {
+    "SEL-RESOURCE-LP-SUBMODULAR-v3": "任意资源维数下两射线条件的归一、单调、子模充分性；在d=2时给出v2的充分子句。",
+    "SEL-RESOURCE-LP-SUBMODULAR-v2": "二维完整iff对象；接收v3在d=2的充分方向，但其必要性仍由自身三射线证书承担。"
+  },
+  "explanation": "两对象使用同一φ_(b,w)(S)=max{wᵀx:Ax≤b,0≤x≤1_S}模型。v3证明以两条列射线的两个价格坐标作互补分裂，保持原对偶成本之和，并由递减hinge得到子模；该论证对d=2直接成立，恰为v2 iff中的“至多两射线⇒子模”半边。v2另有三条不同射线的中间列、有理容量/利润禁形，证明“对所有b,w子模⇒至多两射线”；v3明示不主张该高维必要性，所以这条边只记录充分方向的维数特化。",
+  "scope": "连续有限packing LP；全容量、全利润量词和零列/零容量边界保留。边不把v3提升为二维必要性，也不把二维结论外推到高维。",
+  "contribution": {
+    "result": "v3的全维两射线充分性在d=2时复现v2的充分半边，量词和退化边界一致。",
+    "remaining": "v2的二维必要半边（三射线有理禁形）仍需v2自身证明；因此v3不能单独推出v2完整iff。"
+  },
+  "evidence": [
+    {
+      "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+      "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+      "section": "三、保持原对偶之和的全维分裂"
+    },
+    {
+      "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+      "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+      "section": "五、二维必要性与有理禁形证书"
+    },
+    {
+      "path": "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md",
+      "sha256": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4",
+      "section": "三个不能合并的陈述"
+    }
+  ],
+  "reviewed_by": "Boss2-local-draft-resource-3a-3a-7b3c562d1a327a4d",
+  "review_note": "逐项核同一模型、d=2限制、全b,w量词与两射线条件；明确仅为v2充分半边贡献，不替代其三射线必要性。",
+  "endpoint_pins": {
+    "SEL-RESOURCE-LP-SUBMODULAR-v2": "76c9e60f78b3cf56f25ac4ef67e7c75f41f668d648dafd44cea144160b7b8e5e",
+    "SEL-RESOURCE-LP-SUBMODULAR-v3": "2288bb14fc30a91426cc00107c084fac7a405022953e5142d262014ca328b442"
+  },
+  "evidence_pins": {
+    "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+    "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4"
+  },
+  "review_digest": "ca7e01294b0628d866754b3b74f1603c47e987cc81f4c7aa4d639ffb8f8102d0"
+}

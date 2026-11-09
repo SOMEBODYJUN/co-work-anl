@@ -1,0 +1,50 @@
+{
+  "edge_id": "resource-v2-three-ray-certificate-specializes-to-axial-obstruction",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "SEL-RESOURCE-LP-SUBMODULAR-v2"
+  ],
+  "target_ids": [
+    "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "源二维三射线必要性构造取中列d=a=(1,1)，端列e=b=(1,0)、f=c=(0,1)，λ=μ=1，α=1；所以容量αd=(1,1)、三利润均1，连续启用上界0≤x_i≤1_(i∈U)。",
+  "roles": {
+    "SEL-RESOURCE-LP-SUBMODULAR-v2": "其三射线禁形证明给出容量、利润、两个pair及交集的精确值和并集的可行见证。",
+    "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1": "要求指定两单位资源、轴向三列、单位利润下的四个精确启用值与严格缺口1。"
+  },
+  "explanation": "将固定轴向矩阵代入v2构造，中间列d=e+f，所有参数满足α≤min(1,1/λ,1/μ)。S={a,b}由第一容量x_a+x_b≤1给值≤1，T={a,c}由第二容量x_a+x_c≤1同理；两者及交集{a}均以x_a=1达到1。并集取x_a=0,x_b=x_c=1达到2；任意可行点两容量相加给2x_a+x_b+x_c≤2，从x_a≥0得到总利润≤2。于是φ(S)+φ(T)=2<3=φ(S∪T)+φ(S∩T)，与原有理掩码1,3,5,7的值1,1,1,2吻合。此为直接模型内特化，不需要额外的瓶颈背包ε族对象。",
+  "scope": "精确固定轴向反例；否定一般向量packing启用值全称子模，不否定scalar GAP、两射线充分性或高维所有矩阵。已完成3C中的ε族→轴向边另有独立源对象，本边只保留v2证明到本包轴向证书的直接特化。",
+  "whole_result": "v2三射线构造在d=(1,1)、e=(1,0)、f=(0,1)、α=1时得到SEL-VECTOR固定实例的全部四值及缺口1。",
+  "evidence": [
+    {
+      "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+      "sha256": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+      "section": "五、二维必要性与有理禁形证书"
+    },
+    {
+      "path": "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md",
+      "sha256": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4",
+      "section": "三个不能合并的陈述"
+    },
+    {
+      "path": "archives/bottleneck-knapsack/state/审查/向量容量启用值子模性失败三源复现--审查.md",
+      "sha256": "13b607c971691b207e37569e60887c5055a1b5fe50dd8456311a2ed6256cdb15",
+      "section": "1. Exact Fraction 顶点枚举"
+    }
+  ],
+  "reviewed_by": "Boss2-local-draft-resource-3a-3a-6690dabdf05908fb",
+  "review_note": "代入λ=μ=α=1，核对两pair、交集、并集的上界与达到见证，缺口方向与精确掩码一致；不借随机探针。",
+  "endpoint_pins": {
+    "SEL-RESOURCE-LP-SUBMODULAR-v2": "76c9e60f78b3cf56f25ac4ef67e7c75f41f668d648dafd44cea144160b7b8e5e",
+    "SEL-VECTOR-LP-SUBMODULAR-OBSTRUCTION-v1": "16d144d3e59bf43a8087069c301df2d65f68205b0c9f1cce3ba994cf489a5540"
+  },
+  "evidence_pins": {
+    "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md": "5f9d97e5e6fb490c22d1668b40120cd2ae180c13d766abe9f32ef7dd8f77c7e1",
+    "archives/resource-activation/state/资料/两列射线启用值的二维分类与全维充分性--资料.md": "d14b7729ff08dbd40303cd6fd7dcf83e2ff59b53a53fc964eaf2dae202bfeca4",
+    "archives/bottleneck-knapsack/state/审查/向量容量启用值子模性失败三源复现--审查.md": "13b607c971691b207e37569e60887c5055a1b5fe50dd8456311a2ed6256cdb15"
+  },
+  "review_digest": "b68600dfd805288bfa04626d284c961b2797ce7d98885c9758eef68c8ea94850"
+}
