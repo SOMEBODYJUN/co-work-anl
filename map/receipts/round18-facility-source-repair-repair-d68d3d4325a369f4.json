@@ -1,0 +1,85 @@
+{
+  "task_id": "round18-facility-source-repair-repair-d68d3d4325a369f4",
+  "stage": "3A",
+  "object_ids": [
+    "M-57da53da3efa46998555bccf77c69d35",
+    "SC-K-BOX-NE-FPT-TYPES",
+    "SC-K-CATALOG-WEIGHT-XP-2",
+    "SC-K-FROZEN-LIGHT-FPT"
+  ],
+  "read_object_ids": [
+    "MF-MODEL",
+    "SC-K-GREEDY-BOX-EXISTS",
+    "SC-K-2-E",
+    "SC-K-GREEDY-BOX-TO-2",
+    "SC-K-LEX-BUDGET"
+  ],
+  "input_pins": {
+    "M-57da53da3efa46998555bccf77c69d35": "dcc60adbdf8b7c23be791bd43530306a3189250c3a0d3e7c2c57be6b884d8b79",
+    "SC-K-BOX-NE-FPT-TYPES": "a25ce679a6fb384cad89743a0638dcb334c4751b231615a3ad46eda20fd5958b",
+    "SC-K-CATALOG-WEIGHT-XP-2": "a85a05646f591c74ee66369dc7861a7d121830acc4da53eef197ac05c845d818",
+    "SC-K-FROZEN-LIGHT-FPT": "35aad9a197254ead30134dd90701d1de4d79e9ab664a3c861b39c824c2c5443f",
+    "MF-MODEL": "1ca8c08397c3ec2c0a05b8eecb18e5e1de2b3e863c5f73f8c6eaf6b6fdf05bec",
+    "SC-K-GREEDY-BOX-EXISTS": "1734aef77d4e8a53a08935117a99c442bbbb5190a21570b036ab13ea96efc448",
+    "SC-K-2-E": "8db52cb038b9beaa2a8f11048d1349bf5c1bc580a1068742272964f8789a8535",
+    "SC-K-GREEDY-BOX-TO-2": "c5f0af766e5c2d960dc7f4b714189e568990f1165bbaeefba51b7a0d89a3ce14",
+    "SC-K-LEX-BUDGET": "e467f05f9359fdfdc25d73ee33d183123ce2aa83e7cb72408f6dedad53c35e20"
+  },
+  "status": "complete",
+  "coverage": {
+    "M-57da53da3efa46998555bccf77c69d35": {
+      "state": "isolated-after-review",
+      "comparison_scope": "实读任意预设占用的3-PARTITION编码、双向等和证明、逐名证书，与类型固定参数和真实规范贪心承诺域比较。",
+      "reason": "对m个q_s=1站，每站私有γ，所有公共原子总重mγ且菜单覆盖全部站。完整上盒2γ使每站公共重至多γ，求和强制每站恰γ；标准物品权位于(γ/4,γ/2)故每组恰三人。反向每站总重2γ，公共客户原成本比较2γ−w_i≤2γ，单选者无跨站动作，故得到全原NE。给定显式有理阈值与原标签赋值可清分母逐项核盒与NE，故属NP。归约在m≥2时首站领走全部公共客户和本地私有γ；第二轮首站分数(m+1)γ/2严格大于每个未开站的γ，因此同一输入的规范贪心至少首站两家，无法得到预设全q=1。归约允许m、不同公共权数增长，因而其一般困难性与任意预设占用的(m,d) FPT、真实贪心的(c,d)必成功均相容。",
+      "object_pin": "dcc60adbdf8b7c23be791bd43530306a3189250c3a0d3e7c2c57be6b884d8b79"
+    },
+    "SC-K-BOX-NE-FPT-TYPES": {
+      "state": "linked",
+      "comparison_scope": "核任意占用支持/计数整数规划的原菜单、完整上下盒、非活动大常数、标签恢复及固定维数；与真实贪心同冻结域的原盒选择和新增H约束比较。",
+      "reason": "对每活动位置检查扣一名原子自重后的全部跨站备选；上盒限制选中的证书而不删溢盒偏离。任意预设占用仅冻单选时，IP的可行与精确站纯站内均匀盒NE双向等价；额外冻结多选须另付全原NE。真实贪心轻分量用同冻结见证支付可行性，用上/下盒支付冻结重客户的跨分量原动作。按完整菜单定同原home后，增强IP每个关联只新增一条活动H约束，2R整数变量不变，能输出带H的全部原标签见证。标准固定维ILP是已建立算法导入；逐名显式客户、二进制有理权和阈值是复杂度合同。",
+      "edge_ids": [
+        "commonmany-type-support-and-greedy-existence-imply-frozen-light-fpt",
+        "commonmany-type-support-to-home-protected-greedy-seed"
+      ],
+      "object_pin": "a25ce679a6fb384cad89743a0638dcb334c4751b231615a3ad46eda20fd5958b"
+    },
+    "SC-K-CATALOG-WEIGHT-XP-2": {
+      "state": "isolated-after-review",
+      "comparison_scope": "核当前SC-K-2-E v4和SC-K-LEX-BUDGET v3的同一全布局候选族、四类预算及MAX完成。与冻重在轨FPT的不同参数和不同分支比较。",
+      "reason": "按精确权及全物理覆盖分型，p计全部物理站、d计全部不同输入权。枚举Σq=k和已占站收益非降次序，比较固定次序下各站收益坐标的依次最优；固定q时用重复q_s次的W_s/q_s排序向量与逐坐标优化等价。同一全局最大者在正覆盖时有全原NE、正收益及四预算：q_u≥2时按a=W_u/q_u，已占目标W_t≤(q_t+1)a、未占目标N_r≤a；q_u=1时用该lexmax的当前源客户J_u，分别在左侧加入w(J_u∩C_t)或w(J_u∩C_r)。这继承当前全局存在证明的候选族及搬迁预算，复杂度则由显式占用枚举和固定维计数ILP另证。(k+1)^(p−1)p!p f(p,d)poly(L)给XP上界，k显式；这条上界没有给出FPT算法，也没有排除其他FPT算法。MAX按现有已证导入支付实际偏离与默认查询，当前v3的conditional登记原样保留。p=1无实际偏离；无客户/全零覆盖直接全未服务，正覆盖无变量时直接赋值。旧重叠与SC-K-2-E现已按当前版本重核。",
+      "object_pin": "a85a05646f591c74ee66369dc7861a7d121830acc4da53eef197ac05c845d818"
+    },
+    "SC-K-FROZEN-LIGHT-FPT": {
+      "state": "linked",
+      "comparison_scope": "核真实贪心正γ、同原池/同冻结集合、轻分量(c,d)、完整盒及精确原NE，对照数学BOX-TO-2的两种源和四个实际目标分支、MAX和软件H。",
+      "reason": "两源ALL旧边在当前pins继续给整个在轨f(c,d)poly(L)必成功结论。归位定理的同冻结见证使各轻分量IP必有解；重客户跨分量仍由(W_s−w_i)/q_s≤γ≤W_t/q_t支付。给输出附同次贪心原池、重数、γ，数学BOX-TO-2覆盖任意设施标签和目录内不同原站的目标。源存续时以a=W_u/q_u≥γ用当前池：源与其他站预算为(静止家数+1)a；偏离者到已占站初始为空，到未占站只收N_v≤γ。源消失时以原池全局重置：高重数静止站保原池，单设施静止站从原单设施客户集合P中收客，最早单设施站的贪心比较给w(P∩C_t)≤2γ；目标已占时偏离者为空，未占时只收重挂到它的原源客户与真正新增客户，原池预算N_v+w(J_u^0∩C_v)≤2γ。两分支都得到普通偏离者帽≤2a的可行纯初态；已证MAX处理独占超帽静止原子和普通设施，补齐全部k(p−1)实际标签偏离，并给未列布局默认纯NE求值，无需展开p^k全表。plain IP只满足数学接口。独立的H增强步额外支付软件验收不等式，选择器和MAX的现行实现另计；完整规则数学组合保原在轨策略。",
+      "edge_ids": [
+        "commonmany-type-support-and-greedy-existence-imply-frozen-light-fpt"
+      ],
+      "object_pin": "35aad9a197254ead30134dd90701d1de4d79e9ab664a3c861b39c824c2c5443f"
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/boss5-474257b8-repair-repair-016035bfaaa42782/type-support-and-greedy-existence-to-frozen-light-fpt.json",
+      "sha256": "41ff42bdc98a6866ffc6e80805c22ac56266e8c3065543b2a2f0b5546d3aff6e"
+    },
+    {
+      "path": "map/edges/round18-facility-source-repair-repair-d68d3d4325a369f4/type-support-home-protected-greedy-seed.json",
+      "sha256": "95063631016e84ae315c9495a4a602bcc287810f05b6881b3030f821fe2ab7de"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "定向重核旧四核心、两项已闭合对象比较和唯一旧边。旧九pins中仅SC-K-2-E与SC-K-LEX-BUDGET变化，两者不是旧边端点；旧边三端点、各证据及正文SHA均仍有效，故原路径原SHA保留。实际阅读核心算法及贪心、截断、因子二、MAX与软件接口的承重段，复用其余已审材料；未重读Lenstra或调度外文原文，未执行ILP或MAX。新增H步另用冻结程序精确复核一个盒NE可过数学接口而被H拒绝的实例。本定义没有待承接的follow-up。",
+  "supersession": {
+    "boss5-474257b8-repair-repair-016035bfaaa42782": {
+      "reason": "以当前SC-K-2-E和SC-K-LEX-BUDGET重核全目录XP的全局候选族与搬迁预算，补清冻重见证对两种源、已占或未占目标、标签偏离及默认查询的接口。延续旧3-PARTITION边界和同冻FPT结论，并添加独立H增强步。",
+      "assets": {
+        "map/edges/boss5-474257b8-repair-repair-016035bfaaa42782/type-support-and-greedy-existence-to-frozen-light-fpt.json": {
+          "disposition": "retained",
+          "reason": "旧唯一canonical边的全部端点与证据SHA未变，正文复核仍完整支付不含H的原在轨FPT目标。按旧收据所列相同路径与SHA逐字节保留；新增H贡献有独立边身份。"
+        }
+      }
+    }
+  }
+}

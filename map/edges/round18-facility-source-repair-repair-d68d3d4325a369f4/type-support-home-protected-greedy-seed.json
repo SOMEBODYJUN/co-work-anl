@@ -1,0 +1,88 @@
+{
+  "edge_id": "commonmany-type-support-to-home-protected-greedy-seed",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-BOX-NE-FPT-TYPES",
+    "SC-K-GREEDY-BOX-EXISTS"
+  ],
+  "target_ids": [
+    "SC-K-2-E"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同有限目录，逐名显式客户及覆盖关系，正二进制有理原子权、显式带标签设施 k≥2。固定同一次规范贪心得到的正 γ、原池、带标签布局与重数，冻结所有被覆盖的重客户（w_i≥γ）及单已占选项客户，完整保留原已占菜单。每个轻分量至多 c 站及 d 种轻权。",
+  "roles": {
+    "SC-K-BOX-NE-FPT-TYPES": "提供类型计数与活动支持变量、全原选项比较、固定整数维度算法与逐名恢复；只新增活动归位保护约束。",
+    "SC-K-GREEDY-BOX-EXISTS": "真实贪心映射和截断归位证明提供同冻结集合、同时满足完整盒、原 NE 和 H 的全局分配；其分量限制是增强 ILP 的可行见证。",
+    "SC-K-2-E": "完整因子二规则需要在轨精确客户 NE 与全部真实偏离的受控续局。本步给其真实贪心参数子域的在轨选择输入，并额外满足当前软件的 H 验收。"
+  },
+  "explanation": "对轻分量 C，令 F_s 为同次贪心留在 s 的冻结重，U_C 为该分量全部固定及可动客户总重。以精确权 w_a 和完整已占菜单 A_a 分类型。任一被覆盖客户的原站是其 A_a 中最早开设的站，因此同类型有共同原站 h_a 和已知原重数 q_{h_a}，无需再按 home 增加变量。保留整数计数 x_as、活动支持 y_as 和原类型总数；W_s=F_s+Σ_aw_ax_as，保完整 q_sγ≤W_s≤(q_s+1)γ，并在 y_as=1 时检查 q_t(W_s−w_a)≤q_sW_t 对每个原备选 t∈A_a 成立。每个 a,s∈A_a 另加 q_{h_a}(W_s−w_a)≤q_{h_a}q_sγ+q_s(γ−w_a)+q_{h_a}U_C(1−y_as)。活动时除以正数 q_sq_{h_a} 就得到 (W_s−w_a)/q_s−γ≤(γ−w_a)/q_{h_a}，恰是程序对轻多选客户检查的 H。不活动时 W_s≤U_C 且 γ−w_a>0，门控自动放松。全局截断归位分配限制到每个分量保冻结量、全盒、原比较及 H，故增强 IP 必有解；这只调用存在性，不运行可能指数长的动态。逐类型按计数恢复原客户标签，站内以 1/q_s 在全部真实设施标签间独立均匀。完整轻菜单同分量；跨分量的冻结重客户由 (W_s−w_i)/q_s≤γ≤W_t/q_t 覆盖任一原备选，单选者和未覆盖者分别无跨站原动作和无动作。每个类型站关联只添一行，变量数仍≤2d(c2^{c−1}−c)；γ、W、U 和清分母后的系数均有输入多项式位长，标准固定变量 ILP 给 f(c,d)poly(L)。plain IP 与增强 IP 的见证集合确实有差别：四站 t,h,s,b 私有权依次为 13/4、54/25、7/5、1，共享 7/10 的菜单为 {t,h}、共享 2/5 的菜单为 {h,s}，取 k=7。贪心次序 t,h,t,s,t,h,b，q=(3,2,1,1)、γ=1。若共享客户分别去 h 和 s，则负载为 (13/4,143/50,9/5,1)，完整盒成立，两项跨站比较分别为 27/25≤13/12、7/5≤143/100，但在 s 的 2/5 客户 H 要求 2/5≤3/10。冻结源码在这个见证上准确拒绝 H，而接受贪心原分配；这核验了区别，增强 IP 的通用正确性来自上述证明。",
+  "scope": "真实规范贪心正 γ 的固定轻分量参数域。在轨输出通过数学完整盒、原 NE、指定冻结和 H 条件。H 是在轨证书保护；所有原客户动作照常检验，盒不作行为容量。这里没有改变现行 construct 的可选方法。",
+  "contribution": {
+    "result": "在目标的真实贪心参数子域，以 f(c,d)poly(L) 求同标签布局的完整盒、全原动作精确 NE 和额外 H，保同次贪心原 home、重数及 γ。该见证可作为 BOX-TO-2 的在轨输入，并满足现行 verify_on_path 的额外数学不等式。",
+    "remaining": "要从此步生成完整规则，对每个真实标签偏离及其余布局默认查询，接已有 BOX-TO-2 和 MAX；本边只构造在轨种子。现行软件仍需实现增强 ILP 并接到验证和完成接口，位多项式离轨实现还需接入 MAX。一般无界参数的统一位多项式选择仍开放；SC-K-2-E 的一般存在性另有完整证明。"
+  },
+  "reviewed_by": "Boss1",
+  "review_note": "实读类型 IP、归位存在及真实贪心映射，逐式核对 H 门控、同类型 home、清分母位长与原标签恢复。对所列四站例逐项枚举两个轻客户的四种分配，用冻结 verify_on_path 精确复核原分配接受及另一个盒 NE 因 H 拒绝。此复核未运行增强 ILP；标准固定维导入按现有源合同使用。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/客户类型支持整数规划与有限目录选择--算法.md",
+      "sha256": "91f596960bff1f8fec521a1f6ed468aed409c2a34cdb07f2d880ca9fff663fdd",
+      "section": "固定占用的完整站纯盒NE程序"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/客户类型支持整数规划与有限目录选择--算法.md",
+      "sha256": "91f596960bff1f8fec521a1f6ed468aed409c2a34cdb07f2d880ca9fff663fdd",
+      "section": "冻重客户后的局部FPT与后续存在性更新"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/阈值截断与归位计数的严格推进--引理.md",
+      "sha256": "9d84b47d3e7fdd71a3a25d82f5c1c8b65a3e8088ad1610c09e19794bbfb87015",
+      "section": "完整存在性、步数界和交错版本"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "原归属具有最大可达重数"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "归一化并证明全部客户NE"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "完整续局和时间层级"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/计算/规范贪心完整续局程序与选择器接口--计算.md",
+      "sha256": "0fa6549c64b7b2e402c696140c6cf97bcc8fa2d3131f02051b299f23c3efbdc4",
+      "section": "规范贪心与在轨终检"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/tools/evidence/greedy-box-program/source/multi_facility_spe/greedy_box.py",
+      "sha256": "b3b391f6e4c1efd8e56c036d3d588f191959504aede58e686c3bfcb291f6ef35"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+      "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+      "section": "精确陈述"
+    }
+  ],
+  "endpoint_pins": {
+    "SC-K-2-E": "8db52cb038b9beaa2a8f11048d1349bf5c1bc580a1068742272964f8789a8535",
+    "SC-K-BOX-NE-FPT-TYPES": "a25ce679a6fb384cad89743a0638dcb334c4751b231615a3ad46eda20fd5958b",
+    "SC-K-GREEDY-BOX-EXISTS": "1734aef77d4e8a53a08935117a99c442bbbb5190a21570b036ab13ea96efc448"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/算法/客户类型支持整数规划与有限目录选择--算法.md": "91f596960bff1f8fec521a1f6ed468aed409c2a34cdb07f2d880ca9fff663fdd",
+    "archives/facility-games/subarchives/common-many/state/引理/阈值截断与归位计数的严格推进--引理.md": "9d84b47d3e7fdd71a3a25d82f5c1c8b65a3e8088ad1610c09e19794bbfb87015",
+    "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+    "archives/facility-games/subarchives/common-many/state/计算/规范贪心完整续局程序与选择器接口--计算.md": "0fa6549c64b7b2e402c696140c6cf97bcc8fa2d3131f02051b299f23c3efbdc4",
+    "archives/facility-games/subarchives/common-many/tools/evidence/greedy-box-program/source/multi_facility_spe/greedy_box.py": "b3b391f6e4c1efd8e56c036d3d588f191959504aede58e686c3bfcb291f6ef35",
+    "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3"
+  },
+  "review_digest": "5215b4af7562a49244c23d46c926430048bfe2c0926a1e5e0fd30f5c7af77c49"
+}
