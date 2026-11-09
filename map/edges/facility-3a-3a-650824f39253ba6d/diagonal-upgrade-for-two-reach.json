@@ -1,0 +1,47 @@
+{
+  "edge_id": "fac6508-diagonal-upgrade-for-two-reach",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-DIAG-NORMAL"
+  ],
+  "target_ids": [
+    "SC-TWO-REACH-SPARSE"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同目录、同址合法、强制服务与线性含自身权重成本。在轨异址NE满足H(t)≤X、H(s)≤Y。此正规形的存在步骤适用于正实权，位复杂度另外要求有理。",
+  "roles": {
+    "SC-DIAG-NORMAL": "给出只枚举异址真实极小、以平衡同址处理同址偏离的正规形。",
+    "SC-TWO-REACH-SPARSE": "把单交叠两reach分支找到的异址威胁候选补为完整精确规则。"
+  },
+  "explanation": "若X≥R(t)/2且Y≥R(s)/2，在轨异址保留，异址实际偏离取对应真实坐标极小，同址偏离取对半。若X<R(t)/2，则H(t)≤X<R(t)/2，改在轨(t,t)对半，两家的所有异址偏离均可压至H(t)。若Y<R(s)/2则对称。不同标签真实偏离布局无冲突。此推导使用乘法式，零收益可直接检验。",
+  "scope": "只处理同址偏离的合法补全。依赖共同目录标签反射。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/算法/同址平衡正规形与异址交叠参数精确优化--算法.md",
+      "sha256": "a6f4b4e6867015bfd4e6a94a5af7c23bfb20cca28503bdce31eee6f65ed4e136",
+      "section": "对角正规形的完整理由"
+    },
+    {
+      "path": "archives/facility-games/state/定理/少地点与两种覆盖总重的精确稳定边界--定理.md",
+      "sha256": "e8ddb55eb3432abf5a366ff06393764e513cbec31bd1464447aa2549af332a65",
+      "section": "使用异址威胁的合法条件"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对正规形的严格替换条件及对半同址变更。没有将保留异址布局写成无条件结论。",
+  "contribution": {
+    "result": "任一满足两个异址真实威胁的精确客户NE都会给出某个完整精确设施稳定布局，必要时改同址。",
+    "remaining": "SC-TWO-REACH-SPARSE仍须找到该异址候选或单地点基例。"
+  },
+  "endpoint_pins": {
+    "SC-DIAG-NORMAL": "189121f846bc729cda90154050071daf3a31cf29d9a0ffb62de69467f64ed3ac",
+    "SC-TWO-REACH-SPARSE": "792b16587b8324da1bdef34b6257c114892f75bb43fb036e1495c1f5a4c97889"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/算法/同址平衡正规形与异址交叠参数精确优化--算法.md": "a6f4b4e6867015bfd4e6a94a5af7c23bfb20cca28503bdce31eee6f65ed4e136",
+    "archives/facility-games/state/定理/少地点与两种覆盖总重的精确稳定边界--定理.md": "e8ddb55eb3432abf5a366ff06393764e513cbec31bd1464447aa2549af332a65"
+  },
+  "review_digest": "77a9e6de60ca694c8e55b54c722b65a7b25de52feed2ac7f8ded9c3020778dc7"
+}

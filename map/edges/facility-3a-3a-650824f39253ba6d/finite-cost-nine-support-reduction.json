@@ -1,0 +1,43 @@
+{
+  "edge_id": "fac6508-finite-cost-nine-support-reduction",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "POLY-CONT"
+  ],
+  "target_ids": [
+    "M-364184f6b6324e008109f0ce4ea6c4a5"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "全部合法有序布局的公共客户数≤2（包括同址），强制参与、独立混合，设施收益为线性期望重量。各实现的有限费用可精确求值为位长多项式的有理数。",
+  "roles": {
+    "POLY-CONT": "在覆盖全部续局收益且可恢复续局的有界有理多面体表示上，用两阶段LP求完整最优。",
+    "M-364184f6b6324e008109f0ce4ea6c4a5": "从每局部≤2战略客户的任意精确有限费用构造这一表示。"
+  },
+  "explanation": "每位战略客户的两行动成本差是对至多一名其他战略客户Bernoulli概率的仿射组合。纯第一、纯第二、闭混合各写成线性等式/不等式，最多九个有理二维单元，概率点本身实现局部NE。零系数及混合端点保留。收益仿射，每局部有限博弈给非空NE集。按POLY-CONT求真实坐标极小、全目录D和最优λ，最终LP至多三个变量并输出全规则。常维单元和最多八项求值使总运行时间按显式输入及求值位成本为多项式。",
+  "scope": "非线性有限费用下每个合法布局战略客户至多二的完整算法，保留无有限倍率分支。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/定理/显式续局多面体的两领导者倍率最优化--定理.md",
+      "sha256": "d7ec0b488384110be23d882c81891ebf60957c7c5eb843ea44d09c312626a4b1",
+      "section": "LP定理及完整续局逻辑"
+    },
+    {
+      "path": "archives/facility-games/state/定理/显式续局多面体的两领导者倍率最优化--定理.md",
+      "sha256": "d7ec0b488384110be23d882c81891ebf60957c7c5eb843ea44d09c312626a4b1",
+      "section": "任意有限费用、每局部至多两战略客户"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "已核独立随机概率、线性支持约束、端点和零威胁。没有把K≥3的多线性约束或只异址交叠小纳入。",
+  "whole_result": "上述每局部至多两战略客户的精确有限费用游戏可用至多九支持LP在位多项式时间求真正实例最优倍率及达到证书，或判无有限倍率。",
+  "endpoint_pins": {
+    "M-364184f6b6324e008109f0ce4ea6c4a5": "f98e486d0e77cec28a3ebf48bef765290fb58fcc18cee02dd3530b9d76793d41",
+    "POLY-CONT": "46fce4d3af6e393cda83c7f032104d2f60cd83d5656148322b46bb3d94417614"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/定理/显式续局多面体的两领导者倍率最优化--定理.md": "d7ec0b488384110be23d882c81891ebf60957c7c5eb843ea44d09c312626a4b1"
+  },
+  "review_digest": "63b6ebd4f6b8a7ddf8abd8d8feb00d73b26d9cc43501f12ea5a1e0052ce1456d"
+}

@@ -1,0 +1,78 @@
+{
+  "edge_id": "commonmany-greedy-clipped-progress-rq-local-search",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-GREEDY-BOX-EXISTS"
+  ],
+  "target_ids": [
+    "SC-K-RQ-MIXED-BOX"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "抽象盒输入显式给 m≥1、逐名 n≥0、非增正二进制整数 q_t、二进制有理 c_t∈[0,1]、0<w_i<1 和非空原菜单 A_i。令 h_i=min A_i，故 q_{h_i}≥q_t 对所有 t∈A_i 成立。严格改善测试保留全部原菜单，归位仅用于所证守卫。无真实贪心可实现性假设。",
+  "roles": {
+    "SC-K-GREEDY-BOX-EXISTS": "提供盒和 H 的批次不变量、对全部原选项的严格改善判据、至多 n 次的纯归位修复、每微步严格增加的截断交错势及其位长编码。",
+    "SC-K-RQ-MIXED-BOX": "收到覆盖全部抽象输入的见证存在、有限确定构造和多项式局部搜索表述。目标的统一总位时间要求仍开放。"
+  },
+  "explanation": "采用目标原变量。X_t=c_t+Σ_{a_i=t}w_i−Σ_{h_i=t}w_i，p_t=X_t/q_t，e_i=(X_{a_i}−w_i)/q_{a_i}，r_i=(1−w_i)/q_{h_i}。抽象顺序直接兑现源的 Home 条件，初态 a=h 满足 B 与 H。取可行局部搜索状态为 a∈Π_i A_i 且 B、H 同时成立的全部赋值。以源引理的固定向量 P=(Λ_ρ,−N_ρ)_ρ 的整数编码为最大化目标。令 D 为 c、w 的分母公倍数，Q=lcm_t q_t，T=DQ；每个 Λ_ρ 坐标乘 T，−N_ρ 改为 n−N_ρ，以 1+max(T,n) 为基底连接固定长度的 d(m+1) 个数字，其中 d≤n。B、H 状态中截断价在 [0,1]，故数字合法且编码严格保序。log T 由分母位长和及 Σ_t log q_t 控制，目标计算、状态编码及可行性检查均位多项式，n=0 时目标为 0。每个邻居由一次全原选项严格改善 p_v<e_i 加固定平局序的完整归位得到。源引理给修复 ≤n 次且恢复 B、H，每一步 P 严格增加，故邻居严格提高同一目标。扫描全部 (i,v) 以及为选中改善执行修复均位多项式。没有邻居恰表示全部 e_i≤p_v，此时原赋值就是目标所需见证，且另外满足 H。于是初始解、目标和改进或报告局部最优均有位多项式算法，给该抽象见证搜索一个 PLS 表述及直接解码。迭代时全部微步在 Π_i A_i 中严格推进，至多 Π_i|A_i|−1 次，状态和扫描无需展开 q 或保存轨迹。",
+  "scope": "完整抽象 RQ 域，包括二进制大 q、精确平局、任意重数和关联、重复类型逐名及 n=0。局部搜索状态加 H 只是构造加强，目标输出仍只要求 B 与全部原选项 NE。PLS 上界对应这一个抽象盒见证搜索；不使用全博弈的 SC-K-LOCAL-PLS 四预算目标。",
+  "contribution": {
+    "result": "对每个抽象 RQ 输入确定地有限构造满足完整盒及所有原 NE 比较的赋值并额外保证 H。完整赋值可位多项式校验，搜索有直接的 PLS 表述及无轨迹多项式位空间实现，每次改进或归位批次的成本位多项式。",
+    "remaining": "仍须证明所选规则的总位成本为统一多项式，或构造另一统一位多项式选择算法。Π_i|A_i|−1 可能为指数级上界，多项式位长目标和 PLS 表述不给收敛多项式或任何搜索/轨迹下界。用于原完整因子二时另核同一真实贪心归一化及 BOX-TO-2 补全。"
+  },
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/阈值截断与归位计数的严格推进--引理.md",
+      "sha256": "9d84b47d3e7fdd71a3a25d82f5c1c8b65a3e8088ad1610c09e19794bbfb87015",
+      "section": "抽象输入、量词及目标"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/阈值截断与归位计数的严格推进--引理.md",
+      "sha256": "9d84b47d3e7fdd71a3a25d82f5c1c8b65a3e8088ad1610c09e19794bbfb87015",
+      "section": "固定交错势"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/阈值截断与归位计数的严格推进--引理.md",
+      "sha256": "9d84b47d3e7fdd71a3a25d82f5c1c8b65a3e8088ad1610c09e19794bbfb87015",
+      "section": "任意归位顺序恢复完整盒"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/阈值截断与归位计数的严格推进--引理.md",
+      "sha256": "9d84b47d3e7fdd71a3a25d82f5c1c8b65a3e8088ad1610c09e19794bbfb87015",
+      "section": "完整存在性、步数界和交错版本"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/阈值截断与归位计数的严格推进--引理.md",
+      "sha256": "9d84b47d3e7fdd71a3a25d82f5c1c8b65a3e8088ad1610c09e19794bbfb87015",
+      "section": "确定顺序与准确位复杂度"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/问题/一般异权盒选择的统一位复杂度目标--问题.md",
+      "sha256": "321b36b0574063b359700751b1206400c134de698365598a4fdca7832dc10a3e",
+      "section": "精确抽象合同"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/问题/一般异权盒选择的统一位复杂度目标--问题.md",
+      "sha256": "321b36b0574063b359700751b1206400c134de698365598a4fdca7832dc10a3e",
+      "section": "已知有限算法及尚缺的总界"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/问题/一般构造工作坊与安全冻结证书的完整任务合同--问题.md",
+      "sha256": "53663903a43cd211b4b7f5a9feba62942a72d326c8a9dbd2a69a659fe464b059",
+      "section": "路线 A：一般盒内均衡的位多项式选择"
+    }
+  ],
+  "reviewed_by": "Boss1-common-many-3A-worker",
+  "review_note": "逐式核对目标的 h=min A 与源 Home、任意合法 B+H 起点的一批操作、固定势的可计算整数编码、≤n 次归位的改进预言机、局部最优到全部原始不等式的直接解码。分别核二进制 q、不删偏离、空客户与见证强 H。该贡献保留目标公开的统一位多项式算法义务。",
+  "endpoint_pins": {
+    "SC-K-GREEDY-BOX-EXISTS": "1734aef77d4e8a53a08935117a99c442bbbb5190a21570b036ab13ea96efc448",
+    "SC-K-RQ-MIXED-BOX": "3e2eefe4dd01bd22f50a521cb1d77b9ab32320d11a491f1dec390379ce5b3c48"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/引理/阈值截断与归位计数的严格推进--引理.md": "9d84b47d3e7fdd71a3a25d82f5c1c8b65a3e8088ad1610c09e19794bbfb87015",
+    "archives/facility-games/subarchives/common-many/state/问题/一般异权盒选择的统一位复杂度目标--问题.md": "321b36b0574063b359700751b1206400c134de698365598a4fdca7832dc10a3e",
+    "archives/facility-games/subarchives/common-many/state/问题/一般构造工作坊与安全冻结证书的完整任务合同--问题.md": "53663903a43cd211b4b7f5a9feba62942a72d326c8a9dbd2a69a659fe464b059"
+  },
+  "review_digest": "8369e69202dba87a63a49b0ea5fd98f716b660f1c2752ff7f855b3d42497fb5a"
+}

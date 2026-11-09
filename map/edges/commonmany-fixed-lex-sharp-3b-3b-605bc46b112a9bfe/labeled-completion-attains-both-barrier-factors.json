@@ -1,0 +1,69 @@
+{
+  "edge_id": "commonmany-labeled-completion-attains-both-lex-barrier-witnesses",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "MF-CONT-COMPLETE"
+  ],
+  "target_ids": [
+    "SC-K-LEXMAX-BARRIER"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同非空有限目录、带标签设施、强制服务、独立混合和含自重的实际负载。取障碍正文的显式族，整数 k,h≥2，目录 A,T,Z_2,…,Z_{k−1}，客户 H,e,z_j 的重量分别 h,1,M=3(h+1)/4，可达集分别 {A,T},{A},{Z_j}。写 a=(h+1)/2。以下局部在轨、真实偏离的精确 NE 由该显式族直接验算，不是假设另有未证明的证书。",
+  "roles": {
+    "MF-CONT-COMPLETE": "在分别固定的坏、好带标签布局，将逐项指定的在轨及真实偏离客户 NE 同时补齐为各自一份全布局精确 NE 续局。",
+    "SC-K-LEXMAX-BARRIER": "收到固定坏占用上的 β_h 可实现性及替代占用上的完整精确 SPE 两个存在步骤。"
+  },
+  "explanation": "坏占用为两家在 A、每个 Z_j 一家。H,e 在 A 分别独立均匀，本站条件成本对两个标签相同且无别的可达已占站，二家各得 a；锚点客户各得唯一标签。A→T 后 e 强制留 A，H 在 T 成本 h 小于在 A 的 h+1，偏离者得 h。A→Z_j 后 H,e 只能同留唯一 A，z_j 独占静止 Z_j，移到空的新同址标签至多平局，偏离者得 0。Z_j→A、T 或另一 Z 后原 z_j 失去覆盖，H,e 各自占一静止 A，仍覆盖的各锚点客户各留原标签，每名客户达到自身重量成本下界，偏离者得 0。好占用为 A,T 各一家及每个 Z_j 一家，在轨 H 去 T、e 去 A、z_j 去各锚点，各自独占。在 A 或某 Z_j 移动时，其私有客户失去覆盖，其他客户各留静止标签，偏离者为 0。T→Z_j 后 H,e 只能共处唯一静止 A，锚点客户仍各自独占，偏离者为 0。T→A 时 H 独占静止 A，e 独占偏离者，各自付自身重量，偏离者仅得 1≤h。这穷尽目标，k=2 时省掉锚点情形。标签置换可同时重命名全部见证。对坏、好布局分别应用源引理，实际偏离只改一个标签坐标而彼此互异，其他布局用严格纯改善的纯默认 NE，故两种倍率都由各自一份完整规则达到。",
+  "scope": "只认证障碍族在两种占用的完整规则可实现性。坏占用的在轨站内均匀、全部离轨纯；好占用全布局可纯。比较其余同址标签时允许平局，离轨规则可不对称；好、坏占用各自有一份规则。",
+  "contribution": {
+    "result": "∀整数 k,h≥2，显式障碍族中每个坏占用标签实现可用一份完整续局达到倍率 β_h=2h/(h+1)；替代占用有完整精确 SPE，因 α≥1，亦证明该实例全布局可选时的最优倍率为 1。",
+    "remaining": "目标另需证明所有全局站点纯/站内均匀 lexmax 候选必投影到坏占用，以及任意坏占用、任意在轨和离轨精确 NE 的倍率均≥β_h。障碍正文分别用最小排序坐标和 H 的严格最佳反应证明；带标签拼接自身只完成可达到的一侧。"
+  },
+  "reviewed_by": "Boss1",
+  "review_note": "核对两种占用上每类带标签偏离的完整客户动作与精确成本，特别是 A→Z_j 的同址平局、好占用 T→Z_j 的强制共处与 T→A 的偏离者仅得 1。正文全参数证明承担存在结论，Boss2 的有限回放记录只作复核语境。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+      "section": "一份完整续局的量词"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+      "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+      "section": "六、把全部局部选择拼成一个完整函数"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/障碍/固定字典序占用的二倍极限--障碍.md",
+      "sha256": "9e8e9b3cbe62926584325cb029894f94b07f1c1fce55b4a013ad31746c7aa326",
+      "section": "参数化输入与候选占用"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/障碍/固定字典序占用的二倍极限--障碍.md",
+      "sha256": "9e8e9b3cbe62926584325cb029894f94b07f1c1fce55b4a013ad31746c7aa326",
+      "section": "在固定占用下达到 \\(\\beta_h\\)"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/障碍/固定字典序占用的二倍极限--障碍.md",
+      "sha256": "9e8e9b3cbe62926584325cb029894f94b07f1c1fce55b4a013ad31746c7aa326",
+      "section": "另一占用的精确 SPE"
+    },
+    {
+      "path": "tools/evidence/common-many-primary-register/original/research/current/multi_facility/claims.md",
+      "sha256": "3ebdc5ee98b8dbd847e06e26e1fc6b708002e485fe2b31abb9ee1ae491d26e89",
+      "section": "SC-K-LEXMAX-BARRIER -- exact boundary of the selected facility layout"
+    }
+  ],
+  "endpoint_pins": {
+    "MF-CONT-COMPLETE": "749dad55c2ae74db4f443c5adb20553c8aced4cf785ecf7f1a75fe28613b24d6",
+    "SC-K-LEXMAX-BARRIER": "d39f1686436350b5f3e616e74683752d3042f2262904f8b0ac5844a8cb10b958"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+    "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+    "archives/facility-games/subarchives/common-many/state/障碍/固定字典序占用的二倍极限--障碍.md": "9e8e9b3cbe62926584325cb029894f94b07f1c1fce55b4a013ad31746c7aa326",
+    "tools/evidence/common-many-primary-register/original/research/current/multi_facility/claims.md": "3ebdc5ee98b8dbd847e06e26e1fc6b708002e485fe2b31abb9ee1ae491d26e89"
+  },
+  "review_digest": "193f970d1880e4326f30ba640db39fa0afb44971adee76a2f62e68fa629e9a41"
+}

@@ -1,0 +1,61 @@
+{
+  "edge_id": "closed-support-threshold-to-integer-spectrum-dp",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-b5488c2696964ec58745ce5426f2b777"
+  ],
+  "target_ids": [
+    "DP-W"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定两设施的闭谱模型，公共权为显式正整数且数值总重W；非负有理背景不进入W。",
+  "roles": {
+    "M-b5488c2696964ec58745ce5426f2b777": "提供完整闭谱关系和逐名恢复条件。",
+    "DP-W": "在重前缀上按(m,z)合并状态得整数总重算法。"
+  },
+  "explanation": "按权非增排序，固定符号ε和截断j，要求w_{j+1}≤εΔ≤w_j。尾部轻客户置低侧，前缀任一纯/名义混合态均满足个体阈值。闭支持恒等式变为(1−m)Δ=δ−εℓ_j+z，因而在同一前缀上可按(m,z)无损去重。m=1且右端零保整闭片，边界等权客户的其他NE由更长前缀保留；回溯概率由Δ恢复。",
+  "scope": "DP-W的数学状态压缩和完整谱，不把W的数值界当log W位界。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md",
+      "sha256": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1"
+    },
+    {
+      "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+      "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc"
+    },
+    {
+      "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+      "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+      "section": "整数总重DP-W"
+    },
+    {
+      "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+      "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+      "section": "阈值压缩是完整谱的等价表示"
+    },
+    {
+      "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+      "sha256": "9ff056ee4073e03d61b049a3e1e35e2b68828a63fe5c4b3260c0a7c5b714fe8c",
+      "section": "A11.2 DP-W：轻客户先固定，重客户按状态合并"
+    }
+  ],
+  "reviewed_by": "facility-3a-3a-76480373938c02e2",
+  "review_note": "复核ε的符号、闭前缀端点和m=1连续片。",
+  "contribution": {
+    "result": "全部NE差距谱可以由两符号、重前缀及可达整数状态(m,z)的点与闭区间精确表示，并逐名恢复见证。",
+    "remaining": "DP-W的转移实现、O(n²W+n log n)运算及保父层/滚动空间需要对可达层逐项计数。"
+  },
+  "endpoint_pins": {
+    "DP-W": "d99cd765793b6068c0c96dfd8e767e48dabe37cbb0520001b3ca997297b76d84",
+    "M-b5488c2696964ec58745ce5426f2b777": "a5548e0aafb7ae3c7d4143b189e5f8a84d5b33957f2427fa3dc60658139aeff0"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1",
+    "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+    "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md": "9ff056ee4073e03d61b049a3e1e35e2b68828a63fe5c4b3260c0a7c5b714fe8c"
+  },
+  "review_digest": "18dfc0e012dbb4d6b1ce527a9929e7d2ea913ea67e78268358f959a3e6a7e3bd"
+}

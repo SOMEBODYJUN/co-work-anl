@@ -1,0 +1,42 @@
+{
+  "edge_id": "fac6508-two-reach-counterexample-hypothesis",
+  "kind": "corrects",
+  "status": "accepted",
+  "source_ids": [
+    "facility-games/two-reach-three-site-multiple-overlap-no-exact-stability"
+  ],
+  "target_ids": [
+    "SC-TWO-REACH-SPARSE"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "考察从SC-TWO-REACH-SPARSE删除“每两个不同地点至多一名共同客户”的加强式，其他假设与存在量词保持。",
+  "roles": {
+    "facility-games/two-reach-three-site-multiple-overlap-no-exact-stability": "五客户三地点有理输入，reach为20,20,16，最优完整规则倍率14/13。",
+    "SC-TWO-REACH-SPARSE": "原命题的有效域是异址单交叠加至多两种reach。"
+  },
+  "explanation": "AB和BC各含两名共同客户。完整独立混合NE负载按AB、AC、BC为(14,14)、(12,16)、(15,13)，反射覆盖反向布局。H(A),H(B),H(C)=(16,14,15)。同址任意NE有一侧≤reach/2，故九个有序布局最少需要14/13。BC在轨及异址对应NE/同址对半匹配。严格排除的是删除单交叠后的普遍α=1陈述。",
+  "scope": "假设不可删除的范围，原SC-TWO-REACH-SPARSE有效。全同reach定理及三地点单交叠阈值不受此例影响。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/反例/两种覆盖总重的多交叠三地点不稳定例--反例.md",
+      "sha256": "ed5e124b34a3eb1f5bf610d6392b6df99deef9d0d67bb53b3f3f82a634bbe1c4"
+    },
+    {
+      "path": "archives/facility-games/state/定理/少地点与两种覆盖总重的精确稳定边界--定理.md",
+      "sha256": "e8ddb55eb3432abf5a366ff06393764e513cbec31bd1464447aa2549af332a65",
+      "section": "不可删除的假设与复杂度用途"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "检查BC两混合时|Δ|=4>3、AB不同分配同负载、同址低侧界和完整规则的达到。",
+  "endpoint_pins": {
+    "SC-TWO-REACH-SPARSE": "792b16587b8324da1bdef34b6257c114892f75bb43fb036e1495c1f5a4c97889",
+    "facility-games/two-reach-three-site-multiple-overlap-no-exact-stability": "a997bcf0c2e890b2eb354c2f3e39b0aeaa5ac5aaca9f9fd73adb34a844d0c3ec"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/反例/两种覆盖总重的多交叠三地点不稳定例--反例.md": "ed5e124b34a3eb1f5bf610d6392b6df99deef9d0d67bb53b3f3f82a634bbe1c4",
+    "archives/facility-games/state/定理/少地点与两种覆盖总重的精确稳定边界--定理.md": "e8ddb55eb3432abf5a366ff06393764e513cbec31bd1464447aa2549af332a65"
+  },
+  "review_digest": "ccfcc4bd811c7fdd39848473b4d84d8c356be01d002d18d8e1f0c1c8ac56faba"
+}

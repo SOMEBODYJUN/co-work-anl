@@ -1,0 +1,51 @@
+{
+  "edge_id": "fac6508-wardrop-k-two-local-error",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "LOCAL-ATOM-WARDROP-k"
+  ],
+  "target_ids": [
+    "SC-GRANULAR-APPROX"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取K=2且s≠t，原子和可拆分对照使用同一布局可达集。共同目录的θ计所有不同物理地点共有的最大原子。同址另指定所有客户独立对半。",
+  "roles": {
+    "LOCAL-ATOM-WARDROP-k": "任意固定布局的全部原子NE与全部Wardrop负载相差至多(K−1)θ_local/2。",
+    "SC-GRANULAR-APPROX": "使用异址局部误差加同址对半，在对照稳定选址上形成倍率。"
+  },
+  "explanation": "异址恰有两家可达的客户就是C_s∩C_t，θ_local≤θ，因此两个坐标均≤θ/2误差。任意同址原子NE不能直接套异址θ：一站单客户纯NE的偏差是w/2，即使异址θ=0。粒度规则指定独立对半使同址恰等于对照。其全局另外取对照排序收益字典序最大布局。最高reach的同址选项给双方对照收益≥R/2。对照稳定性与每次扰动≤θ/2才把比值限为(R+θ)/(R−θ)。",
+  "scope": "K=2固定布局误差迁至粒度证明的局部步骤，不提供一般K的设施选址倍率。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/引理/原子与Wardrop固定布局负载的尖锐坐标误差--引理.md",
+      "sha256": "60825fe521008b64eb8db1150abe872f663fd9e575735e125d07cbaa6336e4f7"
+    },
+    {
+      "path": "archives/facility-games/state/定理/异址共有原子的粒度误差与近似续局--定理.md",
+      "sha256": "62bf7b3b43267b45ab9592a1ef8bd517a6ec42823e79e017c02411d0cbb8ccd1",
+      "section": "所有精确原子NE的误差"
+    },
+    {
+      "path": "archives/facility-games/state/定理/异址共有原子的粒度误差与近似续局--定理.md",
+      "sha256": "62bf7b3b43267b45ab9592a1ef8bd517a6ec42823e79e017c02411d0cbb8ccd1",
+      "section": "从误差到完整续局与有理算法"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "已区分任意原子NE误差、固定同址选择和选址的正收益下界。K链尖锐例未否定可选好的续局。",
+  "contribution": {
+    "result": "任意异址客户NE逐坐标距同布局Wardrop收益≤θ/2，指定对半时同址误差为0。",
+    "remaining": "还需对照字典序势的全目录稳定性、在轨收益≥R/2、R>θ的分母控制与有理算法。"
+  },
+  "endpoint_pins": {
+    "LOCAL-ATOM-WARDROP-k": "9a8140369e14f0e4a514e672c6ae515d475f1fee033d27f7c7975898147e1722",
+    "SC-GRANULAR-APPROX": "a8d08cdbb65f9f99a88608a429a90f88f1ced3a9fc8523040110ea73782e46bb"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/引理/原子与Wardrop固定布局负载的尖锐坐标误差--引理.md": "60825fe521008b64eb8db1150abe872f663fd9e575735e125d07cbaa6336e4f7",
+    "archives/facility-games/state/定理/异址共有原子的粒度误差与近似续局--定理.md": "62bf7b3b43267b45ab9592a1ef8bd517a6ec42823e79e017c02411d0cbb8ccd1"
+  },
+  "review_digest": "2041f1891f242f7b9fc0d309e44f6c018e34115b295bc7effc92bdd338292de6"
+}

@@ -1,0 +1,81 @@
+{
+  "edge_id": "commonmany-greedy-componentwise-microstep-bound",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-GREEDY-BUDGET",
+    "SC-K-GREEDY-MAX-MULT",
+    "SC-K-GREEDY-BOX-EXISTS",
+    "SC-K-GREEDY-BOX-TO-2"
+  ],
+  "target_ids": [
+    "SC-K-GREEDY-BOX-FINITE-2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一次正覆盖的规范贪心运行。输入为显式 k≥2 家带标签设施的共同目录模型，原子权为正二进制有理数。固定单占用选项客户和原权至少 γ 的客户。对其余客户与已占站，以全部原已占选项为边作二部关联图。",
+  "roles": {
+    "SC-K-GREEDY-BUDGET": "给出归一化初始超额 c_t=W_t^0/γ−q_t∈[0,1]，保留原池及离轨预算。",
+    "SC-K-GREEDY-MAX-MULT": "给出每个轻客户的原归属为其全部可达重数的最大者。该性质在关联分量内保留。",
+    "SC-K-GREEDY-BOX-EXISTS": "提供对每个分量都适用的固定截断交错势及单步严格推进。分量投影可用守护交错版本。",
+    "SC-K-GREEDY-BOX-TO-2": "从真实完整盒内精确在轨均衡接到所有标签布局的完整因子二续局。其数学 MAX 接口提供给定见证后的位多项式完成与默认求值。",
+    "SC-K-GREEDY-BOX-FINITE-2": "收到原在轨微步的分量加和上界，并在分量状态总数受统一多项式控制时收到同一布局的位多项式续局构造。"
+  },
+  "explanation": "令 I_C 与 O_C 分别为关联分量 C 的可移动客户与已占站。对 t∈O_C，归一化超额 X_t=c_t+Σ_{a_i=t}w_i−Σ_{h_i=t}w_i 的变化项均来自 I_C，因为客户的全部 A_i 和 h_i 位于同一分量。轻客户的每个原站点比较及自身归位条件 H 因而只依赖该分量。全局运行的每个严格改善或归家只改变一个分量。删除其它分量的步，所得序列在原归属起步，且每一步仍是当时满足 H 者的原严格改善，或在外且违反 H 者的归家。由该分量自身阈值集合和价格坐标组成的固定交错势在投影的每一步严格增加，所以投影至多访问 S_C=∏_{i∈I_C}|A_i| 个不同状态，最多 S_C−1 步。将真实移动步唯一归入其分量即可相加，此论证也适用于跨分量交错的全局守护运行。没有轻客户的站点保持初始盒，空轻集合的步数为零。极大全局守护序列的终点仍为原定理的完整盒、全部原选项 NE 和 H。归一化逆映射以及重客户的 (W_s−u_i)/q_s≤γ≤W_v/q_v 恢复所有真实客户的最佳反应，同站设施由独立均匀混合给相同成本。精确扫描、单步势检查和无移动终止检查分别只用多项式位操作。因此设输入位长为 L，若所考察输入类存在统一多项式 P 使 Σ_C(S_C−1)≤P(L)，则在轨选择为位多项式。例如每个分量至多有固定 b 名可移动客户时，S_C≤|O|^b，且含可移动客户的分量数至多客户数，无需限制单客户菜单大小或同分量权种。接入 BOX-TO-2 的数学 MAX 完成，得到 k(|S|−1) 个纯偏离条目和位多项式默认求值规则。各条目保原标签与真实可达设施，偏离者收益同时至多在轨两倍。",
+  "scope": "加和步数界适用于所有正覆盖规范贪心输入的守护运行。位多项式全续局结论限于存在统一多项式分量状态总数界的输入类，并使用已证数学 MAX 完成。冻结重客户可跨分量，其分配恒定且全盒下已为最佳反应。零覆盖另给全未服务续局。",
+  "contribution": {
+    "result": "把原在轨微步上界 Π_i|A_i|−1 细化为 Σ_C(Π_{i∈I_C}|A_i|−1)。在该和受统一位多项式控制的子域内，例如每个分量的可移动客户数有固定上界，位多项式求同一规范贪心布局的真实完整盒精确在轨 NE。接入数学 MAX 后位多项式构造紧凑完整因子二续局并逐布局求值。",
+    "remaining": "一个大分量仍可有指数多合法分配，故一般输入的统一位多项式在轨选择仍待证。这里的时间强化使用数学 MAX，当前冻结程序的有限纯改善与报告序列化有各自的界。目标的一般有限构造仍由既有完整证明给出。"
+  },
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "规范贪心、冻结原池及预算"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "原归属具有最大可达重数"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "归一化并证明全部客户NE"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/阈值截断与归位计数的严格推进--引理.md",
+      "sha256": "9d84b47d3e7fdd71a3a25d82f5c1c8b65a3e8088ad1610c09e19794bbfb87015",
+      "section": "每个合规单客户步骤严格推进P"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/阈值截断与归位计数的严格推进--引理.md",
+      "sha256": "9d84b47d3e7fdd71a3a25d82f5c1c8b65a3e8088ad1610c09e19794bbfb87015",
+      "section": "完整存在性、步数界和交错版本"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/阈值截断与归位计数的严格推进--引理.md",
+      "sha256": "9d84b47d3e7fdd71a3a25d82f5c1c8b65a3e8088ad1610c09e19794bbfb87015",
+      "section": "确定顺序与准确位复杂度"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "完整续局和时间层级"
+    }
+  ],
+  "reviewed_by": "Boss1-common-many-3A-worker",
+  "review_note": "逐项验证分量内保留全部菜单、归属、超额及 H，删除其它分量步后每次原移动仍满足本分量的守护条件。局部固定势给局部计数，再对原微步加和。将数学 MAX 完成和冻结代码实际时间、格式化合同分开。",
+  "endpoint_pins": {
+    "SC-K-GREEDY-BOX-EXISTS": "1734aef77d4e8a53a08935117a99c442bbbb5190a21570b036ab13ea96efc448",
+    "SC-K-GREEDY-BOX-FINITE-2": "0e3f0944b8ebe9195ae24070478d8e8d9a9c1568202317acab01d7a516eff027",
+    "SC-K-GREEDY-BOX-TO-2": "c5f0af766e5c2d960dc7f4b714189e568990f1165bbaeefba51b7a0d89a3ce14",
+    "SC-K-GREEDY-BUDGET": "5c08688db4620c0cd4fe6d2c03e61e444fec71aa1bd30ee430061dee1a6a1b83",
+    "SC-K-GREEDY-MAX-MULT": "b2ee941db2e2116d5d0191c6f77d88e0dbc98609d8d87ac25960c5b143e2f564"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+    "archives/facility-games/subarchives/common-many/state/引理/阈值截断与归位计数的严格推进--引理.md": "9d84b47d3e7fdd71a3a25d82f5c1c8b65a3e8088ad1610c09e19794bbfb87015"
+  },
+  "review_digest": "6a3f540f5fd1e99117892a30aecb02290d0cf42d49fb3a45e12143eb270db646"
+}

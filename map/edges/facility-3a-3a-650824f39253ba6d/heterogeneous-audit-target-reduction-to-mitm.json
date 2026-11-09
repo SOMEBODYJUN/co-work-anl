@@ -1,0 +1,42 @@
+{
+  "edge_id": "fac6508-heterogeneous-audit-target-reduction-to-mitm",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "facility-games/heterogeneous/response-core-and-long-cycle-sources-independent-review-20261031"
+  ],
+  "target_ids": [
+    "facility-games/threshold-meet-in-middle-objectives-and-response-pruning"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "固定双设施线性含自重布局，目标负载配额化为差区间I=[2a−V,V−2b]，I非空并严格位于零一侧。η=min_{z∈I}|z|>0。",
+  "roles": {
+    "facility-games/heterogeneous/response-core-and-long-cycle-sources-independent-review-20261031": "逐来源保留单侧分离区间内的轻客户强制删除双射，以及回应闭核的全目录范围。",
+    "facility-games/threshold-meet-in-middle-objectives-and-response-pruning": "在压缩后的战略客户集仍可精确查询目标，但指数取决于保留客户数。"
+  },
+  "explanation": "若I>0且w<η≤Δ，该客户不可能纯第一或实际混合，只能纯第二。把其权加入B，不改V或差，对剩余客户条件成本不变，反向加回也为NE。I<0时对称加入A。w=η必须保留，因在边界纯高侧可无差异。压缩后用单谷目标max{0,lo−Δ,Δ−hi}判交区间，最小值0恰有解。闭核提升只保全目录D，不保所有在轨选择。普通任意长核心不否定ρ。",
+  "scope": "单个目标的局部条件压缩及MITM使用范围。原审查的四种子候选和异构普遍保证各自保状态。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/审查/三份异构回应核心与长环补充审查--审查.md",
+      "sha256": "8f43459c7559dbe18104f057f6f0d95b43916eb7594ebaaa3a6ad4c4c1c4a231"
+    },
+    {
+      "path": "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
+      "sha256": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65",
+      "section": "局部查询的确切输入与保证"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核严格轻权边界、保V和双向概率恢复。未把此检查变成一般多项式核或统一常数核心。",
+  "endpoint_pins": {
+    "facility-games/heterogeneous/response-core-and-long-cycle-sources-independent-review-20261031": "8dc72fb6d9e336f31f74dc54e00680e7eff4cb5f9b55fc764b0deed9f137e5f0",
+    "facility-games/threshold-meet-in-middle-objectives-and-response-pruning": "52c837474f6bfe98b72a3b9069775c4d15ab71b091afa040eee0ef709ea73930"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/审查/三份异构回应核心与长环补充审查--审查.md": "8f43459c7559dbe18104f057f6f0d95b43916eb7594ebaaa3a6ad4c4c1c4a231",
+    "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65"
+  },
+  "review_digest": "1fd822e2630e251740dcf10824959e1bf0aee79bc3ac7e7ee9178fa14e55aa80"
+}

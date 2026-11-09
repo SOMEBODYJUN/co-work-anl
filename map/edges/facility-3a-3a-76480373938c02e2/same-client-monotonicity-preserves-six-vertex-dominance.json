@@ -1,0 +1,50 @@
+{
+  "edge_id": "same-client-monotonicity-preserves-six-vertex-dominance",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "HC-MONOTONE"
+  ],
+  "target_ids": [
+    "HC-2-LOW"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "HC-2-LOW的六顶点异构双目录，整数M>4，每格恰两名战略共同客户。费用可沿用线性或取同一客户在两端共用的严格递增实现负载函数。",
+  "roles": {
+    "HC-MONOTONE": "逐实现严格占优保持及依次删除对NE、CE、CCE的约束。",
+    "HC-2-LOW": "六顶点族每格唯一续局的证明步骤。"
+  },
+  "explanation": "AC先固定C至A再令A至C，AD先固定C至A再令B至D，BC依次将D、A固定至B，BD先固定D至D再令B至B。首轮比较的反事实其他负载上界/下界依次为M+1<M+8、M+1<M+2、M+11<M+14、M+9<M+10，加回自己的同一重量仍严格。第二轮在首轮选择固定后同样逐实现严格。CCE若在被占优行动上给正概率，改选占优行动的无条件成本严格降低；再对第二轮应用。最后单点分配本身满足纯NE，故所有NE、CE、CCE恰该单点。每名客户使用相同两端函数时，严格比较及最终服务重量均不变。",
+  "scope": "只应用于证明逐实现严格占优链的四格，不断言一般双共同客户混合NE集合受单调变换保持。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/证明/短目录扰动与六顶点服务名单的教材核算--证明.md",
+      "sha256": "9acc2f3b49aeffa524efd77d0ba4ea317c417cae6084a645ff8204fba6edf592"
+    },
+    {
+      "path": "archives/facility-games/state/引理/客户相关续局与纯负载费用变换的精确边界--引理.md",
+      "sha256": "c8ce76fffd5a4a946383b3b07e71629d32f3094b7e114c732de1cc3514b80f73"
+    },
+    {
+      "path": "archives/facility-games/state/定理/异构双目录六顶点的唯一续局因子二下界--定理.md",
+      "sha256": "06bd18f0cb543b332b458866284e486be758dbb5b3812d51909a4c8099f67cb5"
+    }
+  ],
+  "reviewed_by": "facility-3a-3a-76480373938c02e2",
+  "review_note": "核对表中四个首轮严格比较、次轮条件和CCE消元方向。",
+  "contribution": {
+    "result": "四格逐实现严格占优各给唯一NE、CE、CCE；同客户同两端的严格递增变换仍保四格同一服务分配及设施收益。",
+    "remaining": "六顶点覆盖表、服务重量及改善环的最小比2−18/(M+14)要由构造自己的逐格算术另付。"
+  },
+  "endpoint_pins": {
+    "HC-2-LOW": "91de9a1ca510eced667d03c8e983f32ab0252de1cb593a60f152ef5faa8ae4c1",
+    "HC-MONOTONE": "06dbc73396cb6e3e7454579a92992fa380ade0df9e52f69532e98d0196029a5c"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/证明/短目录扰动与六顶点服务名单的教材核算--证明.md": "9acc2f3b49aeffa524efd77d0ba4ea317c417cae6084a645ff8204fba6edf592",
+    "archives/facility-games/state/引理/客户相关续局与纯负载费用变换的精确边界--引理.md": "c8ce76fffd5a4a946383b3b07e71629d32f3094b7e114c732de1cc3514b80f73",
+    "archives/facility-games/state/定理/异构双目录六顶点的唯一续局因子二下界--定理.md": "06bd18f0cb543b332b458866284e486be758dbb5b3812d51909a4c8099f67cb5"
+  },
+  "review_digest": "f978572f7795b17aaebe3c148a1467d704ee9bc7eded1a85b1ec177d88c7c494"
+}

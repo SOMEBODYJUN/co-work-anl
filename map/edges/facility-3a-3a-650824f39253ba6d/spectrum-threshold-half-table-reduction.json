@@ -1,0 +1,49 @@
+{
+  "edge_id": "fac6508-spectrum-threshold-half-table-reduction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-b5488c2696964ec58745ce5426f2b777"
+  ],
+  "target_ids": [
+    "facility-games/threshold-meet-in-middle-objectives-and-response-pruning"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定双设施布局，正有理公共客户、非负私有背景，线性条件负载费用。目标可精确比较且以t0为单谷中心。",
+  "roles": {
+    "M-b5488c2696964ec58745ce5426f2b777": "给出全部闭支持条件及单混合者的闭区间。",
+    "facility-games/threshold-meet-in-middle-objectives-and-response-pruning": "以符号和重量阈值压缩支持，再折半查单谷目标最优。"
+  },
+  "explanation": "固定ε=sign Δ和排序重前缀h，使w_{h+1}≤εΔ≤w_h。尾部可固定低侧，重者各闭状态重量不等式自动满足。全谱恒等式变为(1−m)Δ=A−B−εℓ+z，所有前缀同(m,z)可用同一个支持。分半后对固定左状态和右混合数，m≠1时二分右z的可行区间和距目标两侧最近点。负分母仅反转顺序。m=1只核分子零，并将t0夹到完整可行闭区间。跨前缀、符号和两半状态求最优并恢复概率。每半至多3^ceil(n/2)个状态，加多项式组合开销。",
+  "scope": "只为单谷目标找到精确NE。不输出完整谱，含n=0、Δ=0、相等权和端点。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md",
+      "sha256": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1"
+    },
+    {
+      "path": "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
+      "sha256": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65",
+      "section": "局部查询的确切输入与保证"
+    },
+    {
+      "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+      "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+      "section": "阈值压缩是完整谱的等价表示"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读双向闭支持和阈值分解，核全前缀包括Δ=0、等权端点不漏、两半状态同(m,z)不损未来。",
+  "whole_result": "在目标单谷并可精确比较时，以poly(n)3^ceil(n/2)时间与空间找精确最优NE并恢复其见证，中间有理位长多项式。",
+  "endpoint_pins": {
+    "M-b5488c2696964ec58745ce5426f2b777": "a5548e0aafb7ae3c7d4143b189e5f8a84d5b33957f2427fa3dc60658139aeff0",
+    "facility-games/threshold-meet-in-middle-objectives-and-response-pruning": "52c837474f6bfe98b72a3b9069775c4d15ab71b091afa040eee0ef709ea73930"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1",
+    "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md": "ec6ee5236f62d7f869c8098560fc984236b9c26913f14aa86afa3cbcd1931f65",
+    "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc"
+  },
+  "review_digest": "c6461add58e3652d89af231671023d8427a46b30112f21bf7ea4fc163313def7"
+}

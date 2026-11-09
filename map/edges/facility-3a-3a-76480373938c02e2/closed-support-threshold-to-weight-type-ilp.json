@@ -1,0 +1,61 @@
+{
+  "edge_id": "closed-support-threshold-to-weight-type-ilp",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-b5488c2696964ec58745ce5426f2b777"
+  ],
+  "target_ids": [
+    "FPT-D"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "两设施闭支持模型，逐名显式正有理共同客户分成d个精确权类；目标是坐标极值或给定配额可行性。",
+  "roles": {
+    "M-b5488c2696964ec58745ce5426f2b777": "提供依靠Δ的完整支持条件及名义混合恢复公式。",
+    "FPT-D": "按权类计数转成固定维有理ILP。"
+  },
+  "explanation": "固定符号ε及重类型前缀，轻类型置低侧。重类型h只需纯第二人数b_h及名义混合人数m_h，纯第一人数为n_h−b_h−m_h；z=Σv_h(n_h−2b_h−m_h)。固定Σm_h=K后，K≠1时Δ为整数计数的仿射函数，乘负分母时翻转比较；K=1时要求分子0并直接在完整闭阈值区间上与配额相交。任意整数见证可分配回显式同权客户，反向将每个NE的闭支持计数。",
+  "scope": "至多2d个整数变量的精确局部归约；不把权类人数压成二进制隐式输出，不将未实现的ILP程序描述成已运行。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md",
+      "sha256": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1"
+    },
+    {
+      "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+      "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc"
+    },
+    {
+      "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+      "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+      "section": "阈值压缩是完整谱的等价表示"
+    },
+    {
+      "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+      "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+      "section": "不同权种FPT-D"
+    },
+    {
+      "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+      "sha256": "9ff056ee4073e03d61b049a3e1e35e2b68828a63fe5c4b3260c0a7c5b714fe8c",
+      "section": "A11.3 FPT-D：不同重量少时，按人数代替逐人状态"
+    }
+  ],
+  "reviewed_by": "facility-3a-3a-76480373938c02e2",
+  "review_note": "比较同一(m,z)充分统计量在DP中逐人、在ILP中按权类计数的两种实现；核负分母及K=1。",
+  "contribution": {
+    "result": "坐标极值和双配额见证完全等价于O(d(n+1))个分支中的固定维ILP和K=1闭区间检查。",
+    "remaining": "FPT-D的参数时间来自外部固定维ILP算法和分支位长分析，规范ILP程序尚未实现。"
+  },
+  "endpoint_pins": {
+    "FPT-D": "3aedc3e33f5c05ef993d8e8cb4ee710642ee9fdb042e874c6f0962ca6a243a50",
+    "M-b5488c2696964ec58745ce5426f2b777": "a5548e0aafb7ae3c7d4143b189e5f8a84d5b33957f2427fa3dc60658139aeff0"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1",
+    "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+    "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md": "9ff056ee4073e03d61b049a3e1e35e2b68828a63fe5c4b3260c0a7c5b714fe8c"
+  },
+  "review_digest": "8fecbfa5e27146461bc67cfa4ddc10f280629f00142cef7484ca13dd8840b95a"
+}
