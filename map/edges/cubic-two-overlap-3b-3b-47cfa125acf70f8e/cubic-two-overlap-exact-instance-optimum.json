@@ -1,0 +1,58 @@
+{
+  "edge_id": "cubic-two-overlap-exact-instance-optimum",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "facility-games/offdiagonal-two-overlap-nonlinear-nine-rectangle-exact-optimum"
+  ],
+  "target_ids": [
+    "Q-CUBIC"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "用 Q-CUBIC 的共同有限非空目录、两家带标签设施、显式覆盖、强制服务和独立混合。所有客户及地点使用同一真实条件期望立方费用。输入是显式正二进制有理权，且每对不同地点至多共享两名客户。",
+  "roles": {
+    "facility-games/offdiagonal-two-overlap-nonlinear-nine-rectangle-exact-optimum": "通过完整九矩形谱、真坐标极小、标签反射、同址正规形及逐区间优化，计算真实实例最优倍率并构造见证。",
+    "Q-CUBIC": "对有理且全异址稀疏的立方子域得到逐实例精确 α*(I)、完整续局和 α*(I)≤φ 的精确判定。"
+  },
+  "explanation": "取 h_{i,s}(z)=z³。同址标签对称；正有理权的实现负载是有限有理和，按分母乘积上界有多项式位长。取立方只使分子分母位长至多乘三，故满足精确费用合同。对每个有序异址对，固定一名公共客户自身行动，仅另一名客户随机，费用差为两实现差的仿射平均。纯首、纯次及闭无差异状态逐坐标相交，覆盖所有实独立混合 NE，保留端点、零斜率及空单元。每个非空矩形的第一收益区间恰是其正权仿射像，每点都能恢复同一矩形内的见证。保留区间并；例如 A=1、B=0、公共权 2,3 时第一收益只有 3、4、15611/6375，凸化会误纳 7/2。\n\n以 D_{s,t}=w(C_s∪C_t) 记总服务重。取 m_1(s,t)=min_Q l_Q、m_2(s,t)=D_{s,t}−max_Q u_Q，并保实现各自极小的端点。标签反射给 m_2(s,t)=m_1(t,s)。全目录异址威胁 H(t)=max_{r≠t}m_1(r,t)，空最大为零。在轨同址候选 G_t=max{1,2H(t)/R_t}，其中 R_t=w(C_t)。在轨异址对的真实区间 [l,u] 上最小化 max{1,H(t)/X,H(s)/(D_{s,t}−X)}。若总重及威胁和为正，将 D_{s,t}H(t)/(H(t)+H(s)) 截断到 [l,u]，包括一侧零威胁。两威胁为零时任取区间端点；总重为零且有正威胁时此候选为无穷。零分母按乘法约束解释。对所有真实区间和全部同址候选取最小。\n\n正规形的必要性来自各异址偏离的坐标极小及同址的收益和。H(t) 若包含当前异址条目，该项由当前 NE 的收益自动上界。充分性还须检查异址在轨时搬到对手地点的两个同址偏离：对半收益 R_t/2、R_s/2 若有一项超过 aX、aY，则相应地点 H<R/2，可换该地点同址取得因子 1；否则保留原异址。对每个实际异址偏离取偏离者坐标极小见证，两家实际偏离布局不相交。其余异址任选保存的 NE，同址统一独立对半，得到一张含全部 m² 个有序布局的规则，逐客户区分未覆盖、强制与混合。\n\n覆盖扫描和输出为 O(m²(n+1)) 次操作，费用求值 O(m²) 次。仿射根、端点、区间截断和见证填充只用固定层数有理运算，H 只选已有分数，因此总时间与输出位长均为输入位长的多项式。最优倍率与输出概率均有理，但最优性比较的范围含全部实独立策略。对 α*(I)≥1，可用 α*(I)²−α*(I)−1≤0 精确判断是否达到 φ。正实权下的矩形和正规形仍是数学陈述；位复杂度结论依赖显式有理输入。若 k=3 且 A≠B，客户 i 的差已有 6(A−B)w_jw_ℓ p_jp_ℓ 项，其中 j,ℓ 是另外两名公共客户，逐坐标分离不再普遍成立。",
+  "scope": "所有异址对 k≤2 的显式正二进制有理权立方输入，不要求强配额门槛，也不限制同址客户人数。求的是在全部实独立精确续局中的真正实例最优，证书可用有理概率。",
+  "contribution": {
+    "result": "位多项式地返回给定稀疏有理立方实例的 α*(I)、最优在轨布局和完整 m² 精确 NE 表，并精确判定该实例是否有完整 φ 稳定规则。",
+    "remaining": "逐实例最优值算法没有证明所有稀疏实例都达到 φ。还需独立的统一上界证明或排除所有布局及真实续局的反例；一般交叠也需新的均衡几何或稳定性机制。已有数学算法之外，规范通用非线性软件仍未交付。"
+  },
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/算法/异址双交叠非线性均衡的九矩形精确优化--算法.md",
+      "sha256": "cd40a2f9e10044613c662e7d8477722b02f31ce10246204d528ec97d768327bf"
+    },
+    {
+      "path": "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md",
+      "sha256": "d1a1c3e352427b09e3821451f4fbb79e709611b41365f346cc777d3ad22949cc",
+      "section": "A12.5 从全部异址收益谱得到实例最优值"
+    },
+    {
+      "path": "archives/facility-games/state/证明/地点费用推广的条件期望与完整续局教学推导--证明.md",
+      "sha256": "f00befec59c4e8205511c2abdc0e09022fc4a95e120306f79dfba6252b87eaaf",
+      "section": "12.8 两名公共客户时，从四个费用值走到全局算法"
+    },
+    {
+      "path": "archives/facility-games/subarchives/nonlinear-costs/state/问题/立方客户费用的共同目录普遍阈值--问题.md",
+      "sha256": "f4c21f58333070b5008066fbb1e3441883e9c4a1922ec1a0adb1549b901093c9",
+      "section": "旧首个任务已经回收的部分与仍开放的配额"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对真实非凸谱、坐标极小、同址切换与所有布局条目的相容性。以固定三次幂满足精确有理费用合同，保留实策略最优性的量词和有理输出的适用域。",
+  "endpoint_pins": {
+    "Q-CUBIC": "f8a61353497057a7bc1921d53625c4450599c2f4b6d04e29837970cc4aec58da",
+    "facility-games/offdiagonal-two-overlap-nonlinear-nine-rectangle-exact-optimum": "135d412720444b396513e09794a3095d6f602c259eca25614d914aba3222e376"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/算法/异址双交叠非线性均衡的九矩形精确优化--算法.md": "cd40a2f9e10044613c662e7d8477722b02f31ce10246204d528ec97d768327bf",
+    "archives/facility-games/state/定理/共同目录地点费用的同址正规形与尖锐二--定理.md": "d1a1c3e352427b09e3821451f4fbb79e709611b41365f346cc777d3ad22949cc",
+    "archives/facility-games/state/证明/地点费用推广的条件期望与完整续局教学推导--证明.md": "f00befec59c4e8205511c2abdc0e09022fc4a95e120306f79dfba6252b87eaaf",
+    "archives/facility-games/subarchives/nonlinear-costs/state/问题/立方客户费用的共同目录普遍阈值--问题.md": "f4c21f58333070b5008066fbb1e3441883e9c4a1922ec1a0adb1549b901093c9"
+  },
+  "review_digest": "1ee7e69dacb1bc348d993d9964fbd5d1888d8e7c4b5a1841742e8939c5d3b3f0"
+}

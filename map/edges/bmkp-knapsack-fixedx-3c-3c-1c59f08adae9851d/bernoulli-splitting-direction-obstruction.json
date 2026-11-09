@@ -1,0 +1,75 @@
+{
+  "edge_id": "two-size-bernoulli-split-blocks-stepwise-poisson-reduction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-82d4ebf16f4b4dc9b7d41b564b9031df"
+  ],
+  "target_ids": [
+    "M-1e98f0c71a6846b08ae6a93cd1b8dd0c"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "容量1；a∈(1/2,1]、b∈(1/3,1/2]；独立Bernoulli激活R_x，非负权w，自然LP约束aΣ_Ax_i+bΣ_Bx_i≤1，且D=w·x>0。令N=E[max{w(S):S⊆R_x,s(S)≤1}]、ρ=N/D。两件大不可同取，三件小不可同取，两件小可同取。证书均取a=7/10、b=2/5，a+b=11/10>1，故一大不能和一小同取。一次拆分把一个物品换成两个彼此独立且与其他物品独立的副本，每个副本保留原尺寸和权重，其激活概率和等于原概率。",
+  "roles": {
+    "M-82d4ebf16f4b4dc9b7d41b564b9031df": "提供拆分前后的合法实例，全部单位权，在相同类期望激活数、期望尺寸和价值分母下给出严格上升。",
+    "M-1e98f0c71a6846b08ae6a93cd1b8dd0c": "其不相容切片允许这两个地集和对应边缘，故无法调用每次拆分都使ρ不增的全称证明步骤。"
+  },
+  "explanation": "原三件为(A₁,B₁,B₂)，s=(7/10,2/5,2/5)，w=(1,1,1)，x=(1,1/10,1/10)。以(B₂′,B₂″)替换B₂后，s′=(7/10,2/5,2/5,2/5)，w′=(1,1,1,1)，x′=(1,1/10,1/20,1/20)。所有激活均独立（第一坐标为常量）。两实例的类边缘和相同，为(1,1/5)，故期望尺寸39/50、D=6/5。因一大必活跃且不能与小物同取，最优值为1+1_{至少两小激活}。原概率为1/100；新概率为(1/10)(1/20)+(1/10)(1/20)+(1/20)^2−2(1/10)(1/20)^2=3/250，三件同活跃的重复计数扣两次。故N由101/100增至253/250，ρ由101/120增至253/300，差1/600>0。新副本可以同时激活，两件小可同取使至少两件的小类胜过大件，这正是把固定均值当作逐步比值单调时丢失的事件。全部正权在两个尺寸类内都已统一，故这项失败不依赖固定x权重统一化反例。",
+  "scope": "否定“每个保持期望尺寸和价值分母的独立同尺寸、同权拆分都使ρ不增”，包括将该全称命题迭代至Poisson极限的路线。旧实例另外给合法但较弱的全域上界101/120，增量1/600是两个比值之差。两实例均在自然LP但不在整数可行集凸包内，因为Σ_Ax_i+(Σ_Bx_i)/2=11/10>1。兼容a+b≤1时一大一小可同取，本例的最优值事件公式随之改变。",
+  "contribution": {
+    "result": "C08严格不相容分支中，即使全部物品等权，保持类均值及分母的单次等分仍可把ρ提高1/600。不能用“逐步拆分始终不升”把该分支统一归约到Poisson计数；拆分前的单个合法实例独立给该分支和全域下确界≤101/120。",
+    "remaining": "仍须比较其他具有额外条件的拆分或改变边缘的整体极值变换，或另证不相容分支的匹配sharp下界与CRS。此差值没有比较任何一般Poisson极限与全域下确界。"
+  },
+  "evidence": [
+    {
+      "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+      "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+      "section": "15 项候选的准确状态"
+    },
+    {
+      "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+      "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+      "section": "C08. 两种尺寸混合 knapsack 的 correlation gap 与 CRS【A；作者大 conjecture 的可控截面】"
+    },
+    {
+      "path": "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md",
+      "sha256": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+      "section": "保持期望的拆分可严格升ratio"
+    },
+    {
+      "path": "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md",
+      "sha256": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+      "section": "模型与被否定的量词"
+    },
+    {
+      "path": "archives/contention-resolution/state/资料/两尺寸固定激活的类内统一权重障碍--资料.md",
+      "sha256": "52461c9df21e71f242312efa28048d0c5cc60eec6eca1ca544b17a40b07451c0"
+    },
+    {
+      "path": "tools/evidence/retired-config-certificates/original/history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_size_knapsack_obstructions.md",
+      "sha256": "65236f0e34af962565e6ab64d946eaa9d7ab1145e1524e75a582e06a801a1f07",
+      "section": "3. 保持期望成本的Bernoulli拆分不总降低ratio"
+    },
+    {
+      "path": "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md",
+      "sha256": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+      "section": "3. C08：两尺寸 knapsack 的精确障碍"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐件核对原/新实例的自然LP成本、分母和独立激活期望，按至少两小活跃事件推导两个有理比，并用完全激活枚举复核。",
+  "endpoint_pins": {
+    "M-1e98f0c71a6846b08ae6a93cd1b8dd0c": "69832df9d40d35ff49439dcdaab8c79439816ac55f73333dcc336622d8235f81",
+    "M-82d4ebf16f4b4dc9b7d41b564b9031df": "3bdfff588586f5b75d4c5e47a9bb9ffed501b891419b0b1d57b4b5bd2b5eb0be"
+  },
+  "evidence_pins": {
+    "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+    "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+    "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md": "78a89049aa00573ea0b830f3f6ccd09a381e23b0ce3e7abbb68e43a7dcc337c5",
+    "archives/contention-resolution/state/资料/两尺寸固定激活的类内统一权重障碍--资料.md": "52461c9df21e71f242312efa28048d0c5cc60eec6eca1ca544b17a40b07451c0",
+    "tools/evidence/retired-config-certificates/original/history/retired_topic_selection/multi_lane/research/topic_selection/notes/two_size_knapsack_obstructions.md": "65236f0e34af962565e6ab64d946eaa9d7ab1145e1524e75a582e06a801a1f07",
+    "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a"
+  },
+  "review_digest": "d50755c8561f37602fbdcefe3514602632ad6504e046a9cdda2822af2f4593d6"
+}

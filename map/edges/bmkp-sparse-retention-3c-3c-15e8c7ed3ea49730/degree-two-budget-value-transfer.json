@@ -1,0 +1,91 @@
+{
+  "edge_id": "bmkp-c06-explicit-support-degree-two-hard-budget-value",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-d05829d1479f4b8aad94f3953ab9ffc4"
+  ],
+  "target_ids": [
+    "M-668ee3a8071f4d0c8b8acf2e40a93d60"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "C06同一给定有理分数点x，有限显式支持E仅列非零配置，各配置在对应下闭局部族内。非负有理利润v_li、启用成本c_l和预算B，每箱配置和≤1、每物品总边际≤1，且Σ_e c_l x_e≤B。先排除c_l>B的箱，L(x)=Σ_(l,S) x_(l,S)Σ_(i∈S)v_li以排除后的点计。原切片至多两种启用成本、每物品在支持中至多两个不同箱。C可取原比较域内所有启用成本的正上界，和P03数值比较时取同一个最大箱成本C并令k=B/C。严格利润比较要求L(x)>0。",
+  "roles": {
+    "M-d05829d1479f4b8aad94f3953ab9ffc4": "提供硬预算配置最大覆盖接口、异号保成本交换、末端可负担单箱以及精确有理位复杂度。",
+    "M-668ee3a8071f4d0c8b8acf2e40a93d60": "C06要求比较同一给定配置LP点上的联合budget/item-contention。所得结论支付硬预算总值及明确历史乘积的标量比较，保留条件留存与sharp量词。"
+  },
+  "explanation": "沿原证明的支持配置e=(l,S)、成本c_l和逐物品最高利润覆盖g，不改变L(x)或可开箱的含义。原独立配置势直接给(1−1/e)L(x)/2。C06的度二按不同箱计，一个箱可有多项含同一物品的配置。在初始势H中，独立跨箱，箱内按坐标z_e互斥选择一个配置，余概率为空。物品i的正利润阈值t至多有两个箱质量a,b，分别为该箱的合格配置坐标之和，可补零。在原点x有a+b≤1，因此ab≤(a+b)^2/4≤(a+b)/4，阈值命中a+b−ab≥3(a+b)/4。逐物品对利润阈值积分得H(x)≥3L(x)/4。H固定其他箱时对一个箱的坐标仿射，故同箱保和、保成本的端点交换可逐次清零一项而不减H。每箱至多一项后H等于原覆盖多线性势G。零成本项升一，正成本分数对沿(1/c_l,−1/c_j)交换，子模性使沿线凸，取不减端点直至余整数配置集A及至多一件分数配置e，权q∈(0,1)。A预算可行，e可负担，G≤g(A)+q g({e})，故二者较好至少保G/(1+q)≥G/2。无分数件则直接取A，若A∪{e}已经可负担则直接取并集。由此原点运行给普适3L(x)/8。对B≥C>0还从s x另跑同一算法，取s=1−C/B。相对原x的阈值命中为s(a+b)−s²ab≥(s−s²/4)(a+b)，故H(s x)≥(s−s²/4)L(x)，依旧用原L(x)作分母。交换保持成本≤B−C，最后一件可升一，新增成本至多C，覆盖单调。两次输出取总值较优者得max{3/8,s−s²/4}L(x)。也可据原分数成本W把s取min{1,(B−C)/W}，W=0时直接取s=1。若所有支持成本为零，则同箱清零后全升一，得3L(x)/4。任何候选整数集均每箱至多一项，解码时冲突物品只留最高利润箱，其他箱删去该物品，由下闭性得原局部可行指派且价值恰为g。删后配置不必也在显式支持中。每次运行O(|E|)次端点交换。H由各阈值的箱内有理和、跨箱乘积精确评估，G为其一配置特例。同箱坐标是初始坐标子集和。跨箱以质量w_l=c_l q_l记账，交换将一质量定在0或c_l，另一取旧两质量之和减该固定成本。未固定质量携带互不重叠的初始质量子集及相应已固定成本，公共分母可用输入分母之积控制。除以原正成本、利润阈值乘积及第二次运行的有理s均保多项式位长。比较P03 Theorems 5.2/5.4在同一可负担输入、同一k与同一L(x)的已报告总利润系数p(k)。k<3时p(k)=1/8<3/8。k≥3时p(k)=(1−1/k)(1−1/√k)/2<1/2，而s≥2/3给s−s²/4≥5/9。所以加入留一箱成本的运行后，每个有限k都有严格的总值保证改进。只用原常数γ=(1−1/e)/2或只用3/8时，对k≥3的严格比较恰为3≤k<k_γ，其中k_γ是p(k)=γ的唯一根，两值分别约10.844326及21.835281。若保留乘积另指固定的αβ，且同样乘原L(x)，则常数3/8只在αβ<3/8时单独认证严格改进，参数保证同理。作为自然LP最坏界的独立上限，B=1、两箱成本1/2+δ及1/2+2δ（0<δ<1/4为有理数），各含一个不同的单位利润物品。取x=(1,(1/2−δ)/(1/2+2δ))，只能开一个箱，整数最优为1，OPT/L(x)=(1/2+2δ)/(1+δ)趋于1/2。",
+  "scope": "仅给定有限有理显式配置支持的总利润指派，以排除不可负担箱后的原L(x)为基准。度二加强对任意成本种类有效，因而包含两成本切片。P03是同分母的已报告保证值比较。结论未评价P03每一实例的实际输出，未构造保持给定抽样分布的逐副本联合留存机制。同一x若需与隐式配置LP最优或整数OPT比较，须另证分数点质量和取得成本。",
+  "evidence": [
+    {
+      "path": "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md",
+      "sha256": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+      "section": "15 项候选的准确状态"
+    },
+    {
+      "path": "research/registration/evidence/register-ab98f323ad-0001-1/gap.md",
+      "sha256": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+      "section": "C06. 非均匀 opening costs 的 GBAP：联合耦合与简单算法的真实界【A；作者明确问题 + 新切口】"
+    },
+    {
+      "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+      "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+      "section": "输入、输出与比较值"
+    },
+    {
+      "path": "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md",
+      "sha256": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+      "section": "下闭配置指派与最大值覆盖的整数等价"
+    },
+    {
+      "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+      "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+      "section": "初始值：item边际约束只在这里使用"
+    },
+    {
+      "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+      "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+      "section": "第一阶段：同bin只留一件配置"
+    },
+    {
+      "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+      "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+      "section": "第二阶段：保持成本到至多一分数件"
+    },
+    {
+      "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+      "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+      "section": "精确实现与位复杂度"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md",
+      "sha256": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+      "section": "配置指派：完整恢复本次核查所需基线"
+    },
+    {
+      "path": "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md",
+      "sha256": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a",
+      "section": "2. C06：opening-cost GBAP 的基线回收"
+    }
+  ],
+  "reviewed_by": "Boss1/bmkp-sparse-retention-3c",
+  "review_note": "核对两对象登记pin和全部指定正文节。按不同箱合并阈值质量，逐一检查箱内仿射端点、保成本凸交换、自然预算及预留C预算的两次最终解码和有理位长。另直接核对P03 Eq. (1.4)、§5 Lemma 5.1及Theorems 5.2/5.4的分母与乘积。原文 https://arxiv.org/html/2208.11832v4",
+  "contribution": {
+    "result": "C06两成本、每物品至多两箱支持的共同合同上，确定性位多项式地输出硬预算指派，普适价值≥3L(x)/8。预留一个最大箱成本可加强至max{3/8,s−s²/4}L(x)，s=1−1/k，B≥C>0。以同一L(x)和k比较，全部有限k均严格优于历史P03报告的系数（L(x)>0）。",
+    "remaining": "若C06要求从预先指定的配置抽样过程内选择，仍需明确两阶段条件事件、边际保持对象与概率量词，另证逐配置或物品—箱副本的条件联合留存或matching obstruction。两种成本、度二全类相对自然LP的精确最坏常数仍未确定，本比较只给普适下界3/8和趋于1/2的上限。若比较的是另行定义的两率乘积，仍须指明该乘积与相同分母。"
+  },
+  "endpoint_pins": {
+    "M-668ee3a8071f4d0c8b8acf2e40a93d60": "5e5e183bf86cb9a71fa988c32e7a16abc362c1d470813e4b23b67cbc4a0786fe",
+    "M-d05829d1479f4b8aad94f3953ab9ffc4": "23bb2ddcdcb76320fa48b9c4a1ff525b126121d0cdc06b55232dd73098e7ca09"
+  },
+  "evidence_pins": {
+    "archives/bottleneck-knapsack/state/审查/退役GAP选题底稿与数学边界--审查.md": "3a6d7787cf22efa03d645baf2719fa84927e55e5777d886bd38c19627913c10e",
+    "research/registration/evidence/register-ab98f323ad-0001-1/gap.md": "8e14e6d6525cc353091aa0484c6c72dc447f581d6227d6232fb3f960db06b68e",
+    "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+    "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+    "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+    "archives/resource-activation/state/资料/第二轮GAP候选与CRS边界--资料.md": "3ff76bddbd2b86c4373efbd30f7c9be5758ddfa81198014a5e6dd5edb65c827a"
+  },
+  "review_digest": "4f9e8870374a632c0fff91a71a7626630cf5ba2562f414eb998f9d38dd400a05"
+}

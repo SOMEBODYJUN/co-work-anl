@@ -1,0 +1,60 @@
+{
+  "edge_id": "cubic-two-overlap-strong-quota-and-top-two-rule",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "facility-games/offdiagonal-two-overlap-nonlinear-nine-rectangle-exact-optimum"
+  ],
+  "target_ids": [
+    "M-f43d27ce20ff407f9d68746fd3a239c6",
+    "Q-CUBIC"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同有限目录，两家带标签设施，覆盖后强制服务，正实原子权与客户独立混合。固定异址对，费用是含自身重量的实现负载立方的条件期望。私有总重 A,B，公共总重 W，交换标签使 U=A+W≥V=B+W，令 q=1/φ。统一本地存在性要求 k≤2、V>φU/2、W<qV、每个公共 w≤(1−q)U。完整 φ 规则另要求这对不同地点分别取得整个目录第一、第二大的覆盖总重，允许并列。",
+  "roles": {
+    "facility-games/offdiagonal-two-overlap-nonlinear-nine-rectangle-exact-optimum": "提供真实立方条件费用的仿射系数、闭状态矩形和完整非凸收益谱。取本题的立方差直接定位纯状态及双无差异状态，再对全部门槛输入统一估计。",
+    "M-f43d27ce20ff407f9d68746fd3a239c6": "接收固定异址的通用配额交集判据，以及在 k≤2 子域中达到 X≥qV、Y≥qU 的统一证明。",
+    "Q-CUBIC": "接收前两名覆盖地点满足局部门槛且交叠人数至多二的子域完整 φ 保证。其余布局的交叠人数任意。"
+  },
+  "explanation": "用 D=A+B+W=U+V−W 记总服务重，以免与低覆盖量 V 混用。对固定 k≤2 布局，九状态法给 X 的完整闭区间并，Y=D−X。配额 X≥a、Y≥b 等价于至少一个真实区间 [l,u] 满足 max(l,a)≤min(u,D−b)，包括边界及单点。交点内用原矩形的逐坐标增量恢复独立概率，保留区间来源。特别地，强配额使用 a=qV、b=qU。对有理权，若该 φ 配额可行，可在其所在的真实区间将平衡点 DV/(U+V) 截断到 [l,u]，最小化 max{V/X,U/(D−X)}，取得有理收益与有理概率，无需把无理阈值当作策略概率。两个威胁都为零时取任意端点。统一存在性另由下面的分情形证明付清。\n\n由严格 reach 门槛知 U>0，全部权除以 U。记 r=V/U、δ=1−r，以下 W,x,y,z 均为归一重量。于是 r>φ/2，2r−1>φ−1=q，故 r>q 且 r−q>δ。无公共客户时 (X,Y)=(1,r)。仅一名权 z 的客户时，给低侧为纯 NE，因为留在低侧面对 r，改到高侧面对 1≥r。收益 (1−z,r)，且 1−z≥q≥qr。\n\n有两名公共客户，权 x≥y。若 x≤δ，两名都给低侧。任一客户留低侧面对 r，改到高侧面对 1 减去另一客户的权，至少 1−δ=r。收益 (1−W,r)，其中 1−W≥1−2δ=2r−1>q≥qr。若 x>δ 且 y≤r−q，令 x 在低侧、y 在高侧。权 y 客户留高面对 1−x<r，改低面对 r；权 x 客户留低面对 r−y，改高面对 1≥r−y。严格递增的立方保持两次纯比较。收益 (1−x,r−y)，分别至少 q≥qr 和 q。\n\n余下 x≥y>r−q>δ。对 z∈{x,y}，p(z) 是权 z 客户选高侧的概率，其值由另一名客户无差异决定。z 实现为选低、选高时，另一名客户对高和低的反事实负载分别是 (1−z,r)、(1,r−z)。仿射立方差的两个端值符号相反，唯一根为 p(z)=[r³−(1−z)³]/[r³−(1−z)³+1−(r−z)³]∈(0,1)。分别取两个根且独立抽签，使两名客户都无差异。令 H_z=1+r−z，两项正立方差的负载和都为 H_z，负载差分别为 z−δ 和 z+δ。用 a³−b³=(a−b)[3(a+b)²+(a−b)²]/4 化简，得到 z p(z)=(z−δ)/2−ε_z，其中 ε_z=δ(z²−δ²)/(3H_z²+z²+3δ²)≥0。相加给 X=r−W/2−Σε_z、Y=1−W/2+Σε_z。\n\n精确界 3/5<q<5/8 给 r>4/5、δ<1/5、z≤1−q<2/5 以及 H_z>7/5，所以 ε_z<(4/125)/(147/25)=4/735，Σε_z<8/735<1/20。由 W<qr，有 r(1−q)−W/2>r(1−3q/2)>1/20，因此 X>qr；Y≥1−W/2>1−q/2>q。乘回 U 即得两配额。正有理权下各个显式概率有理，实权证明本身允许实概率。\n\n若该对地点 s,t 是目录覆盖重前两名，取其配额 NE 在轨。第一家每个实际偏离的收益至多目的地覆盖重 V，第二家至多 U，故分别至多 φX、φY，包括搬到对手地点。其余每个布局可取负载平方和极小的纯可达分配。重量 w 从负载 a 移到当前负载 b 若严格降低立方费用，就有 a>b+w，而平方和变化 2w(b+w−a)<0，矛盾。这样得到每个有序布局各一个真实立方 NE。",
+  "scope": "局部存在性覆盖满足强门槛且 k≤2 的每个正实权异址对。完整 φ 结论限目录覆盖前两名满足同一门槛的实例，其他异址交叠不受限。区间判据适用于任何 k≤2 固定布局及任意实配额。",
+  "contribution": {
+    "result": "统一证明至多二名公共客户时的强交叉配额。若该对是目录覆盖前两名，还得到该实例一份完整 φ 稳定续局；局部任意配额可用真实收益区间相交及原矩形见证逐实例决定。",
+    "remaining": "强配额对象还需要处理满足原门槛但公共人数 k≥3 的布局。普遍 φ 问题还需要处理没有符合门槛的前两名地点对的实例，包括部分每对异址均稀疏的实例；任一普通地点对的两配额不能直接控制更高覆盖的第三地点。"
+  },
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/算法/异址双交叠非线性均衡的九矩形精确优化--算法.md",
+      "sha256": "cd40a2f9e10044613c662e7d8477722b02f31ce10246204d528ec97d768327bf",
+      "section": "A13.3 两名公共客户：逐实现推导仿射费用差"
+    },
+    {
+      "path": "archives/facility-games/subarchives/nonlinear-costs/state/问题/立方客户费用的共同目录普遍阈值--问题.md",
+      "sha256": "f4c21f58333070b5008066fbb1e3441883e9c4a1922ec1a0adb1549b901093c9",
+      "section": "旧首个任务已经回收的部分与仍开放的配额"
+    },
+    {
+      "path": "map/receipts/facility-3a-3a-215587c18b6fe501.json",
+      "sha256": "511d86e20cf4479ba59521eb26ee70ed6d036f390590f5054bb48d4dd2901e40"
+    },
+    {
+      "path": "map/edges/facility-3a-3a-215587c18b6fe501/cubic-cross-quota-to-top-two-complete-rule.json",
+      "sha256": "4cfc623a6f4b8fb5599b6b78c50f951c8def44ad2471eabed35c0565f9ff9444"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "独立重算两个纯分支的反事实负载、由对方无差异确定 p(z) 的方向及立方余量界。核对 U 归一化、等号端点、同址偏离和完整表的补齐。统一证明与逐输入区间判别分开。",
+  "endpoint_pins": {
+    "M-f43d27ce20ff407f9d68746fd3a239c6": "0bb775a09a6a30eed4f48dcf9734bd42fb717379dd19b4d450ce4a940fedd2e1",
+    "Q-CUBIC": "f8a61353497057a7bc1921d53625c4450599c2f4b6d04e29837970cc4aec58da",
+    "facility-games/offdiagonal-two-overlap-nonlinear-nine-rectangle-exact-optimum": "135d412720444b396513e09794a3095d6f602c259eca25614d914aba3222e376"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/算法/异址双交叠非线性均衡的九矩形精确优化--算法.md": "cd40a2f9e10044613c662e7d8477722b02f31ce10246204d528ec97d768327bf",
+    "archives/facility-games/subarchives/nonlinear-costs/state/问题/立方客户费用的共同目录普遍阈值--问题.md": "f4c21f58333070b5008066fbb1e3441883e9c4a1922ec1a0adb1549b901093c9",
+    "map/receipts/facility-3a-3a-215587c18b6fe501.json": "511d86e20cf4479ba59521eb26ee70ed6d036f390590f5054bb48d4dd2901e40",
+    "map/edges/facility-3a-3a-215587c18b6fe501/cubic-cross-quota-to-top-two-complete-rule.json": "4cfc623a6f4b8fb5599b6b78c50f951c8def44ad2471eabed35c0565f9ff9444"
+  },
+  "review_digest": "3228d2a6e07ceb596f162e5b0e5bc38462f43b3c47fc708bfd9a89ef2e8113fc"
+}
