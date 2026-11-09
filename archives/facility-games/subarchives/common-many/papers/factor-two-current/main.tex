@@ -151,7 +151,7 @@ Consequently the total weight would exceed $ba\ge(h+1)a$, a contradiction. The e
 The assignment obtained by packing need not be a client equilibrium. We next show that strict improving client moves preserve the cap on every facility that does not host an isolated heavy client. Here loads refer to a pure client assignment.
 
 \begin{lemma}\label{lem:capped}
-Fix a placement, a facility $f$, and a number $a>0$. Suppose there is a feasible pure client assignment in which $f$ has load at most $2a$, every client heavier than $2a$ is alone at a facility other than $f$, and every facility that does not host one of these heavy clients has load at most $2a$. Then this placement has a pure exact client equilibrium in which $f$ has load at most $2a$.
+Fix a placement, a facility $f$, and a number $a>0$. Suppose there is a feasible pure client assignment in which $f$ has load at most $2a$, every served client heavier than $2a$ is alone at a facility other than $f$, and every facility that does not host one of these heavy clients has load at most $2a$. Then this placement has a pure exact client equilibrium in which $f$ has load at most $2a$.
 \end{lemma}
 \begin{proof}
 Repeatedly perform a strict improving pure client move. An isolated client of weight $w_i>2a$ already incurs its smallest possible cost $w_i$, so it never moves strictly profitably. A client at a facility of load at most $2a$ cannot improve by joining one of these isolated clients, because its destination cost would exceed $2a$. If it moves from facility $h$ to facility $g$, strict improvement means
@@ -192,7 +192,7 @@ The old location $u$ disappears. Put $J=J_u$ and keep clients outside $J$ at the
 
 At a surviving old location $t$, the added clients form a subset of $J\cap C_t$. Together with the original clients $J_t$, their total weight is at most $(q_t+1)a$ by~\eqref{eq:occupied-disappear}. Apply Lemma~\ref{lem:packing} to all clients now assigned to $t$ and place the resulting parts on its $q_t$ stationary facilities.
 
-If $r$ was unoccupied, assign the genuinely newly covered clients to $f$ as well. Its load is then at most $N_r+w(J\cap C_r)\le a$ by~\eqref{eq:empty-disappear}. If $r$ was already occupied, every client of $J$ that remains covered has a stationary option, so $f$ receives no client initially. Once again every covered client is served, every client heavier than $2a$ is isolated at a stationary facility, and every non-heavy facility has load at most $2a$.
+If $r$ was unoccupied, assign the genuinely newly covered clients to $f$ as well. Its load is then at most $N_r+w(J\cap C_r)\le a$ by~\eqref{eq:empty-disappear}. If $r$ was already occupied, every client of $J$ that remains covered has a stationary option, so $f$ receives no client initially. Once again every covered client is served, every served client heavier than $2a$ is isolated at a stationary facility, and every non-heavy facility has load at most $2a$.
 
 In both cases Lemma~\ref{lem:capped} supplies an exact pure client equilibrium with $L_f\le2a$, proving~\eqref{eq:bound-deviation}.
 \end{proof}
