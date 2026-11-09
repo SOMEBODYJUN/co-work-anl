@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "reviewer": "Boss5/474257b8",
+  "state": "frozen",
+  "task_id": "cag-pay-high-background-m-slots-round14-3b-ca8933c236604e74",
+  "task_ref": {
+    "path": "research/operations/map-v2/tasks/cag-pay-high-background-m-slots-round14-3b-ca8933c236604e74.json",
+    "sha256": "6ed80303fb9343904a7134adb313dc1b54abf3592563a77c2b03d88099ca1d35"
+  },
+  "receipt_ref": {
+    "path": "map/receipts/cag-pay-high-background-m-slots-round14-3b-ca8933c236604e74.json",
+    "sha256": "d9ee8d70edd0d6301fd73b12f5bd8e6bf2f5550ef6d3c78875b56b80c0bd8db9",
+    "semantic_pin": "b7cfb3b4778eece92eebbcc2ef827cb24327d490c89a99a7e398b538cc0ddf77"
+  },
+  "input_pins": {
+    "M-fba1c001a1cd4e05b5cdb4285ab6215c": "d354c31b3fa6f438006e6ccac60e792cd37054cf1a9edf1bd6799fb5dac1f82f",
+    "M-fec05c0478c149c09227f2c9dc18748a": "a950698327d11c9b9827c24a08628997cd458901d7246dc77e0b690db7f6ecb1",
+    "customer-attraction/joint-background-profit-signed-endpoint-defect": "87d3b637060b965fab2c10547a06d06a326e38f1317cfd10c144ee25cf859fcf",
+    "customer-attraction/joint-minimum-denominator-and-last-floor-high-background-half-profit": "314b95c6e0fa8f59508a78aaf1ab9d3d495f90939468922ee638144a408f3ce7"
+  },
+  "input_pins_current_match": true,
+  "assets": [
+    {
+      "path": "map/edges/cag-pay-high-background-m-slots-round14-3b-ca8933c236604e74/same-count-normalization-loss.json",
+      "sha256": "5d41fac01c1d581700d56bf96926ec49f9a53590143609c75025068d23996897",
+      "edge_id": "cag-pay-m-slots-ca8933c236604e74-same-count-normalization-loss",
+      "disposition": "retained",
+      "result_scope": "partial",
+      "relation_mode": "unconditional",
+      "mathematical_review": "同计数迁移：在b=k−5,d=1,k≥12，折点τ=4m(k−4)/(k−1+m(k−4))给L(m)=2(k−2)/(m(2k−5))+4/(k−1+m(k−4))。因q≤4/[m(k−4)]，(k−4)L≤[k+(k−4)/(2k−5)]/m<1（整数m>k）。k槽t0=(7k−16)/(2k−5)在h0端点取等，h=k−1严格裕量，故r_k(t0)=1/(k−4)。单类型重优t仍不够，不是多个客户各选不同t。真实背景此坐标须m≥2k−5；形式k<m<2k−5不冒作合法前缀。原收费逐项等于b/(b+d)+e_(k,t)+r_k−r_m，仅d≤k时可直接写该k槽e；总收费减2E保全部signed抵偿，E依实际a而非比较d。"
+    },
+    {
+      "path": "map/edges/cag-pay-high-background-m-slots-round14-3b-ca8933c236604e74/actual-prefix-fixed-optimum-shortfall.json",
+      "sha256": "267f447f807d4455c9e4b1578e8c2d95f0bc4e55557083017a7b9ec2dba6fd35",
+      "edge_id": "cag-pay-m-slots-ca8933c236604e74-actual-prefix-fixed-optimum-shortfall",
+      "disposition": "retained",
+      "result_scope": "partial",
+      "relation_mode": "unconditional",
+      "mathematical_review": "真实强版本反例：唯一客户、空A和B={x}，完整策略在任何历史选B。任何有j次B且余r的节点，B得1/(j+r)>0而A得0，因此全历史严格SPE。m=2k−5、实际前缀长k−5，E=(k−5)/m。J=(B,A,…,A)为真最优m元组但d1，所有t的最小收费1−L(m)>2E；另一个同样最优J′=B^m令第一项2(k−2)/(2k−5)>1，所有t均支付。故只排固定前缀且固定J的加强，原存在式PAY未被反驳。k12/m19精确L=4704/58843、最小收费54139/58843、2E=43358/58843、差10781/58843。"
+    },
+    {
+      "path": "map/edges/cag-pay-high-background-m-slots-round14-3b-ca8933c236604e74/late-pair-pay-from-double-covered-support.json",
+      "sha256": "7476fc9cd59b6f968b4ba7c9e688d5e1ee7e2a73f5a81c5730963afe594628eb",
+      "edge_id": "cag-pay-m-slots-ca8933c236604e74-late-pair-pay-from-double-covered-support",
+      "disposition": "retained",
+      "result_scope": "partial",
+      "relation_mode": "conditional",
+      "mathematical_review": "双覆盖充分域：同一实际路径在余至少两人时已对某真最优J的全部支持U双覆盖，延至实际末二仍b≥2；末两次a≤2，过去份额b/(b+a)≥1/2。因此2E≥|U|=OPT。k2的q非负，任共用t收费≤|U|，同一J可支付。只有剩余k槽最优支持高背景，不保证覆盖某原m槽最优支持；这一额外输入条件没有被普遍证明。U空单独成立。"
+    },
+    {
+      "path": "map/edges/cag-pay-high-background-m-slots-round14-3b-ca8933c236604e74/late-pair-pay-from-optimum-multiplicity.json",
+      "sha256": "ded6f437e061117e0446ca427f70a2f8b86219b84a96103766ae03175b2a39bd",
+      "edge_id": "cag-pay-m-slots-ca8933c236604e74-late-pair-pay-from-optimum-multiplicity",
+      "disposition": "retained",
+      "result_scope": "partial",
+      "relation_mode": "conditional",
+      "mathematical_review": "最优重数充分域：真实末二令u=d/m、s=b/(b+a)、共同t3，q=min{3u/(b+1),(3u+1)/(b+2)}。b0时q≥1 iff u≥1/3；b1,a2时q≥1/3 iff u≥2/9；b≥2或b1,a≤1时2s≥1无需次数下界。逐客户1−q≤2s相加并加U外非负过去利润可支付。统一正d≥m/3足够，最优并集可由两主题实现时按floor(m/2),ceil(m/2)重复保真最优并满足它；一主题及O0单独处理。三主题且3|m的重复也成立，不推其它三主题。共同t2有q=2d/[m(b+1)]，因d/m≤1≤b+1，给精确聚合充分条件2E+(2/m)Σd/(b+1)≥OPT。"
+    }
+  ],
+  "archive_review_append": {
+    "comparison_scope": "Boss5/474257b8实读ca8933四个核心、四条完整边、原PAY/加权分位、k槽signed与高背景证书全文及完整共同目录模型，并读原PAY与背景两种计数的精确资源节。核真实前缀、同一真最优m槽J、共同t和E的终局份额。",
+    "outcome": "四条原资产保同SHA：同计数即使d1仍有严格m槽归一化损失；一客户完整SPE给固定前缀固定J的全部t失败而另一真最优J′支付；实际双覆盖最优支持及最优正次数≥m/3分别给原PAY的充分域，含两主题实现最优并集。前两边unconditional partial、后两边按给定结构条件保conditional partial，均没有覆盖任意实例的全部选择。k槽向m槽的具体比较已完成，原一般PAY不因此解决。",
+    "unresolved": [],
+    "open_mathematical_obligations": [
+      "原PAY仍须对每份完整SPE同时选一个允许实际前缀、一份真最优m计数组合和共用t，控制Σ收费−2E≤0；四个精确结果不穷尽未满足双覆盖/重数域的实例。",
+      "k槽F_k(b)最优支持高背景不能自动换成某原OPT_m支持高背景；同一全局t、真实E和两种次数的差量不能逐客户独立抹除。"
+    ],
+    "closed_comparison_tasks": [
+      "cag-pay-high-background-m-slots-round14-3b-ca8933c236604e74"
+    ]
+  },
+  "cross_archive_review_append": {
+    "comparison_scope": "ca8933的全部端点为同一customer-attraction模型；只比较原m槽覆盖与合法背景k槽剩余利润。",
+    "outcome": "这是一项同档计数、归一化和实际路径量词比较，没有跨档模型映射。保单位客户、原有序策略和真实后继，未把其它模型的support、价格或因子二名称当转移桥。",
+    "unresolved": []
+  },
+  "full_read_refs": [
+    {
+      "path": "archives/customer-attraction/state/算法/真实前缀支付的加权分位与完整路径切断--算法.md",
+      "sha256": "85a0b934af56c9eaee00fc4ac7c42d4eb90c9a5d8e87342df24989ca272f8852"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/联合背景利润的有符号端点缺口--引理.md",
+      "sha256": "5fced08686fa22819628eeaded4e6deedf9eee897a407b86e02a3a8b6207af30"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/联合最小分母与末位保底的高背景半利润--定理.md",
+      "sha256": "b9bda1b37c8e3c16ac27dc6af6cd3b1164b2187f3c21fe9056100bad912519e2"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "section_read_refs": [
+    {
+      "path": "archives/customer-attraction/state/资源/重复奖励尾目录扩展与前缀收费的原始合同--资源.md",
+      "sha256": "1647d9285cd6fdc9d1dab6e12b318b38d2318e406b284d9b48be68e2d9153ca2",
+      "section": "原PAY与联合背景缺口的两种计数"
+    }
+  ],
+  "reading_boundary": "四完整边的全部数学字段及绑定、四完整正式正文与列出的资源节；未重读或运行旧finite primary、LP、BI、all_path_pay，未把字节核对算作全文。",
+  "mathematical_runs": 0,
+  "source_or_edge_edits": false,
+  "joint_result_check": "四个partial承担不同真实问题或不穷尽条件域，不能合为一般PAY whole；无需替代资产。"
+}
