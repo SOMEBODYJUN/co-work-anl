@@ -15,8 +15,8 @@
     "UM-DAG-DEGREE-TOKEN-IDENTITY-v1": "给真实原token的全部有限端、压缩q_v及filler，因而能逐物品检查restricted合同；其出度评分明确对每个选中正需求点收费并截1。",
     "UM-SANTA-RESTRICTED-BRIDGE-BOUNDARY-v1": "得到任一k_v>1,d_v>0处的端点值冲突和强制所有正需求k=1后的0/1退化边界。"
   },
-  "explanation": "若某正需求v有k_v>1和d_v>0，则q_v≥1，确有一枚同身份原token，其home非零值1/k_v与任一孩子非零值1不同；restricted所需同一固有p_j不可能同时等于二者。最小显式DAG为根v一条边到零需求终端w、k_v=2、d_v=1：q_v=1造一枚(1/2,1)的真实token，另有单home filler1/2及根pin1；filler不改变该枚token的冲突。故该token桥一般不落入restricted Santa。若把全部正需求强制k_v=1，每点至多一枚token可外送，低于2调度的解码根树每正需求点出度至多1；任意根树评分min({1}∪{deg/k_v})的每项是整数，截断后b(H)只能0或1。大分叉可剪到1而不丢正分数。这样不能表达原近二接口所需的中间需求比率。",
-  "whole_result": "DAG压缩桥的真实端点合同 ⇒ 只要存在k_v>1且d_v>0，输出含非restricted物品（最小端点1/2与1）；强制所有正需求k=1才消除此类冲突，并使可用根树出度/评分退成至多单支与0/1。",
+  "explanation": "若某正需求v有k_v>1和d_v>0，则q_v=min(k_v,d_v)≥1，确有一枚同身份原token，其home非零值1/k_v与任一孩子非零值1不同；restricted所需同一固有p_j不可能同时等于二者。最小显式DAG为根v一条边到零需求终端w、k_v=2、d_v=1：q_v=1造一枚(1/2,1)的真实token，另有单home filler1/2及根pin1；filler不改变该枚token的冲突。故该token桥一般不落入restricted Santa。若统一把全部正需求限制为k_v=1，每点至多一枚token可外送，低于2调度的解码根树每正需求点出度至多1；任意根树评分min({1}∪{deg/k_v})的每项是非负整数，截断后b(H)只能0或1。原DAG本身仍可有多孩子；给定正分数树可按反向桥剪到每正需求点一个孩子而保持正分数。这里k=1是统一的充分限制，并非逐点必要条件：k_v>1但d_v=0时只有单home filler，没有双端token冲突。该退化域不能表达原近二接口所需的中间需求比率。",
+  "whole_result": "DAG压缩桥的真实端点合同 ⇒ 只要存在k_v>1且d_v>0，输出含非restricted物品（最小端点1/2与1）；若统一限制所有正需求k=1，则此类端点冲突消失，但可用解码根树退成每点至多单支且任意树评分仅0/1。",
   "scope": "完整得到指定token桥不保持restricted端点值的模型边界；仅阻止直接套restricted Santa常数算法或用它替代一般Santa无常数假设，不是否定其它重新编码，也不是一般复杂度下界。",
   "evidence": [
     {
@@ -35,8 +35,8 @@
       "section": "一、restricted Santa 与需求树桥梁不保真"
     }
   ],
-  "reviewed_by": "Boss3 / um_cartesian worker",
-  "review_note": "实读完整DAG桥，核k>d压缩仍保q≥1、最小k2/d1确有真实双端token、filler不消冲突；区分原DAG可有多孩子与k1调度输出最多一条外送，评分退化不偷换输入出度。",
+  "reviewed_by": "Boss3",
+  "review_note": "fresh复核实读当前registry中本边两端的完整陈述、完整DAG压缩桥及restricted边界原正文；逐步核q=min(k,d)仍保k>1,d>0处真实双端token、k2/d1的filler与根pin、严格C<2时每机最多一件外来unit、正需求输出叶也计分，以及反向剪枝保全全部任务。修正旧whole_result把统一k=1充分限制写成必要条件的歧义：正需求死端d=0无双端token。未重跑历史有限审计，未以支持图或max-min目标偷换端点合同。",
   "endpoint_pins": {
     "UM-DAG-DEGREE-TOKEN-IDENTITY-v1": "86d52277f0b5f722b353c5cb383b2c5a059c33fce3e58b45c92b353f77c95a39",
     "UM-SANTA-RESTRICTED-BRIDGE-BOUNDARY-v1": "b158c1c1085be1213a8f787563b45bee986fb7a8d81dd7f57ab43586656ffd1f"
@@ -45,5 +45,5 @@
     "archives/unrelated-machines/state/定理/有向需求与调度的压缩双向任务桥--定理.md": "47052b1eb3dfa67b095bbdb1ef86b80f108c6bb71b1e8d0210649b13092b130e",
     "archives/unrelated-machines/state/审查/Santa受限桥与归一化菜单双源审查--审查.md": "f96a1038bc7dd23d2e88c6ed842203ee93778a1feb579883ceaf3b5235bf7dac"
   },
-  "review_digest": "033577041e18a6b1d61f79eceaa16e81d7a49e13c06b21a8b92c9c31ab702948"
+  "review_digest": "364dd48b7c1a644ac7d380d58587f54cd2083124bbd1e9dee401a6d53746c028"
 }

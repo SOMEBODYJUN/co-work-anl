@@ -1,6 +1,6 @@
 {
   "edge_id": "um-1961b46f-partial-welfare-constructs-uniform-quota-witness",
-  "kind": "transfers",
+  "kind": "implies",
   "status": "accepted",
   "source_ids": [
     "UM-NORMALIZED-MENU-PARTIAL-QUOTA-WELFARE-FLOOR-v1"
@@ -16,7 +16,7 @@
     "UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1": "接收一个变量子集、每变量一个标签与ceil(δK)真实资源的注入领取；本边只构造此存在性iff的右侧见证。"
   },
   "explanation": "F2按原菜单输出attaining标签a_x及不交B_x。取质量≥3/8的变量集合S，则|S|>2q_r/5≥3q_r/8，整数性给|S|≥ceil(3q_r/8)。uniform桥使|B_x∩R_(x,a_x)|/K_(x,a_x)≥3/8；从各交集截取恰ceil(3K_(x,a_x)/8)个资源。B互不交，所以所有截取像互不交，得到δ=3/8的orientation右侧完整(S,α,φ)。不把norm1隐含在一般需求K上：若K≠|R|，上述质量与配额比例不再相同。未调用Hall方向搜索器；给λ的获得仍是另一个LP接口。",
-  "scope": "成立的条件局部贡献：uniform-normalized子域内给定共同λ足以构造δ3/8的orientation RHS，绝非一般orientation存在/搜索算法。",
+  "scope": "同一显式资源子域中的条件局部推论：通过条件中明确的uniform权重身份，给定共同λ足以构造δ3/8的orientation RHS；目标完整iff仍是原独立定理。",
   "evidence": [
     {
       "path": "archives/unrelated-machines/state/定理/部分激活菜单福利地板--定理.md",
@@ -35,7 +35,7 @@
     }
   ],
   "reviewed_by": "Boss3",
-  "review_note": "本包worker实读当前登记、端点正文与所列承重证明，逐项核对完整/局部作用域、同一实际输出及模型边界；未将历史软件计数当新运行。",
+  "review_note": "恢复时实读F2完整福利/激活罚项证明与原CE程序、two-rail正文§4–6的双向等价及Hall边界。核|R|=K才有norm1、q=q_r>0、同state不交、H>2q/5和ceil3K/8截取；只付δ3/8的orientation右侧见证，完整iff和一般方向搜索未由本边重证。",
   "contribution": {
     "result": "当|R_(x,a)|=K_(x,a)且给定F2质量q=q_r的共同λ时，可确定性位多项式构造δ=3/8的two-rail orientation右侧见证：至少ceil(3q_r/8)个变量，各选一个原标签领取ceil(3K/8)个互不交原资源。",
     "remaining": "此仅支付目标iff右侧在额外uniform/λ子域中的见证构造；目标对任意K、任意δ的根树⇔orientation两方向仍需其原独立证明。一般方向选择、无λ时的可行性判定和全方向sound FAIL未由F2给出。"
@@ -48,5 +48,5 @@
     "archives/unrelated-machines/state/定理/部分激活菜单福利地板--定理.md": "691933c9e406e557f5f3e565a8051731049600e71c4e3422109d2e6aa4e75a99",
     "archives/unrelated-machines/state/审查/两状态配额Hall切与方向义务双源审查--审查.md": "3191cef6678c1888d1bebc5c4a3f93b4021f3831f7b8e7d95434c9415a2c6e95"
   },
-  "review_digest": "37c01bbf8fb3fb32e5c51915946eee91b0c1793731aa43932ebc4579fa4bc3f8"
+  "review_digest": "a01e5a11a20241b80b5fd281b430aec6237a4a44e83364fb9ac43681206295f4"
 }
