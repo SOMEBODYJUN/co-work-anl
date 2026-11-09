@@ -105,12 +105,60 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss1",
-  "request_id": "899d1e59db9948308c4d1ebda0a84845",
+  "request_id": "d332868c6534490c9e30f65a8cadcda5",
   "requests": {
     "f0dbefd84282453ca1eefa0ea200e9f7": "plan",
     "8281e1e3182448e0a8d0cc1321e47935": "claim",
-    "899d1e59db9948308c4d1ebda0a84845": "read-add"
+    "899d1e59db9948308c4d1ebda0a84845": "read-add",
+    "d332868c6534490c9e30f65a8cadcda5": "done"
+  },
+  "edge_paths": {
+    "cag-66a7a8-coverage-table-to-equal-payoff-and-residual": "map/edges/customer-cone-equal-round12-3a-66a7a831b1bb7a9b/coverage-table-to-equal-payoff-and-residual.json",
+    "cag-66a7a8-equal-payoff-recovers-old-selected-residual": "map/edges/customer-cone-equal-round12-3a-66a7a831b1bb7a9b/new-table-recovers-old-selected-residual.json"
+  },
+  "receipt": {
+    "coverage": {
+      "customer-attraction/two-complete-strategy-cones-equal-payoff-and-residual": {
+        "state": "linked",
+        "object_pin": "1ebf5f73caf82ba44dbf6eb1bca70c9b681040489979a08ba8cd48702d5f1d27",
+        "comparison_scope": "实读两锥逐人等收益与旧全支持定理、两份冻结完整策略、全支持与共同松弛的精确证书和标准库核验器。重建两套各2801有序历史与16806项真实偏离，核1912、1867及共同1753行、根与反向链的127列等式、63覆盖对偶和42取等点。核旧252客户端的独立原件、目标、20权对偶、21支持的原点精确OPT，并逐列复核168个完整锥、支持、实际标签、辅助目标组合的对偶换元。",
+        "reason": "真实根偏离与反向链在各完整锥强制u₀=u₁=W/5。借旧全覆盖表的原始取等与对偶，21支持的individual和residual最大同为对应覆盖值减2。旧252同一J*、标签1残差−17/40和覆盖63/40可按实际行逐列双向换元。共同1753行保全支持最大8/5，但不强制等收益，在指定J*的覆盖和标签1残差上精确增至207/130和−53/130，差均为9/520，且补入等收益仍保留这一差距。两条边分别覆盖新定理整条和旧252对象的指定残差子结论，量词固定在两份给定策略及共同松弛。",
+        "edge_ids": [
+          "cag-66a7a8-coverage-table-to-equal-payoff-and-residual",
+          "cag-66a7a8-equal-payoff-recovers-old-selected-residual"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/customer-cone-equal-round12-3a-66a7a831b1bb7a9b/coverage-table-to-equal-payoff-and-residual.json",
+        "sha256": "0aebc55bd5e902f6f444b3e5058273b281ab74d70365aeeda1e4d0f1880d3191"
+      },
+      {
+        "path": "map/edges/customer-cone-equal-round12-3a-66a7a831b1bb7a9b/new-table-recovers-old-selected-residual.json",
+        "sha256": "9a8177e98b6c201d33813492eca4b794cd02e710bd683ad3cfbd50493b797a79"
+      }
+    ],
+    "closed_overlaps": [
+      {
+        "core_id": "customer-attraction/two-complete-strategy-cones-equal-payoff-and-residual",
+        "peer_id": "customer-attraction/two-complete-strategy-cones-all-cover-supports-8over5",
+        "reason": "旧表的21项原始和对偶结合真实IC等收益精确转为新辅助目标表；共同覆盖与残差由各自精确对偶和同一个共同可行取等点确定。反向旧252目标只支付其固定锥J*的覆盖值，已在上一批的旧证书贡献边记录，本批明确逐列换元与限域。原计划延后比较已就地完成。"
+      }
+    ],
+    "object_ids": [
+      "customer-attraction/two-complete-strategy-cones-equal-payoff-and-residual"
+    ],
+    "read_object_ids": [
+      "customer-attraction/two-complete-strategy-cones-all-cover-supports-8over5",
+      "cag-whole-subtree-nine-exact-endpoints-and-reentry"
+    ],
+    "input_pins": {
+      "customer-attraction/two-complete-strategy-cones-equal-payoff-and-residual": "1ebf5f73caf82ba44dbf6eb1bca70c9b681040489979a08ba8cd48702d5f1d27",
+      "customer-attraction/two-complete-strategy-cones-all-cover-supports-8over5": "a15c3064ddc2945834fd716dc4e33f8876a2d32e78a25c52ad6d0e6702a5f3f4",
+      "cag-whole-subtree-nine-exact-endpoints-and-reentry": "b0447cbacf30e53975163239049cdf4d1931665fca00dc7b7f653d46cd306193"
+    }
   }
 }

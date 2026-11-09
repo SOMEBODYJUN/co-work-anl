@@ -221,11 +221,73 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss1",
-  "request_id": "3d052402f9a442af821e031a3b268da8",
+  "request_id": "d332868c6534490c9e30f65a8cadcda5",
   "requests": {
     "f0dbefd84282453ca1eefa0ea200e9f7": "plan",
-    "3d052402f9a442af821e031a3b268da8": "claim"
+    "3d052402f9a442af821e031a3b268da8": "claim",
+    "d332868c6534490c9e30f65a8cadcda5": "done"
+  },
+  "edge_paths": {
+    "config-approximate-column-score-and-dual-replay-give-feasible-direction": "map/edges/config-pricing-round12-3a-9f8d64113cec2757/config-approximate-column-score-and-dual-replay-give-feasible-direction.json",
+    "config-approximate-direction-and-rounding-close-sparse-continuous-trajectory": "map/edges/config-pricing-round12-3a-9f8d64113cec2757/config-approximate-direction-and-rounding-close-sparse-continuous-trajectory.json"
+  },
+  "receipt": {
+    "task_id": "config-pricing-round12-3a-9f8d64113cec2757",
+    "stage": "3A",
+    "status": "complete",
+    "object_ids": [
+      "configuration-assignment/sparse-continuous-greedy-hard-budget-from-modular-pricing",
+      "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing"
+    ],
+    "read_object_ids": [
+      "configuration-assignment/exact-pricing-sparse-configuration-lp",
+      "M-81da430ecf2846f59fb645a08763dab4",
+      "M-d05829d1479f4b8aad94f3953ab9ffc4",
+      "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing"
+    ],
+    "input_pins": {
+      "configuration-assignment/sparse-continuous-greedy-hard-budget-from-modular-pricing": "1356e96ba6444ef152923d773ab0654b6229977e824bf126d5053d15141fd789",
+      "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing": "ac7d3a5d3bfb07d1ea36407d51142652241c93cff63505fe18c8aa180de86312",
+      "configuration-assignment/exact-pricing-sparse-configuration-lp": "847bf3f41064526e222270532908a4a4dfb56a063ffae9b48ac817957fbf0bcb",
+      "M-81da430ecf2846f59fb645a08763dab4": "d20161ada731b6e82e89c27bc3c7a7374674b950d21e0cad9a1be961e2d22ce3",
+      "M-d05829d1479f4b8aad94f3953ab9ffc4": "23bb2ddcdcb76320fa48b9c4a1ff525b126121d0cdc06b55232dd73098e7ca09",
+      "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing": "8edd0b73d5d1c7b89d92c0d34547a5adb488d8abca4299fc41f2cbda30d70c23"
+    },
+    "coverage": {
+      "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing": {
+        "state": "linked",
+        "object_pin": "ac7d3a5d3bfb07d1ea36407d51142652241c93cff63505fe18c8aa180de86312",
+        "comparison_scope": "同时比较扣物品价格与扣固定启用价格、真实列重放、分母间隔和可行基本支持。",
+        "reason": "用逐bin实际α近似模权定价，在确定性位多项式时间获得真梯度方向LP的可行α近似方向，或线性配置LP的可行α近似解。支持至多|L|+|P|+1，坐标位长由固定可行域统一控制。",
+        "edge_ids": [
+          "config-approximate-column-score-and-dual-replay-give-feasible-direction"
+        ]
+      },
+      "configuration-assignment/sparse-continuous-greedy-hard-budget-from-modular-pricing": {
+        "state": "linked",
+        "object_pin": "1356e96ba6444ef152923d773ab0654b6229977e824bf126d5053d15141fd789",
+        "comparison_scope": "实际比较逐箱近似方向、item曲率及G保值舍入，给短支持与相对误差全链。",
+        "reason": "确定性输入和1/ε多项式时间构造配置LP可行点x，其支持至多⌈2/ε⌉(|L|+|P|+1)，G(x)≥(1−e^(−α)−ε)OPT。可直接解码原硬预算指派，非均匀成本至少G(x)/2，共同正成本截断或共同零成本至少G(x)。",
+        "edge_ids": [
+          "config-approximate-direction-and-rounding-close-sparse-continuous-trajectory"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/config-pricing-round12-3a-9f8d64113cec2757/config-approximate-column-score-and-dual-replay-give-feasible-direction.json",
+        "sha256": "af032fae936468055f2f695039b71f7b5243a9733666de74288a2d9150e17f3f"
+      },
+      {
+        "path": "map/edges/config-pricing-round12-3a-9f8d64113cec2757/config-approximate-direction-and-rounding-close-sparse-continuous-trajectory.json",
+        "sha256": "2d5dd581d0146e97e34c83ef23e4545a1535ebf9169857b1f53f9762952370d8"
+      }
+    ],
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "reviewed_by": "Boss1",
+    "review_note": "近似局部定价到可行方向及其多步应用分两条完整ALL边，保持各自合同。"
   }
 }
