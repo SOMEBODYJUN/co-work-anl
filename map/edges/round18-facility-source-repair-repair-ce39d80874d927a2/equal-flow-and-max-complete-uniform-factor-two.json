@@ -1,0 +1,98 @@
+{
+  "edge_id": "commonmany-equal-flow-and-max-complete-uniform-factor-two",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-EQUAL-LIGHT-FLOW-BOX",
+    "SC-K-GREEDY-BOX-TO-2",
+    "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import"
+  ],
+  "target_ids": [
+    "SC-K-UNIFORM-LIGHT-FLOW-2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限非空共同目录 S、显式 k≥2 家有标签设施、逐名正二进制有理原子权与显式可达关系。客户被覆盖时必须服务，随机化彼此独立。沿用同一次固定地点平局顺序的规范贪心运行及其原池、开站次序、重数和全部已占原菜单。正覆盖时冻结仅一个已占站选项及权重至少末分数 γ 的客户，其余多选轻客户为空或共有物理权 u∈(0,γ)。冻结客户的权重与关联不限。零覆盖为独立分支。",
+  "roles": {
+    "SC-K-EQUAL-LIGHT-FLOW-BOX": "在同一贪心归一化输入的全部原菜单上，所有无约束 Ψ 极小者均满足完整盒、全原选项 NE 及 H，并能位多项式选一个。逐赋值的仿射恒等式同时识别旧下盒流的全部最优赋值。",
+    "SC-K-GREEDY-BOX-TO-2": "消费任一给定的完整盒且精确的站点纯/站内均匀在轨 NE，使用当前池或全部原池构造每个真实带标签偏离的可行受帽纯种子，并组织显式偏离表和未列布局默认。",
+    "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import": "只使用已证双端导入的 MAX 部分。每家实际标签设施独立作一台相同单位机器，从给定可行纯种子保普通最大负载求精确纯 NE，并对任意未列布局提供位多项式默认求值。",
+    "SC-K-UNIFORM-LIGHT-FLOW-2": "在同一等重可动客户原模型域上，用两种流选法各自得到紧凑的完整位多项式因子二续局，含空轻集和零覆盖。"
+  },
+  "explanation": "以同一次规范贪心原池 J_t⁰、总重 W_t⁰ 和最终重数 q_t 为准。已开站的候选为 W_t⁰/(当前重数+1)，未开站的候选为尚未覆盖的客户重。正覆盖时首站原池重为正，其后始终有正候选。入座和新开站都使最大候选非增，末分数 γ>0。站 t 最后一次入座和最终剩余候选给 q_tγ≤W_t⁰≤(q_t+1)γ，原未开站 v 的真新增重 N_v≤γ。客户 i 原站 h 早于其他可达已占站 t 开设。在 h 首开时 t 的候选含 J_t⁰ 和额外的客户 i，故 W_h⁰>W_t⁰。若 q_t>q_h，则 t 最后一次入座时 h 的候选至少 W_h⁰/(q_h+1)>W_t⁰/q_t，矛盾。按 q 非增、同 q 按首开先后排序，得到 h_i=min A_i，A_i 保留每名可动客户的全部已占原菜单。\n\n设 N 是正覆盖时的可动客户数，H_t 与 n_t 分别是可动客户原属及终态人数，冻结重 P_t=W_t⁰−uH_t。若 N>0，令 δ=u/γ、c_t=W_t⁰/γ−q_t、b_t=c_t−δH_t、X_t=b_t+δn_t，则 c_t∈[0,1]、P_t/γ=q_t+b_t、W_t=γ(q_t+X_t)。对每个原合法逐名赋值，旧目标 F=Σ_t[P_t n_t+u n_t(n_t−1)/2]/q_t 满足 F/γ=N+Ψ。旧下盒约束是 n_t≥ℓ_t，其中 ℓ_t=max(0,⌈(q_tγ−P_t)/u⌉)，原赋值可行。对任意 Ψ 极小者，非原站客户的 home→away 弧按上述秩严格前进。若 X_s<0，顺出边追到无出边且 X_z≥δ 的站 z，整条路径同时归位的势差为 X_s/q_s−(X_z−δ)/q_z<0。若某个 away 客户违反 H，从其 home 逆入边追到无入边且 X_z≤1−δ、q_z≥q_home 的站 z，把该客户也纳入归位路径，势差至多 (1−δ)/q_home−(X_away−δ)/q_away<0。等权使内部站人数和势项不变。超上盒站必有外来客户，由 q_home≥q_away 立刻违反已证的 away H。上盒再给留在 home 的客户 H。单客户势差逐一给所有原菜单 NE 比较。于是每个无约束极小者均自动满足旧下盒，旧域达到同一 Ψ 最优值，旧域任何最优赋值也在全域最优。两种选法可用不同平局规则，但全部逐名最优赋值集合完全相同。\n\n解码为每个客户先选一个物理站，再独立均匀选本站的实际标签设施。原权 u_i 的客户当前在 s 时，条件选 s 的任一标签成本为 u_i+(W_s−u_i)/q_s，选另一原可达已占站 v 的任一标签成本为 u_i+W_v/q_v。对可动者，归一化 NE 乘 γ 并在两侧补回公共基准 γ 和自身重 u_i，给出该比较。冻结重客户因 W_s≤(q_s+1)γ、u_i≥γ，源站外部成本≤γ，备选站外部成本≥γ。冻结单选客户的所有可达标签均在本站且条件成本相同。原未覆盖者无动作。给定其他客户的独立策略，任意混合偏离成本是这些纯条件成本的凸组合。所得完整盒 q_tγ≤W_t≤(q_t+1)γ 及精确原客户 NE 满足 BOX-TO-2，H 是附加性质。N=0 时直接保留原赋值和原盒，仍由两类冻结比较得到精确 NE，且不需要共同权或增广。若最大覆盖为零，正权保证每一目录站均覆盖空集，任取规范布局，所有布局都全未服务且全收益零。\n\n对每个正覆盖的真实带标签偏离，记源站为 s、偏离者在轨收益 a=W_s/q_s≥γ。q_s≥2 时源存续，使用当前在轨分站池。源的总重 q_sa 适配 q_s−1 个静止箱，别站的总重 W_t≤(q_t+1)a 适配 q_t 个静止箱。逐站把两箱合重≤2a 的原子箱合并。若终止后仍有 b≥h+1 个箱，则所有箱对合重>2a，求和给 W>ba≥(h+1)a，与预算矛盾。故普通箱至多 2a，超帽原子独占静止标签。原已占目标的偏离者初始为空，原未开目标的初重只有 N_v≤a。q_s=1 时源消失，重置全部客户到原贪心池，随后重挂消失源的原客户。令 K 为原最终单设施站、P 为原归属 K 的客户并集。最大重数原属性质使 P 的所有原已占可达站均在 K。最早开 K 中的 r 时 P 均未覆盖，故对任意 t∈K 有 w(P∩C_t)≤W_r⁰≤2γ。消失源原客户优先挂到可达静止站，有该选项时只会到 K，原高重数站保原池并按 γ 装箱，原单设施静止站只收 P∩C_t 的子集。无静止选项者若能到新目标则给偏离者，否则未服务。原未开 v 的真新增客户亦给偏离者，且 s 首开时 v 的候选含新增客户和 J_s⁰∩C_v 两个不交集合，故 N_v+w(J_s⁰∩C_v)≤W_s⁰≤2γ。原已占目标仍让偏离者初始为空。两类种子的帽分别是 2a、2γ，任何超帽原子都独占静止设施，偏离者始终普通。\n\n有限完成可在全原动作上严格改善。普通客户从普通设施严格改选，目标新成本低于其原成本，因而保帽。普通客户加入超帽设施无严格改善，孤立重原子已经只付自身权重。每步使半平方负载势严格下降，有限状态保证终止。要得到位界，暂移孤立超帽原子及其标签设施。普通客户保留全部可达普通标签，其种子选项保证菜单非空。每家标签设施是一台相同单位机器，改选成本是目标负载加自身完整重量。调用已证 MAX 在残余原允许游戏从种子求精确纯 NE，普通最大负载仍受帽。放回孤立重原子与设施后，再逐类复核全部原动作：普通客户加入恢复的设施成本严格超帽，恢复原子去任何标签成本至少其自身权重，普通之间已由 MAX 检验。因此仍为原完整游戏的精确纯 NE，偏离者收益分别至多 2a 或 2γ≤2a。这里不消耗 MIN 或分量双端结论。任意其余布局按该布局重新计算所有覆盖和可达标签，从每个已覆盖客户的最小可达标签开始，在全部纯允许菜单上执行固定顺序的 MAX。空任务直接返回，未覆盖者不补造动作。\n\n同一在轨标签布局有 k(|S|−1) 个不同的实际偏离布局，各只修改一个坐标。存储在轨策略、每项纯偏离策略和固定默认算法定义同一份完整续局，对全部偏离同时给因子二，全部其他布局按需给精确纯 NE。规范贪心至多 O(k|S|n) 次朴素精确运算（n 为原客户数）。新槽网有 N+|O|+2 个节点、N+2E 条正向边（E 为可动原菜单关联数），旧显式槽网有 O(N+E+N|O|) 条边，旧下盒也可给首 ℓ_t 槽减 NC+1 的奖励，其中 C 是最大未奖励原槽费，少填任一强制槽损失超过任意两个全流的原成本差。两种网络槽费用可用有理数共同分母与重数最小公倍数整数化，操作数位长多项式，经 N 次容许负残边的 Bellman–Ford 单位增广求出一个极小赋值。装箱每站至多客户数减一次合并。MAX 用原权分母积缩放，其整数总重的对数受输入位长控制，调用界按该对数计。k 和目录显式，全部显式偏离条目的总构造时间及输出大小均位多项式，一次任意布局查询也是位多项式。",
+  "scope": "三项已证前提共同支付 SC-K-UNIFORM-LIGHT-FLOW-2 v3 的全部正覆盖等重可动域和两个退化分支。SC-K-EQUAL-LIGHT-FLOW-2 是同一原模型登记命题的后版记法。规范贪心一般异权有有限完整盒构造，BOX 接口在已给合法完整盒见证后也适用于异权；一般异权在轨选择的统一总位多项式界仍未证。现行完整续局程序实现等权流在轨选择，离轨和默认仍是有限纯改善。",
+  "whole_result": "对每个登记域的显式有理共同目录输入，旧下盒流和新无约束流均可从同一次规范贪心布局位多项式选出站点纯、站内独立均匀的完整盒精确客户 NE，且两者的全部最优逐名赋值相同。BOX-TO-2 的两类种子和已证 MAX 给完整续局的位多项式紧凑构造，所有实际带标签偏离同时获得精确纯 NE 且偏离者收益至多其在轨收益两倍。任意其他带标签布局的默认精确纯 NE 可位多项式查询。正覆盖而无可动者保留原赋值，零覆盖给全布局零收益规则。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/等重轻客户下盒流与无约束细化--算法.md",
+      "sha256": "82abd37faab9e81b4fc3f4e302e8b2f704e8c5f2ccb0287f57527b2db3b99245",
+      "section": "下盒凸成本流"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/等重轻客户下盒流与无约束细化--算法.md",
+      "sha256": "82abd37faab9e81b4fc3f4e302e8b2f704e8c5f2ccb0287f57527b2db3b99245",
+      "section": "后续无约束Ψ及所有最优解的等价"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md",
+      "sha256": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md",
+      "sha256": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+      "section": "一份完整续局的量词"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/tools/evidence/facility-selector-frontier/original/research/current/multi_facility/polytime_frontier.md",
+      "sha256": "aae2fac64b6d1385e70dabdb436fed5f499374eeabbb1a89d0628426bfeeccc4",
+      "section": "SC-K-UNIFORM-LIGHT-FLOW-2: partial overlaps without a common anchor"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/计算/规范贪心完整续局程序与选择器接口--计算.md",
+      "sha256": "0fa6549c64b7b2e402c696140c6cf97bcc8fa2d3131f02051b299f23c3efbdc4",
+      "section": "等重流接回完整续局的条件链"
+    },
+    {
+      "path": "archives/facility-games/state/审查/设施流与多地点复杂度补充复核--审查.md",
+      "sha256": "2d62d84d756e77340f24698201683d924c6293be8ffac575c1a3bfd1dc99d317",
+      "section": "等权轻客户的自动盒最小费用流"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/计算/等重流连接续局的原模型审计--计算.md",
+      "sha256": "7b1d0f5ab3bf7b051a1e1cbbb517e6f9fd56412cbd47d1f870782e84162b1ecc"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/tools/evidence/equal-light-flow-continuation-audit/current_original_run.json",
+      "sha256": "cdd142f1f3acc23bbcaff29a3ed156d16c2dbd8f5ba0c4acd75da903a723b95e"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "从 0ce17 的在轨贡献实际续接。核对四核当前登记的正文、证据、版本 pin 与唯一旧资产。仅抽象流端点改为 v4，旧资产其余端点、证据 SHA 和审读摘要仍匹配；当前补充复核的等权段与两类归位路径重核后直接挂入。独立复核两类装箱及 MAX 删除后还原全部真实动作，拆分有限证明和总位界。冻结 b55 十文件逐项核 SHA 后重放，301 份原模型有限报告与原文件逐字节相同，并单核 m=1、k=2 正覆盖空轻集。重放检验现行有限实现，数学位界来自三前提的联合证明。",
+  "endpoint_pins": {
+    "SC-K-EQUAL-LIGHT-FLOW-BOX": "e0b69906dc358707628ad4af6a20ecb790fdb4ab1884c9936901e220f31d80f1",
+    "SC-K-GREEDY-BOX-TO-2": "c5f0af766e5c2d960dc7f4b714189e568990f1165bbaeefba51b7a0d89a3ce14",
+    "SC-K-UNIFORM-LIGHT-FLOW-2": "a38def20d1e5f745b568ef9855ec243b0d55c4976bde2b379831829ee2e1941c",
+    "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import": "5f2019da9ff05afa3a2e57eb2cf96d8c63eef19e66208bb0290ce535628737f6"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/算法/等重轻客户下盒流与无约束细化--算法.md": "82abd37faab9e81b4fc3f4e302e8b2f704e8c5f2ccb0287f57527b2db3b99245",
+    "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+    "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+    "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a",
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+    "archives/facility-games/subarchives/common-many/tools/evidence/facility-selector-frontier/original/research/current/multi_facility/polytime_frontier.md": "aae2fac64b6d1385e70dabdb436fed5f499374eeabbb1a89d0628426bfeeccc4",
+    "archives/facility-games/subarchives/common-many/state/计算/规范贪心完整续局程序与选择器接口--计算.md": "0fa6549c64b7b2e402c696140c6cf97bcc8fa2d3131f02051b299f23c3efbdc4",
+    "archives/facility-games/state/审查/设施流与多地点复杂度补充复核--审查.md": "2d62d84d756e77340f24698201683d924c6293be8ffac575c1a3bfd1dc99d317",
+    "archives/facility-games/subarchives/common-many/state/计算/等重流连接续局的原模型审计--计算.md": "7b1d0f5ab3bf7b051a1e1cbbb517e6f9fd56412cbd47d1f870782e84162b1ecc",
+    "archives/facility-games/subarchives/common-many/tools/evidence/equal-light-flow-continuation-audit/current_original_run.json": "cdd142f1f3acc23bbcaff29a3ed156d16c2dbd8f5ba0c4acd75da903a723b95e"
+  },
+  "review_digest": "1458ed5b54c4f9db6ee8e5649534c99bfef6f49d1603291d20e26b6ca29d9000"
+}
