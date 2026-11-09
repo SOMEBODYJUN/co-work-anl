@@ -1,0 +1,57 @@
+{
+  "edge_id": "wc-boss1-9fd1c1fae07348c6-rounding-and-background-pull-back-strict-dynamics",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-WEIGHT-CLASS-CLUSTER-ROUNDING-v1",
+    "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1"
+  ],
+  "target_ids": [
+    "weighted-congestion/rounding-potential-pullback-review-observation"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限标准原子加权拥塞游戏，正玩家权，有限非空的资源子集菜单，费用为非负系数次数至多d的多项式。个体成本是资源延迟和，每个真实单人偏离重算含自身的负载。 d≥2、k≥1、R≥1。固定窄簇标签v_τ≤w_i≤Rv_τ，只取整可动权，固定者只允许其唯一策略。A=A_(d,k)。",
+  "roles": {
+    "WC-WEIGHT-CLASS-CLUSTER-ROUNDING-v1": "给每个状态及真实偏离两端的费用夹逼C′≤C≤R^dC′；静态取整存在性本身不足以给动态。",
+    "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1": "对取整后的全局可动代表权，在相同固定背景下提供沿所有严格A改善下降的三角势。",
+    "weighted-congestion/rounding-potential-pullback-review-observation": "接收同一取整势拉回原状态后对每一条原严格R^d A改善的下降。"
+  },
+  "explanation": "令Φ′为先吸收取整游戏的固定背景后构造并拉回到取整策略状态的势。原、取整菜单相同，定义原状态势Φ(s)=Φ′(s)。若任一原真实单方偏离s→s′满足C_i(s)>R^d A C_i(s′)，则C′_i(s)≥C_i(s)/R^d>A C_i(s′)≥A C′_i(s′)。这条偏离在取整游戏严格A改善，故Φ(s′)<Φ(s)。这里只除正数R^d，零成本端点包含。有限原状态空间中全部严格R^d A改善路径因而终止，任何该势的单边局部最小点为原R^d A-PNE。无可动者时该下降陈述为空真，常数势足够。",
+  "scope": "合并的是全状态费用序与严格改善势两项数学前提。动态结论来自独立保留的审查观察，规范取整对象的登记身份保持静态。没有路径长度的多项式保证。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+      "sha256": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2",
+      "section": "近似权簇单向取整"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+      "sha256": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2",
+      "section": "固定背景吸收"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+      "sha256": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2",
+      "section": "任意真实多资源偏离"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/权类别排序势与共占高度的审查范围--审查.md",
+      "sha256": "5addca12a6cfc4cc59a84bbf40244d5f2ba884b4e3ea1401e195c7ead86a0b3a",
+      "section": "采纳说明与未纳入的动态取整建议"
+    }
+  ],
+  "reviewed_by": "Boss1-weighted-degree-and-rounding-round18",
+  "review_note": "逐条核旧端点用除以R^d、新端点用C′≤C，严格号传到取整势。历史四玩家报告没有单独枚举原严格改善边。",
+  "whole_result": "同一取整三角势沿身份状态映射拉回后，原游戏的每条严格R^dA_(d,k)改善均严格降势。因此任意这种路径终止，损失仍只有一个R^d。",
+  "endpoint_pins": {
+    "WC-WEIGHT-CLASS-CLUSTER-ROUNDING-v1": "4cd49b94bfc7cd92d7327701bb3a5a214d2d16cab398d094353e9f70162c65b7",
+    "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1": "93d33edeb95f5257122583259d5347ea913e25f04dfefe41e9e5f281c1c2b704",
+    "weighted-congestion/rounding-potential-pullback-review-observation": "aa2772a1c0ab3a4e7882d96e06033d9ae4882ff1713bfa0e396e28743e9c70a2"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2",
+    "archives/weighted-congestion/state/审查/权类别排序势与共占高度的审查范围--审查.md": "5addca12a6cfc4cc59a84bbf40244d5f2ba884b4e3ea1401e195c7ead86a0b3a"
+  },
+  "review_digest": "34c9d00f22a9ae498b55717417c9466a033942e24707a317f74063824f8abdcf"
+}

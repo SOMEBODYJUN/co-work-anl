@@ -1,0 +1,51 @@
+{
+  "edge_id": "wc-3a-parity-face-and-cyclic-window-proper-core",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-TRANSIENT-PARITY-SELECTOR-DUAL-v1",
+    "WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1"
+  ],
+  "target_ids": [
+    "WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "沿用有限原子加权MODEL，包括资源无关正权、非负费用、次数至多d，成本不乘玩家权，真实重算偏离负载。一般植入针对任意给定d≥0、α≥1和已有严格α简单环Q的二动作游戏G，要求每个正费用资源对每名玩家至多属于一个动作。补足至n′=max(n,d+2)，新增普通权和flag权可任意正。存在性特例采用循环窗口证明给出的d≥2、1≤α<ρ_d的实例。",
+  "roles": {
+    "WC-TRANSIENT-PARITY-SELECTOR-DUAL-v1": "给固定d+2个活跃位与flag的奇偶面、面上的所选翻位，以及全部完整签名次数0,…,d上对全部β≥1可行的同一概率。只复用有正质量的行，不复用原两循环。",
+    "WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1": "第3–4节给近次数范围内真实严格改善环及其两套互不相交动作，提供一般植入需要的proper输入。末尾2^E扩张仅用于保有全空均衡的另一个结论。",
+    "WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1": "把面上可行性、唯一坏环和全列质量分离放到同一个完整proper模板，并得到原α的暂态正质量和近次数存在性。"
+  },
+  "explanation": "先取一般输入G。将Q嵌入补充普通玩家固定0、flag=1的面，固定环点q。flag=0按活跃奇偶翻玩家1或把flag置1。flag=1时沿嵌入环运行，环外逐次清除与q的一个坐标差，首次入环前Hamming距离严格下降。故每态真翻位，嵌入环为唯一循环。取非活跃普通位固定为q、flag=0的活跃偶面均匀概率。所选边仍是原奇偶证明在支撑上的边。新增固定对手在任一签名列只增加不随支撑边改变的负载背景c≥0。把(L+c)^k按二项式展开，是同一受限签名上0至k次原列的非负组合。若移动者始终不使用该资源则列恒零。故原概率在大模板的全部完整签名列仍对每个β≥1可行，因而在完整proper列亦可行，且全部支撑为暂态。将G的正资源按动作签名聚合，并令新增玩家不使用这些资源。缺失签名系数取0，零费单点资源可保证动作不同。所得a≥0属于完整proper锥，在环上逐边保旧成本和真实偏离后成本。置b=B_H(α)a、η=min_Q b>0、M=max_Transient(-b)_+。任意概率对偶μ的暂态质量t满足0≥aᵀB_H(α)ᵀμ=E_μb≥η(1−t)−Mt，故t≥η/(η+M)>0。M=0时界为1。每态所选玩家当前动作的私人常数1列在该行恰为1，对全部β≥1排除点质量。同一私人游戏使该态有严格偏离。最后，循环窗口的每个正系数资源对中，任何参与者翻位恰从一侧换到另一侧。同步复制为同费资源保持这个proper属性和环上成本。仅保两动作，必要时从闭合步行抽简单环，便可把该有限正有理权输入上述构造。补权也可取正有理。",
+  "scope": "坏环植入的结论针对给定输入环与构造出的H。近次数范围中存在这样的输入由循环窗口另行支付。量词是同一暂态概率对所有β≥1可行，而所有对偶必须给暂态正质量是在原α。对每一态可取不同私人游戏令其不稳定。存在一个H的对偶只排除同一系数使该H在全态严格实现。循环窗口全子集实例仍有全空精确PNE，实际反证所构造模板上全选择器只需循环支撑或点质量的主张，以及环见证游戏的全边下降。",
+  "whole_result": "对任意满足输入合同的严格α简单环与任意补充正权，完整proper锥上可构造唯一循环为嵌入Q的全状态真翻位H。同一完全暂态概率对全部β≥1可行，在原α每个概率对偶的暂态质量至少η/(η+M)>0，对任何β≥1均无点质量对偶，且模板无所有费用游戏共享的β-PNE态。特别每个d≥2及1≤α<ρ_d有正有理权的这样的模板，且ρ_d/d→1。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/奇偶暂态层与完整锥必要质量--定理.md",
+      "sha256": "9c7c399a3d42d6a1e3a7921221e504bf3784145ed1cead3fdd553c036dc8f01e"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/循环窗口复制的近次数真实改善环--定理.md",
+      "sha256": "e6948b99b84e49e6683f0278be19661793042f5b7321f742af8fc578749aace2"
+    },
+    {
+      "path": "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md",
+      "sha256": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a",
+      "section": "精确矩阵与全部量词"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项复核输入简单环、窗口两方向负载、补权背景的逐列迁移、唯一循环路由、归一化对偶与私人常数列。两个来源共同覆盖整条登记陈述。一般植入是任意合法坏环输入下的命题，近次数存在性由循环窗口构造支付。",
+  "endpoint_pins": {
+    "WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1": "5848b6cfc7ac09b7830e98dc49f298bc9361195791df36384dbfb34ec91f4607",
+    "WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1": "d6e6f6cdd404dc1193d945982774ec476a9f29d91249f6672daa69f5037d6479",
+    "WC-TRANSIENT-PARITY-SELECTOR-DUAL-v1": "518b9658c8dd423aebc80bb0f0467568c28c628d3c8c60ee9f2fe4b6437d7505"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/奇偶暂态层与完整锥必要质量--定理.md": "9c7c399a3d42d6a1e3a7921221e504bf3784145ed1cead3fdd553c036dc8f01e",
+    "archives/weighted-congestion/state/定理/循环窗口复制的近次数真实改善环--定理.md": "e6948b99b84e49e6683f0278be19661793042f5b7321f742af8fc578749aace2",
+    "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a"
+  },
+  "review_digest": "ad8a76de1674ee567368654b8d3b9463debea4185c2b4cb439aa1e143e3bab69"
+}

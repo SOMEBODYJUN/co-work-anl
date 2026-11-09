@@ -1,0 +1,43 @@
+{
+  "edge_id": "wc-boss1-9fd1c1fae07348c6-triangular-potential-through-fixed-background",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1"
+  ],
+  "target_ids": [
+    "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限标准原子加权拥塞游戏，正玩家权，有限非空的资源子集菜单，费用为非负系数次数至多d的多项式。个体成本是资源延迟和，每个真实单人偏离重算含自身的负载。 d≥2，可动玩家有至多k≥1个全局权值。固定玩家仅有一个合法策略，固定权值数任意。",
+  "roles": {
+    "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1": "在平移后只含可动玩家的游戏给有限权类势和所有严格A_(d,k)改善下降。",
+    "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1": "接收原游戏中的同倍率均衡与势，固定背景吸收逐状态保可动玩家真实成本。"
+  },
+  "explanation": "每资源令B_e为固定玩家在唯一策略下对e的总权。删除这些玩家，令移动负载x使用费用c̃_e(x)=c_e(B_e+x)。x^r的系数为Σ_(j≥r)a_(e,j)·binom(j,r)·B_e^(j−r)，非负且次数至多d。原状态与删去固定坐标后的状态一一对应，恢复时只添回每个固定玩家的唯一策略。对每个可动者的旧状态和每个真实新状态，原负载为B_e+x，故其延迟和逐项相等。将三角势沿该映射拉回，原严格A_(d,k)改善仍下降，有限状态势最小点为原游戏A_(d,k)-PNE。没有可动者时唯一状态是精确PNE。",
+  "scope": "精确吸收保持可动玩家的偏离成本及势比较。固定玩家可以使用空集或多资源，其费用仍可能随可动者行动改变。含固定玩家的全社会成本包络需要另证。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+      "sha256": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2",
+      "section": "任意真实多资源偏离"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+      "sha256": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2",
+      "section": "固定背景吸收"
+    }
+  ],
+  "reviewed_by": "Boss1-weighted-degree-and-rounding-round18",
+  "review_note": "核单元素菜单、二项展开非负、逐端点成本恒等、固定者无改策略以及无可动者分支。",
+  "whole_result": "只有可动玩家的全局权值数进入A_(d,k)。任意固定单策略玩家的背景可精确吸收，原游戏有A_(d,k)-PNE及对全部严格该倍率改善下降的拉回势。无可动者的唯一状态精确。",
+  "endpoint_pins": {
+    "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1": "93d33edeb95f5257122583259d5347ea913e25f04dfefe41e9e5f281c1c2b704",
+    "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1": "1a0edceaed3cbc80e104df06697385be3406c7aa2b6eed26b2203f66c2609413"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2"
+  },
+  "review_digest": "39e7ec0a70897eb28da83554dd816c25eb91fce02f8b74e92e92cf6445c778c5"
+}

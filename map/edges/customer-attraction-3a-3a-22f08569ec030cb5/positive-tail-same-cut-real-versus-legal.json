@@ -1,0 +1,54 @@
+{
+  "edge_id": "cag-22f085-positive-tail-same-cut-real-versus-legal",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/nonterminal-amount-column-cap-two-lower-at-every-fixed-tail-length",
+    "customer-attraction/fixed-cut-legal-leaf-amount-cap-sharp-r-plus-two"
+  ],
+  "target_ids": [
+    "M-a1cb1e0cef2641d1b1d03e7ec046f446"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定任一正尾长r=m−ℓ≥1，所有合格孩子都在同一实际目标切点i_α=ℓ。保原共同目录、逐sender跨孩子AMOUNT、目标正价和两叶负载。分别量化来自真实纯SPE的分支，以及合法叶或同一任意完整行动计划的分支。",
+  "roles": {
+    "customer-attraction/nonterminal-amount-column-cap-two-lower-at-every-fixed-tail-length": "每个固定正尾长的真实SPE下界，随n增长，且不同强制主题在同一个非末位切点。",
+    "customer-attraction/fixed-cut-legal-leaf-amount-cap-sharp-r-plus-two": "给相同位置和预算合同的合法松弛上界r+2及固定m,ℓ的逼近族。该族的实际末位有严格获利偏离。",
+    "M-a1cb1e0cef2641d1b1d03e7ec046f446": "接收固定正尾长且同目标切点的真SPE常数区间及对去掉均衡约束的精确区分。"
+  },
+  "explanation": "真实同切分支在目标之前逐位置与B相同，故固定合法叶定理原样适用。对每一有限输入且正目标，列比严格小于r+2。真SPE下界用n≥max(3,r)、m=n+1+r、ℓ=n+1、原X/Y块加r个不交Z主题；实际D与每个同切强制T_j都沿同一完整策略走Z尾，旧客户负载不变，逐源预算取等得到2−3/(n+1)。固定r让n增长，真SPE同切上确界至少二。相反，固定合法锐族只有一个非空sender A=X∪Y、实际目标D=X，孩子强制T=Y并令r个后继都取T，列比(L+1/2)/(1+L/(r+2))随L趋r+2；取L>3(r+2)/(2r)即严格超过二。即使由同一完整行动计划实现，实际末位在空主题后改T能严格获益L/2，因此越过二的见证处于合法松弛域。",
+  "scope": "对每个固定正尾长及同一目标切点，真SPE下界跨人数，合法上界和锐性也适用于固定m,ℓ。此对照使用两份独立构造，不把任意行动计划的真实完成解释成均衡续局。",
+  "contribution": {
+    "result": "固定r≥1的同切真实SPE列比上确界（跨人数）在[2,r+2]，各正目标有限实例列比严格低于r+2。去掉均衡约束的同切合法域在每个固定允许m,ℓ上的上确界为r+2，并可由同一任意完整行动计划逼近。",
+    "remaining": "真实SPE在该同切正尾子域能否达到上界二，以及允许比目标更早切点和混合切点时的一般DEEP-CAP2，仍需各自论证。固定人数的真SPE锐值不由跨人数构造决定。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/任意固定正尾长的非末位金额列系数二下界--定理.md",
+      "sha256": "4be4c1db6dd8c5be4ced85995688c5530d888092b6de6057fb4f5bdb8605e6e6"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/同一切点的合法叶金额列精确常数--定理.md",
+      "sha256": "549af79035511f2942c76090cb3f49ee89025342b6402a39a6492d3ea062224e"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末层多孩子金额预算的锐两倍列容量--定理.md",
+      "sha256": "dae097bf1c0576d6ab8b417505f0b99280192fd80b11571d5f190ed8e78766c3",
+      "section": "更深cut的候选及固定输入的精确优化"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "全文核两条独立定理v1与DEEP v2的量词、共同切点、真Z续局和精确列比；合法锐族的末位严格获利偏离把失败的松弛域与真正开放目标区分。",
+  "endpoint_pins": {
+    "M-a1cb1e0cef2641d1b1d03e7ec046f446": "be6ad887460cc18eeed9d6f70aab827642b60d9019ed654e0a9236010f2b5968",
+    "customer-attraction/fixed-cut-legal-leaf-amount-cap-sharp-r-plus-two": "cdf0cdd8050ea83356c74bcec456b1e71e98da2a8e1b2e1257e5b1079afdacf3",
+    "customer-attraction/nonterminal-amount-column-cap-two-lower-at-every-fixed-tail-length": "65dfafb814e294ed5c5e7e96467d87b3d4bf3e9a33f0b10acf8d41467acb90f8"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/任意固定正尾长的非末位金额列系数二下界--定理.md": "4be4c1db6dd8c5be4ced85995688c5530d888092b6de6057fb4f5bdb8605e6e6",
+    "archives/customer-attraction/state/定理/同一切点的合法叶金额列精确常数--定理.md": "549af79035511f2942c76090cb3f49ee89025342b6402a39a6492d3ea062224e",
+    "archives/customer-attraction/state/定理/末层多孩子金额预算的锐两倍列容量--定理.md": "dae097bf1c0576d6ab8b417505f0b99280192fd80b11571d5f190ed8e78766c3"
+  },
+  "review_digest": "fdaf7a530b6967e7d4c04ba6b9b75c0de0acb65c8fe4ee8b96e24ece356e94c5"
+}

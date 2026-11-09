@@ -1,0 +1,53 @@
+{
+  "edge_id": "cag-6eade5-fixed-cut-legal-leaf-specializes-to-terminal-amount-cap",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/fixed-cut-legal-leaf-amount-cap-sharp-r-plus-two"
+  ],
+  "target_ids": [
+    "customer-attraction/terminal-multichild-amount-normalized-sharp-column-cap-two"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同有限非空标签目录、有限单位客户、m≥1 名有序单位提供者、终局均分。取固定共同切点等于目标 ℓ=m，r=m−ℓ=0，任意合法叶 B 及有限多个孩子 W^α=(B_{<m},T_α)。保留相同的完整叶负载、原主题实际交集差正价和逐 sender 跨全部孩子共享的一份非负 AMOUNT。允许空主题、重复索引和同覆盖异标签。",
+  "roles": {
+    "customer-attraction/fixed-cut-legal-leaf-amount-cap-sharp-r-plus-two": "提供固定切点下逐 sender 的负载比与金额预算控制，以及按固定切前覆盖者数 k_x 累加的逐客户上界。",
+    "customer-attraction/terminal-multichild-amount-normalized-sharp-column-cap-two": "在 r=0 接收逐客户上界在实际末位有切前覆盖的客户支撑集上的求和，得到登记的两重末位金额列界。"
+  },
+  "explanation": "令 r=0。固定 sender j<m 的每个客户在孩子的负载至多 c_B+1≤2c_B，故 p_j(W^α)≥p_j(B)/2。p_j(B)>0 时逐 sender 的 AMOUNT 给 Σ_αλ_{αj}≤2。p_j(B)=0 时主题无客户且全 q=0，直接略过。对 x∈B_m，固定切前覆盖者数 k_x=c_B(x)−1。k_x=0 时 x 无价格贡献。k_x>0 时，只累加 x∉T_α 的孩子，此时 c_α(x)=k_x，且含 x 的 sender 原利润均为正。逐 sender 将这部分系数和以二界住，再对恰有的 k_x 个 sender 求和，x 的总输出至多 2k_x/(c_B(x)k_x)=2/c_B(x)。因此按 k_x>0 的客户求和得到 2∑_{x∈B_m:c_B(x)≥2}1/c_B(x)，该量至多 2p_m(B)。m=1 时无 sender，B_m 为空时无价格项，均直接给零。",
+  "scope": "固定共同末位切点，末位目标及所有相同切点的有限合法孩子。两叶可以来自任意合法计划，强制主题无须最佳回复。末位有切前覆盖者的客户支撑和由源证明的逐客户步骤给出。登记的末层对象 v2 量化上界；另行构造的完整 SPE 锐族是独立的统一系数下界。",
+  "whole_result": "固定切点定理的逐客户证明取 r=0，推出末层登记对象的完整结论。对任意合法 B、有限同一末位 cut 孩子及其共享 AMOUNT 系数，有 Σ_{α,j<m}λ_{αj}q_{α,jm}≤2∑_{x∈B_m:c_B(x)≥2}1/c_B(x)≤2p_m(B)，涵盖空 sender、零利润与空主题。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/同一切点的合法叶金额列精确常数--定理.md",
+      "sha256": "549af79035511f2942c76090cb3f49ee89025342b6402a39a6492d3ea062224e"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末层多孩子金额预算的锐两倍列容量--定理.md",
+      "sha256": "dae097bf1c0576d6ab8b417505f0b99280192fd80b11571d5f190ed8e78766c3",
+      "section": "任意多个孩子共享一份金额预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末层多孩子金额预算的锐两倍列容量--定理.md",
+      "sha256": "dae097bf1c0576d6ab8b417505f0b99280192fd80b11571d5f190ed8e78766c3",
+      "section": "自足证明及全部零端点"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读固定同切点 v1 与末层上界 v2、共同目录完整历史定义和原末层代数，核对同一切点、金额归一、两个叶负载及逐客户支撑。反向使用旧末层结果只给固定切点定理在 r=0 的非严格上界；每个固定人数的逼近序列另由合法 A/D/T/空主题构造承担。",
+  "endpoint_pins": {
+    "customer-attraction/fixed-cut-legal-leaf-amount-cap-sharp-r-plus-two": "cdf0cdd8050ea83356c74bcec456b1e71e98da2a8e1b2e1257e5b1079afdacf3",
+    "customer-attraction/terminal-multichild-amount-normalized-sharp-column-cap-two": "a0b865b2a5f452b5d75309fa669b2c6a935fa064b630da71712df13be8aa49d0"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/同一切点的合法叶金额列精确常数--定理.md": "549af79035511f2942c76090cb3f49ee89025342b6402a39a6492d3ea062224e",
+    "archives/customer-attraction/state/定理/末层多孩子金额预算的锐两倍列容量--定理.md": "dae097bf1c0576d6ab8b417505f0b99280192fd80b11571d5f190ed8e78766c3",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "19198bee1f8bffd3d601db13b4aad2c59c5a1cafea69e0ce33eba1887e1b4265"
+}

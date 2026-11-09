@@ -1,0 +1,53 @@
+{
+  "edge_id": "cag-22f085-fixed-max-and-target-copy-pay-small-columns",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-67562654305f41c2b0dd47b3a39810e6"
+  ],
+  "target_ids": [
+    "M-a1cb1e0cef2641d1b1d03e7ec046f446"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定完整纯SPE σ 的实际根叶B、有限真实单切分支、目标ℓ及共享AMOUNT。令r=m−ℓ，a_x=#{t<ℓ:x∈B_t}。允许同切多主题、不同cut混合及i_α=ℓ。用实际位置ℓ在同目录改选B_j后的同一σ续局核其复制偏离。",
+  "roles": {
+    "M-67562654305f41c2b0dd47b3a39810e6": "消去全部λ并给每sender独立取最大q/p的精确可达值；据q的支持给每源最多半份原金额。",
+    "M-a1cb1e0cef2641d1b1d03e7ec046f446": "接收全量词的无λ等价式、真实位置复制得到的普遍位置界及由它已付的各小位置。"
+  },
+  "explanation": "对每个固定输入，令ρ_{jℓ}=max_{α:j<i_α≤ℓ} q_{αjℓ}/p_j(W^α)，空候选或空主题为零；FIXED-MAX给M_ℓ=Σ_{j<ℓ}p_j(B)ρ_{jℓ}，每个正源可把整份金额投入各自一个最大比率孩子。故DEEP逐列等价于在原全实例和全σ量词下证明M_ℓ≤2p_ℓ(B)，无需同一λ同时取满各列。q的每个客户在原叶被不同j和ℓ覆盖，c_B≥2，故q_{αjℓ}≤p_j(W^α)/2、ρ_{jℓ}≤1/2。另在实际ℓ节点单次强制合法复制B_j，并沿同一σ完成，客户x∈B_j的偏离终局负载至多a_x+r+1，所以IC给p_ℓ(B)≥Σ_{x∈B_j}1/(a_x+r+1)。因a_x≥1且c_B(x)≥a_x，有a_x+r+1≤(r+2)c_B(x)，得p_j(B)≤(r+2)p_ℓ(B)。两式相加给M_ℓ≤(1/2)Σ_{j<ℓ}p_j(B)≤((ℓ−1)(r+2)/2)p_ℓ(B)。复制叶只供目标IC使用，未替换最大比率孩子的利润。ℓ=2时结果m/2与已发布的第二目标复制边同值；新位置覆盖包括m=3、ℓ=3允许切点2或3及其混合。",
+  "scope": "固定σ的精确优化量化全部允许λ。位置界仅需实际目标对复制各旧主题的真实IC；原DEEP的完整SPE满足此条件。ℓ=1或零目标时输出零；不同切点不要求选择共同后继叶。",
+  "contribution": {
+    "result": "在真实DEEP全分支域，Q_ℓ≤M_ℓ≤((ℓ−1)(r+2)/2)p_ℓ(B)。从而m≤3全部列、m=4的第二列以及ℓ=1或零目标列都支付CAP2；末位目标m=ℓ=3允许早切。",
+    "remaining": "系数(ℓ−1)(r+2)/2超过二且无另一已证限制时，仍需更强的跨孩子真实IC或金额耦合，或者找到真实SPE反例。固定输入精确式并不认证对所有σ的一般二倍界。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/末层多孩子金额预算的锐两倍列容量--定理.md",
+      "sha256": "dae097bf1c0576d6ab8b417505f0b99280192fd80b11571d5f190ed8e78766c3",
+      "section": "更深cut的候选及固定输入的精确优化"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/R5a主总账的门槛校正与深层金额合同--资源.md",
+      "sha256": "cc61a6939d66cf6f7a36e89f01ccf0f29cceaf26dcfbf6e868cf8a9e43c96eee",
+      "section": "总源池与粗半前缀界不产生新资金"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对固定最大值v2与DEEP义务v2的分支、逐源独立预算和零端点。用同目录的目标复制偏离逐客户核真实位置界，并对照已发表的第二目标复制边，保留m=3末目标早切的新范围。",
+  "endpoint_pins": {
+    "M-67562654305f41c2b0dd47b3a39810e6": "6a5536667735fc8c9fe54f8a1974ec36cc58bc2571904e8e0d7a4d4de7d4c2d8",
+    "M-a1cb1e0cef2641d1b1d03e7ec046f446": "be6ad887460cc18eeed9d6f70aab827642b60d9019ed654e0a9236010f2b5968"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/末层多孩子金额预算的锐两倍列容量--定理.md": "dae097bf1c0576d6ab8b417505f0b99280192fd80b11571d5f190ed8e78766c3",
+    "archives/customer-attraction/state/资源/R5a主总账的门槛校正与深层金额合同--资源.md": "cc61a6939d66cf6f7a36e89f01ccf0f29cceaf26dcfbf6e868cf8a9e43c96eee",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "58eeabdaca50fd4d4c2977bc382cd9347e90afc3300194290fd3e9056603484f"
+}

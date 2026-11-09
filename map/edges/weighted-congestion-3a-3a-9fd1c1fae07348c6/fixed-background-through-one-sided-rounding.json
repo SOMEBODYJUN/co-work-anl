@@ -1,0 +1,43 @@
+{
+  "edge_id": "wc-boss1-9fd1c1fae07348c6-fixed-background-through-one-sided-rounding",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1"
+  ],
+  "target_ids": [
+    "WC-WEIGHT-CLASS-CLUSTER-ROUNDING-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限标准原子加权拥塞游戏，正玩家权，有限非空的资源子集菜单，费用为非负系数次数至多d的多项式。个体成本是资源延迟和，每个真实单人偏离重算含自身的负载。 d≥2、k≥1、R≥1。每个可动玩家有固定标签τ(i)与正代表权v_τ，满足v_τ≤w_i≤Rv_τ。固定玩家仅有一个合法策略，原权保留。",
+  "roles": {
+    "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1": "给取整后至多k种可动权值、固定背景任意的游戏A_(d,k)-PNE。",
+    "WC-WEIGHT-CLASS-CLUSTER-ROUNDING-v1": "接收全部真实端点的单向费用夹逼，以及把一个取整均衡提升到同一原策略状态的保证。"
+  },
+  "explanation": "向下取整仅把w_i换为v_τ，保留所有玩家菜单。固定背景同为B_e≥0，故相同状态的原负载x=B_e+Σw_i与取整负载x′=B_e+Σv_τ满足x′≤x≤Rx′。每个p≤d项满足(x′)^p≤x^p≤R^d(x′)^p，常数项单列，零负载仍成立。于是C′≤C≤R^dC′逐玩家逐状态成立，特别含任意真实偏离后的端点。取整可动权值至多k，由源结果取取整A_(d,k)-PNE s。对任一合法偏离s′，C_i(s)≤R^dC′_i(s)≤R^dA_(d,k)C′_i(s′)≤R^dA_(d,k)C_i(s′)。固定玩家只需自策略比较。无可动者唯一状态精确。",
+  "scope": "代表可以重复或缺席，标签在每个状态固定。背景平移是精确恒等，因此全链只用一次R^d。全类少簇覆盖以及未取整成本的最优性需各自条件。本边的结论是静态提升。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+      "sha256": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2",
+      "section": "固定背景吸收"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+      "sha256": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2",
+      "section": "近似权簇单向取整"
+    }
+  ],
+  "reviewed_by": "Boss1-weighted-degree-and-rounding-round18",
+  "review_note": "核两端同策略、真实新负载、常数项与零费。明确从哪一侧取R^d，另一侧取单调性，作者四玩家数据仅作有限边界例。",
+  "whole_result": "任意符合合同的原/取整状态和真实偏离有C′≤C≤R^dC′。取整A_(d,k)-PNE在同一原状态给R^dA_(d,k)-PNE，只损失一个R^d。",
+  "endpoint_pins": {
+    "WC-WEIGHT-CLASS-CLUSTER-ROUNDING-v1": "4cd49b94bfc7cd92d7327701bb3a5a214d2d16cab398d094353e9f70162c65b7",
+    "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1": "93d33edeb95f5257122583259d5347ea913e25f04dfefe41e9e5f281c1c2b704"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2"
+  },
+  "review_digest": "44d908e8272e5ae774657195cc4f7009eb070c51727a5a99844f637b62335f60"
+}

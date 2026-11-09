@@ -1,0 +1,57 @@
+{
+  "edge_id": "wc-boss1-9fd1c1fae07348c6-additive-and-triangular-squeeze-universal-threshold",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-ADDITIVE-NEAR-DEGREE-ALLSTATE-v1",
+    "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1"
+  ],
+  "target_ids": [
+    "M-44798fea47994bf481e9ebb8443dabf7"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限标准原子加权拥塞游戏，正玩家权，有限非空的资源子集菜单，费用为非负系数次数至多d的多项式。个体成本是资源延迟和，每个真实单人偏离重算含自身的负载。 a_*(d)按次数至多d的全类普适倍率取下确界。下侧在整数d≥2^20，上侧在整数d≥2。",
+  "roles": {
+    "WC-ADDITIVE-NEAR-DEGREE-ALLSTATE-v1": "同次数正有理全状态反例给全类阈值的定量下侧。",
+    "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1": "逐有限实例以其实际全局权值数k构造A_(d,k)-PNE并给A_(d,k)<d，故d对全类可行。",
+    "M-44798fea47994bf481e9ebb8443dabf7": "接收普适阈值的双侧归一化不等式及整数尾部极限。"
+  },
+  "explanation": "记B_d=d−1200ceil(log₂d)²。第一个前提给一个次数恰d的游戏，其每态均有严格B_d改善，因新费非负，同一游戏在每个1≤a≤B_d也无a-PNE，故a_*(d)≥B_d。对任取有限游戏G，令k(G)为全部玩家的实际全局权值数。第二个前提以一致的玩家乘子处理真实多资源偏离，给该游戏A_(d,k(G))-PNE。根在d处的有限几何和严格小于d，故A_(d,k(G))<d。这份均衡在倍率d亦成立，因此d为全类普适倍率。除以d，两侧之差至多1200ceil(log₂d)²/d→0。",
+  "scope": "两前提共同支持完整定量目标。k(G)可以随游戏增长，逐游戏的严格上界与全类下确界等于d相容。是否等于d仍须额外证明。受限k的次线性界保留其子类条件。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/平方对数加性缺口的全状态近次数下界--定理.md",
+      "sha256": "63f3eed48ba119f9a1e13667137baaf8eabd3083003b71ceacf443d4849a13b1",
+      "section": "全整数尾部定理"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+      "sha256": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2",
+      "section": "根与显式包络"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+      "sha256": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2",
+      "section": "任意真实多资源偏离"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/平方对数加性缺口的全状态近次数下界--定理.md",
+      "sha256": "63f3eed48ba119f9a1e13667137baaf8eabd3083003b71ceacf443d4849a13b1",
+      "section": "普遍阈值的上下界分别由何承担"
+    }
+  ],
+  "reviewed_by": "Boss1-weighted-degree-and-rounding-round18",
+  "review_note": "分别核短窗下界的每态真实严格出口和三角势的全资源共同尺度，确认d上侧为内部已证路线。外部Paper Fact归属未作为前提。",
+  "whole_result": "每整数d≥2^20有1−1200ceil(log₂d)²/d≤a_*(d)/d≤1，且整数d→∞时a_*(d)/d→1。",
+  "endpoint_pins": {
+    "M-44798fea47994bf481e9ebb8443dabf7": "9deea43e2e12de747839d7b4a163c17ec86ed59f64f42be36bd0b62290040ceb",
+    "WC-ADDITIVE-NEAR-DEGREE-ALLSTATE-v1": "fde73bb1301de587dbb9ca5cc78798e974cf956488a6bd5e4d559dad60c3e329",
+    "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1": "1a0edceaed3cbc80e104df06697385be3406c7aa2b6eed26b2203f66c2609413"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/平方对数加性缺口的全状态近次数下界--定理.md": "63f3eed48ba119f9a1e13667137baaf8eabd3083003b71ceacf443d4849a13b1",
+    "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2"
+  },
+  "review_digest": "f7acec215b4f2040e2dae870d35e8a8f45066661a3a539ff62aec4a8d8e35eaf"
+}

@@ -1,0 +1,54 @@
+{
+  "edge_id": "wc-boss1-9fd1c1fae07348c6-uniform-short-window-to-additive-degree",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "WC-NEAR-UNIT-ALLSTATE-NONEXISTENCE-v1"
+  ],
+  "target_ids": [
+    "WC-ADDITIVE-NEAR-DEGREE-ALLSTATE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限标准原子加权拥塞游戏，正玩家权，有限非空的资源子集菜单，费用为非负系数次数至多d的多项式。个体成本是资源延迟和，每个真实单人偏离重算含自身的负载。 每整数d≥2^20取ℓ=ceil(log₂d)、x=d/(1200ℓ²)、n=ceil x。调用短窗构造的统一(A)。",
+  "roles": {
+    "WC-NEAR-UNIT-ALLSTATE-NONEXISTENCE-v1": "给满足统一(A)的每个整数(d,n)上的有限有理纯d次真实全状态坏族及每态余量η/2。",
+    "WC-ADDITIVE-NEAR-DEGREE-ALLSTATE-v1": "在每个整数d≥2^20支付统一合同，输出同一游戏的展示倍率d−1200ℓ²及原构造实际倍率α=(1−1/n)d。"
+  },
+  "explanation": "d=2^20时d>1200·20²。ℓ≥21时由2^20>1200·21²及2ℓ²≥(ℓ+1)²归纳得d>2^(ℓ−1)>1200ℓ²。故x>1且2≤n≤2x=d/(600ℓ²)，从而d≥8n。记T=(1+1/(8n))^d，则ln T≥d/(8n+1)≥(200/3)ℓ²，而ln(16nd)<4+2ℓ。最后200n(ln d)²≤(d/3)(ln 2)²<d ln(3/2)。于是所有(A)付清，其最后一项正支付锚定门的(2/3)^d泄漏。逐d沿用源的同一资源、策略、权重和偏离。相邻失配用重端点出口，累计短差按奇偶用返回端点，非法态用最早异位的当前单人修复。源构造已经保留纯d次和η/2全态严格余量。α=d−d/n≥d−1200ℓ²，降低倍率时新成本非负，所以每个真实出口仍有至少η/2余量。",
+  "scope": "参数桥逐整数覆盖二幂跳点及两侧。固定n的另一个充分阈值max{2^20,(600n)²}属于固定比例推论。本边使用统一(A)。有限显式游戏可以很大，单数位长界不等于总规模界。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/构造/短窗网格分离的全状态近一反例--构造.md",
+      "sha256": "fb94d8287c034a822bde2a44f27e03501d9d9babbe1f53ab4e6e460dae9f523c"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/平方对数加性缺口的全状态近次数下界--定理.md",
+      "sha256": "63f3eed48ba119f9a1e13667137baaf8eabd3083003b71ceacf443d4849a13b1",
+      "section": "对可变n逐跳点核统一条件"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/平方对数加性缺口的全状态近次数下界--定理.md",
+      "sha256": "63f3eed48ba119f9a1e13667137baaf8eabd3083003b71ceacf443d4849a13b1",
+      "section": "从统一构造到展示的加性缺口"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/端点面积与正修复的审查范围--审查.md",
+      "sha256": "5a849b9f2d5fe6bf9db309f442500f84c90f4d3dccf0d030c4403eedbd4ad4d8",
+      "section": "可变n全尾部：独立攻击的实际数学"
+    }
+  ],
+  "reviewed_by": "Boss1-weighted-degree-and-rounding-round18",
+  "review_note": "核同一个(d,n)游戏的真实前沿、返回两奇偶、每态非法单人修复、同次门预算和全部ceil跳点。源有限审计仅作其所列输入的旁证。",
+  "whole_result": "对每整数d≥2^20，存在正有理权、正有理系数纯d次、每人恰两非空不交动作的有限游戏，每个纯状态有真实严格(d−1200ceil(log₂d)²)改善。统一构造实际倍率α≥展示倍率。",
+  "endpoint_pins": {
+    "WC-ADDITIVE-NEAR-DEGREE-ALLSTATE-v1": "fde73bb1301de587dbb9ca5cc78798e974cf956488a6bd5e4d559dad60c3e329",
+    "WC-NEAR-UNIT-ALLSTATE-NONEXISTENCE-v1": "a82a291cc20ead016fb7403b724b64e9040a7c1af478d362a5021cbe92e074a3"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/构造/短窗网格分离的全状态近一反例--构造.md": "fb94d8287c034a822bde2a44f27e03501d9d9babbe1f53ab4e6e460dae9f523c",
+    "archives/weighted-congestion/state/定理/平方对数加性缺口的全状态近次数下界--定理.md": "63f3eed48ba119f9a1e13667137baaf8eabd3083003b71ceacf443d4849a13b1",
+    "archives/weighted-congestion/state/审查/端点面积与正修复的审查范围--审查.md": "5a849b9f2d5fe6bf9db309f442500f84c90f4d3dccf0d030c4403eedbd4ad4d8"
+  },
+  "review_digest": "2fe915435048b5f43d013f1ba81cb9750bfa57b4c2eba7cbba2434a865a45ca3"
+}
