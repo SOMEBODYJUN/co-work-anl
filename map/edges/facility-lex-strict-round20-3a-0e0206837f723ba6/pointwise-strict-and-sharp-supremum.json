@@ -1,0 +1,97 @@
+{
+  "edge_id": "commonmany-lexmax-all-candidates-strict-and-sharp-supremum",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-LEX-BUDGET",
+    "MF-PACK-2",
+    "MF-PURE-CAP",
+    "MF-CONT-COMPLETE",
+    "SC-K-LEXMAX-BARRIER"
+  ],
+  "target_ids": [
+    "facility-games/common-many/lex-maximum-pointwise-strict-factor-two-and-sharp-supremum"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限客户集、有限非空共同目录 S、任意 k≥2 家带标签设施，允许同址，覆盖关系任意，客户为正实权原子。被覆盖客户必须选择一家可达设施，各客户独立随机化，条件成本为含自身全重的实际总负载，设施收益为期望负载。全局词典序候选遍历全部带标签布局及每个已覆盖客户的合法单站赋值，然后让各客户在所选站的设施间独立均匀，并比较升序设施收益向量。固定布局的最优完整倍率允许重选该布局在轨及全部离轨精确客户 NE。",
+  "roles": {
+    "SC-K-LEX-BUDGET": "对每个正最大覆盖实例的每个全局并列最大候选给精确在轨 NE、正基准收益 a，并给同一候选的四类全目录预算，含单设施源消失时的交集项。",
+    "MF-PACK-2": "对每个存续原站以该偏离者的 a 为尺度，把总重至多 (h_t+1)a 的原子置于 h_t 家静止设施。普通箱可取等号 2a，超帽箱只含一个超 2a 的客户。",
+    "MF-PURE-CAP": "以 B=2a 保所有已服务超帽客户原位独占及普通设施受帽，在原完整可达菜单上有限严格改善至精确纯 NE。其单步不等式与偏离者初始≤a 合起来得到该偏离者严格<2a。",
+    "MF-CONT-COMPLETE": "逐候选无冲突地把保持指定在轨 NE 的全部真实单标签偏离纯 NE 拼接成全 S^k 精确续局。也可将障碍族的局部见证补成给定在轨 NE 的完整规则。",
+    "SC-K-LEXMAX-BARRIER": "给每个固定 k 的显式 h 参数族，全部最大布局同一占用至标签置换，任意 A 标签去 T 在全部离轨 NE 都获 h，其他偏离可取零。固定坏布局的最优倍率为 β_h，并有可换占用的精确 SPE。",
+    "facility-games/common-many/lex-maximum-pointwise-strict-factor-two-and-sharp-supremum": "收到所有并列最大候选共同的实例严格亚二保证、固定每个 k 的择优与择劣最大布局锐上确界及不取到，以及障碍族指定任一在轨 NE 后的最优完整倍率集合。"
+  },
+  "explanation": "设 R=max_t w(C_t)。R=0 时所有覆盖集合为空，任一候选及其空客户续局精确稳定。无真实偏离时倍率也取 1。否则固定任意全局最大候选及一项真实偏离 f:u→r，令 q_t 为在轨站重数，W_t 为原站池重量，a=W_u/q_u>0，N_r 为原未覆盖而被 r 覆盖的总重。若 q_u≥2，保留全部旧客户的原站赋值。源站剩 h_u=q_u−1 家静止设施且 W_u=(h_u+1)a，其他原站各有 h_t=q_t 家静止设施且 W_t≤(h_t+1)a。已占目标无新增覆盖，f 初始空载。未占目标把全部 N_r 给 f，初始≤a。\n\n若 q_u=1，令 J_u 为消失源站的原池。J_u 外旧客户仍留原站。J_u 内有静止可达站者先重挂到任一此类站，其余若可达 r 则给 f，已失去全部覆盖者不服务。每个存续原站 t 至多接收 J_u∩C_t 的重量，故 W_t+w(J_u∩C_t)≤(q_t+1)a 足够。已占目标本身有静止标签且无新增覆盖，f 初始空载。未占目标还把真正新增 N_r 给 f，两批互不重叠，故其初始负载≤N_r+w(J_u∩C_r)≤a。上述四类对全部新布局中的已覆盖客户给出合法去向。对每个存续站分别装箱，箱只放本物理站的静止标签。因此所有已服务 w_i>2a 客户都独占静止设施，普通设施负载≤2a，f 初始≤a<2a。\n\n沿真正严格的纯客户改善，孤立重客户已付自重下界而静止，普通客户也不能改善加入重设施。普通客户 i 从 g 到 v 的改善满足 L_v+w_i<L_g≤2a，故接客后的 v 严格低于 2a。特别是 f 接客后仍严格低于 2a，失客只会降低负载，其余步不改变它。半平方负载势每步变化 w_i(L_v+w_i−L_g)<0，有限可行纯状态保证终止于原完整客户游戏的精确纯 NE，于是 L_f′/a<2。每个实际偏离只改一个指定标签坐标，互异且异于在轨。拼接在轨与偏离见证，并以纯默认补齐其余布局。对该实例有限个最大候选及其有限个真实偏离所选收益比与 1 取最大，得到一个 α_I<2；每个候选各有一份续局，无须同一份函数服务不同候选。\n\n写 ℒ(I,k) 为可由一个全局最大候选实现的带标签布局集合，F(I,s) 为固定 s 但可任选全部精确独立混合客户 NE 的最佳完整倍率。对每个 s∈ℒ(I,k)，保持任一实现 s 的最大候选的续局见证即给 F(I,s)≤α_I<2。固定布局的 NE 集在概率单纯形乘积中由连续的最佳反应不等式刻画，为紧集。取所有布局 NE 集的有限乘积，并限制 1≤α≤α_I，偏离不等式仍闭，故此最优倍率可达，零收益也无需除法。因此固定 k 时实例内择优与择劣均严格小于 2。障碍族的 H,e,z_j 权重 h,1,3(h+1)/4，可达集分别 {A,T}、{A}、{Z_j}。锚点多放设施会使某坐标≤3(h+1)/8<(h+1)/2；A,T 三家以上会使其最小坐标低于 (h+1)/2；两家都在 T 时 e 不服务，每家 h/2；A、T 各一家时站点纯选的 H 只能去一个站，另一站至多得 e 的 1；两情形的最小坐标都低于 (h+1)/2。只有两家在 A、各锚点一家达到最大，至标签置换唯一。障碍给其各标签实现 F(I,s)=β_h=2h/(h+1)→2，所以两个上确界均为 2 且有限实例不取到。全权乘 4 后条件成本和设施收益同比缩放，保 NE 与倍率，锐性同样适用于正整数权。\n\n在同一族的坏占用上，固定任意在轨独立混合精确 NE，记 x、y 为 H、e 选第一家 A 的概率。两客户在第一家与第二家 A 的条件成本差分别为 2y−1 和 h(2x−1)。任一真混合迫另一人各半并反向迫自己各半。若皆纯，只有两种分别占用不同标签的分配是 NE。这给且只给三种在轨 NE，A 收益分别为 ((h+1)/2,(h+1)/2)、(h,1)、(1,h)。任一 A 标签去 T 时 e 被迫留唯一 A，H 在 T 成本 h 严格低于在 A 的 h+1，因此每个离轨 NE 都给偏离者 h。A→Z_j 时把 z_j 留静止标签，H,e 只能共处剩余 A，偏离者零收益。Z_j→A、T 或其他锚点时令 H,e 各独占一家静止 A，其余仍覆盖的锚点客户各留原处，偏离者零收益。全部真实偏离均已覆盖，再用标签拼接。因此指定在轨 A 收益 (L_1,L_2) 后的精确最优倍率为 h/min(L_1,L_2)，取值恰 {β_h,h}。障碍族改为 A、T 各一家及每锚一家有完整精确 SPE。",
+  "scope": "实例严格亚二保证保持每个全局最大候选的在轨站内均匀策略，每个候选可各选自己的完整续局，且离轨都可纯。两个上确界量化固定 k 的最大布局类，F 允许重选在轨 NE。三种精确在轨 NE 及 {β_h,h} 仅属显式障碍族的坏占用，其中纯在轨的 h 可以超过 2。该族换布局的最优倍率为 1，允许自由选址的全模型尖锐统一因子仍是另一问题。",
+  "whole_result": "对每个有限共同目录实例 I，存在一个 1≤α_I<2，使每个全局最大候选都可保持其在轨策略并选一份覆盖全部 S^k 的精确客户 NE 续局，所有实际单设施偏离收益不超过该设施在轨收益的 α_I 倍。对每个固定 k≥2，sup_I inf_{s∈ℒ(I,k)}F(I,s)=sup_I sup_{s∈ℒ(I,k)}F(I,s)=2，两个上确界都不由有限实例达到。显式下界族的坏占用在预先指定任意在轨精确客户 NE 时，最佳完整倍率的可能值恰为 {2h/(h+1),h}。",
+  "reviewed_by": "Boss1",
+  "review_note": "实读严格二新正文、共同目录模型、四预算、原子装箱与受帽修复、标签拼接及固定最大占用障碍。核对四类纯种子、已服务重客户的隔离域、指定偏离者的严格不等式、有限共用实例倍率、固定每个 k 的两种平局量词及障碍族的三种在轨 NE。上界靠直接数学推导，障碍的有限回放只作既有证据背景。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+      "section": "一份完整续局的量词"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+      "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+      "section": "一、有限站点分配族与升序字典序最大者"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+      "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+      "section": "二、所选在轨策略是精确客户 NE"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+      "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+      "section": "三、同一个最大者给出全部转移预算"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+      "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+      "section": "四、每次实际偏离都有受帽可行纯初态"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md",
+      "sha256": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+      "section": "原子装箱引理"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md",
+      "sha256": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+      "section": "受帽纯均衡修复引理"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+      "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+      "section": "六、把全部局部选择拼成一个完整函数"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/障碍/固定字典序占用的二倍极限--障碍.md",
+      "sha256": "9e8e9b3cbe62926584325cb029894f94b07f1c1fce55b4a013ad31746c7aa326"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/全局词典序最大选择的点态严格二与统一锐界--定理.md",
+      "sha256": "0babfe772fba53d3945017fb88519c511fbd13573868cfa34f6ce03c8c7e1e61"
+    }
+  ],
+  "endpoint_pins": {
+    "MF-CONT-COMPLETE": "749dad55c2ae74db4f443c5adb20553c8aced4cf785ecf7f1a75fe28613b24d6",
+    "MF-PACK-2": "886033f8e4edd344e6b9a859f840ac742a27cdd67ab0bb4875ebc0137ee223cb",
+    "MF-PURE-CAP": "0a5cd5c8a91a1eb2f9d3ac2f3d643d914957d408a42eab86168205f2e1203cda",
+    "SC-K-LEX-BUDGET": "e467f05f9359fdfdc25d73ee33d183123ce2aa83e7cb72408f6dedad53c35e20",
+    "SC-K-LEXMAX-BARRIER": "d39f1686436350b5f3e616e74683752d3042f2262904f8b0ac5844a8cb10b958",
+    "facility-games/common-many/lex-maximum-pointwise-strict-factor-two-and-sharp-supremum": "0f622ee6f821833908fdcfacac989fe5c3a0430b24b3bf72aad4108fef6362f5"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+    "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+    "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+    "archives/facility-games/subarchives/common-many/state/障碍/固定字典序占用的二倍极限--障碍.md": "9e8e9b3cbe62926584325cb029894f94b07f1c1fce55b4a013ad31746c7aa326",
+    "archives/facility-games/subarchives/common-many/state/定理/全局词典序最大选择的点态严格二与统一锐界--定理.md": "0babfe772fba53d3945017fb88519c511fbd13573868cfa34f6ce03c8c7e1e61"
+  },
+  "review_digest": "b5721725b77ee0885567a60b4b65a9987814e95830dfcbf33714e1c9417bf942"
+}

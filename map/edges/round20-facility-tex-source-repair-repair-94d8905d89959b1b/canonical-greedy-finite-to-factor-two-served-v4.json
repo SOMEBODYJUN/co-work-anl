@@ -1,0 +1,102 @@
+{
+  "edge_id": "commonmany-canonical-greedy-finite-implies-factor-two-source-repair-v4",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-GREEDY-BOX-FINITE-2"
+  ],
+  "target_ids": [
+    "SC-K-2-E"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意有限客户集、任意有限非空共同目录及任意 k≥2 家带标签设施，允许同址，覆盖关系任意，客户权重严格正实，费用为线性总负载。已覆盖客户强制选择一家可达设施并独立混合，成本是含自身全部原子重量的条件期望负载。设施收益为其期望负载。源对象的有限算法按显式正二进制有理权登记，向正实权传递时固定客户、站点覆盖和带标签设施，保留相同原子菜单。",
+  "roles": {
+    "SC-K-GREEDY-BOX-FINITE-2": "给每个显式正有理输入一个规范贪心布局及完整精确续局。在轨已覆盖客户站点纯且站内独立均匀，全部离轨可纯，全部带标签真实偏离同时保二倍界。",
+    "SC-K-2-E": "收到一般正实权域的存在性，并保在轨概率形状和全部离轨可纯。"
+  },
+  "explanation": "规范贪心冻结首次覆盖原池。正覆盖时末次分数 γ>0，原池给 q_tγ≤W_t⁰≤(q_t+1)γ，未开站真正新增重量 N_r≤γ，原归属重数为该客户可达占站重数的最大值。归一化后冻结单选客户及权重≥γ的已覆盖客户。交错截断价格块及离家计数保证其余客户的完整盒与全部原选项的最优性。冻结单选客户无其他站可选。冻结重客户的原站条件成本扣除自身权后≤γ，而任何其他可达占站的每家收益≥γ。源存续按当前盒内池装箱并取帽 2a；源消失把所有原客户重置到原贪心池。原单设施站客户在最终占用中仅可到单设施站，因此每个存续单设施站只分到原单设施站并池的本站可达子集，总重至多 2γ。静止高重数站保原池并逐站装箱。目标原已占则偏离者初始为空，原未开 v 则初始总重至多 N_v+w(J_u^0∩C_v)≤W_u^0≤2γ≤2a。偏离者是普通设施。每项偏离在新布局的完整客户菜单上做有限严格纯改善，初态已服务的超帽重客户独占静止设施，未覆盖客户无动作。按不同标签布局拼接，其他布局用纯默认。原证明中这些有限状态、比较和势步骤可直接用实权，位长分析另取有理输入。即使只用所登记的有理结论，也可对任意固定覆盖数据及正实权向量 w 取正二进制有理向量 w^(j)→w。每个有理见证把默认规则在每个剩余布局展开为其所选纯 NE，仅用于存在性论证。布局 s 有有限选择；在轨每个客户只选一个物理站、站内概率由 q_t 决定；每个离轨的客户各取一个设施标签或无可达行动，且布局数 |S|^k 有限。因此完整见证 (s,σ) 只可能是有限多个离散表之一，无穷子列取同一张完整表。固定表的可行性仅依赖覆盖和标签，固定支持中的每个纯动作对所有原可达动作的条件成本弱不等式，以及所有实际设施偏离的线性收益弱不等式，均为关于 w 的闭合线性约束。沿常值子列取极限，同时保全部布局的客户 NE、在轨形式、全部离轨纯性与全部偏离二倍界。此推导只需极限布局合法，不需固定物理顺序破平局的选择映射连续。",
+  "scope": "整个共同目录正实权域上的存在关系。正覆盖在轨选择用完整上下盒，单设施源预算用原池；零覆盖任意布局及全未服务。闭性桥不主张近似有理输入的贪心选择在实权平局处保持规范选择，也不提供位多项式搜索或全布局显式输出。",
+  "whole_result": "对每个上述输入，存在纯带标签布局 s 和一份定义在全部 S^k 上的精确客户 NE 续局 σ。在轨各已覆盖客户可选一个站点并在本站独立均匀混合，每个离轨布局可取纯 NE，且同时对每家设施 f 和每个真实目的地 r≠s_f 有 L_f(σ(s[f←r]))≤2L_f(σ(s))。",
+  "reviewed_by": "Boss1",
+  "review_note": "重绑 SC-K-2-E v4，贪心源合同 v2 与独立的规范贪心、交错势及离轨重置证明保持。复核归属的最大重数、冻结客户真实条件成本、源消失时全原池重置、新布局的已服务重客户条件及零覆盖。固定有限目录、覆盖和标签后，对有理近似的完整续局表取常值子列，各布局的全部支持条件和偏离约束同时取极限。目标的 TeX/PDF 量词修订不改变这个独立构造。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "定理和模型"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "规范贪心、冻结原池及预算"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "归一化并证明全部客户NE"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "存续源：按当前在轨池装箱"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "单设施源：重置全部原客户池"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "完整续局和时间层级"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/阈值截断与归位计数的严格推进--引理.md",
+      "sha256": "9d84b47d3e7fdd71a3a25d82f5c1c8b65a3e8088ad1610c09e19794bbfb87015",
+      "section": "抽象输入、量词及目标"
+    },
+    {
+      "path": "tools/evidence/common-many-primary-register/original/research/current/multi_facility/claims.md",
+      "sha256": "3ebdc5ee98b8dbd847e06e26e1fc6b708002e485fe2b31abb9ee1ae491d26e89",
+      "section": "SC-K-GREEDY-BOX-FINITE-2 -- exact finite factor two from the greedy box constructor"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+      "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+      "section": "精确陈述"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "原归属具有最大可达重数"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "退化输入和结构推论"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/阈值截断与归位计数的严格推进--引理.md",
+      "sha256": "9d84b47d3e7fdd71a3a25d82f5c1c8b65a3e8088ad1610c09e19794bbfb87015",
+      "section": "完整存在性、步数界和交错版本"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md",
+      "sha256": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db",
+      "section": "受帽纯均衡修复引理"
+    }
+  ],
+  "endpoint_pins": {
+    "SC-K-2-E": "8db52cb038b9beaa2a8f11048d1349bf5c1bc580a1068742272964f8789a8535",
+    "SC-K-GREEDY-BOX-FINITE-2": "0e3f0944b8ebe9195ae24070478d8e8d9a9c1568202317acab01d7a516eff027"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+    "archives/facility-games/subarchives/common-many/state/引理/阈值截断与归位计数的严格推进--引理.md": "9d84b47d3e7fdd71a3a25d82f5c1c8b65a3e8088ad1610c09e19794bbfb87015",
+    "tools/evidence/common-many-primary-register/original/research/current/multi_facility/claims.md": "3ebdc5ee98b8dbd847e06e26e1fc6b708002e485fe2b31abb9ee1ae491d26e89",
+    "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+    "archives/facility-games/subarchives/common-many/state/引理/原子装箱与受帽纯均衡修复--引理.md": "3a4fe16a771e75dc5d70622e9fb8149a6881e9ce7b3b2b51281b0811de17f7db"
+  },
+  "review_digest": "0f462246b4237b233c45e859ffa8422e4cccaf9e163f5a4849c21a2be00a9c21"
+}
