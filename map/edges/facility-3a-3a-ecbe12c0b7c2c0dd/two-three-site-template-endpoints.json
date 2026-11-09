@@ -13,7 +13,7 @@
   ],
   "premises_mode": "all",
   "relation_mode": "context",
-  "conditions": "仅指定三地点覆盖、角色、守卫目标及固定有理阈值；五地点是另一模型规模的同一两设施问题。",
+  "conditions": "仅指定三地点覆盖、角色、守卫目标及固定有理阈值。五地点是另一模型规模的同一两设施问题。",
   "roles": {
     "M-4303d44e50dc45738c857776bbee7b79": "AB 双等重模板的上下预算在 a₀ 处冲突。",
     "M-c2e28c0a40ca493bbd7814be06aebecb": "R_B>R_A>R_C 模板的 C 私有预算在 σ 处为负，移动中间 reach 也失败。",
@@ -21,12 +21,12 @@
     "SC-FIVE-DECa-HARD": "给严格 φ 以下的恰五已证分类。",
     "M-71d82a16bfb044258c7e5428810ec213": "保留恰三且异址交叠不限的未分类域。"
   },
-  "explanation": "AB 双等重模板的必要上下界相减乘正分母得 −(2a³−2a−1)(W+δ)−2δ−(2a²−1)Q。改变 reach 的模板要求 C 私有预算正，而固定阈值等式下的仿射预算在中间 reach 两端均负。两个不同失败范围约束各自模板，任何一个都不能排除其他三地点归约，五地点也不能靠删除两点保持全部偏离和门控。",
+  "explanation": "a₀>1 为 2a³−2a−1 的根且 a₀<σ<φ。AB 双等重模板的两个 R 必要界相减乘正分母，分子为 −(2a³−2a−1)(W+δ)−2δ−(2a²−1)Q，在 a≥a₀、δ≥0、Q>0 时严格负。改变 reach 的模板要求 C 私有预算正。同一覆盖、固定 J=a(V+Q)/2 下移动 J，以 z=J−L∈(0,δ) 表示预算，其仿射分子两端在 a≥σ 时分别为 [1−2a(a−1)]W−δ−(2a−1)Q 和 [1−2a(a−1)](W+δ)−(2a−1)Q，均严格负。恰五的宏/叶构造、以及把已知三地点实例增址到五地点的单向变换，都不给从五地点硬实例删除两个地点而保原偏离和门控的逆变换。",
   "scope": "给开放区间的精确比较边界，保 a₀<σ<φ 和各自严格/闭端点。",
   "evidence": [
     {
       "path": "archives/facility-games/state/审查/学习附录A04-A05阈值困难性审查--审查.md",
-      "sha256": "f4516fe76be18a4019ec68d7428a20aeba6525a548751a462df77afbf064f3ad",
+      "sha256": "cfa671e503586706fb54eeca98ccc549c85c22bdd7a63c3952a0959680f737c9",
       "section": "倍率大于一的两种守卫模板"
     },
     {
@@ -35,24 +35,29 @@
       "section": "三地点两种具体模板为何停止"
     },
     {
+      "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+      "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+      "section": "五地点YES完整续局与NO全部十五类"
+    },
+    {
       "path": "archives/facility-games/state/审查/实例最优计算的参数与判定前沿--审查.md",
       "sha256": "4a67f6d5f9fb7931c79de47956a00a5ea0077f512e440f3ac5f61679370ae885",
       "section": "固定阈值分类必须守全布局"
     }
   ],
   "reviewed_by": "Boss1",
-  "review_note": "核固定 a、Q>0、δ≥0 及中间 reach 开区间；不将两模板失败当作对已登记开放命题的反驳。",
+  "review_note": "以当前 A04 整页 SHA 与主归约核两个各自闭端点及仿射两端。保存恰三一般交叠 σ≤a<φ 的开放身份。",
   "endpoint_pins": {
-    "M-4303d44e50dc45738c857776bbee7b79": "718d105287a69e8a87dee96d70ea0145049984def753540044ebc76195277cad",
-    "M-71d82a16bfb044258c7e5428810ec213": "87f63b83ff05032cf91fe2cf888fdd1451d3d118cb0cec5af9594a800ba8d0cf",
-    "M-c2e28c0a40ca493bbd7814be06aebecb": "655f2148a1f7611873ba46cb3157efcaebcb1471a4240d3477e92de04b5b7d94",
-    "SC-FIVE-DECa-HARD": "95b244bbe303dbee5cb5d19404d242b8e511fddb641567caf5bfdfa8bb9e7158",
-    "SC-THREE-DECa-HARD": "1fff2af9996e15feb91e30771f6f3ab88e049c047766620962cdaf3f7e72b31a"
+    "M-4303d44e50dc45738c857776bbee7b79": "39f7566585fa199f2977d62db09e1d53ffa21d1f910fd8341c61405af6b263e9",
+    "M-71d82a16bfb044258c7e5428810ec213": "b702e04e198b04d9381511e7735338dbab15fe20136f59078fc1187037591760",
+    "M-c2e28c0a40ca493bbd7814be06aebecb": "03dbb48b1034f56bf8d26600c141d96a54b7c5724ee1412d30d0fe5aaa8dbdb3",
+    "SC-FIVE-DECa-HARD": "45e2f3685ed1b9a342922b961fec99545cf48d1fe6955d6961caf675e7ab9efc",
+    "SC-THREE-DECa-HARD": "715f0caa2bde967e8793b399b51e2102f07bd4b7ddf237636359cc5621b6541e"
   },
   "evidence_pins": {
-    "archives/facility-games/state/审查/学习附录A04-A05阈值困难性审查--审查.md": "f4516fe76be18a4019ec68d7428a20aeba6525a548751a462df77afbf064f3ad",
+    "archives/facility-games/state/审查/学习附录A04-A05阈值困难性审查--审查.md": "cfa671e503586706fb54eeca98ccc549c85c22bdd7a63c3952a0959680f737c9",
     "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
     "archives/facility-games/state/审查/实例最优计算的参数与判定前沿--审查.md": "4a67f6d5f9fb7931c79de47956a00a5ea0077f512e440f3ac5f61679370ae885"
   },
-  "review_digest": "3ff9dc802352301aa9b5f4183fba3fba0abc6f8740d7fadffc6ed5efe38b00cd"
+  "review_digest": "57d0223d1fc9e3455cd3ce872b2bbb01f6a8b68e877d8bdaaca39f610deb4ae6"
 }

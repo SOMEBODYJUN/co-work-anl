@@ -13,21 +13,36 @@
   ],
   "premises_mode": "all",
   "relation_mode": "unconditional",
-  "conditions": "显式正整数客户权，总重 B；固定两设施，真坐标极小值取全部精确客户 NE，目录、覆盖、同址按目标定义。",
+  "conditions": "两带标签设施、有限非空原目录、显式正整数客户权和线性含自身权成本，独立精确客户 NE，允许同址。两侧可有空覆盖行动。固定阈值 a≥1 为有理数。整数总重 B 是数值参数。",
   "roles": {
-    "DP-W": "逐布局给完整闭负载谱，含单混合闭区间及端点。",
-    "facility-games/two-facility-two-catalog-model-and-complete-exact-continuation": "给全目录 D_i 的坐标最小/最大接口及完整规则的偏离独立性。",
+    "DP-W": "给逐布局完整混合差距谱和可回溯的有理见证，包含无共同客户、闭支持端点与 m=1 的整个区间。",
+    "facility-games/two-facility-two-catalog-model-and-complete-exact-continuation": "给全部合法有序布局及两族实际偏离的原合同，支撑谱到真实威胁和完整规则的双向证明。",
     "SC-THREE-DEC1-HARD": "恰三 a=1 的整数伪多项式部分。",
     "SC-THREE-DECa-HARD": "恰三正固定倍率的整数伪多项式部分。",
     "SC-FIVE-DECa-HARD": "恰五正固定倍率的整数伪多项式部分。"
   },
-  "explanation": "每个合法有序布局用 DP-W 求完整谱，公共重不超过 B；按 L_1=(V+Δ)/2、L_2=(V−Δ)/2 分别取极小，再取原完整目录最大得 D_1(t),D_2(s)。对各在轨片把 D_1/α 与 V−D_2/α 给的闭负载区间相交即可决定固定有理 α，亦可将 VD_1/(D_1+D_2) 夹至片端来求最优倍率。D_1+D_2=0 时倍率 1；零收益用乘法式。全部有序偏离布局分两不交族，可独立取相应坐标极小的 NE。逐布局的正整数重、阈值比较位长多项式，状态数取决于 B 的数值。",
-  "scope": "整数总重伪多项式算法；有理输入清分母后的数值总重仍可能指数大。",
+  "explanation": "在布局 (s,t) 设 V 为已覆盖总重，公共总重 W≤B。对按 |Δ| 划出的每个重前缀，DP-W 固定轻客去低侧，合并 (m,z) 状态。同一状态保留一个父指针已足够。m≠1 检候选点，m=1 只有右端为零才保整闭区间。以 X=(V+Δ)/2、Y=(V−Δ)/2 取 m₁(s,t) 和 m₂(s,t)，二者可能由不同 NE 达到。D₁(t)=max_{r∈U₁}m₁(r,t)、D₂(s)=max_{u∈U₂}m₂(s,u)。固定在轨收益 (x,V−x) 可延拓当且仅当 D₁(t)≤ax、D₂(s)≤a(V−x)。必要性是每项实际偏离至少获得相应极小值。充分性逐项选对应极小见证，两族实际目的有序布局互不相交，原布局保原 NE，其他格用按权非增加入当前低侧的确定纯 NE。不动项不额外约束。固定 a 直接把每个闭负载片与 [D₁/a,V−D₂/a] 相交。若求 α*，D₁+D₂>0 时把 VD₁/(D₁+D₂) 夹至每片，因两威胁比一不增一不减。两威胁皆零时 α=1。用乘法式处理零收益及无有限倍率。总有理运算为 O(|U₁||U₂|[n+(n+1)²(B+1)])，中间位长多项式。清分母保留原倍率但数值 B 可能指数大。四位单位共同客户且两私有背景皆零时，纯 NE 只给 Δ=0，完整谱为 {−1/2,0,1/2}，故用纯默认值或有限菜单极小值替换真实威胁会改变这个判别的输入。",
+  "scope": "任意两非空有限目录的整数数值伪多项式精确算法，应用到本包三个固定共同目录阈值。一般二进制有理的位长并不控制清分母后的总重数值。",
   "evidence": [
+    {
+      "path": "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md",
+      "sha256": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1",
+      "section": "三态闭单元精确覆盖"
+    },
     {
       "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
       "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
       "section": "整数总重DP-W"
+    },
+    {
+      "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+      "sha256": "97ecba6feca16fb7302e2454e785f2d84240a8e2c7a2a561f3bbb278217d15ab",
+      "section": "A11.2 DP-W：轻客户先固定，重客户按状态合并"
+    },
+    {
+      "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+      "sha256": "97ecba6feca16fb7302e2454e785f2d84240a8e2c7a2a561f3bbb278217d15ab",
+      "section": "A11.6 EXACT-KAPPA：把所有局部谱拼成真正最优证书"
     },
     {
       "path": "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md",
@@ -41,22 +56,24 @@
     }
   ],
   "reviewed_by": "Boss1",
-  "review_note": "核对全部客户权重、零收益、m=1闭区间与同址布局也在完整谱处理范围。",
+  "review_note": "实读冻结精确算法与当前 A11.2/A11.6，按 DP-W v4 复算闭支持、零收益、真坐标极小与不相交离轨见证。有限实现与最优性证明分开。",
   "contribution": {
-    "result": "给三项分类的伪多项式算法，并说明完整真实威胁如何由局部 DP 计算。",
-    "remaining": "弱 NP 完全分类仍分别使用全布局 SUBSET SUM 归约与短有理 NP 证书。"
+    "result": "在三个目标的整数输入域给真实全目录 DEC_a 的伪多项式判定，并可求有限有理 α* 与完整达到规则，或判无有限倍率。",
+    "remaining": "三个弱 NP 完全分类分别还用全布局 SUBSET SUM 归约和固定闭支持后有理多面体给出的短 NP 证书。达到证书本身只核可达倍率。"
   },
   "endpoint_pins": {
-    "DP-W": "d99cd765793b6068c0c96dfd8e767e48dabe37cbb0520001b3ca997297b76d84",
-    "SC-FIVE-DECa-HARD": "95b244bbe303dbee5cb5d19404d242b8e511fddb641567caf5bfdfa8bb9e7158",
-    "SC-THREE-DEC1-HARD": "c861b42a6a4f16ed63121e5b572d94f0cc26d5ca7c76a50673f792d2d7c47b85",
-    "SC-THREE-DECa-HARD": "1fff2af9996e15feb91e30771f6f3ab88e049c047766620962cdaf3f7e72b31a",
+    "DP-W": "6f4e4750b24f9fb26357c4c18d8b39e36d9db6b7b33e2d4349b62d7b04d16ff5",
+    "SC-FIVE-DECa-HARD": "45e2f3685ed1b9a342922b961fec99545cf48d1fe6955d6961caf675e7ab9efc",
+    "SC-THREE-DEC1-HARD": "7c168e01f188cc9fda95a5cf1371cc876eec56185ac435042f48a64aacaf66fb",
+    "SC-THREE-DECa-HARD": "715f0caa2bde967e8793b399b51e2102f07bd4b7ddf237636359cc5621b6541e",
     "facility-games/two-facility-two-catalog-model-and-complete-exact-continuation": "d4a962894463c9a641484232eff48bfae3a3e4b84421b27ba5176867d9ee28b5"
   },
   "evidence_pins": {
+    "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1",
     "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+    "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md": "97ecba6feca16fb7302e2454e785f2d84240a8e2c7a2a561f3bbb278217d15ab",
     "archives/facility-games/state/定义/双设施双目录模型与完整精确续局--定义.md": "bd1546bb83b79a05182950958a05309df4ad375f0905d860f26254ba28082f09",
     "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16"
   },
-  "review_digest": "d56886ad73b6103f037aa2b4abfe2142552632b6cf8d5d2d4f947be7bcbc2fda"
+  "review_digest": "49f422b281ddf1c5d46c33d53a1edd611171ece73babb7b70de4c793134d2ec2"
 }
