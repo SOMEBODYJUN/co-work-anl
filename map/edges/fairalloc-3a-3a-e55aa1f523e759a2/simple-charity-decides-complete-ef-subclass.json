@@ -1,0 +1,47 @@
+{
+  "edge_id": "fairalloc-family-simple-charity-decides-complete-ef-subclass",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "FP-CHARITY-SIMPLE-v1"
+  ],
+  "target_ids": [
+    "FA01"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "FA01输入额外为simple loopless；给每条边删除成本1，调用任意非负成本版本的FP-CHARITY。完整EF仍不许删边。",
+  "roles": {
+    "FP-CHARITY-SIMPLE-v1": "精确最小删除成本EF部分定向算法。",
+    "FA01": "通过最优值是否0，得到simple限制的完整EF判定和见证。"
+  },
+  "explanation": "令所有c_e=1。若存在完整EF，作为部分解的成本0，故OPT=0；反之OPT=0的输出因每条删边成本严格正而未删任何边，正是完整EF。该最优算法枚举heavy左右/删除至多3^k分支，按anchored补回、无anchor树必全删和quota整数流证明分支最优。返回0成本分支时恢复全部边方向。使用成本1不可改为全零成本，否则OPT=0不再辨识完整性。",
+  "scope": "FA01的simple子域、3^k poly(bits)上界；不声称2^k改进，不适用于平行边。",
+  "evidence": [
+    {
+      "path": "archives/fair-allocation/state/算法/端点图公平残差的森林阈值与最小删除--算法.md",
+      "sha256": "8f656eba95d554148532ec85ad7e3977cc18fb45badf7942522e6ab0217cd1fe",
+      "section": "三、simple图最小删除：完整算法及最优性"
+    },
+    {
+      "path": "archives/fair-allocation/state/审查/近似公平分配首轮候选池与边界--审查.md",
+      "sha256": "19d9f289c9553358a51d98250709fdc9151346072e04576e01facc50779614ec",
+      "section": "十六个候选的精确身份"
+    }
+  ],
+  "reviewed_by": "Boss3 fairalloc-family worker",
+  "review_note": "按冻结对象逐式核对模型、量词和承重证据；范围及未付义务按本边明确限制；程序计数不替代一般证明。",
+  "contribution": {
+    "result": "FA01在simple loopless图上可用3^k poly(input bits)精确判定并构造完整EF：当且仅当单位删边成本的最优charity为0。",
+    "remaining": "FA01的一般multigraph子域仍需处理同pair累加可见值；simple补回/度quota证明不支持该迁移。"
+  },
+  "endpoint_pins": {
+    "FA01": "fa5fc0a87f27f75c82dc8c0c91c11206a34fedf3233a7551a6b4b0c2a8065b2b",
+    "FP-CHARITY-SIMPLE-v1": "1e065fdedd6ea4cd132c991d8deb6557dfdb71152bb21bf21ba73218b9ba9197"
+  },
+  "evidence_pins": {
+    "archives/fair-allocation/state/算法/端点图公平残差的森林阈值与最小删除--算法.md": "8f656eba95d554148532ec85ad7e3977cc18fb45badf7942522e6ab0217cd1fe",
+    "archives/fair-allocation/state/审查/近似公平分配首轮候选池与边界--审查.md": "19d9f289c9553358a51d98250709fdc9151346072e04576e01facc50779614ec"
+  },
+  "review_digest": "0d249c360831e0ba11849258adf68457c8a5196ea22463af9be2ba75d11ea3a9"
+}

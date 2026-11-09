@@ -1,0 +1,47 @@
+{
+  "edge_id": "fairalloc-family-heavy-audit-checks-simple-charity",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "fair-allocation/heavy-edge-charity-and-forest-residual-v1"
+  ],
+  "target_ids": [
+    "FP-CHARITY-SIMPLE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "仅取该review的simple慈善模块：n≤6、m≤8、端点值0..3，seed37042027；代码目标是删除条数。",
+  "roles": {
+    "fair-allocation/heavy-edge-charity-and-forest-residual-v1": "实际charity_probe和1200例冻结聚合的有限审计。",
+    "FP-CHARITY-SIMPLE-v1": "其单位删除成本实现受到有限oracle对照；任意非负成本的一般定理由另给证明承担。"
+  },
+  "explanation": "charity_probe逐3^m部分方向精确求最少删除数，与heavy三状态+flow程序比较1200个simple输入，冻结mismatches=0。源码forced零边、anchor分量、无anchor树与quota网络对应主算法的成本1版本；它没有把任意成本作为输入，也没有测试multigraph。因此有限核对只付清所述实现对照，不推出任意成本全域或一般多重图正确性。",
+  "scope": "有限实现证据，relation_mode=context；1200/0不是普遍证明。",
+  "evidence": [
+    {
+      "path": "archives/fair-allocation/state/审查/重边慈善与森林残差公平三源处置--审查.md",
+      "sha256": "16cc0eff59f979942fb534d03c16fcea84f62e7c5169ea059e6c67c32eb07871",
+      "section": "1. `charity_probe.py`：simple graph 的 3^k 慈善搜索与 flow 扩展"
+    },
+    {
+      "path": "archives/fair-allocation/tools/evidence/retired-heavy-edge-fairness-20261031/charity_probe.py",
+      "sha256": "db44e5985190561332fc19ef13dfd910102747cf2cea51458f3747f0be872bae"
+    },
+    {
+      "path": "archives/fair-allocation/tools/evidence/retired-heavy-edge-fairness-20261031/charity_results.json",
+      "sha256": "4587f181a3b0e3fa61364f4ea3adc6eaaa4137acbe2289123b0685120886ee6b"
+    }
+  ],
+  "reviewed_by": "Boss3 fairalloc-family worker",
+  "review_note": "按冻结对象逐式核对模型、量词和承重证据；范围及未付义务按本边明确限制；程序计数不替代一般证明。",
+  "endpoint_pins": {
+    "FP-CHARITY-SIMPLE-v1": "1e065fdedd6ea4cd132c991d8deb6557dfdb71152bb21bf21ba73218b9ba9197",
+    "fair-allocation/heavy-edge-charity-and-forest-residual-v1": "789ae807919a5ebd7708ce2b15dced46ce4dea22dc9a44655f288953e32a33c5"
+  },
+  "evidence_pins": {
+    "archives/fair-allocation/state/审查/重边慈善与森林残差公平三源处置--审查.md": "16cc0eff59f979942fb534d03c16fcea84f62e7c5169ea059e6c67c32eb07871",
+    "archives/fair-allocation/tools/evidence/retired-heavy-edge-fairness-20261031/charity_probe.py": "db44e5985190561332fc19ef13dfd910102747cf2cea51458f3747f0be872bae",
+    "archives/fair-allocation/tools/evidence/retired-heavy-edge-fairness-20261031/charity_results.json": "4587f181a3b0e3fa61364f4ea3adc6eaaa4137acbe2289123b0685120886ee6b"
+  },
+  "review_digest": "b8dd9c8edd81c689e109022be6d84e3cd2b45792992b7e813adf606d72773d14"
+}

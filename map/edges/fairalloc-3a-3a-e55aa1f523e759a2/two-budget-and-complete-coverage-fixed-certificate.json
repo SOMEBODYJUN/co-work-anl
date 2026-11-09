@@ -1,0 +1,49 @@
+{
+  "edge_id": "fairalloc-family-two-budget-and-complete-coverage-fixed-certificate",
+  "kind": "equivalent_to",
+  "status": "accepted",
+  "source_ids": [
+    "M-40daa04f14844ec7b708ca9bbc6f0671"
+  ],
+  "target_ids": [
+    "fair-allocation/complete-coverage-rounding-obstruction"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "仅两个已登记固定证书的精确可行性：两预算均1、必须选择一个整数选项、不许资源增强/弃置；加利润标签不影响硬容量可行性。",
+  "roles": {
+    "M-40daa04f14844ec7b708ca9bbc6f0671": "rank1 uniform的两个基选项，成本列(0,2),(2,0)，中点(1,1)。",
+    "fair-allocation/complete-coverage-rounding-obstruction": "单重量2物品选择箱2/箱1，负载列(0,2),(2,0)，分数各半；利润另固定1/100。"
+  },
+  "explanation": "令U_{1,2}的第一元素表示把唯一物品放箱2，第二元素表示放箱1。任一分数基(z1,z2),z1+z2=1映成赋值x_e2=z1,x_e1=z2；成本矩阵行(0,2),(2,0)恰是箱1/箱2负载，两个预算均1即两个硬容量均1。中点z=(1/2,1/2)负载(1,1)，两个整数基分别负载(0,2),(2,0)，各违反一行，双向映射无遗漏。给物品加利润1/100后分数每箱利润1/200，两个完整整数选择仍因容量失败，所以得到complete-coverage对象的全部固定结论。反向忘掉利润并用上述两选择作rank1元素，恢复two-budget对象全部矩阵和穷尽证书。允许弃置会加入零选择，允许增强会改变预算，均不在双向合同。",
+  "scope": "两个固定失败合同的精确同构，不把它们等同于一般BMKP、独立抽样间隙或任意多预算复杂性。",
+  "evidence": [
+    {
+      "path": "archives/fair-allocation/state/审查/两容量联合类型与有限舍入审计--审查.md",
+      "sha256": "fdfd636546d1d27d2f7e279250bdd2350fee7cc6ca9fe84a75ffbf52fed67f67",
+      "section": "6. 两个 sanity checks"
+    },
+    {
+      "path": "archives/fair-allocation/state/审查/完整覆盖舍入障碍与可丢弃版本边界--审查.md",
+      "sha256": "74edf4551fcbcc4e599074c434ff4211511d769b93617230f0905e8938df7785",
+      "section": "精确对象、量词与证书"
+    },
+    {
+      "path": "archives/fair-allocation/tools/evidence/retired-topic-selection-20261031/complete_rounding_capacity_counterexample.json",
+      "sha256": "4c8f98300bbaa4d68b66e11555b3b857d517f71d2a7a69701f2bc95e6e491269"
+    }
+  ],
+  "reviewed_by": "Boss3 fairalloc-family worker",
+  "review_note": "按冻结对象逐式核对模型、量词和承重证据；范围及未付义务按本边明确限制；程序计数不替代一般证明。",
+  "whole_result": "这两个固定证书在“rank1基第一/第二元素↔唯一物品进箱2/箱1”的映射下双向等价：分数中点满足两精确预算/容量，而两个完整整数选择逐一超出一行；complete-coverage侧利润1/100给分数targets1/200且不改变无整数可行结论。它不否定允许弃置的BMKP目标，也不否定带资源增强的预算舍入。",
+  "endpoint_pins": {
+    "M-40daa04f14844ec7b708ca9bbc6f0671": "d6f34fb1dadd4e2c27fcee72dde4c5a300ed571ef6f912112a783dcf3216faab",
+    "fair-allocation/complete-coverage-rounding-obstruction": "99135bbfa83a18cf1261224139bce13060ee80bfb122fcccedf24e28791d22f9"
+  },
+  "evidence_pins": {
+    "archives/fair-allocation/state/审查/两容量联合类型与有限舍入审计--审查.md": "fdfd636546d1d27d2f7e279250bdd2350fee7cc6ca9fe84a75ffbf52fed67f67",
+    "archives/fair-allocation/state/审查/完整覆盖舍入障碍与可丢弃版本边界--审查.md": "74edf4551fcbcc4e599074c434ff4211511d769b93617230f0905e8938df7785",
+    "archives/fair-allocation/tools/evidence/retired-topic-selection-20261031/complete_rounding_capacity_counterexample.json": "4c8f98300bbaa4d68b66e11555b3b857d517f71d2a7a69701f2bc95e6e491269"
+  },
+  "review_digest": "1f282960c26afb8d5ded3cd68597a74e83c4b782a62046b1b2d84726ecb9e266"
+}

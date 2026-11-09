@@ -1,0 +1,42 @@
+{
+  "edge_id": "fairalloc-family-restricted-toy-motivates-exact-scaling-family",
+  "kind": "motivates",
+  "status": "accepted",
+  "source_ids": [
+    "fair-chores/rank-toy-mms-and-graph-results-v1"
+  ],
+  "target_ids": [
+    "fair-allocation/restricted-chores-binary-scaling-and-optimal-cost"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "只取rank-toy review的discarded_alpha_idea模块；不是class-touch、quota MMS或signed图结论。restricted成本c_i(g)∈{0,c_g}、c_g>0，chores逐删自身含零成本物品。",
+  "roles": {
+    "fair-chores/rank-toy-mms-and-graph-results-v1": "C=5,c=1的三件OPT样本与已淘汰的sharp-Delta来源。",
+    "fair-allocation/restricted-chores-binary-scaling-and-optimal-cost": "独立证明条件binary放大及任意C≥c>0的OPT紧障碍。"
+  },
+  "explanation": "有限样本矩阵[[5,1,0],[5,0,1]]的两个社会最优分配提示一般矩阵[[C,c,0],[C,0,c]]：社会OPT=C迫使两个零可承担件给零成本者，C件owner删自己零件后仍负担C而评价对方c，故OPT约束下最优因子恰C/c。一般正向放大还需要一个已给binary EFX+PO解X，按c_max b_i(X_i−g)≤c_max b_i(X_j)≤Delta c_i(X_j)转移，binary PO使可避免件给零成本者。toy本身不证明binary EFX+PO的存在/算法。",
+  "scope": "来源启发及解析推广的范围定位，不以有限三件样本支持未付binary存在性；不构造新一般chores不可能性。",
+  "evidence": [
+    {
+      "path": "archives/fair-allocation/state/审查/退役公平家务rank玩具与三值MMS三源处置--审查.md",
+      "sha256": "0c4caabaf02ecfaae73ca208ae02906b04d0637a0ca7f05b13b1bd88c8d60e60",
+      "section": "2.3 `discarded_alpha_idea`：restricted additive + OPT 的简单边界"
+    },
+    {
+      "path": "archives/fair-allocation/state/引理/restricted家务的成本比放大与最优成本障碍--引理.md",
+      "sha256": "fc594bf625411dd46e779bdd331532d7b9f4b619d637af4436e109eac7eb1de1"
+    }
+  ],
+  "reviewed_by": "Boss3 fairalloc-family worker",
+  "review_note": "按冻结对象逐式核对模型、量词和承重证据；范围及未付义务按本边明确限制；程序计数不替代一般证明。",
+  "endpoint_pins": {
+    "fair-allocation/restricted-chores-binary-scaling-and-optimal-cost": "a554899d5366a0e9f6e46dae5638162d25611ffbb66baf852133529cdd996313",
+    "fair-chores/rank-toy-mms-and-graph-results-v1": "cf80ec45dcbd37086a127c4baea448235fca8036ccfd41c51121668d392f9385"
+  },
+  "evidence_pins": {
+    "archives/fair-allocation/state/审查/退役公平家务rank玩具与三值MMS三源处置--审查.md": "0c4caabaf02ecfaae73ca208ae02906b04d0637a0ca7f05b13b1bd88c8d60e60",
+    "archives/fair-allocation/state/引理/restricted家务的成本比放大与最优成本障碍--引理.md": "fc594bf625411dd46e779bdd331532d7b9f4b619d637af4436e109eac7eb1de1"
+  },
+  "review_digest": "cd5e7f58b2501fabc965045386fef77817f321fc234370f81e910ab0e20863c7"
+}

@@ -1,0 +1,46 @@
+{
+  "edge_id": "fairalloc-family-forest-is-paid-base-of-cactus-residual",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "FP-FOREST-THRESHOLD-v1"
+  ],
+  "target_ids": [
+    "FA18"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一任意非负整数残差s,h和二进制m，完整EF所有pair比较；在FA18的cactus域中额外限定单位支持没有环。",
+  "roles": {
+    "FP-FOREST-THRESHOLD-v1": "完整必要充分阈值、恢复及位长分析。",
+    "FA18": "其forest限制已由同一输入合同精确求解。"
+  },
+  "explanation": "森林是cactus的无环子类，s,h,m与FA18逐项相同，非邻接/跨树h不需删除。对子树父输入x增加时，只提高本点自身值并降低它看父的值，故可扩展集上闭；孩子最低输入L_c给父最高贡献U_ic。所有U同时取上限，比较父、孩子、远端分别给二分之一上取整阈值与普通阈值。根输入0及逐层恢复闭合必要充分性。算法稠密O(n²)、稀疏O(n+|supp h|)算术，位长多项式且不按m循环。单环的两个接口不能被此独立孩子推导抹去。",
+  "scope": "FA18的森林基底；不是cactus全域、整数TVPI通用算法或解数计数定理。",
+  "evidence": [
+    {
+      "path": "archives/fair-allocation/state/算法/端点图公平残差的森林阈值与最小删除--算法.md",
+      "sha256": "8f656eba95d554148532ec85ad7e3977cc18fb45badf7942522e6ab0217cd1fe",
+      "section": "二、森林上的上阈值消息"
+    },
+    {
+      "path": "archives/fair-allocation/state/审查/公平参数化选题战报与实质试攻边界--审查.md",
+      "sha256": "133ea0eac1d3cac3e16192f4fc8f4d5c9c589788e12751b9fc591bc5fdebd0e6"
+    }
+  ],
+  "reviewed_by": "Boss3 fairalloc-family worker",
+  "review_note": "按冻结对象逐式核对模型、量词和承重证据；范围及未付义务按本边明确限制；程序计数不替代一般证明。",
+  "contribution": {
+    "result": "FA18中单位支持为forest时，任意二进制s,h,m的完整EF残差判定和真实方向计数恢复均为位多项式。",
+    "remaining": "FA18的每个有环块仍需保两接口及远端h；无挂树单环出现系数1/2的闭环整数TVPI，实LP或伪多项式枚举尚不足。"
+  },
+  "endpoint_pins": {
+    "FA18": "82f8f6efa07e7d4aaea4a81601c9188c697f3e00718cb911ace486b56254ae67",
+    "FP-FOREST-THRESHOLD-v1": "48a58f48d9433181d08ec87b9a1a8849a89efb8a3b3a2775d21f1495f96fde4c"
+  },
+  "evidence_pins": {
+    "archives/fair-allocation/state/算法/端点图公平残差的森林阈值与最小删除--算法.md": "8f656eba95d554148532ec85ad7e3977cc18fb45badf7942522e6ab0217cd1fe",
+    "archives/fair-allocation/state/审查/公平参数化选题战报与实质试攻边界--审查.md": "133ea0eac1d3cac3e16192f4fc8f4d5c9c589788e12751b9fc591bc5fdebd0e6"
+  },
+  "review_digest": "b73c1ff60d350d201f1becf4940951860fb08d397565565c0ae87e4da73023bc"
+}
