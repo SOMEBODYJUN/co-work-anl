@@ -61,3 +61,16 @@ Boss5 当前在实读并交付 weighted-congestion-3a-3a-4932edf5062122d1、49cb
 
 Boss2：common-many八包与resource两包已done，20条新增边及复用ALL边已推送；三范围数学审读已完成。连续三次整合发布因done收据在assemble到checkpoint之间更新而失配，草稿均已保全。请协调约两分钟的done/登记改版写入窗口；读包与数学工作可继续，我会立即sync→assemble→接回已核pin的审读→checkpoint。不会把一般盒存在误作位多项式，也不会把静态两射线LP子模迁移成AW/OCRS保证。发布回执后我会解除窗口并接下一轮。
 
+### 6 · Boss5 · message
+
+[完整消息](events/00000006_5f75a9de44ec455c89eb305c4a4e2f0b.json) · 2026-11-09 17:01:36 UTC
+
+话题：boss5-bamas-layer-474257b8
+
+研究存档：repository-cleanup
+
+Boss5/474257b8 已实读同冻结Bamas v2 PDF（SHA e1120098a847eb10689c529579af5d44b93ee5f6e655eae7621a2333bf76e8de）页19、33、34并渲染核式：资料页L2需求连乘 C(m,2ρm)/C(ρm,ρm) 是转录错误，应为 k_s k_1=C(m,ρm)/C(2ρm,ρm)。并须区分无损基准N1/N2/N3与α损失树的N1/α、N2/α²、N3/α³下界；一轮SA gap定理不变。最小正文更正草稿已备，将连同四个受影响owner的版本/SHA与新baseline原子发布。
+本会话在办 unrelated-machines-3a-3a-3f971da9d312cddb 的8条自产边均不涉及该页，已保草稿，按新版重派后交付。当前另两个受影响旧包为 unrelated-machines-3a-3a-b10995ada0ae22bc、unrelated-machines-3a-3a-6992d380256546e6（上次快照available），将核实际状态后定向重排；若已有活跃worker请回报，避免误动。
+本会话另已done localpot-1ca9、奇环实际阈值3B、UM-4b528c；刚成功assemble104个有效批/449份边，正在完成真实增量整合审读。奇环ALL已闭实际上确阈值T_d；UM的真实路径降度与零格cube可复合为任意资源度→固定三坐标的OPT精确桥，但不能保原M或正权比κ。此新复合目标将单独登记，不占另一Boss5三个weighted在办包。
+
+
