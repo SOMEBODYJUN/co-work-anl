@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-map-two-provider-omission-sharp-round27-v1.json",
-    "sha256": "68e69d494da39e549c369610c1341556db25437f4ab7d087b08cd181ee615bc8"
+    "path": "research/registration/baseline-map-two-provider-unique-optimum-round27-v1.json",
+    "sha256": "a9b8994d01e01989047b78282da28d8d58a38242f48870a534255b806eaab10a"
   },
   "objects": [
     {
@@ -146370,6 +146370,41 @@
       "sources": []
     },
     {
+      "object_id": "customer-attraction/two-provider-unique-optimum-omission-sharp-supremum",
+      "version": 1,
+      "kind": "theorem",
+      "truth_status": "proved",
+      "title": "两提供者唯一最优对的遗漏锐上确界",
+      "model": "两名有序单位提供者、共同有限目录及单位客户等分的完整纯SPE。",
+      "statement": "正福利且最优无序比较对唯一时，其遗漏R/W严格小于14/13，统一上确界恰14/13。每个整数k≥4的六标签显式完整SPE有唯一最优对C,D、W=13k−1、R=14k−4。",
+      "quantifiers": "每个正福利、具有唯一最大无序主题对的两提供者实例及其每份完整纯SPE；锐族对每个整数k≥4。",
+      "assumptions": [
+        "最优对在全部合法可重复无序对中唯一。",
+        "SPE对每个合法首主题有真实末位最佳回复。"
+      ],
+      "scope": "在静态最优对唯一性约束下的精确统一上确界与逐有限实例严格性。",
+      "objections": "唯一性约束与R-373d固定锥所最大化的比较差距属于不同目标。",
+      "body": {
+        "path": "archives/customer-attraction/state/定理/两提供者唯一最优对的遗漏锐上确界--定理.md",
+        "sha256": "06e437e835e0f30c9f317d6a9f1998db8a1352b75d2961e6f357e41bc8e79f36"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/两提供者真实续局的最优遗漏锐界14比13--定理.md",
+          "sha256": "c396bde3e30671c55d2437499472aa287a19a8d5712f12bdc79af56aa1b8428e"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/R-373d固定响应锥唯一静态最优与残余覆盖--审查.md",
+          "sha256": "57864adbb2bf2316f4985622fdf7d2f2c358fe2a6eb09a9d97ae9f3303c26197"
+        },
+        {
+          "path": "archives/customer-attraction/tools/verify-two-provider-unique-optimum-omission.py",
+          "sha256": "d01dc3c358ba151405699e3ee8d866a614b1aa5a11403caa729da8d91ef8c269"
+        }
+      ],
+      "sources": []
+    },
+    {
       "object_id": "customer-attraction/two-remaining-common-static-query-minimum-payoff-budget",
       "version": 1,
       "title": "任意非负实背景的两人共同静态查询最小利润预算",
@@ -166130,11 +166165,21 @@
       "reason": "Boss7 full-read closeout: this source contains a distinct finite/conditional mathematical record; exact scope and limitations are preserved in the body and objections."
     },
     {
+      "path": "archives/customer-attraction/state/定理/两提供者唯一最优对的遗漏锐上确界--定理.md",
+      "sha256": "06e437e835e0f30c9f317d6a9f1998db8a1352b75d2961e6f357e41bc8e79f36",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/two-provider-unique-optimum-omission-sharp-supremum"
+      ],
+      "reason": "结合两人遗漏等号结构和显式唯一最优逼近族给锐上确界。"
+    },
+    {
       "path": "archives/customer-attraction/state/定理/两提供者真实续局的最优遗漏锐界14比13--定理.md",
       "sha256": "c396bde3e30671c55d2437499472aa287a19a8d5712f12bdc79af56aa1b8428e",
       "disposition": "objects",
       "object_ids": [
-        "customer-attraction/two-provider-sharp-omission-fourteen-thirteenths"
+        "customer-attraction/two-provider-sharp-omission-fourteen-thirteenths",
+        "customer-attraction/two-provider-unique-optimum-omission-sharp-supremum"
       ],
       "reason": "真实根偏离和最大主题末回复共同推出遗漏项锐界。"
     },
@@ -168115,7 +168160,8 @@
       "disposition": "objects",
       "object_ids": [
         "customer-attraction/R-373d-fixed-response-cone-unique-static-gap",
-        "customer-attraction/two-provider-sharp-omission-fourteen-thirteenths"
+        "customer-attraction/two-provider-sharp-omission-fourteen-thirteenths",
+        "customer-attraction/two-provider-unique-optimum-omission-sharp-supremum"
       ],
       "reason": "固定编码锥的87/2200原始/对偶匹配精确最优，分清静态唯一覆盖和零松弛响应。"
     },
