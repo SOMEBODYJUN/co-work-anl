@@ -1,0 +1,68 @@
+{
+  "edge_id": "fac6508-diagonal-evaluation-of-two-reach-example",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-b5488c2696964ec58745ce5426f2b777",
+    "SC-DIAG-NORMAL"
+  ],
+  "target_ids": [
+    "facility-games/two-reach-three-site-multiple-overlap-no-exact-stability"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "原五客户正有理共同目录输入，权6,6,8,5,3，覆盖依次AB、AB、AC、BC、BC；两设施带标签、允许同址，客户强制服务、独立混合、线性含自身实际负载成本。对所有纯设施在轨布局和全部完整精确客户NE规则优化。",
+  "roles": {
+    "M-b5488c2696964ec58745ce5426f2b777": "以闭支持完整性，分别从AB、AC、BC的私有负载和共同权排尽各有序异址布局的全部负载。",
+    "SC-DIAG-NORMAL": "用真异址坐标极小形成H，给同址最优和异址放松下界；验证严格改善及可实现同址惩罚。",
+    "facility-games/two-reach-three-site-multiple-overlap-no-exact-stability": "给定输入上覆盖全部九个有序布局和连续独立混合规则的14/13下界与达到。"
+  },
+  "explanation": "AB私有(8,8)、共同(6,6)，m=0仅一边一人可行，m=1需非零±6等于0而失败，m=2给Δ=0。AC私有(12,8)、共同(8)，该客户两侧条件成本20、16，严格投C。BC私有(12,8)、共同(5,3)，m=0仅权3投B、权5投C可行，m=1需4±5或4±3为0而失败，m=2给Δ=−4违反权3的混合界。于是完整异址谱AB、AC、BC分别只含负载(14,14)、(12,16)、(15,13)，反向标签反射。真异址威胁H(A),H(B),H(C)=(16,14,15)。异址必要倍率按AB、AC、BC为8/7、5/4、14/13；同址两负载和为20、20、16且两方真异址威胁相同，故各同址至少8/5、7/5、15/8，对半可达到各同址值。异址最小14/13严格低于同址最小7/5，正规形保证BC放松最优可实现。具体在轨BC=(15,13)，B设施的两实际偏离收益12和8，C设施的两实际偏离收益14和10；其余异址取所列NE、同址独立对半，完整规则恰达到14/13。",
+  "scope": "同一三地点、两reach、多交叠输入的真正实例最优。下界遍历全部完整规则及在轨布局，达到只需给一份规则。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md",
+      "sha256": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1",
+      "section": "模型及条件成本"
+    },
+    {
+      "path": "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md",
+      "sha256": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1",
+      "section": "三态闭单元精确覆盖"
+    },
+    {
+      "path": "archives/facility-games/state/算法/同址平衡正规形与异址交叠参数精确优化--算法.md",
+      "sha256": "a6f4b4e6867015bfd4e6a94a5af7c23bfb20cca28503bdce31eee6f65ed4e136",
+      "section": "对角正规形的完整理由"
+    },
+    {
+      "path": "archives/facility-games/state/反例/两种覆盖总重的多交叠三地点不稳定例--反例.md",
+      "sha256": "ed5e124b34a3eb1f5bf610d6392b6df99deef9d0d67bb53b3f3f82a634bbe1c4",
+      "section": "三种异址布局的全部NE负载"
+    },
+    {
+      "path": "archives/facility-games/state/反例/两种覆盖总重的多交叠三地点不稳定例--反例.md",
+      "sha256": "ed5e124b34a3eb1f5bf610d6392b6df99deef9d0d67bb53b3f3f82a634bbe1c4",
+      "section": "对所有完整规则的下界"
+    },
+    {
+      "path": "archives/facility-games/state/反例/两种覆盖总重的多交叠三地点不稳定例--反例.md",
+      "sha256": "ed5e124b34a3eb1f5bf610d6392b6df99deef9d0d67bb53b3f3f82a634bbe1c4",
+      "section": "匹配达到与意义"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复算三个真实异址布局及反射，闭谱排除所有其他连续负载；同址无需枚举，取总量与真威胁。逐项核BC的四个实际偏离与完整补全。",
+  "endpoint_pins": {
+    "M-b5488c2696964ec58745ce5426f2b777": "e95f9b903e7263f62fbf3effe4a7b07cfb422af25c9a115a45da96173f780cf8",
+    "SC-DIAG-NORMAL": "189121f846bc729cda90154050071daf3a31cf29d9a0ffb62de69467f64ed3ac",
+    "facility-games/two-reach-three-site-multiple-overlap-no-exact-stability": "a997bcf0c2e890b2eb354c2f3e39b0aeaa5ac5aaca9f9fd73adb34a844d0c3ec"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1",
+    "archives/facility-games/state/算法/同址平衡正规形与异址交叠参数精确优化--算法.md": "a6f4b4e6867015bfd4e6a94a5af7c23bfb20cca28503bdce31eee6f65ed4e136",
+    "archives/facility-games/state/反例/两种覆盖总重的多交叠三地点不稳定例--反例.md": "ed5e124b34a3eb1f5bf610d6392b6df99deef9d0d67bb53b3f3f82a634bbe1c4"
+  },
+  "review_digest": "5f4acad7b1ae06b3ba08eb1f5cfd7e811dc24999bf4182d1809670fdb138f7ca",
+  "whole_result": "每个完整精确客户NE规则与每个纯在轨布局的设施倍率至少14/13，且存在以BC在轨、负载(15,13)的一份完整规则达到14/13。"
+}
