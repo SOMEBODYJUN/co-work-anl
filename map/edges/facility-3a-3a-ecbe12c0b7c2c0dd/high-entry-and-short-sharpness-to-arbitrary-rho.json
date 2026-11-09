@@ -1,0 +1,57 @@
+{
+  "edge_id": "fac-ecbe-high-entry-and-short-sharpness-to-arbitrary-rho",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SPARSE-HIGH-ACYCLIC",
+    "HC-RHO"
+  ],
+  "target_ids": [
+    "SPARSE-RHO-ALL"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "正实全交叉单交叠，含合法同址，同一固定全局 reach 优先级 P；有限双目录大小任意。",
+  "roles": {
+    "SPARSE-HIGH-ACYCLIC": "反设没有 ρ 稳定格，所有高回应边下降，因此高区一定有出口。",
+    "HC-RHO": "供应同域六正权客户 2×2 的完整 NE/CCE 锐下界。",
+    "SPARSE-RHO-ALL": "以新入口原子论证给原任意目录的固定 P 上界，继承下界锐性。"
+  },
+  "explanation": "取 r=ρ，零方直接取精确稳定。非空高区若闭，有限出度一图必环，违严格下降。交换角色得高列 C→低行 B，A 为最大行 a。AC 若不失去共同原子 x 则两方稳定；失去 x 的权 X>a(1−1/r²)>a/r>R_B。故 B 不覆盖同一 x，BC 列至少 X，最佳列 D 的 d′≥F₂(B)>rX>a。AD 行得满 a，列必须改善；A 的回应列 E≺A 且 F₂(A)=R_E=e≤a，故若 AD 交叠权为 Z，d′−Z<e/r≤a/r。Z=0 不可；若 AD 原子非 x，则 Z≤a−X，推出 d′−Z>X>a/r，不可。于是 Z=X，得 r(r−1)X<a<r²X/(r²−1)，与 r 的三次根等式矛盾。P 已定义所有带标签布局。逐跨对算 P、全部 F_i，三次齐次式精确比较并扫描；位复杂度多项式。HC-RHO 的全续局反例属本类，故统一常数锐。",
+  "scope": "全交叉单交叠任意目录、固定同一 P。不是把短核上界直接放大，也不使用一般四种子因子二。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/定理/单交叠任意目录的ρ纯续局与高区障碍--定理.md",
+      "sha256": "0ba344a265f574511e7348825a2d010d80a0343cbcf6c506a17a01032aea12d3",
+      "section": "任意r的高区下降与平衡子类"
+    },
+    {
+      "path": "archives/facility-games/state/定理/单交叠任意目录的ρ纯续局与高区障碍--定理.md",
+      "sha256": "0ba344a265f574511e7348825a2d010d80a0343cbcf6c506a17a01032aea12d3",
+      "section": "首个高→低入口的排除：r≥ρ"
+    },
+    {
+      "path": "archives/facility-games/state/定理/单交叠任意目录的ρ纯续局与高区障碍--定理.md",
+      "sha256": "0ba344a265f574511e7348825a2d010d80a0343cbcf6c506a17a01032aea12d3",
+      "section": "完整规则、锐性和构造复杂度"
+    },
+    {
+      "path": "archives/facility-games/state/定理/单交叠短目录的ρ稳定阈值与六客户锐族--定理.md",
+      "sha256": "1e56a62a6bebb5f1065db605ef91bfdac14814f2e2b73cb0ad624d7ae196803e",
+      "section": "六客户锐下界：全部续局均不能避开"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "分开已付高区前提、入口新增身份、零收益与全续局六客户下界；沿完整原目录取精确最大。",
+  "whole_result": "任意预固定 P 在原任意有限双目录上有 ρ 稳定格，给出原全布局纯精确续局和位多项式构造；六客户全续局下界使 ρ 为最佳统一常数。",
+  "endpoint_pins": {
+    "HC-RHO": "9f9dc43c9e50b3d3cc15afe5a3d656000060290413d2b3f72a946e5015138d8a",
+    "SPARSE-HIGH-ACYCLIC": "05238e3c86fea0fb268dc78176039a42dfd09f3ac0c923b9becf8cdc7abbf07d",
+    "SPARSE-RHO-ALL": "e87216506cac7f64305e561daa73e4e0edefec9e6bd38207f7d16113a00781e7"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/定理/单交叠任意目录的ρ纯续局与高区障碍--定理.md": "0ba344a265f574511e7348825a2d010d80a0343cbcf6c506a17a01032aea12d3",
+    "archives/facility-games/state/定理/单交叠短目录的ρ稳定阈值与六客户锐族--定理.md": "1e56a62a6bebb5f1065db605ef91bfdac14814f2e2b73cb0ad624d7ae196803e"
+  },
+  "review_digest": "94bd2a672c41cfdb2f9c39b9bbff0728b50c00b1c018430147e701f7d7d055cf"
+}

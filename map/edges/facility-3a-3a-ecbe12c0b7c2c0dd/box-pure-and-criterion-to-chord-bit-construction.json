@@ -1,0 +1,71 @@
+{
+  "edge_id": "fac-ecbe-box-pure-and-criterion-to-chord-bit-construction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "facility-games/box-slice-square-endpoint-exchange",
+    "facility-games/two-facility-pure-improvement-move-bounds-and-default",
+    "LOCAL-CHORD-IFF"
+  ],
+  "target_ids": [
+    "LOCAL-CHORD-POLY"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "显式正二进制有理权，R≥r>φR/2、C<qr，q=(√5−1)/2，保持完整最大原子条件，不预设 x≤(1−q)R。",
+  "roles": {
+    "facility-games/box-slice-square-endpoint-exchange": "内分支给可算初始 NE、分组不等式及 O((n+1)^4) 的端点交换位复杂度。",
+    "facility-games/two-facility-pure-improvement-move-bounds-and-default": "严格纯修复差缩小、保共同负载下界，最大权修复至多 n 次。",
+    "LOCAL-CHORD-IFF": "给 C=0、外分支可行/失败、全部坏正负差的分支及扩到 x≤R−qr 所需修正。",
+    "LOCAL-CHORD-POLY": "接受在相同完整域判定及构造有理精确独立混合 NE 的运行界。"
+  },
+  "explanation": "先精确比较 S≥R−r 或 x≤R−qr。外分支固定 x 到低 reach 端须单独核中间态不改善，然后纯修复。内分支盒目标 −δ 后给最大客户补 pivot 同坐标，得到合法 NE；差超配额时依重量分类做三个或前缀指定混合者，或从明定纯种子修复。至少三名指定混合者的质量界是配额保证，纯修复仅在证明达共同安全下界、首次安全反转或其它显式停止条件后给配额。负差不能用窄条件 x≤1−q 强行保第一配额；由坏负差推出 x<1−qr，再核余下分支。盒上只有输入端点或目标减符号和；后继除不超过客户数的整数与正权，q 比较用二次根符号，位长多项式。盒扫描 O((n+1)^4) 支配纯扫描和各混合分支。",
+  "scope": "第二个 in-packet overlap；局部真实 NE 双配额构造，非全局客户均衡菜单或真实坐标极小计算。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/算法/盒截面平方和的两坐标端点交换--算法.md",
+      "sha256": "739a955e044f6092f3de5a71e067e9137a639c850f82dc14662e5e723131b535",
+      "section": "多项式移动数的完整理由"
+    },
+    {
+      "path": "archives/facility-games/state/算法/盒截面平方和的两坐标端点交换--算法.md",
+      "sha256": "739a955e044f6092f3de5a71e067e9137a639c850f82dc14662e5e723131b535",
+      "section": "有理位长"
+    },
+    {
+      "path": "archives/facility-games/state/引理/两设施纯改善的移动界与默认续局--引理.md",
+      "sha256": "d765eaf078a7832bdf4d177bb25dfd24dfe6aeb2fc4bc151d88faa95a4340012",
+      "section": "任意严格顺序与最大权顺序"
+    },
+    {
+      "path": "archives/facility-games/state/定理/双地点强交叉配额的最大原子判据--定理.md",
+      "sha256": "abf2193390d535e2ec238ed9ec71381948b1ccf0b9d15a85677ec8d4045e2484",
+      "section": "坏正差d>U的完整分支"
+    },
+    {
+      "path": "archives/facility-games/state/定理/双地点强交叉配额的最大原子判据--定理.md",
+      "sha256": "abf2193390d535e2ec238ed9ec71381948b1ccf0b9d15a85677ec8d4045e2484",
+      "section": "坏负差−e<−Z的完整分支及宽条件修正"
+    },
+    {
+      "path": "archives/facility-games/state/定理/双地点强交叉配额的最大原子判据--定理.md",
+      "sha256": "abf2193390d535e2ec238ed9ec71381948b1ccf0b9d15a85677ec8d4045e2484",
+      "section": "时间、位长、软件和证据"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核两种盒 pivot 移动、正负 gap、固定大原子、三指定者端点不双计及精确比较；3529 有限例仅旁证。",
+  "whole_result": "在 LOCAL-CHORD-IFF 的完整显式正有理域，判定并于可行时在 O((n+1)^4) 有理运算及多项式位长内构造达两强配额的精确独立混合客户 NE。",
+  "endpoint_pins": {
+    "LOCAL-CHORD-IFF": "e056245127aa318b3902fc7029dc7124dc3dedd02562d792e17edd064af3415e",
+    "LOCAL-CHORD-POLY": "5b23026c01a5a3f8d4f4d2ad6bcc570f2520e1d66f35ee959a41fe8f1d34cecb",
+    "facility-games/box-slice-square-endpoint-exchange": "798786a62f35d554e87cfc433ecde3eb0ea0b8df2d8ed39bc814aeea3aebace6",
+    "facility-games/two-facility-pure-improvement-move-bounds-and-default": "32f69cb13164add940d8aed26dec80d1e125b89df9b6f4cb53431a44ea69f6d4"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/算法/盒截面平方和的两坐标端点交换--算法.md": "739a955e044f6092f3de5a71e067e9137a639c850f82dc14662e5e723131b535",
+    "archives/facility-games/state/引理/两设施纯改善的移动界与默认续局--引理.md": "d765eaf078a7832bdf4d177bb25dfd24dfe6aeb2fc4bc151d88faa95a4340012",
+    "archives/facility-games/state/定理/双地点强交叉配额的最大原子判据--定理.md": "abf2193390d535e2ec238ed9ec71381948b1ccf0b9d15a85677ec8d4045e2484"
+  },
+  "review_digest": "7152c9a6d4813a5800ddb27834de997e23a2a20f511b49eefad2abd3f53c0492"
+}

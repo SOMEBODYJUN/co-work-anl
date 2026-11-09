@@ -1,0 +1,38 @@
+{
+  "edge_id": "fac-ecbe-high-descent-to-balanced-stability",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SPARSE-HIGH-ACYCLIC"
+  ],
+  "target_ids": [
+    "SPARSE-BALANCED-R"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一全局 reach 优先级 P，r≥1，双方每个行动均达到本方最大 reach/r，有限非空原目录。",
+  "roles": {
+    "SPARSE-HIGH-ACYCLIC": "没有 r 稳定格时，从任一高行动出发的精确回应严格降全序。",
+    "SPARSE-BALANCED-R": "双方全高足以在原全目录取得一格 r 稳定。"
+  },
+  "explanation": "一侧最大 reach 为 0 时，该方无正偏离，另一方对任一行动取最佳回应即精确稳定。否则反设无 r 稳定格，有限全目录各行动有一个出边，必有有向环。双方全高使环上每一步都严格降同一带标签全序，矛盾。取一方全高或只锚定一个高行动都不能得到闭环全高。",
+  "scope": "双方全部行动高，r 的定义和 F_i 最大域均为原目录，固定 P 而非逐格选择 NE。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/定理/单交叠任意目录的ρ纯续局与高区障碍--定理.md",
+      "sha256": "0ba344a265f574511e7348825a2d010d80a0343cbcf6c506a17a01032aea12d3",
+      "section": "任意r的高区下降与平衡子类"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "检查原全目录、等号计高、回应平局及零 reach。",
+  "whole_result": "对任意 r≥1，双方全高的有限全交叉单交叠输入在同一固定全局优先级 P 下有 r 稳定格。",
+  "endpoint_pins": {
+    "SPARSE-BALANCED-R": "90a85557196423cb5332a9c64d54614bd6db37f1e0fc444d0974688e6b750365",
+    "SPARSE-HIGH-ACYCLIC": "05238e3c86fea0fb268dc78176039a42dfd09f3ac0c923b9becf8cdc7abbf07d"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/定理/单交叠任意目录的ρ纯续局与高区障碍--定理.md": "0ba344a265f574511e7348825a2d010d80a0343cbcf6c506a17a01032aea12d3"
+  },
+  "review_digest": "968a533335c6b93f447f16cc2b21c39dbfb55e51a92a6f4b579aee3f26c238d1"
+}

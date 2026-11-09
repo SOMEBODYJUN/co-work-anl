@@ -1,0 +1,73 @@
+{
+  "edge_id": "fac-ecbe-local-spectrum-hardness-through-site-guards",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "LOCAL-HARD"
+  ],
+  "target_ids": [
+    "SC-THREE-DEC1-HARD",
+    "SC-THREE-DECa-HARD",
+    "SC-FIVE-DECa-HARD"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "原二进制 SUBSET SUM，五进制变量与锚客户的显式正整数局部源。两设施共同目录、同址合法、强制服务、全布局精确独立混合客户 NE。a=1 的恰三与固定有理 1<a<σ 的恰三分别构造；恰五宏构造固定有理 1<a<φ。",
+  "roles": {
+    "LOCAL-HARD": "给出完整闭谱中的 Δ 极值门槛，连同五进制源编码、反向和正权位长；不是任意局部 NP 难实例。",
+    "SC-THREE-DEC1-HARD": "将背景差 +δ 的 BC 最小 B 收益接到 AC 倍率 1 门控。",
+    "SC-THREE-DECa-HARD": "改变 AB reach 顺序，在固定正倍率下仍保同一 BC 完整谱。",
+    "SC-FIVE-DECa-HARD": "镜像并正缩放源谱，通过桥宏删除/回填到 (4,5) 最小第5点收益。"
+  },
+  "explanation": "BC 用硬群总重 W，保持独占背景差 +δ。对 a=1，AB 两等重客户给唯一收益 (k,k)，AC 给 (h,N)，BC 的 μ≥h 且等号当且仅当源 YES。对固定 1<a<σ，R_B>R_A>R_C，令 m₀=(V−Q)/2，ah=m₀、a(V−m₀)=R_A，AC 在轨第一家偏到 B 门控 μ≤m₀，NO 的 BC 第二家也被 AB 全 reach 排除。两次都用 AA/BB/CC/AB/AC/BC 的逐类守卫并反射。恰五先将微群、d₀、Q₀ 同乘 λ，桥 z 的独占差 z−d>W 迫所有 NE 都把桥送到5，反向任何缩减 NE 都可严格扩回；于是 μ=(H+1−maxΔ)/2≥T，等号恰源 YES。(1,4) 门控之外的十四类由中心/叶及同址守卫排除，源 YES 的 (1,4) 也至少需要 μ/v₁=a。三个构造分别清分母，位长多项式。",
+  "scope": "给三个全布局分类的 NP 困难性及各自门控性质。五地点不能回译到恰三，固定 a 的守卫余量不可当源位长逆多项式倍率 gap。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/归约/指定设施均衡负载极小值的弱NP完全性--归约.md",
+      "sha256": "aa398a78b53b28adfdc71c5a17e016b6323854b14d7a0fa14d9cb25401e685df",
+      "section": "局部博弈编码及两个方向"
+    },
+    {
+      "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+      "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+      "section": "局部源的精确接口"
+    },
+    {
+      "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+      "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+      "section": "三地点a=1：六类在轨布局的精确守卫"
+    },
+    {
+      "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+      "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+      "section": "三地点固定1<a<σ：改变reach顺序后的守卫"
+    },
+    {
+      "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+      "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+      "section": "桥宏原子的双向消元与十种异址NE"
+    },
+    {
+      "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+      "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16",
+      "section": "五地点YES完整续局与NO全部十五类"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核过背景差反射、桥严格不等式两向、全部布局及零外轨默认补齐。局部归约的无私有加强不作守卫前提。",
+  "contribution": {
+    "result": "三个指定固定阈值域上的全布局 NP 困难性；五地点源 YES 还达到恰 a。",
+    "remaining": "各目标还用独立的短有理证书给 NP 成员性，并用 DP-W 给整数总重伪多项式上界。"
+  },
+  "endpoint_pins": {
+    "LOCAL-HARD": "65e871985012643bd6e357d711f57d7bb061f208d91da96a794795afb1d87f3a",
+    "SC-FIVE-DECa-HARD": "95b244bbe303dbee5cb5d19404d242b8e511fddb641567caf5bfdfa8bb9e7158",
+    "SC-THREE-DEC1-HARD": "c861b42a6a4f16ed63121e5b572d94f0cc26d5ca7c76a50673f792d2d7c47b85",
+    "SC-THREE-DECa-HARD": "1fff2af9996e15feb91e30771f6f3ab88e049c047766620962cdaf3f7e72b31a"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/归约/指定设施均衡负载极小值的弱NP完全性--归约.md": "aa398a78b53b28adfdc71c5a17e016b6323854b14d7a0fa14d9cb25401e685df",
+    "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16"
+  },
+  "review_digest": "c5c152c41f7ae643bab8ad0e071d92b2f1c8503e528d364828c90823e13fef8c"
+}

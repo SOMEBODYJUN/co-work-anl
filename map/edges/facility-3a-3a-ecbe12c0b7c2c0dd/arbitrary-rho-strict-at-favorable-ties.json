@@ -1,0 +1,57 @@
+{
+  "edge_id": "fac-ecbe-arbitrary-rho-strict-at-favorable-ties",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SPARSE-RHO-ALL"
+  ],
+  "target_ids": [
+    "HC-RHO"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "全交叉单交叠有限双目录，正实权。给定输入后固定一套全局 reach 平局序，在跨方同 reach 时优先给最大 reach 较小方；各布局沿同一 P。",
+  "roles": {
+    "SPARSE-RHO-ALL": "提供原任意目录高到低入口的证明，重做端点等号可给严格强化。",
+    "HC-RHO": "得到短目录任意 P 的弱上界，以及原严格交叠 reach 条件下任意 P 的严格上界。"
+  },
+  "explanation": "令 r=ρ。若每格所需倍率≥r，则至少一方最大偏离 v≥ru 且 v>u；零方直接有倍率1。把高改为 R>M_i/r，精确回应格的一方已最大，高侧若拿全 reach 则其比严格低于 r，所以高回应边仍降。首个严格高列 C→非严格高行 B，取最大行 A，a=R_A、b=R_B≤a/r。AC 列得全 c>M₂/r，行必失 x，X≥a(1−1/r²)>a/r≥b。BC 行最佳，列至少 X，故 D=b₂(B) 的 d′≥rX>a，行方是最大 reach 较小方。AD 行得全 a。令 E=b₂(A)，高区下降给 E≺A、列在 AE 得 e=F₂(A)≤a，故 AD 的共有权 Z 须 d′−Z≤e/r；Z=0 不可，若不同于 x 则 Z≤a−X 也不可。于是 Z=X，r(r−1)X≤r(d′−X)≤e≤a≤r²X/(r²−1)，根恒等式迫全取等。因 AE 交叠且 e=a，有利全局优先级禁止 E≺A；严格交叠 reach 也禁止。双方最大 reach 相等时已被 d′>a 排除。故在所述选择下 P 点态 <ρ。边界见证：令 z=1/(ρ²−1)、b=ρ−1、a=1+z。五名正权客户分别在 ACD、BC、A、B、D，重 1,z,z,b−z,b；C 无私有。Reach=(a,b,a,ρ)，取不利 C≺A。AC,BC,BD,AD 依次为 (z,a),(b,1),(b,ρ),(a,b)，四格所需倍率均恰 ρ。此为严格正实输入的固定 P 等号，并无零权客户。",
+  "scope": "源定理的点态严格强化并给短目录严格部分另证。任意 P 与存在一个输入后固定 P 的量词分开。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/定理/单交叠任意目录的ρ纯续局与高区障碍--定理.md",
+      "sha256": "0ba344a265f574511e7348825a2d010d80a0343cbcf6c506a17a01032aea12d3",
+      "section": "首个高→低入口的排除：r≥ρ"
+    },
+    {
+      "path": "archives/facility-games/state/定理/单交叠任意目录的ρ纯续局与高区障碍--定理.md",
+      "sha256": "0ba344a265f574511e7348825a2d010d80a0343cbcf6c506a17a01032aea12d3",
+      "section": "任意r的高区下降与平衡子类"
+    },
+    {
+      "path": "archives/facility-games/state/定理/单交叠短目录的ρ稳定阈值与六客户锐族--定理.md",
+      "sha256": "1e56a62a6bebb5f1065db605ef91bfdac14814f2e2b73cb0ad624d7ae196803e",
+      "section": "严格2×2分类：所有分支"
+    },
+    {
+      "path": "archives/facility-games/state/定理/单交叠短目录的ρ稳定阈值与六客户锐族--定理.md",
+      "sha256": "1e56a62a6bebb5f1065db605ef91bfdac14814f2e2b73cb0ad624d7ae196803e",
+      "section": "六客户锐下界：全部续局均不能避开"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "独立核严格高区、零支付、根恒等式及五客户的真实覆盖和四个固定 P 比；同址带标签规则仍合法。",
+  "contribution": {
+    "result": "短目录严格交叠 reach 的 <ρ 上界推广到任意目录；允许任意 reach 平局时，也可选一套全局优先级实现点态严格 <ρ。",
+    "remaining": "HC-RHO 的六正整数客户对任意完整 NE/CE/CCE 的统一锐下界须用其正扰动族，固定 P 的五客户等号例不替代它。"
+  },
+  "endpoint_pins": {
+    "HC-RHO": "9f9dc43c9e50b3d3cc15afe5a3d656000060290413d2b3f72a946e5015138d8a",
+    "SPARSE-RHO-ALL": "e87216506cac7f64305e561daa73e4e0edefec9e6bd38207f7d16113a00781e7"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/定理/单交叠任意目录的ρ纯续局与高区障碍--定理.md": "0ba344a265f574511e7348825a2d010d80a0343cbcf6c506a17a01032aea12d3",
+    "archives/facility-games/state/定理/单交叠短目录的ρ稳定阈值与六客户锐族--定理.md": "1e56a62a6bebb5f1065db605ef91bfdac14814f2e2b73cb0ad624d7ae196803e"
+  },
+  "review_digest": "c53d375f1ddf8eb8754a9b17fd30e430bb5238d02a4fb0edccbc924b0c389bb2"
+}

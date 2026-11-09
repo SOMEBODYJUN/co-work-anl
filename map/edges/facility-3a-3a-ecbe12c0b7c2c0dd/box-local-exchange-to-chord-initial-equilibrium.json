@@ -1,0 +1,52 @@
+{
+  "edge_id": "fac-ecbe-box-local-exchange-to-chord-initial-equilibrium",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "facility-games/box-slice-square-endpoint-exchange"
+  ],
+  "target_ids": [
+    "LOCAL-CHORD-IFF"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "强弦内分支。缩放 R=1，δ=1−r，最大共同权 x，其余总重 S≥δ。以其余共同权作盒半宽，保和目标 −δ。",
+  "roles": {
+    "facility-games/box-slice-square-endpoint-exchange": "输出两坐标端点局部最优顶点，并给一阶及坏差分组式。",
+    "LOCAL-CHORD-IFF": "取得该支的合法初始 NE，继而判断负载差是否需修复。"
+  },
+  "explanation": "其余坐标若均端点，置 c_x=0，得总差 0。否则唯一内点权 z≤x、坐标 d，置 c_x=d，因保和目标为 −δ，总差 Δ=d。两名指定者符合 |d|≤z≤x，概率 p_i=(1+d/w_i)/2。纯 +v 要 d≤v、纯 −v 要 d≥−v，由端点局部式 (D) 正好保证。坏正差时纯 +v 权≥z、纯 −v 且 v<z 时 v≤d，坏负差反射。实例 (14,13,19),t=−10 的局部返回 F=582 而另有 F=654，嵌到 R=120,r=110、最大权19、共同总重65 的真实强弦输入仍完全满足这个接口。",
+  "scope": "第一个 in-packet overlap；盒输出给初始 NE 和后继分组，不要求全局最大平方和。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/算法/盒截面平方和的两坐标端点交换--算法.md",
+      "sha256": "739a955e044f6092f3de5a71e067e9137a639c850f82dc14662e5e723131b535",
+      "section": "供两设施混合坐标使用的强不等式"
+    },
+    {
+      "path": "archives/facility-games/state/算法/盒截面平方和的两坐标端点交换--算法.md",
+      "sha256": "739a955e044f6092f3de5a71e067e9137a639c850f82dc14662e5e723131b535",
+      "section": "一个真实的非全局返回例"
+    },
+    {
+      "path": "archives/facility-games/state/定理/双地点强交叉配额的最大原子判据--定理.md",
+      "sha256": "abf2193390d535e2ec238ed9ec71381948b1ccf0b9d15a85677ec8d4045e2484",
+      "section": "内分支的初始NE与局部交换"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "将盒保和目标、最大客户补坐标、纯端点符号与客户精确 NE 条件逐项对应。",
+  "contribution": {
+    "result": "强弦内分支从两坐标端点局部最优可构造合法初始 NE，并获得坏差修复所需权重分组。",
+    "remaining": "初始差可能越配额；全充要仍需正负差全部修复、外分支可行与唯一坏 NE 证明。"
+  },
+  "endpoint_pins": {
+    "LOCAL-CHORD-IFF": "e056245127aa318b3902fc7029dc7124dc3dedd02562d792e17edd064af3415e",
+    "facility-games/box-slice-square-endpoint-exchange": "798786a62f35d554e87cfc433ecde3eb0ea0b8df2d8ed39bc814aeea3aebace6"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/算法/盒截面平方和的两坐标端点交换--算法.md": "739a955e044f6092f3de5a71e067e9137a639c850f82dc14662e5e723131b535",
+    "archives/facility-games/state/定理/双地点强交叉配额的最大原子判据--定理.md": "abf2193390d535e2ec238ed9ec71381948b1ccf0b9d15a85677ec8d4045e2484"
+  },
+  "review_digest": "09cdf46455d9e2f2a72032aab7790ed600cec23e3be07cc1dcc61c6017e7660e"
+}
