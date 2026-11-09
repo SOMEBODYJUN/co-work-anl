@@ -1,0 +1,45 @@
+{
+  "edge_id": "cag-203a-actual-hybrid-cuts-supply-full-hall-rank",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance"
+  ],
+  "target_ids": [
+    "M-453311709b8248f4977a880920f6da60"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定一个最优有序元组T、其owner分块及同一合法actual叶Z，source g_i为actual外部G份额，I边使用同叶份额，遗漏R终端为单位容量。",
+  "roles": {
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance": "合法替换HYB给同一actual图的全部饱和source割条件和总质量g。",
+    "M-453311709b8248f4977a880920f6da60": "同一网络的任意终端集合rank、全部可行需求base及单一greedy支持函数。"
+  },
+  "explanation": "对任意角色集J，用actual Z_J替换T的同槽可保全部owner在J^c的客户。最优性使G新客户数不超过owner在J且未被Z_J覆盖的O损失；这类I损失每客户全部actual coverer均在J^c，恰有一单位出割，R损失受其单位终端数约束。g(J)不超过新增G数，故g(J)≤c_I(J,J^c)+|R∩Q(J)|。在开放全部R时，每个角色割的容量至少g(J^c)+g(J)=g，source总容量恰g。于是r(R)=g且存在同一满取消向量。 对只开放S的同一图，最小割直接给r(S)=min_J[f(J)+|S∩Q(J)|]，f(J)=g(J^c)+c_I(J,J^c)。f是有向cut加模函数；S,T的最小割J_S,J_T的交/并，以及逐客户交叉终端不等式，给r(S)+r(T)≥r(S∪T)+r(S∩T)。单调性与r(空)=0来自最大流定义。任非负需求γ，必要性取流向S的子流；反向由S=R∖Q(J)得γ(R∖Q(J))≤r(S)≤f(J)，终端容量改为γ后全部割均足够，因此可实现；singleton rank给γ_x≤1。再加γ(R)=g即全部满取消base Γ。对任何降序非负价格z，令γ_(x_k)=r(S_k)−r(S_(k−1))；子模边际递减对任意U逐项求和给γ(U)≤r(U)，故同一γ在Γ中且同时饱和全部S_k。任何可行γ各前缀量至多r(S_k)，层差求和得h_Γ(z)=Σ_k(z_k−z_(k+1))r(S_k)。以上均为同一固定T/owner/actual图，不添加普遍采购预算。",
+  "scope": "固定任一最优T、owner及合法actual叶，完整推出目标的rank/base/全部非负价格支持函数；不要求SPE，不支付incoming。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/实际取消的同时源付款与入流余额--定理.md",
+      "sha256": "5759f87d02d0bacc5c61a5472806d6f464192bb97bcb18a1a3bf1e156a02ad7a",
+      "section": "全角色集合的合法混合替换"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定捕获价格的Hall缺额与共同付款对偶--定理.md",
+      "sha256": "20c5d8e42adb6442879aa5f57fbf73f3b99a9ad68cb7356806de425786b50e45",
+      "section": "实际Hall网络、rank及base"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/自然捕获路由的Bellman价格与Hall取消--算法.md",
+      "sha256": "79857e8db085c5d83a35c9062cacc4ea031e974cc8cbed2fd057668e346a5451",
+      "section": "裸actual Hall取消的精确网络"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/自然捕获路由的Bellman价格与Hall取消--算法.md",
+      "sha256": "79857e8db085c5d83a35c9062cacc4ea031e974cc8cbed2fd057668e346a5451",
+      "section": "同一套价格上的共同最优取消"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "203包3D实读：在原HYB饱和贡献后补全同网mincut、需求充要、子模及greedy，目标整条成立。发布前按当前对象/证据重新绑定。",
+  "whole_result": "同一actual Hall图的r(S)有所列最小割式、r(空)=0、单调次模且r(R)=g；全部满取消恰为Γ，且每个非负价格由单一前缀greedy达到完整支持函数公式。"
+}

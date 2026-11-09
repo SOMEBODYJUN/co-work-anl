@@ -1,0 +1,44 @@
+{
+  "edge_id": "cag-203a-collision-free-full-strategy-supplies-pruning-witness",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/collision-free-family-welfare-obstruction"
+  ],
+  "target_ids": [
+    "ACTUAL-OPTIMUM-PRUNING"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定每k≥1,m=k+1及同一组X_i、a_i、b,d，原策略的所有真偏离由B/Q状态补足。剪枝保原actual支持与全部最优支持。",
+  "roles": {
+    "customer-attraction/collision-free-family-welfare-obstruction": "同一A/B/C/D全人数族在原目录有B/Q构造的完整低福利SPE。",
+    "ACTUAL-OPTIMUM-PRUNING": "原SPE存在性与删除B后全部SPE跃升的证明链。"
+  },
+  "explanation": "固定源对象的同一A_i/B_i/C_i/D族，B/Q构造在全部有序历史粘合完整纯SPE，空根走C_1…C_k,D，W=2m。Q允许多个旧A且fresh A偏离后把惩罚组改成该新组；fresh B偏离单独调用B状态，因此不是仅在轨稳定。全A加D覆盖全部3m−1客户；每个私客a_i只由A_i覆盖，d只由D覆盖，恰占满m槽，故全部最优元组支持唯一。保actual与OPT支持因此恰删全部B。对缩减目录F/E增强域按fresh组数g归纳：E有过去D、余g位；F无过去D、余g+1位，已触组各一次A或C。g=0时E已终局，F最佳回复恰为D或旧C对应A，收益2，其它旧A至多3/2、C至多1。g>0时强制任一fresh A的真实孩子仍在相应域，归纳保证未来只选其它fresh A，F最后至多升级此前旧C，故当前fresh A不再被碰、最终收益3。其它行动无论真实后继怎样均≤2，所以每份完整子SPE都必须先选fresh A；任意fresh次序与合法末端回复又可用BI补全其它有序子树实现。空根无旧C，故所有缩减SPE恰全A任意排列再D，W=OPT=3m−1>2m。此证明保原存在量词与缩减全称量词，唯一OPT支持排除另选最优支持的补救。",
+  "scope": "由同一碰撞自由完整SPE族和显式唯一支持/F-E归纳，推出ACTUAL-OPTIMUM-PRUNING整条全人数根命题；仅反指定免费删B算子。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/三人碰撞自由族福利障碍--反例.md",
+      "sha256": "588764de045e2a55362773dc9b83d3f10cadb47e22d8feeac0c4e342cc4836ad"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/实际与唯一最优支持剪枝的全人数福利跃升--障碍.md",
+      "sha256": "0f93e7c2fa8308fe85ef0861f4e92daf3108f31283264ba94c1ee0dff1b92f5a",
+      "section": "全人数实例与原完整SPE"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/实际与唯一最优支持剪枝的全人数福利跃升--障碍.md",
+      "sha256": "0f93e7c2fa8308fe85ef0861f4e92daf3108f31283264ba94c1ee0dff1b92f5a",
+      "section": "原F/E增强域：每份子SPE的全部后缀"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/实际与唯一最优支持剪枝的全人数福利跃升--障碍.md",
+      "sha256": "0f93e7c2fa8308fe85ef0861f4e92daf3108f31283264ba94c1ee0dff1b92f5a",
+      "section": "根结论与最小域证明"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "203包3D实读补足唯一OPT及所有真孩子的F/E归纳，原partial无误但可收束成whole；不称half反例。发布前重绑。",
+  "whole_result": "每m≥2的原目录存在完整SPE福利2m且唯一最优支持为全A加D；只保该actual与OPT支持后，每份完整SPE均全A任意排列再D，福利均3m−1，因而不保任何不更高福利SPE。"
+}
