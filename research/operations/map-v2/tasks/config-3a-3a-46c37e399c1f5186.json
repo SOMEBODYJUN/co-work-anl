@@ -187,11 +187,66 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss1",
-  "request_id": "290c0640fae74af292469eb9eb886f53",
+  "request_id": "18512a73e8474f05857c3889e24f3638",
   "requests": {
     "3f2df3cf8afe482ea0eba5aff1e71ac6": "plan",
-    "290c0640fae74af292469eb9eb886f53": "claim"
+    "290c0640fae74af292469eb9eb886f53": "claim",
+    "18512a73e8474f05857c3889e24f3638": "done"
+  },
+  "edge_paths": {
+    "config-exact-sparse-lp-and-budget-rounding-pay-implicit-assignment": "map/edges/config-3a-3a-46c37e399c1f5186/exact-pricing-sparse-lp-and-rounding.json"
+  },
+  "receipt": {
+    "task_id": "config-3a-3a-46c37e399c1f5186",
+    "stage": "3A",
+    "status": "complete",
+    "object_ids": [
+      "configuration-assignment/exact-pricing-sparse-configuration-lp",
+      "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing"
+    ],
+    "read_object_ids": [
+      "M-81da430ecf2846f59fb645a08763dab4",
+      "M-ada741cd5e634934805d83850dd7cd1f",
+      "M-d05829d1479f4b8aad94f3953ab9ffc4"
+    ],
+    "input_pins": {
+      "configuration-assignment/exact-pricing-sparse-configuration-lp": "847bf3f41064526e222270532908a4a4dfb56a063ffae9b48ac817957fbf0bcb",
+      "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing": "bc9984dc949b57b5dba024289ef14b2fed3734e4000f4d577ec0b67b2ea908da",
+      "M-81da430ecf2846f59fb645a08763dab4": "d20161ada731b6e82e89c27bc3c7a7374674b950d21e0cad9a1be961e2d22ce3",
+      "M-ada741cd5e634934805d83850dd7cd1f": "a5b3e151e5f809e6ad470c957e0aeef24c8e7975c1a48a3a3487f4c0e72be19b",
+      "M-d05829d1479f4b8aad94f3953ab9ffc4": "23bb2ddcdcb76320fa48b9c4a1ff525b126121d0cdc06b55232dd73098e7ca09"
+    },
+    "coverage": {
+      "configuration-assignment/exact-pricing-sparse-configuration-lp": {
+        "state": "linked",
+        "object_pin": "847bf3f41064526e222270532908a4a4dfb56a063ffae9b48ac817957fbf0bcb",
+        "comparison_scope": "同一配置 LP 的稀疏原始优化与给定支持舍入及连续一局部定价。",
+        "reason": "对偶分离给精确最优值，记录 V−1/(2D²) 判不可行所使用的配置，经有理间距恢复同值原始列集；基本解保短支持。该独立部件是整数算法的必要接口。",
+        "edge_ids": [
+          "config-exact-sparse-lp-and-budget-rounding-pay-implicit-assignment"
+        ]
+      },
+      "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing": {
+        "state": "linked",
+        "object_pin": "bc9984dc949b57b5dba024289ef14b2fed3734e4000f4d577ec0b67b2ea908da",
+        "comparison_scope": "精确隐式线性 LP、原硬预算显式支持舍入、共同成本截断和连续一 TU pricing。",
+        "reason": "ALL 超边支付完整定理，非均匀成本与共同成本保证各有精确合同；近似定价和其他耦合仍开放。",
+        "edge_ids": [
+          "config-exact-sparse-lp-and-budget-rounding-pay-implicit-assignment"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/config-3a-3a-46c37e399c1f5186/exact-pricing-sparse-lp-and-rounding.json",
+        "sha256": "4f23fae8b49f51ceec76cc8b20f01ce213702914e7a38cb735f71eb342d295ea"
+      }
+    ],
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "reviewed_by": "Boss1",
+    "review_note": "逐项核对两项独立登记对象及给定支持舍入与精确 TU oracle；精确恢复支持后构成联合推导。"
   }
 }
