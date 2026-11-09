@@ -1,0 +1,64 @@
+{
+  "edge_id": "cag-e57a9378-sharp-point-in-r373d-response-cone",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/two-provider-sharp-omission-fourteen-thirteenths"
+  ],
+  "target_ids": [
+    "customer-attraction/R-373d-fixed-response-cone-unique-static-gap"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "六标签 0,1,2,3,4,5 分别为 A,B,C,D,P,Q；根0、末回复ρ=(1,4,4,4,5,4)，按实际覆盖归一 W=1，指定比较对23。",
+  "roles": {
+    "customer-attraction/two-provider-sharp-omission-fourteen-thirteenths": "给固定回复锥内最大遗漏坐标的精确可行点和正等号的结构约束。",
+    "customer-attraction/R-373d-fixed-response-cone-unique-static-gap": "给使用相同真实激励行、另加最低遗漏超额并最大化静态间隙的独立精确问题。"
+  },
+  "explanation": "锐例的归一类型向量是 (w₁,w₂,w₄,w₈,w₂₀,w₂₄,w₃₆,w₄₀,w₄₉,w₅₀)=(4,5,3,3,2,2,2,2,2,2)/13。它满足 R-373d 的全部42项真实激励行、W=1 及 R−W=1/13≥1/100。23 与12、13的覆盖同为14/13，其他比较不超过14/13，因此在此点 g=0。锐界的交集分割和真实IC证明只用非负可加的客户质量，故在同一有限非负实掩码向量上仍给 R≤14/13，且上述有理点取到。该结论也闭合旧浮点发现程序在这个ρ下的固定23遗漏目标。原 R-373d 的目标是另一个坐标 g，它的正差最优点为 (R,g)=(101/100,87/2200)，由原对偶认证；一般遗漏证明不能替代该静态间隙对偶。",
+  "scope": "同一六标签回复锥内的精确坐标对照，区分固定比较对的遗漏目标与加遗漏门槛的静态间隙目标。全域遗漏正等号迫最优对若为23，则12、13同最优。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/两提供者真实续局的最优遗漏锐界14比13--定理.md",
+      "sha256": "c396bde3e30671c55d2437499472aa287a19a8d5712f12bdc79af56aa1b8428e",
+      "section": "最大主题的真实后继"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/两提供者真实续局的最优遗漏锐界14比13--定理.md",
+      "sha256": "c396bde3e30671c55d2437499472aa287a19a8d5712f12bdc79af56aa1b8428e",
+      "section": "比较主题的真实后继"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/两提供者真实续局的最优遗漏锐界14比13--定理.md",
+      "sha256": "c396bde3e30671c55d2437499472aa287a19a8d5712f12bdc79af56aa1b8428e",
+      "section": "等号的结构和最小整数见证"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R-373d固定响应锥唯一静态最优与残余覆盖--审查.md",
+      "sha256": "57864adbb2bf2316f4985622fdf7d2f2c358fe2a6eb09a9d97ae9f3303c26197",
+      "section": "程序实际定义的线性对象"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R-373d固定响应锥唯一静态最优与残余覆盖--审查.md",
+      "sha256": "57864adbb2bf2316f4985622fdf7d2f2c358fe2a6eb09a9d97ae9f3303c26197",
+      "section": "源运行与独立精确复核"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/残余桥的浮点发现与静态查询边界--资源.md",
+      "sha256": "75bff256bb6127f05309f7b01bc13885a87c133dd2ae4f99560f6242835636f9",
+      "section": "622B原浮点解和精确27客户的正确关系"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐型换算归一向量并复算末位、根和覆盖，复跑原精确有理可行点与对偶检查；遗漏 LP 的上界由非负加权容量和真实激励直接证明。",
+  "endpoint_pins": {
+    "customer-attraction/R-373d-fixed-response-cone-unique-static-gap": "35ef5744182889fac1452c2711e6ea857390023001022524922120f94308b9c6",
+    "customer-attraction/two-provider-sharp-omission-fourteen-thirteenths": "d68facb82e82abef6b4ee5f34395e480e100fd3f55e0634cb27d3b2db6c4edf4"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/两提供者真实续局的最优遗漏锐界14比13--定理.md": "c396bde3e30671c55d2437499472aa287a19a8d5712f12bdc79af56aa1b8428e",
+    "archives/customer-attraction/state/审查/R-373d固定响应锥唯一静态最优与残余覆盖--审查.md": "57864adbb2bf2316f4985622fdf7d2f2c358fe2a6eb09a9d97ae9f3303c26197",
+    "archives/customer-attraction/state/资源/残余桥的浮点发现与静态查询边界--资源.md": "75bff256bb6127f05309f7b01bc13885a87c133dd2ae4f99560f6242835636f9"
+  },
+  "review_digest": "8082085636f04988d93c5d74c99a377066293ecf3e5767484c2c8388adaab33d"
+}

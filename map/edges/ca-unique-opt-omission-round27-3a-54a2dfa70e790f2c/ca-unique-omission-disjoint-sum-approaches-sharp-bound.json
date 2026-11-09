@@ -1,0 +1,61 @@
+{
+  "edge_id": "ca-unique-omission-disjoint-sum-approaches-sharp-bound",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/two-provider-sharp-omission-fourteen-thirteenths",
+    "customer-attraction/R-373d-fixed-response-cone-unique-static-gap"
+  ],
+  "target_ids": [
+    "customer-attraction/two-provider-unique-optimum-omission-sharp-supremum"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "roles": {
+    "customer-attraction/two-provider-sharp-omission-fourteen-thirteenths": "提供27单位客户等号块，同一根选0和回复表下W=13、23遗漏14，且23是静态最优对之一。",
+    "customer-attraction/R-373d-fixed-response-cone-unique-static-gap": "v2的4422单位客户整数化可行点提供同一完整策略、23严格唯一的种子，W=2200、R=2222、各静态差至少87。",
+    "customer-attraction/two-provider-unique-optimum-omission-sharp-supremum": "在唯一最优类中独立给14/13的逼近下界，补充原k族的另一证明。"
+  },
+  "conditions": "两来源的六标签都按(A,B,C,D,P,Q)=(0,1,2,3,4,5)对应，根选0，真实回复ρ=(1,4,4,4,5,4)。客户块不交，提供者与标签保持同一套。",
+  "scope": "对唯一最优类统一上确界的下界，用共同完整响应策略对整数单位客户块逐项叠加。",
+  "explanation": "取一份R-373d v2的整数化证书和任意n≥0份27客户等号证书。每个同名标签在不交客户块中保持各自覆盖，因此36项末位和6项根激励差逐块求和并均非负。对其余20个可重复无序标签对，23的覆盖差在27客户块非负、在旧唯一块至少87，故叠加后23仍唯一最优。W与R逐块求和分别为2200+13n和2222+14n。与14/13的差为1914/[13(2200+13n)]>0并趋于零。旧v2的87/2200是W=1且R≥101/100时最大静态差，叠加只需它的正差可行点及真实策略。",
+  "contribution": {
+    "result": "对每个整数n≥0，得到唯一最优对23的六标签完整纯SPE，遗漏比(2222+14n)/(2200+13n)严格小于14/13并趋于14/13。",
+    "remaining": "全类的逐实例严格上界依赖一般遗漏等号结构；目标指定的每个k≥4且W=13k−1、R=14k−4的原族需另核，本叠加给不同的参数族。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/两提供者真实续局的最优遗漏锐界14比13--定理.md",
+      "sha256": "c396bde3e30671c55d2437499472aa287a19a8d5712f12bdc79af56aa1b8428e",
+      "section": "等号的结构和最小整数见证"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R-373d固定响应锥唯一静态最优与残余覆盖--审查.md",
+      "sha256": "57864adbb2bf2316f4985622fdf7d2f2c358fe2a6eb09a9d97ae9f3303c26197",
+      "section": "两人完整见证与六人范围"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-373d-unique-optimizer-20261031/replay/exact_fraction_recheck.py",
+      "sha256": "2fdabc86bfe872f98c2ae504d3c00640632745d3db146cf97ffc3c6a3e94d853"
+    },
+    {
+      "path": "map/edges/ca-unique-opt-omission-round27-3a-54a2dfa70e790f2c/unique-omission-proof-ledger.md",
+      "sha256": "fe89e53c433e9bd5044b018df82466d58f43355bf2f22b7f161f5425d8a02166",
+      "section": "两份已登记见证的不交叠加"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "重算两个证书各42项激励和全部21个静态对。核实ρ完全一致及同标签不交块的线性相加，严格性来自单份旧种子。原k族的42项激励及21个覆盖在附账本另作全符号核验。",
+  "endpoint_pins": {
+    "customer-attraction/R-373d-fixed-response-cone-unique-static-gap": "35ef5744182889fac1452c2711e6ea857390023001022524922120f94308b9c6",
+    "customer-attraction/two-provider-sharp-omission-fourteen-thirteenths": "d68facb82e82abef6b4ee5f34395e480e100fd3f55e0634cb27d3b2db6c4edf4",
+    "customer-attraction/two-provider-unique-optimum-omission-sharp-supremum": "8cbd184df24e4d0b6910641f6345dfc3b9e01959a1bdc24875691fa93491008b"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/两提供者真实续局的最优遗漏锐界14比13--定理.md": "c396bde3e30671c55d2437499472aa287a19a8d5712f12bdc79af56aa1b8428e",
+    "archives/customer-attraction/state/审查/R-373d固定响应锥唯一静态最优与残余覆盖--审查.md": "57864adbb2bf2316f4985622fdf7d2f2c358fe2a6eb09a9d97ae9f3303c26197",
+    "archives/customer-attraction/tools/evidence/R-373d-unique-optimizer-20261031/replay/exact_fraction_recheck.py": "2fdabc86bfe872f98c2ae504d3c00640632745d3db146cf97ffc3c6a3e94d853",
+    "map/edges/ca-unique-opt-omission-round27-3a-54a2dfa70e790f2c/unique-omission-proof-ledger.md": "fe89e53c433e9bd5044b018df82466d58f43355bf2f22b7f161f5425d8a02166"
+  },
+  "review_digest": "5ad6b599725ae7133bfe0240b0e3f2a1c86d2ccd6f32f49f72d0805960e6dcc3"
+}
