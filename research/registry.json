@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-map-mitm-algebraic-center-round25-v1.json",
-    "sha256": "f14a20beb4cb2546f37816d9f023cdc3d09b8c37c141bcfd0c486167078d92d7"
+    "path": "research/registration/baseline-map-three-site-mix-cap-round25-v1.json",
+    "sha256": "d8eb41e4fee453f5b9aa5338406942b08508e84909a42020a5e741f8c9b7e32f"
   },
   "objects": [
     {
@@ -150397,6 +150397,50 @@
       ]
     },
     {
+      "object_id": "facility-games/three-site-complete-rules-require-unbounded-mixing",
+      "version": 1,
+      "kind": "theorem",
+      "truth_status": "proved",
+      "title": "三共同地点完整精确续局的无界混合人数与限混倍率",
+      "model": "两家共同目录、正有理权原子、独立混合、含自重的真实条件负载成本和完整带标签精确客户NE规则。",
+      "statement": "对每个整数r≥2，有2r+6客户的三共同地点实例，存在完整精确稳定证书，且每份证书在某关键BC布局恰须r+1名实际混合者。有精确证书在其它布局全纯，故最小最大实际混合数恰r+1。每布局至多r人混合时真最优倍率为k/(k−s)，其中q=1−1/(2r)、k=(6r+1/2+3q)/2、s=1/[4r(r−1)]。任意加空地点和统一整数缩放保持结论。",
+      "quantifiers": "每个r≥2、指定实例上的每个完整精确规则；所有带标签在轨布局和真实单设施偏离。",
+      "assumptions": [
+        "实际混合指对两家均赋严格正概率。",
+        "可用不同的原客户NE分别支付不同偏离布局，全部仍由一份完整规则保存。"
+      ],
+      "scope": "局部单位群端点的必要混合数通过真实全布局守卫转移到完整稳定性，并给限混精确最优倍率。",
+      "objections": "必要性量化每份完整精确稳定证书的关键布局。其它布局可纯，未把全部客户NE判成高混合数。",
+      "body": {
+        "path": "archives/facility-games/state/定理/三共同地点完整精确续局的无界混合人数与限混倍率--定理.md",
+        "sha256": "68a62a66a9ec7750c06891a0c6e0b4cd58a5eebcaaa38c82b0a116ef07711abc"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/state/归约/共同目录三五地点固定倍率的全布局守卫--归约.md",
+          "sha256": "9f80d2a981b02732d9c09aa3df8fadb9afafbaae24f12f8ccf8ff9e154149a16"
+        },
+        {
+          "path": "archives/facility-games/state/归约/指定设施均衡负载极小值的弱NP完全性--归约.md",
+          "sha256": "aa398a78b53b28adfdc71c5a17e016b6323854b14d7a0fa14d9cb25401e685df",
+          "section": "最优点可能需要无界实际混合者"
+        },
+        {
+          "path": "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md",
+          "sha256": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1"
+        },
+        {
+          "path": "archives/facility-games/state/定理/共同目录添加空地点的完整续局倍率保持--定理.md",
+          "sha256": "81ac4a0744aa6a44e5970dec4d3c394ddd2832acabaaa702516b64f1f0689c10"
+        },
+        {
+          "path": "archives/facility-games/tools/verify-three-site-mixing-cap.py",
+          "sha256": "2f4ebeca0b6466510de74457cdf31e60fc69e425734e46356ad00846865ec1f1"
+        }
+      ],
+      "sources": []
+    },
+    {
       "object_id": "facility-games/three-site-low-threshold-reduction-exact-yes-factor",
       "title": "三共同地点低阈值归约的YES精确倍率",
       "model": "共同恰三地点、带标签两设施、允许同址、正权、独立混合精确客户NE及完整续局。",
@@ -191806,12 +191850,22 @@
       "reason": "第三阶段独立数学证明及真实范围。"
     },
     {
+      "path": "archives/facility-games/state/定理/三共同地点完整精确续局的无界混合人数与限混倍率--定理.md",
+      "sha256": "68a62a66a9ec7750c06891a0c6e0b4cd58a5eebcaaa38c82b0a116ef07711abc",
+      "disposition": "objects",
+      "object_ids": [
+        "facility-games/three-site-complete-rules-require-unbounded-mixing"
+      ],
+      "reason": "正背景单位谱与真实全布局守卫联合给完整规则的精确限混阈值。"
+    },
+    {
       "path": "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md",
       "sha256": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1",
       "disposition": "objects",
       "object_ids": [
         "EXACT-KAPPA",
         "M-b5488c2696964ec58745ce5426f2b777",
+        "facility-games/three-site-complete-rules-require-unbounded-mixing",
         "facility-games/threshold-half-table-with-isolated-algebraic-center"
       ],
       "reason": "独立完整闭支持谱主body；m=1整区间、n=0、端点/重复支持、任意实际混合人数及有理位长完整保全。"
@@ -191837,6 +191891,7 @@
       "object_ids": [
         "facility-games/common-catalog-empty-sites-preserve-full-continuation-ratio",
         "facility-games/common-catalog-five-sites-exact-stability-weak-np-complete",
+        "facility-games/three-site-complete-rules-require-unbounded-mixing",
         "facility-games/three-site-low-threshold-reduction-exact-yes-factor"
       ],
       "reason": "第三阶段独立证明，可按真实模型范围复用。"
@@ -192300,6 +192355,7 @@
         "SC-THREE-DECa-HARD",
         "facility-games/common-catalog-empty-sites-preserve-full-continuation-ratio",
         "facility-games/common-catalog-five-sites-exact-stability-weak-np-complete",
+        "facility-games/three-site-complete-rules-require-unbounded-mixing",
         "facility-games/three-site-low-threshold-reduction-exact-yes-factor"
       ],
       "reason": "本批主body数学已按独立模型/命题分清，保完整证明及必要证据；不由容器页ID吞不同量词。\n原主body全部数学owner显式保全；只更新本次实际接证对象版本与evidence，不改三地点独立命题。"
@@ -192310,7 +192366,8 @@
       "disposition": "objects",
       "object_ids": [
         "LOCAL-HARD",
-        "M-b2bcfe1f64ee4a7799a58ef2609d04dd"
+        "M-b2bcfe1f64ee4a7799a58ef2609d04dd",
+        "facility-games/three-site-complete-rules-require-unbounded-mixing"
       ],
       "reason": "本批主body数学已按独立模型/命题分清，保完整证明及必要证据；不由容器页ID吞不同量词。"
     },
