@@ -1,0 +1,43 @@
+{
+  "edge_id": "b5-qd-and-private-tree-config-force-decoder-parameter-growth",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-9452d445c1744d5eaac946ee974d2162",
+    "UM-Q-PRIVATE-TREE-BOUNDED-MULTIPLICITY-CONFIGURATION-FLOOR-v3"
+  ],
+  "target_ids": [
+    "M-4bfb99ccca4f4f77a6aaee6882ef1170"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "源为全部原任务的normalized flat普通UM Q_D(D≥2整数)；目标为非空有限、全局d,h≥1、每root非空indexed菜单、各state满d叉高h完全私有内部机的v3普通UM。root selector unit；内部job父端1/d及子端1，leaf job父端1/d及唯一unit外端，外部可跨root/state共享，无其它jobs、预载或资格。μ为每完整state最大叶资源重数。 完整目标CONFIG(1)与峰不增低峰解码是假设中的精确编译合同；本边证明这些前件若成立则参数必须满足结论，并不提供该编译。",
+  "roles": {
+    "M-9452d445c1744d5eaac946ee974d2162": "提供原完整flat Q_D的actualOPT=2−1/D和逐原任务CONFIG1；不使用其SC row/degree bound替代目标树结构。",
+    "UM-Q-PRIVATE-TREE-BOUNDED-MULTIPLICITY-CONFIGURATION-FLOOR-v3": "对目标完整CONFIG1按a=d、r=ceil(d/(μ+2))给全部原jobs的实际见证C′≤2−r/d<2。",
+    "M-4bfb99ccca4f4f77a6aaee6882ef1170": "实际目标是低峰解码合同的必要参数增长与固定参数编译障碍，非解码桥本身、亦非一般UM否定。"
+  },
+  "whole_result": "对每个D≥2和此域目标P′，若完整CONFIG(1)可行且每份峰C<2的完整目标实际调度均存在峰不增的完整Q_D调度解码，则D·ceil(d/(μ+2))≤d，故d≥D、μ≥D−2。该域内低峰解码合同等价于OPT(Q_D)≤OPT(P′)。若仅已知μ≤μ0，可代入μ0得同式；D>μ0+2不可能，D=μ0+2还必有D整除d，但这些只为必要条件。固定d0亦排D>d0，故固定μ0或固定d0的该类编译不能覆盖全部Q_D。",
+  "explanation": "Q_D的main正partial领取r0个同一行g会逼对应r0个helper共用同一A，故r0≤1，实际菜单值1/D可达到。unit selector+normalized state的完整全任务桥给原flat actualOPT=2−1/D；main λ=1/D和helper λg=1−1/D、λA=1/D的同份证书精确覆盖全部原state任务。\n目标满足v3完整域及CONFIG1，在T=1取a=d和r=ceil(d/(μ+2))。默认参数使d−μ(r−1)≥2r−1，且(2r−1)^h≥2r^h−1，故其已证rainbow/Haxell及全原d树回填给实际C′≤2−r/d<2。该见证处于假设解码域，峰不增解码迫2−1/D≤2−r/d，即Dr≤d。r≥1给d≥D，r≥d/(μ+2)给μ≥D−2。取任意合法上界μ0重复同式；D>μ0+2矛盾，边界D=μ0+2使Dceil(d/D)≤d，故D|d仅必要。固定d0也无法处理D>d0。\n非空完整目标有限且v3给OPT′<2，故低峰decode⇒OPTsource≤OPT′；反向该标量不等式允许对任何目标低峰调度选同一源最优调度，得到存在性解码。此等价不提供计算方法。两项输入缺任一项都不能推出该目标必要条件，保一条ALL。N的每顶点selector/unit singleton/共享ports不等同v3满树父端1/d，无矛盾。",
+  "scope": "Q_D与已证配置上界共同给具体结构编译的必要参数增长。准确切断同时保CONFIG1和峰不增低峰解码的固定μ或固定d路线；不否定N二叉selector/port正规形，不推出一般UM hardness、一般近二近似不可能、参数充分性或锐利性。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/CONFIG保真低峰解码的私有树参数障碍--定理.md",
+      "sha256": "e3e985e7d838474c692d633a77041dad85375b337ba704877376d73955f60f21"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/规范化平菜单的CONFIG与正支撑LP双向保持--定理.md",
+      "sha256": "8bfbaa80b98546b6d1320e9760bb9491165e26a6cef1b6cd35eb86116c822f66"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/私有菜单树有界叶重数配置界--定理.md",
+      "sha256": "5b810c65140f9581fb362f8ff739b09f019a7c435a1bc2eb3d7a34d42c3041d3"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资料/加权菜单Santa值桥与不相关机转换--资料.md",
+      "sha256": "d01ac63a4da47c8cfaed8ed296efa00ea4b375ef8b567c0338c938d6d175aa8c"
+    }
+  ],
+  "reviewed_by": "Boss5/474257b8",
+  "review_note": "Root独立核Q_D整数鸽巢、全部state-job CONFIG展开、actual值双向桥和目标v3 T1参数；原1766 worker实读九个准确证明范围并独立验证弱低峰decode与标量等价、参数和边界整除，读后核对新正式正文未见数学错误。只接必要条件与结构障碍，不以条件antecedent冒称已存在编译，不进行有限程序复跑。"
+}

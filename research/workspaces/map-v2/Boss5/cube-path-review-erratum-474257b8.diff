@@ -1,0 +1,11 @@
+--- archives/unrelated-machines/state/审查/三坐标与三态路径正规形范围审查--审查.md
++++ archives/unrelated-machines/state/审查/三坐标与三态路径正规形范围审查--审查.md
+@@ -25 +25 @@
+-| 完整菜单资源度三路径 | 显式flat菜单、任意资源跨组度、\(W_{gs}\le1\) | 资源度至多3；任意实际峰 \(C<2\) 的双向全任务转移；\(OPT=2\) 端点；归一化时正partial值 \(V\) 与 \(V=0\) | 原组数、原组交互图、原selector资格；不把helper当免费边 |
++| 完整菜单资源度三路径 | 显式flat菜单、任意资源跨组度、\(W_{gs}\le1\) | 资源度至多3；任意实际峰 \(C<2\) 的双向全任务转移；\(OPT=2\) 端点；归一化时正partial值 \(V\) 与 \(V=0\) | 原组数、原组交互图；全部旧组菜单与旧selector资格保持，不把helper当免费边 |
+@@ -38 +38 @@
+-对资源 \(u\) 的 \(d_u\) 个接触组建立 \(d_u\) 个真实port，并按相邻port增加 \(d_u-1\) 个二态helper。helper的每个state含一个权1 singleton、自己的private机、一个unit selector和两件实际incidence（private端或资源端）；它不是抽象路径边。每port属于一个旧组和至多两个相邻helper，所以资源跨组度不超过3。\(d=1\)不加helper，\(d=0\)保留unused机器。
++对资源 \(u\) 的 \(d_u\) 个接触组建立 \(d_u\) 个真实port，并按相邻port增加 \(d_u-1\) 个二态helper。每个helper组恰有两台state私有机、一件可在这两机耗时1的selector，以及两件不同的incidence；每state只含对应的一件private端1／port端1的incidence。三件任务都实际存在，helper不是抽象路径边。每port属于一个旧组和至多两个相邻helper，所以资源跨组度不超过3。\(d=1\)不加helper，\(d=0\)保留unused机器。
+@@ -42 +42 @@
+-严格低于2的理由只用于上述helper强制；给定峰至少2时，源和目标都可用全private调度，且每state总private质量不超过1、selector耗时1，因此两边均有峰不超过2。归一化输入的正partial问题沿同一真实路径复制，资源子集不交和质量不变；若一侧 \(V=0\) 而另一侧有正阈值，正阈值逆向会矛盾，所以0端点也闭合。此对象增加helper组，不能声称保持原 \(M\) 或原菜单资格。
++严格低于2的理由只用于上述helper强制；给定峰至少2时，源和目标都可用全private调度，且每state总private质量不超过1、selector耗时1，因此两边均有峰不超过2。归一化输入的正partial问题沿同一真实路径复制，资源子集不交和质量不变；若一侧 \(V=0\) 而另一侧有正阈值，正阈值逆向会矛盾，所以0端点也闭合。此对象增加helper组，不保持原 \(M\) 或原组数；全部旧组的原菜单和旧selector资格逐项保持。

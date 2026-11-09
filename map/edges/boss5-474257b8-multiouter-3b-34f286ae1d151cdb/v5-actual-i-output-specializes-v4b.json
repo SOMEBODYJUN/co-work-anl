@@ -1,0 +1,55 @@
+{
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5"
+  ],
+  "target_ids": [
+    "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4b"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定完整显式 typed normalized-flat Q：k≥1；每outer恰一个非空normalized indexed state，正home权每outer和1；homes全局物理互异且与B不交，每home恰一个own-unit helper；其余helper states为任意可重叠的B-only normalized fallback；额外叶也仅正支持B，E_l={u:max_s p_lsu≥15/16}且b_l=max_s Σ_(u∉E_l)p_lsu<15/16；无其它组。各listed state/resource pair至多一次，显式零、重复indexed states、unused resources及全部inactive jobs保留。k≥2采用目标v4b的ν≤1/(16384k²)，k=1不加tiny条件。上述均是当前目标域限制，未加入开放前提。",
+  "contribution": {
+    "result": "对每个v4b域内完整Q，v5的本条证明所构造算法只输入同一个Q及typed呈现，以固定确定性worst-case总位多项式时间生成同一完整P(Q)，给全部原selectors及每枚原incidence job各一个合法原有限端点assignment σ，满足Cmax(σ)≤(19/10)OPT(P(Q))。k≥2的限制由ν≤1/(16384k²)≤1/(1024k)直接支付；k=1两版域相同且均无tiny条件。",
+    "remaining": "该局部专化没有推出目标v4b指定的平方缺口势Φ=(θ/k)ΣW−Σ(5/16−W)_+²、θ=1/32、ξ=1/(2²⁰H²)、τ=1/(2048H)、固定ceil(4k/ξ)步FW、k²曲率293/81920进展、25/128成功门槛与共同prefix-flow的整套原机制，也不把源算法的内部阈值/FAIL身份改名为v4b。上述目标内容由v4b自身§3–6证明承重，仍须独立保留；这里已完整支付的是最终全jobs输出保证，关系推导无待证桥。"
+  },
+  "scope": "3B同档、两个当前version3对象的typed域恒等限制；仅最终19/10全原jobs输出保证的局部专化。无一般UM、多state outer、重合homes、home上额外leaf或nonUD扩域；不认证软件、外审或新颖性。",
+  "reviewed_by": "Boss5 / multiouter_transfer_474257b8",
+  "review_note": "实读任务15个不同reading_refs文件全文、两核心当前registry及v5原Exact 29行、作者Proof 173行和独立actual-I 182行，逐项核同一Q/P(Q)、homes/B-only叶、全部原jobs、k1无tiny和阈值包含。两条独立数学路线分别存边；未重跑有限枚举，未把后端PASS或历史read-after当全算法实现。已核当前两份Good资源归属勘误，回填始终Good保自己的B bundle、outer取home。",
+  "edge_id": "um-multiouter-v5-actual-i-output-specializes-v4b",
+  "roles": {
+    "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5": "提供独立Exact-first的actual-I/matroid-greedy/全有理分段倒数势算法及完整19/10证明；它不借作者profile/log/FW oracle。",
+    "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4b": "作为相同Q/P(Q)且更窄home域上的最终输出目标；原profile/FW的严格FAIL界和成功门槛继续由目标自己的证明支付。"
+  },
+  "explanation": "实际可得结论与模型映射：每个目标v4b域内完整Q也是v5域内同一个Q，k≥2因1/(16384k²)≤1/(1024k)，k=1两者同为无tiny。保原groups、所有homes/B、原菜单indexed states及每枚listed incidence，不构造新Q，不删除未选状态或零jobs。因此v5独立actual-I算法可在此限制域直接运行，输出仍针对同一OPT(P(Q))，并完整支付目标最终19/10全jobs保证。\n\n源独立稿§2–3保持同一完整值桥OPT=2−V∈[1,2]及叶合同E_l={u:max_s p_lsu≥15/16}、tail<15/16。若无full leaf matching，则V<15/16<18/19，直接完整baseline；有full matching则vacancy M满足D independent iff B\\D可匹配全部叶。positive fallback incidences是M的parallel copies，实际I每helper至多一个原fallback state，资源不重复且所有outer共享同一M；显式零只在辅助ground省略，原job不删除。候选j,s在I_−j加该state原positive copies上用weighted matroid greedy+普通matching，其他helper只能保留/丢旧项，未使用joint-profile、fractional-optimum或actual-target oracle。\n\n§4从一次V>r=18/19实际allocation抽出共同参考I*，对全部outer同时L_i*≥V²>324/361；用同一个rank函数给h·L*≤2h·L+Σδ_j。§5的owner坐标B_new−B_old−T_owner明确包括same-outer其他helper丢失，并有T≤B_new、weighted L∞≤h_owner w_j、L1≤2h_owner w_j。§6–7使用φ(x)=(x−q)/a²在x≤q、1/a−1/(a+x−q)在x≥q，q=19/100、m=ceil√k、a=1/(8m)，值与梯度全有理；跨cap余项也逐情况支付。νh_max≤1/8及K=2792/2851只需源O(1/k)域，目标更小ν亦满足。这是独立actual-I路线，不是把v4b Euclidean λ_min平方因子删除后沿用原平方势。\n\n§8每步接受真实Φ增>1/(100N)，停时Σδ_j≤(K/4)S+1/100。若某L_i<19/100且V>18/19，坏坐标给S≥64k；共同参考和Cauchy给同一量≥(9657/36100)S，与K/4=698/2851及净余量2334307/102921100矛盾。因此终点有坏坐标时只推出V≤18/19，等号允许；完整baseline由(19/10)(2−18/19)=2精确满足比率。该推导没有得到V<15/16，不能把v4b/profile的更强失败结论附给此算法。\n\n成功测试是所有实际L_i≥19/100，包括等号。§10取Good={j:v_j≥1/10}，L_i≤z_i+(1/10)(1−z_i)给z_i≥1/10，仍允许等号。Good保自己的实际B bundle并把home交outer；非Good丢B并回own home；Good的I子集仍M-independent，补一次共同叶matching。叶选提供≥15/16 incidence的原attaining state。全局homes互异且与B不交，因此所有groups值≥1/10。不存在prefix取整损失，此路线没有fractional flow。k=1另以Φ=L_1、h=1运行相同实际候选；停时若V>18/19有L_1≥32039/72200>19/100，完全不调用ν、m、a或相对二次界，覆盖ν=1。\n\n源§10逐job编译输出同一完整P(Q)：S+U机器、G+I jobs、S+2I有限端点；selector只用所选原state private，selected-state真bundle的正incidences送exact resource，其余所有原incidences含zero、inactive正payload、重复indexed states与unused-resource listed jobs留原private。每job恰一次且原端点合法，成功resource≤1、inactive private≤1、selected private≤19/10，由OPT≥1给相对保证；FAIL也运行全部jobs。§9/11给k≥2接受次数<3232k²N、k1<100N与每轮由原bitset重算的多项式有理位长。最终输出恒等专化完毕，但本路线不能恢复v4b平方势、固定FW/prefix机制或其V<15/16失败身份，故只记contribution。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/证明/共享UD tiny状态势与19比10回填--证明.md",
+      "sha256": "e857e20f4498aef53ebe9c3ef0a9f3bc7f5937c5cd3fb554365c1d3e553a2868"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/relative-curvature-o1k-working-sources-20261031/8c25fd6cf42c368b8efb--exact-working-v1.md",
+      "sha256": "504e4d8e13b847aa7ec10f2bb3afa874389a76b6cc0962abfe979a985238a99f"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/relative-curvature-o1k-working-sources-20261031/58de49571a4172661609--independent-exact-first.md",
+      "sha256": "074556f862b8548349f1710caa540f0a45c18f08a3f42822208ed9eb39d89583"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/相对曲率O1k候选三源精读与19比10范围--审查.md",
+      "sha256": "9ec4fa091292b29036803cbf31998662b668797e89b32aec6f04c6912e3d6192"
+    }
+  ],
+  "endpoint_pins": {
+    "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4b": "b254f2902fdeb4639e8edadc5499b80a4f4b6c92e645c704adee8ce807f6ed4b",
+    "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5": "a4dbc542ea63f413ec1e21e5e34976932e1301dda5ff87dc11fcab742bbffb64"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/证明/共享UD tiny状态势与19比10回填--证明.md": "e857e20f4498aef53ebe9c3ef0a9f3bc7f5937c5cd3fb554365c1d3e553a2868",
+    "archives/unrelated-machines/tools/evidence/relative-curvature-o1k-working-sources-20261031/8c25fd6cf42c368b8efb--exact-working-v1.md": "504e4d8e13b847aa7ec10f2bb3afa874389a76b6cc0962abfe979a985238a99f",
+    "archives/unrelated-machines/tools/evidence/relative-curvature-o1k-working-sources-20261031/58de49571a4172661609--independent-exact-first.md": "074556f862b8548349f1710caa540f0a45c18f08a3f42822208ed9eb39d89583",
+    "archives/unrelated-machines/state/审查/相对曲率O1k候选三源精读与19比10范围--审查.md": "9ec4fa091292b29036803cbf31998662b668797e89b32aec6f04c6912e3d6192"
+  },
+  "review_digest": "65a6d6542695c6dca350c83780dacadc6d5ba88f9f0d48a4c86dfd8815c2f4d6"
+}

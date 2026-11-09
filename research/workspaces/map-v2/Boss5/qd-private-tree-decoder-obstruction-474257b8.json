@@ -1,0 +1,102 @@
+{
+  "status": "proved-comparison-draft-not-registered",
+  "working_title": "Q_D到有界完整state叶重数私有树的单向低峰解码障碍",
+  "note": {
+    "path": "research/workspaces/map-v2/Boss5/qd-private-tree-decoder-obstruction-474257b8.md",
+    "sha256": "df8b79bf327aec006caa597054ce0408f339b625f979427138d461e0878cb700"
+  },
+  "source_objects": [
+    "M-9452d445c1744d5eaac946ee974d2162",
+    "UM-Q-PRIVATE-TREE-BOUNDED-MULTIPLICITY-CONFIGURATION-FLOOR-v3"
+  ],
+  "minimal_premises_mode": "all",
+  "statement": "对任意整数μ0≥1与D>μ0+2，不存在完全属于v3私有均匀满树且每完整state叶资源重数≤μ0的有限P_D′，使完整CONFIG(1)可行且OPT(P_D)≤OPT(P_D′)，其中P_D为Q_D的完整flat普通UM编译。更弱地，只要求每份P_D′峰<2的完整实际调度存在峰不增回源完整解码也已矛盾；不要求任何高峰输出解码、前向映射或计算性。",
+  "quantifiers": "∀μ0∈Z≥1 ∀D∈Z≥2 with D>μ0+2 ∄有限P_D′满足所列三条件；d,h、roots/menus/外机规模可随D任意变化。",
+  "proof": "Q_D的整数鸽巢与完整flat值桥给OPT(P_D)=2−1/D；v3在CONFIG1取a=d、r=ceil(d/(μ0+2))给一份全原job实际σ′，峰≤2−r/d≤2−1/(μ0+2)。仅OPT(P_D)≤OPT(P_D′)即迫2−1/D≤2−1/(μ0+2)，与D>μ0+2矛盾。无需正向实际映射、正向OPT保持、算法或复杂性假设。",
+  "decoder_equivalence": "有限非空合法UM中全调度的非算法峰不增解码关系与OPT(source)≤OPT(target)等价；本页目标CONFIG1由v3保证OPT(target)<2，所以仅对峰<2的目标完整调度要求该关系亦等价。矛盾仅使用v3那一份峰≤2−ceil(d/(μ+2))/d<2的全jobs见证。",
+  "source_complete_config_audit": {
+    "verified": true,
+    "t_conf": 1,
+    "lambda": "main每态1/D；每helper的g态1−1/D、A态1/D。",
+    "private_config": "每state private以λ取selector（若有zero-private项亦并入），以1−λ取本state全部incidences；负载均≤1。",
+    "resource_config": "每原positive incidence以λ取其唯一resource unit singleton；每g/A资源概率和恰1。",
+    "all_jobs": "selector跨states覆盖1；每枚incidence在private覆盖1−λ和resource覆盖λ，未选state全部原jobs均覆盖1；原Q_D无zero incidence。"
+  },
+  "necessary_conditions": [
+    "若μ按目标实际最大完整state叶重数计，必须μ≥D−2；这只是必要条件，非sharp/构造保证。",
+    "保目标分叉数d时必须D·ceil(d/(μ+2))≤d，特别d≥D；D=μ+2时默认ceil界还要求D|d。",
+    "若目标分叉数固定d0，D>d0不可能，即使允许实际μ随D任意增长；这是r=1合法、C′≤2−1/d0给出的v3域内必要条件。",
+    "对全部r满足μ(r−1)<d且[d−μ(r−1)]^h≥2r^h−1，必须D·r≤d。",
+    "允许加性解码损失η时必要η≥1/(μ+2)−1/D（该差为正时）；乘性ρ必要ρ≥(2−1/D)/(2−1/(μ+2))。"
+  ],
+  "not_required": [
+    "对峰≥2目标输出的解码",
+    "正向实际调度映射",
+    "正向OPT保持或双向等价",
+    "计算性、poly大小或时间界",
+    "P≠NP或任何hardness假设",
+    "求出Haxell匹配/实际σ′的算法",
+    "数值矛盾中额外假设source CONFIG1（已独立核其完整性以确认接口适用）"
+  ],
+  "not_excluded": [
+    "实际μ随D增长并满足必要条件的模型（未证可行）",
+    "共享内部机",
+    "非均匀父端时间/异构分叉或高度",
+    "leaf多个单位外端",
+    "改变selector资格或时间",
+    "额外jobs/preloads/有限端",
+    "不保持CONFIG1或改变负载尺度并付损失",
+    "足够大的解码损失或只解码不含v3低峰见证的受限目标输出"
+  ],
+  "independent_reuse_recommendation": "建议作为精确obstruction目标独立登记：比双向actual-OPT保持更弱的单向OPT/低峰decoder条件已矛盾；并给μactual至少D−2的量化必要条件。应以Q_D完整实际值与v3存在界作ALL共同输入，source CONFIG证书作适用域证据；不声称一般UM hardness。本草稿未造ID/未写登记或图边。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/规范化平菜单的CONFIG与正支撑LP双向保持--定理.md",
+      "sha256": "8bfbaa80b98546b6d1320e9760bb9491165e26a6cef1b6cd35eb86116c822f66",
+      "section": "5. 自足的 (Q_D) 障碍与规模"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资料/加权菜单Santa值桥与不相关机转换--资料.md",
+      "sha256": "d01ac63a4da47c8cfaed8ed296efa00ea4b375ef8b567c0338c938d6d175aa8c",
+      "section": "精确模型"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资料/加权菜单Santa值桥与不相关机转换--资料.md",
+      "sha256": "d01ac63a4da47c8cfaed8ed296efa00ea4b375ef8b567c0338c938d6d175aa8c",
+      "section": "双向转换与公式"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/规范化平菜单的CONFIG与正支撑LP双向保持--定理.md",
+      "sha256": "8bfbaa80b98546b6d1320e9760bb9491165e26a6cef1b6cd35eb86116c822f66",
+      "section": "1. 平坦不相关机与 FSLP 的双向证书"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/私有菜单树有界叶重数配置界--定理.md",
+      "sha256": "5b810c65140f9581fb362f8ff739b09f019a7c435a1bc2eb3d7a34d42c3041d3",
+      "section": "Objects / Domain / Quantifiers / Assumptions"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/私有菜单树有界叶重数配置界--定理.md",
+      "sha256": "5b810c65140f9581fb362f8ff739b09f019a7c435a1bc2eb3d7a34d42c3041d3",
+      "section": "B. 全部 CONFIG(T) 阈值与配置整数间隙"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/私有菜单树有界叶重数配置界--定理.md",
+      "sha256": "5b810c65140f9581fb362f8ff739b09f019a7c435a1bc2eb3d7a34d42c3041d3",
+      "section": "5. 完整原 P 的实际调度"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/私有菜单树有界叶重数配置界--定理.md",
+      "sha256": "5b810c65140f9581fb362f8ff739b09f019a7c435a1bc2eb3d7a34d42c3041d3",
+      "section": "6. 默认 r 与全配置整数间隙"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化CONFIG有限证书三向桥的v3审读范围--审查.md",
+      "sha256": "2ee2f04fa427e1889073c25daaab373a8d4042f633aa78ca0fd76df80d9e996b",
+      "section": "FSLP、完整machine CONFIG(1)与normalform"
+    }
+  ],
+  "new_computations": [],
+  "frozen_existing_assets_unchanged": true,
+  "compatibility_with_existing_normal_form": "与N不冲突：binary-selector-tree图分支2不是v3统一small父端1/d的d=2。N每菜单顶点有自己的unit selector、own/child-own unit singleton态及原payload、后续共享ports；其完整processing/selector/private-machine合同不属于v3单root-selector完全私有均匀满树结构，不能凭树形外观套界。"
+}
