@@ -1,0 +1,51 @@
+{
+  "edge_id": "um-cartesian-free-and-coordinate-quota-imply-no-constant-repair",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-NORMALIZED-FLAT-CARTESIAN-TENSOR-REVERSE-AMPLIFICATION-v1",
+    "UM-COORDINATE-OBLIVIOUS-CARTESIAN-MENU-QUOTA-v1"
+  ],
+  "target_ids": [
+    "UM-CARTESIAN-COORDINATE-CONSTANT-REPAIR-OBSTRUCTION-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一显式二元菜单：t≥1，D=2^t，组g∈F₂^t，资源(a,b)∈F₂^(2t)，全部indexed states ℓ∈F₂^t，支持b_i+g_i a_i=ℓ_i，每项权1/D。free可按整个g选态；输出必须存在所有组共用的f_i:F₂→F₂使ℓ_i(g)=f_i(g_i)。两侧均允许任意形状partial bundles及闲置资源，跨组真实不交；θ∈[0,1)、c>0固定而不依t。",
+  "roles": {
+    "UM-NORMALIZED-FLAT-CARTESIAN-TENSOR-REVERSE-AMPLIFICATION-v1": "提供每t的真实不交达界见证A_t，v(A_t)=(D−1)/D，以及其任意选态上界；修复否定实际只需达界下界。",
+    "UM-COORDINATE-OBLIVIOUS-CARTESIAN-MENU-QUOTA-v1": "提供对每个固定共同f的受限最优值k_t/D，k_t=floor((3/2)^t)；故重选全部f仍不能超过该上界。",
+    "UM-CARTESIAN-COORDINATE-CONSTANT-REPAIR-OBSTRUCTION-v1": "得到针对任意固定高值域θ<1的同菜单、非算法性的统一常数保值修复不可能。"
+  },
+  "explanation": "任取固定θ<1和c>0。free的循环标签ℓ_i(g)=g_(i+1)及a≠1资源给合法A_t，v(A_t)=1−2^(−t)→1。quota先用单一全局资源平移化任意固定f为零标签，再由三符号union3^t及全部Hall子集/整数流证明每固定f最优恰k_t/D；因此即使输出重选f、所有状态和bundles，任意逐坐标B也有v(B)≤k_t/D。取t同时足够大使v(A_t)≥θ且R_t=k_t/(D−1)≤(3/4)^t/(1−2^(−t))<c，则v(B)<c v(A_t)。这直接否定“对所有t和每份高值A存在这样的B”，连存在性都失败，无需效率假设或要求B保留A的资源。两源缺一不可：quota的低受限上界自身不供高值输入，free自身不供全部受限输出上界。floor还给0≤(3/4)^t−k_t/D<2^(−t)，相对于(3/4)^t的误差<(2/3)^t。",
+  "whole_result": "{free精确裸菜单值, 每固定f的精确整数配额} ⇒ ∀固定θ∈[0,1)、c>0，∃t及同菜单高值无约束A_t，使∀逐坐标一致B有v(B)<c v(A_t)。B可重选全部f与bundles；不存在统一常数保值的同菜单repair，即使不要求算法。",
+  "scope": "完整得到repair目标的量词、比值上界和floor误差后果。θ=1的空输入域、依t衰减的保值率、改变菜单/资源/任务或其它真实一致性compiler不被排除；不把受限值当原普通UM的NO界。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/逐坐标一致菜单的整数资源配额--定理.md",
+      "sha256": "550311920338bd6da98a8fb6b56ec6c4c780d0e11c11a8b3f1295935b0c0a7ec"
+    },
+    {
+      "path": "archives/unrelated-machines/state/反例/裸笛卡尔菜单乘积的精确反向放大--反例.md",
+      "sha256": "02240942660772bf7a74c05b59ce17fbccd32f7ae1ac5814713a98c906693d7d"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/逐坐标配额读后与统一保值修复界限--审查.md",
+      "sha256": "bd724ffaef05fb65e6ace58e4b2691a44048c0bbdba8b47a1fe8824e47f4044c",
+      "section": "3. 对任意固定高值阈值的非算法修复限制"
+    }
+  ],
+  "reviewed_by": "Boss3 / um_cartesian worker",
+  "review_note": "逐式重核补组交点、循环消零、固定f全局平移、全部Hall子集与floor；核θ及c在t外固定、输出可全重选、同一t同时满足两条件。该ALL关系的全部数学前提已证；无历史软件或盲审升级。",
+  "endpoint_pins": {
+    "UM-CARTESIAN-COORDINATE-CONSTANT-REPAIR-OBSTRUCTION-v1": "0e83cb7446ad2dc09b8a030adb02e74de1c38a27ad7aeee913cdf6e8ba5c5582",
+    "UM-COORDINATE-OBLIVIOUS-CARTESIAN-MENU-QUOTA-v1": "ea3d4f6579be1c34dfb18208ba8a905c326089874074f0c3ee2422d932bed386",
+    "UM-NORMALIZED-FLAT-CARTESIAN-TENSOR-REVERSE-AMPLIFICATION-v1": "d81f97599f437f633889dd1bbb6df2f76d3f2c3e1e9de833eaf7f0a4f02832aa"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/逐坐标一致菜单的整数资源配额--定理.md": "550311920338bd6da98a8fb6b56ec6c4c780d0e11c11a8b3f1295935b0c0a7ec",
+    "archives/unrelated-machines/state/反例/裸笛卡尔菜单乘积的精确反向放大--反例.md": "02240942660772bf7a74c05b59ce17fbccd32f7ae1ac5814713a98c906693d7d",
+    "archives/unrelated-machines/state/审查/逐坐标配额读后与统一保值修复界限--审查.md": "bd724ffaef05fb65e6ace58e4b2691a44048c0bbdba8b47a1fe8824e47f4044c"
+  },
+  "review_digest": "a2fa5817f407ebd8cb487f157709c811f51584285e78d54dadf75ca267dbabbd"
+}

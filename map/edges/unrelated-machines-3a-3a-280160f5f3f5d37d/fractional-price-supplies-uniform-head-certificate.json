@@ -1,0 +1,46 @@
+{
+  "edge_id": "um-280160f5-fractional-price-supplies-uniform-head-certificate",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-5e3a6df0fff848f1bbea15a683d2aeb8"
+  ],
+  "target_ids": [
+    "UM-COMMON-SIZE-REOPEN-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定全部真实核心负载 f_i，B≥max_i f_i；残余每件 j 在全部合法端有共同正尺寸 q_j；令 b_i=B−f_i、qmax=max_j q_j，c_i=b_i−qmax≥0，且全部子集满足 Σ_{j∈S}q_j≤Σ_{i∈N(S)}c_i。空残余单独返回冻结核心。",
+  "roles": {
+    "M-5e3a6df0fff848f1bbea15a683d2aeb8": "提供对给定分数容量的充要价格/加权Hall判据及共同尺寸有理最大流。",
+    "UM-COMMON-SIZE-REOPEN-v1": "目标中的统一qmax头部充分测试；本边只补它所需的分数覆盖生成。"
+  },
+  "explanation": "对源—任务容量q_j、任务—资格机边、机器—汇容量c_i建流，任务—机器边容量可取总需求。加权Hall割保证满流。置x_ij=flow(j,i)/q_j，便有每任务列和1、合法端支撑及ℓ_i=Σ_j q_jx_ij≤c_i。每机支撑最大尺寸r_i(x)≤qmax，故ℓ_i+r_i(x)≤c_i+qmax=b_i，空支撑时r_i=0。网络与有理数位长按显式输入多项式；不按容量数值展开。这证明目标统一头部测试确实能生成一份合格x。它没有从价格不等式单独证明整调度，下一步仍使用目标的有序槽Hall整化。",
+  "scope": "共同任务尺寸、给定核心和统一头部扣除的可构造充分分支。失败仅拒绝此证书测试，不是重新选核心后的无解。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/共同容量流的有序槽重开证书--定理.md",
+      "sha256": "7637a7510937f3bf722e80b814645c46232180e22fbb6af7554adb477aa7a96a",
+      "section": "可分容量价格与共同尺寸最大流"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/共同容量流的有序槽重开证书--定理.md",
+      "sha256": "7637a7510937f3bf722e80b814645c46232180e22fbb6af7554adb477aa7a96a",
+      "section": "给定分数覆盖的支撑头部合同"
+    }
+  ],
+  "reviewed_by": "Boss3 / um_config_interfaces",
+  "review_note": "已实读当前登记对象及所引自足证明，逐项核对模型、量词、全任务身份、同时全机负载和位复杂度。只登记明确的局部步骤，不把它提升为目标整条结论。",
+  "contribution": {
+    "result": "共同尺寸域中，加权Hall/满流在容量 b−qmax 下生成满足 ℓ_i+r_i(x)≤b_i 的合法有理覆盖，付清统一头部充分测试的输入证书生成。",
+    "remaining": "目标对任意已给x和一般p_ij的完整舍入仍依赖有序单位槽的全局Hall匹配与前槽收费；本边不证明搜索一般支撑r_i(x)或重选核心。"
+  },
+  "endpoint_pins": {
+    "M-5e3a6df0fff848f1bbea15a683d2aeb8": "2c5dfc1da49f0d6fa139768430b023c691b197590a602ac0e80e076ac191ce9d",
+    "UM-COMMON-SIZE-REOPEN-v1": "13f879efccfd171131274893926621ecc2aa7b5c5128fa8fd238510745e77409"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/共同容量流的有序槽重开证书--定理.md": "7637a7510937f3bf722e80b814645c46232180e22fbb6af7554adb477aa7a96a"
+  },
+  "review_digest": "1cfa0a1b5675231bef383f4da7fde2c24301c11fa2da30f130bf308e1192e816"
+}

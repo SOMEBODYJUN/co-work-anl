@@ -1,0 +1,36 @@
+{
+  "edge_id": "wc-stage3a-one-sided-transfer-recovers-source-integral-descent",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "wc-source-sublevel-global-minorant-one-sided-transfer"
+  ],
+  "target_ids": [
+    "wc-source-sublevel-deletion-efficiency-self-closing-integral-potential"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "目标积分模型、固定Φ/种子s0/P/完整子水平S_P及a∈(0,1]；全部源状态的每条可删资源满足删除面积效率(A)。源转移定理允许同一完整策略空间的非负个人成本表及全边势证书，不要求任意成本表可实现为标准拥塞资源。",
+  "roles": {
+    "wc-source-sublevel-global-minorant-one-sided-transfer": "固定基准全边下降、全局目标下界、源域上比较的自封闭及完整原游戏PNE结论。",
+    "wc-source-sublevel-deletion-efficiency-self-closing-integral-potential": "通过显式基准成本映射得到其源积分下降/终止部分。"
+  },
+  "explanation": "令B_i为在i全部动作中都必用的资源，O_i为i可加入/删去的资源。对状态s定义barC_i(s)=Σ_(e∈s_i∩O_i)[∫_(L_e(s)−w_i)^(L_e(s))ell_e(u)du/w_i]+Σ_(e∈B_i)ell_e(L_e(s))。这些费用非负。对任一i真实偏离，保留资源负载不变，必用资源也保留；可选资源窗口积分逐项恰为Φ的插入/删除面积，所以ΔΦ=w_i[barC_i(t)−barC_i(s)]，是源(H)以β0=1、q_i=w_i的全边证书。全局单调性使每可选资源窗口平均≤ell_e(L)，必用项相等，故全状态barC_i≤C_i。对s∈S_P，每个已选可选e都能在某合法偏离删去，目标(A)给对应平均≥a ell_e(L)；必用项也≥a自身费用，因a≤1。所以C_i(s)≤barC_i(s)/a。源定理以κ=1/a和相同固定势/种子域应用，任意原严格1/a改善严格降Φ、自动入域、有限终止；域内局部势极小已是完整原游戏1/a-PNE。此映射保留零费、必用背景及域外目标，不偷换合法策略。barC一般为玩家相关成本表，本边未声称它有标准非负多项式拥塞实现。",
+  "scope": "迁移后实际得到固定源域的完整原策略1/a稳定与自封闭下降；不迁移源步数定量界所需μ，也不包办弹性/区间证书。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/源子水平费用下界的单侧转移--定理.md",
+      "sha256": "be47c84c3328e0f878ea765fe5e75f349fe45c906f5ed6c935323023ff929d85"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/源子水平删除效率的自封闭积分势--定理.md",
+      "sha256": "c5b3546017243fd88bc9555afe6645c7eea9fa3b38083f8592803558f5ac74dc"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "完整实读本包当前登记、端点正文与必要证据；核对模型、全部量词、真实偏离、弱端点/严格下降及作用范围。候选正确性保持条件，未把有限审计当全称证明。",
+  "contribution": {
+    "result": "用显式窗口平均基准成本表、β0=1、κ=1/a、q_i=w_i，单侧转移定理给出积分源域定理的全部自封闭、有限严格改善终止及完整原游戏1/a-PNE结论。",
+    "remaining": "目标的弹性方差单调性、K_E(u)下界、整个子水平负载区间和全区间多项式非负证书仍需独立证明；仅查种子或区间端点不够。本边不构造标准拥塞资源的基准实现。"
+  }
+}

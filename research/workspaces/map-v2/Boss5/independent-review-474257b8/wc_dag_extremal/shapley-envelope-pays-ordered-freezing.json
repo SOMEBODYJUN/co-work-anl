@@ -1,0 +1,45 @@
+{
+  "edge_id": "wc-b5-4932-shapley-envelope-pays-ordered-freezing",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R3-DENSE-SHARE-v1"
+  ],
+  "target_ids": [
+    "WC-ORDERED-COHORT-FREEZING-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限MODEL游戏、整数d≥0、任意有序非空玩家划分。每资源当前组潜在最小/最大权a,b、晚组潜在总权L预先固定；β=(1+L/a)^d，A=max(b/a)β，无潜在用户时A=1。每阶段任取全局最小，平局任意。",
+  "roles": {
+    "WC-R3-DENSE-SHARE-v1": "对非负多项式g提供精确资源边际H(S)−H(S−i)=φ_i及a g(W)≤φ_i≤b g(W)。",
+    "WC-ORDERED-COHORT-FREEZING-v1": "用β/a固定资源缩放、冻结先组/忽略晚组，再支付全部晚组真实占用。"
+  },
+  "explanation": "阶段背景h必须先进入g(x)=c(h+x)，其非负系数及degree≤d保留，再对F=xg调用份额引理；不能改用(h+x)c(h+x)−hc(h)。势Φ_j=Σ(β/a)H的任意真实当前组偏离有精确差D_i(new)−D_i(old)，保留资源取消。全局最小给D_old≤D_stage-deviation。冻结时当前资源负载z≥w_i≥a，晚组增量y≤L，逐单项式c(z+y)≤βc(z)，故最终C_old≤D_old；偏离后份额上界给D_stage-deviation≤A C_stage-deviation。最终评估同一单方偏离时晚组不重新响应，只增加非负负载，故C_stage-deviation≤C_final-deviation。五段链对每组、玩家、全部合法策略成立，零费/空策略不需取比。d=0时β=1，原证明仍成立。",
+  "scope": "完整阶段法输出保证；没有一个共同原游戏全改善势或多项式时间结论。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/局部窄权带的Shapley份额势--定理.md",
+      "sha256": "d1551d41cd6f3a625359dde38498d557a2ff46331049ee4284a0c908244af24d",
+      "section": "集函数、精确边际和效率"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/局部窄权带的Shapley份额势--定理.md",
+      "sha256": "d1551d41cd6f3a625359dde38498d557a2ff46331049ee4284a0c908244af24d",
+      "section": "两种权序与局部包络"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有序权组尾部冻结--定理.md",
+      "sha256": "9021bb82f8b30debc6d82f157ca4f63b49370ae9aa066d60ce9d59011d11f748",
+      "section": "对象、参数与程序的全部量词"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有序权组尾部冻结--定理.md",
+      "sha256": "9021bb82f8b30debc6d82f157ca4f63b49370ae9aa066d60ce9d59011d11f748",
+      "section": "阶段势及比较链"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "已逐段完整实读当前对象及必需证据，重核模型、全部真实偏离、量词、边界和本边承重推导；历史有限审计仅保其实际范围，本轮未以计数替代一般证明。",
+  "whole_result": "任意有序非空划分中，先固定早组背景、忽略晚组并先平移费用，再最小化Σ_e(β_ej/a_ej)H_e后冻结；每阶段任意全局最小点及任意平局选择的所有最终输出均是A=max_ej(b_ej/a_ej)(1+L_ej/a_ej)^d-PNE，无潜在用户时A=1。"
+}

@@ -1,0 +1,59 @@
+{
+  "edge_id": "wc-boss5-4932-forest-quote-construction-gives-tree-lift",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "wc-incidence-forest-exact"
+  ],
+  "target_ids": [
+    "wc-one-player-tree-private-lift"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限正实权、任意有限耦合资源子集策略、逐点有限非负非减费用；保留非空N0及仅保留玩家潜在使用E0。全部非E0资源与关联构成附属森林，每分量至多一个保留玩家；被删玩家不潜在使用E0。核心本身可有环。",
+  "roles": {
+    "wc-incidence-forest-exact": "实际使用其证明中固定平局阈值贪心、背景反单调选中总重与递归两侧报价/精确稳定延续，不只用存在性结论。",
+    "wc-one-player-tree-private-lift": "逐根边常数替代、原动作单射及同一α无关lift提升全部实α≥1。"
+  },
+  "explanation": "森林证明对每条根边r—e构造p_e和y_e^0,y_e^1：条件bit固定时全部后代对全部原策略精确稳定；根使用时真实成本恰p_e；不使用时冻结y^0后进入费≥p_e。承重是同一阈值序下背景0与w_r的选中后代总重L1≤L0，p_e=c(w_r+L1)≤c(w_r+L0)，不是偏离后重选均衡。每条根边改为根独享常数资源z_e，策略ψ(s_i)=(s_i∩E0)∪{z_e:e∈s_i∖E0}。每边独立标签使ψ单射，核心投影相同的原动作没有合并。按当前根动作的bit拼接固定延续，无根分量取固定森林精确均衡；不同分支无共享删除玩家，允许同根多个分枝。对所有替代状态u和所有原合法偏离t_i，当前C_G(Lu)=C_H(u)，冻结偏离C_G(t_i,(Lu)_−i)≥C_H(ψ(t_i),u_−i)，保留项等价、新进入项报价下界、退出项为零，故多资源同时切换也成立。H的任意α-PNE经这同一L提升：根用上述两不等式，被删者精确稳定且非负费用使其α稳定。α任意实≥1，L不读取α。常数费用不增degree帽d≥0；必要时添无人用零费资源保持资源非空。",
+  "scope": "单向树附属归约的完整合同；不能从任意条件均衡自动选报价，不反推所有原均衡投影、多根模块或核心资源挂接。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/潜在使用森林的精确均衡--定理.md",
+      "sha256": "403e5541be23f8315b202bf29c9ac9012d5d861818d05d99dfee99a0a1ca8932",
+      "section": "资源星形的降阈值贪心"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/潜在使用森林的精确均衡--定理.md",
+      "sha256": "403e5541be23f8315b202bf29c9ac9012d5d861818d05d99dfee99a0a1ca8932",
+      "section": "根资源的两种延续和同一报价"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/潜在使用森林的精确均衡--定理.md",
+      "sha256": "403e5541be23f8315b202bf29c9ac9012d5d861818d05d99dfee99a0a1ca8932",
+      "section": "从接口得到森林均衡"
+    },
+    {
+      "path": "archives/weighted-congestion/state/归约/单核心挂树的私人成本提升--归约.md",
+      "sha256": "456b96fc3baea68a591e7deec3c327cf0f6a144016fc020fc3d96ba08308e454",
+      "section": "精确合同"
+    },
+    {
+      "path": "archives/weighted-congestion/state/归约/单核心挂树的私人成本提升--归约.md",
+      "sha256": "456b96fc3baea68a591e7deec3c327cf0f6a144016fc020fc3d96ba08308e454",
+      "section": "构造及逐状态证明"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "逐式实读本边列明的现行自足证明，核模型、量词、全部真实偏离、零费与严格/弱端点；历史审查和有限计数不充当一般证明。本轮未运行旧审计程序。",
+  "whole_result": "目标全条：存在保权/保核心、附属边改私人非负常数的H，及同一个α无关固定lift L，使每个实α≥1的全部H的α-PNE提升为原G的α-PNE；原非负多项式次数上限不升。",
+  "endpoint_pins": {
+    "wc-incidence-forest-exact": "4ecc325f2169a1952b660ba4dbdf9ce158c064d271261d39704df2996d254acf",
+    "wc-one-player-tree-private-lift": "1b165f7949ba989d4544be59766a4941571c8262e5975e8d32729f238e657c63"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/潜在使用森林的精确均衡--定理.md": "403e5541be23f8315b202bf29c9ac9012d5d861818d05d99dfee99a0a1ca8932",
+    "archives/weighted-congestion/state/归约/单核心挂树的私人成本提升--归约.md": "456b96fc3baea68a591e7deec3c327cf0f6a144016fc020fc3d96ba08308e454"
+  },
+  "review_digest": "94bfcb1029237e16d93ec0b4797c579ca9b0db912043ccc6ee04c9e6e4aa5fa6"
+}

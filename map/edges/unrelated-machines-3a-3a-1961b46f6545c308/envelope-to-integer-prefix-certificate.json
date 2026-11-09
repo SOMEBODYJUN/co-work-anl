@@ -1,0 +1,43 @@
+{
+  "edge_id": "um-1961b46f-envelope-to-integer-prefix-certificate",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1"
+  ],
+  "target_ids": [
+    "M-f828dd85112747cf9e509448e7491ad9"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一原P、已经选出的big实际分配H与负载h_i、身份不交的tiny共同x且逐列和1；行p降序非负，z_j为整数且≥X_j；目标(2−ε)T≥T用于真实YES证书存在性。",
+  "roles": {
+    "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1": "给有序槽精确E闭式、一次共同匹配及整数0/1取等。",
+    "M-f828dd85112747cf9e509448e7491ad9": "把同一H和整数prefix作为剩余充分证书，并标清实松弛的坍缩与搜索缺口。"
+  },
+  "explanation": "E给E_i=p_q ceilX_q+Σ_(j<q)(p_j−p_(j+1))ceilX_j。整数z≥X迫z≥ceilX，所有差分系数非负，所以h_i+E_i≤h_i+p_qz_q+ΣΔp_jz_j≤(2−ε)T。对所有tiny一次ST覆盖匹配同时得实际L_i≤E_i，再加原H，得到同一完整实际调度。真实T-YES取其big H及tiny0/1边际，z取整数前缀任务数，此时E正是实际tiny负载，故目标倍率≥1即有证书。若z改实数仅留z≥X，非负系数使最小取z=X，Abel差分恒等化成Σp_jx_j，抹去槽损失。空行E0、零质量/零时间/平局和严格正交长槽边均适用；∞端先删。给证书后排序、有理ceil、槽图与匹配为总位多项式，未给共同H/x/z的搜索器。",
+  "scope": "整条证书定理及实数松弛辨别；不把固定profile的匹配当profile可多项式寻找。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/槽包络凸化与共同提取的不同对象--资源.md",
+      "sha256": "2e5e5267c8a7aed22408fe87babe78ac80a4bcc11a38239648eb90256c26a19c",
+      "section": "单行定义及可提取性"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/整数前缀槽预算的共同证书与搜索缺口--审查.md",
+      "sha256": "633afb2943d8ef242dad5ad69139a2484879657728b7930e62ee96e9345725cf"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "本包worker实读当前登记、端点正文与所列承重证明，逐项核对完整/局部作用域、同一实际输出及模型边界；未将历史软件计数当新运行。",
+  "whole_result": "有共同H,x和整数prefix z满足预算即一次全局匹配恢复目标峰的完整实际调度；真实T-YES总提供此证书（倍率≥1）；仅实z的最小收费恰p·x，故不保整数槽损失。",
+  "endpoint_pins": {
+    "M-f828dd85112747cf9e509448e7491ad9": "88f95fab9df228a023bea1b8f64a8e3110891bb0df1f95c74e7f0e379d206de9",
+    "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1": "cb19e6e1237754a8203740739689cebc96785f7cff55cf69c7ff1ecf61c64ebf"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/槽包络凸化与共同提取的不同对象--资源.md": "2e5e5267c8a7aed22408fe87babe78ac80a4bcc11a38239648eb90256c26a19c",
+    "archives/unrelated-machines/state/审查/整数前缀槽预算的共同证书与搜索缺口--审查.md": "633afb2943d8ef242dad5ad69139a2484879657728b7930e62ee96e9345725cf"
+  },
+  "review_digest": "74ba0402097079977a9e27bcd51118f7c2a1eaa9563f6e70e0b86f059089f072"
+}

@@ -1,0 +1,42 @@
+{
+  "edge_id": "wc-3a-relative-objective-gap-checks-exact-minimization-contract",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-577ad8a145af49a2bc6c4fc8cc9d27de"
+  ],
+  "target_ids": [
+    "wc-common-scale-regularization-exact-factor-optimization"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "任意τ>0，取K≥1/τ；一名可动权1玩家私人常费0/1动作，一名固定权1玩家使用与可动者不交的常费K资源。目标是包含固定背景的真实势/全社会成本K加可动动作费。",
+  "roles": {
+    "M-577ad8a145af49a2bc6c4fc8cc9d27de": "给每个相对误差τ的合法degree0反例，坏态1→0排除任何有限倍率稳定。",
+    "wc-common-scale-regularization-exact-factor-optimization": "其准确argmin及另给稳定证书的合同是实质要求，不能从同一因子DP的相对近似目标值直接替换。"
+  },
+  "explanation": "坏态目标K+1≤(1+τ)K，而移动者当前/偏离成本为1/0，全部有限β均不满足1≤β·0。K资源不进入此移动者成本；若改成它的两个动作都用K，成本将变为K+1/K，不再是本反例。该见证核查的是从相对目标近优推出稳定的替换步骤。准确优化算法及其已付共同尺度稳定推论没有被反驳。",
+  "scope": "无关大基线下相对目标误差的合同边界；语境检查，不作为optimizer错误或原模型无PNE的逻辑反驳。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/算法/共同尺度正则化的精确因子优化--算法.md",
+      "sha256": "be3b2a6d333ee7c0ff069b452cc15bdf9aeaa113fd4e0b3a44201b3a471067cb",
+      "section": "为什么一般目标近似最优不足以调用稳定"
+    },
+    {
+      "path": "archives/weighted-congestion/state/算法/共同尺度正则化的精确因子优化--算法.md",
+      "sha256": "be3b2a6d333ee7c0ff069b452cc15bdf9aeaa113fd4e0b3a44201b3a471067cb",
+      "section": "原玩家变量上的正则势"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "完整实读所列正文并重推该关系；数学量词、全部共同条件与贡献剩余项按本边明确范围审定。未把历史审计当本轮程序执行。",
+  "endpoint_pins": {
+    "M-577ad8a145af49a2bc6c4fc8cc9d27de": "ee3bb8f988a29ef303d2e4ab24337566d62f82e51ca0ffbf56faeb4c83463aa9",
+    "wc-common-scale-regularization-exact-factor-optimization": "8be9a46bc9049facb4aa20d9956699f1d5ee26aed66f8172d19cbf207ce54b51"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/算法/共同尺度正则化的精确因子优化--算法.md": "be3b2a6d333ee7c0ff069b452cc15bdf9aeaa113fd4e0b3a44201b3a471067cb"
+  },
+  "review_digest": "81a7f653f9c15248256eef56c0ffdfc6caa1157685ed5df9e8df0ed369d98ec0"
+}

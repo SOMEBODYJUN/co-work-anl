@@ -1,0 +1,39 @@
+{
+  "edge_id": "wc-stage3a-finite-interval-and-fixed-charge-yield-budget-optimization",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "wc-finite-instance-two-order-exact-scale-interval",
+    "wc-fixed-charge-strengthened-stability-original-game-residual"
+  ],
+  "target_ids": [
+    "wc-resource-conflict-hitting-fixed-charge-budget-optimization"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限有理显式菜单游戏与有理β≥1；未干预资源限定非负D/U、同权类型共同尺度、全部局部人数插入合同，干预真实资源e改为p_e∈[m_e,M_e]。外生部署费κ_e≥0与原私费/社会费分立。全部前提联合使用。",
+  "roles": {
+    "wc-finite-instance-two-order-exact-scale-interval": "逐真实资源的精确局部区间或空集、可核乘积冲突圈及有理尺度/局部混合。",
+    "wc-fixed-charge-strengthened-stability-original-game-residual": "常数化释放类型约束的玩家可分势、强化leave/join终点与原游戏对称差残差LP。",
+    "wc-resource-conflict-hitting-fixed-charge-budget-optimization": "指定合同内真实资源击中优化、XP/结构h近似、费率预算及原游戏残差的完整组合。"
+  },
+  "explanation": "先保留每个原资源身份，不合并平行资源。F给非空区间[l_e,β]的两弧乘数β、1/l_e，空区间强制干预；I表明常数资源的势p_eΣq_i边际精确且无比例要求，所以选e恰移除它的两弧。可行干预必须击中每个乘积<1简单圈；否则相乘矛盾t_v>0。反向，击中全部后无负闭游走（负闭游走分解含负简单圈），有限分层最短乘积给有理正尺度，F恢复未选资源D/U，I给选中资源常数势，故合同可行。有限枚举D得到取得最优Σκ_e。对≤k资源决策，每次以冲突圈资源集分支，大小≤|V|、深度k，得|V|^k poly的XP；若圈资源数≤固定h则h^k poly。对非负圈权y_C满足每资源Σ_(C:e∈C)y_C≤κ_e，任何击中集成本≥Σy_C。逐冲突圈增加其y直到资源预算紧并选全体新紧资源，后续圈避开已选资源、双重可行且所选仍紧，故费用Σ_C y_C|D∩C|≤hΣy_C≤hOPT；空区间强制部分精确加入。固定D后用I的全部动作对R_i(S,T)≤ε_i和费率盒作有理LP；枚举D、尺度校准与LP联合给精确有限最优。增加D放松尺度但新增每项残差非负，故若D残差LP已不可行，任意超集也不可行（超集可行解限制回D会矛盾），可安全剪枝。最后用I的严格leave/join下降取得终点，再给所有原偏离C_old≤βC_new+R_i。没有将任意修改后β-PNE误当强化终点。",
+  "scope": "完整导出目标明示证书优化合同；XP不是一般FPT，h近似只约束部署费，不是原游戏最小真实修复费或遗憾近似。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/有限实例双排序尺度区间的精确校准--定理.md",
+      "sha256": "fa74aa7084c29253386b97d82c0f2ea52b6e1f4db913d4f01123f3994ae4a2ac"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/固定费干预的强化稳定与原游戏残差--定理.md",
+      "sha256": "a996ab033b11de96836d4aeb131e0d6b23601110db91fa01ec6d81a67ea2352c"
+    },
+    {
+      "path": "archives/weighted-congestion/state/算法/冲突资源删除与固定费预算的证书优化--算法.md",
+      "sha256": "3b45e16b893826cd7451914afb258eeaa421b35b6cfe07b62ed3e3554746191d"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "完整实读本包当前登记、端点正文与必要证据；核对模型、全部量词、真实偏离、弱端点/严格下降及作用范围。候选正确性保持条件，未把有限审计当全称证明。",
+  "whole_result": "有限区间定理与固定费强化/残差定理联合，得到真实资源空区间强制选择和全部乘积冲突圈击中的精确有限优化、O(|V|^k poly)的XP及有h界时的h近似对偶证书、残差LP与超集剪枝，并交付强化终点对原游戏的逐偏离加性预算；全部范围限于目标指定D/U共同类型尺度和费率盒。"
+}

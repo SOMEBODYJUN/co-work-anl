@@ -1,0 +1,42 @@
+{
+  "edge_id": "um-280160f5-double-tree-k4-is-medium-tiny-barrier",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-CONF-GAP-v1"
+  ],
+  "target_ids": [
+    "UM-MEDIUM-CONFIG-TINY-BARRIER-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "源双树族取k=4，并按源的首个α_h≥1/2定义高度；中/微阈值按p_ij≤αT划分，固定有理0<α<1/5，T=5/4。全部不同平行任务保原身份。",
+  "roles": {
+    "UM-CONF-GAP-v1": "提供k≥4双树完整矩阵、CONFIG(1+1/k)证书及真实OPT=2−1/k。",
+    "UM-MEDIUM-CONFIG-TINY-BARRIER-v1": "目标是同一个固定74机169任务实例对全部α∈(0,1/5)否定独立tiny收费接口。"
+  },
+  "explanation": "k4时α_1=1/3、α_2=4/9、α_3=16/27，故h=3。每树机器为1+4+16+16=37；边任务为4+16+64=84，再加两根共享的一件unit，得到74机169件。源的整数分支强迫与一条下传路径达到给OPT=7/4。配置证书的终端singleton权1/4；末父{a,b_l}各权1/12、全small权2/3；第1层对应1/9与5/9。根incoming原边际16/27按保留因子27/32削到1/2，得到每{a0,b_l}权1/8、每singleton{b_l}权5/216、全small权11/27；各原任务覆盖恰1且配置负载≤5/4。最小有限处理时间1/4，而αT<1/4，所以没有tiny端，中任务混合LP仍保同一完整CONFIG证书。实际OPT/T=7/5>1+α，因此连(1+α)T完整输出都不存在。",
+  "scope": "完整目标是源族的固定k4特化及阈值代数后果。T只为证书阈值，不声称T_CONF=T；α=1/5端点不在无tiny论证内。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/障碍/双树配置证书的趋二整数间隙--障碍.md",
+      "sha256": "9df495ce6a36239df905c8a8b6b4b7dc29778e68679e0c23f5ba79777dce73cf"
+    },
+    {
+      "path": "archives/unrelated-machines/state/障碍/中任务配置与独立微任务收费的接口间隙--障碍.md",
+      "sha256": "5b54630db2213996091ed7eef7f018bc2a53319832583b78f255de948ea8176d"
+    }
+  ],
+  "reviewed_by": "Boss3 / um_config_interfaces",
+  "review_note": "已实读当前登记对象及所引自足证明，逐项核对模型、量词、全任务身份、同时全机负载和位复杂度。本边只在列明条件内覆盖目标整条陈述；不升级未付的算法前提。",
+  "whole_result": "同一74机169原任务矩阵有CONFIG(5/4)证书且OPT=7/4；对每固定0<α<1/5全有限端均>αT，仍不存在峰≤(1+α)T的完整调度，完整成立固定中任务/独立tiny收费合同的反例。",
+  "endpoint_pins": {
+    "UM-CONF-GAP-v1": "d31eb419867e4badefa2ebc32ad88924ca17ef1b81727067e1c89c072108130f",
+    "UM-MEDIUM-CONFIG-TINY-BARRIER-v1": "292257f714bc51a517649b22d8ac4fd9eb01a8dce23254f31b702e8225efd71e"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/障碍/双树配置证书的趋二整数间隙--障碍.md": "9df495ce6a36239df905c8a8b6b4b7dc29778e68679e0c23f5ba79777dce73cf",
+    "archives/unrelated-machines/state/障碍/中任务配置与独立微任务收费的接口间隙--障碍.md": "5b54630db2213996091ed7eef7f018bc2a53319832583b78f255de948ea8176d"
+  },
+  "review_digest": "6eb7073a56d1d83df1f3f3942cc85e6f7c161364832e82feb5d26508244de4cd"
+}

@@ -1,0 +1,68 @@
+{
+  "edge_id": "um-1961b46f-forest-and-hitting-to-leaf-flow",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+    "UM-PRUNED-TREE-LEAF-HITTING-v1"
+  ],
+  "target_ids": [
+    "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一显式私有unit双树，整数k,h≥1、全部变量mandatory、clause容量A_c≥0、无pins/额外任务/共享内部机；不要求给YES或密度界。",
+  "roles": {
+    "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1": "给C<2调度与共同slot注入的r森林双向正规形，并给最优网格2−r*/k。",
+    "UM-PRUNED-TREE-LEAF-HITTING-v1": "给任意标记叶的严格门槛与真实祖先DP，不能只按叶数补树。",
+    "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1": "把共同整数叶流、sign保留及两个前提组合成完整实际算法与比值。"
+  },
+  "explanation": "非空令N=k^h。整数流source→变量(cap b)→各真实叶(cap1)→所属clause→sink(cap A_c)，只接受流值b|V|，二分最大b∈[0,2N]。b=0时F使任何C<2调度提供每变量一条根叶路径及共同unit注入，即b≥1，故OPT=2并全父置。b≥1时每变量保叶较多的sign，至少m=ceil(b/2)枚同一次流的叶；q=floor((N−m)^(1/h))、rhat=k−q，未标记数N−m<(q+1)^h。H取r=rhat、k−r+1=q+1，保证标记叶含原根全深rhat子树并以DP提取。提取只删已流叶，故所有变量共同注入仍合法；F回填全部原jobs，active负载2−rhat/k，其余≤1。若OPT<2，由F有OPT=2−r*/k且b≥r*^h。写x=r*/k、f=(1−x^h/2)^(1/h)、c=2^(−1/h)，则rhat/k≥1−f，C/OPT≤(1+f)/(2−x)。在[0,1]有f≥c、−f′≤c，导数分子≥1−c+cx>0，最大于x1为1+c；h1同算。OPT2时C≤2足够。空变量直接空调度；k1保同逻辑。整数根靠幂比较，无无理数决策；流二分、显式树DP、有理运算和完整原任务输出均按显式总位长多项式。",
+  "scope": "ALL联合支撑整条固定高度算法；非空H固定有1+2^(−1/H)<2，高度无界时余量趋0。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-joint-projection/original/research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+      "sha256": "425af66b7eaa6c8317398f1806aceeae869459ffb57ee9b89c2a6fd2d029070f",
+      "section": "2. 任意密度的真实叶流与祖先提取"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+      "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+      "section": "1. 精确Claim对象、定义和量词"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+      "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+      "section": "2. 实际调度到必选森林及完整正规化"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+      "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+      "section": "3. 必选森林到实际完整调度"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+      "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+      "section": "8. 虚拟叶补齐的精确命中门槛"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位读出叶流与选择重组的原程序及锐矩阵--审查.md",
+      "sha256": "839f4e4242eb16b000ba8f34da2f3d748c0aba40ae11a9598bed3723570214b3",
+      "section": "固定高度叶流：算法、证明和失败机制"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "本包worker实读当前登记、端点正文与所列承重证明，逐项核对完整/局部作用域、同一实际输出及模型边界；未将历史软件计数当新运行。",
+  "whole_result": "森林iff与锐叶命中共同给每个本模型显式P的确定性位多项式完整σ，Cmax≤(1+2^(−1/h))OPT，包括空、b0与k1；没有YES、LP、OPT oracle前提。",
+  "endpoint_pins": {
+    "UM-PRUNED-TREE-LEAF-HITTING-v1": "4058da5b805bfac8fd83f3666b3b8ead19bd836cb5331ee0dab6237fa429b5aa",
+    "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1": "eccabb8f838ec7dcf55ba328ab0d633b0e6c02ff2946d1a641520a9ca6bfed41",
+    "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1": "bd66f8cfda3245886e9ba6d3075b5ed8f5e5d760675d05ee33cfd19d883d6741"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/tools/evidence/um-joint-projection/original/research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md": "425af66b7eaa6c8317398f1806aceeae869459ffb57ee9b89c2a6fd2d029070f",
+    "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+    "archives/unrelated-machines/state/审查/单位读出叶流与选择重组的原程序及锐矩阵--审查.md": "839f4e4242eb16b000ba8f34da2f3d748c0aba40ae11a9598bed3723570214b3"
+  },
+  "review_digest": "5778454a032d3ba774af3e88f921797aac73bf349b6cf3cb6468f384dd5edbb6"
+}

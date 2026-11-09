@@ -1,0 +1,57 @@
+{
+  "edge_id": "um-blmrs-theorem-and-bit-contract-give-conditional-santa-barrier",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-5ecd146af7cb4e7cbd110d3f635a57be",
+    "M-49195941d69c4784890f322dca84ef7b"
+  ],
+  "target_ids": [
+    "UM-SANTA-NO-CONSTANT-CONDITIONAL-v2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "将M-49195941d69c4784890f322dca84ef7b仅作为尚待完成的位保持合同：对每固定α≥2、η>0，BLMRS Theorem1在一般二进制非负有理Santa/UM和实际输出上保持确定性总位多项式。另明确假设SCHA_det^N：对每固定整数c≥3不存在该一般Santa域的确定性位多项式c近似。两者均未由本边证明；BLMRS文献的算法方向为makespan输出算法→Santa输出算法。",
+  "roles": {
+    "M-5ecd146af7cb4e7cbd110d3f635a57be": "提供准确近似比与算法方向：(2−1/α)-makespan算法推出(α+η)-Santa算法，α≥2且η固定。",
+    "M-49195941d69c4784890f322dca84ef7b": "其若被完成，付清文献桥的有理缩放、有限取整、配置枚举和中间/输出位长适用性；此处不宣称该open义务已有证明。",
+    "UM-SANTA-NO-CONSTANT-CONDITIONAL-v2": "在SCHA_det^N与适用位保持桥两项假设下，排除任意固定统一2−ε的确定性位多项式一般UM算法。"
+  },
+  "explanation": "反设一般UM有某固定ε∈(0,1)的确定性位多项式实际(2−ε)输出算法。取固定整数q≥max{2,ceil(1/ε)}，则1/q≤ε，故2−ε≤2−1/q；同一算法满足较弱的(2−1/q)保证。由BLMRS Theorem1，取α=q、η=1，得到一般Santa的(q+1)近似。若M4919要求的位合同成立，这一复合程序在所声明非负二进制有理域中仍确定性总位多项式；q及η只依固定ε而非输入。q+1≥3是固定整数，与SCHA_det^N矛盾。对任意固定ε均可这样选q，得到目标整条条件反面。该推理没有逆转Theorem1，也没有用restricted Santa算法、factor2硬度或LP间隙填补SCHA。",
+  "whole_result": "BLMRS准确算法蕴含与其尚待完成的适用位保持合同，在另假设SCHA_det^N时 ⇒ ∀固定ε∈(0,1)，不存在一般UM的确定性总位多项式实际(2−ε)近似算法；所得为UM-SANTA-NO-CONSTANT-CONDITIONAL-v2的完整条件陈述。",
+  "scope": "完整的条件逻辑关系，前提并未升级为proved。M4919仍open，SCHA_det^N仍未证；不扩展随机算法、restricted模型、真实source NO编译或无条件近二困难性。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
+      "sha256": "3cdd2f7d112e3a64af8ad898328ed8c81865b51f1f9d3d5ad420b9ebfb53839d",
+      "section": "1. 一般 Santa Claus 到 Makespan"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/Santa无常数近似条件反面双源审查--审查.md",
+      "sha256": "406f82949f814028b7161bb4508fa48218dff0c0eb16af9ba05b43443088ba63",
+      "section": "条件命题及证明"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/Santa无常数近似条件反面双源审查--审查.md",
+      "sha256": "406f82949f814028b7161bb4508fa48218dff0c0eb16af9ba05b43443088ba63",
+      "section": "适用性、位复杂度与数学边界"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
+      "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+    }
+  ],
+  "reviewed_by": "Boss3 / um_cartesian worker",
+  "review_note": "实读两审查、文献对象及冻结PDF的Theorem1、§2/§2.1 Lemmas10–14和Appendix B Lemma11证明。核q取向及固定参数、η1给整数q+1、实际allocation方向；位增长仍按原义务保open，不冒作新完成的位复杂度审计。",
+  "endpoint_pins": {
+    "M-49195941d69c4784890f322dca84ef7b": "6c018cb22e673ddc1dbb2deab79793e9fe05c31eb002f043d9b3b6f3f72cc6b5",
+    "M-5ecd146af7cb4e7cbd110d3f635a57be": "74f2f95209853ae3c12c95871ab0c77b2fbd08dd97051002c427f7ce163cbbf3",
+    "UM-SANTA-NO-CONSTANT-CONDITIONAL-v2": "c85f10d27cc52b1c02d1678fbe2c3b4619605bb3a98942a1851e57158b5a5550"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md": "3cdd2f7d112e3a64af8ad898328ed8c81865b51f1f9d3d5ad420b9ebfb53839d",
+    "archives/unrelated-machines/state/审查/Santa无常数近似条件反面双源审查--审查.md": "406f82949f814028b7161bb4508fa48218dff0c0eb16af9ba05b43443088ba63",
+    "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+  },
+  "review_digest": "7ba796e6659d21116c4b8d732825240b4096cae781c4972f4bd9c31fe00e5797"
+}

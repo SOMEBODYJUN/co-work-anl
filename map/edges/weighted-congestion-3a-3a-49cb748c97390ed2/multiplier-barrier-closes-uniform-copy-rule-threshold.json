@@ -1,0 +1,51 @@
+{
+  "edge_id": "wc-3a-multiplier-barrier-closes-uniform-copy-rule-threshold",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R1-MULTIPLIER-BARRIER"
+  ],
+  "target_ids": [
+    "WC-R1-ORDINAL-COPY-BRIDGE"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "每个整数d≥2及1≤α<ρ_d，ρ_d=sup_(t>0)[(d+1)(1+t)^d+t^(d+1)]/[d+(1+t)^(d+1)]。barrier先选有限正向量w。候选规则对每个非零非负degree≤d费用c先给H_(d,w,c)，不依策略族、资源数/身份或其他资源；相同c的有限复制及限制策略后使用相同H。游戏策略族有限非空，允许空策略/固定玩家；成本为未乘权真实延迟和。",
+  "roles": {
+    "WC-R1-MULTIPLIER-BARRIER": "对所选有限w否定任意正玩家h_i和任意F=H_(x^d)的全部局部子集边际夹逼。",
+    "WC-R1-ORDINAL-COPY-BRIDGE": "最后的α<ρ_d统一局部规则禁阻结论；复制及策略限制量词是把局部障碍传到统一规则的桥。"
+  },
+  "explanation": "分别保留两项统一规则假设。若每个游戏全部严格α改善都降同一资源和势，则任一全局最小点不能有严格改善。反之，若每个游戏的全部全局最小点均稳定，将任何真实严格边限制成移动者仅旧/新两动作、其余玩家各固定的两态游戏；同一费用/完整w和局部规则不变，若Φ(old)≤Φ(new)，旧态就是坏最小点，矛盾，所以该边必须严格下降。由下降规则，对任意i,S,c建一资源使用/空删除游戏得Δ_iH_c(S)>0，置q_i(c,S)=Δ_iH_c(S)/c(w(S)+w_i)>0。任意两上下文(c,S),(c′,T)，m个旧复制与n个新复制、其余玩家在交集中同时用两束，移动者成本mA,nB；当m/n>αB/A时，下降迫q_i(c′,T)<(m/n)(A/B)q_i(c,S)。用实际有限正整数m,n的有理比从上逼近临界值，得q′≤αq。固定参考q0给所有q≥q0/α>0，故h_i=inf q>0且h_i≤q≤αh_i；不需inf达到，也未假设H对费用系数线性。仅取c=x^d即得到barrier所否定的F,h。于是两种统一假设在该有限w都不可能。充分夹逼方向也独立成立：逐真实偏离删/增/保留，ΔΦ≤h_i[αCnew−Cold−(α−1)Cret]<0；但该充分代数和完整复制等价的本体不是barrier单独提供的内容。由ρ_d/d→1，该类统一规则不能给全类o(d)。",
+  "scope": "局部夹逼障碍到跨游戏统一规则最后禁阻项的已闭合比较。逐游戏任意重新选F_e、仅某个最小点稳定、非可分目标或均衡存在本身均不在此禁阻结论中。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/障碍/任意玩家乘子的多尺度边际夹逼--障碍.md",
+      "sha256": "a8a81a49e28d9aa79571dda74c10e0ac45123f3ed2298b8625a1cfb3794e13ac"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/跨游戏统一可加序势的复制夹逼桥--定理.md",
+      "sha256": "d16921f2bda7ba392bf01e8fae5efa91d1f4dd675bbfcfa53fab372cc06181c5"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/统一序势与非线性选态的量词和纠错--审查.md",
+      "sha256": "8199bbff2672f070cac643aaca19ad4c62d3768373d41ff2fd3c1ab3a25a71d6",
+      "section": "旧内部审查实际检查了什么"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "完整实读所列正文并重推该关系；数学量词、全部共同条件与贡献剩余项按本边明确范围审定。未把历史审计当本轮程序执行。",
+  "contribution": {
+    "result": "对每个d≥2和α<ρ_d，由barrier选出的同一有限w不存在满足任一所列全称稳定/下降性质的统一复制不变局部规则；这支付复制桥的线性阈值禁阻及o(d)后果。",
+    "remaining": "复制桥对任意有限α与任意固定w的完整三项等价、删除正性/复制比较/正下确界及夹逼充分性仍按桥正文逐项使用；不把barrier当成这些等价步骤的独立证明，也不把方法禁阻提升成无PNE。"
+  },
+  "endpoint_pins": {
+    "WC-R1-MULTIPLIER-BARRIER": "e6fb48b0e56b2ea9614281bab93077f5c5a2a9be25a88f66b7728a85ad0c84cf",
+    "WC-R1-ORDINAL-COPY-BRIDGE": "d2b656d61663c78f1b57db586bb119bbbd10c6fc944a4d9da99f54ec7541bc4f"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/障碍/任意玩家乘子的多尺度边际夹逼--障碍.md": "a8a81a49e28d9aa79571dda74c10e0ac45123f3ed2298b8625a1cfb3794e13ac",
+    "archives/weighted-congestion/state/定理/跨游戏统一可加序势的复制夹逼桥--定理.md": "d16921f2bda7ba392bf01e8fae5efa91d1f4dd675bbfcfa53fab372cc06181c5",
+    "archives/weighted-congestion/state/审查/统一序势与非线性选态的量词和纠错--审查.md": "8199bbff2672f070cac643aaca19ad4c62d3768373d41ff2fd3c1ab3a25a71d6"
+  },
+  "review_digest": "d453c6027f06c105cd78ab940b37a974fb2d2bc04bc87a8a38c1b5079dbcf1ed"
+}

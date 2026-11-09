@@ -1,0 +1,43 @@
+{
+  "edge_id": "um-280160f5-bounded-envelope-specializes-to-common-cycle-collapse",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-BOUNDED-MULTIPLICITY-CLONE-ENVELOPE-v1"
+  ],
+  "target_ids": [
+    "UM-COMMON-CYCLIC-TWO-WIRING-NEAR-TWO-COLLAPSE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "对每m≥2取源页§9.4的P_m：m机，一件全局unit B，机器i上m−1件私有时间1/m任务。c=2、q=m，全部原有限incidence共用identity和循环shift；允许重复置换的源定义不另改为不交匹配合同。",
+  "roles": {
+    "UM-BOUNDED-MULTIPLICITY-CLONE-ENVELOPE-v1": "提供每个实际c接线向MC_c的投影、原调度到所有接线提升、t_c最小包络及t1=T_CONF。",
+    "UM-COMMON-CYCLIC-TWO-WIRING-NEAR-TWO-COLLAPSE-v1": "目标是该特定近二种子的同一identity/shift显式接线与完整峰1排程。"
+  },
+  "explanation": "原私有任务强制每机基线(m−1)/m，B所在机负载2−1/m，故OPT(P_m)=2−1/m。MC1中每个只在本机的private类型期望1且每配置计数≤1，因此在该行每个正权配置必出现；任何覆盖正B质量的行要负载2−1/m，故t1=T_CONF=2−1/m。构造q=m共同接线：B-copy x放(i,s)=(x,x)；私有(U_it,x)以d=(x−i) mod m编号0,…,m−1，当d<t取(i,x+1)，否则(i,x)。每条都为identity/shift合法边，每件恰一次。固定i,t，shift区间从i到i+t−1，复制位置i占位0、i+t占位2、其余1。因此(i,i)只接B_i，负载1；任意(i,s≠i)恰一个t重复，其余m−2个private各一，共m个small，亦负载1。原unit复制给所有接线OPT≥1，故此Q_m的OPT=1。再由CE投影得MC2(1)，而unit给t2≥1，故t2=1。每incidence的两置换并图为连通2m环；机器m²、任务m+m²(m−1)、有限边2m³均显式多项式。",
+  "scope": "完整目标仅针对这一个指定种子族和共同循环二接线；未说所有二接线/随机接线/源相关精选接线都坍缩。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/有界重数克隆接线与共同循环坍缩--定理.md",
+      "sha256": "e0ab6cdb190a926bb7d5dfa871b2545e3e14e8f3c814a0327ec79b27e213e979",
+      "section": "9.2. Exact theorem and actual witness conversions"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有界重数克隆接线与共同循环坍缩--定理.md",
+      "sha256": "e0ab6cdb190a926bb7d5dfa871b2545e3e14e8f3c814a0327ec79b27e213e979",
+      "section": "9.4. Uniform connected degree-two wiring collapses a near-two seed"
+    }
+  ],
+  "reviewed_by": "Boss3 / um_config_interfaces",
+  "review_note": "已实读当前登记对象及所引自足证明，逐项核对模型、量词、全任务身份、同时全机负载和位复杂度。本边只在列明条件内覆盖目标整条陈述；不升级未付的算法前提。",
+  "whole_result": "每m≥2的P_m有OPT=t1=2−1/m、t2=1；q=m、全部incidence共用identity和单循环shift的多项式完整实例Q_m有实际OPT=1，原任务、接线、连通性和全部机器负载均完整成立。",
+  "endpoint_pins": {
+    "UM-BOUNDED-MULTIPLICITY-CLONE-ENVELOPE-v1": "087fe249fe2a874c870b92b82dcdea74db8fc2bb3a9923575fb677cc2c3dd607",
+    "UM-COMMON-CYCLIC-TWO-WIRING-NEAR-TWO-COLLAPSE-v1": "8423bdaf79eb7ca740e1bf3279d0d98276e96ae3d8babc5d1cb584e4bad328d1"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/有界重数克隆接线与共同循环坍缩--定理.md": "e0ab6cdb190a926bb7d5dfa871b2545e3e14e8f3c814a0327ec79b27e213e979"
+  },
+  "review_digest": "28b5f8e274fb878ede2836c196afa414cb3d0202ff98ec11a6e5452a52c7e0a4"
+}

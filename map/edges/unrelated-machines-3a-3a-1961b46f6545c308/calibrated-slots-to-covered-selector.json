@@ -1,0 +1,58 @@
+{
+  "edge_id": "um-1961b46f-calibrated-slots-to-covered-selector",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+    "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1"
+  ],
+  "target_ids": [
+    "UM-UNIT-READOUT-SELECTOR-MIXING-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一P的p≥1份完整实际C≤1见证，指定每变量sign至少被一份selector覆盖；非空N=k^h≥p。仅对指定轨建槽，另一轨全部原jobs固定父置。",
+  "roles": {
+    "UM-UNIT-READOUT-CALIBRATED-SLOT-v1": "提供incoming-first分数任务数槽/Hall机制；本边逐项证明active-only桥。",
+    "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1": "给完整YES所选整轨全外送及指定profile计数下界的正规形。",
+    "UM-UNIT-READOUT-SELECTOR-MIXING-v1": "同一P指定selector profile的全任务代价及逐p锐界。"
+  },
+  "explanation": "完整YES中selector占根1，F在C1处r=k迫所选整轨全外送。因此指定轨在每clause的叶数d*_c≤pA_c；其它轨可密度无界。p1保原YES，空变量返空。p>1若k≥p取r=floor(k/p)，否则取r1。指定轨根incoming x0=1，深l下传x_l=(r−1+x_(l−1))/k，故每active行分数任务数x_(l−1)+k(1−x_l)=L=k−r+1。逐行incoming先排至首槽、small余后切单位槽；各clause串接外送片成不同真实unit槽。每job列质量1、槽≤1，Hall一次覆盖全部未固定jobs；接incoming的机只再接≤L−1个small，峰≤2−r/k；无incoming≤1。另一轨固定父置负载1且机器私有，与匹配结果并合一次完整σ。k≥p且k>1时递推从1下降到(r−1)/(k−1)≤r/k，故x_h≤r/k≤1/p；k<p取r1时x_h=1/N≤1/p，所以clause总质量d*_cx_h≤A_c。k1与N≥p只可能p1。写k=pr+s、0≤s≤p−1，k≤(2p−1)r；另支k<p的1/k更大，统一C≤2−1/(2p−1)。所有分母位长O(hlog k)，共同见证、槽与任务输出按显式总位长计。锐性取p变量、k=2p−1,h1，正轨共享A=k，负轨可各私有A=k；第i份YES仅i选正，其余选负，原OPT1。指定全正若C<2−1/k，由F每正根至少外送2叶，共2p>k；每根外送1个不同unit即达2−1/k。N<p交叉clause例(k=h1,p2)的指定profile真OPT2说明该条件不可删。",
+  "scope": "将校准槽证明迁入active-only固定profile；整条上界、位复杂度和逐p锐性均已在本边付清，不把全轨强行条件误加未指定轨。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-joint-projection/original/research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+      "sha256": "425af66b7eaa6c8317398f1806aceeae869459ffb57ee9b89c2a6fd2d029070f",
+      "section": "3. 完整 YES 选择状态的任意坐标重组"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-joint-projection/original/research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+      "sha256": "425af66b7eaa6c8317398f1806aceeae869459ffb57ee9b89c2a6fd2d029070f",
+      "section": "4. 对每 p 的锐例及准确否定范围"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+      "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4",
+      "section": "强分数任务数：充分证书及真正舍入"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位读出叶流与选择重组的原程序及锐矩阵--审查.md",
+      "sha256": "839f4e4242eb16b000ba8f34da2f3d748c0aba40ae11a9598bed3723570214b3",
+      "section": "完整 JSON：双共享子句锐族"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "本包worker实读当前登记、端点正文与所列承重证明，逐项核对完整/局部作用域、同一实际输出及模型边界；未将历史软件计数当新运行。",
+  "whole_result": "给同一P的p份完整YES、covered指定profile及非空N≥p，确定性位多项式输出保全部指定根的完整σ，C≤2−1/(2p−1)，细分r界及p1保YES成立；每p存在精确达到该指定profile界且原全局OPT1的族。",
+  "endpoint_pins": {
+    "UM-UNIT-READOUT-CALIBRATED-SLOT-v1": "b486f619a4c67eae2986d977a1e692bf057f1a960786ac9700bfdbfa3e338667",
+    "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1": "bd66f8cfda3245886e9ba6d3075b5ed8f5e5d760675d05ee33cfd19d883d6741",
+    "UM-UNIT-READOUT-SELECTOR-MIXING-v1": "31c218fe0b3b3ad6c3661d4df2f23b4357d7c50b5d724784f54883be5ad9ba6a"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/tools/evidence/um-joint-projection/original/research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md": "425af66b7eaa6c8317398f1806aceeae869459ffb57ee9b89c2a6fd2d029070f",
+    "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4",
+    "archives/unrelated-machines/state/审查/单位读出叶流与选择重组的原程序及锐矩阵--审查.md": "839f4e4242eb16b000ba8f34da2f3d748c0aba40ae11a9598bed3723570214b3"
+  },
+  "review_digest": "596f8b8dc27b58c38e2605b8f8cee14fb5ad47654913017d6a8489d840499b63"
+}

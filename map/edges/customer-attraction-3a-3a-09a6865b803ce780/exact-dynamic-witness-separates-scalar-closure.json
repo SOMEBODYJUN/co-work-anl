@@ -1,0 +1,71 @@
+{
+  "edge_id": "cag-09a6-exact-dynamic-witness-separates-scalar-closure",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/closeout-45713eb3e7b095f5dfee683f"
+  ],
+  "target_ids": [
+    "M-754ec9998ee4470baedc8aef884316f5"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "四个共同目录主题、三名单位提供者、空根背景、30名单位客户。每个首动作只规定一个两人终局；被检验的规则只保全部四条根分支比较和每枝两条half标量。",
+  "roles": {
+    "customer-attraction/closeout-45713eb3e7b095f5dfee683f": "提供固定30单位客户、四条响应及致命实际末位偏离的精确账本。",
+    "M-754ec9998ee4470baedc8aef884316f5": "结论为这组根比较与双标量摘要不足以逻辑推出根half。"
+  },
+  "explanation": "将mask 2,3,4,5,8,9依次展开为9,1,7,3,7,3个单位客户。固定0→(2,2)、1→(1,2)、2→(2,3)、3→(2,3)。按所有四个首动作及每枝十个允许重复的主题对精确枚举，首位收益都为5。按(P,G,F₂,M₂)排序，首枝为(9,7,18,16)，后三枝均(15,10,20,20)，故F₂≤2P且M₂≤G+P在每枝成立。实际终局(0,2,2)的W=14，主题(1,2,3)覆盖全部30人，故2W−OPT₃=−2。根首主题0覆盖7，后续新增最优16，机会损失δ=30−7−16=7；首位收益5，实际孩子余额G+P−M₂=0，代数分解保留精确2单位未付信用。在真实有序历史(0,2)直接查四个末动作，收益依次(3,19/2,9/2,17/2)。指定2改为1可多得5，违反同一历史的末位IC。重新引入真实子局激励或可认证信用仍需相应证明。",
+  "scope": "仅反驳以四条根比较和逐首动作双标量摘要作全部假设的通用一步闭合规则。该响应的末位IC失败，作用域止于信息投影分离。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/动态信用一步闭合标量反例--反例.md",
+      "sha256": "8dd16cc8df1c5d8b818de3df2a657410399ccdac82880bd6f0130c4f4e7ab33c",
+      "section": "精确记录"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/动态信用一步闭合标量反例--反例.md",
+      "sha256": "8dd16cc8df1c5d8b818de3df2a657410399ccdac82880bd6f0130c4f4e7ab33c",
+      "section": "致命均衡缺口"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/dynamic-credit-one-step-exact-20261031/original/one_step_closure_exact.json",
+      "sha256": "d72cada94e17d905aaaa3035815cf84210e267bfab7a0e8b6c5563543f133674"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/dynamic-credit-one-step-obstruction-20261031/original/one_step_closure_obstruction.md",
+      "sha256": "46612875983e83739d3968fff56673ebf15d38db57837e3862119e2d10385e3b",
+      "section": "被否定的通用闭合规则"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R12动态信用查询分支容量与覆盖付款义务--审查.md",
+      "sha256": "cd4a19dd5e1294523c609ef86c62fcde9cdb1ac43293573e028c7cfae19c0eb6"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/背景新增覆盖余额与首步分解--引理.md",
+      "sha256": "46a4cdc87ee03067d28d70ecffda8ced7949c1988754b81fb1a8dbdfff731d9b",
+      "section": "精确分解及充分归纳的原理"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    }
+  ],
+  "reviewed_by": "Boss1-customer-attraction-map-worker",
+  "review_note": "核原JSON与R12重放字节相同，按单位客户另算四个根收益、40个主题对、20个三题多重集及实际末位四个动作；区分精确余额恒等式、被否的标量规则和仍待真实付款的后续方案。",
+  "whole_result": "该精确实例使四个首动作的根比较、F₂≤2P及M₂≤G+P全部成立，且实际根2W−OPT₃=−2，故足以证明登记的标量一步闭合障碍。实际历史(0,2)的合法末位偏离由9/2升至19/2，显示该固定响应未满足完整SPE。",
+  "endpoint_pins": {
+    "M-754ec9998ee4470baedc8aef884316f5": "fe873e1c600ed21b77ce7857b4554757c6e9dafaa2cb681067bd9d423007bc96",
+    "customer-attraction/closeout-45713eb3e7b095f5dfee683f": "14ea6cb252c564530c75878fe655bb08a4d77070fe4d781c62b21c1c2459d02b"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/动态信用一步闭合标量反例--反例.md": "8dd16cc8df1c5d8b818de3df2a657410399ccdac82880bd6f0130c4f4e7ab33c",
+    "archives/customer-attraction/tools/evidence/dynamic-credit-one-step-exact-20261031/original/one_step_closure_exact.json": "d72cada94e17d905aaaa3035815cf84210e267bfab7a0e8b6c5563543f133674",
+    "archives/customer-attraction/tools/evidence/dynamic-credit-one-step-obstruction-20261031/original/one_step_closure_obstruction.md": "46612875983e83739d3968fff56673ebf15d38db57837e3862119e2d10385e3b",
+    "archives/customer-attraction/state/审查/R12动态信用查询分支容量与覆盖付款义务--审查.md": "cd4a19dd5e1294523c609ef86c62fcde9cdb1ac43293573e028c7cfae19c0eb6",
+    "archives/customer-attraction/state/引理/背景新增覆盖余额与首步分解--引理.md": "46a4cdc87ee03067d28d70ecffda8ced7949c1988754b81fb1a8dbdfff731d9b",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "c5bbab61a599c0205b2f2e5713ff5c0cfb43e1d631c04cefd5b7012f0690e2d2"
+}

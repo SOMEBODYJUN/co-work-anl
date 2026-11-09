@@ -1,0 +1,82 @@
+{
+  "edge_id": "cag-09a6-capacity-price-excludes-fixed-5692-z",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/shared-true-terminal-reply-query-portfolio-and-reweighted-requery"
+  ],
+  "target_ids": [
+    "customer-attraction/same-source-requery-and-capacity-price-three-cut-packs"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "六名单位提供者在有限非空共同标签目录逐次行动，收益按客户均分，真分支取同一份完整有序历史纯SPE。比较点为all_menu_prices_exact.json，SHA-256 46e52c1cec4a5cac3e6d7fe3bbe8d227cd663e428ca7f4e955182343eedb418e，5692行4849列。",
+  "roles": {
+    "customer-attraction/shared-true-terminal-reply-query-portfolio-and-reweighted-requery": "在一个被强制源的同一真末回复上合并查询、实际末价与共同容量，再对隐藏后继取下包络。",
+    "customer-attraction/same-source-requery-and-capacity-price-three-cut-packs": "给出目标中容量组合的三条精确回代及其中独立足以排除固定点的Z边缘负行。"
+  },
+  "explanation": "取实际第三位为源，在对角(1,1)强制Z_e；其后有三名真实后继。coupled_pending_cuts.json的portfolio第2条取(α_mid,α_last,β_mid,β_last)=(2/27,1/27,0,2/27)，μ仅在零基查询5、即A₆为1/9。源IC付一次，两中间位和末位的实际末价合计(5/27)u₆，容量付(2/27)K。末位G的查询IC与这些行先合，再在s=0,1,2与g=0,1上取min。将对角轨道六个有名索引等权平均。hist列用强制主题会员t=0的客户下包络平均，joint列在选定会员为1时用相应组的ψ(1)−ψ(0)增量；写成左预算减成本时两项取负号，隐含00由hist扣出。实际源收益、actual末位预算及K各付一次。按1905个相同非weight描述符逐项对齐，新增2944列及全部overlap系数为零。对第1条改用对角R和query11，对第3条改用非对角(0,0)的R和query8，并分别以冻结参数和6/30条边归一回代；两条均严格正。第2条为−559113009698517261062340226321213592344534477/421058902326356095468744675685368013986415672052。",
+  "scope": "对保留该固定点所用K、hist和具名回复边缘的每个完整SPE补全成立；可行性只量化同一SHA输入在已列5692行中的表现。承担排除的第2行读取对角Z会员，另两条R边缘回代提供正号对照。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/共享真实末回复的组合查询投影与同源重配权--引理.md",
+      "sha256": "a3e5fdcf1e47c919d5b6f500b07d4fc371ac482c924b39213c6fb2d591f3c08c",
+      "section": "同一真实源的组合查询恒等式"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/共享真实末回复的组合查询投影与同源重配权--引理.md",
+      "sha256": "a3e5fdcf1e47c919d5b6f500b07d4fc371ac482c924b39213c6fb2d591f3c08c",
+      "section": "同价中间人数压缩及PAIR端点"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/共享真实末回复的组合查询投影与同源重配权--引理.md",
+      "sha256": "a3e5fdcf1e47c919d5b6f500b07d4fc371ac482c924b39213c6fb2d591f3c08c",
+      "section": "六比较索引的标签与13到16菜单"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/同源再查询与容量报价的三份冻结切面包--计算.md",
+      "sha256": "a246e9abe3549f7547a843441f6d7b9ed5133c8c4d6c61d9bb75440e7cb772f6",
+      "section": "共享末回复的组合价格"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/同源再查询与容量报价的三份冻结切面包--计算.md",
+      "sha256": "a246e9abe3549f7547a843441f6d7b9ed5133c8c4d6c61d9bb75440e7cb772f6",
+      "section": "由真实行到保存坐标"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/requery-capacity-cut-packs-boss3/original/research/workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/research_3/coupled_pending_cuts.json",
+      "sha256": "0f97192f11c330976aa391b0aea979fff60009b46e4a98b16825113672e793f0"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/b-family-menu-prices-boss3/original/research_2/all_menu_prices_exact.json",
+      "sha256": "46e52c1cec4a5cac3e6d7fe3bbe8d227cd663e428ca7f4e955182343eedb418e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/requery-capacity-cut-packs-boss3/runs/all-sparse-row-coefficients.json",
+      "sha256": "8e004991ddda4ff0931f843504af020166eb6619aa4b8b9da1a3ace33b597717"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/requery-capacity-cut-packs-boss3/runs/pending-at-5692-and-record-identities.json",
+      "sha256": "e32abc30657f1677a63f15940aa28475b2534e87d0fdc90718f0ae09e3e8b368"
+    }
+  ],
+  "reviewed_by": "Boss1-customer-attraction-map-worker",
+  "review_note": "对读同源组合投影、13/16菜单、单查询容量特化和固定点字段；按字面后继位重构冻结向量，精确比较原点与指定新点。",
+  "contribution": {
+    "result": "portfolio三个回代的符号为正、负、正；第2行K系数2/27，并单独排除保留固定5692点的K、hist、对角Z边缘的完整SPE补全。",
+    "remaining": "同一目标还要求支付使用不同R边缘的七条真行组合、对角query8/11的系数恒等及两类不同负行的核对；该部分由同源重查询边承担。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/same-source-requery-and-capacity-price-three-cut-packs": "8ee1cafae1c788b440171444160548b431f6633f0ff57ce2c98e3f359a52bd77",
+    "customer-attraction/shared-true-terminal-reply-query-portfolio-and-reweighted-requery": "913a2a8a954b0ed8c48e7fc5462d0021afbe2540916994444f39529e323404d9"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/共享真实末回复的组合查询投影与同源重配权--引理.md": "a3e5fdcf1e47c919d5b6f500b07d4fc371ac482c924b39213c6fb2d591f3c08c",
+    "archives/customer-attraction/state/计算/同源再查询与容量报价的三份冻结切面包--计算.md": "a246e9abe3549f7547a843441f6d7b9ed5133c8c4d6c61d9bb75440e7cb772f6",
+    "archives/customer-attraction/tools/evidence/requery-capacity-cut-packs-boss3/original/research/workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/research_3/coupled_pending_cuts.json": "0f97192f11c330976aa391b0aea979fff60009b46e4a98b16825113672e793f0",
+    "archives/customer-attraction/tools/evidence/b-family-menu-prices-boss3/original/research_2/all_menu_prices_exact.json": "46e52c1cec4a5cac3e6d7fe3bbe8d227cd663e428ca7f4e955182343eedb418e",
+    "archives/customer-attraction/tools/evidence/requery-capacity-cut-packs-boss3/runs/all-sparse-row-coefficients.json": "8e004991ddda4ff0931f843504af020166eb6619aa4b8b9da1a3ace33b597717",
+    "archives/customer-attraction/tools/evidence/requery-capacity-cut-packs-boss3/runs/pending-at-5692-and-record-identities.json": "e32abc30657f1677a63f15940aa28475b2534e87d0fdc90718f0ae09e3e8b368"
+  },
+  "review_digest": "0154a62891c92673f11523de7e26e294bb11fd19413f095716340f2e2629321c"
+}

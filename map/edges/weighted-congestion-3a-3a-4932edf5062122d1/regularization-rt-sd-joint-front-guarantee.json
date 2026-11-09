@@ -1,0 +1,82 @@
+{
+  "edge_id": "wc-boss5-4932-regularization-rt-sd-joint-front-guarantee",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/common-scale-full-welfare-regularization",
+    "WC-FRONT-CORE-STABLE-SET-TRANSFER-v1",
+    "WC-SOCIALLY-DESCENDING-REPAIR-v1"
+  ],
+  "target_ids": [
+    "WC-REGULARIZED-CORE-REPAIR-QUALITY-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限基体次数≤p，全部真实可变插入满足跨资源共同h_i>0的[h_i c,α0 h_i c]合同；完整W_B=Σ_iw_iC_i^B含必用者。仅全部前沿态需0<m≤M<∞及mW_B≤Φ_B≤MW_B。有限η≥0，sη为前沿F上Φ_B+ηW_B的任意全局最小点。每非平凡类以新βη核RD:v>βη(B+Lu)，且SD:3v−2u−z>(p+1)B。",
+  "roles": {
+    "weighted-congestion/common-scale-full-welfare-regularization": "提供可逐边复用的社会插入界、共同正则尺度、删增保留势差和完整社会基线恢复；其全策略域PNE结论不直接套非积前沿。",
+    "WC-FRONT-CORE-STABLE-SET-TRANSFER-v1": "以新βη将前沿受限稳定提升到扩充游戏全部真实偏离，并排除离前沿改善。",
+    "WC-SOCIALLY-DESCENDING-REPAIR-v1": "以SD支付全部社会外部性，给完整OPT+=K+min_F W_B及K≥0。",
+    "WC-REGULARIZED-CORE-REPAIR-QUALITY-v1": "得到前沿任意全局最小点的完整βη稳定和相对完整OPT的λη质量。"
+  },
+  "explanation": "这里给出需要的域桥，不把F当普通子游戏。对每资源真实插入新负载Y、旧Y−w，非负次数≤p给w_i c(Y)≤Δ[xc(x)]≤(p+1)w_i c(Y)。于是正则资源势的共同新尺度h_i′=h_i+ηw_i，上边际≤βη h_i′c(Y)，βη=max_i(α0h_i+η(p+1)w_i)/(h_i+ηw_i)≥1。现只取两端sη,t均在F的一次真实单人偏离：删除、新增、保留费用记A,B,H≥0，保留资源用户/负载不变而取消，故ΔΨ≤h_i′(βη B−A)。若当前费A+H>βη(B+H)，则A>βηB，得ΔΨ<0，矛盾于F上全局最小；因此所有front-to-front基体偏离βη稳定。RD必须在这个βη核验；RT使离前沿偏离不改善，保前沿门margin额外为−(βη−1)r_i u≤0，因此sη是完整G+的βη-PNE。取o∈argmin_F W_B，全局最小性仅比较这两前沿态，给(m+η)W_B(sη)≤Ψ(sη)≤Ψ(o)≤(M+η)W_B(o)，所以λη=(M+η)/(m+η)≥1。SD另给OPT+=K+min_F W_B，故W+(sη)=K+W_B(sη)≤K+λη min_F W_B≤λη OPT+，不除OPT。若3βη≥p+1，RD用L≥1,z≤u推出SD。必用背景已吸收时，源定理的特定恢复Fhat=Fopt+q_min b c(b)不改局部边/argmin；对完整W重证粗m=q_min/(p+1)、M=α0 q_max后上述比较才合法。没有把可动者费用或归零势偷换为完整W。",
+  "scope": "完整联合目标的推导；域桥由本边逐式证明，原全策略域定理没有被直接限制成一个不存在的笛卡尔积子游戏。局部最小只给受限稳定，目标gap不自动稳定；全局求解效率另有独立计算前件，非本边承诺。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/共同尺度势的稳定与全社会成本正则化--定理.md",
+      "sha256": "c55c041ea1d065a2b74e19ebb84a36cc1e53b42f62f37380a5ad1da07cd29a5f",
+      "section": "共同边际与完整证明"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/共同尺度势的稳定与全社会成本正则化--定理.md",
+      "sha256": "c55c041ea1d065a2b74e19ebb84a36cc1e53b42f62f37380a5ad1da07cd29a5f",
+      "section": "逐资源必用背景的全社会成本修复"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md",
+      "sha256": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f",
+      "section": "全部稳定集合的三分支证明"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/锚定门的社会费用分解与最优压缩--定理.md",
+      "sha256": "dc6b751a584d2f2bc89e8aa092c8d5c2bcf6339c1d108f3499d85d96115e8f1d",
+      "section": "真实基体社会外部性的完整上界"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/锚定门的社会费用分解与最优压缩--定理.md",
+      "sha256": "dc6b751a584d2f2bc89e8aa092c8d5c2bcf6339c1d108f3499d85d96115e8f1d",
+      "section": "社会下降、完整OPT和个体稳定的不同条件"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/正则化核心的稳定与社会质量联合转移--定理.md",
+      "sha256": "b30c141a5a855315fca9713b4abfbdf73f456993594aed8782b1895c73d42cb3",
+      "section": "完整输入与结论"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/正则化核心的稳定与社会质量联合转移--定理.md",
+      "sha256": "b30c141a5a855315fca9713b4abfbdf73f456993594aed8782b1895c73d42cb3",
+      "section": "自足联合证明"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/正则化核心的稳定与社会质量联合转移--定理.md",
+      "sha256": "b30c141a5a855315fca9713b4abfbdf73f456993594aed8782b1895c73d42cb3",
+      "section": "必用背景：稳定吸收不等于社会费用吸收"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "逐式实读本边列明的现行自足证明，核模型、量词、全部真实偏离、零费与严格/弱端点；历史审查和有限计数不充当一般证明。本轮未运行旧审计程序。",
+  "whole_result": "全部目标联合合同：每个前沿全局最小sη，在所写共同尺度/完整包络、新βη的RD与SD下，均为完整G+的βη-PNE且W+(sη)≤K+λη min_F W_B≤λη OPT(G+)；保留3βη≥p+1时RD⇒SD及特定必用背景恢复的粗包络。",
+  "endpoint_pins": {
+    "WC-FRONT-CORE-STABLE-SET-TRANSFER-v1": "f784bf003aec5e448acc4942163bf0653cb8a0549b31383d3b26c53e779153c5",
+    "WC-REGULARIZED-CORE-REPAIR-QUALITY-v1": "864c3e829ebea513947dc13232660647e486dad29697a2b4dfc17c90670fb324",
+    "WC-SOCIALLY-DESCENDING-REPAIR-v1": "7a4a6f8c4cc8b73e935e0f26487e186911e7f24bd987b9e3c18c39a053a50b94",
+    "weighted-congestion/common-scale-full-welfare-regularization": "2064d4dcea77a85b0b3d5cd4a82fa4f44edcbc717a4f920fcc146fc65e9fe005"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/共同尺度势的稳定与全社会成本正则化--定理.md": "c55c041ea1d065a2b74e19ebb84a36cc1e53b42f62f37380a5ad1da07cd29a5f",
+    "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f",
+    "archives/weighted-congestion/state/定理/锚定门的社会费用分解与最优压缩--定理.md": "dc6b751a584d2f2bc89e8aa092c8d5c2bcf6339c1d108f3499d85d96115e8f1d",
+    "archives/weighted-congestion/state/定理/正则化核心的稳定与社会质量联合转移--定理.md": "b30c141a5a855315fca9713b4abfbdf73f456993594aed8782b1895c73d42cb3"
+  },
+  "review_digest": "5ff34a6dfd78a14b51032503071595a8d6ace54e648d5d146167d45b9b067220"
+}

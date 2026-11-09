@@ -1,0 +1,40 @@
+{
+  "edge_id": "wc-b5-4932-gap-moment-pays-real-root-jensen",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/extremal-DAG-weight-gap-moment"
+  ],
+  "target_ids": [
+    "weighted-congestion/extremal-all-in-root-rational-bound"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "非空有限simple DAG的对称双列binary策略；根权1，正轻权W<1且t_v=Σ_out w_u<w_v；q>1、h_v=(1+Σ_in h_u)/q、Σh=q−1；两列同费非零非负系数degree≤d多项式，整数d≥1；同一A>0满足p0(1)=A、pv(1+w_v)=Ah_v。",
+  "roles": {
+    "weighted-congestion/extremal-DAG-weight-gap-moment": "提供μ=Σh_vδ_v≤W/q<1/q及正缺口δ_v=w_v−t_v；是Jensen的加权一阶矩。",
+    "weighted-congestion/extremal-all-in-root-rational-bound": "把缺口矩转换为根真实冻结偏离的严格包络，并与轻玩家逐项真实比较合并。"
+  },
+  "explanation": "共同除A后根旧费用为1+Σh=q。根翻列时卫星真实新负载是1+t_v，因此新费≥1+Σpv(1+t_v)；非负系数次数界逐项给pv(1+t_v)≥h_v((1+t_v)/(1+w_v))^d≥h_v(1+δ_v)^−d。g(x)=(1+x)^−d在x≥0递减且凸，T=Σh=q−1，所以Σh g(δ)≥Tg(μ/T)>Tg(1/[qT])，最后严格号来自μ<1/q。根比严格小于q/[1+(q−1)(1+1/[q(q−1)])^−d]。轻玩家v的完整旧费p0(W)+Σ_in pu(t_u)+pv(1+w_v)≤(q+1)h_v；其新费p0(1+w_v)+Σ_in pu(1+w_u+w_v)+pv(w_v+t_v)≥qh_v>0。两动作穷尽全部偏离，轻比≤1+1/q，合得指定全入均衡。",
+  "scope": "仅固定极值幅度(N)子类；没有删低端真实费用，没有调用低漏端点条件(E)，也没有任意振幅正规化。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+      "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c",
+      "section": "总权重的缺口矩"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+      "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c",
+      "section": "根偏离的Jensen包络"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+      "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c",
+      "section": "所有轻玩家的真实偏离"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "已逐段完整实读当前对象及必需证据，重核模型、全部真实偏离、量词、边界和本边承重推导；历史有限审计仅保其实际范围，本轮未以计数替代一般证明。",
+  "whole_result": "在所写全部合法多项式形状和权下，根旧费qA，真实新费≥A[1+Σh_v(q)(1+δ_v)^−d]>A[1+(q−1)(1+1/[q(q−1)])^−d]，故根改善比严格小于B_d(q)；每个轻玩家比至多1+1/q，真实全入状态为max{1+1/q,B_d(q)}-PNE。"
+}

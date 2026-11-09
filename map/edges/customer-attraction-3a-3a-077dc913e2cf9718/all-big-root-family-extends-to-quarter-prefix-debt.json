@@ -1,0 +1,48 @@
+{
+  "edge_id": "cag-r18-all-big-root-family-extends-to-quarter-prefix-debt",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-R18-DYNAMIC-PROFIT-BOUNDARY-20261031"
+  ],
+  "target_ids": [
+    "M-c94b4c375a4c42afbc8db81353ee6521"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "沿用有限单位客户及单位提供者的共同目录。每个整数 m≥2 的原目录含一题 A 覆盖 m 个客户，及 m−1 个两两不交且与 A 不交的单客户叶。给定原完整纯策略在每个有序历史恒选 A。公式中的 t 为真实路径 A^m 的整数前缀深度，1≤t≤m−1。",
+  "roles": {
+    "CA-R18-DYNAMIC-PROFIT-BOUNDARY-20261031": "提供每个 m≥2 的具体合法目录、全部有序历史的恒 A 完整 SPE、逐人最终收益 1 及根最优覆盖 2m−1。只用此构造与收益，首步系数发散结论无需作为后续最值的黑盒。",
+    "M-c94b4c375a4c42afbc8db81353ee6521": "同一构造的所有内部实际前缀的剩余利润机会闭式、四分之一深度的线性负余额及正确的端点余额。"
+  },
+  "explanation": "固定真实前缀 A^t 与剩余 r=m−t。任一恰 r 槽比较组合若含 s 次 A，A 客户的剩余玩家份额是 ms/(t+s)。其余 r−s 槽至多覆盖 r−s 个无背景的不同叶客户，取各不相同的叶可达到上界，因为 r−s≤m−1。因此令 j=t+s，得到 F_(m−t)(t·1_A)=2m−min_{j∈Z, t≤j≤m}(j+mt/j)。用实际利润总和 Σ_{i≤t}u_i=t 及 OPT_m=2m−1，余额 Q_t=2t+1−min_j(j+mt/j)。m=4k、t=k 时 AM–GM 给 j+mt/j≥4k，整数 j=2k 达等号，因此 Q_k=1−2k。t=m−1 时可用 j=m−1 或 m，二者最值均为 2m−1，因此 F_1=1 且 Q_(m−1)=0。t=0 和 t=m 分别直接用 F_m(0)=OPT_m 和 F_0=0 得 Q_0=0、Q_m=1。",
+  "scope": "精确覆盖 m≥2 的原全历史恒 A 家族及其 1≤t≤m−1 的实际前缀，线性值适用 m=4k、k≥1。整族的根福利满足 OPT_m=2W−1，允许跨步偿还的全路径预算可与中间负值共存。",
+  "whole_result": "从原根障碍的显式全 m 目录、完整策略及实际利润，推出目标对象在声明域上的 F 与 Q 闭式、Q_k=1−m/2 的线性前缀欠债和 Q_(m−1)=0、Q_m=1 的后期清偿。由 k 任意增长，所有前缀的负余额无法被人数无关常数控制。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/R-18动态利润机会与非局部势边界--障碍.md",
+      "sha256": "a5d4129eb253c4e393330767c6867fc274a70d7fcb02b4186f18750020e3fe10",
+      "section": "任意人数的完整历史反族"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/R-18动态利润机会与非局部势边界--障碍.md",
+      "sha256": "a5d4129eb253c4e393330767c6867fc274a70d7fcb02b4186f18750020e3fe10",
+      "section": "线性深度的线性利润欠债"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md",
+      "sha256": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按原目录核比较尾的每个 A 次数类同时有上界与可达构造，分开处理根、末位和终局；有限审计用于核验已给策略与公式实现，解析推导承担全 m 量词。",
+  "endpoint_pins": {
+    "CA-R18-DYNAMIC-PROFIT-BOUNDARY-20261031": "8f20e4954ccbb5ca1f2c580b1a9c1751ab2d98be60d214e3b98e1fb95ee67cac",
+    "M-c94b4c375a4c42afbc8db81353ee6521": "7141ca9ea2cecd3317897d204fcdc6a6960a56d0ab642074dd488fd5ad75a20a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/R-18动态利润机会与非局部势边界--障碍.md": "a5d4129eb253c4e393330767c6867fc274a70d7fcb02b4186f18750020e3fe10",
+    "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee"
+  },
+  "review_digest": "3415ca99c8f13e313061aefc5d3b18d6b436a67eee0e7a9ef6ddc8de50c225f7"
+}

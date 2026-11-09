@@ -1,0 +1,52 @@
+{
+  "edge_id": "cag-r18-five-player-local-failure-still-pays-at-root",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-8b73e401c13a40d689cd4d750265c5a8"
+  ],
+  "target_ids": [
+    "M-fec05c0478c149c09227f2c9dc18748a"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "仅限源对象的固定五位单位提供者、12单位客户、三标签共同目录。目标 PAY 的前缀取空有序历史，k=m=5，所有背景 b_x=0，E=0；最优比较元组为 (A,A,B,C,C)，使用原式合法参数 t=20/13。",
+  "roles": {
+    "M-8b73e401c13a40d689cd4d750265c5a8": "提供固定目录的四种真实单位客户重数及一个在实际第二位严格失付的完整 SPE。PAY 的根计算只使用该目录，所以同一个 PAY 证书适用于该固定目录的每份完整 SPE。",
+    "M-fec05c0478c149c09227f2c9dc18748a": "给出根为允许前缀、比较元组必须真正最优及精确逐客户收费合同。"
+  },
+  "explanation": "A-only 六名、B-only 一名、AB 两名、C-only 三名。比较元组 (A,A,B,C,C) 覆盖全部 12 名客户，故为真正最优；每客户比较次数 d 的多重表是 d=1 一名、d=2 九名、d=3 两名，总次数 25。根固定扣项 Σ 2(k−2)d/[m(b+k)] 为 6·25/25=6。代入 t=20/13，三种 d 的较小仿射项分别是 4/13、8/13、44/65，其中 d=2 两支相等。故最小项总和为 4/13+9·8/13+2·44/65=36/5，收费恰为 12−6−36/5=−6/5<2E=0。每份完整 SPE 的实际根均为空前缀，故这份证书无须改变策略或认证其它路径的终局。原完整策略 CAAAA 仍在实际第二位有 F_4(1_C)−F_3(1_C+1_A)−2u_2=1/6>0。",
+  "scope": "该 12 客户固定输入的全部完整纯 SPE 有同一个合法根 PAY 证书。只需要给定参数足够付款，无须优化全部比较元组或 t。实际第二位的局部 F 机会失付与根的 PAY 付款在同一策略共存。",
+  "contribution": {
+    "result": "固定源目录的每份完整纯 SPE 都在真实根实现目标所需的存在支付。选最优五槽 (A,A,B,C,C) 及 t=20/13，精确收费 −6/5，严格低于 2E=0。",
+    "remaining": "其余共同目录和人数的一般存在前缀、最优元组及参数的联合选择仍待证明，或须给一个完整 SPE 的全部允许选择均失败的反例。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/R-18动态利润机会与非局部势边界--障碍.md",
+      "sha256": "a5d4129eb253c4e393330767c6867fc274a70d7fcb02b4186f18750020e3fe10",
+      "section": "五人实际非零背景的严格反例"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/profit-opportunity-boundary/comparison/background_step_certificate.json",
+      "sha256": "13560dfa0bc5a8392a42faf687493363dacd3352dbac3eb44245dfd5c88acf11"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/真实前缀支付的加权分位与完整路径切断--算法.md",
+      "sha256": "85a0b934af56c9eaee00fc4ac7c42d4eb90c9a5d8e87342df24989ca272f8852",
+      "section": "固定输入和原收费"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读五人实例、全部有序历史证书及 PAY 原收费。用有理数独立复核全部 363 项真实后继和根收费；根付款的全策略范围直接来自空历史，未用有限策略扫描替代量词。",
+  "endpoint_pins": {
+    "M-8b73e401c13a40d689cd4d750265c5a8": "f950b3b9d116b184f07b326450f9b3c1bf5debb9c7a2a4b6d17553041969ecb6",
+    "M-fec05c0478c149c09227f2c9dc18748a": "a950698327d11c9b9827c24a08628997cd458901d7246dc77e0b690db7f6ecb1"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/R-18动态利润机会与非局部势边界--障碍.md": "a5d4129eb253c4e393330767c6867fc274a70d7fcb02b4186f18750020e3fe10",
+    "archives/customer-attraction/tools/evidence/profit-opportunity-boundary/comparison/background_step_certificate.json": "13560dfa0bc5a8392a42faf687493363dacd3352dbac3eb44245dfd5c88acf11",
+    "archives/customer-attraction/state/算法/真实前缀支付的加权分位与完整路径切断--算法.md": "85a0b934af56c9eaee00fc4ac7c42d4eb90c9a5d8e87342df24989ca272f8852"
+  },
+  "review_digest": "dc309a596af5243eae427f4ccd3b3170c9e274275f2a22e9a3fbf437eba354bc"
+}
