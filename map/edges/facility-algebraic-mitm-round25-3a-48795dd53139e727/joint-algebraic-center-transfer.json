@@ -1,0 +1,73 @@
+{
+  "edge_id": "facility-algebraic-center-half-table-from-rational-search-and-closed-spectrum",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "facility-games/threshold-meet-in-middle-objectives-and-response-pruning",
+    "M-b5488c2696964ec58745ce5426f2b777"
+  ],
+  "target_ids": [
+    "facility-games/threshold-half-table-with-isolated-algebraic-center"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定两家带标签设施，非负二进制有理背景 A,B，显式列出的 n 名正二进制有理权重公共客户，独立混合且条件成本包含自重。给显式稠密平方自由整数多项式 P 及端点非根、含唯一实根 θ 的有理开隔离区间 (a,b)。f 在 θ 左侧（含 θ）非增、右侧（含 θ）非减，能精确比较实际生成的候选差距处的目标值；一般目标的比较成本单独计入。",
+  "roles": {
+    "facility-games/threshold-meet-in-middle-objectives-and-response-pruning": "v4 提供按差距符号及重前缀枚举、三态半表按 (m,z) 去重与排序、固定左状态及右混合人数后搜索两侧邻居或整段截取。延用的是局部搜索结构。",
+    "M-b5488c2696964ec58745ce5426f2b777": "v3 给全部独立混合 NE 的闭支持方程、各纯态和名义混合态的门槛以及逐客户恢复；单混合者的整闭区间保证无理中心若落在谱内确有实际均衡。",
+    "facility-games/threshold-half-table-with-isolated-algebraic-center": "在保留两个来源共同适用的局部模型及闭边界下，以精确有理数对孤立根比较替换中心比较，得到同一指数阶的实代数中心优化与共享根仿射输出。"
+  },
+  "explanation": "令 V=A+B+Σw_i，δ=A−B。闭谱中 c_i=w_i(2p_i−1)，条件成本差为 Δ−c_i。纯第一、纯第二、名义混合分别要求 Δ≤w_i、Δ≥−w_i、|Δ|≤w_i；名义混合含概率 0、1。取 w_1≥⋯≥w_n、w_0=V、w_{n+1}=0。对符号 ε∈{−1,1} 和重前缀长度 h 使用闭壳 w_{h+1}≤εΔ≤w_h，写其差距区间为 [l,u]；轻后缀总重 ℓ，统一纯选低侧。壳内前缀所有状态满足重量门槛，后缀选低侧也合法。对任一真实 NE，可把全部 w_i≥|Δ| 的客户纳入前缀，较轻客户已被迫纯选低侧，故这些壳覆盖真谱。Δ=0 可取全前缀；等重和闭端点的重复只改变见证，n=0 时方程直接给 Δ=δ。前缀平分，每半枚举纯第一、纯第二、名义混合，以人数 m 和纯符号和 z 去重并保一份支持。固定左状态 (m_L,z_L) 和右组 m_R 时，令 c=1−m_L−m_R，d=δ−εℓ+z_L，则 cΔ=d+z_R。壳内所有门槛对同状态相同，所以保一个见证足够。若 c≠0，两次有理二分给排序右表与闭区间 [min(cl−d,cu−d),max(cl−d,cu−d)] 的相交范围。目标右和 T=cθ−d。比较 T 与有理右和 z_R 等价于按 sign(c) 调整 θ 与 (z_R+d)/c 的比较；一般有理仿射式在系数为零时直接作有理比较。比较 θ 与有理 r 时，r≤a 或 r≥b 直接判边。a<r<b 时，P(r)=0 当且仅当 r=θ；否则同 P(a) 符号当且仅当 r<θ。平方自由使唯一隔离根为单根并翻号，区间中无其他根。取 r=u_r/v_r、v_r>0，通过整数霍纳法评估 v_r^deg(P)P(r)，数值位长和计算成本均为输入多项式。在相交右表二分 T，只需考察第一个不小于 T 的右和及其前驱中确实存在的项；相等的中心本身已达到该组最优。c<0 反转差距次序，两项仍对应中心两侧各自最近的可行差距。由各侧单调性，其中一项达到该组最优，不可只按绝对距离任选一侧。若 c=0，精确查有理右和 z_R=−d；命中时 cΔ=d+z_R 对整个闭 [l,u] 成立，按根比较取 θ 在该闭区间的截点。截点是有理端点或 θ，包含 l=u 和 θ 恰好等于端点的情形。遍历全部壳、左状态和右混合数组，对这些候选精确比较目标值并选一份支持。非空性可由把公共客户按权非增依次放到当时低负载侧看出：最终高侧若有公共客户，该侧最后放入者的重量至少最终差距，此侧更早客户更重；低侧客户均无改善。恢复 p_i 为 0、1 或 1/2+Δ/(2w_i)，L_1=(V+Δ)/2、L_2=(V−Δ)/2；所有输出可取同一个根描述和有理仿射系数。全部有理符号和与阈值的分母整除输入分母乘积，除以非零 c 时至多再乘 max(1,n)，恢复概率另用单个 w_i 与常数 2；二分参数、成对中点和仿射系数位长均为 poly(n,L)。稠密表示令次数与系数位长受 L 控制，霍纳中间整数至多需关于次数、系数及 r 分子分母位长的多项式位数。每半至多 3^⌈n/2⌉ 条状态，壳数、右组数、排序、二分和回溯均只带多项式因子，不作左右支持笛卡尔积。若 f(Δ)=|Δ−θ|，候选 θ 的距离为零；两个有理候选在同侧按有理次序比远近，异侧 r<θ<s 时 f(r)≤f(s) 当且仅当 θ≤(r+s)/2，精确处理等号。只用原根比较器即可，包含 θ 本身有理的情况。",
+  "whole_result": "对每个上述局部输入及有效隔离中心，沿 v4 半表并按 v3 闭谱恢复，在 poly(n,L)·3^⌈n/2⌉ 位时间和位空间内（一般目标的精确比较成本另计）输出一个全谱上真正最优的精确独立混合客户 NE。其差距为有理数或 θ，每个概率与负载可由共享 θ 和有理仿射系数表示；绝对距离目标的全部比较可在同一位界内完成。L 包括局部数值输入和代数中心描述总位长。",
+  "scope": "这是固定布局的单谷精确查询与表示迁移，给一个最优见证。旧 Fraction 入口 optimize_pair 的 t_0 仍为有理，其全局遍历和 lazy 环分支不承载本边结论。精确输出边界可用 A=B=0、唯一公共权重 1 的谱 [−1,1] 检查：2T²−1 在 (0,1) 的根 θ=√(1/2) 是 |Δ−θ| 的唯一最优差距，必须取无理 p=(1+θ)/2；旧文分段三次目标也在该点唯一取最优，虽然在有理点均可有理精确求值。反例只排除允许该无理中心仍强制有理精确输出的加强合同。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
+      "sha256": "3f89e2adde3fd647ec4834d9955d1441f79cd6c7e2b7be3d735b4c9f624dcc49",
+      "section": "局部查询的确切输入与保证"
+    },
+    {
+      "path": "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md",
+      "sha256": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1"
+    },
+    {
+      "path": "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md",
+      "sha256": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+      "section": "阈值压缩是完整谱的等价表示"
+    },
+    {
+      "path": "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md",
+      "sha256": "97ecba6feca16fb7302e2454e785f2d84240a8e2c7a2a561f3bbb278217d15ab",
+      "section": "A11.5 MITM：用两半支持避免全笛卡尔积"
+    },
+    {
+      "path": "archives/facility-games/state/算法/单谷半表的实代数目标中心与精确仿射见证--算法.md",
+      "sha256": "4ffd279eaa5924aa22d2c7e776ea83afaf74a9a9e4f4ea079d7c866124d4348a"
+    },
+    {
+      "path": "archives/facility-games/tools/evidence/local-exact/original/facility_spe/exact/mitm.py",
+      "sha256": "948b57a1bc1f052bdce9a2fcf136a2cf43d8d7c84e01e99d8b8601d7ed37e37d"
+    },
+    {
+      "path": "archives/facility-games/tools/verify-algebraic-center-half-table.py",
+      "sha256": "3af86e6b64b380cd4741e7cb1c9745b9530669be2b2f40d6c5d57e914ffc5106"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐式核对 v4 的中心插入与 v3 的闭支持全覆盖，核正负 c、端点相等、n=0、m=1 精确抵消、有理位界及共享根输出。全结论用同一 ALL。原 Fraction 实现与代数表示的有限核验分别复跑，后者只检查绝对距离；一般目标的比较合同由解析证明单列。",
+  "endpoint_pins": {
+    "M-b5488c2696964ec58745ce5426f2b777": "2611ce2df7c0a747fd7d6943fd03d557d87ae8e08af35622ed0d6d6161725b6e",
+    "facility-games/threshold-half-table-with-isolated-algebraic-center": "add84e91c7aac20c31006abb5781f869f667ae91eb854670ce8ac4f8e36b461e",
+    "facility-games/threshold-meet-in-middle-objectives-and-response-pruning": "9e83c78342505c7400edc47f214924566a92f38eadd4877e8e8f4c6af45c5a8a"
+  },
+  "evidence_pins": {
+    "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md": "3f89e2adde3fd647ec4834d9955d1441f79cd6c7e2b7be3d735b4c9f624dcc49",
+    "archives/facility-games/state/定理/两设施原子客户的完整混合均衡负载谱--定理.md": "ffb3830ed049c1417a00d9c50996573fd5f019428eb27c94070ff2c7dcf93ab1",
+    "archives/facility-games/state/算法/两设施均衡谱的阈值动态规划与权类参数化--算法.md": "d0c56a119fa967939eb70f2b02059452e8a485643d6fec0fcfd16e64d27ee1dc",
+    "archives/facility-games/state/证明/闭支持精确算法与局部困难性的完整教学推导--证明.md": "97ecba6feca16fb7302e2454e785f2d84240a8e2c7a2a561f3bbb278217d15ab",
+    "archives/facility-games/state/算法/单谷半表的实代数目标中心与精确仿射见证--算法.md": "4ffd279eaa5924aa22d2c7e776ea83afaf74a9a9e4f4ea079d7c866124d4348a",
+    "archives/facility-games/tools/evidence/local-exact/original/facility_spe/exact/mitm.py": "948b57a1bc1f052bdce9a2fcf136a2cf43d8d7c84e01e99d8b8601d7ed37e37d",
+    "archives/facility-games/tools/verify-algebraic-center-half-table.py": "3af86e6b64b380cd4741e7cb1c9745b9530669be2b2f40d6c5d57e914ffc5106"
+  },
+  "review_digest": "cb3750489087fe4e80f9235388b332abed316d30724f14845c567aba00937c37"
+}
