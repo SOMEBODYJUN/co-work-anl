@@ -1,0 +1,39 @@
+{
+  "edge_id": "b5-singleton-defect-cycle-and-resource-support-give-minimum-bound",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1",
+    "WC-R1-RESOURCE-SUPPORT"
+  ],
+  "target_ids": [
+    "weighted-congestion/singleton-cohort-ring-defect-graph-equilibrium"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限标准加权拥塞，个人成本为资源费用和而非乘自身权；奇数m≥3，每cohort恰一独立light L_i权v_i>0，hub H_i权u_i>0。H_i动作h使用A_i^h及B_(i−1)^h，L_i动作l使用A_i^l及B_i^(1−l)。同组两份A同F_i，两份B同G_i，均为次数≤d的非负系数多项式，d≥2，允许零费及常数。恰两动作，没有私有动作费或第三潜在用户。真实偏离重算自身新负载，α-PNE用全部弱式成本不等式。",
+  "roles": {
+    "WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1": "在正向或经真实资源同构翻转后的严格有向缺陷循环中，排除α≥T_d的完整两测试系统；不把原测试失败直接当存在定理。",
+    "WC-R1-RESOURCE-SUPPORT": "每资源只有hub/light两位潜在用户，取r=2给全纯态总成本最小者的2-PNE，独立于2m单冲突池。",
+    "weighted-congestion/singleton-cohort-ring-defect-graph-equilibrium": "同时取得T_d-PNE在2m资源单冲突态中及全局2-PNE，故有min{2,T_d}-PNE；反取向与适用边界完整保留。"
+  },
+  "whole_result": "ALL(非负多项式奇环严格两测试包络、潜在用户支持r的总成本势)加上下述真实缺陷图推导，得到每个合法n_i=1奇环存在min{2,T_d}-PNE，其中T_d=max_(R>1)[R(1+R)^d+1]/[(1+R)^d+R^(d+1)]；T_d-PNE可选于模全局动作位翻转的2m个资源单冲突态。当2<T_d，只保证全纯态空间中的2-PNE，不声称其位于该池，也不声称min是该子类锐阈值。",
+  "explanation": "记f_d为定义T_d的标量函数。f_d(1)=1，且f′_d(1)=(2^d−d−1)/(2^d+1)>0（整数d≥2），故T_d>1；源正文已证明最大值在有限R>1达到。固定α≥T_d>1。把资源位置按A_0,B_0,A_1,B_1,…排成长度2m的循环。A_i位置冲突当h_i=l_i，B_i冲突当l_i≠h_(i+1)。若零冲突，则每步h_(i+1)=l_i=1−h_i；m奇导致回到同一hub时位反转，矛盾。指定恰一个冲突位置后，沿其余2m−1条等位/反位条件唯一决定玩家动作至一次全局位翻转；同费副本使这两态各玩家成本相同。因此恰有2m个模全局位翻转的单冲突代表。\n\n任一代表中，非冲突位置两潜在玩家在不同副本，各自负载为自身权。与冲突无关的玩家翻转后，其两个新资源负载均从自身权变为自身权加邻居权；非负非减费用使其不能严格改善。冲突的两位玩家任一翻转则消去该冲突并在相邻资源位置制造唯一新冲突。这两类可能严格改善构成2m顶点循环图的邻边；沿同一无向边，两方向是同一玩家在相同两真实成本之间往返，不能同时是严格α改善，即使费用含零也直接用乘法不等式。\n\n若所有代表都不是α-PNE，每顶点至少有一条严格改善出弧，故至少2m条；每条无向边至多容一方向，故恰2m条，且每点恰一出弧。这强制所有边一致定向成整个环。正取向的A/B相邻两类真实成本不等式正是n_i=1的完整严格light/hub两测试。若F_i≡0，则light测试要求G_i(v_i)>αG_i(v_i+u_(i+1))，不可能；若G_i≡0，则相邻hub测试与F_(i+1)单调性矛盾。故全strict取向已经支付包络要求的非零形状，各幅度取1；多项式包络源强制α<T_d，矛盾。\n\n反取向必须作真实游戏同构而不只更名。令新j对应旧i=−j mod m，H′_j=L_i、L′_j=H_i、u′_j=v_i、v′_j=u_i，保留动作位；A′_j^b=A_i^b，B′_j^b=B_(i−1)^(1−b)，F′_j=F_i、G′_j=G_(i−1)。新hub使用A′_j^h及B′_(j−1)^h，恰为旧light的A_i^h及B_i^(1−h)；新light使用A′_j^l及B′_j^(1−l)，恰为旧hub的A_i^l及B_(i−1)^l。全部玩家成本、偏离、权及同费形状保持，新正向A′_j→B′_j→A′_(j+1)对应旧逆向A_i→B_(i−1)→A_(i−1)。因此反向全strict循环同样被包络排除。某代表没有严格α改善，即为α-PNE；取α=T_d得到弱端点的池内保证。\n\n另每个A_i^b潜在用户恰H_i,L_i，每个B_i^b恰L_i,H_(i+1)，故全游戏r=2。支持源在所有纯态的全局最小点给2-PNE：对于删去、新增和共同资源的真实偏离，ΔΦ≤2C_i(new)−C_i(old)−C_common；严格2改善使其负，不能发生于全局最小点。有限性保证最小点，无需算法效率或费用正性。若T_d≤2选前述池内T_d-PNE，若2≤T_d选此全局2-PNE，存在因子为min{2,T_d}。两个保证可以由不同纯态实现，并未把2-PNE也放进2m小池；更未由一般cohort上界推断本资源缺陷循环，n_i>1时该图结构失效。",
+  "scope": "单成员、同费双副本、多项式奇环的整个目标声明。支持2分支本身适用于更广任意非负非减费用；T_d池内分支仍严格保留同费、次数和二动作拓扑。不给锐性、一般cohort缺陷图、全类次线性上界或位多项式算法。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/单成员群组奇环的缺陷图均衡--定理.md",
+      "sha256": "e1d6929f5c72b2982607ca45d56cb1aa8532530361d17391b1980efca9ea4243"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/资源潜在用户支持的总成本势--定理.md",
+      "sha256": "4f252181961ef4fdda7e02f6ee460861b4d52c1271d85c8d1dd1242ef8f42844"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+      "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055"
+    }
+  ],
+  "reviewed_by": "Boss5/474257b8",
+  "review_note": "Boss5/474257b8 followups 3D：已实读当前registry中三端点的完整对象、singleton目标全文、支持势全文与多项式包络全文；逐资源重核反索引/角色交换/side位翻转，核严格测试到弱端点、零与常数形状、Td>1和两存在保证可选不同状态。两条现行partial各自remaining已由另一分支承担；本草稿以ALL整体表达完整目标，尚未执行edge-bind、edge-check或队列写入。未把一般cohort下界锐性迁给singleton。"
+}
