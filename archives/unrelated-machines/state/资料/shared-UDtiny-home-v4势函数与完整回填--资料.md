@@ -30,7 +30,7 @@ source_refs:
 
 原 normalized menu 的最大最小 integral allocation value 为 V，完整 ordinary matrix 满足 `OPT=2−V`：selected state 的 bundle 正质量 incidence 导出，其他 payload 留 private；反向 C<2 时 resource unit capacity 给 selected-state bundles 互不相交且 value≥2−C。无 full leaf matching 时，任何 value≥ε allocation 都给每叶一枚 H_l resource，故 V<ε，baseline C≤2 满足 19/10 ratio。
 
-若 leaf—B 资格图有 full matching，定义 vacancy matroid A（删去资源后仍能匹配全部 leaves）及 dual M。helper fallback incidence 取 M 的平行扩张，独立性就是资源不重复且剩余 B 仍能给所有 leaves 完整 matching。matching oracle 只做普通 bipartite matching，不藏 profile optimization。
+若 leaf—B 资格图有 full matching，令 A 为 B 上的叶—资源 transversal matroid。其秩为叶数 ℓ。vacancy matroid M 是 A 的对偶，X 在 M 中独立恰当 B∖X 仍能完整匹配全部 leaves。helper fallback incidence 取 M 的平行扩张，独立性就是资源不重复且剩余 B 仍能给所有 leaves 完整 matching。matching oracle 只做普通 bipartite matching，不藏 profile optimization。
 
 # 2. k1 greedy 与 k≥2 stable profile
 
@@ -56,7 +56,7 @@ LP/FW 成功时，outer claims 聚合到最大 resource coefficient `a_iu`，按
 
 # 4. 计算和范围
 
-Potential range、每步增量阈值、候选 state 数、matching 次数和有理运算位长均显式 polynomial；k1/k2 分支均 worst-case deterministic。canonical actual-read 确认 vacancy rank 是叶数、不是 |B|，以及软件只有限核 exchange lemma，未运行 FW/profile search/tiny instance/prefix flow/all jobs。
+Potential range、每步增量阈值、候选 state 数、matching 次数和有理运算位长均显式 polynomial；k1/k2 分支均 worst-case deterministic。完整叶匹配使叶 transversal matroid 的秩为 ℓ，对偶 vacancy matroid 的秩为 |B|−ℓ。canonical actual-read 的软件只有限核 exchange lemma，未运行 FW/profile search/tiny instance/prefix flow/all jobs。
 
 本记录不证明：multi-state outer、home overlap、无 home auxiliary groups、general leaves/non-UD extras、一般 UM、source hardness、全球新颖性或端到端实现。它与 raw SH3/NSW/one-outer Exact 分开，不能把 typed shared-UD 结果静默扩域。
 
