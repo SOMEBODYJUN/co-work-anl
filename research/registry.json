@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-map-r373d-two-provider-round26-v1.json",
-    "sha256": "42f4b122dc8bddf63d7bcf641538240cc986136135f207efeb48840d4bdf9734"
+    "path": "research/registration/baseline-map-two-provider-omission-sharp-round27-v1.json",
+    "sha256": "68e69d494da39e549c369610c1341556db25437f4ab7d087b08cd181ee615bc8"
   },
   "objects": [
     {
@@ -146331,6 +146331,45 @@
       ]
     },
     {
+      "object_id": "customer-attraction/two-provider-sharp-omission-fourteen-thirteenths",
+      "version": 1,
+      "kind": "theorem",
+      "truth_status": "proved",
+      "title": "两提供者真实续局的最优遗漏锐界14/13",
+      "model": "共同有限主题目录的两名有序单位提供者，客户单位且终局等分，完整纯SPE。",
+      "statement": "对任意合法比较主题对C,D（可重复），其在实际A∪B之外的遗漏R至多14W/13。27客户六标签完整SPE达到W=13、最优比较对遗漏14。每个正福利等号实例中A,B,C,D互斥，最大主题等分四组且真实回复也是与其交叠一半的最大主题，故至少27客户。",
+      "quantifiers": "每个有限单位客户共同目录、每份完整两人纯SPE、每个合法比较主题对。等号结构限W>0。",
+      "assumptions": [
+        "所有根偏离后沿同一完整策略取真实末位最佳回复。",
+        "W是实际终局并集，不是静态两主题最优。"
+      ],
+      "scope": "两提供者真实策略的比较遗漏锐界、等号结构及最小单位客户规模。",
+      "objections": "旧唯一静态最优对证书具有另一约束。这里的锐性由一个最优对达到。",
+      "body": {
+        "path": "archives/customer-attraction/state/定理/两提供者真实续局的最优遗漏锐界14比13--定理.md",
+        "sha256": "c396bde3e30671c55d2437499472aa287a19a8d5712f12bdc79af56aa1b8428e"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+          "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/R-373d固定响应锥唯一静态最优与残余覆盖--审查.md",
+          "sha256": "57864adbb2bf2316f4985622fdf7d2f2c358fe2a6eb09a9d97ae9f3303c26197"
+        },
+        {
+          "path": "archives/customer-attraction/tools/verify-two-provider-sharp-omission.py",
+          "sha256": "b8fa965844e3bfdc5380012753870e1e03089c8e370c6c56c9976786b539022c"
+        }
+      ],
+      "sources": []
+    },
+    {
       "object_id": "customer-attraction/two-remaining-common-static-query-minimum-payoff-budget",
       "version": 1,
       "title": "任意非负实背景的两人共同静态查询最小利润预算",
@@ -163776,7 +163815,6 @@
       "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
       "disposition": "objects",
       "object_ids": [
-        "CAG-MODEL",
         "ACTUAL-OPTIMUM-PRUNING",
         "AFC-ANON-POTENTIAL-v0",
         "ATOM-RETRACTION-v1",
@@ -163907,6 +163945,7 @@
         "CA-WEAK-LOCAL-IID-DRIFT-NO",
         "CA-WORST-CCE-WELFARE-NO",
         "CA-WORST-PNE-WELFARE-NO",
+        "CAG-MODEL",
         "CC-CYCLE-1",
         "CC-FOREST-1",
         "CC-PARITY-1",
@@ -165600,6 +165639,7 @@
         "customer-attraction/two-player-two-separated-omitted-blocks-total-omission-payment",
         "customer-attraction/two-player-two-topic-warm-start-fixed-policy-certificate-version-boundary",
         "customer-attraction/two-provider-external-residual-max-cover-parametric-family",
+        "customer-attraction/two-provider-sharp-omission-fourteen-thirteenths",
         "customer-attraction/two-remaining-common-static-query-minimum-payoff-budget",
         "customer-attraction/two-remaining-full-terminal-menu-pure-column-cap",
         "customer-attraction/two-sided-signed-donor-repair-and-finite-dictionary-minimum",
@@ -166088,6 +166128,15 @@
         "customer-attraction/closeout-c51b12d5cc02690c50ef6183"
       ],
       "reason": "Boss7 full-read closeout: this source contains a distinct finite/conditional mathematical record; exact scope and limitations are preserved in the body and objections."
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/两提供者真实续局的最优遗漏锐界14比13--定理.md",
+      "sha256": "c396bde3e30671c55d2437499472aa287a19a8d5712f12bdc79af56aa1b8428e",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/two-provider-sharp-omission-fourteen-thirteenths"
+      ],
+      "reason": "真实根偏离和最大主题末回复共同推出遗漏项锐界。"
     },
     {
       "path": "archives/customer-attraction/state/定理/两种实际覆盖且末两位不同的严格二倍界--定理.md",
@@ -168065,7 +168114,8 @@
       "sha256": "57864adbb2bf2316f4985622fdf7d2f2c358fe2a6eb09a9d97ae9f3303c26197",
       "disposition": "objects",
       "object_ids": [
-        "customer-attraction/R-373d-fixed-response-cone-unique-static-gap"
+        "customer-attraction/R-373d-fixed-response-cone-unique-static-gap",
+        "customer-attraction/two-provider-sharp-omission-fourteen-thirteenths"
       ],
       "reason": "固定编码锥的87/2200原始/对偶匹配精确最优，分清静态唯一覆盖和零松弛响应。"
     },
@@ -172513,12 +172563,12 @@
       "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
       "disposition": "objects",
       "object_ids": [
-        "CA-TWO-REMAINING-TAX",
         "CA-FIVE-MAXIMA-HALF",
         "CA-FOUR-REMAINING-PROFIT-1499-750",
         "CA-SIX-MAXIMA-HALF",
         "CA-SIX-MAXIMA-NO-PRIVATE-HALF",
         "CA-THREE-UPPER-142-81",
+        "CA-TWO-REMAINING-TAX",
         "M-2d84271ce0f44c37a4091eaa6537580f",
         "M-581c6ae40a23477ea8dc78e1844f4c9c",
         "M-58900f64112a40bc9246942cf510da8c",
@@ -172531,7 +172581,8 @@
         "customer-attraction/last-player-tax-diagnostic",
         "customer-attraction/same-load-two-tail-tax-prefix-transfer",
         "customer-attraction/six-player-maxroot-two-copy-four-support-certificate-replay",
-        "customer-attraction/six-player-true-maxroot-copy-envelope"
+        "customer-attraction/six-player-true-maxroot-copy-envelope",
+        "customer-attraction/two-provider-sharp-omission-fourteen-thirteenths"
       ],
       "reason": "全文；沿原精确Claim CA-TWO-REMAINING-TAX，三个真实节点及两项非负交叠余项，独立于一般税归纳。"
     },
