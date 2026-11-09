@@ -172,11 +172,83 @@
       "scope_hint": "archives/facility-games"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss1",
-  "request_id": "5411a403e56147f793c2b583e8f41ba5",
+  "request_id": "998ca372d5e1430f97efaf577f907690",
   "requests": {
     "4186860c461a48dfa8aa26a4a5253460": "plan",
-    "5411a403e56147f793c2b583e8f41ba5": "claim"
+    "5411a403e56147f793c2b583e8f41ba5": "claim",
+    "998ca372d5e1430f97efaf577f907690": "done"
+  },
+  "edge_paths": {
+    "fixed-guarded-four-seed-bad-cycle": "map/edges/source-errata-repair-ce2872ddf9bc81c9/fixed-guarded-four-seed-bad-cycle.json"
+  },
+  "receipt": {
+    "task_id": "source-errata-repair-ce2872ddf9bc81c9",
+    "stage": "3B",
+    "status": "complete",
+    "object_ids": [
+      "HC-2-UP",
+      "M-7c7cfc38cb10411e8b8b5f9ee5747b77",
+      "facility-games/heterogeneous/universal-factor-two-response-cycle"
+    ],
+    "read_object_ids": [],
+    "input_pins": {
+      "HC-2-UP": "7614c64a8523e519d147c1849b04e1c977eb2e6deb9e4e343e8c9c15d3379df0",
+      "M-7c7cfc38cb10411e8b8b5f9ee5747b77": "c26a5ac9fc69994ac6f2a5c0bb5ed4909d19371f41874b8f92e141b02dca60a0",
+      "facility-games/heterogeneous/universal-factor-two-response-cycle": "fbd07703696a8035909fcb72385b800ce87137cbbd10a132112cc1386ef1a106"
+    },
+    "coverage": {
+      "HC-2-UP": {
+        "state": "linked",
+        "object_pin": "7614c64a8523e519d147c1849b04e1c977eb2e6deb9e4e343e8c9c15d3379df0",
+        "comparison_scope": "复读 A08/A09 的固定四种子、双目录精确纯续局模型、当前全 singleton 通用二勘误正文与独立审计，并对照原 3B 边及主手稿、长环补充审查和程序合同。按固定菜单自身的全目录威胁独立核验每条简单回应环的矩形反证。",
+        "reason": "在正的环最大威胁归一为 1 后，坏边源端负载严格小于 1/2。若存在重原子，按全局 (w,−ID) 取到的环可见最大客户传播到全环，成为每条边共同集预设的最大客户。只把它留在源端的种子在 R_t≥Q₀ 时直接入菜单或由纠正后的不增移动权修复保住 Q₀≥1/2。其余情况迫 R_t<Q₀≤R_s 沿环严格下降。轻原子界之后，用纯转移集 X 和 C–F 合法弦取得 h<e；h≥e/2 时用 C 坐标纯极小见证及跨色原子界归纳，h<e/2 时用 B–G 合法弦和尾部集合容量排除失败。两弦在该环的两色矩形内，四环允许 G=C；两环与零威胁已直接处理。所得双配额通过原算法补为完整纯续局，显式正二进制有理输入上给出 O(|U₁||U₂|(n+1)²) 有理操作与位时间多项式。",
+        "edge_ids": [
+          "fixed-guarded-four-seed-bad-cycle"
+        ]
+      },
+      "M-7c7cfc38cb10411e8b8b5f9ee5747b77": {
+        "state": "linked",
+        "object_pin": "c26a5ac9fc69994ac6f2a5c0bb5ed4909d19371f41874b8f92e141b02dca60a0",
+        "comparison_scope": "按原 A08、A09 与复现的 guarded_repair 核逐人严格改善、原低侧守卫、首次翻转、菜单非空、双配额补全及有理位长，并与勘误后的较大菜单逐种子接口对照。",
+        "reason": "首次翻转前每次由原高侧搬 w<g，仍留在原高侧且重量小于当前差的候选集只减，故最大权移动序列不增。造成翻转的末步 w 给出新差 2w−g<w。更早搬入者至少重 w，原低侧共同客户由守卫至少重 g₀，故三类新高侧共同客户均稳定。无改善或相等停止亦给精确纯 NE；原低侧负载全程不降。固定四种子坏环证明直接复用此接口及逐布局补全，且空守卫保障每格非空。",
+        "edge_ids": [
+          "fixed-guarded-four-seed-bad-cycle"
+        ]
+      },
+      "facility-games/heterogeneous/universal-factor-two-response-cycle": {
+        "state": "isolated-after-review",
+        "object_pin": "fbd07703696a8035909fcb72385b800ce87137cbbd10a132112cc1386ef1a106",
+        "comparison_scope": "实读 v3 通用因子二正文的守卫纯修复、全 singleton 菜单、全目录威胁、重客户、两条弦及位长，对照旧 3B 比较、A08/A09、独立审计及原拥有 3A 批的菜单贡献。用冻结实现精确复核两种菜单的单布局威胁差异。",
+        "reason": "勘误把首次翻转前的移动权方向纠正为不增，逐种子接口及全 singleton 构造有效。相同修复与平局规则下四种子菜单包含于全 singleton 菜单，后者的各坐标极小值和全目录威胁可更低。单布局共同权 1、1、2，第二端另有独占权 1 时，四种子只给负载 (2,3)，全 singleton 另有 (3,2)，第二端威胁分别为 3 和 2。四种子见证可为相同实例提供共同的因子二存在性保证，两个证明各自用本菜单的威胁和最大回应量词。本批保留固定四种子的独立结论；全 singleton 逐种子局部构造边由其原拥有 3A 的定向替代 source-errata-repair-c0079e5a01326a27 接续。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/source-errata-repair-ce2872ddf9bc81c9/fixed-guarded-four-seed-bad-cycle.json",
+        "sha256": "91a0264c27245c3d5297b9c56797c5027895e5fa6d4c3d246424887610bf6f60"
+      }
+    ],
+    "reviewed_by": "Boss1",
+    "review_note": "定向复核首次翻转前移动权不增、固定菜单最大客户归属、两条合法异色弦和全目录续局补全。固定四种子边沿用独立完整推导及登记对象当前的来源状态。",
+    "supersession": {
+      "hetero-guarded-cycle-3b-3b-a0dca5e2d4920bd0": {
+        "reason": "通用因子二正文及登记端点更新。按勘误重新核对局部修复和固定四种子全称推导，并将共享的全 singleton 局部构造归原拥有批接续。",
+        "assets": {
+          "map/edges/hetero-guarded-cycle-3b-3b-a0dca5e2d4920bd0/fixed-guarded-four-seed-bad-cycle.json": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/source-errata-repair-ce2872ddf9bc81c9/fixed-guarded-four-seed-bad-cycle.json"
+            ],
+            "reason": "用当前证据 SHA 重新绑定原固定四种子完整推导；首次翻转前移动权不增保持守卫接口，重客户传播、合法弦及完整纯续局补全的论证成立。"
+          },
+          "map/edges/facility-3a-3a-2caa6864ec2d626e/guarded-repair-to-heterogeneous-all-singleton-menu.json": {
+            "disposition": "retired",
+            "reason": "本 3B 退役共享旧版本路径；全 singleton 局部构造的当前边由其原拥有的 3A 定向替代 source-errata-repair-c0079e5a01326a27 发布，保持边 ID 唯一。"
+          }
+        }
+      }
+    }
   }
 }
