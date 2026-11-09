@@ -1,0 +1,342 @@
+{
+  "definition": {
+    "task_id": "maintenance-scope-3bb53923e88e6c",
+    "stage": "3A",
+    "registry": "research/registry.json",
+    "object_ids": [
+      "M-11d6a57c5ac846ce9459d5fc527a3216",
+      "M-97f6a3b91eb94c2888fd8048c9cc0476",
+      "M-c1531a23fb4e4fcd97fe4aeda2707c72",
+      "PK-OCCUPANCY-CONE-CLOSURE-v1",
+      "positive-kernels/occupancy-active-rank",
+      "PK-SHARP-FORBIDDEN-MASS-v1",
+      "M-c1e8d80912724101b8536e3934c454de",
+      "PK-INTERACTION-RANK-FACE-v1"
+    ],
+    "read_object_ids": [],
+    "input_pins": {
+      "M-11d6a57c5ac846ce9459d5fc527a3216": "ac7fa334cc645f4a3060fe6e36f2140b917b93114113b99a4e51c0eb8ee9d09f",
+      "M-97f6a3b91eb94c2888fd8048c9cc0476": "30f890cc4865b7554ce3d86c26f600ec1b020823050f7a602f0359b1a077c183",
+      "M-c1531a23fb4e4fcd97fe4aeda2707c72": "acf07da4df82b923fe7afbfe4184b362a7379df5b7b82e44b69fda638d676e28",
+      "PK-OCCUPANCY-CONE-CLOSURE-v1": "13553d9e743a8553ab1b80aa6f1cdeb24e3e280115ac77e8d48fdaa0402b26dc",
+      "positive-kernels/occupancy-active-rank": "5cfa308e8da57e3a316c861ad712e89678f691882acfb6f4cffd884faa606b7d",
+      "PK-SHARP-FORBIDDEN-MASS-v1": "1cb670f61244d4b9ed041ba277f071a8001cf8d5e369b90c4b3710971333c699",
+      "M-c1e8d80912724101b8536e3934c454de": "93a64d8baf5fb55bc0f8e3ee825a236d0817cd124eef5c7127b5c4de6026e400",
+      "PK-INTERACTION-RANK-FACE-v1": "9e43e0d7bf15ef35ce4da59c19ffc0db9082bf85ae49053c15983dc35ee98394"
+    },
+    "write_paths": [
+      "map/edges/maintenance-scope-3bb53923e88e6c",
+      "map/receipts/maintenance-scope-3bb53923e88e6c.json"
+    ],
+    "goal": "Read and compare the complete assigned mathematical objects in archives/positive-kernels; preserve model, quantifiers, hypotheses, exact refutation targets and open obligations. Create only explained useful relations; shared definitions do not imply hub edges. 维护复核：按原陈述校正整结论、局部贡献和迁移方向。",
+    "context_plan": {
+      "budget": {
+        "context_tokens": 500000,
+        "window_source": "official-default",
+        "model": "gpt-6.1-sol",
+        "used_tokens": null,
+        "history_mode": "fresh-worker",
+        "reserve_tokens": 200000,
+        "reading_tokens": 300000,
+        "output_tokens": 100000,
+        "runtime_remaining_tokens": null,
+        "declared_remaining_before_reserve_tokens": null,
+        "assumptions": [
+          "Window source is declared, not discovered from this conversation.",
+          "Reading budget includes source text and object/task metadata.",
+          "Reserved context includes expected generated records and later reasoning/tool growth.",
+          "Fresh worker assumed; actual system/prefix usage is unknown and covered only by the engineering reserve."
+        ],
+        "budget_is_runtime_measurement": false
+      },
+      "reading": {
+        "chars": 22862,
+        "utf8_bytes": 37431,
+        "source_tokens": 29422,
+        "metadata_tokens": 9853,
+        "estimated_tokens": 39531,
+        "metadata_chars": 10279,
+        "metadata_utf8_bytes": 14132,
+        "distinct_files": 7,
+        "reading_segments": 7,
+        "token_count_is_estimate": true,
+        "estimators": [
+          "conservative-math-text-estimate-v1; not a tokenizer count"
+        ],
+        "unmeasured_refs": [],
+        "measurement_scope": "Requested complete text spans plus supplied metadata; binary evidence is not token-counted from raw bytes.",
+        "task_overhead_tokens": 256
+      },
+      "estimated_output_tokens": 13038,
+      "oversized": false,
+      "requires_export": false,
+      "reading_refs": [
+        {
+          "path": "archives/positive-kernels/问题--问题.md",
+          "sha256": "e43bcefe1d204cc19de222a4ee4145342d4965d9d2640d7dc7fa1db71dd665fa",
+          "section": "尚未由这些接口解决的具体义务"
+        },
+        {
+          "path": "archives/positive-kernels/问题--问题.md",
+          "sha256": "e43bcefe1d204cc19de222a4ee4145342d4965d9d2640d7dc7fa1db71dd665fa",
+          "section": "已有完整数学接口"
+        },
+        {
+          "path": "archives/positive-kernels/state/定理/正占用核闭包与低秩截面--定理.md",
+          "sha256": "8a306fdb484933f67a6fae43fecd7beed1ee7074bdb9b5cea885db11e54c6fc5"
+        },
+        {
+          "path": "archives/positive-kernels/state/定理/正占用核交互秩暴露面--定理.md",
+          "sha256": "0351e3c06cbcf0290d4aa5b589d0d7b3d78aaf73ec5bef4a8e0fb9466a46d3c8",
+          "section": "完整证明"
+        },
+        {
+          "path": "archives/positive-kernels/state/定理/正占用核锐截断预算--定理.md",
+          "sha256": "5c6c4c3a7b186ae901f3db419d20e3204a4fea58e38935602f86250a9301d6eb",
+          "section": "完整证明与绝对一致误差界"
+        },
+        {
+          "path": "archives/positive-kernels/state/审查/正占用核重构与冻结攻击--审查.md",
+          "sha256": "df61f7edc68871c4463a686ad614173580ce18b28c3ec19540b0426cecaa516f",
+          "section": "4. 精确闭包与极限核"
+        },
+        {
+          "path": "archives/positive-kernels/state/计算/正占用核精确有限核验--计算.md",
+          "sha256": "2d987f8c374eaa7d859b276545ed3de10a16fbc74291cb6653285ebfab04c24d"
+        },
+        {
+          "path": "archives/positive-kernels/state/定义/正占用核与顶背景交互秩--定义.md",
+          "sha256": "5df74fd1780aa8027962508a4695a40dd6a6ab31d065b0c4c3b080bacf1a5dc8"
+        },
+        {
+          "path": "archives/positive-kernels/state/定理/正占用核锐截断预算--定理.md",
+          "sha256": "5c6c4c3a7b186ae901f3db419d20e3204a4fea58e38935602f86250a9301d6eb"
+        },
+        {
+          "path": "archives/positive-kernels/state/审查/正占用核重构与冻结攻击--审查.md",
+          "sha256": "df61f7edc68871c4463a686ad614173580ce18b28c3ec19540b0426cecaa516f",
+          "section": "3. 顶 context 的 sharp gap"
+        },
+        {
+          "path": "archives/positive-kernels/state/审查/正占用核重构与冻结攻击--审查.md",
+          "sha256": "df61f7edc68871c4463a686ad614173580ce18b28c3ec19540b0426cecaa516f",
+          "section": "5. 到任意低秩目标的定量距离"
+        },
+        {
+          "path": "archives/positive-kernels/state/定义/正占用核与顶背景交互秩--定义.md",
+          "sha256": "5df74fd1780aa8027962508a4695a40dd6a6ab31d065b0c4c3b080bacf1a5dc8",
+          "section": "模型边界与可用接口"
+        },
+        {
+          "path": "archives/positive-kernels/state/定理/正占用核交互秩暴露面--定理.md",
+          "sha256": "0351e3c06cbcf0290d4aa5b589d0d7b3d78aaf73ec5bef4a8e0fb9466a46d3c8"
+        },
+        {
+          "path": "archives/positive-kernels/state/审查/正占用核重构与冻结攻击--审查.md",
+          "sha256": "df61f7edc68871c4463a686ad614173580ce18b28c3ec19540b0426cecaa516f",
+          "section": "2. 单核的差分、秩与无消去"
+        },
+        {
+          "path": "archives/positive-kernels/state/审查/正占用核重构与冻结攻击--审查.md",
+          "sha256": "df61f7edc68871c4463a686ad614173580ce18b28c3ec19540b0426cecaa516f",
+          "section": "6. 必须保留的边界和反例"
+        }
+      ],
+      "deferred_candidate_ids": [],
+      "deferred_candidate_issues": {},
+      "comparison_priority": 0,
+      "family_hint": "M-11d6a57c5ac846ce9459d5fc527a3216",
+      "scope_hint": "archives/positive-kernels",
+      "status": "complete-declared-references-planned",
+      "note": "Local proof families are scheduled first. Informal links are separate discovery hints. Read any newly discovered necessary premise through read-add; do not truncate a proof or treat a deferred candidate as paid evidence. Compare each group separately unless there is a concrete mathematical connection across groups.",
+      "comparison_groups": [
+        [
+          "M-11d6a57c5ac846ce9459d5fc527a3216",
+          "M-97f6a3b91eb94c2888fd8048c9cc0476",
+          "M-c1531a23fb4e4fcd97fe4aeda2707c72"
+        ],
+        [
+          "PK-OCCUPANCY-CONE-CLOSURE-v1"
+        ],
+        [
+          "positive-kernels/occupancy-active-rank"
+        ],
+        [
+          "PK-SHARP-FORBIDDEN-MASS-v1"
+        ],
+        [
+          "M-c1e8d80912724101b8536e3934c454de"
+        ],
+        [
+          "PK-INTERACTION-RANK-FACE-v1"
+        ]
+      ],
+      "repair_reasons": [
+        "align-target-with-actual-mathematical-result"
+      ]
+    },
+    "supersedes": [
+      "positive-kernels-boss3-3a-4c411357b7f7841f"
+    ]
+  },
+  "state": "done",
+  "owner": null,
+  "edge_paths": {
+    "pk-bridge-checks-representation-recovery-obligation": "map/edges/positive-kernels-boss3-3a-4c411357b7f7841f/pk-bridge-checks-representation-recovery-obligation.json",
+    "pk-congestion-bridge-transfers-to-active-definition": "map/edges/maintenance-scope-3bb53923e88e6c/pk-congestion-bridge-transfers-to-active-definition.json",
+    "pk-interaction-rank-specializes-active-definition": "map/edges/maintenance-scope-3bb53923e88e6c/pk-interaction-rank-specializes-active-definition.json",
+    "pk-rank-budget-imply-closure-lowrank": "map/edges/maintenance-scope-3bb53923e88e6c/pk-rank-budget-imply-closure-lowrank.json",
+    "pk-rank-face-motivates-nonboolean-signature-obligation": "map/edges/positive-kernels-boss3-3a-4c411357b7f7841f/pk-rank-face-motivates-nonboolean-signature-obligation.json",
+    "pk-sharp-budget-checks-partial-observation-obligation": "map/edges/positive-kernels-boss3-3a-4c411357b7f7841f/pk-sharp-budget-checks-partial-observation-obligation.json",
+    "pk-sharp-budget-specializes-rank-face": "map/edges/maintenance-scope-3bb53923e88e6c/pk-sharp-budget-specializes-rank-face.json"
+  },
+  "receipt": {
+    "coverage": {
+      "M-11d6a57c5ac846ce9459d5fc527a3216": {
+        "state": "isolated-after-review",
+        "object_pin": "ac7fa334cc645f4a3060fe6e36f2140b917b93114113b99a4e51c0eb8ee9d09f",
+        "comparison_scope": "已读 archives/positive-kernels/问题--问题.md 的‘尚未由这些接口解决的具体义务’及正占用核锐截断预算完整证明与‘固定质量和检测背景不能省略’；比较 F 的完整 Boolean 顶背景绝对 sup 误差域与本对象的抽样、相对误差、偏离比开放目标。",
+        "reason": "F 的 γ 截断只在完整表、顶背景和绝对误差量词下成立；正文明确零背景或抽样/相对误差不能直接继承，因此以 checks 语境边界连接，未声称解决 A。"
+      },
+      "M-97f6a3b91eb94c2888fd8048c9cc0476": {
+        "state": "isolated-after-review",
+        "object_pin": "30f890cc4865b7554ce3d86c26f600ec1b020823050f7a602f0359b1a077c183",
+        "comparison_scope": "已读问题页未决义务与 PK-INTERACTION-RANK-FACE-v1 完整模型、精确秩、非负差分及严格正质量/有符号反例；比较 Boolean 基线与非 Boolean action/selector 需要重新定义的合法核、交互阶数、检测泛函和极限方向。",
+        "reason": "H 只覆盖完整 Boolean 严格正权模型；B 的非 Boolean 扩展缺少模型映射和新量词，保留为 motivates 语境边，不作自动迁移。"
+      },
+      "M-c1531a23fb4e4fcd97fe4aeda2707c72": {
+        "state": "isolated-after-review",
+        "object_pin": "acf07da4df82b923fe7afbfe4184b362a7379df5b7b82e44b69fda638d676e28",
+        "comparison_scope": "已读问题页表示恢复/博弈用途未决义务与 M-c1e8d80912724101b8536e3934c454de 模型边界；比较已知零动作非负多项式资源到 K_fin 的充分表示桥与未知完整表的判定/恢复、位复杂度和均衡映射缺口。",
+        "reason": "G 只构造已知拥塞资源模型的逐状态表示，不给未知表恢复算法或均衡不等式；以 checks 语境保存条件化输入接口和开放边界。"
+      },
+      "PK-OCCUPANCY-CONE-CLOSURE-v1": {
+        "state": "linked",
+        "object_pin": "13553d9e743a8553ab1b80aa6f1cdeb24e3e280115ac77e8d48fdaa0402b26dc",
+        "comparison_scope": "已读正占用核闭包与低秩截面完整证明、交互秩暴露面完整证明和锐截断预算完整证明/审查第4-5节；比较 H 的 L_q 面恒等式与 F 的 uniform γ 如何共同把闭包低秩极限拉回 closure(K_fin∩V_r)，并核对 U_S 归一化聚点。 复核已交付关系的实际端点和可用证明范围。",
+        "reason": "H 与 F 的 ALL 证明低秩截面交换与 ker 判据；目标还含独立归一化紧致性、完整闭包生成式、非闭性等结论。",
+        "edge_ids": [
+          "pk-rank-budget-imply-closure-lowrank"
+        ]
+      },
+      "positive-kernels/occupancy-active-rank": {
+        "state": "isolated-after-review",
+        "object_pin": "5cfa308e8da57e3a316c861ad712e89678f691882acfb6f4cffd884faa606b7d",
+        "comparison_scope": "已读定义‘模型边界与可用接口’及完整问题页接口；比较 PK-INTERACTION-RANK-FACE-v1 对 E 的定义化模型精化，以及 M-c1e8d80912724101b8536e3934c454de 在零动作、非负多项式合同下向 E 的 K_fin 模型迁移。 复核已交付关系的实际端点和可用证明范围。",
+        "reason": "定理调用定义，并未通过定理证明定义；原 unconditional 方向没有真实证明结论。保留精确接口引证。"
+      },
+      "PK-SHARP-FORBIDDEN-MASS-v1": {
+        "state": "linked",
+        "object_pin": "1cb670f61244d4b9ed041ba277f071a8001cf8d5e369b90c4b3710971333c699",
+        "comparison_scope": "已读锐截断预算完整证明、审查第3节顶 context sharp gap、第5节距离及第6节边界；比较 F 对 H 的定性禁止项判据的定量精化、F+H 到 D 的联合闭包推导，以及 F 对 A 的完整表误差域边界。 复核已交付关系的实际端点和可用证明范围。",
+        "reason": "H 与 F 的 ALL 证明低秩截面交换与 ker 判据；目标还含独立归一化紧致性、完整闭包生成式、非闭性等结论。 预算精化禁止项的质量约束，不能仅由预算推出目标中的每个单核秩公式和完整暴露面判别。",
+        "edge_ids": [
+          "pk-rank-budget-imply-closure-lowrank",
+          "pk-sharp-budget-specializes-rank-face"
+        ]
+      },
+      "M-c1e8d80912724101b8536e3934c454de": {
+        "state": "isolated-after-review",
+        "object_pin": "93a64d8baf5fb55bc0f8e3ee825a236d0817cd124eef5c7127b5c4de6026e400",
+        "comparison_scope": "已读‘模型边界与可用接口’的零动作、正权、非负多项式资源拆分证明；比较到 E 的 transfers 条件及对 C 的未知表示恢复/博弈用途 checks 边界。",
+        "reason": "G 的逐状态桥完整但条件化：资源不得用于动作0且费用系数非负；它提供 K_fin 输入，不提供恢复算法、均衡存在或一般目标不等式。"
+      },
+      "PK-INTERACTION-RANK-FACE-v1": {
+        "state": "linked",
+        "object_pin": "9e43e0d7bf15ef35ce4da59c19ffc0db9082bf85ae49053c15983dc35ee98394",
+        "comparison_scope": "已读交互秩暴露面完整证明、审查第2节与第6节边界；比较 H 对 E 的定理化精化、F 的 sharp budget specialization、H+F 到 D 的 ALL 推导，以及 H 作为 B 非 Boolean 扩展的 Boolean 基线。 复核已交付关系的实际端点和可用证明范围。",
+        "reason": "定理调用定义，并未通过定理证明定义；原 unconditional 方向没有真实证明结论。保留精确接口引证。 H 与 F 的 ALL 证明低秩截面交换与 ker 判据；目标还含独立归一化紧致性、完整闭包生成式、非闭性等结论。 预算精化禁止项的质量约束，不能仅由预算推出目标中的每个单核秩公式和完整暴露面判别。",
+        "edge_ids": [
+          "pk-rank-budget-imply-closure-lowrank",
+          "pk-sharp-budget-specializes-rank-face"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/positive-kernels-boss3-3a-4c411357b7f7841f/pk-bridge-checks-representation-recovery-obligation.json",
+        "sha256": "20f34c5d97c6aff35f01b1ad0651fb236ee06341403cdab6d5f3b823d25f973c"
+      },
+      {
+        "path": "map/edges/maintenance-scope-3bb53923e88e6c/pk-congestion-bridge-transfers-to-active-definition.json",
+        "sha256": "064eb9df78d2252680688fe77a3da3d99cfca8504f400db5fe5b5ab363aec9c5"
+      },
+      {
+        "path": "map/edges/maintenance-scope-3bb53923e88e6c/pk-interaction-rank-specializes-active-definition.json",
+        "sha256": "66c6a994fc8a0f936f6ac224456f5b54ce54a6985423238c96e8e6f59ebe39fe"
+      },
+      {
+        "path": "map/edges/maintenance-scope-3bb53923e88e6c/pk-rank-budget-imply-closure-lowrank.json",
+        "sha256": "2abf19d6acadef7bdcf8c8c7dcca8689069585cf70bc0371682c398a477ef7d7"
+      },
+      {
+        "path": "map/edges/positive-kernels-boss3-3a-4c411357b7f7841f/pk-rank-face-motivates-nonboolean-signature-obligation.json",
+        "sha256": "8a80b00c7ce23c5ccf381c8188599479d95ec3b17e61a1ee05e4270b7be1ae2d"
+      },
+      {
+        "path": "map/edges/positive-kernels-boss3-3a-4c411357b7f7841f/pk-sharp-budget-checks-partial-observation-obligation.json",
+        "sha256": "350698013bb487a255bd4e8e9249794b3341fe5052cd859711e46ca50dda0744"
+      },
+      {
+        "path": "map/edges/maintenance-scope-3bb53923e88e6c/pk-sharp-budget-specializes-rank-face.json",
+        "sha256": "fce472b18bc32272e437ed0f264e40210b078c2e7f3a7ac7212a264ae0edce4a"
+      }
+    ],
+    "supersession": {
+      "positive-kernels-boss3-3a-4c411357b7f7841f": {
+        "reason": "复核原超边的端点、逻辑方向和实际证明范围，原交付留存。",
+        "assets": {
+          "map/edges/positive-kernels-boss3-3a-4c411357b7f7841f/pk-bridge-checks-representation-recovery-obligation.json": {
+            "disposition": "retained",
+            "reason": "同一批中未受本次数学结论修订影响的原产物。"
+          },
+          "map/edges/positive-kernels-boss3-3a-4c411357b7f7841f/pk-congestion-bridge-transfers-to-active-definition.json": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/maintenance-scope-3bb53923e88e6c/pk-congestion-bridge-transfers-to-active-definition.json"
+            ],
+            "reason": "零动作桥已经是源命题自身的证明。目标是核和 V_r 的定义，不是待证明的模型归属命题；用语境记录源命题如何使用目标模型。"
+          },
+          "map/edges/positive-kernels-boss3-3a-4c411357b7f7841f/pk-interaction-rank-specializes-active-definition.json": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/maintenance-scope-3bb53923e88e6c/pk-interaction-rank-specializes-active-definition.json"
+            ],
+            "reason": "定理调用定义，并未通过定理证明定义；原 unconditional 方向没有真实证明结论。保留精确接口引证。"
+          },
+          "map/edges/positive-kernels-boss3-3a-4c411357b7f7841f/pk-rank-budget-imply-closure-lowrank.json": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/maintenance-scope-3bb53923e88e6c/pk-rank-budget-imply-closure-lowrank.json"
+            ],
+            "reason": "H 与 F 的 ALL 证明低秩截面交换与 ker 判据；目标还含独立归一化紧致性、完整闭包生成式、非闭性等结论。"
+          },
+          "map/edges/positive-kernels-boss3-3a-4c411357b7f7841f/pk-rank-face-motivates-nonboolean-signature-obligation.json": {
+            "disposition": "retained",
+            "reason": "同一批中未受本次数学结论修订影响的原产物。"
+          },
+          "map/edges/positive-kernels-boss3-3a-4c411357b7f7841f/pk-sharp-budget-checks-partial-observation-obligation.json": {
+            "disposition": "retained",
+            "reason": "同一批中未受本次数学结论修订影响的原产物。"
+          },
+          "map/edges/positive-kernels-boss3-3a-4c411357b7f7841f/pk-sharp-budget-specializes-rank-face.json": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/maintenance-scope-3bb53923e88e6c/pk-sharp-budget-specializes-rank-face.json"
+            ],
+            "reason": "预算精化禁止项的质量约束，不能仅由预算推出目标中的每个单核秩公式和完整暴露面判别。"
+          }
+        }
+      }
+    },
+    "reviewed_by": "Codex maintenance",
+    "review_note": "只重审受影响边的实际推导和覆盖。其它产物沿用原作者的精确引用。"
+  },
+  "maintenance": {
+    "reviewed_by": "Codex maintenance",
+    "replaces": "positive-kernels-boss3-3a-4c411357b7f7841f",
+    "source_commit": "7939c10a08787482f8370ea345ba135de9bfec10",
+    "previous_owner": "Boss3",
+    "reason": "修订已交付超边的数学范围和端点。"
+  }
+}

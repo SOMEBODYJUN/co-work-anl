@@ -1,0 +1,64 @@
+{
+  "edge_id": "pk-rank-budget-imply-closure-lowrank",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "PK-INTERACTION-RANK-FACE-v1",
+    "PK-SHARP-FORBIDDEN-MASS-v1"
+  ],
+  "target_ids": [
+    "PK-OCCUPANCY-CONE-CLOSURE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "固定有限 Boolean 响应表、n≥1、严格正质量；闭包取响应表欧氏拓扑，r≥0，且 0≤r≤n−2 时 q=r+1；另采用 D 正文中独立证明的归一化生成集有限支持种类、B=1 紧致凸包及其锥闭性论证。",
+  "roles": {
+    "PK-INTERACTION-RANK-FACE-v1": "给出有限锥中 L_q=0 当且仅当 active 多重线性次数≤r，并确认顶背景泛函的非负面结构。",
+    "PK-SHARP-FORBIDDEN-MASS-v1": "给出与最高次数无关的固定 γ，将逼近序列的坏项逐项删去且误差趋零，从而把低秩极限拉回 closure(K_fin∩V_r)。",
+    "PK-OCCUPANCY-CONE-CLOSURE-v1": "结论为 closure(K_fin) 的 unanimity 生成式、原锥非闭性及 closure(K_fin)∩V_r=closure(K_fin∩V_r)。"
+  },
+  "explanation": "联合使用 H 与 F：若 C_l∈K_fin 收敛到 C∈closure(K_fin)∩V_r，则 H 给 L_q(C)=0，连续性使 L_q(C_l)→0；F 的统一 γ 对每个表示删去 forbidden 项并给出逐坐标误差≤L_q(C_l)/γ，故得到低秩核序列收敛到 C。该边实际承重的是 D 的低秩截面交换；D 的完整闭包生成式还依赖其正文中独立写出的归一化聚点、紧致凸包和锥闭性条件，故关系明确保持 conditional。",
+  "scope": "固定正质量 Boolean 响应表的闭包与低秩截面；不延伸到非 Boolean selector、部分观测、均衡或一般拥塞桥。",
+  "evidence": [
+    {
+      "path": "archives/positive-kernels/state/定理/正占用核交互秩暴露面--定理.md",
+      "sha256": "0351e3c06cbcf0290d4aa5b589d0d7b3d78aaf73ec5bef4a8e0fb9466a46d3c8"
+    },
+    {
+      "path": "archives/positive-kernels/state/定理/正占用核锐截断预算--定理.md",
+      "sha256": "5c6c4c3a7b186ae901f3db419d20e3204a4fea58e38935602f86250a9301d6eb"
+    },
+    {
+      "path": "archives/positive-kernels/state/定理/正占用核闭包与低秩截面--定理.md",
+      "sha256": "8a306fdb484933f67a6fae43fecd7beed1ee7074bdb9b5cea885db11e54c6fc5"
+    },
+    {
+      "path": "archives/positive-kernels/state/审查/正占用核重构与冻结攻击--审查.md",
+      "sha256": "df61f7edc68871c4463a686ad614173580ce18b28c3ec19540b0426cecaa516f",
+      "section": "4. 精确闭包与极限核"
+    },
+    {
+      "path": "archives/positive-kernels/state/审查/正占用核重构与冻结攻击--审查.md",
+      "sha256": "df61f7edc68871c4463a686ad614173580ce18b28c3ec19540b0426cecaa516f",
+      "section": "5. 到任意低秩目标的定量距离"
+    }
+  ],
+  "reviewed_by": "Codex maintenance",
+  "review_note": "H 与 F 的 ALL 证明低秩截面交换与 ker 判据；目标还含独立归一化紧致性、完整闭包生成式、非闭性等结论。",
+  "endpoint_pins": {
+    "PK-INTERACTION-RANK-FACE-v1": "9e43e0d7bf15ef35ce4da59c19ffc0db9082bf85ae49053c15983dc35ee98394",
+    "PK-OCCUPANCY-CONE-CLOSURE-v1": "13553d9e743a8553ab1b80aa6f1cdeb24e3e280115ac77e8d48fdaa0402b26dc",
+    "PK-SHARP-FORBIDDEN-MASS-v1": "1cb670f61244d4b9ed041ba277f071a8001cf8d5e369b90c4b3710971333c699"
+  },
+  "evidence_pins": {
+    "archives/positive-kernels/state/定理/正占用核交互秩暴露面--定理.md": "0351e3c06cbcf0290d4aa5b589d0d7b3d78aaf73ec5bef4a8e0fb9466a46d3c8",
+    "archives/positive-kernels/state/定理/正占用核锐截断预算--定理.md": "5c6c4c3a7b186ae901f3db419d20e3204a4fea58e38935602f86250a9301d6eb",
+    "archives/positive-kernels/state/定理/正占用核闭包与低秩截面--定理.md": "8a306fdb484933f67a6fae43fecd7beed1ee7074bdb9b5cea885db11e54c6fc5",
+    "archives/positive-kernels/state/审查/正占用核重构与冻结攻击--审查.md": "df61f7edc68871c4463a686ad614173580ce18b28c3ec19540b0426cecaa516f"
+  },
+  "review_digest": "c50c8788551b4f44417261a05f0055a48058df17f2bef90d81703c7c4f4b76ce",
+  "contribution": {
+    "result": "固定正质量、0≤r≤n−2，q=r+1。若 C_l∈K_fin 收敛至低阶 C，则 L_q(C_l)→0；用固定 γ 删除表示中全部 forbidden 项，误差≤L_q(C_l)/γ，得到 K_fin∩V_r 序列逼近 C。反向由 V_r 闭性。H 的非负 Möbius 系数恒等式也把 ker L_q 判据连续延伸到闭包。",
+    "remaining": "完整闭包由原核与 unanimity 极限核的有限非负组合生成，需要 B=1 归一化、固定支持的聚点、紧致凸包与锥闭性。非闭性须另外用 U_S 单独激活反例，低阶退化界也需区分。"
+  }
+}

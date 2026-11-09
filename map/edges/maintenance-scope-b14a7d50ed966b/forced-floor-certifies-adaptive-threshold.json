@@ -1,0 +1,67 @@
+{
+  "edge_id": "commonmany-forced-floor-certifies-adaptive-threshold",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-FORCED-FLOOR"
+  ],
+  "target_ids": [
+    "SC-K-ADAPTIVE-DOUBLE-LPT-2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "在 MF-MODEL 中固定站 s 的 q_s≥1 个设施，AD 的首轮 LPT 赋值随后确实被纯 Nashification 成精确纯客户 NE；强制池 T_s 是当前可达设施全部位于 s 的客户，按非增权 v_j 定义 η_s=min_{0≤h<q_s}max{v_{h+1},D/(q_s−h)}，并且首轮每箱≥γ>0。令 τ_s=max(γ,η_s)；q_s≥2 时第二轮使用 q_s−1 箱。",
+  "roles": {
+    "SC-K-FORCED-FLOOR": "在每个精确纯 NE 中给出站 s 每家设施负载≥η_s，并规定残余游戏须重新定义强制池。",
+    "SC-K-ADAPTIVE-DOUBLE-LPT-2": "把该 NE 下界与首轮 γ 合并为 τ_s，再以 2τ_s 检验第二轮删除箱，形成 AR 证书入口。"
+  },
+  "explanation": "强制原子池引理的证明取站内最小负载设施，利用精确纯 NE 的严格偏离不等式得到 v_{h+1}≤ℓ 与 D≤(q_s−h)ℓ，故 ℓ≥η_s，所有站内设施均≥η_s。AD 首轮 Nashification 后正好处于该纯 NE 量词内，首轮盒条件另给每家≥γ，于是每家 a_f≥τ_s。只要第二轮 LPT 箱全≤2τ_s，即得到 AR 删除证书。这个边只证明 AD 的自适应阈值步骤；它不把 η_s 推广到 mixed NE、不替代首轮 Nashification/第二轮测试，也不提供 RANGE/MAX 的位多项式算法。",
+  "scope": "固定纯 NE 及 AD 成功测试的阈值校验；η_s 对 q=0 不定义，对残余游戏必须重算，且不声称公式对每个池最优或对任意 mixed 在轨均衡成立。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/强制原子池的纯均衡设施负载下界--引理.md",
+      "sha256": "f52ac3cbca886828fe6ec8a3fb63c922ca712004d47ffba09e6e700a35aeda2a"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/强制负载下界的自适应原池重置--算法.md",
+      "sha256": "86287a5ef01a657d547a78e2900ed3d86d27483d322697736bcc3f077c6dbc76",
+      "section": "AD：可计算的自适应双LPT充分测试"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/审查/受限同链调度导入的最大值与范围义务--审查.md",
+      "sha256": "0f112e754fd5c918a7bbc5791cc31af95345e91dc27c90e3f49cc322a3b99ddb"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/计算/补集编译与条件离轨补全的精确核验--计算.md",
+      "sha256": "304e46772fb00d680126bb697e791f99cfc21610e1fb65b5b7c276246a469369"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/审查/任意设施数命题登记与证据分层--审查.md",
+      "sha256": "f08b7bff2d2e89cedf745454a4f3112cb9be0b67e1e5d17ce7dca582923c7f62",
+      "section": "重置、强制下界与允许静止超帽"
+    }
+  ],
+  "reviewed_by": "Codex maintenance",
+  "review_note": "证明到首轮后的阈值和第二轮测试如何充当 AR 入口，不单独证明双 LPT 因子二完整算法。",
+  "endpoint_pins": {
+    "SC-K-ADAPTIVE-DOUBLE-LPT-2": "948faf5dbd2362c47d0a6c2d1679c2a0663b56a33bd187a5670798ed66398974",
+    "SC-K-FORCED-FLOOR": "cf6aa3912a847679847c51588b2627ba768529b821a76d42d6b00ff1cca3ede7"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/引理/强制原子池的纯均衡设施负载下界--引理.md": "f52ac3cbca886828fe6ec8a3fb63c922ca712004d47ffba09e6e700a35aeda2a",
+    "archives/facility-games/subarchives/common-many/state/算法/强制负载下界的自适应原池重置--算法.md": "86287a5ef01a657d547a78e2900ed3d86d27483d322697736bcc3f077c6dbc76",
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+    "archives/facility-games/subarchives/common-many/state/审查/受限同链调度导入的最大值与范围义务--审查.md": "0f112e754fd5c918a7bbc5791cc31af95345e91dc27c90e3f49cc322a3b99ddb",
+    "archives/facility-games/subarchives/common-many/state/计算/补集编译与条件离轨补全的精确核验--计算.md": "304e46772fb00d680126bb697e791f99cfc21610e1fb65b5b7c276246a469369",
+    "archives/facility-games/subarchives/common-many/state/审查/任意设施数命题登记与证据分层--审查.md": "f08b7bff2d2e89cedf745454a4f3112cb9be0b67e1e5d17ce7dca582923c7f62"
+  },
+  "review_digest": "d1dd0228711eb117163b63f04d7892a622f7c41997917873ecb045a1ffd015f9",
+  "contribution": {
+    "result": "若首轮 Nashification 已得到精确纯 NE 且保持 min_f a_f≥γ，则固定站 s 的强制池下界给各 a_f≥η_s，从而 a_f≥τ_s=max(γ,η_s)。这证明第二轮可采用 2τ_s 的阈值。若 q_s−1 箱全通过，才形成 ρ_s=τ_s 的 AR 删除证书。",
+    "remaining": "首轮 Nashification 的正确性/求值、第二轮实际通过、q_s=1 重置、AR 的全部离轨续局以及 RANGE/MAX 位复杂度均是独立步骤。"
+  }
+}

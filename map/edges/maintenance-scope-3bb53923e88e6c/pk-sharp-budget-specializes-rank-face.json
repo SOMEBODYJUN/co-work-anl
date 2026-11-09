@@ -1,0 +1,52 @@
+{
+  "edge_id": "pk-sharp-budget-specializes-rank-face",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "PK-SHARP-FORBIDDEN-MASS-v1"
+  ],
+  "target_ids": [
+    "PK-INTERACTION-RANK-FACE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定有限 Boolean 核模型、n≥2、严格正实质量，0≤r≤n−2，q=r+1，且输入为一个已给的有限非负核表示。",
+  "roles": {
+    "PK-SHARP-FORBIDDEN-MASS-v1": "在 H 的禁止项判据上给出顶背景覆盖概率、精确 γ、删除坏项的质量及逐坐标误差预算。",
+    "PK-INTERACTION-RANK-FACE-v1": "提供 min{k,|S|−1}≤r 的表示级低秩判据及 L_{r+1} 零面。"
+  },
+  "explanation": "F 将 H 的定性“每个正项均须满足 min{k,|S|−1}≤r”收紧为给定表示的定量投影：对每个 forbidden 单核，顶背景差分比至少 γ，删项后误差不超过 L_q(C)/γ。它保留 H 的完整 Boolean、正质量和非负有限表示量词，并额外限定低阶 r。",
+  "scope": "固定质量下的给定表示截断预算；不提供未知响应表的表示恢复，也不把距离常数误称为最终最优。",
+  "evidence": [
+    {
+      "path": "archives/positive-kernels/state/定理/正占用核锐截断预算--定理.md",
+      "sha256": "5c6c4c3a7b186ae901f3db419d20e3204a4fea58e38935602f86250a9301d6eb",
+      "section": "完整证明与绝对一致误差界"
+    },
+    {
+      "path": "archives/positive-kernels/state/定理/正占用核交互秩暴露面--定理.md",
+      "sha256": "0351e3c06cbcf0290d4aa5b589d0d7b3d78aaf73ec5bef4a8e0fb9466a46d3c8"
+    },
+    {
+      "path": "archives/positive-kernels/state/审查/正占用核重构与冻结攻击--审查.md",
+      "sha256": "df61f7edc68871c4463a686ad614173580ce18b28c3ec19540b0426cecaa516f",
+      "section": "3. 顶 context 的 sharp gap"
+    }
+  ],
+  "reviewed_by": "Codex maintenance",
+  "review_note": "预算精化禁止项的质量约束，不能仅由预算推出目标中的每个单核秩公式和完整暴露面判别。",
+  "endpoint_pins": {
+    "PK-INTERACTION-RANK-FACE-v1": "9e43e0d7bf15ef35ce4da59c19ffc0db9082bf85ae49053c15983dc35ee98394",
+    "PK-SHARP-FORBIDDEN-MASS-v1": "1cb670f61244d4b9ed041ba277f071a8001cf8d5e369b90c4b3710971333c699"
+  },
+  "evidence_pins": {
+    "archives/positive-kernels/state/定理/正占用核锐截断预算--定理.md": "5c6c4c3a7b186ae901f3db419d20e3204a4fea58e38935602f86250a9301d6eb",
+    "archives/positive-kernels/state/定理/正占用核交互秩暴露面--定理.md": "0351e3c06cbcf0290d4aa5b589d0d7b3d78aaf73ec5bef4a8e0fb9466a46d3c8",
+    "archives/positive-kernels/state/审查/正占用核重构与冻结攻击--审查.md": "df61f7edc68871c4463a686ad614173580ce18b28c3ec19540b0426cecaa516f"
+  },
+  "review_digest": "6da19136aad323f46bab84762a2306f5e82617daa877ccbd4026d909abf822a1",
+  "contribution": {
+    "result": "给定表示的 L_q(C)=0 时，γ>0 的删除预算迫使所有 forbidden 项全激活质量为零，故该表示没有 min{k,|S|−1}>r 的正项。一般 L_q>0 时删项误差≤L_q(C)/γ。",
+    "remaining": "单核秩恰为 min{k,|S|−1}、非负 Möbius 不消去、反向判别及 L_q 暴露面各需目标正文中的独立证明。"
+  }
+}
