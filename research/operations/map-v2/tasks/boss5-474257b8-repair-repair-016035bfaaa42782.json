@@ -434,11 +434,98 @@
       }
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss1",
-  "request_id": "b30420bbc4714ed58e72a21b675fd871",
+  "request_id": "6eb8405ecbad4a44940e14ca37c769e0",
   "requests": {
     "0471429a1a1f47239a2ae02a07333759": "plan",
-    "b30420bbc4714ed58e72a21b675fd871": "claim"
+    "b30420bbc4714ed58e72a21b675fd871": "claim",
+    "6eb8405ecbad4a44940e14ca37c769e0": "done"
+  },
+  "edge_paths": {
+    "commonmany-type-support-and-greedy-existence-imply-frozen-light-fpt": "map/edges/boss5-474257b8-repair-repair-016035bfaaa42782/type-support-and-greedy-existence-to-frozen-light-fpt.json"
+  },
+  "receipt": {
+    "task_id": "boss5-474257b8-repair-repair-016035bfaaa42782",
+    "stage": "3A",
+    "object_ids": [
+      "M-57da53da3efa46998555bccf77c69d35",
+      "SC-K-BOX-NE-FPT-TYPES",
+      "SC-K-CATALOG-WEIGHT-XP-2",
+      "SC-K-FROZEN-LIGHT-FPT"
+    ],
+    "read_object_ids": [
+      "MF-MODEL",
+      "SC-K-GREEDY-BOX-EXISTS",
+      "SC-K-2-E",
+      "SC-K-GREEDY-BOX-TO-2",
+      "SC-K-LEX-BUDGET"
+    ],
+    "input_pins": {
+      "M-57da53da3efa46998555bccf77c69d35": "dcc60adbdf8b7c23be791bd43530306a3189250c3a0d3e7c2c57be6b884d8b79",
+      "SC-K-BOX-NE-FPT-TYPES": "a25ce679a6fb384cad89743a0638dcb334c4751b231615a3ad46eda20fd5958b",
+      "SC-K-CATALOG-WEIGHT-XP-2": "a85a05646f591c74ee66369dc7861a7d121830acc4da53eef197ac05c845d818",
+      "SC-K-FROZEN-LIGHT-FPT": "35aad9a197254ead30134dd90701d1de4d79e9ab664a3c861b39c824c2c5443f",
+      "MF-MODEL": "1ca8c08397c3ec2c0a05b8eecb18e5e1de2b3e863c5f73f8c6eaf6b6fdf05bec",
+      "SC-K-GREEDY-BOX-EXISTS": "1734aef77d4e8a53a08935117a99c442bbbb5190a21570b036ab13ea96efc448",
+      "SC-K-2-E": "c345b8c200578a44af61428a9f884e66590756578c6dd85c96faf49e60fbd0cd",
+      "SC-K-GREEDY-BOX-TO-2": "c5f0af766e5c2d960dc7f4b714189e568990f1165bbaeefba51b7a0d89a3ce14",
+      "SC-K-LEX-BUDGET": "420f34e52ec452843993adf640e5dc699a2f99bb297de382077f7009ce68a0da"
+    },
+    "status": "complete",
+    "coverage": {
+      "M-57da53da3efa46998555bccf77c69d35": {
+        "state": "isolated-after-review",
+        "comparison_scope": "重核任意预设占用 q_s=1、私有 γ、公共 3-PARTITION 物品的完整盒判定、等和逆向原 NE、逐名 NP 证书，与类型 FPT 及真实贪心冻重域比较。",
+        "reason": "归约的全部上盒与公共总重 mγ 迫使每站公共重恰 γ；等和时各站总重 2γ，扣除本客户自重后满足每个原比较。该预设占用无法来自同输入的规范贪心：第一站收全部公共物品及其私有 γ，m≥2 时第二轮该站得分 (m+1)γ/2>γ，高于未开站只剩私有 γ 的得分，故第二家与首家同址。因而该 NP 完全性没有真实贪心承诺，也不与固定 m,d 的类型支持 FPT 冲突。",
+        "object_pin": "dcc60adbdf8b7c23be791bd43530306a3189250c3a0d3e7c2c57be6b884d8b79"
+      },
+      "SC-K-BOX-NE-FPT-TYPES": {
+        "state": "linked",
+        "comparison_scope": "核任意占用下活动支持、完整原菜单、实际成本扣自重、盒与非活动大常数、固定维数和位长、标签恢复，以及附加冻结多选客户时必须另核的稳定性。",
+        "reason": "在同一真实贪心冻结域，分量类型 IP 对可动客户精确；同冻结集合的存在见证使分量必可行。额外冻结重客户的完整原动作由盒不等式支付。Lenstra 是源已证结果中明确的标准固定变量位复杂度导入，显式编码及参数界是定义域。",
+        "edge_ids": [
+          "commonmany-type-support-and-greedy-existence-imply-frozen-light-fpt"
+        ],
+        "object_pin": "a25ce679a6fb384cad89743a0638dcb334c4751b231615a3ad46eda20fd5958b"
+      },
+      "SC-K-CATALOG-WEIGHT-XP-2": {
+        "state": "isolated-after-review",
+        "comparison_scope": "重核全物理覆盖类型、Σq=k 占用枚举、负载次序下固定维逐坐标优化、全局 lexmax、四预算、O(kpN log k) 加输入位长的实际偏离证书与默认规则。复核旧重叠 SC-K-CATALOG-WEIGHT-XP-2 / SC-K-2-E。",
+        "reason": "该 XP 在显式 k 与固定全目录 p、全输入权种 d 的域内搜索的正是 SC-K-2-E 证明所用的全布局站纯/站内均匀候选族的 lexmax，因而继承原 NE 和四类搬迁预算。存在定理本身不支付位复杂度；(k+1)^(p−1)p!p f(p,d)poly(L) 的 k 指数依 p，只提供 XP 上界，也不是轻分量 FPT 的推论。实际偏离和默认查询按现有已证 MAX 导入另外完成，无需穷举全布局策略表。这个原交叠已经厘清，保留各自命题范围，不新增重复边。",
+        "object_pin": "a85a05646f591c74ee66369dc7861a7d121830acc4da53eef197ac05c845d818"
+      },
+      "SC-K-FROZEN-LIGHT-FPT": {
+        "state": "linked",
+        "comparison_scope": "核真实正 γ 的同一贪心布局/原池、恰同冻结集合、每分量完整原菜单、(c,d) 维数及全部冻结重客户跨分量原动作。复核旧重叠 SC-K-FROZEN-LIGHT-FPT / SC-K-GREEDY-BOX-TO-2。",
+        "reason": "两个 proved 源共同支付目标 v3 全部在轨必成功 f(c,d)poly(L) 结论。输出与同次贪心原池、重数及 γ 满足数学 BOX-TO-2 输入。其存续源使用当前池，消失源重置全原池，已证 MAX 接续完成全部实际标签偏离与默认纯 NE 求值。数学接口不要求 H，现行 verify_on_path 要求 H 且未提供该 ILP 选择器的直接接入。该原交叠已在接口范围内闭合，离轨完成不计为本在轨边的输出。",
+        "edge_ids": [
+          "commonmany-type-support-and-greedy-existence-imply-frozen-light-fpt"
+        ],
+        "object_pin": "35aad9a197254ead30134dd90701d1de4d79e9ab664a3c861b39c824c2c5443f"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/boss5-474257b8-repair-repair-016035bfaaa42782/type-support-and-greedy-existence-to-frozen-light-fpt.json",
+        "sha256": "41ff42bdc98a6866ffc6e80805c22ac56266e8c3065543b2a2f0b5546d3aff6e"
+      }
+    ],
+    "reviewed_by": "Boss1",
+    "review_note": "对旧交付的四个核心、唯一资产和两个旧对象重叠定向重核。固定维 ILP 保留为标准已证外部算法导入，本次未重读 Lenstra 原文或运行实现。数学 BOX-TO-2/MAX 的独立可接续结论与现行软件 H 边界均保留。新定义未列 follow-up 对，两个旧重叠的关闭理由已分别写入对应核心覆盖。",
+    "supersession": {
+      "commonmany-3a-3a-93b668d2f3f4c0bb": {
+        "reason": "复核相同四核心，保留两源 ALL 证明和在轨 whole 范围。修正将已证标准固定维 ILP 导入与合法输入域当作开放前提的 conditional 标记。延续旧收据的两项关闭处置：全目录 XP / 因子二存在在共同 lexmax 候选族及复杂度上已经对清，冻重 FPT / BOX-TO-2 在同一真实布局与完整盒 NE 接口上已经对清。",
+        "assets": {
+          "map/edges/commonmany-3a-3a-93b668d2f3f4c0bb/type-support-and-greedy-existence-to-frozen-light-fpt.json": {
+            "disposition": "replaced",
+            "replacement_paths": [
+              "map/edges/boss5-474257b8-repair-repair-016035bfaaa42782/type-support-and-greedy-existence-to-frozen-light-fpt.json"
+            ],
+            "reason": "新路径保留同一关系身份及完整数学条件，明确证明同冻结集合的逐分量可行性、跨分量重客户全原动作稳定与位复杂度；在轨推导标为 unconditional / whole，独立 BOX-TO-2/MAX 完成范围保留。"
+          }
+        }
+      }
+    }
   }
 }

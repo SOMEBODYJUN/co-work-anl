@@ -106,12 +106,52 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss1",
-  "request_id": "7512e210d3354b4bbf565af8289396b7",
+  "request_id": "6eb8405ecbad4a44940e14ca37c769e0",
   "requests": {
     "7b6cc4aa61f24a75a70611709938aef9": "plan",
     "540a288a57234532b2ef4b78da88143d": "plan",
-    "7512e210d3354b4bbf565af8289396b7": "claim"
+    "7512e210d3354b4bbf565af8289396b7": "claim",
+    "6eb8405ecbad4a44940e14ca37c769e0": "done"
+  },
+  "edge_paths": {
+    "single-common-tail-terminal-and-true-deviation-pay-all-order-welfare": "map/edges/customer-common-tail-count-round13-3a-12c46343813f3480/single-common-tail-terminal-and-true-deviation-pay-all-order-welfare.json"
+  },
+  "receipt": {
+    "task_id": "customer-common-tail-count-round13-3a-12c46343813f3480",
+    "stage": "3A",
+    "status": "complete",
+    "object_ids": [
+      "customer-attraction/single-common-tail-target-count-half-for-all-orders"
+    ],
+    "read_object_ids": [
+      "M-723b5ee6fbd8437eadfa97b816d04478"
+    ],
+    "input_pins": {
+      "customer-attraction/single-common-tail-target-count-half-for-all-orders": "2ec2b3a228814c27885a416f459b7b1465b15b4135924dadc885e7d263c73421",
+      "M-723b5ee6fbd8437eadfa97b816d04478": "2f112824cb9c2a070eacba52c5c622848e926064c74c436ae827963d323c93c8"
+    },
+    "coverage": {
+      "customer-attraction/single-common-tail-target-count-half-for-all-orders": {
+        "state": "linked",
+        "object_pin": "2ec2b3a228814c27885a416f459b7b1465b15b4135924dadc885e7d263c73421",
+        "comparison_scope": "实际末节点门槛、任意次序最后C_i真偏离、r=0与正r非D数量、共同独立块福利。",
+        "reason": "对实现指定计数的任何完整纯SPE与顺序，W≥OPT_m/2。r=0或k=0有W=OPT_m。k,r≥1时a≤x/2，r≥1且W>0时OPT_m/W≤1+k/[2(k+r)]≤3/2。",
+        "edge_ids": [
+          "single-common-tail-terminal-and-true-deviation-pay-all-order-welfare"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/customer-common-tail-count-round13-3a-12c46343813f3480/single-common-tail-terminal-and-true-deviation-pay-all-order-welfare.json",
+        "sha256": "bd4fbfcf97997c25f2b4963a585bf64935e80ccbea163fca7586864833c9cea6"
+      }
+    ],
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "reviewed_by": "Boss1",
+    "review_note": "原末位门槛只检一个节点，新结论另用完整策略的真实离轨终局。"
   }
 }
