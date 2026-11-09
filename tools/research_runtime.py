@@ -243,6 +243,13 @@ def edge_bindings(root, edge, objects, verify=True):
             'review_digest': edge_digest(edge)}
 
 
+def require_edge_result(edge):
+    if (edge['status'] == 'accepted' and edge['kind'] in LOGICAL
+            and 'contribution' not in edge
+            and not (isinstance(edge.get('whole_result'), str) and edge['whole_result'].strip())):
+        raise ValueError('Accepted logical edge needs whole_result or a proof-step contribution: ' + edge['edge_id'])
+
+
 def edges(root, data, objects, verify=True):
     result = {}
     for name in data.get('edge_files', []):
@@ -274,6 +281,10 @@ def edges(root, data, objects, verify=True):
                     or not isinstance(contribution, dict) or set(contribution) != {'result', 'remaining'}):
                 raise ValueError('A logical contribution requires result and remaining: ' + eid)
             nonempty(contribution, ['result', 'remaining'])
+        if 'whole_result' in edge:
+            if edge['kind'] not in LOGICAL or 'contribution' in edge:
+                raise ValueError('A whole result and a proof-step contribution are distinct: ' + eid)
+            nonempty(edge, ['whole_result'])
         if edge['status'] == 'accepted':
             nonempty(edge, ['reviewed_by', 'review_note'])
             if edge['kind'] in LOGICAL and set(edge['source_ids']) == set(edge['target_ids']):
@@ -315,9 +326,12 @@ def check_edge(root, edge_file, registry=REGISTRY, verify=True):
     if verify: verify_endpoints(root,edge,objects)
     relations = edges(root, dict(data, edge_files=[name]), objects, verify=verify)
     edge = relations[next(iter(relations))]
+    if name not in data.get('edge_files', []):
+        require_edge_result(edge)
     return {'status': 'edge-structure-valid-not-a-mathematical-verdict',
             'edge_file': name, 'edge_id': edge['edge_id'],
             'edge_status': edge['status'], 'registry': registry,
+            'proof_scope': 'step' if 'contribution' in edge else 'whole' if edge['kind'] in LOGICAL else 'context',
             'objects': sorted(set(edge['source_ids'] + edge['target_ids']))}
 
 
@@ -412,7 +426,21 @@ def validate_map_follow_ups(definition, receipt, rows, objects, *, final=False):
     """A confirmed deferred comparison names a real task in the same queue."""
     requested = receipt.get('follow_up_tasks', [])
     strings(requested, 'follow_up_tasks')
-    if not requested:
+    overlaps = (definition.get('context_plan') or {}).get('overlap_comparisons', [])
+    deferred = {(item['core_id'], item['peer_id']): item['stage']
+                for item in overlaps if item['status'] == 'follow-up'}
+    closed = receipt.get('closed_overlaps', [])
+    if not isinstance(closed, list):
+        raise ValueError('closed_overlaps must be a list of deferred pairs with reasons')
+    for entry in closed:
+        if not isinstance(entry, dict):
+            raise ValueError('closed_overlaps requires core_id, peer_id and reason')
+        nonempty(entry, ['core_id', 'peer_id', 'reason'])
+        pair = (entry['core_id'], entry['peer_id'])
+        if pair not in deferred:
+            raise ValueError('Unknown or repeated closed overlap: ' + ' / '.join(pair))
+        del deferred[pair]
+    if not requested and not deferred:
         return
     origin = definition['task_id']
     origin_core = set(definition['object_ids'])
@@ -425,6 +453,7 @@ def validate_map_follow_ups(definition, receipt, rows, objects, *, final=False):
         value = plan.get('comparison_question') if isinstance(plan, dict) else None
         return ' '.join(value.split()) if isinstance(value, str) else ''
 
+    scheduled = []
     for task_id in requested:
         identity(task_id)
         label = f'Map follow-up {task_id} from {origin}'
@@ -461,6 +490,11 @@ def validate_map_follow_ups(definition, receipt, rows, objects, *, final=False):
             raise ValueError(label + ' has no completed successor. Publish the comparison or repair its originating receipt.')
         if not _map_inputs_current(target, {oid: pin(objects[oid]) for oid in ids}):
             raise ValueError(label + ' has stale registered inputs. Reframe the comparison on the current versions.')
+        scheduled.append((stage, comparison_ids))
+    for pair, stage in deferred.items():
+        if not any(layer == stage and set(pair) <= ids for layer, ids in scheduled):
+            raise ValueError('Deferred overlap needs a matching follow_up_tasks ID or a mathematical reason in closed_overlaps: '
+                             + ' / '.join(pair))
 
 
 def _map_queue_final_check(root, registry, data, objects, relations, review):

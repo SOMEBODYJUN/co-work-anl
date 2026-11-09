@@ -1,0 +1,43 @@
+{
+  "edge_id": "config-activation-representation-to-coverage-equivalence",
+  "kind": "implements",
+  "status": "accepted",
+  "source_ids": [
+    "M-6436d85fd0ed43b38ed3f095a89b326e"
+  ],
+  "target_ids": [
+    "M-f63f6d1bd7fc41b2a4eb5f90492a24b1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "有限 P,L；各 I_l 下闭、v_li≥0；配置 e=(l,S) 且每 bin 至多一配置。M-6436 的激活侧须采用共同 c≥0 的整数预算（c>0 时秩 k=floor(B/c)，c=0 时预算无效），或采用给定的 bin matroid M；只讨论整数配置集。",
+  "roles": {
+    "M-6436d85fd0ed43b38ed3f095a89b326e": "把每 bin 的配置副本识别为 partition 块；共同成本预算给出整数截断，给定 bin matroid 给出平行副本 matroid。",
+    "M-f63f6d1bd7fc41b2a4eb5f90492a24b1": "在同一配置地集上定义 g 的最高利润覆盖，并用下闭性逐物品删冲突，将任一可行整数配置集解码为同值原整数指派。"
+  },
+  "explanation": "两结论共用配置地集。M-6436 给出等成本整数截断或 bin 拟阵的平行副本表示，可直接用作配置覆盖框架的可行域。最高利润覆盖的子模性与下闭逐物品去冲突的双向同值映射由 M-f63 的独立证明给出。该应用只提供整数约束接口。",
+  "scope": "共同成本整数截断或给定 bin 拟阵下的配置可行域接口。自然分数预算、隐式配置定价和一般拟阵舍入各有独立义务。",
+  "evidence": [
+    {
+      "path": "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md",
+      "sha256": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+      "section": "下闭配置指派与最大值覆盖的整数等价"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md",
+      "sha256": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1",
+      "section": "配置指派：完整恢复本次核查所需基线"
+    }
+  ],
+  "reviewed_by": "Codex maintenance",
+  "review_note": "对照共同正文两段证明：覆盖子模性及双向同值映射先独立成立，整数激活表示随后给出。",
+  "endpoint_pins": {
+    "M-6436d85fd0ed43b38ed3f095a89b326e": "308383cc1a8b89b886baf0547670edcb92b40b857b691ba988eaa4f35e1501b3",
+    "M-f63f6d1bd7fc41b2a4eb5f90492a24b1": "7e5c05f0fcd538aa08977e0029cf019d71d0258ce25308b5958911fac9e9167b"
+  },
+  "evidence_pins": {
+    "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md": "a733def460247480a5d073dbe817e48634f7dcb1ed827ffb052434a747ef76db",
+    "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md": "377bd07b3a1dcc2d890c5526abee271ad7c785a80c0030146a020539bed6f9f1"
+  },
+  "review_digest": "3c54df00bd4d45ef8c7160f89a46daf891cb6a64192a43fb456065dcd10d667d"
+}

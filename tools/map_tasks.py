@@ -261,7 +261,7 @@ def dependencies(definition):
     return result
 
 
-def validate(root, definition, phase='map'):
+def validate(root, definition, phase='map', *, objects=None):
     research.identity(definition['task_id'])
     research.nonempty(definition,['goal'])
     dependencies(definition)
@@ -289,7 +289,7 @@ def validate(root, definition, phase='map'):
         _material_versions(root,refs,baseline)
     else:
         research.nonempty(definition,['registry'])
-        _,objects=_load(root,definition['registry'],verify=False)
+        if objects is None:_,objects=_load(root,definition['registry'],verify=False)
         core=definition.get('object_ids');reads=definition.get('read_object_ids',[])
         research.strings(core,'object_ids',not replacements);research.strings(reads,'read_object_ids')
         if not core and reads:raise ValueError('A retirement-only map task cannot have read dependencies')
@@ -576,6 +576,9 @@ def transition(root,old,others,actor,operation,request_id,receipt=None,reason=No
             else:
                 data,objects=_load(root,definition['registry'],verify=False)
                 relations,files=batch_edges(root,definition,receipt,objects)
+                canonical=set(data.get('edge_files',[]))
+                for edge,name in zip(relations.values(),files):
+                    if name not in canonical:research.require_edge_result(edge)
                 edge_paths=dict(zip(relations,files))
                 _check_edge_paths(root,definition,receipt,others,edge_paths,data.get('edge_files',[]))
                 _map_receipt_coverage(definition,receipt,objects,relations)
@@ -1031,6 +1034,20 @@ def _pending_request_path(client,ctx,operation,selector):
     return pending_dir/(key+'.json')
 
 
+def integration_backlog(root,rows):
+    path='map/integration.json'
+    review={}
+    if (_safe_path(root,path).is_file()
+            or (_cache_for(root) is not None and path in _tree(root))):
+        review=json.loads(_ensure(root,path).read_text())
+    done=research._effective_map_done(rows)
+    integrated=review.get('task_receipt_pins',{})
+    pending=sorted(tid for tid,row in done.items()
+                   if integrated.get(tid)!=research.pin(row['receipt']))
+    return {'effective_done':len(done),'integrated':len(done)-len(pending),
+            'pending_batches':len(pending),'pending_task_ids':pending}
+
+
 def mutate(root,task_id,operation,receipt=None,reason=None,phase='map',records=None,prefix='',local=False,read_ids=None,count=1,completions=None,expected_owner=None):
     ctx=binding(root,phase,local);actor=coordination.config(root,'wcg.actor') or ('Boss1' if local else '')
     instance=coordination.config(root,'wcg.instance') or ('local-offline' if local else '')
@@ -1044,8 +1061,10 @@ def mutate(root,task_id,operation,receipt=None,reason=None,phase='map',records=N
         if not re.fullmatch(r'Boss[1-9][0-9]*',expected_owner):raise ValueError('Expected a published Boss number')
         intent['expected_owner']=expected_owner
     board.guard(intent)
+    report_integration=phase=='map' and operation in {'done','done-many'}
     if local:
         paths,result=_apply(root,ctx,actor,instance,intent,uuid.uuid4().hex)
+        if report_integration:result['integration']=integration_backlog(root,listing(root,ctx=ctx))
         return dict(result,status=result.get('status','local-only'),paths=[p.relative_to(root).as_posix() for p in paths])
     branch=coordination.config(root,'wcg.branch')
     if not branch:raise ValueError('Start this independent clone on the shared branch first')
@@ -1064,12 +1083,22 @@ def mutate(root,task_id,operation,receipt=None,reason=None,phase='map',records=N
     for _ in range(8):
         with client.scratch() as temporary:
             directory=Path(temporary);_checkout(client,directory,ctx);_verify_actor(root,directory,ctx,actor,instance)
-            try:paths,result=_apply(directory,ctx,actor,instance,intent,request_id)
+            try:
+                paths,result=_apply(directory,ctx,actor,instance,intent,request_id)
             except (ValueError,OSError,KeyError,TypeError):
                 # A rejected receipt has not reached push. Let the worker fix
                 # it, rather than trapping the corrected receipt as "unknown".
                 if not attempted:pending_path.unlink(missing_ok=True)
                 raise
+            if report_integration:
+                try:
+                    result['integration']=integration_backlog(directory,listing(directory,ctx=ctx))
+                except (ValueError,OSError,board.BoardError):
+                    result['integration']={'status':'unavailable'}
+                    result['next_action']=f'{actor}: run map status to check the integration backlog.'
+                else:
+                    if result['integration']['pending_batches']:
+                        result['next_action']=f'{actor}: sync, map assemble and publish the three updated map files before the next batch.'
             if not paths:
                 pending_path.unlink(missing_ok=True)
                 return dict(result,status=result.get('status','pushed'),request_id=request_id,remote_tip=board.git(directory,'rev-parse','HEAD').stdout.decode().strip())
@@ -1162,8 +1191,10 @@ def collect(root,phase='map',local=False,ctx=None,baseline_ref=None,*,tolerate_s
     for row in rows:
         definition=row['definition'];task_id=definition['task_id']
         try:
-            validate(root,definition,'map');_asset_refs(root,definition,row['receipt'])
+            validate(root,definition,'map',objects=objects);_asset_refs(root,definition,row['receipt'])
             relations,names=batch_edges(root,definition,row['receipt'],objects)
+            for edge,name in zip(relations.values(),names):
+                if name not in canonical:research.require_edge_result(edge)
             _map_receipt_coverage(definition,row['receipt'],objects,relations)
             batch_paths=dict(zip(relations,names))
             duplicate=next((eid for eid,name in batch_paths.items() if eid in edge_paths and edge_paths[eid]!=name),None)
@@ -1423,11 +1454,14 @@ def main(argv=None):
             result=collect(directory,a.phase,a.local_only,ctx,baseline_ref)
     elif a.command in {'list','status'}:
         owner=coordination.config(root,'wcg.actor') if getattr(a,'owner',None)=='self' else getattr(a,'owner',None)
-        if not coordination.config(root,'wcg.workflowRun') and not a.local_only:
-            rows=listing(root,a.phase)
-        else:
-            with latest(root,a.phase,a.local_only) as (directory,ctx):rows=listing(directory,a.phase,ctx)
-        if a.command=='status':result={'tasks':len(rows),'states':{state:sum(row['state']==state for row in rows) for state in ['available','claimed','blocked','done','handoff','withdrawn']}}
+        unbound=not coordination.config(root,'wcg.workflowRun') and not a.local_only
+        source=contextlib.nullcontext((root,None)) if unbound else latest(root,a.phase,a.local_only)
+        with source as (directory,ctx):
+            rows=listing(directory,a.phase,ctx)
+            backlog=integration_backlog(directory,rows) if a.command=='status' and a.phase=='map' else None
+        if a.command=='status':
+            result={'tasks':len(rows),'states':{state:sum(row['state']==state for row in rows) for state in ['available','claimed','blocked','done','handoff','withdrawn']}}
+            if backlog is not None:result['integration']=backlog
         else:result=[row for row in rows if (not owner or row.get('owner')==owner)
                      and (a.owner!='self' or row['state'] in ACTIVE)
                      and (not a.available or row['state'] in {'available','handoff'} and not row.get('owner'))]

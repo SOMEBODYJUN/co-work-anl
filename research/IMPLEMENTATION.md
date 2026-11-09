@@ -210,13 +210,13 @@ edge含edge_id、kind、status、source_ids、target_ids、premises_mode:all、r
 
 {A,B}⇒C写一条ALL边，不能拆成A单独、B单独足够的两边；不同独立证明另写OR支持。equivalent_to表示ALL(source)⇔ALL(target)，反向要同时保全部targets。refutes多目标须逐项有否定证据，只否定合取不能宣称每项都假；迁移必须写模型映射与保留/丢失条件。各对象代表本次实际数学，示例ID不能直接写进真实任务。
 
-完整关系以目标对象的整条陈述为准。逻辑边只完成目标的一步时，加 `"contribution":{"result":"实际推出的局部结论","remaining":"整条目标仍需要的前提或步骤"}`。已成立的局部贡献可作为真实比较成果写入coverage，Solver将它列在研究线索中。迁移以原结果和用于解码或等价的桥为前提，结论定位到迁移后得到的结果。
+完整关系以目标对象的整条陈述为准。新交付的accepted逻辑边必须明确作用范围。整条成立时在 `whole_result` 写实际得到的完整结论及方向。只完成目标的一步时，加 `"contribution":{"result":"实际推出的局部结论","remaining":"整条目标仍需要的前提或步骤"}`。已成立的局部贡献可作为真实比较成果写入coverage，Solver将它列在研究线索中。迁移以原结果和用于解码或等价的桥为前提，结论定位到迁移后得到的结果。edge-check会显示程序识别的作用范围。
 
 作者完整实读后可accepted，无固定二次审批流水。先定最终status、reviewed_by及具体review_note，再用edge-bind --write把endpoint_pins/evidence_pins/review_digest写回同一边文件，最后edge-check。省略--write时只输出绑定字段。绑定覆盖语义文字，之后改文字、状态、端点或证据要重核。edge-check校本边而不要求已在canonical清单，程序检查不代替数学判断。前提尚未证明但“若A且B则C”的论证完整时，可以是`accepted`且`relation_mode:conditional`，不会把C提升为已证；关系论证本身还有缺步才用`proposed`。所有前提与额外条件均已付清才可作为无条件支持，`rejected`保精确失败理由。
 
 map收据含coverage和assets。每个核心写state、object_pin、reason、comparison_scope；linked另列已接受的逻辑关系edge_ids。语境边可随assets保存，只有语境边时实读比较后用isolated-after-review。明确open问题可正常比较，身份或输入不清写needs-decision。已发布canonical边可用精确SHA共享复用。
 
-实际发现的跨包或跨档比较需后续完成时，可在收据写 `"follow_up_tasks":["已发布任务ID"]`。承接任务携精确端点和具体问题，按正常3B或3C推进。终验核对这些承接任务的有效交付或明确的替代交付。一般阅读线索留在比较范围即可。
+对任务中标为follow-up的每个对象对给出处置。实际需要后续时在收据写 `"follow_up_tasks":["已发布任务ID"]`。承接任务覆盖该对端点及实际问题，按正常3B或3C推进。已解决或无继续价值时写 `"closed_overlaps":[{"core_id":"核心ID","peer_id":"对端ID","reason":"实读后的数学理由"}]`。新发现并确认需要后续的比较也写承接任务ID。终验核对这些承接任务的有效交付或明确的替代交付。一般阅读线索留在比较范围即可。
 
 ### 一条ALL边与对应收据
 
@@ -276,11 +276,13 @@ map收据含coverage和assets。每个核心写state、object_pin、reason、com
 
 ```sh
 python work.py map collect
+python work.py map status
 python work.py sync
 python work.py map assemble
+python work.py checkpoint research/registry.json map/coverage.json map/integration.json -m 'Integrate published map batches'
 ```
 
-collect给已交付成果和待补办批，--full返回详细内容。任何Boss均可assemble生成registry.edge_files、coverage和integration。过时批单列修复，其余批照常整合。新增零边回执也须接入涉及的比较范围。
+collect给已交付成果和待补办批，--full返回详细内容。status与done分列有效交付、已整合和待整合批次。提交本轮done的Boss在领下一轮前完成本轮积压整合，任何Boss都可以接手。过时批单列修复，其余批照常整合。新增零边回执也须接入涉及的比较范围。按实际进度保留开放比较，每轮更新后即可发布上述三个文件。
 
 实读并写受影响的archive_reviews及cross_archive_review，说明真实跨批比较和条件。完成后用research check --final与build --final，按projections明确checkpoint生成路径，连同registry、coverage和integration。远端先推进时按最新快照重组，接回仍有效的审读。
 
