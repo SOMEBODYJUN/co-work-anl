@@ -326,9 +326,9 @@ def _request(row,request_id,operation):
 
 
 def _task_keys(definition,phase):
-    # The same source may contain several Claims. Reading it is shared; only
-    # explicit output paths (and map core objects) are exclusive.
-    return set() if phase=='registration' else set(definition['object_ids'])
+    # Initial object coverage has a single owner. Later comparison questions
+    # may share endpoints and still reserve distinct output paths.
+    return set(definition['object_ids']) if phase=='map' and definition['stage']=='3A' else set()
 
 
 def _material_count(rows):
@@ -579,6 +579,7 @@ def transition(root,old,others,actor,operation,request_id,receipt=None,reason=No
                 edge_paths=dict(zip(relations,files))
                 _check_edge_paths(root,definition,receipt,others,edge_paths,data.get('edge_files',[]))
                 _map_receipt_coverage(definition,receipt,objects,relations)
+                research.validate_map_follow_ups(definition,receipt,others,objects)
                 new['edge_paths']=edge_paths
             new.update(state='done',receipt=receipt)
         else:raise ValueError('Unknown task operation')

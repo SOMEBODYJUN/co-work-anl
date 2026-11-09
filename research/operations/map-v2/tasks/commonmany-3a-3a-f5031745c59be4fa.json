@@ -10,14 +10,18 @@
       "MF-PURE-CAP"
     ],
     "read_object_ids": [
-      "MF-MODEL"
+      "MF-MODEL",
+      "SC-K-FORCED-FLOOR",
+      "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import"
     ],
     "input_pins": {
       "MF-PURE-CAP-POLY": "5e006d258b6730d067c00cb15a7ad3fa3fb25e2a033842a2ed5268523d6e3c66",
       "MF-FROZEN-OVERLOAD-POLY": "12c781557aa7a410319297e4fe672e7a17384024673e17698e7724b8ed4bcad7",
       "SC-K-FROZEN-OVERLOAD-2": "dfee6b8a418f0523cc99167bc43867eac6f1760e00f8eca0497ce987354df527",
       "MF-PURE-CAP": "f76c7824a76fe19b7f752116af4086a6f5d7fcfc68ef51ff6a82cc9d3dd4c4df",
-      "MF-MODEL": "1ca8c08397c3ec2c0a05b8eecb18e5e1de2b3e863c5f73f8c6eaf6b6fdf05bec"
+      "MF-MODEL": "1ca8c08397c3ec2c0a05b8eecb18e5e1de2b3e863c5f73f8c6eaf6b6fdf05bec",
+      "SC-K-FORCED-FLOOR": "cf6aa3912a847679847c51588b2627ba768529b821a76d42d6b00ff1cca3ede7",
+      "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import": "5f2019da9ff05afa3a2e57eb2cf96d8c63eef19e66208bb0290ce535628737f6"
     },
     "write_paths": [
       "map/edges/commonmany-3a-3a-f5031745c59be4fa",
@@ -45,22 +49,22 @@
         "budget_is_runtime_measurement": false
       },
       "reading": {
-        "chars": 204554,
-        "utf8_bytes": 294638,
-        "source_tokens": 208527,
-        "metadata_tokens": 22128,
-        "estimated_tokens": 230815,
-        "metadata_chars": 24486,
-        "metadata_utf8_bytes": 33290,
+        "chars": 212171,
+        "utf8_bytes": 307714,
+        "source_tokens": 218030,
+        "metadata_tokens": 27208,
+        "estimated_tokens": 245462,
+        "metadata_chars": 30052,
+        "metadata_utf8_bytes": 40762,
         "distinct_files": 26,
-        "reading_segments": 29,
+        "reading_segments": 27,
         "token_count_is_estimate": true,
         "estimators": [
           "conservative-math-text-estimate-v1; not a tokenizer count"
         ],
         "unmeasured_refs": [],
         "measurement_scope": "Requested complete text spans plus supplied metadata; binary evidence is not token-counted from raw bytes.",
-        "task_overhead_tokens": 160
+        "task_overhead_tokens": 224
       },
       "estimated_output_tokens": 19411,
       "oversized": false,
@@ -276,6 +280,14 @@
           "path": "archives/facility-games/state/证明/精确续局证书的条件成本与默认规则--证明.md",
           "sha256": "0ea2c580e10c02f0b45cbdc7628ee03579c431dc38d15728a2c8d4264ac5ef99",
           "section": "10.6 独立检查器认证到哪一步"
+        },
+        {
+          "path": "archives/facility-games/subarchives/common-many/state/计算/补集编译与条件离轨补全的精确核验--计算.md",
+          "sha256": "304e46772fb00d680126bb697e791f99cfc21610e1fb65b5b7c276246a469369"
+        },
+        {
+          "path": "archives/facility-games/subarchives/common-many/state/审查/任意设施数命题登记与证据分层--审查.md",
+          "sha256": "f08b7bff2d2e89cedf745454a4f3112cb9be0b67e1e5d17ce7dca582923c7f62"
         }
       ],
       "deferred_candidate_ids": [
@@ -284,14 +296,12 @@
         "SC-K-2-E",
         "SC-K-ADAPTIVE-DOUBLE-LPT-2",
         "SC-K-ADAPTIVE-RESET",
-        "SC-K-FORCED-FLOOR",
         "SC-K-GREEDY-BOX-FINITE-2",
         "SC-K-GREEDY-BOX-TO-2",
         "SC-K-GREEDY-BUDGET",
         "SC-K-GREEDY-MAX-MULT",
         "SC-K-GREEDY-SINGLETON-RESET",
         "SC-K-LEX-BUDGET",
-        "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import",
         "facility-games/learning-core-02-04-mathematics-review"
       ],
       "deferred_candidate_issues": {},
@@ -299,7 +309,55 @@
       "family_hint": "MF-FROZEN-OVERLOAD-POLY",
       "scope_hint": "archives/facility-games/subarchives/common-many",
       "status": "complete-declared-references-planned",
-      "note": "Local proof families are scheduled first. Informal links are separate discovery hints. Read any newly discovered necessary premise through read-add; do not truncate a proof or treat a deferred candidate as paid evidence."
+      "note": "Local proof families are scheduled first. Informal links are separate discovery hints. Read any newly discovered necessary premise through read-add; do not truncate a proof or treat a deferred candidate as paid evidence.",
+      "overlap_comparisons": [
+        {
+          "core_id": "MF-FROZEN-OVERLOAD-POLY",
+          "peer_id": "SC-K-FORCED-FLOOR",
+          "basis": {
+            "path": "archives/facility-games/subarchives/common-many/state/引理/强制原子池的纯均衡设施负载下界--引理.md",
+            "sha256": "f52ac3cbca886828fe6ec8a3fb63c922ca712004d47ffba09e6e700a35aeda2a"
+          },
+          "status": "in-packet"
+        },
+        {
+          "core_id": "MF-FROZEN-OVERLOAD-POLY",
+          "peer_id": "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import",
+          "basis": {
+            "path": "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md",
+            "sha256": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a"
+          },
+          "status": "in-packet"
+        },
+        {
+          "core_id": "MF-PURE-CAP-POLY",
+          "peer_id": "SC-K-GREEDY-BOX-TO-2",
+          "basis": {
+            "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+            "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b"
+          },
+          "status": "follow-up",
+          "stage": "3B"
+        },
+        {
+          "core_id": "MF-PURE-CAP-POLY",
+          "peer_id": "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import",
+          "basis": {
+            "path": "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md",
+            "sha256": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a"
+          },
+          "status": "in-packet"
+        },
+        {
+          "core_id": "SC-K-FROZEN-OVERLOAD-2",
+          "peer_id": "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import",
+          "basis": {
+            "path": "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md",
+            "sha256": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a"
+          },
+          "status": "in-packet"
+        }
+      ]
     }
   },
   "state": "available",
