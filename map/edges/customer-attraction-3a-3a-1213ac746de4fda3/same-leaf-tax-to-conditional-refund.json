@@ -1,0 +1,48 @@
+{
+  "edge_id": "cag-1213ac-same-leaf-tax-to-conditional-refund",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/uniform-scaling-deviation-path-tax-and-old-background-joint-refund"
+  ],
+  "target_ids": [
+    "M-e4ed6e551fd944029b25d8f43ec3314c"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定单位根A与n尾槽，同叶统一缩尾λ∈(0,1]。仅正向无旧背景PAY另需V≥nt、d≤t、nλ≥1，带旧背景统一常数只在正退款客户p=b₀+1_A≥1。",
+  "roles": {
+    "customer-attraction/uniform-scaling-deviation-path-tax-and-old-background-joint-refund": "统一质量λ下原份额与质量利润的逐客户税差，取一片固定原叶。",
+    "M-e4ed6e551fd944029b25d8f43ec3314c": "条件尾PAY、带旧背景联合成本及p≥1常数。"
+  },
+  "explanation": "代入逐客背景p。原单位尾和新质量尾的差对覆盖数c的客户是c(1−λ)p/[(p+c)(p+λc)]。这等于保留的根、旧背景总返还Γ+ΔB。无旧背景时按c/(1+λc)递增得Γ≤n(1−λ)d/(1+nλ)，Vλ−λnt−Γ=(V−nt)+n(1−λ)t−2Γ≥0由三条件给出。带旧背景时同式右端改扣2Γ+ΔB，其逐客项与2d+B₀对应项之比为c(1−λ)/(p+λc)，在p≥1、c≤n时给所述统一常数。p=1/2、n=c=1、λ=1/2且无根覆盖时，ΔB=1/6而该常数乘B₀仅1/9。",
+  "scope": "仅用同一原叶质量税和守恒。跨真实后继的Ω/Π保有符号且未支付，根IC不自动给V≥nt。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/统一缩放的偏离路径税与旧背景联合返还--引理.md",
+      "sha256": "30728bc286082125cfd2c702140cd1622ebaf372ad48c985a9d1b03523438652"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/统一缩尾税与遗漏捕获的共同净账--引理.md",
+      "sha256": "d95591ace7be6659e71517baa142d2ba2f5dfdc1ff13210b572e8e2ab02594eb",
+      "section": "单位根返还、条件PAY及合法旧前缀"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/统一缩尾税与遗漏捕获的共同净账--引理.md",
+      "sha256": "d95591ace7be6659e71517baa142d2ba2f5dfdc1ff13210b572e8e2ab02594eb",
+      "section": "同一原叶的质量税及signed路径"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读两端登记和所列承重段，核对变量、量词、代数和结论边界。沿用成熟原证明及有限证据，未重跑历史求解器。",
+  "whole_result": "无旧背景在三明示条件下Vλ≥λnt+Γ。带旧背景的真实共同成本为2Γ+ΔB，p≥1时上界为n(1−λ)(2d+B₀)/(1+nλ)，任意小实p域不能沿用。",
+  "endpoint_pins": {
+    "M-e4ed6e551fd944029b25d8f43ec3314c": "9496956332b3f711d905716ea31b0a788f0172490be9871408816bc263bba4c7",
+    "customer-attraction/uniform-scaling-deviation-path-tax-and-old-background-joint-refund": "866a1cd63b54a05ce782c1fa4a9fed5aa5a4331ec2cd917ad7bf85d6abac99f3"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/统一缩放的偏离路径税与旧背景联合返还--引理.md": "30728bc286082125cfd2c702140cd1622ebaf372ad48c985a9d1b03523438652",
+    "archives/customer-attraction/state/引理/统一缩尾税与遗漏捕获的共同净账--引理.md": "d95591ace7be6659e71517baa142d2ba2f5dfdc1ff13210b572e8e2ab02594eb"
+  },
+  "review_digest": "8c0b3e227d73c8706cde99b712348a6db22ec032263d90df943ab0c3c9f47b72"
+}

@@ -1,0 +1,58 @@
+{
+  "edge_id": "cag-1213ac-satellite-menu-and-orbits-evaluate-true-two-tail",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-75084fb7ade047b2af6ee4a0953c2a4f",
+    "customer-attraction/symmetric-disjoint-satellite-complete-spe-outcome-orbits"
+  ],
+  "target_ids": [
+    "customer-attraction/true-two-tail-fresh-protected-fractional-price"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "输入为同型不交卫星，固定任意合法有序前缀，恰余两人。D取F、F\\A，或在剩余卫星各块逐核心类型的限制重数相同的保护子集。价格v≥0。",
+  "roles": {
+    "M-75084fb7ade047b2af6ee4a0953c2a4f": "对同型卫星的封顶覆盖价格，剪到单位盒并群平均给精确最大值。",
+    "customer-attraction/symmetric-disjoint-satellite-complete-spe-outcome-orbits": "按实际过去稳定子保全部完整子SPE行动与回拉的终局收益对。",
+    "customer-attraction/true-two-tail-fresh-protected-fractional-price": "把真实末两人新增与最大保护集上的分数价格界转成精确对称计算。"
+  },
+  "explanation": "设过去核心对B的计数d_B，卫星过去计数s_j。限制客户到F时核心-only重数变g_B·1_(d_B=0)，卫星重数变w_B·1_(d_B=0)·1_(s_j=0)。已用卫星在F上无覆盖，可将其价格权设0，未用卫星保持同型。D=F\\A时，若A是核心则再去掉含该核心的类型，若A是卫星则仅再去掉该卫星块。余卫星仍可平均，若无非空卫星则只优化核心盒。引入0≤y≤1且y≤对应总覆盖权，将压缩价格写为有限有理线性规划，真实v为有理份额。轨道递推的行动—父轨道—当前利润对在余二人时给合法A、v，保被选卫星全部终负载。由该终局总剩余利润R_b扣v得真实末位w，从A及冻结前缀计算|A∩F|。于是可分别精确算出同一末两人界的两边，平局不强取群不变动作。",
+  "scope": "对称合同下的精确价格域和真实末两人数据生成。任意手选D可能破坏卫星类型对称，其价格要按实际相同受限重数分组或保原盒。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/对称不交卫星块的完整SPE结果轨道递推--算法.md",
+      "sha256": "b0c4e874c48d9124c842e8c144b1738202db6ef44e019b793fa71d6163e93c98"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/真实末两人新增与保护分数价格--定理.md",
+      "sha256": "65eaaf8caee9084671acf400c731fd710db2b25e9bf1c87b621812708874a04c"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/末两人价格恒等式与保护攻击记录--计算.md",
+      "sha256": "4f9b7f51774f54762c5780dc36b9dd095229215e9a1054392f18f346cae7677a"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读两端登记和所列承重段，核对变量、量词、代数和结论边界。沿用成熟原证明及有限证据，未重跑历史求解器。",
+  "contribution": {
+    "result": "任意合法过去下，F及F\\A价格可剪到单位盒并对剩余同型卫星只保一个坐标，真实上下文中的v,w和新增项可由带回拉的末两人轨道对精确取出。",
+    "remaining": "任意目录、任意保护D和c∈[1,2]的解析价格不等式仍依赖目标自己的S/Z/V真实比较。没有由压缩得出一般half或多项式时间。"
+  },
+  "endpoint_pins": {
+    "M-75084fb7ade047b2af6ee4a0953c2a4f": "df3ceab888ae3d3b676d6b136d64e77bb6f2875db068c2b79629ddb5c0cdf638",
+    "customer-attraction/symmetric-disjoint-satellite-complete-spe-outcome-orbits": "20e1044c973ed673d1931ebbec693e73421dbbcd946d42081ca5f583ced14389",
+    "customer-attraction/true-two-tail-fresh-protected-fractional-price": "fbdba95cec131dae91d992a3ddd5a2fcb22533a30cec21ddd8f84c79b82fd337"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/对称不交卫星块的完整SPE结果轨道递推--算法.md": "b0c4e874c48d9124c842e8c144b1738202db6ef44e019b793fa71d6163e93c98",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/定理/真实末两人新增与保护分数价格--定理.md": "65eaaf8caee9084671acf400c731fd710db2b25e9bf1c87b621812708874a04c",
+    "archives/customer-attraction/state/计算/末两人价格恒等式与保护攻击记录--计算.md": "4f9b7f51774f54762c5780dc36b9dd095229215e9a1054392f18f346cae7677a"
+  },
+  "review_digest": "2f112592866796d88a0ff815b94d58d7ed80d0b2cbb8b2909c2324bda22421c1"
+}

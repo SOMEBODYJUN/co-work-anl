@@ -1,0 +1,46 @@
+{
+  "edge_id": "cag-1213ac-frozen-actual-tag-is-released-mf-face",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-574fd2e7c23a4fb3abd2d36cc05e3da3"
+  ],
+  "target_ids": [
+    "customer-attraction/history-mean-floor-domain-with-frozen-actual-tag"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "保持同一固定原σ、实际前缀、原实际标签及同一M(h)。这里只比较释放/冻结两种MF，逐行、全局NET另算。",
+  "roles": {
+    "M-574fd2e7c23a4fb3abd2d36cc05e3da3": "释放原实际标签后的逐历史MF域与其全raw对偶。",
+    "customer-attraction/history-mean-floor-domain-with-frozen-actual-tag": "冻结版是同样期望约束的禁列面，且必须分别选择对偶。"
+  },
+  "explanation": "给释放域每个raw列q_i(z)≥0。对所有z_i=B_i但z≠B的列令q_i(z)=0，这些是原非负约束的等号面。原source落在面上，因而非空。其余列与cap、逐历史Δ约束恰是冻结MF。这个面可以是真子集。取两名玩家和两个都覆盖同一单位客户的标签，原实际路径取(A,A)。所有叶d=1/2且末位Δ=0，点质量(A,B)在释放域而不在冻结面。固定shadow最大值冻结≤释放。释放对偶的逐列不等式限制到冻结列可行，但未必仍是冻结域最优。冻结对偶只价保留列，不能补已禁标签列。",
+  "scope": "同一原source在两种域都可行。比较的是期望约束面与各自shadow银行，不赋强制进入者额外floor。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/规范门槛均值域与复制偏离的精确成本--引理.md",
+      "sha256": "1a122a9a37ce73ccc41411cb4abdb160e96c56a6ad02e042d8d03ef474c62d4d",
+      "section": "三种期望域及其各自银行"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/逐历史均值门槛的受限实际标签域--引理.md",
+      "sha256": "c44a9313f50196c4d26553aa11c02ba01e7d7ccd5cf324344c3e52febcfe0164"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读两端登记和所列承重段，核对变量、量词、代数和结论边界。沿用成熟原证明及有限证据，未重跑历史求解器。",
+  "contribution": {
+    "result": "冻结MF精确等于释放MF的非空坐标面，且两种对偶可用列与最优值按所述方向比较。",
+    "remaining": "冻结域的全部SPE端点刻画独立由子树拼接证明。跨钱包重标、祖先floor缺额及共同支出仍无付款定理。"
+  },
+  "endpoint_pins": {
+    "M-574fd2e7c23a4fb3abd2d36cc05e3da3": "2b29111fa985c9c639659c48b831ea8032eb49f12d1870867e5acbc5a6311028",
+    "customer-attraction/history-mean-floor-domain-with-frozen-actual-tag": "14d16af09ad773b5e96d05ddb4a6dcf0659553e7565b5fc746b37dd78332347a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/规范门槛均值域与复制偏离的精确成本--引理.md": "1a122a9a37ce73ccc41411cb4abdb160e96c56a6ad02e042d8d03ef474c62d4d",
+    "archives/customer-attraction/state/引理/逐历史均值门槛的受限实际标签域--引理.md": "c44a9313f50196c4d26553aa11c02ba01e7d7ccd5cf324344c3e52febcfe0164"
+  },
+  "review_digest": "8e6d60e51131ad1cacb6302503df0812f750f638d83eb8c589c927ccdd3ac408"
+}

@@ -1,0 +1,50 @@
+{
+  "edge_id": "cag-1213ac-parity-triangle-separates-v2-pair-projections",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CC-PARITY-1"
+  ],
+  "target_ids": [
+    "customer-attraction/pairwise-nonnegative-customer-projections-nongluing-v2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取保存v2数组的两两覆盖矩。可见阶2，三个奇偶支持为03、04、34。",
+  "roles": {
+    "CC-PARITY-1": "共同非负质量必满足E、F、E△F的可见奇偶三角。",
+    "customer-attraction/pairwise-nonnegative-customer-projections-nongluing-v2": "v2非负两两客户投影无法全局非负拼合的精确分离。"
+  },
+  "explanation": "令E={0,3}、F={0,4}，则E△F={3,4}。P_ab=2C_ab−C_a−C_b，由v2表得P_03=0、P_04=8/27、P_34=20/27。P_03+P_04−P_34=−4/9，恰是正文覆盖分离C_03+C_04−C_0−C_34的两倍。三支持都可见，E∪F有三个标签也无需三阶矩。补未覆盖类型对这些量无影响。",
+  "scope": "仅从同一v2的可见一二阶数值排除共同非负实现。三主题收益的signed差值另需线性恒等式。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/两两非负客户投影不能共同实现--障碍.md",
+      "sha256": "cf6111d71240fb337dc0dd14b3d2e41185ad1d9b51ed0fbfad01633c3c319599"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/完整二主题纠错的原始对偶核验--计算.md",
+      "sha256": "8fef3a1f6d232fcb0190a9744b8dce7e8944936e40474b1f1a144167bb09c253"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/可见奇偶矩的对称差闭合--定理.md",
+      "sha256": "5d6bd8498a8113baafc178698261aae803e80eee7b28d01020bf2bf95926f9c1"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读两端登记和所列承重段，核对变量、量词、代数和结论边界。沿用成熟原证明及有限证据，未重跑历史求解器。",
+  "contribution": {
+    "result": "任意实现v2全部两两投影的共同非负客户必满足三角，但v2严格违反，因此不存在该实现。",
+    "remaining": "v2的15份局部真实非负重建、同一总质量与固定图R=1、O=2分别由原完整二主题证书承担。"
+  },
+  "endpoint_pins": {
+    "CC-PARITY-1": "8d9ddd97b4e45aa283a7db20183c31a82e35d7352a1691bc1ea5ff1eae235e62",
+    "customer-attraction/pairwise-nonnegative-customer-projections-nongluing-v2": "0c4c7181acc4427aa0050dbc254f9c4252e4d31ae01b32e84d24e5bb5fe9e97b"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/两两非负客户投影不能共同实现--障碍.md": "cf6111d71240fb337dc0dd14b3d2e41185ad1d9b51ed0fbfad01633c3c319599",
+    "archives/customer-attraction/state/计算/完整二主题纠错的原始对偶核验--计算.md": "8fef3a1f6d232fcb0190a9744b8dce7e8944936e40474b1f1a144167bb09c253",
+    "archives/customer-attraction/state/定理/可见奇偶矩的对称差闭合--定理.md": "5d6bd8498a8113baafc178698261aae803e80eee7b28d01020bf2bf95926f9c1"
+  },
+  "review_digest": "641ddef9b4e42644042f973ec003adc99fbbd440f0b54d08855dbd62ddf8b66e"
+}

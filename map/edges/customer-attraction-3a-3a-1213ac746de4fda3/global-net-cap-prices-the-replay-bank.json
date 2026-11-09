@@ -1,0 +1,52 @@
+{
+  "edge_id": "cag-1213ac-global-net-cap-prices-the-replay-bank",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-574fd2e7c23a4fb3abd2d36cc05e3da3"
+  ],
+  "target_ids": [
+    "customer-attraction/fixed-entering-role-real-replay-and-once-only-potential-budget"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "重放固定原σ和实际行i，目标Q_i取同一全标签raw域。B_i=d_i+Σ_{k>i}(M−u_k)，总cap明确为ΣE_Q B_i≤W。",
+  "roles": {
+    "M-574fd2e7c23a4fb3abd2d36cc05e3da3": "释放进入标签的GLOBAL-NET以一条总cap给同一μ和逐raw列非负约化成本。",
+    "customer-attraction/fixed-entering-role-real-replay-and-once-only-potential-budget": "精确识别NET-TELE的端点与一次共同价格银行。"
+  },
+  "explanation": "将GLOBAL-NET的同一个B_i作为逐行固定终端势。真实未来重放加最后静态换进入标签后，势差总和等于目标期望减原源期望。由于目标总期望≤W，得到Σflow fΔB_i≤I_total+S_total。对同一个目标域作线性shadow对偶，唯一总cap给共同μ，各行归一给η_i，源G恰μI_total+μS_total+ΣE_p r_i。最后标签边虽对删除负载零功，ΔB_i通常仍需计入。",
+  "scope": "只迁移共享GLOBAL-NET的端点付款。释放MF、ROW-NET和GLOBAL-NET的银行不相加，固定势不估计自适应协方差权。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/规范门槛均值域与复制偏离的精确成本--引理.md",
+      "sha256": "1a122a9a37ce73ccc41411cb4abdb160e96c56a6ad02e042d8d03ef474c62d4d",
+      "section": "三种期望域及其各自银行"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/固定进入槽的真实后继重放与一次势预算--算法.md",
+      "sha256": "8eaf25b4b724f19ef98e4a58876484540fbd424f1df23c87a80ae32a50fed10b"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/可信均值菜单与真实重放的原入口范围--资源.md",
+      "sha256": "a532607fb9d7e200e22d1189d4e69590ccaaf526217c07ebf7bc3d4623d9d7c6",
+      "section": "真实路径、源容量和审查读序"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读两端登记和所列承重段，核对变量、量词、代数和结论边界。沿用成熟原证明及有限证据，未重跑历史求解器。",
+  "contribution": {
+    "result": "识别并验证真实重放中的NET-TELE端点条件和同一μ的银行分拆。",
+    "remaining": "FLOW的非负路径、终点独立性与真实未来IC由重放本身构造。对自适应协方差的数量上界仍未付。"
+  },
+  "endpoint_pins": {
+    "M-574fd2e7c23a4fb3abd2d36cc05e3da3": "2b29111fa985c9c639659c48b831ea8032eb49f12d1870867e5acbc5a6311028",
+    "customer-attraction/fixed-entering-role-real-replay-and-once-only-potential-budget": "242e85e429f195fb7cdf9b97499721fb5386c0f8c114edbec31a68825aa7b489"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/规范门槛均值域与复制偏离的精确成本--引理.md": "1a122a9a37ce73ccc41411cb4abdb160e96c56a6ad02e042d8d03ef474c62d4d",
+    "archives/customer-attraction/state/算法/固定进入槽的真实后继重放与一次势预算--算法.md": "8eaf25b4b724f19ef98e4a58876484540fbd424f1df23c87a80ae32a50fed10b",
+    "archives/customer-attraction/state/资源/可信均值菜单与真实重放的原入口范围--资源.md": "a532607fb9d7e200e22d1189d4e69590ccaaf526217c07ebf7bc3d4623d9d7c6"
+  },
+  "review_digest": "9d15634eca41302e9dd2a99fb6d7bdc613242027c340413f9629f527b42ee3b5"
+}

@@ -1,0 +1,66 @@
+{
+  "edge_id": "cag-1213ac-aligned-fixed-point-to-sufficient-covariance-amount",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/action-marginal-aligned-credible-menu-fixed-point"
+  ],
+  "target_ids": [
+    "M-01b2f7a8df6047d59f2787338647cf97"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一个有限输入和固定原完整σ，各域用自己的固定点(p,q)、价格t和源彩票。不能引入独立全行背景G。",
+  "roles": {
+    "customer-attraction/action-marginal-aligned-credible-menu-fixed-point": "分别给删除槽及完整槽固定点、同源倒数账和静态折扣。",
+    "M-01b2f7a8df6047d59f2787338647cf97": "确定在各自固定点下足以推出half的准确协方差上界。"
+  },
+  "explanation": "删除槽账有2W−OPT≥2(ΣI_i+D−Cov)+γ+Q_past+Q_future。完整槽价格重算后同样相减得2W−OPT≥2(ΣI_i+D₀−Cov₀+m||ρt||²)+Q⁺。各令右端≥0就得到所列两种阈值。删除负载源的均值差产生完整槽范数，未产生额外G。",
+  "scope": "两域分别的精确充分性。Kakutani只给固定点存在，最小γ选择也没有给自适应协方差金额。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/行动边际对齐的可信菜单固定点--定理.md",
+      "sha256": "2a03be21656bce63a5cd25ae2d50b99c5c8e53070d8ff545570cf9017be22b2c",
+      "section": "固定过去与同一源未来折扣"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/行动边际对齐的可信菜单固定点--定理.md",
+      "sha256": "2a03be21656bce63a5cd25ae2d50b99c5c8e53070d8ff545570cf9017be22b2c",
+      "section": "固定输入及存在性命题"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/行动边际对齐的可信菜单固定点--定理.md",
+      "sha256": "2a03be21656bce63a5cd25ae2d50b99c5c8e53070d8ff545570cf9017be22b2c",
+      "section": "同源对齐的精确倒数账"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/行动边际对齐的可信菜单固定点--定理.md",
+      "sha256": "2a03be21656bce63a5cd25ae2d50b99c5c8e53070d8ff545570cf9017be22b2c",
+      "section": "完整槽对齐变体"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/行动边际对齐的可信菜单固定点--定理.md",
+      "sha256": "2a03be21656bce63a5cd25ae2d50b99c5c8e53070d8ff545570cf9017be22b2c"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/可信均值菜单与完整槽的内部复核合同--审查.md",
+      "sha256": "ac7b59a210f617049f57a5e330d6ff90d4a3532c0b605d138b050673d7062d4b",
+      "section": "aligned审查：固定点定义及不保留的G"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读两端登记和所列承重段，核对变量、量词、代数和结论边界。沿用成熟原证明及有限证据，未重跑历史求解器。",
+  "contribution": {
+    "result": "证明所登记的两项同源Cov金额若在各自固定点成立，则分别足以推出2W≥OPT。",
+    "remaining": "尚缺同一域内至少一个固定点实际满足对应Cov不等式的证明，或对此存在断言的反例。"
+  },
+  "endpoint_pins": {
+    "M-01b2f7a8df6047d59f2787338647cf97": "2654343d524261edf72b5ce4392e1ef43c33ef4810a8d3050608066b780ba4fe",
+    "customer-attraction/action-marginal-aligned-credible-menu-fixed-point": "5b239fab76bc88926f12320ec8bcb5653326f6f56e638db4de6ef733f03accef"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/行动边际对齐的可信菜单固定点--定理.md": "2a03be21656bce63a5cd25ae2d50b99c5c8e53070d8ff545570cf9017be22b2c",
+    "archives/customer-attraction/state/审查/可信均值菜单与完整槽的内部复核合同--审查.md": "ac7b59a210f617049f57a5e330d6ff90d4a3532c0b605d138b050673d7062d4b"
+  },
+  "review_digest": "5af1e21e1974c97151b33b599a9caa9872902190c492048678f701b9d58670d5"
+}

@@ -1,0 +1,58 @@
+{
+  "edge_id": "cag-1213ac-all-future-uniform-flow-to-row-refund",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/all-future-coverer-and-whole-row-refund-payment-families"
+  ],
+  "target_ids": [
+    "M-6c076ef584754c4fa3b28ded0f7b9c10"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定共同INIT和只R传播的真实DAG。每个context固定输入h、整行上限u_i，不以变动输入的max f作为线性上限。",
+  "roles": {
+    "customer-attraction/all-future-coverer-and-whole-row-refund-payment-families": "同客户真实future边cap、uniform非空及密度后的整query WHOLE cap。",
+    "M-6c076ef584754c4fa3b28ded0f7b9c10": "保同一source和边cap时达成最大整行current与下游可行修复。"
+  },
+  "explanation": "ALL的WHOLE给uniform点总current C₀=Σ_x h_x/a_x≤u_i。ROW去除逐客户current cap但保同客守恒和各future边cap，故上界min(H,u_i)，H=Σh。取消uniform外流中任意总量min(H,u_i)−C₀即可达上界，取消量在[0,H−C₀]，逐客户退回本客户current。上游取消只减下游输入。下游旧正h变为h'时，把同客户current及所有出边乘h'/h，零输入直接置零。边cap、守恒和整行current不增均保持，按角色次序处理合流。",
+  "scope": "固定context和DAG可行性。ROW用共同u_i共享退款，不可继承ALL逐客户sorted-price DP，亦不保证全角色ROLE有共同解。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/全未来覆盖者与整行退款付款族--定理.md",
+      "sha256": "4efa9da537dcd0a8e32bb78628036c6d4b52a40028a11784fce69aef1d6b80dd",
+      "section": "更大的ROW族：同一context的整行退款共享"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/全未来覆盖者与整行退款付款族--定理.md",
+      "sha256": "4efa9da537dcd0a8e32bb78628036c6d4b52a40028a11784fce69aef1d6b80dd",
+      "section": "同一共同证书的条件结论与接续"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/全未来覆盖者与整行退款付款族--定理.md",
+      "sha256": "4efa9da537dcd0a8e32bb78628036c6d4b52a40028a11784fce69aef1d6b80dd",
+      "section": "ALL的精确线性域与非空性"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/全未来覆盖者与整行退款付款族--定理.md",
+      "sha256": "4efa9da537dcd0a8e32bb78628036c6d4b52a40028a11784fce69aef1d6b80dd",
+      "section": "来源反链、全图密度与一次whole-IC"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/全未来覆盖者与整行退款付款族--定理.md",
+      "sha256": "4efa9da537dcd0a8e32bb78628036c6d4b52a40028a11784fce69aef1d6b80dd",
+      "section": "可分价格、固定路由修复与恒等资金"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读两端登记和所列承重段，核对变量、量词、代数和结论边界。沿用成熟原证明及有限证据，未重跑历史求解器。",
+  "whole_result": "同一库存/真实边合同下ROW非空，对每个合法固定输入最大整行current为min(Σh,u_i)，上游取消后的下游比例重算保持ROW。",
+  "endpoint_pins": {
+    "M-6c076ef584754c4fa3b28ded0f7b9c10": "d5a6944a828ca1e27e9bd369133e8ed8994ba69aa6d29ef22596f8320f6bd9ca",
+    "customer-attraction/all-future-coverer-and-whole-row-refund-payment-families": "78a5777a2f178454a881f3f3bf15dd9220080b0b64567998e195731880728271"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/全未来覆盖者与整行退款付款族--定理.md": "4efa9da537dcd0a8e32bb78628036c6d4b52a40028a11784fce69aef1d6b80dd"
+  },
+  "review_digest": "82a2bf0d0b4f332e156edb4b8ba8621d2a276d90cad8e036efd27e6d2f30277f"
+}

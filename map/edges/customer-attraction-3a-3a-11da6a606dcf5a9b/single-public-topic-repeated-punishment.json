@@ -1,0 +1,52 @@
+{
+  "edge_id": "cag-11da6a-single-public-topic-repeated-punishment",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-723b5ee6fbd8437eadfa97b816d04478"
+  ],
+  "target_ids": [
+    "M-d9337358fe0249f787ef6cd7d1517d85"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "k≥1、r≥2、x>0，单公共 D=P∪V 的实际有序路线 C_1,…,C_k,D^r，且指定偏离 A_i 后最后 r 人都用 B_i。",
+  "roles": {
+    "M-723b5ee6fbd8437eadfa97b816d04478": "单公共 D 的实际末位充要式给 d/r≥x/2。",
+    "M-d9337358fe0249f787ef6cd7d1517d85": "在更一般的多个 D_j 目录证明复制惩罚失败；这里取所有奖励槽为同一 D 的专门化。"
+  },
+  "explanation": "原末位比较 B_i 给 d≥rx/2。在 A_i 偏离枝的最后惩罚节点，规定 B_i 取 b/r+x/(r+1)。真实改 D 时，公共 P 有 r−1 个先前覆盖，私有 V 完全新，故收益为 b/r+d≥b/r+rx/2>b/r+x/(r+1)。因此该指定惩罚不可能可信。另一方面，不用复制惩罚路线假设也能对实际 target-count 得到如下福利限制。对任一实现目标计数的原完整纯 SPE，r≥1且a>0时末位必 D，否则末 C_i 改 A_i 得 x+a>x。实际最后一个 C_i 的收益为 x。若 r≥2，之前已有 p 个 D，强制 D 后公共与 D 私有块的最终负载至多 p+1+(r−p)=r+1，故 x≥(b+d)/(r+1)；合末位 b+d≥r(x/2+a)，得 a≤(1/2+1/r)x≤x。若 r=1，最后 C_i 紧邻唯一末 D。该 C_i 强制 D 后，若真实末位仍 D，则末位比较新鲜的 A_i 要求 (b+d)/2≥x+a，而当前真偏离 IC 要求 x≥(b+d)/2，矛盾。若末位非 D，D 的私有 d 不再分摊，公共 b 至多两次覆盖，故 x≥b/2+d。再用末位 d≥x/2 与 b+d≥x/2+a 得 a≤x。于是任意可实现目标计数在 r≥1 有 OPT≤2W；若 a=0，直接 W=OPT。r=0 的末 C_i 对 A_i、B_i、D 的真实查询迫 a=b=0、d≤x，代入正文三项 OPT 即 W=kx=OPT。k=0 只有 D，福利等于最优。上述充分保障是给已实现的目标计数的福利结论，不给 count 可实现性。",
+  "scope": "主贡献是一般复制惩罚障碍的单 D 专门化。其余算式把目标计数与显示顺序分开，并保留所有可能真实惩罚。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/单组锚点原策略基点与单公共主题多尾探针--资源.md",
+      "sha256": "62d9c7c63861bfd2821c5e4990329ad3e5dcaa2d1f70ffb9378e613af17b3318",
+      "section": "单个D重复r次的末节点必要条件"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/单组锚点原策略基点与单公共主题多尾探针--资源.md",
+      "sha256": "62d9c7c63861bfd2821c5e4990329ad3e5dcaa2d1f70ffb9378e613af17b3318",
+      "section": "probe的真正另一族"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/重复惩罚复制的末位菜单失败--障碍.md",
+      "sha256": "e9a0ed628572795bb5deae1b3d6c1bbed827706d2c2e9f8d03f3e5f6607d9ecf",
+      "section": "末位矛盾"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "同任务数学复核：已核端点正文和所列承重范围，按同一实例、真实历史或同一客户域重构此条关系。",
+  "contribution": {
+    "result": "单公共 D 重复 r≥2，x>0 时该纯同 B_i 惩罚的末位严格偏离到 D。",
+    "remaining": "一般 D_j 目录仍须对实际末位的私有块按 v_D 做独立比较。若改用混合惩罚，本专门化不排 target-count；实际末位门槛也不给完整策略存在性。"
+  },
+  "endpoint_pins": {
+    "M-723b5ee6fbd8437eadfa97b816d04478": "2f112824cb9c2a070eacba52c5c622848e926064c74c436ae827963d323c93c8",
+    "M-d9337358fe0249f787ef6cd7d1517d85": "3d1234716b824dd6fb2438d738d35a07ace4aeda323df284827edbef2a1d6c58"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/单组锚点原策略基点与单公共主题多尾探针--资源.md": "62d9c7c63861bfd2821c5e4990329ad3e5dcaa2d1f70ffb9378e613af17b3318",
+    "archives/customer-attraction/state/障碍/重复惩罚复制的末位菜单失败--障碍.md": "e9a0ed628572795bb5deae1b3d6c1bbed827706d2c2e9f8d03f3e5f6607d9ecf"
+  },
+  "review_digest": "88ee0424f0817b72897d6cfe01b67e33d093ad3aee30ebf1e339e59533aea79f"
+}

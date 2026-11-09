@@ -1,0 +1,45 @@
+{
+  "edge_id": "cag-1213ac-rank-reset-to-hybrid-tail-padding",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-0c4d99ef577c41d685338ba37768a076"
+  ],
+  "target_ids": [
+    "cag-exact-onpath-and-all-fixed-terminal-depth-incentive-truncation-obstruction"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定K≥0及k≥1，先建n人重置策略。扩大相同大小L的互不交B池至n+k个，再追加k人。",
+  "roles": {
+    "M-0c4d99ef577c41d685338ba37768a076": "固定K真正偏离次数的早期重置策略、真IC和调和福利上界。",
+    "cag-exact-onpath-and-all-fixed-terminal-depth-incentive-truncation-obstruction": "得到同时保固定真正离轨次数和固定尾深的推广。"
+  },
+  "explanation": "前n位在扩充目录用原重置规则，额外B同d=1，原证明用的全鲜B供应只增加。后k位在每个有序前缀取尚未出现的B，每位得L，任何动作至多L。追加的fresh B不覆盖任何早期已出现主题，故任一早期实际或强制偏离的最终利润与同一扩充早期策略的利润一致。早期的真正偏离计数由完全相同的规定动作回放。早期福利上界L·2^K H_ceil(n/2^K)，追加kL，比较选n+k个B得到(n+k)L，故比值无界。原高rank负行在足够大n仍在前n位，尾部不改变其负差。",
+  "scope": "固定K、k时的真实重置加尾构造。复制最新偏离的重置规则与本页另一个复制最早偏离的构造有别。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/在轨精确行与全部固定深度尾局的联合截断--障碍.md",
+      "sha256": "eef094a42485edb5c4423a0f3cb6b4c2c67d72782a5b8468e3184f43d1968822"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/固定离轨次数截断的无常数福利障碍--障碍.md",
+      "sha256": "b2ea4408240e3bbd8626f044364de5365c69b7872262cedffdabbfa3ea5f2764"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读两端登记和所列承重段，核对变量、量词、代数和结论边界。沿用成熟原证明及有限证据，未重跑历史求解器。",
+  "contribution": {
+    "result": "同一完整形式策略同时满足Dσ≤K节点与所有剩余≤k节点的全动作真实IC，仍有随n无界的OPT/W。",
+    "remaining": "目标另外给出独立的最早偏离族、精确W=L(H_n+k)及第二位缺行。它不由本次重置迁移推出。"
+  },
+  "endpoint_pins": {
+    "M-0c4d99ef577c41d685338ba37768a076": "d0298e723f96897bdcc4db59aa88e80969292164534324bbba9fddeb2ee1c6d2",
+    "cag-exact-onpath-and-all-fixed-terminal-depth-incentive-truncation-obstruction": "cbacb4d6159486955c9c01e6ed3c414e44fd7df18b4dfdec1294e95aaccf79ea"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/在轨精确行与全部固定深度尾局的联合截断--障碍.md": "eef094a42485edb5c4423a0f3cb6b4c2c67d72782a5b8468e3184f43d1968822",
+    "archives/customer-attraction/state/障碍/固定离轨次数截断的无常数福利障碍--障碍.md": "b2ea4408240e3bbd8626f044364de5365c69b7872262cedffdabbfa3ea5f2764"
+  },
+  "review_digest": "e29098eda0b5859718d143aec38ee150aa6ad557f0e66ceafc4bd02d43afbda5"
+}

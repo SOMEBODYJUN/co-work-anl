@@ -1,0 +1,57 @@
+{
+  "edge_id": "cag-11da6a-terminal-wallet-static-surplus-to-direct",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "actual-terminal-pair-selective-frozen-wallet",
+    "static-covering-surplus-absorbs-terminal-wallet"
+  ],
+  "target_ids": [
+    "M-8e8021b070bc40f9a38ef17dffb2bb97"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m≥2，单位客户、共同标签、同一完整有序纯 SPE。任取实际叶 Z 和合法有序比较元组 T，角色指派保持固定，允许重复标签和任意离轨平局。",
+  "roles": {
+    "actual-terminal-pair-selective-frozen-wallet": "用真实末对的两个末位 BR 与倒二原 IC 得同一冻结行的 reduced 钱包及信用 h；末位冻结等于真收益。",
+    "static-covering-surplus-absorbs-terminal-wallet": "逐客户给同一实际末对差集 X 的静态盈余 Z_sur，并保留满负载时 t=d。",
+    "M-8e8021b070bc40f9a38ef17dffb2bb97": "两条独立来源的账在相同 Z、T_i、Q、X 上相消，给保全部信用的精确直接缺额。"
+  },
+  "explanation": "在同一实际前 m−2 个有序动作后的两个末节点比较原末主题 B 与真实回复 R(T_{m−1})，倒二 IC 给冻结行 f_{m−1}=a+C′−h。末位无后继，f_m−u_m=−e_m，早期每行 f_i−u_i=E_i−e_i，于是 Q−W=C′+EARLY−e_m−h。另由静态逐客户式 |O|=Q+(1−1/m)W−S。X=A∖B 上实际负载 1≤c≤m−1，C=Σ_X 1/[c(c+1)]，吸收给 Z_sur=S+|X|/m−C≥0。代入 C′=C−Δ 后，W/m+S−C′=(W−|X|)/m+Δ+Z_sur；用同一个 Q 消去 C′，不再另计调和复制资金。",
+  "scope": "所有合法比较指派的直接恒等式。选最优 O 时，半覆盖等价于 EARLY 由所示五项支付。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/实际末对冻结查询的选择性钱包--引理.md",
+      "sha256": "b6ea62aa9df28a359d144f2d1698867a3e198b0fb1f9cf0f536ac8559ace3d2e",
+      "section": "同一有序实际前缀与三个真实比较"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/实际末对冻结查询的选择性钱包--引理.md",
+      "sha256": "b6ea62aa9df28a359d144f2d1698867a3e198b0fb1f9cf0f536ac8559ace3d2e",
+      "section": "钱包与必有信用"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/静态覆盖松弛吸收末对钱包的直接缺额式--引理.md",
+      "sha256": "df0ad5fd77b99a33b4c630fc13474d4e140b8173ca7ce75f8dbdcad886ffee90",
+      "section": "收回同一末对差集钱包"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/静态覆盖松弛吸收末对钱包的直接缺额式--引理.md",
+      "sha256": "df0ad5fd77b99a33b4c630fc13474d4e140b8173ca7ce75f8dbdcad886ffee90",
+      "section": "恢复真实末对后得到精确直接接口"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "同任务数学复核：已核端点正文和所列承重范围，按同一实例、真实历史或同一客户域重构此条关系。",
+  "whole_result": "|O|−2W=EARLY−e_m−h−(W−|X|)/m−Δ−Z_sur。尾部与静态盈余信用均非负；一般 EARLY 的上界仍是额外义务。",
+  "endpoint_pins": {
+    "M-8e8021b070bc40f9a38ef17dffb2bb97": "0407c48018edb5868b02da03bc6786e4439a0b47d1a7adf96ee773785d3a151d",
+    "actual-terminal-pair-selective-frozen-wallet": "0e7fbb158632f8899c97ad03b7079b3ea26996342b7a482e4b1c610918518d7c",
+    "static-covering-surplus-absorbs-terminal-wallet": "b38b66f3a21e203f861b85c48215420aa8526227b9ef155f259c5779e102d61a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/实际末对冻结查询的选择性钱包--引理.md": "b6ea62aa9df28a359d144f2d1698867a3e198b0fb1f9cf0f536ac8559ace3d2e",
+    "archives/customer-attraction/state/引理/静态覆盖松弛吸收末对钱包的直接缺额式--引理.md": "df0ad5fd77b99a33b4c630fc13474d4e140b8173ca7ce75f8dbdcad886ffee90"
+  },
+  "review_digest": "2e5a37f5b1c56899bc5fed941aa1d937780cc395d69acaf73f353c436b6ca6e5"
+}

@@ -1,0 +1,49 @@
+{
+  "edge_id": "cag-11da6a-spectrum-net-defect",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/private-spectrum-and-fractional-omission-joint-credit"
+  ],
+  "target_ids": [
+    "customer-attraction/shared-omission-minus-extra-coverage-net-defect-budget"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "n≥1、固定任一完整有序纯 SPE，任一最优并集 O；私有性相对全目录各不同极大覆盖。",
+  "roles": {
+    "customer-attraction/private-spectrum-and-fractional-omission-joint-credit": "提供 W≥Λ≥D_p+(I+D_s)/n，同一利润上的正部 J2 还约束该余额的一部分。",
+    "customer-attraction/shared-omission-minus-extra-coverage-net-defect-budget": "将全局共享遗漏减去实际额外覆盖，给精确的半覆盖净缺陷账。"
+  },
+  "explanation": "J3 取扩到极大主题后并集仍为 O 的最优元组。置 S=W−D_p−(I+D_s)/n，由 J3 非负。以 I=W−E、OPT=I+D_p+D_s 代入，得 (2−1/n)W+(1−1/n)(D_s−E)−OPT=S，乘 n 并重排得 n(2W−OPT)=nS+W−(n−1)(D_s−E)。此外若有 D_s 的合法分数覆盖权 τ_s，J2 给 S≥[Λ−D_p−(I+D_s)/n]+Σ_r(D_s/(rτ_s)−λ_r)_+。这是同一 S 的下界，不给重复付款；D_s 为空仅保前一项。",
+  "scope": "每一最优 O 分别成立。严格反 half 的阈值在 n≥2 可除 n−1；n=1 用单人最优性。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/私有席位谱与分数遗漏覆盖的同一利润预算--引理.md",
+      "sha256": "fa156671cfa8baf1bfb59361a8cba79ef2151b6622cf12826b9e787df307acb0",
+      "section": "最优并集的私有与共享折扣"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/私有席位谱与分数遗漏覆盖的同一利润预算--引理.md",
+      "sha256": "fa156671cfa8baf1bfb59361a8cba79ef2151b6622cf12826b9e787df307acb0",
+      "section": "固定对象与同一个玩家的两条保底"
+    },
+    {
+      "path": "archives/customer-attraction/state/推论/共享遗漏减额外覆盖的净缺陷预算--推论.md",
+      "sha256": "ee1ffa04b1b48c50eaeb20f34f385c1871472c62e6ae0a4c0ca2004c8c57118b",
+      "section": "保留额外覆盖的精确净差账"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "同任务数学复核：已核端点正文和所列承重范围，按同一实例、真实历史或同一客户域重构此条关系。",
+  "whole_result": "推出 OPT≤(2−1/n)W+(1−1/n)(D_s−E) 及精确净账。若 n≥2 严格反 half，则每个最优 O 都有 D_s−E>(W+nS)/(n−1)。",
+  "endpoint_pins": {
+    "customer-attraction/private-spectrum-and-fractional-omission-joint-credit": "d1362f5cc1461a6c00e685170c43ada6b18c3c0f61ea35d5d7ae8337dca712ac",
+    "customer-attraction/shared-omission-minus-extra-coverage-net-defect-budget": "21349ccdd1482c67c9a91d44a6a79051996e43ac67a169f4cefc0ab089254846"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/私有席位谱与分数遗漏覆盖的同一利润预算--引理.md": "fa156671cfa8baf1bfb59361a8cba79ef2151b6622cf12826b9e787df307acb0",
+    "archives/customer-attraction/state/推论/共享遗漏减额外覆盖的净缺陷预算--推论.md": "ee1ffa04b1b48c50eaeb20f34f385c1871472c62e6ae0a4c0ca2004c8c57118b"
+  },
+  "review_digest": "88dfad71c0231d6ce95c4207f9e88c402fd042c0727213faa14bbb5b1f06a25f"
+}
