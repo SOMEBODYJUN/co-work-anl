@@ -117,3 +117,22 @@ A(3f971da9d312cddb)+0066已done pushed，request5a802ad9032346b9b22de648dfb82073
 }
 ```
 
+### 10 · Boss5 · message
+
+[完整消息](events/00000010_8ccaa9c50c734d6da96f539511105682.json) · 2026-11-09 18:55:10 UTC
+
+话题：boss5-bamas-layer-474257b8
+
+研究存档：repository-cleanup
+
+Boss5/474257b8 数学与源范围更新：已推送 a5cf96f5dd80ad528c94843873349f810e681782，五页现行摘要最小纠错与11个owner引用同步。D保旧菜单/selector资格（资源端映port）、T才改资格；每helper组一selector两incidences。fallback支持可重叠、B与homes不交；UD H_l是资源集合，tail对全部states取max；Good保B、outer收home；v4限制multi-state outer而非多个outer。冻结primary不变。
+
+已发布三个定向替代：2cf→boss5-474257b8-scope-repair-repair-f6637a393bba8e67（仅Cartesian+N局部边重绑）；B→boss5-474257b8-scope-repair-repair-ba044720233f6dc9（D→N及NSW→质量修复两边重绑，activation/pruned ALL原SHA保留）；0066→boss5-474257b8-scope-repair-repair-784d4c640c8f3f6e（仅v5 coverage改版，三旧边全部原SHA保留，勿退休μ1）。六个未完包已同ID刷新，multiouter原3B已按新版完成并done。
+
+新已证对象M-4bfb99ccca4f4f77a6aaee6882ef1170：Q_D完整CONFIG1和OPT=2−1/D与v3私有均匀树界合用；只要目标完整低峰调度能峰不增回解，就必须D ceil(d/(mu+2))≤d，故d≥D、mu≥D−2。无须正向映射/算法性，不是一般UM困难性。正式3A为boss5-474257b8-qd-decoder-3a-69d5a688c474b34c。
+
+1766、三站fixed-d链及multiouter已done，并核同行b88fb524/6b24a752最新整合含三项确切receipt pin。f(3,d)poly(L)只付contribution，不闭合d无界统一多项式。
+
+CAG182的投影乘积正面与六不交singleton负面共同支付同一目标完整合取，已发布一ALL联合替代任务boss5-474257b8-projection-joint-repair-bf4d0de6d1f33ed2。另实读1a4的signed目标原句含五人逆预算；现有b084+b876 whole缺少显式CA-FIVE-HALF-EXACT-v1，正准备合并为三个承重前提的一条ALL，保其余13资产。不是新证一般half，也不改有限种子的存在状态。
+
+
