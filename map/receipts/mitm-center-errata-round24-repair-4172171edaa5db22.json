@@ -1,0 +1,124 @@
+{
+  "task_id": "mitm-center-errata-round24-repair-4172171edaa5db22",
+  "stage": "3A",
+  "object_ids": [
+    "facility-games/common-catalog-empty-sites-preserve-full-continuation-ratio",
+    "facility-games/sparse-rho-strict-by-smaller-side-tie-priority",
+    "facility-games/common-catalog-five-sites-exact-stability-weak-np-complete"
+  ],
+  "read_object_ids": [
+    "DP-W",
+    "HC-RHO",
+    "facility-games/two-facility-two-catalog-model-and-complete-exact-continuation",
+    "SC-THREE-DEC1-HARD",
+    "SC-THREE-DECa-HARD",
+    "SC-FIVE-DECa-HARD",
+    "SPARSE-RHO-ALL",
+    "SPARSE-HIGH-ACYCLIC"
+  ],
+  "input_pins": {
+    "facility-games/common-catalog-empty-sites-preserve-full-continuation-ratio": "0ab59afbcbc4e75ce78152ab96ecfda7545101c45f21c6c189c6b62db2e236f3",
+    "facility-games/sparse-rho-strict-by-smaller-side-tie-priority": "e90a5de07f51cd49ab1524bca0434b794aa255d4f7c160a2670d0e3a3ff22b2c",
+    "facility-games/common-catalog-five-sites-exact-stability-weak-np-complete": "4021591cc3f18a27242b0bce729bdfdf4bf377b645b6675cb6fdfa657ed2108d",
+    "DP-W": "6f4e4750b24f9fb26357c4c18d8b39e36d9db6b7b33e2d4349b62d7b04d16ff5",
+    "HC-RHO": "8b61dc1735002920c7610969fd085e40afbcff7e526b553dedcddf50b3d56c19",
+    "facility-games/two-facility-two-catalog-model-and-complete-exact-continuation": "d4a962894463c9a641484232eff48bfae3a3e4b84421b27ba5176867d9ee28b5",
+    "SC-THREE-DEC1-HARD": "7c168e01f188cc9fda95a5cf1371cc876eec56185ac435042f48a64aacaf66fb",
+    "SC-THREE-DECa-HARD": "715f0caa2bde967e8793b399b51e2102f07bd4b7ddf237636359cc5621b6541e",
+    "SC-FIVE-DECa-HARD": "45e2f3685ed1b9a342922b961fec99545cf48d1fe6955d6961caf675e7ab9efc",
+    "SPARSE-RHO-ALL": "e87216506cac7f64305e561daa73e4e0edefec9e6bd38207f7d16113a00781e7",
+    "SPARSE-HIGH-ACYCLIC": "05238e3c86fea0fb268dc78176039a42dfd09f3ac0c923b9becf8cdc7abbf07d"
+  },
+  "status": "complete",
+  "coverage": {
+    "facility-games/common-catalog-empty-sites-preserve-full-continuation-ratio": {
+      "state": "linked",
+      "object_pin": "0ab59afbcbc4e75ce78152ab96ecfda7545101c45f21c6c189c6b62db2e236f3",
+      "reason": "旧在轨与旧偏离可保留，所有新增有序布局补强制纯 NE，新增空地偏离收益为零。反向在轨若都旧则限制规则，若都新空则旧覆盖全空。恰一方在新空地时，每个旧覆盖都包含于旧在轨点的覆盖，且同址零收益 NE 迫该点至多一客户。原同址据此构造倍率 1 的全纯规则。独立混合与全纯合同均逐有限倍率等价。固定 1<a<σ 的低段源 YES 恰为 a 由三地守卫另付，恰三 σ≤a<φ 的分类仍开放。",
+      "comparison_scope": "通读空地定理和带标签双目录模型，复核恰三加两空地的每项偏离、所有新增布局及反向三类在轨。另用原三地六类守卫和五地独立宏归约区分两个正倍率区间。",
+      "edge_ids": [
+        "fac-bdb0-three-dec1-padding-and-closed-spectrum-to-five-dec1",
+        "fac-bdb0-positive-three-to-five-through-empty-sites"
+      ]
+    },
+    "facility-games/sparse-rho-strict-by-smaller-side-tie-priority": {
+      "state": "linked",
+      "object_pin": "e90a5de07f51cd49ab1524bca0434b794aa255d4f7c160a2670d0e3a3ff22b2c",
+      "reason": "严格高回应必降全序，有限性逼出高到非高的入口。AC 先由 F₁(C)≤b<a 迫行方丢原子，再用列方拿全 c 与 M₂<ρc 排除列方阻碍。等号链迫最大 reach 较大方赢跨方平局，与按输入给较小方优先矛盾。五正权等号仅属一个固定不利序，六正整数近锐族才逐全部续局给统一下界。",
+      "comparison_scope": "通读严格 ρ 定理 v2，并核其旧高区、任意目录 ρ 入口及短目录端点证据。分别检查固定 P 的全目录精确回应、同一共同原子身份、零收益和全局平局量词。",
+      "edge_ids": [
+        "fac-bdb0-strict-high-entry-to-input-priority-rho",
+        "fac-bdb0-short-sharp-family-to-fixed-priority-endpoint"
+      ]
+    },
+    "facility-games/common-catalog-five-sites-exact-stability-weak-np-complete": {
+      "state": "linked",
+      "object_pin": "4021591cc3f18a27242b0bce729bdfdf4bf377b645b6675cb6fdfa657ed2108d",
+      "reason": "恰三源 YES 在 AC 以 BC 极小收益见证稳定，源 NO 逐类排除九个带标签布局。两空地保持每个实例的 α* 与整数权位长。猜在轨和八个实际偏离的闭支持，可行有界有理多面体取多项式位长顶点。逐布局闭谱的两坐标极小分别取，全目录实际偏离两族不相交，故在轨第一负载与 [D₁,V−D₂] 相交恰为 YES。DP 状态按共同整数总重计，受全体整数总重界，给伪多项式时间。",
+      "comparison_scope": "核恰三 DEC₁ 的五进制局部端点与六类在轨守卫、两空地双向保持、闭支持条件成本和有理顶点。核 DP-W 的主算法、教学 A11.2 与 A11.6、闭端点及零公共客户、两个真实坐标极值的独立取证与 25 个有序布局的闭谱夹区。",
+      "edge_ids": [
+        "fac-bdb0-three-dec1-padding-and-closed-spectrum-to-five-dec1"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/facility-proof-extensions-round18-3a-bdb0f006bd7abec8/three-dec1-padding-and-closed-spectrum-to-five-dec1.json",
+      "sha256": "6fba2270562a716b354be14594f9d0d1ed561f1c6fbde606ad8c200ea9a245c7"
+    },
+    {
+      "path": "map/edges/facility-proof-extensions-round18-3a-bdb0f006bd7abec8/positive-three-to-five-through-empty-sites.json",
+      "sha256": "56fbda6e669b72e8f587969f68796bbe3edd8c38d0068a256998ad600e4bd994"
+    },
+    {
+      "path": "map/edges/facility-proof-extensions-round18-3a-bdb0f006bd7abec8/strict-high-entry-to-input-priority-rho.json",
+      "sha256": "ce369bc5cd2773059ffb8bcef60df6df680cf41c0b2da480fbcc909e573bd7ce"
+    },
+    {
+      "path": "map/edges/facility-proof-extensions-round18-3a-bdb0f006bd7abec8/short-sharp-family-to-fixed-priority-endpoint.json",
+      "sha256": "90b67078d98ab0db5567540c6b6292a7940b6f089cd6da2f1b427d2149bf8cd2"
+    }
+  ],
+  "supersession": {
+    "facility-proof-extensions-round18-3a-bdb0f006bd7abec8": {
+      "reason": "MITM v4 有理中心勘误改动教学正文整文件 SHA，令 DP-W v4 的登记 pin 与引用 A11.6 的五地 DEC₁ 边需重绑。三核心及其余读依赖的登记 pin 原样沿用，四个旧资产逐项复核。",
+      "assets": {
+        "map/edges/facility-proof-extensions-round18-3a-bdb0f006bd7abec8/three-dec1-padding-and-closed-spectrum-to-five-dec1.json": {
+          "disposition": "replaced",
+          "replacement_paths": [
+            "map/edges/facility-proof-extensions-round18-3a-bdb0f006bd7abec8/three-dec1-padding-and-closed-spectrum-to-five-dec1.json"
+          ],
+          "reason": "同路径更新 DP-W endpoint pin 及 A11.6 教学正文整文件 SHA，并绑定本轮实质审读。恰三 NP 困难性、双向填充、闭支持证书及整数闭谱四方合取仍支付完整结论。"
+        },
+        "map/edges/facility-proof-extensions-round18-3a-bdb0f006bd7abec8/positive-three-to-five-through-empty-sites.json": {
+          "disposition": "retained",
+          "reason": "保原路径与 SHA。端点及证据仍当前，固定 1<a<σ 的源 YES 等号可由三地六类守卫直接核出，五地其余固定亚 φ 区间由独立宏构造支付。"
+        },
+        "map/edges/facility-proof-extensions-round18-3a-bdb0f006bd7abec8/strict-high-entry-to-input-priority-rho.json": {
+          "disposition": "retained",
+          "reason": "保原路径与 SHA。旧高区和任意目录入口及 v2 证据仍当前。固定 P 的严格高区、共同原子和优先级等号链继续只在全交叉单交叠域成立。"
+        },
+        "map/edges/facility-proof-extensions-round18-3a-bdb0f006bd7abec8/short-sharp-family-to-fixed-priority-endpoint.json": {
+          "disposition": "retained",
+          "reason": "保原路径与 SHA。短目录与 v2 端点证据仍当前。固定不利序的五权等号和六正整数对全部续局的近锐性有不同量词，原边准确保留两者。"
+        }
+      }
+    }
+  },
+  "read_record": {
+    "method": "通读三个核心的精确陈述与证明、旧任务和收据及四条旧边。重算三地局部端点和六类守卫，核 DP-W 的闭片与全局拼接，并对照教学正文 MITM 勘误范围。历史计算只作证据分层。",
+    "claim_commit": "1ce6a3b9",
+    "task": {
+      "path": "research/operations/map-v2/tasks/mitm-center-errata-round24-repair-4172171edaa5db22.json",
+      "sha256": "1c92bfc688f400f63283ff39bcd76924eb1dbc4f751940d646911c2fde43c15f"
+    },
+    "previous_task": {
+      "path": "research/operations/map-v2/tasks/facility-proof-extensions-round18-3a-bdb0f006bd7abec8.json",
+      "sha256": "fbd0ff1e5aab8d685047644774a759d95c61dd295471bc95aa0b6dafd78a8a1e"
+    },
+    "previous_receipt": {
+      "path": "map/receipts/facility-proof-extensions-round18-3a-bdb0f006bd7abec8.json",
+      "sha256": "bda5e4d7870e0dbfab1b9e094982238c445aa156b085cba503f7d4cbfba2b48f"
+    }
+  }
+}
