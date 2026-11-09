@@ -329,12 +329,191 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss1",
-  "request_id": "13248a6e631645cbadc25f087a68cf91",
+  "request_id": "c51097ceb74b4557ad5e47887231fe3f",
   "requests": {
     "55e9c621713643808b628f10d1389774": "plan",
     "4c44340190854860afe0273d5eb2240c": "claim",
-    "13248a6e631645cbadc25f087a68cf91": "read-add"
+    "13248a6e631645cbadc25f087a68cf91": "read-add",
+    "c51097ceb74b4557ad5e47887231fe3f": "done"
+  },
+  "edge_paths": {
+    "commonmany-box-completion-supplies-five-selectors": "map/edges/commonmany-3a-3a-6d055fb90a1c429a/box-completion-supplies-five-selectors.json",
+    "commonmany-distinct-two-implies-distinct-three": "map/edges/commonmany-3a-3a-6d055fb90a1c429a/distinct-two-implies-distinct-three.json",
+    "commonmany-full-components-specialize-to-equal-multiplicity": "map/edges/commonmany-3a-3a-6d055fb90a1c429a/full-components-specialize-to-equal-multiplicity.json",
+    "commonmany-light-specializes-to-full-components": "map/edges/commonmany-3a-3a-6d055fb90a1c429a/light-specializes-to-full-components.json",
+    "commonmany-light-specializes-to-immediate-heavy-overlap": "map/edges/commonmany-3a-3a-6d055fb90a1c429a/light-specializes-to-immediate-heavy-overlap.json",
+    "commonmany-range-specializes-to-light-components": "map/edges/commonmany-3a-3a-6d055fb90a1c429a/range-specializes-to-light-components.json",
+    "commonmany-range-supplies-distinct-on-path-witness": "map/edges/commonmany-3a-3a-6d055fb90a1c429a/range-supplies-distinct-on-path-witness.json",
+    "commonmany-weak-unopened-cap-supplies-range-singleton-seed": "map/edges/commonmany-3a-3a-6d055fb90a1c429a/weak-unopened-cap-supplies-range-singleton-seed.json"
+  },
+  "receipt": {
+    "task_id": "commonmany-3a-3a-6d055fb90a1c429a",
+    "stage": "3A",
+    "status": "complete",
+    "coverage": {
+      "SC-K-COMPONENT-MULT-GREEDY-2": {
+        "state": "linked",
+        "object_pin": "71a71953f4084c7a24d43f674b0ed3f89d5733321af3e4f32e9e35ba14dad069",
+        "comparison_scope": "对照完整站点—客户关联图和轻客户图、全局等重数条件、各分量原菜单和调度区间；核对 BOX-TO-2 的存续源与单设施源两分支。",
+        "reason": "全图常 q 且 q=1 分量单站蕴含轻图常 q。全局同 q≥2 是旧完整分量域的特例，逐分量的范围保持也保全局范围。逐分量得到的完整盒精确 NE 可交统一离轨完成。",
+        "edge_ids": [
+          "commonmany-light-specializes-to-full-components",
+          "commonmany-full-components-specialize-to-equal-multiplicity",
+          "commonmany-box-completion-supplies-five-selectors"
+        ]
+      },
+      "SC-K-DISTINCT-GREEDY-2": {
+        "state": "linked",
+        "object_pin": "4fcc7f58082f1232b15c8f51aed2e4b34fe48cedd608e2ad0f062d7b2d6439d3",
+        "comparison_scope": "核对 RANGE 唯一 q=1 组、全异址旧三倍路线、真实首站 R/2 候选、任一精确离轨 NE 的可达上界，以及 BOX-TO-2 的选择型续局量词。",
+        "reason": "跨重数检验在 q=1 时为空，得到纯在轨精确 NE 和 a_f≥γ。真实贪心的 γ≥R/2 对每个离轨 NE 给 L_f′≤R≤2a_f，严格加强同域旧三倍保证。一般盒接口亦可作选定续局的替代，但其量词弱于本对象的全离轨选择上界。",
+        "edge_ids": [
+          "commonmany-range-supplies-distinct-on-path-witness",
+          "commonmany-distinct-two-implies-distinct-three"
+        ]
+      },
+      "SC-K-DISTINCT-GREEDY-3": {
+        "state": "linked",
+        "object_pin": "05d5b9c87f19002b2952f63c5108acb1b4f63987abe1b4d5abded7cea3ad1aeb",
+        "comparison_scope": "实读旧纯种子及首站 reach 加强，核对全异址同域、孤儿重挂、真正新增覆盖、MAX 与有限改善层级及 3−1/M 标量族。",
+        "reason": "旧每家初载至多 a+2γ≤3a 的构造保留。全异址真实贪心首站结构给同一在轨选择下的二倍加强。标量例实际先选 B 再选 B，准确限制丢掉真实贪心结构的推导。",
+        "edge_ids": [
+          "commonmany-distinct-two-implies-distinct-three"
+        ]
+      },
+      "SC-K-EQUAL-MULT-GREEDY-2": {
+        "state": "linked",
+        "object_pin": "10fd6e5bad059b2d3fed28946f9a34585f1ce30952928115b94c5eb33cb9b0a0",
+        "comparison_scope": "对照全局 q≥2、完整关联分量常 q、最终 q 分组内范围以及 BOX-TO-2 完成入口。",
+        "reason": "全局同 q≥2 立即进入完整分量常 q 的旧域，保各分量初始范围足以保全局范围。也可在全菜单作一次同链 RANGE。输出原 NE 及完整盒可交离轨完成。",
+        "edge_ids": [
+          "commonmany-full-components-specialize-to-equal-multiplicity",
+          "commonmany-box-completion-supplies-five-selectors"
+        ]
+      },
+      "SC-K-GREEDY-HEAVY-OVERLAP-2": {
+        "state": "linked",
+        "object_pin": "7eb9b17458f801a98e0d2184d2c726facbade330719c6e87bafea16d9fb1811b",
+        "comparison_scope": "核对重共享阈值、单选项条件、轻图退化及跨不同 q 的原菜单，以及盒后离轨/默认 MAX。",
+        "reason": "所有可动轻共享客户消失，原贪心池由扣自重不等式立即给精确原 NE，且已在完整盒。轻分量结构在此只需零次在轨调用，位时间条件只剩离轨及默认 MAX。",
+        "edge_ids": [
+          "commonmany-light-specializes-to-immediate-heavy-overlap",
+          "commonmany-box-completion-supplies-five-selectors"
+        ]
+      },
+      "SC-K-GREEDY-UNOPENED-2": {
+        "state": "linked",
+        "object_pin": "fd532e9507e48e0b8fe8e5f2f75f8d31c93e60146fd28e31cf7d03f577b52d8b",
+        "comparison_scope": "实读任意严格站点改善的排序推进、固定占用下 N_r、原强预算失效例、静止超帽例、同占位坏 NE 及 RANGE 的替代单源构造。",
+        "reason": "严格移动使原目标的旧收益阈值处减少相同收益项且阈值以下不变，故最小收益至少 γ；N_r 固定。它供给 RANGE 单源搬往未开目标时移动者的初始普通帽。静止站装箱、全部原偏离 NE 及在轨安全性仍是不同义务。具体坏严格修复终点上偏离收益 176 大于 2·(165/2)，不反驳弱不变量。",
+        "edge_ids": [
+          "commonmany-weak-unopened-cap-supplies-range-singleton-seed"
+        ]
+      },
+      "SC-K-LIGHT-COMPONENT-GREEDY-2": {
+        "state": "linked",
+        "object_pin": "193da9bf544d4ec040ee08f05d8b19599ffd65bf95c5120797dad0ead1406cdc",
+        "comparison_scope": "比较轻图与全客户图、(R) 的跨 q 条件、零轻共享客户分支、q=1 多站分量、冻结重客户恢复原菜单及盒后完成。",
+        "reason": "跨 q 客户必重，自动通过 (R)；轻分量方法保留完整盒并用扣自重比较恢复重者所有原选项。它覆盖完整分量旧域，也专门化到原贪心即时稳定分支。正文两组 k=5 例分别分离范围域与轻域、轻域与完整分量域。",
+        "edge_ids": [
+          "commonmany-range-specializes-to-light-components",
+          "commonmany-light-specializes-to-full-components",
+          "commonmany-light-specializes-to-immediate-heavy-overlap",
+          "commonmany-box-completion-supplies-five-selectors"
+        ]
+      },
+      "SC-K-RANGE-GREEDY-2": {
+        "state": "linked",
+        "object_pin": "a75e6fd1bd73eab1b3b4b13b5268515b2151d02364710bc03dfcaa1dd4e28524",
+        "comparison_scope": "核对逐客户跨 q 证书、全部同组原菜单、范围和原 NE、轻图包含、单 q=1 特化、BOX-TO-2 及独立单源当前组重挂路线。",
+        "reason": "(R) 由重跨组客户的盒界自动满足，另可通过某些轻跨组动作。全异址仅一 q=1 组，给在轨纯精确 NE。共同盒补全和独立单源证明分开，后者的移动者普通帽来自 UNOPENED，仍须静止站界及离轨均衡。RANGE/MAX 的时间义务保留。",
+        "edge_ids": [
+          "commonmany-range-specializes-to-light-components",
+          "commonmany-range-supplies-distinct-on-path-witness",
+          "commonmany-weak-unopened-cap-supplies-range-singleton-seed",
+          "commonmany-box-completion-supplies-five-selectors"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/commonmany-3a-3a-6d055fb90a1c429a/box-completion-supplies-five-selectors.json",
+        "sha256": "699e43d214bcafa5cdbc158d83ec9a7c5650ec6239e2e24fc4024cd18a499572"
+      },
+      {
+        "path": "map/edges/commonmany-3a-3a-6d055fb90a1c429a/distinct-two-implies-distinct-three.json",
+        "sha256": "ed4a916bc762550889cd2c7d81605884d6baa2952ec1d82e3ae5de37a928b79d"
+      },
+      {
+        "path": "map/edges/commonmany-3a-3a-6d055fb90a1c429a/full-components-specialize-to-equal-multiplicity.json",
+        "sha256": "f9a41cb0f8fbfeb79a92f7a96c73c1b6299ad4d0a0029bdca7fcdd56a69632d5"
+      },
+      {
+        "path": "map/edges/commonmany-3a-3a-6d055fb90a1c429a/light-specializes-to-full-components.json",
+        "sha256": "8bc5d47562a953d22890c29b40390073184b91dd01443f992f9db8c691038d97"
+      },
+      {
+        "path": "map/edges/commonmany-3a-3a-6d055fb90a1c429a/light-specializes-to-immediate-heavy-overlap.json",
+        "sha256": "7ef66783beea081556182d0f2a66d58b1194194b2defdc5d711b743ad6fd6ad5"
+      },
+      {
+        "path": "map/edges/commonmany-3a-3a-6d055fb90a1c429a/range-specializes-to-light-components.json",
+        "sha256": "9da3eeb91ba4c118019d9e1f277a0fb3ab4a9a764f0178cb8ea7b451afba0145"
+      },
+      {
+        "path": "map/edges/commonmany-3a-3a-6d055fb90a1c429a/range-supplies-distinct-on-path-witness.json",
+        "sha256": "53b1d5c9fe48e0bf032d1956e1017842586b57a772b957de6727ec8440138133"
+      },
+      {
+        "path": "map/edges/commonmany-3a-3a-6d055fb90a1c429a/weak-unopened-cap-supplies-range-singleton-seed.json",
+        "sha256": "4cbfb07c10d17b6608fa71a41619df5383130ad93a63623d7b032f910bbbf7c3"
+      }
+    ],
+    "closed_overlaps": [
+      {
+        "core_id": "SC-K-COMPONENT-MULT-GREEDY-2",
+        "peer_id": "SC-K-GREEDY-BOX-TO-2",
+        "reason": "分量 RANGE 输出同占位完整盒原 NE，已在共同补全边核存续源装箱、单源原池重置及标签默认续局。"
+      },
+      {
+        "core_id": "SC-K-DISTINCT-GREEDY-2",
+        "peer_id": "SC-K-GREEDY-BOX-TO-2",
+        "reason": "同一 q=1 盒见证可作 BOX-TO-2 的替代输入。对象独有结论由首站最大可达重和未选追加候选给出，直接覆盖任何离轨 NE。两类量词的比较已完成。"
+      },
+      {
+        "core_id": "SC-K-DISTINCT-GREEDY-3",
+        "peer_id": "SC-K-GREEDY-BOX-TO-2",
+        "reason": "旧三倍种子界 a+2γ 由静止负载、孤儿和新增服务得到，且同域首站证明给更强二倍。BOX-TO-2 是同一盒见证的另一选定续局路线，旧独立构造及同域加强已核清。"
+      },
+      {
+        "core_id": "SC-K-EQUAL-MULT-GREEDY-2",
+        "peer_id": "SC-K-GREEDY-BOX-TO-2",
+        "reason": "等 q 全菜单范围保持给原 NE 和完整盒，已在共同补全边验证该输入及离轨、默认条件。"
+      },
+      {
+        "core_id": "SC-K-GREEDY-HEAVY-OVERLAP-2",
+        "peer_id": "SC-K-GREEDY-BOX-TO-2",
+        "reason": "重共享使原贪心池本身为原 NE 和完整盒，已核作为 BOX-TO-2 见证的条件及零次在轨调度。"
+      },
+      {
+        "core_id": "SC-K-GREEDY-UNOPENED-2",
+        "peer_id": "SC-K-GREEDY-BOX-TO-2",
+        "reason": "弱帽只约束未开目标的移动标签初始负载，给 RANGE 的另一证明一步。BOX-TO-2 的完整盒、静止站装箱和单源原池重置为更强的不同接口。任意严格修复坏 NE 与静止超帽例已厘清两者边界。"
+      },
+      {
+        "core_id": "SC-K-LIGHT-COMPONENT-GREEDY-2",
+        "peer_id": "SC-K-GREEDY-BOX-TO-2",
+        "reason": "轻分量保初始区间并恢复重客户所有原菜单，给完整盒原 NE。共同补全边已处理其两个源类型与全部带标签偏离。"
+      },
+      {
+        "core_id": "SC-K-RANGE-GREEDY-2",
+        "peer_id": "SC-K-GREEDY-BOX-TO-2",
+        "reason": "RANGE 完整盒原 NE 已接共同补全。独立的单源当前组重挂证明依 P 并池界和移动者弱帽，具体差别也已比较。"
+      }
+    ],
+    "reviewed_by": "Boss1-common-many-3A-worker",
+    "review_note": "实读八项核心的完整正文、共享模型、已列31处引用及共同离轨完成端点。核对四条适用域特化、一条同域因子加强和三条承重局部步骤。原强预算失效、任意严格修复坏终点、静止站全局普通帽与全异址标量障碍各保自己的精确范围。按正文将有限正确性与 RANGE/MAX 位时间合同分开。八对共同盒完成比较本批均有具体处置。"
   }
 }

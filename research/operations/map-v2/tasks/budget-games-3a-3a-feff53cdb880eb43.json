@@ -239,7 +239,7 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss1",
   "compacted_from": [
     "budget-games-3a-3a-822008eef4a40ad0",
@@ -249,10 +249,115 @@
     "budget-games-3a-3a-cf5994f75aaa0d83",
     "budget-games-3a-3a-d552aae13a4d8644"
   ],
-  "request_id": "f3ea229955ba4e2fa81fb61f4c7d2b8a",
+  "request_id": "c51097ceb74b4557ad5e47887231fe3f",
   "requests": {
     "0dbd830b8fb4950a86710f9e5ef3977f": "compact",
     "196de26ea1af40a4a44b63eb0e59dce1": "claim",
-    "f3ea229955ba4e2fa81fb61f4c7d2b8a": "read-add"
+    "f3ea229955ba4e2fa81fb61f4c7d2b8a": "read-add",
+    "c51097ceb74b4557ad5e47887231fe3f": "done"
+  },
+  "edge_paths": {
+    "bn-clone-shared-supergradient-implies-conp-certificate": "map/edges/budget-games-3a-3a-feff53cdb880eb43/bn-clone-shared-supergradient-implies-conp-certificate.json",
+    "bn-clone-differentiability-certifies-linear-active-cells": "map/edges/budget-games-3a-3a-feff53cdb880eb43/bn-clone-differentiability-certifies-linear-active-cells.json",
+    "leontief-fisher-critical-support-implies-log-kkt-recovery": "map/edges/budget-games-3a-3a-feff53cdb880eb43/leontief-fisher-critical-support-implies-log-kkt-recovery.json",
+    "leontief-critical-support-implies-clone-invariance-subfamily": "map/edges/budget-games-3a-3a-feff53cdb880eb43/leontief-critical-support-implies-clone-invariance-subfamily.json"
+  },
+  "receipt": {
+    "task_id": "budget-games-3a-3a-feff53cdb880eb43",
+    "stage": "3A",
+    "coverage": {
+      "BN-CLONE-v2": {
+        "state": "linked",
+        "object_pin": "abcee8338458d8899260ec78267f7e584fd514c0b4f2fc04f7c2c278d122ec1c",
+        "comparison_scope": "实读短失败证书全文、BN-CLONE-v1 的点态判别和 active-cell 算法、三项目精确例及版本审查。比对原 Fraction 校验器、字面输入、冻结 JSON 和运行记录，复算原 verify 的字面输入。",
+        "reason": "同一矩阵语言下 (K) 与共同 LP 可把失败 NE 变成 (I,S) 支持证书并反向恢复等预算失败。Farkas 正归一化、正 margin 有理 BFS 与短编码完成从几何判别到 coNP 包含的完整推导。三项目 toy 精确给 Mᵀy=(1,1)，仅检验一种输入。原两项目专门化边和三项目实例检查边已发布，未重复录入。",
+        "edge_ids": [
+          "bn-clone-shared-supergradient-implies-conp-certificate"
+        ]
+      },
+      "M-d411dec3eeda4c5ca40bc73b0af39d54": {
+        "state": "linked",
+        "object_pin": "ac4487c16fdab8f7522d7d8ec1fdde6cc5ebdbfae230ee6afccd431cb9f16640",
+        "comparison_scope": "实读共同梯度引理、预算模型、block coordinatewise 审查、三项目精确例及 BN-CLONE-v1 的 (K)、U_δ 和 active-cell 比较。",
+        "reason": "当前总量的共同梯度保证任意正预算的合并行仍最优。在矩阵识别中，只有一个不同 active 系数向量的 cell 因严格间隔局部线性，原梯度引理直接给共同最大 LP 的保持分支。多 active 系数情形仍须判别，三项目精确失败与可微假设无冲突。",
+        "edge_ids": [
+          "bn-clone-differentiability-certifies-linear-active-cells"
+        ]
+      },
+      "NE-FISHER-TRANSFER-v1": {
+        "state": "linked",
+        "object_pin": "8d7e3cacbb31c3f4433722d4156bed739ac5f3854b9dd53da287a2e5acd51617",
+        "comparison_scope": "实读矩阵等价、精确求解器缩放、文献覆盖页、N2 审查与克隆/Leontief 资料，逐式比较对数规划的临界 KKT 及 BN-CLONE-v1 的单坐标线性片子类。",
+        "reason": "同一临界支出条件一方面给对数规划的双向 KKT 贡献恢复与流可行性，另一方面在共同 Leontief 效用下给任意预算 clones 合并保持。完整 Fisher 等价是 public Leontief 与 private linear 的逐支出矩阵结果。备线须独立付清其弱优化、位长和坐标恢复合同。",
+        "edge_ids": [
+          "leontief-fisher-critical-support-implies-log-kkt-recovery",
+          "leontief-critical-support-implies-clone-invariance-subfamily"
+        ]
+      },
+      "FT-SMOOTH-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "65f16c21ab0b93eeba4c968fd478be09eb02b10b7f172bfda1df8b1105860a7e",
+        "comparison_scope": "实读 N7、七卡总览、证据等级与归并边界。比对跨档正式对象 weighted-congestion/two-weight-quadratic-common-type-scaled-potential 的全部非负二次分项、共同类型缩放和真实改善不等式，并核原 atomic 卡的截断倒数论证。对照本档 N1、N6 的不同动作、成本和动态量词。",
+        "reason": "在本批 3A 的同档范围内没有能承担 FT-SMOOTH-v1 的逻辑边。跨档正式势已给 64/59 有限终止。其边际界还能推出真实 64/59·(1+ε) 改善的势降大于 λ_i ε/(1+ε)·旧成本。该精确接口交跨档比较 two-weight-smooth-3c-3c-dd02c05e19e211f3，该批需固定扰动支撑、全零情况、边际密度截断、有限位采样及所输出实例。"
+      },
+      "M-e55e34f66b7b4eaaabe0b54bc1aa6d74": {
+        "state": "linked",
+        "object_pin": "12073ff62133aa89bddd82076e4dcb9d4411393c13ff1fddb77477445dfe6868",
+        "comparison_scope": "实读对数规划恢复全文及 Fisher 页、资料页和文献范围。比较预算/估值预处理、KKT、NE 总量唯一性、输入分母界、弱优化 oracle、曲率及最终临界图的精确有理流。",
+        "reason": "Fisher 正文的临界支持引理支撑任一最优 KKT 点与任一 NE 之间的逐支出恢复，及最后的流可行性。备线独立用有理坐标界和曲率控制精度，依赖已明确导入的弱优化后端。有理坐标仍允许几何平均目标无理。",
+        "edge_ids": [
+          "leontief-fisher-critical-support-implies-log-kkt-recovery"
+        ]
+      },
+      "PS-CAC-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "3358eb8af6f8aeb38c15172aa4ffb750f076c29230d3fe64c0adecd4cd5cb6aa",
+        "comparison_scope": "实读 N1、七卡总览与证据边界。复核 Ackermann–Röglin arXiv:0805.1130v1（https://arxiv.org/pdf/0805.1130v1）§1.1 的选择规则、§2 Theorem 2、§3.4 与 §4.1 Figure 2(c)、§4.4。比对同档 N6 的无权二资源策略和 N7 的双权公共成本，以及 weighted-congestion 单环潜在使用图反例的权、策略及量词。",
+        "reason": "树上任意调度的步界和单一环上均匀抽取不满意玩家的期望步界均为 O(n²)。前者与后者的模型不覆盖环经割点耦合的 cactus。N1 所指 gadget 在该公开版本见 §4.1。忽略每一边的 n 个平行玩家后，四个资源上的五边为 01、13、02、23、03，两个三环共用 03，故原多重图及其去重图均不满足简单 cactus 合同。论文对该图族的超多项式行为仅给模拟。双权单环无 PNE 的策略可含多个资源且权不等，不能转为这里的随机步界反例。两个环共享一个割点时的真实吸收链仍是具体开放切口。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/budget-games-3a-3a-feff53cdb880eb43/bn-clone-shared-supergradient-implies-conp-certificate.json",
+        "sha256": "6823a6b578aebbb3be05af4eb8f0c09ee1ec0ae67fe76b96962736685e3775bb"
+      },
+      {
+        "path": "map/edges/budget-games-3a-3a-feff53cdb880eb43/bn-clone-differentiability-certifies-linear-active-cells.json",
+        "sha256": "9a6f08a42af6c752564d0206d81dc57667b748068ea2e32b2b7a5eb300e8762e"
+      },
+      {
+        "path": "map/edges/budget-games-3a-3a-feff53cdb880eb43/leontief-fisher-critical-support-implies-log-kkt-recovery.json",
+        "sha256": "76d3bcea2d400ff49cd26c40191ad9bcc87eef7dc8a6d8057fb24f00acc07d92"
+      },
+      {
+        "path": "map/edges/budget-games-3a-3a-feff53cdb880eb43/leontief-critical-support-implies-clone-invariance-subfamily.json",
+        "sha256": "60a1cc7a882e8f2daa17b9228aa40edd77b4dfd2e1f1001f9e4cd376b395c6e2"
+      }
+    ],
+    "reviewed_by": "budget-games-3a-3a-feff53cdb880eb43",
+    "review_note": "核过六个核心对象的承重正文、已登记证据及实际比较端点。四条已核关系分别给完整 coNP 推导、可微 active cell 的保持分支、Leontief 对数规划的 KKT 恢复和单坐标线性片合并保持。两项动态对象保留各自的开放范围。",
+    "follow_up_tasks": [
+      "two-weight-smooth-3c-3c-dd02c05e19e211f3"
+    ],
+    "object_ids": [
+      "BN-CLONE-v2",
+      "M-d411dec3eeda4c5ca40bc73b0af39d54",
+      "NE-FISHER-TRANSFER-v1",
+      "FT-SMOOTH-v1",
+      "M-e55e34f66b7b4eaaabe0b54bc1aa6d74",
+      "PS-CAC-v1"
+    ],
+    "read_object_ids": [
+      "BN-CLONE-v1"
+    ],
+    "input_pins": {
+      "BN-CLONE-v2": "abcee8338458d8899260ec78267f7e584fd514c0b4f2fc04f7c2c278d122ec1c",
+      "M-d411dec3eeda4c5ca40bc73b0af39d54": "ac4487c16fdab8f7522d7d8ec1fdde6cc5ebdbfae230ee6afccd431cb9f16640",
+      "NE-FISHER-TRANSFER-v1": "8d7e3cacbb31c3f4433722d4156bed739ac5f3854b9dd53da287a2e5acd51617",
+      "FT-SMOOTH-v1": "65f16c21ab0b93eeba4c968fd478be09eb02b10b7f172bfda1df8b1105860a7e",
+      "M-e55e34f66b7b4eaaabe0b54bc1aa6d74": "12073ff62133aa89bddd82076e4dcb9d4411393c13ff1fddb77477445dfe6868",
+      "PS-CAC-v1": "3358eb8af6f8aeb38c15172aa4ffb750f076c29230d3fe64c0adecd4cd5cb6aa",
+      "BN-CLONE-v1": "1f8efa757d60cfb6b0d2602aaf2b0245e3fac233fb702fa002a1fd2f931014e4"
+    }
   }
 }
