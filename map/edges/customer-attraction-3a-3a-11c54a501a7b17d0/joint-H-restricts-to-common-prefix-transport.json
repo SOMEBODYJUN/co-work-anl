@@ -1,0 +1,50 @@
+{
+  "edge_id": "cag-11c54a-joint-H-restricts-to-common-prefix-transport",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/common-prefix-parent-column-complement-and-future-overlap-pushback"
+  ],
+  "target_ids": [
+    "customer-attraction/prefix-request-pushback-monotone-prices-and-ancestry-normalization"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取同一个合法B,W且j<i共前缀，H部分所有系数θ_k=0，其余0≤λ_j≤L。",
+  "roles": {
+    "customer-attraction/common-prefix-parent-column-complement-and-future-overlap-pushback": "给同一child完整prefix与H-overlap共享同一父列的容量，保K/Z余量。",
+    "customer-attraction/prefix-request-pushback-monotone-prices-and-ancestry-normalization": "原同一孩子全部prefix的共同父列回推和后续价格/时间结论。"
+  },
+  "explanation": "取θ=0后输出恰为a_j=λ_jβ_j、a_l=Σ_jλ_jq_jl。按父利润归一得到原列次随机回推，零父利润取系数0，Σa=Σ_jλ_jp_j(W)。原支持只有同角色保留或j<i≤l，故非负非减价格z可沿这些边比较z_j≤z_l，并给任意后缀金额界。恢复H部分时k到l可能向更早角色，价格方向需另证。",
+  "scope": "同一child的prefix-only算子，保非负共同容量和不减价格。祖先栈是另一层假设。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/同前缀父列余量与未来重叠份额的共同回推--引理.md",
+      "sha256": "483052f99ba5e895ee2db4a3c379bc6f2e4e387af47a44e103171ac1ce5a46a2"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/前缀回推双审查与静态运输入口的合同--资源.md",
+      "sha256": "0e28f00b93d2af604c5c57df499224bc008b1185b24471fcbb55f196ccbc623d"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/前缀请求回推的单调价格与祖先规范化--引理.md",
+      "sha256": "6b31e7c3bef41e06ce8bac21425998bb9190b6232dd079d80d237041efb41b02"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐角色核对θ=0所得原算子、同客分母和价格序。",
+  "contribution": {
+    "result": "JOINT-H在θ=0时恢复原共同prefix容量及不减角色价格控制。",
+    "remaining": "祖先栈域修复另需真实context、递增强制栈和深度递减；H扩展或多个孩子不能承接其全部结论。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/common-prefix-parent-column-complement-and-future-overlap-pushback": "f102dff7a66f973903a7c98d89e41cab8408a411874038517873447bf7f6d767",
+    "customer-attraction/prefix-request-pushback-monotone-prices-and-ancestry-normalization": "dd4cfbdb62edb482c0f83dc8b278f7843d9b53b24305c0e3a905a834ec52991c"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/同前缀父列余量与未来重叠份额的共同回推--引理.md": "483052f99ba5e895ee2db4a3c379bc6f2e4e387af47a44e103171ac1ce5a46a2",
+    "archives/customer-attraction/state/资源/前缀回推双审查与静态运输入口的合同--资源.md": "0e28f00b93d2af604c5c57df499224bc008b1185b24471fcbb55f196ccbc623d",
+    "archives/customer-attraction/state/引理/前缀请求回推的单调价格与祖先规范化--引理.md": "6b31e7c3bef41e06ce8bac21425998bb9190b6232dd079d80d237041efb41b02"
+  },
+  "review_digest": "b8da132535566e26ced109a2a98ac22bdc5ec573f21dbe8a49df8bc163f991cc"
+}

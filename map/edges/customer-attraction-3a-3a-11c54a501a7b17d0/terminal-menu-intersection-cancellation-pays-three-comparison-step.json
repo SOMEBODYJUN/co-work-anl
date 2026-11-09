@@ -1,0 +1,51 @@
+{
+  "edge_id": "cag-11c54a-terminal-menu-intersection-cancellation-pays-three-comparison-step",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/terminal-menu-overlap-elimination"
+  ],
+  "target_ids": [
+    "CA-R07E7-2R3C-ARBITRARY-BACKGROUND-2W-20261030"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取原三族差的索引长度为3，固定任意合法有序旧前缀并保留两位真实SPE。同一有序前缀上所有R_i仍是各强制主题的实际末位动作。",
+  "roles": {
+    "customer-attraction/terminal-menu-overlap-elimination": "给同一真实后继S,Z,V及逐客户同索引交集抵消。",
+    "CA-R07E7-2R3C-ARBITRARY-BACKGROUND-2W-20261030": "任意合法旧背景下两名剩余与三比较的共同付款。"
+  },
+  "explanation": "三族等式只用同一背景的客户份额，故无需将索引长度绑定总历史人数。令G₀=S+Z/6+V/3，交叠h在G₀中抵消。目标共同付款精确为G=(6/11)G₀+(5/11)L，其中L=Σ_i[u_B−U_p(T_i,A)]≥0来自实际末位对三个比较题的真BR。L逐客户只含a,b,d,p，不重新引入h，因此沿用原交集抵消。",
+  "scope": "任意旧整数背景和三槽比较可复用消去机制；新增末位对T_i比较和各客户余项仍须保留。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/两名剩余三比较任意背景半覆盖--定理.md",
+      "sha256": "611ec5cafdbd429e808367da65a31f00a5bab0506ed4ae239bdbb4f0da90b4f6",
+      "section": "证明的四组真实激励余量"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/两名剩余三比较任意背景半覆盖--定理.md",
+      "sha256": "611ec5cafdbd429e808367da65a31f00a5bab0506ed4ae239bdbb4f0da90b4f6",
+      "section": "零背景与正背景"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/真实末两人菜单交集消去--引理.md",
+      "sha256": "fa68e1aeddf884ab2b24643ea32f2185887c2eafe6c1beafa1f609b145837c83"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对共同背景与两尾真IC；不把三比较槽数当原总玩家数。",
+  "contribution": {
+    "result": "得到三比较G的同索引交叠抵消，且清楚识别唯一新增的L付款行族。",
+    "remaining": "O≤2W还需要对该新G的2w−o−G逐客户证明非负，旧未重加权的G不提供这项结论。"
+  },
+  "endpoint_pins": {
+    "CA-R07E7-2R3C-ARBITRARY-BACKGROUND-2W-20261030": "63f25c0c80552185bebc47f49997c57cefd9fea5e70b14724aa22333376fed4f",
+    "customer-attraction/terminal-menu-overlap-elimination": "31a1aef84cc0f4542d667c8e1749a4747e12ede6416c1ccc7ed39b2dc0196ab2"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/两名剩余三比较任意背景半覆盖--定理.md": "611ec5cafdbd429e808367da65a31f00a5bab0506ed4ae239bdbb4f0da90b4f6",
+    "archives/customer-attraction/state/引理/真实末两人菜单交集消去--引理.md": "fa68e1aeddf884ab2b24643ea32f2185887c2eafe6c1beafa1f609b145837c83"
+  },
+  "review_digest": "c340e24886c28abd5f94c6ce2d7ccff58153a2107839e6432d8e8257dd2ac14b"
+}

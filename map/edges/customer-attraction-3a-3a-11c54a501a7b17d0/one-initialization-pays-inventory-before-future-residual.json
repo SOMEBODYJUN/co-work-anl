@@ -1,0 +1,45 @@
+{
+  "edge_id": "cag-11c54a-one-initialization-pays-inventory-before-future-residual",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/full-client-coordinate-inventory-two-budget-initialization"
+  ],
+  "target_ids": [
+    "customer-attraction/direct-after-coordinate-init-internal-dilution-and-net-coverage-debt"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "先在完整SPE的同一个比较排列上使用合法RAW初始化，可随后将该比较选为真正最优；O是其并集。",
+  "roles": {
+    "customer-attraction/full-client-coordinate-inventory-two-budget-initialization": "固定同一完整SPE和比较T，显式支付actual current与同客正列并给守恒future注入。",
+    "customer-attraction/direct-after-coordinate-init-internal-dilution-and-net-coverage-debt": "同一最优T、初始化、路由在所有角色的共同剩余量义务。"
+  },
+  "explanation": "各x∈O的一单位库存按1/c_T分配到比较来源。已证分割后|O|=Σ_l(d_l+H_l)+Σ_i b_i，且两种已付账分别≤u_l，故R_l=2u_l−d_l−H_l≥0。若同一守恒路由的全部注入Σ_i b_i落到A_l^out且逐角色A_l^out≤R_l，求和立得|O|≤2W。静态O外替换界不约束这一初始化里O内客户的真实未来稀释。",
+  "scope": "初始化结论无须比较最优；只有T为最优且剩余量证明支付后才得到OPT_m≤2W。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/双预算初始化后直接交换的内部稀释税与净额义务--资源.md",
+      "sha256": "26d3c5ad93f00c1644753c9a27e8aca97a0e7bd8ac286a6c51a1030fade11201"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/全客户坐标库存的双预算初始化--引理.md",
+      "sha256": "c0ca6839939d68ab38f42a72ac454b295a4282945fa67f5b66070338faa12d08"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对两个actual钱包各自支付一次、future注入守恒、同一量词下结论。",
+  "contribution": {
+    "result": "同一份真实初始化给未来路由的确定输入与非负角色剩余额度。",
+    "remaining": "还要证明存在同一个最优T、同一次初始化和合法守恒路由同时满足全部角色残余容量。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/direct-after-coordinate-init-internal-dilution-and-net-coverage-debt": "55abc45ee67694c3050c3969d46a5a5afa6a24f10e26cbdf3088013ebcd3477f",
+    "customer-attraction/full-client-coordinate-inventory-two-budget-initialization": "f838e2b033bff9a358e1fa546a8458ed3ef844b16f657f752bf9e57a62c6a01f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/双预算初始化后直接交换的内部稀释税与净额义务--资源.md": "26d3c5ad93f00c1644753c9a27e8aca97a0e7bd8ac286a6c51a1030fade11201",
+    "archives/customer-attraction/state/引理/全客户坐标库存的双预算初始化--引理.md": "c0ca6839939d68ab38f42a72ac454b295a4282945fa67f5b66070338faa12d08"
+  },
+  "review_digest": "5f1a127371edcf95cb19fcb16817d87de5302b22fa8f9b5f5b9d1fab31c4e442"
+}

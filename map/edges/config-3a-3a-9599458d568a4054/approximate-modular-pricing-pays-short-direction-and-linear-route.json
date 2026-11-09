@@ -1,0 +1,68 @@
+{
+  "edge_id": "config-five-interfaces-approximate-pricing-pays-short-direction-and-linear-route",
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "source_ids": [
+    "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing",
+    "M-d05829d1479f4b8aad94f3953ab9ffc4",
+    "M-81da430ecf2846f59fb645a08763dab4"
+  ],
+  "target_ids": [
+    "M-42d1210a93e94042833e75a1a80545ea"
+  ],
+  "conditions": "显式有限物品与 bin，各局部族非空下闭，利润、启用成本与单一硬预算均为非负有理数。删除超过预算的 bin。保留每 bin 和每物品的单位边际行。共同正成本的强界使用整数截断行，所有硬预算可行整数指派仍能嵌入。 对每个 bin 及任意显式非负有理模权，局部确定性 oracle 返回实际可行配置，该配置的模权至少为最优值的已知有理 α∈(0,1] 倍。梯度方向的 z 给定完整显式有理正支持。",
+  "roles": {
+    "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing": "在扣固定价格前取得真列，利用真实割或缩放通过证书恢复相对 α 的短支持可行方向，亦适用于线性列利润。",
+    "M-d05829d1479f4b8aad94f3953ab9ffc4": "在线性近似点上以 item 边际给 G≥(1−1/e)L，并保原硬预算舍入至至少 G/2。",
+    "M-81da430ecf2846f59fb645a08763dab4": "共同正成本截断或共同零成本分支保整个 G。",
+    "M-42d1210a93e94042833e75a1a80545ea": "支付已知 α 的固定点真梯度方向、位复杂度与线性预算路线的近似损失。"
+  },
+  "explanation": "对每个 bin，先按非负物品对偶价 b 求真实候选分数 g_e−Σb_i 的 α 近似。正支持逐列扫描，共同背景权用 (w_ℓi−b_i)_+ 定价后按下闭性删负项，比较达到配置的真分数。先保留非负最大值 H_ℓ(b) 的乘法合同，再与固定价格 a_ℓ+c_ℓγ 比较。返回的违反列是真实切面；若没有违反列，由 H_ℓ(b/α)≤H_ℓ(b)≤(a_ℓ+c_ℓγ)/α 得真实可行的整体缩放证书。阈值 θ 的精确可行性驱动器遇通过即停，得到 θ≥αV；若无通过且报不可行，重放真实切面得到受限最优 V′>θ。同一盒含每个删列子系统的某最优顶点。二分只维持带证书的两个端点，无需通过判定单调。若 α=p/q，完整和受限最优分母≤D，二分至宽度小于 1/(qD²) 推出 V′≥αV。显式受限原始基本最优解有至多 |L|+|P|+1 个实际配置，坐标位长由原方向域确定。对于 L 列利润，物品扣价本身已可模权化；同一恢复步骤给 L(x)≥α max L≥α OPT。最后接两种给定支持舍入。",
+  "contribution": {
+    "result": "在规定的固定稀疏点上，输出原方向域内实际有理方向，真梯度线性目标至少最优的 α 倍，且支持至多 |L|+|P|+1。在线性利润路线得到原硬预算可行指派，一般成本值至少 α(1−1/e)OPT/2，共同正成本截断或共同零成本至少 α(1−1/e)OPT。",
+    "remaining": "真梯度的多步误差、轨迹增长及终点比较另由轨迹关系交付。当前保证要求任意非负有理查询权重和实际配置。仅报近似值的 oracle、任意带固定扣价的单列乘法近似、其他激活或随机模型各有独立合同。"
+  },
+  "scope": "有理 α 为所给确定性近似 oracle 的保底。精确割和缩放证书得到的全方向保证与单次完整减价分数的逐查询乘法障碍相容。比较目标为同一原硬预算整数 OPT。",
+  "evidence": [
+    {
+      "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+      "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+      "section": "指数地集必须交付的五个接口"
+    },
+    {
+      "path": "archives/configuration-assignment/state/定理/稀疏点处的精确隐式配置梯度定价--定理.md",
+      "sha256": "0265f06dd6695cd2d42793391766d39aa0bc624238a59acb4d6a79f576172e62"
+    },
+    {
+      "path": "archives/configuration-assignment/state/定理/近似模权定价恢复短支持真梯度方向--定理.md",
+      "sha256": "705b0b05ea3454a2b9c1ad36a2c9c28d92dc8ba923f5c1d7fa0830f354f7cddc"
+    },
+    {
+      "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+      "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+      "section": "输入、输出与比较值"
+    },
+    {
+      "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+      "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+      "section": "等成本强界的修复合同"
+    }
+  ],
+  "reviewed_by": "Boss1-config-five-3A-fresh-worker",
+  "review_note": "独立复核了按物品扣价和按固定价分开的逻辑、上下端见证、真实割重放、完整及受限有理间距、短支持解和两种舍入。",
+  "endpoint_pins": {
+    "M-42d1210a93e94042833e75a1a80545ea": "b05256c0fbf0a3aaadabf7be137ab1258e8b67ab039a0f7b6588be0fcdecda27",
+    "M-81da430ecf2846f59fb645a08763dab4": "d20161ada731b6e82e89c27bc3c7a7374674b950d21e0cad9a1be961e2d22ce3",
+    "M-d05829d1479f4b8aad94f3953ab9ffc4": "23bb2ddcdcb76320fa48b9c4a1ff525b126121d0cdc06b55232dd73098e7ca09",
+    "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing": "ac7d3a5d3bfb07d1ea36407d51142652241c93cff63505fe18c8aa180de86312"
+  },
+  "evidence_pins": {
+    "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+    "archives/configuration-assignment/state/定理/稀疏点处的精确隐式配置梯度定价--定理.md": "0265f06dd6695cd2d42793391766d39aa0bc624238a59acb4d6a79f576172e62",
+    "archives/configuration-assignment/state/定理/近似模权定价恢复短支持真梯度方向--定理.md": "705b0b05ea3454a2b9c1ad36a2c9c28d92dc8ba923f5c1d7fa0830f354f7cddc",
+    "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168"
+  },
+  "review_digest": "82ea439303f0becfaf72b4abfb31e904f73fe53f1f243d3b0994dd95521e7733"
+}

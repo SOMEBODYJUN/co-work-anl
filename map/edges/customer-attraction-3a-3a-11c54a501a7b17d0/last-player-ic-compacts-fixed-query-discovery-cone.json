@@ -1,0 +1,45 @@
+{
+  "edge_id": "cag-11c54a-last-player-ic-compacts-fixed-query-discovery-cone",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "cag-true-query-uniform-support-endpoints"
+  ],
+  "target_ids": [
+    "customer-attraction/rd28-three-static-background-minimax-and-fixed-policy-cone-discovery-contracts"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定p_labels个目录标签、m名玩家、完整有序策略σ，客户列不含空兴趣类型。D、M由同一σ确定。固定查询分布π，变量为非负实客户重数与t≥0。",
+  "roles": {
+    "cag-true-query-uniform-support-endpoints": "给定完整策略在所有有效非空客户列上满足Σw_T≤p_labels mW。",
+    "customer-attraction/rd28-three-static-background-minimax-and-fixed-policy-cone-discovery-contracts": "固定完整策略及固定查询分布的D/M客户锥优化(P)。"
+  },
+  "explanation": "在实际末位，改任意标签a的收益至少其客户质量/m。真实末位IC和u_m≤W给每个标签客户质量≤mW，非空类型至少属于一个标签，故Σw_T≤p_labels mW。于是Γw≥0,cw=1的客户切片闭、有界、非空（全兴趣类型即一可行点）。对D/M的每个背景，π平均查询收益不超Σw_T，故0≤t≤p_labels m。有限行(P)为紧集上的线性优化，最优值取得；π有理时可选有理最优原始点并清分母。",
+  "scope": "只支付Rd28固定σ和固定π的归一化与精确可达性，不混同固定客户优化Q或全局p、w联合优化。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/真实查询均匀接口的支持端点归约--引理.md",
+      "sha256": "a3dc03818ef4fad71f5f1dac3e7099ede11788add91b58001380a490478cfdf1"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/实际删位与偏离菜单的三种静态博弈发现接口--程序.md",
+      "sha256": "eeca2adf059aeb6a69d9d61a581530b059411e508bd831e30cda542810fb155d"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对Γ含末位全部真实IC、非空有效客户列、D/M均非空，及LP的有限有理系数条件。",
+  "contribution": {
+    "result": "Rd28(P)在固定完整策略及固定查询下有非空紧可行域并达到最优；有理查询下有有理最优证书。",
+    "remaining": "浮点保存点仍须有理恢复和逐行核验；集合包含及minimax来源于Rd28独立证明，查询分布也未被本步全局优化。"
+  },
+  "endpoint_pins": {
+    "cag-true-query-uniform-support-endpoints": "007e8d2e1835f1cd0f6e87d97698bcc332efb21ceaff06cdb1969e900a555c93",
+    "customer-attraction/rd28-three-static-background-minimax-and-fixed-policy-cone-discovery-contracts": "e845180178b06fe3ac10fef1a508c15e8d2e9eaccdb7a3a41ca01ef9f10f5a01"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/真实查询均匀接口的支持端点归约--引理.md": "a3dc03818ef4fad71f5f1dac3e7099ede11788add91b58001380a490478cfdf1",
+    "archives/customer-attraction/state/程序/实际删位与偏离菜单的三种静态博弈发现接口--程序.md": "eeca2adf059aeb6a69d9d61a581530b059411e508bd831e30cda542810fb155d"
+  },
+  "review_digest": "99f99331e0be5b5525b5a0a23932ffd4fe0405ae7011384588294a51af6d0f64"
+}

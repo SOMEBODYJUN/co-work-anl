@@ -1,0 +1,59 @@
+{
+  "edge_id": "cag-0c4d-optimal-price-recovers-half-restart-signs",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/capacity-two-query-distribution-optimal-effective-price"
+  ],
+  "target_ids": [
+    "CA-HALF-RESTART-PRICE-CONTROL-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限非空状态集、行随机T、实P/g、g≤γ。取额外银行b=0，概率行向量r和p=rR。",
+  "roles": {
+    "customer-attraction/capacity-two-query-distribution-optimal-effective-price": "给容量二全域与重启分布一一对应以及同一r上的漂移和目标重写，允许任意实函数。",
+    "CA-HALF-RESTART-PRICE-CONTROL-v1": "固定任一重启分布的H与J符号式以及多角色的逐行上界。"
+  },
+  "explanation": "由新公式r=2p−pT得p=(r+pT)/2与pT≤2p，R可逆给p唯一，且EΔP=pP−rP。记H=P/2+g、J=P/2−g。若r支撑H最大点，EΔP/2+pg=pH−rH+rg≤rg≤γ，所以是同号上界。若r支撑J最大点，则EΔP/2+γ−pg=pJ−rJ+γ−rg≤γ−rg，且r的支持满价时≤0。逐行应用并求和即可，不用共同平稳律。新引理在J的零债方向给准确条件max h≥γ，而旧满价条件只是充分。真二人交换核的P=(2,4)、g=(1,1/2)、γ=1：J唯一最大B而g_B=1/2，h_B=1，r=δ_B、p=(1/3,2/3)，漂移−1/3与债1/3相消。例中A后B与复制A同为1的末位平局，B后A得2，根A收益2高于改B的1，核有真SPE依据。",
+  "scope": "任意有限核的逐坐标主题容量与核代数。二人严格放宽的合法full-slot价格不认证共同鞍点或六人真实原子BANK。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/容量二查询分布的最优有效价格--引理.md",
+      "sha256": "1490f3a07e853c79017705b0c1357ad02756106a684ecc59f690ddb55e1dea56",
+      "section": "有限核的精确最优化"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/容量二查询分布的最优有效价格--引理.md",
+      "sha256": "1490f3a07e853c79017705b0c1357ad02756106a684ecc59f690ddb55e1dea56",
+      "section": "真实二人核严格放宽旧充分条件"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/半重启分布的容量二与双符号查询债--引理.md",
+      "sha256": "7d2d97514b1acbde5861bb3b6b26abb9bd1f303b8c94829fd484e25ca9123355",
+      "section": "唯一分布和容量二"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/半重启分布的容量二与双符号查询债--引理.md",
+      "sha256": "7d2d97514b1acbde5861bb3b6b26abb9bd1f303b8c94829fd484e25ca9123355",
+      "section": "H=P/2+g：同号上界不是取消"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/半重启分布的容量二与双符号查询债--引理.md",
+      "sha256": "7d2d97514b1acbde5861bb3b6b26abb9bd1f303b8c94829fd484e25ca9123355",
+      "section": "J=P/2−g：满价最大点给真正的充分取消条件"
+    }
+  ],
+  "reviewed_by": "Boss1-customer-attraction-map-worker",
+  "review_note": "代入同一r检查H/J的符号和各自最大点条件，复算交换核的两项精确抵消。",
+  "whole_result": "新容量二域的逆式逐r恢复半重启唯一性、容量与漂移，并推出旧H/J两种符号上界、满价充分取消及各角色独立相加。",
+  "endpoint_pins": {
+    "CA-HALF-RESTART-PRICE-CONTROL-v1": "d561f247e56cbbdd848b6ce5718e87708f779c07696f950c48f1132a93bb3faa",
+    "customer-attraction/capacity-two-query-distribution-optimal-effective-price": "575e68d07a8b76482526efd3479f969f078418f753df0edd4d0ebc8736822010"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/容量二查询分布的最优有效价格--引理.md": "1490f3a07e853c79017705b0c1357ad02756106a684ecc59f690ddb55e1dea56",
+    "archives/customer-attraction/state/引理/半重启分布的容量二与双符号查询债--引理.md": "7d2d97514b1acbde5861bb3b6b26abb9bd1f303b8c94829fd484e25ca9123355"
+  },
+  "review_digest": "7825396907f255033b82b32cce4a9c7824f7da68e2c96b66f98feff887e1e615"
+}

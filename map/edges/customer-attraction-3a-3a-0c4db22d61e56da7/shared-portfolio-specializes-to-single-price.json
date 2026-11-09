@@ -1,0 +1,65 @@
+{
+  "edge_id": "cag-0c4d-shared-portfolio-specializes-to-single-price",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/shared-true-terminal-reply-query-portfolio-and-reweighted-requery"
+  ],
+  "target_ids": [
+    "CA-PRICED-HIDDEN-REPLY-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意有限单位客户、有限非空共同标签目录、m≥2及同一份完整有序历史纯SPE。源余k≥2，强制T合法，F_j为真后继，所有乘子非负。零分子份额按零。",
+  "roles": {
+    "customer-attraction/shared-true-terminal-reply-query-portfolio-and-reweighted-requery": "在同一个强制分支末位将全部查询与同一实际价格、容量和源IC合并，给一般下包络。",
+    "CA-PRICED-HIDDEN-REPLY-v1": "取一个合法查询即可恢复其任意尾长必要行及不同中间价的精确排序。"
+  },
+  "explanation": "取L=1，令n=k−1、b=p、u=r、μ_1=μ、q_1=q，且G=F_(k−1)。源行付一次r，真实F_j的actual末位报价和共同K容量按α_j、β_j各付一次，Q用这个G的末位IC。代入联合式(P)并逐客户取min就是目标h及ψ。其客户成本c_j=β_j+α_j/(ℓ+1)，固定非末人数s与末位g后只有Σ_{j<k−1}c_j f_j依赖身份，取s个最小成本即可，故任意不同中间价亦压为2(k−1)候选。反向，先单查消元再平均可能损失信息。例如一客户目录为空主题和满主题、三人完整SPE都取满，根强制满，取t=1,p=0，两个查询的会员q分别0和1、权各1/2，中间成本1/12、末成本0。将同一份源/价格均摊到两条单查询式，等价于每条使用总μ=1后对最小值取平均。两单查最小为0和5/12，平均5/24，而先共享f再取最小为1/4。逐查询独立消元因此只给较弱必要行，不能等同共同隐藏后继的联合最小值。真实actual倒二源再取k=2、ℓ=p+a（a为实际倒二主题会员）、α_last=μ_Q=1、β_last=0。D=(p+1)(p+2)时h(0)−h(1)=a/D，故ψ=(t+q)/(p+1)−(tq+a)/D，恰恢复强PAIR的重叠项及实际主题自身项。",
+  "scope": "覆盖目标登记的任意尾长单查询核心及精确排序，包括k=2、别名、重复和离轨源。强PAIR端点要求ℓ=p+a；任意离轨背景只保一般公式。多强制分支菜单还需要额外真实交叉行。十三到十六项属于指定六索引应用，后添三项对未选索引均值，i=j时余5，否则余4。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/共享真实末回复的组合查询投影与同源重配权--引理.md",
+      "sha256": "a3e5fdcf1e47c919d5b6f500b07d4fc371ac482c924b39213c6fb2d591f3c08c",
+      "section": "同一真实源的组合查询恒等式"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/共享真实末回复的组合查询投影与同源重配权--引理.md",
+      "sha256": "a3e5fdcf1e47c919d5b6f500b07d4fc371ac482c924b39213c6fb2d591f3c08c",
+      "section": "同价中间人数压缩及PAIR端点"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/共享真实末回复的组合查询投影与同源重配权--引理.md",
+      "sha256": "a3e5fdcf1e47c919d5b6f500b07d4fc371ac482c924b39213c6fb2d591f3c08c",
+      "section": "六比较索引的标签与13到16菜单"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/共同末位报价与隐藏回复投影--引理.md",
+      "sha256": "5a4a02c618b296478ba6a40cb3700b81a83e27a5f207a5b587ce38593a27d0c9",
+      "section": "一般投影行"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/共同末位报价与隐藏回复投影--引理.md",
+      "sha256": "5a4a02c618b296478ba6a40cb3700b81a83e27a5f207a5b587ce38593a27d0c9",
+      "section": "排序压缩"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/单隐藏末回复的配对投影恒等式核验程序--程序.md",
+      "sha256": "6a4d33105724a47bccc58bde69aa0256b68da6cbe95e1fb164b29bc184f58a48",
+      "section": "完整局部公式与任意背景下的解析证明"
+    }
+  ],
+  "reviewed_by": "Boss1-customer-attraction-map-worker",
+  "review_note": "逐项匹配四类真实行和客户分母。用两查询、两个隐藏位的四态直接核先合后消的严格差。",
+  "whole_result": "由组合查询恒等式取单查询并对固定中间人数选择最小成本后继，推出目标登记的全部任意尾长单查询预算不等式及2(k−1)候选精确压缩。",
+  "endpoint_pins": {
+    "CA-PRICED-HIDDEN-REPLY-v1": "7679405a6ff9eaeeb064077ec3bef03308249d984e63fb6c3ab644f055a72b5f",
+    "customer-attraction/shared-true-terminal-reply-query-portfolio-and-reweighted-requery": "fbb4178dc3912c766be9526dcbd2b686c9cd79c0f6cbc47f723d078e954af4f9"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/共享真实末回复的组合查询投影与同源重配权--引理.md": "a3e5fdcf1e47c919d5b6f500b07d4fc371ac482c924b39213c6fb2d591f3c08c",
+    "archives/customer-attraction/state/引理/共同末位报价与隐藏回复投影--引理.md": "5a4a02c618b296478ba6a40cb3700b81a83e27a5f207a5b587ce38593a27d0c9",
+    "archives/customer-attraction/state/程序/单隐藏末回复的配对投影恒等式核验程序--程序.md": "6a4d33105724a47bccc58bde69aa0256b68da6cbe95e1fb164b29bc184f58a48"
+  },
+  "review_digest": "bd3c0b0149077145b21be777398a57a993791d4734fdb63ff13ddda2036ae595"
+}

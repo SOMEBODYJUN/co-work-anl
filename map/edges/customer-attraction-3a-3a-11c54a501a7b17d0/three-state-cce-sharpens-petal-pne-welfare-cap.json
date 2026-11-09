@@ -1,0 +1,45 @@
+{
+  "edge_id": "cag-11c54a-three-state-cce-sharpens-petal-pne-welfare-cap",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/petaled-weak-iid-family-static-cce-calibration"
+  ],
+  "target_ids": [
+    "M-9d7c1749bd4a43ae9b72527d0eb5d194"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "相同单位客户目录和均分规则，m≥3、K≥2。静态偏离只替换当前玩家行动，不改其余槽。",
+  "roles": {
+    "customer-attraction/petaled-weak-iid-family-static-cce-calibration": "给同一多花瓣目录上一份完全指定的对称三状态静态CCE。",
+    "M-9d7c1749bd4a43ae9b72527d0eb5d194": "其中最低静态CCE福利上界及显式族的弱CCE校准。"
+  },
+  "explanation": "Q₀,Q₂福利均2m，Q₁福利2m+1。因此已验证CCE的期望福利2m+4/[m+6+3(m−1)/K]严格小于显式PNE福利2m+1。令C_m为全部静态CCE的最小福利，与已知同族完整SPE的W=2m比较，则(1−1/(2m))C_m≤(1−1/(2m))(2m+1)=2m−1/(2m)<W。",
+  "scope": "只涉及同一花瓣族。m=2的Q₂不覆盖B，由原显式PNE单独处理。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/多花瓣弱独立族的静态粗相关校准--定理.md",
+      "sha256": "b301b45d14d86be490632cada43fa0cce16c5bc0456a2e7067335ffa0cfb38e0"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/八客户静态封顶与花瓣弱桥的原始精确审计--程序.md",
+      "sha256": "0f8ac8ba94bdcc12f459810787955cf3eb2489734d9f4e9712c3cba271ee3345"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对玩家置换后的个体CCE约束、各状态福利及m=2边界。",
+  "contribution": {
+    "result": "对m≥3同目录，得到严格强于2m+1的C_m上界，并复得该族弱CCE福利不等式。",
+    "remaining": "较低福利的CCE并不提供静态纯Nash行动或m=2证明，亦不确定C_m的精确最小值。"
+  },
+  "endpoint_pins": {
+    "M-9d7c1749bd4a43ae9b72527d0eb5d194": "d1ae1861dfd8adfff82e0b6d9ded5a76eb1d9249c4c35718e26185d6ee0af7fd",
+    "customer-attraction/petaled-weak-iid-family-static-cce-calibration": "334973a11dfbdca78528fe206d4a1502f7ca1d6737ec0ccc32161434d2a1f736"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/多花瓣弱独立族的静态粗相关校准--定理.md": "b301b45d14d86be490632cada43fa0cce16c5bc0456a2e7067335ffa0cfb38e0",
+    "archives/customer-attraction/state/程序/八客户静态封顶与花瓣弱桥的原始精确审计--程序.md": "0f8ac8ba94bdcc12f459810787955cf3eb2489734d9f4e9712c3cba271ee3345"
+  },
+  "review_digest": "69ca3c5d267474a06f648982e8cd9b736adb070f62a6aa1921762d24701aa88f"
+}

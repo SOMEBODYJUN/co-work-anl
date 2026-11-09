@@ -1,0 +1,73 @@
+{
+  "edge_id": "config-five-interfaces-linear-pricing-pays-support-and-hard-budget",
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "source_ids": [
+    "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing"
+  ],
+  "target_ids": [
+    "M-42d1210a93e94042833e75a1a80545ea"
+  ],
+  "conditions": "显式有限物品与 bin，各局部族非空下闭，利润、启用成本与单一硬预算均为非负有理数。删除超过预算的 bin。保留每 bin 和每物品的单位边际行。共同正成本的强界使用整数截断行，所有硬预算可行整数指派仍能嵌入。 逐 bin 精确非负有理模权定价必须返回一个实际最优配置，且耗时按紧输入及查询位长计。",
+  "roles": {
+    "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing": "给精确对偶分离、可验证实际列的原始稀疏支持恢复，以及通往硬预算整数指派的线性目标路线。",
+    "M-42d1210a93e94042833e75a1a80545ea": "支付规定精确定价访问的线性分数点构造、短支持上的覆盖值评估，以及硬预算整数解码。"
+  },
+  "explanation": "线性目标采用配置列利润 Σ_{i∈S}v_{ℓi}。给定非负对偶变量 a_ℓ,b_i,γ，按 (v_{ℓi}−b_i)_+ 逐 bin 定价并删去真实权重为负的 item，比较 a_ℓ+c_ℓγ，得到真实违反列或精确通过。先求完整对偶最优值，再用统一有理最优值间距与不可行阈值重放恢复真实列；从受限原始 LP 的最优面取基本可行解，故最优点 x 有至多 |L|+|P|+1 个实际配置。每物品边际至多一，通过逐利润阈值乘积得 G(x)≥(1−1/e)L(x)，并在显式短支持上精确比较交换端点。一般成本的保成本交换最多留一正成本分数配置，以可负担单配置与整数配置集比较保至少 G(x)/2。共同正成本整数截断容许把最后分数升一，共同零成本可全部升一，因而保 G(x)。最后逐物品保留最高利润 bin，下闭性保局部可行且成本不增。L(x)≥同模型原整数 OPT。",
+  "contribution": {
+    "result": "对带逐 bin 精确定价的确定性单硬预算输入，精确恢复最优线性 LP 的多项式显式支持，按实际需要精确评估 G 后交付硬预算可行整数解。一般成本值至少 (1−1/e)OPT/2。共同正成本以整数截断重解该 LP，或共同成本为零，所得至少 (1−1/e)OPT。整条线性路线无需全地集梯度或离散步长。",
+    "remaining": "本线性路线未交付给定点的真梯度或多步梯度误差合同。精确 oracle 的提供仍依赖局部表示；仅有 membership 无法代替。对其他访问模型、额外激活 matroid 或随机需求，要分别给出分离/构造与实际舍入。"
+  },
+  "scope": "采用所述精确实际配置访问的确定性硬预算线性分支。非整数 B/c 的等正成本自然 LP 可能包含截断不准许的 x，不能把加强 LP 的保证转给原自然点的 L(x)。",
+  "evidence": [
+    {
+      "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+      "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+      "section": "指数地集必须交付的五个接口"
+    },
+    {
+      "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+      "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+      "section": "配置 LP 和精确对偶分离"
+    },
+    {
+      "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+      "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+      "section": "从对偶证书恢复最优支持"
+    },
+    {
+      "path": "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md",
+      "sha256": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+      "section": "转回整数指派及局部资源应用"
+    },
+    {
+      "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+      "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+      "section": "输入、输出与比较值"
+    },
+    {
+      "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+      "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+      "section": "精确实现与位复杂度"
+    },
+    {
+      "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+      "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+      "section": "等成本强界的修复合同"
+    }
+  ],
+  "reviewed_by": "Boss1-config-five-3A-fresh-worker",
+  "review_note": "实读对偶证书重放与两种舍入，区分线性列利润和候选正确的真梯度。阈值乘积在短支持上精确计算；截断条件始终绑定其可行点和比较值。",
+  "endpoint_pins": {
+    "M-42d1210a93e94042833e75a1a80545ea": "b05256c0fbf0a3aaadabf7be137ab1258e8b67ab039a0f7b6588be0fcdecda27",
+    "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing": "bc9984dc949b57b5dba024289ef14b2fed3734e4000f4d577ec0b67b2ea908da"
+  },
+  "evidence_pins": {
+    "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+    "archives/configuration-assignment/state/定理/精确模权定价下的紧输入配置LP与硬预算指派--定理.md": "04208371125c5234e330f895e71f3d6d7387cc8494d74204547809fdec4daa9a",
+    "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168"
+  },
+  "review_digest": "cb6ede7162da69e808c5a989a786d16aafd4b120dc1fe455abf5cee2d312d77c"
+}

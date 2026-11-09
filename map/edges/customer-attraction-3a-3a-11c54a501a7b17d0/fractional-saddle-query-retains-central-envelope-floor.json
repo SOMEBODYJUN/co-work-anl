@@ -1,0 +1,50 @@
+{
+  "edge_id": "cag-11c54a-fractional-saddle-query-retains-central-envelope-floor",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-f3439db394f148d598fddb438c676f01"
+  ],
+  "target_ids": [
+    "M-ac23e61a61274d2db562f26d8df2cfbd"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一有限目录、整数m≥1、中央尾k<m及零根背景。分数背景仍有m−1份竞争质量。",
+  "roles": {
+    "M-f3439db394f148d598fddb438c676f01": "自由分数背景允许全目录质量，提供凸背景minimax与真正整数查询的比较域。",
+    "M-ac23e61a61274d2db562f26d8df2cfbd": "中央尾消元保留查询分布的静态安全值。"
+  },
+  "explanation": "对F(p,q)=Σ_x α_x(p)/[1+(m−1)α_x(q)]，p线性、q连续凸，紧概率单纯形给t_m=max_p min_q F。取达到该值的p_t。任一m−1槽背景b可用归一标签计数q_b表示，故p_t的固定背景收益F(p_t,q_b)≥t_m；m=1直接按无竞争查询最大化。中央每个短背景q先冻结其k槽最优器B*(q)，每个查询的中央增益至少在q+B*(q)中的静态份额。取p_t期望仍至少t_m。",
+  "scope": "给一份由分数凸minimax构造并可搬入中央包络的静态查询；t_m与v_m可严格不同。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/中央后缀优化的安全保留与联合删除预算--引理.md",
+      "sha256": "fdbdd4e1812411956f68ef0a7c514387509ce7ce0e057553ea89bac1dc39cec0"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/自由分数背景安全门槛--定义.md",
+      "sha256": "0e2e6393acb153498a3b4d0a8091b3a10976f211945e612c96eb1b2d8982c2cd"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/free-fractional-interface/original/security/free_fractional_security.md",
+      "sha256": "5a316c28b25dc03aa47b8f6e3911e5b32175a46f1876a2280b34825d25e94a7f"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对分数鞍点选取、整数背景嵌入、中心最优器先于查询及m=1零竞争边界。",
+  "contribution": {
+    "result": "以分数背景鞍点的查询p_t，在每个中央消元后的固定对手前缀都保留t_m(0)。",
+    "remaining": "任意给定p都保留其整数s(p)、特别存在保留v_m的最优p，须用中央安全引理的完整点态比较；p_t本身未必保留v_m。"
+  },
+  "endpoint_pins": {
+    "M-ac23e61a61274d2db562f26d8df2cfbd": "8b5408ea0148ea4e523bf21da581a813b0af3c13af18eceba7c919b1da4604e3",
+    "M-f3439db394f148d598fddb438c676f01": "7811655bda024a057757bc968005c183d9fc7fc90c5f4b2dad82c28d84febd94"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/中央后缀优化的安全保留与联合删除预算--引理.md": "fdbdd4e1812411956f68ef0a7c514387509ce7ce0e057553ea89bac1dc39cec0",
+    "archives/customer-attraction/state/定义/自由分数背景安全门槛--定义.md": "0e2e6393acb153498a3b4d0a8091b3a10976f211945e612c96eb1b2d8982c2cd",
+    "archives/customer-attraction/tools/evidence/free-fractional-interface/original/security/free_fractional_security.md": "5a316c28b25dc03aa47b8f6e3911e5b32175a46f1876a2280b34825d25e94a7f"
+  },
+  "review_digest": "9b1fd7f40f053fabad9d34ba1dfef86b5c864db02e6329722d1a7dfaa22e9c2c"
+}

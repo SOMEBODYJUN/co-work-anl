@@ -1,0 +1,63 @@
+{
+  "edge_id": "cag-0c4d-dynamic-seats-lower-bound-credible-forced-maximum",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/dynamic-superset-seat-floor"
+  ],
+  "target_ids": [
+    "customer-attraction/comparator-order-and-minimum-credible-continuation-payment"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一共同目录CAG、固定路由、不同极大覆盖B_j、共同核心大小c，总人数n。节点路由计数p、余r≥1。强制动作是完整B_j，后继是任意完整纯SPE。",
+  "roles": {
+    "customer-attraction/dynamic-superset-seat-floor": "给全部合法历史与全部真实纯SPE续局的当前收益下界D1，以及每一步路由后ξ不减。",
+    "customer-attraction/comparator-order-and-minimum-credible-continuation-payment": "L_i(A)是强制A之后全部可信续局中迫使行动者所得的最小值，目标需要联合选择一个最优比较元组。"
+  },
+  "explanation": "在任意可信后继里，若再无人路由到j，所有全局私有客户的负载至多p_j+1，共享incidence I至多p_I+r，核心每客户份额至少1/n，故当前强制者至少c/n+q_{j,1}(p,r)。若有后继路由到j，取其中一位。其主题是B_j子集，同叶客户分母相同，故强制者总收益至少该后继实际收益。D1施于该后继真实历史，继以ξ单调性，至少c/n+ξ(p+e_j,r−1)。两种情形穷尽且对任意可信续局成立，因此r≥2时L_i(B_j)≥c/n+min{q_{j,1}(p,r),ξ(p+e_j,r−1)}；r=1时第一项下界直接成立。把某个最优比较中每个动作替为包含它的路由极大主题，覆盖不会降且仍为OPT，故可在仅极大标签的最优元组上用这些逐格权下界和。",
+  "scope": "同一固定极大覆盖路由下的全历史逐格可信保底。只依赖后继在各自真实历史的SPE，不要求强制者本身或变更后的整个actual叶可信。D2和四个合法路径障碍是另一总收费合同。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/动态超集席位保底--引理.md",
+      "sha256": "db6ac1124056691e630c9112f00641de8d99631e9f245ab7da1b11809452699c",
+      "section": "席位阈值的单调性"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/动态超集席位保底--引理.md",
+      "sha256": "db6ac1124056691e630c9112f00641de8d99631e9f245ab7da1b11809452699c",
+      "section": "同时覆盖全部有序历史的倒推"
+    },
+    {
+      "path": "archives/customer-attraction/state/想法/比较主题排序与最低可信续局的开放支付接口--想法.md",
+      "sha256": "31b5dc4b3e191a1c2331fd14cc2f999f07ba7308def9b1c5bee19defd4722768",
+      "section": "最低可信续局：定义清楚但全局下界开放"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/笛卡尔银行目录的逐人分数门槛反族--反例.md",
+      "sha256": "46c7a8df14fb3dd858e4fc827e2de7f000966d49ac4cd9ef7bb2b05777957a80",
+      "section": "客户、目录和终局支付"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/笛卡尔银行目录的逐人分数门槛反族--反例.md",
+      "sha256": "46c7a8df14fb3dd858e4fc827e2de7f000966d49ac4cd9ef7bb2b05777957a80",
+      "section": "BASE及根的全部真实激励"
+    }
+  ],
+  "reviewed_by": "Boss1-customer-attraction-map-worker",
+  "review_note": "逐格区分是否有同路由后继，用同终局覆盖支配，核r=1无后继和覆盖保持最优；用真实银行BASE路径核最佳下界和的双向精确值。",
+  "contribution": {
+    "result": "对每个固定实际前缀及强制极大比较主题，获得对全部可信续局有效的最低付款下界，可作最优比较元组的逐格权。",
+    "remaining": "一般SM仍需超出这批下界的真实可信收益信息。对已证m≥3银行族的BASE实际SPE，主题(i,j)各覆盖经济客户e_i及两客户银行B_j，全部不同极大，无共同核心、无全局私有。实际前t=m−r人用经济0和银行0,…,t−1各一次。每格q_{j,1}在r≥2时至多3/r，由未用经济与未用银行配对取等；r=1时银行各已有一份，最大值2。取真正最优的有序元组，前m−1位依次取经济0,…,m−2且与其实际位置相同的银行，末位取经济m−1和银行0，覆盖所有客户。每格均取到上述上界。r≥3时强制该比较后仍有未用经济和银行，ξ_child=3/(r−1)；r=2时强制后每银行已有一份，仍有未用经济，ξ_child=2；r=1无后继。故在最优元组上，下界和的最大值精确为3H_m−1。m=10时6541/840<8=m−2，以后差额(m−2)−(3H_m−1)每步增1−3/(m+1)>0。此失败发生于真实完整SPE路径，限于这批逐格下界，未限制该路径的真实L或反驳SM。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/comparator-order-and-minimum-credible-continuation-payment": "0965a6540482622453e0e222e58d5e275a29cd066556c019f59b154d72586398",
+    "customer-attraction/dynamic-superset-seat-floor": "98e5b0838f64300bcfa31e7ebd2fa772c9d638d88d07624e7734cdc64889e9d2"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/动态超集席位保底--引理.md": "db6ac1124056691e630c9112f00641de8d99631e9f245ab7da1b11809452699c",
+    "archives/customer-attraction/state/想法/比较主题排序与最低可信续局的开放支付接口--想法.md": "31b5dc4b3e191a1c2331fd14cc2f999f07ba7308def9b1c5bee19defd4722768",
+    "archives/customer-attraction/state/反例/笛卡尔银行目录的逐人分数门槛反族--反例.md": "46c7a8df14fb3dd858e4fc827e2de7f000966d49ac4cd9ef7bb2b05777957a80"
+  },
+  "review_digest": "5587632a28c9a4dc0e12ba6ecf26d32a1bfa3591d12cf2a664dd6901c51a96de"
+}

@@ -1,0 +1,57 @@
+{
+  "edge_id": "cag-0c4d-credible-pasting-reduces-optimal-tuple-payment",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/fixed-actual-path-credible-thresholds-and-full-menu-envelopes"
+  ],
+  "target_ids": [
+    "customer-attraction/comparator-order-and-minimum-credible-continuation-payment"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限CAG全历史纯SPE。固定一个可实现实际有序叶a，真实查询d_i^σ(A)，L_i(A)遍历该孩子全部可信续局的最低收益，所有最优有序m元组构成Opt。",
+  "roles": {
+    "customer-attraction/fixed-actual-path-credible-thresholds-and-full-menu-envelopes": "所有真正首次离轨孩子可独立粘合，实际孩子固定原叶，完整历史仍全满足IC。",
+    "customer-attraction/comparator-order-and-minimum-credible-continuation-payment": "目标对固定实际叶量化存在一个真正最优比较元组，使用全部可信孩子的最低当前收益。"
+  },
+  "explanation": "若A≠S_i，任一原实现给L_i(A)≤u_i(a)，故其极小叶属于可粘的E_{i,A}。对所有(i,A)同时选极小，得保a的同一σ−。令bar L_i(A)=L_i(A)在离轨，bar L_i(S_i)=u_i(a)在轨，ρ_i=u_i(a)−L_i(S_i)。每份保a的σ逐格d_i^σ≥bar L，同一σ−逐格等号，故min_{σ保a} max_{T∈Opt} Σ_i d_i^σ(T_i)=max_{T∈Opt}Σ_i bar L_i(T_i)。目标所需则是max_{T∈Opt}[Σ_i bar L_i(T_i)−Σ_{i:T_i=S_i}ρ_i]≥OPT−W。至少存在一个最优T使匹配到正租金自身标签的项为空。证明ρ_m=0（强制末动作后叶已固定）。取任一最优支持U，若|U|≥2，每标签允许的位置至少有末位，任意两不同标签的允许位置并集是全部m，因为每位置最多禁一个标签。Hall给U中的每个标签分配一个允许位置，余位填任一允许的U内标签。若U={A}且目录至少两标签，令末位选A、其余任选不禁标签，仍覆盖OPT。单标签目录全ρ=0。因此若真实查询付款对每份σ及每个真正最优有序T成立，可在σ−选任一无正租金最优T而推出目标。真实查询仅存在某个最优T版本，只给bar L的最大值，所见证元组未必是避租金的那一个。",
+  "scope": "只处理固定真实actual叶的拼合、租金和最优元组量词。离轨孩子可各取不同完整续局后同时贴回，in-path孩子仍受嵌套限制。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/固定实际路径的可信门槛与全菜单包络--资源.md",
+      "sha256": "494d309dff485df8ee3b2e56f8c5f17b9fcec578963f327754a897056d967cf7",
+      "section": "保实际叶的全部菜单同时拼合"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/固定实际路径的可信门槛与全菜单包络--资源.md",
+      "sha256": "494d309dff485df8ee3b2e56f8c5f17b9fcec578963f327754a897056d967cf7",
+      "section": "可信门槛L、SM和TB"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/固定实际路径的可信门槛与全菜单包络--资源.md",
+      "sha256": "494d309dff485df8ee3b2e56f8c5f17b9fcec578963f327754a897056d967cf7",
+      "section": "在轨租金的完整两人例"
+    },
+    {
+      "path": "archives/customer-attraction/state/想法/比较主题排序与最低可信续局的开放支付接口--想法.md",
+      "sha256": "31b5dc4b3e191a1c2331fd14cc2f999f07ba7308def9b1c5bee19defd4722768",
+      "section": "最低可信续局：定义清楚但全局下界开放"
+    }
+  ],
+  "reviewed_by": "Boss1-customer-attraction-map-worker",
+  "review_note": "按E列核同时极小σ−，区分每σ存在T与每σ每T，并用有限匹配构造出至少一个无正租金最优T。",
+  "contribution": {
+    "result": "精确消去固定actual叶上真实查询的策略量词，写出原最低可信付款与在轨版本的租金差，并证明每条实际叶至少有一个无正租金的最优元组。",
+    "remaining": "需要对至少一个最优元组证明扣租金后的覆盖付款≥OPT−W。无租金最优元组存在，不保证它支付该金额。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/comparator-order-and-minimum-credible-continuation-payment": "0965a6540482622453e0e222e58d5e275a29cd066556c019f59b154d72586398",
+    "customer-attraction/fixed-actual-path-credible-thresholds-and-full-menu-envelopes": "f86ab6bee8950998ea622e25dc0f14cb197338858f1065cb39980eff0390d59c"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/固定实际路径的可信门槛与全菜单包络--资源.md": "494d309dff485df8ee3b2e56f8c5f17b9fcec578963f327754a897056d967cf7",
+    "archives/customer-attraction/state/想法/比较主题排序与最低可信续局的开放支付接口--想法.md": "31b5dc4b3e191a1c2331fd14cc2f999f07ba7308def9b1c5bee19defd4722768"
+  },
+  "review_digest": "2824074201b16d0a767c74f2e110fe57fd49098b96cab98d287c2effbebb9191"
+}

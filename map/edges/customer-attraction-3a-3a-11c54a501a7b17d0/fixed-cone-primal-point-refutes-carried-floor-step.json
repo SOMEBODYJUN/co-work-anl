@@ -1,0 +1,52 @@
+{
+  "edge_id": "cag-11c54a-fixed-cone-primal-point-refutes-carried-floor-step",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "cag-carried-floor-recursive-step-fixed-cone-primal-dual-certificate"
+  ],
+  "target_ids": [
+    "CC-CARRIED-FLOOR-RECURSIVE-STEP-NO-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定零背景、四人六标签AAAF完整策略，比较最优元组ABCD。非负客户权归一到实际W=1。",
+  "roles": {
+    "cag-carried-floor-recursive-step-fixed-cone-primal-dual-certificate": "提供精确原始可行点、指定ABCD确为最优的约束及归一化缺口1/12。",
+    "CC-CARRIED-FLOOR-RECURSIVE-STEP-NO-v1": "固定69单位客户完整SPE的递归台阶反例。"
+  },
+  "explanation": "原始点全部310条真IC与126条全比较最优约束成立，68个台阶分支约束同时保自由d=1/12。整体乘48恢复69单位客户和缺口4；精确实际利润(10,10,10,18)、W48、F4=69、F3(A)=41、两个h=15/2，台阶右侧max(60,20+max(41,45))=65。于是目标指定反例完整成立；7乘子仅进一步证明该固定锥缺口最优。",
+  "scope": "一份明确完整策略和合法最优比较足以否定全称递归台阶；2W−OPT仍为27。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/递归台阶发现程序的精确最优证书--计算.md",
+      "sha256": "9578744a00878840fee22694ee814602b3ee4142bd99a174b666722b9b42bb45"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/Boss7-resume-recursive-step/verify_saved_dual.py",
+      "sha256": "32ea0ac45c1ebcb3af418121b40258cb705ebdf68e5dc97537ada528abdcad16"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/Boss7-resume-recursive-step/verification.json",
+      "sha256": "c228b26a2ad45c9ae87508aa25aabae9cb751f803f9034389e9f460eee6e95ae"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/携带保底储备的剩余利润递归台阶--反例.md",
+      "sha256": "0c91c9c1d3e244d90dfa05a4175dee1bcbbc3616b04bc150b40183194dbf01cd"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对归一化、整数化、自由d符号和全部台阶分支计数。",
+  "whole_result": "指定69客户的完整纯SPE使携带保底台阶69≤65失败，且实际福利48。",
+  "endpoint_pins": {
+    "CC-CARRIED-FLOOR-RECURSIVE-STEP-NO-v1": "631e2f0dc4ac442da3e9b72d37f0b19357b0b1ea389b82f534db4d51fe09b9ea",
+    "cag-carried-floor-recursive-step-fixed-cone-primal-dual-certificate": "5612929683b689913d48c56d9ec072a3254858131d89e78b683617904c50833a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/递归台阶发现程序的精确最优证书--计算.md": "9578744a00878840fee22694ee814602b3ee4142bd99a174b666722b9b42bb45",
+    "archives/customer-attraction/tools/evidence/Boss7-resume-recursive-step/verify_saved_dual.py": "32ea0ac45c1ebcb3af418121b40258cb705ebdf68e5dc97537ada528abdcad16",
+    "archives/customer-attraction/tools/evidence/Boss7-resume-recursive-step/verification.json": "c228b26a2ad45c9ae87508aa25aabae9cb751f803f9034389e9f460eee6e95ae",
+    "archives/customer-attraction/state/反例/携带保底储备的剩余利润递归台阶--反例.md": "0c91c9c1d3e244d90dfa05a4175dee1bcbbc3616b04bc150b40183194dbf01cd"
+  },
+  "review_digest": "72211fc7dab281e65590c17bdf6663fb5c1fb81ea8dd33592dec93714648fadf"
+}

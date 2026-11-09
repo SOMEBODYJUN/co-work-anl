@@ -1,0 +1,58 @@
+{
+  "task_id": "config-3a-3a-9599458d568a4054",
+  "stage": "3A",
+  "status": "complete",
+  "object_ids": [
+    "M-42d1210a93e94042833e75a1a80545ea"
+  ],
+  "read_object_ids": [
+    "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing",
+    "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing",
+    "M-d05829d1479f4b8aad94f3953ab9ffc4",
+    "M-81da430ecf2846f59fb645a08763dab4",
+    "M-ada741cd5e634934805d83850dd7cd1f",
+    "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing",
+    "configuration-assignment/sparse-continuous-greedy-hard-budget-from-modular-pricing"
+  ],
+  "input_pins": {
+    "M-42d1210a93e94042833e75a1a80545ea": "b05256c0fbf0a3aaadabf7be137ab1258e8b67ab039a0f7b6588be0fcdecda27",
+    "configuration-assignment/sparse-exact-implicit-multilinear-gradient-pricing": "8edd0b73d5d1c7b89d92c0d34547a5adb488d8abca4299fc41f2cbda30d70c23",
+    "configuration-assignment/implicit-linear-configuration-lp-from-exact-pricing": "bc9984dc949b57b5dba024289ef14b2fed3734e4000f4d577ec0b67b2ea908da",
+    "M-d05829d1479f4b8aad94f3953ab9ffc4": "23bb2ddcdcb76320fa48b9c4a1ff525b126121d0cdc06b55232dd73098e7ca09",
+    "M-81da430ecf2846f59fb645a08763dab4": "d20161ada731b6e82e89c27bc3c7a7374674b950d21e0cad9a1be961e2d22ce3",
+    "M-ada741cd5e634934805d83850dd7cd1f": "a5b3e151e5f809e6ad470c957e0aeef24c8e7975c1a48a3a3487f4c0e72be19b",
+    "configuration-assignment/sparse-approximate-gradient-lp-direction-from-modular-pricing": "ac7d3a5d3bfb07d1ea36407d51142652241c93cff63505fe18c8aa180de86312",
+    "configuration-assignment/sparse-continuous-greedy-hard-budget-from-modular-pricing": "1356e96ba6444ef152923d773ab0654b6229977e824bf126d5053d15141fd789"
+  },
+  "coverage": {
+    "M-42d1210a93e94042833e75a1a80545ea": {
+      "state": "linked",
+      "object_pin": "b05256c0fbf0a3aaadabf7be137ab1258e8b67ab039a0f7b6588be0fcdecda27",
+      "comparison_scope": "实读五接口审查的四节、源配置笔记、下闭最高利润覆盖的整数等价、等成本自然 LP 的两 bin 反例、两种显式支持舍入、连续一 TU 局部定价、精确线性配置 LP 及实际列恢复、固定点真梯度定价定理、已发布的旧梯度局部边、α 短支持方向证明和离散连续贪心证明。逐项比较局部访问、pricing、点和支持、值和真梯度误差、原硬预算解码。",
+      "reason": "精确线性路线用原列利润恢复最优短支持，G 只用于确定性舍入。固定点精确定理支付正确减价导数、实际达到列及一次真梯度最优方向。近似桥在已知有理 α 且返回实际列时用真实割和缩放通过证书恢复相对 α 的短支持可行方向，在线性路线的舍入起点给 G≥α(1−1/e)OPT。多步定理另用固定多面体基本解控制位长、用物品行控制曲率，在同一 α oracle 下给 1−e^(−α)−ε 的 G 保证。两种路线均实现原硬预算舍入，非均匀成本保半值，共同正成本截断和共同零成本保全值。显式连续一单位需求局部族实际提供 α=1。自然等成本 LP 和截断 LP 的比较点分别核验。",
+      "edge_ids": [
+        "config-five-interfaces-approximate-pricing-pays-short-direction-and-linear-route",
+        "config-five-interfaces-linear-pricing-pays-support-and-hard-budget",
+        "config-five-interfaces-modular-pricing-pays-complete-multilinear-branch"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/config-3a-3a-9599458d568a4054/approximate-modular-pricing-pays-short-direction-and-linear-route.json",
+      "sha256": "45872f3cf0e7b07eb6aeeddb3ef7959acdbbf9414b31f639b3584a13fc1b51f9"
+    },
+    {
+      "path": "map/edges/config-3a-3a-9599458d568a4054/linear-pricing-pays-sparse-support-and-hard-budget.json",
+      "sha256": "a705f2366ae8e40e2efeb252960f5c23966f6e6a65b59c861f5fb96d4f824035"
+    },
+    {
+      "path": "map/edges/config-3a-3a-9599458d568a4054/modular-pricing-pays-complete-multilinear-branch.json",
+      "sha256": "bc1e636c4cf6d8ddcc21ad34162253acff4017db9b3b3969a12ebc1caf3a9311"
+    }
+  ],
+  "closed_overlaps": [],
+  "follow_up_tasks": [],
+  "reviewed_by": "Boss1-config-five-3A-fresh-worker",
+  "review_note": "逻辑边各贡献于较宽五接口对象。候选共同剩余权的原反例保持。固定价扣除后单列的乘法障碍与经真实割和缩放证书得到的完整可行方向并存。额外 matroid 激活、随机需求和历史 Algorithm1 比值或速度各有独立合同。"
+}

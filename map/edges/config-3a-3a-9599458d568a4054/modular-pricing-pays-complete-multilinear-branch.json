@@ -1,0 +1,75 @@
+{
+  "edge_id": "config-five-interfaces-modular-pricing-pays-complete-multilinear-branch",
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "source_ids": [
+    "M-ada741cd5e634934805d83850dd7cd1f",
+    "configuration-assignment/sparse-continuous-greedy-hard-budget-from-modular-pricing"
+  ],
+  "target_ids": [
+    "M-42d1210a93e94042833e75a1a80545ea"
+  ],
+  "conditions": "显式有限物品与 bin，各局部族非空下闭，利润、启用成本与单一硬预算均为非负有理数。删除超过预算的 bin。保留每 bin 和每物品的单位边际行。共同正成本的强界使用整数截断行，所有硬预算可行整数指派仍能嵌入。 局部确定性实际配置 oracle 对任意显式非负有理模权保证已知有理 α∈(0,1]，误差参数 0<ε<1 为有理。若每 bin 由显式 0/1 连续列资源矩阵、单位需求和非负有理容量定义并保留全部资源行及正确端点，可用 TU 给 α=1 的 oracle。",
+  "roles": {
+    "M-ada741cd5e634934805d83850dd7cd1f": "为连续一单位需求的具体输入子类实现局部访问和精确模权定价，给出 α=1 的实际配置 oracle。",
+    "configuration-assignment/sparse-continuous-greedy-hard-budget-from-modular-pricing": "在规定的局部 α 定价合同下构造所有有理迭代点，以短支持真梯度方向和统一相对误差界获得短支持 G 点，再保硬预算解码。",
+    "M-42d1210a93e94042833e75a1a80545ea": "在有明确局部访问合同的确定性硬预算分支接通五项接口，并具体核实连续一单位需求子类。"
+  },
+  "explanation": "固定稀疏点 z 时，共同背景给 (1−z_e)∂_eG，逐个删去正支持内候选以精确计算其真导数，覆盖 z_e=1。固定点方向定理使用真实列和缩放证书，恢复固定可行域的短支持基本解 y，其方向值至少该域内最优的 α 倍。令 δ=1/T、T=⌈2/ε⌉，从零累计方向。每方向位长由固定可行域矩阵统一控制，累积支持和分母位长随 T 多项式增长。单物品对异坐标的二阶差是两个残余利润的负最小值。用 y 的物品行得 −D²_yG≤L(y)≤4OPT，单步余项不超过 2δ²OPT。由方向的一阶收益至少 α(OPT−G(x_t))，T 步达 G(x_T)≥(1−e^(−α)−ε)OPT。覆盖值和受查配置导数均用有限阈值乘积精确计算。对末点从保 G 的交换开始，按预算分支处理至多一个正成本分数配置，再逐物品下闭去重。对具体连续一输入，令 I_ℓ={S:A_ℓ1_S≤u_ℓ}。整数消耗允许容量取 floor，连续列及单位上下界的 TU LP 返回实际整数最优集合，支付 α=1 的局部访问和定价。",
+  "contribution": {
+    "result": "确定性单硬预算模型在规定的实际配置 α 定价下构造支持至多 ⌈2/ε⌉(|L|+|P|+1) 的点，G≥(1−e^(−α)−ε)OPT，时间按紧输入位长和 1/ε 为确定性多项式。一般成本舍入保至少 G/2，共同正成本整数截断或共同零成本保 G。显式 0/1 连续列单位需求资源子类以 TU 实际提供 α=1，五项接口全部接通。",
+    "remaining": "目标对象还要求不同紧输入或约束模型逐项交付。非单位需求、重复占用、非连续列及未核实完整输入约定的 P03 不继承 TU pricing。额外激活 matroid 需要其联合可行域方向和实际舍入；随机需求需要另定随机输入、可行性与比较目标。"
+  },
+  "scope": "已知 α 的确定性局部定价合同内，比较基准是原硬预算整数 OPT。等正成本强界使用整数截断，收紧自然分数预算的 B/c 上界。α=1 时线性路线独立给相应整数常数且无需 ε。",
+  "evidence": [
+    {
+      "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+      "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+      "section": "指数地集必须交付的五个接口"
+    },
+    {
+      "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+      "sha256": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+      "section": "consecutive-ones局部oracle的准确条件"
+    },
+    {
+      "path": "archives/configuration-assignment/state/定理/稀疏点处的精确隐式配置梯度定价--定理.md",
+      "sha256": "0265f06dd6695cd2d42793391766d39aa0bc624238a59acb4d6a79f576172e62"
+    },
+    {
+      "path": "archives/configuration-assignment/state/定理/近似模权定价恢复短支持真梯度方向--定理.md",
+      "sha256": "705b0b05ea3454a2b9c1ad36a2c9c28d92dc8ba923f5c1d7fa0830f354f7cddc"
+    },
+    {
+      "path": "archives/configuration-assignment/state/定理/近似模权定价下的确定性离散连续贪心--定理.md",
+      "sha256": "e1f327bd8ea37e2d370bd6461e902c639e9fafc05890c80f75d337d2fcdc5575"
+    },
+    {
+      "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+      "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+      "section": "第二阶段：保持成本到至多一分数件"
+    },
+    {
+      "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+      "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+      "section": "等成本强界的修复合同"
+    }
+  ],
+  "reviewed_by": "Boss1-config-five-3A-fresh-worker",
+  "review_note": "独立核对了去候选背景及坐标为一、固定 LP 基本解的统一分母、曲率的逐物品计算、离散误差常数和末点保 G 的舍入分支。",
+  "endpoint_pins": {
+    "M-42d1210a93e94042833e75a1a80545ea": "b05256c0fbf0a3aaadabf7be137ab1258e8b67ab039a0f7b6588be0fcdecda27",
+    "M-ada741cd5e634934805d83850dd7cd1f": "a5b3e151e5f809e6ad470c957e0aeef24c8e7975c1a48a3a3487f4c0e72be19b",
+    "configuration-assignment/sparse-continuous-greedy-hard-budget-from-modular-pricing": "1356e96ba6444ef152923d773ab0654b6229977e824bf126d5053d15141fd789"
+  },
+  "evidence_pins": {
+    "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md": "ab8a327eb181eee60840055646f76c0f8a602ffc8dbf95011e3ebc616231bb6c",
+    "archives/configuration-assignment/state/定理/稀疏点处的精确隐式配置梯度定价--定理.md": "0265f06dd6695cd2d42793391766d39aa0bc624238a59acb4d6a79f576172e62",
+    "archives/configuration-assignment/state/定理/近似模权定价恢复短支持真梯度方向--定理.md": "705b0b05ea3454a2b9c1ad36a2c9c28d92dc8ba923f5c1d7fa0830f354f7cddc",
+    "archives/configuration-assignment/state/定理/近似模权定价下的确定性离散连续贪心--定理.md": "e1f327bd8ea37e2d370bd6461e902c639e9fafc05890c80f75d337d2fcdc5575",
+    "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168"
+  },
+  "review_digest": "1af0bf67ddbd7001f55e10f9706f16167d0de1b0dd0d06b142dfc1e97874142a"
+}

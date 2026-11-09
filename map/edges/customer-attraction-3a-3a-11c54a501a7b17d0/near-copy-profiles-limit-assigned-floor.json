@@ -1,0 +1,45 @@
+{
+  "edge_id": "cag-11c54a-near-copy-profiles-limit-assigned-floor",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-2af2b18d08424715a642b087ccb616a6"
+  ],
+  "target_ids": [
+    "assigned-action-capacity-complete-profit-spectrum-and-dynamic-floor-boundary"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "目录为N=(m+1)k名客户全部k子集，m≥2、k≥max(2,m−1)。所有主题极大互异，归属只能是自身。",
+  "roles": {
+    "M-2af2b18d08424715a642b087ccb616a6": "提供合法全k子集目录、每个席位都可用的近拷贝竞争元组及真实SPE的fresh性质。",
+    "assigned-action-capacity-complete-profit-spectrum-and-dynamic-floor-boundary": "比较一般E容量公式、第r大地板及同一份W对各真实位置的支付。"
+  },
+  "explanation": "任意真实或形式前缀剩r≥2，固定T及任意席位，取一个z∉T和r−1个互异x_ℓ∈T，竞争元组为各(T\\{x_ℓ})∪{z}，归属T次数为0。忽略非负过去负载只提高利润，r−1个客户分母r−1、其余分母r，给E_T≤(k+1)/r。反向在同一前缀选fresh T。第1席中每个竞争题均不同于T，故遗漏次数h_x满足Σ_{x∈T}h_x≥r−1；对0≤h_x≤r−1，1/(r−h_x)≥1/r+h_x/[r(r−1)]。T无旧负载，故E_T(1)≥(k+1)/r。过去覆盖至多(m−r)k，未覆盖至少(r+1)k，足以选r个不同fresh T的第1席，遂第r大恰为(k+1)/r。末位上界k由fresh T达到。因此任何路径地板和恰为(k+1)H_m−1，m5/k6为899/60<OPT/2=15。反向检查完整SPE时，每个历史仍可选fresh k子集并获个体上界k，按逆推全部SPE福利mk。",
+  "scope": "削弱的是从静态容量地板推出half的全路径充分合同。E给出的真实收益下界仍成立。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/归属容量完整利润谱与动态地板边界--定理.md",
+      "sha256": "dd89bc3f1d36e9852bdd8b43102adc146a0b153b99ca97bf5dbc132937e26b9a"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/极大主题完整席位地板的全路径诊断--程序.md",
+      "sha256": "4a9135c9134420207f0ee5433982a3a46f756d6692a620d18bdfe679e9cdd96a"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复核任意席位的近拷贝上界；独立补出任意前缀的fresh第1席整数遗漏下界，并核真实SPE的fresh逆归纳。",
+  "contribution": {
+    "result": "一般E公式在全k子集族给每条路径恰为(k+1)H_m−1的累计地板，故仅用该地板无法支付OPT/2。",
+    "remaining": "任意目录的地板有效性仍由残余席位归纳；补足half须利用未被近拷贝静态最坏化保留的后继激励。"
+  },
+  "endpoint_pins": {
+    "M-2af2b18d08424715a642b087ccb616a6": "f11eae6bc05bc7df45179d158bd5d3d68bd35bf9d01a941403f239852c08cb03",
+    "assigned-action-capacity-complete-profit-spectrum-and-dynamic-floor-boundary": "872e1605bd126be23102bb8985a3374d95b351d3d1eea01ec59b30dcae59cd5b"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/归属容量完整利润谱与动态地板边界--定理.md": "dd89bc3f1d36e9852bdd8b43102adc146a0b153b99ca97bf5dbc132937e26b9a",
+    "archives/customer-attraction/state/程序/极大主题完整席位地板的全路径诊断--程序.md": "4a9135c9134420207f0ee5433982a3a46f756d6692a620d18bdfe679e9cdd96a"
+  },
+  "review_digest": "96d05503a0628c83f4f9b71de3fd61b097892e025d2d1c8fa58854037ec79524"
+}
