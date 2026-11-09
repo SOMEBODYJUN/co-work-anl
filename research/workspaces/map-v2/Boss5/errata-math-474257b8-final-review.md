@@ -144,3 +144,40 @@ e_h>W_h-T/2\ge W_h-rT=d_h>0.
 任务波及数未扩大：仍为有效 done `round9-source-repair-repair-d0ac122f3ce74353` 和原 10 个未完成任务，七源 delta 的 `grouped_repair_task_ids` 是完整当前清单。有效 done 原核心中的本 source owner 也换 pin；旧 0195 仍只作历史，不能绕过 round9 successor 重替。当前逐任务 state、owner、input pins 以七源 delta 为准，保留根当前 handoff/刷新安排。
 
 七源联合 delta 已逐个重建验证全部 16 owner 的 old pin、old ref、old 源 SHA、唯一 section 标题和 proposed pin，全部通过；七份 baseline 旧 SHA 与当前原字节全部相同，16 个 owner 无重复身份或重复增版。本子任务只写独占前缀文件，未修改任何 canonical 正文、共享 registry/baseline、边、任务或 Git。
+
+## 9. 已发布七源之后的第八、第九两源最小续补
+
+七源已经由根原子发布；本节续补完全独立，**采用 `errata-math-474257b8-eighth-ninth-source-delta.json`，不要再次应用已发布七源。** 单第八源 `eighth-source-delta.json` 是此前拆分视图，不应在应用本两源 delta 后叠加。
+
+### 9.1 第八源：给定见证资源页的原处限定
+
+路径为 `archives/unrelated-machines/state/资源/失真组给定见证舍入与有效无效证书原入口--资源.md`。只更正“规范函数成功恢复负载界不要求...”的单个段落：从真实 OPT≤T 调度导出 LP 时，只对 d_h>0 的被占 home 使用 `e_h>W_h−T/2≥d_h>0` 并除以 e_h；d_h=0 的被占 home 走私有零成本旁路。给定证书成功恢复仍无需宏下界，这一点及其余所有文字保持。
+
+副本为 `errata-math-474257b8-eighth-source-corrected.md`，diff 为 `errata-math-474257b8-eighth-source.diff`。原 SHA `f420a37fdde29f621189ffb5fd886dbf481f0c444e0e3611c12764258284e36f`，新 SHA `3a1eaf8b5a1625d2111851c971576d9bf0d989addf69374f08012997cc147394`。反向替换检验确认其余字节完全相同。
+
+唯一 owner `unrelated-machines/distorted-group-supplied-witness-original-interfaces` 当前 v1→拟 v2，pin `32e28b7eb152922084e3d24ce32332e383141aa71f3f19ff64252faaf4558617`→`353b18b6fb9c5b595ebb27d5d8062a1b26603d70f02271bfc0138ce6835facf6`。只更新 `/body` 的全文 SHA 与 version，其他字段不变。
+
+该源直接命中 supplied-distortion-implementation 的 `/evidence/0` 和 true-source-distortion-check 的 `/evidence/1`。第一条还因 supplied-witness source endpoint 换 pin 而需要重绑；第二条本次只有 evidence SHA 变化。§7–8 已给的关系成立结论与 explanation 修订继续有效。有效 done 仍是 d0ac successor；旧 0195 不重替。
+
+### 9.2 定向句式检索与第九源必要段判断
+
+依根要求，仅在 `archives/unrelated-machines/state` 中定向检索 `W_h−T/2`、`W_h−rT`、出口归一/0/0/旁路和零需求旁路句式，没有搜索历史或冻结源。精确比例页和加权出口页在有关证明前已明确 d_h>0；当前计算页已是第七源的分支更正；失真组主审查有明确正/零分支；Hall 页命中 T/q 的另一结构合同，没有在本次扩展处理。
+
+同一扫描额外命中第九源 `archives/unrelated-machines/state/算法/门槛覆盖的同见证联合槽恢复--算法.md`。本次已全文实读该页。其结构允许 W_h=0 或 W_h<T/2，定义 d_h=(W_h−τT)_+、τ≥1/2；覆盖算法另明定 d=0 取空集。上一段“若d_h>0”限定的是 LP 接收变量的定义，独立的下一必要性论证却重新说“每个占用home”，随即无条件写 `r_h>W_h−T/2≥d_h` 并除以 r_h，因此并非同段已经继承了正需求量词。取空私有组即可看出零分支 r_h=d_h=0，不能满足这个未限定的严格链或用它归一化。该段末句已有零需求旁路，说明一般机制本来正确，所需修订只是把证明的分支显式对齐。
+
+第九副本仅在两个同型位置补条件：
+
+- 必要 LP 证明：将出口严格链和归一化明确限于其中 d_h>0 的被占 home，写到 `d_h>0`；零需求组明确走私有零成本旁路。
+- 同页未知 OPT 上侧全接受论证：原 `W_h−τt=d_h(t)` 也只在正需求时成立，因此把该链明确限于 d_h(t)>0 的被占 home，并写明 d_h(t)=0 的被占 home 走私有零成本旁路。FPTAS成本、预算、上侧全接受及二分结论的公式和范围均保持。
+
+副本为 `errata-math-474257b8-ninth-source-corrected.md`，diff 为 `errata-math-474257b8-ninth-source.diff`。原 SHA `6cfbd620e67e6cd96fcdd61f26cb31b26407d9e3b7c0260c97ddd5870ae3db51`，新 SHA `2ba9c9b10faf1aa7931c82ffdb278a301a148632f2de96a540c4d773de80d9f0`。两处替换的反向逐字节检验通过，其余正文不变。没有改冻结原证明、程序或历史字节，也没有运行程序。
+
+该页全部三个 owner 当前均 v1→拟 v2：`UM-THRESHOLD-COVER-JOINT-SLOT-v1`、`M-99a53b4eb072418a8a291d8582a89646`、`M-031b8ef7202a4527b45d47605c6ac93a`。后二者所选章节数学未改变，但同一正文全文 SHA 已变化，仍按精确引用规则增版一次。三者完整 old/new pin 均在两源 delta，statement、域、状态和其余非 binding 字段逐字段不变。
+
+### 9.3 当前续补范围和可发布数据
+
+两源 delta 的 base registry SHA 为 `b21c6462c8451ee0b6a28ac27fcf21b4f6d4544fb3f28436b567b89e4f4c15ee`，baseline 为已发布的 `research/registration/baseline-map-um-errata-474257b8.json`，SHA `e0fe50a4d6685a55603f6337e682041e25e0f8d39c053e7e9d5bae74b64021d2`。它只含 **2 源、4 owner各增版一次、4 个 body refs**；当前 446 条 canonical 边仍精确命中原两条，没有第九页 canonical 边命中。
+
+第九源三个 owner 的本地任务记录均归入 `unrelated-machines-3a-3a-b10995ada0ae22bc`。本次实际读取的当前记录是 **available、owner=null，并非 claimed**；没有借静态文件推测远端已认领者。根应按其当前权威队列核实是否已有后续认领并通知，继续同任务刷新。第八源对应 `round9-source-repair-repair-d0ac122f3ce74353`（done，Boss1）定向替代；旧 0195 已被接替，只留历史。两源 delta 的 `grouped_repair_task_ids` 恰为上述 d0ac 与 b109 两项。
+
+全部四 owner 已逐个 old-pin/old-ref/源 SHA/唯一标题/proposed-pin 重建验证通过，baseline 旧 SHA 均匹配当前原字节。续补没有叠加已发布七源，没有更改共享源、registry/baseline、边、任务或 Git；根可直接将两副本作为下一次原处更正事务的输入。

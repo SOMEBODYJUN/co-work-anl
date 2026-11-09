@@ -67,6 +67,14 @@ seventh = [
     ('joint-slot-zero-demand-branch', 'archives/unrelated-machines/state/计算/失真组实际源调度与联合槽独立程序复跑--计算.md',
      'research/workspaces/map-v2/Boss5/errata-math-474257b8-seventh-source-corrected.md'),
 ]
+eighth = [
+    ('supplied-witness-zero-demand-branch', 'archives/unrelated-machines/state/资源/失真组给定见证舍入与有效无效证书原入口--资源.md',
+     'research/workspaces/map-v2/Boss5/errata-math-474257b8-eighth-source-corrected.md'),
+]
+ninth = [
+    ('threshold-cover-zero-demand-branch', 'archives/unrelated-machines/state/算法/门槛覆盖的同见证联合槽恢复--算法.md',
+     'research/workspaces/map-v2/Boss5/errata-math-474257b8-ninth-source-corrected.md'),
+]
 
 def audit(pairs, label):
     source_changes = []
@@ -183,6 +191,12 @@ outputs = [(primary, 'registry-delta.json', '四canonical源的三类最小数�
 if '--seven-only' in sys.argv:
     outputs = [(primary + supplement + seventh, 'final-seven-source-delta.json',
                 '根确认同批的七canonical源最小数学勘误；沿相同identity，每个owner仅增version一次')]
+if '--eighth-only' in sys.argv:
+    outputs = [(eighth, 'eighth-source-delta.json',
+                '七源已发布后的第八源独立最小勘误；只含本源，沿原identity，唯一owner仅增version一次')]
+if '--eighth-ninth-only' in sys.argv:
+    outputs = [(eighth + ninth, 'eighth-ninth-source-delta.json',
+                '七源已发布后的第八第九两源最小续补；不叠加旧七源，沿原identity，每个owner仅增version一次')]
 for pairs, suffix, label in outputs:
     result = audit(pairs, label)
     path = save(suffix, result)

@@ -1,0 +1,8 @@
+--- archives/unrelated-machines/state/算法/门槛覆盖的同见证联合槽恢复--算法.md
++++ research/workspaces/map-v2/Boss5/errata-math-474257b8-ninth-source-corrected.md
+@@ -59 +59 @@
+-LP在OPT≤T时有见证。取真实T调度：宏端>T/2使每个占用home至多一宏，私有留量<T/2；其实际迁出总量r_h>W_h−T/2≥d_h。由覆盖最优性e_h≤(1+η)e_h*≤(1+η)r_h。把该组实际送到各sink的量r_hz归一化为y_hz=r_hz/r_h，得e_h y_hz≤(1+η)r_hz，所有占用组相加被真实sink容量T控制。零需求组走旁路，未占宏home的LP占用为零。这里共同资格与等端重量保证归一化使用同一真实单位。
++LP在OPT≤T时有见证。取真实T调度：宏端>T/2使每个占用home至多一宏，私有留量<T/2；对其中d_h>0的home，其实际迁出总量r_h>W_h−T/2≥d_h>0。由覆盖最优性e_h≤(1+η)e_h*≤(1+η)r_h。把该组实际送到各sink的量r_hz归一化为y_hz=r_hz/r_h，得e_h y_hz≤(1+η)r_hz，所有占用组相加被真实sink容量T控制。零需求组走私有零成本旁路，未占宏home的LP占用为零。这里共同资格与等端重量保证归一化使用同一真实单位。
+@@ -95 +95 @@
+-在t=k/Q>0上测试W_h≤t、w_j≤δt，宏只保p_bh≤t，使用前述FPTAS/LP/恢复；**不要额外测试p_bh>t/2**。取真实OPT调度，原promise p_bh>OPT/2仍使每home最多一宏。若t≥OPT，真实迁出量≥W_h−OPT/2≥W_h−τt=d_h(t)，所以FPTAS成本被(1+η)倍真实迁出量控制，LP sink费用≤(1+η)OPT≤(1+η)t。因此所有t≥OPT均接受。
++在t=k/Q>0上测试W_h≤t、w_j≤δt，宏只保p_bh≤t，使用前述FPTAS/LP/恢复；**不要额外测试p_bh>t/2**。取真实OPT调度，原promise p_bh>OPT/2仍使每home最多一宏。若t≥OPT，对d_h(t)>0的被占home，真实迁出量≥W_h−OPT/2≥W_h−τt=d_h(t)>0，所以FPTAS成本被(1+η)倍真实迁出量控制，LP sink费用≤(1+η)OPT≤(1+η)t。d_h(t)=0的被占home走私有零成本旁路。因此所有t≥OPT均接受。
