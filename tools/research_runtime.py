@@ -1051,7 +1051,7 @@ def _map_repair_reasons(row, current_pins):
 
 
 def draft_map_repairs(root, task_ids, output, registry, task_prefix, context_options=None):
-    """Reframe whole surviving cores of specific done tasks without discarding history."""
+    """Refresh changed inputs on unfinished work and replace affected done batches."""
     import registration
 
     root = Path(root).resolve()
@@ -1059,6 +1059,8 @@ def draft_map_repairs(root, task_ids, output, registry, task_prefix, context_opt
     data, objects = load(root, registry, verify=False)
     rows, snapshot = _map_queue_snapshot(root)
     done = _effective_map_done(rows)
+    pending = {row['definition']['task_id']: row for row in rows
+               if row['state'] not in {'done', 'withdrawn'}}
     occupied = {row['definition']['task_id'] for row in rows}
     active_targets = {old_id for row in rows if row['state'] not in {'done', 'withdrawn'}
                       for old_id in row['definition'].get('supersedes', [])}
@@ -1069,8 +1071,43 @@ def draft_map_repairs(root, task_ids, output, registry, task_prefix, context_opt
     tasks = []
     for old_id in dict.fromkeys(task_ids):
         identity(old_id)
+        if old_id in pending:
+            definition = pending[old_id]['definition']
+            ids = definition['object_ids'] + definition.get('read_object_ids', [])
+            if definition['registry'] != registry or set(ids) - objects.keys():
+                raise ValueError('Unfinished repair needs the same registry and surviving object IDs: ' + old_id)
+            if _map_inputs_current(definition, current_pins):
+                continue
+            context = copy.deepcopy(definition.get('context_plan') or {})
+            refs = [ref for oid in ids for ref in [objects[oid]['body'], *objects[oid]['evidence']]]
+            unique = list({json.dumps(ref, sort_keys=True): ref for ref in refs}.values())
+            if 'overlap_comparisons' in context:
+                context['overlap_comparisons'] = [pair for pair in context['overlap_comparisons']
+                                                  if pair['peer_id'] in objects]
+                for pair in context['overlap_comparisons']:
+                    basis = objects[pair['peer_id']]['body']
+                    if basis in objects[pair['core_id']]['evidence']:
+                        pair['basis'] = basis
+            payload = [objects[oid] for oid in ids]
+            task_budget = context.get('budget') or budget
+            reading = registration.reading_cost(root, unique, metadata=payload, model=task_budget['model'])
+            reading['task_overhead_tokens'] = 32 * len(ids)
+            reading['estimated_tokens'] += reading['task_overhead_tokens']
+            read_changed = any(definition['input_pins'].get(oid) != current_pins[oid]
+                               for oid in definition.get('read_object_ids', []))
+            recheck = [oid for oid in definition['object_ids']
+                       if read_changed or definition['input_pins'].get(oid) != current_pins[oid]]
+            context.pop('reading_passes', None)
+            context.update(budget=task_budget, reading_refs=unique, reading=reading,
+                           oversized=reading['estimated_tokens'] > task_budget['reading_tokens'],
+                           requires_export=bool(reading['unmeasured_refs']),
+                           recheck_core_object_ids=recheck,
+                           note='Resume the same question on current inputs. Reuse valid draft work and read changed sources in order.')
+            tasks.append({**definition, 'input_pins': {oid: current_pins[oid] for oid in ids},
+                          'context_plan': context})
+            continue
         if old_id not in done or done[old_id]['definition']['registry'] != registry:
-            raise ValueError('Repair requires an effective published done task for this registry: ' + old_id)
+            raise ValueError('Repair requires an unfinished or effective done task for this registry: ' + old_id)
         if old_id in active_targets:
             raise ValueError('A repair is already in the queue; resume it or withdraw a stale replacement: ' + old_id)
         old = done[old_id]
@@ -1140,8 +1177,8 @@ def draft_map_repairs(root, task_ids, output, registry, task_prefix, context_opt
     return {'status': 'map-repairs-draft-local-not-pushed', 'path': output,
             'tasks': len(tasks), 'core_objects': sum(len(t['object_ids']) for t in tasks),
             'queue_snapshot': snapshot,
-            'instruction': 'Review the complete surviving scope and prior assets, then map plan. '
-                           'Receipt supersession must list retained/replaced/retired for each old asset.'}
+            'instruction': 'Review the refreshed inputs and prior assets, then map plan. '
+                           'Unfinished work keeps its task ID and owner. Replacements of done work dispose each prior asset.'}
 
 
 def map_overlap_candidates(objects, deepest=None):
@@ -1680,7 +1717,7 @@ def main(argv=None):
     q.add_argument('--objects-file')
     q.add_argument('--scope', help='3A: start in this archive or subarchive, such as archives/facility-games/subarchives/common-two')
     q.add_argument('--comparison', help='3B/3C: concrete mathematical question on the selected endpoints')
-    q.add_argument('--repair-task', action='append', help='Replace this effective done task on current inputs')
+    q.add_argument('--repair-task', action='append', help='Refresh unfinished or replace completed work on current inputs')
     q.add_argument('--task-prefix', default='map')
     q.add_argument('--max-objects', type=int)
     reading_options(q)
