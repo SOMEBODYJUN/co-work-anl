@@ -1,0 +1,275 @@
+{
+  "schema": 2,
+  "objects": [
+    {
+      "title": "无菱形任务交叠图的三半近似硬度",
+      "model": "R||Cmax，任务为图顶点，共享一台资格机器即相邻；正整数有限时间/∞。",
+      "statement": "即使任务交叠图不含菱形子图且每机至多三个资格任务，区分OPT≤2与OPT≥3仍NP-hard，故P≠NP下无固定c<3/2的多项式近似。",
+      "quantifiers": "固定c<3/2，对该受限输入类；diamondless不混诱导diamond-free。",
+      "assumptions": [
+        "P≠NP",
+        "论文At-most-3-SAT(2L)构造"
+      ],
+      "scope": "任务交叠图，不是机器作顶点的异速图平衡。",
+      "body": {
+        "path": "archives/unrelated-machines/state/文献/Page-Solis-Oba-Maack-2018--有界任务与交叠图--文献.md",
+        "sha256": "beb13d191887b1d5b91ec2335861d33d5c7088a174cfe18c40444f222e09464e"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/bounded-job-assignments.pdf",
+          "sha256": "a2fad69bcf3b1e6caed4ce4f29d559e1b0f394695d859f2ca0fd8f05f8296775"
+        }
+      ],
+      "truth_status": "proved",
+      "kind": "theorem",
+      "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。",
+      "object_id": "M-1b8213b483df41bd9fa149b10255daa3",
+      "version": 2,
+      "sources": [
+        "archives/unrelated-machines/state/文献/Page-Solis-Oba-Maack-2018--有界任务与交叠图--文献.md",
+        "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+      ]
+    },
+    {
+      "object_id": "M-2b0d875268bb40fb8f42b6b7e9108825",
+      "version": 2,
+      "title": "Set Packing近完整裁剪的常数双标准困难性",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "显式集合系统，promise存在αn个原集合分割全集；选中集合可保留部分元素且须互不相交。",
+      "statement": "存在固定α>β>0、ε>0，使在上述promise下寻找βn个原集合、各保留至少1−ε比例元素的两两不交部分是NP-hard。",
+      "quantifiers": "存在上述绝对常数，不是任意指定的α,β,ε。",
+      "assumptions": [
+        "DGR文献原归约；度5/七状态/大小15等只在原构造范围"
+      ],
+      "scope": "外部packing双标准困难性；不把其源标签自动当作UM decoder或一致性器件。",
+      "objections": "以本文完整论证或精确证书为依据；内部审读和有限程序不代表外审、新颖性或全局主问题完成。本登记未重跑旧数学程序。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/Davies-Guruswami-Ren受限拒绝双标准--资料.md",
+        "sha256": "0c1ebd672e4c42c0d99231eda8e171781a76a67dc88041a025d85f28340e5179",
+        "section": "6. Bicriteria Set Packing 的硬度"
+      },
+      "evidence": [],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/davies_guruswami_ren_2025_constrained_rejections_v1.pdf",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/davies_guruswami_ren_2025_constrained_rejections_v1.pdf"
+      ]
+    },
+    {
+      "object_id": "M-43f27853ecf247fe85ce1c0e3436ba5a",
+      "version": 2,
+      "title": "有分割承诺的Set Packing双标准算法",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "显式集合系统，存在m个集合恰分割全集；允许每个选中集合只保留一定比例元素，但保留部分须两两不交。",
+      "statement": "对每个固定δ>0，存在固定ε>0及随机多项式算法，期望选出至少(1−δ)m个原集合，并从每个保留至少ε比例元素使各保留部分互不相交。",
+      "quantifiers": "∀固定δ>0∃ε>0；随机期望数量。",
+      "assumptions": [
+        "promise是m个原集合分割全集",
+        "ε可依赖δ"
+      ],
+      "scope": "是允许裁剪元素的双标准packing；不是原完整集合packing近似。",
+      "objections": "以本文完整论证或精确证书为依据；内部审读和有限程序不代表外审、新颖性或全局主问题完成。本登记未重跑旧数学程序。 第5节按冻结v1第4节校勘，采用非热门元素阈值、对已采样集合的条件概率和小集阶段后的残余最优值。对0<δ<1的保留比例可取9δ²/8000，集合数为期望保证。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/Davies-Guruswami-Ren受限拒绝双标准--资料.md",
+        "sha256": "0c1ebd672e4c42c0d99231eda8e171781a76a67dc88041a025d85f28340e5179",
+        "section": "5. Bicriteria Set Packing 的算法"
+      },
+      "evidence": [],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/davies_guruswami_ren_2025_constrained_rejections_v1.pdf",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/davies_guruswami_ren_2025_constrained_rejections_v1.pdf"
+      ]
+    },
+    {
+      "object_id": "M-50c2c45b506146c4877862acc3a258be",
+      "version": 2,
+      "title": "受限拒绝Makespan的0.6533与三半随机双标准",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "文献普通不相关机，承诺全部jobs存在makespan≤T调度，允许拒绝部分原jobs。",
+      "statement": "随机多项式算法以期望至少(6e−5)/(6e+1)>0.6533比例的原jobs，输出这些jobs的实际makespan≤3T/2调度。",
+      "quantifiers": "对全部承诺输入；比例是期望保留数，非每次运行硬下界。",
+      "assumptions": [
+        "DGR arXiv:2511.00184v1定理模型"
+      ],
+      "scope": "只在受限拒绝双标准；不推出全覆盖三半算法或近二困难性。",
+      "objections": "以本文完整论证或精确证书为依据；内部审读和有限程序不代表外审、新颖性或全局主问题完成。本登记未重跑旧数学程序。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/Davies-Guruswami-Ren受限拒绝双标准--资料.md",
+        "sha256": "0c1ebd672e4c42c0d99231eda8e171781a76a67dc88041a025d85f28340e5179",
+        "section": "3. Makespan 的 (0.6533,1.5) 算法"
+      },
+      "evidence": [],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/davies_guruswami_ren_2025_constrained_rejections_v1.pdf",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/davies_guruswami_ren_2025_constrained_rejections_v1.pdf"
+      ]
+    },
+    {
+      "title": "每机资格任务数二三四的精确与近似流算法",
+      "model": "R||Cmax，每机至多ℓ项有资格任务，有限处理时间为正整数。",
+      "statement": "论文Theorem2的满流阈值算法在ℓ=2,3,4时分别保证OPT、(3/2)OPT、(5/3)OPT；OPT≤T必能满流，输出对应比例T。三角形自由任务交叠图因此精确可解。",
+      "quantifiers": "每个ℓ∈{2,3,4}及所有该类输入，实际全任务分配。",
+      "assumptions": [
+        "资格度按原输入/剪枝真实端计算",
+        "整数流和阈值搜索"
+      ],
+      "scope": "同一分段资格度定理；不给任意ℓ的统一改善。",
+      "body": {
+        "path": "archives/unrelated-machines/state/文献/Page-Solis-Oba-Maack-2018--有界任务与交叠图--文献.md",
+        "sha256": "beb13d191887b1d5b91ec2335861d33d5c7088a174cfe18c40444f222e09464e"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/bounded-job-assignments.pdf",
+          "sha256": "a2fad69bcf3b1e6caed4ce4f29d559e1b0f394695d859f2ca0fd8f05f8296775"
+        }
+      ],
+      "truth_status": "proved",
+      "kind": "theorem",
+      "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。 冻结作者稿第6节的机器计划先允许总和≤T的全行；总和超T的四资格行按后三项总和及最大两项互斥分案。",
+      "object_id": "M-665cd08feee04456b5cb538e29d62305",
+      "version": 2,
+      "sources": [
+        "archives/unrelated-machines/state/文献/Page-Solis-Oba-Maack-2018--有界任务与交叠图--文献.md",
+        "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+      ]
+    },
+    {
+      "object_id": "M-68daead978f44d7ea4097706a04d01cf",
+      "version": 2,
+      "title": "受限拒绝Santa Claus的常数双标准困难性",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "不可分物品Santa Claus，代理估值为相加，原承诺存在所有代理价值≥T的分配，允许放弃部分代理。",
+      "statement": "存在绝对常数δ,ε>0，使即使在该承诺下，寻找至少(1−δ)n名代理各获价值≥(1−ε)T的互不重叠分配也是NP-hard。",
+      "quantifiers": "存在固定δ,ε；对全部源归约产生的承诺输入。",
+      "assumptions": [
+        "原文所述NP-hard模型及promise"
+      ],
+      "scope": "外部Santa Claus受限拒绝定理；不迁移为UM全任务makespan困难性。",
+      "objections": "以本文完整论证或精确证书为依据；内部审读和有限程序不代表外审、新颖性或全局主问题完成。本登记未重跑旧数学程序。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/Davies-Guruswami-Ren受限拒绝双标准--资料.md",
+        "sha256": "0c1ebd672e4c42c0d99231eda8e171781a76a67dc88041a025d85f28340e5179",
+        "section": "4. 受限拒绝 Santa Claus 的硬度"
+      },
+      "evidence": [],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/davies_guruswami_ren_2025_constrained_rejections_v1.pdf",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/davies_guruswami_ren_2025_constrained_rejections_v1.pdf"
+      ]
+    },
+    {
+      "title": "两长度受限指派的资格度近二改善",
+      "model": "restricted assignment p_ij∈{p_j,∞}，恰两种正任务长度α<β，每机资格数≤ℓ≥3。",
+      "statement": "论文Theorem3给多项式(2−1/(ℓ−1))近似，按α、β与猜测T位置分案并用机器计划/既有子算法。",
+      "quantifiers": "每个固定或给定ℓ≥3，保持两长度与restricted条件。",
+      "assumptions": [
+        "两正任务长度",
+        "每作业各有限端同时间",
+        "每机资格数≤ℓ"
+      ],
+      "scope": "限定子类算法，不是一般异速UM统一次二。",
+      "body": {
+        "path": "archives/unrelated-machines/state/文献/Page-Solis-Oba-Maack-2018--有界任务与交叠图--文献.md",
+        "sha256": "beb13d191887b1d5b91ec2335861d33d5c7088a174cfe18c40444f222e09464e"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/bounded-job-assignments.pdf",
+          "sha256": "a2fad69bcf3b1e6caed4ce4f29d559e1b0f394695d859f2ca0fd8f05f8296775"
+        }
+      ],
+      "truth_status": "proved",
+      "kind": "theorem",
+      "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。 冻结作者稿第7节低β使用普通指派LP及顶点舍入；高β分开无大任务资格行、全小加一大可行行及总容量截断行。",
+      "object_id": "M-8457d774c2b8456c98ff078781c18500",
+      "version": 2,
+      "sources": [
+        "archives/unrelated-machines/state/文献/Page-Solis-Oba-Maack-2018--有界任务与交叠图--文献.md",
+        "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+      ]
+    },
+    {
+      "object_id": "UM-UNICYCLIC-FIXED-CONFIG-LAW-EXACT-GLUE-v1",
+      "version": 1,
+      "title": "单环分数关联上的指定配置律相容性",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限显式不相关机及给定有理阈值，每台机器给定其实际合法配置上的显式有理概率律。",
+      "statement": "每件任务总覆盖概率一，分数关联图每个分量至多一圈。给定完整行配置律有原阈值整数调度的联合实现，当且仅当每个单环分量的切口同值分层流LP可行。判定与有理解分解均为输入总位长多项式，分解支撑不超过 max(1, 局部正支撑项总数加八倍圈边数)。",
+      "quantifiers": "任意有限显式实例、非负有理阈值及满足上述合同的给定有理行律。",
+      "assumptions": [
+        "给定配置支撑明确列出且每个配置在原阈值合法",
+        "总覆盖概率等于一",
+        "分数机—任务二部图的每分量至多一圈"
+      ],
+      "scope": "固定完整单机行律的相容性判定及构造。允许拒绝合法但互不相容的指定行律。",
+      "objections": "不提供隐式配置LP枚举，也不保任意附加指定的机器配对律。原阈值调度存在性可以与指定行律相容性分离。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/单环分数关联上的指定配置律相容性--定理.md",
+        "sha256": "14942bf1f5e89322978fbc0af1624ad9428fe8eb57c57655df5fa05d53b33e4b"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md",
+          "sha256": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5"
+        }
+      ],
+      "sources": [
+        "archives/unrelated-machines/state/定理/单环分数关联上的指定配置律相容性--定理.md",
+        "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Page-Solis-Oba-Maack-2018--有界任务与交叠图--文献.md",
+      "sha256": "beb13d191887b1d5b91ec2335861d33d5c7088a174cfe18c40444f222e09464e",
+      "disposition": "objects",
+      "object_ids": [
+        "M-1b8213b483df41bd9fa149b10255daa3",
+        "M-665cd08feee04456b5cb538e29d62305",
+        "M-8457d774c2b8456c98ff078781c18500"
+      ],
+      "reason": "已核本页独立精确数学；主对象与完整证明/必要证据见本批记录。外部论文事实不声称仓库已实现或重新证明。 核对15页作者稿，修订第6节机器计划及第7节两长度舍入合同。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/Davies-Guruswami-Ren受限拒绝双标准--资料.md",
+      "sha256": "0c1ebd672e4c42c0d99231eda8e171781a76a67dc88041a025d85f28340e5179",
+      "disposition": "objects",
+      "object_ids": [
+        "M-50c2c45b506146c4877862acc3a258be",
+        "M-68daead978f44d7ea4097706a04d01cf",
+        "M-43f27853ecf247fe85ce1c0e3436ba5a",
+        "M-2b0d875268bb40fb8f42b6b7e9108825"
+      ],
+      "reason": "成熟完整数学正文及所载证明；原有限程序和冻结证据依实际范围引用。 第5节 Set Packing 条件概率及残余计数勘误。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md",
+      "sha256": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1",
+        "UM-SINGLE-CYCLE-FIXED-CONFIG-LAW-GLUE-NO-v1",
+        "UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1",
+        "UM-UNICYCLIC-FIXED-CONFIG-LAW-EXACT-GLUE-v1"
+      ],
+      "reason": "有理真实配置律的完整森林分解及精确单环固定见证反例。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/单环分数关联上的指定配置律相容性--定理.md",
+      "sha256": "14942bf1f5e89322978fbc0af1624ad9428fe8eb57c57655df5fa05d53b33e4b",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-UNICYCLIC-FIXED-CONFIG-LAW-EXACT-GLUE-v1"
+      ],
+      "reason": "单环指定完整行律的精确充要判据及有理分解的完整证明。"
+    }
+  ],
+  "edge_files": []
+}
