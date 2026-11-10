@@ -1,0 +1,47 @@
+{
+  "edge_id": "um-cc2c7c0e-fixed-arity-filter-decides-full-overload-promise",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-FIXED-ARITY-WITNESS-FILTER-v1"
+  ],
+  "target_ids": [
+    "UM-FIXED-ARITY-OVERLOAD-HARDNESS-BARRIER-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "每个固定正整数 r 与固定 ρ≥2−c_r。YES 是普通 OPT≤T；NO 是每个使用原 p≤T 有限端的完整分配均有 B_r>ρT。输入 T≥0。",
+  "roles": {
+    "UM-FIXED-ARITY-WITNESS-FILTER-v1": "失败可靠排普通 YES，成功保全部原任务及 p≤T 并有 B_r≤(2−c_r)T。",
+    "UM-FIXED-ARITY-OVERLOAD-HARDNESS-BARRIER-v1": "严格全称 NO 承诺的多项式判别与确定性编译边界。"
+  },
+  "explanation": "运行固定-r 过滤器。FAIL 时 OPT>T，承诺输入只能是 NO；成功给一份实际 σ，且 B_r(σ)≤(2−c_r)T≤ρT，排除全称严格 NO，承诺输入只能是 YES。端点 ρ=2−c_r 仍由严格不等号分离。若无完整保留端分配，NO 可因空量化成立，过滤器不可能成功。一个确定性位多项式的 NP-hard 源编译若每个输入都进入该准确 promise，再合成判别即给 P=NP。",
+  "scope": "固定 r 下常数和大件配置枚举依赖 r。拒绝语义用普通 OPT，不用 O_r；没有排除 r 随不同固定近似目标增长的编译族。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/障碍/固定件数超载过滤与严格次二障碍--障碍.md",
+      "sha256": "463f2acd407696405abcd17b635340c939067f8b77b15f2d2aa13ede159a2263"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/固定件数过滤最终证明与不可用端字段纠错--审查.md",
+      "sha256": "161f2b3299bf30a237659ea6894a4e78fc0f3860dde7e536b0c4d0fc5c816abd"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/固定件数三流与给定大件证书的原审计--资源.md",
+      "sha256": "3fcc7db6c3f6107cb12e3b6f5f2eb7a64ad3741ea6775701421f434528926883"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复核 r=1/2/3、严格槽正交长和 r≥4 的整数类型行列式余量，以及有限代码未实现的一般有理 LP。",
+  "whole_result": "精确的固定-r YES/NO 承诺在含等号的所述范围可确定性总位多项式判别，故若存在进入该承诺的 NP-hard 源多项式编译则 P=NP。",
+  "endpoint_pins": {
+    "UM-FIXED-ARITY-OVERLOAD-HARDNESS-BARRIER-v1": "a5e64c3fc6fa7b59d7dd167c1231bbdde2f0994d5d9f8ed23375a08d25cd6287",
+    "UM-FIXED-ARITY-WITNESS-FILTER-v1": "8e3aee23cd841cb0a26faf4f05d96f08258d60b54db85f5d9da6a07583450c6c"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/障碍/固定件数超载过滤与严格次二障碍--障碍.md": "463f2acd407696405abcd17b635340c939067f8b77b15f2d2aa13ede159a2263",
+    "archives/unrelated-machines/state/审查/固定件数过滤最终证明与不可用端字段纠错--审查.md": "161f2b3299bf30a237659ea6894a4e78fc0f3860dde7e536b0c4d0fc5c816abd",
+    "archives/unrelated-machines/state/资源/固定件数三流与给定大件证书的原审计--资源.md": "3fcc7db6c3f6107cb12e3b6f5f2eb7a64ad3741ea6775701421f434528926883"
+  },
+  "review_digest": "acf18f0667b88add0c464f7747f401c1862e53606b554bf8f8b6145e219aa755"
+}

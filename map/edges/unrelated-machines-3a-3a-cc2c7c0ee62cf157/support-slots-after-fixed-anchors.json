@@ -1,0 +1,47 @@
+{
+  "edge_id": "um-cc2c7c0e-support-slots-after-fixed-anchors",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-ST-ROUND-v1"
+  ],
+  "target_ids": [
+    "M-4b838ba4c29d4f0592cfc241cf9ef1a3"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "给 T>0、互异真实固定 anchors a_i（无为0）和覆盖全部残余原任务的同一个合法有理 x，b_i≤T−a_i；q_i 为该行正支撑最大残余件，空行为0。",
+  "roles": {
+    "UM-ST-ROUND-v1": "按支持一次全局舍入，逐行残余峰≤b_i+q_i。",
+    "M-4b838ba4c29d4f0592cfc241cf9ef1a3": "固定 anchors 加回后提供逐行自适应界和统一余量的充分条件。"
+  },
+  "explanation": "先删固定 anchor 的任务身份，只舍入共同残余 x。若 q_i 可大于 T，可用公共合法调用阈值 T′=max(T,max_i q_i)，只取有序槽的逐行精细界 b_i+q_i。加回各机已固定 a_i 得 L_i≤a_i+b_i+q_i≤T+q_i。若 q_i≤T−a_i 则 L_i≤2T−a_i；锚机 a_i≥εT 时达到 (2−ε)T，无锚机若 q_i≤(1−ε)T 亦然。所有任务同时合法，空残余及 a_i=T 的零时间支持仍包含。",
+  "scope": "给定共同证书的恢复。真实 T 调度可作为 ε≤1/2 的证书来源，但算法不从局部配置边际免费生成一个共同锚指派。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+    },
+    {
+      "path": "archives/unrelated-machines/state/引理/锚点残余支持的自适应槽舍入界--引理.md",
+      "sha256": "d74a0920547875866b2b0b192f3ebb71987586e9ed4aa9a7e221e8b680a64ace"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md",
+      "sha256": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "精确分离可用共同行阈值和逐机支撑界，复核 q_i≤T−a_i 是加强分支而非基础式的前提。",
+  "whole_result": "固定 anchors 与同一残余见证可在输入和证书总位长多项式内恢复全部原任务，逐机得到 a_i+b_i+q_i，并在所述逐机假设下统一峰≤(2−ε)T。",
+  "endpoint_pins": {
+    "M-4b838ba4c29d4f0592cfc241cf9ef1a3": "5ceb657531692e0e09ba29e3907e6606e415685303c30a6d2725f28406286c2b",
+    "UM-ST-ROUND-v1": "8c4662c822ebd204e3b095934f8745464426df43fc2328a6bbc35063e4148ea1"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b",
+    "archives/unrelated-machines/state/引理/锚点残余支持的自适应槽舍入界--引理.md": "d74a0920547875866b2b0b192f3ebb71987586e9ed4aa9a7e221e8b680a64ace",
+    "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6"
+  },
+  "review_digest": "d39a54833fdda90e009162887f3416081238c156f679d905b0e74efc62e600e4"
+}

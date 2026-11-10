@@ -1,0 +1,58 @@
+{
+  "edge_id": "um-cc2c7c0e-ordered-slots-charge-distorted-sink",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding"
+  ],
+  "target_ids": [
+    "UM-DISTORTED-GROUP-JOINT-SLOT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "给合法同一 a,y 与按 c_hz=b_hz max(W_h−rT,0) 非增切槽后的满整数流。每槽容量1，每个选中 home 在该 sink 至多占一槽。",
+  "roles": {
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding": "有序槽的逐行上界证明适用于任意占槽匹配，费用最小化在这一步无须使用。",
+    "UM-DISTORTED-GROUP-JOINT-SLOT-v1": "把选中 home 的虚拟 token 成本记到真实 sink 的逐行预算。"
+  },
+  "explanation": "在 z 的槽行中，h 的区间长 y_hz，排序键 c_hz。整数流选中的第 s≥2 槽的 h 由前一满槽收费，前槽每个正交片段的 c 都至少为 c_hz；每前槽至多收费一次。首槽至多 max_{y_hz>0} c_hz≤B̄(1−r)T，总计 ≤Σ_h c_hz y_hz+B̄(1−r)T≤[κ+B̄(1−r)]T。即使某些 homes 未被选中，这个逐行收费仍成立。",
+  "scope": "只继承局部槽收费。整数满流必须保宏→home容量1→sink槽/零需求旁路的同一路径，后续实际任务时间还需上下包络与同一出口恢复。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+      "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+      "section": "2. 有序槽与最小费用匹配：完整证明"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/失真组联合槽舍入与固定汇点占位双源审查--审查.md",
+      "sha256": "7a3644e31616ec18cd434ab73163ea073cf7ba11dca8cdaac2c9ea406c961b29",
+      "section": "一、组内异端畸变的共同槽合同"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/双轨与联合槽输入证书三源精确复核--审查.md",
+      "sha256": "787368c42124056e48e69b9701464e5ebde62277dd645a681cd268f8d13924ce",
+      "section": "组联合槽位输入（`b083c8d4196a16c48a20`）"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/联合槽位与均匀束匹配有限审查--审查.md",
+      "sha256": "c64cbd43bbba1451876ee4b6614af03d1aa9304f1e191f3ac0fac8e35221e152"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核实排序键是 c_hz 而非 d_h、正交长、未满末槽和 d=0 旁路；给定见证复放与 LP 必要性各按自身方向使用。",
+  "contribution": {
+    "result": "任意合法共同整数流所选虚拟出口在每个 sink 的总上包络成本≤[κ+B̄(1−r)]T。",
+    "remaining": "从真实 T 调度导出 a,y、用整数网络同时选宏 home 与出口、用共同资格的原任务前缀付清真实时间并保 home 上界，均需目标定理自己的结构证明。"
+  },
+  "endpoint_pins": {
+    "UM-DISTORTED-GROUP-JOINT-SLOT-v1": "588541dd728a2da8d248d4e7a018a443ffed37034139fd451b3a62d4ac18a54c",
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding": "c12cff11f8d9d634441f752ebe101222ec0faba1d570a402caf2618f68edb356"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+    "archives/unrelated-machines/state/审查/失真组联合槽舍入与固定汇点占位双源审查--审查.md": "7a3644e31616ec18cd434ab73163ea073cf7ba11dca8cdaac2c9ea406c961b29",
+    "archives/unrelated-machines/state/审查/双轨与联合槽输入证书三源精确复核--审查.md": "787368c42124056e48e69b9701464e5ebde62277dd645a681cd268f8d13924ce",
+    "archives/unrelated-machines/state/审查/联合槽位与均匀束匹配有限审查--审查.md": "c64cbd43bbba1451876ee4b6614af03d1aa9304f1e191f3ac0fac8e35221e152"
+  },
+  "review_digest": "1249c8b1b4bc8a43691fb5313a964ae4b7cad7d7f782f70f0894ea5dbe899d3f"
+}

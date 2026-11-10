@@ -1,0 +1,53 @@
+{
+  "edge_id": "ca-b9bd-quadratic-counterexample-separates-static-values",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/quadratic-self-response-minimax-separation",
+    "customer-attraction/last-slot-value-and-catalog-counting"
+  ],
+  "target_ids": [
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "空背景、两位静态玩家槽，使用三题26客户核，查询者和阻挡者使用相同目录而选择目标不同。",
+  "roles": {
+    "customer-attraction/quadratic-self-response-minimax-separation": "明确26客户的一列阻挡矩阵K、真正minimax值19/2和二次势自响应135/14。",
+    "customer-attraction/last-slot-value-and-catalog-counting": "同一K的纯背景末位最坏值θ_2=min_A max_T K_{T,A}。",
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1": "真正隐藏混合安全值和纯背景、对称自响应三者的精确区分。"
+  },
+  "explanation": "矩阵三列最大值为14、10、12，故θ_2=10。匹配行/列证书给v_2=19/2，二次势的唯一最优点p给自响应135/14。于是19/2<135/14<10，既见真隐藏混合与纯背景的严格区别，又见对称二次势不是零和列最小化。",
+  "scope": "原单位输入的静态三值分离，不给任意真实顺序SPE利润或聚合下界。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md",
+      "sha256": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/二次势自响应与单阻挡安全值的分离--反例.md",
+      "sha256": "b06a6f946b8a8a86e306f23d08ae37d4cefa314f398d5fd041f7c10cc9129c18"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md",
+      "sha256": "034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐列核最大值及精确分数间隔，不能以二次势的唯一性替代匹配原始/对偶证书。",
+  "contribution": {
+    "result": "为静态安全值对象补一个同一输入中v_2<二次势自响应<θ_2的精确三值分离。",
+    "remaining": "静态锐常数的逐人数普遍下界由原目录计数定理承担；动态聚合仍未由此支付。"
+  },
+  "endpoint_pins": {
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1": "565f6bdb541c09f8229f27ca4d47409f946a555f141378e72fb91c5a55082ea4",
+    "customer-attraction/last-slot-value-and-catalog-counting": "5b963d828efa40aaa81e50a9a4937656777103dfa5ab0414369926b475f1585e",
+    "customer-attraction/quadratic-self-response-minimax-separation": "22a800fe2b49c6e2d9f551d5b1d66471676621702278e61410058ec07823c355"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d",
+    "archives/customer-attraction/state/反例/二次势自响应与单阻挡安全值的分离--反例.md": "b06a6f946b8a8a86e306f23d08ae37d4cefa314f398d5fd041f7c10cc9129c18",
+    "archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md": "034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f"
+  },
+  "review_digest": "740cffce77818592ba581b526683b46b8062dd104554b4b38378d1eaef44c414"
+}

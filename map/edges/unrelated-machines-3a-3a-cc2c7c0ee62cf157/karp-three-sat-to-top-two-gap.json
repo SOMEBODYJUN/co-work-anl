@@ -1,0 +1,65 @@
+{
+  "edge_id": "um-cc2c7c0e-karp-three-sat-to-top-two-gap",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SOURCE-KARP-THREE-SAT"
+  ],
+  "target_ids": [
+    "UM-TOP-TWO-THREE-HALVES-HARDNESS-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "显式每子句至多三文字的 SAT 源，先处理非法码和显然空/恒假等边界。任一固定 1≤ρ<3/2，取目标 T=1。",
+  "roles": {
+    "UM-SOURCE-KARP-THREE-SAT": "供应二进制全输入多项式归约意义的 NP 完全源。",
+    "UM-TOP-TWO-THREE-HALVES-HARDNESS-v1": "把该语言的 YES 与 NO 转到全部实际双件分配的严格阈值。"
+  },
+  "explanation": "把每次出现换成新副本，同一原变量的副本增加循环 ¬y_i∨y_{i+1}；一个副本文字至多在一个循环与一个原子句出现。每副本建正负两机及只可在二者之一执行的单位任务；每条原/循环子句建半单位任务，只能在其真实文字机执行。SAT 时单位占假文字端，半任务在真文字端，机器最多两半，普通峰≤1且 B₂=1。反之任何 B₂<3/2 的完整原分配中单位不可与半任务共机，单位未占的端口定义真文字，每个 clause half 的目的端使子句真，环迫副本一致。NO 的每份原分配遂有 unit+half，B₂≥3/2，且本矩阵 B₂≤3/2。资格度均≤3、输出显式且位多项式。",
+  "scope": "这是 O₂ 和完整分配的双件 gap，在 ρ=3/2 等号处失去严格 NO。程序中 256 个公式是有限核验，普通 makespan 的独立文献证明另有对象。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "2. 主定理的21个判定问题及历史术语"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "1. 先固定语言、量词和编码"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "4.1 SAT到至多3文字SAT"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/双件见证与两选择块秩有限审计边界--计算.md",
+      "sha256": "ca2912c731fb252b743282c617afd5584082fb07f21f25e2e42b69c077042902"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/双件见证树Markov与类型压缩三源审查--审查.md",
+      "sha256": "a824f9134594a0962856a957b6877973c04db6866e84096635e453a8df13984b",
+      "section": "1. 双件目标的独立边界：B₂ 不是普通 makespan"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/pair-witness-audits/source/top_two_pair_witness_boundary.md",
+      "sha256": "7edef8d895a5f5ea7eeb507251268fd303388d26da8429882ee5ac2cb857e119",
+      "section": "4. 小于三半的锐困难性：完整出现位置矩阵"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐出现、单副本循环、真假端和解码任意完整分配均已核对。",
+  "whole_result": "对每个固定 1≤ρ<3/2，原 SAT YES 给 B₂≤1 的完整实际分配，NO 每份原分配都有 B₂≥3/2>ρ；因此 O₂ 不存在固定小于3/2的多项式近似，除非 P=NP。",
+  "endpoint_pins": {
+    "UM-SOURCE-KARP-THREE-SAT": "b932ca164ad03169f16e371455e99a3b869f7eb55d9338724f485b3f38d86409",
+    "UM-TOP-TWO-THREE-HALVES-HARDNESS-v1": "bd820ce4929e1ac2b046a8d39d97aef7e29f65bc9f9ec81157a802b4139e1f11"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+    "archives/unrelated-machines/state/计算/双件见证与两选择块秩有限审计边界--计算.md": "ca2912c731fb252b743282c617afd5584082fb07f21f25e2e42b69c077042902",
+    "archives/unrelated-machines/state/审查/双件见证树Markov与类型压缩三源审查--审查.md": "a824f9134594a0962856a957b6877973c04db6866e84096635e453a8df13984b",
+    "archives/unrelated-machines/tools/evidence/pair-witness-audits/source/top_two_pair_witness_boundary.md": "7edef8d895a5f5ea7eeb507251268fd303388d26da8429882ee5ac2cb857e119"
+  },
+  "review_digest": "bd7a355ea98574a81537af8b2b1cc7c972dbc23402a8817d999cc5b116e23716"
+}

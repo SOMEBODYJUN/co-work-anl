@@ -1,0 +1,76 @@
+{
+  "edge_id": "um-cc2c7c0e-karp-language-chain-to-weighted-maxcut",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-7499b4fd61604920822feedbce117033",
+    "UM-SOURCE-KARP-THREE-SAT"
+  ],
+  "target_ids": [
+    "M-a26fef45fad14426a5e35b5a42992baf"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "原 Karp 语言按显式二进制编码。SAT 完全性按已登记 Karp 3SAT 对象承接，最终目标为正整数边权的阈值割语言。",
+  "roles": {
+    "M-7499b4fd61604920822feedbce117033": "供应全输入映射、统一位时间和 NP 证书验证的语义。",
+    "UM-SOURCE-KARP-THREE-SAT": "供应每子句至多三文字 SAT 的完整语言和 NP 完全性。",
+    "M-a26fef45fad14426a5e35b5a42992baf": "证明正整数边权 MAX CUT 的准确 NP 完全语言。"
+  },
+  "explanation": "归约链从至多三文字 SAT 经校正调色板着色（颜色数 m+1；子句点连未出现在子句的正负文字点），经点/边/颜色端口的 Exact Cover，再用基数 d=r+1 的无进位表示成正整数 Subset Sum。处理平凡边界后加入 b+1 与 A+1−b，构成 Partition；两新增数之和比一侧目标多1，必须分居，含 A+1−b 的侧须从原数取和 b。对 Partition 的 c_i 建显式完全图，w_ij=c_i c_j。任一割的边权和 s(C−s)=[C²−(2s−C)²]/4，故阈值取 ceil(C²/4)：C 偶达到 iff s=C/2，C 奇任何整数割权≤floor(C²/4)。割侧位向量可核证，数与图的位长度为多项式，非法码或平凡情形全函数延拓到固定结果。",
+  "scope": "精确判定语言，不带有界度、无权、乘性 gap 或计数保持。原逐项平方阈值由 (1,2) 反例纠正。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "2. 主定理的21个判定问题及历史术语"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "1. 先固定语言、量词和编码"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "4.1 SAT到至多3文字SAT"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "4.2 至多3文字SAT到着色：原印符号必须校正"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "4.3 着色到团覆盖、到精确覆盖"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "5.4 Exact Cover到原名KNAPSACK：基数不是指数位长"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "5.5 Subset Sum到单机罚金排序、到Partition"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "5.6 Partition到带权Max-Cut：原阈值不能照抄"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐步核补足源条件、二进制基数位长及 C 奇偶；未将 Cook 外部定理重算为本批独立结果。",
+  "whole_result": "该正整数权、显式阈值 MAX CUT 语言在标准全输入确定性 many-one 意义下 NP 完全；保留原题语言并使用校正后的阈值。",
+  "endpoint_pins": {
+    "M-7499b4fd61604920822feedbce117033": "c40152efb4426bf3cd9dc724fb6554b728958c3727efca0fc839e6110e366c41",
+    "M-a26fef45fad14426a5e35b5a42992baf": "9646fab39db0f3b70930d8913a8e94542f274e58aa89d862b08043ca0a2532ea",
+    "UM-SOURCE-KARP-THREE-SAT": "b932ca164ad03169f16e371455e99a3b869f7eb55d9338724f485b3f38d86409"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d"
+  },
+  "review_digest": "ddfdbe1271f5f957e6fef5506dd217401ccf0c64ef7bd544a046021918a885fe"
+}

@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-cc2c7c0e-floor-before-copying-binary-multiplicities",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding"
+  ],
+  "target_ids": [
+    "M-0dd50fa1610d4eb5a8f21264dc38cd75"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "显式 m 台机器、n 类任务，二进制非负整数 n_j，给定有理 x 的每列和 n_j；只在原 p_ij≤t_i 上取正质量，原行负载≤T_i。费用是同类同机线性单件费用。",
+  "roles": {
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding": "对显式剩余单位任务同时给成本不增与逐行正支撑最大件的恢复。",
+    "M-0dd50fa1610d4eb5a8f21264dc38cd75": "把异容量和大重数转成多项式大小的残余任务实例，输出按类型/机器整数件数。"
+  },
+  "explanation": "固定 f_ij=⌊x_ij⌋，保留其真实加工和费用。R_j=n_j−Σ_i f_ij=Σ_i(x_ij−f_ij) 是非负整数，总残余量严格小于 mn（n=0 则直接空）。把每列小数质量在 R_j 个真实待分配的单位副本中依次切割为列和1，机器端、时间、费用不变。应用有序槽的逐行式，残余行增加至多 t_i。与固定整数件数相加得 L_i≤T_i+t_i，费用≤Σ c_ij x_ij；输出每台每类件数。运算位长按输入和给定证书计，多副本仅显式展开剩余。",
+  "scope": "精确保持需求与费用，负载为加性放宽。指数多个原副本标签不在压缩输出合同中。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+      "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+      "section": "3. 非统一容量与二进制任务重数"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+      "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+      "section": "1. 模型、两个阈值与准确主结论"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+      "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+      "section": "2. 有序槽与最小费用匹配：完整证明"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对了整数剩余列分割、带符号费用和逐行界，不按 n_j 的数值循环。",
+  "whole_result": "每个合法异容量及二进制重数分数点都可总位多项式恢复为压缩整数分配，逐类满足 n_j、费用不增、每机 L_i≤T_i+t_i。",
+  "endpoint_pins": {
+    "M-0dd50fa1610d4eb5a8f21264dc38cd75": "2970949199a47241bdcac402531ce20314e1f7e45ff0ab3e94e3f5acbbe15695",
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding": "c12cff11f8d9d634441f752ebe101222ec0faba1d570a402caf2618f68edb356"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a"
+  },
+  "review_digest": "c4320d9545b09795630e80b75bf4a90581754260f89bdf3f0d80f9cbd2e4abdb"
+}

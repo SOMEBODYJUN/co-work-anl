@@ -1,0 +1,51 @@
+{
+  "edge_id": "um-cc2c7c0e-ordered-slots-to-fast-gap-recovery",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding"
+  ],
+  "target_ids": [
+    "M-0288a54cb75047b4bd8737616cbae4e4"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "给 T>0、固定 ε>0、非负原费用，以及在原 p≤T 端上覆盖每件任务恰一的共同分数点，行量≤(1+ε)T、费用≤(1+ε)C。",
+  "roles": {
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding": "用最小费用全任务槽匹配保该点费用，逐机只加一个正支撑最大件。",
+    "M-0288a54cb75047b4bd8737616cbae4e4": "快速放宽算法的舍入后端。"
+  },
+  "explanation": "调用有序槽定理时行负载上限取 (1+ε)T，而端剪枝仍为 T。任务区间与槽的正交长把原费用逐片相加，整数最小费用覆盖匹配费用不增；每台机器首槽增加至多 T，其余槽分别向前一整槽收费。于是负载不超过 (2+ε)T，费用不超过 (1+ε)C。非负费用只在前端删 c_ij>C 及近似 packing 时使用，给定分数点舍入本身允许有符号费用。",
+  "scope": "只连到 Cor. 2.4 的后端，不从常规 LP 或匹配推出论文的快速算术运行界。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+      "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+      "section": "4. 非负费用下的快速、略放宽版本"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+      "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+      "section": "1. 模型、两个阈值与准确主结论"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+      "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+      "section": "2. 有序槽与最小费用匹配：完整证明"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复核了两个不同阈值、负载收费与费用最小化的独立作用。",
+  "contribution": {
+    "result": "在给定所述放宽分数点时，确定性恢复全部原任务，费用≤(1+ε)C、峰≤(2+ε)T。",
+    "remaining": "从整数 (C,T) 存在性生成放宽分数点及原文随机期望 O(n² log n)、确定性 O(mn² log n) 算术/迭代界，需要原快速 packing、稀疏支撑和快速匹配分析。"
+  },
+  "endpoint_pins": {
+    "M-0288a54cb75047b4bd8737616cbae4e4": "e8d176326e57ed6ffd3c897454cc2df51a7a8cc9d6483cb9983c5fb29a30fb94",
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding": "c12cff11f8d9d634441f752ebe101222ec0faba1d570a402caf2618f68edb356"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a"
+  },
+  "review_digest": "0de9baa9f85319873fa83302e431024adf5186a85f3376484f959ba605ef46a6"
+}

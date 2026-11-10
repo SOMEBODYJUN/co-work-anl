@@ -1,0 +1,47 @@
+{
+  "edge_id": "um-cc2c7c0e-fixed-support-release-limits-ordered-slot-recovery",
+  "kind": "motivates",
+  "status": "accepted",
+  "source_ids": [
+    "UM-LST-SUPPORT-RELEASE-OPTIMAL-v1"
+  ],
+  "target_ids": [
+    "UM-ST-ROUND-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "固定正支撑点 x，r 个独立锚块，每块 m≥2 核心机；只计最终实际采用的零质量原端。",
+  "roles": {
+    "UM-LST-SUPPORT-RELEASE-OPTIMAL-v1": "给出同一 x 支撑不变、或有限预算释放时的精确原问题完整分配下界。",
+    "UM-ST-ROUND-v1": "给有序槽恢复使用固定 x 支撑时的明确边界。"
+  },
+  "explanation": "每块私有任务锁在各核心，唯一单位锚必须与一件时间 1−1/m 的私有任务同机，任一正支撑完整分配峰 2−1/m。每个块使用一条零质量备用端即可恢复峰1；少于 r 条必有一个未释放块。故任何只在该正支撑内选择、或固定预算释放而不重选 x 的槽恢复，在此族上都无法获得统一正余量。",
+  "scope": "只作给定证书的障碍语境。ST 逐机上界依然成立；换分数点、足预算释放或直接调度仍是另一个合同。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md",
+      "sha256": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6"
+    },
+    {
+      "path": "archives/unrelated-machines/state/障碍/固定正支撑释放的精确近二前沿--障碍.md",
+      "sha256": "e8dd561961bd330af5bca2f04059ef9eddda261ec0124c1ae79e44e7919157b2",
+      "section": "修正后的块族与完整前沿"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/共同容量接续工作区的身份核对与纠错导航--资源.md",
+      "sha256": "83188229ae249d56f3b45ec6f23a8437b8b22db7c0ab42e13d56f78cc10bbe4b"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核实锚或私有零端均可作一边见证、预算按终态且 r 块结论由独立性推出。",
+  "endpoint_pins": {
+    "UM-LST-SUPPORT-RELEASE-OPTIMAL-v1": "85aa951db8d4d548b5ed511a71bdd04e57f4e4319fb591c6c4c055492a58ad8a",
+    "UM-ST-ROUND-v1": "8c4662c822ebd204e3b095934f8745464426df43fc2328a6bbc35063e4148ea1"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+    "archives/unrelated-machines/state/障碍/固定正支撑释放的精确近二前沿--障碍.md": "e8dd561961bd330af5bca2f04059ef9eddda261ec0124c1ae79e44e7919157b2",
+    "archives/unrelated-machines/state/资源/共同容量接续工作区的身份核对与纠错导航--资源.md": "83188229ae249d56f3b45ec6f23a8437b8b22db7c0ab42e13d56f78cc10bbe4b"
+  },
+  "review_digest": "0ec698687c434c48ae95201fac888071b5cf84b3471cef1fb944edec0bc6e23c"
+}

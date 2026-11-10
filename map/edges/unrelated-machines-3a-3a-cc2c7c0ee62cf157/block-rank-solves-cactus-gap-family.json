@@ -1,0 +1,55 @@
+{
+  "edge_id": "um-cc2c7c0e-block-rank-solves-cactus-gap-family",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1"
+  ],
+  "target_ids": [
+    "UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "目标 cactus 矩阵的原任务均恰两端，每一顶点双连通块是桥或一条 g 环，任意 k≥2、g≥3，按展开矩阵输入。",
+  "roles": {
+    "UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1": "用父割点最小真实负担、逐块枚举反馈边、LCM 格点二分精确解实际 makespan。",
+    "UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1": "对已有大配置间隙的同一原实例验证精确算法适用域。"
+  },
+  "explanation": "桥块环秩0，g 环有 g 条边与 g 点，环秩1，故最大 b=1。每个块只比较两种反馈边端点，森林后序处理其它边；相接块的任务不交，负担只在同一割点相加。位长格点二分并回溯返回所有原任务的实际最优分配。高围长或许增加单块大小，却不增加 b，故同一配置 gap 族可精确位多项式求解。",
+  "scope": "仅证明该实例族的精确实际可解性；配置可行证书与精确 T_CONF 分开。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/仙人掌可行配置证书与逐块精确消息的审查--审查.md",
+      "sha256": "e61a55f8d893ed46a6a4e114c1b53f7133e293233d763b1097dad0398614cc48",
+      "section": "端点异权、带标签顶点块的精确实际算法"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/仙人掌可行配置证书与逐块精确消息的审查--审查.md",
+      "sha256": "e61a55f8d893ed46a6a4e114c1b53f7133e293233d763b1097dad0398614cc48"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/双件见证与两选择块秩有限审计边界--计算.md",
+      "sha256": "ca2912c731fb252b743282c617afd5584082fb07f21f25e2e42b69c077042902"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/仙人掌可行配置证书与逐块精确消息的审查--审查.md",
+      "sha256": "e61a55f8d893ed46a6a4e114c1b53f7133e293233d763b1097dad0398614cc48",
+      "section": "任何给定围长的真实间隙族"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核查图的环是顶点块、不是整连通分量单环；端点异时、任务标签及全部位长界保留。",
+  "contribution": {
+    "result": "任意该显式 cactus 实例普通 OPT 与全部原任务去向可用 b=1 的块算法精确位多项式求得。",
+    "remaining": "配置可行和间隙数值仍需 cactus 结构本身的配置分布及真实最优值证明。"
+  },
+  "endpoint_pins": {
+    "UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1": "d004c889138fd9eece70351440755f894504ce3986f6e24b29cc36085e86bf50",
+    "UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1": "10e9ee07755d5f8822f8dd874e385a962b6f40499112a33b14985bc549305f85"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/仙人掌可行配置证书与逐块精确消息的审查--审查.md": "e61a55f8d893ed46a6a4e114c1b53f7133e293233d763b1097dad0398614cc48",
+    "archives/unrelated-machines/state/计算/双件见证与两选择块秩有限审计边界--计算.md": "ca2912c731fb252b743282c617afd5584082fb07f21f25e2e42b69c077042902"
+  },
+  "review_digest": "4270079f406c04290e518defa2aff39d9ddb4907c6b8f4457210acf316f0290e"
+}

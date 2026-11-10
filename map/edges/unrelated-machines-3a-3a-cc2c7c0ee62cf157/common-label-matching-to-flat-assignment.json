@@ -1,0 +1,60 @@
+{
+  "edge_id": "um-cc2c7c0e-common-label-matching-to-flat-assignment",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2"
+  ],
+  "target_ids": [
+    "UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限显式简单二部图，右测试 v 的单位资源互不相交且数目 deg(v)，每条边的左标签对该资源集合逐行均匀满射。采用目标逐 indexed state 实际编译。",
+  "roles": {
+    "UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2": "返回共同标签 a_u 和资源互异真实请求 F，使每个左点保留 ceil(d_u/2)。",
+    "UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1": "将同一标签和全局匹配逐任务送回真实平层 UM 矩阵。"
+  },
+  "explanation": "在每个 u 的选中状态机器放单位 selector。只把选中状态与 F 对应的原 port 送其请求资源，其他所有状态和 ports 全留本 private 机。每个外机至多一枚单位 port。d_u>0 时未选 private 峰1，选中 private 峰 1+(d_u−|F∩δ(u)|)/d_u≤1+floor(d_u/2)/d_u≤3/2。d_u=0 的选中 private 只有 selector，峰1，其他为空；若根本无 selector 也无 port，空输出峰0（需要时保一台空机）。非空 selector 迫原 OPT≥1。编译的原任务标签及所有未选状态都保留，位复杂度按显式标签表和矩阵计。",
+  "scope": "这一关系给出所声明平层子类的完整上界与近似比；不把 361 组有限见证或 32768 项三角枚举作为全称证明。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/全局基数与逐行均匀相关读出边界有限审查--审查.md",
+      "sha256": "daf5efa8d82171f728cceb41f21c0735801b1590686c37964a05d32af3c0c4ef",
+      "section": "4. 逐行均匀相关读出：`UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2`"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/全局基数与逐行均匀相关读出边界有限审查--审查.md",
+      "sha256": "daf5efa8d82171f728cceb41f21c0735801b1590686c37964a05d32af3c0c4ef",
+      "section": "6. 三个冻结证据和全仓比较"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/双轨阈值实际前沿与逐行均匀相关防护双源审查--审查.md",
+      "sha256": "5d77a177309257a8b3033c9b1de86e93feea5aa5c99e291b9be88d0625f6d276",
+      "section": "3. 逐行均匀相关读出来源"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/逐行均匀相关与强配置矩两源读后补录--审查.md",
+      "sha256": "aa09b3be98ccbcbc3d45f5ea54b92310ff0d75124a262c93e40bd46a88b587ce",
+      "section": "1. 逐行均匀相关读出：整数势、共同匹配与 flat-state 编译"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/全局基数与逐行均匀相关读出边界有限审查--审查.md",
+      "sha256": "daf5efa8d82171f728cceb41f21c0735801b1590686c37964a05d32af3c0c4ef",
+      "section": "5. 平层 unrelated-machines 编译和 `UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1`"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "重算碰撞势换标差、均匀平均严格小于 d_u、配额匹配全局可行和孤立点无除法。",
+  "whole_result": "对每个满足行均匀合同的显式平层矩阵，输出全部原任务的共同实际分配，非空时绝对峰≤3/2并且≤(3/2)OPT，空时为0。",
+  "endpoint_pins": {
+    "UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2": "450f507b756bbd6e429bb2251b3c1f6d5877e91e2c1d580f29a03daf27f2a838",
+    "UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1": "96d2e8fd5a32e4b3c46e2d3227473ef99ad91cfe95dc8aef6dd9f6f806e8247b"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/全局基数与逐行均匀相关读出边界有限审查--审查.md": "daf5efa8d82171f728cceb41f21c0735801b1590686c37964a05d32af3c0c4ef",
+    "archives/unrelated-machines/state/审查/双轨阈值实际前沿与逐行均匀相关防护双源审查--审查.md": "5d77a177309257a8b3033c9b1de86e93feea5aa5c99e291b9be88d0625f6d276",
+    "archives/unrelated-machines/state/审查/逐行均匀相关与强配置矩两源读后补录--审查.md": "aa09b3be98ccbcbc3d45f5ea54b92310ff0d75124a262c93e40bd46a88b587ce"
+  },
+  "review_digest": "c20c80b89ffb7a81ea54638e8f2b06ba068bfa0ff36cd94d837abf0c3172dc8f"
+}

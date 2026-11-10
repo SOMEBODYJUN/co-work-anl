@@ -1,0 +1,62 @@
+{
+  "edge_id": "ca-b9bd-stable-pure-column-gives-log-price-equality",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-8406f658f18f46f5b3bd2664bbacc4c7"
+  ],
+  "target_ids": [
+    "customer-attraction/log-background-price-and-static-minimax-entry-boundary"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "固定空背景和正整数背景质量s。令剩余人数参数n=s+1，某合法B在该人数满足H。",
+  "roles": {
+    "M-8406f658f18f46f5b3bd2664bbacc4c7": "稳定B条件H及纯B保底，同一目录全部T皆满足其静态偏离比较。",
+    "customer-attraction/log-background-price-and-static-minimax-entry-boundary": "以背景质量s的连续对数目标给支持价格与静态minimax对象区别。"
+  },
+  "explanation": "取对数质量q=sδ_B。所有梯度g_q(T)≤g_q(B)=|B|/(s+1)，正支持B取等；由凹性一阶充分性q为对数最大者。反向，若sδ_B是最大者，其KKT逐题比较正是H。固定竞争列B^s使真静态最大查询为该价格；纯查询B面对任何s个竞争主题均至少得同价，故价格=v_{s+1}(0)=θ_{s+1}(0)。",
+  "scope": "只证明对数最优可集中于一题时的静态等价；s=m与s=m−1分别对应额外槽数m+1与m。目标的m=1零背景质量版本本来平凡。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md",
+      "sha256": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/稳定B的末异标签四项税与全历史重置刻画--引理.md",
+      "sha256": "50303a69e1294d8edb08bc550705e10019bb598e907a3a2ff3946ea24b16c4b1"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md",
+      "sha256": "034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/连续对数势价格与安全值极小极大的入口界限--资源.md",
+      "sha256": "d876fe01264d059111a319dbcb6f7fc46775ffeb2d741badd89bfa156dffaf93",
+      "section": "对数背景KKT给精确价格账"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/平稳来源审计的分层证据与静态路线撤回--资源.md",
+      "sha256": "2ebfd31e61d2f71977ec056c1fc559de471faa2b3620fb02c34ed7e1eb286d7a",
+      "section": "3. 对数优化中成立的静态界与已撤回的一步"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核质量s与查询者所占额外一槽，H在b=0恰为纯点的KKT行不等式。",
+  "contribution": {
+    "result": "在存在稳定B的条件下，明确给出一个对数最优背景及其与真正静态v和纯θ的精确价格相等。",
+    "remaining": "无稳定B的连续最优背景可能混合，原来源撤回的普遍M≤v推导仍不能靠Jensen得到。"
+  },
+  "endpoint_pins": {
+    "M-8406f658f18f46f5b3bd2664bbacc4c7": "210158f98654dbe0030ca14de96ec37890eba64e65e5bf79a92247ee7291a0e0",
+    "customer-attraction/log-background-price-and-static-minimax-entry-boundary": "42469af476721154ed84b20ffbe842efd17aac1c64fd44c0d3b58f5bd4ecd236"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d",
+    "archives/customer-attraction/state/引理/稳定B的末异标签四项税与全历史重置刻画--引理.md": "50303a69e1294d8edb08bc550705e10019bb598e907a3a2ff3946ea24b16c4b1",
+    "archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md": "034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f",
+    "archives/customer-attraction/state/资源/连续对数势价格与安全值极小极大的入口界限--资源.md": "d876fe01264d059111a319dbcb6f7fc46775ffeb2d741badd89bfa156dffaf93",
+    "archives/customer-attraction/state/资源/平稳来源审计的分层证据与静态路线撤回--资源.md": "2ebfd31e61d2f71977ec056c1fc559de471faa2b3620fb02c34ed7e1eb286d7a"
+  },
+  "review_digest": "b7fe811e5148cc5287eb2a0ac1174be170b5f16b0c3a2f97e1bd9f45d8a53d64"
+}

@@ -1,0 +1,67 @@
+{
+  "edge_id": "um-cc2c7c0e-anchors-complete-given-heavy-saddle",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-4b838ba4c29d4f0592cfc241cf9ef1a3"
+  ],
+  "target_ids": [
+    "UM-HEAVY-LIGHT-SADDLE-CERTIFICATE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "给定 T>0、1/2≤β<1、一个 admissible heavy matching H 以及 R(H)≤T 的共同 light LP 见证。",
+  "roles": {
+    "M-4b838ba4c29d4f0592cfc241cf9ef1a3": "固定真实 anchors 并对未覆盖任务的共同残余点用逐机 a_i+b_i+q_i 式。",
+    "UM-HEAVY-LIGHT-SADDLE-CERTIFICATE-v1": "saddle 对象中给定 H 后的真实整数补全分支。"
+  },
+  "explanation": "H 每机至多固定一个 heavy 原任务，全部未覆盖任务由同一份 light x 给 b_i≤T−a_i，所有 light 支撑端≤βT，故 q_i≤βT。应用锚点的基础不等式得到 L_i≤a_i+b_i+q_i≤T+βT，全部 heavy 原任务留原端。这里并未用更强 q_i≤T−a_i，因为重轻阈值本身不保证逐个 light 端小于剩余容量。",
+  "scope": "只支付实际整数补全；同一 λ 的价格最优性、全局 H 最小性与二循环是独立论证。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/重边匹配过滤与重轻对偶循环双源审查--审查.md",
+      "sha256": "a64e057608e03086a2e929dfad5b345e2698c618e5a1878bb76c449a94dc5fd6",
+      "section": "4. 重轻残余模型"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/重边匹配过滤与重轻对偶循环双源审查--审查.md",
+      "sha256": "a64e057608e03086a2e929dfad5b345e2698c618e5a1878bb76c449a94dc5fd6",
+      "section": "5. Saddle 充分条件和整数输出"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/重边匹配过滤与重轻对偶循环双源审查--审查.md",
+      "sha256": "a64e057608e03086a2e929dfad5b345e2698c618e5a1878bb76c449a94dc5fd6",
+      "section": "6. YES 实例上的纯 saddle 二循环"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/全阶正原子与重轻saddle的有限原程序复跑--计算.md",
+      "sha256": "aa06f3d81de04e3f01a03fd70592306ce8033fa5b9de070a276430964f172932",
+      "section": "3. 四个β的自洽纯saddle二循环"
+    },
+    {
+      "path": "archives/unrelated-machines/state/引理/锚点残余支持的自适应槽舍入界--引理.md",
+      "sha256": "d74a0920547875866b2b0b192f3ebb71987586e9ed4aa9a7e221e8b680a64ace"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md",
+      "sha256": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对 H 的原任务单次覆盖、可选 heavy 任务的 light 基线，及 β 二循环中 b₂<a<1 的严格不等式。",
+  "contribution": {
+    "result": "从给定 R(H)≤T 的 admissible H 和 light 见证，可保 H 输出实际 σ，Cmax≤(1+β)T。",
+    "remaining": "R(H)=max g 的 LP 对偶、H 在同一 λ* 的全局最小性及 β 例的无纯 saddle 均由目标的其余证明承担。"
+  },
+  "endpoint_pins": {
+    "M-4b838ba4c29d4f0592cfc241cf9ef1a3": "5ceb657531692e0e09ba29e3907e6606e415685303c30a6d2725f28406286c2b",
+    "UM-HEAVY-LIGHT-SADDLE-CERTIFICATE-v1": "363b895baef4be0bfef42c128df1d57746911088a7f7a336394a913b20a7fcfb"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/重边匹配过滤与重轻对偶循环双源审查--审查.md": "a64e057608e03086a2e929dfad5b345e2698c618e5a1878bb76c449a94dc5fd6",
+    "archives/unrelated-machines/state/计算/全阶正原子与重轻saddle的有限原程序复跑--计算.md": "aa06f3d81de04e3f01a03fd70592306ce8033fa5b9de070a276430964f172932",
+    "archives/unrelated-machines/state/引理/锚点残余支持的自适应槽舍入界--引理.md": "d74a0920547875866b2b0b192f3ebb71987586e9ed4aa9a7e221e8b680a64ace",
+    "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6"
+  },
+  "review_digest": "9091d1491b2d6c2606b29205b3c6a68bdd74e3f52d3712c3819dcc654aa79d45"
+}

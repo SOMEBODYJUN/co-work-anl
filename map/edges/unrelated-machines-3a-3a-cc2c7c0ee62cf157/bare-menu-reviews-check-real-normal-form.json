@@ -1,0 +1,47 @@
+{
+  "edge_id": "um-cc2c7c0e-bare-menu-reviews-check-real-normal-form",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/bare-cartesian-read-after-normal-form-palette-scope"
+  ],
+  "target_ids": [
+    "UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "归一化完整 flat 菜单，indexed states 保持，state 内资源互异、权非负且和1；原单位 selector 和每份 incidence 都是真实任务。",
+  "roles": {
+    "unrelated-machines/bare-cartesian-read-after-normal-form-palette-scope": "核原归一化菜单的选择树/资源路径双向变换及 C=2 边界，并记录裸菜单与 palette 操作的各自失真。",
+    "UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1": "得到每组至多三态且资源跨组度至多三、精确保 OPT 的正规形。"
+  },
+  "explanation": "正向从原 selector 选中的 state 走选择树，沿链的 singleton 实际外送，链外取 own singleton；反向 C<2 时被选 singleton 必外送，沿 root 占用的资源逐级排除 own 选择，到达真实原 state，回填原 selector，全部原 incidence 的原端选择保留。资源路径的 d−1 个 helper 在 d ports 上占 d−1 个互异单位位置，最多剩一个供旧外送；回转合并 ports、删辅助任务，负载不增。C=2 不用严格强制，直接全 private 基线。对裸菜单 P_t 精确保留已下降的 OPT=1+2^(−t)，故后置保值变换不能补回 NO gap。",
+  "scope": "审查方向为原证明读后对正规形的核验；旧 palette 的 YES 损失是另一重编树矩阵，与完整产品和裸菜单的 NO 改善分立。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/裸菜单读后与保值降度及调色板障碍--审查.md",
+      "sha256": "b3992320e4be05d46ccde5c4bcd20ba1b458f6fb7b17fe1203ed99e64c9393bd",
+      "section": "裸菜单读后与保值降度及调色板障碍"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/归一化菜单的三态资源度三正规形--定理.md",
+      "sha256": "31f1fb774f856f42255d1cd8b56c7a77d8396b2417b05e4d0b2f1d32e1195d1a"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/完整菜单的资源度三路径归约--定理.md",
+      "sha256": "afb7a6751e65f5e968a2b8798b8ba284983d64694fde1a463dae991b0018bb34"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对真实任务的两向恢复、C=2 时仅保峰且可换外送决定、先选择树后降度，以及跨组资源度不等同交互图度。",
+  "endpoint_pins": {
+    "UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1": "90151b0b805a9fb10bde855a89b069771b031383ce88493450dfb04c6269858c",
+    "unrelated-machines/bare-cartesian-read-after-normal-form-palette-scope": "d0d9349eb730f070e4774f2d76db2af9d4d16911f76e542df5181532d3006bd8"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/裸菜单读后与保值降度及调色板障碍--审查.md": "b3992320e4be05d46ccde5c4bcd20ba1b458f6fb7b17fe1203ed99e64c9393bd",
+    "archives/unrelated-machines/state/定理/归一化菜单的三态资源度三正规形--定理.md": "31f1fb774f856f42255d1cd8b56c7a77d8396b2417b05e4d0b2f1d32e1195d1a",
+    "archives/unrelated-machines/state/定理/完整菜单的资源度三路径归约--定理.md": "afb7a6751e65f5e968a2b8798b8ba284983d64694fde1a463dae991b0018bb34"
+  },
+  "review_digest": "bcc630d0d31b3154d8dc39b7c2dbc611be25f29910df4316a157e6a56d9365f3"
+}

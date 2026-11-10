@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-cc2c7c0e-np-witness-framework-to-rejecting-seeds",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-7499b4fd61604920822feedbce117033"
+  ],
+  "target_ids": [
+    "UM-PERFECT-COMPLETE-SEED-CERTIFICATE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "给每 seed 硬位多项式运行/长度界的确定性 R 及总多项式 D。SAT 所有 seed 复合接受；每 UNSAT 有一个 nonFAIL seed 经 D 拒绝。",
+  "roles": {
+    "M-7499b4fd61604920822feedbce117033": "给按统一多项式长度限制的存在证书定义、SAT 完全性及全输入归约传递。",
+    "UM-PERFECT-COMPLETE-SEED-CERTIFICATE-v1": "给全种子完备和存在拒绝下的确定性复杂度后果。"
+  },
+  "explanation": "以 seed 为证书，重跑 R。若返回 FAIL，证书验证拒绝（复合判别器原先把该事件当作接受）；仅 nonFAIL 且 D 拒绝时证书通过。SAT 的全 seed 完备排所有假证书，UNSAT 存在拒 seed 给真证书；故 UNSAT∈NP。对任一 L∈coNP，其补语言到 SAT 的归约同样将 L 归约到 UNSAT，因而 coNP⊆NP，再取补得 NP=coNP。给定拒绝概率统一逆多项式时，独立放大提供 coRP，再由 RP⊆NP、coRP⊆coNP 及取补得到另外两类相等。",
+  "scope": "核心的抽象 seed 证书证明只需复合器全 SAT 接受/每 UNSAT 存在拒绝。应用到 UM 仍需给定编译后同一阈值的全实际输出 decoder。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/完美完备随机源与拒绝种子证书--资源.md",
+      "sha256": "43c04c5ec88abcf44f2a68699a3065e6412458759d0caaa4799b072b76077a2a"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/完美完备全种子拒绝证书最终读后与复杂度边界审查--审查.md",
+      "sha256": "6bd72580648672c97981ad2a48633413b23ca5cb19842015449a2cced113e815"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "1. 先固定语言、量词和编码"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "分别核两层 FAIL 语义、存在证书、严格 β_kT 边界及概率所测的是编译后合法拒绝事件。",
+  "whole_result": "在核心的硬时长与种子语义合同下 NP=coNP；若附加统一逆多项式公平位拒绝概率，则 NP=RP=coRP=coNP。",
+  "endpoint_pins": {
+    "M-7499b4fd61604920822feedbce117033": "c40152efb4426bf3cd9dc724fb6554b728958c3727efca0fc839e6110e366c41",
+    "UM-PERFECT-COMPLETE-SEED-CERTIFICATE-v1": "47d8f306de6bf269e8fc17abf3d18d10e3256c14e268fecfd983cb552f4509a7"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/完美完备随机源与拒绝种子证书--资源.md": "43c04c5ec88abcf44f2a68699a3065e6412458759d0caaa4799b072b76077a2a",
+    "archives/unrelated-machines/state/审查/完美完备全种子拒绝证书最终读后与复杂度边界审查--审查.md": "6bd72580648672c97981ad2a48633413b23ca5cb19842015449a2cced113e815",
+    "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d"
+  },
+  "review_digest": "c6b8489027daac94e272baebdc3e38a8c1e0301d549e3bf8596c54c24644d523"
+}

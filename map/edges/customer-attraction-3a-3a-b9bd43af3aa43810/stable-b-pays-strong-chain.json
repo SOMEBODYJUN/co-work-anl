@@ -1,0 +1,55 @@
+{
+  "edge_id": "ca-b9bd-stable-b-pays-strong-chain",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-8406f658f18f46f5b3bd2664bbacc4c7"
+  ],
+  "target_ids": [
+    "CA-SECURITY-CHAIN-INTERFACE"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "在起始固定合法背景b、n名剩余玩家下存在满足H的合法B，所给策略为完整纯子SPE。根福利的解释额外要求b=0。",
+  "roles": {
+    "M-8406f658f18f46f5b3bd2664bbacc4c7": "稳定B的完整路径判定给每个真实节点u_i≥G_i。",
+    "CA-SECURITY-CHAIN-INTERFACE": "真实静态v_r(b)链的强余额及尾部嵌入。"
+  },
+  "explanation": "任一历史长度t、增量p、余r=n−t，稳定H仍成立：B外查询项只降，B内机会项分母b+p+r≤b+n。纯列B^{r−1}使所有查询≤G=Σ_B1/(b+p+r)；纯查询B面对任意r−1列都≥G。故v_r(b+p)=θ_r(b+p)=G，实际u_i≥G_i=V_i。再用V_{i+1}≥V_i，所有强余额D_i=(u_i−V_i)+(n−i)(V_{i+1}−V_i)≥0。这里弱余额也非负，因为它是(u_i−V_i)+(n−i−1/2)(V_{i+1}−V_i)，两项各非负。",
+  "scope": "有稳定B的完整子局。空根有W≥n v_n(0)，非零背景同一账适用活跃玩家总利润。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/真实路径安全值链的嵌入与债务恒等式--定理.md",
+      "sha256": "d5431e82c2acd43845c37528035f4d59f1e4e564cfdd5b1b8112dc8753147b12"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md",
+      "sha256": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/稳定B的末异标签四项税与全历史重置刻画--引理.md",
+      "sha256": "50303a69e1294d8edb08bc550705e10019bb598e907a3a2ff3946ea24b16c4b1"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md",
+      "sha256": "034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核H沿任意真实历史继承、纯查询下界与同一列上界匹配；逐位结论不要求实际每人选标签B。",
+  "contribution": {
+    "result": "在稳定B结构内支付每个强D_i及其总和，静态纯/混合安全值在每个前缀都恰等于稳定保底。",
+    "remaining": "一般目录可没有稳定B，且逐步强弱非负普遍为假。弱总式在此特例亦仍须加末位u_n/2。"
+  },
+  "endpoint_pins": {
+    "CA-SECURITY-CHAIN-INTERFACE": "972872feba5114bec2b490a32d72d67f63f5594f9bb6387ee5d0a7850f6d76c0",
+    "M-8406f658f18f46f5b3bd2664bbacc4c7": "210158f98654dbe0030ca14de96ec37890eba64e65e5bf79a92247ee7291a0e0"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/真实路径安全值链的嵌入与债务恒等式--定理.md": "d5431e82c2acd43845c37528035f4d59f1e4e564cfdd5b1b8112dc8753147b12",
+    "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d",
+    "archives/customer-attraction/state/引理/稳定B的末异标签四项税与全历史重置刻画--引理.md": "50303a69e1294d8edb08bc550705e10019bb598e907a3a2ff3946ea24b16c4b1",
+    "archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md": "034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f"
+  },
+  "review_digest": "617fa864a08d7bbd533f38c9c56fcdd8cf5e1cef08e6d9c40aeac5a116152abd"
+}

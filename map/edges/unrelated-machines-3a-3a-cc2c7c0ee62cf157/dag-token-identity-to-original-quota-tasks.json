@@ -1,0 +1,69 @@
+{
+  "edge_id": "um-cc2c7c0e-dag-token-identity-to-original-quota-tasks",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-DAG-DEGREE-TOKEN-IDENTITY-v1"
+  ],
+  "target_ids": [
+    "UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "DAG 含根 r→每变量 x_i→其标签 e_i→每个 A_i 原资源，需求 q,1,K,0。专用资格版每条 e_i→z 有一件独立 h_{i,z}，而通用 token 版该组 K 件都可送任一 A_i。",
+  "roles": {
+    "UM-DAG-DEGREE-TOKEN-IDENTITY-v1": "压缩任务桥从实际峰<2 双向转到原需求根树，并给 OPT=2−b*。",
+    "UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1": "把全层配额的 b* 变成固定资格原不可拆矩阵的准确 OPT。"
+  },
+  "explanation": "固定资格原分配可逐 h_{i,z} 对应同组一个编号 token，原加工和负载保留。反向从任意通用 token 分配的峰 C<2 出发，每个资源机至多一件外来单位任务；对 e_i 的每个实际外送 z 改由原 h_{i,z} 执行，其余原 h_{i,z} 各留 home，外送数量和各机器负载均不变。根任务与 r/x_i 上的其它实际任务原端不动。两矩阵在 C=2 各有全本地基线，因而最优值一致。任一根树评分 b>0 可取 t=ceil(Kb)，其根至少选 bq 个 x_i 且每个标签有至少 t 个互异共享资源，反向可由 ν_t 个不交 t 束接树。因此 b*=max_t min(ν_t/q,t/K)。低层 t≤s 取各私有点；高层 t>s 每变量至少耗 t−s 个共同核心点，分块取满即达 min(q,floor(c/(t−s)))。参数 q≥ceil(cK/s) 给 b*=s/K，真实 OPT=2−s/K。一般私有 padding 的低层覆盖 q、高层 ν_{s+u}(A)=ν_u(B)，由增加全部私有资源和从实际领取删至 u 个基资源双向得到；两两不交 K 邻域给真实 OPT=1。",
+  "scope": "保持原固定资格任务全部一次，通用与专用矩阵不能直接认作同一个输入；阈值 C=2 通过基线而非用严格目的地对齐。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/标签碰撞低重数地板与全层配额近二双源审查--审查.md",
+      "sha256": "a83aff0881acf91272d5b292f8cc9328ba9c7d0d0430d33ee308efd76befbb87",
+      "section": "二、共同核心—私有资源的全层精确障碍"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/标签碰撞低重数地板与全层配额近二双源审查--审查.md",
+      "sha256": "a83aff0881acf91272d5b292f8cc9328ba9c7d0d0430d33ee308efd76befbb87",
+      "section": "三、near-two 对照和跨层解码障碍"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/核心私有全层配额原审计的公式与负载接口--资源.md",
+      "sha256": "0e9e16df4f666df7dcc3aa9073e81318f67eeef2850f544715a1fe0ee7f524bf"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/核心私有配额与共同宏残余的不同阈值--资源.md",
+      "sha256": "4163476474f3349d0fd27ca7747d244ec201eda8c65c789592676a343b51f20e",
+      "section": "核心—私有配额：所有领取层一起计算"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/核心私有配额与共同宏残余的不同阈值--资源.md",
+      "sha256": "4163476474f3349d0fd27ca7747d244ec201eda8c65c789592676a343b51f20e",
+      "section": "对应的实际不可拆分调度"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有向需求与调度的压缩双向任务桥--定理.md",
+      "sha256": "47052b1eb3dfa67b095bbdb1ef86b80f108c6bb71b1e8d0210649b13092b130e"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有向需求与调度的压缩双向任务桥--定理.md",
+      "sha256": "47052b1eb3dfa67b095bbdb1ef86b80f108c6bb71b1e8d0210649b13092b130e",
+      "section": "有向需求与调度的压缩双向任务桥"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复核全层计数、按目的 z 恢复每个原 h、q≥ceil(cK/s) 量词与固定 YES/NO 数值族缺源归约。",
+  "whole_result": "对指定共同核心—私有族给全部层精确 ν_t、b*=s/K 和原不可拆任务 OPT=2−s/K；任意指定的私有 padding 保精确层位移，不交族为 OPT1。",
+  "endpoint_pins": {
+    "UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1": "edc0b8d269ea30bb0b78f0a4acdd71feaf9f5ead0b1773b4db8fa1cfd53b35df",
+    "UM-DAG-DEGREE-TOKEN-IDENTITY-v1": "86d52277f0b5f722b353c5cb383b2c5a059c33fce3e58b45c92b353f77c95a39"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/标签碰撞低重数地板与全层配额近二双源审查--审查.md": "a83aff0881acf91272d5b292f8cc9328ba9c7d0d0430d33ee308efd76befbb87",
+    "archives/unrelated-machines/state/资源/核心私有全层配额原审计的公式与负载接口--资源.md": "0e9e16df4f666df7dcc3aa9073e81318f67eeef2850f544715a1fe0ee7f524bf",
+    "archives/unrelated-machines/state/资源/核心私有配额与共同宏残余的不同阈值--资源.md": "4163476474f3349d0fd27ca7747d244ec201eda8c65c789592676a343b51f20e",
+    "archives/unrelated-machines/state/定理/有向需求与调度的压缩双向任务桥--定理.md": "47052b1eb3dfa67b095bbdb1ef86b80f108c6bb71b1e8d0210649b13092b130e"
+  },
+  "review_digest": "0c4222235825cb21443659ea4b39472d1584a0ed624be646745c652d3fe3b7b0"
+}

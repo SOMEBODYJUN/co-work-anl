@@ -1,0 +1,63 @@
+{
+  "edge_id": "um-cc2c7c0e-closed-tree-unit-obstruction-for-cactus-flowers",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1"
+  ],
+  "target_ids": [
+    "UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "沿用闭合双树在 T∈[1,1+1/k) 的零 small 余量。目标为完整原 cactus 双树、每末层节点附 k−1 个互不重叠（仅共享根）的 g 环。",
+  "roles": {
+    "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1": "给闭合双树严格 CONFIG(1) 仅在 k≤2 可行的精确门槛；通过实际配置边际映射应用于 cactus。",
+    "UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1": "收紧 cactus 配置阈值的可行上界，并区别两个族的底层约束。"
+  },
+  "explanation": "T<1 时根 unit 不可配置。1≤T<1+1/k 时，在双树的非底层，每份含 incoming 的配置不能留任何 1/k 子任务，故各 child incoming 边际≥父 incoming。每个底层 g 环的 g 件原任务有 g−1 台内部机，每机时间1且 T<2，覆盖守恒迫至少一单位期望任务落到共有底机。因此 k−1 个环在该底机需要合计至少 k−1 的小件边际。若底 incoming 的边际为 q，则无 incoming 配置至多 k 小件，有 incoming 时零件，得 k−1≤k(1−q)，即 q≤1/k。把每个底机上的 g 环删去并换成闭合双树的 k 个原叶端及其一台 terminal，给每叶外送边际 q；底行以权 q 取 incoming singleton、权 1−q 取全 k 小件，terminal 以每叶权 q 的 singleton 及剩余空配置兑现 kq≤1。上层配置沿原单位边逐项保留，其负载网格在这段 T 上已可用于 CONFIG(1)。因此任意该阈值的 cactus 证书都映成闭合族 CONFIG(1)，由闭合族精确门槛知 k≥3 不可能。已有 T=1+1/k 的显式配置上界给等号。k=2 时各轨全层 incoming 边际取 1/2；非底每行用等权 incoming singleton/全部两子任务，底机同样用 incoming singleton/两件同环端小件，每台环内部机用相邻两 singleton 各半，所有原任务覆盖1，给 CONFIG(1)。",
+  "scope": "给的是原 cactus 族的阈值收紧：k≥3 精确 1+1/k，k=2 精确1。闭合双树以一个末端单位容器计数，cactus 改用原环的逐任务覆盖守恒。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+      "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+      "section": "2.4 闭合两树族的精确配置阈值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+      "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+      "section": "小 JSON：严格整轨见证与八组闭合参数"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-calibrated-originals/comparisons/unit_readout_configuration_threshold_polytope.md",
+      "sha256": "b29c1500da407a86c3172c6738f22c5b10c073d0270aeac9acd668260983967a",
+      "section": "5. 经典闭合两树的精确配置阈值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/仙人掌可行配置证书与逐块精确消息的审查--审查.md",
+      "sha256": "e61a55f8d893ed46a6a4e114c1b53f7133e293233d763b1097dad0398614cc48"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/仙人掌可行配置证书与逐块精确消息的审查--审查.md",
+      "sha256": "e61a55f8d893ed46a6a4e114c1b53f7133e293233d763b1097dad0398614cc48",
+      "section": "任何给定围长的真实间隙族"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "独立复算了 g 环的边际流入和 k=2 的全原任务配置；旧主审仅承诺上界，辅助旧审首句的一概等号会漏掉 k=2。",
+  "contribution": {
+    "result": "由单位层传播与 cactus 末层环计数，在给定 cactus 族上补得 k≥3 时 T_CONF=1+1/k、k=2 时 T_CONF=1。",
+    "remaining": "普通 OPT、已有 T=1+1/k 上界和显式 cactus 结构由目标本身的构造证明承担。"
+  },
+  "endpoint_pins": {
+    "UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1": "d004c889138fd9eece70351440755f894504ce3986f6e24b29cc36085e86bf50",
+    "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1": "985b3826f15d0ccba2febdd3541df47ad3694cc2bcc2e7943d29c47e8c12b371"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+    "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+    "archives/unrelated-machines/tools/evidence/unit-calibrated-originals/comparisons/unit_readout_configuration_threshold_polytope.md": "b29c1500da407a86c3172c6738f22c5b10c073d0270aeac9acd668260983967a",
+    "archives/unrelated-machines/state/审查/仙人掌可行配置证书与逐块精确消息的审查--审查.md": "e61a55f8d893ed46a6a4e114c1b53f7133e293233d763b1097dad0398614cc48"
+  },
+  "review_digest": "bbbd5f9f61479de1c5ab7309e4554be99b4857c2a727e4f88d04e9e855d77bc0"
+}

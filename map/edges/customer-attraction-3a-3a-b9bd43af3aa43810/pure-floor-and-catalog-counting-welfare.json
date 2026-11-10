@@ -1,0 +1,45 @@
+{
+  "edge_id": "ca-b9bd-pure-floor-and-catalog-counting-welfare",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-LAST-TWO-FLOOR",
+    "customer-attraction/last-slot-value-and-catalog-counting"
+  ],
+  "target_ids": [
+    "CA-ALL-N-WELFARE-4N"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "空根n≥2、有限非空共同目录、任意完整纯SPE。K为最大主题大小，O=OPT_n。",
+  "roles": {
+    "CA-LAST-TWO-FLOOR": "最后两人各至少其局部θ(P)≥θ_n(0)。",
+    "customer-attraction/last-slot-value-and-catalog-counting": "在空根给θ_n≥O/(2n−1)和θ_n≥[2O−(n−1)K]/(2n)两条不同的目录计数下界。",
+    "CA-ALL-N-WELFARE-4N": "用同一根W和实际全角色收益导出实例参数式及全人数弱福利界。"
+  },
+  "explanation": "前n−2人各在其真实节点可强制最大主题，每个客户最终至多n份，故各有K/n。末两人各有θ_n。由W=Σu_i，得W≥(n−2)K/n+2max{O/(2n−1),[2O−(n−1)K]/(2n)}。用1/(n−1)、(n−2)/(n−1)凸合两支，K系数抵消，得4(n−1)O/[n(2n−1)]。",
+  "scope": "全人数根弱界，n=2时第二凸合权重为0，零福利用原不等式处理。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/末两人逐人保底与全人数弱福利界--定理.md",
+      "sha256": "204030503c37b18f8d26ce664b9cb99afc688fed77c8221a00cf0d8d7b21b34b"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md",
+      "sha256": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "两条θ下界是共同依赖，逐人K/n使用真实偏离；非零背景时活跃玩家利润与全覆盖不混同。",
+  "whole_result": "完整推出CA-ALL-N-WELFARE-4N的含K加强式及消K后全n弱覆盖系数。",
+  "endpoint_pins": {
+    "CA-ALL-N-WELFARE-4N": "152eba41a0711d2c0745c5d3d548e37b2a07553bb3d68cf53c00666c4c93708a",
+    "CA-LAST-TWO-FLOOR": "ac27b3c3c7d9e7ef7b09029a442931c402af6718aaa86500f0f8e3d303d226e1",
+    "customer-attraction/last-slot-value-and-catalog-counting": "5b963d828efa40aaa81e50a9a4937656777103dfa5ab0414369926b475f1585e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/末两人逐人保底与全人数弱福利界--定理.md": "204030503c37b18f8d26ce664b9cb99afc688fed77c8221a00cf0d8d7b21b34b",
+    "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d"
+  },
+  "review_digest": "956f88e3e94e27131956a3e62d70f4d7ea6a0ff07a990e5fbb9f865eab6fc6a5"
+}

@@ -1,0 +1,46 @@
+{
+  "edge_id": "ca-b9bd-stable-b-to-static-potential",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-8406f658f18f46f5b3bd2664bbacc4c7"
+  ],
+  "target_ids": [
+    "M-0656164d77e84db7b8ccc8deb3997f78"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定整数b≥0、n≥1，在同一背景比较所有n元组。H等价于单人在B^n静态改选T不增益。",
+  "roles": {
+    "M-8406f658f18f46f5b3bd2664bbacc4c7": "对固定整数背景，恒B全历史SPE的稳定条件H与末节点BR等价。",
+    "M-0656164d77e84db7b8ccc8deb3997f78": "同一固定背景的单色静态PNE全局最大化离散调和势。"
+  },
+  "explanation": "把H对比较元组每个T相加，得到Σ_{x∉B}d_x/(b_x+1)≤Σ_{x∈B}(n−d_x)/(b_x+n)。势在B外的新增最多为左侧，在B内负载减少所损的势至少为右侧，故B^n全局最大化Φ_b。",
+  "scope": "目标的整数固定背景范围。背景改变后需重新核H，不能冻结原真实续局作动态IC。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/单色真实后缀的虚拟相邻税--候选.md",
+      "sha256": "4b1861b985e8b809708a44c70511206d97cff4b55a1045a4c62ac009b45f1f87",
+      "section": "独立有效的同背景全局势引理"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/稳定B的末异标签四项税与全历史重置刻画--引理.md",
+      "sha256": "50303a69e1294d8edb08bc550705e10019bb598e907a3a2ff3946ea24b16c4b1"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "H与静态PNE使用同一固定b及人数；目标的实数背景扩展仍由自己的同一逐客户证明承担。",
+  "contribution": {
+    "result": "整数背景下，恒B全历史SPE条件足以使B^n成为同背景静态调和势的全局最大点。",
+    "remaining": "目标另外量化非整数实b及从给定真单色尾识别静态PNE；源重置对象的原玩家域仅为整数背景。"
+  },
+  "endpoint_pins": {
+    "M-0656164d77e84db7b8ccc8deb3997f78": "fd399918edcf57fc9be3d035ea76d7062148d69a00fafd5672cfe0d47a67c816",
+    "M-8406f658f18f46f5b3bd2664bbacc4c7": "210158f98654dbe0030ca14de96ec37890eba64e65e5bf79a92247ee7291a0e0"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/单色真实后缀的虚拟相邻税--候选.md": "4b1861b985e8b809708a44c70511206d97cff4b55a1045a4c62ac009b45f1f87",
+    "archives/customer-attraction/state/引理/稳定B的末异标签四项税与全历史重置刻画--引理.md": "50303a69e1294d8edb08bc550705e10019bb598e907a3a2ff3946ea24b16c4b1"
+  },
+  "review_digest": "ce891600e6e82846fb19c4346707c1992c528337dc91b17b398b9051c6744d19"
+}

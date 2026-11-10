@@ -1,0 +1,51 @@
+{
+  "edge_id": "ca-b9bd-feedback-four-to-five-on-indexed-topic",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/actual-last-reply-cycle-and-two-step-feedback"
+  ],
+  "target_ids": [
+    "M-39652b4d686c44969b38d442a3614bdc"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一真实末两人前缀、同一f，A=T_i已经属于五个比较标签，B=f(A)、C=f(B)。",
+  "roles": {
+    "customer-attraction/actual-last-reply-cycle-and-two-step-feedback": "比较主题A=T_i时的四倍反馈支付及同一真实B,C。",
+    "M-39652b4d686c44969b38d442a3614bdc": "含五个比较项且允许A任意的FF5，先接其A已有索引的分支。"
+  },
+  "explanation": "在该范围O∪A=O。记FF4和FF5的左减右分别为s4,s5，则s5−s4=d+R(C)−R(A)=I_B+L+U(B,A)。I_B来自第四位改B的真实IC，L来自(h,B)末位真实BR，两者和U(B,A)都非负。故FF4的非负证书推出这一支FF5。FF5额外将A也放进全部五个比较，K5,H5正是多出该项的真实松弛。",
+  "scope": "只比较FF5中A已有某个比较索引的情形，两个反馈公式使用同一B、C。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/真实末回复循环与二步反馈--引理.md",
+      "sha256": "81e6fba00bd1dcc56137fb394d9bbffbeedb422e9120a49a6fdfeb7b7bcfa018",
+      "section": "4. A是任意合法主题时的FF5"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/真实末回复循环与二步反馈--引理.md",
+      "sha256": "81e6fba00bd1dcc56137fb394d9bbffbeedb422e9120a49a6fdfeb7b7bcfa018",
+      "section": "2. 比较主题位于回复循环时的条件FB"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/真实末回复循环与二步反馈--引理.md",
+      "sha256": "81e6fba00bd1dcc56137fb394d9bbffbeedb422e9120a49a6fdfeb7b7bcfa018",
+      "section": "3. 保留真实回复之回复的无条件FF"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核s5−s4的符号及L=P_BC−P_AB，不从五倍式反推四倍式。",
+  "contribution": {
+    "result": "在A=T_i的重叠域，FF4与共同真实IC给FF5，且两式的差额有显式非负证书。",
+    "remaining": "A不在五比较标签时须独立用五个末位BR及O∖A覆盖，FF4没有该量词。"
+  },
+  "endpoint_pins": {
+    "M-39652b4d686c44969b38d442a3614bdc": "4e70b1cb3096dd474a7dac51ff701cd9c6a4dd56ee7d845eac9d429a86f4c86b",
+    "customer-attraction/actual-last-reply-cycle-and-two-step-feedback": "9fa2cdf551afc766d8209bced4b277ad65df37319d90df979bbc534d31fc33dc"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/真实末回复循环与二步反馈--引理.md": "81e6fba00bd1dcc56137fb394d9bbffbeedb422e9120a49a6fdfeb7b7bcfa018"
+  },
+  "review_digest": "d552f5fc64bbfb3bc39ff8e5fccd784f14b844061eef4233389a960381ab8fdf"
+}

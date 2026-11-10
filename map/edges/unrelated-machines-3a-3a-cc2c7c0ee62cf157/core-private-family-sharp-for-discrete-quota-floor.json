@@ -1,0 +1,69 @@
+{
+  "edge_id": "um-cc2c7c0e-core-private-family-sharp-for-discrete-quota-floor",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1"
+  ],
+  "target_ids": [
+    "UM-SQRT-MULTIPLICITY-FLOOR-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取共同核心 c=K−1、每变量一私有资源 s=1、q=K(K−1) 个变量，K≥2。邻域大小 K，固定单标签、资源最大度 Δ=q。",
+  "roles": {
+    "UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1": "逐层精确值和真实 b*=s/K 给出可代入单层计数地板的极端系统。",
+    "UM-SQRT-MULTIPLICITY-FLOOR-v1": "提供离散 B(K,Δ) 可达的一列参数，独立于正文分组族。"
+  },
+  "explanation": "这里 ν_1=q，t≥2 时 ν_t=⌊(K−1)/(t−1)⌋，故 b*=1/K。平方根对象的离散右侧 B 在 t=1 取 min{1/K,K/(K+Δ)}=1/K。t≥2 时 (K−t+1)/(K−t+1+tΔ) 严格小于其 t=1 值，故 B=1/K=b*。而 √Δ·b*=√(1−1/K)→1，说明同一真实邻域族达到平方根量级。",
+  "scope": "精确达到离散下界的无限参数子族；无须把 K≥√Δ+1 的简化分支硬套到该族。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/单层平方根配额与单外层选择器双源审查--审查.md",
+      "sha256": "7f319b14bea348bd91050571205bbdec8666540d76f1bab58a79d51d9fe7ead3",
+      "section": "2. 单层配额超图的平方根重数地板"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/平方根配额与单外层审查增量三源--审查.md",
+      "sha256": "439e6f1ce8a8f5b1195c0ded8d8f50a699e73755a3f163ee40f85d5ba699f17a",
+      "section": "3. 单层平方根配额 review：离散地板与已归档重复"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/标签碰撞低重数地板与全层配额近二双源审查--审查.md",
+      "sha256": "a83aff0881acf91272d5b292f8cc9328ba9c7d0d0430d33ee308efd76befbb87",
+      "section": "二、共同核心—私有资源的全层精确障碍"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/标签碰撞低重数地板与全层配额近二双源审查--审查.md",
+      "sha256": "a83aff0881acf91272d5b292f8cc9328ba9c7d0d0430d33ee308efd76befbb87",
+      "section": "三、near-two 对照和跨层解码障碍"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/核心私有全层配额原审计的公式与负载接口--资源.md",
+      "sha256": "0e9e16df4f666df7dcc3aa9073e81318f67eeef2850f544715a1fe0ee7f524bf"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/核心私有配额与共同宏残余的不同阈值--资源.md",
+      "sha256": "4163476474f3349d0fd27ca7747d244ec201eda8c65c789592676a343b51f20e",
+      "section": "核心—私有配额：所有领取层一起计算"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核实取 Δ=q、t=1 的等号与 t>1 的严格递减；正文分组 ν_t 要加每组 Δ 上限，b 公式和这一独立锐例均不受影响。",
+  "contribution": {
+    "result": "对所有 K≥2，在 Δ=K(K−1) 处该显式邻域族逐例达到一般离散配额地板，并达到 Θ(1/√Δ) 量级。",
+    "remaining": "任意邻域系统的全称地板仍依赖最大 t 束的增广反证与计数；对其他 K,Δ 不声称全参数锐。"
+  },
+  "endpoint_pins": {
+    "UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1": "edc0b8d269ea30bb0b78f0a4acdd71feaf9f5ead0b1773b4db8fa1cfd53b35df",
+    "UM-SQRT-MULTIPLICITY-FLOOR-v1": "31adfc58836089da997d1f4a628c258aa7aa2e90621e1424855baff9cb285deb"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/单层平方根配额与单外层选择器双源审查--审查.md": "7f319b14bea348bd91050571205bbdec8666540d76f1bab58a79d51d9fe7ead3",
+    "archives/unrelated-machines/state/审查/平方根配额与单外层审查增量三源--审查.md": "439e6f1ce8a8f5b1195c0ded8d8f50a699e73755a3f163ee40f85d5ba699f17a",
+    "archives/unrelated-machines/state/审查/标签碰撞低重数地板与全层配额近二双源审查--审查.md": "a83aff0881acf91272d5b292f8cc9328ba9c7d0d0430d33ee308efd76befbb87",
+    "archives/unrelated-machines/state/资源/核心私有全层配额原审计的公式与负载接口--资源.md": "0e9e16df4f666df7dcc3aa9073e81318f67eeef2850f544715a1fe0ee7f524bf",
+    "archives/unrelated-machines/state/资源/核心私有配额与共同宏残余的不同阈值--资源.md": "4163476474f3349d0fd27ca7747d244ec201eda8c65c789592676a343b51f20e"
+  },
+  "review_digest": "00d94366a69d17399ea4d929fd4ef4e543b263e3cbc144c7bfd096aab1cfe2ed"
+}

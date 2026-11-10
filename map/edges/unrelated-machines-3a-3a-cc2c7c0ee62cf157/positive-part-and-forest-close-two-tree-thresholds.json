@@ -1,0 +1,80 @@
+{
+  "edge_id": "um-cc2c7c0e-positive-part-and-forest-close-two-tree-thresholds",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+    "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1"
+  ],
+  "target_ids": [
+    "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "单变量两棵私有满 k 叉深 h 树，k,h≥1，唯一 incoming 取时1，父端小任务时1/k，每个底层父节点的 k 个叶端共用仅该父节点的一台单位 terminal；无 pins 和外加任务。",
+  "roles": {
+    "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1": "在 T∈[1,2) 给共同边际的正部充要条件及真实逐行 CONFIG 分解。",
+    "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1": "将普通调度严格次二阈值与实际原叶的 mandatory-r 共同注入等价。",
+    "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1": "对同一原完整 P 同时计算普通 OPT 与精确 T_CONF。"
+  },
+  "explanation": "对 s=floor(k(T−1))，每行正部式给 Σ_out t_e≥(k−s)q。沿各轨求和 h 次，底叶总外送边际≥(k−s)^h y；每轨 k^(h−1) 台单位 terminal 故每根 (k−s)^h y≤k^(h−1)。y_++y_−=1 得必要条件。取两根各半，层 ℓ 边际 x_ℓ=(1/2)((k−s)/k)^ℓ，使逐行正部恰 s x_(ℓ−1)，末端 k x_h≤1 恰为同一条件，故是充分条件。T<1 无 selector 配置，s=k−1 总可行。独立地，mandatory-r 森林可取一条根叶路径（r=1），若 r≥2，每活跃底父至少两个选叶争同一单位 terminal，故不可能；正规形给 OPT=2−1/k，k=1 也给1。k≥3 时 s=0 永不可行，若 s=1 满足条件则比值为 (2k−1)/(k+1)=2−3/(k+1)；对每 k 选择充分深 h 得趋二。",
+  "scope": "精确阈值只在所述 closed 族上，两方向都使用同一矩阵和全部原任务；(12,32) 等冻结参数仅整数幂比较。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+      "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+      "section": "2.4 闭合两树族的精确配置阈值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+      "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+      "section": "小 JSON：严格整轨见证与八组闭合参数"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-calibrated-originals/comparisons/unit_readout_configuration_threshold_polytope.md",
+      "sha256": "b29c1500da407a86c3172c6738f22c5b10c073d0270aeac9acd668260983967a",
+      "section": "5. 经典闭合两树的精确配置阈值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+      "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+      "section": "2.1 模型和正部多面体的精确量词"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+      "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+      "section": "单行配置凸包的正部条件"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md",
+      "sha256": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7",
+      "section": "3.1 定义域与 iff"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+      "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+      "section": "2. 实际调度到必选森林及完整正规化"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+      "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+      "section": "3. 必选森林到实际完整调度"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "独立复算层下界和常边际构造，区分配置行分解与真实单路径，并查 k=1,2、h=1 和两个阈值精确网格。",
+  "whole_result": "该闭合原矩阵族的 OPT=2−1/k 且 T_CONF=1+s*/k，s* 是所述不等式的最小网格 s；在明确子族上逐例 gap=2−3/(k+1) 并趋于2。",
+  "endpoint_pins": {
+    "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1": "985b3826f15d0ccba2febdd3541df47ad3694cc2bcc2e7943d29c47e8c12b371",
+    "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1": "6978b5892da25852e9db5b26bc44ec4ff01e1aa0735af29644a1bc8489456bd5",
+    "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1": "bd66f8cfda3245886e9ba6d3075b5ed8f5e5d760675d05ee33cfd19d883d6741"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+    "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+    "archives/unrelated-machines/tools/evidence/unit-calibrated-originals/comparisons/unit_readout_configuration_threshold_polytope.md": "b29c1500da407a86c3172c6738f22c5b10c073d0270aeac9acd668260983967a",
+    "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7",
+    "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90"
+  },
+  "review_digest": "f3321e6b1c1da88397376545edcad91beabbffe82e8f3c28f223ed13fb977a89"
+}

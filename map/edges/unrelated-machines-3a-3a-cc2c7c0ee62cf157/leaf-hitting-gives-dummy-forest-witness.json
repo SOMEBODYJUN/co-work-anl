@@ -1,0 +1,73 @@
+{
+  "edge_id": "um-cc2c7c0e-leaf-hitting-gives-dummy-forest-witness",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-PRUNED-TREE-LEAF-HITTING-v1"
+  ],
+  "target_ids": [
+    "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "在同一显式完整无 pins 的 unit-readout 双树模型，C∈[1,2)、r=ceil(k(2−C))。每变量给一条 sign，其真实出现叶严格少于 (k−r+1)^h；提取的各轨 dummy 叶集合还须共同注入原 clause units，例如每枚 dummy 有不同的专用 unit。",
+  "roles": {
+    "UM-PRUNED-TREE-LEAF-HITTING-v1": "对真实/虚拟叶双色划分，提取根保留全深 r-pruned 的纯 dummy 子树。",
+    "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1": "得到 mandatory-r 森林充分方向可直接消费的原叶见证。"
+  },
+  "explanation": "令 q=k−r+1。在每条指定轨将真实叶标红，其余标蓝。若根无法给纯蓝 r 子树，则每个坏结点至少 q 个坏孩子，从根提取 q 叉红证书，要有 q^h 枚真实叶，矛盾。逐轨后序取蓝树后，仅在同一批所选叶共同注入的额外条件下得到全变量合法森林；回填时下传这些真实有端原边，所有未选轨原任务与未选 branches 留各自父机。阈值恰相等时 q 叉阻挡叶可命中全部 r 子树。",
+  "scope": "在确有共同外部容量时给 dummy 逃逸的一个构造性充分判据；不把外部容量或任意叶的位置约束从数量推出来。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md",
+      "sha256": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7",
+      "section": "3.2 半密度 universal 3/2 与叶命中门槛"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+      "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+      "section": "8. 虚拟叶补齐的精确命中门槛"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md",
+      "sha256": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+      "section": "4. 修剪森林、半密度和 leaf-hitting"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位森林与叶Hall阈值两源精读--审查.md",
+      "sha256": "801e9b4d69612ca5b04cb8a76ad4578dd1628591fa86f1fdb20580f8b4db8990",
+      "section": "2. 精确叶 hitting 与 dummy 逃逸"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位森林与叶Hall阈值两源精读--审查.md",
+      "sha256": "801e9b4d69612ca5b04cb8a76ad4578dd1628591fa86f1fdb20580f8b4db8990"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md",
+      "sha256": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7",
+      "section": "3.1 定义域与 iff"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+      "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+      "section": "3. 必选森林到实际完整调度"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "重算 q^h 递推、严格门槛和等号锐阻挡，核实全变量 clause 注入是不同义务。",
+  "contribution": {
+    "result": "在列明的 dummy 容量前提下，叶 hitting 给出可在多项式位时间构造的 mandatory-r 森林，继而把原矩阵完整排到 C。",
+    "remaining": "只支持 iff 的特殊充分方向；一般给定矩阵仍需共同选轨/容量，且由任意完整实际调度解码的必要方向另需 forest 证明。"
+  },
+  "endpoint_pins": {
+    "UM-PRUNED-TREE-LEAF-HITTING-v1": "4058da5b805bfac8fd83f3666b3b8ead19bd836cb5331ee0dab6237fa429b5aa",
+    "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1": "bd66f8cfda3245886e9ba6d3075b5ed8f5e5d760675d05ee33cfd19d883d6741"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/异质宏残余与单位读出森林双源审查--审查.md": "0e04eab5465d195ab206696c58cc3f53f27a933be715421462a982b8cce021e7",
+    "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+    "archives/unrelated-machines/state/审查/单位读出槽配置流与修剪森林四源审查--审查.md": "bde2aac16d73d332f7f6832f7efce81e9f3d95ca23596477e2843a1d9754c32a",
+    "archives/unrelated-machines/state/审查/单位森林与叶Hall阈值两源精读--审查.md": "801e9b4d69612ca5b04cb8a76ad4578dd1628591fa86f1fdb20580f8b4db8990"
+  },
+  "review_digest": "1f2e4e77ba2db5976336f917032e16cc4d6317d985e702eb3be1199064f1867e"
+}

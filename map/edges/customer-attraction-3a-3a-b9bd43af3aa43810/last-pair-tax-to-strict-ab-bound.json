@@ -1,0 +1,48 @@
+{
+  "edge_id": "ca-b9bd-last-pair-tax-to-strict-ab-bound",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-7f8bc7ffeda04d45974b2071dd59f84f"
+  ],
+  "target_ids": [
+    "B10-TWO-SUPPORT-END-AB-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "实际只出现两个不同覆盖集合A、B，频次k,l≥1、m=k+l，末两位覆盖依次A、B。保留实际合法有序前缀及σ，不更改同覆盖标签或平局。",
+  "roles": {
+    "M-7f8bc7ffeda04d45974b2071dd59f84f": "任意合法前缀、任意真末两人给VA(1)三比较精确非负证书。",
+    "B10-TWO-SUPPORT-END-AB-v1": "两种实际覆盖且末端AB的完整严格覆盖界。"
+  },
+  "explanation": "末两位前p=(k−1)1_A+(l−1)1_B。VA(1)给四块查询界t_o+t_A/k+t_B/(l+1)+t_C/m≤[(k+2)/(k(k+1))]a+c/m。将m个最优主题求和并补各块未付并集余量，得P=(2+X)a+l b/(l+1)+(2−1/m)c。真实末位最优性给另一四块界，按同样算法得L=k a/(k+1)+(2+Y)b+(2−1/m)c。令X=[l(k+2)−1]/[k(k+1)]、Y=(k−1)/l、Z=(k+2)/(k+1)、V=(l+2)/(l+1)，取λ=(Y+Z)/(X+Y+Z+V)，则λP+(1−λ)L把a,b共同系数压到2−δ。ZV−XY=[l(k+2)(k+l+1)+(k−1)(l+1)]/[kl(k+1)(l+1)]>0，故δ>0。W=0时任意实际角色收益0，强制最大主题至少|T|/m，故OPT=0。",
+  "scope": "恰两种实际覆盖且真末两位AB，所有k,l及之前顺序，严格性只在W>0表述。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/单色真实后缀的虚拟相邻税--候选.md",
+      "sha256": "4b1861b985e8b809708a44c70511206d97cff4b55a1045a4c62ac009b45f1f87",
+      "section": "r=1的完整真实三比较证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/两种实际覆盖且末两位不同的严格二倍界--定理.md",
+      "sha256": "7683f435a703bf5c9cf0303baac28db77a862354c66d3e07fafff2c822484583"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/跨分支付款命题账本的精确对象与约束层次--资源.md",
+      "sha256": "15a0b57dedc4e813b5bd853828bcd5470e5bc7e81dfc787c307a197300059e9f"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核u_A+τ_A的公共块系数c/m、两份并集余量、凸合权重与正性。BB收尾不靠改历史套此边。",
+  "whole_result": "对目标的全部真AB末端结构，推出OPT_m≤[2−min(δ,1/m)]W，且W>0时严格小于2W。",
+  "endpoint_pins": {
+    "B10-TWO-SUPPORT-END-AB-v1": "671d67825768b3d2e91a872e7db10f9a5873b4fcf30efb89c1dfa52c46c916c8",
+    "M-7f8bc7ffeda04d45974b2071dd59f84f": "dddb6d49bae1bfb6f605c6247b0929599c25f10fd56776f2a8645db2bb424812"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/单色真实后缀的虚拟相邻税--候选.md": "4b1861b985e8b809708a44c70511206d97cff4b55a1045a4c62ac009b45f1f87",
+    "archives/customer-attraction/state/定理/两种实际覆盖且末两位不同的严格二倍界--定理.md": "7683f435a703bf5c9cf0303baac28db77a862354c66d3e07fafff2c822484583",
+    "archives/customer-attraction/state/资源/跨分支付款命题账本的精确对象与约束层次--资源.md": "15a0b57dedc4e813b5bd853828bcd5470e5bc7e81dfc787c307a197300059e9f"
+  },
+  "review_digest": "07aa918b1395ab752d1a54fee4d0ddb9aad1d34c172fd3a9687f7e464fc681cc"
+}
