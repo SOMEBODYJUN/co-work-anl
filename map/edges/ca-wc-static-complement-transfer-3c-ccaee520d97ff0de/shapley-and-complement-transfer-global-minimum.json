@@ -1,0 +1,67 @@
+{
+  "edge_id": "ca-wc-shapley-and-complement-transfer-global-minimum",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential",
+    "weighted-congestion/static-customer-coverage-complement-harmonic-transfer"
+  ],
+  "target_ids": [
+    "weighted-congestion/harmonic-complement-monochromatic-pne-global-minimum"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限资源集 X、共同有限非空资源子集目录 A、m≥1 名单位权活动玩家；每资源质量 v_x>0 和固定实参数 b_x≥0。目标费用为非负系数多项式，全部可访问正整数节点满足 p_x(j)=v_x/(b_x+m+1−j)，1≤j≤m；静态补集桥给共同次数 O(m²) 的此类合法多项式。目标起点 s=(B,…,B) 为精确静态 PNE；t 遍历 A^m 的全部完整目标剖面。每项单方比较固定其余玩家于同一个 s_{−i}。",
+  "roles": {
+    "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential": "在覆盖专门化及固定任意非负实逐客户背景下，给同色静态源 PNE 的定量势差上界；它支付补集桥本身尚未支付的源势缺口非负性。",
+    "weighted-congestion/static-customer-coverage-complement-harmonic-transfer": "双向取补集、保全部合法静态偏离及弱 PNE；给成本差与收益差变号、Rosenthal 势与源调和势之和为常数，并构造合法非负多项式节点费用。",
+    "weighted-congestion/harmonic-complement-monochromatic-pne-global-minimum": "所得完整目标保证：全部比较剖面的 Rosenthal 势增量至少为同动作起点逐玩家单方成本增量之和，故该 PNE 全局最小化 Rosenthal 势。"
+  },
+  "explanation": "对每个目标动作 A∈A 取源覆盖 X∖A，保留原标签；若先对相同资源子集取商，统一把起点 B 提升到同一个覆盖 X∖B 的源标签，比较剖面逐项任意提升，效用与势不变。令源起点 s̄=(X∖B,…,X∖B)，t̄_i=X∖t_i。给定其他玩家，记 c_x^{−i} 为其源覆盖数，K_i(s̄_{−i})=Σ_x v_x/(b_x+1+c_x^{−i})。目标玩家使用资源 x 时，其负载为 m−c_x^{−i}，故 C_i(A_i,s_{−i})=K_i(s̄_{−i})−u_i(X∖A_i,s̄_{−i})。固定同一个 s_{−i}，K_i 抵消，因此 δ_i^C:=C_i(t_i,s_{−i})−C_i(s)=−δ_i^u，其中 δ_i^u:=u_i(t̄_i,s̄_{−i})−u_i(s̄)。弱 PNE 双向保留，故 s̄ 为源同色静态 PNE 且所有 δ_i^u≤0。为支付实背景的源不等式，逐 p∈(0,1) 取归零单调次模 C_p(U)=Σ_{x∈∪U}v_x(1−p)^{b_x}；源同色证明逐 p 使用的仍是归零、单调及次模性，不要求 b_x 是背景玩家数。若 j 位活动玩家覆盖 x，每覆盖者积分边际为 v_x∫₀¹(1−p)^{b_x+j−1}dp=v_x/(b_x+j)，势客户项为 v_xΣ_{ℓ=1}^j1/(b_x+ℓ)，j=0 时为零。因此源定量结论完整给出 Φ(t̄)−Φ(s̄)≤Σ_iδ_i^u≤0。再令 H_b(c)=Σ_{ℓ=1}^c1/(b+ℓ)。补集负载 k_x=m−c_x 给 Ψ=Σ_xΣ_{j=1}^{m−c_x}v_x/(b_x+m+1−j)=Σ_xv_xH_{b_x}(m)−Φ；常数对全部完整剖面相同。于是对每个 t∈A^m，Ψ(t)−Ψ(s)=−[Φ(t̄)−Φ(s̄)]≥−Σ_iδ_i^u=Σ_iδ_i^C≥0。两个源须同时保留：补集桥只识别两侧缺口，次模 Shapley 同色势差上界才给该缺口所需符号。",
+  "scope": "完整迁移到所列调和补集节点费用的单位权非负多项式拥塞子类；并非全部非负多项式拥塞的类结论。允许 m=1、空动作、重复覆盖标签、弱收益平局及任意固定非负实背景。只用实际访问的正负载节点，不要求 p_x(0) 匹配调和式。结论为 Rosenthal 势和固定同一起点的静态偏离总下界，不自动给社会总成本、一般异权或完整序贯策略保持。完整历史中根偏离会改变后继玩家动作和 K_i，13 客户例严格否定同一完整 SPE 的直接保持。",
+  "whole_result": "{固定背景次模 Shapley 同色静态势定理，静态客户覆盖补集转移} 共同完整推出：对任意满足所列节点费用的目标单位权共同目录游戏、任意同动作精确静态 PNE s，以及任意完整目标剖面 t，都有 Ψ(t)−Ψ(s)≥Σ_i[C_i(t_i,s_{−i})−C_i(s)]≥0；因此 s 是全部合法完整剖面中的全局 Rosenthal 势最小点。方向为源同色势差上界经补集反号迁至目标势差下界。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+      "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+      "section": "从单方收益到全部活动配置"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+      "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+      "section": "任意外生负载的覆盖专门化"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md",
+      "sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed",
+      "section": "静态偏离与势的精确对应"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md",
+      "sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed",
+      "section": "正系数插值与有理位长"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md",
+      "sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed",
+      "section": "序贯边界"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/调和补集拥塞的同动作精确均衡是全局势最小点--定理.md",
+      "sha256": "278f3b3307126edc820681ccfefbc917d657893119e0bef28c148dc3c3f50f13"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐式实读三个 v1 端点及其全部必要证明。核同一身份 Shapley 积分、任意实 b_x 的逐参数覆盖专门化、目标正负载与源覆盖负载之和为 m、逐偏离差和势差的双重反号、全部完整目标剖面量词及同色标签提升。复用既有 3A 缺口恒等式但补齐其非负性，故本边为两源 ALL 的完整结果。另核独立非减费用证明及 13 客户例，准确保留静态/完整序贯和势/总成本边界。",
+  "endpoint_pins": {
+    "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential": "d486c874dacc5ca04ad36ec8e82d749dccfb07c758eaba5104a9b4f0f7c777b6",
+    "weighted-congestion/harmonic-complement-monochromatic-pne-global-minimum": "a0eb45ab28a36557c6e83a92c110708f75f0e87fdd413ebe7215dd02f3d524b6",
+    "weighted-congestion/static-customer-coverage-complement-harmonic-transfer": "28e31c3ca9c22526a6deaefa756b18799393a7cbeb4e735617f69286c812ef4d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+    "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed",
+    "archives/weighted-congestion/state/定理/调和补集拥塞的同动作精确均衡是全局势最小点--定理.md": "278f3b3307126edc820681ccfefbc917d657893119e0bef28c148dc3c3f50f13"
+  },
+  "review_digest": "ed1da223955a1e03ee1e1658f129ed808ed333cf2e1138f55e7439eb27ce9fc3"
+}

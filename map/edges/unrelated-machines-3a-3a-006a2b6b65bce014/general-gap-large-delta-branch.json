@@ -1,0 +1,56 @@
+{
+  "edge_id": "svensson-general-gap-supplies-large-delta-two-size-branch",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-6e6de497c2034ca99d68b4ff3d548a0d"
+  ],
+  "target_ids": [
+    "M-c1283d7de5954f9aa5ec05feba9f9d80"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限受限指派，所有可用端的处理时间为公共p_j，资格集不变；两尺寸p_j∈{δ,1}且δ≥14/51，有限正T_conf。零任务/全零尺寸单独直接处理，不除以零。",
+  "roles": {
+    "M-6e6de497c2034ca99d68b4ff3d548a0d": "给任意公共尺寸受限指派OPT≤(33/17)T_conf。",
+    "M-c1283d7de5954f9aa5ec05feba9f9d80": "本边只支付两尺寸目标的δ≥14/51分支。"
+  },
+  "explanation": "不改变机器、任务、资格集、配置容量或分配，恒等嵌入两尺寸实例到一般受限指派。由源定理OPT≤(33/17)T_conf，再用33/17−5/3=14/51≤δ，得OPT≤(5/3+δ)T_conf。δ=14/51时两常数相等。对0≤δ<14/51，源界严格较弱，不能推出目标；该范围须用Section 3的两尺寸阻塞树独立证明。其承重是z_big=2/3、z_small=δ，小移动阻塞机Z≥4/3，big-to-small阻塞机Z>2/3且可与下一小移动点配成≥2，给负对偶值；有限签名保证最终插入而未给多项式步数。一般尺寸Section 4改成三类阻塞、z_big=11/17、z_medium=9/17和R=16/17，并非直接从两尺寸结论推出。",
+  "scope": "两尺寸间隙全称目标的一条精确参数分支；存在调度的界，不是位多项式实际调度输出算法。",
+  "contribution": {
+    "result": "对全部δ≥14/51的两尺寸受限指派，OPT≤(5/3+δ)T_conf直接由一般33/17间隙推出。",
+    "remaining": "目标还含0≤δ<14/51；该分支由原PDF Theorem 3.1的独立阻塞树/对偶/有限终止证明支付，本边不声称支付。任何要求多项式实际输出调度的后续目标仍需另外的收敛或舍入算法。"
+  },
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/SantaClaus调度与受限指派配置界--资源.md",
+      "sha256": "fdd4fa895b3161204f7de75e2b4a29b07653838276e04a2105026fcf41bfe7c5",
+      "section": "模型、配置LP及量词"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/SantaClaus调度与受限指派配置界--资源.md",
+      "sha256": "fdd4fa895b3161204f7de75e2b4a29b07653838276e04a2105026fcf41bfe7c5",
+      "section": "两尺寸证明：阻塞树、对偶和有限签名"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/SantaClaus调度与受限指派配置界--资源.md",
+      "sha256": "fdd4fa895b3161204f7de75e2b4a29b07653838276e04a2105026fcf41bfe7c5",
+      "section": "一般尺寸证明：三个阻塞种类和33/17摊还"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/svensson-2011.pdf",
+      "sha256": "e80d2b787fd0d594361e3eaedc1272a418c02d81b5c1e1fa06a81a688fab43c3"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "实读当前3对象v2及同资源完整模型、两证明和输出合同；提取冻结PDF全文22页，逐节读Sections 1–5及参考文献，重核Lemma 3.7/Claims 3.8–3.9/Lemma 3.10与一般证明的三类阻塞、分摊和有限签名。独立有理算术得14/51阈值，逐目标原句限定contribution，不把共同来源当整条推导，也不把多项式估值写成多项式调度。",
+  "endpoint_pins": {
+    "M-6e6de497c2034ca99d68b4ff3d548a0d": "dcb9f97372bb14482a8183da2b85413e087620cdb0971e8b51dc3e80ac23c2be",
+    "M-c1283d7de5954f9aa5ec05feba9f9d80": "70554ae2216240235b70c44915e570749f5bd2007f7a0ddaf2bff1cc5545851f"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/SantaClaus调度与受限指派配置界--资源.md": "fdd4fa895b3161204f7de75e2b4a29b07653838276e04a2105026fcf41bfe7c5",
+    "research/registration/evidence/boss6-0104/svensson-2011.pdf": "e80d2b787fd0d594361e3eaedc1272a418c02d81b5c1e1fa06a81a688fab43c3"
+  },
+  "review_digest": "cf90c898a186ae23765b9a73f74673a74e2dca4142107c5bc0b3b463b2086349"
+}
