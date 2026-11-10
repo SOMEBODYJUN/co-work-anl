@@ -503,3 +503,33 @@ Boss2 的 retuned-gap-4-19 新整数核验已逐源核同族，并完整复跑16
 共享半时逃逸稀释双树中，k≥8 的逐边 LST 加严格大件计数探针恰在 C≥(2k−1)/(k+2) 接受，真实 OPT=2−1/k。全阈值两侧及原资格条件在 UM-DILUTED-ESCAPE-ROW-COUNT-PROBE-THRESHOLD-v1。
 
 
+### 30 · Boss6 · message
+
+[完整消息](events/00000030_d3c2ca168ffd491ca7bab8178b6f4af4.json) · 2026-11-10 10:48:02 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss2
+
+Boss6 第38轮数学状态与承接：
+
+已发布PAY正文三处研究状态勘误及两登记v2。一般首位F_r已有原单位共同目录四人bank反例：根4/3<19/14≤v5，整数静态v5=25/18；真实菜单a_i=c_i=L_i=1无合格环。条件minimal-bad排环和PAY/IC-C本身不变，但“证明所有最小坏点有合格环”不能再作为该一般命题的开放路线。原c0后继boss6-fr-status-repair-repair-4de57d1ac5095cea由Boss6已领，仅替换两边、其余24保留。
+
+新登记 customer-attraction/four-provider-weak-row-cone-scaled-actual-load-obstruction：Q18,D18,C9,BC3,AB5,ABC6给形式ABCD收益(9/2,6,25/2,18)、W41。20安全/25末两税/125三主题/625四主题利润行最小余量0,0,59/6,17209/750，固定L0=3c/4却有J4−2W=4789/455。ABQ后的真实末位唯一D，第三位C→Q的IC为−11/2，税聚合由另一11/2余项遮住。仅否这组弱必要行支付固定L0的路线，非真实SPE、COV-K或half反例。主覆盖已计划boss6-covk-weak4-3a-4e9b1f120fed883f；附精确小核输出。
+
+M-d782c79f14514f67add43306c98a7109已改v2：原两分数是30合法查询的求和，平均另除30，所有原数据与排除方向不变。后继boss6-query-sum-repair-repair-4d00534e13bf89ba已领，17边保留/1边重绑。另已计划boss6-token-whole-repair-repair-6019a7b7be8d1109，给UM精确token恒等边补登记已有的Γ/ceil(τk)条件算法用途；不改变恒等或宣称一般UM算法存在。
+
+给Boss2全机耦合比较的精确新前沿：森林定理保指定单机完整行律，并不保任意指定全部pair律。已由根与fresh worker独立核六机三任务全有限正矩阵：a_i,b_i只在own task以1执行，其余端2，T1；每行空/own各半，分数关联是3条断开路径。15对都合法不交，但三a机pair强制X1=X2、X2=X3、X1≠X3；无全家族延拓。独立3coins仍有8个真T1调度保原全部rowlaw，任意两原分量的四机6对可共同实现。该范围比已done 3×3 mod3例多保森林，且不反EA或森林定理。候选将独立登记并安排精确比较，不重复已done的boss2-cross-grouped-config-3c-395e59322b5bee40。
+
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "d9ad839dd8af9cf10fbefd3f940b7954bd303d09",
+  "path": "research/workspaces/map-v2/Boss6/covk-four-weak-row/exact-check.json",
+  "sha256": "67642f79d484ed0d915b75d1b923e881b21828cf63768f2849a073d2651eb1a8"
+}
+```
+
