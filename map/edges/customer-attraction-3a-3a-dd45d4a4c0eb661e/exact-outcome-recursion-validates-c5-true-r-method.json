@@ -1,0 +1,51 @@
+{
+  "edge_id": "ca-dd45-exact-outcome-recursion-validates-c5-true-r-method",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "customer-attraction/closeout-efa319a33dd5357520856389"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "CYCLE父方audit_interval_c5_independent.py中五标签、六玩家、五单位客户的Fraction exact(b)函数；收益在a孩子中总有z_a>0。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "提供真实可实现终局全集R的递推及有序策略拼接证明。",
+    "customer-attraction/closeout-efa319a33dd5357520856389": "只认证父方exact/trueR方法等同该递推，保持HI/G/静态阈值的不同方法。"
+  },
+  "explanation": "父方exact(b)在sum(b)=6返回{b}，其children[a]=exact(b+e_a)，bound=max_a min_(z∈children[a])payoff(z)[a]，返回逐终局筛payoff(z)[a]≥bound的并集。payoff按五名客户逐项Fraction求均分值；虽未占用辅助a坐标置0，每次a孩子中的a已占用，比较从不读虚构零收益。故EXACT直接给该函数对所有合法b精确返回完整SPE可实现终局计数，允许不同同计数有序节点独立拼策略。此认定来自递推证明和代码对照，无执行/全树搜索。另一个interval函数保eligible孩子整集合，cost沿其eligible算G，均不由本边变成trueR。",
+  "scope": "CYCLE复合资源中的trueR方法局部贡献。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/循环门槛前身与五环父审的程序合同--资源.md",
+      "sha256": "3189cc49173243131f7e4e96180564673db4e236325f318039bb633bf5e8c243",
+      "section": "循环门槛前身与五环父审的程序合同"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/interval-threshold-discovery-and-parent-audit-primary/original/research/workspaces/customer-attraction/R-977d3dbff13346b3b7c0f5a4caa6168e/parent/audit_interval_c5_independent.py",
+      "sha256": "f2321b6cc64a77464499a5a69b73a620f36b42a407fc3f87a2d1832d53a2cdc3"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "正式worker逐核心实读当前合同、所引正文及本边承重证明；保当前版本、全部联合前提、同一完整策略和所列作用范围。未运行旧科学程序。",
+  "contribution": {
+    "result": "父方C5审计的Fraction exact(b)正确实现trueR全集递推；计数缓存不删历史依赖平局。",
+    "remaining": "不据此认证报告20/60/462等有限输出、七主题140过去候选、HI泄漏/G23/6或直接赋值static10/17、OPT5；这些各有原报告或另解析证明，绝非本边整条结论。"
+  },
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "customer-attraction/closeout-efa319a33dd5357520856389": "c84430e2bc1d6902bc1ae4834b4a813209506d7a5ac88b8e61713ece7f4d5e83"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/资源/循环门槛前身与五环父审的程序合同--资源.md": "3189cc49173243131f7e4e96180564673db4e236325f318039bb633bf5e8c243",
+    "archives/customer-attraction/tools/evidence/interval-threshold-discovery-and-parent-audit-primary/original/research/workspaces/customer-attraction/R-977d3dbff13346b3b7c0f5a4caa6168e/parent/audit_interval_c5_independent.py": "f2321b6cc64a77464499a5a69b73a620f36b42a407fc3f87a2d1832d53a2cdc3"
+  },
+  "review_digest": "63f73c4fe483d8d560038410104337231b73b110ac385f9e961943427d171ce4"
+}

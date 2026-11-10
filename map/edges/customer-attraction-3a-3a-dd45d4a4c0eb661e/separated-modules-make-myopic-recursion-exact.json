@@ -1,0 +1,49 @@
+{
+  "edge_id": "ca-dd45-separated-modules-make-myopic-recursion-exact",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SEPARATED-MODULES-MAXIMUM-TOPIC-EFFICIENCY",
+    "M-f2f0fca61c4c4055a9e8face5a4cd7bb"
+  ],
+  "target_ids": [
+    "MYOPIC-CEILING-RELAXATION-HALF"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "SEP全部假设：每非空主题在一个不交模块内、大小≤K、至少m个不同模块各有K主题；固定同一总m，b合法且|b|=m−r。K=0另按零值处理。",
+  "roles": {
+    "SEPARATED-MODULES-MAXIMUM-TOPIC-EFFICIENCY": "提供整个任意内部交叉模块结构类及全部合法前缀的fresh模块计数。",
+    "M-f2f0fca61c4c4055a9e8face5a4cd7bb": "提供H/L_M/E/G_M的精确递归定义，而非以真实效率替代松弛分析。",
+    "MYOPIC-CEILING-RELAXATION-HALF": "付清该完整结构子类的组合金额，余下全目录仍open。"
+  },
+  "explanation": "对r同时归纳H(b)、L_M、E、G_M。r=0有H={b},G=0。K>0时过去m−r个行动至多触及m−r模块，至少r个指定K模块未触及。对非终局取fresh模块K主题T。孩子归纳刻画为：后继各选K主题并逐步避开此前全部覆盖。因此H(b+e_T)的每个终局均不再覆盖T，tagged T收益恰K，给L_M≥K；任意主题的最终收益≤|A|≤K给反向。M_A(b)≤|A|≤K，等号恰当|A|=K且A与前缀覆盖C_b不交，所以E(b)={这些A}。对eligible孩子用同一归纳，H(b)恰为追加r个彼此且与C_b不交的K主题所成计数，G_M=K+(r−1)K=rK。这个H还等于真R：真SPE每人K强迫相同不交描述；反向任何该路径各在轨角色收益K，对其余有序孩子独立拼任意子SPE，任意偏离收益至多K，故全树可信。K=0时全部标签eligible、H为全部合法终局、L=G=0。根G_M(0)=mK=OPT_m。孪生族需用K_mod=K_common+1，得到每合法前缀G_M(b)=r(K_common+1)，仅根写m(K_common+1)。",
+  "scope": "整个SEPARATED结构类及其所有合法前缀的解析贡献，不限有限三角或孪生样本。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/可用模块的收益保底与全深度递归松弛--定理.md",
+      "sha256": "c7e09e1659c1bda54f9006dc26b27c077600ed155f2ebcdf2c72828e02e26b36",
+      "section": "可用模块的全效率定理"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/可用模块的收益保底与全深度递归松弛--定理.md",
+      "sha256": "c7e09e1659c1bda54f9006dc26b27c077600ed155f2ebcdf2c72828e02e26b36",
+      "section": "myopic-ceiling放松的合法性及开放义务"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "正式worker逐核心实读当前合同、所引正文及本边承重证明；保当前版本、全部联合前提、同一完整策略和所列作用范围。未运行旧科学程序。",
+  "contribution": {
+    "result": "在SEP全部假设下，所有合法非终局b有L_M=K、E恰为避前缀的K主题、G_M=rK，H等于所述不交完成集合且等于真实可实现终局集合；根G_M=OPT_m，故该类满足MYOPIC-HALF。",
+    "remaining": "失去模块结构的任意共同目录之G_M(0)≥OPT_m/2仍未证明；不能由真实W=OPT反推其他合法递归精确。"
+  },
+  "endpoint_pins": {
+    "M-f2f0fca61c4c4055a9e8face5a4cd7bb": "f50c604eca0d31fb3becac21954f67794b827f1eb721825bdea5389a64996acb",
+    "MYOPIC-CEILING-RELAXATION-HALF": "0077e52c9f648cf52b7c77d29dde1a3759ff9823595c776d970b35a2715fef03",
+    "SEPARATED-MODULES-MAXIMUM-TOPIC-EFFICIENCY": "4a02370620281d42686c5b97fde74ad1cb6a0c06597a573a814f5de76be742c3"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/可用模块的收益保底与全深度递归松弛--定理.md": "c7e09e1659c1bda54f9006dc26b27c077600ed155f2ebcdf2c72828e02e26b36"
+  },
+  "review_digest": "1fa24c859a428a21efcca7cb7c84deaf6e0b7dabc3cd14ef014b04a496924832"
+}

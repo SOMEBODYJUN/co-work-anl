@@ -1,0 +1,46 @@
+{
+  "edge_id": "ca-dd45-fixed-policy-cone-supplies-mutation-ic-recheck",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/fixed-complete-policy-finite-price-contract"
+  ],
+  "target_ids": [
+    "customer-attraction/ordered-offpath-mutations-full-tree-cones-and-invariant-actual-path"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "每次变异后固定完整有序策略σ′；对全部节点全部合法行动，以同σ′在改变历史后真实续行重建Γ_σ′，质量为非负整数或清分母后的有理点。",
+  "roles": {
+    "customer-attraction/fixed-complete-policy-finite-price-contract": "给任一完整有序策略的SPE域恰为其非负客户质量IC锥。",
+    "customer-attraction/ordered-offpath-mutations-full-tree-cones-and-invariant-actual-path": "支付“离轨变异后必须重建全部新IC”这一部分，不从保护路径推出SPE。"
+  },
+  "explanation": "FIXED对任意指定σ′，逐有序历史生成规定行动收益减真实偏离收益。每个玩家在一层只动一次，所以r≥0且Γ_σ′r≥0当且仅当σ′是完整SPE。变异虽保护actual所有前缀动作，从而由逐位归纳保持同一有序叶，但离轨强制a后的真实终局可能改变，旧Γ_σr≥0一般不等于新Γ_σ′r≥0。故新质量优化后必须采用每次重建的全树Γ_σ′；固定路径仅保根计数及其福利向量，不保IC。浮点LP成功本身不是精确SPE证明，只有精确质量/全行残差给该结论。",
+  "scope": "ORDER复合命题中的全树SPE锥核验贡献，未宣称搜索完整性。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/等价/固定完整SPE策略锥的有限价格合同--等价.md",
+      "sha256": "8664984e80081e1bc83093fc93ea90bfe224f82f659ac980ff1515113c9abf9b"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/有序离轨变异的全树锥与固定正常路径--程序.md",
+      "sha256": "be505ae4b0c66290a0e90c9cb1489efc0c234f952007b84b163c65dc589fe5d2",
+      "section": "2. 变异范围的一个严格不变量"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "正式worker逐核心实读当前合同、所引正文及本边承重证明；保当前版本、全部联合前提、同一完整策略和所列作用范围。未运行旧科学程序。",
+  "contribution": {
+    "result": "对每个保护路径变异σ′，其重赋质量后的完整SPE性恰由新全树Γ_σ′r≥0认证；旧锥或路径不变量不能替代重建。",
+    "remaining": "ORDER的全策略池有序路径不变量另由受保护前缀的归纳承担；本边不认证35/38浮点LP、有限最优性、遍历所有同路径策略或全部σ。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/fixed-complete-policy-finite-price-contract": "00ae148fa8caecc9b0612e910913b6888f19a046a0eddf66dd2d6229cde43ec9",
+    "customer-attraction/ordered-offpath-mutations-full-tree-cones-and-invariant-actual-path": "4fffd441dbd41a844d1f27743368e4ef65bbaf4c101e41819a187702900aa2c7"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/等价/固定完整SPE策略锥的有限价格合同--等价.md": "8664984e80081e1bc83093fc93ea90bfe224f82f659ac980ff1515113c9abf9b",
+    "archives/customer-attraction/state/程序/有序离轨变异的全树锥与固定正常路径--程序.md": "be505ae4b0c66290a0e90c9cb1489efc0c234f952007b84b163c65dc589fe5d2"
+  },
+  "review_digest": "090b49f888ebfb9b9ba21b873801d58b7c163e3fa0c408397585546bf4c57d08"
+}

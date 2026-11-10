@@ -1,0 +1,50 @@
+{
+  "edge_id": "ca-dd45-exact-outcome-recursion-validates-probe-outcomes-method",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "customer-attraction/safety-optimal-static-cost-outcome-set-and-saddle-cone-probes"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "给定有限k≥1,n≥1及非负整数客户重数；D=lcm(1,…,n)>0；NumPy loads/shares/payoffs/totals的全部整数中间量必须不溢出。保存k≤8,n≤5,重数≤15的输入满足此域。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "给全部终局计数集合递推及逐有序孩子独立拼接的必要充分证明。",
+    "customer-attraction/safety-optimal-static-cost-outcome-set-and-saddle-cone-probes": "其outcomes(q)整数集合值方法得到精确性；浮点安全/费用部分不在本贡献内。"
+  },
+  "explanation": "源码终端返回唯一tid[q]，孩子为每个q+e_a的outcomes；每a孩子均已占a，payoffs[z,a]=D U_a(z)。正尺度D不改变min/max或≥，所以floor=D max_a min_Ra U_a，返回并集恰保payoffs[z,a]≥floor，逐式就是CA-EXACT。因此通过剩余人数归纳该方法返回每计数前缀的全部完整纯SPE可实现终局计数，非空且保所有平局。缓存集合不强迫同计数有序历史采用同策略；若要具体σ仍须按有序孩子分别展开。保存域D≤60、Σw≤255·15，nDΣw≤1147500，相关收益/福利聚合远低2^63；任意CLI大输入没有无溢出保证。",
+  "scope": "PROBE内outcomes方法的一般数学正确性及明确机器数域，不认证所有报告字段。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/安全最优静态费用的集合续局与鞍点锥探针--程序.md",
+      "sha256": "ace94f424b1c2c8c4a7ff4285ff5d11031ca4ff1f9b87bce7249cf35d4ef01ae"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/ra0-static-regret-primary/original/research/workspaces/customer-attraction/R-a0bb57fa24044a8794bc7991918a19c6/security_aggregate/static_regret_probe.py",
+      "sha256": "fb24bbb30b4c3f0ee64afe5535e2288d10b20a20348deef0e209804936e9a017"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "正式worker逐核心实读当前合同、所引正文及本边承重证明；保当前版本、全部联合前提、同一完整策略和所列作用范围。未运行旧科学程序。",
+  "contribution": {
+    "result": "在正LCM尺度和无溢出域，PROBE的outcomes(q)精确等于全部完整历史纯SPE可实现终局计数集合。",
+    "remaining": "HiGHS安全值、v−1e−9近似最优面minR、有限样本统计、固定鞍点锥的数值阴性与原执行绑定均非此递推定理所得；逐策略证书也须独立恢复。"
+  },
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "customer-attraction/safety-optimal-static-cost-outcome-set-and-saddle-cone-probes": "ef9af93a6cf92b64ad11566186e96283e9b7e397322f96b6d14e1e2194d6e68f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/程序/安全最优静态费用的集合续局与鞍点锥探针--程序.md": "ace94f424b1c2c8c4a7ff4285ff5d11031ca4ff1f9b87bce7249cf35d4ef01ae",
+    "archives/customer-attraction/tools/evidence/ra0-static-regret-primary/original/research/workspaces/customer-attraction/R-a0bb57fa24044a8794bc7991918a19c6/security_aggregate/static_regret_probe.py": "fb24bbb30b4c3f0ee64afe5535e2288d10b20a20348deef0e209804936e9a017"
+  },
+  "review_digest": "cffb70e879675d9fd41fe3d803533904a5111d0c62f530b603176e6ac7465fe9"
+}
