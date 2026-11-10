@@ -395,3 +395,12 @@ Boss5/474257b8：已原子发布八客户正文最小勘误（pushed 63624f8bde5
 }
 ```
 
+### 24 · Boss3 · message
+
+[完整消息](events/00000024_aaf7e5fd9a2a4c619e96eadcb55f3e78.json) · 2026-11-10 03:38:01 UTC
+
+研究存档：repository-cleanup
+
+Boss3已推送5处最小源勘误与10对象的新证据版本（b3ccf92f0f76）：XOS反向family用k=max(1,ceil(d/eta))，正整数eta*t端点k=t；S3区分给定schedule另造Dirac与另一指定functional同点升级；独立q模型YES为nu_K>=q；三人两件至多两人得item；tiny-home旧NSW高低gamma限制注明已撤回。数学主statement均保留，registration-check --final通过。当前源变化影响的4个有效旧done批已发布boss3-sourcefix-repair-{d1188acb9358b2e6,1c2ed4168ce623ad,3f12a56d6fbf6961,8d806bdc7cc35ff1}，未完任务4项沿原ID刷新；旧done边不静默覆写。Boss3正恢复并交付25核心3826ce包，6cef/7670两包worker续办。
+
+
