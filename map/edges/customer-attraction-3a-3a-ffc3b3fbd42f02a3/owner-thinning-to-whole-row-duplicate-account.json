@@ -1,0 +1,57 @@
+{
+  "edge_id": "ca-r33-owner-thinning-to-whole-row-duplicate-account",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-bc4c365fb63942228c749b0808091496"
+  ],
+  "target_ids": [
+    "customer-attraction/credible-threshold-and-owner-response-tax-common-payment-conditions"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一最优索引元组 T、完整策略、其实际前缀、遗漏 R 和额外 G。将 y 的每行集中在 T_i。",
+  "roles": {
+    "M-bc4c365fb63942228c749b0808091496": "提供固定比较槽内各遗漏客户的合法 owner 薄化及响应税",
+    "customer-attraction/credible-threshold-and-owner-response-tax-common-payment-conditions": "要求可混合的完整行查询存在共同净税预算"
+  },
+  "explanation": "定义 a_x=Σ_i 1_{x∈T_i}，故 y 可行。任意合法 owner λ 满足 Σ_i λ_{ix}=1。记 d_{ix}=1+k_i(x)。整行税减 owner 税恰等于 Σ_{x∈R,i:x∈T_i}(1−λ_{ix})(1−1/d_{ix})，非负且至多 Σ_x(a_x−1)。这是重复查询的额外响应税。若 T 在 R 上恰覆盖一次，两税相同，且 Q_C≥0；所以在该特例里 owner 税≤|G| 可兑现整行 PAY。重叠时虽可丢弃非负份额以证明 owner 界，整行 a_x 不会因归属选择减少。",
+  "scope": "固定整槽确定查询的精确嵌入、重复税边界，以及单覆盖时的条件付款。一般 y 可用目录其他动作，C 查询收益保 I∪G。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/动态可信门槛与归属响应税的共同付款条件--候选.md",
+      "sha256": "2d458ab29d0841cd76c634f4ec12df7f884f2398d0311ab759b566106d04ff6b",
+      "section": "固定owner响应税：准确但未付的量"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/动态可信门槛与归属响应税的共同付款条件--候选.md",
+      "sha256": "2d458ab29d0841cd76c634f4ec12df7f884f2398d0311ab759b566106d04ff6b",
+      "section": "mixed-owner LP：整行查询而非逐客户私选IC"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/动态可信门槛与归属响应税的共同付款条件--候选.md",
+      "sha256": "2d458ab29d0841cd76c634f4ec12df7f884f2398d0311ab759b566106d04ff6b",
+      "section": "精确余项、最优并集量词和可接续用途"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/动态门槛审查的净差量词与接续版本边界--审查.md",
+      "sha256": "c7ddc590e5e2470ef8a6c6b51fd91f7e9c7cc7f4463524a365a706d0411128e3",
+      "section": "原有限测试与递归措辞的精确校正"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐客户核 y 的覆盖计数与薄化质量不同，且没有把互斥枝未来收益并为实际收入。",
+  "contribution": {
+    "result": "给固定 owner 与真实完整行之间的精确税差，并识别恰覆盖一次时可搬用的条件预算。",
+    "remaining": "仍须在原同一 σ 的某个最优并集上选一份整行随机查询，支付重复、IC slack、额外查询收益的共同余额。"
+  },
+  "endpoint_pins": {
+    "M-bc4c365fb63942228c749b0808091496": "eaff7ac0f59da9584b535be5f33cb5586d6f87fd2e51d38acc6220e6ee75a934",
+    "customer-attraction/credible-threshold-and-owner-response-tax-common-payment-conditions": "1af3fcea69bdc611354c93635f0d40ba7dc2a5ff0c79657eb3d59ec21770f7ea"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/动态可信门槛与归属响应税的共同付款条件--候选.md": "2d458ab29d0841cd76c634f4ec12df7f884f2398d0311ab759b566106d04ff6b",
+    "archives/customer-attraction/state/审查/动态门槛审查的净差量词与接续版本边界--审查.md": "c7ddc590e5e2470ef8a6c6b51fd91f7e9c7cc7f4463524a365a706d0411128e3"
+  },
+  "review_digest": "d026d2a009c45c0608f2ce987c304b69b7dbd6d5d7e2c383278d0572f5470738"
+}

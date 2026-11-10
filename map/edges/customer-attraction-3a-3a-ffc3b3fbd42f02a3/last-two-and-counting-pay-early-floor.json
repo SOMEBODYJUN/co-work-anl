@@ -1,0 +1,69 @@
+{
+  "edge_id": "ca-r33-last-two-and-counting-pay-early-floor",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-LAST-TWO-FLOOR",
+    "customer-attraction/last-slot-value-and-catalog-counting",
+    "CA-THREE-SHARP-5-3"
+  ],
+  "target_ids": [
+    "M-837fb8766b1f4b77ad33225a292f0d27"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一原有限单位客户共同目录完整 SPE，m≥3。真实节点 i≤m−2。三人福利仅在原根、零外加背景取用。",
+  "roles": {
+    "CA-LAST-TWO-FLOOR": "给任意合法尾前缀中末两人各自收益下界",
+    "customer-attraction/last-slot-value-and-catalog-counting": "把该下界以合法前缀嵌入至原总人数并给 O/(2m−1)",
+    "CA-THREE-SHARP-5-3": "给恰三人零背景根 W≥3O/5",
+    "M-837fb8766b1f4b77ad33225a292f0d27": "结合最大主题容量求全早期真实节点下界及三人根推论"
+  },
+  "explanation": "在 h 强制最大题 A 后沿同一原策略到叶，偏离收益 z≤t。终局容量按最大主题与其余主题外块计数，W′−M≤Σ_{x∈A}(m−c_x)。对整数 c∈[1,m]，m−c≤(m−1)(m/c−1)，故 W′≤m(m−1)z−(m−2)M。该叶中末两人各≥L=O/(2m−1)，真正后继另外 m−i−2 人各≥M/m，过去收益非负。合并得到 [m(m−1)−1]t≥2L+[m−2+(m−i−2)/m]M。根取 i=1、M≥O/m，给所列闭式；m=3 有 u1≥11O/75。三人锐界给 O−W≤2O/5<3u1（O>0）。",
+  "scope": "任意合法早期有序前缀，任意离轨平局。最后的净缺口判断仅用于三人根。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最大主题终局容量与早期真实节点保底--引理.md",
+      "sha256": "0f652b0455214f740462eca80815b6d9fb6049e0b27cc54bd9a00569f05374a6"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末两人逐人保底与全人数弱福利界--定理.md",
+      "sha256": "204030503c37b18f8d26ce664b9cb99afc688fed77c8221a00cf0d8d7b21b34b"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md",
+      "sha256": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/三人锐福利界--定理.md",
+      "sha256": "d69eaae8ac102a799364b8050962d26628d6a38e23f813225c74bb5facdb7fae"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/R-373d背景支撑分支缺口与三价模板精确障碍--障碍.md",
+      "sha256": "cf49f19e387bfde165b976c0133613424b5ff10a26bb03944b4de12bda96d39e",
+      "section": "精确代数审计"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核了容量不等式的整数域、同一强制叶及只给真实后继的下界。两个 in-packet 比较各有实质角色。",
+  "whole_result": "证明所登记的全早期 B_i、根闭式下界及三人 O−W<3u1 的正 O 推论，O=0 为非严格端点。",
+  "endpoint_pins": {
+    "CA-LAST-TWO-FLOOR": "ac27b3c3c7d9e7ef7b09029a442931c402af6718aaa86500f0f8e3d303d226e1",
+    "CA-THREE-SHARP-5-3": "bbbc121600f38b94932c4f34bdbc08126257503e6ca734524727516428cd1a63",
+    "M-837fb8766b1f4b77ad33225a292f0d27": "5ea13a0718d0804a59864e3f9b38bbdc81e6fe678452cbbb913e605a40849d39",
+    "customer-attraction/last-slot-value-and-catalog-counting": "5b963d828efa40aaa81e50a9a4937656777103dfa5ab0414369926b475f1585e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/引理/最大主题终局容量与早期真实节点保底--引理.md": "0f652b0455214f740462eca80815b6d9fb6049e0b27cc54bd9a00569f05374a6",
+    "archives/customer-attraction/state/定理/末两人逐人保底与全人数弱福利界--定理.md": "204030503c37b18f8d26ce664b9cb99afc688fed77c8221a00cf0d8d7b21b34b",
+    "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d",
+    "archives/customer-attraction/state/定理/三人锐福利界--定理.md": "d69eaae8ac102a799364b8050962d26628d6a38e23f813225c74bb5facdb7fae",
+    "archives/customer-attraction/state/障碍/R-373d背景支撑分支缺口与三价模板精确障碍--障碍.md": "cf49f19e387bfde165b976c0133613424b5ff10a26bb03944b4de12bda96d39e"
+  },
+  "review_digest": "7a150cb132402a706ed92cd0ef5eaf1c5cefff2467a8d683e290f8c1fc73f4a1"
+}

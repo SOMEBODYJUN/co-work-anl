@@ -1,0 +1,47 @@
+{
+  "edge_id": "ca-r33-sparse-count-seed-refutes-onpath-half-cone",
+  "kind": "refutes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/sparse-count-spe-seed-onpath-half-cone-unbounded-obstruction"
+  ],
+  "target_ids": [
+    "M-83ef40f6c2414750aa1a10f4927cace3"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、共同带标签目录和同一完整有序策略。种子可稀疏，非负重赋权可改变客户类型支撑。",
+  "roles": {
+    "customer-attraction/sparse-count-spe-seed-onpath-half-cone-unbounded-obstruction": "明示原全历史合法 SPE 种子、同一计数策略和只保在轨 IC 的严格分离点",
+    "M-83ef40f6c2414750aa1a10f4927cace3": "要求每个具真实 SPE 种子的完整策略，在可改变支撑的非负重权下仅凭在轨 IC 支付每个比较元组"
+  },
+  "explanation": "取 g≥3，m=k=2^g−1。在实际路径依次使用 g 个不同标签，块长为 2^(g−1),…,1。对每个实际前缀计数 v_a，强制非指定标签 t 后在计数 v_a+s e_t 的各非终局状态继续选 t。实际下一步增加另一坐标，故该射线不触实际路径。若两射线相交，按前缀长度 a≤b 写成 s e_t=(v_b−v_a)+u e_z，非负坐标与 u>0 迫 t=z，指定动作一致。其余计数任选合法动作。原种子仅一名全兴趣单位客户，所以所有历史的所有行动在同一策略下均给当前玩家 1/m，完整 SPE 成立。改为每标签一个独占单位客户。在轨块长 c 的玩家得 1/c，剩余 r≥c，强制标签 t 后沿同一策略的偏离收益 1/(r+p_t)≤1/c。全部在轨 Γw≥0。实际 W=g，比较元组各选一次全部标签，O_J=m。g=3 给 2W−O_J=−1，令 c_σ 为根实际覆盖行。若有非负 λ,η 表示 2c_σ−o_J=Γ_onpathᵀλ+η，与该非负 w 内积将迫其非负，矛盾。",
+  "scope": "精确否定 v2 宽合同，且 m=k、策略按计数。种子支撑为全兴趣类型，重权支撑为单标签类型。严格全支撑种子与新支持包含在原支持的版本仍开放。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/稀疏计数均衡种子的在轨半覆盖锥无界障碍--障碍.md",
+      "sha256": "19e95306ca230c2ed34ea176eae8e52dd0eec31a99c91555baeacc74417a6bea"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/真实计数策略的在轨半覆盖锥原探针--资源.md",
+      "sha256": "50c3549bd1152f95ecce194dd62d6ccde6ee89407883c815bb3467e155918f74"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "独立核对 g=3..6 的计数射线和全部在轨行，普遍 g 由计数单调及块长论证承担。该策略对全类型严格正种子无法成立，两个非首位主题 T,U 的纯计数末层比较分别要求 a/m≥b、b/m≥a，其中两独占量 a,b>0。种子的全树SPE资格与坏重权的在轨资格分别核对。",
+  "whole_result": "存在原单位种子上确为完整纯SPE的同一固定计数策略，其非负整数重权满足全部在轨真实IC而 2W<OPT_m，否定可改变支持时的逐目标在轨非负证书。该族的 OPT_m/W 无界。",
+  "endpoint_pins": {
+    "M-83ef40f6c2414750aa1a10f4927cace3": "d0fc436fe42615133d41e1289247bdc7903bd431ba3a444968041150b44de658",
+    "customer-attraction/sparse-count-spe-seed-onpath-half-cone-unbounded-obstruction": "0cb390710057f12ccda9d8709e41f20336af8680cf1a5143feecf3c2319370f9"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/稀疏计数均衡种子的在轨半覆盖锥无界障碍--障碍.md": "19e95306ca230c2ed34ea176eae8e52dd0eec31a99c91555baeacc74417a6bea",
+    "archives/customer-attraction/state/资源/真实计数策略的在轨半覆盖锥原探针--资源.md": "50c3549bd1152f95ecce194dd62d6ccde6ee89407883c815bb3467e155918f74",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "d766472d2f28c508e69e571af5afa2cc3a312b59a84874d6fa13ab3dc0075d06"
+}

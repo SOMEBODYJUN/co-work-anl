@@ -1,0 +1,52 @@
+{
+  "edge_id": "ca-r33-shapley-integral-pays-monochrome-global-potential",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-c81148ab9bca4553bd1b73e97b080e81"
+  ],
+  "target_ids": [
+    "M-39089a04f9444753a75cc06873542b82"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "r≥1，同一静态竞争背景固定；对任意有限非负客户质量 w_x 和 b_x≥0，或更一般逐 t 取有限归零单调次模 C_t 且积分有限。",
+  "roles": {
+    "M-c81148ab9bca4553bd1b73e97b080e81": "给以各标签独立出现概率写共同 Shapley 势的积分形式",
+    "M-39089a04f9444753a75cc06873542b82": "给任意真实外生背景下单色静态 PNE 的全局势最大化"
+  },
+  "explanation": "令 t∈(0,1)，C_t(S)=Σ_{x∈∪S}w_x t^{b_x}。对 r 个带身份槽各以概率 1−t 独立选入，标签支持的出现率恰为 1−t^{q_a}；积分 E[C_t]/(1−t) 对每个客户给 w_x∫t^{b_x}(1−t^{c_x})/(1−t)dt= w_x Σ_{j=1}^{c_x}1/(b_x+j)，即原背景势。令 K_t=C_t({B})、d_t(T)=C_t({B,T})−K_t。B^r 的单槽改 T 的势差是 ∫[t^{r−1}(C_t(T)−K_t)+(1−t^{r−1})d_t(T)]dt。任意 r 槽候选均匀取 k 个槽，记全槽的 C_t(T), d_t(T) 均值为 C̄_t,d̄_t。k=1 的比较势被积差为 β_1(C̄_t−K_t)；k≥2 由单调次模给 C_t(子槽支持)≤K_t+Σ_{选槽}d_t(T)，故差至多 kβ_k d̄_t。β_k=binom(r,k)(1−t)^{k−1}t^{r−k}，β_1=rt^{r−1} 且 Σ_{k≥2}kβ_k=r(1−t^{r−1})。积分总差至多 r 个静态单槽替换势差之和，PNE 使每项非正。若真有序尾单色，在同一固定旧背景下其末位 BR 恰给上述单槽 PNE 条件。",
+  "scope": "完整原任意逐客背景的定理。对 C_t≡C 也给零外加背景的抽象单调次模 Shapley 势扩张。PNE 仅要求每条比较积分非正。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+      "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+      "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+      "section": "全域构造和收益积分"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md",
+      "sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129",
+      "section": "单色税的实际义务和可独立使用的静态势引理"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md",
+      "sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "用二项槽抽样核逐 t 共同系数，未把总 PNE 偷换成逐 t 假设。可另按固定基集逐客户核单替换成本，结论仍只在同背景。",
+  "whole_result": "任意非负实背景及 r，若静态 r 人全选 B 为 PNE，则 B^r 在全部 r 槽合法主题元组上全局最大化原调和势。单色真实尾的末位最佳回复给同背景 PNE 条件。",
+  "endpoint_pins": {
+    "M-39089a04f9444753a75cc06873542b82": "dad75f445713abab0f516a06336a36051bd1721eccfe0c0b5dc14d4feaec236c",
+    "M-c81148ab9bca4553bd1b73e97b080e81": "5161f546ac32f02ecb11a141b839bf3ff5e03be8bc10342355bccd68a7a59f85"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+    "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129"
+  },
+  "review_digest": "bc91c7ba710149d10f88cf644564d9ff97786420dae23e2efb9a564522dfe86c"
+}

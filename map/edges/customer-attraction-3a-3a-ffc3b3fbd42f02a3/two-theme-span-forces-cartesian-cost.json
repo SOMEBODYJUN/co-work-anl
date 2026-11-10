@@ -1,0 +1,40 @@
+{
+  "edge_id": "ca-r33-two-theme-span-forces-cartesian-cost",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-9d0e0fa7b2d34f3b857c08013cb4039e"
+  ],
+  "target_ids": [
+    "CA-R0F997-TWO-THEME-CARTESIAN-REPAIR-20261030"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "根部每个旧标签均能配同一个保险标签。每个根孩子内旧坐标保持原真实续局，保险坐标独立；比较的是固定原计划的根缺陷。",
+  "roles": {
+    "M-9d0e0fa7b2d34f3b857c08013cb4039e": "限制固定同一保险根动作的可实现根收益差",
+    "CA-R0F997-TWO-THEME-CARTESIAN-REPAIR-20261030": "给按真实旧根缺陷修复并保留旧路径的构造及成本"
+  },
+  "explanation": "根实际 (A,Z) 与最大旧偏离 (B*,Z) 共享保险根 Z。旧收益差为 Δ，若整根已为 SPE，就要求两份保险尾部使同一 Z 的收益差至少 Δ。跨度至多 C/(m+1)，所以任何该类修复要 C≥(m+1)Δ。对花瓣 x+y>0，X 候选 k 与改 Y 后的最低 y/(m−L_Y) 比，Y 候选 k 与改 X 后的最低 x/U_X 比，L_Y 与 U_X 分别为相应孩子的 X 次数最小与最大。裁剪端点由这两个比较保持。若 x=y=0 仅公共客户，所有终局计数可实现而收益跨度为零。",
+  "scope": "独立两主题架构的必要成本，与原构造 s=Δ 的实际成本吻合。无一般多主题最小成本结论。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/两主题笛卡尔根修复及成本下界--定理.md",
+      "sha256": "a289c9804268789aaca1178a74a64ea1e740032919593261270ecdcea3c487fd"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复核 v2 式(5) 的两个最低可信替代收益 x/U_X、y/(m−L_Y) 与零花瓣。独立集合值递推核对 254448 个前缀和 5472 个同根跨度。裁剪归纳承担全量词，有限检查另作复核。",
+  "contribution": {
+    "result": "证明构造的成本 (m+1)Δ 在同一独立两主题笛卡尔架构内最小。",
+    "remaining": "根修复的存在、真实全树续局与 W、OPT 平移仍由具体构造承担。"
+  },
+  "endpoint_pins": {
+    "CA-R0F997-TWO-THEME-CARTESIAN-REPAIR-20261030": "f63e1414242bb44993698d6081e9790509cc21c2768924c2ffc424d3c7410185",
+    "M-9d0e0fa7b2d34f3b857c08013cb4039e": "b3eec1972d011ed223917b12321b5321c054cb3cdd7c43063520734a5e143384"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/两主题笛卡尔根修复及成本下界--定理.md": "a289c9804268789aaca1178a74a64ea1e740032919593261270ecdcea3c487fd"
+  },
+  "review_digest": "35b13c4112011cb8c4dfe7b50b325e2a1c4dfe6e2259c7c4c7efacfb1b407473"
+}

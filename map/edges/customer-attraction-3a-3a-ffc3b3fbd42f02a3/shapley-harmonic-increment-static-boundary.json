@@ -1,0 +1,41 @@
+{
+  "edge_id": "ca-r33-shapley-harmonic-increment-static-boundary",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-c81148ab9bca4553bd1b73e97b080e81"
+  ],
+  "target_ids": [
+    "customer-attraction/actual-coverage-and-overlapping-optimal-catalog-static-harmonic-boundary"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "真实覆盖集合 C(S)=Σ_B w_B k_S(B)，固定同一实际计数 q 与比较计数 d。",
+  "roles": {
+    "M-c81148ab9bca4553bd1b73e97b080e81": "给真实非负 coverage 的全计数调和势",
+    "customer-attraction/actual-coverage-and-overlapping-optimal-catalog-static-harmonic-boundary": "给唯一最优并集仍需额外调和信用的精确静态族"
+  },
+  "explanation": "积分按类型线性即 Φ(q)=Σ_B w_B H_{q(B)}。因此目标的 B_h(c,d) 恰为同一势 Φ(q+d)−Φ(q)。静态族中比较并集重复共有核心，其增量超过 W+G 的量是 |K|(H_m−1)>0；原 actual 末位由 A_m 改比较题即可严格增加收益。因此全层势性质和静态 OPT/half 都在该例兼容，无法单靠它们支付动态调和预算。",
+  "scope": "只作势到同一静态差额的精确语境桥，原终局不是真SPE。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+      "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/实际覆盖与重叠最优目录的静态调和边界--资源.md",
+      "sha256": "fbec04d58e0bcd653081085b1ea5fcb12ab01538733f4104bd5690d1f81436e2"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "保同一最优元组、比较题重复会员位和全部最优排列；无客户价值搬到另一枝。",
+  "endpoint_pins": {
+    "M-c81148ab9bca4553bd1b73e97b080e81": "5161f546ac32f02ecb11a141b839bf3ff5e03be8bc10342355bccd68a7a59f85",
+    "customer-attraction/actual-coverage-and-overlapping-optimal-catalog-static-harmonic-boundary": "5aa29259d3add6ae0896aac68464aebf89e8e8d8e1a9ae513fe6bfb7530efa1d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+    "archives/customer-attraction/state/资源/实际覆盖与重叠最优目录的静态调和边界--资源.md": "fbec04d58e0bcd653081085b1ea5fcb12ab01538733f4104bd5690d1f81436e2"
+  },
+  "review_digest": "955eb5d84b087d023f9dc5cf5502379a587f3cccf8975de487ac77b14ad2ac77"
+}

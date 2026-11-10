@@ -1,0 +1,81 @@
+{
+  "edge_id": "ca-r33-selector-versus-minimum-bridge",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-1150d9b3be9545b5973fbf1d8da53965"
+  ],
+  "target_ids": [
+    "M-942e12ff254c45b68d3d732c1d45e68e"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "用同一份小或大三人四标签证书，分别核两个不同目标。",
+  "roles": {
+    "M-1150d9b3be9545b5973fbf1d8da53965": "供严格唯一完整 SPE 的末位平均选择器反例",
+    "M-942e12ff254c45b68d3d732c1d45e68e": "另有全位置最低收益支付的开放目标"
+  },
+  "explanation": "小、大证书的最后收益分别超过 W/3 达 1/6。其最小收益却分别为 5、44/3，且 W+2min(u)−O 分别为 10、76/3。故这两份 exact witness 只排目标选择器，对 min 收益支付不产生负差。",
+  "scope": "比较同输入上的两个桥。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/R-3b6b最后平均选择严格SPE边界与最小支付搜索--障碍.md",
+      "sha256": "262f8e2a1bdd5f5bfff6875e728b992799c2469df7f9fff3321422f1780e244a"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-3b6b-potential-exchange-20261031/source/last_average_selection_small_certificate.json",
+      "sha256": "332d0581e6479e1f5f0dc174b9c7d45cab37be452bab4be34acf6c024c4e76d1"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-3b6b-potential-exchange-20261031/source/last_average_selection_certificate.json",
+      "sha256": "23946df3a71a23c86980be8b7e5ba3abc6b2d9c432897d4e60e76e1a532bc57d"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-3b6b-potential-exchange-20261031/source/audit_last_average_selection.py",
+      "sha256": "5e680672e864efc3940e126258d575e4deaf6e4ceb7b7891b08a9efb506af444"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-3b6b-potential-exchange-20261031/source/last_average_selection_independent_audit.json",
+      "sha256": "8607ad57fe3ad30a5fbe752af39c5cede518b89f611d5832335a7154f3efb05d"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-3b6b-potential-exchange-20261031/replay/verify_potential.stdout",
+      "sha256": "166c470922c50f6a4cc3a7d85ce48ab740a60a78aa023af4c2da78bcad40d452"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-3b6b-potential-exchange-20261031/source/min_payoff_lp_search.py",
+      "sha256": "dda10d0b8205b90f507fbdf1ead08fa940b276d40e13f1ccb44aab6cce78f22d"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-3b6b-potential-exchange-20261031/source/min_payoff_lp_discovery.json",
+      "sha256": "028ba23d2b6af6585d7dfdfa0bd666530f09a69fc67d31c38d48777438defd3d"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-3b6b-potential-exchange-20261031/source/min_payoff_k5_m3_discovery.json",
+      "sha256": "93dfc237474fe73f16460a8e10f09a6a8474fce24a226e7263d4dfe002da32db"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-3b6b-potential-exchange-20261031/replay/min_payoff_smoke.json",
+      "sha256": "9a332efa7bbc1b32125bc964bd3f075752af4d6089248e68dd3d841797c661bb"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "新 Fraction 重放两份固定策略各21历史63非自身全部严格，均最小1/6；独立集合值BI亦确认唯一根终局与唯一完整纯SPE。原最小桥搜索只读报告，未跑浮点 LP。",
+  "endpoint_pins": {
+    "M-1150d9b3be9545b5973fbf1d8da53965": "6c36136367cf1cf0303fc8b1b0cc29cb3806f69be8e37efed0a04d61a380ddb3",
+    "M-942e12ff254c45b68d3d732c1d45e68e": "8127274ec3d67d6cb00561525d40f2b62a732f0b17423e88e2d2cfe7aa69f3dd"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/R-3b6b最后平均选择严格SPE边界与最小支付搜索--障碍.md": "262f8e2a1bdd5f5bfff6875e728b992799c2469df7f9fff3321422f1780e244a",
+    "archives/customer-attraction/tools/evidence/R-3b6b-potential-exchange-20261031/source/last_average_selection_small_certificate.json": "332d0581e6479e1f5f0dc174b9c7d45cab37be452bab4be34acf6c024c4e76d1",
+    "archives/customer-attraction/tools/evidence/R-3b6b-potential-exchange-20261031/source/last_average_selection_certificate.json": "23946df3a71a23c86980be8b7e5ba3abc6b2d9c432897d4e60e76e1a532bc57d",
+    "archives/customer-attraction/tools/evidence/R-3b6b-potential-exchange-20261031/source/audit_last_average_selection.py": "5e680672e864efc3940e126258d575e4deaf6e4ceb7b7891b08a9efb506af444",
+    "archives/customer-attraction/tools/evidence/R-3b6b-potential-exchange-20261031/source/last_average_selection_independent_audit.json": "8607ad57fe3ad30a5fbe752af39c5cede518b89f611d5832335a7154f3efb05d",
+    "archives/customer-attraction/tools/evidence/R-3b6b-potential-exchange-20261031/replay/verify_potential.stdout": "166c470922c50f6a4cc3a7d85ce48ab740a60a78aa023af4c2da78bcad40d452",
+    "archives/customer-attraction/tools/evidence/R-3b6b-potential-exchange-20261031/source/min_payoff_lp_search.py": "dda10d0b8205b90f507fbdf1ead08fa940b276d40e13f1ccb44aab6cce78f22d",
+    "archives/customer-attraction/tools/evidence/R-3b6b-potential-exchange-20261031/source/min_payoff_lp_discovery.json": "028ba23d2b6af6585d7dfdfa0bd666530f09a69fc67d31c38d48777438defd3d",
+    "archives/customer-attraction/tools/evidence/R-3b6b-potential-exchange-20261031/source/min_payoff_k5_m3_discovery.json": "93dfc237474fe73f16460a8e10f09a6a8474fce24a226e7263d4dfe002da32db",
+    "archives/customer-attraction/tools/evidence/R-3b6b-potential-exchange-20261031/replay/min_payoff_smoke.json": "9a332efa7bbc1b32125bc964bd3f075752af4d6089248e68dd3d841797c661bb"
+  },
+  "review_digest": "d4531a380ddc8d0125950777f6bf3f4f13b70f83b23f65df7e069fdf6768497c"
+}

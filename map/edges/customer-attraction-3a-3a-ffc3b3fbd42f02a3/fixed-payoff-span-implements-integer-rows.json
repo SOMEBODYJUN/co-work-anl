@@ -1,0 +1,58 @@
+{
+  "edge_id": "ca-r33-fixed-payoff-span-implements-integer-rows",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-FIXED-M-PAYOFF-SPAN"
+  ],
+  "target_ids": [
+    "customer-attraction/integer-boolean-rows-fixed-player-terminal-payoff-interface"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定 n≥2，合法 a,c，来自同一个非负全客户类型数组。任意整数 b_a 可正可负。",
+  "roles": {
+    "CA-FIXED-M-PAYOFF-SPAN": "给任意合法支持覆盖行的固定人数份额和表示",
+    "customer-attraction/integer-boolean-rows-fixed-player-terminal-payoff-interface": "给全目录整数二次非负行及真实同人数收益接口"
+  },
+  "explanation": "对单标签纯计数 ne_a，固定人数份额和给 C(a)=nU_a(ne_a)。对 (n−1)e_a+e_c，得 C(ac)=(n−1)U_a+U_c。I_ac=C(a)+C(c)−C(ac)。将以上替换进 Q_b。对同一类型 B，z=Σ_{a∈B}b_a∈Z，利用 Boolean 平方等于自身，行系数是 z(z−1)/2≥0。逐类型按同一非负重数求和即得。",
+  "scope": "把整目录二次必要行完全写成同一总人数的真实终局份额，无 SPE 假设。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/固定人数完整策略的覆盖矩表示--定理.md",
+      "sha256": "222ef98eb3d53d64e911c818fbe7a02187e78a39afeeb6dcc7c6cbfea9f4b76e"
+    },
+    {
+      "path": "archives/customer-attraction/state/方法/整数二次客户行的固定人数收益接口--方法.md",
+      "sha256": "3261cfc9a2c4d02feb3b36549b0fb8784fad6f971515be3e9a560d8da52f5706"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/整数二次粘合原审计与工作区元资料--资源.md",
+      "sha256": "ee0eafe85c8927a4def080dee1d92c0e5f3fefe3e24a84131f720dffb42f904d"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/二阶覆盖矩的带根割锥与整数二次行--定理.md",
+      "sha256": "c4fc2a106025ae4b5598b1259d19d49af1bcdf2dec2ca2cb37d04930d8391b37",
+      "section": "全部整数二次有效行"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/共同客户正锥研究账本的命题与审计合同--资源.md",
+      "sha256": "bf5cbf4e57c97e239b2abda113f773a97eb37b3e40bfcc635dcba0d8ea142f15"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "二阶可见行是必要约束。局部客户实现不能替代共同全目录质量，整树半覆盖乘子仍须另给。",
+  "whole_result": "证明任意整数 b 的 Q_b 非负，且用真实同人数合法单标签和双标签终局的收益恢复全部 Q_b。",
+  "endpoint_pins": {
+    "CA-FIXED-M-PAYOFF-SPAN": "4ae5f18caa8065b65b03bbfa46d8fa6b4e3346e18eab43544e070fdf2bd678b8",
+    "customer-attraction/integer-boolean-rows-fixed-player-terminal-payoff-interface": "9e0661d338169abf42f83497a8ecd54a1d6c1dab25a859610b55486a3dc39632"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/固定人数完整策略的覆盖矩表示--定理.md": "222ef98eb3d53d64e911c818fbe7a02187e78a39afeeb6dcc7c6cbfea9f4b76e",
+    "archives/customer-attraction/state/方法/整数二次客户行的固定人数收益接口--方法.md": "3261cfc9a2c4d02feb3b36549b0fb8784fad6f971515be3e9a560d8da52f5706",
+    "archives/customer-attraction/state/资源/整数二次粘合原审计与工作区元资料--资源.md": "ee0eafe85c8927a4def080dee1d92c0e5f3fefe3e24a84131f720dffb42f904d",
+    "archives/customer-attraction/state/定理/二阶覆盖矩的带根割锥与整数二次行--定理.md": "c4fc2a106025ae4b5598b1259d19d49af1bcdf2dec2ca2cb37d04930d8391b37",
+    "archives/customer-attraction/state/资源/共同客户正锥研究账本的命题与审计合同--资源.md": "bf5cbf4e57c97e239b2abda113f773a97eb37b3e40bfcc635dcba0d8ea142f15"
+  },
+  "review_digest": "1a5a157a0087496ab216c3b0009e6f29f7590ba1f3dc1a4f5cf80da2a809059c"
+}

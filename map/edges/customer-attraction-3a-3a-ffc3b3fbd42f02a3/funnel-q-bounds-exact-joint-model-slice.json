@@ -1,0 +1,50 @@
+{
+  "edge_id": "ca-r33-funnel-q-bounds-exact-joint-model-slice",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/four-player-eight-label-funnel-arbitrary-background-first-pair-security-certificate"
+  ],
+  "target_ids": [
+    "customer-attraction/full-ordered-history-first-pair-static-security-joint-milp-probe"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取 m=4、k=8、P=0456，零外加背景，任意固定合法查询概率 p。额外固定联合模型所有动作变量为同一漏斗规则。",
+  "roles": {
+    "customer-attraction/four-player-eight-label-funnel-arbitrary-background-first-pair-security-certificate": "供固定四人八标签完整漏斗策略任意背景共同 Q",
+    "customer-attraction/full-ordered-history-first-pair-static-security-joint-milp-probe": "供联合客户质量与有序动作的精确整数可行域"
+  },
+  "explanation": "在此切片，所有精确二元可行点的客户质量使漏斗 σ 为完整 SPE。u1+u2=1 时，逐查询 f012+f023≤1；对任意固定 p 平均，两个合法静态背景中至少一个的期望≤1/2，故联合约束给 t≤1/2。仅全兴趣型质量2时任意有序动作收益均 1/2，满足固定路径和全部模型约束，且 t=1/2。由此该固定策略切片的精确最大值 2t=1。",
+  "scope": "只给联合整数模型一块四人固定 σ 的精确上界及取等。任意实背景的证书在取零背景后进入本原模型。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/首对安全值的全历史联合整数探针--程序.md",
+      "sha256": "a029079d52e095f1a7446d864136fa6b39ba5ccf846fcf6e6dcb410dac918d4d"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/四人八标签漏斗策略的全背景首对安全证书--定理.md",
+      "sha256": "d65c97997483b0ee4fec67dc16e93d835c8fab5890228e05fa93399f552edeb2"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/funnel-pair-and-joint-milp-four-primary/README.md",
+      "sha256": "da9972b8f844961b2ccccf1a4a9b1975a3d92dc8564ee51a282bc6f674051736"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "另以整数多项式重构 8192 系数和26个单位乘子。定理的 Q 保三个竞争槽，不能用于额外槽 PB。",
+  "contribution": {
+    "result": "四人八标签漏斗动作全部固定且原根背景为零时，对每个查询分布精确求得该联合模型切片的最优 2t=1。",
+    "remaining": "联合模型中其余动作变量仍自由，三人六标签限时点也属不同参数；一般首对与全位置安全值未得到上界。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/four-player-eight-label-funnel-arbitrary-background-first-pair-security-certificate": "6824a316cde90360f7dd2f58d87701716ecbee10522f7f3595b408454e84a8a4",
+    "customer-attraction/full-ordered-history-first-pair-static-security-joint-milp-probe": "0dac510a897efbb66eda45b97c4b4de0d71b5af7a7fe8c5e88e9fe9b7afe9c82"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/首对安全值的全历史联合整数探针--程序.md": "a029079d52e095f1a7446d864136fa6b39ba5ccf846fcf6e6dcb410dac918d4d",
+    "archives/customer-attraction/state/定理/四人八标签漏斗策略的全背景首对安全证书--定理.md": "d65c97997483b0ee4fec67dc16e93d835c8fab5890228e05fa93399f552edeb2",
+    "archives/customer-attraction/tools/evidence/funnel-pair-and-joint-milp-four-primary/README.md": "da9972b8f844961b2ccccf1a4a9b1975a3d92dc8564ee51a282bc6f674051736"
+  },
+  "review_digest": "1710414c50329de4442d8d49a934b4e4377379556169539117495ff6393d4aaa"
+}

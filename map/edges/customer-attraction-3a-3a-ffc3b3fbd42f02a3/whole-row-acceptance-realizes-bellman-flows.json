@@ -1,0 +1,50 @@
+{
+  "edge_id": "ca-r33-whole-row-acceptance-realizes-bellman-flows",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/customerwise-free-acceptance-and-cumulative-tax-whole-row-payment"
+  ],
+  "target_ids": [
+    "customer-attraction/free-query-and-free-start-unit-procurement-prices"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一完整 SPE，查询必须为含 x 的合法主题，允许严格未来分配但没有共享客户或角色容量。",
+  "roles": {
+    "customer-attraction/customerwise-free-acceptance-and-cumulative-tax-whole-row-payment": "证明不同客户与父来源汇总后买同一条真实整行 IC",
+    "customer-attraction/free-query-and-free-start-unit-procurement-prices": "求固定真实菜单上的自由查询、起点与净源价格"
+  },
+  "explanation": "对每个 (i,x) 固定一个达到 V_i 最小值的合法查询，给任意父来源相同规则，角色递增使流全部吸收。每一单位源的实际吸收费用逐节点等于 u_i/[D_i(a)(1+|F|)]。把所有客户在相同 (i,a) 的吸收 A_{i,a} 合并，系数 A_{i,a}/D_i(a) 乘原完整一行即可购买这笔费用。故分别算出的最低价可以共存于同一合法整行系统，且保 M=ΣA 和总费用 Σq_xκ_x。",
+  "scope": "固定真实菜单的无容量等份路由实现。保留客户守恒、固定起点最优和客户间叠加。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/客户级自由接纳与累积税的整行付款--算法.md",
+      "sha256": "2379c4569765f7212ab5f0d86ece07088f94a834468d6da8d10795198056d3e8"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/自由查询与自由起点的单位采购价格--算法.md",
+      "sha256": "f2625f5fe2b75eca2a5ee44f87d42e2e45e3fe9d89f7bb87b2c3746b803db130"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/全角色运输与联合激活的历史审查边界--审查.md",
+      "sha256": "b3b14cf74a6cef9c0101be4afce8899245f4f507c8871ffdcd4efcd088fef751"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核了零流时 A/D 的约定、触达查询 D>0 与不同来源合流。逐角色容量不是该路由的免费结论。",
+  "contribution": {
+    "result": "落实所有逐客户 Bellman 最小价的共同实现，并明确单一整行系数和流量守恒。",
+    "remaining": "Bellman 下界与最低 δ 价的排序由目标的逆推和交换证明承担；共同 W 预算尚未支付。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/customerwise-free-acceptance-and-cumulative-tax-whole-row-payment": "96b80e262248b628daf7a6d1091a69e358019c9382e3e8ceb47ab0c528b6d1e6",
+    "customer-attraction/free-query-and-free-start-unit-procurement-prices": "f9232055a12b4d3a5acb4fc1194b32e29ccb1cb956a17e8cb18b59048453a289"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/客户级自由接纳与累积税的整行付款--算法.md": "2379c4569765f7212ab5f0d86ece07088f94a834468d6da8d10795198056d3e8",
+    "archives/customer-attraction/state/算法/自由查询与自由起点的单位采购价格--算法.md": "f2625f5fe2b75eca2a5ee44f87d42e2e45e3fe9d89f7bb87b2c3746b803db130",
+    "archives/customer-attraction/state/审查/全角色运输与联合激活的历史审查边界--审查.md": "b3b14cf74a6cef9c0101be4afce8899245f4f507c8871ffdcd4efcd088fef751"
+  },
+  "review_digest": "ca8e4bfaed4bdd6bf531a90e1f0702c2f20f5962aedfd7c51cf0d622a3a8b76f"
+}

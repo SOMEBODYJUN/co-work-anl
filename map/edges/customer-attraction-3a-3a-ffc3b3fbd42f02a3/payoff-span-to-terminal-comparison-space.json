@@ -1,0 +1,37 @@
+{
+  "edge_id": "ca-r33-payoff-span-to-terminal-comparison-space",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-FIXED-M-PAYOFF-SPAN"
+  ],
+  "target_ids": [
+    "CA-TERMINAL-COMPARISON-SPAN"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限非空标签集、正整数人数 m、全非空 Boolean 兴趣域、任意完整有序形式策略。",
+  "roles": {
+    "CA-FIXED-M-PAYOFF-SPAN": "给固定人数所有份额行的空间 V_m 与维数",
+    "CA-TERMINAL-COMPARISON-SPAN": "确定任意完整形式策略的末层和全树比较张成及根归一"
+  },
+  "explanation": "设 Φ_q(B)=H_{q(B)}。对支持 S 非空的 q，独立取 R⊆S，各标签 a 以概率 1−t^{q_a} 入 R，积分 E[k_R(B)]/(1−t) 得 Φ_q。每个非空 R⊆S 系数严格为正，故各支持选一个人数 m 计数，按包含关系得到带非零对角的三角系统，其势行张成 V_m。对于任一末层前缀计数 r，真实比较是 Φ_{r+e_s}−Φ_{r+e_b}，完整动作星形差张成该前缀全部成对差。人数 m 的单位转移计数图连通，故汇总得到全部同层势差。每个 Φ_q(P)=H_m>0，故零全兴趣值的任意线性组合恰是势差组合。由收益行空间，任何早期真实比较仍在 V_m 且全兴趣值为零。根行在 P 取1，补齐唯一缺失方向。",
+  "scope": "比较的是行数值和带符号线性空间。允许空、别名、重复和有序平局。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/固定人数完整策略的覆盖矩表示--定理.md",
+      "sha256": "222ef98eb3d53d64e911c818fbe7a02187e78a39afeeb6dcc7c6cbfea9f4b76e"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核了全域 Boolean 基、每个末前计数均有合法有序历史、m=1 及 p=1 的退化维数。末层系数不被假定非负。",
+  "whole_result": "任意完整形式策略的末层及全树真实比较同张成 V_m 中在全兴趣型取零的超平面，余维一；加该策略的根覆盖行即张成 V_m。",
+  "endpoint_pins": {
+    "CA-FIXED-M-PAYOFF-SPAN": "4ae5f18caa8065b65b03bbfa46d8fa6b4e3346e18eab43544e070fdf2bd678b8",
+    "CA-TERMINAL-COMPARISON-SPAN": "93e1fe8c3de2ac527481eb3945b0b0c0cb5d30c37c7be2d74885e41f193dce70"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/固定人数完整策略的覆盖矩表示--定理.md": "222ef98eb3d53d64e911c818fbe7a02187e78a39afeeb6dcc7c6cbfea9f4b76e"
+  },
+  "review_digest": "9db9074d1dcd506b0601937d0e822e7059d98d9ed357b8c42544675e358de670"
+}
