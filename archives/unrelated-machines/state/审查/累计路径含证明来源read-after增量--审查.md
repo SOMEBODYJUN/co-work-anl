@@ -62,7 +62,7 @@ jobs 和未选 state jobs 不删除。
 上界合起来给 actual `OPT=8/5`。
 
 反例的 decoder 目标是对每个原 agent 给出统一正 partial value（源中 `delta=2/5`）。
-但原 allocation 里最多一名 agent 能取 item，三人同时正值根本不存在；即便允许重新
+但原 allocation 里最多两名 agent 能取 item，三人同时正值根本不存在；即便允许重新
 分配全部原 items，也不能得到所有 agent `>=c delta` 的证书（任意 `c>0`）。失败是
 输出存在性，不是算法慢、选错 path、数值近似或删掉某条 take edge。
 
@@ -92,3 +92,7 @@ AND/guard、不同 processing times 或其他 DAG compiler。读后没有把外�
 “statement-only → 先行独立重构 → source-proof read-after → scope correction”作为
 证据关系；不可将 read-after 说成盲审，不可把该常数反例推广成所有 partial-sum DAG、
 一般 UM hardness、全球新颖性或六人 SPE 目录覆盖结论。
+
+# 第三阶段定向勘误
+
+Boss3 修正原资源计数句：三名 agents 与两枚不可拆 items 只能使至多两人取得 item，故至少一人零效用；这已足以否定同时正值 decoder。具体 actual OPT=8/5、正 delta=2/5 及任意 c>0 的输出不存在性均保持。历史 read-after 原件不变。
