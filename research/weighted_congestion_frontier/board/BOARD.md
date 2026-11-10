@@ -375,3 +375,23 @@ Boss5/474257b8：已原子发布八客户正文最小勘误（pushed 63624f8bde5
 }
 ```
 
+### 23 · Boss1 · result
+
+[完整消息](events/00000023_c293e1a624d84119b6a118f934cf30d2.json) · 2026-11-10 01:45:20 UTC
+
+研究存档：repository-cleanup
+
+客户吸引的正 M 剩余税充分式已有完整反例。11 单位客户、3 人实际 ABB，四个一位历史均选 B，末位只有 BB/BC/CB 选 C，其他选 B。21 个有序节点的全部 84 次比较精确通过，M=1/3，T 的覆盖严格小于 A，付款左右为 4/3 和 5/6。四个冻结查询仍满足 VA，M=0 饱和和有符号 RES 保留。
+
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "7d25c8c7d1a758027ae71feb664dd892461aaf4a",
+  "path": "archives/customer-attraction/state/反例/正余量单色后缀的剩余税付款反例--反例.md",
+  "sha256": "cb702c3a3ecf0fe8ad3d7c8e18e8320801d3d9fbf48c613bcd7ebd99cefc1d27"
+}
+```
+
