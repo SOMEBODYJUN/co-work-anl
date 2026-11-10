@@ -1,0 +1,91 @@
+{
+  "source": {
+    "path": "archives/customer-attraction/state/引理/实际末对冻结查询的选择性钱包--引理.md",
+    "sha256": "b6ea62aa9df28a359d144f2d1698867a3e198b0fb1f9cf0f536ac8559ace3d2e"
+  },
+  "replacement_path": "map/edges/customer-attraction-3a-3a-c23a71b542af6d6b/wallet-cross-replacement.md",
+  "replacement_sha256": "68859ab933a4b9c39ee7e68e162c50ac239b437e315d315e6f527937c2531d8d",
+  "patch_path": "map/edges/customer-attraction-3a-3a-c23a71b542af6d6b/wallet-cross-correction.patch",
+  "patch_context_lines": 0,
+  "replacement_count": 1,
+  "old_sentence": "例如右边展开为 $F_b(R)-F_b(B)-\\gamma_b(R,T)+\\gamma_b(B,T)-\\gamma_b(B,A)+\\gamma_b(R,A)$；左边用同一分解展开完全相同。",
+  "new_sentence": "例如右边展开为 $-\\gamma_b(R,T)+\\gamma_b(B,T)-\\gamma_b(B,A)+\\gamma_b(R,A)$，其中两项 $F_b(R)-F_b(B)$ 与 $F_b(B)-F_b(R)$ 恰好相消；左边用同一分解展开完全相同。",
+  "independent_math": "δoff=F(R)−F(B)−γ(R,T)+γ(B,T)，δact=F(B)−F(R)−γ(B,A)+γ(R,A)，F项抵消。CROSS左边同样为−γ(R,T)+γ(B,T)−γ(B,A)+γ(R,A)。CROSS恒等式正确；三个真实IC的非负号、TW/PAY/RW/QT/EARLY?全部仍正确，无需降级引理、改数学ID或新增条件。",
+  "affected_registry_records": [
+    {
+      "object_id": "M-2a8a88d1fafa45b999f1506d22096df1",
+      "version": 3,
+      "registration_pin": "a381f20a9d1c7275f8c9962dd1e2e04f9bf4cd92d6e6da43ec8cc48430ccc4c6",
+      "refs": [
+        {
+          "field": "evidence[1]",
+          "section": null
+        }
+      ]
+    },
+    {
+      "object_id": "M-4a7ba157741b46e490b81e8727e4cef7",
+      "version": 1,
+      "registration_pin": "c9c8e451f76e9666ce71062a76bd43ce893fa8d44eaf31f505f3165a98da98ef",
+      "refs": [
+        {
+          "field": "evidence[1]",
+          "section": null
+        }
+      ]
+    },
+    {
+      "object_id": "M-8e8021b070bc40f9a38ef17dffb2bb97",
+      "version": 2,
+      "registration_pin": "0407c48018edb5868b02da03bc6786e4439a0b47d1a7adf96ee773785d3a151d",
+      "refs": [
+        {
+          "field": "evidence[6]",
+          "section": "同一有序实际前缀与三个真实比较"
+        },
+        {
+          "field": "evidence[7]",
+          "section": "钱包与必有信用"
+        }
+      ]
+    },
+    {
+      "object_id": "actual-terminal-pair-selective-frozen-wallet",
+      "version": 1,
+      "registration_pin": "0e7fbb158632f8899c97ad03b7079b3ea26996342b7a482e4b1c610918518d7c",
+      "refs": [
+        {
+          "field": "body",
+          "section": null
+        }
+      ]
+    }
+  ],
+  "claimed_current_task": {
+    "task_id": "customer-attraction-3a-3a-c23a71b542af6d6b",
+    "owner": "Boss6",
+    "request_id": "4534b9f810844d8bb15aa1253307d94e",
+    "definition_pin": "df2e6bae03247f55d85f3bc3d4fc394d713315c9d3f51e251af38a53a44e6acd",
+    "expected_refresh_core_ids": [
+      "M-2a8a88d1fafa45b999f1506d22096df1",
+      "M-4a7ba157741b46e490b81e8727e4cef7",
+      "actual-terminal-pair-selective-frozen-wallet"
+    ]
+  },
+  "effective_done_task_for_root_directed_replacement": "customer-attraction-3a-3a-11da6a606dcf5a9b",
+  "old_canonical_navigation_only": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-11da6a606dcf5a9b/reduced-wallet-harmonic-input.json",
+      "sha256": "f5876c2f84ce59d95a68c3033194a1f0eaba5bb92052aa880cf6cc27b06345f5",
+      "disposition": "not an asset of this task; Root separately preserves contribution and refreshes endpoint/evidence pins"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-11da6a606dcf5a9b/terminal-wallet-static-surplus-to-direct.json",
+      "sha256": "05af2b70ac66913a6dc9b01aba5c820f19aaaae45453ea3d1c1d4bb4700d7797",
+      "disposition": "not an asset of this task; Root separately preserves ALL whole result and refreshes endpoint/evidence pins"
+    }
+  ],
+  "root_impact_review_pointer": "/workspace/scratch/bbb425bb840f/boss6-staging/root-wallet-cross-impact-round44.json",
+  "worker_scope": "read two old canonical edge JSONs for de-duplication/navigation only; did not review or cover their other endpoints or 11da other cores",
+  "lifecycle": "Root先durable保存本完整旧pin草稿并handoff；随后只改这一源句，更新四registry记录/相关引用与版本并刷新本claimed task；fresh窄续只重读改句和新版元数据、刷新本两边绑定/reading-ledger/receipt，再按真实当前pin交付。Root另办有效done11da的定向替代。本worker不写clone/registry/队列。"
+}

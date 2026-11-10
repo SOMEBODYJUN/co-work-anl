@@ -1,0 +1,52 @@
+{
+  "edge_id": "cag-11da6a-reduced-wallet-harmonic-input",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "actual-terminal-pair-selective-frozen-wallet"
+  ],
+  "target_ids": [
+    "same-actual-welfare-harmonic-terminal-wallet-payment"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m≥2，同一原完整纯 SPE 的实际有序末对 A,B 与前 m−2 位负载，L_A=U_b(A,A)。",
+  "roles": {
+    "actual-terminal-pair-selective-frozen-wallet": "固定同一末对并确认末位复制 IC 所给 C′=min(a,v)−L_A≥0 与 C−C′=Δ。",
+    "same-actual-welfare-harmonic-terminal-wallet-payment": "在该钱包上再使用较早角色的真实复制行及逐客户调和余量。"
+  },
+  "explanation": "选择性冻结钱包的实际末位可复制 A，故 v≥L_A，且 a≥L_A。用同一 L_A 从 a 扣得 C，从 min(a,v) 扣得 C′，于是 C−C′=(a−v)_+。这正是调和付款的 TAIL 输入，整个根 W 仍是相同实际利润之和。付款的新增部分由各较早位置复制 A 得 q_i≤u_i，逐客户给 F+2L_A≥(2H_m−1)C，最后分解利润失衡和余量；DIRECT 中的静态吸收是不同的消去路线。",
+  "scope": "根的实际钱包，任意人数及比较元组之外的纯实际输入，空 A 和空早期和均可。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/实际末对冻结查询的选择性钱包--引理.md",
+      "sha256": "68859ab933a4b9c39ee7e68e162c50ac239b437e315d315e6f527937c2531d8d",
+      "section": "钱包与必有信用"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/同一实际福利对末对钱包的调和复制付款--引理.md",
+      "sha256": "f24a2002a3dd0b6423e0f9f4403cb4d6b6e5364428485601a0ee408ef25997d2",
+      "section": "同一实际末对的静态资金"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/同一实际福利对末对钱包的调和复制付款--引理.md",
+      "sha256": "f24a2002a3dd0b6423e0f9f4403cb4d6b6e5364428485601a0ee408ef25997d2",
+      "section": "退款的精确来源"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Boss6第45轮定向source repair：完整实读当前wallet、harmonic、静态吸收和共同目录模型，核四端点完整登记及本边全部数学字段。CROSS两F差相消；同一实际末对L_A=L、C′=min(a,v)−L≥0及C−C′=(a−v)_+保持。全HW另用较早COPY与CLIENT，故严格保留原contribution/result/remaining。本轮只更wallet source SHA、相应endpoint与真实窄读provenance。其余11边沿用Boss1精确原SHA成熟证明，未重跑原LP/全树/大型系数。",
+  "contribution": {
+    "result": "调和复制付款所用的钱包与选择性冻结行是同一个非负 C′，且替换 unreduced C 的退款恰为 Δ。",
+    "remaining": "仅由选择性末对比较尚未得到较早各位置 q_i、全 W 调和付款或完整精确退款；须加入较早角色的真实复制与调和分母计费。"
+  },
+  "endpoint_pins": {
+    "actual-terminal-pair-selective-frozen-wallet": "f8cecd0d1dadf60bede741c8d7f9acb368f9b7c5264fc1d677269e9be17e5890",
+    "same-actual-welfare-harmonic-terminal-wallet-payment": "4397ad672a60e7837314a6bf44302d72f4840873af7167479603c2c6350b0f2d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/实际末对冻结查询的选择性钱包--引理.md": "68859ab933a4b9c39ee7e68e162c50ac239b437e315d315e6f527937c2531d8d",
+    "archives/customer-attraction/state/引理/同一实际福利对末对钱包的调和复制付款--引理.md": "f24a2002a3dd0b6423e0f9f4403cb4d6b6e5364428485601a0ee408ef25997d2"
+  },
+  "review_digest": "0b4cb11789fd4d61254b53bdfac05e3370c219978c8c93b3acdfb8f37b9229a8"
+}

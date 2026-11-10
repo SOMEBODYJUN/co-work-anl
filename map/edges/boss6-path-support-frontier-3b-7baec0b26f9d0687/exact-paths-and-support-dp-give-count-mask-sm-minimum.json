@@ -1,0 +1,78 @@
+{
+  "edge_id": "ca-round45-exact-paths-and-support-dp-give-count-mask-sm-minimum",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL",
+    "customer-attraction/ordered-credible-menu-three-probes-and-integer-mask-failure"
+  ],
+  "target_ids": [
+    "customer-attraction/ordered-credible-minimum-continuation-matrix-exact-path-DP"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、p≥1的有限非空共同标签目录、m≥1、单位提供者依次观察全部有序历史各行动一次；保空主题、同覆盖异标签、重复选择及全部离轨平局。采用A精确给出的全部R(k)与M(k)=max_t min_{z∈R(k+e_t)}U_t(z)，令L(k,t)为该孩子上精确最低当前收益；所有数值用精确有理数。比较成本按原SM的每次独立L定义，不附加同一固定σ保actual的菜单约束。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "给出全部完整历史纯SPE可实现终局、非空孩子、精确门槛和逐有序孩子独立拼接；由此证明固定q的全部actual路径合法域。",
+    "customer-attraction/ordered-credible-menu-three-probes-and-integer-mask-failure": "对给定精确矩阵证明长度m、支持恰S的所有有序比较tuple的最小和递推；每重复一次逐次付款，支持只用于覆盖去重。",
+    "customer-attraction/ordered-credible-minimum-continuation-matrix-exact-path-DP": "联合两个已证前提及明确的(k,mask)未来等价证明，得到全部actual路径和全部有序比较tuple的原SM精确最小值及cover=OPT的bestopt。"
+  },
+  "explanation": "固定q∈R(0)，actual有序路径的前缀计数为k。下一实际动作a必要且充分满足k_a<q_a、q∈R(k+e_a)、U_a(q)≥M(k)。必要性来自实际孩子仍实现q及所有真实偏离收益至少各自L；充分性沿指定路径递归使用实现q的实际孩子，对每个非实际孩子选达到最低收益的真子SPE。不同有序孩子后代互不相交，可同时拼接；同计数历史不锁同一selector。逐层这些条件因此恰枚举实现q的全部有序完整纯SPE路径。\n\n令D_i^q(k,H)为长度i的合法actual前缀计数k、比较前缀支持恰H时的最小ΣL，初始D_0^q(0,∅)=0，其余∞。先选比较t逐次支付L(k,t)，再选合法actual a，更新D_(i+1)^q(k+e_a,H∪{t})=min[旧值,D_i^q(k,H)+L(k,t)]。每个合法前缀对唯一分成较短前缀对及末(a,t)，A支付actual维度、B支付比较维度。层号由|k|恢复。固定q时，到同(k,H)的不同有序历史有完全相同的未来actual合法动作、L查询价格和最终支持覆盖；其任一后缀可接到另一前缀，故保最小前缀成本无损，不需保旧顺序或比较重数。\n\n终态k=q时评价W(q)+D_m^q(q,H)−cover(H)。跨全部q∈R(0)及所有可达H取最小，恰是全部可实现actual路径A与全部T∈𝒮^m的W(A)+Σ_iL(k_i,T_i)−O(T)的最小值best；只留cover(H)=OPT则精确给全部最优有序比较tuple的bestopt。重复比较主题每次仍付款，仅覆盖去重；|H|>m不可达，m≥1的空支持不可达，零客户仍须由非空目录选m个合法标签。\n\n即使t等于actual动作，L也可由改变actual尾的其它子SPE达到。因此这些价格不宣称可由同一σ在保actual路径时同时实现；这是原SM、非SM*或fixed-f实际复制税DP。数学正确性不认证19条历史成功项以外的输入、异常/过滤完备性或一般SM非负。4a2成熟未canonical的单源边只付比较维度；本边新增A作为共同前提并完整支付actual域、联合合并及跨全部q终态最小化，不把原contribution升格。",
+  "whole_result": "对任意上述有限实例，固定每个q∈R(0)，按k_a<q_a、q∈R(k+e_a)、U_a(q)≥M(k)精确枚举其全部完整历史纯SPE可实现有序actual路径；在(k,mask)上逐层选比较t支付L(k,t)、再选合法actual a并保最小前缀和，终态评价W(q)+cost−cover(mask)，跨全部q/终态恰得全部actual路径及全部有序重复比较tuple的原SM最小余量best；限cover=OPT恰得bestopt。全部路径实现、支持含义、合并充分性与全域最小化组成C现行算法正确性完整结论。",
+  "scope": "目标C的整条算法正确性；不声称一般SM/bestopt非负、half成立、原theta程序修复成功或19历史报告覆盖所有eligible输入。不枚举全部完整策略，不能把同计数策略强制匿名。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "全集递推及完整证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "完整策略和指定有序路径"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/同序可信菜单的三份探针与整数掩码故障--程序.md",
+      "sha256": "03f4e6f3ebf05a1f05cd53aac5c520dfb97b91df4b1dee6bae4c9e95123887bf",
+      "section": "4. 意图中的支持动态规划为何可用，以及尚未执行什么"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/同序可信最低续局矩阵的精确路径动态规划--程序.md",
+      "sha256": "ae9829ab55b3e83defde39b418de09d5ecfe58c3ed13f031ba7b4de51165caa8",
+      "section": "固定q时全部actual路径的合法域"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/同序可信最低续局矩阵的精确路径动态规划--程序.md",
+      "sha256": "ae9829ab55b3e83defde39b418de09d5ecfe58c3ed13f031ba7b4de51165caa8",
+      "section": "为什么(k,mask)合并无损"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/同序可信最低续局矩阵的精确路径动态规划--程序.md",
+      "sha256": "ae9829ab55b3e83defde39b418de09d5ecfe58c3ed13f031ba7b4de51165caa8",
+      "section": "best、bestopt和停止规则"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/同序可信最低续局矩阵的精确路径动态规划--程序.md",
+      "sha256": "ae9829ab55b3e83defde39b418de09d5ecfe58c3ed13f031ba7b4de51165caa8",
+      "section": "被计算的全称候选"
+    }
+  ],
+  "reviewed_by": "Boss6/compare-path-support-round45-worker",
+  "review_note": "独立完整读取三现行对象声明、三自足主正文、共同模型及静态/同序L精确边界；逐步核必要/充分有序路径拼接、支持归纳、固定q的未来等价与全域最小化。按现行成熟合同复用A的附属实现证据，未重跑历史程序/LP/全SPE树；与4a2未canonical局部贡献逐字节对比。本accepted关系为ALL完整算法推导，两个源均proved；不以有限成功项推出非负。",
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "customer-attraction/ordered-credible-menu-three-probes-and-integer-mask-failure": "b5540c2c596c9d554f3992727692d0799d338fff25c61db26fa692ad8e9904c9",
+    "customer-attraction/ordered-credible-minimum-continuation-matrix-exact-path-DP": "b39111e2a2cbdb548f2fa8170c5e4602e2239eb04a8c721192b963b0e38d3962"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/程序/同序可信菜单的三份探针与整数掩码故障--程序.md": "03f4e6f3ebf05a1f05cd53aac5c520dfb97b91df4b1dee6bae4c9e95123887bf",
+    "archives/customer-attraction/state/程序/同序可信最低续局矩阵的精确路径动态规划--程序.md": "ae9829ab55b3e83defde39b418de09d5ecfe58c3ed13f031ba7b4de51165caa8"
+  },
+  "review_digest": "5f5734ece23dc486f60a620fbf7631ea2908a16c19221e420d6881ce4799fc73"
+}
