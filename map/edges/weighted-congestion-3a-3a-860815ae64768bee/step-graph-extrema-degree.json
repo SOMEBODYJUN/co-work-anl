@@ -1,0 +1,43 @@
+{
+  "edge_id": "wc-step-packet-step-graph-extrema-degree",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R1-DAG-STEP"
+  ],
+  "target_ids": [
+    "weighted-congestion/step-DAG-path-extrema-and-degree"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限 simple DAG、根权1、正轻权且总和W<1、每卫星outgoing总权t_v<w_v。对称双列两个真实策略与闭端点阶跃费用。路径按顶点计。 m≥1。",
+  "roles": {
+    "WC-R1-DAG-STEP": "将门槛单调性归结为逐长度路径计数。",
+    "weighted-congestion/step-DAG-path-extrema-and-degree": "接收固定顶点数等号和入度上界。"
+  },
+  "explanation": "固定拓扑序后任意k点集至多给一条按序路径，故P_1=m且P_k≤binom(m,k)。空图、传递完全DAG逐项达到两端，缺边或有边使P_2严格变化。再由P_k≤mΔ^(k−1)，在R>Δ处ΣP_kR^(−k)≤m/(R−Δ)。取(R−1)(R−Δ)=m的较大根，由单调性q_D≤R。与无边下界夹逼得Δ=o(√m)时q_D∼√m。",
+  "scope": "Δ是最大入度，固定m>1时等号分别只在空图和传递完全DAG。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+      "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990",
+      "section": "路径递推、任意振幅上界及端点取得"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+      "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990",
+      "section": "图极值、度界、树特化与浅DAG反例"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项核对登记量词、真实偏离与来源证明，保留所用输入及所得结论的模型范围。",
+  "whole_result": "固定m的最小门槛为(1+√(1+4m))/2，最大门槛Φ_m=(1+1/Φ_m)^m；入度Δ上界为(1+Δ+√((Δ−1)^2+4m))/2，并给所述小入度渐近式。",
+  "endpoint_pins": {
+    "WC-R1-DAG-STEP": "553c4a4fd59e0cc01339c0971bcf42b46ec7c2792484fdd29fb829b1861b57db",
+    "weighted-congestion/step-DAG-path-extrema-and-degree": "f41ba60eb2d29e7cd69dd01feba69b8d2d973a4a88f92fda4840c757048b5fe8"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990"
+  },
+  "review_digest": "b6be475c370d9adb283bc7d97984bebc2a81965507ea7ff53e837c66236054da"
+}

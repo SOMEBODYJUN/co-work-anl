@@ -1,0 +1,46 @@
+{
+  "edge_id": "wc-step-packet-step-rational-balanced-instances",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/step-DAG-literal-cost-reduction",
+    "WC-R1-DAG-STEP"
+  ],
+  "target_ids": [
+    "weighted-congestion/step-DAG-rational-balanced-factor"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限 simple DAG、根权1、正轻权且总和W<1、每卫星outgoing总权t_v<w_v。对称双列两个真实策略与闭端点阶跃费用。路径按顶点计。 任取实r≥1与A0>0。",
+  "roles": {
+    "weighted-congestion/step-DAG-literal-cost-reduction": "给任意平衡参数r下各状态与偏离的费用。",
+    "WC-R1-DAG-STEP": "给路径递推与唯一目标q_D，刻画下方有理逼近的端点。",
+    "weighted-congestion/step-DAG-rational-balanced-factor": "接收每个r的确切实例最优倍率与有理实例。"
+  },
+  "explanation": "置A_v=A0h_v(r)。非全入状态首个遗漏v的旧费为rA_v、新费A_v，全入时根比为1+Σh_v(r)。全入轻玩家比1/r，故全入最大比等于后一项。全出轻玩家最大比r，因为h_v≥1/r且源点等号，根不改善。空图直接得1。m>0时有理r从下方趋q_D，严格单调根方程给1+Σh_v(r)>r，故β=r。取有理A0及拓扑编号的w_v=2^(−v)实现严格合法全有理游戏。",
+  "scope": "真实阶跃实例，不要求原给实权有理，也不要求q_D有理。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+      "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990",
+      "section": "全状态真实费用化简"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+      "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990",
+      "section": "有理单参数实例"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项核对登记量词、真实偏离与来源证明，保留所用输入及所得结论的模型范围。",
+  "whole_result": "平衡振幅的确切最优倍率为min{r,1+Σh_v(r)}，由全入或全出取得；对m>0有全有理合法实例从下方任意逼近q_D。",
+  "endpoint_pins": {
+    "WC-R1-DAG-STEP": "553c4a4fd59e0cc01339c0971bcf42b46ec7c2792484fdd29fb829b1861b57db",
+    "weighted-congestion/step-DAG-literal-cost-reduction": "31d9ee5a054287f153988d5042c9d00e67c1c22375c91fec9851f1c496be46e2",
+    "weighted-congestion/step-DAG-rational-balanced-factor": "fe1fe3dd0137b7eeb8a8b517fb2461f73cdbe0594d32c634b9abb5b2b9c7af72"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990"
+  },
+  "review_digest": "02295f6c5e96dacaaff545122e24406d94b7044686689fcce1550c1cb1d6ee80"
+}

@@ -1,0 +1,43 @@
+{
+  "edge_id": "wc-step-packet-literal-cost-to-step-threshold",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/step-DAG-literal-cost-reduction"
+  ],
+  "target_ids": [
+    "WC-R1-DAG-STEP"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限 simple DAG、根权1、正轻权且总和W<1、每卫星outgoing总权t_v<w_v。对称双列两个真实策略与闭端点阶跃费用。路径按顶点计。 费用幅度任意非负。",
+  "roles": {
+    "weighted-congestion/step-DAG-literal-cost-reduction": "给每个根归一化状态及真实单方翻位的字面费用。",
+    "WC-R1-DAG-STEP": "接收所有振幅的精确最坏实例近似因子。"
+  },
+  "explanation": "若m>0，拓扑展开h_v(r)=(1+Σ_{u→v}h_u(r))/r，得Σh_v(r)=Σ_kP_kr^(−k)，故q=1+Σh_v(q)有唯一q>1。拓扑扫描只在qA_v≤A0+Σ_{u→v,u∈Z}A_u时收入v。收入者与排除者分别由字面表稳定。对收入者逐序有A_v≤A0h_v(q)，故根当前费≤qA0≤q倍翻后费。A0=0时所得当前费皆零。取A0>0及A_v=A0h_v(q)，任意Z≠V的首个遗漏点具有倍率q，全入时根倍率q。全入最大倍率q，全出每轻玩家的比为A0/A_v≤q且源点等号，根不改善。空图两根动作等费，倍率1。",
+  "scope": "覆盖全部阶跃状态和零幅度、空图边界。这个费用表的无根列零值与有根列阶跃触发依赖严格权分离。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+      "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990",
+      "section": "全状态真实费用化简"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+      "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990",
+      "section": "路径递推、任意振幅上界及端点取得"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项核对登记量词、真实偏离与来源证明，保留所用输入及所得结论的模型范围。",
+  "whole_result": "所述DAG阶跃模型对每组非负振幅存在q_D-PNE；固定任意合法权后最坏振幅的最优倍率恰为q_D，由正平衡幅度取得，空图端点为1。",
+  "endpoint_pins": {
+    "WC-R1-DAG-STEP": "553c4a4fd59e0cc01339c0971bcf42b46ec7c2792484fdd29fb829b1861b57db",
+    "weighted-congestion/step-DAG-literal-cost-reduction": "31d9ee5a054287f153988d5042c9d00e67c1c22375c91fec9851f1c496be46e2"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990"
+  },
+  "review_digest": "3f77a34667b7d1c2357888884dac107ad0825300bf284ee2313ff8179e28a58b"
+}

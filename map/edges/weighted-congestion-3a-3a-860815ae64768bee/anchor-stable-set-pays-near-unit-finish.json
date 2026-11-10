@@ -1,0 +1,46 @@
+{
+  "edge_id": "wc-step-packet-anchor-stable-set-pays-near-unit-finish",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-FRONT-CORE-STABLE-SET-TRANSFER-v1"
+  ],
+  "target_ids": [
+    "WC-NEAR-UNIT-ALLSTATE-NONEXISTENCE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "给定N正文同权类二动作基体，其所有状态及偏离后成本≤B_*，所有前沿有保前沿偏离且margin≥η>0。完整锚定门用幅度M=2αB_*、低端比例ζ=(2/3)^d，L_c为每人门数上界，ζ≤η/(4α²B_*L_c)。",
+  "roles": {
+    "WC-FRONT-CORE-STABLE-SET-TRANSFER-v1": "完整锚定门把非法态的第一异位修复与前沿低费分别控制。",
+    "WC-NEAR-UNIT-ALLSTATE-NONEXISTENCE-v1": "接收在该基体和同次数时钟合同下的全状态合并步骤。"
+  },
+  "explanation": "因η≤B_*且α≥1，αL_cMζ≤η/2，故M>α(B_*+L_cMζ)，满足强支配。任意非前沿有010或101门；翻最早异位后mover参与门全部低端，真实margin≥M−αB_*−αL_cMζ≥αB_*−η/2≥η/2。任意前沿的保前沿出口由稳定集合定理的精确式损失(α−1)r_iMζ≤η/2，故剩η/2。门资源仅增加动作子集，两套动作继续非空且不交；权不变，取相同次数d。",
+  "scope": "已证明的是目标的时钟装配步骤。需要先有目标基体的全部前沿覆盖及数值预算；一般稳定集合定理不能提供它们。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md",
+      "sha256": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f"
+    },
+    {
+      "path": "archives/weighted-congestion/state/构造/短窗网格分离的全状态近一反例--构造.md",
+      "sha256": "365d1e11e006d09947b04123c6dbafda1fa3df79a58cc66851a516ffb16ff782",
+      "section": "任意状态成本上界与锚定修复"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项核对登记量词、真实偏离与来源证明，保留所用输入及所得结论的模型范围。",
+  "contribution": {
+    "result": "在明确基体合同和同次数泄漏预算下，完整锚定门使每个纯态拥有真实严格α改善且余量≥η/2。",
+    "remaining": "还须短窗网格构造的有理参数、全部前沿端点的奇偶与余量证明、全状态基体成本界、验证(A)支付同次数预算，以及固定c的量词收尾。"
+  },
+  "endpoint_pins": {
+    "WC-FRONT-CORE-STABLE-SET-TRANSFER-v1": "f784bf003aec5e448acc4942163bf0653cb8a0549b31383d3b26c53e779153c5",
+    "WC-NEAR-UNIT-ALLSTATE-NONEXISTENCE-v1": "f8ce9e42f2bdfe1fc905479868e9e14eaa0e7cd52e86b34006f15aa75fd89089"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f",
+    "archives/weighted-congestion/state/构造/短窗网格分离的全状态近一反例--构造.md": "365d1e11e006d09947b04123c6dbafda1fa3df79a58cc66851a516ffb16ff782"
+  },
+  "review_digest": "6a4f3dedc42d3e5c1624ca89704b57f2e733fd32872ab694d9ec00eebb1164e2"
+}
