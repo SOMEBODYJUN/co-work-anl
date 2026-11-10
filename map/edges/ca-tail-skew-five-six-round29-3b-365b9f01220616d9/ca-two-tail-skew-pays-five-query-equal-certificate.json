@@ -1,0 +1,77 @@
+{
+  "edge_id": "ca-two-tail-skew-pays-five-query-equal-certificate",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-TWO-REMAINING-TAX"
+  ],
+  "target_ids": [
+    "CA-FIVE-HALF-EXACT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、有限非空共同标签目录、恰五名单位提供者及每份完整有序历史纯 SPE。根背景为零，覆盖映射可非单射，允许空主题、重复选择、重复最优索引、零客户及所有弱平局。所有实际、复制和查询分支均在同一 σ 上定义。",
+  "roles": {
+    "CA-TWO-REMAINING-TAX": "原普通税的三条真实 IC 和精确恒等式给强 PAIR 的 u+v 端。配合同一真实末位的两条合法 BR 得到该分支可统一扣减的收益差正部。",
+    "CA-FIVE-HALF-EXACT-v1": "原精确证书供三族真实末两人前缀、三条 query_equal 行及全部 53 个精确权重。保留原全类型余项和共同 K 余项后，整个五人半覆盖目标成立，并得到逐策略增强。"
+  },
+  "whole_result": "在原五人零背景根模型，每份完整纯 SPE 的实际覆盖为 W。固定任一达到 OPT₅ 的五个合法比较槽，对 AB、AE、Sbranch 三族令 Δ_F=Σ_{i=1}⁵(u^F_{i,4}−u^F_{i,5})₊。原 53 行合成给 OPT₅≤2W−(515175302863323067464 Δ_AB+8669392542115074612 Δ_AE+115902613336823440 Δ_Sbranch)/10²²，因此 OPT₅≤2W。三个 Δ 均从该策略的各族真后继独立计算。",
+  "explanation": "固定同一完整有序策略 σ 和任一合法有序前缀 h，之后恰余两人。设真续局为 (C,D)，其倒二、末位收益为 u=U_b(C,D)、v=U_b(D,C)。对客户 x 写 a_x=1/(b_x+1)、γ_x=1/[(b_x+1)(b_x+2)]，定义 f(X)=Σ_{x∈X}a_x、g(X,Y)=Σ_{x∈X∩Y}γ_x 及 U_b(X,Y)=f(X)−g(X,Y)。令 H=u+v+g(C,C)、δ=(u−v)₊，固定任意两个合法比较主题 T,S，写 J=f(T)+f(S)−g(T,S)。Q 是强制倒二选择 T 后同一 σ 在 (h,T) 的真末位回复。普通税原证明的三项 IC 分别为 I₁=u−U_b(T,Q)、I₂=U_b(Q,T)−U_b(S,T)、I₃=v−U_b(Q,C)，都非负。其恒等式左端用 H−J 时，右端恰为 I₁+I₂+I₃+g(C,C)−g(C,Q)≥0。这是从原三项恒等式消去一份比较交叠所得到的强行。\n\n同一真末位 (h,C) 又可分别查询 T、S，给 v≥U_b(T,C) 和 v≥U_b(S,C)。因此 J≤2v+g(C,T)+g(C,S)−g(T,S)≤2v+g(C,C)。末步逐客户成立，因为 c(t+s)−ts≤c，c,t,s 为该客户在 C,T,S 中的会员位，且 γ_x≥0。于是 J≤min(u+v,2v)+g(C,C)=H−δ。δ 是该真实分支整笔终局收益先相减后取正部得到的标量，所有查询对共享这一值。\n\n取五人实际根路径 (A,B,C,D,E)。原 AB 族的第 i 枝是 (A,B,T_i,X_i^AB,Y_i^AB)，AE 族是 (A,E,T_i,X_i^AE,Y_i^AE)，Sbranch 族是 (A,T_i,U_i^S,V_i^S,W_i^S)。AE 的第二位 E 是实际第二位在 (A) 复制实际末题 E 的强制偏离。AB、AE 的第三位 T_i 及 Sbranch 的第二位 T_i 也是指定偏离。三族第 4、5 位均是真正的后继优化者。其有序前三位分别为 (A,B,T_i)、(A,E,T_i)、(A,T_i,U_i^S)，这三个位置的真实会员负载是各自强行的 b。两处有序标签历史相同时按 σ 一致。主题标签或其覆盖集合相同也保留比较索引。\n\n每族行 G_F 按 i≠j 在第 i 枝查询第 j 枝的一对合法主题。AB/AE 的查询槽分别是同一 j 的 (X_j^AB,Y_j^AB) 与 (X_j^AE,Y_j^AE)，Sbranch 的查询槽是 (V_j^S,W_j^S)。原活跃行名中的 12 与 23 是族内从零开始的两个查询槽。literal_semantics.py 的 family_literal 在每个客户和每个源枝 i 用 4h_i，其中 h_i 是 120 倍该枝客户的 H 贡献，随后从查询总数扣去同枝查询并对同 j 交叠作同样扣除。主核验器的 pair_feature 选 j=l 且 i≠j。故两种字面重建一致，每枝恰有四个 j，总共 20 次合法比较。逐对用 H_i−δ_i 给 G'_F=G_F−4Δ_F≥0，Δ_F=Σ_iδ_i。此扣减作用于三条强 PAIR 主行。其余 50 条原主行包括局部 MAXROOT-NEW 继续按原证书计。\n\n| 主行 | 原权分子 L_F | 增强的信用分子 4L_F |\n| --- | ---: | ---: |\n| AB:pair:12:query_equal | 128793825715830766866 | 515175302863323067464 |\n| AE:pair:12:query_equal | 2167348135528768653 | 8669392542115074612 |\n| Sbranch:pair:23:query_equal | 28975653334205860 | 115902613336823440 |\n\n令 𝒟=10²²，原证书权 λ_j=L_j/𝒟。对客户域，原 (6.1)–(6.3) 已给 2W−OPT₅=Σ_jλ_jG_j+Σ_xρ_x+(2264870/𝒟)K。原 ρ_x≥0 的完整域固定同一个比较重数 d，按三族完整直方图和三套旧菜单的四角作精确最大化。6144 个外条件覆盖这整个扩大域，且实际覆盖会员型的原余项严格为正。把三行替为 G'_F、其余 G'_j=G_j，精确得到\n2W−OPT₅−Σ_F(4L_F/𝒟)Δ_F=Σ_jλ_jG'_j+Σ_xρ_x+(2264870/𝒟)K≥0。\n正部已在每个真实分支聚合后取得，因此直接把分支信用移到左端，复用原余项。若写成原 (6.4) 的全整数余项标度，左边乘 120𝒟，信用分子同时乘 120，右端仍是 120Σ_jL_jG'_j+Σ_x(120𝒟ρ_x)+271784400K。120 是逐客户清分母标度，4 是每个源枝的查询次数，𝒟 是主乘子的分母。背景利润始终留在所属分支，根 W 只计实际五人路径。",
+  "scope": "原五人根半覆盖定理和同一精确证书给出的分支收益差增强。若 W=0，增强式直接给 OPT₅=0。任意正部为正时，该证书给逐实例严格小于 2W 的上界。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+      "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md",
+      "sha256": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/五人半覆盖--定理.md",
+      "sha256": "061ceb82629e9aac619630cf12d0d80ede9663474baf2302a100ceafe5dd634c"
+    },
+    {
+      "path": "archives/customer-attraction/state/证明/五人证书活跃行--证明.md",
+      "sha256": "ad93ab97ca4dea4a6362b0f3343f84377fd0e01607af74289ac8ea691fc60374"
+    },
+    {
+      "path": "archives/customer-attraction/tools/half5-exact/certificate.json",
+      "sha256": "395e056b218d237abe8b85db894f0b1c37d2e14d55c74b1dca723abeceb6a44e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/half5-exact/verify_certificate.py",
+      "sha256": "6ff64ab6d1e412227fd70a75f5892e5d768c97529600d194c1147d50c723556f"
+    },
+    {
+      "path": "archives/customer-attraction/tools/half5-exact/row_manifest.json",
+      "sha256": "cbc5f0c7b6238a1d0e622621c89851292c4ed94e946e36ed16b41e1bb851c0cf"
+    },
+    {
+      "path": "archives/customer-attraction/tools/half5-exact/literal_semantics.py",
+      "sha256": "cff44682f217a3440806b79486ab9599249343ea9724f3aef8ba3f96e1d61e15"
+    }
+  ],
+  "reviewed_by": "Boss1/ca-tail-skew-five-six-round31-fresh-worker",
+  "review_note": "实读原普通税恒等式、五人主证书和逐行语义，独立推导同真末位两条 BR 的强 PAIR。静态核对 literal 与主核验器的索引条件、全 53 个权重及三行信用分子，复用既有全域非负余项。",
+  "endpoint_pins": {
+    "CA-FIVE-HALF-EXACT-v1": "a6b1a6bb8f7da43559faf7606dc3ce20da46efbbed584f805b442fd799663c2c",
+    "CA-TWO-REMAINING-TAX": "eb63a8d1cd934879f5f7f25f633b4bf753973f405a7b8db91bed63f633de7d15"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/固定背景两人税界--引理.md": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+    "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/定理/五人半覆盖--定理.md": "061ceb82629e9aac619630cf12d0d80ede9663474baf2302a100ceafe5dd634c",
+    "archives/customer-attraction/state/证明/五人证书活跃行--证明.md": "ad93ab97ca4dea4a6362b0f3343f84377fd0e01607af74289ac8ea691fc60374",
+    "archives/customer-attraction/tools/half5-exact/certificate.json": "395e056b218d237abe8b85db894f0b1c37d2e14d55c74b1dca723abeceb6a44e",
+    "archives/customer-attraction/tools/half5-exact/verify_certificate.py": "6ff64ab6d1e412227fd70a75f5892e5d768c97529600d194c1147d50c723556f",
+    "archives/customer-attraction/tools/half5-exact/row_manifest.json": "cbc5f0c7b6238a1d0e622621c89851292c4ed94e946e36ed16b41e1bb851c0cf",
+    "archives/customer-attraction/tools/half5-exact/literal_semantics.py": "cff44682f217a3440806b79486ab9599249343ea9724f3aef8ba3f96e1d61e15"
+  },
+  "review_digest": "1f226f1ed2f84a3173a2835e4a0707390e78fff14a2806cc53061264b9a1c07b"
+}

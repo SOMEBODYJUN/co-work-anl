@@ -1,0 +1,92 @@
+{
+  "edge_id": "ca-two-tail-skew-pays-six-true-copy-envelopes",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-TWO-REMAINING-TAX"
+  ],
+  "target_ids": [
+    "customer-attraction/six-player-true-maxroot-copy-envelope"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、有限非空共同标签目录、恰六名单位提供者及每份完整有序历史纯 SPE。根背景为零。对任意最大合法主题和任一达到 OPT₆ 的合法六索引元组保留重复、同覆盖异标签、空主题、零客户及任意弱平局。实际根与最大根强制续局和复制枝均用同一 σ。",
+  "roles": {
+    "CA-TWO-REMAINING-TAX": "原三项 IC 及同一真实末位两条 BR 给固定末两人前缀的强 PAIR，统一扣该枝倒二减末位收益的正部。",
+    "customer-attraction/six-player-true-maxroot-copy-envelope": "同策略真实最大根及二／三复制枝上的十五对索引聚合把每条 PAIR:k 扣为原行减 3δ_k。原八份有理证书给全部 B、C、非负权重、最优并集列消去和完整客户域余项。"
+  },
+  "whole_result": "对恰六人模型中每份完整纯 SPE，令 r 为原实际根收益，K 为共同目录最大主题大小，O=OPT₆。对表中每个原证书 e，任取最大主题所确定的真实分支，令 δ_k=(u_{k4}−u_{k5})₊，原包络加强为 O≤B_e r+C_e K−3Σ_{k=0}^{m_e}λ_{e,PAIR:k}δ_k，其中 m_e 为原证书复制枝数，k=0 为最大根强制枝。各原 B_e、C_e、λ 保留，故八条 O≤B_e r+C_e K 全部成立。",
+  "explanation": "固定同一完整有序策略 σ 和任一合法有序前缀 h，之后恰余两人。设真续局为 (C,D)，其倒二、末位收益为 u=U_b(C,D)、v=U_b(D,C)。对客户 x 写 a_x=1/(b_x+1)、γ_x=1/[(b_x+1)(b_x+2)]，定义 f(X)=Σ_{x∈X}a_x、g(X,Y)=Σ_{x∈X∩Y}γ_x 及 U_b(X,Y)=f(X)−g(X,Y)。令 H=u+v+g(C,C)、δ=(u−v)₊，固定任意两个合法比较主题 T,S，写 J=f(T)+f(S)−g(T,S)。Q 是强制倒二选择 T 后同一 σ 在 (h,T) 的真末位回复。普通税原证明的三项 IC 分别为 I₁=u−U_b(T,Q)、I₂=U_b(Q,T)−U_b(S,T)、I₃=v−U_b(Q,C)，都非负。其恒等式左端用 H−J 时，右端恰为 I₁+I₂+I₃+g(C,C)−g(C,Q)≥0。这是从原三项恒等式消去一份比较交叠所得到的强行。\n\n同一真末位 (h,C) 又可分别查询 T、S，给 v≥U_b(T,C) 和 v≥U_b(S,C)。因此 J≤2v+g(C,T)+g(C,S)−g(T,S)≤2v+g(C,C)。末步逐客户成立，因为 c(t+s)−ts≤c，c,t,s 为该客户在 C,T,S 中的会员位，且 γ_x≥0。于是 J≤min(u+v,2v)+g(C,C)=H−δ。δ 是该真实分支整笔终局收益先相减后取正部得到的标量，所有查询对共享这一值。\n\n在原实际根改选任一最大主题 T₀，强制路径 P₀=(T₀,A,B,C,D,E) 沿同一 σ 完成，根 IC 给实际收益 r≥v_T，v_T 是该根玩家在 P₀ 的收益。P₁=(T₀,E,F,G,H,I) 来自 P₀ 第二位强制 E，P₂=(T₀,A,E,J,K′,L) 来自 P₀ 第三位强制 E。三复制证书另有 P₃=(T₀,A,B,E,M,N)，来自 P₀ 第四位强制 E。复制主题是 P₀ 的真实末题 E。r 与 v_T 是同一个根玩家在实际路径及强制路径上的收益。两条路径在实际首题正是 T₀ 时重合。所有 P_k 的末两位都在各自强制位置之后，都是其各自前四位有序历史的真实优化者。用从零开始的位次，b_k 是 P_k 前四位客户负载，u_{k4},u_{k5} 是该枝真末两位收益。CAP 依共同 K=|T₀|，COPY 只比较强制者在其原节点的真实偏离，FLOOR 只用于合法真节点，LAST:k 仍是该枝真末位查询六个最优槽所得原行。\n\n取达到 O 的六个合法比较槽，记其并集为 𝒪。固定枝 k，令 H_k 为该枝 u_{k4}+u_{k5} 加倒二主题税。上面强式给每个无序异索引对 J≤H_k−δ_k。每个最优并集客户任选一个覆盖它的索引，含该索引的五个对都给至少 1/(b_k+1) 的逐客户 J 贡献。若两槽都覆盖，贡献是 2/(b_k+1)−1/[(b_k+1)(b_k+2)]≥1/(b_k+1)。其他对贡献也非负。故十五对给 5Σ_{x∈𝒪}1/(b_k(x)+1)≤15(H_k−δ_k)，再加放大到全客户的前缀信用 Σ_x b_k(x)/(b_k(x)+1)，得到\nG'_{PAIR:k}=3(H_k−δ_k)+Σ_x b_k(x)/(b_k(x)+1)−O=G_{PAIR:k}−3δ_k≥0。\n这与原普通税聚合相同地保留十五个索引对，重复槽亦各自计入。\n\n下表是原八条证书的 B、C 与原 PAIR 乘子 λ_{e,PAIR:k}。右端扣减取这些权乘 3δ_k，只对表中正权对应的真实分支记账。\n\n| 原证书 | B | C | λ_{PAIR:0} | λ_{PAIR:1} | λ_{PAIR:2} | λ_{PAIR:3} |\n| --- | ---: | ---: | ---: | ---: | ---: | ---: |\n| E1 | 1665022277/20000000 | -12 | 27134593/50000000 | 800957/20000000 | 4504299/100000000 | 0 |\n| E2 | 18945351970/300000003 | -8 | 57933187/100000001 | 4140515/100000001 | 4436026/100000001 | 0 |\n| E3 | 22376955409/499999995 | -4 | 46976647/99999999 | 427784/11111111 | 9518362/99999999 | 0 |\n| E4 | 56142372/1953125 | 0 | 1426463/3125000 | 1869559/50000000 | 2352687/25000000 | 0 |\n| E5 | 4425594839/70588236 | -8 | 49767455/100000001 | 2712063/100000001 | 4111904/100000001 | 8540655/100000001 |\n| E6 | 4383303278/100000001 | -4 | 46069805/100000001 | 3743303/100000001 | 3505055/100000001 | 3313567/100000001 |\n| E7 | 10974403229/400000000 | 0 | 27806179/100000000 | 196509/10000000 | 77263/1562500 | 4202017/20000000 |\n| E8 | 2502458980248713/30303030000000 | -594292471/50000000 | 57910427/99999999 | 4137817/99999999 | 4464088/99999999 | 0 |\n\n原证书对 d=13 或 15 位会员域逐客户给 ρ_x≥0，所有 PAIR/LAST 的 O 系数均为 −1 且总权恰 1，所以最优覆盖位精确消去。原 verify.py 中六人的 L=120，D 由本证书 B、C 和全权重的分母取最小公倍数。冻结报告八份余项各有 64 个 P₀ 会员位的最小值，总体最小整数余项均为零。将原恒等式中的 G_{PAIR:k} 换成 G'_{PAIR:k}，其他 G'_j=G_j，可写成\nB_e r+C_e K−O−3Σ_kλ_{e,PAIR:k}δ_k=B_e(r−v_T)+Σ_jλ_{ej}G'_j+Σ_xρ_x≥0。\nCAP、COPY、FLOOR、LAST 及全部原余项仍按原证书计。3 来自 15 个对除以每个覆盖槽的五次计数，与 120D 的整数标度分开。正部在每枝全客户收益加总后取，逐客户旧系数及其核验域由上述移项原样复用。",
+  "scope": "六人零背景根最大主题收益包络，固定同一 σ 的真实最大根与其复制枝。每条局部 PAIR 计其前缀后的剩余利润。八条界的结论只控制 OPT₆ 的根收益与容量上界，六人半覆盖仍开放。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+      "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md",
+      "sha256": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/六人真实最大根复制的八条有理包络--定理.md",
+      "sha256": "ebf342127c9e87eed5d51bf314b70079252f8d7692b0cc63a29bc8b8864a0772"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/六人最大根有理包络的发现恢复与原审计--程序.md",
+      "sha256": "5eded2f47880b937041bac38ad192d44f4f3ee136632277dc6a6d1b6d3514c50"
+    },
+    {
+      "path": "tools/evidence/cag-maxroot-terminal-share-and-direction-primary/related-original/research/workspaces/customer-attraction/R-d1fe1e0c444e40d68b6813bf88db8fba/six_maxroot/verify.py",
+      "sha256": "58ae37e909bc1f080faceab0586376d056aef7d9bd6e39f16c7484b24cbc23a0"
+    },
+    {
+      "path": "tools/evidence/cag-maxroot-terminal-share-and-direction-primary/related-original/research/workspaces/customer-attraction/R-d1fe1e0c444e40d68b6813bf88db8fba/six_maxroot/exact_cuts.json",
+      "sha256": "f44870d1404f4e727852917fa6d1aa6c68e17ce5aa65252071ecf4baf2dd8c50"
+    },
+    {
+      "path": "tools/evidence/cag-maxroot-terminal-share-and-direction-primary/related-original/research/workspaces/customer-attraction/R-d1fe1e0c444e40d68b6813bf88db8fba/six_maxroot/exact_cuts_threecopy.json",
+      "sha256": "78c543b57919aa0ab4ea8a5ba1e86035f9524d09c6bed21fc8fe6a360dfa1b13"
+    },
+    {
+      "path": "tools/evidence/cag-maxroot-terminal-share-and-direction-primary/related-original/research/workspaces/customer-attraction/R-d1fe1e0c444e40d68b6813bf88db8fba/six_maxroot/exact_cut_directional.json",
+      "sha256": "4bdc70eadaf29d61540709773370f1c1c0baa96eef7f52f82d05f07cd9455dcf"
+    },
+    {
+      "path": "tools/evidence/cag-maxroot-terminal-share-and-direction-primary/related-original/research/workspaces/customer-attraction/R-d1fe1e0c444e40d68b6813bf88db8fba/six_maxroot/exact_check.json",
+      "sha256": "5359b62a4bc1cb96b4f8684a588cf46c2cb21fd14ebf9073e0fa3934b0ee0861"
+    },
+    {
+      "path": "tools/evidence/cag-maxroot-terminal-share-and-direction-primary/related-original/research/workspaces/customer-attraction/R-d1fe1e0c444e40d68b6813bf88db8fba/six_maxroot/exact_check_threecopy.json",
+      "sha256": "d52ffaba504d93fc782c3e13498ff6f81ae1319b8c09d3fcc95585057fd065f1"
+    },
+    {
+      "path": "tools/evidence/cag-maxroot-terminal-share-and-direction-primary/related-original/research/workspaces/customer-attraction/R-d1fe1e0c444e40d68b6813bf88db8fba/six_maxroot/exact_check_directional.json",
+      "sha256": "c4e8ab27b4a7d257c67f5a85565be83f1d47e5457c90163750a74c8f5766eeaf"
+    }
+  ],
+  "reviewed_by": "Boss1/ca-tail-skew-five-six-round31-fresh-worker",
+  "review_note": "实读原八条证明、verify.py、三份 cut 和三份报告，核对全部原 λ、真实节点和八份 PAIR/LAST 权和。静态核对 512 个已保存分组余项和各证书整数分母，复用现有完整系数域核验。",
+  "endpoint_pins": {
+    "CA-TWO-REMAINING-TAX": "eb63a8d1cd934879f5f7f25f633b4bf753973f405a7b8db91bed63f633de7d15",
+    "customer-attraction/six-player-true-maxroot-copy-envelope": "1ef77c6c938973e8dc551d388ca2445a489de2fae8f604ffab525b4b375a9e5d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/固定背景两人税界--引理.md": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+    "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/定理/六人真实最大根复制的八条有理包络--定理.md": "ebf342127c9e87eed5d51bf314b70079252f8d7692b0cc63a29bc8b8864a0772",
+    "archives/customer-attraction/state/程序/六人最大根有理包络的发现恢复与原审计--程序.md": "5eded2f47880b937041bac38ad192d44f4f3ee136632277dc6a6d1b6d3514c50",
+    "tools/evidence/cag-maxroot-terminal-share-and-direction-primary/related-original/research/workspaces/customer-attraction/R-d1fe1e0c444e40d68b6813bf88db8fba/six_maxroot/verify.py": "58ae37e909bc1f080faceab0586376d056aef7d9bd6e39f16c7484b24cbc23a0",
+    "tools/evidence/cag-maxroot-terminal-share-and-direction-primary/related-original/research/workspaces/customer-attraction/R-d1fe1e0c444e40d68b6813bf88db8fba/six_maxroot/exact_cuts.json": "f44870d1404f4e727852917fa6d1aa6c68e17ce5aa65252071ecf4baf2dd8c50",
+    "tools/evidence/cag-maxroot-terminal-share-and-direction-primary/related-original/research/workspaces/customer-attraction/R-d1fe1e0c444e40d68b6813bf88db8fba/six_maxroot/exact_cuts_threecopy.json": "78c543b57919aa0ab4ea8a5ba1e86035f9524d09c6bed21fc8fe6a360dfa1b13",
+    "tools/evidence/cag-maxroot-terminal-share-and-direction-primary/related-original/research/workspaces/customer-attraction/R-d1fe1e0c444e40d68b6813bf88db8fba/six_maxroot/exact_cut_directional.json": "4bdc70eadaf29d61540709773370f1c1c0baa96eef7f52f82d05f07cd9455dcf",
+    "tools/evidence/cag-maxroot-terminal-share-and-direction-primary/related-original/research/workspaces/customer-attraction/R-d1fe1e0c444e40d68b6813bf88db8fba/six_maxroot/exact_check.json": "5359b62a4bc1cb96b4f8684a588cf46c2cb21fd14ebf9073e0fa3934b0ee0861",
+    "tools/evidence/cag-maxroot-terminal-share-and-direction-primary/related-original/research/workspaces/customer-attraction/R-d1fe1e0c444e40d68b6813bf88db8fba/six_maxroot/exact_check_threecopy.json": "d52ffaba504d93fc782c3e13498ff6f81ae1319b8c09d3fcc95585057fd065f1",
+    "tools/evidence/cag-maxroot-terminal-share-and-direction-primary/related-original/research/workspaces/customer-attraction/R-d1fe1e0c444e40d68b6813bf88db8fba/six_maxroot/exact_check_directional.json": "c4e8ab27b4a7d257c67f5a85565be83f1d47e5457c90163750a74c8f5766eeaf"
+  },
+  "review_digest": "d427df57261cb76b1d5db364f85cda0885470486b281ca60bd61cb48d8b03c86"
+}
