@@ -1,0 +1,57 @@
+{
+  "edge_id": "wc-source32-tight-implies-legacy-178-envelope",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/degree32-source-exact-optimizer-branch-and-tight-interval"
+  ],
+  "target_ids": [
+    "WC-R3-SOURCE32-178-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定次数 32 的同一 H、L 两攻击式，整数 n≥1、1≤k≤32，实 0<w≤1、β≥0。两个分母严格正。",
+  "roles": {
+    "weighted-congestion/degree32-source-exact-optimizer-branch-and-tight-interval": "给源开域 0<β<1 的 F32<1775001/1000000，数值严格低于旧目标的 89/50。",
+    "WC-R3-SOURCE32-178-v1": "目标是两个源比的最小值在 β≥0 全域的 89/50 上界，其原证明给出另一套全实区间符号证书。"
+  },
+  "explanation": "写 A=(1+w)^32、B=(1+w)^k、C=(1+nw)^k、D=(nw)^k、W=w^32。若 0<β<1，则 min(H,L)≤F32<1775001/1000000<89/50。若 β=0，则 H=1/C≤1。若 β≥1，由 A>W、A≥B、D≥W 得 L 的分母减分子为 D−B+β(A−W)≥(A−B)+(D−W)≥0，故 L≤1。三支覆盖旧域，且因 F32>71/40>1 也得到整个 β≥0 域的上确界仍为 F32。紧界的独立符号条件从 H,L≥t 推出 A>t、B>tD 及 β 消去式非负，再用 1/56 截断和严格负 Bernstein 向量排除。原 89/50 证书的结论未用于推导紧界，其整数换基和细分实现按新阈值重生全覆盖。",
+  "scope": "同一 d=32、0<w≤1 的两个源攻击式。端点及 β>1 由代数覆盖，所迁移的结论限于已登记源包络。",
+  "whole_result": "对全部整数 n≥1、1≤k≤32 以及实 0<w≤1、β≥0，均有 min(H,L)≤89/50。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/三十二次对称源的窄有理界和最优离散参数--定理.md",
+      "sha256": "fc9cab35069725ca3874678d19a861d2bf0768177fb0b7f9998668b65c0978f9"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/三十二次两攻击源包络上界--定理.md",
+      "sha256": "fc89af9c3515b2c0d0cdf2461e6146301952f42003078848e679242910520ca8"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/degree32-tight-source/verify.py",
+      "sha256": "307ac3f1087bb315e79cebb40c05838dddbd61ec8ea7395d8cc8e6d21149eabf"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/degree32-tight-source/replay.json",
+      "sha256": "e5e8c5eb6b76f70947f4ee7a8204bd64da5b071bcfa8f5a4b23b77c2079f112e"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/symmetric-source/original/tests/audits/weighted_congestion/source_degree32/verify.py",
+      "sha256": "0d3afd04aa12c17e68a04b39645e9f0658c19c4f9222ad3bcc9f395f38da3cfb"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐式比较两个版本的连续权与 β 域、正分母及严格侧条件。重跑紧界检查器与冻结输出逐字一致，核 1792 个多项式及 1800/1808 叶。对 β=0 与 β≥1 独立推导余下全域界。旧整数引擎以两套新有理阈值重跑，未把旧 89/50 结论或旧叶片当紧界前提。",
+  "endpoint_pins": {
+    "WC-R3-SOURCE32-178-v1": "9bee755ab574f38d2fcd7aa5d52f9ac4f006fc1cae20297a410896e31755b527",
+    "weighted-congestion/degree32-source-exact-optimizer-branch-and-tight-interval": "a7539b019f7441604f010b977a4ce754615e16635b09527264bde35358d09d5e"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/三十二次对称源的窄有理界和最优离散参数--定理.md": "fc9cab35069725ca3874678d19a861d2bf0768177fb0b7f9998668b65c0978f9",
+    "archives/weighted-congestion/state/定理/三十二次两攻击源包络上界--定理.md": "fc89af9c3515b2c0d0cdf2461e6146301952f42003078848e679242910520ca8",
+    "archives/weighted-congestion/tools/evidence/degree32-tight-source/verify.py": "307ac3f1087bb315e79cebb40c05838dddbd61ec8ea7395d8cc8e6d21149eabf",
+    "archives/weighted-congestion/tools/evidence/degree32-tight-source/replay.json": "e5e8c5eb6b76f70947f4ee7a8204bd64da5b071bcfa8f5a4b23b77c2079f112e",
+    "archives/weighted-congestion/tools/evidence/symmetric-source/original/tests/audits/weighted_congestion/source_degree32/verify.py": "0d3afd04aa12c17e68a04b39645e9f0658c19c4f9222ad3bcc9f395f38da3cfb"
+  },
+  "review_digest": "c8b86fe88bab2158a86fd82a5342af78492983f69a8c33d89dbaecf85b744145"
+}

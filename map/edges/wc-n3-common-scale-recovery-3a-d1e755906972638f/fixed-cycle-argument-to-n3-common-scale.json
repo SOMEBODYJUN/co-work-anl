@@ -1,0 +1,43 @@
+{
+  "edge_id": "wc-boss2-fixed-cycle-argument-to-n3-common-scale",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/fixed-weight-marginal-cycle-ratio"
+  ],
+  "target_ids": [
+    "weighted-congestion/two-weight-n3-common-free-scale-exact-optima"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "真实权1、2，单资源计数(k,l)∈{0,1,2,3}²，真实负载L=k+2l。轻、重正尺度分别为1、h。固定h后，对d=0,1,2的单项式向上边，以(L+1)^d或h(L+2)^d为预算c，要求c≤ΔF≤αc。纯二次和非负系数至二次的共同尺度分别优化。混合合同中同一(h,α)适用于全部资源及全部分项。",
+  "roles": {
+    "weighted-congestion/fixed-weight-marginal-cycle-ratio": "提供正边预算的差分约束论证。该论证可在每个固定h上使用，同时保留真实负载。",
+    "weighted-congestion/two-weight-n3-common-free-scale-exact-optima": "十六态的纯二次及混合合同由各自的定向圈给出全正h下界，由显式势达到，并给出相应的实际有限局弱PNE存在上界。"
+  },
+  "explanation": "固定h和次数d，取三名轻权1与三名重权2。对带标签子集S，将源证明的预算改为A(S,i)=s_i(w(S)+w_i)^d，其中s_i取1或h，w_i仍取1或2。源证明的上下弧长度αA与−A、闭圈求和和最短路构造仅用A的固定正性。标签势按同类置换平均得到可行的计数势，计数势按子集人数拉回同样可行。因而可以直接在十六态图上使用αU≥D，此处U是上行预算和，D是下行预算和。\n\n纯二次，记ij=(i,j)。四圈00→01→11→10→00的(U,D)=(9+4h,1+9h)，十圈01→11→21→31→32→33→23→13→03→02→01的(U,D)=(50+130h,194+52h)。两比R=(1+9h)/(9+4h)、Q=(194+52h)/(50+130h)的导数分子分别为77、−22620。分母恒正，交点方程为481h²−332h−848=0，有唯一正根h_p。低于h_p时Q严格超出交点值，高于h_p时R严格超出，故全正h的倍率下界为α_p=R(h_p)=Q(h_p)，且只有h_p可能达到。\n\n纯二次达到性。取十六态正文的F矩阵，T=1−9α_p+9h_p=4α_p h_p。置α_p=(−323+481h_p)/485，以h_p²=(332h_p+848)/481约化。依次对每一合法格边检查ΔF−c及α_p c−ΔF，均为u+vh_p。原二次式在有理端点1.7170098、1.7170100异号；v≥0取左端、v<0取右端。48项中17项恒为零，其余31项的最小下界为136099/6062500，在30→31的上余量取得。任意非负纯二次系数通过乘同一矩阵保持夹逼。\n\n混合下界。纯二次四圈保留R(h)。线性圈00→10→20→30→31→32→22→12→02→01→00的(U,D)=(6+12h,18+6h)，得T_1(h)=(3+h)/(1+2h)，导数分子为−5。R、T_1的唯一正交点h_m满足7h²−5h−13=0，左右分别由T_1、R严格高于交点，故下界为α_m=R(h_m)=T_1(h_m)=h_m−5/7，且只有h_m可能达到。混合达到性。取正文的F₁和F₂矩阵，以h_m²=(5h_m+13)/7、α_m h_m=13/7约化每项余量，原二次式隔离于1.76593449452<h_m<1.76593449453。两个矩阵各有16项精确零，另外32项各自的最小有理下界为2115609623/175000000000（线性21→31的下余量）及9038536541/175000000000（二次00→10的上余量）。F₀(k,l)=k+h_m l取常数边下界。对每个资源取Σa_{e,d}F_d，系数非负保双侧夹逼。\n\n实际偏离中，移出、加入及共用成本记C₋、C₊、C₀≥0。严格倍率改善给C₋>αC₊+(α−1)C₀≥αC₊，同一玩家尺度s_i跨所有资源一致，故总势变化≤s_i(αC₊−C₋)<0。每个资源每类至多三名潜在使用者保证所需边皆在格中。全局势最小点给相应的弱α-PNE。",
+  "scope": "真实权1、2且每资源每类至多三名潜在使用者的纯二次及非负混合费用。有限资源边际模板各自锐，实际博弈各得存在上界。约束圈属于差分图。固定真实权尺度h=2、九态盒、其它系数域和原博弈最坏均衡倍率有独立条件。",
+  "whole_result": "方向为正边预算的固定尺度圈判据经真实负载与尺度分离，推出十六态两种自由共同尺度合同的精确下界。目标正文的显式势给独立达到性并推出实际有限局弱PNE存在。纯二次唯一最优重尺度是481h²−332h−848=0的正根h_p，倍率(1+9h_p)/(9+4h_p)≈1.03686970638950。非负至二次混合唯一最优重尺度是7h²−5h−13=0的正根h_m，倍率h_m−5/7≈1.05164878023686。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/等价/固定权向量边际夹逼的最大圈比--等价.md",
+      "sha256": "a42e12ea728da5e4c8e11e35ce163327fe1c6e507e169dc5cf6c99ef30343d55",
+      "section": "固定权向量边际夹逼的最大圈比"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/双权十六态的纯二次与混合费用自由尺度锐界--定理.md",
+      "sha256": "b355343821a7735d5789f596aa64b1d8a28c7516e790d78dcc0ac2026a311c36"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "实读绑定正文，逐圈复算U、D，用有理对(u,v)及根隔离复核三个24边势表的144项余量，并单独检查常数势与实际偏离。现有同法九态边和固定真实权缩放边保持各自范围。",
+  "endpoint_pins": {
+    "weighted-congestion/fixed-weight-marginal-cycle-ratio": "84ee9273875d7ad812d106cc6f76adf1a0f639321059ebe12ea2ea0eb1c883c6",
+    "weighted-congestion/two-weight-n3-common-free-scale-exact-optima": "875c7b222629e908a9aecc30ffdde987f3668ef199e21cedaf6d8a2802da34b2"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/等价/固定权向量边际夹逼的最大圈比--等价.md": "a42e12ea728da5e4c8e11e35ce163327fe1c6e507e169dc5cf6c99ef30343d55",
+    "archives/weighted-congestion/state/定理/双权十六态的纯二次与混合费用自由尺度锐界--定理.md": "b355343821a7735d5789f596aa64b1d8a28c7516e790d78dcc0ac2026a311c36"
+  },
+  "review_digest": "18e05c7d1a7607ce7f0d9baeedf2dfb761342d53f82ddbedefe553de6a07bd2e"
+}

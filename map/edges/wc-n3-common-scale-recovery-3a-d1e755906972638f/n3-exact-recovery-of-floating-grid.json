@@ -1,0 +1,52 @@
+{
+  "edge_id": "wc-boss2-n3-exact-recovery-of-floating-grid",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/two-weight-n3-common-free-scale-exact-optima"
+  ],
+  "target_ids": [
+    "weighted-congestion/finite-grid-free-heavy-scale-floating-lp-search-contract"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "仅原搜索N=3的纯x²资源，状态0≤k,l≤3，真实负载k+2l，轻尺度1，正重尺度h，F00=0。二进制浮点数按其准确有理值解释。原程序h≥10⁻⁸的额外下限保留。",
+  "roles": {
+    "weighted-congestion/two-weight-n3-common-free-scale-exact-optima": "提供纯二次的精确自由尺度最优、两条定向圈及可用于参数恢复的势矩阵。",
+    "weighted-congestion/finite-grid-free-heavy-scale-floating-lp-search-contract": "提供原纯二次LP及保存的N=3运行记录。区分二分倍率、额外放宽后保存的倍率和对应的h、F。"
+  },
+  "explanation": "原LP在N=3有16个势值和一个h，24条加入边及48项夹逼。纯二次定理的F00=0且h_p>10⁻⁸，因此代码下限不改变该格的数学最优。令P(h)=481h²−332h−848，H(q)=(9q−1)/(9−4q)。把两个有理数q=1.03686970638、1.03686970639代入P(H(q))分别为负、正，故q的两值严格夹住自由最优α_p。原字面二分倍率a_b=4669646022499609/4503599627370496低于左端，保存倍率a_s=1167411618214893/1125899906842624高于右端。\n\n令原保存的h_s=7732727043707397/4503599627370496。四圈要求a_s(9+4h_s)−(1+9h_s)≥0，准确差值为−1287707630850655/1267650600228229401496703205376。故固定原保存(a_s,h_s)时，任意实F均不可行。单独用原F审计48项，恰有五个正违反，最大为56735047034802191/5070602400912917605986812821504，在32→33的重边上界。\n\n精确恢复。固定a_s，两圈分别给下界h_L=(194−50a_s)/(130a_s−52)和上界h_R=H(a_s)，均为正，且h_L≤h_R。取十六态正文的纯二次F矩阵，改用T=1−9a_s+9h，全表中的a取a_s。此处T只按这一线性式取值。48个余量以1、a_s、h、a_s h为基展开。15项恒为零，两项是00→01的上余量a_s(9+4h)−(1+9h)及32→33的上余量a_s(50+130h)−(194+52h)，在闭区间[h_L,h_R]皆非负。其余31项统一取有理盒1.0368698≤a_s≤1.0368699、1.7170096≤h≤1.7170104，正系数取对应单项式下端、负系数取上端。最小下界2804276719/125000000000落在30→31的上余量25a_s h−28a_s−9h。原a_s和两个h端点均落在该盒，故全区间可行。原h_s超出h_R的差恰为183958232978665/878757267610497822560467550208，固定a_s恢复时可将h_s降低这个最小量并采用上述F。",
+  "scope": "一个已保存的N=3纯二次运行及其对应的精确有限模板。区分二分值、额外放宽的保存倍率、保存参数对和保存势。非负混合最优、其它N、固定真实权尺度和实际游戏的均衡锐界均属各自合同。",
+  "contribution": {
+    "result": "精确化原搜索的N=3纯二次子问题。原二分值严格小于自由最优α_p。额外放宽的保存倍率a_s严格大于α_p，但原保存的(a_s,h_s)由四圈严格排除任何精确势。固定a_s的完整可恢复尺度区间为[h_L,h_R]，显式十六态势逐边证明充分性，因而给出最小尺度修正。",
+    "remaining": "结论支付N=3的精确数学比较。目标的运行流程、其它六格输出与逐字面残差来自独立计算证据。其它网格的精确锐值及一般人数仍需各自的论证。"
+  },
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/双权十六态的纯二次与混合费用自由尺度锐界--定理.md",
+      "sha256": "b355343821a7735d5789f596aa64b1d8a28c7516e790d78dcc0ac2026a311c36",
+      "section": "双权十六态的纯二次与混合费用自由尺度锐界"
+    },
+    {
+      "path": "archives/weighted-congestion/state/计算/有限双权边际势的自由尺度浮点搜索--计算.md",
+      "sha256": "eca6f04f7f96db42f90b5a5b2c4a3b3012b72a9fad2f7d31b44c810b0e745f22",
+      "section": "有限双权边际势的自由尺度浮点搜索"
+    },
+    {
+      "path": "tools/evidence/retired-config-certificates/runs/scaled_envelope/scaled_envelope_results.json",
+      "sha256": "b3b488515bacf92d60ca60acd7adb67be02cbdd7050172932d13bde0e223c9d9"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "对照已发表的九态浮点精确化边，复核本条只处理十六态。核冻结运行JSON的SHA，以Fraction重算N=3字面二进制参数与全部48行，独立用两圈、势表和有理盒复核完整恢复区间。",
+  "endpoint_pins": {
+    "weighted-congestion/finite-grid-free-heavy-scale-floating-lp-search-contract": "e96fac139109d90365205c7cae84f35f91c83e760d956ac48359f0e9311e8662",
+    "weighted-congestion/two-weight-n3-common-free-scale-exact-optima": "875c7b222629e908a9aecc30ffdde987f3668ef199e21cedaf6d8a2802da34b2"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/双权十六态的纯二次与混合费用自由尺度锐界--定理.md": "b355343821a7735d5789f596aa64b1d8a28c7516e790d78dcc0ac2026a311c36",
+    "archives/weighted-congestion/state/计算/有限双权边际势的自由尺度浮点搜索--计算.md": "eca6f04f7f96db42f90b5a5b2c4a3b3012b72a9fad2f7d31b44c810b0e745f22",
+    "tools/evidence/retired-config-certificates/runs/scaled_envelope/scaled_envelope_results.json": "b3b488515bacf92d60ca60acd7adb67be02cbdd7050172932d13bde0e223c9d9"
+  },
+  "review_digest": "c4f800a30b97a3467975ac88a208c725a7ace878a53e6a3de2b7ef18d19c5bc6"
+}

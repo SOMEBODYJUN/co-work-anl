@@ -1,0 +1,46 @@
+{
+  "edge_id": "wc-static-complement-transports-same-action-deficit",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/static-customer-coverage-complement-harmonic-transfer"
+  ],
+  "target_ids": [
+    "weighted-congestion/harmonic-complement-monochromatic-pne-global-minimum"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限资源 X，m≥1 名单位权活动玩家，共同有限非空目标资源子集目录。固定逐资源 v_x>0、b_x≥0。费用在所有 j=1,…,m 节点取 p_x(j)=v_x/(b_x+m+1−j)。同动作目标起点 s=(B,…,B) 为精确静态 PNE，比较 t 遍历共同目录的全部 m 元剖面。每项单方比较固定其余玩家在 s 中的动作。",
+  "roles": {
+    "weighted-congestion/static-customer-coverage-complement-harmonic-transfer": "给补集剖面和合法偏离的双向解码，以及固定对手的成本与收益差变号和势差变号。",
+    "weighted-congestion/harmonic-complement-monochromatic-pne-global-minimum": "待证明的势下界，其左端减去逐玩家偏离差之和得到此处等同于源势缺口的量。"
+  },
+  "explanation": "对目标每个动作 A 取源覆盖 X∖A。源活动玩家若选覆盖 X∖B 的同一合法主题，所得同色剖面记为 s̄；任意完整目标剖面 t 解码为 t̄。若原目录有同覆盖异标签，为 s̄ 的所有玩家选同一个覆盖为 X∖B 的原标签，t̄ 可逐玩家任意提升。标签代表不影响效用、势和任何静态比较。给定 i 和其余原覆盖，c_x^{−i} 固定。当 i 使用目标资源 x 时负载为 m−c_x^{−i}，其费用是 v_x/(b_x+1+c_x^{−i})。故 C_i(t_i,s_{−i})−C_i(s)=−[u_i(t̄_i,s̄_{−i})−u_i(s̄)]，对全部合法 t_i 成立，弱 PNE 双向保留。又以 c_x 为原活动覆盖数，目标负载 m−c_x 给 Ψ=Σ_x v_x H_{b_x}(m)−Φ，其中 Φ=Σ_x v_x H_{b_x}(c_x)。因此 Ψ(t)−Ψ(s)−Σ_i[C_i(t_i,s_{−i})−C_i(s)] 恰等于 Σ_i[u_i(t̄_i,s̄_{−i})−u_i(s̄)]−[Φ(t̄)−Φ(s̄)]。源端的 t̄ 可以是任意合法完整静态剖面。",
+  "scope": "精确静态偏离与势差解码。允许空动作、弱平局与任意固定实逐客户背景。费用只在实际访问的正整数节点参与等式。完整序贯偏离可改变他人的后继动作，固定对手的变号等式无法直接比较该类分支。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md",
+      "sha256": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed",
+      "section": "静态偏离与势的精确对应"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/调和补集拥塞的同动作精确均衡是全局势最小点--定理.md",
+      "sha256": "278f3b3307126edc820681ccfefbc917d657893119e0bef28c148dc3c3f50f13"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "实读两端证明，核对实际正负载、固定对手的差值符号、商目录同色提升以及全部比较剖面。源端缺口与目标端缺口逐项相等，缺口符号由另一个论证支付。",
+  "contribution": {
+    "result": "任意同动作目标精确 PNE 解码为同色源精确静态 PNE。对每个完整比较剖面，目标势增量减同一起点的逐玩家单方成本增量之和，恒等于源逐玩家单方收益增量之和减源势增量。PNE 还使目标逐偏离成本增量各自非负。",
+    "remaining": "完整目标保证还需要证明这个共同缺口对所有比较剖面非负。跨档路线需加入允许实外生背景的同色静态 Shapley 势差上界。目标正文另有独立的单位权非减费用证明。"
+  },
+  "endpoint_pins": {
+    "weighted-congestion/harmonic-complement-monochromatic-pne-global-minimum": "a0eb45ab28a36557c6e83a92c110708f75f0e87fdd413ebe7215dd02f3d524b6",
+    "weighted-congestion/static-customer-coverage-complement-harmonic-transfer": "28e31c3ca9c22526a6deaefa756b18799393a7cbeb4e735617f69286c812ef4d"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/客户均分到非负多项式拥塞的静态补集转移--定理.md": "e6b18c3998549abe895e26851e05645168eaee8ac0ddd2b8afecabff53ff80ed",
+    "archives/weighted-congestion/state/定理/调和补集拥塞的同动作精确均衡是全局势最小点--定理.md": "278f3b3307126edc820681ccfefbc917d657893119e0bef28c148dc3c3f50f13"
+  },
+  "review_digest": "3752954f8bcaea303127c5d02db410fcbe34f8601fbd31d5b8115908869894f7"
+}

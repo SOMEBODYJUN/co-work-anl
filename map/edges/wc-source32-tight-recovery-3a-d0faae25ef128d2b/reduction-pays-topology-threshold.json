@@ -1,0 +1,62 @@
+{
+  "edge_id": "wc-source32-tight-v3-pays-topology-threshold",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R3-FULL-TOPOLOGY-REDUCTION-v3"
+  ],
+  "target_ids": [
+    "weighted-congestion/degree32-source-exact-optimizer-branch-and-tight-interval"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "次数至多 32 的完整对称两列，重玩家权 1，n≥1 名轻玩家同权 w>0，主资源共用 F，侧资源共用 G，费用为非负实系数多项式。真实单人偏离重新计入自身负载，等号稳定。归约源采用整数 n≥1、1≤k≤32 及实 0<w≤1、0<β<1。证据中的固定有理元组给出 F32>ρ。",
+  "roles": {
+    "WC-R3-FULL-TOPOLOGY-REDUCTION-v3": "以全状态轨道和稳定区间证明双侧阈值夹逼 (U)，并给定源博弈在 m=0 与 m>0 两类状态的真实成本比较。",
+    "weighted-congestion/degree32-source-exact-optimizer-branch-and-tight-interval": "需取得窄区间、最优参数分支及阈值可达，同时需把源极值转为完整对称拓扑的真实类阈值。此边承担后一个步骤。"
+  },
+  "explanation": "归约的 (N,ω,k,β,d)=(n,w,k,β,32)，两严格测试各除以正分母后对应 H>α 与 L>α，所以 T_source(32)=F32。源有理元组 (6,2,463/9321,51511/456862) 的两攻击比均严格大于 71/40，且 2·(71/40)·(71/40−1)>1=2ρ(ρ−1)。将 F32>ρ 代入 (U)，得到 T_topology(32)=F32。若另有任一合法源达到点，在该点令 F(x)=x^k、G(x)=βx^32，构造两个整列动作及每名轻玩家的两个交叉动作。固定重玩家的列，m=0 由重玩家比 H 覆盖，m>0 由同主资源轻玩家比 L_m≥L_1=L 覆盖，互换两列穷尽状态。因 min(H,L)=F32，全部 1≤α<F32 都无弱 α-PNE。反向由 T_topology(32)=F32 得该实例在 F32 有弱均衡。也可在已知 H=L=F32 时直接取 m=0，重玩家比为 H，所有轻玩家比为 1/L。",
+  "scope": "完整同轻权对称类的上确界及任一源达到点生成的有限博弈。一般归约允许改变人数、共同轻权及费用，所得阈值相等是类层面的结论。",
+  "contribution": {
+    "result": "完整拓扑阈值 T_topology(32)=F32。若给出任一达到 F32 的合法源参数，其原始两列博弈的最佳弱均衡倍率恰为 F32。",
+    "remaining": "整条目标还需源的 1775001/1000000 严格上界、所有达到点的 n=6、k=2 及开 w 区间、取得性与 H=L。这些由目标正文的实区间 Bernstein 排除及紧性论证独立承担。"
+  },
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/对称两列拓扑的单项式两攻击归约--定理.md",
+      "sha256": "6d6ffc835804eec4e380e086b818d8e022dc1c0d70d505d31a09873766b7d6d9"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/三十二次两攻击源包络上界--定理.md",
+      "sha256": "fc89af9c3515b2c0d0cdf2461e6146301952f42003078848e679242910520ca8",
+      "section": "精确命题及作用域"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/三十二次对称源的窄有理界和最优离散参数--定理.md",
+      "sha256": "fc9cab35069725ca3874678d19a861d2bf0768177fb0b7f9998668b65c0978f9",
+      "section": "有理下证和全域闭区间验证"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/degree32-tight-source/verify.py",
+      "sha256": "307ac3f1087bb315e79cebb40c05838dddbd61ec8ea7395d8cc8e6d21149eabf"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/degree32-tight-source/replay.json",
+      "sha256": "e5e8c5eb6b76f70947f4ee7a8204bd64da5b071bcfa8f5a4b23b77c2079f112e"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "重读 v3 的全轨道真实偏离、稳定整数区间、左右支、单项式抽取及 (U)。核对源参数逐项映射、两个正分母和 rho 门槛。精确重跑紧界检查器得到冻结输出，并以资源字面策略重建有理下证的 128 态和 896 个真实偏离。取得 F32 的真实实例论证适用于目标所保证的任一合法达到点。",
+  "endpoint_pins": {
+    "WC-R3-FULL-TOPOLOGY-REDUCTION-v3": "cd9c56dbad4a1760d545b3dce0028cb43947151508b9821d251f5b37df350e0a",
+    "weighted-congestion/degree32-source-exact-optimizer-branch-and-tight-interval": "a7539b019f7441604f010b977a4ce754615e16635b09527264bde35358d09d5e"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/对称两列拓扑的单项式两攻击归约--定理.md": "6d6ffc835804eec4e380e086b818d8e022dc1c0d70d505d31a09873766b7d6d9",
+    "archives/weighted-congestion/state/定理/三十二次两攻击源包络上界--定理.md": "fc89af9c3515b2c0d0cdf2461e6146301952f42003078848e679242910520ca8",
+    "archives/weighted-congestion/state/定理/三十二次对称源的窄有理界和最优离散参数--定理.md": "fc9cab35069725ca3874678d19a861d2bf0768177fb0b7f9998668b65c0978f9",
+    "archives/weighted-congestion/tools/evidence/degree32-tight-source/verify.py": "307ac3f1087bb315e79cebb40c05838dddbd61ec8ea7395d8cc8e6d21149eabf",
+    "archives/weighted-congestion/tools/evidence/degree32-tight-source/replay.json": "e5e8c5eb6b76f70947f4ee7a8204bd64da5b071bcfa8f5a4b23b77c2079f112e"
+  },
+  "review_digest": "769a2e8441d8520d5e757e3e212355c0c9156ec624a8f23a1d21ebf3c8904b5a"
+}

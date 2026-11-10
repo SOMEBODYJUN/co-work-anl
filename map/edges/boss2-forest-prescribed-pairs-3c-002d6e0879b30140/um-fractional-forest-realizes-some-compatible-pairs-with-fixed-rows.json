@@ -1,0 +1,47 @@
+{
+  "edge_id": "um-fractional-forest-realizes-some-compatible-pairs-with-fixed-rows",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1"
+  ],
+  "target_ids": [
+    "EA-GROUPED-CONFIG-GLOBAL-GLUE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一显式有理普通UM、原阈值T≥0，给每机完整合法配置律且逐任务边际和为一。只取分数边所得二部关联图是森林。原机器和任务身份保持。",
+  "roles": {
+    "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1": "从固定各行构造分数关联森林的有理全机联合实现，支撑中每项都是原T调度。",
+    "EA-GROUPED-CONFIG-GLOBAL-GLUE-v1": "接收固定这些行下存在一套可全局延拓的GPC₂配对及实际T调度的支线。"
+  },
+  "explanation": "对森林定理的同一全机分解逐对投影。行边际保给定配置律，每个全机支撑是实际完整调度，所以每对配置不交。由此构造在同一行律下的一套GPC₂配对，联合实现本身给可延拓证书。这与预先指定配对不同。取三件单位任务j_a，各仅可在两台自己分量的机器i_(a,0),i_(a,1)上处理，T=1。每机在空与本分量单例间各半，分数图是三条机—任务—机路径，行律可由三个独立的二选一实现。分量内的机器对用互补耦合。在三个不同分量的0号机器之间，对每个机器对指定两个单例指示变量总相反。其余跨分量机器对取行律乘积。所有指定对有正确边际与不交支撑，因为跨分量没有共同任务。任何全机实现却必须令三个布尔变量两两不同，不可能。原实例显然有T调度。因而森林可以构造某套可延拓的配对，仍须检查预先指定整组配对的相容性。",
+  "scope": "行律固定且分数关联无环的构造范围，严格区分存在某套配对与保持给定配对。该三分量反例不依赖阈值不可行。",
+  "contribution": {
+    "result": "在分数关联森林上可从给定完整行律构造同一全机分解、某套可全局延拓的GPC₂配对和实际原T调度。即使图是森林、行律可全局实现，指定配对也可能同时不可实现。",
+    "remaining": "任意带环分数关联图上固定行律的构造未由此解决，给定整套配对的全局延拓仍是独立相容性问题。目标的任意图已知蕴含继续由原分组解码证明承担。"
+  },
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md",
+      "section": "精确有理分解",
+      "sha256": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5"
+    },
+    {
+      "path": "archives/customer-attraction/state/等价/保机器分组的全机配置耦合--等价.md",
+      "section": "全局耦合与阈值可行性",
+      "sha256": "25a08161c926f9d4506fda0937a58b44c7840f353af26270aa889f2ff8ee9850"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项核分量内互补、跨分量不交、三个指定反相关约束的矛盾及原行律的独立实现。",
+  "endpoint_pins": {
+    "EA-GROUPED-CONFIG-GLOBAL-GLUE-v1": "9528168f0798b583ac2c68786ebc20df4cf94368b57a9f73d262ab16aecd643f",
+    "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1": "0117271b622daf5cc467317f1e1229b9ec5769c2d80ea71258bcf63a50cfff07"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5",
+    "archives/customer-attraction/state/等价/保机器分组的全机配置耦合--等价.md": "25a08161c926f9d4506fda0937a58b44c7840f353af26270aa889f2ff8ee9850"
+  },
+  "review_digest": "4351ae8b14166b522d26d117e4a38433e271c58578a4fdbbd9f574f96055953a"
+}
