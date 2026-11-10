@@ -1,0 +1,49 @@
+{
+  "edge_id": "ca-r36-minimal-extra-one-forbids-real-count-ring",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-fd7aa990e8824f67a6290331695b5f9a",
+    "M-63b88ae620394a57b1286767920247b0"
+  ],
+  "target_ids": [
+    "CA-R0F997-REPLICATED-BLOCK-CONTAINMENT-CYCLE-20261030"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "假定有最小剩余人数的全合法背景F_r坏点，t=v_(r+1)(b)>u。使用同一σ全部强制极大根的真实尾。",
+  "roles": {
+    "M-fd7aa990e8824f67a6290331695b5f9a": "由最小性、合法背景嵌入和根IC给所有d_A<t及后继e≥t。",
+    "M-63b88ae620394a57b1286767920247b0": "若真实环满足双向包含计数，则Σd_i≥Σe_i。",
+    "CA-R0F997-REPLICATED-BLOCK-CONTAINMENT-CYCLE-20261030": "把重复块及可推广环排除在最小坏点的真实菜单外。"
+  },
+  "explanation": "对一个真实合格环，根IC给每枝d_i≤u<t，最小坏点的proper-history下界给每位选定实际后继e_i≥t。所以Σd_i<Σe_i，与真实环PAY矛盾。每个重复块满足L_i+L_j≥r时都给合格双向环。使用真正取过的后继，不用未选交集或假设最小后继自动存在。",
+  "scope": "最小坏点的结构排除。F_r一般本已由零根银行族反驳，局部环支付和最小反例的条件排除仍正确。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/真实重复块与包含计数环支付--引理.md",
+      "sha256": "d48510366f7fca0dd3e97c3e327d2af34bdd00be2fa1f49f2d14cf7494f52e7d"
+    },
+    {
+      "path": "archives/customer-attraction/state/问题/自由extra-one与iid安全值边界--问题.md",
+      "sha256": "2788cef1bcf3876f78905d0cb0aa7ff6ad0e57006815c9de7ff79da82e3f64c2",
+      "section": "二、一般目录的 extra-one 最小反例正规形"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Boss6本轮正式3A定向修复实读v2正文与最小坏点正规形：对同一sigma的每个强制根d_A≤u<t；每个proper-history孩子继承完整子SPE，经最小人数和同目录合法背景EMBED得e≥t。合格环PAY遂与Σd<Σe矛盾。银行四人完整SPE已否一般F_r，良序仍给某个最小坏点r*≤4；这不冲突于已证条件排环，亦不能再以普遍有合格环证明F_r。银行任意强制根尾三主题互异，a=c=L=1、2<4，独立证明该例无合格环；不认定该银行例本身最小。保持原ALL、conditional、implies方向及局部贡献。",
+  "contribution": {
+    "result": "任何最小人数F_r坏点都不能含满足双向包含计数的真实环，尤其不能含块大小和满足r的真实重复环。",
+    "remaining": "此排除没有证明所有实际根菜单存在合格环，也不扩张重复块对象独有的粗位型必要性。"
+  },
+  "endpoint_pins": {
+    "CA-R0F997-REPLICATED-BLOCK-CONTAINMENT-CYCLE-20261030": "37930265c935037db7ca77c7eb1ad174174c152636904632c744ce799e4ae7e8",
+    "M-63b88ae620394a57b1286767920247b0": "46301875a237d90a3137c5e7d076c140997b16c708beaddb53610d10fd5e5e7e",
+    "M-fd7aa990e8824f67a6290331695b5f9a": "82504085d2ab4a0d68b5e6d79c2b500ce59a931b47304cdc114e17efa03cbd44"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/真实重复块与包含计数环支付--引理.md": "d48510366f7fca0dd3e97c3e327d2af34bdd00be2fa1f49f2d14cf7494f52e7d",
+    "archives/customer-attraction/state/问题/自由extra-one与iid安全值边界--问题.md": "2788cef1bcf3876f78905d0cb0aa7ff6ad0e57006815c9de7ff79da82e3f64c2"
+  },
+  "review_digest": "6224abdc15a4758432c681ce980716c55145cf84a3fa0d7c7e0c451e53bcf6e5"
+}
