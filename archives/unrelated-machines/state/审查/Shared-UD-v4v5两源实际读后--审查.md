@@ -32,7 +32,7 @@ v4 的另一 Exact-first 算法以 matroid greedy 候选、weighted-rank compari
 
 # 3. v5 O(1/k) relative-curvature actual allocation
 
-v5 在同一 typed domain 内把 k≥2 vacancy 条件调整到 `ν≤1/(1024k)` 版本，k=1 仍无 tiny。单 helper 候选用 `I_-j` 加 state 的 matroid greedy；对任意 optimal fractional face，reference/current 比满足 `h·reference≤2h·current+Σδ`，其余 helpers 的 weighted 丢失由新 j 贡献支付。same-outer weighted 影响、所有跨-cap 余项、倒数势 `φ`、终点 S 和等号 FAIL 均被逐项核对；共同叶 matching 保持 all outer 实际资源独立，selectors/incidences 全回填。
+v5 在同一 typed domain 内把 k≥2 vacancy 条件调整到 `ν≤1/(1024k)` 版本，k=1 仍无 tiny。单 helper 候选用 `I_-j` 加 state 的 matroid greedy；当前 I 与参考 I* 都是实际可行独立 incidence 集，各 helper 至多一个原 fallback state。对任意固定正权 h，加权比较给 `h·reference≤2h·current+Σδ`，其余 helpers 的 weighted 丢失由新 j 贡献支付。same-outer weighted 影响、所有跨-cap 余项、倒数势 `φ`、终点 S 和等号 FAIL 均被逐项核对；共同叶 matching 保持 all outer 实际资源独立，selectors/incidences 全回填。
 
 若 actual V>18/19 且某 terminal `L_i<19/100`，曲率与 Cauchy 给 reference gap 系数 `9657/36100`，大于误差付款上界 `698/2851`；因此无可付款进展时是 sound FAIL `V≤18/19`，基线 ratio 1.9。固定 `1/(100N)` 步幅与有理 bitset 重算给总迭代次数 `O(k²N)`（k=1 为 `O(N)`），递归分母不增长，输出全 jobs/容量检查按显式 bit length 多项式。该数学合同未配端到端软件执行；v4 交换 audit 不能转作 v5 实现证明。
 

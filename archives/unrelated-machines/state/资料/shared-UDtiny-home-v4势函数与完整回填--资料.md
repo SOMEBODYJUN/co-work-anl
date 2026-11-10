@@ -48,7 +48,7 @@ k≥2：维护每 helper 一个原 fallback state 和当前 M-independent incide
 
 # 3. FW、prefix-flow 和 19/10 实际回填
 
-作者 v4b 的 profile backend 用 FW 近似每个 fixed profile 的 concave potential，步数 O(k/ξ)，matching linear oracle 每轮有 rational bit bound；stable optimal face coupling 只作存在证明。终止时 no candidate gain 反证 actual V≤18/19，故 baseline sound。
+作者 v4b 的 profile backend 用 FW 近似每个 fixed profile 的 concave potential，步数 O(k/ξ)，matching linear oracle 每轮有 rational bit bound；stable optimal face coupling 只作存在证明。终止时若无足够候选增量，profile 证明由反证得到 actual V<15/16，故 baseline sound。
 
 LP/FW 成功时，outer claims 聚合到最大 resource coefficient `a_iu`，按资源排序做 prefix lower-bound circulation。原 fractional flow 给 circulation 可行，整数性一次性产生所有 outer claims 与 leaves 的同一完整 matching；每 outer loss≤ν，故 weighted welfare>19/100。Good helpers threshold=1/10，outer 收相应 homes，未选 helpers 回 own homes，叶用剩余 B matching 与原 attaining states，所有 groups quality≥1/10。
 
