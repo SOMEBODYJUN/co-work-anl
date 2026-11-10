@@ -1,0 +1,57 @@
+{
+  "edge_id": "wc-b5-d49-multiscale-positive-dual-step",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "kind": "implies",
+  "source_ids": [
+    "WC-R1-MULTIPLIER-BARRIER"
+  ],
+  "target_ids": [
+    "WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1"
+  ],
+  "conditions": "整数d≥2、实1≤α<ρ_d，两对象使用相同R_d与sup。以barrier证明中有限相邻类和极端类路径测试为输入；尚未加入guard时只量化严格正类乘子h。",
+  "roles": {
+    "WC-R1-MULTIPLIER-BARRIER": "提供有限多尺度路径比严格单调、相邻尺度增长和首尾上界的矛盾，以及ρ_d的上下界。",
+    "WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1": "将该有限正乘子障碍作为循环构造第一步；非负零坐标排除、严格替代和逐人窗口实现另付。"
+  },
+  "explanation": "取t0、λ>1、t1、B0>λ和有限ℓ使R_λ(t0)>α、R_B0(t1)<1/α、λ^ℓ>B0。由有限幂和黎曼收敛选足够小正有理q，类权w_j=q^j。对相邻测试K0=floor(t0/q)，路径比随s=β_(j+1)/β_j严格递减，迫s>λ；极端测试K1=floor(t1/q^ℓ)迫β_ℓ/β_0<B0，乘积矛盾。故这些有限路径测试不存在全正类h同时满足A≤αB、B≤αA。这一步不排具有零坐标的非零h≥0，不能直接由正h不可行推出Gz>0。循环正文随后先补Kg=floor(1/q)连接测试，保证V>αU、X>αY，使相邻零坐标互相传播；才排全部非零非负h，应用有限严格替代得到Gz>0，再以循环窗口逐人秩与第二轮补集实现真实环并有理化。source的ρ_d>d^((d−1)/(d+1))及ρ_d≤d也确实给目标共享的ρ_d/d→1。",
+  "scope": "只把已证有限正乘子不相容和ρ_d界记作目标的已付贡献；不把单资源路径圈当真实改善环，不把局部夹逼NO当PNE不存在。",
+  "contribution": {
+    "result": "循环定理第一节所需的有限相邻/极端类路径测试无严格正h可行；共享阈值有近d的上下界。",
+    "remaining": "整条循环定理还需要连接guard排非零非负h的零坐标、严格锥替代Gz>0、逐人循环窗口和第二轮补集、系数有理化/同费复制、2^E扩张后全空PNE及任意势反证。目标正文已逐步支付，不能省略为正h障碍的自动后果。"
+  },
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/障碍/任意玩家乘子的多尺度边际夹逼--障碍.md",
+      "sha256": "a8a81a49e28d9aa79571dda74c10e0ac45123f3ed2298b8625a1cfb3794e13ac",
+      "section": "完整有限多尺度证明"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/任意玩家乘子的多尺度边际夹逼--障碍.md",
+      "sha256": "a8a81a49e28d9aa79571dda74c10e0ac45123f3ed2298b8625a1cfb3794e13ac",
+      "section": "近线性量级与匹配的夹逼上界"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/循环窗口复制的近次数真实改善环--定理.md",
+      "sha256": "e6948b99b84e49e6683f0278be19661793042f5b7321f742af8fc578749aace2",
+      "section": "一、有限类路径不等式已经不相容"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/循环窗口复制的近次数真实改善环--定理.md",
+      "sha256": "e6948b99b84e49e6683f0278be19661793042f5b7321f742af8fc578749aace2",
+      "section": "二、连接测试排除非负对偶的零坐标"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "独立实读本边全部端点的当前登记、正文及所列证据，核对真实单方偏离、弱均衡端点、全部联合输入和整条/局部作用范围；有限记录不代替一般证明。",
+  "endpoint_pins": {
+    "WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1": "5848b6cfc7ac09b7830e98dc49f298bc9361195791df36384dbfb34ec91f4607",
+    "WC-R1-MULTIPLIER-BARRIER": "e6fb48b0e56b2ea9614281bab93077f5c5a2a9be25a88f66b7728a85ad0c84cf"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/障碍/任意玩家乘子的多尺度边际夹逼--障碍.md": "a8a81a49e28d9aa79571dda74c10e0ac45123f3ed2298b8625a1cfb3794e13ac",
+    "archives/weighted-congestion/state/定理/循环窗口复制的近次数真实改善环--定理.md": "e6948b99b84e49e6683f0278be19661793042f5b7321f742af8fc578749aace2"
+  },
+  "review_digest": "c9ea6efa8552108d5c2754ece5739a3188b5b4e36fe17a68a9744fa4cbdce5b1"
+}

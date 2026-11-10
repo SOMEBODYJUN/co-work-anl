@@ -1,0 +1,48 @@
+{
+  "edge_id": "wc-b5-d49-oc-interface-completes-light-characterization",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "kind": "implies",
+  "source_ids": [
+    "OC-INTERFACE-v1"
+  ],
+  "target_ids": [
+    "OC-LIGHT-FORCING-EXACT-v1"
+  ],
+  "conditions": "固定接口的合法奇数m≥3游戏与α≥1，只要求全部严格LIGHT q_iN_i>p_iP_i；不预设全部HUB或Δ_i>0。主、side含其正solo基线，所有cohort成员可独立翻位。",
+  "roles": {
+    "OC-INTERFACE-v1": "给真实两动作资源、N/M/P/Q、任意混合同位light的统一严格出口及全反位下hub精确差。",
+    "OC-LIGHT-FORCING-EXACT-v1": "补核剩余反位light和异位前驱hub后，得到固定游戏全部均衡及失败边显式着色。"
+  },
+  "explanation": "接口对同位成员最坏r_i=1的下界为q_iN_i−p_iP_i>0，故均衡只能全cohort反位。在该域，若下一hub同位，反位light当前/偏离成本为C0=q_i(n_ix_i)^k_i+p_i(1+t_i)^D_i、C1=q_i(1+x_i)^k_i+p_it_i^D_i；LIGHT正是C1>αC0，非负成本和α≥1给C0≤αC1。下一hub异位时当前side更便宜、偏离side更贵，仍稳定。hub i+1若前驱异位，其margin为−q_(i+1)M_(i+1)+n_i p_i[1−α(1+t_i)^D_i]<0；若前驱同位，margin精确Δ_i=n_i p_iQ_i−q_(i+1)M_(i+1)。故全反位态稳定恰当所有同位hub边Δ_i≤0，且全部玩家偏离已穷尽。奇数parity保证至少一条同位边，所以全部Δ_i>0时无均衡。任一失败边Δ_j≤0时，把该边设为唯一同位hub边、其余m−1条交替着色，全部cohort置反位；前述逐玩家检查给真实α-PNE，Δ_j=0仍被弱式接受。",
+  "scope": "仅严格全状态LIGHT域的必要充分刻画；未付LIGHT的同拓扑游戏不能由测试失败自动推出实际均衡。",
+  "whole_result": "在严格LIGHT域，全部α-PNE恰为cohort全反位且每条同位hub边Δ_i≤0的状态；奇环无α-PNE iff全部Δ_i>0，每条Δ_i≤0均给包含等号端点的唯一同位边显式α-PNE。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md",
+      "sha256": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6",
+      "section": "资源、玩家与动作"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md",
+      "sha256": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6",
+      "section": "混合群组也被覆盖的证明"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/同位强迫下的奇环均衡刻画--定理.md",
+      "sha256": "bc6e3a64054e4face8052088740717b2a8b47e5d1464a34c005b6bcdf2b90c4c"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "独立实读本边全部端点的当前登记、正文及所列证据，核对真实单方偏离、弱均衡端点、全部联合输入和整条/局部作用范围；有限记录不代替一般证明。",
+  "endpoint_pins": {
+    "OC-INTERFACE-v1": "2632cfb87681d8d959b5e44f47d114e30bacc287bba2a931798524c44c6be252",
+    "OC-LIGHT-FORCING-EXACT-v1": "ab17f269090fc55fb44b0533bd9e9c229fd4e1860df84c31ddefa4c9b8166b4b"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6",
+    "archives/weighted-congestion/state/定理/同位强迫下的奇环均衡刻画--定理.md": "bc6e3a64054e4face8052088740717b2a8b47e5d1464a34c005b6bcdf2b90c4c"
+  },
+  "review_digest": "15f0e5989b3032622fcc68102fd3bfd6f6caf8c479cc801f70c73d07ca7bb377"
+}

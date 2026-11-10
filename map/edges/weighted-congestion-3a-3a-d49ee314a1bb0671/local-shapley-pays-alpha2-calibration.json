@@ -1,0 +1,46 @@
+{
+  "edge_id": "wc-b5-d49-local-shapley-pays-alpha2-calibration",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "kind": "implies",
+  "source_ids": [
+    "WC-R3-DENSE-LOCAL-v1"
+  ],
+  "target_ids": [
+    "WC-CALIBRATION-EXISTENCE-SEPARATION-v1"
+  ],
+  "conditions": "只实例化目标16态游戏：权(1,2)，费用c_e=x、c_f=x²，每人全部四子集动作。两个资源的潜在用户均为{1,2}，a_e=a_f=1，R=2。",
+  "roles": {
+    "WC-R3-DENSE-LOCAL-v1": "给两个资源共同的固定Shapley势，局部边际均落在[c,2c]。",
+    "WC-CALIBRATION-EXISTENCE-SEPARATION-v1": "获得其α=2共同尺度图接口可行这一子结论；α1反例另由方格矛盾证明。"
+  },
+  "explanation": "取源势Φ=H_e+H_f。按∅,{1},{2},{1,2}排列，两资源的H表分别为(0,1,4,7)及(0,1,8,18)。精确边际与局部R=2包络给每个删除/加入资源c≤Δ_iH≤2c。对任意真实多资源偏离，ΔΦ≤2C_i(new)−C_i(old)−C_common≤2C_i(new)−C_i(old)，因此以同一h_1=h_2=1满足目标α2全状态成本差图接口。这里得到的是明确的α2校准YES，而非仅存在一个2-PNE。α1时源R2界不支付精确等号；目标两方格要求2h1=h2和8h1=5h2的冲突仍独立。",
+  "scope": "固定16态输入的α2校准证书；不把它倒推成α1可校准，亦不以FIP代替定量全偏离合同。",
+  "contribution": {
+    "result": "该16态游戏有明确α2共同尺度全状态成本差图势，取h=(1,1)、Φ=H_e+H_f。",
+    "remaining": "目标整条还须独立证明唯一精确PNE、α1严格改善无环与α1所有正尺度校准不可行；这些由目标正文的正费用/全空、拓扑序和两方格矛盾承担。"
+  },
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/局部窄权带的Shapley份额势--定理.md",
+      "sha256": "d1551d41cd6f3a625359dde38498d557a2ff46331049ee4284a0c908244af24d",
+      "section": "潜在用户局部权比的存在界"
+    },
+    {
+      "path": "archives/weighted-congestion/state/反例/唯一精确均衡与共同尺度图势不相容--反例.md",
+      "sha256": "dcd8d6acb69bd12d22c5173451e87f4834f09fd8825b2feb02786a2bfe268b6f"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "独立实读本边全部端点的当前登记、正文及所列证据，核对真实单方偏离、弱均衡端点、全部联合输入和整条/局部作用范围；有限记录不代替一般证明。",
+  "endpoint_pins": {
+    "WC-CALIBRATION-EXISTENCE-SEPARATION-v1": "f3bb611c19549cdde1ca3e3a4b8caa8addb575bc064ae9c347b19527830e9821",
+    "WC-R3-DENSE-LOCAL-v1": "bc1e2d33d074efe0de982045eb7d8dd930ab7430321cf1ce7f2c0125a0d41b11"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/局部窄权带的Shapley份额势--定理.md": "d1551d41cd6f3a625359dde38498d557a2ff46331049ee4284a0c908244af24d",
+    "archives/weighted-congestion/state/反例/唯一精确均衡与共同尺度图势不相容--反例.md": "dcd8d6acb69bd12d22c5173451e87f4834f09fd8825b2feb02786a2bfe268b6f"
+  },
+  "review_digest": "709558f00ce3ef4d7e13ad3759bd60c94e21808b8734cde8eb23f1b5a8ab125d"
+}

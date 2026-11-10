@@ -1,0 +1,43 @@
+{
+  "edge_id": "wc-b5-d49-four-state-empty-extension",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "kind": "implies",
+  "source_ids": [
+    "M-833ebc16e1fe4b758df39be4a013bdb0"
+  ],
+  "target_ids": [
+    "weighted-congestion/pne-with-persistent-strict-improvement-cycle"
+  ],
+  "conditions": "精确采用源对象的权(1,2)、四资源费用(9x/2,x²,14,19/4)和原A/B、C/D菜单；在该具体游戏中仅给每人增加空动作。此操作的保旧成本桥及空动作零费桥均在下述解释直接证明，不引用未付的一般迁移假设。",
+  "roles": {
+    "M-833ebc16e1fe4b758df39be4a013bdb0": "提供四态的字面输入、全部真实成本和四条严格改善边。",
+    "weighted-congestion/pne-with-persistent-strict-improvement-cycle": "输出具体九态游戏的唯一有限倍率均衡、保留环与非最佳响应边界。"
+  },
+  "explanation": "原四态AC→BC→BD→AD→AC的四个真实改善比分别29/28、36/35、28/27、55/54，全部大于1。给菜单加入∅后，任一原状态的玩家资源集合和负载完全不改；每条原偏离仍在同一其他人动作下执行，故当前/新成本逐项保持，四边仍严格改善。新九态中，全空费用零；任一非全空态至少一人选原非空动作，因正权及e、f正次费用或k、q正常数而当前费用严格正，改空费用恰零，所以对每个有限α≥1都违反弱α-PNE式。于是全空是每个有限倍率下唯一均衡。环上所指定新费用仍正，空动作费用更低，故保留环不是best-response环。沿闭环严格下降的任意实值函数不可能存在；该结论没有把原四态的无均衡阈值冒作九态阈值。",
+  "scope": "只有这两个明确菜单之间的精确扩张；不声称任意动作扩张保全最佳响应、无均衡或原四态55/54阈值。",
+  "whole_result": "该具体四态输入各加入空动作得到九态游戏：全空对所有有限α≥1为唯一α-PNE，而原四态严格改善环完整保留且不是最佳响应环；因此存在PNE不推出所有严格改善终止。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/反例/存在精确均衡仍保留严格改善环--反例.md",
+      "sha256": "0f14a7b6ecf7d624e6f2300dd678ddb5d6c44dfad53aad52f50d911b1c971f1e"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/有限稳定决策的实现审计与版本范围--审查.md",
+      "sha256": "b6b8c3de5b1cefddc4d2c67c4622628aa700634bc41c82b5696bb54e38131b0e",
+      "section": "独立脚本真正另外核了什么"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "独立实读本边全部端点的当前登记、正文及所列证据，核对真实单方偏离、弱均衡端点、全部联合输入和整条/局部作用范围；有限记录不代替一般证明。",
+  "endpoint_pins": {
+    "M-833ebc16e1fe4b758df39be4a013bdb0": "1aceb893065af828ac65a2dc7311150d9427e219d0991e73dd4df0f03ed09fa6",
+    "weighted-congestion/pne-with-persistent-strict-improvement-cycle": "dbd448104a06c74ee9247dea8c23dfab6fa5ad238025fa7abd4f1a56a8bd1ec1"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/反例/存在精确均衡仍保留严格改善环--反例.md": "0f14a7b6ecf7d624e6f2300dd678ddb5d6c44dfad53aad52f50d911b1c971f1e",
+    "archives/weighted-congestion/state/审查/有限稳定决策的实现审计与版本范围--审查.md": "b6b8c3de5b1cefddc4d2c67c4622628aa700634bc41c82b5696bb54e38131b0e"
+  },
+  "review_digest": "d531fd101cce9f9c917df70d495e96f250cc578cd989c839ee417c5758566423"
+}
