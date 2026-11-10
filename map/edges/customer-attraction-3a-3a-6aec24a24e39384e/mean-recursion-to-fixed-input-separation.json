@@ -1,0 +1,57 @@
+{
+  "edge_id": "boss6-mean-recursion-certifies-twenty-eight-customer-separation",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-f3cd47fc35ac49eb9a58fd4ed3c13b94"
+  ],
+  "target_ids": [
+    "M-e04d4c2e3acf4a5b98a015de2376eb30"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定原输入p=5,n=4,J=(0,1,2,3)，客户类型1:2,2:3,9:1,16:9,18:4,24:4,27:5；保空标签2、全部有序历史及同一策略的真实偏离后继。使用精确有理数及完整状态集合，不采用浮点容差。",
+  "roles": {
+    "M-f3cd47fc35ac49eb9a58fd4ed3c13b94": "提供全历史平均规则的必要充分集合值递推及完整策略贴合；同一归纳把平均改为全目录逐行动比较，给精确SPE递推。",
+    "M-e04d4c2e3acf4a5b98a015de2376eb30": "由原固定整数输入的全部状态与156节点见证取得完整有限分离，包括均值12、真正SPE22、OPT28及158负真IC。"
+  },
+  "explanation": "先用源递推：a∈J时右端本行动项必须取同一终局t，故消去后条件为(|J|−1[a∈J])U_a(t)≥Σ_{b∈J,b≠a}μ_b(q)；其余有序孩子独立选最小续局，给必要且充分的完整树贴合。真正SPE以U_a(t)≥max_b μ_b(q)替换平均，最大遍历五标签；本行动μ_a≤U_a(t)自动满足。有限树按剩余深度归纳。对给定客户表，现有精确证书列全126个计数状态，逐状态结果集合与两递推相等，叶为{q}，故根平均集合恰27个且最小W=12、含q=(2,0,0,2,0)，SPE集合恰{(0,0,0,0,4)}且W=22。另沿新156有序节点动作表直接核780真实IC及156平均行：平均slack最小1/48>0，负真IC恰158。根收益(5/2,13/4,0,11/4,11/2)，平均17/8，规定动作0满足平均但非BR。主题0,1,3,4覆盖全部28人，J覆盖19，故原OPT字段实际O_J而非OPT4；12/28<1/2不产生SPE反例。数学推导与本轮独立全量有理检查见审读正文和rational-audit。",
+  "whole_result": "在指定28单位客户四人五主题实例中，平均规则126状态、27根结果且最小W12，q=(2,0,0,2,0)由一份156节点全历史平均策略实现；全部156平均行严格正，而780真实IC有158负。相同输入的全部纯SPE根终局计数恰{(0,0,0,0,4)}，W22。O_J19、OPT4=28，故平均点不是SPE半覆盖反例。",
+  "scope": "整个目标的固定输入精确分离；不外推到560个随机实例、所有四人或恰六人游戏。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/固定比较组平均续局集合的递推与二十八客户原点--程序.md",
+      "sha256": "a10c97145c4b1d7cae94d303a6b7622e16d0bfdad2df9f7986eb8bbcd35570f2"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/average-and-last-payoff-resumed-boss2/new-average-exact-check.json",
+      "sha256": "01aa191f681e1c058d2734fc5eee50c073318b1e614becd51ee2f1b3410b1d56"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/average-and-last-payoff-resumed-boss2/check_average_sources.py",
+      "sha256": "b48b4c61d873bb7aa36cb707d4fed8d6393b00ec9dbfcec868c36b8cc1231359"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-6aec24a24e39384e/mathematical-review.md",
+      "sha256": "fe8477bf28451f6f3848cf6ba9f4a4ddb28484209fc3e5959f1ad700603a8744"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-6aec24a24e39384e/rational-audit.json",
+      "sha256": "93f7e52c2ba9ffb489ff7e2197ee845184921619ca1fc40e6fbfe96789f9f532"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "独立核必要充分贴合、平均本行动项与SPE全目录量词；实读正文和检查器，结构化核遍相关126×2状态集合、156完整动作与780真实IC。整个目标只含此固定有限输入。",
+  "endpoint_pins": {
+    "M-e04d4c2e3acf4a5b98a015de2376eb30": "1493d5e97a5fd8d478a47568b7719e7c08efed23eb6e0699026ceab071539842",
+    "M-f3cd47fc35ac49eb9a58fd4ed3c13b94": "0356bb31e1771504bbd9af4b29f99d80c59ea90c4c6426641103431cf323f5cf"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/固定比较组平均续局集合的递推与二十八客户原点--程序.md": "a10c97145c4b1d7cae94d303a6b7622e16d0bfdad2df9f7986eb8bbcd35570f2",
+    "archives/customer-attraction/tools/evidence/average-and-last-payoff-resumed-boss2/new-average-exact-check.json": "01aa191f681e1c058d2734fc5eee50c073318b1e614becd51ee2f1b3410b1d56",
+    "archives/customer-attraction/tools/evidence/average-and-last-payoff-resumed-boss2/check_average_sources.py": "b48b4c61d873bb7aa36cb707d4fed8d6393b00ec9dbfcec868c36b8cc1231359",
+    "map/edges/customer-attraction-3a-3a-6aec24a24e39384e/mathematical-review.md": "fe8477bf28451f6f3848cf6ba9f4a4ddb28484209fc3e5959f1ad700603a8744",
+    "map/edges/customer-attraction-3a-3a-6aec24a24e39384e/rational-audit.json": "93f7e52c2ba9ffb489ff7e2197ee845184921619ca1fc40e6fbfe96789f9f532"
+  },
+  "review_digest": "5799d930df0072bac4b4e6b15072a625e92807120fc21084dabf3a62fa65ce1a"
+}
