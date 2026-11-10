@@ -1,0 +1,56 @@
+{
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss5/scheduling_obstructions",
+  "review_note": "完整实读当前六个核心、模型和本边新增端点的全部登记正文/必要证据；逐项核对有类型资源、完整原任务、量词、YES/NO两向和显式位长。有限历史运行只作准确证据范围，未新跑数学审计；最小两处源笔误经Boss修正后重新核对原处。",
+  "edge_id": "um-b5-scheduling-karp-perfect3dm-to-third-unit-joint-choice",
+  "kind": "transfers",
+  "source_ids": [
+    "UM-SOURCE-KARP-3DM"
+  ],
+  "target_ids": [
+    "UM-JOINT-CHOICE-NP-v1"
+  ],
+  "conditions": "每个先固定的有理δ∈[0,1/3)；显式perfect3DM输入X/Y/Z各q≥0，E为s条三元组；目标T=1，原T/2分界下有限时间仅{1/3,1}，每原任务恰一个small端。",
+  "roles": {
+    "UM-SOURCE-KARP-3DM": "提供带三份坐标标签的显式perfect3DM NP完全性，含空源和孤立坐标，不导入gap或次数承诺。",
+    "UM-JOINT-CHOICE-NP-v1": "通过q+3共同源激活与三关联任务的多项式YES/NO编译，得到该固定δ的(Aδ)存在性NP完全，保1/3端点失效。"
+  },
+  "explanation": "构造三元组机S_a、三类元素机E_(d,e)及共同机R；q+3枚激活任务各只有R:1/3为small，另可到任意S_a:1；每三元组三枚关联任务各只有自身S_a:1/3为small，另可到对应有类型元素机:1。机器数s+3q+1、任务数q+3+3s，数字常位，全原任务都有finite端，q=0时仍保三枚真实R任务。给(Aδ)见证H,x，唯一small使余任务x强制等于1，H与余任务合为实际完整调度；其负载为1/3格点且≤1+δ<4/3，故全机≤1。R至多留三枚激活，至少q枚到不同S_a；任一激活S_a已有unit，三枚关联必须外送到不同元素机。总3q元素机迫激活数≤q，所以恰q个三元组同时不交且覆盖三坐标，得到perfect3DM。反向给完美q三元组，把q枚激活各放所选S_a，余三枚留R；所选关联各到对应元素，未选关联留自身S_a，完整峰1；取所有unit实际端作H，余small作0/1x即(Aδ)。显式归约和两向解码均位多项式，含孤立坐标；q=0恰YES。此受限语言可猜H并直接验唯一small整数余负载，故属于NP（更一般给H后有理LP亦有多项式位顶点）。由源精确NP完全性得到目标NP完全性，无需假设P≠NP。δ=1/3时q=1且E空的NO源有四激活全在R负载4/3，H空、x整数合法，故这份编译不能扩端点；后继half-unit窗口属于不同构造。",
+  "scope": "只传递精确判定的NP完全性到先求共同H与剩余small容量的充分接口；不传递近二近似gap，不否定绕过该接口的actual调度算法，也不把有限回溯节点/历史PASS用作全称归约证明。",
+  "whole_result": "对每个固定有理δ∈[0,1/3)，即使T=1、时间{1/3,1}且每任务唯一small，(Aδ)存在性NP完全；q+3/R归约双向保perfect3DM。δ=1/3的q1空三元组NO仍有4/3全源见证，所以仅这份归约端点失败。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "5.2 原3DM归约的全部坐标与循环一致性"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/唯一小端三维匹配的源程序与条件块切面--计算.md",
+      "sha256": "8969e70e0852cb47bd8b93aa56e10d19f05435ccd4c9ceff47c445c44545a3c9",
+      "section": "N为空的原三分之一归约"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/共同大边补全双原程序与三分之一版本边界--计算.md",
+      "sha256": "99028c3e98b60e1a6b5a4ea94ef0025df85b83c1467f8e632b26aebffe74051f",
+      "section": "两种不同的3DM有限构造"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/共同匹配联合槽舍入与包络配置三源审查--审查.md",
+      "sha256": "d8ad15db9cdf52d26be477052626a1afd6b0d1106982081d19b82d81e500bb47",
+      "section": "2. 共同大边选择与条件块切面"
+    }
+  ],
+  "endpoint_pins": {
+    "UM-JOINT-CHOICE-NP-v1": "5f5a39df96175a8c037facd3c88d729abba52fa551803388001458cc41102d6c",
+    "UM-SOURCE-KARP-3DM": "2b455afb721fc3404464bed6944c36df19220c296dae72d7d0e9af032179e171"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+    "archives/unrelated-machines/state/计算/唯一小端三维匹配的源程序与条件块切面--计算.md": "8969e70e0852cb47bd8b93aa56e10d19f05435ccd4c9ceff47c445c44545a3c9",
+    "archives/unrelated-machines/state/计算/共同大边补全双原程序与三分之一版本边界--计算.md": "99028c3e98b60e1a6b5a4ea94ef0025df85b83c1467f8e632b26aebffe74051f",
+    "archives/unrelated-machines/state/审查/共同匹配联合槽舍入与包络配置三源审查--审查.md": "d8ad15db9cdf52d26be477052626a1afd6b0d1106982081d19b82d81e500bb47"
+  },
+  "review_digest": "eac8fb0e9bc373892bd32724dc5e112507ea0705f226bf9511f2d592d83d281b"
+}
