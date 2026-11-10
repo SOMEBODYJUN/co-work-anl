@@ -1,0 +1,68 @@
+{
+  "edge_id": "commonmany-complete-rule-weight-closure-from-model-and-factor-two",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "MF-MODEL",
+    "SC-K-2-E"
+  ],
+  "target_ids": [
+    "facility-games/common-many/complete-rule-weight-closure-integer-witness"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定有限客户集 I、非空有限共同地点目录 S、逐客户覆盖关系及 k≥2 家设施的标签。权 w 在正实权域变化，考察任意有限阈值 α≥1。在轨为一个纯带标签布局，完整规则为每个带标签布局各选一个独立混合精确客户 NE。",
+  "roles": {
+    "MF-MODEL": "固定每个标签布局的可达动作与概率单纯形，给含全部自重的条件成本、期望收益和逐实际偏离的乘法比较。",
+    "SC-K-2-E": "在同一正实权域为每个 w 提供一份阈值 2 的完整规则，使实例最优倍率的可行集合非空且下确界有限。",
+    "facility-games/common-many/complete-rule-weight-closure-integer-witness": "借共同紧空间的闭条件取得实例最优值和下半连续性，再用正有理密度与统一缩放得到正整数严格反例和上确界相等。"
+  },
+  "explanation": "对每个 L∈S^k 及每名在 L 可达至少一家设施的客户取一个概率单纯形，形成所有布局和客户的有限紧积 P。未覆盖客户无行动，其概率坐标在公式中按零计；空乘积为单点。S^k 保留设施标签、同址重复坐标及覆盖相同但地点不同的布局。独立混合给条件成本 c_{Lif}=w_i+Σ_{j≠i}w_jp_{Ljf}，精确客户 NE 恰要求每个可达 f,g 满足 p_{Lif}(c_{Lif}−c_{Lig})≤0。固定在轨 L，再加每个实际单方偏离 L'=L[f←r] 的 π_f(L')−απ_f(L)≤0，其中 π_f(L)=Σ_i w_i p_{Lif}。即使 π_f(L)=0 也用原式，此时要求所选离轨收益为零；单地点目录没有实际偏离。这些是关于 (w,α,p) 的有限连续弱不等式。沿任一收敛的可行 (w_n,α_n) 序列，取在轨 L 恒定且 p 在 P 收敛的子列，极限仍是同一个完整规则问题的可行解，故可行参数集在正权、有限倍率域相对闭。SC-K-2-E 供给 α=2；固定 w 让可行倍率趋向其下确界便得到达到该值的规则。因此固定 α 的可行集正是 {w:α*(w)≤α}，且 α* 下半连续。其开补 {α*(w)>α} 中任一点可由同结构的正有理权近似。将该正有理向量乘正公分母，全部条件成本和设施收益同比例变换；逐布局 NE 和逐偏离乘法式原样等价，故完整规则的可行倍率集合不变。域的包含和对每个低于上确界的阈值的严格见证给出三权域的相同上确界，先在固定结构上成立，再对固定 k 或任意 k 的结构族取上确界。",
+  "scope": "在正实权域中作相对闭性与逐实例达到；对指定阈值的严格失败保持全部布局、全部标签和全部合法独立续局的量词。普遍上确界的达到、严格逐实例上界的扩张、有效有理邻域和整数位长属于另行论证的结论。",
+  "whole_result": "MF-MODEL 与 SC-K-2-E 联合推出本引理的全部陈述。最佳完整续局倍率逐实例达到且在固定结构的正实权域下半连续；严格阈值失败可移至同结构正有理权再同比例清分母为正整数权；固定结构、固定设施数与跨全部设施数的三权域上确界均相等。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+      "section": "输入、时序与实际成本"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+      "section": "一份完整续局的量词"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+      "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+      "section": "精确陈述"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+      "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+      "section": "六、把全部局部选择拼成一个完整函数"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/完整续局倍率的权重闭性与整数见证迁移--引理.md",
+      "sha256": "d9f5c02a212916aa2f1b467e50d509c8afe9ab835f99551caf489565c11070c3",
+      "section": "全部布局的固定紧空间"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/完整续局倍率的权重闭性与整数见证迁移--引理.md",
+      "sha256": "d9f5c02a212916aa2f1b467e50d509c8afe9ab835f99551caf489565c11070c3",
+      "section": "达到与迁移"
+    }
+  ],
+  "reviewed_by": "Boss1-facility-weight-closure-integer-transfer-round30-worker",
+  "review_note": "核对了全部标签布局的紧积及概率乘子条件的两个方向，并检查零收益、空覆盖、无客户、同址及重复覆盖地点。因子二构造的限制只用于给出有限可行点，极限论证使用原模型允许的全部独立混合精确 NE。",
+  "endpoint_pins": {
+    "MF-MODEL": "1ca8c08397c3ec2c0a05b8eecb18e5e1de2b3e863c5f73f8c6eaf6b6fdf05bec",
+    "SC-K-2-E": "8db52cb038b9beaa2a8f11048d1349bf5c1bc580a1068742272964f8789a8535",
+    "facility-games/common-many/complete-rule-weight-closure-integer-witness": "6f8ea2c33c6c763a25373446ca8bbc5290838f12c560bde12c78e28d847f825a"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+    "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
+    "archives/facility-games/subarchives/common-many/state/引理/完整续局倍率的权重闭性与整数见证迁移--引理.md": "d9f5c02a212916aa2f1b467e50d509c8afe9ab835f99551caf489565c11070c3"
+  },
+  "review_digest": "63c916f4d46923c800a7c288bfdc421c2cc308ce429d7f7ff4f221ef4b8eaa04"
+}

@@ -12,17 +12,17 @@
   "conditions": "固定完整显式 typed normalized-flat Q：k≥1；每outer恰一个非空normalized indexed state，正home权每outer和1；homes全局物理互异且与B不交，每home恰一个own-unit helper；其余helper states为normalized fallback，正支持只在B且可任意重叠；额外叶也仅正支持B，E_l={u:max_s p_lsu≥15/16}且b_l=max_s Σ_(u∉E_l)p_lsu<15/16；无其它组。各listed state/resource pair至多一次，显式零的资源位置不受正支持限制，显式零、重复indexed states、unused resources及全部inactive jobs保留。k≥2采用目标v4b的ν≤1/(16384k²)，k=1不加tiny条件。上述均是当前目标域限制，未加入开放前提。",
   "contribution": {
     "result": "对每个v4b域内完整Q，v5的本条证明所构造算法只输入同一个Q及typed呈现，以固定确定性worst-case总位多项式时间生成同一完整P(Q)，给全部原selectors及每枚原incidence job各一个合法原有限端点assignment σ，满足Cmax(σ)≤(19/10)OPT(P(Q))。k≥2的限制由ν≤1/(16384k²)≤1/(1024k)直接支付；k=1两版域相同且均无tiny条件。",
-    "remaining": "该局部专化没有推出目标v4b指定的平方缺口势Φ=(θ/k)ΣW−Σ(5/16−W)_+²、θ=1/32、ξ=1/(2²⁰H²)、τ=1/(2048H)、固定ceil(4k/ξ)步FW、k²曲率293/81920进展、25/128成功门槛、严格V<15/16的失败链与共同prefix-flow的整套原机制，也不把源算法的内部阈值/FAIL身份改名为v4b。上述目标内容由v4b自身§3–6证明承重，仍须独立保留；这里已完整支付的是最终全jobs输出保证，关系推导无待证桥。"
+    "remaining": "目标v4b另有指定构造：固定profile下的平方缺口势Φ=(θ/k)ΣW−Σ(5/16−W)_+²、θ=1/32、ξ=1/(2²⁰H²)、τ=1/(2048H)，固定ceil(4k/ξ)步FW、k²曲率293/81920进展、25/128成功门槛、严格V<15/16的失败认证及共同prefix-flow。v4b主证明§3–6及原追加§14–19独立给出该构造。本边完整推出最终全原jobs输出保证，作用止于这一输出步骤。"
   },
-  "scope": "3B同档、当前v5登记version5、v4b登记version5的typed域恒等限制；仅最终19/10全原jobs输出保证的局部专化。无一般UM、多state outer、重合homes、home上额外leaf或nonUD扩域；不认证软件、外审或新颖性。",
+  "scope": "3B同档、当前v5登记version6、v4b登记version6的typed域恒等限制；仅最终19/10全原jobs输出保证的局部专化。无一般UM、多state outer、重合homes、home上额外leaf或nonUD扩域；不认证软件、外审或新颖性。",
   "reviewed_by": "Boss1",
-  "review_note": "承接round27有效比较，实读当前两登记、v4b主证明§1–6及原追加的输入与FAIL/回填段、v5 Exact、作者与独立原证，核v5正文空叶措辞勘误。作者profile原稿§1已保空匹配，v5登记version5刷新正文引用。同一完整typed Q/P(Q)的域包含及全部原jobs输出仍成立，空叶见证与具体分支见explanation。作者profile路线保持固定profile LP、稳定交换、reciprocal-log势、FW及共同prefix-flow，后续FAIL严格得V<15/16。v4b的平方势、固定步FW、严格失败与共同prefix-flow由其主证明自证。",
+  "review_note": "实读两项version6登记、v4b主证明§1–6及原追加§13–19、v5 Exact与两份原证明，并核本轮两份辅助正文勘误。作者v5在固定profile上先做W_i≥1/4的LP，再以reciprocal-log势、有理FW及单侧截断完成严格V<15/16的停止证明。v4b也有严格V<15/16，由自己的平方缺口势及固定FW阈值证明；取整的outer辅助福利与回填后的原组值分别计量。",
   "edge_id": "um-multiouter-v5-profile-output-specializes-v4b",
   "roles": {
     "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5": "提供完整typed域上的作者profile/reciprocal-log算法及全jobs 19/10证明；本边保其固定profile LP、匹配/FW、one-sided有理log截断与共同prefix-flow，只在目标域运行该源算法。",
     "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4b": "作为更窄home域上的同一完整原任务输出目标；其平方势/FW常数与原FAIL证明身份不由本边替代。"
   },
-  "explanation": "先写实际可得结论：在v4b域内逐字保留Q、k、每个home/资源/组/原indexed state与全部listed incidence，直接运行v5作者算法，得到同一P(Q)全部原jobs的19/10合法调度。没有归约、复制资源、删inactive payload、重归一或新辅助调度；映射是恒等映射。k≥2时两上界之比[1/(16384k²)]/[1/(1024k)]=1/(16k)≤1，因此目标域包含于源算法域；k=1两者都不要求ν上界，不能在此处错误加入1/16384或套k≥2的prefix损失。\n\n所有其它合同逐项相同：outer单state且正home权和1；homes全局互异、每home唯一own-unit helper、B与homes不交；fallback系数可大且supports可跨helper任意重叠；B-only叶使用同一个ε=15/16与严格tail<ε合同，叶本身不必singleton。叶图无full matching也在域内，源§1推出V<ε并输出完整baseline；空叶、无fallback、loops/rank0、显式零与重复indexed states均保留。\n\n源作者证明§2在同一个vacancy matroid上给固定profile ordinary matching oracle，并从同一次V≥ε实际allocation得到共同O，满足对所有λ>0同时f_λ(O)≥ε²Σλ。 有完整叶匹配时，B上叶—资源transversal matroid A的基恰为全叶匹配占用的ℓ个资源，故r(A)=ℓ、vacancy M=A*的秩r(M)=|B|−ℓ。固定profile线性oracle直接用Σ_u t_u减最小费全叶匹配，稳定交换用真实M的零dummy补基及weighted-rank性质；势、FW与prefix-flow的数值界不代入r(M)。空叶集合给free M，r(M)=0也可有完整叶匹配。\n\n作者profile原稿§1及已修正的v5正文仅在无完整叶匹配时触发预处理baseline；空B、rank 0和缺fallback均按匹配判定及后续分支处理。取k=1、唯一outer的单位home g及其唯一helper（own=g、单位fallback=b），B={b}、无额外叶。空匹配覆盖全部叶，vacancy M是B上的free matroid。outer取g、helper取b，V=1。两枚selectors放outer和fallback的原private，所选两枚正incidence分别送g和b，未选的own incidence留own private，五枚原jobs各一次、五台机器各负载1，故Cmax=OPT=1。若误走预处理baseline，outer唯一private负载2，违反该输入的19/10保证。作者k=1整数greedy取唯一fallback，W=1，通过1/4成功门槛。§4先解当前fixed-profile LP测试所有W_i≥a=1/4；这不是joint-profile oracle。单次该LP不可行本身不证明actual FAIL，必须继续使用§5含same-outer损失的weighted L∞/L1 coupling、§6整段reciprocal curvature及§7共同参考进展。K=32k、Kν≤1/32与累计curvature≤(1/8)Σλ只用源O(1/k)域；目标更小ν自动满足。\n\n§8用固定步有理gradient FW与有限有理log截断得到P−ξ≤E≤P，ξ=1/(4096H)；不存在exact-log或精度oracle。§9接受E增至少τ=1/(64H)，若没有且V≥ε，则某邻居E增≥(783/4096)/H>τ，矛盾。因此源作者算法所有FAIL路径确有V<15/16，配OPT=2−V给baseline比率<32/17<19/10。此严格失败界属于该源profile/log算法；没有由此声称执行的是v4b的平方势与τ=1/(2048H)算法。\n\n源LP成功时，§10先把同outer claims合并到a_iu=max_j w_jp_jsu≤ν，再在一张同时保所有outer prefix下界、所有叶恰一及共享资源容量的整数circulation中取整。每outer损失≤ν，k≥2有W_i≥1/4−ν≥511/2048>19/100。k=1按§3独立submodular greedy：W<1/4时V<ε；W≥1/4是整数allocation且Good home mass≥1/6，完全不支付ν损失。两分支取Good={Q_j≥1/10}，由W_i≤z_i+(1/10)(1−z_i)得到z_i>1/10。Good helpers保其B bundles，outer取得其homes，其余helpers回own，叶保同一matching，故所有groups值≥1/10。\n\n完整编译始终是S+U机、G+I jobs、S+2I有限端点：每selector放所选原state private；只把真实bundle对应的selected-state正incidence送原exact resource；全部其它原incidences含未选态正payload、显式零、重复indexed states与unused-resource listed jobs留各自原private，每job恰一次。成功C≤19/10且OPT≥1；FAIL完整baseline C≤2并由前段失败值界得到相同比率。源§8–9的多项式moves、匹配次数与有理分母论证在恒等限制后不变。两端完整定理相比仍有v4b指定机制未由本边恢复，故使用contribution而非whole_result。",
+  "explanation": "先写实际可得结论：在v4b域内逐字保留Q、k、每个home/资源/组/原indexed state与全部listed incidence，直接运行v5作者算法，得到同一P(Q)全部原jobs的19/10合法调度。没有归约、复制资源、删inactive payload、重归一或新辅助调度；映射是恒等映射。k≥2时两上界之比[1/(16384k²)]/[1/(1024k)]=1/(16k)≤1，因此目标域包含于源算法域；k=1两者都不要求ν上界，不能在此处错误加入1/16384或套k≥2的prefix损失。\n\n所有其它合同逐项相同：outer单state且正home权和1；homes全局互异、每home唯一own-unit helper、B与homes不交；fallback系数可大且supports可跨helper任意重叠；B-only叶使用同一个ε=15/16与严格tail<ε合同，叶本身不必singleton。叶图无full matching也在域内，源§1推出V<ε并输出完整baseline；空叶、无fallback、loops/rank0、显式零与重复indexed states均保留。\n\n源作者证明§2在同一个vacancy matroid上给固定profile ordinary matching oracle，并从同一次V≥ε实际allocation得到共同O，满足对所有λ>0同时f_λ(O)≥ε²Σλ。 有完整叶匹配时，B上叶—资源transversal matroid A的基恰为全叶匹配占用的ℓ个资源，故r(A)=ℓ、vacancy M=A*的秩r(M)=|B|−ℓ。固定profile线性oracle直接用Σ_u t_u减最小费全叶匹配，稳定交换用真实M的零dummy补基及weighted-rank性质；势、FW与prefix-flow的数值界不代入r(M)。空叶集合给free M，r(M)=0也可有完整叶匹配。\n\n作者profile原稿§1及已修正的v5正文仅在无完整叶匹配时触发预处理baseline；空B、rank 0和缺fallback均按匹配判定及后续分支处理。取k=1、唯一outer的单位home g及其唯一helper（own=g、单位fallback=b），B={b}、无额外叶。空匹配覆盖全部叶，vacancy M是B上的free matroid。outer取g、helper取b，V=1。两枚selectors放outer和fallback的原private，所选两枚正incidence分别送g和b，未选的own incidence留own private，五枚原jobs各一次、五台机器各负载1，故Cmax=OPT=1。若误走预处理baseline，outer唯一private负载2，违反该输入的19/10保证。作者k=1整数greedy取唯一fallback，W=1，通过1/4成功门槛。§4先解当前fixed-profile LP测试所有W_i≥a=1/4；这不是joint-profile oracle。单次该LP不可行本身不证明actual FAIL，必须继续使用§5含same-outer损失的weighted L∞/L1 coupling、§6整段reciprocal curvature及§7共同参考进展。K=32k、Kν≤1/32与累计curvature≤(1/8)Σλ只用源O(1/k)域；目标更小ν自动满足。\n\n§8用固定步有理gradient FW与有限有理log截断得到P−ξ≤E≤P，ξ=1/(4096H)；不存在exact-log或精度oracle。§9接受E增至少τ=1/(64H)，若没有且V≥ε，则某邻居E增≥(783/4096)/H>τ，矛盾。因此源作者算法所有FAIL路径确有V<15/16，配OPT=2−V给baseline比率<32/17<19/10。此严格失败界属于该源profile/log算法；没有由此声称执行的是v4b的平方势与τ=1/(2048H)算法。\n\n源LP成功时，§10先把同outer claims合并到a_iu=max_j w_jp_jsu≤ν，再在一张同时保所有outer prefix下界、所有叶恰一及共享资源容量的整数circulation中取整。每outer损失≤ν，k≥2有W_i≥1/4−ν≥511/2048>19/100。k=1按§3独立submodular greedy：W<1/4时V<ε；W≥1/4是整数allocation且Good home mass≥1/6，完全不支付ν损失。两分支取Good={Q_j≥1/10}，由W_i≤z_i+(1/10)(1−z_i)得到z_i>1/10。Good helpers保其B bundles，outer取得其homes，其余helpers回own，叶保同一matching，故所有groups值≥1/10。\n\n完整编译始终是S+U机、G+I jobs、S+2I有限端点：每selector放所选原state private；只把真实bundle对应的selected-state正incidence送原exact resource；全部其它原incidences含未选态正payload、显式零、重复indexed states与unused-resource listed jobs留各自原private，每job恰一次。成功C≤19/10且OPT≥1；FAIL完整baseline C≤2并由前段失败值界得到相同比率。源§8–9的多项式moves、匹配次数与有理分母论证在恒等限制后不变。两端完整定理相比仍有v4b指定机制未由本边恢复，故使用contribution而非whole_result。\n\n目标v4b的原追加§18–19另行给出：Φ是平方缺口势，FW固定ceil(4k/ξ)步，仅在所有近似福利达到25/128时取整；若有坏坐标且无≥τ的候选，以V≥15/16推出同一参考和必有候选增量，故严格V<15/16。取整后的W_i≥25/128−ν≥799/4096>19/100是各outer辅助福利；Good helpers交出homes并与同一完整叶匹配共同回填后，所有原组值才达到至少1/10。v4b辅助资料§3与这两段原证明一致。",
   "evidence": [
     {
       "path": "archives/unrelated-machines/state/证明/共享UD tiny状态势与19比10回填--证明.md",
@@ -39,17 +39,34 @@
     {
       "path": "archives/unrelated-machines/state/审查/相对曲率O1k候选三源精读与19比10范围--审查.md",
       "sha256": "a1d115eafbc21e5ebf3c34afc496310016e9ea11bb0e5bfe50d30fd8b1f26f8b"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资料/shared-UDtiny-home-v4势函数与完整回填--资料.md",
+      "sha256": "d7403ea33ecde69648d1d2f1d638aaacc3b6490775273b996f17f4f2646ca310",
+      "section": "3. FW、prefix-flow 和 19/10 实际回填"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/shared-ud-tiny-potential-20261031/source/0eb8b34fa84864a54169.md",
+      "sha256": "1e3710870c8fbef4d4235cf2f90fe2d8ec6ca84b99ec6cd234464cc9d260df44",
+      "section": "18. 有理后端、完整搜索与 soundFAIL"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/shared-ud-tiny-potential-20261031/source/0eb8b34fa84864a54169.md",
+      "sha256": "1e3710870c8fbef4d4235cf2f90fe2d8ec6ca84b99ec6cd234464cc9d260df44",
+      "section": "19. k≥2 prefix-flow 与两分支的全部原 jobs"
     }
   ],
   "endpoint_pins": {
-    "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4b": "38f18be1bef497dfbdc81040d275c0d374f43942d08fd0b706de5dbdbc667d5b",
-    "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5": "e73a93ab52cb8c683baee06f9714619772d70cf026954acf9605731e237a9845"
+    "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4b": "e2620cee6c547708cb7ff90aa2e3a338a93c914e4beba64fd7add393c30b5b08",
+    "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5": "9816df900ad68419b61f65a7c1170ab5b5ba0e1f71ff5bb0aa758f16675d627a"
   },
   "evidence_pins": {
     "archives/unrelated-machines/state/证明/共享UD tiny状态势与19比10回填--证明.md": "e857e20f4498aef53ebe9c3ef0a9f3bc7f5937c5cd3fb554365c1d3e553a2868",
     "archives/unrelated-machines/tools/evidence/relative-curvature-o1k-working-sources-20261031/8c25fd6cf42c368b8efb--exact-working-v1.md": "504e4d8e13b847aa7ec10f2bb3afa874389a76b6cc0962abfe979a985238a99f",
     "archives/unrelated-machines/tools/evidence/relative-curvature-o1k-working-sources-20261031/c8f99fb9dc315aa27225--author-proof-working-v1.md": "0f5e322441789f5d2dae8fb0592fff86aede3d71f093cb727e2ea78b0f1b2593",
-    "archives/unrelated-machines/state/审查/相对曲率O1k候选三源精读与19比10范围--审查.md": "a1d115eafbc21e5ebf3c34afc496310016e9ea11bb0e5bfe50d30fd8b1f26f8b"
+    "archives/unrelated-machines/state/审查/相对曲率O1k候选三源精读与19比10范围--审查.md": "a1d115eafbc21e5ebf3c34afc496310016e9ea11bb0e5bfe50d30fd8b1f26f8b",
+    "archives/unrelated-machines/state/资料/shared-UDtiny-home-v4势函数与完整回填--资料.md": "d7403ea33ecde69648d1d2f1d638aaacc3b6490775273b996f17f4f2646ca310",
+    "archives/unrelated-machines/tools/evidence/shared-ud-tiny-potential-20261031/source/0eb8b34fa84864a54169.md": "1e3710870c8fbef4d4235cf2f90fe2d8ec6ca84b99ec6cd234464cc9d260df44"
   },
-  "review_digest": "fa8479abf2ddbc2f6ae063c80e2d9f8ecd5f2fd58b5c8454ee000a84be14eb86"
+  "review_digest": "f39a5488d4729b6d627cddcfd08ba2a8e12846bd77ce2a3e5134de65d5135396"
 }
