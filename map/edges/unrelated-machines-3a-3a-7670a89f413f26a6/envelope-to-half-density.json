@@ -1,0 +1,53 @@
+{
+  "edge_id": "um-7670-envelope-to-half-density",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1"
+  ],
+  "target_ids": [
+    "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "全部原任务的私有单位读出双树、k,h≥1、无pins/预载/额外资格，incoming唯一且时间1、每机k枚outgoing在父端1/k。每clause外unit互异，全部两轨实际port数d_c≤2A_c，自由选selector根。",
+  "roles": {
+    "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1": "提供列和1状态的一次全局有序单位槽匹配及逐行L_i≤E_i。",
+    "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1": "接收半质量状态的三半实际输出、近似界及真实mandatory森林。"
+  },
+  "explanation": "每selector在两根各放1/2，每内部边在父/子各放1/2；每clause把全部ports两两配对，每对半片送一台不同真实unit，只需ceil(d_c/2)≤A_c。每job列和1。内部行排序以唯一incoming半片为首，后k个small半片；单位槽包络等于1+floor(k/2)/k（k=1平局亦成立），配对unit包络≤1。由源一次覆盖匹配全部原job得到同一σ，故每内机≤该界、每外unit≤1；未用unit负载0。若incoming实际在本机，其他small最多floor(k/2)，至少ceil(k/2)枚outgoing离开；从每selector实际根按这些真实外送边递归提取完整r=ceil(k/2)、深h森林，叶沿原σ的共同unit注入，未选轨和全部剩余任务仍在σ中。非空selector给OPT≥1，所以该绝对界也是3/2近似。仅需列出min(A_c,d_c)台候选unit，其余原机保零区间，不按二进制A_c数值展开。",
+  "scope": "已证明目标的全任务共同调度、近似及森林步骤；绝对3/2锐例的独立下界不来自一般包络身份。leaf-hitting纯组合门槛另行比较，不充作外部共同容量。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/槽包络凸化与共同提取的不同对象--资源.md",
+      "sha256": "2e5e5267c8a7aed22408fe87babe78ac80a4bcc11a38239648eb90256c26a19c",
+      "section": "单行定义及可提取性"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/半密度半槽与指定根锐族的独立原程序--审查.md",
+      "sha256": "736b7f3055bba92e94dec011dc1915f1c7fa73bf1e4f5d4587b0950f22da61a3",
+      "section": "半片、一次共同匹配与真实森林"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+      "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+      "section": "6. 半密度条件下，任意深度、任意接线都不能保留近二间隙"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "本任务重新实读当前登记、所列正文及必要原稿，逐项核模型、量词、实际任务身份、联合容量、全称/条件范围及总位复杂度；本边不以有限审计替代一般证明。",
+  "contribution": {
+    "result": "半密度完整私有双树中，一次支持保持ST槽匹配在总位多项式时间输出所有原jobs的共同实际σ，内部≤1+floor(k/2)/k≤3/2、外unit≤1，并可从σ提取r=ceil(k/2)的真实mandatory森林；非空OPT≥1给本类3/2近似。",
+    "remaining": "目标附带k2,h1三变量四clause14机15job split例的OPT=3/2锐性，仍需其八种selector/半整数网格或完整任意调度下界，不能从ST上界推出。"
+  },
+  "endpoint_pins": {
+    "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1": "cb19e6e1237754a8203740739689cebc96785f7cff55cf69c7ff1ecf61c64ebf",
+    "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1": "b8d6ddfdd657741603fe909bac8781467607de329d36f1ab76673b20f00ae316"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/槽包络凸化与共同提取的不同对象--资源.md": "2e5e5267c8a7aed22408fe87babe78ac80a4bcc11a38239648eb90256c26a19c",
+    "archives/unrelated-machines/state/审查/半密度半槽与指定根锐族的独立原程序--审查.md": "736b7f3055bba92e94dec011dc1915f1c7fa73bf1e4f5d4587b0950f22da61a3",
+    "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90"
+  },
+  "review_digest": "59d9be1eb9b75f03a736b51787c54ec2bc05dac8e312bec18b45217c6f3131d8"
+}

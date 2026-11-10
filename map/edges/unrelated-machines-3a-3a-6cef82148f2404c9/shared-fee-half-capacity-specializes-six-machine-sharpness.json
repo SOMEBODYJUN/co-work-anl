@@ -1,0 +1,49 @@
+{
+  "edge_id": "um-6cef-shared-fee-half-capacity-specializes-six-machine-sharpness",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-MULTIWITNESS-SHARED-JOB-FEE-CAPACITY-v2"
+  ],
+  "target_ids": [
+    "M-44755565c36e4eed9e26fd1a2a5b5d10"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "源精确两目的地族取p=2、b1=b2=1/2、c=1−γ，q_i旧端a_i=a∈(0,η]，w_f=1、w_x=0；给定0<η≤1/2、1≤B<3/2，选有理0<γ<min(1/2,3/2−B)。若B为固定实常数，只要求有理参数存在，不把实B当二进制输入。",
+  "roles": {
+    "UM-MULTIWITNESS-SHARED-JOB-FEE-CAPACITY-v2": "给完整原矩阵、所有pattern实际最优值、闭阈值收费的必要充分公式。",
+    "M-44755565c36e4eed9e26fd1a2a5b5d10": "得到其全参数六机存在锐性句；不把另两种五机实现混作源族同一矩阵。"
+  },
+  "explanation": "源p=2恰有H1,H2,A1,A2,R,S六机和q1,q2,x1,x2,f五jobs，未列端皆∞。初态峰1；全开pattern把x1,x2送R、f送S，R=1，其余峰1，因此有同P共同σ1。各singleton B_K=1/2，OPT_K=1；c+B_K=3/2−γ>B且B_K≤1≤B，所以任何峰≤B singleton必须f→S，费用恰1。若B非有理，在(B,min(3/2,c+1/2))取有理β，源闭阈值β分支仍迫峰≤B输出收费；也可直接用原资格负载链。两个singleton支持均含同一f，非查询宇宙W=1，总费2而无法不交；两query旧负载逐机≤η。固定γ的免费singleton峰c+1/2<3/2，因此是随γ→0的统一上确界锐性。",
+  "scope": "完整推出M的存在性和全合法单查询必要性。源参数族仅复现六机机制；不声称其涵盖general/typed五机，也不是OPT gap、一般UM近似下界或hardness。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/多见证共享作业费用与共同容量精确合同--审查.md",
+      "sha256": "26da3e81c2fef7b812c74b07af3b957e59c854f851b9ffab423b4a1b33929c83",
+      "section": "2. 完整矩阵、量词和费用定义"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/多见证共享作业费用与共同容量精确合同--审查.md",
+      "sha256": "26da3e81c2fef7b812c74b07af3b957e59c854f851b9ffab423b4a1b33929c83",
+      "section": "3.3 闭阈值的最小费用"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/双见证查询分离的染色证明与冻结审查边界--审查.md",
+      "sha256": "878018b18a1a8d425ca75187a352599c0ca22af15e9c436298c8d5587d363671",
+      "section": "3. 六机锐例及其准确量词"
+    }
+  ],
+  "reviewed_by": "Boss3/um-comparison-6cef",
+  "review_note": "本轮实读当前任务完整正文及本边全部证明区段，按原任务/端点身份逐项核对；以下scope与whole_result/contribution区分整结论和局部贡献。没有重跑历史软件，没有把finite PASS或审查出处当全称证明。",
+  "whole_result": "源共享费精确族的b1=b2=1/2子族，对每个允许η、B给M陈述中的同P两峰1见证、每singleton峰1可行、每峰≤B singleton强迫同一费用1任务、两支持不可能不交及总费2>W=1。",
+  "endpoint_pins": {
+    "M-44755565c36e4eed9e26fd1a2a5b5d10": "7740c535ccb3549e2fa222eeaaa166d6fb33d983b73594ad11b50d539e28605f",
+    "UM-MULTIWITNESS-SHARED-JOB-FEE-CAPACITY-v2": "e09e1f04392200c001a906ca1eb20b6f86ea894758efe7eb1497e41b55cd5a4b"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/多见证共享作业费用与共同容量精确合同--审查.md": "26da3e81c2fef7b812c74b07af3b957e59c854f851b9ffab423b4a1b33929c83",
+    "archives/unrelated-machines/state/审查/双见证查询分离的染色证明与冻结审查边界--审查.md": "878018b18a1a8d425ca75187a352599c0ca22af15e9c436298c8d5587d363671"
+  },
+  "review_digest": "c505db1ffbe8d129a0bb9fc22cdd24f122348e27c5b4449b19a2023e2e7b03d2"
+}

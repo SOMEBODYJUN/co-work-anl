@@ -1,0 +1,42 @@
+{
+  "edge_id": "um-6cef-continuous-slots-prove-full-budget-literal-obstruction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/weighted-literal-pool-continuous-slot-rank-proof"
+  ],
+  "target_ids": [
+    "unrelated-machines/occurrence-weighted-direct-literal-pool-three-halves"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一显式CNF occurrence物理矩阵；每clause k_c≥2；每变量每极性全部eligible b_e非负且总和≤1；原finite端严格为f_v的两unit pools、query的private root1/自身pool b_e、selector的本clause occurrence roots1。",
+  "roles": {
+    "unrelated-machines/weighted-literal-pool-continuous-slot-rank-proof": "独立的连续分数长度槽/Hall/rank构造与全原jobs恢复。",
+    "unrelated-machines/occurrence-weighted-direct-literal-pool-three-halves": "同一full-budget compiler对任意公式都有确定性总位多项式完整Cmax≤3/2输出，排其作为near-two NO源。"
+  },
+  "explanation": "每clause按1/k_c≤1/2在每eligible occurrence所在pool给分数项，每f在两pool各1/2且先于所有queries。正长度重叠建槽边，左行和1、槽列≤1；Hall/匹配整数性在同一个matching中同时固定所有clause与f。含f的pool首槽被占；任何later槽ell≥2的真实witness排名j满足1/2+Σ_{r≤j}x_r>ell−1且Σx≤j/2，故j≥2ell−2，chosen query load≤Σw_(2t)≤(Σeligible w)/2≤1/2。另一pool为eligible子集负载≤1。所选selector去相应原root、同枚query外送，其余query留各自root，所有f按matching去原pool；每root恰一unit，所有原jobs包括zero和unselected各执行一次，故峰≤3/2。正重叠边O(N+L)、有理端点位长按分母编码长度之和控制，固定增广路与全任务恢复均总位多项式。",
+  "scope": "整条target保证的另一独立证明；连续图不宣称与离散all-job/clause-only图逐边或全输出集合等同，不含SAT/sharpness/一般UM/额外guard与更大预算。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/证明/异权文字池的连续槽排名与共同调度--证明.md",
+      "sha256": "41303f6247ca02a93ec6063db619b4353621bdc6ff35482fbcd3eb31c1b55860"
+    },
+    {
+      "path": "archives/unrelated-machines/state/障碍/occurrence加权literal-pool三二上界--障碍.md",
+      "sha256": "38234a0520ee39d0c401c045f4f0f9b66edc8dbe4d537e8e83f0581b2aa81c34"
+    }
+  ],
+  "reviewed_by": "Boss3/um-comparison-6cef",
+  "review_note": "本轮实读当前任务完整正文及本边全部证明区段，按原任务/端点身份逐项核对；以下scope与whole_result/contribution区分整结论和局部贡献。没有重跑历史软件，没有把finite PASS或审查出处当全称证明。",
+  "whole_result": "对目标全部准确full-budget、private-root/direct-pool输入，无论SAT与否，确定性总位多项式选择每clause恰一原occurrence及每f原pool，保全部原jobs，含f pool query-only≤1/2、另一pool≤1、roots=1，完整Cmax≤3/2；因此该compiler不能产生near-two NO。",
+  "endpoint_pins": {
+    "unrelated-machines/occurrence-weighted-direct-literal-pool-three-halves": "a3405de580450c61df62afdf9a17ace9350bc355885b1d83a3dbc9b13cbdd778",
+    "unrelated-machines/weighted-literal-pool-continuous-slot-rank-proof": "746961ba97281f0e52227267e00c482925e3473e4501945a51b896d5d0def753"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/证明/异权文字池的连续槽排名与共同调度--证明.md": "41303f6247ca02a93ec6063db619b4353621bdc6ff35482fbcd3eb31c1b55860",
+    "archives/unrelated-machines/state/障碍/occurrence加权literal-pool三二上界--障碍.md": "38234a0520ee39d0c401c045f4f0f9b66edc8dbe4d537e8e83f0581b2aa81c34"
+  },
+  "review_digest": "ec97a2f7f67f3123634f478c5a5a07054e11c85c2c4a643c5486abc1eb7cf7b7"
+}

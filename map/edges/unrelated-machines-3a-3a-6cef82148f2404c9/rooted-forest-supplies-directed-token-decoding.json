@@ -1,0 +1,57 @@
+{
+  "edge_id": "um-6cef-rooted-forest-supplies-directed-token-decoding",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-HOME-UNIT-ROOTED-FOREST-v1"
+  ],
+  "target_ids": [
+    "UM-DIRECTED-DEGREE-TOKEN-IDENTITY-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "采用target精确P(D,k)：每顶点一机、全实例仅一个root unit g在r、每正k点q=min(k,d)个child的home时间1/k及原孩子unit端、必要home-only filler1−q/k；完整实际调度C<2。图可有环境有向环、原入r弧；k=0仅原终端。",
+  "roles": {
+    "UM-HOME-UNIT-ROOTED-FOREST-v1": "C<2的unit入度排斥给保唯一g根的可达出树，R内原负载精确保留。",
+    "UM-DIRECTED-DEGREE-TOKEN-IDENTITY-v1": "只支付任意C<2完整调度解码H及b(H)≥2−C这一个方向。"
+  },
+  "explanation": "P(D,k)的child是F的home任务，g是唯一U；home-only filler也属J但无外送弧。正需求home总量恰1、零需求为0，且g迫C≥1，所以R外预算满足b_i≤1≤C。直接用F的U可达域R得到单棵根出树H，不需先消环；根原入边及R外环境环不能进入这棵树。对选中正需求v，已有恰一unit（根由g，非根由唯一父child）；若外送s_v枚child，则它们全部目的地仍在R，deg_H^+(v)=s_v，完整负载为1+(q_v−s_v)/k_v+(1−q_v/k_v)=2−s_v/k_v≤C。故每个正需求比值≥2−C，截断项1同样≥2−C，得b(H)≥2−C。只用显式任务/可达扫描，q_v≤d_v避免按巨大k数值展开。",
+  "scope": "已成立的精确解码局部贡献。不能把F单独升级为target完整最优值恒等、反向剪树算法或一般UM近似器；C=2不适用。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/单home正规化与一般有向需求树实际恒等--定理.md",
+      "sha256": "b5a75fead51cc4a793936896a5366eaa9d059fd3d4a11bd522456b5a920092bc",
+      "section": "3. 严格小于二的保U根森林"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/单home正规化与一般有向需求树实际恒等--定理.md",
+      "sha256": "b5a75fead51cc4a793936896a5366eaa9d059fd3d4a11bd522456b5a920092bc",
+      "section": "4. 一般有向需求树的独立模型"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/单home正规化与一般有向需求树实际恒等--定理.md",
+      "sha256": "b5a75fead51cc4a793936896a5366eaa9d059fd3d4a11bd522456b5a920092bc",
+      "section": "5. 双向完整构造与精确最优值"
+    },
+    {
+      "path": "tools/evidence/um-home-unit-transit-and-envelope-primary/support/eef751243f82cd1689d6.md",
+      "sha256": "dd3a012c9e24eb64a6ddc4f8e953ccc787aa27cc8a6945a454af2357d5689fb8",
+      "section": "4. 一般有向需求图与实际 token 调度的精确恒等"
+    }
+  ],
+  "reviewed_by": "Boss3/um-comparison-6cef",
+  "review_note": "本轮实读当前任务完整正文及本边全部证明区段，按原任务/端点身份逐项核对；以下scope与whole_result/contribution区分整结论和局部贡献。没有重跑历史软件，没有把finite PASS或审查出处当全称证明。",
+  "contribution": {
+    "result": "任意target完整实际C<2调度都在总位多项式时间解码为原D根出树H，保每个原正需求，且b(H)≥2−C；因此在OPT<2分支给OPT≥2−b*。",
+    "remaining": "target全结论另需反向将超过k的孩子及整子树剪除，给每保留非根加父unit，并恢复所有child/filler/树外任务，才有OPT≤2−b*及OPT=2边界；(2−ε)UM算法到ε树近似还需假设该一般算法并枚举Γ、ceil阈值归约。"
+  },
+  "endpoint_pins": {
+    "UM-DIRECTED-DEGREE-TOKEN-IDENTITY-v1": "0873932df931524d7ef8fcb0da1b35cdb0d528a4a66ad1c681e7862fe5bb5889",
+    "UM-HOME-UNIT-ROOTED-FOREST-v1": "82923c322767aedd6e46aaf94cbf07be4b718a119d18e3c65134664a6e28e104"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/单home正规化与一般有向需求树实际恒等--定理.md": "b5a75fead51cc4a793936896a5366eaa9d059fd3d4a11bd522456b5a920092bc",
+    "tools/evidence/um-home-unit-transit-and-envelope-primary/support/eef751243f82cd1689d6.md": "dd3a012c9e24eb64a6ddc4f8e953ccc787aa27cc8a6945a454af2357d5689fb8"
+  },
+  "review_digest": "e3795bfa3381c945df149b509e5cfcbd7396718631c6374a8e58979d3f6d0a3e"
+}

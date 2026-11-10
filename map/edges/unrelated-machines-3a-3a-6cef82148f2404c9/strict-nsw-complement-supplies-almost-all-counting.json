@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-6cef-strict-nsw-complement-supplies-almost-all-counting",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-NORMALIZED-ROBUST-HIGH-LOW-COMPLEMENT-v1"
+  ],
+  "target_ids": [
+    "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一原n≥1个norm1组、同一实际不交allocation，真实attaining质量r_g∈[0,1]，该输出NSW>ρ^−1、ρ=2^24；固定0<η<1，K=ceil(1/η)，q=ρ^−K，c=q/2。NSW输出的存在/计算由target其他前件支付，本边不充当XOS finder。",
+  "roles": {
+    "UM-NORMALIZED-ROBUST-HIGH-LOW-COMPLEMENT-v1": "给严格乘积计数、正确高/低组集合互补和含双等号的参数域。",
+    "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1": "其C.4的同一输出低组计数及后续D的计数输入；不支付整个NSW/repair/全jobs定理。"
+  },
+  "explanation": "假设k≥ηn组r_g<q，其余至多1，则product<q^k≤ρ^−n，与严格NSW矛盾；ηn无需整数，k正。r_g≤c严格蕴含r_g<q，故两种低组都少于ηn。这就是target几乎全部组部分，并为D共享repair后至少γ_lo n−D>ηn的矛盾提供计数步骤。高组NO的γ_hi必须换成低组比例1−γ_hi；当δ≤q、γ_hi≤1−η时，同一输出high≥δ数>(1−η)n≥γ_hi n，两等号也可。若high用>δ，互补改为low≤δ；等号δ=q需要另用严格NSW直接推出#{r≤q}<ηn，不偷换集合。",
+  "scope": "无开放数学前提的局部代数贡献，适用条件含给定严格NSW输出。不会从计数本身获得unit-FSLP算法、所有组minimum质量、repair source hardness或统一Cmax<2。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化菜单高低比例互补的实质纠错及修复边界--审查.md",
+      "sha256": "ad299d925721db08eadd2eb530a07871dab58aff5d739d591a32335c40eeea8d",
+      "section": "原归一化菜单与同一组数"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化菜单高低比例互补的实质纠错及修复边界--审查.md",
+      "sha256": "ad299d925721db08eadd2eb530a07871dab58aff5d739d591a32335c40eeea8d",
+      "section": "高低gamma混用的撤回与准确互补"
+    },
+    {
+      "path": "tools/evidence/private-tree/partial-quota-welfare/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
+      "sha256": "9ef11b3f69d786c4a89f3e575f0cce60cc5d611c2fbad61cdabd3d642aaea33c",
+      "section": "C. 原 unit-FSLP、benchmark 一与几乎所有组"
+    }
+  ],
+  "reviewed_by": "Boss3/um-comparison-6cef",
+  "review_note": "本轮实读当前任务完整正文及本边全部证明区段，按原任务/端点身份逐项核对；以下scope与whole_result/contribution区分整结论和局部贡献。没有重跑历史软件，没有把finite PASS或审查出处当全称证明。",
+  "contribution": {
+    "result": "对target已产生的同一严格NSW输出，完整推出#{r<qη}<ηn和#{r≤qη/2}<ηn，并以1−γ_hi准确对照robust高组NO，δ=qη、γ_hi=1−η均包括。",
+    "remaining": "target整条保证尚使用unit-FSLP正支持benchmark、显式XOS确定性分数NSW finder及总位复杂度、共享D个repair最多救D组与promise-LP分离、selected root=2−r的全部原jobs解码；本计数边不单独证明这些步骤。"
+  },
+  "endpoint_pins": {
+    "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1": "38ced94214265ec53f2d571a2f63209addf755128e27d6af5cfc48f41ba10a9e",
+    "UM-NORMALIZED-ROBUST-HIGH-LOW-COMPLEMENT-v1": "0d112a9e00ab26abe34404efeafac47539ffb9badb44fe22c7584ffc9c39f225"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/归一化菜单高低比例互补的实质纠错及修复边界--审查.md": "ad299d925721db08eadd2eb530a07871dab58aff5d739d591a32335c40eeea8d",
+    "tools/evidence/private-tree/partial-quota-welfare/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md": "9ef11b3f69d786c4a89f3e575f0cce60cc5d611c2fbad61cdabd3d642aaea33c"
+  },
+  "review_digest": "6dc612ecc7f77506f128f62699a32b1bd051c9257d8f7a0eb0e3645a84605175"
+}

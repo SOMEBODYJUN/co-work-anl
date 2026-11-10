@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-7670-small-slot-to-li-rounding",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-3fcaea74cca845be8c00c0f2e9d089f5"
+  ],
+  "target_ids": [
+    "unrelated-machines/li-nearly-linear-scheduling-lp-and-rounding"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "稀疏资格图、正整数有限处理时间；给定每任务列和1的有理x，0<η<1。沿用Li中心式算术/稀疏规模合同，非CONGEST轮数。",
+  "roles": {
+    "M-3fcaea74cca845be8c00c0f2e9d089f5": "提供q=1/(1+η)的小容量槽Hall扩张、短增广路覆盖匹配和前槽收费。",
+    "unrelated-machines/li-nearly-linear-scheduling-lp-and-rounding": "接收整体近线性算法中的舍入及匹配工作量步骤。"
+  },
+  "explanation": "按p非增排列各机x区间并以q=1/(1+η)切槽。每任务总交长1，每槽≤q，故任意S有|N(S)|≥(1+η)|S|。L=floor(log_(1+η)n)+1轮交替扩张若仍无短增广路会给>(n)个可达任务，故O(|E_H|η^(-1)log n)的中心最短增广路阶段覆盖全部任务。第r≥2槽的整件成本收给前一完整q槽，首槽收实际获配最大件，所有机器同时L_i≤(1+η)ℓ_i+max_assigned p。槽数和图边均O(|E|)。在整体算法另已建立ℓ_i≤(1+η)^2P与p≤P时才得到L_i≤[1+(1+η)^3]P；这两个生成前提不由本边单独提供。",
+  "scope": "实际输出与匹配阶段工作量的已证局部贡献；不把中心短路长度改作分布式并发轮数，不将2+ε改成2−ε。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+      "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+      "section": "3. 小容量槽制造Hall扩张：自足主链"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+      "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+      "section": "2. 混合装填覆盖求解器及promise阈值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/分布式不相关机负载均衡与混合覆盖--资源.md",
+      "sha256": "14a35d7de8780b8695541b75019bfe089475c1a41aea18186d30590f5b72933c",
+      "section": "5. 有序小槽舍入与CONGEST匹配边界"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "本任务重新实读当前登记、所列正文及必要原稿，逐项核模型、量词、实际任务身份、联合容量、全称/条件范围及总位复杂度；本边不以有限审计替代一般证明。",
+  "contribution": {
+    "result": "给已归一列和1的稀疏x，在中心工作量O(|E_H|η^(-1)log n)内构造支持保持的全任务实际分配，逐机L_i≤(1+η)ℓ_i+实际获配最大件。",
+    "remaining": "整体Li定理还需Young MPC的可靠接口、列归一化误差ℓ_i≤(1+η)^2P、阈值p≤P及几何搜索找到P≤(1+η)OPT，才合成Õ_ε(|E|)和(2+ε)OPT。"
+  },
+  "endpoint_pins": {
+    "M-3fcaea74cca845be8c00c0f2e9d089f5": "dc3a5aeffa59b4fd446da572ffa69ddafe46f218801611f6de16f5ba9998e484",
+    "unrelated-machines/li-nearly-linear-scheduling-lp-and-rounding": "db1d2d70077fd79bd7b7923fc94f9008170984bc048ad2cbac5cb1454f97afe2"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+    "archives/unrelated-machines/state/资源/分布式不相关机负载均衡与混合覆盖--资源.md": "14a35d7de8780b8695541b75019bfe089475c1a41aea18186d30590f5b72933c"
+  },
+  "review_digest": "1741adb861475577e4fd226b2f70eaf8c109b9edc36aba16c49ebf6cf49c1aa3"
+}

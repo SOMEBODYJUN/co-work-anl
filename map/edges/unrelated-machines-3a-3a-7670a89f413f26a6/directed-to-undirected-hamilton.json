@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-7670-directed-to-undirected-hamilton",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-d9e5cebbc2d04007aea7542b91397ad6"
+  ],
+  "target_ids": [
+    "M-0fbec72103194febba64cdb960f46091"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "历史显式有限简单图判定语言；有向环/无向环均恰访问全部顶点。极小图按约定环定义预处理，非法编码送固定NO；源完全性沿用Cook外部起点。",
+  "roles": {
+    "M-d9e5cebbc2d04007aea7542b91397ad6": "提供有向Hamilton判定NP完全性。",
+    "M-0fbec72103194febba64cdb960f46091": "接收三点路径映射、双向环解码及自身NP成员性。"
+  },
+  "explanation": "每个有向顶点v换为v0−v1−v2，对原弧u→v加无向u2−v0。每中点v1度2，任意Hamilton环必须整段走完三点路径；连接边只在一段2口与另一段0口之间，所以所有段的遍历方向一致，必要时反转整个环后收缩得到原有向Hamilton环。反向按有向环展开即得无向Hamilton环。顶点数3|V|、边数2|V|+|A|，全部显式位多项式。无向YES证书是顶点循环排列，扫描每条邻接及每点恰一次给NP成员性；由源完全性及该全函数many-one映射得到目标完整NP完全判定结论。",
+  "scope": "完整判定复杂度迁移；不附加有界度、girth、计数保持、近似gap或UM机器编译。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "3.4 顶点覆盖到有向Hamilton，再到无向Hamilton"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "1. 先固定语言、量词和编码"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "2. 主定理的21个判定问题及历史术语"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "本任务重新实读当前登记、所列正文及必要原稿，逐项核模型、量词、实际任务身份、联合容量、全称/条件范围及总位复杂度；本边不以有限审计替代一般证明。",
+  "whole_result": "原序9 DIRECTED HAMILTON CIRCUIT经三点路径的全输入位多项式many-one映射归约到原序10 UNDIRECTED HAMILTON CIRCUIT；后者在NP，故目标历史语言NP完全。",
+  "endpoint_pins": {
+    "M-0fbec72103194febba64cdb960f46091": "57d4f95541bfb1374a6b29f319b2b1f62eaf3cb53ee75920166dc3c2d22fd07b",
+    "M-d9e5cebbc2d04007aea7542b91397ad6": "bbe1847ae46352b9ff500605c37259c8517114b4041cc00f5de10d3bbb2bcc31"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d"
+  },
+  "review_digest": "2881eeddf8eab191443885c571fb8812fe403ed2bba0c248f1174d596f0dd712"
+}
