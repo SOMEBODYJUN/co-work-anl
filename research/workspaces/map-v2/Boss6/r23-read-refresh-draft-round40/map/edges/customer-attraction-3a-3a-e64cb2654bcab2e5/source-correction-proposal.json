@@ -1,0 +1,63 @@
+{
+  "task_id": "customer-attraction-3a-3a-e64cb2654bcab2e5",
+  "source": {
+    "path": "archives/customer-attraction/state/障碍/R23-promotion势能桥与零遗憾重置精确反例--障碍.md",
+    "sha256": "610177b6aa308bc0a175341cf402ecc6039ee0f9c5d5531f987aa7b8192c4164"
+  },
+  "changes": [
+    {
+      "section": "3. 零来源遗憾的精确族",
+      "classification": "nonblocking-wording-clarification",
+      "old": "三名提供者、四个主题、七类客户权重按 $t$ 倍复制",
+      "new": "三名提供者、四个主题、七名单位客户（四种兴趣类型）按 $t$ 倍复制",
+      "reason": "同页§2明确mask 1:1、4:2、6:2、11:2。后续没有把七类要求为不同兴趣集合，理解为七个可同兴趣的客户组时不改命题；与范围勘误一道澄清即可。"
+    },
+    {
+      "section": "5. 与 half 目标和后续桥接",
+      "classification": "mathematical-scope-correction",
+      "old": "真实完整历史 IC 并不会自动消除这个 reset，因为上述 84 个比较和 replay 都是精确相等",
+      "new": "真实完整历史 IC 并不会自动消除这个 reset：上述 84 个比较均已精确验证为非负，而来源与指定 replay 的 IC 松弛均为零",
+      "reason": "全部84项IC不全取等。末位历史(A,A)时，规定C含仅C的2t客户及B/C的2t客户，均无旧覆盖，得4t；改A后，A的3t客户均被三名玩家覆盖，得t，所以真实IC松弛3t>0。实际源及指定replay的松弛零仍成立。"
+    }
+  ],
+  "mathematical_witness": {
+    "customer_interest_counts": {
+      "A": 1,
+      "C": 2,
+      "B,C": 2,
+      "A,B,D": 2
+    },
+    "scaling": "任意正整数t",
+    "ordered_history": [
+      "A",
+      "A"
+    ],
+    "prescribed": "C",
+    "prescribed_payoff": "4t",
+    "alternative": "A",
+    "alternative_payoff": "t",
+    "IC_slack": "3t>0"
+  },
+  "affected_registered_objects": [
+    {
+      "object_id": "customer-attraction/terminal-promotion-potential-drop-and-sharp-new-branch-tax",
+      "usage": "同文件§3/4仅辅助evidence；三主题主body及statement当前正确"
+    },
+    {
+      "object_id": "customer-attraction/zero-source-and-selected-replay-ic-cannot-pay-terminal-promotion-reset",
+      "usage": "同文件为辅助evidence；四主题主body及statement当前正确"
+    }
+  ],
+  "impact": {
+    "mathematical_conclusions_unchanged": [
+      "零来源及指定replay钱包不能付款",
+      "三主题13节点SPE紧例",
+      "强PAIR新枝税普遍上界及系数1锐",
+      "本包六逻辑边的实际推导与11个零边比较"
+    ],
+    "scope_of_error": "仅将全部非负IC与若干零slack混为全等号；不用此错误声称全部84项松弛为零。",
+    "file_hash_propagation": "源正文变化后按现行规则刷新命中evidence SHA及对应对象版本；本包新增三主题见证是只读依赖，若其pin更新，Boss应刷新任务/端点绑定/收据。并非本包核心statement需要改变。",
+    "worker_actions": "仅写staging建议；未改源、registry、任务、旧边或clone。"
+  },
+  "approval_state": "Boss已独立核历史(A,A)的严格正slack；最终正文修订、登记传播及发布由Boss处理。"
+}

@@ -1,0 +1,52 @@
+{
+  "edge_id": "ca-cage64-actual-tangent-bank-gives-conditional-tpay-reduction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/actual-load-tangent-bank-and-common-error-payment"
+  ],
+  "target_ids": [
+    "M-dfe0013720ae41f08974f2f30a6485dc"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "原固定σ的共享删除域K及同一次合法鞍点(p,L*)；保BAL与全部STATIC余量。T-PAY不等式C_corr≤I+D+B_act是仍开放的附加付款条件，不把它作为已证事实。m≥2，m1另直接处理。",
+  "roles": {
+    "customer-attraction/actual-load-tangent-bank-and-common-error-payment": "原actual平均删除列属于同一K，KKT给真实B_act上界；原IC仅带两叶平方误差。",
+    "M-dfe0013720ae41f08974f2f30a6485dc": "获得T-PAY若被支付则half的充分归约，仍缺付款本身。"
+  },
+  "explanation": "源中L_act=(m−1)c/m∈K，一阶条件给(m−1)Σρt²c/m≤γ−Σρt²，所以B_act≤(γ−Σρt²)/2≤γ/2。若额外T-PAY成立，BAL的W−mγ=I+D−C_corr给W≥mγ−B_act≥(m−1/2)γ；STATIC的OPT=(2m−1)γ−Q_stat−P_opt−Rep−Out≤(2m−1)γ即给2W≥OPT。保全余项则C_corr≤I+D+(γ+Q_stat+P_opt+Rep+Out)/2才与half等价；B_act版本只是充分加强。源另有u=u_tan+E及tan(dev)−tan(obey)≤E(obey)−E(dev)，故不能将原σ直接当切线SPE或将互斥规定叶误差总和当actual银行；这些正是付款未闭合处。",
+  "scope": "条件充分性已完整，未证明C_corr的总债能映入同一B_act，未证明切线博弈策略迁移。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/实际负载切线银行与共同误差付款--候选.md",
+      "sha256": "1b239af5c4b154c422ef633a47a6bebd3190e2a67691c164648d51066ae27447",
+      "section": "实际负载的KKT银行"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/实际负载切线银行与共同误差付款--候选.md",
+      "sha256": "1b239af5c4b154c422ef633a47a6bebd3190e2a67691c164648d51066ae27447",
+      "section": "原源主账和完整静态余量"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/实际负载切线银行与共同误差付款--候选.md",
+      "sha256": "1b239af5c4b154c422ef633a47a6bebd3190e2a67691c164648d51066ae27447",
+      "section": "原IC到切线游戏只给带误差的不等式"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/实际负载切线银行与共同误差付款--候选.md",
+      "sha256": "1b239af5c4b154c422ef633a47a6bebd3190e2a67691c164648d51066ae27447",
+      "section": "原共享菜单合同"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/第十一轮树审查的定义级合同与旧压力记录--资源.md",
+      "sha256": "e629bbdfcedaa3d2fa58b2f70cae2b3bfa12b573953a0d48db392377353ec11f"
+    }
+  ],
+  "reviewed_by": "Boss6/map-cage64-round39",
+  "review_note": "完整实读本包相应定义、陈述、量词和承重段，先核实际所得结论再比目标原句；下述whole_result或contribution准确限定本边支付范围。未运行大证书、优化器或原程序。",
+  "contribution": {
+    "result": "若同一原策略/同一次共享鞍点上T-PAY成立，则由已证actual列KKT银行及BAL/STATIC推出W≥(m−1/2)γ、OPT≤(2m−1)γ，从而half。",
+    "remaining": "尚须证明开放的C_corr≤I+D+B_act，并把所有改变前缀的真实平方误差及重置共同收费；BANK只限制钱数，不供应债到银行的映射。"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "edge_id": "ca-cage64-path-capacity-to-all-history-main-projection",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "BANK-PATH-CAPACITY-v1"
+  ],
+  "target_ids": [
+    "BANK-MONOTONE-PROJECTION-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "主/银行客户不交且共同目录是完整Cartesian积；同一原完整联合SPE。额外结构合同须在全部映射主有序历史h（含离轨）成立：H(h)的规定真实叶中每个后继银行主题都包含当前b(h)。",
+  "roles": {
+    "BANK-PATH-CAPACITY-v1": "在任意固定联合前缀后给保持当前银行动作的真实主菜单差0≤d≤uB−f。",
+    "BANK-MONOTONE-PROJECTION-v1": "在全部映射历史饱和这一明确条件下，递归映射给完整主策略SPE。"
+  },
+  "explanation": "固定任意映射h，余r，旧银行负载p。饱和合同令当前银行动作B=b(h)的所有客户在规定叶都被当前及全部未来r人覆盖，故uB=f=Σ_(x∈B)1/(p_x+r)。源的固定非零前缀版当前行动预算给每个主行动a的真实主收益差≤d≤uB−f=0。定义H(∅)=∅，σ(H(h))=(a(h),b(h))，对每个合法a置H(ha)=H(h)(a,b(h))及τ(h)=a(h)。递归确保主偏离后的联合前缀正是H(ha)，以后τ产生的主行动和相应银行行动逐步模拟同一σ在改变后有序历史上的真实完成；未冻结银行尾，也未合并相同计数的历史。因h任意，上述菜单最优正是全部主历史上τ的真实行动最优，故τ为完整纯SPE。从任意固定初始联合前缀启动H同证。",
+  "scope": "已证明若全映射历史饱和则完整投影成立。源仅actual链嵌套/actual容量零不能替代这一全历史前提；固定过去前缀版本仍有旧负载。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/银行时间谱与饱和历史的主策略投影--定理.md",
+      "sha256": "2b44b5253207d4827ae518d47d57e42b7581df6361d9d237fe78c17db9658648"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/产品菜单与银行时间谱的量词及付款接口--资源.md",
+      "sha256": "edd8b00a0f01e12986605e1669c65e549a90f255cf89a9a516d53aeb48c90442"
+    }
+  ],
+  "reviewed_by": "Boss6/map-cage64-round39",
+  "review_note": "完整实读本包相应定义、陈述、量词和承重段，先核实际所得结论再比目标原句；下述whole_result或contribution准确限定本边支付范围。未运行大证书、优化器或原程序。",
+  "whole_result": "在全部映射主历史的饱和合同下，τ(h)=a(h)是独立主游戏的完整有序历史纯SPE；任固定初始联合前缀后的相应主子博弈也成立。一般产品SPE不自动满足合同。"
+}
