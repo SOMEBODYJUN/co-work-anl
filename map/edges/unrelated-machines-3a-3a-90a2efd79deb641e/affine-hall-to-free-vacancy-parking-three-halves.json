@@ -1,0 +1,50 @@
+{
+  "edge_id": "um-90a2-affine-hall-to-free-vacancy-parking-three-halves",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-LST2025-AFFINE-LINE-SOURCE-UNIFORM-COMPILATION-OBSTRUCTION-v1"
+  ],
+  "target_ids": [
+    "UM-UNIFORM-PORT-PARKING-PAPER-APPROX-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "目标统一D停车的下述显式子类：非空indexed constraints G；prime R≥2、整数k≥1，每g含k个不同变量，每变量constraint degree≤R且给固定注入intercepts j_x(g)∈F_R；每g非空显式allowed-state表。资源按变量tag分离，state资源束为k条长度R的仿射线，D=kR。每state一个private parent、D枚不同incidence ports（parent时间1/D、资源端1），每group一个unit selector仅本组parents；所有未选state任务保留。没有aux mandatory unit jobs、额外guards/payload或隐藏端，vacancy取全资源自由拟阵。",
+  "roles": {
+    "UM-LST2025-AFFINE-LINE-SOURCE-UNIFORM-COMPILATION-OBSTRUCTION-v1": "提供对每个任意完整local state选择的全部Hall子族条件与共同整数保留b=ceil(kR/2)，并保同一完整原矩阵的任务资格/负载及真正全满足赋值时的perfect分支。",
+    "UM-UNIFORM-PORT-PARKING-PAPER-APPROX-v1": "接收该矩阵恒等嵌入的无aux/free-vacancy子类：显式实际三半输出及β*≥b/D；这是比通用后端更强的子类贡献，未覆盖一般停车目标。"
+  },
+  "explanation": "这是同一完整原矩阵的恒等映射：停车主点u取constraint g，标签a取真实indexed allowed state s，C_(u,a)取带变量tag的S_(g,s)，private parent取(g,s)，port取原state-resource incidence job，selector取原group selector。D=kR对全部states相同，未选state incidence jobs也完整保留。aux为空，其unit optimum B=0；辅助匹配所定义transversal matroid秩0，vacancy对偶为自由拟阵，任何互异资源集均独立。因此源的共同不交保留恰满足停车的全部全局资源条件；没有用单state局部独立性代共同容量，也没有删未选任务。\n\n任选每g一个真实allowed state s(g)，不要求CSP满足赋值。对任意F⊆G，令r_x=|F∩G(x)|≤R。同变量selected lines因intercept注入不重合，同slope不交、异slope至多一交，二阶容斥给|N_x(F)|≥r_xR−r_x(r_x−1)/2≥(R+1)r_x/2。tags分离且每g变量互异使Σ_x r_x=k|F|，故|N(F)|≥k(R+1)|F|/2≥b|F|，b=ceil(kR/2)；最后对奇数kR亦由b≤kR/2+1/2≤k(R+1)/2成立。复制每group的b个quota或整数容量流给同时满足|B_g|=b、B_g⊆S_(g,s(g))且跨group两两不交的真实资源，不能只验总资源数。每完整local选择均可作此构造，故特别β*≥b/D≥1/2。\n\n把selector放所选parent，仅外送B_g对应的原incidence jobs，其余全部jobs留各自parent。所选parent负载1+(D−b)/D=2−b/D；未选parent负载1；资源机因共同不交至多一unit，所以同一完整实际调度峰≤2−b/D≤3/2。所有原任务恰一次，原有限端身份不变。非空G给至少一unit selector，OPT≥1，因此同时有实际相对近似比≤2−b/D≤3/2。目标B≤1域的精确恒等OPT=2−β*与上述β*下界相容，但算法不求β*，也不使用尚未实现的(4+η)后端。\n\n若另外给真正全满足共同赋值，则同变量selected lines同slope而不同intercept，整个selected资源束两两不交，β*=1且实际OPT1；near-perfect CSP YES不能提供这一额外见证。显式完整输入中b≤D、总quota |G|b≤|G|D≤总incidences，因为每菜单非空；普通整数matching/flow和全部原job回填按完全展开总位长多项式。不把R²资源或R^k状态表的展开说成succinct poly(log R)，也不处理非均匀D_u、加aux/guards后的vacancy约束或任意state-dependent权。",
+  "contribution": {
+    "result": "统一D停车目标的显式仿射线、无aux/free-vacancy子类：对每个任意local state选择，能共同保留每group b=ceil(kR/2)个互不交原资源，所以β*≥b/(kR)，确定性构造同一完整普通UM实际调度峰≤2−b/(kR)≤3/2，并因OPT≥1有相同相对近似比。真正全满足共同赋值时β*=1、OPT1。该子类不需通用(4+η)后端。",
+    "remaining": "停车完整目标还覆盖任意统一D束、非空aux、显式transversal对偶vacancy及B≥2分支。这里不提供这些一般实例的Hall半保留，也不重证或实现two-value resource-matroid (4+η)后端。异构D_u、succinct输入、宽rectangle/marks和任意state权、源near-perfect→perfect及一般UM/hardness都未由此贡献支付。"
+  },
+  "scope": "无附加开放前提的同矩阵结构化迁移；只支付UM-UNIFORM-PORT-PARKING-PAPER-APPROX-v1的仿射无aux子类contribution，不写whole_result，不把review入口当作定理源或造共同UM模型hub。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/直线集合打包与统一端口停车双源审查--审查.md",
+      "sha256": "3f1cc70001adac7bbbcdd5c0815a851a30fe0d92e2271cad8f534dbfcea9fe92"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/仿射线三类合同的独立审查与范围入口--审查.md",
+      "sha256": "0ca751b81f4ed000ba707c52ed91bcddcc4c71e4a59c7e9ee708c2edc40c8c7a"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/均匀线菜单原证与累计路径合并稿的版本审查--审查.md",
+      "sha256": "bb7f1680561ae39f2af050bbecd855cce3cee4f2f8b30869c628806bca59e4c7"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "round40 worker完整实读parking目标、affine theorem当前记录与全部证据（含bb7f全文），此前0ca7范围入口/3f1c双源页已全文读。Root另全文实读同源并核同矩阵/free vacancy与全任务负载后正式pushed read-add 80475…；本边随后建立。逐F Hall、奇数D、完整未选jobs、B0自由拟阵、β*和实际峰/相对保证、显式总位长与perfect额外量词均核清；不调用未实现后端，不把三域review当单一定理或把source困难性作前提。",
+  "endpoint_pins": {
+    "UM-LST2025-AFFINE-LINE-SOURCE-UNIFORM-COMPILATION-OBSTRUCTION-v1": "636db9d50e9f93c50384e00059aa1b8b47f1a6e5584290e64162a0329a395426",
+    "UM-UNIFORM-PORT-PARKING-PAPER-APPROX-v1": "ffbda798edcc4ef1b9b218f099c67d46a941c6aff5067a8098348b9e61e7a8eb"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/直线集合打包与统一端口停车双源审查--审查.md": "3f1cc70001adac7bbbcdd5c0815a851a30fe0d92e2271cad8f534dbfcea9fe92",
+    "archives/unrelated-machines/state/审查/仿射线三类合同的独立审查与范围入口--审查.md": "0ca751b81f4ed000ba707c52ed91bcddcc4c71e4a59c7e9ee708c2edc40c8c7a",
+    "archives/unrelated-machines/state/审查/均匀线菜单原证与累计路径合并稿的版本审查--审查.md": "bb7f1680561ae39f2af050bbecd855cce3cee4f2f8b30869c628806bca59e4c7"
+  },
+  "review_digest": "9610dc96e7617bfdfe15fdce6b8c20dfa587e1ea7215ecea1187a8e6286b529a"
+}

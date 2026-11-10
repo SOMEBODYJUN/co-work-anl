@@ -1,0 +1,47 @@
+{
+  "edge_id": "um-90a2-occupation-face-to-fixed-sink-three-halves",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1"
+  ],
+  "target_ids": [
+    "UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "仅目标原合同：每固定整数K≥1，显式不交homes H与K个sinks Z；宏B只可在H且每有限宏端严格>T/2；非宏恰分入互不交J_h，每件只可去唯一home h和Z子集；非负二进制有理/∞时间，T≥0。模式仅记0/1 occupied，不依具体宏身份/大小；occupation须为覆盖全部宏的transversal base。",
+  "roles": {
+    "UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1": "提供任意K侧约束的模式投影顶点≤2K个非单值home及正支持中兼容的全覆盖宏匹配；支持恢复本身不保预算。",
+    "UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1": "由模式DP、heavy分支、lex投影顶点和小贡献恢复组成完整给T调度算法，所得成功输出≤3T/2且OPT≤T必成功。"
+  },
+  "explanation": "先处理空任务和T=0：每任务有原零端当且仅当有完整零调度；逐件选零端或可靠FAIL。T>0先删p>T的边，剪后无端或宏无覆盖匹配则可靠FAIL；无私有任务直接宏匹配。其余令N=max(1,Σ|J_h|)、s=T/(4N)，只向上取整sink时间，home始终存真实有理成本。每组以K维sink整数profile作DP，每profile保最小home负载和全部原任务回溯；盒上界floor(T/s)+|J_h|≤5N。empty标签home≤T，occupied标签home≤T/2。OPT≤T的见证因宏>T/2每home至多一宏，故逐组替换不增sink profile且不增home；各sink全体取整损失≤Ns=T/4一次，预算5T/4。每home≤2(5N+1)^K模式。\n\n宏全覆盖home集合是秩|B|的transversal bases。P(Q)由每home模式和1、occupied投影x属于B(M)组成；用原宏匹配流z表达。对任何y∈P(Q)，base分解再按占位状态条件选择正模式说明它确为兼容实际模式凸包，不需要算法枚举长分解。令β=1/(8K)，模式总出口>βT为heavy。参考模式的全部出口≤5KT/4，所以heavy homes<10K²。枚举至多10K²个不同home的实际heavy模式，固定后删其余heavy模式，至少一分支保原T见证；空模式库仅使该分支失败。\n\n每分支加K条各sink预算≤5T/4，按全部y坐标依次精确lex优化取得y投影顶点；不能取任意扩展basic point的投影。每次优化只是原扩展LP的face，所固定坐标等于某原顶点坐标，Cramer位界统一，避免迭代位长失控。调用源引理得≤2K个非单值home。只有occupied正支持的home强制匹配，只有empty的禁止，混合自由；原z给带下界流可行性，整数流覆盖全部宏及强制home。各home按匹配标签回溯任一正支持模式，单值home与固定heavy模式不变，改变home的每模式总出口≤βT。因为原LP贡献非负，每sink同时有L_z≤5T/4+2KβT=3T/2。empty home≤T；occupied私有≤T/2加已剪宏≤T，亦≤3T/2。互不交私有组和宏集合保证每原任务恰分配一次，没有额外tiny流重复叠加。\n\n因此所有成功支均给实际3T/2输出；若OPT≤T，参考分支必可行并成功，所以全失败⇒OPT>T。固定K时菜单、对至多10K²个heavy home及各自模式的组合枚举（指数依K）、每支至多D次有理LP及匹配/回溯按输入与T总位长多项式，次数依K。不调用未知OPT、含OPT宏promise或通用CONFIG oracle；历史指数活约束审计不是此LP后端实现。",
+  "whole_result": "在目标所列每固定K≥1、给定T≥0与唯一home私有分组的完整域，得到确定性总位多项式算法：返回FAIL或覆盖全部原任务各一次的合法实际调度；每成功输出Cmax≤3T/2，且OPT≤T⇒成功、FAIL⇒OPT>T。包含零/∞、空组、无宏、大分母、T0分支；不由成功推出OPT≤T，不把K可变或未知OPT免费搜索加入量词。",
+  "scope": "从一般occupation侧约束面引理到固定K实际三半scheduler的完整承重链；whole_result为给T目标本身。无一般UM算法、任意多home私有任务、具体宏边模式或生产软件完成度承诺。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/固定汇点占位基面与未知OPT承诺的最终审查--审查.md",
+      "sha256": "72eb5d43cc26f10ae71d8df45aa44ccc0ff2fb7d1a2309099f10eb6c0f68dc28"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-following-palette-and-distortion-primary/comparison/research/current/unrelated_machines/fixed_sink_occupation_rounding.md",
+      "sha256": "5d41fe7e8530a7cc17f633e15498b58080f405835c6659ca18ab7ce2ff34aae9"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-following-palette-and-distortion-primary/comparison/research/reviews/unrelated_machines/fixed_sink_occupation_review.md",
+      "sha256": "7ec9d61c2e67345bffa9aa640a7d8fb622a303954a86630ccf0bcd9f26d1c51c"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "round40 fresh worker完整实读当前两核心、原224行主稿/73行review、最终审查、独立base面资源、投影库及全部指定occupation审查。逐项核base非独立集、双向交换、纤维维数、全体N共同取整、heavy数、lex投影顶点/统一位长、下界匹配与原身份回填；3/2和one-sided FAIL均由一般证明给出。复用成熟有限证据未重跑程序，12次回填事件不当作12份不同调度。",
+  "endpoint_pins": {
+    "UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1": "1c3a26b6e992042e41e1382e26d715cb59f9d127e8e474aef693002c6782ee82",
+    "UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1": "831b35a049f0eb6f1affd470d1ee4cffb3b6961435800f48e53c44c4e8131693"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/固定汇点占位基面与未知OPT承诺的最终审查--审查.md": "72eb5d43cc26f10ae71d8df45aa44ccc0ff2fb7d1a2309099f10eb6c0f68dc28",
+    "archives/unrelated-machines/tools/evidence/um-following-palette-and-distortion-primary/comparison/research/current/unrelated_machines/fixed_sink_occupation_rounding.md": "5d41fe7e8530a7cc17f633e15498b58080f405835c6659ca18ab7ce2ff34aae9",
+    "archives/unrelated-machines/tools/evidence/um-following-palette-and-distortion-primary/comparison/research/reviews/unrelated_machines/fixed_sink_occupation_review.md": "7ec9d61c2e67345bffa9aa640a7d8fb622a303954a86630ccf0bcd9f26d1c51c"
+  },
+  "review_digest": "9eec03d33b569e27003a43868e4d48b78f5c49baaa7404e0ec525b48a2db6562"
+}
