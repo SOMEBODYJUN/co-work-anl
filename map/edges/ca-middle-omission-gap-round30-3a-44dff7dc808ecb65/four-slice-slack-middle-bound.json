@@ -1,0 +1,63 @@
+{
+  "edge_id": "cag-44dff7dc-four-slice-slack-proves-middle-omission-gap",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/two-provider-sharp-omission-fourteen-thirteenths",
+    "customer-attraction/two-provider-omission-gap-sharp-tradeoff"
+  ],
+  "target_ids": [
+    "customer-attraction/two-provider-middle-omission-gap-upper-bound"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "至少两个合法标签的共同有限目录，两个有序单位提供者，单位客户终局等分。固定任意完整纯SPE，实际有序标签为(A,B)，收益为u,v，U=A∪B，W=u+v>0。指定任意可重复无序标签对(C,D)，O=C∪D，R=|O∖U|。G为|O|减去其余全部可重复无序标签对中的最大覆盖，允许为负。线性式要求B异于C,D的标签，哪怕不同标签覆盖相同。",
+  "roles": {
+    "customer-attraction/two-provider-sharp-omission-fourteen-thirteenths": "提供强制任意最大主题P后的同策略真实末位比较、实际末位对P的比较，以及外部不交分派C_o,D_o。旧遗漏定理另给可行阈值上端14/13。",
+    "customer-attraction/two-provider-omission-gap-sharp-tradeoff": "提供C_o,D_o的强化切片界、式(2)和其推论s₄≥2G、强制C后真实回复对D的比较、含B时的5/9守卫及17客户等号见证。已证明的旧线用于比较两个阈值上界。",
+    "customer-attraction/two-provider-middle-omission-gap-upper-bound": "保留四个切片的精确余量，通过两个P内剩余块的重复计数补上新线性式，得到严格改善的阈值域并在8/9继承完整整数见证。"
+  },
+  "explanation": "旧14/13证明给每个合法T的 |P∩T|≥2(|T|−u)，因为强制最大主题P后的实际末位收益至多该首位真实收益，后者由根IC至多u。实际末位在A后比较P给 |P∩(A∖B)|≥2(L−v)−i，其中L=|P|，i=|A∩B|。令 C_o=C∖U、D_o=(D∖U)∖C_o，c=|C_o|、d=|D_o|，c+d=R。将最大主题比较分别减去 |C|−c 与 |D|−d，得到旧全域证明中的强化切片下界。故P内四个不交切片B,C_o,D_o,A∖B的下界依次为 2(|B|−u)、|C|+c−2u、|D|+d−2u、2(L−v)−i。记对应非负余量为 d_B,d_C,d_D,d_A，q为P在四片外的客户数。写 h=|O∩U|、t=|C∩D|、κ=|C|+|D|−R=h+t、s₂=3u−L/2−R。因 |B|=v+i/2，四个下界之和为 2L+κ+2R−6u，于是 d_B+d_C+d_D+d_A+q=2s₂−κ。\n\n新推导使用 X=P∩(C∖C_o) 与 Y=P∩(D∖D_o)。从最大主题对C,D的全主题下界分别减去外部切片的确切大小，得 |X|≥|C|−c−d_C、|Y|≥|D|−d−d_D，合计至少κ−d_C−d_D。按会员数计，X,Y在A∖B合计至多 p=|C∩(A∖B)|+|D∩(A∖B)|，允许同一客户两次。在U外X为空，Y只可能来自(C∩D)∖U，故该区最多 e=|(C∩D)∖U| 次。在B内两块的合计会员数至多 |P∩B|+t−e，因为重复只来自P∩C∩D∩B，且 |C∩D∩B|≤t−e。三个区合计给 |P∩B|≥κ−d_C−d_D−p−t=h−p−d_C−d_D。代入 d_B 的定义和四片恒等式，得 2s₂≥κ+h−p−2(|B|−u)+d_A+q。\n\n旧全域证明在B异于C,D时用合法竞争对BC、BD给式(2) 2G≤2h−s₄−i−e−p，其中s₄=2v−R。C=D时允许把同一竞争对使用两次。代入上式及 |B|=v+i/2，得 2s₂≥2G−R+2u+e+t+d_A+q，亦即 L≤4u−R−2G−e−t−d_A−q。强制首位C后的真实回复对D的末位BR与根IC给 L≥R+h+t/2−u，所以 5u≥2R+2G+h+e+3t/2+d_A+q。旧式(2)和实际末位对C,D的BR另给 s₄≥2G，即 v≥R/2+G。由于B异于C,D，实际无序对AB必异于指定对，因此AB也在G的竞争集合中，给 G≤R+h−W 或 h≥W+G−R。两项实际收益相加得 5W≥9R/2+7G+h+e+3t/2+d_A+q≥7R/2+8G+W+e+3t/2+d_A+q。故实得 16G+7R+2e+3t+2(d_A+q)≤8W，舍去非负项即为登记结论。\n\n旧含B界9R≤5W使阈值r>5/9下的每个R/W≥r自动进入该标签域。除以W并用R/W≥r，得到 G/W≤(8−7r)/16。旧阈值上界减去新上界为 (24−27r)/176，在5/9<r<8/9为正，在8/9为零；在8/9之后旧线更强，旧高遗漏段的精确值照常成立。旧17客户、六标签完整策略以根0、ρ=(1,4,4,4,5,4)和指定23给 (W,R,G)=(9,8,1)，故16+7·8=8·9。在旧端点的非负整数混合中，27客户端点的份数b使新线的余差为6b，所以此族在新线上的等号只来自17端点及其正整数放大。中间开区间的精确阈值最优仍待确定。",
+  "scope": "两名提供者空根的任意完整纯SPE，保留所有历史、真实离轨回复及标签。证明包含比较对重复与同覆盖异标签。严格改进指5/9<r<8/9的阈值上界，本关系证明8/9端点可达，中段是否取等仍开放。",
+  "whole_result": "旧遗漏证明和旧全域权衡证明的所列承重步骤，经四片余量与两剩余块计数，正向推出登记引理全条：B不在指定标签对时16G+7R≤8W；r>5/9且R/W≥r时G/W≤(8−7r)/16；5/9<r<8/9严格低于旧线上界；17客户完整纯SPE在r=8/9达到该值。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/两提供者真实续局的最优遗漏锐界14比13--定理.md",
+      "sha256": "c396bde3e30671c55d2437499472aa287a19a8d5712f12bdc79af56aa1b8428e",
+      "section": "最大主题的真实后继"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/两提供者比较覆盖差距与遗漏的锐权衡--定理.md",
+      "sha256": "ec059c2306778601c42324e16b72403497da512a739210d391e36de451657a03",
+      "section": "普遍上界"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/两提供者比较覆盖差距与遗漏的锐权衡--定理.md",
+      "sha256": "ec059c2306778601c42324e16b72403497da512a739210d391e36de451657a03",
+      "section": "比较对含实际末主题时的精确遗漏上限"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/两提供者比较覆盖差距与遗漏的锐权衡--定理.md",
+      "sha256": "ec059c2306778601c42324e16b72403497da512a739210d391e36de451657a03",
+      "section": "两个整数端点与整段等号"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/两提供者遗漏与静态差的中间区间上界--引理.md",
+      "sha256": "f7c6111e5836ed1f41ecce878d24d401f1cde307494a0a9817230e88a69e4172",
+      "section": "两人遗漏—静态差中间区间的附加上界"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项复核四片下界与完整余量恒等式、两个剩余块的分区与重复上界、真实离轨末位比较、实际竞争对的标签身份及末尾系数。独立按单位客户集合重算17例的全部36条末位和6条首位比较，以及20个竞争对。有限回归另外核6255个目录、17207条可支撑实际路径、401558个比较对中298668个守卫适用项。一般论证使用解析计数与真实激励。",
+  "endpoint_pins": {
+    "customer-attraction/two-provider-middle-omission-gap-upper-bound": "1819eb195b9450417d4cc7e4b0c77d1d58808dada18f000608ce5ee219673c89",
+    "customer-attraction/two-provider-omission-gap-sharp-tradeoff": "a62767375cb11193527225182d0ab5d9cea040d19e121077ad8af47a06d20099",
+    "customer-attraction/two-provider-sharp-omission-fourteen-thirteenths": "d68facb82e82abef6b4ee5f34395e480e100fd3f55e0634cb27d3b2db6c4edf4"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/两提供者真实续局的最优遗漏锐界14比13--定理.md": "c396bde3e30671c55d2437499472aa287a19a8d5712f12bdc79af56aa1b8428e",
+    "archives/customer-attraction/state/定理/两提供者比较覆盖差距与遗漏的锐权衡--定理.md": "ec059c2306778601c42324e16b72403497da512a739210d391e36de451657a03",
+    "archives/customer-attraction/state/引理/两提供者遗漏与静态差的中间区间上界--引理.md": "f7c6111e5836ed1f41ecce878d24d401f1cde307494a0a9817230e88a69e4172"
+  },
+  "review_digest": "606415396ed6e8a2cb1851105fd0f13fbda278f8e3e33d6921570d8fad10d77e"
+}
