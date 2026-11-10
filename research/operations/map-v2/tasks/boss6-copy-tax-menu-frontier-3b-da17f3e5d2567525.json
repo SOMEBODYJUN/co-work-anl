@@ -222,11 +222,95 @@
       "comparison_question": "同一完整有序历史CAG中，全集终局递推能否完整推出逐终局最小实际路径标量复制税及固定六人输入最大PC6缺口？比较同一终局内保留最小税为何无损，而跨不同终局的过去租金与未来利润同向Pareto极小或极大剪枝会损失祖先支持；精确区分六人理想DP与三四人固定反例、计数缓存与Markov策略、逐终局最小与逐客户或离轨枝同时最小。"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss6",
-  "request_id": "306b364b91a2443cb06dc4e881f38f03",
+  "request_id": "34f89fe9257c4470982dcf5f4d3cf0fd",
   "requests": {
     "4c14e1f8bb234f8d9ee72a8039ca3ab5": "plan",
-    "306b364b91a2443cb06dc4e881f38f03": "claim"
+    "306b364b91a2443cb06dc4e881f38f03": "claim",
+    "34f89fe9257c4470982dcf5f4d3cf0fd": "done"
+  },
+  "edge_paths": {
+    "ca-round44-exact-outcomes-give-minimum-copy-tax-dp": "map/edges/boss6-copy-tax-menu-frontier-3b-da17f3e5d2567525/exact-outcomes-give-minimum-copy-tax-dp.json",
+    "ca-round44-pareto-obstructions-motivate-terminal-fibre-boundary": "map/edges/boss6-copy-tax-menu-frontier-3b-da17f3e5d2567525/pareto-obstructions-motivate-terminal-fibre-boundary.json"
+  },
+  "receipt": {
+    "task_id": "boss6-copy-tax-menu-frontier-3b-da17f3e5d2567525",
+    "owner": "Boss6",
+    "request_id": "306b364b91a2443cb06dc4e881f38f03",
+    "definition_pin": "d471b84d7aa4bf139fecbeb696c3e2b69b98b2729f960203de106ab0603dc15f",
+    "coverage": {
+      "CA-EXACT-PURE-SPE-ALL": {
+        "state": "linked",
+        "object_pin": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+        "comparison_scope": "完整实读CA-EXACT v2主正文及共同模型，与M949六人完整statement逐项比较：精确R、必要充分资格、有限非空性、有序子树拼接、固定f收益不变及可加实际税。",
+        "reason": "以CA-EXACT的精确全集合同特化六人，新增标量路径成本归纳及按终局分组最大化，完整推出M949整个理想算法定理。只缓存数值集合，不强制全局计数策略；不由有限执行代替证明。",
+        "edge_ids": [
+          "ca-round44-exact-outcomes-give-minimum-copy-tax-dp"
+        ]
+      },
+      "M-94942bfb644042ea8039e44db39d1504": {
+        "state": "linked",
+        "object_pin": "7c9c1a31cabd9b2ca038a27bdc015dd08f8ed9c1947d318c95ff61d9860c9d50",
+        "comparison_scope": "完整实读M949 v1注册statement及正文全部，核终端0、keys E=R、L/Q公式、实际路径标量最小值达到、全部离轨孩子拼接和固定输入全SPE最大PC6缺口；P6按同一目录全部六槽比较元组定义。",
+        "reason": "必要方向从每份完整σ的真实孩子给Q+E下界，充分方向在固定f实际孩子取最小税、其余不相交有序孩子取最低偏离利润并拼接；按f分组付清max-gap。源算法足够推出目标whole，不留开放数学前提。算法正确不证明普遍PC6，也不扩int64/哨兵执行域。",
+        "edge_ids": [
+          "ca-round44-exact-outcomes-give-minimum-copy-tax-dp"
+        ]
+      },
+      "M-66132ab86a054b33b1c753158dd4f3ad": {
+        "state": "isolated-after-review",
+        "object_pin": "0d1506e745dbb578010d6e0f34c9f7695bb03c0913d2109537c53606e9e46733",
+        "comparison_scope": "完整实读minimize_all独立3人5标签17客户C例、共同规则、全部五次删除及根集合；成熟证书对应字段与全部地板/删除事件实读，303有序树按精确SHA合同复用。与固定f内部最小税逐量词比较。",
+        "reason": "C极小向删除仍使祖先T4地板31/6→37/6，最坏W15→17，否定其明确压缩规则的普遍安全性。它跨不同终局改变收益；M949不删终局，只在同f纤维优化一个标量成本，故本范围仅有准确motivates/context，不能refutes M949或冒作六人反例。"
+      },
+      "M-e3fc9489148a4369adfc1e663579be9c": {
+        "state": "isolated-after-review",
+        "object_pin": "bc64bc71cf5dcd7896fd8d91f53b243d05590c1aad82a4b2d5525f04c2fad288",
+        "comparison_scope": "完整实读maximize_all三独立固定例A/B/D及规则：人数4/3/4，各一次末位低过去租金平局删除，完整根/压缩根、地板及所有删除关系与成熟证书字段逐项比较。再与M949保f优化及CA-EXACT真实孩子拼接比较。",
+        "reason": "三例分别最坏W10→11、11→12、18→21；A地板5/2→17/6，B11/3→25/6，D9/2→11/2。它们只否定所列同向极大菜单剪枝，既不推出独立极小反例，也不反驳固定f内部的税最小化。仅保motivates/context，不声称六人Pareto反例、half或PC6反例。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/boss6-copy-tax-menu-frontier-3b-da17f3e5d2567525/binding-check.json",
+        "sha256": "e96ed46ed774eff988c593b9d8fc3435f93e1940877ecf2f791de805e8f8ce3b"
+      },
+      {
+        "path": "map/edges/boss6-copy-tax-menu-frontier-3b-da17f3e5d2567525/derivation.md",
+        "sha256": "b8f22d8b54f0704c6a09b1e9ec93c81ddcf80401547606fe1df4af8c01309597"
+      },
+      {
+        "path": "map/edges/boss6-copy-tax-menu-frontier-3b-da17f3e5d2567525/exact-outcomes-give-minimum-copy-tax-dp.json",
+        "sha256": "df25484a552918bb48d2e3ae5d76f84da19eb9e148eed4ac556770d071e1ebf4"
+      },
+      {
+        "path": "map/edges/boss6-copy-tax-menu-frontier-3b-da17f3e5d2567525/pareto-obstructions-motivate-terminal-fibre-boundary.json",
+        "sha256": "ad3973ea837f8a216ec75889a00d06f21afa5e4380d761057b3f5c1595823248"
+      },
+      {
+        "path": "map/edges/boss6-copy-tax-menu-frontier-3b-da17f3e5d2567525/reading-ledger.json",
+        "sha256": "1b5baea95971b865367e16be06ec19fc7c05cdf6b1e269c854c9e112a3a0e01b"
+      },
+      {
+        "path": "map/edges/boss6-copy-tax-menu-frontier-3b-da17f3e5d2567525/review-and-handoff.md",
+        "sha256": "ba4f15debf86135d600c395631992f659690ef53b6a17f2a6c2121a6f2543c95"
+      },
+      {
+        "path": "map/edges/boss6-copy-tax-menu-frontier-3b-da17f3e5d2567525/manifest.json",
+        "sha256": "e00c116729b51d45bf4a274258eba067d1662a1e9657aae620214b00aaa57e47"
+      }
+    ],
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "source_freshness": {
+      "task_owner": "Boss6",
+      "request_id": "306b364b91a2443cb06dc4e881f38f03",
+      "definition_pin": "d471b84d7aa4bf139fecbeb696c3e2b69b98b2729f960203de106ab0603dc15f",
+      "all_core_pins_current_in_worker_readonly_check": true,
+      "all_33_declared_refs_32_distinct_bytes_match": true,
+      "publication_remote_recheck_by_Root_required": true
+    },
+    "review_note": "完整数学推导、覆盖与准确读取边界见derivation/review/ledger。accepted边已用readonly edge_bindings核当前pins及证据，clone未修改；Root按实际仓库路径完成原生binding/check及发布。当前task没有declaredoverlap，空closed/followup不是遗漏。"
   }
 }
