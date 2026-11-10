@@ -1,0 +1,57 @@
+{
+  "edge_id": "um-r37-uniform-capacity-old-strict-exchange",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-MACHINE-UNIFORM-QUERY-RETURN-INDEX-EXCHANGE-v2",
+    "UM-MODEL-v1"
+  ],
+  "target_ids": [
+    "UM-SINGLE-CAPACITY-QUERY-RETURN-INDEX-EXCHANGE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "旧单容量域的真实异权 finite 处理时间 p_hz∈(B/2,T]，且 T≤B<2T。保全部固定辅助 A 与互异原边界任务身份。",
+  "roles": {
+    "UM-MACHINE-UNIFORM-QUERY-RETURN-INDEX-EXCHANGE-v2": "给逐机统一容量域的一次增广算法与指定错配的两向严格可行性。",
+    "UM-MODEL-v1": "保证恢复原处理时间和资格后按真实原机器计负载。",
+    "UM-SINGLE-CAPACITY-QUERY-RETURN-INDEX-EXCHANGE-v1": "旧异权单容量域中 strict/weak 的等价及完整原任务输出。"
+  },
+  "explanation": "在旧域任何 B 可行行至多一件，任何覆盖指定子集 A∪X 的原资格 matching 因每端≤T 而给 T 可行。因此对每个 X 的 T、B 与原资格 matching 完全等价。只在分析网络统一把每个 finite 条目替为 T，用 v2 的容量一证明取两 aligned 见证并做一次增广。输出 inactive 或指定错配后逐件沿同一原端恢复 p_hz，原行至多一件，真实峰仍≤T。若旧 inactive 在 B 不可行，则它在 T 也不可行，必须输出指定错配。原 A 恰一次，封装需要互异私有外端及合法辅助资格。",
+  "scope": "精确 matching 化约。旧原矩阵同机可异权，实际共享外端、只有弱 aligned 见证的其他模型与异权多容量均未支付。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/逐机统一容量的查询返回严格交换--定理.md",
+      "sha256": "59cd4e4530bfbb80c80844825e1a4f4b7f5e52310af8f83cc5458edc08cb2577",
+      "section": "旧单容量v1是匹配化约，非原矩阵包含"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/单容量强弱模式的等价与原时间恢复--证明.md",
+      "sha256": "cb40ef8b275dee5fb39790ab06b09133de6fae21ec77388fcb31cbd53156dadc",
+      "section": "2. 对所有X而非仅列出模式的三等价"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/单容量强弱模式的等价与原时间恢复--证明.md",
+      "sha256": "cb40ef8b275dee5fb39790ab06b09133de6fae21ec77388fcb31cbd53156dadc",
+      "section": "4. 无inactive承诺的实际算法与非查询辅助覆盖"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本包对照当前登记端点及所列正文，分别核对了完整原任务、条件量词和冻结证据的证明范围。",
+  "whole_result": "从 v2 推出旧 v1 对任意 X 的严格/弱容量等价及保全部辅助任务的严格指定错配或 inactive 实际输出，输出恢复每件原时间。",
+  "endpoint_pins": {
+    "UM-MACHINE-UNIFORM-QUERY-RETURN-INDEX-EXCHANGE-v2": "d2bf6a8ff9a6ab4b78f96410917c754f0de1265227d75232c4db9df1bb3ac10a",
+    "UM-MODEL-v1": "9e0366033d2ab38fffe159771a178a29146f75c0d5c2cea92c0b1a307e6269c5",
+    "UM-SINGLE-CAPACITY-QUERY-RETURN-INDEX-EXCHANGE-v1": "a5698d48ea958a4724c64533496b4b3be56d9a3d8c9b1abca3abf68d9d6b0923"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/逐机统一容量的查询返回严格交换--定理.md": "59cd4e4530bfbb80c80844825e1a4f4b7f5e52310af8f83cc5458edc08cb2577",
+    "archives/unrelated-machines/state/证明/单容量强弱模式的等价与原时间恢复--证明.md": "cb40ef8b275dee5fb39790ab06b09133de6fae21ec77388fcb31cbd53156dadc",
+    "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+  },
+  "review_digest": "16ffbd9e030fd4b0036144d6ea404291630f1825e282d2e8e7a5eb45905363d5"
+}

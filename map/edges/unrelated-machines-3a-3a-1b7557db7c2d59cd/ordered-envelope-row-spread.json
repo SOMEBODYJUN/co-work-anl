@@ -1,0 +1,62 @@
+{
+  "edge_id": "um-r37-ordered-envelope-row-spread",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1",
+    "UM-MODEL-v1"
+  ],
+  "target_ids": [
+    "UM-ROW-SPREAD-TWO-ROUND-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "删全局有零边任务后的显式矩阵每非空行均有正有理 γ_i，使 finite p∈[γ_i,2γ_i]。给目标 T 的必要 LP 先剪 p>T，保列和一、行负载≤T。",
+  "roles": {
+    "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1": "给有序单位槽的 ceil 前缀包络、共同全局覆盖匹配及 E_i≤p_i·x_i+M_i。",
+    "UM-MODEL-v1": "给真实不可拆任务的阈值0/1证书和原任务目标。",
+    "UM-ROW-SPREAD-TWO-ROUND-v1": "在额外逐机跨度承诺下从一次共同匹配输出实际三半调度。"
+  },
+  "explanation": "把严格前缀 >T/2 和 >T/3 的质量分别限制为1、2。T<4γ_i 时再把该行总质量限 floor(T/γ_i)。每个真实 T 调度均满足全部行。排序包络中前缀质量 X≤整数 k 时恰触及至多 ceil X≤k 槽，因此同一覆盖匹配同时保两项前缀及总数。t=T/γ_i<2 时至多一件且p≤T。2≤t<3 时至多两件且至多一件>T/2。3≤t<4 时至多三件且各排名时间≤2T/3、T/2、T/3。t≥4 时按包络差公式 E_i≤p_i·x_i+M_i 且 M_i≤2γ_i≤T/2。各段都给3T/2。删除的任务零回填，正有限有理时间 gcd 给精确格点，最短端逐任务放置总工作给可行上端。随着 T 上升前缀收缩、总计数上限不降直到移除，二分取最小可行格点 T*≤OPT。全零或无任务直接回填。",
+  "scope": "使用有序包络的前缀几何，不求非凸最优，也不先凸化 CONFIG。所有四个 t 段与 T/2、T/3 等号在同一实际匹配处理。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/槽包络凸化与共同提取的不同对象--资源.md",
+      "sha256": "2e5e5267c8a7aed22408fe87babe78ac80a4bcc11a38239648eb90256c26a19c",
+      "section": "单行定义及可提取性"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/capacity-half-slot-and-row-reviews/comparisons/joint_slot_prefix_rounding.md",
+      "sha256": "ab1a6cd8c7c3b5cceabc7a4a103d77180ee0465f722dddbeb277400cc2533be4",
+      "section": "2. 排序槽保留整数前缀计数"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/capacity-half-slot-and-row-reviews/comparisons/joint_slot_prefix_rounding.md",
+      "sha256": "ab1a6cd8c7c3b5cceabc7a4a103d77180ee0465f722dddbeb277400cc2533be4",
+      "section": "3. 显式必要LP与逐机负载界"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/capacity-half-slot-and-row-reviews/comparisons/joint_slot_prefix_rounding.md",
+      "sha256": "ab1a6cd8c7c3b5cceabc7a4a103d77180ee0465f722dddbeb277400cc2533be4",
+      "section": "4. 算法、目标搜索与总位复杂度"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本包对照当前登记端点及所列正文，分别核对了完整原任务、条件量词和冻结证据的证明范围。",
+  "whole_result": "对所有承诺输入，总位多项式构造覆盖全部原任务的确定性调度，C≤3OPT/2，含各机器异尺度、零时间端和未知OPT。",
+  "endpoint_pins": {
+    "UM-MODEL-v1": "9e0366033d2ab38fffe159771a178a29146f75c0d5c2cea92c0b1a307e6269c5",
+    "UM-ROW-SPREAD-TWO-ROUND-v1": "332ddde5dd337a7a2c36689c61b7cce05f6715f5900328c3fad420787a53a56a",
+    "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1": "cb19e6e1237754a8203740739689cebc96785f7cff55cf69c7ff1ecf61c64ebf"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/槽包络凸化与共同提取的不同对象--资源.md": "2e5e5267c8a7aed22408fe87babe78ac80a4bcc11a38239648eb90256c26a19c",
+    "archives/unrelated-machines/tools/evidence/capacity-half-slot-and-row-reviews/comparisons/joint_slot_prefix_rounding.md": "ab1a6cd8c7c3b5cceabc7a4a103d77180ee0465f722dddbeb277400cc2533be4",
+    "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+  },
+  "review_digest": "ac9a1881a31d83dc709717070706123e0020da283328eaf55ab8808d4832d974"
+}

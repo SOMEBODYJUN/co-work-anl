@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-r37-shared-z-row-count-boundary",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "UM-DILUTED-ESCAPE-PROBE-GAP-v1"
+  ],
+  "target_ids": [
+    "UM-BIG-CARDINALITY-PROBE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "同一个逐边条件 LST 加严格大件计数 Σ_(p>C/2)x≤1 规则。比较原无 z 底座与只增加一台共享半时 z 的扩展。扩展的精确阈值结论限 k≥8。",
+  "roles": {
+    "UM-DILUTED-ESCAPE-PROBE-GAP-v1": "提供共享 z 扩展的完整矩阵与经重新证明的真实 OPT=2−1/k。",
+    "UM-BIG-CARDINALITY-PROBE-v1": "给无 z 终端容量 a≤1 的准确阈值与逐层删边证明。"
+  },
+  "explanation": "1≤C<2 时，强制底父 incoming 后必须外送普通质量 a≥k(2−C)。N=k(k−1) 个终端的严格单位计数容纳 a 加 N−1−e 的阻塞质量，e 为本组逃 z 质量，故 a≤1+e≤1+2C。C<C*=(2k−1)/(k+2) 即删全部底父 incoming，再因上层父无出端而逐层删到 bridge，C<1 则直接剪 bridge。反向 k≥8 时 C*≥3/2，基点 bridge 两根各1/2、普通皆在父、各组阻塞注入终端。强制 bridge 或非底父 incoming 时，被激活父每条出边外送 d=2−C*，父负载 C*，每孩子1+d≤C*。强制底父 incoming 时同样给各自终端 d，a=kd=1+2C*。各终端普通质量 u_t，给本组每个阻塞在 t 的份额 (1−u_t)/(N−1)，z 份额 (a−1)/(N−1)，则每列一、终端单位计数与负载均一，z 负载 C* 且 z 边不计大件。强制普通小边已在基点，普通单位终端边以其余终端注入阻塞，强制阻塞入终端可指定注入端，强制阻塞入 z 则仅其去 z。于是 C* 处所有边首轮保留，更高阈值的大件集只缩小。C*<OPT，分清无 z 的准确识别和扩展族的独立点消耗。",
+  "scope": "这是不同实例域的比较，无 z 精确阈值保持成立。k<8 的加强接口精确阈值、同时条件 CONFIG 或多边共享条件未处理。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md",
+      "sha256": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+      "section": "8. 共享小端逃逸扩展"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/稀释终端与共享逃逸的分离证书--资源.md",
+      "sha256": "680d91db2e23fb664e0b202b512e2693ddcc1e101fa0b8c7963401ab00a0798b",
+      "section": "共享逃逸阶段：所有组共用唯一一台z"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md",
+      "sha256": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+      "section": "7. 加入大边基数不等式后的准确修复边界"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本包对照当前登记端点及所列正文，分别核对了完整原任务、条件量词和冻结证据的证明范围。",
+  "endpoint_pins": {
+    "UM-BIG-CARDINALITY-PROBE-v1": "605b6579801e34bbd52b8be461716530aba9da89b0341d80da715adb8de9bbd3",
+    "UM-DILUTED-ESCAPE-PROBE-GAP-v1": "02be40038bfd335e8f43f40fe23d4413b9312ad8ef889e15e26c1114eae4ddf6"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+    "archives/unrelated-machines/state/资源/稀释终端与共享逃逸的分离证书--资源.md": "680d91db2e23fb664e0b202b512e2693ddcc1e101fa0b8c7963401ab00a0798b"
+  },
+  "review_digest": "ae5765b1d6176294a9ddddc210805edea2ab4654c3848f7a226a4d58cc7570c3"
+}

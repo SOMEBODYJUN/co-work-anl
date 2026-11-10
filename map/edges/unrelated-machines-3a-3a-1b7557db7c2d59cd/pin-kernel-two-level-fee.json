@@ -1,0 +1,67 @@
+{
+  "edge_id": "um-r37-pin-kernel-two-level-fee",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-f29705998fe1454684aa05ffc1c1b037",
+    "UM-MODEL-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/two-level-label-fee-second-multiplicity"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "两层标签收费的均匀特例。D≥2 且支配各顶点度，guard 的 H 端 β=3/4、A 端1/D。固定实际读出的每边状态，在 C<3/2 时两个 selected 半长 queries 都须外送。",
+  "roles": {
+    "M-f29705998fe1454684aa05ffc1c1b037": "给实际 requested H 核的全阈值充要条件 n_v(D−⌊D(C−1)⌋)≤D 及互斥原编号回填。",
+    "UM-MODEL-v1": "保证替换只保留原任务有限端与逐机完整负载，阈值是实际 makespan。",
+    "unrelated-machines/two-level-label-fee-second-multiplicity": "该实际两层矩阵的第二标签重数恒等式和严格 singleton 边界。"
+  },
+  "explanation": "先给任意实际低峰调度。selector 已占1，C<3/2 迫两个同 root 半长 query 都实际外送；已执行单位 query 换成同H的 singleton pin，删其余外部任务后对同一原核合法。各标签请求质量是 t_vb/D。若 C<1+L*/D≤3/2，则某顶点至少两个标签重数超过 D(C−1)，故 n_v≥2 且 k=⌊D(C−1)⌋<D/2，违反精确容量式。反向对任意状态选法安排两 query 外送，所有其它 query 原 root 放置，核上只将一个最大重数标签的 w 移B并把全部D件费用送互异原C编号。其余 w 在A的负载至多1+t_(2)/D，全部 guards、w、f 及 selector 都按原端回填。这样连同 C=3/2 的构造上界得到精确式。对奇 q 条平行循环移位边，至少两边不能同时 singleton 满足故 L*≥1，固定左标签让右重数全为1故 L*=1。总列表长度≤2g 时可覆盖至多 g² 种平移，得到原有限低覆盖界。 特别在 C<1+1/D 时，k=0，容量式迫每顶点至多一个被实际请求的正重数标签，由所选边的端点投影读出 singleton 赋值。",
+  "scope": "严格阈值下的实际查询到 pins 映射只在实际两条 query 到达后使用。C=3/2 可留一个半 query，不从所有该端点调度强取两侧请求。空图分支按原合同处理。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/真实请求pin核的全阈值容量判定与饱和值--审查.md",
+      "sha256": "e99e7cf1390154e25e2f44fe2e674770f3c3a07ad9071598d2987836d5944b81",
+      "section": "全阈值充要条件及边界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/真实请求pin核的全阈值容量判定与饱和值--审查.md",
+      "sha256": "e99e7cf1390154e25e2f44fe2e674770f3c3a07ad9071598d2987836d5944b81",
+      "section": "任意实际查询调度给出的有限质量列表"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/两层标签收费第二重数恒等式--定理.md",
+      "sha256": "1ea40ebba29c5603340dc3bd6af7d2e2e7476f30c6c22f2452ae5851d6c0ee0d",
+      "section": "上界构造"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/两层标签收费第二重数恒等式--定理.md",
+      "sha256": "1ea40ebba29c5603340dc3bd6af7d2e2e7476f30c6c22f2452ae5851d6c0ee0d",
+      "section": "任意调度的下界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/两层标签收费第二重数恒等式--定理.md",
+      "sha256": "1ea40ebba29c5603340dc3bd6af7d2e2e7476f30c6c22f2452ae5851d6c0ee0d",
+      "section": "严格解码与循环移位族"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本包对照当前登记端点及所列正文，分别核对了完整原任务、条件量词和冻结证据的证明范围。",
+  "whole_result": "在原均匀两层标签收费矩阵上推出 OPT=1+L*/D、C<1+1/D 的 singleton 解码及循环移位 q 族实际 OPT=1+1/q 和指定低覆盖结论。",
+  "endpoint_pins": {
+    "M-f29705998fe1454684aa05ffc1c1b037": "4bd93335f0a8d33e47259cc88ae5a976ea91d7ffd671096bd98430b30ae25499",
+    "UM-MODEL-v1": "9e0366033d2ab38fffe159771a178a29146f75c0d5c2cea92c0b1a307e6269c5",
+    "unrelated-machines/two-level-label-fee-second-multiplicity": "b4cc1f38ae0ca6ff60bb97cb11c94717d8181f948bea166097750e92e070a7db"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/真实请求pin核的全阈值容量判定与饱和值--审查.md": "e99e7cf1390154e25e2f44fe2e674770f3c3a07ad9071598d2987836d5944b81",
+    "archives/unrelated-machines/state/定理/两层标签收费第二重数恒等式--定理.md": "1ea40ebba29c5603340dc3bd6af7d2e2e7476f30c6c22f2452ae5851d6c0ee0d",
+    "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+  },
+  "review_digest": "66d0037c383b9579b1c4da51ae253aa9515042f519e20aa80bfd73f9d45635af"
+}

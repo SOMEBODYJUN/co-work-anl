@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-r37-single-state-color-classes-to-global-G",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-TREE-Q-ONE-THRESHOLD-MINORANT-v1"
+  ],
+  "target_ids": [
+    "UM-PRIVATE-TREE-GLOBAL-XOS-LOSS-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意非空显式 state 族，每 state 是满 k 叉深 h 树且叶资源逐 state 单射。同一资源可在不同 state 出现。f=max_a q_a。",
+  "roles": {
+    "UM-TREE-Q-ONE-THRESHOLD-MINORANT-v1": "单位色类的精确阈值和 blocking 子树补集给均匀权的全域可行性与最大单位类大小。",
+    "UM-PRIVATE-TREE-GLOBAL-XOS-LOSS-v1": "将一个实际见证子树的支持嵌入完整资源集合，给逐点锐 G 因子。"
+  },
+  "explanation": "固定 S，若 r=f(S)=0 返回零。否则用叶可达 h-index 递推回溯得到真实同深满 r 叉子树，叶集 L′⊆S，|L′|=r^h。对 r≥2，单位色类 B 的补集至少含同深 (r−1) 叉子树，且取这样一棵树的叶补可取等，所以最大单位色类有 r^h−(r−1)^h 叶。给 L′ 每叶倒数权，所有单位色类权≤1，源单阈值立即给其在任意集合上的真实 minorant。r=1 是单叶权1。嵌回原资源后，T′ 的任一真正根子树也是实现 r 的原 state 子树，故 w(B)≤q_T′(B∩L′)≤q_a(B)≤f(B)。其 S 权重为 r/G(r,h)≥r/G(k,h)，因为 G(d,h)=Σ_(j=0)^(h−1)(1−1/d)^j 随 d 不减。锐性在单 state 全叶，由叶传递自动同构群对任一 minorant 平均，保总权且得到均匀可行权。最大单位类迫其每叶权≤1/[k^h−(k−1)^h]，实现等号。",
+  "scope": "支持向量显式有理、分母位长 O(h log(r+1))，回溯按显式树位多项式。不声称多 state 的精确支持域可逐 state 分离。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/分叉树估值与单状态支持多面体--定理.md",
+      "sha256": "1269318f583984d08b2b1f54b1f3f4831cb77c3713ab90b44d499e8cdea8e8f4",
+      "section": "单个 blocking 阈值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分叉树估值与单状态支持多面体--定理.md",
+      "sha256": "1269318f583984d08b2b1f54b1f3f4831cb77c3713ab90b44d499e8cdea8e8f4",
+      "section": "1. 对象和辅助递推"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分叉树估值与单状态支持多面体--定理.md",
+      "sha256": "1269318f583984d08b2b1f54b1f3f4831cb77c3713ab90b44d499e8cdea8e8f4",
+      "section": "任意资源集合的锐XOS损失与实际支持构造"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本包对照当前登记端点及所列正文，分别核对了完整原任务、条件量词和冻结证据的证明范围。",
+  "whole_result": "对任意 S，构造同时支配全部资源子集的非负加性支持，f(S)/G(k,h)≤E_f(S)≤f(S)，且每个固定 k,h 的统一常数精确锐。",
+  "endpoint_pins": {
+    "UM-PRIVATE-TREE-GLOBAL-XOS-LOSS-v1": "a85de97ad64f77b573407a55e0249f5d39b97bfb4eacd0cca577120f34edee67",
+    "UM-TREE-Q-ONE-THRESHOLD-MINORANT-v1": "bd0fadff72a0ec91f311b0f5dfafebdeb2fe2105f70d9ce448fdbf37b88f5771"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/分叉树估值与单状态支持多面体--定理.md": "1269318f583984d08b2b1f54b1f3f4831cb77c3713ab90b44d499e8cdea8e8f4"
+  },
+  "review_digest": "e0205b6021e73d2f11ab0ae0bccb4960e55f608ba1ca2b41331a7abd1008a152"
+}

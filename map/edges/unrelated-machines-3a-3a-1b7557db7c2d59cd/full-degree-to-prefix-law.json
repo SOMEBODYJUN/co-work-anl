@@ -1,0 +1,62 @@
+{
+  "edge_id": "um-r37-full-degree-to-prefix-law",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-FULL-DEGREE-MOMENT-DECODING-v1",
+    "UM-MODEL-v1"
+  ],
+  "target_ids": [
+    "UM-PREFIX-ATOMIC-DECODING-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一原合法 UM 矩阵、同一阈值 T≥0。给定次数至2n+1的共同 L，另提供满足总位多项式查询合同的相容前缀 Eval。",
+  "roles": {
+    "UM-FULL-DEGREE-MOMENT-DECODING-v1": "全部合法原子权非负、和一且每个超载原子权零。",
+    "UM-MODEL-v1": "保原任务有限端、逐机实际负载和空/零时间边界。",
+    "UM-PREFIX-ATOMIC-DECODING-v1": "对守恒前缀 law 的正延伸算法，完整原子使用同一原资格。"
+  },
+  "explanation": "对任意相容前缀 S，令 π(S)=L(∏_(e∈S)x_e)。展开尚未处理任务的 one-hot，等于全部延伸到完整 σ 的 w_σ 之和，因此 π≥0、π(∅)=1，对下一任务的所有子端精确守恒。每个完整前缀的逐机 slack 乘权非负由全阶 q=m_σ 局部化器给出。给定可查询表示，按固定任务序从正前缀保留任一正子端，累计至多 |E| 次查询，最终得到原任务真实 T 调度。反向任意真实 T 调度给 Dirac 前缀查询器和 L。无生成器时，展开全部原子通常指数，只有代数 law，不得直接宣称输入规模多项式。",
+  "scope": "迁移共同表示与给定 oracle 下的实际解码，未从低阶矩或一般 (P,T) 生成共同 law 或可靠 FAIL。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/全阶矩提取与近平坦HS贪心双源审查--审查.md",
+      "sha256": "dbef9218b48846a2bb3950bcbb373a18e7f4f9d9d24cef9b009717b5c3dcddfd",
+      "section": "一、全阶共同矩到整数调度的闭合桥"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-forest-and-frozen-macro-primary/comparison/research/current/unrelated_machines/full_degree_moment_localizer_decoding_bridge.md",
+      "sha256": "32b6374633176fd2e1d3d7534a1b4aaec5066b99f38d2353ff91e51ae3860108"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/前缀原子证书解码桥与full-degree生成义务审查--审查.md",
+      "sha256": "613a03aad7f1f455ca4398c06c712000aea39a5ca68aba4d377290b17cfc056f"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/宽仿射矩形与前缀原子解码双源审查--审查.md",
+      "sha256": "e0a28887fb19ba29977b86ced57519a8511123848e114d0a787fe0a237a9739d",
+      "section": "3. 前缀原子证书：查询式确定性解码"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本包对照当前登记端点及所列正文，分别核对了完整原任务、条件量词和冻结证据的证明范围。",
+  "whole_result": "全阶 L 给同一原矩阵的合法守恒前缀 law。若其前缀可按合同总位多项式求值，则用至多 |E| 次查询输出完整真实 T 调度。该 law 存在的反向见证为实际调度的 Dirac。",
+  "endpoint_pins": {
+    "UM-FULL-DEGREE-MOMENT-DECODING-v1": "70e3bfb1ac5dce0da621b1c1d0c05310c98f1d080b0eaeb1bbc89507970e5285",
+    "UM-MODEL-v1": "9e0366033d2ab38fffe159771a178a29146f75c0d5c2cea92c0b1a307e6269c5",
+    "UM-PREFIX-ATOMIC-DECODING-v1": "8a54b4990271f92b3532688d041d6e81792fa3cc5a4fe8db671c45d50864f528"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/全阶矩提取与近平坦HS贪心双源审查--审查.md": "dbef9218b48846a2bb3950bcbb373a18e7f4f9d9d24cef9b009717b5c3dcddfd",
+    "archives/unrelated-machines/tools/evidence/um-forest-and-frozen-macro-primary/comparison/research/current/unrelated_machines/full_degree_moment_localizer_decoding_bridge.md": "32b6374633176fd2e1d3d7534a1b4aaec5066b99f38d2353ff91e51ae3860108",
+    "archives/unrelated-machines/state/审查/前缀原子证书解码桥与full-degree生成义务审查--审查.md": "613a03aad7f1f455ca4398c06c712000aea39a5ca68aba4d377290b17cfc056f",
+    "archives/unrelated-machines/state/审查/宽仿射矩形与前缀原子解码双源审查--审查.md": "e0a28887fb19ba29977b86ced57519a8511123848e114d0a787fe0a237a9739d",
+    "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+  },
+  "review_digest": "3c8e61f4538812afc739eb5ec86203ecd9a32361821c39a00d386ef1ddd51b42"
+}

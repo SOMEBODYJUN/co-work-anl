@@ -1,0 +1,56 @@
+{
+  "edge_id": "um-r37-single-home-forest-directed-token",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-HOME-UNIT-ROOTED-FOREST-v1",
+    "UM-MODEL-v1"
+  ],
+  "target_ids": [
+    "UM-DIRECTED-DEGREE-TOKEN-IDENTITY-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "显式非空简单有向图、指定一根 r。零需求顶点无出边，正需求允许任意二进制数及死端。使用全部原 token、filler 与唯一根 U。",
+  "roles": {
+    "UM-HOME-UNIT-ROOTED-FOREST-v1": "给任何完整 C<2 调度保实际根的出树以及树外 b_i≤1 时的正规化。",
+    "UM-MODEL-v1": "提供实际不可拆任务、单位端负载与完整 makespan 的共同定义。",
+    "UM-DIRECTED-DEGREE-TOKEN-IDENTITY-v1": "在压缩 token 矩阵上将根森林化为原图树评分，及反向完整回填。"
+  },
+  "explanation": "每个原顶点是机器，正需求 v 有 min(k_v,d_v) 枚 home 时间1/k_v、在各原孩子时间1的不同 child tokens，缺量由单枚只能留 home 的 filler 补齐，home 总量1。只有一枚在 r 执行的 U。对任何实际 C<2 调度，保U森林给出从 r 可达的合法出树。v 的 s_v 枚外送对应树出度，活跃正需求点含根或父的一枚单位任务，所以负载恰2−s_v/k_v，得到 b(H)≥2−C。反向由 H 向下保至多 k_v 个孩子并删除其余整棵子树，保留点的出度仍至少 k_v b(H)，且不超过原 token 数。逐点给保留孩子不同 token，其余全部留 home。所有活跃点真实峰至多2−b(H)，树外至多1。OPT=2 时由 b*≥0 和已经构造的上界闭合。",
+  "scope": "一个指定根 U 的完整原任务桥，任意环境环可在根可达域外。并未给一般有向图求未知好树的算法。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/单home正规化与一般有向需求树实际恒等--定理.md",
+      "sha256": "b5a75fead51cc4a793936896a5366eaa9d059fd3d4a11bd522456b5a920092bc",
+      "section": "3. 严格小于二的保U根森林"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/单home正规化与一般有向需求树实际恒等--定理.md",
+      "sha256": "b5a75fead51cc4a793936896a5366eaa9d059fd3d4a11bd522456b5a920092bc",
+      "section": "4. 一般有向需求树的独立模型"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/单home正规化与一般有向需求树实际恒等--定理.md",
+      "sha256": "b5a75fead51cc4a793936896a5366eaa9d059fd3d4a11bd522456b5a920092bc",
+      "section": "5. 双向完整构造与精确最优值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本包对照当前登记端点及所列正文，分别核对了完整原任务、条件量词和冻结证据的证明范围。",
+  "whole_result": "保U根森林及完整 token 编译联合给两个总位多项式的见证转换，且 OPT(P(D,k))=2−b*，含零需求根、正需求死端和 OPT=2。",
+  "endpoint_pins": {
+    "UM-DIRECTED-DEGREE-TOKEN-IDENTITY-v1": "0873932df931524d7ef8fcb0da1b35cdb0d528a4a66ad1c681e7862fe5bb5889",
+    "UM-HOME-UNIT-ROOTED-FOREST-v1": "82923c322767aedd6e46aaf94cbf07be4b718a119d18e3c65134664a6e28e104",
+    "UM-MODEL-v1": "9e0366033d2ab38fffe159771a178a29146f75c0d5c2cea92c0b1a307e6269c5"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/单home正规化与一般有向需求树实际恒等--定理.md": "b5a75fead51cc4a793936896a5366eaa9d059fd3d4a11bd522456b5a920092bc",
+    "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+  },
+  "review_digest": "e7c2342e63eac74b1fde11d8d3b2d43d00054446bac244185da77947a584f299"
+}

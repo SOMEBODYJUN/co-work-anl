@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-r37-weighted-one-sided-pin-list-boundary",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "UM-WEIGHTED-TWO-QUERY-LABEL-FEE-ESCAPE-DRAFT-v1"
+  ],
+  "target_ids": [
+    "M-f29705998fe1454684aa05ffc1c1b037"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "同一原 half-root 中只把实际已外送的单位 query 替换成 singleton pin。异权 guard 的逐标签完整权重预算仍须满足。",
+  "roles": {
+    "UM-WEIGHTED-TWO-QUERY-LABEL-FEE-ESCAPE-DRAFT-v1": "构造任意源输入的完整实际单侧 3/2 调度，所有右 query 均留各自 root。",
+    "M-f29705998fe1454684aa05ffc1c1b037": "给实际请求质量的逐顶点列表上界，接收实际请求集合而不增加请求。"
+  },
+  "explanation": "选定每左顶点一标签，selected 左 query 外送，右 query 留在已有 selector 的 root，峰为3/2。所有右端 H 均没有来自 selected query 的实际请求，因此投影成 pin 核后所有右端请求质量为零，近饱和右列表可为空。即使源含没有同时可满足的边，核的真实列表界仍相容。这个完整调度具体表明，仅以核容量推出源两侧正覆盖需要额外实际两端请求保障。",
+  "scope": "异权完整原调度对 pin 应用边界的实际检验。它没有削弱真实 pin 核的容量 iff，也不把 3/2 构造峰当成异权矩阵的最优值。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/异权双查询收费的完整单侧三半调度--审查.md",
+      "sha256": "5a090e20ecb6727478e3235ab5874c2c12812b6b8aa87d5e535241dca987f2a6",
+      "section": "一个共同的实际三半分配"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/异权双查询收费的完整单侧三半调度--审查.md",
+      "sha256": "5a090e20ecb6727478e3235ab5874c2c12812b6b8aa87d5e535241dca987f2a6",
+      "section": "与canonical、真实pins和历史审查的区别"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/真实请求pin核的全阈值容量判定与饱和值--审查.md",
+      "sha256": "e99e7cf1390154e25e2f44fe2e674770f3c3a07ad9071598d2987836d5944b81",
+      "section": "任意实际查询调度给出的有限质量列表"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本包对照当前登记端点及所列正文，分别核对了完整原任务、条件量词和冻结证据的证明范围。",
+  "endpoint_pins": {
+    "M-f29705998fe1454684aa05ffc1c1b037": "4bd93335f0a8d33e47259cc88ae5a976ea91d7ffd671096bd98430b30ae25499",
+    "UM-WEIGHTED-TWO-QUERY-LABEL-FEE-ESCAPE-DRAFT-v1": "eb1a0b9249e9c4b98ab70aba2b4c723e191c69dc8c52be53b53552738cee91a9"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/异权双查询收费的完整单侧三半调度--审查.md": "5a090e20ecb6727478e3235ab5874c2c12812b6b8aa87d5e535241dca987f2a6",
+    "archives/unrelated-machines/state/审查/真实请求pin核的全阈值容量判定与饱和值--审查.md": "e99e7cf1390154e25e2f44fe2e674770f3c3a07ad9071598d2987836d5944b81"
+  },
+  "review_digest": "6fb094759da8e488b745570594331cb4bbaad8d05b9bfe8d324e2578ed8fb592"
+}

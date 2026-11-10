@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-r37-typed-shared-primitive-welfare",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SINGLE-OUTER-PRIMITIVE-SA1-EPS2-4-v1"
+  ],
+  "target_ids": [
+    "UM-SINGLE-OUTER-TYPED-13-8-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "一个 outer，全部 state 的正 home 资源互异且各有 own-singleton helper，fallback 资源与 homes 分离。使用同一份完整 primitive-SA1 有理点及正阈值 ε。",
+  "roles": {
+    "UM-SINGLE-OUTER-PRIMITIVE-SA1-EPS2-4-v1": "提供 singleton 在所有 primitive 或补乘子下的 A=Z 二阶闭合及一次条件化后的 fallback packing。",
+    "UM-SINGLE-OUTER-TYPED-13-8-v1": "将该 packing 用作 Q-only CDF-max 后端的输入。"
+  },
+  "explanation": "条件在一个有正边际的 outer state。其 home claims u_j 满足 Σ_j w_j u_j≥ε。由同一行上的资源容量及 own A=Z，helper fallback state 总质量 τ_j≥u_j。条件化后的每个 fallback state 仍满足原 perspective 行，所以分数福利 Σ_j w_jΣ_(s,u)p_jsu ζ_jsu≥εΣ_jw_jτ_j≥ε²，且每个 fallback 资源总 claim 至多一。这个中间量来自给定点证明的同一行，不来自分别选择的 helper 见证。Q-only 计算还须内部生成这个点。",
+  "scope": "只支付原 typed Q 中可行 LP 点到共同分数 packing 的一步。给定点的 ε²/4 成果本身无法代替提高到 5/8 的 CDF 后端或目标搜索。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/单外层共同primitive-SA1点的平方阈值舍入--定理.md",
+      "sha256": "fb105af58374a0f887a6d3b43a84a6cceab98d3e76d67dcd0016e3311291f862"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单外层normalized-flat三源精读与13-8版本边界审查--审查.md",
+      "sha256": "e9a1ea285ed74114498511d9e7d4b6cb49f963ad84d63e9d8681cf0b9619e221",
+      "section": "3. v2 Exact：typed Q-only 的 13/8 算法合同"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单外层canonical final v2全文post-read与13-8版本边界审查--审查.md",
+      "sha256": "e5d92fe02effac8b086fdfddf7a530e67b24be26131f4571aca0bc09c8e7abc4",
+      "section": "5.2 CDF-max（Q-only 13/8）"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本包对照当前登记端点及所列正文，分别核对了完整原任务、条件量词和冻结证据的证明范围。",
+  "contribution": {
+    "result": "对 Q-only 算法任一已求得的可行正阈值点，得到可用于 CDF-max 的共同 fallback packing，分数福利至少 ε²。",
+    "remaining": "仍要从只给 Q 生成同一有理 LP 点，证明 CDF-max 达 5/8，扫描实际门槛并回填全部任务，用只有 V≤h 的二分不变量或独立 grid 得到 13/8 比率。"
+  },
+  "endpoint_pins": {
+    "UM-SINGLE-OUTER-PRIMITIVE-SA1-EPS2-4-v1": "1b816f8d91e26238d6b4b809658ab797f9465e529bae971b95a59014c15a6768",
+    "UM-SINGLE-OUTER-TYPED-13-8-v1": "d3ab0699adcccbe2449a7639fd10d9ff7ccbd721e7ae3ab30d8535e63fa44344"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/单外层共同primitive-SA1点的平方阈值舍入--定理.md": "fb105af58374a0f887a6d3b43a84a6cceab98d3e76d67dcd0016e3311291f862",
+    "archives/unrelated-machines/state/审查/单外层normalized-flat三源精读与13-8版本边界审查--审查.md": "e9a1ea285ed74114498511d9e7d4b6cb49f963ad84d63e9d8681cf0b9619e221",
+    "archives/unrelated-machines/state/审查/单外层canonical final v2全文post-read与13-8版本边界审查--审查.md": "e5d92fe02effac8b086fdfddf7a530e67b24be26131f4571aca0bc09c8e7abc4"
+  },
+  "review_digest": "4291389dd6c95504cf3463a7596747a7bc84a77e6c047d22ac6191765bdac3c5"
+}

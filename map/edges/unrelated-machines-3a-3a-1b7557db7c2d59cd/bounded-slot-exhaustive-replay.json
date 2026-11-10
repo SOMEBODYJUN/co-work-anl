@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-r37-bounded-slot-exhaustive-replay",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/bounded-config-slots-and-independent-replay"
+  ],
+  "target_ids": [
+    "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "给定等式覆盖 CONFIG 点，先将有任一零端的任务在零端安排并全局删除，K 只约束残余正权配置。",
+  "roles": {
+    "unrelated-machines/bounded-config-slots-and-independent-replay": "保存独立实现和有限 fixture 的全部槽覆盖 matching 核验。",
+    "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1": "给定 K 有界 CONFIG 点时所有覆盖匹配的行包络上界。"
+  },
+  "explanation": "规范程序造 K=2,3,4 三个中心行完整见证及各自 private 回填，坏匹配峰分别 3/2、11/6、47/24。独立程序使用冻结 JSON 作为其中三例的数据，重建严格正交长槽图，在九例中实际穷举254份覆盖匹配并回算全部原负载。另含空图、全零、零端全局删除与残余配置合并、整数前缀、微小正交长和大分母。K2/3 有独立理论锐界，K4 仅下例，所验对象是给定槽图的全部覆盖匹配而非全部普通调度。",
+  "scope": "只覆盖九个给定 CONFIG 点，且原规范复跑未包含 K5。一般整数类型/行列式上界以及未知OPT额外承诺搜索由理论另证。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/计算/有界配置槽证书与全覆盖匹配独立复跑--计算.md",
+      "sha256": "4b369cb48a9aaa01703f0c9f28fec99c248528b1f1512a13eeb46380c1e472bf",
+      "section": "4. 独立重建与实际9例全覆盖枚举"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/有界配置槽证书与全覆盖匹配独立复跑--计算.md",
+      "sha256": "4b369cb48a9aaa01703f0c9f28fec99c248528b1f1512a13eeb46380c1e472bf",
+      "section": "3. 规范 K2–4 的完整证书"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有界配置基数的严格槽余量与承诺搜索--定理.md",
+      "sha256": "29740fdc4ca1461600f22b2b517c2f458a1208863626e09d0f29f4399abb4817",
+      "section": "小K完整实例和锐性层级"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本包对照当前登记端点及所列正文，分别核对了完整原任务、条件量词和冻结证据的证明范围。",
+  "endpoint_pins": {
+    "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1": "1446c2007dc779eda52b67f522d737cb36c852c2601220adbca4e3bf3b35d890",
+    "unrelated-machines/bounded-config-slots-and-independent-replay": "e2158daa3f896126a1a5a6b7787e3f21153dac42ddddfd90d5ad8c6c970c52f9"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/计算/有界配置槽证书与全覆盖匹配独立复跑--计算.md": "4b369cb48a9aaa01703f0c9f28fec99c248528b1f1512a13eeb46380c1e472bf",
+    "archives/unrelated-machines/state/定理/有界配置基数的严格槽余量与承诺搜索--定理.md": "29740fdc4ca1461600f22b2b517c2f458a1208863626e09d0f29f4399abb4817"
+  },
+  "review_digest": "cdcbdb4abd06c5244f1074115abdd54fba3b67061c457353aec4bc1ea834393a"
+}
