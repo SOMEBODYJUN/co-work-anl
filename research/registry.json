@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-boss2-grouped-glue-v2.json",
-    "sha256": "bf1415b8c5ba2d4befae78c439557fd14716755ce3d13963019685b8fe9a8955"
+    "path": "research/registration/baseline-map-round38-fractional-incidence-forest-v1.json",
+    "sha256": "11bdd4b1386e29f5bd773c703187578bf0ee7672a40db94de5f6339163dbb192"
   },
   "objects": [
     {
@@ -83063,6 +83063,47 @@
       ]
     },
     {
+      "object_id": "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1",
+      "version": 1,
+      "title": "分数任务关联森林上的完整配置律胶合",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "显式有限不相关机、原作业不拆分、合法配置按原标签，给定每机有理完整配置律和每任务精确覆盖边际1。",
+      "statement": "若只含0<x_ij<1的机—任务二部图是森林，则给定每机完整合法配置律可在同一原阈值T上精确分解成完整真实整数调度。任务资格度任意。树上选局部状态并同减最小质量，每步保边际一致，构造所需有理支撑数至多所有正局部支撑之和，按显式数据总位长为多项式。",
+      "quantifiers": "对每个有限原实例、非负有理T及给定有理配置律、精确任务边际；无任务度限制。",
+      "assumptions": [
+        "分数机—任务关联图无环；以0/1确定边固定各原任务。"
+      ],
+      "scope": "从给定CONFIG的完整行律到同一原调度分布，不仅产生某份可行调度。",
+      "objections": "只给每任务覆盖≥1时，正支撑森林可先删多余边际；保持旧完整行律需要原等号。一般含环不保证指定律可拼。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md",
+        "sha256": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/长链联合投影与子线性联盟高围长双源审查--审查.md",
+          "sha256": "b453e8bc763c897684ab95b940ccba4f1e93d56ea3a280baf8544315c3cad816",
+          "section": "4. 固定 r 的高围长 coalition gap"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/仙人掌可行配置证书与逐块精确消息的审查--审查.md",
+          "sha256": "e61a55f8d893ed46a6a4e114c1b53f7133e293233d763b1097dad0398614cc48",
+          "section": "单环连通分量的CONFIG精确范围"
+        },
+        {
+          "path": "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md",
+          "sha256": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+          "section": "5. 基本锥、极射线和表示复杂度"
+        }
+      ],
+      "sources": []
+    },
+    {
       "object_id": "UM-FROZEN-MACRO-TINY-REOPT-GAP-v1",
       "version": 2,
       "title": "冻结宏后微任务任意重开的精确趋二间隙",
@@ -90036,6 +90077,38 @@
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/single_capacity_query_return_index_exchange_exact_v1.md",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/single_capacity_query_return_index_exchange_rank_exact_first_review_v1.md"
       ]
+    },
+    {
+      "object_id": "UM-SINGLE-CYCLE-FIXED-CONFIG-LAW-GLUE-NO-v1",
+      "version": 1,
+      "title": "两机两作业单环的指定配置律不可全局实现",
+      "kind": "finite-obstruction",
+      "truth_status": "proved",
+      "model": "显式有限不相关机、原作业不拆分、合法配置按原标签，给定每机有理完整配置律和每任务精确覆盖边际1。",
+      "statement": "T=2，机器A的两处理值均1、B均2。A在空与双件各1/2，B在两个单件各1/2，任务覆盖期望均1且全为合法配置。分数关联四环。真实T调度存在，但没有保这两个给定完整行律的真实调度分布。",
+      "quantifiers": "存在明确2×2有限非负整数原矩阵和两行精确有理配置律。",
+      "assumptions": [
+        "给定完整行边际固定，不允许以新Dirac证书替换所问见证。"
+      ],
+      "scope": "区分至多一环时CONFIG阈值可行与任意给定配置点的完整分解。",
+      "objections": "不是单环上CONFIG阈值精确性的反例，缺口只在给定行律。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md",
+        "sha256": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5",
+        "section": "单环只给存在与固定行律的区别"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/仙人掌可行配置证书与逐块精确消息的审查--审查.md",
+          "sha256": "e61a55f8d893ed46a6a4e114c1b53f7133e293233d763b1097dad0398614cc48",
+          "section": "单环连通分量的CONFIG精确范围"
+        },
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        }
+      ],
+      "sources": []
     },
     {
       "object_id": "UM-SINGLE-HOME-CASCADE-QUERY-SEPARATION-v2",
@@ -195860,6 +195933,7 @@
         "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1",
         "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1",
         "UM-FINITE-PALETTE-GCD-BARRIER-v1",
+        "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1",
         "UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1",
         "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1",
         "UM-HETEROGENEOUS-MACRO-PROMISE-v1",
@@ -195870,6 +195944,7 @@
         "UM-MODEL-v1",
         "UM-PRUNED-TREE-LEAF-HITTING-v1",
         "UM-RANKJUMP-ONE-TRUE-SUPPORT-v1",
+        "UM-SINGLE-CYCLE-FIXED-CONFIG-LAW-GLUE-NO-v1",
         "UM-SMALL-DENSITY-FLOW-BARRIER-v1",
         "UM-ST-ROUND-v1",
         "UM-THRESHOLD-COVER-JOINT-SLOT-v1",
@@ -196058,6 +196133,16 @@
         "UM-TREE-Q-ONE-THRESHOLD-MINORANT-v1"
       ],
       "reason": "全文550行，五个不同旧Claim分别是q/demand、single-state全叶支持损失、旧全阈值LP、多state逐点好minorant以及单阈值线性LP；没有把多state共同域当单state。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md",
+      "sha256": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1",
+        "UM-SINGLE-CYCLE-FIXED-CONFIG-LAW-GLUE-NO-v1"
+      ],
+      "reason": "有理真实配置律的完整森林分解及精确单环固定见证反例。"
     },
     {
       "path": "archives/unrelated-machines/state/定理/分数重匹配与归一化XOS稳健缺口边界--定理.md",
@@ -197336,8 +197421,10 @@
       "disposition": "objects",
       "object_ids": [
         "UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1",
-        "UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1",
-        "UM-PSEUDOFOREST-CONFIG-EXACT-v1"
+        "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1",
+        "UM-PSEUDOFOREST-CONFIG-EXACT-v1",
+        "UM-SINGLE-CYCLE-FIXED-CONFIG-LAW-GLUE-NO-v1",
+        "UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1"
       ],
       "reason": "全文实读；承载本批独立数学主对象并按精确Claim分开陈述/模型/量词，成熟完整证明复用。"
     },
@@ -200462,8 +200549,9 @@
       "sha256": "b453e8bc763c897684ab95b940ccba4f1e93d56ea3a280baf8544315c3cad816",
       "disposition": "objects",
       "object_ids": [
-        "UM-LONG-PATH-GAP-v1",
         "UM-COALITION-PROJECTION-GAP-v1",
+        "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1",
+        "UM-LONG-PATH-GAP-v1",
         "UM-SUBLINEAR-CC-PROJECTION-GAP-v1"
       ],
       "reason": "全文已实读；按逐对象模型、条件、量词、证明/构造与有限代码范围路由。主正文/必要完整论证由列示owner承载；四DAG旧K与新2K、固定r与机器数子线性、真实D与Markov及各sink模型不混同。"
@@ -200755,14 +200843,15 @@
       "sha256": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
       "disposition": "objects",
       "object_ids": [
-        "M-9a4d60726a564ed493cd4e84df82cd0e",
-        "M-655414c8f3494d3fab373b7c3b5a7e40",
         "M-1b373ae082784eac8a0cb3bd63b2797a",
-        "M-fe3ac5a7f1374a24a221eb5c26172625",
-        "M-66b1b61e046b4b8f8e4cc949b1d3322a",
+        "M-3262fb2c84db47bfb4f4bcab6e9408d4",
         "M-5e9f212b88f34a0c8cdcb0e74e582886",
+        "M-655414c8f3494d3fab373b7c3b5a7e40",
+        "M-66b1b61e046b4b8f8e4cc949b1d3322a",
+        "M-9a4d60726a564ed493cd4e84df82cd0e",
         "M-d916ae59215a47a0af7661c0748ab981",
-        "M-3262fb2c84db47bfb4f4bcab6e9408d4"
+        "M-fe3ac5a7f1374a24a221eb5c26172625",
+        "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1"
       ],
       "reason": "真正不同的8个编码结论分别用父实际分配新ID；H111/z111原Lemma24误印反例附正确锥记录。来源PDF/完整证据入口保留，编码与调度cover不合并。"
     },
