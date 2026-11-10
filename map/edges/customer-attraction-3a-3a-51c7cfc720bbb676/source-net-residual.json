@@ -1,0 +1,50 @@
+{
+  "edge_id": "ca-round37-source-net-residual",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance"
+  ],
+  "target_ids": [
+    "M-f3f2787fe8864fdf897624d672327906"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一最优有序比较元组及owner分割、实际叶、同一γ、ρ与η。使用严格递增角色捕获，每次重置为同一σ的原actual-prefix合法完整query。采购税非负使用完整SPE。",
+  "roles": {
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance": "同一HYB全割、局部预送、共同钱包及采购税恒等式",
+    "M-f3f2787fe8864fdf897624d672327906": "同一取消系统下仍待付的入流"
+  },
+  "explanation": "HYB对任意角色割用完整合法T槽替换，I实际份额及R单位库存给Hall；预送δ_i=min(g_i,|Q_i∩R|)使各残源割保持可送满。若g_i≤|Q_i∩R|则η_i≥u_i≥K_i^src，否则本owner的R全取消，K_i^src=0。Ση=W、Σρ=OPT−W，守恒和u_i≥D_s给总税Eρ≥0。D_s=0时该查询吸收及费用均置0。",
+  "scope": "由合法取消到净入流的已付初始部分与精确剩余合同。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/实际取消的同时源付款与入流余额--定理.md",
+      "sha256": "5759f87d02d0bacc5c61a5472806d6f464192bb97bcb18a1a3bf1e156a02ad7a"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/真实查询自由指派与残源净钱包的共同接口--候选.md",
+      "sha256": "5c58a1ad9b278ce0361b368653a0cfff5b6ab38f5dbbec2a087e3099ee6d0e05"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R4运输路线接口与未解条件--审查.md",
+      "sha256": "4b1b9815701c0fa4c99ad4de91fa9e1ac6fee0629836a050abf08ec70c3d0b03"
+    }
+  ],
+  "contribution": {
+    "result": "同一取消量同时支付各角色K_i^src，残余钱包η_i−K_i^src非负。总价K=OPT−W+Eρ，故总付款桥恰等价Eρ≤2W−OPT。",
+    "remaining": "仍需同一规则的K_i^in≤η_i−K_i^src，或总量ΣK_i^in≤W−ΣK_i^src。单节点、逐角色曾命中或互异旧锚叶的IC不能付同一组整查询系数。"
+  },
+  "reviewed_by": "Boss1",
+  "review_note": "按本批钉定正文复核真实历史、参数量词、联合条件和结论范围。仅记录说明所指的已证步骤或语境。",
+  "endpoint_pins": {
+    "M-f3f2787fe8864fdf897624d672327906": "827233ff5bb2c3ad5be680b9d388ff41d5d97f30a7332aee16e7cb0239c6ccde",
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance": "6301d3ef5ca152ec47607ffd3a061649bb168671ccaaab725d8f88bd9d7f9257"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/实际取消的同时源付款与入流余额--定理.md": "5759f87d02d0bacc5c61a5472806d6f464192bb97bcb18a1a3bf1e156a02ad7a",
+    "archives/customer-attraction/state/候选/真实查询自由指派与残源净钱包的共同接口--候选.md": "5c58a1ad9b278ce0361b368653a0cfff5b6ab38f5dbbec2a087e3099ee6d0e05",
+    "archives/customer-attraction/state/审查/R4运输路线接口与未解条件--审查.md": "4b1b9815701c0fa4c99ad4de91fa9e1ac6fee0629836a050abf08ec70c3d0b03"
+  },
+  "review_digest": "6ceffe84fc0223acbce9320b97395d30af3c6898f91ff5d23afc680b54c6c594"
+}

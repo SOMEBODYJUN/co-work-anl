@@ -1,0 +1,50 @@
+{
+  "edge_id": "ca-round37-floor-surplus-reserve-induction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "RI-FLOOR-RESERVE",
+    "RI-SLACK-IDENTITY"
+  ],
+  "target_ids": [
+    "M-df1d99d252974530a13a5f6d2902496f"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "额外假设RESERVE-STEP对全部合法背景和全部完整SPE的真实步成立。r=1真实末位BR，孩子为同σ的完整子SPE。",
+  "roles": {
+    "RI-FLOOR-RESERVE": "给父和真实孩子各自起点的逐人保底及总储备",
+    "RI-SLACK-IDENTITY": "保证实际孩子盈余和父利润拆分只用同一终局",
+    "M-df1d99d252974530a13a5f6d2902496f": "指定RESERVE-STEP的条件归纳"
+  },
+  "explanation": "以r=1的F_1=u为基。第一项2rh_r≤2P_h；真实孩子归纳给F_child≤2P_child，固定孩子起点的保底给2(r−1)h_child≤2P_child。于是第二项≤2u+2P_child=2P_h。max亦≤2P_h。b=0时F_m=OPT、P_h=W。",
+  "scope": "条件充分归约，不把全称台阶当前视为已证。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/合法背景剩余利润的精确盈余递推与静态保底--引理.md",
+      "sha256": "e5e7e44a5c3987e144b204e447e6c4a624bfd3e8df3dd2e55784f94e1781624b"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/背景利润储备递归的原审计与弱诊断合同--资源.md",
+      "sha256": "c59e3a817cc0d5ee1395bedc2b365dfff35b0cb0a7b1397ebe8f123902e9b93a"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/携带保底储备的剩余利润递归台阶--反例.md",
+      "sha256": "0c91c9c1d3e244d90dfa05a4175dee1bcbbc3616b04bc150b40183194dbf01cd"
+    }
+  ],
+  "whole_result": "若指定储备台阶普遍成立，则全部合法背景F_r(b)≤2P_h，根推出OPT_m≤2W。",
+  "reviewed_by": "Boss1",
+  "review_note": "按本批钉定正文复核真实历史、参数量词、联合条件和结论范围。完整结论已核。",
+  "endpoint_pins": {
+    "M-df1d99d252974530a13a5f6d2902496f": "f139941a27355f3c8ee929b9dff214a083a0a89aaa7328bc0831979b0c29529d",
+    "RI-FLOOR-RESERVE": "bc1005fc28a9c1869570157df16a810c377f0d74a1393cb9754ee557b279860d",
+    "RI-SLACK-IDENTITY": "3356fc8f9d2e4f7b6ebb30d1b42a7656027bfe09fe9a62a4de1f6ce2e7d87b0f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/合法背景剩余利润的精确盈余递推与静态保底--引理.md": "e5e7e44a5c3987e144b204e447e6c4a624bfd3e8df3dd2e55784f94e1781624b",
+    "archives/customer-attraction/state/资源/背景利润储备递归的原审计与弱诊断合同--资源.md": "c59e3a817cc0d5ee1395bedc2b365dfff35b0cb0a7b1397ebe8f123902e9b93a",
+    "archives/customer-attraction/state/反例/携带保底储备的剩余利润递归台阶--反例.md": "0c91c9c1d3e244d90dfa05a4175dee1bcbbc3616b04bc150b40183194dbf01cd"
+  },
+  "review_digest": "63dc53d5200a46f253ce09b880dc637293f3e126f28a3f483b6ee8c3652c0c40"
+}

@@ -1,0 +1,50 @@
+{
+  "edge_id": "ca-round37-stationary-covariance-negative",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/stationary-root-reset-incidence-and-reward-covariance"
+  ],
+  "target_ids": [
+    "customer-attraction/stationary-incidence-without-root-reward-exchange-counterexample"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "用同一36客户完整纯SPE的真实强制根终局与含根的P；p由原六坐标平稳方程得到。",
+  "roles": {
+    "customer-attraction/stationary-root-reset-incidence-and-reward-covariance": "固定强制根叶的逐客户成员矩及收益差公式",
+    "customer-attraction/stationary-incidence-without-root-reward-exchange-counterexample": "36客户唯一平稳分布上根收益缺口的精确见证"
+  },
+  "explanation": "每根真实叶根收益10、覆盖34，p=(1/4,1/4,0,1/4,1/4,0)。由成员矩公式Σ_x Cov_p(1_{x∈A}−C_x/3,g(C_x))=10−34/3=−4/3。仅后继K与P同平稳集，换P为该K不能在此实例重选另一个平稳p。",
+  "scope": "唯一平稳p同时满足INC且收益差严格为负。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/成员平稳但根收益不可交换的三人见证--反例.md",
+      "sha256": "9f07cbc8fd38cfcd11effcd306345637b0a8b582e89ef468e172be238642b63c"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/stationary-reset-primary/README.md",
+      "sha256": "7ca039fc667da1bc1d6c29e332cb059aad6c198bd22a7ccfdc94a6f5c889b53a"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/平稳根重置的成员矩与收益协方差--引理.md",
+      "sha256": "4f5428387a6a30c44fc4a4851bb98012dcc2f5023b975cbd82ebffe6932bd5a2"
+    }
+  ],
+  "contribution": {
+    "result": "成员一阶矩仍成立且对应收益协方差总和恰−4/3。",
+    "remaining": "见证其余部分由36客户逐历史SPE和六坐标唯一性承担；一般跨后继的协方差控制没有由此给出。"
+  },
+  "reviewed_by": "Boss1",
+  "review_note": "按本批钉定正文复核真实历史、参数量词、联合条件和结论范围。仅记录说明所指的已证步骤或语境。",
+  "endpoint_pins": {
+    "customer-attraction/stationary-incidence-without-root-reward-exchange-counterexample": "937ae6a6020788ce2f967d9421f98584b93baa1713ced43538344d3b778c3e84",
+    "customer-attraction/stationary-root-reset-incidence-and-reward-covariance": "9ff4cb82aefa989325fe446b7e2eb61b19bdb9dfcd597ffac93429b7d5754666"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/成员平稳但根收益不可交换的三人见证--反例.md": "9f07cbc8fd38cfcd11effcd306345637b0a8b582e89ef468e172be238642b63c",
+    "archives/customer-attraction/tools/evidence/stationary-reset-primary/README.md": "7ca039fc667da1bc1d6c29e332cb059aad6c198bd22a7ccfdc94a6f5c889b53a",
+    "archives/customer-attraction/state/引理/平稳根重置的成员矩与收益协方差--引理.md": "4f5428387a6a30c44fc4a4851bb98012dcc2f5023b975cbd82ebffe6932bd5a2"
+  },
+  "review_digest": "b8edb8943c17db48d078dcceea3d885fbf7bc60b4a6e2336906ff120ee45f8cd"
+}
