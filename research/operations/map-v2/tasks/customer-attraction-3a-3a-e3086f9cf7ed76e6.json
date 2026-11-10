@@ -564,12 +564,265 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss6",
-  "request_id": "b162efcf91254356a76b6278e416a53a",
+  "request_id": "bbd79f02cb0e420d993c7e2a97c96615",
   "requests": {
     "c77ec76b08b948c4ac8c43dc65353af7": "plan",
     "597b6ba9299c4c14837a431f1111139a": "claim",
-    "b162efcf91254356a76b6278e416a53a": "read-add"
+    "b162efcf91254356a76b6278e416a53a": "read-add",
+    "bbd79f02cb0e420d993c7e2a97c96615": "done"
+  },
+  "edge_paths": {
+    "cag-boss6-cage308-origin-uniform-full-v-specialization": "map/edges/customer-attraction-3a-3a-e3086f9cf7ed76e6/origin-uniform-full-v-specialization.json",
+    "cag-boss6-cage308-clip-fixed-v-support-iff": "map/edges/customer-attraction-3a-3a-e3086f9cf7ed76e6/clip-fixed-v-support-iff.json",
+    "cag-boss6-cage308-safe-terminal-role-conservation": "map/edges/customer-attraction-3a-3a-e3086f9cf7ed76e6/safe-terminal-role-conservation.json",
+    "cag-boss6-cage308-tail-k-conditional-welfare": "map/edges/customer-attraction-3a-3a-e3086f9cf7ed76e6/tail-k-conditional-welfare.json",
+    "cag-boss4-2fcb-safe-row-yields-controlled-positive-amount-system": "map/edges/customer-attraction-3a-3a-2fcb8be3849ae190/safe-row-yields-controlled-positive-amount-system.json",
+    "ca-round36-clip-local-to-fixed-lp": "map/edges/customer-attraction-3a-3a-65ec03f362378017/clip-local-to-fixed-lp.json",
+    "ca-causal-closure-r34-same-context-to-hitting": "map/edges/customer-attraction-3a-3a-7b5d2e180fc235e1/same-context-to-hitting.json"
+  },
+  "receipt": {
+    "coverage": {
+      "M-ead54e488b984a12a91635e679fbe55c": {
+        "state": "linked",
+        "object_pin": "e9a6cc1a09c039fc00f83c88a7121ad812bece40270b53dde3bd3e5d862daf3a",
+        "comparison_scope": "与SAFE全文、同角色pooling资源、CLIP和固定first-owner LP比较；额外核GENERAL-DENSITY/来源βmax仅单context付款。 本对象v2当前body/evidence的实际读取区间逐项见reading-ledger。",
+        "reason": "本轮只支付目标的A_j≥0与ΣA=OPT：每个O客户合法owner真query均分一单位，SAFE有限future图非负守恒到actual角色；角色内归池保同一总额。没有证明同一次选择所有A_j≤2u_j。全O不能进入仅fresh核。开放共同金额保持开放，但输入身份和这一已证贡献均清楚，故不是needs-decision。",
+        "edge_ids": [
+          "cag-boss6-cage308-safe-terminal-role-conservation"
+        ]
+      },
+      "customer-attraction/same-context-safe-net-coupons-and-maximal-scalar-clipping": {
+        "state": "linked",
+        "object_pin": "4ddd33959413439662237f9ae63137f1c7887853eddb2a1ac4ef7e0ab68096b6",
+        "comparison_scope": "与来源βmax、CLIP、CAP2、CONTROLLED-POSITIVE、局部均匀子集凸包及GLOBAL-HIT/PRICE比较，保full/fresh合法源域。 本对象v4当前body/evidence的实际读取区间逐项见reading-ledger。",
+        "reason": "来源β_max引理取h_x=h v_x/v的均匀β特例恰重得完整full-v SAFE，保同一行F=N+e∈[0,u]与有限图守恒。另复用当前canonical受控金额表示和ALL的局部凸包→终点HIT关系；HIT控制最终质量，源库存M不能替actual u。κ不是新IC系数、各context不共领钱包。",
+        "edge_ids": [
+          "cag-boss6-cage308-origin-uniform-full-v-specialization",
+          "cag-boss6-cage308-safe-terminal-role-conservation",
+          "cag-boss4-2fcb-safe-row-yields-controlled-positive-amount-system",
+          "ca-causal-closure-r34-same-context-to-hitting"
+        ]
+      },
+      "M-71ceb542dca245c6a6284092cbdeee30": {
+        "state": "linked",
+        "object_pin": "d9d692676c3effbfcf06c72c853b30098b725352d11929520b9b1050bf58c13d",
+        "comparison_scope": "与CLIP局部最少传播、restricted-X重采、来源不重采以及348固定末位行证据比较。 本对象v3当前body/evidence的实际读取区间逐项见reading-ledger。",
+        "reason": "CLIP局部最少外送β(v−u)_+与X内原子边子容量βP_X给正输入iff；X中保恰(v−u)_+总价构造充分性。h=0平凡零流、v=0无合法正h。348固定末位活动行给21/2>39/4、至少O外正价3/4与流35/978，只排该固定full-v行免费X支持，不排RESIDUAL-CAP存在性。",
+        "edge_ids": [
+          "cag-boss6-cage308-clip-fixed-v-support-iff"
+        ]
+      },
+      "M-8118ec4080264955bbda39b072df36a2": {
+        "state": "linked",
+        "object_pin": "455cbcbb313e40e45071a60023643448b5860febe0232f120fbdbc19215d399e",
+        "comparison_scope": "与SAFE、SUPPORT、固定first-owner精确LP及原六策略/鲜利润审计合同比较，未运行。 本对象v3当前body/evidence的实际读取区间逐项见reading-ledger。",
+        "reason": "最大取消c=min(P,F)给current min(v,u)、外送(v−u)_+，固定子边后同源重算β′≤β；current可增加，所以只支配旧gross。新SUPPORT整条边及既有固定first-owner LP局部贡献可用；LP整体cap2、旧net单调与全图最优均没有取得。",
+        "edge_ids": [
+          "cag-boss6-cage308-clip-fixed-v-support-iff",
+          "ca-round36-clip-local-to-fixed-lp"
+        ]
+      },
+      "customer-attraction/customer-origin-preservation-max-coefficient-refund-and-support-condition": {
+        "state": "linked",
+        "object_pin": "ed58534f95436d3f0af2274da0cdc7b03d8a24fcb1d42f41e43020aedaba39ee",
+        "comparison_scope": "与SAFE均匀β特例、restrictedν_X、同x取消、三支持区别及GENERAL-DENSITY完整反链证明比较。 本对象v2当前body/evidence的实际读取区间逐项见reading-ledger。",
+        "reason": "逐客户先合所有origin同x输入再取β*=max(h_x/v_x)，一次完整IC退款β*e+Σ(β*−β_x)D_x+Σβ_xN_x≥0。与GENERAL-DENSITY的f_x≤1合用仅给该context L≤u；layer-cake总IC系数是β*，不是Σβ_x或每origin新钱包。均匀β特例正式连接SAFE；restricted ν_X与full-v删边分母不同。",
+        "edge_ids": [
+          "cag-boss6-cage308-origin-uniform-full-v-specialization"
+        ]
+      },
+      "M-8ec6c9c227fc4eee90713e9045c9917e": {
+        "state": "isolated-after-review",
+        "object_pin": "a9ca7b608dfbc810a1e68ff6494f96f6988fede027e9064bf096ae33bf951f47",
+        "comparison_scope": "与同页ONE-K/K_tail/24η RESET及SAFE的natural prescribed域比较；原31动作、精确审计代码/报告均实读未执行。 本对象v1当前body/evidence的实际读取区间逐项见reading-ledger。",
+        "reason": "明确31历史两单例策略在CC强制第三位H后，η=当前slack=0而前两位各返1/6、真尾总减1/3，覆盖不增；逐层按历史C数的解析收益比较核了完整SPE。H并非CC节点的natural规定动作C，故没有反SAFE。它也不反RESET、CAP2或ONE-K：v5=1/3、K_tail=0时P3=1在ONE-K取等，3u5才是另一被否加强。声明端点中没有被该反例否定的错误桥对象，不造反向refutes边。"
+      },
+      "M-9a74bea6063644d9b095966b3beed18f": {
+        "state": "linked",
+        "object_pin": "a51fdabd7924ccfe7e7ad6284dcb0974bb73d05dad4d32ef0fdf3fda5c04ce75",
+        "comparison_scope": "与K_tail上界、静态v5定义、两单例边界及固定查询浮点锥合同比较。 本对象v1当前body/evidence的实际读取区间逐项见reading-ledger。",
+        "reason": "接受的条件贡献是：同一SPE另满足ONE-K时，K_tail≤u4/2与末两位安全值保底给W≥9v5/2。普遍P3+K_tail≥3v5仍未证明或反驳；静态OPT5≤9v5另有完整证明，已另证half不反推该更强金额。固定锥正浮点最优使用Kbar上界K_tail与固定查询v下界v5，不能认证候选。",
+        "edge_ids": [
+          "cag-boss6-cage308-tail-k-conditional-welfare"
+        ]
+      },
+      "M-a8579be1fb18416a903c8d4bf2090d00": {
+        "state": "linked",
+        "object_pin": "58b7eba68b8e379780b98f1cdc32eee6ed67347b0e36c2031a9cc13fbf7c2a12",
+        "comparison_scope": "与ONE-K的条件W下界、Γ的不同定义和两单例取等比较。 本对象v1当前body/evidence的实际读取区间逐项见reading-ledger。",
+        "reason": "源引理真势最大首题的原末回复仍达同一最大势，d_T≥v5；原第四位IC给ε_T≥0，原末位对Q_T查询给Γ+ε_T=f(Q_T)−f(E)≤u4/2。K_tail≥Γ但不等同Γ。正式边只在额外ONE-K金额下支付条件W下界，不将互斥来源的K转成actual共同钱。",
+        "edge_ids": [
+          "cag-boss6-cage308-tail-k-conditional-welfare"
+        ]
+      },
+      "M-d819d33b5a1147d6983fb754600c2d39": {
+        "state": "isolated-after-review",
+        "object_pin": "560766c4d6b2e9b0eed7ec93e6f36dcab0a260ca5cc2b8b760af29e9446acfd2",
+        "comparison_scope": "与两单例零η返还、精细G1分解及SAFE的不同真实reset输入比较。 本对象v1当前body/evidence的实际读取区间逐项见reading-ledger。",
+        "reason": "同一真第三位加权最大H的完整24η−g非负账户已读，G1=(7/4)GD+(1/4)D_Q+ξ_R+Γ_R+ξ_E保同一η；H遗漏与H外新覆盖各≤12η，共计24η。零η只给U_H⊆U而非旧角色不返还，故与两单例见证相容。SAFE则比较natural prescribed B与actual-prefix reset A，并非本任意强制H机制；模型/节点作用不相同，不把两个“reset”强连。"
+      },
+      "customer-attraction/r51-coverage-loss-count-policy-cone-scan": {
+        "state": "isolated-after-review",
+        "object_pin": "8ddb3fbac29165f4f15af19f82061a0cfdb0271bf238092994cf13a035e72e91",
+        "comparison_scope": "与固定α<2障碍、全人数负前缀族及u1=0归一边界比较。 本对象v1当前body/evidence的实际读取区间逐项见reading-ledger。",
+        "reason": "固定计数选择器锥的Fw−z目标只是完整静态覆盖机会损失的下界；精确可行值>2可反驳δ≤2u1，有限float未超2不能证明。α<2的全人数障碍只给必要系数、不否二倍充分。本候选含u1=0，而程序u1=1归一遗漏该边界；与full-v SAFE或原角色LP不是同一分母/付款对象，未得接受逻辑边。"
+      },
+      "customer-attraction/fixed-first-credit-factor-two-barrier": {
+        "state": "isolated-after-review",
+        "object_pin": "bfa55085cdc4872bd814443bfd6b52f9a7588c6f8a1621151da37f927216a356",
+        "comparison_scope": "与r51系数二充分性候选、CA-PREFIX-BALANCE-NO全人数解析证明和既存canonical精确关系比较。 本对象v1当前body/evidence的实际读取区间逐项见reading-ledger。",
+        "reason": "完整全人数族给u1=n−1/n、δ1=2(n−2)，必要系数α_n→2，处理α<0与0≤α<2的量词顺序。该族在α=2余额4−2/n>0，不能反二倍充分，更不反half。与CA-PREFIX-BALANCE-NO的精确推导已存在当前canonical；该peer仅为本任务follow-up、非input_pins，故本包关闭overlap而不重复边/不把未声明端点资产入receipt。本包其余声明端点未给另一已接受逻辑关系。"
+      },
+      "customer-attraction/closeout-4c353297949e862d9172f83c": {
+        "state": "isolated-after-review",
+        "object_pin": "43ca875e91244bc8b7e89fb14f3fdfe02c88bbbdf58643822e6f6ca45b66c01a",
+        "comparison_scope": "与同一σ的角色付款对象、原两负有理点、全根/同根与新floor量词比较。 本对象v1当前body/evidence的实际读取区间逐项见reading-ledger。",
+        "reason": "双策略锥保两完整根IC，输出的两个有理点负目标−1/5、−1/23没有分离保险候选。H/L根标签不同、重权后L不自动是全部新根菜单floor；原报告未保存完整两动作树或精确对偶。与本包固定一份σ的SAFE/CAP2不共享实例/完整策略，不能由有限LP阴性迁出共同角色容量，也不反half。"
+      },
+      "customer-attraction/positive-reply-overlap-local-elimination-word-stabilizer-mincut": {
+        "state": "isolated-after-review",
+        "object_pin": "f4f260db6c6f040d2f45ca7408bcf81481519d3ada9b0dec569b3903a5f2667d",
+        "comparison_scope": "与原正RR符号合同、ZZ扩展停界及本包必要点/净券LP的不同优化域比较。 本对象v1当前body/evidence的实际读取区间逐项见reading-ledger。",
+        "reason": "有限本地消元仅在y_e不读别块、跨项只有非负J_ef r_e r_f时准确，随后J/2最小割与超模并交给群轨道极值。ZZ跨项破坏直接消元，负J对照只反错误轨道压缩。这是固定权分离工具，既不是净券路由LP的cap定理，也不构成CAG/SPE反例；所声明端点没有已证明的实现映射可接。"
+      },
+      "customer-attraction/fixed-sixty-four-atom-447-row-original-exact-audit-and-cross-family-exclusion": {
+        "state": "isolated-after-review",
+        "object_pin": "6aa28fcd75fd390a6353756b5890310bd7972f319f69622198ed350e976163ef",
+        "comparison_scope": "与精确重加权原质量、同/异/全索引必要行和最大兼容包络、7497另点比较。 本对象v3当前body/evidence的实际读取区间逐项见reading-ledger。",
+        "reason": "唯一447点是旧64描述的新42正质量，437+10必要行精确可行；跨族AB末位查second I_j的最大兼容上包络仍为负，故同投影SPE不可实现。其可行性和排除不同于7497/85→64旧点，不因都叫64或O>2套证书。正RR工具也未读取该跨族目标/符号合同的同一固定权。已完整核必要方向及所有64质量，但未重跑旧矩阵，声明端点中无新的逻辑推导。"
+      },
+      "customer-attraction/r12bf-actual-prefix-lipschitz-obstruction": {
+        "state": "isolated-after-review",
+        "object_pin": "72ef104ec357bc14faf185094477fd2579315c1f8c29c6c7d2f53a1a07971fb4",
+        "comparison_scope": "与固定/actual可达前缀区别、总覆盖首步信用及SAFE实际整行IC比较。 本对象v1当前body/evidence的实际读取区间逐项见reading-ledger。",
+        "reason": "五客户A={a,c},B={b,c},P={p,q}每k≥1给f3(A^k,P)=1、f2(A^(k+1),P)=2，唯一真末回复B/P/B与后继严格B排比例桥；不假定人为背景根SPE可达。61客户指定原σ的V1(A)=9,V2(A)=13是另一个actual可达量词。来源只否单主题比例，不否匹配/平均/SAFE实际整行IC，不能将本局部反例当共同CAP2反驳。"
+      },
+      "customer-attraction/root-reset-pair-and-auxiliary-tail-covariance": {
+        "state": "isolated-after-review",
+        "object_pin": "b8e160166be2997433d6562481ad849142fc4cc284874df01c67a2cf242382d7",
+        "comparison_scope": "与单后继peer、完整终局FTA信用、先平均负载响应身份和正确税因子比较。 本对象v2当前body/evidence的实际读取区间逐项见reading-ledger。",
+        "reason": "整数完整分支RESET有Kcross−D_A−D_T=R−J，iid平均只给一次p_x的无条件税；QUAD必须保p_A²τ_A对角。F_A=n/(b+1+n)在不属于A时是辅助占位份额，非真实尾利润。恰一后继时真末IC给TAIL-PAIR并与peer均值去相关一致，已关闭声明overlap；多后继整尾不能作单人偏离。先平均完整负载的另一协方差对象不等本整数倒数期望，也没有证明本组预算对全p或全路径可付。"
+      },
+      "customer-attraction/fractional-extra-mass-interpolation-half-bound": {
+        "state": "isolated-after-review",
+        "object_pin": "020bf6956c19dfe9f73dafab1351126509e848bb429dc65459cd7b9a7e155b73",
+        "comparison_scope": "与整数静态v、r18有限背景、末两位真保底、逐位条件付款及CAP2不同预算比较。 本对象v1当前body/evidence的实际读取区间逐项见reading-ledger。",
+        "reason": "质量r−1+δ的静态t_{r,δ}满足OPT≤(2m−1+δ)t与合法前缀嵌入；原路径逐位若另付t才得条件half。r≤2保底有效，银行族已排一般δ1逐人合同。它不是CAP2的source库存或β分母；本包r18整数背景混合安全v也不等此先平均分数负载t，有限取等不能替代逐位付款。"
+      },
+      "customer-attraction/one-large-topic-disjoint-singletons-exact-interval-continuations": {
+        "state": "isolated-after-review",
+        "object_pin": "d34df3afdca0ecdd59cd651211eeb7a04dda27d200bc99b4d6dfb44dc82097a4",
+        "comparison_scope": "与区间递归定义、真正集合值BI、静态锐例及两单例见证的不同参数合同比较。 本对象v1当前body/evidence的实际读取区间逐项见reading-ledger。",
+        "reason": "目录恰一个m客户大题加n个不交单例时，所有有序前缀真BI与区间HI相等，j≥1后续全A、j0保全A或一次单例；根最坏W=m、OPT=m+min(n,m−1)。这是特殊目录全参数证明，不能从HI=R推广一般累计floor，更不能替一般SAFE/CAP2或固定计数锥付款。两个单例五人见证不满足大题大小=人数这一目录合同。"
+      },
+      "M-97df8324f0ec4c27b833a85b0cf82899": {
+        "state": "isolated-after-review",
+        "object_pin": "98e5e5ca542a9260a7685802ab4e4408b54a6923000f11ccd196599def54dbca",
+        "comparison_scope": "与两保存JSON/源码、根背景缺口及额外分数t的分母差别比较。 本对象v1当前body/evidence的实际读取区间逐项见reading-ledger。",
+        "reason": "R18保存点P/(rv)=0.9999999999999998及复跑1.0仅是指定k5/r3/整数背景2的float观察；两个原JSON分别P42.3/v14.100000000000001与P34.7/v11.5666…，不能把机器舍入当精确负例。程序1e−9筛选与未核LP success不授全部SPE或根预算。其v是整数背景安全查询，不能拿额外分数质量静态定理直接推出原有限观测的普遍化。"
+      },
+      "customer-attraction/five-7497-row-point-separated-by-imported-active-rows": {
+        "state": "isolated-after-review",
+        "object_pin": "1a44c59913fc7a97381550a68c052c7a645e48b32d8cf425eeb07b3a0cc88cf7",
+        "comparison_scope": "与两个声明follow-up peer、同K的53完整有理报告、局部投影与最大根证明以及447另一点比较。 本对象v1当前body/evidence的实际读取区间逐项见reading-ledger。",
+        "reason": "同SHA8b28…的85显式/64投影旧必要点和同SHA395e…的53行使用同一K；全部53报告恰13负、40非负，35旧节点/查询/PAIR都非负，新18投影13负5非负。已逐式读两peer原陈述、35原行+18投影及承重局部/最大根证明，关闭两对overlap：排除的是保持该质量/投影的SPE抬升，不否旧7497可行性或合法新行。两个peer未read-add，本包不造含它们的新边；与447不同输入不能交叉套负分数。"
+      },
+      "customer-attraction/five-maxroot-four-tail-weighted-saturation-and-menu-projections": {
+        "state": "isolated-after-review",
+        "object_pin": "de79a01ab89221e55678e36eb7f99b7863547379f808b4e3c3550016a795302f",
+        "comparison_scope": "与同一完整σ最大根四后继权、合法菜单负号投影、53行MAXROOT-NEW及参数/版本界限比较。 本对象v1当前body/evidence的实际读取区间逐项见reading-ledger。",
+        "reason": "任意非负四尾权的c/a包络来自真最大裸主题根分支及整数z弦式，得到O≤Br−CK；四组具体C>0时K≥|Q|使负号投影只能减弱。不同B/C线须同r/K比较，参数公式不等完整前沿。该四尾饱和与7497报告MAXROOT-NEW三路径联合复制的常数不同；没有身份桥，不把同名MAXROOT视为同一证书或推出half。"
+      },
+      "B16-BOUNDED-DELETER-DRIFT-NO-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "3ca790823987dfff28fc5fc1e71f233bf80d97d8a9238de1eeee4f517c350e63",
+        "comparison_scope": "与原保险控制器成熟合同、joint fresh分类、全删位审查、多位删除精确slack及SAFE/CAP2域比较。 本对象v1当前body/evidence的实际读取区间逐项见reading-ledger。",
+        "reason": "同一Cartesian保险原完整SPE、∀删位i、∀新零根(m−1)人完整SPE，fresh坐标归纳给W′=3m−3及d_i=m−3+e_i。有界局部券/单份退款池≤3/2不能支付无界上漂；不排在实现数据上无界的函数、原W或真实子局slack。m3根d0保留。保L的删位式恰还原原half缺口，因此既不反half也不反同一σ的SAFE/CAP2，后者不重选删后策略。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e3086f9cf7ed76e6/origin-uniform-full-v-specialization.json",
+        "sha256": "e65f9236f34660dff107a4dc68c8a500b4c3d5a3b60bd919db800fb71b4ec0b4"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e3086f9cf7ed76e6/clip-fixed-v-support-iff.json",
+        "sha256": "d89cc0bbd51fbc78a7854ea8ede3619e02b2fb58934052da011d802c1d2dd109"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e3086f9cf7ed76e6/safe-terminal-role-conservation.json",
+        "sha256": "9c08c5d0c70dfb83625299ff7ce0ad54fb057cc9d7e0642073e96079f254cdf7"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e3086f9cf7ed76e6/tail-k-conditional-welfare.json",
+        "sha256": "e48efd968d96743aa990371e4faa989296d18d5b0374f9fcd660386939415ac8"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e3086f9cf7ed76e6/reading-ledger.json",
+        "sha256": "afedfb64ed308cb22a0354cb1165b05f6c54cb0c76f0c1dd39542eaef3a390f3"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e3086f9cf7ed76e6/math-review.md",
+        "sha256": "0491d06f13ad53866d3862de4a16a6dec7b58d8c584ebca454977d3fd324a8af"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e3086f9cf7ed76e6/binding-preview.json",
+        "sha256": "b9affd31b1deea061788ae96d83da23d5f30b080eaedeea410fe00c62805e987"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e3086f9cf7ed76e6/manifest.json",
+        "sha256": "5cfdcb69088953fe9abcac068ee1266ea8f43f1a1c57ea6cf1e1fd7f096e8992"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-2fcb8be3849ae190/safe-row-yields-controlled-positive-amount-system.json",
+        "sha256": "582fc58d8eeb2dc0391d7962e9f0e68e54a199b232c0791f433c1309df915462"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-65ec03f362378017/clip-local-to-fixed-lp.json",
+        "sha256": "9f7c00ef69ffa979d4e6aed524aa8b3d26e499e47061e9ead70adfb11d42fbed"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-7b5d2e180fc235e1/same-context-to-hitting.json",
+        "sha256": "b909deebb014a18c351e33b331b53f973bed3c874b7fcccabed9d43139a78fe5"
+      }
+    ],
+    "closed_overlaps": [
+      {
+        "core_id": "customer-attraction/five-7497-row-point-separated-by-imported-active-rows",
+        "peer_id": "customer-attraction/explicit-actual-third-7497-row-rational-necessary-point",
+        "reason": "同一8b28…原点的85显式质量投影64型及7497保存非负行，与本core的同K下53新行13负相容；仅排保持该投影的完整SPE抬升，不否peer所断言旧有限系统可行。完整读peer/body与53有理报告，该比较已解决。"
+      },
+      {
+        "core_id": "customer-attraction/five-7497-row-point-separated-by-imported-active-rows",
+        "peer_id": "customer-attraction/five-provider-active-row-semantics",
+        "reason": "完整读peer 35原始真节点行+18外取整投影及必要局部/最大根证明。所有行使用同一σ、五索引和同一个K，本core同点有13条新投影负，足排SPE实现；13负不等P13支持。语义与应用的关系已明确，不需另派3B。"
+      },
+      {
+        "core_id": "customer-attraction/fixed-first-credit-factor-two-barrier",
+        "peer_id": "CA-PREFIX-BALANCE-NO",
+        "reason": "peer完整解析全人数SPE族给δ/u=2n(n−2)/(n²−1)→2，α先固定再选n，精确推出本core所有固定α<2不足。该同关系已在当前canonical negative-prefix-family-forces-first-credit-factor-two（SHA8b528ac303ec32b68b7781ae24393a309f309781c08fe2d21ac64a6a302248d5）；其peer未read-add，因此仅作本关闭说明，不列本receipt资产。系数二充分仍是不同open问题。"
+      },
+      {
+        "core_id": "customer-attraction/root-reset-pair-and-auxiliary-tail-covariance",
+        "peer_id": "customer-attraction/one-follower-decorrelation",
+        "reason": "core TAIL-PAIR在恰一真后继时用两份末位IC L(A,T)+L(T,A)给显式pair分解；同p iid平均即peer删当前槽去相关的均值，恢复当前槽额外加共同客户J≥0。两者分母/域已对齐；多后继整尾不可当单人偏离。已全文读peer和core完整推导，当前pair比较无需3B。"
+      }
+    ],
+    "follow_up_tasks": [],
+    "reviewed_by": "Boss6",
+    "task_id": "customer-attraction-3a-3a-e3086f9cf7ed76e6",
+    "source_freshness": {
+      "owner": "Boss6",
+      "state": "claimed",
+      "request_id": "b162efcf91254356a76b6278e416a53a",
+      "definition_pin": "5bbdadb306a3758f74cae3f9469566d5be4bd8a9276e1d0d6ad48606f62c80b4",
+      "remote_tip_from_root_ready": "0cb00726c1226b41f440a876ffc160c894e627eb",
+      "worker_network_reads": 0,
+      "all_29_input_pins_recomputed": true,
+      "all_80_required_reference_sha256_checked": true,
+      "remote_freshness_note": "当前pushed归属/远端tip由Root ready-cage308-round48提供；worker只读本地当前任务和registry，未独立联网。"
+    }
   }
 }
