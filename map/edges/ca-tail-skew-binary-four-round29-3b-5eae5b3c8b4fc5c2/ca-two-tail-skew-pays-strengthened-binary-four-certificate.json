@@ -1,0 +1,103 @@
+{
+  "edge_id": "ca-two-tail-skew-pays-strengthened-binary-four-certificate",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-TWO-REMAINING-TAX"
+  ],
+  "target_ids": [
+    "customer-attraction/binary-four-tail-two-slope-profit"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户及有限非空共同主题标签目录，各标签任意覆盖，提供者均为单位权并依次各行动一次。对任一完整纯SPE σ、任一合法有序前缀 h（可在轨或离轨，任意长度），要求 h 后恰剩四人且每客户负载 pₓ∈{0,1}。对任意有序四比较槽 T₁,…,T₄ 成立，允许空主题、零客户、重复主题、同覆盖异标签及全部历史依赖弱平局。",
+  "roles": {
+    "CA-TWO-REMAINING-TAX": "在两条路径各自的真实末两人子博弈给普通税 H_Y。配合同一真实末位的两项最佳回应，把六个索引对共同上界改为 H_Y−δ_Y。",
+    "customer-attraction/binary-four-tail-two-slope-profit": "按加强版 v2精确权重和完整逐客户余项证明原目标，并分别对实际与离轨的 P 行入账。保留加强版实际第三位查询 D、off 末位查询 B、十三行全部原权重、19个零余项状态以及原160态余项。"
+  },
+  "whole_result": "对完整原量词，保留加强版 v2的 13 行、原乘子及原 1280 型非负余项 ρ，得到原界 O≤(1999/1000)V₀+(5/3)V₁，并有逐元组加强 O≤(1999/1000)V₀+(5/3)V₁−[(209781221/175619625)δₐ+(3848622/58539875)δₒ]−Σₓρₓ。这里 O 是同背景四比较槽的剩余利润，δₐ、δₒ 分别是实际和强制 D 真路径的 (u_{Y,2}−u_{Y,3})₊。舍去余项后也界住同背景 F₄(p)，V₀=V₁=0 时 O=0。逐客户还可用原 r_new(p,a,b,c,d,e)=min_{q,r,s}ρ 替代 ρ，完整保留原160态结论与双支扣减。",
+  "explanation": "固定 h 与 σ。四尾实际路径 Yᵃ=(A,B,C,D)，在 h 强制首位改选原实际末主题 D 后沿同一 σ 得 Yᵒ=(D,Q,R,S)。位置从零起。u_{Y,i} 是 Y 上该位置的终局收益，计入旧背景 p。若 D=A，则两个路径从同一历史继续而重合，仍按原证书计行。四尾比较 O=R_p(T₁,…,T₄)=Σₓ eₓ/(pₓ+eₓ)，eₓ 为比较重数。V₀=Σ_{pₓ=0}1_{kₓ>0}、V₁=Σ_{pₓ=1}kₓ/(1+kₓ)，kₓ 为实际四尾覆盖计数。一切零分子份额按原定义记零，包括分母也为零时。\n\n分别取 Y∈{Yᵃ,Yᵒ}，在其原有序前缀 (h,Y₀,Y₁) 固定背景 bₓ=pₓ+1_{Y₀}(x)+1_{Y₁}(x)，余下实际 (L,M)=(Y₂,Y₃)。记 u=u_{Y,2}、v=u_{Y,3}、gₓ=1/[(bₓ+1)(bₓ+2)]，g_b(X,Z)=Σ_{x∈X∩Z}gₓ，G=g_b(L,L)，H_Y=u+v+G。普通两人税在该子博弈对每个合法 (T,T′) 给 R_b(T,T′)≤H_Y。其证明在该前缀改选 T 后查询原 σ 的真实末位回复，再将该回复作为实际末位节点的合法比较。另一上界直接在同一实际末位节点 (h,Y₀,Y₁,L) 独立查询 T 与 T′。令 U_b(X,Z)=Σ_{x∈X}1/(bₓ+1+1_Z(x))。2v+G−R_b(T,T′) 等于两项非负的 [v−U_b(T,L)]+[v−U_b(T′,L)]，加 G−g_b(T,L)−g_b(T′,L)+2g_b(T,T′)。后四项逐客户以 ℓ,t,t′ 表示 L,T,T′ 的会员位，系数除以 gₓ 为 ℓ−ℓt−ℓt′+2tt′=ℓ(1−1_{t∨t′})+(2−ℓ)tt′≥0。取两界较小值，得到 H′_Y=min{H_Y,2v+G}=H_Y−δ_Y，其中 δ_Y=(u−v)₊。δ_Y 是该路径末两人总收益之差的正部。\n\n对四个索引槽取全部六个无序对。同一客户在 eₓ(4−eₓ) 对被一次覆盖，各取 1/(bₓ+1)，在 C(eₓ,2) 对被两次覆盖，各取 2/(bₓ+2)。重复标签仍按槽计数，零覆盖对贡献零。原式 P_Y=6H_Y−Σₓ[eₓ(4−eₓ)/(bₓ+1)+eₓ(eₓ−1)/(bₓ+2)]。同一前缀的同一 H′_Y 对所有六对成立，故 P′_Y=P_Y−6δ_Y≥0。两支各用自己的 b、真实回复与收益。\n\n其余原行仍合法。K_{Y,i}(L′)=u_{Y,i}−Σ_{x∈L′}1/(pₓ+Σ_{j<i}1_{Yⱼ}(x)+4−i)，由真实改选 L′ 后的最大可能分母给安全收益下界，再用该节点 IC。E_Y=4u_{Y,3}−Σₓ eₓ/(pₓ+Σ_{j<3}1_{Yⱼ}(x)+1) 来自真末位对四比较槽各查一次，分母精确。F=u_{Yᵃ,0}−u_{Yᵒ,0} 只由 h 的实际首位对 D 的真实偏离比较得到。Yᵒ 的强制首动作没有自己的 IC，其 i=1,2,3 节点仍是 σ 的真实优化节点。E、K、F 保持原值，即使它们与 P′ 来自相同节点也可合法地正权相加。\n\n用加强版 v2的全部 13 个正乘子。Kₐ,₁(C,D,Q,R,S) 的权重依次为 16086263/58539875、8706046/175619625、59145206/175619625、19421614/58539875、22038942/58539875。Kₐ,₂(D)、Eₐ、Pₐ、Kₒ,₁(C)、Kₒ,₃(B)、Eₒ、Pₒ、F 依次为 26142639/234159500、5063719/14049570、209781221/1053717750、29304847/351239250、51396/2341595、553198/58539875、641437/58539875、89819507/70247850。 对每个客户以 η=(a,b,c,d,q,r,s) 记录七会员位，原未扣减行 S_j,ₓ 按实际位 (a,b,c,d)、离轨位 (d,q,r,s) 及 eₓ 计算。其中各位置客户收益为该位除以该路最终负载，逐客户展开上面的 K、E、P、F。令 ρ=β_p k/(p+k)−e/(p+e)−ΣⱼλⱼSⱼ,ₓ。将原四比较位的全部16种模式逐对精确计算，遍历 2×128×16=4096 原始客户型，确认只依赖 e 并压为1280型，ρ最小值0，恰19个零型，且正式表中32个背景/实际位分组最小值逐项相同。这是全系数域的有限检查，每名客户可按原式求和。它不依赖真实策略能否实现每个会员型。于是原恒等式 (1999/1000)V₀+(5/3)V₁−O=ΣⱼλⱼSⱼ+Σₓρₓ 完整成立，所有原全局行和余项均非负。\n\n只在同一恒等式用 P′ₐ、P′ₒ 替换 Pₐ、Pₒ。两权重仍为 209781221/1053717750 与 641437/58539875，各乘6得到扣减 (209781221/175619625)δₐ+(3848622/58539875)δₒ。令 S′ 表示替换后的行，则 (1999/1000)V₀+(5/3)V₁−O−[(209781221/175619625)δₐ+(3848622/58539875)δₒ]=ΣⱼλⱼS′ⱼ+Σₓρₓ≥0。δ 取整体收益差正部，不能逐客户取正部。原逐客户余项及其分母没有重新拟合、取整或跨版本替换。这同时给原定理及同一实例上的双支扣减。若 V₀=V₁=0，非负性给 O=0、两扣减均为零，无需定义效率比。\n\n仅消去 q,r,s 时保留比较重数 e，原加强版160态最小值及字典序取得点均与原始审计逐项相同。因为真实 ρ≥r_new，对原有 r_new 版本也可同时扣去两支量。取得点只用于余项下界，真实后继由 σ 决定。\n\n双支严格扣减可同时发生在两条不同路径及非零背景。取四个互不交的单客户主题，标签 0,1,2,3，五人中首位选 0。每个首位标签都作锚，从其后的任一合法历史起优先选最小的未选非锚标签。若三个非锚标签都已出现，则只可能在末位，末位复制四尾第二人。末位优先未用的非锚时得 1，否则各标签均得 1/2。四尾第三位选未用非锚而不会被末位复制，得 1。四尾第二位按策略至少得 1/2，若改为已用标签或锚则至多得 1/2，改选另一个未用非锚得到相同收益。四尾首位按策略得 1，原五人首位对每种锚也得 1，故完整策略逐节点满足 IC。前缀 (0) 后实际四尾 (1,2,3,2)，强制实际末主题 2 后四尾 (2,1,3,1)，两支 δ 均为 1/2。",
+  "scope": "二值固定合法前缀后恰四人的剩余利润证书。四尾内部两条末两人前缀可有更高整数负载，两人税及末位双比较各在本前缀适用。外层四尾证书的 1280 型只覆盖 p∈{0,1}。一般整数外层背景、更长尾部和跨不同前缀的共同根福利预算均需各自论证。这里两支扣减只凭同一原证书的正权得到，互斥枝利润没有被识别为同一实际覆盖。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+      "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+      "section": "完整证明：必须使用同一策略的真实离轨回复"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md",
+      "sha256": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee",
+      "section": "剩余收益不是根覆盖"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/二值背景四尾两斜率利润界--定理.md",
+      "sha256": "4cb7dc80a1ed748372f54fb4fef72c5dc6b84b0788a82f90c33508b859aa4056",
+      "section": "1. 完整模型与精确目标"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/二值背景四尾两斜率利润界--定理.md",
+      "sha256": "4cb7dc80a1ed748372f54fb4fef72c5dc6b84b0788a82f90c33508b859aa4056",
+      "section": "2. 同一完整策略的两条真实路径"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/二值背景四尾两斜率利润界--定理.md",
+      "sha256": "4cb7dc80a1ed748372f54fb4fef72c5dc6b84b0788a82f90c33508b859aa4056",
+      "section": "3. 两份证书的全部有理乘子"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/二值背景四尾两斜率利润界--定理.md",
+      "sha256": "4cb7dc80a1ed748372f54fb4fef72c5dc6b84b0788a82f90c33508b859aa4056",
+      "section": "4. 完整客户域的精确恒等式"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/binary-tail-two-slope/original/binary_tail_exact_1999.json",
+      "sha256": "dc50440f598bad7c511e01bccd8cb14a0c8f84d61396df354cdff8631e292511"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/binary-tail-two-slope/replay/coefficient_tables.json",
+      "sha256": "cf523ffc2a3c53865ba2780b124b736475e0a64df562036b9b8aa1f4604bbb15"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/两斜率四尾证书与原始份额核验--计算.md",
+      "sha256": "e3b080719e779ed496d34d2630a275f12c3465438f325abd5fc388dfacea33fd",
+      "section": "4. 两路原始份额重构与完整有限域"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/二值根桥与双侧修复反馈的量词合同--资源.md",
+      "sha256": "9651a9db9409ad708d5da78af81ffc300f5f87a4462b2bbcd0cc33d23b7cb0da",
+      "section": "匹配五根的32型全局行"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/二值背景四尾两斜率利润界--定理.md",
+      "sha256": "4cb7dc80a1ed748372f54fb4fef72c5dc6b84b0788a82f90c33508b859aa4056",
+      "section": "5. 更细余项、旧资产比较及当前定位"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/binary-tail-two-slope/original/oct25_binary_tail_raw_audit.json",
+      "sha256": "1d5f020679c358b3ce4ddd890d1cc98c912ab2e29ad3979f5a53fe410d1b5e3b"
+    }
+  ],
+  "review_note": "实读加强版 v2及两人税完整正文、节点量词、原有理表、逐客户份额核验和根接口边界。独立按原始比较会员位复算4096型、压缩1280型、13个正乘子、19个零余项和全部分组最小值。分别核对两个真实末两人前缀、零份额约定和原乘子乘六后的逐实例扣减。另复核全部160态最小值及取得点，并查验严格双支实例的全历史IC。",
+  "reviewed_by": "Boss1/ca-tail-skew-binary-four-round31-fresh-worker",
+  "endpoint_pins": {
+    "CA-TWO-REMAINING-TAX": "eb63a8d1cd934879f5f7f25f633b4bf753973f405a7b8db91bed63f633de7d15",
+    "customer-attraction/binary-four-tail-two-slope-profit": "ddc2cec54ae02af812c1744e176203cb66f297288b1fa14d8a1c512180adf0eb"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/引理/固定背景两人税界--引理.md": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+    "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee",
+    "archives/customer-attraction/state/定理/二值背景四尾两斜率利润界--定理.md": "4cb7dc80a1ed748372f54fb4fef72c5dc6b84b0788a82f90c33508b859aa4056",
+    "archives/customer-attraction/tools/evidence/binary-tail-two-slope/original/binary_tail_exact_1999.json": "dc50440f598bad7c511e01bccd8cb14a0c8f84d61396df354cdff8631e292511",
+    "archives/customer-attraction/tools/evidence/binary-tail-two-slope/replay/coefficient_tables.json": "cf523ffc2a3c53865ba2780b124b736475e0a64df562036b9b8aa1f4604bbb15",
+    "archives/customer-attraction/state/计算/两斜率四尾证书与原始份额核验--计算.md": "e3b080719e779ed496d34d2630a275f12c3465438f325abd5fc388dfacea33fd",
+    "archives/customer-attraction/state/资源/二值根桥与双侧修复反馈的量词合同--资源.md": "9651a9db9409ad708d5da78af81ffc300f5f87a4462b2bbcd0cc33d23b7cb0da",
+    "archives/customer-attraction/tools/evidence/binary-tail-two-slope/original/oct25_binary_tail_raw_audit.json": "1d5f020679c358b3ce4ddd890d1cc98c912ab2e29ad3979f5a53fe410d1b5e3b"
+  },
+  "review_digest": "88d8027611effe03568f393a7883b2c6832eb6ff86b27d28160ef5b84f43029b"
+}
