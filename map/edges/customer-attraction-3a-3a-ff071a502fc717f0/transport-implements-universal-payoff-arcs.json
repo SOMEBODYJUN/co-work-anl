@@ -1,0 +1,46 @@
+{
+  "edge_id": "boss6-cagff-r50-transport-implements-universal-payoff-arcs",
+  "kind": "implements",
+  "status": "accepted",
+  "source_ids": [
+    "M-47c853fbc6c84223b683f6fcb277610b"
+  ],
+  "target_ids": [
+    "cag-full-tree-universal-payoff-arcs-and-finite-potential-review"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "合法固定正人数n、有限非空标签P、完整有序动作表；源码PayoffGraph(monotone=True)，仅比较同总人数终局状态。",
+  "roles": {
+    "M-47c853fbc6c84223b683f6fcb277610b": "程序先构造全部真实有序IC，再按准确条件枚举同标签monotone弧，最后合完全相同收益端点。",
+    "cag-full-tree-universal-payoff-arcs-and-finite-potential-review": "提供这些弧恰为全部普遍无缩放二状态收益比较的完整iff；该必要性本身仍由解析证明承担。"
+  },
+  "explanation": "核心给F_(q,a)≥F_(r,a)对所有非负客户成立 iff r_a≥q_a且r_b≤q_b(b≠a)；跨标签无普遍弧由singleton分离。原码在q_a≥r_a且q_c≤r_c(c≠a)时加(q,a)→(r,a)，其head−tail正是F_(r,a)−F_(q,a)，将核心左右状态互换后逐项一致。terminals先按每个有序h沿同σ求真实完成，随后对tail/head去重；不先商策略历史。故monotone=True准确实现全部非平凡普遍同题弧。M47的守恒只是条件充分证书，不承诺每个σ/query存在流，亦未由这个比较器取得全层效率E或非负客户表示。",
+  "scope": "实现关系及原声明follow-up的精确闭合；context不作为普遍流可行或福利逻辑支持。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/全有序收益状态弧与势投影的运输求解器--程序.md",
+      "sha256": "2d4f0359039f36b94897bd26110a7b0b44a59ba667e023011af3347267993902"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/全树收益运输的普遍弧与有限势反例范围--审查.md",
+      "sha256": "b766b33297796c9f34de3f55e84d598845a5967992a6361416cdb80f4e85f34d"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/anonymous-potential-five-boss3/original/payoff_state_flow.py",
+      "sha256": "671cdbd2a82d605120f3b638edfbfa60d8198b032c5bf0d0b212c250088ec063"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Fresh正式worker逐对象实读当前22core/7read的完整登记及主正文；本边承重证明直接复核，精确当前pins及引用SHA已核。未运行旧LP、BI、全树、随机或科学审计。Root串行原生绑定后发布；预审只作线索，不替本轮实读。",
+  "endpoint_pins": {
+    "M-47c853fbc6c84223b683f6fcb277610b": "d2473cc4f9c7ae425a69c597526db01bf14b439971c842ff80a5348b649ef246",
+    "cag-full-tree-universal-payoff-arcs-and-finite-potential-review": "5e3bc2bce03040d0e2123dac99f605d56da8a79477e3e5b5dadd82491fb6b6d4"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/全有序收益状态弧与势投影的运输求解器--程序.md": "2d4f0359039f36b94897bd26110a7b0b44a59ba667e023011af3347267993902",
+    "archives/customer-attraction/state/审查/全树收益运输的普遍弧与有限势反例范围--审查.md": "b766b33297796c9f34de3f55e84d598845a5967992a6361416cdb80f4e85f34d",
+    "archives/customer-attraction/tools/evidence/anonymous-potential-five-boss3/original/payoff_state_flow.py": "671cdbd2a82d605120f3b638edfbfa60d8198b032c5bf0d0b212c250088ec063"
+  },
+  "review_digest": "dcddc1c2b87e2738670b55f5c947cbd2a3fce25d2433414c10c2bd52a0d87e3f"
+}

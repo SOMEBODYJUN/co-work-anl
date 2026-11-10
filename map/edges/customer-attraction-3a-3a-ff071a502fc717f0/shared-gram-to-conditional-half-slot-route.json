@@ -1,0 +1,45 @@
+{
+  "edge_id": "boss6-cagff-r50-shared-gram-to-conditional-half-slot-route",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/shared-menu-equal-price-gram-and-kkt-covariance"
+  ],
+  "target_ids": [
+    "M-490680a28551448da57bdad11e5c99a7"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "固定原完整SPE σ及原删除菜单K=(1/m)Σ_i conv{L_i(A)}；选同一个真实共享鞍点(p*,L*)，用同次t、γ、I、D、G_KKT、Vcorr。额外假设该鞍点满足Vcorr≤D+I+G_KKT+γ/2；此金额及每输入存在可付鞍点均未被证明。",
+  "roles": {
+    "customer-attraction/shared-menu-equal-price-gram-and-kkt-covariance": "给真实TAN、非负KKT信用、C=Vcorr−G_KKT和W−mγ=I−C+D，并以同一个合法m−1槽L*给OPT≤(2m−1)γ。",
+    "M-490680a28551448da57bdad11e5c99a7": "精确定位half-slot的充分付款目标及其仍未付的存在/金额义务。"
+  },
+  "explanation": "共享Gram恒等式在相同σ/p*/L*上给C=Vcorr−G_KKT及W−mγ=I−C+D。额外所假不等式等价C≤D+I+γ/2，代入得W≥(m−1/2)γ。对任一合法最优m主题元组，逐客户1≤(a_x+L*_x)t_x，所有比较主题及L*的合法m−1份分数行动都用同次价格g_t≤γ，故OPT≤(2m−1)γ≤2W。没有把σ迁移到切线游戏，没有跨鞍点取信用，D只在当前query支持坐标计算，G_KKT仅用一次；PSD/等L1价本身不推出所假金额。",
+  "scope": "已完成的是条件充分路线及精确共同记账，不是每输入存在可付鞍点或一般half的证明。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/共享真实菜单的等价格Gram核与KKT协方差分解--引理.md",
+      "sha256": "99885e1c8100f76f65fa44e20fd0fdf244115c21c9fe13b3b44923a0c65d62ef"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/共享真实菜单的等价格Gram核与KKT协方差分解--引理.md",
+      "sha256": "99885e1c8100f76f65fa44e20fd0fdf244115c21c9fe13b3b44923a0c65d62ef",
+      "section": "half-slot的准确充分目标"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Fresh正式worker逐对象实读当前22core/7read的完整登记及主正文；本边承重证明直接复核，精确当前pins及引用SHA已核。未运行旧LP、BI、全树、随机或科学审计。Root串行原生绑定后发布；预审只作线索，不替本轮实读。",
+  "contribution": {
+    "result": "同一个原菜单共享鞍点若满足HALF-SLOT付款，则由真实余额恒等式与同次静态价格界严格推出2W≥OPT_m；该不等式与C≤D+I+γ/2等价。",
+    "remaining": "仍须对每输入、每完整σ证明存在一个合法共享鞍点支付Vcorr≤D+I+G_KKT+γ/2；PSD、KKT与恒等式未给此金额。"
+  },
+  "endpoint_pins": {
+    "M-490680a28551448da57bdad11e5c99a7": "abc0057f80d88d00cae917c7aa6dcb0871c3c13226d06229bf5cd1df857f2cfe",
+    "customer-attraction/shared-menu-equal-price-gram-and-kkt-covariance": "f3a618c3c356f720591e27ce1094ed7aa5ec2ddbdf2345556094989969e86eef"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/共享真实菜单的等价格Gram核与KKT协方差分解--引理.md": "99885e1c8100f76f65fa44e20fd0fdf244115c21c9fe13b3b44923a0c65d62ef"
+  },
+  "review_digest": "3da753e19f5cba932f8858a18fd7f946124b5a299c41daaeb68250021d82fd15"
+}
