@@ -4,7 +4,7 @@ kind: "obstruction"
 type_tag: "障碍"
 title: "归一化 XOS 菜单阈值规模下界"
 status: "proved-with-scope-and-version-boundary"
-summary: "同一资源宇宙、逐玩家非负归一化显式 XOS 若同时保持全部 t 集合值 1 与全部至多 floor(eta t) 集合值不超过 eta，则 indexed clause 数至少为 binom(2t,t)/binom(2t-r,t-r) 且至少 2^r；该障碍只针对全集合 unit/tiny 保真接口，不是一般 Santa Claus、UM 或 hardness 结论。"
+summary: "同一资源宇宙、逐玩家非负归一化显式 XOS 若同时保持全部 t 集合值 1 与全部至多 floor(eta t) 集合值不超过 eta，令 d=floor(eta t)、k=max(1,ceil(d/eta))，则最小 indexed clause 数恰为覆盖全部 t 集的 k-family 的最小大小，至少为 binom(2t,t)/binom(2t-k,t-k) 且至少 2^k；该障碍只针对全集合 unit/tiny 保真接口，不是一般 Santa Claus、UM 或 hardness 结论。"
 source_refs:
   - "clean:1b969bd94717c6572e45"
   - "clean:3edd3c1c1176185ac70e"
@@ -31,10 +31,10 @@ source_refs:
 固定有理常数 (0<\eta<1)，取整数 (t\ge1)，资源宇宙 (U) 有 (2t) 个不同资源。令
 
 \[
- d=\lfloor\eta t\rfloor,\qquad r=d+1.
+ d=\lfloor\eta t\rfloor,\qquad r=d+1,\qquad k=\max\{1,\lceil d/\eta\rceil\}.
 \]
 
-因此 (0\le d\le t-1)、(1\le r\le t)；特别是 \(\eta t<1\) 时 (d=0,r=1)，不应把退化情形误写为需要两个资源。
+因此 (0\le d\le t-1)、(1\le r\le k\le t)；特别是 \(\eta t<1\) 时 (d=0,r=1)，不应把退化情形误写为需要两个资源。
 
 显式菜单有 (K\ge1) 个 indexed 加性 clauses，系数 (w_{s,u}\in\mathbb Q_{\ge0}) 满足每个 clause 在**整个** (U) 上总量恰为一：
 
@@ -55,10 +55,10 @@ source_refs:
 对任何满足上面条件的菜单，
 
 \[
- K\ \ge\ \frac{\binom{2t}{t}}{\binom{2t-r}{t-r}}\ \ge\ 2^r. \tag{1}
+ K\ \ge\ \frac{\binom{2t}{t}}{\binom{2t-k}{t-k}}\ \ge\ 2^k\ \ge\ 2^r. \tag{1}
 \]
 
-这里的第一项来自每个 (t)-set 必须包含某个 clause 的正 support，第二项是所有 (r)-子集的基本计数界。重复 clause、零系数和额外冗余全零 clause 都不能降低由非零归一化 clauses 产生的下界。
+这里的第一项来自每个 (t)-set 必须包含某个 clause 的正 support，第二项是所有 (k)-子集的基本计数界；以 r 替代 k 仍给较弱下界。重复 clause、零系数和额外冗余全零 clause 都不能降低由非零归一化 clauses 产生的下界。
 
 对固定正 \(\eta\)，有 (r\ge\lfloor\eta t\rfloor+1)，故随着显式资源数 (2t) 增长，(K\ge2^{\lfloor\eta t\rfloor+1})。这排除同一宇宙上的普适显式多项式大小归一化 shortcut。若 \(\eta\) 随输入变化，则指数常数也变化；来源没有声称统一的固定多项式分母。
 
@@ -66,31 +66,25 @@ source_refs:
 
 由于 clause 系数非负且总和为一，对任意 (t)-set (T)，(f(T)=1) 意味着存在一个 clause (s) 的全部正 support 包含于 (T)。否则该 clause 在 (T) 上遗漏至少一个正系数，值严格小于一；所有 clauses 都如此则最大值不可能为一。
 
-若某个 clause 的正 support 大小 (h\le d)，则 tiny 条件直接给 (h)-support 的 clause 值一，违反 (f(B)\le\eta<1)。因此每个能见证 unit set 的 clause 有 (h\ge r=d+1)。从每个 clause support 任取一个 (r)-子集，得到一个 (r)-family。所有 (t)-set 都必须包含该 family 中至少一个 (r)-集；否则其不包含任何 clause 的完整 support，不能满足 unit 值一。
+若某个 clause 的正 support 大小 (h\le d)，则 tiny 条件直接给 (h)-support 的 clause 值一，违反 (f(B)\le\eta<1)。因此每个 clause 有 (h\ge r=d+1)。当 (d\ge1) 时，最重 (d) 项的质量至少 (d/h)，tiny 条件又给 (d/h\le\eta)，故 (h\ge\lceil d/\eta\rceil=k)。当 (d=0) 时，归一化本身保证非空 support，即 (h\ge1=k)。从每个 clause support 任取一个 (k)-子集；每个 unit (t)-set 含某个 clause 的完整 support，因而含所选 (k)-子集，得到覆盖全部 (t)-sets 的 (k)-family。
 
-反向地，给定一个覆盖全部 (t)-sets 的 (r)-family，每个 (r)-集上均匀置质量 (1/r) 的 clause，即得一个归一化 XOS 菜单：包含该 (r)-集的 (t)-set 值一，任意至多 (d)-set 的任一 clause 值至多 (d/r\le d/\lceil d/\eta\rceil\le\eta)。因此最小菜单数等于相应 covering family 的最小大小；来源用 (\Theta\) 记号时没有把它误称为短输入可计算的 oracle。
+反向地，给定覆盖全部 (t)-sets 的 (k)-family，在每个 (k)-集上均匀置质量 (1/k)。每个 (t)-set 包含某个完整 support，故值一；任意至多 (d)-set 的任一 clause 值至多 (d/k\le\eta)。因此最小菜单数恰等于该 (k)-covering family 的最小大小。这里 r 只给必要的较弱计数界，不能替代反向构造中的 k：例如 (\eta=1/2,t=4,d=2,r=3)，uniform r-clause 在两项上取值 (2/3>\eta)。没有把 covering number 当作短输入可计算的 oracle。
 
 ## 2. 计数下界
 
-一个固定 (r)-集恰好包含
+一个固定 (k)-集恰好被
 
 \[
- \binom{2t-r}{t-r}
+ \binom{2t-k}{t-k}
 \]
 
-个 (t)-集。所有 (t)-集数为 \(\binom{2t}{t}\)。即使不同 (r)-集覆盖完全不重叠，仍需至少
+个 (t)-集包含。所有 (t)-集数为 \(\binom{2t}{t}\)，所以覆盖至少需要 \(\binom{2t}{t}/\binom{2t-k}{t-k}\) 个 (k)-集；重叠不能改善下界。该比值一般只是下界，不宣称每个参数都可达到。其乘积形式为 \(\prod_{j=0}^{k-1}(2t-j)/(t-j)\ge2^k\)，故也保留较弱的 (2^r) 界。
 
-\[
- \frac{\binom{2t}{t}}{\binom{2t-r}{t-r}}
-\]
-
-个。重叠只会减少有效覆盖数，不能改善下界；来源没有把该比值声称为所有参数都可达到的精确值。
-
-由于每个 (r)-集的每个 (t)-superset 都被一条 unit 覆盖，亦有基本指数界 (K\ge2^r)（来源 Exact/Proof 版本均保留该边界）。当 (d=0) 时，单项 support 必须 hit 全部 (t)-sets，等价于其补集至多 (t-1)，最少需要 (t+1) 个 singleton clauses；(t=1) 时正确值为二。若 \(\eta t\) 是正整数，(r=t)，每个 (t)-set 只能由自身覆盖，最少需要 \(\binom{2t}{t}\) 个 clauses；其均匀 clause 在 support 内任意至多 (d) 项上的和达到上界 (d/t=\eta)，允许 low 条件的等号。
+当 (d=0) 时 (k=r=1)，所选 singleton 必须 hit 全部 (t)-sets，等价于所选资源的补集至多 (t-1)，故最少 (t+1) 个；(t=1) 时正确值为二。若 \(\eta t\) 是正整数，则 (d=\eta t) 且 **(k=t)**，每个 (t)-set 只能由自身覆盖，故最小菜单数为 \(\binom{2t}{t}\)。这里一般不能写 (r=t)。均匀 t-clause 在 support 内至多 (d) 项上的和至多 (d/t=\eta)，允许等号。
 
 ## 3. 锐点、浮动余数与输入规模
 
-对 (d\ge1)，令 (k=\lceil d/\eta\rceil)（canonical 版本写为 (k=\max(1,\lceil d/\eta\rceil)) 以覆盖 (d=0)）。由于 support 大小小于等于 (d) 已排除，取 clause 中最重的 (d) 项，其质量至少为 (d/h)。tiny 条件迫使 (h\ge\lceil d/\eta\rceil=k)。结合 (h\le t)，有
+对 (d\ge1)，令 (k=\lceil d/\eta\rceil)（canonical 版本写为 (k=\max(1,\lceil d/\eta\rceil)) 以覆盖 (d=0)）。由于 support 大小小于等于 (d) 已排除，取 clause 中最重的 (d) 项，其质量至少为 (d/h)。tiny 条件迫使 (h\ge\lceil d/\eta\rceil=k)。由 (d/\eta\le t) 得 (k\le t)，并有
 
 \[
  t-k=\left\lfloor\frac{\{\eta t\}}{\eta}\right\rfloor
@@ -125,3 +119,7 @@ source_refs:
 # 本轮实际处置
 
 三源均完整实读，逐项比较定义域、量词、支撑包含、covering-family 方向、计数下界、退化参数、输入长度和版本修正；没有重复扫描同路径的其他副本。1b969 的独立定理、3edd 的作者 Proof v2 read-after 和 a521 的 canonical §4–6 read-after 各自独有内容均写入本页；canonical §1–3 未认证内容明确排除。没有脚本或有限实验需要运行，二进制转换不适用。原件、manifest 和哈希位于 evidence 目录；本页归档为障碍，不写入 papers，不改写主 near-two 结论。
+
+# 第三阶段定向勘误
+
+Boss3 核对当前登记对象 v2 的正确 k-cover 陈述后修正本页：r=d+1 仅用于必要性弱界；精确反向等价使用 k=max(1,ceil(d/eta))；正整数 eta*t 端点是 k=t。对所有 clauses 不假设 h<=t，k<=t 直接来自 d<=eta*t。历史原件及 read-after 记录保持原字节，当前正文以上述自足证明为准。

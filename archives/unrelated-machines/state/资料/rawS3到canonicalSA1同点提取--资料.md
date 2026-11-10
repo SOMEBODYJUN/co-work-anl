@@ -4,7 +4,7 @@ kind: "bridge"
 type_tag: "资料"
 title: "raw S3 到 canonical plain-SA1 的同点提取"
 status: "proved-under-explicit-s3-contract-with-fixed-lp-boundary"
-summary: "在显式 normalized-flat 菜单、同一 degree≤4 有理 functional L、Boolean/cover 等式乘子、每 box/物理 slack/unit-cap 行至多三个 raw-literal 乘子均非负的完整 S3 合同下，指定 pullback A_s=a_s、Z_e=a_sE_e 保持 canonical plain-SA1、resource/gate/quality rows；同点 raw M2 可选地给 canonical M1。固定次数 rational-LP 与输出位长多项式。该桥不把 raw K2、CONFIG 或实际共同 schedule 自动升级为 S3。"
+summary: "在显式 normalized-flat 菜单、同一 degree≤4 有理 functional L、Boolean/cover 等式乘子、每 box/物理 slack/unit-cap 行至多三个 raw-literal 乘子均非负的完整 S3 合同下，指定 pullback A_s=a_s、Z_e=a_sE_e 保持 canonical plain-SA1、resource/gate/quality rows；同点 raw M2 可选地给 canonical M1。固定次数 rational-LP 与输出位长多项式。该桥不把指定的 raw K2 或 CONFIG functional 自动升级为 S3；给定实际 schedule 则可另造满足 S3 的 Dirac functional。"
 source_refs:
   - "clean:8eb4c167d32fbb5529e7"
   - "clean:1dcf604fc03919848b61"
@@ -16,7 +16,7 @@ source_refs:
 
 # 来源身份和合同范围
 
-三份来源共同审查 raw S3 到 canonical plain-SA1 的同点 pullback。Exact-only 独立重构、作者 Proof read-after 与 v2 triple 量词定向补记均完整读取。结论是一个**条件性桥**：给定完整 S3 functional 合同，可按指定公式把 raw moments 提取为 canonical entries；合同本身比 raw K2 强，不能从 raw K2、普通 CONFIG 或实际 schedule 自动得到。
+三份来源共同审查 raw S3 到 canonical plain-SA1 的同点 pullback。Exact-only 独立重构、作者 Proof read-after 与 v2 triple 量词定向补记均完整读取。结论是一个**条件性桥**：给定完整 S3 functional 合同，可按指定公式把 raw moments 提取为 canonical entries；合同本身比 raw K2 强，不能把指定 raw K2 或普通 CONFIG functional 自动当作满足 S3。同页 §2 则证明：给定实际 schedule 可以另行构造满足 S3 的 Dirac functional；这一存在性不保留另一指定 functional 的矩值。
 
 | clean ID | 原路径 | SHA-256 | 大小 | 实读性质 | 本页处置 |
 |---|---|---|---:|---|---|
@@ -117,8 +117,12 @@ Canonical primitive 数 O(N)，一/二阶输出表 O(N²) entries，均直接查
 
 v2 定向补记只修改最终文稿中的一句量词：如果**要求所有 global triple literal 的期望非负**，则含 `L(b1b2b3)<0` 的特定证书会被排除；不能把它写成“任意一个 global triple 非负都排除”。本补记没有改变 S3 合同、raw K2 负式、matrix 或算法。
 
-因此本桥的正确接续方式是：先明确给定同一 L 是否满足完整 S3（三 literal localizers、quality slack 与 unit-cap），再应用上述 pullback；不能从 raw K2 family 的 first/pair/affine rows 直接跳到 canonical SA1，也不能用 ordinary actual schedule 替代 S3 moments。
+因此本桥的正确接续方式是：先明确给定同一 L 是否满足完整 S3（三 literal localizers、quality slack 与 unit-cap），再应用上述 pullback；不能从 raw K2 family 的 first/pair/affine rows 直接跳到 canonical SA1，给定 ordinary actual schedule 可以按 §2 明确构造其 S3 Dirac moments，再应用本桥；这不证明另一指定 K2/CONFIG functional 也满足 S3，更没有从 relaxation feasible point 解码实际 schedule。
 
 # 8. 本轮实际处置
 
 三源均完整实读并比较 A/B/C 的定义域、literal 次数、quality 恒等式、resource decomposition、固定次数 LP/vertex 位长和 triple 量词。没有代码运行或实际 SDP/CONFIG 求解；原件和 manifest 在 evidence，正文归档为资料桥，回执草稿单列。它不证明一般 normalized Q 的 S3 可行性、不输出真实共同 schedule law、不完成一般 UM 舍入或 hardness。
+
+# 第三阶段定向勘误
+
+Boss3 将“指定 functional 的同点升级”与“从给定实际 schedule 另造 Dirac”明确分开。§2 的必要性及 sound FAIL 保留；S3→SA1 的同点代数、可选同点 M2→M1 和固定次数 LP 位长结论均不改变。历史来源字节保持原状。
