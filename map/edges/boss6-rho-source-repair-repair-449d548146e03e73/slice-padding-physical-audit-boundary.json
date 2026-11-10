@@ -1,0 +1,57 @@
+{
+  "edge_id": "um-r37-slice-padding-physical-audit-boundary",
+  "kind": "cites",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/coordinate-slice-private-output-padding-v3-source-review",
+    "unrelated-machines/coordinate-slice-physical-configuration-audit"
+  ],
+  "target_ids": [
+    "UM-Q-COORDINATE-SLICE-PARTIAL-MINREP-COUNTEREXAMPLE-v4"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "对照 v3 历史 padding 与 v4 后增的条件双射分支。原审计显式物化 D=2,Q=3 的全部16份种植双射数组和 D=3,Q=4 的一个固定数组，保全部原任务。",
+  "roles": {
+    "unrelated-machines/coordinate-slice-private-output-padding-v3-source-review": "钉住 v3 私有 padding 的实际来源范围，以区别 v4 后增的双射分支。",
+    "unrelated-machines/coordinate-slice-physical-configuration-audit": "给每个固定输入的实际状态0路径、逐机原负载与 CONFIG1 逐列和逐任务核验。",
+    "UM-Q-COORDINATE-SLICE-PARTIAL-MINREP-COUNTEREXAMPLE-v4": "其双射分支中使用同一叶坐标映射和同一局部配置覆盖公式。"
+  },
+  "explanation": "固定 π_ij(0)=i+1 后，选状态0、每层删指定值。程序按整个路径决定每件 port 是否下传，未选状态及分支全部父置，实际峰依次为 3/2、4/3。内部 incoming 权1/Q，outgoing 整组权1−1/Q，资源恰Q个不同 eligible port 的 singleton 各权1/Q。每例实际检查配置合法、行和一、任务覆盖一。没有运行私有 padding 或廉价列表 NO 检验，D=2 还在主定理 D≥3 域外。",
+  "scope": "有限物理调度与配置的核验，不承担 v3 E–G、概率 NO 或整数最优值。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/坐标切片私有输出padding-v3来源去向--审查.md",
+      "sha256": "346d1b740808794d4db2e2166c8d4da0921793c19c499e49966fa8f6ab96f2c5",
+      "section": "阅读范围与来源身份"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/坐标切片原任务与配置覆盖核验--计算.md",
+      "sha256": "7dc5effbdad9784eb3188bf0adc1d5f1208b162354b2c2a86050f7ea27267952",
+      "section": "每次audit_one实际检查什么"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/坐标切片原任务与配置覆盖核验--计算.md",
+      "sha256": "7dc5effbdad9784eb3188bf0adc1d5f1208b162354b2c2a86050f7ea27267952",
+      "section": "证据界限与接续用途"
+    },
+    {
+      "path": "archives/unrelated-machines/state/反例/坐标切片投影源编译--反例.md",
+      "sha256": "23d3db5fa6b0efd40488417241c721c54b656861a08913fca96aa4d064178ef4",
+      "section": "双射和均匀纤维仍有反例"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本包对照当前登记端点及所列正文，分别核对了完整原任务、条件量词和冻结证据的证明范围。 Boss6源版本定向续审：共享UM-Q…v4对象现version4，仅二级审查§2/E将充分条件校正为rho0+2g/D≤rho。平衡D正则源M=DN/2，旧列表覆盖<rho0 M，新增private输出覆盖≤gN=(2g/D)M，故此方向恰为保promise所需；主正文原已正确。本边仍仅历史物理有限核对或v3 provenance语境，原D2/Q3、D3/Q4范围和近一负载结论不变，不宣称一般NO/CONFIG最优/困难性。未重跑旧大证书；所有未改关系字段逐字保留。",
+  "endpoint_pins": {
+    "UM-Q-COORDINATE-SLICE-PARTIAL-MINREP-COUNTEREXAMPLE-v4": "04ff444a0475c96acbdbb867fed1c1228619be04b33f165aa4736d2fe27c52a8",
+    "unrelated-machines/coordinate-slice-physical-configuration-audit": "a8dcba291aea8628a70aa1a696f588e96bc6f7ce28707957c2f631809616c00f",
+    "unrelated-machines/coordinate-slice-private-output-padding-v3-source-review": "5e90d32df60ae689f52d09e7234d7a92383750f5f685009d8eb36402bf35463b"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/坐标切片私有输出padding-v3来源去向--审查.md": "346d1b740808794d4db2e2166c8d4da0921793c19c499e49966fa8f6ab96f2c5",
+    "archives/unrelated-machines/state/计算/坐标切片原任务与配置覆盖核验--计算.md": "7dc5effbdad9784eb3188bf0adc1d5f1208b162354b2c2a86050f7ea27267952",
+    "archives/unrelated-machines/state/反例/坐标切片投影源编译--反例.md": "23d3db5fa6b0efd40488417241c721c54b656861a08913fca96aa4d064178ef4"
+  },
+  "review_digest": "aa6bdb5d8916eb1316e8e34aec661d8631c7cb6610f3faa162c0bc1313dc2b7d"
+}
