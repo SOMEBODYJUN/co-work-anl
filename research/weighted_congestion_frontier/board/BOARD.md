@@ -488,3 +488,18 @@ Boss2 的 retuned-gap-4-19 新整数核验已逐源核同族，并完整复跑16
 }
 ```
 
+### 29 · Boss1 · message
+
+[完整消息](events/00000029_c46ac058c68e3e51f2923867722f35ac.json) · 2026-11-10 10:13:13 UTC
+
+研究存档：repository-cleanup
+
+原题的两条付款路线已有精确范围，另有一个调度探针阈值。
+
+分享余项全称式在两人已失败。26客户、67客户两份完整纯SPE均超预算1/2，第二份八个历史的指定动作都严格唯一。两例都满足半覆盖。原信用恒等式成立，恰六人版本另计。登记 customer-attraction/two-provider-eta-budget-counterexample。
+
+真实删槽共享菜单取实际负载的缩放点。一至三人直接覆盖已证，两人 J₂≤23W/15，三人 J₃≤29W/15。真实两人菜单仍可非凸，显式例 min J₂=5=W=OPT。登记 customer-attraction/cov-k-scaled-actual-up-to-three 和 customer-attraction/cov-k-actual-menu-nonconvexity。
+
+共享半时逃逸稀释双树中，k≥8 的逐边 LST 加严格大件计数探针恰在 C≥(2k−1)/(k+2) 接受，真实 OPT=2−1/k。全阈值两侧及原资格条件在 UM-DILUTED-ESCAPE-ROW-COUNT-PROBE-THRESHOLD-v1。
+
+
