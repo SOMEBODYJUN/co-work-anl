@@ -1,0 +1,54 @@
+{
+  "edge_id": "cag-r48-bank-controller-instantiates-root-only-threshold-crossing",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/cartesian-bank-individual-fractional-floor-counterfamily"
+  ],
+  "target_ids": [
+    "customer-attraction/R79-four-entry-root-threshold-finite-reports-and-current-status"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m≥4，用原银行族的同一个完整控制器；m为原总人数、t=OPT_m/(2m−1)在每个历史保持固定。每根行动后重锚BASE，PUNISH的复制目标固定在触发进入的那一次已发生银行。",
+  "roles": {
+    "customer-attraction/cartesian-bank-individual-fractional-floor-counterfamily": "供应所有历史的BASE/PUNISH/EXIT目录控制器及其对应支付。",
+    "customer-attraction/R79-four-entry-root-threshold-finite-reports-and-current-status": "对同一完整策略提取固定原门槛下的根唯一失败结论。"
+  },
+  "explanation": "u₁=m/(m−1)，W=2m，OPT=3m−2。每个非空历史按原模式唯一可达：BASE当前非末2+1/(m−1)、末2，PUNISH非末3、末2，EXIT为3。因此全部proper规定当前收益≥2。t−u₁=(m²−4m+2)/[(2m−1)(m−1)]>0且t<3/2，根是唯一违反节点。m=4即4/3<10/7<2。",
+  "scope": "每个整数m≥4，源v3/proved所证银行族及同一指定完整σ的全部非空合法有序历史；各节点收益沿该σ在其实际历史后的真实续局计算。m≥4与指定控制器是已证适用域，无未付前提。不对各proper子局的全部其它SPE取最低首值，也不扩大到R79资源中的静态匹配、有限探索或动态incoming预算。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/笛卡尔银行目录的逐人分数门槛反族--反例.md",
+      "sha256": "46c7a8df14fb3dd858e4fc827e2de7f000966d49ac4cd9ef7bb2b05777957a80",
+      "section": "在全部有序历史重放的三模式策略"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/笛卡尔银行目录的逐人分数门槛反族--反例.md",
+      "sha256": "46c7a8df14fb3dd858e4fc827e2de7f000966d49ac4cd9ef7bb2b05777957a80",
+      "section": "EXIT与PUNISH的可达域和全部再次偏离"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/笛卡尔银行目录的逐人分数门槛反族--反例.md",
+      "sha256": "46c7a8df14fb3dd858e4fc827e2de7f000966d49ac4cd9ef7bb2b05777957a80",
+      "section": "BASE及根的全部真实激励"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/四分支入口的根阈值与有限原报告时态--资源.md",
+      "sha256": "0fb3162422452568f360e188c0c3e4aa31a010d0ff15313968c10a0c91b6faf1",
+      "section": "原固定门槛归纳的有效基底与已出现的crossing"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本轮完整实读bank 206行解析正文、R79 133行正文及当前v2完整登记陈述、共同目录129行定义、原canonical边及有效旧receipt。独立逐模式核全部有序历史和真实联合/再次偏离；PUNISH固定过去目标，根任何行动重锚BASE。源仅登记v2/finite→v3/proved，正文与statement不变；原conditional唯一finite理由已消除，m≥4是已证域。其余原数学/15资产/18核心coverage按精确pin和SHA继承，未重跑原科学程序。",
+  "whole_result": "对每个整数m≥4，原银行族m个经济单客、m−1个两客户银行块的全部笛卡尔标签及指定BASE/PUNISH/EXIT完整纯SPE满足OPT=3m−2、W=2m。固定原根门槛t=OPT/(2m−1)时，根每个行动的真实值u₁=m/(m−1)<t<3/2；同一σ的每个非空合法有序历史，规定当前角色的真实续局收益在BASE非末为2+1/(m−1)、末为2，PUNISH非末为3、末为2，EXIT为3，均≥2>t。因此根是唯一规定当前收益低于固定原根门槛的节点，完整覆盖当前R79 v2的全部陈述。",
+  "endpoint_pins": {
+    "customer-attraction/R79-four-entry-root-threshold-finite-reports-and-current-status": "a5c6500a359a3080abe658f70603292641a1da6ca621c1dff065c695658d42ef",
+    "customer-attraction/cartesian-bank-individual-fractional-floor-counterfamily": "0130f938c010a5a8b941ea5d24f6932c1075fdf5778124bbbf57cc62184b3be4"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/笛卡尔银行目录的逐人分数门槛反族--反例.md": "46c7a8df14fb3dd858e4fc827e2de7f000966d49ac4cd9ef7bb2b05777957a80",
+    "archives/customer-attraction/state/资源/四分支入口的根阈值与有限原报告时态--资源.md": "0fb3162422452568f360e188c0c3e4aa31a010d0ff15313968c10a0c91b6faf1"
+  },
+  "review_digest": "6dae7d0f0e55a45736a1c02f938f3d139c537efd88d3b6c65e2d7b1b5820e682"
+}
