@@ -1,0 +1,77 @@
+{
+  "edge_id": "mapped-zero-flow-and-exposed-face-close-twenty-four-client-rank",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/payoff-type-map-kernel-and-full-real-row-cone-lineality"
+  ],
+  "target_ids": [
+    "customer-attraction/twenty-four-customer-complete-spe-cross-SCC-reversible-row"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "使用目标页固定m=4,p=3、w=(3,4,3,4,3,4,3)和完整40节点σ。有限输入、两份原Fraction实现/报告另行提供120项IC可行、H_SCC秩1及该w零slack行秩2；它们不是由一般引理推出的事实。类型顺序为(A,B,AB,C,AC,BC,ABC)。",
+  "roles": {
+    "customer-attraction/payoff-type-map-kernel-and-full-real-row-cone-lineality": "提供非负映射零流支持行属于linK及可行w暴露面零slack行span的维数上界。",
+    "customer-attraction/twenty-four-customer-complete-spe-cross-SCC-reversible-row": "提供具体σ、合法客户w、r/s/t三条真实行和有限精确秩证据，需闭合完整lineality维数。"
+  },
+  "explanation": "固定表的真实行r=(0,1,1/3,−1,−1/3,0,0)、s=(0,−1/2,−1/3,1/2,1/3,0,0)、t=(0,−1,−1/4,1,1/4,0,0)满足r+(2/5)s+(4/5)t=0。令流仅在三条对应原边取1、2/5、4/5，则At=0且三边均正，由源引理三行均在linK。r/s在(B,AB)两坐标的行列式为−1/6，故下界2。原完整策略审计给Γ_e·w≥0且零slack行精确秩2；引理的暴露面上界使linK包含于这个二维span，所以上界2闭合。有限图证据另给唯一二顶点SCC、H_SCC=span{s}，且r的两个端点跨SCC，所以dim linK=2>dim H_SCC=1。客户严格正不是上界所需假设；此输入恰全七型正使覆盖互异。",
+  "scope": "只为这一完整σ认证原行锥完整双向空间，未加客户正交锥，未把原报告的PASS当普遍数学证明。本轮只静态实读原输入、两个实现和两个JSON，没有执行原审计。",
+  "contribution": {
+    "result": "结合该固定表已核有限数据，一般映射零流下界与零slack秩上界精确闭合dim linK=2，并保留H_SCC秩1与跨SCC可逆r的严格分离。",
+    "remaining": "目标完整构造还要独立给全部40动作、120项真实IC的有限验证、实际BACC利润和W=OPT4=24；这些来自目标表及两份原报告，而不是空间引理本身。本边不迁移人数、不构造普遍half证书。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/收益型映射核与真实行锥的完整双向空间--引理.md",
+      "sha256": "5760552f73c12f223ab0ba0da3a56ff495272a9ff261d1348bf337a47b982631",
+      "section": "非负映射零流恰刻画完整双向空间"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/收益型映射核与真实行锥的完整双向空间--引理.md",
+      "sha256": "5760552f73c12f223ab0ba0da3a56ff495272a9ff261d1348bf337a47b982631",
+      "section": "可行客户给完整秩上界"
+    },
+    {
+      "path": "archives/customer-attraction/state/构造/二十四客户完整策略的跨强连通可逆行--构造.md",
+      "sha256": "4c99b9b2e04474139b9b3d7a513b6b3ee2f40179471e4c6942a51ad3a158f15b",
+      "section": "跨SCC的真实非负反向支付及完整维数"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/full-tree-type-map-and-review-five-primary/related/7132033a031185cfbd99/research/workspaces/customer-attraction/R-d51d7a410c12456aa5c44e84b78708d0/round2/full_tree/extra_lineality_exact.json",
+      "sha256": "8e4d65424fb40564ac7c27f3b2cf7817f6d1b26cdd9930bd3090f0830244d339"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/full-tree-type-map-and-review-five-primary/original/10ee60ff14aa3c91ad26/research/workspaces/customer-attraction/R-d51d7a410c12456aa5c44e84b78708d0/round2/full_tree/audit_full_tree.py",
+      "sha256": "72e81498a470bfbf7834c58feff4bc5b85e17588268930bdef2f3bc91229659b"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/full-tree-type-map-and-review-five-primary/original/80b22fefc5f22e40f484/research/workspaces/customer-attraction/R-d51d7a410c12456aa5c44e84b78708d0/round2/full_tree/full_tree_audit.json",
+      "sha256": "1a60da7ae7001d2f2ffabfeca84a61db62507c755be5f483487098c5c80732d3"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/full-tree-type-map-and-review-five-primary/related/adf4957ae682ced2daf2/research/workspaces/customer-attraction/R-d51d7a410c12456aa5c44e84b78708d0/round2/direct_global/audit_extra_lineality.py",
+      "sha256": "d89ad63fe628fa1e48dc57db49891c49073dc554310be2aabc4b93154acde305"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/full-tree-type-map-and-review-five-primary/related/a03d8b28ae3c57598747/research/workspaces/customer-attraction/R-d51d7a410c12456aa5c44e84b78708d0/round2/direct_global/extra_lineality_independent_audit.json",
+      "sha256": "ad342ff84014dd04f7a28df4c1a11bd14e9ba57a069d164b6824905a78902301"
+    }
+  ],
+  "reviewed_by": "Boss6 / customer-attraction-3a-3a-3534d0db4fd7c2b5",
+  "review_note": "完整实读本任务16件正文/证据（17条阅读引用），核全类型坐标、偏离→规定与入减出符号、真实完整历史续局及本边实际局部结论；一般解析证明与原有限Fraction报告分开。未运行原审计/LP/搜索，不把精确固定实例或表示等价提升为普遍half。",
+  "endpoint_pins": {
+    "customer-attraction/payoff-type-map-kernel-and-full-real-row-cone-lineality": "4a1dbc63d5fa7b1d11fb5c4f08e17e6c7254e01b018a9ad98523515604f17721",
+    "customer-attraction/twenty-four-customer-complete-spe-cross-SCC-reversible-row": "d4090fc01824812406ba6d46e60594725e40af111a251e24b6163efc288761a0"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/收益型映射核与真实行锥的完整双向空间--引理.md": "5760552f73c12f223ab0ba0da3a56ff495272a9ff261d1348bf337a47b982631",
+    "archives/customer-attraction/state/构造/二十四客户完整策略的跨强连通可逆行--构造.md": "4c99b9b2e04474139b9b3d7a513b6b3ee2f40179471e4c6942a51ad3a158f15b",
+    "archives/customer-attraction/tools/evidence/full-tree-type-map-and-review-five-primary/related/7132033a031185cfbd99/research/workspaces/customer-attraction/R-d51d7a410c12456aa5c44e84b78708d0/round2/full_tree/extra_lineality_exact.json": "8e4d65424fb40564ac7c27f3b2cf7817f6d1b26cdd9930bd3090f0830244d339",
+    "archives/customer-attraction/tools/evidence/full-tree-type-map-and-review-five-primary/original/10ee60ff14aa3c91ad26/research/workspaces/customer-attraction/R-d51d7a410c12456aa5c44e84b78708d0/round2/full_tree/audit_full_tree.py": "72e81498a470bfbf7834c58feff4bc5b85e17588268930bdef2f3bc91229659b",
+    "archives/customer-attraction/tools/evidence/full-tree-type-map-and-review-five-primary/original/80b22fefc5f22e40f484/research/workspaces/customer-attraction/R-d51d7a410c12456aa5c44e84b78708d0/round2/full_tree/full_tree_audit.json": "1a60da7ae7001d2f2ffabfeca84a61db62507c755be5f483487098c5c80732d3",
+    "archives/customer-attraction/tools/evidence/full-tree-type-map-and-review-five-primary/related/adf4957ae682ced2daf2/research/workspaces/customer-attraction/R-d51d7a410c12456aa5c44e84b78708d0/round2/direct_global/audit_extra_lineality.py": "d89ad63fe628fa1e48dc57db49891c49073dc554310be2aabc4b93154acde305",
+    "archives/customer-attraction/tools/evidence/full-tree-type-map-and-review-five-primary/related/a03d8b28ae3c57598747/research/workspaces/customer-attraction/R-d51d7a410c12456aa5c44e84b78708d0/round2/direct_global/extra_lineality_independent_audit.json": "ad342ff84014dd04f7a28df4c1a11bd14e9ba57a069d164b6824905a78902301"
+  },
+  "review_digest": "80527347d3fb1693ace95e49668477d80e125d159593fb5f0273ac95644ff9a8"
+}
