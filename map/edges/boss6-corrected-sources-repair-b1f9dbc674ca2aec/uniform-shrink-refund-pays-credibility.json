@@ -1,0 +1,64 @@
+{
+  "edge_id": "ca-tail-maxima35-uniform-shrink-refund-pays-credibility",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "B10-UNIFORM-REGRET-REFUND-v1"
+  ],
+  "target_ids": [
+    "B10-UNIFORM-CONTRACTION-INTERFACE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "原孩子策略σ为固定背景b=b₀+1_A下的完整纯SPE。有限单位客户共同目录，固定单位根 A 和旧背景 b₀，所有尾角色（含此前已行动尾角色）在全部有序历史和动作上同一质量 0<λ≤1。每个有序历史的规定动作在共同核心外避开正固定背景 b=b₀+1_A。固定叶阈值 t≥0。",
+  "roles": {
+    "B10-UNIFORM-REGRET-REFUND-v1": "给每个真实历史的规定税上界、共同核心精确抵消和同叶总返还。",
+    "B10-UNIFORM-CONTRACTION-INTERFACE-v1": "在 b=b₀+1_A 的完整原孩子得到统一缩尾可信性，并用固定实际叶的谱估计、同一查询池和一次返还闭合阈值与端点。"
+  },
+  "explanation": "以下全部收缩均限 0<λ≤1。原完整IC给新 regret≤规定叶上的税 k_i(z_h)。共同核心的每客户全尾负载为 n，在规定与偏离枝的税精确相同，可再减掉核心税。条件 (A) 令所有规定动作的核外税为零，故每个真实历史 regret=0，同一整棵孩子树保持SPE。对固定实际叶，Σ_i k_i 恰是背景总返还。将 b 的背景利润按单位根和旧负载拆开，得到 Γ+ΔB_old+V(λ)=V(1)，这是一份同叶预算。在 (A) 的实际叶，非核且 k_x>0 的客户均有 b₀ₓ=1_A(x)=0。置 a_j=Σ_{x∈B_j∖C}1/k_x，u_j=a_j+K(1)，K(λ)=Σ_{x∈C}1/(b_x+nλ)。t≤min u 时取 λ=1。t>min u、a_*>0 时，a_*/λ+K(λ) 在(0,1]上连续严格递减，由λ↓0时∞降到λ=1时min u，故等于t的唯一0<λ<1 使所有 a_j/λ+K(λ)≥t。设 H 是逐非核心客户差 1/(1+λk_x)−1/(1+k_x) 的总和加 K(λ)−K(1)。逐客户差对固定背景单调递减，任一合法查询只取相应子和，故 0≤ΔJ_T≤ΔQ_T≤H。又该非核心差至多 [k_x/(1+k_x)^2](1/λ−1)，所以 S≤a_* 给 H≤a_*(1/λ−1)+K(λ)−K(1)=t−min u≤Σ_j(t−u_j)_+。密度过线给 V(λ)≥tnλ，结合一次守恒即得利润界。若 a_*=0，某实际题恰为 C。任何合法含核外客户的主题都能在核心收益相同的真实偏离中严格增益，所以整个目录都是 C。高于 K(1) 的阈值仅在 t<K(0) 时可达，且此时唯一0<λ<1给 H=t−K(1)。C=∅ 时仅 t=0 能达。",
+  "scope": "任意合法单位旧前缀或明确冻结的非负整数旧背景，全部规定有序历史满足 (A)。统一缩率保完整孩子策略，阈值与查询池只量化指定的同一实际叶及全部合法查询。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/统一缩尾的规定信用与非核心精确保真--定理.md",
+      "sha256": "fda046b6f4b90a507e3e564e8b3b8b1e8c0769a928b53865a2b52189051c1d39",
+      "section": "共同核心及精确保SPE的充分条件"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/统一缩尾的规定信用与非核心精确保真--定理.md",
+      "sha256": "fda046b6f4b90a507e3e564e8b3b8b1e8c0769a928b53865a2b52189051c1d39",
+      "section": "同一叶的一份预算，不是每节点领一次"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/避背景完整策略的统一缩尾与共同查询信用--定理.md",
+      "sha256": "3a7d93a6a1f09610751631f78b5e74f5fd3174c2cf3b5b8ab44651965f27a334",
+      "section": "命题一：可信性对每个正统一缩率成立"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/避背景完整策略的统一缩尾与共同查询信用--定理.md",
+      "sha256": "3a7d93a6a1f09610751631f78b5e74f5fd3174c2cf3b5b8ab44651965f27a334",
+      "section": "同一覆盖支撑与一次利润守恒"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/避背景完整策略的统一缩尾与共同查询信用--定理.md",
+      "sha256": "3a7d93a6a1f09610751631f78b5e74f5fd3174c2cf3b5b8ab44651965f27a334",
+      "section": "命题二：实际谱把共同查询池装入原缺口"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/避背景完整策略的统一缩尾与共同查询信用--定理.md",
+      "sha256": "3a7d93a6a1f09610751631f78b5e74f5fd3174c2cf3b5b8ab44651965f27a334",
+      "section": "a_*=0的退化端点"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本次完整重读源税/信用定理与目标统一缩尾正文，逐式核对全n尾（含已行动尾）同缩、每条有序历史及合法偏离、共同核心税相消、同一实际叶一次退款和共池信用；将旧边的正质量范围显式收紧为0<λ≤1，并将高阈值及纯核心可达解限定为唯一0<λ<1，λ=1低阈值分支无需谱条件。其余18项按原SHA继承Boss6独立实读审查，不重跑成熟证据。 Boss6最终核对补显原完整SPE前提，并在whole_result分列空共同核心的t=0端点，避免把非空核心K(0)不可达句误用到零函数。",
+  "whole_result": "同一原完整纯SPE孩子对每个统一0<λ≤1保SPE。低阈值t≤min_j u_j取λ=1，无需谱条件。高阈值t>min_j u_j下a_*>0且S≤a_*时，唯一0<λ<1满足a_*/λ+K(λ)=t，给所有尾密度≥t，且0≤ΔJ_T≤ΔQ_T≤H≤Σ_j(t−u_j)_+、Γ+ΔB_old+tnλ≤V(1)。a_*=0迫全目录纯共同核心；C非空时，高阈值仅K(1)<t<K(0)有唯一0<λ<1解，t≥K(0)无正质量解。C为空时仅t=0可达，可取λ=1。",
+  "endpoint_pins": {
+    "B10-UNIFORM-CONTRACTION-INTERFACE-v1": "4c9889882a360ad0ab449306ee07ac787c1120403c7ba21ed34563c1830deb1c",
+    "B10-UNIFORM-REGRET-REFUND-v1": "ae488c648d0057bb7101c3433bcfab0708dd0d54696a4044032add52d6fadcd6"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/统一缩尾的规定信用与非核心精确保真--定理.md": "fda046b6f4b90a507e3e564e8b3b8b1e8c0769a928b53865a2b52189051c1d39",
+    "archives/customer-attraction/state/定理/避背景完整策略的统一缩尾与共同查询信用--定理.md": "3a7d93a6a1f09610751631f78b5e74f5fd3174c2cf3b5b8ab44651965f27a334"
+  },
+  "review_digest": "01cb3f7c5f757cb578941cedfab9f4d9c5fe0face9e941ba7e07ebe0047a28e4"
+}

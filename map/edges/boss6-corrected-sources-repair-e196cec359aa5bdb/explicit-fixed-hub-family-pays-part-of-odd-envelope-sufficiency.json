@@ -1,0 +1,46 @@
+{
+  "edge_id": "wc-stage3a-explicit-fixed-hub-family-pays-part-of-odd-envelope-sufficiency",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/odd-ring-uniform-fixed-hub-amplification-family"
+  ],
+  "target_ids": [
+    "WC-R3-ODD-RING-ENVELOPE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "d≥4096、奇3≤m≤d，取显式正N/M/P/Q、权闭环及G≥16/e；目标比较同一严格两测试系统。",
+  "roles": {
+    "weighted-congestion/odd-ring-uniform-fixed-hub-amplification-family": "给具体重置群与普通群的同一组严格参数，适用任意所列m。",
+    "WC-R3-ODD-RING-ENVELOPE-v1": "给正系数严格证书可行的精确倍率区间1<α<T_d。"
+  },
+  "explanation": "本族的q_i=a_i u_i^{k_i},p_i=b_i u_{i+1}^d正好是包络正文的A_i,B_i；逐边两个strict margin与环积G同式。α_{d,m}=d(16d)^(−1/(2m))/(8ceil ln d)处严格通过，且对任何更小α>1，原当前成本−α·目标成本的保守两测试仍严格。必要方向再由包络正文的权闭环消去与F_{k,1}因子界得到α_{d,m}<T_d。",
+  "scope": "包络充分方向的显式受限子族，同时给固定m增长；并不从非存在结论倒推任意游戏通过两测试。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/构造/奇数枢纽群组的显式均匀放大族--构造.md",
+      "sha256": "ea945b9122367a32b6b2386df6e75628e446e54cacfa31f3b3c92054698c9e4f"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+      "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+      "section": "4. The exact necessary envelope"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "定向承接旧done并核对当前登记：仅WC-R3-ODD-RING-ENVELOPE-v1由version 1升2，在相同正文SHA增补§2/§3/§6定位，模型、陈述、量词、前提与正文均未改。本轮实读显式均匀族全文与包络§2–6，核q_i=A_i、p_i=B_i对应、真实含自身的新负载、全部正N/M/P/Q、权闭环Πx_i=Πt_i、G≥16/e>1及奇环全状态覆盖。保留原contribution：仅d≥4096、奇3≤m≤d、每个1<α≤α_{d,m}的受限充分族；完整包络的任意α<T_d纯d次构造/必要性及actual拓扑真实均衡上界由各自独立证明承担。",
+  "contribution": {
+    "result": "对所有d≥4096及奇3≤m≤d，每个1<α≤α_{d,m}均有正系数严格两测试证书。",
+    "remaining": "完整包络还须对每个α<T_d逼近标量最大值、支付任意剩余倍率的纯d次构造及排除α≥T_d，固定m显式族不承担。"
+  },
+  "endpoint_pins": {
+    "WC-R3-ODD-RING-ENVELOPE-v1": "202eaf2e5e707f1bece41a4dedd4e75d3ca43a9cc503c556fa214e265951c610",
+    "weighted-congestion/odd-ring-uniform-fixed-hub-amplification-family": "a4be2e2466ca75ae794d5a347d8677c3d375f0e584fa0141f71c0cb5814c8feb"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/构造/奇数枢纽群组的显式均匀放大族--构造.md": "ea945b9122367a32b6b2386df6e75628e446e54cacfa31f3b3c92054698c9e4f",
+    "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055"
+  },
+  "review_digest": "f835fe54721b78e4aa9ecab3d64d92d69e94bf0048a709a1c811491c43d3e70d"
+}
