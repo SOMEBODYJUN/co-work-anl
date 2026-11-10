@@ -1,0 +1,47 @@
+{
+  "edge_id": "ca-r34-collision-free-policy-and-fresh-fill-refute-pruning",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/collision-free-family-welfare-obstruction"
+  ],
+  "target_ids": [
+    "customer-attraction/maximal-subcatalog-pruning-all-population-welfare-transfer-boundary"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "k≥1、m=k+1，同一客户集、同一OPT，原目录保A_i,B_i,C_i,D，包含极大子目录恰去掉C_i。",
+  "roles": {
+    "customer-attraction/collision-free-family-welfare-obstruction": "提供每个k的全目录完整有序纯SPE，实际C₁,…,C_k,D并仅覆盖2k+2。",
+    "customer-attraction/maximal-subcatalog-pruning-all-population-welfare-transfer-boundary": "在极大子目录A/B/D完整分类并达到全部终局，严格反驳动态最小福利迁移。"
+  },
+  "explanation": "原目录由碰撞自由构造实现W=2k+2。极大侧若b已覆盖且余位等于未触组数，当前fresh A可保证独享3，已触A/B、fresh B和D的上界分别2,3/2,5/2,2；递归迫每未触组恰一A。若仅一个旧B_i且还多一位，先填fresh A后唯一A_i。b首次被覆盖前历史只有不同A，改D可保2，重复旧A至多3/2，因此终局只能全A加D或B_i。反向构造规定旧B_i时，把fresh A_j偏离孩子的惩罚组改为新j，从而偏离利润恰2，所有有序孩子可独立拼接；根D、各B_i均可最优并达到全部终局。于是L(max)=3k+1，L(full)≤2k+2。",
+  "scope": "全体k的极大侧分类和原目录存在性；k≥2严格，k=1两项所展示的低值相等；未求全k的L(full)。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/极大子目录剪枝的全人数福利迁移边界--障碍.md",
+      "sha256": "a6182834728ef4ddd69451d7fd97bb2dce678ffef1c8acd3652cdb057d3ee344"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/三人碰撞自由族福利障碍--反例.md",
+      "sha256": "588764de045e2a55362773dc9b83d3f10cadb47e22d8feeac0c4e342cc4836ad"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "保留极大侧全称与全目录存在量词，核对反驳的不等式方向和达到性惩罚换组。",
+  "whole_result": "极大侧每份SPE福利为3k+1或3k+2且两值均可实现；k≥2有L(full)≤2k+2<3k+1=L(max)，否定L(full)≥L(max)。",
+  "endpoint_pins": {
+    "customer-attraction/collision-free-family-welfare-obstruction": "9fbfbcfd4a941c4d6f0bf5de7788ff53f90c8f8c7ab0b505effef487d4980d6a",
+    "customer-attraction/maximal-subcatalog-pruning-all-population-welfare-transfer-boundary": "bc58e72d5ffca79c8d4fbf3eb21accc032454a9335ec8743aff2269b3cd6c248"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/障碍/极大子目录剪枝的全人数福利迁移边界--障碍.md": "a6182834728ef4ddd69451d7fd97bb2dce678ffef1c8acd3652cdb057d3ee344",
+    "archives/customer-attraction/state/反例/三人碰撞自由族福利障碍--反例.md": "588764de045e2a55362773dc9b83d3f10cadb47e22d8feeac0c4e342cc4836ad"
+  },
+  "review_digest": "991ae64c7cbf3bbb91adc23668e708da98919db54d59d1a76cd77f86d08a71ec"
+}

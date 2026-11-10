@@ -1,0 +1,68 @@
+{
+  "edge_id": "ca-r34-terminal-tax-rows-feed-six-player-supports",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/last-player-tax-diagnostic",
+    "CA-TWO-REMAINING-TAX"
+  ],
+  "target_ids": [
+    "customer-attraction/six-player-maxroot-two-copy-four-support-certificate-replay"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "六人原同一完整σ的P0=(M,A,B,C,D,E)、P1=(M,E,Q,R,S,T)、P2=(M,A,E,U,V,Z)，固定任意六个带索引比较槽。",
+  "roles": {
+    "customer-attraction/last-player-tax-diagnostic": "提供仅需实际末BR的前五槽税加末位利润界。",
+    "CA-TWO-REMAINING-TAX": "提供固定任意合法背景的末两人剩余利润税，允许任意可重复比较二元组。",
+    "customer-attraction/six-player-maxroot-two-copy-four-support-certificate-replay": "176行支持图中的三条lastO和三条pairO由两源共同提供。"
+  },
+  "explanation": "每一枝在前五位负载c下的末位是真BR。对比较并集O使用末位税逐客户不等式，得6u_last+Σc/(1+c)−O≥0；无需把强制的前五位当最优。前四位负载b后两人均真实，在每个15个无序比较索引对上用固定背景两人界H=u_5+u_6+Σ_{x∈倒二主题}1/[(b+1)(b+2)]。并集每客户任选覆盖它的一槽；含该槽五对各贡献至少1/(b+1)，故Σ_{x∈O}1/(b+1)≤3H，再补背景税得pairO。各枝带−O的两行共六行，证书其总权恰1。",
+  "scope": "对任意六主题并集，包括空和重复标签；只生成六个非负行。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/六人最大根双复制四条支持线的精确核验--计算.md",
+      "sha256": "1450b705837c12f0f52bf8933187900ea61030069fe72450cc2987b31f5210e2"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+      "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/maxroot-four-support-certificates-boss3/original/root_lines_certificate_v2.json",
+      "sha256": "baa9787a6a6eb005c88511f79096fd6423e5a216704383c2c3cb19fd4c99a21c"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/maxroot-four-support-certificates-boss3/original/verify_root_lines.py",
+      "sha256": "cc3e62a787e382d5c5cba769e9dbfe6d53684df0c825567618eed089fcb2772b"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/末位收益税诊断--引理.md",
+      "sha256": "3e796de1ed6f116a14f2f4f95eaa5feb933ccf393d036ea476a4f8fd03227ac8"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md",
+      "sha256": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对两种背景分别计前五/前四位，核对15对中每客户五次及强制选择者的合法范围。",
+  "contribution": {
+    "result": "三枝的lastO、pairO六条非负真实行和其共享−O标度成立。",
+    "remaining": "四条支持界仍需12容量、2复制、156安全行、完整8192位型余项、原根r≥强制M收益。"
+  },
+  "endpoint_pins": {
+    "CA-TWO-REMAINING-TAX": "eb63a8d1cd934879f5f7f25f633b4bf753973f405a7b8db91bed63f633de7d15",
+    "customer-attraction/last-player-tax-diagnostic": "5dc7e7bb00dfd3c9eaf66688c7c9faaaa0191be40e6edda7ee3d6d7b2a3dbd9d",
+    "customer-attraction/six-player-maxroot-two-copy-four-support-certificate-replay": "a3642ebf9f4441785068b9d3691e30b425e7454a0501beea43df1479d17745c1"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/六人最大根双复制四条支持线的精确核验--计算.md": "1450b705837c12f0f52bf8933187900ea61030069fe72450cc2987b31f5210e2",
+    "archives/customer-attraction/state/引理/固定背景两人税界--引理.md": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+    "archives/customer-attraction/tools/evidence/maxroot-four-support-certificates-boss3/original/root_lines_certificate_v2.json": "baa9787a6a6eb005c88511f79096fd6423e5a216704383c2c3cb19fd4c99a21c",
+    "archives/customer-attraction/tools/evidence/maxroot-four-support-certificates-boss3/original/verify_root_lines.py": "cc3e62a787e382d5c5cba769e9dbfe6d53684df0c825567618eed089fcb2772b",
+    "archives/customer-attraction/state/引理/末位收益税诊断--引理.md": "3e796de1ed6f116a14f2f4f95eaa5feb933ccf393d036ea476a4f8fd03227ac8",
+    "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee"
+  },
+  "review_digest": "5ae45295e4a0f4436b941553f7850d15433bbd27d49a82eddc4a1c17fb94cac1"
+}

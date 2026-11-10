@@ -1,0 +1,56 @@
+{
+  "edge_id": "ca-r34-one-follower-pays-deleted-tail-gap",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/one-follower-decorrelation"
+  ],
+  "target_ids": [
+    "customer-attraction/complete-terminal-push-own-discount-and-paid-tail-reserve"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一倒二合法有序前缀，A和A′独立同p，末位沿同一σ真实最佳回复。",
+  "roles": {
+    "customer-attraction/one-follower-decorrelation": "真实末位逐A对独立A′的合法回复查询产生期望非负松弛。",
+    "customer-attraction/complete-terminal-push-own-discount-and-paid-tail-reserve": "完整推送D−P保强制槽，并还需实际末列与重选储备。"
+  },
+  "explanation": "去掉倒二强制槽后C=E U_b(A,ρ(A′))，实际强制收益D=E U_b(A,ρ(A))，由双人对称稀释核得D−C=L≥0。重新加入强制槽，C−P=E_A Σ_(x∈A)q_x/[c_x(Z(A))(c_x(Z(A))+1)]。倒二终局在这些x上c=b_x+1+1_{ρ(A)}，分别代入两种会员状态得C−P=Σ_x w_x q_x[q_x−2η_x/(b_x+3)]=V+Q。故D−P=L+V+Q，完全不需把真实后继集合当作单个静态竞争方。",
+  "scope": "对倒二完整推送的精确正差；末位额外折扣与actual末列仍用单独一位计算。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/完整终局推送的自身折扣与末两位储备--资源.md",
+      "sha256": "b35f22d2e7a802f8b4aa87f503bfe2690273a37bc414932d428d3ad728954bfa"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/完整终局查询的信用恒等式与末两位付款--引理.md",
+      "sha256": "4f65f98fc0f48132fa7b1160e646f7439f2331f25d0b4b6d95b7471edd8ae407"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/单后继去相关恒等式--引理.md",
+      "sha256": "abc752a9c2d642eea7e6dc16500e24e9c7436119bb883441b86ecc43eb9ce365"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/末位真实回复推送的锐曲率与双分支式--引理.md",
+      "sha256": "4519ec1695f925eaf995c9dc0dd4d155513a81ed46047fedbd948a00e3de1340",
+      "section": "精确非负分解"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核实删槽C、保槽P与真实D三个不同量；对任意p、平局成立。",
+  "contribution": {
+    "result": "导出倒二精确等式D−P=L+V+Q及三项非负。",
+    "remaining": "全目标还须单独代入末位伯努利负载并与实际末列取较强折扣。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/complete-terminal-push-own-discount-and-paid-tail-reserve": "7c682339f08a67d9ec2318753c645c30ff0249a9515ddd12f325ec9fd981daeb",
+    "customer-attraction/one-follower-decorrelation": "4a98506f257d8ed01e17514095766a3f18a22e1ec27a932760efccc4ffcd2f05"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/完整终局推送的自身折扣与末两位储备--资源.md": "b35f22d2e7a802f8b4aa87f503bfe2690273a37bc414932d428d3ad728954bfa",
+    "archives/customer-attraction/state/引理/完整终局查询的信用恒等式与末两位付款--引理.md": "4f65f98fc0f48132fa7b1160e646f7439f2331f25d0b4b6d95b7471edd8ae407",
+    "archives/customer-attraction/state/引理/单后继去相关恒等式--引理.md": "abc752a9c2d642eea7e6dc16500e24e9c7436119bb883441b86ecc43eb9ce365",
+    "archives/customer-attraction/state/引理/末位真实回复推送的锐曲率与双分支式--引理.md": "4519ec1695f925eaf995c9dc0dd4d155513a81ed46047fedbd948a00e3de1340"
+  },
+  "review_digest": "ed5b025fdb53515ac1d2a260f53cc3bc0c24f08b92bd51fae7e6347d14b1be15"
+}

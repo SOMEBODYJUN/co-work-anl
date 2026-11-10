@@ -1,0 +1,56 @@
+{
+  "edge_id": "ca-r34-last-br-supplies-full-comparison-prefix-row",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/last-player-tax-diagnostic"
+  ],
+  "target_ids": [
+    "M-70196281d2e04bbcb2bcc3a3a4f8f6ff"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意完整有序历史的实际末位及同长度m的任意合法比较主题元组；实际前m−1步负载b。",
+  "roles": {
+    "customer-attraction/last-player-tax-diagnostic": "只需实际最后一人真实BR，给每个合法比较题的价格上界。",
+    "M-70196281d2e04bbcb2bcc3a3a4f8f6ff": "其全比较集前缀保底中的H_m正是这些逐题松弛的总和。"
+  },
+  "explanation": "逐比较槽T_j用真实末位BR，u_m−Σ_{x∈T_j}1/(1+b_x)≥0。相加m次得H_m=m u_m−Σ_x d_x/(1+b_x)≥0，和模板定义r_m=1完全一致。在三人证书中它是G之外唯一非零权项(3/5)，四人权为924/2251。该行不必假设比较组先达到OPT。",
+  "scope": "真实末位的一条整行；对任意空或重复比较主题适用。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/末位收益税诊断--引理.md",
+      "sha256": "3e796de1ed6f116a14f2f4f95eaa5feb933ccf393d036ea476a4f8fd03227ac8"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md",
+      "sha256": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/末菜单系数模板的发现与缩放证书--计算.md",
+      "sha256": "76e62b4db7e9428a89810351343a6264e687c711500f5f5cae33d85152963007",
+      "section": "第二版：缩放G，并加全比较集前缀保底"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/末菜单系数模板的发现与缩放证书--计算.md",
+      "sha256": "76e62b4db7e9428a89810351343a6264e687c711500f5f5cae33d85152963007",
+      "section": "逐类型矩形与六角点"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对H_m的量词、分母和两个人数的非零系数，保早期H_i不同于末位精确BR。",
+  "contribution": {
+    "result": "直接提供m3/m4证书共同使用的非负H_m行。",
+    "remaining": "还需真实末菜单G、四人其余非零行及全部逐类型证书余量才能得到完整半覆盖。"
+  },
+  "endpoint_pins": {
+    "M-70196281d2e04bbcb2bcc3a3a4f8f6ff": "a5fe96cb628c87fddeeaa7f93a9cae472e54024e60c2141b6f67676356d5217d",
+    "customer-attraction/last-player-tax-diagnostic": "5dc7e7bb00dfd3c9eaf66688c7c9faaaa0191be40e6edda7ee3d6d7b2a3dbd9d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/末位收益税诊断--引理.md": "3e796de1ed6f116a14f2f4f95eaa5feb933ccf393d036ea476a4f8fd03227ac8",
+    "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee",
+    "archives/customer-attraction/state/计算/末菜单系数模板的发现与缩放证书--计算.md": "76e62b4db7e9428a89810351343a6264e687c711500f5f5cae33d85152963007"
+  },
+  "review_digest": "2ec79d3b7ec3c8e604466261873420570b5ef124f7bd47591d273790fc67edfd"
+}

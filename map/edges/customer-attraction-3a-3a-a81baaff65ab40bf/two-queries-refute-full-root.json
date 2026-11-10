@@ -1,0 +1,59 @@
+{
+  "edge_id": "ca-r34-two-queries-refute-full-root",
+  "kind": "refutes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/bank-full-root-two-query-minimal-separation"
+  ],
+  "target_ids": [
+    "B10-MIXED-FULL-ROOT-MENU-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一指定银行完整纯SPE，m≥4，查询主题(1,0)、(2,1)各半，查询实现与任意列Q独立。",
+  "roles": {
+    "customer-attraction/bank-full-root-two-query-minimal-separation": "提供两主题固定独立行分布，对每个合法完整真实根列有同一严格下界。",
+    "B10-MIXED-FULL-ROOT-MENU-v1": "要求某个真实列混合Q的最大查询不超过u。"
+  },
+  "explanation": "固定p₂的经济项最小(m+1)/(2m)恰在经济根1、2，银行项最小5/6恰在银行根0、1。故每列至少4/3+1/(2m)，恰四列取等。任意Q的最大行价至少p₂ᵀKQ≥该值，减实际根收益是(2m+1)(m−3)/[6m(m−1)]>0。p₂两支持列也达到下界，故同分布对角推送亦超u，虽p₂在m≥4并非对称NE。",
+  "scope": "独立于精确minimax值的完整反驳；单点总可选同主题列，最小严格坏支撑恰二。m=3等号，m=2未定义本p₂。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/银行完整根列的两查询最小分离--反例.md",
+      "sha256": "de029690ad3bc92a323a87536cbcdae41cae202ffaa8088a6a57fa6db652c04b",
+      "section": "单位模型和全部真实根列"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/笛卡尔银行完整根菜单的低值自洽分布失败--反例.md",
+      "sha256": "e66e762af835f21575d7799a16937aee608e87706f75bebb3994cec1427562b0",
+      "section": "真正完整SPE的银行输入与根收益"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/minimal-support-and-uniform-time-primary/bank-two-query-exact.json",
+      "sha256": "072a3df42b628bd7671ceabd7df0f50f5a368fd43a5944c7bb264b420b333fdd"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/银行完整根列的两查询最小分离--反例.md",
+      "sha256": "de029690ad3bc92a323a87536cbcdae41cae202ffaa8088a6a57fa6db652c04b",
+      "section": "两query分布对所有根列的下界和达到列"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/完整真实菜单的条件对偶与旧实例账本--资料.md",
+      "sha256": "cb38301cf318c148ed983e9af20dbfa8de5f036423b6925027e15812452fba80"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "独立核对所有经济/银行列类别，区分固定p₂最小值、p₂ᵀKp₂、Mfull和对称NE。",
+  "whole_result": "任意Q均被固定两点查询严格分离，否定全称FM。",
+  "endpoint_pins": {
+    "B10-MIXED-FULL-ROOT-MENU-v1": "3b89ee56a1837c0fba0ec70d03fffe9f9327a19e7bdb377c4135d3f5a980b512",
+    "customer-attraction/bank-full-root-two-query-minimal-separation": "5a8e49e23ce5ce52304ffd2062f7d70a22b3f9a0e1e9952cd3ad166f357977f4"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/银行完整根列的两查询最小分离--反例.md": "de029690ad3bc92a323a87536cbcdae41cae202ffaa8088a6a57fa6db652c04b",
+    "archives/customer-attraction/state/反例/笛卡尔银行完整根菜单的低值自洽分布失败--反例.md": "e66e762af835f21575d7799a16937aee608e87706f75bebb3994cec1427562b0",
+    "archives/customer-attraction/tools/evidence/minimal-support-and-uniform-time-primary/bank-two-query-exact.json": "072a3df42b628bd7671ceabd7df0f50f5a368fd43a5944c7bb264b420b333fdd",
+    "archives/customer-attraction/state/资料/完整真实菜单的条件对偶与旧实例账本--资料.md": "cb38301cf318c148ed983e9af20dbfa8de5f036423b6925027e15812452fba80"
+  },
+  "review_digest": "93b39864ce30479f36407c5afb2586c722c541dacc57f24661cf602ecb6b1d3a"
+}

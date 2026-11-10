@@ -1,0 +1,52 @@
+{
+  "edge_id": "ca-r34-exact-child-menu-pays-terminal-bank",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "customer-attraction/e7-old-player-income-envelope-bank-terminal-payment-and-two-edge-failure"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意合法有限前缀b，恰一位剩余者，任意共同目录和任意末位平局。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "识别单人剩余子博弈全部可信终局恰为该节点的所有末位BR。",
+    "customer-attraction/e7-old-player-income-envelope-bank-terminal-payment-and-two-edge-failure": "以这些终局取旧人总收入下包络，并在所有合法末步边给两倍门槛支付。"
+  },
+  "explanation": "由全集递推，R(b)只保最佳末题，M是共同最佳收益；强制任一合法A后的满历史R只有该终局。若n(T)是新客户覆盖，则选T的末位旧客户租金为M−n(T)，因此R内旧人总收入最小为W(b)+n_min−M。V=W(b)+n_max，且n_max≤M、n_min≥0，故Ψ=n_max−n_min+M≤2M；满历史旧人等于全部人，V=E，Ψ=0。",
+  "scope": "只对r=1的全部合法强制行动，r≥2没有这一支付结论。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/旧人银行下包络的末步付款与两条实际边缺口--障碍.md",
+      "sha256": "87efdd9c75d420091301c6f3b86ee39b22d29724b3a13d9e198807989fa69659"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+      "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "极值取全部旧人总收入而非各自极小之和；空主题和零覆盖自动兼容。",
+  "whole_result": "对每个合法r=1状态，得V、E、Ψ的精确公式和任意合法末步边的Ψ差≤2M。",
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "customer-attraction/e7-old-player-income-envelope-bank-terminal-payment-and-two-edge-failure": "46dff3680518f577e8880629fde3c1dfb9dce984403f6327527c6f19854aa5c5"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/旧人银行下包络的末步付款与两条实际边缺口--障碍.md": "87efdd9c75d420091301c6f3b86ee39b22d29724b3a13d9e198807989fa69659",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/引理/固定背景两人税界--引理.md": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+  },
+  "review_digest": "bc37f703d74c2a92d3101106b25ea686e93df61151266309d67e8678483cc1fe"
+}

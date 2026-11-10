@@ -1,0 +1,62 @@
+{
+  "edge_id": "ca-r34-true-last-reply-excludes-floor-candidate",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "customer-attraction/r29-floor-relaxation-boundary"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "指定四人五标签、四组各两私客与一名中心共享客户，候选路径(0,0,0,1)。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "真实最后一人孩子必须在末位BR集合内，倒二的真实门槛使用该集合而非任意补全。",
+    "customer-attraction/r29-floor-relaxation-boundary": "稳健前缀地板和静态多一槽差虽成立，但在所有末位平局下仍违反真实倒二IC。"
+  },
+  "explanation": "在前缀0^i，强制中心的最坏值1，强制叶j的最坏值2/(4−i)+1/4，均可让所有后续重复该强制主题达到；故逐位地板(1,1,5/4,9/4)。实际收益(5/4,5/4,5/4,9/4)和W=6。四静态槽若中心用k次、叶j用n_j次，均匀价为(2/5)Σ_j[1/(1+n_j)+1/(1+k+n_j)]。固定k由离散凸性在n_j相差至多1时最小；k=0,…,4的最小价分别8/5,8/5,5/3,89/50,48/25，与70个多重集的精确枚举相同。倒二在(0,0)强制叶2后，末位真正BR恰1,3,4，任一回复均使倒二获7/3；真实门槛至少7/3>5/4。",
+  "scope": "固定必要条件松弛见证，聚合静态差2/5，真实倒二违规13/12；从未作为SPE可行点。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/R29稳健地板松弛的必要条件失效--计算.md",
+      "sha256": "97c3b07e5ed795363500020f81527ff9add3e0b28887e07fb5353d3f980476ba",
+      "section": "稳健地板与静态查询值"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/R29稳健地板松弛的必要条件失效--计算.md",
+      "sha256": "97c3b07e5ed795363500020f81527ff9add3e0b28887e07fb5353d3f980476ba"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R29-floor-relaxation-20261031/source/floor_relaxation_audit.json",
+      "sha256": "652e6087a0a3110c71c961afa6036b2d8d78868165a10b06471fd75bd8cae0cc"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R29-floor-relaxation-20261031/replay/verification.stdout.json",
+      "sha256": "23ab957f7c6be7d0b21f08f0779527ff50a324e5815353d46394bb9e85161887"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "直接核对所有候选前缀地板和离散均匀查询；保对所有末位BR的量词。",
+  "whole_result": "同一固定候选满足全部指定必要地板和8/5静态下界，却因真实倒二IC不可能扩成完整SPE。",
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "customer-attraction/r29-floor-relaxation-boundary": "16576b58a45e6190327936192a4fa7fa24380fd9faff190148366e65a3e0a806"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/计算/R29稳健地板松弛的必要条件失效--计算.md": "97c3b07e5ed795363500020f81527ff9add3e0b28887e07fb5353d3f980476ba",
+    "archives/customer-attraction/tools/evidence/R29-floor-relaxation-20261031/source/floor_relaxation_audit.json": "652e6087a0a3110c71c961afa6036b2d8d78868165a10b06471fd75bd8cae0cc",
+    "archives/customer-attraction/tools/evidence/R29-floor-relaxation-20261031/replay/verification.stdout.json": "23ab957f7c6be7d0b21f08f0779527ff50a324e5815353d46394bb9e85161887",
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+  },
+  "review_digest": "178c5edcea2caaf89958549f31e3ea5363b5910ef93fcc3fd2c4f1c739307b65"
+}
