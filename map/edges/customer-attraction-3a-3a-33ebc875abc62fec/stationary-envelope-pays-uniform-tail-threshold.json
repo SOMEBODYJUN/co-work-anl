@@ -1,49 +1,57 @@
 {
-  "edge_id": "cag-33eb-stationary-envelope-pays-uniform-tail-threshold",
+  "edge_id": "cag-33eb-true-label-transport-pays-uniform-tail-threshold",
   "kind": "implies",
+  "status": "accepted",
   "source_ids": [
-    "WS-STATIONARY-SCALAR-ENVELOPE-v1"
+    "M-47e0aea72b4644a2b7bf22dab9f6b593"
   ],
   "target_ids": [
     "M-bed601917aa54ca19d391ab59c6acbd7"
   ],
+  "premises_mode": "all",
   "relation_mode": "conditional",
-  "conditions": "WS的同一有限驻留根菜单及合法包含路由；r≥2、n=r−1。对每个所分析的真实根分支，根收益均≤同一u，且每名真实后继收益均≥同一t≥0。完整SPE的根IC可以提供前一条件，后一统一尾下界必须独立证明。",
+  "conditions": "仅同一完整纯SPE、同一合法有序源h、余r=n+1≥2及全目录原标签真实后继核；旧背景逐客户为合法非负整数负载，零分子份额取0。额外假设对每个原标签T强制后，沿同一σ的每名真实后继收益均≥同一t≥0；该统一尾下界必须独立证明。任取原标签核驻留π，不要求不可约或全正。",
   "roles": {
-    "WS-STATIONARY-SCALAR-ENVELOPE-v1": "聚合所有客户给P≤M_rD，M_r=floor((r+1)²/4)。",
-    "M-bed601917aa54ca19d391ab59c6acbd7": "在统一根上界/尾下界条件下把驻留平均转换为根/尾比例。"
+    "M-47e0aea72b4644a2b7bf22dab9f6b593": "在原标签真实核上提供u≥κ_r EπJ(T)/n，κ_r=n/(n+floor(n²/4))。",
+    "M-bed601917aa54ca19d391ab59c6acbd7": "接收目标统一尾比例在真实原标签S=0、合法整数背景子域的条件性局部结论。"
   },
-  "whole_result": "在上述完整条件下得到目标全部比例u≥(r−1)t/(floor((r+1)²/4)−1)，不声称任意SPE自动具有所需统一t。",
-  "explanation": "WS逐客户S_x≥0、b_x≥0，故P≤M_rD。D为驻留平均根收益≤u，P−D为驻留平均n个真后继总收益≥nt，所以nt≤P−D≤(M_r−1)D≤(M_r−1)u。r≥2使M_r−1>0，除后得到目标。此推导适用于包含容器路由S可能为正的菜单，比全目录恒等路由ST专门化更广；不能反向从统一t结果恢复按分支变化的EJ运输，也不能将系数提高到1。",
-  "scope": "真实尾收益条件推论的完整条件方向；不含统一尾下界的存在性、全局福利付款或完整SPE锐性。",
+  "contribution": {
+    "result": "在上述原标签真实核S=0子域，若所有原标签分支的每名真后继均≥t，则u≥κ_r t=(r−1)t/(floor((r+1)²/4)−1)。",
+    "remaining": "目标M-bed还允许一般整数包含容器路由、只在所选根菜单上给尾下界及非负实背景的代数范围；本源ST不覆盖这些量词。其一般WS包络推导保在目标正文，本边不宣称从ST推出该一般部分，也不证明统一尾下界本身。"
+  },
+  "explanation": "每条全目录原标签真枝恰有n名后继，额外条件逐枝给J(T)≥nt。按任意驻留π平均仍EπJ≥nt。源ST直接给u≥κ_r EπJ/n≥κ_r t。令r=n+1，整数恒等式n+floor(n²/4)=floor((n+2)²/4)−1= floor((r+1)²/4)−1，故所得系数恰目标比例。n=1时κ=1、分母1，零客户t只能为0，不出现除零。此推导使用原标签核的平稳性与同源真实IC；不将原标签核改成极大容器路由，不用S>0返还，不将合法整数背景推广为任意实背景。",
+  "scope": "仅目标统一尾门槛比例的真实全目录原标签核子情形；属于已完成条件性局部贡献，不支持目标一般容器路由全部范围，不含actual共同钱包或完整SPE锐性。",
   "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/同源全后继平稳核的带符号利润运输--引理.md",
+      "sha256": "008c104ad11a0aab6732473d000cf52470a6f92c39534842e4736d73e2040644",
+      "section": "完整历史源与任意平稳分布"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/同源全后继平稳核的带符号利润运输--引理.md",
+      "sha256": "008c104ad11a0aab6732473d000cf52470a6f92c39534842e4736d73e2040644",
+      "section": "逐客户带符号行及所有零端点"
+    },
     {
       "path": "archives/customer-attraction/state/引理/驻留根菜单的最优标量包络与尾收益界--引理.md",
       "sha256": "db0c124239fe7796f7e2ead6afae5a0828cca10baff0d214dbd61df15bfc25de",
-      "section": "最优逐客户包络及点态证明"
+      "section": "模型、路由与逐客户量"
     },
     {
       "path": "archives/customer-attraction/state/引理/驻留根菜单的最优标量包络与尾收益界--引理.md",
       "sha256": "db0c124239fe7796f7e2ead6afae5a0828cca10baff0d214dbd61df15bfc25de",
       "section": "对真实尾收益的条件推论"
-    },
-    {
-      "path": "archives/customer-attraction/state/构造/驻留标量锐菜单的完整策略边界--构造.md",
-      "sha256": "fd7d5d80e548da277f09d0da6147b12bf7986f9ec7a409004b1d1a875604a556",
-      "section": "合法网格使全部尾收益同时取等"
     }
   ],
-  "review_note": "Boss4实读并核nt≤P−D≤(M_r−1)D≤(M_r−1)u全部方向，特别保留同一菜单所有分支的共同t假设。网格只证条件比例的菜单尺度锐性；r≥5末位BR失败，不作为完整SPE锐例。",
-  "status": "accepted",
-  "premises_mode": "all",
   "reviewed_by": "Boss4",
+  "review_note": "Boss4对照两端registry核域：ST仅同一真实源的全目录原标签核及合法整数背景，M-bed一般容器路由/实背景更宽，所以改用contribution而非whole_result。逐枝J≥nt、驻留平均及κ分母整数恒等式均已核；只有统一t是显式未付假设，未添加冗余核心前提。",
   "endpoint_pins": {
-    "M-bed601917aa54ca19d391ab59c6acbd7": "b363aa0c9c6286ea0359806fd6b5ab857a1082e56747356437c3d085447efbfc",
-    "WS-STATIONARY-SCALAR-ENVELOPE-v1": "27eaff9b3d69dd4c07dcac485abebd5ad191e1f2c0b1318d486f69041edbc4c0"
+    "M-47e0aea72b4644a2b7bf22dab9f6b593": "31d14906ec5d5f3338d16f12adce8cdafa23916725478479b286d02174ff0de7",
+    "M-bed601917aa54ca19d391ab59c6acbd7": "b363aa0c9c6286ea0359806fd6b5ab857a1082e56747356437c3d085447efbfc"
   },
   "evidence_pins": {
-    "archives/customer-attraction/state/引理/驻留根菜单的最优标量包络与尾收益界--引理.md": "db0c124239fe7796f7e2ead6afae5a0828cca10baff0d214dbd61df15bfc25de",
-    "archives/customer-attraction/state/构造/驻留标量锐菜单的完整策略边界--构造.md": "fd7d5d80e548da277f09d0da6147b12bf7986f9ec7a409004b1d1a875604a556"
+    "archives/customer-attraction/state/引理/同源全后继平稳核的带符号利润运输--引理.md": "008c104ad11a0aab6732473d000cf52470a6f92c39534842e4736d73e2040644",
+    "archives/customer-attraction/state/引理/驻留根菜单的最优标量包络与尾收益界--引理.md": "db0c124239fe7796f7e2ead6afae5a0828cca10baff0d214dbd61df15bfc25de"
   },
-  "review_digest": "ec3ff1113884d2c6e508549dbec755b23754b5718a762956cf8e23fc844d11c1"
+  "review_digest": "5a95430b8c19a703ccf0f4dd50733c1613258ea3ca32b538df81ae9307d0a23c"
 }
