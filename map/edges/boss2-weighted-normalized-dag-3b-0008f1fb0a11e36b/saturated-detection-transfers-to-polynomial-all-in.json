@@ -1,0 +1,61 @@
+{
+  "edge_id": "wc-boss2-normalized-saturated-detection-gives-polynomial-all-in-bound",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R1-DAG-STEP",
+    "WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1"
+  ],
+  "target_ids": [
+    "WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限非空simple DAG，同一对称双列binary策略，根权1，整数d≥1、0<ε<1、z=ε^(−1/d)，且z(z−1)S_D(z)≤1。选择检测定理的反拓扑最小权与指定的触发点归一化纯d次费用。真实单人偏离按新负载重算。",
+  "roles": {
+    "WC-R1-DAG-STEP": "给同一DAG的q>1与平衡触发点系数qh_v=1+Σ_{u→v}h_u、Σh_v=q−1。",
+    "WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1": "给实际正权w_v=z−1+z t_v、W≤1/z及卫星端点比1/z的桥。",
+    "WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1": "目标真实多项式全入均衡在该归一化端点饱和子族的具体倍率。"
+  },
+  "explanation": "对反拓扑最小权令t_v=Σ_{v→u}w_u、W=Σ_v w_v。取p0(x)=A x^d、p_v(x)=A h_v[x/(1+w_v)]^d，A>0，于是p0(W)≤εA，卫星p_v(1+t_v)=εA h_v。与阶跃源使用同一DAG、玩家及两列动作，重新计算实际费用。全入时根费Aq；根翻后核心负载1+W、卫星负载1+t_v，故其新费恰为A[(1+W)^d+ε(q−1)]，至少A[1+ε(q−1)]。任一轻v当前前驱卫星负载t_u，不超过检测点1+t_u，故旧费≤A h_v+εA(1+Σ_{u→v}h_u)=A h_v(1+ε q)。其单独翻位的新根核心和前驱费用至少A(1+Σ_{u→v}h_u)=Aqh_v，其余费用非负。取比并保α≥1即得结果。m≥1时q(q−1)≥1，固定ε的倍率也至多max{1,ε+1/φ,1/ε}。该根下界用卫星低端的精确等号。",
+  "scope": "该保证属于同时满足归一化及指定最小权饱和检测构造的实际多项式游戏。端点检测可行性自身只保证存在可选数据，固定任意已给多项式可能不满足幅度归一化；只有泄漏上界时也不能取根偏离的新费下界。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+      "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990",
+      "section": "路径递推、任意振幅上界及端点取得"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有向无环端点低泄漏的精确次数预算--定理.md",
+      "sha256": "965f989741ccff9344da1d56a337ed48bef60875e90748f0874327176d1f5236",
+      "section": "次数界、最小权与路径传播的完整证明"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+      "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c",
+      "section": "所有轻玩家的真实偏离"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+      "sha256": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c",
+      "section": "根偏离的Jensen包络"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "直接核两列真实负载、卫星检测精确等号、归一化与全部根/轻偏离。比较结果保留选定费用构造的量词。",
+  "contribution": {
+    "result": "对每个通过端点预算的非空DAG，以指定最小权和归一化纯d次费用同时实现检测与极值幅度合同；实际全入状态为max{1, ε+1/q, q/[1+ε(q−1)]}-PNE。",
+    "remaining": "目标定理对任意合法权和满足(N)的任意非负多项式。该一般域不含卫星低端等号，需权缝隙矩与Jensen包络独立支付；给定泄漏的构造结论不向这一全域推广。"
+  },
+  "endpoint_pins": {
+    "WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1": "004126f839faa99f37c6f3ddadc923a38115cf82406dc1c3f38de49eee36d5c7",
+    "WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1": "c58925c9e46208b716fb24305aef1af7142d2fd927ddfd49955d0d647c8e1e26",
+    "WC-R1-DAG-STEP": "553c4a4fd59e0cc01339c0971bcf42b46ec7c2792484fdd29fb829b1861b57db"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990",
+    "archives/weighted-congestion/state/定理/有向无环端点低泄漏的精确次数预算--定理.md": "965f989741ccff9344da1d56a337ed48bef60875e90748f0874327176d1f5236",
+    "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md": "095052c41d1bacac294309d35ff4aa02802668028c6101daa617c1845662242c"
+  },
+  "review_digest": "365928bab85683eb4c781cc7ab0d205ad9c3eaac99f3d463521675ccae22a0e2"
+}
