@@ -87,6 +87,6 @@ Codespaces 用于确实需要持续交互、特殊工具链或更大内存的数
 
 完成后用 `work.py github stop-codespace NAME` 请求停止，并读回实例状态。创建回执、终端计算完成和实际停机是三件事。只回收本次明确创建的临时实例。
 
-实际验收在远端 Git `f47b8ad6` 运行五尾 25 权有理证书。远端 4,096 个状态全部通过，两份输入 SHA 与本地一致，终端返回的数学 JSON 与本地相等。此次单独用 `gh codespace cp` 读取 `/tmp` 文件时，远端返回文件不存在。当前已验通终端执行与输出回传。需要跨连接保存输出时，可在工作区设置明确的输出路径并核对文件回执。
+实际验收在远端 Git `f47b8ad6` 运行五尾 25 权有理证书。远端 4,096 个状态全部通过，两份输入 SHA 与本地一致，终端返回的数学 JSON 与本地相等。直接用 `gh codespace cp` 访问 `/tmp` 和工作区路径时，实测报文件不存在。后续在远端 `848efc4d` 改用独立 SSH 命令，通过 Base64 把证书写进 `/workspaces/co-work-anl` 下的临时目录，核输入 SHA，运行验算，再通过另一条 SSH 连接读回工作区文件。取回的 320 字节与本地逐字节相等。使用这条已验通的路径时，保留实际输入、输出和版本回执。两次实例均已确认删除。
 
 依据：[GitHub workflow 语法](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax)、[实际执行上限](https://docs.github.com/en/actions/reference/limits)、[run API](https://docs.github.com/en/rest/actions/workflow-runs)、[artifact API](https://docs.github.com/en/rest/actions/artifacts)。账号当前可用额度、费用和实际 runner 状态以账号与任务现场为准，不从仓库写权限推断。
