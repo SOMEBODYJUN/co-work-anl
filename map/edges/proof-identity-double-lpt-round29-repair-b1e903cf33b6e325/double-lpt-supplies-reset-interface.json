@@ -1,0 +1,92 @@
+{
+  "edge_id": "commonmany-double-lpt-supplies-fixed-gamma-reset-interface",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-GREEDY-BUDGET",
+    "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import",
+    "SC-K-RESET-PACK-INTERFACE"
+  ],
+  "target_ids": [
+    "SC-K-DOUBLE-LPT-GREEDY-2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "显式正二进制有理权、显式 k 家标签设施、有限共同目录和同次正覆盖规范贪心原池。各池按非增权、客户编号破平局，逐原子放当前最轻箱、箱号破平局。第一轮对每个原池以 q_t 箱从空箱开始，要求全部箱≥γ。第二轮对每个 q_t≥2 的同一原池独立以 q_t−1 箱重新开始，要求全部箱≤2γ。全通过才进入构造，失败返回 unknown。",
+  "roles": {
+    "SC-K-GREEDY-BUDGET": "首轮各原池的上界 W_t^0≤(q_t+1)γ 独立支付首轮逐箱≤2γ。",
+    "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import": "直接使用 RANGE，在每家真实标签设施各为一台相同单位机器的原完整客户游戏中，位多项式得到精确纯 NE 并保持首轮逐家收益≥γ。",
+    "SC-K-RESET-PACK-INTERFACE": "接收同次贪心、首轮生成的合格在轨 NE 及第二轮产生的同一原池删席箱，保原在轨并完成所有真实标签偏离和默认布局。离轨 MAX 由本接口承担。",
+    "SC-K-DOUBLE-LPT-GREEDY-2": "在固定 γ 双 LPT 全通过的结构域，给出首轮受帽纯种子、纯在轨精确 NE 与保该在轨策略的完整因子二续局。"
+  },
+  "explanation": "设首轮某个原池 t 的箱重为 b。预算 W_t^0≤(q_t+1)γ 减去其他 q_t−1 箱各自至少 γ，得 γ≤b≤2γ。箱分配给该站真实标签设施；原池恰划分当前全部覆盖客户，故是完整可行纯初态。以每家真实标签设施为独立同容量单位机器，给每个覆盖客户其全部原可达标签。RANGE 保全局最小负载至少 γ，给纯精确 NE。有限版也可直接严格改善：若重 w 的客户从 f 改到 g，L_g+w<L_f 使新源负载 L_f−w>L_g、新目标 L_g+w<L_f，两端仍处于旧负载范围，且半平方负载势严格下降；有限状态给终止。纯 NE 是退化的独立混合 NE，每家 a_f≥γ。同址设施策略可不对称，站总重可超出完整上盒。\n\n第二轮在每个 q_u≥2 的同一个原池 J_u^0 从空箱独立运行 LPT，不使用首轮后的客户分配。每个删席箱≤2γ，满足已证 RESET-PACK v4 允许孤立重原子的证书合同。直接调用该接口，保同一在轨布局及纯策略，对每个实际单标签偏离给精确纯 NE 与 L_f′≤2γ≤2a_f，以确定纯 NE 规则处理其他布局。存续和消失源的全原池重置以及位多项式 MAX/default 归该接口。\n\n原异权三角有限审计按 Z、X 两步指定严格改善所选纯 NE 的 M 总重 430>400，证明该选择可以在完整上盒外。审计所选的盒外纯 NE 与覆盖收据中给出的另一份盒内混合 NE 共存。",
+  "scope": "仅两轮 LPT 全通过的固定 γ 充分域。失败返回 unknown，装箱可行性、固定 γ 接口可行性与一般因子二存在须分别判断。首轮逐家收益需要 RANGE 的最小负载保证。三角原入口仅运行 triangle=True 的 16 个实际偏离，最大移动者收益 110；此处报告的运行范围是三角实例的有限严格回复。",
+  "evidence": [
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/原池双装箱证书与盒外纯均衡续局--算法.md",
+      "sha256": "9cc6ab5dabf876015419f5c5483ac27c30bd0aa46bc619991e6060c0d1b9f0d0",
+      "section": "双LPT充分测试"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/原池双装箱证书与盒外纯均衡续局--算法.md",
+      "sha256": "9cc6ab5dabf876015419f5c5483ac27c30bd0aa46bc619991e6060c0d1b9f0d0",
+      "section": "三角异权例与真实审计"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md",
+      "sha256": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a",
+      "section": "输入与准确结论"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/tools/evidence/facility-selector-frontier/replay/double_lpt.stdout.txt",
+      "sha256": "a7f5c4846fd6f6abb6cca671f0c9771d5a864ffd6805d3756fe8841f072bfdbd"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/原池双装箱证书与盒外纯均衡续局--算法.md",
+      "sha256": "9cc6ab5dabf876015419f5c5483ac27c30bd0aa46bc619991e6060c0d1b9f0d0",
+      "section": "可核验的证书合同"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+      "section": "每个布局都可明确指定纯客户均衡"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "规范贪心、冻结原池及预算"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md",
+      "sha256": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a",
+      "section": "有理位长与分量版"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md",
+      "sha256": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a",
+      "section": "原文定位与双端保持的归纳"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/tools/evidence/facility-selector-frontier/original/tests/audits/kfac_double_lpt.py",
+      "sha256": "36556068705ce22865a197f5c89feabe32f2664bd09e32534e6263215f5d00ee"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "当前 RESET-PACK v4 已证，直接承接全部离轨和默认合同。首轮的贪心预算独立给目标的逐箱上界，RANGE 支付首轮最小负载与位多项式精确纯 NE。保留原两轮测试、有限正确性与三角证据。实际复跑原脚本入口指定的 triangle=True，与保存输出逐字节一致。此复跑范围为有限 16 项偏离。",
+  "whole_result": "对每个两轮测试全通过的真实规范贪心输入，首轮每箱负载都在 [γ,2γ]。在输入位长多项式时间构造原完整客户游戏的纯在轨精确 NE（各家收益≥γ）和保同一在轨策略的一份完整因子二续局。全部真实单标签偏离及未列布局均有纯精确 NE，后者可位多项式求值。有限严格改善给独立的有限正确性。首轮输出允许站点总重超完整上盒；测试失败仍返回 unknown。",
+  "endpoint_pins": {
+    "SC-K-DOUBLE-LPT-GREEDY-2": "16f41f0a4adca92b442e75cbe49fb51f86153a187501bab508e09a805e8987b5",
+    "SC-K-GREEDY-BUDGET": "5c08688db4620c0cd4fe6d2c03e61e444fec71aa1bd30ee430061dee1a6a1b83",
+    "SC-K-RESET-PACK-INTERFACE": "14335bd84e00be7e1dc3d678401e326b370a51d2f1647c93cfd63468975a75b1",
+    "facility-games/common-many/restricted-identical-link-range-preserving-nashification-import": "5f2019da9ff05afa3a2e57eb2cf96d8c63eef19e66208bb0290ce535628737f6"
+  },
+  "evidence_pins": {
+    "archives/facility-games/subarchives/common-many/state/算法/原池双装箱证书与盒外纯均衡续局--算法.md": "9cc6ab5dabf876015419f5c5483ac27c30bd0aa46bc619991e6060c0d1b9f0d0",
+    "archives/facility-games/subarchives/common-many/state/引理/受限同链Nash化的双端负载保持导入--引理.md": "2e772ca84c157f59cfda395b974d3ad2f85d63ba1206105e85fa320f5a995f0a",
+    "archives/facility-games/subarchives/common-many/tools/evidence/facility-selector-frontier/replay/double_lpt.stdout.txt": "a7f5c4846fd6f6abb6cca671f0c9771d5a864ffd6805d3756fe8841f072bfdbd",
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
+    "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+    "archives/facility-games/subarchives/common-many/tools/evidence/facility-selector-frontier/original/tests/audits/kfac_double_lpt.py": "36556068705ce22865a197f5c89feabe32f2664bd09e32534e6263215f5d00ee"
+  },
+  "review_digest": "c5e10181c4dbd8fb318ab7d84abe0e1db6d14ea7d1d2fbb0f12996e27e3f04a8"
+}
