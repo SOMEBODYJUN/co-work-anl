@@ -1,0 +1,49 @@
+{
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss6",
+  "edge_id": "cag-b60-mixed-envelope-implies-scalar-floor",
+  "source_ids": [
+    "CA-DYNAMIC-MAXIMA-MIXED"
+  ],
+  "target_ids": [
+    "CA-DYNAMIC-MAXIMA-FLOOR"
+  ],
+  "conditions": "有限单位客户与非空共同标签目录；n≥1、s≥2个不同包含极大覆盖；每份完整有序历史纯SPE；同一核心c、私有P、核心外共享V，U−c=P+V。保留全部空、重复、别名标签及真实离轨后继。",
+  "roles": {
+    "CA-DYNAMIC-MAXIMA-MIXED": "给全部合法历史的私有/共享后缀最小包络保底。",
+    "CA-DYNAMIC-MAXIMA-FLOOR": "把两类包络共同弱化到1/D_t，得到整个通用标量逐位界与根Γ预算。"
+  },
+  "explanation": "令E=n+s−1，Z_q=q+s(n−q)/2，D_q=max{Z_q,E}。q≤n−2时a_q=(n+q)/(2(q+1))≥1，故A_q=a_q/Z_q≥1/D_q、B_q=1/Z_q≥1/D_q。末位A=1/E=1/D、B=(n+1)/(nE)≥1/D，亦覆盖n=1唯一位置。s≥2使D_q非增，所以q≥t时A_q,B_q≥1/D_q≥1/D_t；两者后缀最小均≥1/D_t。由来源全历史逐位界和P,V≥0得到u≥c/n+(P+V)/D_t=c/n+(U−c)/D_t。在同一根实际路径求和，W=Σu给W≥c+(U−c)Σ_t1/D_t。没有交换历史依赖平局或将部分覆盖与路由计数相等。",
+  "scope": "n≥1、s≥2全域；所有合法有序历史与每份完整σ；是整个标量结果，不是有限参数特化。",
+  "whole_result": "对每个长度t合法历史，当前真实收益≥c/n+(U−c)/D_t，其中D_t=max{t+s(n−t)/2,n+s−1}非增；根W≥c+Γ_{n,s}(U−c)，Γ=Σ_{t=0}^{n−1}1/D_t。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/混合私有共享路由保底--引理.md",
+      "sha256": "326f6c08744ce153ddf1eff717c096bea382273d2045e24626650777e07dc409",
+      "section": "私有/共享分开信用的混合接口"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/混合私有共享路由保底--引理.md",
+      "sha256": "326f6c08744ce153ddf1eff717c096bea382273d2045e24626650777e07dc409",
+      "section": "逐客户加权预算与通用标量界"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-b60c2e92f3d2e7f7/review.md",
+      "sha256": "d5fdd1d78b469a3267384d86d7a97608c0aa9ee6d42c4dd4759d500e6cebdbe7",
+      "section": "混合接口推出整个标量接口"
+    }
+  ],
+  "review_note": "逐项核全部n≥1和s≥2边界；原始内部私有系数≥共享系数，D的非增性使整后缀保同一下界。核心经原总收益支配保留，根求和只用于零背景。论证完整，条件已付清。",
+  "endpoint_pins": {
+    "CA-DYNAMIC-MAXIMA-FLOOR": "c89fdd20a02a24ed45a6f31df81cb302ddc2f60a1d7588b4122d3b9d49dacf42",
+    "CA-DYNAMIC-MAXIMA-MIXED": "4d7bb4bdf8530127c752fc286e8a0b57cd9d1eedbed426cd9e9278acdcf3d29b"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/混合私有共享路由保底--引理.md": "326f6c08744ce153ddf1eff717c096bea382273d2045e24626650777e07dc409",
+    "map/edges/customer-attraction-3a-3a-b60c2e92f3d2e7f7/review.md": "d5fdd1d78b469a3267384d86d7a97608c0aa9ee6d42c4dd4759d500e6cebdbe7"
+  },
+  "review_digest": "c1585c98f44236d14b2b1364674a4428dc6ec00cbc8b15a7ffe1e6ad770a3480"
+}
