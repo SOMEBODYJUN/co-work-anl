@@ -1,0 +1,60 @@
+{
+  "edge_id": "boss7-ca-756cb8-36-exact-relocation-cost",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "B3-TAIL-MIN-NORMALIZATION-NO-v1",
+    "CA-AGGREGATE-LAST-FLOOR-NO"
+  ],
+  "target_ids": [
+    "B3-TAIL-MIN-RELOCATION-GAP-36-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "仅固定36客户、三人六主题X={0,1,2},Y={3,4,5}实例：9个跨组pair各1客户、9种两X两Y类型各3客户。两源必须是这个同一输入，不混用一般n族。",
+  "roles": {
+    "B3-TAIL-MIN-NORMALIZATION-NO-v1": "把固定36例的θ3=12、W0=34转为尾部minimum类福利至少36。",
+    "CA-AGGREGATE-LAST-FLOOR-NO": "提供同一36单位客户目录、完整034策略及θ3=12、OPT3=36，不使用一般n反族的单位赤字。",
+    "B3-TAIL-MIN-RELOCATION-GAP-36-v1": "在同一目录通过完整012策略和全历史终局分类达到精确代价2、倍率18/17。"
+  },
+  "explanation": "聚合反例的完整σ给034、收益(10,12,12)、W34，且所有二行动末位背景的最佳值为重复15/不同12，故θ3=12。一般正规化障碍于是给任一尾部含全局最小者的完整SPE W≥36；总客户仅36，故若存在就必W36。构造达到策略：末位在任意(a,b)取b所属组最小未用主题；第二人在首0后选1，其他首a后选相反组最小主题；根0。末位重复背景取15、同组异题补第三取12、跨组取新题12；每个第二节点重复首题仅9，任一指定不同题取12；根0取12，其余偏离取10。因此它是43有序节点完整SPE，actual012收益全12，W36。进一步对任意SPE，第二人能通过同组新题保12，故不重复首题；同组前两题时末位严格补第三，给36；跨组时末位必须偏向第二人的组，否则第二人仅10<12，故低福利minority只能在第一位，给34。组内置换与组交换实现全部12同组全异、36跨组minority-first终局，合48有序SPE终局，其中12含尾部minimum。于是minW34，尾minimum子类minW36，代价恰2、倍率36/34=18/17。48不是完整策略数；v3=10不同θ3=12。",
+  "scope": "完整固定36输入精确陈述；一般成本不恒为2，且此例满足half。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/最小收益移至末两位的福利代价--障碍.md",
+      "sha256": "5adde31691c869d7f5c1af0f2708435905952c4f43a76f6cfa6f1353c5014664"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/三人聚合末位保底--反例.md",
+      "sha256": "f2ff6b486d46f5e05d9acb2497ec1114ac8ab4698460fb46656d320e640fe4c0"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/末两最小收益归一化的拒绝候选与精确代价--审查.md",
+      "sha256": "9fc29387efebf660196a0f54af56019406388ce848ae13b339d683dbd1124b2e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/aggregate-security/original/research/workspaces/customer-attraction/R-24bfbfd5ec7845b79374a1938c335df7/normalization/audit_tail_minimum.py",
+      "sha256": "dd79705ef5f05cc6ccf6b1e6af62a3944d8036ab119ec998313cf7ad92bbe803"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/aggregate-security/original/research/workspaces/customer-attraction/R-24bfbfd5ec7845b79374a1938c335df7/normalization/audit_tail_minimum.json",
+      "sha256": "4701e6077a21cb48a7c83be3dc1dc147e9dfe405f9db22d5b8575f474ba2aa6a"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "本包worker逐项实读本边所列正文、模型、登记陈述和异议，复核目标量词及实际所得关系；复用成熟解析证明，不重跑原实验。",
+  "whole_result": "同一36单位客户三人目录中全部完整SPE福利为34或36；48个可实现有序终局中12个含尾部全局最小者，minW34而该子类minW36，最小尾部正规化代价恰2、倍率18/17。",
+  "endpoint_pins": {
+    "B3-TAIL-MIN-NORMALIZATION-NO-v1": "33458c02a72f2be72595020574a4372ea391ff13824277b41177dcd1515b8eb2",
+    "B3-TAIL-MIN-RELOCATION-GAP-36-v1": "f46265a722642855011f1f4c7422c057e8df57dd60a9a4b3f68712f96db48d05",
+    "CA-AGGREGATE-LAST-FLOOR-NO": "699ba4cd7ebf119cdeb83f960aa4519f05068694f6f8507893ff071f155045ed"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/最小收益移至末两位的福利代价--障碍.md": "5adde31691c869d7f5c1af0f2708435905952c4f43a76f6cfa6f1353c5014664",
+    "archives/customer-attraction/state/反例/三人聚合末位保底--反例.md": "f2ff6b486d46f5e05d9acb2497ec1114ac8ab4698460fb46656d320e640fe4c0",
+    "archives/customer-attraction/state/审查/末两最小收益归一化的拒绝候选与精确代价--审查.md": "9fc29387efebf660196a0f54af56019406388ce848ae13b339d683dbd1124b2e",
+    "archives/customer-attraction/tools/evidence/aggregate-security/original/research/workspaces/customer-attraction/R-24bfbfd5ec7845b79374a1938c335df7/normalization/audit_tail_minimum.py": "dd79705ef5f05cc6ccf6b1e6af62a3944d8036ab119ec998313cf7ad92bbe803",
+    "archives/customer-attraction/tools/evidence/aggregate-security/original/research/workspaces/customer-attraction/R-24bfbfd5ec7845b79374a1938c335df7/normalization/audit_tail_minimum.json": "4701e6077a21cb48a7c83be3dc1dc147e9dfe405f9db22d5b8575f474ba2aa6a"
+  },
+  "review_digest": "2e014dda05892ef9f78643177bddbf394811338830d90ae9e681193b9589eed6"
+}
