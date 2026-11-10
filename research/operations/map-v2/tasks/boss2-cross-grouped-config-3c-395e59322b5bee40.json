@@ -137,11 +137,64 @@
       "comparison_question": "保留每台原机器及真实任务身份，比较给定GPC₂两两配置耦合的全机联合延拓与实际阈值调度。由逐任务期望覆盖一和同时两两不交推出几乎处处全覆盖，再通过分组等价解码；真调度反向给Dirac全机分布。容量一星族给局部证书不可粘，另比较无色目录的机器身份丢失。"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss2",
-  "request_id": "f7d1eabdcc514fdfab1e943914dfd508",
+  "request_id": "17150902055d4649b876ed588a175932",
   "requests": {
     "3dcbab14c8134b05af02cf7d441f608b": "plan",
-    "f7d1eabdcc514fdfab1e943914dfd508": "claim"
+    "f7d1eabdcc514fdfab1e943914dfd508": "claim",
+    "17150902055d4649b876ed588a175932": "done"
+  },
+  "edge_paths": {
+    "ea-distinguish-uncolored-capacity-loss-from-pair-gluing": "map/edges/boss2-cross-grouped-config-3c-395e59322b5bee40/ea-distinguish-uncolored-capacity-loss-from-pair-gluing.json",
+    "ea-um-grouped-cover-and-pair-gap-give-global-glue-criterion": "map/edges/boss2-cross-grouped-config-3c-395e59322b5bee40/ea-um-grouped-cover-and-pair-gap-give-global-glue-criterion.json"
+  },
+  "receipt": {
+    "coverage": {
+      "EA-GROUPED-CONFIG-COVER-v1": {
+        "state": "linked",
+        "object_pin": "00aec8ef6dea78f2121444cb674940667b503b8a76ffa2581c1c1c679ca92a9d",
+        "edge_ids": [
+          "ea-um-grouped-cover-and-pair-gap-give-global-glue-criterion"
+        ],
+        "comparison_scope": "比较确定的保机器配置全覆盖与指定配对耦合的全机联合支撑。",
+        "reason": "任一正质量元组因逐任务重数恰一而满足原分组覆盖，可按原机解码。配置集可能很大，存在性陈述未给延拓算法。"
+      },
+      "EA-GROUPED-CONFIG-GLOBAL-GLUE-v1": {
+        "state": "linked",
+        "object_pin": "9528168f0798b583ac2c68786ebc20df4cf94368b57a9f73d262ab16aecd643f",
+        "edge_ids": [
+          "ea-um-grouped-cover-and-pair-gap-give-global-glue-criterion"
+        ],
+        "comparison_scope": "比较给定见证的全局延拓、原阈值调度、容量一星反例和无色目录。",
+        "reason": "有限配对支撑及期望一推出实际全覆盖；反向只构造某套Dirac见证；三机三任务的可调度例有不可延拓的预先指定配对。星族在T=1有GPC₂见证但无全机联合延拓。"
+      },
+      "EA-UNION-CONFIG-FEASIBILITY-NO-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "4b21f7848218fc881ac6aea1b7f6d402ac6d78ea51e257ab2bc7b58c347f54d7",
+        "edge_ids": [],
+        "comparison_scope": "同星族比较无色共同目录允许多个提供者取同机不同单例的障碍。",
+        "reason": "无色反例丢失原机配额；星族保留原机身份并失败于给定配对不能全局同时实现。记录可导航的语境比较。"
+      },
+      "UM-CAPACITY-ONE-PAIR-GAP-v1": {
+        "state": "linked",
+        "object_pin": "865b79ee1ee04e5760d32c0f4e8fa0e686c5d4b7bf3bafc6a5121133ab30d2dd",
+        "edge_ids": [
+          "ea-um-grouped-cover-and-pair-gap-give-global-glue-criterion"
+        ],
+        "comparison_scope": "比较T=1的容量一星所有配对耦合、实际最优值与完整配置覆盖。",
+        "reason": "OPT=2−1/k>1，由全机联合解码知任意此阈值的GPC₂见证皆不可粘。该反例不依赖无色目录。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/boss2-cross-grouped-config-3c-395e59322b5bee40/ea-distinguish-uncolored-capacity-loss-from-pair-gluing.json",
+        "sha256": "28e924ce178fed8685065d17c94a79692ee3278a971580686a09a4ac7a74c478"
+      },
+      {
+        "path": "map/edges/boss2-cross-grouped-config-3c-395e59322b5bee40/ea-um-grouped-cover-and-pair-gap-give-global-glue-criterion.json",
+        "sha256": "2ffdeb2fbd7575a13e5a23da97f6203dd8704c4195307ef217fab625ebaea2a0"
+      }
+    ]
   }
 }
