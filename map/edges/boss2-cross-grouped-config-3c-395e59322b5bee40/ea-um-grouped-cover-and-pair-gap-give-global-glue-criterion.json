@@ -1,0 +1,51 @@
+{
+  "edge_id": "ea-um-grouped-cover-and-pair-gap-give-global-glue-criterion",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "EA-GROUPED-CONFIG-COVER-v1",
+    "UM-CAPACITY-ONE-PAIR-GAP-v1"
+  ],
+  "target_ids": [
+    "EA-GROUPED-CONFIG-GLOBAL-GLUE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限普通UM，合法C_i(T)使用原机器有限端并保实际负载≤T。逐机概率分布，逐原任务期望重数一。给同一行边际及所有机器对的支撑不交耦合。",
+  "roles": {
+    "EA-GROUPED-CONFIG-COVER-v1": "把保原机器组的完整配置覆盖精确解码成实际T调度。",
+    "UM-CAPACITY-ONE-PAIR-GAP-v1": "给GPC₂的共享边际和逐pair不交模型，并给T=1但OPT=2−1/k的实际反例。",
+    "EA-GROUPED-CONFIG-GLOBAL-GLUE-v1": "接收可全局延拓时的实际调度保证及存在量词的双向等价。"
+  },
+  "explanation": "给匹配全部指定配对耦合的同一全机分布μ。有限多个机器对的配置不交事件都以概率一成立，故同时成立；每个原任务j的实际出现重数X_j∈{0,1}。原行边际逐任务给E X_j=1，所以每个X_j=1几乎处处。有限任务同时成立，任一正质量配置元组覆盖J；按分组等价逐原机器解码为真实T调度。反向，给T调度，取每机原任务集合的Dirac联合分布，再取所有边际与pair，便得到某一套可粘见证。该反向不指定旧见证。容量一星族在T=1有同一行边际与所有pair见证，若其可粘将给T调度，与OPT=2−1/k>1矛盾；同一族比值趋2。 反向量词确有差别：三台机器和三个单位任务均互相可达，T=1，每机均匀抽取一个任务标签x_i∈ℤ/3。分别用x₂=x₁+1、x₃=x₂+1、x₃=x₁+1定义三份两机耦合；每份的共同边际均匀且支撑不交，各任务期望重数为一。前两式迫使x₃=x₁+2，不能同时满足第三式。原实例显然有一对一调度，故可调度也未必能延拓预先指定的耦合。",
+  "scope": "真实机器及任务身份在整个跨档对应中不变，保证属于阈值可行性与联合延拓。没有声称可多项式检验任意输入的延拓，也没有给无色目录解码。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/等价/分组配置全覆盖与无色共同目录的精确边界--等价.md",
+      "sha256": "6b6aaf4dcc6e2294270d445a30b034683dbb772fcac599448c84d061c7e18c4e",
+      "section": "1. 保机器分组的正向等价"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/容量一星族的全机器对原入口与符号耦合--资源.md",
+      "sha256": "86c2726661ae90b6226739a1292e3a637c3059683ba9e0215b4e4a5702723d79"
+    },
+    {
+      "path": "archives/customer-attraction/state/等价/保机器分组的全机配置耦合--等价.md",
+      "sha256": "25a08161c926f9d4506fda0937a58b44c7840f353af26270aa889f2ff8ee9850"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项核对原机器和任务标签、同一组边际、配对支撑及全机解码；核反向存在量词和真实反例。",
+  "whole_result": "给定GPC₂见证如有匹配全部配对的全机联合延拓，则几乎处处每原任务恰出现一次并产生完整实际T调度。阈值可调度当且仅当存在某套可全局延拓的GPC₂见证。容量一星族在T=1给所有配对但不存在联合延拓，其真实OPT=2−1/k。",
+  "endpoint_pins": {
+    "EA-GROUPED-CONFIG-COVER-v1": "00aec8ef6dea78f2121444cb674940667b503b8a76ffa2581c1c1c679ca92a9d",
+    "EA-GROUPED-CONFIG-GLOBAL-GLUE-v1": "9528168f0798b583ac2c68786ebc20df4cf94368b57a9f73d262ab16aecd643f",
+    "UM-CAPACITY-ONE-PAIR-GAP-v1": "865b79ee1ee04e5760d32c0f4e8fa0e686c5d4b7bf3bafc6a5121133ab30d2dd"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/等价/分组配置全覆盖与无色共同目录的精确边界--等价.md": "6b6aaf4dcc6e2294270d445a30b034683dbb772fcac599448c84d061c7e18c4e",
+    "archives/unrelated-machines/state/资源/容量一星族的全机器对原入口与符号耦合--资源.md": "86c2726661ae90b6226739a1292e3a637c3059683ba9e0215b4e4a5702723d79",
+    "archives/customer-attraction/state/等价/保机器分组的全机配置耦合--等价.md": "25a08161c926f9d4506fda0937a58b44c7840f353af26270aa889f2ff8ee9850"
+  },
+  "review_digest": "3d0883fb3d879ae565f9266f5cfbe7e5a3b80ddc06516d6d2dc7fec161150163"
+}
