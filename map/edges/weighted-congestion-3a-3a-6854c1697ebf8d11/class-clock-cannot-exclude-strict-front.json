@@ -1,0 +1,52 @@
+{
+  "edge_id": "wc-6854-class-clock-cannot-exclude-strict-front",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/class-internal-clock-compiler-obstruction"
+  ],
+  "target_ids": [
+    "weighted-congestion/legal-repair-module-linear-design"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定12玩家64资源八测试基体，目标是排除相位(0,0,1)的b；幅度模块只允许fresh递增同权类三元，两侧同一非负非减费用。",
+  "roles": {
+    "weighted-congestion/class-internal-clock-compiler-obstruction": "给出b的全部12条基体严格负精确余量和任意允许时钟逐偏离非正余量。",
+    "weighted-congestion/legal-repair-module-linear-design": "指定出口及非负幅度需使每个选定出口得到严格正真实余量。"
+  },
+  "explanation": "在b每个时钟是2+1分侧，参与者翻位只有2w→2w或w→3w；非减同费给α=1时贡献≤0，非负成本给任意α≥1仍≤0。基体每个精确余量均<-1/2，升α只会减余量。故任取b的出口及合法非负幅度，真实余量仍<-1/2；排除该态的行不可能取正共同ρ。此论证甚至不要求保留基体双扫环。",
+  "scope": "固定基体与指定类内同费时钟族。排除所有该族模板，不排跨类、其他arity、不同侧费用或其他基体。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/障碍/有序同类三元时钟保留严格均衡--障碍.md",
+      "sha256": "d3db13285b8acc3eb989191f70eca97ac3ffe0c55b0acbb208f3ac188aa339ce",
+      "section": "严格双扫环与全部偏离稳定"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/有序同类三元时钟保留严格均衡--障碍.md",
+      "sha256": "d3db13285b8acc3eb989191f70eca97ac3ffe0c55b0acbb208f3ac188aa339ce",
+      "section": "任意允许追加时钟的一般保留证明"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md",
+      "sha256": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f",
+      "section": "合法模块的有限线性设计与零基线障碍"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "核b全部12次真实偏离，而不是六条端点；clock贡献可负而真实核心费用可正，和零基线不是同一机制。",
+  "contribution": {
+    "result": "任何只用指定同类三元clock模块且指定排除b的合法设计，在任意目标α≥1都不能取得正出口余量。",
+    "remaining": "一般模块、跨类时钟或其他基体需重新检查所选出口与全部保留约束。"
+  },
+  "endpoint_pins": {
+    "weighted-congestion/class-internal-clock-compiler-obstruction": "1971fab2995e7951d14724bdef6608870f8715534bdc5e779f30c9eae854952a",
+    "weighted-congestion/legal-repair-module-linear-design": "0e77f77cc2ef05d4722e88e841de670b875188c2e4a891ba80e565f04ca2a697"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/障碍/有序同类三元时钟保留严格均衡--障碍.md": "d3db13285b8acc3eb989191f70eca97ac3ffe0c55b0acbb208f3ac188aa339ce",
+    "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f"
+  },
+  "review_digest": "ba98fd1c2415e53c3a2b346adfd7768987ecba7e3eea5a45e03ab48a66ead8e7"
+}

@@ -1,0 +1,47 @@
+{
+  "edge_id": "wc-6854-zero-core-cost-freezes-design-rows",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/full-action-zero-baseline-gate-obstruction"
+  ],
+  "target_ids": [
+    "weighted-congestion/legal-repair-module-linear-design"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限共同玩家、正权、同一动作标签，真实非负系数多项式和互斥资源模块，幅度λ≥0。给每个相关玩家i的核心指定实际新增费用恒零，且核心投影包含i全部动作。",
+  "roles": {
+    "weighted-congestion/full-action-zero-baseline-gate-obstruction": "将核心零新增费用推广到该玩家全部状态。",
+    "weighted-congestion/legal-repair-module-linear-design": "给出指定出口和保留偏离的线性幅度行及共同严格余量。"
+  },
+  "explanation": "对任一满足零等式的λ，合并正幅度模块得实际新增H。满投影和非负性迫使H_i(s)=0对每个s成立，故该玩家每个约束的值恒为ΔαB_i，完全独立于λ。逐模块也可读出：若某模块的某动作含非零费用资源，则该动作出现的一个核心态已使该模块费用严格正，零总和迫使其幅度为0。于是指定出口若分配给该玩家且ΔαB_i≤0，共同ρ必须为0或整个系统已不可行。要求保留且ΔαB_i>0的一行直接不可行。",
+  "scope": "只在额外零基线等式、真实费用和对应玩家满投影的模板中固定这些行。未覆盖辅助玩家未出现的动作、允许正基线的合法门或扣除基线后的有符号差值。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md",
+      "sha256": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f",
+      "section": "合法模块的有限线性设计与零基线障碍"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/端点面积与正修复的审查范围--审查.md",
+      "sha256": "5a849b9f2d5fe6bf9db309f442500f84c90f4d3dccf0d030c4403eedbd4ad4d8",
+      "section": "正修复整合：真实新增内容、共同基线和失败例"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "按实际多项式在正负载的严格正性核对零行，并区分实际费用与α余量；约束固定的是相关玩家的全部真实偏离。",
+  "contribution": {
+    "result": "给合法修复幅度系统加入满投影核心的零实际费用等式后，可把对应玩家的幅度行消成基体常数；给定非正基体出口时，模板不能取得正共同余量。",
+    "remaining": "仍须用其余玩家的合法模块及真实偏离解剩余幅度约束；没有满投影或允许正核心费用时，不能使用本消元。"
+  },
+  "endpoint_pins": {
+    "weighted-congestion/full-action-zero-baseline-gate-obstruction": "040457e4b84b71086352bd15217cd5872c245c29f8c82589831a176a09d95819",
+    "weighted-congestion/legal-repair-module-linear-design": "0e77f77cc2ef05d4722e88e841de670b875188c2e4a891ba80e565f04ca2a697"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f",
+    "archives/weighted-congestion/state/审查/端点面积与正修复的审查范围--审查.md": "5a849b9f2d5fe6bf9db309f442500f84c90f4d3dccf0d030c4403eedbd4ad4d8"
+  },
+  "review_digest": "f2e2ea6a12021fd52a36e60259adb49c573fa1762e06561e2976ccafeac42d2e"
+}

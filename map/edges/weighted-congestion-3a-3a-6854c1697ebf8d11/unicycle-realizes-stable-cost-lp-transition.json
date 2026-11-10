@@ -1,0 +1,46 @@
+{
+  "edge_id": "wc-6854-unicycle-realizes-stable-cost-lp-transition",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-INCIDENCE-UNICYCLE-COUNTEREXAMPLE-v1"
+  ],
+  "target_ids": [
+    "weighted-congestion/stable-decision-budget-and-lower-bound-certificates"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "应用稳定集合两变量证书到原单环二人四状态；社会目标取全社会成本W=C₀+2C₁，1≤α≤72/71。",
+  "roles": {
+    "WC-INCIDENCE-UNICYCLE-COUNTEREXAMPLE-v1": "给出全部两人四态的当前和真实偏离成本以及精确端点。",
+    "weighted-congestion/stable-decision-budget-and-lower-bound-certificates": "对全状态行λ≤W+μVα、μ≥0解释空稳定集的无界性与非空的准确稳定最优。"
+  },
+  "explanation": "α<72/71时Vα四行均正，所以令μ增大可让λ任意大。端点α=72/71时，按00/01/10/11的(W,V)依次为(49,0)、(81/2,31/71)、(97/2,45/142)、(40,1/284)。λ=49及μ=2556满足四行，且00的V=0强制λ≤49；所以LP恰在49取得上界。此μ由最后一行必需。",
+  "scope": "只迁移稳定集合全状态LP的一条明确实例。没有给路径峰值的DAG证书，或无稳定限制下的社会OPT切线。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/反例/单环潜在使用图的二次均衡缺失--反例.md",
+      "sha256": "3e3959a20d3aef53808aef07d9536fcfc69b958e3fdd10575d57d88373f3cb0a"
+    },
+    {
+      "path": "archives/weighted-congestion/state/算法/稳定决策的路径峰值与社会下界证书--算法.md",
+      "sha256": "206384f5a9951d155e88ece69894932b2279869ce696bb6c48b120c3f4488c27",
+      "section": "稳定集合成本的精确两变量全状态证书"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "Fraction重算四行残差及最紧的惩罚系数，保留端点弱不等式与α<端点的严格区别。",
+  "contribution": {
+    "result": "该实例的稳定成本LP在1≤α<72/71时无界，在端点精确最优49并可用μ=2556认证。",
+    "remaining": "一般状态模型的LP完整性、路径峰值可达性与社会OPT切线仍由各自证明或原输入证书承担。"
+  },
+  "endpoint_pins": {
+    "WC-INCIDENCE-UNICYCLE-COUNTEREXAMPLE-v1": "11b167238478faa38018a53f2a838268a9a9e85f64e3e1674fafb8e7a240d9c6",
+    "weighted-congestion/stable-decision-budget-and-lower-bound-certificates": "147aaaf3c7fd2bb07e5e19876445a70355d0008497864e7978b330d1123485e4"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/反例/单环潜在使用图的二次均衡缺失--反例.md": "3e3959a20d3aef53808aef07d9536fcfc69b958e3fdd10575d57d88373f3cb0a",
+    "archives/weighted-congestion/state/算法/稳定决策的路径峰值与社会下界证书--算法.md": "206384f5a9951d155e88ece69894932b2279869ce696bb6c48b120c3f4488c27"
+  },
+  "review_digest": "58682fc3069f1fcd2b640708020f0dd0f51032ef454290b70633bc4f46dca160"
+}

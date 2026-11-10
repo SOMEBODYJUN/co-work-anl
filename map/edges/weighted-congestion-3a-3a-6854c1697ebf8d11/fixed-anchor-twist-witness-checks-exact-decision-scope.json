@@ -1,0 +1,47 @@
+{
+  "edge_id": "wc-6854-fixed-anchor-twist-witness-checks-exact-decision-scope",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/anchored-clock-twist-noncovariance"
+  ],
+  "target_ids": [
+    "weighted-congestion/existing-clock-front-decision"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "一个四人等权类，固定首位0，三对fresh同费三元资源、侧为动作位xor(0,1,0)。反例用(11/7)(x/(3w))³，原决策正文的另一个回归用权1及c(x)=x。 三次见证取空基体B=0，在1≤α<9/8通过原决策的严格支配前提。",
+  "roles": {
+    "weighted-congestion/anchored-clock-twist-noncovariance": "给出真实首位时钟的当前成本不协变见证。",
+    "weighted-congestion/existing-clock-front-decision": "需要核原游戏已有时钟的支配式，按完整原front真实成本做精确筛查；把共同相位商限于已验全游戏自同构。"
+  },
+  "explanation": "扭转T把0000送到1000、clone0送到clone1。两个对应玩家在各自使用的pair上均为2w负载，但前者参加三对，后者仅两对，三次费用分别88/63和176/189。取原实例的基体为空，L=3、u=88/189、v=11/7，故α=1时严格支配余量v−3u=11/63，更一般恰在1≤α<9/8通过该证书。因而即使原决策支配成立，也不能自动把原front枚举规模Π_a 2n_a除掉共同相位。线性例为6和4，同样由关联数差产生，但v=3<3u=6，不用于域内结论。决策使用完整原状态的真实端点费用及已验支配，不要求协变。",
+  "scope": "已有时钟支配合同的实际输入内仍可缺失当前成本协变，限制的是未经证明的完整原游戏相位压缩。基体相位商加真实clock差额的分步编译相容。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/反例/固定首位时钟的扭转不协变--反例.md",
+      "sha256": "e1031f0cdb6c2f3f1c93f67286bfe6b686e79d4af9129b43eb191755549ac6ea"
+    },
+    {
+      "path": "archives/weighted-congestion/state/算法/原实例支配时钟的前沿精确决策--算法.md",
+      "sha256": "d5a582732ee9747e78d95f60f01a71e4f7ea7787d03512bf3946285c2bf0328b",
+      "section": "模型与可直接核验的合同"
+    },
+    {
+      "path": "archives/weighted-congestion/state/算法/原实例支配时钟的前沿精确决策--算法.md",
+      "sha256": "d5a582732ee9747e78d95f60f01a71e4f7ea7787d03512bf3946285c2bf0328b",
+      "section": "必须保留的边界与证据"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项核实实际对象、真实加入负载或偏离、完整量词和证据版本，区分局部证书与全部原游戏状态。",
+  "endpoint_pins": {
+    "weighted-congestion/anchored-clock-twist-noncovariance": "4ae1f6bc3af8ebf2d2d0b793037ac7f93b556b822a66a9f2fbc52e8150df6dce",
+    "weighted-congestion/existing-clock-front-decision": "c3fb8563de6e7157f023544eb9653724747b4381f61893adda5c37a833bae1c9"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/反例/固定首位时钟的扭转不协变--反例.md": "e1031f0cdb6c2f3f1c93f67286bfe6b686e79d4af9129b43eb191755549ac6ea",
+    "archives/weighted-congestion/state/算法/原实例支配时钟的前沿精确决策--算法.md": "d5a582732ee9747e78d95f60f01a71e4f7ea7787d03512bf3946285c2bf0328b"
+  },
+  "review_digest": "9738067d2ea71926f86554d2cce6995bedf72c0d73fc7d326a87114e43fe2dec"
+}

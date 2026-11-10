@@ -1,0 +1,52 @@
+{
+  "edge_id": "wc-6854-fixed-cubic-two-by-two-grid-exact-137-over-107",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/common-scale-stability-quality-certificate"
+  ],
+  "target_ids": [
+    "weighted-congestion/finite-two-weight-real-scaling-marginal-grid-synthesis"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "轻重各至多两名，实际权及玩家边际乘子均固定为1、2，单资源延迟x³，计数(k,l)在{0,1,2}²，加入预算A=w(k+2l+w)³。",
+  "roles": {
+    "weighted-congestion/finite-two-weight-real-scaling-marginal-grid-synthesis": "给出有限匿名LP的精确加入合同，并报告本参数行的137/107浮点限分母猜测。",
+    "weighted-congestion/common-scale-stability-quality-certificate": "定义真实局部加入上下界与同一玩家乘子跨资源相加的合同。在本例把每个乘子固定为真实权重。"
+  },
+  "explanation": "两条从(0,0)到(2,1)的添加路径分别为轻、轻、重和重、轻、轻；预算和为1+8+128=137和16+27+64=107。第一路径沿加入下界望远镜，第二路径沿加入上界望远镜，两者共享起止态，故137≤F(2,1)−F(0,0)≤107α。取107F按k为行、l为列等于[[0,2192,19728],[107,5891,36853],[963,14659,60883]]。全部轻边按l分层、各层按k递增，预算与缩放增量分别为(1,8,27,64,125,216)和(107,856,3699,8768,17125,24030)；全部重边按k分行、各行按l递增，分别为(16,128,54,250,128,432)和(2192,17536,5784,30962,13696,46224)。每项均在[107A,137A]内，故完整九态LP达到该比。任意正负载下零费资源可取零势；资源费用为b_e x³、b_e≥0时用同一真实玩家乘子逐资源相加，全部严格137/107改善均下降。此处的二人每型也可取逐资源的潜在使用者上界。",
+  "scope": "固定真实权乘子、权比2、纯三次的单一九态模板及在该人数条件下的充分势。自由重尺度、混合费用和更大人口有独立义务。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定义/共同尺度稳定与社会质量的证书接口--定义.md",
+      "sha256": "c17d6fb0d93bd42814ce807198beee8fc96217c38d317228ea52b3dbfb1c9a23",
+      "section": "2. 共同玩家尺度为什么必要"
+    },
+    {
+      "path": "archives/weighted-congestion/state/计算/有限双权真实权缩放边际势的网格合成--计算.md",
+      "sha256": "0c0589120987a6c42e9646008d080892b02ecec0bc4aebfcf350964b58a6ec8f",
+      "section": "LP矩阵、状态压缩和精确最优的含义"
+    },
+    {
+      "path": "archives/weighted-congestion/state/计算/有限双权真实权缩放边际势的网格合成--计算.md",
+      "sha256": "0c0589120987a6c42e9646008d080892b02ecec0bc4aebfcf350964b58a6ec8f",
+      "section": "冻结结果的全部参数与数值意义"
+    }
+  ],
+  "contribution": {
+    "result": "q=2、d=3、n₁=n_q=2的固定真实权缩放LP精确最优137/107，由两条路径和显式九态有理势同时认证，并给该有限纯三次游戏子类的137/107-PNE存在上界。",
+    "remaining": "其他N、权比、次数的最优性和全人数延拓仍需证明；该证书不把其余浮点行或真实PNE阈值升级为精确结论。"
+  },
+  "review_note": "按真实加入预算逐项核12条整数边界，并核同端点两路径望远镜；本证明不用未钉住的通用最大圈比定理。",
+  "reviewed_by": "Boss2",
+  "endpoint_pins": {
+    "weighted-congestion/common-scale-stability-quality-certificate": "1baca79767c93a4b31e14622290ce30b6893f29247ef83f82902e07d3b9a44e4",
+    "weighted-congestion/finite-two-weight-real-scaling-marginal-grid-synthesis": "f669cbbfd6accc35476acdbd1c70e1c97cd435183014a4cbc07e18da922899bc"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定义/共同尺度稳定与社会质量的证书接口--定义.md": "c17d6fb0d93bd42814ce807198beee8fc96217c38d317228ea52b3dbfb1c9a23",
+    "archives/weighted-congestion/state/计算/有限双权真实权缩放边际势的网格合成--计算.md": "0c0589120987a6c42e9646008d080892b02ecec0bc4aebfcf350964b58a6ec8f"
+  },
+  "review_digest": "f7f205a8d20ef2e2fc8e310de62c360bfc67403ebd6c018c42bf6b624f177a8f"
+}

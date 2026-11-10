@@ -1,0 +1,49 @@
+{
+  "edge_id": "wc-6854-triangular-upper-root-exact-marginal-slack",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1"
+  ],
+  "target_ids": [
+    "weighted-congestion/triangular-rational-upper-root-review"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意整数d≥2,k≥1，正有理β，t=(d−1)/β，Z=Σ_(j<k)t^j<β；同一全局类别次序跨资源。",
+  "roles": {
+    "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1": "给出严格递减根方程及三个区段的三角插入边际界。",
+    "weighted-congestion/triangular-rational-upper-root-review": "把三角混合改成有理权，给每类严格余量及其准确最小值。"
+  },
+  "explanation": "令T_i=Σ_(j<i)t^j、T₀=0，S_i=T_i/Z。沿用三角插入界，混合权t^j/Z给下系数S_i和上系数1+(d−1)S_{i−1}。以βt=d−1得上/下比R_i=[Z+(d−1)T_{i−1}]/T_i=β+(Z−β)/T_i。T_i递增且Z−β<0，最大在i=k，故β−max R_i=β/Z−1>0。根函数在β为Z−β<0且严格递减，所以β严格大于A_(d,k)。",
+  "scope": "保留全局类别上限、跨资源共同乘子和严格上根；精确根可能无理，四个代入点不能替代一般计算。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+      "sha256": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2",
+      "section": "根与显式包络"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+      "sha256": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2",
+      "section": "三角排序与跨资源一致乘子"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/权类别排序势与共占高度的审查范围--审查.md",
+      "sha256": "5addca12a6cfc4cc59a84bbf40244d5f2ba884b4e3ea1401e195c7ead86a0b3a",
+      "section": "有理上根的精确余量"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐式核对T₀、k=1与归一化，等号根的归一化A对应Z=A，不从其推出严格正余量。",
+  "whole_result": "对所有满足Z<β的正有理上根，三角混合给每类R_i=β+(Z−β)/T_i，并精确得到全局余量β/Z−1>0；β>A_(d,k)。",
+  "endpoint_pins": {
+    "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1": "1a0edceaed3cbc80e104df06697385be3406c7aa2b6eed26b2203f66c2609413",
+    "weighted-congestion/triangular-rational-upper-root-review": "79ee5216e22414766fe981d012a8a319ab8a85f9e442bf74df481672d552ed68"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2",
+    "archives/weighted-congestion/state/审查/权类别排序势与共占高度的审查范围--审查.md": "5addca12a6cfc4cc59a84bbf40244d5f2ba884b4e3ea1401e195c7ead86a0b3a"
+  },
+  "review_digest": "3f5b5767b29b7488388be04a2818c983726a67a96e17cdf0514344f0bbc10971"
+}

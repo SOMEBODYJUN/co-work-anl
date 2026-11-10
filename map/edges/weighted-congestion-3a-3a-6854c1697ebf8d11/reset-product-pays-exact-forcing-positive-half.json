@@ -1,0 +1,57 @@
+{
+  "edge_id": "wc-6854-reset-product-pays-exact-forcing-positive-half",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "wc-multisource-reset-product-budget"
+  ],
+  "target_ids": [
+    "WC-SHARED-SIDE-EXACT-FORCING-THRESHOLD-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意整数d≥2，同权hub、跨source共享side和真实UFτ，取α=1、τ≥d。",
+  "roles": {
+    "wc-multisource-reset-product-budget": "给出ατ≥d时反位Rosenthal势的每个单hub局部最小点均为原游戏α-PNE。",
+    "WC-SHARED-SIDE-EXACT-FORCING-THRESHOLD-v1": "目标为精确PNE的统一强迫锐阈值，由正向和四态负向组成。"
+  },
+  "explanation": "有限hub位型上的E有局部最小点。代入α=1，R_v≤(d/τ)Δ_v≤Δ_v=M_v(1)，其hub真实偏离margin≤0；light反位的真实偏离由UFτ控制，故所得为精确PNE。目标的τ<d负向不由此推出，须独立核两玩家构造的严格UF和四态出口。",
+  "scope": "支持锐阈值的正方向含τ=d，ατ≥d只在本文共享侧资源结构且UFτ成立时用；不主张α>1最优乘积域。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/跨源共享侧资源的重置增量乘积预算--定理.md",
+      "sha256": "de331c8c8a94552d1cd3cd4d5180ad169fa3543af59b424df03a5e53c77ba81c",
+      "section": "共同模型和版本合同"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/跨源共享侧资源的重置增量乘积预算--定理.md",
+      "sha256": "de331c8c8a94552d1cd3cd4d5180ad169fa3543af59b424df03a5e53c77ba81c",
+      "section": "一名light共领一次预算，真实偏离闭合"
+    },
+    {
+      "path": "archives/weighted-congestion/state/反例/共享侧资源精确强迫阈值的四状态反例--反例.md",
+      "sha256": "542002e928a056500efb6f8b53427de77651bd9066a53b7030e8b5ee47b0a277",
+      "section": "统一边界的两个方向"
+    },
+    {
+      "path": "archives/weighted-congestion/state/反例/共享侧资源精确强迫阈值的四状态反例--反例.md",
+      "sha256": "542002e928a056500efb6f8b53427de77651bd9066a53b7030e8b5ee47b0a277",
+      "section": "全部四态的真实出口"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "核对等号端点、冻结light的真实偏离与只用于势比较的重置，并核目标负向不是此边结论。",
+  "contribution": {
+    "result": "对每个τ≥d，精确PNE存在，且每个该反位势局部最小点均给原游戏精确PNE。",
+    "remaining": "τ<d的锐性由目标的显式四态反例独立证明；α>1的必要性与最优乘积域未得到。"
+  },
+  "endpoint_pins": {
+    "WC-SHARED-SIDE-EXACT-FORCING-THRESHOLD-v1": "84a97b91cefb3400094c460e36afffbf7ecde3c3298aa375625b45394ec84514",
+    "wc-multisource-reset-product-budget": "9b32686d662537d471469eb9ea69a71ff5b75e52da51e1542b9e3829338eb697"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/跨源共享侧资源的重置增量乘积预算--定理.md": "de331c8c8a94552d1cd3cd4d5180ad169fa3543af59b424df03a5e53c77ba81c",
+    "archives/weighted-congestion/state/反例/共享侧资源精确强迫阈值的四状态反例--反例.md": "542002e928a056500efb6f8b53427de77651bd9066a53b7030e8b5ee47b0a277"
+  },
+  "review_digest": "33fd0310da799e12a5e7cd881e7e14d469c231f63cdb71300efabcbdfd11ac57"
+}
