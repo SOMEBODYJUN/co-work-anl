@@ -1,0 +1,63 @@
+{
+  "edge_id": "wc-retuned-v2-fixed-boolean-limit-contribution",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-30d382c7f97c48eea789aed8e8f93eed"
+  ],
+  "target_ids": [
+    "WCF-R3-SCALED-RETUNED-v2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定正有理t=(49,110,49,60,2,3,100)/100；七互补mask0101,0112,1022,1100,1120,1122,1211；整数m≥1，权(1,1/(10m),1/(20m),1/(50m))；前六资源对次数32m²、末对二次；费用不乘权，真实单方翻位冻结别人并重算自身新负载；2-PNE用弱不等式。 本边只专化完整布尔费用极限和B的有限min/max连续性。",
+  "roles": {
+    "M-30d382c7f97c48eea789aed8e8f93eed": "任意固定正有理t的完整16态/偏离费用极限，及正极限分母下B收敛。",
+    "WCF-R3-SCALED-RETUNED-v2": "接收固定调谐t的精确100/49极限这一局部结论；有限尾域/证书另行证明。"
+  },
+  "explanation": "将固定t代入完整布尔费用表，从全部七mask与互补资源重建16态和64真实翻位。八代表0000..0111的最大翻位比（另与1取max）依次为50,35/9,149/52,107/50,100/49,100/49,15/7,149/65，互补态相同，故B∞=100/49，极小态0100,0101,1010,1011。源定理保证所有当前与真实偏离费用逐项收敛且全部极限分母正。有限个除法、最大及最小均连续，所以B(G_m(t))→100/49。每个固定1≤α<100/49最终有B(G_m)>α，故最终无α-PNE。辅助表在100/49存在弱均衡；收敛不判断有限成员的100/49端点，也不给m20的显式统一起点。",
+  "scope": "固定调谐振幅的完整极限分支；辅助表不当作合法多项式游戏，有限反例仍由各有限成员及独立尾界承担。",
+  "contribution": {
+    "result": "固定t的B(G_m(t))→100/49；极限表的四个极小态为0100,0101,1010,1011。对每个固定1≤α<100/49，充分大整数m的合法有限游戏无α-PNE。",
+    "remaining": "完整v2另需全部m≥20的显式定向正余量与次数嵌入、m3精确证书及m1/2存在性；不能从本收敛分支推出这些有限或定量结论，亦不补4≤m≤19。"
+  },
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md",
+      "sha256": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df",
+      "section": "布尔极限的来由"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/十四资源缩权族的常数无均衡界--定理.md",
+      "sha256": "62f4f0e0e9090a650f09442465161a4552f1ea84fad2bfa1f36c8183448733e0",
+      "section": "两个极限因子的完整计算"
+    },
+    {
+      "path": "map/edges/weighted-congestion-3a-3a-bbce6426b55466ed/reading-and-proof.md",
+      "sha256": "c5588521474d756085987fa66dd29cfb7d53861c9389b83944436ef8f8a33f72",
+      "section": "固定振幅的布尔极限贡献"
+    },
+    {
+      "path": "map/edges/weighted-congestion-3a-3a-bbce6426b55466ed/verify_retuned.py",
+      "sha256": "b5302e2e2c987a17d0b5bd566a6212eb339f019b649245e0e3c29ae42679eef3"
+    },
+    {
+      "path": "map/edges/weighted-congestion-3a-3a-bbce6426b55466ed/verification.json",
+      "sha256": "3218822a6740ec75fb00522bf0ab7e054a18665e87c7e06306089814ab6b29bf"
+    }
+  ],
+  "reviewed_by": "Boss5 / retuned_fourteen",
+  "review_note": "逐项核固定振幅、16态及64真实偏离的布尔表、正分母和互补对称，精确复算八个max比及100/49；审读有限min/max连续性和严格α量词，保留端点及辅助模型边界。",
+  "endpoint_pins": {
+    "M-30d382c7f97c48eea789aed8e8f93eed": "bdcc5ddca42a38a9193c57118451db8ed92a3b9b10e15067850b8bb51c5814ff",
+    "WCF-R3-SCALED-RETUNED-v2": "e602b078e362c4c01888cb9d78dd3f852ada86c09d01054234aeb322fd8a7dbe"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df",
+    "archives/weighted-congestion/state/定理/十四资源缩权族的常数无均衡界--定理.md": "62f4f0e0e9090a650f09442465161a4552f1ea84fad2bfa1f36c8183448733e0",
+    "map/edges/weighted-congestion-3a-3a-bbce6426b55466ed/reading-and-proof.md": "c5588521474d756085987fa66dd29cfb7d53861c9389b83944436ef8f8a33f72",
+    "map/edges/weighted-congestion-3a-3a-bbce6426b55466ed/verify_retuned.py": "b5302e2e2c987a17d0b5bd566a6212eb339f019b649245e0e3c29ae42679eef3",
+    "map/edges/weighted-congestion-3a-3a-bbce6426b55466ed/verification.json": "3218822a6740ec75fb00522bf0ab7e054a18665e87c7e06306089814ab6b29bf"
+  },
+  "review_digest": "591adc1007bb9f4c1d582d99be8b58ef575e532daab7f475af088b6b2c079992"
+}

@@ -1,0 +1,74 @@
+{
+  "edge_id": "wc-retuned-v2-directed-m20-template-contribution",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WCF-R3-SCALED-TEMPLATE-v1"
+  ],
+  "target_ids": [
+    "WCF-R3-SCALED-RETUNED-v2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定正有理t=(49,110,49,60,2,3,100)/100；七互补mask0101,0112,1022,1100,1120,1122,1211；整数m≥1，权(1,1/(10m),1/(20m),1/(50m))；前六资源对次数32m²、末对二次；费用不乘权，真实单方翻位冻结别人并重算自身新负载；2-PNE用弱不等式。 本边固定α=2及正文的八个指定见证；将模板运输改用本边付清的定向误差，不把一般绝对误差界直接当M20证明。",
+  "roles": {
+    "WCF-R3-SCALED-TEMPLATE-v1": "固定八见证的极限差及资源运输结构；代入同一t得δ=1/50。",
+    "WCF-R3-SCALED-RETUNED-v2": "接收全部m≥20的严格二倍尾界及d≥12800嵌入这一局部贡献；其他有限分支另付。"
+  },
+  "explanation": "固定八代表见证玩家为3,3,4,1,4,3,4,2（一基），补态同人。代入t和α2的极限差为24/25,51/50,9/20,7/50,1/50,1/50,7/50,19/100，故δ=1/50。前六对未全支持时归一化负载≤1−2/(100m+17)，设L_m为其32m²次方，则L_m≤exp(−64m²/(100m+17))≤exp(−64m/117)。前六对有限费用相对布尔表只会增加；每人可用振幅和为57/50,56/25,41/25,211/100，故当前无负误差、偏离新增≤(56/25)L_m。每个指定当前见证都与重玩家共用末对资源，其费减少≤δ_m=17/(50m)。指定轻玩家偏离后末对新增≤q_m=289/(10000m²)；唯一指定重玩家偏离后末对费≤其极限1，因此统一减2q_m仍安全。于是每个指定有限差≥1/50−δ_m−2q_m−(112/25)L_m。对全部m≥20，64m/117>10、e>8/3给L_m<(3/8)^10，其余两项非增，所以有限差严格大于2735869393/1048576000000>0。八代表及互补穷尽16态。任意整数d≥12800取m=floor(sqrt(d/32))≥20，成员最高次数32m²≤d，得到合法有限无2-PNE实例。定向估计已完整付清，不只是在m20抽样。",
+  "scope": "同一固定调谐族的v2定向无限尾域，独立于v1的M52绝对误差路线。不是模板三次根的全拓扑最优性，不覆盖m4..19或有限100/49端点。",
+  "contribution": {
+    "result": "∀整数m≥20，∀16态s，正文指定玩家有C_i(s)−2C_i(s^⊕i)≥2735869393/1048576000000>0；故无2-PNE。进而∀整数d≥12800，存在degree≤d的同族有限无2-PNE实例。",
+    "remaining": "完整v2仍含m3的精确全态证书、m1/2的2-PNE存在性以及固定振幅的B(G_m)→100/49分支；这些由独立证书/有限核验与完整布尔极限贡献承担。本边不处理4≤m≤19。"
+  },
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/十四资源既定偏离模板的三次根阈值--定理.md",
+      "sha256": "d9c67c259e194f6a516c2118fe3c021b1a306562a7a3368475865b97b88914e3",
+      "section": "统一误差及明确有限起点"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md",
+      "sha256": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/十四资源缩权族的常数无均衡界--定理.md",
+      "sha256": "62f4f0e0e9090a650f09442465161a4552f1ea84fad2bfa1f36c8183448733e0",
+      "section": "调谐振幅：两个有效统一起点"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/十四资源缩权族的独立审查与量词修正--审查.md",
+      "sha256": "799c690767e9c827e895f6f2e9f9947692700943a8bb7ae0d16c3b90c0c9f8c5",
+      "section": "不同有限起点的证据角色"
+    },
+    {
+      "path": "map/edges/weighted-congestion-3a-3a-bbce6426b55466ed/reading-and-proof.md",
+      "sha256": "c5588521474d756085987fa66dd29cfb7d53861c9389b83944436ef8f8a33f72",
+      "section": "v2的定向M20承重证明"
+    },
+    {
+      "path": "map/edges/weighted-congestion-3a-3a-bbce6426b55466ed/verify_retuned.py",
+      "sha256": "b5302e2e2c987a17d0b5bd566a6212eb339f019b649245e0e3c29ae42679eef3"
+    },
+    {
+      "path": "map/edges/weighted-congestion-3a-3a-bbce6426b55466ed/verification.json",
+      "sha256": "3218822a6740ec75fb00522bf0ab7e054a18665e87c7e06306089814ab6b29bf"
+    }
+  ],
+  "reviewed_by": "Boss5 / retuned_fourteen",
+  "review_note": "实读模板、有限资源定义、当前v2及审查的承重推导；逐状态核指定当前资源含重玩家、四人可用振幅和、误差方向及m≥20的单调解析界。程序独立重建辅助表并精确复算有理常数；无限量词由本文证明，不由有限抽样或JSON加载替代。",
+  "endpoint_pins": {
+    "WCF-R3-SCALED-RETUNED-v2": "e602b078e362c4c01888cb9d78dd3f852ada86c09d01054234aeb322fd8a7dbe",
+    "WCF-R3-SCALED-TEMPLATE-v1": "a6a293ad2e0863e8bee28de472d18f43d510dbe088254563490e60681c0b565e"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/十四资源既定偏离模板的三次根阈值--定理.md": "d9c67c259e194f6a516c2118fe3c021b1a306562a7a3368475865b97b88914e3",
+    "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df",
+    "archives/weighted-congestion/state/定理/十四资源缩权族的常数无均衡界--定理.md": "62f4f0e0e9090a650f09442465161a4552f1ea84fad2bfa1f36c8183448733e0",
+    "archives/weighted-congestion/state/审查/十四资源缩权族的独立审查与量词修正--审查.md": "799c690767e9c827e895f6f2e9f9947692700943a8bb7ae0d16c3b90c0c9f8c5",
+    "map/edges/weighted-congestion-3a-3a-bbce6426b55466ed/reading-and-proof.md": "c5588521474d756085987fa66dd29cfb7d53861c9389b83944436ef8f8a33f72",
+    "map/edges/weighted-congestion-3a-3a-bbce6426b55466ed/verify_retuned.py": "b5302e2e2c987a17d0b5bd566a6212eb339f019b649245e0e3c29ae42679eef3",
+    "map/edges/weighted-congestion-3a-3a-bbce6426b55466ed/verification.json": "3218822a6740ec75fb00522bf0ab7e054a18665e87c7e06306089814ab6b29bf"
+  },
+  "review_digest": "709e64aaee1926422915825ab3faa83c6c63ccaf4b47c8698341c756988c1f7d"
+}
