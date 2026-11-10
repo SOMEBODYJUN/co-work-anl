@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-map-proof-identity-and-paid-imports-round29-v1.json",
-    "sha256": "0061e165d9e7a955fb978ac42d9e80546a5d8b6cb2d0ae6938266954cad18795"
+    "path": "research/registration/baseline-map-two-provider-middle-gap-round30-v1.json",
+    "sha256": "ef30534824e1d5f67a6ce7903a50b83e81f892bd0baa7712ed5f656cd4e5ce06"
   },
   "objects": [
     {
@@ -146331,6 +146331,36 @@
       ]
     },
     {
+      "object_id": "customer-attraction/two-provider-middle-omission-gap-upper-bound",
+      "version": 1,
+      "kind": "lemma",
+      "truth_status": "proved",
+      "title": "两提供者遗漏与静态差的中间区间上界",
+      "model": "两名有序单位提供者、共同有限目录、单位客户等分的任意完整纯SPE。",
+      "statement": "记实际W>0，任意比较对遗漏R及其对其余可重复无序对最小静态差G。实际末标签不属比较对时16G+7R≤8W。阈值r>5/9时，R/W≥r推出G/W≤(8−7r)/16，在5/9<r<8/9严格收紧旧直线，且在8/9端点可达。",
+      "quantifiers": "任意至少两个合法标签的有限共同目录及每份正福利完整纯SPE，任意允许重复的无序比较对。",
+      "assumptions": [
+        "实际末标签不在所比较的标签对，R/W>5/9保证此条件。"
+      ],
+      "scope": "补充的上界与8/9端点。",
+      "objections": "中间区间的精确最大静态差及锐性仍开放。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/两提供者遗漏与静态差的中间区间上界--引理.md",
+        "sha256": "f7c6111e5836ed1f41ecce878d24d401f1cde307494a0a9817230e88a69e4172"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/两提供者比较覆盖差距与遗漏的锐权衡--定理.md",
+          "sha256": "ec059c2306778601c42324e16b72403497da512a739210d391e36de451657a03"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/两提供者真实续局的最优遗漏锐界14比13--定理.md",
+          "sha256": "c396bde3e30671c55d2437499472aa287a19a8d5712f12bdc79af56aa1b8428e"
+        }
+      ],
+      "sources": []
+    },
+    {
       "object_id": "customer-attraction/two-provider-omission-gap-sharp-tradeoff",
       "version": 1,
       "kind": "theorem",
@@ -166253,6 +166283,7 @@
       "sha256": "ec059c2306778601c42324e16b72403497da512a739210d391e36de451657a03",
       "disposition": "objects",
       "object_ids": [
+        "customer-attraction/two-provider-middle-omission-gap-upper-bound",
         "customer-attraction/two-provider-omission-gap-sharp-tradeoff"
       ],
       "reason": "合并实际末位、最大主题及真实强制后继不等式，并给全局精确覆盖差与遗漏前沿。"
@@ -166262,6 +166293,7 @@
       "sha256": "c396bde3e30671c55d2437499472aa287a19a8d5712f12bdc79af56aa1b8428e",
       "disposition": "objects",
       "object_ids": [
+        "customer-attraction/two-provider-middle-omission-gap-upper-bound",
         "customer-attraction/two-provider-omission-gap-sharp-tradeoff",
         "customer-attraction/two-provider-sharp-omission-fourteen-thirteenths",
         "customer-attraction/two-provider-unique-optimum-omission-sharp-supremum"
@@ -171250,6 +171282,15 @@
         "customer-attraction/two-level-insurance-real-menu-single-column-dominates-deviation-mean"
       ],
       "reason": "完整实读九主题全参数单列证书、指定完整策略族依赖、空扩展齐次性及银行一般DB后续校正；仅登记本族，不续造一般DB open。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/两提供者遗漏与静态差的中间区间上界--引理.md",
+      "sha256": "f7c6111e5836ed1f41ecce878d24d401f1cde307494a0a9817230e88a69e4172",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/two-provider-middle-omission-gap-upper-bound"
+      ],
+      "reason": "重用真最大主题比较的四个不交切片，补两提供者中间区间的严格改善上界。"
     },
     {
       "path": "archives/customer-attraction/state/引理/两斜率四尾匹配与非匹配根提升--引理.md",
