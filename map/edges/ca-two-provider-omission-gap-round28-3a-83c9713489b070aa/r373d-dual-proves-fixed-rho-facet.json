@@ -1,0 +1,57 @@
+{
+  "edge_id": "cag-83c97134-r373d-dual-proves-fixed-rho-facet",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/R-373d-fixed-response-cone-unique-static-gap"
+  ],
+  "target_ids": [
+    "customer-attraction/two-provider-omission-gap-sharp-tradeoff"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "六标签、根0、真实响应ρ=(1,4,4,4,5,4)、指定比较对23；客户掩码权非负，所有36项末位与6项根激励满足。此推导可取任意正W且没有最低遗漏门槛。",
+  "roles": {
+    "customer-attraction/R-373d-fixed-response-cone-unique-static-gap": "给逐63非空掩码可核的旧精确对偶、对应的真实激励行和竞争覆盖行。",
+    "customer-attraction/two-provider-omission-gap-sharp-tradeoff": "取得对任意可行掩码权的固定响应子域证明，同时保留任意响应表的解析证明。"
+  },
+  "explanation": "将旧对偶的权变量列乘154，并把覆盖与真实激励移到右侧。逐掩码得到 7W_x≥91(R_x−W_x)+77(Q₁₂,x+Q₁₃,x)+Σλᵢⱼsᵢⱼ,x+42t₂,x+56t₄,x。这里Q是23对12或13的覆盖差，s,t是各规定真实动作的收益相对偏离的差。末位乘子按02、03、04、05、23、25、41、43、51、53的顺序为126、126、12、16、14、16、12、12、16、16。乘非负掩码权求和后，真实激励贡献非负；两项竞争差各至少G。因此 7W≥91(R−W)+154G，即22G+13R≤14W。旧LP只用阈值把这条齐次不等式换成归一数字87/2200，逐列不等式本身对该固定锥内任意R成立。",
+  "scope": "原63列只覆盖固定ρ、固定根及固定比较对。该逐列证书独立复现同一线性上界的固定子域。",
+  "contribution": {
+    "result": "保留旧R-373d精确对偶，作为 22G+13R≤14W 在固定响应锥上的独立证明。",
+    "remaining": "任意目录与任意ρ下的上界、含B的锐5/9及整段整数达界仍需目标的解析证明和两端点构造。旧LP的单个最优数值也不足以推出逐列不等式。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/审查/R-373d固定响应锥唯一静态最优与残余覆盖--审查.md",
+      "sha256": "57864adbb2bf2316f4985622fdf7d2f2c358fe2a6eb09a9d97ae9f3303c26197",
+      "section": "程序实际定义的线性对象"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-373d-unique-optimizer-20261031/replay/exact_dual_check.py",
+      "sha256": "09f7e30c41fd4a41755ac44d0af8281b83e1d66e13d4a06202bbb7fc31045c7b"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-373d-unique-optimizer-20261031/replay/exact_dual_check.stdout.txt",
+      "sha256": "35c15206e3c47bf1e5392f263f1f8ed65adeb9f8649fbdc88b0aba9a603efc1f"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/两提供者比较覆盖差距与遗漏的锐权衡--定理.md",
+      "sha256": "ec059c2306778601c42324e16b72403497da512a739210d391e36de451657a03",
+      "section": "固定回复锥的独立对偶"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐列复跑旧Fraction对偶并按原行符号重核154倍尺度，另复跑新核验得到63列残差非负、45列严格且最大残差238。对偶求和只丢弃非负的真实激励，不假定G非负。",
+  "endpoint_pins": {
+    "customer-attraction/R-373d-fixed-response-cone-unique-static-gap": "35ef5744182889fac1452c2711e6ea857390023001022524922120f94308b9c6",
+    "customer-attraction/two-provider-omission-gap-sharp-tradeoff": "a62767375cb11193527225182d0ab5d9cea040d19e121077ad8af47a06d20099"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/审查/R-373d固定响应锥唯一静态最优与残余覆盖--审查.md": "57864adbb2bf2316f4985622fdf7d2f2c358fe2a6eb09a9d97ae9f3303c26197",
+    "archives/customer-attraction/tools/evidence/R-373d-unique-optimizer-20261031/replay/exact_dual_check.py": "09f7e30c41fd4a41755ac44d0af8281b83e1d66e13d4a06202bbb7fc31045c7b",
+    "archives/customer-attraction/tools/evidence/R-373d-unique-optimizer-20261031/replay/exact_dual_check.stdout.txt": "35c15206e3c47bf1e5392f263f1f8ed65adeb9f8649fbdc88b0aba9a603efc1f",
+    "archives/customer-attraction/state/定理/两提供者比较覆盖差距与遗漏的锐权衡--定理.md": "ec059c2306778601c42324e16b72403497da512a739210d391e36de451657a03"
+  },
+  "review_digest": "821318701df9d7a2de571475158aef64fc82ccf571f19c6eee9378adae64e6f7"
+}
