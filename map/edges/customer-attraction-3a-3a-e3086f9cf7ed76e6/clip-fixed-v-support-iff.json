@@ -1,0 +1,44 @@
+{
+  "edge_id": "cag-boss6-cage308-clip-fixed-v-support-iff",
+  "kind": "implies",
+  "source_ids": [
+    "M-8118ec4080264955bbda39b072df36a2"
+  ],
+  "target_ids": [
+    "M-71ceb542dca245c6a6284092cbdeee30"
+  ],
+  "relation_mode": "unconditional",
+  "conditions": "同一固定合法context、固定原full-v及原正边逐客户子容量；输入h>0、v>0，β=h/v；只能删原正边并将取消金额留current，current整行系数≤β。X任意固定客户集合，P_X是X内原正边总价。h=0与v=0按零端点单列，不改分母为ν_X。",
+  "roles": {
+    "M-8118ec4080264955bbda39b072df36a2": "提供局部最少外送β(v−u)_+、最大取消的合法区间和原边子容量可分数保留。",
+    "M-71ceb542dca245c6a6284092cbdeee30": "将最少外送和X内子容量比较，得到正输入下全部剩余正出口支持X的充要条件。"
+  },
+  "explanation": "先写实际充要条件：h>0时可只向X保留出口当且仅当P_X≥(v−u)_+。必要性：current≤βu且非负、总质量βv，所以外送至少β(v−u)_+；X原正边总容量只有βP_X，除正β即得条件。充分性：置r=(v−u)_+，从X原正边按分数保留总价r，其余全删；CLIP恒等式v=u+P−F、F=N+e≥0给r≤P，并有c=P−r=min(P,F)。因此取消合法、current=βmin(v,u)≤βu，所有金额非负且和βv=h，出口全在X。原子边有限、允许分数保留使任意0≤r≤P_X都可达到。h=0时全零方案不要求P_X条件，v=0时无合法正h。与目标完整statement逐项一致；348固定活动行的代入在目标证据中仍只是该判据应用，不构成一般RESIDUAL-CAP存在性反例。",
+  "scope": "固定full-v的正输入局部iff，包括全部X与零输入/零分母边界；不承诺每个SPE/每个X都满足右侧，不更换初始化、最优T、分母或原边幅。",
+  "whole_result": "在同一固定full-v、h>0且current整行系数≤h/v、仅删原正边的合同内，全部剩余正出口可限制在X iff P_X≥(v−u_i)_+。h=0全零平凡可行；v=0无合法正输入。方向为CLIP局部最少传播及原子容量推出目标整条SUPPORT陈述。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/同节点安全净券与最大标量剪枝--定理.md",
+      "sha256": "10f9a70752e2b014434ffc0cff2c3bfe10ab5a45724e088bbb76cac073158892",
+      "section": "最大标量取消与重新计算"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/来源客户保留的最大系数退款与支持条件--引理.md",
+      "sha256": "a00c4ece210dd7b5962a052ffaf55f2dd36ec2673cf3cf969ee564c40a37918c",
+      "section": "原full-v不变时的X支持iff"
+    }
+  ],
+  "status": "accepted",
+  "premises_mode": "all",
+  "reviewed_by": "Boss6",
+  "review_note": "本worker分别重推必要容量与充分保留构造，核c=P−(v−u)+恰等min(P,F)、分数边可保任意目标总价，核h0平凡与v0禁止正h；未把348局部应用当全称反例。 已实读当前29个合同及本边全部精确正文证据，旧数学程序执行0。",
+  "endpoint_pins": {
+    "M-71ceb542dca245c6a6284092cbdeee30": "d9d692676c3effbfcf06c72c853b30098b725352d11929520b9b1050bf58c13d",
+    "M-8118ec4080264955bbda39b072df36a2": "455cbcbb313e40e45071a60023643448b5860febe0232f120fbdbc19215d399e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/同节点安全净券与最大标量剪枝--定理.md": "10f9a70752e2b014434ffc0cff2c3bfe10ab5a45724e088bbb76cac073158892",
+    "archives/customer-attraction/state/引理/来源客户保留的最大系数退款与支持条件--引理.md": "a00c4ece210dd7b5962a052ffaf55f2dd36ec2673cf3cf969ee564c40a37918c"
+  },
+  "review_digest": "7333f5f24e1f6c24f4227c04a36e1bb27092c1fa35f189acb107f2d59e273463"
+}
