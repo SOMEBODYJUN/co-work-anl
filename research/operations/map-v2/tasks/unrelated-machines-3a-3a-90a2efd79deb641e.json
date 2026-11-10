@@ -388,13 +388,153 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss6",
-  "request_id": "80475a88751840bb96e97f3515130347",
+  "request_id": "ace5f331023444ffb9b1b6abebd85f4d",
   "requests": {
     "81a0648c3de14140a1ae6370812f33c4": "plan",
     "35f75baca8ba48b0a250eae7424658d2": "claim",
     "fd64713e78e8493c9ecdd6f7b4568667": "read-add",
-    "80475a88751840bb96e97f3515130347": "read-add"
+    "80475a88751840bb96e97f3515130347": "read-add",
+    "ace5f331023444ffb9b1b6abebd85f4d": "done"
+  },
+  "edge_paths": {
+    "um-90a2-affine-hall-to-free-vacancy-parking-three-halves": "map/edges/unrelated-machines-3a-3a-90a2efd79deb641e/affine-hall-to-free-vacancy-parking-three-halves.json",
+    "um-90a2-occupation-face-to-fixed-sink-three-halves": "map/edges/unrelated-machines-3a-3a-90a2efd79deb641e/occupation-face-to-fixed-sink-three-halves.json",
+    "um-ea0e151c-sparse-and-star-transfer-to-contracted-gap": "map/edges/unrelated-machines-3a-3a-ea0e151c17f595c8/sparse-and-star-transfer-to-contracted-gap.json"
+  },
+  "receipt": {
+    "coverage": {
+      "UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1": {
+        "state": "linked",
+        "object_pin": "831b35a049f0eb6f1affd470d1ee4cffb3b6961435800f48e53c44c4e8131693",
+        "comparison_scope": "72eb最终审查、6d9独立基面、9a7投影库、6ac1原有限枚举、4421/7a36/9ebc审查及5d41原224行主稿、7ec9原review均完整实读；与同包fixed-sink目标共同核一般2K面、支持匹配与全部预算恢复。",
+        "reason": "新whole边完整支付从任意K面引理到每固定K的给T三半scheduler：全体N统一取整、≤10K² heavy分支、lex投影顶点、≤2K改动和下界宏匹配。base须覆盖全部宏且occupied模式不依宏身份；引理单独的支持恢复不保预算。有限程序只是指数小例oracle，12回填事件不当12不同调度。",
+        "edge_ids": [
+          "um-90a2-occupation-face-to-fixed-sink-three-halves"
+        ]
+      },
+      "UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1": {
+        "state": "linked",
+        "object_pin": "1c3a26b6e992042e41e1382e26d715cb59f9d127e8e474aef693002c6782ee82",
+        "comparison_scope": "与occupation核心及同一最终/原主稿和全部指定证据完整比较；逐原任务核私有唯一home、共同sinks、T0、p>T剪枝、DP profile、heavy、投影顶点位长、匹配及回溯。",
+        "reason": "成功输出同一完整实际调度，每sink≤5T/4+2K·T/(8K)=3T/2，empty home≤T，occupied私有≤T/2加宏≤T。OPT≤T参考heavy分支必成功，故FAIL⇒OPT>T；成功不反推OPT≤T。固定K、给T是原量词，不并含OPT宏promise或可变K统一复杂度。",
+        "edge_ids": [
+          "um-90a2-occupation-face-to-fixed-sink-three-halves"
+        ]
+      },
+      "UM-SPARSE-CONDITIONED-CONFIG-GAP-v1": {
+        "state": "linked",
+        "object_pin": "3cdc714db4a866d1c1d30dce9a119b26baa391e0efe5d1cfa7f68a02b68a91bf",
+        "comparison_scope": "完整实读5dcc、2198、3770及所有指定稀疏/收缩交叉审查、输入增量、程序补档；与正式STAR read依赖及contracted核心比较，全文核现canonical ALL边72a953。",
+        "reason": "复用原稀疏OPTθ与每原边分别存在CONFIG(T)条件点，加STAR桥完整推出指定端点终态。M是外送block任务数而非簇数；坏簇整块外送、γM≤1；不采用错误ceil(kα−1)局部捷径。逐query不是共同base，bag联合胶合是另强合同。一般证明与k3/H5冻结有限边数严格分立。",
+        "edge_ids": [
+          "um-ea0e151c-sparse-and-star-transfer-to-contracted-gap"
+        ]
+      },
+      "UM-CONTRACTED-SPARSE-CONFIG-GAP-v1": {
+        "state": "linked",
+        "object_pin": "de0d2953cfe9ad155fb73d86bb00b3994347e6c5fe4c515a8df91dac8320051a",
+        "comparison_scope": "原稀疏源、STAR一般合同、指定左右端序列、argmin追祖先/目标机优先、整数θ上下界和终态逐类无星均全文比较；405/727/1778 raw结构审查及历史有限证据范围完整实读。",
+        "reason": "精确canonical ALL迁移支付完整目标：两unit外域互斥使Q=q≥1；每query追原条件点并目标优先；θ上界须额外用2>θ每端点至少一F外放同位压缩；逆max(B,T)且T<θ给下界。核心、三unit terminal、z逐类无星；只该实际序列，不推任意次序、共同multiquery law或逆原probe。",
+        "edge_ids": [
+          "um-ea0e151c-sparse-and-star-transfer-to-contracted-gap"
+        ]
+      },
+      "unrelated-machines/optimal-convex-fixed-slots-and-minimum-work-face-entry": {
+        "state": "isolated-after-review",
+        "object_pin": "a7d173b22d35efa1cab7d9106c951ad9823d1d343b9e8323fefde080d2cb6408",
+        "comparison_scope": "8c17入口完整实读；结合M04所依ST全资源、稀疏CONFIG与occupation算法比较固定槽输出、槽外one-destination修复和另一个min-work面矩阵的精确域。",
+        "reason": "真OPT凸包族每机m槽使任一覆盖matching峰2−2/(m+1)，槽外移m−1 tiny达OPT1；额外one-destination才给三角最小Hamming，不能断言所有合法修复最短。另min-work族真实OPT=m+1/m，支持输出2m−1，迁q件预算增q/m、一般Δ对应floor(mΔ)。不同矩阵/输出限制不否定ST上界，也不给occupation有限模式或一般修复算法；未找到本包已付逻辑关系。"
+      },
+      "unrelated-machines/two-level-label-fee-and-occurrence-weighted-pool-review": {
+        "state": "isolated-after-review",
+        "object_pin": "6a5354d4f3d718d3735f4b1307795cc1ecd05aaaffb7649b8eee49b8a23da137",
+        "comparison_scope": "4da3双源审查全文；逐原资格核两层A/B/C重标签/1+μ/D、奇数q强列表NO的OPT1+1/q，以及occurrence异权首项共享槽和每极性完整预算；比较uniform-port、fixed-sink及affine不同菜单。",
+        "reason": "两层任意边state完整调度≤1+floor(D/2)/D；出现异权源依每子句≥2 occurrence与每变量每极性全部eligible时间≤1给≤3/2。两者任务/pool不同，无状态或容量映射；强源NO不能充近二actual NO，第二源锐性不借第一源。本包其它三半结论也不提供其完整资格预算，保review真实未升级状态。"
+      },
+      "UM-UNIFORM-PORT-PARKING-PAPER-APPROX-v1": {
+        "state": "linked",
+        "object_pin": "ffbda798edcc4ef1b9b218f099c67d46a941c6aff5067a8098348b9e61e7a8eb",
+        "comparison_scope": "3f1c停车/Hall/Rado/退化分支全文、0ca7完整仿射范围页、bb7f完整源版本页及正式read-add uniform theorem当前记录实读；明确变量tags、固定注入、任意local选择和所有未选state jobs，核与停车无aux子类的同矩阵映射。",
+        "reason": "新accepted contribution将uniform affine Hall保留迁移到D=kR、B0/free-vacancy停车子类：每任意local选择均能共同分配b=ceil(kR/2)互不交资源，β*≥b/D；同一实际矩阵选中parent峰2−b/D≤3/2、未选parent/资源≤1，unit selector使OPT≥1并给同相对比。无需4+η后端；真正全满足才β*1/OPT1，near-perfect不够。一般aux/任意束/后端以及B≥2目标剩余明确，不充whole。",
+        "edge_ids": [
+          "um-90a2-affine-hall-to-free-vacancy-parking-three-halves"
+        ]
+      },
+      "unrelated-machines/affine-contracts-independent-and-summary-review-scopes": {
+        "state": "isolated-after-review",
+        "object_pin": "33541c0ee7a20eb51af7e5e08bb294229c5f0f9460c5521ea90c80326aa8ffc6",
+        "comparison_scope": "0ca7审查全文及3f1c均匀仿射Hall部分全文；核任意local选择uniform、存在indexed-state宽rectangle/marks、存在affine-in-j完整sum菜单三域及精确证明/读序/byte范围。",
+        "reason": "三域允许关系、权重、marks与选择量词不同，同一allocation和固定intercepts/tag承重；不能以同为≤3/2互移。此core是既有证明与review的范围入口，无新完整定理前件，保conditional历史范围而不把审查支持作为新推导。已通过Boss正式read-add精确uniform theorem，由该真实定理而非本review作源，给parking仿射无aux子类贡献；本review只作精确范围/证明证据，故自身仍isolated。"
+      },
+      "UM-ANONYMOUS-TOKEN-M1-LIFT-M2-NONEXTENSION-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "e572a3e6aeac9f5dfb514182ce223331e59ada03c716ebd4358c34a2ed492e1f",
+        "comparison_scope": "91da证明和全部指定token双Schur/Exact-first/read-after/源链/canonical-v2/根树桥/三源证据审查均完整实读；与七态真实law、稀疏独立query和occupation实际模式区分。",
+        "reason": "一般多组共同≤4 functional以标签平均/contrast保M1，k1线性替换、r0/k含；不保M2。k4给定点aggregate67/rank55、labelledM1 46/rank38，两Schur空间余谱不同不矛盾。形式Q²−1/150与任意保aggregate≤4原身份扩展必要整体head×affine K方向−1/25分别证明；单异context交叉块不单称PSD，K不充分。13机6任务实际OPT1，坏点不等输入FAIL/gap；其它核心无此共同functional与保矩映射，故未造逻辑边。"
+      },
+      "M-04dd365bc35d44009fea6ef6f6d1e734": {
+        "state": "isolated-after-review",
+        "object_pin": "c26e16bb5c1cecc8abdf65edaca07c6fc5fd50764172dd31fc5feee1137f1e0f",
+        "comparison_scope": "71ae ST资源全文（含§7）实读，核截断线性速度LP、f(t)与μt的方向、最小峰值最优解整数引理和费用符号；比较固定槽/min-work面及fixed-sink给T/未知OPT不同接口。",
+        "reason": "非负运行费用+μCmax、整数快慢端、合法线性速度平均给实际值≤f(t)+μt，整数峰值引理才允许O(log(n max u)) LP调用的2approx。不能借普通任意有理阈值、非线性/离散速度；固定槽/min-work坏输出无矛盾也不推出合并目标改进，固定sink另需含OPT宏promise才未知OPT搜索。无已付跨目标逻辑边。"
+      },
+      "UM-SEVEN-STATE-STAR-GLOBAL-QUADRATIC-LOCAL-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "cf9b6916e294860b10e4a930515f5c0446e2590db809b46c355acfee838a88c8",
+        "comparison_scope": "755f定理、691d canonical原件、d560作者学习原件及所有指定七态审查完整实读；核真实七态P、五点评估/Cauchy、全局q2、CONFIG first/pair trade、背景单v行及有限审计读序。",
+        "reason": "同一真实law给共同M3和全部global-q2 localizers，但以p=η³/1000有峰2样本且实际OPT1。另各行CONFIG只保first/pair，不拼新共同law。v无新增payload的仿射背景才自动继承v行，孩子/父行/merged heads需另证；历史12参数只前三组完整M3/q2。零平方和的≤主archive已修，旧原件严格号按历史保留非新错误。匿名点无扩展与此真实law、稀疏独立query均无保矩/全行迁移，未造逻辑边。"
+      },
+      "M-1faa497ce25c4543bfcfb7d5cc38e65f": {
+        "state": "isolated-after-review",
+        "object_pin": "8d57dc2f295a6d0155fc214d021dec68a91970ed354a050d05cd63e41661134f",
+        "comparison_scope": "0fcf VW2010资源全文（含Theorems13–16精确声明段）实读；对照同页二度MaxMin12、makespan9与本包two-value resource-matroid停车，核值域/目标/最优类型信息。",
+        "reason": "Theorem15只在除O(log n)位外给某份最优整数分配是否取big的信息（MaxMin big阈值OPT/2）声明二近似。当前冻结13页原源缺[23]完整算法证明，维持unassessed不改conditional。二度MaxMin12与two-value matroid后端域不同，不能补缺证明或把类型信息视为通用已知；不是ordinary makespan或SPE命题，故无可接受逻辑边。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-90a2efd79deb641e/affine-hall-to-free-vacancy-parking-three-halves.json",
+        "sha256": "e85a88e7081514cb0df689ebf9526aa41a6d8f85fa9f102f6808096071206085"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-90a2efd79deb641e/occupation-face-to-fixed-sink-three-halves.json",
+        "sha256": "431f1954360a17c59eb542a6151e8821d3489f164148fca48f3d7d2a0d7f7ca9"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-ea0e151c17f595c8/sparse-and-star-transfer-to-contracted-gap.json",
+        "sha256": "72a953143d0016d847a8b44bede5ef8a39f60860aa6ac532ecac483f262bf4b5"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-90a2efd79deb641e/review.md",
+        "sha256": "5d310b436b55072a6faa650ad54055f0b3ffc24ad9bafdaa9274a1f840c2d9b2"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-90a2efd79deb641e/reading-ledger.json",
+        "sha256": "1cce45bc2a7a82d4451229166e4d586ec9bae4570dc341ebc9b3a87fc4e09025"
+      }
+    ],
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "reviewed_by": "Boss6",
+    "task_freshness": {
+      "task_id": "unrelated-machines-3a-3a-90a2efd79deb641e",
+      "owner": "Boss6",
+      "state": "claimed",
+      "request_id": "80475a88751840bb96e97f3515130347",
+      "task_file_sha256": "ef1dfc0dea28bae08a0b97c21aa2a284863a3a03797e59f8ac797831b12a6cbc",
+      "definition_pin": "fb9208ec297e933e10677dd3af18a16d38aacdd65863b057f66c027839fb7719",
+      "registry_file_sha256": "7b3a42caaeff576ae274a53a89e99285ba60099e2dda761f30caf54ecd078751",
+      "observed_from": "current read-only Boss6 clone; parent confirmed affine read-add pushed request80475a88751840bb96e97f3515130347 at remote a0ff98b76831fab84c5712888ae3a6c94d9cf860; preceding STAR read-add requestfd64713e78e8493c9ecdd6f7b4568667 at remote07a6390d39a624fedb74049547e2f3e0d5d2dccf"
+    },
+    "reading_note": "Fresh worker完整实读原12core与40个去重reading_refs文件（整页指定证据也全读），另完整读STAR的f0d0资源和affine theorem的bb7f证据页，共42个去重正文；14条当前端点记录、canonical ALL边和根round40数学review亦实读。初始单次大输出截断的metadata及5d41主稿中段已分别补读；七态含空格路径首次cat失败后已正确引用全读。未运行旧程序/LP/大证书，全局sha/pin及edge_bindings核验与数学证明分开。",
+    "sourcefreshness": {
+      "all_task_input_pins_match_current_registry": true,
+      "all_declared_reading_ref_sha256_match": true,
+      "canonical_reuse_sha256_and_bindings_match": true,
+      "source_errors_found": [],
+      "historical_corrected_not_new_error": "七态旧canonical原件Cauchy最后严格号不含零q；当前755f archive已改≤并在读后审查明确记录，未修改冻结原件。"
+    }
   }
 }
