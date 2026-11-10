@@ -1,0 +1,64 @@
+{
+  "edge_id": "cag-4a3837-exact-outcome-sets-complete-delete-slot-envelope",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "customer-attraction/actual-position-delete-slot-full-history-exact-envelope"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任一有限合法单位客户输入、m≥1及固定独立查询p；只缓存可实现终局集合，所有有序孩子可独立展开。实际B∈E(0)，actual列始终保B。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "提供E/F集合的必要性、充分性、非空性及独立有序子树实现。",
+    "customer-attraction/actual-position-delete-slot-full-history-exact-envelope": "以E/F为底层、actual保B及IC上界筛离轨叶，得到R/H与全部σ最大gap。"
+  },
+  "explanation": "将源R(k),M(k)分别重命名E(q),F(q)，输入/收益不变，故E恰为每计数前缀全部完整有序SPE可实现叶。固定B时，实际下一行动a合法当且仅当B∈E(q+e_a)且U_a(B)≥F(q)。离轨A≠a能与规定B并存的叶恰为L={z∈E(q+e_A):U_A(z)≤U_a(B)}；源非空性及阈值保证L非空。在每个L中最大化G_p(z−e_A)，actual列取G_p(B−e_a)，再全A取min即R_p。必要方向每个真实离轨叶在L；充分方向对各离轨孩子独立贴实现其max叶的子SPE，当前IC由L保证。沿actual路径，各首次离轨孩子的有序子树两两不交，所以不同actual位置的局部max也能同时实现。对合法actual下一行动取max的H递推遂给max_σ gap=max_(B∈E(0))[H(0)−W(B)]，保存argmax并依源展开便得完整有序见证。最后全关联客户对每个m槽玩家同增1/m，对删一槽后的任一查询列同增1/m，m个位置共增1而W同增1；全历史IC不变，gap严格不变。空关联客户全不贡献。",
+  "scope": "完整目标的精确表示与公共客户不变性；不证明一般混合p的最大gap非正。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "全集递推及完整证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "完整策略和指定有序路径"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/实际位置删槽菜单的全历史精确包络--算法.md",
+      "sha256": "a88fc8a05a1317b3a927e108f426a37f5da8fc21e25ba0ac4906e193e8e035e2",
+      "section": "全部可信终局的集合值逆推"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/实际位置删槽菜单的全历史精确包络--算法.md",
+      "sha256": "a88fc8a05a1317b3a927e108f426a37f5da8fc21e25ba0ac4906e193e8e035e2",
+      "section": "保实际终局的局部最坏菜单"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/实际位置删槽菜单的全历史精确包络--算法.md",
+      "sha256": "a88fc8a05a1317b3a927e108f426a37f5da8fc21e25ba0ac4906e193e8e035e2",
+      "section": "优化实际顺序及完整历史展开"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/实际位置删槽菜单的全历史精确包络--算法.md",
+      "sha256": "a88fc8a05a1317b3a927e108f426a37f5da8fc21e25ba0ac4906e193e8e035e2",
+      "section": "两种不损失亏损的客户删除"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本包实读当前端点陈述及精确承重正文；逐项核同一输入、完整有序历史、真实后继、量词及目标作用范围。未运行成熟LP、全树或旧系数审计。",
+  "whole_result": "E/F/R/H在任意有限单位输入和固定p上恰好给全部完整有序历史纯SPE的最大删当前位置菜单gap，并能展开达到策略；空关联与全关联客户删除保持该gap。actual列固定B、离轨L限制与G最大化均保留。一般AFC的混合查询非正性仍open。",
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "customer-attraction/actual-position-delete-slot-full-history-exact-envelope": "a70bb7b1d840beba21d7188b81ab764fe0fa8841cf0274c6593b196e76239831"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/算法/实际位置删槽菜单的全历史精确包络--算法.md": "a88fc8a05a1317b3a927e108f426a37f5da8fc21e25ba0ac4906e193e8e035e2"
+  },
+  "review_digest": "78f59c342a93bac7f266e1e21511387740af2a085fc37759da1ff4022012d577"
+}

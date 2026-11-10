@@ -1,0 +1,59 @@
+{
+  "edge_id": "cag-4a3837-exact-outcome-recursion-twenty-two-customer-specialization",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "customer-attraction/four-topic-twenty-two-unit-all-SPE-welfare-decrease"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一22单位客户四标签资料固定，分别m=3和m=4；采用正文已保存/逐字段复现的106节点精确表合同，保全部有序平局与重复行动。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "一般全集递推与有序实现，确保有限表是全部SPE终局而非一个选择器。",
+    "customer-attraction/four-topic-twenty-two-unit-all-SPE-welfare-decrease": "对固定资料专化递推，获得三/四人全部有序终局及福利下降。"
+  },
+  "explanation": "固定九类兴趣A1、C3、AC3、BC1、ABC2、D4、AD1、ABD4、BCD3，不改变输入。源递推的U、孩子最小值及阈值与正文R(h)/L(h)逐项一致；计数集合缓存不限制有序节点的选择。正文106节点全字段精确复现合同给根四行动真实收益：m3为(6,9/2,8,8)，m4为(31/6,7/2,21/4,21/4)。故根均仅C/D。所有后继全集在m3仅计数(1,0,1,1)，有序合法路径恰CDA/DCA；m4仅计数(0,0,2,2)，有序合法路径恰两C两D六排列。源充分拼接保证每条保留路径可实现，必要性排除其余全部完整SPE，非仅代表两策略。m3选ACD覆盖全部22；m4仍可重复扩充该覆盖，故OPT3=OPT4=22。全部m3 W22而全部m4 W21，精确否最佳/最差SPE关于人口的单调性。使用成熟表合同，当前未重跑完整树或把原27客户发现日志混入。",
+  "scope": "固定22客户输入的全部三/四人纯SPE分类；不宣称所有人数或最小实例。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "全集递推及完整证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "完整策略和指定有序路径"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/四主题二十二客户的人数福利下降--反例.md",
+      "sha256": "110d3ca1a601aea7f9db80b37d2de5316087e001f968c9cbdc3761b65c361593",
+      "section": "同一合法目录下的全部SPE福利下降"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/四主题二十二客户的人数福利下降--反例.md",
+      "sha256": "110d3ca1a601aea7f9db80b37d2de5316087e001f968c9cbdc3761b65c361593",
+      "section": "精确全集递推及证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/四主题二十二客户的人数福利下降--反例.md",
+      "sha256": "110d3ca1a601aea7f9db80b37d2de5316087e001f968c9cbdc3761b65c361593",
+      "section": "根真实菜单、代表策略与全部结果"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本包实读当前端点陈述及精确承重正文；逐项核同一输入、完整有序历史、真实后继、量词及目标作用范围。未运行成熟LP、全树或旧系数审计。",
+  "whole_result": "同一22客户四标签输入，三人全部完整SPE恰CDA/DCA、W22；四人全部完整SPE恰两C两D的六排列、W21；两个人数的OPT均22。固定实例专化证明保全部有序历史，不依代表策略取代全集量词。",
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "customer-attraction/four-topic-twenty-two-unit-all-SPE-welfare-decrease": "5b0c89b7cbaff2ac4f3256b7f627b1aed0e8a0aa1af078b21387295a59529ba7"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/反例/四主题二十二客户的人数福利下降--反例.md": "110d3ca1a601aea7f9db80b37d2de5316087e001f968c9cbdc3761b65c361593"
+  },
+  "review_digest": "5beee7f96d5149efa56f5fd0092109f9874f0970544f242fff7a7cfde4bedc79"
+}

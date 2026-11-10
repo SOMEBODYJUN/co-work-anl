@@ -1,0 +1,51 @@
+{
+  "edge_id": "cag-4a3837-signed-erasure-pays-same-r-auxiliary-regret",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/aligned-single-erasure-social-marginal-common-payment-and-auxiliary-potential"
+  ],
+  "target_ids": [
+    "M-0bbcdaf7c8e2480a826a75480849bc49"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一合法外背景b、固定r≥2原身份、同一完整纯SPE σ及同一原有序历史/角色/查询；辅助树保留全部r身份。r不在深层重置。",
+  "roles": {
+    "customer-attraction/aligned-single-erasure-social-marginal-common-payment-and-auxiliary-potential": "提供单叶退款恒等式、非负社会边际及同查询signed差。",
+    "M-0bbcdaf7c8e2480a826a75480849bc49": "取得同r辅助收益的精确表达和全树近似IC/共同路径regret界；一般凹核闭包独立保留。"
+  },
+  "explanation": "源的Σ_(d≠i)u_i(z删d)=r u_i(z)−q_i(z)，除以r−1定义bar u_i。对规定与强制查询两个同σ真实叶相减，得到bar u_i(z_A)−bar u_i(z_S)=[−rΓ_i+q_i(z_S)−q_i(z_A)]/(r−1)。Γ_i≥0、q_i(z_A)≥0，故正regret至多q_i(z_S)/(r−1)。沿任一内部历史依σ继续的路径，规定叶共同为z；当前及未来角色是原r身份的子集，所以正regret和≤Σ_iq_i(z)/(r−1)≤U_b(z)/(r−1)，b=0可用独占客户数E(z)。该论证在辅助原树不删除节点，没有ghost对齐问题；不把此近似IC说成物理r−1人SPE。",
+  "scope": "精确支付目标的辅助收益与全树regret部分；不把signed行逐删位改成独立max查询。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/对齐单删的社会边际共同付款与辅助势--引理.md",
+      "sha256": "2d9aca9b1f77b7d6bbf466433b5d90996f93d9c7957ffcf4f68018b5c4fffc34",
+      "section": "单叶退款递推"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/对齐单删的社会边际共同付款与辅助势--引理.md",
+      "sha256": "2d9aca9b1f77b7d6bbf466433b5d90996f93d9c7957ffcf4f68018b5c4fffc34",
+      "section": "同一原历史、角色和查询的signed预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/对齐单删的社会边际共同付款与辅助势--引理.md",
+      "sha256": "2d9aca9b1f77b7d6bbf466433b5d90996f93d9c7957ffcf4f68018b5c4fffc34",
+      "section": "保留r个决策身份的辅助全树"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本包实读当前端点陈述及精确承重正文；逐项核同一输入、完整有序历史、真实后继、量词及目标作用范围。未运行成熟LP、全树或旧系数审计。",
+  "contribution": {
+    "result": "同r辅助树上bar u_i=(r u_i−q_i)/(r−1)，每个原历史的真实查询正regret≤q_i(z_S)/(r−1)；任一规定续行路径的正regret和≤U_b(z)/(r−1)，空背景可用E(z)/(r−1)。",
+    "remaining": "目标另含辅助资源势的单调凹性与任意单调凹f在0≤t≤r上的D_r闭包，须用正文独立增量/二阶差证明；物理删人后的SPE修复及覆盖债务分解仍未付。本边不声称整个目标仅由signed付款定理完成。"
+  },
+  "endpoint_pins": {
+    "M-0bbcdaf7c8e2480a826a75480849bc49": "058400f0e37a481a641ef237672c473b32a0479cefbfb1d7ef3d795ae0cc3a67",
+    "customer-attraction/aligned-single-erasure-social-marginal-common-payment-and-auxiliary-potential": "9931850cb528b4918d0d70f382103933648bdd78cf7d66c3a3e451026e17bdaf"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/对齐单删的社会边际共同付款与辅助势--引理.md": "2d9aca9b1f77b7d6bbf466433b5d90996f93d9c7957ffcf4f68018b5c4fffc34"
+  },
+  "review_digest": "101eb1ca49a669e88a66148d485c938326cd24d7404cc5b33dbf38ade3609e7d"
+}
