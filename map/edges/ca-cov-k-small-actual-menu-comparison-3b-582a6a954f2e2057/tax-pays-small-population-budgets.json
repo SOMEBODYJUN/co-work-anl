@@ -1,0 +1,59 @@
+{
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss5",
+  "conditions": "有限单位客户、有限非空共同标签目录、单位权顺序提供者、每个有序历史满足SPE最优性的同一完整纯策略；空覆盖、同覆盖异标签、重复动作、零客户及任意离轨平局均保留。强制主题后沿原策略的真实后继完成，K是实际前缀各位置真叶删槽列凸包的平均，γ与T使用同一个L。",
+  "edge_id": "boss5-cov-k-tax-and-spe-pay-small-populations",
+  "kind": "implies",
+  "source_ids": [
+    "CA-TWO-REMAINING-TAX"
+  ],
+  "target_ids": [
+    "customer-attraction/cov-k-scaled-actual-up-to-three"
+  ],
+  "roles": {
+    "CA-TWO-REMAINING-TAX": "提供合法背景恰两剩余人的精确恒等式(3)，保留交叠余项得到单侧加强E≥0；不是把弱税界或全人数税桥直接外推。",
+    "customer-attraction/cov-k-scaled-actual-up-to-three": "得到每份m=1,2,3完整SPE在实际缩放L0上的完整定量直接覆盖预算。"
+  },
+  "explanation": "固定任意整主题Q。末两人实际B,C，合法实际前缀负载b。把税源精确式(3)的比较对取T=C,S=Q，再从两侧扣掉其显式非负项g_b(C,Q)，余下三条真实SPE slack及g_b(B,B)−g_b(B,R)≥0，故E=u_B+u_C−f_b(C)−f_b(Q)+g_b(C,Q)+g_b(B,B)≥0；R是同一策略在B改成C后的真实末回复。另由实际末位IC得D=u_C−Σ_Q1/(1+b+1_B)≥0。m=3写A,B,C，根强制B,C,Q后即使两位后继全覆盖查询，每客收益仍至少1/3，故R_B=u_A−|B|/3、R_C=u_A−|C|/3、R_Q=u_A−|Q|/3≥0。每个位置取实际标签时，删槽列是c−1_Bi，平均L0=(m−1)c/m∈K。对每个客户实际命中n、Q会员q，J_m,Q(L0)−2W的系数P=[m²q+(m−1)n]/[m+(m−1)n]−2*1_(n>0)。m=2逐8个会员列核P+(6/5)d+(4/5)e：未覆盖列为0，覆盖列至多−7/15；m=3逐16列核P+(1/20)r_B+(1/2)r_C+(4/5)r_Q+(17/10)d+(31/30)e：未覆盖列0，覆盖列至多−1/15。所有乘子及对应全客户总量非负，求和得J_2,Q(L0)≤23W/15和J_3,Q(L0)≤29W/15，对任意Q取max成立。m=1由根最优性、K={0}直接给J_1(0)=W=OPT_1。已独立以Fraction复算两表全部24列并逐值匹配冻结replay；全实例结论来自逐会员列代数和SPE三类约束，不来自有限实例枚举。",
+  "scope": "只限m∈{1,2,3}、根实际缩放负载。合法前缀的税源只用于最后两人的利润，不把非零背景利润当覆盖；不声称系数锐性或m≥4同样成立。",
+  "whole_result": "对每个m∈{1,2,3}、每份有限共同标签目录的完整纯SPE，L0=(m−1)c/m∈K；m=1时J_1(L0)=W=OPT_1，m=2时J_2(L0)≤23W/15，m=3时J_3(L0)≤29W/15。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+      "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+      "section": "完整证明：必须使用同一策略的真实离轨回复"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/真实删槽共享菜单的三人直接覆盖与两人非凸性--定理.md",
+      "sha256": "c2889e135218262c7aca12166afa9df9f049b7ccab15002e0e5d837ce7f58173",
+      "section": "两个直接覆盖预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/cov-k-small-population/verify.py",
+      "sha256": "6f726b924ed6a489836933f4b07edfd0a227659f48e6ff00f33da0ddd3195891"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/cov-k-small-population/replay.json",
+      "sha256": "f9562f5988e339b9dabc11accf9f776e13390302343a45f762f466be43f59bc0"
+    }
+  ],
+  "review_note": "独立实读全部5端点及必要定义/完整税证明；核清E来自精确式保留余项，非仅T2弱不等式；根保底、末位IC、全部24列有理余量与m=1边界均核验。",
+  "endpoint_pins": {
+    "CA-TWO-REMAINING-TAX": "eb63a8d1cd934879f5f7f25f633b4bf753973f405a7b8db91bed63f633de7d15",
+    "customer-attraction/cov-k-scaled-actual-up-to-three": "00e6c3c6e2ed0845e8017d252e9e81131cc04afa3c0af5ce49c0358d7b14b35d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/固定背景两人税界--引理.md": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+    "archives/customer-attraction/state/定理/真实删槽共享菜单的三人直接覆盖与两人非凸性--定理.md": "c2889e135218262c7aca12166afa9df9f049b7ccab15002e0e5d837ce7f58173",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/tools/evidence/cov-k-small-population/verify.py": "6f726b924ed6a489836933f4b07edfd0a227659f48e6ff00f33da0ddd3195891",
+    "archives/customer-attraction/tools/evidence/cov-k-small-population/replay.json": "f9562f5988e339b9dabc11accf9f776e13390302343a45f762f466be43f59bc0"
+  },
+  "review_digest": "2b88af22ebd64095ed4bba90fc5c2e620de3745aa9e3921421d802f682e29936"
+}
