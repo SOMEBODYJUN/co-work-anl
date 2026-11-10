@@ -1,0 +1,52 @@
+{
+  "edge_id": "cag-609ace-one-reentry-to-complete-path-menu",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/finite-reentry-synchronized-menus-and-static-limit"
+  ],
+  "target_ids": [
+    "M-73d3a9bedfd449d292f04323e540d4ca"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "零根背景、m≥1，固定同一完整有序历史纯SPE；额外查询独立，完整列含强制者且恰有 m 槽。",
+  "roles": {
+    "customer-attraction/finite-reentry-synchronized-menus-and-static-limit": "给单次重入、全重入的准确端点及 M_1≥M_m=v_(m+1)(0)。",
+    "M-73d3a9bedfd449d292f04323e540d4ca": "给 OPT_m≤2m v_(m+1)(0) 及真实完整路径菜单的上比较。"
+  },
+  "explanation": "强制集合 J={i} 时，所有 i 之前都仍沿原策略，故前缀恰为实际前缀，位置 i 强制 A 后按原策略继续，得到全路径菜单的 Z_i(A)。全路径单次菜单与 M_1 的列逐一相同，独立查询值相等。全强制时列恰为全部 m 槽元组，所以 M_m=v_(m+1)(0)；端点嵌套给 v_(m+1)(0)≤M_path。对 m=1，两菜单相同。",
+  "scope": "同一完整策略的合法完整槽列之间的静态值比较，保留全部旧前缀和真实后继。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/有限跨树重入的同步菜单与静态极限--定理.md",
+      "sha256": "b69ae2bb1429bf449a7c7b047ce18a7ad36ae26f4bc0ed5899aa80f30ff92594",
+      "section": "1. 端点、查询和恰d位置归约"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/有限跨树重入的同步菜单与静态极限--定理.md",
+      "sha256": "b69ae2bb1429bf449a7c7b047ce18a7ad36ae26f4bc0ed5899aa80f30ff92594",
+      "section": "5. 全部重入时的真正静态极限"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/全槽逐行最小价格的共同预算与有限报告--候选.md",
+      "sha256": "e952c73849b2ac561ac4ebb761b3ae0c1af06d61f27e743c593ea0103c52698a",
+      "section": "静态充分关系与完整槽数"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "交叉比较仅因 J 单位置的端点逐列与 SUMmin 的 Z_i(A) 同一。不同的可信完成集合或删强制者菜单不进入同一性。",
+  "contribution": {
+    "result": "M_path=M_1≥M_m=v_(m+1)(0)。",
+    "remaining": "另用 Jensen 与两个 m 槽计数获得 OPT_m≤2m v_(m+1)(0)；向实际 W 的共同预算仍需 SUMmin 等动态输入。"
+  },
+  "endpoint_pins": {
+    "M-73d3a9bedfd449d292f04323e540d4ca": "da3d0bbed112a0897b1514eb63acac5dc6da174460f1264a731aa6b46a82e638",
+    "customer-attraction/finite-reentry-synchronized-menus-and-static-limit": "d2cbc56da2fe9fbfc7b5246a67020bf96b6bd049026057e26d31d2701f18ade3"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/有限跨树重入的同步菜单与静态极限--定理.md": "b69ae2bb1429bf449a7c7b047ce18a7ad36ae26f4bc0ed5899aa80f30ff92594",
+    "archives/customer-attraction/state/候选/全槽逐行最小价格的共同预算与有限报告--候选.md": "e952c73849b2ac561ac4ebb761b3ae0c1af06d61f27e743c593ea0103c52698a"
+  },
+  "review_digest": "0b909276372cea871c3f9a17b190238260046fa702f2e3df7f489bee8824b190"
+}

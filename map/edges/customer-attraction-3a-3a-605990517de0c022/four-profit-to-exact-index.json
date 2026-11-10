@@ -1,0 +1,43 @@
+{
+  "edge_id": "ca-tail-index-605990-four-profit-to-exact-index",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-FOUR-REMAINING-PROFIT-1499-750"
+  ],
+  "target_ids": [
+    "M-94407f7265c446f9b01587b6b4525cc6"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "整数 m≥4，有限单位客户与共同标签目录。固定任意完整有序历史纯SPE σ 的实际前 m−4 位，原背景 b 与四名后缀的终局实际总利润 V₄ 对全部比较索引相同。T₁,…,Tₘ 是任一达到根 OPTₘ 的带索引元组。",
+  "roles": {
+    "CA-FOUR-REMAINING-PROFIT-1499-750": "在固定真实前缀后的同一四人子SPE支付每个合法四比较主题的 R_b。",
+    "M-94407f7265c446f9b01587b6b4525cc6": "对每个最优索引元组保留逐客户重数的四子集和，再给带前缀税的根覆盖粗界。"
+  },
+  "explanation": "客户 x 的比较重数为 e。恰 C(e,j)C(m−e,4−j) 个四元索引子集击中 j 次，每次贡献 j/(b_x+j)，零分子或非法二项式取零。对全部 C(m,4) 个索引子集应用定理并相加，得到精确计数左侧及 C(m,4)(1499/750)V₄ 的右侧。对 e>0 固定一个覆盖索引，含它的 C(m−1,3) 个子集每个贡献至少 1/(b_x+1)。除去此组合系数，再对最优覆盖客户加回 b_x/(b_x+1)，并用全客户税上界，得 OPTₘ≤(1499m/3000)V₄+Σ_x b_x/(b_x+1)。",
+  "scope": "所有 m≥4、每份根完整策略的真实末四人、每个真最优带索引元组。重复标签按槽计数。精确索引和的同背景四尾利润与粗式中的原根覆盖各有独立含义。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/固定背景四人利润界--定理.md",
+      "sha256": "f769c0c114a4f4639d660a068fac80d355fc997515a60af8bbe9e10e85613fff",
+      "section": "1. 剩余利润对象和结论"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定背景四人利润界--定理.md",
+      "sha256": "f769c0c114a4f4639d660a068fac80d355fc997515a60af8bbe9e10e85613fff",
+      "section": "5. 一般人数的精确接口"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "核对 m=4、零份额、重复索引以及 C(m,4)/C(m−1,3)=m/4。五人匹配根补余在各自背景取值，和本边的固定背景求和不同。",
+  "whole_result": "由任意合法背景四人利润定理推出固定真实末四人的式(15)全人数精确索引界及式(16)带前缀税的粗界。",
+  "endpoint_pins": {
+    "CA-FOUR-REMAINING-PROFIT-1499-750": "9918c769098c2af8f94b8d5d0e20026378c2f5cf765b7286972e8a6b148f142e",
+    "M-94407f7265c446f9b01587b6b4525cc6": "bb9aff570e3ecf3ed9793e9dc1b600eb88da84185d55eef4bdf6ff21252fd86f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/固定背景四人利润界--定理.md": "f769c0c114a4f4639d660a068fac80d355fc997515a60af8bbe9e10e85613fff"
+  },
+  "review_digest": "97fc0f35b81728237218b18130d69841b6ebe67f28956df476249770faab6b9c"
+}

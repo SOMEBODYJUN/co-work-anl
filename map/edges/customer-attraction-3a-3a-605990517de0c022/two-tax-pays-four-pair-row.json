@@ -1,0 +1,64 @@
+{
+  "edge_id": "ca-tail-index-605990-two-tax-pays-four-pair-row",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-TWO-REMAINING-TAX"
+  ],
+  "target_ids": [
+    "CA-FOUR-REMAINING-PROFIT-1499-750",
+    "customer-attraction/binary-background-four-tail-reweighting",
+    "M-a50c3336c69c4ba5b5b77d0d89c07737"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一完整有序历史纯SPE 任意合法四人前缀负载 p 及实际四位 A,B,C,D。校正的 P 适用于全部合法 p。二值重权及省校正登记对象限恰五人任一单提供者前缀 p∈{0,1}。",
+  "roles": {
+    "CA-TWO-REMAINING-TAX": "在真实前缀再延长 A,B 后，给六个合法比较索引对同一终局上界 H。",
+    "CA-FOUR-REMAINING-PROFIT-1499-750": "任意背景旧证书的校正 P 行。",
+    "customer-attraction/binary-background-four-tail-reweighting": "单前缀新权重校正版沿用同一 P 行。",
+    "M-a50c3336c69c4ba5b5b77d0d89c07737": "二值聚合把 P 的外层 δ₂ 换成 τ，末两人的 H 原样保留。"
+  },
+  "explanation": "令 v=1_A+1_B，令 H=u₃+u₄+Σ_{x∈C}1/[(p_x+v_x+1)(p_x+v_x+2)]。真实末两人 (C,D) 的税界逐一支付六个比较索引对。客户四比较槽重数为 e 时，六对的份额和为 e(4−e)/(p+v+1)+e(e−1)/(p+v+2)。用正文式(6)的逐客户校正差取和，六对预算除以三，得 P=2H+Σδ₂(p,v)−R_p(T₁,…,T₄)≥0。把校正差换成 τ 后在 p=0,1、v=0,1,2、e=0,…,4 的30个状态均非负，同一 H 因而也支付 Pᵘ。税计入真正末两人的首位 C。",
+  "scope": "普通两人税的独立承重作用仅为三个四尾证书各自的 P/Pᵘ 聚合。非零背景比较始终为剩余利润。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+      "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+      "section": "完整证明：必须使用同一策略的真实离轨回复"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定背景四人利润界--定理.md",
+      "sha256": "f769c0c114a4f4639d660a068fac80d355fc997515a60af8bbe9e10e85613fff",
+      "section": "2. 任意背景的两个聚合校正"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/二值背景四人利润重权界--定理.md",
+      "sha256": "8719408a7fee961c4f07982c6cfde3cf1af99dbabf497b903f6c37064f0906d4",
+      "section": "2. 原十二行：保持同一策略的真实节点"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/二值背景四人利润重权界--定理.md",
+      "sha256": "8719408a7fee961c4f07982c6cfde3cf1af99dbabf497b903f6c37064f0906d4",
+      "section": "4. 二值域的省校正版与完整最小余项表"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "复核六个带索引对的分母、清分母差、H 的 C 税位置及省校正二值限定。三人5/3的八类真回复证明独立于此税。",
+  "contribution": {
+    "result": "任意背景旧证书和二值重权校正版各得到 P≥0，二值省校正版得到 Pᵘ≥0，三者的 H 均由同一前缀下普通两人税支付。",
+    "remaining": "其余真实节点比较、E/Eᵘ 聚合、对应版本乘子及逐客户余项非负性由各自证书另行支付。两人税本身不能给四尾最终常数。"
+  },
+  "endpoint_pins": {
+    "CA-FOUR-REMAINING-PROFIT-1499-750": "9918c769098c2af8f94b8d5d0e20026378c2f5cf765b7286972e8a6b148f142e",
+    "CA-TWO-REMAINING-TAX": "eb63a8d1cd934879f5f7f25f633b4bf753973f405a7b8db91bed63f633de7d15",
+    "M-a50c3336c69c4ba5b5b77d0d89c07737": "227c93a68666a74f9890b739e9074088554f36703118654af3fb029fab8c8e98",
+    "customer-attraction/binary-background-four-tail-reweighting": "a2bfce6ec534cd1ac3ea17f014071b639f21e1ae77a5dcc8f03f6459e27fe920"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/固定背景两人税界--引理.md": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+    "archives/customer-attraction/state/定理/固定背景四人利润界--定理.md": "f769c0c114a4f4639d660a068fac80d355fc997515a60af8bbe9e10e85613fff",
+    "archives/customer-attraction/state/定理/二值背景四人利润重权界--定理.md": "8719408a7fee961c4f07982c6cfde3cf1af99dbabf497b903f6c37064f0906d4"
+  },
+  "review_digest": "401a496a32edadfef34b80f70be61d9ea03b7c3cc92be6205e89500d02e5cecb"
+}

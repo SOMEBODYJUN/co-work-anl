@@ -1,0 +1,52 @@
+{
+  "edge_id": "cag-609ace-finite-grid-checks-affine",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "CA-R18-OCCUPIED-BACKGROUND-SECURITY-20261031"
+  ],
+  "target_ids": [
+    "M-987449b454bc464387fe00dd01561142"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "冻结报告原 Fraction 网格为 r=2,…,22，B=0,…,r+1，b∈{B,B+1,B+7,B+1/2}，d=0,…,r，h=0,1/2,…,r−1。",
+  "roles": {
+    "CA-R18-OCCUPIED-BACKGROUND-SECURITY-20261031": "提供冻结的 588784 次逐客户比较及原循环。",
+    "M-987449b454bc464387fe00dd01561142": "有限网格上的核对对象及独立仿射端点证明。"
+  },
+  "explanation": "冻结计数对应同一公式的两侧、同一 λ 和 d=0 约定。网格含半整数 b、h，实际 h 仍只采该实区间的有限子集。另列的 84 游戏、89 个可实现终局和背景半利润区间测试是不同审计对象。",
+  "scope": "历史实现核对。本包读源码和冻结报告，原 R18 缺依赖重放状态照保，逐客户全域结论由独立解析证明承担。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/R-18占用背景安全有限审计--计算.md",
+      "sha256": "cd69771df1c00be0013bc3a8bede45ef5398d6543e855c0a567531dcdc383e04",
+      "section": "冻结 exact 输出"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/R-18占用背景安全有限审计--计算.md",
+      "sha256": "cd69771df1c00be0013bc3a8bede45ef5398d6543e855c0a567531dcdc383e04",
+      "section": "点态不等式的完整代数与利润定义"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-18-dynamic-security-20261031/original/occupied_background_audit.py",
+      "sha256": "b02c11e2516abe600ada6aef12cbbbe9ef9f1b6b7cc5ac00a4ff1652dcc6c193"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-18-dynamic-security-20261031/original/occupied_background_audit.json",
+      "sha256": "765bf3b52b0c46a3bc9908bef0488f507e7d6a144547cb1a7f82c0894fb66fbc"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项核对原循环端点和冻结计数字段，并区分背景 outcome oracle 与纯点态枚举。",
+  "endpoint_pins": {
+    "CA-R18-OCCUPIED-BACKGROUND-SECURITY-20261031": "562876c97415e71bdd181f3ea876c18412644d4eb73afb5441b487a8c28beafb",
+    "M-987449b454bc464387fe00dd01561142": "5c377494a9875f7871814a0c7ad4ab848343c7b247174c06dec8d2051a5ee4f7"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/R-18占用背景安全有限审计--计算.md": "cd69771df1c00be0013bc3a8bede45ef5398d6543e855c0a567531dcdc383e04",
+    "archives/customer-attraction/tools/evidence/R-18-dynamic-security-20261031/original/occupied_background_audit.py": "b02c11e2516abe600ada6aef12cbbbe9ef9f1b6b7cc5ac00a4ff1652dcc6c193",
+    "archives/customer-attraction/tools/evidence/R-18-dynamic-security-20261031/original/occupied_background_audit.json": "765bf3b52b0c46a3bc9908bef0488f507e7d6a144547cb1a7f82c0894fb66fbc"
+  },
+  "review_digest": "794d1dbdb5b87b189421495656bab5f4413774c8bd383f66a5c9cbd6fbbed0c8"
+}

@@ -1,0 +1,48 @@
+{
+  "edge_id": "cag-609ace-fresh-embedding-pays-bias-barrier",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-MOBIUS-FULL-HISTORY-EMBED"
+  ],
+  "target_ids": [
+    "CA-MOBIUS-BIAS-BARRIER"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "p≥n≥1，signed 整数资料 x，M=Σ_B|x_B|，r_B=x_B+K 且 K=4M+1。每类 r_B 展开为不同单位客户，允许共同目录原有的重复行动和全部有序历史。",
+  "roles": {
+    "CA-MOBIUS-FULL-HISTORY-EMBED": "给所有原完整策略根使用 n 个不同标签；结论覆盖完整有序历史和任意平局。",
+    "CA-MOBIUS-BIAS-BARRIER": "给编译实例根的覆盖平移、严格半覆盖余量及比例界。"
+  },
+  "explanation": "编译定理的 fresh 支配论证适用于任意此处整数 x。每份 signed 行动收益的绝对值至多 M，任意子局已知后继 fresh 时，均匀偏置对当前 fresh 相对于重复的优势至少 K/2。归纳给每个有序历史都只选 fresh，因为 K/2−2M=1/2。故实际终局有 n 个互异主题。最优终局也必须有 n 个互异主题，因为把一个重复槽改为未用主题，原支持不变并新增该主题的正重数 singleton 客户。任一这样的支持命中恰 C=2^p−2^(p−n) 种兴趣类型，覆盖等于 KC 加 signed 覆盖，后者绝对值至多 M。故 W≥KC−M、OPT≤KC+M，2W−OPT≥KC−3M>0。因 KC>4M，M>0 时 (KC+M)/(KC−M)<5/3；M=0 时比例为一。",
+  "scope": "该充分偏置编译的每个完整原根SPE。只令全部重数为正时的二人比较反转有不同假设。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/无重复辅助博弈的完整历史编译--定理.md",
+      "sha256": "e6e06a43973f7c37673b498074475fdf8aa37338d448aff53b2bf9b2e7fa0dd4"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/均匀客户偏置的福利与比较边界--障碍.md",
+      "sha256": "cd7ad239df74636ebaeed9dfc91bececb13ac5e788662de4b4999af18c4f9468",
+      "section": "充分偏置必然使编译根远离half反例"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/均匀客户偏置的福利与比较边界--障碍.md",
+      "sha256": "cd7ad239df74636ebaeed9dfc91bececb13ac5e788662de4b4999af18c4f9468",
+      "section": "无重复终局的偏置常数"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "核对 fresh 只由足够偏置定理取得，OPT 的互异性来自 singleton 正重数，福利平移不以 signed 势值直接替代 signed 覆盖。",
+  "whole_result": "编译实例根满足 W≥KC−M、OPT_n≤KC+M、2W−OPT_n≥KC−3M>0，且 OPT_n/W<5/3。",
+  "endpoint_pins": {
+    "CA-MOBIUS-BIAS-BARRIER": "18a8dd38ecf86cf8e130f05dd4ba023034c6b0dee2e4d0e59963f31788f627f0",
+    "CA-MOBIUS-FULL-HISTORY-EMBED": "42694a561f1d7d9687fce7fe834aa833e5fa2d8b5b7d84eb1bf54115e118d09a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/无重复辅助博弈的完整历史编译--定理.md": "e6e06a43973f7c37673b498074475fdf8aa37338d448aff53b2bf9b2e7fa0dd4",
+    "archives/customer-attraction/state/障碍/均匀客户偏置的福利与比较边界--障碍.md": "cd7ad239df74636ebaeed9dfc91bececb13ac5e788662de4b4999af18c4f9468"
+  },
+  "review_digest": "12cfb29e7a9ad3b67be023c9266fd69980a3840f429afa53ee668a4899b66964"
+}

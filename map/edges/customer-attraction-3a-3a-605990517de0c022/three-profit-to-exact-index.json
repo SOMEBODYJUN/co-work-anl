@@ -1,0 +1,43 @@
+{
+  "edge_id": "ca-tail-index-605990-three-profit-to-exact-index",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-THREE-REMAINING-PROFIT-5-3"
+  ],
+  "target_ids": [
+    "M-f49059a42332419da4ff7d01db91ade6"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "整数 m≥3，有限单位客户与共同标签目录。固定任意完整有序历史纯SPE σ 的实际前 m−3 位及其负载 b。V₃ 是该原终局实际末三人利润和。T₁,…,Tₘ 是任一达到根 OPTₘ 的带索引元组。",
+  "roles": {
+    "CA-THREE-REMAINING-PROFIT-5-3": "对固定真实前缀后的同一三人子SPE，逐个比较三元组给 5V₃/3 上界。",
+    "M-f49059a42332419da4ff7d01db91ade6": "对全体比较索引三子集保留客户命中重数，再推出含前缀税的根覆盖界。"
+  },
+  "explanation": "客户 x 在 m 个比较槽中出现 d 次。恰 C(d,j)C(m−d,3−j) 个三子集各给 j/(b_x+j)，因此求和得精确左侧以及 C(m,3)(5/3)V₃ 的右侧。对每个 d>0 的客户固定一个命中槽，C(m−1,2) 个包含该槽的子集各给至少 1/(b_x+1)，于是 OPTₘ≤(5m/9)V₃+Σ_x b_x/(b_x+1)。所有比较沿同一真实前缀，不对前缀重选策略。",
+  "scope": "每个 m≥3 和每个根最优带索引元组。零分子和非法二项式取零。三尾常数 5/3>3/2，不能套用尾部向总人数提升正文中要求 β_k≤k/2 的最后消元。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/固定背景三人利润界--定理.md",
+      "sha256": "b684d60a67c3164a3cd69177a1c8bda2a328125b9eab62f2c8ab0fb83091a47b",
+      "section": "1. 利润对象与结论"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定背景三人利润界--定理.md",
+      "sha256": "b684d60a67c3164a3cd69177a1c8bda2a328125b9eab62f2c8ab0fb83091a47b",
+      "section": "5. 对五人及一般人数的可用接口"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "核对 m=3、重复索引及粗式的 m/3 计数比。另有恰五人的全积和同索引三尾聚合，但其真实前缀和目标各异。",
+  "whole_result": "推出三尾真实固定前缀的式(8)全人数精确索引和，以及式(9)的根覆盖加前缀税界。",
+  "endpoint_pins": {
+    "CA-THREE-REMAINING-PROFIT-5-3": "575cf03e1f3b30d2f2fc33c33048f95a716132fbf0b002381bba366cff3a2a53",
+    "M-f49059a42332419da4ff7d01db91ade6": "f28a557edeebd2a2cf1162fb29bb943df4dab7d778dfd8f4163ee973d112d658"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/固定背景三人利润界--定理.md": "b684d60a67c3164a3cd69177a1c8bda2a328125b9eab62f2c8ab0fb83091a47b"
+  },
+  "review_digest": "0d12107b060462e27a459f4a218fb1bc153c8735521d8ede939c2fbddfa1d485"
+}

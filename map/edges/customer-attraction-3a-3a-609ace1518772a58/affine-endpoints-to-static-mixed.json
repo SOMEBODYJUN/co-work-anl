@@ -1,0 +1,49 @@
+{
+  "edge_id": "cag-609ace-affine-endpoints-to-static-mixed",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-987449b454bc464387fe00dd01561142"
+  ],
+  "target_ids": [
+    "M-bfd666c769ae4e5e8e4099ecaecacf47"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户共同标签目录，合法有序前缀负载 b，整数 r≥2，所有可覆盖客户满足 b_x≥B，取目标登记的统一背景门槛。竞争端恰有 r−1 个合法槽，查询抽样不公开。",
+  "roles": {
+    "M-987449b454bc464387fe00dd01561142": "对每个最优比较计数 d 和实区间 [0,r−1] 内的负载给仿射付款。",
+    "M-bfd666c769ae4e5e8e4099ecaecacf47": "任意相关合法竞争背景下的静态混合安全值下界。"
+  },
+  "explanation": "取达 F_r(b) 的 r 个比较主题 T_j。固定竞争元组的任意联合分布 Q，置 L_x=E_Q h_x、g(T)=Σ_(x∈T)1/(b_x+1+L_x)，M=max_T g(T)。L_x∈[0,r−1]，可代入点态式；令 q_A 为 r−1 个位置上 A 的平均边际。客户求和给 F_r(b)≤Σ_j g(T_j)+λΣ_x L_x/(b_x+1+L_x)，第二个未乘 λ 的和恰为 (r−1)Σ_A q_A g(A)，故 F_r(b)≤[r+(r−1)λ]M。倒数凸性给每个查询 T 的 Q 期望报价至少 g(T)。对任意相关 Q 均成立，取最小并用有限 minimax 得 v_r(b) 下界。d=0 按零利润计，零客户也直接成立。",
+  "scope": "统一背景条件下的同背景剩余最优利润和 r−1 槽静态查询。动态 P 的真实节点激励和 P≥r v_r(b) 属于独立付款问题。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/R-18占用背景安全有限审计--计算.md",
+      "sha256": "cd69771df1c00be0013bc3a8bede45ef5398d6543e855c0a567531dcdc383e04",
+      "section": "点态不等式的完整代数与利润定义"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/高背景下任意人数的剩余利润界--定理.md",
+      "sha256": "015c5d8b8b9960afcd5a826881c4bc837b0a571a91f08b8e3cef2466f0fb2d7d",
+      "section": "5. 相同系数给静态混合安全值的背景下界"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/高背景下任意人数的剩余利润界--定理.md",
+      "sha256": "015c5d8b8b9960afcd5a826881c4bc837b0a571a91f08b8e3cef2466f0fb2d7d",
+      "section": "7. 证明中需要显式保留的步骤"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "核对 L 是实期望负载、q 是位置平均边际、允许任意相关 Q。整条静态结论通过凸 Jensen 和有限 minimax 成立，未由 v≤θ 反推。",
+  "whole_result": "在所列背景域，v_r(b)≥F_r(b)/[r+(r−1)λ_(r,B)]。",
+  "endpoint_pins": {
+    "M-987449b454bc464387fe00dd01561142": "5c377494a9875f7871814a0c7ad4ab848343c7b247174c06dec8d2051a5ee4f7",
+    "M-bfd666c769ae4e5e8e4099ecaecacf47": "34e797558bd25452de581b1fc4373a86333c6929be44b82a86dc8189aa3f4e6d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/R-18占用背景安全有限审计--计算.md": "cd69771df1c00be0013bc3a8bede45ef5398d6543e855c0a567531dcdc383e04",
+    "archives/customer-attraction/state/定理/高背景下任意人数的剩余利润界--定理.md": "015c5d8b8b9960afcd5a826881c4bc837b0a571a91f08b8e3cef2466f0fb2d7d"
+  },
+  "review_digest": "d042a7b89061104df60247f2d39cb8e38962f7c0afc0ccac471be6b42a35471a"
+}
