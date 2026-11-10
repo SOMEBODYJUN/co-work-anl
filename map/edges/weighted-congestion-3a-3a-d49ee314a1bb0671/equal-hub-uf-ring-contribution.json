@@ -1,0 +1,65 @@
+{
+  "edge_id": "wc-b5-d49-equal-hub-uf-ring-contribution",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "kind": "implies",
+  "source_ids": [
+    "wc-multisource-reset-product-budget",
+    "OC-INTERFACE-v1"
+  ],
+  "target_ids": [
+    "OC-LIGHT-FORCING-EXACT-v1"
+  ],
+  "conditions": "限制到OC接口的所有hub同权u_i=u>0子类，d≥2、α≥1且α²≥d，全部严格LIGHT成立。其余OC正权、同群同费主/side及真实二动作合同保留。",
+  "roles": {
+    "wc-multisource-reset-product-budget": "在τ=α、ατ=α²≥d及UFτ下给反位Rosenthal势每个局部最小点的真实α-PNE。",
+    "OC-INTERFACE-v1": "给奇环到共享side模型的完整资源对应、LIGHT与UF的相同标量式及奇数parity的全态排除方向。",
+    "OC-LIGHT-FORCING-EXACT-v1": "得到同hub权且α²≥d强迫子类必须有失败边的受限存在结论，不代替一般充要刻画。"
+  },
+  "explanation": "令共享side模型V=奇环位置，source(light_(i,r))=i，w_(i,r)=v_i、F_i(z)=a_i z^k_i；每个j=(i,r)取H_j={i+1}、L_j={light_(i,r)}、G_j(z)=b_i z^D_i。于是hub动作使用本主资源及所有incoming side，light动作使用本主及反侧，逐资源逐动作与OC原游戏相同。W_i=n_iv_i、Y_j=u+v_i，故UF_α逐light式恰为a_i(u+v_i)^k_i+b_i v_i^D_i≥α[a_i(n_iv_i)^k_i+b_i(u+v_i)^D_i]，由严格LIGHT q_iN_i>p_iP_i成立。共享side定理以τ=α应用，α²≥d支付完整reset预算，有限势有局部最小点，给原同一奇环的α-PNE。若全部Δ_i>0，接口的混合light出口及奇数同位hub出口又会排除全部纯态，矛盾；所以至少一个Δ_i≤0。任取失败边j，令其为奇环唯一同位hub边、其他m−1条交替，全部cohort置反位；同位下一hub的反位light满足C1>αC0从而C0≤αC1，异位下一hub只会降低当前side及提高偏离side；前驱异位hub的margin为−q_(i+1)M_(i+1)+n_i p_i[1−α(1+t_i)^D_i]<0，唯一同位边的hub margin为Δ_j≤0。因此该着色直接给显式α-PNE，不调用目标的完整刻画作隐藏前提。本边不把势比较中的light重置当作真实联合偏离。",
+  "scope": "等hub权的OC强迫子类与共享side定理的精确交集；不声称异权hub、未强迫域或α²<d的存在性/最优阈值，也不声称原游戏FIP。",
+  "contribution": {
+    "result": "对所有hub同权、严格LIGHT、α²≥d的合法奇环，α-PNE存在且至少一条Δ_i≤0；共享side局部最小点给真实反位α-PNE，任一失败边的唯一同位着色也经直接成本核验给α-PNE。",
+    "remaining": "完整OC目标还需任意正hub权与全部α≥1下的逐状态反向稳定、每条失败边着色和必要充分性；这些由OC目标正文单独证明，不能仅从UF存在定理推出。"
+  },
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/跨源共享侧资源的重置增量乘积预算--定理.md",
+      "sha256": "de331c8c8a94552d1cd3cd4d5180ad169fa3543af59b424df03a5e53c77ba81c",
+      "section": "共同模型和版本合同"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/跨源共享侧资源的重置增量乘积预算--定理.md",
+      "sha256": "de331c8c8a94552d1cd3cd4d5180ad169fa3543af59b424df03a5e53c77ba81c",
+      "section": "一名light共领一次预算，真实偏离闭合"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md",
+      "sha256": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6",
+      "section": "资源、玩家与动作"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md",
+      "sha256": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6",
+      "section": "混合群组也被覆盖的证明"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/同位强迫下的奇环均衡刻画--定理.md",
+      "sha256": "bc6e3a64054e4face8052088740717b2a8b47e5d1464a34c005b6bcdf2b90c4c"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "独立实读本边全部端点的当前登记、正文及所列证据，核对真实单方偏离、弱均衡端点、全部联合输入和整条/局部作用范围；有限记录不代替一般证明。",
+  "endpoint_pins": {
+    "OC-INTERFACE-v1": "2632cfb87681d8d959b5e44f47d114e30bacc287bba2a931798524c44c6be252",
+    "OC-LIGHT-FORCING-EXACT-v1": "ab17f269090fc55fb44b0533bd9e9c229fd4e1860df84c31ddefa4c9b8166b4b",
+    "wc-multisource-reset-product-budget": "9b32686d662537d471469eb9ea69a71ff5b75e52da51e1542b9e3829338eb697"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/跨源共享侧资源的重置增量乘积预算--定理.md": "de331c8c8a94552d1cd3cd4d5180ad169fa3543af59b424df03a5e53c77ba81c",
+    "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6",
+    "archives/weighted-congestion/state/定理/同位强迫下的奇环均衡刻画--定理.md": "bc6e3a64054e4face8052088740717b2a8b47e5d1464a34c005b6bcdf2b90c4c"
+  },
+  "review_digest": "c796080d2102eb8917a5a4ebd2148120ebd9b4625ccf5b4a51a6089c43f40463"
+}

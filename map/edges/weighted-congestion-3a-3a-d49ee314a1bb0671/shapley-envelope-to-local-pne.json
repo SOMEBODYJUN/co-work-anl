@@ -1,0 +1,54 @@
+{
+  "edge_id": "wc-b5-d49-shapley-envelope-to-local-pne",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "kind": "implies",
+  "source_ids": [
+    "WC-R3-DENSE-SHARE-v1"
+  ],
+  "target_ids": [
+    "WC-R3-DENSE-LOCAL-v1"
+  ],
+  "conditions": "有限正实权标准加权拥塞游戏，非负系数多项式，有限非空资源子集策略族允许空策略与零费。对全部非空潜在用户集U_e固定a_e=min_U w、b_e=max_U w并有b_e/a_e≤R≥1；无人资源省略。",
+  "roles": {
+    "WC-R3-DENSE-SHARE-v1": "提供标准Shapley精确边际、效率和min/max实际用户权包络；仿射项还给每权份额相等。",
+    "WC-R3-DENSE-LOCAL-v1": "将固定资源缩放后的精确边际和包络拼成全部单方偏离上的R-PNE/FIP保证及精确特例。"
+  },
+  "explanation": "对实际用户S_e⊆U_e使用源对象同一个H_e，定义Φ=Σ_e H_e(S_e)/a_e、D_i=Σ_(e∈s_i)φ_ie(S_e)/a_e。潜在尺度固定不随状态改变，实际用户包络给C_i≤D_i≤RC_i。任一多资源单方偏离，删除/加入使用两端真实用户集的精确边际，保留资源负载及份额不变，故ΔΦ=D_i(new)−D_i(old)。局部最小性给C_i(old)≤D_i(old)≤D_i(new)≤RC_i(new)；严格R改善则D_i(old)>D_i(new)，从而同一Φ严格下降并在有限状态终止。R=1时每资源全部潜在用户等权a_e，效率及份额对称性给φ_ie/a_e=c_e，故Φ为普通精确势。对c_e(x)=A_ex+B_e的任意正权，源代数q=1,2的每权差为零，效率给φ_ie=w_i c_e，因此未缩放ΣH_e的势差为w_i[C_i(new)−C_i(old)]，无需权比限制。全部费用为零、零偏离费用和全空动作均直接用不等式，不除费用。",
+  "scope": "无次数、人数、全局权比因子；只有每资源潜在用户尺度固定才能保持边际。显式子集势可指数大，不给多项式步数或求解时间。",
+  "whole_result": "每资源潜在权比≤R的游戏，同一固定缩放Shapley势的每个单方局部最小点是R-PNE，全部严格R改善均降势并终止；R=1为精确势，仿射费用任意权另有玩家尺度加权精确势。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/局部窄权带的Shapley份额势--定理.md",
+      "sha256": "d1551d41cd6f3a625359dde38498d557a2ff46331049ee4284a0c908244af24d",
+      "section": "集函数、精确边际和效率"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/局部窄权带的Shapley份额势--定理.md",
+      "sha256": "d1551d41cd6f3a625359dde38498d557a2ff46331049ee4284a0c908244af24d",
+      "section": "两种权序与局部包络"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/局部窄权带的Shapley份额势--定理.md",
+      "sha256": "d1551d41cd6f3a625359dde38498d557a2ff46331049ee4284a0c908244af24d",
+      "section": "潜在用户局部权比的存在界"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/局部Shapley包络与尾部冻结的审查范围--审查.md",
+      "sha256": "cd1cc9eb77370b36df67bba81ff2a43c31d86c8dcd991caac3136ea7eab3e6f2",
+      "section": "局部R结论及原审查的边界核对"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "独立实读本边全部端点的当前登记、正文及所列证据，核对真实单方偏离、弱均衡端点、全部联合输入和整条/局部作用范围；有限记录不代替一般证明。",
+  "endpoint_pins": {
+    "WC-R3-DENSE-LOCAL-v1": "bc1e2d33d074efe0de982045eb7d8dd930ab7430321cf1ce7f2c0125a0d41b11",
+    "WC-R3-DENSE-SHARE-v1": "bac86f71e93f496bbf35ccf460d4b60da2e22e7388261f3b759149e4e6ca9b32"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/局部窄权带的Shapley份额势--定理.md": "d1551d41cd6f3a625359dde38498d557a2ff46331049ee4284a0c908244af24d",
+    "archives/weighted-congestion/state/审查/局部Shapley包络与尾部冻结的审查范围--审查.md": "cd1cc9eb77370b36df67bba81ff2a43c31d86c8dcd991caac3136ea7eab3e6f2"
+  },
+  "review_digest": "50e3b53ae6c87d39ced10ee086df34bac8f933aeca2d69904c70c70a1155d26d"
+}
