@@ -871,21 +871,32 @@ def run_path(root, run_id):
     return _safe_path(root, 'research/runs/' + identity(run_id) + '/run.json')
 
 
-def init_run(root, run_id, spec_file, registry=REGISTRY):
+def init_run(root, run_id, spec_file, registry=REGISTRY, *, mode='comparison'):
     path = run_path(root, run_id)
     if path.exists():
         raise ValueError('Run exists; resume it instead')
     spec = json.loads(_safe_path(root, spec_file).read_text())
-    packets = {p: packet(root, spec, p, registry) for p in ('obstacle', 'full')}
+    profiles = ('full',) if mode == 'open' else ('obstacle', 'full')
+    packets = {profile: packet(root, spec, profile, registry) for profile in profiles}
+    if mode == 'open':
+        packets['full']['launch'] = {
+            'fork_turns': 'none',
+            'instruction': 'Choose the model and effort for the actual assignment. Record the platform agent ID after dispatch.',
+        }
     home = path.parent
     for profile, value in packets.items():
         _write_json(home / ('packet-' + profile + '.json'), value)
-    roster = copy.deepcopy(SOLVER_ROSTER)
+    roster = [] if mode == 'open' else copy.deepcopy(SOLVER_ROSTER)
+    if mode == 'open':
+        launch_plan = {'platform': 'Work', 'mode': 'open',
+                       'instruction': 'Main assigns actual mathematical obligations as needed; init itself launches no model.'}
+    else:
+        launch_plan = {'platform': 'Work', 'exact_count': len(roster),
+                       'instruction': 'Main launches every roster slot through the actual platform; init itself launches no model.'}
     state = {'schema': 2, 'run_id': run_id, 'problem_id': spec['problem_id'], 'state': 'working',
              'spec': spec_file, 'spec_pin': pin(spec), 'registry': registry, 'solvers': {},
              'solver_count': len(roster), 'solver_roster': roster,
-             'launch_plan': {'platform': 'Work', 'exact_count': len(roster),
-                             'instruction': 'Main launches every roster slot through the actual platform; init itself launches no model.'},
+             'launch_plan': launch_plan,
              'registry_pin': packets['full'].get('registry_pin'),
              'context_snapshot': {
                  'objects': {o['object_id']: o['registration_pin'] for o in packets['full']['context']['objects']},
@@ -911,7 +922,10 @@ def update_run(root, run_id, solver_id, profile, note, next_action, state, feedb
     path = run_path(root, run_id)
     run = json.loads(path.read_text())
     roster = {s['solver_id']: s['profile'] for s in run.get('solver_roster', [])}
-    if roster and (solver_id not in roster or roster[solver_id] != profile):
+    on_demand = run.get('launch_plan', {}).get('mode') == 'open'
+    if on_demand and profile not in run['packet_pins']:
+        raise ValueError('Use the packet profile saved for this run')
+    if not on_demand and roster and (solver_id not in roster or roster[solver_id] != profile):
         raise ValueError('Use a declared Solver roster slot with its original profile')
     old = run['solvers'].get(solver_id, {})
     old_pending = old.get('feedback_pending', bool(old.get('feedback')))
@@ -934,6 +948,9 @@ def update_run(root, run_id, solver_id, profile, note, next_action, state, feedb
              'feedback_acknowledged': bool(ack_feedback and old_pending)}
     _write_json(_safe_path(root, (path.parent / 'events' / (event_id + '.json')).relative_to(root).as_posix()), event)
     run['solvers'][solver_id] = dict(event, latest_event=event_id)
+    if on_demand and solver_id not in roster:
+        run['solver_roster'].append({'solver_id': solver_id, 'profile': profile})
+        run['solver_count'] = len(run['solver_roster'])
     _write_json(path, run)
     return {'status': 'saved-local-not-pushed', 'event_id': event_id, 'continuation_of': event['continuation_of']}
 
@@ -1742,6 +1759,7 @@ def main(argv=None):
     q = sub.add_parser('edge-check'); q.add_argument('edge_file')
     q = sub.add_parser('packet'); q.add_argument('spec'); q.add_argument('--profile', choices=['obstacle', 'full'], required=True)
     q = sub.add_parser('init'); q.add_argument('run_id'); q.add_argument('--spec', required=True)
+    q.add_argument('--mode', choices=['comparison', 'open'], default='comparison')
     q = sub.add_parser('resume'); q.add_argument('run_id')
     q = sub.add_parser('compute', help='Run one registered experiment and checkpoint its receipt immediately')
     q.add_argument('experiment'); q.add_argument('--out', required=True)
@@ -1817,7 +1835,7 @@ def main(argv=None):
             _write_json(path, edge)
     elif a.command == 'edge-check': result = check_edge(root, a.edge_file, a.registry)
     elif a.command == 'packet': result = packet(root, json.loads(_safe_path(root, a.spec).read_text()), a.profile, a.registry)
-    elif a.command == 'init': result = init_run(root, a.run_id, a.spec, a.registry)
+    elif a.command == 'init': result = init_run(root, a.run_id, a.spec, a.registry, mode=a.mode)
     elif a.command == 'resume': result = resume(root, a.run_id)
     elif a.command == 'compute':
         import codespace_math

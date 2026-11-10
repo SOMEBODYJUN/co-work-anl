@@ -1,6 +1,6 @@
-# 研究输入：obstacle / full
+# 研究输入
 
-实际 packet 由 `work.py research packet` 或 `research init` 从同一 spec 生成；不手工维护另一套 blind/boundary 协议。
+普通研究用 `work.py research init RUN --spec <路径> --mode open` 生成一份 full packet。明确对照实验用 comparison 模式生成 obstacle 和 full，原 RUN 直接恢复。两种模式用同一 spec。
 
 spec 的最小结构：
 
@@ -16,7 +16,7 @@ spec 的最小结构：
 
 问题及定义包含完整的域、目标量词与约束，引用可用 `section` 指定精确标题。obstacles 只选有用的已知失败边界；不把全仓成果塞进该字段。
 
-原题或定义尚无准确正文时，可先按完整原意写到`research/workspaces/<RUN>/problem.md`、`definitions.md`再引用。有相关既有成果才填写其真实seed_ids；没有时用`"seed_ids":[]`，即使尚无registry也可init，两个full槽从空成果context研究原题，不要求先登记新题或填无关对象。此时保留full检索能力，但初始packet没有引入任何成果；后续实际取用的相关结果记进研究笔记，不悄改原packet。指定edge_ids时须同时给相关seed，以准确保留所选证明分支。
+原题或定义尚无准确正文时，可先按完整原意写到`research/workspaces/<RUN>/problem.md`、`definitions.md`再引用。有相关既有成果才填写其真实seed_ids；没有时用`"seed_ids":[]`，即使尚无registry也可init，研究者从原题开始，可按需查后续证据。此时保留full检索能力，但初始packet没有引入任何成果；后续实际取用的相关结果记进研究笔记，不悄改原packet。指定edge_ids时须同时给相关seed，以准确保留所选证明分支。
 
 需要定向取用时可在 spec 加 `edge_ids` 选择 accepted 正向支持的替代分支，或加 `edge_statuses`、`relation_kinds` 选择研究线索。`hops` 默认 0，仅控制额外导航，不截断已选逻辑支持的全部前提。full context 中各端点保留模型、量词、假设、状态与 objections，关系保留完整 conditions、scope、解释和证据定位；正文按需读取。
 
