@@ -1,0 +1,58 @@
+{
+  "edge_id": "ca-r33-shapley-specializes-fixed-real-load-harmonic-potential",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential"
+  ],
+  "target_ids": [
+    "M-39089a04f9444753a75cc06873542b82"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限单位客户集及有限非空共同覆盖目录，r≥1，固定任意逐客户非负实背景 b_x；同背景静态 r 人全选 B 为 PNE。",
+  "roles": {
+    "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential": "给归零单调次模的逐参数势差上界，以及任意非负实外生负载的覆盖代入",
+    "M-39089a04f9444753a75cc06873542b82": "给任意非负实背景下单色静态 PNE 的调和势最大性，并指出真实单色尾的末位最佳回复接口"
+  },
+  "explanation": "逐 p 取 C_p(U)=Σ_{x∈∪U}(1−p)^{b_x}。当 j≥1 个活动槽覆盖 x 时，每覆盖者边际积分 ∫₀¹(1−p)^{b_x+j−1}dp=1/(b_x+j)，势的客户项为 ∫₀¹(1−p)^{b_x}[1−(1−p)^j]/p dp=Σ_{ℓ=1}^j1/(b_x+ℓ)，j=0 的势项为零。故源的同背景静态定量不等式原样传为 Φ_b(Z)−Φ_b(B^r)≤Σ_i[u_i(T_i,B_{−i};b)−u_i(B^r;b)]≤0。亦可直接逐客户核对：B 外的势增量至多 c_x(Z)/(b_x+1)，B 内的势损失至少 (r−c_x(Z))/(b_x+r)，其和恰受各槽全 B 单方替换控制。若考察有序历史的真实单色尾，必须另外在固定前缀后的末节点对所有合法主题用 BR；在那里其他 r−1 个活动动作已固定为 B，因而同背景的静态全 B PNE 条件成立。",
+  "scope": "覆盖对象的固定实背景静态部分。合法真实单色尾接入时仍只在原前缀固定的比较范围，改前缀会改变真实续局和背景。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+      "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+      "section": "从单方收益到全部活动配置"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+      "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+      "section": "任意外生负载的覆盖专门化"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md",
+      "sha256": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129",
+      "section": "单色税的实际义务和可独立使用的静态势引理"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核实负载可为任意非负实数，无需把它当作整数背景玩家。已比较 FFC 规范边直接从全域积分到覆盖对象的推导；此边从新抽象核心落实静态覆盖专门化。",
+  "contribution": {
+    "result": "任意固定实背景的单位覆盖收益和调和势逐项识别，得到全 B 静态 PNE 对所有同背景合法配置的势最大性及定量势差上界。",
+    "remaining": "将该静态部分用于某份真实单色 SPE 尾时，须从该尾同一前缀下的末位真实 BR 支付 PNE 前提；换前缀后比较另一份真实续局仍需单独论证。"
+  },
+  "endpoint_pins": {
+    "M-39089a04f9444753a75cc06873542b82": "dad75f445713abab0f516a06336a36051bd1721eccfe0c0b5dc14d4feaec236c",
+    "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential": "d486c874dacc5ca04ad36ec8e82d749dccfb07c758eaba5104a9b4f0f7c777b6"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+    "archives/customer-attraction/state/资料/双尾推送与单色续局的版本接口--资料.md": "c09c980bb67b01fcd76bb6b99149d02eee42ce91d68f4c1b1a022d76902bc129",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "eb0137c3d97f8581a0fe34b3cafd6e96ac3c06e087a146816e5051db50d893ab"
+}

@@ -1,0 +1,54 @@
+{
+  "edge_id": "ca-r33-shapley-bernoulli-fixed-background-monochromatic",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-c81148ab9bca4553bd1b73e97b080e81"
+  ],
+  "target_ids": [
+    "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限非空共同合法标签目录，C 为同一个归零单调次模集合函数。任意有限带身份背景玩家固定选题，r≥1 名同目录活动玩家；静态替换固定所有其他玩家。全 B 为 PNE 时应用全局最优推论。",
+  "roles": {
+    "M-c81148ab9bca4553bd1b73e97b080e81": "给全计数共同势和同一势的删除收益积分",
+    "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential": "识别带身份 Shapley 收益并给任意同背景配置的势差上界及 PNE 推论"
+  },
+  "explanation": "对全部有身份玩家独立以 p 抽样，若某标签计数为 q_a，出现概率为 1−(1−p)^q_a，各标签因槽位不交而独立。令 p=1−t，源的势即 Φ(s)=∫₀¹ E[C(supp s_{S_p})]/p dp。删除指定玩家时，被积期望差恰为 p 乘其对其余抽中玩家的边际；对其余 n−1 人中的每个子集 S 积分，系数为 |S|!(n−1−|S|)!/n!，故删除收益正是同一全体合作游戏的带身份 Shapley 值。令 C_p(U)=E[C(R_p∪U)−C(R_p)]，R_p 为抽中的固定背景标签支持，K_p=C_p({B})，d_p(T)=C_p({B,T})−K_p。C_p 保归零、单调、次模。抽中活动槽 I 为空时差为 0；仅抽 i 时差为 C_p({T_i})−K_p；至少两槽时，先加 B 再逐个加 T_i，由单调和边际递减，差至多 Σ_{i∈I}d_p(T_i)。除以 p 后，i 单独入样和 i 与别槽同入样的系数分别为 (1−p)^{r−1} 与 1−(1−p)^{r−1}。积分给 Φ(T)−Φ(B^r)≤Σ_i[u_i(T_i,B_{−i})−u_i(B^r)]：两项恰对应静态替换时未抽中或抽中其他活动玩家。PNE 逐个压低的是积分后的真实收益差。对外生覆盖同一逐参数论证取 C_p(U)=Σ_{x∈∪U}w_x(1−p)^{b_x}，w_x,b_x≥0。每客户出现 j 次时，边际积分为 w_x/(b_x+j)，势积分展开有限几何和为 w_xΣ_{ℓ=1}^j1/(b_x+ℓ)。",
+  "scope": "任意真实有限固定背景的抽象静态 Shapley 博弈及任意非负实外生背景的覆盖专门化。重复标签、收益平局及 r=1 均可。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+      "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+      "section": "全域构造和收益积分"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+      "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+      "section": "势与收益的同一抽样公式"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+      "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+      "section": "从单方收益到全部活动配置"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+      "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+      "section": "任意外生负载的覆盖专门化"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对抽样对带身份槽与按标签支持的转换、删除边际的 Beta 权重、抽空背景和 r=1。由次模值条件逐参数证明势差，由 PNE 只控制积分后各项。",
+  "whole_result": "对任意同背景的候选活动配置，Shapley 势差由全 B 下逐槽真实静态单方收益差之和上界，故全 B 静态 PNE 全局最大化 Shapley 势；非负覆盖权及任意外生实背景也得到同一结论及对应调和势。",
+  "endpoint_pins": {
+    "M-c81148ab9bca4553bd1b73e97b080e81": "5161f546ac32f02ecb11a141b839bf3ff5e03be8bc10342355bccd68a7a59f85",
+    "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential": "d486c874dacc5ca04ad36ec8e82d749dccfb07c758eaba5104a9b4f0f7c777b6"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+    "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57"
+  },
+  "review_digest": "521c30697afabb17e2bc007e2b53bf677ba78f80b510e42d5c5197ab56982173"
+}

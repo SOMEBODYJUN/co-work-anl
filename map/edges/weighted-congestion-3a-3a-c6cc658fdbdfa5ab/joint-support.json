@@ -1,0 +1,74 @@
+{
+  "edge_id": "wc-cross32-source-reduction-fourteen-resource-separation",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R3-SOURCE32-178-v1",
+    "WC-R3-FULL-TOPOLOGY-REDUCTION-v3",
+    "WCF-R3-CROSS32-AUDIT-v1"
+  ],
+  "target_ids": [
+    "WC-R3-CROSS32-TOPOLOGY-SEPARATION-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同模型为次数至多 32 的有限原子加权拥塞，正玩家权、非负实系数多项式费用、个人成本为资源延迟和，单方偏离以改变动作后的真实负载计费，α-PNE 使用弱成本不等式。上界侧是一名权重 1 的玩家选整列及 n≥1 名任意共同轻权 w>0 的玩家选交叉两资源，两个主资源同费 F、全部侧资源同费 G。归约仅在 α≥ρ=(1+√3)/2 使用，所得源参数为 N≥1、0<ω≤1、1≤k≤32、0<β<1。下界侧取登记的一个四玩家十四资源游戏 G₁₄。",
+  "roles": {
+    "WC-R3-SOURCE32-178-v1": "对所有整数 n≥1、1≤k≤32、实数 0<w≤1、β≥0 同时覆盖两攻击比，给出 min(H,L)≤89/50。",
+    "WC-R3-FULL-TOPOLOGY-REDUCTION-v3": "将原拓扑无 α-PNE 送到两个严格源攻击，允许改变人数、共同权与费用。该归约的源 N、ω、k、β 逐项落入上界的 n、w、k、β 域。",
+    "WCF-R3-CROSS32-AUDIT-v1": "给定合法 G₁₄，按每个状态四个真实单人翻转的正成本比取最大，再对 16 态取最小，给出 B(G₁₄)>9/5 及可取弱端点。",
+    "WC-R3-CROSS32-TOPOLOGY-SEPARATION-v1": "将完整对称两列子类的逐实例存在性与指定非对称游戏的全态非存在组合成固定次数的严格拓扑分离。"
+  },
+  "explanation": "取 t=89/50。2t(t−1)=3471/1250>1，而 2ρ(ρ−1)=1，故 t>ρ。若完整对称两列有一个实例无 t-PNE，归约产出的 S1、S2 以正分母除开正是 H>t 和 L>t。源上界在更宽的 β≥0 域排除此合取。其解析部分同时由严格假设推出 A>t 与 B>tD 及必要式 P>0，将反例压入 1≤n≤55、1≤k≤32、w∈[1/55,1/max(1,n−1)]。1760 个整系数多项式的 1768 个覆盖叶片全为严格负 Bernstein 系数，故 P>0 矛盾。于是每个原拓扑实例有 t-PNE，再取上确界得 T₃₂≤t。另一侧，从七对互补资源按字面负载复算 G₁₄ 的 16 态和 64 个翻转。第七对资源保证全部当前及偏离成本为正，每态恰有一个比值大于 9/5。对状态内最大值取有限最小，得 B(G₁₄)>9/5，证书的精确最小值由 0110、1001 取到（约 1.800488032325864），两态均在该弱端点满足所有偏离不等式。最后 9/5−89/50=1/50>0。",
+  "scope": "固定次数上界 32 的完整同轻权对称两列拓扑的全实参数上界，对照一个四玩家十四资源正有理实例。归约只需保严格两攻击见证的存在性，端点陈述采用弱 α-PNE，T₃₂ 允许只取上确界。",
+  "whole_result": "三个已证前提合取推出整个 T₃₂≤89/50<9/5<B(G₁₄)。每个完整同轻权对称两列的合法次数至多 32 实例均有 89/50-PNE，指定 G₁₄ 无 9/5-PNE，且 0110 与 1001 在其精确最佳倍率 B(G₁₄) 处是弱均衡。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/对称两列拓扑的单项式两攻击归约--定理.md",
+      "sha256": "6d6ffc835804eec4e380e086b818d8e022dc1c0d70d505d31a09873766b7d6d9"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/三十二次两攻击源包络上界--定理.md",
+      "sha256": "fc89af9c3515b2c0d0cdf2461e6146301952f42003078848e679242910520ca8"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/symmetric-source/original/evidence/certificates/weighted_congestion/source_degree32/certificate.json",
+      "sha256": "01ce8add2190ce7e3260c2dc7ffb765d85b8e6cec00ae031a92e7d626ca3c1b2"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/symmetric-source/original/tests/audits/weighted_congestion/source_degree32/verify.py",
+      "sha256": "0d3afd04aa12c17e68a04b39645e9f0658c19c4f9222ad3bcc9f395f38da3cfb"
+    },
+    {
+      "path": "archives/weighted-congestion/state/构造/四玩家十四资源三十二次全状态反例--构造.md",
+      "sha256": "2a6f9aa10062a5b19314028eec981012a1b6481831729fb4e1e1fe56eae34da6"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/crossover/original/evidence/certificates/weighted_congestion/crossover/degree32_certificate.json",
+      "sha256": "f9cab87ef40948304f015e9f25995086c586b1436fe42da163f7420289a309de"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/十四资源非对称例与对称两列拓扑的三十二次分离--定理.md",
+      "sha256": "d752d80857a5dc9d8936e874e19f862bf8d5660e2f9fbf68c297a6a1c46c97d8",
+      "section": "三个前提如何共同推出分离"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读四个现行登记及承重正文，核 S1/S2 与 H/L 的正分母和参数映射、ρ 门槛及源上界对 β 域的包含。复跑整数 Bernstein 检查器，验证 1760 多项式、1768 叶、最大深度 2。以 Fraction 从七对资源独立重建全部 16 态、64 个当前和偏离成本比及证人严格余量，逐项匹配冻结证书，核每态恰一条严格 9/5 偏离与两个弱端点。",
+  "endpoint_pins": {
+    "WC-R3-CROSS32-TOPOLOGY-SEPARATION-v1": "49c2b1295eb21312964e4909f1429e9a60514898774fdb6a4841de1f3083b3a8",
+    "WC-R3-FULL-TOPOLOGY-REDUCTION-v3": "cd9c56dbad4a1760d545b3dce0028cb43947151508b9821d251f5b37df350e0a",
+    "WC-R3-SOURCE32-178-v1": "9bee755ab574f38d2fcd7aa5d52f9ac4f006fc1cae20297a410896e31755b527",
+    "WCF-R3-CROSS32-AUDIT-v1": "16676ce3607b5ed5678a5860a3cfe55884ef62414d5e698303d7db68256cf253"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/对称两列拓扑的单项式两攻击归约--定理.md": "6d6ffc835804eec4e380e086b818d8e022dc1c0d70d505d31a09873766b7d6d9",
+    "archives/weighted-congestion/state/定理/三十二次两攻击源包络上界--定理.md": "fc89af9c3515b2c0d0cdf2461e6146301952f42003078848e679242910520ca8",
+    "archives/weighted-congestion/tools/evidence/symmetric-source/original/evidence/certificates/weighted_congestion/source_degree32/certificate.json": "01ce8add2190ce7e3260c2dc7ffb765d85b8e6cec00ae031a92e7d626ca3c1b2",
+    "archives/weighted-congestion/tools/evidence/symmetric-source/original/tests/audits/weighted_congestion/source_degree32/verify.py": "0d3afd04aa12c17e68a04b39645e9f0658c19c4f9222ad3bcc9f395f38da3cfb",
+    "archives/weighted-congestion/state/构造/四玩家十四资源三十二次全状态反例--构造.md": "2a6f9aa10062a5b19314028eec981012a1b6481831729fb4e1e1fe56eae34da6",
+    "archives/weighted-congestion/tools/evidence/crossover/original/evidence/certificates/weighted_congestion/crossover/degree32_certificate.json": "f9cab87ef40948304f015e9f25995086c586b1436fe42da163f7420289a309de",
+    "archives/weighted-congestion/state/定理/十四资源非对称例与对称两列拓扑的三十二次分离--定理.md": "d752d80857a5dc9d8936e874e19f862bf8d5660e2f9fbf68c297a6a1c46c97d8"
+  },
+  "review_digest": "9ad6e53278f18d90a9f91536dcb15d1f23e971c48da5e755ad7cb75e67af2fd6"
+}

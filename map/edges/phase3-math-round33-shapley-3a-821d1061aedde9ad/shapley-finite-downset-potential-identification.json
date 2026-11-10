@@ -1,0 +1,47 @@
+{
+  "edge_id": "ca-r33-shapley-finite-downset-potential-identification",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-e5979db9ca2b46a09115e0ece14768b1"
+  ],
+  "target_ids": [
+    "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限标签集合、同一归零实值 C。取包含零、固定背景计数与所需全部活动配置总计数的有限向下闭集 D，使用定义于 D 的同一个归零共同删除势，并在 D 每一非零人口状态要求包含背景玩家的总份额效率。",
+  "roles": {
+    "M-e5979db9ca2b46a09115e0ece14768b1": "给共同删除势的按人口递推及已知积分解",
+    "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential": "在比较所需的有限层识别实际静态 Shapley 势与带身份删除收益"
+  },
+  "explanation": "可取 D={q: |q|≤|b|+r}，其中 b 为有限固定背景玩家的标签计数。向下闭保证 q_a>0 时 q−e_a∈D。把 U_a(q)=Φ(q)−Φ(q−e_a) 代入 Σ_a q_a U_a(q)=C(supp q)，得 |q|Φ(q)=C(supp q)+Σ_{a:q_a>0}q_aΦ(q−e_a)。从 Φ(0)=0 按 |q| 归纳，D 上唯一，并与源的积分解逐点相同。活动配置 z 的可比势可用 Φ_C(b+z)−Φ_C(b)，同一固定背景常数抵消。带身份活动玩家从 B 改 T 的势差是两份终局势各减同一删除该玩家的势所得到的收益差，故正好是同一背景下的静态替换收益差。",
+  "scope": "局部识别可用于任何有限真实背景的比较层。有限递推可识别已给 C 的势，原全域 DR 反向刻画仍需任意大 L；此处背景效率含真实玩家，不套给任意外生实负载。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md",
+      "sha256": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+      "section": "共同势加全层E的反向刻画"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md",
+      "sha256": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57",
+      "section": "势与收益的同一抽样公式"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核 q_a=0 不取删除值、共同势与全 D 效率是条件，且只需实际依赖到的向下闭层。比较固定背景常数及共同删一玩家的状态。",
+  "contribution": {
+    "result": "在有限向下闭层唯一识别共同删除势为同一 Shapley 势，并给出固定背景下任一单槽势差等于对应静态单方收益差。",
+    "remaining": "全 B 的任意同时替换势差仍须由归零单调次模值的带身份 Bernoulli 抽样界控制，再用 PNE 逐项收口。有限层效率与共同势自身不给全局最优。"
+  },
+  "endpoint_pins": {
+    "M-e5979db9ca2b46a09115e0ece14768b1": "5e8f0e7696f77c6167f74b60da8d51f0f4d25d87310838f2dc36bf3949f349f3",
+    "customer-attraction/submodular-shapley-monochromatic-static-pne-global-potential": "d486c874dacc5ca04ad36ec8e82d749dccfb07c758eaba5104a9b4f0f7c777b6"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/共同删除势的全域效率与单调次模提升--定理.md": "1b92a86f1c58a9ca45c9599cff05f7d38a6739491a17a6f05ad1674bb03317d5",
+    "archives/customer-attraction/state/定理/固定背景下单色静态Shapley均衡的全局势最大性--定理.md": "bb44ea464f60d7da0fc13551dafca11f08d9f86b69a77e17d4cac4aaeab01e57"
+  },
+  "review_digest": "1c2ba9d9e236f69141ac000d430666f28fa38d680d1fda8ccc8c9548214537f5"
+}
