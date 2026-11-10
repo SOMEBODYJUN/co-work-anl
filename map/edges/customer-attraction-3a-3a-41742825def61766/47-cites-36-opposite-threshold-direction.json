@@ -1,0 +1,42 @@
+{
+  "edge_id": "cag417-47-cites-36-opposite-threshold-direction",
+  "kind": "cites",
+  "status": "accepted",
+  "source_ids": [
+    "M-9df90486d06e43cb87708f779a716ca7"
+  ],
+  "target_ids": [
+    "customer-attraction/r4-maximum-singleton-threshold-failure"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "有限单位客户、非空共同标签目录、单位顺序提供者、完整有序历史纯SPE及全部弱平局；M是当前玩家全部可信续局上的max-min。",
+  "roles": {
+    "M-9df90486d06e43cb87708f779a716ca7": "47客户/4提供者沿可支持实际首行动4，门槛71/6降为67/6，否不下降。",
+    "customer-attraction/r4-maximum-singleton-threshold-failure": "36客户/3提供者全部六个最大单例首行动后门槛10升为12，否最大单例插入后不上升。"
+  },
+  "explanation": "47客户段明确引用36客户最大单例阈值失败正文并区分方向。47点支持行动条件为t∈R(c+ea)、Ua(t)≥M(c)，其实际首边给M(child)<M(parent)。36点用背景单例价格Fq的最大者作为行动条件，全部六个最大者均有M(child)>M(parent)。两个被否不等式方向相反且行动假设不同，故该引用用于防止把二者合并成同一句单调性失败。",
+  "scope": "仅为相反单调方向及额外最大单例假设的真实语境比较；不把47点当作36点同一候选反例，不由任一点否定准确条件换位、逐层付款或half。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/根门槛与末位人数预算的三个完整历史有限证书--计算.md",
+      "sha256": "07a80666c417f26d08409e14bb01930b7a3020a252ed08afd75736dd17f2d6dd",
+      "section": "5. 四人47客户：合法当前行动后门槛可以严格下降"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/R4最大单例阈值失败证书--反例.md",
+      "sha256": "328d289646397d6425562cb0657bf25ff15c15088e45a380d7e2cbdba2ad51ed"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "全文核36客户两组类型输入、五类终局收益、四项孩子菜单和20项根菜单的解析证明及43节点公式策略；核47根菜单与真实首边下降，未重跑任一全树发现或认证。",
+  "endpoint_pins": {
+    "M-9df90486d06e43cb87708f779a716ca7": "e612c24e81662ac6b3c8bea55c5749e2b150c53e8f713e5248f0c42ebd760232",
+    "customer-attraction/r4-maximum-singleton-threshold-failure": "90d4ed368e4add026f629f9c13aa9f427bb5e36a330318b62475b857dec60789"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/根门槛与末位人数预算的三个完整历史有限证书--计算.md": "07a80666c417f26d08409e14bb01930b7a3020a252ed08afd75736dd17f2d6dd",
+    "archives/customer-attraction/state/反例/R4最大单例阈值失败证书--反例.md": "328d289646397d6425562cb0657bf25ff15c15088e45a380d7e2cbdba2ad51ed"
+  },
+  "review_digest": "db19a03f7317ca50b8fd74e9ac4b33dc979afc2096c167472b3c45001129257e"
+}
