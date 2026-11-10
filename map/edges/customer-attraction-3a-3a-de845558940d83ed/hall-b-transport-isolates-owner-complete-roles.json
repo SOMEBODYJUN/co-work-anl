@@ -1,0 +1,49 @@
+{
+  "edge_id": "ca-de845-hall-b-transport-isolates-owner-complete-roles",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/optimal-owner-all-subset-harmonic-transport-and-anchor-isolation"
+  ],
+  "target_ids": [
+    "M-3c46dcd1fcae445bad3d6d64684c21d2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一最优m元组T、owner分割Q_i⊆T_i与同一合法叶B；使用Hall-B而非普通Hall-A。可以不要求B为SPE。",
+  "roles": {
+    "customer-attraction/optimal-owner-all-subset-harmonic-transport-and-anchor-isolation": "给HYB单点割、B图只用missing-owner客户E、非负流守恒及存在满流。",
+    "M-3c46dcd1fcae445bad3d6d64684c21d2": "得到任一owner完备角色在任意可行满流中零source、零出入流；完整最优前缀的同叶隔离随之成立。"
+  },
+  "explanation": "若Q_i⊆B_i，取HYB J={i}，损失库存M({i})为空，故B_i\\O为空，b_i^H=0。i的owner客户均不在E={x∈O:x不在B_owner(x)}，而Hall-B的角色出边和终端只由E中的owner发出，因此i没有自有出边或终端。非负守恒out_i+sink_i=b_i^H+in_i迫in_i=0；外owner指向i的正容量边在任何可行流中也必须用零。对同一σ强制完整最优前缀T_1,…,T_k后的真叶，各i≤k均owner完备，故全部已用B流与源/终端支撑于未来角色。这个量词是任何满流，而非只选一份好流；空Q_i、空主题、重复标签、k=m亦由零式覆盖。",
+  "scope": "Hall-B同叶静态结构完整蕴含目标；不推出A图任意流隔离或跨叶共同钱包。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/最优归属的全子集调和运输与锚定隔离--定理.md",
+      "sha256": "5835b444b326109957567f0e599b7d075f2cdbdfa0c879dbe0f0590faea88a04",
+      "section": "B图的最优锚定角色零流"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/归属完备角色的Hall-B零流与同叶预留--引理.md",
+      "sha256": "14515b0c516e2865d2ef4e2c9bca19a081a09d9a815fedb2d19b66ea5f3a497b",
+      "section": "owner完备强迫任意可行流零入零出"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/归属完备角色的Hall-B零流与同叶预留--引理.md",
+      "sha256": "14515b0c516e2865d2ef4e2c9bca19a081a09d9a815fedb2d19b66ea5f3a497b",
+      "section": "最优全前缀与历史边界"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "核所有割与B图容量，再逐角色守恒；明确普通A图与逆角色未来流不在此结论。",
+  "whole_result": "对每个满足Q_i⊆B_i的锚定角色，Hall-B外部调和source为0，且任何可行满流均无该角色已用出边、终端或入边。强制同一完整最优前缀后的同叶B图因此隔离全部过去锚角色。",
+  "endpoint_pins": {
+    "M-3c46dcd1fcae445bad3d6d64684c21d2": "255fda13a500874f75919ec7dc28aafe90b972c68e9f646edcd09877fb36c1cf",
+    "customer-attraction/optimal-owner-all-subset-harmonic-transport-and-anchor-isolation": "36ad485b36f1ca2442d27e7de8e0cfa86a85c3cab0880f55efcd2dd4bc8190b0"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/最优归属的全子集调和运输与锚定隔离--定理.md": "5835b444b326109957567f0e599b7d075f2cdbdfa0c879dbe0f0590faea88a04",
+    "archives/customer-attraction/state/引理/归属完备角色的Hall-B零流与同叶预留--引理.md": "14515b0c516e2865d2ef4e2c9bca19a081a09d9a815fedb2d19b66ea5f3a497b"
+  },
+  "review_digest": "1b58f74749c1ffda6816f01f5055b125de4156ae1060a3da8bb13ea03f45aab1"
+}

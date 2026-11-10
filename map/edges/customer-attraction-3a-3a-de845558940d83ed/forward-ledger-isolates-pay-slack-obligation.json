@@ -1,0 +1,46 @@
+{
+  "edge_id": "ca-de845-forward-ledger-isolates-pay-slack-obligation",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/forward-customer-absorption-whole-row-envelope-and-net-budget"
+  ],
+  "target_ids": [
+    "M-8a3d5457d56c413189e2683b8ddecde0"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一完整纯SPE、actual叶、最优并集O、正文合法前向客户流与共同整query包络λ。所有query重新从同一σ的原actual前缀读入；完整利润f保全部客户。",
+  "roles": {
+    "customer-attraction/forward-customer-absorption-whole-row-envelope-and-net-budget": "给A+P=OPT、D_env=Σλf−A及精确整行IC恒等式。",
+    "M-8a3d5457d56c413189e2683b8ddecde0": "保留尚未支付的流/包络存在性；本边只识别它所要求的精确金额与half充分性。"
+  },
+  "explanation": "由A+P=OPT、D_env=Σλf−A和Γ_v=u_i−f_v，逐项相消得Σ_iΛ_i u_i+P−D_env=OPT+Σ_vλ_vΓ_v。因此Σ_i(Λ_i−2)u_i+P−D_env≤0与ΣλΓ≤2W−OPT完全等价。原SPE只另给Γ≥0；若确有这一流与包络，则OPT≤净右端≤2W。P≤|O∩C|、D_env≥0、DAG终止或在轨Γ≥0均不供给该存在性。形式harmonic树离轨有fresh偏离，不能用它否定真正SPE上存在选行证书的量词。",
+  "scope": "精确代数贡献和条件闭合接口；没有构造每份SPE的PAY证书。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/前向客户吸收的整行包络与净预算--引理.md",
+      "sha256": "f4f587bbfbc52d86c778cf9ea25a0eb379c56b0c02e038177dc226558897b0d8",
+      "section": "4. 必须面对的精确自检"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/前向客户吸收的整行包络与净预算--引理.md",
+      "sha256": "f4f587bbfbc52d86c778cf9ea25a0eb379c56b0c02e038177dc226558897b0d8",
+      "section": "5. 形式在轨障碍不反驳真正SPE的选行候选"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "全文核(1)–(5)、四类客户及形式策略/真实SPE两层量词，未将开放存在性提升为已证。",
+  "contribution": {
+    "result": "PAY候选的净预算恰等价于2W−OPT≥ΣλΓ；一旦同一合法流与整行包络满足该式，即推出half。",
+    "remaining": "仍须对每个原输入上的完整SPE构造μ、λ并证明这份非负IC松弛的总额不超过2W−OPT；本边未支付它。"
+  },
+  "endpoint_pins": {
+    "M-8a3d5457d56c413189e2683b8ddecde0": "ad58297122edf701749fa48f4f3326c4a78e8e8ec0bf821c1c9a33db287c7ee0",
+    "customer-attraction/forward-customer-absorption-whole-row-envelope-and-net-budget": "a58a9cc95f7790c529f64b1cb5e90701de4afadfb46d7d7b027a2cf0d83baa0a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/前向客户吸收的整行包络与净预算--引理.md": "f4f587bbfbc52d86c778cf9ea25a0eb379c56b0c02e038177dc226558897b0d8"
+  },
+  "review_digest": "7327a2b041fe9d316cfabe898b8c52a53f2b46a36824d1276719b58a04ce2cf6"
+}

@@ -1,0 +1,56 @@
+{
+  "edge_id": "ca-de845-forward-residual-flow-embeds-in-arb",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/forward-customer-absorption-whole-row-envelope-and-net-budget",
+    "customer-attraction/arbitrary-child-finance-and-coordinate-certificates-source-erratum"
+  ],
+  "target_ids": [
+    "customer-attraction/arbitrary-future-query-whole-row-procurement-prices-and-dual"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一原完整SPE、actual C/u/W、最优并集O和一份forward流ν及包络λ。R=O\\C，任取0≤q_x≤1；源总量Q=Σ_Rq_x。ARB吸收率必须取r_(v,x)=1/d_v(x)，其中d_v(x)为该真实query的全部玩家覆盖数；ARB完整行D_v对应forward完整收益f_v。",
+  "roles": {
+    "customer-attraction/forward-customer-absorption-whole-row-envelope-and-net-budget": "提供严格递增的自然未来coverer分流、原query访问量ν与最大访问包络λ。",
+    "customer-attraction/arbitrary-child-finance-and-coordinate-certificates-source-erratum": "提供先聚合吸收A_v再用唯一完整行乘子w_v=A_v/f_v的合法金融合同。",
+    "customer-attraction/arbitrary-future-query-whole-row-procurement-prices-and-dual": "获得其任意未来query可行域中的一份具体子域流及费用上界；本边不推其全部逆推和对偶结论。"
+  },
+  "explanation": "对x∈R，所有原actual前缀负载p_i(x)=0。将每个该客户的初始流及全部访问量同比缩为q_xν_x(v)，原当前吸收q_xν_x(v)/d_v(x)，其余仍按旧query中各更晚coverer的1/d_v(x)转入。总转出=(1−r)入量，所有child是合法更晚含x query，且每次重新读取同一σ的actual前缀；末位r=1，故是ARB允许的一份流。过去吸收全为0，守恒给Σ_v A_v^q=Q。令A_v^q=Σ_(x∈R∩T_v)q_xν_x(v)/d_v(x)。由于q≤1及ν≤λ，A_v^q≤λ_vΣ_(x∈T_v)1/d_v(x)=λ_v f_v；空/零利润行无正tracked吸收，取w=0。因此w_v=A_v^q/f_v≤λ_v。金融全费K=Σ_v w_v u_i=Q+Σ_vw_vΓ_v≤Q+Σ_vλ_vΓ_v，另有K≤Σ_iΛ_i u_i。ARB最小价不超过这一具体可行费。这里使用的是完整f_v，包括R外客户抵押，不是逐客户COORD投影。",
+  "scope": "同一r与完整D合同下的可行嵌入、逐行w≤λ和净源金融费的显式IC松弛上界；未假定共享cap已付。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/前向客户吸收的整行包络与净预算--引理.md",
+      "sha256": "f4f587bbfbc52d86c778cf9ea25a0eb379c56b0c02e038177dc226558897b0d8",
+      "section": "1. 状态是实际前缀查询，不是延续旧分支"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/任意子查询付款的两种充分证书与原等价勘误--资源.md",
+      "sha256": "3c3a21b32661b4e4bc1c4ab23c669e876eff5e548fa6053973025eea3c3137ec",
+      "section": "任意更晚query的金融证书"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/任意未来查询的完整行采购价与对偶--算法.md",
+      "sha256": "e88cadd086cd75b3669f8b768509d604c31e391804181ec1861992a00f891238",
+      "section": "固定状态与自由度"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "独立核p_R=0、当前率与完整行D的变量映射、自然child的严格角色增加、零行约定及费用等式；不用金融名词推COORD或钱包cap。",
+  "contribution": {
+    "result": "forward在R上的任意q≤1缩放给ARB合法金融流，w≤λ，且最小费≤K=Q+ΣwΓ≤Q+ΣλΓ，同时K≤gross ΣΛ_i u_i。",
+    "remaining": "ARB的普遍净源费≤W仍需额外金额控制；Bellman达到、全LP强对偶和自由trim最优值由ARB独立证明，本边不从forward重证或完整推出它们。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/arbitrary-child-finance-and-coordinate-certificates-source-erratum": "262b16e16b546960f68017048be1222e8b4caf9514bad996a2243edeab226127",
+    "customer-attraction/arbitrary-future-query-whole-row-procurement-prices-and-dual": "8124bd59a0cdcea2963109674a554f90d1cce4f819ad12fc4c28ca55feabb095",
+    "customer-attraction/forward-customer-absorption-whole-row-envelope-and-net-budget": "a58a9cc95f7790c529f64b1cb5e90701de4afadfb46d7d7b027a2cf0d83baa0a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/前向客户吸收的整行包络与净预算--引理.md": "f4f587bbfbc52d86c778cf9ea25a0eb379c56b0c02e038177dc226558897b0d8",
+    "archives/customer-attraction/state/资源/任意子查询付款的两种充分证书与原等价勘误--资源.md": "3c3a21b32661b4e4bc1c4ab23c669e876eff5e548fa6053973025eea3c3137ec",
+    "archives/customer-attraction/state/算法/任意未来查询的完整行采购价与对偶--算法.md": "e88cadd086cd75b3669f8b768509d604c31e391804181ec1861992a00f891238"
+  },
+  "review_digest": "3ee1fbf9bba51c994b5a6932b514400c5a4181472fbc7d311ac22e7045f8812d"
+}

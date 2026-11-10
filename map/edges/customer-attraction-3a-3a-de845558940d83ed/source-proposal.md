@@ -1,0 +1,11 @@
+# R23辅助页最小措辞勘误：已应用
+
+源：archives/customer-attraction/state/障碍/R23-promotion势能桥与零遗憾重置精确反例--障碍.md
+
+已发布源码提交：43213f8b40a2d7a163a3a2c2c9bc86ba6c9c84f1。登记提交：0d1a53146dd252a3f9b44238f655d7924bf5d079。
+
+精确应用：仅§1“结论先行”末句的唯一字符串 `来源遗憾/首位收益` 改为 `来源遗憾/首位收益损失`。旧源SHA为20b3d868fded89f6aa1ce018394dab93ec59c763a7d867062279ec2d73944bf7，新源SHA为76fd820fed5d96a4df3f62e44d5359a4257de8b93edb011706b45374d5b79ebe。原草稿建议更长的“同一来源节点行动者的收益损失（IC 松弛 Γ）”；Boss采用同义且更小的上述两字补丁，本轮已实读准确最终文本与diff，不把未采用的长句当作已应用。
+
+理由：四主题族来源行动者实际/提前收益均2t，Γ=0，势降t；它否定有限常数乘Γ。绝对首位收益2t的1/2倍已能支付t，所以原“首位收益”的过强表述须收窄。三主题族Γ=t/2、势降t是另一份独立尖锐见证，两族不合并。
+
+影响已闭合：terminal和zero两个记录仅版本3→4与该辅助证据SHA变化；主statement/body及其它字段不变。本任务32输入仅terminal pin更新为91c67d1231836cd900fd1691f6c8515372ea9e4193484c087ef43ae307bde02d。8条新数学边端点均不涉及该改版核心，原字节和SHA保持。复用的strong-PAIR ALL边已由Boss发布定向后继，checkpoint为pushed，commit bb5ad69214d82a3132e236d31274803625a305f1；receipt已以其实际路径和SHA 6bb79d5694eb9b0e0cb6389b26a687470e0c3caf5626ba0976bf8e6a151976a5封口。主三主题13节点正文、强PAIR普遍界和系数1锐性全部保持。本轮worker仅写仓库外staging。

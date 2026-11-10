@@ -1,0 +1,61 @@
+{
+  "edge_id": "ca-de845-forward-pay-budget-implies-free-kappa-budget",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-8a3d5457d56c413189e2683b8ddecde0",
+    "customer-attraction/forward-customer-absorption-whole-row-envelope-and-net-budget",
+    "customer-attraction/free-query-and-free-start-unit-procurement-prices"
+  ],
+  "target_ids": [
+    "M-fd6b8468eadc43b2a2e8d3058fb5089a"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "条件前提是PAY候选对每个有限实例及完整SPE确有同actual重置的合法forward流与λ，满足ΣλΓ≤2W−OPT。每份σ选PAY见证使用的同一最优并集O，R=O\\C、G=C\\O、δ=OPT−W=|R|−|G|。FREE保持真query当前吸收及对真实future coverer等份出口，无旧Hall/eta或共享角色cap。",
+  "roles": {
+    "M-8a3d5457d56c413189e2683b8ddecde0": "尚开放的全称存在及共同金额前提；本边完整处理它成立后的条件推导。",
+    "customer-attraction/forward-customer-absorption-whole-row-envelope-and-net-budget": "给原全OPT流、query访问量ν、包络λ≥ν和精确IC松弛账。",
+    "customer-attraction/free-query-and-free-start-unit-procurement-prices": "给自由query/起点等份流程的真实Bellman最小价、共同argmin兼容与自由净源精确最优值。",
+    "M-fd6b8468eadc43b2a2e8d3058fb5089a": "获得每份完整σ存在一个最优O使最低δ个κ总价≤W的整条预算候选。"
+  },
+  "explanation": "固定任意σ并取PAY见证的同一O、流和λ，记Γ_v=u_i−f_v≥0，其中f_v是包含全部客户的完整query收益。actual是合法m元组，故δ≥0；δ=|R|−|G|≤|R|，可选0≤q_x≤1且Σ_Rq_x=δ，δ0取零流。R客户在全部原actual前缀负载0；将其原初始分布与访问量同比缩为q_xν_x(v)。在query v=(i,a)，覆盖数d_v(x)=1+|F_i,a(x)|，当前和各future coverer均吸收/转出入量的1/d_v(x)，因此它恰是FREE允许的等份流程，只是每个到达角色继承了父query指定的合法动作。该parent-dependent选择不妨碍FREE比较：按角色逆归纳，任一该子流程单位费≥[u_i/f_v+Σ_(j∈F)V_j(x)]/(1+|F|)≥V_i(x)；任意初始角色/动作混合的费≥κ_x=min_iV_i。反之FREE在每个(i,x)固定argmin，对全部父来源和客户可同时达到；无共享cap，因此Σ_Rq_xκ_x不超过这个具体forward限制流程的金融费K。R无past且严格递增至末位全吸收，Σ_v A_v^q=δ。令A_v^q=Σ_(x∈R∩a)q_xν_x(v)/d_v(x)，同query先聚合，唯一w_v=A_v^q/f_v；零行无tracked吸收取w0。q≤1和ν≤λ给A_v^q≤λ_v f_v，故w≤λ。于是K=Σw_vu_i=δ+Σw_vΓ_v≤δ+Σλ_vΓ_v≤(OPT−W)+(2W−OPT)=W。FREE的LOWEST又给最低δ个κ之和=min_qΣqκ≤W。O始终取同一PAY见证，不换最优并集或把不同σ、分母的松弛相抵；故对每个σ得到存在一个这样的最优O，完全符合KAPPA的存在量词。",
+  "scope": "完整证明的条件蕴含，方向PAY共同预算⇒FREE-KAPPA共同W预算。源PAY存在仍open；没有普遍无条件half证明，没有金融w自动COORD，也不保持旧Hall取消或初始化余额。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/前向客户吸收的整行包络与净预算--引理.md",
+      "sha256": "f4f587bbfbc52d86c778cf9ea25a0eb379c56b0c02e038177dc226558897b0d8",
+      "section": "4. 必须面对的精确自检"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/自由查询与自由起点的单位采购价格--算法.md",
+      "sha256": "f2625f5fe2b75eca2a5ee44f87d42e2e45e3fe9d89f7bb87b2c3746b803db130",
+      "section": "Bellman的下界、达到与共同兼容"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/自由查询与自由起点的单位采购价格--算法.md",
+      "sha256": "f2625f5fe2b75eca2a5ee44f87d42e2e45e3fe9d89f7bb87b2c3746b803db130",
+      "section": "自由净源选择及开放预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/客户级自由接纳与累积税的整行付款--算法.md",
+      "sha256": "2379c4569765f7212ab5f0d86ece07088f94a834468d6da8d10795198056d3e8",
+      "section": "同一query不必要求所有incoming同一接纳比例"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "独立核父依赖query流程与每(i,x)共同Markov最小价的逆归纳比较；联合R守恒、w≤λ和同σΓ≥0逐式推出W预算，条件论证无缺步，未支付源PAY的普遍存在。",
+  "whole_result": "若PAY候选对每份完整SPE给其合法流/λ及ΣλΓ≤2W−OPT，则对每个该σ存在PAY见证的同一个最优O，使FREE最低δ个κ总价≤W；事实上任一R上总量δ的q≤1均有Σqκ_FREE≤K≤W。KAPPA目标的全实例/全σ/存在O及同O净源量词全部保留。",
+  "endpoint_pins": {
+    "M-8a3d5457d56c413189e2683b8ddecde0": "ad58297122edf701749fa48f4f3326c4a78e8e8ec0bf821c1c9a33db287c7ee0",
+    "M-fd6b8468eadc43b2a2e8d3058fb5089a": "7481dda9d56eb72c3f325103d60df3ee09e90b30e3c17ec2b0dc902e7487be8f",
+    "customer-attraction/forward-customer-absorption-whole-row-envelope-and-net-budget": "a58a9cc95f7790c529f64b1cb5e90701de4afadfb46d7d7b027a2cf0d83baa0a",
+    "customer-attraction/free-query-and-free-start-unit-procurement-prices": "f9232055a12b4d3a5acb4fc1194b32e29ccb1cb956a17e8cb18b59048453a289"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/前向客户吸收的整行包络与净预算--引理.md": "f4f587bbfbc52d86c778cf9ea25a0eb379c56b0c02e038177dc226558897b0d8",
+    "archives/customer-attraction/state/算法/自由查询与自由起点的单位采购价格--算法.md": "f2625f5fe2b75eca2a5ee44f87d42e2e45e3fe9d89f7bb87b2c3746b803db130",
+    "archives/customer-attraction/state/算法/客户级自由接纳与累积税的整行付款--算法.md": "2379c4569765f7212ab5f0d86ece07088f94a834468d6da8d10795198056d3e8"
+  },
+  "review_digest": "0d85057267ff8f9f500331fdbc171c3fefad07542989ab70090e4196f2b9fbf3"
+}

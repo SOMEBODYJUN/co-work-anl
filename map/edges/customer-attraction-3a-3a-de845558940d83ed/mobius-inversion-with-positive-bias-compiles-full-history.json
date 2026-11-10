@@ -1,0 +1,49 @@
+{
+  "edge_id": "ca-de845-mobius-inversion-with-positive-bias-compiles-full-history",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "CA-MOBIUS-BOOLEAN"
+  ],
+  "target_ids": [
+    "CA-MOBIUS-FULL-HISTORY-EMBED"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "p≥n≥1，任意有理F:2^P→Q且F(空)=0；辅助游戏每节点只准此前未用标签，效用为F的终局删除边际。D为共同正整数分母，对DF反演得到整数x，M=Σ非空B|x_B|，K=4M+1，r_B=x_B+K。",
+  "roles": {
+    "CA-MOBIUS-BOOLEAN": "给唯一signed反演、所有重复计数的唯一调和扩张及精确删除边际；清分母后整数重数。",
+    "CA-MOBIUS-FULL-HISTORY-EMBED": "获得合法单位客户实例的全部有序历史fresh支配、辅助SPE的恰好满射投影和根收益平移。"
+  },
+  "explanation": "M1给整数x与全计数Φ_x，而非允许任意补重复终局。r_B≥1可展开不同单位客户；正singleton保证主题非空及覆盖互异。任一已选行动的signed收益绝对值≤M。对任一长度d<n、过去不同标签数k≤d的有序历史，p−k≥n−d保证未来足够fresh。按剩余人数逆归纳：若任一孩子子SPE今后均fresh，比较当前fresh a与过去出现v≥1次的old b；仅在均匀偏置部分置换未用标签以对齐各自真实后继，并使a不在对齐后继中。把类型按含a/b配对，二者皆含项相消，仅含者之差为Σ_(C⊆P\\{a,b})[1/(1+s_C)−1/(1+v+s_C)]≥v/(v+1)≥1/2。signed两真实叶收益差≥−2M，故总差≥K/2−2M=1/2>0。基础末位相同，故所有有序历史（含过去重复）中任何子SPE都排old。固定前缀下fresh动作及任意fresh后继的偏置部分相同，fresh比较完全保signed差；在无重复历史，M1删除边际恰为DF边际，所以任一原SPE限制是辅助SPE。反向给定整份辅助SPE，在每个首次重复的孩子子树，对唯一signed计数扩张选完整fresh受限BI子SPE；各不同有序子树独立补齐。偏置不改其中fresh比较，old动作由前述严格差排除；在无重复子树保原辅助策略，fresh偏离仍在该子树、old偏离进已补子树且严格劣。因此每份辅助策略均有原完整SPE扩展，投影恰为全部辅助SPE，但不同重复子树扩展可同投影，非一一对应。根n-distinct终局每名偏置份额为K·2^(p−n)Σ_(j=1)^n C(n−1,j−1)/j=K(2^p−2^(p−n))/n，signed为D u_i，给精确根平移及全部根有序路径、无重复历史激励平局对应。",
+  "scope": "目标完整历史编译的整条陈述，包含所有重复离轨历史及正客户合法化。p<n不适用，n=1无old、M=0时K=1。没有福利比例保持或half反例迁移。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/子集调和势的Möbius反演--定理.md",
+      "sha256": "9c7e58e4642077607ce2b49c67e7598c97b47b4cdb1b43a34cf335dd2aec5629",
+      "section": "从子集势到真正的边际收益对象"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/无重复辅助博弈的完整历史编译--定理.md",
+      "sha256": "e6e06a43973f7c37673b498074475fdf8aa37338d448aff53b2bf9b2e7fa0dd4",
+      "section": "所有重复历史上的严格支配证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/无重复辅助博弈的完整历史编译--定理.md",
+      "sha256": "e6e06a43973f7c37673b498074475fdf8aa37338d448aff53b2bf9b2e7fa0dd4",
+      "section": "无重复子树的等价及重复子树的扩展"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "逐段重构未用标签对齐、strict gap≥1/2、signed真实后继界和全部重复子树扩展；正重数本身不替代支配证明，不声称投影双射。",
+  "whole_result": "对每个所述F和p≥n，构造r=x+4M+1后每份原完整SPE在全部有序历史均选fresh；限制投影恰为辅助SPE全集，每份辅助策略有完整原扩展，根终局和有序路径相应保持，根收益变为D u_i+K(2^p−2^(p−n))/n，且无重复子树的全部激励平局保留。",
+  "endpoint_pins": {
+    "CA-MOBIUS-BOOLEAN": "1e36e694f7e44451ebb5388ecd03ad031956f6f849fbb53593ba3917c64d6fad",
+    "CA-MOBIUS-FULL-HISTORY-EMBED": "42694a561f1d7d9687fce7fe834aa833e5fa2d8b5b7d84eb1bf54115e118d09a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/子集调和势的Möbius反演--定理.md": "9c7e58e4642077607ce2b49c67e7598c97b47b4cdb1b43a34cf335dd2aec5629",
+    "archives/customer-attraction/state/定理/无重复辅助博弈的完整历史编译--定理.md": "e6e06a43973f7c37673b498074475fdf8aa37338d448aff53b2bf9b2e7fa0dd4"
+  },
+  "review_digest": "83f80673c691f10db579009c1d7e778915a9468d967f64b6d8db265cabf12027"
+}

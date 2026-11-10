@@ -1,0 +1,45 @@
+{
+  "edge_id": "ca-e489-uniform-pf-conditionally-pays-free-root-aggregate",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "uniform-full-slot-pool-terminal-two-rows-and-common-Jensen-reserve",
+    "M-19e5a7cd0fae48338e5a8401db530e9d"
+  ],
+  "target_ids": [
+    "M-2f77861bf17744a3886ed65a55b7ca7c"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "固定m≥2、任意有限共同标签目录和同一根完整纯SPE。附加仍开放的前提是：M-19e5所列EARLY?对该策略的每个查询分布p均成立；不是只对某个p或某组有限观测成立。",
+  "roles": {
+    "uniform-full-slot-pool-terminal-two-rows-and-common-Jensen-reserve": "提供位置均匀K+、倒数minimax与完整列负载域。",
+    "M-19e5a7cd0fae48338e5a8401db530e9d": "提供精确全行Jensen账；当全部p的EARLY债已付时得到指定PF。",
+    "M-2f77861bf17744a3886ed65a55b7ca7c": "获得质量m的自由分数空根聚合付款、等价齐次PAY及half的条件保证。"
+  },
+  "explanation": "EARLY?与精确账恒等式给每个p有m F_p(Cbar(p))≤W，其中Cbar(p)∈K+。因此min_(L∈K+)F_p(L)≤W/m；紧凸倒数minimax给γ+≤W/m。每份C_i(A)是m个合法主题指示之和，所以K+中每个负载均在m conv{1_A}内；自由质量m的f_m在更大域最小化，故f_m≤γ+。于是W≥m f_m。代目标已证齐次表示，等价得到对全部p及h≥0,h≠0的m(Σ√(ρh))²≤W[H+mL(h)]，再用OPT_m≤2m f_m得half。这里用域包含，而没有声称γ+≤自由M_path；EARLY付款仍未被本边证明。",
+  "scope": "同一实例、同一σ上的桥强弱关系；m1直接最大主题最优，零客户全式0。无逆向PF结论。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/均匀全槽池的末两行与共同Jensen储备--引理.md",
+      "sha256": "f055b8daf2b63ef3387f8cc5f2a30aa96c7e09ea6e7ea735a6c9fdf0ea48dd5d"
+    },
+    {
+      "path": "archives/customer-attraction/state/等价/空根分数安全值的齐次平方根表示--等价.md",
+      "sha256": "899e1f2c1bd8441239075298c2077fba73fe5c4f9daae7fd7275a535a4b200ed"
+    }
+  ],
+  "reviewed_by": "Boss6/map-cage489-round40",
+  "review_note": "完整读取本边两端所用陈述、量词、正文及本包必要共享证据；按当前字节核同一完整策略、客户数组、索引重数和真实偏离。所列局部结论与未付义务分别审读；成熟有限证书按其现行精确合同复用，未重跑原LP、搜索或大型全树审计。",
+  "whole_result": "在EARLY?对全部p成立这个开放前提下，原SPE满足W≥m f_m=t_(m+1)(0)·m，等价于全部p,h的齐次PAY，因而2W≥OPT_m。",
+  "endpoint_pins": {
+    "M-19e5a7cd0fae48338e5a8401db530e9d": "14047d714021ef8c7dd5542a808bbbdb38c1c1cfa1a64afd2848f2dc92836d82",
+    "M-2f77861bf17744a3886ed65a55b7ca7c": "48e7e1f52fe2557b64742aa9e10cb4bf6d3f94c33eaefb8d29b658b5c6112ba9",
+    "uniform-full-slot-pool-terminal-two-rows-and-common-Jensen-reserve": "a51fd7a2993413ce110610733614ffd34181868270d3f17315fba15885fd5a5a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/均匀全槽池的末两行与共同Jensen储备--引理.md": "f055b8daf2b63ef3387f8cc5f2a30aa96c7e09ea6e7ea735a6c9fdf0ea48dd5d",
+    "archives/customer-attraction/state/等价/空根分数安全值的齐次平方根表示--等价.md": "899e1f2c1bd8441239075298c2077fba73fe5c4f9daae7fd7275a535a4b200ed"
+  },
+  "review_digest": "276da8be1e659f0ae556cd515e086c5aecc3bba71729321021722506ecc963a7"
+}
