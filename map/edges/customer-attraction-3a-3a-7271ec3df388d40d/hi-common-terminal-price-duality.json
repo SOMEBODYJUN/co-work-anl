@@ -1,0 +1,59 @@
+{
+  "edge_id": "ca-7271-hi-common-terminal-price-duality",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "B7-INTERVAL-CEILING-RELAXATION-v1"
+  ],
+  "target_ids": [
+    "B7-INTERVAL-ANCESTOR-PRICES-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "原有限单位客户、单位提供者、有限非空共同标签目录、完整有序历史纯SPE模型；允许重复及全部离轨弱平局。仅空根b=0、m≥1；P_I为HI eligible DAG的全部长度m有序路径，边按计数(b,a)命名；λ_e≥0，所有边利润使用其同一路径共同终局q(p)。有限有理LP强对偶适用。",
+  "roles": {
+    "B7-INTERVAL-CEILING-RELAXATION-v1": "提供每份完整SPE的实际路径在eligible DAG内，且每经过边真实终局利润Ua(q)≥LI(b)；还给最小路径floor和等GI。",
+    "B7-INTERVAL-ANCESTOR-PRICES-v1": "把这些逐边必要条件与同终局效率组合成合法根价格、有限路径LP及终局标记商品流等价。"
+  },
+  "explanation": "任意完整SPE实际路径p*由HI定理保留，每边Ua(q*)≥LI(b)。因此对每λ≥0，Fλ(p*)=W(q*)+Σλ(LI−Ua)≤W(q*)，最小全路径BI(λ)≤Fλ(p*)，得到W≥BI。每个HI根终局都沿至少一条eligible路径实现，所以BI(0)=min_HI W。对任意允许路径p，原均分效率Σ_{e∈p}Ua(q(p))=W(q(p))使用同一q，包括重复行动；于是F1(p)=Σ LI，按最短路径递推的最小值正是GI(0)。令M_ep=1_{e∈p}(Ua(q(p))−LI(b))；任一真实SPE路径点质量满足Mπ≥0，故概率单纯形中原始min EW,Σπ=1,Mπ≥0可行紧且有最优。其有限有理LP对偶为max t，t≤W(q(p))−ΣλM_ep(∀p),λ≥0，消t即max BI(λ)，强对偶与有理数据给有限有理最优λ达到。取λ=0/1给vI≥max{minHIW,GI}；真实SPE点质量给vI≤min_SPE W。最后对每终局q单独保非负商品流，根流量π_q、只在q吸收、其它节点守恒，并逐原边加Σ_q f_{b,a,q}(Ua(q)−LI(b))≥0。计数DAG严格增深，无环流；逐商品路径分解给同终局允许路径概率，反向把路径相加即流。因此该标记流与原始精确等价。普通无q边际不能重建终局效用；π约束仅逐边条件期望，不要求混合中每条路径逐点理性。",
+  "scope": "全有限原模型、所有m≥1、空根及非负计数边价格。非零背景的未来利润缺根效率，不能把当前W公式直接迁入；不宣称LP等精确纯BI。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/区间终局剪枝的上界比较与全效率目录类--定理.md",
+      "sha256": "398ae2b6a7151c5f4a182fb7072939792b25e7e84f22f85d91fdf0d1e2501d16",
+      "section": "两种准确递归、坐标压缩与合法范围"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/祖先门槛的共同终局根价格与标记流等价--定理.md",
+      "sha256": "34e7e6ed9fa0e447d72413c5aafc54c3fc9410772d953d21bbf8f3737f342903",
+      "section": "从真实路径到价格预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/祖先门槛的共同终局根价格与标记流等价--定理.md",
+      "sha256": "34e7e6ed9fa0e447d72413c5aafc54c3fc9410772d953d21bbf8f3737f342903",
+      "section": "有限路径原始、对偶与达到性"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/祖先门槛的共同终局根价格与标记流等价--定理.md",
+      "sha256": "34e7e6ed9fa0e447d72413c5aafc54c3fc9410772d953d21bbf8f3737f342903",
+      "section": "为什么流必须保终局标签"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "已逐项核同终局消元、有限LP非空/紧/有理对偶、真实路径点质量和终局商品流分解。模型作为真实条件和证据，没有另造定义hub；根与非零背景严格分域。",
+  "whole_result": "HI全部SPE保留与逐边门槛，结合同终局根效率，推出每λ≥0的W≥BI(λ)、BI(0)=minHIW、BI(1)=GI、有限有理最优价格达到的路径LP强对偶，以及保终局q的DAG商品流和路径混合精确等价。",
+  "endpoint_pins": {
+    "B7-INTERVAL-ANCESTOR-PRICES-v1": "8037e3431b966ba1eea9dd74cad907c61ebfcf0fb03cc94aa96febc4e20a7a8d",
+    "B7-INTERVAL-CEILING-RELAXATION-v1": "d87d3cf7b49d86d3ee96477eceb08465a6ca216e74d1f8a6c1bf20258ea1a1bf"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/区间终局剪枝的上界比较与全效率目录类--定理.md": "398ae2b6a7151c5f4a182fb7072939792b25e7e84f22f85d91fdf0d1e2501d16",
+    "archives/customer-attraction/state/定理/祖先门槛的共同终局根价格与标记流等价--定理.md": "34e7e6ed9fa0e447d72413c5aafc54c3fc9410772d953d21bbf8f3737f342903",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "7dc1e6cd071d901e063dabac2d232121ebfb2b7f8036eb1aedbb5787b35bb900"
+}

@@ -1,0 +1,48 @@
+{
+  "edge_id": "ca-7271-hi-disjoint-max-full-efficiency",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "B7-INTERVAL-CEILING-RELAXATION-v1"
+  ],
+  "target_ids": [
+    "M-6c18d29fcbdb49ce999605a42d706789"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "原有限单位客户、单位提供者、有限非空共同标签目录、完整有序历史纯SPE模型；允许重复及全部离轨弱平局。额外固定：不同非空标签的覆盖两两不交，最大主题大小L>0，至少m个不同主题大小恰L；允许额外小主题和空主题，但不把非空同覆盖别名纳入不交域。",
+  "roles": {
+    "B7-INTERVAL-CEILING-RELAXATION-v1": "提供HI递推、全部完整SPE包含性和G的未来利润付款。",
+    "M-6c18d29fcbdb49ce999605a42d706789": "在足够多不交最大主题条件下，精确排除旧题及fresh小题，付全前缀G和根最优覆盖。"
+  },
+  "explanation": "对剩余r归纳。合法前缀至多使用m−r个不同最大题，因此至少r个最大题fresh。当前选fresh最大题后，孩子的后人归纳均选其它fresh最大题，所以当前收益L；当前选旧的非空题a，后人不再选它，当前收益|a|/(b_a+1)≤L/2；当前选fresh小题，收益|a|<L；空题收益0。所有孩子当前收益在这些分支分别恒定，故LI=L、EI恰为fresh且大小L的全部标签，HI为相应所有r步续局，GI=rL。各有序节点按这一集合选择任意fresh最大题，都可独立补全离轨最佳回应；HI包含性又使全部原SPE只能如此。根有m个不交最大题可覆盖mL，任一m元组覆盖至多mL，因而所有SPE W=GI=OPT_m=mL。L=0不在本主张域，那个边界只有GI=OPT=0而不能排全零平局旧题。",
+  "scope": "全m≥1、L>0及至少m个不交最大题的指定目录；每个合法前缀。额外较小/空标签保留；根福利等式只在空背景。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/区间终局剪枝的上界比较与全效率目录类--定理.md",
+      "sha256": "398ae2b6a7151c5f4a182fb7072939792b25e7e84f22f85d91fdf0d1e2501d16",
+      "section": "两种准确递归、坐标压缩与合法范围"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/区间终局剪枝的上界比较与全效率目录类--定理.md",
+      "sha256": "398ae2b6a7151c5f4a182fb7072939792b25e7e84f22f85d91fdf0d1e2501d16",
+      "section": "足够多不交最大题：排除全部旧近轨伪策略族"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "核了“至少m个最大题”而非任意不交目录；保额外小/空题，排除非空同覆盖别名；不把L=0平局写成fresh唯一。",
+  "whole_result": "所列不交最大主题全参数域内，每非终局EI恰fresh最大题、LI=L、GI=rL；空根每份完整SPE W=OPT_m=mL，旧低效近轨族在该域被完整排除。",
+  "endpoint_pins": {
+    "B7-INTERVAL-CEILING-RELAXATION-v1": "d87d3cf7b49d86d3ee96477eceb08465a6ca216e74d1f8a6c1bf20258ea1a1bf",
+    "M-6c18d29fcbdb49ce999605a42d706789": "949e78ffcaee29f446a4e194f8e23e4b6c5b8438484a56eeaf30cfedc514e86e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/区间终局剪枝的上界比较与全效率目录类--定理.md": "398ae2b6a7151c5f4a182fb7072939792b25e7e84f22f85d91fdf0d1e2501d16",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "46d6e183be785d84a263bc58c5599fea459b99b374f729d755235e2639eee2df"
+}

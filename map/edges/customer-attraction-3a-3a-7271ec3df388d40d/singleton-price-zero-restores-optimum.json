@@ -1,0 +1,55 @@
+{
+  "edge_id": "ca-7271-singleton-price-zero-restores-optimum",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "B7-EXACT-FLOOR-HALF-TIGHTNESS-v1",
+    "B7-INTERVAL-ANCESTOR-PRICES-v1"
+  ],
+  "target_ids": [
+    "M-0e792e5d4d914d5883f3db3c31e70a94"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "原有限单位客户、单位提供者、有限非空共同标签目录、完整有序历史纯SPE模型；允许重复及全部离轨弱平局。额外固定q≥1个不交单例、m=q+1、空根；只检验价格half候选在这一完整参数子类，不覆盖其它目录。",
+  "roles": {
+    "B7-EXACT-FLOOR-HALF-TIGHTNESS-v1": "给该族HI=真SPE终局且全部叶福利OPT=m−1，同时GI=m/2。",
+    "B7-INTERVAL-ANCESTOR-PRICES-v1": "给BI(0)=minHIW和vI≤min_SPE W，允许以零价格恢复共同终局覆盖。",
+    "M-0e792e5d4d914d5883f3db3c31e70a94": "在此全参数子类，存在非负价格的half保证实际加强为OPT；普遍其它输入仍待证。"
+  },
+  "explanation": "每q≥1时，单例定理给HI根每个终局都恰覆盖q个客户，所以minHIW=q=OPT_m。取每边λ_e=0，由价格定理BI(0)=q。它当然≥OPT_m/2；再用vI≥BI(0)及vI≤min_SPE W=q可得vI=q。该族同时有GI/OPT=m/[2(m−1)]→1/2，因此floor近半损失并非祖先价格half失败：最简单的零价格已经消除损失。q=1/m=2时同样成立，那里GI=OPT；m>2时恢复是严格改善GI。结论只针对这一不交单例族，不能从族内成功提升为所有目录的价格half。",
+  "scope": "全q≥1,m=q+1单例族的共同终局价格；是普遍价格义务的一项已付子域贡献。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/单例满配的真实终局与近半地板损失--定理.md",
+      "sha256": "684829df083dadc437f2ec6b92994d3e1c0b9e33874384832126b6d98bd96680",
+      "section": "根福利、最低支付路径与严格系数障碍"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/祖先门槛的共同终局根价格与标记流等价--定理.md",
+      "sha256": "34e7e6ed9fa0e447d72413c5aafc54c3fc9410772d953d21bbf8f3737f342903",
+      "section": "从真实路径到价格预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/祖先门槛的共同终局根价格与标记流等价--定理.md",
+      "sha256": "34e7e6ed9fa0e447d72413c5aafc54c3fc9410772d953d21bbf8f3737f342903",
+      "section": "有限路径原始、对偶与达到性"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "两个共同前提同时保留，whole_result未冒写普遍候选；核了minHIW和minSPEW同为OPT的上下夹逼，不把GI近半误读成价格失败。",
+  "contribution": {
+    "result": "对全部q≥1个不交单例、m=q+1的空根输入，λ≡0使BI=OPT_m=m−1，且最优价格vI=OPT_m；该族既证明floor任意c>1/2不可能，也验证其价格half完全成立。",
+    "remaining": "M-0e792e5d4d914d5883f3db3c31e70a94仍须对所有其它共同目录及人数支付half；本族不提供一般可用价格公式。"
+  },
+  "endpoint_pins": {
+    "B7-EXACT-FLOOR-HALF-TIGHTNESS-v1": "bd439d965f77d7d75b9511441cca39f96ebd102f6e1aa68d88d8d013dfee38ef",
+    "B7-INTERVAL-ANCESTOR-PRICES-v1": "8037e3431b966ba1eea9dd74cad907c61ebfcf0fb03cc94aa96febc4e20a7a8d",
+    "M-0e792e5d4d914d5883f3db3c31e70a94": "579f4eb4e5ce19b3c773e423fd3efa3ed8b89cdcce893b4025eb2210e613d9c8"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/单例满配的真实终局与近半地板损失--定理.md": "684829df083dadc437f2ec6b92994d3e1c0b9e33874384832126b6d98bd96680",
+    "archives/customer-attraction/state/定理/祖先门槛的共同终局根价格与标记流等价--定理.md": "34e7e6ed9fa0e447d72413c5aafc54c3fc9410772d953d21bbf8f3737f342903"
+  },
+  "review_digest": "e3413ea6acbdb2a57cb55d70cd3539b998d4394afcc3c011a2d395666bc7a365"
+}
