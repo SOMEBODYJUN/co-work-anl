@@ -1,0 +1,47 @@
+{
+  "edge_id": "um-c2c0d7cf-frozen-half-unit-audit-checks-parity-threshold",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/half-unit-two-original-source-and-scheduling-audits"
+  ],
+  "target_ids": [
+    "parity-half-unit-actual-slot-primary-audit"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "只比较冻结主程序 exhaustive_q2_mask105 与十机奇偶槽实例的真实容量。主程序保留一台idle dummy，槽实例删去该机，所有有任务机器的资格/时间相同。",
+  "roles": {
+    "unrelated-machines/half-unit-two-original-source-and-scheduling-audits": "提供固定同源矩阵在三个严格δ值的容量检查和δ=1/2控制。",
+    "parity-half-unit-actual-slot-primary-audit": "给同一固定实例的自足实际OPT及额外原分数/槽匹配。"
+  },
+  "explanation": "冻结mask105列同样的{000,011,101,110}，14原jobs、11机含idle。δ=0,1/3,49/100的big选择和全实际调度搜索均拒绝，δ=1/2两者成功；全small峰3/2。槽页删去无资格idle后同一原调度域，因此这条明确的冻结数据行有限复核真实阈值。",
+  "scope": "只检查该实例的真实整数容量，不声称旧程序输出目标的x、slot matching或目标的逐机原σ。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/半单位共同选择与同资格计数调度双入口--资源.md",
+      "sha256": "0757acd6517f437370f5155ee2521e337b5ee98031f7077c6f531a621d2d1400",
+      "section": "完整原矩阵及双向计数"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/半单位奇偶实例的实际槽匹配与完整容量回溯--资源.md",
+      "sha256": "c49ea0c23d7caf9dad0dbd4d408603ba6bc63b24c2c155618a7ddbc301aed17b"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/evidence/runs/unrelated_machines/half_unit_joint_choice_audit.json",
+      "sha256": "2bf32f90bcef806fa5a7e83efcf601be4b1e8abb1b7354bf08575dea1fd098aa"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "查冻结实际mask105、全部四δ结果、原三元组及机器数/任务数；独立的265例计数程序未与此具体槽输出混用。",
+  "endpoint_pins": {
+    "parity-half-unit-actual-slot-primary-audit": "6eb741e4ddc15a3139a73ed11a49219bbdb04e96c5c7d1e0aed80ae71fa4c70d",
+    "unrelated-machines/half-unit-two-original-source-and-scheduling-audits": "e6b127735612e1084c84a756ebe86e4351ef87551f2232062b78305c514819ac"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/半单位共同选择与同资格计数调度双入口--资源.md": "0757acd6517f437370f5155ee2521e337b5ee98031f7077c6f531a621d2d1400",
+    "archives/unrelated-machines/state/资源/半单位奇偶实例的实际槽匹配与完整容量回溯--资源.md": "c49ea0c23d7caf9dad0dbd4d408603ba6bc63b24c2c155618a7ddbc301aed17b",
+    "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/evidence/runs/unrelated_machines/half_unit_joint_choice_audit.json": "2bf32f90bcef806fa5a7e83efcf601be4b1e8abb1b7354bf08575dea1fd098aa"
+  },
+  "review_digest": "9184ef7fdaa8cb5c09203b018e77f9d7120e203b36b0580a5218f78909419003"
+}

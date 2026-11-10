@@ -1,0 +1,46 @@
+{
+  "edge_id": "um-a56e5e8b-dag-oracle-pays-single-machine-precedence-lp",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-c0d0a5f2c8414e3fab9ebefca65252b8"
+  ],
+  "target_ids": [
+    "M-271c52e5782242e190cbc8b56c952a92"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "Li 的几何完工时间累计 LP；把时刻单调性和 DAG 先后累计关系放进易多面体 Q，固定 0/1 端消元，其它非负装填容量交给 MWU。",
+  "roles": {
+    "M-c0d0a5f2c8414e3fab9ebefca65252b8": "为每个聚合单容量 by≤1 保精确顺序、乘法容量与加性目标误差。",
+    "M-271c52e5782242e190cbc8b56c952a92": "单机 precedence 2+ε 保证所需的分数解生成环节。"
+  },
+  "explanation": "按权归一化将本轮容量约束聚合成 b≥0，只调用 max a·y 的单容量序多面体 oracle。附录 E–F 对无穷内部边的源汇 DAG 特殊流给真可行 f 和折减汇容量、加性误差下的割证书，在几何 γ 上选至多两个源集的凸组合；内部精度缩小吸收两次 1+η。每轮 y∈Q，故其凸组合始终精确保持时序；累积装填可放宽至 1+O(η)，目标损失按 φ 作加性收费。非负容量 MWU 不直接处理带负号的 precedence 差分行。",
+  "scope": "精确定位近似分数 oracle 给上层 LP 的贡献。没有将文献的特殊 DAG 流推广为一般近线性最大流。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+      "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+      "section": "6. 先后约束附录A、C.2、D：独立模型的完整去向"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+      "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+      "section": "7. DAG单容量oracle与特殊流：附录E–F"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "核两项误差方向、handle 限定、每轮有序及最终凸组合有序；按文献接口定位贡献，不声称独立重证附录的全部复杂度。",
+  "contribution": {
+    "result": "单机有先后累计 LP 的 MWU 可使用该 DAG oracle 取得精确满足时序、容量1+O(η)及加性目标误差的分数点。",
+    "remaining": "获得整数2+ε及所报完整运行时间还需要累计 LP 下界、完工量前缀工作界、拓扑列表排序及大整数索引截断，原文§6另承担。"
+  },
+  "endpoint_pins": {
+    "M-271c52e5782242e190cbc8b56c952a92": "dbaca73bf02707917704dcb82a7ba4b64bd22087ff596b9088c68bd1d8cd8df2",
+    "M-c0d0a5f2c8414e3fab9ebefca65252b8": "194bd08650b87e8df9b35229529e60b64079cbddaa99720788c7bd2ea30a7e1b"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8"
+  },
+  "review_digest": "95f14586270c9329317699ff7a5bb2a4381f53d46cbc8c5dfbda1393a3196c43"
+}

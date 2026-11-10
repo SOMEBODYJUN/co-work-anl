@@ -1,0 +1,67 @@
+{
+  "edge_id": "um-87f678d9-fractional-rematching-pays-benchmark-factor",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-FRACTIONAL-BENCHMARK-REMATCHING-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/fractional-rematching-normalized-xos-robust-gap"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "有限归一化显式XOS后端须给出H、活动残余V及对每个可行分数残余族的c=2上界，并以同一实际输出对每个比较π证明NSW≥GM(V+singleton_π)/(60000d²)，d=5/2。",
+  "roles": {
+    "UM-FRACTIONAL-BENCHMARK-REMATCHING-v1": "在全分数残余上界下，确证一条H双射的benchmark/(c+1)下界。",
+    "unrelated-machines/fractional-rematching-normalized-xos-robust-gap": "用该比较双射支付归一化XOS复合合同中的分数benchmark因子。"
+  },
+  "explanation": "对有正质量的每配置，用最大H singleton收集H质量，H为空的质量由正V活动行的真实行列缺口补全；次可加性及Jensen把全分数残余≤cn和H列容量≤n压成c+1。支持内完美匹配分解给π，实际可用有理对数间隔求真最大乘积。把此π代入后端同一输出的全比较保证，得到NSW≥B_v(y)/(3·60000·(5/2)²)=B_v(y)/1125000；预留倍二可写为B_v(y)/2250000。该组合对每个正y均成立，因为输出保证同时覆盖所有π。",
+  "scope": "复合文档的A与B接口，条件来自显式XOS后端，保持原item身份及活动行约定。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/显式XOS分数NSW的确定化合同与真实审读链--审查.md",
+      "sha256": "dd27a701b1f1eedbd5162be243b0ad24f8733a144509ab555a10d0dd2dfb208a",
+      "section": "原模型、真实量词与来源"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分数重匹配与归一化XOS稳健缺口边界--定理.md",
+      "sha256": "05d4fbbde010e55a6b1fbb920d2f7e4d84743d1c8e50a3392a3d6918249a829b",
+      "section": "2.2 推导"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分数重匹配与归一化XOS稳健缺口边界--定理.md",
+      "sha256": "05d4fbbde010e55a6b1fbb920d2f7e4d84743d1c8e50a3392a3d6918249a829b",
+      "section": "2.3 有限位最大乘积算法"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分数重匹配与归一化XOS稳健缺口边界--定理.md",
+      "sha256": "05d4fbbde010e55a6b1fbb920d2f7e4d84743d1c8e50a3392a3d6918249a829b",
+      "section": "3.1 E1：活动 residual 与全分数界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分数重匹配与归一化XOS稳健缺口边界--定理.md",
+      "sha256": "05d4fbbde010e55a6b1fbb920d2f7e4d84743d1c8e50a3392a3d6918249a829b",
+      "section": "3.2 E2：显式 XOS rounding、mask 与 rematching"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分数重匹配与归一化XOS稳健缺口边界--定理.md",
+      "sha256": "05d4fbbde010e55a6b1fbb920d2f7e4d84743d1c8e50a3392a3d6918249a829b",
+      "section": "3.3 E3：有限位、floor 与成功事件范围"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "核零V时残余比值的分支、全分数而非整数福利的c=2，以及同一输出对所有π的量词后才合并常数。",
+  "contribution": {
+    "result": "在明确的显式XOS后端前提下，重匹配把真实NSW同分数benchmark连起来并支付因子3，合并得到1/1125000。",
+    "remaining": "仍需按目标版本核后端E1–E3及其有限位/共同输出保证，另付归一化unit-FSLP、REPAIR与完整flat-UM解码各自的条件；本边不把该综合登记升级为无条件。"
+  },
+  "endpoint_pins": {
+    "UM-FRACTIONAL-BENCHMARK-REMATCHING-v1": "2355cfd5826b324f1489fe092e0d911107c78f61be2065871a54f22874d03444",
+    "unrelated-machines/fractional-rematching-normalized-xos-robust-gap": "7ddad14088324d4802ee33c336222ee2a6e568e3736ab868956bc7d48d2eeb72"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/显式XOS分数NSW的确定化合同与真实审读链--审查.md": "dd27a701b1f1eedbd5162be243b0ad24f8733a144509ab555a10d0dd2dfb208a",
+    "archives/unrelated-machines/state/定理/分数重匹配与归一化XOS稳健缺口边界--定理.md": "05d4fbbde010e55a6b1fbb920d2f7e4d84743d1c8e50a3392a3d6918249a829b"
+  },
+  "review_digest": "09a3e3c13e534c34795df430c143bfdf23dffd60cacf2f03c96926df492d045d"
+}

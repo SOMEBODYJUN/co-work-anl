@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-c2c0d7cf-context-sos-rejects-anonymous-bad-point-extension",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-c1ecec2025fe44c99fe2a03fe1791526"
+  ],
+  "target_ids": [
+    "UM-ANONYMOUS-TOKEN-M1-LIFT-M2-NONEXTENSION-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "k=r=4,h=0,A=1的具体匿名点。原标签候选扩展保留全部聚合≤4矩，并满足原任务Boolean/one-hot及共同M2；在原合同中各head的完整行CONFIG给每head至多一枚原标签。",
+  "roles": {
+    "M-c1ecec2025fe44c99fe2a03fe1791526": "任意原任务共同M2的完整head×affine语境必要PSD块及四阶SOS。",
+    "UM-ANONYMOUS-TOKEN-M1-LIFT-M2-NONEXTENSION-v1": "固定十个Boolean heads及Y的精确匿名M2坏点，目标中的任意保矩标签扩展必须通过该必要块。"
+  },
+  "explanation": "取t_i=s_iY，前五个s_i=+1、后五个−1。由δ=1/100及β单点2/5，Σ_i L(X_iY)=4δ=1/25；十个同半4集上(Σ_i s_iX_i)^2=16、权各1/8，二二分集该平方为零，故L(Y(Σ_i s_iX_i)^2)=20δ=1/5。必要块给cᵀKc=4/25−1/5=−1/25，与4Σ_a L(q_a²)≥0矛盾。该方向只用所保聚合矩，故排除所有满足合同的扩展，而不依赖某个特定标签核。",
+  "scope": "仅给定聚合点的非扩展；此四阶必要块本身不是充分扩展判据，也不决定对应普通UM实例的调度可行性。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/证明/原任务标签提升的一阶PSD与全语境容量块--证明.md",
+      "sha256": "91dac298f7ef37cdf63961ae2dbe64b2976199ae411dac6fc6d2a2a226f762a3",
+      "section": "任意原任务共同M2必须有完整语境块"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/Token-label桥canonical-v2新增全局语境块与读域审查--审查.md",
+      "sha256": "fc24eefed4dab1766e20b82969ca42ba540cba4e1b0f968e18e8ef955add0b46",
+      "section": "4. §7.6：完整全局 affine-context 容量块 K"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/原任务标签提升的一阶PSD与全语境容量块--证明.md",
+      "sha256": "91dac298f7ef37cdf63961ae2dbe64b2976199ae411dac6fc6d2a2a226f762a3",
+      "section": "一个共同functional与形式核"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "复算signed β的质量、Y方向的二次值和SOS的k倍因子，分开−1/25的K方向与形式核的−1/150。",
+  "contribution": {
+    "result": "给定坏点不存在保全部聚合≤4矩、原Boolean/one-hot、每head完整CONFIG及共同M2的原标签延拓。",
+    "remaining": "目标的一般形式核M1保持、坏点自身匿名M2的正性及特定形式核负平方−1/150由目标原证各自承担。"
+  },
+  "endpoint_pins": {
+    "M-c1ecec2025fe44c99fe2a03fe1791526": "36bc3e7cdfbe87904cea68e1e3fff86f79dd75fc63a699aa66ff14770ea7ad90",
+    "UM-ANONYMOUS-TOKEN-M1-LIFT-M2-NONEXTENSION-v1": "e572a3e6aeac9f5dfb514182ce223331e59ada03c716ebd4358c34a2ed492e1f"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/证明/原任务标签提升的一阶PSD与全语境容量块--证明.md": "91dac298f7ef37cdf63961ae2dbe64b2976199ae411dac6fc6d2a2a226f762a3",
+    "archives/unrelated-machines/state/审查/Token-label桥canonical-v2新增全局语境块与读域审查--审查.md": "fc24eefed4dab1766e20b82969ca42ba540cba4e1b0f968e18e8ef955add0b46"
+  },
+  "review_digest": "0df84d176f55886df9e75d7add9f9c14d7f74f7a3d3bcf239bb98020a424f485"
+}

@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-87f678d9-raw-q-subadditivity-pays-multiplicity-two",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-PRIVATE-TREE-Q-VALUATION-v1"
+  ],
+  "target_ids": [
+    "UM-PRIVATE-TERNARY-RAINBOW-MULTIPLICITY-THRESHOLD-v2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "整棵显式满三叉树的原叶色每种至多出现两次；先将每个叶身份赋成独有资源来应用原始q估值。",
+  "roles": {
+    "UM-PRIVATE-TREE-Q-VALUATION-v1": "提供单状态每叶资源单射时的raw根同深分叉q的次可加性。",
+    "UM-PRIVATE-TERNARY-RAINBOW-MULTIPLICITY-THRESHOLD-v2": "支付全局重数至多二分支的二叉彩虹存在性。"
+  },
+  "explanation": "以每色首次出现归A、第二次归B将叶分成各自颜色互异的两桶，q仍在独有叶身份域计算。q(A)+q(B)≥q(A∪B)=3，故至少一桶的q≥2；若见证三叉，在每个active节点任取两个孩子即可。所得完整同深二叉子树的叶均在该桶，读回原颜色仍两两不同。无需在原重复颜色的资源模型运行demand。",
+  "scope": "只支付颜色重数至多二时的存在分支；用叶身份到实际颜色的桶内单射。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/分叉树估值与单状态支持多面体--定理.md",
+      "sha256": "1269318f583984d08b2b1f54b1f3f4831cb77c3713ab90b44d499e8cdea8e8f4",
+      "section": "1. 深度固定的分叉对偶"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分叉树估值与单状态支持多面体--定理.md",
+      "sha256": "1269318f583984d08b2b1f54b1f3f4831cb77c3713ab90b44d499e8cdea8e8f4",
+      "section": "2. 次可加性"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三叉彩虹困难与树Markov联合审查--审查.md",
+      "sha256": "d6300fbd1906ee421016eb3e5c6b9da7a05d0ca428512bc4af76ea27497c839e",
+      "section": "二、全局叶色重数 v2：2/3 的精确门槛"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "核对源估值要求单射，使用叶身份而非重复的原颜色；颜色单射只在各桶读取。",
+  "contribution": {
+    "result": "每色全局至多出现两次时，每个显式输入都有同深、保根的二叉彩虹子树。",
+    "remaining": "重数三的NP完全性、全局计数编译及其实际调度阈值仍由独立的3SAT构造与矩阵解码承担。"
+  },
+  "endpoint_pins": {
+    "UM-PRIVATE-TERNARY-RAINBOW-MULTIPLICITY-THRESHOLD-v2": "36edd7be0837f1018e2b3aa70dfb03b36a973050dca027b4f4ea8b59c104c4e0",
+    "UM-PRIVATE-TREE-Q-VALUATION-v1": "5ba8e192bbdbc159a36e27f74b5d4ec618aee3e020c3352139c1f7fc19c8ecbe"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/分叉树估值与单状态支持多面体--定理.md": "1269318f583984d08b2b1f54b1f3f4831cb77c3713ab90b44d499e8cdea8e8f4",
+    "archives/unrelated-machines/state/审查/三叉彩虹困难与树Markov联合审查--审查.md": "d6300fbd1906ee421016eb3e5c6b9da7a05d0ca428512bc4af76ea27497c839e"
+  },
+  "review_digest": "ce6b2deb92de4f5d03b956932e3612093a753962ef2b7f6da96c75d32ffd28ca"
+}

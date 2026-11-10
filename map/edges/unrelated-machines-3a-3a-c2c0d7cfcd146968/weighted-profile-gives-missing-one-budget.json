@@ -1,0 +1,51 @@
+{
+  "edge_id": "um-c2c0d7cf-weighted-profile-gives-missing-one-budget",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-WEIGHTED-FANOUT-PROFILE-BOUNDARY-v1"
+  ],
+  "target_ids": [
+    "UM-FANOUT-MISSING-ONE-THREE-HALVES-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一普通UM原矩阵与两份已给实际峰≤T见证。互异a和q≥2输出，关闭添唯一端T预载且保持原资格。任取互异u,v。",
+  "roles": {
+    "UM-WEIGHTED-FANOUT-PROFILE-BOUNDARY-v1": "给任意局部候选K、显式单纯形权重和完整预载下的实际拼接，并给各状态真实OPT总预算。",
+    "UM-FANOUT-MISSING-ONE-THREE-HALVES-v1": "取两个候选并交换开放索引后得到缺一态的上界部分。"
+  },
+  "explanation": "取K={u,v}，P_{K,u}关闭a,v，故μ_{K,u}=ν_v，类似μ_{K,v}=ν_u。总预算在k=2为ν_u+ν_v≤3T；权(1/2,1/2)给对应两个状态之一的完整实际三半调度，不能只把OPT总和当作算法。两两不等式排除两个严格坏状态，且对全部无序对求和，每个ν出现q−1次，得Σν_i≤3qT/2。T=0时S1基础负载处处为零，改变逻辑关闭集合仍给每个状态零峰。",
+  "scope": "同一独立预载接口的上界和显式构造部分，q=2也包括在内。权重星在k=2给局部锐性，但不能替代任意q的同一个二叉树全状态锐例。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-following-actual-checks-primary/comparison/research/current/unrelated_machines/weighted_fanout_profile_boundary.md",
+      "sha256": "7bb7e967d492751f0f92fb547608af56e5aaffff387dca559b54d20ef283d78d",
+      "section": "4. 真实最优值总预算，不使用未知最优值作算法输入"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-following-actual-checks-primary/comparison/research/current/unrelated_machines/weighted_fanout_profile_boundary.md",
+      "sha256": "7bb7e967d492751f0f92fb547608af56e5aaffff387dca559b54d20ef283d78d",
+      "section": "6. 缺一的三半系数对每个扇出数同时锐"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/加权多输出原闭包的源时间拼接与局部候选合同--资源.md",
+      "sha256": "98bac6e3d49e2697c92765af83486ba6b6df87d8b5c74b8ed205d402d0986c5a"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "对照K内索引表示开放、ν索引表示关闭，逐项核两状态置换、成对求和和T=0的共同S1见证。",
+  "contribution": {
+    "result": "对每个互异输出对有ν_u+ν_v≤3T并可构造某一状态的三半调度，因而至多一坏且全和≤3qT/2。",
+    "remaining": "目标整条还含任意q的同一满二叉树给所有ν_i=3T/2，以及三输出(5/4,7/4,1)排除全都≤三半的控制例。两者由目标原文的独立构造提供。"
+  },
+  "endpoint_pins": {
+    "UM-FANOUT-MISSING-ONE-THREE-HALVES-v1": "6751ac037c17632c113d2b17d451089c8ca7f3e0a715313747d2d62c8c2891d4",
+    "UM-WEIGHTED-FANOUT-PROFILE-BOUNDARY-v1": "7db0bf0d822a73aa69ad2d3e65db30be9ae291e31e1c097d1f4ff44b5358373a"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/tools/evidence/um-following-actual-checks-primary/comparison/research/current/unrelated_machines/weighted_fanout_profile_boundary.md": "7bb7e967d492751f0f92fb547608af56e5aaffff387dca559b54d20ef283d78d",
+    "archives/unrelated-machines/state/资源/加权多输出原闭包的源时间拼接与局部候选合同--资源.md": "98bac6e3d49e2697c92765af83486ba6b6df87d8b5c74b8ed205d402d0986c5a"
+  },
+  "review_digest": "95580930058363800bd708b20d6ff0c61c7338dd47a571c172e707c4c56633ac"
+}

@@ -1,0 +1,58 @@
+{
+  "edge_id": "um-c2c0d7cf-joint-hall-threshold-yields-opt-promise",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-HALL-GROUP-JOINT-FLOW-v1"
+  ],
+  "target_ids": [
+    "UM-HALL-GROUP-PROMISE-APPROX-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "q≥2、δ≥0、qδ<2，同一显式home/sink、共同E_h和同端w_j模型；所有结构不等式只承诺在真实OPT尺度成立。按容量储存q。",
+  "roles": {
+    "UM-HALL-GROUP-JOINT-FLOW-v1": "给阈值下的同一个整数宏/home/sink网络和按真实任务撤前缀的rT负载上界。",
+    "UM-HALL-GROUP-PROMISE-APPROX-v1": "用实际宏时间瓶颈选t≤OPT，不输入OPT，在结构承诺域构造rOPT实际调度。"
+  },
+  "explanation": "先逐件检查零端，成功直接输出零调度。在正OPT下，真实最优调度诱导宏→home→sink网络在OPT处满流。对实际有限宏时间排序后，用同一包含接收容量的网络求最小满流瓶颈B，空宏取B=0。若δ>0，t=max(max_h W_h,max_j w_j/δ,B)，空最大值取0；若δ=0，承诺使w_j=0，略该项。于是t≤OPT，W_h下界和严格宏端>T/2由t≤OPT保持，W_h上界和w_j上界由t的定义成立。网络在t满流是构造保证，并非声称OPT≤t。执行原阈值算法的同一满流和前缀回填得r t≤r OPT。只在实际宏时间表做有理比较与流，整个算法确定性总位多项式。",
+  "scope": "同一个联合整数网络的已知阈值算法推出真实OPT尺度结构承诺的未知阈值版本。正改进r<2依赖qδ<2，q不固定时不推出统一常数余量。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/Hall联合组流与共享汇点宏分配双源审查--审查.md",
+      "sha256": "fcaf1b512db9bc4f622c6ac88368b47274cd09af26f03eb3e042f43270cd78cd",
+      "section": "1. 定义域与准确身份"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/Hall联合组流与共享汇点宏分配双源审查--审查.md",
+      "sha256": "fcaf1b512db9bc4f622c6ac88368b47274cd09af26f03eb3e042f43270cd78cd",
+      "section": "2. 从真实 T 调度得到 q-Hall 结构"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/Hall联合组流与共享汇点宏分配双源审查--审查.md",
+      "sha256": "fcaf1b512db9bc4f622c6ac88368b47274cd09af26f03eb3e042f43270cd78cd",
+      "section": "3. 一次全局整数网络与真实前缀收费"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/Hall联合组流与共享汇点宏分配双源审查--审查.md",
+      "sha256": "fcaf1b512db9bc4f622c6ac88368b47274cd09af26f03eb3e042f43270cd78cd",
+      "section": "4. 未知 OPT 搜索、退化输入与复杂度"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/Hall联合组流冻结审查增量--审查.md",
+      "sha256": "8038e93e949b1ff44adbb63477fc2a0cf674f7fb01048bb02419715476db7a54"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "分别验证下界约束随t下移保持、容量满流而非真实t可行、零目标和δ=0；没有用单独宏匹配替代瓶颈网络。",
+  "whole_result": "对每个满足所给真实OPT尺度承诺的输入，无OPT输入的确定性总位多项式算法输出完整实际调度Cmax≤q(2+δ)OPT/(q+1)。",
+  "endpoint_pins": {
+    "UM-HALL-GROUP-JOINT-FLOW-v1": "ea0c15626a5e766442563bf3f99e8984b169980e1f75f95f50400d7a3fe2aa60",
+    "UM-HALL-GROUP-PROMISE-APPROX-v1": "7d469b4036a2e038bcb636b701284ad848db6e0ec597ccf63e3848fbd701cd78"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/Hall联合组流与共享汇点宏分配双源审查--审查.md": "fcaf1b512db9bc4f622c6ac88368b47274cd09af26f03eb3e042f43270cd78cd",
+    "archives/unrelated-machines/state/审查/Hall联合组流冻结审查增量--审查.md": "8038e93e949b1ff44adbb63477fc2a0cf674f7fb01048bb02419715476db7a54"
+  },
+  "review_digest": "7fc2130281e918e466a94b1b0d6cad25df218f9e771aaa4eb7109075cc2488a6"
+}
