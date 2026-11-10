@@ -1,0 +1,52 @@
+{
+  "edge_id": "wc-a507-compiler-gates-front-social-shift",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "WC-CLASS-FRONT-ALLSTATE-COMPILER-v1"
+  ],
+  "target_ids": [
+    "WC-FRONT-SOCIAL-COST-SHIFT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "源编译定理全部输入保留：有限合法二动作基体、各有序类内等权、全部product-front有保front严格α出口且η>0；使用其完整fresh锚定三元pair及M=2αB、正整数D和任一已付充分预算。另取任意γ_a>0，同一类所有玩家使用相同γ_a。恒移推导本身只需门结构，不需η或次数预算。",
+  "roles": {
+    "WC-CLASS-FRONT-ALLSTATE-COMPILER-v1": "提供实际完整等权三元门c_a(x)=M[x/(3w_a)]^D与同一基体/扩充游戏的精确资源、玩家、动作对应。",
+    "WC-FRONT-SOCIAL-COST-SHIFT-v1": "接收该纯单项式编译子域中全部新增门对J_γ的前沿恒移贡献。"
+  },
+  "explanation": "在源构造的每个类a中，门仅连接(0,j,k)，相位(0,1,0)。任意product-front不含010/101锚定模式，故每门三人分2+1；类内等权使两人侧各付u_a=M(2/3)^D，单人侧付z_a=M(1/3)^D。因为J_γ=Σ_a γ_aΣ_{i∈A_a}C_i且γ_a类内一致，每门新增社会项恰γ_a(2u_a+z_a)，与前沿状态无关。逐类L_a=C(n_a−1,2)门相加得K_γ=Σ_a γ_aL_a M[2(2/3)^D+(1/3)^D]，因此对所有s∈F，J_γ^{G′}(s)=J_γ^G(s)+K_γ。n_a≤2时L_a=0无门，L=0时K_γ=0，原基体费用和γ目标逐项保持。恒移计入全部新增资源费用，不能先扣掉K_γ后把结果称原基体全社会费用。源编译已给每态严格α出口，所以其输出α-PNE集合为空；本边没有调用目标中T_α非空时的最低稳定费用公式。",
+  "scope": "仅compiler实际单项式门输出在全部product-front的类内一致目标恒移；不取得任意c_a的普遍版本，不推完整OPT压缩、个体恒移或任意公平权恒移。",
+  "contribution": {
+    "result": "对编译输出的每个前沿状态给精确常数K_γ，证明全部新增门使同一J_γ只作状态无关恒移。",
+    "remaining": "目标任意非负非减费用c_a的一般恒移版本以及RD、T_α非空下全部α-PNE内的最优选择仍需目标自己的完整论证；本编译输出恰无α-PNE，不能实例化该非空选择结论。"
+  },
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/同权类前沿全覆盖的全状态编译--定理.md",
+      "sha256": "e618d7fdd185bcea95f777934d6b1407fc1b4dedd562220a73e1f7fffaa2d9cf"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md",
+      "sha256": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f",
+      "section": "成本恒移与诚实决策"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/锚定门的社会费用分解与最优压缩--定理.md",
+      "sha256": "dc6b751a584d2f2bc89e8aa092c8d5c2bcf6339c1d108f3499d85d96115e8f1d",
+      "section": "固定社会目标和全状态分解"
+    }
+  ],
+  "reviewed_by": "Boss5 a507 mathematical worker",
+  "review_note": "完整实读本任务指定陈述、模型和证明范围；逐项重算本边所写代数、假设和目标贡献，有限程序与一般证明分开。",
+  "endpoint_pins": {
+    "WC-CLASS-FRONT-ALLSTATE-COMPILER-v1": "9c17962bc0639a4ec6b84232846a563600b676f886caa4ea649869054f30861d",
+    "WC-FRONT-SOCIAL-COST-SHIFT-v1": "bafc7028dfd10f0eae464c973f31e5618b688e043076c27972879761312c201f"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/同权类前沿全覆盖的全状态编译--定理.md": "e618d7fdd185bcea95f777934d6b1407fc1b4dedd562220a73e1f7fffaa2d9cf",
+    "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f",
+    "archives/weighted-congestion/state/定理/锚定门的社会费用分解与最优压缩--定理.md": "dc6b751a584d2f2bc89e8aa092c8d5c2bcf6339c1d108f3499d85d96115e8f1d"
+  },
+  "review_digest": "1cbf8ef9ecfddaf6e6f2cf5eb661f8cc4a8d0ee627041171df063b4bf3d42ec1"
+}

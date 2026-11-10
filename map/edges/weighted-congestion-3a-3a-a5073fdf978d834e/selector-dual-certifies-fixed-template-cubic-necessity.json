@@ -1,0 +1,51 @@
+{
+  "edge_id": "wc-a507-selector-dual-fixed-template-cubic-necessity",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/allstate-selector-linear-alternative"
+  ],
+  "target_ids": [
+    "WCF-R3-SCALED-TEMPLATE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "α≥r，其中r>2为p(x)=x³−x²−2x−1唯一根；矩阵只取正文固定八个极限见证及七个振幅坐标(a,b,c,d,e,f,g)，不是有限G_m的资源列矩阵。所有振幅非负，原模板进一步要求严格正。",
+  "roles": {
+    "weighted-congestion/allstate-selector-linear-alternative": "使用其自足证明对任意非空有限实矩阵B的严格非负原始证书/归一化非正对偶替代。",
+    "WCF-R3-SCALED-TEMPLATE-v1": "接收固定八行极限严格锥在α≥r不可行这一必要性贡献；不把极限表认作合法多项式游戏。"
+  },
+  "explanation": "按0000、0001、0010、0011、0100、0101、0110、0111排列八行。M_α t依次为g−αe；b+g−α(c+e+f)；a+g−α(c+f)；c+d+e+f+(1−α)g；g−αa；g−αc；b+g−α(a+c)；a+g−α(d+e+f)。取λ=(0,0,0,α²,1,α,0,α)/(α+1)²。因分子和为(α+1)²，λ≥0且1ᵀλ=1。直接展开M_αᵀλ：a坐标α−α=0，c坐标α²−α²=0，d/e/f各α²−α²=0，b坐标0，g坐标[α²(1−α)+1+2α]/(α+1)²=−p(α)/(α+1)²≤0。故λ是一般矩阵替代的明确对偶，对任何t≥0都有λᵀM_αt≤0；若八行全部严格正则λᵀM_αt>0，矛盾。r端点p(r)=0仍排严格原始证书。α无理时此为实对偶，不宣称有理证书。这里仅调用源定理已证明的任意有限实矩阵替代，将极限成本的八行恒等式作为明确矩阵桥；没有把辅助极限表当MODEL游戏、没有声称有限m同一selector有该对偶，也没有排其他witness分配。",
+  "scope": "固定八行极限模板的α≥r必要性和严格端点；非完整十四资源拓扑阈值、非有限G_m均衡上界。",
+  "contribution": {
+    "result": "给出精确归一化非正对偶，证明正文固定八见证的严格振幅锥在所有实α≥r不可行，含r端点。",
+    "remaining": "目标完整定理的α<r正有理可行性、统一E_m误差、固定振幅运输到全部m≥M及次数嵌入仍由目标正文另证；本边不支付这些正向部分。"
+  },
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md",
+      "sha256": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a",
+      "section": "全状态严格改善择证的线性替代"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md",
+      "sha256": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/十四资源既定偏离模板的三次根阈值--定理.md",
+      "sha256": "d9c67c259e194f6a516c2118fe3c021b1a306562a7a3368475865b97b88914e3"
+    }
+  ],
+  "reviewed_by": "Boss5 a507 mathematical worker",
+  "review_note": "完整实读本任务指定陈述、模型和证明范围；逐项重算本边所写代数、假设和目标贡献，有限程序与一般证明分开。",
+  "endpoint_pins": {
+    "WCF-R3-SCALED-TEMPLATE-v1": "1921a69fd1694b5a498272e98476b21e3d57acc81140de5ec0a836c3b5fb90ea",
+    "weighted-congestion/allstate-selector-linear-alternative": "32b4a0b43b4f3f9bf47915836e1e02ee714339906ac960b66961a7e7760686ad"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a",
+    "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df",
+    "archives/weighted-congestion/state/定理/十四资源既定偏离模板的三次根阈值--定理.md": "d9c67c259e194f6a516c2118fe3c021b1a306562a7a3368475865b97b88914e3"
+  },
+  "review_digest": "66b21787fbc8d49716e2541b05929e4a34865e1b43ce724e0ff70c70b74f2a7d"
+}

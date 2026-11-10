@@ -1,0 +1,46 @@
+{
+  "edge_id": "wc-a507-action-change-three-hub-two-pne",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/positive-monomial-action-change-bound"
+  ],
+  "target_ids": [
+    "wc-heterogeneous-side-only-three-hub-counterexample"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "正文三hub实例权(1,2,3)、三pair各两同费侧副本，正侧费用2100x²、1130x²、499x²；若表示中另保留完全零费主资源，先删除这些全零费用资源。",
+  "roles": {
+    "weighted-congestion/positive-monomial-action-change-bound": "提供共同正单项式二动作的排序费用向量最小态为R-PNE的一般存在证明。",
+    "wc-heterogeneous-side-only-three-hub-counterexample": "接收本固定无精确PNE例仍有2-PNE的独立较弱保证；不接收尖锐最佳倍率证明。"
+  },
+  "explanation": "完全零费主资源在每个状态和真实偏离的费用均为0；删去它们后逐玩家、逐状态、逐合法偏离的旧新成本精确相同，这是保留稳定判据的明确同模型表示桥。正侧资源仍使每个玩家两动作互异：动作0选择其两个incident pair的0副本，动作1选择对应两个1副本，两集合均大小2且不交。因此压去全零资源后的合法代表恰满足源定理a_e>0、共同p=2，且R=max_i{|S_i^0\\S_i^1|,|S_i^1\\S_i^0|,1}=2。取全部正侧资源当前费用排序向量的字典序最小状态，源证明排除全部严格2改善，所以它为2-PNE。用上述逐成本恒等返回可选保零费主资源的表示，仍为2-PNE。正文八态尖锐倍率20896/20875<2与此一致；本推导没有用成本比除法，也不从2存在倒推精确或接近1存在。",
+  "scope": "一个固定三hub纯二次实例的2-PNE存在性；说明无精确PNE不反驳资源改变数存在界。不是尖锐阈值，也不声称所有pair支持游戏都满足同一二动作改变数。",
+  "contribution": {
+    "result": "独立证明该固定异权三hub反例存在2-PNE；可选全零主资源不改变这一保证。",
+    "remaining": "目标的八态全部严格改善、精确最佳因子20896/20875、端点001/110稳定及其全部排除区间仍由目标完整八态费用表承担。"
+  },
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/正单项式二动作的资源改变数均衡界--定理.md",
+      "sha256": "b441de074b252d8678760dbeafd8a6a70f7741fc545fcee69b0ccdc327e232f3",
+      "section": "正单项式二动作的资源改变数均衡界"
+    },
+    {
+      "path": "archives/weighted-congestion/state/反例/异权三主玩家侧资源的二次均衡缺失--反例.md",
+      "sha256": "8de43ddf1315d8e67189e178a94903a8b8c34490c2f2a8dcd3866b9b87cdd32a"
+    }
+  ],
+  "reviewed_by": "Boss5 a507 mathematical worker",
+  "review_note": "完整实读本任务指定陈述、模型和证明范围；逐项重算本边所写代数、假设和目标贡献，有限程序与一般证明分开。",
+  "endpoint_pins": {
+    "wc-heterogeneous-side-only-three-hub-counterexample": "4cf53151f2f1391837dd18f575ff6118a5a54eae7a615e2572de476b345cc3f7",
+    "weighted-congestion/positive-monomial-action-change-bound": "ea07eebb27b6e6af45513b43dafae78858b9a6db31ce9e4b38b2f268f3b68a99"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/正单项式二动作的资源改变数均衡界--定理.md": "b441de074b252d8678760dbeafd8a6a70f7741fc545fcee69b0ccdc327e232f3",
+    "archives/weighted-congestion/state/反例/异权三主玩家侧资源的二次均衡缺失--反例.md": "8de43ddf1315d8e67189e178a94903a8b8c34490c2f2a8dcd3866b9b87cdd32a"
+  },
+  "review_digest": "b27e530f5713bac1deabf124fdbb0b37e5e977c6d213c1f22908e4bfbd66c58d"
+}
