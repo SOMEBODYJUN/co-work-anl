@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-boss6-setcover-pgc-source-errata-v1.json",
-    "sha256": "aab709d0dec22bf33961ffa6b442c14c255c8390cb5e56b0a80228bedad7e098"
+    "path": "research/registration/baseline-insurance-dr-assignment-round43.json",
+    "sha256": "a8b4e967b2f35dc90f497a9dbb3eab45b1d4d46d3492d1d3ca9db7fc1c29d5e6"
   },
   "objects": [
     {
@@ -1149,7 +1149,7 @@
     },
     {
       "object_id": "B10-STATIC-OPTIMAL-ASSIGNMENT-NO-v1",
-      "version": 4,
+      "version": 5,
       "title": "52客户四人完整SPE的最优冻结匹配一单位缺口",
       "kind": "counterexample",
       "truth_status": "proved",
@@ -1173,7 +1173,7 @@
         },
         {
           "path": "archives/customer-attraction/state/反例/静态最优主题排列的冻结后缀失败--反例.md",
-          "sha256": "609556b835bcc09071a53d7783967a4ec73ba8e69b183fa4a9365762558887a3"
+          "sha256": "a5b75921b611e90ff724eaa6be3929b4a186c0559bbd6c2a903325daf86e82f5"
         },
         {
           "path": "archives/customer-attraction/state/引理/冻结指派的客户恒等式与最优比较量词--引理.md",
@@ -22949,7 +22949,7 @@
     },
     {
       "object_id": "M-2a8a88d1fafa45b999f1506d22096df1",
-      "version": 2,
+      "version": 3,
       "title": "存在最优元组及匹配的弱冻结预算",
       "kind": "open-problem",
       "truth_status": "open",
@@ -22977,7 +22977,7 @@
         },
         {
           "path": "archives/customer-attraction/state/反例/静态最优主题排列的冻结后缀失败--反例.md",
-          "sha256": "609556b835bcc09071a53d7783967a4ec73ba8e69b183fa4a9365762558887a3"
+          "sha256": "a5b75921b611e90ff724eaa6be3929b4a186c0559bbd6c2a903325daf86e82f5"
         },
         {
           "path": "archives/customer-attraction/state/反例/均匀最优主题排列预算的八客户失败--反例.md",
@@ -109232,24 +109232,31 @@
     },
     {
       "object_id": "customer-attraction/closeout-c51b12d5cc02690c50ef6183",
-      "version": 1,
+      "version": 2,
       "title": "两名奖励尾玩家不能放大对称诱饵族的 (3/2) 损失",
       "kind": "theorem",
       "truth_status": "proved",
-      "model": "Customer-attraction archive model; exact variables and domain are retained in the cited body.",
-      "statement": "# 两名奖励尾玩家不能放大对称诱饵族的 (3/2) 损失  ## 稳定对象与量词  这是一个**限定目录族的条件定理**，不是六提供者主目标的反例或一般证明。取 (k\\ge3)，每个互不相交的客户块 (X_i) 有 (x>0) 个单位客户，每个 (a_i) 有 (a\\ge0) 个客户；另有共享块 (B) 大小 (b\\ge0)，奖励私有块 (d) 大小 (d\\ge0)。目录恰为  \\[  C_i=X_i,\\qquad A_i=X_i\\cup a_i,\\qquad B_i=X_i\\cup B,  \\qquad D=B\\cup d . \\]  提供者数为 (m=k+2)。假设存在一份完整历史纯 SPE，其实际路径为每个 (C_i) 恰选一次，随后 (D,D)。允许任意历史依赖平局；零客户块可导致同覆盖标签，但不改变以下比较。  ## 证明  末位在第二次 (D) 的实际收益为 ((b+d)/2)。若改选合法 (B_i)，由于 (X_i) 只被先前的 (C_i) 覆盖一次，收益为 (b/2+x/2)。末位最佳回应给出  \\[  d\\ge x. \\tag{1} \\]  再看最后一个实际选 (C_i) 的玩家。若改选 (A_i)，其自身新增 (a) 块且 (X_i) 后续仍被两个 (D) 的历史影响；对该真实末位菜单作逐客户比较，得到  \\[  a\\le x/2. \\tag{2} \\]  因此真实覆盖福利为 (W=kx+b+d)。而恰取 (A_1,\\dots,A_k,D,D) 的最优候选覆盖至多  \\[  OPT_{k+2}=k(x+a)+b+d, \\]  所以由 (2)  \\[ \\frac{OPT_{k+2}}W =\\frac{k(x+a)+b+d}{kx+b+d} \\le\\frac{k(3x/2)+b+d}{kx+b+d} \\le\\frac32. \\]  这正是原稿 `two_reward_tail_obstruction.md` 的条件结论：在两个奖励尾玩家、对称组大小和该固定目录下，尝试把无拥挤 (3/2) 放大到 (2) 会被真实末位菜单压回。  ## 边界与用途  - (k\\ge3)、两个尾玩家、对称 (x,a)、目录不再添加任意新主题，都是实质条件。 - 该定理允许完整 SPE 的离轨后继按历史任意选择；它没有冻结离轨尾部。 - 它只排除该目录族的指定路径/菜单放大，不能外推到一般目录或一般完整 SPE。 - 对第三阶段，(1) 是“奖励池私有客户必须至少补足一半旧组”的末位菜单接口；(2) 是“最后 (C_i) 偏离 (A_i)”的第二个接口，可作为设计更复杂族时的必要条件。  来源与原字节见 `archives/customer-attraction/tools/evidence/R-077c0cacfba24288be91dee1acf6d484/`",
-      "quantifiers": "As stated in the cited body; no stronger quantifier is inferred from the source wrapper.",
+      "model": "有限单位客户、共同有限标签目录；恰为所列对称块目录，k≥3且m=k+2，所有块两两不交，完整历史纯SPE与任意离轨平局。",
+      "statement": "任意k≥3且块X_i,a_i,B,d全部两两不交，|X_i|=x>0、|a_i|=a≥0、|B|=b≥0、|d|=d≥0，共同目录恰为C_i=X_i、A_i=X_i∪a_i、B_i=X_i∪B、D=B∪d，m=k+2。对每份完整有序历史纯SPE，若实际路径各C_i恰一次后D,D，则d≥x、a≤x/2，且W=kx+b+d、OPT=k(x+a)+b+d≤3W/2；离轨回复沿同一σ，不冻结尾部。",
+      "quantifiers": "任意上述整数块大小及k、每份完整σ；条件为指定实际路径，结论不推出该路径一定存在。",
       "assumptions": [
-        "Use the exact model, domain, and finite instance specified in the cited body."
+        "目录恰为所列C_i,A_i,B_i,D，所有块两两不交且组大小对称",
+        "实际每个C_i一次后两个D；偏离续局始终用原同一完整σ",
+        "k≥3、两个回应者；零a/b块保标签身份"
       ],
-      "scope": "Customer-attraction archive; limited to the exact instance or conditional scope in the cited body.",
-      "objections": "This closeout preserves the exact source bytes and records open/finite limits from the full read; it does not generalize beyond the body.",
+      "scope": "限定目录与实际路径的条件性3/2保证，普遍量词在该族内完整证明。",
+      "objections": "仅上述对称目录及指定完整SPE实际路径的条件定理。k≥3、两个尾玩家、全部块不交与完整同一σ后继均必要；不证明路径存在，不外推一般目录或六人目标。v2修正原压缩页的D触及X_i误述并从已保存完整原证明补足a≤x/2；未依赖有限参数扫描。",
       "body": {
         "path": "archives/customer-attraction/state/定理/两奖励尾玩家对称诱饵族三二上界--定理.md",
-        "sha256": "ee07fc4d247114c01ca662238aebca80146bdb6f3d035a32521ff2110d1e1192",
+        "sha256": "9eef50237e05c4d15c7e8e98a7545f93ce8361fa7bafdd3240421400f5e39c39",
         "section": "两名奖励尾玩家不能放大对称诱饵族的 (3/2) 损失"
       },
-      "evidence": [],
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-077c0cacfba24288be91dee1acf6d484/first/original/a1a068311b18332bba1a.md",
+          "sha256": "4dc5c215681e31b85e53d3c65b0d5174e07a65c53f3ea1b13f128b45d6b2dbd0"
+        }
+      ],
       "sources": [
         "source:repository:archives/customer-attraction/state/定理/两奖励尾玩家对称诱饵族三二上界--定理.md"
       ]
@@ -113450,12 +113457,12 @@
     },
     {
       "object_id": "customer-attraction/dynamic-exchange-assignment-certificate",
-      "version": 1,
+      "version": 2,
       "title": "Möbius动态交换完整策略与静态排列证书",
       "kind": "computation",
       "truth_status": "finite",
       "model": "The model and source domain are stated in the complete bound body at archives/customer-attraction/state/计算/动态交换完整策略与assignment证书--计算.md.",
-      "statement": "逐字段保全1953客户实例、43历史/258比较策略、唯一最优支持及六assignment成本；原审计代码未重跑因其未领取witness依赖缺失，冻结exact报告与正文已完整读取。",
+      "statement": "保全同一1953单位客户输入、43完整历史/258比较策略及原精确报告；fresh辅助域为37历史/156比较，唯一最优支持125、OPT1740、W1735、六静态assignment成本最小1736。原整理未重跑作者脚本；witness已在七源中，缺少发现/简化器不阻碍审计重放。该对象记录固定证据及其来源合同，不作一般half推导。",
       "quantifiers": "The complete quantifier declaration is preserved in the bound body; no stronger universal claim is inferred.",
       "assumptions": [
         "All assumptions are exactly those stated in the bound body."
@@ -113464,7 +113471,7 @@
       "objections": "Review status and unresolved obligations remain exactly as stated in the bound body.",
       "body": {
         "path": "archives/customer-attraction/state/计算/动态交换完整策略与assignment证书--计算.md",
-        "sha256": "bc3373dd9d2caf5d6956204dbd5fea43ef0630439725e85b80b626dab780137b",
+        "sha256": "4f1cde67d9bb3bb3055f4cb79ddc440e832b6f5eabb8f3efcdfb311065d46326",
         "section": "Möbius动态交换完整策略与静态排列证书"
       },
       "evidence": [],
@@ -115540,13 +115547,13 @@
     },
     {
       "object_id": "customer-attraction/finite-four-layer-dr-potential-full-slot-aggregate-deficit",
-      "version": 2,
+      "version": 3,
       "title": "有限四层DR势的完整槽聚合亏损",
       "kind": "counterexample",
-      "truth_status": "finite",
-      "model": "有限共同目录、单位客户/提供者的完整有序历史纯SPE；具体模型见正文。",
-      "statement": "全部12实际完整菜单列均价11/4，总最小33/4大于总边际效用8；同一三人终局收益表也不可能由非负客户均分表示。",
-      "quantifiers": "正文给出的完整模型、参数和量词；本批按冻结正文登记。",
+      "truth_status": "proved",
+      "model": "有限共同标签P={0,1,2,3}的三人匿名删除边际势辅助博弈；非负单调DR势φ定义在全部|q|≤4多重集，φ(0)=0，终局收益u_j(z)=φ(z)−φ(z删j)。不假定客户表示；完整策略定义于全部有序历史，标签可重复，允许离轨平局。",
+      "statement": "存在正文给定的70项整数四层势φ、21节点完整三人纯SPE σ及独立均匀查询p=(1/4,1/4,1/4,1/4)：全部12个实际完整菜单列价格均11/4，故Σ_i min_A G_p(Z_i(A))=33/4>8=Σ_i u_i；同一三人终局收益表不可能由非负客户均分实现。",
+      "quantifiers": "存在这份明确有限四层势、完整有序历史策略与uniform查询，精确反驳任意有限层非负单调DR匿名删除边际势类上的SUMmin-full全称桥；不声称全n延拓或原非负客户CAG反例。",
       "assumptions": [],
       "scope": "三人四共同标签；0至4层全部多重集上的非负单调DR势；完整有序历史纯SPE；独立均匀额外查询",
       "objections": "保留冻结正文的状态、审查级别和明确边界；未把有限核验扩张为普遍结论。 review_level=full-primary-reading; parent-exact-audit-replayed; analytic-comparison",
@@ -122767,7 +122774,7 @@
     },
     {
       "object_id": "customer-attraction/frozen-suffix-optimal-topic-assignment-counterexample",
-      "version": 4,
+      "version": 5,
       "title": "1953客户三人完整SPE否定最优主题冻结排列预算",
       "kind": "counterexample",
       "truth_status": "proved",
@@ -122782,7 +122789,7 @@
       "objections": "不是半覆盖反例，不反驳成本≤(1+1/m)W的弱式；与52客户四人B10反例是不同输入和人数，分别保身份。 接入独立整数六分之一原审计的1953单位展开、43历史/258比较与六个最优有序元组全成本表。它和因果单删原入口各一次，后者不自行重新认证SPE。",
       "body": {
         "path": "archives/customer-attraction/state/反例/静态最优主题排列的冻结后缀失败--反例.md",
-        "sha256": "609556b835bcc09071a53d7783967a4ec73ba8e69b183fa4a9365762558887a3"
+        "sha256": "a5b75921b611e90ff724eaa6be3929b4a186c0559bbd6c2a903325daf86e82f5"
       },
       "evidence": [
         {
@@ -164758,14 +164765,14 @@
     },
     {
       "path": "archives/customer-attraction/state/反例/静态最优主题排列的冻结后缀失败--反例.md",
-      "sha256": "609556b835bcc09071a53d7783967a4ec73ba8e69b183fa4a9365762558887a3",
+      "sha256": "a5b75921b611e90ff724eaa6be3929b4a186c0559bbd6c2a903325daf86e82f5",
       "disposition": "objects",
       "object_ids": [
         "customer-attraction/frozen-suffix-optimal-topic-assignment-counterexample",
         "B10-STATIC-OPTIMAL-ASSIGNMENT-NO-v1",
         "M-2a8a88d1fafa45b999f1506d22096df1"
       ],
-      "reason": "实读成熟正文的模型、精确陈述、量词、条件和必要论证位置；复用完整正文证明，按独立数学身份列出本页所有自有对象。未重跑历史程序、未声称新增盲审，不建超边。"
+      "reason": "实读成熟正文的模型、精确陈述、量词、条件和必要论证位置；复用完整正文证明，按独立数学身份列出本页所有自有对象。未重跑历史程序、未声称新增盲审，不建超边。 Boss6第43轮定向勘误：按已保存原证明/精确报告修正承重正文或来源合同；完整数学在handoff前保存，冻结原证据不变。"
     },
     {
       "path": "archives/customer-attraction/state/反例/静态最坏背景的占用收益与真实末位修复--反例.md",
@@ -167171,12 +167178,12 @@
     },
     {
       "path": "archives/customer-attraction/state/定理/两奖励尾玩家对称诱饵族三二上界--定理.md",
-      "sha256": "ee07fc4d247114c01ca662238aebca80146bdb6f3d035a32521ff2110d1e1192",
+      "sha256": "9eef50237e05c4d15c7e8e98a7545f93ce8361fa7bafdd3240421400f5e39c39",
       "disposition": "objects",
       "object_ids": [
         "customer-attraction/closeout-c51b12d5cc02690c50ef6183"
       ],
-      "reason": "Boss7 full-read closeout: this source contains a distinct finite/conditional mathematical record; exact scope and limitations are preserved in the body and objections."
+      "reason": "Boss7 full-read closeout: this source contains a distinct finite/conditional mathematical record; exact scope and limitations are preserved in the body and objections. Boss6第43轮定向勘误：按已保存原证明/精确报告修正承重正文或来源合同；完整数学在handoff前保存，冻结原证据不变。"
     },
     {
       "path": "archives/customer-attraction/state/定理/两提供者唯一最优对的遗漏锐上确界--定理.md",
@@ -182803,12 +182810,12 @@
     },
     {
       "path": "archives/customer-attraction/state/计算/动态交换完整策略与assignment证书--计算.md",
-      "sha256": "bc3373dd9d2caf5d6956204dbd5fea43ef0630439725e85b80b626dab780137b",
+      "sha256": "4f1cde67d9bb3bb3055f4cb79ddc440e832b6f5eabb8f3efcdfb311065d46326",
       "disposition": "objects",
       "object_ids": [
         "customer-attraction/dynamic-exchange-assignment-certificate"
       ],
-      "reason": "Direct full read of the complete frozen source; frontmatter identity customer-attraction/dynamic-exchange-assignment-certificate is distinct and its exact mathematical/provenance scope is retained as a registered object."
+      "reason": "Direct full read of the complete frozen source; frontmatter identity customer-attraction/dynamic-exchange-assignment-certificate is distinct and its exact mathematical/provenance scope is retained as a registered object. Boss6第43轮定向勘误：按已保存原证明/精确报告修正承重正文或来源合同；完整数学在handoff前保存，冻结原证据不变。"
     },
     {
       "path": "archives/customer-attraction/state/计算/动态独立查询与条件支付的精确核验--计算.md",
@@ -209603,6 +209610,13 @@
       "record": {
         "path": "research/registration/batches/register-boss6-lipschitz-record-scope-v2.json",
         "sha256": "b3aaa54936e21effba6d386b4e8b9f75e324c8fd82d870cf43afe889ca8a0559"
+      }
+    },
+    {
+      "batch_id": "register-insurance-dr-assignment-round43",
+      "record": {
+        "path": "research/registration/batches/register-insurance-dr-assignment-round43.json",
+        "sha256": "aff8682262dd1ed331832410cc0e9a07b7a6e8b5ad9fba4cf5022c34880cb6c1"
       }
     }
   ],
