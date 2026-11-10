@@ -586,11 +586,487 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss5",
-  "request_id": "833054aa752e4f6189b0f647efa58971",
+  "request_id": "5209a7d9538848bf92fd246b00651e45",
   "requests": {
     "897db316569c47c3b7cd4e76388a2573": "plan",
-    "833054aa752e4f6189b0f647efa58971": "claim"
+    "833054aa752e4f6189b0f647efa58971": "claim",
+    "5209a7d9538848bf92fd246b00651e45": "done"
+  },
+  "edge_paths": {
+    "um-5b0b7c-held-cycle-and-ring-give-assigned-max": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/held-cycle-and-ring-give-assigned-max.json",
+    "um-5b0b7c-held-cycle-pays-safe-unlock-path": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/held-cycle-pays-safe-unlock-path.json",
+    "um-5b0b7c-dag-transit-pays-fpt-root-tree": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/dag-transit-pays-fpt-root-tree.json",
+    "um-5b0b7c-old-flow-trims-to-expanded-transit": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/old-flow-trims-to-expanded-transit.json",
+    "um-5b0b7c-frozen-common-size-pays-quantum-eligibility": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/frozen-common-size-pays-quantum-eligibility.json",
+    "um-5b0b7c-quantum-threshold-pays-original-opt-promise": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/quantum-threshold-pays-original-opt-promise.json",
+    "um-5b0b7c-row-constant-specializes-to-common-size": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/row-constant-specializes-to-common-size.json",
+    "um-5b0b7c-row-constant-recovers-shared-return-pool": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/row-constant-recovers-shared-return-pool.json",
+    "um-5b0b7c-fixed-hall-cut-pays-orientation-subproblem": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/fixed-hall-cut-pays-orientation-subproblem.json",
+    "um-5b0b7c-clique-reduces-to-indexed-set-packing": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/clique-reduces-to-indexed-set-packing.json",
+    "um-5b0b7c-clique-reduces-to-node-cover": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/clique-reduces-to-node-cover.json",
+    "um-5b0b7c-node-cover-reduces-to-set-covering": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/node-cover-reduces-to-set-covering.json",
+    "um-5b0b7c-batch-lex-barrier-transfers-to-strict-sub2": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/batch-lex-barrier-transfers-to-strict-sub2.json"
+  },
+  "receipt": {
+    "coverage": {
+      "UM-ASSIGNED-MAX-TRANSIENT-PATH-SHARP-v1": {
+        "state": "linked",
+        "object_pin": "fcffa8bbf1390156b7f756d4058895467e9fc221988038ee99b802c850d3fd8b",
+        "comparison_scope": "真实最大件条件、有序单位槽收费、永久安全可达与k=1逐参数环锐族。",
+        "reason": "实际M不是支撑最大值。比较支付了上界与promise类下界，未把下界扩到实际槽输出，也未将可达证书视为必要。",
+        "edge_ids": [
+          "um-5b0b7c-held-cycle-and-ring-give-assigned-max"
+        ],
+        "review_basis": "本轮定向实读当前登记与承重正文/章节，核对旧数学结论及边的方向、完整/局部和条件；原pin未变，保留旧收据未受影响的来源覆盖，不冒称重读全部历史输入。"
+      },
+      "UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1": {
+        "state": "linked",
+        "object_pin": "8ed1d2751ce657b09f7312679b26ef6306e2f0604f0024894fb935a7ceb1a897",
+        "comparison_scope": "永久缓冲阈值、全安全环证书、坏环共用接收容量、最大件上界与固定批环下界。",
+        "reason": "所选坏环入流在源补集激活前只作为条件保护，不能预先当永久激活；每件只直迁一次。固定批锐族的k=1分支支付最大件锐性，与无eligible仍有路径的7/4实例相容。",
+        "edge_ids": [
+          "um-5b0b7c-held-cycle-and-ring-give-assigned-max",
+          "um-5b0b7c-held-cycle-pays-safe-unlock-path"
+        ],
+        "review_basis": "本轮定向实读当前登记与承重正文/章节，核对旧数学结论及边的方向、完整/局部和条件；原pin未变，保留旧收据未受影响的来源覆盖，不冒称重读全部历史输入。"
+      },
+      "UM-DAG-NONUNIT-PARAMETER-EXACT-v1": {
+        "state": "linked",
+        "object_pin": "7cb3ffbbf0029d150203e7a890ad71cd92dc815dd174c434b1bb91ac1e302de8",
+        "comparison_scope": "全正阈值Γ、缩放ceil、K=1满比例等价与高点参数；对照两套9496例需求域。",
+        "reason": "两套9496例分别用{0,1,2,4}与{0,1,2,3}，算法正确性由一般证明支付。图需给定，h无界时仍指数。",
+        "edge_ids": [
+          "um-5b0b7c-dag-transit-pays-fpt-root-tree"
+        ],
+        "review_basis": "本轮定向实读当前登记与承重正文/章节，核对旧数学结论及边的方向、完整/局部和条件；原pin未变，保留旧收据未受影响的来源覆盖，不冒称重读全部历史输入。"
+      },
+      "UM-DAG-TRANSIT-CONGESTION-v1": {
+        "state": "linked",
+        "object_pin": "5bf4f236585647a4f3f792ca2edadbf0068302b357e27ddbbe6505d1613e2dfd",
+        "comparison_scope": "新旧高点界K/2K、固定共同W和拓扑裁流、单位提树、K单调与支撑搜索。",
+        "reason": "同一W/K旧可行蕴含新可行但原f须裁流。非根低点可免费0入0出补全，高点无条件供给须联合枚举；单边族给保证锐值，不是复杂度下界。",
+        "edge_ids": [
+          "um-5b0b7c-dag-transit-pays-fpt-root-tree",
+          "um-5b0b7c-old-flow-trims-to-expanded-transit"
+        ],
+        "review_basis": "本轮定向实读当前登记与承重正文/章节，核对旧数学结论及边的方向、完整/局部和条件；原pin未变，保留旧收据未受影响的来源覆盖，不冒称重读全部历史输入。"
+      },
+      "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1": {
+        "state": "linked",
+        "object_pin": "4f66fab54e65d8812036d3482b47b83673664d71eaa80765218863da446ec187",
+        "comparison_scope": "未知原OPT的全占用承诺、精确候选、原枚举和两种整数流的范围。",
+        "reason": "首个通过候选即原OPT而非辅助t；区间空只是OPT≥2p。有限核验120例按原宏位置枚举，108例承诺内、12例区间空，未把它写作生产后端。",
+        "edge_ids": [
+          "um-5b0b7c-quantum-threshold-pays-original-opt-promise"
+        ],
+        "review_basis": "本轮定向实读当前登记与承重正文/章节，核对旧数学结论及边的方向、完整/局部和条件；原pin未变，保留旧收据未受影响的来源覆盖，不冒称重读全部历史输入。"
+      },
+      "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1": {
+        "state": "linked",
+        "object_pin": "7b24dcdbe3ea28d00d07a8027dc9954d3df12b91eae48ce1364e07bcd48a2d0a",
+        "comparison_scope": "固定宏强制全占用、冻结共同尺寸、逐件资格、全任务与恰需出口两种流。",
+        "reason": "逐件资格重叠可任意；两件示例只否交集替代，四件例才强迫两sink。仅宏资格变化且端时间按home固定并存在完美匹配时仍可无损冻结。",
+        "edge_ids": [
+          "um-5b0b7c-frozen-common-size-pays-quantum-eligibility",
+          "um-5b0b7c-quantum-threshold-pays-original-opt-promise"
+        ],
+        "review_basis": "本轮定向实读当前登记与承重正文/章节，核对旧数学结论及边的方向、完整/局部和条件；原pin未变，保留旧收据未受影响的来源覆盖，不冒称重读全部历史输入。"
+      },
+      "UM-FORK-MINCOST-ROUND-REPAIR-NO-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "011b10d18d0a28915f7cf4d7bba6fdb8beab0d42a1f55e5ebf54a7dfc6a2834e",
+        "comparison_scope": "裸六任务LP唯一性、padding后的同一分数点及标准正交长槽注入、最低真实总成本的机器分配唯一性、峰非增单目的地修复与严格次二单件路径。",
+        "reason": "裸核容量连锁迫x=y=β=γ=0；补N=8k后t=(a+1)/(4a)给A两槽但2t>1违反CONFIG，当前端a是各可移任务唯一最便宜的正支持机。不能从槽级平局推不同坏机器分配。原结论限制峰始终≤C。另实核该补padding族可按X→B、Y→E、b→A、c→B逐件到OPT1，峰恰C+θ/2=2−θ/2<2，而且任意单件路径即使回退也不能低过此值：更低容量排新增H，首次b入A前须X/Y均离A，否则b+a达C+θ/2；Y在E则c必须在B，否则E达C+θ/2；X、c及尚未迁出的b同B亦达该值。故它不提供三机严格次二族的固定批量孤立，两个反例只各否自己的合同。",
+        "review_basis": "本轮定向实读当前登记与承重正文/章节，核对旧数学结论及边的方向、完整/局部和条件；原pin未变，保留旧收据未受影响的来源覆盖，不冒称重读全部历史输入。"
+      },
+      "unrelated-machines/hall-joint-flow-and-opt-promise-original-independent-audits": {
+        "state": "isolated-after-review",
+        "object_pin": "7839d6ea903c60f43c7787db851e3b5fe4a9465c18d85f859a7a6481d94ad6e7",
+        "comparison_scope": "两独立原入口、真实原任务DFS与最优子集和阈值oracle，宏/home/receiver共同流、前缀恢复及原OPT尺度promise。",
+        "reason": "首入口8123例含3688个原T可行、4066个算法成功，后者只给ρT调度。第二入口301样本仅122满足承诺，明确实例O=11/10而恢复t=1，不能替代同宏共同量子的精确OPT搜索。两个入口导入同一候选但自行造矩阵及oracle；有限验证不作为一般证明。",
+        "review_basis": "本轮定向实读当前登记与承重正文/章节，核对旧数学结论及边的方向、完整/局部和条件；原pin未变，保留旧收据未受影响的来源覆盖，不冒称重读全部历史输入。"
+      },
+      "unrelated-machines/conditional-leaf-hall-v3-independent-exact-review": {
+        "state": "isolated-after-review",
+        "object_pin": "a68575aa6ba49b8c7792da677ab4848ca7d48980d28cfb30d561fad4e848c120",
+        "comparison_scope": "v3新增MC hole transport、任意fractional z、β=1及d=0/1和零行、每core-state完整matching mixture；对读已证明path和Q_t值的四源正文。",
+        "reason": "用共同π支配各端b，q表按行λ、列π及own-port下界扩展，逐路径叶边给同一边际；把每条path的q分割区间叠合，可多项式数完整leaf匹配。它没有跨core的joint law；Q_t的V=1/t需先固定M实现最大值的一行、对该行t个parking资源计数，再用path保持和全任务恒等，历史MC审查未重证此族或旧§§1–8。三个Fraction fixtures是来源所载有限检查。",
+        "review_basis": "本轮定向实读当前登记与承重正文/章节，核对旧数学结论及边的方向、完整/局部和条件；原pin未变，保留旧收据未受影响的来源覆盖，不冒称重读全部历史输入。"
+      },
+      "unrelated-machines/private-demand-graft-no-amplification-composition-review": {
+        "state": "isolated-after-review",
+        "object_pin": "20cc0a39303574c01919b945925d89d1a43356bdc448bcd3142fcbf7f83ae29b",
+        "comparison_scope": "异质私有终端替换、同模块min、固定整数根门、max/min格表达式clamp、共享终端池的边界比较。",
+        "reason": "沿每个私有接口可独立拼接与投影，保YES的固定一元私有表达式值至少原β；根门k=m不等同Boolean AND。将q≥2个原值1的相同模块共用同一K资源后已失去私有条件：r<q时根比<1，r=q时资源均分比<1。共享是具体不同模型，不能由私有公式得共享最优值，也不能免费推出源一致性或任意深度的位多项式编译。",
+        "review_basis": "本轮全文复核私有终端替换、固定根门和clamp，并以现行Q共享池核对假设分界；原pin未变。"
+      },
+      "M-fd61b69b10c84faba4dd8ace6a473566": {
+        "state": "linked",
+        "object_pin": "3c77c9888ae9e535019128cae50a5651852caa35d006bcb409b0f1587d66f64e",
+        "comparison_scope": "原Karp序6、逐顶点incident边集、预算保持与源语言宇宙。",
+        "reason": "选点覆盖与选incident集合覆盖其并集双向；额外未出现宇宙元素须先拒，完整集合覆盖不提供原调度归约。",
+        "edge_ids": [
+          "um-5b0b7c-node-cover-reduces-to-set-covering"
+        ],
+        "review_basis": "本轮定向实读当前登记与承重正文/章节，核对旧数学结论及边的方向、完整/局部和条件；原pin未变，保留旧收据未受影响的来源覆盖，不冒称重读全部历史输入。"
+      },
+      "UM-TWO-STATE-QUOTA-HALL-CUT-v1": {
+        "state": "linked",
+        "object_pin": "cabf8f30a9c7d5c2cae9655e2c5324133f81559ba2bcba2fcb78cfe0b7a240bc",
+        "comparison_scope": "固定方向的整数支付和显式缺口，完整束2SAT，部分配额及行列池的已发布特殊前沿。",
+        "reason": "度二只用于p+e+∂分解，固定方向的Hall支付本身是整数容量。连向未选标签的资源仍计入∂；部分支付不能换独立集或仅逐对冲突。",
+        "edge_ids": [
+          "um-5b0b7c-fixed-hall-cut-pays-orientation-subproblem"
+        ],
+        "review_basis": "本轮定向实读当前登记与承重正文/章节，核对旧数学结论及边的方向、完整/局部和条件；原pin未变，保留旧收据未受影响的来源覆盖，不冒称重读全部历史输入。"
+      },
+      "M-062d170b27bb407b9ca6b47b115e37c8": {
+        "state": "linked",
+        "object_pin": "39d07dd73d5bb42268d4612d43d8e564b23824fa2bd052d68bbc02b3328bff12",
+        "comparison_scope": "原Karp序3、SAT文字occurrence一致选择与从团出发的两条原始归约。",
+        "reason": "跨子句不互补成团；向打包以非边产生冲突，向点覆盖以补图及点集补运算保YES/NO。未将独立集另身份或近似困难性混入。",
+        "edge_ids": [
+          "um-5b0b7c-clique-reduces-to-indexed-set-packing",
+          "um-5b0b7c-clique-reduces-to-node-cover"
+        ],
+        "review_basis": "本轮定向实读当前登记与承重正文/章节，核对旧数学结论及边的方向、完整/局部和条件；原pin未变，保留旧收据未受影响的来源覆盖，不冒称重读全部历史输入。"
+      },
+      "UM-STRICT-SUB2-BATCH-BARRIER-v1": {
+        "state": "linked",
+        "object_pin": "15230851c55ef2294152e030d9823b3ba2ad0c46272177a8c17290a9c2591df1",
+        "comparison_scope": "三机四元组解析构造、原lex支持族的仿射变换、两机/多机环U能垒与固定k有限证据。",
+        "reason": "三机负载格把新严格<2精确还原为原峰≤2；唯一原三机同载2态是初态。源冻结报告与可取得程序SHA不同，只有限证据身份需保留区分；一般全k结论由符号证明承担。",
+        "edge_ids": [
+          "um-5b0b7c-batch-lex-barrier-transfers-to-strict-sub2"
+        ],
+        "review_basis": "本轮定向实读当前登记与承重正文/章节，核对旧数学结论及边的方向、完整/局部和条件；原pin未变，保留旧收据未受影响的来源覆盖，不冒称重读全部历史输入。"
+      },
+      "M-a255a4b03dd848829cfb47bf206d6b1c": {
+        "state": "linked",
+        "object_pin": "540f3d9158bdf3e91b0ad3f77d1643c5dd7938950151a243dfb49b003e7b61ed",
+        "comparison_scope": "原Karp序4、非边元素与private marker，和部分配额、均匀仿射完整打包源的范围比较。",
+        "reason": "原边只给整束两两不交的判定完全性；索引不可随意合并，部分bundle保留和NO gap须另证明。",
+        "edge_ids": [
+          "um-5b0b7c-clique-reduces-to-indexed-set-packing"
+        ],
+        "review_basis": "本轮定向实读当前登记与承重正文/章节，核对旧数学结论及边的方向、完整/局部和条件；原pin未变，保留旧收据未受影响的来源覆盖，不冒称重读全部历史输入。"
+      },
+      "UM-SHARED-OUTSIDE-SMALL-QUERY-RETURN-POOL-EXACT-RELATION-v1": {
+        "state": "linked",
+        "object_pin": "8dda0f242267722f5006faa53486e9efaf80ddae885aeee1f7443c651adf45df",
+        "comparison_scope": "全模式S,T、任意ρ实际负载、unit pool整数容量、共享E及四任务环和双ring外端。",
+        "reason": "孤立模型S=T=[k]给OPT1，非空containment不保证singleton或S=T。第二outside资格会打断b_i@E_i强迫q_i@H的解码。四环中低峰每机至多一任务，本池H可多查询真实共居。",
+        "edge_ids": [
+          "um-5b0b7c-row-constant-recovers-shared-return-pool"
+        ],
+        "review_basis": "本轮定向实读当前登记与承重正文/章节，核对旧数学结论及边的方向、完整/局部和条件；原pin未变，保留旧收据未受影响的来源覆盖，不冒称重读全部历史输入。"
+      },
+      "M-0f5677f8a2b14360a537da0bee40d3b9": {
+        "state": "linked",
+        "object_pin": "e84876a062d21b3aca21ebde7d1add4f88bc430c27cdca95b6eebe01450ff620",
+        "comparison_scope": "原Karp序5、团→补图点覆盖→边宇宙集合覆盖的串接。",
+        "reason": "预算n−k，点集与其补集双向；点覆盖不等于边覆盖、团覆盖或exact cover。",
+        "edge_ids": [
+          "um-5b0b7c-clique-reduces-to-node-cover",
+          "um-5b0b7c-node-cover-reduces-to-set-covering"
+        ],
+        "review_basis": "本轮定向实读当前登记与承重正文/章节，核对旧数学结论及边的方向、完整/局部和条件；原pin未变，保留旧收据未受影响的来源覆盖，不冒称重读全部历史输入。"
+      },
+      "UM-COMMON-MULTIPLIER-UNKNOWN-B-EXACT-v1": {
+        "state": "linked",
+        "object_pin": "af8f97e7b24e74f7ba5954756bdce07b2edddbf1abe7db3d95b8b6936ebb8203",
+        "comparison_scope": "冻结峰、零端任务、行常数与组件共同量子、固定返回模式的单位池。",
+        "reason": "只有每参与机器上所有残余实际资格端时间一致才能用整件容量；p_ij=a_i q_j不够。有限400例实现顺序扫候选且有递归，不是生产二分后端。",
+        "edge_ids": [
+          "um-5b0b7c-row-constant-specializes-to-common-size",
+          "um-5b0b7c-row-constant-recovers-shared-return-pool"
+        ],
+        "review_basis": "本轮定向实读当前登记与承重正文/章节，核对旧数学结论及边的方向、完整/局部和条件；原pin未变，保留旧收据未受影响的来源覆盖，不冒称重读全部历史输入。"
+      },
+      "M-4107ba0f5b754856903434215f76fe3f": {
+        "state": "isolated-after-review",
+        "object_pin": "3103db3de3d7343e6e3e873ca93e1040c35634b13d7d0559ebab3f5a24fc4ea9",
+        "comparison_scope": "现行v3正整数q,K的公共终端Q_{q,K}、根树单父评分；定向全文读三维/高维配额两源审查及三维需求地板/三主机审查，对比本包私有终端组合与固定方向两状态Hall合同。",
+        "reason": "任一正评分树选r个x_i及其唯一标签点，单父性使标签所得资源集合全局不交，所以r≤min(q,K)，且最小标签出度≤floor(K/r)。评分≤min(r/q,floor(K/r)/K)。反向给r个标签各floor(K/r)个互不交资源即达界，对r取最大得到v3完整公式。q=1或K=1均被该论证覆盖；q=0或K=0不在本对象域内。q=K时r=floor(sqrt(q))达floor(sqrt(q))/q，而更大r受floor(q/r)限制。私有化各标签的K个资源可达1；q≥2共享池严格小于1，但这不反驳要求私有且无跨边的min/clamp定理。一般共享资源度可为q，不能无条件套用度二p+e+∂分解；固定方向整数Hall亦未给全部r的共同最优化。三维μ/ν两层及独有资源KDM族是不同对象，原typed树枚举缺陷只限制相应有限PASS，未被用作本式的一般证明。本式未提供源语言编译、YES保持或NO解码；本轮这些具体比较没有得到更强逻辑边。",
+        "review_basis": "changed-input-targeted-full-read；现行v3全文定向复核，旧pin 4cc72179862b49ba863df30d1c648e04a214ef4d59d2a185c460d250c871b02d 由现行pin替代。"
+      },
+      "UM-LST2025-AFFINE-LINE-SOURCE-UNIFORM-COMPILATION-OBSTRUCTION-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "636db9d50e9f93c50384e00059aa1b8b47f1a6e5584290e64162a0329a395426",
+        "comparison_scope": "D原Exact/Proof与最终版本、任意固定当地态的容斥Hall、真实全满足支路，比较任意权宽矩形与统一端口parking。",
+        "reason": "均匀权让逐变量r_x≤R线的并集至少r_x R−binom(r_x,2)；对所有组子集Hall给ceil(kR/2)整资源。宽矩形依赖主动改选态和任意标点，不能替这条任意预定态量词；parking另含mandatory aux、matroid和外部后端。原集合打包的近完美YES不是全满足或partial soundness，空关系不能免费删selector。",
+        "review_basis": "本轮保留原完成收据的数学覆盖；该核心登记pin未变，并核对当前登记输入与相关旧边的端点/证据绑定。未宣称本轮重新读取该对象全部历史源文件。"
+      },
+      "UM-VW2010-THEOREM12-BACKEND-PRECHECK-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "16a2920abfebbaed76d2492aee350d1b801fcfe5eb40c65c9a4f33ddddb02584",
+        "comparison_scope": "冻结Theorem12的双正端加性后端及仓内既有二度菜单应用，比较统一端口vacancy matroid的不同后端。",
+        "reason": "forced-largest需全局从两端删资源，交替分量二染色支付阈值的一半。成功只给实际T/2，失败才给OPT<T，因此二分保高端严格大于OPT即可，无需success单调。已发布二度菜单迁移实用的是辅助平均值及最大态回译（um-0195479a-vw-maxmin-to-degree-two-menu）；它的度二菜单端点未纳入本包共享pins，本收据不重复登记。一般统一端口parking调用two-value resource-matroid而非该加性双正端合同。",
+        "review_basis": "本轮保留原完成收据的数学覆盖；该核心登记pin未变，并核对当前登记输入与相关旧边的端点/证据绑定。未宣称本轮重新读取该对象全部历史源文件。"
+      },
+      "UM-TAGGED-AFFINE-LINE-WIDE-RECTANGLE-JOINT-ESCAPE-v2": {
+        "state": "isolated-after-review",
+        "object_pin": "089a1b11f837f7431ee25a4001ea85333846c8c32941e59676ca2e52fb9b7b2b",
+        "comparison_scope": "v2 Exact/Proof和独立等号反例、宽矩形及带标点的联合逃逸、对比均匀权任意选择的Hall线族。",
+        "reason": "固定截距下旧标点每个至多禁一斜率，逐坐标选向量后才读取真实state index的权与marks；同一实际分配保marks及独占点，损失≤Mβ。宽度严格必要的R=2等号例给OPT2。均匀权任意关系的三半不靠宽矩形；v2在任意权不宣称任意预定态成功，不能对任意CSP hard image默认矩形。",
+        "review_basis": "本轮保留原完成收据的数学覆盖；该核心登记pin未变，并核对当前登记输入与相关旧边的端点/证据绑定。未宣称本轮重新读取该对象全部历史源文件。"
+      },
+      "UM-WEIGHTED-EXCESS-ZERO-DEFECT-TRAP-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "5f617a404a6af8e5eb6d8770ce9598654277434e5c20adcba03b5cca7393da54",
+        "comparison_scope": "m个真最优原子、合法永久删Z行与逐组最大核步、精确终态满列秩、D=0和全部固定后补全；对照fork与CONFIG保持。",
+        "reason": "每步在H上q−(m−1)/m=0，最大步1/m固定A/F；最终H行是m×m单位阵，B任务行与其依赖，不按N−J−P计负核维数。D=0仍全补全峰2−1/m；第一步立刻破大件基数约束。与fork坏的是给定LST槽输出并允许全矩阵修复不同，这里是指定历史永久删端，既非所有合法方向都坏，也非全过程CONFIG反例。",
+        "review_basis": "本轮保留原完成收据的数学覆盖；该核心登记pin未变，并核对当前登记输入与相关旧边的端点/证据绑定。未宣称本轮重新读取该对象全部历史源文件。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/held-cycle-and-ring-give-assigned-max.json",
+        "sha256": "71ae38d619ed119f84b6942d922649f2118ab6e4e84826273805546a337bb3fc"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/held-cycle-pays-safe-unlock-path.json",
+        "sha256": "1821e0a9575cb579a5fe30c614b1213650b715c049c0be4fdc753492c208c926"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/dag-transit-pays-fpt-root-tree.json",
+        "sha256": "e2c1a76c097817e4d8c819a178579c04ff960d0f8031dc16b69b2140276ab497"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/old-flow-trims-to-expanded-transit.json",
+        "sha256": "75b9e667f181414f758da2efcdd5db6c8e9b05024fd8d11a1d5f28f4917286bf"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/frozen-common-size-pays-quantum-eligibility.json",
+        "sha256": "aa63e7d476a6a1be26244f5a710b5758f3920df0976b0b0304f06c759672513b"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/quantum-threshold-pays-original-opt-promise.json",
+        "sha256": "91cef88cb6c11e789c2ab16ef8b20e24493f0d3835ea4067fa9d77bb8e66e51f"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/row-constant-specializes-to-common-size.json",
+        "sha256": "a5171e6a2c52686d11cf8e26a4e907e50ff8b4165e9aa1e57d317fd0a2da4f74"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/row-constant-recovers-shared-return-pool.json",
+        "sha256": "e6d5dfbcee58e239c40b4d6c70546179cbb02922484918aa72ed34c9c24fd544"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/fixed-hall-cut-pays-orientation-subproblem.json",
+        "sha256": "98825466c5deced4d7f29782eff80afd8f3af9ddd239cbb6339ed77e1842327a"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/clique-reduces-to-indexed-set-packing.json",
+        "sha256": "964745aa9e3e75038a559192e5983f63ea9306dab64a9c2ff8813e88474ff486"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/clique-reduces-to-node-cover.json",
+        "sha256": "09f57f59acb798f4bb73b1e8668009c05dc45a53c45a9db5fb034c817578468e"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/node-cover-reduces-to-set-covering.json",
+        "sha256": "3f379ed1c043215ad02ce80b778a967ae0daddddc9a4ad00140e95eb7f2df6d6"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/batch-lex-barrier-transfers-to-strict-sub2.json",
+        "sha256": "9c0fc964ee642c3c6c84b1ee42acd999252261361cf85a0af9fdddfa61c7c80a"
+      }
+    ],
+    "closed_overlaps": [],
+    "object_ids": [
+      "UM-ASSIGNED-MAX-TRANSIENT-PATH-SHARP-v1",
+      "UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1",
+      "UM-DAG-NONUNIT-PARAMETER-EXACT-v1",
+      "UM-DAG-TRANSIT-CONGESTION-v1",
+      "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1",
+      "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1",
+      "UM-FORK-MINCOST-ROUND-REPAIR-NO-v1",
+      "unrelated-machines/hall-joint-flow-and-opt-promise-original-independent-audits",
+      "unrelated-machines/conditional-leaf-hall-v3-independent-exact-review",
+      "unrelated-machines/private-demand-graft-no-amplification-composition-review",
+      "M-fd61b69b10c84faba4dd8ace6a473566",
+      "UM-TWO-STATE-QUOTA-HALL-CUT-v1",
+      "M-062d170b27bb407b9ca6b47b115e37c8",
+      "UM-STRICT-SUB2-BATCH-BARRIER-v1",
+      "M-a255a4b03dd848829cfb47bf206d6b1c",
+      "UM-SHARED-OUTSIDE-SMALL-QUERY-RETURN-POOL-EXACT-RELATION-v1",
+      "M-0f5677f8a2b14360a537da0bee40d3b9",
+      "UM-COMMON-MULTIPLIER-UNKNOWN-B-EXACT-v1",
+      "M-4107ba0f5b754856903434215f76fe3f",
+      "UM-LST2025-AFFINE-LINE-SOURCE-UNIFORM-COMPILATION-OBSTRUCTION-v1",
+      "UM-VW2010-THEOREM12-BACKEND-PRECHECK-v1",
+      "UM-TAGGED-AFFINE-LINE-WIDE-RECTANGLE-JOINT-ESCAPE-v2",
+      "UM-WEIGHTED-EXCESS-ZERO-DEFECT-TRAP-v1"
+    ],
+    "read_object_ids": [
+      "M-7499b4fd61604920822feedbce117033",
+      "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1",
+      "UM-PERMANENT-BUFFER-UNLOCK-PATH-v1",
+      "UM-DAG-CONGESTION-FLOW-v1",
+      "UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1",
+      "UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1",
+      "UM-BATCH-SUPPORT-REPAIR-NO-v1"
+    ],
+    "input_pins": {
+      "UM-ASSIGNED-MAX-TRANSIENT-PATH-SHARP-v1": "fcffa8bbf1390156b7f756d4058895467e9fc221988038ee99b802c850d3fd8b",
+      "UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1": "8ed1d2751ce657b09f7312679b26ef6306e2f0604f0024894fb935a7ceb1a897",
+      "UM-DAG-NONUNIT-PARAMETER-EXACT-v1": "7cb3ffbbf0029d150203e7a890ad71cd92dc815dd174c434b1bb91ac1e302de8",
+      "UM-DAG-TRANSIT-CONGESTION-v1": "5bf4f236585647a4f3f792ca2edadbf0068302b357e27ddbbe6505d1613e2dfd",
+      "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1": "4f66fab54e65d8812036d3482b47b83673664d71eaa80765218863da446ec187",
+      "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1": "7b24dcdbe3ea28d00d07a8027dc9954d3df12b91eae48ce1364e07bcd48a2d0a",
+      "UM-FORK-MINCOST-ROUND-REPAIR-NO-v1": "011b10d18d0a28915f7cf4d7bba6fdb8beab0d42a1f55e5ebf54a7dfc6a2834e",
+      "unrelated-machines/hall-joint-flow-and-opt-promise-original-independent-audits": "7839d6ea903c60f43c7787db851e3b5fe4a9465c18d85f859a7a6481d94ad6e7",
+      "unrelated-machines/conditional-leaf-hall-v3-independent-exact-review": "a68575aa6ba49b8c7792da677ab4848ca7d48980d28cfb30d561fad4e848c120",
+      "unrelated-machines/private-demand-graft-no-amplification-composition-review": "20cc0a39303574c01919b945925d89d1a43356bdc448bcd3142fcbf7f83ae29b",
+      "M-fd61b69b10c84faba4dd8ace6a473566": "3c77c9888ae9e535019128cae50a5651852caa35d006bcb409b0f1587d66f64e",
+      "UM-TWO-STATE-QUOTA-HALL-CUT-v1": "cabf8f30a9c7d5c2cae9655e2c5324133f81559ba2bcba2fcb78cfe0b7a240bc",
+      "M-062d170b27bb407b9ca6b47b115e37c8": "39d07dd73d5bb42268d4612d43d8e564b23824fa2bd052d68bbc02b3328bff12",
+      "UM-STRICT-SUB2-BATCH-BARRIER-v1": "15230851c55ef2294152e030d9823b3ba2ad0c46272177a8c17290a9c2591df1",
+      "M-a255a4b03dd848829cfb47bf206d6b1c": "540f3d9158bdf3e91b0ad3f77d1643c5dd7938950151a243dfb49b003e7b61ed",
+      "UM-SHARED-OUTSIDE-SMALL-QUERY-RETURN-POOL-EXACT-RELATION-v1": "8dda0f242267722f5006faa53486e9efaf80ddae885aeee1f7443c651adf45df",
+      "M-0f5677f8a2b14360a537da0bee40d3b9": "e84876a062d21b3aca21ebde7d1add4f88bc430c27cdca95b6eebe01450ff620",
+      "UM-COMMON-MULTIPLIER-UNKNOWN-B-EXACT-v1": "af8f97e7b24e74f7ba5954756bdce07b2edddbf1abe7db3d95b8b6936ebb8203",
+      "M-4107ba0f5b754856903434215f76fe3f": "3103db3de3d7343e6e3e873ca93e1040c35634b13d7d0559ebab3f5a24fc4ea9",
+      "UM-LST2025-AFFINE-LINE-SOURCE-UNIFORM-COMPILATION-OBSTRUCTION-v1": "636db9d50e9f93c50384e00059aa1b8b47f1a6e5584290e64162a0329a395426",
+      "UM-VW2010-THEOREM12-BACKEND-PRECHECK-v1": "16a2920abfebbaed76d2492aee350d1b801fcfe5eb40c65c9a4f33ddddb02584",
+      "UM-TAGGED-AFFINE-LINE-WIDE-RECTANGLE-JOINT-ESCAPE-v2": "089a1b11f837f7431ee25a4001ea85333846c8c32941e59676ca2e52fb9b7b2b",
+      "UM-WEIGHTED-EXCESS-ZERO-DEFECT-TRAP-v1": "5f617a404a6af8e5eb6d8770ce9598654277434e5c20adcba03b5cca7393da54",
+      "M-7499b4fd61604920822feedbce117033": "c40152efb4426bf3cd9dc724fb6554b728958c3727efca0fc839e6110e366c41",
+      "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1": "8c88acc631512166ee0042e884ccf9da2291145ead82c06a3fbc5cd66171b251",
+      "UM-PERMANENT-BUFFER-UNLOCK-PATH-v1": "6715357e78454b26ba33fc5cd8dc293c24db658ed771bc94fec20a358975627b",
+      "UM-DAG-CONGESTION-FLOW-v1": "4225f45cf4dc52e20ccb9518c005ea31c7087b31e81091336cf6224d986b31b9",
+      "UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1": "c6a4faf21ec8a27785151e3d79df3fa6bf518106be33f71db6a7139c66385236",
+      "UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1": "879ac79d8df789338c1de4f06570b371821d9a606c4016d84bf95a4ad85e0fe9",
+      "UM-BATCH-SUPPORT-REPAIR-NO-v1": "7935c8b95669e75aac17642f8e454925dc0de70557102d00e6fbd2ee9e4eeb55"
+    },
+    "follow_up_tasks": [],
+    "supersession": {
+      "unrelated-machines-3a-3a-5b0b7c469ae50024": {
+        "reason": "仅M-4107共享终端对象登记输入改版。该对象没有出现在13条旧边端点中；已定向复核v3完整公式，30个当前输入pin全部匹配，另外29个输入与旧收据一致。旧13边逐条保原SHA，23核心逐一处置，保留未受影响的既有数学。",
+        "assets": {
+          "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/held-cycle-and-ring-give-assigned-max.json": {
+            "disposition": "retained",
+            "reason": "完整ALL关系保持：实际最大件promise给eligible；坏环保留支付上界，k=1两支环支付promise类锐性；不把下界扩到槽输出。"
+          },
+          "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/held-cycle-pays-safe-unlock-path.json": {
+            "disposition": "retained",
+            "reason": "保留局部contribution：held假设支付旧可达成立时的安全路径，但不支付旧图可达性等价和两件计数；这些remaining不变。"
+          },
+          "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/dag-transit-pays-fpt-root-tree.json": {
+            "disposition": "retained",
+            "reason": "完整关系保持：K=1新证书与满比例树等价，免费补低点、高点枚举和ceil缩放给2^h poly(Bin)精确算法。"
+          },
+          "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/old-flow-trims-to-expanded-transit.json": {
+            "disposition": "retained",
+            "reason": "保留局部contribution：同W/K的旧流须先拓扑裁流才成新流；单边严格分离保留，未据此支付新对象其余算法结论。"
+          },
+          "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/frozen-common-size-pays-quantum-eligibility.json": {
+            "disposition": "retained",
+            "reason": "完整关系保持：2p>T与同宏数量迫全home各一宏，同p及全home资格允许无损冻结；逐件任意资格保留在整数满流中。"
+          },
+          "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/quantum-threshold-pays-original-opt-promise.json": {
+            "disposition": "retained",
+            "reason": "完整关系保持：全原调度峰<2p可无损冻结，首个通过离散候选恰原OPT；无通过仅认证OPT≥2p。"
+          },
+          "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/row-constant-specializes-to-common-size.json": {
+            "disposition": "retained",
+            "reason": "完整specializes方向保持：共同尺寸是行常数的特殊情形；零端、所有机器guard和冻结孤立机均保留。"
+          },
+          "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/row-constant-recovers-shared-return-pool.json": {
+            "disposition": "retained",
+            "reason": "完整固定pattern全谱关系保持：池满流和E冻结负载双向认证，实际C<2的同一分配按整数负载已峰1；未更换ρ。"
+          },
+          "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/fixed-hall-cut-pays-orientation-subproblem.json": {
+            "disposition": "retained",
+            "reason": "保留局部contribution：固定S、α的整数支付/显式Hall缺口有效，未升级成全局选方向、反向读树或所有方向失败结论。"
+          },
+          "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/clique-reduces-to-indexed-set-packing.json": {
+            "disposition": "retained",
+            "reason": "完整位多项式迁移保持：非边共享元素加private marker，索引k保持且见证双向；无近似gap或UM编译。"
+          },
+          "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/clique-reduces-to-node-cover.json": {
+            "disposition": "retained",
+            "reason": "完整位多项式迁移保持：补图和预算n-k，顶点集补运算见证双向；合法零预算及超界/非法串常量处置不变。"
+          },
+          "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/node-cover-reduces-to-set-covering.json": {
+            "disposition": "retained",
+            "reason": "完整位多项式迁移保持：incident边集及族并集宇宙，预算保持、见证双向；未混同exact cover。"
+          },
+          "map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/batch-lex-barrier-transfers-to-strict-sub2.json": {
+            "disposition": "retained",
+            "reason": "完整迁移保持：统一正缩放与每机固定padding保持任务身份；负载格使新峰<2等价原峰≤2，唯一全等2态是初态，首次出口k+1锐界保留。"
+          }
+        }
+      }
+    },
+    "prior_overlap_dispositions": {
+      "source_task": "unrelated-machines-3a-3a-5b0b7c469ae50024",
+      "source_receipt": {
+        "path": "map/receipts/unrelated-machines-3a-3a-5b0b7c469ae50024.json",
+        "sha256": "ad3a870185aa01ae8ce7c7b399a5f756d4fe90159fea4c0559ab0d8d54593ffc"
+      },
+      "reason": "旧任务有4个follow-up pair，原完成收据已逐对数学closed，本轮重核后继续closed。当前repair definition未携overlap_comparisons；为免closed_overlaps产生未知pair验证错误，在此保留逐对处置。当前definition没有未处置follow-up，也没有新发现并确认需要另发任务的比较。",
+      "closed_overlaps": [
+        {
+          "core_id": "UM-ASSIGNED-MAX-TRANSIENT-PATH-SHARP-v1",
+          "peer_id": "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1",
+          "reason": "ALL边已核k=1环族两支均落入实际最大件局部promise并给逐参数下界；实际槽输出域的下界未被主张，不需为同一局部锐性另开3B。"
+        },
+        {
+          "core_id": "UM-ASSIGNED-MAX-TRANSIENT-PATH-SHARP-v1",
+          "peer_id": "UM-PERMANENT-BUFFER-UNLOCK-PATH-v1",
+          "reason": "最大件只保证一件eligible，不保证G可达。旧失败例两机每侧一大件源1及四小件源1/4，初峰2、实际M=1满足promise，但唯一大件环目标3/5>1/2使G空；已由held推广覆盖。"
+        },
+        {
+          "core_id": "UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1",
+          "peer_id": "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1",
+          "reason": "k=1环族在held合同内。低支S_i+Q_i=C+(2T−C)=2T故h=0；高支S_i+Q_i=C+T而U=C+T/2给h=T/2≤C/2。上界可由held重得，锐下界在最大件ALL边支付；k>1的同步批结论不替代一般单件构造。"
+        },
+        {
+          "core_id": "UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1",
+          "peer_id": "UM-PERMANENT-BUFFER-UNLOCK-PATH-v1",
+          "reason": "专边已比较旧G可达强条件与held每源一件eligible；旧失败例严格区分，原函数图可达等价保留其独立意义。"
+        }
+      ]
+    },
+    "review_record": {
+      "reviewed_by": "Boss5",
+      "review_kind": "targeted-repair-with-unchanged-coverage-reuse",
+      "previous_receipt": {
+        "path": "map/receipts/unrelated-machines-3a-3a-5b0b7c469ae50024.json",
+        "sha256": "ad3a870185aa01ae8ce7c7b399a5f756d4fe90159fea4c0559ab0d8d54593ffc"
+      },
+      "changed_core_object_ids": [
+        "M-4107ba0f5b754856903434215f76fe3f"
+      ],
+      "unchanged_input_count": 29,
+      "current_pin_check": "30/30当前registration pin匹配；旧/新input pins的唯一变化为M-4107。13旧assets原字节SHA与18个直接edge evidence文件SHA均为current；无旧边使用改版端点。",
+      "reading_scope_note": "本包原context_plan估计超预算，按下列必要连续章节有序复核，另外明确复用原完成收据的未变pin数学；没有宣称本轮重新完整读取context_plan的57份文件或全部历史来源。未运行旧数学审计程序。",
+      "ordered_passes": [
+        {
+          "pass": 1,
+          "scope": "AGENTS.md、prompts/03-map-worker.md、IMPLEMENTATION的当前接口；原/新任务definition、原完整receipt、当前registry相关对象和全部30输入pin。",
+          "result": "恢复原23核心、7只读依赖、13旧边及4个原follow-up处置；确认唯一改版端点。"
+        },
+        {
+          "pass": 2,
+          "scope": "三维匹配与高维配额部分障碍双源审查、三维匹配需求地板与三主机选择器双源审查、私有需求组合无放大的审查合同与共享边界，三篇全文。",
+          "result": "定向支付共享池v3公式、正整数边界、私有/共享和typed有限证据分界；仍isolated-after-review。"
+        },
+        {
+          "pass": 3,
+          "scope": "全部13旧边完整JSON；永久缓冲/最大件/环、DAG、量子/行常数/返回池、Hall承重正文；Karp§1、§2、§3.2及严格次二/源lex变换。两项原独立audit review本轮全文对读。",
+          "result": "逐边复核有效；10条whole_result与3条contribution原范围不变。"
+        },
+        {
+          "pass": 4,
+          "scope": "其余未变核心的现行registry、旧coverage及输入一致性；原独立覆盖结果按未变pin复用。",
+          "result": "23核心收据齐全；无needs-decision，无需新增逻辑边或定向3B/3C任务。"
+        }
+      ]
+    }
   }
 }
