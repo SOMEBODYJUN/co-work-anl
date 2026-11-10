@@ -1,0 +1,50 @@
+{
+  "schema": 2,
+  "objects": [
+    {
+      "object_id": "weighted-congestion/heterogeneous-endpoint-integer-reduction",
+      "version": 2,
+      "title": "异权两列端点证书的同权整数化",
+      "kind": "reduction",
+      "truth_status": "proved",
+      "model": "有限成对对称两列星：一名权1玩家选整列{a0,…,aN}或{b0,…,bN}；轻玩家i的任意正实权wi允许大于1，行动为{a0,bi}或{b0,ai}。两主资源同费用p，第i对卫星同费用fi；均为次数至多d、非负实系数多项式，允许常数项及恒零卫星。成本为所选资源费用之和，真实偏离后的负载包含自己。",
+      "statement": "异权两列星若满足指定重/轻严格端点证书，可选一种实际轻权并向下取整人数，保次数得到γ>max(1,α−1/(α−1))的同权全状态反例；不覆盖全部异权非存在机制。",
+      "quantifiers": "对每个整数d≥0、有限N≥1、任意正实权wi、上述p及fi和同一实α>1，若H及全部Li严格成立，则存在一个实际输入索引i。令w=wi、f=fi、W=Σwi、n=W/w、m=floor(n)≥1、ρ=m/n，则保留p、复制f及w构造m名同权星，每个完整状态都有严格γ=1+ρ(α−1)>max{1,α−1/(α−1)}改善；n>(α−1)^2，0≤α−γ<1/(α−1)。",
+      "assumptions": [
+        "同一输入、同一α同时满足重端点H：p(1)+Σfi(1+wi)>α[p(1+W)+Σfi(1)]。",
+        "每个轻端点Li均满足：p(1+wi)+fi(wi)>α[p(W)+fi(1+wi)]。",
+        "两列及每对卫星严格按所述对应对称；d、N为有限整数，费用系数非负。"
+      ],
+      "scope": "指定H及全部Li充分证书的代数整数化，保持次数、选中的实际权及卫星，并对输出全部状态给严格改善；没有把该证书当作任意异权无α-PNE的必要条件。",
+      "objections": "n=W/wi是代数重数，实际输出人数为floor(n)。密度选择与核心凸性保严格端点，ρ=1分支也保严格余量；γ>1需由ρ>0单独保证。恒定核心不能满足Li，故d=0的前提域为空。实权/实系数整数化本身不自动有理化。向单项式源及锐渐近的推论需另列对应证明为共同前提，不在此独立归约中吞并；一般异权、非对称列或机制外无均衡范围未由本归约覆盖。",
+      "body": {
+        "path": "archives/weighted-congestion/state/归约/异权两列端点证书的同权整数化--归约.md",
+        "sha256": "64957afa7b236bc90b036ac3edf3ac5718ce77f7716541f87c8690cc6907aa4a",
+        "section": "异权两列端点证书的同权整数化"
+      },
+      "evidence": [],
+      "sources": [
+        "WC-R1-HET-ENDPOINT-REDUCTION v1",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/heterogeneous_endpoint/endpoint_reduction.md",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/heterogeneous_endpoint/review.md"
+      ],
+      "keywords": [
+        "0117",
+        "reduction"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/weighted-congestion/state/归约/异权两列端点证书的同权整数化--归约.md",
+      "sha256": "64957afa7b236bc90b036ac3edf3ac5718ce77f7716541f87c8690cc6907aa4a",
+      "disposition": "objects",
+      "object_ids": [
+        "weighted-congestion/heterogeneous-endpoint-integer-reduction",
+        "M-1c4e30d5f9404d9e966e43820fed2daf"
+      ],
+      "reason": "本候选以该冻结正文作为 weighted-congestion/heterogeneous-endpoint-integer-reduction 的候选主证据；现行 registry 未找到同 object_id；该源 frontmatter 提供候选稳定身份，但仍须 lead 与相邻对象逐项比较后正式分配/确认身份。 Also owns the separately registered reusable joint envelope theorem in its exact section."
+    }
+  ],
+  "edge_files": []
+}
