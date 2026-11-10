@@ -1,0 +1,147 @@
+{
+  "definition": {
+    "task_id": "boss2-cross-grouped-config-3c-395e59322b5bee40",
+    "stage": "3C",
+    "registry": "research/registry.json",
+    "object_ids": [
+      "EA-GROUPED-CONFIG-COVER-v1",
+      "EA-GROUPED-CONFIG-GLOBAL-GLUE-v1",
+      "EA-UNION-CONFIG-FEASIBILITY-NO-v1",
+      "UM-CAPACITY-ONE-PAIR-GAP-v1"
+    ],
+    "read_object_ids": [],
+    "input_pins": {
+      "EA-GROUPED-CONFIG-COVER-v1": "00aec8ef6dea78f2121444cb674940667b503b8a76ffa2581c1c1c679ca92a9d",
+      "EA-GROUPED-CONFIG-GLOBAL-GLUE-v1": "9528168f0798b583ac2c68786ebc20df4cf94368b57a9f73d262ab16aecd643f",
+      "EA-UNION-CONFIG-FEASIBILITY-NO-v1": "4b21f7848218fc881ac6aea1b7f6d402ac6d78ea51e257ab2bc7b58c347f54d7",
+      "UM-CAPACITY-ONE-PAIR-GAP-v1": "865b79ee1ee04e5760d32c0f4e8fa0e686c5d4b7bf3bafc6a5121133ab30d2dd"
+    },
+    "write_paths": [
+      "map/edges/boss2-cross-grouped-config-3c-395e59322b5bee40",
+      "map/receipts/boss2-cross-grouped-config-3c-395e59322b5bee40.json"
+    ],
+    "goal": "保留每台原机器及真实任务身份，比较给定GPC₂两两配置耦合的全机联合延拓与实际阈值调度。由逐任务期望覆盖一和同时两两不交推出几乎处处全覆盖，再通过分组等价解码；真调度反向给Dirac全机分布。容量一星族给局部证书不可粘，另比较无色目录的机器身份丢失。",
+    "context_plan": {
+      "budget": {
+        "context_tokens": 500000,
+        "window_source": "official-default",
+        "model": "gpt-6.1-sol",
+        "used_tokens": null,
+        "history_mode": "fresh-worker",
+        "reserve_tokens": 200000,
+        "reading_tokens": 300000,
+        "output_tokens": 100000,
+        "runtime_remaining_tokens": null,
+        "declared_remaining_before_reserve_tokens": null,
+        "assumptions": [
+          "Window source is declared, not discovered from this conversation.",
+          "Reading budget includes source text and object/task metadata.",
+          "Reserved context includes expected generated records and later reasoning/tool growth.",
+          "Fresh worker assumed; actual system/prefix usage is unknown and covered only by the engineering reserve."
+        ],
+        "budget_is_runtime_measurement": false
+      },
+      "reading": {
+        "chars": 37990,
+        "utf8_bytes": 71281,
+        "source_tokens": 55407,
+        "metadata_tokens": 9113,
+        "estimated_tokens": 64648,
+        "metadata_chars": 8879,
+        "metadata_utf8_bytes": 13212,
+        "distinct_files": 8,
+        "reading_segments": 8,
+        "token_count_is_estimate": true,
+        "estimators": [
+          "conservative-math-text-estimate-v1; not a tokenizer count"
+        ],
+        "unmeasured_refs": [],
+        "measurement_scope": "Requested complete text spans plus supplied metadata; binary evidence is not token-counted from raw bytes.",
+        "task_overhead_tokens": 128
+      },
+      "estimated_output_tokens": 10705,
+      "oversized": false,
+      "requires_export": false,
+      "reading_refs": [
+        {
+          "path": "archives/customer-attraction/state/等价/分组配置全覆盖与无色共同目录的精确边界--等价.md",
+          "sha256": "6b6aaf4dcc6e2294270d445a30b034683dbb772fcac599448c84d061c7e18c4e",
+          "section": "1. 保机器分组的正向等价"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/客户吸引与不相关机的归约边界及原文献核对--审查.md",
+          "sha256": "8f576cc4b4e784bba0f4509b646952ee180ee9e2c823988880f52d17f1c73413"
+        },
+        {
+          "path": "archives/customer-attraction/state/等价/保机器分组的全机配置耦合--等价.md",
+          "sha256": "25a08161c926f9d4506fda0937a58b44c7840f353af26270aa889f2ff8ee9850"
+        },
+        {
+          "path": "archives/customer-attraction/state/等价/分组配置全覆盖与无色共同目录的精确边界--等价.md",
+          "sha256": "6b6aaf4dcc6e2294270d445a30b034683dbb772fcac599448c84d061c7e18c4e",
+          "section": "2. 合并共同目录的任意规模真实SPE障碍"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/容量一星族的全机器对原入口与符号耦合--资源.md",
+          "sha256": "86c2726661ae90b6226739a1292e3a637c3059683ba9e0215b4e4a5702723d79"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/极小超载星容量耦合与最小工作面支撑障碍有限审查--审查.md",
+          "sha256": "f55a0693a25a149bec2dc4c610e23f00e5b5412cbfefcc21b285e73be6f5e13e",
+          "section": "3.1 紧凑容量一星族"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/极小超载星容量耦合与最小工作面支撑障碍有限审查--审查.md",
+          "sha256": "f55a0693a25a149bec2dc4c610e23f00e5b5412cbfefcc21b285e73be6f5e13e",
+          "section": "3.2 GPC₂ 配置合同及两机耦合"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/极小星收缩与配置耦合有限审查--审查.md",
+          "sha256": "bfad798f54df11b5dcdc56d6504fa8978b55c153f3be9e6029765916687f91e5",
+          "section": "2. 容量一星的 pair 耦合证书"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/极小超载星容量差共享资源与拟阵外包冻结审查--审查.md",
+          "sha256": "77f88cbd3adf5bafac2923dd5ad59d39b412554ebf2de0bb62b3d2bd0289b8fc",
+          "section": "3. 紧凑共享资源族与 GPC2"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/成束局部相容性与极小星消元的身份边界--资源.md",
+          "sha256": "f0d0c03bf99a4979d8dbee110602efa18b5116f6884adfb5b419bcc338b250d8",
+          "section": "极小超载星：已成立的精确单任务压缩"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/极小星收缩与配置耦合有限审查--审查.md",
+          "sha256": "bfad798f54df11b5dcdc56d6504fa8978b55c153f3be9e6029765916687f91e5"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/极小超载星容量差共享资源与拟阵外包冻结审查--审查.md",
+          "sha256": "77f88cbd3adf5bafac2923dd5ad59d39b412554ebf2de0bb62b3d2bd0289b8fc"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/极小超载星容量耦合与最小工作面支撑障碍有限审查--审查.md",
+          "sha256": "f55a0693a25a149bec2dc4c610e23f00e5b5412cbfefcc21b285e73be6f5e13e"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/成束局部相容性与极小星消元的身份边界--资源.md",
+          "sha256": "f0d0c03bf99a4979d8dbee110602efa18b5116f6884adfb5b419bcc338b250d8"
+        }
+      ],
+      "deferred_candidate_ids": [],
+      "deferred_candidate_issues": {},
+      "comparison_priority": 0,
+      "family_hint": "EA-GROUPED-CONFIG-COVER-v1",
+      "scope_hint": ".",
+      "status": "complete-declared-references-planned",
+      "note": "Compare the stated mathematical question on all selected endpoints; if large, resume the same question in reading passes.",
+      "comparison_question": "保留每台原机器及真实任务身份，比较给定GPC₂两两配置耦合的全机联合延拓与实际阈值调度。由逐任务期望覆盖一和同时两两不交推出几乎处处全覆盖，再通过分组等价解码；真调度反向给Dirac全机分布。容量一星族给局部证书不可粘，另比较无色目录的机器身份丢失。"
+    }
+  },
+  "state": "claimed",
+  "owner": "Boss2",
+  "request_id": "f7d1eabdcc514fdfab1e943914dfd508",
+  "requests": {
+    "3dcbab14c8134b05af02cf7d441f608b": "plan",
+    "f7d1eabdcc514fdfab1e943914dfd508": "claim"
+  }
+}
