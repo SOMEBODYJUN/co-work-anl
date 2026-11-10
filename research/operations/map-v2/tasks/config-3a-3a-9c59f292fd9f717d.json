@@ -157,18 +157,63 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss2",
   "compacted_from": [
     "config-3a-3a-a3384dcc1396c8d0",
     "config-3a-3a-e4634a626e954870",
     "config-3a-3a-fee5bd89c6da14dd"
   ],
-  "request_id": "d1118c1bb48e4152b117dd5d6ef2b995",
+  "request_id": "05f73534baef43f59fc6198c23a6a344",
   "requests": {
     "0dbd830b8fb4950a86710f9e5ef3977f": "compact",
     "fc370afd19f6484eb7d0533aa40a430f": "claim",
     "41ec0703c3ba4dca96e341bd39a0b1c9": "read-add",
-    "d1118c1bb48e4152b117dd5d6ef2b995": "read-add"
+    "d1118c1bb48e4152b117dd5d6ef2b995": "read-add",
+    "05f73534baef43f59fc6198c23a6a344": "done"
+  },
+  "edge_paths": {
+    "config-floor-gap-motivates-corrected-equal-cost-contract": "map/edges/config-3a-3a-9c59f292fd9f717d/floor-gap-motivates-corrected-equal-cost-contract.json",
+    "config-layer-cake-and-downclosed-decoding-pay-hard-budget-rounding": "map/edges/config-3a-3a-9c59f292fd9f717d/layer-cake-and-downclosed-decoding-pay-hard-budget-rounding.json",
+    "config-pricing-local-tu-implements-pricing-component": "map/edges/config-pricing-3b-3b-4391acfe26dc7dbd/local-tu-implements-pricing-component.json"
+  },
+  "receipt": {
+    "coverage": {
+      "M-d05829d1479f4b8aad94f3953ab9ffc4": {
+        "state": "linked",
+        "object_pin": "23bb2ddcdcb76320fa48b9c4a1ff525b126121d0cdc06b55232dd73098e7ca09",
+        "comparison_scope": "实读一般成本算法全文及跨档独立复核、最高利润覆盖整数等价、初始layer-cake引理，与等成本截断算法/两bin障碍逐项比较。",
+        "reason": "layer-cake与下闭覆盖性质共同经保bin/保成本交换、可负担singleton及精确位长论证推出完整给定支持半损失合同；无需求隐式LP。",
+        "edge_ids": [
+          "config-layer-cake-and-downclosed-decoding-pay-hard-budget-rounding"
+        ]
+      },
+      "M-ada741cd5e634934805d83850dd7cd1f": {
+        "state": "isolated-after-review",
+        "object_pin": "a5b3e151e5f809e6ad470c957e0aeef24c8e7975c1a48a3a3487f4c0e72be19b",
+        "comparison_scope": "实读consecutive-ones局部oracle全文，和显式支持算法及完整配置整数等价比较；复用现行local-tu-implements-pricing-component语境边。",
+        "reason": "交替选行符号给TU，floor容量不改变0/1可行集，故精确局部模权pricing成立。但本包三核心之间不产生新的逻辑支持：该oracle不提供给定x，半损失算法也不依赖TU。后续完整隐式LP/连续轨迹已有独立canonical包，不在此重造或以局部oracle省略桥。"
+      },
+      "M-9ad0ca02d7d64d6ab7fe93bb91812073": {
+        "state": "isolated-after-review",
+        "object_pin": "42d5bd1a493a0fae47d0095b466a77346856e6be192872adff683b62f34bb16c",
+        "comparison_scope": "实读两bin精确反例及修复合同全文，同一般成本半损失、等成本修复算法比较。",
+        "reason": "B=199/100、x_1=x_2=199/200给原L=G=199/100而整数最优一；对任意逐次硬预算可行分布，期望同样至多一。它否定的是已纠错旧强合同，现役M81含floor，M-d仅半值，均不被反驳。保motivates语境边追到准确修复条件；不另造被否节点、不把gap趋二推广为全局上界。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/config-3a-3a-9c59f292fd9f717d/floor-gap-motivates-corrected-equal-cost-contract.json",
+        "sha256": "e05710499ae2efbec8c44b6ff47b5c367c7d6024d9b0ea4a1a714e8d1a58b6a5"
+      },
+      {
+        "path": "map/edges/config-3a-3a-9c59f292fd9f717d/layer-cake-and-downclosed-decoding-pay-hard-budget-rounding.json",
+        "sha256": "858a90d335f1ccf42a28d792c2be4b105988980bf586f3c21015807e5101efac"
+      },
+      {
+        "path": "map/edges/config-pricing-3b-3b-4391acfe26dc7dbd/local-tu-implements-pricing-component.json",
+        "sha256": "5502e9cef3ffcb2524377e201d4aa6384c721e78048bb95f82f954a52721b388"
+      }
+    ]
   }
 }
