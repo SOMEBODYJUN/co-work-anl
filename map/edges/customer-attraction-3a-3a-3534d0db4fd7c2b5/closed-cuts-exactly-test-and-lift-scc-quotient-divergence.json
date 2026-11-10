@@ -1,0 +1,52 @@
+{
+  "edge_id": "closed-cuts-exactly-test-and-lift-scc-quotient-divergence",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/real-payoff-graph-closed-set-divergence-and-forest-certificate"
+  ],
+  "target_ids": [
+    "customer-attraction/real-payoff-comparison-SCC-quotient-and-nonnegative-flow-compilation"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一σ的收益比较图及其SCC凝聚DAG；对抽象顶点散度b定义商散度β_C=Σ_(v∈C)b_v；闭集一律指无出边，所有散度取入减出。客户余项r保持原值。",
+  "roles": {
+    "customer-attraction/real-payoff-graph-closed-set-divergence-and-forest-certificate": "给任意有限有向图的非负流散度充要条件，以及对每份已有流保同一散度的森林化。",
+    "customer-attraction/real-payoff-comparison-SCC-quotient-and-nonnegative-flow-compilation": "商证书中的x_CD必须是真正非负商流；内部有符号项需由原真实路径支付。"
+  },
+  "explanation": "原图无出边闭集与商DAG无出边闭集一一对应：闭集是SCC的并，商闭集的原像亦闭。因此源定理对原图b的所有闭集条件等同于对β的所有商闭集条件（含总和0），又等同于存在商非负流x实现β；不能只保Σβ=0。构造性提升时，每条商弧选一个原跨SCC见证边，把x放上去得到λ0。残差b−∂λ0在每个SCC内总和0；从负残差点向正残差点沿SCC内部路径输送，得非负内部流，精确补齐b。这同时解释目标中的signed内部项为何可由非负真实路径承载。对所得任何原证书再用源定理消无向环，保b、d、r并使不同原行数≤V−1；森林化保持b，但不承诺保原商流x或原内部路径分解。",
+  "scope": "固定图的商散度可行性及编译后稀疏化接口；抽象顶点散度的条件不要求收益型映射L单射，不排除跨SCC映射零流。",
+  "contribution": {
+    "result": "商证书中的非负x可行性等价于β总和0和每个无出边商闭集β(U)≥0；任意满足这些条件的原顶点散度b可从商流加SCC内部真实路径精确实现，已有原证书可再压至≤V−1行而保同一b、d、r。",
+    "remaining": "目标整条结果还须其收益端点注入、路径望远镜的H+商收益差锥等式、SPE等价和传递约简证明；本边只支付商流可达性/提升及已有证书支持压缩，不证明任意福利目标有证书。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/真实收益图的闭集散度判别与森林证书--定理.md",
+      "sha256": "c50c264079cd62a0ced0927f0070ee00be0e4d1ddebb0c28d2a585dc8610d3c4",
+      "section": "无出边闭集恰刻画非负流散度"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/真实收益图的闭集散度判别与森林证书--定理.md",
+      "sha256": "c50c264079cd62a0ced0927f0070ee00be0e4d1ddebb0c28d2a585dc8610d3c4",
+      "section": "消无向环而保持散度、目标及余项"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/真实收益比较图的强连通商与非负流编译--定理.md",
+      "sha256": "3ce9defea8b9c8508eed7fcc973f0acfbd32111ab58c80b94d5efe026e4d4900",
+      "section": "half线性证书的流形式及未付义务"
+    }
+  ],
+  "reviewed_by": "Boss6 / customer-attraction-3a-3a-3534d0db4fd7c2b5",
+  "review_note": "完整实读本任务16件正文/证据（17条阅读引用），核全类型坐标、偏离→规定与入减出符号、真实完整历史续局及本边实际局部结论；一般解析证明与原有限Fraction报告分开。未运行原审计/LP/搜索，不把精确固定实例或表示等价提升为普遍half。",
+  "endpoint_pins": {
+    "customer-attraction/real-payoff-comparison-SCC-quotient-and-nonnegative-flow-compilation": "8dd4e2d61274209aeb10dea8096420574f68e93915837769264d459f0cea54e0",
+    "customer-attraction/real-payoff-graph-closed-set-divergence-and-forest-certificate": "5512838cf70d97d76afd686603867afb8e37eae7a2af5a185a44e3b54e257db6"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/真实收益图的闭集散度判别与森林证书--定理.md": "c50c264079cd62a0ced0927f0070ee00be0e4d1ddebb0c28d2a585dc8610d3c4",
+    "archives/customer-attraction/state/定理/真实收益比较图的强连通商与非负流编译--定理.md": "3ce9defea8b9c8508eed7fcc973f0acfbd32111ab58c80b94d5efe026e4d4900"
+  },
+  "review_digest": "b31a69aa2f252b0516941ad0cc1f9aa7e94941f116072843ee2be84d8a0d490c"
+}

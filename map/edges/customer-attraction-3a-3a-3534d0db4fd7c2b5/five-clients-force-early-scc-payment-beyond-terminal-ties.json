@@ -1,0 +1,47 @@
+{
+  "edge_id": "five-clients-force-early-scc-payment-beyond-terminal-ties",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/real-payoff-comparison-SCC-quotient-and-nonnegative-flow-compilation"
+  ],
+  "target_ids": [
+    "M-fa3fa34c91c94ce1bddfd1cac40b3acb"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "仅指四人、A/B/C不交客户数2/2/1及正文指定完整40节点策略；H_terminal是该对象所定义的末端同计数平局空间，H_SCC用全部有序历史真实比较图。",
+  "roles": {
+    "customer-attraction/real-payoff-comparison-SCC-quotient-and-nonnegative-flow-compilation": "提供同一SCC中两向真实路径可支付正反收益差的普遍结论。",
+    "M-fa3fa34c91c94ce1bddfd1cac40b3acb": "独立给出五客户完整40节点SPE、两条互反早期边和末端统一回复，以实例化空间严格分离。"
+  },
+  "explanation": "独立有限数据是目标页指定完整40节点策略：末位最佳回复以C/A/B固定优先，故同计数末历史给同一回复，H_terminal=0；AB与BA两个倒二节点的A/B/C真实自身利润都为1，特殊指定A/B均最佳，其余节点逆向取最佳，因此完整策略为SPE。在此已给策略中，AB改B与BA改A的真实行分别为g=F(A,(2,1,1))−F(B,(1,2,1))及−g，且抽象收益端点正好互反，构成有向二环。把源定理的SCC双向路径付款专门化到该两顶点分量，得到span(g)⊆H_SCC。按(A,B,AB,C,AC,BC,ABC)，g=(1/2,−1/2,0,0,1/3,−1/3,0)≠0，结合已给H_terminal=0即得H_SCC严格扩大末端平局空间。实际ABAC、W=OPT4=5来自独立策略计算，不参与该空间推导。",
+  "scope": "固定五客户完整构造的空间分离步骤；源定理在任意σ上成立，本边只将它实例化到这份已给σ。H_terminal沿用正文末端同计数平局定义，不声称根终局排除所有计数策略。",
+  "contribution": {
+    "result": "在已给完整五客户SPE与两条互反早期边上，由SCC两向路径付款推出非零g和−g所属的span(g)⊆H_SCC，联合固定末端规则H_terminal=0，得到H_SCC严格包含H_terminal。",
+    "remaining": "目标整条构造仍需独立定义全部40动作并验证每个真实节点最佳、实际路径ABAC及利润(1,2,1,1)、W=OPT4=5；这些来自有限策略规则和目标页数据，不能由一般SCC定理单独推出。该步骤也不判此例完整linK是否大于H_SCC。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/真实收益图的闭集散度判别与森林证书--定理.md",
+      "sha256": "c50c264079cd62a0ced0927f0070ee00be0e4d1ddebb0c28d2a585dc8610d3c4",
+      "section": "五客户完整策略严格扩大末端平局空间"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/真实收益比较图的强连通商与非负流编译--定理.md",
+      "sha256": "3ce9defea8b9c8508eed7fcc973f0acfbd32111ab58c80b94d5efe026e4d4900",
+      "section": "强连通分量内可任意符号支付"
+    }
+  ],
+  "reviewed_by": "Boss6 / customer-attraction-3a-3a-3534d0db4fd7c2b5",
+  "review_note": "完整实读本任务16件正文/证据（17条阅读引用），核全类型坐标、偏离→规定与入减出符号、真实完整历史续局及本边实际局部结论；一般解析证明与原有限Fraction报告分开。未运行原审计/LP/搜索，不把精确固定实例或表示等价提升为普遍half。",
+  "endpoint_pins": {
+    "M-fa3fa34c91c94ce1bddfd1cac40b3acb": "b7b95d704379a24d02ac21989f190bd07c4d28b75e4b671606c2bdc4e20c1cbe",
+    "customer-attraction/real-payoff-comparison-SCC-quotient-and-nonnegative-flow-compilation": "8dd4e2d61274209aeb10dea8096420574f68e93915837769264d459f0cea54e0"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/真实收益图的闭集散度判别与森林证书--定理.md": "c50c264079cd62a0ced0927f0070ee00be0e4d1ddebb0c28d2a585dc8610d3c4",
+    "archives/customer-attraction/state/定理/真实收益比较图的强连通商与非负流编译--定理.md": "3ce9defea8b9c8508eed7fcc973f0acfbd32111ab58c80b94d5efe026e4d4900"
+  },
+  "review_digest": "214c42bd245b3cb46b8c4aaa94148ec15572a8cfd96183abce5f84ef1e57a19e"
+}

@@ -1,0 +1,52 @@
+{
+  "edge_id": "scc-two-way-paths-embed-as-ordinary-mapped-zero-flows",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/real-payoff-comparison-SCC-quotient-and-nonnegative-flow-compilation"
+  ],
+  "target_ids": [
+    "customer-attraction/payoff-type-map-kernel-and-full-real-row-cone-lineality"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一固定完整σ及全部形式类型；A=L∂，边从偏离到规定；K只含真实比较行，未加客户正交锥。保留或删除self零环均不影响下面的像空间结论。",
+  "roles": {
+    "customer-attraction/real-payoff-comparison-SCC-quotient-and-nonnegative-flow-compilation": "每个SCC中的两向真实路径给正反收益差的非负付款；凝聚图无有向环。",
+    "customer-attraction/payoff-type-map-kernel-and-full-real-row-cone-lineality": "普通图环流是映射零流的子类，SCC像只是完整lineality的已知下界。"
+  },
+  "explanation": "源定理对同SCC任意u,v给两向路径，故±(F_v−F_u)∈K并得到H_SCC⊆linK。对任意SCC内部边e，取e再接一条从head返回tail的真实有向路径，得到t≥0、t_e>0、∂t=0，从而At=L∂t=0，说明该边属于目标I_*。反过来，若非负普通图环流t在一条跨SCC边上为正，则对凝聚DAG取沿每弧严格增加的拓扑势，势与∂t的点积严格为正，矛盾；普通环流只能支持SCC内部边。因此普通图零流所支持行的span恰为H_SCC；放宽到∂t∈kerL才可能增加方向，不能由DAG无环排除此增加。",
+  "scope": "目标完整双向空间刻画中的已付子类与严格边界；不把收益顶点F的集合单射误作其线性扩张L单射。",
+  "contribution": {
+    "result": "所有普通非负图环流都是非负映射零流，且它们可支持的收益行恰张成H_SCC⊆linK；跨SCC可逆方向必须利用非零∂t∈kerL。",
+    "remaining": "目标的Boolean空间秩D、顶点系数核维V−D、I_*刻画整个linK的反向证明、有理全支持见证及零slack秩上界尚需其独立线性/锥证明。本边不推导H_SCC总是真包含或总等于linK。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/真实收益比较图的强连通商与非负流编译--定理.md",
+      "sha256": "3ce9defea8b9c8508eed7fcc973f0acfbd32111ab58c80b94d5efe026e4d4900",
+      "section": "强连通分量内可任意符号支付"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/真实收益比较图的强连通商与非负流编译--定理.md",
+      "sha256": "3ce9defea8b9c8508eed7fcc973f0acfbd32111ab58c80b94d5efe026e4d4900",
+      "section": "精确商DAG及传递边删除"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/收益型映射核与真实行锥的完整双向空间--引理.md",
+      "sha256": "5760552f73c12f223ab0ba0da3a56ff495272a9ff261d1348bf337a47b982631",
+      "section": "非负映射零流恰刻画完整双向空间"
+    }
+  ],
+  "reviewed_by": "Boss6 / customer-attraction-3a-3a-3534d0db4fd7c2b5",
+  "review_note": "完整实读本任务16件正文/证据（17条阅读引用），核全类型坐标、偏离→规定与入减出符号、真实完整历史续局及本边实际局部结论；一般解析证明与原有限Fraction报告分开。未运行原审计/LP/搜索，不把精确固定实例或表示等价提升为普遍half。",
+  "endpoint_pins": {
+    "customer-attraction/payoff-type-map-kernel-and-full-real-row-cone-lineality": "4a1dbc63d5fa7b1d11fb5c4f08e17e6c7254e01b018a9ad98523515604f17721",
+    "customer-attraction/real-payoff-comparison-SCC-quotient-and-nonnegative-flow-compilation": "8dd4e2d61274209aeb10dea8096420574f68e93915837769264d459f0cea54e0"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/真实收益比较图的强连通商与非负流编译--定理.md": "3ce9defea8b9c8508eed7fcc973f0acfbd32111ab58c80b94d5efe026e4d4900",
+    "archives/customer-attraction/state/引理/收益型映射核与真实行锥的完整双向空间--引理.md": "5760552f73c12f223ab0ba0da3a56ff495272a9ff261d1348bf337a47b982631"
+  },
+  "review_digest": "1fa8bd52812f3a0ce4ac7efb2b1479777043b98df84061ff0924568e34f2d592"
+}
