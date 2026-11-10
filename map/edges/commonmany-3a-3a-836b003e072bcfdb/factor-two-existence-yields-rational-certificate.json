@@ -17,7 +17,7 @@
     "MF-MODEL": "给合法纯和站内均匀表示、客户条件成本及设施收益；固定编号的有限严格纯改善为所有未列布局给纯精确 NE。",
     "M-897ec3f17ea34dd6a96c4b26fd205fe7": "输出有限精确生成、短显式档案、显式档案的位多项式检查和确定的默认续局规则。"
   },
-  "explanation": "在固定总序中枚举 S^k 及每布局的合法在轨站点分配，按模型检查在轨精确 NE。对每个 f 及 r≠s_f，在 s[f←r] 中枚举合法纯分配，接受第一个同时通过客户 NE 和偏离收益 L_f'≤2L_f 的分配；若某偏离无通过者则弃此在轨候选。SC-K-2-E 保证至少一个候选的全部枚举均成功，因此是有限的精确生成法，且不要求在轨候选是特定势或字典序最优者。不同实际偏离改变不同标签坐标或同坐标的不同目标，档案键恰 k(m−1) 个且互异；在轨和这些布局之外用 MF-MODEL 的固定编号纯改善规则。概率矩阵至多 nk 项，每项 0 或 1/q（q≤k），每偏离每客户至多一个设施标签或未覆盖标记，规则描述固定，故档案长度为 O(nk log(k+1)+nk(m−1)log(k+1)) 加布局、键与索引的多项式开销。取输入分母乘积 D，D 的位长至多各输入分母位长之和；本类档案每一设施概率列有同一个站重数 q，负载及含自重的客户条件成本分母可取 Dq（纯列取 D）。以精确有理算术检查覆盖与概率行、所有原可达设施比较、完整偏离键集和每条两倍不等式。默认规则在每个布局的正确性由平方负载势严格下降给出。",
+  "explanation": "在固定总序中枚举有限个带标签布局 s 和合法在轨站点分配。把每名已覆盖客户在指定站的全部 q 家设施上设为 1/q，其余概率为零，检查全部原设施动作上的精确客户 NE。对每个 f 及 r≠s_f，在 s[f←r] 中枚举合法纯分配，取首个通过客户 NE 及 L_f′≤2L_f 的分配。若有实际偏离无通过者就继续下一个在轨候选。SC-K-2-E 保证至少一个候选通过所有检查。主稿使用全局词典序最大候选、四类搬迁预算、装箱及受帽纯改善取得同类见证。修正后的受帽前提只约束偏离布局中仍被服务的重原子，未覆盖者无动作也不进入任何负载。不同实际偏离的带标签布局键恰 k(m−1) 个且互异，其余布局使用 MF-MODEL 的固定编号纯改善默认规则。概率矩阵至多 nk 项，每项为 0 或 1/q，q≤k。每条实际偏离记录每客户至多一个设施标签或未覆盖标记。档案位长为 O(nk log(k+1)+nk(m−1)log(k+1)) 加布局、键和索引的多项式开销。核验时先检查在轨每名已覆盖客户恰指定一个可达站并在该站全标签均匀，未覆盖者概率全零。令 D 为输入权分母的乘积。各设施列的概率正项有同一个分母 q，故该列的期望负载及含自重的条件成本可用分母 Dq，纯列取 D。D、整数化权之和和 q 的位长均由显式输入位长多项式控制，逐行核合法动作及全部条件成本，逐偏离核纯合法性、精确 NE、收益不等式及键的完整性。默认程序的逐布局精确性由平方负载势严格下降统一证明。",
   "scope": "正有理显式编码的全目标。m=1 时实际偏离档案为空，零覆盖时允许零负载且直接检验乘法不等式。位多项式针对档案长度和显式档案检查；生成和默认求值仅保证有限。以单个二进制整数隐式指定大量未列地点或设施标签时，k(m−1) 条显示档案未必仍为输入位长的多项式。",
   "evidence": [
     {
@@ -54,21 +54,26 @@
       "path": "archives/facility-games/state/证明/精确续局证书的条件成本与默认规则--证明.md",
       "sha256": "0ea2c580e10c02f0b45cbdc7628ee03579c431dc38d15728a2c8d4264ac5ef99",
       "section": "10.6 独立检查器认证到哪一步"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/papers/factor-two-current/main.tex",
+      "sha256": "9b26b18d49ff8a95e01d48df7015e1e24e8969214810385a41a00c073277064e"
     }
   ],
-  "reviewed_by": "Boss1-common-many-certificate-counterexamples-worker",
-  "review_note": "对照主稿 prop:certificate、定理中的纯离轨输出和显式档案检查条件。直接枚举合法有限表示即可从存在性提取短证书；主稿实现的 lexmax、原子装箱和受帽改善是另一个具体生成方式。",
+  "reviewed_by": "Boss1-facility-depth-overflow-round29-worker",
+  "review_note": "核当前主稿 prop:certificate 与 lem:capped 的实际改动。受帽条件限于偏离后被覆盖者，主稿证书命题的量词、表示和有限搜索保证保持一致。显式核验先锁定站内均匀档案合同，再用每设施列 Dq 的精确比较，默认规则无需逐布局展开。",
   "whole_result": "SC-K-2-E 的纯离轨与站内均匀在轨存在性，联合 MF-MODEL 的精确成本和确定默认规则，推出每个显式正有理输入都有位多项式长且显式档案可位多项式核验的完整因子二证书，并有有限精确生成过程。",
   "endpoint_pins": {
-    "M-897ec3f17ea34dd6a96c4b26fd205fe7": "6cfdbcb5049ba768af47bed3b1c6ba82ca8bb1c0b2d65d57bc4cfdc0972b3e37",
+    "M-897ec3f17ea34dd6a96c4b26fd205fe7": "508ed39fe75fcddebcac36cb0191e18cf0b1f81169e28b302800467dd427a962",
     "MF-MODEL": "1ca8c08397c3ec2c0a05b8eecb18e5e1de2b3e863c5f73f8c6eaf6b6fdf05bec",
-    "SC-K-2-E": "c345b8c200578a44af61428a9f884e66590756578c6dd85c96faf49e60fbd0cd"
+    "SC-K-2-E": "8db52cb038b9beaa2a8f11048d1349bf5c1bc580a1068742272964f8789a8535"
   },
   "evidence_pins": {
     "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3",
     "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12",
     "archives/facility-games/subarchives/common-many/state/审查/有理证书命题的独立审查与有限程序边界--审查.md": "9fbe8a22a7f89c3760d05775db0c2bafe59d94f3764ec1fb1f4265a07624cfc8",
-    "archives/facility-games/state/证明/精确续局证书的条件成本与默认规则--证明.md": "0ea2c580e10c02f0b45cbdc7628ee03579c431dc38d15728a2c8d4264ac5ef99"
+    "archives/facility-games/state/证明/精确续局证书的条件成本与默认规则--证明.md": "0ea2c580e10c02f0b45cbdc7628ee03579c431dc38d15728a2c8d4264ac5ef99",
+    "archives/facility-games/subarchives/common-many/papers/factor-two-current/main.tex": "9b26b18d49ff8a95e01d48df7015e1e24e8969214810385a41a00c073277064e"
   },
-  "review_digest": "659ffc32403abb6760d37995e6f444af79a3752e57a4092455eee030dfdc3300"
+  "review_digest": "a141aeb5f23d0278f8c7a68fd8e85efbc36912a2c2e5327089a4e1c7eed62f7f"
 }
