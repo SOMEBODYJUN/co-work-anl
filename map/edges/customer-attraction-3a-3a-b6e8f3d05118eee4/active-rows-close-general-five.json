@@ -1,0 +1,79 @@
+{
+  "edge_id": "cag-b6e8f3d0-active-rows-close-general-five",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/five-provider-active-row-semantics"
+  ],
+  "target_ids": [
+    "CA-FIVE-HALF-EXACT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、有限非空共同标签目录、单位提供者依次选一次；固定每份完整有序历史纯SPE，允许重复、空覆盖、同覆盖异标签及任意平局。根背景为空且恰五人。",
+  "roles": {
+    "customer-attraction/five-provider-active-row-semantics": "同一σ与同一个最大K下给主证书53条非负行，含保一份交叠PAIR和修补行。",
+    "CA-FIVE-HALF-EXACT-v1": "用冻结权、完整客户余项、K余项求和得到任意目录的五人根定理。"
+  },
+  "explanation": "固定任意完整σ和达到O=OPT₅的五槽元组。35条真节点行包含实际末位报价、S/V/Z/cross-L和每族20个保重叠PAIR之和，最后一条为actual:5:sum-SV。18条容量与局部投影均使用同一K=max|H|和同一实际收益。PC2另加源u₂，PC3完整列已含源u₃；向上取整非负预算侧系数、向下取整客户信用。强制的二、三位只能用原节点偏离比较，强制后的真后继才用自身IC。\n\n写行S_j=Σ_x a_j(ω_x)+k_jK≥0。冻结53个L_j全部正，共同分母D=10^22，ΣL_jk_j=−2264870。对每个十位固定会员与共同重数d，三个直方图族分别在给定该d的完整域最大化，三套旧菜单以(h,ℓ−h)整数矩形四角最大化。合计6144个外条件，清分母余项最小为0，扩大类型域含每个真实客户。故2W−O=Σ(L_j/D)S_j+Σ_xρ_x+(2264870/D)K≥0。这里把原始行语义与冻结数值证书共同核合；不另假定未登记的行命题。",
+  "scope": "任意目录大小的恰五人零背景根覆盖，完整有序历史、允许重复比较索引。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/证明/五人证书活跃行--证明.md",
+      "sha256": "ad93ab97ca4dea4a6362b0f3343f84377fd0e01607af74289ac8ea691fc60374"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/五人半覆盖--定理.md",
+      "sha256": "061ceb82629e9aac619630cf12d0d80ede9663474baf2302a100ceafe5dd634c",
+      "section": "6. 全域精确证书如何闭合"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/五人真实分支局部投影--引理.md",
+      "sha256": "a33566f40bef4904e8ee700acc2f1b924414abdbcf8a68e5f1247d60a5d9b0ce"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/五人最大主题根界--引理.md",
+      "sha256": "5f8845454a76c1be6515d1e42067684090d43ad9807e8e97df0ec3360a4c6b8e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/half5-exact/certificate.json",
+      "sha256": "395e056b218d237abe8b85db894f0b1c37d2e14d55c74b1dca723abeceb6a44e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/half5-exact/verify_certificate.py",
+      "sha256": "6ff64ab6d1e412227fd70a75f5892e5d768c97529600d194c1147d50c723556f"
+    },
+    {
+      "path": "archives/customer-attraction/tools/half5-exact/row_manifest.json",
+      "sha256": "cbc5f0c7b6238a1d0e622621c89851292c4ed94e946e36ed16b41e1bb851c0cf"
+    },
+    {
+      "path": "archives/customer-attraction/tools/half5-exact/active_k_columns.json",
+      "sha256": "f09357c4c4c0e419cc8b4cd5878f65fcf7d341c863677f11d86021698b1dfab4"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/五人证书复核边界--审查.md",
+      "sha256": "519c03e47a791311919da286459f3bcbe025603b10d4a4482c7253a2fbf20bab",
+      "section": "必须保留的三个纠错点"
+    }
+  ],
+  "reviewed_by": "Boss1/ca-six-maxima-full-union-round31-worker",
+  "review_note": "核真节点、共享最优重数、同索引交叠、共同K，重放同一份交付主实现的6144条件并独立整乘K列。旧引擎交叉核验与同实现复跑角色各自保留。",
+  "whole_result": "53条真实非负行与已核完整精确算术给每份任意目录五人零背景完整纯SPE的OPT₅≤2W。",
+  "endpoint_pins": {
+    "CA-FIVE-HALF-EXACT-v1": "a6b1a6bb8f7da43559faf7606dc3ce20da46efbbed584f805b442fd799663c2c",
+    "customer-attraction/five-provider-active-row-semantics": "b591e7a217be0c50cdc98af59dc62fe29a7e5a3eb4f9abd3363ca0a2efd9f512"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/证明/五人证书活跃行--证明.md": "ad93ab97ca4dea4a6362b0f3343f84377fd0e01607af74289ac8ea691fc60374",
+    "archives/customer-attraction/state/定理/五人半覆盖--定理.md": "061ceb82629e9aac619630cf12d0d80ede9663474baf2302a100ceafe5dd634c",
+    "archives/customer-attraction/state/引理/五人真实分支局部投影--引理.md": "a33566f40bef4904e8ee700acc2f1b924414abdbcf8a68e5f1247d60a5d9b0ce",
+    "archives/customer-attraction/state/引理/五人最大主题根界--引理.md": "5f8845454a76c1be6515d1e42067684090d43ad9807e8e97df0ec3360a4c6b8e",
+    "archives/customer-attraction/tools/half5-exact/certificate.json": "395e056b218d237abe8b85db894f0b1c37d2e14d55c74b1dca723abeceb6a44e",
+    "archives/customer-attraction/tools/half5-exact/verify_certificate.py": "6ff64ab6d1e412227fd70a75f5892e5d768c97529600d194c1147d50c723556f",
+    "archives/customer-attraction/tools/half5-exact/row_manifest.json": "cbc5f0c7b6238a1d0e622621c89851292c4ed94e946e36ed16b41e1bb851c0cf",
+    "archives/customer-attraction/tools/half5-exact/active_k_columns.json": "f09357c4c4c0e419cc8b4cd5878f65fcf7d341c863677f11d86021698b1dfab4",
+    "archives/customer-attraction/state/审查/五人证书复核边界--审查.md": "519c03e47a791311919da286459f3bcbe025603b10d4a4482c7253a2fbf20bab"
+  },
+  "review_digest": "d5a8e7523ca132d2a11d936bcda6552a6653505ffabc64359a04476444f790fc"
+}

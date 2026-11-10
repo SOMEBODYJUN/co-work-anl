@@ -1,0 +1,65 @@
+{
+  "edge_id": "cag-b6e8f3d0-five-slot-coverability-pays-six-maxima-branch",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-FIVE-HALF-EXACT-v1"
+  ],
+  "target_ids": [
+    "CA-SIX-MAXIMA-HALF"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、有限非空共同标签目录、单位提供者依次选一次；固定每份完整有序历史纯SPE，允许重复、空覆盖、同覆盖异标签及任意平局。根背景为空，s为目录不同包含极大覆盖数，n为提供者数；s≤6。恰五人。若s=6，至少一个极大覆盖没有全局私有客户。",
+  "roles": {
+    "CA-FIVE-HALF-EXACT-v1": "在不限制目录结构的五人根上给OPT₅≤2W；在五槽可以覆盖U时转成全并集。",
+    "CA-SIX-MAXIMA-HALF": "n=5可全覆盖子域的U≤2W得到另一证明；其余n=5目录仍需一般联合证书。"
+  },
+  "explanation": "有限目录每个覆盖可放大至一个合法包含极大覆盖。s≤5时全部极大可装进五槽，空余槽重复，故OPT₅=U。s=6时写E_j=B_j∖⋃_{k≠j}B_k，e_j=|E_j|。任意五槽放大至至多五个极大后至少漏一个j，因而漏该j的E_j，原覆盖至多U−min_j e_j。选择除了最小e_j之外的其余五个完整极大，遗漏恰E_j，达到上界。因此OPT₅=U−min_j e_j，等号OPT₅=U当且仅当至少一个e_j=0。此判据弱于全局无私有条件。对全可覆盖子域代入五人一般界即U≤2W。\n\n在每个e_j>0时，五人定理仍控制OPT₅，并只由上述代入给U≤2W+min e_j。明确实例为五个客户的大主题与五个两两不交且与大主题不交的单例；所有有序历史常选大主题构成完整纯SPE，因为其收益至少5/5=1而任一单例的偏离收益至多1。W=5、OPT₅=9、U=10，表明五槽值可严格小于全并集且普通U≤2W在此类可等。对n≥6，s≤6保证OPT_n=U，但五人根证明的人数条件不满足。",
+  "scope": "n=5、s≤5，或n=5、s=6且min e_j=0。五槽恒等式对任何s=6的目录成立；证人只作精确量词比较。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "输入和终局量"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/五人半覆盖--定理.md",
+      "sha256": "061ceb82629e9aac619630cf12d0d80ede9663474baf2302a100ceafe5dd634c",
+      "section": "1. 精确命题"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/六极大联合预算半覆盖--定理.md",
+      "sha256": "f1dfff4545c3d67702e8b5df02193c28d6d6e775c3115ff86029a352b1282ab1",
+      "section": "精确结论和人数限制"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/六极大无私有强化覆盖界--定理.md",
+      "sha256": "03bae549a5f27ee4dd74d132ee3bb62e4c2654114c2ccb1faa19378852e1befd",
+      "section": "精确命题与两个数量"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/三人锐福利界--定理.md",
+      "sha256": "d69eaae8ac102a799364b8050962d26628d6a38e23f813225c74bb5facdb7fae",
+      "section": "5. 求和闭合与锋利性"
+    }
+  ],
+  "reviewed_by": "Boss1/ca-six-maxima-full-union-round31-worker",
+  "review_note": "逐向证明OPT₅=U−min e_j，并核全历史常选大主题的严格量词区分。五槽值与全并集各用自己合法的比较域。",
+  "contribution": {
+    "result": "五槽可覆盖U的n=5子域上，五人一般根定理给U=OPT₅≤2W。",
+    "remaining": "当六个极大各有私有客户时，U−OPT₅=min e_j>0；全并集半界使用联合账本。n≠5及核心扣除各有独立付款。"
+  },
+  "endpoint_pins": {
+    "CA-FIVE-HALF-EXACT-v1": "a6b1a6bb8f7da43559faf7606dc3ce20da46efbbed584f805b442fd799663c2c",
+    "CA-SIX-MAXIMA-HALF": "68b76366fd3f81878172b1cd9e8d1a426cc2aeb7fe8c983cf3a10a4fda235d04"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/定理/五人半覆盖--定理.md": "061ceb82629e9aac619630cf12d0d80ede9663474baf2302a100ceafe5dd634c",
+    "archives/customer-attraction/state/定理/六极大联合预算半覆盖--定理.md": "f1dfff4545c3d67702e8b5df02193c28d6d6e775c3115ff86029a352b1282ab1",
+    "archives/customer-attraction/state/定理/六极大无私有强化覆盖界--定理.md": "03bae549a5f27ee4dd74d132ee3bb62e4c2654114c2ccb1faa19378852e1befd",
+    "archives/customer-attraction/state/定理/三人锐福利界--定理.md": "d69eaae8ac102a799364b8050962d26628d6a38e23f813225c74bb5facdb7fae"
+  },
+  "review_digest": "7ca1de33a6589eaeabaec65ee254284c918f70af3a3b41e3d3bce4834dd8585c"
+}

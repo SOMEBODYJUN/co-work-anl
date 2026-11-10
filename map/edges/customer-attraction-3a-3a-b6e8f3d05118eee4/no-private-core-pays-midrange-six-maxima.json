@@ -1,0 +1,67 @@
+{
+  "edge_id": "cag-b6e8f3d0-no-private-core-pays-midrange-six-maxima",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-SIX-MAXIMA-NO-PRIVATE-HALF"
+  ],
+  "target_ids": [
+    "CA-SIX-MAXIMA-HALF"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、有限非空共同标签目录、单位提供者依次选一次；固定每份完整有序历史纯SPE，允许重复、空覆盖、同覆盖异标签及任意平局。根背景为空，s为目录不同包含极大覆盖数，n为提供者数；s≤6。n=5,6,7,8，且每个核心外客户至少有两个不同极大归属。",
+  "roles": {
+    "CA-SIX-MAXIMA-NO-PRIVATE-HALF": "对无私有子域以共享负载直接保底，给U=OPT_n≤2W−c。",
+    "CA-SIX-MAXIMA-HALF": "读取五至八人普通全并集半界的一个独立结构分支。"
+  },
+  "explanation": "无私有时，选择完整B_j后任意真实后继的负载上界直接给u_t≥c/n+max_j f_j。核心只支付一次。n=5,6分别遍历15、52条规范长度n−1的路由前缀，逐路径以分母12的每行权重对全部56种核心外共享incidence给至少1/2。n=7,8使用H_n=Σ_t1/(3n−2t)及凸性证明H_n>1/2。全覆盖U在五槽可达，因为s≤5可全选，s=6时每个核心外客户至少两个归属且核心在所有极大覆盖中，任选五个即全覆盖。因此不等式U≤2W−c≤2W确实支付普通全并集的一部分。\n\n一般证书对恰六极大允许单归属客户，用的是另外的合法差和完整路由/真实会员域。n=6,7,8的普通余项最小值α分别为1/72、1/32、23393/532224，核心列最小值β分别23/48、163/336、219/448。从同一账本可以保留W−U/2≥α(U−c)+βc，但β<1/2，整类扣除c还须补核心差。若α(U−c)≥(1/2−β)c，该特定条件下可补足。无私有路径证书直接保证核心系数1，不依这个附加比例。",
+  "scope": "无私有、n=5至8的独立充分分支。末段核心列算术只比较s=6、n=6至8的原一般证书。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/六极大无私有强化覆盖界--定理.md",
+      "sha256": "03bae549a5f27ee4dd74d132ee3bb62e4c2654114c2ccb1faa19378852e1befd",
+      "section": "全历史直接保底与路径预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/六极大无私有强化覆盖界--定理.md",
+      "sha256": "03bae549a5f27ee4dd74d132ee3bb62e4c2654114c2ccb1faa19378852e1befd",
+      "section": "七人以上的解析闭合"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/六极大无私有强化覆盖界--定理.md",
+      "sha256": "03bae549a5f27ee4dd74d132ee3bb62e4c2654114c2ccb1faa19378852e1befd",
+      "section": "五人和六人的完整系数证书"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/private-seats/evidence/runs/2026-10-10/customer_attraction_six_maxima_no_private_certificates.json",
+      "sha256": "5ac1c15e2cb99febec38c50c9412b62b63abe1a2ab2fe2c2ca39bbf58c1a0077"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/private-seats/tests/audits/customer_attraction_six_maxima_no_private.py",
+      "sha256": "c9aeb7a87520824a992e067892130d1c109b40791444d448d3f27211bafd058b"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/六极大联合预算完整系数域--计算.md",
+      "sha256": "3558fd10fa0bf791e862bf80872651a49f76435bd32a39d6da0be36d3ddb4c39",
+      "section": "本轮完整重放及精确结果"
+    }
+  ],
+  "reviewed_by": "Boss1/ca-six-maxima-full-union-round31-worker",
+  "review_note": "重放共享系数67×56项并复核一般证书核心分组最小值，区分全历史直接保底和需后缀倒推的混合保底。",
+  "contribution": {
+    "result": "一般六极大的五至八人普通U≤2W在无私有子域由独立的较强U≤2W−c支付，且此子域OPT_n=U。",
+    "remaining": "当核心外有单归属客户时需要实际允许私有质量的联合证书；无私有证明不能替代该子域。"
+  },
+  "endpoint_pins": {
+    "CA-SIX-MAXIMA-HALF": "68b76366fd3f81878172b1cd9e8d1a426cc2aeb7fe8c983cf3a10a4fda235d04",
+    "CA-SIX-MAXIMA-NO-PRIVATE-HALF": "856363ed16aee1e7eb4136cf4137e5d02d910be23f2deb321283ba283eeec826"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/六极大无私有强化覆盖界--定理.md": "03bae549a5f27ee4dd74d132ee3bb62e4c2654114c2ccb1faa19378852e1befd",
+    "archives/customer-attraction/tools/evidence/private-seats/evidence/runs/2026-10-10/customer_attraction_six_maxima_no_private_certificates.json": "5ac1c15e2cb99febec38c50c9412b62b63abe1a2ab2fe2c2ca39bbf58c1a0077",
+    "archives/customer-attraction/tools/evidence/private-seats/tests/audits/customer_attraction_six_maxima_no_private.py": "c9aeb7a87520824a992e067892130d1c109b40791444d448d3f27211bafd058b",
+    "archives/customer-attraction/state/计算/六极大联合预算完整系数域--计算.md": "3558fd10fa0bf791e862bf80872651a49f76435bd32a39d6da0be36d3ddb4c39"
+  },
+  "review_digest": "fa38accdf93182f1e7978a6cb46feb8c733ee22bf11162f4ac5c8c04e343ceec"
+}

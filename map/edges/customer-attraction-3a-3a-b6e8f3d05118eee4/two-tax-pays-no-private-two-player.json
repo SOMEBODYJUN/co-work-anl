@@ -1,0 +1,62 @@
+{
+  "edge_id": "cag-b6e8f3d0-two-tax-pays-no-private-two-player",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-TWO-REMAINING-TAX"
+  ],
+  "target_ids": [
+    "CA-SIX-MAXIMA-NO-PRIVATE-HALF"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、有限非空共同标签目录、单位提供者依次选一次；固定每份完整有序历史纯SPE，允许重复、空覆盖、同覆盖异标签及任意平局。根背景为空，s为目录不同包含极大覆盖数，n为提供者数；s≤6。核心外每位可覆盖客户至少属于两个不同极大覆盖。",
+  "roles": {
+    "CA-TWO-REMAINING-TAX": "空背景时比较利润就是二主题并集，税最多W/2。",
+    "CA-SIX-MAXIMA-NO-PRIVATE-HALF": "小人数分支中的n=2福利界；大人数核心强化另用共享负载。"
+  },
+  "explanation": "在两人根的实际终局(A,B)上，R₀(A,B)=W，R₀(T,S)=|T∪S|，g₀(A,A)=|A|/2≤W/2。对每个合法比较对应用T2再取最大，得OPT₂≤3W/2。该分支其实不需无私有假设。n≥5的强化使用真实路由前缀的共享负载保底u_t≥c/n+max_j f_j(p,n−t)，在n=5、6按15、52类前缀分配行权，n≥7用凸函数和式；这些步骤不调用T2。五人OPT₅=U取决于s≤5，或s=6且每个核心外客户至少两个归属从而任取五个极大均可覆盖全并集。",
+  "scope": "两人空背景根的已付分支和无私有定理证明路线分界。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+      "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+      "section": "空背景推论、用途和不能外推的部分"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/六极大无私有强化覆盖界--定理.md",
+      "sha256": "03bae549a5f27ee4dd74d132ee3bb62e4c2654114c2ccb1faa19378852e1befd",
+      "section": "小人数、退化及关系"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/六极大无私有强化覆盖界--定理.md",
+      "sha256": "03bae549a5f27ee4dd74d132ee3bb62e4c2654114c2ccb1faa19378852e1befd",
+      "section": "全历史直接保底与路径预算"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/private-seats/evidence/runs/2026-10-10/customer_attraction_six_maxima_no_private_certificates.json",
+      "sha256": "5ac1c15e2cb99febec38c50c9412b62b63abe1a2ab2fe2c2ca39bbf58c1a0077"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/private-seats/tests/audits/customer_attraction_six_maxima_no_private.py",
+      "sha256": "c9aeb7a87520824a992e067892130d1c109b40791444d448d3f27211bafd058b"
+    }
+  ],
+  "reviewed_by": "Boss1/ca-six-maxima-full-union-round31-worker",
+  "review_note": "核对这条共享来源实际只承担本目标的两人分支。完整重放67×56项共享系数，区分无私有路线的前缀和一般路线的完整五人路由。",
+  "contribution": {
+    "result": "在无私有定理的n=2分支得到OPT₂≤3W/2≤2W。",
+    "remaining": "其余人数需各自的根界或共享负载账本；T2没有支付五人及以上的U≤2W−c。"
+  },
+  "endpoint_pins": {
+    "CA-SIX-MAXIMA-NO-PRIVATE-HALF": "856363ed16aee1e7eb4136cf4137e5d02d910be23f2deb321283ba283eeec826",
+    "CA-TWO-REMAINING-TAX": "eb63a8d1cd934879f5f7f25f633b4bf753973f405a7b8db91bed63f633de7d15"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/固定背景两人税界--引理.md": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+    "archives/customer-attraction/state/定理/六极大无私有强化覆盖界--定理.md": "03bae549a5f27ee4dd74d132ee3bb62e4c2654114c2ccb1faa19378852e1befd",
+    "archives/customer-attraction/tools/evidence/private-seats/evidence/runs/2026-10-10/customer_attraction_six_maxima_no_private_certificates.json": "5ac1c15e2cb99febec38c50c9412b62b63abe1a2ab2fe2c2ca39bbf58c1a0077",
+    "archives/customer-attraction/tools/evidence/private-seats/tests/audits/customer_attraction_six_maxima_no_private.py": "c9aeb7a87520824a992e067892130d1c109b40791444d448d3f27211bafd058b"
+  },
+  "review_digest": "6ada06e7a572dbb8e185b3d7bf7926e0999830ed1b12d510056ab2d53926647f"
+}

@@ -1,0 +1,73 @@
+{
+  "edge_id": "cag-b6e8f3d0-two-tax-pays-six-maxima-budget",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-TWO-REMAINING-TAX"
+  ],
+  "target_ids": [
+    "CA-SIX-MAXIMA-HALF"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、有限非空共同标签目录、单位提供者依次选一次；固定每份完整有序历史纯SPE，允许重复、空覆盖、同覆盖异标签及任意平局。根背景为空，s为目录不同包含极大覆盖数，n为提供者数；s≤6。",
+  "roles": {
+    "CA-TWO-REMAINING-TAX": "在零背景两人根给3/2界；在任意n的真实末两人前缀给同背景剩余利润差(T)。",
+    "CA-SIX-MAXIMA-HALF": "将实际前缀税差与合法混合保底、实际末位比较在同一客户账本合成；本边标出税承担的分支。"
+  },
+  "explanation": "n=2时背景为空，R₀就是覆盖，g₀(A,A)=|A|/2≤W/2，逐比较对得OPT₂≤3W/2。对恰六个极大且n=5,6,7,8，把背景固定为实际前n−2个动作，某客户的真实背景计数为p，真实倒二会员为d，比较(B_j,B_k)的会员计数为m。税项为d/[(p+1)(p+2)]，比较份额为m/(p+m)，m=0按零。逐客户和使T_jk=u_{n−1}+u_n+Σ税−Σ比较≥0，六个极大代表给全部21个无序可重复对。这是同一实际前缀的剩余两人利润；T2内的首人改选后取原σ的真实末位回复，既不冻结末位，也不把比较对的剩余利润写成全局覆盖。\n\n完整证书另用全历史混合差(M)及实际末位查询差(L)。真实动作路由到合法极大容器，前n−1位只保会员包含；末位若选严格子集，扩张保留旧收益并增加正份额，故其会员恰等于容器。共同账本W−U/2=ΣλS+Σwρ给n=5的52条完整路由和20080列，以及n=6,7,8分别2016、4032、8064列的普通全并集半界。税贡献在同一加权和使用。n=5的证明无需假定OPT₅=U。n≥6因极大覆盖最多六个才有等号。",
+  "scope": "n=2根福利以及s=6、n=5至8的真实末两人前缀。结论比较原根的OPT₂或U，税行本身比较R_b。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+      "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/六极大联合预算半覆盖--定理.md",
+      "sha256": "f1dfff4545c3d67702e8b5df02193c28d6d6e775c3115ff86029a352b1282ab1",
+      "section": "三、末位最佳回复和末两人税的共同账本"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/六极大联合预算半覆盖--定理.md",
+      "sha256": "f1dfff4545c3d67702e8b5df02193c28d6d6e775c3115ff86029a352b1282ab1",
+      "section": "四、五人：52条完整路由和20080个客户列"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/六极大联合预算半覆盖--定理.md",
+      "sha256": "f1dfff4545c3d67702e8b5df02193c28d6d6e775c3115ff86029a352b1282ab1",
+      "section": "五、六、七、八人：统一小分数乘子"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/六极大联合预算完整系数域--计算.md",
+      "sha256": "3558fd10fa0bf791e862bf80872651a49f76435bd32a39d6da0be36d3ddb4c39",
+      "section": "本轮完整重放及精确结果"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/six-maxima-joint/evidence/certificates/customer_attraction/six_maxima_joint_bound.json",
+      "sha256": "7db0fa93b3c87478edc4899e0e36db5753ee390504eb39785ff9643a28eb5f5e"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md",
+      "sha256": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee",
+      "section": "剩余收益不是根覆盖"
+    }
+  ],
+  "reviewed_by": "Boss1/ca-six-maxima-full-union-round31-worker",
+  "review_note": "逐式定位真实前缀、税号、重复索引和末位真实会员，重放作者及独立原算术核验。原系数的核心列余项不足以普遍扣除c。",
+  "contribution": {
+    "result": "OPT₂≤3W/2。对恰六极大、n=5至8，T2供21条真实剩余利润税差，和(M)、(L)及完整非负余项联用支付U≤2W，继而OPT_n≤2W。",
+    "remaining": "T2本身不供应(M)、(L)或全域非负余项。一般六极大结论还需其他人数和s≤5各自证明，n=5至8的任意关联也不能据原证书普遍扣c。"
+  },
+  "endpoint_pins": {
+    "CA-SIX-MAXIMA-HALF": "68b76366fd3f81878172b1cd9e8d1a426cc2aeb7fe8c983cf3a10a4fda235d04",
+    "CA-TWO-REMAINING-TAX": "eb63a8d1cd934879f5f7f25f633b4bf753973f405a7b8db91bed63f633de7d15"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/固定背景两人税界--引理.md": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+    "archives/customer-attraction/state/定理/六极大联合预算半覆盖--定理.md": "f1dfff4545c3d67702e8b5df02193c28d6d6e775c3115ff86029a352b1282ab1",
+    "archives/customer-attraction/state/计算/六极大联合预算完整系数域--计算.md": "3558fd10fa0bf791e862bf80872651a49f76435bd32a39d6da0be36d3ddb4c39",
+    "archives/customer-attraction/tools/evidence/six-maxima-joint/evidence/certificates/customer_attraction/six_maxima_joint_bound.json": "7db0fa93b3c87478edc4899e0e36db5753ee390504eb39785ff9643a28eb5f5e",
+    "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee"
+  },
+  "review_digest": "7ffeb8ee691238d898dc3cb46fb0a1a934b4dc86b7a7295acea44607daf06713"
+}

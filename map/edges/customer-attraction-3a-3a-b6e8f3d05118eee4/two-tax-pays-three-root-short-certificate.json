@@ -1,0 +1,57 @@
+{
+  "edge_id": "cag-b6e8f3d0-two-tax-pays-three-root-short-certificate",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-TWO-REMAINING-TAX"
+  ],
+  "target_ids": [
+    "CA-THREE-UPPER-142-81"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、有限非空共同标签目录、单位提供者依次选一次；固定每份完整有序历史纯SPE，允许重复、空覆盖、同覆盖异标签及任意平局。根背景为空且恰三人，记实际终局(A,B,C)及收益u₁,u₂,u₃。",
+  "roles": {
+    "CA-TWO-REMAINING-TAX": "施于实际第一人A后的合法背景1_A，对三组最优索引对给同一上界H。",
+    "CA-THREE-UPPER-142-81": "更正后的v2在真实(A)子局得到D，并复用P−O给不调用三项E比较的短证书。"
+  },
+  "explanation": "取三个达到O=OPT₃的比较槽T_i（允许重复），固定实际第一人行动A后的前缀，此时仍有两人且实际尾为(B,C)。税t=|B∖A|/2+|A∩B|/6，共同上界H=W−u₁+t。三对剩余利润之和对比较重数d=0,1,2,3的单客户贡献，x∉A时为0,2,3,3，x∈A时为0,1,5/3,2，均至少2·1_{d>0}−1_A。求和得到D=3H+|A|−2O≥0及P=(3H+|A|)/2≥O。\n\n根偏离任意主题的收益至少该主题大小的1/3，故3u₁≥|B|且9u₁≥O。按实际互斥会员型展开，原式(11)为24W−13O=12(P−O)+(9u₁−O)+3(3u₁−|B|)+6n_C，n_C只数实际独属C的客户。由逐项非负得到O≤24W/13；短式无须另在(A,B)对三槽聚合出E。这条边专留普通税在(A)的聚合与独立短式。式(10)的更强常数另合实际末位差E、根差K和精确余项。",
+  "scope": "恰三人根。税使用第一人A后的真两人子局，比较的是该背景下的R_{1_A}。本边给原D与式(11)，未把它当成整个v2对象。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+      "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+      "section": "完整证明：必须使用同一策略的真实离轨回复"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/三人两人税组合界--定理.md",
+      "sha256": "6215d8c249139b2e0f632effee077d882af1d3256811943b96afe18918f550b0",
+      "section": "1. 三个有效不等式"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/三人两人税组合界--定理.md",
+      "sha256": "6215d8c249139b2e0f632effee077d882af1d3256811943b96afe18918f550b0",
+      "section": "2. 精确非负恒等式"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/三人两人税组合界--定理.md",
+      "sha256": "6215d8c249139b2e0f632effee077d882af1d3256811943b96afe18918f550b0",
+      "section": "3. 一个较短的中间界及其意义"
+    }
+  ],
+  "reviewed_by": "Boss1/ca-six-maxima-full-union-round31-worker",
+  "review_note": "按v2现pin及正文式(2)的第一人前缀核对。区分D与额外E、K，并保3B加强关系的独有结果。",
+  "contribution": {
+    "result": "在恰三人根得到原D≥0，且单独以原式(11)得到OPT₃≤24W/13。",
+    "remaining": "v2完整主常数142/81还需实际末位E、根偏离K及式(10)非负逐客户恒等式。"
+  },
+  "endpoint_pins": {
+    "CA-THREE-UPPER-142-81": "825f77ac9fb2f6b9d25c47ae19e72d2cf6905ebc2acbdef42315ed02ddd1eb76",
+    "CA-TWO-REMAINING-TAX": "eb63a8d1cd934879f5f7f25f633b4bf753973f405a7b8db91bed63f633de7d15"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/固定背景两人税界--引理.md": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+    "archives/customer-attraction/state/定理/三人两人税组合界--定理.md": "6215d8c249139b2e0f632effee077d882af1d3256811943b96afe18918f550b0"
+  },
+  "review_digest": "03f92467e939bac8fa731911e5a0629307f3c65c52e506de57de10b0fc0c69a6"
+}

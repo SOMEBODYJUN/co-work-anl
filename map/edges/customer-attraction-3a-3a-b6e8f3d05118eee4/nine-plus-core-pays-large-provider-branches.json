@@ -1,0 +1,61 @@
+{
+  "edge_id": "cag-b6e8f3d0-nine-plus-core-pays-large-provider-branches",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-SIX-MAXIMA-NINE-PLUS-HALF"
+  ],
+  "target_ids": [
+    "CA-SIX-MAXIMA-HALF",
+    "CA-SIX-MAXIMA-NO-PRIVATE-HALF"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、有限非空共同标签目录、单位提供者依次选一次；固定每份完整有序历史纯SPE，允许重复、空覆盖、同覆盖异标签及任意平局。根背景为空，s为目录不同包含极大覆盖数，n为提供者数；s≤6。n≥9。应用于无私有目标时另外限制核心外每客户至少两个极大归属。",
+  "roles": {
+    "CA-SIX-MAXIMA-NINE-PLUS-HALF": "任意关联的全历史混合保底及解析和式给U=OPT_n≤2W−c。",
+    "CA-SIX-MAXIMA-HALF": "n≥9部分直接代入并使用c≥0，即支付U与OPT的普通界。",
+    "CA-SIX-MAXIMA-NO-PRIVATE-HALF": "在无私有子域保留整个核心扣除作为n≥9的另一证明。"
+  },
+  "explanation": "固定实际或任意合法历史的路由前缀。选完整B_j，若原策略真实后继无人同路由，私有客户负载至多p_j+1，共享客户负载至多p_I+r；若存在同路由后继，当前整B_j逐客户支配其子主题收益，向后缀包络归纳。沿实际根路径加总有W≥c+PΣ下包络A_t+VΣB_t，其中P和V为全目录私有和核心外共享质量。私有Σ≥1/2；共享Σ=H_n−δ_n，以凸函数梯形和、log3正项下界及δ_n递减对所有n≥9给Σ>665881/1330560>1/2。精确n=9值229324183/456326325与此统一下界分别保留。\n\n于是W≥c+(P+V)/2=(U+c)/2。n≥9≥s令全部极大动作可选完，OPT_n=U。普通目标只需再用c≥0，无私有目标可原样保留c。边方向限于n≥9，不能借解析条件向下扩张到n=5至8。",
+  "scope": "n≥9、s≤6，任意极大关联；无私有目标的适用范围是同一人数段的结构子域。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/九人以上六极大强化覆盖界--定理.md",
+      "sha256": "5fd8ff96df112b2fbc9fad2d97e255669969c63c627881923dfaf998638738e1"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/九人六极大算术审计的参数域和端点勘误--资料.md",
+      "sha256": "276f72632d6712af4500aabd85cb65e2bac73d70d26dac006fe3d75d0fb0f205",
+      "section": "log3严格下界与两个不同half余量"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/六极大联合预算半覆盖--定理.md",
+      "sha256": "f1dfff4545c3d67702e8b5df02193c28d6d6e775c3115ff86029a352b1282ab1",
+      "section": "六、其他人数和少于六极大的分支"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/六极大无私有强化覆盖界--定理.md",
+      "sha256": "03bae549a5f27ee4dd74d132ee3bb62e4c2654114c2ccb1faa19378852e1befd",
+      "section": "七人以上的解析闭合"
+    }
+  ],
+  "reviewed_by": "Boss1/ca-six-maxima-full-union-round31-worker",
+  "review_note": "核混合保底全历史倒推、两个私有/共享量和端点差别，解析证明全称，有限和式回归不替代其论证。",
+  "contribution": {
+    "result": "两个目标的n≥9段得到OPT_n=U≤2W−c；普通六极大取c≥0进一步得U≤2W。",
+    "remaining": "两目标的人数下界以下分别需原小人数、无私有或一般联合预算。"
+  },
+  "endpoint_pins": {
+    "CA-SIX-MAXIMA-HALF": "68b76366fd3f81878172b1cd9e8d1a426cc2aeb7fe8c983cf3a10a4fda235d04",
+    "CA-SIX-MAXIMA-NINE-PLUS-HALF": "2c310b1d00ac42c3418ba93d821a634513891ac27fdd8d515cd9117d1a82d271",
+    "CA-SIX-MAXIMA-NO-PRIVATE-HALF": "856363ed16aee1e7eb4136cf4137e5d02d910be23f2deb321283ba283eeec826"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/九人以上六极大强化覆盖界--定理.md": "5fd8ff96df112b2fbc9fad2d97e255669969c63c627881923dfaf998638738e1",
+    "archives/customer-attraction/state/资料/九人六极大算术审计的参数域和端点勘误--资料.md": "276f72632d6712af4500aabd85cb65e2bac73d70d26dac006fe3d75d0fb0f205",
+    "archives/customer-attraction/state/定理/六极大联合预算半覆盖--定理.md": "f1dfff4545c3d67702e8b5df02193c28d6d6e775c3115ff86029a352b1282ab1",
+    "archives/customer-attraction/state/定理/六极大无私有强化覆盖界--定理.md": "03bae549a5f27ee4dd74d132ee3bb62e4c2654114c2ccb1faa19378852e1befd"
+  },
+  "review_digest": "2e7b2fcf1dc7d354271c887899f9bdfcf72c262df74a8c1ed2c3694107940711"
+}
