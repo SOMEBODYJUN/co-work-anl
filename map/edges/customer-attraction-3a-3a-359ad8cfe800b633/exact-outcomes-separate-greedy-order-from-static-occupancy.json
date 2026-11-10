@@ -1,0 +1,54 @@
+{
+  "edge_id": "ca-359ad8-exact-outcomes-separate-greedy-order-from-static-occupancy",
+  "kind": "specializes",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "M-85b040dc15584452ad8e5ae16f790211"
+  ],
+  "conditions": "三名单位玩家、两个互不相交的共同主题A与B，|A|=3、|B|=2。待检myopic形式策略在每个历史最大化立即份额|T|/(当前T计数+1)，所有动作仍按完整有序历史定义。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "按全部孩子真实终局计算门槛并验证指定有序路径，不将同一终局计数的所有顺序混为可实现。",
+    "M-85b040dc15584452ad8e5ae16f790211": "得到ABA贪心完整形式策略根IC失败、同计数BAA可信及ABA静态PNE三个准确不同结论。"
+  },
+  "explanation": "源递推在末层给唯一BR：AA后B（2>1），AB后A（3/2>1），BA后A（3/2>1），BB后A（3>2/3）。历史A的第二人选A最终得3/2，选B最终得2，故选B；历史B的第二人选A最终得3/2，选B最终得1，故选A。根强制A后真实叶ABA、根3/2；根强制B后真实叶BAA、根2，故完整SPE规定根B，实际BAA，并有根全集终局计数R(0)={(2,1)}。myopic立即份额在根因3>2选A，其余六节点恰同上述真实BR，故其完整形式树实际ABA，但根沿原形式树改B得2，规定减偏离为−1/2。最后独立静态检查ABA：两个A玩家各3/2，静态改B得1；B玩家2，静态改A得1，所以该终局是静态PNE。福利两种顺序均5=OPT3。源算法的路径语义因此在同一计数上精确区分可支持顺序BAA与贪心顺序ABA；不是否定该occupancy的一切实现。",
+  "whole_result": "在|A|=3、|B|=2的两不交主题三人输入中，每历史立即贪心的完整形式树实际ABA，根收益3/2而真实改B后得2，根IC=−1/2；ABA是静态PNE，其终局计数(2,1)同时有完整SPE顺序BAA。故这份贪心策略及静态PNE终局均不足以认证给定有序策略的完整可信退出。",
+  "scope": "该五客户、两主题、三人显式实例；不推一般occupancy不可实现，不反half或已经补证的退出银行。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/高收益席位与贪心终局不能替代完整可信退出--反例.md",
+      "sha256": "b030fc41a45280e85430aa23e8bcc842b349a7a8a4222b542a7660a5b43bfd93",
+      "section": "五客户、三玩家的myopic失败"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/前缀编译与阈值端点的真实审查读序--审查.md",
+      "sha256": "ea8e6c08cbac334062183d219150dbcf89d529b67027761d7de5947347ed8758",
+      "section": "异质层：先盲时尚条件，后全文才完成cap"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss6",
+  "review_note": "按当前登记陈述、模型量词与本包原正文完整实读核对；下述推导为实际作用范围，未将有限搜索、默认极小孩子或终局计数当作全策略穷尽。",
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "M-85b040dc15584452ad8e5ae16f790211": "dbe6d56b832376b7ff144512b292fb54b606190e51620d41341ec38a5ef49066"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/反例/高收益席位与贪心终局不能替代完整可信退出--反例.md": "b030fc41a45280e85430aa23e8bcc842b349a7a8a4222b542a7660a5b43bfd93",
+    "archives/customer-attraction/state/审查/前缀编译与阈值端点的真实审查读序--审查.md": "ea8e6c08cbac334062183d219150dbcf89d529b67027761d7de5947347ed8758",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "cc9a250c2c32e4ac8b66fe6a40f8a3470cd5ebe08c1c032b9bc121bd01dfd9bf"
+}

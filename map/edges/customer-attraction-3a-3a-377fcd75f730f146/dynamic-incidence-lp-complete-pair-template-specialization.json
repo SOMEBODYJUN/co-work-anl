@@ -1,0 +1,47 @@
+{
+  "premises_mode": "all",
+  "status": "accepted",
+  "reviewed_by": "Boss6",
+  "edge_id": "ca-377fcd-dynamic-incidence-lp-complete-pair-template-specialization",
+  "kind": "specializes",
+  "relation_mode": "unconditional",
+  "source_ids": [
+    "CA-INCIDENCE-LP-DYNAMIC-BUDGET-v1"
+  ],
+  "target_ids": [
+    "CA-PAIR-INCIDENCE-LP-OBSTRUCTION-v1"
+  ],
+  "conditions": "K_s每条边一单位客户、顶点星为共同主题，s≥m≥2，空前缀。目标B(m)是原含全部关联类型的单非负乘子根LP。s≥3时无核心/私有，B=B_*；s=2的两个标签同覆盖、唯一客户为核心，必须单独保原LP而不套核心外全对公式。",
+  "roles": {
+    "CA-INCIDENCE-LP-DYNAMIC-BUDGET-v1": "提供关联LP、COUNT及原含核心预算与修正版B_*的精确区分。",
+    "CA-PAIR-INCIDENCE-LP-OBSTRUCTION-v1": "专化到完整二关联目录，给精确根LP值及m主题敏感性障碍。"
+  },
+  "explanation": "在s≥3时，每个正型恰为一条边{j,k}，源LP的所有需求化为β_j+β_k≥m，β≥0。将全部binom(s,2)条约束求和得(s−1)Σβ≥m s(s−1)/2；均匀β_j=m/2可行，故B_*(m)=B(m)=ms/2。每主题有s−1客户，其根COUNT份额f_j=(s−1)/m，于是D0 max f=(ms/2)(s−1)/m=binom(s,2)=U。s=m=2时原全类型LP仅β1+β2≥m，仍给B=m；但修正核心外LP不应把该核心当共享非核心，故这里不将B_*与B混同。选择m个不同顶点覆盖除余下s−m顶点内部边外的全部边；可重复选择不提高覆盖，所以OPT_m=binom(s,2)−binom(s−m,2)=ms−m(m+1)/2。源宽预算仍合法，却在根已支付U而未利用m主题上限。更强式OPT_m≤2m max f=2(s−1)失败，例如m=3,s=12给30>22。这是单偏离/单乘子模板的精确失效，不是任何完整SPE福利失效。",
+  "whole_result": "对每个s≥m≥2，原根关联LP B(m)=ms/2，max_j f_j=(s−1)/m，乘积恰全并集binom(s,2)，而OPT_m=ms−m(m+1)/2；更强m主题敏感根式不普遍成立。s=2明确使用原含核心LP，未误用修正B_*。",
+  "scope": "完全二关联根模板的精确专化；不反动态宽下界，也不反一般half。来源定理仍量化完整SPE，障碍的LP算术自身无需构造SPE。",
+  "review_note": "完整实读原障碍和经核心勘误的动态预算正文，按registry v2核核心只计一次；逐项算根LP primal/dual、OPT及m3s12精确失败。保s2同覆盖标签边界。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/极大关联LP动态预算半覆盖--定理.md",
+      "sha256": "3f31c3c7a45f1a568bb02d53cd2f33170eb708b294c4b9eb071ec2b95c43a785"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/完全二主题关联LP根预算障碍--障碍.md",
+      "sha256": "0ab9183aac93213a83aed51d0cd2c8dd17adda9868a3a1fefee95ff799e4baf7"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "endpoint_pins": {
+    "CA-INCIDENCE-LP-DYNAMIC-BUDGET-v1": "abed9cc0e2ca93b5922620b75117a10f3a8d2becae0f5d8e14cee3ee09195ff1",
+    "CA-PAIR-INCIDENCE-LP-OBSTRUCTION-v1": "3a4f2ac213f631de7f54a0d931ce9abd85d9bf162cfac936e41127145107453d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/极大关联LP动态预算半覆盖--定理.md": "3f31c3c7a45f1a568bb02d53cd2f33170eb708b294c4b9eb071ec2b95c43a785",
+    "archives/customer-attraction/state/障碍/完全二主题关联LP根预算障碍--障碍.md": "0ab9183aac93213a83aed51d0cd2c8dd17adda9868a3a1fefee95ff799e4baf7",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "439faab85cf68f83dde33db82621369bf437f235f206d0d746c6c8ea73483ae8"
+}

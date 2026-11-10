@@ -1,0 +1,63 @@
+{
+  "premises_mode": "all",
+  "status": "accepted",
+  "reviewed_by": "Boss6",
+  "edge_id": "ca-377fcd-mobius-full-history-security-joint-long-prefix",
+  "kind": "transfers",
+  "relation_mode": "unconditional",
+  "source_ids": [
+    "CA-MOBIUS-BOOLEAN",
+    "CA-MOBIUS-FULL-HISTORY-EMBED",
+    "CA-MOBIUS-SECURITY-BIAS-BARRIER"
+  ],
+  "target_ids": [
+    "M-8d21a02b0902447292dacf3b8672a199"
+  ],
+  "conditions": "全部整数k≥1、n≥2k+1，L=n−k、p=(k+1)L≥n。辅助游戏只允许未用标签；目标CAG保留全部重复动作和所有有序离轨历史。F按k+1组各L标签的正文定义，取其整数反演x、M=Σ|x_B|、K=4M+1和r_B=x_B+K。真安全背景在查询前固定，允许重复/相关，且不观察抽样查询。",
+  "roles": {
+    "CA-MOBIUS-BOOLEAN": "原Boolean边际势的代数表示：整数x与唯一重复计数扩张。",
+    "CA-MOBIUS-FULL-HISTORY-EMBED": "合法化及策略桥：全部历史严格排old、扩展每份辅助SPE并给精确收益平移。",
+    "CA-MOBIUS-SECURITY-BIAS-BARRIER": "同一合法重数和n-distinct终局相对真正v_n的≥1/4下界。",
+    "M-8d21a02b0902447292dacf3b8672a199": "获得长低收益前缀的合法原模型实现及其精确安全值失真。"
+  },
+  "explanation": "先在辅助域完整构造策略，而非假定一条终局可实现。令F在|S|=n−1且最大组计数L−1时为−1，其余为0。任何n-distinct终局删除边际仅0或1。对每个长度k的有序fresh前缀，至少一组完全未用；随后L位依次取该整组。前k位删去后完整组仍有L标签，边际0；尾位删去后该组L−1，其余总计≤k≤L−1，边际1。保护尾路径每人已达全域上界1；首次离开路径的各子树用有限BI补齐。首k位的任意fresh偏离仍到某个受保护k前缀并得0，所以全部辅助节点均最优。M1给整数x及唯一计数扩张，不能对重复终局另填集合值。M2以K/2−2M=1/2>0在每个可能已重复的历史严格排old动作；未用标签置换只对齐偏置部分，不冻结signed真实后继。它把上述完整辅助策略扩到全部原历史，正singleton保证主题非空且覆盖互异。D=1，故实际收益前k位β、尾L位β+1，其中β=K(2^p−2^(p−n))/n。最后第三前提对同一r和全部n-distinct终局给u_i−v_n≥Kc_pn−M，c_pn=2^(p−n)(2^n−n−1)/(np)≥1/4，代K=4M+1得每位≥1/4。三个输入分别支付表示、完整策略迁移和安全比较，缺任一项不能声称全部目标。",
+  "whole_result": "对每个k≥1、n≥2k+1，按本页F反演及充分正偏置可得合法单位客户完整CAG SPE，全部重复历史已补齐，实际前k位β、其后n−k位β+1；每角色均满足u_i−v_n≥Kc_pn−M≥1/4。辅助牺牲结构得到迁移，辅助零收益和安全亏损没有得到迁移。",
+  "scope": "特殊分组势的全部k,n与同一充分偏置编译；不是所有辅助势都有该前缀，也不分类更小/非均匀偏置。安全比较对象为真正静态v_n，而非真实回复菜单值。",
+  "review_note": "完整实读长前缀构造、M1、M2全部重复历史归纳、安全静态对偶和福利偏置边界；核p≥n、k≤L−1、D=1、正singleton、c≥1/4及零signed表边界。双向投影只按M2的满射/限制合同使用，未声称完整策略一一对应。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/构造/任意长前缀牺牲的无重复势博弈与合法嵌入--构造.md",
+      "sha256": "e70b7a85e56b92e3f56ee5860ec54c20dc7f624d54ef6834b9e9d5ea4d897b8f"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/子集调和势的Möbius反演--定理.md",
+      "sha256": "9c7e58e4642077607ce2b49c67e7598c97b47b4cdb1b43a34cf335dd2aec5629"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/无重复辅助博弈的完整历史编译--定理.md",
+      "sha256": "e6e06a43973f7c37673b498074475fdf8aa37338d448aff53b2bf9b2e7fa0dd4"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/均匀偏置的逐人安全值间隙--定理.md",
+      "sha256": "0d587e43a0fb00fe4659a802a935e73c5995107e58764e3293ee421dd7c136e6"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "endpoint_pins": {
+    "CA-MOBIUS-BOOLEAN": "1e36e694f7e44451ebb5388ecd03ad031956f6f849fbb53593ba3917c64d6fad",
+    "CA-MOBIUS-FULL-HISTORY-EMBED": "42694a561f1d7d9687fce7fe834aa833e5fa2d8b5b7d84eb1bf54115e118d09a",
+    "CA-MOBIUS-SECURITY-BIAS-BARRIER": "cee202e8d3e2bea405bcc8f01bbad4e972acfabcf0527a652bcdf4899171219a",
+    "M-8d21a02b0902447292dacf3b8672a199": "20525cd446887a59ca56ae4a06642503a243fd6309acf3d4c80906d20f835558"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/构造/任意长前缀牺牲的无重复势博弈与合法嵌入--构造.md": "e70b7a85e56b92e3f56ee5860ec54c20dc7f624d54ef6834b9e9d5ea4d897b8f",
+    "archives/customer-attraction/state/定理/子集调和势的Möbius反演--定理.md": "9c7e58e4642077607ce2b49c67e7598c97b47b4cdb1b43a34cf335dd2aec5629",
+    "archives/customer-attraction/state/定理/无重复辅助博弈的完整历史编译--定理.md": "e6e06a43973f7c37673b498074475fdf8aa37338d448aff53b2bf9b2e7fa0dd4",
+    "archives/customer-attraction/state/定理/均匀偏置的逐人安全值间隙--定理.md": "0d587e43a0fb00fe4659a802a935e73c5995107e58764e3293ee421dd7c136e6",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "485613314f391f8e9c2b995cd2a4f6288a2bb243be3c1604efe76026269ac9a9"
+}

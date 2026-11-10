@@ -1,0 +1,47 @@
+{
+  "premises_mode": "all",
+  "status": "accepted",
+  "reviewed_by": "Boss6",
+  "edge_id": "ca-377fcd-mobius-specializes-frequency-two-payoffs",
+  "kind": "specializes",
+  "relation_mode": "unconditional",
+  "source_ids": [
+    "CA-MOBIUS-BOOLEAN"
+  ],
+  "target_ids": [
+    "M-ac29c2c69e1646aab44568b292598e75"
+  ],
+  "conditions": "固定1≤m≤p，对称零对角有理β及有理α。取有理K,C使K−2β_ab≥0、C+α_a−d_a≥0，其中d_a=Σ_(b≠a)(K−2β_ab)。正整数s同时清除全部客户重数分母。只比较m个互异标签的静态终局，不加入SPE或fresh最优性假设。",
+  "roles": {
+    "CA-MOBIUS-BOOLEAN": "提供归零Boolean势的唯一有符号反演及收益等于删除边际。",
+    "M-ac29c2c69e1646aab44568b292598e75": "得到频率至多二的非负单位客户构造及全部m-distinct终局的精确收益恒等式。"
+  },
+  "explanation": "在p标签上定义F(S)=C|S|+Σ_(a∈S)α_a+Σ_({a,b}⊆S)(β_ab−K/2)，F(∅)=0。其下集Möbius系数为c_{a}=C+α_a、c_{ab}=β_ab−K/2、|A|≥3时c_A=0。按M1有z_a=C+α_a、z_ab=K−2β_ab，其余z为0；上集反演因而给x_ab=K−2β_ab、x_a=C+α_a−Σ_(b≠a)(K−2β_ab)=C+α_a−d_a，高阶兴趣类型为0。条件保证这些重数非负；乘s后每个类型是整数个不同单位客户，所有提供者仍单位权。M1的边际身份对|S|=m及a∈S给u_a=s[F(S)−F(S∖{a})]=s[C−(m−1)K/2+α_a+Σ_(b∈S∖{a})β_ab]。令B=C−(m−1)K/2，恰得目标全部陈述。这里没有调用M2的均匀充分偏置，更没有从distinct终局反推重复历史的策略映射。",
+  "whole_result": "对每组目标允许的有理参数及全部m-distinct终局，频率二构造的类型重数恰为s(K−2β_ab)和s(C+α_a−d_a)，选择a者收益恰s(B+α_a+Σ_(b∈S∖{a})β_ab)。这是M1在二次Boolean势上的完整专化。",
+  "scope": "精确静态收益表示；不迁移完整SPE、fresh逐人门槛或一般half。s=1或全部收益同时除s时才可省略尺度。",
+  "review_note": "完整实读M1反演证明和频率二正文，逐项重算c、z、x及删除边际；核非负性、整数清分母、m=1和无高阶类型。该边不以有限回归支持全历史候选。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/子集调和势的Möbius反演--定理.md",
+      "sha256": "9c7e58e4642077607ce2b49c67e7598c97b47b4cdb1b43a34cf335dd2aec5629"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/频率二客户编译与二次fresh安全边界--候选.md",
+      "sha256": "2349616ed3a889f8e9d4417dff484df07952b1bddb531b1eceb0565954dc4a9e"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "endpoint_pins": {
+    "CA-MOBIUS-BOOLEAN": "1e36e694f7e44451ebb5388ecd03ad031956f6f849fbb53593ba3917c64d6fad",
+    "M-ac29c2c69e1646aab44568b292598e75": "1d6f9d1fa3142ff27949099286a0814bfd9d573731f41101734c321a35450836"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/子集调和势的Möbius反演--定理.md": "9c7e58e4642077607ce2b49c67e7598c97b47b4cdb1b43a34cf335dd2aec5629",
+    "archives/customer-attraction/state/候选/频率二客户编译与二次fresh安全边界--候选.md": "2349616ed3a889f8e9d4417dff484df07952b1bddb531b1eceb0565954dc4a9e",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "1ae18100c2d2fe33d5a45d33f8e053f8a871dd0ae3cbe37b384595884b2fcb34"
+}

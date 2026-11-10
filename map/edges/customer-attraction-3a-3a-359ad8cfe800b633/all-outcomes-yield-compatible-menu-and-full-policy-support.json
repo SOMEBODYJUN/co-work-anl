@@ -1,0 +1,57 @@
+{
+  "edge_id": "ca-359ad8-all-outcomes-yield-compatible-menu-and-full-policy-support",
+  "kind": "implies",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "CA-CREDIBLE-CONTINUATIONS"
+  ],
+  "conditions": "固定任意有限单位客户共同标签目录实例，m,p≥1；R(k)使用源对象精确全集语义，同计数只缓存集合，有序节点动作仍各自独立。全支持概率结论要求每个合法实际动作与每个兼容菜单元素有正条件概率。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "给R(k)完整必要充分性、非空有限孩子集合及逐有序历史独立拼接。",
+    "CA-CREDIBLE-CONTINUATIONS": "将默认极小孩子扩大到全部当前收益封顶的可信孩子，得到每份完整策略的重构和正概率支持。"
+  },
+  "explanation": "令ell_b=min_{d∈R(k+e_b)}U_b(d)，M=max_b ell_b。源递推保证目标q∈R(k)有合法实际a，使q∈R(k+e_a)且U_a(q)≥M。对任何离轨b，达到ell_b的终局满足ell_b≤M≤U_a(q)，故C_b={d∈R(k+e_b):U_b(d)≤U_a(q)}非空。实际孩子传q，各离轨孩子可分别传任意d_b∈C_b；归纳各孩子都是子SPE，当前每个真实偏离收益U_b(d_b)≤U_a(q)，有序子树互不相交使全部选择可同时拼合。因此任一菜单选择都给完整SPE。反向给任一实现q的完整σ，在每个有序历史选σ自己的动作及所有孩子真实终局；源必要性保证实际动作满足阈值，σ节点IC保证每个离轨终局在C_b内。逐层归纳重构σ的全部动作，既保目标路径也保离轨子树。有限树上这些有限个合法选择的正条件概率相乘仍正，因此uniform_credible对每份目标完整σ有正支持；并非均匀分布于全部策略，也不保证有限采样穷尽。源默认极小重构本身只保全部终局，完整策略支持是这里的新增结论。",
+  "whole_result": "对任意合法有序历史和q∈R(k)，全部兼容菜单非空，任意逐孩子选择递归构成完整纯SPE；每份实现q的原完整有序历史纯SPE均可逐节点精确重构。当所有合法局部选择均有正条件概率时，每份此类完整策略都有正概率出现，uniform_credible满足该条件。",
+  "scope": "所有固定有限实例、任意历史依赖平局与覆盖别名；完整策略支持和终局可实现性分别保留。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/可信续局菜单与完整策略重构--算法.md",
+      "sha256": "db6267ec3888975e5c6310d3a9a0d7c889469ee4d5be02b00ac338f139647961"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/credible-cap-fixedpoint-primary/original/research/current/customer_attraction/credible_continuations.md",
+      "sha256": "866763515e593c7fc26eee1bcbb6d006b6d26957a018dff1acc508db44791105"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/strategy-cones/original/tests/audits/cone_attack_credible_variants.py",
+      "sha256": "396b540ae30f4bcefd1c2570f375f6cc51a65d9e4c0db1edac21b16d397a2b0e"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss6",
+  "review_note": "按当前登记陈述、模型量词与本包原正文完整实读核对；下述推导为实际作用范围，未将有限搜索、默认极小孩子或终局计数当作全策略穷尽。",
+  "endpoint_pins": {
+    "CA-CREDIBLE-CONTINUATIONS": "2dbb128ee54e25aca2f4a2cb528c14e32cadaf7c7e70c3a6b25126a68c3d5ffe",
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/算法/可信续局菜单与完整策略重构--算法.md": "db6267ec3888975e5c6310d3a9a0d7c889469ee4d5be02b00ac338f139647961",
+    "archives/customer-attraction/tools/evidence/credible-cap-fixedpoint-primary/original/research/current/customer_attraction/credible_continuations.md": "866763515e593c7fc26eee1bcbb6d006b6d26957a018dff1acc508db44791105",
+    "archives/customer-attraction/tools/evidence/strategy-cones/original/tests/audits/cone_attack_credible_variants.py": "396b540ae30f4bcefd1c2570f375f6cc51a65d9e4c0db1edac21b16d397a2b0e",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "77730c3765a91ee0b3a93734a8700e99a967ff2b7acb178b2e5d18cb5f36a5dc"
+}
