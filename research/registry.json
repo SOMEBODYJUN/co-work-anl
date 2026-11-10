@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-map-round36-eta-and-cov-k-v1.json",
-    "sha256": "69a0ceffb4cf4b7aaa3c3d042fddde3693e357afa27795245e3d17937643545a"
+    "path": "research/registration/baseline-boss6-retuned-onset-identity-v1.json",
+    "sha256": "9234b1952b8ee8f7b6208aa8f627ed58f0785d9693f9c6effadbdbfcb5662a8b"
   },
   "objects": [
     {
@@ -32155,6 +32155,60 @@
         "clean:021c450a41090ff81bcc",
         "clean:75f72ebe7877c07502ba",
         "clean:efa728161ad796e9a0e0"
+      ]
+    },
+    {
+      "object_id": "M-546d167881384ce790c41cd47626d72a",
+      "version": 1,
+      "title": "调谐十四资源缩权族无二倍均衡的精确整数起点",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限原子加权拥塞游戏：有限玩家、资源及每人有限非空资源子集动作族（可有空动作），每人资源无关正实权；资源费用为非负系数次数至多整数d的多项式。玩家成本为所用资源费用之和，不再乘权；每次真实单方偏离冻结别人并计入自身新负载。α-PNE用全部偏离的弱式C_old≤α C_new，α≥1；零费直接用不等式。 四玩家两动作，七互补mask0101,0112,1022,1100,1120,1122,1211，0不参加/1用动作0/2用动作1；每mask另有互补同费资源。整数m≥1，D_m=32m²，权(1,1/(10m),1/(20m),1/(50m))，固定正有理t=(a,b,c,d,e,f,g)，支持总权T_j(m)。",
+      "statement": "在正式十四资源缩权族中固定t=(49/100,11/10,49/100,3/5,1/50,3/100,1)，对每个整数m≥1，G_m(t)无2-PNE当且仅当m≥3。所有m≥3的全部16态均有严格二倍改善；m1、m2的0100和1011均为2-PNE。因此3为该固定族的精确整数起点，各成员次数为32m²。",
+      "quantifiers": "固定上述唯一振幅t，∀整数m≥1：[G_m(t)无2-PNE ⇔ m≥3]；对m≥3，∀状态s，∃玩家i，使C_i(s)>2C_i(s^⊕i)。",
+      "assumptions": [
+        "同一四玩家、二动作、七对互补mask的正式缩权族",
+        "权(1,1/(10m),1/(20m),1/(50m))；前六对次数32m²、末对二次；成本不乘权，偏离重算新负载",
+        "m3完整有理证书与m≥20定向统一界沿用RETUNED-v2",
+        "m4..19由新整数枚举逐态严格比较；m1/2存在性沿用冻结独立精确有理证据"
+      ],
+      "scope": "精确起点只针对该固定调谐族的整数参数。不是全类最优次数、有限B=2端点或拓扑最优性；旧RETUNED-v1/v2的原statement及独有证明保持准确范围。",
+      "objections": "新16项整数扫描已由Boss6根代理实际复跑且逐项匹配，exit0；本worker核同族性、整数正缩放、全态及固定见证覆盖并复核冻结m1/2精确有理数均<2，没有重跑成熟扫描。m3与统一尾界复用已登记v2及其成熟证据。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/调谐十四资源缩权族无二倍均衡的精确整数起点--定理.md",
+        "sha256": "86301b0fe9025cdcf1b596d17a0bf413297b0e1ef56007ec808cf056028a3d2a"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md",
+          "sha256": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/十四资源缩权族的常数无均衡界--定理.md",
+          "sha256": "62f4f0e0e9090a650f09442465161a4552f1ea84fad2bfa1f36c8183448733e0"
+        },
+        {
+          "path": "research/workspaces/map-v2/Boss2/retuned-gap-4-19.md",
+          "sha256": "e8a73482a28fbb5ffd6ee0220a43d4c297a6ed075100e100ceb814fe62ad050f"
+        },
+        {
+          "path": "research/workspaces/map-v2/Boss2/retuned-gap-4-19.py",
+          "sha256": "8920d631796040941dadc14a1c6d0f73d0f476154979f291d6acfe01b5c550cf"
+        },
+        {
+          "path": "archives/weighted-congestion/tools/evidence/crossover/original/evidence/runs/weighted_congestion/crossover_limit_review/independent_evidence.json",
+          "sha256": "06c750b7176379ddfbacefae1a33f4eac1c1154c1825f6ab8ee035e8d175032d"
+        },
+        {
+          "path": "archives/weighted-congestion/tools/evidence/crossover/original/evidence/certificates/weighted_congestion/crossover/limit_evidence/retuned_m3_certificate.json",
+          "sha256": "e289952c78da5e98718d9de35d1bfc38b77a30e7e08a3888563d21e0e2e867d6"
+        }
+      ],
+      "sources": [
+        "research/workspaces/map-v2/Boss2/retuned-gap-4-19.md",
+        "research/workspaces/map-v2/Boss2/retuned-gap-4-19.py",
+        "WCF-R3-SCALED-RETUNED-v2",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/weighted_congestion/crossover_limit_review/independent_evidence.json"
       ]
     },
     {
@@ -156033,44 +156087,6 @@
       ]
     },
     {
-      "object_id": "unrelated-machines/truncated-multiplication-vector-greedy-true-source",
-      "version": 1,
-      "title": "固定阶压缩乘法向量贪心的真实最优源反例",
-      "kind": "counterexample",
-      "truth_status": "proved",
-      "model": "沿用该正文完整模型、定义域、成本/动作规则与边界；本候选不以摘要改写模型。",
-      "statement": "对固定阶 r 的真实有限源，压缩到次数不超过 r 的乘法向量并逐任务最大化下一作用范数的贪心规则，在显式 anchor 约束下拥有 OPT=B，却对全部普通任务选中同一普通机，产生峰值 q；近似比 q/B 可随大域增长。",
-      "quantifiers": "沿用该正文的精确量词、参数域、所有状态/偏离范围；需由 lead 对正文核对后入表。",
-      "assumptions": [
-        "正文明确的模型与前提全部保留；不得以本摘要替代证明、证书或来源。"
-      ],
-      "scope": "exact-family-established-with-finite-audit; source path is frozen in this task and scope remains limited to the cited section/file.",
-      "objections": "现行 registry 未找到同 object_id；该源 frontmatter 提供候选稳定身份，但仍须 lead 与相邻对象逐项比较后正式分配/确认身份。 审计状态：本文件已加载全文字节、frontmatter、标题与摘要；完整承重推导和同义合并需在正式 owner 接收时复核。",
-      "body": {
-        "path": "archives/unrelated-machines/state/反例/固定阶压缩乘法向量贪心真实最优源--反例.md",
-        "sha256": "feb4be017b33128301230530112d82642529634e7518726b976fccaf104fe783",
-        "section": "构造"
-      },
-      "evidence": [
-        {
-          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
-          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
-        }
-      ],
-      "sources": [
-        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/truncated_vector_greedy_review.md",
-        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/truncated_vector_greedy_review.md",
-        "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md",
-        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/polynomial_vector_greedy.py",
-        "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/unrelated_machines/polynomial_vector_greedy_independent.py",
-        "UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1"
-      ],
-      "keywords": [
-        "0106",
-        "counterexample"
-      ]
-    },
-    {
       "object_id": "unrelated-machines/two-level-label-fee-and-occurrence-weighted-pool-review",
       "version": 1,
       "title": "两层标签收费与出现异权文字池双源审查",
@@ -195691,8 +195707,7 @@
       "sha256": "feb4be017b33128301230530112d82642529634e7518726b976fccaf104fe783",
       "disposition": "objects",
       "object_ids": [
-        "UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1",
-        "unrelated-machines/truncated-multiplication-vector-greedy-true-source"
+        "UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1"
       ],
       "reason": "正文校正成q机、q+1任务与单anchor，保完整全空间投影证明。\n本候选以该冻结正文作为 unrelated-machines/truncated-multiplication-vector-greedy-true-source 的候选主证据；现行 registry 未找到同 object_id；该源 frontmatter 提供候选稳定身份，但仍须 lead 与相邻对象逐项比较后正式分配/确认身份。 SHA verified against current checkout."
     },
@@ -195817,7 +195832,6 @@
         "unrelated-machines/slot-envelope-exact-program-resource",
         "unrelated-machines/sparse-partial-projection-scheduling-transfer-obligation",
         "unrelated-machines/tiny-work-joint-slot-stability-and-selection",
-        "unrelated-machines/truncated-multiplication-vector-greedy-true-source",
         "unrelated-machines/two-level-label-fee-second-multiplicity",
         "unrelated-machines/uniform-port-gap-and-actual-approximation-review-scopes"
       ],
@@ -203459,9 +203473,10 @@
         "WCF-R3-SCALED-ORIGINAL-v1",
         "WCF-R3-SCALED-RETUNED-v1",
         "WCF-R3-SCALED-RETUNED-v2",
-        "WCF-R3-SCALED-TEMPLATE-v1"
+        "WCF-R3-SCALED-TEMPLATE-v1",
+        "M-546d167881384ce790c41cd47626d72a"
       ],
-      "reason": "完整实读；按精确模型/量词/结论分成独立稳定对象，正文及独有证明均由所列body/evidence入口保全。"
+      "reason": "完整实读；按精确模型/量词/结论分成独立稳定对象，正文及独有证明均由所列body/evidence入口保全。\n完整实读；按精确模型/量词/结论分成独立稳定对象，正文及独有证明均由所列body/evidence入口保全。\n本增量给精确整数起点新对象共享定义或两端证明证据，保全全部既有数学owner。"
     },
     {
       "path": "archives/weighted-congestion/state/定理/三十二次两攻击源包络上界--定理.md",
@@ -203654,9 +203669,10 @@
       "object_ids": [
         "WCF-R3-SCALED-ORIGINAL-v1",
         "WCF-R3-SCALED-RETUNED-v1",
-        "WCF-R3-SCALED-RETUNED-v2"
+        "WCF-R3-SCALED-RETUNED-v2",
+        "M-546d167881384ce790c41cd47626d72a"
       ],
-      "reason": "完整实读；按精确模型/量词/结论分成独立稳定对象，正文及独有证明均由所列body/evidence入口保全。\n完整实读；按精确模型/量词/结论分成独立稳定对象，正文及独有证明均由所列body/evidence入口保全。\n0079增量候选：保持canonical全部原owner；本次只补旧资产精确scope/provenance证据，不改正文、模型、量词、条件、状态。\n完整实读；按精确模型/量词/结论分成独立稳定对象，正文及独有证明均由所列body/evidence入口保全。"
+      "reason": "完整实读；按精确模型/量词/结论分成独立稳定对象，正文及独有证明均由所列body/evidence入口保全。\n完整实读；按精确模型/量词/结论分成独立稳定对象，正文及独有证明均由所列body/evidence入口保全。\n0079增量候选：保持canonical全部原owner；本次只补旧资产精确scope/provenance证据，不改正文、模型、量词、条件、状态。\n完整实读；按精确模型/量词/结论分成独立稳定对象，正文及独有证明均由所列body/evidence入口保全。\n完整实读；按精确模型/量词/结论分成独立稳定对象，正文及独有证明均由所列body/evidence入口保全。\n完整实读；按精确模型/量词/结论分成独立稳定对象，正文及独有证明均由所列body/evidence入口保全。\n0079增量候选：保持canonical全部原owner；本次只补旧资产精确scope/provenance证据，不改正文、模型、量词、条件、状态。\n完整实读；按精确模型/量词/结论分成独立稳定对象，正文及独有证明均由所列body/evidence入口保全。\n本增量给精确整数起点新对象共享定义或两端证明证据，保全全部既有数学owner。"
     },
     {
       "path": "archives/weighted-congestion/state/定理/十四资源非对称例与对称两列拓扑的三十二次分离--定理.md",
@@ -204207,6 +204223,15 @@
         "weighted-congestion/harmonic-complement-monochromatic-pne-global-minimum"
       ],
       "reason": "阶段三自足证明，供独立数学比较。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/调谐十四资源缩权族无二倍均衡的精确整数起点--定理.md",
+      "sha256": "86301b0fe9025cdcf1b596d17a0bf413297b0e1ef56007ec808cf056028a3d2a",
+      "disposition": "objects",
+      "object_ids": [
+        "M-546d167881384ce790c41cd47626d72a"
+      ],
+      "reason": "独立精确整数起点命题及完整证明；只增加新对象，不改旧v1/v2。"
     },
     {
       "path": "archives/weighted-congestion/state/定理/资源幂矩与降序边际势的共同尺度桥--定理.md",
@@ -206012,6 +206037,26 @@
       "reason": "本候选以该冻结正文作为 wc-sorted-side-global-minimum-r-barrier 的候选主证据；现行 registry 未找到同 object_id；该源 frontmatter 提供候选稳定身份，但仍须 lead 与相邻对象逐项比较后正式分配/确认身份。"
     },
     {
+      "path": "archives/weighted-congestion/tools/evidence/crossover/original/evidence/certificates/weighted_congestion/crossover/limit_evidence/retuned_m3_certificate.json",
+      "sha256": "e289952c78da5e98718d9de35d1bfc38b77a30e7e08a3888563d21e0e2e867d6",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-546d167881384ce790c41cd47626d72a",
+        "WCF-R3-SCALED-RETUNED-v1",
+        "WCF-R3-SCALED-RETUNED-v2"
+      ],
+      "reason": "精确整数起点定理的必要数学证据附件；不为程序、日志或一次数值另造节点。"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/crossover/original/evidence/runs/weighted_congestion/crossover_limit_review/independent_evidence.json",
+      "sha256": "06c750b7176379ddfbacefae1a33f4eac1c1154c1825f6ab8ee035e8d175032d",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-546d167881384ce790c41cd47626d72a"
+      ],
+      "reason": "精确整数起点定理的必要数学证据附件；不为程序、日志或一次数值另造节点。"
+    },
+    {
       "path": "archives/weighted-congestion/tools/evidence/degree32-tight-source/replay.json",
       "sha256": "e5e8c5eb6b76f70947f4ee7a8204bd64da5b071bcfa8f5a4b23b77c2079f112e",
       "disposition": "attachment",
@@ -206037,6 +206082,24 @@
         "weighted-congestion/problem"
       ],
       "reason": "已连续实读本文完整正文及其实际模型、精确陈述、全部条件、证明位置、版本与审查边界；此文件承载所列数学身份。复用成熟论证，未重跑数学程序。"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss2/retuned-gap-4-19.md",
+      "sha256": "e8a73482a28fbb5ffd6ee0220a43d4c297a6ed075100e100ceb814fe62ad050f",
+      "disposition": "objects",
+      "object_ids": [
+        "M-546d167881384ce790c41cd47626d72a"
+      ],
+      "reason": "本页已承载有限区间严格非存在与全m≥3合成；由新精确起点对象统一承接，正式独立正文定位完整论证。"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss2/retuned-gap-4-19.py",
+      "sha256": "8920d631796040941dadc14a1c6d0f73d0f476154979f291d6acfe01b5c550cf",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-546d167881384ce790c41cd47626d72a"
+      ],
+      "reason": "精确整数起点定理的必要数学证据附件；不为程序、日志或一次数值另造节点。"
     }
   ],
   "edge_files": [
@@ -208914,6 +208977,13 @@
         "path": "research/registration/batches/register-boss6-cross32-cag-label-errata-v1.json",
         "sha256": "410cdd8d86cf0f10a1f6dfcc3ab91b00634b41a206ce8912ee156dd85c9fe72f"
       }
+    },
+    {
+      "batch_id": "register-boss6-retuned-onset-identity-v1",
+      "record": {
+        "path": "research/registration/batches/register-boss6-retuned-onset-identity-v1.json",
+        "sha256": "064eb1c31c5910e0e1da09848b211c83064d11c28058fe76d39e13c32a5b8e41"
+      }
     }
   ],
   "retired_objects": {
@@ -209258,6 +209328,7 @@
     "unrelated-machines/uniform-line-original-proof-and-de-canonical-version-review": "两个合并稿定理分开入证，保独立先验与原矩阵实际 checker。。现行对象：UM-LST2025-AFFINE-LINE-SOURCE-UNIFORM-COMPILATION-OBSTRUCTION-v1, UM-PARTIAL-SUM-TAKE-CONTINUE-FLAT-MENU-ACTUAL-ESCAPE-v1。",
     "unrelated-machines/upper-column-budget-matroid-rounding-review": "非负列总量加 B 证明与 parallel-copy 有限负例归同一真实定理，不另立 audit。。现行对象：M-22a10c9895bd43fb83aed6e894d5aea2。",
     "unrelated-machines/weighted-fanout-original-closure-and-concrete-profile": "真实加权扇出、缺一三半锐界及程序分别归既有稳定数学。。现行对象：UM-FANOUT-MISSING-ONE-THREE-HALVES-v1, UM-WEIGHTED-FANOUT-PROFILE-BOUNDARY-v1。",
-    "M-3a0c2d868d604da881df60e180f46db9": "同一 39 客户、同一五主题模型、同一空根 r=4 强制 E 的 CM 反例已由 M-e7dce51dc7b049f998e9c6b1c516e850 完整登记。该现役对象保有本记录全部证据和四个精确 Θ 值。旧身份与收据按原版本可追溯。"
+    "M-3a0c2d868d604da881df60e180f46db9": "同一 39 客户、同一五主题模型、同一空根 r=4 强制 E 的 CM 反例已由 M-e7dce51dc7b049f998e9c6b1c516e850 完整登记。该现役对象保有本记录全部证据和四个精确 Θ 值。旧身份与收据按原版本可追溯。",
+    "unrelated-machines/truncated-multiplication-vector-greedy-true-source": "与现行 UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1 v2 是同一固定阶压缩乘法向量贪心真实最优源反例：固定整数 r≥1，d=2r+1，B=2d，所有素数 q>B，同一 q 机器/q+1 任务/单 B anchor 的真实最优多项式分布，固定全空间 P_r 对任意任务顺序严格把全部普通任务送机0，OPT=B、峰q、比q/B。旧记录仅锚“构造”漏下一节范数证明；现行 v2 已绑定相同 SHA 的全文、两规范审计与 q13 审查，五个原来源均已保留。旧附加标准模型引用由 UM-MODEL-v1 及同页其余 owner 继续承载，没有独有数学或来源被删。旧批次/收据/原始正文保留作历史追溯；当前数学身份统一到 UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1。"
   }
 }

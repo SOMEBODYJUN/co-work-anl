@@ -1,0 +1,136 @@
+{
+  "schema": 2,
+  "objects": [
+    {
+      "object_id": "M-546d167881384ce790c41cd47626d72a",
+      "version": 1,
+      "title": "调谐十四资源缩权族无二倍均衡的精确整数起点",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限原子加权拥塞游戏：有限玩家、资源及每人有限非空资源子集动作族（可有空动作），每人资源无关正实权；资源费用为非负系数次数至多整数d的多项式。玩家成本为所用资源费用之和，不再乘权；每次真实单方偏离冻结别人并计入自身新负载。α-PNE用全部偏离的弱式C_old≤α C_new，α≥1；零费直接用不等式。 四玩家两动作，七互补mask0101,0112,1022,1100,1120,1122,1211，0不参加/1用动作0/2用动作1；每mask另有互补同费资源。整数m≥1，D_m=32m²，权(1,1/(10m),1/(20m),1/(50m))，固定正有理t=(a,b,c,d,e,f,g)，支持总权T_j(m)。",
+      "statement": "在正式十四资源缩权族中固定t=(49/100,11/10,49/100,3/5,1/50,3/100,1)，对每个整数m≥1，G_m(t)无2-PNE当且仅当m≥3。所有m≥3的全部16态均有严格二倍改善；m1、m2的0100和1011均为2-PNE。因此3为该固定族的精确整数起点，各成员次数为32m²。",
+      "quantifiers": "固定上述唯一振幅t，∀整数m≥1：[G_m(t)无2-PNE ⇔ m≥3]；对m≥3，∀状态s，∃玩家i，使C_i(s)>2C_i(s^⊕i)。",
+      "assumptions": [
+        "同一四玩家、二动作、七对互补mask的正式缩权族",
+        "权(1,1/(10m),1/(20m),1/(50m))；前六对次数32m²、末对二次；成本不乘权，偏离重算新负载",
+        "m3完整有理证书与m≥20定向统一界沿用RETUNED-v2",
+        "m4..19由新整数枚举逐态严格比较；m1/2存在性沿用冻结独立精确有理证据"
+      ],
+      "scope": "精确起点只针对该固定调谐族的整数参数。不是全类最优次数、有限B=2端点或拓扑最优性；旧RETUNED-v1/v2的原statement及独有证明保持准确范围。",
+      "objections": "新16项整数扫描已由Boss6根代理实际复跑且逐项匹配，exit0；本worker核同族性、整数正缩放、全态及固定见证覆盖并复核冻结m1/2精确有理数均<2，没有重跑成熟扫描。m3与统一尾界复用已登记v2及其成熟证据。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/调谐十四资源缩权族无二倍均衡的精确整数起点--定理.md",
+        "sha256": "86301b0fe9025cdcf1b596d17a0bf413297b0e1ef56007ec808cf056028a3d2a"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md",
+          "sha256": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/十四资源缩权族的常数无均衡界--定理.md",
+          "sha256": "62f4f0e0e9090a650f09442465161a4552f1ea84fad2bfa1f36c8183448733e0"
+        },
+        {
+          "path": "research/workspaces/map-v2/Boss2/retuned-gap-4-19.md",
+          "sha256": "e8a73482a28fbb5ffd6ee0220a43d4c297a6ed075100e100ceb814fe62ad050f"
+        },
+        {
+          "path": "research/workspaces/map-v2/Boss2/retuned-gap-4-19.py",
+          "sha256": "8920d631796040941dadc14a1c6d0f73d0f476154979f291d6acfe01b5c550cf"
+        },
+        {
+          "path": "archives/weighted-congestion/tools/evidence/crossover/original/evidence/runs/weighted_congestion/crossover_limit_review/independent_evidence.json",
+          "sha256": "06c750b7176379ddfbacefae1a33f4eac1c1154c1825f6ab8ee035e8d175032d"
+        },
+        {
+          "path": "archives/weighted-congestion/tools/evidence/crossover/original/evidence/certificates/weighted_congestion/crossover/limit_evidence/retuned_m3_certificate.json",
+          "sha256": "e289952c78da5e98718d9de35d1bfc38b77a30e7e08a3888563d21e0e2e867d6"
+        }
+      ],
+      "sources": [
+        "research/workspaces/map-v2/Boss2/retuned-gap-4-19.md",
+        "research/workspaces/map-v2/Boss2/retuned-gap-4-19.py",
+        "WCF-R3-SCALED-RETUNED-v2",
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/weighted_congestion/crossover_limit_review/independent_evidence.json"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/weighted-congestion/state/定理/调谐十四资源缩权族无二倍均衡的精确整数起点--定理.md",
+      "sha256": "86301b0fe9025cdcf1b596d17a0bf413297b0e1ef56007ec808cf056028a3d2a",
+      "disposition": "objects",
+      "object_ids": [
+        "M-546d167881384ce790c41cd47626d72a"
+      ],
+      "reason": "独立精确整数起点命题及完整证明；只增加新对象，不改旧v1/v2。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md",
+      "sha256": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df",
+      "disposition": "objects",
+      "object_ids": [
+        "M-30d382c7f97c48eea789aed8e8f93eed",
+        "M-546d167881384ce790c41cd47626d72a",
+        "WCF-R3-SCALED-ORIGINAL-v1",
+        "WCF-R3-SCALED-RETUNED-v1",
+        "WCF-R3-SCALED-RETUNED-v2",
+        "WCF-R3-SCALED-TEMPLATE-v1",
+        "weighted-congestion/scaled-fourteen-resource-family-and-limit"
+      ],
+      "reason": "完整实读；按精确模型/量词/结论分成独立稳定对象，正文及独有证明均由所列body/evidence入口保全。\n本增量给精确整数起点新对象共享定义或两端证明证据，保全全部既有数学owner。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/十四资源缩权族的常数无均衡界--定理.md",
+      "sha256": "62f4f0e0e9090a650f09442465161a4552f1ea84fad2bfa1f36c8183448733e0",
+      "disposition": "objects",
+      "object_ids": [
+        "M-546d167881384ce790c41cd47626d72a",
+        "WCF-R3-SCALED-ORIGINAL-v1",
+        "WCF-R3-SCALED-RETUNED-v1",
+        "WCF-R3-SCALED-RETUNED-v2"
+      ],
+      "reason": "完整实读；按精确模型/量词/结论分成独立稳定对象，正文及独有证明均由所列body/evidence入口保全。\n完整实读；按精确模型/量词/结论分成独立稳定对象，正文及独有证明均由所列body/evidence入口保全。\n0079增量候选：保持canonical全部原owner；本次只补旧资产精确scope/provenance证据，不改正文、模型、量词、条件、状态。\n完整实读；按精确模型/量词/结论分成独立稳定对象，正文及独有证明均由所列body/evidence入口保全。\n本增量给精确整数起点新对象共享定义或两端证明证据，保全全部既有数学owner。"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss2/retuned-gap-4-19.md",
+      "sha256": "e8a73482a28fbb5ffd6ee0220a43d4c297a6ed075100e100ceb814fe62ad050f",
+      "disposition": "objects",
+      "object_ids": [
+        "M-546d167881384ce790c41cd47626d72a"
+      ],
+      "reason": "本页已承载有限区间严格非存在与全m≥3合成；由新精确起点对象统一承接，正式独立正文定位完整论证。"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss2/retuned-gap-4-19.py",
+      "sha256": "8920d631796040941dadc14a1c6d0f73d0f476154979f291d6acfe01b5c550cf",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-546d167881384ce790c41cd47626d72a"
+      ],
+      "reason": "精确整数起点定理的必要数学证据附件；不为程序、日志或一次数值另造节点。"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/crossover/original/evidence/runs/weighted_congestion/crossover_limit_review/independent_evidence.json",
+      "sha256": "06c750b7176379ddfbacefae1a33f4eac1c1154c1825f6ab8ee035e8d175032d",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-546d167881384ce790c41cd47626d72a"
+      ],
+      "reason": "精确整数起点定理的必要数学证据附件；不为程序、日志或一次数值另造节点。"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/crossover/original/evidence/certificates/weighted_congestion/crossover/limit_evidence/retuned_m3_certificate.json",
+      "sha256": "e289952c78da5e98718d9de35d1bfc38b77a30e7e08a3888563d21e0e2e867d6",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-546d167881384ce790c41cd47626d72a",
+        "WCF-R3-SCALED-RETUNED-v1",
+        "WCF-R3-SCALED-RETUNED-v2"
+      ],
+      "reason": "精确整数起点定理的必要数学证据附件；不为程序、日志或一次数值另造节点。"
+    }
+  ],
+  "edge_files": []
+}
