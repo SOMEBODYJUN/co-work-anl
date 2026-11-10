@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-map-two-provider-middle-gap-round30-v1.json",
-    "sha256": "ef30534824e1d5f67a6ce7903a50b83e81f892bd0baa7712ed5f656cd4e5ce06"
+    "path": "research/registration/baseline-map-weighted-pair-golden-ratio-round32-v1.json",
+    "sha256": "d71362967249b85176d2482998f61b15214d26d4926ea3cb95fcaadfc34ee859"
   },
   "objects": [
     {
@@ -132239,6 +132239,33 @@
       ]
     },
     {
+      "object_id": "customer-attraction/positive-monochromatic-residual-tax-complete-spe-counterexample",
+      "version": 1,
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "title": "正余量单色后缀的剩余税付款反例",
+      "model": "有限单位客户、零背景、共用主题目录、单位提供者按固定顺序观察完整历史，终局等分，策略为完整纯SPE。",
+      "statement": "正M剩余税全称付款式失败。两人例 r=1 的两侧为3/2与1/2；三人完整SPE的实际ABB有M=1/3，合法T严格小于A，两侧为4/3与5/6。两例所有冻结查询均满足VA。",
+      "quantifiers": "两份精确存在性证书，三人例在所有21个合法决策节点逐一核过四个真后继收益。",
+      "assumptions": [
+        "正M，零背景，实际单色后缀。"
+      ],
+      "scope": "否定正余量付款义务的全称；保留独立的一般有符号RES与M=0饱和定理。",
+      "objections": "一般VA未被该证书否定。",
+      "body": {
+        "path": "archives/customer-attraction/state/反例/正余量单色后缀的剩余税付款反例--反例.md",
+        "sha256": "cb702c3a3ecf0fe8ad3d7c8e18e8320801d3d9fbf48c613bcd7ebd99cefc1d27"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/引理/单色真实后缀的饱和查询与剩余税--引理.md",
+          "sha256": "55840da387417b1c5a5618ad472e9ef49bca6f9ebc039655b32bde569c4507de",
+          "section": "M>0的精确剩余税"
+        }
+      ],
+      "sources": []
+    },
+    {
       "object_id": "customer-attraction/positive-reply-overlap-local-elimination-word-stabilizer-mincut",
       "version": 1,
       "title": "正R交叠的有限本地消元和精确最小割",
@@ -159888,6 +159915,32 @@
       ]
     },
     {
+      "object_id": "weighted-congestion/pure-pair-odd-ring-golden-ratio-sharp-threshold",
+      "version": 1,
+      "kind": "theorem",
+      "truth_status": "proved",
+      "title": "纯双人奇环的黄金比锐阈值",
+      "model": "有限纯双人奇环，同边两个副本用同一正系数单项式，全边共用非负整数次数，无固定背景或私有费，实际偏离计入自身新负载。",
+      "statement": "固定实例的最优纯态倍率严格小于φ=(1+√5)/2。任意1≤α<φ均存在正整数玩家权和正整数边系数的同模型实例，无弱α-PNE。跨环长及次数的倍率上确界恰为φ且不取到。",
+      "quantifiers": "上界对每个奇环长、公共非负整数次数、正实权及正实边系数。下界对每个严格小于φ的α，存在有限奇环长、次数与整数参数实例。",
+      "assumptions": [
+        "每条边只有两端点是潜在用户，每个玩家的一个位在两邻边选同位副本。"
+      ],
+      "scope": "固定实例的严格界与跨环长、次数的统一锐性。",
+      "objections": "固定环长或固定次数的锐常数仍需另证。任意图及带背景或私有费的双人网络属于更宽模型。",
+      "body": {
+        "path": "archives/weighted-congestion/state/定理/纯双人奇环的黄金比锐阈值--定理.md",
+        "sha256": "48707aee96173c469a1635642f460e759df813b7d6f4b64532c2bafae9b33744"
+      },
+      "evidence": [
+        {
+          "path": "archives/weighted-congestion/state/定理/纯双人奇环的缺陷取向阈值--定理.md",
+          "sha256": "c6f6b77e663dd66c8e408c21127e3f169ca5c2508a8e136ccae3ca5a9a7c1349"
+        }
+      ],
+      "sources": []
+    },
+    {
       "object_id": "weighted-congestion/rational-game-irrational-local-calibration-threshold",
       "version": 1,
       "title": "有理游戏的自由资源势无理共同尺度阈值",
@@ -163581,6 +163634,15 @@
         "CA-PRESCRIBED-STATIC-KERNELS-NO/root-stationary"
       ],
       "reason": "原指定核Claim的根成员平稳分支，保强而非弱分离。"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/正余量单色后缀的剩余税付款反例--反例.md",
+      "sha256": "cb702c3a3ecf0fe8ad3d7c8e18e8320801d3d9fbf48c613bcd7ebd99cefc1d27",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/positive-monochromatic-residual-tax-complete-spe-counterexample"
+      ],
+      "reason": "两个原策略完整博弈树的有理收益证书，独立否定正余量剩余税付款的全称。"
     },
     {
       "path": "archives/customer-attraction/state/反例/残余覆盖的逐人与聚合保底--反例.md",
@@ -172193,11 +172255,12 @@
       "sha256": "55840da387417b1c5a5618ad472e9ef49bca6f9ebc039655b32bde569c4507de",
       "disposition": "objects",
       "object_ids": [
+        "M-4c22b29410d645e38e012c1ea829933c",
+        "M-58e6be0ec19547d392a2d297e44024d1",
+        "M-7e580eead0f246c1bdfbd341529cfcce",
         "M-b19399f1576e47d99d69ef5526029c87",
         "M-d951713827e24a30a661a248bf34ca13",
-        "M-7e580eead0f246c1bdfbd341529cfcce",
-        "M-58e6be0ec19547d392a2d297e44024d1",
-        "M-4c22b29410d645e38e012c1ea829933c"
+        "customer-attraction/positive-monochromatic-residual-tax-complete-spe-counterexample"
       ],
       "reason": "完整实读本材料全部正文；复用成熟证明，本轮数学程序0运行，未冒称逐字重读全部原附件。精确M0刚性、一般有符号RES、静态全B弱占优、两人动态势反例和正M付款open分别登记；五者均保合法背景及同一真实续局。VA本题仍在《单色真实后缀的虚拟相邻税》候选，未当反例或已证。"
     },
@@ -203369,10 +203432,20 @@
       "sha256": "c6f6b77e663dd66c8e408c21127e3f169ca5c2508a8e136ccae3ca5a9a7c1349",
       "disposition": "objects",
       "object_ids": [
+        "M-630a7672d1d94245a34f178891f9a754",
         "weighted-congestion/pure-pair-odd-ring-exact-defect-threshold",
-        "M-630a7672d1d94245a34f178891f9a754"
+        "weighted-congestion/pure-pair-odd-ring-golden-ratio-sharp-threshold"
       ],
       "reason": "实际已读本页精确陈述、模型/量词/条件及完整证明/候选义务；多页来源归同主身份，不把目录/代码/PASS造数学节点。"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/纯双人奇环的黄金比锐阈值--定理.md",
+      "sha256": "48707aee96173c469a1635642f460e759df813b7d6f4b64532c2bafae9b33744",
+      "disposition": "objects",
+      "object_ids": [
+        "weighted-congestion/pure-pair-odd-ring-golden-ratio-sharp-threshold"
+      ],
+      "reason": "从精确缺陷取向和正系数乘积推出独立可复用的全次数锐统一界。"
     },
     {
       "path": "archives/weighted-congestion/state/定理/给定倍率的有理三角高度证书--定理.md",
