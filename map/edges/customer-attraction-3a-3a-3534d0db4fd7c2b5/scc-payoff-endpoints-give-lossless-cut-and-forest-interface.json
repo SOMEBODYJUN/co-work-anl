@@ -1,0 +1,52 @@
+{
+  "edge_id": "scc-payoff-endpoints-give-lossless-cut-and-forest-interface",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/real-payoff-comparison-SCC-quotient-and-nonnegative-flow-compilation"
+  ],
+  "target_ids": [
+    "customer-attraction/real-payoff-graph-closed-set-divergence-and-forest-certificate"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限完整有序历史形式策略σ，m,p≥1；全2^p−1非空类型形式坐标不随某个客户w的零支持删减；每条边从偏离收益顶点指向规定收益顶点，散度为入减出。此表示步骤不要求σ先在某个w上为SPE。",
+  "roles": {
+    "customer-attraction/real-payoff-comparison-SCC-quotient-and-nonnegative-flow-compilation": "提供真实比较的两个收益端点、形式收益注入、V=p·binom(m+p−2,p−1)及不损原行的合并规则。",
+    "customer-attraction/real-payoff-graph-closed-set-divergence-and-forest-certificate": "以这些原真实比较作为有限有向图，后续判非负散度并压缩已有证书的支撑。"
+  },
+  "explanation": "对每个历史h与偏离b，源定理给Γ_e=F_head−F_tail。同端点历史的非负乘子相加成λ_e，反向把λ_e全放回所存的一个真实历史代表，故不改变原可用行锥。有限换序得到Σ_eλ_eΓ_e=Σ_v(Σ_head=v λ_e−Σ_tail=v λ_e)F_v=L∂λ。该等式保留每个类型及同一客户余项r，且未限制到末层或计数统一策略。收益端点的单射证明给V的有限上界；每个无出边闭集必包含与其相交的整个SCC（沿内部路径闭合），从而闭集枚举可以精确落到凝聚DAG。",
+  "scope": "闭集/森林定理的原真实行→有限图的无损接口；p=1时V=1且无非零真实行，仍适用。合并平行同向边只保一个真实代表，不制造新比较。",
+  "contribution": {
+    "result": "对任意原始非负历史乘子，目标定理可无损使用同一图上的b=∂λ与类型行和L b；所有无出边闭集是完整SCC的并，且全收益顶点数为V。",
+    "remaining": "无出边闭集条件的充分性仍需目标页的层集Farkas证明；保持b、d、r的无向消环和V−1支持界也需其独立证明。端点压缩不构造任意2c−o的证书。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/真实收益比较图的强连通商与非负流编译--定理.md",
+      "sha256": "3ce9defea8b9c8508eed7fcc973f0acfbd32111ab58c80b94d5efe026e4d4900",
+      "section": "全有序历史的真实行与收益顶点"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/真实收益比较图的强连通商与非负流编译--定理.md",
+      "sha256": "3ce9defea8b9c8508eed7fcc973f0acfbd32111ab58c80b94d5efe026e4d4900",
+      "section": "精确商DAG及传递边删除"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/真实收益图的闭集散度判别与森林证书--定理.md",
+      "sha256": "c50c264079cd62a0ced0927f0070ee00be0e4d1ddebb0c28d2a585dc8610d3c4",
+      "section": "固定策略、端点和任意乘子"
+    }
+  ],
+  "reviewed_by": "Boss6 / customer-attraction-3a-3a-3534d0db4fd7c2b5",
+  "review_note": "完整实读本任务16件正文/证据（17条阅读引用），核全类型坐标、偏离→规定与入减出符号、真实完整历史续局及本边实际局部结论；一般解析证明与原有限Fraction报告分开。未运行原审计/LP/搜索，不把精确固定实例或表示等价提升为普遍half。",
+  "endpoint_pins": {
+    "customer-attraction/real-payoff-comparison-SCC-quotient-and-nonnegative-flow-compilation": "8dd4e2d61274209aeb10dea8096420574f68e93915837769264d459f0cea54e0",
+    "customer-attraction/real-payoff-graph-closed-set-divergence-and-forest-certificate": "5512838cf70d97d76afd686603867afb8e37eae7a2af5a185a44e3b54e257db6"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/真实收益比较图的强连通商与非负流编译--定理.md": "3ce9defea8b9c8508eed7fcc973f0acfbd32111ab58c80b94d5efe026e4d4900",
+    "archives/customer-attraction/state/定理/真实收益图的闭集散度判别与森林证书--定理.md": "c50c264079cd62a0ced0927f0070ee00be0e4d1ddebb0c28d2a585dc8610d3c4"
+  },
+  "review_digest": "c9e6dcc08b796320705b7a88cf29b6c19dfdbc9ac33f9b9dcd27d12e939f5f63"
+}
