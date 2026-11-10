@@ -1,0 +1,52 @@
+{
+  "edge_id": "boss6-r50-cag816-single-query-reverse-energy-prefix",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-aa612dfa9b7046c9952b846419810206",
+    "customer-attraction/fixed-entering-role-real-replay-and-once-only-potential-budget"
+  ],
+  "target_ids": [
+    "M-d374752a966a4de6bad359035d401e23"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "全部actual行共用同一A~p；独立联合Y的行边际为原选Q_i。N=m(m−1)/2个未来单元按每行时间顺序raw替换，最后静态enter。",
+  "roles": {
+    "M-aa612dfa9b7046c9952b846419810206": "同一查询的条件期望正交性及一次平方能量。",
+    "customer-attraction/fixed-entering-role-real-replay-and-once-only-potential-budget": "raw/真流同端点以及删除同一槽的固定A线性功。",
+    "M-d374752a966a4de6bad359035d401e23": "目标逆时间ENERGY、完整累计PREFIX和同端点功相等。"
+  },
+  "explanation": "对每个正概率Y=y fiber，A仍服从p；反向揭示尚未擦除的源单元形成递增信息链，INFO正交证明可逐fiber反向应用。G_k=sigma(Y,第k步后未擦源单元)，M_k=E[v_A|G_k]，独立性给M_N=v；δ_k=M_{k−1}−M_k正交且ΣE||δ||²=E||M0−v||²<=Vp。若t有负坐标，写t=J|t|并对全部向量施相同对角等距符号变换，条件期望、范数、内积皆保，故不偷缩目标域。固定过去贡献与A无关，目标删除负载只依赖Y，故Cov=ΣE<v_A−v,b_k−c_k>。b_k−c_k为G_{k−1}可测，先条件期望，再用M_{k−1}−v=Σ_{l>=k}δ_l和有限换序，得Cov=Σ_l E<δ_l,Σ_{k<=l}(b_k−c_k)>。raw与真流逐(A,Y)同起终点，固定源权总有符号功相等；不把raw边称真实IC。m1各和为空。",
+  "scope": "完整ENERGY/PREFIX合同，不删除累计前缀乘子，不重复Vp/2。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/固定中间动作的末位需求运输与单查询信息预算--引理.md",
+      "sha256": "eba790e401c0a7a1e0e9a28e2843471adb97a35de81d1a6370803d501f566b43",
+      "section": "同一查询样本的信息预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/固定进入槽的真实后继重放与一次势预算--算法.md",
+      "sha256": "8eaf25b4b724f19ef98e4a58876484540fbd424f1df23c87a80ae32a50fed10b"
+    },
+    {
+      "path": "archives/customer-attraction/state/问题/真实重放协方差的定量付款--问题.md",
+      "sha256": "80d1c50eaeabe78a57c76d4395319109c5e3187a5d26dd20cf6fa487eb07ae85",
+      "section": "raw坐标流的逆鞅式与累计前缀"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Fresh formal worker核当前25端点登记与本边承重正文，按同一sigma/有序历史/同一银行逐式重构。whole_result仅完整覆盖登记结论；contribution严格保留未付部分。没有重跑成熟LP或完整SPE树。",
+  "whole_result": "同一查询逆鞅ΣE||δ||²=E||M0−v||²<=Vp；Cov=Σ_lE<δ_l,Σ_{k<=l}(b_k−c_k)>，raw与真流逐端点固定A总有符号功相等。",
+  "endpoint_pins": {
+    "M-aa612dfa9b7046c9952b846419810206": "2948c39c5672bc006990cc85b76fd0787982f4f4c01fe73692f66aa792447a33",
+    "M-d374752a966a4de6bad359035d401e23": "65e36c3bb7827efb675b435b3e529cb67b49e7a03724aaec9877bde4ac203958",
+    "customer-attraction/fixed-entering-role-real-replay-and-once-only-potential-budget": "242e85e429f195fb7cdf9b97499721fb5386c0f8c114edbec31a68825aa7b489"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/固定中间动作的末位需求运输与单查询信息预算--引理.md": "eba790e401c0a7a1e0e9a28e2843471adb97a35de81d1a6370803d501f566b43",
+    "archives/customer-attraction/state/算法/固定进入槽的真实后继重放与一次势预算--算法.md": "8eaf25b4b724f19ef98e4a58876484540fbd424f1df23c87a80ae32a50fed10b",
+    "archives/customer-attraction/state/问题/真实重放协方差的定量付款--问题.md": "80d1c50eaeabe78a57c76d4395319109c5e3187a5d26dd20cf6fa487eb07ae85"
+  },
+  "review_digest": "b6f76ec8b95857d98a4ea9272633b4709c02f611691ed26a28fb2e879235321a"
+}
