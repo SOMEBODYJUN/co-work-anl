@@ -1,0 +1,55 @@
+{
+  "edge_id": "cag-missed-budget-true-shares-to-harmonic-screen",
+  "status": "accepted",
+  "premises_mode": "all",
+  "reviewed_by": "Boss2",
+  "kind": "implies",
+  "source_ids": [
+    "CA-SEQUENTIAL-DEVIATION-SHARES-v1"
+  ],
+  "target_ids": [
+    "customer-attraction/actual-missed-set-harmonic-profit-budget-and-scope-separation"
+  ],
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、非空共同标签目录、任意整数m≥1及任一完整有序历史纯SPE。A为实际并集，M为任一与A不交的可覆盖集合。对最优比较时O为合法m槽的最优并集，I=O∩A且M=O∖A。τ_M只用于M非空。",
+  "roles": {
+    "CA-SEQUENTIAL-DEVIATION-SHARES-v1": "L1在每个实际前缀对所有合法标签给出真实顺序偏离的最坏分母份额。",
+    "customer-attraction/actual-missed-set-harmonic-profit-budget-and-scope-separation": "由同一实际路径逐位置汇总，并给出分数覆盖、保最优交集、目录计数及严格反例必要条件。"
+  },
+  "explanation": "取r=m−i+1。由于M∩A为空，T∩M⊆T∖A，L1给r u_i≥|T∩M|。在每个i取同一全目录最大K_M并相加得到W≥H_m K_M。非空M可由有限目录分数覆盖，最小权τ_M达到且τ_M≥1。对任一可行权z，有|M|≤Σ_T z_T|T∩M|≤(Σ_T z_T)K_M，最小化给K_M≥|M|/τ_M。对某最优O，OPT_m=|I|+|M|，所以τ_M≤H_m(2−|I|/W)时OPT_m≤2W，其中|I|≤W，因而τ_M≤H_m也足够。实际选过的d个标签均不触M，给剩余p−d个标签各权1便覆盖M，所以τ_M≤p−d。严格反half要求每个最优O的|M|>2W−|I|≥W≥H_m K_M，且τ_M>H_m(2−|I|/W)≥H_m。M空时直接OPT_m≤W；W=0时若有可覆盖遗漏，L1在末位给正收益而矛盾。",
+  "scope": "任意可覆盖实际遗漏集和全部合法目录偏离。half充分条件只需有一个合适最优O，必要条件逐个最优O成立。实际早期选择可重复、标签覆盖可相同，后继沿原完整策略真实完成。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/终局遗漏客户的顺序偏离份额--引理.md",
+      "sha256": "83322e6bc2c4eff5ee712d1a46088f5dabdc69eea66a83d1420b1c0799fb6699",
+      "section": "L1与L3：实际终局遗漏客户的两种分母"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/实际遗漏集的调和利润预算与范围分离--引理.md",
+      "sha256": "bc61214f0c5ce18439662d6f63aefd3e72265379047a8945bfd06a41f5abbd6e",
+      "section": "任意实际遗漏集的预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/实际遗漏集的调和利润预算与范围分离--引理.md",
+      "sha256": "bc61214f0c5ce18439662d6f63aefd3e72265379047a8945bfd06a41f5abbd6e",
+      "section": "固定最优并集及保交集条件"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    }
+  ],
+  "review_note": "逐项核对L1的真枝量词、实际收益求和、最小分数覆盖及m=1、M空和零福利边界。推导与有限菜单记录无关。",
+  "whole_result": "真实份额L1推出任意实际遗漏M的逐位及调和预算、保交集和p−d两个half筛选，并推出严格反half的逐最优必要结构。",
+  "endpoint_pins": {
+    "CA-SEQUENTIAL-DEVIATION-SHARES-v1": "e7a695386b5813d7382d8e4228fef75809b3dfaf3b86a5928197a8b64e3c371d",
+    "customer-attraction/actual-missed-set-harmonic-profit-budget-and-scope-separation": "a78301af8a396fcd2164d51de127a658307561859045c5ed251099e7a4895fa6"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/终局遗漏客户的顺序偏离份额--引理.md": "83322e6bc2c4eff5ee712d1a46088f5dabdc69eea66a83d1420b1c0799fb6699",
+    "archives/customer-attraction/state/引理/实际遗漏集的调和利润预算与范围分离--引理.md": "bc61214f0c5ce18439662d6f63aefd3e72265379047a8945bfd06a41f5abbd6e",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "e69a7870dc10cce287af911fe06d5dc9f99ab914f11d8f2cd21c86d795fca1c6"
+}

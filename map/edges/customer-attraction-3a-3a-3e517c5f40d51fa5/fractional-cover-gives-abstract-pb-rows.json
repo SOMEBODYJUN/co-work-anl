@@ -1,0 +1,57 @@
+{
+  "edge_id": "ca-3e517-fractional-cover-gives-abstract-pb-rows",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-FRACTIONAL-COVER-PATH-BUDGET"
+  ],
+  "target_ids": [
+    "customer-attraction/all-prefix-budget-abstract-lp-sharpness"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m≥2，O>0 是真实完整 m 人纯SPE实例的某个最优 m 槽比较并集大小，P_i 是同一实际终局的前 i 名最终收益和。对每个比较槽计单位权，重复标签的权数相加。",
+  "roles": {
+    "CA-FRACTIONAL-COVER-PATH-BUDGET": "真实离轨偏离与同一实际终局旧利润给 O≤P_{i−1}+rτu_i。",
+    "customer-attraction/all-prefix-budget-abstract-lp-sharpness": "取 τ=m 提取其唯一一族原始必要行，再研究抛开客户和策略约束后的抽象极值。"
+  },
+  "explanation": "最优 m 槽并集中的每个客户至少在一个比较槽，故按槽赋单位权给分数覆盖，τ=m，r=m−i+1。代入真实前缀预算即得到目标松弛所有 m 条行；其乘积下界也由源递推付清。反向达到要用独立的抽象向量 u_i=O·D_{i−1}/(mr)，D_0=1、D_i=(1−1/(mr))D_{i−1}，它只核目标行和非负性。",
+  "scope": "只继承同实际终局的纯SPE必要行及下界；任意抽象可行向量没有真实SPE实现义务。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/分数覆盖的真实前缀利润预算--引理.md",
+      "sha256": "755cb6963539c054a1314ea514bdffa5a7a49226a03efed2197b1e35facb97e3",
+      "section": "完整陈述"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/分数覆盖的真实前缀利润预算--引理.md",
+      "sha256": "755cb6963539c054a1314ea514bdffa5a7a49226a03efed2197b1e35facb97e3",
+      "section": "真实偏离与同叶旧利润的支付"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/全部真实前缀预算行的抽象线性极值--障碍.md",
+      "sha256": "3d9e1d9f029d28f923ec54061abce741ab76c36a65308edd1e5178280d76547e",
+      "section": "只检验一套必要行"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/全部真实前缀预算行的抽象线性极值--障碍.md",
+      "sha256": "3d9e1d9f029d28f923ec54061abce741ab76c36a65308edd1e5178280d76547e",
+      "section": "精确极值与两方向证明"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "核了 τ=m 的选择即使主题重复也合法，P_i 是最终收益而非前缀覆盖。只限这些行时才有极值的反方向。",
+  "contribution": {
+    "result": "真实 PB 在最优 m 槽并集取 τ=m 产生目标的全部抽象预算行及 W/O≥1−∏_{r=1}^m(1−1/(mr))。",
+    "remaining": "极值达到、m≥4低于一半及渐近量由目标独立证明；若要从这种弱松弛推出真实 half 还需额外有效约束。"
+  },
+  "endpoint_pins": {
+    "CA-FRACTIONAL-COVER-PATH-BUDGET": "55702a54ae6a8ce7ba1746357a747120bae031b90583ca139c4b962769804592",
+    "customer-attraction/all-prefix-budget-abstract-lp-sharpness": "0927bf792ef3ed5e737f4565ca951fc6d1ce795d9e171ddc2dd62215ada2b912"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/分数覆盖的真实前缀利润预算--引理.md": "755cb6963539c054a1314ea514bdffa5a7a49226a03efed2197b1e35facb97e3",
+    "archives/customer-attraction/state/障碍/全部真实前缀预算行的抽象线性极值--障碍.md": "3d9e1d9f029d28f923ec54061abce741ab76c36a65308edd1e5178280d76547e"
+  },
+  "review_digest": "bb355ee5b9110ea8bc10ba5ecb977f3e7c2c008ebe0bba643975b15d57025325"
+}

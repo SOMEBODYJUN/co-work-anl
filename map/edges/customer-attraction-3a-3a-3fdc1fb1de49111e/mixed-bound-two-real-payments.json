@@ -1,0 +1,74 @@
+{
+  "edge_id": "ca-four-tail-mixed-bound-two-real-payments",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-bfd666c769ae4e5e8e4099ecaecacf47",
+    "customer-attraction/last-slot-value-and-catalog-counting",
+    "customer-attraction/legal-background-direct-denominator-security"
+  ],
+  "target_ids": [
+    "customer-attraction/occupied-background-general-profit-bound"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户及单位提供者的共同标签目录，任意合法有序前缀 b 后恰有整数 r≥2 人；每个可覆盖客户均有 b_x≥B，B 为非负整数。固定该前缀后的每份完整纯SPE。",
+  "roles": {
+    "M-bfd666c769ae4e5e8e4099ecaecacf47": "给隐藏抽样 v_r(b) 的已证数值下界，借 v≤θ 得同一 θ 下界。",
+    "customer-attraction/last-slot-value-and-catalog-counting": "给 v≤θ 的方向和合法前缀嵌入，将 θ_r(b) 传入真实末两人背景。",
+    "customer-attraction/legal-background-direct-denominator-security": "给前 r−2 个真实节点的粗分母保底，并允许统一用最初 b+r。",
+    "customer-attraction/occupied-background-general-profit-bound": "给统一高背景的同背景剩余利润系数及其高背景过半区间。"
+  },
+  "explanation": "设 λ=λ_(r,B)。静态 v≤θ，故 θ_r(b)≥F_r(b)/[r+(r−1)λ]。实际前 r−2 人任一真实节点额外已经走了 j 步，背景 b+p 满足 p_x≤j，当时余 r−j 人，因此该位收益≥K_b=max_TΣ_(x∈T)1/(b_x+r)。对最优 r 主题的客户次数 d，d/(b_x+d)≤d/(b_x+1)≤[(B+r)/(B+1)]d/(b_x+r)，故 K_b≥(B+1)F_r(b)/[r(B+r)]。实际末两人背景 p′ 的 θ_2(p′)≥θ_r(b)。在该倒二节点偏离到 f_(p′) 最大主题 A，原策略的真实末位最佳回复 L 满足 U_(p′)(A,L)−U_(p′)(L,A)=f_(p′)(A)−f_(p′)(L)≥0，故真实倒二IC给 θ_2(p′)，真实末位直接给同一下界。加总 r−2 份 K_b 和两份 θ 即得所列 c。r≥6、B=r−4 时，r(r−4+d)−3d(r−d)=3(d−r/3)²+2r(r−6)/3≥0，代入得 c≥1/2，且 c 随 B 不减。r=5、B=2 由五个整数 d 得 λ=3/8、c=257/455。",
+  "scope": "统一高背景下每份完整纯SPE的剩余总利润 P。静态下界在比较 θ 的环节使用，实际付款仅前 r−2 位的粗 K_b 与末两位的 θ。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/高背景下任意人数的剩余利润界--定理.md",
+      "sha256": "015c5d8b8b9960afcd5a826881c4bc837b0a571a91f08b8e3cef2466f0fb2d7d"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/高背景下任意人数的剩余利润界--定理.md",
+      "sha256": "015c5d8b8b9960afcd5a826881c4bc837b0a571a91f08b8e3cef2466f0fb2d7d",
+      "section": "3. 原始逐人保证与真正末两人"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/高背景下任意人数的剩余利润界--定理.md",
+      "sha256": "015c5d8b8b9960afcd5a826881c4bc837b0a571a91f08b8e3cef2466f0fb2d7d",
+      "section": "4. 无界人数半利润区间的解析闭合"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/高背景下任意人数的剩余利润界--定理.md",
+      "sha256": "015c5d8b8b9960afcd5a826881c4bc837b0a571a91f08b8e3cef2466f0fb2d7d",
+      "section": "5. 相同系数给静态混合安全值的背景下界"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md",
+      "sha256": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d",
+      "section": "2. 固定真实前缀的嵌入"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md",
+      "sha256": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d",
+      "section": "5. 与混合安全值及已整理税接口的关系"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/任意合法背景的直接分母保底--引理.md",
+      "sha256": "db141effb93732f44599c142a3f6aeb4f730bdba2a3e968bcbb225a325176064"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项核对 minimax 方向、真实末位分支和负载上界。原正文以点态式直接证明 θ，本边以同系数的独立静态 v 下界再经 v≤θ 给等效入口。六人空根 B=0 只给 29/99，且高背景条件量化目录全部可覆盖客户。",
+  "whole_result": "P≥[(r−2)(B+1)/(r(B+r))+2/(r+(r−1)λ_(r,B))]F_r(b)；r≥6 且 B≥r−4 给至少 F_r(b)/2，r=5 且 B≥2 给至少 257F_r(b)/455。",
+  "endpoint_pins": {
+    "M-bfd666c769ae4e5e8e4099ecaecacf47": "34e797558bd25452de581b1fc4373a86333c6929be44b82a86dc8189aa3f4e6d",
+    "customer-attraction/last-slot-value-and-catalog-counting": "5b963d828efa40aaa81e50a9a4937656777103dfa5ab0414369926b475f1585e",
+    "customer-attraction/legal-background-direct-denominator-security": "44b99563e1c28b58d5ff5c2ff4eec80d236931a788ee369a39dae4e6c1bb81ad",
+    "customer-attraction/occupied-background-general-profit-bound": "efb79015fd08cfc5309392f77f0500a2706384a94e0b40bfb456a8fbcf6f1652"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/高背景下任意人数的剩余利润界--定理.md": "015c5d8b8b9960afcd5a826881c4bc837b0a571a91f08b8e3cef2466f0fb2d7d",
+    "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d",
+    "archives/customer-attraction/state/引理/任意合法背景的直接分母保底--引理.md": "db141effb93732f44599c142a3f6aeb4f730bdba2a3e968bcbb225a325176064"
+  },
+  "review_digest": "7c2b9fc227858ab49802acb01e1fdf1762d42b70ff97b2a6a8f449507c83f8c7"
+}

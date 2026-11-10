@@ -1,0 +1,52 @@
+{
+  "edge_id": "ca-3e517-transitive-query-to-eleven-orbits",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-5b6f86a99039496aa2d80761b53696a3"
+  ],
+  "target_ids": [
+    "customer-attraction/two-four-block-security-snapshots-and-dense-cone-point"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定客户输入由两个四标签块各自置换及换块组成的传递群保持，零过去背景，竞争对手在看到查询分布但未看到查询抽样时选择四个可重复标签。",
+  "roles": {
+    "M-5b6f86a99039496aa2d80761b53696a3": "群平均固定输入的凹保障函数，且对任一最小整数背景平均其群像，给均匀查询的匹配上下界。",
+    "customer-attraction/two-four-block-security-snapshots-and-dense-cone-point": "将真正静态安全值压缩为双四块11轨道的有限线性式。"
+  },
+  "explanation": "均匀查询已最优，所以 v5 仍要对四个整数竞争槽取最小。按两块总数0+4、1+3、2+2取商，分别有5、3、3个代表；轨道大小合330。给定客户类型 T，查询覆盖概率 |T|/8，整数竞争负载为 Σ_{j∈T}h_j；用60清分母，得 v5=(1/480)min_ℓ Σ_r C_{ℓr}x_r，其中 C_{ℓr}=Σ_{T属r}|T|·60/(1+Σ_{j∈T}h_j)。",
+  "scope": "固定输入、相关整数背景、允许重复槽；只支付40个保存输入共同使用的解析公式。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/整数安全聚合的轨道输入搜索与固定策略锥--程序.md",
+      "sha256": "3ececa548aa4612031f7815c15cfd04968d2b0af2a7344e876422cc36e9afc99",
+      "section": "两种输入轨道与均匀query的完整安全证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/双四主题块的安全值保存点与稠密目录锥点--计算.md",
+      "sha256": "0763216c7b8b5ef0d5beab84cbbc37a1455336f5a2412fc5e3409bee37248bd4",
+      "section": "完整静态背景只有11个群轨道"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/transitive-integer-and-cone-saved-points-primary/current-static-value-certificate.json",
+      "sha256": "457bddf7d787051ce2ed6a388163c6377d0a86e80123b5b72771c6deb9b9925e"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "确认不是对真实策略取商。单个最坏背景不一定同时压住每个纯查询，匹配上界使用其相关群轨道分布。",
+  "contribution": {
+    "result": "双四块固定输入的真正 v5 等于11个整数背景轨道上的均匀查询最小值，给正文的六坐标 1/480 最小线性式。",
+    "remaining": "40个保存整数点的原 V、全部最小背景和向量身份须分别与精确证书核对；原完整策略、最小SPE福利和LP仍需其他证据。"
+  },
+  "endpoint_pins": {
+    "M-5b6f86a99039496aa2d80761b53696a3": "5ac2b9a2ee3254940c9a27a49bdaf22ca764be867cae4bc226709f01f70c988b",
+    "customer-attraction/two-four-block-security-snapshots-and-dense-cone-point": "307ee002639a7a241c028a6976634441b9e3792d0a0c5470c15be033a1736fed"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/整数安全聚合的轨道输入搜索与固定策略锥--程序.md": "3ececa548aa4612031f7815c15cfd04968d2b0af2a7344e876422cc36e9afc99",
+    "archives/customer-attraction/state/计算/双四主题块的安全值保存点与稠密目录锥点--计算.md": "0763216c7b8b5ef0d5beab84cbbc37a1455336f5a2412fc5e3409bee37248bd4",
+    "archives/customer-attraction/tools/evidence/transitive-integer-and-cone-saved-points-primary/current-static-value-certificate.json": "457bddf7d787051ce2ed6a388163c6377d0a86e80123b5b72771c6deb9b9925e"
+  },
+  "review_digest": "510bb2d2fa17160a357bddd69bc665b7b6997f7d3fd1bab5464a0beeb2d5f36f"
+}
