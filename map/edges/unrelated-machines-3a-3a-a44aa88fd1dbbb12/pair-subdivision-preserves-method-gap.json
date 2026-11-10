@@ -1,0 +1,73 @@
+{
+  "edge_id": "um-a44-r32-pair-subdivision-preserves-method-gap",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-PAIR-SUBDIVISION-GAP-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/task-level-shared-capacity-algorithm-obligations"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "显式每任务恰两不同机器端；细分新机两子任务时间 H>0、旧端保原时间。逐对合同只要求各机器对的完整配置耦合，各对可独立。两树族取 H=1、k≥4。",
+  "roles": {
+    "UM-PAIR-SUBDIVISION-GAP-v1": "在简单二部细分图上把同 T 配置证书提升为完整逐对兼容证书，并控制真实整数 OPT。",
+    "unrelated-machines/task-level-shared-capacity-algorithm-obligations": "共同容量义务中的基数闭合与逐对配置强化需要超过此精确反例族。"
+  },
+  "explanation": "T≥H 时原机配置仅重命名任务，中间机按相反端边际混合两单子任务，给同 T 配置。细分使任两机至多共享一件，互补条件质量分别为 a、1−a，块内用乘积除以对应正质量，零块跳过，保各机完整分布。原调度扩展峰≤max(OPT,H)，反向只有新峰<2H 时至少一子件在旧外端，压回不增旧负载，给 min(OPT,2H)≤OPT′。故 H≤旧 OPT≤2H 时保值；在指定两树上 OPT′=θ_k，T_PAIR≤1+1/k，OPT′/T_PAIR≥2−3/(k+1)，且给定阈值的先行计数闭包无首删。",
+  "scope": "实际输出两子任务按原身份恢复；T_PAIR 只是上界。T≥H 是配置提升条件，C<2H 是压回条件。各对单独耦合与一份全局共同 law 严格区分。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/成束计数闭包与细分保值的版本审查--审查.md",
+      "sha256": "6465e69f37823b6ae491512c2cc2ab201b80967e38cb77dcd33fd0ee6b02effd",
+      "section": "逐对配置耦合与通用细分的正确量词"
+    },
+    {
+      "path": "archives/unrelated-machines/state/程序/逐对配置细分的原审计与压回合同--程序.md",
+      "sha256": "7b9ee5a2ba56d12208636718af47fb37de8e9e0ff27af19026b2657491510e07",
+      "section": "一、配置证书与细分如何逐项提升"
+    },
+    {
+      "path": "archives/unrelated-machines/state/程序/逐对配置细分的原审计与压回合同--程序.md",
+      "sha256": "7b9ee5a2ba56d12208636718af47fb37de8e9e0ff27af19026b2657491510e07",
+      "section": "二、实际调度的提升与严格压回域"
+    },
+    {
+      "path": "archives/unrelated-machines/state/程序/逐对配置细分的原审计与压回合同--程序.md",
+      "sha256": "7b9ee5a2ba56d12208636718af47fb37de8e9e0ff27af19026b2657491510e07",
+      "section": "三、完整配置的逐对条件耦合"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/单共享任务条件耦合与长度二细分独立原入口--资源.md",
+      "sha256": "72280a7a62a3d865c59af8f35559436f5840c5589459c9154601c0b185354c55",
+      "section": "原任务与细分的真实合同"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/单共享任务条件耦合与长度二细分独立原入口--资源.md",
+      "sha256": "72280a7a62a3d865c59af8f35559436f5840c5589459c9154601c0b185354c55",
+      "section": "单共享任务的完整配置条件耦合"
+    },
+    {
+      "path": "archives/unrelated-machines/state/问题/任务级共同容量的算法义务--问题.md",
+      "sha256": "bf259a58e04bea2f62928d1f7f642e0ba72cd7c01db891d36c2d916ef06958a0"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复核两个互补块的逐完整配置行列和、H 两个边界和 θ_k/T_k。历史穷举 H=1 只覆盖给出的有限输入。",
+  "contribution": {
+    "result": "精确 CONFIG 加独立完整 pair 耦合及所给先行计数闭包，在简单二部细分族上仍有近二阈值间隙。",
+    "remaining": "一般三机及更高交叠、先消元后的信息或其他算法无此推断；仍须构造可求的更强共同容量和实际解码。"
+  },
+  "endpoint_pins": {
+    "UM-PAIR-SUBDIVISION-GAP-v1": "eec87ac5401675a735fb8bcc2b9f312de223e8a18d30520a313ff8da1d19be2b",
+    "unrelated-machines/task-level-shared-capacity-algorithm-obligations": "1b1f2c141d66fc58469194cf28b4f8dab0148c6c01cd721ba4c429ed5eea4719"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/成束计数闭包与细分保值的版本审查--审查.md": "6465e69f37823b6ae491512c2cc2ab201b80967e38cb77dcd33fd0ee6b02effd",
+    "archives/unrelated-machines/state/程序/逐对配置细分的原审计与压回合同--程序.md": "7b9ee5a2ba56d12208636718af47fb37de8e9e0ff27af19026b2657491510e07",
+    "archives/unrelated-machines/state/资源/单共享任务条件耦合与长度二细分独立原入口--资源.md": "72280a7a62a3d865c59af8f35559436f5840c5589459c9154601c0b185354c55",
+    "archives/unrelated-machines/state/问题/任务级共同容量的算法义务--问题.md": "bf259a58e04bea2f62928d1f7f642e0ba72cd7c01db891d36c2d916ef06958a0"
+  },
+  "review_digest": "8a2e80c7dc89ab3f4390545dafdaacf277a53c81d589c1ed0b050dcc03fabafb"
+}

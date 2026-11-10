@@ -1,0 +1,51 @@
+{
+  "edge_id": "um-a44-r32-window-tail-input-to-correlated-rounding",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-92d8c66af7df4a55b7b48a3f0348c440"
+  ],
+  "target_ids": [
+    "M-8d9c5ef35c7a4ae4bedaad34b37f8f6b"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一无先后的不相关机加权完成时间模型，正整数有限边时间、正整数权重及显式资格。使用窗口 LP 的每窗负载和跨窗必定左覆盖两类约束，接受 1+O(η) 时槽拥塞。",
+  "roles": {
+    "M-92d8c66af7df4a55b7b48a3f0348c440": "给出窗口解向稀疏矩形解的保尾质量变换，含近似时槽容量。",
+    "M-8d9c5ef35c7a4ae4bedaad34b37f8f6b": "以同一正整数加权完成时间目标消费稀疏近似矩形输入并进一步随机舍入。"
+  },
+  "explanation": "对每个端 ij 与 t≥0，矩形真实完成质量在 (1+cη)t 之后的尾不超过窗口估计在 t 后的尾。按端乘以 w_j 并积分尾函数，变量换成 u=(1+cη)t，得到矩形分数完成目标至多窗口估计的 1+cη 倍；不同任务标签仍随稀疏 z 保留。实际恢复依靠附录的同型矩形、几何长度桶及连续机器区间 bundle，存在性用的分母展开不进入运行时间。矩形解交给几何随机移位及 Im–Li 的分组舍入，最后以 Smith 顺序执行。",
+  "scope": "精确 in-packet 对照为 Li 同一加权目标的 §§4、5 与输入范围，近线性按论文稀疏算术合同。最终 (1.45+ε) 是期望。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+      "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+      "section": "5. Im–Li舍入的随机性与大整数处理"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+      "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+      "section": "1. 不可混用的输入、目标与运行保证"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md",
+      "sha256": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8",
+      "section": "4. 加权完成时间：窗口LP与矩形LP不是同一个对象"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复核了逐端尾积分及任务身份。inside 需 p_ij≤Δ_d，几何移位均匀变量是 ln ρ；不把两个排印冲突写成另一个算法。",
+  "contribution": {
+    "result": "窗口近似点提供目标损失 1+O(η)、容量拥塞 1+O(η) 的稀疏矩形输入，支付最终近线性相关随机算法的一步。",
+    "remaining": "还须生成适当的近似窗口解、正确处理任意大整数范围并使用 Im–Li 的相关舍入及 1.45 常数分析和 Smith 顺序。"
+  },
+  "endpoint_pins": {
+    "M-8d9c5ef35c7a4ae4bedaad34b37f8f6b": "43761985f004c4e3ffa4083ccc2950f4d18b88dd95f78dd26f8a078d02388bfc",
+    "M-92d8c66af7df4a55b7b48a3f0348c440": "723b4da95fa90b55dafb901a10edb50332ea674b4921dfa37b1cfeb81613e8b3"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/不相关机调度的近线性时间近似--资源.md": "8ae63c3da1fe4ad25051ad065c692da2c8ee1eb13c826e98f17f8b669e59b7c8"
+  },
+  "review_digest": "5f5dca5d691a9783772083e71d3a5fe8991d6c4cb6afcfe2c7078db7b05efb77"
+}

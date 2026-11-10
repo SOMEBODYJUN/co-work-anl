@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-a44-r32-weighted-group-opt-search",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-WEIGHTED-GROUP-JOINT-SLOT-v1"
+  ],
+  "target_ids": [
+    "UM-WEIGHTED-GROUP-PROMISE-APPROX-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "显式非负有理原输入，互斥 home/sink；宏只在 home 可用；每组私有任务只去本 home 和共同 E_h，所有有限端同权 w_j。固定 0≤δ<1/2，并在真实 OPT 处有 W_h≤OPT、w_j≤δ OPT 及全部有限宏端>OPT/2。",
+  "roles": {
+    "UM-WEIGHTED-GROUP-JOINT-SLOT-v1": "给定阈值的同一宏/home/sink LP 完备性、整数槽与原任务前缀恢复。",
+    "UM-WEIGHTED-GROUP-PROMISE-APPROX-v1": "在真实 OPT 尺度承诺上，将给定阈值构造接入未知 OPT 的单调位多项式搜索。"
+  },
+  "explanation": "先用各任务零端识别零峰。正分支令 Q 为有限时间分母之积，OPT=K*/Q。测试 t=k/Q 只检 W_h≤t、w_j≤δt 及同一 a/y LP，不额外测试宏端>t/2。升高 t 保留原 a/y，宏边只增、d_h=(W_h−t/2)_+ 只减、sink 容量与零旁路只增。真 OPT 调度每 home 至多一宏，并把该 home 的真实出口按 sink 体积归一，给 OPT 处的 LP 见证。任一合法完整分配的总处理量 U≥OPT、QU 为整数；二分首接受值 t≤OPT，故宏下界也自动传到 t。用同一整数槽网络选宏、home、接收槽后，只送使留量≤(1/2+δ)t 的真实组前缀。末件至多 δt，出口≤d_h；前槽收费给每 sink≤3t/2，home≤(3/2+δ)t。",
+  "scope": "搜索按二进制网格索引的位数收费。零目标和空任务有直接分支。LP 成功可发生在 t<OPT；受限结构的数学算法与给定 a/y 的现有软件 API 分开。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/算法/共同资格组的加权出口联合槽--算法.md",
+      "sha256": "494eef0d74c663d7049c65eb0a32b12696ec3a5c0168b47f85514305f8dfb15a"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/共同资格组的双实现与冻结范围--审查.md",
+      "sha256": "f12ceadba9b5b27bcd1a9da552311a57361d095dca21d75685a3c5455eb3e657"
+    },
+    {
+      "path": "archives/unrelated-machines/state/算法/共同资格组的加权出口联合槽--算法.md",
+      "sha256": "494eef0d74c663d7049c65eb0a32b12696ec3a5c0168b47f85514305f8dfb15a",
+      "section": "未知OPT：单调测试与位复杂度"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复核了 e_hz/e_h 的真调度见证、单位流同时守恒、末件出口算式和单调谓词。独立 7708 例与规范八夹具属于不同有限运行。",
+  "whole_result": "给定阈值的共同 LP 及恢复定理，配合单调有理网格搜索，推出在真实 OPT 结构承诺上的确定性总位多项式 (3/2+δ) 实际近似。",
+  "endpoint_pins": {
+    "UM-WEIGHTED-GROUP-JOINT-SLOT-v1": "acf4b435fa5dd10e67d20abe5f24b597d792fd1a49832826f7d21c7082ec150d",
+    "UM-WEIGHTED-GROUP-PROMISE-APPROX-v1": "6431200c92654dbedb96fae705d68a49bbcd88ea09e4a9c18185a855f92a8542"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/算法/共同资格组的加权出口联合槽--算法.md": "494eef0d74c663d7049c65eb0a32b12696ec3a5c0168b47f85514305f8dfb15a",
+    "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b",
+    "archives/unrelated-machines/state/审查/共同资格组的双实现与冻结范围--审查.md": "f12ceadba9b5b27bcd1a9da552311a57361d095dca21d75685a3c5455eb3e657"
+  },
+  "review_digest": "af492da262a91cf612b440fef107f103736815046e177285c9a04598b6a964bc"
+}
