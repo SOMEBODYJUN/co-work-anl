@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-boss2-source-scope-v1.json",
-    "sha256": "ac6a7fcd7e056e9912b04fbdfc20bdddbdf6a23e76e6cc2fa5b45a8d988d8bec"
+    "path": "research/registration/baseline-map-round34-santa-bit-bridge-v1.json",
+    "sha256": "2d2aa7fabb1b988285da4bfb809972248360224ddeb4cd9c2b316e96b649b38d"
   },
   "objects": [
     {
@@ -29762,22 +29762,33 @@
     },
     {
       "object_id": "M-49195941d69c4784890f322dca84ef7b",
-      "version": 1,
-      "title": "BLMRS 有理位复杂度接续义务",
-      "kind": "obligation",
-      "truth_status": "open",
-      "model": "BLMRS Theorem1 makespan→Santa 的二进制非负有理输入/实际输出",
-      "statement": "补齐有理缩放、有限取整、配置枚举、全部中间分母和输出位增长，使 (2−1/α)→(α+η) 保持确定性位多项式。",
-      "quantifiers": "每固定 α≥2、η>0；对所有该域输入",
-      "assumptions": [],
-      "scope": "与 Santa 无常数假设、真实源NO解码均为不同义务。",
-      "objections": "按所列模型、量词和证据范围使用。",
+      "version": 2,
+      "title": "一般 Santa Claus 到不相关机的有理位保持转移",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "一般 Santa Claus 的显式二进制非负有理输入与一般不相关机的实际调度输出。",
+      "statement": "对每个固定实α≥2与η>0，若一般UM有确定性总位多项式的实际(2−1/α)-近似调度算法，则一般有理Santa有确定性总位多项式的实际资源分配算法，每人价值≥OPT/(α+η)。",
+      "quantifiers": "任意固定α、η，任意显式二进制非负有理Santa输入，输出实际互不重复资源分配。",
+      "assumptions": [
+        "给定一般UM的确定性总位多项式实际(2−1/α)-近似调度算法。"
+      ],
+      "scope": "保留冻结文献的配置机及物理解码，修补截断、数值取整、配置枚举与阈值搜索，给出显式有理位长界。",
+      "objections": "该桥给从UM算法到Santa算法的方向。Santa无固定常数近似仍是独立假设。",
       "body": {
-        "path": "archives/unrelated-machines/state/审查/Santa无常数近似条件反面双源审查--审查.md",
-        "sha256": "406f82949f814028b7161bb4508fa48218dff0c0eb16af9ba05b43443088ba63",
-        "section": "适用性、位复杂度与数学边界"
+        "path": "archives/unrelated-machines/state/定理/一般SantaClaus到不相关机的有理位保持转移--定理.md",
+        "sha256": "d0b040d9fe3d4f6fbb26fcc67d9083bffe40f0274d7fd7b30525307cfdad8f4a"
       },
-      "evidence": [],
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/Santa无常数近似条件反面双源审查--审查.md",
+          "sha256": "406f82949f814028b7161bb4508fa48218dff0c0eb16af9ba05b43443088ba63",
+          "section": "适用性、位复杂度与数学边界"
+        },
+        {
+          "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
+          "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+        }
+      ],
       "sources": [
         "clean:a8ec98c7bc5bce1b0d3e"
       ]
@@ -89218,19 +89229,18 @@
     },
     {
       "object_id": "UM-SANTA-NO-CONSTANT-CONDITIONAL-v2",
-      "version": 1,
+      "version": 2,
       "title": "Santa无常数近似经位保持桥推出一般UM无统一改善",
       "kind": "complexity",
       "truth_status": "conditional",
       "model": "一般二进制非负有理 Santa Claus 和一般确定性位多项式不相关机",
-      "statement": "若 SCHA_det^N 和适用位保持桥均成立，则任意 2−ε 近似也为 2−1/q，由桥产生 q+1 的 Santa 近似，矛盾。",
+      "statement": "若SCHA_det^N成立，则对每个固定ε∈(0,1)，一般UM无确定性总位多项式实际(2−ε)-近似。取固定整数q≥max{2,ceil(1/ε)}，已证位保持桥给(q+1)-近似Santa，违反该假设。",
       "quantifiers": "任一固定 ε∈(0,1)；取固定 q≥max(2,ceil(1/ε))、η=1",
       "assumptions": [
-        "SCHA_det^N：每固定整数c≥3都无确定性位多项式 c 近似",
-        "BLMRS Makespan→Santa 的固定 q,η 归约在该有理域保持确定性总位多项式"
+        "SCHA_det^N：每个固定整数c≥3都无确定性位多项式c近似。"
       ],
-      "scope": "v1/v2 核心相同，v2精化位模型。",
-      "objections": "Santa现有低于2的硬度与q+1不冲突；不能推出无条件近二硬度。",
+      "scope": "有理位保持由新版桥支付，唯一独立开放前提为 SCHA_det^N。",
+      "objections": "SCHA_det^N 尚未证明。原审查正文中的有理位长待补项由新版定理支付。",
       "body": {
         "path": "archives/unrelated-machines/state/审查/Santa无常数近似条件反面双源审查--审查.md",
         "sha256": "406f82949f814028b7161bb4508fa48218dff0c0eb16af9ba05b43443088ba63",
@@ -89258,6 +89268,10 @@
         {
           "path": "archives/unrelated-machines/state/文献/需求树困难性导入的参与条件与参数方向--文献.md",
           "sha256": "38dbf9ca65b81707ca536a8eb6f222c68664cffcccc73bb7187b3c7a03753a83"
+        },
+        {
+          "path": "archives/unrelated-machines/state/定理/一般SantaClaus到不相关机的有理位保持转移--定理.md",
+          "sha256": "d0b040d9fe3d4f6fbb26fcc67d9083bffe40f0274d7fd7b30525307cfdad8f4a"
         }
       ],
       "sources": [
@@ -195341,6 +195355,16 @@
       "reason": "第三阶段实读Q_D完整整数值/逐任务CONFIG与私有均匀树配置上界后独立推出并复核的参数障碍；正式正文给单向低峰解码、全部原任务、Dr<=d及准确不可能范围。"
     },
     {
+      "path": "archives/unrelated-machines/state/定理/一般SantaClaus到不相关机的有理位保持转移--定理.md",
+      "sha256": "d0b040d9fe3d4f6fbb26fcc67d9083bffe40f0274d7fd7b30525307cfdad8f4a",
+      "disposition": "objects",
+      "object_ids": [
+        "M-49195941d69c4784890f322dca84ef7b",
+        "UM-SANTA-NO-CONSTANT-CONDITIONAL-v2"
+      ],
+      "reason": "有理配置压缩、完整物理解码及确定性位复杂度的自足证明。"
+    },
+    {
       "path": "archives/unrelated-machines/state/定理/七态原星全局二次负载局部核--定理.md",
       "sha256": "755f74fcc24ddf06995bedd65fb9e6ce4529c6676b6dd1036d7513669657f351",
       "disposition": "objects",
@@ -206388,7 +206412,6 @@
     "map/edges/unrelated-machines-3a-3a-280160f5f3f5d37d/packing-interface-a-gives-weighted-partial-schedule.json",
     "map/edges/unrelated-machines-3a-3a-280160f5f3f5d37d/reliable-threshold-interface-solves-uniform-target.json",
     "map/edges/unrelated-machines-3a-3a-280160f5f3f5d37d/target-and-token-identity-give-dag-ratio.json",
-    "map/edges/unrelated-machines-3a-3a-2cf9efe56bf3d79c/um-blmrs-theorem-and-bit-contract-give-conditional-santa-barrier.json",
     "map/edges/unrelated-machines-3a-3a-2cf9efe56bf3d79c/um-cartesian-free-and-coordinate-quota-imply-no-constant-repair.json",
     "map/edges/unrelated-machines-3a-3a-2cf9efe56bf3d79c/um-dag-token-endpoint-values-obstruct-restricted-santa.json",
     "map/edges/unrelated-machines-3a-3a-2cf9efe56bf3d79c/um-shared-sparse-decoder-pays-final-step-of-scheduling-transfer.json",
