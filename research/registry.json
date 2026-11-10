@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-map-um-v5-empty-leaf-round28-v1.json",
-    "sha256": "c1a53002883b69755d56c0abb2682ea079b100b47d227e913ef0daf378aaf206"
+    "path": "research/registration/baseline-map-facility-weight-closure-round29-v1.json",
+    "sha256": "d72fb4ec4c727b5478c94b444f088bd89fa612b6d6abccd383a2b9d1a030d5be"
   },
   "objects": [
     {
@@ -149124,6 +149124,42 @@
       ]
     },
     {
+      "object_id": "facility-games/common-many/complete-rule-weight-closure-integer-witness",
+      "version": 1,
+      "kind": "lemma",
+      "truth_status": "proved",
+      "title": "完整续局倍率的权重闭性与整数见证迁移",
+      "model": "有限共同地点目录、正权原客户、k≥2带标签设施、每个完整布局独立混合精确客户NE。",
+      "statement": "固定设施数和覆盖关系时，最佳完整续局倍率 α*(w) 逐实例达到、在正实权域下半连续。每个固定阈值严格失败的正实权实例可在同一覆盖结构下移到正有理权，再清分母为正整数权并保持严格失败。固定组合结构、固定设施数和全设施数的倍率上确界均与权域无关。",
+      "quantifiers": "任意有限共同目录、固定有限覆盖关系及k≥2，全部正实权向量和每个固定有限阈值α≥1。",
+      "assumptions": [
+        "完整规则在每个带标签布局选独立混合精确客户NE。",
+        "位置偏离用乘法比较，当前收益为零时仍按弱不等式。"
+      ],
+      "scope": "固定结构的闭性、达到与严格下界实例迁移。",
+      "objections": "不从闭性推出逐实例严格上界迁移、显式邻域或整数位长界。",
+      "body": {
+        "path": "archives/facility-games/subarchives/common-many/state/引理/完整续局倍率的权重闭性与整数见证迁移--引理.md",
+        "sha256": "d9f5c02a212916aa2f1b467e50d509c8afe9ab835f99551caf489565c11070c3"
+      },
+      "evidence": [
+        {
+          "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+          "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+        },
+        {
+          "path": "archives/facility-games/subarchives/common-many/state/定理/共同目录任意设施数因子二存在--定理.md",
+          "sha256": "8cb296f737f2534d333153fe839a46d960049c4e5ebc712e0a80b1983aae0be3"
+        },
+        {
+          "path": "archives/facility-games/subarchives/common-many/问题--问题.md",
+          "sha256": "ff8f52c8601f98366cd5735c102c71b46fcd017757bbe5147d1a74d5ea2b7aad",
+          "section": "最佳常数与相邻问题"
+        }
+      ],
+      "sources": []
+    },
+    {
       "object_id": "facility-games/common-many/greedy-box-arithmetic-implementation-boundary",
       "version": 1,
       "title": "合法零步族的贪心报告整数十进制转换失败边界",
@@ -193102,6 +193138,7 @@
         "SC-K-TWO-LIGHT-LOWER-POTENTIAL-NO",
         "SC-K-TWO-SITE-COMPONENT-GREEDY-2",
         "SC-K-UNIFORM-LIGHT-FLOW-2",
+        "facility-games/common-many/complete-rule-weight-closure-integer-witness",
         "facility-games/common-many/greedy-box-arithmetic-implementation-boundary",
         "facility-games/common-many/multiplicity-related-link-interface-boundary",
         "facility-games/common-many/three-facility-disjoint-repeated-sharp-two",
@@ -193152,6 +193189,7 @@
         "SC-K-2-E",
         "SC-K-CATALOG-WEIGHT-XP-2",
         "SC-K-LEX-BUDGET",
+        "facility-games/common-many/complete-rule-weight-closure-integer-witness",
         "facility-games/common-many/lex-maximum-pointwise-strict-factor-two-and-sharp-supremum",
         "facility-games/common-many/three-facility-repeated-site-factor-two-question"
       ],
@@ -193453,6 +193491,15 @@
         "SC-K-HEIGHT-TWO-INCIDENCE-2"
       ],
       "reason": "承载独立正文：facility-games/common-many/restricted-identical-link-range-preserving-nashification-import。"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/引理/完整续局倍率的权重闭性与整数见证迁移--引理.md",
+      "sha256": "d9f5c02a212916aa2f1b467e50d509c8afe9ab835f99551caf489565c11070c3",
+      "disposition": "objects",
+      "object_ids": [
+        "facility-games/common-many/complete-rule-weight-closure-integer-witness"
+      ],
+      "reason": "以完整独立混合策略紧积和真偏离弱不等式给正实/正有理/正整数下界见证迁移。"
     },
     {
       "path": "archives/facility-games/subarchives/common-many/state/引理/强制原子池的纯均衡设施负载下界--引理.md",
@@ -193969,10 +194016,11 @@
       "sha256": "ff8f52c8601f98366cd5735c102c71b46fcd017757bbe5147d1a74d5ea2b7aad",
       "disposition": "objects",
       "object_ids": [
+        "M-f33cc518f28045e1809c8b3113999135",
         "MF-MODEL",
         "SC-K-2-E",
-        "M-f33cc518f28045e1809c8b3113999135",
-        "SC-K-GREEDY-BUDGET"
+        "SC-K-GREEDY-BUDGET",
+        "facility-games/common-many/complete-rule-weight-closure-integer-witness"
       ],
       "reason": "承载独立正文：M-f33cc518f28045e1809c8b3113999135。"
     },
