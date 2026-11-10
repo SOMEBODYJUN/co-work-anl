@@ -1,0 +1,54 @@
+{
+  "edge_id": "wc-stage3a-shapley-order-gives-local-selector-sharpness",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R3-DENSE-SHARE-v1"
+  ],
+  "target_ids": [
+    "WC-R3-DENSE-POT-SHARP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定实R>1，m名权R固定用户与单位权移动用户，d=m²，W=mR+1；资源势固定按潜在最小权缩放。",
+  "roles": {
+    "WC-R3-DENSE-SHARE-v1": "给单位用户的精确排列边际、普通份额次序和总份额效率。",
+    "WC-R3-DENSE-POT-SHARP-v1": "据此构造在同一局部权比内逼近R的唯一坏最小点。"
+  },
+  "explanation": "令c_A(x)=x^d/W^d。移动用户之前有k名固定用户的概率为1/(m+1)，给登记的δ_m公式。只留k=m项给δ_m≥W[1−(1−1/W)^(d+1)]/(m+1)。单位权最小，普通份额序和效率给δ_m≤W/(m+1)，总份额是F_A(W)=W。由于(d+1)/W→∞且W/(m+1)→R，两界都趋R。取充分大m并令私有B费ρ_m=δ_m−1/m>1；两资源a_e=1，故唯一最小点选B，偏离到A的实际成本为1，倍率ρ_m→R。选择A则是精确PNE。",
+  "scope": "同一局部权比R的指定选择器锐性；构造的主资源潜在权比恰R，其他资源为1。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/局部窄权带的Shapley份额势--定理.md",
+      "sha256": "d1551d41cd6f3a625359dde38498d557a2ff46331049ee4284a0c908244af24d",
+      "section": "集函数、精确边际和效率"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/局部窄权带的Shapley份额势--定理.md",
+      "sha256": "d1551d41cd6f3a625359dde38498d557a2ff46331049ee4284a0c908244af24d",
+      "section": "两种权序与局部包络"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/局部窄权带的Shapley份额势--定理.md",
+      "sha256": "d1551d41cd6f3a625359dde38498d557a2ff46331049ee4284a0c908244af24d",
+      "section": "潜在用户局部权比的存在界"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/Shapley选择器与分带归一化--障碍.md",
+      "sha256": "5548bbb065324016ce85c6665d542d59055b81521e4327b412f62bee5113f38e",
+      "section": "局部R界对该选择器的渐近锐性"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项对照现行登记和承重原文，核对模型、量词、真实负载、推导与适用范围。",
+  "whole_result": "每个固定实R>1都有局部权比≤R的游戏序列，指定势唯一全局最小点的倍率趋R，每个游戏存在精确PNE。",
+  "endpoint_pins": {
+    "WC-R3-DENSE-POT-SHARP-v1": "b366c84b57563cd16221ec98f4bf136e3b34e9c3efdddf9a620005a0bcdabda1",
+    "WC-R3-DENSE-SHARE-v1": "bac86f71e93f496bbf35ccf460d4b60da2e22e7388261f3b759149e4e6ca9b32"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/局部窄权带的Shapley份额势--定理.md": "d1551d41cd6f3a625359dde38498d557a2ff46331049ee4284a0c908244af24d",
+    "archives/weighted-congestion/state/障碍/Shapley选择器与分带归一化--障碍.md": "5548bbb065324016ce85c6665d542d59055b81521e4327b412f62bee5113f38e"
+  },
+  "review_digest": "aac5338b96b8dcb930ea410e13e743ba4b1ab790b7056affa75af0c39610be42"
+}

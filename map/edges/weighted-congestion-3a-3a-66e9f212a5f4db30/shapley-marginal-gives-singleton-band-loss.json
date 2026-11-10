@@ -1,0 +1,44 @@
+{
+  "edge_id": "wc-stage3a-shapley-marginal-gives-singleton-band-loss",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R3-DENSE-SHARE-v1"
+  ],
+  "target_ids": [
+    "WC-R3-BAND-LINEAR-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "整数d≥7，M=d²，固定重用户只用A，单位移动用户在A与私有B之间选择；用标准H或Φ=Σ_e H_e/a_e。",
+  "roles": {
+    "WC-R3-DENSE-SHARE-v1": "给两用户排列中的前置集合边际与额外用户退出时的严格正边际。",
+    "WC-R3-BAND-LINEAR-v1": "确定构造的真实倍率、唯一势最小点与任意潜在用户扩充。"
+  },
+  "explanation": "取c_A(x)=x^d/(M+1)^d。单位用户加入A的Shapley边际为δ=[1+(M+1)^(d+1)−M^(d+1)]/[2(M+1)^d]。幂差积分和Bernoulli给δ≥(d+1)(M/(M+1))^d/2≥(d+1)(1−1/d)/2≥d/3。令c_B=ρ=δ/2。两资源的固定潜在最小权均1，故唯一势最小点选B；实际偏离至A的成本1，最佳倍率恰ρ≥d/6>1。选A是精确PNE。每带各添任意有限多个可在A与空策略间选择的用户，任一活跃新增用户退出严格降低势，因为正权和严格递增的F_A保证其边际为正。全部新增者在任一最小点选空，仍由上述两选项比较唯一确定最小点。选A及新增者全空也仍为精确PNE。",
+  "scope": "标准Shapley势的全局最小点选择，潜在两单点权带可以任意密；新增者在最小点全不活跃。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/局部窄权带的Shapley份额势--定理.md",
+      "sha256": "d1551d41cd6f3a625359dde38498d557a2ff46331049ee4284a0c908244af24d",
+      "section": "集函数、精确边际和效率"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/Shapley选择器与分带归一化--障碍.md",
+      "sha256": "5548bbb065324016ce85c6665d542d59055b81521e4327b412f62bee5113f38e",
+      "section": "标准选择器跨两单点权带的线性损失"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项对照现行登记和承重原文，核对模型、量词、真实负载、推导与适用范围。",
+  "whole_result": "每个整数d≥7有所列两单点带见证及任意潜在扩充；唯一势最小点的实际倍率ρ≥d/6，另有精确PNE。",
+  "endpoint_pins": {
+    "WC-R3-BAND-LINEAR-v1": "480880fb62b74c880fc9aba5f6a6ed58342c1671b68eeb74ceae694cd5a2e5f8",
+    "WC-R3-DENSE-SHARE-v1": "bac86f71e93f496bbf35ccf460d4b60da2e22e7388261f3b759149e4e6ca9b32"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/局部窄权带的Shapley份额势--定理.md": "d1551d41cd6f3a625359dde38498d557a2ff46331049ee4284a0c908244af24d",
+    "archives/weighted-congestion/state/障碍/Shapley选择器与分带归一化--障碍.md": "5548bbb065324016ce85c6665d542d59055b81521e4327b412f62bee5113f38e"
+  },
+  "review_digest": "4f1f4b7764ddd4d86b86d4e3a8c141f92feb49fd089637afe8727e3d399ef7ca"
+}

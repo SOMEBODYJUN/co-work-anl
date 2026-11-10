@@ -1,0 +1,42 @@
+{
+  "edge_id": "wc-stage3a-dag-endpoint-budget-gives-slack-rigidity",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1"
+  ],
+  "target_ids": [
+    "weighted-congestion/DAG-endpoint-slack-and-saturation"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限非空simple DAG，整数d≥1，0<ε<1，z=ε^(−1/d)>1，A按outgoing作用；费用非零非负系数，次数≤d。",
+  "roles": {
+    "WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1": "给固定合法权的充要检测条件与纯d次可行实现。",
+    "weighted-congestion/DAG-endpoint-slack-and-saturation": "把固定权不等式完全参数化并辨明饱和费用的刚性。"
+  },
+  "explanation": "令τ=z−1，b=(I−zA)w−τ1。固定权判据等价于b≥0与1ᵀw≤1/z。由于A^m=0，R_z=(I−zA)⁻¹=Σ_{j=0}^{m−1}z^jA^j≥I，故w=R_z(τ1+b)，且1ᵀR_z1=S_D(z)恰为路径和。代回根预算得到1ᵀR_z b≤1/z−τS_D(z)；反向恢复合法权和纯d次费用。预算饱和时非零b≥0使1ᵀR_z b>0，故b=0且权唯一。根及所有卫星低高载荷之比均为1/z。对非零非负系数费用，p(L)/p(H)为(L/H)^k按正的a_k H^k加权之平均；任何正低次项使比值严格大于z^(−d)=ε，故每条费用只能是正倍数x^d。",
+  "scope": "精确描述固定D,d,ε的全部可行权和饱和时全部可行费用，保留原检测域及严格权分离。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/有向无环端点低泄漏的精确次数预算--定理.md",
+      "sha256": "965f989741ccff9344da1d56a337ed48bef60875e90748f0874327176d1f5236"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有向无环端点低泄漏的精确次数预算--定理.md",
+      "sha256": "965f989741ccff9344da1d56a337ed48bef60875e90748f0874327176d1f5236",
+      "section": "全部可行权、饱和刚性与边界域"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项对照现行登记和承重原文，核对模型、量词、真实负载、推导与适用范围。",
+  "whole_result": "全部可行权恰为w=R_z(τ1+b)，b≥0且1ᵀR_z b≤1/z−τS_D(z)；预算等号时b=0，权唯一，每个通过检测的费用均为正倍数x^d。",
+  "endpoint_pins": {
+    "WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1": "c58925c9e46208b716fb24305aef1af7142d2fd927ddfd49955d0d647c8e1e26",
+    "weighted-congestion/DAG-endpoint-slack-and-saturation": "70a2d96cbc76deea4cb3a93735b0fd19fe79a2834902be837952edd218de4c91"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/有向无环端点低泄漏的精确次数预算--定理.md": "965f989741ccff9344da1d56a337ed48bef60875e90748f0874327176d1f5236"
+  },
+  "review_digest": "0cf7b4df0845e41b29c13372e7bd43010c5fbef133f3be41b156741b19f74318"
+}

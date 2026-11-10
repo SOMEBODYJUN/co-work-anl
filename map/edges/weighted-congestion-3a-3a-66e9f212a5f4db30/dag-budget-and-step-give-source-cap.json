@@ -1,0 +1,56 @@
+{
+  "edge_id": "wc-stage3a-dag-budget-and-step-give-source-cap",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1",
+    "WC-R1-DAG-STEP"
+  ],
+  "target_ids": [
+    "weighted-congestion/DAG-endpoint-source-threshold-cap"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限非空simple DAG及相同严格合法权条件。整数d≥1、0<ε<1，设z=ε^(−1/d)；统一端点检测可行时比较另行定义的辅助阶跃源门槛。",
+  "roles": {
+    "WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1": "给S_D(z)≤1/[z(z−1)]及无边图在该整数预算内的可行性。",
+    "WC-R1-DAG-STEP": "给以顶点计路径的唯一门槛方程和真实辅助游戏的门槛含义。",
+    "weighted-congestion/DAG-endpoint-source-threshold-cap": "得到源门槛的显式上界、固定ε的锐渐近及有限图优化。"
+  },
+  "explanation": "同一个D的路径数P_k在两个公式一致。以STEP的方程乘q_D，得q_D(q_D−1)=S_D(1/q_D)≤S_D(z)≤B，其中B=1/[z(z−1)]。z=e^(L/d)、L=ln(1/ε)>0给z(z−1)≥L/d，解递增二次式得登记的根界和1+√(d/L)界。更精确地，因S_D(1/q_D)≤ΣP_k≤S_D(z)≤B且ΣP_k为整数，有q_D(q_D−1)≤⌊B⌋，含边图首不等式严格。若⌊B⌋≥1，无边图取m=⌊B⌋可行且取到该有限上界；若⌊B⌋=0，则无非空D可行。固定ε、d→∞时B∼d/L，故该无边图序列q_D∼√(d/L)。",
+  "scope": "检测系统允许的辅助阶跃源门槛；端点比较只约束指定负载，未提供多项式游戏真实全态偏离的迁移。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/有向无环端点低泄漏的精确次数预算--定理.md",
+      "sha256": "965f989741ccff9344da1d56a337ed48bef60875e90748f0874327176d1f5236"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有向无环端点低泄漏的精确次数预算--定理.md",
+      "sha256": "965f989741ccff9344da1d56a337ed48bef60875e90748f0874327176d1f5236",
+      "section": "辅助源门槛的预算与锐平方根量级"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+      "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990",
+      "section": "模型与量词"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+      "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990",
+      "section": "路径递推、任意振幅上界及端点取得"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项对照现行登记和承重原文，核对模型、量词、真实负载、推导与适用范围。",
+  "whole_result": "每个可行端点检测有q_D(q_D−1)≤B≤d/ln(1/ε)及登记的两层根界，固定ε由无边图取得平方根量级。精确有限最大值为(1+√(1+4⌊B⌋))/2，适用于至少存在一个非空可行图时。",
+  "endpoint_pins": {
+    "WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1": "c58925c9e46208b716fb24305aef1af7142d2fd927ddfd49955d0d647c8e1e26",
+    "WC-R1-DAG-STEP": "553c4a4fd59e0cc01339c0971bcf42b46ec7c2792484fdd29fb829b1861b57db",
+    "weighted-congestion/DAG-endpoint-source-threshold-cap": "e9dad43369486cec27a28fd253a0093c8dd4d2a1f45ecbfb0203be6de82cd559"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/有向无环端点低泄漏的精确次数预算--定理.md": "965f989741ccff9344da1d56a337ed48bef60875e90748f0874327176d1f5236",
+    "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990"
+  },
+  "review_digest": "bc874430b4dfb8d983d3cbcdb6dbef0934d68bf3f5b5df7c0b9b7297db14ee55"
+}

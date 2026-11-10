@@ -1,0 +1,51 @@
+{
+  "edge_id": "wc-stage3a-odd-certificate-pays-envelope-necessity",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R3-ODD-RING-CERTIFICATE-v1"
+  ],
+  "target_ids": [
+    "WC-R3-ODD-RING-ENVELOPE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "整数d≥2，实α≥1；同一有限奇环，两组严格测试、正权、主次数1≤k_i≤d、侧纯d次。",
+  "roles": {
+    "WC-R3-ODD-RING-CERTIFICATE-v1": "给实际权闭环与严格证书的全部正因子和环积G>1。",
+    "WC-R3-ODD-RING-ENVELOPE-v1": "把正系数可行性限制到α<T_d并得到必要次数预算。"
+  },
+  "explanation": "用Πx_i=Πt_i将G写成Π_i F_{k_i,n_i}(x_i)F_{d,1}(1/t_i)，其中F_{k,n}(x)=nx[(1+x)^k−α(nx)^k]/[α(1+nx)^k−1]。由于1+x≤1+nx，第一因子≤F_{k_i,1}(n_i x_i)。重排知F_{k,1}(y)>1等价α<f_k(y)，而y≤1时f_k≤1，y>1时f_k≤f_d≤T_d。于是α≥T_d强制G≤1，矛盾。若α>1，置τ=α^(1/d)−1，正N,Q给n_i x_i<1/τ、t_i>τ。M_i≥(α−1)(1+n_i x_i)^k_i、P_i≥(α−1)(1+t_i)^d，故每个已归一化因子均严格小于1/[(α−1)τ]；G>1给(α−1)τ<1。α=1时后者自动成立。",
+  "scope": "精确严格两测试包络的必要方向，含上端点排除；未对不通过测试的任意游戏判定均衡。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+      "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+      "section": "3. Coverage of every state and the coefficient cycle"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+      "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+      "section": "4. The exact necessary envelope"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+      "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+      "section": "6. Growth and sharpness of this certificate's leading constant"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项对照现行登记和承重原文，核对模型、量词、真实负载、推导与适用范围。",
+  "contribution": {
+    "result": "正系数严格测试可行必有α<T_d，并满足(α−1)(α^(1/d)−1)<1。",
+    "remaining": "完整包络尚需低于T_d的显式重置和T_d的精确渐近；环积消去不承担这些方向。"
+  },
+  "endpoint_pins": {
+    "WC-R3-ODD-RING-CERTIFICATE-v1": "896d7cd0a87e40b1299dbdf3f33740617a131bfa35b736b47ec70637df78ce5c",
+    "WC-R3-ODD-RING-ENVELOPE-v1": "202eaf2e5e707f1bece41a4dedd4e75d3ca43a9cc503c556fa214e265951c610"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055"
+  },
+  "review_digest": "44a7f503ef2830b8ef698668ab3d9af77ce1cfdf120c2b9852d03d51ff9f5a15"
+}

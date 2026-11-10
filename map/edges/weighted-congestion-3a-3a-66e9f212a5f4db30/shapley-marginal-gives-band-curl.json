@@ -1,0 +1,44 @@
+{
+  "edge_id": "wc-stage3a-shapley-marginal-gives-band-curl",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R3-DENSE-SHARE-v1"
+  ],
+  "target_ids": [
+    "WC-R3-BAND-CURL-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "普通均匀排列Shapley份额，权1和实M>1，单资源总费F(x)=x³，分别按玩家自身带权归一化。",
+  "roles": {
+    "WC-R3-DENSE-SHARE-v1": "提供未归一化的精确集势边际和均匀排列公式。",
+    "WC-R3-BAND-CURL-v1": "用二人实例判定归一化边际的普通势相容性。"
+  },
+  "explanation": "两名玩家时φ_i({i,j})=[F(w_i)+F(w_i+w_j)−F(w_j)]/2，单人边际为F(w_i)。因此两方向原边际的变化都是κ=[(M+1)³−1−M³]/2=3M(M+1)/2。若Q实现归一化后的普通边际，混合差Q({i,j})−Q({i})−Q({j})+Q(∅)按两个插入顺序分别等于κ与κ/M；M>1及κ>0使其矛盾。原H的边际仍分别等于1和M乘各归一化边际，故给这些成本一个带玩家尺度的精确势。",
+  "scope": "所给二人单资源接口及普通精确集势；加权势保留，原游戏均衡存在性另行判断。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/局部窄权带的Shapley份额势--定理.md",
+      "sha256": "d1551d41cd6f3a625359dde38498d557a2ff46331049ee4284a0c908244af24d",
+      "section": "集函数、精确边际和效率"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/Shapley选择器与分带归一化--障碍.md",
+      "sha256": "5548bbb065324016ce85c6665d542d59055b81521e4327b412f62bee5113f38e",
+      "section": "单点权带分别归一化的混合差障碍"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项对照现行登记和承重原文，核对模型、量词、真实负载、推导与适用范围。",
+  "whole_result": "对每个实M>1，玩家权分别归一化的份额无普通精确集势，混合差为κ和κ/M；同一原H给玩家乘子1、M的加权势。",
+  "endpoint_pins": {
+    "WC-R3-BAND-CURL-v1": "724e9eb6e607346abdf02d96033c5e20f39e490babe2aa624af7f563a1d1791f",
+    "WC-R3-DENSE-SHARE-v1": "bac86f71e93f496bbf35ccf460d4b60da2e22e7388261f3b759149e4e6ca9b32"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/局部窄权带的Shapley份额势--定理.md": "d1551d41cd6f3a625359dde38498d557a2ff46331049ee4284a0c908244af24d",
+    "archives/weighted-congestion/state/障碍/Shapley选择器与分带归一化--障碍.md": "5548bbb065324016ce85c6665d542d59055b81521e4327b412f62bee5113f38e"
+  },
+  "review_digest": "99a526ef5abc35f97ca3255689072cfd029cfeecd512c69226e2d911f89faa39"
+}

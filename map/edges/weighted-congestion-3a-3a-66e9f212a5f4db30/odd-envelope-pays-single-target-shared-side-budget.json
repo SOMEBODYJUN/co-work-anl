@@ -1,0 +1,57 @@
+{
+  "edge_id": "wc-stage3a-odd-envelope-pays-single-target-shared-side-budget",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R3-ODD-RING-ENVELOPE-v1"
+  ],
+  "target_ids": [
+    "wc-shared-side-truncated-budget"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "统一强迫UF，整数d≥2，非负多项式次数≤d，α≥T_d；每条side至多一个target hub，全部hub权u相同。",
+  "roles": {
+    "WC-R3-ODD-RING-ENVELOPE-v1": "f_k(y)≤T_d对每个1≤k≤d、y>0成立，提供两载荷界。",
+    "wc-shared-side-truncated-budget": "在singleton side特化中，源预算B连同AS进入已证局部势定理。"
+  },
+  "explanation": "令y=W/u。由f_k(y)≤α对单项式重排即W[F(u+W)−αF(W)]≤u[αF(u+W)−F(u)]；常数项由α≥1直接成立，非负求和得任意允许F，W=0直接处理。对side取W=u并把式中基权换成w，得到H_j(1)=[G_j(u+w)−αG_j(u)]_+≤(w/u)[αG_j(u+w)−G_j(w)]，右端非负，空target的H_j(0)=0。UF对同一light的全部侧项共付一次：Σ_j[αG_j(w+m_j u)−G_j(w)]≤F_v(u+w)−αF_v(W_v)。乘w/u后同源求和，用w≤W_v和上述主资源不等式即得Σ_source H_j(m_j)≤M_v。UF还直接给AS，故原有限势的每个hub单翻局部最小点配全反位均为α-PNE。共同hub权对一般多target的截断和仍是另一项结构条件。",
+  "scope": "与共享侧证明同一直接预算和真实偏离；改进的是每条side至多一个target的UF门槛。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+      "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+      "section": "4. The exact necessary envelope"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/唯一轻玩家共享侧资源的截断势预算--定理.md",
+      "sha256": "1d937605b0d7039d9f8410c7136bb90d0349aa8e35eaaa26b8c27093dce14ce5",
+      "section": "有限资源模型与两个不同结论"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/唯一轻玩家共享侧资源的截断势预算--定理.md",
+      "sha256": "1d937605b0d7039d9f8410c7136bb90d0349aa8e35eaaa26b8c27093dce14ce5",
+      "section": "固定light的边际与只供比较的重置"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/唯一轻玩家共享侧资源的截断势预算--定理.md",
+      "sha256": "1d937605b0d7039d9f8410c7136bb90d0349aa8e35eaaa26b8c27093dce14ce5",
+      "section": "从统一强迫得到可付预算"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项对照现行登记和承重原文，核对模型、量词、真实负载、推导与适用范围。",
+  "contribution": {
+    "result": "对至多单target的侧资源，UF在α≥T_d即推出AS及源截断预算B，因而给全反位α-PNE。",
+    "remaining": "目标的任意target集合需付全部r=1,…,m_j的截断增量，singleton推导不覆盖；完整直接预算定理另在其正文证明。"
+  },
+  "endpoint_pins": {
+    "WC-R3-ODD-RING-ENVELOPE-v1": "202eaf2e5e707f1bece41a4dedd4e75d3ca43a9cc503c556fa214e265951c610",
+    "wc-shared-side-truncated-budget": "7d4ebe79f70f060f80c7ad222939be08053ed79ef04306a1e191a4ad22a637bc"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+    "archives/weighted-congestion/state/定理/唯一轻玩家共享侧资源的截断势预算--定理.md": "1d937605b0d7039d9f8410c7136bb90d0349aa8e35eaaa26b8c27093dce14ce5"
+  },
+  "review_digest": "2136750c1c973fb8a9d69db1fee2680aa505815dc7a4211bdd6f01b264aa5b87"
+}
