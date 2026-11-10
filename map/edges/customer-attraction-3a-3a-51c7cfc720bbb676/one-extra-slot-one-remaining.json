@@ -1,0 +1,45 @@
+{
+  "edge_id": "ca-round37-one-extra-slot-one-remaining",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "RI-FLOOR-RESERVE"
+  ],
+  "target_ids": [
+    "M-c03916f4015c44528faeee74b77cf718"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定合法过去b、单位客户与共同目录，实际余r≥1；比较槽可重复。",
+  "roles": {
+    "RI-FLOOR-RESERVE": "固定合法起点的h_r及r1最优利润保底",
+    "M-c03916f4015c44528faeee74b77cf718": "r+1比较槽对r名真实未来的全背景义务"
+  },
+  "explanation": "r=1有P_h≥h_1(b)=F_1(b)。两个比较槽的每个客户c/(b+c)≤c/(b+1)，故F_2≤2F_1≤2P_h。对任意r，从达到F_(r+1)的合法比较元组均匀删一个索引。客户计数c>0以概率c/(r+1)减一，(c−1)/(b+c−1)≥(c−1)/c·c/(b+c)，c=1删后为0。于是期望总利润≥r/(r+1)F_(r+1)，故F_(r+1)≤(r+1)/r F_r。",
+  "scope": "r=1完全支付及任意r的比较槽静态估算。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/合法背景剩余利润的精确盈余递推与静态保底--引理.md",
+      "sha256": "e5e7e44a5c3987e144b204e447e6c4a624bfd3e8df3dd2e55784f94e1781624b"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/背景利润储备递归的原审计与弱诊断合同--资源.md",
+      "sha256": "c59e3a817cc0d5ee1395bedc2b365dfff35b0cb0a7b1397ebe8f123902e9b93a"
+    }
+  ],
+  "contribution": {
+    "result": "任意合法背景的r=1情形已付；一般r下额外比较槽至多把静态F_r放大(r+1)/r。",
+    "remaining": "r≥2还需实际P_h的更强余量或直接一额外槽付款。全称台阶失败不是此候选反例；1750历史阴性只有文字范围。"
+  },
+  "reviewed_by": "Boss1",
+  "review_note": "按本批钉定正文复核真实历史、参数量词、联合条件和结论范围。仅记录说明所指的已证步骤或语境。",
+  "endpoint_pins": {
+    "M-c03916f4015c44528faeee74b77cf718": "80b4dfa9cd398928b177e15e5c6f64e4a6f369b0db734b57fd2f14698649eb62",
+    "RI-FLOOR-RESERVE": "bc1005fc28a9c1869570157df16a810c377f0d74a1393cb9754ee557b279860d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/合法背景剩余利润的精确盈余递推与静态保底--引理.md": "e5e7e44a5c3987e144b204e447e6c4a624bfd3e8df3dd2e55784f94e1781624b",
+    "archives/customer-attraction/state/资源/背景利润储备递归的原审计与弱诊断合同--资源.md": "c59e3a817cc0d5ee1395bedc2b365dfff35b0cb0a7b1397ebe8f123902e9b93a"
+  },
+  "review_digest": "8e4913cbe33c81e7e4ef11829902b23cbb1acb3698c3caaaefd024c1b3d88d48"
+}

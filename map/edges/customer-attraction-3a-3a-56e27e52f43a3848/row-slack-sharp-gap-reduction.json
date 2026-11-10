@@ -1,0 +1,48 @@
+{
+  "edge_id": "ca-56e27e52-row-slack-sharp-gap-reduction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/optimal-menu-static-credit-signed-adaptivity",
+    "customer-attraction/single-role-dynamic-loss-same-client-credit-and-unpaid-shares"
+  ],
+  "target_ids": [
+    "M-c5d349f1196d4c94bb25a9ef61b38556"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "每份完整纯SPE，固定实际角色i及同一最优比较m索引元组。记E_i、L_i、Q_i按单角色正文，s_i=m u_i−Q_i。",
+  "roles": {
+    "customer-attraction/optimal-menu-static-credit-signed-adaptivity": "真实全菜单和与静态信用的精确逐行身份，末位无适应差。",
+    "customer-attraction/single-role-dynamic-loss-same-client-credit-and-unpaid-shares": "给出差额可逐项抵消的两组非负客户及其余两组。",
+    "M-c5d349f1196d4c94bb25a9ef61b38556": "准确分离角色m−1 sharp-gap的已证账式及其未付激励。"
+  },
+  "explanation": "原真实逐主题IC给s_i≥0。将角色静态信用式减真适应差后再代Q_i=m u_i−s_i，得到OPT−W=(m−1)u_i+L_i−E_i−s_i。因而可保整个真实slack，只需付L_i−E_i≤s_i。四组中仍须付实际遗漏客户的整份及当前主题交集客户的原份额。末位L_m=0，立即成立，无需假设末位收益接近平均。",
+  "scope": "角色精确等价条件及末位已证边界。一般早期位置的付款仍开放。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/最优主题菜单的非负静态信用与带符号自适应恒等式--引理.md",
+      "sha256": "e26f3d06e14f3ca457c42350b81ecc360a23ebc8263a0769af3591acf0887bd6"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/单角色动态损失的同客户信用与未付份额--引理.md",
+      "sha256": "f516757cadbf4413cc947ad56438f8ff39b95f1999ccf8fb56e97c0c2a1eca5c"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对比较最优只用于将K识别为OPT，真实IC仅在相同原策略行上使用，未把符号差取正。",
+  "contribution": {
+    "result": "完成准确slack等价条件，且在i=m时付清原系数m−1的角色上界。",
+    "remaining": "在一般早期角色，须用同一真实后继完整IC支付两类可能负债。若仅为了福利界，证明一个实际最小收益角色即可。"
+  },
+  "endpoint_pins": {
+    "M-c5d349f1196d4c94bb25a9ef61b38556": "1d49f4c868e0886384de9b2e106b7924885ec6c175e35d447d659a4741b00caf",
+    "customer-attraction/optimal-menu-static-credit-signed-adaptivity": "c55cc40a1f50aac26344d34745ca7022ff0c141c76530a952875cea62d21b14a",
+    "customer-attraction/single-role-dynamic-loss-same-client-credit-and-unpaid-shares": "143f3cfef996bdd500a1d8c1bccabde4bbde8956c497a2d218e615ff11718f00"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/最优主题菜单的非负静态信用与带符号自适应恒等式--引理.md": "e26f3d06e14f3ca457c42350b81ecc360a23ebc8263a0769af3591acf0887bd6",
+    "archives/customer-attraction/state/引理/单角色动态损失的同客户信用与未付份额--引理.md": "f516757cadbf4413cc947ad56438f8ff39b95f1999ccf8fb56e97c0c2a1eca5c"
+  },
+  "review_digest": "baed65e759f9ebb029874ee267d1f79d5659a4142823d47d3297e932d4d0150b"
+}

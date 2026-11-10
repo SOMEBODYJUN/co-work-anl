@@ -1,0 +1,40 @@
+{
+  "edge_id": "ca-56e27e52-real-assignment-prefix-bound",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-72a48f1facca4af6b50b3f3242366fc4"
+  ],
+  "target_ids": [
+    "M-8a91e4626c0d4e3782452a25714b4deb"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意m≥2共同目录，完整策略全部正深度子博弈为纯SPE，根最大后悔Δ≥0。固定同一比较m索引元组。令b_i(x)为原actual第i位前的客户负载，R=O\\C、I=O∩C、g=|C\\O|。",
+  "roles": {
+    "M-72a48f1facca4af6b50b3f3242366fc4": "真实矩阵及带符号成本等价，并且排列最大值至少为均匀双随机值。",
+    "M-8a91e4626c0d4e3782452a25714b4deb": "在可验证的客户重数及实际前缀计数条件下支付固定比较元组的根后悔放宽。"
+  },
+  "explanation": "真实强制第i位选择含x的T_j时该客户分母至多b_i(x)+1+(m−i)，所以均匀索引排列的真实收益和至少B=(1/m)∑_(x∈O)d_x∑_i 1/(b_i(x)+m−i+1)。每个遗漏客户的实际前缀全零，其内和恰H_m。每个交集客户的内和至少1。因而若∑_(x∈R)(1−d_x H_m/m)≤g+2Δ+Σ_(x∈I)d_x/m，则B≥K−W−2Δ。也可用更强的交集实际前缀下界，按B直接检验。由排列最大值≥B，所得真实排列正是所需证书。",
+  "scope": "固定合法比较元组的充分条件。元组若最优则覆盖等于OPT。重复比较主题按索引保留。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/真实查询的带符号捕获指派与三倍根后悔--候选.md",
+      "sha256": "b6c26d26cb2a221f5f67c795ef72987a0d819491136e9b5ab13106c8b9fce436"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核实分母来自同一真实强制枝，比较矩阵只平均索引，不重排行动历史或用冻结的IC。",
+  "contribution": {
+    "result": "上述显式可检验的前缀负载门槛保证固定元组真实指派预算，取最优元组即给2W+3Δ≥OPT。",
+    "remaining": "一般完整可信计划仍可能有低重数遗漏客户，且当前静态前缀门槛未必满足。须证明至少一个最优元组能由真后继的额外行付款。"
+  },
+  "endpoint_pins": {
+    "M-72a48f1facca4af6b50b3f3242366fc4": "b0d7d697b9f7c7113a99eec34a7de9d96f440735ccabbbae025b6a5c3d24d477",
+    "M-8a91e4626c0d4e3782452a25714b4deb": "f391f13f99b506feadb3c19aff39fac4cbdb7033bbacd2235eca33c1b7a7ea5f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/真实查询的带符号捕获指派与三倍根后悔--候选.md": "b6c26d26cb2a221f5f67c795ef72987a0d819491136e9b5ab13106c8b9fce436"
+  },
+  "review_digest": "e38ddd951bf6381f6023a177f57cf49bd14707226a4bb1d767d60951269acf40"
+}

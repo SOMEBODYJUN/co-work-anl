@@ -1,0 +1,45 @@
+{
+  "edge_id": "ca-56e27e52-marked-clock-to-net-flow",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/marked-real-history-exchange-two-branch-clocks-and-terminal-debt",
+    "customer-attraction/same-count-history-swap-complete-policies-and-zero-actual-clock"
+  ],
+  "target_ids": [
+    "M-de359a52ec64471cabaac7e318be3b60"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意有限具体历史图，每边端点共享客户前缀负载，固定客户无关整行权λ_e≥0和标记a_e≥0。同一ρ>0，或ρ=0且每个边正标记已有正前缀负载。",
+  "roles": {
+    "customer-attraction/marked-real-history-exchange-two-branch-clocks-and-terminal-debt": "逐边固定同一客户标记及同前缀背景的两支真实时钟差。",
+    "M-de359a52ec64471cabaac7e318be3b60": "任意全行权的终局客户incidence净债恒等式及抵消条件。",
+    "customer-attraction/same-count-history-swap-complete-policies-and-zero-actual-clock": "五客户完整SPE给同计数端点下标量环平衡、标记净债严格非零的具体反证。"
+  },
+  "explanation": "逐边应用EXCHANGE，再有限换序。入边标记系数减出边系数给d_(v,x)。所有前缀储备逐边精确抵消，剩余终局净债Σ_(v,x)d_(v,x)/(ρ+c_v(x))，等于−Σ_v L_(d_v)(h_v)。逐客户标记可在各真实尾选定后按终负载归并。进一步，按整数终负载k聚合a_k=Σ_(v,x:c_v(x)=k)d_(v,x)，则总债为Σ_k a_k/(ρ+k)。若在所有ρ>0消债，乘共同分母后评价各互异极点的分子即得每个a_k=0，反之显然。且Σ_k a_k=0来自每边的净流总量，故在n≥2个不同负载级上，n−1个互异正ρ的精确零测试已足识别恒零；n=1时自动为零。 五客户原策略中取BA→AB标A、AB→BA标B，各权1，标量在每节点守恒，真实AB尾A而BA尾C，故总债−2/[(ρ+1)(ρ+2)]≠0；两客户群贡献不可仅按标量流相抵。",
+  "scope": "完整FLOW及参数化抵消判据。固定某个ρ的标量抵消未必意味着标记守恒。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/标记真实历史交换的双分支时钟与终局净债--引理.md",
+      "sha256": "bbd6fc1c905915407aea42362c2ace0ab3cedbbcc4efa43378078a1e560b2e47"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/同计数历史交换的完整策略与零实际时钟--反例.md",
+      "sha256": "0c0adcccf293b916b556130fd2c5902cd9275682d4ba15033be4ba1092f5fba7"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核ρ=0的正分母域及符号延拓。负ρ仅用于多项式系数鉴别，未把它引入博弈或选取激励权。",
+  "whole_result": "逐边双支时钟和五客户两边循环共同给出任意固定全行权的终局净债公式、逐客户净流消债的充分条件及标量守恒不足的完整反证。",
+  "endpoint_pins": {
+    "M-de359a52ec64471cabaac7e318be3b60": "502e01f33f5fa968fa38a2eba13666b9344c722b808d76d696ed5030777adeb5",
+    "customer-attraction/marked-real-history-exchange-two-branch-clocks-and-terminal-debt": "443e3766390f01b120d63daac0ad8b56d9285c5264299aa220b815cf0bced89f",
+    "customer-attraction/same-count-history-swap-complete-policies-and-zero-actual-clock": "99b3028b0fe22dd3f901ba4142034023f381948667190e8edb97669734ef3573"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/标记真实历史交换的双分支时钟与终局净债--引理.md": "bbd6fc1c905915407aea42362c2ace0ab3cedbbcc4efa43378078a1e560b2e47",
+    "archives/customer-attraction/state/反例/同计数历史交换的完整策略与零实际时钟--反例.md": "0c0adcccf293b916b556130fd2c5902cd9275682d4ba15033be4ba1092f5fba7"
+  },
+  "review_digest": "92a463fa477ff83ba9cf0dbbec549857f54ce0c35eb033ab40c8f9c3f0c09828"
+}

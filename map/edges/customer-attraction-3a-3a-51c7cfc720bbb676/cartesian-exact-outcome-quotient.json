@@ -1,0 +1,42 @@
+{
+  "edge_id": "ca-round37-cartesian-exact-outcome-quotient",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "customer-attraction/disjoint-resource-cartesian-exact-marginal-outcomes-program"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "全部块两两不交、块大小正整数、有限非空完整乘积目录及正人数。一个合法动作包含所有坐标，允许同一偏离改多个坐标。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "完整有序历史SPE终局全集的集合递推及真实孩子拼合",
+    "customer-attraction/disjoint-resource-cartesian-exact-marginal-outcomes-program": "按不交块边缘计数压缩的Cartesian全集及OPT"
+  },
+  "explanation": "投影联合计数为各块边缘k。在相同k下，同一未来联合动作串给相同最终边缘，未来收益为Σ_j w_(j,a_j)/q_(j,a_j)，所以整个续局博弈同构。各孩子的min和父max因此可在边缘集合上算，按原有序动作分别拼合仍保全部策略。完整产品使任意合法共同深度的坐标边缘可配成历史；对最优比较可将各分量最大的min(m,d_j)块逐位置独立配对。",
+  "scope": "全部完整纯SPE的精确终局边缘集合、合法状态和最优覆盖。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/不交资源笛卡尔目录的精确边缘计数递推--程序.md",
+      "sha256": "fcb4dccab8d20fff2310a03ca97d4241e2602c4ac10166a39bab4d5b5eaa791b"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+    }
+  ],
+  "whole_result": "一般全集递推在不交资源Cartesian模型精确化为边缘计数递推，返回全部可实现边缘而无匿名策略限制。OPT_m等于各分量最大min(m,d_j)个块权之和。",
+  "reviewed_by": "Boss1",
+  "review_note": "按本批钉定正文复核真实历史、参数量词、联合条件和结论范围。完整结论已核。",
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "customer-attraction/disjoint-resource-cartesian-exact-marginal-outcomes-program": "7fb9d788b2a002c735f02951eef4e613e4062b32d0a063d2c99fac654232d187"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/不交资源笛卡尔目录的精确边缘计数递推--程序.md": "fcb4dccab8d20fff2310a03ca97d4241e2602c4ac10166a39bab4d5b5eaa791b",
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+  },
+  "review_digest": "8f1d9f4e9d91047fe51abf7d814e5af8bf08b1fbf17d2d64bfb65cab7d919358"
+}

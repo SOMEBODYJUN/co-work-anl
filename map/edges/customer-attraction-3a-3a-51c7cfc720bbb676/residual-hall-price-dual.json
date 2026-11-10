@@ -1,0 +1,59 @@
+{
+  "edge_id": "ca-round37-residual-hall-price-dual",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance",
+    "customer-attraction/fixed-capture-prices-hall-deficits-and-joint-payment-dual"
+  ],
+  "target_ids": [
+    "M-f3f2787fe8864fdf897624d672327906"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定最优元组、owner、完整σ、真实原actual-prefix菜单及按源非负线性的捕获规则。保SOURCE-NET选择的δ，不重选每角色取消。",
+  "roles": {
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance": "保证同一局部δ预送可扩及SOURCE-NET",
+    "customer-attraction/fixed-capture-prices-hall-deficits-and-joint-payment-dual": "给固定线性捕获的价格和共同Hall支持函数",
+    "M-f3f2787fe8864fdf897624d672327906": "需认证同一δ、γ、采购规则下的余量"
+  },
+  "explanation": "写γ=δ+z，a_x=1−δ_x，残余rank rδ 用g_i−δ_i和库存a。K_i−η_i=d_i^δ−(Mz)_i，其中 M_ix=p_ix+1_(owner=i)，d_i^δ=Σ_x p_ix(1−δ_x)−I_i−δ_i。凸分离给同一z存在当且仅当所有λ≥0满足 h_res(M^Tλ)≥λ·d^δ。用v_x=Σ_i p_ix和greedy得最小总价∫[a(S_t)−rδ(S_t)]dt。λ=1只检验总额方向。",
+  "scope": "逐角色共同付款的固定选择判别与总价积分。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/实际取消的同时源付款与入流余额--定理.md",
+      "sha256": "5759f87d02d0bacc5c61a5472806d6f464192bb97bcb18a1a3bf1e156a02ad7a"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R4运输路线接口与未解条件--审查.md",
+      "sha256": "4b1b9815701c0fa4c99ad4de91fa9e1ac6fee0629836a050abf08ec70c3d0b03"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/入密度共同账的陈述后重构与补充分层--审查.md",
+      "sha256": "3f05fba7456fee1f03b3c7f7d7a7b649d9a661c77fb7629ad248618686a8f274",
+      "section": "补审对裸Gamma与残余Gamma_delta的精确校正"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定捕获价格的Hall缺额与共同付款对偶--定理.md",
+      "sha256": "20c5d8e42adb6442879aa5f57fbf73f3b99a9ad68cb7356806de425786b50e45"
+    }
+  ],
+  "contribution": {
+    "result": "对这份固定系统，逐角色入流可由相同剩余净钱包支付等价于残余Hall支持函数的全方向不等式。总付款可用残余缺额层积分精确判定。",
+    "remaining": "尚无一般符号证明，也尚无从每个分离方向或不同owner各自选优合成一个共同捕获/取消的依据。不能把裸Γ最低价附会到指定δ的SOURCE预付。"
+  },
+  "reviewed_by": "Boss1",
+  "review_note": "按本批钉定正文复核真实历史、参数量词、联合条件和结论范围。仅记录说明所指的已证步骤或语境。",
+  "endpoint_pins": {
+    "M-f3f2787fe8864fdf897624d672327906": "827233ff5bb2c3ad5be680b9d388ff41d5d97f30a7332aee16e7cb0239c6ccde",
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance": "6301d3ef5ca152ec47607ffd3a061649bb168671ccaaab725d8f88bd9d7f9257",
+    "customer-attraction/fixed-capture-prices-hall-deficits-and-joint-payment-dual": "347386eb2daa9e596ea040085ce66bcf521d59e7e23228b7d4b96b0ca4e905d8"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/实际取消的同时源付款与入流余额--定理.md": "5759f87d02d0bacc5c61a5472806d6f464192bb97bcb18a1a3bf1e156a02ad7a",
+    "archives/customer-attraction/state/审查/R4运输路线接口与未解条件--审查.md": "4b1b9815701c0fa4c99ad4de91fa9e1ac6fee0629836a050abf08ec70c3d0b03",
+    "archives/customer-attraction/state/审查/入密度共同账的陈述后重构与补充分层--审查.md": "3f05fba7456fee1f03b3c7f7d7a7b649d9a661c77fb7629ad248618686a8f274",
+    "archives/customer-attraction/state/定理/固定捕获价格的Hall缺额与共同付款对偶--定理.md": "20c5d8e42adb6442879aa5f57fbf73f3b99a9ad68cb7356806de425786b50e45"
+  },
+  "review_digest": "427c2e4f4dfe5061c8ef2b2e035df778dc7b160671523500ff97d350af0fbcdd"
+}

@@ -1,0 +1,46 @@
+{
+  "edge_id": "ca-56e27e52-anchored-actual-versus-free",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/legal-prefix-independent-background-anchored-counting-and-same-leaf-ancestor-reserve"
+  ],
+  "target_ids": [
+    "customer-attraction/sunk-empty-root-actual-deletion-mixture-anchored-cap-failure"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "原十四单位客户、六主题、三人完整形式计划，根规定空、所有正深度可信；k=3、r=2、b=0，所以A_Q恒零且系数为4。静态竞争背景是一个合法主题。",
+  "roles": {
+    "customer-attraction/legal-prefix-independent-background-anchored-counting-and-same-leaf-ancestor-reserve": "固定合法背景下独立查询的锚定计数以及同一实际叶删槽的祖先储备上界。",
+    "customer-attraction/sunk-empty-root-actual-deletion-mixture-anchored-cap-failure": "固定十四客户例的受限actual删除最优与所有合法静态背景最优的严格差。"
+  },
+  "explanation": "只保实际删槽列A/B时，固定查询T两列都得5，且每格≤5，故所有混合t_Q=5、J_actual=20。允许全部合法背景时，取Q在(B,T,D,E)上质量(1/7,1/7,5/14,5/14)，查询(A,B,T,D,E,空)所得(23/7,55/14,55/14,55/14,55/14,0)，给上界55/14。对偶独立查询p在(B,T,D,E)上质量(3/7,3/7,1/14,1/14)，分别面对六纯背景得(5,55/14,55/14,55/14,55/14,36/7)，给所有混合相同下界。故J_free=110/7<16<2W=18<20，原D纯列16并非自由最优，且两预算均符合ANCHOR的OPT₃=14下界。",
+  "scope": "仅给定源实例的精确静态minimax和受限支持差，祖先为零的事实不涉及根最优性。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/合法前缀共同背景的锚定计数与同叶祖先储备--引理.md",
+      "sha256": "00a50452e1f94c4c5b8606e59a2786d8054b4accd43756163e92db8f2b3c71c2",
+      "section": "1. 固定前缀的共同分母"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/空根后实际删除混合的锚定预算严格失败--障碍.md",
+      "sha256": "52a5f146c3d6a2f7df2413ba31e482459cbeec0c7fbdfa753abde09befa2f378"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "独立按十四单位客户的类型重数与Fraction重算六个原/对偶价格。正深度42节点可信沿用原自足策略表，根后悔仍为5。",
+  "contribution": {
+    "result": "复核actual删除全混合的精确失败，并给自由竞争背景最优110/7的原/对偶证书。",
+    "remaining": "目标完整可信性及14客户OPT身份另由原43节点策略和客户表承担。没有得到一般自由Q预算，也没有给全根SPE反例。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/legal-prefix-independent-background-anchored-counting-and-same-leaf-ancestor-reserve": "b48160a48f9a7b393b89a6030ad6a67f13fc902b8d66b5332f8e04bfe2c51230",
+    "customer-attraction/sunk-empty-root-actual-deletion-mixture-anchored-cap-failure": "537be9bec527da84804e59be315694b6186a871db36dd9dc8748221b1c6ca0e5"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/合法前缀共同背景的锚定计数与同叶祖先储备--引理.md": "00a50452e1f94c4c5b8606e59a2786d8054b4accd43756163e92db8f2b3c71c2",
+    "archives/customer-attraction/state/障碍/空根后实际删除混合的锚定预算严格失败--障碍.md": "52a5f146c3d6a2f7df2413ba31e482459cbeec0c7fbdfa753abde09befa2f378"
+  },
+  "review_digest": "52a04e93dd02d7ff0304aeb9ed79fde6e5a43e822407f8241dec6a79071f0275"
+}

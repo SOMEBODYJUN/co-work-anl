@@ -1,0 +1,50 @@
+{
+  "edge_id": "ca-56e27e52-active-deletion-insertion-clock",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/residual-payoff-tax-calculus",
+    "customer-attraction/marked-real-history-exchange-two-branch-clocks-and-terminal-debt"
+  ],
+  "target_ids": [
+    "customer-attraction/active-profit-actual-root-insertion-and-uniform-comparator-slot-deletion-difference"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同集合目录的原税口径与标签目录活跃利润逐客户一致，因为只用固定元组，不删标签、不重选策略。合法固定旧背景b、固定根A、r≥1个合法比较索引，d为比较负载。",
+  "roles": {
+    "customer-attraction/residual-payoff-tax-calculus": "固定背景R_b活跃利润的零项约定及插入导致的分母差。",
+    "customer-attraction/marked-real-history-exchange-two-branch-clocks-and-terminal-debt": "在合法背景已含比较负载d时，以d为标记、ρ=0给插入一个根主题的精确活跃份额损失。",
+    "customer-attraction/active-profit-actual-root-insertion-and-uniform-comparator-slot-deletion-difference": "固定实际根插入后的均匀比较删槽差及非负核。"
+  },
+  "explanation": "先在不删比较槽时插入a=1_A，旧比较者标记d的插入损失是I=a d/[(b+d)(b+d+1)]，d=0时为0。再在新背景p=b+a均匀删比较索引，负载d−1恰以概率d/r发生，其损失为J=(d/r)[d/(p+d)−(d−1)/(p+d−1)]，零负载项取0。两项均非负，且和恰是原比较活跃值减插入、删槽后的期望值。a=0得原L0；a=1且d>0时合并为d(b+r+1)/[r(b+d)(b+d+1)]。另外a=0时J≤d/[r(b+d)]；a=1时L1=d/[r(b+d)]+d(r−d)/[r(b+d)(b+d+1)]。后者将删席基额与根插入余差严格分开。",
+  "scope": "对全部静态比较元组、重复索引及r=1成立，无需SPE。旧实际玩家利润和比较者标记不得混入真实根IC。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md",
+      "sha256": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/标记真实历史交换的双分支时钟与终局净债--引理.md",
+      "sha256": "bbd6fc1c905915407aea42362c2ace0ab3cedbbcc4efa43378078a1e560b2e47"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/活跃利润的根插入与比较删槽平均差--引理.md",
+      "sha256": "a86b06ce20d90c4faecfccd4a06c3048d1848956cf6660a6451d9457ebcea7bb"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核了b=d−1=0的零活跃端点。无标记的τ_b与d倍稀释并非同一费用，未将一份税自动支付全部删槽差。",
+  "whole_result": "给出目标的完整非负逐客户删槽差，外加插入损失与随机删槽损失分解。",
+  "endpoint_pins": {
+    "customer-attraction/active-profit-actual-root-insertion-and-uniform-comparator-slot-deletion-difference": "a923aa752fb242b4755920ed491d45303a3fd12481d7569f0453e70c290d21e8",
+    "customer-attraction/marked-real-history-exchange-two-branch-clocks-and-terminal-debt": "443e3766390f01b120d63daac0ad8b56d9285c5264299aa220b815cf0bced89f",
+    "customer-attraction/residual-payoff-tax-calculus": "779995a2df37d219c501e728531e3ca4b83eaa87e7deff2653d5d66dcd5e89ba"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee",
+    "archives/customer-attraction/state/引理/标记真实历史交换的双分支时钟与终局净债--引理.md": "bbd6fc1c905915407aea42362c2ace0ab3cedbbcc4efa43378078a1e560b2e47",
+    "archives/customer-attraction/state/引理/活跃利润的根插入与比较删槽平均差--引理.md": "a86b06ce20d90c4faecfccd4a06c3048d1848956cf6660a6451d9457ebcea7bb"
+  },
+  "review_digest": "33e8f25f07055f8123eed9337bf79c5dff3e6d4607e043ca8ce179ed25a691ab"
+}

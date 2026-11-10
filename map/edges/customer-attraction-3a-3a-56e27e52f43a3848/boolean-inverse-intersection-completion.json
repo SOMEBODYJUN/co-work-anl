@@ -1,0 +1,45 @@
+{
+  "edge_id": "ca-56e27e52-boolean-inverse-intersection-completion",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-MOBIUS-BOOLEAN"
+  ],
+  "target_ids": [
+    "customer-attraction/truncated-intersection-moments-full-payoff-and-boolean-positivity"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "p个标签，F(空)=0为完整有理Boolean表，d=min(m,p)。记c_A为F的Boolean单项式系数，x_B为有符号类型重数。",
+  "roles": {
+    "CA-MOBIUS-BOOLEAN": "全阶Boolean表双反演，给非空类型重数及全部重复计数势。",
+    "customer-attraction/truncated-intersection-moments-full-payoff-and-boolean-positivity": "把固定m的截断交集投影放在唯一全阶有符号实现之下，并区分全阶正性和低阶可扩张性。"
+  },
+  "explanation": "调和核展开使交集矩t_A=Σ_(B⊇A)x_B恰等于(−1)^(|A|+1)|A|c_A。m终局的每个支持至多d，代入目标显式收益式只看|A|≤d，故任意改变更高阶Boolean系数保持所有固定m的形式终局收益与全树真实IC，两边若均合法还保持原模型的OPT_m。反过来由固定m福利的并集容斥恢复低阶t，从而恢复全部低阶c。全阶F可用有理非负类型（清分母后为同尺度单位客户）当且仅当唯一逆x_B≥0，等价于对每个B非空有(−1)^(|B|+1)Σ_(A⊇B)|A|c_A≥0。若只给低阶c，问题则是存在高阶补全使这些线性行同时成立。p>m时高阶坐标方向t_A的原子逆像正是目标奇偶核向量，因此有符号全阶唯一性不能继承到固定m投影。",
+  "scope": "确定同一坐标映射、截断核与精确合法化差异；只对按统一清分母的有理实现给单位客户。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/子集调和势的Möbius反演--定理.md",
+      "sha256": "9c7e58e4642077607ce2b49c67e7598c97b47b4cdb1b43a34cf335dd2aec5629"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/有限阶交集矩的全收益表示与布尔正性--定理.md",
+      "sha256": "c6f61661e403b1336b0668ff5ef8f77ea3398878d16e64e5ddbb996918fadd30"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核同一兴趣类型的两次变换与符号。未将非负类型的存在性换成任意 signed 实现，未声称从固定m表恢复重复计数的所有人数信息。",
+  "contribution": {
+    "result": "明确全阶Boolean系数与交集矩逐项对应，并给从低阶数据到客户合法化的准确补全系统和不可见高阶方向。",
+    "remaining": "目标的全收益系数、正性对偶/Farkas及自适应稀疏证明仍需其各自正文；本关系没有构造普遍非负证明乘子。"
+  },
+  "endpoint_pins": {
+    "CA-MOBIUS-BOOLEAN": "1e36e694f7e44451ebb5388ecd03ad031956f6f849fbb53593ba3917c64d6fad",
+    "customer-attraction/truncated-intersection-moments-full-payoff-and-boolean-positivity": "bf391d85318999305c13ee8edf8565fa42904ebf8cd1730eec0952e60b0f046d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/子集调和势的Möbius反演--定理.md": "9c7e58e4642077607ce2b49c67e7598c97b47b4cdb1b43a34cf335dd2aec5629",
+    "archives/customer-attraction/state/定理/有限阶交集矩的全收益表示与布尔正性--定理.md": "c6f61661e403b1336b0668ff5ef8f77ea3398878d16e64e5ddbb996918fadd30"
+  },
+  "review_digest": "cd66b3c2cedfeef78a005e72028fb8ffc485fa00e80e42ddc04bbcf743887854"
+}

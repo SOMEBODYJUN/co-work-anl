@@ -1,0 +1,74 @@
+{
+  "edge_id": "ca-round37-stationary-instance-in-residual-cone",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/stationary-incidence-without-root-reward-exchange-counterexample",
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1"
+  ],
+  "target_ids": [
+    "cag-three-player-two-group-residual-aggregate-cone-program"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取合法空过去b=0，X/Y对应0…2/3…5；该43节点动作表保持原完整历史；非负单位客户按总质量36归一。",
+  "roles": {
+    "customer-attraction/stationary-incidence-without-root-reward-exchange-counterexample": "36客户X/Y实例及与残余锥同一43历史完整策略",
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1": "36客户六个同组不同对与均匀查询的匹配静态证书",
+    "cag-three-player-two-group-residual-aggregate-cone-program": "固定两组三人合法背景的215行锥"
+  },
+  "explanation": "36客户完整策略逐有序历史恰是此锥的规则，所以215行成立且未归一P=34。静态安全值匹配证书给v₃=10，故归一后P=34/36、v₃=10/36，P−3v₃=1/9>0。由于对每个p有t≤v₃，固定此w不会产生正3t−P。此点与旧五槽背景全兴趣单客户P=3/8、v=1/8的等号保存点不同。",
+  "scope": "同一残余锥的一个非平凡空背景校准，不涉及其它重数或合法前缀。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/成员平稳但根收益不可交换的三人见证--反例.md",
+      "sha256": "9f07cbc8fd38cfcd11effcd306345637b0a8b582e89ef468e172be238642b63c"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/三人两组完整策略的残余聚合安全锥探针--程序.md",
+      "sha256": "4e885eec806521ab4c2b506fc616c4227680227daa49b3c8873e56ed8c23de96",
+      "section": "原LP的正确方向与证书义务"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/三人两组完整策略的残余聚合安全锥探针--程序.md",
+      "sha256": "4e885eec806521ab4c2b506fc616c4227680227daa49b3c8873e56ed8c23de96",
+      "section": "输入、客户类型和完整策略"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/三人两组完整策略的残余聚合安全锥探针--程序.md",
+      "sha256": "4e885eec806521ab4c2b506fc616c4227680227daa49b3c8873e56ed8c23de96",
+      "section": "从真实后继建立全部约束"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/三人两组完整策略的残余聚合安全锥探针--程序.md",
+      "sha256": "4e885eec806521ab4c2b506fc616c4227680227daa49b3c8873e56ed8c23de96",
+      "section": "新核验与同仓工作差异"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/残余聚合安全锥的全兴趣保存点与概率归一--计算.md",
+      "sha256": "29e9c64c1ccef67ea00a3f4fb41bd6a2b21b0ff2d599f2fcb6c0e62de3e507c4"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md",
+      "sha256": "034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f"
+    }
+  ],
+  "contribution": {
+    "result": "36客户是同一固定策略锥的合法空背景点，在该点所有静态查询均不分离，精确聚合余量归一后1/9。",
+    "remaining": "不认证整个w、p及合法过去的联合域。原小数保存概率的精确归一缺口单独处理，不能混用两个点。"
+  },
+  "reviewed_by": "Boss1",
+  "review_note": "按本批钉定正文复核真实历史、参数量词、联合条件和结论范围。仅记录说明所指的已证步骤或语境。",
+  "endpoint_pins": {
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1": "565f6bdb541c09f8229f27ca4d47409f946a555f141378e72fb91c5a55082ea4",
+    "cag-three-player-two-group-residual-aggregate-cone-program": "2a5d4380f9c852f658125a5af698f46f3f9d3bf55a10aff60d2820676ea5f5c1",
+    "customer-attraction/stationary-incidence-without-root-reward-exchange-counterexample": "937ae6a6020788ce2f967d9421f98584b93baa1713ced43538344d3b778c3e84"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/成员平稳但根收益不可交换的三人见证--反例.md": "9f07cbc8fd38cfcd11effcd306345637b0a8b582e89ef468e172be238642b63c",
+    "archives/customer-attraction/state/程序/三人两组完整策略的残余聚合安全锥探针--程序.md": "4e885eec806521ab4c2b506fc616c4227680227daa49b3c8873e56ed8c23de96",
+    "archives/customer-attraction/state/计算/残余聚合安全锥的全兴趣保存点与概率归一--计算.md": "29e9c64c1ccef67ea00a3f4fb41bd6a2b21b0ff2d599f2fcb6c0e62de3e507c4",
+    "archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md": "034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f"
+  },
+  "review_digest": "799e4a861e3eaa4b6874c29ad486d34b983e774224b8992709c646e5f5e6c9de"
+}
