@@ -1,0 +1,57 @@
+{
+  "edge_id": "wc-r33-conservative-extraction-pays-rho-reduction-second-step",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/conservative-two-attack-polynomial-monomial-reduction"
+  ],
+  "target_ids": [
+    "WC-R3-FULL-TOPOLOGY-REDUCTION-v3"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "对称共同轻权两列，d≥2；假设完整轨道分析已给某个整数N≥1与两条严格保守端点测试，α≥ρ。",
+  "roles": {
+    "weighted-congestion/conservative-two-attack-polynomial-monomial-reduction": "在固定N、d、α下把两条非负多项式端点margin保真抽成合法单项式。",
+    "WC-R3-FULL-TOPOLOGY-REDUCTION-v3": "完整拓扑rho归约的最后一个承重步骤。"
+  },
+  "explanation": "由轨道稳定区间，左支移F(x+bw)并扣共同非负项，直接给保守两式；右支先有Nα(α−1)<1，α≥ρ强制N=1，倒权且同缩放两费用，把(R2),(R1)按序化为两式。此时才调用保守归约：先通过0<w≤1或N=1交换角色（这一步与右支的倒权作用不同），侧费由凸弦换常数+最高次，删常数，消严格β开区间，按非负主费系数抽取某个k≥1，取0<β<1。保守归约保的是移位后N，未保原人数n。相同初始参数n=3,w=1/5,P=x,Q=x²/2时，两个保守比为158/155、61/66，完整轨道最佳却为157/156，故不能跳过轨道步或把两种倍率写成同一值。",
+  "scope": "保守端点提取仅支付rho证明的抽单项式步骤。完整拓扑的轨道覆盖、左右支、弱端点与原实例参数变化仍独立。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/保守两攻击证书的单项式费用归约--定理.md",
+      "sha256": "0d876f1420c6bcb1a48bfc81d8c45da7d504033737c534637d9a332a3b6654e0"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/对称两列拓扑的单项式两攻击归约--定理.md",
+      "sha256": "6d6ffc835804eec4e380e086b818d8e022dc1c0d70d505d31a09873766b7d6d9"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "sha256": "f34c797df23040e074e9b1778911b5167c972eaabf01bb998599d8452d4d242e",
+      "section": "固定拓扑与参数放大的十种限制"
+    },
+    {
+      "path": "archives/weighted-congestion/state/计算/保守两攻击端点归约的精确复现与范围--计算.md",
+      "sha256": "40e0f380262f635aefd1f1e7d50e993fd7f30118d1770b6d41efc6888dd5af74",
+      "section": "数学比较、评审身份和接续"
+    }
+  ],
+  "reviewed_by": "Boss1 weighted-congestion finite-weights worker",
+  "review_note": "实读冻结论证并逐项核模型、量词、承重条件和证据归属。保守端点提取仅支付rho证明的抽单项式步骤。完整拓扑的轨道覆盖、左右支、弱端点与原实例参数变化仍独立。",
+  "contribution": {
+    "result": "已经取得两条严格保守测试时，可固定其N,d,α得到rho归约要求的合法单项式输出。",
+    "remaining": "单由原游戏全态无PNE取得两测试的稳定区间、平移和右支转换仍必需；此引用不承载d=1的主定理域。"
+  },
+  "endpoint_pins": {
+    "WC-R3-FULL-TOPOLOGY-REDUCTION-v3": "cd9c56dbad4a1760d545b3dce0028cb43947151508b9821d251f5b37df350e0a",
+    "weighted-congestion/conservative-two-attack-polynomial-monomial-reduction": "acb50ebdc5c66db86127c9b34c6b974e3b2c807281fd9b3732aed4d44ec8d960"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/保守两攻击证书的单项式费用归约--定理.md": "0d876f1420c6bcb1a48bfc81d8c45da7d504033737c534637d9a332a3b6654e0",
+    "archives/weighted-congestion/state/定理/对称两列拓扑的单项式两攻击归约--定理.md": "6d6ffc835804eec4e380e086b818d8e022dc1c0d70d505d31a09873766b7d6d9",
+    "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md": "f34c797df23040e074e9b1778911b5167c972eaabf01bb998599d8452d4d242e",
+    "archives/weighted-congestion/state/计算/保守两攻击端点归约的精确复现与范围--计算.md": "40e0f380262f635aefd1f1e7d50e993fd7f30118d1770b6d41efc6888dd5af74"
+  },
+  "review_digest": "f2d67793c29f6debb10e1c19c8a3b2abaa46e14f2371b5711be7cb0e95db5bcf"
+}

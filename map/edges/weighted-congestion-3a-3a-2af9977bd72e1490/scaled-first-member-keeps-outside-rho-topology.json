@@ -1,0 +1,51 @@
+{
+  "edge_id": "wc-r33-scaled-first-member-keeps-outside-rho-topology",
+  "kind": "corrects",
+  "status": "accepted",
+  "source_ids": [
+    "WCF-R3-SCALED-ORIGINAL-v1"
+  ],
+  "target_ids": [
+    "WC-R3-FULL-TOPOLOGY-REDUCTION-v3"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "同为标准有限原子加权拥塞、次数至多32、真实单方偏离，原缩权族取m=1。",
+  "roles": {
+    "WCF-R3-SCALED-ORIGINAL-v1": "给实际四人十四资源m=1的全态严格9/5反例。",
+    "WC-R3-FULL-TOPOLOGY-REDUCTION-v3": "完整对称同轻权两列归约的适用拓扑。"
+  },
+  "explanation": "G_1的权为(1,1/10,1/20,1/50)，七对mask依次0101,0112,1022,1100,1120,1122,1211，原振幅(127,231,145,139,28,41,289)，前六次32、末对二次，各对按支持总权归一。四人各权不同，不可能重标成一名整列玩家加三名共同轻权玩家。其全16态严格9/5出口因此不落在rho归约的输入合同。源公式的三十二次上界与另一任务的完整拓扑分离另有各自符号义务，不把本条边升级为完整固定次数分离。",
+  "scope": "仅核真实m=1的资源、权重、次数与rho拓扑边界；不认定单一结构特征的必要性。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/对称两列拓扑的单项式两攻击归约--定理.md",
+      "sha256": "6d6ffc835804eec4e380e086b818d8e022dc1c0d70d505d31a09873766b7d6d9"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/十四资源缩权族的常数无均衡界--定理.md",
+      "sha256": "62f4f0e0e9090a650f09442465161a4552f1ea84fad2bfa1f36c8183448733e0"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md",
+      "sha256": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df"
+    },
+    {
+      "path": "archives/weighted-congestion/state/计算/十四资源构造与缩权族的精确复现--计算.md",
+      "sha256": "48cfab42028bf9c53f7ab818a026475caba5d7ee2afe2ac3759de5c6a2f83c7f"
+    }
+  ],
+  "reviewed_by": "Boss1 weighted-congestion finite-weights worker",
+  "review_note": "实读冻结论证并逐项核模型、量词、承重条件和证据归属。仅核真实m=1的资源、权重、次数与rho拓扑边界；不认定单一结构特征的必要性。",
+  "endpoint_pins": {
+    "WC-R3-FULL-TOPOLOGY-REDUCTION-v3": "cd9c56dbad4a1760d545b3dce0028cb43947151508b9821d251f5b37df350e0a",
+    "WCF-R3-SCALED-ORIGINAL-v1": "ebe98525cc94275777b5f29d8d3626a4f11dff4e23cbe48b4a6ac6f9e470c904"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/对称两列拓扑的单项式两攻击归约--定理.md": "6d6ffc835804eec4e380e086b818d8e022dc1c0d70d505d31a09873766b7d6d9",
+    "archives/weighted-congestion/state/定理/十四资源缩权族的常数无均衡界--定理.md": "62f4f0e0e9090a650f09442465161a4552f1ea84fad2bfa1f36c8183448733e0",
+    "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df",
+    "archives/weighted-congestion/state/计算/十四资源构造与缩权族的精确复现--计算.md": "48cfab42028bf9c53f7ab818a026475caba5d7ee2afe2ac3759de5c6a2f83c7f"
+  },
+  "review_digest": "a227fb5e32df60374d5a29051951c05eda50e46bcb16f479839b76c3777e339e"
+}

@@ -1,0 +1,44 @@
+{
+  "edge_id": "wc-r33-allstate-alternative-pays-recurrent-fip-equivalence",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/allstate-selector-linear-alternative"
+  ],
+  "target_ids": [
+    "weighted-congestion/recurrent-selector-dual-fip-equivalence"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一固定有限合法动作乘积、正权、d和任意固定非空列子集J。a≥0系数给真实α改善矩阵，合法全态selector允许自环。",
+  "roles": {
+    "weighted-congestion/allstate-selector-linear-alternative": "严格非负原始/归一化非正对偶的线性替代可对任意有限行子矩阵使用。",
+    "weighted-congestion/recurrent-selector-dual-fip-equivalence": "逐列锥所有游戏FIP与每个择证器有循环支撑对偶的等价。"
+  },
+  "explanation": "若每个系数游戏FIP，在任意指定selector循环Q上，存在a≥0使B_Qa逐行严格正会产生真实严格环；线性替代给该行集归一化概率对偶，延0到其余状态。反向若某系数游戏有简单严格环Q，令selector在Q按真实环行进，环外按与固定q∈Q的Hamming距离逐坐标纠正；首次入Q前距离严格减，故Rec正好Q，任何其上概率给aᵀBᵀλ=Σ_Qλ_s(Ba)_s>0。有限改善图无环等价最长出发路长度在每条边下降。四列锥的全空状态保证每个系数游戏精确PNE，但(0,0)→(1,0)→(1,1)→(0,1)→(0,0)的最小严格改善比53/51，因此在1≤α<53/51可有PNE却不满足FIP或循环支撑对偶；只支撑瞬态全空的对偶不违法普通择证。",
+  "scope": "必须固定同一J及真实单人偏离；概率无需均匀或单位速度，反向Hamming路由只要求其合法，不要求环外也严格改善。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md",
+      "sha256": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a",
+      "section": "全状态严格改善择证的线性替代"
+    },
+    {
+      "path": "archives/weighted-congestion/state/等价/循环支撑择证与全部改善终止--等价.md",
+      "sha256": "c80f08cca21232107968703c70c276d91d8a6eb75dced5ac6010e10057f963b9",
+      "section": "循环支撑择证与全部改善终止"
+    }
+  ],
+  "reviewed_by": "Boss1 weighted-congestion finite-weights worker",
+  "review_note": "实读冻结论证并逐项核模型、量词、承重条件和证据归属。必须固定同一J及真实单人偏离；概率无需均匀或单位速度，反向Hamming路由只要求其合法，不要求环外也严格改善。",
+  "whole_result": "固定有限列锥每个系数游戏均有α-FIP，当且仅当每个全状态选择器存在循环支撑的概率对偶；FIP方向可支撑任一指定循环。给定四列锥严格分离这件事与每个系数游戏有精确PNE。",
+  "endpoint_pins": {
+    "weighted-congestion/allstate-selector-linear-alternative": "32b4a0b43b4f3f9bf47915836e1e02ee714339906ac960b66961a7e7760686ad",
+    "weighted-congestion/recurrent-selector-dual-fip-equivalence": "1386366b88d461cc4ffdbf0b1ec827700e9a365e715a3f7671e59bdca434fbef"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a",
+    "archives/weighted-congestion/state/等价/循环支撑择证与全部改善终止--等价.md": "c80f08cca21232107968703c70c276d91d8a6eb75dced5ac6010e10057f963b9"
+  },
+  "review_digest": "0153a9992d5cb29ca842cf663e1d62468fb987831ab02772e61d279e4d41ffc2"
+}

@@ -1,0 +1,52 @@
+{
+  "edge_id": "wc-r33-affine-split-provides-shared-scale-component",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R2-AFFINE-TWO-TYPE"
+  ],
+  "target_ids": [
+    "weighted-congestion/finite-grid-free-heavy-scale-floating-lp-search-contract"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "两种物理权1、2，任意固定共同乘子(1,h)，h>0。同一h应用于常数、线性与二次分项，资源费用系数均非负。",
+  "roles": {
+    "WC-R2-AFFINE-TWO-TYPE": "给固定类型乘子密度比的显式C¹仿射势。",
+    "weighted-congestion/finite-grid-free-heavy-scale-floating-lp-search-contract": "区分纯二次浮点模板与可支付的混合系数接口。"
+  },
+  "explanation": "交换乘子密度标签后，仿射因子K(h)=√max{2/h,h/2}。对两半平面用连续梯度沿每条加入线段积分，补(1/2)h_i w_i自项恢复真实右端而非中点负载，常数项可取精确Σh_i。若在某个给定人数域另有同h的精确二次夹逼因子A₂，逐资源按非负系数组合可得max{A₂,K(h)}的混合势。不能直接声称可取A₂。以N=2纯二次最优h约1.684728为例，线性圈00→01→11→21→20→10→00要求(7+2h)/(3+4h)>1.0270>A₂；用h<1.6848交叉相乘，左边减1.0270至少229651/6087000。故在该同一h上，纯二次最优A₂连3×3的纯线性合同也不能统一支付。",
+  "scope": "给出真实仿射分项的充分因子及一个固定h的必要差距；不宣称K(h)是每个有限矩形最优，也不采用浮点F为精确二次势。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/仿射两类型玩家尺度的锐分段势--定理.md",
+      "sha256": "4f95732839c2802ff0e1925b8858b6aed0482fb103af400e4cddd34940d7e075"
+    },
+    {
+      "path": "archives/weighted-congestion/state/计算/有限双权边际势的自由尺度浮点搜索--计算.md",
+      "sha256": "eca6f04f7f96db42f90b5a5b2c4a3b3012b72a9fad2f7d31b44c810b0e745f22",
+      "section": "有限双权边际势的自由尺度浮点搜索"
+    },
+    {
+      "path": "archives/weighted-congestion/state/等价/固定权向量边际夹逼的最大圈比--等价.md",
+      "sha256": "a42e12ea728da5e4c8e11e35ce163327fe1c6e507e169dc5cf6c99ef30343d55",
+      "section": "固定权向量边际夹逼的最大圈比"
+    }
+  ],
+  "reviewed_by": "Boss1 weighted-congestion finite-weights worker",
+  "review_note": "实读冻结论证并逐项核模型、量词、承重条件和证据归属。给出真实仿射分项的充分因子及一个固定h的必要差距；不宣称K(h)是每个有限矩形最优，也不采用浮点F为精确二次势。",
+  "contribution": {
+    "result": "任何同h精确二次证书可用分段势补齐仿射与常数项，混合充分因子为max{A₂,K(h)}；N=2纯二次最优h不能把A₂原样用于任意混合费用。",
+    "remaining": "需要另选共同h和精确二次证书才能优化混合有限矩形；七个浮点网格及全人数极限仍分立。"
+  },
+  "endpoint_pins": {
+    "WC-R2-AFFINE-TWO-TYPE": "635e968d56773b9356235ddeb4a535acf67a0cb17eab65cd4185e11860c03b21",
+    "weighted-congestion/finite-grid-free-heavy-scale-floating-lp-search-contract": "e96fac139109d90365205c7cae84f35f91c83e760d956ac48359f0e9311e8662"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/仿射两类型玩家尺度的锐分段势--定理.md": "4f95732839c2802ff0e1925b8858b6aed0482fb103af400e4cddd34940d7e075",
+    "archives/weighted-congestion/state/计算/有限双权边际势的自由尺度浮点搜索--计算.md": "eca6f04f7f96db42f90b5a5b2c4a3b3012b72a9fad2f7d31b44c810b0e745f22",
+    "archives/weighted-congestion/state/等价/固定权向量边际夹逼的最大圈比--等价.md": "a42e12ea728da5e4c8e11e35ce163327fe1c6e507e169dc5cf6c99ef30343d55"
+  },
+  "review_digest": "c9de33825e7c6ed3ac85598b312180d42b103904cc80b06aa1178a4366a9256e"
+}

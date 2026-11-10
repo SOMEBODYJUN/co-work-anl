@@ -1,0 +1,48 @@
+{
+  "edge_id": "wc-r33-support-distortion-obstructs-uniform-cost-transfer",
+  "kind": "corrects",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/approximate-support-distortion"
+  ],
+  "target_ids": [
+    "WC-R1-RESOURCE-SUPPORT"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "同玩家同动作标签、全部状态费用逐项V≤Ĉ≤βV，表示方非零资源潜在支持≤r、任意正新权及有限非负多项式，无辅助玩家。",
+  "roles": {
+    "weighted-congestion/approximate-support-distortion": "pair跃升的统一失真反例。",
+    "WC-R1-RESOURCE-SUPPORT": "真实小支持输入上的r-近似总成本势。"
+  },
+  "explanation": "若夹逼存在，则表示方r-PNE满足V_i(s)≤Ĉ_i(s)≤rĈ_i(t_i,s_-i)≤rβ V_i(t_i,s_-i)，因此可解码为原βr-PNE。然而对任意固定有限r,β，取m>β(r−1)并选足够小的正有理ε，原线性一资源全表的pair预算逼β≥m(1+ε)/[(r−1)(1+mε)+mε]>β。故这条统一保全成本压缩不能把小支持定理扩为所有线性原实例的给定βr路线；原游戏全0仍是精确PNE。",
+  "scope": "保留小支持定理本身；不能把同标签完整成本表示的障碍推广到辅助玩家、仅保均衡、单向lift或非单调费用。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/障碍/小用户支持近似成本表示的失真--障碍.md",
+      "sha256": "3baec6733bcc91210ca26bd552857b8f75ff1cfd73b70493dc1a2514c614d51c",
+      "section": "小用户支持近似成本表示的失真"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/资源潜在用户支持的总成本势--定理.md",
+      "sha256": "4f252181961ef4fdda7e02f6ee460861b4d52c1271d85c8d1dd1242ef8f42844"
+    },
+    {
+      "path": "archives/weighted-congestion/state/资料/拥塞共享侧资源与正占用核账本的全部陈述--资料.md",
+      "sha256": "3a787178b9ae25b34ed7aeaa59b33ef9079667a67223ff0ac99b2cf7a8f39d82",
+      "section": "拥塞共享侧资源与正占用核账本的全部陈述"
+    }
+  ],
+  "reviewed_by": "Boss1 weighted-congestion finite-weights worker",
+  "review_note": "实读冻结论证并逐项核模型、量词、承重条件和证据归属。保留小支持定理本身；不能把同标签完整成本表示的障碍推广到辅助玩家、仅保均衡、单向lift或非单调费用。",
+  "endpoint_pins": {
+    "WC-R1-RESOURCE-SUPPORT": "f3251dcce0ad8790ada62d0e325c4c6f79efe3a9be7f5b8da0db2c4be09b27d0",
+    "weighted-congestion/approximate-support-distortion": "6cbe2f92b67134ee42b0d543f6e77edf34f0931404d8e391247b52cd3ef970d9"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/障碍/小用户支持近似成本表示的失真--障碍.md": "3baec6733bcc91210ca26bd552857b8f75ff1cfd73b70493dc1a2514c614d51c",
+    "archives/weighted-congestion/state/定理/资源潜在用户支持的总成本势--定理.md": "4f252181961ef4fdda7e02f6ee460861b4d52c1271d85c8d1dd1242ef8f42844",
+    "archives/weighted-congestion/state/资料/拥塞共享侧资源与正占用核账本的全部陈述--资料.md": "3a787178b9ae25b34ed7aeaa59b33ef9079667a67223ff0ac99b2cf7a8f39d82"
+  },
+  "review_digest": "ab29da4051aae19d5e4d3ec2313d6da31bc3ba63bf366094b12350ed727f4d38"
+}

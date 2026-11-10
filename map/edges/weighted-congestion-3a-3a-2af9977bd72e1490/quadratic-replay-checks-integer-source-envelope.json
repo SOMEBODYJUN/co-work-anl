@@ -1,0 +1,47 @@
+{
+  "edge_id": "wc-r33-quadratic-replay-checks-integer-source-envelope",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/fixed-hub-response-quadratic-envelope-exact-replay"
+  ],
+  "target_ids": [
+    "WC-R1-SOURCE-D2-ENVELOPE"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "二次保守两攻击纯公式，n为整数≥1，k∈{1,2}。网格w,β=j/100；全域结论由独立解析/恒等式证明。",
+  "roles": {
+    "weighted-congestion/fixed-hub-response-quadratic-envelope-exact-replay": "原程序及精确稀疏多项式重算、固定网格、binary64观察。",
+    "WC-R1-SOURCE-D2-ENVELOPE": "整数n二次两攻击公式19/18解析包络。"
+  },
+  "explanation": "原程序逐系数验证9恒等式，含n整数二阶差分、19/18两个平方式、k2残差、17/16端点与导数及16/15的展开。精确2101406有理参数组以交叉乘法排除两严格19/18，206个零第二分母不除零。binary64最大观察约1.0540141790981647是有限探索；286/267差值算术不重建那个游戏。即便实n公式另有强证，玩家人数仍为整数；本纯公式定理不经rho门槛变为19/18完整对称拓扑上界。",
+  "scope": "有限 replay 不替代解析包络，固定hub响应与此纯公式分开，无跨hub共同势或实人数游戏。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/计算/固定主玩家响应与二次包络的精确复现--计算.md",
+      "sha256": "41458a3b13d9ac8ef31aac98b75bf173d96d384d52f5bb09132a77b591da7f3f",
+      "section": "固定主玩家响应与二次包络的精确复现"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/两攻击源公式的二次整数参数包络--定理.md",
+      "sha256": "0c1042284fe67b62f4cf78ad19db37df3bb78c8a263ff68b511ff47317925550"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/对称两列拓扑的单项式两攻击归约--定理.md",
+      "sha256": "6d6ffc835804eec4e380e086b818d8e022dc1c0d70d505d31a09873766b7d6d9"
+    }
+  ],
+  "reviewed_by": "Boss1 weighted-congestion finite-weights worker",
+  "review_note": "实读冻结论证并逐项核模型、量词、承重条件和证据归属。有限 replay 不替代解析包络，固定hub响应与此纯公式分开，无跨hub共同势或实人数游戏。",
+  "endpoint_pins": {
+    "WC-R1-SOURCE-D2-ENVELOPE": "e87d42e8a947383dec9f817173d522587a65fef3068cb92359ca17b36161f1c5",
+    "weighted-congestion/fixed-hub-response-quadratic-envelope-exact-replay": "40e6ad68037fe1087667cac17bf67ae4c2690a3a95e5cde91756bea1726bd28e"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/计算/固定主玩家响应与二次包络的精确复现--计算.md": "41458a3b13d9ac8ef31aac98b75bf173d96d384d52f5bb09132a77b591da7f3f",
+    "archives/weighted-congestion/state/定理/两攻击源公式的二次整数参数包络--定理.md": "0c1042284fe67b62f4cf78ad19db37df3bb78c8a263ff68b511ff47317925550",
+    "archives/weighted-congestion/state/定理/对称两列拓扑的单项式两攻击归约--定理.md": "6d6ffc835804eec4e380e086b818d8e022dc1c0d70d505d31a09873766b7d6d9"
+  },
+  "review_digest": "280aa5ba36dd9ea29590ed124b9a1c77ad91c4552720816bf57ba482f5462ec6"
+}

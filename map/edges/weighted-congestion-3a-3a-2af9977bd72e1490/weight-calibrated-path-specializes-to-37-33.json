@@ -1,0 +1,47 @@
+{
+  "edge_id": "wc-r33-weight-calibrated-path-specializes-to-37-33",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/weight-calibrated-marginal-two-order-barrier"
+  ],
+  "target_ids": [
+    "weighted-congestion/finite-weight-37-33-certificate-and-scaling-boundary"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "单资源费用 x²，玩家尺度固定为自己的物理权，轻权1、重权2，两类各至多2人。加入边按加入后真实负载。",
+  "roles": {
+    "weighted-congestion/weight-calibrated-marginal-two-order-barrier": "同终点两条加入路径的必要区间。",
+    "weighted-congestion/finite-weight-37-33-certificate-and-scaling-boundary": "固定3×3有理模板最优性及其范围。"
+  },
+  "explanation": "取两个轻玩家和一个重玩家，轻轻重、重轻轻两路径的预算分别为1+4+32=37与8+9+16=33。路径望远镜迫37≤F(2,1)−F(0,0)≤33α。冻结的3×3表以轻人数k为行、重人数l为列，三行为(0,296/33,1354/33)、(1,629/33,2279/33)、(5,37,109)，十二条边逐项在目标预算与(37/33)倍预算之间。两路径也就是PATH的重1、两轻1/2、d=2归一化后两和同乘8。常数/线性可取精确真实权缩放，用非负系数组合，保共同尺度和严格37/33改善下降。",
+  "scope": "确切最优性仅指固定h=2的二次网格夹逼。二次分项可同精确仿射项组合，未比较一般序势或实际PNE最优阈值。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/障碍/权重校准边际夹逼的两序路径线性损失--障碍.md",
+      "sha256": "164ce6768a10aba2e86fd315af901da6ffd534b01f869d523488b84d4ea18c50",
+      "section": "权重校准边际夹逼的两序路径线性损失"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/有限权重37比33证书与自由缩放降级审计--审查.md",
+      "sha256": "2975df15fd561ea000e4733f6782226375a036396d795be9626263a28dd5a5ff",
+      "section": "来源、模型与比较范围"
+    }
+  ],
+  "reviewed_by": "Boss1 weighted-congestion finite-weights worker",
+  "review_note": "实读冻结论证并逐项核模型、量词、承重条件和证据归属。确切最优性仅指固定h=2的二次网格夹逼。二次分项可同精确仿射项组合，未比较一般序势或实际PNE最优阈值。",
+  "contribution": {
+    "result": "固定3×3、h=2的纯二次边际合同最小因子恰37/33，并给原有限人口任意非负二次费用的充分37/33势。",
+    "remaining": "本步骤不处理自由h、更多人口、其他势模板或一般游戏的最佳近似均衡。"
+  },
+  "endpoint_pins": {
+    "weighted-congestion/finite-weight-37-33-certificate-and-scaling-boundary": "28af10e96c32948db02b0f5cd327b9310fc6efe367e5eb85f35420ca935bb267",
+    "weighted-congestion/weight-calibrated-marginal-two-order-barrier": "8d8dc94e57490250d196c51bdbed5574067f1c5834ce83f0a3de3b0b8638132d"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/障碍/权重校准边际夹逼的两序路径线性损失--障碍.md": "164ce6768a10aba2e86fd315af901da6ffd534b01f869d523488b84d4ea18c50",
+    "archives/weighted-congestion/state/审查/有限权重37比33证书与自由缩放降级审计--审查.md": "2975df15fd561ea000e4733f6782226375a036396d795be9626263a28dd5a5ff"
+  },
+  "review_digest": "f6fe271ca7edf163f5fb55a2c1b8af5ef41ec5586b873504a10e76c4a5aa83fe"
+}

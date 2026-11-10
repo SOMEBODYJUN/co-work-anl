@@ -1,0 +1,56 @@
+{
+  "edge_id": "wc-r33-height-potential-pays-recurrent-dual-on-bounded-cones",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/interaction-height-triangular-potential",
+    "weighted-congestion/allstate-selector-linear-alternative"
+  ],
+  "target_ids": [
+    "weighted-congestion/recurrent-selector-dual-fip-equivalence"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "d≥2，固定列锥的所有可选资源签名在可动玩家上的潜在共占降权图高度≤K。取α≥A_{d,K}，固定同一有限动作模板、权及任意指定selector。",
+  "roles": {
+    "weighted-congestion/interaction-height-triangular-potential": "逐个非负系数游戏在该合同下有严格α改善下降势。",
+    "weighted-congestion/allstate-selector-linear-alternative": "对任意指定循环的择证行矩阵作归一化线性替代。",
+    "weighted-congestion/recurrent-selector-dual-fip-equivalence": "受限列锥的循环支撑证书。"
+  },
+  "explanation": "潜在图可在全列支持上先建好，删掉零系数资源或合并合法固定背景不会增加高度。故任一非负系数a的真实严格α改善图无环。若对某个selector循环Q不存在概率对偶，严格替代给a≥0使Q全部行正，与同一a的三角势沿环严格下降冲突。因而每个指定循环均有归一化概率证书。还可对单个Q仅检查其端点实际共占高度≤K；选定列对应的用户关系与非负系数选择无关，闭词端点证明同样排除该环全严格。",
+  "scope": "无须假定同一势对全部a适用，也不要求支持均匀。只给高度受限的锥或单个闭词；高图高度没有反向保证。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/共占降权高度与改善闭词长链--定理.md",
+      "sha256": "d51793b15dda8825b7ab88c60c01495c235ae25f11712626ec8c1bf2b2d777ba",
+      "section": "共占降权高度与改善闭词长链"
+    },
+    {
+      "path": "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md",
+      "sha256": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a",
+      "section": "全状态严格改善择证的线性替代"
+    },
+    {
+      "path": "archives/weighted-congestion/state/等价/循环支撑择证与全部改善终止--等价.md",
+      "sha256": "c80f08cca21232107968703c70c276d91d8a6eb75dced5ac6010e10057f963b9",
+      "section": "循环支撑择证与全部改善终止"
+    }
+  ],
+  "reviewed_by": "Boss1 weighted-congestion finite-weights worker",
+  "review_note": "实读冻结论证并逐项核模型、量词、承重条件和证据归属。无须假定同一势对全部a适用，也不要求支持均匀。只给高度受限的锥或单个闭词；高图高度没有反向保证。",
+  "contribution": {
+    "result": "α≥A_{d,K}时，高度≤K的固定列锥对任何指定selector循环有循环支撑对偶；同结论也可逐环用端点实际高度。",
+    "remaining": "一般无界高度列锥的FIP仍须另判。此处不替代四列分离及任意锥的逆向Hamming论证。"
+  },
+  "endpoint_pins": {
+    "weighted-congestion/allstate-selector-linear-alternative": "32b4a0b43b4f3f9bf47915836e1e02ee714339906ac960b66961a7e7760686ad",
+    "weighted-congestion/interaction-height-triangular-potential": "0d8d8757b1f5343ad31c66c0883cc22c9ba6ef8a54346bd55057151819bc2694",
+    "weighted-congestion/recurrent-selector-dual-fip-equivalence": "1386366b88d461cc4ffdbf0b1ec827700e9a365e715a3f7671e59bdca434fbef"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/共占降权高度与改善闭词长链--定理.md": "d51793b15dda8825b7ab88c60c01495c235ae25f11712626ec8c1bf2b2d777ba",
+    "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a",
+    "archives/weighted-congestion/state/等价/循环支撑择证与全部改善终止--等价.md": "c80f08cca21232107968703c70c276d91d8a6eb75dced5ac6010e10057f963b9"
+  },
+  "review_digest": "254746ecaedc1a418384f8d4d3830530f696969f3b1318c5d0146b5f0dcdcb35"
+}

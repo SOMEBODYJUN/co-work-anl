@@ -1,0 +1,55 @@
+{
+  "edge_id": "wc-r33-compatible-ranks-reuse-triangular-weights",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1"
+  ],
+  "target_ids": [
+    "weighted-congestion/interaction-height-triangular-potential"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "非负多项式次数≤d、d≥2；固定全局秩只须在各资源同时出现的用户内严格降权对应增秩、同秩等权。吸收背景后保有限正权与费用次数。",
+  "roles": {
+    "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1": "有限几何混合系数、边际三角表及根A_{d,k}。",
+    "weighted-congestion/interaction-height-triangular-potential": "把全局权类数替换为共占高度，并区分潜在图和词端点图。"
+  },
+  "explanation": "用严格降权共占图的最长入路径秩r_i，若同资源w_i>w_j则r_i<r_j；同秩共用者等权。故每条资源按(k,…,b+1,1,…,b)排序和同层等权交换时仍可复用重尾/轻尾插入不等式。取t=(d−1)/A、λ_b=t^{b−1}/A及S_r=Σ_{b≤r}λ_b，1+(d−1)S_{r−1}=AS_r；全资源共用h_i=w_iS_{r_i}。删/加势和≤h_i[AC_new−C_old−(A−1)C_keep]。对潜在图，这对全体偏离成立。对严格改善闭词，只给词中移动者按端点真实共占建图，未移动者固定背景，在整个面固定同一势；每一步的删/加集合恰在词的旧/新端点，因此虽词外状态可不相容，词内仍逐步严格降势并矛盾。于是α≥A_{d,K}的真实闭词必须有长度至少K+1的实际共占降权链。",
+  "scope": "局部等权相容须实证。同一链的弧可来自不同状态或资源。严格改善闭词并不足以反推每态无均衡。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+      "sha256": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/共占降权高度与改善闭词长链--定理.md",
+      "sha256": "d51793b15dda8825b7ab88c60c01495c235ae25f11712626ec8c1bf2b2d777ba",
+      "section": "共占降权高度与改善闭词长链"
+    },
+    {
+      "path": "archives/weighted-congestion/state/计算/共占高度与闭词端点的独立有限核验--计算.md",
+      "sha256": "3f08ce38fae73f6289023f017646da6e9ea6db618bee07d9ab3c57392e56a0dc",
+      "section": "共占高度与闭词端点的独立有限核验"
+    },
+    {
+      "path": "archives/weighted-congestion/state/计算/相容秩端点与高度边界的作者有限核验--计算.md",
+      "sha256": "4fa5660ac42d94f942fedb0be02b23c12ccd04b2ace11281a5838d3473c70243",
+      "section": "相容秩端点与高度边界的作者有限核验"
+    }
+  ],
+  "reviewed_by": "Boss1 weighted-congestion finite-weights worker",
+  "review_note": "实读冻结论证并逐项核模型、量词、承重条件和证据归属。局部等权相容须实证。同一链的弧可来自不同状态或资源。严格改善闭词并不足以反推每态无均衡。",
+  "whole_result": "在标准有限加权拥塞游戏，潜在共占降权高度k给共同资源势及A_{d,k}-PNE和严格A_{d,k}改善终止。任何严格α改善闭词的移动者端点实际高度k满足α<A_{d,k}。",
+  "endpoint_pins": {
+    "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1": "1a0edceaed3cbc80e104df06697385be3406c7aa2b6eed26b2203f66c2609413",
+    "weighted-congestion/interaction-height-triangular-potential": "0d8d8757b1f5343ad31c66c0883cc22c9ba6ef8a54346bd55057151819bc2694"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2",
+    "archives/weighted-congestion/state/定理/共占降权高度与改善闭词长链--定理.md": "d51793b15dda8825b7ab88c60c01495c235ae25f11712626ec8c1bf2b2d777ba",
+    "archives/weighted-congestion/state/计算/共占高度与闭词端点的独立有限核验--计算.md": "3f08ce38fae73f6289023f017646da6e9ea6db618bee07d9ab3c57392e56a0dc",
+    "archives/weighted-congestion/state/计算/相容秩端点与高度边界的作者有限核验--计算.md": "4fa5660ac42d94f942fedb0be02b23c12ccd04b2ace11281a5838d3473c70243"
+  },
+  "review_digest": "9fa148e39a2f86bd99511be819b41fce4cea24993b9c6ff907a76ca6241c85cc"
+}

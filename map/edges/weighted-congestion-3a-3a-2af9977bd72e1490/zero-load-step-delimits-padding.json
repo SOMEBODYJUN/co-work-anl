@@ -1,0 +1,46 @@
+{
+  "edge_id": "wc-r33-zero-load-step-delimits-padding",
+  "kind": "corrects",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/zero-cost-positive-load-step-projection-failure"
+  ],
+  "target_ids": [
+    "WC-R3-POTENTIAL-DENSITY-PADDING-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "若试图把padding投影推广到任意非负非递减费用，允许正负载处费用为零。",
+  "roles": {
+    "weighted-congestion/zero-cost-positive-load-step-projection-failure": "给出原/增广各一名可动玩家的真实偏离反例。",
+    "WC-R3-POTENTIAL-DENSITY-PADDING-v1": "非零多项式正点严格正性的承重边界。"
+  },
+  "explanation": "原玩家权1可选私人常数1/2或共享e，c_e(x)=0在x≤1、1在x>1；增添权1空/{e}玩家。增广状态(私,e)有成本(1/2,0)，各自偏离成本(1,0)，故所有有限α≥1均稳定；投影后原玩家偏离e费用0而当前1/2，故对任何有限α都不稳定。该非负非减阶跃允许新增玩家在正负载免费，恰破坏原归约排除新增活跃者的前提。",
+  "scope": "否定域外的每均衡投影和成本逐项相等；原阶跃例仍有别的均衡，不否定任意两实例存在性等价，也不反驳正式多项式定理。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/反例/正负载零价阶跃的均衡投影失效--反例.md",
+      "sha256": "c7018976106d133a3aaac568ecd51a915e9bca67150f3abe1327a6970600429a"
+    },
+    {
+      "path": "archives/weighted-congestion/state/归约/可选空动作的潜在用户密度填充--归约.md",
+      "sha256": "e27d8ee759a8fb8616cb701ebe8d041c3a8ae8becbd7be6347ce65f7a0778142"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/密度填充与高次份额的独立审计范围--审查.md",
+      "sha256": "efd5546217cbd5a607105c20d830ab3f998691a0c99d2295da4f709529a2c8d1"
+    }
+  ],
+  "reviewed_by": "Boss1 weighted-congestion finite-weights worker",
+  "review_note": "实读冻结论证并逐项核模型、量词、承重条件和证据归属。否定域外的每均衡投影和成本逐项相等；原阶跃例仍有别的均衡，不否定任意两实例存在性等价，也不反驳正式多项式定理。",
+  "endpoint_pins": {
+    "WC-R3-POTENTIAL-DENSITY-PADDING-v1": "2957cb43beb8504db54f0aebed5a3cfdbb19e583c4d82db86b7a3ec5bc2f06ff",
+    "weighted-congestion/zero-cost-positive-load-step-projection-failure": "fa31deb66bb927389dfb4f9576a7ce22d02c7153afd22d0d2495dc48ace637ca"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/反例/正负载零价阶跃的均衡投影失效--反例.md": "c7018976106d133a3aaac568ecd51a915e9bca67150f3abe1327a6970600429a",
+    "archives/weighted-congestion/state/归约/可选空动作的潜在用户密度填充--归约.md": "e27d8ee759a8fb8616cb701ebe8d041c3a8ae8becbd7be6347ce65f7a0778142",
+    "archives/weighted-congestion/state/审查/密度填充与高次份额的独立审计范围--审查.md": "efd5546217cbd5a607105c20d830ab3f998691a0c99d2295da4f709529a2c8d1"
+  },
+  "review_digest": "cd8dd290196d9f6f35a2b64bbb9a5885a98e43eac56dc7f73f9dfdf82d627657"
+}
