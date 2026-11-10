@@ -1,0 +1,42 @@
+{
+  "edge_id": "cag-9c9f-r08-common-waterfill-pool-gives-original-tree-ledger",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-FRACTIONAL-TAIL-WATERFILL-v1"
+  ],
+  "target_ids": [
+    "customer-attraction/waterfill-event-tree-credit-ledger"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一原完整有序树和有限共同阈值，按指定suffix逆序处理；每个离轨孩子独立，父根处理孩子时保持一单位；固定目录分布p。",
+  "roles": {
+    "CA-FRACTIONAL-TAIL-WATERFILL-v1": "同一w和客户池h控制所有查询，H≤D及一次利润守恒。",
+    "customer-attraction/waterfill-event-tree-credit-ledger": "原树全部IC减真实Γ、净相关协方差恒等式和EH≤ED界。"
+  },
+  "explanation": "1. 按原规定路径先处理较晚角色：每个已处理正权角色密度≥t，随后其他质量下降只会提高它，故后续父事件不须重复降低它；原叶逆序序列是一种合法单遍水位次序。\n\n2. CA-waterfill对每真实叶给同一w、h_x≥0、H≤D及根返还Γ=Σ_(x∈a)h_x，同时保根/旧背景/尾利润守恒。\n\n3. 定义d_h^+(a)=d_h(a)+Γ_h(a)逐分支代入原IC，得目标IC式，无需假定删Γ后成立。\n\n4. 固定p_x=Pr(x∈a)，对角返还为EΣ1_(x∈a)h_x(a)，独立查询返还为EΣp_xh_x(a)，相减即ΣCov。因|1_A−p_x|≤1且h≥0，绝对值≤EH≤ED。",
+  "scope": "事件账结论完整；不证明新辅助质量树为单位SPE，也不支付原有相关差或全树跨枝总债。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/分数尾水位的共同查询信用与利润守恒--引理.md",
+      "sha256": "d9ca9cb82ac113e8573c6ac7f18f19019d69801c1990b675ee2d5e50e07f23eb"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/水位事件的共同信用与原树激励账--引理.md",
+      "sha256": "b8016751cd4d68e9236fa25dbf3b3a26c28a35b46e3205dee13190cfd86c6501"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Round55正式worker已实读当前端点完整合同、所列正文承重证明并重构R08。共同输入、全有序真实IC、静态槽数及量词逐项核对；范围以whole_result所写完整if定理或完整目标句。",
+  "whole_result": "单遍水位的同一客户池使原IC精确保为d_h^+(σ(h))−Γ_h(σ(h))≥d_h^+(a)−Γ_h(a)，并给(A^+−I^+)−(A−I)=Σ_xCov_a(1_(x∈a),h_x(a))，绝对值≤E_aH_a≤E_aD_a。",
+  "endpoint_pins": {
+    "CA-FRACTIONAL-TAIL-WATERFILL-v1": "5f293f8ee9fe1deabf20597b3666b2ed884221984b95fb4f5d36998557d15f7d",
+    "customer-attraction/waterfill-event-tree-credit-ledger": "74c311f4afedd1e2329b209bcceaa9761b76af00ef81adc706b7b387796e42eb"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/分数尾水位的共同查询信用与利润守恒--引理.md": "d9ca9cb82ac113e8573c6ac7f18f19019d69801c1990b675ee2d5e50e07f23eb",
+    "archives/customer-attraction/state/引理/水位事件的共同信用与原树激励账--引理.md": "b8016751cd4d68e9236fa25dbf3b3a26c28a35b46e3205dee13190cfd86c6501"
+  },
+  "review_digest": "8625eb2bdd181b84eb2e9df1c1a547dda689aa8e7adec85fa8174d37b125d50a"
+}

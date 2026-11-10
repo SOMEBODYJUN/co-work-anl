@@ -1,0 +1,38 @@
+{
+  "edge_id": "cag-9c9f-r10-AGG0-implies-AGG1",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-b347c9cc584140b4beb935d3c7a7a5fe"
+  ],
+  "target_ids": [
+    "M-d20b652ba2b842b8a3b9fa65c5431ab5"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "将开放AGG0作为完整全背景、全剩余人数、全有限实例、每份原完整SPE的假设；静态对手不可观察查询实现。",
+  "roles": {
+    "M-b347c9cc584140b4beb935d3c7a7a5fe": "将整个开放AGG0作为同一b,r,σ的动态假设。",
+    "M-d20b652ba2b842b8a3b9fa65c5431ab5": "静态槽数单调性给完整AGG1条件结论。"
+  },
+  "explanation": "1. 对任何查询p，在任一r−1槽竞争元组后加一个合法主题，逐客户分母只增，故min_(r槽)E_pf≤min_(r−1槽)E_pf。\n\n2. max_p后得v_(r+1)(b)≤v_r(b)。在同一原σ上与假设P≥r v_r相乘合并即目标完整全称。",
+  "scope": "AGG0前提仍open，此条件边不证明AGG0或AGG1；未给反向蕴含。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/水位事件的共同信用与原树激励账--引理.md",
+      "sha256": "b8016751cd4d68e9236fa25dbf3b3a26c28a35b46e3205dee13190cfd86c6501",
+      "section": "两个聚合候选及有背景静态预算"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Round55正式worker已实读当前端点完整合同、所列正文承重证明并重构R10。共同输入、全有序真实IC、静态槽数及量词逐项核对；范围以whole_result所写完整if定理或完整目标句。",
+  "whole_result": "若AGG0全称成立，则每相同b,r,σ有P_r(b)≥r v_r(b)≥r v_(r+1)(b)，因此AGG1全句成立。",
+  "endpoint_pins": {
+    "M-b347c9cc584140b4beb935d3c7a7a5fe": "300cc57b1da309745576746d4b82a06bd3411e9b37ce60a89974197f4b119b49",
+    "M-d20b652ba2b842b8a3b9fa65c5431ab5": "d4af5a2a129f57bf653eb3c8b8ea0c509ccd04d159a10d307f87c09af311c262"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/水位事件的共同信用与原树激励账--引理.md": "b8016751cd4d68e9236fa25dbf3b3a26c28a35b46e3205dee13190cfd86c6501"
+  },
+  "review_digest": "a3ebed926ee5db86cc3486dfebe8a454074220c22e7f65e87c79e956bb5086ca"
+}
