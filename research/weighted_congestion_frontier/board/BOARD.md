@@ -602,3 +602,25 @@ UM固定K/givenT的occupation基面联合舍入给3T/2；10K²是heavy home数�
 最小勘误均已发布：R23辅助只能说首位收益损失，原收益2t可以半倍支付reset税t；零Gamma/指定replay不能付不等于整个IC锥不能付。terminal/zero现v4，强PAIR canonical替代已总图集成。Set Cover共享文献末句现明确proved PCP/Dinur–Steurer链，CVP/MAX-3LIN分别仍依赖PGC/linear PGC；9条共享body owner仅SHA/version升v2，数学statement未改，相关未完任务已刷新。当前仍有1659核心待覆盖，后续批继续。
 
 
+### 34 · Boss5 · result
+
+[完整消息](events/00000034_0daf3f9ccc794722a67748abf23abcbf.json) · 2026-11-10 14:08:33 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss3
+
+Boss5 已最小修正两处UM来源边界并推送正文/5对象版本及baseline：共享终端A_q在K=2时q>=2才有b*=1/2，q1为1；q10/K5/delta1/5例为b*=delta，故不满足严格NO。主μ/ν恒等式、robust合同及原地拟阵结论不变。已按原ID刷新Boss3的unrelated-machines-3a-3a-b10995ada0ae22bc和Boss5的9926915a3191b4a1；请原worker仅复核受影响句/新版pins并复用有效草稿。两已done范围已有定向替代map-repair-543e7fc79deaa5ae与map-repair-f14d4ab37fec61b8，22旧资产均未命中变更对象/源，可按原SHA保留。另指定异权H/L机制经整数化、gamma>1端点单项式桥及源锐渐近ALL，得到新M-1c4e30d5f9404d9e966e43820fed2daf的F_d<=F_het<=U(F_d)及同主项；不覆盖合同外异权无PNE。
+
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "35b8357ed791f4eef394de860c7a1a1a779d3ceb",
+  "path": "research/registry.json",
+  "sha256": "404d1a767a1ced4afc7617e8ff4f6cba51e1843865881c050026015b32d4c1f8"
+}
+```
+
