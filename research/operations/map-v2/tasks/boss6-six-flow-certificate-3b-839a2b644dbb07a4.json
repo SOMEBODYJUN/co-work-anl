@@ -1,0 +1,663 @@
+{
+  "definition": {
+    "task_id": "boss6-six-flow-certificate-3b-839a2b644dbb07a4",
+    "stage": "3B",
+    "registry": "research/registry.json",
+    "object_ids": [
+      "CA-STRATEGY-CONE",
+      "customer-attraction/payoff-type-map-kernel-and-full-real-row-cone-lineality",
+      "customer-attraction/real-payoff-comparison-SCC-quotient-and-nonnegative-flow-compilation",
+      "customer-attraction/real-payoff-graph-closed-set-divergence-and-forest-certificate",
+      "customer-attraction/six-providers/exact-six-full-history-half-cover"
+    ],
+    "read_object_ids": [],
+    "input_pins": {
+      "CA-STRATEGY-CONE": "4657ebd5314421477c1db4255ecff0d2eafa960dd47317013e042f4b240aca73",
+      "customer-attraction/payoff-type-map-kernel-and-full-real-row-cone-lineality": "4a1dbc63d5fa7b1d11fb5c4f08e17e6c7254e01b018a9ad98523515604f17721",
+      "customer-attraction/real-payoff-comparison-SCC-quotient-and-nonnegative-flow-compilation": "8dd4e2d61274209aeb10dea8096420574f68e93915837769264d459f0cea54e0",
+      "customer-attraction/real-payoff-graph-closed-set-divergence-and-forest-certificate": "5512838cf70d97d76afd686603867afb8e37eae7a2af5a185a44e3b54e257db6",
+      "customer-attraction/six-providers/exact-six-full-history-half-cover": "2d5b191271cb052c435121a41935eb3958540d5a53cb05013f13dd45a70f6e31"
+    },
+    "write_paths": [
+      "map/edges/boss6-six-flow-certificate-3b-839a2b644dbb07a4",
+      "map/receipts/boss6-six-flow-certificate-3b-839a2b644dbb07a4.json"
+    ],
+    "goal": "对恰六人的每个固定标签数、完整形式策略和比较组合，固定策略锥对偶、闭集非负流判别、SCC无损商和类型映射秩怎样给出半覆盖的精确证书等价规格？能否先保散度压成森林，再允许散度沿ker L变化而保持目标与非负余项，将支持降至min(V-1,D-1)？明确这些归约仍欠对所有p、策略和比较组合构造证书，不能提升六人原题状态。",
+    "context_plan": {
+      "budget": {
+        "context_tokens": 500000,
+        "window_source": "official-default",
+        "model": "gpt-6.1-sol",
+        "used_tokens": null,
+        "history_mode": "inherited",
+        "reserve_tokens": 200000,
+        "reading_tokens": 100000,
+        "output_tokens": 100000,
+        "runtime_remaining_tokens": null,
+        "declared_remaining_before_reserve_tokens": null,
+        "assumptions": [
+          "Window source is declared, not discovered from this conversation.",
+          "Reading budget includes source text and object/task metadata.",
+          "Reserved context includes expected generated records and later reasoning/tool growth.",
+          "Inherited context usage is unknown: limited planning window only; prefer a fresh worker or supply reported used_tokens."
+        ],
+        "budget_is_runtime_measurement": false
+      },
+      "reading": {
+        "chars": 103970,
+        "utf8_bytes": 180920,
+        "source_tokens": 136324,
+        "metadata_tokens": 13275,
+        "estimated_tokens": 149759,
+        "metadata_chars": 13067,
+        "metadata_utf8_bytes": 19219,
+        "distinct_files": 27,
+        "reading_segments": 27,
+        "token_count_is_estimate": true,
+        "estimators": [
+          "conservative-math-text-estimate-v1; not a tokenizer count"
+        ],
+        "unmeasured_refs": [],
+        "measurement_scope": "Requested complete text spans plus supplied metadata; binary evidence is not token-counted from raw bytes.",
+        "task_overhead_tokens": 160
+      },
+      "estimated_output_tokens": 15265,
+      "oversized": true,
+      "requires_export": false,
+      "reading_refs": [
+        {
+          "path": "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md",
+          "sha256": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/R-373d耦合桥与计数MILP有限证书--障碍.md",
+          "sha256": "f0410daa71f6635bcddada62ef71e41b03437c48192fc1dee7f11ca5cdeb7737",
+          "section": "固定 bridge attack"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/R-373d耦合桥与计数MILP有限证书--障碍.md",
+          "sha256": "f0410daa71f6635bcddada62ef71e41b03437c48192fc1dee7f11ca5cdeb7737",
+          "section": "新增 `fixed_bridge_mult3.json` 版本核验"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/固定策略锥二倍根支付有限核验--审查.md",
+          "sha256": "2a7359d4868b6bec183a1d697ea1394fdebe198e09af39dd0cdd68cb8bb7d17e",
+          "section": "固定桥目标的含义与数值"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/source/fixed_bridge_attack.py",
+          "sha256": "beacb48f1036b7e694464f48b21cd625d1349d1dec547b65bb1180a94acf5ebc"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/source/fixed_bridge_mult3.json",
+          "sha256": "c3b17b2b8b9e03caafcd3656ddb6904613e1430b5e75f9c3348310e09f283d84"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/replay/fixed_bridge_mult3_validation.json",
+          "sha256": "e34de6e41884af992d0a9727e12f933c624356352a62d9850e964abfd02607d0"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/R-31bbb终局税与弱匹配锥有限屏幕--障碍.md",
+          "sha256": "a079f815dbd576c4217da8dbb6f0ff15ef93aad9be830bd7cbf9ff8cec0be20b",
+          "section": "弱匹配与 addition 屏幕"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-31bbb-tail-20261031/source/markov_cone.py",
+          "sha256": "2ec3e2ce35eaf30a54774ba73b7a6ed991df3ee194107abbfb6394e8c2bc875a"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-31bbb-tail-20261031/source/portfolio_addition_cone.py",
+          "sha256": "ba269ebd13d921173aa59468855194521d4aa4056b139677c79a2b32f755601b"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-31bbb-tail-20261031/source/addition_m4p6_seed10211.json",
+          "sha256": "14f9c39f69e44d635b470483fc4ba1c13c4225fa53ce4955edd1ba197588e036"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/R-31bbb-tail-20261031/replay/markov_smoke.json",
+          "sha256": "e66c94a85ba2bcad02ebcb5f9a56e44e2b8407dcfaae75d731170f221b9c95c4"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/重复标签五人全树锥游走与十六步日志--程序.md",
+          "sha256": "fb9c6313cf3c10f85e40aa81804759f1f561a53db8182c49572a2c3c9f376899"
+        },
+        {
+          "path": "archives/customer-attraction/state/等价/固定完整策略的逐目标半覆盖对偶--等价.md",
+          "sha256": "586592c26868c80b0d5e53c6486bb070c196983dd272eec6b0f580ef09f68e26"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/历史依赖策略锥的搜索程序--程序.md",
+          "sha256": "447cb5effd11e7a3fe803ceb4c276654102062f7baa331192537e4e1d5ba875f"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/R24产品表示与相对背景策略锥有限审计--审查.md",
+          "sha256": "0e2da5cc10a1d99d8047f437c32ea60f8dad95458b5852fc8b3e4f8ec0c6d0ce"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/逐人覆盖缺口的随机完整锥攻击与三旧零哨兵报告--程序.md",
+          "sha256": "2dd3e77bb4a1acca1de281a001b7d572d66d1ac1dfd2150c5c0dbfc7fba765a9"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/六人整数客户候选的全历史激励核验器--程序.md",
+          "sha256": "b9ee5fac191bf583b28e33cebe4b489d5412f74be0e064f5df4c4cf15b3ef9b9"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/末位必要压力的两策略锥与原输出合同--资源.md",
+          "sha256": "1066a580374cdebcdb2a2c529696f96fd2da2320f0bb588d0a37d8a204f0f767"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/收益型映射核与真实行锥的完整双向空间--引理.md",
+          "sha256": "5760552f73c12f223ab0ba0da3a56ff495272a9ff261d1348bf337a47b982631"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/真实收益比较图的强连通商与非负流编译--定理.md",
+          "sha256": "3ce9defea8b9c8508eed7fcc973f0acfbd32111ab58c80b94d5efe026e4d4900"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/收益行锥双向空间的形式策略枚举与候选载体--资源.md",
+          "sha256": "9ac49f760ce7271427c5d53a2beb7ccb46481b85c799e30ebfbe11c127c5a53c"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/R7e9根入口的全历史目标与六分支版本--资源.md",
+          "sha256": "8fe6845a24ee8d24ac288c6611a3bbb928665d8a6aa6d1104c65b18ef677b97a"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/收益图闭集与森林压缩的定义级原审计合同--程序.md",
+          "sha256": "c48a87af0c5468332262e91caf6e96b83f0c268e32d8b06beb56e74113b60a52"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/真实收益图的闭集散度判别与森林证书--定理.md",
+          "sha256": "c50c264079cd62a0ced0927f0070ee00be0e4d1ddebb0c28d2a585dc8610d3c4"
+        },
+        {
+          "path": "archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md",
+          "sha256": "0626668e7a825108fc0b3699e42394b75b1c2e2a526df220a90d91a02afc8a0c"
+        },
+        {
+          "path": "archives/customer-attraction/subarchives/six-providers/问题--问题.md",
+          "sha256": "21391fbaaa2893fef7b228a345fcf1d7f5c5d1dc8a42cc642d6bfbbeccc7c065"
+        }
+      ],
+      "deferred_candidate_ids": [],
+      "deferred_candidate_issues": {},
+      "comparison_priority": 1,
+      "family_hint": "CA-STRATEGY-CONE",
+      "scope_hint": "archives/customer-attraction",
+      "status": "complete-object-requires-staged-reading",
+      "note": "Compare the stated mathematical question on all selected endpoints; if large, resume the same question in reading passes. Preserve this complete object/comparison frontier; read its exact declared sections in successive turns, saving the hypotheses, established steps and remaining obligations between turns.",
+      "comparison_question": "对恰六人的每个固定标签数、完整形式策略和比较组合，固定策略锥对偶、闭集非负流判别、SCC无损商和类型映射秩怎样给出半覆盖的精确证书等价规格？能否先保散度压成森林，再允许散度沿ker L变化而保持目标与非负余项，将支持降至min(V-1,D-1)？明确这些归约仍欠对所有p、策略和比较组合构造证书，不能提升六人原题状态。",
+      "reading_passes": [
+        {
+          "source": {
+            "path": "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md",
+            "sha256": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 4043,
+          "start_line": 1,
+          "end_line": 148,
+          "estimated_tokens": 6437,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 1
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+            "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 4094,
+          "start_line": 1,
+          "end_line": 129,
+          "estimated_tokens": 5817,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 2
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/state/障碍/R-373d耦合桥与计数MILP有限证书--障碍.md",
+            "sha256": "f0410daa71f6635bcddada62ef71e41b03437c48192fc1dee7f11ca5cdeb7737"
+          },
+          "declared_sections": [
+            "固定 bridge attack",
+            "新增 `fixed_bridge_mult3.json` 版本核验"
+          ],
+          "start_char": 3749,
+          "end_char_exclusive": 4741,
+          "start_line": 102,
+          "end_line": 116,
+          "estimated_tokens": 1159,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 3
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/state/审查/固定策略锥二倍根支付有限核验--审查.md",
+            "sha256": "2a7359d4868b6bec183a1d697ea1394fdebe198e09af39dd0cdd68cb8bb7d17e"
+          },
+          "declared_sections": [
+            "固定桥目标的含义与数值"
+          ],
+          "start_char": 2015,
+          "end_char_exclusive": 2495,
+          "start_line": 54,
+          "end_line": 69,
+          "estimated_tokens": 661,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 4
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/source/fixed_bridge_attack.py",
+            "sha256": "beacb48f1036b7e694464f48b21cd625d1349d1dec547b65bb1180a94acf5ebc"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 1660,
+          "start_line": 1,
+          "end_line": 25,
+          "estimated_tokens": 1079,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 5
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/source/fixed_bridge_mult3.json",
+            "sha256": "c3b17b2b8b9e03caafcd3656ddb6904613e1430b5e75f9c3348310e09f283d84"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 1880,
+          "start_line": 1,
+          "end_line": 1,
+          "estimated_tokens": 1684,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 6
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/replay/fixed_bridge_mult3_validation.json",
+            "sha256": "e34de6e41884af992d0a9727e12f933c624356352a62d9850e964abfd02607d0"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 1295,
+          "start_line": 1,
+          "end_line": 64,
+          "estimated_tokens": 782,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 7
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/state/障碍/R-31bbb终局税与弱匹配锥有限屏幕--障碍.md",
+            "sha256": "a079f815dbd576c4217da8dbb6f0ff15ef93aad9be830bd7cbf9ff8cec0be20b"
+          },
+          "declared_sections": [
+            "弱匹配与 addition 屏幕"
+          ],
+          "start_char": 1741,
+          "end_char_exclusive": 2630,
+          "start_line": 32,
+          "end_line": 39,
+          "estimated_tokens": 946,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 8
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/tools/evidence/R-31bbb-tail-20261031/source/markov_cone.py",
+            "sha256": "2ec3e2ce35eaf30a54774ba73b7a6ed991df3ee194107abbfb6394e8c2bc875a"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 5437,
+          "start_line": 1,
+          "end_line": 123,
+          "estimated_tokens": 3204,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 9
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/tools/evidence/R-31bbb-tail-20261031/source/portfolio_addition_cone.py",
+            "sha256": "ba269ebd13d921173aa59468855194521d4aa4056b139677c79a2b32f755601b"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 4421,
+          "start_line": 1,
+          "end_line": 99,
+          "estimated_tokens": 2587,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 10
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/tools/evidence/R-31bbb-tail-20261031/source/addition_m4p6_seed10211.json",
+            "sha256": "14f9c39f69e44d635b470483fc4ba1c13c4225fa53ce4955edd1ba197588e036"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 403,
+          "start_line": 1,
+          "end_line": 14,
+          "estimated_tokens": 235,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 11
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/tools/evidence/R-31bbb-tail-20261031/replay/markov_smoke.json",
+            "sha256": "e66c94a85ba2bcad02ebcb5f9a56e44e2b8407dcfaae75d731170f221b9c95c4"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 298,
+          "start_line": 1,
+          "end_line": 14,
+          "estimated_tokens": 186,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 12
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/state/程序/重复标签五人全树锥游走与十六步日志--程序.md",
+            "sha256": "fb9c6313cf3c10f85e40aa81804759f1f561a53db8182c49572a2c3c9f376899"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 5279,
+          "start_line": 1,
+          "end_line": 83,
+          "estimated_tokens": 6835,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 13
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/state/等价/固定完整策略的逐目标半覆盖对偶--等价.md",
+            "sha256": "586592c26868c80b0d5e53c6486bb070c196983dd272eec6b0f580ef09f68e26"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 4695,
+          "start_line": 1,
+          "end_line": 106,
+          "estimated_tokens": 6373,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 14
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/state/程序/历史依赖策略锥的搜索程序--程序.md",
+            "sha256": "447cb5effd11e7a3fe803ceb4c276654102062f7baa331192537e4e1d5ba875f"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 6999,
+          "start_line": 1,
+          "end_line": 118,
+          "estimated_tokens": 11402,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 15
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/state/审查/R24产品表示与相对背景策略锥有限审计--审查.md",
+            "sha256": "0e2da5cc10a1d99d8047f437c32ea60f8dad95458b5852fc8b3e4f8ec0c6d0ce"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 2010,
+          "start_line": 1,
+          "end_line": 43,
+          "estimated_tokens": 2731,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 16
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/state/程序/逐人覆盖缺口的随机完整锥攻击与三旧零哨兵报告--程序.md",
+            "sha256": "2dd3e77bb4a1acca1de281a001b7d572d66d1ac1dfd2150c5c0dbfc7fba765a9"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 8677,
+          "start_line": 1,
+          "end_line": 162,
+          "estimated_tokens": 12179,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 17
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/state/程序/六人整数客户候选的全历史激励核验器--程序.md",
+            "sha256": "b9ee5fac191bf583b28e33cebe4b489d5412f74be0e064f5df4c4cf15b3ef9b9"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 6240,
+          "start_line": 1,
+          "end_line": 115,
+          "estimated_tokens": 9629,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 18
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/state/资源/末位必要压力的两策略锥与原输出合同--资源.md",
+            "sha256": "1066a580374cdebcdb2a2c529696f96fd2da2320f0bb588d0a37d8a204f0f767"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 6071,
+          "start_line": 1,
+          "end_line": 80,
+          "estimated_tokens": 8175,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 19
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/state/引理/收益型映射核与真实行锥的完整双向空间--引理.md",
+            "sha256": "5760552f73c12f223ab0ba0da3a56ff495272a9ff261d1348bf337a47b982631"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 4178,
+          "start_line": 1,
+          "end_line": 105,
+          "estimated_tokens": 5700,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 20
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/state/定理/真实收益比较图的强连通商与非负流编译--定理.md",
+            "sha256": "3ce9defea8b9c8508eed7fcc973f0acfbd32111ab58c80b94d5efe026e4d4900"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 4650,
+          "start_line": 1,
+          "end_line": 96,
+          "estimated_tokens": 7067,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 21
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/state/资源/收益行锥双向空间的形式策略枚举与候选载体--资源.md",
+            "sha256": "9ac49f760ce7271427c5d53a2beb7ccb46481b85c799e30ebfbe11c127c5a53c"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 5876,
+          "start_line": 1,
+          "end_line": 92,
+          "estimated_tokens": 7816,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 22
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/state/资源/R7e9根入口的全历史目标与六分支版本--资源.md",
+            "sha256": "8fe6845a24ee8d24ac288c6611a3bbb928665d8a6aa6d1104c65b18ef677b97a"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 7287,
+          "start_line": 1,
+          "end_line": 117,
+          "estimated_tokens": 11312,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 23
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/state/程序/收益图闭集与森林压缩的定义级原审计合同--程序.md",
+            "sha256": "c48a87af0c5468332262e91caf6e96b83f0c268e32d8b06beb56e74113b60a52"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 7425,
+          "start_line": 1,
+          "end_line": 96,
+          "estimated_tokens": 9238,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 24
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/state/定理/真实收益图的闭集散度判别与森林证书--定理.md",
+            "sha256": "c50c264079cd62a0ced0927f0070ee00be0e4d1ddebb0c28d2a585dc8610d3c4"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 4933,
+          "start_line": 1,
+          "end_line": 128,
+          "estimated_tokens": 7613,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 25
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md",
+            "sha256": "0626668e7a825108fc0b3699e42394b75b1c2e2a526df220a90d91a02afc8a0c"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 2683,
+          "start_line": 1,
+          "end_line": 69,
+          "estimated_tokens": 3846,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 26
+        },
+        {
+          "source": {
+            "path": "archives/customer-attraction/subarchives/six-providers/问题--问题.md",
+            "sha256": "21391fbaaa2893fef7b228a345fcf1d7f5c5d1dc8a42cc642d6bfbbeccc7c065"
+          },
+          "declared_sections": [
+            null
+          ],
+          "start_char": 0,
+          "end_char_exclusive": 1075,
+          "start_line": 1,
+          "end_line": 29,
+          "estimated_tokens": 1631,
+          "token_count_is_estimate": true,
+          "continuation": "Continue this same complete object in order; retain its model, quantifiers, hypotheses, established steps and unpaid obligations in the saved note. No partial pass means done.",
+          "pass": 27
+        }
+      ]
+    }
+  },
+  "state": "available",
+  "owner": null,
+  "request_id": "3562e31a170b4ee5809d65ee86bb8c04",
+  "requests": {
+    "3562e31a170b4ee5809d65ee86bb8c04": "plan"
+  }
+}
