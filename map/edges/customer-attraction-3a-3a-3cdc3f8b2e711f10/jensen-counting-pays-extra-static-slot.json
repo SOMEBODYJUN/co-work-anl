@@ -1,0 +1,45 @@
+{
+  "edge_id": "cag-3cdc3f8b-jensen-counting-pays-extra-static-slot",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1"
+  ],
+  "target_ids": [
+    "customer-attraction/extra-integer-background-and-actual-terminal-insertion-policy-cones"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "零根背景，k≥1个比较槽，r≥1个自由整数竞争槽，允许任意相关背景Q且不观察查询抽样。",
+  "roles": {
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1": "任意相关合法背景上的Jensen和主题期望计数机制。",
+    "customer-attraction/extra-integer-background-and-actual-terminal-insertion-policy-cones": "把每个实际前缀的额外槽静态值嵌入根，再用精确2m静态界的条件链。"
+  },
+  "explanation": "对任意Q设L_x=E_Q c_x，g(T)=Σ_{x∈T}(1+L_x)^{-1}，M=max_Tg(T)。Jensen给max_T E_Q f_B(T)≥M。将O上的1分成(1+L_x)^{-1}和L_x/(1+L_x)；前者由k个最优槽的g和控制为kM，后者扩大到全客户等于r次期望槽g之和≤rM。故OPT_k≤(k+r)M；对Q取最小得OPT_k≤(k+r)v_{r+1}(0)。取k=r=m给2m；直接将旧结论n=m+1代入仅会得到分母2m+1的比较。",
+  "scope": "额外一人模型的静态计数步，不提供任何早期实际收益界。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/额外整数背景与实际终局插入的原始策略锥--资源.md",
+      "sha256": "cc8263ecf7d081af92ae68b594bc43bafe73cd5f79a83207ab44b3689cb93b61"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md",
+      "sha256": "034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐一复核所列对象版本、正文及承重公式的域和量词。额外一人模型的静态计数步，不提供任何早期实际收益界。",
+  "contribution": {
+    "result": "证明条件覆盖链的静态输入OPT_m≤2m v_{m+1}(0)，并保更一般OPT_k≤(k+r)v_{r+1}(0)。",
+    "remaining": "从真实σ得到W≥m v_{m+1}(0)仍需付款；原逐人充分条件对一般输入已有反例。"
+  },
+  "endpoint_pins": {
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1": "565f6bdb541c09f8229f27ca4d47409f946a555f141378e72fb91c5a55082ea4",
+    "customer-attraction/extra-integer-background-and-actual-terminal-insertion-policy-cones": "88de664ad61128386561ed3ae0005fbd2f28ed4557aed9fd2a77935b5bcdcc35"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/额外整数背景与实际终局插入的原始策略锥--资源.md": "cc8263ecf7d081af92ae68b594bc43bafe73cd5f79a83207ab44b3689cb93b61",
+    "archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md": "034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f"
+  },
+  "review_digest": "0e68bf7ee2896029d42d4859d8cada16fade53df311045fc523e03646432125f"
+}

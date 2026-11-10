@@ -1,0 +1,51 @@
+{
+  "edge_id": "cag-3be0-fractional-cover-price-to-pure-theta-cover",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-b952a96f6aef4fd0a4bd5195fbb22c13"
+  ],
+  "target_ids": [
+    "M-85210b6ef47f4932bde4d0c09008ed0f"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一空背景、同一m个覆盖预算。θ_m按m−1合法纯背景槽极小化，t_m准许分数主题质量。",
+  "roles": {
+    "M-b952a96f6aef4fd0a4bd5195fbb22c13": "给OPT_m≤LP_m≤(2m−1)t_m(0)的根静态覆盖界。",
+    "M-85210b6ef47f4932bde4d0c09008ed0f": "θ条件保底结论的静态收尾部分。"
+  },
+  "explanation": "对每个合法纯Q，把其槽计数除以m−1得q。每客户分数背景恰等c_x(Q)，因此t_m(0)≤θ_m(0)。m=1时背景空且二者相同。代入LP界给OPT_m≤LP_m≤(2m−1)θ_m(0)。该推导只证明静态部分且顺便保留LP上界。",
+  "scope": "共同目录任意人数的根静态覆盖。此边不要求SPE，另有每棵子树真实尾条件才有动态收益。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/自由分数门槛的凸对偶与覆盖价格界--定理.md",
+      "sha256": "2a12cd3e5699cda7dea1458f5a7432455dfbc438a8940572d1115a99d2ac5465"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/自由分数背景安全门槛--定义.md",
+      "sha256": "0e2e6393acb153498a3b4d0a8091b3a10976f211945e612c96eb1b2d8982c2cd"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最大线性主题根的外部尾差异与条件保底--引理.md",
+      "sha256": "44428bcabf1acf50d71d2d0e9c690982731329c8973df2e26dbb0fd99ff8c360",
+      "section": "3. 量化全部子树的后验充分条件"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "核对了静态槽数和分数嵌入方向。没有从t≤θ倒推任何逐人保底。",
+  "contribution": {
+    "result": "由分数LP界给条件θ定理的静态一步OPT_m≤LP_m≤(2m−1)θ_m(0)。",
+    "remaining": "还须同一完整策略在所有合法有序子树的最大线性动作有根外一致真尾，并用此条件证明W≥mθ_m(0)。"
+  },
+  "endpoint_pins": {
+    "M-85210b6ef47f4932bde4d0c09008ed0f": "d962927df74b16b19f04a5d21df02784770403d77f7306fb03f55475bfeb44be",
+    "M-b952a96f6aef4fd0a4bd5195fbb22c13": "cf8593c4faa7c02f1d3f6f562070fb810bf1429ccc495d2c6603f6738d53b555"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/自由分数门槛的凸对偶与覆盖价格界--定理.md": "2a12cd3e5699cda7dea1458f5a7432455dfbc438a8940572d1115a99d2ac5465",
+    "archives/customer-attraction/state/定义/自由分数背景安全门槛--定义.md": "0e2e6393acb153498a3b4d0a8091b3a10976f211945e612c96eb1b2d8982c2cd",
+    "archives/customer-attraction/state/引理/最大线性主题根的外部尾差异与条件保底--引理.md": "44428bcabf1acf50d71d2d0e9c690982731329c8973df2e26dbb0fd99ff8c360"
+  },
+  "review_digest": "c6da2c66c5a3182b3ce75079d0bde236a82d7f805a49b16cf8d9e0ee838a1dac"
+}

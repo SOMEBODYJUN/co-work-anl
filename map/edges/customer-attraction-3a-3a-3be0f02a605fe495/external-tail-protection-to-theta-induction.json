@@ -1,0 +1,52 @@
+{
+  "edge_id": "cag-3be0-external-tail-protection-to-theta-induction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/maximal-linear-root-external-tail-disagreement"
+  ],
+  "target_ids": [
+    "M-85210b6ef47f4932bde4d0c09008ed0f"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "给定同一完整纯SPE，要求每一个合法有序历史中余r≥2时，存在一个最大g_r的合法行动A，其真实尾在A外一致。",
+  "roles": {
+    "customer-attraction/maximal-linear-root-external-tail-disagreement": "在所选A的真实枝上由D_A=0保证强制根收益≥尾均值。",
+    "M-85210b6ef47f4932bde4d0c09008ed0f": "在全部合法子树同时施归纳后的θ收益与根覆盖。"
+  },
+  "explanation": "以r=1末位BR为基。对每个子博弈强制满足条件的A。每个真实后继在更短且允许离轨的前缀上由归纳享有θ。固定该后继前的s步P嵌入r−1槽的纯背景，得θ_{r−s}(b+c(P))≥θ_r(b)。故尾均值至少θ_r。D_A=0、Δ_g≥0及真实IC将它转给当前实际人。沿根actual前缀再嵌入得每人至少θ_m(0)。用最小θ的m−1槽负载c与最优m槽负载o，以1_{o>0}≤(o+c)/(1+c)按客户相加，分别花m和m−1个价格上界θ。",
+  "scope": "全部有序历史上的可检查充分条件，含强制根后的离轨尾。m=1、零客户均保留。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/最大线性主题根的外部尾差异与条件保底--引理.md",
+      "sha256": "44428bcabf1acf50d71d2d0e9c690982731329c8973df2e26dbb0fd99ff8c360",
+      "section": "3. 量化全部子树的后验充分条件"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最大线性主题根的外部尾差异与条件保底--引理.md",
+      "sha256": "44428bcabf1acf50d71d2d0e9c690982731329c8973df2e26dbb0fd99ff8c360"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/可信构造与全树共同非负性的来源边界--资源.md",
+      "sha256": "fa9aeb36f4eb54ee3ec437a961eb39216df4122d0c47f3a4cc985c63abe278bd"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/R2e5尾分歧恒等式与条件性否定有限复核--计算.md",
+      "sha256": "f7a0075864304efcd36de0804d59049b1cf8f44bec52d1d77e0ec50d3ac41465"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐客户核根外负项、归纳量词和纯背景嵌入。36客户有限例不能替代或取消这里的附加条件。",
+  "whole_result": "若整份策略满足所述根外一致条件，每子局当前收益≥θ_r(b)，根所有人≥θ_m(0)，且OPT_m≤(2m−1)θ_m(0)≤(2−1/m)W。",
+  "endpoint_pins": {
+    "M-85210b6ef47f4932bde4d0c09008ed0f": "d962927df74b16b19f04a5d21df02784770403d77f7306fb03f55475bfeb44be",
+    "customer-attraction/maximal-linear-root-external-tail-disagreement": "2e8702f13db0b253cc20f082562a04b9e3cae27256a91d9d19ee14c660b9221e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/最大线性主题根的外部尾差异与条件保底--引理.md": "44428bcabf1acf50d71d2d0e9c690982731329c8973df2e26dbb0fd99ff8c360",
+    "archives/customer-attraction/state/资源/可信构造与全树共同非负性的来源边界--资源.md": "fa9aeb36f4eb54ee3ec437a961eb39216df4122d0c47f3a4cc985c63abe278bd",
+    "archives/customer-attraction/state/计算/R2e5尾分歧恒等式与条件性否定有限复核--计算.md": "f7a0075864304efcd36de0804d59049b1cf8f44bec52d1d77e0ec50d3ac41465"
+  },
+  "review_digest": "86bb448befbf445b1d4b0256663247a5d220e6ae6bf4f28a7e438f63fe9ef3b2"
+}

@@ -1,0 +1,58 @@
+{
+  "edge_id": "cag-3be0-three-caps-imply-fractional-support-counterexample",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "cag-symmetric-iid-closure-minimum-payoff-finite-cone-source-contracts"
+  ],
+  "target_ids": [
+    "customer-attraction/actual-path-supported-fractional-background-counterexample"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一两人三标签五客户完整策略，掩码2:1、5:2、6:2。查询全目录，实际支持{0,1}仅限制竞争背景。",
+  "roles": {
+    "cag-symmetric-iid-closure-minimum-payoff-finite-cone-source-contracts": "给同一完整输入的三种静态精确cap及实际W=OPT₂=5。",
+    "customer-attraction/actual-path-supported-fractional-background-counterexample": "其实际支持分数限制的严格反例，并保留自由t₂与v₂等于2。"
+  },
+  "explanation": "原完整策略的三个根真实收益均2且末位逐历史最优，实际u=(2,3)。实际支持的确定分数背景(s,1−s,0)中，query2价2/(1+s)+2/(2−s)，与8/3之差为2(2s−1)²/[3(1+s)(2−s)]。s=1/2的其它两价4/3、2，故cap=8/3>5/2。自由q中query2=2/(2−q₁)+2/(2−q₀)≥2。q=δ₂给全查询(1,2,2)。整数全目录v₂也由纯query2保证2、纯背景2封顶2。较弱支持阈值10/3在此仍可付。",
+  "scope": "精确单例上的任意实际支持分数背景。整数支持3是额外对照，不能与8/3混用。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/对称iid福利闭包与最低收益有限锥的来源合同--资源.md",
+      "sha256": "bc11edbe5a0bb50da83b5bc2c27c9d1da1b7693dc2141a430605456ab7a61d7c",
+      "section": "已核五客户输入的三类对手值（比较推论）"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/实际路径支持限制的分数背景--反例.md",
+      "sha256": "4d8a22a1506270200ebce52838c38e9f4d7dfa10ef0d5ea454c7aa1cf5990af3"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/free-fractional-interface/original/security/audit_fractional_interfaces.py",
+      "sha256": "6eea9f3fbb1cb7fcc834ad297375502419465d07a3a6fbca53cf5efc9ad0c6e2"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/free-fractional-interface/interface-parameters.json",
+      "sha256": "70f78d4c16c211558fe6e5db7a7a12c90430aa33740ccd55972bccf4687e2077"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/free-fractional-interface/original/aggregate_attack/fractional_interface_review.md",
+      "sha256": "d86f4c99f3e0909c196d7d91c264038fd2aec4f1f80642b66cef37dedb6de6c8"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "已对in-packet核心与对端比较同一完整策略、两种支持域和三个对手值。原切线有限网格不担负全实区间最优性。",
+  "whole_result": "五客户三值对象保有完整SPE并推出任意实际支持分数背景的最优cap恰8/3>W/2，同时自由t₂=v₂=2。",
+  "endpoint_pins": {
+    "cag-symmetric-iid-closure-minimum-payoff-finite-cone-source-contracts": "4bdbe987b790938e98bf3934065f4798b332e4cb0be81adbfb11bd18add8db6b",
+    "customer-attraction/actual-path-supported-fractional-background-counterexample": "4e5f14daa13d1aaa446b96923937cedb8bc2095f6bd6bbf17312f595fc90c76f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/对称iid福利闭包与最低收益有限锥的来源合同--资源.md": "bc11edbe5a0bb50da83b5bc2c27c9d1da1b7693dc2141a430605456ab7a61d7c",
+    "archives/customer-attraction/state/反例/实际路径支持限制的分数背景--反例.md": "4d8a22a1506270200ebce52838c38e9f4d7dfa10ef0d5ea454c7aa1cf5990af3",
+    "archives/customer-attraction/tools/evidence/free-fractional-interface/original/security/audit_fractional_interfaces.py": "6eea9f3fbb1cb7fcc834ad297375502419465d07a3a6fbca53cf5efc9ad0c6e2",
+    "archives/customer-attraction/tools/evidence/free-fractional-interface/interface-parameters.json": "70f78d4c16c211558fe6e5db7a7a12c90430aa33740ccd55972bccf4687e2077",
+    "archives/customer-attraction/tools/evidence/free-fractional-interface/original/aggregate_attack/fractional_interface_review.md": "d86f4c99f3e0909c196d7d91c264038fd2aec4f1f80642b66cef37dedb6de6c8"
+  },
+  "review_digest": "5ef9974eae3328f9148526620aaf4262a62f1579323a5f77130a88a6a1384a3c"
+}

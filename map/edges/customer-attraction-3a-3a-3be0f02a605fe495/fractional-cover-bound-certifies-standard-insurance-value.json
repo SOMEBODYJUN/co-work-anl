@@ -1,0 +1,50 @@
+{
+  "edge_id": "cag-3be0-fractional-cover-bound-certifies-standard-insurance-value",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-b952a96f6aef4fd0a4bd5195fbb22c13"
+  ],
+  "target_ids": [
+    "M-baae36164869403a9ad9d9b5574f2145"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "标准不交保险目录I_m(s)，m≥2，s>0且用单位客户实现。X大小2s、Y大小(m−1)s，其余m−2个Z各s。",
+  "roles": {
+    "M-b952a96f6aef4fd0a4bd5195fbb22c13": "用静态覆盖下界夹住标准保险的门槛。",
+    "M-baae36164869403a9ad9d9b5574f2145": "架构锐下界的标准等号实例及其安全价格。"
+  },
+  "explanation": "m个块全部能用m槽覆盖，OPT_m=(2m−1)s，故覆盖LP界给t_m(0)≥s。合法纯背景X,Y^(m−2)的全部查询恰s，给v_m≤s。倒数凸性给t_m≤v_m。因此t_m=v_m=s，不需另解静态minimax。标准实际XY^(m−1)的W=(m+1)s，所以在原可信根策略δ=s时W−mv_m=s。",
+  "scope": "只供标准等号族的静态安全值及费用核定。正根奖励的可信续局规则仍需原架构。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/自由分数门槛的凸对偶与覆盖价格界--定理.md",
+      "sha256": "2a12cd3e5699cda7dea1458f5a7432455dfbc438a8940572d1115a99d2ac5465"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/自由分数背景安全门槛--定义.md",
+      "sha256": "0e2e6393acb153498a3b4d0a8091b3a10976f211945e612c96eb1b2d8982c2cd"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/单租金根保险的静态成本与安全最优边缘--引理.md",
+      "sha256": "5fdc5b085cec9fb8f164e0e1d67cd4dfcc8285cc864ad6c1edd78d211dc1ee7a"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "核对标准块数、比较预算、纯背景槽数和静态值夹逼方向。",
+  "contribution": {
+    "result": "给标准保险等号点的替代静态证明t_m=v_m=s及W−mv_m=s。",
+    "remaining": "架构全称下界还需末位IC、根Y惩罚非全Y及δ≤a−t，标准正奖励也须真可信根惩罚。"
+  },
+  "endpoint_pins": {
+    "M-b952a96f6aef4fd0a4bd5195fbb22c13": "cf8593c4faa7c02f1d3f6f562070fb810bf1429ccc495d2c6603f6738d53b555",
+    "M-baae36164869403a9ad9d9b5574f2145": "dfef8c79645f9b46c119925d8fed87d2046e93e0d62ce75fcf78bae34448deed"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/自由分数门槛的凸对偶与覆盖价格界--定理.md": "2a12cd3e5699cda7dea1458f5a7432455dfbc438a8940572d1115a99d2ac5465",
+    "archives/customer-attraction/state/定义/自由分数背景安全门槛--定义.md": "0e2e6393acb153498a3b4d0a8091b3a10976f211945e612c96eb1b2d8982c2cd",
+    "archives/customer-attraction/state/引理/单租金根保险的静态成本与安全最优边缘--引理.md": "5fdc5b085cec9fb8f164e0e1d67cd4dfcc8285cc864ad6c1edd78d211dc1ee7a"
+  },
+  "review_digest": "cd1a9ff07f1c5adcb41722514401b23daa0101e7434673d7b926caf17bfa4c56"
+}

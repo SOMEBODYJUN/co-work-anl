@@ -1,0 +1,57 @@
+{
+  "edge_id": "cag-3be0-fresh-net-hitting-to-bank-envelope",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/net-coupon-global-role-hitting-and-fresh-source-suffix-bounds"
+  ],
+  "target_ids": [
+    "customer-attraction/free-fresh-source-support-and-post-initialization-residual-bank-condition"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "已固定合法fresh源/trim/INIT和无past出口的同一fresh核。在真实context以b_t注入INIT捕获量，重新计算全图。",
+  "roles": {
+    "customer-attraction/net-coupon-global-role-hitting-and-fresh-source-suffix-bounds": "任意固定合法净券核上的终点角色HIT。",
+    "customer-attraction/free-fresh-source-support-and-post-initialization-residual-bank-condition": "初始化current预扣后的残余BANK的结构上界。"
+  },
+  "explanation": "把已经扣下的α(K)与后续注入分开。fresh核的future context严格增角色，故从j的captured输入不会终止于j以前。j∈K时上界1。j∉K时用K∩{j+1,…,m}代替K后应用GLOBAL-HIT，得到k_j/(k_j+1)。线性合并b_t为B_j给α(K)+B(K)+Σ_{j∉K}k_j B_j/(k_j+1)。取K={i}得到A_i≤α_i+B_i+(1/2)Σ_{j<i}B_j。这里不同于在首饱和等份链上数曾访问。INIT可分配但不能重排内部核后继承旧HIT。",
+  "scope": "固定一份源、INIT、captured金额及合法fresh核的终点净券。不继承旧γ/η或SOURCE-NET。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/自由鲜源支持与初始化扣款后的残余银行条件--候选.md",
+      "sha256": "6f1928e2e8a2e902eac06c39107aa31362a9b21942e8d3f36575638dc9fb9399",
+      "section": "BANK只是足够的共同容量条件"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/净券跨节点角色命中与来源后缀界--定理.md",
+      "sha256": "efc8aa1cebf24755c73ef386614de6da0706033e8ab0da721769bc76598041a3",
+      "section": "固定同一合法非负图"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/净券跨节点角色命中与来源后缀界--定理.md",
+      "sha256": "efc8aa1cebf24755c73ef386614de6da0706033e8ab0da721769bc76598041a3",
+      "section": "跨所有context的终点HIT"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/净券跨节点角色命中与来源后缀界--定理.md",
+      "sha256": "efc8aa1cebf24755c73ef386614de6da0706033e8ab0da721769bc76598041a3",
+      "section": "后缀HIT、前缀割与后缀价格"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "核了captured输入起点、无past、按角色汇总的归一及同图终点量，未将不同集合的上界重复领券。",
+  "contribution": {
+    "result": "给选定方案的RESIDUAL-HIT及逐角色BANK所用充分包络。",
+    "remaining": "仍需共同选出合法鲜源、trim、INIT出口和内部核，使每个i同时满足B_i+(1/2)Σ_{j<i}B_j≤u_i−α_i。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/free-fresh-source-support-and-post-initialization-residual-bank-condition": "16480ca2bf523b05cd096e940aa5d91491b947fa9bc876675bf4c065c9030a8c",
+    "customer-attraction/net-coupon-global-role-hitting-and-fresh-source-suffix-bounds": "f346125d03a9f72a58f7ab68c1977677c58f240dc6ab7a913a4b338984bc2db6"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/自由鲜源支持与初始化扣款后的残余银行条件--候选.md": "6f1928e2e8a2e902eac06c39107aa31362a9b21942e8d3f36575638dc9fb9399",
+    "archives/customer-attraction/state/定理/净券跨节点角色命中与来源后缀界--定理.md": "efc8aa1cebf24755c73ef386614de6da0706033e8ab0da721769bc76598041a3"
+  },
+  "review_digest": "9641ba612c70c01d4d4ee1f24ab49d27ed71e35bdce6cde301e01230704e21e6"
+}

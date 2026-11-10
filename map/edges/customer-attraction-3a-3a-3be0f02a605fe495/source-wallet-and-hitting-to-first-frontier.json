@@ -1,0 +1,63 @@
+{
+  "edge_id": "cag-3be0-source-wallet-and-hitting-to-first-frontier",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance",
+    "customer-attraction/increasing-fair-capture-role-hitting-and-residual-covariance"
+  ],
+  "target_ids": [
+    "M-32c52eb5ddfc4fc38c3990ec4178fccb"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一完整有序纯SPE、同一最优元组与actual取消γ，固定每个遗漏客户的owner源，后续只走原actual-prefix真实查询的等份递增边。",
+  "roles": {
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance": "同时给残源ρ及Ση=W、Kᵢˢʳᶜ≤ηᵢ的一份钱包。",
+    "customer-attraction/increasing-fair-capture-role-hitting-and-residual-covariance": "在删掉门控的同一raw链上约束非源角色的曾命中事件。",
+    "M-32c52eb5ddfc4fc38c3990ec4178fccb": "整行门控、首次拒绝和福利差的准确账。"
+  },
+  "explanation": "先保留SOURCE-NET的Kᵢˢʳᶜ。按角色递增计算已到达incoming的Fᵢ，Fᵢ>0时用统一θᵢ=min(1,(ηᵢ−Kᵢˢʳᶜ)/Fᵢ)，否则取1。对每条完整IC乘(Aˢʳᶜ+θᵢAⁱⁿ)/D，D=0时两分子为0。每客户的r=1/c以完整查询负载为准，只有R的旧负载为零。总费Kᵢ≤ηᵢ。有限DAG每单位必吸收或首次拒绝，A_abs+B_stop=Σρ=OPT−W。由同一IC得A_abs≤K≤W。代E=K−A_abs、U=W−K给FRONTIER。处理完后J={i:θᵢ<1}是固定角色集。保留raw等份链随机分支，则首次拒绝事件包含于源之后首次进入J，源本身总接纳，按HIT乘ρₓ得到Bₓ≤ρₓkₓ/(kₓ+1)。",
+  "scope": "任意有限单位客户和合法标签、重复和任意离轨平局。结论为有效门控的全账与命中上界，FRONTIER右端非正仍待证明。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资料/首次饱和前沿的审查层次与共同付款边界--资料.md",
+      "sha256": "ad5fbb9721cfa39c344a17a13248a69a8da2bcca844b7237b9c3a87e483645bd",
+      "section": "统一整行接纳与零分母"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/首次饱和前沿的审查层次与共同付款边界--资料.md",
+      "sha256": "ad5fbb9721cfa39c344a17a13248a69a8da2bcca844b7237b9c3a87e483645bd",
+      "section": "原模型、同一owner与SOURCE-NET钱包"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/首次饱和前沿的审查层次与共同付款边界--资料.md",
+      "sha256": "ad5fbb9721cfa39c344a17a13248a69a8da2bcca844b7237b9c3a87e483645bd",
+      "section": "守恒、首次命中及与half的准确等价"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/实际取消的同时源付款与入流余额--定理.md",
+      "sha256": "5759f87d02d0bacc5c61a5472806d6f464192bb97bcb18a1a3bf1e156a02ad7a",
+      "section": "SOURCE-NET的完整二分证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/递增等份捕获的角色命中与残源协方差界--定理.md",
+      "sha256": "0198566bb3d09a5e4729acaf3e76462fdf8067548e7a1101c2aabe6f6e2d0135",
+      "section": "任意角色集合的准确量词"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "分别核源预付、F=0的定义、完整分母、有限守恒和raw首次访问耦合。同一运输和IC钱包不能拆开领取。",
+  "whole_result": "这两个前提共同给整行统一门控、无源拒绝、A_abs+B_stop=OPT−W、A_abs≤K≤W、B_stop−E−U=OPT−2W和逐客户首次拒绝的ρₓkₓ/(kₓ+1)界。",
+  "endpoint_pins": {
+    "M-32c52eb5ddfc4fc38c3990ec4178fccb": "facb17650df9dc77132fecee3c132f45012e07afed5ca8711b8b02b79160188c",
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance": "6301d3ef5ca152ec47607ffd3a061649bb168671ccaaab725d8f88bd9d7f9257",
+    "customer-attraction/increasing-fair-capture-role-hitting-and-residual-covariance": "ac9ce866e220d890227f0b2063abfa54dbd7bd416a19a5a61790c74a8d0a70c3"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资料/首次饱和前沿的审查层次与共同付款边界--资料.md": "ad5fbb9721cfa39c344a17a13248a69a8da2bcca844b7237b9c3a87e483645bd",
+    "archives/customer-attraction/state/定理/实际取消的同时源付款与入流余额--定理.md": "5759f87d02d0bacc5c61a5472806d6f464192bb97bcb18a1a3bf1e156a02ad7a",
+    "archives/customer-attraction/state/定理/递增等份捕获的角色命中与残源协方差界--定理.md": "0198566bb3d09a5e4729acaf3e76462fdf8067548e7a1101c2aabe6f6e2d0135"
+  },
+  "review_digest": "30e300460618dd009683cd02d20eef9ca57610685caba3b47d19bcc5f7779c80"
+}

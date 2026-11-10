@@ -1,0 +1,45 @@
+{
+  "edge_id": "cag-3cdc3f8b-two-tail-reserve-reduces-early-three",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/five-fullslot-terminal-reserve-and-missed-client-curvature"
+  ],
+  "target_ids": [
+    "M-336ec57ee8914b5e8a9e5535f8d5b860"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "恰五人完整有序纯SPE；实际前缀强制A后沿原σ；A,T独立同分布p；每行的自由最小与iid均值使用同一完整五槽。",
+  "roles": {
+    "customer-attraction/five-fullslot-terminal-reserve-and-missed-client-curvature": "给同一任意p的精确末两位余量及遗漏曲率。",
+    "M-336ec57ee8914b5e8a9e5535f8d5b860": "待证明的前三位共用同一末两行余量。"
+  },
+  "explanation": "M_i≤Q_i。LAST与PENULT给u_4+u_5−M_4−M_5≥R45，并保证R45≥(2/3)Σ_{x∉C}q_x²+(1/15)Σ_{x∈C}q_x²。把前三区债务≤R45与此式相加即得ΣM_i≤W。R45只支用一次，不能再把其中末回复或Jensen部分分别入账。",
+  "scope": "已付款部分是尾储备与SUMmin的归约；EARLY3左侧仍未得共同上界。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/五人完整槽末两位储备的遗漏曲率下界--引理.md",
+      "sha256": "215e20fa8d956458aa76d0ff3255d9bedabc52cbab8b71d4f098b986fe060fb7"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/五人全槽行最小价格与三尾混合整数探针--程序.md",
+      "sha256": "2a628a5dca7cbf847fc23df2036d9c08fb83f7616bb82a720e3146c547db923e"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐一复核所列对象版本、正文及承重公式的域和量词。已付款部分是尾储备与SUMmin的归约；EARLY3左侧仍未得共同上界。",
+  "contribution": {
+    "result": "为EARLY3指定同一p的已付款R45，并证明它可作为SUMmin的唯一一次末两行支付。",
+    "remaining": "仍须在每份完整五人σ和任意p上控制Σ_{i≤3}(M_i−u_i)，或给精确反例；已证五人half及有限浮点阴性均不推出该控制。"
+  },
+  "endpoint_pins": {
+    "M-336ec57ee8914b5e8a9e5535f8d5b860": "2f1f544799659806830a924139bc84bdf783874e16a765fbd193f498677bb094",
+    "customer-attraction/five-fullslot-terminal-reserve-and-missed-client-curvature": "6017d9657d6e4e7bec793e4e8eb6715706534bf0a2bd13b98af206e068332e20"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/五人完整槽末两位储备的遗漏曲率下界--引理.md": "215e20fa8d956458aa76d0ff3255d9bedabc52cbab8b71d4f098b986fe060fb7",
+    "archives/customer-attraction/state/程序/五人全槽行最小价格与三尾混合整数探针--程序.md": "2a628a5dca7cbf847fc23df2036d9c08fb83f7616bb82a720e3146c547db923e"
+  },
+  "review_digest": "bdff35a5825b5ae1270448d94ff206e8892621fe44988de0faadccdfbfde8eba"
+}

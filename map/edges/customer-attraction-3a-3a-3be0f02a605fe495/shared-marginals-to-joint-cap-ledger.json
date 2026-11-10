@@ -1,0 +1,51 @@
+{
+  "edge_id": "cag-3be0-shared-marginals-to-joint-cap-ledger",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/shared-activation-joint-marginals-for-omissions-and-owner-errors"
+  ],
+  "target_ids": [
+    "M-d439d03483e2460692d6d247075f2e23"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "给定同一最优owner、预先固定的一份actual Hall-A取消γ及合法真实查询路由。R源取ρ=1−γ，只给实际未被owner覆盖的I⁻开新增query库存。",
+  "roles": {
+    "customer-attraction/shared-activation-joint-marginals-for-omissions-and-owner-errors": "共享激活的精确I信用、真实owner势边际和每query单标量IC。",
+    "M-d439d03483e2460692d6d247075f2e23": "需要同时选owner、取消、路由以支付联合逐角色cap的开放对象。"
+  },
+  "explanation": "I⁻每个actual coverer拿error信用1/(c_Z+1)，query另留κₓ=1/(c_Z+1)。非owner真实吸收用事件包含，必须将旧actual J与真叶F同时置于负事件，L≥b+|F|。因此A_s(x)≤αₓℓ_i(Y_i(a);x)。每条真实query先合并R/I⁻，再以A_s/D_s乘一次整条IC，得Σ_Rρₓ+κ⁻≤Σ_i u_iL_i。actual边际κ_i⁻则是I⁻中每个coverer的1/[c_Z(c_Z+1)]之和，Σκ_i⁻=κ⁻。若另有所有u_iL_i≤η_i+κ_i⁻，总和后减同一κ⁻得到OPT−W≤W。",
+  "scope": "固定取消下完整真实SPE的联合源账。α缩放不能外推给依world自适应取消，且一个state的w≤1不控制一角色的多query和。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/共享激活的遗漏与归属误差联合边际--定理.md",
+      "sha256": "2e5172e333c9a31c707ab225607e180562f93ca63746e06bea198373dfd3c8ac"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/最小势增量与联合费用工作稿的接续合同--资源.md",
+      "sha256": "bbe9d2b84c069349789bb8917794f147b89fa465c0059aaa4090b52264a12cc3"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/适应路径取消的条件比较与审查先验--审查.md",
+      "sha256": "6f67b8ace5ab100184e58a17acb01d0792a0dbbd491ebe0a10617a7e40388f9a",
+      "section": "OFF-IC接合仍有跨客户广播缺口"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "核对了同一query一次IC、实际边际与真实查询边际的区别，以及新增κ只在两侧消去一次。",
+  "contribution": {
+    "result": "证明共享R/I的联合源量与真实整行费用之间的守恒/采购一侧，并验证假设cap时得到half的条件计算。",
+    "remaining": "CAP-JOINT仍须同一owner、Hall-A取消及全部真实路由同时控制多query行和uᵢLᵢ≤ηᵢ+κᵢ⁻，定理没有给出这样的共同见证。"
+  },
+  "endpoint_pins": {
+    "M-d439d03483e2460692d6d247075f2e23": "9a088a1085aa74cc89cd42c29caab80ac0c4bd05990aaf179cbb0cc511132bd9",
+    "customer-attraction/shared-activation-joint-marginals-for-omissions-and-owner-errors": "7ae84ccb28a3e14db04526822aee4234c46673f2335d91fec6b7c2147628dd8f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/共享激活的遗漏与归属误差联合边际--定理.md": "2e5172e333c9a31c707ab225607e180562f93ca63746e06bea198373dfd3c8ac",
+    "archives/customer-attraction/state/资源/最小势增量与联合费用工作稿的接续合同--资源.md": "bbe9d2b84c069349789bb8917794f147b89fa465c0059aaa4090b52264a12cc3",
+    "archives/customer-attraction/state/审查/适应路径取消的条件比较与审查先验--审查.md": "6f67b8ace5ab100184e58a17acb01d0792a0dbbd491ebe0a10617a7e40388f9a"
+  },
+  "review_digest": "f7ac915d9b8131a90183984c8202f67e5d321bdcd8e9e8ceba71b1fa34e7a576"
+}

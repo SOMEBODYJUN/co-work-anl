@@ -1,0 +1,56 @@
+{
+  "edge_id": "cag-3be0-tangent-saddle-on-five-customer-support",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/free-fractional-minimax-tangent-cover-price-bounds"
+  ],
+  "target_ids": [
+    "cag-symmetric-iid-closure-minimum-payoff-finite-cone-source-contracts"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一五单位客户两人三标签输入，查询仍为全目录。只在第一个计算中将分数背景单纯形限制到实际支持{0,1}。",
+  "roles": {
+    "customer-attraction/free-fractional-minimax-tangent-cover-price-bounds": "给固定查询的凸切线、背景KKT及查询侧最大化条件。",
+    "cag-symmetric-iid-closure-minimum-payoff-finite-cone-source-contracts": "三个精确背景值的五客户对照，其中分数部分由此核定。"
+  },
+  "explanation": "固定p=δ₂。实际支持面上q₀=(1/2,1/2,0)，K=8/3，允许坐标H₀=H₁=8/9，故该面凸切线下界恰8/3。q₀下三个查询为(4/3,2,8/3)，故达到cap。自由域q₀=δ₂时K=2、H=(1/2,1/2,1)，唯一正背景坐标达最大H，查询2亦最大，故自由分数值2。限制时只对允许坐标取max H，并未在实际支持面误用自由方向H₂=16/9。",
+  "scope": "两个凸计算只比较确定分数负载。整数混合cap必须保留各随机整数背景的倒数期望。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/自由分数门槛的凸对偶与覆盖价格界--定理.md",
+      "sha256": "2a12cd3e5699cda7dea1458f5a7432455dfbc438a8940572d1115a99d2ac5465"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/对称iid福利闭包与最低收益有限锥的来源合同--资源.md",
+      "sha256": "bc11edbe5a0bb50da83b5bc2c27c9d1da1b7693dc2141a430605456ab7a61d7c",
+      "section": "已核五客户输入的三类对手值（比较推论）"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/实际路径支持限制的分数背景--反例.md",
+      "sha256": "4d8a22a1506270200ebce52838c38e9f4d7dfa10ef0d5ea454c7aa1cf5990af3"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/free-fractional-interface/interface-parameters.json",
+      "sha256": "70f78d4c16c211558fe6e5db7a7a12c90430aa33740ccd55972bccf4687e2077"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "核对五客户兴趣位、两种允许方向和查询最大化条件，保留分数与整数混合的区别。",
+  "contribution": {
+    "result": "给同一五客户例的实际支持分数cap=8/3，并另给自由分数cap=2的匹配鞍点。",
+    "remaining": "完整对象还需核完整SPE、实际支持整数混合cap=3和真正全目录整数混合v₂=2。分数KKT不推出这些整数值。"
+  },
+  "endpoint_pins": {
+    "cag-symmetric-iid-closure-minimum-payoff-finite-cone-source-contracts": "4bdbe987b790938e98bf3934065f4798b332e4cb0be81adbfb11bd18add8db6b",
+    "customer-attraction/free-fractional-minimax-tangent-cover-price-bounds": "6a6ecc006d2c5f3df247a61146519c2c80d43da681c39a89be5d37df9eb79684"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/自由分数门槛的凸对偶与覆盖价格界--定理.md": "2a12cd3e5699cda7dea1458f5a7432455dfbc438a8940572d1115a99d2ac5465",
+    "archives/customer-attraction/state/资源/对称iid福利闭包与最低收益有限锥的来源合同--资源.md": "bc11edbe5a0bb50da83b5bc2c27c9d1da1b7693dc2141a430605456ab7a61d7c",
+    "archives/customer-attraction/state/反例/实际路径支持限制的分数背景--反例.md": "4d8a22a1506270200ebce52838c38e9f4d7dfa10ef0d5ea454c7aa1cf5990af3",
+    "archives/customer-attraction/tools/evidence/free-fractional-interface/interface-parameters.json": "70f78d4c16c211558fe6e5db7a7a12c90430aa33740ccd55972bccf4687e2077"
+  },
+  "review_digest": "53d6af1121fc845ea91265e5e46ffb3f9dfcf0648c5e2040123b68532116f763"
+}
