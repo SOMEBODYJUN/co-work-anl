@@ -1,0 +1,50 @@
+{
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss5/scheduling_obstructions",
+  "review_note": "完整实读当前六个核心、模型和本边新增端点的全部登记正文/必要证据；逐项核对有类型资源、完整原任务、量词、YES/NO两向和显式位长。有限历史运行只作准确证据范围，未新跑数学审计；最小两处源笔误经Boss修正后重新核对原处。",
+  "edge_id": "um-b5-scheduling-demand-floor-pays-parity-label-union-counterexample",
+  "kind": "specializes",
+  "source_ids": [
+    "UM-3DM-DEMAND-FLOOR-OBSTRUCTION-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/single-neighborhood-label-union-counterexample"
+  ],
+  "conditions": "q=K=2，原三元组E={000,011,101,110}；X/Y/Z保坐标类型；根需求2、选择点需求1、每个真实标签需求2、终端资源需求0。并集后的单邻域实例是另一个明确模型。",
+  "roles": {
+    "UM-3DM-DEMAND-FLOOR-OBSTRUCTION-v1": "以原多标签μ/ν双层精确式支付parity种子的真实树值1/2，不依赖缺陷singleton枚举器。",
+    "unrelated-machines/single-neighborhood-label-union-counterexample": "目标为完整模型变化反例：原值1/2，按x合并标签邻域后值1。"
+  },
+  "explanation": "在四条parity三元组中任两条共享X、Y或Z之一，故ν=1；例如x0→Y0、x1→Y1是二分投影的两条不交边，故μ=2。代q=K=2精确式得原b*=max(min(2/2,1/2),min(1/2,2/2))=1/2。按每个x把其两个真实标签的邻域合并，两组均得到{Y0,Y1,Z0,Z1}；此改造允许原来不存在于同一标签的混合资源。取x0领取{Y0,Y1}，x1领取{Z0,Z1}，两标签中间点各得2子、根得2选择点，四typed资源各一父，评分1。截1评分给反向上界1，故并集后精确b*=1。两种值不等，完整反驳一般多标签3DM可按邻域并集无损变成单邻域。原typed树解析式与并集直接构树分别支付两侧，不使用历史软件PASS，也不把Z错标Y的原枚举器当正确oracle。",
+  "scope": "一个完整显式模型边界反例；不否定每x至多一个真实标签时的直接识别，不给3DM近似hardness、一般UM hardness或任意合并操作的结论。",
+  "whole_result": "在q=K=2的parity四三元组上，原多标签根树精确b*=1/2，而按x把标签资源取邻域并集后的单邻域根树精确b*=1；因此该并集操作不保需求树值。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/三维匹配与高维配额部分障碍双源审查--审查.md",
+      "sha256": "183ab149dc945b46763826132b93f63e02d048b3b5dc6a2beb292a89b9902b0b",
+      "section": "一、三维匹配需求树的精确地板"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/单邻域配额枚举的自由根需求与模型边界--资源.md",
+      "sha256": "9ae7519e4e77a8a180dbef4617f1fd9d9fe4712006a83c5a169166c6f5b060e4",
+      "section": "多label 3DM不能按邻域并集变成本模型"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三维匹配树枚举的资源标签缺陷与有限合同--审查.md",
+      "sha256": "dcea1d6fab0f558a4a69b9722e7d57b2cd03f910ffbec699b46c917ddb17356d",
+      "section": "相邻模型与旧证据需要保留的限定"
+    }
+  ],
+  "endpoint_pins": {
+    "UM-3DM-DEMAND-FLOOR-OBSTRUCTION-v1": "3f436f156f978cbca9eab8de4afff1ad29295712512aee482eacac55fdffb6fc",
+    "unrelated-machines/single-neighborhood-label-union-counterexample": "d8d9115b2f549278836e51bdb3357b8d63f9075fa4bf5c4230e6d1cbbde5c84b"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/三维匹配与高维配额部分障碍双源审查--审查.md": "183ab149dc945b46763826132b93f63e02d048b3b5dc6a2beb292a89b9902b0b",
+    "archives/unrelated-machines/state/资源/单邻域配额枚举的自由根需求与模型边界--资源.md": "9ae7519e4e77a8a180dbef4617f1fd9d9fe4712006a83c5a169166c6f5b060e4",
+    "archives/unrelated-machines/state/审查/三维匹配树枚举的资源标签缺陷与有限合同--审查.md": "dcea1d6fab0f558a4a69b9722e7d57b2cd03f910ffbec699b46c917ddb17356d"
+  },
+  "review_digest": "32f78a26ed80217d8f47b25b76ac5eb64d7ee77033c9f4bc17047aba47a0fdf2"
+}

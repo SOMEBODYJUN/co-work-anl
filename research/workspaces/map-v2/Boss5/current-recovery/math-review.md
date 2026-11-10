@@ -1,0 +1,27 @@
+# Boss5 current mathematical recovery and integration review
+
+## Heterogeneous endpoint envelope
+
+Read the complete integerization theorem and its H/L contract, the complete symmetric two-column reduction, and the complete sharp source-envelope theorem, including both upper-bound routes. The new independent target is M-1c4e30d5f9404d9e966e43820fed2daf. Its proof uses three inputs jointly; no single one supplies the whole conclusion.
+
+For an actual strict heterogeneous certificate at alpha>1, weighted density selection supplies one actual light weight and a real algebraic multiplicity n>=1. This is not a game with fractional player count. Core convexity permits m=floor(n)>=1 and gamma=1+(m/n)(alpha-1)>max(1,alpha-1/(alpha-1)). Existing strict endpoint monomialization applies at gamma>1. The higher rho threshold belongs only to obtaining endpoints from arbitrary same-weight topology nonexistence. Therefore the integerized gamma has a legitimate source certificate, and h(alpha)=alpha-1/(alpha-1)<F_d. Solving this increasing scalar relation gives the strict bound alpha<U(F_d); the supremum retains only a weak inequality. Source inclusion gives F_d<=F_het. The rationalized difference U(F)-F=2/(sqrt((F-1)^2+4)+F-1) tends to zero when F tends to infinity, so the independently proved source leading term transfers. This does not upper-bound arbitrary heterogeneous nonexistence mechanisms. No endpoint-attaining finite witness is asserted.
+
+## Retuned fourteen-resource family
+
+Read the core theorem and reviewed both new edge derivations, the independent resource-by-resource Fraction checker and its report. The fixed template gives eight margins with minimum 1/50. Available first-six amplitude sums are 57/50,56/25,41/25,211/100. Only the deviation's high-degree added cost is adverse; the current high-degree added cost has the favorable sign. The seventh current resource contains the heavy player for each chosen witness. These facts give the directed bound 1/50-17/(50m)-578/(10000m^2)-(112/25)L_m, yielding the positive m>=20 uniform margin. The older m>=52 absolute-error proof remains an independent valid route. The Boolean table yields B_infinity=100/49 and finite-min/max continuity. Neither convergence nor the m3 certificate fills m4..19 or the finite endpoint 100/49.
+
+The worker independently reconstructed all 16 states and 64 deviations for m3, comparing 210 principal exact rational certificate fields and eight parameters. It also reconstructed m1/2 equilibria, the Boolean table and both rational tail constants. This is an exact computational supplement to the analytic infinite-tail proof, not a claim of reading each integer digit as prose.
+
+## Scheduling comparisons and two source boundary corrections
+
+Reviewed the full two-layer mu/nu identity and its typed-tree software boundary, and the exact statements and drafts for the two new whole-result edges. In the shared-Y family at K=2, mu=q and nu=1, so the exact formula gives b*=1 at q=1 and b*=1/2 at every q>=2. In the ten-group five-resource example with delta=1/5, the exact common-pool formula has value 1/5, equal to delta. Thus the original strict b*<delta conclusion fails. The two source sentences were minimally corrected. Five object records retain their mathematical statement and truth status while their versions and byte references advance. Both unfinished tasks keep their ID and owner; two completed tasks receive directed replacements. None of the 22 assets in those two completed receipts touches the changed objects or source files; their original SHA bindings can be retained after the relevant coverage is rechecked.
+
+For the parity four-triple example, mu=2 and nu=1 at q=K=2, hence original b*=1/2. Merging each x's label neighborhoods permits x0 to take Y0,Y1 and x1 to take Z0,Z1, giving value 1 in the altered model. The exact source identity supplies the whole original-value side. The joint-choice NP reduction uses q+3 activation jobs and unique small endpoints; loads on the 1/3 grid below 4/3 force a complete peak-one schedule, and exactly q activated triples must form a perfect matching. This proves that precise sufficient-interface decision problem, not general makespan approximation hardness.
+
+## Fixed customer-assignment witness
+
+Independently reconstructed the saved 1953-customer witness from its actual customer input and complete policy. The new checker verifies all 43 histories and 258 real IC comparisons, all 56 three-label multisets, six frozen assignments and six real-prefix assignments. It finds W=1735, unique optimum (1,2,5) with OPT=1740, frozen minima 1736, real-prefix assignment values all 1734, and half margin 1730. Scaling by 1/1735 preserves the complete IC system and gives frozen strict margin 1/1735. This independently supports the already published checks/context interpretation of the two recently repaired canonical edges; it does not turn a finite computation-development record into another logical theorem or refute the true net-gap payment candidate. Boss6 already integrated those two directed replacements before this recovery's new batches.
+
+## Cross-archive scope
+
+The new endpoint and finite-resource comparisons stay within weighted congestion. The typed demand-floor, label-union and joint-choice comparisons stay within unrelated machines. Customer complete-history deviation payoffs, static congestion costs and indivisible scheduling capacities remain separate contracts. This round introduces no unsupported cross-archive logical transfer.
