@@ -1,0 +1,68 @@
+{
+  "edge_id": "cag-r42b-same-initialization-complement-and-fresh-ledger",
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "source_ids": [
+    "customer-attraction/full-client-coordinate-inventory-two-budget-initialization",
+    "LOCAL-I-COMPLEMENT-COORD-v1",
+    "customer-attraction/fresh-profit-common-reset-columns-and-offhistory-slack-ledger"
+  ],
+  "target_ids": [
+    "M-4df17feb4e044e8896e284362f8c53f7"
+  ],
+  "conditions": "固定同一完整纯SPE σ、同一个合法T及RAW显式比例分割；用该分割的原H和I-future构造J，付清的I-future从图删去，只从剩余R入口从头重算ν、h、β及严格future流。此边给已证预处理/守恒贡献，不假设共同FR cap已成立，也不把RAW点当NEW-CAP强guard点。",
+  "roles": {
+    "customer-attraction/full-client-coordinate-inventory-two-budget-initialization": "提供可执行且同次的p=P^B+c+a、d≤u及H_lx≤actual同客份额。",
+    "LOCAL-I-COMPLEMENT-COORD-v1": "保原d/H构造同客互补J，删除I-future并重建fresh ν流，给ΣK=Σ_R a。",
+    "customer-attraction/fresh-profit-common-reset-columns-and-offhistory-slack-ledger": "在这个新ν图给MERGE、ELL-GROUP和RESET-GROUP，确定current且排固定图额外退款。",
+    "M-4df17feb4e044e8896e284362f8c53f7": "开放的同次全部角色FR容量合同；本边只落实其合法输入、精确费用及余量。"
+  },
+  "explanation": "对x∈I，RAW同次库存给1=H_x+C_x^src+A_x。因H_lx≤w_lx、Σ_lw_lx=1，取J_lx=A_x(w_lx−H_lx)/(1−H_x)，H_x=1时库存迫A_x=0并取J=0，得ΣJ=A_x且H_lx+J_lx≤w_lx。current d不变，I-future恰删同一质量。剩余R只向真实W_i的严格future coverer注入；重新使用ν_t=u_role(V_t;N∖C)，不是完整利润v，也不是actual-prefix D^F。局部ν−P=D^F−N>0（ν>0），正输入/正边有fresh客户见证且严格增角色，故有限DAG吸收净券K≥0、ΣK=Σ_(i,x∈R)a_ix。于是同次|O|=Σ_l(d_l+H_l+J_l+K_l)，Q_l=2u_l−d_l−H_l−J_l≥(u_l−d_l)+u_l(B;C∖O)≥0。对同role/action组G，真实reset A共同，精确输出密度Λ_G,jx=Σ_tβ_t1_(x不被(V_t)_j覆盖)/c_Vt；K_G=Γ_GD_A^F−Σ_tβ_tN_t=Γ_G(u_l−Y_A−e_A)−Σ_tβ_tN_t。旧g返回松弛ell_t=ν_t+X_t−w_t≥0只给Σβw=Σh+ΣβX−Σβell；在已固定h=βν及输出βq时current由守恒唯一指定，不能再扣βell。新ν可重采到O外fresh客户而不增源库存，也不继承同客TAIL。若将来同一个最优T/分割/J/流对所有l满足K_l≤Q_l，求和才得OPT≤2W；当前共同cap未由非负余量、初次β≤1、组列可合并或ELL恒等式支付。",
+  "scope": "RAW这一具体合法初始化上I互补与新ν图的已证同次接口；不恢复原限定full-SAFE/CLIP合同，不否定其它存在性选择。",
+  "contribution": {
+    "result": "显式RAW点可接同一H后的I互补与重新计算的fresh ν流，得到全O精确守恒、非负角色余量Q及各same-action组的精确K/Λ/ell账；固定图不能额外退βell。",
+    "remaining": "仍需∀原实例/完整σ存在同一个最优T、允许分割/J及合法fresh路由，同时支付全部角色K_l≤Q_l；RAW/强guard换点须重算J/h/β。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/全客户坐标库存的双预算初始化--引理.md",
+      "sha256": "c0ca6839939d68ab38f42a72ac454b295a4282945fa67f5b66070338faa12d08"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优交集客户的互补付款与新鲜余量接口--引理.md",
+      "sha256": "15295882660b41f169eaa78f5ddf096fc4b97dcfd122eb52957e274de5e52b53"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/同重置新鲜利润流的共同列与离轨松弛账--引理.md",
+      "sha256": "e36f5b5efd5aaeadefaa75f4762535b10b2081e6731f234a622caba0d8dd45f5"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/有利可信完成与同次净券付款的根账本--资源.md",
+      "sha256": "4c3f804f8e43ae2dc05a52c74ef10bf9da788a0075bdb56fadf79da624ca22d0",
+      "section": "同一次I互补付款与fresh剩余必须保接口"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/客户支持三层含义与互补合成的审查边界--资源.md",
+      "sha256": "d8c16e3d5c147e2166310de52f539c8cca99a34dd6023bed27833530e3787b73",
+      "section": "同一H后的I补余与新ν流的合成"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "原worker在18pin阶段实读本关系原模型、全部承重正文及指定证据；第二次read-add后已按原reading-ledger扩至19pins。round43 fresh窄续复用durable数学审查，核当前request a55c5188046a42939a132bfa3ec2e38c及19pins，仅closeout登记v2变化，与此逻辑边端点无关；数学字段逐项保持，未重新全读旧JSON大表或重跑LP/BI。具体推导、同σ/同次初始化/共同钱包及未付义务均保留。",
+  "endpoint_pins": {
+    "LOCAL-I-COMPLEMENT-COORD-v1": "34d4f036d3222667b7f5bc628da40fe95dfff04a00f87cc13b46697383a1271f",
+    "M-4df17feb4e044e8896e284362f8c53f7": "6ac747d3f8c5715c0ef56f448630d724376ac742c03687cf5301099f892af9f8",
+    "customer-attraction/fresh-profit-common-reset-columns-and-offhistory-slack-ledger": "193566d8191587c84e3f334ed942c1461c9e0bd95d5f3bc6ac8b266f3cc32d58",
+    "customer-attraction/full-client-coordinate-inventory-two-budget-initialization": "f838e2b033bff9a358e1fa546a8458ed3ef844b16f657f752bf9e57a62c6a01f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/全客户坐标库存的双预算初始化--引理.md": "c0ca6839939d68ab38f42a72ac454b295a4282945fa67f5b66070338faa12d08",
+    "archives/customer-attraction/state/引理/最优交集客户的互补付款与新鲜余量接口--引理.md": "15295882660b41f169eaa78f5ddf096fc4b97dcfd122eb52957e274de5e52b53",
+    "archives/customer-attraction/state/引理/同重置新鲜利润流的共同列与离轨松弛账--引理.md": "e36f5b5efd5aaeadefaa75f4762535b10b2081e6731f234a622caba0d8dd45f5",
+    "archives/customer-attraction/state/资源/有利可信完成与同次净券付款的根账本--资源.md": "4c3f804f8e43ae2dc05a52c74ef10bf9da788a0075bdb56fadf79da624ca22d0",
+    "archives/customer-attraction/state/资源/客户支持三层含义与互补合成的审查边界--资源.md": "d8c16e3d5c147e2166310de52f539c8cca99a34dd6023bed27833530e3787b73"
+  },
+  "review_digest": "8169261f9fa73e604ffd8460a4060bacff060549b83b310022e5ccc621ba0a22"
+}

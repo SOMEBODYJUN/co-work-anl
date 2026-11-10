@@ -1,0 +1,66 @@
+{
+  "edge_id": "cag-r42b-uniform-tail-cover-and-four-leaf-remainder",
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "source_ids": [
+    "customer-attraction/same-role-tail-cover-density-and-whole-query-current-aggregation",
+    "customer-attraction/same-role-source-whole-query-cover-norm-and-four-leaf-remainder",
+    "customer-attraction/same-role-reset-absorption-four-leaf-decomposition-and-cross-action-gap"
+  ],
+  "target_ids": [
+    "M-9301cba124d847a695768664996c39a2"
+  ],
+  "conditions": "同一个完整σ、同次NEW-CAP强guard初始化及J，删除已付I-future，R传播取所有共同future边送满的uniform-reset角点；TAIL的source库存、逐边p/c与全客户同一流合同均满足。不把RAW原弱guard自动代入。范数仅用其对任意非负受query支持g的通用部分；不用原positive-difference核的r-current公式冒充uniform current。",
+  "roles": {
+    "customer-attraction/same-role-tail-cover-density-and-whole-query-current-aggregation": "控制同一固定流同角色全部action的TAIL/LAYER逐客户密度；uniform时Σ_s h_sx≤B_lx≤1。",
+    "customer-attraction/same-role-source-whole-query-cover-norm-and-four-leaf-remainder": "以实际prefix完整query列给任意受支持请求的有限覆盖范数/对偶及一次whole-IC采购。",
+    "customer-attraction/same-role-reset-absorption-four-leaf-decomposition-and-cross-action-gap": "给uniform吸收A_s、同action精确分组、θ=A_s/D_a及保真ROLE-TRY。",
+    "M-9301cba124d847a695768664996c39a2": "开放的同次uniform全O两钱包角色合同；获得其真实全层约束、共同范数充分测试及精确四叶余项。"
+  },
+  "explanation": "uniform角点current L_sx=h_sx/c_A(x)，所以TAIL的LAYER直接给Σ_(role s=l)h_sx≤B_lx≤1。同一action a共享A^{l,a}，令M_ax=Σ_(role l,action a)h_sx、g_l^U(x)=Σ_aM_ax z_lax，则A_l=Σ_xg_l^U(x)，并有Σ_aM_ax≤1。每a的max_xM_ax可覆盖该组；对整个g_l^U，cover的通用LP给K_l(g)=minΣλ=max_(y≥0,Z^Ty≤1)y·g。其最优λ确存在，whole QIC仅逐完整列购买一次，故A_l≤u_l K_l(g_l^U)。当u_l>0，K_l(g_l^U)≤Q_l/u_l足以给目标金额cap；这是充分条件，不能反推一般金额cap。每a单独max≤1或逐客户Σ_aM≤1均不控制Σ_a max_xM。四叶另给θ_s=A_s/D_a（D0时θ0），Jdiag_s+C_s=θ_sv_s、T_s=θ_s(u_l−z_s)、ell_s=v_s−z_s≥0、e_a=u_l−D_a≥0，从而A_l=Σ_s[Jdiag_s+C_s+T_s−θ_sell_s−θ_se_a]。正incoming R处c_V≥2，但这并不把Jdiag合计自动接actual钱包；C_s可有符号，互斥旧g返回利润z_s也未共受同一u_l控制。ROLE-TRY的负θell属于θ=A/D的uniform吸收，不能转为固定β=h/ν图的退款。以上都使用同一源点/同一流；逐action分别可付不成为同时可付。",
+  "scope": "严格future同客uniform角点的全角色层局部结构与共同系数充分接口；抽象不同客户最大值分离不是真SPE/source反例。",
+  "contribution": {
+    "result": "同次uniform流满足全层逐客户Σ_s h_sx≤1、同action精确query向量聚合、通用覆盖范数/对偶及A_l≤u_lK_l(g_l^U)，并保ROLE-TRY精确四叶分解。",
+    "remaining": "仍需共同选同一最优T/强guard分割/J，使全部角色A_l≤2u_l−d_l−H_l−J_l；或证明足够的共同范数/余项上界。TAIL、单context密度和两个IC非负松弛均未支付该跨action总账。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/同角色未来覆盖密度与查询行聚合--引理.md",
+      "sha256": "05f8fe19cd05d7c66f597e8dd7e246581e8de0010756872ef8f3b3b9677fbe7e"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/同角色来源的完整查询覆盖范数与四叶余项--引理.md",
+      "sha256": "4cff95878ec5e09bd4a502c18f308d1fc68188623c025c7198defd73e1bbfc26"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/同角色重置吸收的四叶分解与跨动作付款缺口--引理.md",
+      "sha256": "920ec7b0c8bd11a9362b345b33501cd2bb6c7ef5e73f12b739853038ee810696"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/同客重置父审的纯流范围与核版本--审查.md",
+      "sha256": "2a643b3273ec88b300e8d3e266eb6cf60418b415faff56e8aea9536c79b921ae"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/原资源核与净缺口工作区的二次接续--资源.md",
+      "sha256": "6010375161d7071eaccade130d486faf0558222d0fd1feb9a17f53ec8d410efd"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "原worker在18pin阶段实读本关系原模型、全部承重正文及指定证据；第二次read-add后已按原reading-ledger扩至19pins。round43 fresh窄续复用durable数学审查，核当前request a55c5188046a42939a132bfa3ec2e38c及19pins，仅closeout登记v2变化，与此逻辑边端点无关；数学字段逐项保持，未重新全读旧JSON大表或重跑LP/BI。具体推导、同σ/同次初始化/共同钱包及未付义务均保留。",
+  "endpoint_pins": {
+    "M-9301cba124d847a695768664996c39a2": "524c5ce89307253845d58e2dbb2162da98e7564344eda227ba999c963adb27f9",
+    "customer-attraction/same-role-reset-absorption-four-leaf-decomposition-and-cross-action-gap": "b570a916a0b4bbb44dc94f216326a673a08e4cbbea266d38c906ea319e617224",
+    "customer-attraction/same-role-source-whole-query-cover-norm-and-four-leaf-remainder": "66e83370d3f7ef91372c9fe3f4de0017c4ccb936b6d576d89064389992ebb34f",
+    "customer-attraction/same-role-tail-cover-density-and-whole-query-current-aggregation": "9eab34b98928ac8c766b3abf891ab2169e19a4d6831dd586f485e68d97df5724"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/同角色未来覆盖密度与查询行聚合--引理.md": "05f8fe19cd05d7c66f597e8dd7e246581e8de0010756872ef8f3b3b9677fbe7e",
+    "archives/customer-attraction/state/引理/同角色来源的完整查询覆盖范数与四叶余项--引理.md": "4cff95878ec5e09bd4a502c18f308d1fc68188623c025c7198defd73e1bbfc26",
+    "archives/customer-attraction/state/引理/同角色重置吸收的四叶分解与跨动作付款缺口--引理.md": "920ec7b0c8bd11a9362b345b33501cd2bb6c7ef5e73f12b739853038ee810696",
+    "archives/customer-attraction/state/审查/同客重置父审的纯流范围与核版本--审查.md": "2a643b3273ec88b300e8d3e266eb6cf60418b415faff56e8aea9536c79b921ae",
+    "archives/customer-attraction/state/资源/原资源核与净缺口工作区的二次接续--资源.md": "6010375161d7071eaccade130d486faf0558222d0fd1feb9a17f53ec8d410efd"
+  },
+  "review_digest": "f588baef2da34ce0b90cc35ad5263f5801aec61b81ca4586915e990f43773741"
+}

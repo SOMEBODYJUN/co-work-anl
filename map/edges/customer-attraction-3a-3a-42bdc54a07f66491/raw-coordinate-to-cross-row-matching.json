@@ -1,0 +1,42 @@
+{
+  "edge_id": "cag-r42b-raw-coordinate-to-cross-row-matching",
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "source_ids": [
+    "customer-attraction/full-client-coordinate-inventory-two-budget-initialization"
+  ],
+  "target_ids": [
+    "M-11d054a7f8604425ad1b21445de2d54e"
+  ],
+  "conditions": "同一有限单位客户共同标签目录；任意固定actual叶B及合法带槽比较T，p_ix=1/c_T(x)。证明只用RAW坐标系数，不需T最优；B若来自SPE，仍保同一完整σ及其真实query。只在x∈T_i处定义δ_i=c_B(x)+1−1_(x∈B_i)>0。",
+  "roles": {
+    "customer-attraction/full-client-coordinate-inventory-two-budget-initialization": "给reference=T到actual-other的逐客户正负价P^B/N^B及留存r=p−P^B。",
+    "M-11d054a7f8604425ad1b21445de2d54e": "得到整个MATCH系数及交换两槽时第三来源行也改变的结构结论。"
+  },
+  "explanation": "固定x∈O，写b=c_B(x)、t=c_T(x)、a_i=1_(x∈B_i)、h=Σ_l1_(x∈B_l∩T_l)。源i覆盖x时，actual-only其它coverer数恰b−h，比较-only其它coverer数恰t−h−1+a_i，共同其它coverer数h−a_i。因此RAW定义给P^B_ix=(b−h)/(tδ_i)、N^B_ix=(t−h−1+a_i)/(tδ_i)，r_ix=1/t−P^B_ix=(h+1−a_i)/(tδ_i)。对actual recipient l∈B_x∖T_x，h个actual同客source各付1/(tb)，t−h个非actual source各付1/[t(b+1)]，所以H_lx=1_(x∈B_l∖T_l)[h/(tb)+(t−h)/(t(b+1))]（b>0时）；b=0则H=0、P=0、r=1/t。交换T_i,T_j只保b,t，而Δh=(1_Bi−1_Bj)(1_Tj−1_Ti)。对任何未换且仍覆盖x的第三源k，Δr_kx=Δh/[t(b+1−1_Bk)]，一般非零。因此排列的系数不是只改所换两行的独立逐槽成本。另有真SPE短见证：不交A有2客户/B有1客户，m=3，root取A；第二位在A后取B、B后取A；末位AA后取B，其余AB/BA/BB后取A。末位逐枝最优；A后第二位两行动均收益1，B后取A收益1≥1/2；root两行动均收益1。actual ABA为完整SPE。对x∈A，最优T=(A,B,A)换前两槽为(B,A,A)时b=t=2、h由2降1、δ_3=2，未换的源3留存从1/2降1/4。此见证只证明非独立性，不证明最优排列或付款不可行。改变源槽还必须在新actual前缀重取同σ真query，不能旧future边重命名。",
+  "scope": "整个目标的精确代数结构与非逐槽独立性；不提供最优匹配算法、FR/ROLE上界或half反例。",
+  "whole_result": "RAW坐标价格完整推出MATCH的h依赖、P^B_ix=(b−h)/(tδ_i)、r_ix=(h+1−1_Bi)/(tδ_i)，并推出交换两个比较槽通常同时改变未交换的其它源行；故全最优元组付款不能当独立逐槽成本指派。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/全客户坐标库存的双预算初始化--引理.md",
+      "sha256": "c0ca6839939d68ab38f42a72ac454b295a4282945fa67f5b66070338faa12d08"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优交集客户的互补付款与新鲜余量接口--引理.md",
+      "sha256": "15295882660b41f169eaa78f5ddf096fc4b97dcfd122eb52957e274de5e52b53"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "原worker在18pin阶段实读本关系原模型、全部承重正文及指定证据；第二次read-add后已按原reading-ledger扩至19pins。round43 fresh窄续复用durable数学审查，核当前request a55c5188046a42939a132bfa3ec2e38c及19pins，仅closeout登记v2变化，与此逻辑边端点无关；数学字段逐项保持，未重新全读旧JSON大表或重跑LP/BI。具体推导、同σ/同次初始化/共同钱包及未付义务均保留。",
+  "endpoint_pins": {
+    "M-11d054a7f8604425ad1b21445de2d54e": "3fb1e483efd19e50925df3907fd1de6fd808b6b2bf2bb7f577e7715305f6d5b8",
+    "customer-attraction/full-client-coordinate-inventory-two-budget-initialization": "f838e2b033bff9a358e1fa546a8458ed3ef844b16f657f752bf9e57a62c6a01f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/全客户坐标库存的双预算初始化--引理.md": "c0ca6839939d68ab38f42a72ac454b295a4282945fa67f5b66070338faa12d08",
+    "archives/customer-attraction/state/引理/最优交集客户的互补付款与新鲜余量接口--引理.md": "15295882660b41f169eaa78f5ddf096fc4b97dcfd122eb52957e274de5e52b53"
+  },
+  "review_digest": "5496890d854f708c732ac19d57bdff43dd5cd4fa6dc19fe4b841d68329cbe3d6"
+}
