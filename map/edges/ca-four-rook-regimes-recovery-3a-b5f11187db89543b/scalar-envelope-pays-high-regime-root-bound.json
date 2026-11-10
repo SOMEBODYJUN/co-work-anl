@@ -1,0 +1,58 @@
+{
+  "edge_id": "ca-four-rook-scalar-envelope-pays-high-regime-root-bound",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WS-STATIONARY-SCALAR-ENVELOPE-v1"
+  ],
+  "target_ids": [
+    "customer-attraction/four-player-rook-grid-exact-root-regimes"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "四个单位提供者、零背景、三行两列全部六个共同主题，五个互不相交块的每行质量R>0、每列质量C>0；对同一份完整有序历史纯SPE的全部六个强制根分支作真实续局。额外使用且在下文独立证明的局部事实是：每个强制根分支均覆盖全部五块；这不以前提方式调用目标的精确L公式、达界策略或静态门槛。单位客户版本取R,C为正整数，正实质量为同一收益计算的扩域。",
+  "roles": {
+    "WS-STATIONARY-SCALAR-ENVELOPE-v1": "对六个真实根分支的整数后继路由给r=4、b=0的聚合P≤6D。",
+    "customer-attraction/four-player-rook-grid-exact-root-regimes": "取得该特定车图全部完整SPE的根收益下界R/2+C/3；这正是R≥C/3域精确L公式的下界部分。"
+  },
+  "explanation": "先独立支付全覆盖条件。固定任一强制首标签，其后仍是同一完整SPE的真实续局。末位的收益R/(1+过去行负载)+C/(1+过去列负载)可在两个坐标分别最大化，故各自选最低负载。两列最终必为(2,2)或(3,1)，均被覆盖；三行最终只能为(2,1,1)或(3,1,0)，置换不计。若为(3,1,0)，前三位必同一行，第三位原行份额R/3，原列份额至多C/2：若列为(3,1)，唯一列恰由末位占用。第三位改到空行及此前低负载列后，仍有另一条空行供末位严格优选，故该偏离者保持行份额R、列份额至少C/2，严格优于原收益。该论证只用第三、四位的局部最优性，故对六个强制首标签均成立，不要求被强制的首标签自身为根最优。于是每枝总收益都等于W₀=3R+2C。六主题覆盖互异且极大，给每个真实尾标签按自身归属，路由列和为3，任取其驻留π。来源引理在r=4、b=0给M₄=4+floor(9/4)=6，故P≤6D；分支全覆盖给P=W₀。令u为原策略实际首位收益，完整根IC按同一策略的真实后继给每枝首收益d_i≤u，所以D=Σπ_i d_i≤u。合得u≥D≥W₀/6=R/2+C/3。没有把目标全定理当作输入：这里的全覆盖局部论证已逐步重建。R≥C/3时此数恰为目标L的下界；R<C/3时它比真正L=R/2+C/2少C/6，包络本身没有支付该加强项。",
+  "scope": "仅支付所述四人全格车图的普遍根下界；包括弱端点R=C/3。既不推出低域的更强下界，也不单独给达界全历史策略、三个静态门槛或其他人数/目录结论。",
+  "contribution": {
+    "result": "任意R,C>0、任意该车图完整纯SPE，六个真实强制根分支全覆盖且u₁≥(3R+2C)/6=R/2+C/3；因此驻留包络精确支付R≥C/3域最小根公式的下界部分。",
+    "remaining": "目标整条定理仍需低域R<C/3排除三人同列以加强至R/2+C/2、两份完整达界策略以及θ₄,v₄,t₄的静态精确值。上述所需步骤已在目标正文另行证明，此边不将来源包络冒作整条目标证明。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/驻留根菜单的最优标量包络与尾收益界--引理.md",
+      "sha256": "db0c124239fe7796f7e2ead6afae5a0828cca10baff0d214dbd61df15bfc25de",
+      "section": "模型、路由与逐客户量"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/驻留根菜单的最优标量包络与尾收益界--引理.md",
+      "sha256": "db0c124239fe7796f7e2ead6afae5a0828cca10baff0d214dbd61df15bfc25de",
+      "section": "最优逐客户包络及点态证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/四人车图的全参数最小根收益与可信锐菜单--定理.md",
+      "sha256": "4f61d223777a05bd89f6751ff83b5a8ac61d06f6863e8344b2a95c566d1b73ba",
+      "section": "所有完整策略的下界"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    }
+  ],
+  "reviewed_by": "Boss5/four-rook-worker; Boss5独立符号复核",
+  "review_note": "分段完整实读本任务16条reading_refs所对应的11份去重文件及5个固定对象记录；本边另核目标全覆盖证明只用后两位IC，从而适用于全部强制根。Boss5独立复核行负载排除、阈值严格号和两份全历史策略；worker从定义实现集合值有理逆推，在23个正收益比较临界比及24个开区间代表共47处核全部1296终局，根floor、全覆盖和低域禁三同列均吻合。有限回归不替代本文全参数论证。",
+  "endpoint_pins": {
+    "WS-STATIONARY-SCALAR-ENVELOPE-v1": "27eaff9b3d69dd4c07dcac485abebd5ad191e1f2c0b1318d486f69041edbc4c0",
+    "customer-attraction/four-player-rook-grid-exact-root-regimes": "0954c7578a42cc8c5129d5c13ddea64ae827a62e8f76fd22c2af89759be5bc05"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/驻留根菜单的最优标量包络与尾收益界--引理.md": "db0c124239fe7796f7e2ead6afae5a0828cca10baff0d214dbd61df15bfc25de",
+    "archives/customer-attraction/state/定理/四人车图的全参数最小根收益与可信锐菜单--定理.md": "4f61d223777a05bd89f6751ff83b5a8ac61d06f6863e8344b2a95c566d1b73ba",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "6c800e745b714629046511c630b8d96c6c5c74f6ead7d902190c86ece5f96900"
+}
