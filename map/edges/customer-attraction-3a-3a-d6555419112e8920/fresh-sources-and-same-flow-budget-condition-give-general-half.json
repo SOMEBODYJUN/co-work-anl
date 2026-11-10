@@ -1,0 +1,59 @@
+{
+  "edge_id": "boss6-r50-cagd655-fresh-sources-and-same-flow-budget-condition-give-general-half",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/fresh-profit-initialization-and-joint-budget-condition"
+  ],
+  "target_ids": [
+    "Q-CAG-HALF"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "全称共同费用前提：对每个整数m≥1、每个有限单位客户共同标签目录输入及每份完整有序历史纯SPEσ，存在同一个最优m主题比较并集O、同一次合法鲜源分配及从它重新递推的ν鲜利润流，使M=|O∖C|−|C∖O|=OPT_m−W，且同次BF=Σ_iθ_i(u_i−Y_i^src)+Σ_tβ_t(u_role(t)−Y_t−N_t)≤W。源仅在actual覆盖C外，每客户源量ρ_x∈[0,1]、各分析块Q_i互不交且Q_i⊆T_i∖C；每个role一个合法actual-prefix查询，θ_i来自该查询同一个D_i^F；future注入和全部contexts严格按同一σ、同一ν核/同一h、β计算。上述存在性及费用上界尚未证明；不得逐source、逐context或逐query分别换可行点。",
+  "roles": {
+    "customer-attraction/fresh-profit-initialization-and-joint-budget-condition": "提供含真实初始化的INIT-MASS、ν流F-LEDGER及BF−M为完整IC非负松弛和的精确公式；共同费用存在性保开放。",
+    "Q-CAG-HALF": "目标是任意m、任意输入、每份完整纯SPE的2W≥OPT_m，使用净遗漏而非更强的全部遗漏。"
+  },
+  "explanation": "固定任意m、输入及其完整σ，actual并集C、福利W=Σ_i u_i。取共同费用前提给定的同一个最优比较并集O，写R=O∖C、G=C∖O。actual m元组也是合法比较，故OPT_m≥W，M=|R|−|G|=OPT_m−W≥0。源Q_i⊆T_i∖C的每客ρ_x≤1在真实查询叶V_i的全部coverer之间均分；past actual角色不覆盖这些鲜客户。于是源current A_i^src=θ_i(u_i−Y_i^src−e_i^src)，0≤θ_i≤1，每个future源份额进入它在该叶的真实natural context。完整初始化给M=Σ_i A_i^src+Σ_t b_t。\n\n在同一个ν_t>0的鲜利润图上，从这组b_t递推h_t=b_t+Σ_sβ_s q_st、β_t=h_t/ν_t；每边严格增future角色，ν−P=D^F−N>0，正入流有鲜客户见证，所以除法合法且有限。全图守恒F-LEDGER给Σ_t b_t=Σ_tβ_t(u_role(t)−Y_t−N_t−e_t)。与初始化相加，精确得到M=Σ_iθ_i(u_i−Y_i^src−e_i^src)+Σ_tβ_t(u_role(t)−Y_t−N_t−e_t)。将BF减去此式，只余BF−M=Σ_iθ_i e_i^src+Σ_tβ_t e_t≥0，因同一完整σ的真实源query IC和reset IC各自给e≥0，θ、β非负。故共同前提BF≤W推出M≤BF≤W，再代M=OPT_m−W即OPT_m≤2W。所有量有限，不除以W，含零客户、空覆盖、重复和同覆盖异标签；m1以及M0用同一等式，零源项取θ/β0。\n\n源ρ从R中分数截取净质量的形式可行性没有支付BF；行sub-Markov界也只是一行出口界，未给跨contexts重复使用同一actual u_i的总预算。因此这条完整条件推导不把共同费用存在性或BF≤W当作已证。它不同于RAW全O库存/I互补的共同FR cap，也不重用旧SOURCE预付、off-history C收益或任意Hall取消。",
+  "scope": "完整的conditional全人数half充分路线；前提要求对每输入每σ有同一次合法初始化与ν流的联合费用上界。该存在性保持open，target的当前无条件真值不提升。",
+  "whole_result": "若所列全称同次合法鲜源/ν流共同费用前提成立，则任意m≥1、任意有限单位客户共同标签目录及其每份完整历史纯SPE均满足2W≥OPT_m；正确付款对象是M=OPT_m−W=|O∖C|−|C∖O|。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/鲜利润初始化与共同费用条件--候选.md",
+      "sha256": "7c8be8325f5b59de184147c0ff94aabb7ed71ef04f961a7f72d8d19b418ebf7a",
+      "section": "只在鲜利润内归一化的闭合图"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/鲜利润初始化与共同费用条件--候选.md",
+      "sha256": "7c8be8325f5b59de184147c0ff94aabb7ed71ef04f961a7f72d8d19b418ebf7a",
+      "section": "合法鲜客户源与源current精确金额"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/鲜利润初始化与共同费用条件--候选.md",
+      "sha256": "7c8be8325f5b59de184147c0ff94aabb7ed71ef04f961a7f72d8d19b418ebf7a",
+      "section": "同一次源与流的共同费用条件"
+    },
+    {
+      "path": "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md",
+      "sha256": "bc5add8e880e83c3ed799f457607103532aa9120018c862ae3ac869f2ed34d15",
+      "section": "完整量词和目标"
+    },
+    {
+      "path": "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md",
+      "sha256": "bc5add8e880e83c3ed799f457607103532aa9120018c862ae3ac869f2ed34d15",
+      "section": "净遗漏是一般付款的准确对象"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Fresh正式worker在Root pushed read-add后重新核18core/11read全部29pins，完整实读Q当前精确合同及目标正文/必要证据，与F-BUDGET同次源和ν流逐式合成。推导已完整故accepted+conditional；开放的是全称共同费用存在性，不标proposed，不重跑旧LP/SPE/IC/DP/随机或证书程序。",
+  "endpoint_pins": {
+    "Q-CAG-HALF": "dccd5277f7b0c1bb4dcac17287010f1d012bb40c6244c51f24808c1519a4b5ea",
+    "customer-attraction/fresh-profit-initialization-and-joint-budget-condition": "35c96a06b16c5f7db8c463a5dacbdb6753239e653ccf641ea538a79febda1e44"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/鲜利润初始化与共同费用条件--候选.md": "7c8be8325f5b59de184147c0ff94aabb7ed71ef04f961a7f72d8d19b418ebf7a",
+    "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md": "bc5add8e880e83c3ed799f457607103532aa9120018c862ae3ac869f2ed34d15"
+  },
+  "review_digest": "2f676104070e3c16ecb76317101d7bc9d8674295e176c2d8f2e2ab53ee71022c"
+}

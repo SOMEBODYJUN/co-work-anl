@@ -1,0 +1,51 @@
+{
+  "edge_id": "boss6-r50-cagd655-interval-inclusion-and-exact-menu-give-all-spe-full-coverage",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "B7-INTERVAL-CEILING-RELAXATION-v1",
+    "customer-attraction/root-menu-tail-aggregate-security-and-terminal-BR-compression-obstruction"
+  ],
+  "target_ids": [
+    "M-d78294c3593a431a8d3d9824dac6ed8b"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一个十单位客户输入：不交块A/B/C/D大小2/3/2/3，标签0=A∪B、1=A、2=D、3=B∪C；m=3，全部有序历史、弱平局和重复动作保留。H_I只压缩终局计数，不将原策略限制为计数函数。",
+  "roles": {
+    "B7-INTERVAL-CEILING-RELAXATION-v1": "给出每个合法前缀的区间终局超集H_I包含所有完整纯SPE终局的归纳结论。",
+    "customer-attraction/root-menu-tail-aggregate-security-and-terminal-BR-compression-obstruction": "固定十客户四标签输入，并提供由末位BR逐层算得的H_I有限表；其W7菜单不可信的证明保持独立。",
+    "M-d78294c3593a431a8d3d9824dac6ed8b": "目标是同一输入每份完整SPE的W=10及根0可以按032而非排序023完成的实例级分类。"
+  },
+  "explanation": "先用菜单正文的单位客户定义计算各孩子区间，而非把保留菜单当作SPE。在前缀0，第二人行动0的末位BR终局计数为002/003，第二位收益区间[2,5/2]；行动1只留013、收益1；行动2只留023、收益3；行动3只留023、收益7/2。因此L_I(0)=7/2，唯一eligible第二行动为3，H_I(0)={023}。对应真实顺序可取032：在03末位选2得3，对0/1/3分别为2、1、2，故为BR。其余一行动孩子H_I(1)={123}，H_I(2)=H_I(3)={023}。根四行动的孩子中自身收益分别7/2、2、3、7/2，故根仅0/3 eligible，H_I(∅)={023}。源HI定理的全历史包含性于是迫使每份完整SPE的终局计数为023，三个覆盖并集为全部10客户，故W=OPT3=10。有限树逆向归纳给至少一份SPE；且在根0孩子选实现032的子SPE，其他孩子选使根收益最小的子SPE，可实现根0：孩子1根收益2、孩子2根收益3、孩子3根收益7/2，均不超过根0的7/2。\n\n023在这里是多重集；实际顺序023的第二位收益3低于改3的7/2，不能据排序称其真实路径。压缩菜单003的倒二改2后末位3唯一BR，给3>2，说明它不能补成SPE；这个独立障碍没有被全效率结论倒置为真SPE反例。",
+  "scope": "完整支持目标实例的全部纯SPE福利分类与根0可实现032；不把一般H_I当精确BI，也不证明一般聚合安全或half。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/区间终局剪枝的上界比较与全效率目录类--定理.md",
+      "sha256": "398ae2b6a7151c5f4a182fb7072939792b25e7e84f22f85d91fdf0d1e2501d16"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/根菜单尾总安全与末位最优的压缩障碍--障碍.md",
+      "sha256": "0e5706ce1d6c684ed36a3ec3345a6bd2f42f03b2450692c0aaa6508fa8c07ef0"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Fresh正式worker实读本包当前18核心合同及其承重正文、必要比较端点和精确证据合同。此边给完整解析推导或明确proof contribution；原运行与有限认证按已发表正文职责复用，本轮未运行原LP、SPE/IC、DP、随机或有限数学核验程序。",
+  "whole_result": "同一十客户四标签游戏的每份完整有序历史纯SPE均有根终局计数{0,2,3}、W=10=OPT3；根0存在真实可实现顺序032。该结论由一般H_I包含性与本实例完整孩子区间表共同推出。",
+  "endpoint_pins": {
+    "B7-INTERVAL-CEILING-RELAXATION-v1": "d87d3cf7b49d86d3ee96477eceb08465a6ca216e74d1f8a6c1bf20258ea1a1bf",
+    "M-d78294c3593a431a8d3d9824dac6ed8b": "26a0c4280939a10fdaec31640a04b6ee15af72ec1a5b105ea9f3808334db9c97",
+    "customer-attraction/root-menu-tail-aggregate-security-and-terminal-BR-compression-obstruction": "9cf442627d8657d3cd91289051cd716839d0b691b71d2426212004c67917decf"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/区间终局剪枝的上界比较与全效率目录类--定理.md": "398ae2b6a7151c5f4a182fb7072939792b25e7e84f22f85d91fdf0d1e2501d16",
+    "archives/customer-attraction/state/障碍/根菜单尾总安全与末位最优的压缩障碍--障碍.md": "0e5706ce1d6c684ed36a3ec3345a6bd2f42f03b2450692c0aaa6508fa8c07ef0",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "1b59098767bf22e4523c41e527f9f9fe30ed7509d84072462f67b5fd97c8d6b1"
+}
