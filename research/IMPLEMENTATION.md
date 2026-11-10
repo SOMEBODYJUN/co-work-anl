@@ -298,18 +298,18 @@ collect给已交付成果和待补办批，--full返回详细内容。status与d
 
 ## 后续Main与Solver消费
 
-Main按[完整研究词](../prompts/research-runtime.md)操作；新Project明确Boss号与精确研究题目，独立clone用start --role boss --save <实际研究存档>，不复用登记/构图角色或默认套旧问题。同一研究对话沿原clone/RUN恢复。每个新RUN固定obstacle-1、full-1、full-2，均gpt-6.1-sol/ultra/fork_turns:none；init生成实际packet和槽位，不自动创建模型。平台真实spawn/followup，记录真实agent_id。此三槽配置不限制登记/构图的可用并发。
+Main按[完整研究词](../prompts/research-runtime.md)操作；新Project明确Boss号与精确研究题目，独立clone用start --role boss --save <实际研究存档>，不复用登记/构图角色或默认套旧问题。同一研究对话沿原clone/RUN恢复。普通研究用 `init --mode open` 生成一份 full packet，按义务通过平台真实 spawn/followup，并用 save 记录实际 agent ID。明确对照实验可用 comparison 模式，已有三槽 RUN 沿原输入和计划恢复。init 本身只写本地计划和证据包。
 
-spec含problem_id、problem引用、definitions引用数组、obstacles引用数组、seed_ids；可加hops、edge_ids、edge_statuses、relation_kinds。原题和定义完整保模型、域、量词和约束。Main先核本对话/RUN中的实际原题；已有自主选题授权可从该范围的真实开放义务选题，只有会改变题意的关键条件不明才询问。没有相关既有成果时写`seed_ids:[]`，full packet以空objects/edges启动，原题、定义和障碍仍完整；不强塞无关旧对象，也不要求先登记原题才准研究。选择了具体edge_ids则须给真实相关seed，防止丢掉明确选择的证明分支。obstacle只接原题/定义/障碍，full另给按需登记成果；用户明确要求继承时照办并准确说明实际输入。packet不代表权限隔离。固定槽位不直接换profile；需要成果交现有full槽，用户明确改变输入实验则用明确新spec/RUN，保原packet。
+spec含problem_id、problem引用、definitions引用数组、obstacles引用数组、seed_ids；可加hops、edge_ids、edge_statuses、relation_kinds。原题和定义完整保模型、域、量词和约束。Main先核本对话/RUN中的实际原题；已有自主选题授权可从该范围的真实开放义务选题，只有会改变题意的关键条件不明才询问。没有相关既有成果时写`seed_ids:[]`，full packet以空objects/edges启动，原题、定义和障碍仍完整；不强塞无关旧对象，也不要求先登记原题才准研究。选择了具体edge_ids则须给真实相关seed，防止丢掉明确选择的证明分支。obstacle只接原题/定义/障碍，full另给按需登记成果；用户明确要求继承时照办并准确说明实际输入。packet不代表权限隔离。对照运行沿各槽的原 profile 派工和反馈。明确改变实验输入时建立新 spec/RUN。
 
 ```sh
 python work.py research search '精确数学关键词' --model '实际模型' --truth-status proved
 python work.py research show OBJECT-C --body
 python work.py research context OBJECT-C --hops 0
-python work.py research init RUN --spec research/problem-spec.json
-python work.py research save RUN --solver full-1 --profile full --note research/workspaces/RUN/full-1.md --next '继续具体未付不等式' --agent-id 实际平台ID
-python work.py research save RUN --solver full-1 --profile full --note research/workspaces/RUN/full-1.md --next '回应具体推导缺口' --state needs-feedback --feedback '具体疑点及已成立部分'
-python work.py research save RUN --solver full-1 --profile full --note research/workspaces/RUN/full-1.md --next '接续答复后的推导' --state working --ack-feedback
+python work.py research init RUN --spec research/problem-spec.json --mode open
+python work.py research save RUN --solver next-lemma --profile full --note research/workspaces/RUN/next-lemma.md --next '继续具体未付不等式' --agent-id 实际平台ID
+python work.py research save RUN --solver next-lemma --profile full --note research/workspaces/RUN/next-lemma.md --next '回应具体推导缺口' --state needs-feedback --feedback '具体疑点及已成立部分'
+python work.py research save RUN --solver next-lemma --profile full --note research/workspaces/RUN/next-lemma.md --next '接续答复后的推导' --state working --ack-feedback
 python work.py research resume RUN
 ```
 

@@ -72,7 +72,7 @@ python work.py research compute current-research-question --manifest workspaces/
 
 ## 当前云入口状态
 
-复审实际读取的默认分支为 `main`，未安装 `research-compute.yml`，所以手工 `workflow_dispatch` 尚未就绪。普通批计算采用 `rebuild/research-v2` 上的明确 push 请求，不需要修改默认分支。本轮恢复了通用请求工作流；部署本版后使用。代码存在、推送成功与真实计算完成分别确认；本次复审未启动真实云任务或 Codespaces。
+复审实际读取的默认分支为 `main`，未安装 `research-compute.yml`，所以手工 `workflow_dispatch` 尚未就绪。普通批计算采用 `rebuild/research-v2` 上的明确 push 请求，不需要修改默认分支。本轮恢复了通用请求工作流；部署本版后使用。代码存在、推送成功与真实计算完成分别确认。
 
 ```sh
 python work.py github workflow-status --ref rebuild/research-v2
@@ -81,6 +81,12 @@ python work.py github status
 
 `workflow-status` 读取两分支的实际文件状态；它不做付费资源探测或计算。若今后确需手工 dispatch，先让默认分支也有对应 workflow，再使用 `github dispatch`，随后仍需查实际 run 与 artifact。本仓库已移除旧工程回归 workflow，普通提交不自动运行旧演示或测试。
 
-Codespaces 仍保留 `github machines --ref ...`、`create-codespace --ref ... --machine ...` 和 `stop-codespace NAME`，供确实需要的交互工作；普通计算失败不自动新建云机。
+Codespaces 用于确实需要持续交互、特殊工具链或更大内存的数学任务。先用 `work.py github machines --ref ...` 查询真实机型，再用 `create-codespace --ref ... --machine ...` 创建。GitHub 返回 `Available` 后，用已认证的 `gh codespace ssh` 运行具体数学命令。`.devcontainer/devcontainer.json` 在提交 32575a0b 启用了官方 sshd feature。
+
+终端连接在本地先用 `ssh -G localhost` 检查客户端配置。本次 Work 环境的系统 SSH 配置出现所有者校验错误，用 `ssh -F /dev/null -G localhost` 已复核可独立加载 SSH。需要时可将 `-F /dev/null` 作为 SSH 参数传给 gh。记录远端 Git SHA、输入指纹、命令退出和实际输出。输出可以从终端读取，也可用 `gh codespace cp` 取文件，以真实回执为准。
+
+完成后用 `work.py github stop-codespace NAME` 请求停止，并读回实例状态。创建回执、终端计算完成和实际停机是三件事。只回收本次明确创建的临时实例。
+
+实际验收在远端 Git `f47b8ad6` 运行五尾 25 权有理证书。远端 4,096 个状态全部通过，两份输入 SHA 与本地一致，终端返回的数学 JSON 与本地相等。此次单独用 `gh codespace cp` 读取 `/tmp` 文件时，远端返回文件不存在。当前已验通终端执行与输出回传。需要跨连接保存输出时，可在工作区设置明确的输出路径并核对文件回执。
 
 依据：[GitHub workflow 语法](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax)、[实际执行上限](https://docs.github.com/en/actions/reference/limits)、[run API](https://docs.github.com/en/rest/actions/workflow-runs)、[artifact API](https://docs.github.com/en/rest/actions/artifacts)。账号当前可用额度、费用和实际 runner 状态以账号与任务现场为准，不从仓库写权限推断。

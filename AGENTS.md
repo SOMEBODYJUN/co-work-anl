@@ -13,7 +13,7 @@
 | 后续实际研究 | [Main提示词](prompts/research-runtime.md) | 按明确研究问题建立运行，原Solver持续接续 |
 | 已完成整理的必要追溯/修订 | [既有任务操作](research/CURATION_OPERATIONS.md) | 原curation-run及工作区，不重新启动旧阶段 |
 
-具体启动、任务、字段与阶段闭合见[阶段入口](research/PHASE3_READINESS.md)及[命令](research/IMPLEMENTATION.md)。维护程序或审查设计不自动启动全仓登记、构图或Solver，不替其他Boss认领数学任务。自由研究按现行Main词保留固定三个Solver槽位；登记和构图按实际可用并发持续补位。
+具体启动、任务、字段与阶段闭合见[阶段入口](research/PHASE3_READINESS.md)及[命令](research/IMPLEMENTATION.md)。维护程序或审查设计不自动启动全仓登记、构图或Solver，不替其他Boss认领数学任务。自由研究按现行Main词围绕实际数学义务派工，已有RUN按原计划恢复。登记和构图按实际可用并发持续补位。
 
 ## 协作与持续执行
 

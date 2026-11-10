@@ -20,3 +20,9 @@
 4. **研究消费。** Solver要用C时同时读取A、B、共同条件和这段论证；六人代入只得$10/33$。若目标为六人半覆盖，反馈应准确说明此接口还缺提高系数的论证，继续寻找有用桥接，而不能把“相连”报成目标已证。若B改变模型或背景，先复核该all边的适用性。
 
 Boss编号、公屏、共同分支、持续补位与频繁Git保存按本项目约定执行。这里不引入新服务、数据库或依赖。Pharos固定版本的[README](https://github.com/frenzymath/Pharos/blob/aa0b72e4a7211311a3156ef7d993cd3be9f57445/README.md)标注Preview、软件许可为Apache-2.0；本页为机制转述，未复制上游源码或提示词正文，已有vendored依赖的LICENSE/UPSTREAM继续保留。
+
+## 研究运行中实际复用的实现
+
+- **Noemesis。** 在固定版本运行真实引理的定向证据包和分段恢复，并从原入口重跑 ENS-lifting 有限域检查。46 个实例与 26,988 项乘子检查通过。它把当前研究状态、按需打开的原证和计算回执分开保存。我们分别沿用 `research resume/save`、`research context` 和 `research compute`，交接长度由当前数学义务决定。[实跑版本](https://github.com/kbr-/math-research/tree/25239211058ef718402a908b3272f01480c159c4)
+- **Ansatz。** 将真实的两人税、PAIR O 加强、原五尾证书和合成结论写入上游 FactGraph。检索找到了加强结论，正向可取合成所需的两个前提，反向可查旧引理的后继。我们的超边保留联合前提和替代证明。发现一条旧证明失效时，定向复核受影响的边，并检查其他仍成立的证明。[FactGraph 固定源码](https://github.com/uclanlp/continual-graph-memory/blob/23367c6568c344d9c4dbf59be3f39b39f5d54324/cgm/core/factgraph.py)
+- **Station。** 公开研究轨迹显示构造经共享结果档案被下一位研究者接到新参数族。借这种证据交接组织公屏。数学放在可直接取用的正文和证明，公屏发可复用结果、决定性障碍及影响别人的更正。[真实协作轨迹](https://arxiv.org/html/2608.23691v2)
