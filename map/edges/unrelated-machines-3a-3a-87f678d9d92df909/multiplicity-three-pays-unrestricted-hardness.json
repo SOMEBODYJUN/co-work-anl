@@ -1,0 +1,51 @@
+{
+  "edge_id": "um-87f678d9-multiplicity-three-pays-unrestricted-hardness",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-PRIVATE-TERNARY-RAINBOW-MULTIPLICITY-THRESHOLD-v2"
+  ],
+  "target_ids": [
+    "UM-PRIVATE-TERNARY-RAINBOW-BINARY-SUBTREE-NP-COMPLETE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "显式满三叉根树、增长同深叶、全局叶色重数≤3；见证保根、每个active点选两个原children，叶色互异。把受限实例原样视为允许任意重数的输入。",
+  "roles": {
+    "UM-PRIVATE-TERNARY-RAINBOW-MULTIPLICITY-THRESHOLD-v2": "给出每色最多三次的3SAT编译及该族实际调度阈值。",
+    "UM-PRIVATE-TERNARY-RAINBOW-BINARY-SUBTREE-NP-COMPLETE-v1": "接受同一显式输入及同一二叉彩虹判定谓词。"
+  },
+  "explanation": "v2的各底父私有三同色Dead、protected palette和fresh辅助色保证全局重数≤3；同一树与颜色经恒等输入包含进入不限制重数的v1域，YES/NO完全保持。NP证书记录每个active节点的两孩子并核选叶色单射。附带同一矩阵把每边父端1/3、子/色端1并加root pin；YES可到4/3，若峰<5/3则每active点必须输出至少两个child并由色机unit容量抽出彩虹见证，路径给NO上界5/3。",
+  "scope": "传入更窄编译族的NP困难性及同一5/4实际阈值；v1原作者的具体Rigid复制构件仍为单独证明。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/三叉彩虹困难与树Markov联合审查--审查.md",
+      "sha256": "d6300fbd1906ee421016eb3e5c6b9da7a05d0ca428512bc4af76ea27497c839e",
+      "section": "二、全局叶色重数 v2：2/3 的精确门槛"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三叉彩虹困难与树Markov联合审查--审查.md",
+      "sha256": "d6300fbd1906ee421016eb3e5c6b9da7a05d0ca428512bc4af76ea27497c839e",
+      "section": "一、三叉二叉彩虹子树 v1：完整对象与困难性范围"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三叉彩虹困难与树Markov联合审查--审查.md",
+      "sha256": "d6300fbd1906ee421016eb3e5c6b9da7a05d0ca428512bc4af76ea27497c839e",
+      "section": "NP 完全性和矩阵后果"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "核对两种版本都是全深度显式树，同一叶色容量；v1一般域包含v2编译输出，不要求v1的具体构件也保重数。",
+  "contribution": {
+    "result": "v1允许任意颜色重数的二叉彩虹判定继承v2的NP完全性，且v2输出子族沿用同一4/3对5/3的实际阈值。",
+    "remaining": "v1登记中具体的复制Rigid编译及其高度分析仍由v1原证明承担。"
+  },
+  "endpoint_pins": {
+    "UM-PRIVATE-TERNARY-RAINBOW-BINARY-SUBTREE-NP-COMPLETE-v1": "346fa515a6fff26a4cd7ecb65aee539c924ab759fa0e6fc119e5f9ca94176c09",
+    "UM-PRIVATE-TERNARY-RAINBOW-MULTIPLICITY-THRESHOLD-v2": "36edd7be0837f1018e2b3aa70dfb03b36a973050dca027b4f4ea8b59c104c4e0"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/三叉彩虹困难与树Markov联合审查--审查.md": "d6300fbd1906ee421016eb3e5c6b9da7a05d0ca428512bc4af76ea27497c839e"
+  },
+  "review_digest": "789331a78b24381f199b1ae83c3e1820c67b7c270dc9b0168954387b0ed91d16"
+}

@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-87f678d9-fixed-speed-slots-pay-linear-speed-rounding",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding"
+  ],
+  "target_ids": [
+    "M-b46680a97d184eb7b98147b36f84f2a0"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "变速端允许闭区间[l,u]的任意处理时间，费用按快慢端线性插值。给定截断后快/慢LP的可行分数点，机器分数负载≤T、费用≤C、支撑边上限t。",
+  "roles": {
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding": "固定处理时间的费用保持及逐机加性槽界。",
+    "M-b46680a97d184eb7b98147b36f84f2a0": "把选中边的有效平均点解码成合法速度，获得整个变速合同。"
+  },
+  "explanation": "删去l>t的端；其余慢端缩到û=min(t,u)，用原费用直线在û上取值ĉᵘ。令x=a+b；正支撑端的p=(la+ûb)/x、c=(cˡa+ĉᵘb)/x保留每任务单位质量及分数负载/费用。p∈[l,û]且线性性保证c是该速度的真实费用。对这个固定速度实例用ST得到一次完整指派，峰≤T+t、费≤C；实际以所选端的p执行即为变速调度。x=0端没有槽，x=1任务的机器也保留。",
+  "scope": "连续可选速度与线性单端费用；针对给定可行LP点的总位多项式构造。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+      "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+      "section": "1. 模型、两个阈值与准确主结论"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+      "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+      "section": "2. 有序槽与最小费用匹配：完整证明"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+      "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+      "section": "5. 线性时间—费用折衷的变速扩展"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "逐端验证有效时间/费用是合法凸组合，并核阈值剪枝发生在求LP前。",
+  "whole_result": "固定速度费用保持ST经逐端截断和平均合法速度的解码，给变速LP全部任务的费用≤C、makespan≤T+t舍入。",
+  "endpoint_pins": {
+    "M-b46680a97d184eb7b98147b36f84f2a0": "37159b82fd96e0833a790574281fdfd7a345acd132838a865c293f96361be7a1",
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding": "c12cff11f8d9d634441f752ebe101222ec0faba1d570a402caf2618f68edb356"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a"
+  },
+  "review_digest": "fe125275b5b60e8dd98cf3ede93cf844b71c0fd6a1c11f4628fc76fc406338d6"
+}
