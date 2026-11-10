@@ -1,0 +1,59 @@
+{
+  "edge_id": "boss6-r48-cagceb-me-to-eight-statistical-exchange-rows",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-229d7c0b44324c27b2755e659b46d235"
+  ],
+  "target_ids": [
+    "M-d8fc10d08eef43f28c22834187c8bac4"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "纯静态有限单位客户覆盖目录；六个带索引合法比较槽T_1…T_6真正达到OPT_6。actual样式主题A_i与旧回复B_i/C_i在此仅需合法，允许重复/空覆盖/同覆盖标签；无需策略或SPE。",
+  "roles": {
+    "M-229d7c0b44324c27b2755e659b46d235": "ME在r=6、空过去、J单槽且Y为空给六个private替换关系。",
+    "M-d8fc10d08eef43f28c22834187c8bac4": "把六槽求和关系按六倍统一缩放实例化为六actual行与B/C族两行，读入既有1905列编码。"
+  },
+  "explanation": "在ME取P=∅、r=6、当前S=F、J={j}、Y=∅。此时D(J)=P_j=T_j∖∪_(k≠j)T_k，e=|F∖O|。δ=G−H≥0，因为H的任一候选均由合法F加五个合法补全主题构成六槽，其覆盖不超过G=OPT_6；最大化这些候选后仍H≤G。所以|P_j∖F|=|F∖O|+δ+ζ_j≥|F∖O|。六j求和，P_j两两不交并集P为比较重数d=1的客户，得L(F)=|P|−|F∩P|−6|F∖O|≥0。\n六个actual样式查询F=A_(i+1)各用6L(F)，单客贡献6·1[d=1]−6a_i·1[d=1]−36a_i·1[d=0]；B族/C族分别对六个F求和（等于族平均的6倍），单客贡献6·1[d=1]−n_B·1[d=1]−6n_B·1[d=0]或n_C对应式。因此统一形式6·1[d=1]−r_F·1[d=1]−6r_F·1[d=0]，actual r_F=6a_i、族r_F=n_B/n_C，恰八行。\n该系数只读actual位和hist的d/n_B/n_C，与任何R/Z隐藏态无关，故同一actual/hist的所有R/Z状态系数相同；现有1905列实现只给hist客户列上述系数，K及joint-reply/overlap辅助列均为0。已逐行读原cross_source_graph.py中--optimum的八query循环：dd=c['d']；actual r=6*a[query]，B/C r=Σwords坐标；return Fraction(6*(dd==1)-r*(dd==1)-6*r*(dd==0))。其add()仅写hids，k默认0，故精确嵌入不依其它982行或LP点可行性。成熟audit-report的8×1539形式基给12312系数比较，与同一代数公式对应；本轮不重跑该审计或1905列大矩阵。\n比较元组最优性不可省，P不是全目录私有块；d≥2系数0。这里没有重授一般EX身份，只完成已登记八行、缩放与编码方法的特化。",
+  "scope": "完整登记的八行实例化/统计系数/两类六倍缩放及1905列仿射读入；不认证旧4927或1269点全部行，不产生完整SPE或六人half。",
+  "whole_result": "ME单槽特化、六比较槽求和与已读原程序的精确坐标映射，完整推出M-d8fc登记的六actual加B/C两族八行、统一统计系数、R/Z态不变性及辅助列为0的1905列实现。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/净退款根账本的版本订正与静态组件边界--资源.md",
+      "sha256": "61e1aadca4abac942038f9d065493d7cc6567dddd3f8fc51e582c22f6d806a9d",
+      "section": "多槽交换ME/MM的全部静态内容"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/旧回复跨实际源的共同报价与最优单换--引理.md",
+      "sha256": "60f883df9c000fec84c1b9ebd38db3942ffa1ff744244a1dd8a66e4485b5c786"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/旧回复跨实际源的共同报价图程序--程序.md",
+      "sha256": "ecd0a33bf284000c5d4b716fc64e352e42d5659d13772c1a4567d01ae1ce5b2c",
+      "section": "8条最优单换的条件与缩放"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/cross-source-graph-program/original/cross_source_graph.py",
+      "sha256": "295b4f11935a8ca241cef50541b30078000f8e67bea4f2301a2032914e3cc249"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/cross-source-graph-program/audit-report.json",
+      "sha256": "ace347a6882d93343dd9294df5d915e939b1452db74bafddebd309f3886c39cb"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本轮fresh正式worker实际全文读取本包17核心及8只读端点；按同一客户总体、原完整有序历史策略、精确量词和真实偏离重构。承重解析推导在explanation完整给出，成熟有限证书只按明确合同复用，0科学程序重跑。",
+  "endpoint_pins": {
+    "M-229d7c0b44324c27b2755e659b46d235": "113e3dec00a9eeb417e46803898f320de465427817fffd6c8eed3dbb6bb5158c",
+    "M-d8fc10d08eef43f28c22834187c8bac4": "285b8acfe196b2956b4000b9804d150319efbe59060ce10c8b4e8e85d8c4dcbf"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/净退款根账本的版本订正与静态组件边界--资源.md": "61e1aadca4abac942038f9d065493d7cc6567dddd3f8fc51e582c22f6d806a9d",
+    "archives/customer-attraction/state/引理/旧回复跨实际源的共同报价与最优单换--引理.md": "60f883df9c000fec84c1b9ebd38db3942ffa1ff744244a1dd8a66e4485b5c786",
+    "archives/customer-attraction/state/程序/旧回复跨实际源的共同报价图程序--程序.md": "ecd0a33bf284000c5d4b716fc64e352e42d5659d13772c1a4567d01ae1ce5b2c",
+    "archives/customer-attraction/tools/evidence/cross-source-graph-program/original/cross_source_graph.py": "295b4f11935a8ca241cef50541b30078000f8e67bea4f2301a2032914e3cc249",
+    "archives/customer-attraction/tools/evidence/cross-source-graph-program/audit-report.json": "ace347a6882d93343dd9294df5d915e939b1452db74bafddebd309f3886c39cb"
+  },
+  "review_digest": "74a51f8ad59ecc9bf5d82ff929d47bb36a4e635da0b786ad52ac1a9ee769ee49"
+}

@@ -1,0 +1,47 @@
+{
+  "edge_id": "boss6-r48-cagceb-common-static-q-full-procurement",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/true-last-reply-menu-common-static-slot-domination"
+  ],
+  "target_ids": [
+    "customer-attraction/true-penultimate-menu-nonuniform-fractional-procurement"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一合法有序历史h、整数负载b≥0、恰剩两位、同一整张真实末位BR菜单D(T)，实际当前A任意且B=D(A)；c(T)=U_b(T,D(T))、v=c(A)、w=U_b(B,A)，W为含过去玩家的完整actual叶覆盖。",
+  "roles": {
+    "customer-attraction/true-last-reply-menu-common-static-slot-domination": "有限minimax给一份支持在合法真实回复标签上的共同Q，所有主题同时封顶。",
+    "customer-attraction/true-penultimate-menu-nonuniform-fractional-procurement": "得到完整登记的非均匀采购(P)以及全部q≥0、η≥0、z≥0的显示(WP)。"
+  },
+  "explanation": "先一次固定源所保证的Q，ν_x=E_Q t_D(x)，t_D(x)=1/(b_x+1+1_D(x))，有Σ_(x∈T)ν_x≤c(T)对每T同时成立。任取非负实向量q，置y_x^q=min(q_x,ν_x)，则0≤y^q≤q且全部主题约束仍成立；Q不依q或η。\n逐客户写a=1_A、d=1_D、α=1/(b+1)、γ=1/(b+2)、s=η/(b+1+a)，θ=min(α,γ+s)。d=0时t_D=α≥θ；d=1时由正部1-Lipschitz及θ−γ≤s得到(q−t_D)_+≤ηd/(b+1+a)+(q−θ)_+。凸性给(q−ν)_+≤E_Q(q−t_D)_+。求和后实际末位B在h+A对每个合法D最佳，故\nΣ_x(q_x−y_x^q)≤ηE_QU_b(D,A)+Σ_x(q_x−θ_η(x))_+≤ηw+Σ_x(q_x−θ_η(x))_+。\n该同一Q的逐点推导同时适用全部q≥0、η≥0。对任意z≥0，μ_x=Σ_(T∋x)z_T，由主题约束C(z)≥Σμ_xy_x^q；又q min(1,μ)−μy≤q−y（μ≤1与μ≥1直接两格），即F_q(z)−C(z)≤Σ(q−y^q)，完整得到目标所有(WP)量词。\n取q=1、η=1/2，ν≤1故y^1=ν；合法整数b给1−θ=b/(b+1)（b≥1），b=0且a=1时为1/4，其余为0。因此Σ(1−ν)≤R=B_0+w/2+F_A/4。令L=w−Σ_A1/(b+2)≥0，E=Σ_(A∩B,b≥2)(b−1)/[2(b+1)(b+2)]。对e=1_B，客户余项[W_x−v_x+E_x−L_x/2]−[b/(b+1)+w_x/2+a1_(b=0)/4]在b=0四种(a,e)都为0，在b≥1的00,01,10,11依次为1/(b+1),0,1/[2(b+2)],0，全部非负。这里只用总L≥0，不误称逐客L_x≥0。故R≤W−v+E−L/2≤W−v+E；E≤v/2逐客成立，得到(P)的全部中间/末界。\nq=0、η=0、z总权为任意非负实数、零客户、空主题、重复标签和弱平局均已被同一公式涵盖。不可覆盖客户在合法过去b=0、ν=1；q>1的clip删除q−1可能大于自由LP最优删除0，因此没有LP最优性结论。",
+  "scope": "完整登记目标P+allWP；一份Q同时服务本窗口全部q/η/T/z。既不宣称实现自由价格LP最优值，也不提供跨历史/孩子/原根共同Q和共同钱包；多后继团队不可作为末位单个合法偏离主题。",
+  "whole_result": "同一真实末位菜单的共同静态Q推出全部显示WP，q=1,η=1/2再经四格非负余项推出F−C≤R≤W−v+E−L/2≤W−v+E≤W−v/2，完整覆盖目标登记陈述和共同可行价格存在性。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/真实末位回复的共同静态单槽支配--引理.md",
+      "sha256": "8c117d912dbfc639b4884bde9a08ae05511feaf04c39628c90ba873dfb7e3cee"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/真实倒二菜单的非均匀分数采购--定理.md",
+      "sha256": "5a37e12292562c8e0c28a99576a12e376c44cc3dce9d6235aac58f7f387547ab"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本轮fresh正式worker实际全文读取本包17核心及8只读端点；按同一客户总体、原完整有序历史策略、精确量词和真实偏离重构。承重解析推导在explanation完整给出，成熟有限证书只按明确合同复用，0科学程序重跑。",
+  "endpoint_pins": {
+    "customer-attraction/true-last-reply-menu-common-static-slot-domination": "2d62a82191eb2d5a068d88c5f8941baa7cd501f49f39b6d7c4dbda9d543a4a5e",
+    "customer-attraction/true-penultimate-menu-nonuniform-fractional-procurement": "d708f5e8e7241d5ab43210f22d77cadbb024af162adf0096e23a7ecabc5b312d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/真实末位回复的共同静态单槽支配--引理.md": "8c117d912dbfc639b4884bde9a08ae05511feaf04c39628c90ba873dfb7e3cee",
+    "archives/customer-attraction/state/定理/真实倒二菜单的非均匀分数采购--定理.md": "5a37e12292562c8e0c28a99576a12e376c44cc3dce9d6235aac58f7f387547ab",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "25ce28ee8075694983f2c53d7d4978a37d23a70a756fe76a172ed917b9bfc127"
+}

@@ -1,0 +1,66 @@
+{
+  "edge_id": "boss6-r48-cagceb-bank-exact-integer-security-root-ratio",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/cartesian-bank-individual-fractional-floor-counterfamily",
+    "M-64d638d96fb64c1fa45fd17638164363",
+    "M-8dcfbe91a71b4d3a870f5d2cd0bced19"
+  ],
+  "target_ids": [
+    "M-1f3f8c7dedc245938509d07af7b2ec05"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "每个整数m≥2，银行源的同一实例A_m=[m]×[m−1]（m经济单客户、m−1个各含两单位客户的不交银行块）及其指定BASE/PUNISH/EXIT完整纯SPE σ_m。原真实人数为m；静态下标r≥1只表示r−1个查询前固定整数竞争槽，过去为零。",
+  "roles": {
+    "customer-attraction/cartesian-bank-individual-fractional-floor-counterfamily": "提供合法全Cartesian单位客户实例、每m完整控制器及同一σ_m的u_1=m/(m−1)、W=2m、OPT=3m−2。",
+    "M-64d638d96fb64c1fa45fd17638164363": "提供每个n≥1、s≥0的整数平衡值F_n(s)，均匀查询下界及同一循环平移背景上界。",
+    "M-8dcfbe91a71b4d3a870f5d2cd0bced19": "提供不交客户、完整Cartesian目录、同槽数下真正静态值双向可加性，允许相关查询/背景。",
+    "M-1f3f8c7dedc245938509d07af7b2ec05": "得到指定族的精确标准安全值/根比值及全人数常数障碍；一般原根半安全目标仍open。"
+  },
+  "explanation": "写s=r−1，F_n(s)=((n−t)/(q+1)+t/(q+2))/n，s=nq+t，0≤t<n。任意固定联合查询p的经济与银行边际为α,β，面对同一整数背景计数N,K，其收益只读Σ_aα_a/(1+N_a)+2Σ_bβ_b/(1+K_b)，没有坐标相关项。任意两非负整数计数向量ΣN=ΣK=s，分别排成长度s的坐标列表并逐槽配对；全部Cartesian对合法，故同一元组同时实现两个向量。任意边际查询也可由product实现。因此固定p的最小化与外层优化均按两组件分离。\nM64的逐整数身份g(h)−[1/(q+1)−(h−q)/((q+1)(q+2))]=(h−q)(h−q−1)/[(h+1)(q+1)(q+2)]≥0，给同一均匀查询对每个纯背景至少F_n(s)。反向固定t个q+1、其余q的平衡模板并均匀循环平移，给一份查询无关Q使每纯查询都恰F_n(s)。分别抽两组件模板平移再逐槽配对是一份合法联合Q，所有(a,b)同时被封顶；不同竞争槽不需独立。银行系数2只是两名单位客户重复相同贡献，不是加权玩家。与M8dc双向可加性一致，故v_r(A_m,0)=F_m(r−1)+2F_(m−1)(r−1)。n=1、s=0、m=2均合法。\n标准r=m时经济一空其余一次，银行各一次；F_m(m−1)=(m+1)/(2m)，2F_(m−1)(m−1)=1，故v_m=(3m+1)/(2m)，不同于纯背景θ_m=2，也不同于自由分数t_m=1+m/(2m−1)。银行控制器在全部有序历史可信：EXIT已有银行重复，余位均能选全新两坐标得3；PUNISH目标固定为过去的第一次fresh偏离银行，非末位得3、末位复制旧目标得2；BASE中间遵从2+1/(m−1)>2，任意非规定联合动作所得≤2，根每个行动重锚同一BASE规则后均m/(m−1)。因此这是同一预先固定完整σ_m的真实根收益。\n于是ρ_m=u_1/v_m=2m²/[(m−1)(3m+1)]=2/3+(4m+2)/[3(m−1)(3m+1)]>2/3，且ρ_m→2/3。对任意实c>2/3，取整数m>1+1/(c−2/3)，由0<ρ_m−2/3<1/(m−1)得u_1<c v_m，故全人数全实例每份完整SPE的普遍常数c>2/3不可成立。指定族严格支付根half：u_1−v_m/2=(m+1)²/[4m(m−1)]>0；还W−m v_m=(m−1)/2>0、2W−OPT=m+2>0。恰m=6只得v_6=19/12、u_1=6/5、ρ_6=72/95，不能将变人数极限说成恰六人的2/3障碍。\n一般r公式是已有组件的直接组合，不另造公式对象。extra r=m+1的精确v_(m+1)=3/2−1/[3(m−1)]已完整出现在E7正文，本边不认作新extra结果，也不重复旧仅用v_m≤2的bank半安全边。",
+  "scope": "三个已证源的一条ALL，新增精确整数标准值、同时对全部查询的统一原/对偶证书和真实指定根比值常数障碍；只为现有root弱目标贡献，不反驳该目标。",
+  "contribution": {
+    "result": "对每m≥2的指定银行实例/完整σ_m，v_m=(3m+1)/(2m)，u_1/v_m=2m²/[(m−1)(3m+1)]>2/3且趋2/3，严格满足u_1>v_m/2；这精确排除全人数普遍c>2/3。固定六人本例只给72/95界。",
+    "remaining": "全部其它目录、全部完整纯SPE（包括本银行实例的其它SPE）的一般u_1≥v_m/2仍open；本族不证明普遍2/3可行、不反驳一般half或恰六人half，也不支付PF/强聚合/弱聚合的一般义务。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/笛卡尔银行目录的逐人分数门槛反族--反例.md",
+      "sha256": "46c7a8df14fb3dd858e4fc827e2de7f000966d49ac4cd9ef7bb2b05777957a80"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/不交单客户安全值的独立背景取等分类--定理.md",
+      "sha256": "1f6b837ea0f3b5ec05714d74bbaabecbdfffc1c27f2a2ecc689930fcf5196ef5"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R-3d6f连续安全对数势分离与笛卡尔耦合--审查.md",
+      "sha256": "bc34f8a5e9ba464313af5cd483297ab817f6b49561627b1d8d38100b85ec2bf2"
+    },
+    {
+      "path": "research/registration/evidence/register-lead-recovered-evidence-01/cartesian_catalog_coupling.md",
+      "sha256": "32d0e918561b81ee7fd0be3cb7f69832d5911fccda672ad91c798e398cccfa44"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/固定完整策略全历史地板的强安全付款候选--候选.md",
+      "sha256": "ed26152462b998785ba42e70272bd0aa04ab38911574e03f1c512d6841341eae"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本轮fresh正式worker实际全文读取本包17核心及8只读端点；按同一客户总体、原完整有序历史策略、精确量词和真实偏离重构。承重解析推导在explanation完整给出，成熟有限证书只按明确合同复用，0科学程序重跑。",
+  "endpoint_pins": {
+    "M-1f3f8c7dedc245938509d07af7b2ec05": "e5e90c0114cab8741d02244c8d8b392c9471fe08ec8d445b7adfa7892bbd0d19",
+    "M-64d638d96fb64c1fa45fd17638164363": "c4b90c219b5d6a430913be673c32d668fbec8ca0bfd41a91eabfaa08d875550d",
+    "M-8dcfbe91a71b4d3a870f5d2cd0bced19": "4fc89dbbf69648bf1e5b9e08ddbad9d095b70894f8a7862e02435e26ec932c13",
+    "customer-attraction/cartesian-bank-individual-fractional-floor-counterfamily": "0130f938c010a5a8b941ea5d24f6932c1075fdf5778124bbbf57cc62184b3be4"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/笛卡尔银行目录的逐人分数门槛反族--反例.md": "46c7a8df14fb3dd858e4fc827e2de7f000966d49ac4cd9ef7bb2b05777957a80",
+    "archives/customer-attraction/state/定理/不交单客户安全值的独立背景取等分类--定理.md": "1f6b837ea0f3b5ec05714d74bbaabecbdfffc1c27f2a2ecc689930fcf5196ef5",
+    "archives/customer-attraction/state/审查/R-3d6f连续安全对数势分离与笛卡尔耦合--审查.md": "bc34f8a5e9ba464313af5cd483297ab817f6b49561627b1d8d38100b85ec2bf2",
+    "research/registration/evidence/register-lead-recovered-evidence-01/cartesian_catalog_coupling.md": "32d0e918561b81ee7fd0be3cb7f69832d5911fccda672ad91c798e398cccfa44",
+    "archives/customer-attraction/state/候选/固定完整策略全历史地板的强安全付款候选--候选.md": "ed26152462b998785ba42e70272bd0aa04ab38911574e03f1c512d6841341eae"
+  },
+  "review_digest": "b79762251aee27fd75e33742e046824f15afa6f947c0def9c031d5e74c1558a6"
+}
