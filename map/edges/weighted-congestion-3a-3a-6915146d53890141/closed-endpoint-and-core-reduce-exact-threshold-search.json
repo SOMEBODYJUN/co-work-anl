@@ -1,0 +1,53 @@
+{
+  "edge_id": "wc-closed-endpoint-and-core-reduce-exact-threshold-search",
+  "kind": "implies",
+  "source_ids": [
+    "WC-UNIVERSAL-THRESHOLD-ENDPOINT-v1",
+    "WC-ANTICHAIN-CORE-NORMAL-FORM-v1"
+  ],
+  "target_ids": [
+    "weighted-congestion/problem"
+  ],
+  "conditions": "全类G_d与问题正文一致，d固定；α-PNE含全部真实偏离且等号稳定。规范核心子类允许任意有限规模及正整数权、单位x^k、每人至少两非空反链动作且总交空。",
+  "roles": {
+    "WC-UNIVERSAL-THRESHOLD-ENDPOINT-v1": "给全类可行倍率闭射线及a_*(d)=sup_Gβ(G)的准确端点。",
+    "WC-ANTICHAIN-CORE-NORMAL-FORM-v1": "对每个固定实α保严格反例存在的核心规范形。",
+    "weighted-congestion/problem": "获得有限d精确阈值研究可合法限制的反例搜索域与端点解释。"
+  },
+  "explanation": "令K_d为上述整数规范核心子类，b=sup_{H∈K_d}β(H)，若该类为空则按倍率域取b=1。子类包含给b≤a_*(d)。若b<a_*，选b≤α<a_*；闭端点语义给全类无α-PNE实例，核心规范形给K_d内无α-PNE实例，于是β(H)>α≥b，矛盾。故b=a_*。反过来，对任意α≥b，每个核心有α-PNE；原游戏的α无关剥离若输出精确PNE则已足，否则同一lift提升核心α-PNE。每实例能达到自身β不使全类sup被某个有限核心取得，也不保原实例β或人数。",
+  "contribution": {
+    "result": "每个固定d的精确全类阈值a_*(d)，可等价地以整数单位单项式、非空空交反链核心的实例端点上确界刻画；普遍可行倍率仍为[a_*(d),∞)，各游戏分别选择状态。",
+    "remaining": "没有给出精确有限d数值、d−a_*(d)最佳加性缺口、实现sup的有限核心、统一规模截止或高效构造。现有近d下界和三角势d上界是别的独立证明，不能由规范形替代。"
+  },
+  "scope": "只支付原题精确阈值研究的规范形与闭端点部分，不宣称解出原题。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/普遍近似均衡阈值的闭端点--定理.md",
+      "sha256": "6547fc23e128521343486ede7be0e7b0268b531229ccd0059783735486940e64"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/必选背景消除的空交反链核心--定理.md",
+      "sha256": "e36a3e46c9f9a98e534f3b84b31d78682546b8623d2e2d6dbb781068e2fb04bc"
+    },
+    {
+      "path": "archives/weighted-congestion/问题--问题.md",
+      "sha256": "4fb68411221f0771a1a50b01e25cdbf67e75479da70d9064a14e2b0d823d0173"
+    }
+  ],
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss2",
+  "review_note": "实读四核心原模型和完整证明、有限择证审查、FR22及相关冻结Claim证据，核固定实倍率、全部严格状态余量、提升方向与阈值量词；不把存在归约升级为有限截止。",
+  "endpoint_pins": {
+    "WC-ANTICHAIN-CORE-NORMAL-FORM-v1": "cdff3040d5c54e59220feb37385c6f27e5fbc5ee8379c1799798f9af98716f37",
+    "WC-UNIVERSAL-THRESHOLD-ENDPOINT-v1": "ea04f37d095260b01d1e89e38dbfa6bf2f3f32aa8ef10b06fac5da72fa024094",
+    "weighted-congestion/problem": "d82a506fb10eb2c85032604b84b16c950d301a730c3ff35d8a756f7a38f080f0"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/普遍近似均衡阈值的闭端点--定理.md": "6547fc23e128521343486ede7be0e7b0268b531229ccd0059783735486940e64",
+    "archives/weighted-congestion/state/定理/必选背景消除的空交反链核心--定理.md": "e36a3e46c9f9a98e534f3b84b31d78682546b8623d2e2d6dbb781068e2fb04bc",
+    "archives/weighted-congestion/问题--问题.md": "4fb68411221f0771a1a50b01e25cdbf67e75479da70d9064a14e2b0d823d0173"
+  },
+  "review_digest": "995d6ec57909d17738e9100c977aa4d571113a09c95b94f18cb19454abc892b7"
+}

@@ -1,0 +1,45 @@
+{
+  "edge_id": "wc-integer-normalization-pays-core-counterexample-corollary",
+  "kind": "implies",
+  "source_ids": [
+    "WC-INTEGER-MONOMIAL-COUNTEREXAMPLE-v1"
+  ],
+  "target_ids": [
+    "WC-ANTICHAIN-CORE-NORMAL-FORM-v1"
+  ],
+  "conditions": "逐个固定整数d≥0及实α≥1；原模型允许零费/空策略，费用非负系数次数≤d，原游戏状态有限且无α-PNE。整数化必须先于核心化，核心化后再展开平移的整数费用。",
+  "roles": {
+    "WC-INTEGER-MONOMIAL-COUNTEREXAMPLE-v1": "把每态严格余量同时有理化，整数清分母和真实复制给固定α的整数权、单位单项式、非空动作反例。",
+    "WC-ANTICHAIN-CORE-NORMAL-FORM-v1": "用包含极小动作、逐玩家必选背景和固定lift剥去固定者；所得反例可再复制回单位单项式并保持空交反链。"
+  },
+  "explanation": "由I先得整数规范反例Q。令A_i为其包含极小动作，F_i为交，B_e为全部玩家的必选权。保留至少两个极小动作的玩家J，删掉各F_i并取c′_e(x)=c_e(B_e+x)。若J空则原Q有显式精确PNE，矛盾。对保留玩家，原与核心成本差为同一非负K_i(u_−i)，故核心α-PNE经补回F_i提升为原α-PNE；所以核心也无α-PNE。此时权和B_e整数，(B_e+x)^k所有系数为非负整数，且非零资源块含最高项。逐系数复制为互不交非空单位单项式块，完整保全部状态/真实偏离成本和策略非空、包含反链及空总交。反向是规范核心子类包含在全类。全程是先整数化、再剥核心、最后复制，不能假定一般有理扰动保空交结构。",
+  "contribution": {
+    "result": "对每个固定(d,α)，全类严格无α-PNE反例存在，当且仅当整数正权、单位x^k资源及每人至少两非空空交反链动作的核心反例存在。",
+    "remaining": "目标另含对任意游戏、不依α的有限变换及同一个lift对所有α≥1的普遍提升合同；这些由核心正文独立的构造与非负K_i证明承担，此边只交整数严格反例推论。"
+  },
+  "scope": "固定倍率反例存在归约，可删玩家；不反向投影全部近似均衡、不保实例最佳倍率或规模。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/严格反例的整数单位单项式规范形--定理.md",
+      "sha256": "a09eb81e40c4fcd8c47ee38fa034fd4ab9001e4f39acf30eab3573e83c2e82f0"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/必选背景消除的空交反链核心--定理.md",
+      "sha256": "e36a3e46c9f9a98e534f3b84b31d78682546b8623d2e2d6dbb781068e2fb04bc"
+    }
+  ],
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss2",
+  "review_note": "实读四核心原模型和完整证明、有限择证审查、FR22及相关冻结Claim证据，核固定实倍率、全部严格状态余量、提升方向与阈值量词；不把存在归约升级为有限截止。",
+  "endpoint_pins": {
+    "WC-ANTICHAIN-CORE-NORMAL-FORM-v1": "cdff3040d5c54e59220feb37385c6f27e5fbc5ee8379c1799798f9af98716f37",
+    "WC-INTEGER-MONOMIAL-COUNTEREXAMPLE-v1": "ec09b5190f0ad4f01c9260dcd4e6d8dde7c62d538ed8a533cd76e6744336cfd7"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/严格反例的整数单位单项式规范形--定理.md": "a09eb81e40c4fcd8c47ee38fa034fd4ab9001e4f39acf30eab3573e83c2e82f0",
+    "archives/weighted-congestion/state/定理/必选背景消除的空交反链核心--定理.md": "e36a3e46c9f9a98e534f3b84b31d78682546b8623d2e2d6dbb781068e2fb04bc"
+  },
+  "review_digest": "6302f2469998e20873159ae09e9b7b63264bbf2e2aaf6d33d3c66a7b4d96e7b4"
+}
