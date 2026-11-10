@@ -1,0 +1,40 @@
+{
+  "edge_id": "um-single-pinned-tree-to-palette-actual-opt-contribution",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SINGLE-PINNED-TREE-MULTIPLICITY-EXACT-CONFIGURATION-GAP-v1"
+  ],
+  "target_ids": [
+    "UM-TERNARY-PALETTE-TENSOR-AMPLIFICATION-OBSTRUCTION-v2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "对目标中重编的完整树U，保持单root unit pin、每internal独立机、树边父端1/d/真实child或叶色端1、所有原任务完整执行；d=3^k且高度H≥1。每个有限U以实际最大叶色重数为μ即可满足源的重数域，不要求任何统一小μ。",
+  "roles": {
+    "UM-SINGLE-PINNED-TREE-MULTIPLICITY-EXACT-CONFIGURATION-GAP-v1": "其S0为任意完整单pin树提供实际OPT=2−q/d以及双向抽树/全任务回填。",
+    "UM-TERNARY-PALETTE-TENSOR-AMPLIFICATION-OBSTRUCTION-v2": "把对齐张量或纯收缩得到的新完整树代为U；另证明tuple调色板对q的限制。"
+  },
+  "contribution": {
+    "result": "目标的张量树U=T^[k]及合法纯k层收缩树均满足OPT(P(U))=2−q(U)/3^k；任意同域树有root-path全任务调度C≤2−3^(−k)。因此一旦目标的独立组合论证给q(T^[k])=2^k，实际YES值恰2−(2/3)^k，任意同域NO的OPT至多2−3^(−k)。",
+    "remaining": "目标整条还需每末层父节点≤两色、tuple完全相等编码产生q≤2^k、原binary witness的逐坐标积给达到、G_k严格递减及纯收缩q≤2·3^(k−1)<3^k−1；并须保留固定k展开复杂度/常量YES与高度规范。源不单独推出这些目标专有结论。"
+  },
+  "explanation": "源S0从满r叉rainbow树回填：见证边下送，其余边父置，active机负载1+(d−r)/d，inactive机1、颜色机≤1。反向完整C<2调度由root pin激活，任一active机若下送t件则负载1+(d−t)/d≤C，故至少ceil(d(2−C))件真实下送；递归选此数目，到叶后unit资源不能双占，从而q≥ceil(d(2−C))。这给任意U的精确恒等式而非仅特定子树算法。目标对齐积完整d=3^k叉且仍高h≥1；k|h的纯收缩高h/k≥1，重编P(U)也满足同一物理合同。因此代入即可转化q界并取q≥1的路径上界。不声称旧物理jobs逐项保值，也不把全树重数≤μ与局部末层两色混同。目标两篇旧审查的1+t/d变量排印已由当前登记objections及源S0的1+(d−t)/d校正口径处理。",
+  "scope": "完整单pin树的真实调度值桥；不外推共享内部机、DAG、多root/state或所有张量操作。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/单强制根树精确配置间隙--定理.md",
+      "sha256": "2fc20d220e85740eaebe9ff656fc6a03cc97c58b019916317b0a141e81b0a536"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三叉调色板张量v1常量分支与高度修正--审查.md",
+      "sha256": "279406f12961905234ef79eb2ee416ac7406fe2afb60fa29e6a8d41b0b66a322"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三叉彩虹困难与树Markov联合审查--审查.md",
+      "sha256": "d6300fbd1906ee421016eb3e5c6b9da7a05d0ca428512bc4af76ea27497c839e"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "完整实读本包该组核心的全部登记body/evidence，并完整实读本边新增只读端点全部登记body/evidence。逐项核对变量、任务身份、域和量词；本边作用范围由whole_result或contribution明确限定。待Boss完成read-add及输入改版后统一绑定，不以草稿代替队列交付。"
+}

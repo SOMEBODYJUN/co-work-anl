@@ -1,0 +1,40 @@
+{
+  "edge_id": "um-raw-k2-to-fixed-row-uniform-opt-and-localizer-contribution",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-DILUTED-SHARED-TERMINAL-RAW-K2-GAP-v1"
+  ],
+  "target_ids": [
+    "UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定整数d≥2、k≥d，s=d−1，L=2k²；沿用相同U/B/Z端点矩阵与H、Qold法则，但允许目标构造自己的M。只传递本边contribution，不把两对象的指定M、背景法则或证书等同。",
+  "roles": {
+    "UM-DILUTED-SHARED-TERMINAL-RAW-K2-GAP-v1": "提供与组件数M无关的完整实际OPT证明，以及Qold平方估计、H负项界和跨组件条件方差分解。",
+    "UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1": "复用上述步骤，另以Rfill和有限差分交易构造固定d的整行CONFIG。"
+  },
+  "contribution": {
+    "result": "相同U/B/Z矩阵对任意正组件数M的真实OPT=2−floor(sqrt(k))/k。对row目标T=1+s/k≥T0，Qnew=(Qold+Rfill)/2且Rfill负载≤T时，任意组件内affine q的Qnew正贡献至少||c||²/(60Lk⁴)，H负贡献至少−2||c||²；故M−1≥120Lk⁴时，全输入affine负载localizer非负。",
+    "remaining": "目标整条还需Rfill的具体合法生成、有限差分系数bS、全部degree≤d同机矩匹配与负质量吸收，以及固定d的有理生成和缩放趋二证明。此边不单独推出这些步骤，也不推出目标指定M/Qnew证书等于raw证书。"
+  },
+  "explanation": "raw正文第1节的真实OPT下界只使用selector所在组件：峰C<2时至少r=k−floor(k(C−1))枚f离开U，进入不同B，每个B又至少输出r枚unit e，故r²≤k；上界选floor(sqrt(k))枚f及同数e，其他组件全home。该推导未用M的数值。raw第4节给E_Qold q²≥||c||²/(30Lk³)和E_H[(T0−loadB)q²]≥−2||c||²。在row目标T≥T0，Qold slack≥1/k；Qnew至少有一半Qold，Rfill逐点slack≥0，故E_Qnew[(T−loadB)q²]≥||c||²/(60Lk⁴)。H中(T−T0)q²非负，沿用−2下界。以a=1/M混合得((1−a)/(60Lk⁴)−2a)||c||²≥0。条件于全局selector后其他组件独立，均值吸收入任意截距，条件方差乘正平均slack，所以同一估计适用于全部全输入affine q。row目标正文恰使用这条链；它仍需自己的subset交易完成整条定理。d=2时新M与Qnew也不同，不能标whole_result或equivalent_to。",
+  "scope": "固定d row-degree对象的真实OPT与affine-localizer证明步骤；不含higher-q、joint CONFIG-selector M2、跨行事件或variable-d统一复杂度。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/构造/稀释共享终端raw-K2锐二倍间隙--构造.md",
+      "sha256": "29c2f3957692a22a2e7172eb3111cbf19263b6053726e738d0532a2caeb1c631"
+    },
+    {
+      "path": "archives/unrelated-machines/state/构造/稀释共享终端row-degree固定阶间隙--构造.md",
+      "sha256": "2eb9b960a562fbe575bf20d09f29addf99e3129436916a4ae606ce3f8992e80a"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/稀释共享终端fixed-d全行CONFIG五源读后--审查.md",
+      "sha256": "1cfdbab9c444721c7cc023672111d23871e8ef6b0dbf1337045f7b4673df8c9b"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "完整实读两核心正文及其全部登记body/evidence范围；逐步核对M无关OPT、T≥T0的q²单调增量、Qnew半背景slack与全输入条件方差论证。明确只交局部contribution，未把d=2视为指定raw证书的整条特化。"
+}

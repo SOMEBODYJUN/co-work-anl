@@ -1,0 +1,37 @@
+{
+  "edge_id": "um-fixed-sink-threshold-to-unknown-opt-promise-three-halves",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1"
+  ],
+  "target_ids": [
+    "UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定K≥1、给定home/sink分区及唯一home互不交私有组，全部finite时间为非负二进制有理；增加目标本身明示的promise：每条有限宏边p>OPT/2。该promise不需要免费验证，不能在一般输入删除。",
+  "roles": {
+    "UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1": "给每个满足宏边>T/2的有理目标T提供总位多项式单侧子程序：OPT≤T必成功、每次成功输出真实Cmax≤3T/2。",
+    "UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1": "用含OPT宏边promise选择全程合法的有限上界，按分母网格作单侧二分以去掉T输入。"
+  },
+  "whole_result": "在上述目标promise和固定K下，源的给定T算法经O(log(U+1))次合法查询，构成一个不输入OPT或T的确定性总位多项式算法；输出覆盖全部原任务的实际调度Cmax≤3OPT/2。方向为给定阈值单侧保证⇒含OPT额外promise下的未知OPT近似；无需接受集合单调。",
+  "explanation": "先逐任务检测零端，全部有零端则OPT=0并输出零调度。否则OPT>0。取所有finite时间分母的乘积D，位长为输入分母位长之和，所有实际负载在D^−1整数格，q*=DOPT为正整数。宏非空时令a为最小finite宏时间，promise给2aD>q*，故整数U=2aD−1≥q*；每个0≤q≤U都有q/D<2a≤2p，满足源宏边>T/2合同。宏空则任取完整合法调度C，U=DC≥q*且无宏阈值约束。初始目标U/D必成功，保存其实际输出；维护lo=0<q*及hi=U成功。中点FAIL由源的单侧保证推出mid<q*，仅更新lo；成功仅更新hi并保存其输出，不将成功解读为OPT≤T。终止hi=lo+1≤q*，输出峰≤3hi/(2D)≤3OPT/2。U和每个查询的位长多项式，固定K的源子程序在O(log(U+1))查询下仍总位多项式。宏非空a=0、U<1或初始FAIL时可报未认证，promise内不出现；所有成功见证均保完整原任务身份。",
+  "scope": "仅目标含OPT宏边promise类；不替一般输入验证promise、不解除固定K/唯一home、不假称有限接受表审计为端到端scheduler实现。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/固定汇点占位基面与未知OPT承诺的最终审查--审查.md",
+      "sha256": "72eb5d43cc26f10ae71d8df45aa44ccc0ff2fb7d1a2309099f10eb6c0f68dc28"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-following-palette-and-distortion-primary/comparison/research/current/unrelated_machines/fixed_sink_occupation_rounding.md",
+      "sha256": "5d41fe7e8530a7cc17f633e15498b58080f405835c6659ca18ab7ce2ff34aae9"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-following-palette-and-distortion-primary/comparison/research/reviews/unrelated_machines/fixed_sink_occupation_review.md",
+      "sha256": "7ec9d61c2e67345bffa9aa640a7d8fb622a303954a86630ccf0bcd9f26d1c51c"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "完整实读本包该组核心的全部登记body/evidence，并完整实读本边新增只读端点全部登记body/evidence。逐项核对变量、任务身份、域和量词；本边作用范围由whole_result或contribution明确限定。待Boss完成read-add及输入改版后统一绑定，不以草稿代替队列交付。"
+}
