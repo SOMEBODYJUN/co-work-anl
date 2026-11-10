@@ -44,7 +44,7 @@ source_refs:
 
 ## 3. indexed actual-customer projection：超过二的必要点没有成为 SPE
 
-`indexed_projection_instance.json` 记录五人、十主题、60 个具体客户类型。`indexed_projection_completion.json` 的目标列被归一为巨大的有理尺度 `target_W`，对应 comparison/OPT 为约 2.0614 倍目标列；但 `target_reachable=false`，完整 BI 只留下一个 root outcome，`minimum_SPE_W=OPT` 且 `OPT_over_minimum_SPE_W=1`。四个 `actual_order_ABCDE_obstructions` 记录具体前缀处目标支付与 credible floor 的冲突，其中前三个还没有进入选定子树。它因此是“一个显式 actual-unit-customer projection 的必要点与不可达障碍”，不是完整 SPE 的 `OPT>2W` 反例。
+`indexed_projection_instance.json` 记录五人、十主题、60 个具体客户类型。`indexed_projection_completion.json` 的目标列被归一为巨大的有理尺度 `target_W`，对应 comparison/OPT 比为 `145473820534756099649387160645076613709/70560308704423797361284609157664425493`，约 2.0616947857207375；但 `target_reachable=false`，完整 BI 只留下一个 root outcome，`minimum_SPE_W=OPT` 且 `OPT_over_minimum_SPE_W=1`。四个 `actual_order_ABCDE_obstructions` 记录具体前缀处目标支付与 credible floor 的冲突，其中前三个还没有进入选定子树。这份五人十主题物化来自旧索引松弛；物化丢弃辅助标签，故原索引约束与本目录的可实现性分别核对。下节30条路径约束属于共同次模 Shapley 的五人七题模型。本节实际证据给显式整数客户目录上指定高比终局的不可达性。
 
 `indexed_projection.py` 在 materialized evidence 原路径运行时因相对依赖缺少 `customer_attraction/model.py` 首次真实失败；失败 stdout/stderr 已保存。静态 `py_compile` 通过。没有用别的模型包重写运行结果。
 
