@@ -1,0 +1,46 @@
+{
+  "edge_id": "cag-33eb-cce-security-lower-bound-contributes-wc",
+  "kind": "implies",
+  "source_ids": [
+    "customer-attraction/static-cce-uniform-deletion-security-lower-bound-and-strict-gap"
+  ],
+  "target_ids": [
+    "customer-attraction/weak-cce-occupancy-bridge-candidate"
+  ],
+  "relation_mode": "unconditional",
+  "conditions": "同一有限客户和有限非空共同标签目录，静态人数n=m≥1；静态CCE可任意相关、不对称；每位偏离为抽样前固定合法主题，安全查询T独立于全部n−1个竞争行动。静态与顺序模型只共享输入，不冻结真实后继。",
+  "roles": {
+    "customer-attraction/static-cce-uniform-deletion-security-lower-bound-and-strict-gap": "每位固定行动CCE约束按最优独立安全查询混合，给E u_i≥v_n并相加。",
+    "customer-attraction/weak-cce-occupancy-bridge-candidate": "仅接收条件half归约中已付的静态安全下界；开放动态比较仍待证明。"
+  },
+  "contribution": {
+    "result": "对WC所用的n=m静态游戏，最低任意CCE总福利C_n≥n v_n；因此其最低平均福利C_n/n至少v_n。",
+    "remaining": "WC尚需对每份m人完整SPE证明W≥(1−1/(2m))C_m；另需静态v_m≥OPT_m/(2m−1)才能合成half，不能由本边代付。"
+  },
+  "explanation": "有限minimax给最优安全分布p*。对任意CCE μ和位置i，把每个固定T的CCE约束按p*_T加权，得Eμu_i≥E_(μ,T)u_i(T,s_−i)。每个s_−i都是同一目录合法n−1槽背景，且T独立于它，所以后者≥v_n。逐位置相加并对CCE取最小得C_n≥n v_n。无需CCE独立、对称或iid；n=m对应目标准确人数。占用LP通过玩家置换是两个候选共用的静态技术，但没有提供从动态真实响应到冻结对手的任何付款。三单例C3>3v3禁止把两个基准反向等同。",
+  "scope": "已成立的静态局部贡献，不支持目标整个开放动态桥；PC与WC人数和系数保持分开。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/静态粗相关均衡的安全下界与三单例严格间隙--引理.md",
+      "sha256": "05117b940130385530bfaa9aa741ea4ddbbbbc3e73206efe009e44b17253c221",
+      "section": "静态定义与普遍蕴含"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/较弱CCE福利桥的占用LP表示与边界--候选.md",
+      "sha256": "fdfb9a495a92df874869a8510aecbdce23d1c09b04873e06a62a6b8b624f554c"
+    }
+  ],
+  "review_note": "Boss4完整核静态每位约束的独立混合与人数m，保C_n最低值在任意相关非对称CCE上取；本边明确contribution，未把精确占用LP、9例float正gap、弱族PNE或half别证升级成PC/WC证明。",
+  "status": "accepted",
+  "premises_mode": "all",
+  "reviewed_by": "Boss4",
+  "endpoint_pins": {
+    "customer-attraction/static-cce-uniform-deletion-security-lower-bound-and-strict-gap": "4a35ec037d245237f35c1f729e660aca9d510c96273741a730df54730de30c6f",
+    "customer-attraction/weak-cce-occupancy-bridge-candidate": "d8af587cfd71dd3eeafadd44e617bdd02a4c94aba7fbc1f1192f816f79a060b2"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/静态粗相关均衡的安全下界与三单例严格间隙--引理.md": "05117b940130385530bfaa9aa741ea4ddbbbbc3e73206efe009e44b17253c221",
+    "archives/customer-attraction/state/候选/较弱CCE福利桥的占用LP表示与边界--候选.md": "fdfb9a495a92df874869a8510aecbdce23d1c09b04873e06a62a6b8b624f554c"
+  },
+  "review_digest": "52acc56d6958e3a28b5ee2df2ed690c0e03745fefd15be12b3397f8bf242b8f4"
+}

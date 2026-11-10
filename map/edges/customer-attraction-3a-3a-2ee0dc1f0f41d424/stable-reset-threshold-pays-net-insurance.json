@@ -1,0 +1,43 @@
+{
+  "edge_id": "cag-2ee0-stable-reset-threshold-pays-net-insurance",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-8406f658f18f46f5b3bd2664bbacc4c7"
+  ],
+  "target_ids": [
+    "M-e78a109800fc41b28bc825fe9ddc3d10"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "任意整数背景b≥0、n≥1及合法标签B满足来源逐标签稳定条件(H)。任取同一实例的完整子SPE，首利润h、剩余总利润P；F_n是n个可重复主题的残余利润最优。",
+  "roles": {
+    "M-8406f658f18f46f5b3bd2664bbacc4c7": "给稳定(H)及首位准确最小值M=Σ_B1/(b+n)，保全部有序历史/别名。",
+    "M-e78a109800fc41b28bc825fe9ddc3d10": "以该M支付静态残余最优及末位对首题的h/2查询，推出净保险。"
+  },
+  "explanation": "置d=(n−1)1_B。逐客户c/(b+c)≤(c+d)/(b+d+1)，差分子c(c−1)+bd≥0。H使每个合法主题在b+d背景的查询值≤M，故任意n个比较主题的c项总和≤nM，d项=(n−1)M，得F_n≤(2n−1)M。任意真实节点选B后所有后继最终分母≤b+n，故每位利润≥M。n≥2时真实末位可查询首位主题，每个首题客户分母由原终局至多增加1，故其收益至少h/2。首、末及其余n−2位给P≥3h/2+(n−2)M，减上式得2P−F_n≥3(h−M)。n1时H给h=M=F1，左右0；全空时均0不除M。",
+  "scope": "稳定B域的全部完整子SPE净保险；非零背景P是剩余利润。未替换M为一般混合安全值或声称所有目录有稳定B。",
+  "whole_result": "在明示H下完整推出目标的F_n≤(2n−1)M、P≥3h/2+(n−2)M及2P−F_n≥3(h−M)，含n1和零质量边界。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/稳定B的末异标签四项税与全历史重置刻画--引理.md",
+      "sha256": "50303a69e1294d8edb08bc550705e10019bb598e907a3a2ff3946ea24b16c4b1",
+      "section": "恒 B 是每个有序历史的 SPE，当且仅当 (H)"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/稳定B的末异标签四项税与全历史重置刻画--引理.md",
+      "sha256": "50303a69e1294d8edb08bc550705e10019bb598e907a3a2ff3946ea24b16c4b1",
+      "section": "稳定 B 下的净保险充分界"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "全文实读稳定B同页各独立登记对象；核(H)的逐标签分母、M的准确身份、逐客户差c(c−1)+bd、首末玩家不同及n1边界。该条件边不声称一般目录有B，也不把剩余利润和全部客户覆盖混同。",
+  "endpoint_pins": {
+    "M-8406f658f18f46f5b3bd2664bbacc4c7": "210158f98654dbe0030ca14de96ec37890eba64e65e5bf79a92247ee7291a0e0",
+    "M-e78a109800fc41b28bc825fe9ddc3d10": "36bb9a6c50cd29b201d6702b8c2085831d4e3c9130404b2d18e0ac85ba6944a0"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/稳定B的末异标签四项税与全历史重置刻画--引理.md": "50303a69e1294d8edb08bc550705e10019bb598e907a3a2ff3946ea24b16c4b1"
+  },
+  "review_digest": "215dd65f801c842025b42029254192ae9eefb3c3a6671bc5fb004b53586f4a93"
+}

@@ -1,0 +1,54 @@
+{
+  "edge_id": "cag-33eb-stationary-scalar-specializes-to-true-label-kernel",
+  "kind": "specializes",
+  "source_ids": [
+    "WS-STATIONARY-SCALAR-ENVELOPE-v1"
+  ],
+  "target_ids": [
+    "M-47e0aea72b4644a2b7bf22dab9f6b593"
+  ],
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户共同标签目录，固定同一份完整有序历史纯SPE与合法源h，余r=n+1≥2。全目录原标签均作根标签，分支每名真实后继路由到它自己的原标签；不商同覆盖标签，不要求路由无自环、不可约或驻留正质量。客户背景b_x≥0为合法旧负载；零分子份额取0。",
+  "roles": {
+    "WS-STATIONARY-SCALAR-ENVELOPE-v1": "提供任意整数路由和驻留分布的逐客户P_x≤[r+q/(b_x+1)]D_x−S_x/(b_x+1)，q=floor(n²/4)。",
+    "M-47e0aea72b4644a2b7bf22dab9f6b593": "取真实标签恒等路由S_x=0，减去源项并应用同源IC，得到全部真实后继平均运输。"
+  },
+  "whole_result": "对目标的每个合法源、全目录真实后继标签核的任一驻留π，完整得到u≥Eπv(T)≥κ_r EπJ(T)/n，κ_r=n/(n+floor(n²/4))；每客户背景改进系数为κ_r(b_x)=n(b_x+1)/(n(b_x+1)+floor(n²/4))。结论只控制互斥真枝的后继利润平均。",
+  "explanation": "记n_ji为强制根标签i之后真实后继中原标签j的出现数。其列和n，Nπ=nπ。对客户x置I_i=1[x∈i]、K_i为真实后继覆盖次数；恒等路由给K_i=Σ_j I_j n_ji，故S_x=nEπI−EπK=0。WS给P_x≤[n+1+q/(b_x+1)]D_x，其中D_x=Eπv_x、P_x=D_x+EπJ_x。因此EπJ_x≤[n+q/(b_x+1)]D_x，等价D_x≥κ_r(b_x)EπJ_x/n。因为b_x≥0，统一取κ_r(0)≤κ_r(b_x)，对客户相加即Eπv≥κ_r EπJ/n；同一个源对每个原标签的真实IC给u≥Eπv。整数尾人数和原标签保留全部量词，空覆盖t=K=0时两边0。WS的无自环锐性不用于这一步，也不宣称完整SPE锐性或actual共同钱包。",
+  "scope": "完整全目录同源ST主结论及逐客户背景系数；不把容器返还S再花一次，不把不同枝的J合成actual W。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/驻留根菜单的最优标量包络与尾收益界--引理.md",
+      "sha256": "db0c124239fe7796f7e2ead6afae5a0828cca10baff0d214dbd61df15bfc25de",
+      "section": "模型、路由与逐客户量"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/驻留根菜单的最优标量包络与尾收益界--引理.md",
+      "sha256": "db0c124239fe7796f7e2ead6afae5a0828cca10baff0d214dbd61df15bfc25de",
+      "section": "最优逐客户包络及点态证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/同源全后继平稳核的带符号利润运输--引理.md",
+      "sha256": "008c104ad11a0aab6732473d000cf52470a6f92c39534842e4736d73e2040644",
+      "section": "完整历史源与任意平稳分布"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/同源全后继平稳核的带符号利润运输--引理.md",
+      "sha256": "008c104ad11a0aab6732473d000cf52470a6f92c39534842e4736d73e2040644",
+      "section": "逐客户带符号行及所有零端点"
+    }
+  ],
+  "review_note": "Boss4逐式比对WS算术域与全标签核：采用恒等路由使S精确为0，核J=P−D、κ(b)/n因子和r=n+1；检查n=1、别名、空主题、零质量π及非零背景，未把局部锐模板或701B有限重放当完整SPE证明。",
+  "status": "accepted",
+  "premises_mode": "all",
+  "reviewed_by": "Boss4",
+  "endpoint_pins": {
+    "M-47e0aea72b4644a2b7bf22dab9f6b593": "31d14906ec5d5f3338d16f12adce8cdafa23916725478479b286d02174ff0de7",
+    "WS-STATIONARY-SCALAR-ENVELOPE-v1": "27eaff9b3d69dd4c07dcac485abebd5ad191e1f2c0b1318d486f69041edbc4c0"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/驻留根菜单的最优标量包络与尾收益界--引理.md": "db0c124239fe7796f7e2ead6afae5a0828cca10baff0d214dbd61df15bfc25de",
+    "archives/customer-attraction/state/引理/同源全后继平稳核的带符号利润运输--引理.md": "008c104ad11a0aab6732473d000cf52470a6f92c39534842e4736d73e2040644"
+  },
+  "review_digest": "e0e10a559ffac449492f80567fc78c37aef96a21de8ab4e6a41c349d29165c78"
+}

@@ -1,0 +1,46 @@
+{
+  "edge_id": "cag-boss4-2fcb-last-two-denominator-prices-pay-cp-base",
+  "kind": "implies",
+  "source_ids": [
+    "customer-attraction/closeout-51bb00d5d39577727357e39e"
+  ],
+  "target_ids": [
+    "customer-attraction/full-tree-denominator-floor-common-price-budget"
+  ],
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户和有限非空共同标签目录；固定完整有序历史纯SPE及任意合法历史h，过去实际负载p_x，恰余r=1或2人，当前真实收益t，沿同一σ完成的整叶覆盖W。空题、同覆盖异标签、重复、零收益和任意弱平局保留。",
+  "roles": {
+    "customer-attraction/closeout-51bb00d5d39577727357e39e": "给同一λ、下界f_x=1/(p_x+r)、全部主题cap≤t和最小删除成本的精确对偶及末两位界。",
+    "customer-attraction/full-tree-denominator-floor-common-price-budget": "所贡献的是全树CP要求在r=1,2合法历史上的全部价格约束；一般r≥3仍开放。"
+  },
+  "explanation": "源引理先由完整当前IC给每个T的Σ_T f_x≤t，因此价格盒非空且紧。其有限LP对偶D_f(t)=max_z[Σ_x(min(1,d_x)+f_x(d_x−1)_+)−tΣ_Tz_T]达到，并直接产生同一可行λ。r=1有D_f(t)≤W−t≤W；r=2有D_f(t)≤W−t+E≤W−t/2≤W，其中E只来自实际A∩B且p≥2的客户，逐客E_x≤当前份额/2。故同一个λ同时满足CP的上下界、所有主题cap和删除成本≤W，连同其对全部z≥0的等价形式。不能将每个孩子的分别存在价逐坐标max后当父价；若实际全局最小收益位恰在这两个末位中，才可另用OPT_m≤Σ(1−λ)+m t≤W+m min_i u_i≤2W。",
+  "scope": "全树CP候选的已证r=1,2基底及其同λ对偶；不证明r≥3或任意实例的最小收益位处于末两位。",
+  "contribution": {
+    "result": "对每份完整SPE的每个余1人或余2人的合法历史，CP价格存在；更强删除成本界分别为W−t和W−t/2，故CP的相应所有z对偶不等式也成立。",
+    "remaining": "CP整条登记要求所有r≥1；r≥3的跨互斥孩子共同价格预算仍未证。一般half还需在实际最小收益位获得价格，不能由末两位基底免费覆盖更早位置。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/带分母下界的共同客户价格对偶与末两位端点--引理.md",
+      "sha256": "1ceadd2311b2729acd528724bd3da3e09c781175b6f280b1a32981438694f026"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/全树背景分母下界的共同价格预算--候选.md",
+      "sha256": "ddd89c9933720f20b55b4d97c562f51c92ae2fec3d6f4cb5cc664e6583e086f3",
+      "section": "定义、量词和half的条件推导"
+    }
+  ],
+  "review_note": "实读当前两端完整正文、模型及尾价格压缩障碍，逐式核f盒可行、强对偶符号、r1过去份额支付与r2 E≤t/2；贡献仅标末两位，不把一般CP或half标成已证。",
+  "status": "accepted",
+  "premises_mode": "all",
+  "reviewed_by": "Boss4",
+  "endpoint_pins": {
+    "customer-attraction/closeout-51bb00d5d39577727357e39e": "fcdf06310690fb2b1600ea235f46ae7b6d3ab4529884b4657ce0be3e17eb7d9c",
+    "customer-attraction/full-tree-denominator-floor-common-price-budget": "f2e54daeca56749ea356ec5d53dc1f5513f2950a84b691897f5893544f29913a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/带分母下界的共同客户价格对偶与末两位端点--引理.md": "1ceadd2311b2729acd528724bd3da3e09c781175b6f280b1a32981438694f026",
+    "archives/customer-attraction/state/候选/全树背景分母下界的共同价格预算--候选.md": "ddd89c9933720f20b55b4d97c562f51c92ae2fec3d6f4cb5cc664e6583e086f3"
+  },
+  "review_digest": "2b9bd139e06c53a72150e4ad2e353cecd828f402a3ad6d9eebed3f1a8bb57c80"
+}

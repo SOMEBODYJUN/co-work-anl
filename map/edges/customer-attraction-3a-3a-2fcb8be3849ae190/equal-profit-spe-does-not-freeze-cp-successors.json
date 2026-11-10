@@ -1,0 +1,48 @@
+{
+  "edge_id": "cag-boss4-2fcb-equal-profit-spe-does-not-freeze-cp-successors",
+  "kind": "corrects",
+  "source_ids": [
+    "CA-SPE-NON-PNE"
+  ],
+  "target_ids": [
+    "customer-attraction/full-tree-denominator-floor-common-price-budget"
+  ],
+  "relation_mode": "context",
+  "conditions": "三客户a,b,c；A={a},B={a,b},C={b,c}；正文13节点完整策略，实际CAC且每人收益1。",
+  "roles": {
+    "CA-SPE-NON-PNE": "完整等收益SPE见证：静态改B与同一σ真实后继的收益不同。",
+    "customer-attraction/full-tree-denominator-floor-common-price-budget": "价格路线曾考察的等收益SPE⇒终局静态PNE接头必须舍弃；CP本身未被否定。"
+  },
+  "explanation": "固定其它两位为C时，中间玩家A→B收益4/3>1；但真实顺序历史CB后原σ规定末位B，得到CBB，偏离者仅5/6<1。源的全部13节点IC表均成立，actual三个利润仍相等。因此等收益不能补出冻结后继的PNE不等式，也不能以该不等式为CP归纳的已付前提。该三客户例W=OPT=3，并不反驳CP；CP末两位基底和r≥3问题仍按原量词保留。47客户四人另一完整见证同样把静态21/2与真实59/6分开，但此纠错只需三客户例。",
+  "scope": "纠正CP路线的一条已撤回证明捷径；不把准确SPE反例写成CP的refutes边。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/顺序SPE终局不必为同时PNE--反例.md",
+      "sha256": "0879e6843689c4978c3c44a51fe779714ca3b6290cb4778a9243126295203a99"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/全树背景分母下界的共同价格预算--候选.md",
+      "sha256": "ddd89c9933720f20b55b4d97c562f51c92ae2fec3d6f4cb5cc664e6583e086f3",
+      "section": "等收益不使真实SPE变静态NE"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/三种续局捷径的完整策略精确审计--计算.md",
+      "sha256": "71996e38c00c3e2fef5536fd10d558139fc58f150c41faccffcb24084e0fb32e",
+      "section": "原程序为何核到了完整SPE"
+    }
+  ],
+  "review_note": "核三客户完整动作表及39含自身/26真偏离的计数含义，逐式核4/3和5/6；另实读47客户156动作证据但不混合两个实例。仅为纠错语境边，CP候选不被改判。",
+  "status": "accepted",
+  "premises_mode": "all",
+  "reviewed_by": "Boss4",
+  "endpoint_pins": {
+    "CA-SPE-NON-PNE": "f4af450f2a468bb54f1aacb63fa9cab54d95f2daf47af5989c4bdf137083ff0d",
+    "customer-attraction/full-tree-denominator-floor-common-price-budget": "f2e54daeca56749ea356ec5d53dc1f5513f2950a84b691897f5893544f29913a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/顺序SPE终局不必为同时PNE--反例.md": "0879e6843689c4978c3c44a51fe779714ca3b6290cb4778a9243126295203a99",
+    "archives/customer-attraction/state/候选/全树背景分母下界的共同价格预算--候选.md": "ddd89c9933720f20b55b4d97c562f51c92ae2fec3d6f4cb5cc664e6583e086f3",
+    "archives/customer-attraction/state/计算/三种续局捷径的完整策略精确审计--计算.md": "71996e38c00c3e2fef5536fd10d558139fc58f150c41faccffcb24084e0fb32e"
+  },
+  "review_digest": "eab081987914ff71b2ba1dbc6f999d2be745ddc15fc20e0150a5d3654c55e63c"
+}

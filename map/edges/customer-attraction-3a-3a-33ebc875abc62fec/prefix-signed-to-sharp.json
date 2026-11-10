@@ -1,0 +1,54 @@
+{
+  "edge_id": "ca-33eb-signed-prefix-bank-yields-sharp-position-coefficient",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-11bb8909e92245d0a861fb03a5814e30"
+  ],
+  "target_ids": [
+    "customer-attraction/actual-prefix-full-cover-credit-sharp-coefficient-and-old-player-return"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意有限单位客户、有限非空标签共同目录、m≥1、合法完整叶及其实际位置i；p=i−1、r=m−i+1、p+r=m，0≤b≤p、0≤a≤r；V包括当前及全部剩余者，O为任意合法比较元组的并集（也允许空元组）。只在b>0的旧客户上使用有符号分母。",
+  "roles": {
+    "M-11bb8909e92245d0a861fb03a5814e30": "给出旧比较客户的精确有符号亏盈及比较外客户必须保留的返还；将客户级差还原为完整信用。",
+    "customer-attraction/actual-prefix-full-cover-credit-sharp-coefficient-and-old-player-return": "得到AC-EXACT、A≥βV+(1−β)F，以及p>0时β=m/[r(p+1)]在完整SPE内达到。"
+  },
+  "explanation": "从源恒等式加回V=F+Σ_{P}a/(b+a)。对P∩O的一客户有 a/(b+a)+b(1−a)/[(b+1)(b+a)]=1/(b+1)；对P∖O有a/(b+a)+b/(b+a)=1，所以A=F+Σ_{P∩O}1/(b+1)+|P∖O|，且没有遗失比较外信用。新客户在A,V,F各给1。旧客户a=0时V贡献0而银行非负；旧客户a≥1时，比较内银行/V=(b+a)/[a(b+1)]≥(b+r)/[r(b+1)]≥(p+r)/[r(p+1)]=β，比较外银行为1则更大。故逐客户相加得AC。p=0单独给A=V=F。p>0取唯一单位客户、唯一覆盖主题；m名玩家在每个合法历史被迫选择它，故是一份完整纯SPE。非空比较重复该主题时F=0、A=1/(p+1)、V=r/m，A/V=β，因此任何c>β的同形系数在该合法SPE失败。这个构造不使用删人或策略压缩，也不推断查询行付款。",
+  "scope": "源AC-SIGNED在同一合法叶上的客户级分解推出目标整条静态信用、位置系数和p>0的最优性；与真实查询收益或一般half仍有不同未付步骤。",
+  "whole_result": "AC-SIGNED ⇒ 对任意合法完整叶及任意比较并集，A=F+Σ_{P∩O}1/(b+1)+|P∖O|≥β_{m,r}V+(1−β_{m,r})F；p>0时β=m/[r(m−r+1)]由一客户一主题完整SPE达到。p=0时仅有A=V=F，不声称β唯一最优。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/实际前缀完整覆盖信用的尖锐系数与旧客户返还--引理.md",
+      "sha256": "58ed05951129b1e50305737170b38634274f85056df8c74c5b1854cfbd8c79c0",
+      "section": "旧客户返还的准确符号"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/实际前缀完整覆盖信用的尖锐系数与旧客户返还--引理.md",
+      "sha256": "58ed05951129b1e50305737170b38634274f85056df8c74c5b1854cfbd8c79c0",
+      "section": "位置系数与完整证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/实际前缀完整覆盖信用的尖锐系数与旧客户返还--引理.md",
+      "sha256": "58ed05951129b1e50305737170b38634274f85056df8c74c5b1854cfbd8c79c0",
+      "section": "尖锐性在真正完整SPE中达到"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "实读当前两端登记及共同模型、完整AC正文和续审正文；由有符号公式逐类加回V复核AC-EXACT，核a=0及p=0退化域，再核两次单调比较与唯一主题全历史SPE达到性。未将客户级返还当作可实现删人计划，也未把静态银行误记为ROW已付。",
+  "endpoint_pins": {
+    "M-11bb8909e92245d0a861fb03a5814e30": "281a558ba822361f4b778500ce17abc9b4e3a812302208b0579776d202202331",
+    "customer-attraction/actual-prefix-full-cover-credit-sharp-coefficient-and-old-player-return": "d1f9c20481fcde47b0aede2bb1138d758ea5982e2401d255bc24207f00729929"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/实际前缀完整覆盖信用的尖锐系数与旧客户返还--引理.md": "58ed05951129b1e50305737170b38634274f85056df8c74c5b1854cfbd8c79c0",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "39e187b2bffd5ca69ff62dcc11516e7cebadeebc64d4c8eca0d40a022057624d"
+}

@@ -1,0 +1,52 @@
+{
+  "edge_id": "cag-2ee0-query-envelope-characterizes-sum-sharp-per-input",
+  "kind": "implies",
+  "source_ids": [
+    "customer-attraction/conditional-terminal-full-spe-real-query-minima-recurrence"
+  ],
+  "target_ids": [
+    "M-27c4a0fc06fa401697f46951ab068f10"
+  ],
+  "relation_mode": "unconditional",
+  "conditions": "固定有限单位客户输入、m≥1；任取最优有序m槽T，w_a为T中标签重数，保所有重复最优元组；z遍历该输入全部完整纯SPE可实现终局。",
+  "roles": {
+    "customer-attraction/conditional-terminal-full-spe-real-query-minima-recurrence": "给出同一σ真实查询总额的条件可达最小值K_w(0,z)。",
+    "M-27c4a0fc06fa401697f46951ab068f10": "待证SUM-SHARP全称下界的有限输入精确判别式。"
+  },
+  "explanation": "任意实现z的完整SPE查询总额Σ_ij V_ij≥K_w(0,z)，且K的倒归纳拼合恢复一份达到等号的完整有序策略。因此所有实现z的σ都满足ΣV≥mOPT−(m−1)W(z)，当且仅当K_w(0,z)+(m−1)W(z)≥mOPT。对全部可实现z及全部最优T重数向量量化，恰覆盖该固定输入的原SUM-SHARP；若某z严格失败则达到K的真实完整策略给同一原式反例。规定实际孩子的q_w校正w_a(U_a(z)−g_a)不可删除，否则未必可达。",
+  "scope": "将开放普遍不等式转成固定有限输入可复核的充要判据，不声称判据在所有输入自动成立。",
+  "contribution": {
+    "result": "SUM-SHARP在固定输入、固定最优重数w上与所有可实现z的K_w(0,z)+(m−1)W(z)≥mOPT完全等价，并能恢复任何严格失败的真实完整SPE见证。",
+    "remaining": "仍需对全部有限输入、全部最优重数及全部z证明这个K下界或找到严格负例；精确递推及三份有限阴性诊断均未支付普遍下界。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/给定终局的完整SPE真实查询最小值递推--引理.md",
+      "sha256": "8e8b1ff54e112a36cb245d28c559874c529d5440a2b20f7011e97322ec4511be",
+      "section": "条件总额K与单行H"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/给定终局的完整SPE真实查询最小值递推--引理.md",
+      "sha256": "8e8b1ff54e112a36cb245d28c559874c529d5440a2b20f7011e97322ec4511be",
+      "section": "对旧ROW、SUM两类候选的有限输入等价"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/真实查询下包络的全策略小例核对与三份保存诊断--程序.md",
+      "sha256": "2a69545e476ca92e1dc831fefd633345c68686ea82f3b0ec88d4827c46d238ee",
+      "section": "三份旧输入上的全部SPE诊断"
+    }
+  ],
+  "review_note": "全文实读K/H递推、可信菜单和小例程序合同；核当前规定孩子共享同一子树、q_w必须保非负校正、K达到性与重数全称。所附三例报告只复用已读成熟正文，未声称本轮重跑或证明SUM-SHARP。",
+  "status": "accepted",
+  "premises_mode": "all",
+  "reviewed_by": "Boss4",
+  "endpoint_pins": {
+    "M-27c4a0fc06fa401697f46951ab068f10": "5619dc89379f73d7c538984c5a1c130478177b129ddffa404a8b1fe77a433ada",
+    "customer-attraction/conditional-terminal-full-spe-real-query-minima-recurrence": "b854e23698006c87e6b93d1baf746867a810014c8f6078602c12929bc57f08cc"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/给定终局的完整SPE真实查询最小值递推--引理.md": "8e8b1ff54e112a36cb245d28c559874c529d5440a2b20f7011e97322ec4511be",
+    "archives/customer-attraction/state/程序/真实查询下包络的全策略小例核对与三份保存诊断--程序.md": "2a69545e476ca92e1dc831fefd633345c68686ea82f3b0ec88d4827c46d238ee"
+  },
+  "review_digest": "2f9cf5afe358b1831cc17a403562a6d2ccf2575dcccf636003c2b6cd6c00df4a"
+}

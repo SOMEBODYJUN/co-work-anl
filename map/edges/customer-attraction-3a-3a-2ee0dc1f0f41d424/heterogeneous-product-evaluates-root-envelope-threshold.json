@@ -1,0 +1,57 @@
+{
+  "edge_id": "cag-2ee0-heterogeneous-product-evaluates-root-envelope-threshold",
+  "kind": "specializes",
+  "source_ids": [
+    "customer-attraction/three-role-heterogeneous-resource-exact-all-query-floor-and-repair-saving"
+  ],
+  "target_ids": [
+    "customer-attraction/conditional-terminal-full-spe-real-query-minima-recurrence"
+  ],
+  "relation_mode": "unconditional",
+  "conditions": "m=3、a,b,q正整数、源的6^q完整Cartesian目录；E(e_A)为强制根A后的全部真完整两人尾终局，当前根尚未要求最优。",
+  "roles": {
+    "customer-attraction/three-role-heterogeneous-resource-exact-all-query-floor-and-repair-saving": "对每个联合根A的全部真实完整尾精确给最低根利润ell(A)。",
+    "customer-attraction/conditional-terminal-full-spe-real-query-minima-recurrence": "其g_A(0)=min_{z∈E(e_A)}U_A(z)及M(0)=max_A g_A(0)在此家庭的显式值。"
+  },
+  "explanation": "E(e_A)的终局恰由A后某份完整两人子SPE实现，故目标g_A(0)与来源ell(A)定义相同；来源对每A的下界和全第二历史达到控制器给g_A(0)=q(a+b)/2+(a/2)max(0,q−floor(qb/a))，与A无关，M取同值。因此该家庭规定叶(a,z)的根兼容测试可直接用此常数，根最小后悔为[M−U_A(z)]_+，前提仍须z∈E(e_A)。来源另一个signed目标仅末位BR，未保证第二理性，不能直接将它代成该递推的可信z。",
+  "scope": "精确填充K/H算法的根最低孩子及最小后悔接口；不计算任意查询权K/H，不扩充到超过三人。",
+  "contribution": {
+    "result": "该全参数Cartesian家庭的全部根g_A与M(0)获得显式闭式，并可用于目标规定叶根兼容及后悔计算。",
+    "remaining": "给定z仍须是可信尾终局；后续K/H查询极值及任何一般ROW/SUM付款需另算。源的signed目标不可未经第二IC检查直接作为可信终局。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/三角色异质资源产品的精确全强制门槛与修复节省--定理.md",
+      "sha256": "cb44e00719a2e88410bf9c553e360bcc95fdc8cfce7f6e2acd1b91d6cd4de778",
+      "section": "对每份真实后两人SPE的整数下界"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/三角色异质资源产品的精确全强制门槛与修复节省--定理.md",
+      "sha256": "cb44e00719a2e88410bf9c553e360bcc95fdc8cfce7f6e2acd1b91d6cd4de778",
+      "section": "每个联合根动作的完整历史达到控制器"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/给定终局的完整SPE真实查询最小值递推--引理.md",
+      "sha256": "8e8b1ff54e112a36cb245d28c559874c529d5440a2b20f7011e97322ec4511be",
+      "section": "复用的终局全集与真实最低孩子"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/给定终局的完整SPE真实查询最小值递推--引理.md",
+      "sha256": "8e8b1ff54e112a36cb245d28c559874c529d5440a2b20f7011e97322ec4511be",
+      "section": "根非理性计划的附带精确极值"
+    }
+  ],
+  "review_note": "完整实读异质全参数菜单/控制器和原两尾枚举资源，逐项对齐ell(A)=g_A(0)、所有根/所有尾量词、b<a整除边界；尤其保留signed目标不必第二理性这一剩余条件。",
+  "status": "accepted",
+  "premises_mode": "all",
+  "reviewed_by": "Boss4",
+  "endpoint_pins": {
+    "customer-attraction/conditional-terminal-full-spe-real-query-minima-recurrence": "b854e23698006c87e6b93d1baf746867a810014c8f6078602c12929bc57f08cc",
+    "customer-attraction/three-role-heterogeneous-resource-exact-all-query-floor-and-repair-saving": "c508eb58b6fe6ee40d03b1eb21ccaa0088469faf33909b75bf662cd07a73588e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/三角色异质资源产品的精确全强制门槛与修复节省--定理.md": "cb44e00719a2e88410bf9c553e360bcc95fdc8cfce7f6e2acd1b91d6cd4de778",
+    "archives/customer-attraction/state/引理/给定终局的完整SPE真实查询最小值递推--引理.md": "8e8b1ff54e112a36cb245d28c559874c529d5440a2b20f7011e97322ec4511be"
+  },
+  "review_digest": "098e06c564136479c14d47ccd262115110d23585f6cd64c91f59a0295e7285c2"
+}

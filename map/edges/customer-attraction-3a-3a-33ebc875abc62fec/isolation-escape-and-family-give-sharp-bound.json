@@ -1,0 +1,63 @@
+{
+  "edge_id": "ca33eb-isolation-escape-and-family-give-sharp-bound",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-60ab3bb35c9640b6b3927a16877ccdf8",
+    "customer-attraction/collision-free-family-welfare-obstruction"
+  ],
+  "target_ids": [
+    "B10-RECIPROCAL-ISOLATION-SHARP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "目标B10的精确架构：k≥1,m=k+1；N恰为互不交D及X_i,Y_i；合法目录含C_i=X_i,A_i=X_i∪Y_i,D及局部支撑B_i⊆X_i∪Y_i∪D，可含其它N子集；给定完整纯SPE实际C_1…C_k,D。实际i改A_i真实末位B_i、改B_i真实末位A_i，两枝所有中间动作避开X_i∪Y_i∪D，保过去C_j。",
+  "roles": {
+    "M-60ab3bb35c9640b6b3927a16877ccdf8": "一般撤隔离三slack/ESC恒等式；在目标几何下E=0，支付全部上界及等号必要条件。",
+    "customer-attraction/collision-free-family-welfare-obstruction": "独立Q/B有限高度归纳给每k完整策略的存在性，x_i=d=2,y_i=1，实际及两偏离枝恰实现B10几何和等号。",
+    "B10-RECIPROCAL-ISOLATION-SHARP-v1": "全部k、非均匀组及零边界的锐架构定理。"
+  },
+  "explanation": "对一般ESC输入记s_i为A_i枝末位B_i收益、q_i为该末节点改D收益、t_i为实际i改B_i后本人最终收益。目标两枝隔离及B_i局部支撑使s_i=t_i=v_i=|B_i∩(X_i∪Y_i)|/2+|B_i∩D|，且D未被过去/中间覆盖故q_i=d。因此E=Σ[(s_i−t_i)+(d−q_i)]=0，ESC给(3k+2)W−2(k+1)OPT≥0。三个已付slack具体变为x_i−v_i≥0、v_i−d≥0、d−x_i/2−y_i≥0，得逐组x_i≥v_i≥d≥x_i/2+y_i。若正等号，则ESC中正系数的三类非负slack全部0，于是每x_i=d且y_i=d/2；d正整数必偶。d=0时第三slack迫所有x_i=y_i=0，零例直接成立；k1推导同样有效。锐性另外使用C的完整Q/B构造：取|X_i|=2、Y_i={a_i}、D={b,d}、B_i=X_i∪{b}。actual fresh C_i后D；i改A_i进入Q域，保全部旧A后fresh C_j并末B_i；i改B_i进入B域，fresh A_j并末A_i。j≠i的这些中间主题均避开X_i∪Y_i∪D，故为目标合法双向隔离实例。原Q/B归纳对子树所有危险偏离与兜底BI给完整SPE，不能由三个必要IC代替其存在性。其W=2k+2、OPT=3k+2，恰取等。两源ALL分别提供普遍上界与全参数可实现锐性，不能丢任一源。",
+  "whole_result": "对B10全部精确架构假设下每k≥1的完整纯SPE，2(k+1)OPT≤(3k+2)W且逐组x_i≥v_i≥d≥x_i/2+y_i；正等号必x_i=d,y_i=d/2且d为正偶数。每k已有x_i=d=2,y_i=1的合法完整Q/B策略实现等号，故此架构界锐；不声称所有SPE具该几何。",
+  "scope": "广义ESC向双向隔离架构的E=0特化，加独立无限族的存在性证明；不是一般3/2上界或half反例，亦不套r重复尾模板。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/真实菜单协方差与逃逸余项的审查合同--资源.md",
+      "sha256": "f43121e8024dfbbe62dccf8c5daa32794c92234468a66e34d80fd8d1b2fd6fc3",
+      "section": "逃逸预算：精确三非负余项及最小几何"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/双向隔离惩罚的福利上限与逃逸预算--障碍.md",
+      "sha256": "8c20d94ceb66e72e6ef9c297487cf6b40929fba99a0420b4e6d9606fcbf47b9b",
+      "section": "三条真实比较与锐性"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/三人碰撞自由族福利障碍--反例.md",
+      "sha256": "588764de045e2a55362773dc9b83d3f10cadb47e22d8feeac0c4e342cc4836ad",
+      "section": "2. B 状态引理"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/三人碰撞自由族福利障碍--反例.md",
+      "sha256": "588764de045e2a55362773dc9b83d3f10cadb47e22d8feeac0c4e342cc4836ad",
+      "section": "3. Q 状态引理：必须允许多个旧 A"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/三人碰撞自由族福利障碍--反例.md",
+      "sha256": "588764de045e2a55362773dc9b83d3f10cadb47e22d8feeac0c4e342cc4836ad",
+      "section": "5. 实际根路径、精确最优值与纯负载函数结论"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "完整实读ESC、隔离三IC及无限族Q/B归纳，逐枝核s=t、q=d、所有中间主题避局部池、全参数存在和正等号。E源v3允许任意合法B，本边仅在目标更强几何特化；上界与锐性保ALL，零界/k1/整数偶性均核。",
+  "endpoint_pins": {
+    "B10-RECIPROCAL-ISOLATION-SHARP-v1": "ae47a0636ce17025f9008a3f96f608e300dca38ff09abed2b331a17d89819606",
+    "M-60ab3bb35c9640b6b3927a16877ccdf8": "4b5ca583e9fe79eda7f0dd3559bc897d988ddf6c42734b849e4ab25f76927800",
+    "customer-attraction/collision-free-family-welfare-obstruction": "9fbfbcfd4a941c4d6f0bf5de7788ff53f90c8f8c7ab0b505effef487d4980d6a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/真实菜单协方差与逃逸余项的审查合同--资源.md": "f43121e8024dfbbe62dccf8c5daa32794c92234468a66e34d80fd8d1b2fd6fc3",
+    "archives/customer-attraction/state/障碍/双向隔离惩罚的福利上限与逃逸预算--障碍.md": "8c20d94ceb66e72e6ef9c297487cf6b40929fba99a0420b4e6d9606fcbf47b9b",
+    "archives/customer-attraction/state/反例/三人碰撞自由族福利障碍--反例.md": "588764de045e2a55362773dc9b83d3f10cadb47e22d8feeac0c4e342cc4836ad"
+  },
+  "review_digest": "9b9f00a99e18a048a87cb2d902bfdccbfabb7a1e04a50bb9dae311b7e918aace"
+}

@@ -1,0 +1,46 @@
+{
+  "edge_id": "cag-boss4-2fcb-coalition-credit-restricts-to-one-retained-coverer",
+  "kind": "specializes",
+  "source_ids": [
+    "M-ea769a946ef944b1aae282bd49d1a8ec"
+  ],
+  "target_ids": [
+    "customer-attraction/same-branch-deletion-refund-and-old-prefix-positive-loss-sharp-common-credit"
+  ],
+  "relation_mode": "unconditional",
+  "conditions": "同一实际已覆盖单位客户，m≥1、1≤c≤m、0≤p≤c；在同一保留旧前缀的分支取新保留覆盖人数a=1，并有p+1≤d0≤d≤m。只为整数负载代数，取等不宣称完整SPE可实现。",
+  "roles": {
+    "M-ea769a946ef944b1aae282bd49d1a8ec": "新组整数a≥1的END端点包络及全域锐常数C_m,a。",
+    "customer-attraction/same-branch-deletion-refund-and-old-prefix-positive-loss-sharp-common-credit": "a∈{0,1}单当前者信用；本边只贡献a=1部分的端点与按m归一的锐常数。"
+  },
+  "explanation": "将联盟源的a固定为1，B=p(1/c−1/d0)_++(1/d0−1/d)恰等目标的旧正损失E加当前绝对退款G，变量c,p,d0,d逐项相同。源END给max_d0 B=max{B(p+1),B(d)}；源CAP给其在全部合法p,c,d0,d上的上界C_m,1=2/(1+1)−1/m=1−1/m。取p=c=1,d0=2,d=m达到；m=2时仍合法。m=1由源a=m边界迫p=0,d0=d=1、B=0，与1−1/m=0一致。此推导明确说明联盟推广在a=1保留原单人常数，而a>1的C_m,a可能>1，不能原样继续引用单人预算。",
+  "scope": "单当前者a=1的同枝标量信用和全域锐性；不包含a=0、逐d更细界、(Q−R)+退款顺序或跨枝访问质量条件。",
+  "contribution": {
+    "result": "恢复目标a=1部分的固定参数两端点包络以及全域锐值max(E+G)=1−1/m（含m=1零边界）。",
+    "remaining": "目标还包括a=0、1−1/d细化、三候选闭式K、先扣旧退款E=(Q−R)+及跨枝N/CK条件；这些不由本次a=1代入替代。任何全局遗漏付款仍需真实树访问权重和整主题共同IC。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/新保留组同分支信用的端点包络与锐容量--引理.md",
+      "sha256": "288fbc0f7f2d0866cc7090b1082840b7934779f6580a1ecd5ae3eca38c0ca0ee"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/同枝删除返还与旧前缀正损失的锐共同信用--引理.md",
+      "sha256": "cb215f17594e876c2c8202875dc82cfe758e95e08974bfe05096dbddf7bdc56d",
+      "section": "一次删除的锐共同上界"
+    }
+  ],
+  "review_note": "完整实读联盟END/CAP证明与单人正文，核相同正部及删后分母，分别检查m1、m2和a=m边界；本边只恢复a1尖锐标量部分，不把联盟取等当SPE反例或把1−1/m替代逐d界。",
+  "status": "accepted",
+  "premises_mode": "all",
+  "reviewed_by": "Boss4",
+  "endpoint_pins": {
+    "M-ea769a946ef944b1aae282bd49d1a8ec": "f2ff866eadc698b274085e372bac507222ca9bd767751604ea3ea2b426040539",
+    "customer-attraction/same-branch-deletion-refund-and-old-prefix-positive-loss-sharp-common-credit": "1da79bec655169381ba9b73c518c185f59e40fa09bf9903e519c8c74f85a5349"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/新保留组同分支信用的端点包络与锐容量--引理.md": "288fbc0f7f2d0866cc7090b1082840b7934779f6580a1ecd5ae3eca38c0ca0ee",
+    "archives/customer-attraction/state/引理/同枝删除返还与旧前缀正损失的锐共同信用--引理.md": "cb215f17594e876c2c8202875dc82cfe758e95e08974bfe05096dbddf7bdc56d"
+  },
+  "review_digest": "063d7d6182d0e454a62df88df005279efcb166a299086aeef786e99b854b0f02"
+}

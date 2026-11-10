@@ -1,0 +1,46 @@
+{
+  "edge_id": "cag-boss4-2fcb-safe-row-yields-controlled-positive-amount-system",
+  "kind": "implies",
+  "source_ids": [
+    "customer-attraction/same-context-safe-net-coupons-and-maximal-scalar-clipping"
+  ],
+  "target_ids": [
+    "customer-attraction/closeout-c77bca3e512844dff8252334"
+  ],
+  "relation_mode": "unconditional",
+  "conditions": "固定同一完整σ、实际叶、全部正利润natural contexts、原正边q_e≥0、v_t>0及非负注入b；future严格增加角色而past只落原actual客户券。仅允许原正边子容量和同context标量取消；source已另付部分保持为同一固定源常数。",
+  "roles": {
+    "customer-attraction/same-context-safe-net-coupons-and-maximal-scalar-clipping": "提供v=u_i+P−F、F=N+e∈[0,u_i]、D−N=u_i−F≥0及同一context合法取消。",
+    "customer-attraction/closeout-c77bca3e512844dff8252334": "将合法取消写为有限线性金额系统CONTROLLED-POSITIVE并给全图质量守恒；保历史审查身份和未证共同cap。"
+  },
+  "explanation": "令h_t=v_tβ_t=b_t+Σ_future-in f_e，原边输出满足0≤f_e≤β_tq_e，当前金额ℓ_t=h_t−Σ_out f_e。置c_t=β_tP_t−Σ_out f_e≥0；源SAFE恒等式给ℓ_t=β_t(u_i−F_t)+c_t=β_t(D_t−N_t)+c_t。于是β_t(D_t−N_t)≤ℓ_t≤β_tu_i恰等0≤c_t≤β_t min(P_t,F_t)，即原边子容量中的合法标量取消。反向从任意合法取消和保留子边立刻得到全部线性约束；β=0时输出与当前均0，β>0时q′=f/β仅用于解释，不进入约束。future图有限且角色严格增加，求和消去内部future流，得Σ b=Σℓ+Σ_past-terminal f；所以金额非负且守恒。这里把路由直接写为f避免两个未知量相乘；给券或角色cap另加约束仍未证明共同可行。",
+  "scope": "历史重构页中受控正净券LP的双向金额表示及POSITIVE-MASS；不从代数定理推历史读序、严格盲审或实际共同容量。",
+  "contribution": {
+    "result": "CONTROLLED-POSITIVE恰描述固定原正边子容量下的同context标量取消，且全部合法解满足POSITIVE-MASS的非负终端质量守恒。",
+    "remaining": "目标其余MAX-CLIP局部最少外送、gross与net比较及fresh追加对稿按各自正文保留，不由本边LP双向消元逐项替代；先获公式提示的历史身份亦不由此认证。LP加实际客户券/角色cap后的共同可行、一般half、fresh全源混用与旧net单调均未由此推出。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/同节点安全净券与最大标量剪枝--定理.md",
+      "sha256": "10f9a70752e2b014434ffc0cff2c3bfe10ab5a45724e088bbb76cac073158892"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/正净券线性金额合同的历史重构--审查.md",
+      "sha256": "808d03cb6dab55d9f130e58ea9bd519a3812d795f766a8186701fa242d1acbb8",
+      "section": "全图受控正净券的有限线性系统"
+    }
+  ],
+  "review_note": "实读SAFE及重构页全部正文，亲自核c的双向消元、β0边界、future求和消去和gross/net区别。使用原q、v、source及同一context，未将变量概率乘金额冒作线性，也不将守恒写成共同cap。",
+  "status": "accepted",
+  "premises_mode": "all",
+  "reviewed_by": "Boss4",
+  "endpoint_pins": {
+    "customer-attraction/closeout-c77bca3e512844dff8252334": "099448be276544686be6cca4fc00a835c240097e30ff633bb3778a634db60e44",
+    "customer-attraction/same-context-safe-net-coupons-and-maximal-scalar-clipping": "4ddd33959413439662237f9ae63137f1c7887853eddb2a1ac4ef7e0ab68096b6"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/同节点安全净券与最大标量剪枝--定理.md": "10f9a70752e2b014434ffc0cff2c3bfe10ab5a45724e088bbb76cac073158892",
+    "archives/customer-attraction/state/审查/正净券线性金额合同的历史重构--审查.md": "808d03cb6dab55d9f130e58ea9bd519a3812d795f766a8186701fa242d1acbb8"
+  },
+  "review_digest": "e0ea04b68984500252de8faaa03bea0b7fd1f1fb74a64e01e76f2832cb51668d"
+}

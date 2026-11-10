@@ -1,0 +1,52 @@
+{
+  "edge_id": "ca33eb-frac-type-cone-reduces-optimal-payment",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/fixed-fractional-saddle-type-linear-certificate-and-child-upper-bound"
+  ],
+  "target_ids": [
+    "M-a05cc5b279bc4b6cbaf457ca68e7a8b2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定任意有限标签数、m≥2、全部有序历史策略σ及合法分布p,q；客户以非空兴趣型t的非负重数w_t表示，整数重数为不同单位客户。全称付款仍须覆盖所有这些固定选择，而不是只选5个数值切片。",
+  "roles": {
+    "customer-attraction/fixed-fractional-saddle-type-linear-certificate-and-child-upper-bound": "提供全历史IC与查询/防御双KKT的线性充要行，并给固定σ,p下FG线性式。",
+    "M-a05cc5b279bc4b6cbaf457ca68e7a8b2": "目标全称付款的每个固定策略/鞍点切片，可由精确类型锥优化判别。"
+  },
+  "explanation": "固定σ,p,q后，Γ_{h,a,t}为同σ规定完成与强制a真实完成的单位份额差；Γw≥0对全部h,a等价完整SPE。F_a(w,q)和H_b(w;p,q)对w均线性。p支持F取最大、q支持H取最大并在支持内等价，分别等价查询最佳回复及背景凸目标全局最小，缺一不能认证真鞍点。对每个实际角色i，μ_it=Σ_a p_a L_i(a,t)不依赖w，所以FG(w)=Σ_it w_t p_t/(1+μ_it)−W(w)线性。于是该固定σ,p,q的实重数锥放松上的付款检查精确写为IC+双KKT+非负重数锥上FG≤0（可在非零归一化切片检查；零向量另全0）。证明此实锥不等式足以保证其中全部整数单位输入；对任意实p,q，不把实锥可行点未经有理重构就当整数输入，也不声称此放松对固定无理系数必然无间隙。精确可行有理正FG点可缩放成整数单位反例；数值0、全兴趣t=63等号点及固定孩子上界的非负性均不能认证所有切片的付款。",
+  "contribution": {
+    "result": "给出目标FG-all-optimal每个固定有限σ,p,q的精确线性充分验证合同：全历史IC、查询/防御双KKT和非负实重数锥上的FG≤0覆盖该切片的全部整数单位输入；精确可行有理正FG点则可缩放为单位反例。",
+    "remaining": "目标量化所有有限目录、所有完整σ和任一真鞍点，尚需对所有固定切片证明FG≤0或给精确正FG的合法整数反例。已有5个定点数值零与唯一全兴趣候选没有精确对偶，更不遍历这些量词；孩子固定背景仅给δ_child上界，不能补这一步。"
+  },
+  "scope": "已证的是精确有限切片归约这一局部贡献，未证明目标全称付款；不把源程序运行历史或浮点最优状态当数学结论。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/固定分数鞍点的类型线性证书与真实孩子上界--引理.md",
+      "sha256": "115ae39c4a64528e66abcacc7188f44b2fff82f2179fe71529acd551bc4bfd7e",
+      "section": "两种KKT缺一不可，固定分布后均为线性行"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/固定分数鞍点的类型线性证书与真实孩子上界--引理.md",
+      "sha256": "115ae39c4a64528e66abcacc7188f44b2fff82f2179fe71529acd551bc4bfd7e",
+      "section": "逐角色均值付款目标的线性与未付项"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/近113与近817固定有理鞍点探针的完整合同--程序.md",
+      "sha256": "9fe6133620e23733314c6a57b04f53383c8183dae3e14aeb40fb85a9a97b1056",
+      "section": "两份报告同一等号射线的解析范围"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "实读固定类型引理、两非均匀探针全部报告及池化发现器合同；核双KKT的H支持最大方向、258全历史IC与先角色均值FG线性。仅交归约局部贡献，明确全称与精确最优证书缺口；未运行原LP或声称旧程序新PASS。 额外核实实重数仅为齐次放松：固定任意实p,q时不宣称实锥对整数输入无间隙，有理反例才允许清分母。",
+  "endpoint_pins": {
+    "M-a05cc5b279bc4b6cbaf457ca68e7a8b2": "d98748d2ae2125e618a09e9513af5f0f3b6df11da37e760a129077a01bef3ee0",
+    "customer-attraction/fixed-fractional-saddle-type-linear-certificate-and-child-upper-bound": "385541a69e54f3987922a35ae0f919d83e31084f822a1620265224180ecfa55d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/固定分数鞍点的类型线性证书与真实孩子上界--引理.md": "115ae39c4a64528e66abcacc7188f44b2fff82f2179fe71529acd551bc4bfd7e",
+    "archives/customer-attraction/state/程序/近113与近817固定有理鞍点探针的完整合同--程序.md": "9fe6133620e23733314c6a57b04f53383c8183dae3e14aeb40fb85a9a97b1056"
+  },
+  "review_digest": "2428ce7d5bde81cb7d76080f20ebe9243c8d5c91d1edd4380a50bd5abc069393"
+}

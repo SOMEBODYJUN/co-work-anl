@@ -1,0 +1,62 @@
+{
+  "edge_id": "ca-33eb-query-extremes-certify-conditional-early-total-budget",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/true-query-row-fixed-customer-cone-comparison-extremes-and-negative-record"
+  ],
+  "target_ids": [
+    "M-a0ff64e390d547858476ea79c9403d12"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "固定m≥2、有限p标签目录及同一份定义在全部有序历史的完整策略σ。Γ包含该σ的全部真实IC，客户重数x≥0，原actual福利W·x>0；以W·x=1归一。额外而未由原520次浮点报告支付的条件是：每个早期实际位置i≤m−2、每个非空支撑S（|S|≤min(m,p)）、每个集中剩余重复的极点比较型，其ROW缺口O_S−W−Σn_A d_i(A)在整个Γ锥上的最大值均有精确≤0证书。",
+  "roles": {
+    "customer-attraction/true-query-row-fixed-customer-cone-comparison-extremes-and-negative-record": "把每一固定策略锥上的全部重复m槽比较严格缩减到有限支撑/集中重复极点。",
+    "M-a0ff64e390d547858476ea79c9403d12": "贡献一份足以支付早期共同总预算的精确证书方案；没有证明所有σ均满足方案的前提。"
+  },
+  "explanation": "对固定支撑S，写n_A=1+(m−s)α_A，α_A≥0、Σα=1；比较并集只依S，ROW缺口对α线性。因此每个比较型缺口是同一支撑集中重复极点缺口的凸组合，s=m则只有唯一计数型。若条件中的全部精确极点不等式在Γ锥成立，则固定σ的每个早期i对任意m槽T有R_i≥|∪T|−W。取同一份最优m槽元组即可对每个早期i同时得H_i=R_i−(OPT_m−W)≥0，因而Σ_{i≤m−2}H_i≥0≥−s−u_m（s=max(t_b(A),F_new/2)≥0、u_m≥0）。此推导不用为各角色另选元组；它实际上给该σ锥内所有最优元组成立的更强结论。正福利归一只除以同一正数；W=0完整SPE时全目录零覆盖、预算平凡。原报告四例520个浮点阴性没有精确全锥证书，第五例只在读取/验证后跳过dense LP，均未支付这里的额外前提。",
+  "scope": "固定完整策略及其全部真实IC锥的条件性早期预算贡献；不将有限报告提升为一般早期ROW、一般TOTAL或六人half定理。",
+  "contribution": {
+    "result": "若同一完整σ锥的所有早期支撑/重复极点都有精确ROW非正证书，则同一任意最优m槽元组同时满足每个早期H_i≥0，从而更弱TOTAL早期和≥−s−u_m成立。",
+    "remaining": "必须为待用σ的全部早期极点给精确锥证书；要覆盖原全称目标还须覆盖所有完整σ，或直接证明更弱共同总预算。520次浮点阴性与五人dense跳过均不完成这一步，逐行充分条件也可能严格强于TOTAL所需。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/真实查询行固定客户锥的比较极点与有限阴性账--程序.md",
+      "sha256": "b6a85b2fb23266bab4fc19920b59cf3f2625a34bd0a885915ec403bbbf0154b6",
+      "section": "客户锥及比较元组的完整极点缩减"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/真实查询行固定客户锥的比较极点与有限阴性账--程序.md",
+      "sha256": "b6a85b2fb23266bab4fc19920b59cf3f2625a34bd0a885915ec403bbbf0154b6",
+      "section": "五记录原报告与范围"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/真实查询行与完整覆盖银行的续审范围--审查.md",
+      "sha256": "910dddd676571dd0ce65a7d5dbc245d7c420b345bedc68c9f690cb4184b71558",
+      "section": "更弱的全路径义务及当前状态"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r891-menu-prefix-and-row-cone-programs/original/research/workspaces/customer-attraction/R-8918a9ea76c74f88a9de75e2c4a948e9/parent/row_cone_attack.py",
+      "sha256": "261a8db741dddb3a8796d9317aaead46e21f48dd91f0c89945851600aebb26c6"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r891-menu-prefix-and-row-cone-programs/dependency-reuse-manifest.json",
+      "sha256": "730504140709221beb5fb9583a67170c7da0bdabb0608f0aeb55ad45ad64a18b"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "实读两端正文、row_cone_attack.py全文及14依赖的复用manifest，复核支持固定时缺口线性、正整数重复型的凸组合及每角色极点计数。把精确全锥非正证书保为显式开放条件，检查同一最优元组同时适用于所有早期行；未重审1.3MB五人动作表，未运行dense LP，未把浮点阴性改成精确证书。",
+  "endpoint_pins": {
+    "M-a0ff64e390d547858476ea79c9403d12": "16370d86ce89784a1246d9afbe6d9d86368e5576403c74078f28ff58a6c34deb",
+    "customer-attraction/true-query-row-fixed-customer-cone-comparison-extremes-and-negative-record": "741fe2b6fef7454205f4ef0d482cfdc04493f4d92cb52db3a72ac19e9c3b350b"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/真实查询行固定客户锥的比较极点与有限阴性账--程序.md": "b6a85b2fb23266bab4fc19920b59cf3f2625a34bd0a885915ec403bbbf0154b6",
+    "archives/customer-attraction/state/审查/真实查询行与完整覆盖银行的续审范围--审查.md": "910dddd676571dd0ce65a7d5dbc245d7c420b345bedc68c9f690cb4184b71558",
+    "archives/customer-attraction/tools/evidence/r891-menu-prefix-and-row-cone-programs/original/research/workspaces/customer-attraction/R-8918a9ea76c74f88a9de75e2c4a948e9/parent/row_cone_attack.py": "261a8db741dddb3a8796d9317aaead46e21f48dd91f0c89945851600aebb26c6",
+    "archives/customer-attraction/tools/evidence/r891-menu-prefix-and-row-cone-programs/dependency-reuse-manifest.json": "730504140709221beb5fb9583a67170c7da0bdabb0608f0aeb55ad45ad64a18b"
+  },
+  "review_digest": "64ea949da28253d823e31cb67b5e5dea7c0405d946e13fd5d7e5cef090f6f6cc"
+}

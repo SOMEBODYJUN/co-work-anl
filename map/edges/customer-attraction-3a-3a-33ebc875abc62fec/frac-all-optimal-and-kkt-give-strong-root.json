@@ -1,0 +1,52 @@
+{
+  "edge_id": "ca33eb-frac-all-optimal-and-kkt-give-strong-root",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-a05cc5b279bc4b6cbaf457ca68e7a8b2",
+    "customer-attraction/free-fractional-saddle-true-menu-mean-kkt-remainder"
+  ],
+  "target_ids": [
+    "M-ed9a944bd31e4d6e92854058af9c6ceb"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "m≥2；有限单位客户、有限非空共同标签目录、单位顺序提供者、全部有序历史上的同一完整纯SPE，保重复/空/同覆盖标签与弱平局。必须额外假设尚未证明的FG-all-optimal命题M-a05cc5b279bc4b6cbaf457ca68e7a8b2成立；p*,q*必须是真正自由分数鞍点，竞争质量m−1。",
+  "roles": {
+    "M-a05cc5b279bc4b6cbaf457ca68e7a8b2": "未付的聚合付款前提：每个真鞍点的逐角色均值之和Σ_iF_i≤W。",
+    "customer-attraction/free-fractional-saddle-true-menu-mean-kkt-remainder": "已证KKT-MEAN逐角色下界F_i≥δ_m及静态OPT_m≤(2m−1)δ_m。",
+    "M-ed9a944bd31e4d6e92854058af9c6ceb": "目标：零根强聚合W≥mδ_m及其条件效率界。"
+  },
+  "explanation": "固定任意原实例、完整σ及m≥2。有限单纯形紧和p线性/q凸保证存在真鞍点(p*,q*)。对actual位置i强制A~p*，沿同σ真实完成并只删当前槽一次，得到合法竞争概率q_i和μ_ix=(m−1)(q_i)_x。KKT-MEAN精确展开F_i−δ_m=(m−1)(H_q−H_qi)+Σ_x p*_x(μ_ix−(m−1)q*_x)^2/[(1+μ_ix)(1+(m−1)q*_x)^2]≥0。将m个位置相加得Σ_iF_i≥mδ_m；另用未付FG-all-optimal前提Σ_iF_i≤W，合成W≥mδ_m。静态界再给OPT_m≤(2m−1)δ_m≤(2−1/m)W。两输入各有承重作用：KKT本身只给静态下界，真实IC只付相关对角，并未证明ΣF_i≤W。零客户时全0，不除W或δ。",
+  "whole_result": "在FG-all-optimal全称预算成立这一开放前提下，对每个m≥2有限原实例和每份完整纯SPE，W≥mδ_m，因而OPT_m≤(2−1/m)W；方向为{FG-all-optimal,KKT-MEAN}⇒强根预算。此关系不把开放付款前提提升为已证。",
+  "scope": "同一零根自由分数δ_m、同一σ的actual角色均值；不迁移SC、共享菜单γ、任意坏查询或合法高背景局部链。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/自由分数鞍点的真实菜单均值KKT余量--引理.md",
+      "sha256": "53658a2a2b0131b140616c9dfb18e91eb18304963cb30b3d1b7e6ed269134bcd",
+      "section": "精确KKT/曲率分解及符号"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/自由分数鞍点的真实菜单均值KKT余量--引理.md",
+      "sha256": "53658a2a2b0131b140616c9dfb18e91eb18304963cb30b3d1b7e6ed269134bcd",
+      "section": "静态常数只给条件桥"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/固定分数鞍点的类型线性证书与真实孩子上界--引理.md",
+      "sha256": "115ae39c4a64528e66abcacc7188f44b2fff82f2179fe71529acd551bc4bfd7e",
+      "section": "逐角色均值付款目标的线性与未付项"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "实读两主引理及near113/817、池化背景证据合同；核q背景最优KKT方向、只删当前槽与角色先均值后倒数，保两输入ALL。目标整条强预算与静态效率推论均由明确链给出；ΣF≤W仍开放，故accepted conditional。",
+  "endpoint_pins": {
+    "M-a05cc5b279bc4b6cbaf457ca68e7a8b2": "d98748d2ae2125e618a09e9513af5f0f3b6df11da37e760a129077a01bef3ee0",
+    "M-ed9a944bd31e4d6e92854058af9c6ceb": "5cc1e05654175a00ed78735ac0c832a569fe5853342a5883558240f07e198773",
+    "customer-attraction/free-fractional-saddle-true-menu-mean-kkt-remainder": "dcdd1949a5b274e3bed91a9d2c9247371abfcfea9a9b60a9510942c9dc74e185"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/自由分数鞍点的真实菜单均值KKT余量--引理.md": "53658a2a2b0131b140616c9dfb18e91eb18304963cb30b3d1b7e6ed269134bcd",
+    "archives/customer-attraction/state/引理/固定分数鞍点的类型线性证书与真实孩子上界--引理.md": "115ae39c4a64528e66abcacc7188f44b2fff82f2179fe71529acd551bc4bfd7e"
+  },
+  "review_digest": "ab99bd3bfea79bbcbf654d13382004e00bf8631460aa04c0e9509b247071ee4e"
+}

@@ -1,0 +1,49 @@
+{
+  "edge_id": "cag-2ee0-terminal-obstruction-family-admits-early-query-payment",
+  "kind": "implies",
+  "source_ids": [
+    "LOCAL-TERMINAL-MENU-OVERPAYMENT-v1"
+  ],
+  "target_ids": [
+    "M-ad57b1cd16c64c03b8e8037d06d5936f"
+  ],
+  "relation_mode": "unconditional",
+  "conditions": "同一全参数不交目录：m≥4、2≤q≤m−2、d=m−q，C大小d、A大小q+1、m−2遗漏单例；使用来源已证明的同一完整SPE C^d A^q。",
+  "roles": {
+    "LOCAL-TERMINAL-MENU-OVERPAYMENT-v1": "提供完整有序策略和half余量恰3的真实构造。",
+    "M-ad57b1cd16c64c03b8e8037d06d5936f": "用同一真实早期单例偏离转移该构造覆盖责任。"
+  },
+  "explanation": "不交目录阈值1容量为Σ_s floor(v_s)=2m−1。任意长度ℓ前缀剩余容量至少2m−1−ℓ≥m−ℓ；倒归纳每位未来收益≥1。当前查询一个未用单例后，任何真后继若复制它仅得≤1/2而与该保底矛盾，故该真实偏离利润恰1。把m−2个单例分别分配给d个C玩家及q−2个A玩家，每个信用只用一次；C行slack0、A行slack1/q。总逐客行在C客户为1、A客户为(q−2)/q、单例为−1；相对half目标还余每A客户2/q≥0。总量为(q−2)/q+2(q+1)/q=3。等价对每单例取根行权d/(m−2)、末位行权(q−2)/(m−2)。这些早期行在遗漏单例上为负，恰越过末端锥对其它行非负的限制。",
+  "scope": "该明确完整SPE族的正面责任转移；不将其特例升级为一般共同钱包或half证明。",
+  "whole_result": "来源的全参数真实完整SPE族具有目标全部早期查询分配证书：所有遗漏单例由真实利润1的查询支付，非负逐客户余项及总余额恰3，并有给定ρ/η等价加权表示。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/真实末菜单的覆盖成本分离与早期责任转移--障碍.md",
+      "sha256": "2ba4e9cf5aa14e2f723082d0e40cfc8045e48a022e679ae30eaa27908a923002",
+      "section": "完整历史构造"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/真实末菜单的覆盖成本分离与早期责任转移--障碍.md",
+      "sha256": "2ba4e9cf5aa14e2f723082d0e40cfc8045e48a022e679ae30eaa27908a923002",
+      "section": "同一实例的真实早期查询能转移责任"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/私有席位与真实末菜单原审计的精确复跑--计算.md",
+      "sha256": "63e8a721994549a061d08892530f0a4e1feaacf9b526e15a6725956fb4a03f46",
+      "section": "末菜单脚本的真实检查范围"
+    }
+  ],
+  "review_note": "完整实读三种数学结论及有限审计范围；重核容量归纳、真查询恰1、行系数与3的分解。固定G总余项障碍与重配末端逐客户锥分离未混同；本正证书确使用了被末端模板排除的早期负信用。",
+  "status": "accepted",
+  "premises_mode": "all",
+  "reviewed_by": "Boss4",
+  "endpoint_pins": {
+    "LOCAL-TERMINAL-MENU-OVERPAYMENT-v1": "4c7ab37a2e32836e4e5de402b4cd23d182c18c601a52145fb0a9c7fd8b51bcae",
+    "M-ad57b1cd16c64c03b8e8037d06d5936f": "67a399fcd969ddd04f6ea44d072f22bad8abe451fb07f75c350a28988aef11dc"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/真实末菜单的覆盖成本分离与早期责任转移--障碍.md": "2ba4e9cf5aa14e2f723082d0e40cfc8045e48a022e679ae30eaa27908a923002",
+    "archives/customer-attraction/state/计算/私有席位与真实末菜单原审计的精确复跑--计算.md": "63e8a721994549a061d08892530f0a4e1feaacf9b526e15a6725956fb4a03f46"
+  },
+  "review_digest": "43e6f95e83f726e4de807885908c06280520ea8e14576de2e9968b9cee2a9ddb"
+}

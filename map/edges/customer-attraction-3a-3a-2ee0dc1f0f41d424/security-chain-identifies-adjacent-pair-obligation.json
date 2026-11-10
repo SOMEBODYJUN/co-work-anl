@@ -1,0 +1,53 @@
+{
+  "edge_id": "cag-2ee0-security-chain-identifies-adjacent-pair-obligation",
+  "kind": "implies",
+  "source_ids": [
+    "CA-SECURITY-CHAIN-INTERFACE"
+  ],
+  "target_ids": [
+    "cag-two-step-security-chain-conditional-grouping-and-finite-search-boundary"
+  ],
+  "relation_mode": "unconditional",
+  "conditions": "任意合法有序整数背景、r≥3、同一完整续局；V_i按实际位置，v_r按余人数。PAIR仍是对全域待证前提。",
+  "roles": {
+    "CA-SECURITY-CHAIN-INTERFACE": "给D_i=u_i+(r_i−1)V_(i+1)−r_i V_i的强债务及静态嵌入。",
+    "cag-two-step-security-chain-conditional-grouping-and-finite-search-boundary": "把相邻两步归成同一PAIR，并明确其成立时的强聚合后果。"
+  },
+  "explanation": "在任意真实首两步r_i=r，D_i+D_(i+1)=u_i+u_(i+1)+(r−2)V_(i+2)−r V_i；中间(r−1)V_(i+1)完全消去。V_i=v_r(b)，V_(i+2)=v_(r−2)(b+A+B)，正是PAIR。若该式对所有合法背景和每份完整子SPE非负，可从r按2递减，用P1=v1或P2≥2v2作末端，归纳P_r≥r v_r；空根才写W≥m v_m。单步D_i<0不反驳相邻和，静态嵌入也不自证PAIR。",
+  "scope": "相邻和的精确身份及条件归并，不证明开放PAIR，不用零根有限phase阴性替代全背景量词。",
+  "contribution": {
+    "result": "PAIR准确等于两个相邻强安全链增量之和，解释为何允许先负后正抵消；配全域PAIR和独立末一/两人基例时给强聚合。",
+    "remaining": "PAIR在全部合法背景/所有完整续局上的非负性仍未付，末两人基例另由匿名精确势或CAG两人定理承担；有限锥筛选不补此前提。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/真实路径安全值链的嵌入与债务恒等式--定理.md",
+      "sha256": "d5431e82c2acd43845c37528035f4d59f1e4e564cfdd5b1b8112dc8753147b12",
+      "section": "2. 沿真实路径的精确全局预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/两步安全链的条件归并与有限探索边界--候选.md",
+      "sha256": "b5962f6fc1cf9efd304a1d0d56c58759acbb16ec452788ab4daa171668044ce5",
+      "section": "PAIR的准确条件作用"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/两人匿名势的静态安全支付与无势循环边界--定理.md",
+      "sha256": "17faab573696b99cc632b92e1f3e8c389d522867d553f7e1b34dfbcd7a988bb4",
+      "section": "精确势给出的两人正边界"
+    }
+  ],
+  "review_note": "全文读安全链、PAIR候选、两人匿名势及phase合同；核相邻系数消去、r3末位身份、非零背景P含义和基例来源。边的已证贡献是精确归并而非把开放PAIR升级。",
+  "status": "accepted",
+  "premises_mode": "all",
+  "reviewed_by": "Boss4",
+  "endpoint_pins": {
+    "CA-SECURITY-CHAIN-INTERFACE": "972872feba5114bec2b490a32d72d67f63f5594f9bb6387ee5d0a7850f6d76c0",
+    "cag-two-step-security-chain-conditional-grouping-and-finite-search-boundary": "e10c12a01ae66caf59662f89ad44d4e7db92515e40d364efd208bdb19973655f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/真实路径安全值链的嵌入与债务恒等式--定理.md": "d5431e82c2acd43845c37528035f4d59f1e4e564cfdd5b1b8112dc8753147b12",
+    "archives/customer-attraction/state/候选/两步安全链的条件归并与有限探索边界--候选.md": "b5962f6fc1cf9efd304a1d0d56c58759acbb16ec452788ab4daa171668044ce5",
+    "archives/customer-attraction/state/定理/两人匿名势的静态安全支付与无势循环边界--定理.md": "17faab573696b99cc632b92e1f3e8c389d522867d553f7e1b34dfbcd7a988bb4"
+  },
+  "review_digest": "234431055ad759c20ba5df5e0768e193de128f6bcaa610e62cdcf3ca25cdecac"
+}

@@ -1,0 +1,52 @@
+{
+  "edge_id": "cag-2ee0-credible-menu-supplies-envelope-attainability",
+  "kind": "implies",
+  "source_ids": [
+    "CA-CREDIBLE-CONTINUATIONS"
+  ],
+  "target_ids": [
+    "customer-attraction/conditional-terminal-full-spe-real-query-minima-recurrence"
+  ],
+  "relation_mode": "unconditional",
+  "conditions": "同一固定有限单位客户输入、全部完整有序历史；E=R为精确可实现终局集，非负查询权w；不同有序孩子互不相交。",
+  "roles": {
+    "CA-CREDIBLE-CONTINUATIONS": "给出兼容规定孩子与全部离轨菜单，并保证完整有序子树可同时拼合。",
+    "customer-attraction/conditional-terminal-full-spe-real-query-minima-recurrence": "以该可实现性条件构造一行q_w以及K/H极值的达到策略。"
+  },
+  "explanation": "令g_b=min_{y∈R(k+e_b)}U_b(y)、M=max_b g_b。可信菜单给规定(a,z)兼容恰z∈R(k+e_a)且U_a(z)≥M。规定孩子不能另换：其查询收益强制为U_a(z)；其它孩子可各取达到g_b的可信终局，均落于菜单U_b≤U_a(z)。因此非负w下该行最小值恰Σw_b g_b+w_a(U_a(z)−g_a)。在规定孩子递归选达到K或H者，别的孩子独立选g_b者，当前IC和全部孩子SPE同时保持，倒归纳支付极值达到性。计数只缓存R和值，动作仍按原有序历史书写。",
+  "scope": "有限输入可达性与极值；不把默认最低威胁树说成所有完整策略的枚举，不给ROW/SUM普遍下界。",
+  "contribution": {
+    "result": "目标q_w的规定孩子校正项及K/H倒归纳达到性由完整可信菜单的兼容和有序子树拼合支持。",
+    "remaining": "还需目标各自的极值递推和根后悔代数；本关系不控制不同输入g_b的普遍查询付款下界。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/可信续局菜单与完整策略重构--算法.md",
+      "sha256": "db6267ec3888975e5c6310d3a9a0d7c889469ee4d5be02b00ac338f139647961",
+      "section": "完整可信菜单算法"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/给定终局的完整SPE真实查询最小值递推--引理.md",
+      "sha256": "8e8b1ff54e112a36cb245d28c559874c529d5440a2b20f7011e97322ec4511be",
+      "section": "一行真实查询的精确最小额"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/给定终局的完整SPE真实查询最小值递推--引理.md",
+      "sha256": "8e8b1ff54e112a36cb245d28c559874c529d5440a2b20f7011e97322ec4511be",
+      "section": "条件总额K与单行H"
+    }
+  ],
+  "review_note": "全文比较两算法正文及小例合同。核规定孩子不能和自己独立重选、w非负、不同有序孩子可独立选可信目标、K/H最优策略可不同；仅保算法承重步骤。",
+  "status": "accepted",
+  "premises_mode": "all",
+  "reviewed_by": "Boss4",
+  "endpoint_pins": {
+    "CA-CREDIBLE-CONTINUATIONS": "2dbb128ee54e25aca2f4a2cb528c14e32cadaf7c7e70c3a6b25126a68c3d5ffe",
+    "customer-attraction/conditional-terminal-full-spe-real-query-minima-recurrence": "b854e23698006c87e6b93d1baf746867a810014c8f6078602c12929bc57f08cc"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/可信续局菜单与完整策略重构--算法.md": "db6267ec3888975e5c6310d3a9a0d7c889469ee4d5be02b00ac338f139647961",
+    "archives/customer-attraction/state/引理/给定终局的完整SPE真实查询最小值递推--引理.md": "8e8b1ff54e112a36cb245d28c559874c529d5440a2b20f7011e97322ec4511be"
+  },
+  "review_digest": "9978bc5815a7f5e2b6a2425a31aba733c9d02576d7c2e2a66fb8c3d57d165c57"
+}

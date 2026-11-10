@@ -1,0 +1,47 @@
+{
+  "edge_id": "cag-33eb-cce-security-lower-bound-contributes-pc",
+  "kind": "implies",
+  "source_ids": [
+    "customer-attraction/static-cce-uniform-deletion-security-lower-bound-and-strict-gap"
+  ],
+  "target_ids": [
+    "customer-attraction/cross-population-static-cce-mean-welfare-bridge"
+  ],
+  "relation_mode": "unconditional",
+  "conditions": "同一有限客户和有限非空共同标签目录，静态人数n=m+1≥1；静态CCE可任意相关、不对称；每位偏离为抽样前固定合法主题，安全查询T独立于全部n−1个竞争行动。静态与顺序模型只共享输入，不冻结真实后继。",
+  "roles": {
+    "customer-attraction/static-cce-uniform-deletion-security-lower-bound-and-strict-gap": "每位固定行动CCE约束按最优独立安全查询混合，给E u_i≥v_n并相加。",
+    "customer-attraction/cross-population-static-cce-mean-welfare-bridge": "仅接收条件half归约中已付的静态安全下界；开放动态比较仍待证明。"
+  },
+  "contribution": {
+    "result": "对PC所用的n=m+1静态游戏，最低任意CCE总福利C_n≥n v_n；因此其最低平均福利C_n/n至少v_n。",
+    "remaining": "PC尚需对每份m人完整SPE证明W/m≥C_(m+1)/(m+1)；静态额外槽OPT_m≤2m v_(m+1)是另一步，不能由本边省略。"
+  },
+  "explanation": "有限minimax给最优安全分布p*。对任意CCE μ和位置i，把每个固定T的CCE约束按p*_T加权，得Eμu_i≥E_(μ,T)u_i(T,s_−i)。每个s_−i都是同一目录合法n−1槽背景，且T独立于它，所以后者≥v_n。逐位置相加并对CCE取最小得C_n≥n v_n。无需CCE独立、对称或iid；n=m+1对应目标准确人数。占用LP通过玩家置换是两个候选共用的静态技术，但没有提供从动态真实响应到冻结对手的任何付款。三单例C3>3v3禁止把两个基准反向等同。",
+  "scope": "已成立的静态局部贡献，不支持目标整个开放动态桥；PC与WC人数和系数保持分开。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/静态粗相关均衡的安全下界与三单例严格间隙--引理.md",
+      "sha256": "05117b940130385530bfaa9aa741ea4ddbbbbc3e73206efe009e44b17253c221",
+      "section": "静态定义与普遍蕴含"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/跨人数静态粗相关均值与顺序福利比较--候选.md",
+      "sha256": "f453901abc453cbcf8b30ada9571f04805302a8b4b4e529647bfe16c709b6079",
+      "section": "安全下界与正确的条件half归约"
+    }
+  ],
+  "review_note": "Boss4完整核静态每位约束的独立混合与人数m+1，保C_n最低值在任意相关非对称CCE上取；本边明确contribution，未把精确占用LP、9例float正gap、弱族PNE或half别证升级成PC/WC证明。",
+  "status": "accepted",
+  "premises_mode": "all",
+  "reviewed_by": "Boss4",
+  "endpoint_pins": {
+    "customer-attraction/cross-population-static-cce-mean-welfare-bridge": "39bed872f2e76b1954d806f48e01058bbe84718e1478f70d0ba5d2990d327a92",
+    "customer-attraction/static-cce-uniform-deletion-security-lower-bound-and-strict-gap": "4a35ec037d245237f35c1f729e660aca9d510c96273741a730df54730de30c6f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/静态粗相关均衡的安全下界与三单例严格间隙--引理.md": "05117b940130385530bfaa9aa741ea4ddbbbbc3e73206efe009e44b17253c221",
+    "archives/customer-attraction/state/候选/跨人数静态粗相关均值与顺序福利比较--候选.md": "f453901abc453cbcf8b30ada9571f04805302a8b4b4e529647bfe16c709b6079"
+  },
+  "review_digest": "d169ca5aa8d9ad3de2de944bf0d87c278762f0c2be5015b3cdab38bc7c031ced"
+}
