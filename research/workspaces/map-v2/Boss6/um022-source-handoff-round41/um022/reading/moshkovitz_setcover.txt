@@ -1,0 +1,719 @@
+                         T HEORY OF C OMPUTING, Volume 11 (7), 2015, pp. 221–235
+                                       www.theoryofcomputing.org
+
+                          S PECIAL ISSUE : APPROX-RANDOM 2012
+
+
+
+     The Projection Games Conjecture and the
+       NP-Hardness of ln n-Approximating
+                   S ET-C OVER
+                                                 Dana Moshkovitz∗
+                    Received October 21, 2012; Revised July 22, 2014; Published June 9, 2015
+
+
+
+
+       Abstract: We establish a tight NP-hardness result for approximating the S ET-C OVER
+       problem based on a strong PCP theorem. Our work implies that it is NP-hard to approximate
+       S ET-C OVER on instances of size N to within (1 − α) ln N for arbitrarily small α > 0. Our
+       reduction establishes a tight trade-off between the approximation accuracy α and the running
+       time exp(N Ω(α) ) assuming S AT requires exponential time.
+           The reduction is obtained by modifying Feige’s reduction. The latter provides a lower
+       bound of exp(N Ω(α/ log log N) ) on the time required for (1 − α) ln N-approximating S ET-
+       C OVER assuming S AT requires exponential time. The modification uses a combinatorial
+       construction of a bipartite graph in which any coloring of the first side that does not use a
+       color for more than a small fraction of the vertices, makes most vertices on the other side
+       have all their neighbors colored in different colors.
+           In the conference version of this paper, the S ET-C OVER result was conditioned on a
+       conjecture we call “The Projection Games Conjecture” (PGC), a strengthening of the Sliding
+     A preliminary version of this paper appeared in the Proceedings of The 15th International Workshop on Approximation
+Algorithms for Combinatorial Optimization Problems (APPROX 2012) [30].
+   ∗ This material is based upon work supported by the National Science Foundation under Grant Number 1218547.
+
+
+
+ACM Classification: F.2.2, F.1.3, G.1.6, F.2.3
+AMS Classification: 68Q17, 68W25, 68Q25
+Key words and phrases: Set-Cover, PCP, Sliding Scale Conjecture, Projection Games Conjecture
+
+
+© 2015 Dana Moshkovitz
+c b Licensed under a Creative Commons Attribution License (CC-BY)                          DOI: 10.4086/toc.2015.v011a007
+                                               DANA M OSHKOVITZ
+
+      Scale Conjecture of Bellare, Goldwasser, Lund and Russell to projection games (L ABEL -
+      C OVER). More precisely, the prerequisite was a quantitative version of this conjecture that
+      was slightly beyond what was known at the time of the paper’s writing. Shortly afterward,
+      Dinur and Steurer, based on a result by the author and Raz, proved the quantitative version of
+      the conjecture sufficient for the S ET-C OVER result. More broadly, in this paper we discuss
+      the Projection Games Conjecture and its applications to hardness of approximation, e. g.,
+      to polynomial hardness factors for the C LOSEST-V ECTOR problem and to studying the
+      behavior of CSPs around their approximability threshold.
+
+
+1    S ET-C OVER
+In S ET-C OVER, given a collection of subsets of a base set such that the sets cover all of the base set, the
+goal is to find as few of the sets as possible that cover the entire base set.
+Definition 1.1 (S ET-C OVER). The input to S ET-C OVER consists of a base set U, |U| = n and subsets
+S1 , . . . , Sm ⊆ U, mj=1 S j = U. The goal is to find as few sets Si1 , . . . , Sik as possible that cover U, i. e.,
+                    S
+Sk
+  j=1 Si j = U.
+    S ET-C OVER is a classical NP-hard optimization problem. It is equivalent to the H ITTING -S ET,
+H YPERGRAPH -V ERTEX -C OVER and D OMINATING -S ET problems, and is a special case of many other
+problems, e. g., G ROUP -S TEINER -T REE and G ROUP -T RAVELING -S ALESMAN -P ROBLEM.
+    The greedy algorithm was shown to give a (ln n + 1)-approximation for S ET-C OVER [19, 25, 42].
+Slavík analyzed the low-order terms of the greedy algorithm, and showed that it in fact obtains an
+approximation to within ln n − ln ln n + O(1) [40]. S ET-C OVER also has a linear programming based
+algorithm that gives approximation to within the same factor [41].
+    Lund and Yannakakis proved that S ET-C OVER cannot be approximated in polynomial time to
+within any factor better than (log2 n)/4, assuming NP 6⊆ DTIME(npoly log n ) [26]. By adapting their
+construction, Feige changed the leading constant to the right constant, and showed that S ET-C OVER
+cannot be approximated in polynomial time to within (1 − α) ln n for any α > 0, assuming NP 6⊆
+DTIME(nO(lg lg n) ) [14]. (The improvement in the assumption is due to the parallel repetition theorem [36],
+proved in the time between the two results.) Under P 6= NP, the best hardness factor known prior to this
+work was about 0.2 ln n [2], based on the PCP of [37, 6].
+    Parallel repetition is used by Feige not only to ensure very low error, 1/(log n)O(1) , for the PCP, but
+also for its unique structure. It was assumed by some that the blow-up incurred by parallel repetition
+was inherent to S ET-C OVER. We show that this is not the case. The following theorem follows from the
+reduction presented in this paper together with the parallel repetition of Dinur and Steurer [13].
+Theorem 1.2. For every 0 < α < 1, (exact) S AT on inputs of size n can be reduced in polynomial time to
+approximating S ET-C OVER to within (1 − α) ln N on inputs of size N = nO(1/α) .
+    The theorem shows that approximating S ET-C OVER on inputs of size N better than (1 − α) ln N is NP-
+hard. Interestingly, the N = nO(1/α) blow-up of the reduction is optimal (up to the constant in the O(·)),
+assuming that S AT requires exponential time, 2Ω(n) (“The Exponential Time Hypothesis” [18]). This
+                                             α
+follows from a slightly subexponential 2O(N +poly log N) -time approximation algorithm for (1 − α) ln N
+approximating S ET-C OVER [10].
+
+                      T HEORY OF C OMPUTING, Volume 11 (7), 2015, pp. 221–235                                   222
+                                  NP-H ARDNESS OF A PPROXIMATING S ET-C OVER
+
+2     Projection games and the Projection Games Conjecture
+In the conference version of this paper [30], Theorem 1.2 was conditioned on a conjecture we call “The
+Projection Games Conjecture” (PGC), or, more precisely, on a quantitative version of this conjecture
+that was slightly beyond what was known at the time of the paper’s writing. Shortly afterward, Dinur
+and Steurer [13], based on a result by the author and Raz [31], proved the quantitative version of the
+conjecture sufficient for Theorem 1.2. In this section we discuss the Projection Games Conjecture.
+     Most of the NP-hardness of approximation results known today (e. g., all of the results in Håstad’s
+paper [16]) are based on a PCP Theorem for L ABEL -C OVER. The input to L ABEL -C OVER consists of
+(i) a bipartite graph G = (A, B, E); (ii) finite alphabets ΣA , ΣB ; (iii) constraints (also called projections)
+πe : ΣA → ΣB for every edge e ∈ E. The goal is to find assignments to the vertices, ϕA : A → ΣA ,
+ϕB : B → ΣB , that satisfy as many of the edges as possible. We say that an edge e = (a, b) ∈ E is satisfied
+if the projection constraint holds, i. e., πe (ϕA (a)) = ϕB (b). We denote the size of the label cover by
+n = |A| + |B| + |E|. The size of the alphabet is max {|ΣA | , |ΣB |}.
+     A PCP Theorem for L ABEL -C OVER with soundness error ε and alphabet size k (where ε and k may
+depend on n) states the following [5, 4, 36]:
+        It is NP-hard, given an input of size n for L ABEL -C OVER with alphabets of size k, to
+        distinguish between the case where all edges can be satisfied and the case where at most ε
+        fraction of the edges can be satisfied.
+We can refine this statement by saying that there is a reduction from (exact) S AT to L ABEL -C OVER,
+which maps instances of S AT of size n to instances of L ABEL -C OVER of size N = n1+o(1) poly(1/ε).
+Such PCPs are referred to as “almost-linear size PCP” because of the exponent of n, although for small ε
+the blow-up may be super-linear.
+    Ran Raz and the author proved the following result.
+Theorem 2.1 ([32]). There exists c > 0, such that for every ε ≥ 1/N c , S AT on input of size n can be
+reduced to L ABEL -C OVER of size N for N = n1+o(1) poly(1/ε). The L ABEL -C OVER is over an alphabet
+of size exponential in 1/ε, and has soundness error ε. The reduction can be computed in linear time in
+the size and the alphabet size of the L ABEL -C OVER instance. The L ABEL -C OVER is on a bi-regular
+graph whose degrees are poly(1/ε).
+    One cannot hope for a soundness error that is lower than 1/N. Hence, the dependence of ε on N is as
+low as possible up to the value of the constant c. On the other hand, the alphabet size in Theorem 2.1
+is not known to be tight. It can be shown that the alphabet size must be at least 1/ε where ε is the
+soundness error (assuming P 6= NP). Moreover, certain PCP constructions—while deficient in other
+parameters—have alphabets of size poly(1/ε), see, e. g., [36]. This motivates the conjecture that an
+alphabet size of poly(1/ε) could be achieved in Theorem 2.1 as well.
+Conjecture 2.2 (Projection Games Conjecture,1 PGC). There exists c > 0, such that for every ε ≥ 1/N c ,
+S AT on inputs of size n can be efficiently reduced to L ABEL -C OVER of size N = n1+o(1) poly(1/ε) over
+an alphabet of size poly(1/ε) that has soundness error ε.
+    1 A slightly weaker version of the Projection Games Conjecture is one in which the size of the label cover is polynomial,
+
+N = poly(n, 1/ε), rather than almost-linear.
+
+
+                        T HEORY OF C OMPUTING, Volume 11 (7), 2015, pp. 221–235                                         223
+                                                   DANA M OSHKOVITZ
+
+     In almost all applications, one wishes the size and the alphabet size of the L ABEL -C OVER to be at
+most polynomial in n. This happens in Theorem 2.1 only when ε ≥ 1/(log N)b for a constant b > 0. The
+PGC, on the other hand, would give polynomial size and polynomial alphabet size for any ε ≥ 1/N c .
+     The PGC is the strengthening of the Sliding Scale Conjecture of Bellare, Goldwasser, Lund and
+Russell [7] obtained by restricting it to L ABEL -C OVER (of almost-linear size). “Sliding scale” refers
+to the idea that the error can be decreased as we increase the alphabet size. Bellare et al. conjectured
+that polynomially small error could be achieved simultaneously with polynomial alphabet, even for two
+queries. They did not formulate their conjecture for L ABEL -C OVER, which was introduced by Arora et
+al. [3] around the same time. Today, focusing on the PGC became natural in the PCP community.
+     Approximation algorithms for L ABEL -C OVER were designed  √      [34, 9, 27], and the conjecture is
+consistent with the state of the art algorithm, giving 1/ε = O( 4 Nk) [27]. For PCPs with more than two
+queries (corresponding to games on hypergraphs, where the edges carry general predicates rather than
+                                                                      1−α
+projections), soundness error approaching polynomial, ε = 2−(log N) for every α > 0, is known [11].
+Alas, these PCPs are not for label covers, and the number of queries depends on ε.
+     Dinur and Steurer show how to achieve soundness error that is poly-logarithmic in N (for any poly-
+logarithm) simultaneously with polynomial-sized alphabet, at the cost of increasing the size. This suffices
+for the reduction to S ET-C OVER in Theorem 1.2 to go through. The idea is to apply parallel repetition
+on Theorem 2.1, and Dinur and Steurer were the first to successfully analyze parallel repetition for the
+relevant parameters.
+
+Theorem 2.3 ([13]). There exists c > 0, such that for every ε ≥ 1/N c and every k ≥ 1, S AT on input of
+size n can be reduced to L ABEL -C OVER on a bi-regular graph whose size is N k for N = n1+o(1) poly(1/ε).
+The projection game is over an alphabet of size exponential in 1/ε and k, and has soundness error (2ε)k/2 .
+The reduction can be computed in linear time in the size and the alphabet size of the L ABEL -C OVER.
+The L ABEL -C OVER is on a bi-regular graph whose degrees are poly(1/ε k ).
+
+    The Projection Games Conjecture has a similar flavor to Khot’s Unique Games Conjecture (UGC) [21];
+both assert that low soundness error2 for a special kind of 2-prover games can be obtained for sufficiently
+large alphabets. Unique games are the special case of L ABEL -C OVER in which the projections πe
+are one-to-one. Unique games are easier than general projection games. In particular, while there are
+constructions of projection games with low soundness error for S AT, we do not know of any constructions
+of unique games with almost-perfect completeness3 and bounded soundness error. The two conjectures,
+UGC and PGC, seem unrelated: neither would imply the other.
+    The following variant of the PGC is useful for hardness of approximation.
+
+Definition 2.4 (Linear projection game). A linear L ABEL -C OVER is L ABEL -C OVER where the alphabets
+are of the form ΣA = Fa , ΣB = Fb , where F is a finite field, and a ≥ b are natural numbers. The projections
+in the game are affine transformations Fa → Fb .
+
+   2 The unique games conjecture only asks for arbitrarily small constant soundness error ε, while the PGC asks for polynomially
+
+small error.
+   3 For unique games, if all the edges can be satisfied simultaneously, then one can find a satisfying assignment in polynomial
+
+time. Hence, we consider the case where almost all edges can be satisfied simultaneously (“almost perfect completeness”).
+
+
+                        T HEORY OF C OMPUTING, Volume 11 (7), 2015, pp. 221–235                                            224
+                              NP-H ARDNESS OF A PPROXIMATING S ET-C OVER
+
+Conjecture 2.5 (Linear PGC). There exists c > 0, such that for every ε ≥ 1/nc , S AT on inputs of size n
+can be efficiently reduced to a linear L ABEL -C OVER of size N = n1+o(1) poly(1/ε) and alphabet size
+poly(1/ε). Satisfiable instances of S AT are mapped to L ABEL -C OVER where 1 − ε fraction of the edges
+can be satisfied, while unsatisfiable instances of S AT are mapped to L ABEL -C OVER where at most ε
+fraction of the edges can be satisfied.
+
+    Note that for linear L ABEL -C OVER, one can efficiently distinguish the case where all edges can be
+satisfied from the case where not all edges can be satisfied—by Gaussian elimination. Therefore, it was
+necessary to modify the statement of Conjecture 2.2.
+    In Section 5 we discuss applications of the PGC and the linear PGC to proving polynomial hardness
+factors for the C LOSEST-V ECTOR -P ROBLEM and to studying the behavior of M AX -3LIN and other
+CSPs around their approximability thresholds.
+
+
+3     Preliminaries
+For a set S and a natural number ` we denote by S` the family of all sets of ` elements from S.
+                                                      
+
+      We assume without loss of generality that the L ABEL -C OVER instance in Conjecture 2.2 is bi-regular,
+i. e., all the vertices from A have the same degree, which we call the A-degree, and all the vertices
+from B have the same degree, which we call the B-degree. We note that any L ABEL -C OVER instance
+can be converted to bi-regular using a technique developed in [32] (“right degree reduction—switching
+sides—right degree reduction”), and the cost in the soundness error and graph size does not change the
+parameters as stated in Conjecture 2.2.
+
+
+4     S ET-C OVER hardness
+4.1   The new component
+Feige uses the structure obtained from parallel repetition to achieve a L ABEL -C OVER in which the
+soundness guarantee is that very few vertices from B have any two of their neighbors agree on a value for
+them.
+
+Definition 4.1 (Total disagreement). Let (G = (A, B, E), ΣA , ΣB , Φ) be a L ABEL -C OVER instance. Let
+ϕA : A → ΣA be an assignment to the A-vertices. We say that the A-vertices totally disagree on a vertex
+b ∈ B if there are no two neighbors a1 , a2 ∈ A of b, for which
+
+                                          πe1 (ϕA (a1 )) = πe2 (ϕA (a2 )) ,
+
+where e1 = (a1 , b), e2 = (a2 , b) ∈ E.
+
+Definition 4.2 (Agreement soundness). Let G = (G = (A, B, E), ΣA , ΣB , Φ) be a L ABEL -C OVER for
+deciding whether a Boolean formula φ is satisfiable. We say that G has agreement soundness error ε, if
+for unsatisfiable φ , for any assignment ϕA : A → ΣA , the A-vertices are in total disagreement on at least
+1 − ε fraction of the b ∈ B.
+
+                     T HEORY OF C OMPUTING, Volume 11 (7), 2015, pp. 221–235                            225
+                                               DANA M OSHKOVITZ
+
+   Feige used parallel repetition together with a coding theoretic trick to achieve agreement soundness.
+We show a different way to achieve agreement soundness. Our construction centers around the following
+combinatorial lemma.
+
+Lemma 4.3 (Combinatorial construction). For 0 < ε < 1, for a prime power D, and n that is a power
+of D, there is an explicit construction of a regular graph H = (U,V, E) with |U| = n, V -degree D, and
+|V | ≤ nO(1) that satisfies the following. For every partition U1 , . . . ,U` of U into sets such that |Ui | ≤ ε |U|
+for i = 1, . . . , `, the fraction of vertices v ∈ V with more than one neighbor in any single set Ui , is at most
+εD2 .
+
+     Note that the combinatorial property could be achieved by a randomized construction, or by a
+construction that has a V -vertex per every possible set of D neighbors in U. However, the first construction
+is randomized and the second—too wasteful with a size of ≈ |U|D . The lemma can therefore be thought
+of as a derandomization of the randomized/full constructions.
+
+Proof of Lemma 4.3. Our graph will be the line-point incidence graph of an affine space over a finite
+field. Let U = Fm where F is a finite field       of|F|order |F| = D, and m is a natural number. Let V be the set of
+all affine lines in Fm . Hence, |V | = |U|
+                                                         
+                                               2  /   2   . We connect a line v ∈ V with a point u ∈ U if u lies in v.
+     Let us show this construction satisfies the desired property. Fix a partition U1 , . . . ,U` of U into
+tiny sets, |Ui | ≤ ε |U| for i = 1, . . . , `. For every 1 ≤ i ≤ `, the number of V lines that have at least two
+neighbors in Ui is at most |U2i | . Thus the total number of V -vertices with more than one neighbor in a
+single Ui is at most
+                                   `            `
+                                                  |Ui |2
+                                       
+                                       |Ui |
+                                  ∑ 2        ≤ ∑
+                                  i=1          i=1 2
+                                                                            `
+                                                                              |Ui |
+                                              ≤ max { |Ui | | 1 ≤ i ≤ `} · ∑
+                                                                           i=1 2
+                                                          |U|
+                                              ≤ ε |U| ·
+                                                           2
+                                              ≤ ε |F|2 |V | .
+
+   We show how to take a L ABEL -C OVER instance with standard soundness and convert it to a L ABEL -
+C OVER instance with total disagreement soundness, by combining it with the graph from Lemma 4.3.
+
+Lemma 4.4. Let D ≥ 2 be a prime power and let n be a power of D. Let ε > 0. From a L ABEL -C OVER
+instance with soundness error ε 2 D2 and B-degree n, we can construct a L ABEL -C OVER instance with
+agreement soundness error 2εD2 and B-degree D. The transformation preserves the alphabets. The size
+is raised to a constant power.
+
+Proof. Let G = (G = (A, B, E), ΣA , ΣB , Φ) be the original L ABEL -C OVER. Let H = (U,V, EH ) be the
+graph from Lemma 4.3, where n, D and ε are as given in the current lemma. Let us use U to enumerate
+the neighbors of a B-vertex, i. e., there is a function E ← : B ×U → A that given a vertex b ∈ B and u ∈ U,
+gives us the A-vertex which is the u neighbor of b.
+
+                      T HEORY OF C OMPUTING, Volume 11 (7), 2015, pp. 221–235                                     226
+                              NP-H ARDNESS OF A PPROXIMATING S ET-C OVER
+
+     We create a new L ABEL -C OVER (G = (A, B ×V, E 0 ), ΣA , ΣB , Φ0 ). The intended assignment to every
+vertex a ∈ A is the same as its assignment in the original instance. The intended assignment to a vertex
+hb, vi ∈ B ×V is the same as the assignment to b in the original game. We put an edge e0 = (a, hb, vi) if
+E ← (b, u) = a and (u, v) ∈ EH . We define πe0 ≡ π(a,b) .
+     If there is an assignment to the original instance that satisfies c fraction of its edges, then the
+corresponding assignment to the new instance satisfies c fraction of its edges.
+     Suppose there is an assignment for the new instance ϕA : A → ΣA in which more than 2εD2 fraction
+of the vertices in B ×V do not have total disagreement.
+     Let us say that b ∈ B is “good” if for more than an εD2 of the vertices in {b} ×V the A-vertices do
+not totally disagree. Note that the fraction of good b ∈ B is at least εD2 .
+     Focus on a good b ∈ B. Consider the partition of U into |ΣB | sets, where the set corresponding to
+σ ∈ ΣB is:
+                       Uσ = { u ∈ U | a = E ← (b, u) ∧ e = (a, b) ∧ πe (ϕA (a)) = σ } .
+By the goodness of b and the property of H, there must be σ ∈ ΣB such that |Uσ | > ε |U|. We call σ the
+“champion” for b.
+    We define an assignment ϕB : B → ΣB that assigns good vertices b their champions, and other vertices
+b arbitrary values. The fraction of edges that ϕA , ϕB satisfy in the original instance is at least ε 2 D2 .
+
+    Next we consider a variant of L ABEL -C OVER that is relevant for the reduction to S ET-C OVER. In this
+variant the prover is allowed to assign each vertex ` values, and an agreement is interpreted as agreement
+on one of the assignments in the list.
+
+Definition 4.5 (List
+                 ΣA
+                     total disagreement). Let (G = (A, B, E), ΣA , ΣB , Φ) be a L ABEL -C OVER. Let ` ≥ 1.
+Let ϕ̂A : A → ` be an assignment that assigns each A-vertex ` alphabet symbols. We say that the
+A-vertices totally disagree on a vertex b ∈ B if there are no two neighbors a1 , a2 ∈ A of b, for which there
+exist σ1 ∈ ϕ̂A (a1 ), σ2 ∈ ϕ̂A (a2 ), such that
+
+                                             πe1 (σ1 ) = πe2 (σ2 ) ,
+
+where e1 = (a1 , b), e2 = (a2 , b) ∈ E.
+
+Definition 4.6 (List agreement soundness). Let (G = (A, B, E), ΣA , ΣB , Φ) be a L ABEL -C OVER for
+deciding membership whether a Boolean formula φ is satisfiable. We saythat G has list-agreement
+soundness error (`, ε), if for unsatisfiable φ , for any assignment ϕ̂A : A → Σ`A , the A-vertices are in total
+disagreement on at least 1 − ε fraction of the b ∈ B.
+
+   If a PCP has low error ε, then even when the prover is allowed to assign each A-vertex ` values, the
+game is still sound. This is argued in the next corollary.
+
+Lemma 4.7 (L ABEL -C OVER with list-agreement soundness). Let ` ≥ 1, 0 < ε 0 < 1. A L ABEL -C OVER
+with agreement soundness error ε 0 has list-agreement soundness error (`, ε 0 `2 ).
+                                                                                                          
+Proof. Assume by way of contradiction that the L ABEL -C OVER instance has an assignment ϕ̂A : A → Σ`A
+such that on more than ε 0 `2 fraction of the B-vertices, the A-vertices do not totally disagree. Define an
+assignment ϕA : A → ΣA by assigning every vertex a ∈ A a symbol picked uniformly at random from the `
+
+                     T HEORY OF C OMPUTING, Volume 11 (7), 2015, pp. 221–235                               227
+                                                DANA M OSHKOVITZ
+
+symbols in ϕ̂A (a). If a vertex b ∈ B has two neighbors a1 , a2 ∈ A that agree on b under the list assignment
+ϕ̂A , then the probability that they agree on b under the assignment ϕA is at least 1/`2 . Thus, under ϕA , the
+expected fraction of the B-vertices that have at least two neighbors that agree on them, is more than ε 0 . In
+particular, there exists an assignment to the A-vertices, such that more than ε 0 fraction of the B-vertices
+have two neighbors that agree on them. This contradicts the agreement soundness.
+
+      The following statement summarizes the above.
+Corollary 4.8. For any ` = `(n) = poly log n, for any constant prime power D ≥ 2 and constant 0 < α < 1,
+S AT on input of size n can be reduced to a L ABEL -C OVER instance of size N = poly(n) with alphabet
+size poly(n), where the B-degree is D, and the list-agreement soundness error is (`, α).
+Proof.
+p      Our starting point is the L ABEL -C OVER from Theorem 2.3 with soundness error (2ε)k/2 so
+  (2ε)k/2 ≤ α/2(D`)2 . We apply Lemma 4.4 and Lemma 4.7.
+
+4.2     Following Feige’s reduction
+In the remainder, we will show how to use Corollary 4.8 to obtain the desired hardness result for
+S ET-C OVER. The reduction is along the lines of Feige’s original reduction.
+    For the reduction we rely on a combinatorial construction by Naor, Schulman, and Srinivasan [33].
+They construct a universe together with partitions of it. Each partition covers the universe, but any cover
+that uses at most one set out of each partition, is necessarily large. A formal statement follows.
+Lemma 4.9 (Partition system). For natural numbers m, D and 0 < α < 1, for all u ≥ (DO(log D) log m)1/α ,
+there is an explicit construction of a universe U of size u and partitions P1 , . . . , Pm of U into D sets that
+satisfy the following: there is no cover of U with ` = D ln |U| (1 − α) sets Si1 , . . . , Si` , 1 ≤ i1 < · · · < i` ≤ m,
+such that set Si j belongs to partition Pi j .
+      We will use the contrapositive of the lemma: if U has a cover of size at most `, then this cover
+must contain at least two sets from the same partition. The choice of parameters of interest to us is the
+following: m is at most polynomial in n (m will be |ΣB | of the projection game), D is a sufficiently large
+constant, and α is a small constant.
+      To see why ` = D ln |U| (1 − α) is to be expected (this later determines the hardness factor we get),
+think of the following randomized construction: each element in U corresponds to a vector in [D]m ,
+specifying for each of the m partitions, to which of its D sets it belongs. Consider a uniformly random
+choice of such a vector. Fix any Si1 , . . . , Si` . The probability that a random element is not covered by
+Si1 , . . . , Si` is (1 − 1/D)` ≈ e−`/D . When ` = D ln |U| (1 − α), we have e−`/D ≥ 1/ |U|, and we expect one
+of the |U| elements in U not to be covered by Si1 , . . . , Si` . The construction of “anti-universal sets” in [33]
+derandomizes this randomized construction. This is the mapping from our notation to the notation in [33]:
+m → n, D → b, ` → k, U is the anti-universal set.
+      We now describe the reduction from a L ABEL -C OVER G as in Corollary 4.8, to a S ET-C OVER
+instance SCG .
+      Apply Lemma 4.9 for m = |ΣB | and D which is the B-degree of the L ABEL -C OVER. The parameter u
+will be determined later. Let U be the universe, and Pσ1 , . . . , Pσm be the partitions of U. We index the
+partitions by ΣB symbols σ1 , . . . , σm . The elements of the S ET-C OVER instance are B ×U. Equivalently,
+
+                       T HEORY OF C OMPUTING, Volume 11 (7), 2015, pp. 221–235                                      228
+                               NP-H ARDNESS OF A PPROXIMATING S ET-C OVER
+
+each vertex b ∈ B has a copy of the universe U. Covering this universe corresponds to satisfying the
+edges that touch b. There are m ways to satisfy the edges that touch b—one for every possible assignment
+σ ∈ ΣB to b. The different partitions covering U correspond to those different assignments.
+     For every vertex a ∈ A and an assignment σ ∈ ΣA to a we have a set Sa,σ in the S ET-C OVER instance.
+Taking Sa,σ to the cover would correspond to assigning σ to a. Notice that a cover might consist of
+several sets of the form Sa,· for the same a ∈ A, which is the reason we consider list agreement. The set
+Sa,σ is a union of subsets, one for every edge e = (a, b) touching a. Suppose e is the i-th edge coming
+into b (1 ≤ i ≤ D), then the subset associated with e is {b} × S, where S is the i-th subset of the partition
+Pϕe (σ ) .
+     If we have an assignment to the A-vertices, such that all of the neighbors of b agree on one value for
+b, then the D subsets corresponding to those neighbors and their assignments form a partition that covers
+b’s universe. On the other hand, if one uses only sets that correspond to totally disagreeing assignments
+to the neighbors, then by the definition of the partitions, covering U requires ≈ ln |U| times more sets.
+Formally, we prove the following.
+Claim 4.10. The following hold:
+    • Completeness: If all the edges in G can be satisfied, then SCG has a set cover of size |A|.
+                         .
+    • Soundness: Let ` = D ln |U| (1 − α) be as in Lemma 4.9. If G has agreement soundness (`, α), then
+      every set cover of SCG is of size more than |A| ln |U| (1 − 2α).
+Proof. Completeness follows from taking the set cover corresponding to each of the A-vertices and its
+satisfying assignment.
+    Let us prove soundness. Assume by way of contradiction that there is a set cover C of SCG of size
+at most |A| ln |U| (1 − 2α). For every a ∈ A let sa be the number of sets in C of the form Sa,· . Hence,
+∑a∈A sa = |C|. For every b ∈ B let sb be the number of sets in C that participate in covering {b} × U.
+Then, denoting the A-degree of G by DA ,
+                     ∑ sb = ∑ sa DA ≤ DA |A| ln |U| (1 − 2α) = D |B| ln |U| (1 − 2α) .
+                     b∈B      a∈A
+
+In other words, on average over the b ∈ B, the universe {b}×U is covered by at most D ln |U| (1−2α) sets.
+Therefore, by Markov’s inequality, the fraction of b ∈ B whose universe {b} ×U is covered by at most
+D ln |U| (1 − α) = ` sets is at least α. By the contrapositive of Lemma 4.9 and our construction, for such
+b ∈ B, there are two edges e1 = (a1 , b), e2 = (a2 , b) ∈ E with Sa1 ,σ1 , Sa2 ,σ2 ∈ C where πe1 (σ1 ) = πe2 (σ2 ).
+    We define an assignment ϕ̂A : A → Σ`A to the A-vertices as follows. For every a ∈ A pick ` different
+symbols σ ∈ ΣA from those with Sa,σ ∈ C (add arbitrary symbols if there are not enough). As we showed,
+for at least α fraction of the b ∈ B, the A-vertices will not totally disagree.
+Proof of Theorem 1.2. Fix a constant 0 < α < 1 and a prime power D. For a sufficiently large `0 =
+Θ(log n), let G = (G = (A, B, E), ΣA , ΣB , Φ) be the L ABEL -C OVER with list-agreement soundness (`0 , α)
+obtained from Corollary 4.8. We take u = |U| = Θ(|B|1/α ), so u ≥ (DO(log D) log |ΣB |)1/α as required
+for Lemma 4.9. Let ` = D ln u(1 − α) ≤ `0 . The inapproximability ratio we get for S ET-C OVER from
+Claim 4.10 is (1 − 2α) ln |U|. Let N = |U| |B| be the number of elements in SCG . We have ln N =
+(1 + α) ln |U|. The inapproximability ratio is at least (1 − 3α) ln N. Note that the reduction is polynomial
+in |A|, |ΣA |, |B|, |ΣB | and |U|. Hence, the reduction is polynomial in n. This proves Theorem 1.2.
+
+                      T HEORY OF C OMPUTING, Volume 11 (7), 2015, pp. 221–235                                  229
+                                               DANA M OSHKOVITZ
+
+5     Applications of the Projection Games Conjecture
+In this section we describe a few applications of the PGC to hardness of approximation.
+
+5.1     The C LOSEST-V ECTOR -P ROBLEM
+The C LOSEST-V ECTOR -P ROBLEM (CVP) is to find, given a basis b1 , . . . , bn ∈ Rn and a point x ∈ Rn , the
+closest point to x—with respect to the `2 distance—in the lattice spanned by b1 , . . . , bn , i. e., in
+                                      (                         )
+                                           n
+                                           ∑ αi bi α1 , . . . , αn ∈ Z   .
+                                          i=1
+
+    Lattice problems like CVP are quite natural and have been studied a lot. One of the motivations
+for studying them comes from cryptography, where encryption systems believed to be secure even
+against quantum adversaries were built assuming the worst-case hardness of approximating lattice
+problems. The inapproximability factors known to be useful for cryptography are as large as Ω̃(n) for
+constructing collision resistant hash functions and one-way functions [29], and Ω(n2 ) for public-key
+cryptography [38], but it is unlikely that such an approximation is NP-hard, as it (and in fact any NP-
+                                        √
+hardness of approximation to within c n for some constant c > 0) would result in a collapse of the
+polynomial hierarchy [1]. For more details see [28, 39].
+    A central question is whether one can show that lattice problems are NP-hard to approximate to
+                                    √
+within some polynomial factors  n. The best existing NP-hardness result for CVP is for a factor of
+exp((log n)1−α ) for any constant α > 0 (and even for certain α = o(1)) [12]. Assuming the PGC, we can
+obtain hardness of approximating CVP up to polynomial factors by a reduction of Arora, Babai, Stern
+and Sweedyk [3]. We state the theorem as stated by Khot [23].
+
+Theorem 5.1 (CVP Hardness). Given a L ABEL -C OVER G = (G = (A, B, E), ΣA , ΣB , Φ) one can construct
+in poly(N) time a lattice L in RN and a point x ∈ RN where N = |A| |ΣA | + |B| |ΣB |, such that the following
+hold.
+
+      • Completeness: If there is an assignment
+                                            p to the vertices of G that satisfies all of its edges, then the
+        distance between x and L is at most 2 |A| |B|.
+
+      • Soundness: If there is no assignment to thepvertices of G that satisfies even ε fraction of its edges,
+        then the distance of x and L is at least 0.1 |A| |B| /ε.
+
+Hence, assuming the PGC, there exists c > 0, such that approximating C LOSEST-V ECTOR -P ROBLEM to
+within N c on an N-dimensional lattice is NP-hard.
+
+5.2     Around the approximability thresholds of CSPs
+Constraint Satisfaction Problems (CSP) are defined by a set of variables v1 , . . . , vn , an alphabet Σ, and
+constraints ϕ1 , . . . , ϕm , each depending on q variables. The number q = O(1) is called the arity of the
+CSP. The task is to find an assignment to the variables that maximizes the number of satisfied constraints.
+One obtains specific CSPs by restricting the type of constraints. Examples include M AX -3S AT, where
+
+                      T HEORY OF C OMPUTING, Volume 11 (7), 2015, pp. 221–235                            230
+                             NP-H ARDNESS OF A PPROXIMATING S ET-C OVER
+
+one is given 3CNF clauses on Boolean variables, and M AX -qL IN, where one is given linear equations
+over GF(2).
+    CSPs have been studied a lot in hardness of approximation, and for many of them we know sharp
+approximability thresholds. In fact, assuming the Unique Games Conjecture, we know that all CSPs over
+constant-sized alphabets have thresholds, where they pass from admitting polynomial time algorithms to
+being NP-hard [35]. For specific problems like M AX -3L IN, we know even sharper results:
+
+Theorem 5.2 (Hardness of M AX -3L IN [16, 20]). Linear L ABEL -C OVER on inputs of size n and
+soundness/completeness error ε can be reduced to distinguishing, given a M AX -3L IN instance of
+size N = n poly(1/ε), between the case that (1 − ε 0 ) fraction of the equations can be satisfied, and the
+case where no assignment satisfies more than (1/2 + ε 0 ) fraction of the equations, where ε = poly(ε 0 ).
+The reduction is linear in N.
+    Hence, assuming the linear PGC, approximating M AX -3L IN to within 1/2 + 1/N c for some constant
+c > 0 is NP-hard.
+
+     Note that a random assignment to the variables satisfies half of the equations in expectation, and
+one can always find in deterministic polynomial time an assignment that satisfies at least half of the
+equations. The theorem says that approximating M AX -3L IN transitions from being easy to being hard
+within a window of ε 0 at 1/2. The width ε 0 determines how sharp the phase transition is. Note that at
+1/2 + 1/N o(1) the approximation problem is (essentially) exponentially hard assuming the exponential
+time hypothesis and the linear PGC. This matches an approximation algorithm by Håstad [15].
+     Theorem 5.2 is proved by using the Hadamard code as in [20] instead of the long code as in [16].
+The advantage of the reduction in [16] is that it allows one to start with (non-linear) L ABEL -C OVER.
+Its disadvantage is that it incurs a blow-up of N = n exp(1/ε). Using [16] and Theorem 2.1, the current
+record, not assuming the linear PGC, is ε 0 = 1/(log log N)O(1) .
+     Results analogous to Theorem 5.2 hold for other CSPs as well, e. g., for M AX -3L IN over larger finite
+fields, for M AX -3S AT and for other problems from Håstad’s paper [16].
+
+
+6    Open Problems
+The main open problem is to prove (or disprove) the Projection Games Conjecture.
+   We believe that many more hardness of approximation results could be proved based on the PGC.
+Here are some concrete open problems in this direction.
+
+    1. Prove a theorem similar to Theorem 5.2 for satisfiable instances of M AX -3S AT.
+
+    2. Prove PGC-based hardness results for large families of CSPs similar to what is known under the
+       Unique Games Conjecture for all CSPs [35]. A significant step in this direction was recently taken
+       by Chan [8].
+
+    3. Prove a PGC-based hardness result for approximating S HORTEST-V ECTOR -P ROBLEM to within
+       polynomial factors. Note that there is a quasi-polynomial reduction from C LOSEST-V ECTOR -
+       P ROBLEM to S HORTEST-V ECTOR -P ROBLEM [22, 17] (see survey [23]).
+
+                     T HEORY OF C OMPUTING, Volume 11 (7), 2015, pp. 221–235                           231
+                                         DANA M OSHKOVITZ
+
+   4. Prove a PGC-based hardness result for approximating C LIQUE to within N/ poly log N. Note that
+      there is a quasi-polynomial reduction from M AX -3L IN to C LIQUE [20, 24].
+Another open problem is to show equivalence between the PGC and the linear PGC.
+
+
+Acknowledgments
+The motivation to prove the S ET-C OVER result came from discussions with Ran Raz. The author would
+also like to thank Scott Aaronson, Zach Friggstad, Ryan O’Donnell, Muli Safra and anonymous reviewers
+for useful comments.
+
+
+References
+ [1] D ORIT A HARONOV AND O DED R EGEV: Lattice problems in NP ∩ coNP. J. ACM, 52(5):749–765,
+     2005. Preliminary version in FOCS’04. [doi:10.1145/1089023.1089025] 230
+ [2] N OGA A LON , DANA M OSHKOVITZ , AND S HMUEL S AFRA: Algorithmic construction of sets for
+     k-restrictions. ACM Trans. Algorithms, 2(2):153–177, 2006. [doi:10.1145/1150334.1150336] 222
+ [3] S ANJEEV A RORA , L ÁSZLÓ BABAI , JACQUES S TERN , AND E LIZABETH S WEEDYK: The hardness
+     of approximate optima in lattices, codes, and systems of linear equations. J. Comput. System Sci.,
+     54(2):317–331, 1997. Preliminary version in FOCS’93. [doi:10.1006/jcss.1997.1472] 224, 230
+ [4] S ANJEEV A RORA , C ARSTEN L UND , R AJEEV M OTWANI , M ADHU S UDAN , AND M ARIO
+     S ZEGEDY: Proof verification and the hardness of approximation problems. J. ACM, 45(3):501–555,
+     1998. Preliminary versions in FOCS’92 and ECCC. [doi:10.1145/278298.278306] 223
+ [5] S ANJEEV A RORA AND S HMUEL S AFRA: Probabilistic checking of proofs: a new characterization
+     of NP. J. ACM, 45(1):70–122, 1998. Preliminary version in FOCS’92. [doi:10.1145/273865.273901]
+     223
+ [6] S ANJEEV A RORA AND M ADHU S UDAN: Improved low-degree testing and its applications. Combi-
+     natorica, 23(3):365–426, 2003. Preliminary versions in STOC’97 and ECCC. [doi:10.1007/s00493-
+     003-0025-0] 222
+ [7] M IHIR B ELLARE , S HAFI G OLDWASSER , C ARSTEN L UND , AND A LEXANDER RUSSELL: Efficient
+     probabilistically checkable proofs and applications to approximations. In Proc. 25th STOC, pp.
+     294–304. ACM Press, 1993. Erratum in STOC’94. [doi:10.1145/167088.167174] 224
+ [8] S IU O N C HAN: Approximation resistance from pairwise independent subgroups. In
+     Proc. 45th STOC, pp. 447–456. ACM Press, 2013.        Expanded version in ECCC.
+     [doi:10.1145/2488608.2488665] 231
+ [9] M OSES C HARIKAR , M OHAMMAD TAGHI H AJIAGHAYI , AND H OWARD J. K ARLOFF: Improved
+     approximation algorithms for label cover problems. Algorithmica, 61(1):190–206, 2011. Preliminary
+     version in ESA’09. [doi:10.1007/s00453-010-9464-3] 224
+
+                   T HEORY OF C OMPUTING, Volume 11 (7), 2015, pp. 221–235                         232
+                           NP-H ARDNESS OF A PPROXIMATING S ET-C OVER
+
+[10] M AREK C YGAN , Ł UKASZ KOWALIK , AND M ATEUSZ W YKURZ: Exponential-time ap-
+     proximation of weighted set cover.  Inform. Process. Lett., 109(16):957–961, 2009.
+     [doi:10.1016/j.ipl.2009.05.003] 222
+
+[11] I RIT D INUR , E LDAR F ISCHER , G UY K INDLER , R AN R AZ , AND S HMUEL S AFRA: PCP character-
+     izations of NP: Toward a polynomially-small error-probability. Comput. Complexity, 20(3):413–504,
+     2011. Preliminary versions in STOC’99 and ECCC. [doi:10.1007/s00037-011-0014-4] 224
+
+[12] I RIT D INUR , G UY K INDLER , R AN R AZ , AND S HMUEL S AFRA: Approximating CVP to within
+     almost-polynomial factors is NP-hard. Combinatorica, 23(2):205–243, 2003. Preliminary versions
+     in ECCC and FOCS’98. [doi:10.1007/s00493-003-0019-y] 230
+
+[13] I RIT D INUR AND DAVID S TEURER: Analytical approach to parallel repetition. In Proc. 46th STOC,
+     pp. 624–633. ACM Press, 2014. [ACM DL]. [doi:10.1145/2591796.2591884] 222, 223, 224
+
+[14] U RIEL F EIGE: A threshold of ln n for approximating set cover. J. ACM, 45(4):634–652, 1998.
+     Preliminary version in STOC’96. [doi:10.1145/285055.285059] 222
+
+[15] J OHAN H ÅSTAD: On bounded occurrence constraint satisfaction. Inform. Process. Lett., 74(1-2):1–
+     6, 2000. [doi:10.1016/S0020-0190(00)00032-6] 231
+
+[16] J OHAN H ÅSTAD: Some optimal inapproximability results. J. ACM, 48(4):798–859, 2001. Prelimi-
+     nary versions in STOC’97 and ECCC. [doi:10.1145/502090.502098] 223, 231
+
+[17] I SHAY H AVIV AND O DED R EGEV: Tensor-based hardness of the shortest vector problem to within
+     almost polynomial factors. Theory of Computing, 8(23):513–531, 2012. Preliminary version in
+     STOC’07. [doi:10.4086/toc.2012.v008a023] 231
+
+[18] RUSSELL I MPAGLIAZZO AND R AMAMOHAN PATURI: On the complexity of k-SAT. J. Comput.
+     Syst. Sci., 62(2):367–375, 2001. Preliminary version in CCC’99. [doi:10.1006/jcss.2000.1727] 222
+
+[19] DAVID S. J OHNSON: Approximation algorithms for combinatorial problems. J. Comput. System
+     Sci., 9(3):256–278, 1974. [doi:10.1016/S0022-0000(74)80044-9] 222
+
+[20] S UBHASH K HOT: Improved inapproximability results for MaxClique, chromatic number and
+     approximate graph coloring. In Proc. 42nd FOCS, pp. 600–609. IEEE Comp. Soc. Press, 2001.
+     [doi:10.1109/SFCS.2001.959936] 231, 232
+
+[21] S UBHASH K HOT: On the power of unique 2-prover 1-round games. In Proc. 34th STOC, pp.
+     767–775. ACM Press, 2002. [doi:10.1145/509907.510017] 224
+
+[22] S UBHASH K HOT: Hardness of approximating the shortest vector problem in lattices. J. ACM,
+     52(5):789–808, 2005. Preliminary version in FOCS’04. [doi:10.1145/1089023.1089027] 231
+
+[23] S UBHASH K HOT: Inapproximability results for computational problems on lattices. In The LLL
+     Algorithm, pp. 453–473. Springer, 2010. [doi:10.1007/978-3-642-02295-1_14] 230, 231
+
+                   T HEORY OF C OMPUTING, Volume 11 (7), 2015, pp. 221–235                        233
+                                        DANA M OSHKOVITZ
+
+[24] S UBHASH K HOT AND A SHOK K UMAR P ONNUSWAMI: Better inapproximability results for
+     MaxClique, chromatic number and Min-3Lin-Deletion. In Proc. 33rd Internat. Colloq. on Automata,
+     Languages and Programming (ICALP’06), pp. 226–237, 2006. [doi:10.1007/11786986_21] 232
+
+[25] L ÁSZLÓ L OVÁSZ: On the ratio of optimal integral and fractional covers. Discrete Mathematics,
+     13(4):383–390, 1975. [doi:10.1016/0012-365X(75)90058-8] 222
+
+[26] C ARSTEN L UND AND M IHALIS YANNAKAKIS: On the hardness of approximating min-
+     imization problems. J. ACM, 41(5):960–981, 1994. Preliminary version in STOC’93.
+     [doi:10.1145/185675.306789] 222
+
+[27] PASIN M ANURANGSI AND DANA M OSHKOVITZ: Improved approximation algorithms for projec-
+     tion games (Extended abstract). In ESA, pp. 683–694, 2013. Update in CoRR. [doi:10.1007/978-3-
+     642-40450-4_58] 224
+
+[28] DANIELE M ICCIANCIO AND S HAFI G OLDWASSER: Complexity of Lattice Problems: A cryp-
+     tographic perspective. Volume 671 of Kluwer Ser. in Engin. and Comput. Sci. Kluwer, 2002.
+     230
+
+[29] DANIELE M ICCIANCIO AND O DED R EGEV: Worst-case to average-case reductions based on
+     Gaussian measures. SIAM J. Comput., 37(1):267–302, 2007. Preliminary version in FOCS’04.
+     [doi:10.1137/S0097539705447360] 230
+
+[30] DANA M OSHKOVITZ: The projection games conjecture and the NP-hardness of ln n-approximating
+     set-cover. In Proc. 15th Internat. Workshop on Approximation Algorithms for Combinato-
+     rial Optimization Problems (APPROX’12), pp. 276–287, 2012. Preliminary version in ECCC.
+     [doi:10.1007/978-3-642-32512-0_24] 221, 223
+
+[31] DANA M OSHKOVITZ AND R AN R AZ: Sub-constant error low degree test of almost-linear size.
+     SIAM J. Comput., 38(1):140–180, 2008. Preliminary version in STOC’06. [doi:10.1137/060656838]
+     223
+
+[32] DANA M OSHKOVITZ AND R AN R AZ: Two-query PCP with sub-constant error. J. ACM, 57(5/29),
+     2010. Preliminary version in FOCS’08. [doi:10.1145/1754399.1754402] 223, 225
+
+[33] M ONI NAOR , L EONARD J. S CHULMAN , AND A RAVIND S RINIVASAN: Splitters and near-
+     optimal derandomization. In Proc. 36th FOCS, pp. 182–191. IEEE Comp. Soc. Press, 1995.
+     [doi:10.1109/SFCS.1995.492475] 228
+
+[34] DAVID P ELEG: Approximation algorithms for the Label-CoverMAX and Red-Blue Set Cover
+     problems. J. Discrete Algorithms, 5(1):55–64, 2007. Preliminary version in SWAT’00.
+     [doi:10.1016/j.jda.2006.03.008] 224
+
+[35] P RASAD R AGHAVENDRA: Optimal algorithms and inapproximability results for every CSP? In
+     Proc. 40th STOC, pp. 245–254. ACM Press, 2008. [doi:10.1145/1374376.1374414] 231
+
+                   T HEORY OF C OMPUTING, Volume 11 (7), 2015, pp. 221–235                      234
+                            NP-H ARDNESS OF A PPROXIMATING S ET-C OVER
+
+[36] R AN R AZ: A parallel repetition theorem. SIAM J. Comput., 27(3):763–803, 1998. Preliminary
+     version in STOC’95. [doi:10.1137/S0097539795280895] 222, 223
+
+[37] R AN R AZ AND S HMUEL S AFRA: A sub-constant error-probability low-degree test and a sub-
+     constant error-probability PCP characterization of NP. In Proc. 29th STOC, pp. 475–484. ACM
+     Press, 1997. [doi:10.1145/258533.258641] 222
+
+[38] O DED R EGEV: On lattices, learning with errors, random linear codes, and cryptography. J. ACM,
+     56(6/34):1–40, 2009. Preliminary version in STOC’05. [doi:10.1145/1568318.1568324] 230
+
+[39] O DED R EGEV: On the complexity of lattice problems with polynomial approximation factors. In
+     The LLL Algorithm, pp. 475–496. Springer, 2010. [doi:10.1007/978-3-642-02295-1_15] 230
+
+[40] P ETR S LAVÍK: A tight analysis of the greedy algorithm for set cover. J. Algorithms, 25(2):237–254,
+     1997. Preliminary version in STOC’96. [doi:10.1006/jagm.1997.0887] 222
+
+[41] A RAVIND S RINIVASAN: Improved approximations guarantees for packing and covering integer
+     programs. SIAM J. Comput., 29(2):648–670, 1999. [doi:10.1137/S0097539796314240] 222
+
+[42] S HERMAN K. S TEIN: Two combinatorial covering theorems. J. Combin. Theory Ser. A, 16(3):391–
+     397, 1974. [doi:10.1016/0097-3165(74)90062-4] 222
+
+
+AUTHOR
+
+      Dana Moshkovitz
+      Assistant professor
+      Department of Electrical Engineering and Computer Science
+      Massachusetts Institute of Technology
+      Cambridge, MA
+      dmoshkov csail mit edu
+      http://people.csail.mit.edu/dmoshkov/
+
+
+ABOUT THE AUTHOR
+
+      DANA M OSHKOVITZ graduated from the Weizmann Institute of Science in 2008, where her
+        advisor was Ran Raz. She was co-awarded The Haim Nessyahu Prize for the best Ph. D.
+        in mathematics in 2008 for her thesis, titled “Two Query Probabilistic Checking of Proofs
+        with Subconstant Error.” Following post-doctoral fellowships at Princeton University and
+        the Institute for Advanced Study, Dana joined MIT in 2010. Dana’s research interests
+        include Probabilistically Checkable Proofs and hardness of approximation, randomness
+        in computation and coding theory.
+
+
+
+
+                    T HEORY OF C OMPUTING, Volume 11 (7), 2015, pp. 221–235                          235
+
