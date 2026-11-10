@@ -1,0 +1,51 @@
+{
+  "edge_id": "boss6-cagb198-r51-two-half-slot-forms-under-same-gram",
+  "kind": "equivalent_to",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/shared-menu-equal-price-gram-and-kkt-covariance",
+    "M-a616bdbe5d39474482cc254915474251"
+  ],
+  "target_ids": [
+    "customer-attraction/shared-menu-equal-price-gram-and-kkt-covariance",
+    "M-490680a28551448da57bdad11e5c99a7"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "两侧共同保留已证Gram前提；A与SLOT都量化每输入、每完整sigma存在同一个原K最优鞍点付款。每个方向沿其给出的同一个见证，不逐信用换点。",
+  "roles": {
+    "customer-attraction/shared-menu-equal-price-gram-and-kkt-covariance": "两侧共同前提，提供同点C=Vcorr−G_KKT，K、gamma、I、D及量词不变。",
+    "M-a616bdbe5d39474482cc254915474251": "中心债形式C≤D+I+gamma/2。",
+    "M-490680a28551448da57bdad11e5c99a7": "协方差形式Vcorr≤D+I+G_KKT+gamma/2。"
+  },
+  "explanation": "在Gram前提内，对每个固定合法最优鞍点C=Vcorr−G_KKT，故C≤D+I+gamma/2当且仅当Vcorr≤D+I+G_KKT+gamma/2。两个谓词点对点等价，因此将同一见证保留给存在量词，继而保每输入/每sigma的全称量词。边准确表示ALL(Gram,A) iff ALL(Gram,SLOT)；Gram在两侧显式保留，反向不会从SLOT凭空推出一个额外定理。既有canonical Gram→SLOT仅保存给定金额后的条件充分步骤；本边新增核心A与SLOT完整存在合同的互译，没有重发旧边。",
+  "scope": "完整候选合同在共同Gram前提下等价；两侧金额本身均未被证明。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/共享真实菜单的等价格Gram核与KKT协方差分解--引理.md",
+      "sha256": "99885e1c8100f76f65fa44e20fd0fdf244115c21c9fe13b3b44923a0c65d62ef"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/第十一轮共享负载的凸信用与共同付款停界--资源.md",
+      "sha256": "c0fe71706655f53c781363a817f3e50e3dd0939c1d959ecd10a7c7d15de9280f"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/共享真实菜单的等价格Gram核与KKT协方差分解--引理.md",
+      "sha256": "99885e1c8100f76f65fa44e20fd0fdf244115c21c9fe13b3b44923a0c65d62ef",
+      "section": "half-slot的准确充分目标"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Fresh正式worker实读当前核心、正式追加依赖的完整合同及承重正文；本文逐式核共同模型、同一sigma和同次叶/鞍点。成熟证书仅按精确合同阅读复用，未运行LP、SPE、IC、DP或原数学入口。Root原生绑定与发布另行完成。",
+  "whole_result": "ALL(Gram,A)与ALL(Gram,SLOT)双向等价：同一最优鞍点的中心债gamma/2桥和协方差half-slot桥有完全相同的见证与量词。",
+  "endpoint_pins": {
+    "M-490680a28551448da57bdad11e5c99a7": "abc0057f80d88d00cae917c7aa6dcb0871c3c13226d06229bf5cd1df857f2cfe",
+    "M-a616bdbe5d39474482cc254915474251": "3d354490c7c0fce70e05e10bfe9aed1dbc6d6bf6da6da89f8863d1a51394f223",
+    "customer-attraction/shared-menu-equal-price-gram-and-kkt-covariance": "f3a618c3c356f720591e27ce1094ed7aa5ec2ddbdf2345556094989969e86eef"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/共享真实菜单的等价格Gram核与KKT协方差分解--引理.md": "99885e1c8100f76f65fa44e20fd0fdf244115c21c9fe13b3b44923a0c65d62ef",
+    "archives/customer-attraction/state/资源/第十一轮共享负载的凸信用与共同付款停界--资源.md": "c0fe71706655f53c781363a817f3e50e3dd0939c1d959ecd10a7c7d15de9280f"
+  },
+  "review_digest": "f13b325b1afd3215484fe480d2162c9bf8c2ae9ae82ee9315457e4996785e06f"
+}

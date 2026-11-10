@@ -1,0 +1,42 @@
+{
+  "edge_id": "boss6-cagb198-r51-causal-refund-to-largest-topic-cap",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/causal-multiple-position-erasure-refund-and-sharp-multiplicative-regret"
+  ],
+  "target_ids": [
+    "customer-attraction/causal-erasure-largest-topic-error-and-positive-background-refinement"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一完整纯SPE、固定非全删位置集L、q=|L|；所有新有序历史由因果提升定义，规定叶和每个强制孩子均各自重算。K为全部合法标签的最大覆盖大小。",
+  "roles": {
+    "customer-attraction/causal-multiple-position-erasure-refund-and-sharp-multiplicative-regret": "提供全历史因果提升、g=Rdev−Robey−Gamma、原IC、Rdev≤q u以及同一规定叶ΣR=P_deleted−e。",
+    "customer-attraction/causal-erasure-largest-topic-error-and-positive-background-refinement": "得到逐历史最大主题cap、同叶谱预算、规定后缀递减及原根较弱删者利润改写的全部结论。"
+  },
+  "explanation": "源引理给g_T=R_T−R−Gamma_T，Gamma_T=u−u_T≥0。每客户k≥1、ell≤q，故ell/[k(k+ell)]≤q/(q+1)，从而每个合法强制主题R_T≤qK/(q+1)，同时R_T≤q u_T。于是g_T≤q u−R及g_T≤qK/(q+1)−R，取max得rho≤min(q u,qK/(q+1))−R。两cap也各控制规定退款，所以右端非负，无删正部。所有保留者在规定路径共享同一提升actual叶；逐项求和并用ΣR=P_deleted−e即为谱预算，且min≤q u使它不弱于源总预算。从任意新节点起，未来角色共享规定完成z_h，沿规定边只移除当前cap−R项，故预算下降恰为该项并控制rho。原根每个删者可真实改最大主题、每客户分母至多m，故P_deleted≥qK/m；mP_deleted/(q+1)≥qK/(q+1)仅为较弱改写。离轨已行动删者不继承原根保底。q0/K0直接零项，不除收益。",
+  "scope": "完整目标成立；所有预算限同一规定完成/规定边，未控制跨偏离重置或真正物理SPE修复。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/因果多删位的全历史退款与锐乘法误差--引理.md",
+      "sha256": "8d6be33598b41b658c915c638fc1c5730301262f313ad5873cd94ea6ffda918c"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/因果删位的最大主题误差与正背景精化--引理.md",
+      "sha256": "ffa1ab25ad88ec8d95f90688ce78abb8fd4b89f94f1ab024b5e78bcd82c37fbc"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Fresh正式worker实读当前核心、正式追加依赖的完整合同及承重正文；本文逐式核共同模型、同一sigma和同次叶/鞍点。成熟证书仅按精确合同阅读复用，未运行LP、SPE、IC、DP或原数学入口。Root原生绑定与发布另行完成。",
+  "whole_result": "在目标全部域内，0≤rho≤min{q u_i,qK/(q+1)}−R_i，同叶求和得目标谱预算，规定后缀cap减退款逐步扣当前项，原根P_deleted改写仅为较弱界。",
+  "endpoint_pins": {
+    "customer-attraction/causal-erasure-largest-topic-error-and-positive-background-refinement": "12c59cd5142d6f91572dd2528e4ec2f31809e06ad6830859bec6f830fdc34b34",
+    "customer-attraction/causal-multiple-position-erasure-refund-and-sharp-multiplicative-regret": "954237f0442190eb483c9e36b89997b247de12228d14e2b87ebe9f4e45018aa9"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/因果多删位的全历史退款与锐乘法误差--引理.md": "8d6be33598b41b658c915c638fc1c5730301262f313ad5873cd94ea6ffda918c",
+    "archives/customer-attraction/state/引理/因果删位的最大主题误差与正背景精化--引理.md": "ffa1ab25ad88ec8d95f90688ce78abb8fd4b89f94f1ab024b5e78bcd82c37fbc"
+  },
+  "review_digest": "34b86472edaaaa00c2b2423da9b3805d11147140039c6b381377961f572f2095"
+}
