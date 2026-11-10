@@ -374,14 +374,151 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss2",
-  "request_id": "29a913a0152c4d98b961e620560ade46",
+  "request_id": "e6de8f76a39c47faae5d1c8e2a9af4be",
   "requests": {
     "a0ffc8a56e8d46c5b1f49cbd791e6521": "plan",
     "de44be2a22cf42ffb5643532b12c4ba8": "claim",
     "1422f07b28024d689e256ed74f152c90": "read-add",
     "df679ce1a35c4abcb1cbda98159b2812": "read-add",
-    "29a913a0152c4d98b961e620560ade46": "plan"
+    "29a913a0152c4d98b961e620560ade46": "plan",
+    "e6de8f76a39c47faae5d1c8e2a9af4be": "done"
+  },
+  "edge_paths": {
+    "wc-stage3a-dag-budget-and-step-give-source-cap": "map/edges/weighted-congestion-3a-3a-66e9f212a5f4db30/dag-budget-and-step-give-source-cap.json",
+    "wc-stage3a-dag-endpoint-budget-gives-slack-rigidity": "map/edges/weighted-congestion-3a-3a-66e9f212a5f4db30/dag-endpoint-budget-gives-slack-rigidity.json",
+    "wc-stage3a-odd-certificate-and-envelope-give-rational-lower": "map/edges/weighted-congestion-3a-3a-66e9f212a5f4db30/odd-certificate-and-envelope-give-rational-lower.json",
+    "wc-stage3a-odd-certificate-pays-envelope-necessity": "map/edges/weighted-congestion-3a-3a-66e9f212a5f4db30/odd-certificate-pays-envelope-necessity.json",
+    "wc-stage3a-odd-envelope-pays-single-target-shared-side-budget": "map/edges/weighted-congestion-3a-3a-66e9f212a5f4db30/odd-envelope-pays-single-target-shared-side-budget.json",
+    "wc-stage3a-shapley-marginal-gives-band-curl": "map/edges/weighted-congestion-3a-3a-66e9f212a5f4db30/shapley-marginal-gives-band-curl.json",
+    "wc-stage3a-shapley-marginal-gives-singleton-band-loss": "map/edges/weighted-congestion-3a-3a-66e9f212a5f4db30/shapley-marginal-gives-singleton-band-loss.json",
+    "wc-stage3a-shapley-order-gives-local-selector-sharpness": "map/edges/weighted-congestion-3a-3a-66e9f212a5f4db30/shapley-order-gives-local-selector-sharpness.json"
+  },
+  "receipt": {
+    "coverage": {
+      "WC-R3-BAND-CURL-v1": {
+        "state": "linked",
+        "object_pin": "724e9eb6e607346abdf02d96033c5e20f39e490babe2aa624af7f563a1d1791f",
+        "comparison_scope": "核分带障碍的混合差全节、Shapley精确插入边际和局部R势的固定资源尺度，并与作者M=13精确检查、FR12、对应冻结账本条目和资产54比较。与同包线性损失、固定R锐性分别核量词。",
+        "reason": "两用户均匀排列直接得κ与κ/M的普通势不相容；原H仍给归一化成本的玩家尺度加权势。局部R定理按同资源共同a_e缩放，合同相容。两个最小点坏例有精确PNE，混合差本身不付真实无均衡。",
+        "edge_ids": [
+          "wc-stage3a-shapley-marginal-gives-band-curl"
+        ]
+      },
+      "WC-R3-BAND-LINEAR-v1": {
+        "state": "linked",
+        "object_pin": "480880fb62b74c880fc9aba5f6a6ed58342c1671b68eeb74ceae694cd5a2e5f8",
+        "comparison_scope": "核标准选择器线性损失全节、两排列公式和d≥7积分/Bernoulli，比较M=49,d=7,L=3的128态精确回归、局部包络审查、FR12、相应冻结账本条目及资产55。",
+        "reason": "M=d²改变跨带资源的整体潜在比，故单带各自跨度1不能替换局部R定理的每资源条件。空动作扩充只增加潜在用户，所有额外用户在最小点退出。δ/2≥d/6给指定最小点损失，另有精确PNE。固定R锐性沿m→∞，这里仅一固定重用户且M随d变化，两个结论各用自己估计。",
+        "edge_ids": [
+          "wc-stage3a-shapley-marginal-gives-singleton-band-loss"
+        ]
+      },
+      "WC-R3-DENSE-POT-SHARP-v1": {
+        "state": "linked",
+        "object_pin": "b366c84b57563cd16221ec98f4bf136e3b34e9c3efdddf9a620005a0bcdabda1",
+        "comparison_scope": "核固定R锐性全节、一般份额次序/效率及局部R定理的势与量词，核作者R=2有限序列、三源审查、FR12、对应冻结账本和资产53。",
+        "reason": "均匀前驱个数、最后位置下界和效率平均上界同趋R。与DENSE-LOCAL比较用完全相同的潜在尺度和真实费用，故R对这个选择器锐；该见证的另一状态有精确PNE，不产生全类或任意选态下界。",
+        "edge_ids": [
+          "wc-stage3a-shapley-order-gives-local-selector-sharpness"
+        ]
+      },
+      "weighted-congestion/DAG-endpoint-slack-and-saturation": {
+        "state": "linked",
+        "object_pin": "70a2d96cbc76deea4cb3a93735b0fd19fe79a2834902be837952edd218de4c91",
+        "comparison_scope": "核端点预算全文和独立冻结攻击的量词、outgoing方向、弱饱和与零/空边界；逐式核全可行权与两个低/高负载比例。",
+        "reason": "固定权充要判据改写为非负余量b，DAG有限逆和根条件给精确单纯预算。饱和排所有非零b，所有检测比例为最低单项式比例，逐项严格性排任意正低次项。",
+        "edge_ids": [
+          "wc-stage3a-dag-endpoint-budget-gives-slack-rigidity"
+        ]
+      },
+      "WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1": {
+        "state": "linked",
+        "object_pin": "c58925c9e46208b716fb24305aef1af7142d2fd927ddfd49955d0d647c8e1e26",
+        "comparison_scope": "核主证明的逐项次数界、反拓扑最小权、纯d次充分性与合法权，比较饱和刻画和STEP的路径定义、FR06/07、冻结账本预算条目及资产77。",
+        "reason": "固定权与存在权两个量词分开；前者付全权余量刻画，后者与STEP精确方程联合付辅助源门槛。端点可行不保证其余负载、过冲或多资源全态偏离；极值幅度全入定理有自己的真实偏离和振幅假设。",
+        "edge_ids": [
+          "wc-stage3a-dag-endpoint-budget-gives-slack-rigidity",
+          "wc-stage3a-dag-budget-and-step-give-source-cap"
+        ]
+      },
+      "weighted-congestion/DAG-endpoint-source-threshold-cap": {
+        "state": "linked",
+        "object_pin": "e9dad43369486cec27a28fd253a0093c8dd4d2a1f45ecbfb0203be6de82cd559",
+        "comparison_scope": "实读in-packet的WC-R1-DAG-STEP正文，核两侧同费策略与严格合法权、路径按顶点计和q方程；对照端点正文预算、无边例及曲率审查。",
+        "reason": "同D同时用预算与q方程给根上界和固定ε渐近；整数总路径数给同一有限参数下的最优q恰由最大可行无边图取得。该比较只传递辅助门槛，不给多项式博弈全态保证。",
+        "edge_ids": [
+          "wc-stage3a-dag-budget-and-step-give-source-cap"
+        ]
+      },
+      "WCF-R3-FIXED-DEGREE-FAIL-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "6aaa7407b4e3680537212da03f4a8c61ebade67f5416d61fae53ff90169de94f",
+        "comparison_scope": "实读固定权失败正文、degree40冻结证书、精确复现及交叉审查的固定次数部分，并比三十二次原四玩家构造及缩权原振幅定理。重算固定32、40和极限各16态×4真实偏离。",
+        "reason": "固定G_32无9/5-PNE，G_40有，极限5235403/2930833<9/5。被否的是同权、同归一化振幅只升六对次数的全d持久性，当前未登记这个错误全称为独立对端；固定d=32已证结论与该反例相容。缩权原振幅在相同D_m=32m²改三个轻权，m=1重合，末对二次极限不同，其65/34>9/5不被否。另对0111及互补态验证：把各α差中的负衰减项舍去，正衰减项取d=40，所得四个精确有理上界皆为负，故这两态在全部整数d≥40均稳定；这是新核的加强，登记原陈述只需d=40与充分大d。"
+      },
+      "wc-shared-side-truncated-budget": {
+        "state": "linked",
+        "object_pin": "7d4ebe79f70f060f80c7ad222939be08053ed79ef04306a1e191a4ad22a637bc",
+        "comparison_scope": "实读同权hub唯一light side的直接AS+B与UF两个定理及固定light真实偏离、只比较用重置、截断预算；与奇环包络的f_k单项式界和严格奇环证书比较。",
+        "reason": "f_k界在每条side至多一个target且UF成立时已经以α≥T_d给B和AS。多target仍须支付全截断和。奇环纯d次证书若hub全等则x_i=t_i，在α=1下M_i≥n_i((1+x_i)^d−1)、N_i≤(1+x_i)^d−x_i^d，故每个正环因子≤1，增α只减因子，严格测试从不通过；异权有理重置不在该等权子类。未将此比较推广到多target、异权多side或一般实际均衡阈值。",
+        "edge_ids": [
+          "wc-stage3a-odd-envelope-pays-single-target-shared-side-budget"
+        ]
+      },
+      "WC-R3-ODD-RING-CERTIFICATE-v1": {
+        "state": "linked",
+        "object_pin": "896d7cd0a87e40b1299dbdf3f33740617a131bfa35b736b47ec70637df78ce5c",
+        "comparison_scope": "核实际双副本策略、全部状态的对齐light/奇数相等边覆盖、权闭环和G充要，再比较包络必要性、有理重置和增长各节。",
+        "reason": "环积消去给α<T_d及严格次数预算；正有理重置和严格环积经系数递推才给每个α<T_d的真实无均衡纯d次有限实例。α=1时代数分母仍正，严格构造用有理a>1；未从测试失败倒推有均衡。保留异质主次数证书与纯d次见证的差别。",
+        "edge_ids": [
+          "wc-stage3a-odd-certificate-pays-envelope-necessity",
+          "wc-stage3a-odd-certificate-and-envelope-give-rational-lower"
+        ]
+      },
+      "wc-incidence-directed-review-scope": {
+        "state": "isolated-after-review",
+        "object_pin": "fcbefa3b94ffdc704fd9ba5cf84f216edc09b21c77145ef3c1ff22e0e857befb",
+        "comparison_scope": "读同一冻结文件的“森林三命题的身份与冻结覆盖”及“分叉割命题的身份与冻结覆盖”，区分历史自主重构、后读冻结稿攻击与知情程序核对。比森林报价、单核心挂树、单环和分叉割所核的精确接口。",
+        "reason": "森林侧核两个父bit报价、不可行bit、平局、耦合策略及挂树的真实偏离；单环仅四态八偏离。分叉割核非负截断容量、共付源预算、自环和冻结light偏离。现有登记正文引用直接定位第一节，第二节同一SHA另标题可读，未混淆身份。内部审查条目提供精确证据导航，当前无逻辑支持边；有限复跑未证明任意实参数。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/weighted-congestion-3a-3a-66e9f212a5f4db30/dag-budget-and-step-give-source-cap.json",
+        "sha256": "93c895c083a0216f5eb35023d97b4f93166a1c7ae21089718f46c1438013fc41"
+      },
+      {
+        "path": "map/edges/weighted-congestion-3a-3a-66e9f212a5f4db30/dag-endpoint-budget-gives-slack-rigidity.json",
+        "sha256": "c7312c8adf4b13fff2b1946eedc1eb3c410022a9df782207c8c2b6777b52d0ee"
+      },
+      {
+        "path": "map/edges/weighted-congestion-3a-3a-66e9f212a5f4db30/odd-certificate-and-envelope-give-rational-lower.json",
+        "sha256": "4dc0cbed6876b7bdf555af45999ecb95b24ed43ab16b53298092da230d0d670c"
+      },
+      {
+        "path": "map/edges/weighted-congestion-3a-3a-66e9f212a5f4db30/odd-certificate-pays-envelope-necessity.json",
+        "sha256": "f32a682bca42853e689979e8f5ceb76ebde38a38735f0dd2af1279ad0f41c988"
+      },
+      {
+        "path": "map/edges/weighted-congestion-3a-3a-66e9f212a5f4db30/odd-envelope-pays-single-target-shared-side-budget.json",
+        "sha256": "f82f8f96645493a6183ed331e09e882d77c8fa03ae6c0507d57ab6a38583ca03"
+      },
+      {
+        "path": "map/edges/weighted-congestion-3a-3a-66e9f212a5f4db30/shapley-marginal-gives-band-curl.json",
+        "sha256": "0058864471d28097ffcbc30a98fe981f52c2496bc815ebb5e0b280008b94fc5f"
+      },
+      {
+        "path": "map/edges/weighted-congestion-3a-3a-66e9f212a5f4db30/shapley-marginal-gives-singleton-band-loss.json",
+        "sha256": "48d7907f79f72e1ad75a1851cd67e731ae866cec8ddb5bb7eedd0ba6de47041a"
+      },
+      {
+        "path": "map/edges/weighted-congestion-3a-3a-66e9f212a5f4db30/shapley-order-gives-local-selector-sharpness.json",
+        "sha256": "14393c976d5eff87ff3392fc2029c236574f0c77f87c7fa15209b8f1a5902052"
+      }
+    ],
+    "follow_up_tasks": [],
+    "closed_overlaps": []
   }
 }
