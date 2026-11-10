@@ -1,0 +1,62 @@
+{
+  "edge_id": "um-f6bc5acc-karp-independent-set-to-graph-minorant",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SOURCE-KARP-INDEPENDENT-SET"
+  ],
+  "target_ids": [
+    "UM-MULTISTATE-Q-MINORANT-GRAPH-HARDNESS-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "源为显式简单图 H 及二进制整数 K。平凡阈值单列常量，非平凡范围 n≥1、1≤K≤n。目标图无孤立点，权均为严格正有理 λ，且总权 W<2。",
+  "roles": {
+    "UM-SOURCE-KARP-INDEPENDENT-SET": "Karp CLIQUE 的补图保持阈值给出一般显式 Independent Set 完全性。",
+    "UM-MULTISTATE-Q-MINORANT-GRAPH-HARDNESS-v1": "接收经 universal 点、星填充和统一权重编译的图估值 non-minorant/membership 复杂性部分。"
+  },
+  "explanation": "将 H 加 universal 点得到 G0，n0=n+1，α(G0)=α(H)。另加不交星 K_{1,L}、L=n0+1，使 α(G)=α(H)+L。置 K′=K+L、λ=2/(2K′−1)，因 |V|=2n0+2<2K′−1，W<2。给每边一份两叶状态，f_G(S)=max_e|e∩S|。空集值0，非空独立集值1，含边集值2，故 Δ_G=max(0,α_w−1,W−2)，统一权时严格违反 iff λα(G)>1 iff α(H)≥K。任一违反集独立且大小≥K′，去星仍得至少 K 点。若含新 universal 点则 K=1，返回 H 任一顶点。违反集合可精确多项式验证，给 non-minorant NP 完全及有效域中 membership coNP 完全。输出规模和权位长皆多项式。平凡源可映到按同法构成的固定 YES/NO。",
+  "scope": "只迁移显式图两叶状态的统一正权全域判定与分离复杂性，不使用有界度源。指定集合的好支持、signed demand 与有效 LP 扩展均各保其独立证明。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "3.2 SAT到CLIQUE，再到packing和cover"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/多状态图估值支持域计算障碍--定理.md",
+      "sha256": "2406ce4fbb2c1bbfc3d1c83a1cd56061a1a556d6628c030da52b8d6a75037cea",
+      "section": "1. 图估值与精确违反量"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/多状态图估值支持域计算障碍--定理.md",
+      "sha256": "2406ce4fbb2c1bbfc3d1c83a1cd56061a1a556d6628c030da52b8d6a75037cea",
+      "section": "2. 无孤立点源、star填充及严格阈值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/多状态图估值支持域计算障碍--定理.md",
+      "sha256": "2406ce4fbb2c1bbfc3d1c83a1cd56061a1a556d6628c030da52b8d6a75037cea",
+      "section": "3. 证书解码、复杂性身份与紧凑表示"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/多状态图估值支持域计算障碍--定理.md",
+      "sha256": "2406ce4fbb2c1bbfc3d1c83a1cd56061a1a556d6628c030da52b8d6a75037cea",
+      "section": "4. 为什么指定集合的包络仍易解"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复算 W<2、严格半整数门槛、universal 点的 K=1 解码、NP 与 coNP 的方向，并核指定集合包络仍由一条边向量达到。",
+  "contribution": {
+    "result": "在均匀严格正权且 W<2 的指定图类上，精确 non-minorant 判定 NP 完全、membership coNP 完全，任一实际违反集可解码回源。",
+    "remaining": "其余全陈述分别需要一般非负权恒等、signed demand 和逐点包络的直接证明，以及有效有理 LP 扩展的位复杂度条件。这些在目标正文另证。"
+  },
+  "endpoint_pins": {
+    "UM-MULTISTATE-Q-MINORANT-GRAPH-HARDNESS-v1": "598de44a47d0f9356f425d496f133233a105f07876cb2ba6125059d98ee77869",
+    "UM-SOURCE-KARP-INDEPENDENT-SET": "fbd9ea7c50a7bdf650ddcfb55ae4d3cb4e339945498c982ea65f229a1b880107"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+    "archives/unrelated-machines/state/定理/多状态图估值支持域计算障碍--定理.md": "2406ce4fbb2c1bbfc3d1c83a1cd56061a1a556d6628c030da52b8d6a75037cea"
+  },
+  "review_digest": "78a2a6f2d74c3c1d43305c4769d780a5aca2e5f62f7380e91f49b3f547cbf306"
+}

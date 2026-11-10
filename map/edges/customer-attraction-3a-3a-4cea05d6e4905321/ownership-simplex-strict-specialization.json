@@ -1,0 +1,48 @@
+{
+  "edge_id": "ca35-prefix-bank-ownership-simplex-strict-specialization",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/variable-ownership-payment-and-tame-coordinate-initialization"
+  ],
+  "target_ids": [
+    "M-66bb6e3cd130469ea9b3e1778994ba57"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m≥3，目录仅不交的B（m单位客户）与E（一个私有客户e），全部有序历史规定B，比较T=(B,E,…,E)。",
+  "roles": {
+    "customer-attraction/variable-ownership-payment-and-tame-coordinate-initialization": "提供OWN、HR、INIT及TAME；无future时的同客户守恒由剩余全付current简化。",
+    "M-66bb6e3cd130469ea9b3e1778994ba57": "固定比较元组付款向量严格扩大的完整SPE族。"
+  },
+  "explanation": "任一历史过去有t次E，规定B得到m/(m−t)≥1，真实改E得到1/(t+1)≤1，故全历史完整SPE，实际各得1。此m槽最优覆盖须有B至少一次及E至少一次，本固定T确达m+1。任何查询后未来全B，正future边空。B客户唯一owner1，δ=m、k=1，逐客户P^B=(m−1)/m、r=1/m，合计d₁=1、H_ℓ=1 (ℓ≥2)。遗漏e有δ=k=1，r=p，故d_ℓ=p_ℓe。无J或R传递；所有p满足TAME，F₁=1、F_ℓ=1+p_ℓe。canonical为均分，单纯形含极点而全部F_ℓ≤2。",
+  "scope": "固定最优比较元组的同一完整m人SPE，不同付款向量来自金额归属。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/可变归属付款与逐客户初始化条件--候选.md",
+      "sha256": "418b99c6c2b0c94908c59b9ef7c1e7aef567ca1e879126fa8a8d8ac68c487b7b",
+      "section": "逐客户条件保证给定归属可初始化"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/可变归属付款与逐客户初始化条件--候选.md",
+      "sha256": "418b99c6c2b0c94908c59b9ef7c1e7aef567ca1e879126fa8a8d8ac68c487b7b",
+      "section": "可变归属及同一坐标库存"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/可变归属付款与逐客户初始化条件--候选.md",
+      "sha256": "418b99c6c2b0c94908c59b9ef7c1e7aef567ca1e879126fa8a8d8ac68c487b7b",
+      "section": "付款集合确实严格扩大的完整SPE族"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读所列登记端点与承重原证，按同一客户、同一有序历史及原命题逐条核量词和结果范围。",
+  "whole_result": "给每个m≥3的所述完整SPE和固定T，变量归属付款向量恰为F₁=1、F_ℓ=1+p_ℓe，其中余m−1个p非负和1。canonical仅均分向量，该点集严格较小；所有新向量均满足2u预算。",
+  "endpoint_pins": {
+    "M-66bb6e3cd130469ea9b3e1778994ba57": "ccc2e2cbe1eaba3a680377e47406140e08ea78dfe834fd3b4d239c5bcd876c11",
+    "customer-attraction/variable-ownership-payment-and-tame-coordinate-initialization": "b4a19f3fb1a4ed168b1271850513233b45aadde47cf3588374dfa8b8db7c8b9d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/可变归属付款与逐客户初始化条件--候选.md": "418b99c6c2b0c94908c59b9ef7c1e7aef567ca1e879126fa8a8d8ac68c487b7b"
+  },
+  "review_digest": "0a0c9c12e6b9f89927074893a37c086c9ff118476069303fde51d7455107e074"
+}

@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-f6bc5acc-santa-rational-bit-bridge-gives-conditional-reverse-barrier",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-49195941d69c4784890f322dca84ef7b"
+  ],
+  "target_ids": [
+    "UM-SANTA-NO-CONSTANT-CONDITIONAL-v2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "唯一独立开放前提是 SCHA_det^N。该假设规定一般显式二进制非负有理 Santa 对每个固定整数 c≥3 都没有确定性总位多项式的实际 c-近似算法。一般 UM 输入同样显式且按总位长计。",
+  "roles": {
+    "M-49195941d69c4784890f322dca84ef7b": "已证的有理位保持定理，把实际确定性 UM 算法变为实际确定性 Santa 分配算法。",
+    "UM-SANTA-NO-CONSTANT-CONDITIONAL-v2": "以 SCHA_det^N 为唯一额外开放前提，得到一般 UM 固定改善的条件反面。"
+  },
+  "explanation": "反设给定某固定 ε∈(0,1) 的一般 UM 实际 (2−ε)-近似。令固定整数 q≥max{2,ceil(1/ε)}，则 1/q≤ε，同一算法也是 (2−1/q)-近似。把 α=q、η=1 代入已证 v2 位保持定理，得到总位多项式的 Santa 原资源分配，逐人价值至少 OPT/(q+1)。q+1 是固定整数且≥3，直接违反 SCHA_det^N。对比旧审查保留的截断、枚举、位长和猜测义务，v2 已用有理网格、有限配置、实际解码和证据保持的整数二分付清。",
+  "scope": "一般 Santa 最大化最小实际原值与一般不相关机最小化实际峰值。对每个固定 ε∈(0,1)，算法类型均为确定性总位多项式。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/一般SantaClaus到不相关机的有理位保持转移--定理.md",
+      "sha256": "d0b040d9fe3d4f6fbb26fcc67d9083bffe40f0274d7fd7b30525307cfdad8f4a"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/Santa无常数近似条件反面双源审查--审查.md",
+      "sha256": "406f82949f814028b7161bb4508fa48218dff0c0eb16af9ba05b43443088ba63",
+      "section": "条件命题及证明"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/Santa无常数近似条件反面双源审查--审查.md",
+      "sha256": "406f82949f814028b7161bb4508fa48218dff0c0eb16af9ba05b43443088ba63",
+      "section": "适用性、位复杂度与数学边界"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核新版桥的截断损失 b、真实配置机与资源机解码、有理 a₀ 和非单调接受的搜索不变量，确认 q、η 固定且不依赖实例。",
+  "whole_result": "若 SCHA_det^N 成立，则每个固定 ε∈(0,1) 下，一般 UM 不存在确定性总位多项式的实际 (2−ε)-近似算法。",
+  "endpoint_pins": {
+    "M-49195941d69c4784890f322dca84ef7b": "c5df48ba0bc06da10680b294eec39270c48bc7bf91f98deb02fd13c3f21b2401",
+    "UM-SANTA-NO-CONSTANT-CONDITIONAL-v2": "e4b873e654e804c2a31892e42b06018912631d9c0ba2cbc562fc9f43ad7db191"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/一般SantaClaus到不相关机的有理位保持转移--定理.md": "d0b040d9fe3d4f6fbb26fcc67d9083bffe40f0274d7fd7b30525307cfdad8f4a",
+    "archives/unrelated-machines/state/审查/Santa无常数近似条件反面双源审查--审查.md": "406f82949f814028b7161bb4508fa48218dff0c0eb16af9ba05b43443088ba63"
+  },
+  "review_digest": "0f8a29cdad0f10020198a35e2a6c0876edf62e3cd9bf15533952e973c83cd43e"
+}

@@ -1,0 +1,61 @@
+{
+  "edge_id": "um-f6bc5acc-bgw-printed-packing-obstruction",
+  "kind": "refutes",
+  "status": "accepted",
+  "source_ids": [
+    "M-d411e7659e154cde8709dda69abf907a"
+  ],
+  "target_ids": [
+    "unrelated-machines/distributed-load-balancing-mixed-packing-covering-bgw-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "仅冻结 arXiv:2607.10075v1 的印刷 Algorithm7，按其时钟更新、无额外 packing 保护，取足够的固定多项式相位预算，0<ε≤1/10。",
+  "roles": {
+    "M-d411e7659e154cde8709dda69abf907a": "在不可行双行输入上给出印刷运行的确定性解析轨迹及 packing 失守。",
+    "unrelated-machines/distributed-load-balancing-mixed-packing-covering-bgw-v1": "记录冻结声明并依赖 reject 分支仍保 packing 的中间黑盒。该组件是精确反驳范围。"
+  },
+  "explanation": "归一化双 packing 行 (1,1)、双 covering 行 (1/100,1/100)，L=4ln2/ε。不可行性由总质量 t 同时应≤L且≥100L 得到。对称初始化后两变量同步，local=100 exp(1.01t)，每次同步把 t 乘以 1+ε/(10L)。末相位 lnτ≥10L−ln(1+ε)，充分多项式内轮耗尽合法更新后 t>(10L−ln100)/1.01，同时 t≤(1+ε/(10L))(10L+ln(1+ε)−ln100)/1.01<100L，故 covering 保持活动并 reject，而 packing 远超 (1+ε)L。真实 local/global 恒为 100，Lemma5.11 的可行性安全前提无法传入 Lemma5.12 的任意输入分支。",
+  "scope": "只否定冻结稿所印执行在指定合法不可行输入上的 packing 保证。Decimal 复放为有限佐证，结论由解析界承担。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/分布式不相关机负载均衡与混合覆盖--资源.md",
+      "sha256": "14a35d7de8780b8695541b75019bfe089475c1a41aea18186d30590f5b72933c",
+      "section": "4.1 不能从可行分支直接得不可行packing界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/分布式不相关机负载均衡与混合覆盖--资源.md",
+      "sha256": "14a35d7de8780b8695541b75019bfe089475c1a41aea18186d30590f5b72933c",
+      "section": "2. 未知目标下的冻结插值：可复用的条件机制"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/分布式不相关机负载均衡与混合覆盖--资源.md",
+      "sha256": "14a35d7de8780b8695541b75019bfe089475c1a41aea18186d30590f5b72933c",
+      "section": "5. 有序小槽舍入与CONGEST匹配边界"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/bgw_distributed_young_infeasible_probe.py",
+      "sha256": "d0b90185bb2562b716732f521428936f32d19bbf1256c07b0775c76a1436699e"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/bgw_distributed_young_infeasible_probe.json",
+      "sha256": "bc815f095492dac94e7775afabef213afa279b1e3576642616624d03977ad1b0"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复算两个缩放行阈值、局部势比、相位更新次数、终止界与仍 reject 的 covering。保留作者整数目标和分布式匹配缺口的原证据状态。",
+  "contribution": {
+    "result": "该印刷 MixPC 算法在此不可行输入族违反 reject 分支仍控制 packing 的保证，因而不能为该版本冻结插值直接提供其所需黑盒。",
+    "remaining": "要证 CONGEST (2+ε) 整数合同，仍须给可靠强 MixPC 黑盒、数值与零项通信处理和并发不冲突增广匹配。反例的对象只是印刷算法的一项中间保证。"
+  },
+  "endpoint_pins": {
+    "M-d411e7659e154cde8709dda69abf907a": "cda510423852022eeb6928f04b8211b5af387646c5f159cc43aab465ad372249",
+    "unrelated-machines/distributed-load-balancing-mixed-packing-covering-bgw-v1": "76844a797a92e78b3278757974a895a66c08dc60b34a0e102b1fcd1f6ee4089f"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/分布式不相关机负载均衡与混合覆盖--资源.md": "14a35d7de8780b8695541b75019bfe089475c1a41aea18186d30590f5b72933c",
+    "archives/unrelated-machines/tools/evidence/bgw_distributed_young_infeasible_probe.py": "d0b90185bb2562b716732f521428936f32d19bbf1256c07b0775c76a1436699e",
+    "archives/unrelated-machines/tools/evidence/bgw_distributed_young_infeasible_probe.json": "bc815f095492dac94e7775afabef213afa279b1e3576642616624d03977ad1b0"
+  },
+  "review_digest": "8ce601ef2d391a08d0a50b322056f797f39e4e463c80183f78bc70f652df20c0"
+}

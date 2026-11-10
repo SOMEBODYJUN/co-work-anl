@@ -1,0 +1,79 @@
+{
+  "edge_id": "ca-tail-maxima35-five-maxima-all-player-counts",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-DYNAMIC-MAXIMA-FLOOR",
+    "M-18d502affd5b4b0d88aab591394cd384",
+    "CA-TWO-REMAINING-TAX",
+    "CA-THREE-SHARP-5-3",
+    "CA-FOUR-UPPER-1499-750"
+  ],
+  "target_ids": [
+    "CA-FIVE-MAXIMA-HALF"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "单位客户共同目录、单位玩家、每份完整有序历史纯SPE，至多五个不同包含极大覆盖。保留重复、内部主题、空主题和任意平局。",
+  "roles": {
+    "CA-DYNAMIC-MAXIMA-FLOOR": "给 n≥6 的 Γ 动态保底，适用全部真实历史。",
+    "M-18d502affd5b4b0d88aab591394cd384": "给 n=5、2≤s≤5 的精确混合信用。",
+    "CA-TWO-REMAINING-TAX": "取零背景后给 n=2 的 3W/2。",
+    "CA-THREE-SHARP-5-3": "给 n=3 的 5W/3。",
+    "CA-FOUR-UPPER-1499-750": "给 n=4 的 1499W/750。",
+    "CA-FIVE-MAXIMA-HALF": "整合为任意正人数的普通半覆盖及 n≥5 的全并集加强。"
+  },
+  "explanation": "s=1 时任一末位最佳回复必须覆盖唯一极大集合，故 W=U。n=1 的根动作最大化覆盖。n=2,3,4 分别用给定三个零背景结果，只比较 OPT_n。n=5 用混合预算，n≥6 令 r=n−t，则 D_t≤n+max(3r/2,4)，其和是 (7n²+3n+14)/4。Cauchy 给 Γ≥4n²/(7n²+3n+14)>1/2，因为 n²−3n−14>0。n≥5 时可选遍 s 个极大覆盖，故 OPT_n=U，W≥c+(U−c)/2 直接给加强式。",
+  "scope": "每个正整数 n、每个 s≤5 的有限目录、每份完整纯SPE。n<5 的分支保留 OPT_n 的真实可选槽数。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/混合私有共享路由保底--引理.md",
+      "sha256": "326f6c08744ce153ddf1eff717c096bea382273d2045e24626650777e07dc409",
+      "section": "逐客户加权预算与通用标量界"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/动态极大覆盖预算与五极大半覆盖--定理.md",
+      "sha256": "b09818ecfb192b02ead23e665edcc72834e1b9d8b793c5321211bbe2f13f1b53",
+      "section": "五人、至多五极大的混合精确界"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+      "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+      "section": "空背景推论、用途和不能外推的部分"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/三人锐福利界--定理.md",
+      "sha256": "d69eaae8ac102a799364b8050962d26628d6a38e23f813225c74bb5facdb7fae",
+      "section": "5. 求和闭合与锋利性"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/四人真实根偏离福利界--定理.md",
+      "sha256": "ef0479f6a155fd078fdb7b99cf65666a7f98b7b98380330041ecc4f1bef2e802",
+      "section": "精确命题与状态"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/动态极大覆盖预算与五极大半覆盖--定理.md",
+      "sha256": "b09818ecfb192b02ead23e665edcc72834e1b9d8b793c5321211bbe2f13f1b53",
+      "section": "至少六人、至多五极大的Cauchy闭合"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按正文逐项复核各输入、合法真实续局和输出量词。每个正整数 n、每个 s≤5 的有限目录、每份完整纯SPE。n<5 的分支保留 OPT_n 的真实可选槽数。",
+  "whole_result": "对每个 n≥1 有 OPT_n≤2W。n≥5 时有 OPT_n=U≤2W−c。s=1 时 W=U。",
+  "endpoint_pins": {
+    "CA-DYNAMIC-MAXIMA-FLOOR": "c89fdd20a02a24ed45a6f31df81cb302ddc2f60a1d7588b4122d3b9d49dacf42",
+    "CA-FIVE-MAXIMA-HALF": "607ee29ce0037e3bc295c6f9b8accf0fe9d597d6e1421b4cf9b1917661b60fac",
+    "CA-FOUR-UPPER-1499-750": "d761ca025c265c7123a76fd74102c59d66b62c220bb22362edac275f0249d507",
+    "CA-THREE-SHARP-5-3": "bbbc121600f38b94932c4f34bdbc08126257503e6ca734524727516428cd1a63",
+    "CA-TWO-REMAINING-TAX": "eb63a8d1cd934879f5f7f25f633b4bf753973f405a7b8db91bed63f633de7d15",
+    "M-18d502affd5b4b0d88aab591394cd384": "668f8115ab3edcaddfc3d8e2ca6a2617863ddd80a8a5a0637d2477204dde2eb9"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/混合私有共享路由保底--引理.md": "326f6c08744ce153ddf1eff717c096bea382273d2045e24626650777e07dc409",
+    "archives/customer-attraction/state/定理/动态极大覆盖预算与五极大半覆盖--定理.md": "b09818ecfb192b02ead23e665edcc72834e1b9d8b793c5321211bbe2f13f1b53",
+    "archives/customer-attraction/state/引理/固定背景两人税界--引理.md": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+    "archives/customer-attraction/state/定理/三人锐福利界--定理.md": "d69eaae8ac102a799364b8050962d26628d6a38e23f813225c74bb5facdb7fae",
+    "archives/customer-attraction/state/定理/四人真实根偏离福利界--定理.md": "ef0479f6a155fd078fdb7b99cf65666a7f98b7b98380330041ecc4f1bef2e802"
+  },
+  "review_digest": "df82a2173732163c14c9354054994e764a37ba6d144f019fd480ac31692b3cc3"
+}

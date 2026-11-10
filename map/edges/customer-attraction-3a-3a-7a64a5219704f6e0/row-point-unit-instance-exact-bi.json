@@ -1,0 +1,62 @@
+{
+  "edge_id": "ca-tail-maxima35-row-point-unit-instance-exact-bi",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-9e196c20f6cd4b92aa23125c180df42d",
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "M-bc4250f5d4cf40fca6b49574ab982d76"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定该 12 标签、6 人、54 客户类型的整数重数实例。份额按 60 倍整数等价计算，全部可实现的续局集均保留。",
+  "roles": {
+    "M-9e196c20f6cd4b92aa23125c180df42d": "给九支持及其 54 类型、12 共同标签、2187000 客户的固定单位目录和坏 actual 计数。",
+    "CA-EXACT-PURE-SPE-ALL": "给精确集合递推及有序历史拼接的全体完整纯SPE语义。",
+    "M-bc4250f5d4cf40fca6b49574ab982d76": "确认同一实现的根可实现终局唯一，坏计数被排除。"
+  },
+  "explanation": "九支持都为 e=1。每个 mask a 的质量乘 2187000/6 后，按六个不同比较标签各造一块，实际会员由 a 决定。以 k 为合法历史计数，终端收益用整数 60U_a。每个非终端 k 取 M=max_a min_{q∈R(k+e_a)}60U_a(q)，在各孩子保留 60U_a(q)≥M 的终局并合并。独立按冻结 54 类型复算得 18564 个计数状态、12376 个终端计数、43944 跨状态保留数，根集合只有 (0,0,0,0,0,0,1,1,1,1,1,1)。因此全体客户分别被六个 T 标签覆盖。集合递推的必要性及独立有序子树拼接保证涵盖任意历史依赖平局。",
+  "scope": "该固定单位实例的全部完整纯SPE。根终局计数唯一，允许同计数有序历史用不同后继。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/低阶背景利润汇总行的六人可行点与不可实现终局--障碍.md",
+      "sha256": "a31551085eecd7af9738f556beca789c60c8a3d6432b051b6471aed23b38b0d1",
+      "section": "全部有理支持与有限单位实现"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "全集递推及完整证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/低阶背景利润汇总行的六人可行点与不可实现终局--障碍.md",
+      "sha256": "a31551085eecd7af9738f556beca789c60c8a3d6432b051b6471aed23b38b0d1",
+      "section": "原完整SPE集合为何排除坏profile"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/background-profit-code-data-source-primary/original/research/workspaces/customer-attraction/R-5ba0899f8e71460dafad1ae1ac8c0bcf/subagent_3/background_profit_realized_instance.json",
+      "sha256": "4b76812b11bf75b2c27aba7bbf1c6365d2968e56e70663d5e81c8b0c87e95db5"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/background-profit-code-data-source-primary/original/research/workspaces/customer-attraction/R-5ba0899f8e71460dafad1ae1ac8c0bcf/subagent_3/background_profit_realization_replay.json",
+      "sha256": "11ed0f0a246a035faa90a14b3842ccbecdbd346edb7d5f3d6d29d2d2a6d9bba6"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按正文逐项复核各输入、合法真实续局和输出量词。该固定单位实例的全部完整纯SPE。根终局计数唯一，允许同计数有序历史用不同后继。",
+  "whole_result": "该 12 标签单位目录中每份完整纯SPE 都有福利 2187000。坏计数 (1,1,1,1,1,1,0,0,0,0,0,0) 不属于根结果，唯一根计数为六个 T 标签各一次。",
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "M-9e196c20f6cd4b92aa23125c180df42d": "bda805c941d6b421f5c952398846df1aa2afa8611a9c2d61a9914238db819def",
+    "M-bc4250f5d4cf40fca6b49574ab982d76": "ca57763cbd1f7ef7f30969755d866fac354ff2c0be2a8b8ef38eb95cf4f20f5f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/低阶背景利润汇总行的六人可行点与不可实现终局--障碍.md": "a31551085eecd7af9738f556beca789c60c8a3d6432b051b6471aed23b38b0d1",
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/tools/evidence/background-profit-code-data-source-primary/original/research/workspaces/customer-attraction/R-5ba0899f8e71460dafad1ae1ac8c0bcf/subagent_3/background_profit_realized_instance.json": "4b76812b11bf75b2c27aba7bbf1c6365d2968e56e70663d5e81c8b0c87e95db5",
+    "archives/customer-attraction/tools/evidence/background-profit-code-data-source-primary/original/research/workspaces/customer-attraction/R-5ba0899f8e71460dafad1ae1ac8c0bcf/subagent_3/background_profit_realization_replay.json": "11ed0f0a246a035faa90a14b3842ccbecdbd346edb7d5f3d6d29d2d2a6d9bba6"
+  },
+  "review_digest": "3215828ed4091d204a6f5db5178e6cd12139ce158d0f12918d76aa3d1f773f39"
+}

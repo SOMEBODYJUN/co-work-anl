@@ -1,0 +1,47 @@
+{
+  "edge_id": "ca35-prefix-bank-pay-all-n-late-positive",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-fba1c001a1cd4e05b5cdb4285ab6215c"
+  ],
+  "target_ids": [
+    "M-fa9618919b0d4c6eb3dde9c6d97da53f"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m=n≥2，全历史恒A、n客户大题与n−1个不同单例，固定真实k2前缀、最优A加全部单例，每客户d1。",
+  "roles": {
+    "M-fba1c001a1cd4e05b5cdb4285ab6215c": "精确比较全部收费断点与累计斜率。",
+    "M-fa9618919b0d4c6eb3dde9c6d97da53f": "全n大题完整策略在k2前缀的正PAY证书。"
+  },
+  "explanation": "单例b0的最早断点为4n/(n+1)，A块b=n−2的断点不早于它。n>2时过先断点后Q斜率为1/(n−1)−(n−1)^2/(2n)<0，因为(n−1)^3>2n；n=2两断点并合，斜率同样由正转负。所以给定t还是此固定k2的唯一最优参数。其单例q=4/(n+1)，A客户q=4/[(n+1)(n−1)]；固定首项0、E=n−2，得到正差((n−2)^2+3)/(n²−1)。",
+  "scope": "全整数n≥2的同一构造族，仅选实际k2及其真最优客户次数。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/真实前缀支付的加权分位与完整路径切断--算法.md",
+      "sha256": "85a0b934af56c9eaee00fc4ac7c42d4eb90c9a5d8e87342df24989ca272f8852",
+      "section": "加权分位：完全解决固定前缀的t"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/静态储备台阶与无界Bellman族的晚期PAY--引理.md",
+      "sha256": "b2ec8d5c17524c0cc91591176976442a1f142fbad09ae0cbad6d907f0e93de86",
+      "section": "全n大题族：显式充分t的严格余量"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读所列登记端点与承重原证，按同一客户、同一有序历史及原命题逐条核量词和结果范围。",
+  "contribution": {
+    "result": "得到全n显式晚期PAY严格正余量，并进一步核实给定t在此固定k2收费中为唯一最小参数。",
+    "remaining": "完整恒A策略及原局部Bellman系数无界反例由另行真实性/剩余利润计算提供；一般PAY量词未推出。"
+  },
+  "endpoint_pins": {
+    "M-fa9618919b0d4c6eb3dde9c6d97da53f": "37c36275c9229ea9a85b366b5266685323f087386dc38b557b84eb89272707c4",
+    "M-fba1c001a1cd4e05b5cdb4285ab6215c": "d354c31b3fa6f438006e6ccac60e792cd37054cf1a9edf1bd6799fb5dac1f82f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/真实前缀支付的加权分位与完整路径切断--算法.md": "85a0b934af56c9eaee00fc4ac7c42d4eb90c9a5d8e87342df24989ca272f8852",
+    "archives/customer-attraction/state/引理/静态储备台阶与无界Bellman族的晚期PAY--引理.md": "b2ec8d5c17524c0cc91591176976442a1f142fbad09ae0cbad6d907f0e93de86"
+  },
+  "review_digest": "13f79df81ee3045850d245dca91e70f2e781a6bea540ea3163618b6a1aece88b"
+}

@@ -1,0 +1,54 @@
+{
+  "edge_id": "um-f6bc5acc-karp-three-sat-to-ternary-rainbow",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SOURCE-KARP-THREE-SAT"
+  ],
+  "target_ids": [
+    "UM-PRIVATE-TERNARY-RAINBOW-BINARY-SUBTREE-NP-COMPLETE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "标准显式至多三文字 CNF，非空短子句重复文字补成三个 occurrence 位置，空子句与零子句分别映到固定 NO 与 YES 完整树。树保原根、全深度且每个 active 内点恰二子，叶颜色全局单射。",
+  "roles": {
+    "UM-SOURCE-KARP-THREE-SAT": "给出所用至多三文字 CNF 判定的 NP 完全性与补位语义。",
+    "UM-PRIVATE-TERNARY-RAINBOW-BINARY-SUBTREE-NP-COMPLETE-v1": "接收 occurrence 色、彩色逻辑、显式三叉编译及原作业矩阵的完整阈值解码。"
+  },
+  "explanation": "每个文字出现分配独立颜色。每变量的两个真值分支分别收纳该赋值下所有假的出现色，每子句从三个出现色选一个。AND 合并且颜色不交，OR 取其一。彩虹实现恰表示每个子句选真文字。Rigid 用两份同色 A 和一份 B 强制 B 与一份 A。Dead 在正高度不可选，使等高 AND 必选两真孩子。OR 的两选项携同一新 guard 色并配 fresh filler，强制恰一。Pad 用新色补高度，平衡 AND/OR，得到 h=O(log(s+2)) 及显式多项式大小的完整树，见证可逐点验。矩阵对每条树边保一项任务，父端 1/3、内子或叶色端 1，另有 root 单资格 unit pin。彩虹子树的所选边下送，所有其余作业留父，峰≤4/3。反向峰<5/3 时每个带 unit 的 active 内点至少下送两件，按固定顺序抽出二叉树，叶色机负载<2 保单射。无彩虹时任一 root-to-leaf 路径给峰≤5/3，故 NO 恰为 5/3。",
+  "scope": "目标是可重复叶色的显式完整三叉树判定与其指定普通作业矩阵，乘性门槛仅 5/4。实际矩阵包括全部原作业和单资格 root pin。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "4.1 SAT到至多3文字SAT"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三叉彩虹二叉子树三源精读与原P边界--审查.md",
+      "sha256": "3e4c8f2196fe8fbe350bd21294f88ad5a0ad3c73fe8c8e03255ddcd3428b43ef",
+      "section": "3. 作者 Proof 的归约承重链"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三叉彩虹二叉子树三源精读与原P边界--审查.md",
+      "sha256": "3e4c8f2196fe8fbe350bd21294f88ad5a0ad3c73fe8c8e03255ddcd3428b43ef",
+      "section": "4. Independent cover 的独立核对与差异"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三叉彩虹二叉子树三源精读与原P边界--审查.md",
+      "sha256": "3e4c8f2196fe8fbe350bd21294f88ad5a0ad3c73fe8c8e03255ddcd3428b43ef",
+      "section": "5. 原 ordinary unrelated-machines 矩阵的精确回算"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "复核短子句重复位置、空式预处理、颜色命名空间、完整树展开、YES 调度、任意低峰调度的 NO 解码和路径上界。独立 cover 与作者 Dead-AND 的不同证据角色各自保留。",
+  "whole_result": "由至多三文字 SAT 确定性位多项式归约得完整三叉树的原根、全深度二叉 rainbow 判定 NP 完全。指定 private 作业矩阵把 YES 映到 OPT≤4/3、NO 映到 OPT=5/3。",
+  "endpoint_pins": {
+    "UM-PRIVATE-TERNARY-RAINBOW-BINARY-SUBTREE-NP-COMPLETE-v1": "346fa515a6fff26a4cd7ecb65aee539c924ab759fa0e6fc119e5f9ca94176c09",
+    "UM-SOURCE-KARP-THREE-SAT": "b932ca164ad03169f16e371455e99a3b869f7eb55d9338724f485b3f38d86409"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+    "archives/unrelated-machines/state/审查/三叉彩虹二叉子树三源精读与原P边界--审查.md": "3e4c8f2196fe8fbe350bd21294f88ad5a0ad3c73fe8c8e03255ddcd3428b43ef"
+  },
+  "review_digest": "26c0424e814301c58cededf185e084a3cf71bda78861519bb6041e95b093d056"
+}

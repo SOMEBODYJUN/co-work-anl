@@ -1,0 +1,44 @@
+{
+  "edge_id": "ca-tail-maxima35-five-player-mixed-credit",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-DYNAMIC-MAXIMA-MIXED"
+  ],
+  "target_ids": [
+    "M-18d502affd5b4b0d88aab591394cd384"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "n=5，2≤s≤5，单位客户共同目录，每份完整有序纯SPE。P 是核心外的私有块，V=U−c−P。",
+  "roles": {
+    "CA-DYNAMIC-MAXIMA-MIXED": "给每个真实节点的核心、私有和共享后缀包络三部分收益。",
+    "M-18d502affd5b4b0d88aab591394cd384": "给五个位置的精确私有/共享系数及全并集强界。"
+  },
+  "explanation": "前四位 t=0,1,2,3 的 Z_t=t+s(5−t)/2 分别不超过 25/2、11、19/2、8。乘以私有系数 (5+t)/(2(t+1)) 后所得下界分别为 1/5、3/22、7/57、1/8，均至少 1/9。末位私有至少 1/9，共享至少 (6/5)/9=2/15。共享序列 2/25、1/11、2/19、1/8、2/15 递增，私有常值 1/9，故每个真实同路由后继继承逐位保底。沿五位求和为 c+5P/9+(67027/125400)V，且 5/9≥67027/125400>1/2。五位足以选全极大主题。",
+  "scope": "所有满足 n=5、2≤s≤5 的完整策略，P、V 可以为零。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/混合私有共享路由保底--引理.md",
+      "sha256": "326f6c08744ce153ddf1eff717c096bea382273d2045e24626650777e07dc409",
+      "section": "私有/共享分开信用的混合接口"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/动态极大覆盖预算与五极大半覆盖--定理.md",
+      "sha256": "b09818ecfb192b02ead23e665edcc72834e1b9d8b793c5321211bbe2f13f1b53",
+      "section": "五人、至多五极大的混合精确界"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按正文逐项复核各输入、合法真实续局和输出量词。所有满足 n=5、2≤s≤5 的完整策略，P、V 可以为零。",
+  "whole_result": "W≥c+(5/9)P+(67027/125400)V，且 U=OPT₅≤c+(125400/67027)(W−c)≤2W−c。",
+  "endpoint_pins": {
+    "CA-DYNAMIC-MAXIMA-MIXED": "4d7bb4bdf8530127c752fc286e8a0b57cd9d1eedbed426cd9e9278acdcf3d29b",
+    "M-18d502affd5b4b0d88aab591394cd384": "668f8115ab3edcaddfc3d8e2ca6a2617863ddd80a8a5a0637d2477204dde2eb9"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/混合私有共享路由保底--引理.md": "326f6c08744ce153ddf1eff717c096bea382273d2045e24626650777e07dc409",
+    "archives/customer-attraction/state/定理/动态极大覆盖预算与五极大半覆盖--定理.md": "b09818ecfb192b02ead23e665edcc72834e1b9d8b793c5321211bbe2f13f1b53"
+  },
+  "review_digest": "a88cb8fe66f33968b4fbbcfd19cb8db6677857aaeacc9e8c0c999f33f188cf3c"
+}

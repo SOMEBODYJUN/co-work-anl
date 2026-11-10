@@ -1,0 +1,44 @@
+{
+  "edge_id": "ca-tail-maxima35-four-maxima-exact-series",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-DYNAMIC-MAXIMA-FLOOR"
+  ],
+  "target_ids": [
+    "M-351e14b5d6eb48b391c2aef13b81bd60"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "单位客户、共同目录、完整有序历史纯SPE，n≥3，s≤4 为不同包含极大覆盖数。精确和式取 s=4。",
+  "roles": {
+    "CA-DYNAMIC-MAXIMA-FLOOR": "提供任意极大数与每个合法历史的统一 D_t 保底以及根路径求和。",
+    "M-351e14b5d6eb48b391c2aef13b81bd60": "在 s=4 求精确 Γ，在 s≤4 给根全并集半覆盖。"
+  },
+  "explanation": "在 s=4 有 D_t=max(2n−t,n+3)，故前 n−3 项分母从 2n 下降到 n+4，末三项都等于 n+3。分式求和给 Γ_3=1/2、Γ_4=31/56、Γ_5=211/360。前段和是积分 ∫₁²du/u 的黎曼和，去掉有限起始项与末段 3/(n+3) 后极限为 log 2。对 2≤s≤4 有 t+s(n−t)/2≤2n 且 n+s−1≤2n，故 Γ≥1/2。s=1 时任一严格较小覆盖在末位有严格包含改进，末位覆盖唯一极大集合，W=U。",
+  "scope": "所有 n≥3 和至多四个不同包含极大覆盖的完整纯SPE。空和取零。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/混合私有共享路由保底--引理.md",
+      "sha256": "326f6c08744ce153ddf1eff717c096bea382273d2045e24626650777e07dc409",
+      "section": "逐客户加权预算与通用标量界"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/动态极大覆盖预算与五极大半覆盖--定理.md",
+      "sha256": "b09818ecfb192b02ead23e665edcc72834e1b9d8b793c5321211bbe2f13f1b53",
+      "section": "四极大：逐位置半覆盖和精确和式"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按正文逐项复核各输入、合法真实续局和输出量词。所有 n≥3 和至多四个不同包含极大覆盖的完整纯SPE。空和取零。",
+  "whole_result": "每个 s=4、n≥3 的实例有 W≥c+Γ(n,4)(U−c)，Γ=Σ_{d=n+4}^{2n}1/d+3/(n+3)，其 n=3,4,5 的值分别为 1/2、31/56、211/360，极限 log 2。更一般每个 s≤4、n≥3 满足 U≤2W−c。",
+  "endpoint_pins": {
+    "CA-DYNAMIC-MAXIMA-FLOOR": "c89fdd20a02a24ed45a6f31df81cb302ddc2f60a1d7588b4122d3b9d49dacf42",
+    "M-351e14b5d6eb48b391c2aef13b81bd60": "492d0e808be7397c4913ee0f79596f74de1d8d11242bf6130d2b186ce2d3e5d6"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/混合私有共享路由保底--引理.md": "326f6c08744ce153ddf1eff717c096bea382273d2045e24626650777e07dc409",
+    "archives/customer-attraction/state/定理/动态极大覆盖预算与五极大半覆盖--定理.md": "b09818ecfb192b02ead23e665edcc72834e1b9d8b793c5321211bbe2f13f1b53"
+  },
+  "review_digest": "5a166c06f18f00b65a1420c2c4f1abcd37e5772c04103de7f95e3e99808061d9"
+}

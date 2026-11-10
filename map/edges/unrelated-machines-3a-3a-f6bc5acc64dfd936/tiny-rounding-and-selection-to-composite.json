@@ -1,0 +1,65 @@
+{
+  "edge_id": "um-f6bc5acc-tiny-rounding-and-selection-to-composite",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-TINY-WORK-STABILITY-JOINT-ROUND-v1",
+    "UM-TINY-WORK-STABILITY-SELECTION-NP-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/tiny-work-joint-slot-stability-and-selection"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "第一组件以给定显式有理 CONFIG(T) 及全局零端任务实际安置后的残余统计为输入。第二组件限固定 ℓ≥2、固定有理 0≤ω<1/2 的显式 perfect3DM selector/root/leaf 矩阵，两组件各自量词不混用。",
+  "roles": {
+    "UM-TINY-WORK-STABILITY-JOINT-ROUND-v1": "给定残余证书的一次联合 big/tiny Hall 舍入及逐机负载界。",
+    "UM-TINY-WORK-STABILITY-SELECTION-NP-v1": "给固定源族稳定 CONFIG(1) 证书选择的精确 NP 完全性。",
+    "unrelated-machines/tiny-work-joint-slot-stability-and-selection": "复合审查中的给证书恢复与固定源选择复杂度两个独立组件。"
+  },
+  "explanation": "先实际安置每个有零端的原任务并删出证书，重算 K 与 r_i,s_i,b_i。把两类槽放同一图，每原任务一节点，总质量一且槽容量≤1，故一次 Hall 匹配。big 部分逐配置至多 K 件、工作≤T−r_i，残余行用 α_K 包络。tiny 排序用上一满槽付费得 s_i+b_i。合计 L_i≤α_K(T−r_i)+s_i+b_i≤(α_K+ω+δ)T。另一合同中 selector 总质量 q、外资源总容量 ℓq 迫根总容量紧。若根 selector 边际 z_a>0，稳定性给 z_a≥1−ω>1/2，逐 x 行和一迫唯一 z_a=1，Y/Z 外端单位容量保证 perfect3DM。完美匹配反向给完整峰一的 0/1 CONFIG，固定 ℓ 的有理证书位长可控，故证书选择 NP 完全。",
+  "scope": "精确合并复合审查的两个独立已证组件。给定证书恢复与稳定证书存在判定各自使用自己的参数和输入。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/小任务联合槽稳定性与选择边界--定理.md",
+      "sha256": "5a3c005ace1b821da1409b30246879992b40094a8ed61940aeb6753aff71619e",
+      "section": "定义域与主合同"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/小任务联合槽稳定性与选择边界--定理.md",
+      "sha256": "5a3c005ace1b821da1409b30246879992b40094a8ed61940aeb6753aff71619e",
+      "section": "联合 Hall 舍入与负载界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/小任务联合槽稳定性与选择边界--定理.md",
+      "sha256": "5a3c005ace1b821da1409b30246879992b40094a8ed61940aeb6753aff71619e",
+      "section": "选择复杂度与边界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/小任务联合槽与加权小端ST双源续审查--审查.md",
+      "sha256": "e51a9f639bc40bdc64af9185604a672378c624bdf6154de6e566c521bd0dc4a7",
+      "section": "2.3 稳定证书选择的精确障碍"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/小任务联合槽稳定性与选择边界--定理.md",
+      "sha256": "5a3c005ace1b821da1409b30246879992b40094a8ed61940aeb6753aff71619e",
+      "section": "固定源族的三值选择器"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核查全局零端实际回填、同一原任务跨机角色可变、逐机排序收费及严格稳定阈值。单独核对原矩阵的三值结果，没有把它归因于这两个输入对象。",
+  "contribution": {
+    "result": "得到给定证书时的一次联合舍入及原峰值界，并得到固定 selector 源族的稳定证书选择 NP 完全性。",
+    "remaining": "复合审查中的三值实际 OPT 限主矩阵 q>0 且每个 x 至少一条 tuple，需独立的低峰解码及回填。使用 ν、μ 两阈值而非稳定振幅。空源、孤立坐标的固定预处理分支另处置。"
+  },
+  "endpoint_pins": {
+    "UM-TINY-WORK-STABILITY-JOINT-ROUND-v1": "b2e79b0228f25fbe87aafca29ffece76b35bd67560c5364b4a768dfa5ef6babc",
+    "UM-TINY-WORK-STABILITY-SELECTION-NP-v1": "6c4b0a801f3a0c84e77c06ee1b222b82d9d045dfc6ec0c6edb2f59ab87036ddc",
+    "unrelated-machines/tiny-work-joint-slot-stability-and-selection": "db5d06391318e36ba79047dcadfcd6ba1b4d61aa3cc31812c1600d17caa6efd4"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/小任务联合槽稳定性与选择边界--定理.md": "5a3c005ace1b821da1409b30246879992b40094a8ed61940aeb6753aff71619e",
+    "archives/unrelated-machines/state/审查/小任务联合槽与加权小端ST双源续审查--审查.md": "e51a9f639bc40bdc64af9185604a672378c624bdf6154de6e566c521bd0dc4a7"
+  },
+  "review_digest": "19da32b8ffe9bea2f69c1049f9914302f8ada27cc3f1d52d6151be6c35335441"
+}

@@ -1,0 +1,52 @@
+{
+  "edge_id": "ca-tail-maxima35-four-tail-global-elimination",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-FOUR-REMAINING-PROFIT-1499-750",
+    "M-051479a934ab4a2a9eee8fb1289ef9ba"
+  ],
+  "target_ids": [
+    "CA-TAIL-FOUR-ALL-N"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "n≥4。背景 b 是根完整策略实际前 n−4 人的合法整数负载，尾部是该同一策略的子SPE。一般规则的 0≤β₄≤2 及全背景前提均由固定背景定理满足。",
+  "roles": {
+    "CA-FOUR-REMAINING-PROFIT-1499-750": "为原完整策略实际末四人的每个合法背景支付 β₄=1499/750 的全称前提。",
+    "M-051479a934ab4a2a9eee8fb1289ef9ba": "提供对索引子集、真实早期保底及整数背景税的 n 人消元规则。",
+    "CA-TAIL-FOUR-ALL-N": "得到任意 n≥4 的根福利系数 n/2−1/750。"
+  },
+  "explanation": "对最优 n 个比较索引，每个客户固定一个覆盖它的索引，在含该索引的四元子集中支付至少 1/(b_x+1)。平均并加回比较客户背景税，得 O≤1499nV/3000+Σ_x b_x/(b_x+1)。令 K 为最大主题大小，真实偏离至最大主题保证每位实际收益≥K/n，故 K≤W 且 V≤W−(n−4)K/n。整数税≤Σ_x b_x/2≤(n−4)K/2，代入后 K 的系数为 (n−4)/3000≥0。用 K≤W 得 (1500n−4)W/3000。W=0 强制 K=0，根最优亦零。",
+  "scope": "每个 n≥4、任意有限单位共同目录、每份完整有序纯SPE。推论中的条件接口已用指定 k=4 的背景定理代入。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/固定背景四人利润界--定理.md",
+      "sha256": "f769c0c114a4f4639d660a068fac80d355fc997515a60af8bbe9e10e85613fff",
+      "section": "1. 剩余利润对象和结论"
+    },
+    {
+      "path": "archives/customer-attraction/state/推论/尾部利润界向总人数提升--推论.md",
+      "sha256": "92371375c36e076b7a0f1f9ba263907cc8b6d4b8978f02a46e1703195676c580",
+      "section": "1. 比较覆盖在真实背景下的接口"
+    },
+    {
+      "path": "archives/customer-attraction/state/推论/尾部利润界向总人数提升--推论.md",
+      "sha256": "92371375c36e076b7a0f1f9ba263907cc8b6d4b8978f02a46e1703195676c580",
+      "section": "3. 一般公式及末四人常数"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按正文逐项复核各输入、合法真实续局和输出量词。每个 n≥4、任意有限单位共同目录、每份完整有序纯SPE。推论中的条件接口已用指定 k=4 的背景定理代入。",
+  "whole_result": "对所有 n≥4，OPT_n≤(n/2−1/750)W，包含空主题、重复及 W=0。",
+  "endpoint_pins": {
+    "CA-FOUR-REMAINING-PROFIT-1499-750": "9918c769098c2af8f94b8d5d0e20026378c2f5cf765b7286972e8a6b148f142e",
+    "CA-TAIL-FOUR-ALL-N": "befc1f049c8c7fc6e39ae7bbbef1703421d6faf5a8271e5030a2d7901d6f4b4a",
+    "M-051479a934ab4a2a9eee8fb1289ef9ba": "997c8411820d86c71218cde4a3adc2587c6a6d244c8b69b95b89c70feff46d87"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/固定背景四人利润界--定理.md": "f769c0c114a4f4639d660a068fac80d355fc997515a60af8bbe9e10e85613fff",
+    "archives/customer-attraction/state/推论/尾部利润界向总人数提升--推论.md": "92371375c36e076b7a0f1f9ba263907cc8b6d4b8978f02a46e1703195676c580"
+  },
+  "review_digest": "6a58d7c84a31ec826db7c5140ee1104683139c635f9ae2525d7ea7ee925c0386"
+}

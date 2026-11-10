@@ -1,0 +1,51 @@
+{
+  "edge_id": "um-f6bc5acc-jr2019-strong-to-simple-output",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/jansen-rohwedder-2019-quasi-polynomial-restricted-assignment"
+  ],
+  "target_ids": [
+    "M-6486a4ef9d24403f91b12e6412a9d473"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一显式受限指派输入 p_ij∈{p_j,∞}。固定 ε>0，CONFIG(τ) 可行，故每件 p_j≤τ。正阈值按原版归一，零阈值逐件选零端。",
+  "roles": {
+    "unrelated-machines/jansen-rohwedder-2019-quasi-polynomial-restricted-assignment": "给出固定可行阈值的四类层和合法实际构造。",
+    "M-6486a4ef9d24403f91b12e6412a9d473": "取得较弱教学合同的调度输出界，保留原教学层搜索证明的独立身份。"
+  },
+  "explanation": "冻结 v2 §4 的二部匹配先让每机至多一个 huge，Lemma 9 保证 CONFIG(τ) 可行且仍有坏机时在 O((1/δ)log |M|) 四类层内找到实际 move 或 leap。Lemma 14 给词典序状态界。以内部精度 δ=ε/2，迭代终止所得实际分配峰≤(11/6+ε)τ≤(2+ε)τ，时间 n^{O((1/ε)log n)}。此处用的是 §4 固定阈值的正确性和终止，非仅从 Theorem 16 的相对 OPT 数值不等式倒推出相对 τ。",
+  "scope": "只在受限指派子类，目标取给定可行 τ 的输出负载和准多项式步数。第2节的 BFS 层序和势是另一算法。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Jansen-Rohwedder-2019--受限指派准多项式近似--文献.md",
+      "sha256": "5d0f5f99d39fa01916c6e3f03ec6e80eb4f71b93283167ccb7f5d71dab317029",
+      "section": "准多项式构造：(11/6+\\varepsilon)"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Jansen-Rohwedder-2019--受限指派准多项式近似--文献.md",
+      "sha256": "5d0f5f99d39fa01916c6e3f03ec6e80eb4f71b93283167ccb7f5d71dab317029",
+      "section": "2+ε 准多项式算法（方法导入）"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Jansen-Rohwedder-2019--受限指派准多项式近似--文献.md",
+      "sha256": "5d0f5f99d39fa01916c6e3f03ec6e80eb4f71b93283167ccb7f5d71dab317029",
+      "section": "关键正确性与复杂度"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核冻结 arXiv:1701.07208v2 物理第4–7、13–29页的 Algorithm 3、Lemma 9、Lemma 14 与 Theorem 16。§2 开头通用双重近似段的 (1+ε) 写法不用于第2节的实际负载常数。",
+  "contribution": {
+    "result": "强算法在相同 CONFIG 可行阈值 τ 给合法实际 (2+ε)τ 输出及准多项式时间界。",
+    "remaining": "教学对象自己的任意初始分配、BFS 弱层几何负对偶和对应词典序势来自 §2 的独立证明。"
+  },
+  "endpoint_pins": {
+    "M-6486a4ef9d24403f91b12e6412a9d473": "fadd0ff2caedb4d3bb4f6513748f4fd280d91ccf5b830278f66eab0b78065e94",
+    "unrelated-machines/jansen-rohwedder-2019-quasi-polynomial-restricted-assignment": "d3798ee18de55657f252f83bd0cfbd466a38fb2eb8f1ddc3c21e2d2a84c71017"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/Jansen-Rohwedder-2019--受限指派准多项式近似--文献.md": "5d0f5f99d39fa01916c6e3f03ec6e80eb4f71b93283167ccb7f5d71dab317029"
+  },
+  "review_digest": "4cbe95160b02a5eb0e5f15f48e659bcbb1cb5f692dec26d384ce8ad6b054f1de"
+}

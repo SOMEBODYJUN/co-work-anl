@@ -1,0 +1,44 @@
+{
+  "edge_id": "ca35-prefix-bank-multilevel-identity-to-row",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-7678ce7b20a04e4b806dbaee70d44dd9"
+  ],
+  "target_ids": [
+    "customer-attraction/full-tail-real-query-row-cover-credit-and-multilevel-return-payment"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一个原完整有序纯SPE及其实际前缀，合法比较索引q≥1，独立均匀抽两索引，后续每步依原策略。",
+  "roles": {
+    "M-7678ce7b20a04e4b806dbaee70d44dd9": "提供固定原策略的逐动作移植、真IC及客户覆盖/重复信用的精确ROW-ID。",
+    "customer-attraction/full-tail-real-query-row-cover-credit-and-multilevel-return-payment": "目标ROW的等价付款与最小实际角色充分条件。"
+  },
+  "explanation": "由ROW-ID将R_i−(|O|−W)≥0移项，恰是qD+EΛ≤A+E C^rep+qG。真IC逐查询给R_i≤q u_i；当q=m、T真最优且i为原实际最小者，m u_i≤W，于是若其ROW成立，OPT_m−W≤R_i≤W。最后一步返还为0，较早D有符号，不能借此证明其付款。",
+  "scope": "原实际前缀和同一原策略；ROW任意正q，half推论只在最优m槽与实际最低位置。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/全尾真实查询行的覆盖信用与多层返还付款--候选.md",
+      "sha256": "7ce13072baf5007e58c6c738bbdafb4f8a0e8811a4f6c9dd937bb51b85a27767"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/全尾真实查询行的覆盖信用与多层返还付款--候选.md",
+      "sha256": "7ce13072baf5007e58c6c738bbdafb4f8a0e8811a4f6c9dd937bb51b85a27767"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读所列登记端点与承重原证，按同一客户、同一有序历史及原命题逐条核量词和结果范围。",
+  "contribution": {
+    "result": "推出ROW与RETURN完全等价，并给MIN-ROW的条件式OPT_m≤2W。",
+    "remaining": "一般实际位置的共同RETURN尚未支付，尤其缺最低收益较早位置的存在性；无条件ROW及MIN-ROW保持开放。"
+  },
+  "endpoint_pins": {
+    "M-7678ce7b20a04e4b806dbaee70d44dd9": "8244886f0f11e71bdfe5122d39a53efedcbb2f067cc71620d350813944a79752",
+    "customer-attraction/full-tail-real-query-row-cover-credit-and-multilevel-return-payment": "0b86fb8345c2d8c4b97d2ad6e380bfc92866d58574bec2d068b449dbb8ab20ae"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/全尾真实查询行的覆盖信用与多层返还付款--候选.md": "7ce13072baf5007e58c6c738bbdafb4f8a0e8811a4f6c9dd937bb51b85a27767"
+  },
+  "review_digest": "c2a6f8fd5b04d2da99e1489e2c6f03dbc1025d3c883cbb62d9c63d8a48cd0ea0"
+}

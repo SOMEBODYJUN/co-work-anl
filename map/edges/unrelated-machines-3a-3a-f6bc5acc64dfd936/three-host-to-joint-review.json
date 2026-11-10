@@ -1,0 +1,46 @@
+{
+  "edge_id": "um-f6bc5acc-three-host-to-joint-review",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-THREE-HOST-SELECTOR-THREE-HALVES-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/three-host-selector-one-job-port-downset-review"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "T≥0，三个外接机互异，闭机加不可迁移 T 预载而保留其原有限资格端。给定只开放 a 与只开放 b,c 的两份完整峰≤T 调度。",
+  "roles": {
+    "UM-THREE-HOST-SELECTOR-THREE-HALVES-v1": "提供三外接机的两见证闭包、拼接算法和三半锐界。",
+    "unrelated-machines/three-host-selector-one-job-port-downset-review": "双源审查第一节的普通异机三外接合同。"
+  },
+  "explanation": "以第一见证端时间为迁移行权 w_uv，固定 b、c 异色，每台可翻机在指向一色至少半行权时单调翻转，终态每行同色权至少一半。取含 a 的颜色类 W。仅当两见证目的机都在 W 时改用第二见证，其他任务保第一见证。W 内基础负载由第二见证内流至多 T 加第一见证跨色保留至多 T/2。a 在第二见证闭机，内流零，预载 T 加跨色至多 T/2。W 内唯一开放输出在第一见证闭机，故其第一见证基础跨色为零。W 外基础负载仍为第一见证。每件任务只用原端。两任务分别取 (a,T/2) 或 (b,T)、(a,T/2) 或 (c,T)，两输入见证峰 T，两种单输出均至少 3T/2。",
+  "scope": "双源审查第一节普通异机合同的精确推导，含零时间、空任务、T=0 及原资格边。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/三外接选择器与单任务端口向下投影双源审查--审查.md",
+      "sha256": "373d2362b5f8fd859e3c2d8c73f1264f6aa745b197702fe4cd19c4b0b335e2fc",
+      "section": "一、三外接机器选择器的精确三半合同"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三主机选择器锐例原始输入增量--审查.md",
+      "sha256": "0874cccd1f5c4404699ba43ab2df03805fad665d1eb14da95dccd51185d282a1"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对迁移权在第一见证端、a 的第二见证预载、选中输出的第一见证预载和锐例的两种单输出。",
+  "contribution": {
+    "result": "在一对给定完整调度和指定预载下，能实际拼接只开 b 或只开 c 的完整调度，峰≤3T/2，常数锐。",
+    "remaining": "双源审查的 Santa 复制变体和单端口向下投影有另外的容量与证明，需单独读取和证明。"
+  },
+  "endpoint_pins": {
+    "UM-THREE-HOST-SELECTOR-THREE-HALVES-v1": "f97f763eaee4201d4a8277ee3b6fd5bb9adc97dcb712cf49f7dc4f5d6ef25c0a",
+    "unrelated-machines/three-host-selector-one-job-port-downset-review": "052dd7b71c061e673bf62e4553c9d52d05c46748ab4c730da2b578c12bbf0db1"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/三外接选择器与单任务端口向下投影双源审查--审查.md": "373d2362b5f8fd859e3c2d8c73f1264f6aa745b197702fe4cd19c4b0b335e2fc",
+    "archives/unrelated-machines/state/审查/三主机选择器锐例原始输入增量--审查.md": "0874cccd1f5c4404699ba43ab2df03805fad665d1eb14da95dccd51185d282a1"
+  },
+  "review_digest": "da80ca3764a1115a8a2f3028670144a651340a9e6ae6e19e8a6f4b058d73f84b"
+}

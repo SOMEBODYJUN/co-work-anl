@@ -1,0 +1,47 @@
+{
+  "edge_id": "um-f6bc5acc-st-half-slots-to-scalar-rails",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-ST-ROUND-v1"
+  ],
+  "target_ids": [
+    "UM-NORMALIZED-DUAL-RAIL-UNIVERSAL-THREE-HALVES-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "以scalar每枚原作业在两个不同真实端点各放半份，轨先selector后ports（K=1时可选该平局序），clause同质。A_c≥1及m_c≤2A_c−1。",
+  "roles": {
+    "UM-ST-ROUND-v1": "有序单位质量槽与一次全作业Hall匹配，允许按指定顺序破加工时间平局。",
+    "UM-NORMALIZED-DUAL-RAIL-UNIVERSAL-THREE-HALVES-v1": "将半份槽数按原轨和clause计为同时满足轨3/2、clause 1的实际负载。"
+  },
+  "explanation": "半质量证书每有port轨总分数负载1、空轨只有selector半片，每clause负载m_c/(2A_c)≤1，支撑时间≤1。用原ST槽图，首槽含selector半片且selector在该轨只邻首槽。收到selector的轨至多另收ceil((K+1)/2)−1=floor(K/2)枚port，未收到selector的轨因全部port总时间1而负载≤1。clause有ceil(m_c/2)≤A_c槽，故负载≤1。匹配同时覆盖所有原作业。空轨不除以零。",
+  "scope": "这个精化依赖scalar的可显式半质量点及每轨统一port时间，独立于split流。此边不从通用2T负载公式单独推出三半。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md",
+      "sha256": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+      "section": "槽、任务匹配及逐机收费"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/双轨标量与拆分unit的共同调度及锐例审查--审查.md",
+      "sha256": "928992675fdebbc7d130efee3b8132e0c5665a12b9143c4981cae8d748f1affe",
+      "section": "scalar半质量有序槽与经典工具"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "以真实ST槽图复核首槽条件、平局、轨及clause的精确件数。",
+  "contribution": {
+    "result": "对任意scalar合法输入，用一个ST半质量匹配得到全部原作业，逐轨≤3/2且逐clause≤1。",
+    "remaining": "目标还包含一个标量原矩阵的绝对锐性，另需证明没有C≤1的调度及实际半整数网格。"
+  },
+  "endpoint_pins": {
+    "UM-NORMALIZED-DUAL-RAIL-UNIVERSAL-THREE-HALVES-v1": "31fddd06a29ea345d90411c020df1119855cf4b7b33eed1bb9b1f76819ceb5d1",
+    "UM-ST-ROUND-v1": "8c4662c822ebd204e3b095934f8745464426df43fc2328a6bbc35063e4148ea1"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+    "archives/unrelated-machines/state/审查/双轨标量与拆分unit的共同调度及锐例审查--审查.md": "928992675fdebbc7d130efee3b8132e0c5665a12b9143c4981cae8d748f1affe"
+  },
+  "review_digest": "e2546da85bcd9cf6158e39fbd1ecdadede31719c8fc3d256a09525a3aa782445"
+}

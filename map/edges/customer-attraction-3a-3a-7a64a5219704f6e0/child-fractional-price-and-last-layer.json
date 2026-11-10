@@ -1,0 +1,46 @@
+{
+  "edge_id": "ca-tail-maxima35-child-fractional-price-and-last-layer",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-64030b2bb7db4dc7a5db07e8d4fc569e"
+  ],
+  "target_ids": [
+    "M-257d09d02df94499ada02fa2dd2ad5b3"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限目录，固定非负价格 d(T)，固定所有真实孩子叶。末位切片 r=1 有 d(T)=Σ_{x∈T}1/(b_x+1)。",
+  "roles": {
+    "M-64030b2bb7db4dc7a5db07e8d4fc569e": "固定非负菜单的分数采购对偶，给同一共同客户价格及 r=1 的显式可行点。",
+    "M-257d09d02df94499ada02fa2dd2ad5b3": "一般合法背景的任意真实孩子菜单和全部实权采购合同。"
+  },
+  "explanation": "把覆盖截断作线性规划，对偶可取 0≤y_x≤1、对每个合法 T 有 Σ_{x∈T}y_x≤d(T)。一个最优 y 的删除预算 Σ_x(1−y_x) 同时检验所有 W(A₀)，故全实权目标等价于该预算可由 min_A W(A) 支付。r=1 取 y_x=1/(b_x+1)，各主题约束取等，只有 b_x>0 的客户会产生删除费用，故预算至多旧覆盖并至多任一 W(A₀)。",
+  "scope": "固定菜单的共同价格等价和 r=1 的任意基准正结论。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/去当前激励的真实孩子菜单合同与全背景入口勘误--资源.md",
+      "sha256": "1f9352f2adacb1d5471095521913a3a33e88ef35592e1beef9a502e06259da8c",
+      "section": "整数、全实权和共同客户价格：只保已证逻辑方向"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/去当前激励的真实孩子菜单合同与全背景入口勘误--资源.md",
+      "sha256": "1f9352f2adacb1d5471095521913a3a33e88ef35592e1beef9a502e06259da8c",
+      "section": "任意合法背景的最大主题覆盖界与root-only的准确边界"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按正文逐项复核同一历史、真实子局、全部条件及输出量词。固定菜单的共同价格等价和 r=1 的任意基准正结论。",
+  "contribution": {
+    "result": "将同一固定菜单上的全部实权义务等价地压为一份共同客户价格，且以显式 y 支付 r=1 的全部量词。",
+    "remaining": "余 r≥3 时须利用每个独立完整孩子SPE的实际相容性，证明存在预算不超过最小叶覆盖的共同价格。一般固定非负菜单的对偶只给等价公式。"
+  },
+  "endpoint_pins": {
+    "M-257d09d02df94499ada02fa2dd2ad5b3": "aee46265bde9b5f0e9a26e0ebae47c0c5163f504f568773f877996c58e975f53",
+    "M-64030b2bb7db4dc7a5db07e8d4fc569e": "e728f1cb6206456db2791c340ad84de62a54fe88a400fa0f0ad9ffc5262106a8"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/去当前激励的真实孩子菜单合同与全背景入口勘误--资源.md": "1f9352f2adacb1d5471095521913a3a33e88ef35592e1beef9a502e06259da8c"
+  },
+  "review_digest": "ec5c152c898d4fe0dede9edef8895ceb7e17981d9a99a64b471be5fd2e824135"
+}

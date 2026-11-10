@@ -1,0 +1,50 @@
+{
+  "edge_id": "ca35-prefix-bank-ordered-tree-to-credible-threshold",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "cag-actual-player-normalized-full-tree-utility-vectors"
+  ],
+  "target_ids": [
+    "M-1d23d302c0104324b2a821ad2dd9670a"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定任意合法有序前缀和原客户目录，不合并同计数历史的策略；无有效客户时全部收益零且各合法终局可实现。",
+  "roles": {
+    "cag-actual-player-normalized-full-tree-utility-vectors": "精确全树向量系统给每个有序孩子的完整原策略与当前人的真比较。",
+    "M-1d23d302c0104324b2a821ad2dd9670a": "消去相互独立的离轨孩子，得到两层共叶可信门槛及最小首对收益。"
+  },
+  "explanation": "固定客户数据，正的共同归一尺度除回原单位份额。对父有序节点选行动a并指定共叶计数z，选中向量必须来自对应完整孩子子树。其他孩子块仅通过本层当前收益不等式与父相连，可独立选使该收益最小的可信叶；有限非空，最小可同时逐子树实现。故父层必要充分门槛是max_{a′} min_{z′∈R(b+e_a′)}u_a′(z′)。在选中孩子再指定下一动作b′并保持同一z重复消元，得双条件；a=b′时二次新增计数。两项收益只依共同z，故有限枚举取和的精确最小值。",
+  "scope": "任意合法前缀与全部完整纯SPE续局；计数只缓存同构子树的可实现集合。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/等价/实际玩家归一的全树效用向量表示--等价.md",
+      "sha256": "63bc58484d2d095c4d2c326bc7d2402173382c78126a0ddf9b0f4f3e9d3e29ad",
+      "section": "精确效用向量系统"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/合法背景前两人利润与额外槽安全下界诊断--程序.md",
+      "sha256": "64c9e1852515ad967aed3f378b41061e171119ea7f6cc3b6964f8526559b77c4",
+      "section": "两层threshold怎样恰好刻画前两人"
+    },
+    {
+      "path": "archives/customer-attraction/subarchives/six-providers/state/程序/合法背景首对利润与静态安全下界诊断--程序.md",
+      "sha256": "7b455d5eeda874cd6067abe451fb05f412304905efd36a71e3257b027a86f010",
+      "section": "可信终局全集如何取首对最小值"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读所列登记端点与承重原证，按同一客户、同一有序历史及原命题逐条核量词和结果范围。",
+  "whole_result": "得到R(b)精确单层递推和余r≥2时指定同一终叶z的两层门槛当且仅当；枚举通过的同一z及两动作给全部子SPE首对利润最小值。",
+  "endpoint_pins": {
+    "M-1d23d302c0104324b2a821ad2dd9670a": "66bfd634d75ca84d47153a347fa1927e54681e269958b127f4cf629111ed34c0",
+    "cag-actual-player-normalized-full-tree-utility-vectors": "220a1d0a9722c58c9bde298091b99cadf3ac2b7b1fd8dd7ce5609da87b578186"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/等价/实际玩家归一的全树效用向量表示--等价.md": "63bc58484d2d095c4d2c326bc7d2402173382c78126a0ddf9b0f4f3e9d3e29ad",
+    "archives/customer-attraction/state/程序/合法背景前两人利润与额外槽安全下界诊断--程序.md": "64c9e1852515ad967aed3f378b41061e171119ea7f6cc3b6964f8526559b77c4",
+    "archives/customer-attraction/subarchives/six-providers/state/程序/合法背景首对利润与静态安全下界诊断--程序.md": "7b455d5eeda874cd6067abe451fb05f412304905efd36a71e3257b027a86f010"
+  },
+  "review_digest": "48e74a3c0380dfc87f64ecbc4119e9d11130043d39384595624e4c3224bb4a2f"
+}

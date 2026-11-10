@@ -1,0 +1,74 @@
+{
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "customer-attraction/closeout-35175db635ac15baafde135d"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "四份冻结有限单位客户游戏及各自给定的精确静态安全查询分布 p。完整有序历史纯SPE，固定目录和固定 p，每个主题计数类型按单位客户重数解释。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "证明每个计数前缀上的可信终局菜单全集语义，以及不同有序孩子的完整策略可独立拼接。",
+    "customer-attraction/closeout-35175db635ac15baafde135d": "对固定真实路径和给定 p 穷尽所有可信首偏离分支并得到四个精确预算极值。"
+  },
+  "explanation": "对候选有序实际路径 z，先检查 q_z 属于根集合，并逐真实前缀 c_i 检查规定分支可实现 q_z。若首次偏离 b≠z_i，其终局 q 必须在 R(c_i+e_b) 且 U_b(q)≤u_i(z)，这两个条件也足够选择对应可信孩子。实际 b=z_i 保持 q_z。每个离轨有序历史有唯一首次偏离 (i,b)，各子树不交，故可分别最大化 g_b(q;p)=E_{T∼p}Σ_{x∈T}1/(1+c_{q−e_b}(x))，再按 p_b 加权并与真实路径拼接。这样在固定路径上取得精确最大，遍历所有可实现 z 后得全完整SPE极值。按四个冻结 JSON 的 game/p 在内存逐项重算原 Menu.optimize，精确比较每个原结果字段和完整见证策略，所得根菜单数/有序路径数依次为 20/48、15/23、12/102、2/6，极值依次为 −17/6、−55088965/3710088、−3/2、−70429743611/10570351740。分别有 36、1、2、1 条并列最大有序路径。源码只在严格变大时更新 best，循环后仅展开首个最大路径的一份见证。",
+  "scope": "这四个固定单位游戏及各自明确的一个查询分布。优化覆盖完整SPE的全部有序平局，但输出每个固定输入仅一个见证策略。",
+  "whole_result": "生成器精确得到这四个固定 game/p 上所有完整纯SPE 的最大 Σ_i C_i(p)−W，且四个最大值均严格负，因而只调整这四个输入的有序历史SPE平局不能得到非负 GB。保留其它 p、其它游戏及一般福利问题的独立量词。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "全集递推及完整证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/固定有限游戏SPE菜单预算生成器--审查.md",
+      "sha256": "c74097a2b83acaa9f46341a5772bc243af5f2ed75abec7a487c53a98fe4b85af",
+      "section": "4. 固定有序路径上的精确预算优化"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/固定有限游戏SPE菜单预算生成器--审查.md",
+      "sha256": "c74097a2b83acaa9f46341a5772bc243af5f2ed75abec7a487c53a98fe4b85af",
+      "section": "6. 冻结输出字段与数值"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/security-gluing-boss5/original/budget_menu_generator.py",
+      "sha256": "51b775001f14b0e7b98de20e85d82ff9daeede9a1dd8d470014657cea8bbe2a2"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/security-cones-new/original/all_SPE_GB_original36.json",
+      "sha256": "fd2bc4f84f1d90f17efeee1933b713dee554f7b5933233dfd83a7591cf4179ee"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/security-cones-new/original/all_SPE_GB_individual360.json",
+      "sha256": "a377090d6317061106f20d2c9e9804d5dd4d930a20664aa92f5b54dc9859722a"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/security-cones-new/original/all_SPE_GB_root_tax_failure.json",
+      "sha256": "cac3698bcf815494ebd1285f881fd14148dce89012793fd5e1c57a6aa70bf451"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/security-cones-new/original/all_SPE_GB_global_decorrelation_failure.json",
+      "sha256": "23b6614ee5c26e90883b75efad576466ca4bae29ea07f971b743efe0aacb4b5f"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对固定路径每个可选分支的菜单、同一策略拼接和四组冻结 Fraction 输出，另外逐有效路径核源码的并列最大处理。",
+  "edge_id": "ca-tail-maxima35-complete-spe-menu-budget-generator",
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "customer-attraction/closeout-35175db635ac15baafde135d": "ff38d08e913b0052566c269bcd29e0bbedf55bd149a19182f33077860ab0e690"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/审查/固定有限游戏SPE菜单预算生成器--审查.md": "c74097a2b83acaa9f46341a5772bc243af5f2ed75abec7a487c53a98fe4b85af",
+    "archives/customer-attraction/tools/evidence/security-gluing-boss5/original/budget_menu_generator.py": "51b775001f14b0e7b98de20e85d82ff9daeede9a1dd8d470014657cea8bbe2a2",
+    "archives/customer-attraction/tools/evidence/security-cones-new/original/all_SPE_GB_original36.json": "fd2bc4f84f1d90f17efeee1933b713dee554f7b5933233dfd83a7591cf4179ee",
+    "archives/customer-attraction/tools/evidence/security-cones-new/original/all_SPE_GB_individual360.json": "a377090d6317061106f20d2c9e9804d5dd4d930a20664aa92f5b54dc9859722a",
+    "archives/customer-attraction/tools/evidence/security-cones-new/original/all_SPE_GB_root_tax_failure.json": "cac3698bcf815494ebd1285f881fd14148dce89012793fd5e1c57a6aa70bf451",
+    "archives/customer-attraction/tools/evidence/security-cones-new/original/all_SPE_GB_global_decorrelation_failure.json": "23b6614ee5c26e90883b75efad576466ca4bae29ea07f971b743efe0aacb4b5f"
+  },
+  "review_digest": "ff0926c882eb8bd9b87c5aa8460a93838c334402ee67d66bdb4e2f70f7e72fbb"
+}

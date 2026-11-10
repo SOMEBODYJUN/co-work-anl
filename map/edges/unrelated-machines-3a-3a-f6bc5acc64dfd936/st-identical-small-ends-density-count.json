@@ -1,0 +1,44 @@
+{
+  "edge_id": "um-f6bc5acc-st-identical-small-ends-density-count",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-ST-ROUND-v1"
+  ],
+  "target_ids": [
+    "UM-SMALL-DENSITY-FLOW-BARRIER-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "原显式矩阵全部有限端在{1,1/k}，k≥2。Q为无small端任务，R为其余。每机small端数t_i≤k，逐机至少γt_i个incident任务有≥D个small端，D≥2。端点用原任务身份。",
+  "roles": {
+    "UM-ST-ROUND-v1": "相同processing time时，单位槽匹配精确控制每机实际任务数不超过该机分数质量上整。",
+    "UM-SMALL-DENSITY-FLOW-BARRIER-v1": "把small子匹配与独立的Q容量1匹配叠加，得到逐机密度的完整原调度及失败证书。"
+  },
+  "explanation": "R子问题只保原small端，对各任务j的d_j个small端各置1/d_j。机器i分数件数rho_i=Σ1/d_j，分数负载rho_i/k≤1。单位槽恰ceil(rho_i)个，Hall匹配将每R作业送原端，直接投影为容量ceil(rho_i)的整数满流。若Q容量1匹配成功，把两份在不交任务集上的分配放回共同原机器，负载逐机≤1+ceil(rho_i)/k。D=2时rho_i≤t_i−b_i/2≤k(1−γ/2)，取整得2−floor(γk/2)/k。一般D给rho_i≤t_i−b_i(1−1/D)≤k[1−γ(1−1/D)]。Q为空不付前导1。Q匹配失败时任一C<2实际调度至多每机一枚Q而会给满匹配，故原OPT≥2。所有匹配和有理运算按显式输入位长多项式。",
+  "scope": "等长small子问题可用槽或同等容量流。两个任务类只在原机器合并负载。逐机密度及给定单尺度为承重条件。所得绝对界不把Q空改成相对近似保证。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md",
+      "sha256": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+      "section": "槽、任务匹配及逐机收费"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/多小端密度流障碍与单位读出校准槽双源审查--审查.md",
+      "sha256": "ccf410a29e660aba575bf8c0df61a2b29ddd0e1ede7f68b8c1ee1203153c7a39",
+      "section": "一、多小端密度的容量流障碍"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对rho的量纲是件数、整数满流、ceil方向、D推广、Q空与Q匹配失败的实际反推。",
+  "whole_result": "ST槽在R上实现逐机ceil(rho_i)的原端整数满流，与Q的容量1匹配同得完整逐机密度峰界及D端公式。Q失败严格推出OPT≥2，Q空省去前导1。",
+  "endpoint_pins": {
+    "UM-SMALL-DENSITY-FLOW-BARRIER-v1": "e68bf19873281824019df13d5418d2974a320443d76df777892b567b845ae21d",
+    "UM-ST-ROUND-v1": "8c4662c822ebd204e3b095934f8745464426df43fc2328a6bbc35063e4148ea1"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+    "archives/unrelated-machines/state/审查/多小端密度流障碍与单位读出校准槽双源审查--审查.md": "ccf410a29e660aba575bf8c0df61a2b29ddd0e1ede7f68b8c1ee1203153c7a39"
+  },
+  "review_digest": "c2626187054b34ef237e1613143ad757337e97a62cde456c38a181218bcbbf53"
+}

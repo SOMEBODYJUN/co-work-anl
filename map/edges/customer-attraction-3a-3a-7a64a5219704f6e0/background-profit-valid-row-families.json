@@ -1,0 +1,65 @@
+{
+  "edge_id": "ca-tail-maxima35-background-profit-valid-row-families",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-TWO-REMAINING-TAX",
+    "CA-THREE-REMAINING-PROFIT-5-3",
+    "CA-FOUR-REMAINING-PROFIT-1499-750"
+  ],
+  "target_ids": [
+    "M-9e196c20f6cd4b92aa23125c180df42d"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "恰六位单位玩家，actual 前缀固定为同一完整SPE 的真实前缀，比较标签可以重复或为空。对不同比较标签作置换平均。",
+  "roles": {
+    "CA-TWO-REMAINING-TAX": "推出末两人 29 条税行及其 29 条 3/2 比例行。",
+    "CA-THREE-REMAINING-PROFIT-5-3": "推出末三人任意真实背景的 5/3 比例行。",
+    "CA-FOUR-REMAINING-PROFIT-1499-750": "推出末四人任意真实背景的 1499/750 比例行。",
+    "M-9e196c20f6cd4b92aa23125c180df42d": "为给定的 439 行松弛建立后缀 397 条必要行的原模型含义。"
+  },
+  "explanation": "在末 r 人的实际有序前缀，截取同一完整子SPE 并以 b 和 V_r 表示真实旧负载与尾部利润。对每个实际/比较多重元组使用 R_b(Q)≤C_rV_r，再平均不同标签的同一置换，重复标签保留同一客户会员指标。r=2 时 g_b(A₄,A₄) 在 A₄ 独有客户相对尾利润的比例为 1/(b+2)，与 A₅ 共有时为 1/[2(b+1)]，二者至多 1/2，因而由同一税式得到 C₂=3/2。r=2、3、4 的比例模板数为 29、92、247，另有 29 条更强两尾税行，均对真实策略必要。",
+  "scope": "只证明 439 条松弛中的尾部 397 条在真SPE上必要，剩余 42 条是独立的真实安全查询。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+      "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+      "section": "对象与精确命题"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定背景三人利润界--定理.md",
+      "sha256": "b684d60a67c3164a3cd69177a1c8bda2a328125b9eab62f2c8ab0fb83091a47b",
+      "section": "1. 利润对象与结论"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定背景四人利润界--定理.md",
+      "sha256": "f769c0c114a4f4639d660a068fac80d355fc997515a60af8bbe9e10e85613fff",
+      "section": "1. 剩余利润对象和结论"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/低阶背景利润汇总行的六人可行点与不可实现终局--障碍.md",
+      "sha256": "a31551085eecd7af9738f556beca789c60c8a3d6432b051b6471aed23b38b0d1",
+      "section": "指定松弛与合法行"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按正文逐项复核各输入、合法真实续局和输出量词。只证明 439 条松弛中的尾部 397 条在真SPE上必要，剩余 42 条是独立的真实安全查询。",
+  "contribution": {
+    "result": "指定 368 条对称末二/三/四利润比例行及 29 条末二税行均为该六人模型完整SPE的必要条件。",
+    "remaining": "要得目标坏点还须给出指定九支持、42 个真实安全行以及全部 439 个精确 slack，最后清分母实现同一比较目录。合法性本身不给任何坏点。"
+  },
+  "endpoint_pins": {
+    "CA-FOUR-REMAINING-PROFIT-1499-750": "9918c769098c2af8f94b8d5d0e20026378c2f5cf765b7286972e8a6b148f142e",
+    "CA-THREE-REMAINING-PROFIT-5-3": "575cf03e1f3b30d2f2fc33c33048f95a716132fbf0b002381bba366cff3a2a53",
+    "CA-TWO-REMAINING-TAX": "eb63a8d1cd934879f5f7f25f633b4bf753973f405a7b8db91bed63f633de7d15",
+    "M-9e196c20f6cd4b92aa23125c180df42d": "bda805c941d6b421f5c952398846df1aa2afa8611a9c2d61a9914238db819def"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/固定背景两人税界--引理.md": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+    "archives/customer-attraction/state/定理/固定背景三人利润界--定理.md": "b684d60a67c3164a3cd69177a1c8bda2a328125b9eab62f2c8ab0fb83091a47b",
+    "archives/customer-attraction/state/定理/固定背景四人利润界--定理.md": "f769c0c114a4f4639d660a068fac80d355fc997515a60af8bbe9e10e85613fff",
+    "archives/customer-attraction/state/障碍/低阶背景利润汇总行的六人可行点与不可实现终局--障碍.md": "a31551085eecd7af9738f556beca789c60c8a3d6432b051b6471aed23b38b0d1"
+  },
+  "review_digest": "b24fb7e0909fdd640e9199898108b8ad5c8b8983606e1ec30178bcfa9674dc9d"
+}

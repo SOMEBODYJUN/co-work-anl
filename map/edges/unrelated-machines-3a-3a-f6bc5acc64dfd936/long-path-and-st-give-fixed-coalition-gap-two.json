@@ -1,0 +1,80 @@
+{
+  "edge_id": "um-f6bc5acc-long-path-and-st-give-fixed-coalition-gap-two",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-LONG-PATH-GAP-v1",
+    "UM-MODEL-v1",
+    "UM-ST-ROUND-v1"
+  ],
+  "target_ids": [
+    "UM-COALITION-PROJECTION-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意固定整数 r≥1、g≥3。输入为每任务恰两端的简单机器图且围长≥g，gap 比值限 OPT>0。各 U 共享单机全配置律，独立选择自己的耦合。",
+  "roles": {
+    "UM-LONG-PATH-GAP-v1": "给出每 k≥4、ℓ≥2 的同一简单二端族、围长 2ℓ、树宽2、整数 c_k 与 T_k 配置见证。",
+    "UM-MODEL-v1": "提供完整配置边际、剪枝 LST 投影和阈值零边界。",
+    "UM-ST-ROUND-v1": "给出从同阈值有理 LST 点取得真实 ≤2T 调度的上界。",
+    "UM-COALITION-PROJECTION-GAP-v1": "加入每个小联盟完整单机边际的量词，取得固定 r 精确 gap 与全交叠边界。"
+  },
+  "explanation": "给同一 CONFIG 点和诱导森林 U，先按根的整行分布抽取，再对子按其整行分布条件取与父共享任务的互补指示。两端包含概率和1，触发概率等于条件事件质量，故子整行边际不变，零概率条件无需访问。每子一个父，U 内任务恰取一次。任意固定 r,g 选 2ℓ≥g 且 2ℓ>r，所有小 U 都是森林，长链配置见证给 T_CC,r≤1+1/k，原整数收缩/提升给 OPT=2−1/k。比值≥2−3/(k+1) 趋2。任何 CC_r 点投影为同 T 剪枝 LST 再槽舍入给 OPT≤2T。正 OPT 确保阈值正。若改要求所有≤3机律在全部交集共享完整配置律，则沿宽2树分解的袋树，在至多两机分隔器上按共同分布条件胶合。每任务两端同袋，故全局每件恰执行一次且各机负载≤T。",
+  "scope": "固定 r 的 CC_r 阈值相对真实整数 OPT，且单列宽2袋树下的完整交叠增强。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/长链联合投影与子线性联盟高围长双源审查--审查.md",
+      "sha256": "b453e8bc763c897684ab95b940ccba4f1e93d56ea3a280baf8544315c3cad816",
+      "section": "3. 长链族：构造、阈值和整数值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md",
+      "sha256": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/长链联合投影与子线性联盟高围长双源审查--审查.md",
+      "sha256": "b453e8bc763c897684ab95b940ccba4f1e93d56ea3a280baf8544315c3cad816",
+      "section": "4. 固定 r 的高围长 coalition gap"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/长链联合投影与子线性联盟高围长双源审查--审查.md",
+      "sha256": "b453e8bc763c897684ab95b940ccba4f1e93d56ea3a280baf8544315c3cad816",
+      "section": "2. 联合投影对象与森林耦合"
+    },
+    {
+      "path": "tools/evidence/root-unit-row-quota-count-and-price-corrections/long_path_coalition_gap.md",
+      "sha256": "71694578be6a110ad993fd0039c039edfeca2f5c509e1049ca204e4fe42b8aa6",
+      "section": "3. 经典两树的长链替换"
+    },
+    {
+      "path": "tools/evidence/root-unit-row-quota-count-and-price-corrections/long_path_coalition_gap.md",
+      "sha256": "71694578be6a110ad993fd0039c039edfeca2f5c509e1049ca204e4fe42b8aa6",
+      "section": "4. 两个准确的阶段结论"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/长链联合投影原审查与收缩概率三项勘误--审查.md",
+      "sha256": "ea2e319013a997a0925ec441d4baed7ad8d317c14d600c444c03fc634e97e65a"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核长链首端向内强制全右传、首任务给父时可直接收缩、首父边际 1−1/k 和末终端边际 1/k。T_k 是证书阈值。复核森林互补与全交叠袋树的不同一致性要求。",
+  "whole_result": "每固定 r≥1,g≥3，指定二端简单高围长域上的 sup OPT/T_CC,r=2。宽2长链族在所有至多3机律全交集一致的加强合同下，阈值 T 可行可胶合为真实 T 调度。",
+  "endpoint_pins": {
+    "UM-COALITION-PROJECTION-GAP-v1": "dcfc25cc82d73f4fcfc1af5c796156b86f20cd92f32cab7f309165465ae9a0d8",
+    "UM-LONG-PATH-GAP-v1": "477a37d1820e834d3e2f6245913d40710ce83de016e252f6be7afe358d37e3a4",
+    "UM-MODEL-v1": "9e0366033d2ab38fffe159771a178a29146f75c0d5c2cea92c0b1a307e6269c5",
+    "UM-ST-ROUND-v1": "8c4662c822ebd204e3b095934f8745464426df43fc2328a6bbc35063e4148ea1"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/长链联合投影与子线性联盟高围长双源审查--审查.md": "b453e8bc763c897684ab95b940ccba4f1e93d56ea3a280baf8544315c3cad816",
+    "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b",
+    "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+    "tools/evidence/root-unit-row-quota-count-and-price-corrections/long_path_coalition_gap.md": "71694578be6a110ad993fd0039c039edfeca2f5c509e1049ca204e4fe42b8aa6",
+    "archives/unrelated-machines/state/审查/长链联合投影原审查与收缩概率三项勘误--审查.md": "ea2e319013a997a0925ec441d4baed7ad8d317c14d600c444c03fc634e97e65a"
+  },
+  "review_digest": "ab0835a865aadf3604843ba21f4ea3a8ff1b017675daa493bdf24db7305d3bfb"
+}

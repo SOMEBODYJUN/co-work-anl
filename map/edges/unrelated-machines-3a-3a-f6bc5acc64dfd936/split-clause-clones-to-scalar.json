@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-f6bc5acc-split-clause-clones-to-scalar",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SPLIT-CAPACITY-DUAL-RAIL-THREE-HALVES-v1"
+  ],
+  "target_ids": [
+    "UM-NORMALIZED-DUAL-RAIL-UNIVERSAL-THREE-HALVES-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一符号occurrence输入与同一互异轨、selector及内端。对scalar合法的m_c≤2A_c−1，split使用L_c=min(A_c,m_c)个unit clone。保重复作业，A_c按二进制编码。",
+  "roles": {
+    "UM-SPLIT-CAPACITY-DUAL-RAIL-THREE-HALVES-v1": "输出同一全部原任务的整数split调度，各轨≤3/2、每clone≤1，并给共同四clause输入的split OPT=3/2。",
+    "UM-NORMALIZED-DUAL-RAIL-UNIVERSAL-THREE-HALVES-v1": "合并clones、把每件外端改为1/A_c，得到所需全部原任务的标量上界与绝对锐例。"
+  },
+  "explanation": "scalar输入也满足split arity，故构造split矩阵并调用整数流。轨任务逐件保原端与时间。去clone的每件port改去其唯一scalar clause机。每clone最多收一件unit，故合并后每clause负载≤L_c/A_c≤1，轨负载原样≤3/2。若scalar有C≤1调度，保轨原样，每clause外送数至多A_c且至多m_c，可逐件注入L_c个clone，给split C≤1。在共同四clause锐例A_c=2、K(v,s)=2，split已证OPT=3/2，故scalar无C≤1。scalar全时间为1或1/2，使OPT≥3/2，合并的上界使之恰等。空轨、空clause/实例保留原分支。clone数按m_c截断。",
+  "scope": "适用于scalar全域上界及共同四clause的绝对3/2锐性。C=1的反向只按整件容量成立，无法从任意C>1的scalar负载推同峰split，也不提供近似比锐性。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/双轨标量与拆分unit的共同调度及锐例审查--审查.md",
+      "sha256": "928992675fdebbc7d130efee3b8132e0c5665a12b9143c4981cae8d748f1affe",
+      "section": "完整原任务与两种外端合同"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/双轨标量与拆分unit的共同调度及锐例审查--审查.md",
+      "sha256": "928992675fdebbc7d130efee3b8132e0c5665a12b9143c4981cae8d748f1affe",
+      "section": "split的共同整数流与完整回填"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/双轨标量与拆分unit的共同调度及锐例审查--审查.md",
+      "sha256": "928992675fdebbc7d130efee3b8132e0c5665a12b9143c4981cae8d748f1affe",
+      "section": "两个绝对锐例与源解码边界"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对逐作业合并、同阈值1反向注入、同一occurrence输入的下界和半整数网格。",
+  "whole_result": "给每个原scalar矩阵确定性位多项式完整调度，轨≤3/2、clause≤1。共同四clause scalar矩阵的实际OPT恰3/2。",
+  "endpoint_pins": {
+    "UM-NORMALIZED-DUAL-RAIL-UNIVERSAL-THREE-HALVES-v1": "31fddd06a29ea345d90411c020df1119855cf4b7b33eed1bb9b1f76819ceb5d1",
+    "UM-SPLIT-CAPACITY-DUAL-RAIL-THREE-HALVES-v1": "fbbe6b5940f49aecff58f18105dcd538adfd35b63ea9f4808a5af18259a29a06"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/双轨标量与拆分unit的共同调度及锐例审查--审查.md": "928992675fdebbc7d130efee3b8132e0c5665a12b9143c4981cae8d748f1affe"
+  },
+  "review_digest": "6d5108f12d669c587701312f73d8c54131ea9ff60bcaa2aca1951637cc036a0a"
+}

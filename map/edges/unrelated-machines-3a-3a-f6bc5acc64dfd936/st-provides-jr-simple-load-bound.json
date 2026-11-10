@@ -1,0 +1,59 @@
+{
+  "edge_id": "um-f6bc5acc-st-provides-jr-simple-load-bound",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-MODEL-v1",
+    "UM-ST-ROUND-v1"
+  ],
+  "target_ids": [
+    "M-6486a4ef9d24403f91b12e6412a9d473"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "受限指派 p_ij∈{p_j,∞}，给定有理 τ≥0 且 CONFIG(τ) 可行。可以使用精确有理 LP 可行性。",
+  "roles": {
+    "UM-MODEL-v1": "把同一向下封闭 CONFIG(τ) 归一并投影成剪枝 LST 点。",
+    "UM-ST-ROUND-v1": "提供任务保真的单位槽匹配、逐机负载和有理网格搜索。",
+    "M-6486a4ef9d24403f91b12e6412a9d473": "取得教学阈值合同的独立实际输出部分。"
+  },
+  "explanation": "原论文每机配置权重≤1，补空配置后向下削减多余任务覆盖。投影到相同 τ 的剪枝 LST。从显式输入求一个有理解，再按非增大小切单位槽并匹配所有原任务。各机实际负载≤分数负载加支撑最大件≤2τ，故满足 (2+ε)τ，而且输出步骤按总位长多项式。",
+  "scope": "独立输出算法只覆盖 (2+ε)τ 调度的存在及构造。保留机器资格，包含 τ=0。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md",
+      "sha256": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Jansen-Rohwedder-2019--受限指派准多项式近似--文献.md",
+      "sha256": "5d0f5f99d39fa01916c6e3f03ec6e80eb4f71b93283167ccb7f5d71dab317029",
+      "section": "2+ε 准多项式算法（方法导入）"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Jansen-Rohwedder-2019--受限指派准多项式近似--文献.md",
+      "sha256": "5d0f5f99d39fa01916c6e3f03ec6e80eb4f71b93283167ccb7f5d71dab317029",
+      "section": "配置 LP 与对偶停滞证书"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核每机补空、覆盖削减、p_ij≤τ 和槽收费。论文 §2 正以经典更快的二近似作为教学背景。这里给相同阈值的精确输出接口。",
+  "contribution": {
+    "result": "从同一可行 CONFIG(τ) 阈值可用有理 LP 加有序槽匹配实际输出峰≤2τ。",
+    "remaining": "目标所登记的 BFS 搜索、无动作负对偶和简单层势并非此独立算法的结论。"
+  },
+  "endpoint_pins": {
+    "M-6486a4ef9d24403f91b12e6412a9d473": "fadd0ff2caedb4d3bb4f6513748f4fd280d91ccf5b830278f66eab0b78065e94",
+    "UM-MODEL-v1": "9e0366033d2ab38fffe159771a178a29146f75c0d5c2cea92c0b1a307e6269c5",
+    "UM-ST-ROUND-v1": "8c4662c822ebd204e3b095934f8745464426df43fc2328a6bbc35063e4148ea1"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b",
+    "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+    "archives/unrelated-machines/state/文献/Jansen-Rohwedder-2019--受限指派准多项式近似--文献.md": "5d0f5f99d39fa01916c6e3f03ec6e80eb4f71b93283167ccb7f5d71dab317029"
+  },
+  "review_digest": "9fa53390b355fd44dfb0a5cd1afdfd2fcc84a2f6de720fd3269770cb773f70b0"
+}

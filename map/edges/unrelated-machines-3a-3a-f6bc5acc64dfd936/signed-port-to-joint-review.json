@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-f6bc5acc-signed-port-to-joint-review",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/three-host-selector-one-job-port-downset-review"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "非空内部机，非负有理处理时间，辅助任务全部内部，每端口仅一内端和一个固定外端，外部容量不计。状态数下界另要求 0^k、1^k 均可行。",
+  "roles": {
+    "UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1": "提供内部入向支持的向下闭性、零端口状态数锐界和恰二一致态复制障碍。",
+    "unrelated-machines/three-host-selector-one-job-port-downset-review": "双源审查第二节的单任务外接端口合同。"
+  },
+  "explanation": "在给定见证中把任意入向端口改出，只删除其非负内部负载，辅助任务保持原位。两个一致状态在正端口上给互补的入向集合，两个主理想并集大小 2^a+2^b−1。z 个零时间位任意，故状态数至少 2^z(2^a+2^b−1)。T>0 的两内部机例分别承接两组正端口，若组非空每件耗 T/组大小。一枚时长 T 的辅助任务可选两机，迫至少一组正入向为空，故恰达。空组同式。T=0 且两个一致状态可行时所有端口必为零时间，故全立方。k≥2 时固定一端口，选择使它入向的一致状态，将它移出就得到混合见证并保留于放宽阈值。",
+  "scope": "只比较一个内部端口且外端容量完全投影掉的关系，覆盖按符号的锐状态数及该接口的复制障碍。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/单端口向下闭集与单home级联双源审查--审查.md",
+      "sha256": "404eec6e411300bc21c39f39de854e388ad148ba690728bc47575df0f3ead95c",
+      "section": "1. 单内部端口投影是向下闭集"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三外接选择器与单任务端口向下投影双源审查--审查.md",
+      "sha256": "373d2362b5f8fd859e3c2d8c73f1264f6aa745b197702fe4cd19c4b0b335e2fc",
+      "section": "二、单任务外接端口的向下投影"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/signed-port-20261031/signed_one_job_port_sharp_profiles.json",
+      "sha256": "850f6d8451d56918c34de05a21a92d37d90dc197d63bbd63d2ba76089048bbe0"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "区分两符号正端与自由零端，核查达到例确为一枚可去两机的辅助任务。混合构造先选择能移除该端口的一致状态。",
+  "contribution": {
+    "result": "单内部端口的入向支持向下闭，两个一致状态强制锐下界 2^z(2^a+2^b−1)，T=0 时为全立方，k≥2 时无法只允许两个一致态。",
+    "remaining": "该推导只覆盖双源审查第二节的内部投影。三外接真实预载调度和另述 Santa 变体各有独立见证拼接合同。"
+  },
+  "endpoint_pins": {
+    "UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1": "66b704006e6f8d69422578c25df277299bc0a753525544fb9aac6eab744497ce",
+    "unrelated-machines/three-host-selector-one-job-port-downset-review": "052dd7b71c061e673bf62e4553c9d52d05c46748ab4c730da2b578c12bbf0db1"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/单端口向下闭集与单home级联双源审查--审查.md": "404eec6e411300bc21c39f39de854e388ad148ba690728bc47575df0f3ead95c",
+    "archives/unrelated-machines/state/审查/三外接选择器与单任务端口向下投影双源审查--审查.md": "373d2362b5f8fd859e3c2d8c73f1264f6aa745b197702fe4cd19c4b0b335e2fc",
+    "archives/unrelated-machines/tools/evidence/signed-port-20261031/signed_one_job_port_sharp_profiles.json": "850f6d8451d56918c34de05a21a92d37d90dc197d63bbd63d2ba76089048bbe0"
+  },
+  "review_digest": "8cac3aa0f0468534f4637c7cb2dfee84dc8dfce3978dd8c631f59e7236c487f8"
+}

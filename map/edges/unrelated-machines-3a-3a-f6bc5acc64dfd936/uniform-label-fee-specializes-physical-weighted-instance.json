@@ -1,0 +1,50 @@
+{
+  "edge_id": "um-f6bc5acc-uniform-label-fee-specializes-physical-weighted-instance",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-TWO-LEVEL-LABEL-FEE-ESCAPE-v1"
+  ],
+  "target_ids": [
+    "UM-WEIGHTED-TWO-QUERY-LABEL-FEE-ESCAPE-DRAFT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一显式二部多重图、所有顶点 deg(v)≤D、相同标签、投影、D≥2、β=3/4，且每个 guard 的 A 端取 a_{v,b,e}=1/D。",
+  "roles": {
+    "UM-TWO-LEVEL-LABEL-FEE-ESCAPE-v1": "给定 canonical 实例任意边状态的双查询输出和真实整数 OPT。",
+    "UM-WEIGHTED-TWO-QUERY-LABEL-FEE-ESCAPE-DRAFT-v1": "异权编译器在均匀参数切片上接受同一逐任务合法调度及其精确值。"
+  },
+  "explanation": "逐名对应 s、左右 x、z、w、f 与 R、H、A、B、C。相同 R 两个 1/2 端、H 查询 unit 端、guard H 的 3/4 与 A 的 1/D、w 的 unit A/B 及 f 的 1/D 与同编号 unit pool 端。每标签 guard 质量等于 deg(v)/D≤1，故该参数切片有效。未列端均同样禁用。因此两物理矩阵在重命名下相等，每一实际调度逐机负载和 OPT 相同。canonical 对任意预定边状态令两个 selected query 都去 H，再按每顶点 c_(2) 付 A/B/C。非空顶点时真实 OPT=1+min_a max_v c_{v,(2)}(a)/D，严格 C<1+1/D 解码。空顶点值为 0。",
+  "scope": "仅为异权模型的均匀切片。保留孤立点、平行边、非单射投影、原固定编号 pool、每件原任务及空输入。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/两层标签费用逃逸与真实最优值增量审计--审查.md",
+      "sha256": "f41bb03f293f9bcd9a89db3268562090643147bfdd337e32b2740f4b0371ed4e"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/异权双查询收费的完整单侧三半调度--审查.md",
+      "sha256": "5a090e20ecb6727478e3235ab5874c2c12812b6b8aa87d5e535241dca987f2a6"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/异权双查询收费的完整单侧三半调度--审查.md",
+      "sha256": "5a090e20ecb6727478e3235ab5874c2c12812b6b8aa87d5e535241dca987f2a6",
+      "section": "与canonical、真实pins和历史审查的区别"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核完整有限端的等式，特别是 β 同时固定到 3/4、逐标签预算、任意边状态和 pool 编号。异权单侧构造直接另算。",
+  "contribution": {
+    "result": "均匀切片逐任务保峰，继承任意边状态的双查询外送上界、第二大重数 OPT 恒等式和严格解码。",
+    "remaining": "异权任意正 a 与 β 的三半实际输出依赖左统一标签及右查询留 R。一般严格解码使用 κ=min(1/2,β,1/D,a_min)，均匀计数不能覆盖这些量词。"
+  },
+  "endpoint_pins": {
+    "UM-TWO-LEVEL-LABEL-FEE-ESCAPE-v1": "88061e3d9b8ba35fa98f9194c8cc12a8bbb490e166728b74a4585afb2dc59034",
+    "UM-WEIGHTED-TWO-QUERY-LABEL-FEE-ESCAPE-DRAFT-v1": "eb1a0b9249e9c4b98ab70aba2b4c723e191c69dc8c52be53b53552738cee91a9"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/两层标签费用逃逸与真实最优值增量审计--审查.md": "f41bb03f293f9bcd9a89db3268562090643147bfdd337e32b2740f4b0371ed4e",
+    "archives/unrelated-machines/state/审查/异权双查询收费的完整单侧三半调度--审查.md": "5a090e20ecb6727478e3235ab5874c2c12812b6b8aa87d5e535241dca987f2a6"
+  },
+  "review_digest": "3066729db0bd42e8d77892cde25c71736394e0cd4776d49cbd82b2334ef540ca"
+}
