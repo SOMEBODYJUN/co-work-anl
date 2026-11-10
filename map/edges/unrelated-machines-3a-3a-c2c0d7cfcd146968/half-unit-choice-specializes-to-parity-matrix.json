@@ -1,0 +1,58 @@
+{
+  "edge_id": "um-c2c0d7cf-half-unit-choice-specializes-to-parity-matrix",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-JOINT-HALF-CHOICE-NP-v1"
+  ],
+  "target_ids": [
+    "parity-half-unit-actual-slot-primary-audit"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "T=1，q=2，indexed E={000,011,101,110}。源编译机器含一台未被任何任务使用的idle机，删去不改变任何原任务分配及峰。",
+  "roles": {
+    "UM-JOINT-HALF-CHOICE-NP-v1": "提供对唯一small端的half-unit原任务精确3DM提取和真实NO峰值3/2。",
+    "parity-half-unit-actual-slot-primary-audit": "固定q=2四奇偶三元组的十机十四作业实例，从通用编译删一无任务idle机后同一。"
+  },
+  "explanation": "两类A/I任务逐件对齐：每x三件half激活任务，单位端为对应两台S；每三元组两件half关联任务，单位端分别为真实Y和Z。计数11−1=10机、14件、34有限端。E任意两个不同三元组至少同一个坐标，故没有perfect 3DM；归约给不存在峰≤1调度。所有负载半整数，全A回R、全I回S达到3/2。目标的T=1分数前缀和槽输出是额外正证据，由其原任务表与匹配独立核算。",
+  "scope": "原3DM编译的一个真实精确NO值，未将程序枚举或任意前缀证书当作一般NP证明。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/联合选择槽舍入三源精读--审查.md",
+      "sha256": "46153e968f420228c6720dd4edd2025c1521fcbb527830de60792c01d161f258",
+      "section": "2. Half-unit joint-choice 与 3DM/promise 障碍"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md",
+      "sha256": "8cf637c20618062a98d4038e7873987acf06bf426a583a6a678d974d7b103ba3",
+      "section": "3a. 半单位任务封闭共同见证的整个低于2窗口"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/半单位共同选择与同资格计数调度双入口--资源.md",
+      "sha256": "0757acd6517f437370f5155ee2521e337b5ee98031f7077c6f531a621d2d1400",
+      "section": "完整原矩阵及双向计数"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/半单位奇偶实例的实际槽匹配与完整容量回溯--资源.md",
+      "sha256": "c49ea0c23d7caf9dad0dbd4d408603ba6bc63b24c2c155618a7ddbc301aed17b"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "核对删去idle机的等价和各任务类型、全部资格、34端，区分整数最优值与目标的额外分数点/槽匹配。",
+  "contribution": {
+    "result": "同一十机十四原任务实例的真实OPT恰为3/2。",
+    "remaining": "目标正文的给定行前缀点和一次共同槽匹配需分别以其显式分数和完整matched assignment核验。"
+  },
+  "endpoint_pins": {
+    "UM-JOINT-HALF-CHOICE-NP-v1": "e87cc44f226c8cd77cbeafe7184b610a415ec7fdf48dc8ace9d149e91f6e22bf",
+    "parity-half-unit-actual-slot-primary-audit": "6eb741e4ddc15a3139a73ed11a49219bbdb04e96c5c7d1e0aed80ae71fa4c70d"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/联合选择槽舍入三源精读--审查.md": "46153e968f420228c6720dd4edd2025c1521fcbb527830de60792c01d161f258",
+    "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md": "8cf637c20618062a98d4038e7873987acf06bf426a583a6a678d974d7b103ba3",
+    "archives/unrelated-machines/state/资源/半单位共同选择与同资格计数调度双入口--资源.md": "0757acd6517f437370f5155ee2521e337b5ee98031f7077c6f531a621d2d1400",
+    "archives/unrelated-machines/state/资源/半单位奇偶实例的实际槽匹配与完整容量回溯--资源.md": "c49ea0c23d7caf9dad0dbd4d408603ba6bc63b24c2c155618a7ddbc301aed17b"
+  },
+  "review_digest": "8e6ca0de5957cc8e175b07f72479c1d08edc1a050ff9081c9362d93d5a8c4fd6"
+}

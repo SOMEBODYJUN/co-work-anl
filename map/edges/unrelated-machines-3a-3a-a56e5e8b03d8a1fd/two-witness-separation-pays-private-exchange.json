@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-a56e5e8b-two-witness-separation-pays-private-exchange",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-TWO-WITNESS-QUERY-SEPARATION-v2"
+  ],
+  "target_ids": [
+    "UM-GENERAL-WEIGHTED-QUERY-RETURN-THREE-HALVES-EXCHANGE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一显式原普通 UM P，A 只去内部 H，Q 与 R 的每件边界原任务有互异、仅给自身可用的 outside O_z:T，内部任意非负有理或不可用。已给两个不同 i,j 的完整 aligned 峰≤T 见证，T>0。",
+  "roles": {
+    "UM-TWO-WITNESS-QUERY-SEPARATION-v2": "单 query 改派、不交非query 支持、保输入原端及允许零时间的完整输出。",
+    "UM-GENERAL-WEIGHTED-QUERY-RETURN-THREE-HALVES-EXCHANGE-v1": "同一原 P 的 inactive 或指定 mismatch(j,i) 及全部私有 outside≤T。"
+  },
+  "explanation": "在 P^0 仅把每个真实 O_z 处理时间 T 临时置零，两完整实际输入仍≤T。以 aligned i 为初态、aligned j 为新态，Z={b_i,q_j} 分别从各自零外端进入 H，故各自 δ=0；两份 single-query hybrid 各≤3T/2。b_j 是非query，从初态内部到新态 outside，只能属于至多一个非query 支持；选不含 b_j 的输出。q_i 的去向未受此保护，显式移到自身 outside，只减 H 负载。选 b_i 得内部 A∪R，选 q_j 得 A∪{q_j}∪(R∖{b_i})，其它边界和 A 依原身份保全。恢复每个真实 O_z 的原 T，由互异私有资格每台至多一件，外部同时≤T。内部端只来自两输入实际使用端。若 inactive 在 3T/2 被禁止，已构造的自然是指定错配；反向交换索引另跑。",
+  "scope": "已知两个局部严格实际证书和互异私有 outside 的接口。真实共享外机或未知见证需另证。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/证明/私有查询返回的两种三半分析实例--证明.md",
+      "sha256": "160a4bc77633e9688dcd21c4c5a516b581c714ffc0d1f8018035b127ee17e00a",
+      "section": "2. 只需引用的旧定理合同"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/私有查询返回的两种三半分析实例--证明.md",
+      "sha256": "160a4bc77633e9688dcd21c4c5a516b581c714ffc0d1f8018035b127ee17e00a",
+      "section": "4. 独立路线：保全部任务P零，最后外移q_i"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/私有查询返回的两种三半分析实例--证明.md",
+      "sha256": "160a4bc77633e9688dcd21c4c5a516b581c714ffc0d1f8018035b127ee17e00a",
+      "section": "6. 指定错配、弱阈值及算法/存在量词"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "核分析零时矩阵的全部任务、δ=0、非query b_j 保护、q_i 主动外移和全部原 outside 回填。P* 是另一分析构造，未当作共同必要前提。",
+  "whole_result": "给已知两个对齐完整峰≤T 实际见证，确定性总位多项式输出同一 P 的完整 inactive 或指定 mismatch(j,i) 峰≤3T/2；内部只用输入已用端，全部私有 outside 同时≤T。",
+  "endpoint_pins": {
+    "UM-GENERAL-WEIGHTED-QUERY-RETURN-THREE-HALVES-EXCHANGE-v1": "0874d54b38b69306d9e68a110787e0922a81838797fc4dbfac5196073445dbbb",
+    "UM-TWO-WITNESS-QUERY-SEPARATION-v2": "06c8efe1249249949c418be69c17b2f4b8eda20030551950aaae3415abbdff8f"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/证明/私有查询返回的两种三半分析实例--证明.md": "160a4bc77633e9688dcd21c4c5a516b581c714ffc0d1f8018035b127ee17e00a"
+  },
+  "review_digest": "c5d09a464281641f7802cb10fa4f5d0dce4e3ae7aa435364be9d15f4f5541fda"
+}

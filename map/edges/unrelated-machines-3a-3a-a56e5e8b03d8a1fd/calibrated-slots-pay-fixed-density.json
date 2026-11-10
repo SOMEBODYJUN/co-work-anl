@@ -1,0 +1,44 @@
+{
+  "edge_id": "um-a56e5e8b-calibrated-slots-pay-fixed-density",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-UNIT-READOUT-CALIBRATED-SLOT-v1"
+  ],
+  "target_ids": [
+    "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "完整显式私有双树单位读出，k,h≥1，A_c 非负整数，d_c 为全轨原叶 arity，固定有理 D≥2 且每 c 有 d_c≤DA_c。空变量先返零。",
+  "roles": {
+    "UM-UNIT-READOUT-CALIBRATED-SLOT-v1": "给共同强计数证书的 incoming-first 有序单位槽、Hall 恢复及校准递推。",
+    "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1": "给固定 D 类不需已知 OPT 或原 YES 的完整调度及相对保证。"
+  },
+  "explanation": "k≥D 时取 r=1+⌊(k−1)/(2D)⌋、N=k^h、a=(r−1)/(k−1)；全轨 x_0=1/2、x_h=a(1−1/N)+1/(2N)≤1/(2D)+1/(2k)≤1/D，故同一证书满足所有 clause 行。由强槽定理得 C≤2−r/k，且 r/k>(k−1)/(2Dk)≥1/(4D)。非空有 selector 时间1，OPT≥1。若 k<D，独立做每变量选一个实际叶、clause 容量 A_c 的二部匹配。成功则仅沿相应路径外送、余任务父置，负载≤2−1/k。若失败，任何 C<2 都迫每个实际占 incoming 的内部节点至少外送一件，沿各 selector 唯一已选轨提取一条通到实际 clause unit 的路径，冲突会违背同一调度的 unit 容量，故可推出匹配，矛盾。全父置达2，故失败时输出 OPT=2。用显式路径及容量截断，k=1 与 A_c=0 保留。",
+  "scope": "大 k 分支使用已证校准槽，小 k 分支另证合法性与实际最优下界。D 固定才有类上一致余量。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-calibrated-originals/comparisons/unit_readout_calibrated_cardinality_slots.md",
+      "sha256": "dd33b681f22b957fecb5c4a29beca173cb7b619d77c542e99e91c0bd88b5bd88",
+      "section": "4. 固定密度上界类的统一次二算法"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+      "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4",
+      "section": "校准、条件必要性及固定密度的两分支"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "核全轨而非选轨密度、k=D 端点、实际匹配失败的必要路径及空输入；固定D无需任何YES见证。",
+  "whole_result": "对每固定有理 D≥2 的完整显式 d_c≤DA_c 私有单位读出类，确定性位多项式输出全原任务调度，Cmax≤(2−1/(4D))OPT，含小 k 匹配失败时的 OPT=2 输出。",
+  "endpoint_pins": {
+    "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1": "f6e6c2663e047b0f9804b90473f7f607c14e540923f39f781784ceb10b3948e9",
+    "UM-UNIT-READOUT-CALIBRATED-SLOT-v1": "b486f619a4c67eae2986d977a1e692bf057f1a960786ac9700bfdbfa3e338667"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/tools/evidence/unit-calibrated-originals/comparisons/unit_readout_calibrated_cardinality_slots.md": "dd33b681f22b957fecb5c4a29beca173cb7b619d77c542e99e91c0bd88b5bd88",
+    "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4"
+  },
+  "review_digest": "2e441fea26fa0abbf292bc6e409d5e559428ff1335c1f75b9bfce69a9441a07e"
+}

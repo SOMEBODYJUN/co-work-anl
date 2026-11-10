@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-a56e5e8b-zero-positive-part-and-active-slots-pay-five-thirds",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+    "UM-UNIT-READOUT-CALIBRATED-SLOT-v1"
+  ],
+  "target_ids": [
+    "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一完整显式私有双树 P；只在 T=1 令正部参数 s=0；外端为每 clause 互异的 unit 机器。无需全轨密度界。给定有理 LP 见证计其位长，或用标准有理 LP 求可行性。",
+  "roles": {
+    "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1": "s=0 给每层 t_e≥q_u，并给满足同一边际时的配置充分性。",
+    "UM-UNIT-READOUT-CALIBRATED-SLOT-v1": "提供整数行槽预算及单次 Hall 舍入；另证选轨专用扩展，不能黑箱套全轨强行。",
+    "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1": "严格单位阈值整轨 LP 等价、全任务实际舍入和五三 promise。"
+  },
+  "explanation": "s=0 的每个正部项为零，叶 t_e≥根 y_vs；将叶计数累加得 Σ n_cvs y_vs≤A_c。反向令整条 sign 的 t_e=y_vs，满足零正部和全部 clause 行。对每变量固定 y_vs≥1/2 的轨，选轨 d*_c≤2A_c；未选轨全部父置，机器私有且峰1。k≥2 取 r=⌊k/2⌋、L=k−r+1、x_0=1、x_l=(r−1+x_(l−1))/k，故 l≥1 时 x_l≤r/k≤1/2，每选轨行恰 L，外送总质量≤A_c。只在选轨把 incoming 置首切单位槽，外部槽映射不同真实 unit；单次 Hall 给全部剩余原任务。接 incoming 时至多再放 L−1 个 small，峰≤2−r/k；k 偶时≤3/2，奇 k≥3 时≤5/3。k=1 把整轨 LP 当每变量到两真实叶 clause 的分数容量流，整数流后沿所选链全下传，余任务父置，峰≤1。空变量直接返0。若 OPT≤1，则完整实际证书诱导整轨 LP；若 OPT>5/3，LP 不可行。",
+  "scope": "严格单位 T=1 的等价和承诺判定，未选轨可密度任意大；T=1+1/k 时正部允许 incoming 与一 small 共存。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-calibrated-originals/comparisons/unit_readout_configuration_threshold_polytope.md",
+      "sha256": "b29c1500da407a86c3172c6738f22c5b10c073d0270aeac9acd668260983967a",
+      "section": "3. 严格单位阈值等价于整轨选择 LP"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-calibrated-originals/comparisons/unit_readout_configuration_threshold_polytope.md",
+      "sha256": "b29c1500da407a86c3172c6738f22c5b10c073d0270aeac9acd668260983967a",
+      "section": "4. 整轨 LP 的确定性完整五三调度"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md",
+      "sha256": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4",
+      "section": "严格单位整轨见证：代码实际给出的五三合同"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "逐项核 s=0 消元、选轨密度、L 整数预算、未选轨回填、k=1 的整数流及标准 LP 和现有见证程序的区别。",
+  "whole_result": "在同一完整私有双树模型上，CONFIG(1)⇔整轨选择 LP(L)；若(L)可行则确定性位多项式输出全原任务调度，k=1 时峰≤1，k≥2 时峰≤2−⌊k/2⌋/k≤5/3，因而判定 OPT≤1 对 OPT>5/3 的承诺。",
+  "endpoint_pins": {
+    "UM-UNIT-READOUT-CALIBRATED-SLOT-v1": "b486f619a4c67eae2986d977a1e692bf057f1a960786ac9700bfdbfa3e338667",
+    "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1": "6978b5892da25852e9db5b26bc44ec4ff01e1aa0735af29644a1bc8489456bd5",
+    "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1": "e7d93d3a3a82f7fbd3f8edead92caac68c366ba3b07745c6ebd576d4e7780603"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/tools/evidence/unit-calibrated-originals/comparisons/unit_readout_configuration_threshold_polytope.md": "b29c1500da407a86c3172c6738f22c5b10c073d0270aeac9acd668260983967a",
+    "archives/unrelated-machines/state/审查/单位读出强计数证书与严格单位五三的原实现--审查.md": "ff59f30e5e47f21dfcb979072c54ce70118d19d5f4b52f2ddf9e63b5de7475f4"
+  },
+  "review_digest": "d74b25d157c699a549de7b145da74e5d11ea6e071e791d052e15046c7c148700"
+}

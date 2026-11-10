@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-a56e5e8b-closed-cycle-initialization-to-exact-escape",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-OPT-HULL-CLOSED-CYCLE-WEAK-LOCAL-GAP-v1"
+  ],
+  "target_ids": [
+    "UM-CLOSED-CYCLE-SINGLE-JOB-ESCAPE-THRESHOLD-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一 k≥3,d≥1 的正两端闭环原矩阵，单任务步仅改变一个原任务合法目的地，起点为槽初始化唯一实际坏态 σ。终点为任一真实最优调度，路径长度不限。",
+  "roles": {
+    "UM-OPT-HULL-CLOSED-CYCLE-WEAK-LOCAL-GAP-v1": "识别从真实 OPT1 凸包得到的同一 σ：仅特殊 tiny 环开启，峰 B=2−3/k+3/(2k²)。",
+    "UM-CLOSED-CYCLE-SINGLE-JOB-ESCAPE-THRESHOLD-v1": "对该实际 σ 的所有合法单任务路径给精确 minimax 峰。"
+  },
+  "explanation": "令 a=1−1/k、δ=(k−1)/k²、c=1/k²。在 σ 中，未开环根或非尾 home job 前移使目的 home 同时含 a 和1；未开环尾 job 回 root 恰使 B+c；已开特殊环根返 root 加 δ+c/4，已开环任一 home job 反向回 home 同样产生 1+a。差 1+a−(B+c)=(4k−5)/(2k²)>0，δ+c/4−c=(k−7/4)/k²>0，故所有离开 σ 的首步峰≥B+c。依次开每条普通 tiny 环，每环先尾返 root 加 c，然后沿 home 逆序向已腾空目的地各移一件，最后根 job 离 root 去腾空首机。全程其它机≤1，每环完毕 root 净减 δ−c>0。首峰为 B+c，(k−1)(d+1) 步达到 S0，已是 OPT1。弱障碍中达到 d+1 的普通环只是见证；S1 也可通过批量整开宏环并关闭特殊环而达峰1。",
+  "scope": "结论量化到最优集合的全部路径的最小峰值，上界由一条到 S0 的路径给出。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/闭环容量释放与单任务逃逸精确阈值冻结审查--审查.md",
+      "sha256": "c8409ec01fe057385e31d97da484f13a0db5ae9f1665b85616537bac51e22cdd",
+      "section": "2. 闭环构造与一般证明要点"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/闭环容量释放与单任务逃逸精确阈值冻结审查--审查.md",
+      "sha256": "c8409ec01fe057385e31d97da484f13a0db5ae9f1665b85616537bac51e22cdd",
+      "section": "4. 单任务逐步逃逸的精确阈值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/闭环容量释放与单任务逃逸精确阈值冻结审查--审查.md",
+      "sha256": "c8409ec01fe057385e31d97da484f13a0db5ae9f1665b85616537bac51e22cdd",
+      "section": "5. 量词、cactus 限制与固定 k 推论"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "对同一 σ 逐类穷尽全部二端任务首步，核两严格差和普通环逆序时间；用冻结审查的当前公式及量词，有限 Dijkstra 只校验列明实例。",
+  "whole_result": "在同一 k,d 闭环上，从指定 σ 出发、逐步只改单任务且最终到某个 OPT1 调度的全部合法路径中，全程峰值最小恰 B+1/k²；到 S0 有 (k−1)(d+1) 步达到。",
+  "endpoint_pins": {
+    "UM-CLOSED-CYCLE-SINGLE-JOB-ESCAPE-THRESHOLD-v1": "81fd78d60a5d0feb5c156b9e3705204729a345ccc8a4e0354b320226be2d2faf",
+    "UM-OPT-HULL-CLOSED-CYCLE-WEAK-LOCAL-GAP-v1": "d56a47b34420e93fce8fc2960cf0e32bd7804e0f14ab4afd803d0a9339ba594b"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/闭环容量释放与单任务逃逸精确阈值冻结审查--审查.md": "c8409ec01fe057385e31d97da484f13a0db5ae9f1665b85616537bac51e22cdd"
+  },
+  "review_digest": "cbd351f040a176409d3ea57d4bd57f40152db26645d03b8565e17f55c26511c3"
+}
