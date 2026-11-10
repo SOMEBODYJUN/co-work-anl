@@ -45,7 +45,7 @@ evidence_manifest: ../../tools/evidence/coordinate-slice-padding-20261031/manife
 
 ### Padding 保真（E）
 
-每个左点在共享右点上的邻居至多 \(D(D-1)\)，可用 \(s\le D(D-1)+1\) 色作 proper coloring。固定 b 的 D 个邻居颜色全异。新增左标签只映到右侧 \(p_{\chi(a)}\)；旧标签覆盖的边收费小于 \(\rho_0M\)，新增标签覆盖边每个右 token 至多一条，收费不超过 \(gN\)，合计小于 \(\rho M\)，其中 \(\rho\le\rho_0+2g/D\)。新字母表大小至多 \(Q_0+D(D-1)+2\)，padding 只需显式输入图上的 O(nD²) 枚举和贪心着色；不按 g、rho 数值展开。
+每个左点在共享右点上的邻居至多 \(D(D-1)\)，可用 \(s\le D(D-1)+1\) 色作 proper coloring。固定 b 的 D 个邻居颜色全异。新增左标签只映到右侧 \(p_{\chi(a)}\)；旧标签覆盖的边收费小于 \(\rho_0M\)，新增标签覆盖边每个右 token 至多一条，收费不超过 \(gN\)，合计小于 \(\rho M\)，其中 \(\rho_0+2g/D\le\rho\)。新字母表大小至多 \(Q_0+D(D-1)+2\)，padding 只需显式输入图上的 O(nD²) 枚举和贪心着色；不按 g、rho 数值展开。
 
 旧 perfect YES 保持不变；simple、regular、balanced 属性由原图保留。新增映射保证投影落在全字母表，但不声称满射或均匀纤维。
 
