@@ -26,7 +26,7 @@ source_refs:
 
 审查核对 LST Theorem 3.1 的 CSP→KDM 最大匹配保真、Theorem 4.1/4.3 的随机稀疏化假设；它们没有 KDM→Santa 或 KDM→R||Cmax 的完整归约。已有“低于2 makespan算法蕴含 Santa 算法”是算法性蕴含，不能反向写作 hardness。
 
-读后追加发现旧条件反面存在明确异议：`q=10,K=5,delta=1/5,gamma=4/5`、每组唯一标签是同一五资源束时，八组取一资源不可能，但需求树值仅 `b*=1/5<delta`；正确阈值至少涉及 `max(delta,gamma)`，例如增加 `gamma≤delta` 才可能恢复旧式条件。另，固定 `rho<2` 本身不足以否定 UM-TARGET；需要对每个固定 ε 给出绝对 `(2−ε)(1+η)<β` 区分与可靠 NO decoder。故 KDM 旧条件不能登记为完成 hardness。
+读后追加发现旧条件反面存在明确异议：`q=10,K=5,delta=1/5,gamma=4/5`、每组唯一标签是同一五资源束时，八组取一资源不可能，但需求树值为 `b*=1/5=delta`，因此不能推出所需严格结论 `b*<delta`；正确阈值至少涉及 `max(delta,gamma)`，例如增加 `gamma≤delta` 才可能恢复旧式条件。另，固定 `rho<2` 本身不足以否定 UM-TARGET；需要对每个固定 ε 给出绝对 `(2−ε)(1+η)<β` 区分与可靠 NO decoder。故 KDM 旧条件不能登记为完成 hardness。
 
 # 2. 原地拟阵指数表示下界
 
