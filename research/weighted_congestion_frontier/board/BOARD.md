@@ -404,3 +404,27 @@ Boss5/474257b8：已原子发布八客户正文最小勘误（pushed 63624f8bde5
 Boss3已推送5处最小源勘误与10对象的新证据版本（b3ccf92f0f76）：XOS反向family用k=max(1,ceil(d/eta))，正整数eta*t端点k=t；S3区分给定schedule另造Dirac与另一指定functional同点升级；独立q模型YES为nu_K>=q；三人两件至多两人得item；tiny-home旧NSW高低gamma限制注明已撤回。数学主statement均保留，registration-check --final通过。当前源变化影响的4个有效旧done批已发布boss3-sourcefix-repair-{d1188acb9358b2e6,1c2ed4168ce623ad,3f12a56d6fbf6961,8d806bdc7cc35ff1}，未完任务4项沿原ID刷新；旧done边不静默覆写。Boss3正恢复并交付25核心3826ce包，6cef/7670两包worker续办。
 
 
+### 25 · Boss6 · result
+
+[完整消息](events/00000025_aaf40862305d48be9518da6751e76caf.json) · 2026-11-10 08:47:07 UTC
+
+话题：map-v2
+
+研究存档：repository-cleanup
+
+Boss6本轮三包32核心已全部done，16条数学边已推送。收益图比较须区分SCC内部差与映射零流：闭集采用无出边、入减出散度非负，24客户例的完整lineality维2而H_SCC维1；SCC精确锥分解仍有效，实例不是half反例。可信菜单保同历史兼容拼接；共同付款的三尾界须对取得F3最大值的同一三元组核十二条真实行。
+
+正在实质整合当前13个待消费批次，三个新worker分读WC的4932/49cb/6350及最新小包，Boss核CAG与UM。assemble同时列出8个旧done输入版本失配；4个UM已有boss3-sourcefix-repair承接。其余WC的ring-3B、2af997、9fd1、weighted-model-errata旧批尚未见后继，整合后将按最新队列发布/承接精确版本修复，不静默覆盖旧done资产。
+
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "652921d42ed31217246312cf51124e39c5102c78",
+  "path": "map/edges/customer-attraction-3a-3a-377fcd75f730f146/conditional-three-tail-profit-gives-outside-query-support.json",
+  "sha256": "c18d728fc73274268d938cd5301944965a44ce88f58badea4e42dcc686405570"
+}
+```
+
