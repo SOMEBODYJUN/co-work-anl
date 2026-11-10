@@ -1,0 +1,99 @@
+{
+  "edge_id": "um-typed-tiny-home-specializes-no-repair-quality-separation",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4b"
+  ],
+  "target_ids": [
+    "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "原显式 norm-one Q 还满足 v4b 的 single-state outers、互异 homes、每 home own helper、B-only fallback 及阈值 15/16 的 B-only UD 叶合同；k≥2 时 ν≤1/(16384k²)，k=1 无 tiny 上界。归一菜单 promise 取 D=0，YES 原全部组 unit；NO 任一原分配至少 γ_lo n 个组质量≤δ_q，γ_lo>0，0≤δ_q<1/10。",
+  "roles": {
+    "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4b": "给该 typed 域上可直接执行的 19/10 实际算法，处理无完整叶匹配及内部分支。",
+    "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1": "给同一全原任务 P(Q) 与 D=0 的 YES/NO 质量合同，供比较其实际输出与 LP 筛选。"
+  },
+  "explanation": "两输入用相同原 indexed states、资源列、单位 selectors 及所有正或显式零 incidence 的原 private p 和 resource 端 1。对达到 V 的两两不交 bundles，回填给出 OPT≤2−V。任何 peak C<2 的完整调度可由 resource unit capacity 和 selector 所选 state 回读同一不交分配，质量至少 2−C。若 OPT=2，正向界迫使 V=0。因此 OPT=2−V。YES 下 V=1，运行 v4b 得实际 C≤19/10。NO 下每个分配至少有一个低组，故 V≤δ_q，任何调度 C≥2−δ_q>19/10。重算实际峰值即可分离。v4b 有满叶匹配时用秩为 |B|−ℓ 的 vacancy matroid。X 独立等价于 B∖X 仍可满匹配全部叶，按资源作平行扩张即可对 helper fallback incidences 使用固定 profile 加权匹配。k≥2 时，若真实 V≥15/16，同一实际分配给一个共同高 V 参考 profile。最优面稳定交换和有理 FW 的误差界保证未达到成功门槛的 profile 有可执行的改进。因此无满叶匹配或未达到成功门槛且无足够改进时，profile 算法严格认证 V<15/16，输出完整 baseline，峰值≤2。成功时全部分数辅助福利至少 25/128，一张共同前缀 circulation 同时保叶匹配和所有 outer claims，每 outer 损失至多 ν，故整数辅助福利 W_i>19/100。令 q=1/10，Good helper 的实际 fallback 质量 Q_j≥q。若这些 helpers 的 home 总权重为 z_i，由 W_i≤z_i+q(1−z_i) 得 z_i>q。保留 Good 的 fallback 并交出其 homes 给 outer，其余 helpers 回各自 own home，每叶沿共同匹配选择达到资格阈值的原 state。于是所有原组 r_g≥1/10。回填全部原 selectors 和 incidence jobs 后，所选 private 负载≤19/10，未选 private 和 resource 负载≤1。k=1 用整数 submodular greedy 的 1/2 界，W<1/4 时也严格认证 V<15/16，否则 Good home 质量至少 1/6，直接用同一规则回填。上述 promise 判定取完整原调度的实际峰值。检验 unit-FSLP 给高 V 的推断时，可给每个 outer 偶数 m 个等重互异 homes（k≥2 可取 m=16384k²），不设额外叶，故 vacancy matroid 在 B 上满秩。把同一 outer 的 helpers 两两成对，每对独享四个 B 资源 a,b,c,d。第一 helper 的两个等权 fallback 支持为 {a,b},{c,d}，第二为 {a,c},{b,d}，另各保 own-unit state。FSLP 给每 outer 唯一 state 权一，各 helper 的两个 fallback 各 1/2，home 列与 B 列均恰一。每对所选两个 fallback supports 相交，固定 profile 下二 helper 的 B 质量和≤3/2，故每 outer W_i≤3/4<(15/16)²。若所有组质量>1/2，每 outer 必取逾 m/2 homes，某对两个 helpers 都失去 home 且都须拿齐各自 fallback，矛盾。每对只取一个 home 时，可给失去 home 的 helper 完整 fallback，另一个保留 own。故 V=1/2。 在目标 C 的显式归一化合同中，该成对 LP 点确给正分数 benchmark 一，因此同一实际 NSW 输出的低组计数仍成立。以 V 控制全部组的物理峰使用另一条要求。对这个实例 2−V=3/2，故 LP 可行并未给 unit 物理调度。",
+  "scope": "只贡献 D=0 promise 的实际峰值判定。NO 低组计数沿同一原 n 且 γ_lo>0，故至少一组。成对实例的 δ_q=1/2 超出 δ_q<1/10 的 typed 判定域，也超出一般 D 的小阈值域。该反例校准 LP 可行与真实高 V 的区别，和 C 的几乎全部组计数相容。D>0 一般会给 outer 增加 state，增强菜单未必仍在 v4b 单态域。v4b profile/FW 与 v1 无叶 k⁴ SA1/MW、v5 O(1/k) actual-I 的证明和有限软件证据分别保留。独立 actual-allocation 的 V≤18/19 停止认证不用于本 profile 推导。",
+  "contribution": {
+    "result": "在真实 typed 交集和 D=0 下，以完整原调度的实际峰值判定 δ_q<1/10 的组质量 promise。v4b 成功分支的共同前缀流给 outer 辅助福利，Good 回填给所有原组值≥1/10及实际峰≤19/10。显式成对菜单在 unit-FSLP 可行时仍有 V=1/2，达不到共同参考的 V≥15/16 前提。",
+    "remaining": "一般 Q、D>0 共享 REPAIR 及增强 unit-FSLP 的判定和几乎全部组 NSW 界仍由归一化对象自己的 C–E 论证承担。"
+  },
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/证明/共享UD tiny状态势与19比10回填--证明.md",
+      "sha256": "e857e20f4498aef53ebe9c3ef0a9f3bc7f5937c5cd3fb554365c1d3e553a2868"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/Boss11共享UD叶tiny-home-k二次扩域三源审查--审查.md",
+      "sha256": "6696f6d2b5f525afaca1cdfe98a0e211c599a363d834f4d618026805ef3a8cbf"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资料/shared-UDtiny-home-v4势函数与完整回填--资料.md",
+      "sha256": "d7403ea33ecde69648d1d2f1d638aaacc3b6490775273b996f17f4f2646ca310"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/共享UD最优交换有限网络双源审查--审查.md",
+      "sha256": "8e3f8f67edb1209f35c2aff03d0dfa14d13719f46a57f9bd05c762e48579350c"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化菜单高低比例互补的实质纠错及修复边界--审查.md",
+      "sha256": "ad299d925721db08eadd2eb530a07871dab58aff5d739d591a32335c40eeea8d"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分数重匹配与归一化XOS稳健缺口边界--定理.md",
+      "sha256": "05d4fbbde010e55a6b1fbb920d2f7e4d84743d1c8e50a3392a3d6918249a829b",
+      "section": "5. D：共享 singleton REPAIR 的组合推论"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分数重匹配与归一化XOS稳健缺口边界--定理.md",
+      "sha256": "05d4fbbde010e55a6b1fbb920d2f7e4d84743d1c8e50a3392a3d6918249a829b",
+      "section": "6. E：完整普通 flat-UM 调度接口"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/Shared-UD-v4v5两源实际读后--审查.md",
+      "sha256": "7e4c1612acd3d54446df71c362c7b21e2793f419d64fd3711a69bd825d7e345d",
+      "section": "2. v4 k² tiny-home 势与 FAIL 量词"
+    },
+    {
+      "path": "tools/evidence/private-tree/partial-quota-welfare/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
+      "sha256": "9ef11b3f69d786c4a89f3e575f0cce60cc5d611c2fbad61cdabd3d642aaea33c",
+      "section": "C. 原 unit-FSLP、benchmark 一与几乎所有组"
+    },
+    {
+      "path": "tools/evidence/private-tree/partial-quota-welfare/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
+      "sha256": "9ef11b3f69d786c4a89f3e575f0cce60cc5d611c2fbad61cdabd3d642aaea33c",
+      "section": "D. 同组共享 singleton REPAIR 的 promise LP test"
+    },
+    {
+      "path": "tools/evidence/private-tree/partial-quota-welfare/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
+      "sha256": "9ef11b3f69d786c4a89f3e575f0cce60cc5d611c2fbad61cdabd3d642aaea33c",
+      "section": "E. 每个原 selector 和 incidence job 的完整 ordinary schedule"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/分数重匹配显式XOS-v4-v5增量--审查.md",
+      "sha256": "a579f14298c8e6234a8406ae5d5888b1c8e489d63ad920319e4eb4c8c82cc034",
+      "section": "7. 任意比较重匹配、normalized 后果及所有原作业"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "重读当前 C–E、后续 v5 审查和 v4b 主证明的值桥、共同参考、严格 FAIL、共同前缀流、Good 与全部 jobs 回填。按每对四资源精确核列容量与 V=1/2，再核 typed D=0 的 promise 以完整实际峰作判据。",
+  "endpoint_pins": {
+    "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4b": "e2620cee6c547708cb7ff90aa2e3a338a93c914e4beba64fd7add393c30b5b08",
+    "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1": "38ced94214265ec53f2d571a2f63209addf755128e27d6af5cfc48f41ba10a9e"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/证明/共享UD tiny状态势与19比10回填--证明.md": "e857e20f4498aef53ebe9c3ef0a9f3bc7f5937c5cd3fb554365c1d3e553a2868",
+    "archives/unrelated-machines/state/审查/Boss11共享UD叶tiny-home-k二次扩域三源审查--审查.md": "6696f6d2b5f525afaca1cdfe98a0e211c599a363d834f4d618026805ef3a8cbf",
+    "archives/unrelated-machines/state/资料/shared-UDtiny-home-v4势函数与完整回填--资料.md": "d7403ea33ecde69648d1d2f1d638aaacc3b6490775273b996f17f4f2646ca310",
+    "archives/unrelated-machines/state/审查/共享UD最优交换有限网络双源审查--审查.md": "8e3f8f67edb1209f35c2aff03d0dfa14d13719f46a57f9bd05c762e48579350c",
+    "archives/unrelated-machines/state/审查/归一化菜单高低比例互补的实质纠错及修复边界--审查.md": "ad299d925721db08eadd2eb530a07871dab58aff5d739d591a32335c40eeea8d",
+    "archives/unrelated-machines/state/定理/分数重匹配与归一化XOS稳健缺口边界--定理.md": "05d4fbbde010e55a6b1fbb920d2f7e4d84743d1c8e50a3392a3d6918249a829b",
+    "archives/unrelated-machines/state/审查/Shared-UD-v4v5两源实际读后--审查.md": "7e4c1612acd3d54446df71c362c7b21e2793f419d64fd3711a69bd825d7e345d",
+    "tools/evidence/private-tree/partial-quota-welfare/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md": "9ef11b3f69d786c4a89f3e575f0cce60cc5d611c2fbad61cdabd3d642aaea33c",
+    "archives/unrelated-machines/state/审查/分数重匹配显式XOS-v4-v5增量--审查.md": "a579f14298c8e6234a8406ae5d5888b1c8e489d63ad920319e4eb4c8c82cc034"
+  },
+  "review_digest": "b593d42c54631739f0b2548c4d640bad633917cdbd14e06e5b7945f1d1168fca"
+}

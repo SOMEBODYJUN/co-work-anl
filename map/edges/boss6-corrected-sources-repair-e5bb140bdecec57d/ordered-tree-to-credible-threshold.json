@@ -1,0 +1,54 @@
+{
+  "edge_id": "ca35-prefix-bank-ordered-tree-to-credible-threshold",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "cag-actual-player-normalized-full-tree-utility-vectors"
+  ],
+  "target_ids": [
+    "M-1d23d302c0104324b2a821ad2dd9670a"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定有限非空共同标签目录及任意覆盖映射、有限单位客户、总人数m和任一合法有序前缀h。标签可同覆盖；重复行动、空覆盖与全部离轨平局均保留。各可信叶及偏离在同一固定原客户数据和同一收益尺度上比较。",
+  "roles": {
+    "cag-actual-player-normalized-full-tree-utility-vectors": "当前逐实际玩家归一等价给全向量逐有序边传播及当前玩家对全部真实孩子的比较。按同一完整策略恢复原尺度，即可投影每个固定历史的独立子树。",
+    "M-1d23d302c0104324b2a821ad2dd9670a": "把独立的离轨孩子消去，得到R(b)的全部可信叶及先走指定两标签到同一叶的必要充分条件。"
+  },
+  "explanation": "任意h处完整子SPE均可通过独立选择其余旁支并逐层向根取最佳回复，嵌入一份根完整SPE；h可以离轨。有效客户非零时在该完整策略的实际路径取任一位置j，改选任一正质量主题保证u_j>0。用同一因子u_j缩放整树并可一致重标根动作；投影时恢复固定输入的原效用。不同策略各自的归一因子可能不同，离轨子树及其各层没有单独归一约束。同标签计数b的两个前缀可按相同未来标签串配对有序后继，未来玩家在对应叶的收益相同，故共享可实现终局计数集合R(b)，各自仍可选不同续局。同覆盖异标签保留为不同孩子和计数坐标。终层R(b)={b}。在任一非终层，给定行动a及其可信叶z，必要条件是规定收益u_a(z)至少各孩子的最小可信比较收益；选中孩子也满足自己的下界。充分性来自其它每个有序孩子各取使本层行动者收益最小的可信续局并贴合，有限非空保证全部最小值均可达到。于是门槛M(b)=max_t min_{z′∈R(b+e_t)}u_t(z′)。余r≥2时先在a孩子内用同一z实现下一动作d，再在h组装a；内层沿z且达到M(b+e_a)，外层沿同一z且达到M(b)。两层的离轨子树彼此独立。若a=d，则计数沿同一坐标加二。全零有效客户时全部收益和门槛为零，R(b)包含每个合法终局延拓，以上条件直接成立。",
+  "scope": "任意固定目录及任意合法有序前缀；单层递推覆盖所有非终层，两层当且仅当适用余r≥2。计数用于可信集合与叶收益，贴合在原有序历史进行。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/等价/实际玩家归一的全树效用向量表示--等价.md",
+      "sha256": "0bbe98c6b29d3b3871cae92122a688ea6da393c85c605d4df0cb30f4e7a32b18"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/合法背景前两人利润与额外槽安全下界诊断--程序.md",
+      "sha256": "64c9e1852515ad967aed3f378b41061e171119ea7f6cc3b6964f8526559b77c4",
+      "section": "两层threshold怎样恰好刻画前两人"
+    },
+    {
+      "path": "archives/customer-attraction/subarchives/six-providers/state/程序/合法背景首对利润与静态安全下界诊断--程序.md",
+      "sha256": "7b455d5eeda874cd6067abe451fb05f412304905efd36a71e3257b027a86f010",
+      "section": "可信终局全集如何取首对最小值"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "实读v2全树向量、现行标签定义和两处同叶门槛证明。核任意离轨前缀的扩展、整策略共尺度恢复、相同标签计数的子树对应以及同覆盖异标签的原动作身份。",
+  "whole_result": "从有序向量IC消去独立离轨续局，得到R(b)=∪_a{z∈R(b+e_a):u_a(z)≥M(b)}。余r≥2时，存在完整子SPE先走a,d到同一z，当且仅当z∈R(b+e_a)、u_a(z)≥M(b)、z∈R(b+e_a+e_d)、u_d(z)≥M(b+e_a)。在全部通过的(a,d,z)上最小化u_a(z)+u_d(z)，恰得全部子SPE的首对最小利润。",
+  "endpoint_pins": {
+    "M-1d23d302c0104324b2a821ad2dd9670a": "66bfd634d75ca84d47153a347fa1927e54681e269958b127f4cf629111ed34c0",
+    "cag-actual-player-normalized-full-tree-utility-vectors": "7d7670550b30854ead45c6a5a56e3ea9c3310cdde8ceb25e7ac5742f9d08ab34"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/等价/实际玩家归一的全树效用向量表示--等价.md": "0bbe98c6b29d3b3871cae92122a688ea6da393c85c605d4df0cb30f4e7a32b18",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/程序/合法背景前两人利润与额外槽安全下界诊断--程序.md": "64c9e1852515ad967aed3f378b41061e171119ea7f6cc3b6964f8526559b77c4",
+    "archives/customer-attraction/subarchives/six-providers/state/程序/合法背景首对利润与静态安全下界诊断--程序.md": "7b455d5eeda874cd6067abe451fb05f412304905efd36a71e3257b027a86f010"
+  },
+  "review_digest": "2ccd6979e12593d23a7f41fd0910eed6b4c1902e29f763224d9a1a2cb8320c06"
+}

@@ -1,0 +1,94 @@
+{
+  "edge_id": "wc-r33-boolean-limit-and-template-pay-original-all-m",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/scaled-fourteen-resource-family-and-limit",
+    "M-30d382c7f97c48eea789aed8e8f93eed",
+    "WCF-R3-SCALED-TEMPLATE-v1"
+  ],
+  "target_ids": [
+    "WCF-R3-SCALED-ORIGINAL-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定原七振幅t_o=(127,231,145,139,28,41,289)，整数m≥1。四名玩家权为(1,1/(10m),1/(20m),1/(50m))，各资源按其支持总权归一化，前六对次数32m²、末对二次；每次单方翻位按新负载重算。",
+  "roles": {
+    "weighted-congestion/scaled-fourteen-resource-family-and-limit": "给出合法有限游戏、七对互补mask、归一化费用及真实单方偏离。",
+    "M-30d382c7f97c48eea789aed8e8f93eed": "v5给任意固定正有理振幅的完整正成本布尔极限和有限minimax收敛。",
+    "WCF-R3-SCALED-TEMPLATE-v1": "v6的八行固定见证与统一成本误差界用于原振幅尾部；三次根仅刻画该模板锥。",
+    "WCF-R3-SCALED-ORIGINAL-v1": "原振幅全m无9/5-PNE、极限65/34及严格阈值以下的尾部。"
+  },
+  "explanation": "将t_o代入布尔表，0000至0111八个互补代表中，四个真实单方翻位比的逐态最大值依次为289/28、260/107、208/93、642/289、289/127、289/145、65/34、2。极小状态0110和1001在辅助表的65/34端点满足弱均衡；正分母及有限max/min给B(G_m)→65/34，故每个固定1≤α<65/34对所有充分大的m成立严格排除。为证明固定9/5的全部m，八个指定见证的最小极限余量是28，故各有限见证余量≥28−(14/5)[711 exp(−64m/117)+4913/(50m)]。m≥13时64m/117>7，且e>8/3，得到严格正有理下界8111103609/1703936000。余下m=1,…,12各重建全16态、64个真实单方翻位，用有理比较核对每态所选见证的余量严格为正。m=1恰为勘误所指的32次实例，检查64个翻位，逐态恰有一条严格9/5出口。联合有限前缀和解析尾部，覆盖每个正整数m。",
+  "scope": "有限游戏承担非存在结论，布尔表承担极限与收敛；65/34只给严格较小倍率的有限尾部。固定轻权、仅升前六对幂次时，二次对保留原负载依赖，40次已有9/5-PNE，极限5235403/2930833<9/5；该族与原缩权族仅在32次即m=1处同一实例。另选调谐振幅得到100/49极限、m=3及m≥20的独立2倍结论，m=1,2有2-PNE，冻结比较未支付m=4,…,19。三次根界限只适用于指定八见证，正有理振幅及起点可随α选。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md",
+      "sha256": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md",
+      "sha256": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df",
+      "section": "布尔极限的来由"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/十四资源既定偏离模板的三次根阈值--定理.md",
+      "sha256": "d9c67c259e194f6a516c2118fe3c021b1a306562a7a3368475865b97b88914e3"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/十四资源缩权族的常数无均衡界--定理.md",
+      "sha256": "62f4f0e0e9090a650f09442465161a4552f1ea84fad2bfa1f36c8183448733e0"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/十四资源缩权族的独立审查与量词修正--审查.md",
+      "sha256": "799c690767e9c827e895f6f2e9f9947692700943a8bb7ae0d16c3b90c0c9f8c5"
+    },
+    {
+      "path": "archives/weighted-congestion/state/计算/十四资源构造与缩权族的精确复现--计算.md",
+      "sha256": "48cfab42028bf9c53f7ab818a026475caba5d7ee2afe2ac3759de5c6a2f83c7f"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/加权拥塞资产的范围与后续修正--资源.md",
+      "sha256": "b9fe84f05dc030f2ba4f6529097d7f9cefa9a042103d178bd25c5a7120762228",
+      "section": "资产 56：WCF-R3-SCALED-ORIGINAL-v1"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/十四资源交叉构造与三十二次源式上界审查--审查.md",
+      "sha256": "652f776009ee24a0dfefd1d07c60b838e03224978352e97219342ac507fd6a33"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/crossover/original/evidence/runs/weighted_congestion/crossover/limit_evidence/scaled_limits.json",
+      "sha256": "e9c3bc041761b6d0b29840d65f89256852b4cff12c5ad1993d128cd8e893ff52"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/crossover/original/evidence/runs/weighted_congestion/crossover/limit_evidence/finite_scans.json",
+      "sha256": "6f7bd7bd9811d294c228afad44b79a117db289e9023b7d082f5eed90fc64b8cf"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/crossover/original/evidence/runs/weighted_congestion/crossover/limit_evidence/uniform_bounds.json",
+      "sha256": "76eef5785fb98f2e7a5b117b9d48900015be5077f4b11d84435245dbb48e9750"
+    }
+  ],
+  "reviewed_by": "Boss2 weighted-congestion map worker",
+  "review_note": "按有限定义和极限全表、八见证和误差运输、原振幅有理前缀和尾部、当前交叉审查四段复核。勘误修正32次实例的严格出口量词，布尔极限v5与模板v6更新共享证据版本，原全m命题及证明前提继续成立。冻结作者扫描与旧独立审查的核验范围分开，另行重算原十二例全态全偏离。",
+  "whole_result": "原振幅下每个整数m≥1均无9/5-PNE且B(G_m)→65/34；对任一固定1≤α<65/34，全部充分大整数m无α-PNE。",
+  "endpoint_pins": {
+    "M-30d382c7f97c48eea789aed8e8f93eed": "bdcc5ddca42a38a9193c57118451db8ed92a3b9b10e15067850b8bb51c5814ff",
+    "WCF-R3-SCALED-ORIGINAL-v1": "ebe98525cc94275777b5f29d8d3626a4f11dff4e23cbe48b4a6ac6f9e470c904",
+    "WCF-R3-SCALED-TEMPLATE-v1": "a6a293ad2e0863e8bee28de472d18f43d510dbe088254563490e60681c0b565e",
+    "weighted-congestion/scaled-fourteen-resource-family-and-limit": "16c24fd8cd5ed3faf83ef291afc719f326d9f0627aaef6ad07b9994340b948e5"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df",
+    "archives/weighted-congestion/state/定理/十四资源既定偏离模板的三次根阈值--定理.md": "d9c67c259e194f6a516c2118fe3c021b1a306562a7a3368475865b97b88914e3",
+    "archives/weighted-congestion/state/定理/十四资源缩权族的常数无均衡界--定理.md": "62f4f0e0e9090a650f09442465161a4552f1ea84fad2bfa1f36c8183448733e0",
+    "archives/weighted-congestion/state/审查/十四资源缩权族的独立审查与量词修正--审查.md": "799c690767e9c827e895f6f2e9f9947692700943a8bb7ae0d16c3b90c0c9f8c5",
+    "archives/weighted-congestion/state/计算/十四资源构造与缩权族的精确复现--计算.md": "48cfab42028bf9c53f7ab818a026475caba5d7ee2afe2ac3759de5c6a2f83c7f",
+    "archives/customer-attraction/state/资源/加权拥塞资产的范围与后续修正--资源.md": "b9fe84f05dc030f2ba4f6529097d7f9cefa9a042103d178bd25c5a7120762228",
+    "archives/weighted-congestion/state/审查/十四资源交叉构造与三十二次源式上界审查--审查.md": "652f776009ee24a0dfefd1d07c60b838e03224978352e97219342ac507fd6a33",
+    "archives/weighted-congestion/tools/evidence/crossover/original/evidence/runs/weighted_congestion/crossover/limit_evidence/scaled_limits.json": "e9c3bc041761b6d0b29840d65f89256852b4cff12c5ad1993d128cd8e893ff52",
+    "archives/weighted-congestion/tools/evidence/crossover/original/evidence/runs/weighted_congestion/crossover/limit_evidence/finite_scans.json": "6f7bd7bd9811d294c228afad44b79a117db289e9023b7d082f5eed90fc64b8cf",
+    "archives/weighted-congestion/tools/evidence/crossover/original/evidence/runs/weighted_congestion/crossover/limit_evidence/uniform_bounds.json": "76eef5785fb98f2e7a5b117b9d48900015be5077f4b11d84435245dbb48e9750"
+  },
+  "review_digest": "b5bbdb64d17f34ff587037c214bf17d3a29d921adb59f84ff69f44637f7df0bf"
+}

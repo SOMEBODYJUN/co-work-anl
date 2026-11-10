@@ -1,0 +1,58 @@
+{
+  "edge_id": "um-explicit-fractional-nsw-gives-normalized-quality-repair-and-full-schedule",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-EXPLICIT-XOS-DETERMINISTIC-FRACTIONAL-NSW-v1"
+  ],
+  "target_ids": [
+    "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "n≥1原groups、m≥1显式原资源、非空indexed states，原非负二进制有理coefficients每state总量恰1；实际分配是原资源不交bundles。unit-FSLP使用p>0的正support指标、每组行和1、每资源列≤1。C/E的质量与selected-root计数对任意固定有理η∈(0,1)成立，K=ceil(1/η)、qη=2^(−24K)、cη=qη/2。仅D的REPAIR检验再要求固定有理0≤a_rep<γ_lo≤1、0<η<γ_lo−a_rep、D≤a_rep n、0≤δ_q≤cη；向相同n组加入同一批D个全局共享unit singleton资源及其indexed alternatives。D的准确promise：YES为存在一份原实际不交allocation使至少n−D个原组quality=1；NO为每份原实际不交allocation均有至少γ_lo n个原组quality≤δ_q。普通UM矩阵包含每原selector和所有正/显式零/未选state incidence，不允许内部floor更改物理处理时间。",
+  "roles": {
+    "UM-EXPLICIT-XOS-DETERMINISTIC-FRACTIONAL-NSW-v1": "给有限显式非负二进制有理indexed XOS一个确定性总位多项式算法。先固定同一原物品不交分配，再对每个有限有理正分数配置y同时保证NSW≥B_v(y)/1125000。y每行和1、每件原物品总边际≤1，所有正质量条目的实际值严格正。算法无需输入y或实际最优分配。",
+    "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1": "目标完整C/D/E：unit-FSLP下同一输出的几乎全组质量、共享repair的指定promise有理LP检验、全部原jobs的峰≤2调度及selected-root计数。"
+  },
+  "explanation": "把每组原state的正support P_gs用unit-FSLP的λ_gs作为配置概率。每原clause总量1，v_g(P_gs)=1，且所有v_g≤1；所以这是行和1、原资源列≤1的正benchmark，B_v(y)=1，log-CONFIG optimum0。item-equality版本逐列补缺：当前该列质量c≤1，不含它的配置质量n−c≥1−c，取1−c质量添该资源（必要时拆条目），原值仍1，其他列和行不变。可行性证明提供该witness，来源算法自身无需读取它，即输出同一不交原allocation，NSW≥1/1125000≥1/3000000>ρ^−1，ρ=2^24。令K=ceil(1/η)、qη=ρ^−K、cη=qη/2。若k≥ηn个质量r_g<qη，其余≤1，则product<qη^k≤ρ^−n，矛盾；所以少于ηn个<qη，因≤cη严格包含于<qη，同样少于ηn个≤cη。无需ηn为整数，同一输出同时用于所有固定η，阈值位长按K收费。对REPAIR，原若≥n−D组unit，给余下≤D组各一个不同repair即增强全unit；unit attaining norm1 state必须领全positive support，给增强LP整数可行点。反向任意增强allocation去repair仍为原allocation，至多D组收到repair而免于原低组下界。若NO且增强LP可行，前述输出应有低组<ηn，却由原NO与D≤a_rep n必须有低组≥γ_lo n−D≥(γ_lo−a_rep)n>ηn，矛盾。因此仅测增强显式有理unit-FSLP可行性即可在准确promise下判YES/NO，不需运行NSW或求integral optimum。D≤a_rep n给新增nD态显式多项式。最后用原table为输出bundles Z_g重取attaining state s_g，把每个原selector放对应private root，只导出该态在已分配正资源上的原incidences，全部其余原incidence（包括所有未选态和零job）留原private。原质量r_g∈[0,1]给selected root=1+1−r_g=2−r_g，unselected root=1，资源因真实不交至多一unit，所以全矩阵峰≤2，且超过2−qη的selected roots恰对应r_g<qη、数量<ηn。unit分配使所有负载≤1，原selector给OPT≥1，故unit-YES真实OPT1。机器S+m、原jobs n+I；REPAIR增加nD private roots、D资源、nD正singleton incidence和nD selector资格，selector身份仍n个；若额外显式零incidence也计入保留。构造、LP和完整输出均按总显式位长多项式，所有比例始终同一n原组。",
+  "scope": "完整C/D/E在所列norm1显式输入与各自前件下成立。指定repair promise以增强unit-FSLP不可行为NO判据，不作一般UM不可行判据。目标给同一输出的selected-root计数及全矩阵峰≤2，不给全组统一正的常数minimum或所有机器统一2−ε。共享审查中的历史γ_hi/γ_lo撤回另属已登记互补对象，不是本边的额外前提或结论。这里不接F2，也不声称存在到指定promise的Karp reduction。",
+  "whole_result": "显式XOS的全分数确定性NSW ⇒ 归一化unit-FSLP可行时同一确定性总位多项式allocation满足NSW≥1/3000000>2^−24和目标两条<ηn低组计数；在所列固定repair slack/promise下增强unit-FSLP的有理LP可行性分离YES/NO；其实际分配逐原job解码为全部原矩阵峰≤2、selected-root=2−r_g并满足少于ηn根超过2−qη，unit-YES时OPT1。",
+  "evidence": [
+    {
+      "path": "tools/evidence/private-tree/partial-quota-welfare/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
+      "sha256": "9ef11b3f69d786c4a89f3e575f0cce60cc5d611c2fbad61cdabd3d642aaea33c"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/显式XOS分数NSW的确定化合同与真实审读链--审查.md",
+      "sha256": "dd27a701b1f1eedbd5162be243b0ad24f8733a144509ab555a10d0dd2dfb208a"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化菜单高低比例互补的实质纠错及修复边界--审查.md",
+      "sha256": "ad299d925721db08eadd2eb530a07871dab58aff5d739d591a32335c40eeea8d"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/多outer single-state tiny-home 19-10 Exact-only与proof-canonical-backend版本审查--审查.md",
+      "sha256": "2d4cd9224f731d574061a4fa0e7222688d09726c6340b429a7cf55536f8bb2b4",
+      "section": "8. NSW v5 三源 Exact-first、Proof read-after 与最终 canonical 增量"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/多outer single-state tiny-home 19-10 Exact-only与proof-canonical-backend版本审查--审查.md",
+      "sha256": "2d4cd9224f731d574061a4fa0e7222688d09726c6340b429a7cf55536f8bb2b4",
+      "section": "第三阶段定向勘误"
+    }
+  ],
+  "reviewed_by": "Boss2/refresh_xos",
+  "review_note": "重读9ef11b…自足正文共用位引理、A、B1–B6及C/D/E和F的高低组勘误，并对照两端点当前登记、直接审查及2d4cd9…共享审查§8与定向勘误。固定输出的全分数比较使norm1正支撑LP只作benchmark一的证明；实际不交分配、同n共享repair筛选与所有原job的普通调度逐步闭合。历史high≥δ_q组数<γ_hi n的准确互补是low<δ_q组数>(1−γ_hi)n，δ_q≤qη且γ_hi≤1−η（含等号）时与C矛盾。该高组口径不代换D明列的γ_lo和≤δ_q。共享审查的Good helper保有fallback winner bundle、outer取得home仍是独立算法范围，早期条件记录不替代现行显式证明。",
+  "endpoint_pins": {
+    "UM-EXPLICIT-XOS-DETERMINISTIC-FRACTIONAL-NSW-v1": "ac2a7c5e40d093d4981b13b5505014617fac609e8ac2cf8946bab93a62fa3b4c",
+    "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1": "38ced94214265ec53f2d571a2f63209addf755128e27d6af5cfc48f41ba10a9e"
+  },
+  "evidence_pins": {
+    "tools/evidence/private-tree/partial-quota-welfare/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md": "9ef11b3f69d786c4a89f3e575f0cce60cc5d611c2fbad61cdabd3d642aaea33c",
+    "archives/unrelated-machines/state/审查/显式XOS分数NSW的确定化合同与真实审读链--审查.md": "dd27a701b1f1eedbd5162be243b0ad24f8733a144509ab555a10d0dd2dfb208a",
+    "archives/unrelated-machines/state/审查/归一化菜单高低比例互补的实质纠错及修复边界--审查.md": "ad299d925721db08eadd2eb530a07871dab58aff5d739d591a32335c40eeea8d",
+    "archives/unrelated-machines/state/审查/多outer single-state tiny-home 19-10 Exact-only与proof-canonical-backend版本审查--审查.md": "2d4cd9224f731d574061a4fa0e7222688d09726c6340b429a7cf55536f8bb2b4"
+  },
+  "review_digest": "590ee329458a239657355b3b2a52449cc68338a6f48cd1180e8d1262fa11cf86"
+}

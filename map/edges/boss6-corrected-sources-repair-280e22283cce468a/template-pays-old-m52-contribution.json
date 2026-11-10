@@ -1,0 +1,74 @@
+{
+  "edge_id": "wc-retuned-template-absolute-error-preserves-m52",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WCF-R3-SCALED-TEMPLATE-v1"
+  ],
+  "target_ids": [
+    "WCF-R3-SCALED-RETUNED-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定t=(49/100,11/10,49/100,3/5,1/50,3/100,1)；整数m≥1；七互补mask与权(1,1/(10m),1/(20m),1/(50m))；前六资源对次数32m²、末对二次；费用不乘权，偏离按自身新负载重算。",
+  "roles": {
+    "WCF-R3-SCALED-TEMPLATE-v1": "正文统一绝对成本误差E_m及八个固定偏离的运输不等式δ−(1+α)E_m。",
+    "WCF-R3-SCALED-RETUNED-v1": "只支付旧版全部m≥52无2-PNE分支；其他结论另有证据。"
+  },
+  "explanation": "在模板正文固定八行代入该t和α=2，代表态0000至0111的极限余量依次为24/25,51/50,9/20,7/50,1/50,1/50,7/50,19/100，所以δ=1/50。前六振幅和S=273/100，g=1。全部当前和真实偏离成本绝对误差至多E_m=(273/100)exp(−64m/117)+17/(50m)，故每个指定有限余量≥1/50−3E_m。对每m≥52，64m/117>28且e>8/3，指数项<(3/8)^28，17/(50m)≤17/2600。故余量严格大于1/50−3[(273/100)(3/8)^28+17/2600]=9671406313347824129679641/25145657047984286833888460800>0，八行及互补穷尽16态。一般显式M的半误差公式不承担52；此处直接比较统一E_m给更好的合法起点。",
+  "scope": "固定调谐振幅的旧v1绝对误差路线，完整支付m≥52分支。一般模板的可行端点只涉及指定见证。m3证书、精确极限因子及同族起点三分别有独立证据。",
+  "contribution": {
+    "result": "对每个整数m≥52，全16态的指定偏离均有严格二倍改善，且余量至少9671406313347824129679641/25145657047984286833888460800>0；故G_m(t)无2-PNE。这完整保留旧绝对误差证明。",
+    "remaining": "完整v1还需固定t的全偏离布尔表B∞=100/49及有限正分母连续性、每固定1≤α<100/49最终排除α的严格端点推论，以及独立m3全16态64偏离精确证书；本边只贡献m≥52分支。"
+  },
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/十四资源既定偏离模板的三次根阈值--定理.md",
+      "sha256": "d9c67c259e194f6a516c2118fe3c021b1a306562a7a3368475865b97b88914e3",
+      "section": "统一误差及明确有限起点"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md",
+      "sha256": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/十四资源缩权族的常数无均衡界--定理.md",
+      "sha256": "62f4f0e0e9090a650f09442465161a4552f1ea84fad2bfa1f36c8183448733e0",
+      "section": "调谐振幅：两个有效统一起点"
+    },
+    {
+      "path": "map/edges/weighted-congestion-3a-3a-6bde22b9e18e91ee/limit-and-tail-verification.json",
+      "sha256": "ca07d780fe11214efbbce734a28dccd732fd3ac253c7c5df4eb8722944071e3b"
+    },
+    {
+      "path": "map/edges/weighted-congestion-3a-3a-6bde22b9e18e91ee/verify_limit_branches.py",
+      "sha256": "fbb225e6f85377f838a85dd51e942d3cb4f50d8ed3ec16b285ae5a96f3478b83"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/十四资源交叉构造与三十二次源式上界审查--审查.md",
+      "sha256": "652f776009ee24a0dfefd1d07c60b838e03224978352e97219342ac507fd6a33",
+      "section": "4. 重新调参的缩权族与 (m=3) 证书（`d4e73bada91cfe4b91ec`）"
+    },
+    {
+      "path": "map/edges/boss6-corrected-sources-repair-280e22283cce468a/reading-and-proof.md",
+      "sha256": "502b417705e3076206d76de0ec9128d8bf05b604e666fa7b716f2ee39ea91d57",
+      "section": "辅助极限、固定模板与两条统一尾界"
+    }
+  ],
+  "reviewed_by": "Boss2 / refresh_retuned",
+  "review_note": "重读当前模板登记v6及一般证明，核固定t、α、δ、S和M52精确有理余量。该贡献沿旧绝对误差证明，区别于v2的定向估计，也保持一般模板的先α、再振幅及起点的量词。",
+  "endpoint_pins": {
+    "WCF-R3-SCALED-RETUNED-v1": "d4d0e8624e9e0663f67a1c9417ce8fd13d7775122e28da50e390c964d5f07cba",
+    "WCF-R3-SCALED-TEMPLATE-v1": "a6a293ad2e0863e8bee28de472d18f43d510dbe088254563490e60681c0b565e"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/十四资源既定偏离模板的三次根阈值--定理.md": "d9c67c259e194f6a516c2118fe3c021b1a306562a7a3368475865b97b88914e3",
+    "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df",
+    "archives/weighted-congestion/state/定理/十四资源缩权族的常数无均衡界--定理.md": "62f4f0e0e9090a650f09442465161a4552f1ea84fad2bfa1f36c8183448733e0",
+    "map/edges/weighted-congestion-3a-3a-6bde22b9e18e91ee/limit-and-tail-verification.json": "ca07d780fe11214efbbce734a28dccd732fd3ac253c7c5df4eb8722944071e3b",
+    "map/edges/weighted-congestion-3a-3a-6bde22b9e18e91ee/verify_limit_branches.py": "fbb225e6f85377f838a85dd51e942d3cb4f50d8ed3ec16b285ae5a96f3478b83",
+    "archives/weighted-congestion/state/审查/十四资源交叉构造与三十二次源式上界审查--审查.md": "652f776009ee24a0dfefd1d07c60b838e03224978352e97219342ac507fd6a33",
+    "map/edges/boss6-corrected-sources-repair-280e22283cce468a/reading-and-proof.md": "502b417705e3076206d76de0ec9128d8bf05b604e666fa7b716f2ee39ea91d57"
+  },
+  "review_digest": "4d63d72a3325405812dbc9cc49f8b640f238e55fb8a9663fc674e88e1b60bcf7"
+}

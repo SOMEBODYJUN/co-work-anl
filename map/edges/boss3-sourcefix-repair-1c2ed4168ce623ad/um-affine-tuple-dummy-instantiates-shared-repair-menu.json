@@ -1,0 +1,78 @@
+{
+  "edge_id": "um-affine-tuple-dummy-instantiates-shared-repair-menu",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/affine-line-global-dummy-proof-and-version-review-lineage"
+  ],
+  "target_ids": [
+    "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "素数 R，relation arity k≥1，逐变量 relation-degree≤R 与注入 j_x；每允许 indexed tuple 一个原组，n 为其数量、m₀ 为非空 relations 数，1≤q≤m₀，d=n−q。原支持 S_e 为带变量标签的 k 条各长 R 的仿射线，统一权 1/L，L=kR；共享 d 枚 dummy。按完整显式输入/输出位长收费。",
+  "roles": {
+    "unrelated-machines/affine-line-global-dummy-proof-and-version-review-lineage": "提供按不同 relations 取 q 个 tuples、所有子族的 slot-Hall 半保留及完整 ordinary jobs 的双向 unit 提取。",
+    "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1": "提供在同一 n 个原组上新增 D 个全局 singleton REPAIR 的定义、正支持 LP 和逐 job 的 ordinary 编译。"
+  },
+  "explanation": "先取基菜单 Q，每个 tuple e 的唯一原 state 为 S_e，L 个正系数各 1/L；将 D=d、每个 dummy δ_l 与一个 REPAIR 资源对应。每原 group、每 indexed state 的 private、每资源机、每单位 selector、每 incidence 的两个有限端及原时间逐一相同。未选 states 全部回填。按不同 relations 选 q 个 tuples，带标签的并集对任意选中子族 F 有 |N(F)|≥k(R+1)|F|/2≥b|F|，b=ceil(L/2)；每组 b slots 的匹配在原 Q 给至少 q 个组质量 b/L≥1/2，其余组在 Q+ 各取不同 repair 后质量一。整份 Q+ 真实峰值≤2−b/L。任意完整 unit 调度中 selector 占满其 private，所选 state 的正 incidences 必须全外送；因只有 d 个 repair，至少 q 个 groups 的原 S_e 全部外送且互不相交。反向从 q 个不交 full sets 与其余 repair 补出完整 unit 调度。增强 unit-FSLP 恰等价于原 S_e 的分数 packing：0≤z_e≤1、对每资源 Σ_{e:u∈S_e}z_e≤1、Σ_e z_e≥q。前向 z_e 取原 state 质量，d 个 repair 列的总容量迫 Σ_e(1−z_e)≤d；反向 d>0 时把每组余量 1−z_e 等分给 d 个 repair states，d=0 时 q=n 迫所有 z_e=1。 几何 Hall 的原质量和增强实际峰不以 unit-FSLP 为前件。一般 C 的正支持 LP 可行先给 benchmark 一，后续才由显式 XOS finder 给实际高质量分配。D 在承诺域内仅以增强 LP 可行性作判据，正确性用该存在定理；对任意增强分配删 repair，低组数至多增加 d，所以若另有增强 LP 见证，可得到一份原分配有少于 d+ηn 个组质量≤c_η。",
+  "scope": "D 的 fixed slack 若 d≤a_rep n<γ_lo n 且 δ_q≤c_η，则该仿射基菜单的上述原分配至多 d 个质量≤δ_q 的组，因 b/L≥1/2>q_η>c_η，故该 robust NO 在此族为空；增强分配本身无组低于 q_η。此处精确排除的是这条 uniform-weight、恰 d=n−q 且 q≤m₀ 的编译中的近二 NO，不涉及不同 state 分组、权、守卫或其他源桥。有限分离：令 R=11、k=1、一个 tagged 变量、四个不同 relations 各一个 tuple，斜率 r、注入截距 r²（r=0,1,2,3），q=2、d=2。每两线恰交一点，三线无共点，因为同一点的 r 满足同一首一二次式。每原 state λ=1/2、每 dummy state λ=1/4 满足增强 unit-FSLP，但没有两条不交全线。两组选不同线并把相交点只给其中一组，另两组取不同 repair，增强质量 (1,10/11,1,1)；任何最小质量>10/11 都要求至少两条完整线。完整矩阵有 12 private、123 resource 机器、56 原 jobs、116 有限端；资源端 unit 容量及 selector 回读给 OPT=12/11。因此该明确 LP 点不产生 T=1 正原子 law，且其基输入处于 D 的小阈值 YES/NO promise 之外。 此实例有 d/n=1/2；任何满足 D 的 γ_lo>a_rep≥1/2 及小阈值的参数均无法使它成为 robust NO。",
+  "contribution": {
+    "result": "仿射 shared dummy 逐原任务实例化归一化共享 REPAIR。slot-Hall 独立给原菜单至少 q 个质量≥b/L 的组，以及增强菜单所有组质量≥b/L 和完整实际峰≤3/2。增强 LP 的分数 packing 投影与实际 unit 的整数 packing 由四线实例精确分离。",
+    "remaining": "任意归一菜单的 NSW 后端及 D 的全称小阈值判定不来自该几何子族。全线 packing、其他 dummy 数或不保该资源结构的源还需单独处理。"
+  },
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/仿射线全局dummy的证明与版本审查链--审查.md",
+      "sha256": "6f3e09b913345727ac9c687cdfd8fd06f1564c1748b59b8877892a235abd2eb2"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化菜单高低比例互补的实质纠错及修复边界--审查.md",
+      "sha256": "ad299d925721db08eadd2eb530a07871dab58aff5d739d591a32335c40eeea8d"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分数重匹配与归一化XOS稳健缺口边界--定理.md",
+      "sha256": "05d4fbbde010e55a6b1fbb920d2f7e4d84743d1c8e50a3392a3d6918249a829b",
+      "section": "5. D：共享 singleton REPAIR 的组合推论"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分数重匹配与归一化XOS稳健缺口边界--定理.md",
+      "sha256": "05d4fbbde010e55a6b1fbb920d2f7e4d84743d1c8e50a3392a3d6918249a829b",
+      "section": "6. E：完整普通 flat-UM 调度接口"
+    },
+    {
+      "path": "tools/evidence/private-tree/partial-quota-welfare/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
+      "sha256": "9ef11b3f69d786c4a89f3e575f0cce60cc5d611c2fbad61cdabd3d642aaea33c",
+      "section": "C. 原 unit-FSLP、benchmark 一与几乎所有组"
+    },
+    {
+      "path": "tools/evidence/private-tree/partial-quota-welfare/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
+      "sha256": "9ef11b3f69d786c4a89f3e575f0cce60cc5d611c2fbad61cdabd3d642aaea33c",
+      "section": "D. 同组共享 singleton REPAIR 的 promise LP test"
+    },
+    {
+      "path": "tools/evidence/private-tree/partial-quota-welfare/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
+      "sha256": "9ef11b3f69d786c4a89f3e575f0cce60cc5d611c2fbad61cdabd3d642aaea33c",
+      "section": "E. 每个原 selector 和 incidence job 的完整 ordinary schedule"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/分数重匹配显式XOS-v4-v5增量--审查.md",
+      "sha256": "a579f14298c8e6234a8406ae5d5888b1c8e489d63ad920319e4eb4c8c82cc034",
+      "section": "7. 任意比较重匹配、normalized 后果及所有原作业"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "重读仿射编译、Hall、unit 双向及原 C–E 和后续 v5 审查。复核分数 packing 投影、四线交点及列容量和实际峰 12/11。单列增强 LP 判据、原/增强组质量与完整矩阵物理保证。",
+  "endpoint_pins": {
+    "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1": "38ced94214265ec53f2d571a2f63209addf755128e27d6af5cfc48f41ba10a9e",
+    "unrelated-machines/affine-line-global-dummy-proof-and-version-review-lineage": "deb48f7491f361e0797aa29bee06f3677e2dd909bc227cf8fa1de0b7c5248889"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/仿射线全局dummy的证明与版本审查链--审查.md": "6f3e09b913345727ac9c687cdfd8fd06f1564c1748b59b8877892a235abd2eb2",
+    "archives/unrelated-machines/state/审查/归一化菜单高低比例互补的实质纠错及修复边界--审查.md": "ad299d925721db08eadd2eb530a07871dab58aff5d739d591a32335c40eeea8d",
+    "archives/unrelated-machines/state/定理/分数重匹配与归一化XOS稳健缺口边界--定理.md": "05d4fbbde010e55a6b1fbb920d2f7e4d84743d1c8e50a3392a3d6918249a829b",
+    "tools/evidence/private-tree/partial-quota-welfare/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md": "9ef11b3f69d786c4a89f3e575f0cce60cc5d611c2fbad61cdabd3d642aaea33c",
+    "archives/unrelated-machines/state/审查/分数重匹配显式XOS-v4-v5增量--审查.md": "a579f14298c8e6234a8406ae5d5888b1c8e489d63ad920319e4eb4c8c82cc034"
+  },
+  "review_digest": "ee841c59fa8e80af5193c5d382b5dd96926ecb229365fe5809b51e2741dad3ee"
+}
