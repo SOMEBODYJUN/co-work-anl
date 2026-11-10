@@ -1,0 +1,129 @@
+{
+  "definition": {
+    "task_id": "boss6-corrected-sources-repair-2a61d5dd4320a3ac",
+    "stage": "3B",
+    "registry": "research/registry.json",
+    "supersedes": [
+      "boss5-474257b8-ring-3b-e44d439c263a1e96"
+    ],
+    "object_ids": [
+      "WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2",
+      "WC-R3-ODD-RING-ENVELOPE-v1",
+      "WC-R3-ODD-RING-LOWER-v1",
+      "WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1"
+    ],
+    "read_object_ids": [],
+    "input_pins": {
+      "WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2": "d787206e9b5010b763e977d93acce3c0d7900cac5603f1ad6613ff2c6519d50f",
+      "WC-R3-ODD-RING-ENVELOPE-v1": "202eaf2e5e707f1bece41a4dedd4e75d3ca43a9cc503c556fa214e265951c610",
+      "WC-R3-ODD-RING-LOWER-v1": "c660cebb885ec7e95a98ef0179a2aad45782825c931adb9b0ea6108fcb748d7d",
+      "WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1": "fd14a44994955fb5ff9f4e2318b4b847ee18d1011a527b3e93e6ea77ec225162"
+    },
+    "write_paths": [
+      "map/edges/boss6-corrected-sources-repair-2a61d5dd4320a3ac",
+      "map/receipts/boss6-corrected-sources-repair-2a61d5dd4320a3ac.json",
+      "map/edges/boss5-474257b8-ring-3b-e44d439c263a1e96/joint-exact-actual-threshold.json"
+    ],
+    "goal": "Resolve the changed inputs or unanswered comparison in boss5-474257b8-ring-3b-e44d439c263a1e96; reuse still valid coverage, and explicitly dispose each prior asset.",
+    "context_plan": {
+      "budget": {
+        "context_tokens": 500000,
+        "window_source": "official-default",
+        "model": "gpt-6.1-sol",
+        "used_tokens": null,
+        "history_mode": "fresh-worker",
+        "reserve_tokens": 200000,
+        "reading_tokens": 300000,
+        "output_tokens": 100000,
+        "runtime_remaining_tokens": null,
+        "declared_remaining_before_reserve_tokens": null,
+        "assumptions": [
+          "Window source is declared, not discovered from this conversation.",
+          "Reading budget includes source text and object/task metadata.",
+          "Reserved context includes expected generated records and later reasoning/tool growth.",
+          "Fresh worker assumed; actual system/prefix usage is unknown and covered only by the engineering reserve."
+        ],
+        "budget_is_runtime_measurement": false
+      },
+      "reading": {
+        "chars": 21959,
+        "utf8_bytes": 29714,
+        "source_tokens": 22088,
+        "metadata_tokens": 7810,
+        "estimated_tokens": 30026,
+        "metadata_chars": 8221,
+        "metadata_utf8_bytes": 11527,
+        "distinct_files": 2,
+        "reading_segments": 3,
+        "token_count_is_estimate": true,
+        "estimators": [
+          "conservative-math-text-estimate-v1; not a tokenizer count"
+        ],
+        "unmeasured_refs": [],
+        "measurement_scope": "Requested complete text spans plus supplied metadata; binary evidence is not token-counted from raw bytes.",
+        "task_overhead_tokens": 128
+      },
+      "reading_refs": [
+        {
+          "path": "archives/weighted-congestion/state/定理/同权群组奇环的实际均衡阈值--定理.md",
+          "sha256": "be95074d21cb73e09b587ef9057e33fd7069383f2e185e46e98cc8a97569549d"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+          "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+          "section": "4. The exact necessary envelope"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+          "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+          "section": "5. Rational attaining families below the envelope"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+          "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+          "section": "2. The actual game"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+          "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+          "section": "3. Coverage of every state and the coefficient cycle"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+          "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+          "section": "6. Growth and sharpness of this certificate's leading constant"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+          "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+          "section": "8. Nonnegative mixtures do not enlarge the certificate envelope"
+        }
+      ],
+      "oversized": false,
+      "requires_export": false,
+      "prior_assets": [
+        {
+          "path": "map/edges/boss5-474257b8-ring-3b-e44d439c263a1e96/joint-exact-actual-threshold.json",
+          "sha256": "f4f7522539e00213c250d6c795cb6cba78e5253dca8dc477accb688842be9d05"
+        }
+      ],
+      "retired_core_object_ids": [],
+      "recheck_core_object_ids": [
+        "WC-R3-ODD-RING-ENVELOPE-v1"
+      ],
+      "repair_reasons": [
+        "changed-registration-input"
+      ],
+      "note": "Read the previous task and receipt. Carry forward valid work. If needed, read the same scope in ordered passes. A retirement-only task lists no coverage or new assets.",
+      "comparison_question": "核同权cohort奇环中，多项式strict两测试包络与标量界、每α<T_d的正有理纯d次有限下界，如何经真实light稳定区间/中央双标签/全L全R缩减共同推出所有合法实例的弱式T_d-PNE、至多2m候选及实际最坏阈值恰T_d；禁止以测试不可行直接宣布均衡或把每α另选实例改为一个有限实例达到上确界。",
+      "comparison_priority": 0,
+      "scope_hint": "archives/weighted-congestion"
+    }
+  },
+  "state": "available",
+  "owner": null,
+  "request_id": "b3be9e4c866e4763aefdabf506ac5f0d",
+  "requests": {
+    "b3be9e4c866e4763aefdabf506ac5f0d": "plan"
+  }
+}
