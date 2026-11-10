@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "task_id": "boss6-six-security-bridge-3b-37e2f44d17517898",
+  "delivery_status": "resolved-historical-erratum",
+  "resolution_status": "resolved",
+  "current_open_request": false,
+  "historical_request_sha256": "cccad70b64d0312596b84a3d787fa468afd0e5c3db34b6edeceb10252dc95baf",
+  "historical_request": {
+    "delivery_status": "awaiting-core-quantifier-erratum",
+    "task_id": "boss6-six-security-bridge-3b-37e2f44d17517898",
+    "source_path": "archives/customer-attraction/state/问题/一般目录安全债务与真实分支转移--问题.md",
+    "source_old_sha256": "87e0e226e76c384eddf11d6620e630198711323ca05533a776c3ef2eb198d580",
+    "section": "2. 全局安全债务义务（开放问题）",
+    "changes": [
+      {
+        "location": "line48（定义D_i的display）",
+        "old": "D_i=u_i-V_i+(n-i)(V_{i+1}-V_i),\\quad i<n.",
+        "new": "D_i=u_i-V_i+(n-i)(V_{i+1}-V_i),\\quad i<n;\\qquad D_n=u_n-V_n=0.",
+        "mathematical_reason": "末位V_n=u_n已在前句声明；补终项使其后Σ_(i=1)^nD_i不再引用未定义符号，链的既存数学不变。"
+      },
+      {
+        "location": "line62（全锥段intro）",
+        "old": "固定完整形式策略 $\\sigma$、查询分布 $p$ 和客户重数向量 $w$ 时，来源给出精确锥接口。令 $\\Gamma$ 为每个有序历史一次偏离相对原行动的真实收益差系数，$\\Gamma w\\ge0$ 当且仅当 $\\sigma$ 在全部历史上是 SPE；令 $c$ 为根实际覆盖行为，$\\beta_B(p)_T=p(T)/(1+\\operatorname{load}_B(T))$。则固定 $\\sigma,p$ 下",
+        "new": "固定完整形式策略 $\\sigma$、有理查询分布 $p$ 及常数 $\\alpha>0$，来源给出精确全客户锥接口。令 $\\Gamma$ 为每个有序历史一次偏离相对原行动的真实收益差系数，并置 $\\mathcal K_\\sigma=\\{w\\ge0:\\Gamma w\\ge0\\}$；它恰是 $\\sigma$ 在全部历史上成为 SPE 的非负客户质量锥。令 $c$ 为根实际覆盖行为，$W=c\\cdot w$，$\\beta_B(p)_T=p(T)/(1+\\operatorname{load}_B(T))$，其中 $B$ 遍历全部合法 $n-1$ 槽静态背景。则固定 $\\sigma,p,\\alpha$ 下",
+        "mathematical_reason": "移除固定单个w的误导，固定α>0，明确实际全集Kσ；允许α6和11/2，不把更弱系数悄改原n系数合同。"
+      },
+      {
+        "location": "line64（左display）",
+        "old": "W\\ge\\alpha\\min_B\\beta_B(p)\\cdot w",
+        "new": "\\forall w\\in\\mathcal K_\\sigma:\\qquad c\\cdot w\\ge\\alpha\\min_B\\beta_B(p)\\cdot w",
+        "mathematical_reason": "minimax得到共同Q的充要前提是整个锥上对所有w成立；单点不等式不能推出非负Γ证书。"
+      },
+      {
+        "location": "line66（右display前）",
+        "old": "等价于存在静态分布 $Q$、非负偏离权重 $\\lambda$ 和逐类型余项 $r$ 使",
+        "new": "等价于存在一份静态分布 $Q\\in\\Delta(\\mathcal S^{n-1})$、非负偏离权重 $\\lambda$ 和逐类型余项 $r\\ge0$，它们只可依赖固定的 $\\sigma,p,\\alpha$ 而不依赖锥内 $w$，使逐类型恒等式",
+        "mathematical_reason": "写明一份Q支付全锥并保Q归一、r非负，不要求其跨全部p共同。"
+      },
+      {
+        "location": "line70（结论句）",
+        "old": "该 Farkas 等价关系是精确接口，不是 $\\lambda$ 存在性的证明；所有历史与偏离必须保留，不能先在节点内平均或循环借用目标结论。",
+        "new": "该 minimax/Farkas 等价关系是精确接口，不是对所有 $\\sigma,p,\\alpha$ 的证书存在性证明；所有历史与偏离必须保留，不能先在节点内平均或循环借用目标结论。若 $\\alpha$ 也有理，可行时可取全有理证书。",
+        "mathematical_reason": "等价与普遍存在性分开；全有理性仅对有理α声明。"
+      }
+    ],
+    "affected_task_pins": [
+      {
+        "object_id": "M-d0feba99599d40b3806c54c5b6fa52ee",
+        "version_before": 1,
+        "registration_pin_before": "8d784c8b36c6d038a0385ef6923b3c85eed7ff0f38f9e75aed141d291d4a3b67",
+        "body_old_sha256": "87e0e226e76c384eddf11d6620e630198711323ca05533a776c3ef2eb198d580",
+        "new_pin": "由Root实际修正文/登记后计算，不伪造"
+      }
+    ],
+    "task_definition_pin_before": "d52d373e953078a3d185fcc077751e2128bb44944c6d265ce2ac647d836351bf",
+    "task_refresh_effect": "9输入中仅M-d0feba正文引用受此次修改影响；其pin和task definition pin需Root刷新，另8端点预计不变（以实际新字节核）。第二关系草稿的debt evidence及全锥段阅读freshness受影响；两个关系/review/receipt的发布就绪态均须新核心交接后确认。",
+    "root_reported_other_registration_owner": "M-819ec76c39b24e9892557d52c04d29ab（本任务外，由Root处理；本worker未冒称其全文已读）",
+    "canonical_effect": "本任务仅复用的85d537fa…一般链边不引该错误段，数学与字节不受影响。Boss4 33eb canonical为另任务受影响记录，Root已定位并串行repair；本包不擅改其文件。",
+    "mathematical_effect": "修复的是完整锥量词及终项定义，不建立普遍Q证书、弱总债务或六人half；两条条件推导继续有效。"
+  },
+  "resolution": {
+    "source_path": "archives/customer-attraction/state/问题/一般目录安全债务与真实分支转移--问题.md",
+    "published_source_sha256": "1475c5ed8eda49c6fbf6d289d83e126879a33829acc3bf888c4d581ce26430f9",
+    "published_Md0_version": 2,
+    "published_Md0_registration_pin": "d599ffd1f047dd5778d4e6caeab4057991d9a90ca3eae5c7acfb14e94d6148bc",
+    "approved_actual_replacements": [
+      [
+        "这是纯代数恒等式\n$$\n\\sum_{i=1}^nD_i=W-ns.",
+        "并置 $D_n=u_n-V_n=0$。这是纯代数恒等式\n$$\n\\sum_{i=1}^nD_i=W-ns."
+      ],
+      [
+        "固定完整形式策略 $\\sigma$、查询分布 $p$ 和客户重数向量 $w$ 时，来源给出精确锥接口。令 $\\Gamma$ 为每个有序历史一次偏离相对原行动的真实收益差系数，$\\Gamma w\\ge0$ 当且仅当 $\\sigma$ 在全部历史上是 SPE；令 $c$ 为根实际覆盖行为，$\\beta_B(p)_T=p(T)/(1+\\operatorname{load}_B(T))$。则固定 $\\sigma,p$ 下",
+        "固定完整形式策略 $\\sigma$、查询分布 $p$ 及系数 $\\alpha>0$，来源给出全客户锥接口。令 $\\Gamma$ 为每个有序历史一次偏离相对原行动的真实收益差系数，并定义 $\\mathcal K_\\sigma=\\{w\\ge0:\\Gamma w\\ge0\\}$；它恰是使 $\\sigma$ 在全部历史上成为 SPE 的客户质量锥。令 $c$ 为根实际覆盖行为，$\\beta_B(p)_T=p(T)/(1+\\operatorname{load}_B(T))$。则固定 $\\sigma,p,\\alpha$ 下"
+      ],
+      [
+        "W\\ge\\alpha\\min_B\\beta_B(p)\\cdot w",
+        "\\forall w\\in\\mathcal K_\\sigma:\\qquad c\\cdot w\\ge\\alpha\\min_B\\beta_B(p)\\cdot w"
+      ],
+      [
+        "等价于存在静态分布 $Q$、非负偏离权重 $\\lambda$ 和逐类型余项 $r$ 使",
+        "等价于存在静态分布 $Q$、非负偏离权重 $\\lambda$ 和逐类型非负余项 $r$ 使"
+      ],
+      [
+        "该 Farkas 等价关系是精确接口，不是 $\\lambda$ 存在性的证明；所有历史与偏离必须保留，不能先在节点内平均或循环借用目标结论。",
+        "这里同一组 $Q,\\lambda,r$ 可依赖固定的 $\\sigma,p,\\alpha$，须同时支付整个 $\\mathcal K_\\sigma$，不能随客户点 $w$ 更换。该 minimax/Farkas 等价关系是精确接口，不是所有 $\\sigma,p$ 都存在证书的证明；所有历史与偏离必须保留，不能先在节点内平均或循环借用目标结论。"
+      ]
+    ],
+    "resolution_audit_path": "research/workspaces/map-v2/Boss6/security-cone-quantifier-round52.json",
+    "formal_refreshed_definition_pin": "ed1bec2a2cf1ede7ddedc55c2690d569b24d0a77aa75c10e57e43cd88e0db3d2",
+    "formal_claim_request_id": "dde31504d2fc45b3b3f6f0312d4da4fb",
+    "fresh_recheck": "Complete new source, complete actual five-item diff and Md0 v2 contract freshly read; exact reverse reconstruction matches the old source SHA. The original requested wording was advisory; the actual approved five replacements are authoritative.",
+    "mathematical_effect": "Corrects uniform whole-cone quantification and residual sign, and explicitly defines D_n=0. Neither independent open payment premise nor exact-six half is proved."
+  }
+}
