@@ -1,0 +1,45 @@
+{
+  "edge_id": "ca-e489-deletion-duality-factorizes-disjoint-fixed-price-blocks",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/truncated-cover-price-mass-deletion-duality"
+  ],
+  "target_ids": [
+    "M-863290cd7a8e47a7bd9b180a7d3e3057"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "k≥1个客户和目录标签均不交的同型块，目录取各块目录并；各块使用同一个固定v≥0，没有跨块主题。",
+  "roles": {
+    "customer-attraction/truncated-cover-price-mass-deletion-duality": "共同残余packing的可分约束给固定价格下不交加性。",
+    "M-863290cd7a8e47a7bd9b180a7d3e3057": "获得k倍静态价格关系的一条独立对偶证明。"
+  },
+  "explanation": "在q≡1的对偶中，残余packing约束0≤λ≤r以及每个主题的λ负载≤v仅涉及本块变量；有限可行域是各块可行域直积，目标Σλ逐块相加且每块最优达到。总客户数也相加，故B_union(v)=ΣB_block(v)=kB_block(v)。v若随块改变则不再是这个同一个全目录价格函数；目录取Cartesian或共享客户时也不适用此分离。",
+  "scope": "静态价格最优化的加性，绝不授任意不交SPE可拼接。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/截断覆盖价格的删除质量对偶--引理.md",
+      "sha256": "ddd254a68b7d3a35b527d86e9bfb831caf8a737c2c969e193d234e690187106b"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/十三人包与不交复制块的截断覆盖精确定价--计算.md",
+      "sha256": "14243c7c8805f798b6fa9983e7097f80b9a3b948db6d6a961da4ca031b0f2328"
+    }
+  ],
+  "reviewed_by": "Boss6/map-cage489-round40",
+  "review_note": "完整读取本边两端所用陈述、量词、正文及本包必要共享证据；按当前字节核同一完整策略、客户数组、索引重数和真实偏离。所列局部结论与未付义务分别审读；成熟有限证书按其现行精确合同复用，未重跑原LP、搜索或大型全树审计。",
+  "contribution": {
+    "result": "对同一固定v≥0、客户/标签均不交且目录取并的k份块，精确有B_kblock(v)=kB_block(v)。",
+    "remaining": "单块全v公式max{0,63/2−3v/2,36−3v}另由该incidence的群平均凹性与t=0,1/4,1/2端点证明；复制族完整SPE、最低收益10和W34k的动态可信性不由静态加性推出。"
+  },
+  "endpoint_pins": {
+    "M-863290cd7a8e47a7bd9b180a7d3e3057": "fed0e91f3a28f98c1308514246b98d218736cf51434b88a7800c8bbec7227871",
+    "customer-attraction/truncated-cover-price-mass-deletion-duality": "acea4ce5263fd56129f72a59c2f189bfea0825c541de661998c0e6222ae5b3d8"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/截断覆盖价格的删除质量对偶--引理.md": "ddd254a68b7d3a35b527d86e9bfb831caf8a737c2c969e193d234e690187106b",
+    "archives/customer-attraction/state/计算/十三人包与不交复制块的截断覆盖精确定价--计算.md": "14243c7c8805f798b6fa9983e7097f80b9a3b948db6d6a961da4ca031b0f2328"
+  },
+  "review_digest": "f50770d7b2d42bb11568478bb06101ce4a3f886d65f9e22b7cab37261d5d6f1d"
+}

@@ -1,0 +1,42 @@
+{
+  "edge_id": "ca-e489-deletion-duality-certifies-thirteen-player-price-values",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/truncated-cover-price-mass-deletion-duality"
+  ],
+  "target_ids": [
+    "customer-attraction/thirteen-player-packet-and-disjoint-block-exact-truncated-prices"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "仅目标所列六标签(A,B,T,D,E,P)、八兴趣型(A,B,T,TD,TE,ADE,BDE,P)重数(2,2,1,1,1,3,1,25)，q≡1及v≥0。不借另一36客户六标签块的incidence。",
+  "roles": {
+    "customer-attraction/truncated-cover-price-mass-deletion-duality": "把任意可行残余packing转换成对全部非负菜单的精确上界。",
+    "customer-attraction/thirteen-player-packet-and-disjoint-block-exact-truncated-prices": "匹配两份固定36客户输入的菜单下界，封闭B(5/2)=26与B(3)=24。"
+  },
+  "explanation": "写残余质量λ=r−y，源给B(v)=36−max{Σλ:0≤λ≤r,每标签负载≤v}。v5/2时λ=(2,2,1/2,1,1,1/2,1/2,5/2)，总10，标签负载(5/2,5/2,5/2,2,2,5/2)，故B≤26；菜单A,B,T,P各权1覆盖36、成本10，给B≥26。v3时λ=(2,2,1,1,1,1,1,3)，总12，每标签负载3，给B≤24；菜单D,P各权1覆盖5+25=30、成本6，给B≥24。逐型上限逐项满足。两价格都是静态函数参数，旧13人SPE的W33、最低5/2及另一收益3仅作已知机制比较，不由本对偶新造SPE。",
+  "scope": "固定输入两价格的全菜单精确值；非浮点LP最优状态，也非静态minimax命名。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/截断覆盖价格的删除质量对偶--引理.md",
+      "sha256": "ddd254a68b7d3a35b527d86e9bfb831caf8a737c2c969e193d234e690187106b"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/十三人包与不交复制块的截断覆盖精确定价--计算.md",
+      "sha256": "14243c7c8805f798b6fa9983e7097f80b9a3b948db6d6a961da4ca031b0f2328"
+    }
+  ],
+  "reviewed_by": "Boss6/map-cage489-round40",
+  "review_note": "完整读取本边两端所用陈述、量词、正文及本包必要共享证据；按当前字节核同一完整策略、客户数组、索引重数和真实偏离。所列局部结论与未付义务分别审读；成熟有限证书按其现行精确合同复用，未重跑原LP、搜索或大型全树审计。",
+  "whole_result": "指定十三人36客户包有B(5/2)=26、B(3)=24，均低于其已知完整SPE的W33；两值由匹配可行菜单和共同残余packing上界精确认证。",
+  "endpoint_pins": {
+    "customer-attraction/thirteen-player-packet-and-disjoint-block-exact-truncated-prices": "2a9bba750a715186884f871d5dd4d825813165bc39a1d217d4aa659b4a08e0ce",
+    "customer-attraction/truncated-cover-price-mass-deletion-duality": "acea4ce5263fd56129f72a59c2f189bfea0825c541de661998c0e6222ae5b3d8"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/截断覆盖价格的删除质量对偶--引理.md": "ddd254a68b7d3a35b527d86e9bfb831caf8a737c2c969e193d234e690187106b",
+    "archives/customer-attraction/state/计算/十三人包与不交复制块的截断覆盖精确定价--计算.md": "14243c7c8805f798b6fa9983e7097f80b9a3b948db6d6a961da4ca031b0f2328"
+  },
+  "review_digest": "9becd1d75f456d229fa5fda59307371771dad24b4a8e0a65190f1f67362ceed2"
+}
