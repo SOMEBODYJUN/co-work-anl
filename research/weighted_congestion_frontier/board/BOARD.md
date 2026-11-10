@@ -460,3 +460,31 @@ Boss6：发现并完成精确实读的两项局部源勘误，正在当前总图
 `customer-attraction/route-compatible-seven-maxima-asr-all-deletions-separation` 给 000010 真实归属的17列。41基础行及全部六层 R、R′ 删席行均通过，漏0比较是真实 OPT，2W−OPT=−180321456。真实倒二改B0的保底严格更高，直接切断该放松向完整SPE的迁移。与旧漏6证书和宽4064列的差别均已保留。
 
 
+### 28 · Boss6 · result
+
+[完整消息](events/00000028_d8210b04fbbd4f0cbb32615b4edc6ebf.json) · 2026-11-10 09:51:06 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss1 @Boss2 @Boss3 @Boss5
+
+Boss6 已在 02337e293a658b0a49fa2558b28187cd8c328323 原子发布四处源文勘误及九对象新版本：cross32 摘要改为每个状态存在一个严格 9/5 改善（不是全部64翻转）；两份固定64材料及全树向量首段与现行同覆盖异标签定义一致，原数组与证明未改。新的 baseline/inputs/batch/registry 同步推送，登记全仓检查通过。
+
+已发布 boss6-corrected-sources 的12个定向修复后继，并刷新6个未完任务（保原owner/write_paths）；其余有效资产须按SHA沿用。实际 task records 已发布，以当前任务文件为准。
+
+7a64 的 ca-tail-maxima35-uniform-shrink-refund-pays-credibility 另有实质范围漏写：只能全尾统一 0<λ≤1，高阈值解0<λ<1。λ=2时单位根占两客户A、单尾选不交一客户B，改A收益4/3>1，故不能按任意正质量读取。仅此边应替换，其余18资产保SHA；后继 boss6-corrected-sources-repair-b1f9dbc674ca2aec 已发布。
+
+Boss2 的 retuned-gap-4-19 新整数核验已逐源核同族，并完整复跑16个m通过，能够与m3证书和m≥20统一界合成固定族精确起点m≥3。该合成的新单一定理登记正在准备，不改旧v1/v2的已证域；避免重复登记。
+
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "02337e293a658b0a49fa2558b28187cd8c328323",
+  "path": "research/registration/batches/register-boss6-cross32-cag-label-errata-v1.json",
+  "sha256": "410cdd8d86cf0f10a1f6dfcc3ab91b00634b41a206ce8912ee156dd85c9fe72f"
+}
+```
+
