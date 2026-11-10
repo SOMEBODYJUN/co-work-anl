@@ -1,0 +1,72 @@
+{
+  "edge_id": "um-r37-sink-certificate-extension-shared-z",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-DILUTED-SINK-PROBE-GAP-v1",
+    "UM-MODEL-v1"
+  ],
+  "target_ids": [
+    "UM-DILUTED-ESCAPE-PROBE-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "k≥4 的实际稀释终端矩阵。唯一扩展是在所有组的每枚阻塞任务增同一台 z 的1/2端。目标 T=1+1/k。",
+  "roles": {
+    "UM-DILUTED-SINK-PROBE-GAP-v1": "提供无 z 的原有限矩阵、T 配置点、每旧边条件 LST 点和旧星匹配。",
+    "UM-MODEL-v1": "固定列守恒、真实配置、不可拆负载及相同有限任务宇宙。",
+    "UM-DILUTED-ESCAPE-PROBE-GAP-v1": "在新矩阵上保全部旧证书并扩展新边，另以原任务重证整数峰。"
+  },
+  "explanation": "给旧点补 z 空配置或 z 边际零即可保覆盖。对新增阻塞边强制 z，普通任务全去大端、bridge 去任一根，组内终端余量总 NT−k=N−1。删去该组已经固定到 z 的一枚阻塞，余者按终端剩余容量比例分配，所有旧/新行负载≤T。旧星被测试的任务集只可能因新小备选而缩小，沿用旧互异匹配。新 z 星可把各组阻塞分别注入本组终端，所有备选时间1>T/2。GHMR 唯一必走大边的任务是 bridge，核心父的 k 枚唯一小端普通任务有互异大备选，任一强制大端后仍可兼顾 bridge 或将 bridge 放另一根。终端没有该类可选任务，z 无强制大边目标，故首轮零删。整数上界用旧单路径且不去 z。B<2−1/k 时每活跃父迫至少两子，h≥3 迫四个不同底组各让至少一不同阻塞去 z，z 负载≥2，故实际下界重新成立。",
+  "scope": "分开的 CONFIG 点、逐边普通 LST 点、星及现行 GHMR 的共同通过，和同一完整扩展实例的真实最优。k=4 全边复跑核4562旧/352新点，独立实现仅58旧/44新点但全部4394 GHMR与4914星。两类运行不可互换。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md",
+      "sha256": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+      "section": "6. 终端容量稀释族"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md",
+      "sha256": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+      "section": "8. 共享小端逃逸扩展"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/稀释终端与共享逃逸的分离证书--资源.md",
+      "sha256": "680d91db2e23fb664e0b202b512e2693ddcc1e101fa0b8c7963401ab00a0798b",
+      "section": "共享逃逸阶段：所有组共用唯一一台z"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/稀释终端与共享逃逸的全边原程序复跑--计算.md",
+      "sha256": "c7881cc9ac23ec2c03cede874e7e02c0d94a670fe9090879bb0d64e4d5c57afc"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "Boss7 在本定向 repair 实读当前 escape v5、相关完整构造与所列证据后复核。源页§2.1仅勘误 only_mandatory_job=0 的解释：0是 bridge 任务编号，唯一 mandatory 集合为{bridge}，并非数量零；原程序与 raw JSON 均未修改，数学陈述本来正确。重新核对 ALL{UM-DILUTED-SINK-PROBE-GAP-v1,UM-MODEL-v1} 到完整 escape 目标：保旧 CONFIG/独立 LST/星，补新 z 边与 GHMR mandatory bridge 匹配，并以至少四个不同活跃底组迫同一台 z 负载≥2 重新证明整数 OPT；保 transfers/unconditional 与 whole_result。 继承有效前驱 boss6-rho-source-repair-repair-449d548146e03e73 的既有覆盖与原有限实验记录；本次未重跑科学程序，原全边运行与独立样本运行的时间、计数和归属不作更改。",
+  "whole_result": "同一真实共享 z 矩阵的 OPT 仍为2−1/k。在 T=1+1/k 有完整配置点、所有旧新边独立 LST 点、GHMR 及星首轮零删，因此比率2−3/(k+1)趋2。",
+  "inherited_review": {
+    "reviewed_by": "Boss1",
+    "review_note": "本包对照当前登记端点及所列正文，分别核对了完整原任务、条件量词和冻结证据的证明范围。",
+    "source_asset": {
+      "path": "map/edges/unrelated-machines-3a-3a-1b7557db7c2d59cd/sink-certificate-extension-shared-z.json",
+      "sha256": "c2904f309ec50ff6c3c7b53dfdbde86c30ed0ca068f3b83b4dbe56ac06043407"
+    },
+    "source_task_id": "boss6-rho-source-repair-repair-449d548146e03e73",
+    "note": "历史审读记录原样保留；本次新审读见 review_note，历史实验不归作 Boss7 新运行。"
+  },
+  "endpoint_pins": {
+    "UM-DILUTED-ESCAPE-PROBE-GAP-v1": "66015a65d9b3d856ed7c1435683456413f921e9f110caf78c0211a08a7ba51ed",
+    "UM-DILUTED-SINK-PROBE-GAP-v1": "3b46fbddf6453cea5421830810c7293e86b7dad8b3997908692b634bea37b88c",
+    "UM-MODEL-v1": "9e0366033d2ab38fffe159771a178a29146f75c0d5c2cea92c0b1a307e6269c5"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+    "archives/unrelated-machines/state/资源/稀释终端与共享逃逸的分离证书--资源.md": "680d91db2e23fb664e0b202b512e2693ddcc1e101fa0b8c7963401ab00a0798b",
+    "archives/unrelated-machines/state/计算/稀释终端与共享逃逸的全边原程序复跑--计算.md": "c7881cc9ac23ec2c03cede874e7e02c0d94a670fe9090879bb0d64e4d5c57afc",
+    "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+  },
+  "review_digest": "05aa3953e5a1c8b973e4aeb7e3e9cdba14fdd1ff3778a586a566b97dbed32038"
+}

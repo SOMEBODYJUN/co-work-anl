@@ -1,0 +1,56 @@
+{
+  "edge_id": "boss7-shared-z-row-count-exact-threshold",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-BIG-CARDINALITY-PROBE-v1",
+    "UM-DILUTED-ESCAPE-PROBE-GAP-v1"
+  ],
+  "target_ids": [
+    "UM-DILUTED-ESCAPE-ROW-COUNT-PROBE-THRESHOLD-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "k≥8，N=k(k−1)，h取原稀释双树首次(q^(h−1)/(k−1)≥1/2)的层数；普通端时间1/k与1、桥单位两根、每组N−1件单位阻塞在组内N终端及全局唯一半时z可用。给非负有理C，先剪p>C，再在同一个完整逐边条件assignment-LST点中强制一边为1，并加入每行严格p>C/2的计数≤1；同步迭代删除。",
+  "roles": {
+    "UM-BIG-CARDINALITY-PROBE-v1": "承重使用其同条件严格大件计数的安全性、N个终端单位槽减去N−1阻塞的账本及同步逐层删除证明；无z时a≤1和原准确阈值结论不直接移植至共享z。",
+    "UM-DILUTED-ESCAPE-PROBE-GAP-v1": "承重使用完整原双树/私有终端组/唯一全局半时z矩阵，保留全部原任务和资格的扩展，以及必须重新证明的实际OPT=2−1/k；其弱独立接口通过T不直接推出本加强阈值。",
+    "UM-DILUTED-ESCAPE-ROW-COUNT-PROBE-THRESHOLD-v1": "由当前同一点共享容量账本和阈值处七类完整强制点，得到全部非负有理C的接受充要条件及原矩阵真实OPT的严格差。"
+  },
+  "whole_result": "对每个上述整数k≥8及每个非负有理C，逐边同条件LST加严格大件行计数的同步删除过程接受当且仅当C≥C*=(2k−1)/(k+2)；C≥C*时每条原资格各自有完整有理强制点，故首轮零删。原矩阵真实OPT=(2k−1)/k>C*，差为(4k−2)/(k(k+2))。",
+  "explanation": "C<1先剪空bridge。若1≤C<C*<2，在底父强制incoming单位边，普通任务向组内终端总质量a满足1+(k−a)/k≤C，故a≥k(2−C)。本组阻塞去唯一z总质量记e；终端严格单位计数相加为a+(N−1−e)≤N，故a≤1+e。同一个完整条件点中，z实际半时负载含全实例所有组非负质量，故本组e≤2C。因此k(2−C)≤1+2C等价C≥C*，矛盾；底父incoming全删。上一层失去全部向下大端后，强制incoming使其k个小任务全留父、负载2>C；同步向上传播直至bridge两端空域，其他提前删边只会加强不可行性。反向令C=C*、d=2−C=5/(k+2)，有kd=1+2C、C−3/2=(k−8)/(2(k+2))≥0及C−(1+d)=(k−8)/(k+2)≥0；严格大件恰为时间1端，1/k与1/2不计大。完整基点把bridge两根各1/2、全部普通留父、每组N−1阻塞单射到N终端且z空；根负载3/2，其他核心1，终端≤1，全部列和1。七类原资格逐一为：(1)强制bridge到一根，该根每条出任务向不同孩子送d，根负载C、大件1；孩子各1+d≤C、大件d，另一根负载1。(2)任意普通小端已由基点强制为1。(3)普通大端进非底核心v时将该件全离源父，v每条出任务送d；v负载C、大件1，其孩子各1+d≤C、大件d，源父仅减1/k；v非根，不叠bridge。(4)普通大端进底父v时其k条出任务各送d，终端普通质量u_t为d或0，a=Σu_t=kd。对本组每枚阻塞，在终端t放(1−u_t)/(N−1)、在z放(a−1)/(N−1)；非负且a≤k≤N，每枚列和(N−a+a−1)/(N−1)=1。各终端负载与严格计数恰1，唯一z总质量a−1=2C、负载C且大件计数0，其他所有组的z质量仍0。(5)普通任务终端大端强制为1，将本组N−1阻塞单射到其余N−1终端。(6)阻塞的任一终端大端用含指定边的单射。(7)阻塞的z端仅该件去z、其余N−2阻塞仍组内单射，z负载1/2、大件0。未改任务与组全部沿用完整基点，所有原列、原资格保留。C≥C*继续使用同点，容量放宽且严格大件集合只缩小，因此每条原边首轮不删。实际OPT不能因加资格直接继承：B<2−1/k使每个接单位incoming的父至少向不同孩子送两件；h≥3迫≥4个不同底组各送≥2件普通终端任务。B<2令终端每机至多一件单位任务，每组N−1阻塞因此至少一枚去共同z，四枚不同阻塞使z负载≥2>B。完全不用z的单活跃路径调度达到2−1/k，故OPT等式成立。无z时e=0恢复a≤1，原准确阈值与本新族C*各守作用域。",
+  "scope": "只给指定原稀释共享半时z族的精确加强探针阈值，复杂度按显式展开输入。其实际OPT/C*=1+2/k趋1；较弱独立CONFIG/LST/GHMR/星接口在T=1+1/k的比值2−3/(k+1)趋2是另一合同。k<8加强探针精确阈值、同条件共同CONFIG及多边联合条件保留开放；不推出一般UM算法或复杂度困难性。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/共享半时逃逸的逐边大件计数探针精确阈值--定理.md",
+      "sha256": "eeed52e7814ebaa150e88fb8a629e4f6cadd89bc1cfccb9aae160377e4fb2e0c"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md",
+      "sha256": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+      "section": "7. 加入大边基数不等式后的准确修复边界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md",
+      "sha256": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+      "section": "8. 共享小端逃逸扩展"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md",
+      "sha256": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+      "section": "6. 终端容量稀释族"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "Boss7及同身份fresh worker完整实读本任务七份正文、六个相关registry记录，逐类型重建所有列和、严格大件分类、根3/2基线、1+d子负载、唯一z全局容量、同步层递推及重新建立的整数OPT；未重跑旧大型实验。原扩展与底座程序均完整读，确认mandatory=={bridge}且字段0直接为桥ID；其旧源最小勘误不改变本阈值数学。另完整实读既有collapse-diluted-terminal-groups边，确认无z族全边最优见证逐边各自存在，未将同一最优点误用作全部强制。保留k<8及共同CONFIG/多边条件开放，不以有限数值替代一般证明。",
+  "endpoint_pins": {
+    "UM-BIG-CARDINALITY-PROBE-v1": "605b6579801e34bbd52b8be461716530aba9da89b0341d80da715adb8de9bbd3",
+    "UM-DILUTED-ESCAPE-PROBE-GAP-v1": "66015a65d9b3d856ed7c1435683456413f921e9f110caf78c0211a08a7ba51ed",
+    "UM-DILUTED-ESCAPE-ROW-COUNT-PROBE-THRESHOLD-v1": "fc52c7d71a56ec19a99eeb3d4bf4d6cc4a4dde419bb444d38feb7bc5d7cc47d7"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/共享半时逃逸的逐边大件计数探针精确阈值--定理.md": "eeed52e7814ebaa150e88fb8a629e4f6cadd89bc1cfccb9aae160377e4fb2e0c",
+    "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0"
+  },
+  "review_digest": "4d9a8fef063d4e23677e10ab54bdd07dff61f91dbf35b93733a76d4418561b5e"
+}
