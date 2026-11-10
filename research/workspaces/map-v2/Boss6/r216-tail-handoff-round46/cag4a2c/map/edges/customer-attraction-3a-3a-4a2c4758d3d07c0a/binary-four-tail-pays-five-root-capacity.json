@@ -1,0 +1,53 @@
+{
+  "edge_id": "cag-4a2c45-binary-four-tail-pays-five-root-capacity",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/binary-four-tail-two-slope-profit"
+  ],
+  "target_ids": [
+    "customer-attraction/five-player-maximum-theme-root-capacity"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "恰五人、有限单位客户共同标签目录、任意完整有序历史纯SPE σ；u为actual第一人收益，K为全目录最大主题大小。强制任意最大主题T后沿同σ得到真实四尾，比较始终使用同一最优五索引元组，允许重复/空主题。",
+  "roles": {
+    "customer-attraction/binary-four-tail-two-slope-profit": "在T造成的二值背景1_T和actual首题造成的二值背景1_A0，对每个四比较索引补元给同一四尾两斜率预算1999V0/1000+5V1/3。",
+    "customer-attraction/five-player-maximum-theme-root-capacity": "通过整数根容量、同一最优元组五补元平均及根IC z≤u得到全部四条容量行、任意主题后两切割和actual首步行。"
+  },
+  "explanation": "K=0时各量0。K>0时每实际节点改最大主题至少K/5，故每人≥K/5，K/5≤u≤K≤W且O≤5K。强制根最大主题T后的真实四尾从T内取得V1=K−z，外取得V0=尾外覆盖，原根IC给K/5≤z≤u。内部客户总负载c∈{1,…,5}，四尾主题总成员≤4K，所以V0≤5K−Σ_T c。对k=1,…,4，c+k(k+1)/c−(2k+1)=(c−k)(c−k−1)/c≥0，故V0≤(4−2k)K+k(k+1)z。Cauchy另给V0≤5K−K²/z；只在K>0时除z。\n\n固定一个最优五索引元组并集U、O=|U|。对每个索引i删去它得四元组T_−i。source在同一个背景1_T、同一个真实四尾上同时给R_(1_T)(T_−i)≤aV0+bV1，a=1999/1000,b=5/3。客户在最优五元组中出现j次：若不在T，平均贡献为4/5(j1)或1(j≥2)；若在T，平均贡献1−6/[5(j+1)]≥2/5。因此五补元平均≥4O/5−2|T∩U|/5≥4O/5−2K/5，得4O/5≤aV0+bV1+2K/5。五条比较只平均同一预算，没有付五份互斥枝利润。\n\n代入V1=K−z和四容量上界，z系数ak(k+1)−b均正，可用z≤u。k1…4精确化整得到1200O≤9097K+3497u；1200O≤3100K+15491u；1200O+2897K≤33482u；600O+4447K≤28735u。每合法Q有|Q|≤K，后两行左侧正K系数可弱化为|Q|，方向保持。\n\n在actual分支首题A0大小L，真实四尾有V0=W−L,V1=L−u。同一source及五补元平均先保|A0∩U|≤L，得2400O≤5997W−5000u+203L≤5997W−5000u+203K。actual首题从未被要求最大。全部source应用为合法二值背景后的恰四真尾，强制根不当新最优者。",
+  "scope": "完整target全部必要不等式与域。它不单独half，也不把允许O/W>2的标量松弛点称SPE；四尾总利润始终按同背景R计算。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/二值背景四尾两斜率利润界--定理.md",
+      "sha256": "4cb7dc80a1ed748372f54fb4fef72c5dc6b84b0788a82f90c33508b859aa4056",
+      "section": "1. 完整模型与精确目标"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/二值背景四尾两斜率利润界--定理.md",
+      "sha256": "4cb7dc80a1ed748372f54fb4fef72c5dc6b84b0788a82f90c33508b859aa4056",
+      "section": "2. 同一完整策略的两条真实路径"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/二值背景四尾两斜率利润界--定理.md",
+      "sha256": "4cb7dc80a1ed748372f54fb4fef72c5dc6b84b0788a82f90c33508b859aa4056",
+      "section": "4. 完整客户域的精确恒等式"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/五人最大主题根容量切割--引理.md",
+      "sha256": "67df1a8328f9a55982630ea1323998e52da0eb47c2fe1f50b33148d730eb62d2"
+    }
+  ],
+  "reviewed_by": "Boss6/map-cag4a2c-round45-worker",
+  "review_note": "完整实读所列现行陈述及承重正文后逐式比较；复用成熟精确证明/证书，不重跑旧LP、SPE全树或有限扫描。关系的完整/局部范围按本字段明确，来源原计算不记本轮执行。",
+  "whole_result": "对target全部五人完整SPE，得到最大根四个整数容量切割、独立Cauchy容量、四条全局整系数行、任意合法Q的后两切割及actual首步2400O≤5997W−5000u+203K，完整保同σ与同最优五元组。",
+  "endpoint_pins": {
+    "customer-attraction/binary-four-tail-two-slope-profit": "ddc2cec54ae02af812c1744e176203cb66f297288b1fa14d8a1c512180adf0eb",
+    "customer-attraction/five-player-maximum-theme-root-capacity": "806a6568f3876f5a09dd1eb78b1a5dbbecca4c72a96ac479d81acaf3694898d6"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/二值背景四尾两斜率利润界--定理.md": "4cb7dc80a1ed748372f54fb4fef72c5dc6b84b0788a82f90c33508b859aa4056",
+    "archives/customer-attraction/state/引理/五人最大主题根容量切割--引理.md": "67df1a8328f9a55982630ea1323998e52da0eb47c2fe1f50b33148d730eb62d2"
+  },
+  "review_digest": "f606fa4d14e8867e9a84492cb81bff921f61dcf0502eb9d214a778f8cb015d6b"
+}

@@ -1,0 +1,53 @@
+{
+  "edge_id": "cag-4a2c45-occupation-conservation-pays-current-gap",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/integer-successor-occupation-reserve-and-self-tax-decomposition"
+  ],
+  "target_ids": [
+    "M-baa3cc8d26b049de921bbae4e67206a3"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定合法整数过去b、余n+1人且n≥1，以及同一完整形式计划的全部强制当前分支；a∈{0,1}，k∈{0,…,n}整数，d=1+b+a+k；所有期望来自同一当前分布p。q=Pp只平均真实n个后继主题，不预设后继SPE。",
+  "roles": {
+    "customer-attraction/integer-successor-occupation-reserve-and-self-tax-decomposition": "给同一I、V+与qᵀKp之间的完整守恒nqᵀKp=V++I，保额外槽分母及整数负载。",
+    "M-baa3cc8d26b049de921bbae4e67206a3": "用一次self-tax抵消同负载交叉项的精确正分解支付G−D，再合守恒；D换u另需当前IC。"
+  },
+  "explanation": "对一客户，source的I=(1/2)E[Δk(Δk+Δa)/(dd′)]。定义Qself=E[a/((b+1+k)(b+2+k))]，真实当前分母在a=1时为d−1。直接展开G_x−D_x=(1/2)E[Δa(Δa+Δk)/(dd′)]−Qself，所以I_x−(G_x−D_x)=Qself+(1/2)E[(Δk²−Δa²)/(dd′)]。\n\n唯一可能负项是Δk=0、Δa=±1。对每j，两种有序交叉对的概率共2p_(1,j)p_(0,j)，与1/2抵消后为−p_(1,j)p_(0,j)/((b+1+j)(b+2+j))。和同一个Qself合并为Σ_j p_(1,j)(1−p_(0,j))/((b+1+j)(b+2+j))。剩下Δk≠0时整数平方≥1≥Δa²。因此精确得到target正分解，两个显示部分均非负，故I≥G−D。\n\n与source同一份守恒相加：G+V+≤D+I+V+=D+nqᵀKp。若当前节点对同一完整计划的每个真实强制分支满足IC，D≤u，才可再≤u+nqᵀKp。后继理性不曾使用。Qself只合一次，不再在结尾额外扣税。V+分母比原真实叶多一个额外查询槽，不能替换原尾利润；本论证不控制另一侧pᵀKq或对称方向导数。分数k的负边界不属于本整数域。",
+  "scope": "完整target的逐客户正分解、CURRENT-GAP与带另付当前IC的推论；无跨枝钱包、WD普遍正导数或half结论。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/整数后继占用储备的全菜单自税分解--引理.md",
+      "sha256": "bc835b29bad4199d45b74985e61bdfe06339cce5c7ae2dc1d05d275dfa5de5fb",
+      "section": "1. 同一固定计划、全部当前行动及整数负载"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/整数后继占用储备的全菜单自税分解--引理.md",
+      "sha256": "bc835b29bad4199d45b74985e61bdfe06339cce5c7ae2dc1d05d275dfa5de5fb",
+      "section": "2. 占用恒等式与逐对非负"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/整数后继占用储备的全菜单自税分解--引理.md",
+      "sha256": "bc835b29bad4199d45b74985e61bdfe06339cce5c7ae2dc1d05d275dfa5de5fb",
+      "section": "3. 同一self-tax只付一次：I≥G−D"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/整数后继占用储备的全菜单自税分解--引理.md",
+      "sha256": "bc835b29bad4199d45b74985e61bdfe06339cce5c7ae2dc1d05d275dfa5de5fb",
+      "section": "4. 整数边界不是所有分数质量的结论"
+    }
+  ],
+  "reviewed_by": "Boss6/map-cag4a2c-round45-worker",
+  "review_note": "完整实读所列现行陈述及承重正文后逐式比较；复用成熟精确证明/证书，不重跑旧LP、SPE全树或有限扫描。关系的完整/局部范围按本字段明确，来源原计算不记本轮执行。",
+  "whole_result": "对target全部整数完整计划和p，完整得到其精确非负分解、I≥G−D及G+V+≤D+nqᵀKp；只有另满足当前同计划IC时，完整得到G+V+≤u+nqᵀKp。",
+  "endpoint_pins": {
+    "M-baa3cc8d26b049de921bbae4e67206a3": "f6a9d8237e3e67d37a0ef21c44c77bf9e7dfcf989e5cdb01b88f80b8f5da06a2",
+    "customer-attraction/integer-successor-occupation-reserve-and-self-tax-decomposition": "888a1910d16237a228b5fe864496845e6e873394f1d04347efba393ec6cd4c43"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/整数后继占用储备的全菜单自税分解--引理.md": "bc835b29bad4199d45b74985e61bdfe06339cce5c7ae2dc1d05d275dfa5de5fb"
+  },
+  "review_digest": "47057a815fc5048ee39025db18ede0b21cb420c6ad7e9702cdb4368ef7c9169d"
+}

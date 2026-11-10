@@ -1,0 +1,44 @@
+{
+  "source": {
+    "path": "archives/customer-attraction/state/审查/R216可信攻击与森林前缀候选的证据边界增量--审查.md",
+    "sha256": "8b44a99c97346cdc91c2ffeb21797104a41ada3b7071834f4a55dfbc6e8bf13d"
+  },
+  "replacement_sha256": "b2dd2ff9768dfb2dac7e2e96e5405672d9df90647ff51e0992ca76000d2cd6eb",
+  "minimal_exact_replacement": {
+    "old": "$$\\sum_x d_x\\le mM(k)+(m-1)M(k)=(2m-1)M(k),$$",
+    "new": "$$\\operatorname{OPT}_m=\\sum_{x:d_x>0}1\\le mM(k)+(m-1)M(k)=(2m-1)M(k),$$"
+  },
+  "proof_of_error": "m=2，单客户单非空主题，最优比较两次同题d_x=2，唯一背景k_x=1，M=1/2；误式给2≤3/2。正确式左侧覆盖客户数1。",
+  "mathematical_scope": "主forest candidate正文静态(S)已正确，UTP与F-THETA开放状态不变。此补丁只修证据笔误，不新增定理或反例对象。",
+  "affected_registry_records": [
+    {
+      "object_id": "customer-attraction/forest-incidence-individual-last-slot-threshold-and-UTP",
+      "version": 2,
+      "object_pin": "92bb69bc44eab903ea43928214cb62245bf78477515277ce07ae1262f959a796",
+      "references": [
+        {
+          "path": "archives/customer-attraction/state/审查/R216可信攻击与森林前缀候选的证据边界增量--审查.md",
+          "sha256": "8b44a99c97346cdc91c2ffeb21797104a41ada3b7071834f4a55dfbc6e8bf13d",
+          "section": "森林末位候选与有限证据"
+        }
+      ],
+      "semantic_effect": "forest静态证据公式笔误修正；另一节数学不变但全文字节SHA变化，均须更新引用并增record版本。"
+    },
+    {
+      "object_id": "customer-attraction/position-aware-optimal-query-owner-touch-penalty",
+      "version": 2,
+      "object_pin": "ee9e62735dd136502b26b010e3103877c2f070b6ed26de0ea2cf639ee0cebeea",
+      "references": [
+        {
+          "path": "archives/customer-attraction/state/审查/R216可信攻击与森林前缀候选的证据边界增量--审查.md",
+          "sha256": "8b44a99c97346cdc91c2ffeb21797104a41ada3b7071834f4a55dfbc6e8bf13d",
+          "section": "真实根支撑的可复用界"
+        }
+      ],
+      "semantic_effect": "forest静态证据公式笔误修正；另一节数学不变但全文字节SHA变化，均须更新引用并增record版本。"
+    }
+  ],
+  "root_actions_required": "先保存本完整成熟稿/handoff；Root修规范源、更新所有命中SHA与record版本、baseline/registry及受影响任务。核心forest改版后用fresh worker窄续本组，不由当前worker冒充新core已审。",
+  "proposed_patch": "map/edges/customer-attraction-3a-3a-4a2c4758d3d07c0a/R216-coverage-count-fix.patch",
+  "full_replacement": "map/edges/customer-attraction-3a-3a-4a2c4758d3d07c0a/R216-corrected-full-replacement.md"
+}
