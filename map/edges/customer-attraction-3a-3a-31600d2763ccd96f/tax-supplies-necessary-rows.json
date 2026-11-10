@@ -1,0 +1,46 @@
+{
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss4",
+  "edge_id": "boss4-two-tail-tax-supplies-two-label-necessary-rows",
+  "kind": "implies",
+  "source_ids": [
+    "CA-TWO-REMAINING-TAX"
+  ],
+  "target_ids": [
+    "customer-attraction/two-label-actual-path-rational-coverage-certificates"
+  ],
+  "conditions": "同一完整SPE实际词a∈{0,1}^m，2≤m≤10；比较元组(T_1,…,T_m)允许重复且来自完整共同目录；p是前m−2位的逐客户实际负载。",
+  "roles": {
+    "CA-TWO-REMAINING-TAX": "对每对比较位置给同一背景、同一真实末两位的税上界H",
+    "customer-attraction/two-label-actual-path-rational-coverage-certificates": "全目录证书中的P、L及三类Q必要行"
+  },
+  "explanation": "对原子(b,c,j)定义h=v_(m−1)+v_m+bit(a_(m−1))/[(p+1)(p+2)]。税引理对每两个比较位置的合法主题给剩余总利润≤H=h·x。按位置对求和，恰有j(m−j)个单覆盖对及j(j−1)/2个双覆盖对，故P=binom(m,2)h−j(m−j)/(p+1)−j(j−1)/(p+2)与非负客户质量内积≥0。取实际标签的三类比较对得Q=h−t/(p+t)，t=0时分式约定0。又当j≥1，j(m−j)/(p+1)+j(j−1)/(p+2)≥(m−1)/(p+1)；将P乘1/(m−1)，加前缀份额p/(p+1)，即L=(m/2)h+p/(p+1)−1_(j>0)非负。j=0项非负。真实末两人税只提供这些行，客户总数/目录规模不受限制；它本身没有给出最终β。",
+  "contribution": {
+    "result": "证得目标有理证书采用的全部末两位税必要行P、L、Q的非负性，保留任意真实离轨回复、比较位置重复和同标签情形。",
+    "remaining": "目标整条β表另用各位置SPE分母保底K/S/C行、1022个完整规范词及各词非负有理对偶/原子余项；本边不把税引理单独宣称为全部β的证明。冻结证书另已精确运行核验，但不列为本边独立节点前提。"
+  },
+  "scope": "目标证明的末两位必要行部分；背景剩余收益不是完整福利，最终根W需要目标证书的其它行。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+      "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/两标签实际路径的全目录有理覆盖证书--计算.md",
+      "sha256": "fabe9609d88c44bfebde1436bf8c51fc3ab5b2b1482d582ad7361e64955c3a8c",
+      "section": "全目录比较的有限原子与真实必要行"
+    }
+  ],
+  "review_note": "Boss4重构位置对计数和P→L缩放，核j=0与重复主题边界；核验器完整运行1022词/39930余项/44私有案例通过，未把算术核验提升为一般SPE补全。",
+  "endpoint_pins": {
+    "CA-TWO-REMAINING-TAX": "eb63a8d1cd934879f5f7f25f633b4bf753973f405a7b8db91bed63f633de7d15",
+    "customer-attraction/two-label-actual-path-rational-coverage-certificates": "4e78e1c44cb9ae8cdd94084c344ee15133b2ff6da06a9ce904c8259f2a4ac03f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/固定背景两人税界--引理.md": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+    "archives/customer-attraction/state/计算/两标签实际路径的全目录有理覆盖证书--计算.md": "fabe9609d88c44bfebde1436bf8c51fc3ab5b2b1482d582ad7361e64955c3a8c"
+  },
+  "review_digest": "682e33fdb7e1c32472a767bba26e806bc05e57edc3325ec7cedd70a708f9e36a"
+}
