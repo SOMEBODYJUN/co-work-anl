@@ -1,0 +1,71 @@
+{
+  "edge_id": "um-d1188acb-slots-and-forest-pay-covered-selector-upper-bound",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1",
+    "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1"
+  ],
+  "target_ids": [
+    "UM-UNIT-READOUT-SELECTOR-MIXING-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "限显式私有单位双树，同一原P的p≥1份完整峰≤1见证，逐变量指定根至少被一份见证采用。非空保N=k^h≥p。全变量mandatory，内部树私有，无额外任务或预载；每叶保所属clause的全体原unit资格。",
+  "roles": {
+    "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1": "在k≥p分支把规范化见证平均的分数支持转成同一全局覆盖匹配，行包络和单位槽数同时给负荷与件数。",
+    "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1": "保selector正规化完整YES，使被选轨全树下传、全部原叶外送；在k<p分支把匹配得到的r=1原路径森林解码回完整调度。",
+    "UM-UNIT-READOUT-SELECTOR-MIXING-v1": "本边支付给定见证的全部重组构造上界。逐p下界族与N<p反例由目标原证明给出。"
+  },
+  "explanation": "先按C=1、r=k正规化每份完整见证，所选根不动、整条所选轨全下传，另一轨全父置。同clause单位机等价，逐见证可将其已用原unit一一重命名到前min(A_c,d_c)台，保原资格并避免按二进制容量数值建图。空变量返空，p=1直接返规范化的同一profile见证。若k≥p≥2，固定全部selector到指定根，并将未指定轨所有原边/叶任务固定父置。对余下指定轨任务，在每个原机平均p份正规化见证的残余指派；每件原任务列和1且仅用自身旧合法端。按真实成本降序及原任务编号铺单位槽。同一原任务同机的重复出现相邻，x=m/p区间细看为m个连续的1/p片，仅用于算包络，匹配左侧仍是一件原任务。机器i的Nᵢ个带标签出现项形成⌈Nᵢ/p⌉个槽。记降序出现项为w_j，尾部补零，O=Σ_(j≥0)w_(jp+1)是行包络，S_a=Σ_(j≥0)w_(jp+a)，a=1,…,p。对a≥2逐项有w_(jp+a)≥w_((j+1)p+1)，故S_a≥O−w₁，S_1=O；于是O≤Σ_j w_j/p+(1−1/p)w₁。空行包络为0。指定轨非根无固定新负载，残余见证平均负荷≤1且w₁≤1，故新负荷≤2−1/p。每指定根在至少一份见证中无任何本地outgoing留父，其余份各至多k枚1/k，去掉selector后Nᵢ≤k(p−1)。新selector负载1加至多⌈k(p−1)/p⌉枚small，故≤2−⌊k/p⌋/k，此界也支配非根。未指定轨全父置负载1，内部私有性排除其收到残余任务。每原clause unit每份至多一枚残余叶，Nᵢ≤p，故同一个槽匹配只给至多一枚unit叶。所有固定和匹配任务一次回填。若k<p且N≥p，建变量到其指定轨某叶可去的原clause unit的二分图。任意变量子集U按每变量指定轨出现的一份见证分桶。最大桶有至少⌈|U|/p⌉个变量，该见证把该桶的全部N枚每变量真实叶送到互异原unit，均是U的邻居。因此邻居数至少N⌈|U|/p⌉≥|U|。Hall给每变量一个不同原unit，取该变量指定轨能到此unit的一枚原叶及唯一根叶路径，共同组成r=1森林，正规形还原峰≤2−1/k。写k=pr+s、0≤s≤p−1，k≥p时r=⌊k/p⌋≥1且k≤(2p−1)r；k<p时1/k≥1/(2p−1)。两支均给统一界。见证规范化、构造显式有理槽或截断单位机匹配、恢复原调度均按P和所有给定见证的总位长多项式。",
+  "scope": "同一私有双树原P的给定见证重组。k≥p使用同一个全局槽匹配的件数与包络，k<p使用同一原clause单位容量的叶匹配。p=2特化给2−⌊k/2⌋/k≤5/3。N<p的交叉clause反例及逐p锐性不是本边所推。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/槽包络凸化与共同提取的不同对象--资源.md",
+      "sha256": "2e5e5267c8a7aed22408fe87babe78ac80a4bcc11a38239648eb90256c26a19c",
+      "section": "单行定义及可提取性"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+      "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+      "section": "2. 实际调度到必选森林及完整正规化"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+      "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+      "section": "3. 必选森林到实际完整调度"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md",
+      "sha256": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+      "section": "4. 边界、构造性和总位复杂度"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-joint-projection/original/research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+      "sha256": "425af66b7eaa6c8317398f1806aceeae869459ffb57ee9b89c2a6fd2d029070f",
+      "section": "3. 完整 YES 选择状态的任意坐标重组"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-joint-projection/original/research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+      "sha256": "425af66b7eaa6c8317398f1806aceeae869459ffb57ee9b89c2a6fd2d029070f",
+      "section": "4. 对每 p 的锐例及准确否定范围"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "核原森林C=1的两向构造及有序槽包络，把原任务x=m/p的连续区间逐项与带见证标签的p分片对应。逐机核指定根/非根、未指定轨、原clause四类，同时核小k分支的任意变量子集Hall量词、原unit截断和r=1回填。保原上界的p1、p2与两k分支，把逐p锐性留给原例。",
+  "contribution": {
+    "result": "给同一P的p份完整峰≤1见证和被覆盖的指定profile，非空N≥p时确定性位多项式输出保根的完整实际σ，k≥p给2−⌊k/p⌋/k，k<p给2−1/k，统一≤2−1/(2p−1)。p1保YES，空变量返空。",
+    "remaining": "本边付整套构造上界。逐p达到统一指定profile界且全局OPT仍为1的锐族、N<p时的精确失败及据此限定的反驳范围仍由原selector正文承担；给定见证的构造也不提供未知完整YES的搜索。"
+  },
+  "endpoint_pins": {
+    "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1": "cb19e6e1237754a8203740739689cebc96785f7cff55cf69c7ff1ecf61c64ebf",
+    "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1": "bd66f8cfda3245886e9ba6d3075b5ed8f5e5d760675d05ee33cfd19d883d6741",
+    "UM-UNIT-READOUT-SELECTOR-MIXING-v1": "31c218fe0b3b3ad6c3661d4df2f23b4357d7c50b5d724784f54883be5ad9ba6a"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/槽包络凸化与共同提取的不同对象--资源.md": "2e5e5267c8a7aed22408fe87babe78ac80a4bcc11a38239648eb90256c26a19c",
+    "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/comparisons/unit_readout_pruned_forest_boundary.md": "225441481810c629afb4af0bcb5d5eb19dad505a30c2680461bd4255dba30b90",
+    "archives/unrelated-machines/tools/evidence/um-joint-projection/original/research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md": "425af66b7eaa6c8317398f1806aceeae869459ffb57ee9b89c2a6fd2d029070f"
+  },
+  "review_digest": "555868478a38abf5842869c0d5b8ef7a255e3372a131b95d236920d74fb603ba"
+}

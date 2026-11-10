@@ -1,0 +1,54 @@
+{
+  "edge_id": "um-d1188acb-half-integral-slots-to-two-actual-interpolation",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1"
+  ],
+  "target_ids": [
+    "UM-TWO-ACTUAL-INTERPOLATION-BULK-FALSE-ESCAPE-v4"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss2",
+  "conditions": "给同一显式原UM矩阵P及两份完整峰≤T的实际调度σ⁰、σ¹，T≥0。F为任意原任务子集，ν给每个F任务指定任意合法有限原端，无须在旧见证支持内或令ν自身峰≤T。分数槽只处理其余原任务。",
+  "roles": {
+    "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1": "给同一列守恒分数指派的有序单位槽包络与一次全局覆盖匹配。",
+    "UM-TWO-ACTUAL-INTERPOLATION-BULK-FALSE-ESCAPE-v4": "同一实际完整输出的原任务单次选择、各机非F件数上界及加回任意F后的负荷上界。"
+  },
+  "explanation": "对每个非F原任务z和原机i取xᵢz=(1[σ⁰(z)=i]+1[σ¹(z)=i])/2，列和为1且正支持只在原任务两个旧实际端。按真实pᵢz非增、原任务编号破平局铺单位槽。把长度1区间细看为同一个z的两相邻半片，只为计算几何，匹配左侧仍只有一个原z。每机带见证标签的Nᵢ个半片形成⌈Nᵢ/2⌉槽，每槽至多承一件。一个满区间可跨两个槽；只沿正交长连边，整数端点不会制造槽边。若两半片同槽，来自该原任务的分数匹配量合为1，仍仅匹配一次。排序半片成本为w₁≥⋯≥w_N≥0，包络恰为奇数位和O=w₁+w₃+⋯。偶数位和E满足O−E≤w₁=dᵢ（空行两者为0），且O+E=Lᵢ⁰+Lᵢ¹，所以同一个全局ST覆盖匹配同时给件数≤⌈Nᵢ/2⌉与非F实际负荷≤(Lᵢ⁰+Lᵢ¹+dᵢ)/2。把每个F任务在ν指定原端实际加回，真实总负荷再加tᵢ。此槽图也是作者整数流的成对槽图（平局顺序按同一原编号）。空F/空非F、T=0、同端双出现和zero非F全部保留；未用端即使很大也不计入dᵢ。排序、槽图、匹配和原任务恢复按显式总位长多项式。",
+  "scope": "有序槽包络在两份已给实际见证的半整数指派上的精确特化。只用全局覆盖匹配与给定x的行包络；固定阈值凸化、最优包络搜索及CONFIG分离不作前提。任意新ν可任意重，因此不把一般合同写成全机3T/2。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/槽包络凸化与共同提取的不同对象--资源.md",
+      "sha256": "2e5e5267c8a7aed22408fe87babe78ac80a4bcc11a38239648eb90256c26a19c",
+      "section": "单行定义及可提取性"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/两实际见证插值的流与双色完整证明--证明.md",
+      "sha256": "9f0e8e81dd698ba10d97b28a6744bd200e6bb9c9314208802af601927cf48028",
+      "section": "1. 一般原矩阵、固定原任务与完整合同"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/两实际见证插值的流与双色完整证明--证明.md",
+      "sha256": "9f0e8e81dd698ba10d97b28a6744bd200e6bb9c9314208802af601927cf48028",
+      "section": "2. 作者的完整整数流构造"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/两实际见证插值的流与双色完整证明--证明.md",
+      "sha256": "9f0e8e81dd698ba10d97b28a6744bd200e6bb9c9314208802af601927cf48028",
+      "section": "4. 两构造共同的精确负荷证明"
+    }
+  ],
+  "review_note": "逐项核对两实际完整证明第1至4节、槽包络几何和共同整数前缀证书。显式把同原任务同端的两个出现项与x=1区间对应，核原任务唯一匹配、奇尾/零价、严格正交长以及任意固定ν的真实加回。",
+  "whole_result": "有序槽包络对半整数x给同一合法完整τ，F按任意合法ν固定，非F每件只选自己的两个旧实际端之一；∀i同一τ满足件数≤⌈Nᵢ/2⌉及总负荷≤tᵢ+(Lᵢ⁰+Lᵢ¹+dᵢ)/2，构造确定性总位多项式。",
+  "endpoint_pins": {
+    "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1": "cb19e6e1237754a8203740739689cebc96785f7cff55cf69c7ff1ecf61c64ebf",
+    "UM-TWO-ACTUAL-INTERPOLATION-BULK-FALSE-ESCAPE-v4": "52ec5762785d9a93142d696d0b16ceff021b553f4e69fb02807cab584d598c3e"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/槽包络凸化与共同提取的不同对象--资源.md": "2e5e5267c8a7aed22408fe87babe78ac80a4bcc11a38239648eb90256c26a19c",
+    "archives/unrelated-machines/state/证明/两实际见证插值的流与双色完整证明--证明.md": "9f0e8e81dd698ba10d97b28a6744bd200e6bb9c9314208802af601927cf48028"
+  },
+  "review_digest": "23444f6db297cfa2bdcba2e1b45b9f97654f9488a6b85a4e7053566b481eaca5"
+}
