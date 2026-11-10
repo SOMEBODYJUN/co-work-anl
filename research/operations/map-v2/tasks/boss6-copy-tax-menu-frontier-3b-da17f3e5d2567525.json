@@ -1,0 +1,231 @@
+{
+  "definition": {
+    "task_id": "boss6-copy-tax-menu-frontier-3b-da17f3e5d2567525",
+    "stage": "3B",
+    "registry": "research/registry.json",
+    "object_ids": [
+      "CA-EXACT-PURE-SPE-ALL",
+      "M-66132ab86a054b33b1c753158dd4f3ad",
+      "M-94942bfb644042ea8039e44db39d1504",
+      "M-e3fc9489148a4369adfc1e663579be9c"
+    ],
+    "read_object_ids": [],
+    "input_pins": {
+      "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+      "M-66132ab86a054b33b1c753158dd4f3ad": "0d1506e745dbb578010d6e0f34c9f7695bb03c0913d2109537c53606e9e46733",
+      "M-94942bfb644042ea8039e44db39d1504": "7c9c1a31cabd9b2ca038a27bdc015dd08f8ed9c1947d318c95ff61d9860c9d50",
+      "M-e3fc9489148a4369adfc1e663579be9c": "bc64bc71cf5dcd7896fd8d91f53b243d05590c1aad82a4b2d5525f04c2fad288"
+    },
+    "write_paths": [
+      "map/edges/boss6-copy-tax-menu-frontier-3b-da17f3e5d2567525",
+      "map/receipts/boss6-copy-tax-menu-frontier-3b-da17f3e5d2567525.json"
+    ],
+    "goal": "同一完整有序历史CAG中，全集终局递推能否完整推出逐终局最小实际路径标量复制税及固定六人输入最大PC6缺口？比较同一终局内保留最小税为何无损，而跨不同终局的过去租金与未来利润同向Pareto极小或极大剪枝会损失祖先支持；精确区分六人理想DP与三四人固定反例、计数缓存与Markov策略、逐终局最小与逐客户或离轨枝同时最小。",
+    "context_plan": {
+      "budget": {
+        "context_tokens": 500000,
+        "window_source": "official-default",
+        "model": "gpt-6.1-sol",
+        "used_tokens": null,
+        "history_mode": "fresh-worker",
+        "reserve_tokens": 200000,
+        "reading_tokens": 300000,
+        "output_tokens": 100000,
+        "runtime_remaining_tokens": null,
+        "declared_remaining_before_reserve_tokens": null,
+        "assumptions": [
+          "Window source is declared, not discovered from this conversation.",
+          "Reading budget includes source text and object/task metadata.",
+          "Reserved context includes expected generated records and later reasoning/tool growth.",
+          "Fresh worker assumed; actual system/prefix usage is unknown and covered only by the engineering reserve."
+        ],
+        "budget_is_runtime_measurement": false
+      },
+      "reading": {
+        "chars": 273039,
+        "utf8_bytes": 332905,
+        "source_tokens": 199083,
+        "metadata_tokens": 11870,
+        "estimated_tokens": 211081,
+        "metadata_chars": 12902,
+        "metadata_utf8_bytes": 17836,
+        "distinct_files": 32,
+        "reading_segments": 32,
+        "token_count_is_estimate": true,
+        "estimators": [
+          "conservative-math-text-estimate-v1; not a tokenizer count"
+        ],
+        "unmeasured_refs": [],
+        "measurement_scope": "Requested complete text spans plus supplied metadata; binary evidence is not token-counted from raw bytes.",
+        "task_overhead_tokens": 128
+      },
+      "estimated_output_tokens": 13462,
+      "oversized": false,
+      "requires_export": false,
+      "reading_refs": [
+        {
+          "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+          "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/完整历史求解器的精确复现--计算.md",
+          "sha256": "08301e20c759f777651af65740a809fd0c3261e24b006047b90f30bae3bf42ca"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/R4表示层路线与接口--审查.md",
+          "sha256": "b083f4eb4abe44239ecf2de7920c06e4c26153e3c711e5091b22fc2a1569b225",
+          "section": "全集门槛与有序叶的精确条件"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/可信续局试验与动态规划交叉核对--审查.md",
+          "sha256": "ca49559f8693fcd42b5d473c927a567e0c0a819d72f277e7304d4598ab37508f",
+          "section": "四十条DP交叉记录的真正范围"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/固定输入同时轨道商的存在性与选择器边界--审查.md",
+          "sha256": "759aba64f361917cc40b9bcab8be6650b6215e639b6406d0ef01178231cb1d28",
+          "section": "模型、收益和完整历史终局集合"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/七个极大主题的六人整数终局集合搜索程序--程序.md",
+          "sha256": "0faef6f1fbb38e84e0f125c110dbc8663b98b6f0676211844f2901e6cda1a033",
+          "section": "为什么这个整数集合递推包括完整历史平局"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/双客户池的可信尾局搜索程序--程序.md",
+          "sha256": "f4859f6d311ea93158144886f53eede916b4eb8f4c93f9a2b492b1c01dceca35",
+          "section": "三层可信过滤与全部平局的自足证明"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/合法背景数值策略锥的利润归一与四份探索--程序.md",
+          "sha256": "a44e9d629df6cb327d6fac88f63be8c490f114cdd1b816bcbfc1d0b66b97d18b",
+          "section": "终局集合递推和count-target完整策略锥"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/整数安全聚合的轨道输入搜索与固定策略锥--程序.md",
+          "sha256": "3ececa548aa4612031f7815c15cfd04968d2b0af2a7344e876422cc36e9afc99",
+          "section": "Search的精确整数部分与全部历史续局"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/最坏可信终局与静态CCE差值交替发现器--程序.md",
+          "sha256": "649b2a9ed27cd4569c2d6cfea85b16d3496adbefe5e31c4586d35da361a5cdf9",
+          "section": "solve_spe：全部可实现计数与一棵完整树"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/最差顺序与静态PNE桥的精确有限阴性搜索--程序.md",
+          "sha256": "8fcbdb62efc9c2ef42730c272f231382666824394cfe09ef271c6b738f5377b0",
+          "section": "全部静态PNE和全部顺序终局"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/浮点终局全集递推与完整历史有理后核程序--程序.md",
+          "sha256": "b81b76db8d6ea7fc2cc204725293367ca6568e8785b8f7ff110e2140759dca22",
+          "section": "为什么计数集合可缓存，而完整策略不能强制匿名"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/静态PNE与残余双桥扫描的短路约简合同--程序.md",
+          "sha256": "f9172cb8aae5cbc49dbaa02ae7b80de76fe3a6d48c52e2e5f48993ad83c905af",
+          "section": "精确模型与规范闭包"
+        },
+        {
+          "path": "archives/customer-attraction/state/算法/对称不交卫星块的完整SPE结果轨道递推--算法.md",
+          "sha256": "b0c4e874c48d9124c842e8c144b1738202db6ef44e019b793fa71d6163e93c98",
+          "section": "完整历史结果集合为何允许按计数缓存"
+        },
+        {
+          "path": "archives/customer-attraction/state/资料/完整根查询证书的字段与审计范围--资料.md",
+          "sha256": "a3711f39be17eea77f922ba8934da03633474d3a62ca394d21af851e6cbea263",
+          "section": "完整策略的无损紧写与动作计数"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/完整历史策略锥的最低收益价格攻击--资源.md",
+          "sha256": "011bd76ef59d13973a9ae2dc3ca064adbe9f07b13b620bc520747cb17e8ad362",
+          "section": "完整策略客户锥与两步优化"
+        },
+        {
+          "path": "archives/customer-attraction/state/证明/有限完整SPE证书池与六人half边界--证明.md",
+          "sha256": "d751732561877e1936e59a78ea2f4434d8c12171cfdb6a47c21b4cfda4561131"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/归档策略有限计数状态与早停报告的精确边界--计算.md",
+          "sha256": "ceeeb590c59e69d7f7434566f7507f486f2319f37a14e140dae6ee52917817be"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/上传精确SPE脚本与个体安全压缩生成接续审查--审查.md",
+          "sha256": "3b739e6f439592a45ff1466e37b56827a89b9010b4e016151a6cf62771e30ae7",
+          "section": "2. `exact_spe.py` 的模型、递推和完整历史验证"
+        },
+        {
+          "path": "archives/customer-attraction/state/资料/完整根查询证书的字段与审计范围--资料.md",
+          "sha256": "a3711f39be17eea77f922ba8934da03633474d3a62ca394d21af851e6cbea263"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/末位负载尾和的原Fraction审计与抽证边界--资源.md",
+          "sha256": "f268efc46ddfb71ffcf798d5aa59a4d9e5e722260d399fb10803e2228048cdb4"
+        },
+        {
+          "path": "archives/customer-attraction/subarchives/six-providers/state/计算/十八主题完整逆推与前缀种子复核--计算.md",
+          "sha256": "f90821a2d15a866f712d3d2b9d3e4a43fda3df6f4ba53309d833f9fd529ecf28",
+          "section": "完整历史终局集合的精确递推"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/过去租金与未来利润同向帕累托剪枝的有限障碍--障碍.md",
+          "sha256": "091d3f80b6a0a57e3319cd8428149e12a70f356e4f73a38957eb720085f250cb"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/continuation-floor-resumed-boss2/four-pareto-cases-and-floor-consumption.json",
+          "sha256": "c58e04529d609d85eb2f658f6f3946bd73f203817200625af1b7c53e8d8a65e9"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/复制税的固定策略锥与全SPE最小税递推--程序.md",
+          "sha256": "5dfb3fe74fe8ba359081e06dfde5efe42448c7696cfb9ee6c63e94116eee9461"
+        },
+        {
+          "path": "archives/customer-attraction/state/反例/调和复制税逐分支归纳的六客户边界--反例.md",
+          "sha256": "c488db496a9be74dbd061e0825d16473d0a52140a27f80e7dc805478bc703b1d"
+        },
+        {
+          "path": "archives/customer-attraction/state/候选/六人全终局调和势与有序自复制税--候选.md",
+          "sha256": "b88c7ec28540ba43e40801c8b79d0bbdde37eb58de2145b4880bd605a764e08b"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/R286链式重查询与R291复制税边界--审查.md",
+          "sha256": "f9a94acc421e9d9c0a92552e47fd29955929e86c01a0dbb1d5fc18565a151208"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/same-layer-terminal-closure-and-potential-primary/original/parent/copy_tax_all_spe_probe.py",
+          "sha256": "20837680ecbfbcc6d2244d9d0965c6b33018cef1e7bf7d2dc2e4e561f2622f48"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/same-layer-terminal-closure-and-potential-primary/original/parent/copy_tax_all_spe_probe.json",
+          "sha256": "8a10945e20be38fb73ec91e8121b5ac29c8baea283e9f993d4fb3021609e2f96"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/same-layer-terminal-closure-and-potential-primary/original/parent/copy_tax_potential_probe.py",
+          "sha256": "9c9ca67044c91451a9394222f5c92c2ad66985752c74248c5fc01c61d34586f9"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/same-layer-terminal-closure-and-potential-primary/original/parent/copy_tax_potential_probe.json",
+          "sha256": "3511ddc9858226fb13713a3d68eb510ad24d046e51475488f3db17488cb20ea1"
+        }
+      ],
+      "deferred_candidate_ids": [],
+      "deferred_candidate_issues": {},
+      "comparison_priority": 0,
+      "family_hint": "CA-EXACT-PURE-SPE-ALL",
+      "scope_hint": "archives/customer-attraction",
+      "status": "complete-declared-references-planned",
+      "note": "Compare the stated mathematical question on all selected endpoints; if large, resume the same question in reading passes.",
+      "comparison_question": "同一完整有序历史CAG中，全集终局递推能否完整推出逐终局最小实际路径标量复制税及固定六人输入最大PC6缺口？比较同一终局内保留最小税为何无损，而跨不同终局的过去租金与未来利润同向Pareto极小或极大剪枝会损失祖先支持；精确区分六人理想DP与三四人固定反例、计数缓存与Markov策略、逐终局最小与逐客户或离轨枝同时最小。"
+    }
+  },
+  "state": "available",
+  "owner": null,
+  "request_id": "4c14e1f8bb234f8d9ee72a8039ca3ab5",
+  "requests": {
+    "4c14e1f8bb234f8d9ee72a8039ca3ab5": "plan"
+  }
+}
