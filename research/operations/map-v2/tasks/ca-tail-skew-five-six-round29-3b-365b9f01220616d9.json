@@ -1,0 +1,186 @@
+{
+  "definition": {
+    "task_id": "ca-tail-skew-five-six-round29-3b-365b9f01220616d9",
+    "stage": "3B",
+    "registry": "research/registry.json",
+    "object_ids": [
+      "CA-FIVE-HALF-EXACT-v1",
+      "CA-TWO-REMAINING-TAX",
+      "customer-attraction/six-player-true-maxroot-copy-envelope"
+    ],
+    "read_object_ids": [],
+    "input_pins": {
+      "CA-FIVE-HALF-EXACT-v1": "a6b1a6bb8f7da43559faf7606dc3ce20da46efbbed584f805b442fd799663c2c",
+      "CA-TWO-REMAINING-TAX": "eb63a8d1cd934879f5f7f25f633b4bf753973f405a7b8db91bed63f633de7d15",
+      "customer-attraction/six-player-true-maxroot-copy-envelope": "1ef77c6c938973e8dc551d388ca2445a489de2fae8f604ffab525b4b375a9e5d"
+    },
+    "write_paths": [
+      "map/edges/ca-tail-skew-five-six-round29-3b-365b9f01220616d9",
+      "map/receipts/ca-tail-skew-five-six-round29-3b-365b9f01220616d9.json"
+    ],
+    "goal": "在同一真实两尾前缀，旧三项IC恒等式和两个末位BR同时给强比较 f(T)+f(S)−g(T,S)≤min(u+v,2v)+g(C,C)：逐客户 t+s−ts≤1。五人原53行的AB/AE/Sbranch各query_equal包含每分支i恰四个j≠i，三强PAIR行各可减4Σ_i(u_{i,4}−u_{i,5})₊，原有理系数及正余项保留。六人八条复制包络逐条按原PAIR:k减3(u_{k4}−u_{k5})₊，只在有乘子的真实分支支付。核具体真实节点、倍率和原强比较式，保六人half开放。",
+    "context_plan": {
+      "budget": {
+        "context_tokens": 500000,
+        "window_source": "official-default",
+        "model": "gpt-6.1-sol",
+        "used_tokens": null,
+        "history_mode": "fresh-worker",
+        "reserve_tokens": 200000,
+        "reading_tokens": 300000,
+        "output_tokens": 100000,
+        "runtime_remaining_tokens": null,
+        "declared_remaining_before_reserve_tokens": null,
+        "assumptions": [
+          "Window source is declared, not discovered from this conversation.",
+          "Reading budget includes source text and object/task metadata.",
+          "Reserved context includes expected generated records and later reasoning/tool growth.",
+          "Fresh worker assumed; actual system/prefix usage is unknown and covered only by the engineering reserve."
+        ],
+        "budget_is_runtime_measurement": false
+      },
+      "reading": {
+        "chars": 166847,
+        "utf8_bytes": 233145,
+        "source_tokens": 165046,
+        "metadata_tokens": 7052,
+        "estimated_tokens": 172194,
+        "metadata_chars": 8460,
+        "metadata_utf8_bytes": 10919,
+        "distinct_files": 26,
+        "reading_segments": 26,
+        "token_count_is_estimate": true,
+        "estimators": [
+          "conservative-math-text-estimate-v1; not a tokenizer count"
+        ],
+        "unmeasured_refs": [],
+        "measurement_scope": "Requested complete text spans plus supplied metadata; binary evidence is not token-counted from raw bytes.",
+        "task_overhead_tokens": 96
+      },
+      "estimated_output_tokens": 8247,
+      "oversized": false,
+      "requires_export": false,
+      "reading_refs": [
+        {
+          "path": "archives/customer-attraction/state/定理/五人半覆盖--定理.md",
+          "sha256": "061ceb82629e9aac619630cf12d0d80ede9663474baf2302a100ceafe5dd634c"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/五人完整系数域核验--计算.md",
+          "sha256": "60cd333a6596ff268aa36feeb0fd723a26d7f97055720348f815f3af15704713"
+        },
+        {
+          "path": "archives/customer-attraction/state/证明/五人证书活跃行--证明.md",
+          "sha256": "ad93ab97ca4dea4a6362b0f3343f84377fd0e01607af74289ac8ea691fc60374"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/五人真实分支局部投影--引理.md",
+          "sha256": "a33566f40bef4904e8ee700acc2f1b924414abdbcf8a68e5f1247d60a5d9b0ce"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/五人最大主题根界--引理.md",
+          "sha256": "5f8845454a76c1be6515d1e42067684090d43ad9807e8e97df0ec3360a4c6b8e"
+        },
+        {
+          "path": "archives/customer-attraction/tools/half5-exact/certificate.json",
+          "sha256": "395e056b218d237abe8b85db894f0b1c37d2e14d55c74b1dca723abeceb6a44e"
+        },
+        {
+          "path": "archives/customer-attraction/tools/half5-exact/verify_certificate.py",
+          "sha256": "6ff64ab6d1e412227fd70a75f5892e5d768c97529600d194c1147d50c723556f"
+        },
+        {
+          "path": "archives/customer-attraction/tools/half5-exact/row_manifest.json",
+          "sha256": "cbc5f0c7b6238a1d0e622621c89851292c4ed94e946e36ed16b41e1bb851c0cf"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/五人精确证书的反例攻击语义审读合同--审查.md",
+          "sha256": "eefc952684e020d8a2b426296e5ae589107759eae57faaff8fffbf37588ba761"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/五人证书复核边界--审查.md",
+          "sha256": "519c03e47a791311919da286459f3bcbe025603b10d4a4482c7253a2fbf20bab"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/五人全域证明的旧引擎交叉核验与共同K信用--审查.md",
+          "sha256": "4ea0ea3b5f1d2549067b1c86345fccec1a975c2af2037e5ecaaf244c85cc98f1"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/五人上传证明包的原始字节链与同实现复跑--审查.md",
+          "sha256": "39305ca66d415623dd6e4e42e23b0d4ceab24a1e6b2bed659f2f1cdf1006b567"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/五人半覆盖上传证书与个体安全运输尾部五源接续审查--审查.md",
+          "sha256": "21243ef4cd7288e4e305dae1d3868a77da9ea67e73333619d03b438b246f020a",
+          "section": "2. Q-CAG-HALF-5 上传证书：完整域精确通过"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/五人证据与一般失败桥的历史清理范围--审查.md",
+          "sha256": "7f6c9f64734fea3300fc6f21b96b7bd32c1171ec633f6a9d35d901a162abc61d"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+          "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md",
+          "sha256": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/六人真实最大根复制的八条有理包络--定理.md",
+          "sha256": "ebf342127c9e87eed5d51bf314b70079252f8d7692b0cc63a29bc8b8864a0772"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/六人最大根有理包络的发现恢复与原审计--程序.md",
+          "sha256": "5eded2f47880b937041bac38ad192d44f4f3ee136632277dc6a6d1b6d3514c50"
+        },
+        {
+          "path": "tools/evidence/cag-maxroot-terminal-share-and-direction-primary/related-original/research/workspaces/customer-attraction/R-d1fe1e0c444e40d68b6813bf88db8fba/six_maxroot/verify.py",
+          "sha256": "58ae37e909bc1f080faceab0586376d056aef7d9bd6e39f16c7484b24cbc23a0"
+        },
+        {
+          "path": "tools/evidence/cag-maxroot-terminal-share-and-direction-primary/related-original/research/workspaces/customer-attraction/R-d1fe1e0c444e40d68b6813bf88db8fba/six_maxroot/exact_cuts.json",
+          "sha256": "f44870d1404f4e727852917fa6d1aa6c68e17ce5aa65252071ecf4baf2dd8c50"
+        },
+        {
+          "path": "tools/evidence/cag-maxroot-terminal-share-and-direction-primary/related-original/research/workspaces/customer-attraction/R-d1fe1e0c444e40d68b6813bf88db8fba/six_maxroot/exact_cuts_threecopy.json",
+          "sha256": "78c543b57919aa0ab4ea8a5ba1e86035f9524d09c6bed21fc8fe6a360dfa1b13"
+        },
+        {
+          "path": "tools/evidence/cag-maxroot-terminal-share-and-direction-primary/related-original/research/workspaces/customer-attraction/R-d1fe1e0c444e40d68b6813bf88db8fba/six_maxroot/exact_cut_directional.json",
+          "sha256": "4bdc70eadaf29d61540709773370f1c1c0baa96eef7f52f82d05f07cd9455dcf"
+        },
+        {
+          "path": "tools/evidence/cag-maxroot-terminal-share-and-direction-primary/related-original/research/workspaces/customer-attraction/R-d1fe1e0c444e40d68b6813bf88db8fba/six_maxroot/exact_check.json",
+          "sha256": "5359b62a4bc1cb96b4f8684a588cf46c2cb21fd14ebf9073e0fa3934b0ee0861"
+        },
+        {
+          "path": "tools/evidence/cag-maxroot-terminal-share-and-direction-primary/related-original/research/workspaces/customer-attraction/R-d1fe1e0c444e40d68b6813bf88db8fba/six_maxroot/exact_check_threecopy.json",
+          "sha256": "d52ffaba504d93fc782c3e13498ff6f81ae1319b8c09d3fcc95585057fd065f1"
+        },
+        {
+          "path": "tools/evidence/cag-maxroot-terminal-share-and-direction-primary/related-original/research/workspaces/customer-attraction/R-d1fe1e0c444e40d68b6813bf88db8fba/six_maxroot/exact_check_directional.json",
+          "sha256": "c4e8ab27b4a7d257c67f5a85565be83f1d47e5457c90163750a74c8f5766eeaf"
+        }
+      ],
+      "deferred_candidate_ids": [],
+      "deferred_candidate_issues": {},
+      "comparison_priority": 1,
+      "family_hint": "CA-FIVE-HALF-EXACT-v1",
+      "scope_hint": "archives/customer-attraction",
+      "status": "complete-declared-references-planned",
+      "note": "Compare the stated mathematical question on all selected endpoints; if large, resume the same question in reading passes.",
+      "comparison_question": "在同一真实两尾前缀，旧三项IC恒等式和两个末位BR同时给强比较 f(T)+f(S)−g(T,S)≤min(u+v,2v)+g(C,C)：逐客户 t+s−ts≤1。五人原53行的AB/AE/Sbranch各query_equal包含每分支i恰四个j≠i，三强PAIR行各可减4Σ_i(u_{i,4}−u_{i,5})₊，原有理系数及正余项保留。六人八条复制包络逐条按原PAIR:k减3(u_{k4}−u_{k5})₊，只在有乘子的真实分支支付。核具体真实节点、倍率和原强比较式，保六人half开放。"
+    }
+  },
+  "state": "available",
+  "owner": null,
+  "request_id": "e6ec733d61b047df8b79f87ce5665f8d",
+  "requests": {
+    "e6ec733d61b047df8b79f87ce5665f8d": "plan"
+  }
+}
