@@ -1,0 +1,71 @@
+{
+  "edge_id": "ca-two-tail-skew-pays-four-root-certificate",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-TWO-REMAINING-TAX"
+  ],
+  "target_ids": [
+    "CA-FOUR-UPPER-1499-750"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "零根背景，恰四名单位提供者，有限单位客户和有限非空真实集合共同目录，覆盖映射单射。取每份完整有序历史纯 SPE，允许空主题、实际与比较重复选择及任意历史依赖弱平局。",
+  "roles": {
+    "CA-TWO-REMAINING-TAX": "对同一固定实际前缀的每个合法比较二元组给普通税 H，配合该完整策略实际末位两条 BR 得逐对共同上界 H′=H−δ。",
+    "CA-FOUR-UPPER-1499-750": "在真实前缀 (A,B) 后把两人利润比较聚合为 P′=P−2δ，保全原四人根证书的12行、逐客户余项与独立 O 的系数。"
+  },
+  "whole_result": "对原四人零背景真实集合目录的每份完整纯 SPE，由实际 ABCD 和根改 D 后同策略真实 DQRS 所给12个合法非负行、原乘子及128项余项，原式(9)证明 OPT₄≤1499W/750。同一策略上令 δ=(u₃−u₄)₊，则进一步有 OPT₄≤1499W/750−323δ/250。若 W=0，则 OPT₄=0。",
+  "explanation": "固定实际有序前缀 h 及其客户背景 b，恰余两人。设实际尾部 (L,M)，两人的终局收益依次为 p,q，令 g_b(X,Y)=Σ_{x∈X∩Y}g_x，g_x=1/[(b_x+1)(b_x+2)]，G=g_b(L,L)，H=p+q+G，δ=(p−q)₊。普通税对每个合法比较对 (T,S) 给 R_b(T,S)≤H，其中源证明查询同一完整 σ 在 (h,T) 后指定的真实末位回复。另在同一个实际末位节点 (h,L)，分别查询合法 T、S。由 U_b(X,Y)=f_b(X)−g_b(X,Y)，2q+G−R_b(T,S) 等于 [q−U_b(T,L)]+[q−U_b(S,L)] 加 G−g_b(T,L)−g_b(S,L)+2g_b(T,S)。最后四项的逐客户系数除以 g_x 为 ℓ−ℓt−ℓs+2ts=ℓ(1−1_{t∨s})+(2−ℓ)ts≥0，其中 ℓ,t,s 是该客户在 L,T,S 中的会员位。故 R_b(T,S)≤min{H,2q+G}=H−δ=:H′。两项末位比较都用实际末位收益 q，而普通税在离轨点使用原 σ 的回复。δ 是整个两人子局的收益差正部，为每个索引对共同的单个标量。\n\n在四人零背景根令实际路径为 (A,B,C,D)，W=Σ_i u_i，O=OPT₄。客户在实际四主题的会员位为 a,b,c,d。对尾部取 h=(A,B)、背景 a+b、(L,M)=(C,D)、(p,q)=(u₃,u₄)，所以 H 正是原式(1)的 H，δ=(u₃−u₄)₊。取达到 O 的四个合法最优比较槽。对被其覆盖的客户，固定一个覆盖槽，含该槽的三个无序索引对各贡献至少 1/(a+b+1)，双覆盖时用 2/(a+b+2)≥1/(a+b+1)。未被最优覆盖的客户对应的原式(2)右端非正。遍历全部客户，六条 R_b≤H′ 相加后除以三，得 P′=2H′+Σ_x(a+b)/(a+b+1)−O=P−2δ≥0。比较槽可以重复，六个索引对的计数仍成立。原 E=4u₄+Σ_x(a+b+c)/(a+b+c+1)−O≥0，依旧是实际末位在 (A,B,C) 对四个最优槽的聚合比较，未对 E 再扣 δ。\n\n固定同一完整 σ，根改选 D 的真实路径为 (D,Q,R,S)，实际根比较给 F=u₁−z_D≥0，其中 z_D,z_Q,z_R,z_S 是该偏离路径的四名玩家收益。若 D=A，后继沿同一历史而自动一致。实际第二位在 (A) 可改选 C,D,Q,R,S 中任意一个合法主题 T 并按原策略续行，逐客户终局分母至多 a+3，故 K_T=u₂−Σ_x1_T(x)/(a+3)≥0。偏离枝上分别在 (D)、(D,Q)、(D,Q)、(D,Q,R) 比较 S,C,S,B，得到 L_QS=z_Q−Σ_xs/(d+3)、L_RC=z_R−Σ_xc/(d+q+2)、L_RS=z_R−Σ_xs/(d+q+2)、L_SB=z_S−Σ_xb/(d+q+r+1) 均非负。此处 q,r,s 是偏离枝三个主题的会员位，和尾部标量收益的局部记号分开。末个分母精确，前三个来自原策略续行的负载上界。\n\n按 (K_C,K_D,K_Q,K_R,K_S,E,P,F,L_QS,L_RC,L_RS,L_SB) 次序，原(9)乘子为 (341,302,306,302,355,354,646,1267,24,8,17,108)/1000。将原行展开，置独立符号 O 为零，逐客户余项 ρ 等于 (1499/750)·1_{a+b+c+d>0} 减去12行该客户加权项。按 ABCD 行、QRS 列的二进制字典序，原表 12000ρ 的128项全为非负整数。本次用精确有理数重算逐项相同，E 和 P 的 O 系数合计为 −(354+646)/1000=−1。零负载时收益份额记零，只有最优槽覆盖的客户仍由 O 计入。原 P≥0 及其他11条非负行给原结论。换 P 为 P′ 后，原恒等式左端扣 (646/1000)·2δ=323δ/250，余项仍完全相同。故 O≤1499W/750−323δ/250。若 W=0，则所有实际收益与 δ 都为零，由不等式得 O=0。\n\n正 δ 在真实四人全树可达。取三个互不交单例，有未选单例时按固定顺序选未选者，全选过时末位重复第一人主题。非根若有未选单例，则选它得一，已选单例至多一半。三个单例都出现时只能在末节点，三者收益同为一半。根任一偏离后仍由末位重复根主题，根每项收益为一半。于是每个有序节点都满足 IC。实际 W=3、O=3、δ=1/2，相对原1499/750根证书严格减少323/500。",
+  "scope": "四人零背景真实集合目录的根覆盖福利。P 的两人尾部比较只计 (A,B) 后剩余玩家所得。最优比较槽可重复，实际路径与真实根偏离路径保留同一完整有序策略。四人固定非零背景的剩余利润证书有独立的聚合校正。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+      "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+      "section": "完整证明：必须使用同一策略的真实离轨回复"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md",
+      "sha256": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee",
+      "section": "剩余收益不是根覆盖"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/四人真实根偏离福利界--定理.md",
+      "sha256": "ef0479f6a155fd078fdb7b99cf65666a7f98b7b98380330041ecc4f1bef2e802",
+      "section": "精确命题与状态"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/四人真实根偏离福利界--定理.md",
+      "sha256": "ef0479f6a155fd078fdb7b99cf65666a7f98b7b98380330041ecc4f1bef2e802",
+      "section": "末两人税比较与实际路径的两个聚合slack"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/四人真实根偏离福利界--定理.md",
+      "sha256": "ef0479f6a155fd078fdb7b99cf65666a7f98b7b98380330041ecc4f1bef2e802",
+      "section": "同一完整策略的真实根偏离及后继节点"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/四人真实根偏离福利界--定理.md",
+      "sha256": "ef0479f6a155fd078fdb7b99cf65666a7f98b7b98380330041ecc4f1bef2e802",
+      "section": "全部系数与精确非负恒等式"
+    }
+  ],
+  "review_note": "实读 v1 正文及尾部定义、税引理。复核每个非负行的真实节点和分母，重算六对下界、末位聚合、全部128项逐客户余项与独立 O 系数。只在聚合 P 行使用公共扣减，逐项核对精确系数与真实正 δ 见证。",
+  "reviewed_by": "Boss1/ca-tail-skew-root-round30-fresh-worker",
+  "endpoint_pins": {
+    "CA-FOUR-UPPER-1499-750": "d761ca025c265c7123a76fd74102c59d66b62c220bb22362edac275f0249d507",
+    "CA-TWO-REMAINING-TAX": "eb63a8d1cd934879f5f7f25f633b4bf753973f405a7b8db91bed63f633de7d15"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/固定背景两人税界--引理.md": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee",
+    "archives/customer-attraction/state/定理/四人真实根偏离福利界--定理.md": "ef0479f6a155fd078fdb7b99cf65666a7f98b7b98380330041ecc4f1bef2e802"
+  },
+  "review_digest": "09eba9f2eefec2976230d973a8d7fb438b0c5cea9ddf9ce9df86e5310800b8de"
+}
