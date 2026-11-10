@@ -1,0 +1,51 @@
+{
+  "edge_id": "wc-a507-selector-dual-fixed-template-cubic-necessity",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/allstate-selector-linear-alternative"
+  ],
+  "target_ids": [
+    "WCF-R3-SCALED-TEMPLATE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "在目标给定四玩家、七对互补资源、权重(1,1/(10m),1/(20m),1/(50m))与次数(32m²,2)的缩权族中，取辅助布尔极限的八个指定见证。M_α的七列按(a,b,c,d,e,f,g)排列。振幅原要求正有理，下述不可行性对非负实振幅同样成立。倍率为实数α≥r，r是p(x)=x³−x²−2x−1在(2,3)内的唯一根。",
+  "roles": {
+    "weighted-congestion/allstate-selector-linear-alternative": "提供对任意非空有限实矩阵B的严格非负原始证书和归一化非正对偶之间的替代。",
+    "WCF-R3-SCALED-TEMPLATE-v1": "接收指定八见证的辅助极限锥在所有α≥r不可行这一必要性贡献。"
+  },
+  "explanation": "前六对在支持者全到齐时收费对应振幅，末二次对在重玩家1使用时收费g。按0000、0001、0010、0011、0100、0101、0110、0111取代表，依次选玩家3、3、4、1、4、3、4、2（从1编号），全位互补态同成本同见证。以M_αt表示当前成本减α倍翻转成本，八行依次为g−αe；b+g−α(c+e+f)；a+g−α(c+f)；c+d+e+f+(1−α)g；g−αa；g−αc；b+g−α(a+c)；a+g−α(d+e+f)。令λ=(0,0,0,α²,1,α,0,α)/(α+1)²。权重非负且和为1。展开(α+1)²λᵀM_αt，a项αa与−αa抵消，c项α²c与−α²c抵消，d、e、f逐项同样抵消，b项系数为零，只余[α²(1−α)+1+2α]g=−p(α)g。因p在[2,∞)严格递增，M_αᵀλ的g坐标−p(α)/(α+1)²≤0，其余为零。故对每个t≥0有λᵀM_αt≤0，而八行全严格正会使该加权和严格正。尤其α=r时整个M_rᵀλ为零，四个正权行仍排除严格解；若八行只要求弱非负，则这四行余量必为零。对偶按实矩阵命题使用。极限矩阵的列是互补对振幅，有限游戏的实际成本和其他选择器需各自核证。",
+  "scope": "固定八个偏离见证的布尔极限锥，结论为所有α≥r的严格不可行性。有限G_m在r处的稳定性、其他见证分配及完整十四资源拓扑的最优倍率均另属其各自问题。普遍PNE存在须对全部选择器取对偶。",
+  "contribution": {
+    "result": "归一化对偶的唯一可能非零坐标为−p(α)/(α+1)²。它给出全部实α≥r的固定八行严格不可行性，含M_rᵀλ=0的精确端点。",
+    "remaining": "完整定理的正向部分为∀实α∈[1,r)∃正有理t∃有限M∀整数m≥M∀状态∃严格α偏离；其中t固定于所选α，随后的m共用该t。开区间有理可行性、统一成本误差E_m、有限余量运输与次数嵌入由目标正文另证。"
+  },
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md",
+      "sha256": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a",
+      "section": "全状态严格改善择证的线性替代"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md",
+      "sha256": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/十四资源既定偏离模板的三次根阈值--定理.md",
+      "sha256": "d9c67c259e194f6a516c2118fe3c021b1a306562a7a3368475865b97b88914e3"
+    }
+  ],
+  "reviewed_by": "Boss2 cubic-template mathematical worker",
+  "review_note": "实读selector自足矩阵替代、缩权定义的成本与证人、三次根定理及独立量词审查。从七mask重构16态成本和八个见证余量，逐系数核对对偶恒等式。当前目标v6更新的交叉审查只把32次有限证书的64次核查与逐态存在严格出口分开，极限矩阵和本证明不受影响。",
+  "endpoint_pins": {
+    "WCF-R3-SCALED-TEMPLATE-v1": "a6a293ad2e0863e8bee28de472d18f43d510dbe088254563490e60681c0b565e",
+    "weighted-congestion/allstate-selector-linear-alternative": "32b4a0b43b4f3f9bf47915836e1e02ee714339906ac960b66961a7e7760686ad"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a",
+    "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df",
+    "archives/weighted-congestion/state/定理/十四资源既定偏离模板的三次根阈值--定理.md": "d9c67c259e194f6a516c2118fe3c021b1a306562a7a3368475865b97b88914e3"
+  },
+  "review_digest": "56111f4688151f90aea3ba70a1b64fe16093fa26ce1fc3a0de4a66fdaf447d1c"
+}

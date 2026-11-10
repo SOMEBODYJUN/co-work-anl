@@ -1,0 +1,43 @@
+{
+  "edge_id": "wc-boss5-4932-finite-fourteen-family-gives-boolean-limit",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/scaled-fourteen-resource-family-and-limit"
+  ],
+  "target_ids": [
+    "M-30d382c7f97c48eea789aed8e8f93eed"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定 t=(a,b,c,d,e,f,g)∈Q_(>0)^7，整数 m≥1。七个 mask 为 0101,0112,1022,1100,1120,1122,1211，每个另配交换 1/2 的同费独立资源。玩家真实权重为 (1,1/(10m),1/(20m),1/(50m))，私人成本是资源延迟之和。T_j(m) 为该对支持总权重，前六对延迟 t_j(x/T_j)^(32m²)，末对延迟 g(x/T_7)^2。",
+  "roles": {
+    "weighted-congestion/scaled-fourteen-resource-family-and-limit": "提供每有限m合法游戏的完整权、mask、归一费用与固定振幅序列，支持真正的逐状态成本比较。",
+    "M-30d382c7f97c48eea789aed8e8f93eed": "导出八代表及互补的全部正成本极限表和有限minimax阈值收敛。"
+  },
+  "explanation": "每个有限 m 的支持总权重为正有理数，前六对和末对的正系数分别为 t_j/T_j(m)^(32m²) 和 g/T_7(m)^2，故最高次数恰为 32m²。前六对全支持到齐时归一负载为 1，费用恒为 t_j；任缺一名支持者，所缺权重≥1/(50m)，T_j≤117/100，归一负载≤1−2/(117m)，费用≤t_j exp(−64m/117)。末对支持全体，含重玩家一侧的归一负载在 1/T_7 与 1 之间，另一侧归一负载≤17/(100m)，故末对给与重玩家同侧的用户极限费用 g，另一侧为 0。逐资源求和得到正文八代表成本表，全位互补交换每对资源两侧而保持四人成本。末对使每人在任一有限状态都使用一项含自身正权的资源，故有限成本为正；极限表中每一项至少含一个正振幅，故极限成本也为正。每次真实偏离冻结其他人，只翻动自身位，再读取新状态同一玩家的成本。于是全部 64 个比值在正分母下收敛，B(G_m(t))=min_s max{1,max_i C_i^m(s)/C_i^m(s^⊕i)} 经固定有限次 min/max 收敛到 B_∞(t)。",
+  "scope": "对每个固定 t，有限游戏在 α=B(G_m(t)) 有弱 α-PNE，辅助极限表在 α=B_∞(t) 也有弱 α-PNE。对固定 1≤α<B_∞(t)，收敛给所有充分大 m 的严格无 α-PNE；对固定 α>B_∞(t)，收敛给所有充分大 m 的 α-PNE。α=B_∞(t) 时，收敛不能判定有限成员在哪一侧。辅助表只给成本与倍率极限，具体有限起点和固定模板可行阈值由各自定理给出。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md",
+      "sha256": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df",
+      "section": "有限游戏的完整定义"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md",
+      "sha256": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df",
+      "section": "布尔极限的来由"
+    }
+  ],
+  "reviewed_by": "Boss2 weighted-congestion mapper",
+  "review_note": "对照 v4→v5：修订审查开头的固定次数 32 量词为 16 态各至少一个严格 9/5 翻转，共检查 64 个翻转；第 4 节缩权证书和本边承重正文均未变。按七对 mask 独立重构 32 项形式极限成本、八个偏离见证，并用精确有理数核三个极限因子及有限例。一般 m 的极限由权重/次数误差界与正分母连续性支付。",
+  "whole_result": "对每个固定正有理 t，全部 16 态、64 个真实单方翻转的成本收敛到正文八代表及其互补的正成本表，前六对缺席费用≤t_j exp(−64m/117)，末对仅保留重者同侧的 g；因此 B(G_m(t))→B_∞(t)。",
+  "endpoint_pins": {
+    "M-30d382c7f97c48eea789aed8e8f93eed": "bdcc5ddca42a38a9193c57118451db8ed92a3b9b10e15067850b8bb51c5814ff",
+    "weighted-congestion/scaled-fourteen-resource-family-and-limit": "16c24fd8cd5ed3faf83ef291afc719f326d9f0627aaef6ad07b9994340b948e5"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df"
+  },
+  "review_digest": "2e657da21095fb78363b272f30b649c7ffbfe9dc33cab77059d80bf4223cdf26"
+}

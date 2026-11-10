@@ -1,0 +1,54 @@
+{
+  "edge_id": "wc-boss1-9fd1c1fae07348c6-uniform-short-window-to-additive-degree",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "WC-NEAR-UNIT-ALLSTATE-NONEXISTENCE-v1"
+  ],
+  "target_ids": [
+    "WC-ADDITIVE-NEAR-DEGREE-ALLSTATE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限标准原子加权拥塞游戏，资源无关正玩家权，每人有有限非空的资源子集策略族，允许空策略和零费用。资源费用为非负系数多项式，个体成本为资源延迟和。每次真实单人偏离按含自身的新负载重算成本。每整数d≥2^20取ℓ=ceil(log₂d)、x=d/(1200ℓ²)、n=ceil x。使用当前短窗构造的三个统一充分条件(A)。",
+  "roles": {
+    "WC-NEAR-UNIT-ALLSTATE-NONEXISTENCE-v1": "给满足统一(A)的每个整数(d,n)上的有限有理纯d次真实全状态坏族及每态余量η/2。",
+    "WC-ADDITIVE-NEAR-DEGREE-ALLSTATE-v1": "在每个整数d≥2^20支付统一合同，输出同一游戏的展示倍率d−1200ℓ²及原构造实际倍率α=(1−1/n)d。"
+  },
+  "explanation": "在d=2^20，d>1200·20²。若ℓ≥21，由2^20>1200·21²及2ℓ²≥(ℓ+1)²归纳得d>2^(ℓ−1)>1200ℓ²。故x>1、2≤n≤x+1≤2x=d/(600ℓ²)，从而d≥8n。记T=(1+1/(8n))^d，则ln T≥d/(8n+1)≥d/(9n)≥(200/3)ℓ²，而ln(16nd)<4+2ℓ<(200/3)ℓ²。再有200n(ln d)²≤(d/3)(ln d/ℓ)²≤(d/3)(ln 2)²<d/3<d ln(3/2)，最后一步由ln(1+u)>u/(1+u)取u=1/2。统一(A)由此逐整数成立。构造的钟门用同一次数d：L_c≤N²、B_*/η≤64n(g+1)R^g，故4α²B_*L_c/η≤Γ=256nd²(g+1)R^(3g)，且lnΓ≤195n(ln d)²+8ln d≤200n(ln d)²。于是(2/3)^d<1/Γ≤η/(4α²B_*L_c)。全前沿中相邻失配用重端点出口，反向用r+1处的正向边，累计短差按奇偶选返回出口。非法位串翻最早异位的一名当前玩家，翻后该玩家所参与的门均不触发。原游戏的两类偏离均保η/2严格余量，且α=d−d/n≥B_d=d−1200ℓ²。因新费非负，同一偏离在B_d处仍保至少η/2。",
+  "scope": "逐整数覆盖二幂跳点及右邻，直接沿用同一个(d,n)有限正有理纯d次游戏与原偏离。固定n的充分阈值max{2^20,(600n)²}属于另一固定比例推论。游戏可以很大，单个有理数的位长界与整份游戏规模有不同量词。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/构造/短窗网格分离的全状态近一反例--构造.md",
+      "sha256": "365d1e11e006d09947b04123c6dbafda1fa3df79a58cc66851a516ffb16ff782"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/平方对数加性缺口的全状态近次数下界--定理.md",
+      "sha256": "63f3eed48ba119f9a1e13667137baaf8eabd3083003b71ceacf443d4849a13b1",
+      "section": "对可变n逐跳点核统一条件"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/平方对数加性缺口的全状态近次数下界--定理.md",
+      "sha256": "63f3eed48ba119f9a1e13667137baaf8eabd3083003b71ceacf443d4849a13b1",
+      "section": "从统一构造到展示的加性缺口"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/端点面积与正修复的审查范围--审查.md",
+      "sha256": "5a849b9f2d5fe6bf9db309f442500f84c90f4d3dccf0d030c4403eedbd4ad4d8",
+      "section": "可变n全尾部：独立攻击的实际数学"
+    }
+  ],
+  "reviewed_by": "Boss2-weighted-additive-refresh",
+  "review_note": "重读当前短窗正文及加性定理，逐式核严格钟门倒数、相位反向索引、两奇偶和非法态当前单人修复。内部有限审计只保留其输入范围，整数尾部由参数推导与统一(A)承担。",
+  "whole_result": "对每整数d≥2^20，存在正有理权、正有理系数纯d次、每人恰两非空不交动作的有限游戏，每个纯状态有真实严格(d−1200ceil(log₂d)²)改善。统一构造实际倍率α≥展示倍率。",
+  "endpoint_pins": {
+    "WC-ADDITIVE-NEAR-DEGREE-ALLSTATE-v1": "75d5c58d3db757ddc826fe23a51ac9b17af500eeebcb6972123908278a8b974d",
+    "WC-NEAR-UNIT-ALLSTATE-NONEXISTENCE-v1": "f8ce9e42f2bdfe1fc905479868e9e14eaa0e7cd52e86b34006f15aa75fd89089"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/构造/短窗网格分离的全状态近一反例--构造.md": "365d1e11e006d09947b04123c6dbafda1fa3df79a58cc66851a516ffb16ff782",
+    "archives/weighted-congestion/state/定理/平方对数加性缺口的全状态近次数下界--定理.md": "63f3eed48ba119f9a1e13667137baaf8eabd3083003b71ceacf443d4849a13b1",
+    "archives/weighted-congestion/state/审查/端点面积与正修复的审查范围--审查.md": "5a849b9f2d5fe6bf9db309f442500f84c90f4d3dccf0d030c4403eedbd4ad4d8"
+  },
+  "review_digest": "ba3bb47b40ca7943b87ec94aee511020adcc890eca1856bd49f91e704df6af4b"
+}

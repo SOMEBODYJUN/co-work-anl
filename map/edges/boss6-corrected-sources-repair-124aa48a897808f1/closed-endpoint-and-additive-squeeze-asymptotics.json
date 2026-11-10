@@ -1,0 +1,66 @@
+{
+  "edge_id": "wc-boss1-9fd1c1fae07348c6-closed-endpoint-and-additive-squeeze-asymptotics",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-ADDITIVE-NEAR-DEGREE-ALLSTATE-v1",
+    "WC-UNIVERSAL-THRESHOLD-ENDPOINT-v1"
+  ],
+  "target_ids": [
+    "M-44798fea47994bf481e9ebb8443dabf7"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限标准原子加权拥塞游戏，资源无关正玩家权，每人有有限非空的资源子集策略族，允许空策略和零费用。资源费用为非负系数多项式，个体成本为资源延迟和。每次真实单人偏离按含自身的新负载重算成本。下侧适用整数d≥2^20，积分势粗上侧适用整数d≥0。",
+  "roles": {
+    "WC-ADDITIVE-NEAR-DEGREE-ALLSTATE-v1": "对每个d≥2^20给同次数实例，实际无α_d-PNE，其中α_d=(1−1/n)d≥B_d=d−1200ceil(log₂d)²。",
+    "WC-UNIVERSAL-THRESHOLD-ENDPOINT-v1": "给各实例闭端点β(G)≤d+1及a_*(d)=sup_G β(G)。粗上侧由自足积分势承担。",
+    "M-44798fea47994bf481e9ebb8443dabf7": "接收独立于三角势的渐近路线和展示倍率处的严格下侧。"
+  },
+  "explanation": "令α_d=(1−1/n)d，n=ceil(d/(1200ceil(log₂d)²))。加性对象的同一个G_d在α_d处已无均衡。实例可行集闭且端点取得，故β(G_d)>α_d≥B_d，因而a_*(d)≥β(G_d)>B_d。粗上侧取逐资源积分势。删除时旧负载x≥w，单项式p≤d的积分边际至少wx^p/(d+1)。加入前负载x≥0，积分边际至多w(x+w)^p。保留资源不改变，共同费用非负使严格(d+1)改善迫势严格下降。有限状态最小点于是给(d+1)-PNE。取全类上确界得a_*(d)≤d+1，夹逼归一化极限。",
+  "scope": "本条的上侧独立于三角势，与完整双侧边共享加性下界。闭端点负责把展示倍率处的严格反例变成阈值的严格下侧。这里只推出d+1上侧和归一化极限。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/平方对数加性缺口的全状态近次数下界--定理.md",
+      "sha256": "63f3eed48ba119f9a1e13667137baaf8eabd3083003b71ceacf443d4849a13b1",
+      "section": "全整数尾部定理"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/平方对数加性缺口的全状态近次数下界--定理.md",
+      "sha256": "63f3eed48ba119f9a1e13667137baaf8eabd3083003b71ceacf443d4849a13b1",
+      "section": "从统一构造到展示的加性缺口"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/普遍近似均衡阈值的闭端点--定理.md",
+      "sha256": "6547fc23e128521343486ede7be0e7b0268b531229ccd0059783735486940e64",
+      "section": "自足粗存在界"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/普遍近似均衡阈值的闭端点--定理.md",
+      "sha256": "6547fc23e128521343486ede7be0e7b0268b531229ccd0059783735486940e64",
+      "section": "状态、单实例与全类端点"
+    },
+    {
+      "path": "archives/weighted-congestion/state/资料/全类近似门槛的模型与研究验收合同--资料.md",
+      "sha256": "d9a1e227ff9c9439d06f9f3b80654d494f17685dd76b1ff1d86d30575ed97ec6",
+      "section": "源状态页已关闭的目标及其后续加强"
+    }
+  ],
+  "reviewed_by": "Boss2-weighted-additive-refresh",
+  "review_note": "按当前加性端点复核实际α_d与展示倍率的顺序、闭实例端点与逐实例sup，以及积分势加入和删除的不同定义域。",
+  "contribution": {
+    "result": "每整数d≥2^20有1−1200ceil(log₂d)²/d≤α_d/d<a_*(d)/d≤1+1/d，故a_*(d)/d→1。",
+    "remaining": "整条目标还需a_*(d)/d≤1。该步由逐有限实例的三角势支付。"
+  },
+  "endpoint_pins": {
+    "M-44798fea47994bf481e9ebb8443dabf7": "9deea43e2e12de747839d7b4a163c17ec86ed59f64f42be36bd0b62290040ceb",
+    "WC-ADDITIVE-NEAR-DEGREE-ALLSTATE-v1": "75d5c58d3db757ddc826fe23a51ac9b17af500eeebcb6972123908278a8b974d",
+    "WC-UNIVERSAL-THRESHOLD-ENDPOINT-v1": "ea04f37d095260b01d1e89e38dbfa6bf2f3f32aa8ef10b06fac5da72fa024094"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/平方对数加性缺口的全状态近次数下界--定理.md": "63f3eed48ba119f9a1e13667137baaf8eabd3083003b71ceacf443d4849a13b1",
+    "archives/weighted-congestion/state/定理/普遍近似均衡阈值的闭端点--定理.md": "6547fc23e128521343486ede7be0e7b0268b531229ccd0059783735486940e64",
+    "archives/weighted-congestion/state/资料/全类近似门槛的模型与研究验收合同--资料.md": "d9a1e227ff9c9439d06f9f3b80654d494f17685dd76b1ff1d86d30575ed97ec6"
+  },
+  "review_digest": "87416163a36c4bcc81efcaa59ea154ae5e241093eb3ad0e7eaeac30af5757d63"
+}
