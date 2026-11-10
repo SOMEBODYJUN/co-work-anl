@@ -1,0 +1,54 @@
+{
+  "edge_id": "um-componentwise-pair-consistency-tests-gpc2-global-premise",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1",
+    "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1"
+  ],
+  "target_ids": [
+    "EA-GROUPED-CONFIG-GLOBAL-GLUE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "六台原机器a_i,b_i及三个原任务j_i；自有任务处理值1、其它处理值2，T=1。原行律为空与自有单件各1/2；保持全部原标签、逐任务期望重数一，以及预先给定的15个两机联合律。比较只问这一固定见证的延拓。",
+  "roles": {
+    "UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1": "提供分数关联森林、全部pair各合法且每两个完整原分量四机的六pair可共同实现，但无全机延拓的精确见证。",
+    "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1": "保给定全部完整行律的正面定理，保证另有真实T调度分解及某套可延拓pair；它不固定任意外加的pair。",
+    "EA-GROUPED-CONFIG-GLOBAL-GLUE-v1": "被检验的是给定GPC2见证的全局延拓前件，以及可调度当且仅当存在某套可延拓见证的存在量词。"
+  },
+  "explanation": "令X_i表示a_i取j_i，b_i取j_i的位为1−X_i。每对原分量i,j指定一个公平二元位的联合律，使X_1=X_2、X_2=X_3、X_1≠X_3分别几乎处处成立；同一分量内互补，跨分量其余三对由各端取补得到。所以所有15对行边际均与指定行律一致，且每对配置不交。对任意两个完整原分量，先抽一个公平位，再按该对的等/异关系取第二位及两补位，就同时实现该四机的全部六个pair。若15对有一个共同联合延拓，则三个底位的指标不等式1_{X1≠X3}≤1_{X1≠X2}+1_{X2≠X3}在期望上给1≤0，矛盾。另一方面独立三个公平位产生八个实际T=1调度，逐任务恰分配一次并精确保留全部指定完整行律；每任务的最小处理时间1也给OPT=1。分数关联图是三个a_i−j_i−b_i路径，森林行律定理完全适用。因此这个点通过GPC2全部局部条件，甚至有上述两完整分量一致性，仍没有EA正向解码所要求的同一全局延拓。它不反驳EA的条件解码，也不反驳可调度时存在另一个Dirac见证的反向命题；它精确说明森林结构不能把该给定pair家族的额外延拓条件自动付掉。",
+  "scope": "本边是同一实际实例、固定行律与固定pair律的量词检验。四机一致性只量化两个完整原分量；不声称任意四机子集，也不声称连通树或最小规模。CONFIG可行、实际OPT=1和EA存在见证结论均保留；无算法下界或积分间隙推论。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/反例/分数关联森林与指定配对律的全局不相容--反例.md",
+      "sha256": "ab12c07272e685786c230c17034c9fe63afcae5825af201769a1ad1930a9f239"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md",
+      "sha256": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5"
+    },
+    {
+      "path": "archives/customer-attraction/state/等价/保机器分组的全机配置耦合--等价.md",
+      "sha256": "25a08161c926f9d4506fda0937a58b44c7840f353af26270aa889f2ff8ee9850"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "根端创制并逐式核64元组精确核、8实际调度和零pair相容元组，正式原文/登记已发布；本轮再核全部原模型、两行/两机单环、森林分解与EA全文量词。独立fresh 3D又区分旧三底机负例和新增两完整分量四机一致性。声明的EA follow-up经正式read-add及本包实际比较闭合；不另造相同数学任务。",
+  "endpoint_pins": {
+    "EA-GROUPED-CONFIG-GLOBAL-GLUE-v1": "9528168f0798b583ac2c68786ebc20df4cf94368b57a9f73d262ab16aecd643f",
+    "UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1": "d0bef948df0515503febaf7e048674f25a5c02f8f1ccf6b4550f2b6b610578a6",
+    "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1": "0117271b622daf5cc467317f1e1229b9ec5769c2d80ea71258bcf63a50cfff07"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/反例/分数关联森林与指定配对律的全局不相容--反例.md": "ab12c07272e685786c230c17034c9fe63afcae5825af201769a1ad1930a9f239",
+    "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5",
+    "archives/customer-attraction/state/等价/保机器分组的全机配置耦合--等价.md": "25a08161c926f9d4506fda0937a58b44c7840f353af26270aa889f2ff8ee9850",
+    "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+  },
+  "review_digest": "9ac5437a96259845e4f8b9784f0e42365be870e0f982379ec3dbf4ec20725782"
+}
