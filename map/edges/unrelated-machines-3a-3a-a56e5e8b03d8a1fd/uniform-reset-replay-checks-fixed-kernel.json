@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-a56e5e8b-uniform-reset-replay-checks-fixed-kernel",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/independent-uniform-reset-two-original-programs-replay"
+  ],
+  "target_ids": [
+    "unrelated-machines/symmetric-reset-two-witness-review"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "m=2q、n=2q²、所有端时间1/q；旧 law 是均匀真平衡调度。删一机及固定标签吸收包后，旧删机的各保留任务独立均匀选 K=2q−1 后备机。",
+  "roles": {
+    "unrelated-machines/independent-uniform-reset-two-original-programs-replay": "两原程序逐字段复跑和直接旧世界/后备分支的有限精确重构。",
+    "unrelated-machines/symmetric-reset-two-witness-review": "一般符号证明的独立随机 q+2 阈值分支；另外有固定推前及重耦合合同。"
+  },
+  "explanation": "主要转移矩按任务区分，保 categorical 同任务块；独立计算用给定新端的旧世界后验，再对 q=2 枚举旧平衡世界及全部独立后备分支。两种有限计算同得新边际1/K及不同任务条件同机 α=1/K−(q−1)/(q(n−1))。r=n−c 时最大真/假条件计数由 A=1+(r−1)α 控制，有限边界核 q+1 仍违、q+2 通过；q=1 单独处理，空残余零维。一般整数阈值来自 A 的单调性及两个符号差，非复跑次数。",
+  "scope": "只校验指定独立 kernel，不校验同边际重耦合、一般 m、全部实际调度逐状态负载。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/计算/独立均匀重置矩的双程序与精确复跑--计算.md",
+      "sha256": "77b2d7f0790e392d706e0184e051e19ae11e3d98be9b4f69a52ab1614c1f37ea",
+      "section": "公式、全部真/假条件与已证阈值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/独立均匀重置矩的双程序与精确复跑--计算.md",
+      "sha256": "77b2d7f0790e392d706e0184e051e19ae11e3d98be9b4f69a52ab1614c1f37ea",
+      "section": "一次原入口复跑与旧证据比较"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/对称重置与双见证查询双源审查--审查.md",
+      "sha256": "d71d7b7e2b61120a67204a5a9a5cada047f05343206ffa09c90cf0818eb04dfa",
+      "section": "2.3 随机均匀运输的另一个锐阈值"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "核 α/β 命名互换的实际含义、同任务 one-hot 修正、有限默认范围和坏峰2仍有正概率；没有另运行原程序。",
+  "endpoint_pins": {
+    "unrelated-machines/independent-uniform-reset-two-original-programs-replay": "4e473f1e270d736775ed248e2a2819498e3e44ac10d551f5cdc0f8c4cdc9168c",
+    "unrelated-machines/symmetric-reset-two-witness-review": "79e35b34070e85437a873db6b9e5ec7d36620fc84db1f729ecb2ea6a81ffc9d4"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/计算/独立均匀重置矩的双程序与精确复跑--计算.md": "77b2d7f0790e392d706e0184e051e19ae11e3d98be9b4f69a52ab1614c1f37ea",
+    "archives/unrelated-machines/state/审查/对称重置与双见证查询双源审查--审查.md": "d71d7b7e2b61120a67204a5a9a5cada047f05343206ffa09c90cf0818eb04dfa"
+  },
+  "review_digest": "10db1671dbf09f3a4590b4d346d9798c32f58a962a4e61c48b610d6644171995"
+}

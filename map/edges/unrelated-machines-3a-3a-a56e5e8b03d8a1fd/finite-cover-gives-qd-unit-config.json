@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-a56e-finite-cover-gives-qd-unit-config",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-CONFIG-FINITE-COVER-v1"
+  ],
+  "target_ids": [
+    "M-9452d445c1744d5eaac946ee974d2162"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "每个显式整数D≥2。取目标Q_D未作N变换的完整flat UM：main有D个states a，各含D个私有端时间1/D、资源端时间1的关联jobs；每个(a,j)有两态helper，home态的关联job用g_(a,j)，parking态的关联job用A_a，两关联job均在各自私有端耗时1、资源端耗时1。每个group的一枚unit selector只可到自身state私机。按原机、原job同数复制，保每条原incidence的处理时间，仅给每条原边一个置换。",
+  "roles": {
+    "UM-CONFIG-FINITE-COVER-v1": "把指定合法cover的真实峰1调度逐机去副本标签并按原机器type平均，给完整原UM CONFIG(1)。",
+    "M-9452d445c1744d5eaac946ee974d2162": "目标的原Q_D完整flat UM矩阵和它的CONFIG(1)可行性；本边给独立的整数cover投影证法。"
+  },
+  "explanation": "用0至D−1编号a、j及fiber副本b。构造同型D-cover。除helper(a,j)的parking关联job至资源A_a的边用置换b↦b−a+j (mod D)外，所有原incidence用恒等置换。Main selector副本b选择state b的私机副本b；helper(a,j) selector副本b在b=a时选择parking态，否则选择home态，两种均在私机副本b。每个选中态的全部关联job送到其资源副本，每个未选态的全部关联job留其私机副本。故全部原job的每个副本均实际安排。每私机正好负载1，来源为unit selector或原态全部关联job。资源g_(a,j)的副本a收到main关联job，其余各副本b≠a各收到相应home关联job。每台A_a的副本j正好收到helper(a,j)在b=a时送出的parking关联job。因此峰恰1；源定理平均给逐job恰覆盖1、每机质量1且分母整除D的完整CONFIG(1)。任意T<1都不能覆盖unit selectors，故原T_CONF恰1。进一步，对任意同型q-cover的峰≤1实际调度，令k_a计main selector选择state a的副本数，l_aj计helper(a,j) selector选择parking的副本数。任何被unit selector占的私机不能同时收正时长关联job；置换保证每个state-machine副本对此原selector至多有一个相邻selector副本。于是所有g_(a,j)副本至少收到k_a+q−l_aj枚unit jobs，所有A_a副本至少收到Σ_j l_aj枚unit jobs，各资源type容量q给l_aj≥k_a以及Dk_a≤Σ_j l_aj≤q。Σ_a k_a=q迫每个k_a=q/D，再迫每个l_aj=q/D。因此峰1的cover必须D|q；每个正倍数可取上述D-cover的若干不相连副本。显式D-cover与投影证书按D的数值多项式大小。",
+  "contribution": {
+    "result": "对每个D≥2，完整原Q_D的flat UM存在显式D-cover峰1见证，投影直接证明原CONFIG(1)可行且T_CONF=1。使该原矩阵cover达到峰1的q恰是D的正倍数。",
+    "remaining": "目标余下的正支撑FSLP、原菜单actual值1/D、原flat UM实际OPT=2−1/D，以及正规化state-dummy/SC unit-helper路径后的最高有限CONFIG值、actual值、行总值和正owner度界均由目标正文另证。此边只通过cover实现完整原UM分数证书，不从cover调度反推原P有实际峰1调度。"
+  },
+  "scope": "原Q_D未正规化完整flat UM的CONFIG(1)及其同型单置换cover。最小D是这个矩阵族的结论，不给一般cover最小度算法，不要求指定接线坍缩或覆盖SC最大化接口。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/有限置换cover的配置等价与高围长坍缩审查--审查.md",
+      "sha256": "fa63d72fcf867447ec891256595aac50c4583c92d829149ca6942aeea85fa670",
+      "section": "五个方向与真实见证"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/规范化平菜单的CONFIG与正支撑LP双向保持--定理.md",
+      "sha256": "8bfbaa80b98546b6d1320e9760bb9491165e26a6cef1b6cd35eb86116c822f66",
+      "section": "1. 平坦不相关机与 FSLP 的双向证书"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/规范化平菜单的CONFIG与正支撑LP双向保持--定理.md",
+      "sha256": "8bfbaa80b98546b6d1320e9760bb9491165e26a6cef1b6cd35eb86116c822f66",
+      "section": "5. 自足的 (Q_D) 障碍与规模"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "实读源同型cover的去标投影及目标原菜单/完整flat UM定义。逐组核两类selector和每种关联job的真实目的端，逐资源核唯一unit入载，另按任意q接线的逐type容量独立推得D整除q。使用原正文参数和投影定理，补的显式接线及度下界在本边证明，未把历史seed有限重放当一般论证。",
+  "endpoint_pins": {
+    "M-9452d445c1744d5eaac946ee974d2162": "4f17391d9a650c85fd816ba6878831d96f6b046bc69a1e8a5e5bcf77749ccd41",
+    "UM-CONFIG-FINITE-COVER-v1": "1bf59dd6f4363cae059e7235902f03059125493f72e50b6ec867cbf91bb1577d"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/有限置换cover的配置等价与高围长坍缩审查--审查.md": "fa63d72fcf867447ec891256595aac50c4583c92d829149ca6942aeea85fa670",
+    "archives/unrelated-machines/state/定理/规范化平菜单的CONFIG与正支撑LP双向保持--定理.md": "8bfbaa80b98546b6d1320e9760bb9491165e26a6cef1b6cd35eb86116c822f66"
+  },
+  "review_digest": "7ab42f3d11d888e847be268d0f14410bdb3e89248766188468e40b491b01589a"
+}

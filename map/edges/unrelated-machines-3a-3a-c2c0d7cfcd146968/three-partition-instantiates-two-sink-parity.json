@@ -1,0 +1,54 @@
+{
+  "edge_id": "um-c2c0d7cf-three-partition-instantiates-two-sink-parity",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-36e9d6d07bed4754858f0f578f0ad101"
+  ],
+  "target_ids": [
+    "UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "在一般嵌入用δ′=1/3、K=2满足1/(2K)=1/4<δ′；固定输出的所有tiny实际更小，故再以δ=1/4登记。同一原矩阵保留item的home和两个sink端。",
+  "roles": {
+    "M-36e9d6d07bed4754858f0f578f0ad101": "给同样的宏、填充、item构造，及峰≤T与精确分桶的双向等价和均匀分数可行性。",
+    "UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1": "取固定B=13、m=2、K=2和六个偶数item，闭合实际整数/分数分离。"
+  },
+  "explanation": "五个4及一个6总和26，全部严格落于(13/4,13/2)。令T=26，唯一home宏26，每sink有13枚时间1且唯一端的填充。其最大tiny为6<δT=13/2，所以得到登记的较强δ=1/4合同。该专门化的3机33任务矩阵在峰≤26时，home已满，两个sink恰各需item和13；偶数item任意子集不可能和13。另一方面各item各在两sink放半份，贡献各13，加填充恰26。",
+  "scope": "对这一固定完整矩阵的专门化。整数判定、分数可行和一般强受限编码复杂性分别取证。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/计算/异构微任务两汇点奇偶分割原程序--计算.md",
+      "sha256": "7321657f64c318ff2ec2daec31761c9132b4ccbabdebc6ba0f0ba4da18a80c73",
+      "section": "与一般三分割归约及正面 ST 候选的关系"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/异构微任务两汇点奇偶分割原程序--计算.md",
+      "sha256": "7321657f64c318ff2ec2daec31761c9132b4ccbabdebc6ba0f0ba4da18a80c73",
+      "section": "当前程序与完整有限输入"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/异构微任务两汇点奇偶分割原程序--计算.md",
+      "sha256": "7321657f64c318ff2ec2daec31761c9132b4ccbabdebc6ba0f0ba4da18a80c73",
+      "section": "为什么整数失败而分数通过"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/异构宏三分割障碍与均匀余量有限审计--审查.md",
+      "sha256": "adbdbe7c472a97e4e4480fb7ea2b366e8555b6d2b0051d4e1a546360880f3c1a",
+      "section": "1. 三分割式流障碍：一个精确奇偶见证"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "严格一般参数取δ′=1/3，固定矩阵再逐件验更强δ=1/4；核3m件item、全部填充资格和home宏负载，分数和整数使用同一原矩阵。",
+  "whole_result": "该3机33任务δ=1/4实例所有tiny符合阈值，峰≤26的真实不可拆分调度不存在，同阈值分数残余可行。",
+  "endpoint_pins": {
+    "M-36e9d6d07bed4754858f0f578f0ad101": "d5e04be4314de35684dec6b68e77d80ff82b00fbf0bf008c61cff5f8aae9245c",
+    "UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1": "3a970a361eddbfb71dd4f2ad014d850312768a27a1e1d0c23218a733b939a86d"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/计算/异构微任务两汇点奇偶分割原程序--计算.md": "7321657f64c318ff2ec2daec31761c9132b4ccbabdebc6ba0f0ba4da18a80c73",
+    "archives/unrelated-machines/state/审查/异构宏三分割障碍与均匀余量有限审计--审查.md": "adbdbe7c472a97e4e4480fb7ea2b366e8555b6d2b0051d4e1a546360880f3c1a"
+  },
+  "review_digest": "6c876fd938a26b4bb18d843d1466e9b309212b15ac025a229706959d6a87054c"
+}

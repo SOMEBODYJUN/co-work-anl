@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-a56e5e8b-three-value-selector-pays-stability-completeness",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SELECTOR-TINY-ROOT-THREE-VALUES-v1"
+  ],
+  "target_ids": [
+    "UM-TINY-WORK-STABILITY-SELECTION-NP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一固定 ℓ≥2 的显式三值 selector/root/leaf 矩阵及固定有理 0≤ω<1/2。完美3DM 指 ν=q。",
+  "roles": {
+    "UM-SELECTOR-TINY-ROOT-THREE-VALUES-v1": "给源完美匹配时全原实际 OPT1，并区分另外两个真正整数值。",
+    "UM-TINY-WORK-STABILITY-SELECTION-NP-v1": "稳定 CONFIG 选择的 NP 完全性，其中 YES 方向可用真实调度直接构造证书。"
+  },
+  "explanation": "三值定理在 ν=q 时给原实例峰≤1 的完整 σ。令每台在恰 σ 指派给它的任务集配置上权重1（空机给空配置），每个原任务列覆盖一次。每台正权配置单一，tiny 工作量的均值和最小值相等，因而 s_i−r_i=0≤ω。由源的显式 σ 可直接输出有理证书。ν<q 时实际 OPT>1 本身不排除稳定分数配置；必须从该族每个 root 的选择质量与 tiny 工作差推出候选 root 近整数/唯一，并用容量解码匹配。",
+  "scope": "仅交同一矩阵族的 YES 证书；真正整数三值与稳定分数选择仍是两个命题。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/小任务联合槽稳定性与选择边界--定理.md",
+      "sha256": "5a3c005ace1b821da1409b30246879992b40094a8ed61940aeb6753aff71619e",
+      "section": "固定源族的三值选择器"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/小任务联合槽稳定性与选择边界--定理.md",
+      "sha256": "5a3c005ace1b821da1409b30246879992b40094a8ed61940aeb6753aff71619e",
+      "section": "选择复杂度与边界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/小任务联合槽与加权小端ST双源续审查--审查.md",
+      "sha256": "e51a9f639bc40bdc64af9185604a672378c624bdf6154de6e566c521bd0dc4a7",
+      "section": "2.3 稳定证书选择的精确障碍"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "逐台核真实调度诱导的完整 CONFIG、零稳定差和分数反向仍需的根选择论证。",
+  "contribution": {
+    "result": "ν=q 时该同一矩阵有一份有限稳定 CONFIG(1) 证书，所有行 s_i−r_i=0。",
+    "remaining": "稳定分数证书→完美3DM 的反向及 NP 成员资格需独立证明；实际 OPT 三值并不证明这两步。"
+  },
+  "endpoint_pins": {
+    "UM-SELECTOR-TINY-ROOT-THREE-VALUES-v1": "672c7736976632cdc33de34e6482851f043fbd4552b743a25675fa85d9e0fdc0",
+    "UM-TINY-WORK-STABILITY-SELECTION-NP-v1": "6c4b0a801f3a0c84e77c06ee1b222b82d9d045dfc6ec0c6edb2f59ab87036ddc"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/小任务联合槽稳定性与选择边界--定理.md": "5a3c005ace1b821da1409b30246879992b40094a8ed61940aeb6753aff71619e",
+    "archives/unrelated-machines/state/审查/小任务联合槽与加权小端ST双源续审查--审查.md": "e51a9f639bc40bdc64af9185604a672378c624bdf6154de6e566c521bd0dc4a7"
+  },
+  "review_digest": "dbcf067cc64ba4f6bb98323e3cb23cafa549edee604eef42bd445c9a3bcdc076"
+}
