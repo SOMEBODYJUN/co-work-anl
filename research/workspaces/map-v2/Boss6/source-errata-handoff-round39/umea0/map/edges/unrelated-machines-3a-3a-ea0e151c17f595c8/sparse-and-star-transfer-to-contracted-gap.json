@@ -1,0 +1,51 @@
+{
+  "edge_id": "um-ea0e151c-sparse-and-star-transfer-to-contracted-gap",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SPARSE-CONDITIONED-CONFIG-GAP-v1",
+    "UM-STAR-CONFIG-TRANSFER-v1"
+  ],
+  "target_ids": [
+    "UM-CONTRACTED-SPARSE-CONFIG-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定原稀疏深树族的合法k≥3,H、r=(k−1)/k、s0=min{s≥1:kr^s≤1}、M=(k−1)k^(s0−2)、H≥s0且2^(H−2)≥M、γ=2^(2−H)、T=1+1/k；只按该族逐底簇左端再右端的指定实际序列作普通单任务argmin收缩。每次对当前矩阵重新检查全集极小星；端点F有两枚unit任务、其外部机器任务域互斥，故给定原完整CONFIG点的Q_F≥1。查询替代边时沿argmin原任务祖先取原强制边证书，并从目标外机优先抽质量。所有矩阵、配置和原任务身份显式保留；不量化任意收缩次序或共同查询分布。",
+  "roles": {
+    "UM-SPARSE-CONDITIONED-CONFIG-GAP-v1": "提供同参数原完整普通实例的OPT=θ=2−1/k、达到θ的实际完整调度，以及对每条原有限边分别存在x_e=1的完整CONFIG(T)点；M已经按外送block任务数计。",
+    "UM-STAR-CONFIG-TRANSFER-v1": "提供Q_F≥1下的正向完整CONFIG转移、指定外机优先、每步全局至多一次split/支持界，以及argmin和v上补集的无条件逆恢复；明确逆向不保原probe。",
+    "UM-CONTRACTED-SPARSE-CONFIG-GAP-v1": "目标是此指定端点收缩终态：OPT仍θ、无剩余极小星、每条终态有限边分别有完整CONFIG(T)强制点；k3,H5历史展开数字只作已证合同附带有限证据。"
+  },
+  "explanation": "令θ=2−1/k。原族每个端点的当前全部邻任务是其星unit b与端点block unit e，总2>T；删任一后为1≤T。其外部域分别是父核心和相邻存活terminal/共享z，互不相交，因而每外机配置至多含一项F。给定完整CONFIG点中v配置不可能含全部F，所以q_F=|F|−E|C_v|≥1；外列至多一F使Q_F=q_F≥1。用转移定理，从全部碰F列抽总质量1，把选中部分的F删去并添替代任务，未选部分只删F。替代成本min_F p_ia不超过被删真实任务成本；非F覆盖、行归一和T容量保持，e覆盖恰1。至多最后越过总质量1的一列需split，故每实际步支持≤S_y−S_v+1。\n\n对任意终态有限边，若其任务是多次收缩产生的替代任务，沿保存的逐机argmin追到原有限边；否则保原边。原稀疏族给该原边质量1的完整CONFIG(T)点。沿指定收缩链正向转移；未收缩查询覆盖不变；查询所在F被替换时，该目标机器原有质量1全碰F，先抽该行即可保新查询质量1。因此逐终态边分别有完整证书，不把不同查询的点平均为共同base，更不同时强制互相冲突的全部边。\n\n整数值要分别付上下界。一般T可行性等价本身不够给超T的最优值保持；此族每个被删端点的两unit总2>θ，所以原θ完整调度不能把它们全留端点。每步挑其实际外放原任务，将对应替代任务放同外机，成本不增，保其余非F，因而原θ调度可正向压成终态θ调度。反之，任何终态峰B调度沿argmin逆序展开，恢复峰≤max(B,T)。因k≥3给T<θ，若B<θ则原峰也<θ，与原稀疏族整数下界矛盾，故终态OPT恰θ。逆恢复只保实际/CONFIG可行性，不声称恢复每条旧probe。\n\n终态无规则按机器分类：每存活terminal仍接三枚unit，删一余2>T；每核心仍有一枚unit入任务及k枚1/k小任务，删一小任务余θ>T（根以bridge作入任务）；z的全部γ任务总量>T+γ，删一仍>T。故没有全集极小超载星。k3时两端共享存活t2，但左右F本身互异，且每一步F内两任务的外域仍互斥。所引同SHA成熟合同另固定k3,H5的324次收缩、729/1051到405/727、1778条终态有限边及其中972替代边；它们是有限展开审计，不是一般k证明。本比较未运行旧程序或重验大JSON。",
+  "whole_result": "在原稀疏深树合法全参数域和指定实际端点序列上，收缩终态真实整数OPT=2−1/k、无可用极小超载星，且每一条终态有限边e分别存在完整CONFIG(1+1/k)点满足x_e=1；保原任务argmin身份和每步全局至多一次split。有限k3,H5的已证展开为324次收缩，729机/1051任务至405机/727任务，终态1778有限边（972替代边）。不包含任意顺序同构、共同base、多query联合一致或逆向原probe保持。",
+  "scope": "原稀疏族与一般星转移定理的ALL迁移，终点为UM-CONTRACTED-SPARSE-CONFIG-GAP-v1完整原目标。比值θ/T=2−3/(k+1)趋2是该预处理加独立逐边CONFIG接受合同的间隙；不推出一般UM困难性、通用CONFIG oracle、任意SA/SDP层或一般调度算法下界。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/三选稀疏条件配置与资源星转移有限审查--审查.md",
+      "sha256": "5dcc341353986d1f9631b932f9f115e05de0433253cf1fe54c34fc634bc31e53",
+      "section": "2. 稀疏深树族：一般构造与明确量词"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/极小星配置转移的真实依赖与全边核验--资源.md",
+      "sha256": "219870e1dd96cb16930fabc60b8e98a2072b51bdaa85cb75627ffd305c8273d7",
+      "section": "一般CONFIG转移合同与证明"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/三选稀疏条件配置与资源星转移有限审查--审查.md",
+      "sha256": "5dcc341353986d1f9631b932f9f115e05de0433253cf1fe54c34fc634bc31e53",
+      "section": "4. 端点极小星收缩：配置转移的条件和推导"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/极小星配置保持与稀疏收缩族独立冻结审查--审查.md",
+      "sha256": "3770159de5ce7b48c471566bc8b01d206b26ba8e0fc2e28b9762650e2583816e"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/极小星配置转移的真实依赖与全边核验--资源.md",
+      "sha256": "219870e1dd96cb16930fabc60b8e98a2072b51bdaa85cb75627ffd305c8273d7",
+      "section": "两原入口实际运行和不同实现"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本包实读原模型、全部原任务、Q_F与q_F区别、指定机器优先、argmin祖先、全局split、上下界与终态分类。特别另证两unit总量2>θ使原θ调度可正向压缩，不把仅T可行性保持误读为任意超T的同值等价。成熟k3,H5审计按现SHA/完整合同复用，未重跑或声称全大证书新认证。"
+}
