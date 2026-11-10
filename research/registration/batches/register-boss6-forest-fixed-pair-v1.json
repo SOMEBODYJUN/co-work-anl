@@ -1,0 +1,199 @@
+{
+  "schema": 2,
+  "objects": [
+    {
+      "object_id": "UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1",
+      "version": 1,
+      "title": "分数关联森林不能延拓任意指定的全机器配对配置律",
+      "kind": "finite-obstruction",
+      "truth_status": "proved",
+      "model": "有限普通不相关机；六台保身份原机器、三件不可拆原任务，完整正整数处理矩阵；T=1；给定有理完整行律与全部无序机器对的完整配置耦合。",
+      "statement": "存在六机三任务实例，own pair处理1、其余处理2，T=1；每行空/own singleton各1/2，分数关联图为三条不交机—任务—机路径。指定同pair占用互补，三组跨分量底层比特分别相等、相等、不等，并推至全部15个机器对。每对均有正确行边际及不交配置支撑，任意两分量四机的全部6对也有共同实现；全部15对却无全机共同延拓。独立三比特给8个真实T=1调度且保全部原行律，OPT=1。",
+      "quantifiers": "存在一份明确全有限正整数6×3原矩阵、固定T=1、固定六行有理完整配置律和固定全部15个配对律；对任意六机联合分布，它不可能同时匹配该指定pair家族。该同一行律存在另一份真实阈值1全调度联合实现。任意两原关联分量的限制均可共同实现。",
+      "assumptions": [
+        "给定全部行律及全部pair家族固定；pair之间只先要求共享同一单机边际。",
+        "每对支持不交原配置；逐任务期望覆盖恰一。",
+        "森林指0<x_ij<1的原机—任务二部支撑，允许断开。"
+      ],
+      "scope": "只否定“分数关联森林足以延拓任意指定全部GPC₂配对律”的加强；不否定森林指定rowlaw可实现、EA条件解码/存在见证等价、原CONFIG可行性或一般UM算法。",
+      "objections": "三a机的指定pair强制X1=X2、X2=X3、X1≠X3，给解析矛盾；三比特逐点不等式给线性证书。精确Fraction小核仅枚举64个六机row tuple，8个真实调度，0个兼容所有pair支持。此例为三条断开路径，不主张连通树反例、最小机器数或全球新颖性。",
+      "body": {
+        "path": "archives/unrelated-machines/state/反例/分数关联森林与指定配对律的全局不相容--反例.md",
+        "sha256": "ab12c07272e685786c230c17034c9fe63afcae5825af201769a1ad1930a9f239"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "research/workspaces/map-v2/Boss6/forest-pair-law/exact_kernel.py",
+          "sha256": "500efe3276b6909505baff442b636e0e0107d8994a10590441dffba35fe009c7"
+        },
+        {
+          "path": "research/workspaces/map-v2/Boss6/forest-pair-law/exact_kernel_output.json",
+          "sha256": "012dc9810e66d8e8ace9fab6dc8109ff03877af15f5ab6a92177841e604fe4e3"
+        },
+        {
+          "path": "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md",
+          "sha256": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5"
+        },
+        {
+          "path": "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md",
+          "sha256": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5",
+          "section": "单环只给存在与固定行律的区别"
+        },
+        {
+          "path": "archives/customer-attraction/state/等价/保机器分组的全机配置耦合--等价.md",
+          "sha256": "25a08161c926f9d4506fda0937a58b44c7840f353af26270aa889f2ff8ee9850"
+        }
+      ],
+      "sources": [
+        "Boss6 round38: proposed six-machine construction independently verified analytically and by exact finite kernel",
+        "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1",
+        "UM-SINGLE-CYCLE-FIXED-CONFIG-LAW-GLUE-NO-v1",
+        "EA-GROUPED-CONFIG-GLOBAL-GLUE-v1"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/反例/分数关联森林与指定配对律的全局不相容--反例.md",
+      "sha256": "ab12c07272e685786c230c17034c9fe63afcae5825af201769a1ad1930a9f239",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1"
+      ],
+      "reason": "明确六机三任务固定GPC2家族：分数关联森林与可实现指定行律不保证任意指定全部pair共同延拓；解析三比特不等式和单实例精确核验。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b",
+      "disposition": "objects",
+      "object_ids": [
+        "M-031b8ef7202a4527b45d47605c6ac93a",
+        "M-1b7aae02648540af8d4986eb762adaae",
+        "M-36e9d6d07bed4754858f0f578f0ad101",
+        "M-4b838ba4c29d4f0592cfc241cf9ef1a3",
+        "M-5e3a6df0fff848f1bbea15a683d2aeb8",
+        "M-99a53b4eb072418a8a291d8582a89646",
+        "M-b4a6d0d0b41c4ef2b84217f7ac101ea1",
+        "M-c663aecb01df4eefa9ed35be826cfbab",
+        "M-d702c3e78d5648ac90a84fd6a8f02f7e",
+        "UM-COMMON-MULTIPLIER-UNKNOWN-B-EXACT-v1",
+        "UM-COMMON-SIZE-REOPEN-v1",
+        "UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1",
+        "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1",
+        "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1",
+        "UM-FINITE-PALETTE-GCD-BARRIER-v1",
+        "UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1",
+        "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1",
+        "UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1",
+        "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1",
+        "UM-HETEROGENEOUS-MACRO-PROMISE-v1",
+        "UM-HOMOGENEOUS-MACRO-PRIVATE-PROMISE-v1",
+        "UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1",
+        "UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1",
+        "UM-LARGE-BUNDLE-COLLISION-FLOOR-v1",
+        "UM-MODEL-v1",
+        "UM-PRUNED-TREE-LEAF-HITTING-v1",
+        "UM-RANKJUMP-ONE-TRUE-SUPPORT-v1",
+        "UM-SINGLE-CYCLE-FIXED-CONFIG-LAW-GLUE-NO-v1",
+        "UM-SMALL-DENSITY-FLOW-BARRIER-v1",
+        "UM-ST-ROUND-v1",
+        "UM-THRESHOLD-COVER-JOINT-SLOT-v1",
+        "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+        "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+        "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+        "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+        "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+        "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+        "UM-UNIT-READOUT-SELECTOR-MIXING-v1",
+        "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+        "UM-WEIGHTED-GROUP-JOINT-SLOT-v1",
+        "UM-WEIGHTED-GROUP-PROMISE-APPROX-v1",
+        "bare-cartesian-menu-original-matrix-audit-entry",
+        "unrelated-machines/actual-kronecker-full-matrix-two-certificates-audit",
+        "unrelated-machines/actual-kronecker-reconstruction-and-staged-reviews",
+        "unrelated-machines/arbitrary-sink-cover-mw-frozen-audit-replay",
+        "unrelated-machines/bare-cartesian-read-after-normal-form-palette-scope",
+        "unrelated-machines/bounded-config-slots-and-independent-replay",
+        "unrelated-machines/conditional-moment-orders-sharp-at-every-prefix-depth",
+        "unrelated-machines/coordinate-slice-physical-configuration-audit",
+        "unrelated-machines/coordinate-slice-private-output-padding-v3-source-review",
+        "unrelated-machines/cotransversal-gap-original-program-replay-and-marginal-correction",
+        "unrelated-machines/cumulative-path-proof-aware-correction-and-statement-first-certificate",
+        "unrelated-machines/degree-three-normal-form-author-and-canonical-read-after",
+        "unrelated-machines/dualrail-rowuniform-20261030",
+        "unrelated-machines/fewer-macros-uniform-half-home-capacity-counterexample",
+        "unrelated-machines/fixed-job-exact-completion-subset-sum-embedding",
+        "unrelated-machines/fixed-literal-sa-unit-assignment-gap-two",
+        "unrelated-machines/fixed-two-level-tensor-integer-audit-replay",
+        "unrelated-machines/fractional-rematching-normalized-xos-robust-gap",
+        "unrelated-machines/half-unit-two-original-source-and-scheduling-audits",
+        "unrelated-machines/hall-joint-flow-and-opt-promise-original-independent-audits",
+        "unrelated-machines/native-multi-small-endpoint-two-flow-schedule",
+        "unrelated-machines/normalized-flat-menu-degree3-normal-form-v1",
+        "unrelated-machines/one-primary-pi-onehot-unit-escape-proof-and-review",
+        "unrelated-machines/partial-minrep-pdm-threshold-review",
+        "unrelated-machines/pi-simplex-tagged-line-proof-interfaces-and-review",
+        "unrelated-machines/polynomial-source-two-canonical-audits-and-q13-export",
+        "unrelated-machines/private-demand-graft-no-amplification-composition-review",
+        "unrelated-machines/private-graft-parity-three-program-contracts",
+        "unrelated-machines/private-graft-resource-repetition-finite-audit-review-20261030",
+        "unrelated-machines/qary-near-full-deficit-version-and-review-lineage",
+        "unrelated-machines/review-degree-three-zero-cell-cube-embedding-versions",
+        "unrelated-machines/review-polynomial-vector-greedy",
+        "unrelated-machines/seven-state-star-global-quadratic-local",
+        "unrelated-machines/slot-envelope-configuration-identity-20261031",
+        "unrelated-machines/slot-envelope-exact-program-resource",
+        "unrelated-machines/sparse-partial-projection-scheduling-transfer-obligation",
+        "unrelated-machines/tiny-work-joint-slot-stability-and-selection",
+        "unrelated-machines/two-level-label-fee-second-multiplicity",
+        "unrelated-machines/uniform-port-gap-and-actual-approximation-review-scopes"
+      ],
+      "reason": "全文定义模型、零值分支、剪枝LST及向下封闭CONFIG；保留已直接引用本页的全部现有owner。"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss6/forest-pair-law/exact_kernel.py",
+      "sha256": "500efe3276b6909505baff442b636e0e0107d8994a10590441dffba35fe009c7",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1"
+      ],
+      "reason": "明确六机三任务固定GPC2家族：分数关联森林与可实现指定行律不保证任意指定全部pair共同延拓；解析三比特不等式和单实例精确核验。"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss6/forest-pair-law/exact_kernel_output.json",
+      "sha256": "012dc9810e66d8e8ace9fab6dc8109ff03877af15f5ab6a92177841e604fe4e3",
+      "disposition": "attachment",
+      "object_ids": [
+        "UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1"
+      ],
+      "reason": "明确六机三任务固定GPC2家族：分数关联森林与可实现指定行律不保证任意指定全部pair共同延拓；解析三比特不等式和单实例精确核验。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md",
+      "sha256": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1",
+        "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1",
+        "UM-SINGLE-CYCLE-FIXED-CONFIG-LAW-GLUE-NO-v1"
+      ],
+      "reason": "有理真实配置律的完整森林分解及精确单环固定见证反例。"
+    },
+    {
+      "path": "archives/customer-attraction/state/等价/保机器分组的全机配置耦合--等价.md",
+      "sha256": "25a08161c926f9d4506fda0937a58b44c7840f353af26270aa889f2ff8ee9850",
+      "disposition": "objects",
+      "object_ids": [
+        "EA-GROUPED-CONFIG-GLOBAL-GLUE-v1",
+        "UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1"
+      ],
+      "reason": "独立证明全机联合分布的完整真实阈值解码与反向Dirac，及全部pair局部证书的精确失败。"
+    }
+  ],
+  "edge_files": []
+}
