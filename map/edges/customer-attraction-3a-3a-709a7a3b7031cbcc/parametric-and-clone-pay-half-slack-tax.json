@@ -1,0 +1,55 @@
+{
+  "edge_id": "boss5-cag709-parametric-and-clone-pay-half-slack-tax",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/parametric-weighted-two-tail-price-envelope",
+    "customer-attraction/penultimate-clone-tax-four-real-row-certificate"
+  ],
+  "target_ids": [
+    "customer-attraction/weighted-terminal-price-tax-and-clone-slack"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "两来源使用同一合法前缀p、同一完整末两人SPE及实际A/B/v/w；P为固定过去玩家在该实际叶的最终利润，W=P+v+w。总人数系数仅在m≥3且前缀长m−2时使用，m=2直接E=0。",
+  "roles": {
+    "customer-attraction/parametric-weighted-two-tail-price-envelope": "提供原始R_η(q)及q=1、η=1/2的R上界。",
+    "customer-attraction/penultimate-clone-tax-four-real-row-certificate": "提供同一真实菜单的合法复制行L≥0、显式E及逐客户过去终局份额表、人数负载界。",
+    "customer-attraction/weighted-terminal-price-tax-and-clone-slack": "保留原组织丢掉的L/2，得到完整税与克隆余量结论。"
+  },
+  "explanation": "参数源给B_q(v)≤R_η(q)。克隆源的实际末位复制A给C_A=Σ_A1/(p+2)、L=w−C_A≥0；所以加λL（λ≥0）只使原上界增大，不能称为增加支付能力。\n取q=1、η=1/2，令H=tax_p+F/4−C_A/2，则R=w/2+H+C_A/2=w+H−L/2。克隆源的逐客户支付表以P_x=p/(p+a+b)付款：p=0时H_x−P_x=0；p≥1的(a,b)=00/01/10/11分别为−1/(p+1)、0、−1/[2(p+2)]、(p−1)/[2(p+1)(p+2)]。唯一正项正是E_x（p≥2且a=b=1），故H≤P+E。于是B(v)≤R≤W−v+E−L/2≤W−v+E。\n收费型倒二份额α=1/(p+2)，E_x/α=(p−1)/[2(p+1)]<1/2，其余E_x=0，故不除以总v即得E≤v/2，推出W−v/2−L/2。当m≥3时p≤m−2且该比率递增，得E≤(m−3)v/[2(m−1)]及B(v)≤W−κ_m v−L/2，κ_m=(m+1)/[2(m−1)]。不要求逐客户L_x非负，只使用总L≥0；税式可能因其他客户严格负余项而严格大于原R。",
+  "scope": "整条税推论，ALL保留参数原始界和克隆证书的真实行/支付表。没有将两来源当两个可相加的钱包，也不声称税式与R恒等。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/真实末两人加权分数价格包络--定理.md",
+      "sha256": "696c340a956adaab40ecc0157d054f7e64604753275c797a6e23e47802e31001"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/倒二克隆税的四类真实比较--引理.md",
+      "sha256": "4724e316501a5c81b17c922bde414a7f114a516c9edaf3277eed97efdf5b9b58"
+    },
+    {
+      "path": "archives/customer-attraction/state/推论/加权末位价格的税与克隆余量--推论.md",
+      "sha256": "bf3055fefae0676b038790a0812e9724c0aaeac50b89d3add3071829d9467f3a"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "Boss5；本包worker逐正文核对全部有序历史、同一策略真实后继、合法整数前缀、全部非负实查询及零收益边界。关系由所列解析推导承担；成熟有限计算按原合同复用，本包0原科学程序/LP/全树重跑。",
+  "whole_result": "参数原始包络与同一四行克隆证书共同推出全部λ≥0的放松方向，以及B(v)≤R≤W−v+E−L/2≤W−v+E、W−v/2−L/2和合法m≥3的κ_m加强；覆盖目标完整陈述。",
+  "endpoint_pins": {
+    "customer-attraction/parametric-weighted-two-tail-price-envelope": "a7f745cb4deeb951fc95903a2b56a0bb95142ffb88e95bd15af45546b01c9688",
+    "customer-attraction/penultimate-clone-tax-four-real-row-certificate": "2bea8b88dde68d25959d3ff8646e76ed498b20cad94ee26f7efefd48c7339159",
+    "customer-attraction/weighted-terminal-price-tax-and-clone-slack": "73d4eea0512420b627803907882833a792689636593b481ed08168f260b26f0e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/真实末两人加权分数价格包络--定理.md": "696c340a956adaab40ecc0157d054f7e64604753275c797a6e23e47802e31001",
+    "archives/customer-attraction/state/引理/倒二克隆税的四类真实比较--引理.md": "4724e316501a5c81b17c922bde414a7f114a516c9edaf3277eed97efdf5b9b58",
+    "archives/customer-attraction/state/推论/加权末位价格的税与克隆余量--推论.md": "bf3055fefae0676b038790a0812e9724c0aaeac50b89d3add3071829d9467f3a",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "ee8bc046fdcd43ebd52ee7ae25d8ab93f5b17670ce6c387ad59cc645e36ffbf4"
+}

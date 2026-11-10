@@ -1,0 +1,52 @@
+{
+  "edge_id": "boss5-cag709-nonuniform-current-ic-to-parametric-envelope",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/true-penultimate-menu-nonuniform-fractional-procurement"
+  ],
+  "target_ids": [
+    "customer-attraction/parametric-weighted-two-tail-price-envelope"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户和有限非空共同标签目录；同一合法有序前缀p、恰余两名单位玩家；目标的完整纯SPE保证所有c(T)≤v=c(A)，且全部真实末位回复来自同一策略。q,z只是比较查询；W包含固定过去玩家最终利润。",
+  "roles": {
+    "customer-attraction/true-penultimate-menu-nonuniform-fractional-procurement": "在同一真实末位BR菜单上给全部q/η/z的非均匀WP；当前A本来无需最优。",
+    "customer-attraction/parametric-weighted-two-tail-price-envelope": "加上给定完整SPE已有的当前IC，得到统一实际价格v的整个参数包络及阈值/税特例。"
+  },
+  "explanation": "置C(z)=Σ_Tz_Tc(T)、τ=Σz_T、F_q(z)=Σ_xq_x min(1,d_x)。源WP只需末位BR，对每个z≥0有F_q(z)−C(z)≤ηw+Σ(q−θ_η)_+。目标完整SPE在当前节点给c(T)≤v，故C(z)≤τv，方向为F_q−τv≤F_q−C，取所有z最大值即得B_q(v)≤ηw+Σ(q−θ_η)_+。这个步骤不能反向从统一价不等式删除当前IC。\n令q=θ_η得核心；反向用qf≤θ_η f+(q−θ_η)_+（0≤f≤1）恢复全q族。η≥1时(p+a+1)≤(p+1)(p+2)使θ_η=1/(p+1)，余项不再变化且ηw不减，故最优η可限连续紧区间[0,1]。\nq=1、η=1/2给R_0=w/2+tax_p+F/4，F=|A∩{p=0}|。逐客户p≥1时1−p/(p+1)−β=1/(p+1)−b/(p+a+b)≥0；p=0,a=1时1−β≥1/2；p=a=0的覆盖和全未覆盖型直接成立。故tax_p+w+F/2≤W，推出R_0≤K_0=W−w/2−F/4≤W。源WP已处理τ=0与0<τ<1，所有最大值通过逐坐标z_T截至1在有限紧盒达到。",
+  "scope": "整条目标；当前IC把主题敏感价格变为统一价，未改变原单位游戏。此蕴含不提供更早位置、多后继共同钱包。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/真实倒二菜单的非均匀分数采购--定理.md",
+      "sha256": "5a37e12292562c8e0c28a99576a12e376c44cc3dce9d6235aac58f7f387547ab"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/真实末两人加权分数价格包络--定理.md",
+      "sha256": "696c340a956adaab40ecc0157d054f7e64604753275c797a6e23e47802e31001"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/倒二菜单分数采购的解析核验--计算.md",
+      "sha256": "0c866839164be8ccd7d581ec39d3ff01e4d6f11b67b0346d50a20d4c20d5e53d"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "Boss5；本包worker逐正文核对全部有序历史、同一策略真实后继、合法整数前缀、全部非负实查询及零收益边界。关系由所列解析推导承担；成熟有限计算按原合同复用，本包0原科学程序/LP/全树重跑。",
+  "whole_result": "同一完整末两人SPE中，非均匀采购WP推出全部q_x≥0、η≥0的B_q(v)≤ηw+Σ(q−θ_η)_+，全q族等价阈值核心、η优化可限[0,1]，并得到q=1/η=1/2的完整R_0≤K_0≤W层级。",
+  "endpoint_pins": {
+    "customer-attraction/parametric-weighted-two-tail-price-envelope": "a7f745cb4deeb951fc95903a2b56a0bb95142ffb88e95bd15af45546b01c9688",
+    "customer-attraction/true-penultimate-menu-nonuniform-fractional-procurement": "d708f5e8e7241d5ab43210f22d77cadbb024af162adf0096e23a7ecabc5b312d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/真实倒二菜单的非均匀分数采购--定理.md": "5a37e12292562c8e0c28a99576a12e376c44cc3dce9d6235aac58f7f387547ab",
+    "archives/customer-attraction/state/定理/真实末两人加权分数价格包络--定理.md": "696c340a956adaab40ecc0157d054f7e64604753275c797a6e23e47802e31001",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/计算/倒二菜单分数采购的解析核验--计算.md": "0c866839164be8ccd7d581ec39d3ff01e4d6f11b67b0346d50a20d4c20d5e53d"
+  },
+  "review_digest": "3f30ae0c30e0505ab253131aba5fe1341e9bf85cb6c0c60ddd52bcee999025eb"
+}
