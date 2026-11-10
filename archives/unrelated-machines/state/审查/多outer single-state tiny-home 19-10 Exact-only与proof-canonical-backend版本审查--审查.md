@@ -175,6 +175,10 @@ v4/v5 有各自的后续限定域正文与证明机制，见[共享 UD 状态势
 
 三源共同核对的数学范围是：A 为一般 monotone subadditive 的 semantic fractional matching 接口；B 为有限显式、非负 binary-rational、无权 XOS；C 为原 normalized total-one menu；D 为指定同组 singleton REPAIR promise LP；E 为保留所有原 selectors/incidences/zero/unselected jobs 的完整 ordinary schedule。B 的 1/1,125,000 与 C 的 NSW 下界、D 的 fixed slack、E 的 makespan/selected-root count 均有明确量词，未把有限 backend 当成算法实现。
 
-Canonical 最终版本只修正了 B5 中对 `i notin A''` 的显式 empty convention（与既有 Proof/Exact 意图一致），并明确区分 `delta_mask=2/35`、`delta_quality`、`a_rep`。它仍不覆盖 source regime `gamma<=delta_quality`，不把 source decoder/需求树历史事实冒作已审材料，也不把 v5 working algorithm升级为一般 UM 或 hardness。
+Canonical 最终版本只修正了 B5 中对 `i notin A''` 的显式 empty convention（与既有 Proof/Exact 意图一致），并明确区分 `delta_mask=2/35`、`delta_quality`、`a_rep`。该次旧 canonical 审查当时声称不覆盖 source regime `gamma<=delta_quality`；这一高低组比例混用结论已由《归一化菜单高低比例互补的实质纠错及修复边界》之“高低gamma混用的撤回与准确互补”撤回。准确地，unit-FSLP 可行时，固定 0<eta<1 的同一输出排除 0<delta_quality<=q_eta 且 0<=gamma_hi<=1-eta 的全称高组 NO，两个等号亦包括；其余参数域仍须逐项核。该次历史审查未把 source decoder/需求树历史事实冒作已审材料，也不把 v5 working algorithm升级为一般 UM 或 hardness。
 
 原件副本、manifest、哈希校验和 validation PASS 位于 `archives/unrelated-machines/tools/evidence/retired-nsw-v5-20261031/`；本增量不重复建立第二个算法正文。
+
+# 第三阶段定向勘误
+
+Boss3 修正旧 canonical 审查引用的后续状态，明确 gamma_hi 与 gamma_lo 不同。输出 low<q_eta 的组数<eta*n，与 robust NO 在 delta_quality<=q_eta、gamma_hi<=1-eta 下要求 low>=(或严格多于，按原 NO 符号) (1-gamma_hi)*n 不能并存；本页所引用主勘误使用严格 NO high<gamma_hi*n，故 low>(1-gamma_hi)*n。tiny-home 19/10 算法结论与历史原件保持。
