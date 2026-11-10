@@ -1,0 +1,55 @@
+{
+  "edge_id": "cag-b69c64-disjoint-padding-preserves-homogeneous-certificate",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/same-population-disjoint-catalog-padding-full-policy-preservation"
+  ],
+  "target_ids": [
+    "B20-HOMOGENEOUS-SCREEN-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "旧目录有H_r(B)见证且采用合法同人数不交扩充，新增正块大小t≤K/m；另若r>m须显式要求rt≤K。零端点按至多一个新空集。",
+  "roles": {
+    "customer-attraction/same-population-disjoint-catalog-padding-full-policy-preservation": "同人数扩充策略保持、追加块与所有旧客户不交。",
+    "B20-HOMOGENEOUS-SCREEN-v1": "扩充后仍可沿用原H_r的目录筛选。"
+  },
+  "explanation": "H_r(B)使K=|B|。对旧合法查询式不变；对每个新D，D∩B=∅且H_r左侧正好rt，故若至少添一个新正块，H_r保留当且仅当rt≤K。r≤m时由通常t≤K/m自动保证。新最大主题仍为K，保持给定旧完整策略及W的扩充继承OPT⁺≤[1+(m−1)/r]W；r=m是直接锐筛选，r=m−1同样保持half条件。",
+  "scope": "真的改目录且保持同m和旧全部历史。比较元组补槽与此操作分立；任意更大的r须另验新主题约束。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/同质末位筛选的真实锥剪枝与背景保留--引理.md",
+      "sha256": "535be16110db02d17809e06cc49491631d0411b4d8d1cf1fd1cabc539bfca9df",
+      "section": "比较元组padding与目录覆盖界"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/同质末位筛选的真实锥剪枝与背景保留--引理.md",
+      "sha256": "535be16110db02d17809e06cc49491631d0411b4d8d1cf1fd1cabc539bfca9df"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/同人数不交目录扩充的完整策略保持--定理.md",
+      "sha256": "3ead3d718b23e40082d98f0bce2d9a7717593eaaa41e1d85c15f006b64cb9e61"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/回复闭包与安全目录扩充的程序和审查合同--资源.md",
+      "sha256": "8824f4b925c9916bf0ed00d7649c86dec20229a96b2a1a2add2fb9406176ea5f"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核真实有序前缀、承重等式和端点的精确量词。本边只承担下列明确作用范围。",
+  "contribution": {
+    "result": "给原同质目录证书跨同人数不交扩充的充要新增行rt≤K及其福利上界。",
+    "remaining": "一般目录须先有H_r见证；未获见证不从扩充定理得到筛选。"
+  },
+  "endpoint_pins": {
+    "B20-HOMOGENEOUS-SCREEN-v1": "a5f32913c6678ab5a6afa343677e1052c237302e17f8becea04641e643888fb8",
+    "customer-attraction/same-population-disjoint-catalog-padding-full-policy-preservation": "47760ca9fb3a5a2aaaa15ff4d458e1bd1f11abf157bf2fa34a793223ad4978f9"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/同质末位筛选的真实锥剪枝与背景保留--引理.md": "535be16110db02d17809e06cc49491631d0411b4d8d1cf1fd1cabc539bfca9df",
+    "archives/customer-attraction/state/定理/同人数不交目录扩充的完整策略保持--定理.md": "3ead3d718b23e40082d98f0bce2d9a7717593eaaa41e1d85c15f006b64cb9e61",
+    "archives/customer-attraction/state/资源/回复闭包与安全目录扩充的程序和审查合同--资源.md": "8824f4b925c9916bf0ed00d7649c86dec20229a96b2a1a2add2fb9406176ea5f"
+  },
+  "review_digest": "24ce8e7a12356d6dcb39868b69542879e41e9a7f24ac28c942c6740412a73388"
+}

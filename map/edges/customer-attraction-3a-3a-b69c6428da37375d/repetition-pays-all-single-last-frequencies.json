@@ -1,0 +1,51 @@
+{
+  "edge_id": "cag-b69c64-repetition-pays-all-single-last-frequencies",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/repeated-first-theme-terminal-strict-two-bound"
+  ],
+  "target_ids": [
+    "M-0fff87bbb06d4099a4016c39c8f7aba4"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "实际两种不同覆盖A/B、末位B且仅出现一次B；所有此前主题覆盖均等于A。",
+  "roles": {
+    "customer-attraction/repeated-first-theme-terminal-strict-two-bound": "实际重复首覆盖至倒二、最后出现B时的严格常数。",
+    "M-0fff87bbb06d4099a4016c39c8f7aba4": "一般两覆盖频次筛选中l=1的路径范围。"
+  },
+  "explanation": "l=1强制实际覆盖序列A^(m−1)B，重复首题证明只使用覆盖与固定真实有序前缀，故即使此前标签不同而覆盖相同，也给同一显式β_m<2。这个子域的结论对所有k=m−1成立；频次不等式l(2k+1)≥k²−1在l=1只覆盖k=1,2。",
+  "scope": "覆盖了最后唯一B的整个子域；多次B且末两位BB时不能把更早的A移动至倒二。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/重复首主题终局的严格二倍界--定理.md",
+      "sha256": "4d2a3b8474b964288d43b55c4ecb0b2fa34114767bcd8afe9193f6661305bd6e",
+      "section": "Claim B：频次筛选的准确充分性"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/单色真实后缀的虚拟相邻税--候选.md",
+      "sha256": "4b1861b985e8b809708a44c70511206d97cff4b55a1045a4c62ac009b45f1f87",
+      "section": "对两覆盖终局的条件用途及频次方向"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/重复首主题终局的严格二倍界--定理.md",
+      "sha256": "4d2a3b8474b964288d43b55c4ecb0b2fa34114767bcd8afe9193f6661305bd6e"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核真实有序前缀、承重等式和端点的精确量词。本边只承担下列明确作用范围。",
+  "contribution": {
+    "result": "l=1全部路径已由严格重复常数处理，包括频次筛选本身不适用的k≥3。",
+    "remaining": "l≥2须回到实际最后A的真实偏离或不同的真后继税界。"
+  },
+  "endpoint_pins": {
+    "M-0fff87bbb06d4099a4016c39c8f7aba4": "d608e225ee3ab79a71c61a5ad415f18b162c676afd2473afe49e6285381bc85d",
+    "customer-attraction/repeated-first-theme-terminal-strict-two-bound": "2d492dbefa1c02e6302629439f2def48251603ca2a8737b669ca4166c0c152ba"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/重复首主题终局的严格二倍界--定理.md": "4d2a3b8474b964288d43b55c4ecb0b2fa34114767bcd8afe9193f6661305bd6e",
+    "archives/customer-attraction/state/候选/单色真实后缀的虚拟相邻税--候选.md": "4b1861b985e8b809708a44c70511206d97cff4b55a1045a4c62ac009b45f1f87"
+  },
+  "review_digest": "14a9959de0b9e084b40b40154c63ca3bc2624ed3a949340c600e943bdec78c4c"
+}

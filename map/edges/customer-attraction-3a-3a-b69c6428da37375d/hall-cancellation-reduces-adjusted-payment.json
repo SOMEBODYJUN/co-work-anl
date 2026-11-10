@@ -1,0 +1,54 @@
+{
+  "edge_id": "cag-b69c64-hall-cancellation-reduces-adjusted-payment",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-c70db5bb049c4ebe8180b761ec1d577d",
+    "customer-attraction/increasing-capture-root-regret-payment-and-signed-row-capacity",
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance"
+  ],
+  "target_ids": [
+    "M-de8cbac52c7e4d718a0ae6b93893e0be"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "任意m≥2的单位共同目录，固定同一正深度全SPE原计划、合法最优比较元组、配对与owner；假设该未取消选择满足B≤g+2Δ。",
+  "roles": {
+    "M-c70db5bb049c4ebe8180b761ec1d577d": "给仍开放的未取消共同容量假设。",
+    "customer-attraction/increasing-capture-root-regret-payment-and-signed-row-capacity": "给同一DAG、分流守恒、L1≤1和根后悔逐查询上界。",
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance": "以最优O对同一owner实际取消g个质量单位。",
+    "M-de8cbac52c7e4d718a0ae6b93893e0be": "取消后重新标量化的共同容量结论。"
+  },
+  "explanation": "固定查询s的D_s和严格未来转移，按同一Hall γ逐客户将原源量1改为ρ=1−γ。重置转移只依同一客户在同一真实查询叶的覆盖，故A′_s≤A_s，且Σ(A_s−A′_s)=g。D_s=0时两者和两权均0；否则w_s−w′_s=(A_s−A′_s)/D_s≥0。置v_1=u_1+Δ、v_i=u_i(i>1)，对每个s有v_i≥D_s，因此Σ_s(w_s−w′_s)v_i≥g。按定义，B′+L′_1Δ≤B+L_1Δ−g≤3Δ，最后用L_1≤1。等价地，以v计的非负IC差E′_ρ不超过未取消E′。此推导可取SOURCE-NET的同一最大局部预送，但不需要另领取g或逐行钱包。",
+  "scope": "单向条件关系。原阈值可放宽至B≤g+(3−L_1)Δ仍蕴含该取消阈值；反向及无条件选择均未付。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/递增捕获的根后悔付款与带符号行容量--候选.md",
+      "sha256": "e375d6f3c55bb3e7ed1ee9d15c8c3ec647b7c32f5af6b0e9a413cf829dc95684"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/实际取消的同时源付款与入流余额--定理.md",
+      "sha256": "5759f87d02d0bacc5c61a5472806d6f464192bb97bcb18a1a3bf1e156a02ad7a"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/统一缩尾税与遗漏捕获的共同净账--引理.md",
+      "sha256": "d95591ace7be6659e71517baa142d2ba2f5dfdc1ff13210b572e8e2ab02594eb",
+      "section": "严格future等份捕获及whole-IC付款"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核真实有序前缀、承重等式和端点的精确量词。本边只承担下列明确作用范围。",
+  "whole_result": "若未取消容量候选对给定计划有共同见证，则同一最优元组与owner有Hall取消见证使B′≤(3−L′_1)Δ；根SPE时退化为B′≤0。",
+  "endpoint_pins": {
+    "M-c70db5bb049c4ebe8180b761ec1d577d": "ee8089eeec90604ce9f7093aba76c15fb22f946fc4163574a44559f98aec5f4a",
+    "M-de8cbac52c7e4d718a0ae6b93893e0be": "43bf21fcd6631390dced141a97f8a363ac32d72b3ec8270a5669273dde00e6c3",
+    "customer-attraction/actual-cancellation-simultaneous-source-payment-and-incoming-balance": "6301d3ef5ca152ec47607ffd3a061649bb168671ccaaab725d8f88bd9d7f9257",
+    "customer-attraction/increasing-capture-root-regret-payment-and-signed-row-capacity": "7e0d3986bc171d4215a9060ab9ccb0387f9d7ec4314863ce46e2b013756314c9"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/递增捕获的根后悔付款与带符号行容量--候选.md": "e375d6f3c55bb3e7ed1ee9d15c8c3ec647b7c32f5af6b0e9a413cf829dc95684",
+    "archives/customer-attraction/state/定理/实际取消的同时源付款与入流余额--定理.md": "5759f87d02d0bacc5c61a5472806d6f464192bb97bcb18a1a3bf1e156a02ad7a",
+    "archives/customer-attraction/state/引理/统一缩尾税与遗漏捕获的共同净账--引理.md": "d95591ace7be6659e71517baa142d2ba2f5dfdc1ff13210b572e8e2ab02594eb"
+  },
+  "review_digest": "f5e76d30993a5eb7f9a4423e102bb0cf2e37e8d8594b0e84a4be6836c05e9b4c"
+}

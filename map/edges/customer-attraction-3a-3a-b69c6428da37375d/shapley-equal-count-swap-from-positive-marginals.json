@@ -1,0 +1,57 @@
+{
+  "edge_id": "cag-b69c64-shapley-equal-count-swap-from-positive-marginals",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/fixed-population-all-support-triangular-shapley-identities"
+  ],
+  "target_ids": [
+    "M-467497b1702b472cb87e3f65e626a3ee"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定正人数m、计数q且q_a=q_b=r>0，同一张可有符号客户表，D=supp(q)∖{a,b}。",
+  "roles": {
+    "customer-attraction/fixed-population-all-support-triangular-shapley-identities": "给固定人数同客户表的正覆盖边际积分。",
+    "M-467497b1702b472cb87e3f65e626a3ee": "等计数两标签差只需真子集覆盖的正交换身份。"
+  },
+  "explanation": "对每个R⊆D，在F_a与F_b的边际式分别拆成对手b/a入R和不入R。令θ_R为去掉a,b的显示正积分，令J_R为同被积式多乘t^r的积分。两不入项的系数都是J_R，贡献J_R[C(R+a)−C(R+b)]；两入项系数都是θ_R−J_R，公共C(R+a+b)相消，贡献(θ_R−J_R)[C(R+a)−C(R+b)]。合并即(8)。对R求和余∫_0^1 t^(r−1)=1/r。",
+  "scope": "交换是代数恒等，正的是积分权，覆盖差可异号。与客户非负锥及策略计数净化分开。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/固定人数全支持Shapley的三角身份基与等计数交换--定理.md",
+      "sha256": "2418766e8cf1c9a9f272be966cb6e808b7735e6e0617e6c623ba4ba0db8f5cf1",
+      "section": "等计数标签的正交换"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定人数全支持Shapley的三角身份基与等计数交换--定理.md",
+      "sha256": "2418766e8cf1c9a9f272be966cb6e808b7735e6e0617e6c623ba4ba0db8f5cf1"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定人数全支持Shapley的三角身份基与等计数交换--定理.md",
+      "sha256": "2418766e8cf1c9a9f272be966cb6e808b7735e6e0617e6c623ba4ba0db8f5cf1",
+      "section": "消去低人数层后的完整三角身份基"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/boss3-c16-resumed/original/research/workspaces/customer-attraction/R-c50fecc37aa44fb4a69a2122bb70e5fe/tree/verify_all_support_shapley.py",
+      "sha256": "e9db2140c495c0080158a52fb4899d70509656ea77681f43eaf241d7c1c65b44"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/boss3-c16-resumed/replay/shapley/stdout.txt",
+      "sha256": "723ac76239f8a4f3dfb3ed19f71147f5b49dd18de5cff706a507b07f30e85dcb"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核真实有序前缀、承重等式和端点的精确量词。本边只承担下列明确作用范围。",
+  "whole_result": "从固定层正边际公式推出全等计数交换式，严格正权和1/r，最高支持覆盖完全消去。",
+  "endpoint_pins": {
+    "M-467497b1702b472cb87e3f65e626a3ee": "b597f5734f9b3e2a0529622db4774880d03454002d89bbf130bef2384c2f4359",
+    "customer-attraction/fixed-population-all-support-triangular-shapley-identities": "609e9bb9c0a4cbf31989455ef453bb71ae2e4d5ca8bf8114c9195a76edd1137e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/固定人数全支持Shapley的三角身份基与等计数交换--定理.md": "2418766e8cf1c9a9f272be966cb6e808b7735e6e0617e6c623ba4ba0db8f5cf1",
+    "archives/customer-attraction/tools/evidence/boss3-c16-resumed/original/research/workspaces/customer-attraction/R-c50fecc37aa44fb4a69a2122bb70e5fe/tree/verify_all_support_shapley.py": "e9db2140c495c0080158a52fb4899d70509656ea77681f43eaf241d7c1c65b44",
+    "archives/customer-attraction/tools/evidence/boss3-c16-resumed/replay/shapley/stdout.txt": "723ac76239f8a4f3dfb3ed19f71147f5b49dd18de5cff706a507b07f30e85dcb"
+  },
+  "review_digest": "166f9fb411e6ebdde6f4a25cdd093ef29961dab40fb460959c043f459118f805"
+}

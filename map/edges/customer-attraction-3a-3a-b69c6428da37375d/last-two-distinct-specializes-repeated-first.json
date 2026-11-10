@@ -1,0 +1,60 @@
+{
+  "edge_id": "cag-b69c64-last-two-distinct-specializes-repeated-first",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "B10-TWO-SUPPORT-END-AB-v1",
+    "B20-HOMOGENEOUS-SCREEN-v1"
+  ],
+  "target_ids": [
+    "customer-attraction/repeated-first-theme-terminal-strict-two-bound"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意m≥2的完整有序纯SPE实际为A^(m−1)B。",
+  "roles": {
+    "B10-TWO-SUPPORT-END-AB-v1": "给不同覆盖且末两位A/B时的任意频次严格二倍界。",
+    "B20-HOMOGENEOUS-SCREEN-v1": "当A/B同覆盖时以真实末位比较认证H_m，支付退化分支。",
+    "customer-attraction/repeated-first-theme-terminal-strict-two-bound": "完整覆盖A^(m−1)B的显式严格常数，包括同覆盖。"
+  },
+  "explanation": "若A/B覆盖不同，取k=m−1,l=1，则两覆盖定理P、L的(a,b,c)系数正好为((2m−1)/(m−1),1/2,2−1/m)与((m−1)/m,m,2−1/m)。其λ=2(m−1)(m²−m+1)/(2m³−m²+3m−2)，故公共系数以外皆为γ_m=(4m³−3m²+2m−1)/(2m³−m²+3m−2)。若覆盖相同，真实最后B与A覆盖相同、面对m−1个A，从其BR得到H_m(A)并给OPT≤(2−1/m)W。两分支合得目标max常数，W=0时目录全空。",
+  "scope": "完整覆盖已登记结构，包括同覆盖异标签及空题。正确分子末项+1，不能移用冻结旧式。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/同质末位筛选的真实锥剪枝与背景保留--引理.md",
+      "sha256": "535be16110db02d17809e06cc49491631d0411b4d8d1cf1fd1cabc539bfca9df"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/重复首主题终局的严格二倍界--定理.md",
+      "sha256": "4d2a3b8474b964288d43b55c4ecb0b2fa34114767bcd8afe9193f6661305bd6e"
+    },
+    {
+      "path": "tools/evidence/two-theme-repetition-and-security-route-primary/correction/minimal-replacements.json",
+      "sha256": "672e15232167ff6e8d4647d1fd0882c1448729298ce9b1a85a523c7d6ed4f45f"
+    },
+    {
+      "path": "tools/evidence/two-theme-repetition-and-security-route-primary/runs/new-convex-correction-001/stdout.json",
+      "sha256": "0845c60f5846b94684fc6f749a78a2da29c110c062b6b899b1892e04b8a9121c"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/两种实际覆盖且末两位不同的严格二倍界--定理.md",
+      "sha256": "7683f435a703bf5c9cf0303baac28db77a862354c66d3e07fafff2c822484583"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核真实有序前缀、承重等式和端点的精确量词。本边只承担下列明确作用范围。",
+  "whole_result": "任意m≥2且实际A^(m−1)B的完整SPE均有OPT_m≤max(2−1/m,γ_m)W，正W时严格小于2W。",
+  "endpoint_pins": {
+    "B10-TWO-SUPPORT-END-AB-v1": "671d67825768b3d2e91a872e7db10f9a5873b4fcf30efb89c1dfa52c46c916c8",
+    "B20-HOMOGENEOUS-SCREEN-v1": "a5f32913c6678ab5a6afa343677e1052c237302e17f8becea04641e643888fb8",
+    "customer-attraction/repeated-first-theme-terminal-strict-two-bound": "2d492dbefa1c02e6302629439f2def48251603ca2a8737b669ca4166c0c152ba"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/同质末位筛选的真实锥剪枝与背景保留--引理.md": "535be16110db02d17809e06cc49491631d0411b4d8d1cf1fd1cabc539bfca9df",
+    "archives/customer-attraction/state/定理/重复首主题终局的严格二倍界--定理.md": "4d2a3b8474b964288d43b55c4ecb0b2fa34114767bcd8afe9193f6661305bd6e",
+    "tools/evidence/two-theme-repetition-and-security-route-primary/correction/minimal-replacements.json": "672e15232167ff6e8d4647d1fd0882c1448729298ce9b1a85a523c7d6ed4f45f",
+    "tools/evidence/two-theme-repetition-and-security-route-primary/runs/new-convex-correction-001/stdout.json": "0845c60f5846b94684fc6f749a78a2da29c110c062b6b899b1892e04b8a9121c",
+    "archives/customer-attraction/state/定理/两种实际覆盖且末两位不同的严格二倍界--定理.md": "7683f435a703bf5c9cf0303baac28db77a862354c66d3e07fafff2c822484583"
+  },
+  "review_digest": "bd339372d3aa3d6ccdbd9f8182cd82ae59a47c642a62f7521c9aafb7272cff79"
+}

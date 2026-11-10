@@ -1,0 +1,51 @@
+{
+  "edge_id": "cag-b69c64-five-double-miss-uses-harmonic-certificate",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/five-terminal-single-covered-harmonic-budget"
+  ],
+  "target_ids": [
+    "customer-attraction/five-terminal-double-missed-H25-conditional-half"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一五人完整SPE，存在最优五槽元组使每个实际遗漏客户至少属两个比较槽，且s≤28u/41。",
+  "roles": {
+    "customer-attraction/five-terminal-single-covered-harmonic-budget": "已证s≤28u/41自动支付H25。",
+    "customer-attraction/five-terminal-double-missed-H25-conditional-half": "双重遗漏最优比较槽的条件half接口。"
+  },
+  "explanation": "实际末位逐个改合法T_j，遗漏客户无实际过去负载，故按槽累加真实末位比较有5u≥2L。负载预算给W≥5u/2≥L。最优O与实际C的精确分解OPT=W+L−|C∖O|≤2W。重复槽要保其重数。",
+  "scope": "此子域直接闭合，未假设该最优比较槽存在性对每个实例成立。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/五人末位份额的通用补位失败与单覆盖预算--障碍.md",
+      "sha256": "b22e8f0a720b65df3ac85bb09cd5c24a9633ddf111fee630f1451ac1d4fde6fd",
+      "section": "从末位最终负载保留单覆盖信用"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末位实际主题的负载尾和与最优覆盖主题数--定理.md",
+      "sha256": "5d296aeda1c8364a9c6c9b7ab064e12af910e709f3db96218630c5c030fee524"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/五人末位份额的通用补位失败与单覆盖预算--障碍.md",
+      "sha256": "b22e8f0a720b65df3ac85bb09cd5c24a9633ddf111fee630f1451ac1d4fde6fd",
+      "section": "双重最优遗漏下的条件用途"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核真实有序前缀、承重等式和端点的精确量词。本边只承担下列明确作用范围。",
+  "contribution": {
+    "result": "双重遗漏且低单覆盖份额时，无需另假普遍H25即可得到half。",
+    "remaining": "此路径在高s且未另付该策略H25时仍缺付款；双重遗漏本身也不是普遍假设。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/five-terminal-double-missed-H25-conditional-half": "82b1452cf7cec405cfb165668622503d9216785549b6203e4f20b9e89eee8388",
+    "customer-attraction/five-terminal-single-covered-harmonic-budget": "2b44dae6fd846e3579a3921c0ff8211b213851716ec0d2517fe7d60f6e314ce3"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/五人末位份额的通用补位失败与单覆盖预算--障碍.md": "b22e8f0a720b65df3ac85bb09cd5c24a9633ddf111fee630f1451ac1d4fde6fd",
+    "archives/customer-attraction/state/定理/末位实际主题的负载尾和与最优覆盖主题数--定理.md": "5d296aeda1c8364a9c6c9b7ab064e12af910e709f3db96218630c5c030fee524"
+  },
+  "review_digest": "f47de3ad70b04627343e94af4953f297adec9e21c7b52555b53497beab6a8232"
+}
