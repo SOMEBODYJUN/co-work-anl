@@ -1,0 +1,42 @@
+{
+  "edge_id": "cag-same-branch-sharp-envelope-implies-n-ck-capacity",
+  "kind": "implies",
+  "relation_mode": "unconditional",
+  "source_ids": [
+    "customer-attraction/same-branch-deletion-refund-and-old-prefix-positive-loss-sharp-common-credit"
+  ],
+  "target_ids": [
+    "M-8f450a7d41594d05a1ece6d4856d54c6"
+  ],
+  "conditions": "同一原actual覆盖集C及负载c_x≥1；每次访问保actual前缀、同一完整策略真后继，只删未来者。所有访问按客户跨全部深度累计，lambda_vx≥0；每个客户满足目标所述N或CK。它们是该完整限制域定理的量化条件，不假定对任意遗漏需求已有这种路由。p=a=0或d0=0按源零项约定；m≥1。",
+  "roles": {
+    "customer-attraction/same-branch-deletion-refund-and-old-prefix-positive-loss-sharp-common-credit": "逐访问给0≤B=E+G≤K≤1−1/d≤1−1/m，E先扣旧退款。",
+    "M-8f450a7d41594d05a1ece6d4856d54c6": "得到其完整N与CK加权聚合结论，包括CK允许总访问质量超过1。"
+  },
+  "explanation": "令B_vx=E_vx+G_vx，K_vx=max{0,a/(p+a)−a/d,p(1/c−1/d)}；d0=0只在p=a=0且B0。源已证每访问B≤K≤1−1/m。有限访问时先乘非负lambda，逐客户求和：若N为Σ_vlambda_vx≤1，则Σ_xv lambda B≤(1−1/m)Σ_xΣ_vlambda≤(1−1/m)|C|。若CK为Σ_vlambda_vxK_vx≤q_x，则Σ_xv lambda B≤Σ_xq_x。非负部分和取极限推广到目标可求和访问族。K小或零时CK不要求Σlambda≤1，所以完整保留目标较一般部分。源端K是净E+G，不能以G+Q+替换；客户级lambda只用于这条代数界，并未按客户重权原整行IC。",
+  "scope": "目标全部明确N/CK域内的普遍定理；不构造一般遗漏支付/共同整行乘子。",
+  "whole_result": "完整推出M-8f450a7d41594d05a1ece6d4856d54c6：N时总共同信用≤(1−1/m)W，CK时≤Σ_xq_x，跨全部访问累计，有限或可求和非负族均成立。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/同枝删除返还与旧前缀正损失的锐共同信用--引理.md",
+      "sha256": "cb215f17594e876c2c8202875dc82cfe758e95e08974bfe05096dbddf7bdc56d"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-51cf383b937504b2/support/review.md",
+      "sha256": "8c441946e0696d3f9ec95d655226f839a078c4fa1cacd480cef925330d7da108"
+    }
+  ],
+  "premises_mode": "all",
+  "status": "accepted",
+  "reviewed_by": "Boss6",
+  "review_note": "逐式核锐B/K、先净退款、退化零项及有限和/极限推导；不是把未证路由当前提已付，也不将普通域限制误记conditional。完整目标关系已证，accepted+unconditional+whole_result。",
+  "endpoint_pins": {
+    "M-8f450a7d41594d05a1ece6d4856d54c6": "de635e5e3eb44234bb4c01476031a7186f6e91925b507acd43378ef1abe7f737",
+    "customer-attraction/same-branch-deletion-refund-and-old-prefix-positive-loss-sharp-common-credit": "1da79bec655169381ba9b73c518c185f59e40fa09bf9903e519c8c74f85a5349"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/同枝删除返还与旧前缀正损失的锐共同信用--引理.md": "cb215f17594e876c2c8202875dc82cfe758e95e08974bfe05096dbddf7bdc56d",
+    "map/edges/customer-attraction-3a-3a-51cf383b937504b2/support/review.md": "8c441946e0696d3f9ec95d655226f839a078c4fa1cacd480cef925330d7da108"
+  },
+  "review_digest": "477a06f9124b43c7f06df55e1906161808ae5ea30a5279bf4d15e2e7ab0abb94"
+}

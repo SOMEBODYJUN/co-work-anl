@@ -1,0 +1,53 @@
+{
+  "edge_id": "cag-common-static-envelope-and-real-cycle-sufficient-payment",
+  "kind": "implies",
+  "relation_mode": "conditional",
+  "source_ids": [
+    "M-b303a38dafc844778e3fadc6887f8234",
+    "M-05993f95c99e49298a6212e9e4e69469"
+  ],
+  "target_ids": [
+    "cag-tax-sensitive-static-envelope-and-terminal-reply-cycle-budgets"
+  ],
+  "conditions": "固定同一有限单位客户/共同标签实例、m≥2及同一完整纯SPE sigma，actual福利W。额外充分前提：在这份sigma内存在某个合法长m−2有序节点P及其真实末回复beta的循环C，使B(P,C)=m u(P)+tau(P)+D_C≤2W。Q_C为同一循环的均匀背景P+a，查询前固定且服务全部T；D_C与u(P)必须来自这个相同P/C。这个存在性尚未对任意sigma证明。",
+  "roles": {
+    "M-b303a38dafc844778e3fadc6887f8234": "提供同一query-independent Q的静态OPT≤E_mix比较，及纯/混合包络的准确方向。",
+    "M-05993f95c99e49298a6212e9e4e69469": "提供这份sigma各真实P/C的E_mix≤B(P,C)，循环IC和税增量均保持同一分布。",
+    "cag-tax-sensitive-static-envelope-and-terminal-reply-cycle-budgets": "支付其循环充分路线在额外存在预算前提下的固定策略结论，普遍全局付款仍open。"
+  },
+  "explanation": "静态逐客户1_(a>0)≤(a+b)/(1+b)在一个Q上取期望，给OPT_m≤E_mix。真实循环定理把同一Q_C的全部查询cap到u(P)，且E_QC tau=tau(P)+D_C，故E_mix≤m u(P)+tau(P)+D_C。若额外预算存在，链合得OPT≤E_mix≤B≤2W。完整共同前提必须ALL，不能从任一独立来源单独继承整条链。此推导不把循环mixed预算改成E_*上界，不从静态CCE另取某均衡福利代替当前W；也不把互斥P/C各自可用资金相加。若原SPE真有OPT>2W，则所有P/C预算必>2W是相同链的必要后果，不是存在性付款证明。",
+  "scope": "有给定同sigma低预算真实循环的固定策略充分判据；不是对每份原SPE的无条件global税桥。",
+  "contribution": {
+    "result": "对任意满足所列额外存在预算的固定原sigma，E_mix≤2W并因此OPT_m≤2W；两来源共同完成候选的循环充分方向。",
+    "remaining": "未证明每份完整SPE必有这样的P,C，亦未证明不走循环路线的普遍E_mix≤2W或更强E_*≤2W。静态CCE支付不补给定顺序sigma预算，有限浮点策略锥不补存在量词；候选整体仍open。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/带终局税的静态包络与真实末对循环付款--候选.md",
+      "sha256": "0cb998c995b3904672522f9527272434471b7d9a9d032176e64c9dfa50f88bfb"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/末覆盖复核与税包络策略锥的版本边界--资源.md",
+      "sha256": "bcbf629e986a20297e2cedb66a62c1fba442824da3a4869c5ffc3432381cc5ed"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-51cf383b937504b2/support/review.md",
+      "sha256": "8c441946e0696d3f9ec95d655226f839a078c4fa1cacd480cef925330d7da108"
+    }
+  ],
+  "premises_mode": "all",
+  "status": "accepted",
+  "reviewed_by": "Boss6",
+  "review_note": "完整实读静态minimax/CCE及真实循环解析证明，逐核同Q、同P/C和所有T量词。条件推导无缺步，额外存在预算仍未证，故accepted+conditional+contribution，不用proposed亦不标整目标whole_result。",
+  "endpoint_pins": {
+    "M-05993f95c99e49298a6212e9e4e69469": "bcdb3717e275e5c8884f8fcdc154c5fcc8512c14996a4570296d5d992dfaa292",
+    "M-b303a38dafc844778e3fadc6887f8234": "3eb90fee6663a8216d07e1b00522307e14bdf3c7459026e273ef2b07de3f8b42",
+    "cag-tax-sensitive-static-envelope-and-terminal-reply-cycle-budgets": "23d172c05cf8c86745164cb584d12bf83288f9e09d13b1bed8d44a402babb785"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/带终局税的静态包络与真实末对循环付款--候选.md": "0cb998c995b3904672522f9527272434471b7d9a9d032176e64c9dfa50f88bfb",
+    "archives/customer-attraction/state/资源/末覆盖复核与税包络策略锥的版本边界--资源.md": "bcbf629e986a20297e2cedb66a62c1fba442824da3a4869c5ffc3432381cc5ed",
+    "map/edges/customer-attraction-3a-3a-51cf383b937504b2/support/review.md": "8c441946e0696d3f9ec95d655226f839a078c4fa1cacd480cef925330d7da108"
+  },
+  "review_digest": "386dc6e563077773bc413a9851fd06c3c6bb09e7d27b6a69ac320d80ca9425c4"
+}

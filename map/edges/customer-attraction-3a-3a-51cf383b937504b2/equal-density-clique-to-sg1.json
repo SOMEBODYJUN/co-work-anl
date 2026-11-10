@@ -1,0 +1,55 @@
+{
+  "edge_id": "cag-equal-density-clique-sharp-debt-refines-real-sg1-envelope",
+  "kind": "implies",
+  "relation_mode": "unconditional",
+  "source_ids": [
+    "M-790b40349de64d42957e302eba3c2d8f"
+  ],
+  "target_ids": [
+    "customer-attraction/signed-menu-graph-common-customer-envelope"
+  ],
+  "conditions": "目标同一完整SPE的真实菜单族。图为全O完整图，每无序族对恰一条任选方向边；固定所有客户共用同一非负lambda，各客户的所有族背景同b_x且K_r(x)=k_x。故每客户有效边权相同w_x=lambda/((b_x+1)(b_x+2))，q≥1,L≥1,0≤k_x≤q；同一真实历史必须保同sigma回复。",
+  "roles": {
+    "M-790b40349de64d42957e302eba3c2d8f": "按列命中整数凸平衡给该完整O图的精确最小共同缺额D_x。",
+    "customer-attraction/signed-menu-graph-common-customer-envelope": "在其真实BR行与独立包络之间使用此缺额，得到SG1该子域更紧的必要式。"
+  },
+  "explanation": "每O边真实系数满足lambda O_e,x=lambda E^O_e,x−w_x delta_e,x。写Lk_x=q t_x+rho_x，ell_x=max(0,2k_x−q)。源定理给全部共同索引赋值的Σ_e w_xdelta_e,x≥D_x=w_x[q C(t_x,2)+rho_xt_x−C(L,2)ell_x]，自由族内重排域可取等。全部真实整行BR组合全客户非负，因此0≤Σ_xΣ_e lambda O_e,x≤Σ_x[Σ_e lambda E^O_e,x−D_x]。这个最后必要式在声明子域支付SG1且可能更强：q3,L4,k1时通用tau=2w、offset=6w、Xi0，而D=w。等号构造只保本地完整直方图，不许推成同目录完整SPE实现；lambda保持客户间固定，不按客户另选真实行乘子。",
+  "scope": "完整O、同背景/同密度/同有效权子域的精确共同扣除，不覆盖一般不等权D/O图或根付款。",
+  "contribution": {
+    "result": "在所述真实菜单子域得到Σ_x[Σ_e lambda E^O_e,x−D_x]≥0，D_x为整数凸精确债；从而给目标SG1在此域的严格可加强实例和准确局部公式。",
+    "remaining": "任意D/O图的整条SG1仍依赖其一般共同标记证明；不同权/密度不得照搬取等。即使局部扣除更强，所有离轨A_r仍须共同收费到根W，未得到half或完整SPE实现。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/带符号真实菜单图的共同客户扣除与精确包络--引理.md",
+      "sha256": "64d66adac6fbf71483497a62f33bcedb4b9a17cf699cb80d628fab8650fc221c"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/source/audit_signed_graph_menus.py",
+      "sha256": "8f631243af0a6a36263eca5aa1c5b36f64b67359104137a82d990e04c0485516"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/source/signed_graph_menu_audit.json",
+      "sha256": "23fa02358c4517c5b105699918fad304da62382feeb7af0b9893d62ca6f21841"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-51cf383b937504b2/support/review.md",
+      "sha256": "8c441946e0696d3f9ec95d655226f839a078c4fa1cacd480cef925330d7da108"
+    }
+  ],
+  "premises_mode": "all",
+  "status": "accepted",
+  "reviewed_by": "Boss6",
+  "review_note": "原声明in-packet overlap已逐公式比较。核真实行≤独立包络减精确债的方向、共同lambda与有效权、整数凸平衡构造及q3/L4/k1严格增量；全参数解析支持，135有限构造仅静态证据，未重跑。目标仅为contribution。",
+  "endpoint_pins": {
+    "M-790b40349de64d42957e302eba3c2d8f": "eee903c218f8230a3f34274ec18a0878ddf31d2f06d298d05b1c36ba859da98e",
+    "customer-attraction/signed-menu-graph-common-customer-envelope": "27ec03906c5fdeda60274a342145d839918c97ce6fb4197d7c5788093111fda1"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/带符号真实菜单图的共同客户扣除与精确包络--引理.md": "64d66adac6fbf71483497a62f33bcedb4b9a17cf699cb80d628fab8650fc221c",
+    "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/source/audit_signed_graph_menus.py": "8f631243af0a6a36263eca5aa1c5b36f64b67359104137a82d990e04c0485516",
+    "archives/customer-attraction/tools/evidence/R-373d-coupling-credible-20261031/source/signed_graph_menu_audit.json": "23fa02358c4517c5b105699918fad304da62382feeb7af0b9893d62ca6f21841",
+    "map/edges/customer-attraction-3a-3a-51cf383b937504b2/support/review.md": "8c441946e0696d3f9ec95d655226f839a078c4fa1cacd480cef925330d7da108"
+  },
+  "review_digest": "b0791bd847c04c49df10ddeed51cd24c0db872134a544e9436d5c373dcaa1f64"
+}
