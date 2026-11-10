@@ -189,3 +189,8 @@ v−t显式方差误差只需候选iid，不称iid最优。合法BP正负载下O
 ## 执行与安装边界
 
 全部写入仅本staging镜像write_paths，clone只读。Python始终-B，无Git/队列/registry/canonical写入，无子代理、无Library/凭据读取，无LP/完整树/大矩阵或成熟科学程序重跑。四新边已经调用原生verify_endpoints、require_edge_result与只读edge_bindings并保存当前绑定；完整路径级edge-check须由Boss安装后执行，未冒称已跑。coverage使用原生validate_coverage验证。manifest不hash自己或receipt；receipt可hashmanifest，避免循环。
+
+
+## Root R49 retained-edge read dependency addendum
+
+The original17core+8read review above remains attributed to the worker. Root added both previously omitted canonical-edge endpoints through pushed read-add request `0183507454e04c719905d83724343df2` and fully read both current records and body files. The current task has17core+10read. The variance transfer and six-action tied-policy transfer retain exactly their prior contribution scopes and bytes; see `read-dependency-addendum.json` for the full proof check and current pins. No old scientific run was repeated.
