@@ -340,15 +340,200 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss2",
-  "request_id": "a766ed0ac3b3485aa29db81b5d6fe08d",
+  "request_id": "d2244ba3ee0d4cc49b0aeda0ad890358",
   "requests": {
     "a0ffc8a56e8d46c5b1f49cbd791e6521": "plan",
     "de44be2a22cf42ffb5643532b12c4ba8": "claim",
     "c9cd2920f1c340b2861b8e62d0ec4a9d": "read-add",
     "29a913a0152c4d98b961e620560ade46": "plan",
     "2dfd4b7cecdc48ad8b1cf37b505b92d0": "read-add",
-    "a766ed0ac3b3485aa29db81b5d6fe08d": "read-add"
+    "a766ed0ac3b3485aa29db81b5d6fe08d": "read-add",
+    "d2244ba3ee0d4cc49b0aeda0ad890358": "done"
+  },
+  "edge_paths": {
+    "wc-step-packet-anchor-stable-set-pays-near-unit-finish": "map/edges/weighted-congestion-3a-3a-860815ae64768bee/anchor-stable-set-pays-near-unit-finish.json",
+    "wc-step-packet-finite-audits-check-forest-and-fanout": "map/edges/weighted-congestion-3a-3a-860815ae64768bee/finite-audits-check-forest-and-fanout.json",
+    "wc-step-packet-finite-audits-check-forest": "map/edges/weighted-congestion-3a-3a-860815ae64768bee/finite-audits-check-forest.json",
+    "wc-step-packet-literal-cost-to-step-threshold": "map/edges/weighted-congestion-3a-3a-860815ae64768bee/literal-cost-to-step-threshold.json",
+    "wc-step-packet-odd-envelope-to-fanout-scalar-budget": "map/edges/weighted-congestion-3a-3a-860815ae64768bee/odd-envelope-to-fanout-scalar-budget.json",
+    "wc-step-packet-positive-multipliers-and-alternative-to-ordinal-cycle": "map/edges/weighted-congestion-3a-3a-860815ae64768bee/positive-multipliers-and-alternative-to-ordinal-cycle.json",
+    "wc-step-packet-shared-side-review-delimits-fanout": "map/edges/weighted-congestion-3a-3a-860815ae64768bee/shared-side-review-delimits-fanout.json",
+    "wc-step-packet-step-ancestor-tree": "map/edges/weighted-congestion-3a-3a-860815ae64768bee/step-ancestor-tree.json",
+    "wc-step-packet-step-graph-extrema-degree": "map/edges/weighted-congestion-3a-3a-860815ae64768bee/step-graph-extrema-degree.json",
+    "wc-step-packet-step-rational-balanced-instances": "map/edges/weighted-congestion-3a-3a-860815ae64768bee/step-rational-balanced-instances.json",
+    "wc-step-packet-step-shallow-dag-witness": "map/edges/weighted-congestion-3a-3a-860815ae64768bee/step-shallow-dag-witness.json",
+    "wc-6350-rational-lower-family-pays-actual-threshold-lower-half": "map/edges/weighted-congestion-3a-3a-6350dbef547cb70c/rational-lower-family-pays-actual-threshold-lower-half.json"
+  },
+  "receipt": {
+    "coverage": {
+      "weighted-congestion/shallow-DAG-height-transfer-counterexample": {
+        "state": "linked",
+        "object_pin": "0e73574b3be684ad319aa4ac82cc48c9702efe2692fc3cbf3babf320743fdd68",
+        "comparison_scope": "重算两层完全二部有向图P_1、P_2、精确三次方程及根缩放。",
+        "reason": "最长路径2仍有q∼s^(2/3)，阻断一般DAG高度替换。",
+        "edge_ids": [
+          "wc-step-packet-step-shallow-dag-witness"
+        ]
+      },
+      "WC-R1-DAG-STEP": {
+        "state": "linked",
+        "object_pin": "553c4a4fd59e0cc01339c0971bcf42b46ec7c2792484fdd29fb829b1861b57db",
+        "comparison_scope": "比较字面成本表、任意振幅贪心、正平衡幅度、有理参数、图路径计数、树闭包与浅图。",
+        "reason": "取得精确双侧阈值及其结构应用。与指定端点检测的共同预算由相关包单独联合处理；阶跃门槛自身无多项式迁移桥。",
+        "edge_ids": [
+          "wc-step-packet-literal-cost-to-step-threshold",
+          "wc-step-packet-step-rational-balanced-instances",
+          "wc-step-packet-step-graph-extrema-degree",
+          "wc-step-packet-step-ancestor-tree",
+          "wc-step-packet-step-shallow-dag-witness"
+        ]
+      },
+      "weighted-congestion/step-DAG-literal-cost-reduction": {
+        "state": "linked",
+        "object_pin": "31d9ee5a054287f153988d5042c9d00e67c1c22375c91fec9851f1c496be46e2",
+        "comparison_scope": "逐资源核W<1、t_v<w_v、对称补位及全部根/轻翻位。",
+        "reason": "全态成本表使拓扑贪心和首遗漏点论证可逐项落到真实偏离。",
+        "edge_ids": [
+          "wc-step-packet-literal-cost-to-step-threshold",
+          "wc-step-packet-step-rational-balanced-instances"
+        ]
+      },
+      "weighted-congestion/step-DAG-path-extrema-and-degree": {
+        "state": "linked",
+        "object_pin": "f41ba60eb2d29e7cd69dd01feba69b8d2d973a4a88f92fda4840c757048b5fe8",
+        "comparison_scope": "比较空图、传递完全DAG、最大入度路径计数。",
+        "reason": "两端等号和小入度平方根渐近有明确适用域。",
+        "edge_ids": [
+          "wc-step-packet-step-graph-extrema-degree"
+        ]
+      },
+      "weighted-congestion/step-DAG-rational-balanced-factor": {
+        "state": "linked",
+        "object_pin": "fe1fe3dd0137b7eeb8a8b517fb2461f73cdbe0594d32c634b9abb5b2b9c7af72",
+        "comparison_scope": "重算全入、全出、首遗漏及A0>0；另核有理r与有理权。",
+        "reason": "两个候选状态达到min的两项，任意状态由首遗漏或全入根下界。",
+        "edge_ids": [
+          "wc-step-packet-step-rational-balanced-instances"
+        ]
+      },
+      "weighted-congestion/transitive-tree-step-specialization": {
+        "state": "linked",
+        "object_pin": "84c0b3a32a650692b23f8e6a51596d09d7d81e17131d0d824c0c7d7d89d26205",
+        "comparison_scope": "核祖先边而非父子边、逐深度几何级数、星链和H_m。",
+        "reason": "高度界来自祖先闭包结构；两层完全DAG反例另列。",
+        "edge_ids": [
+          "wc-step-packet-step-ancestor-tree"
+        ]
+      },
+      "wc-incidence-directed-exact-audits": {
+        "state": "isolated-after-review",
+        "object_pin": "796f3f2423327218ace579b891cf4d78216bccc644caf59eb31a00e1e0411e10",
+        "comparison_scope": "逐读作者/独立森林脚本的冻结范围、19个分叉游戏报告、真实偏离与容量枚举的区别。",
+        "reason": "仅有检查两项构造实现的语境关系。有限输出不证明任意实例，单环四态穷尽仅适用于其固定输入。"
+      },
+      "WC-NEAR-UNIT-ALLSTATE-NONEXISTENCE-v1": {
+        "state": "linked",
+        "object_pin": "f8ce9e42f2bdfe1fc905479868e9e14eaa0e7cd52e86b34006f15aa75fd89089",
+        "comparison_scope": "核短窗相位、r+1反向端点、返回奇偶、全部前沿余量、非法态修复及实际次数；比较一般稳定集门及改善环。",
+        "reason": "在给定基体条件下，门的两分支证明支付全状态合并；覆盖与同次数预算是独立义务。近一完整构造另有已发布类型图应用。",
+        "edge_ids": [
+          "wc-step-packet-anchor-stable-set-pays-near-unit-finish"
+        ]
+      },
+      "wc-directed-fanout-forcing-cut": {
+        "state": "linked",
+        "object_pin": "c82b185a5e15041ec56ad1a82adc7afd250a2b237dcad2f29b2b94b43c75a91a",
+        "comparison_scope": "比较奇环标量包络、UF、三条容量预算、含自环的割和全部真实偏离；另看有限核验及共享侧版本。",
+        "reason": "标量包络给混合费用付款的承重步骤；任意分叉下的全反位选择另需UF与割证明。共享侧拓扑需不同侧边际。",
+        "edge_ids": [
+          "wc-step-packet-odd-envelope-to-fanout-scalar-budget"
+        ]
+      },
+      "WC-FRONT-CORE-STABLE-SET-TRANSFER-v1": {
+        "state": "linked",
+        "object_pin": "f784bf003aec5e448acc4942163bf0653cb8a0549b31383d3b26c53e779153c5",
+        "comparison_scope": "将一般完整锚定门冻结他人动作的真实单翻位分类限制到短窗等权类，核M、低泄漏与每人L_c。",
+        "reason": "给近一反例的门装配步骤。前沿出口margin和基体成本上界不是一般门结论。",
+        "edge_ids": [
+          "wc-step-packet-anchor-stable-set-pays-near-unit-finish"
+        ]
+      },
+      "WC-R3-ODD-RING-LOWER-v1": {
+        "state": "linked",
+        "object_pin": "c660cebb885ec7e95a98ef0179a2aad45782825c931adb9b0ea6108fcb748d7d",
+        "comparison_scope": "核正有理奇环的实际主侧动作、逐态严格两测试、首重重置和权积闭合；比较实际同权cohort阈值的下半边及分叉(UF)。",
+        "reason": "已发布边精确复用纯d次子类给实际阈值下界；分叉割存在性另需UF与α≥T_d，结论相容。",
+        "edge_ids": [
+          "wc-6350-rational-lower-family-pays-actual-threshold-lower-half"
+        ]
+      },
+      "WC-R1-MULTIPLIER-BARRIER": {
+        "state": "linked",
+        "object_pin": "e6fb48b0e56b2ea9614281bab93077f5c5a2a9be25a88f66b7728a85ad0c84cf",
+        "comparison_scope": "对比同端点边际路径、正乘子排除与循环构造所需非负矩阵对偶。",
+        "reason": "相邻连接列排除零坐标后才可用严格替代，循环窗口逐玩家复制给实际改善环。",
+        "edge_ids": [
+          "wc-step-packet-positive-multipliers-and-alternative-to-ordinal-cycle"
+        ]
+      },
+      "wc-shared-side-series-review-scope": {
+        "state": "isolated-after-review",
+        "object_pin": "16f2b748f508e6ef914a384d05e7fa05ec8542740ad560374a7aa3332b2f9eb2",
+        "comparison_scope": "核共享侧截断、AS+B、多源v1至v3、异权凸性/GlobalR及分叉私有侧的真实合同和冻结身份。",
+        "reason": "保留比较语境。拓扑、权型和阈值差异没有给出整条相互推出的数学关系。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/weighted-congestion-3a-3a-860815ae64768bee/anchor-stable-set-pays-near-unit-finish.json",
+        "sha256": "e3fcc37e034d62b3c109ebfb121bddbbacf7410676a48eedb5adab9bac0007c6"
+      },
+      {
+        "path": "map/edges/weighted-congestion-3a-3a-860815ae64768bee/finite-audits-check-forest-and-fanout.json",
+        "sha256": "8a3608903ae92f1bbefe47b4f9dafa86eb2507e4406e1b4d1b90a7ca80598570"
+      },
+      {
+        "path": "map/edges/weighted-congestion-3a-3a-860815ae64768bee/finite-audits-check-forest.json",
+        "sha256": "4be5e2c50f85fc331d3b2b9bcb738f9bc178e9f8a263061e5efafceb4e3d54a3"
+      },
+      {
+        "path": "map/edges/weighted-congestion-3a-3a-860815ae64768bee/literal-cost-to-step-threshold.json",
+        "sha256": "b4f2e78b2996dd0bd89b3f07daad3349680dda4383ac8e4ab6fe270c7a014744"
+      },
+      {
+        "path": "map/edges/weighted-congestion-3a-3a-860815ae64768bee/odd-envelope-to-fanout-scalar-budget.json",
+        "sha256": "c7e05297257147d859b137a88b8af4da2775805c867d8ed573b6b977d887d172"
+      },
+      {
+        "path": "map/edges/weighted-congestion-3a-3a-860815ae64768bee/positive-multipliers-and-alternative-to-ordinal-cycle.json",
+        "sha256": "ffdcf3f8dadf91c52026e9ded59386eea49111af66bf9bfc72c82908a00f03bc"
+      },
+      {
+        "path": "map/edges/weighted-congestion-3a-3a-860815ae64768bee/shared-side-review-delimits-fanout.json",
+        "sha256": "cbe89cd20479785d903e609f4c7959d0e1c5f6334445c19bfc9f20d1a148afbe"
+      },
+      {
+        "path": "map/edges/weighted-congestion-3a-3a-860815ae64768bee/step-ancestor-tree.json",
+        "sha256": "2ec51b53fdf02c7fe226afaa1fde1ed4250ab58eb3e012aadfd85de481980d51"
+      },
+      {
+        "path": "map/edges/weighted-congestion-3a-3a-860815ae64768bee/step-graph-extrema-degree.json",
+        "sha256": "2c7ec76b89ee5e716d8e8dbf12845dcc4f33a401562d0eb41264086e774a6695"
+      },
+      {
+        "path": "map/edges/weighted-congestion-3a-3a-860815ae64768bee/step-rational-balanced-instances.json",
+        "sha256": "c366c52012e8db5631a16d01418cd9d6d680c015a35592235ef329870d734868"
+      },
+      {
+        "path": "map/edges/weighted-congestion-3a-3a-860815ae64768bee/step-shallow-dag-witness.json",
+        "sha256": "c1fc9c71c6ad3cd2855686ca72ca55215701cc35754249bb38ce5ac43fff357b"
+      },
+      {
+        "path": "map/edges/weighted-congestion-3a-3a-6350dbef547cb70c/rational-lower-family-pays-actual-threshold-lower-half.json",
+        "sha256": "2cb0788b7b0a1c0f07aee89f988f2b4d684f9d3a771831a3c835276bd42a196f"
+      }
+    ]
   }
 }
