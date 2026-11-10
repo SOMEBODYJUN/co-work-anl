@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-map-round37-shared-z-probe-v1.json",
-    "sha256": "ad98ade79ee7a4aa9a7a594926447718b84c560e1bdbff3c9f0dc232ff9ad034"
+    "path": "research/registration/baseline-boss2-grouped-glue-v2.json",
+    "sha256": "bf1415b8c5ba2d4befae78c439557fd14716755ce3d13963019685b8fe9a8955"
   },
   "objects": [
     {
@@ -10418,6 +10418,48 @@
         "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-c90acbef8c6a45f28bf33b5f639d6e99/equivalence_audit/astra_relationship_report.md",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-c90acbef8c6a45f28bf33b5f639d6e99/equivalence_audit/astra_independent_review.md",
         "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-c90acbef8c6a45f28bf33b5f639d6e99/equivalence_audit/astra_independent_review.md"
+      ]
+    },
+    {
+      "object_id": "EA-GROUPED-CONFIG-GLOBAL-GLUE-v1",
+      "version": 1,
+      "kind": "equivalence",
+      "truth_status": "proved",
+      "title": "保留机器分组的全机配置耦合与阈值可行性",
+      "model": "有限普通不相关机，原任务不可拆且必须各分配一次。每台原机器的配置只用有限处理端且真实负载≤T。配置保原机器与任务标签；逐机完整归一分布和每任务期望重数一。每一对机器有共享指定行边际且支持不交配置的GPC₂耦合。",
+      "statement": "若一套GPC₂配对见证有同一全机联合延拓，则几乎处处每个原任务在配置元组中恰出现一次，因而解码为阈值T完整实际调度。阈值可调度当且仅当存在某套可全局延拓的GPC₂见证，反向用每机真实任务集的Dirac耦合。容量一星族在T=1给全部配对见证但OPT=2−1/k>1，故其局部见证不存在全机联合延拓。",
+      "quantifiers": "每个有限普通异机实例与有限T≥0；对任意给定GPC₂见证，若有匹配全部配对分布的联合延拓则结论成立。反向对见证是存在量词。反例对容量一星族每个整数k≥2。",
+      "assumptions": [
+        "逐任务跨机器期望重数一",
+        "每对机器耦合支撑不交配置，并与指定行边际一致",
+        "联合延拓同时保给定全部pair边际"
+      ],
+      "scope": "有限配置分布的可行性与实际原调度解码。可调度保证某套可延拓见证；指定见证的可延拓性另检。无色目录丢失机器身份是不同失败机制。",
+      "objections": "已核有限多事件同时成立、期望重数与整数0/1推出几乎处处全覆盖、Dirac反向及当前容量一星证书的全部pair域。结论不承担一般全机粘合算法的复杂度保证。",
+      "body": {
+        "path": "archives/customer-attraction/state/等价/保机器分组的全机配置耦合--等价.md",
+        "sha256": "25a08161c926f9d4506fda0937a58b44c7840f353af26270aa889f2ff8ee9850"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/等价/分组配置全覆盖与无色共同目录的精确边界--等价.md",
+          "sha256": "6b6aaf4dcc6e2294270d445a30b034683dbb772fcac599448c84d061c7e18c4e",
+          "section": "1. 保机器分组的正向等价"
+        },
+        {
+          "path": "archives/customer-attraction/state/等价/分组配置全覆盖与无色共同目录的精确边界--等价.md",
+          "sha256": "6b6aaf4dcc6e2294270d445a30b034683dbb772fcac599448c84d061c7e18c4e",
+          "section": "2. 合并共同目录的任意规模真实SPE障碍"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/容量一星族的全机器对原入口与符号耦合--资源.md",
+          "sha256": "86c2726661ae90b6226739a1292e3a637c3059683ba9e0215b4e4a5702723d79"
+        }
+      ],
+      "sources": [
+        "EA-GROUPED-CONFIG-COVER-v1",
+        "EA-UNION-CONFIG-FEASIBILITY-NO-v1",
+        "UM-CAPACITY-ONE-PAIR-GAP-v1"
       ]
     },
     {
@@ -180532,6 +180574,15 @@
       "reason": "完整阅读成熟正文及共同定义，按精确数学对象登记；本轮复用已整理证明/完整证书，不重新清洗或冒称全量数组复审。"
     },
     {
+      "path": "archives/customer-attraction/state/等价/保机器分组的全机配置耦合--等价.md",
+      "sha256": "25a08161c926f9d4506fda0937a58b44c7840f353af26270aa889f2ff8ee9850",
+      "disposition": "objects",
+      "object_ids": [
+        "EA-GROUPED-CONFIG-GLOBAL-GLUE-v1"
+      ],
+      "reason": "独立证明全机联合分布的完整真实阈值解码与反向Dirac，及全部pair局部证书的精确失败。"
+    },
+    {
       "path": "archives/customer-attraction/state/等价/全实例半覆盖的统一有符号可信价格表示--等价.md",
       "sha256": "0700f8bb78d5efcdcf673b1718451fc194f99dd087cde66017f32141d8d3c863",
       "disposition": "objects",
@@ -180548,7 +180599,8 @@
       "disposition": "objects",
       "object_ids": [
         "EA-GROUPED-CONFIG-COVER-v1",
-        "EA-UNION-CONFIG-FEASIBILITY-NO-v1"
+        "EA-UNION-CONFIG-FEASIBILITY-NO-v1",
+        "EA-GROUPED-CONFIG-GLOBAL-GLUE-v1"
       ],
       "reason": "同页保两个精确EA旧Claim：分组整数配置全覆盖等价与无色合并任意q反族。带标记全覆盖修补属同一分组等价的明确编码解释保在正文/证据，不另为简单改写造节点。"
     },
@@ -202514,7 +202566,8 @@
       "sha256": "86c2726661ae90b6226739a1292e3a637c3059683ba9e0215b4e4a5702723d79",
       "disposition": "objects",
       "object_ids": [
-        "UM-CAPACITY-ONE-PAIR-GAP-v1"
+        "UM-CAPACITY-ONE-PAIR-GAP-v1",
+        "EA-GROUPED-CONFIG-GLOBAL-GLUE-v1"
       ],
       "reason": "已完整读取本文件全部章节；当前成熟对象的陈述、量词与完整论证位置已核。 本批维护数学owner；原始历史/有限运行/后续证明角色已逐项分清，不声称重读全部链接原件或重跑程序。"
     },
@@ -209030,6 +209083,13 @@
       "record": {
         "path": "research/registration/batches/register-boss6-retuned-onset-identity-v1.json",
         "sha256": "064eb1c31c5910e0e1da09848b211c83064d11c28058fe76d39e13c32a5b8e41"
+      }
+    },
+    {
+      "batch_id": "register-boss2-grouped-glue-v1",
+      "record": {
+        "path": "research/registration/batches/register-boss2-grouped-glue-v1.json",
+        "sha256": "4091313b475e1d68971ccef6ff1a825ed3df3156eb84a0be967c0e9a374b4d05"
       }
     }
   ],
