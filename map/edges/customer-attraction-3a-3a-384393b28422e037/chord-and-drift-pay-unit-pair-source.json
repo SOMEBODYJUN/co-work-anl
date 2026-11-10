@@ -1,0 +1,51 @@
+{
+  "edge_id": "boss6-384393-chord-and-drift-pay-unit-pair-source",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-326a39f56eab42ada20a3f1a507d73ca",
+    "M-45083ccacddf456690d2e260cf1ff3ab"
+  ],
+  "target_ids": [
+    "M-7e64f1f005ff4b7eaea01d3357389b1c"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "零根背景m>=2；同一完整SPE的actual前缀链；查询对固定、非负主题对分布总质量1。运输时真实总人数不变，b增加当前actual主题，r下降1，所有税只按同一客户收一次。",
+  "roles": {
+    "M-326a39f56eab42ada20a3f1a507d73ca": "提供互惠核精确分解E K=F+f+J和独立鞍点的J余量。",
+    "M-45083ccacddf456690d2e260cf1ff3ab": "提供同人数固定核的有符号一步差、客户税及单位容量。",
+    "M-7e64f1f005ff4b7eaea01d3357389b1c": "获得固定查询对、单位分布平均和自由鞍点三种完整单位源预算。"
+  },
+  "explanation": "先取p=delta_X,q=delta_Y，则alpha_x在{0,1}、J=0；源弦差恒等式给K=F+f。把固定F漂移与f_b(Y)-f_(b+z)(Y)=z*1_Y/[(b+1)(b+2)]相加，逐客户得到K_(b,r)-K_(b+z,r-1)=z*1_(X union Y)/[(b+1)(b+2)]-(1-z)*1_(X intersect Y)/[(b+r-1)(b+r)]。负项保留，正项由同一actual客户的税增量支付，望远镜到末位前得K_0<=K_(h_(m-1),1)+tau_(m-1)。r=1时K=f(X)+f(Y)，真实末位BR给<=2u_m。设g为倒二前背景、B为actual末主题，倒二真改B后无论原策略怎样回复，各B客户分母至多g+2，所以u_(m-1)>=sum_B1/(g+2)>=u_m-[tau_m-tau_(m-1)]。合并K0<=u_(m-1)+u_m+tau_m<=W+tau_m。单位总质量主题对分布线性平均不放大税；再取自由t_m鞍点的独立p,q，以弦差恒等式得到t_m(0)+f0(q)+J<=W+tau_m。没有冻结B后继或假定相关回复仍独立。",
+  "scope": "完整目标单位源预算；不编码全部最优m主题，不放大为多源OPT预算。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/背景剩余利润的分数门槛与同人数信用恒等式--定理.md",
+      "sha256": "e2caa8ee3b283558932a7c52762217b264f9e55c36a26e91069651c200d36529",
+      "section": "互惠核的弦差与释放"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/背景剩余利润的分数门槛与同人数信用恒等式--定理.md",
+      "sha256": "e2caa8ee3b283558932a7c52762217b264f9e55c36a26e91069651c200d36529",
+      "section": "固定分布的同人数前缀步及鞍点余项"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/背景剩余利润的分数门槛与同人数信用恒等式--定理.md",
+      "sha256": "e2caa8ee3b283558932a7c52762217b264f9e55c36a26e91069651c200d36529",
+      "section": "原真实策略给的单位源预算与未付放大"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本包fresh worker实读当前登记、全部核心正文/必要证据及指明比较对端；逐项核模型、量词、真实同策略后继、支付范围与剩余义务。此关系的数学论证已完整，whole与局部contribution按实际结论区分；未重跑旧成熟成功。",
+  "whole_result": "对每份零背景m>=2完整SPE和任意固定合法X,Y，K0(X,Y)<=u_(m-1)+u_m+tau_m<=W+tau_m；任何非负总质量1主题对分布可平均；自由t_m鞍点独立p,q满足t_m(0)+f0(q)+J<=W+tau_m，恰为目标全部陈述。",
+  "endpoint_pins": {
+    "M-326a39f56eab42ada20a3f1a507d73ca": "283b8c7ca643f346f2aa656bdd445f4731e71949bc324b82a23c9af1a00265c5",
+    "M-45083ccacddf456690d2e260cf1ff3ab": "716f471ffd3415881f1a5fa969a9fb2b26c983928a38fcebad693257c2c6cb0c",
+    "M-7e64f1f005ff4b7eaea01d3357389b1c": "4a446bcc6b8ce5ff1782272ff5c18c0778203ceceec6f9a2c7b3df988479205f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/背景剩余利润的分数门槛与同人数信用恒等式--定理.md": "e2caa8ee3b283558932a7c52762217b264f9e55c36a26e91069651c200d36529"
+  },
+  "review_digest": "d84d115e82983a3dd0c18d2adb669b46137389a557fbc4ee2364aa55c3c801dd"
+}

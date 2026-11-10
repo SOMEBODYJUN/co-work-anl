@@ -1,0 +1,45 @@
+{
+  "edge_id": "boss6-384393-constant-policy-explicit-security-dual-certificate",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-004bb31d900445a6b85041a48b8443f7"
+  ],
+  "target_ids": [
+    "CA-SECURITY-CONE-DUAL"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定常量形式策略sigma_A及任意有理查询p；总人数n=m，目录仍保全部标签。完整锥Gamma包含末位合法历史h=A^(m-1)对每个查询T的真实偏离行。",
+  "roles": {
+    "M-004bb31d900445a6b85041a48b8443f7": "提供恒A全历史锥的精确末位差行与必要充分条件。",
+    "CA-SECURITY-CONE-DUAL": "接收固定常量策略子族的一份显式全锥证书(T)。"
+  },
+  "explanation": "静态竞争Q固定为A重复m-1次，对任意客户类型，其查询系数beta_Q(p)=rho_x/m若x属于A，否则rho_x。源必要性中的末位行gamma_T=1_(A\\T)/m-1_(T\\A)。只在h=A^(m-1)处令lambda_T=m p_T，其余lambda=0，逐客户m sum_Tp_T gamma_T=1_A(1-rho)-m1_notA rho=c-m beta_Q(p)，故r=0，Q归一、lambda非负且有理。这是目标(T)的一份直接恒等式；对整个恒A锥内积即W>=m E_Q E_p收益>=m min_B E_p收益。Q甚至不依p，同时cap所有查询；不需重新求LP。",
+  "scope": "完整策略锥对偶的常量策略显式子族；并不提供任意完整sigma的证书。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/恒题完整策略锥的精确入口界与四份保存点--计算.md",
+      "sha256": "30807ce73680de23fef72ba69b2b5575ba959e1bab8c353c104cfa5a70628211"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/完整策略锥的静态安全值对偶--定理.md",
+      "sha256": "b279e1f63f08b961365a2cbc0173530de7090fd1c7beefc1a42c585ef6e58cf5"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本包fresh worker实读当前登记、全部核心正文/必要证据及指明比较对端；逐项核模型、量词、真实同策略后继、支付范围与剩余义务。此关系的数学论证已完整，whole与局部contribution按实际结论区分；未重跑旧成熟成功。",
+  "contribution": {
+    "result": "对任意m、恒A形式策略及有理p，(T)有Q=delta_(A^(m-1))、lambda_(A^(m-1),T)=m p_T、r=0的显式有理证书，支付整个恒A客户锥。",
+    "remaining": "任意非恒定sigma的(A)与(T)双向等价仍须目标minimax/Farkas证明；普遍所有sigma,p存在证书仍开放，不能由此固定子族证明。"
+  },
+  "endpoint_pins": {
+    "CA-SECURITY-CONE-DUAL": "e31e80e9d89c7fad56eadbcbfd46a50af3857d6119eea8060c3a41a0cb987899",
+    "M-004bb31d900445a6b85041a48b8443f7": "31cb08673c5bd6ed0ac816c255156163ea96173e4a6e5d94696faaa1fcbf4714"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/恒题完整策略锥的精确入口界与四份保存点--计算.md": "30807ce73680de23fef72ba69b2b5575ba959e1bab8c353c104cfa5a70628211",
+    "archives/customer-attraction/state/定理/完整策略锥的静态安全值对偶--定理.md": "b279e1f63f08b961365a2cbc0173530de7090fd1c7beefc1a42c585ef6e58cf5"
+  },
+  "review_digest": "c69bd887ad76b79b3994e71ed885ddbc06427756123a157535101e3354ffd769"
+}

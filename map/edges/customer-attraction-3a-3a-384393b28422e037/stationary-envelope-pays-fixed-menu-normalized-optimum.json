@@ -1,0 +1,45 @@
+{
+  "edge_id": "boss6-384393-stationary-envelope-pays-fixed-menu-normalized-optimum",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/full-tail-stationary-additive-defect-sharp-envelope-and-four-label-realization"
+  ],
+  "target_ids": [
+    "M-28668a0a0fce42d18853e4f435ef3be4"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定目标四根菜单(0,1,2),(1,0,3),(2,0,3),(3,1,2)，尾n=2，零背景；任意非负客户类型总质量1，路由用实际尾标签自身作容器，统一驻留pi=(1/4,...,1/4)。",
+  "roles": {
+    "customer-attraction/full-tail-stationary-additive-defect-sharp-envelope-and-four-label-realization": "给任何单客户矩接口的Delta>=-L3(0)=-1/8。",
+    "M-28668a0a0fce42d18853e4f435ef3be4": "接收固定菜单总质量1驻留目标的精确最优下界。"
+  },
+  "explanation": "该菜单每列两尾且无self，pi驻留；任意客户类型I有真实K等于容器Kbar且E Kbar=2 E I。因此源式对每个类型给系数>=-L3(0)=-1/8，非负质量总和1后固定菜单目标>=-1/8。目标保存点mask3和mask12各质量1/2：各客户在两个内根有(I,K)=(1,1)、两个外根(0,1)，delta(1,1)=(2-1)/(2*(1+1))=1/4，delta(0,1)=-1/2，均值=-1/8。两类型各同值，点达到-1/8。故固定菜单归一精确最优-1/8，整数克隆尺度2的总缺陷-1/4。源单客户下界不承担21节点完整SPE或静态值匹配。",
+  "scope": "只认证明确固定根菜单、均匀驻留、质量1目标的锐值；不授全三人SPE的全局最小值。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/全尾平稳加法缺陷的锐包络与四标签实现--引理.md",
+      "sha256": "b8be8f331d79986525673f9e404c30fa161fca9f27ab073e747543ec218b4760"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/两客户四标签驻留负缺陷的完整均衡与发现边界--计算.md",
+      "sha256": "d83a2113a0ea57c1fb23326abf34bdd8d32092f08838d7d19687cab1a26f54a6"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本包fresh worker实读当前登记、全部核心正文/必要证据及指明比较对端；逐项核模型、量词、真实同策略后继、支付范围与剩余义务。此关系的数学论证已完整，whole与局部contribution按实际结论区分；未重跑旧成熟成功。",
+  "contribution": {
+    "result": "目标固定菜单的总客户质量1驻留目标精确最优为-1/8；保存两单位客户尺度是-1/4，两数无冲突。",
+    "remaining": "目标21节点完整SPE合法性、驻留唯一性、W=OPT=2及真正v3=1/2分别由目标完整策略和匹配证书证明；一般r,b形式sharp不因此为SPE sharp。"
+  },
+  "endpoint_pins": {
+    "M-28668a0a0fce42d18853e4f435ef3be4": "df3a58dfa77407612aaa5a0175a8bec6e5914e5979a5f65dda8ea41ff89350eb",
+    "customer-attraction/full-tail-stationary-additive-defect-sharp-envelope-and-four-label-realization": "c367f0d285d2544ec5c101fdace2c9dab14a11ce8b82bb1cb018e5239edf73a6"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/全尾平稳加法缺陷的锐包络与四标签实现--引理.md": "b8be8f331d79986525673f9e404c30fa161fca9f27ab073e747543ec218b4760",
+    "archives/customer-attraction/state/计算/两客户四标签驻留负缺陷的完整均衡与发现边界--计算.md": "d83a2113a0ea57c1fb23326abf34bdd8d32092f08838d7d19687cab1a26f54a6"
+  },
+  "review_digest": "ce8e73164963d336163e853417a29a11ee5421f3866de3b095335c056b5883bb"
+}

@@ -1,0 +1,47 @@
+{
+  "edge_id": "boss6-384393-last-slot-discount-pays-path-menu-boundaries",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/last-complete-slot-minimum-price-exact-discount-and-static-bridge"
+  ],
+  "target_ids": [
+    "M-fc8ff84b03594a72bec01d76f7cd5336"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一完整m槽真实菜单Z_i(A)，所有actual位置，m>=1；Mpath=max_p min_(i,A)E_p K_i(T,A)，其中query独立于列。",
+  "roles": {
+    "customer-attraction/last-complete-slot-minimum-price-exact-discount-and-static-bridge": "给末位任意混合p的R_m<=u_m，以及每位置纯查询R_i(delta_T)<=u_i。",
+    "M-fc8ff84b03594a72bec01d76f7cd5336": "接收完整路径菜单在纯查询及单人情形的已付边界。"
+  },
+  "explanation": "对任意纯查询T，源每个位置取强制列A=T给R_i(delta_T)<=u_i。对i取min，min_(i,A)K_i(T,A)=min_i R_i(delta_T)<=min_i u_i<=W/m，故目标不等式对所有纯p成立。对任意混合p还有min_i R_i(p)<=R_m(p)<=u_m；m=1时u_m=W，因此完整Mpath<=W成立。m>1一般u_m可超过W/m；从各纯T选择不同(i,A)不能在max_p之前变成同一列/同一列分布，故没有支付一般混合p。",
+  "scope": "Mpath候选的纯查询边界、末位钱包及m1整条；一般m混合查询仍开放。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/完整槽末位最小价格的精确折扣与静态充分桥--引理.md",
+      "sha256": "a2c504c39c6b1ab1d4a2a8d9f48b5a977ad2aa648aab0ac066771d22ff5ccf2a",
+      "section": "末位的精确式与一份已付款松弛"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/纯额外槽门槛与完整路径菜单的固定锥探针--程序.md",
+      "sha256": "b52365c43b1de1af89ea88842e7dab2eb4b1b721bd75a85ab82be572bb27f20f",
+      "section": "八人完整路径菜单的目标与固定锥"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本包fresh worker实读当前登记、全部核心正文/必要证据及指明比较对端；逐项核模型、量词、真实同策略后继、支付范围与剩余义务。此关系的数学论证已完整，whole与局部contribution按实际结论区分；未重跑旧成熟成功。",
+  "contribution": {
+    "result": "任意m和纯查询delta_T均min_(i,A)K_i(T,A)<=W/m；任意混合p均min_iR_i(p)<=u_m；m=1时目标完整成立。",
+    "remaining": "一般m>=2需一份共同列分布同时cap全部查询到W/m，或对任意混合p证明min_iR_i(p)<=W/m；纯查询逐列选择和末位u_m上界不足。八人固定锥浮点no-hit不补该义务。"
+  },
+  "endpoint_pins": {
+    "M-fc8ff84b03594a72bec01d76f7cd5336": "c9843cf4c6ec5525681127c184afe3208de4789d8bcb15d26b7881dfd3f835cc",
+    "customer-attraction/last-complete-slot-minimum-price-exact-discount-and-static-bridge": "c835e952c335ba933733231286ea94aafd87c8ac10968ff46cd4fcfc76e88946"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/完整槽末位最小价格的精确折扣与静态充分桥--引理.md": "a2c504c39c6b1ab1d4a2a8d9f48b5a977ad2aa648aab0ac066771d22ff5ccf2a",
+    "archives/customer-attraction/state/程序/纯额外槽门槛与完整路径菜单的固定锥探针--程序.md": "b52365c43b1de1af89ea88842e7dab2eb4b1b721bd75a85ab82be572bb27f20f"
+  },
+  "review_digest": "d9e289ca19506b690d86799494aa351c34015b15c01684adc1650d24efd290c6"
+}

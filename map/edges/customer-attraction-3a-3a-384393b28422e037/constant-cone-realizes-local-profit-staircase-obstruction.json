@@ -1,0 +1,46 @@
+{
+  "edge_id": "boss6-384393-constant-cone-realizes-local-profit-staircase-obstruction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-004bb31d900445a6b85041a48b8443f7"
+  ],
+  "target_ids": [
+    "customer-attraction/closeout-f4ca4be20c4ce14473ad34df"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意m>=2，大题A含m个客户及m-1个互不相交私有单例；全部历史规定A，过去为actual A^t，1<=t<m。目标F是最优剩余利润，不是全覆盖或自由分数t_r。",
+  "roles": {
+    "M-004bb31d900445a6b85041a48b8443f7": "认证整族恒A策略在全部离轨历史可信。",
+    "customer-attraction/closeout-f4ca4be20c4ce14473ad34df": "接收其全A族对固定局部F系数与线性前缀债的精确障碍部分。"
+  },
+  "explanation": "私题T有|T\\A|=1、|A\\T|=m，故源恒A条件逐题取等，完整策略全历史为SPE，actual每人1、W=m、OPT=2m-1。根后m-1槽取k次A和m-1-k个不同私题最优，F_tail=max_k[mk/(k+1)+m-1-k]=2m-min_(1<=j<=m)(j+m/j)。于是OPT-F_tail=min_j(j+m/j)-1>=2sqrt(m)-1，而u_root=1；任意固定有限alpha不可能对所有m满足F_root<=alpha u_root+F_tail。actual A^t后同法F_(m-t)(t1_A)=2m-min_(t<=j<=m)(j+mt/j)。取m=4k,t=k，j=2k达最小4k，得2t+F_tail-OPT=1-m/2线性负；尾实际P=m-t的surplus=2P-F_tail=m/2恰补，整体half余1仍正。",
+  "scope": "目标多项审查中的全A局部F障碍，不涉及HI放松、五环整数平台或后来银行extra接口。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/恒题完整策略锥的精确入口界与四份保存点--计算.md",
+      "sha256": "30807ce73680de23fef72ba69b2b5575ba959e1bab8c353c104cfa5a70628211"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/背景利润台阶与区间累计安全预算的独立审查边界--资源.md",
+      "sha256": "d7c889a8b33fbc098223892a4aabe53b8559f226d01817b0b83c0f9a3ff577f8",
+      "section": "背景利润台阶与区间累计安全预算的独立审查边界"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本包fresh worker实读当前登记、全部核心正文/必要证据及指明比较对端；逐项核模型、量词、真实同策略后继、支付范围与剩余义务。此关系的数学论证已完整，whole与局部contribution按实际结论区分；未重跑旧成熟成功。",
+  "contribution": {
+    "result": "一族真正全历史恒A SPE否定跨所有人数的固定有限局部系数F_r<=alpha u+F_(r-1)，且给线性累积前缀欠债1-m/2；尾surplus和整体half保留。",
+    "remaining": "目标其它HI包含性/祖先价格、五环平台、不同质量singleton比较以及银行后继对旧OPEN的纠正未由此边支付；本族不反全背景整体2P>=F。"
+  },
+  "endpoint_pins": {
+    "M-004bb31d900445a6b85041a48b8443f7": "31cb08673c5bd6ed0ac816c255156163ea96173e4a6e5d94696faaa1fcbf4714",
+    "customer-attraction/closeout-f4ca4be20c4ce14473ad34df": "2a98c3483b3723d2d4d36ea5b37c5ce20d56d356f5a7a9a114a226e256d1c76d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/恒题完整策略锥的精确入口界与四份保存点--计算.md": "30807ce73680de23fef72ba69b2b5575ba959e1bab8c353c104cfa5a70628211",
+    "archives/customer-attraction/state/资源/背景利润台阶与区间累计安全预算的独立审查边界--资源.md": "d7c889a8b33fbc098223892a4aabe53b8559f226d01817b0b83c0f9a3ff577f8"
+  },
+  "review_digest": "a5a78e766ba39e5a751ba2ff77f92c3d7f36732cb2c40dcaac73f42f43473a42"
+}
