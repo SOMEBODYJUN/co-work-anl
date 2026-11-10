@@ -1,0 +1,59 @@
+{
+  "edge_id": "cag-4a2c45-forest-utp-pays-individual-threshold",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-1adc80a127be4f10b8847cb730b12380"
+  ],
+  "target_ids": [
+    "customer-attraction/forest-incidence-individual-last-slot-threshold-and-UTP"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "固定一个全目录压缩关联图为森林的有限单位客户实例、全游戏人数m≥1及其θ_m；假设source所述UTP对每个合法计数前缀成立。策略仍量化全部有序历史，不要求同计数节点同selector。",
+  "roles": {
+    "M-1adc80a127be4f10b8847cb730b12380": "提供每个前缀存在T且对所有相容终局统一保护的开放前提；前提只要求严格后继≥同一全游戏θ_m。",
+    "customer-attraction/forest-incidence-individual-last-slot-threshold-and-UTP": "按真实偏离后的同σ子博弈逆归纳得到每位≥θ_m，再与静态(S)合成条件福利界。"
+  },
+  "explanation": "固定同一实例的θ_m，按剩余人数r对每个有序历史归纳。r=1时该历史负载总槽m−1，末位最佳值M(b)≥θ_m。r≥2时，对当前历史的计数b选UTP给出的T作为当前真实偏离；该偏离之后仍沿所给完整σ，每个后继节点继承同一完整SPE，归纳已保证全部后继角色的最终利润≥θ_m。实际得到的终局q满足q≥b+e_T且总人口m，因此UTP的全终局蕴含给强制T的当前人也≥θ_m。当前节点真实IC把此界转给规定行动。若后继重复T，UTP前提已含当前同主题份额的界，仍无漏洞。过去角色不属于UTP前提。\n\n最后逐位求和W≥mθ_m。独立静态证明：固定任意m−1槽背景k和一个最优m元组的重数d_x，对d_x>0用1≤(d_x+k_x)/(1+k_x)，第一部分Σ_x d_x/(1+k_x)≤mM(k)，第二部分按m−1个背景槽至多(m−1)M(k)，故OPT_m≤(2m−1)M(k)，取最小得OPT_m≤(2m−1)θ_m。于是W≥m OPT_m/(2m−1)。这里左端是覆盖客户数Σ_{d_x>0}1，不能写Σd_x。R216当前指定节现已修正为这一覆盖计数，全文新SHA与森林v3登记相符；主candidate正文(S)本来正确。本轮窄复核不改变静态证明、逐前缀条件归纳或UTP开放状态。\n\nsource UTP自身仍open。每个T不同坏终局q^T如何沿森林同时拼成同一个m−1背景尚未证明，本边不填这个缺口，也不拿一般图或有限阴性反例代替森林结构。",
+  "scope": "这是“所有前缀UTP⇒所有完整SPE逐人θ_m及其条件福利”的完整蕴含。开放前提保持开放，relation_mode为conditional；不把θ_m改θ_r，不要求count统一策略。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/森林关联目录的逐人末位阈值与终局保护接口--候选.md",
+      "sha256": "ac05926d63cd95a94857051eecfbed33343460c8cf662f300b0e0fc6923231ae",
+      "section": "更明确的UTP终局保护接口"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/森林关联目录的逐人末位阈值与终局保护接口--候选.md",
+      "sha256": "ac05926d63cd95a94857051eecfbed33343460c8cf662f300b0e0fc6923231ae",
+      "section": "已证的通用静态界与条件福利推论"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/森林关联目录的逐人末位阈值与终局保护接口--候选.md",
+      "sha256": "ac05926d63cd95a94857051eecfbed33343460c8cf662f300b0e0fc6923231ae",
+      "section": "尚缺的叶消息及比例陷阱"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R216可信攻击与森林前缀候选的证据边界增量--审查.md",
+      "sha256": "b2dd2ff9768dfb2dac7e2e96e5405672d9df90647ff51e0992ca76000d2cd6eb",
+      "section": "森林末位候选与有限证据"
+    }
+  ],
+  "reviewed_by": "Boss6/resume-cag4a2c-round46-fresh-worker",
+  "review_note": "继承round45完整比较及Root实质审核；本轮完整读旧review/六边/22coverage，实读当前森林主正文、R216森林节和森林v3/UTP v1登记，核唯一显示修正及当前pins。原条件归纳与静态覆盖计数保持；UTP和共同拼接仍open。未重跑任何LP、全树、扫描或成熟证书；其它核心来源全文实读仅归原worker。",
+  "whole_result": "若source逐前缀UTP在该关联森林输入上成立，则target全部有序历史、每份完整纯SPE、每位收益≥固定θ_m；并有通用静态OPT_m≤(2m−1)θ_m及条件福利W≥mOPT_m/(2m−1)。",
+  "endpoint_pins": {
+    "M-1adc80a127be4f10b8847cb730b12380": "83ea8540535b161cbe59e53af1abdb36111f6327d96c3d684c14e41ca2bb6821",
+    "customer-attraction/forest-incidence-individual-last-slot-threshold-and-UTP": "4773b4110ce6bc05721b63a0572cea7055a330abbc01081bb1cf6061dd62fbb9"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/森林关联目录的逐人末位阈值与终局保护接口--候选.md": "ac05926d63cd95a94857051eecfbed33343460c8cf662f300b0e0fc6923231ae",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/审查/R216可信攻击与森林前缀候选的证据边界增量--审查.md": "b2dd2ff9768dfb2dac7e2e96e5405672d9df90647ff51e0992ca76000d2cd6eb"
+  },
+  "review_digest": "dd51d01ba73466d0140e80bed4561ab4a0e9ff3cce19b596ba15165240f90993"
+}

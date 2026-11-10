@@ -1,0 +1,57 @@
+{
+  "edge_id": "cag-4a2c45-support-dp-supplies-path-dp-comparison-state",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/ordered-credible-menu-three-probes-and-integer-mask-failure"
+  ],
+  "target_ids": [
+    "customer-attraction/ordered-credible-minimum-continuation-matrix-exact-path-DP"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "给定target的正确R(k)、threshold M(k)、Fraction矩阵L(k,t)，固定根可实现q；对每个固定可实现actual有序路径，取其逐层前缀k_i对应的L_i(t)。source支持DP适用于任何这样的精确矩阵。",
+  "roles": {
+    "customer-attraction/ordered-credible-menu-three-probes-and-integer-mask-failure": "提供长度m、有序、允许重复且终态支持恰S的比较维度最小和归纳；每重复一次仍付一次L。",
+    "customer-attraction/ordered-credible-minimum-continuation-matrix-exact-path-DP": "把该比较维度提升到(k,mask)，另需自身的全部actual路径合法性及合并充分性证明。"
+  },
+  "explanation": "固定一条可实现actual路径h，source的d_i(M)精确最小化前i个比较行动的ΣL(k_i,t)，其中已用标签集合恰M。末行动t唯一给前i−1段和一步L，故转移保全部有序tuple；不同顺序和重复各自计费，只在最终cover(mask)去重。对cover(S)=OPT的支持取最小恰给该路径全部最优比较元组的cost，若不限定cover则也给全部比较元组。\n\ntarget将actual前缀k作为额外状态，并为固定q同时选择下一actual a。每次先付当前L(k,t)，再迁移(k+e_a,mask∪{t})；因此source的比较维度及重复/支持语义可直接使用。它不独自证明actual转移恰好枚举全部有序SPE路径，也不独自证明不同actual histories到同k时未来可合并。本edge只登记这一比较维度的已证贡献。\n\n完整target另以k_a<q_a、q∈R(k+e_a)、u_a(q)≥M(k)证明actual合法性，并用L和合法动作集只依k,q、最终覆盖只依mask证明保最小成本无损。这些另行证明在target正文已成立；它们仍是由本贡献走到整个target所需的步骤，不冒作source单独给出的结论。actual列L也最小化可改变actual尾的其它子SPE，不等SM*、固定σ菜单或fixed-f税递推。",
+  "scope": "accepted的局部算法贡献，不以source单前提宣称整个actual×comparison联合DP、19历史成功项或普遍SM。原theta_dp字面整数in错误仍保留，未运行修复。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/同序可信菜单的三份探针与整数掩码故障--程序.md",
+      "sha256": "03f4e6f3ebf05a1f05cd53aac5c520dfb97b91df4b1dee6bae4c9e95123887bf",
+      "section": "4. 意图中的支持动态规划为何可用，以及尚未执行什么"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/同序可信最低续局矩阵的精确路径动态规划--程序.md",
+      "sha256": "ae9829ab55b3e83defde39b418de09d5ecfe58c3ed13f031ba7b4de51165caa8",
+      "section": "为什么(k,mask)合并无损"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/同序可信最低续局矩阵的精确路径动态规划--程序.md",
+      "sha256": "ae9829ab55b3e83defde39b418de09d5ecfe58c3ed13f031ba7b4de51165caa8",
+      "section": "固定q时全部actual路径的合法域"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/同序可信最低续局矩阵的精确路径动态规划--程序.md",
+      "sha256": "ae9829ab55b3e83defde39b418de09d5ecfe58c3ed13f031ba7b4de51165caa8",
+      "section": "best、bestopt和停止规则"
+    }
+  ],
+  "reviewed_by": "Boss6/map-cag4a2c-round45-worker",
+  "review_note": "完整实读所列现行陈述及承重正文后逐式比较；复用成熟精确证明/证书，不重跑旧LP、SPE全树或有限扫描。关系的完整/局部范围按本字段明确，来源原计算不记本轮执行。",
+  "contribution": {
+    "result": "对每条固定可实现actual路径，精确最小化全部长度m有序比较tuple的Σ_i L(k_i,T_i)，终态支持去重、重复主题逐次付款；该比较维度可原样纳入(k,mask)联合状态。",
+    "remaining": "整个target还须证明actual合法转移枚举全部可实现路径、同(k,mask)未来充分性、跨全部根q/终态的最小化；这些由target独立证明承担，本边未以source算法替代。普遍SM非负更没有由精确最小化算法自动推出。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/ordered-credible-menu-three-probes-and-integer-mask-failure": "b5540c2c596c9d554f3992727692d0799d338fff25c61db26fa692ad8e9904c9",
+    "customer-attraction/ordered-credible-minimum-continuation-matrix-exact-path-DP": "b39111e2a2cbdb548f2fa8170c5e4602e2239eb04a8c721192b963b0e38d3962"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/同序可信菜单的三份探针与整数掩码故障--程序.md": "03f4e6f3ebf05a1f05cd53aac5c520dfb97b91df4b1dee6bae4c9e95123887bf",
+    "archives/customer-attraction/state/程序/同序可信最低续局矩阵的精确路径动态规划--程序.md": "ae9829ab55b3e83defde39b418de09d5ecfe58c3ed13f031ba7b4de51165caa8"
+  },
+  "review_digest": "b7ace1613503438edb3bc95965c6aa8e8c7afef2e2023342b170bb208e8ee60d"
+}
