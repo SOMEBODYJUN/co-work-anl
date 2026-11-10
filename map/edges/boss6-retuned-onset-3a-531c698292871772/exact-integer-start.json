@@ -1,0 +1,117 @@
+{
+  "edge_id": "wc-retuned-m20-plus-exact-gap-implies-sharp-integer-start",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WCF-R3-SCALED-RETUNED-v2"
+  ],
+  "target_ids": [
+    "M-546d167881384ce790c41cd47626d72a"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定唯一t=(49/100,11/10,49/100,3/5,1/50,3/100,1)，∀整数m≥1；使用正式七互补mask、权(1,1/(10m),1/(20m),1/(50m))、前六对次数32m²及末对二次。成本为资源延迟之和而不再乘权，真实单方偏离按新负载重算。新增m4..19有限证明及m1/2精确存在性比较已由本边完整证明和evidence支付，没有待证附加前提。",
+  "roles": {
+    "WCF-R3-SCALED-RETUNED-v2": "提供同一固定有限族的m3完整有理证书、全部m≥20统一定向严格余量及m1/2有2-PNE的成熟事实；其原statement未关闭4..19，不单独承担新增有限块。",
+    "M-546d167881384ce790c41cd47626d72a": "合并m3、精确整数块m4..19和m≥20，并以m1/2的0100及1011各为2-PNE支付反向，得到全正整数域无2-PNE iff m≥3的完整目标。"
+  },
+  "explanation": "同一归一化负载在W=(100m,10,5,2)下不变；七支持总权为12,17,100m+7,100m+10,100m+15,100m+17,100m+17。取L=lcm_j U_j^p_j，以单一正数100L同比放大全部成本，使每项资源费成为整数a_j(L/U_j^p_j)x^p_j。全文核过的整数程序对每个m4..19重建16态并按新负载读取64个真实翻位，按互补对称性选正式模板(3,3,4,1,4,3,4,2)；成熟实跑exit0，floor(10^6最小指定差)依序为9866,11911,13270,14238,14963,15526,15975,16343,16649,16908,17130,17322,17490,17638,17770,17887，均正。v2另给m3全态严格2出口和每个m≥20统一正margin2735869393/1048576000000；三段并集恰为全体整数m≥3。反向，冻结独立finite_checks的m1/2完整有理最佳倍率精确小于2、minimizers均0100和1011；该倍率依原代码为每态max(1,全部四真实翻位比)后取16态min，故两个指定态各自全部四式C_old<2C_new，满足弱式2-PNE。完整证明同时支付两个方向与全整数域。新增整数块是本推导内完成的有限证明步骤，代码及算术不另造节点；本边使用v2与这些已付步骤共同合成，未把旧v2的尾界直接等同于新iff。",
+  "whole_result": "在正式十四资源缩权族中固定t=(49/100,11/10,49/100,3/5,1/50,3/100,1)，对每个整数m≥1，G_m(t)无2-PNE当且仅当m≥3。所有m≥3的全部16态均有严格二倍改善；m1、m2的0100和1011均为2-PNE。因此3为该固定族的精确整数起点，各成员次数为32m²。方向为旧v2的已证两段与本边完成的精确有限补域共同推出该完整新目标。",
+  "scope": "精确起点限于同一固定调谐t及整数参数m。严格>2改善排除弱≤2均衡。定义仅作模型条件与证据；原振幅全m严格9/5是另一对象；旧v1/v2原量词和独有证明保留，不复制既有v2→whole-v1边。本结论不声称有限最佳倍率恰2、全类最优次数或全拓扑最优常数。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/调谐十四资源缩权族无二倍均衡的精确整数起点--定理.md",
+      "sha256": "86301b0fe9025cdcf1b596d17a0bf413297b0e1ef56007ec808cf056028a3d2a"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md",
+      "sha256": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/十四资源缩权族的常数无均衡界--定理.md",
+      "sha256": "62f4f0e0e9090a650f09442465161a4552f1ea84fad2bfa1f36c8183448733e0"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss2/retuned-gap-4-19.md",
+      "sha256": "e8a73482a28fbb5ffd6ee0220a43d4c297a6ed075100e100ceb814fe62ad050f"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss2/retuned-gap-4-19.py",
+      "sha256": "8920d631796040941dadc14a1c6d0f73d0f476154979f291d6acfe01b5c550cf"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/crossover/original/evidence/runs/weighted_congestion/crossover_limit_review/independent_evidence.json",
+      "sha256": "06c750b7176379ddfbacefae1a33f4eac1c1154c1825f6ab8ee035e8d175032d"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/crossover/original/evidence/certificates/weighted_congestion/crossover/limit_evidence/retuned_m3_certificate.json",
+      "sha256": "e289952c78da5e98718d9de35d1bfc38b77a30e7e08a3888563d21e0e2e867d6"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/crossover/original/tests/audits/weighted_congestion/crossover_limit_review/check_independent.py",
+      "sha256": "a3cadf049de5fcc1f1e44674200b0a4fbef86fc3c9b031f6f99eddaca129ee11"
+    },
+    {
+      "path": "map/edges/weighted-congestion-3a-3a-6bde22b9e18e91ee/m3-verification.json",
+      "sha256": "aa9060108510564bbdf6798a89b8ce4e664ef6a42e06a541ecd64cc1f5299b2b"
+    },
+    {
+      "path": "map/edges/weighted-congestion-3a-3a-6bde22b9e18e91ee/verify_m3.py",
+      "sha256": "54d10131af1f7c6f087d075be5b818056f0d84221271e011e831c6cf2433dd6d"
+    },
+    {
+      "path": "map/edges/weighted-congestion-3a-3a-6bde22b9e18e91ee/limit-and-tail-verification.json",
+      "sha256": "ca07d780fe11214efbbce734a28dccd732fd3ac253c7c5df4eb8722944071e3b"
+    },
+    {
+      "path": "map/edges/weighted-congestion-3a-3a-6bde22b9e18e91ee/verify_limit_branches.py",
+      "sha256": "fbb225e6f85377f838a85dd51e942d3cb4f50d8ed3ec16b285ae5a96f3478b83"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/十四资源缩权族的独立审查与量词修正--审查.md",
+      "sha256": "799c690767e9c827e895f6f2e9f9947692700943a8bb7ae0d16c3b90c0c9f8c5"
+    },
+    {
+      "path": "archives/weighted-congestion/state/计算/十四资源构造与缩权族的精确复现--计算.md",
+      "sha256": "48cfab42028bf9c53f7ab818a026475caba5d7ee2afe2ac3759de5c6a2f83c7f"
+    },
+    {
+      "path": "map/edges/boss6-retuned-onset-3a-531c698292871772/mature-evidence-review.json",
+      "sha256": "fe0c844c4d76a2cd79e86b676d607d816342d6b346d04c88d66991b1bae47e6a"
+    },
+    {
+      "path": "map/edges/boss6-retuned-onset-3a-531c698292871772/source-manifest.json",
+      "sha256": "87bc15918c8a810895afbe8c1274207156ec57b13e4a35681522081a35a6c47d"
+    },
+    {
+      "path": "map/edges/boss6-retuned-onset-3a-531c698292871772/reading-and-proof.md",
+      "sha256": "ade914e8e69403feecf94a90ee4994c3611453caa5430e43e771db8f3b4c2c0d"
+    }
+  ],
+  "reviewed_by": "Boss6 / map_retuned_onset_round38",
+  "review_note": "实读当前核心v1、v2登记v6、旧v1、正式定义/常数定理/精确起点定理及有限块md/py，核同族性、公共正缩放、16态/64真实翻位和固定见证逻辑。新整数块复用Boss6根代理先前真实exit0且16项逐值匹配的扫描，未重新运行。m3证书整份结构化加载、合同/SHA与顶层精确符号核对，复用6bde已完成64成本/64偏离/64比值/16差的成熟逐字段重建，未重演。m1/2完整有理数交叉比较及尾界两个有理恒等式本轮已直接核过。目标两个方向与全域均已付清，故whole_result成立；当前task没有声明overlap对，不伪造处置。根代理仍须按最终字节binding/check/push/done。",
+  "endpoint_pins": {
+    "M-546d167881384ce790c41cd47626d72a": "71035bad53773f375c9ddd318da009758c86ccdd42b9fa88118c68d7462c6c70",
+    "WCF-R3-SCALED-RETUNED-v2": "e602b078e362c4c01888cb9d78dd3f852ada86c09d01054234aeb322fd8a7dbe"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/调谐十四资源缩权族无二倍均衡的精确整数起点--定理.md": "86301b0fe9025cdcf1b596d17a0bf413297b0e1ef56007ec808cf056028a3d2a",
+    "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df",
+    "archives/weighted-congestion/state/定理/十四资源缩权族的常数无均衡界--定理.md": "62f4f0e0e9090a650f09442465161a4552f1ea84fad2bfa1f36c8183448733e0",
+    "research/workspaces/map-v2/Boss2/retuned-gap-4-19.md": "e8a73482a28fbb5ffd6ee0220a43d4c297a6ed075100e100ceb814fe62ad050f",
+    "research/workspaces/map-v2/Boss2/retuned-gap-4-19.py": "8920d631796040941dadc14a1c6d0f73d0f476154979f291d6acfe01b5c550cf",
+    "archives/weighted-congestion/tools/evidence/crossover/original/evidence/runs/weighted_congestion/crossover_limit_review/independent_evidence.json": "06c750b7176379ddfbacefae1a33f4eac1c1154c1825f6ab8ee035e8d175032d",
+    "archives/weighted-congestion/tools/evidence/crossover/original/evidence/certificates/weighted_congestion/crossover/limit_evidence/retuned_m3_certificate.json": "e289952c78da5e98718d9de35d1bfc38b77a30e7e08a3888563d21e0e2e867d6",
+    "archives/weighted-congestion/tools/evidence/crossover/original/tests/audits/weighted_congestion/crossover_limit_review/check_independent.py": "a3cadf049de5fcc1f1e44674200b0a4fbef86fc3c9b031f6f99eddaca129ee11",
+    "map/edges/weighted-congestion-3a-3a-6bde22b9e18e91ee/m3-verification.json": "aa9060108510564bbdf6798a89b8ce4e664ef6a42e06a541ecd64cc1f5299b2b",
+    "map/edges/weighted-congestion-3a-3a-6bde22b9e18e91ee/verify_m3.py": "54d10131af1f7c6f087d075be5b818056f0d84221271e011e831c6cf2433dd6d",
+    "map/edges/weighted-congestion-3a-3a-6bde22b9e18e91ee/limit-and-tail-verification.json": "ca07d780fe11214efbbce734a28dccd732fd3ac253c7c5df4eb8722944071e3b",
+    "map/edges/weighted-congestion-3a-3a-6bde22b9e18e91ee/verify_limit_branches.py": "fbb225e6f85377f838a85dd51e942d3cb4f50d8ed3ec16b285ae5a96f3478b83",
+    "archives/weighted-congestion/state/审查/十四资源缩权族的独立审查与量词修正--审查.md": "799c690767e9c827e895f6f2e9f9947692700943a8bb7ae0d16c3b90c0c9f8c5",
+    "archives/weighted-congestion/state/计算/十四资源构造与缩权族的精确复现--计算.md": "48cfab42028bf9c53f7ab818a026475caba5d7ee2afe2ac3759de5c6a2f83c7f",
+    "map/edges/boss6-retuned-onset-3a-531c698292871772/mature-evidence-review.json": "fe0c844c4d76a2cd79e86b676d607d816342d6b346d04c88d66991b1bae47e6a",
+    "map/edges/boss6-retuned-onset-3a-531c698292871772/source-manifest.json": "87bc15918c8a810895afbe8c1274207156ec57b13e4a35681522081a35a6c47d",
+    "map/edges/boss6-retuned-onset-3a-531c698292871772/reading-and-proof.md": "ade914e8e69403feecf94a90ee4994c3611453caa5430e43e771db8f3b4c2c0d"
+  },
+  "review_digest": "e87f52a4c20487904d9c7504628ef056160fe5886c15cbe0057ec5513de03e57"
+}

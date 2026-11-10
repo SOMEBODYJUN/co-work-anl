@@ -1,0 +1,61 @@
+{
+  "edge_id": "um-r37-single-home-forest-directed-token",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-HOME-UNIT-ROOTED-FOREST-v1",
+    "UM-MODEL-v1"
+  ],
+  "target_ids": [
+    "UM-DIRECTED-DEGREE-TOKEN-IDENTITY-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "显式非空简单有向图、指定一根 r。零需求顶点无出边，正需求允许任意二进制数及死端。使用全部原 token、filler 与唯一根 U。",
+  "roles": {
+    "UM-HOME-UNIT-ROOTED-FOREST-v1": "给任何完整 C<2 调度保实际根的出树以及树外 b_i≤1 时的正规化。",
+    "UM-MODEL-v1": "提供实际不可拆任务、单位端负载与完整 makespan 的共同定义。",
+    "UM-DIRECTED-DEGREE-TOKEN-IDENTITY-v1": "在压缩 token 矩阵上将根森林化为原图树评分，及反向完整回填。"
+  },
+  "explanation": "每个原顶点是机器，正需求 v 有 min(k_v,d_v) 枚 home 时间1/k_v、在各原孩子时间1的不同 child tokens，缺量由单枚只能留 home 的 filler 补齐，home 总量1。只有一枚在 r 执行的 U。对任何实际 C<2 调度，保U森林给出从 r 可达的合法出树。v 的 s_v 枚外送对应树出度，活跃正需求点含根或父的一枚单位任务，所以负载恰2−s_v/k_v，得到 b(H)≥2−C。反向由 H 向下保至多 k_v 个孩子并删除其余整棵子树，保留点的出度仍至少 k_v b(H)，且不超过原 token 数。逐点给保留孩子不同 token，其余全部留 home。所有活跃点真实峰至多2−b(H)，树外至多1。OPT=2 时由 b*≥0 和已经构造的上界闭合。 条件用途也由同一完整桥支付：假设对某个固定0<ε≤1，存在一般UM的确定性总位多项式(2−ε)OPT实际算法。枚举Γ={1}∪{a/k_v:k_v>0,1≤a≤min(k_v,d_v)}，对每τ把正需求改为k′_v=ceil(τk_v)，零需求仍为0，构造对应完整token矩阵并调用假设算法，仅从实际峰C<2的输出解码，按原需求计算评分并取最好树，保单点根作fallback。b*>0时τ=b*属于Γ；原最优树的整数出度至少ceil(τk_v)，故该缩放需求实例b′*=1、UM最优值1。算法返回C≤2−ε，解码给每个选中正需求点deg≥εk′_v≥ετk_v，遂原树评分≥εb*。b*=0时单点根已满足保证；零需求根可直接给值1。Σ_v min(k_v,d_v)≤|E|使|Γ|≤|E|+1，ceil与各有理数的位长和全部调用数均为输入总位长多项式。此为已证明的if-then用途，不提供其所假设的一般UM算法。",
+  "scope": "一个指定根 U 的完整原任务桥，任意环境环可在根可达域外。并未给一般有向图求未知好树的算法。 Γ枚举的条件应用包含在完整结论内；该if-then本身已证，整体relation_mode仍为unconditional，不宣称一般UM次二算法存在。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/单home正规化与一般有向需求树实际恒等--定理.md",
+      "sha256": "b5a75fead51cc4a793936896a5366eaa9d059fd3d4a11bd522456b5a920092bc",
+      "section": "3. 严格小于二的保U根森林"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/单home正规化与一般有向需求树实际恒等--定理.md",
+      "sha256": "b5a75fead51cc4a793936896a5366eaa9d059fd3d4a11bd522456b5a920092bc",
+      "section": "4. 一般有向需求树的独立模型"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/单home正规化与一般有向需求树实际恒等--定理.md",
+      "sha256": "b5a75fead51cc4a793936896a5366eaa9d059fd3d4a11bd522456b5a920092bc",
+      "section": "5. 双向完整构造与精确最优值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/单home正规化与一般有向需求树实际恒等--定理.md",
+      "sha256": "b5a75fead51cc4a793936896a5366eaa9d059fd3d4a11bd522456b5a920092bc",
+      "section": "6. 位复杂度、条件用途与未解部分"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Boss6 round38正式定向repair：本次重新实读三个当前登记端点、canonical全文§1–6及UM定义全文，并对照冻结精确源与最小勘误的任务身份边界；逐项核唯一根U、q=min(k,d)、home-only filler、非根parent unit、整棵裁枝、全部原任务回填、OPT=2和零需求分支。独立核Γ包含b*>0、ceil(τk)缩放使τ=b*时新OPT=1、真实C<2解码和原评分ε保证及总位复杂度，据此补齐target v4整条含if-then的陈述；未假定或宣称该一般UM算法已存在。其余19边在本successor中按旧done与3D审查精确成熟复用，本次核同路径同SHA、全部当前input pins、端点/evidence/review绑定，不冒称重新全域审读context_plan估计652422 tokens正文。",
+  "whole_result": "保U根森林及完整 token 编译联合给两个总位多项式的见证转换，且 OPT(P(D,k))=2−b*，含零需求根、正需求死端和 OPT=2。 还推出完整登记的条件用途：若对固定0<ε≤1存在一般UM的确定性总位多项式(2−ε)OPT实际算法，则上述至多|E|+1个Γ阈值及ceil(τk)缩放、实际C<2解码与原评分择优给一般有向需求根树的确定性总位多项式ε近似；b*=0用单点根，零需求根直接值1。",
+  "endpoint_pins": {
+    "UM-DIRECTED-DEGREE-TOKEN-IDENTITY-v1": "0873932df931524d7ef8fcb0da1b35cdb0d528a4a66ad1c681e7862fe5bb5889",
+    "UM-HOME-UNIT-ROOTED-FOREST-v1": "82923c322767aedd6e46aaf94cbf07be4b718a119d18e3c65134664a6e28e104",
+    "UM-MODEL-v1": "9e0366033d2ab38fffe159771a178a29146f75c0d5c2cea92c0b1a307e6269c5"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/单home正规化与一般有向需求树实际恒等--定理.md": "b5a75fead51cc4a793936896a5366eaa9d059fd3d4a11bd522456b5a920092bc",
+    "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+  },
+  "review_digest": "470ee8f01712eca8d52fe38c5ad90c894592063d16dea8493296e83321c08569"
+}
