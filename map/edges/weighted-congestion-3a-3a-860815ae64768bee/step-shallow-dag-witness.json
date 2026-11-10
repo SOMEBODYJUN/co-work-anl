@@ -1,0 +1,43 @@
+{
+  "edge_id": "wc-step-packet-step-shallow-dag-witness",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R1-DAG-STEP"
+  ],
+  "target_ids": [
+    "weighted-congestion/shallow-DAG-height-transfer-counterexample"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限 simple DAG、根权1、正轻权且总和W<1、每卫星outgoing总权t_v<w_v。对称双列两个真实策略与闭端点阶跃费用。路径按顶点计。 图为两层各s点、从第一层到第二层完整定向二部图，s≥1。",
+  "roles": {
+    "WC-R1-DAG-STEP": "给由P_k确定的真实阶跃博弈门槛。",
+    "weighted-congestion/shallow-DAG-height-transfer-counterexample": "得到最长路径长度2却超出平方根量级的实例族。"
+  },
+  "explanation": "P_1=2s、P_2=s²、更长路径为零。代入唯一根方程得到q³−q²−2sq−s²=0。置q=s^(2/3)x，除以s²后所得方程在x=1±固定小正数两侧变号，唯一门槛根于是满足x→1。顶点总数2s，故q/√(2s)→∞。",
+  "scope": "反驳把祖先闭包树的高度条件推广成一般DAG最长路径条件。保留树定理和依赖入度的上界。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+      "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990",
+      "section": "路径递推、任意振幅上界及端点取得"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+      "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990",
+      "section": "图极值、度界、树特化与浅DAG反例"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项核对登记量词、真实偏离与来源证明，保留所用输入及所得结论的模型范围。",
+  "whole_result": "两层完全定向二部DAG的门槛q∼s^(2/3)，虽最长路径仅2个顶点，故一般DAG浅高度不足以给O(√m)门槛。",
+  "endpoint_pins": {
+    "WC-R1-DAG-STEP": "553c4a4fd59e0cc01339c0971bcf42b46ec7c2792484fdd29fb829b1861b57db",
+    "weighted-congestion/shallow-DAG-height-transfer-counterexample": "0e73574b3be684ad319aa4ac82cc48c9702efe2692fc3cbf3babf320743fdd68"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990"
+  },
+  "review_digest": "ae50ff9a91b39e04ee4737b27fa369084a78dc468a5e19d04c7df8dad6ec6b88"
+}

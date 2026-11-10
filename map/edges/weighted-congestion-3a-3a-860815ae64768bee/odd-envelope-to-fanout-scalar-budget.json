@@ -1,0 +1,52 @@
+{
+  "edge_id": "wc-step-packet-odd-envelope-to-fanout-scalar-budget",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R3-ODD-RING-ENVELOPE-v1"
+  ],
+  "target_ids": [
+    "wc-directed-fanout-forcing-cut"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "d≥2，实α≥T_d。任意正u,w及非负系数次数≤d费用；主预算W=0用非负性单列。",
+  "roles": {
+    "WC-R3-ODD-RING-ENVELOPE-v1": "提供相同的单项式包络f_k(R)与T_d比较。",
+    "wc-directed-fanout-forcing-cut": "接收适用于任意混合费用的真实边际标量上界。"
+  },
+  "explanation": "R=u/w，若R≤1用二项式和得f_k≤1，R>1用次数单调性得f_k≤f_d≤T_d。交叉相乘并乘w^(k+1)给u[(u+w)^k−αu^k]≤w[α(u+w)^k−w^k]。对每项乘非负系数再相加得到(S)；交换角色取R=W/u得(M)，W=0时左为零。正部可取因为右侧非负，故对私有边j有λ_j≤wP_j，供同源共享预算一次聚合。",
+  "scope": "这里只支付分叉证明的标量步骤；同一T_d出现于两种用途并不等同两拓扑的精确真实阈值。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+      "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+      "section": "4. The exact necessary envelope"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/统一强迫分叉反馈的割均衡--定理.md",
+      "sha256": "0008b05b7b319a2af8c370e73f10e4ba7da958a323b59b4bc7618492b4b7bb9c",
+      "section": "标量包络"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/统一强迫分叉反馈的割均衡--定理.md",
+      "sha256": "0008b05b7b319a2af8c370e73f10e4ba7da958a323b59b4bc7618492b4b7bb9c",
+      "section": "正部侧容量和共享源预算"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项核对登记量词、真实偏离与来源证明，保留所用输入及所得结论的模型范围。",
+  "contribution": {
+    "result": "得到任意非负系数混合费用的(S)、(M)和分叉的侧容量界B1。",
+    "remaining": "仍须(UF)聚合同源B3、B2、含自环的局部割不等式，以及固定light的全部真实偏离验证。"
+  },
+  "endpoint_pins": {
+    "WC-R3-ODD-RING-ENVELOPE-v1": "202eaf2e5e707f1bece41a4dedd4e75d3ca43a9cc503c556fa214e265951c610",
+    "wc-directed-fanout-forcing-cut": "c82b185a5e15041ec56ad1a82adc7afd250a2b237dcad2f29b2b94b43c75a91a"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+    "archives/weighted-congestion/state/定理/统一强迫分叉反馈的割均衡--定理.md": "0008b05b7b319a2af8c370e73f10e4ba7da958a323b59b4bc7618492b4b7bb9c"
+  },
+  "review_digest": "75bf232296682cf4259aa7f38ec763f28bbc4caf39eb0389850c58059edb5e0e"
+}

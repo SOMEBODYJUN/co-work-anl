@@ -1,0 +1,43 @@
+{
+  "edge_id": "wc-step-packet-finite-audits-check-forest-and-fanout",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "wc-incidence-directed-exact-audits"
+  ],
+  "target_ids": [
+    "wc-directed-fanout-forcing-cut"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "冻结输入、Fraction真实费用oracle与文中记录的三次输出身份。",
+  "roles": {
+    "wc-incidence-directed-exact-audits": "在有限图与参数上核对实现。",
+    "wc-directed-fanout-forcing-cut": "所核验的分叉割定理，其全量词有独立证明。"
+  },
+  "explanation": "19个分叉游戏共3532态，先检UF与B1/B2/B3，再核每个割局部最小点对应的全反位α-PNE并直接重算全部真实偏离。独立的3顶点容量枚举只核CUT。森林程序验证的是森林递归、挂树与指定单环，不给分叉结构的普遍结果。",
+  "scope": "checks语境，保存冻结有限复现及其量词，边的目标为分叉割。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/计算/森林报价与分叉割的精确有限核验--计算.md",
+      "sha256": "4a4977275221003d22bee8156f8a9c7bb690b3ce80ebedfa9fce7d3df76b5046",
+      "section": "分叉割程序：输入和真实全状态计算"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/统一强迫分叉反馈的割均衡--定理.md",
+      "sha256": "0008b05b7b319a2af8c370e73f10e4ba7da958a323b59b4bc7618492b4b7bb9c",
+      "section": "证据、比较和接续"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项核对登记量词、真实偏离与来源证明，保留所用输入及所得结论的模型范围。",
+  "endpoint_pins": {
+    "wc-directed-fanout-forcing-cut": "c82b185a5e15041ec56ad1a82adc7afd250a2b237dcad2f29b2b94b43c75a91a",
+    "wc-incidence-directed-exact-audits": "796f3f2423327218ace579b891cf4d78216bccc644caf59eb31a00e1e0411e10"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/计算/森林报价与分叉割的精确有限核验--计算.md": "4a4977275221003d22bee8156f8a9c7bb690b3ce80ebedfa9fce7d3df76b5046",
+    "archives/weighted-congestion/state/定理/统一强迫分叉反馈的割均衡--定理.md": "0008b05b7b319a2af8c370e73f10e4ba7da958a323b59b4bc7618492b4b7bb9c"
+  },
+  "review_digest": "12bdf513025f9d152fcf1a7c3381709960bbd465676b2f1b26c89e4f2c3a88e6"
+}

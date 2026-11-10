@@ -1,0 +1,43 @@
+{
+  "edge_id": "wc-step-packet-step-ancestor-tree",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R1-DAG-STEP"
+  ],
+  "target_ids": [
+    "weighted-congestion/transitive-tree-step-specialization"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限 simple DAG、根权1、正轻权且总和W<1、每卫星outgoing总权t_v<w_v。对称双列两个真实策略与闭端点阶跃费用。路径按顶点计。 D在轻顶点之间含全部严格祖先边。",
+  "roles": {
+    "WC-R1-DAG-STEP": "给任意DAG的h递推、门槛根方程和比较单调性。",
+    "weighted-congestion/transitive-tree-step-specialization": "接收祖先闭包树的公式、星链极值和小高度渐近式。"
+  },
+  "explanation": "深度ℓ的v恰有ℓ−1个轻祖先，深度分别为1到ℓ−1；将几何级数代入递推得h_v(r)=r^(−1)(1+1/r)^(ℓ−1)。排序后的深度在1与索引之间，逐项比较得星和链两端及严格性。若最大轻深H_m=o(√m)，则m≤q²−q≤m exp(H_m/q)，且q≥√m，故q/√m→1。",
+  "scope": "树必须取祖先传递闭包；仅取父子边时递推不同。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+      "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990",
+      "section": "路径递推、任意振幅上界及端点取得"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md",
+      "sha256": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990",
+      "section": "图极值、度界、树特化与浅DAG反例"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项核对登记量词、真实偏离与来源证明，保留所用输入及所得结论的模型范围。",
+  "whole_result": "祖先闭包树门槛由深度几何和确定，固定轻顶点数时星和链为精确极值；H_m=o(√m)时q∼√m。",
+  "endpoint_pins": {
+    "WC-R1-DAG-STEP": "553c4a4fd59e0cc01339c0971bcf42b46ec7c2792484fdd29fb829b1861b57db",
+    "weighted-congestion/transitive-tree-step-specialization": "84c0b3a32a650692b23f8e6a51596d09d7d81e17131d0d824c0c7d7d89d26205"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/阶跃依赖DAG的路径精确门槛--定理.md": "b9f6c1c86a507b25ce410af034318663a47e63e54551d21caaffb65714d25990"
+  },
+  "review_digest": "9197bd01170ff9e0c50fb842d7d7ee7a20529ddf7d733c65ae6c685dfdb778e0"
+}
