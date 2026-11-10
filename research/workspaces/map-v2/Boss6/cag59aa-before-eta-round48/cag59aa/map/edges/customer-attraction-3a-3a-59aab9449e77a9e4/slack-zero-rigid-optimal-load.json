@@ -1,0 +1,33 @@
+{
+  "edge_id": "ca-b6-r48-slack-zero-rigid-optimal-load",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-5cc1da5d3b804a1d9c7d5e67b731041c"
+  ],
+  "target_ids": [
+    "M-921cb4daa29e43c6b2816c1ec73720b5"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一个有限静态游戏，任取真最优联合对偶Q与OPT_n元组；另假设Δ=(2n−1)v−OPT_n=0。Q可相关，q仅平均槽边际；n=1单独处理。",
+  "roles": {
+    "M-5cc1da5d3b804a1d9c7d5e67b731041c": "全部非负余量在Δ0逐项归零，提供负载固定与比较取等。",
+    "M-921cb4daa29e43c6b2816c1ec73720b5": "完整锐性结论，包括显式p、全部纯最坏回复、跨所有最优Q的唯一负载。"
+  },
+  "explanation": "S1非负分解令Rov、Rout、每个比较δ及J为零。C上d=1、jx=0迫H=L；C外L=0且H非负迫H=0。有限客户/背景给每个正支持原子同一整数L，fB(A)=g(A)≤v且比较主题取v，故θ=v。n≥2且qA>0才由正系数得到g(A)=v；n1不作此推断。固定这份Q和比较tuple，定义pA=(比较出现次数+(n−1)qA)/(2n−1)，客户命中率在C为(1+L)/(2n−1)，外为0。对任意纯B′、负载h，以(1+L)/(1+h)=1+(L−h)/(1+L)+(h−L)^2/((1+L)(1+h))逐客展开，得到(2n−1)(Ep fB′−v)=Σ槽(v−g(a))+Σ外h+ΣC(h−L)^2/((1+L)(1+h))。三项全非负；h=L时直接命中率式使左边0，同时第一和也为0，反向零差由外项/平方迫全部h=L。故p最优且所有最坏回复恰负载L。再固定此p，任取另一个最优Q′，其对p期望既≥v又≤v；非负slack均值零迫每个支持背景h=L。因此真正排尽全部其它最优Q，唯一的是整客户负载，非标签/tuple/p/C唯一。",
+  "scope": "只在静态锐性假设下；全部最优对象量词保留，不获得实际SPE前缀。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/静态安全值的亏量刚性与纯背景舍入--定理.md",
+      "sha256": "3d10d512cd632bacdbcc7c9bd8553438dd9fa3ad08a4aabaa61e638c17e4ad64"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/静态安全亏量与舍入的后继独立审查--审查.md",
+      "sha256": "dc153fdf3ac8b444c44c83e0732222033a2d92d784cc81a50aa3930312e1fe04"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本包fresh worker实读当前登记完整陈述、域/量词/全部承重正文与所列证据；独立逐式比较，无旧数学程序、LP、BI或全树审计重跑。只在静态锐性假设下；全部最优对象量词保留，不获得实际SPE前缀。 本边在目标本来的Δ0静态锐性域内完整推出S2；Δ0是目标适用条件，不是额外开放证明前提。固定p的精确slack及对所有最优Qprime的排除均已支付；不获得实际SPE前缀。",
+  "whole_result": "使用S1任意最优Q和比较元组并假设Δ=0。比较并集C中d_x=1，Q每个正概率支持背景在全部客户上具有同一个完整整数负载L，C外L=0。每个支持背景纯对偶最优、cap=v，θ_n=v；比较主题g(T_j)=v，n≥2时q_A>0亦强制g(A)=v。显式p_A=[比较元组中A出现次数+(n−1)q_A]/(2n−1)为原始最优分布。对任意纯背景B′、负载h，(2n−1)(E_p f_(B′)−v)=Σ_(a槽∈B′)(v−g(a))+Σ_(x∉C)h_x+Σ_(x∈C)(h_x−L_x)^2/[(1+L_x)(1+h_x)]。由此全部最坏回复恰为负载h=L的背景；每个最优对偶分布全局都具有同一个L。"
+}
