@@ -1,0 +1,52 @@
+{
+  "edge_id": "ca-causal-closure-r34-singleton-cycle-closure",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-5a729675672041dd87da781da105b537"
+  ],
+  "target_ids": [
+    "M-0b53618e76614597a1b1991efa5cc496"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m=2、p≥2个不同单客户标签，种子仅{A₀}，末位处方为循环的下一标签。",
+  "explanation": "在每首动作后末位改成另一个单客户标签给1，重复给1/2；处方下一标签为BR。根每个强制行动经处方后继都独得1，故完整SPE。所有非终历史仅空或单标签，闭包每轮在原前缀增唯一A_{n+1}，最后一个循环到A₀不再增长；精确为C_n={A₀,…,A_min(n,p−1)}。若种子改成最优支持{A₀,A₁}，则是p−2轮的另一种子量词。",
+  "scope": "闭包固定原动作表，非允许重新选择任意策略的福利压缩。",
+  "roles": {
+    "M-5a729675672041dd87da781da105b537": "固定闭包算法与真策略限制量词",
+    "M-0b53618e76614597a1b1991efa5cc496": "给固定人数和单标签种子的无限反族"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/查询支持的完整策略闭包与严格分离保留--定理.md",
+      "sha256": "b31106571d5cf3b7d4c307039f780b8fac706a3732d8635056fdd5ee43d90af7"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/回复封闭目录的精确策略限制与证书提升--引理.md",
+      "sha256": "736cb46566f057af743d703165de5cfa3b3695d2e87b4815a90882245b20e530",
+      "section": "真正两人SPE的闭包也可无界"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/cag-full-depth-and-closure-primary/original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round3/mixed/strategy_generated_closure.md",
+      "sha256": "2e363dd3f4b9ce98846d4bd27edadb347528e320e1d4de8e547d12fcbcc42e75"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/回复封闭目录的精确策略限制与证书提升--引理.md",
+      "sha256": "736cb46566f057af743d703165de5cfa3b3695d2e87b4815a90882245b20e530"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读所列精确正文及相应原输入和输出，按本边显示的量词与推导核对。闭包固定原动作表，非允许重新选择任意策略的福利压缩。",
+  "whole_result": "m=2及|B|=1时，闭包大小p和稳定前严格增长p−1轮可任意大。",
+  "endpoint_pins": {
+    "M-0b53618e76614597a1b1991efa5cc496": "65b042cb790cf92ff70f784949963346445ad463283a944610fe1433991b8f06",
+    "M-5a729675672041dd87da781da105b537": "79def9689ebd780d1a9b19584d8d33050296fba9199762371662aa74dda433fe"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/查询支持的完整策略闭包与严格分离保留--定理.md": "b31106571d5cf3b7d4c307039f780b8fac706a3732d8635056fdd5ee43d90af7",
+    "archives/customer-attraction/state/引理/回复封闭目录的精确策略限制与证书提升--引理.md": "736cb46566f057af743d703165de5cfa3b3695d2e87b4815a90882245b20e530",
+    "archives/customer-attraction/tools/evidence/cag-full-depth-and-closure-primary/original/research/workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round3/mixed/strategy_generated_closure.md": "2e363dd3f4b9ce98846d4bd27edadb347528e320e1d4de8e547d12fcbcc42e75"
+  },
+  "review_digest": "a1935a09c7a246a2f1a1f6c103c39c0f2d8a87fff848e084746e4c121d54f110"
+}

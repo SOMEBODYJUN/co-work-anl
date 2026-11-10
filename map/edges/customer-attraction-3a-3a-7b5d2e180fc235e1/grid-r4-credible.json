@@ -1,0 +1,57 @@
+{
+  "edge_id": "ca-causal-closure-r34-grid-r4-credible",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "M-46712a7278244313a7802a857065b4e3"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "四人、三行两列、每行4名每列3名单位客户，标签按00,01,10,11,20,21排列，零背景。",
+  "explanation": "固定根00，令目标z=(00,10,20,01)，其四位收益为(3,5,5,5)。可直接复算：令E(h)= {h}（|h|=4）；由深到浅对每个a算L_h(a)=min_{y∈E(h+a)}[4/n_row(a,y)+3/n_col(a,y)]，再仅保E(h+a)中当前收益≥max_a L_h(a)的叶。每个n是同一终局相应行或列的出现次数。按所列标签顺序，h=(00,10,20)的L为(11/4,5,11/4,5,11/4,5)，h=(00,10)为(3,7/2,3,7/2,3,7/2)，h=(00)为(7/2,7/2,3,7/2,3,7/2)，h=()全为3。故逆序z在四层都保留。行列置换把00搬到任意根并保IC，各有序根孩子独立选相应z，根六行动均得3；从而同一完整SPE的六个真实根枝都实现锐菜单。取每个根的其余行按序、其它孩子用使当前者收益最小的字典序首个可信叶，定义级独立复算全部259节点及1554含自身比较，1116严格、最小余量0。最后若是同列尾，则换到此前只被同行尾用过的另一列，保留自己独用的行，列利润由3/3变3/2，严格增1/2；故两同列尾必须在同行尾之前。同网格三静态竞争槽各有负载≤1的一行和一列，两者交点的查询收益≥7/2；行各一次、两列分(2,1)达到该纯背景最小最大值θ₄。均匀查询时逐行凸性给2，列整数负载最均衡(2,1)给5/4；在两列交换这组均衡背景等概率混合，每个查询皆13/4，故真静态v₄=13/4。连续背景允许两列均负载3/2，逐行和逐列凸性及均匀分布给t₄=2+6/5=16/5。三标准三槽门槛均严格高于真根3，W=OPT=18。",
+  "scope": "18客户六标签、四人固定网格的定义级有限递推，本次新增核查；与原r=3两份策略及原r≥5排除均不同。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "提供有序孩子独立补全的精确全可信叶递推",
+    "M-46712a7278244313a7802a857065b4e3": "r=4合法锐网格可由同一完整SPE实现的新特例"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+    },
+    {
+      "path": "archives/customer-attraction/state/构造/驻留标量锐菜单的完整策略边界--构造.md",
+      "sha256": "fd7d5d80e548da277f09d0da6147b12bf7986f9ec7a409004b1d1a875604a556",
+      "section": "r≥5时末位最佳回复排除该精确网格菜单"
+    },
+    {
+      "path": "archives/customer-attraction/state/构造/驻留标量锐菜单的完整策略边界--构造.md",
+      "sha256": "fd7d5d80e548da277f09d0da6147b12bf7986f9ec7a409004b1d1a875604a556",
+      "section": "合法网格使全部尾收益同时取等"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/驻留根菜单的最优标量包络与尾收益界--引理.md",
+      "sha256": "db0c124239fe7796f7e2ead6afae5a0828cca10baff0d214dbd61df15bfc25de",
+      "section": "对真实尾收益的条件推论"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读所列精确正文及相应原输入和输出，按本边显示的量词与推导核对。18客户六标签、四人固定网格的定义级有限递推，本次新增核查；与原r=3两份策略及原r≥5排除均不同。",
+  "contribution": {
+    "result": "r=4该2×3锐网格的所有根枝可同时实现，真根利润3、全部真尾5，比例3/5取等，且规定尾必须以同行尾收尾。",
+    "remaining": "本次不推出其它r≥5真SPE达到该一般代数常数，也不判一般结构是否允许更好SPE域系数。"
+  },
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "M-46712a7278244313a7802a857065b4e3": "cfe72405e5b6f06e911c5c469e7ed1452b4386e70ac3141639244d9e8383c831"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/构造/驻留标量锐菜单的完整策略边界--构造.md": "fd7d5d80e548da277f09d0da6147b12bf7986f9ec7a409004b1d1a875604a556",
+    "archives/customer-attraction/state/引理/驻留根菜单的最优标量包络与尾收益界--引理.md": "db0c124239fe7796f7e2ead6afae5a0828cca10baff0d214dbd61df15bfc25de"
+  },
+  "review_digest": "ff0deec7b76f1694df3305b0d5ee85a364069569dcb0c9501bfaae53007ff8b7"
+}
