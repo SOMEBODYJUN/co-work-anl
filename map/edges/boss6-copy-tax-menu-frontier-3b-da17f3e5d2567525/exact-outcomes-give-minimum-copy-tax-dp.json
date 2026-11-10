@@ -1,0 +1,59 @@
+{
+  "edge_id": "ca-round44-exact-outcomes-give-minimum-copy-tax-dp",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "M-94942bfb644042ea8039e44db39d1504"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限单位客户、有限非空共同标签目录、完整有序历史纯SPE模型；将源m≥1定理特化m=6。允许重复行动、空覆盖、同覆盖异标签、零客户及全部离轨弱平局。E采用理想精确有理数及真正无穷初值；所有势/税均未缩放。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "提供各计数前缀的完整可实现终局全集、max-min资格必要充分性、有限非空性及有序孩子子树独立拼接。",
+    "M-94942bfb644042ea8039e44db39d1504": "所得完整六人算法定理：keys E=R、每终局最小实际路径标量税递推及固定输入全部SPE的最大PC6缺口。"
+  },
+  "explanation": "固定一个合法六人输入和有序前缀h，计数c。定义E(c)[f]=min_{τ:完整子SPE且actual终局f} C_h(τ)。有限策略树使每非空纤维最小值达到；同计数后缀同构保持收益及每步税，故数值可缓存。源定理给R_a=R(c+e_a)、L=max_a min_{g∈R_a}U_a(g)，且实际行动a、终局f可实现恰当且仅当f∈R_a且U_a(f)≥L。一步税Q(c,a)=Σ_{x∈a}[1/(p_x+1)−1/(p_x+r)]只依c,a，税仅沿实际路径相加。任一实现f的完整τ，其实际孩子税≥E(c+e_a)[f]，给递推下界。反向在任何合格a孩子使用实现同一f且税最小的子SPE；其余每个有序b孩子独立选实现min U_b的真子SPE。这些子树互不相交，可同时拼成一个完整τ；当前IC由U_a(f)≥L保证，实际税恰Q+E。有限合格a再取min即得等式。固定f使当前和所有祖先收益均不变，因此税最小实现可接回祖先，不删除任何终局。终端税0，归纳得到keys E(c)=R(c)及完整最小税语义。P6取同一目录全部合法六槽比较元组的最大调和势，W只依f；按f分组所有完整σ，max_σ(P6−W−C)=max_{f∈R(0)}[P6−W(f)−E(0)[f]]。每个f各有不同最小σ见证，不要求一σ同时实现多个f、逐客户最小或多个离轨枝最小。",
+  "whole_result": "对每个固定有限六人单位客户输入，E(f)[f]=0，R_a=keys E(c+e_a)，L(c)=max_a min_{g∈R_a}U_a(g)，Q(c,a)=Σ_{x∈a}[1/(p_x+1)−1/(p_x+6−|c|)]；E(c)[f]=min_{a:f∈R_a,U_a(f)≥L(c)}[Q(c,a)+E(c+e_a)[f]]恰保全部完整子SPE可实现终局并取得逐终局最小剩余实际路径标量复制税。固定输入全部完整SPE的最大PC6缺口恰max_f[P6−W(f)−E(0)[f]]。完整推出M949当前注册理想算法定理全部陈述。",
+  "scope": "源全人数精确集合定理的六人标量成本扩展；已付清目标整个理想数学陈述，不把有限扫描或int64/10^30实现安全性纳入普遍算法正确性，也不推出普遍PC6或六人half。计数缓存不强制策略Markov；P6比较范围为全部合法六槽计数，不只R(0)。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/复制税的固定策略锥与全SPE最小税递推--程序.md",
+      "sha256": "5dfb3fe74fe8ba359081e06dfde5efe42448c7696cfb9ee6c63e94116eee9461",
+      "section": "B. 固定整数实例的全部SPE终局及最小剩余税"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/六人全终局调和势与有序自复制税--候选.md",
+      "sha256": "b88c7ec28540ba43e40801c8b79d0bbdde37eb58de2145b4880bd605a764e08b",
+      "section": "候选只量化六人零根背景完整SPE"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-48aeb061a4ed10d0/independent-copy-tax-dp/derivation.md",
+      "sha256": "99a95e41bd777fdd2a132f5dc7aa9851ce90cb3c812dfe6e3b4ced5611697b8c"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本轮fresh worker完整实读四核心注册陈述及三核心正文、共同模型、复制税evidence内势定义，独立核固定终局纤维、实际路径标量税的必要/充分两向及最大缺口；复用48a成熟独立证明和Pareto固定证书合同，全部原程序/LP/RNG/树审计0重跑。",
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "M-94942bfb644042ea8039e44db39d1504": "7c9c1a31cabd9b2ca038a27bdc015dd08f8ed9c1947d318c95ff61d9860c9d50"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/程序/复制税的固定策略锥与全SPE最小税递推--程序.md": "5dfb3fe74fe8ba359081e06dfde5efe42448c7696cfb9ee6c63e94116eee9461",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/候选/六人全终局调和势与有序自复制税--候选.md": "b88c7ec28540ba43e40801c8b79d0bbdde37eb58de2145b4880bd605a764e08b",
+    "map/edges/customer-attraction-3a-3a-48aeb061a4ed10d0/independent-copy-tax-dp/derivation.md": "99a95e41bd777fdd2a132f5dc7aa9851ce90cb3c812dfe6e3b4ced5611697b8c"
+  },
+  "review_digest": "b92433f92c182dda6cd65863af981e69517427eaa34e0d79cb9ae5207fba978e"
+}

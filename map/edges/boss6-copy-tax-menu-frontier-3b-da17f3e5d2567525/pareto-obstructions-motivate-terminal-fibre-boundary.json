@@ -1,0 +1,56 @@
+{
+  "edge_id": "ca-round44-pareto-obstructions-motivate-terminal-fibre-boundary",
+  "kind": "motivates",
+  "status": "accepted",
+  "source_ids": [
+    "M-66132ab86a054b33b1c753158dd4f3ad",
+    "M-e3fc9489148a4369adfc1e663579be9c"
+  ],
+  "target_ids": [
+    "M-94942bfb644042ea8039e44db39d1504"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "精确比较同一完整历史均分客户模型内的两类操作。Pareto对象各守其3/4人固定输入，M949守六人理想标量税递推；没有把小人数反例移成六人反例。",
+  "roles": {
+    "M-66132ab86a054b33b1c753158dd4f3ad": "独立3人5标签17客户反例，minimize_all五次删除后根最坏W15→17；局部租金向量更小也不能替代祖先支持。",
+    "M-e3fc9489148a4369adfc1e663579be9c": "三份独立maximize_all固定反例A/B/D，人数4/3/4，分别最坏W10→11、11→12、18→21；各一次末位平局删除抬高祖先偏离地板。",
+    "M-94942bfb644042ea8039e44db39d1504": "保留每个终局f，只优化实现同一f的真实路径标量税；不会改变任何玩家所见终局收益或祖先IC。"
+  },
+  "explanation": "两个Pareto规则均跨不同q比较v_b(q)=((U_a(q))_{b_a>0},Σ(q_a−b_a)U_a(q))，不等向量按同一方向取极值、等向量全保、根/终端不剪。A删q=(0,0,0,4)：(5/2,5/2)被(17/6,5/2)支配，根T3最低收益5/2→17/6，真实W10根结果丢失；B和D相应地板11/3→25/6、9/2→11/2。C有独立五处极小方向删除，根T4地板31/6→37/6，完整根三计数只剩W17一项，失W15。祖先支持实际行动与抑制不同偏离所需方向可不同，局部同向支配不保支持。M949在固定f纤维内部替换税最小完整子策略，所有主题收益U_a(f)相同，并未改变R或跨f删点；因而两Pareto失败不能refutes M949，也不能从两固定反例推出对所有六人剪枝的否定。此处两个独立失败并列提供压缩边界的语境，不冒作共同逻辑前提。",
+  "scope": "仅数学语境比较；不同人数、不同终局与同一终局纤维的量词均保留。两反例不互推，不反half或PC6，未声称否定所有Pareto/状态压缩。四例成熟完整有序证书按精确SHA复用，本轮不重跑303节点/1430比较。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/过去租金与未来利润同向帕累托剪枝的有限障碍--障碍.md",
+      "sha256": "091d3f80b6a0a57e3319cd8428149e12a70f356e4f73a38957eb720085f250cb"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/continuation-floor-resumed-boss2/four-pareto-cases-and-floor-consumption.json",
+      "sha256": "c58e04529d609d85eb2f658f6f3946bd73f203817200625af1b7c53e8d8a65e9"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/复制税的固定策略锥与全SPE最小税递推--程序.md",
+      "sha256": "5dfb3fe74fe8ba359081e06dfde5efe42448c7696cfb9ee6c63e94116eee9461",
+      "section": "B. 固定整数实例的全部SPE终局及最小剩余税"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-48aeb061a4ed10d0/independent-copy-tax-dp/derivation.md",
+      "sha256": "99a95e41bd777fdd2a132f5dc7aa9851ce90cb3c812dfe6e3b4ced5611697b8c",
+      "section": "3. 终局集合与标量税的同时归纳证明"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本轮fresh worker完整实读四核心注册陈述及三核心正文、共同模型、复制税evidence内势定义，独立核固定终局纤维、实际路径标量税的必要/充分两向及最大缺口；复用48a成熟独立证明和Pareto固定证书合同，全部原程序/LP/RNG/树审计0重跑。 两方向完整正文与全部删除表已实读；raw大证书只读声明字段/四例菜单、地板和删除关系，完整actions/slacks按成熟合同复用，未声称新全树审读。",
+  "endpoint_pins": {
+    "M-66132ab86a054b33b1c753158dd4f3ad": "0d1506e745dbb578010d6e0f34c9f7695bb03c0913d2109537c53606e9e46733",
+    "M-94942bfb644042ea8039e44db39d1504": "7c9c1a31cabd9b2ca038a27bdc015dd08f8ed9c1947d318c95ff61d9860c9d50",
+    "M-e3fc9489148a4369adfc1e663579be9c": "bc64bc71cf5dcd7896fd8d91f53b243d05590c1aad82a4b2d5525f04c2fad288"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/过去租金与未来利润同向帕累托剪枝的有限障碍--障碍.md": "091d3f80b6a0a57e3319cd8428149e12a70f356e4f73a38957eb720085f250cb",
+    "archives/customer-attraction/tools/evidence/continuation-floor-resumed-boss2/four-pareto-cases-and-floor-consumption.json": "c58e04529d609d85eb2f658f6f3946bd73f203817200625af1b7c53e8d8a65e9",
+    "archives/customer-attraction/state/程序/复制税的固定策略锥与全SPE最小税递推--程序.md": "5dfb3fe74fe8ba359081e06dfde5efe42448c7696cfb9ee6c63e94116eee9461",
+    "map/edges/customer-attraction-3a-3a-48aeb061a4ed10d0/independent-copy-tax-dp/derivation.md": "99a95e41bd777fdd2a132f5dc7aa9851ce90cb3c812dfe6e3b4ced5611697b8c"
+  },
+  "review_digest": "fb0810095296240cb76e33d776d78682102442d1214742221c7ab2b10165ecba"
+}
