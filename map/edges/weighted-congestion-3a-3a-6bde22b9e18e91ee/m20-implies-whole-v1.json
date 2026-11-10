@@ -1,0 +1,83 @@
+{
+  "edge_id": "wc-retuned-m20-result-implies-whole-m52-result",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WCF-R3-SCALED-RETUNED-v2"
+  ],
+  "target_ids": [
+    "WCF-R3-SCALED-RETUNED-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定t=(49/100,11/10,49/100,3/5,1/50,3/100,1)；整数m≥1；七互补mask与权(1,1/(10m),1/(20m),1/(50m))；前六资源对次数32m²、末对二次；费用不乘权，偏离按自身新负载重算。",
+  "roles": {
+    "WCF-R3-SCALED-RETUNED-v2": "同固定族的m≥20全态严格2出口，同时保留m3证书与B→100/49。",
+    "WCF-R3-SCALED-RETUNED-v1": "旧版m≥52范围及其m3、极限和严格端点以下的全部结论。"
+  },
+  "explanation": "源与目标使用完全相同的t、有限游戏、弱式α-PNE及真实单方偏离。第一，∀m≥20的严格二倍出口限制到子域m≥52即支付目标无限尾部；新方向界的正有理余量2735869393/1048576000000已按正文独立复核。第二，源与目标的m3是同一个D=288有限游戏；本worker从定义独立重建14资源、16态和64真实翻位，对证书全部64当前成本、64偏离成本、64比值、16模板余量及精确B/极小态逐项相等且严格比较B>2，支付单例。第三，固定t的八代表四比最大值为50,35/9,149/52,107/50,100/49,100/49,15/7,149/65，互补相同，最小100/49。全部极限偏离分母正、状态集有限，逐项成本收敛与有限min/max连续性给B(G_m)→100/49。对任意固定1≤α<100/49，取ε=(100/49−α)/2，充分大m满足B>α，从而全态各有严格α出口。这同时支付目标quantifiers中的最终排除，并不排端点。旧绝对误差M52的独立证法由另一accepted contribution完整保留，不因源的更强M20范围而退休。",
+  "scope": "这是v2完整数学结论对v1结论的单向包含，不把新定向估计冒称旧误差估计，也不宣称反向等价。4≤m≤19、最小统一起点、有限m在100/49端点以及全拓扑最优常数保持未付；v2的degree嵌入与m1/2额外信息不在目标义务内。",
+  "whole_result": "固定重调振幅t下，B(G_m)→100/49；m=3的D=288游戏无2-PNE；每个整数m≥52的有限游戏无2-PNE；对每个固定1≤α<100/49，存在M使全部整数m≥M无α-PNE。旧v1的独立绝对误差证明同时由本任务另一条贡献边保留。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/十四资源缩权族的常数无均衡界--定理.md",
+      "sha256": "62f4f0e0e9090a650f09442465161a4552f1ea84fad2bfa1f36c8183448733e0"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md",
+      "sha256": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/十四资源缩权族的独立审查与量词修正--审查.md",
+      "sha256": "799c690767e9c827e895f6f2e9f9947692700943a8bb7ae0d16c3b90c0c9f8c5"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/十四资源交叉构造与三十二次源式上界审查--审查.md",
+      "sha256": "506a96e7baaf0ed8e39a93d762ffca01ff275e371b73e72c424dedb740d64631",
+      "section": "4. 重新调参的缩权族与 (m=3) 证书（`d4e73bada91cfe4b91ec`）"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/crossover/original/evidence/certificates/weighted_congestion/crossover/limit_evidence/retuned_m3_certificate.json",
+      "sha256": "e289952c78da5e98718d9de35d1bfc38b77a30e7e08a3888563d21e0e2e867d6"
+    },
+    {
+      "path": "map/edges/weighted-congestion-3a-3a-6bde22b9e18e91ee/reading-and-proof.md",
+      "sha256": "fb27293ae7a0ec89358e5e18b9d060d279a5ad1d1bf72b3dfa8f82ce202981f4"
+    },
+    {
+      "path": "map/edges/weighted-congestion-3a-3a-6bde22b9e18e91ee/m3-verification.json",
+      "sha256": "aa9060108510564bbdf6798a89b8ce4e664ef6a42e06a541ecd64cc1f5299b2b"
+    },
+    {
+      "path": "map/edges/weighted-congestion-3a-3a-6bde22b9e18e91ee/verify_m3.py",
+      "sha256": "54d10131af1f7c6f087d075be5b818056f0d84221271e011e831c6cf2433dd6d"
+    },
+    {
+      "path": "map/edges/weighted-congestion-3a-3a-6bde22b9e18e91ee/limit-and-tail-verification.json",
+      "sha256": "ca07d780fe11214efbbce734a28dccd732fd3ac253c7c5df4eb8722944071e3b"
+    },
+    {
+      "path": "map/edges/weighted-congestion-3a-3a-6bde22b9e18e91ee/verify_limit_branches.py",
+      "sha256": "fbb225e6f85377f838a85dd51e942d3cb4f50d8ed3ec16b285ae5a96f3478b83"
+    }
+  ],
+  "reviewed_by": "Boss5 / wc_retuned_v1 worker",
+  "review_note": "实读v1全部必要正文、v2同族正文与审查和模板全文；按大对象分段记录实际阅读，巨数JSON完整结构化Fraction重算。逐项核对m≥52子域包含、m3单例、B极限及α<100/49的严格端点量词。关系论证完整；没有用有限m3检查代替无限尾部或收敛。",
+  "endpoint_pins": {
+    "WCF-R3-SCALED-RETUNED-v1": "d4d0e8624e9e0663f67a1c9417ce8fd13d7775122e28da50e390c964d5f07cba",
+    "WCF-R3-SCALED-RETUNED-v2": "e228e8da1a83fb73768e5928e462776a18d585cc295bb50cde41afff332ebccb"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/十四资源缩权族的常数无均衡界--定理.md": "62f4f0e0e9090a650f09442465161a4552f1ea84fad2bfa1f36c8183448733e0",
+    "archives/weighted-congestion/state/定义/十四资源缩权多项式族与布尔极限--定义.md": "cc99a9c1bab2f3a4b689af8598d040f59215be1fc1b5a80e657d716e111817df",
+    "archives/weighted-congestion/state/审查/十四资源缩权族的独立审查与量词修正--审查.md": "799c690767e9c827e895f6f2e9f9947692700943a8bb7ae0d16c3b90c0c9f8c5",
+    "archives/weighted-congestion/state/审查/十四资源交叉构造与三十二次源式上界审查--审查.md": "506a96e7baaf0ed8e39a93d762ffca01ff275e371b73e72c424dedb740d64631",
+    "archives/weighted-congestion/tools/evidence/crossover/original/evidence/certificates/weighted_congestion/crossover/limit_evidence/retuned_m3_certificate.json": "e289952c78da5e98718d9de35d1bfc38b77a30e7e08a3888563d21e0e2e867d6",
+    "map/edges/weighted-congestion-3a-3a-6bde22b9e18e91ee/reading-and-proof.md": "fb27293ae7a0ec89358e5e18b9d060d279a5ad1d1bf72b3dfa8f82ce202981f4",
+    "map/edges/weighted-congestion-3a-3a-6bde22b9e18e91ee/m3-verification.json": "aa9060108510564bbdf6798a89b8ce4e664ef6a42e06a541ecd64cc1f5299b2b",
+    "map/edges/weighted-congestion-3a-3a-6bde22b9e18e91ee/verify_m3.py": "54d10131af1f7c6f087d075be5b818056f0d84221271e011e831c6cf2433dd6d",
+    "map/edges/weighted-congestion-3a-3a-6bde22b9e18e91ee/limit-and-tail-verification.json": "ca07d780fe11214efbbce734a28dccd732fd3ac253c7c5df4eb8722944071e3b",
+    "map/edges/weighted-congestion-3a-3a-6bde22b9e18e91ee/verify_limit_branches.py": "fbb225e6f85377f838a85dd51e942d3cb4f50d8ed3ec16b285ae5a96f3478b83"
+  },
+  "review_digest": "37a801156e9462a59438058455298f8be96c32f15ac3bd74d53c0cdd1265aed2"
+}
