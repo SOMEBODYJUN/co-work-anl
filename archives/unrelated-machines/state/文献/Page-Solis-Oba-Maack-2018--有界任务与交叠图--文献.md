@@ -16,7 +16,7 @@ source_sha256: "a2fad69bcf3b1e6caed4ce4f29d559e1b0f394695d859f2ca0fd8f05f8296775
 source_size_bytes: 464627
 source_title: "Makespan Minimization on Unrelated Parallel Machines with Simple Job-Intersection Structure and Bounded Job Assignments"
 authors: "Daniel R. Page, Roberto Solis-Oba, Marten Maack"
-source_date: "COCOA 2018 accepted author manuscript; six-page PDF"
+source_date: "COCOA 2018 accepted author manuscript; fifteen-page PDF"
 scope: "unrelated-machines scheduling; distinct from six-provider customer SPE"
 related_objects:
   - "../定义/不相关机器与两个调度松弛--定义.md"
@@ -25,7 +25,7 @@ related_objects:
 
 # 来源身份与阅读边界
 
-本页对应冻结源 `78aa66503bb113a58485`。`clean show` 导出的 PDF 为 6 页、464,627 字节，SHA-256 为 `a2fad69bcf3b1e6caed4ce4f29d559e1b0f394695d859f2ca0fd8f05f8296775`。我逐页阅读摘要、模型定义、相关工作、两条困难性归约、流算法分析、两种任务长度算法和结论；没有把论文引用的 Lenstra–Shmoys–Tardos、Ebenlendr 等外部定理当作本次独立重证，也没有取得 Springer 最终排版作版本核验。
+本页对应冻结源 `78aa66503bb113a58485`。`clean show` 导出的 PDF 为 15 页、464,627 字节，SHA-256 为 `a2fad69bcf3b1e6caed4ce4f29d559e1b0f394695d859f2ca0fd8f05f8296775`。我逐页阅读摘要、模型定义、相关工作、两条困难性归约、流算法分析、两种任务长度算法和结论；没有把论文引用的 Lenstra–Shmoys–Tardos、Ebenlendr 等外部定理当作本次独立重证，也没有取得 Springer 最终排版作版本核验。
 
 这是 R||Cmax 的受限调度文献，不属于六提供者、有限共同目录、完整有序历史和均分终局价值的 SPE 模型。文中图是“任务交叠图”：任务作顶点，若同一机器同时有资格处理两任务则连边；它不同于把机器作顶点、任务作边的 graph-balancing 图。文中所有不可用资格用处理时间 `∞` 表示，算法与硬度都依赖机器资格集合的真实输入，不可把图结构当作免费 oracle。
 
@@ -51,11 +51,10 @@ related_objects:
 
 给定猜测阈值 (T)，把机器 (i) 的资格任务按 (p_{i,j}\le T/2)（small）和 (T/2<p_{i,j}\le T)（big）划分；大于 (T) 的资格边先从该机器资格集合中删除。构造单源单汇整数流：每个任务节点从源获得容量 1；每台机器由 machine node、buffer node 和按机器计划（由 (|J_i|)、大小和总和决定）的容量弧组成。满流给出完整分配；若源弧未饱和，返回 REJECT。
 
-机器计划保证：
+机器计划先检查全资格任务的总处理时间。若总和至多 \(T\)，允许全部排入。以下是总和超过 \(T\) 的分案，大任务默认通过容量一的共用门。
 
-* (|J_i|\le2) 时任意输出负载不超过 (T)；
-* (|J_i|=3) 时至多两个任务被放入，同机出现一 big 与一 small 时负载至多 (3T/2)；
-* (|J_i|=4) 时通过对前两大任务和、small/big 组合的三种分案，至多得到 (5T/3)。关键分案是：若四项前两大之和 (>T)，机器计划只允许一 big 加一 small；否则在前两大之和不超 (T) 时再区分第二项是否大于 (T/3)，把余下两项的总和压到 (2T/3)，从而总负载不超 (5T/3)。
+* \(|J_i|\le 3\) 时，机器总容量为 \(|J_i|-1\)。至多两项资格时输出负载不超过 \(T\)。三项资格时至多排两项，若含大任务，另一项至多 \(T/2\)，故负载至多 \(3T/2\)。
+* \(|J_i|=4\) 时，令 \(p_1\ge p_2\ge p_3\ge p_4\)。若 \(p_2+p_3+p_4>T\)，机器总容量为二，输出负载至多 \(3T/2\)。否则机器总容量为三。若 \(p_1+p_2>T\)，让前两项共用大任务门。此时含最大项的三任务负载至多 \(T+p_3+p_4\le 5T/3\)，因为 \(p_2\le T/3\) 时 \(p_3,p_4\le T/3\)，而 \(p_2>T/3\) 时用后三项和至多 \(T\)。若 \(p_1+p_2\le T\)，前三项总和至多 \(3T/2\)。任意真实 \(T\) 可行的行内任务子集均通过上述容量和互斥限制。
 
 对 (T) 在 ([0,\sum_{i,j}p_{i,j}]) 上二分，若满流存在则得到阈值比例调度。论文 Theorem 2 给出多项式算法：
 \[
@@ -71,11 +70,8 @@ related_objects:
 
 1. 若任务无任何 (p_j\le T) 的资格机器，立即 REJECT；
 2. 若 (alpha>T/(\ell-1))、(\beta\le T)，调用已有两长度算法，保证不超过 (2-\alpha/\beta<2-1/(\ell-1))；
-3. 若 (alpha\le T/(\ell-1))、(\beta\le T/2)，调用配置 LP 加舍入，负载至多 (3T/2)；
-4. 若 (alpha\le T/(\ell-1)<\beta\le T)，按每机 big/small 集合选择机器计划。若只排 small，负载至多 ((\ell-1)\alpha\le T)；若含 big，至多一 big 加 (|S_i|-1) 个 small，负载上界
-\[
-\beta+(|S_i|-1)\alpha\le \left(2-\frac1{\ell-1}\right)T.
-\]
+3. 若 \(\alpha\le T/(\ell-1)\)、\(\beta\le T/2\)，调用 Lenstra–Shmoys–Tardos 的普通指派 LP 及其顶点舍入。分数负载至多 \(T\)，每机舍入增加至多一件耗时不超过 \(\beta\) 的任务，故负载至多 \(T+\beta\le 3T/2\)。
+4. 若 \(\alpha\le T/(\ell-1)\) 且 \(T/2<\beta\le T\)，记机器可排的小任务数为 \(s=|S_i|\)。无大任务资格时允许全部 \(s\) 项，负载至多 \(\ell\alpha\le (2-1/(\ell-1))T\)。有大任务资格时令全部大任务共用容量一。若 \(\beta+s\alpha\le T\)，机器总容量取 \(s+1\)，输出负载至多 \(T\)。否则总容量取 \(\max(s,1)\)。只排小任务的负载至多 \(s\alpha\le T\)，因为此时 \(s\le\ell-1\)。若同时排一大任务且 \(s\ge1\)，负载至多 \(\beta+(s-1)\alpha\le (2-1/(\ell-1))T\)。当 \(s=0\) 时至多排一大任务，其负载至多 \(T\)。
 
 二分阈值后得到 Theorem 3：当每机至多 (ell\ge3) 项且有两种任务长度时，存在多项式 (2-1/(\ell-1)) 近似。该结论仅对 restricted assignment、两长度和明确 (ell) 资格上界成立；不能推广成一般 unrelated-machines 的统一 ((2-\varepsilon)) 算法。
 
