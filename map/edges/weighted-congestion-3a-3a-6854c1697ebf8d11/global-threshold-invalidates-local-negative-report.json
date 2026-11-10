@@ -1,0 +1,48 @@
+{
+  "edge_id": "wc-6854-global-threshold-invalidates-local-negative-report",
+  "kind": "motivates",
+  "status": "accepted",
+  "source_ids": [
+    "M-5fead062c66f44f6803caa8fa62c67ee"
+  ],
+  "target_ids": [
+    "wc-box-safe-reference-potential-versioned-asynchronous-repair"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "独立私人常数资源、两个单位权玩家、退化费用盒、β=1、δ=1/50，Ψ取真实总成本。",
+  "roles": {
+    "M-5fead062c66f44f6803caa8fa62c67ee": "反驳只监听本玩家资源的无候选报告有效性规则，给出精确102→2例。",
+    "wc-box-safe-reference-potential-versioned-asynchronous-repair": "区分资源版本验证的正提案与全局提交版本验证的负面报告。"
+  },
+  "explanation": "初态A费2、B费100，A改为费1的G⁻=1≤δΨ=102/50，可以报告无候选。B有效提交改到费0后Ψ=2，A的动作、资源版本和G⁻均未改，但1>2/50；若仍接受A的旧负报告会漏掉新的安全移动。修正版验证当前全局版本或等价地每次提交使全体旧负报告失效。正提案若原动作及R∪A版本仍相同则G⁻不变，其他已接受提交只降固定Ψ，故仍超过当前门槛；两种验证义务不相同。",
+  "scope": "旧局部负报告规则的精确反例及修订依据。v2有标量Fraction回归；一般串行化、扫描次数和调度进展仍由算法证明承担。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/反例/过期移动与漂移环境下的修复边界--反例.md",
+      "sha256": "2ba959ccfd8c8371f369ca81b5f0306d50b125f2bb771e8ad8b2a0cf0ff7ab6e",
+      "section": "独立资源也使旧负面报告失效"
+    },
+    {
+      "path": "archives/weighted-congestion/state/算法/全盒安全下降与带版本的异步修复--算法.md",
+      "sha256": "ec527695e15fe57afafb76aabf5efbfa603051ce90f27528eb47607a72ac0b0c",
+      "section": "可串行的版本协议"
+    },
+    {
+      "path": "archives/weighted-congestion/state/算法/全盒安全下降与带版本的异步修复--算法.md",
+      "sha256": "ec527695e15fe57afafb76aabf5efbfa603051ce90f27528eb47607a72ac0b0c",
+      "section": "扫描数证明、进展与真实输出"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项核实实际对象、真实加入负载或偏离、完整量词和证据版本，区分局部证书与全部原游戏状态。",
+  "endpoint_pins": {
+    "M-5fead062c66f44f6803caa8fa62c67ee": "44c67da7d9810ae5bfcda65d420c3cd0349d9f9df44aaaf829ff507bc7f49b4d",
+    "wc-box-safe-reference-potential-versioned-asynchronous-repair": "952764b6c0ab21913797f2c6afe3f0ef9e28bfb0205f96ca32dc0a3e3d1ce348"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/反例/过期移动与漂移环境下的修复边界--反例.md": "2ba959ccfd8c8371f369ca81b5f0306d50b125f2bb771e8ad8b2a0cf0ff7ab6e",
+    "archives/weighted-congestion/state/算法/全盒安全下降与带版本的异步修复--算法.md": "ec527695e15fe57afafb76aabf5efbfa603051ce90f27528eb47607a72ac0b0c"
+  },
+  "review_digest": "bb2a5d25a6afd5af7cc3e7ab0d5d985e57739af01c415630d1f037ead081a9ce"
+}

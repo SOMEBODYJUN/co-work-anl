@@ -1,0 +1,43 @@
+{
+  "edge_id": "wc-6854-endpoint-screen-needs-outside-deviation-control",
+  "kind": "motivates",
+  "status": "accepted",
+  "source_ids": [
+    "M-176097319fef40a8a452199cb0822b4f"
+  ],
+  "target_ids": [
+    "weighted-congestion/existing-clock-front-decision"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "三位单位权，时钟侧=动作xor(0,1,0)，c(x)=x；中间玩家私费(3,0)，两端私费0，α=21/20。",
+  "roles": {
+    "M-176097319fef40a8a452199cb0822b4f": "提供端点都稳定但离前沿的真实内部偏离严格改善的完整三人例。",
+    "weighted-congestion/existing-clock-front-decision": "用原实例严格支配或者对候选核全部原偏离保证精确筛查。"
+  },
+  "explanation": "在000，端点各2→2，中间玩家4→3且4>(21/20)·3。对应v=3、u=2、L=1、B≥3，严格支配不成立。因此只按端点过滤可能保留伪阳性；保留支配假设或补查全部离域偏离的接口没有被反驳。",
+  "scope": "只限制无支配、无全偏离复验的端点筛查；不否定经过认证的已有时钟精确决策。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/反例/几何前沿修复的成本与稳定性失真--反例.md",
+      "sha256": "30312c19c706c2f264e97484315813cd4593dbd327bf1e5466f6fef9a700b9c1",
+      "section": "端点稳定漏掉内部偏离"
+    },
+    {
+      "path": "archives/weighted-congestion/state/算法/原实例支配时钟的前沿精确决策--算法.md",
+      "sha256": "d5a582732ee9747e78d95f60f01a71e4f7ea7787d03512bf3946285c2bf0328b",
+      "section": "原实例支配时钟的前沿精确决策"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "核对三人真实当前/偏离负载及该例的支配条件失败。",
+  "endpoint_pins": {
+    "M-176097319fef40a8a452199cb0822b4f": "5faacffd9eb80c2ee3b8bc1b391dafb9f7540750a6f16f0a85a63d76fef52c7f",
+    "weighted-congestion/existing-clock-front-decision": "c3fb8563de6e7157f023544eb9653724747b4381f61893adda5c37a833bae1c9"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/反例/几何前沿修复的成本与稳定性失真--反例.md": "30312c19c706c2f264e97484315813cd4593dbd327bf1e5466f6fef9a700b9c1",
+    "archives/weighted-congestion/state/算法/原实例支配时钟的前沿精确决策--算法.md": "d5a582732ee9747e78d95f60f01a71e4f7ea7787d03512bf3946285c2bf0328b"
+  },
+  "review_digest": "754255092924f6760501a3e2530ae3edec3038066311bbe8b02f82605c0d3298"
+}

@@ -1,0 +1,48 @@
+{
+  "edge_id": "wc-6854-dense-cohort-checks-density-exponent",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "wc-dense-cohort-power-cost-externality-barrier"
+  ],
+  "target_ids": [
+    "WC-R2-WEIGHT-DENSITY"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "固定R>1、0<p<1、整数d≥1。N个权1/N的既有用户固定使用单资源，权1进入者可空或加入，延迟x^d；K_R按全部潜在用户重数、使用半开窗[x,Rx)。",
+  "roles": {
+    "wc-dense-cohort-power-cost-externality-barrier": "提供实际加入外部性精确值和密度端点包络。",
+    "WC-R2-WEIGHT-DENSITY": "使用式(E)控制Ψ_p新资源的其他用户增量，其K_R依赖是进入严格改善证明的充分估计。"
+  },
+  "explanation": "当N≥R时，两权层不能同窗，故K_R=N。原负载1、新负载2，其他用户增量/进入者自身加权费用恰(1−2^(−d))K_R^(1−p)。因此同一逐资源Ψ_p外部性接口在固定d,p,R下需要K_R^(1−p)量级；常数及实际均衡倍率的最优性不由此决定。原见证的进入者取空时是精确PNE。固定R且K→∞时原充分表达式对p∈(0,1)的下确界趋d：A_R(p)≥1，若表达式统一低于d则K^(1−p)≤d迫使p→1，矛盾；p=1的下降保证仍需独立负载论证。",
+  "scope": "固定幂权成本势的逐资源外部性边界；与自由玩家乘子的双侧边际夹逼障碍、同权Rosenthal精确势、真实无均衡是不同命题。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/障碍/密集同权群的幂权成本外部性发散--障碍.md",
+      "sha256": "ef48a6ed99bf11867933930347eda09dca768af3b8c88f87f6ed4a07e2b776ee",
+      "section": "固定幂权乘子的真实边际障碍"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/密集同权群的幂权成本外部性发散--障碍.md",
+      "sha256": "ef48a6ed99bf11867933930347eda09dca768af3b8c88f87f6ed4a07e2b776ee",
+      "section": "密度充分倍率优化的连续端点"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/潜在用户权密度的幂权成本势--定理.md",
+      "sha256": "4d0c2495460f54a724f8603b6545d43f000e076ec3f291ba38ddc0f8ab2eba22",
+      "section": "实际总负载控制的单资源外部性"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项核实实际对象、真实加入负载或偏离、完整量词和证据版本，区分局部证书与全部原游戏状态。",
+  "endpoint_pins": {
+    "WC-R2-WEIGHT-DENSITY": "8994e6bfdead6d070c6e1e0535ef66f1f39eb7300bc77319a22a01c330bf150e",
+    "wc-dense-cohort-power-cost-externality-barrier": "85a9b1ba207b0a708734f5d8a854db57a7d7f64174b144a1363d1ee1ca9d2240"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/障碍/密集同权群的幂权成本外部性发散--障碍.md": "ef48a6ed99bf11867933930347eda09dca768af3b8c88f87f6ed4a07e2b776ee",
+    "archives/weighted-congestion/state/定理/潜在用户权密度的幂权成本势--定理.md": "4d0c2495460f54a724f8603b6545d43f000e076ec3f291ba38ddc0f8ab2eba22"
+  },
+  "review_digest": "6ea744c33476f69c0f43ed1150f00e28701f8aae5a30365871d6a20fb8aaaf3a"
+}

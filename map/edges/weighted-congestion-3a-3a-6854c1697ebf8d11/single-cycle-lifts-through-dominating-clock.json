@@ -1,0 +1,54 @@
+{
+  "edge_id": "wc-6854-single-cycle-lifts-through-dominating-clock",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-INCIDENCE-UNICYCLE-COUNTEREXAMPLE-v1"
+  ],
+  "target_ids": [
+    "weighted-congestion/dominating-existing-clock-six-player-front-cycle"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "原六玩家两类权1及2，全部16个资源已在原输入，α=1。活跃玩家0、3保留精确两人基体的e,f,p,q；各类中末两名dummy的私费(0,1)。每类完整互补钟费161x/(3w_a)。",
+  "roles": {
+    "WC-INCIDENCE-UNICYCLE-COUNTEREXAMPLE-v1": "提供活跃玩家权、动作、费用和完整四态真实出口，严格差1/4、1/2、1/4、1/2。",
+    "weighted-congestion/dominating-existing-clock-six-player-front-cycle": "给出全部六人状态的准确无PNE结论以及一个保前沿四步严格环。"
+  },
+  "explanation": "B=161/4、L=1、v=161、u=322/3，所以v−(B+Lu)=161/12>0。前沿000、100、110、111、011、001中，后四串分别可翻次、末、次、末位dummy的1→0；每次仍在前沿且mover钟费u→u，私费严格下降1。两类dummy全0时，活跃动作(a,b)映到(a,0,0,b,0,0)，钟费在活跃翻位两端同为u，α=1故基体四态环00→01→11→10→00的严格差逐一保留。由此36个前沿都有严格出口，另28态由支配修复覆盖。 对这28态直接核：两类中至少一类为010或101，翻该类中位使之全同位。该玩家旧门费161，翻后门费不超过322/3，基体新费不超过161/4，故真实严格改善差至少161/12；无需假定一般时钟接口对其他输入也通过。",
+  "scope": "固定六人原游戏及目标α=1；原两人72/71的近似比不经正钟费自动保持。前沿环本身只判FIP失败，原游戏精确无均衡来自额外全覆盖。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/反例/单环潜在使用图的二次均衡缺失--反例.md",
+      "sha256": "3e3959a20d3aef53808aef07d9536fcfc69b958e3fdd10575d57d88373f3cb0a"
+    },
+    {
+      "path": "archives/weighted-congestion/state/算法/原实例支配时钟的前沿精确决策--算法.md",
+      "sha256": "d5a582732ee9747e78d95f60f01a71e4f7ea7787d03512bf3946285c2bf0328b",
+      "section": "原实例支配时钟的前沿精确决策"
+    },
+    {
+      "path": "archives/weighted-congestion/state/反例/支配时钟下的六玩家前沿循环--反例.md",
+      "sha256": "14a593d3bf37aca4e0cc2820d7c72cdf84b53bb9741d53ebbaf73effc1f13801"
+    },
+    {
+      "path": "archives/weighted-congestion/state/计算/共同尺度与原游戏修复的精确核验--计算.md",
+      "sha256": "420c8099aed72ce116cb5fbec5e9e4e1fe0970b7531154fe8565dfc1780d6b5c",
+      "section": "原游戏修复审计覆盖了什么"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐类核四个有1 dummy的前沿出口，逐边核活跃者真实钟费相等。直接算非法类三人门的支配余量，使全部64态覆盖无需未证明前件。",
+  "whole_result": "所给六玩家16资源原游戏满足强支配且有保前沿的四步严格改善环。其36个前沿和28个非前沿分别有指定的严格单人出口，故原游戏无精确PNE。",
+  "endpoint_pins": {
+    "WC-INCIDENCE-UNICYCLE-COUNTEREXAMPLE-v1": "11b167238478faa38018a53f2a838268a9a9e85f64e3e1674fafb8e7a240d9c6",
+    "weighted-congestion/dominating-existing-clock-six-player-front-cycle": "9bb2967800c89f680f3527ee260f9e0abcd8d583fb74d20a524059b79749ee1f"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/反例/单环潜在使用图的二次均衡缺失--反例.md": "3e3959a20d3aef53808aef07d9536fcfc69b958e3fdd10575d57d88373f3cb0a",
+    "archives/weighted-congestion/state/算法/原实例支配时钟的前沿精确决策--算法.md": "d5a582732ee9747e78d95f60f01a71e4f7ea7787d03512bf3946285c2bf0328b",
+    "archives/weighted-congestion/state/反例/支配时钟下的六玩家前沿循环--反例.md": "14a593d3bf37aca4e0cc2820d7c72cdf84b53bb9741d53ebbaf73effc1f13801",
+    "archives/weighted-congestion/state/计算/共同尺度与原游戏修复的精确核验--计算.md": "420c8099aed72ce116cb5fbec5e9e4e1fe0970b7531154fe8565dfc1780d6b5c"
+  },
+  "review_digest": "5d2c0f1f92d0197e0ac242263b83cf880e527c8cba660ac1ae4450e0a8e23af5"
+}
