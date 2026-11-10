@@ -704,11 +704,248 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss2",
-  "request_id": "a14a77b95a284e86bdd8208af60e1495",
+  "request_id": "9dc85ade584447029537ecdad962d191",
   "requests": {
     "6e4eab69f1014c84a9fb021a417ab910": "plan",
-    "a14a77b95a284e86bdd8208af60e1495": "claim"
+    "a14a77b95a284e86bdd8208af60e1495": "claim",
+    "9dc85ade584447029537ecdad962d191": "done"
+  },
+  "edge_paths": {
+    "um-1961b46f-calibrated-slots-to-covered-selector": "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/calibrated-slots-to-covered-selector.json",
+    "um-1961b46f-envelope-to-integer-prefix-certificate": "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/envelope-to-integer-prefix-certificate.json",
+    "um-1961b46f-forest-and-hitting-to-leaf-flow": "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/forest-and-hitting-to-leaf-flow.json",
+    "um-1961b46f-general-interpolation-to-bulk": "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/general-interpolation-to-bulk.json",
+    "um-1961b46f-partial-support-versus-welfare-lp": "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/partial-support-versus-welfare-lp.json",
+    "um-1961b46f-partial-welfare-constructs-uniform-quota-witness": "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/partial-welfare-constructs-uniform-quota-witness.json",
+    "um-1961b46f-prediction-insertions-to-edit-neighborhood": "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/prediction-insertions-to-edit-neighborhood.json",
+    "um-1961b46f-slot-program-implements-envelope": "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/slot-program-implements-envelope.json",
+    "um-1961b46f-tensor-replay-checks-fixed-l2-witness": "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/tensor-replay-checks-fixed-l2-witness.json",
+    "um-d1188acb-half-integral-slots-to-two-actual-interpolation": "map/edges/boss3-sourcefix-repair-d1188acb9358b2e6/half-integral-slots-to-two-actual-interpolation.json",
+    "um-d1188acb-slots-and-forest-pay-covered-selector-upper-bound": "map/edges/boss3-sourcefix-repair-d1188acb9358b2e6/slots-and-forest-pay-covered-selector-upper-bound.json"
+  },
+  "receipt": {
+    "coverage": {
+      "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1": {
+        "state": "linked",
+        "object_pin": "eccabb8f838ec7dcf55ba328ab0d633b0e6c02ff2946d1a641520a9ca6bfed41",
+        "comparison_scope": "复核原叶流正文§1–2、森林iff§1–4及锐叶命中§8，并与选择重组§3–4的同一P指定profile和64-open祖先负控比较。",
+        "reason": "共同b流须逐变量饱和，保较多轨后只删除同一流中的真实叶。严格缺叶门槛保证祖先子树，森林iff恢复同一原矩阵全部任务。固定高度比值独立于YES；在p=2,k=3,h=1锐族，自由根可给至多3/2且全局OPT1，指定全正却恰需5/3。两合同的允许输出不同。",
+        "edge_ids": [
+          "um-1961b46f-forest-and-hitting-to-leaf-flow"
+        ]
+      },
+      "UM-UNIT-READOUT-SELECTOR-MIXING-v1": {
+        "state": "linked",
+        "object_pin": "31c218fe0b3b3ad6c3661d4df2f23b4357d7c50b5d724784f54883be5ad9ba6a",
+        "comparison_scope": "复核原选择重组§1、3–4、正式叶流/重组审查、原森林iff与全轨校准槽；实推规范化见证平均后有序槽的p分片行界及小k时任意变量子集的Hall叶匹配。",
+        "reason": "旧完整边仍支付同一P的完整YES容量计数、仅指定轨的校准槽及逐p锐性。新增ALL边另证全部重组构造上界，k≥p用同一有序槽匹配分别核指定根/非根和原clause unit，k<p且N≥p用最大见证桶的叶注入证明Hall并沿r=1原路径回填。p=2给2−⌊k/2⌋/k≤5/3。新边只付算法上界，逐p锐性与N<p反例仍由旧原证明承担。k=h=1交叉clause否删N≥p后的合同；5/3锐值属于指定profile，原P全局OPT仍1。",
+        "edge_ids": [
+          "um-1961b46f-calibrated-slots-to-covered-selector",
+          "um-d1188acb-slots-and-forest-pay-covered-selector-upper-bound"
+        ]
+      },
+      "M-323585b750674648b8347bd7b753c430": {
+        "state": "linked",
+        "object_pin": "ebe3e8dc291a399a4c2ddebdc1d8dae40e368fd93c7ffd72032d59e2d0dd1cd0",
+        "comparison_scope": "复核两实际流与双色完整证明§1–9，逐类比较同一原ring/pool中全部q、b、f、J，含非pool/任意pool、零耗时和原任务固定。",
+        "reason": "非pool由同一输出的q件数与偶k得到精确3/2；任意pool保一般计件却只在正特殊池给3/2+d/2。禁止全部C<β需要d≥1−2δ，禁止全部C≤β需要d>1−2δ。若1/k低于该阈值，则一个真实used J必须在另一份实际见证改目的地。它是指定allFalse的必要条件，原无约束OPT=1，未推出一般NO或反向充分性。",
+        "edge_ids": [
+          "um-1961b46f-general-interpolation-to-bulk"
+        ]
+      },
+      "UM-TWO-ACTUAL-INTERPOLATION-BULK-FALSE-ESCAPE-v4": {
+        "state": "linked",
+        "object_pin": "52ec5762785d9a93142d696d0b16ceff021b553f4e69fb02807cab584d598c3e",
+        "comparison_scope": "复核完整插值§1–9和有序槽包络的单行/全局匹配身份；将同端双出现的原任务标签与半整数x的槽几何比较，另比较选择重组的见证平均与物理固定任务。",
+        "reason": "同一个全局槽匹配对每个非F任务只取两个旧原端之一，给逐机件数及负荷；任意合法ν的真实固定负荷另加，可能超过T。半整数包络给同一完整合同的有序槽表述。bulk整条特化保留；单位双树中固定selector及未指定整轨承担另一个物理任务。两给定见证的算法不提供未知见证搜索。",
+        "edge_ids": [
+          "um-1961b46f-general-interpolation-to-bulk",
+          "um-d1188acb-half-integral-slots-to-two-actual-interpolation"
+        ]
+      },
+      "UM-PROJECTED-VECTOR-GREEDY-UNBOUNDED-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "2bc17031478004bdd22a331f72fed1f32cc4cea6f494739c7cf899f2b6ac6ab7",
+        "comparison_scope": "沿用旧正式done收据中同pin的已读比较范围。当前登记、两源精读正文与冻结cb4cd20a审查的完整一般构造重构：同一任务空间、有限复制、三机正有理和交换边界；比较本包核一步/CONFIG三任务及给actual插值。",
+        "reason": "此反例只否固定分布/顺序的非交换投影贪心；与核方向支撑安全的确定性一步不同，后者不保持CONFIG也不选择贪心序列。给两actual的插值提供两个具体全局原子，不从压缩算子态取得它们；不能互推一般算法障碍。交换算子恢复真实支撑的正界也不填补未知分布/原子提取。"
+      },
+      "UM-NORMALIZED-XOS-THRESHOLD-MENU-SIZE-OBSTRUCTION-v2": {
+        "state": "isolated-after-review",
+        "object_pin": "4cfa1c456a0b3d87b64a50b67994b7779e1a7015a9cd02b635099cbb562f7f1e",
+        "comparison_scope": "复核稳定ID v2、登记version 3的当前正文《归一化XOS菜单阈值规模下界》精确规模定理§1–3及定向勘误，核k-cover两向、固定η位长和两个锐端点；与近完美福利LP及F2正支撑λ显式模型比较。三冻结来源及勘误的已核历史由旧正式收据复用。",
+        "reason": "最小菜单数等于k=max(1,ceil(d/η))覆盖数。η=1/2、t=4时全56个三集已覆盖全部四集，但正确k=4需70个菜单，均匀三集的两项权2/3超tiny。d=0给t+1、ηt正整数给中央二项式；固定η的短加性源生成同宇宙全集合保真显式菜单受超多项式输出规模阻碍。当前正文已修正历史r错误，登记objections的旧主页措辞仅作历史提示。单组仅有一个权1的singleton状态即可满足近完美YES及F2 q=1见证，却遗漏避开该资源的t集。故不把全集合输出下界连成给定菜单的求解下界或福利蕴含。"
+      },
+      "M-f828dd85112747cf9e509448e7491ad9": {
+        "state": "linked",
+        "object_pin": "88f95fab9df228a023bea1b8f64a8e3110891bb0df1f95c74e7f0e379d206de9",
+        "comparison_scope": "沿用旧正式done收据中同pin的已读比较范围。整数prefix共同H/x/z全页、共享ST包络身份与原精确程序资源，核固定B凸化/上图凸化及旧辨别例纠正。",
+        "reason": "z整数及非负差分给ceil前缀上界，所有tiny列守恒给一次共同匹配；真实YES的0/1点给证书存在性。实z仅余p·x，固定profile可匹配不提供profile搜索。",
+        "edge_ids": [
+          "um-1961b46f-envelope-to-integer-prefix-certificate"
+        ]
+      },
+      "UM-ACTUAL-KRONECKER-NO-TO-YES-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "96493046f63e60400cc24c71213d73e1f41c73b24e8d543653ce4d73dfc020de",
+        "comparison_scope": "沿用旧正式done收据中同pin的已闭合read-add比较。此次复核完整Kronecker正文§7.1–7.2与裸Cartesian正文§1–6的物理矩阵、全任务及界。",
+        "reason": "全矩阵平方有64机100任务400有限端、OPT1；裸菜单先积再编译t2有32机68任务144端、OPT5/4。前者含AB/BA真实任务、SR/RS混合机器及BB的mixed端，十五交换确实使用它们；同种子不使乘积相同。两结果各自否不同普遍保NO合同，不能互搬最优界；follow-up分域比较已完成。 旧正式收据已闭合此对象对。裸菜单V_t=1−2^(−t)、OPT=1+2^(−t)，完整矩阵偶次幂OPT=1，两种反驳各自指向自己的保NO合同。当前任务没有另列待闭合对。"
+      },
+      "UM-UNKNOWN-TARGET-PARTITION-SEARCH-OBSTRUCTION-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "ad443406701c850f8875133cc83ffd13a2399a7872bb54368221d8398e58963a",
+        "comparison_scope": "沿用旧正式done收据中同pin的已读比较范围。v1带anchors的PARTITION完整归约、初态promise、总运行界与已给τ路径相容性；比较本包给见证插值、整数prefix证书和重作业预测邻域。",
+        "reason": "初态(3B,B)、T2B、实际最大件B仍把精确τ≤T等价于残余等分。在全部输入总多项式且YES正确的finder才导出判定；不否给τ的路径、给actual插值或近似舍入。编辑预测枚举固定K的误差界不保证精确目标，prefix也只给证书后恢复，均未免费解决该搜索。"
+      },
+      "UM-LONG-PATH-GAP-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "477a37d1820e834d3e2f6245913d40710ce83de016e252f6be7afe358d37e3a4",
+        "comparison_scope": "沿用旧正式done收据中同pin的已读比较范围。当前v3登记、长链正文完整§3及森林耦合上下文、三项勘误和从头构造/配置森林原程序资源的完整数学说明；比较固定高度私有树、包络与支撑安全/CONFIG端点。",
+        "reason": "首任务给父直接收缩不要求余链全左；内点左概率1/k、右1−1/k；只知T_CONF≤T_k而非相等。长链配置gap上确界2是松弛阈值比较，不是相对真实OPT算法下界。固定高度叶流仍允许无界高度余量趋0，且长链改变统一分叉树结构；核方向支撑安全不生成全局配置律，无法消除长链证书。此范围无额外逻辑边，完整交集一致性/树宽再耦合为已识别的独立条件。"
+      },
+      "M-d586453c5e6d4534b67225b1fa89c936": {
+        "state": "isolated-after-review",
+        "object_pin": "cfbb7a46fd240c552651b00ad22d3ffe65a1676c30f8178b22e7b45d1b16d8c1",
+        "comparison_scope": "沿用旧正式done收据中同pin的已读比较范围。v1一般核方向完整线性形式分组/避根证明、k1边界，及in-packet M-bdd481ab三正任务所有circuits反例。",
+        "reason": "方向按整个系数恒等分组后避非恒等碰撞，两端各保某真实原子支撑；算法不提取原子、不保松行/CONFIG或迭代。三任务核u_h+(u_a+u_b)/2=0的circuits只动两件，CONFIG切向动三件；泛型d=(1,−19/10,−1/10)双端仍有原子支撑却离CONFIG。因此反例不反驳登记的一步支撑合同，亦不能把该合同升级成CONFIG再生；原标题非circuit不作承诺。"
+      },
+      "UM-NEAR-PERFECT-NORMALIZED-ROBUST-SOURCE-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "859595a005d35624d87b05a370bf8e728fa59a9bcec1cbc37215ed21a30db338",
+        "comparison_scope": "沿用旧正式done收据中同pin的已读比较范围。当前v3登记与近完美四源正文完整证明：总可行福利LP、有理去随机化、两种高端严格性、三重等号和位复杂度；与F2完整证明/原CE程序及two-rail子域逐项比较。",
+        "reason": "目标的L是总可行福利LP最优，条件(5/8)(1−η)≥γ+(1−γ)δ在两版NO中都由严格计数付清。F2只要求另一正支撑λ；本包写明统一子域的替代λ-LP判别并用τ19/50付NO>闭端，但一般福利点不能转整support λ，所以只存context，不声称F2推出目标指定L阈值或一般(E)域。"
+      },
+      "M-d32a4146dbbd4c0197c815d139d7c500": {
+        "state": "linked",
+        "object_pin": "8557bea1c1778eb407d5a557c6b230285c99d153d7a66399d893da20b7582be6",
+        "comparison_scope": "沿用旧正式done收据中同pin的已读比较范围。v1编辑预测附录D、共享基础学习增强Theorem5.1/5.2、重投影/严格重端/临界阈值与原文文献证据层级。",
+        "reason": "逐个编辑候选调用任意预测的预算0基例，取同一ψ的max(εT,R−)+R+最小并复用临界阈值/LST兜底，完整得到Δ_edit与同时间阶。没有分开优化两误差，也没有内层成功单调假设。",
+        "edge_ids": [
+          "um-1961b46f-prediction-insertions-to-edit-neighborhood"
+        ]
+      },
+      "UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1": {
+        "state": "linked",
+        "object_pin": "879ac79d8df789338c1de4f06570b371821d9a606c4016d84bf95a4ad85e0fe9",
+        "comparison_scope": "沿用旧正式done收据中同pin的已读比较范围。v1残余DAG/根评分与orientation双向证明、固定方向Hall和整束2SAT/部分配额边界；与F2归一化均匀标签子域比较。",
+        "reason": "新边仅在|R_xa|=K_xa且给q=q_r共同λ时构造δ3/8的右侧orientation见证，contribution/remaining明确保完整iff另证；一般K、任意δ、方向搜索和全方向FAIL不由福利承担。已核根需求q_r>0和每state内资源不交，未把λ-LP当一般方向算法。",
+        "edge_ids": [
+          "um-1961b46f-partial-welfare-constructs-uniform-quota-witness"
+        ]
+      },
+      "UM-NORMALIZED-MENU-PARTIAL-QUOTA-WELFARE-FLOOR-v1": {
+        "state": "linked",
+        "object_pin": "e14bd5eaa43b00f48389d3554f7cc8870d9364df0b8ee88481890108ff6dbeb5",
+        "comparison_scope": "沿用旧正式done收据中同pin的已读比较范围。当前v4登记、完整F2证明及精确CE原336行代码；给定λ/q>0和理论q0分支分开，有限audit计数仅按实际代码范围阅读；与近完美福利LP和two-rail配额模型比较。",
+        "reason": "W−δA同时计实际激活数，正support容量和attaining state保持原菜单；程序仅给λ且q>0，理论q0分支不冒作软件实现。uniform标签桥把真实高组束转成部分quota领取，只有此条件局部逻辑贡献；近完美替代LP另以context保留。",
+        "edge_ids": [
+          "um-1961b46f-partial-welfare-constructs-uniform-quota-witness"
+        ]
+      },
+      "unrelated-machines/slot-envelope-exact-program-resource": {
+        "state": "isolated-after-review",
+        "object_pin": "4939d3709dad862c2220ee78309a6faa035fe53080da4a62afdead9d4ca81cd0",
+        "comparison_scope": "沿用旧正式done收据中同pin的已读比较范围。资源全页、共享包络身份、整数prefix证书和原slot_envelope_identity.py全部322行；核槽几何、floor-shift、固定B辨别例、两机三任务匹配及8分配范围，未重跑旧CLI。",
+        "reason": "资源对象实现给定x的精确计算/分解与有限匹配检查；一般表示身份由证明承担，未实现E最小化或CONFIG求解器。仅有implements语境边，不把有限8行/8分配当一般算法，亦不因登记旧模板式objections再造身份疑点。"
+      },
+      "unrelated-machines/fixed-two-level-tensor-integer-audit-replay": {
+        "state": "isolated-after-review",
+        "object_pin": "f7a9d261cf20a40331b17b00b1fbac68290153f81e9661c8f91890264727960a",
+        "comparison_scope": "沿用旧正式done收据中同pin的已读比较范围。有限资源全文、共享固定L随机共轭/低支持完整证明及原bounded_level_tensor_escape.py全代码；比较固定L2/t4同一B的全部guards、prefix、clones和三层失败，未重跑旧CLI。",
+        "reason": "同一个16边整数matching兑现322一/两层guards、12单轴prefix和912同时资源clone分配。固定B三层X0+X1+Y2计4>容量2，不否∀L另选t/B。仅checks语境边，源三维matching尚无actualUM编译；不与全矩阵Kronecker或裸菜单Cartesian混同。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/calibrated-slots-to-covered-selector.json",
+        "sha256": "a0da2a80266dbe712ab2d7dc3aabacdd95f1a4a9676a91776baa6ae7910404bf"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/envelope-to-integer-prefix-certificate.json",
+        "sha256": "3d849f253cccd448f0be1de4d0ffb0194ddcff44e4902c43adab270606844781"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/forest-and-hitting-to-leaf-flow.json",
+        "sha256": "df5cf720fc13762b773fcdf745a7db8c3169ab71a9f1205ea09b1b5762c16723"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/general-interpolation-to-bulk.json",
+        "sha256": "23864c52005d5e82e12517b2c8b8cb5552e42f304bced3dc1ea6d31a40bfe506"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/partial-support-versus-welfare-lp.json",
+        "sha256": "e6dc457cc70110af8b88fc99968e50b86b26e09595a5cf82224fc530a9c107ef"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/partial-welfare-constructs-uniform-quota-witness.json",
+        "sha256": "22396cbc3f4186bb4406cff139a0eb85d8ddf959ddefc7f29c6ca03617f42dcf"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/prediction-insertions-to-edit-neighborhood.json",
+        "sha256": "d0df4a73075b74c51c4e2047e346c213f356d7e42f5410cd93c4d635c1ca7b54"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/slot-program-implements-envelope.json",
+        "sha256": "34f9021bc55fc4e71b178003bd70565bcc5d15f14e2044fde282a74430b10598"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/tensor-replay-checks-fixed-l2-witness.json",
+        "sha256": "e24b1ef936ea0048ee5830032d2aedb38f3f32376606a93f288fe5a519d629b1"
+      },
+      {
+        "path": "map/edges/boss3-sourcefix-repair-d1188acb9358b2e6/half-integral-slots-to-two-actual-interpolation.json",
+        "sha256": "30366dd3e9a3fd002ae94f233156e77f668ea6ae4c043b6eedeec8d077532a0c"
+      },
+      {
+        "path": "map/edges/boss3-sourcefix-repair-d1188acb9358b2e6/slots-and-forest-pay-covered-selector-upper-bound.json",
+        "sha256": "75f89587d56de607fb510e961d8b7e0e684f7c6d44558b40ec1b1ec882a3faff"
+      }
+    ],
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "supersession": {
+      "unrelated-machines-3a-3a-1961b46f6545c308": {
+        "reason": "现役17个核心中只有XOS阈值菜单记录升级。新正文用k-cover修正旧r反向断言，旧边均未依赖此对象且保原字节。另补有序槽到两实际插值的完整特化及有序槽和森林到指定根重组的构造贡献。",
+        "assets": {
+          "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/calibrated-slots-to-covered-selector.json": {
+            "disposition": "retained",
+            "reason": "同一P完整YES的容量计数及仅指定轨的有序槽均仍成立，覆盖任意p、两个k分支和逐p锐性。新增ALL边另证全部构造上界；逐p锐性仍依赖原边。"
+          },
+          "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/envelope-to-integer-prefix-certificate.json": {
+            "disposition": "retained",
+            "reason": "共同整数z逐前缀压住ceil，所有差分系数非负。共同H与tiny一次匹配、真实YES的0/1证书和实z坍缩均仍适用。"
+          },
+          "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/forest-and-hitting-to-leaf-flow.json": {
+            "disposition": "retained",
+            "reason": "森林双向正规形、同一b流的祖先子集提取和严格命中门槛共同支付固定高度保证。自由根全实例算法无YES前提，与指定根插值分开。"
+          },
+          "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/general-interpolation-to-bulk.json": {
+            "disposition": "retained",
+            "reason": "一般插值仍给同一次输出的q专用计数与任意pool用过d的负荷界，逐阈值保开闭方向和同一原J移位必要性。"
+          },
+          "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/partial-support-versus-welfare-lp.json": {
+            "disposition": "retained",
+            "reason": "正支撑列λ与总可行福利L的分域仍成立。τ=19/50在明确子域给替代判别，不能由部分support福利点取得整support λ。只作语境。"
+          },
+          "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/partial-welfare-constructs-uniform-quota-witness.json": {
+            "disposition": "retained",
+            "reason": "仅均匀|R|=K及给定总质量q_r的λ时，用高组截取互不交的原资源构造δ=3/8的方向右侧见证。目标完整iff和一般方向算法仍由别处承担。"
+          },
+          "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/prediction-insertions-to-edit-neighborhood.json": {
+            "disposition": "retained",
+            "reason": "对每个重编辑候选取预算0的原基例，保持同一ψ上的复合误差、临界阈值同步和LST兜底，完整支持附录D合同。"
+          },
+          "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/slot-program-implements-envelope.json": {
+            "disposition": "retained",
+            "reason": "程序在给定x的原精确槽几何和有限共同匹配中实现包络。其有限输入、固定B凸化与一般优化器区分正确。"
+          },
+          "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/tensor-replay-checks-fixed-l2-witness.json": {
+            "disposition": "retained",
+            "reason": "同一个t4、L2的16边见证仍检查322共同容量、12前缀和912同时资源。三层失败准确指这个固定B，未升级为一般L算法或实际UM编译。"
+          }
+        }
+      }
+    }
   }
 }
