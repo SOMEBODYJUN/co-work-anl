@@ -41,7 +41,7 @@ $$\Phi(z)=9,\quad \Phi(z')=8,\quad \Phi(z)-\Phi(z')=1,$$
 
 # 3. 零来源遗憾的精确族
 
-`verify_zero_regret_promotion.py` 和 `zero_regret_promotion_exact.json` 把上述障碍写成正整数缩放族。对每个 $t>0$，三名提供者、四个主题、七类客户权重按 $t$ 倍复制；完整树有 21 个有序历史和 84 个含自身的 IC 比较。实际路径为 $(0,1,2)$，promotion 后的真实路径为 $(2,3,2)$。实际支付为 $(2t,2t,3t)$，promotion 后为 $(2t,2t,2t)$，所以来源首位 regret 为 0，而
+`verify_zero_regret_promotion.py` 和 `zero_regret_promotion_exact.json` 把上述障碍写成正整数缩放族。对每个 $t>0$，三名提供者、四个主题、七名单位客户（四种兴趣类型）各按 $t$ 倍复制；完整树有 21 个有序历史和 84 个含自身的 IC 比较。实际路径为 $(0,1,2)$，promotion 后的真实路径为 $(2,3,2)$。实际支付为 $(2t,2t,3t)$，promotion 后为 $(2t,2t,2t)$，所以来源首位 regret 为 0，而
 
 $$\Phi_{\rm actual}=9t,\quad \Phi_{\rm promoted}=8t,\quad \Delta\Phi=t.$$
 
@@ -63,8 +63,8 @@ $$\Phi_{\rm actual}=9t,\quad \Phi_{\rm promoted}=8t,\quad \Delta\Phi=t.$$
 
 这组障碍的用途是限定证明路线：
 
-1. 势能可以在 promotion/reset 中下降，但下降量不能由来源最后一步的 regret 统一支付；
-2. 真实完整历史 IC 并不会自动消除这个 reset，因为上述 84 个比较和 replay 都是精确相等；
+1. 势能可以在 promotion/reset 中下降，但下降量不能由同一来源节点行动者的 regret 乘固定有限常数统一支付；
+2. 真实完整历史 IC 并不会自动消除这个 reset，因为上述 84 个比较均已精确验证为非负，而来源与指定 replay 的 IC 松弛均为零；
 3. welfare 仍可达到实际最优 $W=OPT_3$，所以“桥失败”与“half 失败”是不同对象；
 4. 后续若要把三余利润证书、森林根遗漏界或潜势分解接入六人 half，必须另行支付新分支的 exclusive reset tax，并保留完整有序历史、重复/空主题、零客户和任意平局。
 
