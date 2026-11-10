@@ -1,0 +1,83 @@
+{
+  "edge_id": "commonmany-primal-dp-covers-light-component-domain",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "SC-K-LOCAL-WEIGHT-BOX-DP"
+  ],
+  "target_ids": [
+    "SC-K-FROZEN-LIGHT-FPT"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同目录正原子模型，逐名显式正二进制有理权、显式k≥2标签设施；固定同一次真实canonical greedy正γ、同一占用O与重数q、同一原归属。恰冻结单已占选项及u_i≥γ客户于原站，其余I*保全部原已占菜单。假定目标的结构承诺：每轻分量站数≤c（c≥1），分量内精确不同变量轻权数≤d；没有额外H要求。DP使用下述直接构造的合法宽≤c−1分解，不另需分解算法。",
+  "roles": {
+    "SC-K-LOCAL-WEIGHT-BOX-DP": "提供站点原图宽τ、每站局部轻权种d域内，对指定冻结下完整盒和全部原NE的精确判定及逐名恢复；以τ=c−1专门用于目标的结构域。",
+    "SC-K-FROZEN-LIGHT-FPT": "接受结构输入域及见证语义的一致性贡献；本边没有由DP推出其更强的f(c,d)poly(L)时间，后者仍由该对象自己的支持IP及固定维ILP论证提供。"
+  },
+  "explanation": "实际比较结论是：每个目标(c,d)承诺输入均给出原图DP的τ≤c−1、局部轻权种≤d的合法输入；在同一冻结背景上两种精确表示投影到逐名客户分配后的可行集合完全相同。\n\n按可动轻客户的完整菜单连接站点，每个A_i形成团，轻分量正是该站点原图的连通分量。每分量取全顶点袋、分量袋间任意树连接，即有宽≤c−1的合法树分解；没有变量邻居的已占孤点仍保留。每站相邻轻权集合包含于其分量全部轻权集合，故局部不同精确权数≤d。这个分解可直接在输入多项式时间构造。\n\n共同见证集合S_box由逐名a_i∈A_i、冻结客户留原站、W_s=F_s+Σ_(a_i=s)u_i、q_sγ≤W_s≤(q_s+1)γ以及对每个i和全部t∈A_i的q_t(W_(a_i)−u_i)≤q_(a_i)W_t定义。支持IP以同权同完整菜单类型的x_as计数，y_as恰表示x_as>0，活动时检查上述全部原动作；DP猜最终各权人数c_s，处理同一整类型x_as，使用最终负载检查同式，忘记时p_s=c_s，连接仅加部分计数。每个S_box见证诱导两种可行表示，反之两种可行表示都恢复S_box；同类型原标签的任意排列仍有效，并可恢复给定见证自己的标签排列。因此共同域上的判定和所有可表示原见证一致，不意味着两个具体算法选择同一输出。每个变量菜单完全留在其分量；冻结重客户即使有跨分量原备选，仍由上下盒得(W_s−u_i)/q_s≤γ≤W_t/q_t，单选项者自动稳定。独立均匀到本站标签设施后，这恰是全部原客户、全部原动作的精确NE，不能把盒当容量删去出盒偏离。\n\n代入源DP已证界，只得poly(L)(N+1)^(4dc+c)，其N指数依c,d。它是固定c,d下的位多项式及XP型参数界，不给目标f(c,d)poly(L)的参数独立指数；后者继续由支持IP每分量至多2d(c·2^(c−1)−c)整数变量和标准固定维ILP合同提供。本边因而仅列contribution，不列whole_result。\n\n反向结构承诺严格分离有自足真实贪心族：每个n≥2取k=n站s_1,…,s_n，私有客户权b_j=1+(n−j)/(2n)，每条相邻边一名权δ=1/(4n)客户。第i步前s_i的新增得分为b_i+δ（i<n），更晚内点≤b_i，末点为1+δ<b_i；最后s_n得分1。已开站第二家得分≤(b_1+δ)/2=3/4−1/(8n)<1，所以每步严格开最早未开站，q≡1、γ=1。私有权≥γ冻结，所有边客户同轻权δ；站点原图为n顶点路径，固定(τ,d)=(1,1)，唯一轻分量却有n站。全把边客户分到右端给显式共同全盒NE：W_1=b_1，W_j=b_j+δ(j≥2)，每个边客户的外部负载b_(j+1)<W_j。故对任意固定c_0可取n>c_0落在DP(1,1)域而违反该分量界；不存在仅依(τ,d)的函数统一控制轻分量站数。每个有限实例仍可取c=n，本分离不是算法完全不适用、搜索困难性、算法等价或复杂度下界。完整推导与全部量词保存在本任务证明正文。",
+  "scope": "同一真实规范贪心和同一指定冻结的在轨结构域及精确见证语义。是DP对有界轻分量输入的正确专门化贡献；不把结构域包含升级为整个FPT目标、两算法或复杂度全局等价，不覆盖任意预设占用、任意跨站混合NE、额外H或完整多项式软件实现。",
+  "contribution": {
+    "result": "站点原图DP在每个真实贪心轻分量(c,d)输入上可取τ=c−1直接运行，精确判定并恢复与支持IP相同的指定冻结完整盒/全部原NE逐名见证集合。其该域已证时间为poly(L)(N+1)^(4dc+c)。有严格真实canonical greedy的无界同权路径族使固定(τ,d)=(1,1)无法反向控制分量站数，故结构参数承诺只单向包含。",
+    "remaining": "目标SC-K-FROZEN-LIGHT-FPT的整条陈述还要求f(c,d)poly(L)的参数独立多项式指数与支持IP变量界；这些不能从本DP界推出，仍使用目标自身的固定维ILP证明。域包含和共同见证集合的相同不提供两算法的运行时间等价、同一具体输出、反向分量界或任何FPT不可能性；本边不重新推导BOX-TO-2/MAX及其软件接口。"
+  },
+  "evidence": [
+    {
+      "path": "map/edges/commonmany-light-component-vs-primal-dp-3b-3b-61e117fd4b30ac81/light-component-primal-domain-proof.md",
+      "sha256": "e4d1f8de7fa5d637b061f1ca63fbd4af79ccf46c3a74540c2229a3970eb441c4"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/客户类型支持整数规划与有限目录选择--算法.md",
+      "sha256": "91f596960bff1f8fec521a1f6ed468aed409c2a34cdb07f2d880ca9fff663fdd",
+      "section": "固定占用的完整站纯盒NE程序"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/算法/客户类型支持整数规划与有限目录选择--算法.md",
+      "sha256": "91f596960bff1f8fec521a1f6ed468aed409c2a34cdb07f2d880ca9fff663fdd",
+      "section": "冻重客户后的局部FPT与后续存在性更新"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/推论/结构参数下完整盒均衡的多项式选择--推论.md",
+      "sha256": "9d02870fb31e12e603886b503b39ca7fc396fa15e888d6f2643bb678a25e8863",
+      "section": "公共输入与联合结论"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/推论/结构参数下完整盒均衡的多项式选择--推论.md",
+      "sha256": "9d02870fb31e12e603886b503b39ca7fc396fa15e888d6f2643bb678a25e8863",
+      "section": "B：站点原图的固定树宽与局部权值多样性"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/推论/结构参数下完整盒均衡的多项式选择--推论.md",
+      "sha256": "9d02870fb31e12e603886b503b39ca7fc396fa15e888d6f2643bb678a25e8863",
+      "section": "树分解输入、比较与准确边界"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "规范贪心、冻结原池及预算"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md",
+      "sha256": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+      "section": "归一化并证明全部客户NE"
+    },
+    {
+      "path": "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md",
+      "sha256": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+    }
+  ],
+  "reviewed_by": "Boss2-fresh-light-component-primal-comparison",
+  "review_note": "实读任务definition、当前两端点registry及全部9个不同阅读文件；核过原模型、支持IP与冻结更新、规范贪心全盒定理、站点原图DP和接口审查。旧Boss2草稿只作为待证线索，重新证明每分量袋构造、原标签见证集合双向对应、冻结重客户跨分量稳定性及DP代入XP界；对长链重新按冻结原池greedy严格归纳，并补显式全盒NE。未将初始贪心赋值当NE，未声称重读外部ILP/树宽/MAX论文或运行任何canonical程序。accepted/unconditional仅指已完备的contribution，不承诺目标整条算法时间。",
+  "endpoint_pins": {
+    "SC-K-FROZEN-LIGHT-FPT": "35aad9a197254ead30134dd90701d1de4d79e9ab664a3c861b39c824c2c5443f",
+    "SC-K-LOCAL-WEIGHT-BOX-DP": "a2ae05baa98735ff3d62e31251b5efa7602a485f0150031fe3281a2d33124aef"
+  },
+  "evidence_pins": {
+    "map/edges/commonmany-light-component-vs-primal-dp-3b-3b-61e117fd4b30ac81/light-component-primal-domain-proof.md": "e4d1f8de7fa5d637b061f1ca63fbd4af79ccf46c3a74540c2229a3970eb441c4",
+    "archives/facility-games/subarchives/common-many/state/算法/客户类型支持整数规划与有限目录选择--算法.md": "91f596960bff1f8fec521a1f6ed468aed409c2a34cdb07f2d880ca9fff663fdd",
+    "archives/facility-games/subarchives/common-many/state/推论/结构参数下完整盒均衡的多项式选择--推论.md": "9d02870fb31e12e603886b503b39ca7fc396fa15e888d6f2643bb678a25e8863",
+    "archives/facility-games/subarchives/common-many/state/定理/规范贪心占位的完整盒均衡与因子二续局--定理.md": "f396976f98369f049e84504ca584011691a991340804f0331a582e0fbf216a1b",
+    "archives/facility-games/subarchives/common-many/state/定义/共同目录任意设施数模型--定义.md": "7ac8cd4f8d9435098fd02f6e5cfe829d5bab3e8cab7e9e1fa1e953792ea67b12"
+  },
+  "review_digest": "2334c676d20877fc113b87277614ac0f4e6a217ebb0416397dbc461757cd9685"
+}
