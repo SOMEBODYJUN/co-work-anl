@@ -10,13 +10,13 @@
   ],
   "premises_mode": "all",
   "relation_mode": "unconditional",
-  "conditions": "限制到共同ring原矩阵r=2、偶k≥2、1/2<ρ<1，每I行有限J时间统一c_h≥0，J只接I或unit正C；给两个不同一真模式的同P完整峰≤1实际见证。",
+  "conditions": "限制到共同ring原矩阵任意r≥2、偶k≥2、1/2<ρ<1，每I行有限J时间统一c_h≥0，J只接I或unit正C；给任意不同u,v各自唯一True的同P完整峰≤1实际见证。桥使用源正文§3整数流引理，重新给出两见证半半满流；不是直接删去源整条定理所需r份输入。",
   "roles": {
-    "M-76983feebdc44edca5da3feb68582355": "提供r份真实见证平均的整数件数流和两种原q回填；r=2时平均就是该两见证。",
-    "M-53bb17e3dfb142718bc8fb965bb20b4e": "在其逐机统一且r=2子域获得保各J见证端的更强I≤1输出；全异权域仍需配对舍入。"
+    "M-76983feebdc44edca5da3feb68582355": "提供逐机统一I的整数件数容量、给定任一分数满流后的共同整数化及任意S双backbone回填；其r份平均在此由显式两份平均桥代替。",
+    "M-53bb17e3dfb142718bc8fb965bb20b4e": "在任意r≥2、逐机统一I的子域获得只需两见证且保各J见证端的更强I≤1输出；全异权域仍需真实成本配对。"
   },
-  "explanation": "r=2时代入源K_a=ceil((c_a^1+c_a^2)/2)，与目标完全相同。将源J网络限制到每个原J在这两actual中自身已用的有限端；两见证半半分数流仍满，各I容量min(|J|,floor(1/c_h))、c_h0另取|J|，各正C cap1、branch gate capK_a。整数流每job恰一次且只能用自身见证端，I真实负载≤1。两种回填均只依赖最终正C被J占的集合S，不依赖其连续性；分别以maxS/负末q，或相邻返回点区间/负首q安排全部q，得到全False、M≤1、C恰1、负pool≤1/k、正pool≤1+max(0,K_a−1)/k。k偶和False分支计数使K_a≤k/2+1，所有机≤3/2。保support的加强由限制网络后仍存在同一分数满流明确证明，而非把源未承诺的输出限制直接抄来。",
-  "scope": "仅目标r=2且逐机统一I的子域；此处I≤1强于目标一般异权I≤3/2，不能推广到同机异权或少给r份的任意r源合同。",
+  "explanation": "令任意r≥2，给不同u,v的两份strict完整actual。取K_a=ceil((c_a^u+c_a^v)/2)，与目标完全相同。源正文§3整数件数网络的整数化只用“存在值N=|J|的分数满流”，并不另用输入恰有r份；将J→机器边限制为该J在这两actual中自身已用的端，两见证半半平均便给所需分数流。每I容量为min(N,floor(1/c_h))，c_h=0取N；统一行成本使两actual的J件数各自守此容量，故平均亦守。每正C容量1，两份实际占用的平均≤1；branch gate容量K_a，平均流入恰(c_a^u+c_a^v)/2≤K_a。于是同一个整数满流每job恰一次、保自身见证端且I真实负载≤1。两份都False的a不在{u,v}由源strict-False计数有c_a^u,c_a^v≤1，故K_a≤1；u/v的True计数≤k且另一False计数≤1，偶k给K_a≤k/2+1。对每a最终占用正C的任意集合S_a，使用源maxS/负末q或区间/负首q任一完整回填，全部原q/b/f与J各一次，输出全False、M≤1、C恰1、负pool≤1/k、正pool≤1+max(0,K_a−1)/k。所有机同时≤3/2；I≤1比目标全异权界更强。没有寻找未知actual，新增桥是已给两actual形成同一分数满流，不是把r份存在性或任意r输入义务静默取消。",
+  "scope": "目标任意r≥2且逐机统一I的子域；两见证半半满流显式支付弱于源r份输入的桥。I≤1强于目标一般异权I≤3/2；不推广到同机异权，不将源r平均B_data冒用于只给两见证的一般数据。",
   "evidence": [
     {
       "path": "archives/unrelated-machines/state/证明/逐机统一与异权辅助的共同流及双回填--证明.md",
@@ -40,10 +40,10 @@
     }
   ],
   "reviewed_by": "Boss3",
-  "review_note": "本任务重新实读当前登记、所列正文及必要原稿，逐项核模型、量词、实际任务身份、联合容量、全称/条件范围及总位复杂度；本边不以有限审计替代一般证明。",
+  "review_note": "Boss3本轮恢复既有草稿后完整重读共同流及双回填证明，逐项核任意r下两份半半流的I/C/gate容量、False计数与全任务双回填。将旧边仅r=2的有效局部贡献加强为任意r≥2的uniform-I子域；新增平均桥在解释中完整证明。",
   "contribution": {
-    "result": "r=2且逐机统一I时，两完整实际见证已足以用其自身支持内的整数件数流及任一完整backbone回填得到目标全False输出，并有更强I≤1、同一K_a与pool/C/M界。",
-    "remaining": "目标任意r≥2只给两个u,v模式、I同机任意异权及作者固定同端细界I_h≤3/2−F_h/2，仍须目标的真实成本配对/half-occurrence整数流；源的件数容量不付这些部分。"
+    "result": "任意r≥2、逐机统一I时，仅给不同u/v的两完整实际见证，半半满流已足以用各J自身支持内的整数件数流及任一完整backbone回填得到目标全False输出，并有更强I≤1、同一两见证K_a及pool/C/M界。",
+    "remaining": "目标同机任意异权及作者固定同端细界I_h≤3/2−F_h/2，仍须目标的真实成本配对/half-occurrence整数流；件数容量不付这些部分。源整条r份输入定理与其r平均B_data仍按原量词保留。"
   },
   "endpoint_pins": {
     "M-53bb17e3dfb142718bc8fb965bb20b4e": "29e94ef90dc4c9eae2bda47971ad17bdfcc52e167c285bcae72a62e73e031a37",
@@ -53,5 +53,5 @@
     "archives/unrelated-machines/state/证明/逐机统一与异权辅助的共同流及双回填--证明.md": "053ea2ea11c9c91907c0cdfb86d052d63fecd0dc4805dbbcda57a5747f6811bf",
     "archives/unrelated-machines/state/审查/单位与异权辅助分摊的见证和版本边界--审查.md": "1b333d9a1c787c6788e60ef355ddfb81b8560e9de418355b3cec3dec1261a70f"
   },
-  "review_digest": "8ff1fc64640881478ec26330aa771228b6a60d94573a45c0e253dc9b8e5e2495"
+  "review_digest": "dd2f3bd9cdfe89dcc284f3d4beafd034dedaf39795e7721e3b63ffe57a0c9fe0"
 }
