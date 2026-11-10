@@ -96712,19 +96712,19 @@
     },
     {
       "object_id": "WC-R3-SOURCE32-178-v1",
-      "version": 1,
+      "version": 2,
       "title": "三十二次两攻击源的全实参数89比50上界",
       "kind": "theorem",
       "truth_status": "proved",
       "model": "n≥1整数，1≤k≤32整数，0<w≤1实数，β≥0不设上界；H/L为正文两攻击源比。",
-      "statement": "对全部合法参数min(H,L)≤89/50。消去β后的必要多项式严格正强迫w>1/55、n≤55、w≤1/max(1,n−1)；余1760个整数(k,n)的整个闭实区间由精确整数Bernstein符号证书验证，1768叶、最大深度2。",
+      "statement": "对全部合法参数min(H,L)≤89/50。若H和L都严格超过89/50，消去β得到必要P>0，并由原严格式分别得A>t与B>tD，从而w>1/55、n≤55及w≤1/max(1,n−1)。剩余1760个整数(k,n)的全闭实区间由精确Bernstein符号证书验证，1768叶，最大深度2。",
       "quantifiers": "∀整数n,k及连续w,β；不是网格抽样。",
       "assumptions": [
         "原certificate JSON与精确整数checker共同承担符号证书",
         "解析域缩减需同时保全"
       ],
       "scope": "只给该源两攻击公式上界；结合另有拓扑充分归约才给相应两列实际89/50-PNE，不是全类上界。",
-      "objections": "以本文完整论证或精确证书为依据；内部审读和有限程序不代表外审、新颖性或全局主问题完成。本登记未重跑旧数学程序。",
+      "objections": "有限约化必须同时使用A>t和B>tD。P>0单独可发生在两因子同为负时，例如(n,k,w)=(100,1,1/100)。结论只界定主指数1≤k≤32、侧指数32的源公式及指定实参数域。",
       "body": {
         "path": "archives/weighted-congestion/state/定理/三十二次两攻击源包络上界--定理.md",
         "sha256": "fc89af9c3515b2c0d0cdf2461e6146301952f42003078848e679242910520ca8"
@@ -126803,20 +126803,20 @@
     },
     {
       "object_id": "customer-attraction/maximal-subcatalog-pruning-all-population-welfare-transfer-boundary",
-      "version": 1,
+      "version": 2,
       "title": "极大子目录剪枝的全人数福利迁移边界--障碍",
       "kind": "obstruction",
       "truth_status": "proved",
       "model": "共同目录完整历史纯SPE模型：有限单位客户、有限非空主题标签；m名单位提供者按全部合法有序历史各选一次，终局客户价值在覆盖者间均分，并对每个历史按同一策略真实偏离续行。",
-      "statement": "对k≥1、m=k+1的目录族，全目录SPE福利为2k+2；极大A/B/D子目录每个SPE福利为3k+1或3k+2，且fresh-fill分类给出L(full)≥L(max)方向。",
+      "statement": "对正文每个k≥1、m=k+1的显式目录族，全目录存在一份完整纯SPE的福利为2k+2。极大A/B/D子目录的全部SPE终局福利为3k+1或3k+2，两值均可达到，所以L(max)=3k+1。k≥2时L(full)≤2k+2<3k+1，反驳普遍L(full)≥L(max)。",
       "quantifiers": "对正文全体k、m=k+1和给定族。",
       "assumptions": [
         "保留真实客户/OPT定义",
         "极大子目录为正文A/B/D",
         "不与comparison P_k混同"
       ],
-      "scope": "全人数福利迁移边界反例族。",
-      "objections": "是目录删枝边界，不等于实际客户half或所有删枝。",
+      "scope": "该全人数目录族的极大删枝边界；全目录低福利是存在性，极大子目录给完整分类。",
+      "objections": "k=1时展示的低福利完整策略与极大子目录最低同为4。全目录的最低福利精确值及反向迁移不由此分类。",
       "body": {
         "path": "archives/customer-attraction/state/障碍/极大子目录剪枝的全人数福利迁移边界--障碍.md",
         "sha256": "a6182834728ef4ddd69451d7fd97bb2dce678ffef1c8acd3652cdb057d3ee344"
@@ -132973,20 +132973,20 @@
     },
     {
       "object_id": "customer-attraction/product-credible-menu-convexification-and-all-optimal-tuple-diagnostic",
-      "version": 2,
+      "version": 3,
       "title": "三标签三人2186输入的全可信凸菜单与全部最优元组有限排除",
       "kind": "finite-result",
       "truth_status": "finite",
       "model": "CAG共同目录完整历史模型：有限单位客户；有限非空带标签共同目录，覆盖映射可不单射；n名单位提供者按固定顺序各选一次，观察全部有序历史；终局客户在覆盖者间均分。完整纯SPE在全部合法有序历史给行动，含空覆盖、重复选择、同覆盖异标签、零客户和历史依赖弱平局。真实偏离后继必须取同一σ，不把计数相同历史合并。根W=Σu_i，有背景剩余利润不当作新覆盖。",
-      "statement": "三人、标签A/B/C，七个非空兴趣型各重数0,1,2且不全零的2186输入上，对全部可实现有序actual路径和全部最优有序三元组（允许重复），令L_i(A)为当前位置强制A后全部纯可信续局中的本人最低收益，barL_i(A)为以“下一角色盈余期望≥0”为唯一门槛的未过滤下一行动菜单凸化，M=max_OPTΣ_i barL_i(T_i)。原精确有限报告的g=OPT−W−M最大值为−5/3，故该输入域无M<OPT−W严格种子。最后达到最大值的输入重数(1,1,0,2,0,0,0)，actual BCC，W=3、OPT=4、barL行值(2/3,2/3,1)、M=8/3。单门槛凸化只需纯非负盈余点或一负一正盈余点的边界混合。",
-      "quantifiers": "仅所列2186有限实例、全可信actual路径及全部27有序比较元组；每输入仅保取得OPT的比较。非有限参数域全称结论。",
+      "statement": "对三人三标签、七个非空兴趣型各重数0,1,2且不全零的2186输入，在所有完整纯SPE可实现且W<OPT的有序实际路径上，对全部达到OPT的有序三元组（允许重复）计算M=max_OPTΣ_i barL_i(T_i)。barL_1为下一角色期望盈余非负的单门槛凸化，后二行等于完整可信续局的相应纯最低收益。该亏损路径域的g=OPT−W−M最大值为−5/3。达到代表为重数(1,1,0,2,0,0,0)、BCC，W=3、OPT=4，M=8/3。W=OPT时由M≥0也排除严格正g。单门槛只需纯非负点或一负一正的边界混合。",
+      "quantifiers": "仅指定2186输入，−5/3极值量化W<OPT的全部可实现有序路径；每条路径的最大值量化全部达到OPT的有序比较三元组。",
       "assumptions": [
         "恰三人三标签",
         "各非空兴趣型重数在{0,1,2}",
         "可信叶集合由完整历史纯SPE后继定义"
       ],
-      "scope": "独立有限扫描数学结果；代码/日志是证据，不另立程序节点。barL≤L不推出乘积L可加。",
-      "objections": "最大g<0是该扫描阴性，不是SM全称定理；所有最优tuple量词不能偷换某个选定最优排列。原重放和历史日志是已有证据，本轮0数学重跑。",
+      "scope": "有限严格种子诊断；W=OPT用非负性而非−5/3扫描上界。真实产品策略抬升与一般SM/half另有条件。",
+      "objections": "一个全兴趣单位客户的W=OPT路径给M=1与g=−1，确认−5/3的极值只用于亏损路径。",
       "body": {
         "path": "archives/customer-attraction/state/程序/产品可信菜单凸化与全最优元组诊断--程序.md",
         "sha256": "f6ccb09e274124f74bea77a95a17a10b5242f2ae6d3affcd0216971759835250"
