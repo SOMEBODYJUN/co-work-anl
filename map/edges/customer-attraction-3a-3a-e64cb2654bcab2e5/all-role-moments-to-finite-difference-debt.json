@@ -1,0 +1,58 @@
+{
+  "edge_id": "ca-cage64-all-role-moments-to-finite-difference-debt",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-f5898599fae64dd9a08c2051d1334569"
+  ],
+  "target_ids": [
+    "customer-attraction/role-joint-moment-balance-finite-difference-payoff-debt"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m≥d+2、整数d≥1；同一客户的root指示I、tail计数Q与C=I+Q≥1，tail角色先均匀交换；物理实现允许重复标签、自环及全部有序历史纯策略，不声称SPE。背景为任意整数b≥0。",
+  "roles": {
+    "M-f5898599fae64dd9a08c2051d1334569": "给出角色成员矩到实际均分收益差的全阶精确展开及低阶平衡后的有符号余项。",
+    "customer-attraction/role-joint-moment-balance-finite-difference-payoff-debt": "把该余项实现为每个固定d的严格负债，同时保有限共同目录、字面角色矩和平稳标签分布。"
+  },
+  "explanation": "任取d,m，令ζ_c=(−1)^c C(d,c−1)、I_c=1[ζ_c>0]，a_c=m−c（I=1）或c（I=0），K=(Σ|ζ_c|/a_c)^−1，p_c=K|ζ_c|/a_c，1≤c≤d+1。则p为正有理分布且E[(mI−C)1[C=c]]=Kζ_c。源式(M)和有限差分对次数≤d−1的多项式消去给h_j=g_j，j≤d；源的实际份额式(D)，或(ALL)的同一有符号余项，给Δ_b=K/(m−1)Σζ_c/(b+c)。用1/(b+c)=∫_0^1t^(b+c−1)dt及Σζ_ct^c=−t(1−t)^d，得到−K d!/[(m−1)∏_(j=1)^(d+1)(b+j)]，对所有b≥0严格负。再取整数N清p分母，以Np_c个类型(c,I_c)顶点，每点n=m−1个有序尾槽且Q=c−I个指向I=1顶点；一阶平衡ΣQ=nΣI使每类出槽恰能与每目标n个入槽匹配，得到入出度皆n的有限有向多重图。主题为独有私客y_v加可选x。把每顶点提升为(v,π)，π遍历n!个尾槽置换，第j个字面角色选(f_v(π(j)),π)，使每个固定角色子集的联合概率等于源h_j/g_j，且每标签入度仍n。均匀根标签后均匀尾角色仍均匀驻留；首标签区别各菜单枝，其他有序历史任填合法动作，得到完整纯策略。该构造保x的(C,I)分布与严格负债，不要求最优性，正是目标全部量词。",
+  "scope": "完整证明固定低阶角色矩不足以逐客户消债；辅助私客、总支付及全部IC不由此失败。d=m−2时只剩最高承重阶仍可严格负。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/角色联合矩平衡的有限差分收益余债--障碍.md",
+      "sha256": "30b34e27f195da6ef8973a932831140356cdae83a0caa94b1b06d847c5dc9af2",
+      "section": "角色矩与完整收益差的精确表示"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/角色联合矩平衡的有限差分收益余债--障碍.md",
+      "sha256": "30b34e27f195da6ef8973a932831140356cdae83a0caa94b1b06d847c5dc9af2",
+      "section": "任意固定阶数的严格负差族"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/角色联合矩平衡的有限差分收益余债--障碍.md",
+      "sha256": "30b34e27f195da6ef8973a932831140356cdae83a0caa94b1b06d847c5dc9af2",
+      "section": "有限共同目录与主题标签平稳实现"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/角色联合矩平衡的有限差分收益余债--障碍.md",
+      "sha256": "30b34e27f195da6ef8973a932831140356cdae83a0caa94b1b06d847c5dc9af2",
+      "section": "七标签例与两个必要限制"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/有限阶平稳原审计与七标签角色置换核验--计算.md",
+      "sha256": "bc3306530d2ae7bf38179dce834f1ddca1085c44f13c4bfbfb289201ea716ce6"
+    }
+  ],
+  "reviewed_by": "Boss6/map-cage64-round39",
+  "review_note": "完整实读本包相应定义、陈述、量词和承重段，先核实际所得结论再比目标原句；下述whole_result或contribution准确限定本边支付范围。未运行大证书、优化器或原程序。",
+  "whole_result": "对每个整数d≥1,m≥d+2，存在有限单位客户共同目录及完整纯策略的均匀驻留菜单，使指定x任意固定字面角色子集的前d阶root/tail矩平衡，而同一x对每个整数b≥0有Δ_b=−K d!/[(m−1)∏_(j=1)^(d+1)(b+j)]<0；不含SPE或总收益失败结论。",
+  "endpoint_pins": {
+    "M-f5898599fae64dd9a08c2051d1334569": "7625fae095d02d325125551518936d14bd14a2de4eeb2c3cfe24c40a5a08935c",
+    "customer-attraction/role-joint-moment-balance-finite-difference-payoff-debt": "ab2660d3232a801b7c140caa8e5bf6a19864dec7d45e46dc4e75166ca6a59f8f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/角色联合矩平衡的有限差分收益余债--障碍.md": "30b34e27f195da6ef8973a932831140356cdae83a0caa94b1b06d847c5dc9af2",
+    "archives/customer-attraction/state/计算/有限阶平稳原审计与七标签角色置换核验--计算.md": "bc3306530d2ae7bf38179dce834f1ddca1085c44f13c4bfbfb289201ea716ce6"
+  },
+  "review_digest": "5ae92810df72e404eacfd8ab1ed2f59bc2569814d286bbe950e1a46c5ebff09e"
+}

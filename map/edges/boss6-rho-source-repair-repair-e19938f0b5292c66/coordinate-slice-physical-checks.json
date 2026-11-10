@@ -1,0 +1,42 @@
+{
+  "edge_id": "um-bf2-r33-coordinate-slice-physical-checks",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/coordinate-slice-physical-configuration-audit"
+  ],
+  "target_ids": [
+    "UM-Q-COORDINATE-SLICE-PARTIAL-MINREP-COUNTEREXAMPLE-v4"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "同一 K_D,D 坐标切片原任务图，条件 pi_ij(0)=i+1。D2Q3 枚举16个条件置换数组，D3Q4 只核一个确定数组。",
+  "roles": {
+    "unrelated-machines/coordinate-slice-physical-configuration-audit": "冻结原程序及逐字节重放，逐原任务检查真实选择、精确负载和完整 CONFIG。",
+    "UM-Q-COORDINATE-SLICE-PARTIAL-MINREP-COUNTEREXAMPLE-v4": "提供同一深树/完整资源坐标编译及另外量化的列表、padding 和整数值定理。"
+  },
+  "explanation": "脚本保留各玩家 selector 和全部状态的全部 port。选状态0、每层保 D−1 个分支，逐个原任务核父端 1/D 或子/资源端 1，得到实际峰 3/2 与 4/3。CONFIG 证书在每内部机分别以 1/Q 放 incoming singleton、1−1/Q 放全部 D outgoing，在每资源机给 Q 个 eligible leaf singleton 各 1/Q，逐机归一、逐任务覆盖恰1。两个规模仅核给定构造，D=2 还位于一般 D≥3 主合同之外。",
+  "scope": "只覆盖17例的原任务与 CONFIG 字段。廉价列表 NO、一般概率参数、整数最优及 padding 分支依各自解析证明。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/计算/坐标切片原任务与配置覆盖核验--计算.md",
+      "sha256": "7dc5effbdad9784eb3188bf0adc1d5f1208b162354b2c2a86050f7ea27267952",
+      "section": "坐标切片原任务与配置覆盖的有限精确核验"
+    },
+    {
+      "path": "archives/unrelated-machines/state/反例/坐标切片投影源编译--反例.md",
+      "sha256": "23d3db5fa6b0efd40488417241c721c54b656861a08913fca96aa4d064178ef4"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "核对当前登记端点和所列精确正文，区分实际原任务、条件量词与历史有限证据。 Boss6源版本定向续审：共享UM-Q…v4对象现version4，仅二级审查§2/E将充分条件校正为rho0+2g/D≤rho。平衡D正则源M=DN/2，旧列表覆盖<rho0 M，新增private输出覆盖≤gN=(2g/D)M，故此方向恰为保promise所需；主正文原已正确。本边仍仅历史物理有限核对或v3 provenance语境，原D2/Q3、D3/Q4范围和近一负载结论不变，不宣称一般NO/CONFIG最优/困难性。未重跑旧大证书；所有未改关系字段逐字保留。",
+  "endpoint_pins": {
+    "UM-Q-COORDINATE-SLICE-PARTIAL-MINREP-COUNTEREXAMPLE-v4": "04ff444a0475c96acbdbb867fed1c1228619be04b33f165aa4736d2fe27c52a8",
+    "unrelated-machines/coordinate-slice-physical-configuration-audit": "a8dcba291aea8628a70aa1a696f588e96bc6f7ce28707957c2f631809616c00f"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/计算/坐标切片原任务与配置覆盖核验--计算.md": "7dc5effbdad9784eb3188bf0adc1d5f1208b162354b2c2a86050f7ea27267952",
+    "archives/unrelated-machines/state/反例/坐标切片投影源编译--反例.md": "23d3db5fa6b0efd40488417241c721c54b656861a08913fca96aa4d064178ef4"
+  },
+  "review_digest": "4dc80d536b3cfdc9513fc4c1dca5b8dae2b4fa0c7b5aa7ed0d85d4c214aa64ba"
+}

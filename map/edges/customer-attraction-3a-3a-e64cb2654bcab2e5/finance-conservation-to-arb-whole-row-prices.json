@@ -1,0 +1,47 @@
+{
+  "edge_id": "ca-cage64-finance-conservation-to-arb-whole-row-prices",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/arbitrary-child-finance-and-coordinate-certificates-source-erratum"
+  ],
+  "target_ids": [
+    "customer-attraction/arbitrary-future-query-whole-row-procurement-prices-and-dual"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一完整σ的actual-prefix真实菜单；仅遗漏客户x∈a的正tracked状态s=(i,a,x)，r_s>0,D_s>0，ρ_s=u_i/D_s≥1。余量可任意集中/分流到严格更晚含x合法query，无客户间共享cap；到达状态重新读取同一σ自己的真实query。 固定源q_x可为任意非负实量。自由trim另取同一最优并集O，R=O\\C、δ=OPT_m−W∈{0,…,|R|}为单位客户整数净源；0≤q_x≤1且Σ_(x∈R)q_x=δ，最低δ项公式只用于此合同。",
+  "roles": {
+    "customer-attraction/arbitrary-child-finance-and-coordinate-certificates-source-erratum": "给金融流逐客户守恒、A_q完整行汇总及唯一w_q=A_q/D_q，费用精确为Σw_qu_i，且该合同独立于COORD。",
+    "customer-attraction/arbitrary-future-query-whole-row-procurement-prices-and-dual": "在该金融可行域精确求单位最小价、全行流LP对偶与自由trim最小费。"
+  },
+  "explanation": "按源FINANCE，每客户输入q_x的全部最终吸收为q_x；汇总后的全行费Σ_qw_qu_i=Σ_sρ_sr_sf_s。因角色严格增加，状态成有限DAG。当前吸收r_s固定，每种合法后续分流的费用是ρ_sr_s加(1−r_s)倍孩子价平均，故最小V_s=ρ_sr_s+(1−r_s)min_tV_t；r_s=1第二项为0。倒序选择一个argmin孩子及最便宜起点达到κ_x=min_sV_s。ρ≥1、末位全吸收给V,κ≥1。不同客户无共享约束，全部起点/边可同时选，故最小总费Σq_xκ_x。流LP取f_s=z_s+Σ_te_ts、Σ_te_st=(1−r_s)f_s、Σ_sz_s=q_x及非负变量。对偶取φ_s≤ρ_sr_s+(1−r_s)φ_t对全部合法边、r1时φ_s≤ρ_s、k_x≤φ_s。将各状态约束按流加权，内部φ边项抵消，得Σq_xk_x≤总费；逆序又给每个可行φ≤V。取φ=V、k_x=minV可行，argmin流达到同值，得所列精确强对偶。自由trim的q_x∈[0,1]、Σq_x=δ是线性选源问题，把保留量从贵κ移到便宜κ不增费；整数δ时恰为最便宜δ项之和（δ0空和）。全部结论只用源金融账，不把w投影成COORD，也不保旧Hall初始化余额。",
+  "scope": "完整ARB金融优化定理；没有证明普遍净源最小费≤W，也没有从最优流推出COORD或CAP。自然路由仅在同r/D合同下是可行子域。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/任意子查询付款的两种充分证书与原等价勘误--资源.md",
+      "sha256": "3c3a21b32661b4e4bc1c4ab23c669e876eff5e548fa6053973025eea3c3137ec"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/任意未来查询的完整行采购价与对偶--算法.md",
+      "sha256": "e88cadd086cd75b3669f8b768509d604c31e391804181ec1861992a00f891238"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss6/map-cage64-round39",
+  "review_note": "完整实读本包相应定义、陈述、量词和承重段，先核实际所得结论再比目标原句；下述whole_result或contribution准确限定本边支付范围。未运行大证书、优化器或原程序。",
+  "whole_result": "所有固定有限真实菜单及任意固定非负源q的严格未来金融路由，单位价由V_s=ρ_sr_s+(1−r_s)min_tV_t达到、κ_x=min_sV_s，最小总费Σq_xκ_x且V,κ≥1；所列流LP与φ/k对偶同值达到。另对单位客户整数净需求δ=OPT_m−W∈{0,…,|R|}，自由选择0≤q_x≤1、Σ_Rq_x=δ的trim最小费恰为R上最低δ个κ之和，δ0为空和。",
+  "endpoint_pins": {
+    "customer-attraction/arbitrary-child-finance-and-coordinate-certificates-source-erratum": "262b16e16b546960f68017048be1222e8b4caf9514bad996a2243edeab226127",
+    "customer-attraction/arbitrary-future-query-whole-row-procurement-prices-and-dual": "8124bd59a0cdcea2963109674a554f90d1cce4f819ad12fc4c28ca55feabb095"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/任意子查询付款的两种充分证书与原等价勘误--资源.md": "3c3a21b32661b4e4bc1c4ab23c669e876eff5e548fa6053973025eea3c3137ec",
+    "archives/customer-attraction/state/算法/任意未来查询的完整行采购价与对偶--算法.md": "e88cadd086cd75b3669f8b768509d604c31e391804181ec1861992a00f891238",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "d95f0082d35d79dee090abde16197a9b4f61f8ba2be2695de3b1b358f6b5d5a0"
+}
