@@ -1,0 +1,49 @@
+{
+  "edge_id": "ca-de845-hall-hybrid-specializes-to-five-index-exchange",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/optimal-owner-all-subset-harmonic-transport-and-anchor-isolation"
+  ],
+  "target_ids": [
+    "customer-attraction/optimal-five-query-indexed-exchange-and-outside-tax"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "HALL取m=5；T_1,…,T_5确实达到OPT5，所有替换R_i/S_i/C/H_i为原目录合法标签。owner是静态分析分割，可按所证索引子集选择，不能把不同owner的流或容量合花。税比较另取合法非负整数背景b。",
+  "roles": {
+    "customer-attraction/optimal-owner-all-subset-harmonic-transport-and-anchor-isolation": "提供对任意owner、角色子集的静态HYB覆盖割；这里不使用其Hall流付款。",
+    "customer-attraction/optimal-five-query-indexed-exchange-and-outside-tax": "由单槽及多槽特化、按指定索引求和和分母界得到完整五索引静态行库及OPT外税转私有块。"
+  },
+  "explanation": "先固定槽k。把所有同时在T_k和其它T槽中的客户归给一个其它含它的槽，令Q_k恰为P_k=T_k\\∪_(j≠k)T_j；其余客户任取合法owner。对J={k},B_k=R用HYB，M(J)=P_k\\R，遂有|R\\O|≤|P_k\\R|。R_i对k=i求和给配对行Σ_i t_i1_(j_T=1)(1−r_i)−1_(j_T=0)Σ_i r_i≥0；对全部(i,k)求和给1_(j_T=1)(5−Σr_i)−5·1_(j_T=0)Σr_i≥0。二者保留各自配对，不能互换。固定C对k求和给1_(j_T=1)(1−c)−5c1_(j_T=0)；分别取实际A/B再加得1_(j_T=1)(2−b)−5b1_(j_T=0)；换r为s同理。多槽I时，把所有在∪_(k∉I)T_k中的客户owner放I外，其余owner放I内；令B_i=H_i(i∈I)。HYB的外部新增并集恰为∪H_i\\O，丢失恰为O\\(∪_(k∉I)T_k∪∪_(i∈I)H_i)，所以替换后的五槽覆盖≤OPT，得覆盖指示差总和(6)。最后x∉O使t_i=0，τ_i(x)=r_i(1−s_i)/[(b+1)(b+2)]≤r_i/2。乘4/25求和并用配对交换，得(4/25)Στ_out≤(2/25)Σ|R_i\\O|≤(2/25)Σ|P_i\\R_i|。",
+  "scope": "完整五索引静态交换及指定OPT私有客户容量；没有SPE前提，不把私有客户裸容量升为actual可重复收入。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/最优归属的全子集调和运输与锚定隔离--定理.md",
+      "sha256": "5835b444b326109957567f0e599b7d075f2cdbdfa0c879dbe0f0590faea88a04",
+      "section": "全角色子集的混合不等式"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优五查询的索引替换与外部回复税--引理.md",
+      "sha256": "b4e7e3b4686ed38c2531c9d8ed98d49a2b362c42dcd48cab792d5af8b22b6f3a",
+      "section": "可直接输入五查询直方图的行"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优五查询的索引替换与外部回复税--引理.md",
+      "sha256": "b4e7e3b4686ed38c2531c9d8ed98d49a2b362c42dcd48cab792d5af8b22b6f3a",
+      "section": "交叉末回复私有税的外部部分"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "独立选择单槽Q_k=private与多槽owner，核外部新增和真实库存损失恰匹配；无最优性不能调用。",
+  "whole_result": "对任意真正最优五元组，得到目标的单槽交换(1)、配对/全25/固定C/合并前缀行(2)–(5)、任意多槽覆盖差(6)及外部交叉税转指定私有块的(7)，均保合法重复索引和全客户求和量词。",
+  "endpoint_pins": {
+    "customer-attraction/optimal-five-query-indexed-exchange-and-outside-tax": "db79e6c2139ce4085c0893e625fc1ef59858d004bcb5b3016ecb07ad65d597e6",
+    "customer-attraction/optimal-owner-all-subset-harmonic-transport-and-anchor-isolation": "36ad485b36f1ca2442d27e7de8e0cfa86a85c3cab0880f55efcd2dd4bc8190b0"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/最优归属的全子集调和运输与锚定隔离--定理.md": "5835b444b326109957567f0e599b7d075f2cdbdfa0c879dbe0f0590faea88a04",
+    "archives/customer-attraction/state/引理/最优五查询的索引替换与外部回复税--引理.md": "b4e7e3b4686ed38c2531c9d8ed98d49a2b362c42dcd48cab792d5af8b22b6f3a"
+  },
+  "review_digest": "3fdf5ef78645f2e1663bd4651d37aad1beda7376fc6c4d4a08533533752eea61"
+}

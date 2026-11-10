@@ -1,0 +1,47 @@
+{
+  "edge_id": "ca-de845-pay-budget-funds-arb-net-demand",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/forward-customer-absorption-whole-row-envelope-and-net-budget",
+    "M-8a3d5457d56c413189e2683b8ddecde0",
+    "customer-attraction/arbitrary-child-finance-and-coordinate-certificates-source-erratum"
+  ],
+  "target_ids": [
+    "customer-attraction/arbitrary-future-query-whole-row-procurement-prices-and-dual"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "条件前提是PAY候选确已为当前这份原完整SPE给出同actual重置的合法forward流与λ，并满足ΣλΓ≤2W−OPT。R=O\\C、G=C\\O，δ=OPT−W=|R|−|G|≥0；保同一σ的Γ≥0及同r/完整f合同。",
+  "roles": {
+    "customer-attraction/forward-customer-absorption-whole-row-envelope-and-net-budget": "给同一全OPT流的访问包络和精确净账。",
+    "M-8a3d5457d56c413189e2683b8ddecde0": "开放的共同金额前提ΣλΓ≤2W−OPT；本边不证明其普遍存在。",
+    "customer-attraction/arbitrary-child-finance-and-coordinate-certificates-source-erratum": "将R上缩放流的总吸收转为唯一整行金融费。",
+    "customer-attraction/arbitrary-future-query-whole-row-procurement-prices-and-dual": "得到自由净需求δ的最小金融费≤W这一条件结论。"
+  },
+  "explanation": "因为actual是合法m元组，δ≥0；δ=|R|−|G|≤|R|，故可选0≤q_x≤1且Σ_Rq_x=δ（δ=0取零流）。限制缩放原forward流后past=0，ΣA_v^q=δ，w_v=A_v^q/f_v≤λ_v。金融费K=Σw_vu_i=δ+Σw_vΓ_v；同一SPE的全部Γ_v≥0给K≤δ+Σλ_vΓ_v≤(OPT−W)+(2W−OPT)=W。于是ARB在自由净需求δ下的最小费≤K≤W；依其自身自由trim结论，亦写为最便宜δ个κ的和≤W。这里没有把P−D_env退款直接当钱：关键另证了R流的总吸收δ、w≤λ及相同Γ的非负性。不同σ、不同分母、客户局部IC重权或不可自由trim的旧Hall合同均不能用此推导。",
+  "scope": "已完整证明的条件付款关系；它把尚未解决的PAY金额前提传到ARB自由净需求预算，没有无条件证明该前提或一般half。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/前向客户吸收的整行包络与净预算--引理.md",
+      "sha256": "f4f587bbfbc52d86c778cf9ea25a0eb379c56b0c02e038177dc226558897b0d8",
+      "section": "4. 必须面对的精确自检"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/任意子查询付款的两种充分证书与原等价勘误--资源.md",
+      "sha256": "3c3a21b32661b4e4bc1c4ab23c669e876eff5e548fa6053973025eea3c3137ec",
+      "section": "任意更晚query的金融证书"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/任意未来查询的完整行采购价与对偶--算法.md",
+      "sha256": "e88cadd086cd75b3669f8b768509d604c31e391804181ec1861992a00f891238",
+      "section": "自由净源与仍未证的价格预算"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "从K=δ+ΣwΓ、w≤λ及同σ Γ≥0逐式推出≤W；条件推导无缺步，开放前提使关系conditional而非proposed。",
+  "contribution": {
+    "result": "若PAY为同一SPE提供其合法流/λ及ΣλΓ≤2W−OPT，则ARB自由净需求δ=OPT−W的最低金融费≤W；任一R上总量δ的q≤1限制缩放已给费用≤W的见证。",
+    "remaining": "普遍PAY流/包络及其金额仍open；本边不推出金融w自动COORD，也不保持旧Hall取消/初始化余额。"
+  }
+}
