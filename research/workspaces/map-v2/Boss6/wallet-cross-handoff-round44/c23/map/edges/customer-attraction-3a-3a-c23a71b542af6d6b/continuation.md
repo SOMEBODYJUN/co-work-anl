@@ -1,0 +1,9 @@
+# 窄续交接
+
+当前七核心完整数学已经成熟，20个任务reading_refs实读范围见 reading-ledger.json。两条独立contribution边及四linked/三isolated的覆盖判断已完成。
+
+Root先把本目录与receipt完整durable保存并handoff，再在原处应用wallet-cross-correction.patch或wallet-cross-replacement.md（只改CROSS后一句解释展开）。旧源b6ea62aa9df28a359d144f2d1698867a3e198b0fb1f9cf0f536ac8559ace3d2e，新源68859ab933a4b9c39ee7e68e162c50ac239b437e315d315e6f527937c2531d8d；四registry命中见source-impact.json。CROSS、TW/PAY/RW/QT/EARLY?和两条旧canonical关系的数学均不变。
+
+Root更新四记录/必要版本及关联引用，刷新同一claimed任务，并发布有效done11da定向替代。fresh worker对本包只需读本交接、完整review、两条现边、精确改句和新版八pins/definition；核Root应用的diff只有预定一个源句，窄续更新新证据SHA、三个core pin以及两边endpoint_pins/evidence_pins/review_digest、reading-ledger和receipt/manifest哈希即可。不得把本次完整重读再冒成新full pass，也无需重跑LP、全树或匹配。
+
+当前请求Boss6/4534b9f810844d8bb15aa1253307d94e；旧definition df2e6bae03247f55d85f3bc3d4fc394d713315c9d3f51e251af38a53a44e6acd。所有Git/registry/队列/安装/最终edge-bind/check/checkpoint/done由Root。未申请额外端点，无overlap声明，无须新follow-up。两条旧11da canonical仅导航，不进入本receipt资产。

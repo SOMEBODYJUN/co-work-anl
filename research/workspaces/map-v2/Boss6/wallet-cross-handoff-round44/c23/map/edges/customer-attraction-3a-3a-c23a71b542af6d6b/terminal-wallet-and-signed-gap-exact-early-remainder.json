@@ -1,0 +1,66 @@
+{
+  "edge_id": "cag-c23a71-terminal-wallet-and-signed-gap-exact-early-remainder",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "actual-terminal-pair-selective-frozen-wallet",
+    "M-4a7ba157741b46e490b81e8727e4cef7"
+  ],
+  "target_ids": [
+    "M-2a8a88d1fafa45b999f1506d22096df1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m≥2，同一个有限单位客户共同目录实例I、同一份完整有序历史纯SPE σ、同一actual Z、同一达到OPT_m的合法带索引m元组及同一个位置匹配T_i。允许空题、重复槽及标签别名。所有真实叶Y^i=finish_σ(Z_<i,T_i)必须取原σ回复；冻结f_i始终保留其余actual动作。",
+  "roles": {
+    "actual-terminal-pair-selective-frozen-wallet": "以actual末两题A,B及同一actual前缀背景b给一份C′及查询信用h，准确支付倒二冻结行；不控制早期响应税。",
+    "M-4a7ba157741b46e490b81e8727e4cef7": "把同一选中匹配的全局Q−W写成各真实偏离IC信用与有符号冻结/真实差Σ(E_i−e_i)，保全部未来响应。",
+    "M-2a8a88d1fafa45b999f1506d22096df1": "在同一最优元组及匹配上，开放弱预算精确归约为EARLY?共同付款；没有移除存在量词或证明一般早期上界。"
+  },
+  "explanation": "对每个所选查询置D_i=u_i(Y^i), e_i=u_i−D_i≥0, E_i=f_i(T_i)−D_i。这里E_i有符号，不能取正部后保GAP。令p=m−1,A=S_p,B=S_m,a=u_p,v=u_m,L_A=U_b(A,A),C′=min(a,v)−L_A≥0。钱包的三个真实IC给G_T=e_T+g_T+ℓ_T≥(a−v)_+，故h_T=G_T−(a−v)_+≥0和f_p(T)=a+C′−h_T。于是对倒二行E_p−e_p=f_p(T_p)−a=C′−h_{T_p}；末位无后继变化，E_m=0，故E_m−e_m=−e_m。用GAP相加，令EARLY=Σ_{i≤m−2}(E_i−e_i)，得Q−W=C′+EARLY−e_m−h_{T_p}。所以该同一匹配Q≤(1+1/m)W恰当且仅当EARLY≤W/m−C′+e_m+h_{T_p}。对最优T及匹配取存在量词，正好得到弱预算存在式的等价剩余义务；不得在左、右两边各用不同T或不同σ，也不得为多个查询重复领取C′。若选运输最小排列，必须仍在同一T及该达到最小的排列上定义所有Y,e,E,h。m=2时早期和为空且C′≤min(a,v)/2≤W/4，直接给所有合法两槽匹配Q≤W+C′≤5W/4≤3W/2；m≥3的一般EARLY上界仍未付。无条件COVER仅说明弱预算若成立足以half，并不把该充分桥变为half必要条件。",
+  "scope": "完整σ的同一实际叶与同一最优指派上的精确局部贡献；结论保所有有符号项和单份钱包资金，不能原样推广到后面仍有响应者的早期相邻两位。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/实际末对冻结查询的选择性钱包--引理.md",
+      "sha256": "b6ea62aa9df28a359d144f2d1698867a3e198b0fb1f9cf0f536ac8559ace3d2e",
+      "section": "同一有序实际前缀与三个真实比较"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/实际末对冻结查询的选择性钱包--引理.md",
+      "sha256": "b6ea62aa9df28a359d144f2d1698867a3e198b0fb1f9cf0f536ac8559ace3d2e",
+      "section": "钱包与必有信用"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/实际末对冻结查询的选择性钱包--引理.md",
+      "sha256": "b6ea62aa9df28a359d144f2d1698867a3e198b0fb1f9cf0f536ac8559ace3d2e",
+      "section": "完整指派中精确剩下什么"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/冻结指派的交集运输与真实查询差额--引理.md",
+      "sha256": "b5487aab914f3550b0549b14acfb92cd01da5c28d9e8a24cd8209c2cb80b7d79",
+      "section": "GAP：真实同策略查询与冻结成本的差"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/冻结指派的客户恒等式与最优比较量词--引理.md",
+      "sha256": "09cb6e1ff63c6271dc81652c82fb7f4248b438c598f2f39664503925f9ec17a4",
+      "section": "每个客户的精确三项账"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Boss6/map_cagc23_round44在definition pin df2e6bae03247f55d85f3bc3d4fc394d713315c9d3f51e251af38a53a44e6acd下完整实读7core及20个reading_refs，逐式重构以下局部贡献，保留同一实例/σ/实际Z/最优索引元组/匹配。只发现CROSS后解释展开句的F项未相消，恒等式及本文使用的结果均正确；本文件是原pin成熟草稿，Root先保存后修源刷新再窄续绑定，不能把旧pin收据直接作最终done。0原入口、0LP、0全树或全部匹配重跑。",
+  "contribution": {
+    "result": "在同一σ、同一最优索引元组及匹配上，Q−W=C′+Σ_{i≤m−2}(E_i−e_i)−e_m−h_{T_{m−1}}；所以弱预算逐匹配精确等价EARLY?：Σ早期(E_i−e_i)≤W/m−C′+e_m+h。m=2的空早期和已支付。",
+    "remaining": "m≥3仍需为每个实例及每份完整SPE共同选择一个最优元组及匹配，使上述EARLY?成立；局部钱包、运输环、强FOMA反例、调和C′界和旧数值锥均没有给出该早期共同支付。此贡献未证明普遍弱预算或六人half。"
+  },
+  "endpoint_pins": {
+    "M-2a8a88d1fafa45b999f1506d22096df1": "a381f20a9d1c7275f8c9962dd1e2e04f9bf4cd92d6e6da43ec8cc48430ccc4c6",
+    "M-4a7ba157741b46e490b81e8727e4cef7": "c9c8e451f76e9666ce71062a76bd43ce893fa8d44eaf31f505f3165a98da98ef",
+    "actual-terminal-pair-selective-frozen-wallet": "0e7fbb158632f8899c97ad03b7079b3ea26996342b7a482e4b1c610918518d7c"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/实际末对冻结查询的选择性钱包--引理.md": "b6ea62aa9df28a359d144f2d1698867a3e198b0fb1f9cf0f536ac8559ace3d2e",
+    "archives/customer-attraction/state/引理/冻结指派的交集运输与真实查询差额--引理.md": "b5487aab914f3550b0549b14acfb92cd01da5c28d9e8a24cd8209c2cb80b7d79",
+    "archives/customer-attraction/state/引理/冻结指派的客户恒等式与最优比较量词--引理.md": "09cb6e1ff63c6271dc81652c82fb7f4248b438c598f2f39664503925f9ec17a4"
+  },
+  "review_digest": "01123746b81185a77a331e8c8fb0ad6262999b62f2d08cb9f440d8b99c78350d"
+}

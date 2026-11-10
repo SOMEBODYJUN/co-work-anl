@@ -1,0 +1,57 @@
+{
+  "edge_id": "cag-c23a71-fixed-input-transport-test-for-weak-budget",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/frozen-assignment-intersection-transport-and-true-query-gap"
+  ],
+  "target_ids": [
+    "M-2a8a88d1fafa45b999f1506d22096df1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、有限非空带标签共同目录，固定正整数m、固定实例I及一份已认证完整纯SPE σ的实际有序叶Z。运输代数只依I,Z；不宣称已枚举或认证同一I的其它σ。保全部覆盖最优的合法带索引m元组T，含重复标签和同覆盖异标签；按Z定义c,W,β,H。",
+  "roles": {
+    "customer-attraction/frozen-assignment-intersection-transport-and-true-query-gap": "对每个固定索引T给d=β+H、双随机运输和纯完美匹配同值及自由势对偶；它解决的是固定矩阵成本。",
+    "M-2a8a88d1fafa45b999f1506d22096df1": "开放目标对固定(I,σ)的两个存在量词得到精确有限判据；对所有I、所有完整σ的数值上界仍未证明。"
+  },
+  "explanation": "令O_m(I)={T∈目录^m:|∪T_j|=OPT_m(I)}，它是非空有限的全部最优索引元组集合。对每个T，BONUS及ASSIGN给K(T;Z)=Σ_jβ_j(T;Z)+min_{p≥0,行列和1}Σ_ijH_ij(T;Z)p_ij，且该内层最优由纯排列达到。故定义M*(I,Z)=min_{T∈O_m(I)}[Σβ+min_p〈H,p〉]，则对这一份σ，∃最优T∃匹配使冻结总价≤(1+1/m)W，当且仅当M*(I,Z)≤(1+1/m)W。有限精确步骤是先由共同目录全部合法m元组确定OPT及其全体最优元组，再逐T解有理指派并取最小；也可仅枚举带重数的非降序标签元组，因为重新排序列不改变K，但不得删去重复槽或覆盖别名标签。一个通过的T及纯匹配给存在证书；若要在这个固定Z否定存在式，必须对每个最优元组给严格越界的指派下界，例如自由势a_i+b_j≤H_ij且Σβ+Σa+Σb>(1+1/m)W。只对一个最优T或一个排列越界不够。CYCLE仅核某固定H的最优性，其成立不附带数值K≤W或弱预算；fresh客户仅在β中，不产生H负环。该过程不枚举所有SPE，也未在本次执行。对普遍目标仍须证明每个合法(I,σ)的M*上界。",
+  "scope": "对固定(I,σ)的开放弱冻结预算给完全精确的存在式判定和证书口径。m=1、W=0、空主题、比较重复、标签别名均保留；不通过比例除以W。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/冻结指派的交集运输与真实查询差额--引理.md",
+      "sha256": "b5487aab914f3550b0549b14acfb92cd01da5c28d9e8a24cd8209c2cb80b7d79",
+      "section": "BONUS：只有实际交集随指派变化"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/冻结指派的交集运输与真实查询差额--引理.md",
+      "sha256": "b5487aab914f3550b0549b14acfb92cd01da5c28d9e8a24cd8209c2cb80b7d79",
+      "section": "CYCLE：固定H最优指派的准确信息"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/冻结指派的交集运输与真实查询差额--引理.md",
+      "sha256": "b5487aab914f3550b0549b14acfb92cd01da5c28d9e8a24cd8209c2cb80b7d79",
+      "section": "已否强FOMA与仍未证的准确弱化"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "输入和终局量"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Boss6/map_cagc23_round44在definition pin df2e6bae03247f55d85f3bc3d4fc394d713315c9d3f51e251af38a53a44e6acd下完整实读7core及20个reading_refs，逐式重构以下局部贡献，保留同一实例/σ/实际Z/最优索引元组/匹配。只发现CROSS后解释展开句的F项未相消，恒等式及本文使用的结果均正确；本文件是原pin成熟草稿，Root先保存后修源刷新再窄续绑定，不能把旧pin收据直接作最终done。0原入口、0LP、0全树或全部匹配重跑。",
+  "contribution": {
+    "result": "对固定已认证(I,σ)及其actual Z，弱预算的两个存在量词恰等价M*(I,Z)≤(1+1/m)W，其中M*完整最小化全部合法最优索引m元组和其有理运输/纯指派成本；通过需一个匹配，否定需覆盖全部最优元组的下界。",
+    "remaining": "尚未证明对所有有限实例及每份完整纯SPE都有该数值上界；固定矩阵最优性、有限判定步骤、强式失败和旧固定锥浮点status2均不支付此全称义务，也不直接证明half。"
+  },
+  "endpoint_pins": {
+    "M-2a8a88d1fafa45b999f1506d22096df1": "a381f20a9d1c7275f8c9962dd1e2e04f9bf4cd92d6e6da43ec8cc48430ccc4c6",
+    "customer-attraction/frozen-assignment-intersection-transport-and-true-query-gap": "5066e4b4ec73318016764829321dfa8c21d01d4fc2a54f141d031c701c7fcfa8"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/冻结指派的交集运输与真实查询差额--引理.md": "b5487aab914f3550b0549b14acfb92cd01da5c28d9e8a24cd8209c2cb80b7d79",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "281ca8c44502be9e201821d09f6f6e3fc3c369339b2a04d0cfd89ebde8ae818e"
+}
