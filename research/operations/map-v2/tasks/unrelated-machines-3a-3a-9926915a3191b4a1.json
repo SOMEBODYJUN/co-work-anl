@@ -248,15 +248,92 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss5",
-  "request_id": "f5cbc61038a94ac28e1f69334d97a46f",
+  "request_id": "22a32e65990f43ffbdeb90d8100e84cb",
   "requests": {
     "81a0648c3de14140a1ae6370812f33c4": "plan",
     "f7d3f42e7d8e40e78e6e32224c4729d6": "claim",
     "ffcb10d39fb447679496f1a0e82bcf46": "read-add",
     "f59ce89d9a1447debd475f140ba8d53a": "read-add",
     "897db316569c47c3b7cd4e76388a2573": "plan",
-    "f5cbc61038a94ac28e1f69334d97a46f": "read-add"
+    "f5cbc61038a94ac28e1f69334d97a46f": "read-add",
+    "22a32e65990f43ffbdeb90d8100e84cb": "done"
+  },
+  "edge_paths": {
+    "um-b5-scheduling-karp-perfect3dm-to-third-unit-joint-choice": "map/edges/unrelated-machines-3a-3a-9926915a3191b4a1/karp-perfect3dm-to-third-unit-joint-choice.json",
+    "um-b5-scheduling-demand-floor-pays-parity-label-union-counterexample": "map/edges/unrelated-machines-3a-3a-9926915a3191b4a1/demand-floor-pays-parity-label-union-counterexample.json",
+    "um-r37-uniform-capacity-old-strict-exchange": "map/edges/unrelated-machines-3a-3a-1b7557db7c2d59cd/uniform-capacity-old-strict-exchange.json",
+    "um-a-474257b8-fixed-residual-lattice-specializes-occupation": "map/edges/unrelated-machines-3a-3a-3f971da9d312cddb/fixed-residual-lattice-specializes-occupation.json"
+  },
+  "receipt": {
+    "coverage": {
+      "unrelated-machines/fixed-literal-sa-unit-assignment-gap-two": {
+        "state": "isolated-after-review",
+        "object_pin": "090463ccc687381c17e37e47915bd034f0c03fcc68d608731453df54e7936be4",
+        "comparison_scope": "独立comparison group：完整读取SA主障碍、完整MODEL定义和独立注入/裸阈值审查。核r轮=至多r−1个signed literals、m≥r、全部局部事件一致性/零事件/补literal容量乘式、位长、m=r端点；同时核同文CONFIG容量反证及裸r1/T<1负控制。按六核心精确ID及SA/literal关键词检索当前registry与canonical边，未找到本对象现成逻辑边。其余五组不作为SA推导前提。",
+        "reason": "参数化构造给证书T=1+1/(m−r+1)可行、实际OPT2、固定r比值趋2；未求精确SA最小阈值。只否定同T的统一低于二舍入；不是一般相对OPT近似不可能性。MODEL仅提供原问题/剪枝与CONFIG定义，不额外证明SA signed-moment构造，故不造模型hub。裸r1单任务T=1/m的gap=m要求全类2T上界保剪枝/阈值域；m>r时CONFIG不可行，m=r/T2保可行边界。完整原矩阵算法、足够增长层数和其他层级仍未排除。本实际比较范围内无值得独立建边的另一已读端点；不据此宣称全仓永无关系。"
+      },
+      "UM-3DM-DEMAND-FLOOR-OBSTRUCTION-v1": {
+        "state": "linked",
+        "object_pin": "3f436f156f978cbca9eab8de4afff1ad29295712512aee482eacac55fdffb6fc",
+        "edge_ids": [
+          "um-b5-scheduling-demand-floor-pays-parity-label-union-counterexample"
+        ],
+        "comparison_scope": "独立comparison group：完整读取μ/ν源审查、资源标签缺陷审查、需求地板/三主机双源页；追加完整读取具名single-neighborhood-label-union-counterexample对象的body和evidence。对qK2 parity实例比较原多标签和并集模型，两侧typed资源独立核对。",
+        "reason": "新accepted whole边以μ2、ν1代闭式给原b*=1/2；并集模型直接把四typed资源分两组构造b*=1，完整支付无损合并失败。原均匀K放大同时压YES2/K，K2一终端层可遮蔽3DM gap；该边不把一般一致性gadget视为已得。q0软件约定不经bridge外推，真实终端根分支保1。原singleton Z错标Y只伤软件oracle，解析结构证明仍成立。本轮发现的A_q参数域笔误已由Boss最小修正，本core v3与本任务刷新pin已逐项核对；μ/ν主公式及证明不变。"
+      },
+      "UM-JOINT-CHOICE-NP-v1": {
+        "state": "linked",
+        "object_pin": "5f5a39df96175a8c037facd3c88d729abba52fa551803388001458cc41102d6c",
+        "edge_ids": [
+          "um-b5-scheduling-karp-perfect3dm-to-third-unit-joint-choice"
+        ],
+        "comparison_scope": "独立comparison group：完整读取q+3唯一small原程序整理、双原程序/版本边界、共同匹配三源审查与重边资源；追加完整读取UM-SOURCE-KARP-3DM的全文正文（含完整三坐标循环一致性来源）。直接比较精确perfect3DM语言与fixedδ<1/3的(Aδ)存在性。",
+        "reason": "新accepted whole transfer给显式S/E/R多项式编译、YES完整峰1、任意(Aδ)见证的完整actual解码和NP成员。唯一small迫余x整数，1/3格点使δ<1/3等价峰1，恰q激活triples迫完美matching。q0仍三R真实任务、孤立坐标合法NO；δ1/3有q1空E负控。后加half-unit全δ<1/2是另一构造，旧有限2438807节点不当全称证明；此选择困难不否定不经H的近二算法。"
+      },
+      "UM-SINGLE-CAPACITY-QUERY-RETURN-INDEX-EXCHANGE-v1": {
+        "state": "linked",
+        "object_pin": "a5698d48ea958a4724c64533496b4b3be56d9a3d8c9b1abca3abf68d9d6b0923",
+        "edge_ids": [
+          "um-r37-uniform-capacity-old-strict-exchange"
+        ],
+        "comparison_scope": "独立comparison group：完整读取v1原时间证明与历史尾审查；追加完整读取v2全部登记body/evidence（逐机统一定理、版本/五稿、平行元/双增广）。精确复用canonical uniform-capacity-old-strict-exchange.json，SHA ecefa379205957ebd0f769c432557826059ad2a19193c9c52eaaaa9b5c4e450f；本轮edge-check确认whole有效。",
+        "reason": "每finite原时间严格>B/2且≤T使每个X的weakB⇔资格matching⇔strictT；只在分析网络改为T后用v2，再恢复真实原p。共同C平行元与先qj后bi最多两搜索保全部A；无inactive承诺输出二选一，禁止inactive时得指定错配及反方向。原同机异权矩阵并非逐项含于v2。私有O_z完成所有原jobs才保外部峰；共享真实外端/模式相关A不免费外推。已存在精确whole边，不重复复制。"
+      },
+      "UM-RESIDUAL-THROUGHPUT-LATTICE-v1": {
+        "state": "linked",
+        "object_pin": "cd32211f2543cc3adaac3ff33e6915177a411ca8b38f0b4067d35b0e7e385f45",
+        "edge_ids": [
+          "um-a-474257b8-fixed-residual-lattice-specializes-occupation"
+        ],
+        "comparison_scope": "独立comparison group：完整读取固定R最终审查及所列两项有限/程序证据；追加完整读取occupation图程序对象的全部body/evidence。精确复用canonical fixed-residual-lattice-specializes-occupation.json，SHA 7b7be1b3eeb9ecc0f18186d082dac56452efdbffb4810fb4f9001a5350ebd269；本轮edge-check确认step有效。",
+        "reason": "对偶(min价,max势)/(max价,min势)的可行闭包及逐坐标重排给全部c,d格次模，含零时间；代c(I)的反序join/meet得固定tiny占位g非增次模、D超模。复用边contribution明确只支付图程序的该格结构，remaining保D=内部边数的精确割/定向证明、整数补全iff独立集、OPT1及星图交换障碍。动态R(H)同时变动时2×2值2,1,1,2不继承该结构，原OPT1/2；近满吞吐亦不等全任务完成。"
+      },
+      "UM-KNAPSACK-MATROID-EXPONENTIAL-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "e2a3e4709818f6eab0e23471a46b2054f199713fbb42fe5c5bcd18b70aa490e5",
+        "comparison_scope": "独立comparison group：完整读取原地回路资源、KDM/指数两源精读及Knapsack有限审查。核任意同E拟阵含F的单回路分类、|D|≥r+1、所有w0边界坏集的覆盖计数、对数下界、覆盖数反向uniform+free构造、strict阈值区间与输入位长。相关registry检索及该完整有限审查中同页h=1 envelope仅作不同参数域比较，不借其k≤4有限表升级一般证明。",
+        "reason": "对所有合法k,r和任意静态原地拟阵组，覆盖计数及覆盖数身份已是普遍定理；16组/2674回路/109351检查只是有限验证。端点k7/9代码没穷举augmentation不使uniform+free结构证明开放。固定B<2选r=dk给expΩ(k)数量，输入L=Θ(k log k)只声称对L超多项式，不是expΩ(L)。h=1的另一envelope族对应r=0，超出本定理r≥1域，不能机械作特化/等价；这里无第二个已读登记端点的真实新推导，不造共同matroid词汇边。固定独立私有辅助须先证接受族为收缩限制才适用；共享/动态辅助、投影和全局调度坏集可扩展仍属域外或未付。本范围无边不等于全仓无潜在迁移。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-9926915a3191b4a1/karp-perfect3dm-to-third-unit-joint-choice.json",
+        "sha256": "bfc3c80faf5fbbe35416b6bff1529ddb7ba89d0e672f9cd509d03509e1de2a12"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-9926915a3191b4a1/demand-floor-pays-parity-label-union-counterexample.json",
+        "sha256": "088911fca57a71cc93a564c6ff2dd4e888b59bb9e0601cd1a6cb61ff14fcc39d"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-1b7557db7c2d59cd/uniform-capacity-old-strict-exchange.json",
+        "sha256": "ecefa379205957ebd0f769c432557826059ad2a19193c9c52eaaaa9b5c4e450f"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-3f971da9d312cddb/fixed-residual-lattice-specializes-occupation.json",
+        "sha256": "7b7be1b3eeb9ecc0f18186d082dac56452efdbffb4810fb4f9001a5350ebd269"
+      }
+    ]
   }
 }
