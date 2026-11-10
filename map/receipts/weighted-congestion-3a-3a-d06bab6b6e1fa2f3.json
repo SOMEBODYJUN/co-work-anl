@@ -1,0 +1,18 @@
+{
+  "coverage": {
+    "WC-R3-SOURCE32-178-v1": {
+      "state": "isolated-after-review",
+      "object_pin": "9bee755ab574f38d2fcd7aa5d52f9ac4f006fc1cae20297a410896e31755b527",
+      "comparison_scope": "实读 WC-R3-SOURCE32-178-v1 v2 精确正文、两条攻击式和全部冻结证据，按完整 n,k 整数域、实 0<w≤1、β≥0 复算。正文 SHA fc89af9c3515b2c0d0cdf2461e6146301952f42003078848e679242910520ca8，证书 SHA 01ce8add2190ce7e3260c2dc7ffb765d85b8e6cec00ae031a92e7d626ca3c1b2，原整数检查器 SHA 0d3afd04aa12c17e68a04b39645e9f0658c19c4f9222ad3bcc9f395f38da3cfb。先由 H,L 同时严格大于 t=89/50 逐式得到 A>t、B>tD、β 的严格上下界，交叉乘得 P>0。有限域的推导依赖 A>t、B>tD 两个严格侧条件。89·55^32>50·56^32 给 w>1/55，nw<(1+w)t^(−1/k)<1+w 给 n≤55 及 n≥2 时 w<1/(n−1)，n=1 保留原端点 w≤1。以闭 I_n=[1/55,1/max(1,n−1)] 覆盖。逐叶把 Q=50²P 齐次化。令 r 为叶端点分母的 lcm，1,w 替为 r(1+z),ra+rbz，直接展开后 z^j 系数为 r^m·C(m,j)·b_j。据根分母与叶深度比例还原冻结向量，独立核对 1760 个真实次数 33–64 的多项式、1768 片（深度 0/1/2 分布 1755/7/6）、87400 个严格负整数、逐叶最大值及 SHA 全部匹配。每根闭区间由有理叶端排序后逐端相接、首尾一致地覆盖，路径无重复或前缀包含。Bernstein 基非负且和为 1，所以覆盖含端点的整段实数，给 Q<0，与严格反例的 Q>0 矛盾。",
+      "reason": "本批交源公式上界的全域证书覆盖。WC-ENVELOPE-CEILING v2 的 R≥e² 与 ln d≥16 门槛不能给固定 d=32 的 89/50，R3-SOURCE-SHARP-ASYMPTOTIC-v1 的渐近也不提供该次数数值，反方向同样没有推导。WC-R1-SOURCE-D2-ENVELOPE v2 和 weighted-congestion/two-attack-quadratic-real-envelope-19over18 的侧指数为 2，统一域含 β≤1。这里即使 k=2，侧指数仍是 32，人数仍限整数，故共用消元步骤不成立为对象级推导。宽域粗界 M-7d23b8e3f7de46a78d1433a2b44f0567 在 d=32 只给 8。作直接横截面对照，w>1,n≥2 时 D≥B 且 W≤A，故 L≤1。若 w>1,n=1，置 φ=(1+√5)/2。H>φ 给 βA>φB−1，D=w^k≥1，于是 L≤1+(B−D)/(D+βA)<1+1/φ=φ<89/50。w=0 按首商为 1 处理。故同型宽域 d=32 也可用 89/50，固定切片不证明粗界全部次数或其 d≥256 reset 分离。与 WC-R3-FULL-TOPOLOGY-REDUCTION-v3 的联合关系另由已发布的 3A 批 weighted-congestion-3a-3a-c6cc658fdbdfa5ab 承接。该归约把原游戏无弱 89/50-PNE 变成有合法源元组同时严格违反两条攻击界，因 2t(t−1)=3471/1250>1 而可在 t≥ρ 使用。再结合 WCF-R3-CROSS32-AUDIT-v1 的十四资源 16 态严格偏离才得到 WC-R3-CROSS32-TOPOLOGY-SEPARATION-v1 的整体分离。该联合关系不在此重复，源证书范围为两条公式。"
+    }
+  },
+  "assets": [],
+  "object_ids": [
+    "WC-R3-SOURCE32-178-v1"
+  ],
+  "read_object_ids": [],
+  "input_pins": {
+    "WC-R3-SOURCE32-178-v1": "9bee755ab574f38d2fcd7aa5d52f9ac4f006fc1cae20297a410896e31755b527"
+  }
+}
