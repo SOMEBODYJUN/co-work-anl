@@ -1,0 +1,64 @@
+{
+  "edge_id": "um-bf2-r33-compact-probe-star-no-first-step",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "UM-MACHINE-CONFIG-PROBE-GAP-v1"
+  ],
+  "target_ids": [
+    "UM-MINIMAL-STAR-CONTRACTION-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "紧凑探针族 k≥2，在 T=1 的当前阈值剪枝矩阵上保全部原任务与原资格。",
+  "roles": {
+    "UM-MACHINE-CONFIG-PROBE-GAP-v1": "提供完整显式矩阵及逐机独立延伸的同一反例族。",
+    "UM-MINIMAL-STAR-CONTRACTION-v1": "其极小超载星只在全邻域 S>T 且每种单件删除都降至≤T 时触发。"
+  },
+  "explanation": "中心 V 的全邻域总2，但删一小 Z 仍为2−1/k>1。每全局机有 N 个 X，删任一后负载 N−1>1。每本地 R 有 2k 个单位端，删一后 2k−1>1。共享 z 有 Nk 个 1/k 的 Y 端，总 N，删一后 N−1/k>1。各类行均有至少一种单件删除仍超载，所以精确整数收缩在此实例无第一步，虽然完整单机探针均通过且 T1 低于真实 OPT。",
+  "scope": "只是精确规则的适用边界。NO_RULE 既不接受也不拒绝原整数目标。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/单边界森林与极小超载星双源审查--审查.md",
+      "sha256": "8776d3938fd201fbdee497489d521bf52dc11df4cfd16be01ce8e4024f7a9069",
+      "section": "1. 精确可行性保持"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/成束局部相容性与极小星消元的身份边界--资源.md",
+      "sha256": "f0d0c03bf99a4979d8dbee110602efa18b5116f6884adfb5b419bcc338b250d8"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/全局行基数过滤与多外层单态小home双源审查--审查.md",
+      "sha256": "72061471b5bce8d44abbdcb885d7d68986959c1bac382405081f398ceb06cbbb",
+      "section": "2. 紧凑多项式族和整数值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/全局行基数过滤与多外层单态小home双源审查--审查.md",
+      "sha256": "72061471b5bce8d44abbdcb885d7d68986959c1bac382405081f398ceb06cbbb",
+      "section": "3. 所有逐机计数和配置探针仍通过"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/单边界消元与独立配置探针的恢复合同--资源.md",
+      "sha256": "aadcf1772ba9ccd911f7a116ff483f82cff65177f335d1edf7ae8ad450856bbc",
+      "section": "紧凑族：每个单机配置各自可延伸"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/完整单机配置审查的均匀装配与共同基点范围--审查.md",
+      "sha256": "f3b839dd8a479e59b40e3a64a4a329e2f7e4cb876326d6c5fe1a890393e6ea81"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对当前登记端点和所列精确正文，区分实际原任务、条件量词与历史有限证据。",
+  "endpoint_pins": {
+    "UM-MACHINE-CONFIG-PROBE-GAP-v1": "bd5d6989ebf852e0a30ec9d6b2dcfe3cddff55f9850ed5d9fc4c5dd08aaab38b",
+    "UM-MINIMAL-STAR-CONTRACTION-v1": "b29b4afc4fdc354c46c3b0226c6c01ee28b3374738129571f87b57cd17378668"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/单边界森林与极小超载星双源审查--审查.md": "8776d3938fd201fbdee497489d521bf52dc11df4cfd16be01ce8e4024f7a9069",
+    "archives/unrelated-machines/state/资源/成束局部相容性与极小星消元的身份边界--资源.md": "f0d0c03bf99a4979d8dbee110602efa18b5116f6884adfb5b419bcc338b250d8",
+    "archives/unrelated-machines/state/审查/全局行基数过滤与多外层单态小home双源审查--审查.md": "72061471b5bce8d44abbdcb885d7d68986959c1bac382405081f398ceb06cbbb",
+    "archives/unrelated-machines/state/资源/单边界消元与独立配置探针的恢复合同--资源.md": "aadcf1772ba9ccd911f7a116ff483f82cff65177f335d1edf7ae8ad450856bbc",
+    "archives/unrelated-machines/state/审查/完整单机配置审查的均匀装配与共同基点范围--审查.md": "f3b839dd8a479e59b40e3a64a4a329e2f7e4cb876326d6c5fe1a890393e6ea81"
+  },
+  "review_digest": "bdf0661cf36ad1ca2f0e99081f5fb7fa58ecac4edba92ee435805a4a31831d85"
+}

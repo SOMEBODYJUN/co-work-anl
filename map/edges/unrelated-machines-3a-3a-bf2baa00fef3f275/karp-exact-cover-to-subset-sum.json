@@ -1,0 +1,63 @@
+{
+  "edge_id": "um-bf2-r33-karp-exact-cover-to-subset-sum",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-ddb8ee6a112145848ec4170ede09001b"
+  ],
+  "target_ids": [
+    "M-3b86775406844d70ab9f79d911c33bd6"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "历史正整数等式 KNAPSACK 语言，输入和输出数值都按二进制收费。",
+  "roles": {
+    "M-ddb8ee6a112145848ec4170ede09001b": "提供历史 EXACT COVER 的完全性与索引关联矩阵。",
+    "M-3b86775406844d70ab9f79d911c33bd6": "接收无进位的等式子集和映射。"
+  },
+  "explanation": "先处理空宇宙、空族、未覆盖元素等平凡分支并删空集合，使非平凡分支 d=r+1≥2 且所有 a_j 正。令 a_j=Σ_i 1[u_i∈S_j]d^{i−1}，b=Σ_i d^{i−1}。任意 0/1 选择在每位总数≤r<d，故 Σ_j a_jx_j=b 当且仅当每个原元素的覆盖次数恰1。每个数位长 O(|U| log(r+1))，可用重复乘 d 的整数算术位多项式写出。非法源输入送固定 NO，目标成员性用选择向量和精确整数求和。",
+  "scope": "结论限于原序18的 SUBSET SUM 判定身份。此编码允许指数数值，按二进制长度计算。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "2. 主定理的21个判定问题及历史术语"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "1. 先固定语言、量词和编码"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "4.1 SAT到至多3文字SAT"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "4.2 至多3文字SAT到着色：原印符号必须校正"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "4.3 着色到团覆盖、到精确覆盖"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "5.4 Exact Cover到原名KNAPSACK：基数不是指数位长"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对当前登记端点和所列精确正文，区分实际原任务、条件量词与历史有限证据。",
+  "whole_result": "历史 EXACT COVER 位多项式 many-one 归约到历史 KNAPSACK / SUBSET SUM，后者在 NP，故 NP 完全。",
+  "endpoint_pins": {
+    "M-3b86775406844d70ab9f79d911c33bd6": "d7d8b8c8dbd797f6ad0dfd8712f1767502a9b73fd5bf1c1c2f02f4c6720a78c5",
+    "M-ddb8ee6a112145848ec4170ede09001b": "c88c8d422c38bfbfe9f8b0570f050593b29f2f6859e2bbcd6d6ac86ac21b6a7e"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d"
+  },
+  "review_digest": "3534a1a1dec6d8e7fb82fb619bd0ca321ddf679500ef6124a01172603d16e10a"
+}

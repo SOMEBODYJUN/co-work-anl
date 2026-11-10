@@ -1,0 +1,47 @@
+{
+  "edge_id": "ca-r33-occupancy-transfer-produces-two-client-wallet-failure",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-restriction-actual-path-common-wallet-and-occupancy-transfers"
+  ],
+  "target_ids": [
+    "arbitrary-occupancy-flow-current-customer-loss-exceeds-coverage-wallet"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m=2，两个不交单例 X={x},Y={y}。原策略根 X、末位总取另一主题。B={x}，干预根改 Y，末位继续选 Y。",
+  "roles": {
+    "customer-restriction-actual-path-common-wallet-and-occupancy-transfers": "提供任意合法保守流上当前份额与社会覆盖的精确转移式。",
+    "arbitrary-occupancy-flow-current-customer-loss-exceeds-coverage-wallet": "以两客户、全树可信原策略和一条合法干预实现所需的负其他角色转移。"
+  },
+  "explanation": "原根改 Y 后真续局为 YX，两根收益均 1；原两个末位节点 fresh 的 1 严格超过复制的 1/2，故这是一份完整纯 SPE。保守确定流的原策略规定叶依次 XY→YX→YY。B 初覆盖1，末覆盖0。第一边其他角色从0升1，故其有符号损失−1；第二边其它角色的 B 利润皆0。由 TRANSFER 得当前角色总正损失 A_B=1−0−(−1)=2>1；两边当前差均1，社会覆盖仍恰损失1。",
+  "scope": "反驳任意保守干预流自动以起始覆盖支付当前份额损失。第二边在原 actual 之外，不影响 PATH-WALLET 或特殊最优排列流。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/任意干预流的当前客户分享损失越过覆盖钱包--反例.md",
+      "sha256": "9ca314f2d0098dc8acb5cda1b95ff413a4f966a64d89a6a6c76e64989caa365a"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/客户限制的路径共同钱包与占用流转移--引理.md",
+      "sha256": "4ec9a9caed3df30580f2ff5c5f12995e2aafbbbe5a8a2b53db6341598b374131"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐节点核对两人全树，并单独检查干预不须理性及两边方向。",
+  "whole_result": "存在两客户完整原 SPE 及保守合法干预流，A_B=2 超过初始 B 覆盖1，而社会覆盖损失为1。",
+  "endpoint_pins": {
+    "arbitrary-occupancy-flow-current-customer-loss-exceeds-coverage-wallet": "199cbff552c32c1f7a32c5e83480dbd1efe9c39bde579b571c1363207f3c94d5",
+    "customer-restriction-actual-path-common-wallet-and-occupancy-transfers": "f2b7df55c4d4a9becbf24da874abd2a9adf83c257467749c1ba02a0fb289ac4d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/反例/任意干预流的当前客户分享损失越过覆盖钱包--反例.md": "9ca314f2d0098dc8acb5cda1b95ff413a4f966a64d89a6a6c76e64989caa365a",
+    "archives/customer-attraction/state/引理/客户限制的路径共同钱包与占用流转移--引理.md": "4ec9a9caed3df30580f2ff5c5f12995e2aafbbbe5a8a2b53db6341598b374131"
+  },
+  "review_digest": "7e5092502a312ba06667af6d8d126d473d98d9c8f04b9a4e8a133e1f7a20b151"
+}

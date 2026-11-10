@@ -1,0 +1,53 @@
+{
+  "edge_id": "ca-r33-integer-core-credit-lifts-to-full-history-guard",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-933d3cc677364f05acfe3a24b202f1bc"
+  ],
+  "target_ids": [
+    "customer-attraction/bounded-core-pollution-guard-integer-balanced-credit-full-history-induction"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定 G、各 guard 的整数 cap 和相对 G 私有核心，Σcap≥m。核心的整数污染最大 β 及严格大小、λ 阈值满足目标假设。",
+  "roles": {
+    "M-933d3cc677364f05acfe3a24b202f1bc": "按同一真实终局的整数分母给核心收益下界。",
+    "customer-attraction/bounded-core-pollution-guard-integer-balanced-credit-full-history-induction": "逆深度将局部信用接成原完整策略上的两个历史不变量。"
+  },
+  "explanation": "对有序历史逆向同时证明收益≥λ 和拒绝已满 guard。任意长度 t<m 历史至少有一未满 guard Q；真改 Q 后当前补一未越 cap，且更深真实规定者拒绝继续选择已满 Q，故终局 q≤κ。核心只由 Q 与 outside 覆盖，源信用给 B_int，非核心每客至少 1/m，总偏离收益≥λ，原当前 IC 传回规定收益。选已满 T 的任意真后继收益至多 |T|/(k_T+1)<λ，故不会指定。末位以同一不需更深条件的比较作基例。根收益相加给 W≥mλ，另有 OPT≤2mλ 则 half。",
+  "scope": "全部合法有序历史，包括已有任意 outside 或其他超 cap 的历史；局部平衡构造只用于收益信用。m=1 的同一论证取 κ=1。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/有限核心污染守卫的整数平衡信用与全历史归纳--定理.md",
+      "sha256": "dbbdc63dd1f4f67f7251c6d31a910fab47b6856c81160b9d95ba92b6d6775f49",
+      "section": "同一终局的精确整数平衡核心信用"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/私有核心容量守卫的作者证明与三种独审先验--资源.md",
+      "sha256": "9d9a9731fafffd9206b23ef736ff2456c3c4385fce5dc56733dc8953e7348a48"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/有限核心污染守卫的整数平衡信用与全历史归纳--定理.md",
+      "sha256": "dbbdc63dd1f4f67f7251c6d31a910fab47b6856c81160b9d95ba92b6d6775f49",
+      "section": "适用全部合法历史的条件"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对未满 guard 存在性、真实续局 q≤κ、非核心 1/m 和对已满标签严格排除；未假 outside 小。",
+  "whole_result": "在 guard 条件下，任意完整 SPE 的任意合法历史当前收益≥λ，并且不选已满 guard。根 W≥mλ，附加 OPT≤2mλ 时半覆盖。",
+  "endpoint_pins": {
+    "M-933d3cc677364f05acfe3a24b202f1bc": "1172b844bd0874db148727d578c89211489102a516e8c07caee0662d57bc05f8",
+    "customer-attraction/bounded-core-pollution-guard-integer-balanced-credit-full-history-induction": "23fe0b8596279df391e7cd56de10695a13cd289ef420882038dcd7812f8f82b5"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/定理/有限核心污染守卫的整数平衡信用与全历史归纳--定理.md": "dbbdc63dd1f4f67f7251c6d31a910fab47b6856c81160b9d95ba92b6d6775f49",
+    "archives/customer-attraction/state/资源/私有核心容量守卫的作者证明与三种独审先验--资源.md": "9d9a9731fafffd9206b23ef736ff2456c3c4385fce5dc56733dc8953e7348a48"
+  },
+  "review_digest": "f6915a9485fabbd3eb3fd8933817f25af3312bdc87e3c540788634e17678b494"
+}

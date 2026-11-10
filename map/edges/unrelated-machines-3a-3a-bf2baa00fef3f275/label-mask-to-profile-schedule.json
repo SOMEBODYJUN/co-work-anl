@@ -1,0 +1,62 @@
+{
+  "edge_id": "um-bf2-r33-label-mask-to-profile-schedule",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "finite_grid_label_mask_log_potential_derandomization_v1"
+  ],
+  "target_ids": [
+    "UM-NORMALIZED-TYPE-MATCHING-RANK-VALUE-IDENTITY-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "给每个非空玩家选定一个显式 profile c_i 及集合 S_i，各类型在 S_i 中的资源数≤c_i(v)。用格点权 w_ij=v_ij/W(c_i)，共同 Q 符合标签工具，给独立 item 标签概率、正 ν_i，令 V_i=ν_i+Σ_{j∈S_i}w_ij。同目标标签的 S_i 两两不交。",
+  "roles": {
+    "finite_grid_label_mask_log_potential_derandomization_v1": "确定性给一个原资源标签向量，使总对数势至多 H=EΦ+ε，并在同标签不交时给实际不交 T_i。",
+    "UM-NORMALIZED-TYPE-MATCHING-RANK-VALUE-IDENTITY-v1": "接收这些真实不交 bundles，逐类型外送实际 tokens，并保全部 indexed profile 的 jobs。"
+  },
+  "explanation": "固定输出 T_i={j∈S_i:r_j=t_i}。若同一资源出现在两个 T_i，它的唯一标签迫目标标签相同，违背同标签不交。因为 ν_i+W_i≤V_i，每个对数项非负，所以总势≤H 给各 i 的 ν_i+W_i≥V_i exp(−H)。类型个数约束使 f_{i,c_i}(T_i)=W_i，因而 F_i(T_i)≥W_i≥max(0,V_i exp(−H)−ν_i)。用实际 selector 选 c_i，每个 T_i 中正权资源接同类 token，其余 tokens 包括未选 indexed profiles 全留各自 private，资源机至多一 unit，故输出完整原任务峰≤2−λ，λ=min_i max(0,V_i exp(−H)−ν_i)。λ 仅用于保证，程序直接构造原调度，不需计算指数。",
+  "scope": "输入需另给已选 profile、真实同标签不交、概率与数值 Q。此为归一化值桥的一个显式前向输入生成器，无概率质量地板或共同 profile 搜索承诺。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/归一化类型匹配编译的全任务有限核验--资源.md",
+      "sha256": "9bd16e330e4c9ed1e9a65de5e8841ce6c764fdc633807a27d2aa8a479edb815a",
+      "section": "全量jobs的真实UM编译与双向证明"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/归一化类型匹配编译的全任务有限核验--资源.md",
+      "sha256": "9bd16e330e4c9ed1e9a65de5e8841ce6c764fdc633807a27d2aa8a479edb815a",
+      "section": "输入域：正W、indexed菜单、零型和缺失型"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/行列池类型配置与单位读出三源接续审查--审查.md",
+      "sha256": "6e60ab060e757aeed470e0086620e882e6a78d8fb102a2276f9d3fe8acb650b2",
+      "section": "2.2 归一化 profile 的真实 UM 恒等式"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/有限格点标签掩码对数势去随机--证明.md",
+      "sha256": "37ac6752c849858fddf10e3ccaf6de64cb34a05bd0f5573c615fb6ccf27feb16"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/有限格点标签势去随机化独立核验--审查.md",
+      "sha256": "72377cd50a96a9f42ea220db2923bfdf9b2443e449728a4930fbc4c3fb2f8de4"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对当前登记端点和所列精确正文，区分实际原任务、条件量词与历史有限证据。",
+  "contribution": {
+    "result": "有效标签掩码为归一化 profile 编译构造一份不交实际资源分配及峰≤2−λ 的全原任务调度。",
+    "remaining": "任意菜单的双向恒等式另需真实 sub-2 调度解码。要作统一近似还须另证可构造的掩码、数值 Q 和有正统一余量的 λ。"
+  },
+  "endpoint_pins": {
+    "UM-NORMALIZED-TYPE-MATCHING-RANK-VALUE-IDENTITY-v1": "e10686a02bd876a2be1a5b3819e72cf06e63cf94f12cc3d97d4ef693ea50f09a",
+    "finite_grid_label_mask_log_potential_derandomization_v1": "785a7c02f82d6b0a151874ee20127e39b782472cadb91ece1703e239bd27613a"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/归一化类型匹配编译的全任务有限核验--资源.md": "9bd16e330e4c9ed1e9a65de5e8841ce6c764fdc633807a27d2aa8a479edb815a",
+    "archives/unrelated-machines/state/审查/行列池类型配置与单位读出三源接续审查--审查.md": "6e60ab060e757aeed470e0086620e882e6a78d8fb102a2276f9d3fe8acb650b2",
+    "archives/unrelated-machines/state/证明/有限格点标签掩码对数势去随机--证明.md": "37ac6752c849858fddf10e3ccaf6de64cb34a05bd0f5573c615fb6ccf27feb16",
+    "archives/unrelated-machines/state/审查/有限格点标签势去随机化独立核验--审查.md": "72377cd50a96a9f42ea220db2923bfdf9b2443e449728a4930fbc4c3fb2f8de4"
+  },
+  "review_digest": "9a7748f711c3f88a08c94757efe7953f570e26d1c2ccbb7b58d442fed2d19593"
+}

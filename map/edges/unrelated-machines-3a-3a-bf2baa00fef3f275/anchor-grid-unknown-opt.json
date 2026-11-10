@@ -1,0 +1,64 @@
+{
+  "edge_id": "um-bf2-r33-anchor-grid-unknown-opt",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-ANCHOR-DEFICIENCY-JOINT-ROUNDING-v1"
+  ],
+  "target_ids": [
+    "UM-ANCHOR-DEFICIENCY-PROMISE-APPROX-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "固定 B/S、α∈[0,1/2)、β≥0、d0。原 anchor 图每含 anchor 分量缺额≤d0。正 OPT 时承诺存在一份最优调度，其实际 anchor 端≥(1−α)OPT、实际 tiny 端≤βOPT。",
+  "roles": {
+    "UM-ANCHOR-DEFICIENCY-JOINT-ROUNDING-v1": "其 Hall 和全局 tiny ST 的成功证明只使用联合 LP 与 anchor 上界。",
+    "UM-ANCHOR-DEFICIENCY-PROMISE-APPROX-v1": "把规模承诺用在 OPT 处的 LP 完备性，再取最小接受精确网格点。"
+  },
+  "explanation": "逐任务零端检查给零最优分支。候选 T 仅保留 anchor p≤T 与 tiny p≤βT。T=OPT 时承诺见证中每机至多一 anchor 且其真实处理时间≥h，因此联合 LP 可行。T 增加只增资格，容量 T(1−(1−α)y_i) 随 T 非减。剪边保持原顶点，只分裂原分量。LP 的饱和 anchor 流迫各新分量缺额非负，含孤立机的分裂缺额和为原缺额，故每个新含 anchor 分量的缺额仍≤d0。令 Q 为有限加工时间分母乘积，U=Σ_j min_i p_ij。QU 整数且具有多项式位长，OPT 在 1/Q 网格并≤U。二分首接受 T0≤OPT 只需 O(log(QU+1)) 次有理 LP。使用联合 LP 的成功证明，删机和匹配只看占位与 ℓ_i，实际锚端按 p≤T0 付费，tiny 按 βT0 付费，得到登记比率。原缺额违例走 OUT-OF-CLASS。",
+  "scope": "承诺存在性的算法。返回的 T0 是 LP 谓词的首网格接受点，通常与普通 OPT 不同。统一严格次二需固定余量 (1−α)/(d0+1)−β>0。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/仿射固定基数边界与锚任务缺额联合舍入双源审查--审查.md",
+      "sha256": "8a37f91432549ca280f8defc5d4ee0baf1d46a31b81ab67a8bf4ef73fb3c2b6c",
+      "section": "3.6 未知 OPT 的承诺版本"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/锚缺额联合舍入的精确删选合同与审查先验--审查.md",
+      "sha256": "6e8e88b210bc63ac68f6d8aef444679f60ca6c918272b8657dcb868916300acd",
+      "section": "最小阻塞集推广与未知OPT承诺"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/仿射固定基数边界与锚任务缺额联合舍入双源审查--审查.md",
+      "sha256": "8a37f91432549ca280f8defc5d4ee0baf1d46a31b81ab67a8bf4ef73fb3c2b6c",
+      "section": "3.3 严格低占位删机与 Hall 证明"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/仿射固定基数边界与锚任务缺额联合舍入双源审查--审查.md",
+      "sha256": "8a37f91432549ca280f8defc5d4ee0baf1d46a31b81ab67a8bf4ef73fb3c2b6c",
+      "section": "3.4 冻结 anchor 后的一次全局 ST 舍入"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-next-four-audit-primary/comparison/research/current/unrelated_machines/anchor_deficiency_joint_rounding.md",
+      "sha256": "dd2e88af7ef222d0eecfd8ed0b1ac3c10f6da8ca41ae7c5f4ca46333c91ea779"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/仿射固定基数边界与锚任务缺额联合舍入双源审查--审查.md",
+      "sha256": "8a37f91432549ca280f8defc5d4ee0baf1d46a31b81ab67a8bf4ef73fb3c2b6c",
+      "section": "3. 对象二：近单位锚任务的分量缺额与全局联合舍入（ID `78b4b3116ebe9be9ccd3`）"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对当前登记端点和所列精确正文，区分实际原任务、条件量词与历史有限证据。",
+  "whole_result": "在原缺额和存在最优尺度承诺下，确定性位多项式输出全原任务调度，峰≤[2−(1−α)/(d0+1)+β]OPT。",
+  "endpoint_pins": {
+    "UM-ANCHOR-DEFICIENCY-JOINT-ROUNDING-v1": "625952e118e0c3e74adf7e33174a415287acb87129e09ff8df21ebf6632b4d58",
+    "UM-ANCHOR-DEFICIENCY-PROMISE-APPROX-v1": "bfbe115fc70fae4c7e46532f87fb93dee168656da42c6d6876bd0e81bb3ce9ef"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/仿射固定基数边界与锚任务缺额联合舍入双源审查--审查.md": "8a37f91432549ca280f8defc5d4ee0baf1d46a31b81ab67a8bf4ef73fb3c2b6c",
+    "archives/unrelated-machines/state/审查/锚缺额联合舍入的精确删选合同与审查先验--审查.md": "6e8e88b210bc63ac68f6d8aef444679f60ca6c918272b8657dcb868916300acd",
+    "archives/unrelated-machines/tools/evidence/um-next-four-audit-primary/comparison/research/current/unrelated_machines/anchor_deficiency_joint_rounding.md": "dd2e88af7ef222d0eecfd8ed0b1ac3c10f6da8ca41ae7c5f4ca46333c91ea779"
+  },
+  "review_digest": "ce27d50631140c6c5c89c8437f817c5bc9b8f9dd66d7a3ae2b67be5677447bde"
+}

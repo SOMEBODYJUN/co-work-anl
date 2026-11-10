@@ -1,0 +1,55 @@
+{
+  "edge_id": "um-bf2-r33-private-sink-all-slot-output",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-ST-ROUND-v1"
+  ],
+  "target_ids": [
+    "UM-PRIVATE-SINK-FIXED-HULL-ROW-COUNT-EXACT-OBSTRUCTION-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一 r≥k≥2 的私有汇点族及其 r 个真最优调度的平均边际 x，使用标准有序槽且每个槽最多匹一件。",
+  "roles": {
+    "UM-ST-ROUND-v1": "覆盖匹配存在，每行任务数不超过其槽数 ceil(N_i)。",
+    "UM-PRIVATE-SINK-FIXED-HULL-ROW-COUNT-EXACT-OBSTRUCTION-v1": "在固定凸包点的件数合同 b₀=0 上，目标有全匹配精确障碍。"
+  },
+  "explanation": "所有私有 sink 槽数为 ceil(k/r)=1，所有 home 槽数为 ceil(k−(k−1)/r)=k。完整槽匹配中宏放某 H_h，若该组一件 small 都未外送，H_h 接 k+1 件而违反 k 槽。私有 sink 只有一槽，故恰有一件外送，L_Hh=2−1/k。其它 home 及 sink 负载≤1。这个计算仅用实际任务位置和槽计数，对任何合法平局和全覆盖匹配成立。",
+  "scope": "得到固定点件数合同 b₀=0 的精确值及实际所有槽匹配的同峰现象。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/最优凸包逐行枚举与两两负相关分布双原入口--资源.md",
+      "sha256": "5447f0c5d000e8470bd2c337624a10314ce6833da73476fdfbd63fd9d6e43621",
+      "section": "同一完整矩阵和真实凸包点"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/长链联合投影与最优凸包边际障碍有限审查--审查.md",
+      "sha256": "79deab2f057bc56a6c0f58cca31a7ffb35158992d9e39b6deda16dc03eaa11c3"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/最优凸包逐行枚举与两两负相关分布双原入口--资源.md",
+      "sha256": "5447f0c5d000e8470bd2c337624a10314ce6833da73476fdfbd63fd9d6e43621"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md",
+      "sha256": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对当前登记端点和所列精确正文，区分实际原任务、条件量词与历史有限证据。",
+  "contribution": {
+    "result": "该真最优凸包点的所有标准覆盖槽匹配峰恰为 2−1/k，并达到目标件数合同 b₀=0 的精确值。",
+    "remaining": "任意 b₀ 和 a,b 逐行合同的精确前沿由目标的单汇点容量计数和显式外送证明承担。"
+  },
+  "endpoint_pins": {
+    "UM-PRIVATE-SINK-FIXED-HULL-ROW-COUNT-EXACT-OBSTRUCTION-v1": "fa36e11f67634a2c4fe5a5facec0d6159bac71153549a524671614f13fc8de21",
+    "UM-ST-ROUND-v1": "8c4662c822ebd204e3b095934f8745464426df43fc2328a6bbc35063e4148ea1"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/最优凸包逐行枚举与两两负相关分布双原入口--资源.md": "5447f0c5d000e8470bd2c337624a10314ce6833da73476fdfbd63fd9d6e43621",
+    "archives/unrelated-machines/state/审查/长链联合投影与最优凸包边际障碍有限审查--审查.md": "79deab2f057bc56a6c0f58cca31a7ffb35158992d9e39b6deda16dc03eaa11c3",
+    "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6"
+  },
+  "review_digest": "31be937fbfea01104d0ee699d3b560d8072c69f97e23d0fd6e3b272a7ffbb1bd"
+}

@@ -1,0 +1,50 @@
+{
+  "edge_id": "um-bf2-r33-upper-column-to-private-assignment",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-22a10c9895bd43fb83aed6e894d5aea2"
+  ],
+  "target_ids": [
+    "UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "采用同质宏定理的残余容量和显式可行私有 LP 点 x。每行 q_i=max{p_ij:x_ij>0}，空支撑取0。",
+  "roles": {
+    "M-22a10c9895bd43fb83aed6e894d5aea2": "以非负列预算 1 对显式 partition 基的全部行同时舍入。",
+    "UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1": "得到固定核心后的私有实际任务逐行误差 q_i，作为槽匹配步骤的另一个证明。"
+  },
+  "explanation": "为每个正支撑原端 (i,j) 建一元素，按原任务 j 分 partition 类，每类恰取一元素。它是每个 j 一个独占匹配端再作显式平行复制的特例，基多面体直接由每类坐标非负和为1给出，原 x 属于其中。对 q_i>0 的对应唯一机器行填 A_{i,(i,j)}=p_ij/q_i，其他坐标零。q_i=0 的行原支撑只含零时间，直接满足。每列总量≤1，原 x 的行右端为 c_i/q_i。应用列预算定理给一个实际基且 A1_I≤c_i/q_i+1，反缩放得 L_i^private≤c_i+q_i，逐元素解码保每件原任务恰一次。显式基坐标 LP 可逐坐标求顶点，保总位多项式。",
+  "scope": "这一映射接替私有舍入步骤并保持负载保证。宏匹配、固定残余容量、LP 见证和 FAIL 完备性仍由目标的同质宏合同提供。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/算法/按home同质宏的任意私有边舍入--算法.md",
+      "sha256": "7c68cc57c1e0360ffb24a2c1f674dd726e36c4f42b992a728a2b1a25bf850451"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/非负列总量拟阵基逐行加B舍入--定理.md",
+      "sha256": "371dd0c200f7ef3b42c9c130e4ebe44349bd2494b360283216f443b7060eeb93"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/上列预算拟阵基加B舍入双源审查--审查.md",
+      "sha256": "b2297b8dfe3c66880edcc037447ec5e24869b605e35d204362b2da12d72007e3"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对当前登记端点和所列精确正文，区分实际原任务、条件量词与历史有限证据。",
+  "contribution": {
+    "result": "由给定残余可行点 x 确定性构造同一份私有实际指派，每机负载≤c_i+q_i。",
+    "remaining": "从真实 T 调度得到 c_i 的 LP 见证、宏完美匹配和 sound FAIL 由同质宏结构另证。槽图本身由有序槽定理提供。"
+  },
+  "endpoint_pins": {
+    "M-22a10c9895bd43fb83aed6e894d5aea2": "71ebc9208ad11382ec483613608091862a45745d7537b7e8b635f9cd1b23a6f7",
+    "UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1": "bfed6abfc7a5f6c3765b01c67be6d4bff4857a8ebf216d21e5d1aa0b07713780"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/算法/按home同质宏的任意私有边舍入--算法.md": "7c68cc57c1e0360ffb24a2c1f674dd726e36c4f42b992a728a2b1a25bf850451",
+    "archives/unrelated-machines/state/定理/非负列总量拟阵基逐行加B舍入--定理.md": "371dd0c200f7ef3b42c9c130e4ebe44349bd2494b360283216f443b7060eeb93",
+    "archives/unrelated-machines/state/审查/上列预算拟阵基加B舍入双源审查--审查.md": "b2297b8dfe3c66880edcc037447ec5e24869b605e35d204362b2da12d72007e3"
+  },
+  "review_digest": "4ac465c83fa5ec40230c5a23f28a71d31fe6a19777b16bb3b2c67bb3585ee249"
+}

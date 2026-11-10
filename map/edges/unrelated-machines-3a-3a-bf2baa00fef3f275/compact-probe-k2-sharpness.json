@@ -1,0 +1,62 @@
+{
+  "edge_id": "um-bf2-r33-compact-probe-k2-sharpness",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-MACHINE-CONFIG-PROBE-GAP-v1"
+  ],
+  "target_ids": [
+    "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取紧凑探针族 k=2，T=1，全部合法端为 1/2 或1，故所有容量1原配置至多两件且无零端。",
+  "roles": {
+    "UM-MACHINE-CONFIG-PROBE-GAP-v1": "给真实整数 OPT=3/2、完整 CONFIG(1) 及该族全部单机探针。",
+    "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1": "其 K=2 槽界的下侧由所有原调度的精确下界见证。"
+  },
+  "explanation": "k=2 时至少四个中心接 X。若实际峰<3/2，每个这样的中心必须送走两件 Z，各对应块的三个本地单位槽便不能同时接两 Z 和两 Y，故每活跃块至少一件 Y 去 z。四件 Y 每件 1/2，导致 z 负载≥2。该族存在显式 CONFIG(1)，其中每行容量1自动给至多两件。任意覆盖槽匹配是一份原实际调度，峰至少 3/2，因此本族也见证 K=2 任意匹配包络的锐下侧。给定点定理的 3/2 上界随即使每份覆盖匹配在这族达到该值。",
+  "scope": "精确接到 K=2 下侧及全部独立探针仍通过的受限例。K≥3 的上界、锐性和未知普通 OPT 承诺独立。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/有界配置基数的严格槽余量与承诺搜索--定理.md",
+      "sha256": "29740fdc4ca1461600f22b2b517c2f458a1208863626e09d0f29f4399abb4817"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/全局行基数过滤与多外层单态小home双源审查--审查.md",
+      "sha256": "72061471b5bce8d44abbdcb885d7d68986959c1bac382405081f398ceb06cbbb",
+      "section": "2. 紧凑多项式族和整数值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/全局行基数过滤与多外层单态小home双源审查--审查.md",
+      "sha256": "72061471b5bce8d44abbdcb885d7d68986959c1bac382405081f398ceb06cbbb",
+      "section": "3. 所有逐机计数和配置探针仍通过"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/单边界消元与独立配置探针的恢复合同--资源.md",
+      "sha256": "aadcf1772ba9ccd911f7a116ff483f82cff65177f335d1edf7ae8ad450856bbc",
+      "section": "紧凑族：每个单机配置各自可延伸"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/完整单机配置审查的均匀装配与共同基点范围--审查.md",
+      "sha256": "f3b839dd8a479e59b40e3a64a4a329e2f7e4cb876326d6c5fe1a890393e6ea81"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对当前登记端点和所列精确正文，区分实际原任务、条件量词与历史有限证据。",
+  "contribution": {
+    "result": "在 K=2 的完整 CONFIG(1) 上，所有实际调度、因而所有槽覆盖匹配，均不能低于 3/2。这提供 K=2 锐性的另一原矩阵见证。",
+    "remaining": "一般 K 的槽上界、K=3 锐性及其它 K 的完整包络分析仍由相应定理及其余构造提供。"
+  },
+  "endpoint_pins": {
+    "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1": "1446c2007dc779eda52b67f522d737cb36c852c2601220adbca4e3bf3b35d890",
+    "UM-MACHINE-CONFIG-PROBE-GAP-v1": "bd5d6989ebf852e0a30ec9d6b2dcfe3cddff55f9850ed5d9fc4c5dd08aaab38b"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/有界配置基数的严格槽余量与承诺搜索--定理.md": "29740fdc4ca1461600f22b2b517c2f458a1208863626e09d0f29f4399abb4817",
+    "archives/unrelated-machines/state/审查/全局行基数过滤与多外层单态小home双源审查--审查.md": "72061471b5bce8d44abbdcb885d7d68986959c1bac382405081f398ceb06cbbb",
+    "archives/unrelated-machines/state/资源/单边界消元与独立配置探针的恢复合同--资源.md": "aadcf1772ba9ccd911f7a116ff483f82cff65177f335d1edf7ae8ad450856bbc",
+    "archives/unrelated-machines/state/审查/完整单机配置审查的均匀装配与共同基点范围--审查.md": "f3b839dd8a479e59b40e3a64a4a329e2f7e4cb876326d6c5fe1a890393e6ea81"
+  },
+  "review_digest": "2f8722a7dccb44aaf707cf33fe1595ca3686cb6354d02c1600ef36657cbc80a3"
+}

@@ -1,0 +1,42 @@
+{
+  "edge_id": "ca-r33-predictable-seat-kernel-to-fixed-p-bellman",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/true-denominator-free-future-seats-and-predictable-continuation-prices"
+  ],
+  "target_ids": [
+    "M-400a8e15f5cc4b51af480210408a5545"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一完整 σ、遗漏客户 x、与激活无关的残源和首动作。给定 p，条件当前角色已激活；出口从 f 个互异真未来角色中预定并按原时间检查。",
+  "roles": {
+    "customer-attraction/true-denominator-free-future-seats-and-predictable-continuation-prices": "提供允许的查询/出口域、真实 f、单位价和可预测激活核。",
+    "M-400a8e15f5cc4b51af480210408a5545": "对每个固定 p 得有序几何权的可达最小费用。"
+  },
+  "explanation": "若状态查询为 a，按时序选 j₁<…<j_f，全部出口不活跃的概率 (1−p)^f 乘本价 r_i(a)=u_i/D_i(a)。首次活跃为 j_l 的概率 p(1−p)^(l−1)，其事件只用不晚于 j_l 的位，未暴露更晚位，故继续成本可用同 p 的 V_{j_l}。权重和为一，严格时间 DAG 逆推给任一允许政策的下界，有限 argmin 实现，V≥1。源 a 固定为 T_owner，只对后继优化；积分时允许按 p 预选并确定平局。相较之下 ordinary PRICE 的等份才允许取最低 f 个不同角色。",
+  "scope": "同一有限目录和真实分母，固定 p 可预测激活的最小条件成本与可测预定。有限两报告只积普通最优固定控制。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/保真实分母的自由未来席位与可预测续价--算法.md",
+      "sha256": "33de9c0cf5c6a35deaffa74245a0ba0f58e5094099b5735d5cb9570bc4a22978"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/自由未来席位控制的两份原报告与真实触发范围--计算.md",
+      "sha256": "bbef4f0a3927f475d3ac2b008afb66b852ea7095425bc16226023e6877284602"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "按时间核首次活跃概率及独立性；不以 0023 无入流或 4023 单 f=1 回归声称 ACT 优化或共同 NET。",
+  "whole_result": "固定 p 的最优激活续价是 min_{a,J}[(1−p)^f r_i(a)+Σ_l p(1−p)^(l−1)V_{j_l}(x;p)]，源查询固定后对 p 积分为总单位费。",
+  "endpoint_pins": {
+    "M-400a8e15f5cc4b51af480210408a5545": "d7171313599f1b94c54e6d60c9a16459ce9802e1fb06678311fbc852c760dc68",
+    "customer-attraction/true-denominator-free-future-seats-and-predictable-continuation-prices": "1838c889b7c82d1805e94f5d2203136dccfb5c17b332abdc43cd918d8fb4da97"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/保真实分母的自由未来席位与可预测续价--算法.md": "33de9c0cf5c6a35deaffa74245a0ba0f58e5094099b5735d5cb9570bc4a22978",
+    "archives/customer-attraction/state/计算/自由未来席位控制的两份原报告与真实触发范围--计算.md": "bbef4f0a3927f475d3ac2b008afb66b852ea7095425bc16226023e6877284602"
+  },
+  "review_digest": "238795ebf5e533c74de95b95c4d9f0d112857eb41acc15274205bf7922ff128b"
+}

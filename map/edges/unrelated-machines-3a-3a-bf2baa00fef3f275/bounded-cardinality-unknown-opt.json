@@ -1,0 +1,69 @@
+{
+  "edge_id": "um-bf2-r33-bounded-cardinality-unknown-opt",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1"
+  ],
+  "target_ids": [
+    "UM-BOUNDED-CARDINALITY-PROMISE-APPROX-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "K≥1 是固定常数。先独立安排有零端任务，承诺存在某个普通最优调度，使其余每机任务数≤K。",
+  "roles": {
+    "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1": "任意给定显式至多 K 件的 CONFIG 点都有同一全局覆盖槽匹配界。",
+    "UM-BOUNDED-CARDINALITY-PROMISE-APPROX-v1": "把 K 基数承诺转成显式单调配置搜索并相对普通 OPT 付费。"
+  },
+  "explanation": "列每机全部大小≤K 的有限任务子集及其负载和，合计 O(m n^K) 项，加入空集/阈值0。其负载和是配置可用性的全部断点，按断点做显式等式覆盖有理 LP。承诺的最优分配给 OPT 处的 Dirac 点，故首可行 T*≤OPT。以同一个覆盖槽匹配同时恢复所有原任务，K=1 峰≤T*，K≥2 峰≤(2−K^{−(K−1)})T*。零端先固定既保持普通 OPT 也保持承诺；有理求和、断点搜索和恢复按总位长收费。",
+  "scope": "固定 K 的整配置枚举。只约束大件、K 随输入增长或无承诺时，需要其它复杂度与容量证明。K5 的 287/144 坏匹配仅阻断更强阶乘余量。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/有界配置基数的严格槽余量与承诺搜索--定理.md",
+      "sha256": "29740fdc4ca1461600f22b2b517c2f458a1208863626e09d0f29f4399abb4817",
+      "section": "未知普通OPT的另一个结构承诺"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有界配置基数的严格槽余量与承诺搜索--定理.md",
+      "sha256": "29740fdc4ca1461600f22b2b517c2f458a1208863626e09d0f29f4399abb4817"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/仙人掌配置间隙与有界配置槽舍入双源审查--审查.md",
+      "sha256": "e4b01833f0d548030431e83fe7f180bdc6db0aa5d43167c9c4a7f9d9b56d092c"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/有界配置审查的先验版本与K5阶乘反例--审查.md",
+      "sha256": "d00cbef74e6227f35345c74da3233e01c96e798fb963e8ef799fcebdb4b11112"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/层容量与固定工作边界的证明和证据范围--审查.md",
+      "sha256": "e275f4cf7c73847eb07b7f7ed075bfd68704c95b5b17a7c042d618e53db98970",
+      "section": "审查版本和后续状态"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/配置剥离与联合匹配有限审计--审查.md",
+      "sha256": "ed5053ae732b8db60b6c9c145c7ef7e242da98ce5cda88b91a3917bf9cb9f46b",
+      "section": "2. 标签地板和显式配置包络"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/层容量与固定工作边界的证明和证据范围--审查.md",
+      "sha256": "e275f4cf7c73847eb07b7f7ed075bfd68704c95b5b17a7c042d618e53db98970",
+      "section": "实际纠错与量词保护"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对当前登记端点和所列精确正文，区分实际原任务、条件量词与历史有限证据。",
+  "whole_result": "存在普通 OPT 的 K 基数承诺时，确定性位多项式在未知目标下输出全部原任务，K1 精确，K≥2 近似比 2−K^{−(K−1)}。",
+  "endpoint_pins": {
+    "UM-BOUNDED-CARDINALITY-PROMISE-APPROX-v1": "ce9227c33ddb98c2567a3ae0a0152b615b8bd8bba157a49b7cb4dea2ff5684f5",
+    "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1": "1446c2007dc779eda52b67f522d737cb36c852c2601220adbca4e3bf3b35d890"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/有界配置基数的严格槽余量与承诺搜索--定理.md": "29740fdc4ca1461600f22b2b517c2f458a1208863626e09d0f29f4399abb4817",
+    "archives/unrelated-machines/state/审查/仙人掌配置间隙与有界配置槽舍入双源审查--审查.md": "e4b01833f0d548030431e83fe7f180bdc6db0aa5d43167c9c4a7f9d9b56d092c",
+    "archives/unrelated-machines/state/审查/有界配置审查的先验版本与K5阶乘反例--审查.md": "d00cbef74e6227f35345c74da3233e01c96e798fb963e8ef799fcebdb4b11112",
+    "archives/unrelated-machines/state/审查/层容量与固定工作边界的证明和证据范围--审查.md": "e275f4cf7c73847eb07b7f7ed075bfd68704c95b5b17a7c042d618e53db98970",
+    "archives/unrelated-machines/state/审查/配置剥离与联合匹配有限审计--审查.md": "ed5053ae732b8db60b6c9c145c7ef7e242da98ce5cda88b91a3917bf9cb9f46b"
+  },
+  "review_digest": "f6438f66bc352e10e72ef8e02b604447ecdebdb04aec700c19d809f93bf5c8f4"
+}

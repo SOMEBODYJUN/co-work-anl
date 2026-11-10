@@ -1,0 +1,42 @@
+{
+  "edge_id": "um-bf2-r33-polynomial-moment-audit-scope",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/review-polynomial-vector-greedy"
+  ],
+  "target_ids": [
+    "UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "同一个 q 台机器（含一专用机）、q+1 原任务（含一个处理时长 B=2(2r+1) 的 anchor）的真实最优多项式源。",
+  "roles": {
+    "unrelated-machines/review-polynomial-vector-greedy": "校准三种程序的 q/r/Gram 域、冻结输出和源码 SHA。",
+    "UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1": "给固定 r、素数 q>B 上对任何任务顺序的解析线性障碍。"
+  },
+  "explanation": "r=1,q=13 的 2197 份原子均峰6，专用 anchor 强制 OPT=6，贪心峰13。规范主程序保 r1 q3/5/7/13、r2 q11 的 161051 源原子及指定点集，另 r2 q3 七维投影。规范独立程序的全 Gram 仅 r1 q3/5/7，q13 只核全部 377 个至多三点集计数及分块式。r2 q11/13 的 ANOVA 候选范数属第三份旧审查附录，旧 r2 q7 归属与匹配源码不合。全顺序的解析结论依 2r+1 点独立性、在整个 V_r 上的正交性与压缩作用计算。",
+  "scope": "只核给定真实最优源的固定阶压缩接口，分别保有限程序覆盖、解析任意顺序证明及输入源提供者义务。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/固定阶向量贪心的真实最优矩障碍--审查.md",
+      "sha256": "9f2c1ab44a5128c598ea3f10a6de9a07739c854d66b9f6457ae0c831450323f3",
+      "section": "固定阶向量贪心的真实最优矩障碍"
+    },
+    {
+      "path": "archives/unrelated-machines/state/反例/固定阶压缩乘法向量贪心真实最优源--反例.md",
+      "sha256": "feb4be017b33128301230530112d82642529634e7518726b976fccaf104fe783"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对当前登记端点和所列精确正文，区分实际原任务、条件量词与历史有限证据。",
+  "endpoint_pins": {
+    "UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1": "3c26d9092f84f8b36ae1d6912bea7d65813f70e8124c2865e21bbf570ac3c50c",
+    "unrelated-machines/review-polynomial-vector-greedy": "15ddb116f5d5f644bdeed926be5b62eda964c11bc62f4e6755ffa695f7e72eeb"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/固定阶向量贪心的真实最优矩障碍--审查.md": "9f2c1ab44a5128c598ea3f10a6de9a07739c854d66b9f6457ae0c831450323f3",
+    "archives/unrelated-machines/state/反例/固定阶压缩乘法向量贪心真实最优源--反例.md": "feb4be017b33128301230530112d82642529634e7518726b976fccaf104fe783"
+  },
+  "review_digest": "0cc16c8a0180fea0831ccec9eafe4417fe7b0d3d413a06bdd083029188c80c3e"
+}

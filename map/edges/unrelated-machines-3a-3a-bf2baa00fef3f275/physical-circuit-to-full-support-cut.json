@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-bf2-r33-physical-circuit-to-full-support-cut",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-CONFIG-PRESERVING-CIRCUIT-TWO-SIGN-SUPPORT-LOSS-v1"
+  ],
+  "target_ids": [
+    "M-bf7de96d319e47a3bb17c74058cd866c"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "奇 D≥3，L=D+2，N=DL，使用同一完整 U/F/H/E 矩阵、真实最优基点 x⁰ 和 CONFIG 全段。δ=1/D²。",
+  "roles": {
+    "UM-CONFIG-PRESERVING-CIRCUIT-TWO-SIGN-SUPPORT-LOSS-v1": "给出真单环 x(θ)、明确 CONFIG 全段、全正真实最优点 x⁰ 及最大正端 x⁺。",
+    "M-bf7de96d319e47a3bb17c74058cd866c": "对全部峰1原调度给共同有效 cut，再在全正原支撑上构造拒绝给定点。"
+  },
+  "explanation": "对任意实际峰≤1调度，若 U_0 落 K_(0,a)，该 K 已满，因此这一 rail 的 D 件 F_0 各用自己的 G_(0,t)。相应 H_t 至多一个去共同 Q_a，余下至少 D−1 个必须去各自 G_(1,t)，故 Σ_t x_(G_(1,t),H_t)≥D−1 对所有峰1实际调度及其凸包有效。x⁺ 的全部这些坐标为0。取 x^δ=(1−δ)x⁺+δx⁰，则 CONFIG 凸性保完整证书，δx⁰ 恢复全部有限端正支撑，其 cut 左侧仅 δNγ=(D+1)/(2D)<D−1。原矩阵仍有三种实际基态中的峰1分配，且单位 selector 迫 OPT≥1。",
+  "scope": "双坏端点的支撑限制与全正给定点的分解限制是两个精确结论。该 cut 在本族可拒绝 x^δ 的真实分解，实例和正支撑都仍有峰1调度。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/真单环给定点分解拒绝与低停车扩域候选--审查.md",
+      "sha256": "965ef6bd33ad5f943d9b186f588f54856aa55ddb957d3e59eb3c8fdc33d7bf86",
+      "section": "全段CONFIG和给定点拒绝"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/真单环给定点分解拒绝与低停车扩域候选--审查.md",
+      "sha256": "965ef6bd33ad5f943d9b186f588f54856aa55ddb957d3e59eb3c8fdc33d7bf86",
+      "section": "已核v1的精确对象"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/真单环双坏端点的三种实际基态与全支撑证明--审查.md",
+      "sha256": "4b9bfef00dfc30f05038bdd3b5089d75411d12cbe10942618f7f2a030a3df8e8"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对当前登记端点和所列精确正文，区分实际原任务、条件量词与历史有限证据。",
+  "whole_result": "在所列奇 D 的真单环矩阵上，全正 CONFIG(1) 点 x^δ 违反对所有峰1调度有效的全局 cut，故无真实峰1原子分解，而原矩阵 OPT=1。",
+  "endpoint_pins": {
+    "M-bf7de96d319e47a3bb17c74058cd866c": "d78f3f5282aaeaef9274c512b142571a9bbea762ce0f349de4dc01ceb51835fe",
+    "UM-CONFIG-PRESERVING-CIRCUIT-TWO-SIGN-SUPPORT-LOSS-v1": "09c80ff911d250245fb0931617c6703d7e591a3acd6ac7ce38b591e7456cc554"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/真单环给定点分解拒绝与低停车扩域候选--审查.md": "965ef6bd33ad5f943d9b186f588f54856aa55ddb957d3e59eb3c8fdc33d7bf86",
+    "archives/unrelated-machines/state/审查/真单环双坏端点的三种实际基态与全支撑证明--审查.md": "4b9bfef00dfc30f05038bdd3b5089d75411d12cbe10942618f7f2a030a3df8e8"
+  },
+  "review_digest": "608fd5a5491d55c57bf3d8b55f2dce78472b241ee29a1e8424250608589972ab"
+}

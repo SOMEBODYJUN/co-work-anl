@@ -1,0 +1,47 @@
+{
+  "edge_id": "um-bf2-r33-home-macro-grid-unknown-opt",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1"
+  ],
+  "target_ids": [
+    "UM-HOMOGENEOUS-MACRO-PRIVATE-PROMISE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "静态宏结构与给定 T 的同质宏定理相同。真实 OPT>0 时每 P_h>OPT/2，且全部有限私有端 p_ij≤δOPT，0≤δ≤δbar<1。",
+  "roles": {
+    "UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1": "给出任意宏完美匹配共享固定核心及残余 LP 的支持最大件舍入证明。",
+    "UM-HOMOGENEOUS-MACRO-PRIVATE-PROMISE-v1": "给出不输入 OPT 的单调搜索和按 δOPT 支付的真实相对近似。"
+  },
+  "explanation": "先独立处理逐任务零端。宏匹配独立于候选 t。接受谓词为 t≥max_h P_h、宏有完美匹配及在 p≤t 的私有端上容量 c_h=t−P_h、c_z=t 的 LP 可行。固定残余随 t 单调增加且端点只增加。实际 OPT 调度中每 home 恰一宏并使用 p≤OPT 的私有端，故 OPT 接受。在原时间分母乘积的精确网格上二分到 t*≤OPT，成本只按网格上界的位长。成功舍入只用残余 LP 和其正支撑，支撑时间按真实承诺至多 δOPT，于是实际峰≤t*+δOPT≤(1+δ)OPT。搜索全程使用固定匹配、上截及容量这三项。",
+  "scope": "结论关于真实 OPT 的全有限私有端承诺。给定 T 的 δT 小边和 P_h>T/2 只在原固定目标的完备性合同中，搜索不以这两个比较为谓词。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/算法/按home同质宏的任意私有边舍入--算法.md",
+      "sha256": "7c68cc57c1e0360ffb24a2c1f674dd726e36c4f42b992a728a2b1a25bf850451",
+      "section": "不给OPT的承诺版本"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/任意资格三接口的来源与证明范围--审查.md",
+      "sha256": "4562de91a836862af533573912473e7b791f6b3856a24c46eeca04046ad9f874"
+    },
+    {
+      "path": "archives/unrelated-machines/state/算法/按home同质宏的任意私有边舍入--算法.md",
+      "sha256": "7c68cc57c1e0360ffb24a2c1f674dd726e36c4f42b992a728a2b1a25bf850451"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对当前登记端点和所列精确正文，区分实际原任务、条件量词与历史有限证据。",
+  "whole_result": "在正 OPT 的 home 同质宏和全私有端尺度承诺下，未知 OPT 的确定性位多项式算法返回原任务峰≤(1+δ)OPT。",
+  "endpoint_pins": {
+    "UM-HOMOGENEOUS-MACRO-PRIVATE-PROMISE-v1": "2da3fa7ea3fc3a8a5af4f3316ad2616536553a18a2ef3a3d4b30c2273bf71414",
+    "UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1": "bfed6abfc7a5f6c3765b01c67be6d4bff4857a8ebf216d21e5d1aa0b07713780"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/算法/按home同质宏的任意私有边舍入--算法.md": "7c68cc57c1e0360ffb24a2c1f674dd726e36c4f42b992a728a2b1a25bf850451",
+    "archives/unrelated-machines/state/审查/任意资格三接口的来源与证明范围--审查.md": "4562de91a836862af533573912473e7b791f6b3856a24c46eeca04046ad9f874"
+  },
+  "review_digest": "59764fa0f7771786a74359c29631fea43c86b3985e4b09448136c01d29ab8ba5"
+}

@@ -1,0 +1,42 @@
+{
+  "edge_id": "wc-r33-integer-square-certificate-to-real-19over18",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R1-SOURCE-D2-ENVELOPE"
+  ],
+  "target_ids": [
+    "weighted-congestion/two-attack-quadratic-real-envelope-19over18"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "沿用 d=2 的同一双攻击标量公式。取任意实 n≥1、k∈{1,2}、w,β∈[0,1]，置 q=1+w。N₁=1+nβq²、D₁=(1+nw)^k+nβ、N₂=q^k+βw²、D₂=(nw)^k+βq²。两项用严格交叉乘法，商只在正分母时使用。",
+  "roles": {
+    "WC-R1-SOURCE-D2-ENVELOPE": "整数源包络 v2 的原证明给出 k=1 的严格消元、二次差分恒等式及 F(1,w)、F(2,w)−F(1,w) 的负平方证书，并给出 k=2 的第一差值分解。复用这些代数事实来扩域。",
+    "weighted-congestion/two-attack-quadratic-real-envelope-19over18": "实域包络 v1 补入 n=1 处切线的第二端点证书，使相同标量公式在整个实 n≥1 域成立。"
+  },
+  "explanation": "D₁≥1，且 D₂=0 当且仅当 w=β=0，此时 18N₁−19D₁=−1。k=2 时 N₁−D₁=n(1−n)w²−n(1−β)(2w+w²)≤0，其中 β≤1 和 n≥1 分别控制两项。k=1 置 t=19/18、a=q²、B=t(1+nw)−1>0、C=ta−w²=t+2tw+(t−1)w²>0。两严格测试要求 nβ(a−t)>B 和 q−tnw>βC，故 a>t、w>0，且消去 β 得 F(n,w)=n(a−t)(q−tnw)−BC>0。写 Q=tw(a−t)>0、F₁=F(1,w)、Δ=F(2,w)−F₁。原二次式以 −Q 为 n² 系数，故 F=F₁+(n−1)Δ−(n−1)(n−2)Q。原证书 −1296F₁=148w³+3(24w−7)²+12w²+8w+1>0 及 −324Δ=721w³+(42w−4)²+38w²+10w+2>0 给出 F₁,Δ<0。实 n≥2 时差分式末项非正，因而 F<0。对 1≤n≤2，F′(1,w)=Δ+Q，切线 T(n)=F₁+(n−1)(Δ+Q) 满足 T(n)−F(n,w)=Q(n−1)²≥0。T(1)=F₁<0。由同一原二次式重算 1296T(2)=−1664w³−6212w²+2228w−220。二次部分首项系数为 −6212，判别式为 2228²−4·6212·220=−502576，因此严格负，且 w≥0 使三次项非正。T 的两个端点都严格负，故 [1,2] 上 T<0，进而 F<0。两段均与严格测试所需的 F>0 矛盾。",
+  "scope": "实 n 是公式标量。整数证明中 (n−1)(n−2) 在 1<n<2 为负，该段由新切线证书承担。k=1 的证明还适用于任意 w,β≥0，统一二分支合同取 w,β∈[0,1] 并保留 β≤1。所得 19/18 是双攻击公式包络，公式锐值、n=1 最优性、实际游戏阈值和全类均衡界各需独立论证。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/两攻击源公式的二次整数参数包络--定理.md",
+      "sha256": "0c1042284fe67b62f4cf78ad19db37df3bb78c8a263ff68b511ff47317925550"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/二次双攻击公式的实数参数十九比十八包络--定理.md",
+      "sha256": "ee230342d27d2e0e416f451a9b6628b6bb11e2c6caff03d466341b3ed51e2ad4"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读两个登记正文及任务指定三项补充证据。从原严格交叉乘法独立作有理多项式运算，复核 F₁、Δ 的两平方恒等式、导数、切线余项、端点系数与判别式，并核对 k=2 和零分母。",
+  "whole_result": "从整数源证明的代数证书加上短区间切线，推出对每个实 n≥1、k∈{1,2}、w,β∈[0,1]，不可能同时有 18N₁>19D₁ 与 18N₂>19D₂。两分母都正时 min{N₁/D₁,N₂/D₂}≤19/18。k=1 同样覆盖非负 w,β 的扩域，D₂=0 时仍由第一个严格式直接排除。",
+  "endpoint_pins": {
+    "WC-R1-SOURCE-D2-ENVELOPE": "e87d42e8a947383dec9f817173d522587a65fef3068cb92359ca17b36161f1c5",
+    "weighted-congestion/two-attack-quadratic-real-envelope-19over18": "9cf8af258951962c285fb5a48cd78759dc5518b4776658cd806688faa01fce8b"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/两攻击源公式的二次整数参数包络--定理.md": "0c1042284fe67b62f4cf78ad19db37df3bb78c8a263ff68b511ff47317925550",
+    "archives/weighted-congestion/state/定理/二次双攻击公式的实数参数十九比十八包络--定理.md": "ee230342d27d2e0e416f451a9b6628b6bb11e2c6caff03d466341b3ed51e2ad4"
+  },
+  "review_digest": "1bad2e2070d5afc6706d8f49a9c2d42913ec8c4243879845f72691b086de2896"
+}

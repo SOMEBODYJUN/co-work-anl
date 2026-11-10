@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-bf2-r33-home-macro-st-residual",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-ST-ROUND-v1"
+  ],
+  "target_ids": [
+    "UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "给定 T>0，|B|=|H|、宏仅 home、每 home 的合法宏时间同为 P_h>T/2。所有有限私有端时间≤δT，0≤δ<1。资格与有理时间显式。",
+  "roles": {
+    "UM-ST-ROUND-v1": "对原私有任务在同一分数点的正支撑做有序槽匹配，给逐机 ℓ_i+q_i。",
+    "UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1": "把支持最大件误差接回固定的 home 核心，保成功界及 FAIL 单向语义。"
+  },
+  "explanation": "先检验宏完美匹配和每 P_h≤T。任意实际 T 调度必使每 home 恰一宏，换成任意宏完美匹配后每 home 核心仍为 P_h，故原私有指派见证容量 c_h=T−P_h、c_z=T 的残余 LP。结构内任一 guard 或 LP 失败推出 OPT>T。可行时私有列质量恰1、行负载≤c_i，全部私有支撑最大件 q_i≤δT。以同一份槽覆盖匹配安排全部私有任务，每机加核心后≤T+q_i≤(1+δ)T。构造、LP 与匹配位多项式，空 H 或私有集合和零端按各自恒等式处理。",
+  "scope": "宏同质性用于固定全部残余容量。私有任务可任意跨 home/sink，匹配保原任务与资格。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/任意资格三接口的来源与证明范围--审查.md",
+      "sha256": "4562de91a836862af533573912473e7b791f6b3856a24c46eeca04046ad9f874"
+    },
+    {
+      "path": "archives/unrelated-machines/state/算法/按home同质宏的任意私有边舍入--算法.md",
+      "sha256": "7c68cc57c1e0360ffb24a2c1f674dd726e36c4f42b992a728a2b1a25bf850451"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md",
+      "sha256": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对当前登记端点和所列精确正文，区分实际原任务、条件量词与历史有限证据。",
+  "whole_result": "在给定 T 的按 home 同质宏合同内，得到 sound FAIL 或全部原任务峰≤(1+δ)T。",
+  "endpoint_pins": {
+    "UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1": "bfed6abfc7a5f6c3765b01c67be6d4bff4857a8ebf216d21e5d1aa0b07713780",
+    "UM-ST-ROUND-v1": "8c4662c822ebd204e3b095934f8745464426df43fc2328a6bbc35063e4148ea1"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b",
+    "archives/unrelated-machines/state/审查/任意资格三接口的来源与证明范围--审查.md": "4562de91a836862af533573912473e7b791f6b3856a24c46eeca04046ad9f874",
+    "archives/unrelated-machines/state/算法/按home同质宏的任意私有边舍入--算法.md": "7c68cc57c1e0360ffb24a2c1f674dd726e36c4f42b992a728a2b1a25bf850451",
+    "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6"
+  },
+  "review_digest": "8ef7d9512bafa2610793fc8c5913a15a75037743d13fc572ba35f17b71f2df9a"
+}

@@ -1,0 +1,52 @@
+{
+  "edge_id": "ca-r33-fractional-vertices-to-fixed-complete-policy-price-rows",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "PRICE-QUERY-VERTICES-v1"
+  ],
+  "target_ids": [
+    "customer-attraction/fixed-complete-policy-finite-price-contract"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定标签数 p≥1、人数及完整有序纯 σ。客户类型重数 r≥0，Γ 的每行以同一 σ 的真实当前偏离完成定义；价格 v=u_a(r) 来自某已占用主题。",
+  "roles": {
+    "PRICE-QUERY-VERTICES-v1": "提供不依客户重数或非负价格的有限 V_p。",
+    "customer-attraction/fixed-complete-policy-finite-price-contract": "把查询顶点与固定 σ 的完整历史 IC 同时写成有限线性价格合同。"
+  },
+  "explanation": "每条当前收益差对 r 线性，故原模型的全树 SPE 域精确为 Γr≥0、r≥0。对已占用主题 a，有 u_a(r)≥0。普适顶点定理把对所有 z≥0 的查询约束换为所有 z∈V_p；每个 z 的覆盖 C_r(z) 对 r 线性，扣 u_a(r)Σ z_a 及右端价格预算，得到精确有限 c_{z,a}·r≤0。若 μ≥0 且 βw−Γᵀμ−c≥0，乘 r≥0 后得 βW−c·r≥μᵀΓr≥0。没有除 W，所以 W=0 亦在域中。",
+  "scope": "从无均衡前提的非负查询有限表示，迁移到单一完整策略的全客户重数锥。没有对所有 σ 声称存在同一价格证明。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/非负分数价格的有限普适顶点--定理.md",
+      "sha256": "d2d398a68d2202bcb957758f3aab70ec142cf7d2f1c021c9658736b17504ba8a"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/容量守卫与互惠运输工作区的精确命题和接续边界--资源.md",
+      "sha256": "446f9d521c523e95893abbc1006777759604045d8e4305bcf7645f61cd25dff0"
+    },
+    {
+      "path": "archives/customer-attraction/state/等价/固定完整SPE策略锥的有限价格合同--等价.md",
+      "sha256": "8664984e80081e1bc83093fc93ea90bfe224f82f659ac980ff1515113c9abf9b"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对已占用标签保证价格线性合法、固定全树 Γ 和零福利边界。",
+  "whole_result": "对固定完整 σ 的全部可行重数，任一已占用标签的全分数查询价格约束等价于有限 V_p 线性行，给定非负 Γ 对偶证书可验证锥上界，含 W=0。",
+  "endpoint_pins": {
+    "PRICE-QUERY-VERTICES-v1": "45db365cccfd95e5dc74594756f908f2ee6510d498b14ba9601a5c770e7082d1",
+    "customer-attraction/fixed-complete-policy-finite-price-contract": "00ae148fa8caecc9b0612e910913b6888f19a046a0eddf66dd2d6229cde43ec9"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/定理/非负分数价格的有限普适顶点--定理.md": "d2d398a68d2202bcb957758f3aab70ec142cf7d2f1c021c9658736b17504ba8a",
+    "archives/customer-attraction/state/资源/容量守卫与互惠运输工作区的精确命题和接续边界--资源.md": "446f9d521c523e95893abbc1006777759604045d8e4305bcf7645f61cd25dff0",
+    "archives/customer-attraction/state/等价/固定完整SPE策略锥的有限价格合同--等价.md": "8664984e80081e1bc83093fc93ea90bfe224f82f659ac980ff1515113c9abf9b"
+  },
+  "review_digest": "a7bc713a5dd6c8b5d12445d4ba3a651b3271fb1a48287280b70ef93597f9b830"
+}

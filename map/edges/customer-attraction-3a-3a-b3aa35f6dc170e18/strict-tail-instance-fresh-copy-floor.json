@@ -1,0 +1,47 @@
+{
+  "edge_id": "ca-r33-strict-tail-instance-fresh-copy-floor",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "SECURITY-OPT-REAL-TAIL-GAP-v1"
+  ],
+  "target_ids": [
+    "M-2ffd990fe18940feb8056569ce61043e"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m≥2，零初始背景，保双 core、两组各 h=m+1 叶及每叶 P=m+2 私有客户。任意完整有序历史纯 SPE。",
+  "roles": {
+    "SECURITY-OPT-REAL-TAIL-GAP-v1": "固定参数和精确静态基准，且证明所有真实尾的列间隙。",
+    "M-2ffd990fe18940feb8056569ce61043e": "得到同一族全部历史利润与根福利下界。"
+  },
+  "explanation": "安全值证书把 C=m(m−1) 与 P 固定为 P+C/m=v_m=2m+1。任何合法非终局历史至多有 m−1 次行动，当前可强制一片从未使用的叶。若真续局无人复制它，私有 P 独享，core 每客分母至多 m，故当前至少得 v_m。若有人复制，同一叶的收益相等，沿该具体偏离后有序历史由更深当前者的归纳下界得 v_m。末位属无人复制情形，当前节点的 IC 完成归纳。在实际根叶相加得 W≥mv_m；m 个不同叶可跨两 core 覆盖并取 m 个私有块，反向上界逐块计数给 OPT_m=mP+2C=3m²。",
+  "scope": "源对象提供具体目录和安全值，结论同时适用于每份原完整策略及每一合法历史的当前最优行动者。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/安全最优查询的全部真实根尾严格间隙--障碍.md",
+      "sha256": "a78875c6db4afebf8b21ebae1619543834289dd3d1a376ceee923eebd1845070"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/严格尾菜单的参数重标与标量独审合同--审查.md",
+      "sha256": "409deedcb0264ca2d647954454d68b999f014d14d6fe5d50ec40c294a3d1a8fc"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核对 P+C/m 和 OPT；使用 fresh/copy 与真实 IC，不把尾列价格直接记成任一人利润。",
+  "whole_result": "同一双 core 稀有叶族，每份完整 SPE 的每个合法有序历史当前最优行动者得至少 v_m，故 W≥mv_m，OPT_m/W≤3m/(2m+1)<3/2。",
+  "endpoint_pins": {
+    "M-2ffd990fe18940feb8056569ce61043e": "59078e781c1420067020905e3c2dc07b10d180488b4df1989e159b035b76f442",
+    "SECURITY-OPT-REAL-TAIL-GAP-v1": "8b20e5db40441168855c2eea40e09752fa1d8d531725a1f679c45e55d051b99c"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/安全最优查询的全部真实根尾严格间隙--障碍.md": "a78875c6db4afebf8b21ebae1619543834289dd3d1a376ceee923eebd1845070",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/审查/严格尾菜单的参数重标与标量独审合同--审查.md": "409deedcb0264ca2d647954454d68b999f014d14d6fe5d50ec40c294a3d1a8fc"
+  },
+  "review_digest": "d3cffbb3fbe26e46f72fa33842b5fa4c5d71e059cab8b97841e640540483048e"
+}

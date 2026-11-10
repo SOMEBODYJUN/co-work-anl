@@ -1,0 +1,50 @@
+{
+  "edge_id": "ca-r33-true-last-two-pay-rt5-terminal-regret",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-ee55e0e956324d288a01c9148367f25c"
+  ],
+  "target_ids": [
+    "customer-attraction/five-player-frozen-regret-coverage-tax-sufficient-budget"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "五人任一完整纯 SPE 的实际前三主题留下合法非负整数 b，真实尾为(A,B)。冻结替换用该同一最终叶上的其它四标签。",
+  "roles": {
+    "M-ee55e0e956324d288a01c9148367f25c": "提供任意背景末两人的精确有理运输上界。",
+    "customer-attraction/five-player-frozen-regret-coverage-tax-sufficient-budget": "五人 RT5 全程预算获得可独立使用的末两人部分。"
+  },
+  "explanation": "把前三人的主题固定为背景。对倒二每个合法 T，真实末位偏离后 Q=σ_5(h,T) 的 IC/BR 传递给 r₄≤g(A,A\\B)，末位 r₅=0。对 A\\B 中每个 x，最终 c_x=b_x+1，故其 g 项为 (b_x+1)^{-1}(c_x+1)^{-1}，不超过 Z 的对应客户项。",
+  "scope": "仅证明实际尾两人的合计冻结遗憾上界；背景允许重叠，真实 Q 依原历史，不把早期角色合为尾部动作。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/五人冻结遗憾与覆盖税的充分预算--候选.md",
+      "sha256": "fea323a155a9f1b184bcad10c3a6f2940d7971d0783d8dd6ca438a52fd6bdb37"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md",
+      "sha256": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对实际 r₄ 冻结与末两人模型分母一致，比较证明仍沿真末位；未累加不同偏离终局的税。",
+  "contribution": {
+    "result": "在任一五人实际 SPE 叶有 r₄+r₅≤Σ_{x∈A\\B}1/[(b_x+1)(b_x+2)]≤Z。",
+    "remaining": "需控制同一实际叶的 r₁+r₂+r₃ 与实际 r₄+r₅ 的联合预算。充足剩余界为 r₁+r₂+r₃≤6Z/5−g(A,A\\B)，现有末两人引理未付前三人。"
+  },
+  "endpoint_pins": {
+    "M-ee55e0e956324d288a01c9148367f25c": "0c23f35ce3cb4caa9176814654f295d61c077a311840216867f6feab0c2b6759",
+    "customer-attraction/five-player-frozen-regret-coverage-tax-sufficient-budget": "dff2d71c8d8be142335c1f0b002d10a43e42a27c38c214065acefbb3e4773f7d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/候选/五人冻结遗憾与覆盖税的充分预算--候选.md": "fea323a155a9f1b184bcad10c3a6f2940d7971d0783d8dd6ca438a52fd6bdb37",
+    "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee"
+  },
+  "review_digest": "58012a2a7dcf0c9432fd8abe10336343e00f836d80e43bcb8c8c6c1031abc7bd"
+}

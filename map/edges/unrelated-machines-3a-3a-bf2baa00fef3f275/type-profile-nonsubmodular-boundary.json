@@ -1,0 +1,63 @@
+{
+  "edge_id": "um-bf2-r33-type-profile-nonsubmodular-boundary",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-43d1a6e5f4114a3882175890c6e5b41b"
+  ],
+  "target_ids": [
+    "UM-NORMALIZED-TYPE-MATCHING-RANK-VALUE-IDENTITY-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "一玩家四资源类型值 (1/4,1/2,1/2,3/4)，枚举实际可用 count 且 W≥1 的显式 indexed 菜单，A={0,1}，B={0,2}。",
+  "roles": {
+    "M-43d1a6e5f4114a3882175890c6e5b41b": "给出同一个菜单上的 F(A)、F(B)、F(A∪B)、F(A∩B)。",
+    "UM-NORMALIZED-TYPE-MATCHING-RANK-VALUE-IDENTITY-v1": "归一化编译中的 F_i 是若干固定 profile partition rank 的最大值。"
+  },
+  "explanation": "该菜单每个 profile 单独为 weighted partition-matroid rank。其最大值却有 F(A)+F(B)=6/5，而 F(A∪B)+F(A∩B)=5/4，违反次模不等式。编译仍将全部 indexed profiles 的 token jobs 和 selector 放入原矩阵。双向值恒等由实际 token 外送和单位资源独占成立，既不使用 F_i 次模性，也不据该见证扩大算法域。",
+  "scope": "此见证约束从固定 profile rank 调用全菜单次模算法的接口，完整值恒等的正反解码保持原样。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/归一化类型匹配编译的全任务有限核验--资源.md",
+      "sha256": "9bd16e330e4c9ed1e9a65de5e8841ce6c764fdc633807a27d2aa8a479edb815a",
+      "section": "全量jobs的真实UM编译与双向证明"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/归一化类型匹配编译的全任务有限核验--资源.md",
+      "sha256": "9bd16e330e4c9ed1e9a65de5e8841ce6c764fdc633807a27d2aa8a479edb815a",
+      "section": "输入域：正W、indexed菜单、零型和缺失型"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/类型压缩与仿射并行线双源审查--审查.md",
+      "sha256": "1be743b04d1c34025a703c09b80813d38dfa90dd845e9c13123f2f68ad34277a",
+      "section": "2.3 Exact B：归一化 type matching 的真实值恒等式"
+    },
+    {
+      "path": "tools/evidence/um-star-transfer-majority-and-rank-programs-primary/original/tests/audits/unrelated_machines/type_matching_rank_bridge.py",
+      "sha256": "1c0ac2c662838795bfd8a616cd7cf88f135b29d7a8e6948b0abc70071c9c1ffc"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/双件见证树Markov与类型压缩三源审查--审查.md",
+      "sha256": "a824f9134594a0962856a957b6877973c04db6866e84096635e453a8df13984b"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/归一化类型匹配编译的全任务有限核验--资源.md",
+      "sha256": "9bd16e330e4c9ed1e9a65de5e8841ce6c764fdc633807a27d2aa8a479edb815a",
+      "section": "max-profile的显式非次模反例"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对当前登记端点和所列精确正文，区分实际原任务、条件量词与历史有限证据。",
+  "endpoint_pins": {
+    "M-43d1a6e5f4114a3882175890c6e5b41b": "013a3553e2c76c00e92db90fba1b55c4a2e838418bbd066a8fa49654f419af43",
+    "UM-NORMALIZED-TYPE-MATCHING-RANK-VALUE-IDENTITY-v1": "e10686a02bd876a2be1a5b3819e72cf06e63cf94f12cc3d97d4ef693ea50f09a"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/归一化类型匹配编译的全任务有限核验--资源.md": "9bd16e330e4c9ed1e9a65de5e8841ce6c764fdc633807a27d2aa8a479edb815a",
+    "archives/unrelated-machines/state/审查/类型压缩与仿射并行线双源审查--审查.md": "1be743b04d1c34025a703c09b80813d38dfa90dd845e9c13123f2f68ad34277a",
+    "tools/evidence/um-star-transfer-majority-and-rank-programs-primary/original/tests/audits/unrelated_machines/type_matching_rank_bridge.py": "1c0ac2c662838795bfd8a616cd7cf88f135b29d7a8e6948b0abc70071c9c1ffc",
+    "archives/unrelated-machines/state/审查/双件见证树Markov与类型压缩三源审查--审查.md": "a824f9134594a0962856a957b6877973c04db6866e84096635e453a8df13984b"
+  },
+  "review_digest": "6d8329cf8cafd28089280dc51aa65eaa1679aa422e7596a78bcd57c8f9814351"
+}

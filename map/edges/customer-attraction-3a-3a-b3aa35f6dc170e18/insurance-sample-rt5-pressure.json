@@ -1,0 +1,36 @@
+{
+  "edge_id": "ca-r33-insurance-sample-rt5-pressure",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-f23f18e674d34cc18afd7c9741cc4196"
+  ],
+  "target_ids": [
+    "customer-attraction/five-player-frozen-regret-coverage-tax-sufficient-budget"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "固定44单位客户、20个 Cartesian 标签、给定 BASE/PUNISH/EXIT 完整控制器，经济块4、银行块6。",
+  "roles": {
+    "M-f23f18e674d34cc18afd7c9741cc4196": "提供完整真 SPE 及精确预算压力。",
+    "customer-attraction/five-player-frozen-regret-coverage-tax-sufficient-budget": "全称 RT5 支付义务包含该实例，未因此得到其真值。"
+  },
+  "explanation": "实际叶的收益(4,7,7,7,7)，前四人冻结其它动作可各换未用经济块加3，银行坐标已是冻结最优，末位遗憾0；Z=4/5+4/2+6/3+18/2=69/5。因此 R/Z=20/23，任何普遍 R≤cZ 必须 c≥20/23，该例在 c=1 与 c=6/5 时均合格。普通单项实例只给下端压力。",
+  "scope": "已证该固定完整 SPE 的精确压力，限其参数及记录控制器。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/五人冻结遗憾与覆盖税的充分预算--候选.md",
+      "sha256": "fea323a155a9f1b184bcad10c3a6f2940d7971d0783d8dd6ca438a52fd6bdb37"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对 b=3a/2 的弱边界和中间位真偏离；数字不冒称五人总体上界。",
+  "endpoint_pins": {
+    "M-f23f18e674d34cc18afd7c9741cc4196": "e3fd05c711bd8e90284eec78fca6fba1c218a66075b9732adc922440774850ea",
+    "customer-attraction/five-player-frozen-regret-coverage-tax-sufficient-budget": "dff2d71c8d8be142335c1f0b002d10a43e42a27c38c214065acefbb3e4773f7d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/五人冻结遗憾与覆盖税的充分预算--候选.md": "fea323a155a9f1b184bcad10c3a6f2940d7971d0783d8dd6ca438a52fd6bdb37"
+  },
+  "review_digest": "1d2173a0ed32aa83710bd87ea021e2a4793da2d59b35bb67796a905b72884203"
+}
