@@ -1,0 +1,48 @@
+{
+  "edge_id": "ca-56e27e52-optimal-capacity-no-private-case",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-88610a80afd649aeb2f958a648de5cfb",
+    "M-72a48f1facca4af6b50b3f3242366fc4"
+  ],
+  "target_ids": [
+    "M-8a91e4626c0d4e3782452a25714b4deb"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意m≥2及根后悔Δ≥0的同一完整计划。选某个最优索引比较元组，要求其每个被覆盖客户在比较元组中至少出现ceil(m/H_m)次。",
+  "roles": {
+    "M-88610a80afd649aeb2f958a648de5cfb": "任一比较独有块为空时，该最优槽的全主题替换限制推出所有合法主题均包含于比较并集。",
+    "M-72a48f1facca4af6b50b3f3242366fc4": "带符号真实指派及均匀真查询每遗漏客户至少d_x H_m/m。",
+    "M-8a91e4626c0d4e3782452a25714b4deb": "无独占且重数充分的一类最优比较覆盖已经可付自由真指派。"
+  },
+  "explanation": "ceil(m/H_m)≥2，故每个独有比较块都为空。取任一比较槽，最优替换容量推出任何合法主题A均无O外客户，即O等于整个可及客户宇宙。特别C⊆O。每个遗漏客户的真实查询平均贡献至少d_x H_m/m≥1，交集贡献非负。于是均匀真查询总和至少|O\\C|=OPT−W，并已能付比允许2Δ的指派更强的目标。m=2,3,4时只须每个比较客户重复至少两次。",
+  "scope": "是对至少一个满足重数假设的最优元组的限制结论，不要求所有实例存在这类最优元组。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/冻结指派的客户恒等式与最优比较量词--引理.md",
+      "sha256": "09cb6e1ff63c6271dc81652c82fb7f4248b438c598f2f39664503925f9ec17a4"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/真实查询的带符号捕获指派与三倍根后悔--候选.md",
+      "sha256": "b6c26d26cb2a221f5f67c795ef72987a0d819491136e9b5ab13106c8b9fce436"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "独有块为零时只能推出合法主题受限于O，不能给任意低重数捕获付款。均匀行下界以真实分支负载为准。",
+  "contribution": {
+    "result": "在该高重数最优覆盖类中，R全额已由均匀真实查询支付，并且没有最优并集外实际客户。",
+    "remaining": "未覆盖低比较重数最优元组及一般至少一个最优元组的真指派目标。"
+  },
+  "endpoint_pins": {
+    "M-72a48f1facca4af6b50b3f3242366fc4": "b0d7d697b9f7c7113a99eec34a7de9d96f440735ccabbbae025b6a5c3d24d477",
+    "M-88610a80afd649aeb2f958a648de5cfb": "f2a1c1339b94aade3009a7a05e5fa6cef72ffab0ff1b9c67af02e488194222a7",
+    "M-8a91e4626c0d4e3782452a25714b4deb": "f391f13f99b506feadb3c19aff39fac4cbdb7033bbacd2235eca33c1b7a7ea5f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/冻结指派的客户恒等式与最优比较量词--引理.md": "09cb6e1ff63c6271dc81652c82fb7f4248b438c598f2f39664503925f9ec17a4",
+    "archives/customer-attraction/state/候选/真实查询的带符号捕获指派与三倍根后悔--候选.md": "b6c26d26cb2a221f5f67c795ef72987a0d819491136e9b5ab13106c8b9fce436"
+  },
+  "review_digest": "3ad7f05306ae8b8e50febae21536cfec9731b37823bf075edefa0c214dc5e7d1"
+}

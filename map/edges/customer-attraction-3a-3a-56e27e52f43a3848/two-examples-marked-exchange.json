@@ -1,0 +1,44 @@
+{
+  "edge_id": "ca-56e27e52-two-examples-marked-exchange",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-45e83b5ab38e4ff5a0dc2f3f4ba5f9a3",
+    "customer-attraction/same-count-history-swap-complete-policies-and-zero-actual-clock"
+  ],
+  "target_ids": [
+    "M-de359a52ec64471cabaac7e318be3b60"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "两份指定三人完整策略，真实从原有序历史完成，不重选后继。同一边标记在两端相同。",
+  "roles": {
+    "M-45e83b5ab38e4ff5a0dc2f3f4ba5f9a3": "两单客户完整SPE使角色收益不能按身份搬运，即使总覆盖相同。",
+    "customer-attraction/same-count-history-swap-complete-policies-and-zero-actual-clock": "五客户完整SPE使旧群体总收益与福利同时下降，且原actual时钟为零。",
+    "M-de359a52ec64471cabaac7e318be3b60": "在同计数真实交换中展示标记净债与角色/标量选择的区别。"
+  },
+  "explanation": "两单客户例的AB后真尾B、BA后真尾A。总旧标记1_A+1_B在两支的时钟都等于1/[(ρ+1)(ρ+2)]，旧总租金相同，却有A和B分别相反的稀释，角色向量并不随置换保持。五客户例BA→AB标A，AB→BA标B，权均1，标量入出守恒；A在AB被真尾A稀释而B不变，故总债−2/[(ρ+1)(ρ+2)]，在ρ=0为−1。这两份完整证书区分零旧群体余额、零单支actual时钟及标量守恒三种合同。",
+  "scope": "两份构造的确切应用，非整个动态付款的反例。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/同计数历史交换的完整策略与零实际时钟--反例.md",
+      "sha256": "0c0adcccf293b916b556130fd2c5902cd9275682d4ba15033be4ba1092f5fba7"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/标记真实历史交换的双分支时钟与终局净债--引理.md",
+      "sha256": "bbd6fc1c905915407aea42362c2ace0ab3cedbbcc4efa43378078a1e560b2e47"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "用正文完整7/13节点策略和真叶复算，不将两游戏混成同一对象，也未要求反向边本身是合法激励。",
+  "endpoint_pins": {
+    "M-45e83b5ab38e4ff5a0dc2f3f4ba5f9a3": "01cec330f82bb6ecd6a9950722cbc067875197bfbfb396f3c72cca95e9b41414",
+    "M-de359a52ec64471cabaac7e318be3b60": "502e01f33f5fa968fa38a2eba13666b9344c722b808d76d696ed5030777adeb5",
+    "customer-attraction/same-count-history-swap-complete-policies-and-zero-actual-clock": "99b3028b0fe22dd3f901ba4142034023f381948667190e8edb97669734ef3573"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/同计数历史交换的完整策略与零实际时钟--反例.md": "0c0adcccf293b916b556130fd2c5902cd9275682d4ba15033be4ba1092f5fba7",
+    "archives/customer-attraction/state/引理/标记真实历史交换的双分支时钟与终局净债--引理.md": "bbd6fc1c905915407aea42362c2ace0ab3cedbbcc4efa43378078a1e560b2e47"
+  },
+  "review_digest": "e8c961c1ea96cf7184a163a14978003664acda1d299d2098c2d9b048fa8696da"
+}

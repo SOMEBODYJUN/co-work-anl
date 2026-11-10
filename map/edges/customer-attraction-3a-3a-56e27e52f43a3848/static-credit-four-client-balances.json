@@ -1,0 +1,42 @@
+{
+  "edge_id": "ca-56e27e52-static-credit-four-client-balances",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/optimal-menu-static-credit-signed-adaptivity"
+  ],
+  "target_ids": [
+    "customer-attraction/single-role-dynamic-loss-same-client-credit-and-unpaid-shares"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意合法比较m索引元组，任意完整策略及其同一实际叶。对角色i，q_i(x)来自同一策略全部原实际前缀的真查询。",
+  "roles": {
+    "customer-attraction/optimal-menu-static-credit-signed-adaptivity": "角色整行静态信用的逐客户非负定义和真实查询的有符号适应差。",
+    "customer-attraction/single-role-dynamic-loss-same-client-credit-and-unpaid-shares": "当前主题外抵消及遗漏、当前交集、非当前交集、实际独有客户的四组准确余额。"
+  },
+  "explanation": "静态来源记L_i为信用、Q_i为适应差，目标反向记作E_i、L_i。逐客户相减：(d−a)/(1+c−a)−o+w−[d/(1+c−a)−q_i]=q_i−a/(1+c−a)−o+w。在R、S_i∩O、(C\\S_i)∩O、C\\O上分别为q_i−1、q_i−1/c、q_i、1−a/c。后两组逐项非负，在C\\S_i上给逐客户抵消。",
+  "scope": "逐客户身份不要求SPE。所有含1/c的客户均c>0；q_i非负，不把真实整行IC拆成客户IC。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/最优主题菜单的非负静态信用与带符号自适应恒等式--引理.md",
+      "sha256": "e26f3d06e14f3ca457c42350b81ecc360a23ebc8263a0769af3591acf0887bd6"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/单角色动态损失的同客户信用与未付份额--引理.md",
+      "sha256": "f516757cadbf4413cc947ad56438f8ff39b95f1999ccf8fb56e97c0c2a1eca5c"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "保留同一比较元组及真分支，核对两正文E、L、Q等符号映射以及零分母边界。",
+  "whole_result": "目标的当前主题外抵消和四组带符号净余额对其全声明范围成立。",
+  "endpoint_pins": {
+    "customer-attraction/optimal-menu-static-credit-signed-adaptivity": "c55cc40a1f50aac26344d34745ca7022ff0c141c76530a952875cea62d21b14a",
+    "customer-attraction/single-role-dynamic-loss-same-client-credit-and-unpaid-shares": "143f3cfef996bdd500a1d8c1bccabde4bbde8956c497a2d218e615ff11718f00"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/最优主题菜单的非负静态信用与带符号自适应恒等式--引理.md": "e26f3d06e14f3ca457c42350b81ecc360a23ebc8263a0769af3591acf0887bd6",
+    "archives/customer-attraction/state/引理/单角色动态损失的同客户信用与未付份额--引理.md": "f516757cadbf4413cc947ad56438f8ff39b95f1999ccf8fb56e97c0c2a1eca5c"
+  },
+  "review_digest": "514d14e64c74209b11c275cd38375c6a6b44158be23c6e719dbd3eb70ce17054"
+}
