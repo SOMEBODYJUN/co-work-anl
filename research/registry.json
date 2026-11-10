@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-map-recovery-exact-math-v1.json",
-    "sha256": "c43825cba2a156d71feeddcb97a896d341f389bc4dfd14d917c62a345d167082"
+    "path": "research/registration/baseline-map-round36-eta-and-cov-k-v1.json",
+    "sha256": "69a0ceffb4cf4b7aaa3c3d042fddde3693e357afa27795245e3d17937643545a"
   },
   "objects": [
     {
@@ -6805,7 +6805,7 @@
     },
     {
       "object_id": "CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1",
-      "version": 2,
+      "version": 3,
       "title": "最优首动作菜单的真实孩子损失精确恒等与路径总账",
       "kind": "identity",
       "truth_status": "proved",
@@ -6817,7 +6817,7 @@
       "objections": "ρ,θ,f,ξ,η各有静态最优性/真实IC理由，路径恒等准确但未支付总预算。丢ξ、η的加强已有反例；只丢η后的总候选单列open，不从恒等式宣称half。 工作稿复核的(6)是相同最优菜单恒等式；(7)另计合法非菜单动作的 rλ_A 和修正 θ̂_A。取菜单分布只组合已成立的式子。",
       "body": {
         "path": "archives/customer-attraction/state/引理/最优首动作菜单与真实孩子损失--引理.md",
-        "sha256": "0a19af6f0b2a834ad342f9f482fd3427f82fe18d5fb7bd4753a9fa6540166e69"
+        "sha256": "ccbcd801782638693467fc4f719a8bfc9a75b7da165951244445bca33c1f466b"
       },
       "evidence": [
         {
@@ -6834,7 +6834,7 @@
         },
         {
           "path": "archives/customer-attraction/state/算法/分享余项候选的完整策略树极值--算法.md",
-          "sha256": "6f9d8b5a954aade36b1b2d13c90ce96bf0f7fe03ed338a52c82eaa9c4124a19e"
+          "sha256": "ee60d403b53ef7aa911a6085e95642c8bf2a7372a1141db59c0f01e2b6d56d1d"
         },
         {
           "path": "archives/customer-attraction/state/资源/删信用预算并行审查与分支成本的精确校准--资源.md",
@@ -6855,6 +6855,10 @@
           "path": "archives/customer-attraction/state/资源/最优首动作菜单原稿的两级信用与真实孩子总账--资源.md",
           "sha256": "3c14ddc66e721ffeb750f7e155b1c15e7009f0c14d9b83a6f162c3886cc2cf2d",
           "section": "菜单外动作不能漏覆盖损失"
+        },
+        {
+          "path": "archives/customer-attraction/state/反例/两位提供者的分享余项预算严格反例--反例.md",
+          "sha256": "4667c33fd2844aa5e7bcd2fe77fbdc5b3760fb1023ffdf8c9c832c0dbd731892"
         }
       ],
       "sources": [
@@ -28080,7 +28084,7 @@
     },
     {
       "object_id": "M-425fa58f82324fee96bc65a77ecb333a",
-      "version": 1,
+      "version": 2,
       "title": "最优首动作尾元组的联合静态菜单损失界",
       "kind": "lemma",
       "truth_status": "proved",
@@ -28110,7 +28114,7 @@
         },
         {
           "path": "archives/customer-attraction/state/引理/最优首动作菜单与真实孩子损失--引理.md",
-          "sha256": "0a19af6f0b2a834ad342f9f482fd3427f82fe18d5fb7bd4753a9fa6540166e69"
+          "sha256": "ccbcd801782638693467fc4f719a8bfc9a75b7da165951244445bca33c1f466b"
         }
       ],
       "sources": [
@@ -33351,19 +33355,19 @@
     },
     {
       "object_id": "M-5a32d36d5d2d4eb8a54df3a0a7566a9b",
-      "version": 3,
+      "version": 4,
       "title": "分享余项的最优首动作菜单聚合付款候选",
       "kind": "candidate",
-      "truth_status": "open",
+      "truth_status": "refuted",
       "model": "有限单位客户、有限非空共同标签目录、单位提供者顺序观察全部有序历史；每位各选一主题，客户价值在最终覆盖者间均分。重复行动、空覆盖、同覆盖异标签和全部离轨弱平局均保留；具体反例仅限其指定输入。",
       "statement": "零根原完整SPE的每actual位置i余r_i，最优首动作菜单𝓜_i内取同σ真实强制尾，η_i(A)=r_i d_i(A)−|A∖(P_i∪S_i)|−(r_i−1)|A∖(P_i∪S_i∪Y_i(A))|≥0。候选Λ(σ)=Σ_i min_(A∈𝓜_i)η_i(A)/r_i≤2W−OPT_m。",
       "quantifiers": "∀m≥1、∀有限原实例、∀完整有序历史纯SPE；每位置可选自身最小菜单A，但其强制尾须来自同一原σ。",
       "assumptions": [],
-      "scope": "∀m≥1、∀有限原实例、∀完整有序历史纯SPE；每位置可选自身最小菜单A，但其强制尾须来自同一原σ。",
-      "objections": "普遍式尚未完成付款；共同核平移、全m星形等号和固定实例精确极值算法为结构/攻击工具，不以有限检查关闭全称目标。η与ρ、复制税C不同，保独立身份。 保全部ξ仅删η时，沿actual路径各位置独立最小化η_A/r。all-big族反驳删ξ/η及固定折扣的更强合同，仍给本候选留开放状态。",
+      "scope": "∀m≥1、∀有限原实例、∀完整有序历史纯SPE。两人七主题26客户与67客户完整SPE各给1/2严格缺口，67客户例每节点严格唯一；一般全称式已否定，恰六人版本不由该反例决定。",
+      "objections": "只针对保全部ξ仅删η的预算。保留原恒等式及真实策略；两例均满足半覆盖，原半覆盖目标仍需独立处理。",
       "body": {
         "path": "archives/customer-attraction/state/引理/最优首动作菜单与真实孩子损失--引理.md",
-        "sha256": "0a19af6f0b2a834ad342f9f482fd3427f82fe18d5fb7bd4753a9fa6540166e69"
+        "sha256": "ccbcd801782638693467fc4f719a8bfc9a75b7da165951244445bca33c1f466b"
       },
       "evidence": [
         {
@@ -33380,7 +33384,7 @@
         },
         {
           "path": "archives/customer-attraction/state/算法/分享余项候选的完整策略树极值--算法.md",
-          "sha256": "6f9d8b5a954aade36b1b2d13c90ce96bf0f7fe03ed338a52c82eaa9c4124a19e"
+          "sha256": "ee60d403b53ef7aa911a6085e95642c8bf2a7372a1141db59c0f01e2b6d56d1d"
         },
         {
           "path": "archives/customer-attraction/state/资源/删信用预算并行审查与分支成本的精确校准--资源.md",
@@ -33395,6 +33399,10 @@
         {
           "path": "archives/customer-attraction/state/计算/eta预算候选的有限筛查--计算.md",
           "sha256": "69efc3ce8cdefc3ce816120f0932d18bb6d26417178e00ae3bc646dc01f23edd"
+        },
+        {
+          "path": "archives/customer-attraction/state/反例/两位提供者的分享余项预算严格反例--反例.md",
+          "sha256": "4667c33fd2844aa5e7bcd2fe77fbdc5b3760fb1023ffdf8c9c832c0dbd731892"
         }
       ],
       "sources": [
@@ -111275,6 +111283,104 @@
       ]
     },
     {
+      "object_id": "customer-attraction/cov-k-actual-menu-nonconvexity",
+      "version": 1,
+      "title": "真实两人删槽菜单的非凸精确反例",
+      "kind": "finite-obstruction",
+      "truth_status": "proved",
+      "model": "单位客户、共同有限非空目录、完整有序历史纯SPE及真实强制删槽共享凸域K。",
+      "statement": "两个不交主题规模3与2，完整SPE严格唯一，K恰为(1−s)1_A+s1_B、0≤s≤1/2。s=1/4处J₂″=384/343−256/125<0；全K最小J₂=5=W=OPT，由s=1/5唯一取得。",
+      "quantifiers": "存在这一份明确两人整数目录及唯一完整纯SPE。",
+      "assumptions": [
+        "K由同一完整策略在实际位置的真实强制续局逐行删槽再作平均；空主题、重复标签覆盖和离轨平局合法。"
+      ],
+      "scope": "否定在每份完整SPE的真实K上自动凸的路线。",
+      "objections": "该实例满足COV-K，较大人数的真实域非凸性需要独立论证。",
+      "body": {
+        "path": "archives/customer-attraction/state/定理/真实删槽共享菜单的三人直接覆盖与两人非凸性--定理.md",
+        "sha256": "c2889e135218262c7aca12166afa9df9f049b7ccab15002e0e5d837ce7f58173"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/候选/共享菜单的直接覆盖目标与有符号曲率--候选.md",
+          "sha256": "160ff650e2f6369942372a6161168e44dc6d86c371b9d51892a1bebea07a36ee"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        }
+      ],
+      "sources": []
+    },
+    {
+      "object_id": "customer-attraction/cov-k-scaled-actual-up-to-three",
+      "version": 1,
+      "title": "真实删槽菜单在一至三人时的直接覆盖预算",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "单位客户、共同有限非空目录、完整有序历史纯SPE及真实强制删槽共享凸域K。",
+      "statement": "对每份一至三人完整纯SPE，实际负载c的缩放L⁰=(m−1)c/m属于K。m=1时J₁(L⁰)=W=OPT；m=2时J₂(L⁰)≤23W/15；m=3时J₃(L⁰)≤29W/15。两种多人预算以非负有理系数逐客户合并实际根保底、末位IC和两人税界精确式的单侧加强。",
+      "quantifiers": "∀m∈{1,2,3}，∀有限原客户目录，∀完整有序历史纯SPE及每个整主题查询。",
+      "assumptions": [
+        "K由同一完整策略在实际位置的真实强制续局逐行删槽再作平均；空主题、重复标签覆盖和离轨平局合法。"
+      ],
+      "scope": "给原COV-K充分条件的一至三人全称分片和固定L⁰的定量上界。",
+      "objections": "m≥4的原COV-K候选及系数锐性均另计。",
+      "body": {
+        "path": "archives/customer-attraction/state/定理/真实删槽共享菜单的三人直接覆盖与两人非凸性--定理.md",
+        "sha256": "c2889e135218262c7aca12166afa9df9f049b7ccab15002e0e5d837ce7f58173"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/候选/共享菜单的直接覆盖目标与有符号曲率--候选.md",
+          "sha256": "160ff650e2f6369942372a6161168e44dc6d86c371b9d51892a1bebea07a36ee"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+          "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/cov-k-small-population/verify.py",
+          "sha256": "6f726b924ed6a489836933f4b07edfd0a227659f48e6ff00f33da0ddd3195891"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/cov-k-small-population/replay.json",
+          "sha256": "f9562f5988e339b9dabc11accf9f776e13390302343a45f762f466be43f59bc0"
+        }
+      ],
+      "sources": []
+    },
+    {
+      "object_id": "customer-attraction/cov-k-true-menu-universal-convexity",
+      "version": 1,
+      "title": "直接覆盖目标在每个真实删槽菜单上自动凸",
+      "kind": "candidate",
+      "truth_status": "refuted",
+      "model": "单位客户、共同有限非空目录、完整有序历史纯SPE及真实强制删槽共享凸域K。",
+      "statement": "是否对每个m≥2、每份有限原共同目录及每份完整纯SPE，J_m限制于其同一真实强制删槽的K都是凸函数？",
+      "quantifiers": "∀m≥2、∀有限共同目录、∀完整有序历史纯SPE及所有同K线段。",
+      "assumptions": [
+        "K由同一完整策略在实际位置的真实强制续局逐行删槽再作平均；空主题、重复标签覆盖和离轨平局合法。"
+      ],
+      "scope": "可用全局凸最优化解释原J的候选路线，被两人真实K反例严格否定。",
+      "objections": "一般合法分数背景上的旧反例仅为线索；此处有严格真实SPE证据。COV-K的预算结论不要求J凸。",
+      "body": {
+        "path": "archives/customer-attraction/state/定理/真实删槽共享菜单的三人直接覆盖与两人非凸性--定理.md",
+        "sha256": "c2889e135218262c7aca12166afa9df9f049b7ccab15002e0e5d837ce7f58173"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/候选/共享菜单的直接覆盖目标与有符号曲率--候选.md",
+          "sha256": "160ff650e2f6369942372a6161168e44dc6d86c371b9d51892a1bebea07a36ee"
+        }
+      ],
+      "sources": []
+    },
+    {
       "object_id": "customer-attraction/coverage-exchange-any-player-near-saturation-and-historical-candidates",
       "version": 2,
       "title": "任意实际玩家最大主题旧近饱和交换及末位边界",
@@ -114335,7 +114441,7 @@
     },
     {
       "object_id": "customer-attraction/eta-candidate-common-core-translation",
-      "version": 2,
+      "version": 3,
       "title": "共同核心客户保持完整SPE集合及分享余项缺口",
       "kind": "theorem",
       "truth_status": "proved",
@@ -114356,7 +114462,7 @@
         },
         {
           "path": "archives/customer-attraction/state/引理/最优首动作菜单与真实孩子损失--引理.md",
-          "sha256": "0a19af6f0b2a834ad342f9f482fd3427f82fe18d5fb7bd4753a9fa6540166e69"
+          "sha256": "ccbcd801782638693467fc4f719a8bfc9a75b7da165951244445bca33c1f466b"
         },
         {
           "path": "archives/customer-attraction/state/定理/星形目录的分享余项等号--定理.md",
@@ -114364,7 +114470,7 @@
         },
         {
           "path": "archives/customer-attraction/state/算法/分享余项候选的完整策略树极值--算法.md",
-          "sha256": "6f9d8b5a954aade36b1b2d13c90ce96bf0f7fe03ed338a52c82eaa9c4124a19e"
+          "sha256": "ee60d403b53ef7aa911a6085e95642c8bf2a7372a1141db59c0f01e2b6d56d1d"
         },
         {
           "path": "archives/customer-attraction/state/引理/最小反例的回复闭包与全目录共同客户剥离--引理.md",
@@ -114380,7 +114486,7 @@
     },
     {
       "object_id": "customer-attraction/eta-candidate-complete-tree-extremum",
-      "version": 1,
+      "version": 2,
       "title": "分享余项候选对全部完整策略树的固定输入精确极值算法",
       "kind": "algorithm-theorem",
       "truth_status": "proved",
@@ -114392,7 +114498,7 @@
       "objections": "可重构全有序动作见证，不限制统一计数政策；有限固定输入精确最值不证明所有实例候选。指数状态/终局数无一般多项式复杂度承诺。原小域独审属于实现证据，本轮未重放。",
       "body": {
         "path": "archives/customer-attraction/state/算法/分享余项候选的完整策略树极值--算法.md",
-        "sha256": "6f9d8b5a954aade36b1b2d13c90ce96bf0f7fe03ed338a52c82eaa9c4124a19e"
+        "sha256": "ee60d403b53ef7aa911a6085e95642c8bf2a7372a1141db59c0f01e2b6d56d1d"
       },
       "evidence": [
         {
@@ -114401,7 +114507,7 @@
         },
         {
           "path": "archives/customer-attraction/state/引理/最优首动作菜单与真实孩子损失--引理.md",
-          "sha256": "0a19af6f0b2a834ad342f9f482fd3427f82fe18d5fb7bd4753a9fa6540166e69"
+          "sha256": "ccbcd801782638693467fc4f719a8bfc9a75b7da165951244445bca33c1f466b"
         },
         {
           "path": "archives/customer-attraction/state/引理/共同核心客户对分享余项候选的平移--引理.md",
@@ -114418,6 +114524,10 @@
         {
           "path": "archives/customer-attraction/tools/evidence/eta-complete-tree/source/audit_eta_complete_tree.py",
           "sha256": "51395ce1c6edcc735a94261ef064bdfb679759a766901be51fc59195ec4a5134"
+        },
+        {
+          "path": "archives/customer-attraction/state/反例/两位提供者的分享余项预算严格反例--反例.md",
+          "sha256": "4667c33fd2844aa5e7bcd2fe77fbdc5b3760fb1023ffdf8c9c832c0dbd731892"
         }
       ],
       "sources": [
@@ -114429,7 +114539,7 @@
     },
     {
       "object_id": "customer-attraction/eta-candidate-star-equality",
-      "version": 1,
+      "version": 2,
       "title": "星形目录的全部完整SPE分类与分享余项精确等号",
       "kind": "theorem",
       "truth_status": "proved",
@@ -114450,7 +114560,7 @@
         },
         {
           "path": "archives/customer-attraction/state/引理/最优首动作菜单与真实孩子损失--引理.md",
-          "sha256": "0a19af6f0b2a834ad342f9f482fd3427f82fe18d5fb7bd4753a9fa6540166e69"
+          "sha256": "ccbcd801782638693467fc4f719a8bfc9a75b7da165951244445bca33c1f466b"
         },
         {
           "path": "archives/customer-attraction/state/引理/共同核心客户对分享余项候选的平移--引理.md",
@@ -114458,7 +114568,7 @@
         },
         {
           "path": "archives/customer-attraction/state/算法/分享余项候选的完整策略树极值--算法.md",
-          "sha256": "6f9d8b5a954aade36b1b2d13c90ce96bf0f7fe03ed338a52c82eaa9c4124a19e"
+          "sha256": "ee60d403b53ef7aa911a6085e95642c8bf2a7372a1141db59c0f01e2b6d56d1d"
         },
         {
           "path": "archives/customer-attraction/tools/evidence/eta-complete-tree/source/eta_complete_tree.py",
@@ -137028,7 +137138,7 @@
     },
     {
       "object_id": "customer-attraction/same-tail-completion-credit-obstruction",
-      "version": 2,
+      "version": 3,
       "title": "同尾补全信用删除及固定比例折扣的全人数付款障碍",
       "kind": "counterexample",
       "truth_status": "proved",
@@ -137052,7 +137162,7 @@
         },
         {
           "path": "archives/customer-attraction/state/引理/最优首动作菜单与真实孩子损失--引理.md",
-          "sha256": "0a19af6f0b2a834ad342f9f482fd3427f82fe18d5fb7bd4753a9fa6540166e69"
+          "sha256": "ccbcd801782638693467fc4f719a8bfc9a75b7da165951244445bca33c1f466b"
         },
         {
           "path": "archives/customer-attraction/state/资源/删信用预算并行审查与分支成本的精确校准--资源.md",
@@ -146501,6 +146611,44 @@
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-44b24f3962bd4f68a4b6913610c0d417/true_counterexample/warm_dag_search.py",
         "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-44b24f3962bd4f68a4b6913610c0d417/true_counterexample/warm_dag_search.py"
       ]
+    },
+    {
+      "object_id": "customer-attraction/two-provider-eta-budget-counterexample",
+      "version": 1,
+      "title": "两位提供者的分享余项预算严格反例",
+      "kind": "finite-obstruction",
+      "truth_status": "proved",
+      "model": "零根、两位单位提供者、有限七主题共同目录、单位客户、完整有序历史纯SPE。",
+      "statement": "两份明确整数客户输入各有实际S→T的完整SPE，根最优菜单恰{X,Z}，末位菜单恰{U}。26客户例Λ=33/2>16=2W−OPT；67客户例Λ=79/2>39=2W−OPT，且其完整SPE严格唯一。m=1该候选成立，m=2为最小失败人数。",
+      "quantifiers": "存在两份明确有限完整实例；第二份对全部完整纯SPE，全部八个非终局历史。",
+      "assumptions": [
+        "真实强制查询沿同一完整策略，逐历史收益用精确客户均分。"
+      ],
+      "scope": "否定保ξ仅删η的全称路径付款；原半覆盖未被否定。",
+      "objections": "不主张26为最少客户数；恰六人版本未由此决定。",
+      "body": {
+        "path": "archives/customer-attraction/state/反例/两位提供者的分享余项预算严格反例--反例.md",
+        "sha256": "4667c33fd2844aa5e7bcd2fe77fbdc5b3760fb1023ffdf8c9c832c0dbd731892"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/引理/最优首动作菜单与真实孩子损失--引理.md",
+          "sha256": "ccbcd801782638693467fc4f719a8bfc9a75b7da165951244445bca33c1f466b"
+        },
+        {
+          "path": "archives/customer-attraction/state/算法/分享余项候选的完整策略树极值--算法.md",
+          "sha256": "ee60d403b53ef7aa911a6085e95642c8bf2a7372a1141db59c0f01e2b6d56d1d"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/eta-two-provider-counterexample/verify.py",
+          "sha256": "83a6e9a2723ed3c4dc611772c431a9f1e433fdccd3ed97f5e8bda6e7df13a727"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/eta-two-provider-counterexample/replay.json",
+          "sha256": "0d2f3c8998674311c52cd2130e52126dca3f83b9b93c24bcb3a861d208a27412"
+        }
+      ],
+      "sources": []
     },
     {
       "object_id": "customer-attraction/two-provider-external-residual-max-cover-parametric-family",
@@ -162119,10 +162267,13 @@
       "sha256": "160ff650e2f6369942372a6161168e44dc6d86c371b9d51892a1bebea07a36ee",
       "disposition": "objects",
       "object_ids": [
-        "customer-attraction/shared-menu-direct-coverage-objective-and-signed-curvature",
+        "M-0e21f3944c67468593caf9ea51d51423",
         "M-2f8c716612cb44e9a6d6d6995035024f",
         "M-d1736d8b4e1d490aa2d01f89cff599a2",
-        "M-0e21f3944c67468593caf9ea51d51423"
+        "customer-attraction/cov-k-actual-menu-nonconvexity",
+        "customer-attraction/cov-k-scaled-actual-up-to-three",
+        "customer-attraction/cov-k-true-menu-universal-convexity",
+        "customer-attraction/shared-menu-direct-coverage-objective-and-signed-curvature"
       ],
       "reason": "COV-K开放合同、符号曲率、OPT完整信用及实际末位gamma上界独立量化。"
     },
@@ -162936,6 +163087,18 @@
         "customer-attraction/two-player-static-pne-three-player-iid-cycle-separation"
       ],
       "reason": "已实读冻结正文及其frontmatter身份、状态、范围与承重论证；该文件以稳定数学身份登记，正文和证据留在原路径，未把导航/日志另造节点。"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/两位提供者的分享余项预算严格反例--反例.md",
+      "sha256": "4667c33fd2844aa5e7bcd2fe77fbdc5b3760fb1023ffdf8c9c832c0dbd731892",
+      "disposition": "objects",
+      "object_ids": [
+        "CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1",
+        "M-5a32d36d5d2d4eb8a54df3a0a7566a9b",
+        "customer-attraction/eta-candidate-complete-tree-extremum",
+        "customer-attraction/two-provider-eta-budget-counterexample"
+      ],
+      "reason": "两份完整SPE严格反例，区分只删η与完整恒等式。"
     },
     {
       "path": "archives/customer-attraction/state/反例/两单客户三人完整均衡的静态iid逐步付款失败--反例.md",
@@ -165608,6 +165771,8 @@
         "customer-attraction/continuation-decorrelation-compensation-budget",
         "customer-attraction/count-policy-joint-mass-generator-and-five-player-all-common-client-point",
         "customer-attraction/coupled-cartesian-complete-policy-and-factor-extrema-exact-audit",
+        "customer-attraction/cov-k-actual-menu-nonconvexity",
+        "customer-attraction/cov-k-scaled-actual-up-to-three",
         "customer-attraction/coverage-exchange-any-player-near-saturation-and-historical-candidates",
         "customer-attraction/coverage-harmonic-potential-common-pivot-differences",
         "customer-attraction/credible-adjacent-transposition-and-fixed-count-extremal-form",
@@ -168180,6 +168345,17 @@
         "M-eded59528be84971ae93572a7a30f2c5"
       ],
       "reason": "完整连续读本成熟正文的模型、精确陈述、量词、全部证明及边界；所列独立数学对象由本页承载，完整理由留body及必要证据。普通算术、源版本和运行次数不另造对象。"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/真实删槽共享菜单的三人直接覆盖与两人非凸性--定理.md",
+      "sha256": "c2889e135218262c7aca12166afa9df9f049b7ccab15002e0e5d837ce7f58173",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/cov-k-actual-menu-nonconvexity",
+        "customer-attraction/cov-k-scaled-actual-up-to-three",
+        "customer-attraction/cov-k-true-menu-universal-convexity"
+      ],
+      "reason": "直接覆盖量化分片、真实K曲率反证及其精确被否命题。"
     },
     {
       "path": "archives/customer-attraction/state/定理/真实前缀完整利润席位的一份福利预算--定理.md",
@@ -173222,6 +173398,7 @@
         "M-f4d1a1c9df134392856f390bd58de4b7",
         "customer-attraction/binary-background-four-tail-reweighting",
         "customer-attraction/binary-four-tail-two-slope-profit",
+        "customer-attraction/cov-k-scaled-actual-up-to-three",
         "customer-attraction/five-player-maximum-root-overlap-spectra",
         "customer-attraction/last-player-tax-diagnostic",
         "customer-attraction/same-load-two-tail-tax-prefix-transfer",
@@ -174021,16 +174198,17 @@
     },
     {
       "path": "archives/customer-attraction/state/引理/最优首动作菜单与真实孩子损失--引理.md",
-      "sha256": "0a19af6f0b2a834ad342f9f482fd3427f82fe18d5fb7bd4753a9fa6540166e69",
+      "sha256": "ccbcd801782638693467fc4f719a8bfc9a75b7da165951244445bca33c1f466b",
       "disposition": "objects",
       "object_ids": [
         "CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1",
+        "M-425fa58f82324fee96bc65a77ecb333a",
         "M-5a32d36d5d2d4eb8a54df3a0a7566a9b",
         "customer-attraction/eta-candidate-common-core-translation",
-        "customer-attraction/eta-candidate-star-equality",
         "customer-attraction/eta-candidate-complete-tree-extremum",
-        "M-425fa58f82324fee96bc65a77ecb333a",
-        "customer-attraction/same-tail-completion-credit-obstruction"
+        "customer-attraction/eta-candidate-star-equality",
+        "customer-attraction/same-tail-completion-credit-obstruction",
+        "customer-attraction/two-provider-eta-budget-counterexample"
       ],
       "reason": "完整逐段实读。精确菜单/非菜单信用恒等与路径总账已证，分享余项聚合付款另立open；真实同枝尾与最优菜单条件不丢。\n复用既有主正文和稳定ID；精确接收另列来源证据及数学范围，保原证明、条件和其它材料归属。"
     },
@@ -180465,14 +180643,15 @@
     },
     {
       "path": "archives/customer-attraction/state/算法/分享余项候选的完整策略树极值--算法.md",
-      "sha256": "6f9d8b5a954aade36b1b2d13c90ce96bf0f7fe03ed338a52c82eaa9c4124a19e",
+      "sha256": "ee60d403b53ef7aa911a6085e95642c8bf2a7372a1141db59c0f01e2b6d56d1d",
       "disposition": "objects",
       "object_ids": [
-        "customer-attraction/eta-candidate-complete-tree-extremum",
         "CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1",
         "M-5a32d36d5d2d4eb8a54df3a0a7566a9b",
         "customer-attraction/eta-candidate-common-core-translation",
-        "customer-attraction/eta-candidate-star-equality"
+        "customer-attraction/eta-candidate-complete-tree-extremum",
+        "customer-attraction/eta-candidate-star-equality",
+        "customer-attraction/two-provider-eta-budget-counterexample"
       ],
       "reason": "完整逐段实读。固定输入对全部完整历史策略树精确最值算法有归纳保证，程序/小域独审只实现证据，不限制Markov政策。"
     },
@@ -192527,6 +192706,42 @@
         "customer-attraction/six-providers/exact-six-full-history-half-cover"
       ],
       "reason": "父协调全文精确比较：与0085主body六人完整历史half问题同对象，旧problem ID是其legacy路由。本页由0085唯一owner实际接受为精确evidence后，按同Boss published peer对象验证；不保第二主record。"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/cov-k-small-population/replay.json",
+      "sha256": "f9562f5988e339b9dabc11accf9f776e13390302343a45f762f466be43f59bc0",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/cov-k-scaled-actual-up-to-three"
+      ],
+      "reason": "两人和三人非负有理付款的精确逐列证书。"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/cov-k-small-population/verify.py",
+      "sha256": "6f726b924ed6a489836933f4b07edfd0a227659f48e6ff00f33da0ddd3195891",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/cov-k-scaled-actual-up-to-three"
+      ],
+      "reason": "两人和三人非负有理付款的精确逐列证书。"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/eta-two-provider-counterexample/replay.json",
+      "sha256": "0d2f3c8998674311c52cd2130e52126dca3f83b9b93c24bcb3a861d208a27412",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/two-provider-eta-budget-counterexample"
+      ],
+      "reason": "逐客户的全部真实偏离、最优菜单和分享余项矩阵。"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/eta-two-provider-counterexample/verify.py",
+      "sha256": "83a6e9a2723ed3c4dc611772c431a9f1e433fdccd3ed97f5e8bda6e7df13a727",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/two-provider-eta-budget-counterexample"
+      ],
+      "reason": "逐客户的全部真实偏离、最优菜单和分享余项矩阵。"
     },
     {
       "path": "archives/customer-attraction/tools/evidence/route-asr-compatible-17/replay.json",
@@ -205985,7 +206200,6 @@
     "map/edges/customer-attraction-3a-3a-00c291811e5de4b9/local-potential-reset-sums-all-actual-rows.json",
     "map/edges/customer-attraction-3a-3a-00c291811e5de4b9/negative-prefix-family-forces-first-credit-factor-two.json",
     "map/edges/customer-attraction-3a-3a-00c291811e5de4b9/one-follower-decorrelation-pays-two-player-bare-k.json",
-    "map/edges/customer-attraction-3a-3a-00c291811e5de4b9/optimal-tail-static-menu-penalty-enters-any-action-ledger.json",
     "map/edges/customer-attraction-3a-3a-00c291811e5de4b9/ordered-safe-blocks-build-linked-three-query-projection.json",
     "map/edges/customer-attraction-3a-3a-00c291811e5de4b9/private-block-common-payment-condition-to-half.json",
     "map/edges/customer-attraction-3a-3a-00c291811e5de4b9/regular-layers-pay-singleton-block-price.json",
