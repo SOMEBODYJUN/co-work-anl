@@ -1,0 +1,56 @@
+{
+  "edge_id": "umcover-cone-and-weights-imply-canonical-bound-r54",
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss6",
+  "review_note": "Fresh round54 formal worker independently read all four exact current contracts, the complete shared source page, the bearing original-paper extraction portions and pages27,28,45,59,60,61. Proof completed in review.md; no scientific/certificate rerun. Current source corrections retained; native installed-path binding/check remains Root serial work.",
+  "source_ids": [
+    "M-1b373ae082784eac8a0cb3bd63b2797a",
+    "M-66b1b61e046b4b8f8e4cc949b1d3322a"
+  ],
+  "target_ids": [
+    "M-5e9f212b88f34a0c8cdcb0e74e582886"
+  ],
+  "conditions": "Same finite binary H and Tanner representation for both premises. Completion feasibility assumes uniform check degree d_c>=2 and sets all coordinates outside the root component to0. Quantitative bound assumes fixed integers3<=d_v<d_c, H (d_v,d_c)-regular, length n>0. No girth or connectedness assumption. Asymptotic statement holds with both degrees fixed.",
+  "roles": {
+    "M-1b373ae082784eac8a0cb3bd63b2797a": "Certifies the BFS canonical vector by the exact local cone inequalities, including both shallow-neighbor cases and zero outside the component.",
+    "M-66b1b61e046b4b8f8e4cc949b1d3322a": "Supplies w_AWGN=||omega||1^2/||omega||2^2 and the nonzero-cone-to-nonzero-vertex minimum identity.",
+    "M-5e9f212b88f34a0c8cdcb0e74e582886": "Receives its complete completion feasibility, norm/layer mechanism, precise regular B n^beta upper bound and fixed-degree relative limit."
+  },
+  "whole_result": "At uniform d_c>=2, choose a root variable, set omega_i=(d_c-1)^(-t) at root-component distance2t and0 elsewhere; omega is nonzero and in K(H). If fixed3<=d_v<d_c and H is regular, then w_AWGN^min(H)<=[d_v(d_v-1)/(d_v-2)]^2 n^beta with beta=log((d_v-1)^2)/log((d_v-1)(d_c-1))<1. Consequently w_AWGN^min(H)/n tends to0 along any such fixed-degree length-growing family. This includes disconnected H and requires no girth hypothesis.",
+  "explanation": "At a check at distance2t+1, neighbors lie at2t or2t+2. One shallow neighbor is balanced by the other d_c-1 deep weights exactly; two or more shallow neighbors support each maximal weight, and all deep weights are no larger. This also handles d_c=2. Outside the root component all local weights are0. For regular H let m<=n be its root-component size, a=d_v-1,b=d_c-1,r=ab, capacities C0=1,Ct=d_v*b*r^(t-1). BFS nonbacktracking expansion gives Nt<=Ct. Let T first satisfy sum_{0..T}Ct>=m. The mass-m vector filling shallow capacities first has every prefix sum>=the actual layer counts; decreasing weights b^(-t) therefore give ||omega||1<=sum_{0..T}Ct*b^(-t)<=d_v/(d_v-2)*a^T. Root weight gives ||omega||2^2>=1. For T>=1, A_(T-1)<m<=n and A_(T-1)=1+d_v*b/(r-1)*(r^(T-1)-1)>=r^(T-1), so T<=1+log(n)/log(r); T=0 is immediate. W then yields minAWGN<=w(omega)<= [d_v/(d_v-2)]^2*a^(2T)<=B*n^beta. Since b>a, beta<1. Fixed degrees give the stated relative limit.",
+  "scope": "Whole current C theorem. Does not certify that this vector is globally minimal, Hamming distance/BSC sublinearity, or a scheduling/SPE transfer. Does not extend the rate to d_v=2,d_v>=d_c or variable-degree families.",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md",
+      "sha256": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+      "section": "5. 基本锥、极射线和表示复杂度"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md",
+      "sha256": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+      "section": "6. 伪权：同一锥在不同信道上的不同尺度"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md",
+      "sha256": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+      "section": "7. Canonical completion与AWGN伪权次线性上界"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-c0e66bdc33ea3851/review.md",
+      "sha256": "1b57569d42d1ee5711999e954155f1d5b5dd38b6ebc02acfb34f8bf0858a27b6"
+    }
+  ],
+  "endpoint_pins": {
+    "M-1b373ae082784eac8a0cb3bd63b2797a": "5d4d98124785e9c7687316e72171d44ef48318217d705f36b2599fd35974d1af",
+    "M-5e9f212b88f34a0c8cdcb0e74e582886": "864d93b632158300a06f9d255c728589a4eb06f06ef5469dea1459791f9e283d",
+    "M-66b1b61e046b4b8f8e4cc949b1d3322a": "39052a612c4633049b8083fea537347552cf49e2bc431833ccc4b381bb39691e"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+    "map/edges/unrelated-machines-3a-3a-c0e66bdc33ea3851/review.md": "1b57569d42d1ee5711999e954155f1d5b5dd38b6ebc02acfb34f8bf0858a27b6"
+  },
+  "review_digest": "f5a9d9d3f22ac0071199f1502625d1aba8bbb37acb86b1e754f4c53b2925b9b7"
+}
