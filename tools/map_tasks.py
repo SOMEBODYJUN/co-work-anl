@@ -335,12 +335,11 @@ def _material_count(rows):
     return len({ref['path'] for row in rows for ref in row['definition'].get('materials',[])})
 
 
-def _asset_refs(root,definition,receipt):
+def _asset_refs(root,definition,receipt,*,canonical=None):
     assets=receipt.get('assets')
     if not isinstance(assets,list) or (not assets and definition.get('stage') not in {'3A','3B','3C','3D'}):
         raise ValueError('Registration requires published batch assets; a map comparison with no edges may use an empty asset list')
     _prefetch(root,[ref['path'] for ref in assets])
-    canonical=None
     for ref in assets:
         name=ref['path']
         if not any(name==p or PurePosixPath(p) in PurePosixPath(name).parents for p in definition['write_paths']):
@@ -1202,7 +1201,8 @@ def collect(root,phase='map',local=False,ctx=None,baseline_ref=None,*,tolerate_s
     for row in rows:
         definition=row['definition'];task_id=definition['task_id']
         try:
-            validate(root,definition,'map',objects=objects);_asset_refs(root,definition,row['receipt'])
+            validate(root,definition,'map',objects=objects)
+            _asset_refs(root,definition,row['receipt'],canonical=canonical)
             relations,names=batch_edges(root,definition,row['receipt'],objects)
             for edge,name in zip(relations.values(),names):
                 if name not in canonical:research.require_edge_result(edge)
