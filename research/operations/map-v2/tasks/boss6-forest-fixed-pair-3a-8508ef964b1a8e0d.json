@@ -1,0 +1,160 @@
+{
+  "definition": {
+    "task_id": "boss6-forest-fixed-pair-3a-8508ef964b1a8e0d",
+    "stage": "3A",
+    "registry": "research/registry.json",
+    "object_ids": [
+      "UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1"
+    ],
+    "read_object_ids": [
+      "UM-SINGLE-CYCLE-FIXED-CONFIG-LAW-GLUE-NO-v1",
+      "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1",
+      "UM-MODEL-v1"
+    ],
+    "input_pins": {
+      "UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1": "d0bef948df0515503febaf7e048674f25a5c02f8f1ccf6b4550f2b6b610578a6",
+      "UM-SINGLE-CYCLE-FIXED-CONFIG-LAW-GLUE-NO-v1": "de4000256bfd032361c5dc7e43d1adf294b40f08be7730a6209df2cffd9e095a",
+      "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1": "0117271b622daf5cc467317f1e1229b9ec5769c2d80ea71258bcf63a50cfff07",
+      "UM-MODEL-v1": "9e0366033d2ab38fffe159771a178a29146f75c0d5c2cea92c0b1a307e6269c5"
+    },
+    "write_paths": [
+      "map/edges/boss6-forest-fixed-pair-3a-8508ef964b1a8e0d",
+      "map/receipts/boss6-forest-fixed-pair-3a-8508ef964b1a8e0d.json"
+    ],
+    "goal": "比较同一普通UM阈值上的指定完整行律、指定全部GPC2配对律与实际调度：六机三任务森林的15对各合法但无全局延拓，八态真实T1行律实现及OPT1均保；每两个原分量四机可延拓不等于任意四机。核与已证森林行律分解、两机单环无行律联合、EA指定见证条件解码/存在见证反向的精确边界。不得把该点冒为CONFIG gap、连通树反例或算法下界。已有boss2-forest-prescribed-pairs-3c-002d6e0879b30140承接森林与EA的跨档比较，不重复起同问。",
+    "context_plan": {
+      "budget": {
+        "context_tokens": 500000,
+        "window_source": "official-default",
+        "model": "gpt-6.1-sol",
+        "used_tokens": null,
+        "history_mode": "fresh-worker",
+        "reserve_tokens": 200000,
+        "reading_tokens": 300000,
+        "output_tokens": 100000,
+        "runtime_remaining_tokens": null,
+        "declared_remaining_before_reserve_tokens": null,
+        "assumptions": [
+          "Window source is declared, not discovered from this conversation.",
+          "Reading budget includes source text and object/task metadata.",
+          "Reserved context includes expected generated records and later reasoning/tool growth.",
+          "Fresh worker assumed; actual system/prefix usage is unknown and covered only by the engineering reserve."
+        ],
+        "budget_is_runtime_measurement": false
+      },
+      "reading": {
+        "chars": 32941,
+        "utf8_bytes": 46086,
+        "source_tokens": 31926,
+        "metadata_tokens": 7418,
+        "estimated_tokens": 39472,
+        "metadata_chars": 6843,
+        "metadata_utf8_bytes": 10412,
+        "distinct_files": 9,
+        "reading_segments": 9,
+        "token_count_is_estimate": true,
+        "estimators": [
+          "conservative-math-text-estimate-v1; not a tokenizer count"
+        ],
+        "unmeasured_refs": [],
+        "measurement_scope": "Requested complete text spans plus supplied metadata; binary evidence is not token-counted from raw bytes.",
+        "task_overhead_tokens": 128
+      },
+      "estimated_output_tokens": 3005,
+      "oversized": false,
+      "requires_export": false,
+      "reading_refs": [
+        {
+          "path": "archives/unrelated-machines/state/反例/分数关联森林与指定配对律的全局不相容--反例.md",
+          "sha256": "ab12c07272e685786c230c17034c9fe63afcae5825af201769a1ad1930a9f239"
+        },
+        {
+          "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+          "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+        },
+        {
+          "path": "research/workspaces/map-v2/Boss6/forest-pair-law/exact_kernel.py",
+          "sha256": "500efe3276b6909505baff442b636e0e0107d8994a10590441dffba35fe009c7"
+        },
+        {
+          "path": "research/workspaces/map-v2/Boss6/forest-pair-law/exact_kernel_output.json",
+          "sha256": "012dc9810e66d8e8ace9fab6dc8109ff03877af15f5ab6a92177841e604fe4e3"
+        },
+        {
+          "path": "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md",
+          "sha256": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5"
+        },
+        {
+          "path": "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md",
+          "sha256": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5",
+          "section": "单环只给存在与固定行律的区别"
+        },
+        {
+          "path": "archives/customer-attraction/state/等价/保机器分组的全机配置耦合--等价.md",
+          "sha256": "25a08161c926f9d4506fda0937a58b44c7840f353af26270aa889f2ff8ee9850"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/仙人掌可行配置证书与逐块精确消息的审查--审查.md",
+          "sha256": "e61a55f8d893ed46a6a4e114c1b53f7133e293233d763b1097dad0398614cc48",
+          "section": "单环连通分量的CONFIG精确范围"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/长链联合投影与子线性联盟高围长双源审查--审查.md",
+          "sha256": "b453e8bc763c897684ab95b940ccba4f1e93d56ea3a280baf8544315c3cad816",
+          "section": "4. 固定 r 的高围长 coalition gap"
+        },
+        {
+          "path": "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md",
+          "sha256": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+          "section": "5. 基本锥、极射线和表示复杂度"
+        }
+      ],
+      "deferred_candidate_ids": [
+        "EA-GROUPED-CONFIG-GLOBAL-GLUE-v1"
+      ],
+      "deferred_candidate_issues": {},
+      "comparison_priority": 0,
+      "family_hint": "UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1",
+      "scope_hint": "archives/unrelated-machines",
+      "status": "complete-declared-references-planned",
+      "note": "Local proof families are scheduled first. Informal links are separate discovery hints. Read any newly discovered necessary premise through read-add; do not truncate a proof or treat a deferred candidate as paid evidence. The core owns its exact overlap comparison. Inspect the cited dependency; carry a confirmed unfinished comparison forward as a named task.",
+      "overlap_comparisons": [
+        {
+          "core_id": "UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1",
+          "peer_id": "UM-SINGLE-CYCLE-FIXED-CONFIG-LAW-GLUE-NO-v1",
+          "basis": {
+            "path": "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md",
+            "sha256": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5",
+            "section": "单环只给存在与固定行律的区别"
+          },
+          "status": "in-packet"
+        },
+        {
+          "core_id": "UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1",
+          "peer_id": "EA-GROUPED-CONFIG-GLOBAL-GLUE-v1",
+          "basis": {
+            "path": "archives/customer-attraction/state/等价/保机器分组的全机配置耦合--等价.md",
+            "sha256": "25a08161c926f9d4506fda0937a58b44c7840f353af26270aa889f2ff8ee9850"
+          },
+          "status": "follow-up",
+          "stage": "3C"
+        },
+        {
+          "core_id": "UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1",
+          "peer_id": "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1",
+          "basis": {
+            "path": "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md",
+            "sha256": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5"
+          },
+          "status": "in-packet"
+        }
+      ]
+    }
+  },
+  "state": "available",
+  "owner": null,
+  "request_id": "5e6c72d5dd77434dabdb0dab40e7c805",
+  "requests": {
+    "5e6c72d5dd77434dabdb0dab40e7c805": "plan"
+  }
+}
