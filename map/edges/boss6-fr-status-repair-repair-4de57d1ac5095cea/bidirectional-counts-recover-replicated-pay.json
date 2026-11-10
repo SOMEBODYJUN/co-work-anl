@@ -1,0 +1,50 @@
+{
+  "edge_id": "ca-r36-bidirectional-counts-recover-replicated-pay",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-63b88ae620394a57b1286767920247b0"
+  ],
+  "target_ids": [
+    "CA-R0F997-REPLICATED-BLOCK-CONTAINMENT-CYCLE-20261030"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一合法背景、同一根主题环与真实根枝。各枝中被选定的后继主题实际重复L_i次，且L_i+L_j≥r对i≠j。",
+  "roles": {
+    "M-63b88ae620394a57b1286767920247b0": "给更一般的真实双向包含计数条件和PAY。",
+    "CA-R0F997-REPLICATED-BLOCK-CONTAINMENT-CYCLE-20261030": "重复块的PAY是正向定理，另有稳健必要性合同。"
+  },
+  "explanation": "选实际重复块中的一位作B_i，其余同主题玩家按重数计，两侧a_i、c_i均≥L_i，因此a_i+c_j≥L_i+L_j≥r。对客户的1连续段，以从1到0的根差正端i和从0到1的块差负端j配对，有1/(b+r−a_i)−1/(b+c_j)≥0；B_j遗漏下一根主题只会减掉负项。于是Σd_i≥Σe_i。对具体菜单，位型证明只需检查实际出现的这种端点配对，未出现位型没有支付项。",
+  "scope": "PAY充分方向和客户位型证明。稳健必要性量化只保块大小及会员位的粗模型，不能由新充分性或任意负粗位型推出完整SPE可实现。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/真实重复块与包含计数环支付--引理.md",
+      "sha256": "d48510366f7fca0dd3e97c3e327d2af34bdd00be2fa1f49f2d14cf7494f52e7d",
+      "section": "重复块环"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/真实重复块与包含计数环支付--引理.md",
+      "sha256": "d48510366f7fca0dd3e97c3e327d2af34bdd00be2fa1f49f2d14cf7494f52e7d",
+      "section": "双向包含计数的严格推广"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/真实重复块与包含计数环支付--引理.md",
+      "sha256": "d48510366f7fca0dd3e97c3e327d2af34bdd00be2fa1f49f2d14cf7494f52e7d"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Boss6本轮正式3A定向修复实读两对象v2、PAY全文及银行/最小坏点证明；重新核对a_i,c_i按真实玩家重数且均≥L_i、逐客户正负端及连续1段配对，恢复重复块PAY充分方向。正文三处只改研究状态，其PAY、(C)/(IC)及粗位型稳健必要性字节未变。一般F_r已由银行四人完整SPE的4/3<19/14≤v5(0)=25/18否定；这与本边已证的局部PAY及其单独稳健必要性无冲突，不改变specializes方向或contribution范围，也不宣称普遍合格环。",
+  "contribution": {
+    "result": "重复块在真实双向包含计数条件中给a_i,c_i≥L_i，恢复源的Σd_i≥Σe_i。",
+    "remaining": "目标的粗位型稳健必要性仍单独由构造一段1且L_i+L_j<r得到负下界证明，非真实SPE的必要条件。"
+  },
+  "endpoint_pins": {
+    "CA-R0F997-REPLICATED-BLOCK-CONTAINMENT-CYCLE-20261030": "37930265c935037db7ca77c7eb1ad174174c152636904632c744ce799e4ae7e8",
+    "M-63b88ae620394a57b1286767920247b0": "46301875a237d90a3137c5e7d076c140997b16c708beaddb53610d10fd5e5e7e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/真实重复块与包含计数环支付--引理.md": "d48510366f7fca0dd3e97c3e327d2af34bdd00be2fa1f49f2d14cf7494f52e7d"
+  },
+  "review_digest": "634a443e4a40c6a00b9e64d701255f71efe5b55fd19b1eb6980faabec7d7f6c6"
+}
