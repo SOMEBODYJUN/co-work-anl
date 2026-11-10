@@ -1,0 +1,43 @@
+{
+  "edge_id": "wc-a507-finite-replay-checks-selector-interface",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/separable-certificates-exact-replay"
+  ],
+  "target_ids": [
+    "weighted-congestion/allstate-selector-linear-alternative"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "只使用冻结第三路template程序所列实际输入、38压缩成本、80真实偏离margin与153个小矩阵；不扩成所有n,w,动作模板或全部selector。",
+  "roles": {
+    "weighted-congestion/separable-certificates-exact-replay": "保存实际签名列构造、真实成本和偏离margin交叉核验以及精确小矩阵primal/dual验证的有限实现。",
+    "weighted-congestion/allstate-selector-linear-alternative": "一般任意有限矩阵替代由其正文分离证明承担；这里仅检查实现接口和有限例。"
+  },
+  "explanation": "重放正文的基函数1[(i,s_i)∈S](Σ_{j:(j,s_j)∈S}w_j)^k正是selector定理的签名列；其行B_s=b(s,i)−αb(s′,i)逐项检查Ba等于真实margin。第三程序在81个{-1,0,1}二阶矩阵和seed241015生成的72个有理小矩阵上用精确顶点枚举得到52个primal、101个dual，不采信浮点LP状态。全部38成本、80偏离和153矩阵属所列有限输入；该资源没有枚举全部selector，未证明一般严格替代或全类PNE。第二程序导入作者finite_ratio作比较器，不能与第三程序合称三套独立通用替代理论实现。",
+  "scope": "有限实现与精确检查证据；不为一般定理提供新的逻辑前提。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/计算/资源可分证书的精确核验--计算.md",
+      "sha256": "a089d134a3ffe9cf6c5a1abfe3ba6bc87b34cb9cb651d6844b9a117805befa21",
+      "section": "资源可分证书的精确核验"
+    },
+    {
+      "path": "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md",
+      "sha256": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a",
+      "section": "全状态严格改善择证的线性替代"
+    }
+  ],
+  "reviewed_by": "Boss5 a507 mathematical worker",
+  "review_note": "完整实读本任务指定陈述、模型和证明范围；逐项重算本边所写代数、假设和目标贡献，有限程序与一般证明分开。",
+  "endpoint_pins": {
+    "weighted-congestion/allstate-selector-linear-alternative": "32b4a0b43b4f3f9bf47915836e1e02ee714339906ac960b66961a7e7760686ad",
+    "weighted-congestion/separable-certificates-exact-replay": "43c8e3f55729f1ae41ce22ba35a8c6c0e1f6a6f12ed6d26ada1f0d9d91de23c2"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/计算/资源可分证书的精确核验--计算.md": "a089d134a3ffe9cf6c5a1abfe3ba6bc87b34cb9cb651d6844b9a117805befa21",
+    "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a"
+  },
+  "review_digest": "7fd533bfa597622c63d67818f9719fccd224a2eb3f5432eda9ad8e118830b50b"
+}
