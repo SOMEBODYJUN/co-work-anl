@@ -1,0 +1,149 @@
+{
+  "schema": 1,
+  "task_id": "boss6-bank-status-repair-repair-c0c58c599134315b",
+  "owner": "Boss6",
+  "request_id": "91167db07cda43d6a39aff76fd7ba8e3",
+  "definition_pin": "785a769b633cc48db68abb401d2bdbb78a8921917fc12999eb8359c02f934f14",
+  "review_result": "mature-directed-read-dependency-repair",
+  "supersedes": "customer-attraction-3a-3a-0c4db22d61e56da7",
+  "source_freshness": {
+    "basis": "Current read-only clone records checked directly against the pushed-claim gate supplied by Root; worker did not fetch a remote or mutate the queue.",
+    "owner": "Boss6",
+    "request_id": "91167db07cda43d6a39aff76fd7ba8e3",
+    "definition_pin": "785a769b633cc48db68abb401d2bdbb78a8921917fc12999eb8359c02f934f14",
+    "task_state_at_read": "claimed",
+    "remote_tip_from_parent_ready_gate": "acbbc9da66310ed61cfce50f0a1c1005078ef3ec",
+    "fresh_remote_fetch_by_worker": false,
+    "registry_snapshot": {
+      "path": "research/registry.json",
+      "sha256": "ab18d2f749240d79de79287f47671e764b26b04ccf1bc828b5670b65e231cdd2"
+    },
+    "claimed_task_snapshot": {
+      "path": "research/operations/map-v2/tasks/boss6-bank-status-repair-repair-c0c58c599134315b.json",
+      "sha256": "eea0013e17ec2b3408f402ef0910b02a2c2fe3cabc1950428c2497da6ef0e2ef"
+    },
+    "all_current_input_pins_checked": true,
+    "input_count": 17,
+    "core_pins_unchanged": 11,
+    "other_read_pins_unchanged": 5,
+    "changed_read_dependency": {
+      "object_id": "customer-attraction/cartesian-bank-individual-fractional-floor-counterfamily",
+      "previous_registration_pin": "5793c5af5870d521dab05af319ab471892e8ac837820b65dbb796c1879aaca0c",
+      "current_registration_pin": "0130f938c010a5a8b941ea5d24f6932c1075fdf5778124bbbf57cc62184b3be4",
+      "current_version": 3,
+      "current_truth_status": "proved",
+      "previous_version_and_status_from_parent_directed_repair": "v2 / finite",
+      "body": {
+        "path": "archives/customer-attraction/state/反例/笛卡尔银行目录的逐人分数门槛反族--反例.md",
+        "sha256": "46c7a8df14fb3dd858e4fc827e2de7f000966d49ac4cd9ef7bb2b05777957a80"
+      },
+      "body_bytes_unchanged_against_original_edge_evidence": true
+    },
+    "canonical_asset_membership_checked": 6,
+    "canonical_asset_sha256_checked": 6,
+    "canonical_endpoint_pins_current": true,
+    "distinct_current_reference_files_byte_checked": 50,
+    "distinct_reference_spans_checked": 77,
+    "missing_or_mismatched_references": [],
+    "section_titles_checked_for_existence_and_uniqueness": true,
+    "meaning": "The global registry file hash identifies this read snapshot; mathematical freshness is the exact 17 registration pins and referenced file bytes, not unrelated registry changes."
+  },
+  "mathematical_effect_of_change": "Only the bank registration record changes: the complete unchanged body supports v3/proved. All 11 core record pins, five other read pins, six canonical edge files and their endpoint/evidence bindings stay exact. This repair creates no new logical edge and does not strengthen any old contribution into a whole target theorem.",
+  "bank_proof_review": {
+    "catalog": "For every integer m>=2, all m(m-1) labels (a,b) in {0,...,m-1} x {0,...,m-2} are legal for every player. Each covers the economic singleton e_a and two distinct unit customers in B_b. All coordinate changes, repetitions and simultaneous two-coordinate deviations remain in the action domain.",
+    "same_strategy_and_history": "The complete strategy is a single conditional controller on every ordered history. Every root action, including a deviation, anchors the same BASE rule at its actual pair. Counterfactual continuations always follow that same sigma.",
+    "exit": "A repeated bank has occurred. At depth t at most t-1 banks have appeared, leaving at least m-t fresh banks and at least m-t fresh economic coordinates. The specified player gets 3, the universal three-customer upper bound; repetition remains an invariant after all further deviations.",
+    "punish": "The first BASE deviation to a fresh bank fixes that already-past bank as the permanent target. Before the terminal player, following a fresh pair gives 3 and the target is never moved to a later player. Reusing any bank enters valid EXIT. At the last node all banks have one prior user, and a fresh economic coordinate plus any bank gives the optimum 2.",
+    "base": "An intermediate prescribed player gets 2+1/(m-1)>2. A nonprescribed fresh-bank deviation becomes the fixed PUNISH target and gets at most 1+1=2; a used-bank deviation also gets at most 2 and enters EXIT. These two cases exhaust every nonprescribed pair, including one-coordinate deviations. The last player gets the optimum 2. Every root pair gets exactly 1+1/(m-1), so root IC holds including ties.",
+    "welfare_and_optimum": "The actual leaf ((0,0),(0,1),...,(0,m-2),(1,0)) covers two economics and every bank: W=2m. An m-tuple covers all economics and banks, hence OPT=3m-2. The m=2 middle segment is empty and valid.",
+    "fractional_background": "For every real s>=0, all Cartesian pairings make arbitrary economic/bank marginals implementable. Uniform background gives Delta_m(s)<=m/(m+s)+2(m-1)/(m-1+s). Uniform-query Jensen, or simultaneous low-marginal coordinate pairing, gives the reverse bound for every free background. This is the true min_q max_A value, not a fixed background upper bound or an iid/integer value.",
+    "strict_failure_ranges": "delta_m(0)>u1 for m>=3; delta_(m+1)(0)>u1 for m>=4; OPT/(2m)>u1 for m>=5. The proof covers every m in these ranges, not every SPE of the instance. Extra static competition s=m does not add a real player.",
+    "aggregate_limits": "W-m delta_m(0)=m(m-1)/(2m-1)>0 and 2W-OPT=m+2>0. A fixed integer competitor profile gives v_m<=2 and W>=m v_m. No aggregate-security or half counterexample is inferred."
+  },
+  "retained_edge_reviews": [
+    {
+      "reviewed_edge_id": "cag-0c4d-shared-portfolio-specializes-to-single-price",
+      "result": "L=1 in the shared true-terminal query identity recovers the complete arbitrary-tail single-query budget; sorting costs gives 2(k-1) candidates. Shared minimization precedes query averaging, and actual strong PAIR additionally needs ell=p+a.",
+      "effect_of_bank_status_change": "None."
+    },
+    {
+      "reviewed_edge_id": "cag-0c4d-signed-optimum-excludes-pair-representation",
+      "result": "For the fixed 43-history sigma, actual034, comparator124 and R=1, a common signed realization of the frozen pair point would enter the 8/5 domain but has O=9/4. This proves only that frozen point cannot be jointly represented; pair-domain optimality is not claimed.",
+      "effect_of_bank_status_change": "None."
+    },
+    {
+      "reviewed_edge_id": "cag-0c4d-credible-pasting-reduces-optimal-tuple-payment",
+      "result": "All genuine first-departure children can be minimized and pasted into one sigma preserving the actual leaf. Own columns retain actual payoffs; the exact remaining rent correction and existence of a rent-free optimum tuple do not pay OPT-W.",
+      "effect_of_bank_status_change": "None; SM-opt-exists stays open."
+    },
+    {
+      "reviewed_edge_id": "cag-0c4d-dynamic-seats-lower-bound-credible-forced-maximum",
+      "result": "Forced whole maxima dominate a same-route successor in the same realized leaf, or else obtain q_(j,1). Thus every credible continuation satisfies the stated local floor. On the proved bank BASE path, the best optimum-tuple sum of these floors is exactly 3H_m-1, below OPT-W=m-2 for m>=10.",
+      "effect_of_bank_status_change": "Unchanged body is now accurately registered proved. The strict inequality rejects this floor-only payment attempt; it never gives an upper bound on the true L_i(A)."
+    },
+    {
+      "reviewed_edge_id": "cag-0c4d-nested-kernel-specializes-to-original-tree-pool",
+      "result": "Specialize the arbitrary kernel operator to f_b(t)=t/(b+t), preserving original identities, a single sampled J and fixed background. The same-leaf weighted pool and negative deviation credit remain; this is an r-identity auxiliary tree, not a physical n-player SPE.",
+      "effect_of_bank_status_change": "None."
+    },
+    {
+      "reviewed_edge_id": "cag-0c4d-optimal-price-recovers-half-restart-signs",
+      "result": "The capacity-two/restart bijection with b=0 recovers fixed-r H/J signs, drift and per-role sums. The two-player swap example strictly relaxes the full-price sufficient condition. Real raw-atom BANK and six-player covariance mapping remain unproved.",
+      "effect_of_bank_status_change": "None."
+    }
+  ],
+  "coverage_summary": {
+    "linked": 8,
+    "isolated_after_review": 3,
+    "needs_decision": 0,
+    "core_count": 11,
+    "new_logical_edges": 0,
+    "retained_canonical_edges": 6
+  },
+  "three_isolated_core_decisions": {
+    "multiple_blockade": "For all t>2,k>=1 the last C_i/D_r cases strictly deviate by t-1 and t/2-1; t=2 may leave D last. This excludes the specified target multiset, with no implication to the other packet endpoints or to all collision-free approaches.",
+    "six_child_relaxation": "The same 61-unit-customer six-root menu meets numerical aggregate child floors and root IC but actual AAAA fails the terminal comparison A=15/2<C=11. The previously checked 1296 values and W>=38 terminal-BR repair are retained as input-specific results, not a general inductive theorem or an SM counterexample.",
+    "extra_mass_closeout": "Two finite negative floating scans retain their exact saved maxima and limited scope. The full-terminal program has no original output in the packet; its p-dependent construction differs from an existential free background. The proved bank already negates the standard/extra individual contracts, while half remains unrefuted."
+  },
+  "historical_comparison_reuse": {
+    "predecessor_receipt": {
+      "path": "map/receipts/customer-attraction-3a-3a-0c4db22d61e56da7.json",
+      "sha256": "aae93e8f8095ae5c157110535eb16f4e23bb780727062c330ca3a78f5dbb92aa"
+    },
+    "prior_declared_follow_up": {
+      "core_id": "M-a85ea1d13b1748218df4f15dccdf6410",
+      "peer_id": "MT-9/4",
+      "basis": {
+        "path": "archives/customer-attraction/state/资源/全树收益表示的五份有理点与共同客户边界--资源.md",
+        "sha256": "ac1f2fd066441a5d010d5962e3d09e2ae5a78177f5eaea2c806a77fa7ed0094d",
+        "section": "7. 与已经发表的共同表示对象比较"
+      },
+      "status": "follow-up",
+      "stage": "3B"
+    },
+    "old_mathematical_disposition": [
+      {
+        "core_id": "M-a85ea1d13b1748218df4f15dccdf6410",
+        "peer_id": "MT-9/4",
+        "reason": "同一σ/固定T/R=1及图IC和sharp已对齐，精确比较已闭合，两个域双向不包含。MT单调独立收益点C0=C1=3/4、C01=1时，任何共同signed表示必须给y_{2e0+e1,0}=(2C0−C1+C01)/6=7/24，实际为3/8，差1/12；O=9/4亦超共同signed域8/5。反向，8/5层冻结原始点的C({0,1})=58/45、C({0,1,2})=6/5，违反可见包含单调，故其共同收益像不在MT域。两域交集对应共同单调截断+sharp的既有198/127系统，而无守恒pair点是另一个数组。未把同一固定T改成全比较最优，不需要另开同一精确域比较。"
+      }
+    ],
+    "meaning": "M-a85 and MT-9/4 are incomparable domains in both directions, not ordered bounds on one domain. The MT point violates a required common-signed equation (3/8 versus 7/24); the signed optimum point has C01=58/45>C012=6/5, violating MT visible monotonicity. The common-monotone intersection is the distinct 198/127 system. The pair 9/4 array is a different point.",
+    "current_task_disposition": "The successor definition declares no follow-up pairs. closed_overlaps=[] and follow_up_tasks=[] describe this task; the old closed result is retained here as exact historical mathematics, without fabricating a new closure or task."
+  },
+  "provenance_edits_to_coverage": [
+    "Attribute the prior seven-layer replay to the predecessor, not this worker.",
+    "Attribute the prior 1296 static-tail recalculation to the predecessor.",
+    "Refer the signed/MT closed comparison to this historical record rather than a current closed_overlaps entry."
+  ],
+  "open_obligations": [
+    "General SM-opt-exists still needs actual joint credible payment of OPT-W.",
+    "Dynamic floor insufficiency does not settle true L or SM.",
+    "Erasure auxiliary algebra still needs a legal same-identity debt decomposition or credible physical-deletion transfer.",
+    "Finite-kernel optimization still needs real BANK, source inventory and covariance mapping.",
+    "Finite floating scans and relaxed non-SPE menus do not resolve the original six-player/general half problem."
+  ],
+  "source_or_evidence_identity_issues_found": [],
+  "old_asset_disposition": "All six prior assets retained at their exact canonical path and SHA. No duplicated or rewritten edge file.",
+  "new_mathematical_execution": "None. Direct record/file identity validation only; all historical scientific checks are explicitly inherited."
+}
