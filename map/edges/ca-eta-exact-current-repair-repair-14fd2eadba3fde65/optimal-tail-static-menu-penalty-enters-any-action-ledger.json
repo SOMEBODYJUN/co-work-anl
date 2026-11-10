@@ -1,0 +1,57 @@
+{
+  "edge_id": "optimal-tail-static-menu-penalty-enters-any-action-ledger",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-425fa58f82324fee96bc65a77ecb333a"
+  ],
+  "target_ids": [
+    "CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定原模型中一份完整纯SPE σ的任一合法有序历史h（可离轨），旧并集P、规定S、余r≥2。取A∈原P的最优首动作菜单。源静态界对任意合法有序尾元组成立，在目标账中取强制A后由同一σ实际给出的尾B₁,…,B_(r−1)。允许重复、同覆盖异标签与空主题。",
+  "roles": {
+    "M-425fa58f82324fee96bc65a77ecb333a": "联合控制同一原P下各尾标签的静态菜单罚λ。只需静态最优覆盖交换和指定元组的完整分享分母。",
+    "CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1": "ANY在原历史重新强制一个合法B时单列rλ_B与(r−1)R_B。此边提供λ_B的一个静态选择及重置项的分离。"
+  },
+  "explanation": "令q_x为x被A枝尾覆盖的次数。最优补全换首槽给λ_B≤|A∖(P∪B)|，各尾槽相加后，x∈A∖P欠r−1−q_x。对x∈A∖(P∪S)，q_x=0的债由(r−1)t_A付，0<q_x<r−1的债由(r−1)η_A中的(r−1)(r−1−q_x)/(q_x+1)付，q_x=r−1无债。x∈(A∩S)∖P的完整份额也计入η_A，旧客户不在该欠额中。于是Σ_ℓλ_(B_ℓ)≤(r−1)(t_A+η_A)，某个尾B满足λ_B≤t_A+η_A。所有尾B也都满足λ_B≤ρ_A，因为把B移到同一个静态元组的首槽仍覆盖C_A。故可以在ANY中取rλ_B≤r min{t_A+η_A,ρ_A}；若t_A=η_A=0，所有尾标签均在原菜单。若重新强制B，则必须沿原σ在hB后的真实后继，故R_B=ρ_A−λ_B+C_A−C_B；ANY的两个正损失项合为λ_B+(r−1)(ρ_A+C_A−C_B)。其中η_A使用A的真实分享分母，重新查询B时的信用仍是B自身各量。",
+  "scope": "同一历史内的菜单罚选择及真实重置差的精确分离。all-big根查单例给λ_B=η_A=0、t_A=1、C_A−C_B=1，故即使静态罚为零也可有严格正重置差。狭域r=2且t_A=η_A=0时，逐客户非负性迫A避开P∪S且A⊆唯一尾B，故C_A=|P∪B|≤C_B。r=1没有尾标签可供选择，仍可直接使用EXACT或ANY。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/最优动作真实尾的菜单损失与重置差--引理.md",
+      "sha256": "749ed5a9dea686bee784a5fa108540b3fa513b5a54a29476f4e8476dcb1d0bbd",
+      "section": "完整逐客户证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优动作真实尾的菜单损失与重置差--引理.md",
+      "sha256": "749ed5a9dea686bee784a5fa108540b3fa513b5a54a29476f4e8476dcb1d0bbd",
+      "section": "最优动作真实尾的静态菜单罚可联合控制"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优动作真实尾的菜单损失与重置差--引理.md",
+      "sha256": "749ed5a9dea686bee784a5fa108540b3fa513b5a54a29476f4e8476dcb1d0bbd",
+      "section": "精确的真实重置差尚未付"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优首动作菜单与真实孩子损失--引理.md",
+      "sha256": "ccbcd801782638693467fc4f719a8bfc9a75b7da165951244445bca33c1f466b",
+      "section": "任意合法动作的菜单外损失"
+    }
+  ],
+  "reviewed_by": "ca-eta-exact-current-repair-repair-14fd2eadba3fde65",
+  "review_note": "核过两个现行对象的逐客户交换、ANY消元和原有序策略重置。静态界无需后继IC，完整账本的Γ_B则须同一σ真实偏离。把零罚见证与t_A=η_A=0的两人边界分开。",
+  "contribution": {
+    "result": "对同一历史从A的真实尾选B，使ANY的菜单罚rλ_B≤r min{t_A+η_A,ρ_A}。将rλ_B和(r−1)R_B并项后，正损失中还留(r−1)(C_A−C_B)。",
+    "remaining": "完整ANY由当前真实IC与同尾覆盖差另行证明。要付一般实际路径，需对不同真实孩子的C_A−C_B及各位置成本给同一兼容联合支付，且保B枝自己的Γ_B、ξ_B、η_B等信用。A枝内同尾ξ_A和已计入账的η_A不能另当重置付款。"
+  },
+  "endpoint_pins": {
+    "CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1": "2803a17fab502704d79e2e1d60f7ab2197322483e950ceb719a98dbc7f2fa574",
+    "M-425fa58f82324fee96bc65a77ecb333a": "c46004c66d988123277dd5d7784330cd794dc1133e2dad70c4a35310b416d888"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/最优动作真实尾的菜单损失与重置差--引理.md": "749ed5a9dea686bee784a5fa108540b3fa513b5a54a29476f4e8476dcb1d0bbd",
+    "archives/customer-attraction/state/引理/最优首动作菜单与真实孩子损失--引理.md": "ccbcd801782638693467fc4f719a8bfc9a75b7da165951244445bca33c1f466b"
+  },
+  "review_digest": "4b95ebda8a67d60c44f3ea3881671f28d2feaf95077bdab46ee66faf0fa1f512"
+}
