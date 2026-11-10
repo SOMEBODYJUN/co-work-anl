@@ -1,0 +1,46 @@
+{
+  "edge_id": "um-022e-agreement-square-loss-to-setcover-list-step",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-a324d647caf14545974f47d8cd0096c8"
+  ],
+  "target_ids": [
+    "M-4db1e9e555294998a207d584ce22485f"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限Label Cover G=(A,B,E)，B非空，边为从ΣA到ΣB的投影；ℓ≥1为整数，0<η<1。每个左点的列表非空且大小至多ℓ；agreement指同一右点的两个不同左邻居在某些列表标签上投影相等。NO实例对每个单标签左赋值的agreement右点比例均至多ε0，且ε0ℓ²≤η。这些是已证明普遍条件句的应用域；本边不声称由平方损失桥单独构造具有该参数的SAT→LC实例。",
+  "roles": {
+    "M-a324d647caf14545974f47d8cd0096c8": "提供对所有逐点有界列表的平方损失转换；用期望存在性把list agreement反推单标签agreement。",
+    "M-4db1e9e555294998a207d584ce22485f": "只得到其Corollary4.8→Claim4.10所需的list-agreement soundness步骤，整体SAT→SetCover规模及对数硬度由另列步骤完成。"
+  },
+  "explanation": "对任意固定列表赋值，令q为非total-disagreement右点比例。在每个此类右点固定两个不同邻居及各自列表内的同像标签。逐左点独立从列表均匀抽一个标签，每对见证同时抽中概率至少1/ℓ²。因此抽样所得单标签赋值的agreement比例期望至少q/ℓ²。假设所有单标签赋值的agreement比例≤ε0，便有q≤ε0ℓ²≤η，对任意列表成立。这恰是(ℓ,η) list-agreement soundness，而非每次随机解码都达到同一覆盖比例。用于目标证明时，Lemma4.4的输入ordinary edge error s输出agreement error 2D√s，所以须先付2D√s·ℓ²≤η；充分s≤η²/(4D²ℓ⁴)。原Corollary4.8使用更强√s≤η/[2(Dℓ)²]，同样充分。D固定、ℓ=polylog n时，这个逆多对数可靠性由已证明的Theorem2.3及degree reduction支付，平方损失不会凭空消失。",
+  "scope": "同一有限投影游戏上的局部可靠性接口，列表按每个左点逐点有界，右点比例按全部B计。仅贡献目标证明中的列表soundness一步，不推出一般UM makespan NO或其他模型payoff结论。",
+  "contribution": {
+    "result": "若ordinary agreement soundness为ε0且ε0≤η/ℓ²，则对每一个逐左点大小≤ℓ的列表赋值，至多η比例右点发生两个不同邻居的同像agreement；因此得到目标SetCover归约所需的(ℓ,η) list-agreement接口。",
+    "remaining": "完成整条目标仍需带完美YES完整性的已证明PCP/平行重复与degree reduction，选D和列表长度并支付上列error费用，适用参数的partition system，Sa,σ构造和Claim4.10小cover⇒列表agreement计数，再以|U|≈|B|^{1/η}、N=|B||U|及内部η对最终α重新参数化得到N=n^{O(1/α)}与(1−α)lnN；算法排除再条件于P≠NP。此边没有把其中任何一步藏成source桥本身的结论。"
+  },
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-auction-setcover-20261031/moshkovitz_setcover.pdf",
+      "sha256": "51072837058066469129fdc62ad6b16725bce6ea97dfeb2110172b464cdfa1d7"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/组合拍卖与投影游戏集合覆盖两篇文献整理--文献.md",
+      "sha256": "ee4b62663ff651341ae40162b5319b31b9230d71c93b81333d43cfbf92d4fb22",
+      "section": "Label Cover 与 list-agreement"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Boss6 round41已完整实读core/source/degree三条记录、完整shared body、冻结primary PDF15页及degree正文/精确证据section，已存成熟review/ledger及全文导出和228–229页图；本轮fresh窄续承接该精确阅读证书，未声称重新读整PDF。round42实际实读当前task、core与bridge两条v2完整record、未变degree record、唯一source文字改动及已发布source/registry回执，并逐项读原成熟edge/review/ledger/receipt。重构旧SHA核唯一差异仅把SetCover摘要的PGC依赖纠为已证明PCP/Dinur–Steurer，并保留CVP/MAX3LIN分别依赖PGC/linear PGC；已发布source cc1ed1824283a5600246225c9a4055c804496785、registry47bb9aef01e68c52a48e6e1c36c3a5b29644f270，当前pin已刷新。原数学陈述和PDF均不变；逐点≤ℓ、不同邻居、∀列表/期望存在量词及error收费和degree域边界沿精确成熟证明复用。一条accepted/unconditional局部contribution保持不变，未扩成whole；旧source refresh待办已解决。本轮只读verify_endpoints/edge_bindings核当前字节，Boss安装后串行edge-bind/check/checkpoint/done。",
+  "endpoint_pins": {
+    "M-4db1e9e555294998a207d584ce22485f": "92cb20ca6cde5cda9ed6492d6cf33ed319cc55c1504ec7c6f17cc438fc3a79c0",
+    "M-a324d647caf14545974f47d8cd0096c8": "7f840a47c36d154cdb7a5a6de0d28feea972a24156696bf738e926ca7fbeb5c7"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/tools/evidence/retired-literature-auction-setcover-20261031/moshkovitz_setcover.pdf": "51072837058066469129fdc62ad6b16725bce6ea97dfeb2110172b464cdfa1d7",
+    "archives/unrelated-machines/state/文献/组合拍卖与投影游戏集合覆盖两篇文献整理--文献.md": "ee4b62663ff651341ae40162b5319b31b9230d71c93b81333d43cfbf92d4fb22"
+  },
+  "review_digest": "b1d63924fdfeacd1e03a08b0abaacd2f7df18385a88de6ef335ce766af05108f"
+}
