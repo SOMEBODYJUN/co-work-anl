@@ -1,0 +1,56 @@
+{
+  "edge_id": "wc-boss2-odd-ring-monomial-factors-pay-polynomial-envelope",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R3-ODD-RING-ENVELOPE-v1",
+    "WC-R3-ODD-RING-CERTIFICATE-v1"
+  ],
+  "target_ids": [
+    "WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "整数d≥2，实α≥1；原奇数群组环，组内同权、同群主费用两副本同F_i且侧费用各副本同G_i；非负系数次数≤d，正幅度。",
+  "roles": {
+    "WC-R3-ODD-RING-ENVELOPE-v1": "对每个0<k≤d的单项式标准因子给α≥T_d时的逐项上界1，并给严格下区间的纯d次见证。",
+    "WC-R3-ODD-RING-CERTIFICATE-v1": "提供两严格测试的正系数循环消元和实际权比闭合，适用于将参数换成混合多项式费用差。",
+    "WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1": "扩展到非负系数次数≤d的同费副本形状，保留证书层的精确阈值。"
+  },
+  "explanation": "必要性只需α≥T_d>1，故非零形状的M_i=αF_i(u_i+n_iv_i)−F_i(u_i)和P_i=αG_i(u_(i+1)+v_i)−G_i(v_i)为正。写F_i=Σ c_k x^k、G_i=Σ e_k x^k。归一化主因子x_i n_i N_i/M_i是各单项式同因子的凸组合，权重为c_k u_i^k M_{i,k}/M_i，其中M_{i,k}=α(1+n_i x_i)^k−1；侧因子Q_i/(t_i P_i)同理，权重为e_k u_(i+1)^k P_{i,k}/P_i。正次数单项式因子由标量包络逐项≤1，侧次数用其相同的倒数代入1/t_i；常数项分别给−n_i x_i、−1/t_i，也≤1。若所有严格测试成立，N_i,Q_i必须为正；利用Πx_i=Πt_i，将两个总因子逐群相乘得G≤1，与必要的G>1矛盾。零F_i不能通过对应light测试，零G_i不能通过下一hub测试。充分性用任意α<a<T_d的纯d次见证，取单项式形状并按真实非负费用下调倍率，α=1也保严格。",
+  "scope": "奇环规定的同组同形副本与严格两测试。常数项只作为非负混合的成员；α=1通过较大倍率的纯d次见证处理，无需在常数零分母上作比。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+      "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+      "section": "3. Coverage of every state and the coefficient cycle"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+      "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+      "section": "4. The exact necessary envelope"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+      "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+      "section": "5. Rational attaining families below the envelope"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md",
+      "sha256": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055",
+      "section": "8. Nonnegative mixtures do not enlarge the certificate envelope"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "核查固定形状与存在量词的区别、凸组合的分母和权重、严格正因子的相乘、零形状及α=1边界。实际拓扑均衡需另有真实计数证明。",
+  "whole_result": "对任意整数d≥2及α≥1，在规定奇环中存在一组非负系数次数≤d的混合形状、参数和正幅度通过全部严格两测试，当且仅当1≤α<T_d。阈值T_d及以上无严格证书。",
+  "endpoint_pins": {
+    "WC-R3-ODD-RING-CERTIFICATE-v1": "896d7cd0a87e40b1299dbdf3f33740617a131bfa35b736b47ec70637df78ce5c",
+    "WC-R3-ODD-RING-ENVELOPE-v1": "202eaf2e5e707f1bece41a4dedd4e75d3ca43a9cc503c556fa214e265951c610",
+    "WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1": "fd14a44994955fb5ff9f4e2318b4b847ee18d1011a527b3e93e6ea77ec225162"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/同权群组奇环的精确包络与纯次数下界--定理.md": "ab1da7229647e5f3ea49488382033c93ec301b4dd1c6ce705d6e0f64f7303055"
+  },
+  "review_digest": "cb0e90af1ddb98eb37e9fe77ac5435c7e67c1c8889630de9e54e25b3563c6350"
+}

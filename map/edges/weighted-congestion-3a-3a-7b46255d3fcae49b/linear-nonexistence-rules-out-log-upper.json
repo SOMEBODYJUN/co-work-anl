@@ -1,0 +1,44 @@
+{
+  "edge_id": "wc-boss2-linear-nonexistence-rules-out-log-upper",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1"
+  ],
+  "target_ids": [
+    "WC-MATCHING-LOG-UPPER-NEGATIVE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "原有限正权加权拥塞全类允许构造的规模和权谱增长，C≥1、d₀≥2。近似稳定采用真实单方偏离的弱不等式。",
+  "roles": {
+    "WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1": "对每个整数d≥2²⁰给每态严格d/10改善及非负的新成本。",
+    "WC-MATCHING-LOG-UPPER-NEGATIVE-v1": "否定任何固定C在所有充分大d上给同一全类Cd/ln d-PNE保证。"
+  },
+  "explanation": "任给C与d₀，取整数k≥max(20,ceil(20C),ceil(log₂d₀))，置d=2^k。因ln2>1/2，ln d>10C且d≥d₀。逐态沿同一已证偏离，C_old−(Cd/ln d)C_new=[C_old−(d/10)C_new]+[d/10−Cd/ln d]C_new>0，使用C_new≥0。故构造的合法子类实例也反驳全类弱均衡保证；d和实例都可依赖C、d₀。",
+  "scope": "对未限制全局权谱、规模或策略束长度的标准全类。指数子序列只用于为每个C、d₀选择见证。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/全状态线性次数无均衡族--定理.md",
+      "sha256": "fd1208e470d12721ed79fea67fbd43221c432a95fc0433ac3df2d5f0573c7d9b",
+      "section": "结论及适用边界"
+    },
+    {
+      "path": "archives/weighted-congestion/state/文献/线性全状态下界论文的冻结稿与证据--文献.md",
+      "sha256": "d4172a2873c7fd8e208e682c30c6befc9366046b5385525e902dff5b0594a995",
+      "section": "4. 同次数与全类否定量词"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "核查任意起始次数、常数与逐态存在量词，以及倍率降小时对零偏离成本仍保留严格差额。",
+  "whole_result": "∀C≥1、∀d₀≥2，存在整数d≥d₀及合法有限d次加权拥塞游戏，其中每态都有严格Cd/ln d改善。不存在固定C的全类充分大次数Cd/ln d纯均衡保证。",
+  "endpoint_pins": {
+    "WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1": "b99e4039057606211ffe22eee6040a8380373552ae9ed39b19619c84c56e7bd2",
+    "WC-MATCHING-LOG-UPPER-NEGATIVE-v1": "b394a708a9aa5285f723e454298629ee8708b99d8b3105c909535950b3d93183"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/全状态线性次数无均衡族--定理.md": "fd1208e470d12721ed79fea67fbd43221c432a95fc0433ac3df2d5f0573c7d9b",
+    "archives/weighted-congestion/state/文献/线性全状态下界论文的冻结稿与证据--文献.md": "d4172a2873c7fd8e208e682c30c6befc9366046b5385525e902dff5b0594a995"
+  },
+  "review_digest": "5551c065bda1ff6b5d2d4dd3cb527339c9cd84dcddaa653eaf221ea1f8fbaa7b"
+}

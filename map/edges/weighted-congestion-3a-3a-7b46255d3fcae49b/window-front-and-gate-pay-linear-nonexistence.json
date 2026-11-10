@@ -1,0 +1,72 @@
+{
+  "edge_id": "wc-boss2-window-front-and-gate-pay-linear-nonexistence",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-HEALTHY-LINEAR-SWEEP-v1",
+    "WC-HEALTHY-FRONT-COVERAGE-v1",
+    "WC-FRONT-CORE-STABLE-SET-TRANSFER-v1"
+  ],
+  "target_ids": [
+    "WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "标准有限加权拥塞成本不乘玩家权，真实单人偏离含自身新负载。p≥2²⁰，α=p/10，Q=p⁴，m−1=ceil(log₂p²)，N=Q^(m−1)/p，每类N名同权clone，w_a=Q^(−a)。B_*=mQ^(m−1)2^p，H=2^p−α，η₀=H/4，L_c=binom(N−1,2)。",
+  "roles": {
+    "WC-HEALTHY-LINEAR-SWEEP-v1": "给同一正有理纯p次循环窗口基体、全状态成本上界B_*及其二动作结构；指定健康环只识别该基体。",
+    "WC-HEALTHY-FRONT-COVERAGE-v1": "对基体每个product-front给一条真实保前沿单人出口，统一基体差额η₀=H/4。",
+    "WC-FRONT-CORE-STABLE-SET-TRANSFER-v1": "提供完整类内等权锚定门、强支配下最早反位修复以及保前沿真实边差公式。",
+    "WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1": "给同次数p≥2²⁰的全状态差额H/8及正有理纯次数、非空不交二动作保证。"
+  },
+  "explanation": "对每类每个1≤i<j<N，加入fresh同费pair，选侧为位异或(0,1,0)，每侧费c_a(x)=M(x/(3w_a))^p，M=2αB_*。写δ=(2/3)^p，二人费u=Mδ，三人费v=M。整数预算R=4α²B_*L_c/η₀≤(8/45)mp^{12(m−1)}。令2^k≤p<2^(k+1)，则k≥20、m−1≤2(k+1)、m≤2^k，故R<2^{F(k)}，F(k)=24(k+1)²+k。F(20)=10604<2^19，且2F(k)−F(k+1)=24k²+k−49>0，归纳得F(k)<2^(k−1)，而(3/2)^p≥(9/4)^{2^(k−1)}>2^{2^(k−1)}，故δR<1。因而αL_c u<η₀/2，且η₀≤B_*，所以v>α(B_*+L_c u)满足强支配。若当前是product-front，取已证的保前沿出口。门在mover的每个参与pair两端均为2w_a，新增差额为−(α−1)r_i u，r_i≤L_c，完整差额≥η₀−αL_c u≥η₀/2。若有非法类，翻最早异于首位的clone回首位；其至少一个旧门满载，翻后参与门全部非满载，真实差额≥M−αB_*−αL_c u≥η₀/2。两类穷尽全部状态。旧资源与新增资源均为正有理系数乘x^p；fresh资源按位选不同侧且不改变旧资源、玩家、权或动作数，故非空、不交及纯次数保持。",
+  "scope": "指定循环窗口基体和完整等权类内门。整数预算直接支付次数p。相位扭转只用于原基体寻找出口，实际边在原状态加门后重新结算。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/全状态线性次数无均衡族--定理.md",
+      "sha256": "fd1208e470d12721ed79fea67fbd43221c432a95fc0433ac3df2d5f0573c7d9b",
+      "section": "基础构造：循环窗口"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/全状态线性次数无均衡族--定理.md",
+      "sha256": "fd1208e470d12721ed79fea67fbd43221c432a95fc0433ac3df2d5f0573c7d9b",
+      "section": "前沿状态与全状态补全"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md",
+      "sha256": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f",
+      "section": "全部稳定集合的三分支证明"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md",
+      "sha256": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f",
+      "section": "指定修复、全出口和输出预算"
+    },
+    {
+      "path": "archives/weighted-congestion/state/证明/线性族同次数时钟预算的整数分层--证明.md",
+      "sha256": "bff5989b2faf2c2e33f996500bed49a3461569c83418d66eb1656a08d11033f5",
+      "section": "对所有整数p的分层归纳"
+    },
+    {
+      "path": "archives/weighted-congestion/state/文献/线性全状态下界论文的冻结稿与证据--文献.md",
+      "sha256": "d4172a2873c7fd8e208e682c30c6befc9366046b5385525e902dff5b0594a995",
+      "section": "4. 同次数与全类否定量词"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "核对基体cap、逐前沿出口、门的支配与真实负载、两类状态差额和整数预算。三项源命题均已证，所用同次数预算直接展开。",
+  "whole_result": "对每个整数d≥2²⁰，取p=d，存在正有理权、每人恰两个非空不交动作且全部延迟为正有理系数乘x^d的有限游戏；每个纯状态有一条真实单人偏离满足C_old−(d/10)C_new≥(2^d−d/10)/8>0，因此无d/10-PNE。",
+  "endpoint_pins": {
+    "WC-FRONT-CORE-STABLE-SET-TRANSFER-v1": "f784bf003aec5e448acc4942163bf0653cb8a0549b31383d3b26c53e779153c5",
+    "WC-HEALTHY-FRONT-COVERAGE-v1": "7e6c4050a02429e61f94061b61edd97f7792838c8fe6ae68744fb3074b4a5c48",
+    "WC-HEALTHY-LINEAR-SWEEP-v1": "cb803a51bbbb26f26de4f3366c0b98888e6d0a381a1d17bc463dc992d71b0df7",
+    "WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1": "b99e4039057606211ffe22eee6040a8380373552ae9ed39b19619c84c56e7bd2"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/全状态线性次数无均衡族--定理.md": "fd1208e470d12721ed79fea67fbd43221c432a95fc0433ac3df2d5f0573c7d9b",
+    "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f",
+    "archives/weighted-congestion/state/证明/线性族同次数时钟预算的整数分层--证明.md": "bff5989b2faf2c2e33f996500bed49a3461569c83418d66eb1656a08d11033f5",
+    "archives/weighted-congestion/state/文献/线性全状态下界论文的冻结稿与证据--文献.md": "d4172a2873c7fd8e208e682c30c6befc9366046b5385525e902dff5b0594a995"
+  },
+  "review_digest": "a6a72b3b5c5beaecc5c0c61ad42a79a7e5ce2e7e6b2e5b24a3fd68fbe39d9a12"
+}

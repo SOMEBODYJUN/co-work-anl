@@ -1,0 +1,57 @@
+{
+  "edge_id": "wc-boss2-global-anchor-pays-class-local-repair",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-ANCHORED-POLYNOMIAL-CYCLE-LOCK-v1"
+  ],
+  "target_ids": [
+    "WC-FRONT-CORE-STABLE-SET-TRANSFER-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "二动作、正权、fresh两侧同费的首位锚定三元。转入每个类的门时，令其成员等权w_a，类长为n_a，满载和二人费用分别v_a=c_a(3w_a)、u_a=c_a(2w_a)；c_a非负非减，B_a为全基体状态的有效类成本上界。每个有门类满足v_a>α(B_a+L_a u_a)。",
+  "roles": {
+    "WC-ANCHORED-POLYNOMIAL-CYCLE-LOCK-v1": "给首位锚定三元的010/101刻画、最早异位真实单人修复及翻后参与门全部不满载的组合论证。",
+    "WC-FRONT-CORE-STABLE-SET-TRANSFER-v1": "逐等权有序类复用这一修复，再另证前沿出域排除、保前沿精确差额及稳定集合。"
+  },
+  "explanation": "在单有序串中，含交替局部位当且仅当存在完整触发锚定三元：取最早与首位不同的i和其后与首位相同的j。将i翻回首位后，在含i且i居中的三元中它与锚点同位；在i居末的三元中，中位更早，按最早性与锚点同位。两种情形都不触发。逐类采用这条纯组合论证，给旧门费≥v_a、新门费≤L_a u_a，故差额≥v_a−α(B_a+L_a u_a)>0。每次翻位使对应类非锚点的异位数降一，非法初态至多n_a−2，得到指定修复步数界。对单个等权类，原时钟δ=2/3，资源归一化与此门相同；逐类作用后，合法集合变为前沿的乘积。原跨权全局门保护的是一条全局顺序环覆盖的前沿，不能把该覆盖或其权谱δ直接移到多个类的异步状态。",
+  "scope": "从原全局锚定证明转用的局部触发和非法修复论证，允许多个类和类内非负非减同费函数；不主张原编译结论整体推出目标的稳定集定理。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/双轮改善环的锚定三元全状态编译--定理.md",
+      "sha256": "01951fc300c6bf4092d14290629359729272348928d1a8f45ecfcea533a24016",
+      "section": "二、抽象完整触发时钟的全状态覆盖"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md",
+      "sha256": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f",
+      "section": "完整等权类门及强支配"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md",
+      "sha256": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f",
+      "section": "全部稳定集合的三分支证明"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md",
+      "sha256": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f",
+      "section": "指定修复、全出口和输出预算"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "对照两个门的资源关联、局部触发、修复的真实后负载、可转用的单类步骤及全局环和多类前沿的适用边界。",
+  "contribution": {
+    "result": "对任意非法product-front，强支配下有一条最早反位的真实严格α改善；该指定修复至多Σ_a max(n_a−2,0)步进入前沿。",
+    "remaining": "稳定集合等式还需排除从前沿离域的严格改善，并以等权两人侧不变计算每条保前沿边的(α−1)r_i u_a容差；不同社会目标与次数界分别需要其附加论证。"
+  },
+  "endpoint_pins": {
+    "WC-ANCHORED-POLYNOMIAL-CYCLE-LOCK-v1": "60761c755abbd218ef90b78ea9271c5443c7b08aebb987209de3ea331fb0d505",
+    "WC-FRONT-CORE-STABLE-SET-TRANSFER-v1": "f784bf003aec5e448acc4942163bf0653cb8a0549b31383d3b26c53e779153c5"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/双轮改善环的锚定三元全状态编译--定理.md": "01951fc300c6bf4092d14290629359729272348928d1a8f45ecfcea533a24016",
+    "archives/weighted-congestion/state/定理/完整锚定门的稳定集合与有限修复--定理.md": "40e044f0a5378933dde7211c376d98b9799434ade83a76ca7c53631a8cc8681f"
+  },
+  "review_digest": "69e9535d83112688f76d0c42d39fc211f85e9d3aad624eb43ad27f3f87577fae"
+}

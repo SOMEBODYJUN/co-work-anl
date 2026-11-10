@@ -1,0 +1,62 @@
+{
+  "edge_id": "wc-boss2-fixed-cycle-ratio-pays-two-weight-v1-template",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/fixed-weight-marginal-cycle-ratio"
+  ],
+  "target_ids": [
+    "weighted-congestion/two-weight-potential-and-asymmetric-perfect-target-ledger"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "非负二次费用，真实权缩放h_i=w_i，权在{1,2}，每类至多两名；从c(x)=x²的资源边际开始。",
+  "roles": {
+    "weighted-congestion/fixed-weight-marginal-cycle-ratio": "把固定真实权缩放边际夹逼的必要下界写成子集图圈比，并允许对同一固定权向量用显式可行势取到下界。",
+    "weighted-congestion/two-weight-potential-and-asymmetric-perfect-target-ledger": "记录有限双权v1模板的37/33和表，同时记录更宽的自由缩放v2及另一精炼计算问题。"
+  },
+  "explanation": "取两名轻权1及一名重权2。沿L,L,H加入路径边际基准A之和为1+4+32=37，沿H,L,L为8+9+16=33。前一条逆向接后一条形成子集图闭游走，D/U=37/33；原圈比分解使最优夹逼至少此值。对最大人口两轻两重，登记页的3×3表F(k,l)以F(0,0)=0，对轻加入的六条格边用(L+1)²、重加入六条用2(L+2)²逐条核A≤ΔF≤(37/33)A，其中L=k+2l。对少玩家取相应子格。各多项式的常数、线性部分分别用W和[W²+Σw_i²]/2的精确同尺度势，再按资源非负系数相加。若原真实旧成本大于(37/33)倍新成本，公共资源费用非负，移除费用仍严格大于对应加入费用的(37/33)倍，资源势加和下降。",
+  "scope": "只确定v1真实权缩放、每权种至多两人的统一夹逼模板最优。圈为势的子集约束圈，非真实博弈改善圈。对更少人口只给统一上界，且没有实际PNE最优倍率或算法复杂度断言。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/等价/固定权向量边际夹逼的最大圈比--等价.md",
+      "sha256": "a42e12ea728da5e4c8e11e35ce163327fe1c6e507e169dc5cf6c99ef30343d55",
+      "section": "完整双向证明"
+    },
+    {
+      "path": "archives/weighted-congestion/state/等价/固定权向量边际夹逼的最大圈比--等价.md",
+      "sha256": "a42e12ea728da5e4c8e11e35ce163327fe1c6e507e169dc5cf6c99ef30343d55",
+      "section": "两序证据与使用限制"
+    },
+    {
+      "path": "archives/weighted-congestion/state/资料/有限双权近似势与非对称精炼目标的不同合同--资料.md",
+      "sha256": "ac493c4a534b3d1b1a25ad2efd1b2caec58a72ed86a2568ca4790eaa90730b22",
+      "section": "v1：四玩家真实权缩放的模板边界"
+    },
+    {
+      "path": "archives/weighted-congestion/state/资料/有限双权近似势与非对称精炼目标的不同合同--资料.md",
+      "sha256": "ac493c4a534b3d1b1a25ad2efd1b2caec58a72ed86a2568ca4790eaa90730b22",
+      "section": "v2：不限每类型人数的共同type scaling"
+    },
+    {
+      "path": "archives/weighted-congestion/state/资料/有限双权近似势与非对称精炼目标的不同合同--资料.md",
+      "sha256": "ac493c4a534b3d1b1a25ad2efd1b2caec58a72ed86a2568ca4790eaa90730b22",
+      "section": "另一个仍开放的完整精炼目标"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐一核对九格表的12个加入边、37与33的路径次序、常数与仿射分项相同尺度，并隔离v2和精炼目标。",
+  "contribution": {
+    "result": "用37/33的显式圈下界及全边可行势，独立落实资料的v1固定真实权缩放模板最优和由此得到的有限改善终止。",
+    "remaining": "v2允许独立类型乘子和任意人口，需要自己的共同尺度不等式；无权非对称拟阵trembling-hand完美均衡的位多项式目标仍是另一开放合同。"
+  },
+  "endpoint_pins": {
+    "weighted-congestion/fixed-weight-marginal-cycle-ratio": "84ee9273875d7ad812d106cc6f76adf1a0f639321059ebe12ea2ea0eb1c883c6",
+    "weighted-congestion/two-weight-potential-and-asymmetric-perfect-target-ledger": "13556f6154739b899847bc21490ddc9c0d37b24cf598b4ecc7cf41cd778aef38"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/等价/固定权向量边际夹逼的最大圈比--等价.md": "a42e12ea728da5e4c8e11e35ce163327fe1c6e507e169dc5cf6c99ef30343d55",
+    "archives/weighted-congestion/state/资料/有限双权近似势与非对称精炼目标的不同合同--资料.md": "ac493c4a534b3d1b1a25ad2efd1b2caec58a72ed86a2568ca4790eaa90730b22"
+  },
+  "review_digest": "aa45453afbe4acb9d5e9f2a3a473a82571128179deaa58d08273e0183499024c"
+}

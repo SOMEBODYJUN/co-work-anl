@@ -1,0 +1,48 @@
+{
+  "edge_id": "wc-boss2-shapley-share-pays-local-ratio-potential",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R3-DENSE-SHARE-v1"
+  ],
+  "target_ids": [
+    "WC-R3-DENSE-LOCAL-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限标准加权拥塞，正权、资源费用为非负系数多项式。每个有潜在用户的资源e固定a_e=min_{U_e}w_i、b_e=max_{U_e}w_i，且b_e/a_e≤R≥1。",
+  "roles": {
+    "WC-R3-DENSE-SHARE-v1": "提供同一Shapley集函数的精确资源加入边际，以及对全部实际用户的最小/最大权费用包络。",
+    "WC-R3-DENSE-LOCAL-v1": "用固定潜在用户最小权归一化，在真实全策略偏离上得到R近似势和纯均衡存在。"
+  },
+  "explanation": "对每资源取Shapley集函数H_e并固定比例1/a_e，置Φ(s)=Σ_e H_e(S_e(s))/a_e。对实际用户i定义D_i(s)=Σ_{e∈s_i}φ_{i,e}(S_e(s))/a_e。由实际用户权在[a_e,b_e]与份额包络，逐态C_i(s)≤D_i(s)≤R C_i(s)。对真实单方偏离，资源加入和移除分别用新/旧集合的精确Shapley边际，共用资源用户集不变，故Φ(s′)−Φ(s)=D_i(s′)−D_i(s)。若C_i(s)>R C_i(s′)，则该差严格负；每个局部极小因而R-PNE，有限状态有全局极小。R=1时夹逼变等式。仿射费用的归一化两权序取等，效率给φ_i=w_i c_e(W)，所以未归一化H_e之和为玩家尺度w_i的加权精确势，无需局部权比界。",
+  "scope": "各资源独立以潜在用户固定比例。允许空策略、零费用及无人可用资源，后者省去；全局权谱可任意宽。有限终止结论无复杂度量词。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/局部窄权带的Shapley份额势--定理.md",
+      "sha256": "d1551d41cd6f3a625359dde38498d557a2ff46331049ee4284a0c908244af24d",
+      "section": "集函数、精确边际和效率"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/局部窄权带的Shapley份额势--定理.md",
+      "sha256": "d1551d41cd6f3a625359dde38498d557a2ff46331049ee4284a0c908244af24d",
+      "section": "两种权序与局部包络"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/局部窄权带的Shapley份额势--定理.md",
+      "sha256": "d1551d41cd6f3a625359dde38498d557a2ff46331049ee4284a0c908244af24d",
+      "section": "潜在用户局部权比的存在界"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "对照同一资源集函数的边际恒等式、潜在用户固定缩放、实际负载与保留资源，以及仿射和零费用边界。",
+  "whole_result": "若每资源全部潜在用户局部权比≤R，固定Shapley资源加和势的每个单人局部极小是R-PNE，并且全部严格R改善令势严格下降。R=1为精确势；仿射费用另有不依局部R的玩家加权精确势。",
+  "endpoint_pins": {
+    "WC-R3-DENSE-LOCAL-v1": "bc1e2d33d074efe0de982045eb7d8dd930ab7430321cf1ce7f2c0125a0d41b11",
+    "WC-R3-DENSE-SHARE-v1": "bac86f71e93f496bbf35ccf460d4b60da2e22e7388261f3b759149e4e6ca9b32"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/局部窄权带的Shapley份额势--定理.md": "d1551d41cd6f3a625359dde38498d557a2ff46331049ee4284a0c908244af24d"
+  },
+  "review_digest": "8d2c1a8c35f6b0e34d545565f4847d4da132a7afcba38d57a8244ee2dedd90a0"
+}
