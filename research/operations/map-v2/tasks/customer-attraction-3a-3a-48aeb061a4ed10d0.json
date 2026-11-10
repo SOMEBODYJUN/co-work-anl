@@ -159,11 +159,140 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss6",
-  "request_id": "15b8d55660654f9daae4bdcb670b5118",
+  "request_id": "8181a0957ba5446f9bbe906d274c2961",
   "requests": {
     "c77ec76b08b948c4ac8c43dc65353af7": "plan",
-    "15b8d55660654f9daae4bdcb670b5118": "claim"
+    "15b8d55660654f9daae4bdcb670b5118": "claim",
+    "8181a0957ba5446f9bbe906d274c2961": "done"
+  },
+  "edge_paths": {
+    "ca-cag48a-branch-obstructions-separate-pc6-from-induction": "map/edges/customer-attraction-3a-3a-48aeb061a4ed10d0/branch-obstructions-separate-pc6-from-induction.json",
+    "ca-cag48a-minimum-tax-dp-reduces-pc6-instance": "map/edges/customer-attraction-3a-3a-48aeb061a4ed10d0/minimum-tax-dp-reduces-pc6-instance.json",
+    "ca-cag48a-seven-topic-family-is-tight-pc6-subdomain": "map/edges/customer-attraction-3a-3a-48aeb061a4ed10d0/seven-topic-family-is-tight-pc6-subdomain.json",
+    "ca-cag48a-strong-pair-pays-two-tail-harmonic-budget": "map/edges/customer-attraction-3a-3a-48aeb061a4ed10d0/strong-pair-pays-two-tail-harmonic-budget.json"
+  },
+  "receipt": {
+    "task_id": "customer-attraction-3a-3a-48aeb061a4ed10d0",
+    "task_definition_pin": "bb12db836826b217cae8343bd0e713e98aaf8869ea0527ed5980351fdf2ea720",
+    "owner": "Boss6",
+    "request_id": "15b8d55660654f9daae4bdcb670b5118",
+    "coverage": {
+      "customer-attraction/six-client-branchwise-harmonic-copy-tax-induction-boundary": {
+        "state": "isolated-after-review",
+        "comparison_scope": "完整三人六客户13节点表和既存Fraction结果；同σ实际001/强制201、F、尾真实利润及有序税；与六人支持SB、PC6和精确最小税递推比较。",
+        "reason": "BM某可信枝需求26/3超过实际17/2，差1/6，但该例P3=15/2、W=OPT3=6。人数3且不要求该枝属于势最优支持，故既不整条推出另一固定支持反例，也不逻辑反驳六人PC6/half；本范围只形成精确语境边。",
+        "object_pin": "c6552ae9d42984f4d2391c910ce35eedf867f7db60506002eb6c6b470b791b46"
+      },
+      "CA-SIX-POTENTIAL-COPY-TAX-CANDIDATE-v1": {
+        "state": "linked",
+        "comparison_scope": "原六人零背景全部有序历史纯SPE/全部合法六元组；DP固定输入最坏缺口、∀t指定常选A等号子域、两种BM/SB归纳失败，以及两人端点。",
+        "reason": "DP精确完成逐输入全σ检验归约；七题族完成指定(I_t,σ≡A)无限紧子域。两条都是已证局部贡献，不提升普遍PC6；仍需对全部输入证明非正最大缺口及另付half收尾。",
+        "edge_ids": [
+          "ca-cag48a-minimum-tax-dp-reduces-pc6-instance",
+          "ca-cag48a-seven-topic-family-is-tight-pc6-subdomain"
+        ],
+        "object_pin": "2cc6b0de3a8c6dc8d590a131d62a0e536d4ea33b948bb4583b6c89e8db723f2a"
+      },
+      "M-9a0daffa06b543309f21859b62314eba": {
+        "state": "linked",
+        "comparison_scope": "∀整数t≥1七互不交主题、指定全历史σ≡A；逐历史真实IC、A/小题全部边际比较、W/C/P6及OPT。",
+        "reason": "指定无限实例/策略对有P6=W+C=147t/10，给PC6紧子域；C=87t/10>W=6t否自动收尾。未声称该目录全部SPE取等，且2W−OPT6=t>0。",
+        "edge_ids": [
+          "ca-cag48a-seven-topic-family-is-tight-pc6-subdomain"
+        ],
+        "object_pin": "3e44962d6ff4c1a1b82ba92d47251011d519183e2b7b3350902073f3a1163da8"
+      },
+      "M-d8354cd1a071461fb2015898c94c190e": {
+        "state": "linked",
+        "comparison_scope": "任意合法有序背景、同一完整σ的实际C,D及真实R_T；强PAIR所有T,Q，二主题相对势与两步有序税的精确恒等式；原单隐藏端点证据范围。",
+        "reason": "强PAIR左右端分别精确等于V+两步实际税与相对二槽势，取全部T,Q最大给目标整条，无未付前提。非零背景V不称W，不延伸六人归纳。",
+        "edge_ids": [
+          "ca-cag48a-strong-pair-pays-two-tail-harmonic-budget"
+        ],
+        "object_pin": "f96dda76cdd6affbd863a29cf988e8035c90fb0c9044e15cf29f68392a801a4d"
+      },
+      "M-94942bfb644042ea8039e44db39d1504": {
+        "state": "linked",
+        "comparison_scope": "完整理想(DP)的阈值必要性、子SPE有序拼接充分性、每终局标量总税最小；两probe源码及30/300报告合同；R291已修域。",
+        "reason": "可实现终局和各f最小税完整保留，G(I)=max_f[P6−W(f)−E0[f]]精确等于全σ最坏候选缺口。计数缓存不限制Markov，亦无一个σ同时最小化不同f/客户/分支税之结论；≤52客户源实现合同和理想任意精度/真∞区分。",
+        "edge_ids": [
+          "ca-cag48a-minimum-tax-dp-reduces-pc6-instance"
+        ],
+        "object_pin": "7c9c1a31cabd9b2ca038a27bdc015dd08f8ed9c1947d318c95ff61d9860c9d50"
+      },
+      "CA-COPY-TAX-OPTIMAL-SUPPORT-BRANCH-OBSTRUCTION-v1": {
+        "state": "isolated-after-review",
+        "comparison_scope": "三客户完整13节点核心、恰六人actual333200嵌入及149460B完整策略的成熟SHA合同；actual333处全部势最优支持0/1、两真实孩子与松弛。",
+        "reason": "所有支持枝需求29/6>14/3且任意支持凸平均相同，孩子上界松弛1/2超过父1/3。全根P6=59/6<W+C=35/3、W=OPT6=6，因此只是更强归纳接口的六人实际子局障碍；不反PC6、half或精确DP。本范围没有可冒作这些目标证明/反驳的逻辑边。",
+        "object_pin": "b3e2a0ea73670dbda19c784291ff377139328b99932e2ca1ccc9819b2e333e55"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/customer-attraction-3a-3a-48aeb061a4ed10d0/branch-obstructions-separate-pc6-from-induction.json",
+        "sha256": "706eb2f221ce421f5d2f7af1638fd22f0b2688d63ce59f917519b0ad289be7f7"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-48aeb061a4ed10d0/independent-copy-tax-dp/derivation.md",
+        "sha256": "99a95e41bd777fdd2a132f5dc7aa9851ce90cb3c812dfe6e3b4ced5611697b8c"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-48aeb061a4ed10d0/independent-copy-tax-dp/manifest/audit.json",
+        "sha256": "9c68f83cea29d41dc2b84d1743d18d02cb425202f042f0dae63093182010e369"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-48aeb061a4ed10d0/independent-two-tail/audit.json",
+        "sha256": "68a00b414d3b2e12c69621877f42ba4ef8040af9060cafb98357465bdf58ab76"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-48aeb061a4ed10d0/independent-two-tail/derivation.md",
+        "sha256": "7d0a72c9ec5e62f2ba92126bce12913e78e40f5d15c43482ff571b18fd299970"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-48aeb061a4ed10d0/manifest.json",
+        "sha256": "6925501c0b5454c516584ea9d1c6b5a45678e587ac37d4b7b9946aabfb61a030"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-48aeb061a4ed10d0/minimum-tax-dp-reduces-pc6-instance.json",
+        "sha256": "58dee07ffa577ce4c4d1c9096d13632e3010b4698a22362dd7bb37bbe17fe094"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-48aeb061a4ed10d0/reading-ledger.json",
+        "sha256": "fe01486e63488a5493e77594c7c46842eb82d6879a6b7c91ee5ae05ba314d7e0"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-48aeb061a4ed10d0/readonly-check.json",
+        "sha256": "3475d081cf066839401af8d6332585ff977b07d484b55bc3503f853fe0ee099c"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-48aeb061a4ed10d0/review.md",
+        "sha256": "fec77e2b29347ef6f599dbf79bc82822dedac4e759a928ab583eb871055c794b"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-48aeb061a4ed10d0/seven-topic-family-is-tight-pc6-subdomain.json",
+        "sha256": "2cf5641ed79c122c797405f0826529f889f6be6b6321869ee9fe4f92dbd91832"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-48aeb061a4ed10d0/strong-pair-pays-two-tail-harmonic-budget.json",
+        "sha256": "21dc6f4111aa6ef2096115d41acb741761b6db94efb1e0763d597386ee564d1b"
+      }
+    ],
+    "source_freshness": {
+      "input_pins": {
+        "customer-attraction/six-client-branchwise-harmonic-copy-tax-induction-boundary": "c6552ae9d42984f4d2391c910ce35eedf867f7db60506002eb6c6b470b791b46",
+        "CA-SIX-POTENTIAL-COPY-TAX-CANDIDATE-v1": "2cc6b0de3a8c6dc8d590a131d62a0e536d4ea33b948bb4583b6c89e8db723f2a",
+        "M-9a0daffa06b543309f21859b62314eba": "3e44962d6ff4c1a1b82ba92d47251011d519183e2b7b3350902073f3a1163da8",
+        "M-d8354cd1a071461fb2015898c94c190e": "f96dda76cdd6affbd863a29cf988e8035c90fb0c9044e15cf29f68392a801a4d",
+        "M-94942bfb644042ea8039e44db39d1504": "7c9c1a31cabd9b2ca038a27bdc015dd08f8ed9c1947d318c95ff61d9860c9d50",
+        "CA-COPY-TAX-OPTIMAL-SUPPORT-BRANCH-OBSTRUCTION-v1": "b3e2a0ea73670dbda19c784291ff377139328b99932e2ca1ccc9819b2e333e55",
+        "M-e960d7f4ebca40a38760eb3ae044cc19": "ab054800337d5944cb152e30ad29e8398e6cb46284ce218ad99be5485c5c3406",
+        "CAG-MODEL": "3216d1db43ff83e0e0c9cf2479e79611277c9d9291a68e7f9b85ec4bb299dc5c"
+      },
+      "all_match": true,
+      "note": "No eight endpoint pin or cited evidence drift at final read; unrelated parent package revisions do not change these mathematical inputs."
+    },
+    "review_note": "6 core: 4 linked (only one whole target proof plus two partial candidate contributions), 2 isolated-after-review. Four accepted edges: 3 logical and 1 context. No declared follow-up pair, no closed_overlaps; in-packet overlap paid by strongPAIR whole edge. No original programs or large computations rerun."
   }
 }
