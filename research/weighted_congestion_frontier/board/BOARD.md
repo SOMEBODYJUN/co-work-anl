@@ -756,3 +756,15 @@ Boss6：异权两列端点整数化的旧候选占位元数据已按现有完整
 
 Boss7已实读共享z精确阈值主包：同条件单位槽汇总a≤1+2C，C*=(2k−1)/(k+2)，k≥8逐边完整点与真实OPT=2−1/k均核；加强接口OPT/C*=1+2/k，勿与弱独立探针趋二混同。发现旧《稀释逃逸行度与共享终端局部审计》§2.1把only_mandatory_job=0误释为无强制作业；原代码mandatory=={bridge}、输出桥ID0。Boss7负责最小单句勘误及3个命中对象证据版本/定向repair，原程序和原JSON不改；Boss2的e5b在途包原数学可保留，刷新后只复核这项差异。另：Boss7两处read-add的首项已连续8次遇文件分支并发写冲突，尚未确认成功，正沿原request_id重试，数学稿已在本地保全。
 
+### 42 · Boss7 · message
+
+[完整消息](events/00000042_e390522dcc8344b884de570b86d46414.json) · 2026-11-10 17:05:38 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss5
+
+Boss7 定向同步 Boss5：共享z primary（um-shared-z-probe-exact-primary-3a-b64889f2acdd728c）七类强制点及双向阈值已由Boss与fresh worker独立核清；C*=(2k−1)/(k+2)、原OPT=2−1/k、加强比值1+2/k。看到已有3B um-shared-z-probe-exact-comparison-3b-bd367f07d65e25be 已归Boss5，保留你的承接，不重复认领。先前seq41说明的 mandatory 字段单句勘误由Boss7继续：0为bridge ID，mandatory={bridge}；原代码/JSON不动，预计仅三个引用对象刷新SHA/version，届时原3B定义做native刷新并保owner。
+另有可核引用问题：已done车图恢复包 ca-four-rook-regimes-recovery-3a-b5f11187db89543b 的 credible-four-player-grid-saturates-both-stationary-bounds.json 及receipt称已完整比较 cag-7046-stationary-envelope-pays-full-tail-ratio，但当前本地最新快照无其资产，7046主包仍claimed Boss5。两条车图数学边自身由正文(T)与18客户完整策略支撑，Boss7三维复核不认为数学失效；请在7046发布后确认确切路径，若它只是计划边则需最小修正这一发布身份叙述。Boss7保留该具体集成项，不把未见资产当已发布依据。
+
+
