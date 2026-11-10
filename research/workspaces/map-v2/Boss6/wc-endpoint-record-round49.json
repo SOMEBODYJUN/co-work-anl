@@ -1,0 +1,196 @@
+{
+  "reviewed_by": "Boss6",
+  "requires_preserved_handoffs": [],
+  "sources": {},
+  "changes": [
+    {
+      "object_id": "weighted-congestion/heterogeneous-endpoint-integer-reduction",
+      "old_pin": "a2b7dedcc0f191db11cccb8f9b90c6f84122ac3c3cdb02790c2e8d2597e14f0d",
+      "new_pin": "2d3198c35617e91b52cd088866c17e9fb45dd6b87d169f38d02acc2b0f4f8a83",
+      "old_object": {
+        "object_id": "weighted-congestion/heterogeneous-endpoint-integer-reduction",
+        "version": 1,
+        "title": "异权两列端点证书的同权整数化",
+        "kind": "reduction",
+        "truth_status": "proved",
+        "model": "沿用该正文完整模型、定义域、成本/动作规则与边界；本候选不以摘要改写模型。",
+        "statement": "异权两列星若满足指定重/轻严格端点证书，可选一种实际轻权并向下取整人数，保次数得到γ>max(1,α−1/(α−1))的同权全状态反例；不覆盖全部异权非存在机制。",
+        "quantifiers": "沿用该正文的精确量词、参数域、所有状态/偏离范围；需由 lead 对正文核对后入表。",
+        "assumptions": [
+          "正文明确的模型与前提全部保留；不得以本摘要替代证明、证书或来源。"
+        ],
+        "scope": "proved-internally; source path is frozen in this task and scope remains limited to the cited section/file.",
+        "objections": "现行 registry 未找到同 object_id；该源 frontmatter 提供候选稳定身份，但仍须 lead 与相邻对象逐项比较后正式分配/确认身份。 审计状态：本文件已加载全文字节、frontmatter、标题与摘要；完整承重推导和同义合并需在正式 owner 接收时复核。",
+        "body": {
+          "path": "archives/weighted-congestion/state/归约/异权两列端点证书的同权整数化--归约.md",
+          "sha256": "64957afa7b236bc90b036ac3edf3ac5718ce77f7716541f87c8690cc6907aa4a",
+          "section": "异权两列端点证书的同权整数化"
+        },
+        "evidence": [],
+        "sources": [
+          "WC-R1-HET-ENDPOINT-REDUCTION v1",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/heterogeneous_endpoint/endpoint_reduction.md",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/heterogeneous_endpoint/review.md"
+        ],
+        "keywords": [
+          "0117",
+          "reduction"
+        ]
+      },
+      "proposed_object": {
+        "object_id": "weighted-congestion/heterogeneous-endpoint-integer-reduction",
+        "version": 2,
+        "title": "异权两列端点证书的同权整数化",
+        "kind": "reduction",
+        "truth_status": "proved",
+        "model": "有限成对对称两列星：一名权1玩家选整列{a0,…,aN}或{b0,…,bN}；轻玩家i的任意正实权wi允许大于1，行动为{a0,bi}或{b0,ai}。两主资源同费用p，第i对卫星同费用fi；均为次数至多d、非负实系数多项式，允许常数项及恒零卫星。成本为所选资源费用之和，真实偏离后的负载包含自己。",
+        "statement": "异权两列星若满足指定重/轻严格端点证书，可选一种实际轻权并向下取整人数，保次数得到γ>max(1,α−1/(α−1))的同权全状态反例；不覆盖全部异权非存在机制。",
+        "quantifiers": "对每个整数d≥0、有限N≥1、任意正实权wi、上述p及fi和同一实α>1，若H及全部Li严格成立，则存在一个实际输入索引i。令w=wi、f=fi、W=Σwi、n=W/w、m=floor(n)≥1、ρ=m/n，则保留p、复制f及w构造m名同权星，每个完整状态都有严格γ=1+ρ(α−1)>max{1,α−1/(α−1)}改善；n>(α−1)^2，0≤α−γ<1/(α−1)。",
+        "assumptions": [
+          "同一输入、同一α同时满足重端点H：p(1)+Σfi(1+wi)>α[p(1+W)+Σfi(1)]。",
+          "每个轻端点Li均满足：p(1+wi)+fi(wi)>α[p(W)+fi(1+wi)]。",
+          "两列及每对卫星严格按所述对应对称；d、N为有限整数，费用系数非负。"
+        ],
+        "scope": "指定H及全部Li充分证书的代数整数化，保持次数、选中的实际权及卫星，并对输出全部状态给严格改善；没有把该证书当作任意异权无α-PNE的必要条件。",
+        "objections": "n=W/wi是代数重数，实际输出人数为floor(n)。密度选择与核心凸性保严格端点，ρ=1分支也保严格余量；γ>1需由ρ>0单独保证。恒定核心不能满足Li，故d=0的前提域为空。实权/实系数整数化本身不自动有理化。向单项式源及锐渐近的推论需另列对应证明为共同前提，不在此独立归约中吞并；一般异权、非对称列或机制外无均衡范围未由本归约覆盖。",
+        "body": {
+          "path": "archives/weighted-congestion/state/归约/异权两列端点证书的同权整数化--归约.md",
+          "sha256": "64957afa7b236bc90b036ac3edf3ac5718ce77f7716541f87c8690cc6907aa4a",
+          "section": "异权两列端点证书的同权整数化"
+        },
+        "evidence": [],
+        "sources": [
+          "WC-R1-HET-ENDPOINT-REDUCTION v1",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/weighted_congestion/heterogeneous_endpoint/endpoint_reduction.md",
+          "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/weighted_congestion/heterogeneous_endpoint/review.md"
+        ],
+        "keywords": [
+          "0117",
+          "reduction"
+        ]
+      },
+      "reason": "Replace stale pre-registration candidate placeholders with the exact model, domain and strict certificate scope proved in the unchanged current body."
+    }
+  ],
+  "materials": [],
+  "root_mathematical_review": {
+    "actual_reading": "Root fully read the current registered record and complete mathematical source, plus the existing heterogeneous envelope ALL and independent D-01 report. Independent worker fully read all three sources before flagging the legacy candidate wording. No old finite program was rerun.",
+    "density_selection": "H gives sum Hi>R>0. Weighted by wi/W, one actuali has Hi/wi>R/W. Taking n=W/wi creates an algebraic coefficient, not a noninteger population. The chosen satellite is nonzero and n>=1.",
+    "population_and_loss": "Selected Li and monotonicity imply (alpha-1)f(1+w)<p(1+w)<=p(1+nw). Combined with H this gives n>(alpha-1)^2. Let m=floor(n),rho=m/n>0; core convexity gives Bm<=rhoB+(1-rho)p(1), Am=rhoA+(1-rho)p(1). Strict H implies Am-gammaBm>rho(1-rho)(alpha-1)(B-p(1))>=0, includingrho1. Li remains strict bym<=n andgamma<=alpha. Floorn>n-1 yields loss<1/(alpha-1), separatelyrho>0 givesgamma>1.",
+    "all_states": "For nonempty aligned light set S, anyi inS has current cost at least the Li left side and deviation cost at most its right denominator; emptyS uses H. Column symmetry covers the other heavy choice. Thus all states have a strictgamma improvement, not merely one improvement cycle.",
+    "domain_edges": "Positive weights may exceed1. Zero satellites and constant terms are admitted. A constant core makes everyLi impossible by monotonicity/nonnegativity, so d0 is vacuous. No complexity bound in bit length or real-to-rational conversion is inferred from copying an actualweight.",
+    "record_delta": "Keep stable mathematical identity, same precise statement, proved status, fullbody/evidence/sources. Replace five placeholder or obsolete metadata fields with their alreadyproved exact model, quantifiers, H/L assumptions, scope and objections. This is completion of a prematurelyaccepted abstract entry, not a stronger theorem.",
+    "downstream": "Three effective done receipts require directed pin replacements; two current canonical edge files need new endpoint bindings but preserve mathematics/evidence. Historical49cb is already superseded and must not be revived."
+  },
+  "independent_review": {
+    "path": "/workspace/scratch/bbb425bb840f/boss6-staging/review-peer-delta-round49/review.md",
+    "sha256": "29bc0cd62fb39db448178155c78813bb2de059ac5ba67b4b49e15177849021dd",
+    "text": "# Boss6 R49：四包有限数学 delta 审读\n\n四包在下列当前 pin 下可作数学整合。本轮未发现阻断性的数学错误；保留一个明确的登记措辞清理项 D-01。前两包实读全部四条正式边及承重端点正文，后两包仅作改版来源、登记、覆盖差异与受影响数学的定向复核。未重跑旧 LP、历史树或全矩阵。\n\n## 当前任务与回执\n\n以下均为本只读 clone 的实际快照：owner=Boss5，state=done，request_id=`5209a7d9538848bf92fd246b00651e45`。receipt pin 是现行 `research_runtime.pin` 的规范 JSON SHA，不同于文件字节 SHA；两者均在 audit.json 中列出。\n\n|任务|核心/资产|当前 receipt pin|\n|---|---:|---|\n|`ca-cov-k-small-actual-menu-comparison-3b-582a6a954f2e2057`|5/3|`8a6fe932b579f202b447a16b67e01d19422a55de8b65ea5639cdde57b6b94c44`|\n|`boss5-heterogeneous-envelope-primary-3a-d1f82cedb9443bc9`|1/1|`977dbd96aa6214718f01f63aaad75c37d95e4dd47c84114304ecd657d3aea3ed`|\n|`map-repair-f14d4ab37fec61b8`|23/13|`c238aee94feb96aab7b5f261a220e6516b8e5358ae07c584a80dd14756aedea4`|\n|`map-repair-543e7fc79deaa5ae`|19/9|`2cd73143a56f2a0d904bb413f9dfbb46ffc9ebe4a706d6dfee3b115445b24d7c`|\n\n四个 task 内嵌 receipt 与对应 receipt 文件完全相同；67个任务输入引用逐项 pin 匹配。26资产的文件 SHA、全部直接 evidence SHA、端点 pin、review_digest 均匹配。没有观察到本四包的 source 或 owner 更新。Root 已告知另一个 a0 lex-domain 修订，范围不涉及本四包。\n\n## 数学结论与未付义务\n\n### 1. COV-K：两条 whole 与一条 contribution\n\n税源精确式 (3) 取末两人的比较对 `(C,Q)` 后，扣除同一交叠项，得到 `E=u_B+u_C−f_b(C)−f_b(Q)+g_b(C,Q)+g_b(B,B)≥0`。其中所有 slack 的离轨回复均属于同一完整 σ；前缀 b 是实际合法前缀，未把非零背景利润当覆盖。实际末位 IC 给 D≥0；三人根对 B、C、Q 的真实偏离至少收每客户 1/3，给三条非负保底。每行取自己的实际标签产生 `c−1_Bi`，所以同一真实 K 含 `L0=(m−1)c/m`。\n\n正文的非负乘子证书逐客户合并以上约束，独立 Fraction 重算两人8列、三人16列，与冻结 replay 每个有理数相同。覆盖列最大余量分别 −7/15、−1/15，因此 `J2(L0)≤23W/15`、`J3(L0)≤29W/15`；m=1直接给 J=W=OPT，零客户也覆盖。目标“小人数定量预算”的整条结论成立，whole_result准确。\n\n3与2客户的不交两标签例的三个实际/离轨决策都严格，完整SPE唯一。根删槽列为1_A与1_B，末位列恒为1_A，故整个K恰以 `0≤s≤1/2` 参数化。J在1/5换支，左降右升，唯一最小值5=W=OPT；1/4处二阶导数 `384/343−256/125<0`。这完整否定“所有m≥2、所有完整SPE真实K上自动凸”的全称式。它满足COV-K，不能作为付款反例。\n\n小人数预算到开放COV-K边仅标 contribution，正确保留m≥4。静态COVER使用同一L与同一m元组的并集，不从half反推COV-K。四人41福利形式路径虽过所列粗行，却在(A,B,Q)后唯一末回复D，倒二改Q可由25/2升到18；不是完整SPE，也未检验真实K的min。未付：m≥4共同付款或真实反例、两个系数锐性、任意指定较大人数的真实菜单曲率。\n\n### 2. 异权端点包络：完整三前提 ALL\n\n完整读整数化、同轻权多项式到单项式、源锐渐近三份正文。H及全部L_i给实际索引的密度选择，`n=W/w_i≥1`是代数重数；`m=floor(n)`才是输出人数。`n>(α−1)^2`及核心凸性保全部输出H/L严格，r=1时严格余量仍在。`γ=1+(m/n)(α−1)>max(1,α−1/(α−1))`。已有两个端点到单项式的段落只需γ>1，ρ0不属于这里所用环节。\n\n反向源包含、β=0/1不贡献>1及w趋0的基线给 `F_poly=F_d`。每个实际认证α满足 `h(α)<γ<R_s≤F_d`，h在(1,∞)严格递增，故单因子 `α<U(F_d)`；取sup只能给 `F_d≤F_het≤U(F_d)`。源有限性、精确差额 `U(F)−F=2/[sqrt((F−1)^2+4)+(F−1)]` 与源全整数渐近共同给2/√e主项。whole_result完整，三源共同ALL没有拆成单源充分。\n\n范围只计指定H/L充分机制，不把任意异权无PNE反推H/L；不保逐实例最优倍率，不假定sup达到，不声称sup端点有限反例。整数化本身未自动有理化，边另列有限严格margin连续性论证，未要求保原floor或γ公式。未付：一般异权非存在到指定证书的必要性、机制外最佳阈值。有限程序本轮仅核冻结字节，不作新运行。\n\n### 3. f14修复：共享终端池 v3，13原边全部保留\n\n唯一覆盖pin变化是M-4107；其余29输入不变，23核心的state与edge_ids均未改变。任意正评分树选r个x及其唯一标签；单父条件使标签领取资源全局不交，最小标签出度≤floor(K/r)。这给上界 `min(r/q,floor(K/r)/K)`；给r个标签各floor(K/r)个互不交资源达界，最大化即v3完整公式。q,K为正整数，q=1和K=1均在证明内，q=K时为floor(sqrt(q))/q。\n\n共享池不能用私有min/clamp合同；资源度可为q，不能直接调用度二p+e+∂分解。共享池闭式不提供源语言编译、YES保持或NO调度decoder，保持isolated-after-review正确。13原边无该核心端点，原SHA与全部直接证据保持current；保留10 whole、3 contribution。旧4 follow-up在原收据已逐对closed，新收据另保历史处置，当前定义无新follow-up。\n\n### 4. 543修复：公共/私有族 q 门槛，9原边全部保留\n\n唯一覆盖pin变化是M-cca；其余27输入不变，19核心state与edge_ids未变。1≤t<K使公共集非空，故ν_K=1；私有t资源给ν_t=q与b*≥t/K。若b>t/K，每个选标签至少取t+1资源，必消耗公共资源，因此选标签≤K−t，`b≤(K−t)/q≤t/K`矛盾。新增 `q≥ceil(K(K−t)/t)`足以恢复精确等式；无q条件的旧式不可沿用。\n\n双标签2t≤K及偶s循环竞赛构造与新增门槛无交集。奇偶族ν_t按不同x计数、每x仅一合法标签；不能因都展示完整层不足就相互specialize。原代码只作给定谱代入、有限双集合和三例竞赛图，不是一般packing oracle。9原边为4 whole、3 contribution、2 context，均不含改版核心；原SHA及证据保持current。旧唯一in-packet已由保留的固定R局部specialization处理，没有新follow-up义务。一般robust全层NO、hard-image成员及全调度源decoder仍未付。\n\n## D-01：明确待清理的登记措辞\n\n对象 `weighted-congestion/heterogeneous-endpoint-integer-reduction` 当前v1，pin `a2b7dedcc0f191db11cccb8f9b90c6f84122ac3c3cdb02790c2e8d2597e14f0d`。这是文字遗留，非本轮证明错误或阻断项。当前字段原文：\n\n- `quantifiers`：沿用该正文的精确量词、参数域、所有状态/偏离范围；需由 lead 对正文核对后入表。\n- `objections`：现行 registry 未找到同 object_id；该源 frontmatter 提供候选稳定身份，但仍须 lead 与相邻对象逐项比较后正式分配/确认身份。 审计状态：本文件已加载全文字节、frontmatter、标题与摘要；完整承重推导和同义合并需在正式 owner 接收时复核。\n\n最小建议新文（本轮不改版本）：\n\n- `quantifiers`：对每个整数d≥0、有限N≥1、正实权w_i及次数≤d非负实系数p,f_i；若同一实α>1同时严格满足H和全部L_i，则存在一个实际索引i，令w=w_i、n=W/w_i、m=floor(n)，输出m名同权星在γ=1+(m/n)(α−1)>max{1,α−1/(α−1)}处每态有严格改善。\n- `objections`：本归约仅针对正文指定H及全部L_i共同成立的充分证书；未证明任意异权两列无α-PNE必满足它们。n=W/w_i是代数重数，实际人数为floor(n)。实权/实系数整数化本身不自动有理化。\n\n涉及该对象的有效done任务（本快照无active任务）：\n\n- `boss5-heterogeneous-envelope-primary-3a-d1f82cedb9443bc9`：Boss5；request `5209a7d9538848bf92fd246b00651e45`。\n- `boss6-corrected-sources-repair-9f1a1dec83faf590`：Boss2；request `1f0541c2f1b545a88574a8b5023a44a4`。\n- `boss6-heterogeneous-source-3b-969473413388cb7a`：Boss5；request `22a32e65990f43ffbdeb90d8100e84cb`。\n\n历史任务 `weighted-congestion-3a-3a-49cb748c97390ed2` 已被done替代，不算有效交付。canonical边：\n\n- `map/edges/boss6-heterogeneous-source-3b-969473413388cb7a/endpoint-monomialization-pays-heterogeneous-envelope-bridge.json`，SHA `0aef0b5b3102dc4e9e0ad3a6d8e4e77b627fd17ebaefefc56dcabf30e1a3c753`，accepted implies。\n- `map/edges/boss6-heterogeneous-source-3b-969473413388cb7a/heterogeneous-source-envelope-sandwich-and-sharp-leading-term.json`，SHA `06f8a3b0b7407a8cf5e5c0b180a8f024024566e5ee7e35a20bb7a66d303ed758`，accepted transfers。\n\n## 实际读取范围与验证边界\n\n前两包：四条完整边JSON、9个对象的完整登记记录、CA五篇正文/定义、其24列表脚本及replay、WC三篇承重正文均实读；源渐近下界取整、任意近sup序列上界及y坐标替代证明全部读完。两修复：实读两改版登记、两份相关主审查全文、配额有限程序范围正文全文，另窄读共享池证据节、私有组合模型/公式/共享排除、奇偶族全部配额层节。\n\n其余修复核心只核当前pin和旧新覆盖结构，未冒称重读全部40个未变核心的数学全文。22保留边核结构、结果作用范围与绑定字节；不重做其全部成熟证明。四包及两个旧包的task/receipt JSON完整解析；两修复逐项比对coverage状态、edge_ids、唯一改版pin、supersession及原overlap。全部直接evidence只核字节者在audit中单列，不冒作本轮新实读。未运行旧LP、树枚举、全矩阵、旧WC有限程序；无Git、队列、规范写入或Library访问。\n\n## 实际新/复用/保留边的完整清单\n\n以下路径均相对只读clone；每条原始完整SHA也在audit.json的packages[].assets内。\n\n|包|处置/作用|边路径|SHA-256|\n|---|---|---|---|\n|1|new-edge / whole|`map/edges/ca-cov-k-small-actual-menu-comparison-3b-582a6a954f2e2057/real-menu-refutes-universal-convexity.json`|`d9fe4504f22bb0671ccf27d523ffd58dc7323e2152850c9072b32317da8cf43b`|\n|1|new-edge / contribution|`map/edges/ca-cov-k-small-actual-menu-comparison-3b-582a6a954f2e2057/small-population-contributes-open-cov-k.json`|`84e4f8bcae757c84fed4dc13a62ed0f231bc7ec6f1c87527f22d506a8c21dda4`|\n|1|new-edge / whole|`map/edges/ca-cov-k-small-actual-menu-comparison-3b-582a6a954f2e2057/tax-pays-small-population-budgets.json`|`4bd6906000a5d08cd7edc35d2284af053239f907cb6d266281206cab2b0f90b8`|\n|2|shared-existing-edge-reuse / whole|`map/edges/boss6-heterogeneous-source-3b-969473413388cb7a/heterogeneous-source-envelope-sandwich-and-sharp-leading-term.json`|`06f8a3b0b7407a8cf5e5c0b180a8f024024566e5ee7e35a20bb7a66d303ed758`|\n|3|retained-original-sha / whole|`map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/held-cycle-and-ring-give-assigned-max.json`|`71ae38d619ed119f84b6942d922649f2118ab6e4e84826273805546a337bb3fc`|\n|3|retained-original-sha / contribution|`map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/held-cycle-pays-safe-unlock-path.json`|`1821e0a9575cb579a5fe30c614b1213650b715c049c0be4fdc753492c208c926`|\n|3|retained-original-sha / whole|`map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/dag-transit-pays-fpt-root-tree.json`|`e2c1a76c097817e4d8c819a178579c04ff960d0f8031dc16b69b2140276ab497`|\n|3|retained-original-sha / contribution|`map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/old-flow-trims-to-expanded-transit.json`|`75b9e667f181414f758da2efcdd5db6c8e9b05024fd8d11a1d5f28f4917286bf`|\n|3|retained-original-sha / whole|`map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/frozen-common-size-pays-quantum-eligibility.json`|`aa63e7d476a6a1be26244f5a710b5758f3920df0976b0b0304f06c759672513b`|\n|3|retained-original-sha / whole|`map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/quantum-threshold-pays-original-opt-promise.json`|`91cef88cb6c11e789c2ab16ef8b20e24493f0d3835ea4067fa9d77bb8e66e51f`|\n|3|retained-original-sha / whole|`map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/row-constant-specializes-to-common-size.json`|`a5171e6a2c52686d11cf8e26a4e907e50ff8b4165e9aa1e57d317fd0a2da4f74`|\n|3|retained-original-sha / whole|`map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/row-constant-recovers-shared-return-pool.json`|`e6d5dfbcee58e239c40b4d6c70546179cbb02922484918aa72ed34c9c24fd544`|\n|3|retained-original-sha / contribution|`map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/fixed-hall-cut-pays-orientation-subproblem.json`|`98825466c5deced4d7f29782eff80afd8f3af9ddd239cbb6339ed77e1842327a`|\n|3|retained-original-sha / whole|`map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/clique-reduces-to-indexed-set-packing.json`|`964745aa9e3e75038a559192e5983f63ea9306dab64a9c2ff8813e88474ff486`|\n|3|retained-original-sha / whole|`map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/clique-reduces-to-node-cover.json`|`09f57f59acb798f4bb73b1e8668009c05dc45a53c45a9db5fb034c817578468e`|\n|3|retained-original-sha / whole|`map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/node-cover-reduces-to-set-covering.json`|`3f379ed1c043215ad02ce80b778a967ae0daddddc9a4ad00140e95eb7f2df6d6`|\n|3|retained-original-sha / whole|`map/edges/unrelated-machines-3a-3a-5b0b7c469ae50024/batch-lex-barrier-transfers-to-strict-sub2.json`|`9c0fc964ee642c3c6c84b1ee42acd999252261361cf85a0af9fdddfa61c7c80a`|\n|4|retained-original-sha / whole|`map/edges/unrelated-machines-3a-3a-3f971da9d312cddb/chromatic-complement-pays-clique-cover.json`|`e2e26e63653eba8640655ec1bd8af69277ad0ec295b654c62345eca21155325a`|\n|4|retained-original-sha / contribution|`map/edges/unrelated-machines-3a-3a-3f971da9d312cddb/compressed-token-bridge-pays-parity-optimum.json`|`c1ae32ad971c750bd85e8336348071a607b2233453778bf356609a5763cc3d6a`|\n|4|retained-original-sha / contribution|`map/edges/unrelated-machines-3a-3a-3f971da9d312cddb/fixed-residual-lattice-specializes-occupation.json`|`7b7be1b3eeb9ecc0f18186d082dac56452efdbffb4810fb4f9001a5350ebd269`|\n|4|retained-original-sha / context|`map/edges/unrelated-machines-3a-3a-3f971da9d312cddb/forest-gap-checks-safe-elimination-boundary.json`|`4be3cb793ae619bb0d1fa4575d21c9875a3a62e72f7451a56dc0bbd719c3a0c2`|\n|4|retained-original-sha / whole|`map/edges/unrelated-machines-3a-3a-3f971da9d312cddb/given-target-path-pays-target-free-first-move.json`|`0d81369279a012a7fd3c2f47ae4566b90eb337345ccce82aa061fb46472d07aa`|\n|4|retained-original-sha / context|`map/edges/unrelated-machines-3a-3a-3f971da9d312cddb/shared-outside-motivates-port-scope.json`|`429f6b5052ca5be64d764dec17d8c316cdf0e130a63162a6561a1dd0965ff7c2`|\n|4|retained-original-sha / whole|`map/edges/unrelated-machines-3a-3a-3f971da9d312cddb/total-reduction-framework-pays-gap-contract.json`|`909ae5d5c5c992ac07240dccff53f1f24205f93c94eda19aa8a0faa0cdf0831c`|\n|4|retained-original-sha / contribution|`map/edges/unrelated-machines-3a-3a-3f971da9d312cddb/uniform-odd-k-pays-tiny-sharpness.json`|`17de6d7f10fc2fe26d069a8488f58c68d2fd888ea1573fbf6c688dc9dad3c8cd`|\n|4|retained-original-sha / whole|`map/edges/unrelated-machines-3a-3a-4b528c45d7d1e1f8/pruned-sharp-path-all.json`|`1c4f05cb340da9ef7c5636a1168f9dff602fdd8306910169689d7681872d8bc6`|\n"
+  },
+  "independent_cleanup": [
+    {
+      "issue_id": "D-01",
+      "severity": "non-blocking-registration-wording",
+      "object_id": "weighted-congestion/heterogeneous-endpoint-integer-reduction",
+      "current_version": 1,
+      "current_pin": "a2b7dedcc0f191db11cccb8f9b90c6f84122ac3c3cdb02790c2e8d2597e14f0d",
+      "current_fields": {
+        "quantifiers": "沿用该正文的精确量词、参数域、所有状态/偏离范围；需由 lead 对正文核对后入表。",
+        "objections": "现行 registry 未找到同 object_id；该源 frontmatter 提供候选稳定身份，但仍须 lead 与相邻对象逐项比较后正式分配/确认身份。 审计状态：本文件已加载全文字节、frontmatter、标题与摘要；完整承重推导和同义合并需在正式 owner 接收时复核。"
+      },
+      "proposed_minimal_fields": {
+        "quantifiers": "对每个整数d≥0、有限N≥1、正实权w_i及次数≤d非负实系数p,f_i；若同一实α>1同时严格满足H和全部L_i，则存在一个实际索引i，令w=w_i、n=W/w_i、m=floor(n)，输出m名同权星在γ=1+(m/n)(α−1)>max{1,α−1/(α−1)}处每态有严格改善。",
+        "objections": "本归约仅针对正文指定H及全部L_i共同成立的充分证书；未证明任意异权两列无α-PNE必满足它们。n=W/w_i是代数重数，实际人数为floor(n)。实权/实系数整数化本身不自动有理化。"
+      },
+      "affected_tasks_metadata_only": [
+        {
+          "task_id": "weighted-congestion-3a-3a-49cb748c97390ed2",
+          "state": "done",
+          "owner": "Boss5",
+          "request_id": "18181ff42f8b4324ac767429b405436e",
+          "effective_done": false,
+          "superseded_by_done_task": true
+        },
+        {
+          "task_id": "boss5-heterogeneous-envelope-primary-3a-d1f82cedb9443bc9",
+          "state": "done",
+          "owner": "Boss5",
+          "request_id": "5209a7d9538848bf92fd246b00651e45",
+          "effective_done": true,
+          "superseded_by_done_task": false
+        },
+        {
+          "task_id": "boss6-corrected-sources-repair-9f1a1dec83faf590",
+          "state": "done",
+          "owner": "Boss2",
+          "request_id": "1f0541c2f1b545a88574a8b5023a44a4",
+          "effective_done": true,
+          "superseded_by_done_task": false
+        },
+        {
+          "task_id": "boss6-heterogeneous-source-3b-969473413388cb7a",
+          "state": "done",
+          "owner": "Boss5",
+          "request_id": "22a32e65990f43ffbdeb90d8100e84cb",
+          "effective_done": true,
+          "superseded_by_done_task": false
+        }
+      ],
+      "canonical_edges": [
+        {
+          "path": "map/edges/boss6-heterogeneous-source-3b-969473413388cb7a/endpoint-monomialization-pays-heterogeneous-envelope-bridge.json",
+          "sha256": "0aef0b5b3102dc4e9e0ad3a6d8e4e77b627fd17ebaefefc56dcabf30e1a3c753",
+          "reviewed_edge_id": "wc-boss5-endpoint-monomialization-pays-heterogeneous-envelope-bridge",
+          "status": "accepted",
+          "kind": "implies"
+        },
+        {
+          "path": "map/edges/boss6-heterogeneous-source-3b-969473413388cb7a/heterogeneous-source-envelope-sandwich-and-sharp-leading-term.json",
+          "sha256": "06f8a3b0b7407a8cf5e5c0b180a8f024024566e5ee7e35a20bb7a66d303ed758",
+          "reviewed_edge_id": "wc-boss5-heterogeneous-endpoint-source-envelope-sandwich-and-sharp-leading-term",
+          "status": "accepted",
+          "kind": "transfers"
+        }
+      ],
+      "requested_action": "列为明确待清理项；本轮不改版本、不重写规范记录、不扩数学重审。"
+    }
+  ],
+  "affected_tasks": [
+    {
+      "task_id": "boss5-heterogeneous-envelope-primary-3a-d1f82cedb9443bc9",
+      "state": "done",
+      "owner": "Boss5",
+      "core": false,
+      "request_id": "5209a7d9538848bf92fd246b00651e45"
+    },
+    {
+      "task_id": "boss6-corrected-sources-repair-9f1a1dec83faf590",
+      "state": "done",
+      "owner": "Boss2",
+      "core": true,
+      "request_id": "1f0541c2f1b545a88574a8b5023a44a4"
+    },
+    {
+      "task_id": "boss6-heterogeneous-source-3b-969473413388cb7a",
+      "state": "done",
+      "owner": "Boss5",
+      "core": true,
+      "request_id": "22a32e65990f43ffbdeb90d8100e84cb"
+    }
+  ],
+  "affected_canonical_edges": [
+    {
+      "path": "map/edges/boss6-heterogeneous-source-3b-969473413388cb7a/endpoint-monomialization-pays-heterogeneous-envelope-bridge.json",
+      "sha256": "0aef0b5b3102dc4e9e0ad3a6d8e4e77b627fd17ebaefefc56dcabf30e1a3c753",
+      "reviewed_edge_id": "wc-boss5-endpoint-monomialization-pays-heterogeneous-envelope-bridge",
+      "repair": "Same mathematical relation and exact evidence; refresh endpoint pin and review binding only."
+    },
+    {
+      "path": "map/edges/boss6-heterogeneous-source-3b-969473413388cb7a/heterogeneous-source-envelope-sandwich-and-sharp-leading-term.json",
+      "sha256": "06f8a3b0b7407a8cf5e5c0b180a8f024024566e5ee7e35a20bb7a66d303ed758",
+      "reviewed_edge_id": "wc-boss5-heterogeneous-endpoint-source-envelope-sandwich-and-sharp-leading-term",
+      "repair": "Same mathematical relation and exact evidence; refresh endpoint pin and review binding only."
+    }
+  ],
+  "new_scientific_runs": 0
+}
