@@ -1,0 +1,51 @@
+{
+  "edge_id": "cag-476-r43-exact-outcomes-to-worst-background-profit",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "customer-attraction/background-aggregate-security-original-random-probe-lower-bound-contract"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定有限非负整数单位客户输入、合法prefix计数k、剩r≥1、总人数m=|k|+r；R(k)为规范精确全集而非浮点screen或一个平局选择器。当前仅论证最差剩余总利润选择，不对任何随机运行输出作存在性补造。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "给R(k)恰为全部完整子SPE可实现终计数且每个目标可逐有序历史展开。",
+    "customer-attraction/background-aggregate-security-original-random-probe-lower-bound-contract": "允许从R(k)取V(q;k)=Σ_{a:q_a>0}(q_a−k_a)U_a(q)的精确最小值作为最低剩余利润。"
+  },
+  "explanation": "每份完整子SPE的终计数q由source必要性在R(k)；每个q∈R(k)由source充分性可拼接完整有序子SPE。固定q后剩余选a人数恰q_a−k_a，故suffix总利润严格为V(q;k)，不含旧k_a玩家租金。求和只取q_a>0；因可实现q逐坐标满足q≥k，q_a=0也有k_a=0且该标签无剩余玩家，不出现0乘未定义U_a(q)。有限集合上min_R V于是恰是所有完整子SPE最低剩余利润，最小值达到；argmin可由source证书构造逐有序节点独立展开，不要求同计数历史同续局。该理论可实现性和实际展开/独立全树验证的执行证据分别保留。静态p̂下界矩阵和概率合法性仍按probe自身合同，算法不补p̂≥0检查。",
+  "scope": "最差剩余利润选择的完整局部支持；不称驱动已导出/独立验证σ、不称精确静态v_r、一般聚合安全桥或1500轮新阴性。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/合法背景聚合安全值原随机探针的精确下界合同--程序.md",
+      "sha256": "66867dc8183dec8e5c6ea125ab49688a6bf81704bd12e99645cc820239603b47"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-476c2ac4e44ed290/comparison-review.md",
+      "sha256": "bcf1f83086828367bd5d6c2db0dd1588aaf0e1d6afba9fdc7065503e2807dc99",
+      "section": "新关系证明E：全集到最低剩余利润选择"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "实际完整读取所列核心正文/承重证明与精确必要依赖；按本边显示的模型、方向、全部量词和结果范围逐句核对。成熟证据合同复用，本轮不重跑旧LP/全树/随机程序。",
+  "contribution": {
+    "result": "对任合法prefix，min_(q∈R(prefix))Σ_{a:q_a>0}(q_a−prefix_a)U_a(q)恰为全部完整历史子SPE的最低剩余总利润；每个argmin有可逐有序历史展开的完整策略实现。",
+    "remaining": "probe驱动本身没有展开/保存该目标策略或调用独立全树验证；合法概率p̂的非负/归一及scale条件、静态全部行下界、实际反例输出和执行绑定须另付。理论选择正确不认证历史随机阴性或一般聚合定理。"
+  },
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "customer-attraction/background-aggregate-security-original-random-probe-lower-bound-contract": "e32f002570310038c3a933714cb1f4bb8fbcfd5074020507bd3ed91b52bcc91a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/程序/合法背景聚合安全值原随机探针的精确下界合同--程序.md": "66867dc8183dec8e5c6ea125ab49688a6bf81704bd12e99645cc820239603b47",
+    "map/edges/customer-attraction-3a-3a-476c2ac4e44ed290/comparison-review.md": "bcf1f83086828367bd5d6c2db0dd1588aaf0e1d6afba9fdc7065503e2807dc99"
+  },
+  "review_digest": "faa303f7aa0268947e361fc3878e5c19d4461a5743a3dd0a53ad0a860b0d4380"
+}

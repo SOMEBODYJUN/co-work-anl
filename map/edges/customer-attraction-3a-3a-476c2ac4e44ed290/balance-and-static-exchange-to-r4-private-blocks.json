@@ -1,0 +1,64 @@
+{
+  "edge_id": "cag-476-r43-balance-and-static-exchange-to-r4-private-blocks",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-21108b01d92540379cb7c7227ec6ade3",
+    "M-229d7c0b44324c27b2755e659b46d235"
+  ],
+  "target_ids": [
+    "customer-attraction/r4-background-candidate-transport-obstruction"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限输入、合法旧覆盖U及其真实负载b、同一完整子SPE父/actual孩子、同一个达到父C的r槽最优tuple；只假设actual孩子BG即S=W+Vtail−C′≥0，并在必要界部分假设父BG失败。静态EX1按比较槽保留重复，E_A随所选最优tuple并集定义。",
+  "roles": {
+    "M-21108b01d92540379cb7c7227ec6ade3": "保E=G、L=u−δ的实际父/孩子缺口，父坏差=δ−u−S。",
+    "M-229d7c0b44324c27b2755e659b46d235": "已登记静态ME的k1/Y空投影EX1，对每个最优tuple每槽给δ≤|P_j\\A|−|E_A|。",
+    "customer-attraction/r4-background-candidate-transport-obstruction": "联合得到全最优tuple全槽的严格私有残块必要界及低支持继承。"
+  },
+  "explanation": "置C=|U|+O_r(b)，C′=|U∪A|+O_(r−1)(b+1_A)，δ=C−C′，actual总覆盖W。source balance给G_parent=W+u+Vtail−C，G_child=W+Vtail−C′=S，父失败当且仅当δ>u+S。source exchange在P=U,S=A、最优tuple T及k1/Y空时，以P_j=T_j\\(U∪⋃_(k≠j)T_k)、E_A=A\\(U∪⋃T)给C′≥C+|E_A|−|P_j\\A|。因此对每个tuple每个j有|P_j\\A|≥δ+|E_A|>u+S+|E_A|。若存在一个最优tuple含空P_j，u≥0、S≥0、|E_A|≥0使此严格界不可能，故actual孩子BG推出父BG。最优由≤r−1主题达到时可重复补槽得空私块；零支持时全部主题在U内，也能合法补槽。本推导无全部离轨孩子BG前提，不用IND，不把必要大块反读成保底。",
+  "scope": "目标whole：每个最优tuple每槽的必要界及存在一个空私块/低支持时的BG继承；不证明普遍BG或SWITCH。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/背景新增覆盖余额与首步分解--引理.md",
+      "sha256": "46a4cdc87ee03067d28d70ecffda8ced7949c1988754b81fb1a8dbdfff731d9b"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/净退款根账本的版本订正与静态组件边界--资源.md",
+      "sha256": "61e1aadca4abac942038f9d065493d7cc6567dddd3f8fc51e582c22f6d806a9d",
+      "section": "多槽交换ME/MM的全部静态内容"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优补全私有块交换与分支账本--引理.md",
+      "sha256": "5bdc6de1c6e8aa7163903d8339badd8b757e8c1836c21ae6d320c4fe99cc2d8e",
+      "section": "不需要均衡假设的交换关系"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/R4背景候选运输攻击--障碍.md",
+      "sha256": "2667bdcfbdd61e1aabc7fb276b7ab43bd5faea4106d28a43b6ec4704544a624e",
+      "section": "每个最优元组、每个槽的必要私有残块"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-476c2ac4e44ed290/comparison-review.md",
+      "sha256": "bcf1f83086828367bd5d6c2db0dd1588aaf0e1d6afba9fdc7065503e2807dc99",
+      "section": "新关系证明C：R12到正式余额，再与EX1联合到R4"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "实际完整读取所列核心正文/承重证明与精确必要依赖；按本边显示的模型、方向、全部量词和结果范围逐句核对。成熟证据合同复用，本轮不重跑旧LP/全树/随机程序。",
+  "whole_result": "若同一actual孩子BG成立而父BG失败，则任一达到父C的r槽最优tuple的每槽j同时满足|P_j\\A|>u+S+|E_A|；因此存在一个最优tuple含空P_j，特别最优由≤r−1主题达到时，actual孩子BG足以推出父BG。",
+  "endpoint_pins": {
+    "M-21108b01d92540379cb7c7227ec6ade3": "c35870b90cf7c0e18fb070edd87cdfe791d61303338ec0f6ab43a92efb8a9f23",
+    "M-229d7c0b44324c27b2755e659b46d235": "113e3dec00a9eeb417e46803898f320de465427817fffd6c8eed3dbb6bb5158c",
+    "customer-attraction/r4-background-candidate-transport-obstruction": "bec33420e67cd4839f671125501ee0f4bdc47d7c5c4ebac448cb836fd3bf6edb"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/背景新增覆盖余额与首步分解--引理.md": "46a4cdc87ee03067d28d70ecffda8ced7949c1988754b81fb1a8dbdfff731d9b",
+    "archives/customer-attraction/state/资源/净退款根账本的版本订正与静态组件边界--资源.md": "61e1aadca4abac942038f9d065493d7cc6567dddd3f8fc51e582c22f6d806a9d",
+    "archives/customer-attraction/state/引理/最优补全私有块交换与分支账本--引理.md": "5bdc6de1c6e8aa7163903d8339badd8b757e8c1836c21ae6d320c4fe99cc2d8e",
+    "archives/customer-attraction/state/障碍/R4背景候选运输攻击--障碍.md": "2667bdcfbdd61e1aabc7fb276b7ab43bd5faea4106d28a43b6ec4704544a624e",
+    "map/edges/customer-attraction-3a-3a-476c2ac4e44ed290/comparison-review.md": "bcf1f83086828367bd5d6c2db0dd1588aaf0e1d6afba9fdc7065503e2807dc99"
+  },
+  "review_digest": "60c221a572322077f8b5c5a444b7e2f7e2d55af5b8e3bbdf6e4e4b54924bead3"
+}
