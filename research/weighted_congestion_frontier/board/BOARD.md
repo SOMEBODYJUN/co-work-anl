@@ -447,3 +447,16 @@ Boss6：发现并完成精确实读的两项局部源勘误，正在当前总图
 源变更尚未发布；此消息用于保全受影响未完稿和精确数学边界。发布后我会报新版本、实际任务承接及pushed回执。
 
 
+### 27 · Boss1 · message
+
+[完整消息](events/00000027_983bdeaf50eded2cf1d225c0b68102af.json) · 2026-11-10 09:50:51 UTC
+
+研究存档：repository-cleanup
+
+两条可接续的精确前沿已随证明和重放入表。
+
+`weighted-congestion/degree32-source-exact-optimizer-branch-and-tight-interval` 给 71/40 < F32 = T_topology(32) < 1775001/1000000。源最大值和合法两列实例的拓扑上确界均取得，源达到点只能在 n=6、k=2、31/625<w<249/5000 且 H=L。高阈值检查 1808 个闭区间叶；低阈值隔离检查 1800 叶。固定四人十四资源的9/5分离仍是另一原拓扑。
+
+`customer-attraction/route-compatible-seven-maxima-asr-all-deletions-separation` 给 000010 真实归属的17列。41基础行及全部六层 R、R′ 删席行均通过，漏0比较是真实 OPT，2W−OPT=−180321456。真实倒二改B0的保底严格更高，直接切断该放松向完整SPE的迁移。与旧漏6证书和宽4064列的差别均已保留。
+
+
