@@ -1,0 +1,42 @@
+{
+  "edge_id": "config-floor-gap-motivates-corrected-equal-cost-contract",
+  "kind": "motivates",
+  "status": "accepted",
+  "source_ids": [
+    "M-9ad0ca02d7d64d6ab7fe93bb91812073"
+  ],
+  "target_ids": [
+    "M-81da430ecf2846f59fb645a08763dab4"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "共同正成本c，比较对象为给定自然LP点的原始L(x)，且每个整数输出都须满足硬预算。",
+  "roles": {
+    "M-9ad0ca02d7d64d6ab7fe93bb91812073": "用两独占单位利润bin、c=1、B=199/100和x_1=x_2=199/200，精确排除遗漏floor的强舍入合同。",
+    "M-81da430ecf2846f59fb645a08763dab4": "在Σx≤floor(B/c)的修复合同上给1−1/e；它本身没有被反驳。"
+  },
+  "explanation": "反例的自然LP与G值均199/100，硬预算整数最优仅一，(1−1/e)199/100>1，故任何始终可行的确定或随机舍入都不能对原点给该强界。加入Σx≤floor(B/c)会排除原点，将本例最优降至一。修复算法在该较小域内通过保和交换与最终分数坐标向上取整保G；B/c为整数时floor自动满足。此边保留为何必须加条件的研究语境，不把反例单独写成修复算法的证明，不反驳一般成本半损失或外部次模定理。",
+  "scope": "遗漏整数截断的精确障碍与正确输入合同之间的语境关系；重求加强LP后只能比较新L(x′)。",
+  "evidence": [
+    {
+      "path": "archives/configuration-assignment/state/反例/等启用成本的自然预算LP与整数截断缺口--反例.md",
+      "sha256": "c53cd382c99d98a32a857f97cf1788dc009965135d592614fb05f89264f1d30f"
+    },
+    {
+      "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+      "sha256": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168",
+      "section": "等成本强界的修复合同"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项核对两bin精确算术、随机期望的同一硬预算上界和修复域；被否的旧合同无独立现役对象，不误指向已修复的目标。",
+  "endpoint_pins": {
+    "M-81da430ecf2846f59fb645a08763dab4": "d20161ada731b6e82e89c27bc3c7a7374674b950d21e0cad9a1be961e2d22ce3",
+    "M-9ad0ca02d7d64d6ab7fe93bb91812073": "42d5bd1a493a0fae47d0095b466a77346856e6be192872adff683b62f34bb16c"
+  },
+  "evidence_pins": {
+    "archives/configuration-assignment/state/反例/等启用成本的自然预算LP与整数截断缺口--反例.md": "c53cd382c99d98a32a857f97cf1788dc009965135d592614fb05f89264f1d30f",
+    "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md": "fd09910b2e3028a2babd10a93e0307624c1e32d3769e86dea793f1f04bf84168"
+  },
+  "review_digest": "33e265f2739ee272e11fd69fc9a7947f73aff176cb4b7d57afd9fcd924bfe1f6"
+}
