@@ -124,11 +124,59 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss5",
-  "request_id": "a76918f4fe154c94ab61e2120cd7529a",
+  "request_id": "b3b152e7a3ce44aaba0345dd5aad164d",
   "requests": {
     "9e5d898ab04245c2b174231fda42eca8": "plan",
-    "a76918f4fe154c94ab61e2120cd7529a": "claim"
+    "a76918f4fe154c94ab61e2120cd7529a": "claim",
+    "b3b152e7a3ce44aaba0345dd5aad164d": "done"
+  },
+  "edge_paths": {
+    "boss5-cov-k-real-two-player-example-refutes-universal-convexity": "map/edges/ca-cov-k-small-actual-menu-comparison-3b-582a6a954f2e2057/real-menu-refutes-universal-convexity.json",
+    "boss5-cov-k-tax-and-spe-pay-small-populations": "map/edges/ca-cov-k-small-actual-menu-comparison-3b-582a6a954f2e2057/tax-pays-small-population-budgets.json"
+  },
+  "receipt": {
+    "coverage": {
+      "customer-attraction/cov-k-actual-menu-nonconvexity": {
+        "state": "linked",
+        "object_pin": "bd345c4a8d5cfb53342b391bc209f339dac1652f4d5ee4fc7bcceac75fb303bf",
+        "comparison_scope": "实读本对象v1、通用真实菜单凸性v1、m≤3预算v1、CAG-MODEL v1和全部7份任务reading_refs；复核3与2客户不交二标签目录的全部3个有序决策节点、两位置全部真删槽列、整个K、换支点和两段J。与一般合法分数背景负曲率、原COV-K付款及m≤3固定L0保证分别比较。独立枚举8份完整二标签策略并逐节点核SPE，唯一策略为根A、A后B、B后A；以Fraction重算s=1/4曲率及s=1/5等价。复用已发布3B反驳边原路径和原SHA，未另造相同关系。",
+        "reason": "根两选择真实后继收益为3与2，末位严格差为2−3/2及3−1；故反例是原模型中的严格唯一完整SPE。其整个K恰为L_s=(1−s)1_A+s1_B、0≤s≤1/2，在内点s=1/4有J₂″=−39808/42875<0，精确反驳所有m≥2及所有完整SPE的自动凸性。两支分别递减/递增，唯一最小点s=1/5且min_K J₂=5=W=OPT₂；此例满足COV-K，不能用来否定付款、half或任一固定m≥3的凸性。",
+        "edge_ids": [
+          "boss5-cov-k-real-two-player-example-refutes-universal-convexity"
+        ]
+      },
+      "customer-attraction/cov-k-scaled-actual-up-to-three": {
+        "state": "linked",
+        "object_pin": "00e6c3c6e2ed0845e8017d252e9e81131cc04afa3c0af5ce49c0358d7b14b35d",
+        "comparison_scope": "实读本对象v1、CA-TWO-REMAINING-TAX v1全部精确式(1)–(3)、共同完整历史模型、剩余利润/根覆盖区别、原COV-K候选及真实非凸例；实际复核完整定理、定义、税正文、verify.py与replay.json。税源是任务唯一in-packet overlap，已在本包逐步比较并由成熟3B whole边支付：实际B,C及比较C,Q从精确式保留交叠余项得到E≥0，联合实际末位IC和三人根保底。独立Fraction重算全部8+16会员列并与冻结replay逐值匹配；复用同一canonical边原SHA。",
+        "reason": "每位置取实际标签使删槽列c−1_Bi平均为L0=(m−1)c/m∈K。两人精确税式移项的E≥0需真实离轨末回复及全部三条SPE slack；弱税界单独不足。对任意整主题Q，m=2用(6/5,4/5)合并(D,E)，m=3用(1/20,1/2,4/5,17/10,31/30)合并(R_B,R_C,R_Q,D,E)，全部未覆盖列余量0、覆盖列分别至多−7/15和−1/15；由各总量非负得J₂(L0)≤23W/15及J₃(L0)≤29W/15。m=1由根最优性和K={0}得J₁=W=OPT₁；零客户也成立。此whole边完整支持本核心，开放全人数COV-K只收到m≤3贡献，不由本核心补齐m≥4。",
+        "edge_ids": [
+          "boss5-cov-k-tax-and-spe-pay-small-populations"
+        ]
+      },
+      "customer-attraction/cov-k-true-menu-universal-convexity": {
+        "state": "linked",
+        "object_pin": "a97dd0319bf93b5df1886601f38cf530750a93aeece997e9560401778e139f4e",
+        "comparison_scope": "实读本对象v1全称量词∀m≥2、∀有限共同标签目录、∀完整纯SPE、∀同K线段；与真实两人非凸v1及预算v1比较。核原候选中的一般合法分数背景反例为何不能单独作真实K反例，改以完整SPE二标签例的整个真实K、内点负曲率及精确min值对准本目标。复用已发布反驳边而不把语境相似性作推导。",
+        "reason": "目标是全称自动凸性；存在一个严格唯一m=2完整SPE和其真实K内光滑负曲率邻域已足以否定整条目标，故accepted refutes的whole_result方向准确。其反驳不需要先解决COV-K；同一实例min_K J₂=5而m≤3另有普遍预算，说明自动凸性不是这些付款结论的必要前提。没有从通用命题已否推断任意指定更大m都非凸。",
+        "edge_ids": [
+          "boss5-cov-k-real-two-player-example-refutes-universal-convexity"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/ca-cov-k-small-actual-menu-comparison-3b-582a6a954f2e2057/real-menu-refutes-universal-convexity.json",
+        "sha256": "d9fe4504f22bb0671ccf27d523ffd58dc7323e2152850c9072b32317da8cf43b"
+      },
+      {
+        "path": "map/edges/ca-cov-k-small-actual-menu-comparison-3b-582a6a954f2e2057/tax-pays-small-population-budgets.json",
+        "sha256": "4bd6906000a5d08cd7edc35d2284af053239f907cb6d266281206cab2b0f90b8"
+      }
+    ],
+    "follow_up_tasks": [],
+    "closed_overlaps": []
   }
 }
