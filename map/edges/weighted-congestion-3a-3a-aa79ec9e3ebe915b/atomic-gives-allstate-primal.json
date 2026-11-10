@@ -1,0 +1,62 @@
+{
+  "edge_id": "wc-r32-atomic-gives-allstate-primal",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/two-player-two-strategy-no-pne"
+  ],
+  "target_ids": [
+    "weighted-congestion/allstate-selector-linear-alternative"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "权 (1,2)、两动作及 d≥2，四交叉资源依行列；对角 x²、非对角 (9/2)x。每个 1≤α<36/35。",
+  "roles": {
+    "weighted-congestion/two-player-two-strategy-no-pne": "给准确混合费用、四态成本及两个严格比。",
+    "weighted-congestion/allstate-selector-linear-alternative": "把四态构造成固定模板上签名锥严格原始证书。"
+  },
+  "explanation": "00/11 取玩家1，旧/新比 18/(35/2)=36/35；01/10 取玩家0，旧/新比 (29/2)/(27/2)=29/27。按真实菜单将四资源各放一条签名次数列，系数 (1,9/2,9/2,1)，其余为0。选中四行的正 margin 给 B_h a>0。端点 36/35 时前两态不存在严格出口，是该原游戏弱均衡。",
+  "scope": "现行 v2 正文、冻结 AG-04、Fraction 源码和输出一致使用线性非对角费用。若照历史误印将非对角费用改成 (9/2)x²，则 00/11 均为精确 PNE，不能沿用本例的严格原始证书。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/反例/两玩家二策略无纯均衡--反例.md",
+      "sha256": "ee18c3501ab72f5d7f749adcd2100268fbc4404bbf92d65891b9d3284c123805"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/atomic-games/candidate_report.md",
+      "sha256": "e3896b75aa9e83a78872c275e0f2ad3044edc88af60aa16608e613eff116addc",
+      "section": "AG-04：跨玩家共享结构能否允许非拟阵策略？"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/atomic-games/toy_checks.py",
+      "sha256": "bbc732c0ad4812ec74e3b086cf382c55495719f4a88e9c39f848b21377094144"
+    },
+    {
+      "path": "archives/weighted-congestion/tools/evidence/atomic-games/toy_output.json",
+      "sha256": "9ddc45afd6627829cd6e44e7d0ffa7cba1f0752b83bab61baeba4c3547ce0cfd"
+    },
+    {
+      "path": "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md",
+      "sha256": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a",
+      "section": "精确矩阵与全部量词"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读并绑定勘误后的 v2 正文，交叉核对三个冻结原件。按真实菜单独立重算混合费用与历史误平方两种输入的四态和八条翻位，确认当前 36/35 弱端点和历史字面模型的精确均衡。",
+  "contribution": {
+    "result": "两玩家固定模板对 α<36/35 有四行严格原始证书，对该 h 无归一化非正对偶。",
+    "remaining": "此有限见证不替代任意模板线性二择一及全部 h 的普遍存在量词。"
+  },
+  "endpoint_pins": {
+    "weighted-congestion/allstate-selector-linear-alternative": "32b4a0b43b4f3f9bf47915836e1e02ee714339906ac960b66961a7e7760686ad",
+    "weighted-congestion/two-player-two-strategy-no-pne": "d8e681ce2ac5b35adf7a246b62929171899bff50926eb5c0f39e2d942d108432"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/反例/两玩家二策略无纯均衡--反例.md": "ee18c3501ab72f5d7f749adcd2100268fbc4404bbf92d65891b9d3284c123805",
+    "archives/weighted-congestion/tools/evidence/atomic-games/candidate_report.md": "e3896b75aa9e83a78872c275e0f2ad3044edc88af60aa16608e613eff116addc",
+    "archives/weighted-congestion/tools/evidence/atomic-games/toy_checks.py": "bbc732c0ad4812ec74e3b086cf382c55495719f4a88e9c39f848b21377094144",
+    "archives/weighted-congestion/tools/evidence/atomic-games/toy_output.json": "9ddc45afd6627829cd6e44e7d0ffa7cba1f0752b83bab61baeba4c3547ce0cfd",
+    "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a"
+  },
+  "review_digest": "bbbe2a2297acb7450a3a641f94f7921a8f9362d34d3d0024ccd2f2127c8857be"
+}

@@ -1,0 +1,47 @@
+{
+  "edge_id": "ca-monochrome-reset-r32-copy-cross-rows-factor-elimination",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-b9d199ca97ee46dab3529c07f71f6400"
+  ],
+  "target_ids": [
+    "M-cbf96f1dafc4488aab10341418575323"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定旧十会员位、比较重数 d、共同菜单角点与行权；其它原复制行在此上下文至多各依本枝变量。",
+  "roles": {
+    "M-b9d199ca97ee46dab3529c07f71f6400": "364 源枝前缀与目标枝查询的 COPY-X 必要行。",
+    "M-cbf96f1dafc4488aab10341418575323": "六隐藏域上的一元／二元联合最大值与标准消元。"
+  },
+  "explanation": "COPY-X 每客户的 u 项仅依源 s；分母由同一源 s 前缀决定，查询分子为目标 t 尾会员。因此固定行权后跨枝项至多二元，原局部项仍一元。令所有含当前消元变量的因子先在同一个变量赋值上求和，再求 max，所有不含该变量因子可外提。按 D2,D3,D,B,C,E 重复，所得值与原六维共同最大完全相同，保存各步 argmax 可回溯。独立各因子最大后相加只给上界，除非共同达成。",
+  "scope": "扩张的六枝离散隐藏域 16,16,16,16,8,4；保同一赋值，结论是精确定价算子。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/六条真实复制分支的交叉查询与联合因子定价--引理.md",
+      "sha256": "abd0f6d10527678622ea61f7883a2af638cb669806e17670afcfd9545773307e"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/真实复制与根最优直方图的组合定价合同--程序.md",
+      "sha256": "439e63078990594751f73c4b6baec99262eac28fb79928891ac3508db0cd8d3e"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/六条真实复制分支的交叉查询与联合因子定价--引理.md",
+      "sha256": "abd0f6d10527678622ea61f7883a2af638cb669806e17670afcfd9545773307e",
+      "section": "联合因子目标及消元方向"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "Boss1 第三阶段 worker 实读绑定原文，核对实际模型、联合前提、真偏离、量词及结论范围。",
+  "whole_result": "COPY-X 的客户系数给联合因子分解；在固定上下文按原消元次序计算精确共同 max 与回溯，不把因子分别最优化当成精确价。",
+  "endpoint_pins": {
+    "M-b9d199ca97ee46dab3529c07f71f6400": "bc7ac05de43c4ff98e15e655192bdf6c279aa7211f37d386882201cf10730557",
+    "M-cbf96f1dafc4488aab10341418575323": "2c75de5053aa8e00ff81d06bd51e20cdde1e728c4120a824bb890a1d680194f3"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/六条真实复制分支的交叉查询与联合因子定价--引理.md": "abd0f6d10527678622ea61f7883a2af638cb669806e17670afcfd9545773307e",
+    "archives/customer-attraction/state/程序/真实复制与根最优直方图的组合定价合同--程序.md": "439e63078990594751f73c4b6baec99262eac28fb79928891ac3508db0cd8d3e"
+  },
+  "review_digest": "12b8430d4be9017a752ada282ee3aa0f5100735167ad9074c8560de0e8e7ca74"
+}

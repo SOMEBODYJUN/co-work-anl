@@ -1,0 +1,52 @@
+{
+  "edge_id": "wc-r32-oc-cohort-singleton-orientation",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "OC-INTERFACE-v1"
+  ],
+  "target_ids": [
+    "weighted-congestion/singleton-cohort-ring-defect-graph-equilibrium"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "只取 OC 的 n_i=1、主/副同费副本、正单项式合同，奇 m≥3。A_i 同位冲突，B_i 异位冲突。",
+  "roles": {
+    "OC-INTERFACE-v1": "给按主边及侧边区分的资源、单人动作和正向两类严格测试。",
+    "weighted-congestion/singleton-cohort-ring-defect-graph-equilibrium": "在单成员真实拓扑以单冲突图识别任意一致正取向的全部承重偏离。"
+  },
+  "explanation": "从唯一 A_i 冲突出发，L_i 的翻位把它移到 B_i，实际 margin 恰 q_iN_i−p_iP_i（n_i=1）。从唯一 B_i 冲突出发，H_{i+1} 翻位把它移到 A_{i+1}，实际 margin 恰 p_iQ_i−q_{i+1}M_{i+1}。所以整条 2m 位单冲突循环的一致正取向等价于全部这些正向两测试。反向必须倒序并交换 hub/light，B 副本位需反标。纯对称 pair 的奇顶点环不可当成这个 2m 位有相反主侧符号的拓扑。",
+  "scope": "仅证明单成员 OC 子类的正向识别，不把充分测试外推为一般多成员必要性。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md",
+      "sha256": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6",
+      "section": "资源、玩家与动作"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md",
+      "sha256": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6",
+      "section": "混合群组也被覆盖的证明"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/单成员群组奇环的缺陷图均衡--定理.md",
+      "sha256": "e1d6929f5c72b2982607ca45d56cb1aa8532530361d17391b1980efca9ea4243",
+      "section": "9. An actual-topology existence bound for singleton cohorts"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐一重算两个单冲突端的真实 old/new 负载，核对反向映射与一般多项式范围。",
+  "contribution": {
+    "result": "在 n_i=1 的正单项式 OC 中，单冲突图的一致正取向等价于 OC 正向两测试。",
+    "remaining": "一般多项式与零费范围、反取向及 T_d 包络的完整排除另需目标论证。"
+  },
+  "endpoint_pins": {
+    "OC-INTERFACE-v1": "2632cfb87681d8d959b5e44f47d114e30bacc287bba2a931798524c44c6be252",
+    "weighted-congestion/singleton-cohort-ring-defect-graph-equilibrium": "8ecd54dc4822bd40aec9d69056abba72674e218ad85adb0d2ba55622d7cfe0af"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6",
+    "archives/weighted-congestion/state/定理/单成员群组奇环的缺陷图均衡--定理.md": "e1d6929f5c72b2982607ca45d56cb1aa8532530361d17391b1980efca9ea4243"
+  },
+  "review_digest": "0b3a71e0739ca2f8bb745fbf8187517a2b66befc24a3e3569280a461b27d5c76"
+}

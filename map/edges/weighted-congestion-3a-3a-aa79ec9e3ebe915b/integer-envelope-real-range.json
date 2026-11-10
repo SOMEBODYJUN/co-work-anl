@@ -1,0 +1,48 @@
+{
+  "edge_id": "wc-r32-integer-envelope-real-range",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R1-SOURCE-D2-ENVELOPE"
+  ],
+  "target_ids": [
+    "M-93696821eeab43028bb6a48300ee6ab8"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一 d=2 两攻击式，k∈{1,2}、w,β∈[0,1]。把公式参数 n 放宽到任意实 n≥1，仍无分数玩家解释。",
+  "roles": {
+    "WC-R1-SOURCE-D2-ENVELOPE": "提供 k=2 的第一商界及 k=1 时 F(1,w)、F(2,w)−F(1,w) 的严格负平方证书。",
+    "M-93696821eeab43028bb6a48300ee6ab8": "登记全实数域的 17/16 上界；由同一消元辅以 1≤n≤2 的切线证书取得更强界。"
+  },
+  "explanation": "D₂=0 时 w=β=0，第一个严格式失败。k=2 有 N₁−D₁≤n(1−n)w²≤0，适用任意实 n≥1。k=1 令 t=19/18，两测试严格时消去 β 得 F_t(n,w)>0 与 Q=tw((1+w)²−t)>0。写 Δ=F_t(2,w)−F_t(1,w)<0。若 n≥2，F_t(n,w)=F_t(1,w)+(n−1)Δ−(n−1)(n−2)Q<0。若 1≤n≤2，F_t 对 n 是二次系数 −Q 的凹函数，F′_t(1,w)=Δ+Q，故 F_t(n,w)≤F_t(1,w)+(n−1)(Δ+Q)。此线性上界在 n=1 已负；在 n=2，把原两个负平方恒等式和 Q 相加得 1296[F_t(1,w)+Δ+Q]=−1664w³−6212w²+2228w−220<0，因二次部分判别式 2228²−4·6212·220=−502576<0、首项系数为负。故整个区间也严格负，矛盾。",
+  "scope": "使用整数证明的已有平方证书，加新的短区间代数，使 19/18 覆盖全实 n≥1。旧整数证明本身在 1<n<2 的离散差分末项变号，原登记的 17/16 凹性证书和 16/15 替代证书仍分别保留其来源身份。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/两攻击源公式的二次整数参数包络--定理.md",
+      "sha256": "0c1042284fe67b62f4cf78ad19db37df3bb78c8a263ff68b511ff47317925550",
+      "section": "分支分离与参数消元"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/两攻击源公式的二次整数参数包络--定理.md",
+      "sha256": "0c1042284fe67b62f4cf78ad19db37df3bb78c8a263ff68b511ff47317925550",
+      "section": "19/18的整数差分平方证书"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/两攻击源公式的二次整数参数包络--定理.md",
+      "sha256": "0c1042284fe67b62f4cf78ad19db37df3bb78c8a263ff68b511ff47317925550",
+      "section": "实数n的较弱但不同范围证书"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核实全域分母和 k=2 的真实量词，以独立有理多项式运算复核新增切线端点恒等式与判别式。",
+  "whole_result": "任意实 n≥1、k∈{1,2}、w,β∈[0,1] 不可能同时 18N₁>19D₁ 与 18N₂>19D₂，因而两分母为正时共同最小商至多 19/18。由 19/18<17/16<16/15 得到目标的全实数域结论。",
+  "endpoint_pins": {
+    "M-93696821eeab43028bb6a48300ee6ab8": "c1aead286791addca4b051065ed9c329d3aefa81d864c7ddfe379e5c334bcc50",
+    "WC-R1-SOURCE-D2-ENVELOPE": "e87d42e8a947383dec9f817173d522587a65fef3068cb92359ca17b36161f1c5"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/两攻击源公式的二次整数参数包络--定理.md": "0c1042284fe67b62f4cf78ad19db37df3bb78c8a263ff68b511ff47317925550"
+  },
+  "review_digest": "44279539d8ff313d7f3c1bfc1b9ff0a7ffec2c00d3cc7a0ae15b8975dc00e0e6"
+}

@@ -1,0 +1,47 @@
+{
+  "edge_id": "ca-monochrome-reset-r32-weighted-anchor-at-exact-saturation",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "B10-BNS-v2"
+  ],
+  "target_ids": [
+    "M-b19399f1576e47d99d69ef5526029c87"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一合法有序背景 b、完整纯 SPE 及真实 A B^r，r≥1；假定 M=u_A−q(B)=0。",
+  "roles": {
+    "B10-BNS-v2": "任意合法背景的加权最大锚交换，误差只依赖实际当前收益与锚下界的差。",
+    "M-b19399f1576e47d99d69ef5526029c87": "真单色 AB^r 的 M=0 全查询与空根覆盖结论。"
+  },
+  "explanation": "记 k=r+1、w_x=1/(b_x+k)。强制任意合法 C 后，其真实当前收益至少 Σ_C w_x，故 u_A≥K=max_C Σ_C w_x。另一方面 q(B)=Σ_B w_x≤K；由 u_A=q(B) 得 B 是同一背景的加权最大锚且 δ=u_A−K=0。BNS-v2 对 D=T 的左式为 Σ_(B∩T)1/(b+k)+Σ_(T\\B)1/(b+1)，即冻结查询 q(T)，故 q(T)≤K=u_A。空根 m=k 时求和 m 个合法最优主题，因覆盖重数至少一，得 |O\\B|+|O∩B|/m≤|B|，继而 OPT_m≤(2−1/m)|B|≤(2−1/m)W。空 B 情形同一非负界迫 q(T)=0。",
+  "scope": "任意合法背景、任意整数 r≥1、任意实际单色尾和合法查询；含重复覆盖标签及空 B。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/任意背景加权近饱和交换与统一锚主题上界--引理.md",
+      "sha256": "75e535050205bdc8d6cd03b0fdc5bdb8771000df3a0bf1877f4ec150e97089dc"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/单色真实后缀的饱和查询与剩余税--引理.md",
+      "sha256": "5e44e26bcc24e8f2e4dcf4ed3a4347b7f790252b19fe2193d3da2023458a6b53"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/单色真实后缀的饱和查询与剩余税--引理.md",
+      "sha256": "5e44e26bcc24e8f2e4dcf4ed3a4347b7f790252b19fe2193d3da2023458a6b53",
+      "section": "合法有序前缀与饱和端点"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "Boss1 第三阶段 worker 实读绑定原文，核对实际模型、联合前提、真偏离、量词及结论范围。",
+  "whole_result": "BNS-v2 的零误差特例独立推出整个 M=0 冻结查询定理，以及空根 (2−1/m)|B| 与 W 的福利上界。",
+  "endpoint_pins": {
+    "B10-BNS-v2": "5965db0c5453ec4f694ad800bb81054e84bf6289848bff706f5248ce6e0c09fc",
+    "M-b19399f1576e47d99d69ef5526029c87": "ab545ccac94ebb8346d5ecaa065fd8686e9684142fa60605aa2af6283fdce6e6"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/任意背景加权近饱和交换与统一锚主题上界--引理.md": "75e535050205bdc8d6cd03b0fdc5bdb8771000df3a0bf1877f4ec150e97089dc",
+    "archives/customer-attraction/state/引理/单色真实后缀的饱和查询与剩余税--引理.md": "5e44e26bcc24e8f2e4dcf4ed3a4347b7f790252b19fe2193d3da2023458a6b53"
+  },
+  "review_digest": "8d8a0857ce6a1750d59d95fabfb9fe2eb99d4a9d75437a5081d6521876f3cb60"
+}

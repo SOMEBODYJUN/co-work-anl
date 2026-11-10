@@ -1,0 +1,47 @@
+{
+  "edge_id": "ca-monochrome-reset-r32-pruned-query-menu-fails-projected-count-contract",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-4afe0ca5f6d2445bbfcccd77ea56b99b"
+  ],
+  "target_ids": [
+    "customer-attraction/optimal-customer-projected-security-payment-candidate"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "m≥2、m 个等大不交 A_j，C₀ 从每块漏一个私客；背景仍可重复 C₀。",
+  "roles": {
+    "M-4afe0ca5f6d2445bbfcccd77ea56b99b": "只留最优组合的查询支持时，静态锐计数式可严格失败。",
+    "customer-attraction/optimal-customer-projected-security-payment-candidate": "真正 SEC-OPT 投影保留全部原标签，需依赖其静态锐界。"
+  },
+  "explanation": "唯一最优并集 O=N 不删客户；只有查询被错剪。合法背景 C₀^(m−1) 使每个保留查询为 1+(K−1)/m，故 K>(2m−1)/(m−1) 时 (2m−1)t<OPT。合法投影还可查询 C₀，所以该反例只测试错剪版本的计数边界。",
+  "scope": "阻止用删查询标签替代删客户的定义，保留真正候选。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/最优客户投影安全值与完整查询目录的付款候选--候选.md",
+      "sha256": "4880da907de2dcc7651b6ea2ee163e3b08098e8ba28acf62dd3dbb9391b2e3ee",
+      "section": "3. 不能把客户投影换成只查询最优组合"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/最优客户投影安全值与完整查询目录的付款候选--候选.md",
+      "sha256": "4880da907de2dcc7651b6ea2ee163e3b08098e8ba28acf62dd3dbb9391b2e3ee",
+      "section": "2. SEC-OPT? 的准确待证关系"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/最优客户投影安全值与完整查询目录的付款候选--候选.md",
+      "sha256": "4880da907de2dcc7651b6ea2ee163e3b08098e8ba28acf62dd3dbb9391b2e3ee",
+      "section": "1. 同一原实例、同一原策略和一个最优并集"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "Boss1 第三阶段 worker 实读绑定原文，核对实际模型、联合前提、真偏离、量词及结论范围。",
+  "endpoint_pins": {
+    "M-4afe0ca5f6d2445bbfcccd77ea56b99b": "188f7b715a1079996d822946d53c868b6cf34c38b2f5463c96eea05e19472636",
+    "customer-attraction/optimal-customer-projected-security-payment-candidate": "14187b288fd81fb3117d3efbf5d0243eb031894e617e4914955d784695f6d3b3"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/最优客户投影安全值与完整查询目录的付款候选--候选.md": "4880da907de2dcc7651b6ea2ee163e3b08098e8ba28acf62dd3dbb9391b2e3ee"
+  },
+  "review_digest": "5fc283d789efa0f1ead366b8eb8526c7118526aaa673cf6ea777fed29673cbf4"
+}

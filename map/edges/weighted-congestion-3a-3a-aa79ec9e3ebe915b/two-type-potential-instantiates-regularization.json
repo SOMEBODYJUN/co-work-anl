@@ -1,0 +1,52 @@
+{
+  "edge_id": "wc-r32-two-type-potential-instantiates-regularization",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/two-weight-quadratic-common-type-scaled-potential"
+  ],
+  "target_ids": [
+    "M-6fa393a1f4154a3eb0ca8511b2dd5578"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "费用为非负系数次数≤2。全局可动玩家权为 1 或 2；全局固定玩家仅作为背景吸收，W_M 保留可动者包括其必用资源的全部费用。η≥0 有限。",
+  "roles": {
+    "weighted-congestion/two-weight-quadratic-common-type-scaled-potential": "给 θ=3/8 的双排序混合、λ_1=1、λ_2=59/32 与 β=64/59 的全部插入边际。",
+    "M-6fa393a1f4154a3eb0ca8511b2dd5578": "把共同尺度及双排序包络用于 W_M 正则化，区分局部稳定和全局质量。"
+  },
+  "explanation": "吸收全局固定背景后多项式仍为非负二次。两类型资源的原 Fθ、H₀、H₁ 是按真实权的两个离散排序右和的凸组合（常数与一次两序右和相同），κ=1。仅有权2可动用户的资源将其精确单序势乘 t₂=59/64；权1单型不需重缩放。共同尺度 t₁=1、t₂=59/64，单型重资源现在的边际恰 λ₂ c。故 t_min≥59/64，κ∈[59/64,1]，可取 m=59/192、M₀=1。对 Ψ=Φ+ηW_M，局部最小给 γ≤64/59+(3−64/59)η/(59/64+η)，全局最小另给 W_M≤(1+η)/(59/192+η) min W_M。有全局 Ψ gap Δ 时再加 Δ/(59/192+η)。",
+  "scope": "这给原条件接口的一个全有限人数二权实例化。资源上无任何潜在可动用户时 W_M≡0。含固定者的全体社会成本不在该包络内。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/双权二次延迟的共同类型缩放近似势--定理.md",
+      "sha256": "1d85f6987eb065398ce83115f943318fc986afa85bcee6504704e81ea5d9eeab",
+      "section": "所有资源和所有分项必须共享同一缩放"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定义/共同尺度稳定与社会质量的证书接口--定义.md",
+      "sha256": "c17d6fb0d93bd42814ce807198beee8fc96217c38d317228ea52b3dbfb1c9a23",
+      "section": "5. 社会目标：只能在写明的成本上使用包络"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定义/共同尺度稳定与社会质量的证书接口--定义.md",
+      "sha256": "c17d6fb0d93bd42814ce807198beee8fc96217c38d317228ea52b3dbfb1c9a23",
+      "section": "6. 稳定与质量正则化的完整推导"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "重核单型资源缩放、可动成本口径、正则边际分子分母和零最优。",
+  "contribution": {
+    "result": "64/59 双权二次势提供明示共同尺度、m=59/192、M₀=1，使局部稳定与全局质量正则化在该子类可直接使用。",
+    "remaining": "不能由二权二次边际推出更广类型/次数的正则化前提，或用全局 gap 单独认证稳定。"
+  },
+  "endpoint_pins": {
+    "M-6fa393a1f4154a3eb0ca8511b2dd5578": "28f5716e2dd34019f3d67b30a2cd94603490f4208a4e06ca81d2659cf3d1d1db",
+    "weighted-congestion/two-weight-quadratic-common-type-scaled-potential": "7df271eea4af4bccbebfec92454b547f60cfd2365883d3011a949af497de3ccc"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/双权二次延迟的共同类型缩放近似势--定理.md": "1d85f6987eb065398ce83115f943318fc986afa85bcee6504704e81ea5d9eeab",
+    "archives/weighted-congestion/state/定义/共同尺度稳定与社会质量的证书接口--定义.md": "c17d6fb0d93bd42814ce807198beee8fc96217c38d317228ea52b3dbfb1c9a23"
+  },
+  "review_digest": "efc5304bc6cb44a7a82a129ac489f97cbfbbd3220426932af20597dd6c321415"
+}

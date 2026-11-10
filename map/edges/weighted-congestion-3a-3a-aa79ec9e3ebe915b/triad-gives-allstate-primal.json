@@ -1,0 +1,52 @@
+{
+  "edge_id": "wc-r32-triad-gives-allstate-primal",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R1-INTEGER-TRIAD"
+  ],
+  "target_ids": [
+    "weighted-congestion/allstate-selector-linear-alternative"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定权 (16,2,5)、两动作、次数至多2 的模板；每个实 1≤α<286/267。",
+  "roles": {
+    "WC-R1-INTEGER-TRIAD": "给六条非零单项式资源签名、四对互补态的全部真实翻位，及精确端点。",
+    "weighted-congestion/allstate-selector-linear-alternative": "提供严格原始证书和固定 h 对偶不可能的解释。"
+  },
+  "explanation": "把两对 13x²/2x² 与一对 59x 的六资源各编码到其动作签名次数列，其余系数置0。在四对互补态 (000,111),(001,110),(010,101),(011,100) 分别选择移动者 1,1,0,2。对应最大比分别 1707/1523、1507/1403、286/267、963/898，正分母且各比均大于 α，所以 B_h a 逐态严格正。任意概率对偶将给 0<λᵀB_ha≤0。α=286/267 时 010/101 无严格出口，不能给此类证书。",
+  "scope": "六资源实例的固定模板、固定选择器的有限证书，保留全部八态及端点。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/反例/三玩家六资源整数二次均衡阈值--反例.md",
+      "sha256": "de5ec65890778eb5c78d3d303abf6b75ec05abe86e03e25d44d52ffcfd931ce0",
+      "section": "完整资源、玩家和策略"
+    },
+    {
+      "path": "archives/weighted-congestion/state/反例/三玩家六资源整数二次均衡阈值--反例.md",
+      "sha256": "de5ec65890778eb5c78d3d303abf6b75ec05abe86e03e25d44d52ffcfd931ce0",
+      "section": "全状态精确表与端点"
+    },
+    {
+      "path": "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md",
+      "sha256": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a",
+      "section": "精确矩阵与全部量词"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐行核对最大比的移动者和实际新资源负载，使用完整表而非只看六步环。",
+  "contribution": {
+    "result": "三玩家固定模板内在每个 α<286/267 有同一签名系数和选择器给 B_h a>0，故该 h 无对偶。",
+    "remaining": "固定实例不证明任意矩阵的替代定理或全部其他模板的状态覆盖。"
+  },
+  "endpoint_pins": {
+    "WC-R1-INTEGER-TRIAD": "19b17fb87a072c732d5ae4b7518016c8cc12354629f6b9fd4d70adb706a8e2f8",
+    "weighted-congestion/allstate-selector-linear-alternative": "32b4a0b43b4f3f9bf47915836e1e02ee714339906ac960b66961a7e7760686ad"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/反例/三玩家六资源整数二次均衡阈值--反例.md": "de5ec65890778eb5c78d3d303abf6b75ec05abe86e03e25d44d52ffcfd931ce0",
+    "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a"
+  },
+  "review_digest": "1acd390b9243c34be112ac326ccfcd08b64d4f32921ceb6434716718a1a129e4"
+}

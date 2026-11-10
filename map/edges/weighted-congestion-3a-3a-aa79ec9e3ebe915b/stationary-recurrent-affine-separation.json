@@ -1,0 +1,52 @@
+{
+  "edge_id": "wc-r32-stationary-recurrent-affine-separation",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/unit-speed-stationary-selector-barrier"
+  ],
+  "target_ids": [
+    "weighted-congestion/recurrent-selector-dual-fip-equivalence"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定任意正权、有限动作、仿射资源列及 α≥1；再对每个 α 选 K>(3α−1)/2 的指定二动作轻重权模板。",
+  "roles": {
+    "weighted-congestion/unit-speed-stationary-selector-barrier": "按移动者权重在任意环构造仿射对偶，同时给唯一单位速度平稳分布在一次列失败。",
+    "weighted-congestion/recurrent-selector-dual-fip-equivalence": "把循环支撑区分为 FIP 合同，不把单位速度频率强加到环上。"
+  },
+  "explanation": "对仿射列，任意指定选择器环上取 λ_s∝w_{i(s)}，势差望远镜给 B_h(1)^Tλ=0，α≥1 只减非负项，故环上对偶始终存在。轻权 K^(−2)、重权1 的唯一 2(K+1) 态环，单位速度平稳概率被迫均匀；全体动作1资源的一次列积为 (2K+1−3α)/(4K)>0。环对偶因此存在，而该同一选择器无单位速度平稳对偶。可调持留速度不受此结论排除。",
+  "scope": "仿射列的精确分离。高次列中一次列仍可否定单位速度，但一般循环支撑可行性需另证。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/障碍/单位速度平稳择证的无界损失--障碍.md",
+      "sha256": "843e4df9c83bd3aa5c9784e374b55c235963beb465bef5df223cceb921bd7d92",
+      "section": "任意仿射选择器的循环重加权"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/单位速度平稳择证的无界损失--障碍.md",
+      "sha256": "843e4df9c83bd3aa5c9784e374b55c235963beb465bef5df223cceb921bd7d92",
+      "section": "单位速度失配的完整构造"
+    },
+    {
+      "path": "archives/weighted-congestion/state/等价/循环支撑择证与全部改善终止--等价.md",
+      "sha256": "c80f08cca21232107968703c70c276d91d8a6eb75dced5ac6010e10057f963b9",
+      "section": "固定对象及等价量词"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对唯一平稳分布、环概率归一化、一次列当前和到达负载的计算。",
+  "contribution": {
+    "result": "仅要求循环支撑严格弱于单位速度平稳性，在仿射模板中也存在分离。",
+    "remaining": "一般列锥中任意 h 的循环支撑与全系数 FIP 的双向论证、环外路由与四列分离由目标承担。"
+  },
+  "endpoint_pins": {
+    "weighted-congestion/recurrent-selector-dual-fip-equivalence": "1386366b88d461cc4ffdbf0b1ec827700e9a365e715a3f7671e59bdca434fbef",
+    "weighted-congestion/unit-speed-stationary-selector-barrier": "e92aa690e66a58d85ae71290caa3ade3ca02feea7ddc21a0606aa4185162e729"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/障碍/单位速度平稳择证的无界损失--障碍.md": "843e4df9c83bd3aa5c9784e374b55c235963beb465bef5df223cceb921bd7d92",
+    "archives/weighted-congestion/state/等价/循环支撑择证与全部改善终止--等价.md": "c80f08cca21232107968703c70c276d91d8a6eb75dced5ac6010e10057f963b9"
+  },
+  "review_digest": "e02f4d3836f2ecb790b9d29afe5343dbe8c404f20c768ce65309e06c28457790"
+}

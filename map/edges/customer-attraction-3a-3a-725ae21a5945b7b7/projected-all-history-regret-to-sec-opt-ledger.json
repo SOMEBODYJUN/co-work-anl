@@ -1,0 +1,56 @@
+{
+  "edge_id": "ca-monochrome-reset-r32-projected-all-history-regret-to-sec-opt-ledger",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/customer-projection-all-history-regret-and-shared-external-credit"
+  ],
+  "target_ids": [
+    "customer-attraction/optimal-customer-projected-security-payment-candidate"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一原完整纯 SPE、同一个最优并集 O，保留所有标签及其原续局。",
+  "roles": {
+    "customer-attraction/customer-projection-all-history-regret-and-shared-external-credit": "原 σ 的任意客户投影精确真偏离后悔及同一实际路径信用。",
+    "customer-attraction/optimal-customer-projected-security-payment-candidate": "SEC-OPT 中使用原策略投影的动态局部账户。"
+  },
+  "explanation": "写 u=v+e 为 O 内外分解。对每个合法有序 h 和替代 A，真实 Γ≥0 给 v_dev−v_actual=e_actual−e_dev−Γ。取 max_A 得 δ_h=e_actual−min_A(e_dev+Γ)。沿同一原实际路径求和，所有实际完成叶相同，原外部客户均分合计 E=|C\\O|，所以 Σδ 加各精确保留项恰等 E。各离轨节点有自己的实际叶，不能共同另花 E。",
+  "scope": "全历史节点的投影误差与单一实际路径账户，不主张投影策略仍是 SPE。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/最优客户投影安全值与完整查询目录的付款候选--候选.md",
+      "sha256": "4880da907de2dcc7651b6ea2ee163e3b08098e8ba28acf62dd3dbb9391b2e3ee",
+      "section": "1. 同一原实例、同一原策略和一个最优并集"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/最优客户投影安全值与完整查询目录的付款候选--候选.md",
+      "sha256": "4880da907de2dcc7651b6ea2ee163e3b08098e8ba28acf62dd3dbb9391b2e3ee",
+      "section": "5. 尚未支付的是哪一个量"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/客户投影的全历史后悔与共同外部信用--引理.md",
+      "sha256": "125be2f9201e3c84148ed41d42f78293c67be6041142d3d91a67defdfd0d4793"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/客户投影的全历史后悔与共同外部信用--引理.md",
+      "sha256": "125be2f9201e3c84148ed41d42f78293c67be6041142d3d91a67defdfd0d4793",
+      "section": "全历史精确后悔及保留信用"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "Boss1 第三阶段 worker 实读绑定原文，核对实际模型、联合前提、真偏离、量词及结论范围。",
+  "contribution": {
+    "result": "对候选的任一固定最优 O 得全历史后悔公式与同一实际路径共同外部信用。",
+    "remaining": "需证明 (m−1/2)v_m^O−|C∩O|≤E；真实后悔钱包并未直接封住该静态阈值差。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/customer-projection-all-history-regret-and-shared-external-credit": "b8a2a42b1d341acdcabf50c910f30f8accd62be7b6380704749f5db80cc559ca",
+    "customer-attraction/optimal-customer-projected-security-payment-candidate": "14187b288fd81fb3117d3efbf5d0243eb031894e617e4914955d784695f6d3b3"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/最优客户投影安全值与完整查询目录的付款候选--候选.md": "4880da907de2dcc7651b6ea2ee163e3b08098e8ba28acf62dd3dbb9391b2e3ee",
+    "archives/customer-attraction/state/引理/客户投影的全历史后悔与共同外部信用--引理.md": "125be2f9201e3c84148ed41d42f78293c67be6041142d3d91a67defdfd0d4793"
+  },
+  "review_digest": "ef9a227b6b545ff4fa34814427ddc2c5341c03dbde73a6bc91f938f346ec8c44"
+}

@@ -1,0 +1,51 @@
+{
+  "edge_id": "ca-monochrome-reset-r32-iso-unit-report-checks-global-question",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/unused-isolated-topic-exact-outcome-probe-primary"
+  ],
+  "target_ids": [
+    "M-4f863c0b3f8b4dab9602b5acf27dc487"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "仅 seed1301 的 10000 次 unit 输入生成；m、旧客户和目录规模均按原生成器范围。",
+  "roles": {
+    "customer-attraction/unused-isolated-topic-exact-outcome-probe-primary": "seed1301 的固定 unit 生成及两份冻结报告。",
+    "M-4f863c0b3f8b4dab9602b5acf27dc487": "任意完整纯 SPE、任意人数的 ISO 候选。"
+  },
+  "explanation": "L 缩放在实际占用动作上精确。终局未用 P 才检查每个实际占用旧标签，原报告与重放确定字段一致。未出现严格低于 q 的值，只是该生成域的观测。报告不含全部输入的动作表，输入可重复，不支持更广规模或 weighted 模式。",
+  "scope": "2825 个相关可实现终局计数、5902 个已占用旧标签收益比较的有限阴性记录。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/孤立未用主题的完整终局探针与万例记录--计算.md",
+      "sha256": "7b8a6ab0f6410b22f9e48dd06cca6fdaf2ec5d5394f51f242b0e609918e161fa"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/isolated-option-original-two/original/isolated_option_probe.py",
+      "sha256": "88a73c4a13abeb09059228775da2743307962e89687678ec9f24f6ecb101c772"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/isolated-option-original-two/original/isolated_option_unit_seed1301.json",
+      "sha256": "76283ba45b75bb47a48f7d7913aba0a54613330e67d45911d0bb85dee234a49a"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/isolated-option-original-two/replay-once/report.json",
+      "sha256": "91e43cf744fb16e491e22bb1d617c1e910d546aebb46a5cf259adbfa0cdf64d8"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "Boss1 第三阶段 worker 实读绑定原文，核对实际模型、联合前提、真偏离、量词及结论范围。",
+  "endpoint_pins": {
+    "M-4f863c0b3f8b4dab9602b5acf27dc487": "bf44ec8490c9708e373d46707ece29bd4503aef089f097737a348ec527db1a1d",
+    "customer-attraction/unused-isolated-topic-exact-outcome-probe-primary": "d90e0005615fe106d6a0646b53a096a8033386cb7a503d46a23295379e87ff90"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/孤立未用主题的完整终局探针与万例记录--计算.md": "7b8a6ab0f6410b22f9e48dd06cca6fdaf2ec5d5394f51f242b0e609918e161fa",
+    "archives/customer-attraction/tools/evidence/isolated-option-original-two/original/isolated_option_probe.py": "88a73c4a13abeb09059228775da2743307962e89687678ec9f24f6ecb101c772",
+    "archives/customer-attraction/tools/evidence/isolated-option-original-two/original/isolated_option_unit_seed1301.json": "76283ba45b75bb47a48f7d7913aba0a54613330e67d45911d0bb85dee234a49a",
+    "archives/customer-attraction/tools/evidence/isolated-option-original-two/replay-once/report.json": "91e43cf744fb16e491e22bb1d617c1e910d546aebb46a5cf259adbfa0cdf64d8"
+  },
+  "review_digest": "c66a24cffcde998d17edc1b7b8c2a115cc0d08b8cc78c0f0020639bd48285043"
+}

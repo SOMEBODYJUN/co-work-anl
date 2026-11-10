@@ -1,0 +1,47 @@
+{
+  "edge_id": "wc-r32-weighted-cost-does-not-inherit-support-potential",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/common-power-mixture-minimizer-obstruction"
+  ],
+  "target_ids": [
+    "WC-R1-RESOURCE-SUPPORT"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "共同幂混合见证取整数 d>32，保持其四玩家四资源、正权及非负费用。每个资源最多两个潜在用户。",
+  "roles": {
+    "weighted-congestion/common-power-mixture-minimizer-obstruction": "提供同一游戏对非负共同幂测度的全部全局最小点下界。",
+    "WC-R1-RESOURCE-SUPPORT": "核对支持数势的社会目标必须是总未加权个体费用。"
+  },
+  "explanation": "取 μ=δ_(d+1)，则 P_μ=Σ_e a_e x_e^{d+1}=Σ_i w_i C_i 是含两固定者的全体加权成本。每资源至多一移动者及一固定者，r=2。d>32 使 2<d/16，所以该全体加权目标的所有全局最小点均不是 2-PNE。支持数定理的未加权目标仍给 2-PNE，原游戏甚至有唯一精确 PNE。",
+  "scope": "准确比较替换社会目标的失败，保留支持数定理的原目标与结论。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/障碍/共同非负幂混合的全局最小点线性损失--障碍.md",
+      "sha256": "ca7fdc2407a81c0d88da2bf7fae14b7e07fcba3d6453d50e57f083e43ce74e27",
+      "section": "四资源真实游戏及精确均衡"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/共同非负幂混合的全局最小点线性损失--障碍.md",
+      "sha256": "ca7fdc2407a81c0d88da2bf7fae14b7e07fcba3d6453d50e57f083e43ce74e27",
+      "section": "非负测度、有限性与所有最小点"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/资源潜在用户支持的总成本势--定理.md",
+      "sha256": "4f252181961ef4fdda7e02f6ee460861b4d52c1271d85c8d1dd1242ef8f42844"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对原系数未改、单点测度可行、背景计入全体 W 及 d>32 的严格倍率。",
+  "endpoint_pins": {
+    "WC-R1-RESOURCE-SUPPORT": "f3251dcce0ad8790ada62d0e325c4c6f79efe3a9be7f5b8da0db2c4be09b27d0",
+    "weighted-congestion/common-power-mixture-minimizer-obstruction": "5662b11fdcd62cdbf8ad645f892f43ab43eecee5860bb58a939669e987a56977"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/障碍/共同非负幂混合的全局最小点线性损失--障碍.md": "ca7fdc2407a81c0d88da2bf7fae14b7e07fcba3d6453d50e57f083e43ce74e27",
+    "archives/weighted-congestion/state/定理/资源潜在用户支持的总成本势--定理.md": "4f252181961ef4fdda7e02f6ee460861b4d52c1271d85c8d1dd1242ef8f42844"
+  },
+  "review_digest": "c4bfc2cdb0e9b3ea8dad03fb1ce1d675dcb24c0d994d4d371bef4190269231cb"
+}

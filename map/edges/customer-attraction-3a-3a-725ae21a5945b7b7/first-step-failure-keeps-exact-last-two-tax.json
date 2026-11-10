@@ -1,0 +1,51 @@
+{
+  "edge_id": "ca-monochrome-reset-r32-first-step-failure-keeps-exact-last-two-tax",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "CA-TAX-BRIDGE-NO"
+  ],
+  "target_ids": [
+    "CA-TWO-REMAINING-TAX"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "三叶星完整恒中心策略，在真实第一个中心之后，固定 b=1_B。",
+  "roles": {
+    "CA-TAX-BRIDGE-NO": "固定三人反例的真实末两位及背景 B。",
+    "CA-TWO-REMAINING-TAX": "同一真实末两人税的独立解析边界。"
+  },
+  "explanation": "剩余实际收益3+3，单步末对税 g_b(B,B)=9(1/2−1/3)=3/2，故末对上界15/2，而背景剩余最优为7，所以该税有1/2余量。原客户表与两人税定义直接给这项严格余量。首步桥严格失败的 1/2 与之并不矛盾；整根税另精确等15。",
+  "scope": "同一有限实例的末两人税有 1/2 余量，与全称首步桥反例并存。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md",
+      "sha256": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/首步机会成本税桥--反例.md",
+      "sha256": "9a07cbeb79f2a73aa0604a108e80c5e4221a03ede2585f96a3ce0ccfface36ce"
+    },
+    {
+      "path": "archives/customer-attraction/evidence/tax-interfaces/inputs/tax_bridge_failure.json",
+      "sha256": "a3f5b95332e54de444de057acbc0715c7952ea886a7d363fa8df0032003308c2"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+      "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "Boss1 第三阶段 worker 实读绑定原文，核对实际模型、联合前提、真偏离、量词及结论范围。",
+  "endpoint_pins": {
+    "CA-TAX-BRIDGE-NO": "1cc43f857ddf810558dfefc6a2a1f8f356d888e920ef669cab5e0ceccdcc7f50",
+    "CA-TWO-REMAINING-TAX": "eb63a8d1cd934879f5f7f25f633b4bf753973f405a7b8db91bed63f633de7d15"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee",
+    "archives/customer-attraction/state/反例/首步机会成本税桥--反例.md": "9a07cbeb79f2a73aa0604a108e80c5e4221a03ede2585f96a3ce0ccfface36ce",
+    "archives/customer-attraction/evidence/tax-interfaces/inputs/tax_bridge_failure.json": "a3f5b95332e54de444de057acbc0715c7952ea886a7d363fa8df0032003308c2",
+    "archives/customer-attraction/state/引理/固定背景两人税界--引理.md": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a"
+  },
+  "review_digest": "ffdd8f890a9079bd824bc7b7ce55dbcb76f9baeeabcc78a5980b15bda228ebad"
+}

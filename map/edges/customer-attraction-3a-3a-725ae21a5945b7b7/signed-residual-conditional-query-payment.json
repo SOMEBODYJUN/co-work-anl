@@ -1,0 +1,51 @@
+{
+  "edge_id": "ca-monochrome-reset-r32-signed-residual-conditional-query-payment",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-d951713827e24a30a661a248bf34ca13"
+  ],
+  "target_ids": [
+    "customer-attraction/virtual-adjacency-tax-for-real-monochromatic-suffix"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一真实 A B^r 及合法 T；L(T)=Σ_(B\\(A∪T))1/[(b+r)(b+r+1)]。断言该查询 VA 时须满足所述精确带 slack 付款条件。",
+  "roles": {
+    "M-d951713827e24a30a661a248bf34ca13": "原实际末位 BR 推出的带符号冻结查询剩余式。",
+    "customer-attraction/virtual-adjacency-tax-for-real-monochromatic-suffix": "待付 VA 全称冻结查询式。"
+  },
+  "explanation": "令 s_T≥0 为原实际末位 B 对 T 的真 BR 松弛。两个差值同时抵消 B∩T；换成冻结分母时 T\\B 中只在 A∩T 产生 +τ，B\\T 中只在 A 外产生 +L，其余块精确抵消。因此 q(T)−u_A=τ((A∩T)\\B)+L(T)−M−s_T，VA 对该查询等价 L(T)≤M+τ(A\\(B∪T))+s_T。丢弃 s_T 后得原 RES 和旧充分式。再令 N_x^B 为强制根 B 后真实未来对 x 的覆盖数；原根 IC 给 M≥v_B−q(B)=Σ_B[1/(b+1+N_x^B)−1/(b+r+1)]。每个 N_x^B<r 的相关客户至少支付该客户的 L 税，所以仍需付的正税只来自真实 B 枝全 r 位皆覆盖的 B\\(A∪T) 客户。",
+  "scope": "逐查询的精确带 slack 余额，以及更强旧预算的条件充分箭头；保同一真实 B 子树。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/单色真实后缀的饱和查询与剩余税--引理.md",
+      "sha256": "5e44e26bcc24e8f2e4dcf4ed3a4347b7f790252b19fe2193d3da2023458a6b53",
+      "section": "M>0的精确剩余税"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/单色真实后缀的饱和查询与剩余税--引理.md",
+      "sha256": "5e44e26bcc24e8f2e4dcf4ed3a4347b7f790252b19fe2193d3da2023458a6b53"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/单色真实后缀的虚拟相邻税--候选.md",
+      "sha256": "4b1861b985e8b809708a44c70511206d97cff4b55a1045a4c62ac009b45f1f87",
+      "section": "精确未付合同"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "Boss1 第三阶段 worker 实读绑定原文，核对实际模型、联合前提、真偏离、量词及结论范围。",
+  "contribution": {
+    "result": "给出 VA 的精确逐查询 slack 判据；旧无 slack 预算仅为充分。真实 B 枝漏覆盖客户的税可直接由 M 支付。",
+    "remaining": "全称 VA 仍需处理真实 B 枝全覆盖客户的剩余税及真实末位 slack，或给出其它完整证明。"
+  },
+  "endpoint_pins": {
+    "M-d951713827e24a30a661a248bf34ca13": "c7c04bb27aa123c16f736a7261850f9088a701db8d1910f99fcd58c6cc90fd0b",
+    "customer-attraction/virtual-adjacency-tax-for-real-monochromatic-suffix": "09478e93f9a57b847e529572c591db5f2f0f3e9f2dadf8c6e1abfdd44610f40d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/单色真实后缀的饱和查询与剩余税--引理.md": "5e44e26bcc24e8f2e4dcf4ed3a4347b7f790252b19fe2193d3da2023458a6b53",
+    "archives/customer-attraction/state/候选/单色真实后缀的虚拟相邻税--候选.md": "4b1861b985e8b809708a44c70511206d97cff4b55a1045a4c62ac009b45f1f87"
+  },
+  "review_digest": "6e22cde7b9e24d0ca09400642459427409844ee0d349ee4cc8890b2478185ef7"
+}

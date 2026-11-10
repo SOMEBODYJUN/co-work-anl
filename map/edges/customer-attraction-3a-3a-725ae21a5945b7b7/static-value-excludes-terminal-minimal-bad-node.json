@@ -1,0 +1,50 @@
+{
+  "edge_id": "ca-monochrome-reset-r32-static-value-excludes-terminal-minimal-bad-node",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1"
+  ],
+  "target_ids": [
+    "M-2e56a6f86c20443fba4e86818e3757c7"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "保留原 m、原 OPT 及合法 m−1 槽过去负载；末位真实查询为单个静态背景面对的纯最优。",
+  "roles": {
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1": "静态真实全目录安全值满足 (2m−1)v_m≥OPT_m。",
+    "M-2e56a6f86c20443fba4e86818e3757c7": "最小坏点必要条件中的余一位排除。"
+  },
+  "explanation": "对每个固定合法背景 B，max_A f_B(A)≥v_m，因为此固定 B 已是 min_B 允许的一种选择，且任意查询分布期望不超过其最大纯值。末位真实 BR 就是这个固定背景纯最优，故 u_m≥OPT_m/(2m−1)≥t=OPT_m/(2m)。最小剩余人数归约本身仍以真子 SPE 的全历史量词为基础。",
+  "scope": "任意合法原历史的末位，不使用删除后再定阈值。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/逐人半阈值的最小坏点摘要与非可信二分菜单--障碍.md",
+      "sha256": "442ce57409df686f3d7ecd966e1a4286a80d581ebfef4418a279d3274e7160a3"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md",
+      "sha256": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md",
+      "sha256": "034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "Boss1 第三阶段 worker 实读绑定原文，核对实际模型、联合前提、真偏离、量词及结论范围。",
+  "contribution": {
+    "result": "以独立的全目录静态定理排除 r=1 最小坏点。",
+    "remaining": "更早坏点仍须保留每个强制孩子完整可信性；静态安全值不支付各早期角色。"
+  },
+  "endpoint_pins": {
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1": "565f6bdb541c09f8229f27ca4d47409f946a555f141378e72fb91c5a55082ea4",
+    "M-2e56a6f86c20443fba4e86818e3757c7": "a03a4d1170d7c4b4ab6e6f50cfbbdacf98d94e7be852f88ddc098062c5570420"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/逐人半阈值的最小坏点摘要与非可信二分菜单--障碍.md": "442ce57409df686f3d7ecd966e1a4286a80d581ebfef4418a279d3274e7160a3",
+    "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee",
+    "archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md": "034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f"
+  },
+  "review_digest": "2224e5001bfda833f0aaa1af2c4d25a1c33ab7373ad8d2f011b5047a1fe537fc"
+}

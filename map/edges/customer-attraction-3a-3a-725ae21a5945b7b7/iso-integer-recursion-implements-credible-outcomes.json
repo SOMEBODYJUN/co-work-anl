@@ -1,0 +1,46 @@
+{
+  "edge_id": "ca-monochrome-reset-r32-iso-integer-recursion-implements-credible-outcomes",
+  "kind": "implements",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/unused-isolated-topic-exact-outcome-probe-primary"
+  ],
+  "target_ids": [
+    "CA-CREDIBLE-CONTINUATIONS"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "非负整数客户重数、有限共同目录；缩放因子 lcm(1,…,m)，读取已占用主题收益。",
+  "roles": {
+    "customer-attraction/unused-isolated-topic-exact-outcome-probe-primary": "原脚本对单次输入精确求可实现终局计数，并保存有限检查。",
+    "CA-CREDIBLE-CONTINUATIONS": "可信续局中 ALL 的集合递推与有序拼接语义。"
+  },
+  "explanation": "代码对每个计数 k 求各孩子集合，在当前实际标签确实占用的终局读取精确缩放收益，以 max_a min_z V_a(z) 作门槛，保留所有弱达到者。计数缓存存集合，不固定同计数不同历史的实际后继。此边只核对递推的实现，原有限抽样统计不进入其正确性证明。",
+  "scope": "实现 ALL 的终局集合部分，不输出目标完整策略或全兼容菜单采样。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/孤立未用主题的完整终局探针与万例记录--计算.md",
+      "sha256": "7b8a6ab0f6410b22f9e48dd06cca6fdaf2ec5d5394f51f242b0e609918e161fa"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/isolated-option-original-two/original/isolated_option_probe.py",
+      "sha256": "88a73c4a13abeb09059228775da2743307962e89687678ec9f24f6ecb101c772"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/可信续局菜单与完整策略重构--算法.md",
+      "sha256": "db6267ec3888975e5c6310d3a9a0d7c889469ee4d5be02b00ac338f139647961"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "Boss1 第三阶段 worker 实读绑定原文，核对实际模型、联合前提、真偏离、量词及结论范围。",
+  "endpoint_pins": {
+    "CA-CREDIBLE-CONTINUATIONS": "2dbb128ee54e25aca2f4a2cb528c14e32cadaf7c7e70c3a6b25126a68c3d5ffe",
+    "customer-attraction/unused-isolated-topic-exact-outcome-probe-primary": "d90e0005615fe106d6a0646b53a096a8033386cb7a503d46a23295379e87ff90"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/孤立未用主题的完整终局探针与万例记录--计算.md": "7b8a6ab0f6410b22f9e48dd06cca6fdaf2ec5d5394f51f242b0e609918e161fa",
+    "archives/customer-attraction/tools/evidence/isolated-option-original-two/original/isolated_option_probe.py": "88a73c4a13abeb09059228775da2743307962e89687678ec9f24f6ecb101c772",
+    "archives/customer-attraction/state/算法/可信续局菜单与完整策略重构--算法.md": "db6267ec3888975e5c6310d3a9a0d7c889469ee4d5be02b00ac338f139647961"
+  },
+  "review_digest": "28e6629827996c9d81757892ea0723eb0a41f5c2d6cdfa6417972de054ed0f20"
+}

@@ -1,0 +1,52 @@
+{
+  "edge_id": "wc-r32-social-marginal-bound-to-regularization",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-SOCIALLY-DESCENDING-REPAIR-v1"
+  ],
+  "target_ids": [
+    "M-6fa393a1f4154a3eb0ca8511b2dd5578"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "全局固定玩家吸为背景 B_e，保留全局可动玩家的全部资源费用，费用非负多项式次数≤d。置 ĉ_e(X)=c_e(B_e+X)，X 为可动负载。",
+  "roles": {
+    "WC-SOCIALLY-DESCENDING-REPAIR-v1": "提供资源社会项 Xc(X) 的单次加入上界，逐个非负系数按整数幂差证明。",
+    "M-6fa393a1f4154a3eb0ca8511b2dd5578": "用上界及单调性下界夹住 W_M 的加入边际，供 Ψ 正则化。"
+  },
+  "explanation": "固定背景平移后 ĉ_e 仍为非负系数次数≤d 的多项式。将源证明的幂差不等式应用于 G(X)=Xĉ_e(X)，旧可动负载为 X，新为 Y=X+w_i，得 ΔG≤(d+1)w_iĉ_e(Y)。另一方向 ΔG=w_iĉ_e(Y)+X[ĉ_e(Y)−ĉ_e(X)]≥w_iĉ_e(Y)。因此 λ_i c 和 β λ_i c 的原势两端各可加上 η 倍相应的 W_M 边际。原锚定门证明计算全体 W，变量映射只转移它的逐资源幂差引理；W_M 不含固定玩家社会费用。",
+  "scope": "给出正则化所需的完整可动成本边际夹逼；没有从一条偏离的外部性界推社会全局包络或质量。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/锚定门的社会费用分解与最优压缩--定理.md",
+      "sha256": "dc6b751a584d2f2bc89e8aa092c8d5c2bcf6339c1d108f3499d85d96115e8f1d",
+      "section": "真实基体社会外部性的完整上界"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定义/共同尺度稳定与社会质量的证书接口--定义.md",
+      "sha256": "c17d6fb0d93bd42814ce807198beee8fc96217c38d317228ea52b3dbfb1c9a23",
+      "section": "5. 社会目标：只能在写明的成本上使用包络"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定义/共同尺度稳定与社会质量的证书接口--定义.md",
+      "sha256": "c17d6fb0d93bd42814ce807198beee8fc96217c38d317228ea52b3dbfb1c9a23",
+      "section": "6. 稳定与质量正则化的完整推导"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对源中幂差引理与正则化所用的真实可动负载，区分全体 W 和 W_M。",
+  "contribution": {
+    "result": "建立 W_M 加入资源的边际区间 [w_iĉ_e(Y),(d+1)w_iĉ_e(Y)]，可直接加到原势的共同尺度边际。",
+    "remaining": "正则化稳定常数还需原 Φ 的共同尺度与 β；全局质量还需 Φ 对 W_M 的两端包络和全局最小或误差证书。"
+  },
+  "endpoint_pins": {
+    "M-6fa393a1f4154a3eb0ca8511b2dd5578": "28f5716e2dd34019f3d67b30a2cd94603490f4208a4e06ca81d2659cf3d1d1db",
+    "WC-SOCIALLY-DESCENDING-REPAIR-v1": "7a4a6f8c4cc8b73e935e0f26487e186911e7f24bd987b9e3c18c39a053a50b94"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/锚定门的社会费用分解与最优压缩--定理.md": "dc6b751a584d2f2bc89e8aa092c8d5c2bcf6339c1d108f3499d85d96115e8f1d",
+    "archives/weighted-congestion/state/定义/共同尺度稳定与社会质量的证书接口--定义.md": "c17d6fb0d93bd42814ce807198beee8fc96217c38d317228ea52b3dbfb1c9a23"
+  },
+  "review_digest": "b90c0489f43217ee99f8612011ef14ae66d33271140e580acaab21623d16d25f"
+}

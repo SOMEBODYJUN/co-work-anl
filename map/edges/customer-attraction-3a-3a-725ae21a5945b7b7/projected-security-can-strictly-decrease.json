@@ -1,0 +1,51 @@
+{
+  "edge_id": "ca-monochrome-reset-r32-projected-security-can-strictly-decrease",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-b13320f8bbdd48ef810dfb0cedbabcc2"
+  ],
+  "target_ids": [
+    "customer-attraction/optimal-customer-projected-security-payment-candidate"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "单例 k>m≥2，任选一个最优 m 客户并集 O，投影保留原全目录（含变空的标签）。",
+  "roles": {
+    "M-b13320f8bbdd48ef810dfb0cedbabcc2": "k>m 个互不交单位单例给投影值严格降低。",
+    "customer-attraction/optimal-customer-projected-security-payment-candidate": "比较 SEC-OPT 与未投影弱支付式的阈值强度。"
+  },
+  "explanation": "均匀查询面对 m−1 个不同单例背景命中时最坏；同客户重复的边际下降更小。对偶在 m−1 个不同单例上均匀择背景，使每个纯查询同值。原 k 个单例时 v_m=1−(m−1)/(2k)，投影 m 个非空单例时 v_m^O=(m+1)/(2m)，空投影标签查询无利、背景耗槽也不更坏。因 k>m，阈值严格减小。",
+  "scope": "只比较两个静态阈值的严格性。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/最优客户投影安全值与完整查询目录的付款候选--候选.md",
+      "sha256": "4880da907de2dcc7651b6ea2ee163e3b08098e8ba28acf62dd3dbb9391b2e3ee",
+      "section": "阈值确实可以严格减小"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/最优客户投影安全值与完整查询目录的付款候选--候选.md",
+      "sha256": "4880da907de2dcc7651b6ea2ee163e3b08098e8ba28acf62dd3dbb9391b2e3ee",
+      "section": "2. SEC-OPT? 的准确待证关系"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/最优客户投影安全值与完整查询目录的付款候选--候选.md",
+      "sha256": "4880da907de2dcc7651b6ea2ee163e3b08098e8ba28acf62dd3dbb9391b2e3ee",
+      "section": "1. 同一原实例、同一原策略和一个最优并集"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "Boss1 第三阶段 worker 实读绑定原文，核对实际模型、联合前提、真偏离、量词及结论范围。",
+  "contribution": {
+    "result": "存在原合法实例使 SEC-OPT 右侧静态阈值严格低于未投影阈值，甚至每个最优 O 如此。",
+    "remaining": "数值右侧严格下降仍不能证明动态候选，也未给两动态命题真值分离的完整策略。"
+  },
+  "endpoint_pins": {
+    "M-b13320f8bbdd48ef810dfb0cedbabcc2": "74ca1c67af7f79417b3ac5d4cda5ff8b0c57ac0d5401c84b1548d27c3b938043",
+    "customer-attraction/optimal-customer-projected-security-payment-candidate": "14187b288fd81fb3117d3efbf5d0243eb031894e617e4914955d784695f6d3b3"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/最优客户投影安全值与完整查询目录的付款候选--候选.md": "4880da907de2dcc7651b6ea2ee163e3b08098e8ba28acf62dd3dbb9391b2e3ee"
+  },
+  "review_digest": "c6853011ce8a0826e777bfb509c69e0415249c4781d2c91770fa8e071806d0be"
+}

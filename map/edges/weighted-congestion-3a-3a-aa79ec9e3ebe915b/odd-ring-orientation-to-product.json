@@ -1,0 +1,43 @@
+{
+  "edge_id": "wc-r32-odd-ring-orientation-to-product",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/pure-pair-odd-ring-exact-defect-threshold"
+  ],
+  "target_ids": [
+    "M-630a7672d1d94245a34f178891f9a754"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一个奇数 n≥3、共同整数 d≥1、每个 a_i,w_i>0 的纯双人互补环。固定 w,d,α≥1 后允许选择任意正实系数。",
+  "roles": {
+    "weighted-congestion/pure-pair-odd-ring-exact-defect-threshold": "给每个固定 a 的两种一致单缺陷取向及其真实成本比 r_i。",
+    "M-630a7672d1d94245a34f178891f9a754": "消去可选系数，在固定权条件下得到两个取向的正实存在判据。"
+  },
+  "explanation": "正向 r_i>α 等价于 (1−αq_i)(T_i/T_{i−1})>α−p_{i−1}。d≥1 且正权使 0<p_i,q_i<1，故右端严格正，先得每个 αq_i<1，再以 ∏(T_i/T_{i−1})=1 相乘。反向构造令 k_i=(α−p_{i−1})/(1−αq_i)，K=∏k_i<1，取 z_i=k_iK^(−1/n)>k_i 且 ∏z_i=1，重建 T_i>0 及 a_i=T_i/(w_i+w_{i+1})^d。反向取向的严格不等式用 T_{i−1}/T_i 并互换 p,q，循环索引消去。α≥2 时可用右边因子<1、左边因子>1，两取向皆不可行。",
+  "scope": "先逐固定游戏判定，再量化 a；同一权向量允许不同费用。等号不是严格出口，d=0 不使用该乘积式。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/纯双人奇环的缺陷取向阈值--定理.md",
+      "sha256": "c6f6b77e663dd66c8e408c21127e3f169ca5c2508a8e136ccae3ca5a9a7c1349",
+      "section": "对象、两种量词及精确成本"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/纯双人奇环的缺陷取向阈值--定理.md",
+      "sha256": "c6f6b77e663dd66c8e408c21127e3f169ca5c2508a8e136ccae3ca5a9a7c1349",
+      "section": "正系数的充要乘积条件"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "用真实单翻位与两种 T 比重新推得两个方向，检查了正性和闭环系数恢复。",
+  "whole_result": "对固定权、d≥1、α≥1，存在正实 a_i 使全态正向失稳当且仅当每个 αq_i<1 且 ∏(α−p_i)<∏(1−αq_i)。反向互换 p,q。任一方向可行即存在该固定权无 α-PNE 的纯双人奇环。",
+  "endpoint_pins": {
+    "M-630a7672d1d94245a34f178891f9a754": "1de013b40ef4342a59367a0b6724dc806f68263541651d60fd912a40805b9d66",
+    "weighted-congestion/pure-pair-odd-ring-exact-defect-threshold": "de29847f5b58daf49525ce4e04a5ffdfa0bef3c0a9c300dd27d401a5913a95e3"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/纯双人奇环的缺陷取向阈值--定理.md": "c6f6b77e663dd66c8e408c21127e3f169ca5c2508a8e136ccae3ca5a9a7c1349"
+  },
+  "review_digest": "fd1f922e8ef72c037fe3f3f03f55b7a9470ab193f44977420270fbb9d53e96a3"
+}

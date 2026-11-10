@@ -1,0 +1,47 @@
+{
+  "edge_id": "wc-r32-signature-columns-to-selector",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-ACTION-SIGNATURE-COMPRESSION-v1"
+  ],
+  "target_ids": [
+    "weighted-congestion/allstate-selector-linear-alternative"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定有限正权和动作标签、次数 d≥0、实 α≥1。选择器可选当前动作。",
+  "roles": {
+    "WC-ACTION-SIGNATURE-COMPRESSION-v1": "提供全部非空动作签名及 0,…,d 次的精确、可逆非负系数表示，保真实偏离。",
+    "weighted-congestion/allstate-selector-linear-alternative": "由该表示构造固定选择器的全状态线性余量矩阵。"
+  },
+  "explanation": "签名 σ 的列按其移动者当前/到达动作成员指示，分别取各自真实负载 L_σ(s)^k 和 αL_σ(H(s))^k 后相减。对任意非负 a，B_h a 恰是当前费用减 α 倍新费用。任意原游戏可合并到该列基，任意列系数又由合法签名游戏实现，零费单点签名保动作标签。无 α-PNE 时每态选一条严格偏离，等价于某 h 使 B_h a>0。",
+  "scope": "固定有限模板消去任意原资源数。全过程允许零成本和空动作标签，且不需要选一个同时适用于所有 h 的对偶。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/有限动作资源签名压缩--定理.md",
+      "sha256": "b65ee24853893fbba0259ebbd6352505d5ddbd54c47253fe417605cf11e758e2",
+      "section": "构造与证明"
+    },
+    {
+      "path": "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md",
+      "sha256": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a",
+      "section": "精确矩阵与全部量词"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "分别核对了从游戏到列、从列到游戏及严格余量等价。",
+  "contribution": {
+    "result": "签名压缩给模板内无 α-PNE 与某个选择器的严格原始可行 B_h a>0 之间的双向编码。",
+    "remaining": "闭负象限分离、有理活跃面及所有 h 的归一化对偶量词由目标对象另行支付。"
+  },
+  "endpoint_pins": {
+    "WC-ACTION-SIGNATURE-COMPRESSION-v1": "9e2179a582e2bf3663d2cc7312466592a4afd49365a0c22044f6c7b51a4c8c1b",
+    "weighted-congestion/allstate-selector-linear-alternative": "32b4a0b43b4f3f9bf47915836e1e02ee714339906ac960b66961a7e7760686ad"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/有限动作资源签名压缩--定理.md": "b65ee24853893fbba0259ebbd6352505d5ddbd54c47253fe417605cf11e758e2",
+    "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a"
+  },
+  "review_digest": "a188267b96b4b4ff0786aaab2aeadbf259cea02c5193b80b0ae3e1407820f07c"
+}

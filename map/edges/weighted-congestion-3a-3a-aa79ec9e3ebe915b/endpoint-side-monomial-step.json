@@ -1,0 +1,57 @@
+{
+  "edge_id": "wc-r32-endpoint-side-monomial-step",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/side-polynomial-endpoint-maximal-lower-load"
+  ],
+  "target_ids": [
+    "weighted-congestion/conservative-two-attack-polynomial-monomial-reduction"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "对称两列同轻权，d≥2、n≥1、α>1、0<w≤1，非负多项式 P,Q 已满足两严格保守 margin。",
+  "roles": {
+    "weighted-congestion/side-polynomial-endpoint-maximal-lower-load": "给固定 Q(1)、Q(1+w) 下的 0,d 端点最大值及删常数余量。",
+    "weighted-congestion/conservative-two-attack-polynomial-monomial-reduction": "父归约在改变主费用前先确保侧费用为正 d 次单项式。"
+  },
+  "explanation": "令 A=(1+w)^d，C=(AQ(1)−Q(1+w))/(A−1)，D=(Q(1+w)−Q(1))/(A−1)。凸弦令 Δ=C+Dw^d−Q(w)≥0，且 C,D≥0。替换 Q→Dx^d 后 H 增 n(α−1)C，L 增 Δ+(α−1)C；strict 原 H 和主费单调又给 D>0。保持 P,n,w,α，且 P≡0 已被 L 排除。",
+  "scope": "w=1 的极值比较无严格弦差；w>1 不可直接保持 P。例 n=1,w=2,P=9x²/40,Q=x 的旧 H,L>51/50，固定 P 后改 βx² 时 α=1 的两个余量符号必相反。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/两端取值固定时副费用的端点极值--定理.md",
+      "sha256": "a8796c55b5d7fbedfae8fdfa36a68589653108046b4557bc76f9c3dc411dd63b",
+      "section": "有限次极值、等号与显式系数"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/两端取值固定时副费用的端点极值--定理.md",
+      "sha256": "a8796c55b5d7fbedfae8fdfa36a68589653108046b4557bc76f9c3dc411dd63b",
+      "section": "在固定主费用下保持两条攻击"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/两端取值固定时副费用的端点极值--定理.md",
+      "sha256": "a8796c55b5d7fbedfae8fdfa36a68589653108046b4557bc76f9c3dc411dd63b",
+      "section": "不能扩展到 $w>1$ 的精确边界"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/保守两攻击证书的单项式费用归约--定理.md",
+      "sha256": "0d876f1420c6bcb1a48bfc81d8c45da7d504033737c534637d9a332a3b6654e0",
+      "section": "端点化副费用并保正分母"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对固定两个端点、w=1 等号、删常数时倍率余量以及 w>1 的精确失败。",
+  "contribution": {
+    "result": "归约在合法轻权域可保持 P 不变，将 Q 化为正副单项式并保两条严格攻击。",
+    "remaining": "整个父归约还要处理 w>1 的不可能或角色交换、消去主费用混合并证明 β<1。"
+  },
+  "endpoint_pins": {
+    "weighted-congestion/conservative-two-attack-polynomial-monomial-reduction": "acb50ebdc5c66db86127c9b34c6b974e3b2c807281fd9b3732aed4d44ec8d960",
+    "weighted-congestion/side-polynomial-endpoint-maximal-lower-load": "dacdcb6601a6af8f7167ee79eb58430812875728674ee860e3612ff2ac14b364"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/两端取值固定时副费用的端点极值--定理.md": "a8796c55b5d7fbedfae8fdfa36a68589653108046b4557bc76f9c3dc411dd63b",
+    "archives/weighted-congestion/state/定理/保守两攻击证书的单项式费用归约--定理.md": "0d876f1420c6bcb1a48bfc81d8c45da7d504033737c534637d9a332a3b6654e0"
+  },
+  "review_digest": "abfe5d25101ad3d7ef910bfde71fab5ab1b299698e9d8090b5c47e15fd6399e8"
+}

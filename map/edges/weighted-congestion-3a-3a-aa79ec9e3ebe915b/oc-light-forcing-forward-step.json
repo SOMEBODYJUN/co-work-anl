@@ -1,0 +1,46 @@
+{
+  "edge_id": "wc-r32-oc-light-forcing-forward-step",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "OC-INTERFACE-v1"
+  ],
+  "target_ids": [
+    "OC-LIGHT-FORCING-EXACT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定 OC 合同游戏，奇数 m≥3，α≥1，全部 L_i 已严格成立；侧费与主费含 solo 基线。",
+  "roles": {
+    "OC-INTERFACE-v1": "给混合同位者中选一位 light 的真实下界、全反位下同位 hub 边的精确 margin。",
+    "OC-LIGHT-FORCING-EXACT-v1": "在严格 light forcing 域内把充分条件补成固定游戏均衡的必要充分刻画。"
+  },
+  "explanation": "若有 light 与本 hub 同位，其主负载比较最坏 r_i=1，侧差至少 −p_iP_i，所以由 L_i 得严格出口。余下候选全部反位。其每个同位 hub 边产生 q_{i+1}M_{i+1} 与 n_i p_iQ_i 的精确差 Δ_i；若有 Δ_i>0，状态被该 hub 排除。奇数 m 保证至少一个同位边，故所有 Δ_i>0 时无 α-PNE。",
+  "scope": "严格两测试仅给正向覆盖。目标定理额外核对反位 light 及前驱异位 hub 的稳定性。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md",
+      "sha256": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6",
+      "section": "混合群组也被覆盖的证明"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/同位强迫下的奇环均衡刻画--定理.md",
+      "sha256": "bc6e3a64054e4face8052088740717b2a8b47e5d1464a34c005b6bcdf2b90c4c"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核对每名成员可独立翻位，特别保 r_i=1 的真实最坏情形和 Q_i 的独占基线。",
+  "contribution": {
+    "result": "OC 接口给出 light-forcing 下任何均衡都全反位且每条同位 hub 边 Δ_i≤0，以及全部 Δ_i>0 的无均衡方向。",
+    "remaining": "充分稳定方向须检查反位 light、异位前驱 hub，并对失败边造唯一同位着色；这些步骤在目标正文。"
+  },
+  "endpoint_pins": {
+    "OC-INTERFACE-v1": "2632cfb87681d8d959b5e44f47d114e30bacc287bba2a931798524c44c6be252",
+    "OC-LIGHT-FORCING-EXACT-v1": "ab17f269090fc55fb44b0533bd9e9c229fd4e1860df84c31ddefa4c9b8166b4b"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/有向奇环的资源与正系数闭环--定理.md": "7b532e948d28065134c67bb60245822ba36136c4e0f6b8ea2e823498ae3ea6b6",
+    "archives/weighted-congestion/state/定理/同位强迫下的奇环均衡刻画--定理.md": "bc6e3a64054e4face8052088740717b2a8b47e5d1464a34c005b6bcdf2b90c4c"
+  },
+  "review_digest": "184cbb72c602b0873209a7a5b1dd8119bd5359b8fdd057c7fd5cfac418a5edf9"
+}

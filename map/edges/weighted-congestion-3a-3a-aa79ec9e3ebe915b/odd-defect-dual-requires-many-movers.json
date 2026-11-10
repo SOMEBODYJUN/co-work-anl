@@ -1,0 +1,52 @@
+{
+  "edge_id": "wc-r32-odd-defect-dual-requires-many-movers",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/selector-unbounded-mover-support"
+  ],
+  "target_ids": [
+    "weighted-congestion/selector-local-moment-interface"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意奇 n≥3、等正权二动作、d≥1，固定择证每态翻一个指定同位邻边的左端；1≤α<2^d。完整或 proper 列。",
+  "roles": {
+    "weighted-congestion/selector-unbounded-mover-support": "给 2n 单缺陷态的显式概率对偶，及所有对偶必须对每位玩家每方向放正质量的列证书。",
+    "weighted-congestion/selector-local-moment-interface": "提供实际转移矩极锥的交点与其表示支撑；区分 D+1 与不依 n 的支撑目标。"
+  },
+  "explanation": "等权离散积分沿 2n 真翻位简单环望远镜，均匀分布给极锥交点。对任意交点的概率表示，相邻 pair 两正列相加给 μ_{i+1}≥[(2^d−α)/(α2^d−1)]μ_i；环上至少一个正 μ 迫每人正。每人两私人常数列再给每方向 μ_{i,a}≥μ_i/(1+α)。这些 2n 类行互斥，故每个交点的每个概率表示至少 2n 个状态。正文的 α≥2^d 双态结果限最小下标规则。",
+  "scope": "具体可行的低阶矩接口族。统一固定 d 与倍率后 n 可增长，但一般 D+1 随模板增长。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/奇环缺陷择证的无界移动者支撑--定理.md",
+      "sha256": "8494a5b1324fd9c2d5981d87922fad2bb2f123259db4b7767ba9b6632403048e",
+      "section": "显式一缺陷环和完整列对偶"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/奇环缺陷择证的无界移动者支撑--定理.md",
+      "sha256": "8494a5b1324fd9c2d5981d87922fad2bb2f123259db4b7767ba9b6632403048e",
+      "section": "正pair列迫无界跨玩家补偿"
+    },
+    {
+      "path": "archives/weighted-congestion/state/等价/低阶转移矩极锥与单移动者分离--等价.md",
+      "sha256": "cc5c7ff8f30c41f3e03091e272184569928cb59d7ff526172d0a31465f76b269",
+      "section": "范围、接续和后续状态"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐个核实 pair 正列与私人常数都在 proper 锥，核对严格端点和不同方向行的互斥。",
+  "contribution": {
+    "result": "在已知极锥相交的等权家族中，所有对偶的最小支撑恰为 2n，且必须覆盖全部 n 名移动者。",
+    "remaining": "该见证只限定统一支撑改进，不能替代一般极锥等价、模板 D+1 证明或单移动者刻画。"
+  },
+  "endpoint_pins": {
+    "weighted-congestion/selector-local-moment-interface": "c99b07214091eea9205f7f810aa0771c63cfc5eea8805fb35c76921935fe2b17",
+    "weighted-congestion/selector-unbounded-mover-support": "082133d038b177733eb18779b07e6b225a544e322f3e7b2497c168d9c2f34cae"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/奇环缺陷择证的无界移动者支撑--定理.md": "8494a5b1324fd9c2d5981d87922fad2bb2f123259db4b7767ba9b6632403048e",
+    "archives/weighted-congestion/state/等价/低阶转移矩极锥与单移动者分离--等价.md": "cc5c7ff8f30c41f3e03091e272184569928cb59d7ff526172d0a31465f76b269"
+  },
+  "review_digest": "f3d56dca92cf7b1c4095ad0c0d375cd86f33df71c9e92761c3b6806d3a542425"
+}

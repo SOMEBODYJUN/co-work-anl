@@ -1,0 +1,52 @@
+{
+  "edge_id": "wc-r32-selector-to-resource-polar",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "weighted-congestion/allstate-selector-linear-alternative"
+  ],
+  "target_ids": [
+    "weighted-congestion/selector-local-moment-interface"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一有限模板、实 α≥1、合法 h 和同一完整或 proper 资源列。低阶成本基 W 固定为目标正文的 categorical 基。",
+  "roles": {
+    "weighted-congestion/allstate-selector-linear-alternative": "给实际逐态逐列 B_h 及归一化非正证书。",
+    "weighted-congestion/selector-local-moment-interface": "把固定 B_h 的对偶条件重写为真实转移特征凸包与资源负极锥相交。"
+  },
+  "explanation": "以对手动作的至多 d 阶 one-hot 乘积为基展开真实资源成本列 v_{σ,k}。移动者的当前/目标动作差产生该基上的泛函 Ψ_h(s)，于是 B_h[s,(σ,k)]=Ψ_h(s)·v_{σ,k}。概率 λ 的列积全部非正，恰表示其真实特征均值落在资源生成锥 K 的负极锥，同时概率均值恰走遍实际 Ψ_h(s) 的凸包。proper 时只更换保留列；没有把资源测试换成任意带符号矩测试。",
+  "scope": "保整个选择器可实现的特征点集，含暂态、自环和异质动作。这里仅推极锥接口，不重复维数压缩的已有边。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md",
+      "sha256": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a",
+      "section": "精确矩阵与全部量词"
+    },
+    {
+      "path": "archives/weighted-congestion/state/等价/低阶转移矩极锥与单移动者分离--等价.md",
+      "sha256": "cc5c7ff8f30c41f3e03091e272184569928cb59d7ff526172d0a31465f76b269",
+      "section": "精确凸包接口"
+    },
+    {
+      "path": "archives/weighted-congestion/state/等价/低阶转移矩极锥与单移动者分离--等价.md",
+      "sha256": "cc5c7ff8f30c41f3e03091e272184569928cb59d7ff526172d0a31465f76b269",
+      "section": "非负资源测试与矩展开"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "固定 h 的矩阵行列与泛函坐标逐项核对，资源锥负极不被误写为坐标负象限。",
+  "contribution": {
+    "result": "固定选择器的对偶可行与 conv{Ψ_h(s)}∩K⁻ 非空等价。",
+    "remaining": "目标中的 D+1 支撑、每项矩展开的正系数，以及 α=1 单二元移动者的矩匹配与严格分离证明仍独立。"
+  },
+  "endpoint_pins": {
+    "weighted-congestion/allstate-selector-linear-alternative": "32b4a0b43b4f3f9bf47915836e1e02ee714339906ac960b66961a7e7760686ad",
+    "weighted-congestion/selector-local-moment-interface": "c99b07214091eea9205f7f810aa0771c63cfc5eea8805fb35c76921935fe2b17"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/等价/全状态严格改善择证的线性替代--等价.md": "5211c494057777dfec86db1253e2ef69e5cfdf3a2f9e432620e4deb128fc433a",
+    "archives/weighted-congestion/state/等价/低阶转移矩极锥与单移动者分离--等价.md": "cc5c7ff8f30c41f3e03091e272184569928cb59d7ff526172d0a31465f76b269"
+  },
+  "review_digest": "f9afebca91821b98766b3cfa8336b3d4ff9e832033b0341f86cb5c38f1e04153"
+}

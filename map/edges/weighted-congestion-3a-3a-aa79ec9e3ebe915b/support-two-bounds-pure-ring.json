@@ -1,0 +1,46 @@
+{
+  "edge_id": "wc-r32-support-two-bounds-pure-ring",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R1-RESOURCE-SUPPORT"
+  ],
+  "target_ids": [
+    "weighted-congestion/pure-pair-odd-ring-exact-defect-threshold"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限纯互补双人奇环，费用非负非减，个体成本不乘玩家权。",
+  "roles": {
+    "WC-R1-RESOURCE-SUPPORT": "按潜在用户数控制总未加权成本在严格 r 改善时的势差。",
+    "weighted-congestion/pure-pair-odd-ring-exact-defect-threshold": "每个边副本恰两名潜在用户，因而得到独立的因子 2。"
+  },
+  "explanation": "每个副本只在该边两端玩家各一个动作出现，因此 r=2。对删除费用 C_D、加入新费用 C_A′、保留费用 C_H，未加权总成本变化≤2C_A′−C_D=2C_i(new)−C_i(old)−C_H。任意全局最小者为弱 2-PNE。该证法也允许其他拓扑，但不决定最优缺陷在哪条边。",
+  "scope": "只推出固定纯环的一般二倍存在界。单缺陷精确比及方向判定用原取向证明。",
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/资源潜在用户支持的总成本势--定理.md",
+      "sha256": "4f252181961ef4fdda7e02f6ee460861b4d52c1271d85c8d1dd1242ef8f42844"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/纯双人奇环的缺陷取向阈值--定理.md",
+      "sha256": "c6f6b77e663dd66c8e408c21127e3f169ca5c2508a8e136ccae3ca5a9a7c1349",
+      "section": "二倍障碍与二次实例"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "区分资源潜在用户人数、负载总权和未加权总成本。",
+  "contribution": {
+    "result": "纯双人奇环在弱倍率 2 有均衡，而且未加权总成本沿严格 2 改善下降。",
+    "remaining": "不导出固定实例 γ(G) 的双取向公式、正系数存在性、线性精确 PNE 或 500/499 见证。"
+  },
+  "endpoint_pins": {
+    "WC-R1-RESOURCE-SUPPORT": "f3251dcce0ad8790ada62d0e325c4c6f79efe3a9be7f5b8da0db2c4be09b27d0",
+    "weighted-congestion/pure-pair-odd-ring-exact-defect-threshold": "de29847f5b58daf49525ce4e04a5ffdfa0bef3c0a9c300dd27d401a5913a95e3"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/资源潜在用户支持的总成本势--定理.md": "4f252181961ef4fdda7e02f6ee460861b4d52c1271d85c8d1dd1242ef8f42844",
+    "archives/weighted-congestion/state/定理/纯双人奇环的缺陷取向阈值--定理.md": "c6f6b77e663dd66c8e408c21127e3f169ca5c2508a8e136ccae3ca5a9a7c1349"
+  },
+  "review_digest": "f02d00379915fa51f4671941f5f911cbf8eed7ced08d602759fba62030a8b0f4"
+}

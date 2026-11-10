@@ -1,0 +1,51 @@
+{
+  "edge_id": "ca-monochrome-reset-r32-full-catalog-static-count-after-customer-projection",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1"
+  ],
+  "target_ids": [
+    "customer-attraction/optimal-customer-projected-security-payment-candidate"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一原实例及一个完整最优 m 元组并集 O；投影客户、保留全部原查询标签和所有原背景行动。",
+  "roles": {
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1": "任意共同有限目录、全部 m−1 竞争槽的静态锐下界。",
+    "customer-attraction/optimal-customer-projected-security-payment-candidate": "SEC-OPT 付款的最优客户投影及其已证静态下界。"
+  },
+  "explanation": "对每个标签把其覆盖改为 S∩O。原标签留在共同目录及每个静态背景；每个保留客户的分母逐项未变，非负删除给 v_m^O≤v_m。比较最优元组在投影仍覆盖全部 O，故投影最优值等于 OPT_m。对这个真正投影目录用静态锐界得 (2m−1)v_m^O≥OPT_m。若同一原 σ 对某一个 O 有 W≥(m−1/2)v_m^O，才有 2W≥OPT_m；这一动态前提尚缺。",
+  "scope": "对每个最优 O 的静态部分；只从 SEC-OPT 动态付款作条件半覆盖推论。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/最优客户投影安全值与完整查询目录的付款候选--候选.md",
+      "sha256": "4880da907de2dcc7651b6ea2ee163e3b08098e8ba28acf62dd3dbb9391b2e3ee",
+      "section": "2. SEC-OPT? 的准确待证关系"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/最优客户投影安全值与完整查询目录的付款候选--候选.md",
+      "sha256": "4880da907de2dcc7651b6ea2ee163e3b08098e8ba28acf62dd3dbb9391b2e3ee",
+      "section": "1. 同一原实例、同一原策略和一个最优并集"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md",
+      "sha256": "034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "Boss1 第三阶段 worker 实读绑定原文，核对实际模型、联合前提、真偏离、量词及结论范围。",
+  "contribution": {
+    "result": "为每个合法最优投影推出静态锐计数界，并给出候选支付成功时的半覆盖方向。",
+    "remaining": "证明每份原 σ 有同一个 O 支付 W≥(m−1/2)v_m^O，不能按查询各换 O。"
+  },
+  "endpoint_pins": {
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1": "565f6bdb541c09f8229f27ca4d47409f946a555f141378e72fb91c5a55082ea4",
+    "customer-attraction/optimal-customer-projected-security-payment-candidate": "14187b288fd81fb3117d3efbf5d0243eb031894e617e4914955d784695f6d3b3"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/最优客户投影安全值与完整查询目录的付款候选--候选.md": "4880da907de2dcc7651b6ea2ee163e3b08098e8ba28acf62dd3dbb9391b2e3ee",
+    "archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md": "034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f"
+  },
+  "review_digest": "8e1fdeb3ab2741ceb2aa2c0a6647ebab01a6b4bfff87165e6ea9484be2b4c026"
+}
