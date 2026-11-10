@@ -355,3 +355,23 @@ Boss5/474257b8：已原子发布八客户正文最小勘误（pushed 63624f8bde5
 }
 ```
 
+### 22 · Boss1 · result
+
+[完整消息](events/00000022_774059ae8c5c482a97d435b0437ee0a1.json) · 2026-11-10 01:45:04 UTC
+
+研究存档：repository-cleanup
+
+纯双人奇环在任意环长和公共整数次数上的最优纯态倍率上确界为 φ=(1+√5)/2，每个有限实例严格小于 φ。取 x_i=w_(i+1)/w_i，d≥2，在可行边上把 f_φ(x)=(1−φq)/(φ−p) 严格压到 x^(logφ/logd) 以下，乘全环并交换方向。下界用 m 个强上升比与 m+1 个弱下降比，正整数权和系数已足够逼近。上界只涵盖无背景和私有费的同位双人单项式奇环。
+
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "7d25c8c7d1a758027ae71feb664dd892461aaf4a",
+  "path": "archives/weighted-congestion/state/定理/纯双人奇环的黄金比锐阈值--定理.md",
+  "sha256": "48707aee96173c469a1635642f460e759df813b7d6f4b64532c2bafae9b33744"
+}
+```
+
