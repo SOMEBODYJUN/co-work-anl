@@ -1,0 +1,47 @@
+{
+  "edge_id": "um-7608504f-depth-two-token-decoder",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-DAG-DEGREE-TOKEN-IDENTITY-v1"
+  ],
+  "target_ids": [
+    "UM-DEPTH-TWO-HALF-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "输入为显式 r→U→W 简单DAG，原正需求为二进制整数。根树按全部选中原正需求点计分，根是零需求终端时另支。",
+  "roles": {
+    "UM-DAG-DEGREE-TOKEN-IDENTITY-v1": "生成全部显式 token/filler/根任务，给精确 OPT 身份及真实恢复。",
+    "UM-DEPTH-TWO-HALF-v1": "将最小半配额输出的真实树译回调度。"
+  },
+  "explanation": "每点 v 仅造 min(k_v,deg_D^+(v)) 个通用 token，家端 1/k_v、实际出邻端 1，再用至多一枚固定 filler 补足全部家端工作量1。根另有独占单位任务。把输出根树在每点必要时剪到至多 k_v 个孩子并保全祖先，按不同孩子外送相同数量的真实 token，其他原任务留家。被激活的家负载至多 2−b(H)，非活动点负载至多1。桥的反向对任意 C<2 追踪根下的 unit token，给 b*≥2−C，连同全家基线得 OPT=2−b*。故给定 b(H)≥b*/2 有 C≤2−b*/2≤(3/2)OPT，后二式差 1−b*≥0。",
+  "scope": "仅深度二需求桥的原矩阵像，保巨大二进制需求及死端。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/有向需求与调度的压缩双向任务桥--定理.md",
+      "sha256": "47052b1eb3dfa67b095bbdb1ef86b80f108c6bb71b1e8d0210649b13092b130e",
+      "section": "有向需求与调度的压缩双向任务桥"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/深度二半配额贪心与双独立审计入口--资源.md",
+      "sha256": "3e85942825213fefa800b220ea5b80f88d2298f2283f053ab4f8ff8866a55e10",
+      "section": "一般保证为何成立"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读本边所引承重段并核对原模型、实际构造和条件。仅深度二需求桥的原矩阵像，保巨大二进制需求及死端。",
+  "contribution": {
+    "result": "将任意已达半评分的真实根树确定性位多项式解码为完整普通UM三半调度。",
+    "remaining": "目标的组合算法仍须用阈值枚举及首次失效收费证明 b(H)≥b*/2。任意DAG半评分算法也未建立。"
+  },
+  "endpoint_pins": {
+    "UM-DAG-DEGREE-TOKEN-IDENTITY-v1": "86d52277f0b5f722b353c5cb383b2c5a059c33fce3e58b45c92b353f77c95a39",
+    "UM-DEPTH-TWO-HALF-v1": "b87a1e55ffd4268c334399f0ef03900a8d783cc51640dd54417caac6157cefa3"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/有向需求与调度的压缩双向任务桥--定理.md": "47052b1eb3dfa67b095bbdb1ef86b80f108c6bb71b1e8d0210649b13092b130e",
+    "archives/unrelated-machines/state/资源/深度二半配额贪心与双独立审计入口--资源.md": "3e85942825213fefa800b220ea5b80f88d2298f2283f053ab4f8ff8866a55e10"
+  },
+  "review_digest": "ae6aedc842358e0d4783e95e358071cf1a28690bd2a839c68a8552eb7d1b3252"
+}

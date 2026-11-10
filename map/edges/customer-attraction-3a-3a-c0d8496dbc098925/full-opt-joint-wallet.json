@@ -1,0 +1,44 @@
+{
+  "edge_id": "ca-r36-full-opt-joint-wallet",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-381d279fd9444560b639f2a9894a07f1"
+  ],
+  "target_ids": [
+    "Q-CAG-HALF"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "对每份原完整纯SPE，须在同一actual叶、同一个最优m槽T上有一份全O的非负守恒付款。角色预算同时成立。",
+  "roles": {
+    "M-381d279fd9444560b639f2a9894a07f1": "给全O守恒式与两份实际利润预算或较宽联合上界。",
+    "Q-CAG-HALF": "按每个原输入、每份完整策略量化半覆盖。"
+  },
+  "explanation": "求和库存身份 |O|=Σ_i(d_i+H_i+J_i+A_i^out)。若 d_i+J_i≤u_i 且 H_i+A_i^out≤u_i，对i相加得到|O|≤2Σu_i；联合上界 H_i+J_i+A_i^out≤2u_i−d_i 给同一推导。固定T若是最优，|O|=OPT_m。两钱包支付同一库存的互不重复部分。",
+  "scope": "全O原合同的条件充分性。已证归约独立于净遗漏取消路线；每份输入共同付款的存在性仍待证。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/同一实际福利的联合付款与净遗漏归约--引理.md",
+      "sha256": "a4ae2dfa031704dcf47a27c5a5ab5731bca400baf590e65267e83f16642c9d53",
+      "section": "full-O归约：两份预算必须覆盖一份库存"
+    },
+    {
+      "path": "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md",
+      "sha256": "bc5add8e880e83c3ed799f457607103532aa9120018c862ae3ac869f2ed34d15",
+      "section": "完整量词和目标"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "Boss1任务包按当前登记与逐式实读核对真实历史、作用范围、联合前提及目标量词。",
+  "whole_result": "若每份原完整SPE均有同一最优T的所述全O付款，则对每个正整数m、每个原输入及每份完整纯SPE有OPT_m≤2W。",
+  "endpoint_pins": {
+    "M-381d279fd9444560b639f2a9894a07f1": "2c02c497d4e271451b8498dcac346d226f90369b372f4a67ad2ca82a7dd60608",
+    "Q-CAG-HALF": "dccd5277f7b0c1bb4dcac17287010f1d012bb40c6244c51f24808c1519a4b5ea"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/同一实际福利的联合付款与净遗漏归约--引理.md": "a4ae2dfa031704dcf47a27c5a5ab5731bca400baf590e65267e83f16642c9d53",
+    "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md": "bc5add8e880e83c3ed799f457607103532aa9120018c862ae3ac869f2ed34d15"
+  },
+  "review_digest": "8461b28f524b8d0eaac0a6d71e5d4641a384e51e1b9ebcad00ac455168f87f9d"
+}

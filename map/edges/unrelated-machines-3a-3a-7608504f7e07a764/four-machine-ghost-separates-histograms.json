@@ -1,0 +1,46 @@
+{
+  "edge_id": "um-7608504f-four-machine-ghost-separates-histograms",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/four-machine-six-job-weak-histogram-ghost"
+  ],
+  "target_ids": [
+    "UM-SHARED-LOAD-HISTOGRAM-CONFIG-PROJECTION-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "四台机器、六个有标签原任务，容量1。缩放3后用整数 K=3。",
+  "roles": {
+    "unrelated-machines/four-machine-six-job-weak-histogram-ghost": "提供同一真实原矩阵上的单位行负载 CONFIG、弱 Dirac 幽灵和原 OPT=4/3。",
+    "UM-SHARED-LOAD-HISTOGRAM-CONFIG-PROJECTION-v1": "识别 P_6 与弱 aggregate 投影相同，而真 H_6 不包含该点。"
+  },
+  "explanation": "四个前缀任务各耗时≥2/3，故真实容量1下必须一机一个，只余两个循环匹配。辅助 A 只可去机器1/2且耗1/3，B 只可去3/4且耗1/3。两个循环匹配分别让 A 或 B 所在两机都已满，故不能完整扩张。每行却可半权取 unit 前缀单件、半权取 2/3 前缀件加本行 aux，跨机恰覆盖每个前缀和 A,B，各行恒负载1。因此投影等式接受该 Dirac。给 A 和 B 选端可达到真实峰4/3，且整数网格使任何>1峰至少4/3。",
+  "scope": "只否定弱 aggregate 递推自动保真共同容量的推断。保逐机真配置与跨机列覆盖。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/障碍/共享全机负载直方图退化CONFIG1--障碍.md",
+      "sha256": "10c1ae48599c4f63c87e7222f628ee032fb76eaa508fdf860b9084c2e785578c",
+      "section": "6. 四机六 job 的幽灵反例"
+    },
+    {
+      "path": "archives/unrelated-machines/state/障碍/共享全机负载直方图退化CONFIG1--障碍.md",
+      "sha256": "10c1ae48599c4f63c87e7222f628ee032fb76eaa508fdf860b9084c2e785578c",
+      "section": "5. 弱共享 aggregate 递推与 CONFIG1 的精确等价"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读本边所引承重段并核对原模型、实际构造和条件。只否定弱 aggregate 递推自动保真共同容量的推断。保逐机真配置与跨机列覆盖。",
+  "contribution": {
+    "result": "精确四机证书给弱共享投影与真实共同凸包的严格分离，且保实际最优值4/3。",
+    "remaining": "一般等式及所有输入的位复杂度仍由直方图对象的路径分解和逆构造提供。"
+  },
+  "endpoint_pins": {
+    "UM-SHARED-LOAD-HISTOGRAM-CONFIG-PROJECTION-v1": "6645c1dfaa7c61fb315d49900e9bac8e00c3ef82205c02efaf57a1639c01c61f",
+    "unrelated-machines/four-machine-six-job-weak-histogram-ghost": "928d3f70631fe08f6169ca1d722b794ac9c60960a2532db4225d0b084abab6b2"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/障碍/共享全机负载直方图退化CONFIG1--障碍.md": "10c1ae48599c4f63c87e7222f628ee032fb76eaa508fdf860b9084c2e785578c"
+  },
+  "review_digest": "17b3c2995d63dfd998336f2fc9aa56328aace1c8b284592e41d7121006f900fd"
+}

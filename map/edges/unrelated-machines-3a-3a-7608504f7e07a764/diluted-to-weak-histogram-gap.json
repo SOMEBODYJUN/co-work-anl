@@ -1,0 +1,47 @@
+{
+  "edge_id": "um-7608504f-diluted-to-weak-histogram-gap",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-DILUTED-SINK-PROBE-GAP-v1"
+  ],
+  "target_ids": [
+    "UM-SHARED-LOAD-HISTOGRAM-CONFIG-PROJECTION-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "用稀释底座，不加共享 z。全加工时间乘 k，真实不可用端及任务标签保留，弱递推容量 K=k+1。",
+  "roles": {
+    "UM-DILUTED-SINK-PROBE-GAP-v1": "提供真实原 OPT=2−1/k 及同一矩阵 T=1+1/k 的 CONFIG 证书。",
+    "UM-SHARED-LOAD-HISTOGRAM-CONFIG-PROJECTION-v1": "逐前缀的 CONFIG 投影等价把证书变为弱 aggregate 递推接受点。"
+  },
+  "explanation": "缩放后普通边为1或k，原机器与原任务身份不变，CONFIG 可行于 K=k+1，而实际最优整数峰 2k−1。由弱递推等式，原 CONFIG 的终行投影是弱 Hhat_n 的点。因 k≥4 给 2k−1>k+1，真共同状态 R_n 空。其峰比 (2k−1)/(k+1)→2。每个固定 k 的原实例均按展开输入，不将参数编码当作机器列表。",
+  "scope": "给弱 aggregate 表示一族真实整数原矩阵的趋二 gap，不依赖四机的特定 Dirac 幽灵。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md",
+      "sha256": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+      "section": "6. 终端容量稀释族"
+    },
+    {
+      "path": "archives/unrelated-machines/state/障碍/共享全机负载直方图退化CONFIG1--障碍.md",
+      "sha256": "10c1ae48599c4f63c87e7222f628ee032fb76eaa508fdf860b9084c2e785578c",
+      "section": "5. 弱共享 aggregate 递推与 CONFIG1 的精确等价"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读本边所引承重段并核对原模型、实际构造和条件。给弱 aggregate 表示一族真实整数原矩阵的趋二 gap，不依赖四机的特定 Dirac 幽灵。",
+  "contribution": {
+    "result": "弱直方图在 K=k+1 接受整族无真实容量 K 调度的实例，真实 OPT/K 趋2。",
+    "remaining": "一般逐前缀等式、显式 DAG 流规模与向下舍入 NO 合同由直方图对象的双向证明承担。本关系也不保真共同状态。"
+  },
+  "endpoint_pins": {
+    "UM-DILUTED-SINK-PROBE-GAP-v1": "3b46fbddf6453cea5421830810c7293e86b7dad8b3997908692b634bea37b88c",
+    "UM-SHARED-LOAD-HISTOGRAM-CONFIG-PROJECTION-v1": "6645c1dfaa7c61fb315d49900e9bac8e00c3ef82205c02efaf57a1639c01c61f"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+    "archives/unrelated-machines/state/障碍/共享全机负载直方图退化CONFIG1--障碍.md": "10c1ae48599c4f63c87e7222f628ee032fb76eaa508fdf860b9084c2e785578c"
+  },
+  "review_digest": "ec523b345a2f169d380e9a545ca1c61bb528b44dca51d7fe4ef54e4a5ab0cb53"
+}

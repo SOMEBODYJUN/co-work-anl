@@ -1,0 +1,45 @@
+{
+  "edge_id": "ca-round36-clip-lp-tests-cap2",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-3032465a242048e18a66a92c549bbc37"
+  ],
+  "target_ids": [
+    "customer-attraction/fixed-optimal-slot-first-owner-clipped-role-capacity"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "使用同一固定σ、同一有序最优T和其整数首归属；零覆盖取零流。",
+  "roles": {
+    "M-3032465a242048e18a66a92c549bbc37": "精确有理LP含完整守恒和同一最终钱包。",
+    "customer-attraction/fixed-optimal-slot-first-owner-clipped-role-capacity": "普遍fixed-first-owner cap2，要求每个固定输入的同一流。"
+  },
+  "explanation": "有限DAG把所有正来源终结，故Σ_j A_j=OPT_m。正覆盖时完整IC给各u_j>0，存在有限倍率λ。固定输入上，精确LP最优λ*≤2恰等价于可在同一合法流中满足每个A_j≤2u_j。总量只推出λ*≥OPT_m/W，方向不支付cap2。",
+  "scope": "任意一个固定输入的精确判定，涵盖全部正来源，保不同有序历史为不同节点。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/固定最优槽首归属的剪枝角色容量--候选.md",
+      "sha256": "d80911e88ff051009b2c476b04237e0d4fdaad4d116cb5d49cde55d2bfb09fb6"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/首归属剪枝随机攻击的实现与两份阴性报告--资源.md",
+      "sha256": "3b530b9317f85213fa3e58471ee64b8a8c54f5b865ac82888f9c0f33b8b0d2d0"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核对给定正文及来源绑定、适用域和量词；复核本边实际推导，保留文中注明的剩余义务。",
+  "contribution": {
+    "result": "以同一有理primal或匹配精确证书等价判定固定输入的cap2。",
+    "remaining": "须对每份完整σ及每个最优有序T证明λ*≤2；原float阴性、单次路径和局部界均不提供该全称。"
+  },
+  "endpoint_pins": {
+    "M-3032465a242048e18a66a92c549bbc37": "db62a6502293c9965ff95575540783a7005c9c4edab317ab083ea85f740ea66b",
+    "customer-attraction/fixed-optimal-slot-first-owner-clipped-role-capacity": "d2a50fc2a96ffeda2ddcaacffeaef705c68f362d857a2baab5e53436131cf5de"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/固定最优槽首归属的剪枝角色容量--候选.md": "d80911e88ff051009b2c476b04237e0d4fdaad4d116cb5d49cde55d2bfb09fb6",
+    "archives/customer-attraction/state/资源/首归属剪枝随机攻击的实现与两份阴性报告--资源.md": "3b530b9317f85213fa3e58471ee64b8a8c54f5b865ac82888f9c0f33b8b0d2d0"
+  },
+  "review_digest": "437129ed0d682ac73ccb043c1ab2e5ff24665463d8724d0703876622706239ac"
+}

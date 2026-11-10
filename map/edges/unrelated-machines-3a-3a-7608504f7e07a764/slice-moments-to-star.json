@@ -1,0 +1,57 @@
+{
+  "edge_id": "um-7608504f-slice-moments-to-star",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-UNIFORM-CARDINALITY-PAIR-SPARSE-SUPPORT-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/seven-state-star-global-quadratic-local"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "七态原星 d,s 为偶数且 2≤s≤d/2，保留每个 (C,H) 类别的原质量，home 标签全显式。",
+  "roles": {
+    "UM-UNIFORM-CARDINALITY-PAIR-SPARSE-SUPPORT-v1": "每个均匀定基数类的真实有理支撑及 Fisher–Yates 逐交换线性压缩。",
+    "unrelated-machines/seven-state-star-global-quadratic-local": "保 CONFIG first/pair 与全局六阶评估所需矩的有限支撑实现。"
+  },
+  "explanation": "对逐行 K_v 的每个 (C,H) 类别用定理的 pair 支撑，C 固定使 CY_i 同保，每个 H 不变使配置负载不变，故 v 行至多 6(1+d+binom(d,2)) 个配置。另将 Fisher–Yates 的坐标扩成所有 |A|≤6 的指示 1[A⊆S]，维数 D_6=∑_{j=0}^{min(6,d)}binom(d,j)。交换仍只置换同层坐标，逐阶段展开最多 iD_6 列并用常数坐标保质量的整数零依赖删列。每个系数是 0/1 子式，O(d²D_6) 次消元的共同分母位长仍多项式。故每个均匀 P 类可替为至多 D_6 个真实同基数样本。类别 C 固定，补指示按 1−Y 展开，保原端次数≤6 的全部期望。M3 条目次数至多6，负载乘二次 q² 次数至多5，因而这些评估严格不变。",
+  "scope": "支撑压缩用于原星的合法 CONFIG 行和真实七态共同 law。一般固定阶可同法扩展，变量阶不获同一时间界。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/均匀定基数first-pair稀疏支撑--定理.md",
+      "sha256": "afc8c951a0018aa5e428148dcd133e2022a69cf81dbb3638c26c71b2ff003d04",
+      "section": "七态星应用的承重边界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/均匀定基数Fisher-Yates交换压缩--定理.md",
+      "sha256": "bc3f598d2901bc5dcde0955a173ae35db8768d43f5f2c52fd7cf210b5e08b5c1"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/七态原星全局二次负载局部核--定理.md",
+      "sha256": "755f74fcc24ddf06995bedd65fb9e6ce4529c6676b6dd1036d7513669657f351",
+      "section": "3. 合法完整行配置的精确 pair trade"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/七态原星全局二次负载局部核--定理.md",
+      "sha256": "755f74fcc24ddf06995bedd65fb9e6ce4529c6676b6dd1036d7513669657f351",
+      "section": "4. 所有全局 q 的二次负载局部化"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读本边所引承重段并核对原模型、实际构造和条件。支撑压缩用于原星的合法 CONFIG 行和真实七态共同 law。一般固定阶可同法扩展，变量阶不获同一时间界。",
+  "contribution": {
+    "result": "逐行 CONFIG 可用至多 6D_2 个真实列。共同 law 用至多 7D_6 个实际分配、精确保所有 M3 和二次负载评估，二者皆可显式有理构造。",
+    "remaining": "仍由七态原星的 pair trade 和带 slack 的 Jensen、仿射插值及 Cauchy 证明这些值满足所需不等式。只保 pair 的替换不足以推出共同六阶条件。"
+  },
+  "endpoint_pins": {
+    "UM-UNIFORM-CARDINALITY-PAIR-SPARSE-SUPPORT-v1": "34e95eb9147f7a34a6235b1bc5d861d59a2f0a7985912f6e2d4adfb0c5ad0913",
+    "unrelated-machines/seven-state-star-global-quadratic-local": "bcf6aba667081b92e980ed60c5386353bbf26b4c4747ab7ebf197f2166c0f985"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/均匀定基数first-pair稀疏支撑--定理.md": "afc8c951a0018aa5e428148dcd133e2022a69cf81dbb3638c26c71b2ff003d04",
+    "archives/unrelated-machines/state/定理/均匀定基数Fisher-Yates交换压缩--定理.md": "bc3f598d2901bc5dcde0955a173ae35db8768d43f5f2c52fd7cf210b5e08b5c1",
+    "archives/unrelated-machines/state/定理/七态原星全局二次负载局部核--定理.md": "755f74fcc24ddf06995bedd65fb9e6ce4529c6676b6dd1036d7513669657f351"
+  },
+  "review_digest": "b01c84741faed6bd5de38add2cbafa3ba01201cb1eaa0da4cf14615dc69e45b7"
+}

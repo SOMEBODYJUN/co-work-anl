@@ -1,0 +1,51 @@
+{
+  "edge_id": "ca-round36-real-pivot-and-theta-relay",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/legal-true-branch-pivot-protection-and-increasing-depth-relay",
+    "customer-attraction/last-slot-value-and-catalog-counting"
+  ],
+  "target_ids": [
+    "M-652ec9da89ed487d8a55aaf520859e8e"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "对每个需付款的实际非末位节点，假定存在合法真分支满足(P)，并直达真末位，或其选定离轨枢轴均继续有(P)的同类边直到真末位。",
+  "roles": {
+    "customer-attraction/legal-true-branch-pivot-protection-and-increasing-depth-relay": "给同一个真实叶上当前偏离利润≥被选后继枢轴的利润。",
+    "customer-attraction/last-slot-value-and-catalog-counting": "给真实末位θ_m保底和静态θ_m≥OPT_m/(2m−1)。",
+    "M-652ec9da89ed487d8a55aaf520859e8e": "把末位或递增真实中继证书逐边传到所有actual角色并求和。"
+  },
+  "explanation": "在h上真实IC给u(h)≥u_G；局部(P)给u_G≥u(h′)，其中h′是强制G后沿原σ发生的被选后继的有序历史。所有边严格递增玩家位置，有限终止在真末位；后者收益≥θ_m。加实际m个下界得到W≥mθ_m≥m OPT_m/(2m−1)。",
+  "scope": "任意m、合法目录及原完整σ，在所声明闭合证书前提下；m=1直接末位。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/合法真实分支的枢轴保护与递增中继--引理.md",
+      "sha256": "bdbb9b7b9c9a92f7901ea92340c073925ba7b0203deed4a8c6b55d57bd131f84",
+      "section": "真末位与深度严格增加的证书"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/合法真实分支的枢轴保护与递增中继--引理.md",
+      "sha256": "bdbb9b7b9c9a92f7901ea92340c073925ba7b0203deed4a8c6b55d57bd131f84",
+      "section": "任意背景的同终局保护引理"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md",
+      "sha256": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核了两条in-packet overlap。局部代数独立于SPE，真实合法分支及中继闭合另作条件。",
+  "whole_result": "局部同叶(P)与末位计数共同给整条条件证书，包括真正末位和有限的严格递增离轨中继。",
+  "endpoint_pins": {
+    "M-652ec9da89ed487d8a55aaf520859e8e": "b0de0b4ae24b930c595e0ca9018ca16eb7eae2c8a990f2cf203efcbae9a4e484",
+    "customer-attraction/last-slot-value-and-catalog-counting": "5b963d828efa40aaa81e50a9a4937656777103dfa5ab0414369926b475f1585e",
+    "customer-attraction/legal-true-branch-pivot-protection-and-increasing-depth-relay": "2a873dc2908cbe864e49e6d555445ffbbb618725c91a1f3b2bda87f5eca13284"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/合法真实分支的枢轴保护与递增中继--引理.md": "bdbb9b7b9c9a92f7901ea92340c073925ba7b0203deed4a8c6b55d57bd131f84",
+    "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d"
+  },
+  "review_digest": "74296b57e7912a33fda0f3d59c3bf78ce9e75cf87e9112f21beb8d67427662b6"
+}

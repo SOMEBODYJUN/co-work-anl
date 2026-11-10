@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-7608504f-split-half-slot-recovery",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-ST-ROUND-v1"
+  ],
+  "target_ids": [
+    "UM-SPLIT-CAPACITY-DUAL-RAIL-THREE-HALVES-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "轨内有 K 个真实 occurrence、各耗时1/K，空轨无 occurrence。每个 clause 具 min(A_c,m_c) 台不同单位机且 m_c≤2A_c。平局可令 selector 在轨上排首。",
+  "roles": {
+    "UM-ST-ROUND-v1": "按正交长成槽和 Hall 覆盖所有原任务。",
+    "UM-SPLIT-CAPACITY-DUAL-RAIL-THREE-HALVES-v1": "显式拆分单位机器的真实原任务三半负载。"
+  },
+  "explanation": "每个 selector 对两轨各放半片，每个 occurrence 的半片留轨，另一半片在其 clause 单位机内按每台至多两半片打包。需要 ceil(m_c/2)≤min(A_c,m_c) 台，m_c=0 无任务。每个外部 unit 机只形成一槽。每条非空轨的 selector 半片排首，再接 K 个 occurrence 半片，总槽数 ceil((K+1)/2)。若 selector 匹配到此轨，它占首槽且至多 floor(K/2) 个其余槽能接 occurrence，故轨≤3/2。未接 selector 的轨最多接原来的 K 个 jobs，总负载≤1。空轨至多一枚 selector。所有原任务半片总量1，Hall 恢复同一实际分配。",
+  "scope": "只在 split-unit 合同及已构造的半片点上使用槽计数，不把多单位机合成 scalar 端，也不声称一般半积分点存在。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md",
+      "sha256": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+      "section": "槽、任务匹配及逐机收费"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/双轨标量与拆分unit的共同调度及锐例审查--审查.md",
+      "sha256": "928992675fdebbc7d130efee3b8132e0c5665a12b9143c4981cae8d748f1affe",
+      "section": "split的共同整数流与完整回填"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/双轨标量与拆分unit的共同调度及锐例审查--审查.md",
+      "sha256": "928992675fdebbc7d130efee3b8132e0c5665a12b9143c4981cae8d748f1affe",
+      "section": "两个绝对锐例与源解码边界"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读本边所引承重段并核对原模型、实际构造和条件。只在 split-unit 合同及已构造的半片点上使用槽计数，不把多单位机合成 scalar 端，也不声称一般半积分点存在。",
+  "contribution": {
+    "result": "给拆分 unit 矩阵另一个共同原任务匹配构造，轨负载≤3/2，单位机≤1。",
+    "remaining": "规范整数流的特殊变量供给和 3/2 锐例是独立证明。这个上界不单独证明绝对系数锐。"
+  },
+  "endpoint_pins": {
+    "UM-SPLIT-CAPACITY-DUAL-RAIL-THREE-HALVES-v1": "fbbe6b5940f49aecff58f18105dcd538adfd35b63ea9f4808a5af18259a29a06",
+    "UM-ST-ROUND-v1": "8c4662c822ebd204e3b095934f8745464426df43fc2328a6bbc35063e4148ea1"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/有序单位槽的支撑最大件舍入--定理.md": "996b2d634889c84f766cf186d5d71d8f55679e2e993e1648f34597dbf2d354a6",
+    "archives/unrelated-machines/state/审查/双轨标量与拆分unit的共同调度及锐例审查--审查.md": "928992675fdebbc7d130efee3b8132e0c5665a12b9143c4981cae8d748f1affe"
+  },
+  "review_digest": "cd18fdbffc5efbbd752636a53dee549fab7c272626c48277621a896c092d8ed7"
+}

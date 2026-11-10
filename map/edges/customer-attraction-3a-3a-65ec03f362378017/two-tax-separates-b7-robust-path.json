@@ -1,0 +1,45 @@
+{
+  "edge_id": "ca-round36-two-tax-separates-b7-robust-path",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-TWO-REMAINING-TAX"
+  ],
+  "target_ids": [
+    "B7-ROBUST-PREFIX-FLOOR-UNBOUNDED-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "在B7单位客户反族任意m≥2，于倒二实际前缀b取两不同T列作比较。",
+  "roles": {
+    "CA-TWO-REMAINING-TAX": "合法背景真实两人总利润的统一税界，作为所有完整SPE必要条件。",
+    "B7-ROBUST-PREFIX-FLOOR-UNBOUNDED-v1": "在轨RF障碍中的具体路径违反这条真实续局条件。"
+  },
+  "explanation": "两列不交，且每列在b里有 L(H_m−3/2)/m 个已占客户。故R_b(T_1,T_2)=2L−L(H_m−3/2)/m。实际A_{m−1},A_m给R_b=3L/2，A_{m−1}此前未占，故普通税g_b(A_{m−1},A_{m−1})=L/4。m=2有H_m−3/2=0；m≥3有H_m−3/2≤1/3+(m−3)/4<m/4。比较剩余利润严格大于7L/4，违反真实两人税界。",
+  "scope": "只比较同一倒二背景的剩余利润。B7所保全部在轨最坏分母与实际末位唯一BR不推出该税行。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+      "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/全部实际前缀最坏分母保底的无界松弛族--障碍.md",
+      "sha256": "26bea6dc798a5845ecabc8fb862d5f838dcdd2db37da3bfd782533d3ab97ad20"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核对给定正文及来源绑定、适用域和量词；复核本边实际推导，保留文中注明的剩余义务。",
+  "contribution": {
+    "result": "给B7指定路径对每个m≥2不能完整SPE实现的独立税界证明。",
+    "remaining": "B7全部RF行、唯一实际末BR、无界福利比及特定偏离A_m后所有BR的更强说明仍由其独立构造承担。"
+  },
+  "endpoint_pins": {
+    "B7-ROBUST-PREFIX-FLOOR-UNBOUNDED-v1": "a94dfbcc2fc846ad9fe791ae15ab4b3960ebed84e4f07dea30181b9e7fdea2b4",
+    "CA-TWO-REMAINING-TAX": "eb63a8d1cd934879f5f7f25f633b4bf753973f405a7b8db91bed63f633de7d15"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/固定背景两人税界--引理.md": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+    "archives/customer-attraction/state/障碍/全部实际前缀最坏分母保底的无界松弛族--障碍.md": "26bea6dc798a5845ecabc8fb862d5f838dcdd2db37da3bfd782533d3ab97ad20"
+  },
+  "review_digest": "dc4b791fbae5538411ded25db2c5f6885b6cf107237b542c01ef81a83ce99617"
+}

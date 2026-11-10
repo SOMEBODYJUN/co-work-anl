@@ -1,0 +1,66 @@
+{
+  "edge_id": "ca-r36-tail-choice-conditional-five-half",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/five-provider-selected-maxpair-credit-early-payment-candidate",
+    "customer-attraction/potential-maximizing-tail-real-reply-selected-credit-single-tax",
+    "CA-LAST-TWO-FLOOR",
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1"
+  ],
+  "target_ids": [
+    "CA-FIVE-HALF-EXACT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "五人零根、同一完整纯SPE。假设该输入的MAXPAIR-CREDIT，目标全称对应于对每份原五人SPE都有此付款。",
+  "roles": {
+    "customer-attraction/five-provider-selected-maxpair-credit-early-payment-candidate": "开放早期支付P+K_sel≥3v5。",
+    "customer-attraction/potential-maximizing-tail-real-reply-selected-credit-single-tax": "固定同一尾局给K_sel≤u4/2。",
+    "CA-LAST-TWO-FLOOR": "真实末两人各≥θ(actual前三)；每个合法固定竞争列的BR≥v5，故θ≥v5。",
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1": "五人静态计数给OPT5≤9v5。",
+    "CA-FIVE-HALF-EXACT-v1": "五人完整有序根SPE的半覆盖结论。"
+  },
+  "explanation": "同一个actual叶上，W=P+u4+u5≥3v5−K_sel+u4+u5≥3v5+u4/2+u5≥9v5/2≥OPT5/2。即使v5=0也保持乘法式。条件推导和已正式证明的53行证书是独立路线。",
+  "scope": "只给此早期付款候选推出五人half的方向。现有five-half定理不反向支付MAXPAIR-CREDIT，也不承担六人背景迁移。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/五人最大势末对选择信用的早期付款--候选.md",
+      "sha256": "c241681f352691dcab62316a75981d8c93e4eabd0d4f272dfac005707708c358"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最大势末对真实回复的选择信用与单次尾税--引理.md",
+      "sha256": "f43e7e6654164f1ba6c77ad273470124e90d1014947f5e859061ca705980333f"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末两人逐人保底与全人数弱福利界--定理.md",
+      "sha256": "204030503c37b18f8d26ce664b9cb99afc688fed77c8221a00cf0d8d7b21b34b"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md",
+      "sha256": "034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/五人半覆盖--定理.md",
+      "sha256": "061ceb82629e9aac619630cf12d0d80ede9663474baf2302a100ceafe5dd634c"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "Boss1任务包按当前登记与逐式实读核对真实历史、作用范围、联合前提及目标量词。",
+  "whole_result": "若MAXPAIR-CREDIT对全部五人零背景完整原SPE成立，则其与一次尾税、真实尾部逐人地板、静态目录计数联合推出全部原五人SPE满足OPT5≤2W。",
+  "endpoint_pins": {
+    "CA-FIVE-HALF-EXACT-v1": "a6b1a6bb8f7da43559faf7606dc3ce20da46efbbed584f805b442fd799663c2c",
+    "CA-LAST-TWO-FLOOR": "ac27b3c3c7d9e7ef7b09029a442931c402af6718aaa86500f0f8e3d303d226e1",
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1": "565f6bdb541c09f8229f27ca4d47409f946a555f141378e72fb91c5a55082ea4",
+    "customer-attraction/five-provider-selected-maxpair-credit-early-payment-candidate": "337fc86896ce2691c87a9798933a81c2f13e7d301e5906cac42a0f9c804a2467",
+    "customer-attraction/potential-maximizing-tail-real-reply-selected-credit-single-tax": "5a2986651adecb3cf5f7d0dbbea02f32d5545b919b7573b7f36b65291ba7ca06"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/五人最大势末对选择信用的早期付款--候选.md": "c241681f352691dcab62316a75981d8c93e4eabd0d4f272dfac005707708c358",
+    "archives/customer-attraction/state/引理/最大势末对真实回复的选择信用与单次尾税--引理.md": "f43e7e6654164f1ba6c77ad273470124e90d1014947f5e859061ca705980333f",
+    "archives/customer-attraction/state/定理/末两人逐人保底与全人数弱福利界--定理.md": "204030503c37b18f8d26ce664b9cb99afc688fed77c8221a00cf0d8d7b21b34b",
+    "archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md": "034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f",
+    "archives/customer-attraction/state/定理/五人半覆盖--定理.md": "061ceb82629e9aac619630cf12d0d80ede9663474baf2302a100ceafe5dd634c"
+  },
+  "review_digest": "8e1accb0f041413719a3a9a06190b525565509ca9f404bb7056e78d197b7d875"
+}

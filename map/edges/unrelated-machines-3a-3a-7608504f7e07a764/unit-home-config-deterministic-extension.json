@@ -1,0 +1,46 @@
+{
+  "edge_id": "um-7608504f-unit-home-config-deterministic-extension",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-MODEL-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/unit-home-identity-learning-v1-scope-review"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一个 Q→Q⁺ 的精确 unit-home 原矩阵，行配置保完整任务与等式覆盖，非空时至少一枚原 unit selector。",
+  "roles": {
+    "UM-MODEL-v1": "CONFIG 行 law、每个原任务列覆盖恰一。",
+    "unrelated-machines/unit-home-identity-learning-v1-scope-review": "实际单位外层的强制链可单独提升到 CONFIG 阈值等价。"
+  },
+  "explanation": "在 1≤T<2，新 outer selector 只有其 outer 私机端，故该机概率1包含 selector 且不含 unit outer incidence。覆盖迫后者在 h_g 的边际1。h_g 每配置最多一件 unit，故 helper-own incidence 只能在 helper-own 私机，边际1。该私机因而无 helper selector。丢弃新增行和任务后所有旧列仍覆盖1。反向在原点加三个确定性行：outer 私机取 selector、h_g 取 outer incidence、helper-own 私机取 own incidence，旧 selector 的新增端边际0。T<1 两边均有 mandatory unit selector 因此不可行，T≥2 全私端基线同时可行。空实例单列。",
+  "scope": "只保这个扩展的 CONFIG 阈值。没有把整数 OPT 相等当成一般 LP 保持定理。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单home单位外层精确保值学习确认与UM边界--审查.md",
+      "sha256": "7f8261043459ab03cf579adcb538f3ceaecc6cfc037a3c7dc8ce897e8e196320",
+      "section": "完整普通 UM 矩阵与 OPT 恒等"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读本边所引承重段并核对原模型、实际构造和条件。只保这个扩展的 CONFIG 阈值。没有把整数 OPT 相等当成一般 LP 保持定理。",
+  "contribution": {
+    "result": "该单位新增构造在任意阈值保 CONFIG 可行性和 T_conf，且在 1≤T<2 可直接双向投影有理配置。",
+    "remaining": "目标的实际菜单 V 恒等与完整原任务整数回填仍需各自的证明。普通 LST 对所有阈值的双向保持未随之建立。"
+  },
+  "endpoint_pins": {
+    "UM-MODEL-v1": "9e0366033d2ab38fffe159771a178a29146f75c0d5c2cea92c0b1a307e6269c5",
+    "unrelated-machines/unit-home-identity-learning-v1-scope-review": "0a66c58568ddbd974daf672d8286d3058d35f08cf7324c4a106505adad889947"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b",
+    "archives/unrelated-machines/state/审查/单home单位外层精确保值学习确认与UM边界--审查.md": "7f8261043459ab03cf579adcb538f3ceaecc6cfc037a3c7dc8ce897e8e196320"
+  },
+  "review_digest": "a81adb0dfdce280ff492adb195bc2b6a260f492e796405ab9c16c498a5f170cc"
+}

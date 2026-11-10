@@ -1,0 +1,51 @@
+{
+  "edge_id": "ca-r36-uniform-query-role-capacity",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-007d7464674841459cb297635fa75f73"
+  ],
+  "target_ids": [
+    "customer-attraction/one-actual-welfare-joint-payment-and-net-omission-reduction"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "固定原完整SPE和一个满足强均匀付款的最优带索引T，正净差M_R=OPT−W。实际前缀查询D_(i,a)保原完整真实后继。",
+  "roles": {
+    "M-007d7464674841459cb297635fa75f73": "B̄(T)≥Q(T)−E(T)≥M_R，提供同一真实查询矩阵。",
+    "customer-attraction/one-actual-welfare-joint-payment-and-net-omission-reduction": "净遗漏目标需要同一合法取消和整行IC钱包。"
+  },
+  "explanation": "置θ=M_R/B̄∈(0,1]，对各带索引槽给A_ij=θ M_ij/m。按真实查询s=(i,a)合并同标签重复槽。令n_a为T内标签a重数，则A_s=θ n_aD_s/m，Σ_s A_s=M_R。若D_s>0则w_s=θ n_a/m，否则w_s=0。因此同角色Σ_s w_s≤θ≤1，取共同η_i=u_i就有Ση_i=W与u_iL_i≤η_i；同时每项0≤A_s≤D_s。这里守恒只是货币数值总和，不将某个原客户库存任意归给不含它的查询。",
+  "scope": "强均匀付款全称仍开放；本边只给现成查询容量向量与whole-IC汇总，兼容取消、库存标签/合法运输及I⁻版本不由金额分配推出。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/实际前缀净匹配探针与均匀分配报告--程序.md",
+      "sha256": "8106d84b72b1182ca79e8278938cfabca5690ca7190dcfc9f852b413b53d80b4"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/同一实际福利的联合付款与净遗漏归约--引理.md",
+      "sha256": "a4ae2dfa031704dcf47a27c5a5ab5731bca400baf590e65267e83f16642c9d53",
+      "section": "净遗漏归约：source与incoming共同占η"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/同一实际福利的联合付款与净遗漏归约--引理.md",
+      "sha256": "a4ae2dfa031704dcf47a27c5a5ab5731bca400baf590e65267e83f16642c9d53",
+      "section": "固定一次实际福利和真实查询"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "Boss1任务包按当前登记与逐式实读核对真实历史、作用范围、联合前提及目标量词。",
+  "contribution": {
+    "result": "若强均匀净Q付款在同一T成立，可分配真实整行查询金额使总额等于M_R、每个角色占用至多一份u_i。",
+    "remaining": "仍需合法取消及把同一剩余库存按原运输守卫送至这些查询或证明兼容的替代容量向量；联合I⁻库存还需独立同额扣还。"
+  },
+  "endpoint_pins": {
+    "M-007d7464674841459cb297635fa75f73": "9b6ef362dbf309ea20bbee9116ea3c0ae58819bcc9b8cf25f405a8147a613522",
+    "customer-attraction/one-actual-welfare-joint-payment-and-net-omission-reduction": "c7a6cd3aef18a9a1ae4bb4d936426ec15f3129ca65b7cb3a83ddf829008f9a80"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/实际前缀净匹配探针与均匀分配报告--程序.md": "8106d84b72b1182ca79e8278938cfabca5690ca7190dcfc9f852b413b53d80b4",
+    "archives/customer-attraction/state/引理/同一实际福利的联合付款与净遗漏归约--引理.md": "a4ae2dfa031704dcf47a27c5a5ab5731bca400baf590e65267e83f16642c9d53"
+  },
+  "review_digest": "e906370796ef9abd3c52b10c883ca8b1f6a5fe084d22438c1c5f9965471531e7"
+}

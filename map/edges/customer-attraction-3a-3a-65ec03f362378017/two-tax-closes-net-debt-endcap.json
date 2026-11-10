@@ -1,0 +1,51 @@
+{
+  "edge_id": "ca-round36-two-tax-closes-net-debt-endcap",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-TWO-REMAINING-TAX"
+  ],
+  "target_ids": [
+    "M-581c6ae40a23477ea8dc78e1844f4c9c"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "在原m人实际前缀H_{m−2}背景b下，比较剩余两槽T,S，实际尾A,B。",
+  "roles": {
+    "CA-TWO-REMAINING-TAX": "恰两名剩余玩家时同一σ三条真IC的精确差额。",
+    "M-581c6ae40a23477ea8dc78e1844f4c9c": "给多源核最后两槽的E≥0与税差，不替代上游路由。"
+  },
+  "explanation": "此层r=m−(m−2)−1=1，逐客户核K(T,S)=R_b(T,S)+g_b(T,S)。把两人税正文精确式(3)中的末项g_b(T,S)消掉，得到K(T,S)=u_{m−1}+u_m+g_b(A,A)−E；E是同一真Q的三IC松弛与g_b(A,A)−g_b(A,Q)，皆非负。更新实际倒二A的τ差逐客户正好等于g_b(A,A)。",
+  "scope": "固定合法背景的剩余两人利润与整合核的最终两槽；m=2也直接适用。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+      "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/整合核净债路由不变量与独立策略审查的历史范围--资源.md",
+      "sha256": "761078f3e04777889df80cbb35a9da343b3f6c9c23646c44f1ab29a7cae6966b",
+      "section": "总人数不随源数改变的精确账本"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/多源整合核的真实BR信用与五八人路由范围--资源.md",
+      "sha256": "ad1cbe32adcf461f2e8aa3a9d9ad59339d841e4db2a2459ed43283586e75e3f2"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读CA-TWO in-packet overlap；用精确三IC恒等式，不能仅用较弱的总剩余利润税界。",
+  "contribution": {
+    "result": "精确给K_{m−2}=u_{m−1}+u_m+(τ_{m−1}−τ_{m−2})−E，且E≥0。",
+    "remaining": "前面q>2时仍需真实回复替换、带符号第三源D、重复删除M和前缀P。即便保全，净债端点等价式也没有独立支付half。"
+  },
+  "endpoint_pins": {
+    "CA-TWO-REMAINING-TAX": "eb63a8d1cd934879f5f7f25f633b4bf753973f405a7b8db91bed63f633de7d15",
+    "M-581c6ae40a23477ea8dc78e1844f4c9c": "64fe79a0f271644273898ea86f2ede13ff96535fc6bf1a26f3cdc3122aaf0b7a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/固定背景两人税界--引理.md": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+    "archives/customer-attraction/state/资源/整合核净债路由不变量与独立策略审查的历史范围--资源.md": "761078f3e04777889df80cbb35a9da343b3f6c9c23646c44f1ab29a7cae6966b",
+    "archives/customer-attraction/state/资源/多源整合核的真实BR信用与五八人路由范围--资源.md": "ad1cbe32adcf461f2e8aa3a9d9ad59339d841e4db2a2459ed43283586e75e3f2"
+  },
+  "review_digest": "c8d43bd788d6917327f858bc4131256c22712916ce554331d35578e776e8e1be"
+}

@@ -1,0 +1,46 @@
+{
+  "edge_id": "ca-round36-grouped-cover-identifies-union-decoding-loss",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "EA-GROUPED-CONFIG-COVER-v1"
+  ],
+  "target_ids": [
+    "EA-UNION-CONFIG-FEASIBILITY-NO-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "反族每q≥2机与任务均q，T=1，第一行处理1，其余均q+1。",
+  "roles": {
+    "EA-GROUPED-CONFIG-COVER-v1": "按原机器各选一个配置后，全覆盖恰等价于阈值调度。",
+    "EA-UNION-CONFIG-FEASIBILITY-NO-v1": "无色目录反族的阈值调度一端及身份丢失机制。"
+  },
+  "explanation": "在分组配置端，其它q−1台只能取空，第一台只可取一个单例，故任何分组选择最多覆盖一个任务，不能全覆盖；由等价知原阈值调度不可行。无色合并却使q位提供者可各取该首机不同单例。用任何非首机使峰值≥q+1，全放首机峰值为q。",
+  "scope": "整数每原机器配置的可行性解码；没有算法复杂度或一般保身份gadget否定。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/等价/分组配置全覆盖与无色共同目录的精确边界--等价.md",
+      "sha256": "6b6aaf4dcc6e2294270d445a30b034683dbb772fcac599448c84d061c7e18c4e",
+      "section": "2. 合并共同目录的任意规模真实SPE障碍"
+    },
+    {
+      "path": "archives/customer-attraction/state/等价/分组配置全覆盖与无色共同目录的精确边界--等价.md",
+      "sha256": "6b6aaf4dcc6e2294270d445a30b034683dbb772fcac599448c84d061c7e18c4e",
+      "section": "1. 保机器分组的正向等价"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核对给定正文及来源绑定、适用域和量词；复核本边实际推导，保留文中注明的剩余义务。",
+  "contribution": {
+    "result": "用分组等价精确定位无色归约在机器联合容量上的失败，并复核OPT_UM=q。",
+    "remaining": "无色游戏全覆盖完整SPE由其每个有序历史选未覆盖最小单例的独立证明给出。"
+  },
+  "endpoint_pins": {
+    "EA-GROUPED-CONFIG-COVER-v1": "00aec8ef6dea78f2121444cb674940667b503b8a76ffa2581c1c1c679ca92a9d",
+    "EA-UNION-CONFIG-FEASIBILITY-NO-v1": "4b21f7848218fc881ac6aea1b7f6d402ac6d78ea51e257ab2bc7b58c347f54d7"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/等价/分组配置全覆盖与无色共同目录的精确边界--等价.md": "6b6aaf4dcc6e2294270d445a30b034683dbb772fcac599448c84d061c7e18c4e"
+  },
+  "review_digest": "0f8af55f7c9dd6b93c21dd72e42663fcba26b3278e1cd61c61b5696234318484"
+}

@@ -1,0 +1,47 @@
+{
+  "edge_id": "um-7608504f-partition-exact-count-lock",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-e8d9614430ab49fc99125452d10388f1"
+  ],
+  "target_ids": [
+    "UM-AFFINE-COMPLEMENT-CARDINALITY-BOUNDARY-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "对非空 PARTITION 取 m=2、q=s，q 为输入的一部分。两行相同，λ=1，资源恰2q件。",
+  "roles": {
+    "M-e8d9614430ab49fc99125452d10388f1": "提供精确半和命题。",
+    "UM-AFFINE-COMPLEMENT-CARDINALITY-BOUNDARY-v1": "识别在实际普通矩阵中精确阈值可锁件数的子类，并与近似锁件数区分。"
+  },
+  "explanation": "在 q 个数 c_j 外加入 q 个值0的资源，两机同效用 u_j，置 A=∑c_j、B=A+1、p=B−u。目标 C0=qB−A/2。任何机有至少 q+1 件时负载≥(q+1)B−A>C0，所以阈值见证必两行恰q件。全部负载和 2qB−A=2C0，故阈值见证等价于每行效用恰 A/2。半和子集可补零件到 q 件，另一行取余。实际上任一不平衡调度峰>qB，任一平衡调度峰≤qB，故最优解均平衡。这一精确 gap 的相对阈值可能随 q 消失。",
+  "scope": "这是精确阈值或最优解的计数锁定，q 可随输入增长。并无固定倍率的行件数推断。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "5.5 Subset Sum到单机罚金排序、到Partition"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/仿射固定基数边界与锚任务缺额联合舍入双源审查--审查.md",
+      "sha256": "8a37f91432549ca280f8defc5d4ee0baf1d46a31b81ab67a8bf4ef73fb3c2b6c",
+      "section": "2. 对象一：仿射互补负载与固定基数边界（ID `8088efef4cfbcec8c315`）"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读本边所引承重段并核对原模型、实际构造和条件。这是精确阈值或最优解的计数锁定，q 可随输入增长。并无固定倍率的行件数推断。",
+  "contribution": {
+    "result": "给定两台真实机器的 affine 补偿子类，把 PARTITION 精确映为阈值可行，给出 q 由精确阈值强制的充分尺度。",
+    "remaining": "不替代目标关于一般仿射矩阵在固定近似倍率下会失去件数锁和按数裁剪价值的独立反例。"
+  },
+  "endpoint_pins": {
+    "M-e8d9614430ab49fc99125452d10388f1": "8235a2ee5b9dcca8eed3e1083fdc0e9d32a10ffc64b264ea13b6c6de967c0ab4",
+    "UM-AFFINE-COMPLEMENT-CARDINALITY-BOUNDARY-v1": "d12a2891863dd9b176087d9c8b58263baa6e9596b8fe6cdff3df65a459e4a5e5"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+    "archives/unrelated-machines/state/审查/仿射固定基数边界与锚任务缺额联合舍入双源审查--审查.md": "8a37f91432549ca280f8defc5d4ee0baf1d46a31b81ab67a8bf4ef73fb3c2b6c"
+  },
+  "review_digest": "8886d857f66069fc199089713cd488576ebcade3f1089ca52ae90d028a4edad1"
+}

@@ -1,0 +1,43 @@
+{
+  "edge_id": "um-7608504f-fixed-bundle-layer-promise",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-K-UNIFORM-BUNDLE-FLOOR-v1"
+  ],
+  "target_ids": [
+    "M-a0dc6c9aa5f94abf9340cba38081c453"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "q>0，固定 K≥1 与有理 0<δ<1。t0=⌊Kδ⌋+1 且 δ<1/(t0+1)，资源束和标签均显式。",
+  "roles": {
+    "UM-K-UNIFORM-BUNDLE-FLOOR-v1": "精确分层恒等式，连接同一 x 的标签选择与真实不交领取。",
+    "M-a0dc6c9aa5f94abf9340cba38081c453": "用固定层极大超边匹配分辨 b*=1 与 b*≤δ。"
+  },
+  "explanation": "若 t0>k 则不可能 YES，可直接拒绝。否则 b*=1 给 ν_K=q 并可截成 ν_t0=q。b*≤δ 且 t0/K>δ 强迫 ν_t0/q≤δ。每个允许的 t0 子束连同其 x 成一条 (t0+1) 元超边，x 与资源宇宙分标，平行候选可去重并保任一合法标签。极大匹配的每条边最多碰最优匹配的 t0+1 条边，故 YES 时 |M|≥q/(t0+1)>δq，NO 时 |M|≤ν_t0≤δq。固定 t0 时枚举每个显式束的 t0 子集和贪心均位多项式。",
+  "scope": "直接可选束承诺接口，不能先并同 x 的候选束。q=0 不属于正根评分承诺。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/k均匀束与单层配额超图双源审查--审查.md",
+      "sha256": "f168c8cf058a2c347b6b3bb71afab83c0512ed9c76ee5ca8baa0848e38af7d46",
+      "section": "1. 定义域和精确恒等式"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/k均匀束与单层配额超图双源审查--审查.md",
+      "sha256": "f168c8cf058a2c347b6b3bb71afab83c0512ed9c76ee5ca8baa0848e38af7d46",
+      "section": "3. 归约含义：所有层都要控制"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读本边所引承重段并核对原模型、实际构造和条件。直接可选束承诺接口，不能先并同 x 的候选束。q=0 不属于正根评分承诺。",
+  "whole_result": "完整证明固定层多项式区分 b*=1 与 b*≤δ，条件 δ<1/(⌊Kδ⌋+2)。超过该范围没有这条匹配判别保证。",
+  "endpoint_pins": {
+    "M-a0dc6c9aa5f94abf9340cba38081c453": "77d9b6449d852d71633e57eba604c21714b302386c7a1e7eb9d9a55ce0a9aa42",
+    "UM-K-UNIFORM-BUNDLE-FLOOR-v1": "349e0bc09e633036703d168fff8aa9b33a64ea2a4780eb7f7605539c39cbec1b"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/k均匀束与单层配额超图双源审查--审查.md": "f168c8cf058a2c347b6b3bb71afab83c0512ed9c76ee5ca8baa0848e38af7d46"
+  },
+  "review_digest": "b53987748e5af1f1f25ddeb15dcf13a21f39eec73efcbeba515b0b6d7097b8dd"
+}

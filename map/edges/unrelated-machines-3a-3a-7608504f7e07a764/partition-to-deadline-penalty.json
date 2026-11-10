@@ -1,0 +1,46 @@
+{
+  "edge_id": "um-7608504f-partition-to-deadline-penalty",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-e8d9614430ab49fc99125452d10388f1",
+    "M-7499b4fd61604920822feedbce117033"
+  ],
+  "target_ids": [
+    "M-226756a0810448578426f4b04805ec1b"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "源为显式正二进制整数 PARTITION，目标为一台机器从0连续执行全部任务，完成时刻等于 deadline 不罚。非法编码转固定NO。",
+  "roles": {
+    "M-e8d9614430ab49fc99125452d10388f1": "给出已经 NP 完全的精确半总和语言。",
+    "M-7499b4fd61604920822feedbce117033": "全输入 many-one 归约及目标 NP 证书合同。",
+    "M-226756a0810448578426f4b04805ec1b": "推出历史第19个语言的 NP 完全性。"
+  },
+  "explanation": "令 A=∑c_i。A 为奇数映到固定NO，例如一件 T=2、D=1、P=1、预算0。合法空实例若纳入编码，映到一件在 deadline 恰完成的固定YES。其余令 b=A/2，设 T_i=P_i=c_i、D_i=b、预算 b。正时长使准时任务恰为某前缀，其总长 s≤b，罚金 A−s≤b 当且仅当 s=b。反向把半和子集排在前面。加法和构造位长均多项式。一般目标输入可用完整排列作 NP 证书，按顺序算完工时间和罚金。",
+  "scope": "证明第19个语言的一条独立 many-one 入口，保 binary 数值、非抢占和非严格准时条件。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "1. 先固定语言、量词和编码"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "5.5 Subset Sum到单机罚金排序、到Partition"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读本边所引承重段并核对原模型、实际构造和条件。证明第19个语言的一条独立 many-one 入口，保 binary 数值、非抢占和非严格准时条件。",
+  "whole_result": "PARTITION≤p JOB SEQUENCING 且目标∈NP，故原序第19个精确判定语言 NP 完全。",
+  "endpoint_pins": {
+    "M-226756a0810448578426f4b04805ec1b": "fc6702e231b44730998a2496309f688ceeaf7b7f1c334d1bb9128d37af4c1de5",
+    "M-7499b4fd61604920822feedbce117033": "c40152efb4426bf3cd9dc724fb6554b728958c3727efca0fc839e6110e366c41",
+    "M-e8d9614430ab49fc99125452d10388f1": "8235a2ee5b9dcca8eed3e1083fdc0e9d32a10ffc64b264ea13b6c6de967c0ab4"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d"
+  },
+  "review_digest": "0f713df805989c5373f57735bb3ba0828b80fb612231954be376ca477eca0e18"
+}

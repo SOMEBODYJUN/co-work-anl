@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-7608504f-positive-part-to-closed-threshold",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1"
+  ],
+  "target_ids": [
+    "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "单变量私有双满 k 叉深 h 树，每个底层父的 k 个叶 port 共用一台独有单位 terminal。k,h≥1。",
+  "roles": {
+    "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1": "在 T=1+s/k 下给内部正部条件与外部每组单位总容量，充分性可分解为配置。",
+    "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1": "由逐层必要性与对称充分解求闭合族精确阈值，并对照实际原调度。"
+  },
+  "explanation": "正部约束给 ∑out t_e≥(k−s)q_u。沿一轨从根 y 逐层求和，底层总外送≥(k−s)^h y，而该轨 k^{h−1} 个 terminal 总容量为 k^{h−1}。两根 y_0+y_1=1，故 (k−s)^h≤2k^{h−1}。反之取两根1/2，每第 l 层所有 t_e=1/2·((k−s)/k)^l，内部正部式取等，底层每组 k t_h≤1。由源的有理行分解得完整 CONFIG。实际 C<2−1/k 时，含 unit incoming 的每个父须下送至少2件，最终某底层父须在同一单 terminal 送至少2个 unit，矛盾。任意一轨单路径转发、其余父置给上界 2−1/k。k=1 时 mandatory unit 已给下界1、同一路径可行。",
+  "scope": "按完整私有双树与真实 unit terminal，s 在 0..k−1。对 k≥3 首个满足层若允许 s=1，则 s*=1。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+      "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+      "section": "2.1 模型和正部多面体的精确量词"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+      "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+      "section": "2.2 必要性和充分性"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+      "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+      "section": "2.4 闭合两树族的精确配置阈值"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读本边所引承重段并核对原模型、实际构造和条件。按完整私有双树与真实 unit terminal，s 在 0..k−1。对 k≥3 首个满足层若允许 s=1，则 s*=1。",
+  "whole_result": "闭合族 OPT=2−1/k，T_conf=1+min{s:(k−s)^h≤2k^{h−1}}/k。k≥3 且 s=1 可行时精确比为 2−3/(k+1)。",
+  "endpoint_pins": {
+    "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1": "985b3826f15d0ccba2febdd3541df47ad3694cc2bcc2e7943d29c47e8c12b371",
+    "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1": "6978b5892da25852e9db5b26bc44ec4ff01e1aa0735af29644a1bc8489456bd5"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310"
+  },
+  "review_digest": "7265e14745bacf652a7f1882f1f0ef2e08dc0dda6f5f5cdd3c945801af81ca83"
+}

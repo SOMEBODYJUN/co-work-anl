@@ -1,0 +1,50 @@
+{
+  "edge_id": "ca-round36-ties-compatible-with-set-valued-bi",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-HISTORY-TIES"
+  ],
+  "target_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "三人两不交单例A,B，历史AB与BA均剩末位。",
+  "roles": {
+    "CA-HISTORY-TIES": "一个完整有序历史策略在等负载AB与BA可选不同末回复。",
+    "CA-EXACT-PURE-SPE-ALL": "区分精确集合值缓存和给定有序历史策略的回复。"
+  },
+  "explanation": "两历史客户负载都为(1,1)，任查A或B都得1/2。因此它们的可实现终局计数集合均为{(2,1),(1,2)}，集合值递推可共用。给定原σ在AB选择A、在BA选择B，分别选同一个集合中的不同元素。",
+  "scope": "精确示例；集合缓存与完整策略历史域分别保留。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/同负载历史的不同续局--反例.md",
+      "sha256": "27c2186d2b2a53faf451d663d20f7497e363227818996bf156274d225ed711a6"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/三种续局捷径的完整策略精确审计--计算.md",
+      "sha256": "71996e38c00c3e2fef5536fd10d558139fc58f150c41faccffcb24084e0fb32e"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核对给定正文及来源绑定、适用域和量词；复核本边实际推导，保留文中注明的剩余义务。",
+  "contribution": {
+    "result": "精确展示同计数的可实现终局集合相同，而原有序策略无须选同一元素。",
+    "remaining": "该例不替代一般集合递推与完整策略构造的归纳证明；收益非单调亦不能否定福利界。"
+  },
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "CA-HISTORY-TIES": "b94e6e16dd854cf008a4f877d55899beab107ca530468fc98939d0d3ecc81c23"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/同负载历史的不同续局--反例.md": "27c2186d2b2a53faf451d663d20f7497e363227818996bf156274d225ed711a6",
+    "archives/customer-attraction/state/计算/三种续局捷径的完整策略精确审计--计算.md": "71996e38c00c3e2fef5536fd10d558139fc58f150c41faccffcb24084e0fb32e",
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+  },
+  "review_digest": "9bbc040231db11bfab32a292e17c40671d8f621ca1c0ebd0dbd0937786a0b0e8"
+}

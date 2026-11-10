@@ -1,0 +1,46 @@
+{
+  "edge_id": "ca-round36-strict-positive-cone-targets-h4-existence",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-edc25a866cbe4a339d2d9c8fbb99a66c"
+  ],
+  "target_ids": [
+    "M-d59dcfb341744dfbae60018ba3c04c0f"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "若找到一份完整有序策略、精确非负有理客户质量及严格t>0，同时满足全部IC、支持差和排列债务行，且K>m。",
+  "roles": {
+    "M-edc25a866cbe4a339d2d9c8fbb99a66c": "K>m且严格唯一m支持的正间隔，可覆盖重复标签的最优元组并穷尽排列。",
+    "M-d59dcfb341744dfbae60018ba3c04c0f": "要否定的是存在某个真正最优indexed元组及共同排列支付原实际调和债。"
+  },
+  "explanation": "非最优支持以单调性补足至m支持；若最优候选支持是真子集S⊊T，则可删T中一项不在S的标签并补一个T外标签，得到另一m支持仍覆盖S，与严格间隔矛盾。因此每个最优m元组恰含T每标签一次；全部排列的债超过G至少t，否定同一H4存在付款。清分母保持全部符号及顺序IC。",
+  "scope": "完整IC锥的阳性认证接口，K≤m或没有严格正间隔均不使用。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/最优排列调和债的固定策略锥与局部随机探针--程序.md",
+      "sha256": "cf2cd8ffe0df0e034ed414d72196eababf2d840eed28a530cfa70c12ad8cc9df"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/最优排列调和债与归属端点薄化的边界--资料.md",
+      "sha256": "867e798a53abb4755270a3c71ec3dc67993158a2e2349b2e60592e41369dc6c4",
+      "section": "真实query与三个端点账"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核对给定正文及来源绑定、适用域和量词；复核本边实际推导，保留文中注明的剩余义务。",
+  "contribution": {
+    "result": "精确阳性若取得就排尽所有真正最优元组和排列，足以针对H4的存在量词。",
+    "remaining": "该正文未提供精确阳性；浮点t阈值、局部/同题/端点失败和计划LP数均不构成H4反例。"
+  },
+  "endpoint_pins": {
+    "M-d59dcfb341744dfbae60018ba3c04c0f": "30adad8a74884e050417484bbacaa61e936f50a8052dfc2a20e3ac7dd1d6f1e3",
+    "M-edc25a866cbe4a339d2d9c8fbb99a66c": "25d690b153580894946607487284ad68e3246c10d30287ee21c248153040bf43"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/最优排列调和债的固定策略锥与局部随机探针--程序.md": "cf2cd8ffe0df0e034ed414d72196eababf2d840eed28a530cfa70c12ad8cc9df",
+    "archives/customer-attraction/state/资料/最优排列调和债与归属端点薄化的边界--资料.md": "867e798a53abb4755270a3c71ec3dc67993158a2e2349b2e60592e41369dc6c4"
+  },
+  "review_digest": "68e7d0ae7d77a57425e7421a24a3404113b5b403e1646cb34bf8d87c5725409b"
+}

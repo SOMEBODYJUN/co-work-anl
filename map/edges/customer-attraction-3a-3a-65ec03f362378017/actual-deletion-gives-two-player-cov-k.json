@@ -1,0 +1,40 @@
+{
+  "edge_id": "ca-round36-actual-deletion-gives-two-player-cov-k",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-0e21f3944c67468593caf9ea51d51423"
+  ],
+  "target_ids": [
+    "customer-attraction/shared-menu-direct-coverage-objective-and-signed-curvature"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m=2，实际两标签覆盖A,B；X=A∖B、Y=B∖A、Z=A∩B均以客户数计。m=1单列。",
+  "roles": {
+    "M-0e21f3944c67468593caf9ea51d51423": "把同一实际删槽平均负载放进真实K，并以实际末位整主题IC作逐客户价格比较。",
+    "customer-attraction/shared-menu-direct-coverage-objective-and-signed-curvature": "在m≤2的全部原实例中直接为真实K付款。"
+  },
+  "explanation": "取L=(1_A+1_B)/2∈K。根改实际末位标签B至少得(|Y|+|Z|)/2，原根收益|X|+|Z|/2，故|Y|≤2|X|。在L与真实末位前缀A之间，同一主题的逐客价格差在X为+1/6、Y为−1/3、Z及未覆盖为0，故γ(L)≤u_2+|X|/6。T(L)=(|X|+|Y|)/3+|Z|/2，得J_2(L)≤(2|X|+7|Y|)/3+3|Z|/2≤16W/9，末步差为(10|X|−5|Y|)/9+5|Z|/18。m=1时K={0}且J_1=W。",
+  "scope": "任意两人完整纯SPE，包含零覆盖、重复和同覆盖异标签；16/9不主张锋利。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/共享菜单的直接覆盖目标与有符号曲率--候选.md",
+      "sha256": "160ff650e2f6369942372a6161168e44dc6d86c371b9d51892a1bebea07a36ee"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核对给定正文及来源绑定、适用域和量词；复核本边实际推导，保留文中注明的剩余义务。",
+  "contribution": {
+    "result": "真实实际删槽平均点在m=2满足J_2≤16W/9，从而m≤2的COV-K完整成立。",
+    "remaining": "m≥3缺共同付款。此处逐客户精确比较和根改B保底，未以γ鞍点曲率或末位平均利润代替。"
+  },
+  "endpoint_pins": {
+    "M-0e21f3944c67468593caf9ea51d51423": "163885a1c6f00209a84331af08297ec4d482249ebc651da5ddcc3925fd52cd11",
+    "customer-attraction/shared-menu-direct-coverage-objective-and-signed-curvature": "8f347230dc649dfbf61086ace3197123d6626e0df1fcd331156243855a82ee8a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/共享菜单的直接覆盖目标与有符号曲率--候选.md": "160ff650e2f6369942372a6161168e44dc6d86c371b9d51892a1bebea07a36ee"
+  },
+  "review_digest": "42674906f50e3a36dd712be3079055cfffbb93be735c50006a222aea575ff805"
+}

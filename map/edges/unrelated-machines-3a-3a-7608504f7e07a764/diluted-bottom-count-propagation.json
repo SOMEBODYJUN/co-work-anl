@@ -1,0 +1,47 @@
+{
+  "edge_id": "um-7608504f-diluted-bottom-count-propagation",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-DILUTED-SINK-PROBE-GAP-v1"
+  ],
+  "target_ids": [
+    "UM-GLOBAL-ROW-COUNT-FILTER-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "无共享 z 的终端稀释底座，逐轮以当前可用端重算行计数，T 为目标普通 makespan。",
+  "roles": {
+    "UM-DILUTED-SINK-PROBE-GAP-v1": "给树、每终端组 N 个 unit 位置与 N−1 件组内 blocker，以及实际峰 2−1/k 的路径调度。",
+    "UM-GLOBAL-ROW-COUNT-FILTER-v1": "使用查询行真实卸载权和其它机器的行件数上限。"
+  },
+  "explanation": "T<1 时桥没有保留端。1≤T<2−1/k 时每台终端的当前行数上限至多1。查询底层父的 unit incoming，N−1 个不可离组 blockers 必占终端组的 N−1 个计数槽，最多还能卸掉一件普通 port，查询行保留负载至少 1+(k−1)/k>T，因此其 incoming 边删除。上一层父的所有子端此后均不可用。固定该父 incoming 必保全部 k 个小件，负载2，于是再删上一层 incoming。迭代至根桥无端。同步或较早触发的其它删除都不会增大任何可卸范围。T≥2−1/k 时真实路径最优调度的全部边由通用安全性保持。对比原底座 T=1+1/k 的普通逐边 LST 和重备选星匹配首轮零删。",
+  "scope": "给无共享逃逸端底座的准确阈值判定，利用其它机器计数加查询行真实负载的同步账本。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md",
+      "sha256": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+      "section": "6. 终端容量稀释族"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/全局行基数过滤与多外层单态小home双源审查--审查.md",
+      "sha256": "72061471b5bce8d44abbdcb885d7d68986959c1bac382405081f398ceb06cbbb",
+      "section": "1. 精确过滤合同"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读本边所引承重段并核对原模型、实际构造和条件。给无共享逃逸端底座的准确阈值判定，利用其它机器计数加查询行真实负载的同步账本。",
+  "contribution": {
+    "result": "在无 z 稀释底座上，全局行数过滤拒绝当且仅当 T<OPT，虽普通逐边 LST/重备选星在较低阈值可同时通过。",
+    "remaining": "任意输入上仍只承诺安全性，不得推广到有共享 z 的变体或独立紧凑逃逸族。"
+  },
+  "endpoint_pins": {
+    "UM-DILUTED-SINK-PROBE-GAP-v1": "3b46fbddf6453cea5421830810c7293e86b7dad8b3997908692b634bea37b88c",
+    "UM-GLOBAL-ROW-COUNT-FILTER-v1": "a7de9db52f69b6401fadc34720887657b2cd8c79015f0a50723e2c00f6fd4001"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+    "archives/unrelated-machines/state/审查/全局行基数过滤与多外层单态小home双源审查--审查.md": "72061471b5bce8d44abbdcb885d7d68986959c1bac382405081f398ceb06cbbb"
+  },
+  "review_digest": "5d7c2898128c4769ff1e4a39bf68df17129b06997f6f3fef0524ac595aacfecb"
+}

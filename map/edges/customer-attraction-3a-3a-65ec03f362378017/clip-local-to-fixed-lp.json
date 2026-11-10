@@ -1,0 +1,46 @@
+{
+  "edge_id": "ca-round36-clip-local-to-fixed-lp",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-8118ec4080264955bbda39b072df36a2"
+  ],
+  "target_ids": [
+    "M-3032465a242048e18a66a92c549bbc37"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定有限完整纯SPE σ及有序最优T。采用full-profit v_g，实际前缀重置行、原正边容量及严格后续层均为同一输入。",
+  "roles": {
+    "M-8118ec4080264955bbda39b072df36a2": "同一真实重置行最大标量取消，给剩余正边及当前净终结金额。",
+    "M-3032465a242048e18a66a92c549bbc37": "在全O首归属固定图中把同一行按throughput归一，得到可行性和线性约束。"
+  },
+  "explanation": "写D_g为重置收益，e=u_i−D_g≥0，v_g−D_g=P_g−N_g。最大取消 min(P_g,N_g+e) 后，剩余正价总额是(v_g−u_i)_+，当前净终结min(v_g,u_i)。把每项乘 h_g/v_g 得 δ_g h_g 与 α_g h_g，且可选择f_{g,t}≤h_g P_{g,t}/v_g。节点守恒沿深度递增DAG可拓扑实现；所有past边只终结，零输入不需归一。",
+  "scope": "固定图LP的局部构造和有限合法流，不含统一角色钱包。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/固定最优槽首归属的剪枝角色容量--候选.md",
+      "sha256": "d80911e88ff051009b2c476b04237e0d4fdaad4d116cb5d49cde55d2bfb09fb6"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/同节点安全净券与最大标量剪枝--定理.md",
+      "sha256": "10f9a70752e2b014434ffc0cff2c3bfe10ab5a45724e088bbb76cac073158892",
+      "section": "最大标量取消与重新计算"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核对给定正文及来源绑定、适用域和量词；复核本边实际推导，保留文中注明的剩余义务。",
+  "contribution": {
+    "result": "同一最大CLIP给固定图的各节点精确子边约束；由DAG和局部子容量得到一份合法流。",
+    "remaining": "全图角色cap2需同时控制s、局部吸收及past终点；删边相对于gross支配和局部可行均不提供该总容量。"
+  },
+  "endpoint_pins": {
+    "M-3032465a242048e18a66a92c549bbc37": "db62a6502293c9965ff95575540783a7005c9c4edab317ab083ea85f740ea66b",
+    "M-8118ec4080264955bbda39b072df36a2": "455cbcbb313e40e45071a60023643448b5860febe0232f120fbdbc19215d399e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/固定最优槽首归属的剪枝角色容量--候选.md": "d80911e88ff051009b2c476b04237e0d4fdaad4d116cb5d49cde55d2bfb09fb6",
+    "archives/customer-attraction/state/定理/同节点安全净券与最大标量剪枝--定理.md": "10f9a70752e2b014434ffc0cff2c3bfe10ab5a45724e088bbb76cac073158892"
+  },
+  "review_digest": "202bb132ba7679ada1e7d74292a4041535712deb665048cd29cbea31a6ef8010"
+}

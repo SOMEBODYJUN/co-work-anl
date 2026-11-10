@@ -1,0 +1,57 @@
+{
+  "edge_id": "um-7608504f-santa-profiles-to-physical-rank",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SC-BLOCK-TYPE-PROFILE-RECONSTRUCTION-v1"
+  ],
+  "target_ids": [
+    "UM-NORMALIZED-TYPE-MATCHING-RANK-VALUE-IDENTITY-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定有理 ε>0、γ=1/(1+ε)。显式Santa输入的正类型菜单，资源可闲置。每玩家至少一个 profile 时使用正规 rank 编译。",
+  "roles": {
+    "UM-SC-BLOCK-TYPE-PROFILE-RECONSTRUCTION-v1": "从任意真实阈值一束保留实际子集和原资源身份，显式生成多项式菜单。",
+    "UM-NORMALIZED-TYPE-MATCHING-RANK-VALUE-IDENTITY-v1": "每个保留的计数 profile 变成实际私机和全部原 token，资源使用由原类型资格决定。"
+  },
+  "explanation": "对每个保留 profile c，W(c)=∑_v v c(v)≥γ，令每型 c(v) 枚 token 在私端耗 v/W(c)，在任何同型原资源机耗1，另加每玩家一个只可去其私机的单位 selector。给定 disjoint B_i 和所选 c，每型最多可外送 min(c(v),N_iv(B_i)) 枚，所得 actual 归一化收益 f_ic。反向 C<2 时每台原资源机至多收一枚 unit，选中私机外送集合给 f_ic≥2−C。所有未选 token 留私端，C=2 的全私端基线覆盖零值。YES 时压缩保留的实际不交 A_i′ 每型足数，故 V=1、原矩阵 OPT=1。任意归一化收益 b 的见证，每组仅取匹配使用的原资源，其原价值至少舍入值 W(c)b≥γ b，故 V≤OPT_SC/γ。n=0 或空菜单时没有阈值一 YES，可为该分支给固定峰2的普通矩阵。",
+  "scope": "源值/承诺只限单阈值Santa的实际 profile 编译，原资源不克隆，不删未选 profile 的任务。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/类型压缩与仿射并行线双源审查--审查.md",
+      "sha256": "1be743b04d1c34025a703c09b80813d38dfa90dd845e9c13123f2f68ad34277a",
+      "section": "2.1 Exact A 的定义域、量词与压缩结论"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/类型压缩与仿射并行线双源审查--审查.md",
+      "sha256": "1be743b04d1c34025a703c09b80813d38dfa90dd845e9c13123f2f68ad34277a",
+      "section": "2.3 Exact B：归一化 type matching 的真实值恒等式"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/类型压缩与仿射并行线双源审查--审查.md",
+      "sha256": "1be743b04d1c34025a703c09b80813d38dfa90dd845e9c13123f2f68ad34277a",
+      "section": "2.4 非次模和接续限制"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/归一化类型匹配编译的全任务有限核验--资源.md",
+      "sha256": "9bd16e330e4c9ed1e9a65de5e8841ce6c764fdc633807a27d2aa8a479edb815a",
+      "section": "全量jobs的真实UM编译与双向证明"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读本边所引承重段并核对原模型、实际构造和条件。源值/承诺只限单阈值Santa的实际 profile 编译，原资源不克隆，不删未选 profile 的任务。",
+  "contribution": {
+    "result": "对实际生成的菜单完成真实 rank-to-UM 编译及双向解码，得到 YES OPT_UM=1 和普遍下界 OPT_UM≥2−OPT_SC/γ（空菜单固定峰2分支同样满足）。",
+    "remaining": "一般任意输入 indexed type 菜单由目标对象的原量词处理。这里没有全局不交 profile 选择算法，也未给出一个足够强的 Santa 来源 gap。"
+  },
+  "endpoint_pins": {
+    "UM-NORMALIZED-TYPE-MATCHING-RANK-VALUE-IDENTITY-v1": "e10686a02bd876a2be1a5b3819e72cf06e63cf94f12cc3d97d4ef693ea50f09a",
+    "UM-SC-BLOCK-TYPE-PROFILE-RECONSTRUCTION-v1": "36e3ec3300ab1a01bb1814a2f3000237fba0e9064228454495e8c5d7de0b4c07"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/类型压缩与仿射并行线双源审查--审查.md": "1be743b04d1c34025a703c09b80813d38dfa90dd845e9c13123f2f68ad34277a",
+    "archives/unrelated-machines/state/资源/归一化类型匹配编译的全任务有限核验--资源.md": "9bd16e330e4c9ed1e9a65de5e8841ce6c764fdc633807a27d2aa8a479edb815a"
+  },
+  "review_digest": "d46e10b977c76f6709f3b52df83c7d9197f7410b7ade3bbba6eec6d666434b3c"
+}

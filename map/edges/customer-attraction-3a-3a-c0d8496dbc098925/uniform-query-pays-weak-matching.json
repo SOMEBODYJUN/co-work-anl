@@ -1,0 +1,42 @@
+{
+  "edge_id": "ca-r36-uniform-query-pays-weak-matching",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-007d7464674841459cb297635fa75f73"
+  ],
+  "target_ids": [
+    "customer-attraction/true-optimal-portfolio-net-gap-joint-payment"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一完整原策略与同一个真正最优带索引m槽T；重复槽保持排列重数。",
+  "roles": {
+    "M-007d7464674841459cb297635fa75f73": "给同一T的真实排列平均B̄≥Q−E。",
+    "customer-attraction/true-optimal-portfolio-net-gap-joint-payment": "目标存在某个最优T及其排列，支付OPT−W。"
+  },
+  "explanation": "由真实actual前缀定义，M_ij就是目标的V_ij；所有索引排列中每个槽j落在行i的比例为1/m。故最大排列和≥B̄。又Q−E=(OPT−W)+Σ_(O\\C)(d−1)+Σ_(O∩C)d/(1+c)≥OPT−W。目标正文的signed Q_i是冻结减真实的差，与本边的客户Q(T)不同；本论证不需要把其各行差取正。",
+  "scope": "较强开放候选若成立则推出较弱存在匹配。方向不能倒转；既有有限阴性或冻结反例不付这个全称前件。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/实际前缀净匹配探针与均匀分配报告--程序.md",
+      "sha256": "8106d84b72b1182ca79e8278938cfabca5690ca7190dcfc9f852b413b53d80b4"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/真实最优组合的净差匹配与共同付款--候选.md",
+      "sha256": "fe06ff84ca5e70c8e7d59d25be85103c191d3a510980dd9f08c453ba04b6ea80"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "Boss1任务包按当前登记与逐式实读核对真实历史、作用范围、联合前提及目标量词。",
+  "whole_result": "若对每份原完整SPE存在最优T满足B̄(T)≥Q(T)−E(T)，则对每份原完整SPE存在最优T及索引排列π使Σ_iV_(i,π(i))≥OPT_m−W。",
+  "endpoint_pins": {
+    "M-007d7464674841459cb297635fa75f73": "9b6ef362dbf309ea20bbee9116ea3c0ae58819bcc9b8cf25f405a8147a613522",
+    "customer-attraction/true-optimal-portfolio-net-gap-joint-payment": "fd9a93a4ba2f5a8702bdcc764cb2fe6ebb1ef8beecce2b0be5d6073a7cd62b84"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/实际前缀净匹配探针与均匀分配报告--程序.md": "8106d84b72b1182ca79e8278938cfabca5690ca7190dcfc9f852b413b53d80b4",
+    "archives/customer-attraction/state/候选/真实最优组合的净差匹配与共同付款--候选.md": "fe06ff84ca5e70c8e7d59d25be85103c191d3a510980dd9f08c453ba04b6ea80"
+  },
+  "review_digest": "1e1d2d02e0b473fe72f02598fb64a4300283eaa0d7e8010e199128cc446e441e"
+}

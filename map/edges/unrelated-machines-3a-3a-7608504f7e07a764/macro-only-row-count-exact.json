@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-7608504f-macro-only-row-count-exact",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SHARED-SINK-MACRO-EXIT-v1"
+  ],
+  "target_ids": [
+    "UM-GLOBAL-ROW-COUNT-FILTER-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "单一共享 sink z，只有显式宏任务、没有私有小组。每条保留 home 端处理时间严格大于 T/2。阈值剪枝先去 >T 的端。",
+  "roles": {
+    "UM-SHARED-SINK-MACRO-EXIT-v1": "在空私有组特例中，把 home 容量一与所有真实 sink 退出成本一起精确最小化。",
+    "UM-GLOBAL-ROW-COUNT-FILTER-v1": "同一个退出成本在条件化 sink 查询中可由最大真实卸载权精确表达。"
+  },
+  "explanation": "查询 j→z 时其他机器全为 homes，各自计数上限至多1。不可去 z 的任务必须由二分匹配接走，可去 z 的任务每移出一件节约其真实 p_za。故 p_zj+∑p_za−W 恰为固定 j→z 下可能的最小实际 sink 负载，无覆盖等价该条件无可行 home 分配。如果实例不可行，每条 sink 边在一轮内失败。删除后只余 home，查询固定一件于 home 时因任何第二件使峰>T，恰需在其它 homes 的单位匹配覆盖所有剩余任务，因此无完整 home 匹配时所有这些查询也失败。若实例可行，则其全部边仍由通用安全性保留。",
+  "scope": "只含宏任务的单 sink 子类。包括 b>h 的真实退出情况，不为不同 exit 位置重复给予容量。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/私有组退出池共同宏任务与有界profile联合选择最终审查--审查.md",
+      "sha256": "d290afc529015c1d9cae422a705cb76e22aee2d6096be6f85e4392d3dd5353f9",
+      "section": "1. §8 宏任务退出与共同 home/exit 匹配"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/私有组退出池共同宏任务与有界profile联合选择最终审查--审查.md",
+      "sha256": "d290afc529015c1d9cae422a705cb76e22aee2d6096be6f85e4392d3dd5353f9",
+      "section": "1.2 从真实 T 调度得到全局见证"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/全局行基数过滤与多外层单态小home双源审查--审查.md",
+      "sha256": "72061471b5bce8d44abbdcb885d7d68986959c1bac382405081f398ceb06cbbb",
+      "section": "1. 精确过滤合同"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读本边所引承重段并核对原模型、实际构造和条件。只含宏任务的单 sink 子类。包括 b>h 的真实退出情况，不为不同 exit 位置重复给予容量。",
+  "contribution": {
+    "result": "空私有组时，全局行数过滤在至多两轮后准确区分 T 可行性，sink 查询等价于固定该宏退出的实际最小成本匹配。",
+    "remaining": "有私有组时其它 home 的行基数不能表达模式依赖的私有 cover，仍需目标宏算法的共同完美匹配、真实回填和近似预算。"
+  },
+  "endpoint_pins": {
+    "UM-GLOBAL-ROW-COUNT-FILTER-v1": "a7de9db52f69b6401fadc34720887657b2cd8c79015f0a50723e2c00f6fd4001",
+    "UM-SHARED-SINK-MACRO-EXIT-v1": "b7cd33c2c9444a9415dc59b7d0f4514799de14061e0cb792aa6a003224dc7c12"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/私有组退出池共同宏任务与有界profile联合选择最终审查--审查.md": "d290afc529015c1d9cae422a705cb76e22aee2d6096be6f85e4392d3dd5353f9",
+    "archives/unrelated-machines/state/审查/全局行基数过滤与多外层单态小home双源审查--审查.md": "72061471b5bce8d44abbdcb885d7d68986959c1bac382405081f398ceb06cbbb"
+  },
+  "review_digest": "5697436013c5e225631c0e0481d1a40281e3f0f8dc53bc19cd49583e2fca5b6e"
+}

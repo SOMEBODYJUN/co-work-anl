@@ -1,0 +1,60 @@
+{
+  "edge_id": "um-7608504f-two-vector-barriers",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1",
+    "UM-PROJECTED-VECTOR-GREEDY-UNBOUNDED-v1"
+  ],
+  "target_ids": [
+    "UM-VECTOR-GREEDY-FIXED-ORDER-EVENT-CHAIN-TWO-SOURCE-REVIEW-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "两源均用真实支撑最优分布及固定投影空间，但各保自己的矩阶、原处理矩阵、顺序及有限证据范围。",
+  "roles": {
+    "UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1": "固定任意 r、每个顺序均坏的有限域源，按真实 OPT 计算线性缺口。",
+    "UM-PROJECTED-VECTOR-GREEDY-UNBOUNDED-v1": "固定一阶空间、某个明确顺序的三机严格正实例及有限事件复制。",
+    "UM-VECTOR-GREEDY-FIXED-ORDER-EVENT-CHAIN-TWO-SOURCE-REVIEW-v1": "联合审读的两个数学子结论及其量词差。"
+  },
+  "explanation": "首一 d=2r+1 次多项式的求值给 d 重独立，合并两个机器标签后边际为 2/q 对 1/q。正交分块使每步评分 p||u||²+p²||v||² 随 p 严增，故任何顺序全部普通任务选机0，anchor 保证真实 OPT=4r+2。事件链则在 V=span{1,原一阶指标} 中利用两分支评分差 E[(2e−1)ψ²] 和谱持续性，在保持正内积下有限次复制每事件。三机全正提升使 OPT=1，但指定顺序实际负载>k−1/2。两条构造的支持均为真实可行原调度。不能交换其“任意阶/任意顺序”和“三机/某顺序”的量词。",
+  "scope": "仅否定这两个压缩乘法提取规则的相应近似合同，真实条件化和可交换边界不受推翻。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/反例/固定阶压缩乘法向量贪心真实最优源--反例.md",
+      "sha256": "feb4be017b33128301230530112d82642529634e7518726b976fccaf104fe783"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/Partial-sum与投影向量贪心两源精读--审查.md",
+      "sha256": "90df1dfe3901429578e77fa751b36b39e18075e349af474e43cff53252aa6050",
+      "section": "2. Projected-vector greedy 无界障碍"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/固定阶与事件链向量贪心双源审查--审查.md",
+      "sha256": "00b1f64341c75caa463ec421bcaa1e96abeb7212daef9535daf93c5bfdf8975f",
+      "section": "源一：任意固定阶的真实最优矩贪心"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/固定阶与事件链向量贪心双源审查--审查.md",
+      "sha256": "00b1f64341c75caa463ec421bcaa1e96abeb7212daef9535daf93c5bfdf8975f",
+      "section": "源二：事件链净化、无界重复与单位碰撞"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读本边所引承重段并核对原模型、实际构造和条件。仅否定这两个压缩乘法提取规则的相应近似合同，真实条件化和可交换边界不受推翻。",
+  "contribution": {
+    "result": "给双源审查的两条不同无界证明、真实矩条件和顺序量词对照。",
+    "remaining": "独立五机单位碰撞及其调序范围由源二 fixture 单独支持，不由三机提升或固定阶有限域例推出。"
+  },
+  "endpoint_pins": {
+    "UM-PROJECTED-VECTOR-GREEDY-UNBOUNDED-v1": "2bc17031478004bdd22a331f72fed1f32cc4cea6f494739c7cf899f2b6ac6ab7",
+    "UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1": "3c26d9092f84f8b36ae1d6912bea7d65813f70e8124c2865e21bbf570ac3c50c",
+    "UM-VECTOR-GREEDY-FIXED-ORDER-EVENT-CHAIN-TWO-SOURCE-REVIEW-v1": "a3c9197128b3fc37e338fe8ab60fd5950267683ce882e9fa7fa5283136ebe093"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/反例/固定阶压缩乘法向量贪心真实最优源--反例.md": "feb4be017b33128301230530112d82642529634e7518726b976fccaf104fe783",
+    "archives/unrelated-machines/state/审查/Partial-sum与投影向量贪心两源精读--审查.md": "90df1dfe3901429578e77fa751b36b39e18075e349af474e43cff53252aa6050",
+    "archives/unrelated-machines/state/审查/固定阶与事件链向量贪心双源审查--审查.md": "00b1f64341c75caa463ec421bcaa1e96abeb7212daef9535daf93c5bfdf8975f"
+  },
+  "review_digest": "327b531cacf18459ae0d23efe34f7ee1545476b36c366f669578e81aa1d9d66c"
+}

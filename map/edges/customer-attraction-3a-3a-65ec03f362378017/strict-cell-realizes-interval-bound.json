@@ -1,0 +1,43 @@
+{
+  "edge_id": "ca-round36-strict-cell-realizes-interval-bound",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "B7-INTERVAL-CEILING-RELAXATION-v1"
+  ],
+  "target_ids": [
+    "customer-attraction/interval-linear-cells-original-program-and-float-report-contract"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定有限目录、人数及同一组客户坐标与状态选择。所有min/max及保留行动允许弱平局，排除行动须严格high<floor。",
+  "roles": {
+    "B7-INTERVAL-CEILING-RELAXATION-v1": "给真实H_I、eligible与累计G_I的精确递推，并保证全SPE包含。",
+    "customer-attraction/interval-linear-cells-original-program-and-float-report-contract": "固定选择的严格单元上重建真实H_I及线性根目标。"
+  },
+  "explanation": "从终局起每个客户类型的收益系数固定。若孩子集合与极值都已还原，冻结floor列的弱达成不等式使其等于max；逐行动保留或严格排除恰重建真实E；再沿该E的极值/最小G达成行得同一父H_I与线性G。若排除行只有等号，真实E必须加回该行动，不能沿旧冻结表达式认证。",
+  "scope": "所有满足精确单元约束的非负质量，包括任意有理客户点统一缩放；真实全SPE保底由HI定理另外给出。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/区间线性单元搜索的程序与浮点报告合同--资源.md",
+      "sha256": "b63ebf8ab9cc7e6b59745ef9820a2c44f816dcad0f4bb244b5f9b10c3ee78d36",
+      "section": "准确HI、冻结线性选择与LP"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/区间终局剪枝的上界比较与全效率目录类--定理.md",
+      "sha256": "398ae2b6a7151c5f4a182fb7072939792b25e7e84f22f85d91fdf0d1e2501d16"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核对给定正文及来源绑定、适用域和量词；复核本边实际推导，保留文中注明的剩余义务。",
+  "whole_result": "在指定严格线性单元内，冻结选择确切实现H_I的保留终局、坐标递推及线性根G_I。",
+  "endpoint_pins": {
+    "B7-INTERVAL-CEILING-RELAXATION-v1": "d87d3cf7b49d86d3ee96477eceb08465a6ca216e74d1f8a6c1bf20258ea1a1bf",
+    "customer-attraction/interval-linear-cells-original-program-and-float-report-contract": "0375a6025431f58c979d46c7c45241d4e4de20770263a3c2195a544bda75f309"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/区间线性单元搜索的程序与浮点报告合同--资源.md": "b63ebf8ab9cc7e6b59745ef9820a2c44f816dcad0f4bb244b5f9b10c3ee78d36",
+    "archives/customer-attraction/state/定理/区间终局剪枝的上界比较与全效率目录类--定理.md": "398ae2b6a7151c5f4a182fb7072939792b25e7e84f22f85d91fdf0d1e2501d16"
+  },
+  "review_digest": "8714c3118f1207a4733c2ee9fc894f87058098a9522422438122729638dcabc3"
+}

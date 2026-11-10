@@ -1,0 +1,45 @@
+{
+  "edge_id": "ca-round36-bank-family-root-half-safety",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/cartesian-bank-individual-fractional-floor-counterfamily"
+  ],
+  "target_ids": [
+    "M-1f3f8c7dedc245938509d07af7b2ec05"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "以所登记笛卡尔银行反族的同一实例和完整控制器为前提，任意m≥2。当前源pin标finite；本关系只推导该控制器输入下的局部根半安全。",
+  "roles": {
+    "customer-attraction/cartesian-bank-individual-fractional-floor-counterfamily": "保全部有序历史的笛卡尔银行策略，并给m−1槽固定对手的上界。",
+    "M-1f3f8c7dedc245938509d07af7b2ec05": "真正静态整数槽安全值的一半根收益。"
+  },
+  "explanation": "选m−1个竞争主题，使银行坐标各一次、经济坐标不重复。这份对手不观察查询，任何主题银行部分恰得1、经济部分至多1，故v_m≤2。控制器给u_1=1+1/(m−1)≥1，从而本族严格满足u_1≥v_m/2，尽管m≥5时u_1<OPT_m/(2m)。",
+  "scope": "仅该银行族及指定完整策略，区别其精确自由分数背景值。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/笛卡尔银行目录的逐人分数门槛反族--反例.md",
+      "sha256": "46c7a8df14fb3dd858e4fc827e2de7f000966d49ac4cd9ef7bb2b05777957a80"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/固定完整策略全历史地板的强安全付款候选--候选.md",
+      "sha256": "ed26152462b998785ba42e70272bd0aa04ab38911574e03f1c512d6841341eae"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核对给定正文及来源绑定、适用域和量词；复核本边实际推导，保留文中注明的剩余义务。",
+  "contribution": {
+    "result": "在否定较强DIRECT的同一全参数真SPE族上验证较弱根半安全值。",
+    "remaining": "其它共同目录中的根半安全值仍需真实后继与静态安全的比较，或同一精确弱式反例。"
+  },
+  "endpoint_pins": {
+    "M-1f3f8c7dedc245938509d07af7b2ec05": "e5e90c0114cab8741d02244c8d8b392c9471fe08ec8d445b7adfa7892bbd0d19",
+    "customer-attraction/cartesian-bank-individual-fractional-floor-counterfamily": "5793c5af5870d521dab05af319ab471892e8ac837820b65dbb796c1879aaca0c"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/笛卡尔银行目录的逐人分数门槛反族--反例.md": "46c7a8df14fb3dd858e4fc827e2de7f000966d49ac4cd9ef7bb2b05777957a80",
+    "archives/customer-attraction/state/候选/固定完整策略全历史地板的强安全付款候选--候选.md": "ed26152462b998785ba42e70272bd0aa04ab38911574e03f1c512d6841341eae"
+  },
+  "review_digest": "89f19e6f5fe7f3ed4a11608217f1e61d1e30a33824bf5119a538902618e9ed65"
+}

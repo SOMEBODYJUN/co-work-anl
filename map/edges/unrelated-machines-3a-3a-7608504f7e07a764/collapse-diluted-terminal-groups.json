@@ -1,0 +1,55 @@
+{
+  "edge_id": "um-7608504f-collapse-diluted-terminal-groups",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+    "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1"
+  ],
+  "target_ids": [
+    "UM-DILUTED-SINK-PROBE-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "无共享 z 的完整终端稀释矩阵，k≥4、每组 N=k(k−1) 台专用 unit，N−1 枚全组 eligible unit blockers。每枚普通 port 的实际外端仍为其指定独有终端。",
+  "roles": {
+    "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1": "共同边际足以描述私有双树内行，外部每组容量1。",
+    "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1": "给对应单终端闭合族在全部阈值上的精确 CONFIG 和整数峰值。",
+    "UM-DILUTED-SINK-PROBE-GAP-v1": "将终端变换回含全部 blocker 及原 port 资格的稀释矩阵。"
+  },
+  "explanation": "任意 1≤T<2 每台终端最多一个 unit，blockers 合计边际 N−1，故每组普通 port 质量 ∑t≤1，投影为闭合族单 terminal 的配置行。反向给该单 terminal 的空/单件分布。若选普通 port，放在其真实指定终端，并把 N−1 个 blockers 均匀置入其他终端。若空则取 N 台中均匀空一台、再置 blockers。无需枚举全排列：对选定端或空端，在排序后的 N−1 台机上作所有循环平移即可生成相同有理边际。每组行 law 合法，blocker 覆盖恰1，树行不动。整数恢复同样只选一个端并置入全部 blockers，真实峰不增。α_h=(k/(k−1))^{h−1}/(k−1)≥1/2 等价 (k−1)^h≤2k^{h−1}，k≥4 排除 s=0。因此稀释 T_conf 精确为 1+1/k，实际 OPT=2−1/k。另在 C≥OPT 每条边独立有最优路径见证：固定桥端选对应树，固定内边下传或普通终端边选经该边的路径，固定内/普通任务父端则桥走另一树。固定 blocker 端时也让路径走另一树并任选该组互异终端给 blockers。各见证相互独立。",
+  "scope": "只在不带共享 z 的稀释底座，投影保外部总质量和实际任务，普通 LST 的分数单位共享不随之保持。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+      "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+      "section": "2.1 模型和正部多面体的精确量词"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md",
+      "sha256": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+      "section": "2.4 闭合两树族的精确配置阈值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md",
+      "sha256": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0",
+      "section": "6. 终端容量稀释族"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读本边所引承重段并核对原模型、实际构造和条件。只在不带共享 z 的稀释底座，投影保外部总质量和实际任务，普通 LST 的分数单位共享不随之保持。",
+  "contribution": {
+    "result": "把稀释矩阵的普通 CONFIG 与闭合矩阵精确双向对应，给精确 T_conf、OPT 及达到 OPT 时的逐边独立原调度见证。",
+    "remaining": "低阈值 T=1+1/k 的每条边普通剪枝 LST 强制点和重备选星匹配需另行原矩阵证书。它们不会由终端投影自动生成。"
+  },
+  "endpoint_pins": {
+    "UM-DILUTED-SINK-PROBE-GAP-v1": "3b46fbddf6453cea5421830810c7293e86b7dad8b3997908692b634bea37b88c",
+    "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1": "985b3826f15d0ccba2febdd3541df47ad3694cc2bcc2e7943d29c47e8c12b371",
+    "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1": "6978b5892da25852e9db5b26bc44ec4ff01e1aa0735af29644a1bc8489456bd5"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/单位读出配置阈值与叶流选择双源增量审查--审查.md": "147c1922b5d8ca53e4dc87a1f82844e500638d6ae097f2d64439f5719dcf9310",
+    "archives/unrelated-machines/state/审查/稀释共享终端rawK2与终端探针共同间隙双源审查--审查.md": "62c4dc6b48e964d234496505cc5144c20c93d37f01320e4edd71e0295ac094c0"
+  },
+  "review_digest": "5a8e61554d34cdc36fbee60cdaae770c6019dae0b392a37858b72e27ed193ddb"
+}

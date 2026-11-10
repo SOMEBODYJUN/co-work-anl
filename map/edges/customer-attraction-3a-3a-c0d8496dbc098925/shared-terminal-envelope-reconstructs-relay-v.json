@@ -1,0 +1,51 @@
+{
+  "edge_id": "ca-r36-shared-terminal-envelope-reconstructs-relay-v",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "cag-shared-incidence-terminal-menu-upper-envelopes"
+  ],
+  "target_ids": [
+    "B5-EARLY-MENU-LOAD-DEFECT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定B5真实当前及中继菜单，所有R_T均为相应历史(h,T,M_T)上的真实末位BR。同一有限主题目录；先取任意非负整数索引重数。",
+  "roles": {
+    "cag-shared-incidence-terminal-menu-upper-envelopes": "给同一组真实末节点对全菜单的对角/去对角非负式，以及共享配对的必要上包络。",
+    "B5-EARLY-MENU-LOAD-DEFECT-v1": "需要保留B5的真实V而非参考背景V_0。"
+  },
+  "explanation": "给各T复制z_T个索引。源h_i=(h,T_i,M_Ti)，F_i=R_Ti；唯一目标菜单Z_i=R_Ti，所以对角差为0，去对角和为Σ_(T,Q)z_T z_Q[U_(d+Δ_T)(R_T,T)−U_(d+Δ_T)(R_Q,T)]=V。重复同标签索引产生的差为0。每客户d_i=1/(d_x+Δ_T(x)+1+1_T(x))恰保真实物理前缀。齐次二次缩放扩到非负有理z，连续性扩到全部实z≥0。若进一步投影，使用同一锚点保持配对只能给上包络的必要方向。",
+  "scope": "解释任意真实中继菜单的末位项V≥0；不冻结l_T，不把另枝中继移作单主题偏离。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/真实早期菜单的中继负载缺陷与价格转移--引理.md",
+      "sha256": "584ba3a699e4d44c0489286ca2961e1a7d40a137b1765a8eccdebcb5030a3440"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/早期真实菜单负载缺陷引理独立审查--审查.md",
+      "sha256": "cd1c9bb3710f93227dd2b85caecaa5024b5505e7ff191f66b86087807b4c587c"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/真实末位菜单的共同归属上包络--定理.md",
+      "sha256": "109e0c12782880a26b14f3d6246c329f003ed60770dbe5d8441322a6591fa878",
+      "section": "同一配对服务所有菜单行"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "Boss1任务包按当前登记与逐式实读核对真实历史、作用范围、联合前提及目标量词。",
+  "contribution": {
+    "result": "末位共同归属的去对角真实行用索引复制和连续性给B5整项V≥0，物理分母为d+Δ_T。",
+    "remaining": "当前IC S、实际末节点Z、G_0=G−τε和δ价格/整体支付仍各有独立数学条件。"
+  },
+  "endpoint_pins": {
+    "B5-EARLY-MENU-LOAD-DEFECT-v1": "04ca37efea3ef4943bb3d848795bae169cc1deedfec694460ee3ee68f77ea050",
+    "cag-shared-incidence-terminal-menu-upper-envelopes": "aa74782fcb4805c5be2702e87e4407b742d73484f132f6a6abac51d7ec2dae63"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/真实早期菜单的中继负载缺陷与价格转移--引理.md": "584ba3a699e4d44c0489286ca2961e1a7d40a137b1765a8eccdebcb5030a3440",
+    "archives/customer-attraction/state/审查/早期真实菜单负载缺陷引理独立审查--审查.md": "cd1c9bb3710f93227dd2b85caecaa5024b5505e7ff191f66b86087807b4c587c",
+    "archives/customer-attraction/state/定理/真实末位菜单的共同归属上包络--定理.md": "109e0c12782880a26b14f3d6246c329f003ed60770dbe5d8441322a6591fa878"
+  },
+  "review_digest": "0a118d8e3200b7fcac3893114b9e562f8b49dde79fb370ed5b136dc323eb38de"
+}

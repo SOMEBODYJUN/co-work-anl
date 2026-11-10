@@ -1,0 +1,46 @@
+{
+  "edge_id": "ca-r36-six-client-strict-credit-boundary",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/potential-maximizing-first-action-strict-selected-tail-credit-example"
+  ],
+  "target_ids": [
+    "customer-attraction/five-provider-selected-maxpair-credit-early-payment-candidate"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "五位提供者、两不交主题A(5客户)、B(1客户)，给定完整原策略。此处六指客户数。",
+  "roles": {
+    "customer-attraction/potential-maximizing-first-action-strict-selected-tail-credit-example": "提供真实末回复与选择信用严格分离的完整见证。",
+    "customer-attraction/five-provider-selected-maxpair-credit-early-payment-candidate": "其正确比较对象是精确MAXPAIR-CREDIT左、右端以及较强ONE-GAP。"
+  },
+  "explanation": "全零历史前四A末B，已出现B则以后A。真实尾部AAA后的A→B、B→A都达势最大；δ_A=5/4、δ_B=1，Γ=0、K_sel=1/4。P=15/4、v5=1，故P+K_sel=4>3，P+Γ=15/4>3。严格失败的是普遍等式K_sel=Γ及Γ=0推出K_sel=0；MAXPAIR-CREDIT和ONE-GAP在该完整例均满足。",
+  "scope": "保存严格局部分离、税上界可取等及全树证据，不把它标为候选反例。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/五人最大势末对选择信用的早期付款--候选.md",
+      "sha256": "c241681f352691dcab62316a75981d8c93e4eabd0d4f272dfac005707708c358"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/势最优首题选择的严格尾部信用--反例.md",
+      "sha256": "3293e4959492cc15873a868993cffabb71424614ca4491a76e3b65e5304aebf8"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/tail-pair-and-import-integrity-resumed-boss3/new-verify_selected_credit_example.json",
+      "sha256": "0d9c1ea80553bf0c194ce4ce6f01f4f67853105b9d6600a0ef01fe53ce60f02a"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "Boss1任务包按当前登记与逐式实读核对真实历史、作用范围、联合前提及目标量词。",
+  "endpoint_pins": {
+    "customer-attraction/five-provider-selected-maxpair-credit-early-payment-candidate": "337fc86896ce2691c87a9798933a81c2f13e7d301e5906cac42a0f9c804a2467",
+    "customer-attraction/potential-maximizing-first-action-strict-selected-tail-credit-example": "0465aa21c3d42d635e732abb9aa270d20d83dff401bcf9544a0035a833b163e3"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/五人最大势末对选择信用的早期付款--候选.md": "c241681f352691dcab62316a75981d8c93e4eabd0d4f272dfac005707708c358",
+    "archives/customer-attraction/state/反例/势最优首题选择的严格尾部信用--反例.md": "3293e4959492cc15873a868993cffabb71424614ca4491a76e3b65e5304aebf8",
+    "archives/customer-attraction/tools/evidence/tail-pair-and-import-integrity-resumed-boss3/new-verify_selected_credit_example.json": "0d9c1ea80553bf0c194ce4ce6f01f4f67853105b9d6600a0ef01fe53ce60f02a"
+  },
+  "review_digest": "b1ffe5f2b1e195f56ab410fb2191eac74eacfcf94be580a094689169ceb082d9"
+}

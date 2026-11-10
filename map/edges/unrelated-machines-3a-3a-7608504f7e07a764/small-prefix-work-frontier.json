@@ -1,0 +1,47 @@
+{
+  "edge_id": "um-7608504f-small-prefix-work-frontier",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-FIXED-WORK-CONVEX-POTENTIAL-BARRIER-v1"
+  ],
+  "target_ids": [
+    "UM-FIXED-ARITY-WITNESS-FILTER-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定 r≥2，私有昂贵叶族取 q=h²，T=1，h 可任意大。算法成功界和峰值均以同一个完整原调度计算。",
+  "roles": {
+    "UM-FIXED-WORK-CONVEX-POTENTIAL-BARRIER-v1": "最小工作量面只保 tiny 的 home 端，真实 OPT=1 而该面的每个原调度峰值 A=2−1/h。",
+    "UM-FIXED-ARITY-WITNESS-FILTER-v1": "固定 r 的 B_r 只统计同一机器最大至多 r 件。"
+  },
+  "explanation": "对全部 tiny 留家的任何原分配，唯一大件所在核心的前 r 负载至多 1+(r−1)t，其余核心至多 rt、叶空。t=(h−1)/h³→0，故对每个固定 r≥2 及其 c_r<1，充分大 h 时这个真实分配满足 B_r≤2−c_r，而其 Cmax=2−1/h→2、OPT=1。此处只是固定件数保证在同一坏调度上的分离。未假设过滤器会返回该分配。",
+  "scope": "固定 r 的成功证书与完整 makespan 的区别。r=1 也由 B_1=1 直接分离。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/障碍/私有昂贵叶的工作量与固定凸势近二边界--障碍.md",
+      "sha256": "9fbd8c09d67888a1f710539a7a29671070f683dfa0a09ddc2e3ecd9489ad5cb3",
+      "section": "精确工作量前沿、最小面与槽正支撑"
+    },
+    {
+      "path": "archives/unrelated-machines/state/障碍/固定件数超载过滤与严格次二障碍--障碍.md",
+      "sha256": "463f2acd407696405abcd17b635340c939067f8b77b15f2d2aa13ede159a2263",
+      "section": "对象身份与主边界"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读本边所引承重段并核对原模型、实际构造和条件。固定 r 的成功证书与完整 makespan 的区别。r=1 也由 B_1=1 直接分离。",
+  "contribution": {
+    "result": "同一完整合法分配可以通过固定 r 的 B_r 数值界并且普通峰值趋近 2OPT。",
+    "remaining": "目标的可靠 FAIL、三槽流和一般 fixed-r big-only LP 构造仍由目标原证负责。改用另外的完整分配可能达到 OPT。"
+  },
+  "endpoint_pins": {
+    "UM-FIXED-ARITY-WITNESS-FILTER-v1": "8e3aee23cd841cb0a26faf4f05d96f08258d60b54db85f5d9da6a07583450c6c",
+    "UM-FIXED-WORK-CONVEX-POTENTIAL-BARRIER-v1": "ffc35e6d79501c7d87e20bc96110678cfbe23ddfdec83ea1ad2b400f57749d71"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/障碍/私有昂贵叶的工作量与固定凸势近二边界--障碍.md": "9fbd8c09d67888a1f710539a7a29671070f683dfa0a09ddc2e3ecd9489ad5cb3",
+    "archives/unrelated-machines/state/障碍/固定件数超载过滤与严格次二障碍--障碍.md": "463f2acd407696405abcd17b635340c939067f8b77b15f2d2aa13ede159a2263"
+  },
+  "review_digest": "023eec36f17e4b2d8a906321d66debbfdbd729af1fc2a96b24182dd5dd72833e"
+}
