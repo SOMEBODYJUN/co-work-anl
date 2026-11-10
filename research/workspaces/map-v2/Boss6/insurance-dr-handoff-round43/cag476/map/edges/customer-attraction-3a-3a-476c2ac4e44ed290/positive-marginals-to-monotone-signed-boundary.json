@@ -1,0 +1,41 @@
+{
+  "edge_id": "cag-476-r43-positive-marginals-to-monotone-signed-boundary",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-d668031578d94dd98aea2aedd90792e5"
+  ],
+  "target_ids": [
+    "customer-attraction/monotone-shapley-complementarity-anchor-dominance-unbounded-root-ratio"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "每个m≥2固定同一个P={a}∪D、|D|=m、β=1/(m−1)、K=3m/2与全域C(S)=1_(a∈S)(1+β|S∩D|)+K1_(D⊆S)；使用有标号行动槽Shapley，重复标签不先合并。PM/E/BC保所有低人口层并始终同一C。",
+  "roles": {
+    "M-d668031578d94dd98aea2aedd90792e5": "提供任实共同C的signed实现、PM及全部低层E+BC；其正系数与此C单调合给全部收益非负。",
+    "customer-attraction/monotone-shapley-complementarity-anchor-dominance-unbounded-root-ratio": "支付目标中辅助反模型仍具共同signed身份、效率/平衡贡献及非负收益的准确部分。"
+  },
+  "explanation": "C由锚unanimity、β倍AND(a,b)和K倍全卫星unanimity非负和构成，因此归零单调。source布尔反演给同一张signed客户表实现全部C；有标号槽Shapley边际等于该表均分收益，source PM给全低层共同收益并满足E+BC。因本C的每个边际非负且PM系数正，所以全部终局收益非负。该结论不是说signed表非负；任卫星b有C(a)+C(b)−C(ab)=−β<0，故非负客户和次模已失败。本贡献不从这些线性身份推导动态福利。",
+  "scope": "精确局部贡献；目标的弱占优、明确恒锚完整SPE和无界比由目标body独立完整计算，非本贡献单独所得。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/共同客户收益的正边际与平衡贡献--定理.md",
+      "sha256": "c34c2b19211090376f7acf84b333d122ae170a609eae422abbefc867c612b39e"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/共同单调Shapley模型的锚弱占优与无界根比--反例.md",
+      "sha256": "47f8d212771d7db6f515d67853f25d7bb473d7dd52df7374d24f040f794dbe3e"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-476c2ac4e44ed290/comparison-review.md",
+      "sha256": "9d342111e6bd765f2a2b89db1d93cbaf14d9a6c2a492efd262d1a5aa5c0c54d7",
+      "section": "新关系证明D：正边际表示对单调互补反模型的贡献"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "实际完整读取所列核心正文/承重证明与精确必要依赖；按本边显示的模型、方向、全部量词和结果范围逐句核对。成熟证据合同复用，本轮不重跑旧LP/全树/随机程序。",
+  "contribution": {
+    "result": "上述每m≥2单调互补C的全部低人口层收益属于一份共同signed客户表示，等于有标号槽Shapley分摊，满足全部E+BC且收益非负；该C同时在二标签违反次模/非负客户必要性。",
+    "remaining": "整条目标中的锚对每个固定对手弱占优、恒a策略在全部有序历史为SPE以及W1/OPT3m/2/根比无界，依目标正文另有已完成的直接证明；本部分身份不单独推出这些结论，也不外推非负客户CAG。"
+  }
+}

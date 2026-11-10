@@ -1,0 +1,17 @@
+# Boss6 round43：六组比较与原处修订交接
+
+当前八核心与四只读端点均依实际task和registry pins实核。数学已成熟：两条accepted无条件逻辑边分别将六人完整索引必要投影应用到固定14原子，以及将旧64原子与全人数根刚性保单条ALL推出固定点非补全；一条checks/context保静态assignment有限原证据。三项新边的精确source/target/kind组合不在当前canonical清单中。
+
+Pareto两方向是不同反例，max三例各删一次末位低过去租金平局，min例五次删点；当前向量上的支配与祖先支持非同一排序。逐规则否定安全性，互不推出另一固定实例，均非half反例。Boss9入口只停同D/B重复尾模板，不停所有多层信用或森林UTP；其原候选正文未在本任务主读，不能把入口概述当已证完整候选。
+
+五人CA-FIVE与根不相容互补：前者精确437行必要松弛仍可行且最优>2，后者用其保数据点上的真实根必要约束排全目录补全；两个真结论没有矛盾。新527/1067/3524/3935点不在该固定排除内。
+
+两奖励尾a≤x/2已由4668B原完整证明与本次独立重构补齐。原省略段还误说D影响Xi，D与Xi其实不交。补丁恢复sameσ两个真实回复、两个旧组菜单、a0和b0情形，不把原正确定理降成open。完整原证据应显式加入登记，statement不再复制错误证明句。两个零块别名不需策略标签相同。
+
+动态来源fresh37/full43两个域、156/258两种比较混写；原witness确在七源，作者审计并不依赖未领取发现/简化器。新静态只读端点有同fresh误写，后续独立审查页已经指出，原处仍未修。三个replacement和最小patch均已保存。数学结论不变：静态最优存在式的所有tuple/排列都被该同输入1953客户真SPE否定；half余量1730，真实改变后缀仍可信。
+
+所有核心coverage已逐个写，三linked五isolated-after-review。context不计linked。task仅两项in-packet overlap，已在ALL边内实际处置，closed_overlaps不得重复录入；没有follow-up对，也未制造后续队列任务。read-add确已发布STATIC，对照当前request保存。
+
+这是source修订前完整成熟草稿，不能跳过Boss保存handoff→原处修订/registry刷新→实际task刷新→fresh worker窄核→重新绑定/收据SHA这一流程直接done。两条逻辑边本身不依本次拟改的reward/dynamic/static页，数学内容可精确保留；checks边和相关receipt需换新pins/SHA。原文错误不是身份歧义，故没有needs-decision。
+
+实际阅读边界详reading-ledger：完整承重正文/原始4668B证明与成熟合同实读；大型raw437证书、303树、109824配置未重审或重跑，全部标明字段/区间。当前只有14项与64原子固定Fraction统计、SHA/pin/结构读取；0LP、0大树、0原入口执行。未使用Git、队列、凭据或Library，也未写规范clone。

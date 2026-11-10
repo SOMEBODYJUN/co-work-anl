@@ -1,0 +1,38 @@
+{
+  "edge_id": "cag-476-r43-r12-credit-to-background-balance",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-b83c6050d75e4252bbe71ed2e71569e6"
+  ],
+  "target_ids": [
+    "M-21108b01d92540379cb7c7227ec6ade3"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一个有限单位客户输入、同一合法有序前缀负载b与旧覆盖U={b>0}、同一固定完整策略的实际尾；R12新增覆盖按U扣除而利润仍含旧客户份额，O0=M0=0。最后一人非负基例另限真最佳回复。",
+  "roles": {
+    "M-b83c6050d75e4252bbe71ed2e71569e6": "提供E_h=E_hA+u−δ、δ=M_r−a−M_(r−1)、r0/r1端点。",
+    "M-21108b01d92540379cb7c7227ec6ade3": "在Δ=新增覆盖、P=尾利润、O_r=M_r(U)、G=E的精确变量对应下得到目标整条余额分解。"
+  },
+  "explanation": "取R12 M_r(U)=正式O_r(b)，R12 Gnew=正式Δ_r，R12 P=正式P_r，所以E_h=G_r。当前A新增a给δ=O_r(b)−a−O_(r−1)(b+1_A)，因此正式L=u+a+O_(r−1)−O_r=u−δ。source递推即G_r=G_(r−1)+L，沿同一实际路径由G0=0望远镜得到ΣL。空根P=Δ=W且O=OPT，故G=2W−OPT；r1真实末BR给O1≤u并保Δ≥0，故G1≥0。恒等式本身不需SPE，所有子式都取同一输入/真实路径。该单向whole不反称目标还给source附带的容量分式，也不推出普遍G≥0或L≥0。",
+  "scope": "目标整条新增覆盖余额分解及明确端点；一般背景信用仍被52客户actual前缀反驳。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/审查/R12动态信用查询分支容量与覆盖付款义务--审查.md",
+      "sha256": "cd4a19dd5e1294523c609ef86c62fcde9cdb1ac43293573e028c7cfae19c0eb6"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/背景新增覆盖余额与首步分解--引理.md",
+      "sha256": "46a4cdc87ee03067d28d70ecffda8ced7949c1988754b81fb1a8dbdfff731d9b"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-476c2ac4e44ed290/comparison-review.md",
+      "sha256": "9d342111e6bd765f2a2b89db1d93cbaf14d9a6c2a492efd262d1a5aa5c0c54d7",
+      "section": "新关系证明C：R12到正式余额，再与EX1联合到R4"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "实际完整读取所列核心正文/承重证明与精确必要依赖；按本边显示的模型、方向、全部量词和结果范围逐句核对。成熟证据合同复用，本轮不重跑旧LP/全树/随机程序。",
+  "whole_result": "对任意合法背景和固定完整实际策略路径，正式G_r=P_r+Δ_r−O_r恰满足G_r=G_(r−1)+L，L=u+a+O_(r−1)(b+1_A)−O_r；G0=0并沿actual路径望远镜，空根G_m=2W−OPT_m，r1的真末位SPE子局G1≥0。"
+}
