@@ -1,0 +1,57 @@
+{
+  "edge_id": "um-blmrs-configuration-gadget-specializes-to-canonical-two-values",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-5ecd146af7cb4e7cbd110d3f635a57be"
+  ],
+  "target_ids": [
+    "M-17240dfa6f6b45e3aca80c1cc929744c"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "α≥2，β=2−1/α；规范Santa Claus值域{0,1,1/b}，1≤b≤n且b为整数，n为显式资源数，OPT_SC≥1；有两值Makespan的多项式β输出算法。复用源证明内部Lemma12的显式配置编译，不仅使用源Theorem1的一行存在性陈述。",
+  "roles": {
+    "M-5ecd146af7cb4e7cbd110d3f635a57be": "源证明Lemmas12–14提供配置选择机器、资源互斥机器及离机质量解码；Lemma11的舍入步骤在此不调用。",
+    "M-17240dfa6f6b45e3aca80c1cc929744c": "只接收规范两值输入上的MS-oracle⇒SC方向，福利阈值1/α且编译仍仅有两种处理值。"
+  },
+  "explanation": "每位玩家只列两项配置：一个值1资源，或b个值1/b资源；OPT_SC≥1的分配可删减到逐玩家匹配其中一项。两种配置总值均为1，故Lemma12编译中，选择作业和大配置作业大小为1，小配置作业在本配置机器上大小为1/b；所有配置作业在相容资源机器上大小1，故有限处理值仅{1,1/b}。资源身份逐项保留，构造规模O(mn+n)。Lemma13给OPT_MS≤1，β算法输出makespan≤β<2，保证每资源机器至多一个作业。选中配置机器被选择作业占去负载1，其总大小1的配置作业必须有至少1/α质量离机；每份离机作业对应一件不同原资源，解码福利≥1/α。完全不使用Lemma11，所以无ε损失。任意u,w归一到此域及反向SC-oracle⇒MS都需另外的证明；本包review已实读并补明这些范围，边的作用仍只限所列局部结果。",
+  "scope": "3A，普通unrelated两值模型内的承重gadget专门化；精确覆盖规范{0,1,1/b}分支的一个算法方向。不宣称一般Theorem1推出完整Theorem2，不推广为一般多值或resource/job-matroid等价。",
+  "contribution": {
+    "result": "在1≤b≤n且OPT_SC≥1的{0,1,1/b}输入上，源证明的通用配置gadget构造仅有{1,1/b,∞}处理值的MS实例，OPT_MS≤1；任何负载≤2−1/α的输出可多项式解码为逐玩家值≥1/α的SC分配，零ε损失。",
+    "remaining": "目标整条等价还需Lemma20把任意{0,u,w}输入规范化（加性舍入/大物匹配/ceil(1/u)分支），以及Lemma17的相反算法方向、阈值枚举和退化正性处理。本包review记录了这些核对，但本条从源配置编译得出的关系不把它们当作由Theorem1单独推出。"
+  },
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
+      "sha256": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
+      "section": "1. 一般 Santa Claus 到 Makespan"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
+      "sha256": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
+      "section": "2. 两值一般模型等价"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
+      "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-e1f95bf98a191bd2/proof-review.md",
+      "sha256": "cfc64677bae4e7a25882ddf0c2ce507e2786677e33364695f6eba160e5091903",
+      "section": "规范两值专门化及本边的局部结果"
+    }
+  ],
+  "reviewed_by": "Boss4/unrelated-machines-3a-3a-e1f95bf98a191bd2",
+  "review_note": "核PDF SHA并实读§2.1 Lemmas10–14及AppendixC Lemmas17–20；比较内部gadget而非按同文或同名推边。已核两值保持、β<2资源唯一性、配置总值、零ε和算法方向。C1的t≤0已有正性补核/直接slot分支，非反例；本边仅为规范两值的已证局部贡献。",
+  "endpoint_pins": {
+    "M-17240dfa6f6b45e3aca80c1cc929744c": "f033275c1d9574034b92eafeb232a706db3a6ecba82633b537928d88be3b5779",
+    "M-5ecd146af7cb4e7cbd110d3f635a57be": "04c11305343dd00b9052f2ec4d075d3e33414b7e7b2b22d0685848af711f4dea"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
+    "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183",
+    "map/edges/unrelated-machines-3a-3a-e1f95bf98a191bd2/proof-review.md": "cfc64677bae4e7a25882ddf0c2ce507e2786677e33364695f6eba160e5091903"
+  },
+  "review_digest": "a97a75ed2582da60679b968da9ad2bfc28e405b326a85ccee1d55d97be3e1c6b"
+}
