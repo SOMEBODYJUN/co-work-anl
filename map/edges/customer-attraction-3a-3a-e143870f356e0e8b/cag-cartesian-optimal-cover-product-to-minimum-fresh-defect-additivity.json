@@ -1,0 +1,55 @@
+{
+  "edge_id": "cag-cartesian-optimal-cover-product-to-minimum-fresh-defect-additivity",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-8dcfbe91a71b4d3a870f5d2cd0bced19"
+  ],
+  "target_ids": [
+    "cartesian-optimal-fresh-defect-and-three-regret-repair"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意有限多个两两不交客户坐标、每坐标有限非空带标签共同目录，联合目录为其完整带标签Cartesian积；同一固定m≥1，固定任意联合actual有序m元组c。g_c(T)=Σ_{x∈T}1/(1+c_x)，R0只对c_x>0求和，K0在全部覆盖达到OPT_m的有序m元组中取Σ_i g_c(T_i)最小值；重复主题和同覆盖异标签均保留。无需均衡或策略坐标独立。",
+  "roles": {
+    "M-8dcfbe91a71b4d3a870f5d2cd0bced19": "提供完整Cartesian共同目录上的OPT_m精确可加与逐客户覆盖/收益可加的静态结构；本边只使用其OPT部分，不使用产品SPE充分方向。",
+    "cartesian-optimal-fresh-defect-and-three-regret-repair": "目标登记的全部静态ADD合同：OPT_m、K0、W、R0及Df=K0−W−R0逐坐标精确相加。body后面的保险/三倍修复/RF不纳入此静态目标。"
+  },
+  "whole_result": "对上述每个固定m与任意actual元组，联合覆盖最优有序m元组集合恰为各坐标覆盖最优有序m元组集合的笛卡尔积；fresh费用在该积上可独立取最小，故K0=Σ_jK0_j。连同OPT_m=Σ_jOPT_m,j、W=Σ_jW_j、R0=Σ_jR0_j，得到Df=Σ_jDf_j；完整覆盖目标登记的五个静态可加量。",
+  "explanation": "把联合有序m元组写成m×t标签矩阵，则(∏S_j)^m≅∏S_j^m，任意坐标元组可以按位置组成合法联合元组。source给OPT=ΣOPT_j，且每比较元组覆盖=Σcover_j；各OPT_j−cover_j≥0，所以联合最优iff全部坐标最优，argmax集合即完整积。actual可相关，但客户只属一个坐标，c_x及分母1+c_x由该坐标actual投影决定，故Σ_i g_c(T_i)=Σ_jΣ_i g_{c^j}(T_i^j)。在argmax积上任一费用至少Σ_jK0_j；反向各坐标有限非空argmin同时选取、按位置配对，给等号。W和R0是坐标客户不交求和，减法给Df相加。有限多个坐标同理；m1、零客户、重复/别名皆不破双射或argmin存在性。该静态论证与联合SPE能否投影为SPE无关，未使用母body后面的动态保险构造。",
+  "scope": "完整Cartesian目录中任意actual元组的静态ADD。删去部分联合主题后不能沿用；不证明S?、保险器的全部历史SPE、三倍修复或RF开放预算。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/审查/R-3d6f连续安全对数势分离与笛卡尔耦合--审查.md",
+      "sha256": "bc34f8a5e9ba464313af5cd483297ab817f6b49561627b1d8d38100b85ec2bf2",
+      "section": "4. 笛卡尔目录耦合审查"
+    },
+    {
+      "path": "research/registration/evidence/register-lead-recovered-evidence-01/cartesian_catalog_coupling.md",
+      "sha256": "32d0e918561b81ee7fd0be3cb7f69832d5911fccda672ad91c798e398cccfa44"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/笛卡尔目录的最优查询缺陷与三倍根修复--引理.md",
+      "sha256": "d6b5c15a3f91fa7bde0f99502988127772fea3369e1519195cc86978b9e9bcf2",
+      "section": "完整笛卡尔目录的相加"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-e143870f356e0e8b/review.md",
+      "sha256": "7c4b8f72c463281396420196bd8804c66bd039a8c3a0b23abb3cf372a6e9c7c6",
+      "section": "完整Cartesian最优元组积支付fresh的全部静态ADD"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Root提出具体argmax积问题并实际read-add后，已核新task/pin，完整读新增登记/body/必要fresh预算证据。逐项检查联合最优iff分量最优、位置配对、K0独立min及其余四量，整条静态目标成立；不借SPE逆分解，不把body保险段当目标。数学执行0。 Root另完整核实际目标合同、四边和完整比较稿；精确实读与零新科学运行范围见receipt.parent_review。",
+  "endpoint_pins": {
+    "M-8dcfbe91a71b4d3a870f5d2cd0bced19": "4fc89dbbf69648bf1e5b9e08ddbad9d095b70894f8a7862e02435e26ec932c13",
+    "cartesian-optimal-fresh-defect-and-three-regret-repair": "2dd4c02f5251633dbb00806dd4c4a23324c7e34d7450731c71c44221fc0a87fe"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/审查/R-3d6f连续安全对数势分离与笛卡尔耦合--审查.md": "bc34f8a5e9ba464313af5cd483297ab817f6b49561627b1d8d38100b85ec2bf2",
+    "research/registration/evidence/register-lead-recovered-evidence-01/cartesian_catalog_coupling.md": "32d0e918561b81ee7fd0be3cb7f69832d5911fccda672ad91c798e398cccfa44",
+    "archives/customer-attraction/state/引理/笛卡尔目录的最优查询缺陷与三倍根修复--引理.md": "d6b5c15a3f91fa7bde0f99502988127772fea3369e1519195cc86978b9e9bcf2",
+    "map/edges/customer-attraction-3a-3a-e143870f356e0e8b/review.md": "7c4b8f72c463281396420196bd8804c66bd039a8c3a0b23abb3cf372a6e9c7c6"
+  },
+  "review_digest": "0531bd744b76dca732b8d5207f3af718b2533d80be2689bd8a8a6a4507bd44e2"
+}
