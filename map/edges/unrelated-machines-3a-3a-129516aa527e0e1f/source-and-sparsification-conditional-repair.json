@@ -11,13 +11,13 @@
   ],
   "premises_mode": "all",
   "relation_mode": "conditional",
-  "conditions": "固定 g>1、非空显式投影游戏和所选字母表参数 R≥2，均独立于 SAT 输入规模。应用时必须联合取得源 YES 值≥1−δ、NO 值≤γ₀=2^−11 g^−2，其中 δ≤1/d、Γ=5γ₀/4<1、d=10^6·2ln(2R)/sqrt(Γ)，并将源显式变为适用 M-8c360a7779154480879e38c65d1f827e 的共同全投影字母表、正度数 balanced regular 图；N始终指正规化后的顶点数。若还要保留显示的 alphabet O(g^(2+ε′))，须在该同一联合选择中使 R=O(g^(2+ε′))。MZ Theorem1.3/7.2 显示量词是先固定完备误差再取充分大R；本边不从这句话单独断言任一预定R都允许事后任改δ。每个固定输入的0.9随机成功率及随机归约限定保留。",
+  "conditions": "固定 g>1、非空显式投影游戏和所选字母表参数 R≥2，均独立于 SAT 输入规模。应用时必须联合取得源 YES 值≥1−δ、NO 值≤γ₀=2^−11 g^−2，其中 0<δ≤1/d、Γ=5γ₀/4<1、d=10^6·2ln(2R)/sqrt(Γ)，并将源显式变为适用 M-8c360a7779154480879e38c65d1f827e 的共同全投影字母表、正度数 balanced regular 图；平行约束按独立边记录计度、采样和覆盖，N始终指正规化后的顶点数。若还要保留显示的 alphabet O(g^(2+ε′))，须在该同一联合选择中使 R=O(g^(2+ε′))。MZ Theorem1.3/7.2 显示量词是先固定完备误差再取充分大R；本边不从这句话单独断言任一预定R都允许事后任改δ。每个固定输入的0.9随机成功率及随机归约限定保留。",
   "roles": {
-    "M-9a7614916cf04cee8915aefce74b502a": "提供近完美 projection-game 的 alphabet/soundness 起点和 Theorem7.2 的显式 biregular 接口；它不自动给共同字母表或保持原N的 balanced regular 接口，也不免费解决R与所需δ的联合参数选择。",
+    "M-9a7614916cf04cee8915aefce74b502a": "提供近完美 projection-game 的 alphabet/soundness 起点和 Theorem7.2 的显式 biregular 接口。要接稀疏化，还须统一字母表、变为 balanced regular 并在实际选用的 R 下联合实现所需 δ 与 NO 上界。",
     "M-8c360a7779154480879e38c65d1f827e": "提供已修复、有意义域0<γ<1、保正规化后N的稀疏化合同：度数预算对每个seed成立；YES成本≤(1+εΔ)N，NO以≥0.9概率同时排除全部便宜列表。本边代入ε=δ、Δ=d、γ=Γ，即YES≤(1+δd)N、NO>0.06N/sqrtΓ。",
     "M-fb633f3a6f1448fbbd63bfc7c3806c40": "目标完整结论是§7.4原参数行的推导缺口及给定联合源接口后的定向修复，连同正规化和d³R对数因子的准确界限；不是否定PCP主定理，也不是无条件重证Theorem7.13。"
   },
-  "explanation": "精确核对冻结PDF印60–61页：Lemma7.12的YES上界是(1+εd)N，Theorem7.13证明却设置δ=1/g、γ₀=R^{−(1−η)}=2^−11 g^−2后直接写≤2N。在此参数关系下R=Θ(g^{2/(1−η)})，d₀=10^6·2ln(2R)/sqrtγ₀=Θ(g ln g)，故δd₀=Θ(ln g)。该引理只给(1+Θ(ln g))N这一上界，不能由它推出2N；这不是证明真实MinRep一定大于2N的反例，也不否定PCP主定理。\n\n明确正规化接口：若已实现的源是(d₁,d₂)-biregular，取每个左顶点d₁份、每个右顶点d₂份，并把每条原约束放到其两端全部copy pairs上。两侧新顶点数同为原边数，各新顶点度d₁d₂；平行约束按边记录分别计数，不能去重。复制旧赋值给val新≥val旧；反向独立均匀选每个原顶点的一份copy标签，期望满足率等于新赋值满足率，故val旧≥val新。这是PDF印59页Lemma7.9取c₁=c₂=1的值保持实现。N重置为此新图规模。MZ Definition1.1的R是|Σ_L|+|Σ_R|，可取共同字母表Σ为两侧字母表的带类型不交并，Q=R；每条投影对合法左标签按原投影输出合法右标签，对其他输入先缩回固定合法左标签再投影。非法右标签从不见于像集，改成固定合法右标签不降低满足率；非法左标签缩回合法代表不改变任何边满足性，故val精确保留且投影全定义。这里不声称复制前后的MinRep成本相同，只在新N上应用稀疏化。\n\n在conditions所列同一个正规化源上，NO≤γ₀<Γ=(5/4)γ₀严格满足稀疏化的NO前提。用M-8c360a7779154480879e38c65d1f827e取ε=δ、γ=Γ、Δ=d，YES以至少0.9概率成本≤(1+δd)N≤2N；NO以至少0.9概率成本>0.06N/sqrtΓ。因Γ=5g^−2/8192，(.03/sqrtΓ/g)^2=.03²·8192/5=1.47456>1，故NO成本严格>2gN。NO好事件同时针对看过输出后的所有成本≤0.06N/sqrtΓ列表，不是仅每个预先固定列表的概率。YES与NO是两个不同promise，各自保0.9，不要求在同一实例同时满足两个互斥输入前提。每个seed最大度≤d。\n\n若取MZ alphabet指数η使1/(1−η)=1+ε′/2，并且联合源确能在R=Θ(g^{2/(1−η)})实现所需δ，则R=O(g^{2+ε′})，Γ=Θ(g^−2)给d=O(g ln g)。同一指数的直接代入给d³R=O(g^{5+ε′}ln³g)、d⁴=O(g⁴ln⁴g)；对充分大g，后一项被前者吸收，所以Theorem7.11的rooted-connectivity参数是O(g^{5+ε′}ln³g)。仅凭这两项输入上界，不能删掉ln²g就宣称同一ε′下得到显示的O(g^{5+ε′}ln g)。最终带固定幂余量的hardness指数可预留较小ε′吸收对数，但这是另一次参数安排，不是原显示行的逐项算术。\n\n联合源条件确实有内容：印3和54页Theorem1.3/7.2都先固定误差再选充分大R；印52页§7.1通过Theorem2.6中独立于η的s，把3LIN完备误差选到η≤τ/k，说明未正规化构造的完备性可继续调节。但印54–59页的正规化还引入2q^{−(2−2c)ℓ}、q^{−10ℓ}及O(q^{−5ℓ})等加法误差。因而本边认证的是给定同一正规化源gap后的条件推导；尚未把整个正规化/参数选择过程提升为所有充分大g上无条件实现该alphabet界的独立证明。",
+  "explanation": "精确核对冻结PDF印60–61页：Lemma7.12的YES上界是(1+εd)N，Theorem7.13证明却设置δ=1/g、γ₀=R^{−(1−η)}=2^−11 g^−2后直接写≤2N。在此参数关系下R=Θ(g^{2/(1−η)})，d₀=10^6·2ln(2R)/sqrtγ₀=Θ(g ln g)，故δd₀=Θ(ln g)。该引理只给(1+Θ(ln g))N这一上界，不能由它推出2N；这定位的是原推导的缺口。原证明同一行使用 NO≤γ₀，而 Lemma7.12 的 NO 前提为严格小于所用阈值。\n\n明确正规化接口：若已实现的源是(d₁,d₂)-biregular，取每个左顶点d₁份、每个右顶点d₂份，并把每条原约束放到其两端全部copy pairs上。设 M 为原边记录数，两侧新顶点数各为 M，新规模 N=2M，各新顶点度 d₁d₂。每条原约束恰产生 d₁d₂ 条记录，平行约束逐条保留。复制旧赋值给val新≥val旧；反向独立均匀选每个原顶点的一份copy标签，期望满足率等于新赋值满足率，故val旧≥val新。这是PDF印59页Lemma7.9取c₁=c₂=1的值保持实现。N重置为此新图规模。稀疏化在 D≤d 时直出原图，在 D>d 时独立采样并一次 trimming；两支均按记录处理重数。heavy incidence 用记录度数，固定列表下尾的每个试验也是一条记录，列表计数与边端点是否重复无关。MZ Definition1.1的R是|Σ_L|+|Σ_R|，可取共同字母表Σ为两侧字母表的带类型不交并，Q=R；每条投影对合法左标签按原投影输出合法右标签，对其他输入先缩回固定合法左标签再投影。非法右标签从不见于像集，改成固定合法右标签不降低满足率；非法左标签缩回合法代表不改变任何边满足性，故val精确保留且投影全定义。这里不声称复制前后的MinRep成本相同，只在新N上应用稀疏化。\n\n在conditions所列同一个正规化源上，NO≤γ₀<Γ=(5/4)γ₀严格满足稀疏化的NO前提。用M-8c360a7779154480879e38c65d1f827e取ε=δ、γ=Γ、Δ=d，YES以至少0.9概率成本≤(1+δd)N≤2N；NO以至少0.9概率成本>0.06N/sqrtΓ。因Γ=5g^−2/8192，(.03/sqrtΓ/g)^2=.03²·8192/5=1.47456>1，故NO成本严格>2gN。NO好事件同时针对看过输出后的所有成本≤0.06N/sqrtΓ列表，不是仅每个预先固定列表的概率。YES与NO是两个不同promise，各自保0.9，不要求在同一实例同时满足两个互斥输入前提。每个seed最大度≤d。\n\n若取MZ alphabet指数η使1/(1−η)=1+ε′/2，并且联合源确能在R=Θ(g^{2/(1−η)})实现所需δ，则R=O(g^{2+ε′})，Γ=Θ(g^−2)给d=O(g ln g)。同一指数的直接代入给d³R=O(g^{5+ε′}ln³g)、d⁴=O(g⁴ln⁴g)；对充分大g，后一项的上界被前一项的上界吸收，故对适用 Theorem7.11 所述归约的输入，其 rooted-connectivity 参数式直接给 O(g^{5+ε′}ln³g)。仅凭这两项输入上界，不能删掉ln²g就宣称同一ε′下得到显示的O(g^{5+ε′}ln g)。最终带固定幂余量的hardness指数可预留较小ε′吸收对数，但这是另一次参数安排，不是原显示行的逐项算术。\n\n联合源条件确实有内容：印3和54页Theorem1.3/7.2都先固定误差再选充分大R；印52页§7.1通过Theorem2.6中独立于η的s，把3LIN完备误差选到η≤τ/k，说明未正规化构造的完备性可继续调节。但印54–59页的正规化还引入2q^{−(2−2c)ℓ}、q^{−10ℓ}及O(q^{−5ℓ})等加法误差。这些 §7.3 损失与上段对既得双正规实例的精确保值复制属于不同步骤。给定同一正规化源 gap 后，稀疏化的推导已经闭合。对于所有充分大的 g，在目标 R 上同时实现所需 δ、NO 界及完整显式投影接口，仍由 3B 比较 boss2-mz-joint-source-3b-7d327f911a777dc3 接续。",
   "whole_result": "在已联合实现且已正规化的固定参数源上，MZ §7.4原δ=1/g、d=Θ(g ln g)仅由所引用引理给出YES上界(1+Θ(ln g))N，不能推出其显示的2N。改用γ₀=2^−11g^−2、Γ=5γ₀/4、d=10^6·2ln(2R)/sqrtΓ及δ≤1/d后，输出对每个seed最大度≤d，YES以≥0.9概率MinRep≤2N，NO以≥0.9概率MinRep>0.06N/sqrtΓ>2gN，且NO同时排除全部自适应便宜列表。N为显式正规化后的规模；由d=O(g ln g)、R=O(g^{2+ε′})直接得到d³R=O(g^{5+ε′}ln³g)。这些是完整的条件性参数修复与原推导缺口，保留上游同时实现字母表、完备误差、soundness及正规化的义务，不声称PCP主定理被反驳或已无条件重证全部应用hardness。",
   "scope": "ALL迁移到M-fb633f3a6f1448fbbd63bfc7c3806c40的完整条件性参数审查。真实反驳对象只限原PDF印61页从δ=1/g及Lemma7.12推出2N的推理，以及同指数直接代入时漏掉的对数；不建立反驳Theorem1.3、Theorem7.13真值或任意不正规原N版本的边。源与输出MinRep均为单位标签成本、全边覆盖；不外推任意标签权重、partial-MinRep、UM或SPE。",
   "evidence": [
@@ -38,25 +38,30 @@
     },
     {
       "path": "archives/unrelated-machines/state/文献/四对一与字母表soundness两篇文献整理--文献.md",
-      "sha256": "156917fad2732e2bb04517c2557dcf0d46cdd799954d66be592ddbad55bdc4f5",
+      "sha256": "0e1f9f27706ce17087037ef05c6265d8f3d2e6ede5801cdbe87b559c4ff9f2ac",
       "section": "3. Minzer–Zheng：近最优字母表—soundness 交易"
     },
     {
       "path": "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/minzer_zheng.pdf",
       "sha256": "13b8eb55f86cfe28ac8b283fe83612889b335e14b7a87d64d479451693c7dff4"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/Boss7-minrep-restored/original/manurangsi_minrep_degree_1807_00936v1.pdf",
+      "sha256": "259edd7e850da816ddb5c318287a7a3a525ccc8963f07918787156384d7153d8"
     }
   ],
-  "reviewed_by": "Boss2",
-  "review_note": "本包worker完整实读三个登记对象的两份正文，复核稀疏化正文3–4.5的承重证明（heavy incidence、固定列表MGF、全列表union bound、一次trimming及近完美YES补标签）；精确读取冻结MZ PDF印1–5、11–15、50–61页相关完整定义/定理/必要证明，并逐图核对印2、3、54、59、60、61页。没有把106页全文声明为本次复审，也没有以抽取、程序通过或历史摘要替数学。核保全原δ行、严格NO门槛、R的两侧和定义、正规化后N、所有列表同时性、随机归约和联合参数的未付条件。",
+  "reviewed_by": "Boss1",
+  "review_note": "完整重读两份登记正文和旧关系，逐项重核重建稀疏化 §3–4.5 的重数计度、heavy incidence、固定列表 MGF、一次 trimming、全列表 union bound 和近完美 YES 补标签。查冻结 Manurangsi PDF 印4–7 页及 Minzer–Zheng PDF 印2–3、44、52、54–61 页相关条款，逐图复核印60–61页的参数行。正文 v2 更正了 Minzer–Zheng Lemma6.1 归属、Fei–Minzer–Wang Lemmas6.33/6.64、旧 ε′^12 保证的术语及六提供者模型的任意有限客户域。对照正文改动与 MZ Definition1.1、Theorems1.3/7.2 和 §7.4，本关系所用 MZ 主定理与条件计算的数学陈述一致。复核限于此条件性应用链。",
   "endpoint_pins": {
     "M-8c360a7779154480879e38c65d1f827e": "3dd4454f24e6ace08f116048d88ada39f73596fb57ae251b1d7b61568079281d",
-    "M-9a7614916cf04cee8915aefce74b502a": "6caae256504f8ff53a6c8d4db1e0a285809393a22001b97b77ed1c21a460becb",
+    "M-9a7614916cf04cee8915aefce74b502a": "447db6742e36490d0eece59bd51fc55ff88f0d1f6bde934c85d7fb1bf3eeaa91",
     "M-fb633f3a6f1448fbbd63bfc7c3806c40": "fdb940f4d9c1ac5bffffa7b4e6b2317975a6ace432efab15cb0b8dc480350364"
   },
   "evidence_pins": {
     "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217",
-    "archives/unrelated-machines/state/文献/四对一与字母表soundness两篇文献整理--文献.md": "156917fad2732e2bb04517c2557dcf0d46cdd799954d66be592ddbad55bdc4f5",
-    "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/minzer_zheng.pdf": "13b8eb55f86cfe28ac8b283fe83612889b335e14b7a87d64d479451693c7dff4"
+    "archives/unrelated-machines/state/文献/四对一与字母表soundness两篇文献整理--文献.md": "0e1f9f27706ce17087037ef05c6265d8f3d2e6ede5801cdbe87b559c4ff9f2ac",
+    "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/minzer_zheng.pdf": "13b8eb55f86cfe28ac8b283fe83612889b335e14b7a87d64d479451693c7dff4",
+    "archives/unrelated-machines/tools/evidence/Boss7-minrep-restored/original/manurangsi_minrep_degree_1807_00936v1.pdf": "259edd7e850da816ddb5c318287a7a3a525ccc8963f07918787156384d7153d8"
   },
-  "review_digest": "c11e593847619852d6d359b2af24ce2979f11adf3e5fcee7b91b73687cda5f36"
+  "review_digest": "5d9cb463755af7e4e05ae8fdb8e9235eb66ae536742951421f88e4ca3a657170"
 }

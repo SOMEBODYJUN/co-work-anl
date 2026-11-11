@@ -1,0 +1,74 @@
+{
+  "edge_id": "um-projection-constraint-rounding-to-minrep-sparsification-step",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "PCP-EXACT-PROJECTION-PERFECT-COMPLETE-BIREGULAR-ROUNDING-v1",
+    "M-8c360a7779154480879e38c65d1f827e"
+  ],
+  "target_ids": [
+    "M-fb633f3a6f1448fbbd63bfc7c3806c40"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "固定整数 g>1、共同侧字母表总大小 R≥2；原输入为 E≥1 条等权、带身份全投影的显式二部约束多重图。原 YES≥1−δ₀、NO≤γ₀=2^−11 g^−2，且 0≤δ₀<1/Δ，其中 Γ=5γ₀/4，d=10^6·2ln(2R)/sqrtΓ，Δ=d 或可编码整数 d≤Δ≤d+2。固定有理 0<η≤min{1/Δ−δ₀,γ₀/8}。全覆盖 MinRep 用单位标签成本及按记录计的约束、度数。",
+  "roles": {
+    "PCP-EXACT-PROJECTION-PERFECT-COMPLETE-BIREGULAR-ROUNDING-v1": "支付任意非空源的确定性正规化：两侧各 E 个克隆、全部度 D，逐条保持投影身份，同一 R，YES/NO 各自至多加性损失 η；完美 YES 不受损。",
+    "M-8c360a7779154480879e38c65d1f827e": "支付正规输入到有界度 MinRep 的随机稀疏化。证明在本边逐式扩到平行约束记录：独立采样、按记录计重端关联和覆盖、对所有列表作同一概率保证。顶点不再变化。",
+    "M-fb633f3a6f1448fbbd63bfc7c3806c40": "只支付 §7.4 参数修复中的正规化和带重数的稀疏化接口，包括 N 重置及阈值余量；源联合参数、原证明行诊断和后续连通性归约没有作为本边结论。"
+  },
+  "explanation": "正规化后取 N=2E，源 YES≥1−(δ₀+η)≥1−1/Δ，NO≤γ₀+η≤9γ₀/8<Γ。用两侧字母表的带类型不交并，错型左标签固定退回同一合法标签，错型右标签不能与任何投影输出匹配；逐条合法化说明 val 精确保留，R 不变。Manurangsi 的重端关联证明必须用正则记录度，固定记录的其余 D−1 条关联记录分别采样，固定列表未覆盖记录数仍为二项变量。逐记录求和不需平行约束满足事件独立，裁边和补标签也按记录。故本边复核低度直出、高度独立采样及一次删边，得到各自承诺下 ≥0.9 的 2N 对 >0.06N/sqrtΓ>2gN 严格 gap，每个种子度 ≤Δ。若原本已 (d_L,d_R)-biregular，取 D=d_Ld_R 使重数恰为一，精确复用 Lemma 7.9 在 c₁=c₂=1 的已知特例；新增部分是无预设正规性、已有阈值余量的源。",
+  "contribution": {
+    "result": "在上述固定 R 的原源余量下，不需预先 biregular，即可显式平衡为 N=2E 的全投影约束多重图并应用按约束身份的稀疏化。输出保 R 和该 N，每个种子最大记录度 ≤Δ；YES 以 ≥0.9 概率 MinRep≤2N，NO 以 ≥0.9 概率同时排除全部成本 ≤0.06N/sqrtΓ 的列表，给严格 MinRep>2gN。完美原 YES 的每个种子都有成本 ≤N 的 singleton 赋值。",
+    "remaining": "仍需在同一个承诺源和同一个目标 R=O(g^(2+ε′)) 上联合实现规定的 δ₀、γ₀ 余量；MZ 显示量词本身不支付该义务。原 δ=1/g 推导诊断及 d³R 的对数项另由目标正文处理。要求简单图或额外结构的后续连通性应用须核自己的合同。"
+  },
+  "scope": "给显式原约束多重图到单位成本全边覆盖 MinRep 的条件性 proof step。正规化中间度 D 可以随实例规模变，最终只控记录最大度。不推简单性、平滑性或原图 N 不变。",
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-f9ff2cee09d4de31/regularization-and-minrep-proof.md",
+      "sha256": "e7a138a038eabb8bc91f05726d08077f9f7a7eaaef81f41c2c998532ff98607a"
+    },
+    {
+      "path": "archives/unrelated-machines/state/引理/投影约束多重图的保完备性近似双正规化--引理.md",
+      "sha256": "13803e66abc6432815634589e75cbc08238ad74287d89707120274fdfc7927d6"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md",
+      "sha256": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217",
+      "section": "3. Generic 稀疏化：可核实的精确合同"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md",
+      "sha256": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217",
+      "section": "4. 完整证明链"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md",
+      "sha256": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217",
+      "section": "7.2 Minzer–Zheng 后续：显示定理、参数缺口分开"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/Boss7-minrep-restored/original/manurangsi_minrep_degree_1807_00936v1.pdf",
+      "sha256": "259edd7e850da816ddb5c318287a7a3a525ccc8963f07918787156384d7153d8"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/minzer_zheng.pdf",
+      "sha256": "13b8eb55f86cfe28ac8b283fe83612889b335e14b7a87d64d479451693c7dff4"
+    }
+  ],
+  "reviewed_by": "Boss1/regularization-primary-round40",
+  "review_note": "完整实读并逐步复核核心引理。实读冻结 Manurangsi 印4–7页的 Lemma 7/§3 和登记正文§3–4.5、§7.2；核冻结 MZ Definition 1.1、Theorems 1.3/7.2、Lemma 7.9 及 §7.4 印60–61页。正文证明逐式核过采样重数、重端关联、固定列表 MGF、全列表同时性、裁边和 YES 补标签，区分了确定性正规化与随机稀疏化。旧已正规化特例及 canonical Fei–Minzer–Wang 超图关系只作比较。",
+  "endpoint_pins": {
+    "M-8c360a7779154480879e38c65d1f827e": "3dd4454f24e6ace08f116048d88ada39f73596fb57ae251b1d7b61568079281d",
+    "M-fb633f3a6f1448fbbd63bfc7c3806c40": "fdb940f4d9c1ac5bffffa7b4e6b2317975a6ace432efab15cb0b8dc480350364",
+    "PCP-EXACT-PROJECTION-PERFECT-COMPLETE-BIREGULAR-ROUNDING-v1": "3fb491cd85e99950c05f1ce9bbcd8ec6daabc5bf1aae02627ef4efb4e7307922"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-f9ff2cee09d4de31/regularization-and-minrep-proof.md": "e7a138a038eabb8bc91f05726d08077f9f7a7eaaef81f41c2c998532ff98607a",
+    "archives/unrelated-machines/state/引理/投影约束多重图的保完备性近似双正规化--引理.md": "13803e66abc6432815634589e75cbc08238ad74287d89707120274fdfc7927d6",
+    "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217",
+    "archives/unrelated-machines/tools/evidence/Boss7-minrep-restored/original/manurangsi_minrep_degree_1807_00936v1.pdf": "259edd7e850da816ddb5c318287a7a3a525ccc8963f07918787156384d7153d8",
+    "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/minzer_zheng.pdf": "13b8eb55f86cfe28ac8b283fe83612889b335e14b7a87d64d479451693c7dff4"
+  },
+  "review_digest": "ff89a3aaaae1d0237ce93d8f00233682565172941ae81d3d8119a34dbdfc1667"
+}
