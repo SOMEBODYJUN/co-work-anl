@@ -524,12 +524,223 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss6",
-  "request_id": "f49f1a64b99741d09d90a3290f36e33f",
+  "request_id": "ea8b0f4aebb14996acf2b4326f3d8a69",
   "requests": {
     "6c1bcc2e7d534700957f1de6ab71a519": "plan",
     "6af52840642c42c8be947068ce1cd430": "claim",
-    "f49f1a64b99741d09d90a3290f36e33f": "read-add"
+    "f49f1a64b99741d09d90a3290f36e33f": "read-add",
+    "ea8b0f4aebb14996acf2b4326f3d8a69": "done"
+  },
+  "edge_paths": {
+    "cag-a88e-active-rank-example-checks-query-uniqueness-gate": "map/edges/customer-attraction-3a-3a-a88e616310dad14c/active-rank-example-checks-query-uniqueness-gate.json",
+    "cag-a88e-full-profit-fresh-kernel-gives-multisource-visit-bound": "map/edges/customer-attraction-3a-3a-a88e616310dad14c/full-profit-fresh-kernel-gives-multisource-visit-bound.json",
+    "cag-a88e-optimal-row-dual-checks-signed-real-reorder-residual": "map/edges/customer-attraction-3a-3a-a88e616310dad14c/optimal-row-dual-checks-signed-real-reorder-residual.json",
+    "cag-a88e-return-ledger-gives-common-action-jensen-lower-bound": "map/edges/customer-attraction-3a-3a-a88e616310dad14c/return-ledger-gives-common-action-jensen-lower-bound.json",
+    "cag-a88e-six-cycle-checks-missing-reverse-source-capacity": "map/edges/customer-attraction-3a-3a-a88e616310dad14c/six-cycle-checks-missing-reverse-source-capacity.json",
+    "cag-03a94-sharp-truncated-dilution-and-fixed-value": "map/edges/customer-attraction-3a-3a-03a94ff88fa45040/sharp-truncated-dilution-and-fixed-value.json"
+  },
+  "receipt": {
+    "task_id": "customer-attraction-3a-3a-a88e616310dad14c",
+    "coverage": {
+      "M-3d0dbf4f161844cd95cd3d48f8e96ded": {
+        "state": "linked",
+        "object_pin": "da04e3111ce6d4a0bdb50cee4cf109b59ff0060f66d5b8a512b832e259126a17",
+        "comparison_scope": "G1：当前M-3d… v1与off-history-return账本v2全文；同一σ、同actual B_k、各真实return分母及M0/空B边界。",
+        "reason": "ledger v_t=r_t+e_t、e_t≥0给Σαv≥Σαr；逐客户加权Cauchy(Σα/z)(Σαz)≥M²得整条收益下界。反向资金上界、e≤N或共同actual券未得；不能倒转Jensen。",
+        "edge_ids": [
+          "cag-a88e-return-ledger-gives-common-action-jensen-lower-bound"
+        ]
+      },
+      "customer-attraction/off-history-return-exact-ledger-and-common-funding-gap": {
+        "state": "linked",
+        "object_pin": "7f94ea8b333775c3f67f669fb73e538c2e1b3e69f93d925000bf2ed0c6bb429f",
+        "comparison_scope": "G1：off-history-return v2及Jensen v1；并核非根中继资源关于return/reset和过去利润的区别。",
+        "reason": "本core已证精确signed账及e≥0提供每context v≥r，支持整条Jensen目标；P出口后current=u−N+e≤u还需e≤N，与原IC方向相反。仅有限contexts加权下界，未获R-current共同source-price。",
+        "edge_ids": [
+          "cag-a88e-return-ledger-gives-common-action-jensen-lower-bound"
+        ]
+      },
+      "M-101bd6b12f47485fa951acd733de98cb": {
+        "state": "isolated-after-review",
+        "object_pin": "0494be9a73bdb52c554a17062f0733b60377dc69dd12a5b2b93f2f6658310500",
+        "comparison_scope": "G2：M-101 v1、M-d93 v1与common-source-swap method v2完整正文/全raw可行证明，核八单点σ、最优原/对偶值1及两shadow。",
+        "reason": "shadow3/6分别给真实J=+1/−1，检查method必须保signed mismatch。反驳的是“最优row dual自动固定J符号”辅助自动化，不是method所证恒等式；task无该独立被否候选目标，保context checks。",
+        "context_edge_ids": [
+          "cag-a88e-optimal-row-dual-checks-signed-real-reorder-residual"
+        ]
+      },
+      "M-d93ca7824648496bae36a42ac100c12a": {
+        "state": "isolated-after-review",
+        "object_pin": "f4c124443766523a83bd30636a909b0efd8528d2d8486351b7a6324680d3af9c",
+        "comparison_scope": "G2：六单点五人完整σ、每个OPT五元组与根六循环T；并比较同页容量界及逐源再启动引理。",
+        "reason": "对每个最优元组遗漏点p=0而pT>0，∀有限κ不能支配。只否原均匀最优查询的自动reverse容量；改p的teleport与逐原子CAP仍各有合同，不反精确method或half，保context checks。",
+        "context_edge_ids": [
+          "cag-a88e-six-cycle-checks-missing-reverse-source-capacity"
+        ]
+      },
+      "customer-attraction/common-source-swap-capacity-and-true-reorder-residual": {
+        "state": "isolated-after-review",
+        "object_pin": "c8d6a9bbcd2fa0193f0157b98832aedf9d3a6f0d39585d154013a390dbf8de54",
+        "comparison_scope": "G2：method v2及两个完整SPE边界；逐源容量引理指定三节实读并读全文，含raw/true差别、CAP、行内重启和查询债。",
+        "reason": "raw交换/κR/2是真实条件界；真历史须保−θJ及逐前缀M边界，第五行余项和值匹配也保留。两个见证仅检查自动容量/J符号不成立；没有Cov-to-swap联合映射，因此不将边界见证冒作refutes整个method。",
+        "context_edge_ids": [
+          "cag-a88e-optimal-row-dual-checks-signed-real-reorder-residual",
+          "cag-a88e-six-cycle-checks-missing-reverse-source-capacity"
+        ]
+      },
+      "CA-WS-SHARED-OMISSION-SINGLE-TARGET-BANK-BASELINE-NOGO-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "3e22456e98c1882e6f7ad3adc74671dc511dc7b12f352c1368a1da2dcd54bfdb",
+        "comparison_scope": "G3：共同银行主证明所有四指定章节、双末位独立审查全文、八点原JSON全字段及R879登记二至EOF；与G16复制池真末菜单作区别比较。",
+        "reason": "两真实末位比较及共同q给非正损失和，X正性迫Y相同/r1/有效核值相同。共同H可放宽跨枝q，目标相关H_i不可继承；八点仅best_among_pair。该必要模板与复制池单节点目录不同，无完整SPE/half推论或相互蕴含。"
+      },
+      "customer-attraction/comparator-multiplicity-single-root-108-row-obstruction": {
+        "state": "isolated-after-review",
+        "object_pin": "9987202d08c2fb8b4896d4a30b323e480bb8f797cd0df453ac45edec8e10ce1b",
+        "comparison_scope": "G4：108行/3072增广原子规则、16支持精确JSON的全部108余量；与G12的26/82行点、G3真实银行菜单及G6逐枝界比较。",
+        "reason": "精确O/W=1523853699890/669004065243>2只否这个必要系统蕴含O≤2W。d重数没有逐比较标签目录、O=OPT或完整σ实现；与其它松弛变量不同，不能按行数强弱合并。没有本包可用的精确被否公式对象作为refutes目标。"
+      },
+      "TC-DIL-1": {
+        "state": "linked",
+        "object_pin": "c689e33e8fae78a234902dfe95ff1679653ab6876d7cb395d4c9787d7f7bfc12",
+        "comparison_scope": "G5：TC-DIL全文、截断推论全文、M007当前v2 body/七层证明合同与原验证器静态读、原JSON头及layers[4]全字段；既有ALL边全文按原SHA复用。",
+        "reason": "同一g_a非负递减、q_a/r_a>0，TC锐钟比较加重复标签Shapley表示给全部sharp冗余；补零只扩边际，实速率另限两侧其它标签支持≤m−1。与M007含sharp的固定σ/T有理原/对偶3/2联合，得到目标整条可行域不变及精确值不变；本包声明follow-up据此关闭。",
+        "edge_ids": [
+          "cag-03a94-sharp-truncated-dilution-and-fixed-value"
+        ]
+      },
+      "customer-attraction/true-deviation-branch-payoff-and-coverage-extent": {
+        "state": "isolated-after-review",
+        "object_pin": "17053a3379e83529275134d2e2c2598192f6e67b86d9a4c94d49e48882c64027",
+        "comparison_scope": "G6：真实偏离枝EXT全文及来源回撤/异质修复资源全文；与G1 return-Jensen和G8银行完整根额外槽语义比较。",
+        "reason": "同一叶其它m−1主题incidence和A上Cauchy给EXT；真实IC d_A≤u_i后换上界，k0/u0/m1另列。该逐枝福利上界不是跨history共同付款；与G1跨contexts收益下界不互推整条对象，静态势最大元也不是原σ后继。"
+      },
+      "customer-attraction/dummy-joint-trial-and-common-reward-preemption-review": {
+        "state": "isolated-after-review",
+        "object_pin": "e9645eb3a863daa2a547fde53740309f33851890612d9f037f9b92c8efde66cf",
+        "comparison_scope": "G7：dummy/joint及公共奖励审查全文；47/9客户、固定J对偶的有限域和末位包含偏离；比较G3/G16的真实末菜单必要性。",
+        "reason": "47客户成熟完整σ与9客户联合终点不同；固定J=7/5不能扩全部组合或菜单。公共奖池D=P被B_i严格包含，末位免费加b/2使指定路径非SPE，3/2只空域条件。目录不同，不与其它core强造逻辑边；不重跑成熟全IC/对偶。"
+      },
+      "customer-attraction/cartesian-bank-full-root-menu-low-value-symmetric-nash-failure": {
+        "state": "isolated-after-review",
+        "object_pin": "837e1af160f870eafc759dc9ffad6349b6124eab08af876d3cdaf6a90bf84753",
+        "comparison_scope": "G8：银行完整根菜单主证明、分数背景匹配双边证书章节、12×12有理矩阵/全部负载及资源全文；与G9全路径MILP、G10删槽预算逐公式比较。",
+        "reason": "全部m≥4、任意列Q由完整m槽Jensen≥B_m>u，排Mfull/NQ低值存在量词；m4全部NE值59/36，相关性任意但两边际均匀。W2m、OPT3m−2仍满足half。保根m槽+额外query不反全路径U或删当前槽安全预算；外包incident边对端不在本task，未列资产。"
+      },
+      "customer-attraction/fixed-actual-path-full-menu-milp-diagnostic-and-rational-proposal-postcheck": {
+        "state": "isolated-after-review",
+        "object_pin": "95d46ceb0e6c4c2a143eef686e59462fc631712b6604d672018c31aa32be29e6",
+        "comparison_scope": "G9：MILP正文/源码全文、36客户两完整提案正文及原三行JSONL全字段；比较G8完整根列与G10删当前槽定义。",
+        "reason": "E可信孩子+当前收益cap以及首次离轨子树独立给同时拼合，bigM/onehot精确表达有限最坏完整菜单。合法恢复p的Fraction各列min可给单点gap；两个负gap−27/2、−473/48及48访问不证明全局U。与银行和fixed-saddle槽数/目标不同，无本范围额外逻辑关系。"
+      },
+      "customer-attraction/optimal-query-onpath-fixed-saddle-budget-probes": {
+        "state": "isolated-after-review",
+        "object_pin": "963eb096a197e312b32772a0a1a2e5bb43e4ac61ab78b1cbf9544c186e8812c3",
+        "comparison_scope": "G10：固定鞍点资源全文及budget定义、README/manifest；task in-packet M-66e828…完整精确例与rank接受逻辑逐项比较。",
+        "reason": "固定正规p/Q的β_Bw≥v与δ_aw≤v相夹、Γw≥0/W1给真固定鞍点目标G；120方向浮点阴性/一全兴趣零点均非精确上界。M-66例满秩却最优面[1/3,1]，accepted/context checks关闭该in-packet比较；不能反正确fixed-saddle合同或存在好最优p。",
+        "context_edge_ids": [
+          "cag-a88e-active-rank-example-checks-query-uniqueness-gate"
+        ]
+      },
+      "M-f8f335dfb86b4e73a468240db1b48062": {
+        "state": "isolated-after-review",
+        "object_pin": "ef908aa6fea596567fafddca0362d644dafe3a909feff653a63038de5afc02f4",
+        "comparison_scope": "G11：SAFE能力边界及稳定B四税/全历史重置全文；与G12必要行、G13 full-v分母变化作区别比较。",
+        "reason": "CCC A1 A2的W7/OPT15只由末两位全历史BR支持四税；前三位各1/3而改fresh A得3，明确非SPE。只否末组件替代早位IC；稳定H可保证的全历史恒B/刚性定理未被反驳。局部归一化不造库存，不能继承full-v访问常数。"
+      },
+      "M-174c9eac248144658e149c2533bf6e83": {
+        "state": "isolated-after-review",
+        "object_pin": "db3d59ccf384e9ced0c06771b5412089cfea5e5998ffe47b09784f23ce3f5dae",
+        "comparison_scope": "G12：两路径系统/精确坏点正文、完整策略探针程序合同、两路径计算全文、原两点JSON及check.py全文静态读；与G4/G11必要信息域区别。",
+        "reason": "26/82必要行的m3/m5精确点违反C2，但四拟定倒二收益68/52/1402782/818178低于真两尾max_a min_BR门槛79/84/1593822/1338882，均无所命名SPE尾。只否所列必要行推导能力，不是C2/half完整反例或LP最优；不能按行数比较108增广系统。"
+      },
+      "customer-attraction/fresh-broadcast-total-visited-profit-mass-bound": {
+        "state": "linked",
+        "object_pin": "7996b47a7ccdbdd202cc5487a50bb98f2fa4d0847c0cacd2b80261db64787f49",
+        "comparison_scope": "G13：fresh质量引理全文及read-add full-profit source v2全文，核全部鲜q/full-v/strict future/SUBSET/FLOW；并与G1 return和G11改分母边界比较。",
+        "reason": "源定义的逐客户fresh比例和≤1给row≤(r−1)/r；严格DAG递推V=1+QV由后继剩余人数归纳≤(r+1)/2，多源线性叠加得整条Σh≤Σb(m−i+2)/2。只h访问利润质量，不能换βu/coupon/共同W费用；零v/空源/m1完整。",
+        "edge_ids": [
+          "cag-a88e-full-profit-fresh-kernel-gives-multisource-visit-bound"
+        ]
+      },
+      "customer-attraction/constant-tail-menu-harmonic-to-profit-conversion-coefficient-boundary": {
+        "state": "isolated-after-review",
+        "object_pin": "4be54715e99f54e373db96d01fc6c120c9fd27573c24c1805e27b5cc7431f751",
+        "comparison_scope": "G14：常后继harmonic反例全文、母式全部点态松弛、原九行审计资源/README；与G13质量核及保护范围区别。",
+        "reason": "A单客/B r客的完整弱SPE W=OPT=r+1，连续价r−1/普通tail利润r迫系数≥1−1/r；常菜单S/R/Z0且净余额1−r(1−η)，η1/2从r3失败。D为当前前新鲜而非终局遗漏，安全v=1仍聚合成立。没有和fresh h的单位转换或新half反例。"
+      },
+      "customer-attraction/three-player-opposite-group-submodular-security-probe-exact-bound": {
+        "state": "isolated-after-review",
+        "object_pin": "4f14a9e9cb6f77e8400a188fbb064bebf5aac2fc088695ce62fafe4fd8f24c23",
+        "comparison_scope": "G15：反组共同次模固定查询s/3全文及二/四阶税正文；新增read peer的registry陈述、model/quantifiers/body精确核；与M007固定C124比较目标及TC-DIL冗余比较。",
+        "reason": "六查询恒等式+一般二阶税给2t≤sL，末位03真IC给t≤su3，故3t≤sP，rank-one F达到含s0。新增peer仅登记五标签rank2特例四阶分离，不能冒全域二阶税source推出六标签任意F；不造该伪逻辑边。固定安全LP不同于M007固定比较值，旧float点小残差不作精确证书。"
+      },
+      "customer-attraction/replicated-omission-pools-strict-last-two-player-deviation": {
+        "state": "isolated-after-review",
+        "object_pin": "d5e6652a265241d96b0446bb2285968934da2b79c86e41d7a7c5a7708bc6af8f",
+        "comparison_scope": "G16：复制池主证明四指定章节并读全文、可信饱和资源全文；比较G3双目标银行和q1单池全人数填充的目录条件。",
+        "reason": "q≥2时P^k,A后改D_j的末位全BR恰T_h(h≠j)，全给偏离者7>原5，排该特定有序路径全部平局。q=k≥17形式OPT>2W仍非SPE；k17是20人/54标签。q1失去另池外选项而E可惩罚，未否单池构造；与共同q双末位模板无互推。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/customer-attraction-3a-3a-a88e616310dad14c/active-rank-example-checks-query-uniqueness-gate.json",
+        "sha256": "dfdd269afb8ab7af927133624050e8a3d12bc5ffbd9da2a374389cfc4dd1097f"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-a88e616310dad14c/full-profit-fresh-kernel-gives-multisource-visit-bound.json",
+        "sha256": "df11e11c936da2c3767c0ee137c43c49ee5435af410cc2fe08fa0f563a689710"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-a88e616310dad14c/optimal-row-dual-checks-signed-real-reorder-residual.json",
+        "sha256": "e83b89016a9eac44f6f0e8a0fb1f5a5a33337747e93ee8ae536488bb328007ef"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-a88e616310dad14c/return-ledger-gives-common-action-jensen-lower-bound.json",
+        "sha256": "b00d7fadafa09fa28bf65676c054f25e5d02f7bf8d08ac74fb53c9785816f99e"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-a88e616310dad14c/six-cycle-checks-missing-reverse-source-capacity.json",
+        "sha256": "fe350fe1fd10a8928a0e77adc6138d20ba6a274c0125734782ad34b5e6630778"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-03a94ff88fa45040/sharp-truncated-dilution-and-fixed-value.json",
+        "sha256": "693fcbe1ae4951ac5565a658186fb82e54861b28604afd57d4f75c318d96b267"
+      }
+    ],
+    "closed_overlaps": [
+      {
+        "core_id": "TC-DIL-1",
+        "peer_id": "customer-attraction/common-truncated-submodular-dilution-redundancy",
+        "reason": "现行read-add已把peer及M007纳入只读，实际完整比较TC时钟锐界、同一截断C的重复标签Shapley表示/边际补零/实速率支持限制及固定σ/T含sharp的3/2原始对偶证书；原SHA canonical ALL边cag-03a94-sharp-truncated-dilution-and-fixed-value已给整条冗余与固定值结论。故本follow-up实质解决，复用而不另造3B或单源丢M007。"
+      }
+    ],
+    "follow_up_tasks": [],
+    "reused_read_only_evidence": [],
+    "review_file": {
+      "path": "map/edges/customer-attraction-3a-3a-a88e616310dad14c/review.md",
+      "sha256": "a1a4396123cc60e0b653f529b85b93b48e73c66409ba80395eb9d6dec54bae47"
+    },
+    "reading_ledger_file": {
+      "path": "map/edges/customer-attraction-3a-3a-a88e616310dad14c/reading-ledger.json",
+      "sha256": "916f3bdabd3c6c7a740b93cb82bfbd698367d6a71a120dfe23014358657602a6"
+    },
+    "review_note": "Boss6 fresh数学worker完成19core/7read、16比较组及全部in-packet/follow-up处置。5新边=2whole逻辑+3context checks，另原SHA复用1canonical ALL；coverage4linked/15isolated。所有原请求阅读段实读、成熟同SHA数学核验不重跑，详ledger。clone只读/staging独立；Root已完成新五边native bind/check并更新对应assets SHA；canonical保持原SHA。",
+    "task_snapshot": {
+      "path": "research/operations/map-v2/tasks/customer-attraction-3a-3a-a88e616310dad14c.json",
+      "sha256": "8f48d1231347e7d3a6ed54c119dbac6f1f2c5d8fe6d970af4517c5b454a3264b",
+      "state": "claimed",
+      "owner": "Boss6",
+      "request_id": "f49f1a64b99741d09d90a3290f36e33f"
+    },
+    "parent_review": {
+      "reviewed_by": "Boss6",
+      "mathematical_review": "Root实读当前六个承重端点的完整合同、return与full-v/fresh目标及swap源全文，逐步重构同动作加权Cauchy、严格future角色归纳、六循环零支撑反例、最优dual的双符号J及rank反例最优面；实读全部19项coverage和16组review。另实读TC/截断共同边际原文与现行ALL边，确认固定σ/T的3/2和实速率支持限制。两逻辑边是完整目标，三checks仅检查未被method宣称的自动性质；不反half、不用h界代付βu。本轮无旧科学重放。",
+      "native_binding": "edge-bind --write and edge-check passed on all five new edges; canonical edge retained byte-for-byte",
+      "scientific_replays": 0,
+      "review_scope": "All 19 coverage records and full worker review, plus actual source and endpoint reconstruction for all new relations and the reused ALL."
+    }
   }
 }
