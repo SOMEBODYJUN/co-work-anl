@@ -1,0 +1,49 @@
+{
+  "edge_id": "um-91867-unicyclic-specializes-to-forest",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss2",
+  "kind": "specializes",
+  "source_ids": [
+    "UM-UNICYCLIC-FIXED-CONFIG-LAW-EXACT-GLUE-v1"
+  ],
+  "target_ids": [
+    "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1"
+  ],
+  "conditions": "保同一有限显式不相关机、T≥0、显式有理完整合法机器配置律及每原任务恰覆盖1。把源的每个分数关联分量至多一圈限制为无圈；任务资格度仍任意。局部正支撑总数S按机器配置节点和独占任务节点共同计数。",
+  "roles": {
+    "UM-UNICYCLIC-FIXED-CONFIG-LAW-EXACT-GLUE-v1": "给出至多单环分量的完整指定行律相容性充要判据和有理分解构造；无环时没有任何圈流可行性条件。",
+    "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1": "所得无环特例，保给定完整行律、原任务标签、原阈值、位多项式构造和至多S个支撑。"
+  },
+  "explanation": "森林满足源的至多一圈条件，并且单环分量集合为空，所以“每个单环分量的切口同值分层流可行”为真；源充要判据遂保证全部给定行律有原T真实调度联合实现。Ec=0，源的支撑界为max(1,S)。合法UM有m≥1，每台机器至少一个正局部状态，即便任务为空仍有确定空配置，故S≥1且max(1,S)=S。源构造在这里只执行树上兼容状态选择及各节点同时减最小质量，每步保共同剩余总质量和边两端布尔边际一致；不新增支撑，故至多S步。0/1端恢复为原固定任务，正质量元组每任务恰一次、每行配置合法≤T。输入相同且无需解任何圈LP，因此源的位多项式性保留。反向任何保持给定律的调度分布取单机边际即返回原点。覆盖≥1的删除预处理是正文另述的阈值存在性扩展，未被本边说成保原行律。",
+  "scope": "目标整条森林指定完整rowlaw定理；不限制任务资格度，不将原正支撑森林或二资格机器森林与0<x<1分数二部森林混同。",
+  "whole_result": "源单环相容性定理限制到分数关联森林后，完整推出目标：任意给定显式有理合法机器行律、每任务覆盖恰1时，都能在同一T精确有理分解为完整实际调度，支撑至多所有节点正局部支撑项之和S，构造为总位多项式。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/单环分数关联上的指定配置律相容性--定理.md",
+      "sha256": "14942bf1f5e89322978fbc0af1624ad9428fe8eb57c57655df5fa05d53b33e4b",
+      "section": "命题"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/单环分数关联上的指定配置律相容性--定理.md",
+      "sha256": "14942bf1f5e89322978fbc0af1624ad9428fe8eb57c57655df5fa05d53b33e4b",
+      "section": "保持完整局部律的有理分解"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md",
+      "sha256": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5",
+      "section": "精确有理分解"
+    }
+  ],
+  "review_note": "实读源与目标完整正文及当前registry绑定，逐项核对域、任意任务度、0/1端固定、Ec=0时max(1,S)=S、空任务和精确有理位复杂度。新定理确实包含目标整条陈述，非仅共享树术语。",
+  "endpoint_pins": {
+    "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1": "0117271b622daf5cc467317f1e1229b9ec5769c2d80ea71258bcf63a50cfff07",
+    "UM-UNICYCLIC-FIXED-CONFIG-LAW-EXACT-GLUE-v1": "53462b1a0e2ed49d5c4cae873ed033cb6c23322fdf70dc9abf72473b25e1de57"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/单环分数关联上的指定配置律相容性--定理.md": "14942bf1f5e89322978fbc0af1624ad9428fe8eb57c57655df5fa05d53b33e4b",
+    "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5"
+  },
+  "review_digest": "b3091a899f2ae3b7bba3d8d7383a5aa93a221db314e76b82818407d5df0dcfde"
+}
