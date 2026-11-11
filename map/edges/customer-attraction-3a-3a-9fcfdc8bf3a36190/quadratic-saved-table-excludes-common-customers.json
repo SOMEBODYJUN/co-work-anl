@@ -1,0 +1,43 @@
+{
+  "edge_id": "cag-9fcf-quadratic-saved-table-excludes-common-customers",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/symmetric-quadratic-probe-saved-point-exact-security-equality"
+  ],
+  "target_ids": [
+    "M-67c3d64ca1824c53b72c3d2790cdbe60"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "严格使用保存的三人六标签辅助游戏h=(30,22,22,34,22,26)及全部V_ab=h_a−2G_ab；允许重复行动。待排除的共同客户表示须用同一个标签覆盖映射，客户权重可signed。",
+  "roles": {
+    "customer-attraction/symmetric-quadratic-probe-saved-point-exact-security-equality": "提供固定整数h/G和完整V表，确定两个重复终局的全部单人收益。",
+    "M-67c3d64ca1824c53b72c3d2790cdbe60": "完整得到同支持不同总支付的共同客户表示障碍。"
+  },
+  "explanation": "对s=2e_0+e_3，两个选0者各得(V_00+V_03)/2=(10+14)/2=12，选3者面对双0得V_30=18，总支付42。对r=e_0+2e_3，选0者得V_03=14，两个选3者各得(V_30+V_33)/2=(18+14)/2=16，总支付46。两终局支持都恰{0,3}。\n\n若存在共同客户均分表示，固定每个客户x的权重w_x（容许负数），且客户由所选标签覆盖时，在全部覆盖者间均分，则总支付Σ_i u_i=Σ_{x:c_x>0}Σ_{i覆盖x}w_x/c_x=Σ_{x:c_x>0}w_x。覆盖指示只取决于所选标签支持，不取决于这两个标签的重复人数。所以这两个相同支持终局的总支付必须相同，与42≠46矛盾。有限signed权重不改变守恒消去，故排除的不只是非负客户表示。\n\n这个障碍与该辅助游戏的精确v_3=14、最差SPE总支付42相容；没有否定其精确势性质或安全等号，也不能把42当原CAG福利。禁止重复fresh模型不含这两个重复终局，不能据此直接否它。",
+  "scope": "只排除这个固定三人六标签收益表的共同客户表示，含signed客户质量；不是一般辅助势定理或原六人half反例。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/对称二次势探针保存点的精确保底等号--计算.md",
+      "sha256": "97b301c0bef274932a41644784088cec84760f13dbe3f1145d41a310e98b6bfb",
+      "section": "全部保存点与可复核的6×6静态收益矩阵"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/对称二次势探针保存点的精确保底等号--计算.md",
+      "sha256": "97b301c0bef274932a41644784088cec84760f13dbe3f1145d41a310e98b6bfb",
+      "section": "同支持效率失败：连固定三人CAG表都不是"
+    }
+  ],
+  "reviewed_by": "Boss6/cag9fcf",
+  "review_note": "逐项核当前登记陈述、模型、量词和所列全文证据；所有source的当前truth_status均为proved。复用同SHA成熟解析证明及充分证书，未重跑LP、MILP、全历史IC、BI或会员型扫描。 whole_result覆盖目标整条陈述，抽象例与真实SPE范围分别保留。",
+  "whole_result": "同一保存二次游戏在2e0+e3的总支付42、在e0+2e3的总支付46，支持均为{0,3}；共同客户均分表示即使允许signed客户权重也必须支持守恒，因此该固定三人数组不存在共同客户表示。",
+  "endpoint_pins": {
+    "M-67c3d64ca1824c53b72c3d2790cdbe60": "3a2df7d54740e2d4f300c383965dced881bf524d3446c6d34ba1a4258d266189",
+    "customer-attraction/symmetric-quadratic-probe-saved-point-exact-security-equality": "98e06cf5ad6e570e819d7cef4d02766c6195564cef34636805329067103493e7"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/对称二次势探针保存点的精确保底等号--计算.md": "97b301c0bef274932a41644784088cec84760f13dbe3f1145d41a310e98b6bfb"
+  },
+  "review_digest": "d2abefc533252ba955ae6c38dd85f6c938988a41bf2367527905246cb21293f6"
+}

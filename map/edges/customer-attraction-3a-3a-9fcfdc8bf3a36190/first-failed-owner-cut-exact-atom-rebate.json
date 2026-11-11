@@ -1,0 +1,58 @@
+{
+  "edge_id": "cag-9fcf-first-failed-owner-cut-exact-atom-rebate",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-FIXED-ORIGIN-RETRACTION-v1",
+    "DISPERSION-REBATE-v1"
+  ],
+  "target_ids": [
+    "M-b36ea945fc41428c9aed003ae371dc92"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一固定合法全额atom流按owner汇总后执行旧比例贪心；j为其首次z_j<0。使用旧算法明确回推的λ_j=1、ℓ>j价格0、i<j全撤owner价0、未全撤owner价q̄_i。不得改成任意新盒最坏价。",
+  "roles": {
+    "CA-FIXED-ORIGIN-RETRACTION-v1": "提供指定首失败price、其旧CUT=z_j及此前贪心饱和/紧cap结构。",
+    "DISPERSION-REBATE-v1": "在同一价把粗需求与细需求相减，精确给Σ_i min(D_i,E_i)。",
+    "M-b36ea945fc41428c9aed003ae371dc92": "完整得到紧owner价离散公式及旧违反ε到新同价违反的精确变化。"
+  },
+  "explanation": "旧首失败price满足λ_j=1且其后全0。i≥j的atom只能终结更晚角色，所以q_a=0；i=j时E_j=0，i>j时D_i=E_i=0，均无返还。此前全撤owner有λ_i=0且q_a≥0，故D_i=0。此前未全撤owner取λ_i=q̄_i，于是Σ b_a(q_a−λ_i)=0，即D_i=E_i。其返还min(D_i,E_i)=D_i=(1/2)Σ_{o(a)=i}b_a|q_a−q̄_i|。加总恰为目标指定的(1/2)Σ_{i<j:y_i^greedy<b_i}Σ_{o(a)=i}b_a|q_a−q̄_i|。\n\n令ε=−z_j>0。旧SOURCE-PRICE左端减共同RHS恰ε，细需求在同价减少上述返还，右端不变，所以新同价违反恰ε减此数。这里不把负的有符号违反再取正部；返还超过ε时只说明该价已不分离，仍可能存在其它失败价格。旧输入H/J及逐角色全额K保持一致是该差额成立的前提，漏掉固定余流会改变RHS。",
+  "scope": "仅诊断旧比例贪心的指定第一次失败切面；不证明返还≥ε，不证明旧price仍最坏，不据消除该价推出独立atom可行。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/固定来源路由的最大回撤与价格分离--算法.md",
+      "sha256": "a34248c8d362cbb9d3d05919e635eb63541f7bec8c5c9c4d8c0ed948611ed9ca",
+      "section": "固定修复族的精确三角算法"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/固定来源路由的最大回撤与价格分离--算法.md",
+      "sha256": "a34248c8d362cbb9d3d05919e635eb63541f7bec8c5c9c4d8c0ed948611ed9ca",
+      "section": "首次失败的显式非负价格证书"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/初始客户边独立回撤与共同价格分散返还--定理.md",
+      "sha256": "96096bf3cdb9ef2a6b219b48ebc432114790692c523294815e046286c61b33e3",
+      "section": "相对owner比例回撤的精确分散返还"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/原子独立回撤的零返还价格与失败切面--审查.md",
+      "sha256": "271789220b2dd7a035dfa6161ba2018d736f2d96aaa6acb1db3609f8eb3c655e",
+      "section": "旧三角贪心首败价如何改变"
+    }
+  ],
+  "reviewed_by": "Boss6/cag9fcf",
+  "review_note": "逐项核当前登记陈述、模型、量词和所列全文证据；所有source的当前truth_status均为proved。复用同SHA成熟解析证明及充分证书，未重跑LP、MILP、全历史IC、BI或会员型扫描。 whole_result覆盖目标整条陈述，抽象例与真实SPE范围分别保留。",
+  "whole_result": "每个旧比例贪心首次失败j及其指定回推价λ，粗需求减细需求恰(1/2)Σ_{i<j:y_i^greedy<b_i}Σ_{o(a)=i}b_a|q_a−q̄_i|；旧违反ε=−z_j的新同价违反恰为ε减该返还。",
+  "endpoint_pins": {
+    "CA-FIXED-ORIGIN-RETRACTION-v1": "b38faa68e88e959fd5ea3594f2fc35973df5cfa7d811725e107ba4f2387c8d41",
+    "DISPERSION-REBATE-v1": "1f4ab2bcb9629da41781af141bd9d450bf7672254617bd9fbd38288af861e5d5",
+    "M-b36ea945fc41428c9aed003ae371dc92": "cbd6b1280b9ccec514374bfde63e8d9f912ca5860f1933173c97ac7f9f6f2939"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/固定来源路由的最大回撤与价格分离--算法.md": "a34248c8d362cbb9d3d05919e635eb63541f7bec8c5c9c4d8c0ed948611ed9ca",
+    "archives/customer-attraction/state/定理/初始客户边独立回撤与共同价格分散返还--定理.md": "96096bf3cdb9ef2a6b219b48ebc432114790692c523294815e046286c61b33e3",
+    "archives/customer-attraction/state/审查/原子独立回撤的零返还价格与失败切面--审查.md": "271789220b2dd7a035dfa6161ba2018d736f2d96aaa6acb1db3609f8eb3c655e"
+  },
+  "review_digest": "40d486aff1414fbc2165a0993e5983b73e205293f6c2e652d0bf908432954b54"
+}

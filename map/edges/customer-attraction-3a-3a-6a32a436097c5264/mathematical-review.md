@@ -4,6 +4,16 @@
 
 共同模型只作域条件：有限单位客户、有限非空共同标签目录、任意覆盖映射；单位提供者各行动一次，全部有序历史、重复动作、同覆盖异标签、空主题、零客户和弱平局保留。每次强制行动沿同一原完整策略的真实后继完成。根福利等总收益；合法非零背景的剩余利润另算。没有给定义造hub。
 
+## v7 差异接续与证据版本
+
+当前native刷新task仍为claimed/Boss6，CA-STRATEGY-CONE现v7，registration pin为 `291bd4d94e33d40566453a33b5cf07b1c620b77362268417582efecb42b0c4bb`。本次唯一端点差异是 `fixed_bridge_mult3_validation.json` 的历史parameters把providers/topics反置，现已订正为providers=3、topics=6。该validation新SHA为 `cc819e4b0046fa38880168793794b8675d15a3e0bd7a64efa9b1cc0e4d308d86`；所引原输入SHA仍为 `c3b17b2b8b9e03caafcd3656ddb6904613e1430b5e75f9c3348310e09f283d84`，其原字段p=6、m=3。本次实读完整更正validation及原输入的参数字段，核其中43有序历史分为1/6/36、63客户型坐标、3个收益与该参数相符。没有执行历史验证或重算其科学数值。
+
+锥定理正文SHA仍是 `ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39`，statement/quantifiers/assumptions及全部锥证明均未改变。两处使用分别是完整策略锥→actual菜单方法的source，以及固定pair证书在真实锥中应用check的target；它们都不调用该历史有限参数字段作为承重数学。两边仅刷新v7版本说明和元数据证据，原推导、逻辑/语境分类及量词保持原审定结果。父Boss后续统一edge-bind；本worker没有手填绑定字段。
+
+原轮63项计划reading_refs已按指定正文/section实读。当前native刷新把只读锥证据闭包展开后共有82项计划引用；本次按明确差异接续只核上述元数据和未变正文指纹，不把未重读的历史证据闭包冒记为本次全量新实读。所有必要引用仍定位原完整证明，历史validation只作版本勘误证据。
+
+收据closed_overlaps仅保留任务声明的actual-menu→CA-STRATEGY-CONE follow-up；clock/interval属于in-packet比较，已由accepted整条边及对应coverage表达，不列为follow-up闭合项。
+
 ## 1. 实际根单删义务与18客户合法背景障碍
 
 实读 M-446a091bcc2345bf9070121912a676dc v1、zero-actual-regret-repair-parent-independent-review v2，以及三个审查/原审计、837B witness和2395B complete audit。八类型总18客户；A背景的旧末菜单是(C,C,B,C)，首C，尾投影(C,B)覆盖17。删A保旧策略后，第一尾角色四真分支值(8,17/2,17/2,8)，实际C已最大；实际C后的末位B亦最优，所以两个实际regret均0。删后离轨B后的旧C却17/2<9，D后的旧C为6<7。新可信末菜单唯一(C,D,B,B)，第一尾角色值(8,7,17/2,9)，故所有删后SPE实际(D,B)、覆盖16。复制t次保比较与零regret，使损失t，排除只依n和实际regret且F₂(0,0)有限的统一绝对修复界。
@@ -30,7 +40,7 @@ PAY-OPT中的KKT背景、查询及原σ真源必须全部相同。t_x=(1+L*_x)�
 
 ## 4. 全actual菜单固定策略锥与非退化精确校准点
 
-实读CA-STRATEGY-CONE v6、actual菜单资源、三随机/四named完整计算页与其证据README。固定形式σ后，G_{h,a}逐全部有序历史真实完成，两侧收益对客户重数线性。删除全零/完全重复差行且同乘L=lcm(1,…,m)不改锥。故Γw≥0恰保该σ成为SPE，而非在轨或静态PNE松弛。
+实读CA-STRATEGY-CONE v7（原轮v6证明复用；本次仅核精确证据元数据差异）、actual菜单资源、三随机/四named完整计算页与其证据README。固定形式σ后，G_{h,a}逐全部有序历史真实完成，两侧收益对客户重数线性。删除全零/完全重复差行且同乘L=lcm(1,…,m)不改锥。故Γw≥0恰保该σ成为SPE，而非在轨或静态PNE松弛。
 
 actual各位置/动作生成竞争元组B_i(a)，去掉当前位置而保原过去和真后继，菜单M的每项均有m−1合法槽。给定合法p，β_B(p)·w=E_pf_B。固定p的LP最小化W=c·w，约束w≥0、Γw≥0、所有β_Bw≥1。这是菜单保底≥1归一化；cap(M;w)≥1。因此恢复精确可行解且W<m时才有W<m cap(M;w)，严格分离该共同菜单支付桥。固定w的查询块是在同一M求max_p min_Bβ_B(p)w；两块联合双线性，交替不等于联合最优或锥下界证书。全兴趣型质量m给任意σ/p的精确可行点W=m，每角色/每query值1，故只给最小目标≤m。cone→方法边保这整条有限方法合同。
 
@@ -110,4 +120,4 @@ M-52 v3及原322强制孩子/27061目标DAG/92788含自身比较的程序页均�
 
 ## 完成口径
 
-八个关系文件：五条accepted逻辑关系（四条whole_result、一条contribution），三条accepted checks语境关系。19核心均有具体比较范围；七个核心有accepted逻辑关系，十二个经实读仅边界/语境。唯一任务follow-up对象对已在本包闭合；另in-packet clock/interval比较由整条边闭合。没有尚需发布的构图follow-up，没有以open数学问题拖延成熟交付。所有reading_refs按原path/SHA及指定section记录；未新跑旧数学程序或有限搜索。父Boss负责最后语义复核、edge-bind、edge-check和Git/队列操作。
+八个关系文件：五条accepted逻辑关系（四条whole_result、一条contribution），三条accepted checks语境关系。19核心均有具体比较范围；七个核心有accepted逻辑关系，十二个经实读仅边界/语境。唯一任务follow-up对象对已在本包闭合；另in-packet clock/interval比较由整条边闭合。没有尚需发布的构图follow-up，没有以open数学问题拖延成熟交付。原轮实际reading_refs与本次精确差异范围按上述版本说明记录；未新跑旧数学程序或有限搜索。父Boss负责最后语义复核、edge-bind、edge-check和Git/队列操作。

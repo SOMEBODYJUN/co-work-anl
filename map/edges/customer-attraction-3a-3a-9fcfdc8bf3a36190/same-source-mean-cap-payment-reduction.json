@@ -1,0 +1,58 @@
+{
+  "edge_id": "cag-9fcf-same-source-mean-cap-payment-reduction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-3037b0681605488faac0c733f17cffea"
+  ],
+  "target_ids": [
+    "customer-attraction/credible-endpoint-common-payment-interface-contracts"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限单位客户共同标签目录、同一完整有序历史纯SPE、同一原σ查询源、同一全行可信端点均值cap共享最优点及其逐行有效对偶。actual标签仅保原actual端点；t=(1+L)^−1，p支持最大t价格γ，L为m−1质量合法分数目录负载。",
+  "roles": {
+    "M-3037b0681605488faac0c733f17cffea": "提供原source的SOURCE-BAL、Qstat≥0与STATIC；μ_i保持逐行独立。",
+    "customer-attraction/credible-endpoint-common-payment-interface-contracts": "只获得候选金额的精确标量化及half充分方向，候选全称金额仍开放。"
+  },
+  "explanation": "令X=D+Σ_i(1+μ_i)I_i+Σ_iE_pR_i。源恒等式是W−mγ=X−Cov，故Cov−X=mγ−W。于是目标PAY式Cov≤X+(γ+Qstat)/2，在同一个接口上当且仅当W≥((2m−1)γ−Qstat)/2。该式成立时，2W≥(2m−1)γ−Qstat≥OPT_m，其中后一方向来自STATIC。整个推导不除γ或W，m=1和零客户也保留。\n\n这是精确reduction，不是Cov的已证上界。G=Σμ_iI_i+ΣER_i是同一信用的拆分；没有在X外再加G，也没有把η_i强迫为非负。局部真实重放对象M-d30c…使用释放actual-tag的GLOBAL-NET raw域、共同μ及B_i=d_i−S_i；其RESET/EDGE恒等式保祖先损失与不同主题同叶差。该对象没有给从本可信全行cap端点到raw重放终点的可信闭包及同域价格/容量映射，不能将它的净cap银行塞入X。即使局部代数相似，也不支付本候选的原source金额。",
+  "scope": "只固定可信全行均值cap原σ接口的候选付款reduction。没有断言其阈值是half的必要条件，未把NET/full-slot/aligned域中的γ、价格或库存混入。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资料/可信端点共同付款的接口合同与停界--资料.md",
+      "sha256": "da5198dbf31c542dd8a903e2a2b97f9061ca6d8c59af50da3f1f0366beba8328",
+      "section": "一份原source共同账及其未证金额"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/可信端点均值cap的三域与松弛信用--引理.md",
+      "sha256": "be4f9cf6869acbaf9007d7dfffad7da33667c2bce62a45370b86683164da78e2",
+      "section": "全行域保留原查询源的精确正信用"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/可信端点均值cap的三域与松弛信用--引理.md",
+      "sha256": "be4f9cf6869acbaf9007d7dfffad7da33667c2bce62a45370b86683164da78e2",
+      "section": "倒数主账及尚未证明的付款"
+    },
+    {
+      "path": "archives/customer-attraction/state/问题/真实重放协方差的定量付款--问题.md",
+      "sha256": "80d1c50eaeabe78a57c76d4395319109c5e3187a5d26dd20cf6fa487eb07ae85",
+      "section": "切线EDGE与不同主题同叶残差"
+    }
+  ],
+  "reviewed_by": "Boss6/cag9fcf",
+  "review_note": "逐项核当前登记陈述、模型、量词和所列全文证据；所有source的当前truth_status均为proved。复用同SHA成熟解析证明及充分证书，未重跑LP、MILP、全历史IC、BI或会员型扫描。 本边只交contribution；目标的其余义务不由此边支付。",
+  "contribution": {
+    "result": "候选PAY在同一可信全行cap/原source接口上精确等价W≥((2m−1)γ−Qstat)/2；因此PAY一旦成立便推出2W≥OPT_m。",
+    "remaining": "仍须对每个规定实例/完整SPE及同域共享最优点证明这个阈值，等价地证明原source协方差金额。SOURCE-BAL、静态余量、局部重放恒等式及有限未分离都不提供该上界。"
+  },
+  "endpoint_pins": {
+    "M-3037b0681605488faac0c733f17cffea": "9027d5cf1145cd1625fa93360cdcf8c2116097e396a50d07fabd1e535875164e",
+    "customer-attraction/credible-endpoint-common-payment-interface-contracts": "6b438e2efe313abf6025cd173f3f8b45f76c2ea2a93737513b672a607ce6584f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资料/可信端点共同付款的接口合同与停界--资料.md": "da5198dbf31c542dd8a903e2a2b97f9061ca6d8c59af50da3f1f0366beba8328",
+    "archives/customer-attraction/state/引理/可信端点均值cap的三域与松弛信用--引理.md": "be4f9cf6869acbaf9007d7dfffad7da33667c2bce62a45370b86683164da78e2",
+    "archives/customer-attraction/state/问题/真实重放协方差的定量付款--问题.md": "80d1c50eaeabe78a57c76d4395319109c5e3187a5d26dd20cf6fa487eb07ae85"
+  },
+  "review_digest": "93caaa6273c5b67e1b92027539df27c7966d9c87944580e5ee28250820e8a5c0"
+}

@@ -1,0 +1,63 @@
+{
+  "edge_id": "cag-9fcf-credible-pasting-separates-sm-all-rent",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/fixed-actual-path-credible-thresholds-and-full-menu-envelopes"
+  ],
+  "target_ids": [
+    "M-3c4224decc184b5da00cbda57f823e98"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定一个合法实例及确可由完整纯SPE实现的actual有序叶a；L_i(A)在精确h_i,A后的所有完整child-SPE见证上取原受迫者收益极小值。SM-all量化每个带索引合法m元组，含全部排列、重复和own标签。",
+  "roles": {
+    "customer-attraction/fixed-actual-path-credible-thresholds-and-full-menu-envelopes": "提供全部first-deviation capped孩子可以同时粘合、own孩子必须固定的精确可实现集合。",
+    "M-3c4224decc184b5da00cbda57f823e98": "只获得离轨极小化、SM*/SD量词对应及不可删的own租金项；SM-all总付款未证。"
+  },
+  "explanation": "每个离轨A≠a_i的最低完整孩子满足L_i(A)≤d_i^σ(A)≤u_i(a)，所以它属于E_{i,A}(a)。源的first-deviation粘合给一份保actual的完整σ⁻，同时对所有离轨列达到L_i(A)；own列仍恰为a，不能取另一个更低收益的actual孩子。对任意σ实现同一a，每个离轨真实d≥L，own真实d=u_i。\n\n定义barL_i(a_i)=u_i，离轨barL=L，及ρ_i=u_i−L_i(a_i)≥0。因此任一有序比较元组T严格有Σ_iL_i(T_i)=Σ_i barL_i(T_i)−Σ_{i:T_i=a_i}ρ_i。没有把嵌套actual孩子互相独立化。\n\n在同一实例上对全部完整σ量化：SM*要求每条可实现a和每个T有ΣbarL≥|∪T|−W，它当且仅当SD要求每份完整σ和每个T有Σd_i^σ(T_i)≥|∪T|−W。SM*⇒SD由逐列d≥barL；SD⇒SM*在给定a把全部真正离轨列同时极小化，再对σ⁻使用SD。原SM-all则还需支付上式明确列出的own租金。只找某最优排列或某最优支持不等于所有有序T；U-ENV/P-ENV中的G最大化也不是L的当前收益极小化。\n\n本边证明的是候选的可实现集合及量词reduction，未推出ΣL≥比较覆盖−W。L_i(A)≤Θ_i≤u_i使SM⇒TB⇒half的条件方向有效，但不支付SM或TB。",
+  "scope": "精确区分SM-all、保own的SM*与全部真策略SD；保持原完整历史量词，不把已证离轨粘合当作共同金额。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/固定实际路径的可信门槛与全菜单包络--资源.md",
+      "sha256": "494d309dff485df8ee3b2e56f8c5f17b9fcec578963f327754a897056d967cf7",
+      "section": "保实际叶的全部菜单同时拼合"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/固定实际路径的可信门槛与全菜单包络--资源.md",
+      "sha256": "494d309dff485df8ee3b2e56f8c5f17b9fcec578963f327754a897056d967cf7",
+      "section": "可信门槛L、SM和TB"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/固定实际路径的可信门槛与全菜单包络--资源.md",
+      "sha256": "494d309dff485df8ee3b2e56f8c5f17b9fcec578963f327754a897056d967cf7",
+      "section": "在轨租金的完整两人例"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/动态可信门槛与归属响应税的共同付款条件--候选.md",
+      "sha256": "2d458ab29d0841cd76c634f4ec12df7f884f2398d0311ab759b566106d04ff6b",
+      "section": "TB、SM与不同排列量词"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/动态门槛审查的净差量词与接续版本边界--审查.md",
+      "sha256": "c7ddc590e5e2470ef8a6c6b51fd91f7e9c7cc7f4463524a365a706d0411128e3",
+      "section": "TB与三个SM版本，及准确反例合同"
+    }
+  ],
+  "reviewed_by": "Boss6/cag9fcf",
+  "review_note": "逐项核当前登记陈述、模型、量词和所列全文证据；所有source的当前truth_status均为proved。复用同SHA成熟解析证明及充分证书，未重跑LP、MILP、全历史IC、BI或会员型扫描。 本边只交contribution；目标的其余义务不由此边支付。",
+  "contribution": {
+    "result": "全部离轨最低孩子可同时保actual实现；对每个T有ΣL(T)=ΣbarL(T)−Σ_{own}ρ_i。对该实例全部完整SPE量化时SM*⇔SD，原SM-all还必须保留own租金及全有序元组量词。",
+    "remaining": "仍须从原游戏全部真实IC证明覆盖净差≤ΣL，或给击中SM-all精确量词的反例。合法粘合、SM*/SD等价、有限阴性以及最优排列存在性均不支付原全称SM-all。"
+  },
+  "endpoint_pins": {
+    "M-3c4224decc184b5da00cbda57f823e98": "f9904ea1b8e8bb7e78c3d5ffd822fb892d6167349918230380b433afdc8396de",
+    "customer-attraction/fixed-actual-path-credible-thresholds-and-full-menu-envelopes": "f86ab6bee8950998ea622e25dc0f14cb197338858f1065cb39980eff0390d59c"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/固定实际路径的可信门槛与全菜单包络--资源.md": "494d309dff485df8ee3b2e56f8c5f17b9fcec578963f327754a897056d967cf7",
+    "archives/customer-attraction/state/候选/动态可信门槛与归属响应税的共同付款条件--候选.md": "2d458ab29d0841cd76c634f4ec12df7f884f2398d0311ab759b566106d04ff6b",
+    "archives/customer-attraction/state/审查/动态门槛审查的净差量词与接续版本边界--审查.md": "c7ddc590e5e2470ef8a6c6b51fd91f7e9c7cc7f4463524a365a706d0411128e3"
+  },
+  "review_digest": "651bcabec158906939a4b1a2f856afa062b68d4e6c967dfcb0dd6f7139169f15"
+}
