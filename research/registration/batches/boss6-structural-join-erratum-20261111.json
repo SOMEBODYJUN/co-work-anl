@@ -1,0 +1,158 @@
+{
+  "schema": 2,
+  "objects": [
+    {
+      "title": "常数dual或incidence树宽的FPTAS及弱困难性",
+      "model": "R||Cmax整数处理时间，dual或incidence treewidth固定常数。",
+      "statement": "该类仍弱NP-hard，但对每ε>0存在FPTAS；将处理时间按δB/n网格取整、压缩负载向量后运行DP并回溯。",
+      "quantifiers": "每个固定树宽和ε>0，时间poly(input,1/ε)，次数可依树宽。",
+      "assumptions": [
+        "dual/incidence树宽常数",
+        "B≤2OPT的合法上界"
+      ],
+      "scope": "论文Theorem3；非强多项式精确或一般UM FPTAS。",
+      "body": {
+        "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+        "sha256": "a2c918daef8cb6711a97a56fbdca355f2e72fd1136ff6dbc1216f393d577aaa1"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+          "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/结构参数DP共享活跃机器合并负载勘误--审查.md",
+          "sha256": "3b26e5d5cf1c422b280e04cf0b39964fe5aa804335576b117c54198ccca5b4b6"
+        }
+      ],
+      "truth_status": "proved",
+      "kind": "theorem",
+      "objections": "第三阶段 Boss6 包实读完整中文正文、原 PDF 页1–11及页12至Lemma17前半，定向视觉核页4、6、7、9、11、12。正文已纠正舍入累积误差后的负载 cap B+nq、状态数以及相关DP定义；Theorem3主合同、固定树宽量词与独立弱NP-hard结论不变。本包另以最快可用机器上界重构舍入与精确DP的FPTAS贡献，不把该贡献当作困难性证明；未运行旧数学程序。 本轮共享精确DP正文另补dual/incidence join的父活跃负载最大项；采用已忘机器closed-max并在forget时计负载的完整DP等价有效。已有缩放、实际回溯和弱NP困难性合同不变。",
+      "object_id": "M-14dbe6980117492aa7a3b48c52378dcb",
+      "version": 4,
+      "sources": [
+        "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+        "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+      ]
+    },
+    {
+      "title": "Primal资格树宽的不相关机精确FPT",
+      "model": "显式非负/正整数加工时间及∞的R||Cmax，primal图任务为点、共同资格机器成邻接。",
+      "statement": "对primal treewidth k有精确FPT算法，论文DP运行2^{O(k)}O(nm)，可回溯实际最优分配。",
+      "quantifiers": "全部输入，参数k为primal树宽；数值位长按输入计费。",
+      "assumptions": [
+        "通常整数处理时间编码",
+        "合法树分解或相应固定参数求分解"
+      ],
+      "scope": "论文Theorem1，非机器图树宽单参数结论。",
+      "body": {
+        "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+        "sha256": "a2c918daef8cb6711a97a56fbdca355f2e72fd1136ff6dbc1216f393d577aaa1"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+          "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+        }
+      ],
+      "truth_status": "proved",
+      "kind": "theorem",
+      "objections": "第三阶段已在正文纠正原PDF Remark7漏掉的团大小减一，并恢复Lemma9(6)中中文漏写的check J。前者为原论文错误，后者原PDF正确；均已定向视觉核对。Theorem1精确FPT主定理、数值位长及分解前提保持；未将背景错式登记成独立节点，未运行旧数学程序。 本轮共享正文仅另纠正dual/incidence join的父活跃负载目标漏项；原primal Lemma10–11机器组不交，定理、单指数DP界及分解前提保持。",
+      "object_id": "M-232414c2d8e744ccaba95138638a15dc",
+      "version": 4,
+      "sources": [
+        "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+        "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+      ]
+    },
+    {
+      "title": "Dual或incidence树宽加目标或资格度的精确FPT",
+      "model": "整数R||Cmax；dual图机器为点/共享资格任务成边，incidence图为真实机器任务二部图。",
+      "statement": "参数对(k1,k2)下精确FPT，k1∈{dual treewidth,incidence treewidth}，k2∈{OPT,max_i|J(i)|}。状态保活跃机器负载，复杂度L^{O(k1)}O(nm)。",
+      "quantifiers": "每个该参数对的全部合法输入；第二参数不能删。",
+      "assumptions": [
+        "整数加工时间",
+        "资格与分解显式"
+      ],
+      "scope": "论文Theorem2，L由OPT+1或2^{max资格度}控制，不是2乘资格度。",
+      "body": {
+        "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+        "sha256": "a2c918daef8cb6711a97a56fbdca355f2e72fd1136ff6dbc1216f393d577aaa1"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+          "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/结构参数DP共享活跃机器合并负载勘误--审查.md",
+          "sha256": "3b26e5d5cf1c422b280e04cf0b39964fe5aa804335576b117c54198ccca5b4b6"
+        }
+      ],
+      "truth_status": "proved",
+      "kind": "theorem",
+      "objections": "第三阶段已把正文的状态数改为目标裁剪下的OPT+1或2^{max_i|J(i)|}，并按原定义、任务恰分配一次及负载守恒修正nearly inactive机器、incidence任务拆分与父负载匹配的源文缺漏。原PDF Remark6的指数本来正确，中文转写漏指数；源PDF全体调度负载值不能无裁剪地以OPT界住。Theorem2及两个参数的完整合同不变；原证明按修正后的DP语义使用，未运行旧数学程序。 本轮另按原PDF完整Cmax定义纠正Lemma13/15的join目标漏项：补父活跃负载最大值。两任务三机器的完整反例和充分修正已独立审计；不改状态坐标、L^{O(k)}复杂度或两参数合同。",
+      "object_id": "M-247deecec83946358afe4e89413a7bd1",
+      "version": 4,
+      "sources": [
+        "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+        "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+      ]
+    },
+    {
+      "title": "常数incidence秩宽受限指派的PTAS",
+      "model": "restricted assignment p_ij∈{p_j,∞}；incidence图rankwidth为固定常数。",
+      "statement": "论文Theorem4给PTAS。连接类型≤2^k，固定尺寸种类d时计数DP为O(m2^k n^{O(d2^k)})；Rounding Lemma将一般尺寸归约到固定种类并以LST槽恢复小任务，给(1+ε)OPT。",
+      "quantifiers": "每个固定k及ε>0，全部该restricted实例；不要求原尺寸种类预先常数。",
+      "assumptions": [
+        "同任务各有限端时间相同",
+        "incidence rankwidth固定"
+      ],
+      "scope": "非一般异速UM；所述padding仅使dual成团、primal为原图的cone，不能据此把primal rankwidth压到1；该旁注不替代incidence参数。",
+      "body": {
+        "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+        "sha256": "a2c918daef8cb6711a97a56fbdca355f2e72fd1136ff6dbc1216f393d577aaa1"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+          "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+        }
+      ],
+      "truth_status": "proved",
+      "kind": "theorem",
+      "objections": "第三阶段只定向复核PDF页12的padding、网格与尺寸计数：原构造仅使dual成团，primal是原图增加universal job，不能据此声称primal rankwidth为1；大任务网格为delta^2 B且尺寸数安全界为ceil(1/delta^2)+1。正文与scope已同步。Theorem4主incidence-rankwidth PTAS沿用成熟证明；本轮没有重新审读PDF页13–19或声称完整rankwidth DP重证，未运行旧数学程序。 本轮共享正文新增的dual/incidence treewidth join勘误不参与本rankwidth DP和舍入；其statement、参数、oracle/编码范围及truth_status保持。",
+      "object_id": "M-3452046f3bdd47c48b17a0a3038ba4b2",
+      "version": 4,
+      "sources": [
+        "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+        "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+      "sha256": "a2c918daef8cb6711a97a56fbdca355f2e72fd1136ff6dbc1216f393d577aaa1",
+      "disposition": "objects",
+      "object_ids": [
+        "M-14dbe6980117492aa7a3b48c52378dcb",
+        "M-232414c2d8e744ccaba95138638a15dc",
+        "M-247deecec83946358afe4e89413a7bd1",
+        "M-3452046f3bdd47c48b17a0a3038ba4b2"
+      ],
+      "reason": "原完整Cmax定义下两个join遗漏父活跃合并负载；完整小反例与充分修正已直接复核，四个既有定理身份和全部数学合同保持，逐引用同步当前字节。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/结构参数DP共享活跃机器合并负载勘误--审查.md",
+      "sha256": "3b26e5d5cf1c422b280e04cf0b39964fe5aa804335576b117c54198ccca5b4b6",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-14dbe6980117492aa7a3b48c52378dcb",
+        "M-247deecec83946358afe4e89413a7bd1"
+      ],
+      "reason": "原完整Cmax定义下两个join遗漏父活跃合并负载；完整小反例与充分修正已直接复核，四个既有定理身份和全部数学合同保持，逐引用同步当前字节。"
+    }
+  ],
+  "edge_files": []
+}
