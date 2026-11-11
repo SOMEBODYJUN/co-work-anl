@@ -11,3 +11,5 @@ HANDOFF所列待读已补齐：第四源审查110–140、原819B报告全部十
 5个额外实读对比在receipt.additional_comparisons逐项保留；当前task未声明overlap_comparisons，故closed_overlaps=[]，无必须另派比较。一般共同付款/half仍open，并在各贡献remaining精确保留。现有canonical fullindex边按原SHA319acaeb49df8c9d468bb179763f1ada8474e7ee41e074a6dd75212c573deecb原字节复用；未修改。
 
 新6边已审定accepted、尚未edge-bind。父Boss执行bind/check后需据最终字节重算receipt.assets内新边SHA；现给的是绑定前文件的准确SHA。worker未进行Git/同步/队列/bind/check或共享正文/registry/integration修改。
+
+本包资产归属修订：上述既有fullindex canonical边的两端均为read_object_ids，已从receipt.assets移至reused_read_only_evidence，保原path/SHA及非延拓作用。assets现仅含与本包核心相接的六条新逻辑边；核心coverage及六边字节均不变。

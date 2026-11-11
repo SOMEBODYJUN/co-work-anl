@@ -101,10 +101,6 @@
     {
       "path": "map/edges/customer-attraction-3a-3a-6df4ea759fe1ccb2/fixed-701-cone-cannot-pay-half.json",
       "sha256": "443b700d582bd775abf7b1e61b88e7dc46621a268f9b4974ea826609e7fdf2b5"
-    },
-    {
-      "path": "map/edges/customer-attraction-3a-3a-460088dd793a0b6d/fullindex-cut-excludes-fixed-701-marginal.json",
-      "sha256": "319acaeb49df8c9d468bb179763f1ada8474e7ee41e074a6dd75212c573deecb"
     }
   ],
   "follow_up_tasks": [],
@@ -144,5 +140,19 @@
     "note": "Root逐条读6最终关系和8核覆盖，复用此前实读七/34/42SOURCE/701/113graph承重正文。四有限点仅在必要松弛域；113图非负盒投影不外推共同客户或全sigma；新增read-add比较移入additional_comparisons。",
     "native_validation": "edge-bind --write and edge-check passed; structural check is not the mathematical verdict",
     "scientific_replays": 0
-  }
+  },
+  "reused_read_only_evidence": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-460088dd793a0b6d/fullindex-cut-excludes-fixed-701-marginal.json",
+      "sha256": "319acaeb49df8c9d468bb179763f1ada8474e7ee41e074a6dd75212c573deecb",
+      "edge_id": "cag-460088dd-fullindex-necessary-cut-excludes-fixed-701-marginal",
+      "source_ids": [
+        "customer-attraction/six-actual-fourth-five-row-full-index-projection-independent-review-scope"
+      ],
+      "target_ids": [
+        "M-5d7bf32e11384c81bce9adfb2b273883"
+      ],
+      "role": "两端均为本任务read_object_ids的既有canonical关系，作为只读证据复用，不属于本包assets。它证明同SHA595e…旧701保存点的14原子actual/d边缘违反第四源五行无K必要上包络，因此该固定边缘无完整SPE延拓；与原701有限必要系统可行并存，不外推其他点或half。原边字节保持不变。"
+    }
+  ]
 }
