@@ -1,0 +1,56 @@
+{
+  "coverage": {
+    "CA-CARTESIAN-PAYOFF-UNIQUE-FACTOR-v1": {
+      "state": "linked",
+      "object_pin": "478b993429188620a73b4531f1bc8c397d7bae51999252b2c19dc35e1ba00d5e",
+      "comparison_scope": "当前v1完整陈述/全部玩家每合法历史PU、正向终局实现归纳、独立乘积反向、CAG最差福利与条件边界；对照当前P4完整价格链、共同补偿候选、PU有限核验全文及原P4 whole边。",
+      "reason": "作为新ALL迁移边的关键前提：当前玩家在孩子中已为过去玩家，PU阻断分量支付受其他坐标后继影响，任意联合SPE终局可逐坐标由完整分量SPE实现；根PU进一步把每分量一份预算证书传给所有投影。该用途不要求原策略字面独立，也不把有限47根回归当普遍证明。",
+      "edge_ids": [
+        "boss5-pu-transfers-selected-component-price-budget-to-every-coupled-spe"
+      ]
+    },
+    "M-b77c555512fb45fc9616608c28f65ed0": {
+      "state": "linked",
+      "object_pin": "518c2387c03f4858dda71894a4eff021a2752054ac0e697b6b7d7c270a973b48",
+      "comparison_scope": "当前v1 P4及其P1/P2/P3全部承重章节；实读现有ca90ad-p1-p3-imply-specified-product-price-budget whole边；新比较是PU投影的独立重现产品与任意耦合σ的同终局/同支付映射。",
+      "reason": "P4原整条指定产品论证继续保留，新增ALL边通过PU重现实际终局，把同一价格预算与half转回任意耦合σ。每分量仍须至少一份真正满足B_j(a_j)≤W_j的SPE证书，未因PU免费获得；a≥Σa_j保为不等式。",
+      "edge_ids": [
+        "boss5-pu-transfers-selected-component-price-budget-to-every-coupled-spe"
+      ]
+    },
+    "customer-attraction/cartesian-coupled-continuation-common-price-compensation-interface": {
+      "state": "linked",
+      "object_pin": "bc907dda443c80430a441368e38e5dab5db4b17bcf448512905cbe4bcdf953c8",
+      "comparison_scope": "当前v1候选全文：实际投影预算、共同质量t、非负价格卷积、福利反例与PU正子类、一般预算及较弱后继超额桥边界；完整比较PU与P4并给m2两分量三单客户的策略耦合见证。",
+      "reason": "新accepted conditional边完整解决目标的PU+分量证书子类：任意耦合完整SPE满足B_prod(min u)≤W、OPT≤2W。对目标仅局部贡献；无PU的实际投影预算/跨坐标超支机制和普遍分量预算仍是正文保留的开放义务，未提升目标truth_status。",
+      "edge_ids": [
+        "boss5-pu-transfers-selected-component-price-budget-to-every-coupled-spe"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/boss5-pu-price-3b-dd8f8641afe7aa6a/pu-transfers-component-price-budget-to-arbitrary-coupled-spe.json",
+      "sha256": "85230ea7c4e2702664a1b4654fe2c5dad6fb414725089384a9d90baf59dd45a1"
+    }
+  ],
+  "closed_overlaps": [
+    {
+      "core_id": "CA-CARTESIAN-PAYOFF-UNIQUE-FACTOR-v1",
+      "peer_id": "M-b77c555512fb45fc9616608c28f65ed0",
+      "reason": "本包明确比较已完整解决：PU给任意耦合终局的完整分量SPE实现；将这些实现独立取乘积可重现同一终局，再应用保全部分量预算输入的P4。根PU还使每分量单份证书足够。该桥是终局/支付迁移，未断言原完整策略独立。"
+    },
+    {
+      "core_id": "customer-attraction/cartesian-coupled-continuation-common-price-compensation-interface",
+      "peer_id": "CA-CARTESIAN-PAYOFF-UNIQUE-FACTOR-v1",
+      "reason": "PU与候选的精确关系已闭合为accepted conditional局部贡献，不是一般候选证明。全体玩家每历史强量词不可在同一归纳中改成根福利或末位本人唯一；无PU的一般补偿义务留在既有候选正文，未被撤销。"
+    },
+    {
+      "core_id": "customer-attraction/cartesian-coupled-continuation-common-price-compensation-interface",
+      "peer_id": "M-b77c555512fb45fc9616608c28f65ed0",
+      "reason": "P4对候选的作用已完整定位：PU子类加一份/分量的已付预算证书可迁移给任意耦合SPE；单独P4只给指定产品，而任意合法投影终局的纯代数保持仍须实际分量预算。未付一般预算已经是目标自身的开放内容，不另造同题重复follow-up。"
+    }
+  ],
+  "follow_up_tasks": [],
+  "review_note": "本任务definition没有标注follow-up对象对；以上逐项记录实际三端点比较的明确处置。完整条件子类已付推导，无需新增read-add或勘误。仅写本任务write_paths内一条边JSON及本覆盖收据；由Boss最终edge-bind/check后重算assets SHA并checkpoint/push/done。"
+}

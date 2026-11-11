@@ -1,0 +1,75 @@
+{
+  "edge_id": "boss5-pu-transfers-selected-component-price-budget-to-every-coupled-spe",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "CA-CARTESIAN-PAYOFF-UNIQUE-FACTOR-v1",
+    "M-b77c555512fb45fc9616608c28f65ed0"
+  ],
+  "target_ids": [
+    "customer-attraction/cartesian-coupled-continuation-common-price-compensation-interface"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "有限正个客户集彼此不交的单位客户CAG分量，相同m≥1名单位提供者及相同行动次序，有限非空真实集合目录，联合每步动作是完整Cartesian积，完整纯策略定义在所有有序历史。各分量满足PU：每个合法有序前缀的所有完整纯SPE对全部m名玩家（包括前缀已行动者）给同一终局收益向量。另须为每个分量j选出至少一份完整SPE ρ^j，其a_j=min_i u_i(ρ^j)满足实际预算B_j(a_j)≤W_j(ρ^j)。后一个逐分量预算是额外输入，PU本身没有证明它；本边不把它升为任意CAG分量的已证性质。",
+  "roles": {
+    "CA-CARTESIAN-PAYOFF-UNIQUE-FACTOR-v1": "提供任意耦合联合完整SPE终局的逐位置分量SPE实现；根PU又使每分量所有SPE的全体玩家收益、从而CAG福利相同。",
+    "M-b77c555512fb45fc9616608c28f65ed0": "提供已付分量最小利润预算在指定独立乘积中的保持及half；比较选定产品与耦合实际终局的相同支付和福利，将其适用量词扩大到PU子类的任意耦合完整SPE。",
+    "customer-attraction/cartesian-coupled-continuation-common-price-compensation-interface": "接收开放共同价格补偿方向在PU加逐分量价格预算下的完整条件子类；不接收无PU的一般补偿定理。"
+  },
+  "explanation": "固定任意联合完整纯SPE σ及其根终局z。PU定理对每个联合有序历史成立，故在根可为每个投影z^j选一份完整分量SPE τ^j实现它。此投影结论由剩余人数归纳承担：当前人在孩子节点已成为过去玩家，只有包含过去玩家的PU才能将其真实分量续局收益固定为P_i^j(h^j,a^j)，不受其他坐标行动或平局选择影响；联合Cartesian最优性于是逐坐标给最大化，再逐孩子拼接完整分量SPE。不能从终局可加直接跳到这一步。\n\n设输入证书ρ^j的收益向量为p^j。根PU使τ^j与ρ^j有相同全体玩家收益p^j。单位客户均分CAG在任意终局满足W_j=Σ_i u_i^j，故τ^j的实际福利也等于证书福利W_j，a_j=min_i p_i^j亦相同。这说明每个分量只需一份通过预算的SPE证书；在PU下其根价格预算对所有分量SPE都有效，不需预先给每个投影实现另证一次。没有PU或其他控制分量SPE支付的条件时，不能据此迁移单份证书。\n\n将各τ^j按其自身有序历史独立执行成τ*=⊗_jτ^j。P1/P4的指定产品论证适用于τ*，且τ*逐位置实现的联合终局正是z。因此σ与τ*虽可有不同的全部历史策略映射，却有完全相同的逐人分量收益、总收益及实际客户覆盖。P4的结论可沿这个终局/支付实现桥转回原来的任意σ，而无需声称σ本身坐标独立。\n\n具体地，对σ令u_i=Σ_jp_i^j，W=Σ_jW_j=Σ_i u_i，a=min_i u_i。不同分量的最小玩家可不同，但对每个i均有Σ_jp_i^j≥Σ_j min_ℓp_ℓ^j，故a≥Σ_ja_j。共同质量恒等式是F_prod(t)=Σ_jF_j(t)，每个边际具有同一个t，不是把t拆为Σ_jt_j；其非负价格下卷积在Σ_ja_j处采用可行价格拆分(a_j)，加上B非增，得到B_prod(a)≤B_prod(Σ_ja_j)≤Σ_jB_j(a_j)≤Σ_jW_j=W。客户份额非负，所以这里所有a_j、a均在价格定义域。\n\n任意最优m个整数主题给总质量m的可行分数覆盖，故OPT_m≤F_prod(m)≤B_prod(a)+ma；最小利润定义给ma≤Σ_i u_i=W。因此对原任意耦合σ都有B_prod(a)≤W及OPT_m≤2W，即W≥OPT_m/2。m=1、a=0或W=0均直接由同一非负链处理，不做比值除零，也不要求各分量最小者相同。\n\n终局实现与字面策略独立确实有别：在m=2、两个不交分量各有三个互异单客户主题的真实CAG中，每分量首位之后末位总选不同主题，所有分量非终端子博弈的SPE收益都是(1,1)，终端前缀自动唯一，所以满足PU。给主题编号0,1,2：在联合首位行动(x,y)后，末位分量1可在y=0时取x+1、y≠0时取x+2（模3），分量2取y+1（模3）。每个联合历史末位在两坐标都得1，为最大；首位任意行动也都得2，所以这是完整联合SPE。固定x而改变y会改变分量1回复，故原完整策略确实耦合；本边只对其终局和支付迁移价格预算。\n\n已审读现有ca90ad-p1-p3-imply-specified-product-price-budget整条边：它只给指定产品P4，不能单独承担本边的任意σ量词；本边新增的承重桥恰是PU投影实现与根支付不变。另审读PU的有限核验正文及ca-87d9-cartesian-audit-finite-payoff-unique-check：47/80只核原有限域的根集合，不代替本边全历史归纳。一般无PU候选中，P2/P3仍为菜单恒等式，但投影可能不是分量SPE；仍须另外证明实际投影预算或可支付其超支的共同跨坐标机制。",
+  "scope": "仅对PU子类并且每分量已给一份真实价格预算证书，完整证明任意联合完整纯SPE的根共同价格预算与half。对目标仅为已闭合条件子类的局部贡献，不证明一般耦合补偿，不从根福利唯一或末位本人收益唯一替换PU，也不分类PU必要性。",
+  "contribution": {
+    "result": "在全分量全历史全体玩家支付唯一且每分量至少一份完整SPE满足自身B_j(min_i u_i^j)≤W_j的条件下，每份可能耦合的联合完整SPE σ都满足B_prod(min_i u_i(σ))≤W(σ)，因此W(σ)≥OPT_m/2；输入的每分量单份预算因根PU而对所有投影SPE有效。迁移只需终局/收益实现，不需原策略独立。",
+    "remaining": "目标的一般全称共同补偿方向仍开放：没有PU时须实际控制联合偏离引起的跨坐标后继改变，并为投影终局证明价格预算或支付超支；即使有PU，若尚无各分量预算证书，本边也不自动提供它们。不把已知福利非可加反例说成共同价格目标的反例，不把本条件子类说成一般六人half闭合。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/全体玩家续局支付唯一的乘积分解--定理.md",
+      "sha256": "34e461e4bac319cd0804f194fd5e83ba3fb7b10cafc6d4aa25cad6cd0070ab4a"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/笛卡尔目录的共同质量覆盖与非负价格卷积--定理.md",
+      "sha256": "26caea513dccd71d5b679783c31544e0db32af07ae55753336e0f9aee7bd155a",
+      "section": "P1：指定完整SPE乘积和根量可加"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/笛卡尔目录的共同质量覆盖与非负价格卷积--定理.md",
+      "sha256": "26caea513dccd71d5b679783c31544e0db32af07ae55753336e0f9aee7bd155a",
+      "section": "P2：每个坐标共享同一个分数质量t"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/笛卡尔目录的共同质量覆盖与非负价格卷积--定理.md",
+      "sha256": "26caea513dccd71d5b679783c31544e0db32af07ae55753336e0f9aee7bd155a",
+      "section": "P3：达到的非负价格下卷积"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/笛卡尔目录的共同质量覆盖与非负价格卷积--定理.md",
+      "sha256": "26caea513dccd71d5b679783c31544e0db32af07ae55753336e0f9aee7bd155a",
+      "section": "P4：最小玩家价格预算的条件保持"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/笛卡尔耦合续局的共同价格补偿接口--候选.md",
+      "sha256": "30dc4d22b418fe0f83b638f8d07ab79a2c3e5e38f2cae7331db895fff58ac263",
+      "section": "开放问题的准确输入与已知对象"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/笛卡尔耦合续局的共同价格补偿接口--候选.md",
+      "sha256": "30dc4d22b418fe0f83b638f8d07ab79a2c3e5e38f2cae7331db895fff58ac263",
+      "section": "全仓已有的反面与正面条件"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "Boss5 fresh数学worker完整实读本任务3个当前端点合同、PU全部归纳与反向、P1–P4全部解析及共同补偿候选全文；另实读PU有限核验全文和现有P4 whole边。逐步核对：孩子节点过去玩家量词、投影完整SPE拼接、根PU把一份预算证书迁给任意投影、独立重现同一实际终局后将P4转回σ、a≥Σa_j而非等号、共同t与非负价格拆分、OPT≤B+ma和零端点。只读复核worker独立确认上述承重推导，并给出本边已自足核验的两分量三单客户耦合策略例。接受的是完整条件子类论证；未把未付分量预算或无PU一般补偿标成已证，未新增或复跑原有限审计。",
+  "endpoint_pins": {
+    "CA-CARTESIAN-PAYOFF-UNIQUE-FACTOR-v1": "478b993429188620a73b4531f1bc8c397d7bae51999252b2c19dc35e1ba00d5e",
+    "M-b77c555512fb45fc9616608c28f65ed0": "518c2387c03f4858dda71894a4eff021a2752054ac0e697b6b7d7c270a973b48",
+    "customer-attraction/cartesian-coupled-continuation-common-price-compensation-interface": "bc907dda443c80430a441368e38e5dab5db4b17bcf448512905cbe4bcdf953c8"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/全体玩家续局支付唯一的乘积分解--定理.md": "34e461e4bac319cd0804f194fd5e83ba3fb7b10cafc6d4aa25cad6cd0070ab4a",
+    "archives/customer-attraction/state/定理/笛卡尔目录的共同质量覆盖与非负价格卷积--定理.md": "26caea513dccd71d5b679783c31544e0db32af07ae55753336e0f9aee7bd155a",
+    "archives/customer-attraction/state/候选/笛卡尔耦合续局的共同价格补偿接口--候选.md": "30dc4d22b418fe0f83b638f8d07ab79a2c3e5e38f2cae7331db895fff58ac263"
+  },
+  "review_digest": "c5403bd3fa5d5d83c2867a39235879c6181018b00c181d06e0da6d057ea949bf"
+}
