@@ -397,7 +397,7 @@ Main指出首个三可见型见证中p2/ell5、p0/ell5不能属于actual第四�
 500u_4+143u_6+19K\ge\frac1{30}\sum_{e:i\ne j}\sum_x\min F_{500,e}(x).
 \]
 
-源归一负余量约−0.0003136089404，完整精确分数/整数权/系数在 `joint_common_denominator_5744.json`。旧8行包没有改写。自足证明、全部公平比较范围与原材料路径已写 `portfolio_comparison/formal_portfolio_strictness.md`；Main正在独立复核17份质量和1292行，此处不预报该新审查的结果。
+源归一负余量约−0.0003136089404，完整精确分数/整数权/系数在 `joint_common_denominator_5744.json`。旧8行包没有改写。自足证明、全部公平比较范围与原材料路径已写 `portfolio_comparison/formal_portfolio_strictness.md`。Main的 `main_verify_single_lifts_5744.py/json` 已独立PASS：从全点逐字面索引/RZ四态重新聚合17个可见分布，核全部非负提升、质量等式、1292行及原已独审联合行负值；精确提升SHA为329b5bca4ad9fdfa3e59b8fb0fcaeca396eceac950edc2d8c1c8ca8f67eca793。公共分母500的新缩整行另有作者Fraction重建，Main对此缩整版的审查不预报。
 
 ### 下一条实际缺口：两个不同旧查询的PAIR
 
