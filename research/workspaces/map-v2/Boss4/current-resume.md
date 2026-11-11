@@ -1,0 +1,16 @@
+# Boss4 当前数学成果与接续
+
+本轮六个旧批共78核心，独立比较已完成；共43条新accepted关系（39逻辑、4语境），全部按whole_result/contribution保范围，并有各批coverage和重叠处置。
+
+- 65333f4ce62fb991：两条六人同源七行完整关系。已pushed a7309f442b3bc13c860d34b67a85b10d6c3eb945，已done请求8533cf429ea14dc0a4e09d5b692de162。387旧点恰三新负行；437/587精确同最优10203453862/25332218055<1/2。环境重置前已用Fraction重建三套全部行、原始/对偶及七份局部闭包，未调用LP发现。
+- 5763bb31a5fab16c：6新边与1复用asset，7核心。已pushed 301a790842697de61f01a9e096784bf58d5ff72a；done请求f0f7f019125d482c8fa2c98bffc20792首次在元数据稀疏检出的缺.gitignore blob处403，push_attempted为false，须沿原命令恢复确认。收据SHA 3f2af5337d38d8ffcc9885afebc6d769aac832e7eb4a4308c946335701ceff56。
+- 5356b7001867fdb0：8逻辑边、16核心，4whole/4step；ADM限制域conditional。根已核全部数学，并把两in-packet记录从closed移到resolved_in_packet_comparisons，仅两follow-up留closed；修改后实际native batch/coverage/follow-up/result检查通过。
+- 54b1539bc147e0b3：6新边、14核心，3whole/1step/2checks。强S2需要同一实际前缀L；不交极大贡献只支付总福利部分。原生校验通过。
+- 66a784f55104e690：8逻辑边、22核心，2whole/6step。核差分、真实未筛菜单LP单混合组舍入与共同tau；FPAY仅等价金额/充分性，保持open。原生coverage及follow-up已实际通过。
+- 6306e968da0d870c：13边、17核心，12逻辑/1context。根核APC+到完整RC+、循环可信菜单、GT脚本、背景子域等全部语义；strong compiler已明确仅i<m有a_i/marked，末位g_m=0，求和精确抵消。全部bind/check、native coverage及final follow-up通过。
+
+四个剩余批的当前绑定边和收据都已在原write_paths；原workers均完成且已回拷recovered独立目录。无需重做科学实读、扫描或计算。根3D笔记current-integration-math.md复核了先前四peer包17边，并准确保留恢复后车图替代差异；不要复活已退canonical边或清其他未读变化。
+
+当前网络：成功发布前两批后，元数据promisor lazy fetch报CONNECT 403；已把主clone现有的11份ignore/attribute对象纯本地打包填入元数据缓存，未访问新端点。随后doctor/另一checkpoint遇Git超时。没有新claim。local-only先保全成熟结果；若网络恢复，沿原profit done请求确认、发布其余4批并done，再sync/assemble并发布registry/coverage/integration，然后按真实空位继续fresh数学worker。
+
+尚未完成整个第三阶段。队列在最后本地快照仍有CAG与无关机的可领3A，其他Boss持续推进；最终check/build只能在范围准确闭合后做。真实网络暂停须按现状handoff，不能把本地检查写成已远端done。
