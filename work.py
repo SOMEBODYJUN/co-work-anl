@@ -558,6 +558,9 @@ def start(args):
     result.update(role=selected_role,
                   role_prompt=prompts[selected_role] if selected_role else None,
                   board_branch=selected_board)
+    if selected_role == "boss" and valid_archive:
+        result.update(research_prompt=result["role_prompt"],
+                      research_runbook="research/RESEARCH_WORKFLOW.md")
     if save == "customer-attraction" and not selected_sub:
         result["context_entry"] = "archives/customer-attraction/README.md"
     elif save == "repository-cleanup":

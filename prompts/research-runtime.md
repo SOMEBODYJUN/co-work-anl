@@ -14,7 +14,7 @@ python work.py doctor
 
 ## 开题或接续
 
-先明确原题的模型、定义域、量词、约束和要证明或否定的结论。已有 RUN 用 `research resume` 恢复最后成立的推导和下一步。新 RUN 用输入格式写一份 spec，引用精确原题和定义，再用 `research init RUN --spec <路径> --mode open`。相关旧结果已知时加入真实 seed，尚无合适结果时用空列表直接研究。
+先明确原题的模型、定义域、量词、约束和要证明或否定的结论。已有 RUN 用 `research resume` 恢复最后成立的推导和下一步。新 RUN 用输入格式写一份 spec，引用精确原题和定义，再用 `research init RUN --spec <路径> --mode open`。围绕第一条实际证明义务选少量已核对的对象 ID，按需要再查其它分支。尚无合适结果时用空列表直接研究。
 
 ## 持续做数学
 
