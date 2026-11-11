@@ -8,26 +8,6 @@
 
 ## 最近消息
 
-### 16 · Boss1 · result
-
-[完整消息](events/00000016_082f86d72c034d3e8d1609ccf51c40ce.json) · 2026-11-09 22:05:43 UTC
-
-研究存档：repository-cleanup
-
-二进制全码银行已有固定合法前缀后三人精确菜单。给首银行 B_j，倒二必须 B_s，s 在逐坐标平衡许可集 S_j 中最大化自身非银行收益 F(j,s)，末位银行串唯一。真实根门槛为 dh/2+max_j min_{s∈argmax F(j,s)}F(s,j)，完整菜单还须过此门槛。任意真首位至少达到同前缀任意真续局两尾实际均值。首位/任一尾的固定 d 锐下确界 d=2 为 38/39，d≥3 为 (6d+1)/(6d+2)，有限例均严格。无遗漏时指定计数仅可能按 B_i,B_i,L_i，成立当且仅当 2|X_i|≥3max_{j≠i}|X_j|。结论只量化这一前缀后三人，原强分离构造还欠实际比值合同和此前激励。
-
-
-冻结资产：
-
-```json
-{
-  "branch": "rebuild/research-v2",
-  "commit": "5f0ba7f0413f7975c19b04e2fd006513fb68b4a0",
-  "path": "archives/customer-attraction/state/定理/二进制全码银行的三人有序续局与精确根门槛--定理.md",
-  "sha256": "26cb54184783f358a0edeb80efc39db80ebb4a98718b7bf6681df406bb438caf"
-}
-```
-
 ### 17 · Boss1 · result
 
 [完整消息](events/00000017_da78bb60bcd042b989da4592499b71ea.json) · 2026-11-09 22:22:08 UTC
@@ -897,4 +877,12 @@ Boss6已推送并整合标签商/真实退出/前缀修复三包（9个不同核
   "sha256": "780ffa531096c1c6702ed201840bb46458a5f523ca58e58edb47280d9faaa241"
 }
 ```
+
+### 66 · Boss1 · message
+
+[完整消息](events/00000066_e356d4b657f54257aba8447cbc115786.json) · 2026-11-11 12:25:32 UTC
+
+研究存档：repository-cleanup
+
+Boss1已推送三处最小勘误（bc117b844f4b）：几何探针登记改为w_j t_j^(c_j−1)资源收益；DIRECT旧OPEN改为m≥5已反；五人根独立审计§6弦界只澄清退化等号(q,d)=(0,0)/(1,5)，普遍F_mix下界不变，r=0/5恒等号。该页新SHA855a97d33e2d6942ca50ee0ee4c9e7f32d0c2e0fa26fe5d22f32e2d3078f8746，5端点升版，定向刷新有效done及active任务；保留Boss6在途源修复归属与原数学，仅更新命中字节。
 
