@@ -8,9 +8,10 @@ from fractions import Fraction as F
 from hashlib import sha256
 import gzip
 import json
+import sys
 import time
 
-HERE = Path(__file__).resolve().parent
+HERE = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else Path(__file__).resolve().parent
 
 
 def main():
@@ -19,11 +20,11 @@ def main():
         matrix = json.load(stream)
     point = json.loads((HERE / "augmented_lp_exact.json").read_text())
     strip = lambda col: {k: v for k, v in col.items() if k != "weight"}
-    assert len(point["columns"]) == len(matrix["columns"]) == 4849
+    assert len(point["columns"]) == len(matrix["columns"])
     assert [strip(col) for col in point["columns"]] == matrix["columns"]
     rows = [{j: F(value) for j, value in row} for row in matrix["rows"]]
-    assert len(rows) == len(matrix["row_names"]) == 5716
-    assert matrix["original_rows"] == 5692 and matrix["appended_unique_rows"] == 24
+    assert len(rows) == len(matrix["row_names"]) == point["verified_rows"]
+    assert len(rows) == matrix["original_rows"] + matrix["appended_unique_rows"]
     values = [F(col["weight"]) for col in point["columns"]]
     assert min(values) >= 0
     obj, norm = list(map(F, matrix["objective"])), list(map(F, matrix["normalization"]))
