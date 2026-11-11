@@ -17,7 +17,7 @@ replay 中两个 *-execution.json 及对应 stdout/stderr 是实际事件记录�
 
     python3 archives/customer-attraction/tools/evidence/b-family-menu-prices-boss3/materialize_runtime.py /absolute/new-runtime
 
-这个工具先复用既有 combined-branch-master-program 封包的47份冻结依赖，逐项SHA核后覆盖本包9份原源；根work.py只是无执行内容的找根标记。材料化不运行任何研究入口或Git命令。随后需要时可以显式运行：
+这个工具先复用既有 combined-branch-master-program 封包的47份冻结依赖，逐项SHA核后覆盖本包9份文件；根work.py只是无执行内容的找根标记。当前source-manifest实际有8条，使用仓库相对local_original/local_replay字段，其中部分记录只保basename；第9份是正文已绑定SHA的maxroot_identity_exact.json。2026-11-11的Boss1研究接续发现旧工具仍要求stored_path和每条path，导致KeyError；现工具兼容当前字段，并单独核验补齐该原点。原始证据字节未改。材料化不运行任何研究入口或Git命令。随后需要时可以显式运行：
 
     python3 -B /absolute/new-runtime/research/workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/research_2/B_menu_prices_master.py --all-families --verify
     python3 -B archives/customer-attraction/tools/evidence/b-family-menu-prices-boss3/audit_point_structure_and_prices.py /absolute/new-runtime
