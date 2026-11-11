@@ -1,0 +1,50 @@
+{
+  "edge_id": "ca35-prefix-bank-top-upper-pays-selected-H",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/aggregate-seat-upper-bound-selection-and-original-diagnostic-scope"
+  ],
+  "target_ids": [
+    "M-13a34b8d8a6349e1a8ce637e99a26a42"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一合法前缀、同一逐席上界；选Hmax或足以支付全部严格超过ξ的席位总额的H。",
+  "roles": {
+    "customer-attraction/aggregate-seat-upper-bound-selection-and-original-diagnostic-scope": "真实收益与第r席的最大上界合法聚合行。",
+    "M-13a34b8d8a6349e1a8ce637e99a26a42": "拟把同式推广至全部大小r−1的H。"
+  },
+  "explanation": "由u≥ξ，令G是q最大的r−1席。任意H满足Σ_H U≥Σ_Gq时，都有Σ_all q−Σ_H U≤(6r+1)ξ≤(6r+1)u。Hmax保证这个条件；H若包含所有q>ξ的席，删后其余至多ξ且被删q各≤U，也直接成立。一般任意索引集合未必具此性质，抽象(10,1,1)只否定排序论证，不是模型反例。",
+  "scope": "六人七极大席位及同一合法客户前缀；r=1时空H已全覆盖。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/审查/聚合席位候选的索引选择与原诊断边界--审查.md",
+      "sha256": "d0a2a2fdc84b180731cad7520d39fd8efddeb546e5c74b15a891f3cacf0c8392"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/聚合席位候选的索引选择与原诊断边界--审查.md",
+      "sha256": "d0a2a2fdc84b180731cad7520d39fd8efddeb546e5c74b15a891f3cacf0c8392",
+      "section": "原“任意H”短论证的缺口"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/顺序统计残差的表达式错位与逐索引合法性--审查.md",
+      "sha256": "7d6a3b093d916696de5679192e2d2c161c212480df22cdec4b22f078b5c168c6"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "Boss5 round50定向复核：实读最大上界聚合证明、全部H候选、改版ASR审查及本边。重核Σ_HU≥Σ_Gq或H包含全部严格超阈席足以支付，r=1空H完全覆盖；r≥2其余H仍需真实客户结构证明/反例。本次语境纠错不关闭该全称候选，不把抽象数列或4064平均当成真实SPE反例。",
+  "contribution": {
+    "result": "Hmax以及含所有严格超阈席的H均可得到登记候选的合法行，r=1的唯一H完全闭合。",
+    "remaining": "对r≥2其余H要证明客户结构补偿或构造真实完整SPE反例；形式数列与有限列平均都不能决定此全称。"
+  },
+  "endpoint_pins": {
+    "M-13a34b8d8a6349e1a8ce637e99a26a42": "bc2ac59f9dadb57d12b5d3a0664b5646ae80c1b57e5dba28684d21fbb68e95c6",
+    "customer-attraction/aggregate-seat-upper-bound-selection-and-original-diagnostic-scope": "2e36c109f53269a8b1aafb6793cccdb7530ccadc1e23c704264005d3c8f612dd"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/审查/聚合席位候选的索引选择与原诊断边界--审查.md": "d0a2a2fdc84b180731cad7520d39fd8efddeb546e5c74b15a891f3cacf0c8392",
+    "archives/customer-attraction/state/审查/顺序统计残差的表达式错位与逐索引合法性--审查.md": "7d6a3b093d916696de5679192e2d2c161c212480df22cdec4b22f078b5c168c6"
+  },
+  "review_digest": "6344816abeb363eafeb617cd71d65f3f3f03ec27a81c82e1d4afd80cffc12485"
+}

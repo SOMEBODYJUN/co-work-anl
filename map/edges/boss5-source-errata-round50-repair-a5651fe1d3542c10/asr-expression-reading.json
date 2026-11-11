@@ -1,0 +1,55 @@
+{
+  "edge_id": "ca35-prefix-bank-asr-expression-reading",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/orderstat-residual-expression-and-subset-legality-review"
+  ],
+  "target_ids": [
+    "M-affec6ce37094e6e9f46c0822f58e468"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一冻结列域、同一正轨道质量、ASR前缀使用route000010；每层H大小r−1；各席上界取V。",
+  "roles": {
+    "customer-attraction/orderstat-residual-expression-and-subset-legality-review": "逐列差项R′=R−Σ_Hq/L，且q非负。",
+    "M-affec6ce37094e6e9f46c0822f58e468": "固定4064列、八正有理轨道及全部删席最小值证书。"
+  },
+  "explanation": "冻结代码取base=E[u]−ΣE[q]/L、delta=(E[V]−E[q])/L，排序最小r−1个delta。源恒等式逐列确认这恰是E[R′]，不是E[R]。对每一H加Σ_HE[q]/L≥0，六个R′正最小值同时给R正下界，仍保同一固定遗漏0目标为负。",
+  "scope": "只在原4064列的同一八轨道平均；逐H平均正与逐客户/逐真实SPE合法为不同命题。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/审查/顺序统计残差的表达式错位与逐索引合法性--审查.md",
+      "sha256": "7d6a3b093d916696de5679192e2d2c161c212480df22cdec4b22f078b5c168c6"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/顺序统计残差的表达式错位与逐索引合法性--审查.md",
+      "sha256": "7d6a3b093d916696de5679192e2d2c161c212480df22cdec4b22f078b5c168c6",
+      "section": "Boss8 恢复的 ASR 双重审计"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/orderstat-asr-dual-Boss8/audit_asr_dual.py",
+      "sha256": "5e87466b96f8fec5329f622e32f0dd66bce653c0023d899e3e020715e29bf7b9"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/orderstat-asr-dual-Boss8/replay.stdout",
+      "sha256": "5972190454b22b8919e42e4be28644e6cdd00dffb79f80350e0c0a632e4dffd5"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "Boss5 round50定向复核：全文读两处改正文、冻结ASR源码/输出和本边；确认程序枚举4064未过滤形式列，route000010仅定义席位前缀，delta=(EV−Eq)/L审核R′。代数只给全H的R′正平均⇒同域R正平均，保留不认证R精确最小值及不补41基底的贡献边界；数学文字承接前轮准确版本。",
+  "contribution": {
+    "result": "判定证书实际审核R′，并将其正平均单向迁移为同一分布全部广告R的正平均。",
+    "remaining": "六层具体最小值与负目标值还需由八轨道有理支持和冻结脚本计算；不将R的最小值宣称相同。"
+  },
+  "endpoint_pins": {
+    "M-affec6ce37094e6e9f46c0822f58e468": "42712f85ff632a9a2cab0f79bf8a49ca48a1930a3616791225770b7e6656a5ce",
+    "customer-attraction/orderstat-residual-expression-and-subset-legality-review": "f46196a09f591f8c497432051249e1247540af286d4746ac33fce13a05ea1248"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/审查/顺序统计残差的表达式错位与逐索引合法性--审查.md": "7d6a3b093d916696de5679192e2d2c161c212480df22cdec4b22f078b5c168c6",
+    "archives/customer-attraction/tools/evidence/orderstat-asr-dual-Boss8/audit_asr_dual.py": "5e87466b96f8fec5329f622e32f0dd66bce653c0023d899e3e020715e29bf7b9",
+    "archives/customer-attraction/tools/evidence/orderstat-asr-dual-Boss8/replay.stdout": "5972190454b22b8919e42e4be28644e6cdd00dffb79f80350e0c0a632e4dffd5"
+  },
+  "review_digest": "c470761f24fad4344eb31ff5652b600774f22ae7eab191352e8b6a0371c626ae"
+}
