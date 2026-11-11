@@ -1,0 +1,263 @@
+"""Write the frozen handoff and exact source-budget receipts after PASS."""
+from collections import defaultdict
+from fractions import Fraction as F
+from itertools import product
+from pathlib import Path
+import hashlib
+import json
+
+HERE=Path(__file__).resolve().parent
+WORK=HERE.parent
+
+
+def sha(p):
+    return hashlib.sha256(p.read_bytes()).hexdigest()
+
+
+def main():
+    ver=json.loads((HERE/'independent_verification.json').read_bytes())
+    assert ver['status']=='PASS'
+    lift=json.loads((HERE/'symbolic_lift.json').read_bytes())
+    exact=json.loads((HERE/'exact_lift.json').read_bytes())
+    point=json.loads((WORK/'union_augmented_lp/augmented_lp_exact.json').read_bytes())
+    weights=[F(c['weight']) for c in point['columns']]
+    new=[F(v) for v in exact['new_values']]
+    D={(c['hist_column'],tuple(c['word'])):new[i] for i,c in enumerate(lift['new_columns']) if c['kind']=='D-membership-marginal'}
+    hist={};own=defaultdict(dict);b4=defaultdict(list)
+    for j,c in enumerate(point['columns'][:4849]):
+        if c['kind']=='hist':h=j;hist[j]=c
+        elif c['kind']=='joint-reply':
+            f,s,u,v=c['group'];g=(f,s,tuple(u),tuple(v))
+            own[h].setdefault(g,{})[tuple(c['state'])]=j
+        elif c['kind']=='actual-B-family-state' and c['source']==4:
+            b4[c['hist_column']].append((j,tuple(c['hidden'])))
+    def share(n,d):return F(n,d) if n else F()
+    U=[F() for _ in range(6)]
+    sourceD=sourceB=sourceC=sourceF=sourceH1=F()
+    sourceR=defaultdict(F);sourceZ=defaultdict(F)
+    for h,c in hist.items():
+        a=tuple(map(int,c['actual_bits']));p3=sum(a[:3]);P=sum(a[:4]);H=weights[h]
+        w=[w for w,n in zip(product((0,1),repeat=3),c['hist']) for _ in range(n)]
+        for k in range(6):U[k]+=H*share(a[k],sum(a))
+        for t,b,cc in w:
+            sourceB+=H*share(b,p3+t+b+cc)/6
+            sourceC+=H*share(cc,p3+t+b+cc)/6
+            sourceD+=D[h,(t,b,cc)]/F(6*(P+t+1))
+        for j,(h1,h2) in b4[h]:
+            sourceF+=weights[j]*share(h2,p3+a[5]+h1+h2)
+            sourceH1+=weights[j]*share(h1,p3+a[5]+h1+h2)
+        for f,s in ((0,0),(1,0),(1,1)):
+            es=[(j,k) for j in range(6) for k in range(6) if int(j==k)==s]
+            for j,k in es:
+                g=(f,s,w[j],w[k]);states=own[h][g]
+                qr=sum(weights[col] for (r,z),col in states.items() if r)
+                vz=sum(weights[col] for (r,z),col in states.items() if z)
+                ov=sum(weights[col] for (r,z),col in states.items() if r and z)
+                sourceR[f,s]+=qr/F(len(es)*(p3+w[j][0]+w[k][1+f]+1))
+                sourceZ[f,s]+=(vz/F(P+1)-ov/F((P+1)*(P+2)))/len(es)
+    budgets=[]
+    for r in ver['new_rows']:
+        name=r['name'];kind=name[0]
+        if 'min-at-most' in kind or kind=='D-at-most-hist':continue
+        if kind in ('A-to-D-safe','A6-to-D'):source=U[name[1]-1];label='actual u'+str(name[1])
+        elif kind=='D-source':source=U[4];label='actual u5, paid once for six deviations averaged by 1/6'
+        elif kind.startswith('D-to-'):source=sourceD;label='true D terminal share, average of six D nodes'
+        elif kind=='B-safe-to-D':source=sourceB;label='old true B share, averaged uniformly'
+        elif kind=='C-to-D':source=sourceC;label='old true C terminal share, averaged uniformly'
+        elif kind=='F-to-D-upper':source=sourceF;label='true same-B4 H2 share from all eight states'
+        elif kind=='H1-safe-to-D':source=sourceH1;label='true same-B4 H1 share from all eight states'
+        elif kind in ('R-to-D','Z-to-D-upper'):
+            same=int(name[2][1]==name[2][2])
+            source=(sourceR if kind=='R-to-D' else sourceZ)[name[1],same]
+            label='old true '+('R' if kind=='R-to-D' else 'Z')+' terminal share for its node orbit'
+        elif kind=='capacity-D':source=weights[0];label='common maximum topic size K'
+        else:raise AssertionError(name)
+        slack=F(r['slack'])
+        budgets.append({'name':name,'source_semantics':label,'source':str(source),
+                        'query_demand':str(source-slack),'slack':str(slack),
+                        'source_approx':float(source),'query_demand_approx':float(source-slack),
+                        'slack_approx':float(slack)})
+    assert len(budgets)==62
+    budget_payload={'scope':'Each receipt keeps its own true source. SAFE and min-upper rows bound query demand, not realized cross-customer overlaps.',
+                    'actual_payoffs':[str(u) for u in U],'actual_payoff_sum':str(sum(U)),
+                    'K':str(weights[0]),'all_actual_payoffs_sum_to_W':sum(U)==F(point['W']),
+                    'row_receipts':budgets}
+    (HERE/'source_budget_audit.json').write_text(json.dumps(budget_payload,ensure_ascii=False,indent=2)+'\n')
+    marginal_payload={'scope':'Exact D marginal masses; equal old words share marginals, not labels or events.',
+                      'point_sha256':ver['point_sha256'],'hist_and_D_marginals':ver['hist_and_D_marginals']}
+    (HERE/'D_marginals.json').write_text(json.dumps(marginal_payload,ensure_ascii=False,indent=2)+'\n')
+
+    table=[]
+    for h in ver['hist_and_D_marginals']:
+        if h['zero_mass']:continue
+        entry='；'.join(''.join(map(str,d['word']))+'：'+format(float(F(d['fraction_of_hist'])),'.12g') for d in h['D'])
+        table.append(f"| {h['hist_column']} | {entry} |")
+    zeros=['`'+':'.join(map(str,r['name']))+'`' for r in ver['new_rows'] if F(r['slack'])==0 and
+           'min-at-most' not in r['name'][0] and r['name'][0]!='D-at-most-hist']
+    sha_files=['symbolic_lift.json','phase_I_discovery.json','exact_lift.json','independent_verification.json',
+               'D_marginals.json','source_budget_audit.json','verify.py','inputs.json']
+    sha_table='\n'.join('| `'+n+'` | `'+sha(HERE/n)+'` |' for n in sha_files)
+    text=f'''# 实际第五源 D：19662 点的单边缘与逐查询 min 必要提升
+
+RUN `six-boss1-20261111`；执行代理 `/root/fifth_reply_interface`。
+本具体义务已完成并冻结；仅写本文件及 `fifth_reply_interface/`，未操作 Git、registry、RUN、凭据或其它冻结文件。
+
+## 1. 精确结论
+
+在指定的最新19662×15593必要点上，**存在**合同要求的 D 单边缘/min 必要提升。
+完整保留原4849坐标和10744个旧辅助值，所有16 hist（含6个零质量hist）均在符号系统中。
+新增38个D边缘、502个R–D虚拟min上界、38个H1–D虚拟min上界，共578个非负坐标。
+1180条新齐次线性行全部精确非负；其中907条取零、273条严格正。
+因此这批必要条件不能分离当前点，也不能据此产生所要求的严格负投影切。
+
+唯一一次小型phase-I为1180×579，HiGHS耗时0.0734秒、553次迭代，发现值δ=0。
+随后不再调用优化器：391条活动等式的Fraction消元秩为38，无自由变量，恢复全部D边缘。
+所有上界辅助取精确canonical min。
+独立核验器不导入装配器、发现器或恢复器，逐项重建所有1180条完整符号向量，
+并重新检查全部19662条旧行，结果 **PASS**。
+
+本结果只封闭这一明确的**必要单边缘/逐查询上界**义务。
+没有给出D与R/Z/B4的一份共同客户测度，更没有完整有序历史SPE。
+六人 `2W≥OPT₆` 仍 **OPEN**。
+
+原点W仍为
+
+`{point['W']}`，约 `0.49304863743650357`，O=1。
+
+## 2. 输入与模型边界
+
+唯一旧点SHA：`{ver['point_sha256']}`。
+矩阵SHA：`{ver['matrix_sha256']}`。
+原15593个描述符与点中去掉weight后的描述符逐项相等；本轮没有重解释旧列。
+
+已完整实读主合同 `main_fifth_reply_contract.md`、原模型与六人问题页、
+`union_augmented_lp.md`、矩阵全部描述符、`main_terminal_catalog_audit.py`及其
+`main_19662_terminal_catalog.json`、`common_network_19662.md`的B4定义。
+152条已知接口行重新Fraction代入：22条零、130条正、0条负。
+所有实际输入路径、字节数、SHA及152条精确余量均保存在 `inputs.json`。
+
+模型保持有限单位客户、有限非空共同标签目录、空覆盖、同覆盖异标签、重复行动、
+零客户、任意弱平局与所有完整有序历史纯SPE量词。
+本轮始终使用
+
+\\[
+D_i=\\sigma_6(A_1,A_2,A_3,A_4,T_i).
+\\]
+
+没有把A6、C_i或其它branch续行动作冻结到这个新历史。
+同旧词只共用边缘质量，不合并D标签或会员事件。
+hist中的旧字段d=1仅为给定支持描述；D公式没有使用它作额外普遍前提。
+
+## 3. 逐项合同自审
+
+令P为实际前四位负载，ell为实际前五位负载，pₖ为实际第k位之前的负载。
+
+| 项目 | 实施和合法性核对 |
+| --- | --- |
+| D-source | 真偏离收益按 `t[(H−x)/(P+1)+x/(P+2)]` 计算，等于合同的线性展开。六条偏离先以固定1/6平均，只支付一次实际u5。 |
+| D-last | 对任意合法Q，真实末位收益差为 `(d−q)/(P+t+1)`。分母不含查询标签隐藏位；已纳入全部actual、T/B/C、R/Z、H1/H2、D_j。 |
+| D-early / D-pay | 每个实际uₖ分别支付一次 `平均x/(pₖ+7−k)`；k=6即实际末价。容量使用同一K。未来行动只用最大可能负载作收益下界，没有固定真实后继。 |
+| R→D | R节点分母严格为 `p3+t_j+(w_k)_(1+f)+1`，按同一三索引轨道平均。 |
+| C→D / B→D | C使用自己的真实末位收益；B使用自己的真实第五位份额和一名未来玩家的SAFE下界。没有替换成实际u5/u6。same/off各自归一。 |
+| Z→D上包络 | 真差为 `(v−x)/(P+1)+(J−t)/((P+1)(P+2))`；只以 `y≤q,x` 放松J。系数为正，取min只改善必要余量，不构造共同交叠。 |
+| F→D-upper | F=同一B4的H2，前缀为A1,A2,A3,A6,H1。真实uF从完整八态求和；查询为六个D的固定1/6平均，保留 `x/s−min(x,C)/(s(s+1))`。没有用未平均规范槽冒充总体。 |
+| H1-safe→D | 额外保留同一B4真实第五源H1对D的SAFE比较，源收入来自同一八态；这是合法的一名未来玩家收益下界。 |
+
+R/Z旧节点为66个 `(f,j,k)`，f=0时j≠k，f=1时允许相等。
+三索引轨道同时置换 `(i,j,k)`，共8个，大小为6、五个30、两个120。
+核验器对每个轨道显式应用全部720个置换，共5760次同步轨道核对。
+同边缘的min辅助可以共享同一数值上限，因为每次用途系数非负；
+此共享只声明相同的虚拟包络，不声明不同查询具有相同真实交叠。
+
+## 4. 完整行族
+
+| 行族 | 条数 |
+| --- | ---: |
+| D-source、容量K、实际A1…A6对D | 8 |
+| D→actual、T/B/C、H1/H2、D_j | 16 |
+| D→R、D→Z | 16 |
+| R→D、Z→D上包络 | 16 |
+| 旧B/C→D（same/off）、同B4 H1-safe→D、F→D-upper | 6 |
+| 0≤x≤H中的上界行 | 38 |
+| R–D min的两个上界 | 1004 |
+| H1–D min的两个上界 | 76 |
+| **合计** | **1180** |
+
+新变量非负由LP域及精确见证逐列核验。
+所有行先构造成 `a·X+b·z≥0`，常数项恒为零，旧10744个辅助列系数全部为零；
+固定点右端只在发现脚本中以原点内积生成。
+因此保存的行没有把固定数值右端伪装成通用约束。
+完整16hist域含零质量列 `1,59,366,449,524,574`，并在独立符号重构时逐项保留。
+
+## 5. 精确边缘与边界
+
+下表展示正hist内的x/H；所有完整有理质量与比值在 `D_marginals.json`，
+所有578个精确值及每行精确余量在 `exact_lift.json`。
+零质量hist的每个x均精确为零。
+
+| hist列 | 旧词：x/H（小数仅展示） |
+| ---: | --- |
+{chr(10).join(table)}
+
+62条全局收益/容量行中，8条精确取零：
+{', '.join(zeros)}。
+其中D自查恒等为零，其余7条是此精确见证的活动边界。
+每条全局行的真实源、查询需求和精确差值均保存在 `source_budget_audit.json`，
+用于避免把不同末节点的钱包混在一起。
+
+特别是本见证的F→D单行上界为零。
+若以后构造**保持这份D边缘**的共同实现，六个非负上界缺口之和为零会强制每个正hist内
+`|D_i∩H1|=min(x,C)`。这是后续联合域可用的必要包含关系；
+不是已经构造的交叠，也不意味着所有可行D边缘都处在同一零面。
+
+## 6. 独立验证与实际执行
+
+独立 `verify.py` 只使用标准库。它不读取装配器内部函数，不导入数值求解或恢复模块。
+
+- 所有1180条符号向量逐系数重建一致，含全部零质量hist列；
+- 所有578个新值非负，两组min辅助均为精确canonical值；
+- 904个旧own/B4状态坐标检查通过，全部16hist包含在内；
+- D-source、D-last、Z→D、SAFE、R→D、F→D原始收益恒等式共720例精确检查通过；
+- 8个三索引轨道的5760个同步置换检查通过；
+- 原19662行重新Fraction评价全部非负，其中13532条为零；
+- 原目标W、O=1与全部旧坐标保持一致。
+
+独立总核验约10.94秒，其中旧19662行扫描约6.21秒。
+本轮只有一次优化器调用；没有长计算、批量任务或Actions请求。
+四个数学步骤 `build`、`discover`、`recover`、`verify` 全部实际退出0，stderr为空。
+没有失败的数值或精确候选需要掩盖；最终整理另由 `finalize` 步骤保存。
+逐次真实命令、退出码、源码SHA、stdout/stderr和源码快照均在 `execution_manifest.json` 与 `executed_sources/`。
+
+## 7. 交付与下一不同义务
+
+| 文件 | 用途 |
+| --- | --- |
+| `symbolic_lift.json` | 全15593旧描述符、新578列语义、全1180齐次行、三索引轨道 |
+| `phase_I_discovery.json` | 唯一一次浮点发现的原始解、余量、乘子及固定内积 |
+| `exact_lift.json` | 满秩恢复、所有精确新值、1180行精确余量 |
+| `independent_verification.json` | 全符号比较、全部旧/新余量、精确边缘和模型核验 |
+| `D_marginals.json` | 可直接续接的16hist/word完整有理D接口 |
+| `source_budget_audit.json` | 62条全局行逐行源钱包与查询需求 |
+| `inputs.json` | 所有实读/数值输入绑定、152条既有行核验 |
+| `build.py / discover.py / recover.py / verify.py` | 可复核代码；验证器无构造代码导入 |
+
+| 文件 | SHA256 |
+| --- | --- |
+{sha_table}
+
+下一问是：在保留全部旧own边缘、同一B4完整八态和这些D必要约束的情况下，
+能否构造D₁,…,D₆与全部旧R/Z的**共同**客户测度，并满足真实（非min上界）双向查询。
+可先把这份精确D边缘作为候选，利用F→D及旧F→Z饱和关系缩小共同域。
+若只是在既有92原子共同完成上扩展失败，不能据此排除允许重选旧共同耦合的完整域。
+后续不能把这次逐查询min见证当成已经完成该联合问题。
+
+本具体单边缘/min提升义务冻结并释放；没有运行中的计算进程。
+'''
+    (WORK/'fifth_reply_interface.md').write_text(text)
+    print(json.dumps({'status':'frozen','D_marginals_sha256':sha(HERE/'D_marginals.json'),
+                      'source_budget_audit_sha256':sha(HERE/'source_budget_audit.json'),
+                      'summary_sha256':sha(WORK/'fifth_reply_interface.md'),'global_rows':len(budgets)},ensure_ascii=False))
+
+
+if __name__=='__main__':
+    main()

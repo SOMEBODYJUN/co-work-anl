@@ -1,0 +1,95 @@
+{
+  "working_directory": "repository root",
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "numpy_version": "2.3.5",
+  "scipy_version": "1.17.0",
+  "steps": [
+    [
+      "python",
+      "research/workspaces/six-boss1-20261111/old_r_joint/generate_phase_candidates.py",
+      "--point",
+      "research/workspaces/six-boss1-20261111/union_augmented_lp/augmented_lp_exact.json",
+      "--output",
+      "research/workspaces/six-boss1-20261111/common_network_19662/interval_candidates.json"
+    ],
+    [
+      "python",
+      "-c",
+      "import json; from pathlib import Path; p=Path('research/workspaces/six-boss1-20261111/common_network_19662'); w=json.loads((p/'interval_candidates.json').read_text()); w['phase_A_weight']='1'; w['phase_B_weight']='0'; w['expanded_positive_atoms']=720*w['base_atoms']['A']; (p/'interval_A.json').write_text(json.dumps(w,ensure_ascii=False,indent=2)+'\\n')"
+    ],
+    [
+      "python",
+      "research/workspaces/six-boss1-20261111/family_joint_19578/hist_four_phase.py",
+      "--point",
+      "research/workspaces/six-boss1-20261111/union_augmented_lp/augmented_lp_exact.json",
+      "--witness",
+      "research/workspaces/six-boss1-20261111/common_network_19662/interval_A.json",
+      "--out-dir",
+      "research/workspaces/six-boss1-20261111/common_network_19662"
+    ],
+    [
+      "python",
+      "research/workspaces/six-boss1-20261111/common_network_19662/recover_four_phase.py"
+    ],
+    [
+      "python",
+      "research/workspaces/six-boss1-20261111/common_network_19662/verify_common.py",
+      "--point",
+      "research/workspaces/six-boss1-20261111/union_augmented_lp/augmented_lp_exact.json",
+      "--witness",
+      "research/workspaces/six-boss1-20261111/common_network_19662/common_atoms.json",
+      "--output",
+      "research/workspaces/six-boss1-20261111/common_network_19662/independent_verification.json",
+      "--materialize",
+      "research/workspaces/six-boss1-20261111/common_network_19662/common_atoms_expanded.jsonl.gz"
+    ]
+  ],
+  "commands_use_argument_arrays": true,
+  "source_files": [
+    {
+      "path": "research/workspaces/six-boss1-20261111/old_r_joint/verify_network.py",
+      "sha256": "6fa24d16a86c8604600bd6d7ac44d9d96f803619ecaa26ec6a2c20ff074f1e68"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/old_r_joint/common.py",
+      "sha256": "b4caa9c85cf4ee7a0e6f1f288b9fd46ad09d8ee03d7ab6c7732df4df0926f1b3"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/old_r_joint/generate_phase_candidates.py",
+      "sha256": "f3629c46a6780ac7ebcdca61ca617ae48c4e07c112241ba265f6e73d07d1057e"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/family_joint_19578/build_common.py",
+      "sha256": "42ff456932df4ccdd558cf7c7c61a29dd180f4961b5db3ddb4592ba850151a11"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/family_joint_19578/phase_mix.py",
+      "sha256": "6915349b414a6f595fcc68b3ae0c782f13290ba15e297aa3caf80068eaa434c7"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/family_joint_19578/hist_four_phase.py",
+      "sha256": "1cea2259a23402ef0b9acc43250393dbb1a96eb2c062f67872003fea1f6ecfba"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/saturated_rz_b4/conditional_b4.py",
+      "sha256": "4f92a27d9746f24e88386a194cd3f454ef1d39904847c8f8793267a70566f632"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/saturated_rz_b4/complete_conditional.py",
+      "sha256": "8ee4e0847d3b08ab88167ffb99ac8edd35a9e071d5431ab56bb4d1c659e11311"
+    }
+  ],
+  "point": {
+    "path": "research/workspaces/six-boss1-20261111/union_augmented_lp/augmented_lp_exact.json",
+    "sha256": "b0ca65cfe61e5e3ef09537cba2a986c171aeaa7106f673077f803c80ee2b68e3"
+  },
+  "notes": [
+    "The old discovery program exits without an exact witness at zero optimum; this is not an infeasibility conclusion. recover_four_phase.py independently recovers the boundary point exactly.",
+    "An initial legacy audit_full_network.py invocation used its old default interface file and stopped at a point-SHA assertion. It produced no output and is not used in any result. verify_common.py replaces this interface-dependent route.",
+    "The expanded gzip timestamp may differ across reruns; the canonical rational measure and exact verification are the mathematical certificate.",
+    "interval_candidates.json is a reproducible intermediate and was removed from the final delivery after interval_A.json and all four orientations were preserved."
+  ]
+}
