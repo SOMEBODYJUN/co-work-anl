@@ -1,0 +1,67 @@
+{
+  "edge_id": "ca-aa8e8ffa-exact-outcomes-support-56-client-root-exhaustiveness",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "customer-attraction/five-player-fifty-six-client-minimum-spe-below-all-static-pne"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "仅固定五人五标签、56不同单位客户的12型输入。集合递推采用精确LCM(1,…,5)=60缩放收益、无溢出整数及全部合法计数孩子；固定报告的252状态与两个根结果作为该实例既有有限枚举证据，不从一份781动作策略推全部根结果。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "证明精确集合值DP返回全部完整历史纯SPE可实现终局计数；每个保留计数都可独立展开有序策略。",
+    "customer-attraction/five-player-fifty-six-client-minimum-spe-below-all-static-pne": "为其全部根计数/最低SPE比较提供穷尽量词的算法依据；给定原策略和静态PNE部分仍独立认证。"
+  },
+  "explanation": "该输入每个收益分母在1至5，乘60正好整数且不改变任意弱序。五主题五槽的所有前缀计数状态数为C(10,5)=252，与目标精确枚举合同相符。把目标E(k)映射为算法R(k)，其子集合、每动作最低可实现利润和最大门槛逐项相同。canonical必要性说明任何完整有序历史SPE的根计数均进入E(0)；充分性允许每个不同有序离轨孩子各取达最低利润的子SPE，说明E(0)中每个计数均可实现，既不删平局，也不强制同计数节点同一续局。因此一旦按该精确递推核得既有E(0)={(0,3,0,0,2),(1,2,1,0,1)}，该结果的量词确为全部根SPE计数；两个计数的福利分别54、56使最低SPE为54。目标已保存的252状态枚举与原781表是不同责任：后者只认证那份actual(4,4,1,1,1)，不能单独承担全部SPE最差性。",
+  "scope": "算法到固定56客户对象的全集/最低SPE步骤。该局部支持不把56客户静态桥反例改成half反例，也不从计数全集断言每个计数的全部有序排列都可实现。",
+  "contribution": {
+    "result": "目标精确集合值枚举的两个根计数一旦按其既有252状态合同核得，即穷尽该56客户输入全部完整历史纯SPE可实现根计数并各自可实现；配目标两福利值给最低SPE54，非单策略/单平局观测。",
+    "remaining": "本边不重新执行252状态或生成原策略；原781节点/3905比较及actual利润、两个计数的单位覆盖数、126静态计数恰一PNE且福利56、OPT56和发现/执行绑定仍由目标完整有限证据承担。故54<56的静态桥反驳与非half边界不能只由递推定理单独推出。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "全集递推及完整证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "完整策略和指定有序路径"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/五人五题五十六客户的顺序与静态最低福利分离--反例.md",
+      "sha256": "dd94521a965eccf323d8b3ba116ced3fdd3eef0b46b4607fcfa35dfe04a53ae0",
+      "section": "2. 全部单位客户与目录"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/五人五题五十六客户的顺序与静态最低福利分离--反例.md",
+      "sha256": "dd94521a965eccf323d8b3ba116ced3fdd3eef0b46b4607fcfa35dfe04a53ae0",
+      "section": "4. 全部静态PNE和全部可实现根计数"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/new-fixed-audit-001/data/global-boundary-fixed.json",
+      "sha256": "0df79e0d9f9134bd861cf73af9689032265ae49fe8422c3c4d8524821e72ca29"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核五人五题LCM尺度、252前缀状态和必要/充分拼接；目标报告全字段、原781动作均实读。这里只支持全集量词与最低SPE步骤，未把报告规模、原种子或单张策略当一般理论或当前重跑。",
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "customer-attraction/five-player-fifty-six-client-minimum-spe-below-all-static-pne": "994f502eea965b770543d117aeaf4d69ac3443e446a5a4b6cdcd1eceaf70af2a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/反例/五人五题五十六客户的顺序与静态最低福利分离--反例.md": "dd94521a965eccf323d8b3ba116ced3fdd3eef0b46b4607fcfa35dfe04a53ae0",
+    "archives/customer-attraction/tools/evidence/rd28-exact-outcomes-and-static-backgrounds-primary/new-fixed-audit-001/data/global-boundary-fixed.json": "0df79e0d9f9134bd861cf73af9689032265ae49fe8422c3c4d8524821e72ca29"
+  },
+  "review_digest": "655375dc650fb779124b59dd004d6234290c0ef13520ebbc21d04f0dd2c71394"
+}
