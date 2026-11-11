@@ -1,0 +1,76 @@
+{
+  "edge_id": "cag-728-exact-common-oo-bounds-three-family-margin",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-76408661c9274b3cbf5a8bc66cecb9a4"
+  ],
+  "target_ids": [
+    "cag-fixed-three-family-common-transport-floating-margin-probes"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "输入为SHA b5ec102366191aea06e4a7a93073a7913bd625101c743cc5ccc8f9132d744b05的固定65个正有理质量原子，q=5。三族各锚位t有相同槽数，非负连续槽质量y在每个原子、每个t固定三个完整tuple边缘，且全部保留行共用同一y。采用源码的行纳入条件及归一，两个AB→AE末位O行各有ν=4。",
+  "roles": {
+    "M-76408661c9274b3cbf5a8bc66cecb9a4": "提供同一固定输入上两条单O的精确包络（正值、零）及AB→AE位置1/2等权共同OO包络J728<0；J728由逐原子、逐标签的完整tuple最大值及非负质量求和得到。",
+    "cag-fixed-three-family-common-transport-floating-margin-probes": "定义共同三边缘可行域及自由ε。对应的244行模式纳入两条单O，248行模式也纳入两行。"
+  },
+  "explanation": "在每个原子a、锚组t对second槽求和，得到AB和AE的二边缘运输x，其两边缘分别为wₐ乘原tuple整数计数。源码terminal1O、terminal2O只读这两个族的槽，逐槽系数均为4 own−d(K−z)，分别用AE位置1和2，故R₁y+R₂y是该投影的等权OO代价。以wₐ除x后为整数边缘的二分运输多面体，可按重复槽展开为指派；线性极值有整数最优，等权OO查询分数z₁+z₂和d同向排序即达标签内最大，字面枚举也得到该值。三边缘在该二边缘上的投影是满的：若该组槽数为nₜ>0，任给x，可按second的tuple计数比例Nsecond(c)/nₜ将每个x槽拆成三元槽；空组不贡献。因此最大共同两行之和恰为J728，连续槽也无法超过它。精确单包络一正一零，按≥0规则两行都保留。任意满足归一约束的y,ε必有8ε≤R₁y+R₂y≤J728。两个0.125权重与这一不等式的归一对应，证据由固定点有理最大值承担。取到两行之和的最大值仍可能有两行余量不齐，或其它保留行低于所需余量。",
+  "scope": "仅固定728质量与三族边缘的pair_positive_terminal及all连续LP。对全部可行连续槽给严格负余量上界，因而也排除任何同边缘且符合完整真实IC的SPE。仅220条PAIR的模式没有这两个末位行；717/727为其它输入。",
+  "contribution": {
+    "result": "该固定输入只要所选行含两条AB→AE位置1/2的O行，就有max ε≤J728/8=−1019538351063085681791164252031717787355/74329459532439707983824536093134394798208<0。故244和248行在ε=0均无精确共同连续运输；244行的负号无需浮点求解或完整LP对偶。",
+    "remaining": "要断言244行浮点最优显示值对应的精确最优等于J728/8，仍需一份满足全部244行与边缘的有理运输并达到该界。248行最优、220行精确零或可行性、跨客户同目录及所有有序历史实现各需自己的证据。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/单菜单与共同菜单增强点的精确联合分离--计算.md",
+      "sha256": "efd0415ae124dcadea9f76512f967aaa46b7ca71920e2121ac64c1dbce162431",
+      "section": "同一必要式与不能省去的量词"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/单菜单与共同菜单增强点的精确联合分离--计算.md",
+      "sha256": "efd0415ae124dcadea9f76512f967aaa46b7ca71920e2121ac64c1dbce162431",
+      "section": "65点本次新增的精确核验"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/固定三族边缘的共同运输与自由余量浮点探针--程序.md",
+      "sha256": "4f16c1ff0624d811d6955579e7343a174244617f0194cd5edf9b54613ba2d034"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/round5-shared-matching-resumed-boss2/original/multimarginal_feasibility.py",
+      "sha256": "73a54c88015c665240486e38be8a221532fe398ca09c75ba6e95d4d9baaa4e75"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/round5-shared-matching-resumed-boss2/original/multimarginal_exact_optimum_primal_joint_terminal.json",
+      "sha256": "8a4a1ba293d943e00ad3c869cb9746194f262e8061c2d0b90c06cfa10e44f9f4"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/round5-shared-matching-resumed-boss2/new-728-run/related/research/workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round5_pricing/exact_optimum_primal_joint_terminal.json",
+      "sha256": "b5ec102366191aea06e4a7a93073a7913bd625101c743cc5ccc8f9132d744b05"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/round5-shared-matching-resumed-boss2/new-728-run/check_728_joint_only.py",
+      "sha256": "1fc98ff2c90b762dfdf8af435118784218f8a9b82b426a74f21324492fc05141"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/round5-shared-matching-resumed-boss2/new-728-run/new-728-joint-only-check.json",
+      "sha256": "c1dce4cb77a699cfe369afb748e845c97ff04c28e9b59676b61b6db110bf02f9"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "核对三边缘槽及归一行的原实现、同SHA两单一共同精确值与报告模式。用Fraction按原子质量重加已保存共同系数，得相同J728及严格负J728/8，浮点显示仅用于确认发现方向。未重跑HiGHS、728模板矩阵或原全部匹配。",
+  "endpoint_pins": {
+    "M-76408661c9274b3cbf5a8bc66cecb9a4": "104b0b28320a636ca09072ef6e0941f524db51c220b04c32a6ffef7933abded6",
+    "cag-fixed-three-family-common-transport-floating-margin-probes": "6dc571962ddf9020293e9e8316db3317e48038c564a8b7a3c71c205e2b4452ca"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/单菜单与共同菜单增强点的精确联合分离--计算.md": "efd0415ae124dcadea9f76512f967aaa46b7ca71920e2121ac64c1dbce162431",
+    "archives/customer-attraction/state/程序/固定三族边缘的共同运输与自由余量浮点探针--程序.md": "4f16c1ff0624d811d6955579e7343a174244617f0194cd5edf9b54613ba2d034",
+    "archives/customer-attraction/tools/evidence/round5-shared-matching-resumed-boss2/original/multimarginal_feasibility.py": "73a54c88015c665240486e38be8a221532fe398ca09c75ba6e95d4d9baaa4e75",
+    "archives/customer-attraction/tools/evidence/round5-shared-matching-resumed-boss2/original/multimarginal_exact_optimum_primal_joint_terminal.json": "8a4a1ba293d943e00ad3c869cb9746194f262e8061c2d0b90c06cfa10e44f9f4",
+    "archives/customer-attraction/tools/evidence/round5-shared-matching-resumed-boss2/new-728-run/related/research/workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round5_pricing/exact_optimum_primal_joint_terminal.json": "b5ec102366191aea06e4a7a93073a7913bd625101c743cc5ccc8f9132d744b05",
+    "archives/customer-attraction/tools/evidence/round5-shared-matching-resumed-boss2/new-728-run/check_728_joint_only.py": "1fc98ff2c90b762dfdf8af435118784218f8a9b82b426a74f21324492fc05141",
+    "archives/customer-attraction/tools/evidence/round5-shared-matching-resumed-boss2/new-728-run/new-728-joint-only-check.json": "c1dce4cb77a699cfe369afb748e845c97ff04c28e9b59676b61b6db110bf02f9"
+  },
+  "review_digest": "572a80adc39b30885ba7316b1de7e78cb51ac2d06f7be497f6e77632ae4028cd"
+}

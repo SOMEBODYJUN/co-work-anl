@@ -1,0 +1,57 @@
+{
+  "edge_id": "um-91867-forest-extension-for-unicyclic",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss2",
+  "kind": "implies",
+  "source_ids": [
+    "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1"
+  ],
+  "target_ids": [
+    "UM-UNICYCLIC-FIXED-CONFIG-LAW-EXACT-GLUE-v1"
+  ],
+  "conditions": "源和目标共用显式有理机器配置律、每任务覆盖恰1与0/1端固定。目标分数图每分量至多一圈；本边只处理在圈节点的两个圈位已由一份正圈路径固定之后的挂树延拓，以及没有圈的分量。圈闭合路径的存在由目标另行负责。",
+  "roles": {
+    "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1": "提供相同布尔边际的树上局部状态选择、完整状态保留及共同最小质量消减不变量。",
+    "UM-UNICYCLIC-FIXED-CONFIG-LAW-EXACT-GLUE-v1": "接收圈路径两位已固定后的所有挂树恢复和无环分量处理；圈LP充要性及附加弧支撑计数并非由源单独推出。"
+  },
+  "explanation": "在目标一条正圈路径上，圈节点的相邻两位具有正局部二元质量，故可选一项匹配这两位的正质量完整局部状态。去掉圈边后，各挂树只有一个已选根，余边没有回接圈的第二个入口。按源的根到叶规则逐边进行：父状态使用值b时，父端该值质量>0；两端边际相等使子端也有值b的正状态，任取即可。任务节点无论其度数多少都保one-hot，机器节点保完整局部配置；没有圈的分量直接用源构造。选完各分量后，取所有选定节点状态及另行已选圈路径弧流的共同最小剩余质量ε，同时同减。源的树边不变量继续成立，因为同一边两端恰在同一值上各减ε；每个节点总质量同减ε。圈节点二元质量还须与弧流同步同减，这一步是目标圈流证明而非源定理自动保证。由此没有额外挂树相容性障碍，且无需枚举所有树选择的笛卡尔积。",
+  "scope": "目标充分性和算法中的树分支局部贡献；是一份圈路径给定后的延拓规则，不将“每条边单点边际一致”误升为含环全局相容。",
+  "contribution": {
+    "result": "一旦每个单环分量已有正闭合圈路径，全部挂树及森林分量可按源的树构造选兼容完整节点状态，并在共同ε消减中保持树边际一致、one-hot任务约束与原行完整配置；挂树本身不再施加额外圈外相容性条件。",
+    "remaining": "目标完整判据仍须证明切口同值两份分层流的必要性、圈流LP可行时正闭合路径存在、圈弧与完整局部二元边际同步消减及其8Ec附加支撑界；源森林结论本身不证明这些环上义务。"
+  },
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md",
+      "sha256": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5",
+      "section": "固定整边与局部规律"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md",
+      "sha256": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5",
+      "section": "精确有理分解"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/单环分数关联上的指定配置律相容性--定理.md",
+      "sha256": "14942bf1f5e89322978fbc0af1624ad9428fe8eb57c57655df5fa05d53b33e4b",
+      "section": "圈流的充要条件"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/单环分数关联上的指定配置律相容性--定理.md",
+      "sha256": "14942bf1f5e89322978fbc0af1624ad9428fe8eb57c57655df5fa05d53b33e4b",
+      "section": "保持完整局部律的有理分解"
+    }
+  ],
+  "review_note": "完整重核目标残余构造，将森林源实际承担的挂树步骤与目标独立承担的圈闭合义务分开。为每个被固定的根状态逐边核正质量存在和共同ε不变量，不以源自动推出整个单环判据。",
+  "endpoint_pins": {
+    "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1": "0117271b622daf5cc467317f1e1229b9ec5769c2d80ea71258bcf63a50cfff07",
+    "UM-UNICYCLIC-FIXED-CONFIG-LAW-EXACT-GLUE-v1": "53462b1a0e2ed49d5c4cae873ed033cb6c23322fdf70dc9abf72473b25e1de57"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5",
+    "archives/unrelated-machines/state/定理/单环分数关联上的指定配置律相容性--定理.md": "14942bf1f5e89322978fbc0af1624ad9428fe8eb57c57655df5fa05d53b33e4b"
+  },
+  "review_digest": "6f8d378c5ffa5e73a93e6c1ea3994ab1fe7aa4604ed1eb691dee5b47b9c4c494"
+}

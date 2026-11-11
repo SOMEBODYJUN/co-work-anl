@@ -1,0 +1,66 @@
+{
+  "task_id": "ca-eta-budget-refutation-comparison-3b-1f732e0920e6a06e",
+  "stage": "3B",
+  "object_ids": [
+    "CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1",
+    "M-5a32d36d5d2d4eb8a54df3a0a7566a9b",
+    "customer-attraction/eta-candidate-complete-tree-extremum",
+    "customer-attraction/two-provider-eta-budget-counterexample"
+  ],
+  "read_object_ids": [],
+  "input_pins": {
+    "CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1": "9d3e432eb6202081a36807c3cdadf637a5e1c80351e824af5009ef3021593da1",
+    "M-5a32d36d5d2d4eb8a54df3a0a7566a9b": "a49b0d25ad12e32298c86152db9ffa08ecc3d7f7d3d8fe24a1dc516551e14b5d",
+    "customer-attraction/eta-candidate-complete-tree-extremum": "5a1ae5368525ea389f894bb32744eeb7a33e0c32f435384c70b97f87b5822da0",
+    "customer-attraction/two-provider-eta-budget-counterexample": "31c8d322a7a1e7d76b7ed2602e05045e95589390d10333de413401cd69bce114"
+  },
+  "coverage": {
+    "CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1": {
+      "state": "isolated-after-review",
+      "object_pin": "9d3e432eb6202081a36807c3cdadf637a5e1c80351e824af5009ef3021593da1",
+      "comparison_scope": "全信用EXACT与ANY、非负性、全有序历史真实尾、实际路径望远镜，与只删η付款及两份固定策略的逐行对照。",
+      "reason": "两输入各在8个合法节点逐七动作精确核对ANY，菜单内退回EXACT。完整实际路径和−16和−39，与OPT−2W相同；只删η后的最有利总预算两者均为1/2。历史all-big校准否的是同时删ξ、η，其最小η预算不超half余量。这里的有限核对是原恒等式的语境证据，普遍等式直接由静态覆盖差及真实IC消元。"
+    },
+    "M-5a32d36d5d2d4eb8a54df3a0a7566a9b": {
+      "state": "linked",
+      "object_pin": "a49b0d25ad12e32298c86152db9ffa08ecc3d7f7d3d8fe24a1dc516551e14b5d",
+      "comparison_scope": "零根、任意正人数、每份完整有序纯SPE的仅删η菜单预算。分别核m=1、两份m=2反例、同目录的固定六人输入以及恰六人全称命题。",
+      "reason": "完整信用的路径值与菜单分布无关；去掉η后增量为ΣE(η/r)，其最小值恰是逐位置最小值之和。两例对所有允许菜单分布仍有1/2正缺口，否定登记的全称式。m=1时W=OPT₁且实际S在菜单中、η(S)=W，故候选成立。筛查仅给历史阴性样本，星形和共同核心平移的解析范围分别保持。两人反例的half余量16和39为正，恰六人预算及恰六人原half按各自全称范围独立。",
+      "edge_ids": [
+        "two-provider-eta-counterexamples-refute-share-remainder-budget"
+      ]
+    },
+    "customer-attraction/eta-candidate-complete-tree-extremum": {
+      "state": "isolated-after-review",
+      "object_pin": "5a1ae5368525ea389f894bb32744eeb7a33e0c32f435384c70b97f87b5822da0",
+      "comparison_scope": "固定有限输入的可信终局集合、同一节点各离轨孩子独立拼接、实际路径B与全有序策略重构，及两人／同目录六人固定输入精确重放。",
+      "reason": "两份m=2输入均有最大缺口1/2；直接枚举完整两人策略得到同值。26客户有7328份纯SPE，32份达到最大值；67客户只有一份。同目录改m=6时固定输入最大缺口依次−14/3和−827/60。程序重放核对这些输入，普遍算法正确性仍由有序子树拼接归纳；当前任务没有独立的算法证明端点。"
+    },
+    "customer-attraction/two-provider-eta-budget-counterexample": {
+      "state": "linked",
+      "object_pin": "31c8d322a7a1e7d76b7ed2602e05045e95589390d10333de413401cd69bce114",
+      "comparison_scope": "26/67客户输入、指定完整策略的8个决策节点和每节点全部主题比较、每输入49个有序静态覆盖对及两个实际位置的真实菜单。",
+      "reason": "两例指定尾TABABBA均使根选S最优，67例八个决策处的最优收益比次优严格高1/2而唯一。根菜单{X,Z}须分别跟随A、B，实际S后末位菜单{U}。Λ=33/2、79/2均高于对应16、39，否定仅删η的普遍付款。两人是最小失败人数；最少客户数未定。",
+      "edge_ids": [
+        "two-provider-eta-counterexamples-refute-share-remainder-budget"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/ca-eta-budget-refutation-comparison-3b-1f732e0920e6a06e/complete-tree-extremum-checks-two-provider-eta-inputs.json",
+      "sha256": "497f42c7111b58a3b3c6c9066d936c1ed0f7902481dbf0e0696c04731bd608aa"
+    },
+    {
+      "path": "map/edges/ca-eta-budget-refutation-comparison-3b-1f732e0920e6a06e/two-provider-eta-counterexamples-refute-share-remainder-budget.json",
+      "sha256": "4e4c41d5e7fb81cd8d02ff1a58ba326a5597c2e50e038367cc3737b7747dff7e"
+    },
+    {
+      "path": "map/edges/ca-eta-budget-refutation-comparison-3b-1f732e0920e6a06e/two-provider-eta-witnesses-check-full-credit-ledger.json",
+      "sha256": "f14383ee529616e569ed72b221ec9da9d0134cc09025146b75cf28227a3de73b"
+    }
+  ],
+  "follow_up_tasks": [],
+  "closed_overlaps": [],
+  "reviewed_by": "Boss5"
+}

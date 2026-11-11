@@ -1,0 +1,93 @@
+{
+  "edge_id": "um-07fa3ec3-machine-plans-and-lst-pay-complete-two-size-bound",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-665cd08feee04456b5cb538e29d62305",
+    "unrelated-machines/lst-vertex-pseudoforest-rounding"
+  ],
+  "target_ids": [
+    "M-8457d774c2b8456c98ff078781c18500"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "正文编码域为正整数α<β，restricted assignment的每个有限端等于其任务长度，恰两种长度，每机原资格数≤整数ℓ≥3。删除不可用端和超过阈值T的端。使用普通指派LP的顶点（不是任意点或配置LP），以及保任务身份的整数满流；正有理仅按公共缩放的同证扩展。",
+  "roles": {
+    "M-665cd08feee04456b5cb538e29d62305": "其承重证明及Figure 5提供可任意设整数总容量d、共用容量一缓冲门的机器计划和满流解码。本文仅复用这一已读机制，并在证据中完整重证对任意ℓ的两长度容量选择，不把原ℓ≤4异速比例外推。",
+    "unrelated-machines/lst-vertex-pseudoforest-rounding": "支付β≤T/2分支：普通指派LP可行时取顶点，逐机d_i=T、t=β，舍入负载≤T+β≤3T/2。",
+    "M-8457d774c2b8456c98ff078781c18500": "对每个给定或固定ℓ≥3，所得完整算法在两长度restricted模型输出≤(2−1/(ℓ−1))OPT的实际资格分配。"
+  },
+  "explanation": "令ρ=2−1/(ℓ−1)。先剪p_j>T端，无可用端任务可靠REJECT。β≤T/2时普通指派LP顶点和LST给完整负载≤T+β≤3T/2≤ρT；不可行则可靠REJECT。β>T/2时β资格共用容量一门。若α>T/(ℓ−1)，取k=floor(T/α)及总容量d_i=k：真T行总件数≤k且β件数≤1，必嵌入；输出纯α负载≤T，含β负载≤β+(k−1)α≤2T−α<ρT。这是自足机器计划替代，不调用原文外引Chakrabarty子算法。若α≤T/(ℓ−1)，记s为本机α资格数、b为β资格数；b=0取d=s，负载≤ℓα≤ρT；b≥1且β+sα≤T取d=s+1，负载≤T；否则取d=max{s,1}，真T行不能同时选一β与全部s件α，因而仍可满流。纯α负载≤T；含β且s≥1时≤β+(s−1)α≤ρT；s=0单独≤β≤T。以上互斥分支覆盖全部位置且每次拒绝可靠。以U=Σp_j二分整数阈值，保持L<OPT及存有负载≤ρH调度；拒绝升L，接受降H，至H=L+1≤OPT即得ρOPT。无需接受集合单调或把接受当作OPT≤T。容量、网络、LP和O(log U)阈值调用均位多项式。完整细节及源语义核验见联合证明第1–7节。",
+  "whole_result": "在每机真实资格数≤任意给定或固定整数ℓ≥3、恰两种正整数长度α<β的restricted-assignment全部可行输入上，机器计划与普通指派LP顶点舍入共同构成位多项式算法，输出每任务恰一次的实际资格分配，峰值≤(2−1/(ℓ−1))OPT。正有理可公共缩放；此边完整支付目标近似结论，未借用未读外引子算法。",
+  "scope": "完整两长度定理；低β的LST和高β的机器计划为联合必要的本证明分支，故保ALL。与原论文高α外引子算法的运行合同不作等同。ℓ=3,4可另由Theorem 2直接限制得到相同比例；一般异速、任意长度数、一般ℓ的统一固定ε、费用及精确冻结补全均未得到。LST指定顶点趋二例只攻击原舍入合同，不反驳此目标。",
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-07fa3ec375d2385b/two-size-joint-proof.md",
+      "sha256": "e63ec965d713e096d2b619282a23b1d5c6af921f1e77e76dd9e3294c9bd3c940",
+      "section": "1. 输入身份、实读范围与所得结论"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-07fa3ec375d2385b/two-size-joint-proof.md",
+      "sha256": "e63ec965d713e096d2b619282a23b1d5c6af921f1e77e76dd9e3294c9bd3c940",
+      "section": "2. 通用机器计划与可靠阈值接口"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-07fa3ec375d2385b/two-size-joint-proof.md",
+      "sha256": "e63ec965d713e096d2b619282a23b1d5c6af921f1e77e76dd9e3294c9bd3c940",
+      "section": "3. 低β：普通指派 LP 顶点贡献"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-07fa3ec375d2385b/two-size-joint-proof.md",
+      "sha256": "e63ec965d713e096d2b619282a23b1d5c6af921f1e77e76dd9e3294c9bd3c940",
+      "section": "4. 高β、高α：基数截断补足外引分支"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-07fa3ec375d2385b/two-size-joint-proof.md",
+      "sha256": "e63ec965d713e096d2b619282a23b1d5c6af921f1e77e76dd9e3294c9bd3c940",
+      "section": "5. 高β、低α：逐机资格数计划"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-07fa3ec375d2385b/two-size-joint-proof.md",
+      "sha256": "e63ec965d713e096d2b619282a23b1d5c6af921f1e77e76dd9e3294c9bd3c940",
+      "section": "6. 从阈值到完整近似与位复杂度"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-07fa3ec375d2385b/two-size-joint-proof.md",
+      "sha256": "e63ec965d713e096d2b619282a23b1d5c6af921f1e77e76dd9e3294c9bd3c940",
+      "section": "7. 相邻结果比较与实际边界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Page-Solis-Oba-Maack-2018--有界任务与交叠图--文献.md",
+      "sha256": "beb13d191887b1d5b91ec2335861d33d5c7088a174cfe18c40444f222e09464e",
+      "section": "每机至多三项任务的流算法"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Page-Solis-Oba-Maack-2018--有界任务与交叠图--文献.md",
+      "sha256": "beb13d191887b1d5b91ec2335861d33d5c7088a174cfe18c40444f222e09464e",
+      "section": "两任务长度的 restricted assignment"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/LST不相关机二近似与硬度--资源.md",
+      "sha256": "2197637438ed2fdfe40d4eb21ba2f86a6d9fd4dde4211b01fb253e38a7489969",
+      "section": "1. 顶点支撑伪森林与逐机加性舍入"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/bounded-job-assignments.pdf",
+      "sha256": "a2fad69bcf3b1e6caed4ce4f29d559e1b0f394695d859f2ca0fd8f05f8296775"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "实读当前三端点、全文任务、文献正文、冻结PDF第6–7节并渲染Figure 5及两长度公式；独立重建每一行计划的真T嵌入和全部输出负载界。特别复核普通LP顶点前提、无β资格行、β+sα≤T全小加一大行、s=0、α>T/2、边界等号及无需接受单调的阈值二分。高α不把论文外引算法当作第三个已证端点；用k=floor(T/α)机器计划自足支付，因此whole_result无未付数学前提。未运行原作者数学软件，未将有限锐例当不可近似性。",
+  "endpoint_pins": {
+    "M-665cd08feee04456b5cb538e29d62305": "64040f451a3c74f21ec974a8afe1e99dc5206dbc009304d00a8bcaa50d13a63d",
+    "M-8457d774c2b8456c98ff078781c18500": "f1226b81f3d9e5f6d6aff00cb2697016eeab7e162dea4cc8ac9a4f5c12a84399",
+    "unrelated-machines/lst-vertex-pseudoforest-rounding": "ca67d1006655773be27e6d03aefd2b218be2477ecfd9e77a773fbce9f102fafa"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-07fa3ec375d2385b/two-size-joint-proof.md": "e63ec965d713e096d2b619282a23b1d5c6af921f1e77e76dd9e3294c9bd3c940",
+    "archives/unrelated-machines/state/文献/Page-Solis-Oba-Maack-2018--有界任务与交叠图--文献.md": "beb13d191887b1d5b91ec2335861d33d5c7088a174cfe18c40444f222e09464e",
+    "archives/unrelated-machines/state/资源/LST不相关机二近似与硬度--资源.md": "2197637438ed2fdfe40d4eb21ba2f86a6d9fd4dde4211b01fb253e38a7489969",
+    "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/bounded-job-assignments.pdf": "a2fad69bcf3b1e6caed4ce4f29d559e1b0f394695d859f2ca0fd8f05f8296775"
+  },
+  "review_digest": "20da89a1ceaeee41412e5cd78764ed6f56fe3ba7d1996e7dad5adcd80dc80c27"
+}

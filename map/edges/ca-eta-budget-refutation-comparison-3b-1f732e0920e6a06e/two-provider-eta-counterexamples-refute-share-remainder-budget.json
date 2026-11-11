@@ -1,0 +1,48 @@
+{
+  "edge_id": "two-provider-eta-counterexamples-refute-share-remainder-budget",
+  "kind": "refutes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/two-provider-eta-budget-counterexample"
+  ],
+  "target_ids": [
+    "M-5a32d36d5d2d4eb8a54df3a0a7566a9b"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "零根、两位单位提供者、七个共同主题标签、有限单位客户，全部有序历史的同一原纯SPE。每个实际节点只在保持该历史静态最优总覆盖的首动作菜单中选择查询，沿原策略走各自真实后继。",
+  "roles": {
+    "customer-attraction/two-provider-eta-budget-counterexample": "两份整数客户输入，各给完整策略、全部激励和两个实际位置的精确最优覆盖菜单。",
+    "M-5a32d36d5d2d4eb8a54df3a0a7566a9b": "要求所有正人数、有限实例和完整有序纯SPE的逐位置最小分享余项之和不超过2W−OPT。"
+  },
+  "explanation": "按S,T,U,X,Z,A,B排列，根选S，七个末位历史的规定回复是T,A,B,A,B,B,A。每行末位收益用2|J|−|H∩J|复算后，所选回复均达到该行最大。26客户例指定回复后的根双倍收益七项均为20；67客户例为49,47,46,47,47,48,48，七个末位历史及根的双倍最优收益均比次优大1，因此67客户例唯一完整纯SPE且全部八节点严格。X、Z各有私客，且XZ覆盖全部客户，故根菜单恰为{X,Z}。S后两份输入的新增覆盖依次为(0,5,6,5,5,5,5)和(0,14,15,14,14,11,11)，末位菜单均恰为{U}。根查X、Z时分别接真实尾A、B。两查询在26客户输入均有(d,M,t)=(10,5,2)，在67客户输入均为(47/2,14,8)，故各根菜单项η/r分别为13/2和25/2。实际S后查U无尾，(d,M)分别为(11,1)和(28,1)，给η=10和27。因此Λ为33/2和79/2，实际W为21和53、OPT₂为26和67，两个half余量16和39均被严格超出1/2。完整信用路径式的值为OPT−2W；只删η时逐位置增加η/r。任意菜单分布的最小总额由逐位置最小值实现，故两个输入均排除所有该类菜单分布。",
+  "scope": "两个指定实例分别严格否定保同尾信用ξ、仅删分享余项η的任意人数全称预算。m=1时W=OPT₁，菜单含实际主题S且该项η=W，故候选成立，最小失效人数为2。两实例的半覆盖余量为正，全信用局部恒等及其路径和仍成立。恰六人预算及原半覆盖命题由各自量词另行决定。",
+  "whole_result": "存在两个合法两人有限单位客户实例及其完整纯SPE，使Λ−(2W−OPT₂)=1/2>0；第二例的全部合法决策均严格并且完整纯SPE唯一。故∀m≥1、∀原实例、∀完整纯SPE的仅删η路径付款为假。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/两位提供者的分享余项预算严格反例--反例.md",
+      "sha256": "4667c33fd2844aa5e7bcd2fe77fbdc5b3760fb1023ffdf8c9c832c0dbd731892"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优首动作菜单与真实孩子损失--引理.md",
+      "sha256": "ccbcd801782638693467fc4f719a8bfc9a75b7da165951244445bca33c1f466b",
+      "section": "路径总账与仍未完成的义务"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/eta-two-provider-counterexample/replay.json",
+      "sha256": "0d2f3c8998674311c52cd2130e52126dca3f83b9b93c24bcb3a861d208a27412"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "按两份单位客户表独立展开并逐客以有理数复核全部末位收益和指定根策略的真实偏离，核对各49个有序静态覆盖对、两个真实菜单和逐动作余项。冻结verify.py重放与replay.json逐字节相同；一般全称目标的否定还原为同一份策略的两个实际位置。",
+  "endpoint_pins": {
+    "M-5a32d36d5d2d4eb8a54df3a0a7566a9b": "a49b0d25ad12e32298c86152db9ffa08ecc3d7f7d3d8fe24a1dc516551e14b5d",
+    "customer-attraction/two-provider-eta-budget-counterexample": "31c8d322a7a1e7d76b7ed2602e05045e95589390d10333de413401cd69bce114"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/两位提供者的分享余项预算严格反例--反例.md": "4667c33fd2844aa5e7bcd2fe77fbdc5b3760fb1023ffdf8c9c832c0dbd731892",
+    "archives/customer-attraction/state/引理/最优首动作菜单与真实孩子损失--引理.md": "ccbcd801782638693467fc4f719a8bfc9a75b7da165951244445bca33c1f466b",
+    "archives/customer-attraction/tools/evidence/eta-two-provider-counterexample/replay.json": "0d2f3c8998674311c52cd2130e52126dca3f83b9b93c24bcb3a861d208a27412"
+  },
+  "review_digest": "cd91d35a0edf399179dc30dc26009724b024653379dba7ac3a0db152cbed3e19"
+}

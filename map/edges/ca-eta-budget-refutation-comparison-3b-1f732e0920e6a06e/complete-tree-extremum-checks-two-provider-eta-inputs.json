@@ -1,0 +1,53 @@
+{
+  "edge_id": "complete-tree-extremum-checks-two-provider-eta-inputs",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/eta-candidate-complete-tree-extremum"
+  ],
+  "target_ids": [
+    "customer-attraction/two-provider-eta-budget-counterexample"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "用目标正文的26和67名单位客户重数，保持S,T,U,X,Z,A,B七标签及各客户类型，取两位提供者。静态菜单按覆盖最优，实际及强制终局由同一完整有序策略给定。",
+  "roles": {
+    "customer-attraction/eta-candidate-complete-tree-extremum": "固定输入递推先枚可信计数终局，再在真实激励上限内独立选各离轨子树的余项，最后对实际路径和终局取最大，并重构完整有序策略。",
+    "customer-attraction/two-provider-eta-budget-counterexample": "提供两个冻结目录与目标正文中的完整纯SPE，对照算法重构出的正缺口见证。"
+  },
+  "explanation": "将每个客户表词串的标签按S,T,U,X,Z,A,B映射到下标0至6，冒号后整数作为multiplicity，传给冻结Tree.solve(save_actions=True)。两例均重构8个有序决策节点，直接回放56项收益比较（含自身），最大缺口D*均为1/2，实际路径均为S,T，且真实查询X→A、Z→B。26客户例得到12个根可信终局计数，所选最坏见证的离轨T后回B，正文选A，两者是同一末位平局；67客户例只得1个根终局，算法策略与正文完全相同。另逐客户以Fraction重算所有收益，取26客户的七份末位最佳回复集(TUAB,SXAB,SB,TZA,XB,STXB,STUZA)的3840种有序尾表，逐表纳入全部根最佳动作。得到7328份完整SPE，达到1/2者共32份，实际ST和SA各16份；67客户只有一份。这个独立枚举核对固定输入算法的最大值；67客户严格性另由八个节点的最佳收益差给出。",
+  "scope": "精确重放两份固定两人输入。若仅把同一份输入的players改为6，递推给固定实例最大缺口−14/3及−827/60，各见证重构19608个有序节点和137256项比较；仍只判定这两个六人输入。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/分享余项候选的完整策略树极值--算法.md",
+      "sha256": "367785899b5d2961e98e2720fc7da40e8b19474c3daf0b2e634d963d674cec19",
+      "section": "实际路径递推和全部有序历史见证"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/两位提供者的分享余项预算严格反例--反例.md",
+      "sha256": "4667c33fd2844aa5e7bcd2fe77fbdc5b3760fb1023ffdf8c9c832c0dbd731892",
+      "section": "客户目录与完整策略"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/eta-complete-tree/source/eta_complete_tree.py",
+      "sha256": "fac5ee3f904add2bc726270a84730132b3a664e21465b1c78de458e66931986e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/eta-two-provider-counterexample/verify.py",
+      "sha256": "83a6e9a2723ed3c4dc611772c431a9f1e433fdccd3ed97f5e8bda6e7df13a727"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "实读可信终局、各离轨孩子兼容上限和实际路径递推，以及原程序与小域独立审计。重放该递推和直接枚举两人完整策略所得最大值一致。",
+  "endpoint_pins": {
+    "customer-attraction/eta-candidate-complete-tree-extremum": "5a1ae5368525ea389f894bb32744eeb7a33e0c32f435384c70b97f87b5822da0",
+    "customer-attraction/two-provider-eta-budget-counterexample": "31c8d322a7a1e7d76b7ed2602e05045e95589390d10333de413401cd69bce114"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/分享余项候选的完整策略树极值--算法.md": "367785899b5d2961e98e2720fc7da40e8b19474c3daf0b2e634d963d674cec19",
+    "archives/customer-attraction/state/反例/两位提供者的分享余项预算严格反例--反例.md": "4667c33fd2844aa5e7bcd2fe77fbdc5b3760fb1023ffdf8c9c832c0dbd731892",
+    "archives/customer-attraction/tools/evidence/eta-complete-tree/source/eta_complete_tree.py": "fac5ee3f904add2bc726270a84730132b3a664e21465b1c78de458e66931986e",
+    "archives/customer-attraction/tools/evidence/eta-two-provider-counterexample/verify.py": "83a6e9a2723ed3c4dc611772c431a9f1e433fdccd3ed97f5e8bda6e7df13a727"
+  },
+  "review_digest": "5384654adcaf555d1203152ecff95edf6c7fe39ee7e1749b0f47b639f209d692"
+}

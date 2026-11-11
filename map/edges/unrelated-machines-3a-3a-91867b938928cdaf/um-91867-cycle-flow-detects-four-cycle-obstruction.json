@@ -1,0 +1,61 @@
+{
+  "edge_id": "um-91867-cycle-flow-detects-four-cycle-obstruction",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss2",
+  "kind": "implies",
+  "source_ids": [
+    "UM-UNICYCLIC-FIXED-CONFIG-LAW-EXACT-GLUE-v1"
+  ],
+  "target_ids": [
+    "UM-SINGLE-CYCLE-FIXED-CONFIG-LAW-GLUE-NO-v1"
+  ],
+  "conditions": "显式取两机A/B、两原任务1/2、T=2，p_A1=p_A2=1、p_B1=p_B2=2。固定y_A(空)=y_A({1,2})=1/2，y_B({1})=y_B({2})=1/2；该指定完整行律不能替换成另一份Dirac证书。",
+  "roles": {
+    "UM-UNICYCLIC-FIXED-CONFIG-LAW-EXACT-GLUE-v1": "把给定完整行律相容性化为切口同值闭合圈路径流，必要且充分；因此无正闭合路径即拒绝该行律。",
+    "UM-SINGLE-CYCLE-FIXED-CONFIG-LAW-GLUE-NO-v1": "由四环三次异值要求给出源LP的明确不可行实例，同时保原阈值实际调度存在。"
+  },
+  "explanation": "上述四个正配置在各自机器均负载≤2，行和为1；每任务在A、B各出现1/2，故精确覆盖1，四条分数边均为1/2且分数二部图是四环。用a_j表示任务j在A的布尔状态、b_j表示在B的状态。A支撑强制a_1=a_2；B支撑强制b_1≠b_2；两个独占任务节点分别强制a_1≠b_1、a_2≠b_2。沿圈共有三次翻转，从切口状态c出发必回到1−c，因而两份要求首尾同c的分层DAG均无可用正闭合路径。若LP可行，其总质量为1的非负无环流必须分解出至少一条正起终路径，与之矛盾。因此源充要判据严格推出这份指定完整行律无全局调度分布。另一方面将两件都交A、B空，负载为(2,0)，是原T真实调度；其行Dirac与指定律不同。这同时核清目标的所有数值、合法性、精确边际、四环、阈值存在性及固定律不可实现。",
+  "scope": "目标精确2×2原实例整条有限反例。被否命题是“单环分数关联上每份给定合法精确覆盖行律都能保持原律分解”；不否定二资格伪森林CONFIG(T)阈值可行iff实际T可行。",
+  "whole_result": "将源的精确圈流判据应用于上述合法有理2×2行律，得到切口同值LP不可行，等价于无保持该指定完整rowlaw的原T=2实际调度分布；同一原实例明确有负载(2,0)的真实T调度。这完整恢复目标有限反例及其精确否定范围。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/单环分数关联上的指定配置律相容性--定理.md",
+      "sha256": "14942bf1f5e89322978fbc0af1624ad9428fe8eb57c57655df5fa05d53b33e4b",
+      "section": "圈流的充要条件"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/单环分数关联上的指定配置律相容性--定理.md",
+      "sha256": "14942bf1f5e89322978fbc0af1624ad9428fe8eb57c57655df5fa05d53b33e4b",
+      "section": "与已有结论的分界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md",
+      "sha256": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5",
+      "section": "单环只给存在与固定行律的区别"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/仙人掌可行配置证书与逐块精确消息的审查--审查.md",
+      "sha256": "e61a55f8d893ed46a6a4e114c1b53f7133e293233d763b1097dad0398614cc48",
+      "section": "单环连通分量的CONFIG精确范围"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b",
+      "section": "配置LP及向下封闭性"
+    }
+  ],
+  "review_note": "完整实读四环反例、单环LP和伪森林阈值证明，独立核三次翻转矛盾和(2,0)真实调度。只把源算法在明确实例上的拒绝作为整条目标；未错误生成refutes伪森林阈值定理的边。",
+  "endpoint_pins": {
+    "UM-SINGLE-CYCLE-FIXED-CONFIG-LAW-GLUE-NO-v1": "de4000256bfd032361c5dc7e43d1adf294b40f08be7730a6209df2cffd9e095a",
+    "UM-UNICYCLIC-FIXED-CONFIG-LAW-EXACT-GLUE-v1": "53462b1a0e2ed49d5c4cae873ed033cb6c23322fdf70dc9abf72473b25e1de57"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/单环分数关联上的指定配置律相容性--定理.md": "14942bf1f5e89322978fbc0af1624ad9428fe8eb57c57655df5fa05d53b33e4b",
+    "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5",
+    "archives/unrelated-machines/state/审查/仙人掌可行配置证书与逐块精确消息的审查--审查.md": "e61a55f8d893ed46a6a4e114c1b53f7133e293233d763b1097dad0398614cc48",
+    "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+  },
+  "review_digest": "7324147bdecb8512243dd009908f6bcc174145c275a570de3ca99939eea3b3db"
+}
