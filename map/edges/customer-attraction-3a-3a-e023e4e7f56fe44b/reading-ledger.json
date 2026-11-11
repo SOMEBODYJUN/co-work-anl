@@ -1,0 +1,1612 @@
+{
+  "task_id": "customer-attraction-3a-3a-e023e4e7f56fe44b",
+  "reviewed_by": "Boss6",
+  "task_reference": {
+    "path": "research/operations/map-v2/tasks/customer-attraction-3a-3a-e023e4e7f56fe44b.json",
+    "sha256": "3be1718c7912e6857edbf9635f04f5ffcc9dedb28c5076a37a5a5b31f454d85c"
+  },
+  "scope": {
+    "core_object_ids": [
+      "M-158dbf9aefdc4676820323ac335d007f",
+      "M-7f014258b58d49fc9fd0fef19700ec26",
+      "customer-attraction/arbitrary-path-credible-threshold-terminal-welfare-and-witness-cones",
+      "M-acc03453ceb84446bf50b9ed1eb12c5d",
+      "M-6fcdfc9cd18445d2aa9900ce16d67d59",
+      "customer-attraction/actual-path-credible-floor-matching-and-worst-denominator-separation",
+      "M-2f64765fa1ee41b1a6cf18fbb601f9db",
+      "M-e0c5c68f81074bd3a1ea52e3d3b812e3",
+      "customer-attraction/exact-threshold-arbitrary-path-budget-and-nonrealizability"
+    ],
+    "read_object_ids": [
+      "M-807f05190d1f4272b17deb8d040f979a",
+      "CA-EXACT-PURE-SPE-ALL",
+      "CAG-MODEL"
+    ],
+    "input_pins": {
+      "M-158dbf9aefdc4676820323ac335d007f": "c8b26a293e73448456240306a7b73d7a71d0242511ff78393e2bd8a4a2c2d24f",
+      "M-7f014258b58d49fc9fd0fef19700ec26": "a7a7d402f894d033966abefa337dc9fd5462254e1eecc2cb4ccb509e2913e2d8",
+      "customer-attraction/arbitrary-path-credible-threshold-terminal-welfare-and-witness-cones": "fe26247d1aaeb4581f784147ceaa6b53468baa3b2cf1fd3aecd07b2dc7580cf3",
+      "M-acc03453ceb84446bf50b9ed1eb12c5d": "7b612c99a7bdb68ebb9101cb0a8871e9e940489f1b792901468a61dcf74236c9",
+      "M-6fcdfc9cd18445d2aa9900ce16d67d59": "ce3f0f46bff23ce48f83fe8e8a67e83cb02b3952774fc18c4db8cf559ca03112",
+      "customer-attraction/actual-path-credible-floor-matching-and-worst-denominator-separation": "a6746ee50efbc96d1d9adc511cac0d31ddeb4492e9f955670a4b6bd9225c58e5",
+      "M-2f64765fa1ee41b1a6cf18fbb601f9db": "9978da299e52f28aeee6f4f8cb9494d6f52a578a3e3aabd089196624d7d98c69",
+      "M-e0c5c68f81074bd3a1ea52e3d3b812e3": "d57b9e7c993cd6be6f25106a0cf4293b8274c0e173282211e9e32c42686aed42",
+      "customer-attraction/exact-threshold-arbitrary-path-budget-and-nonrealizability": "64a3e1531ea1f2659134097edcc5af1f3021cf97f82014728447a2f354bd0cfd",
+      "M-807f05190d1f4272b17deb8d040f979a": "8fa153399eb69f12bfd173a4e0153cdfd31bfae6937283a2eca899a950556a8b",
+      "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+      "CAG-MODEL": "3216d1db43ff83e0e0c9cf2479e79611277c9d9291a68e7f9b85ec4bb299dc5c"
+    }
+  },
+  "prerequisites_read": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "0caabed57cddc14a7c1c594450e970f6818be570893fc948f5eef1e1c92eaf9a",
+      "span": "full",
+      "state": "read-complete"
+    },
+    {
+      "path": "prompts/03-map-worker.md",
+      "sha256": "6629f71923c54d994297d54c3737b285227b72c463641d318c3f61c9342d07b2",
+      "span": "full",
+      "state": "read-complete"
+    },
+    {
+      "path": "research/IMPLEMENTATION.md",
+      "sha256": "3f7a1353048e30c44468ac6a98433c3d68f10581e0707114fe70e9c61547833b",
+      "span": "full",
+      "state": "read-complete"
+    },
+    {
+      "path": "research/operations/map-v2/tasks/customer-attraction-3a-3a-e023e4e7f56fe44b.json",
+      "sha256": "3be1718c7912e6857edbf9635f04f5ffcc9dedb28c5076a37a5a5b31f454d85c",
+      "span": "full",
+      "state": "read-complete"
+    }
+  ],
+  "object_contracts": [
+    {
+      "object_id": "M-158dbf9aefdc4676820323ac335d007f",
+      "version": 1,
+      "truth_status": "proved",
+      "statement": "令J(k)=W(k)若|k|=m，否则J(k)=Θ(k)+min_A J(k+e_A)。则J(0)=min_{z合法有序完整路径}[W(z)+Σ_i Θ(z_<i)]；TA恰为J(0)≥OPT_m。",
+      "quantifiers": "任意有限共同目录、任意m≥1、全部合法路径，不要求可实现为SPE。",
+      "assumptions": [
+        "完整子博弈结果全集和值只依标签计数k；完整策略仍可区分有序前缀",
+        "Θ为REP值，终端代价保W"
+      ],
+      "scope": "精确有限递推，不含普遍J≥OPT或复杂性改进。",
+      "objections": "终端取0会变成MP的另一动态规划。",
+      "body": {
+        "path": "archives/customer-attraction/state/候选/任意路径可信门槛的终端福利预算与见证锥--候选.md",
+        "sha256": "d239bdcd4aaae2bbc5c70de49c0ed4450eb9d62308b21c2fb47520ae6b965639",
+        "section": "终端必须取W的准确Bellman值"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/候选/任意路径可信门槛的终端福利预算与见证锥--候选.md",
+          "sha256": "d239bdcd4aaae2bbc5c70de49c0ed4450eb9d62308b21c2fb47520ae6b965639",
+          "section": "全部可信孩子与任意路径"
+        }
+      ],
+      "reading_state": "本轮实读语义合同、全部body/evidence指定区间；sources追溯字符串不冒作原文件全文阅读。"
+    },
+    {
+      "object_id": "M-7f014258b58d49fc9fd0fef19700ec26",
+      "version": 2,
+      "truth_status": "proved",
+      "statement": "令E(h,A)为强制合法A后全部完整孩子纯SPE的终局，L_h(A)=min E 上的当前者收益，则Θ(h)=max_A L_h(A)=min_{τ∈SPE(h)}u_current(outcome(τ))。每份局部SPE首利≥每一孩子最低值；分别贴各孩子达到L的完整续局再选最大者可达到Θ。",
+      "quantifiers": "任意合法有限实例、任意非终端有序历史、全部合法标签和所有离轨平局。",
+      "assumptions": [
+        "不同强制孩子是互斥有序子树，允许分别选完整SPE；终端可视为空续局"
+      ],
+      "scope": "局部完整均衡首值精确表示；全集和值可按计数缓存。",
+      "objections": "强制当前动作未必最佳，固定σ的强制收益只≥其L，不自动≥Θ；节点胶合不允许跨嵌套前缀拼接极小见证。",
+      "body": {
+        "path": "archives/customer-attraction/state/候选/任意路径可信门槛的终端福利预算与见证锥--候选.md",
+        "sha256": "d239bdcd4aaae2bbc5c70de49c0ed4450eb9d62308b21c2fb47520ae6b965639",
+        "section": "全部可信孩子与任意路径"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/资料/动态局部门槛的独立见证锥与人口预算--资料.md",
+          "sha256": "6e7c0a8718e335ec5e4409df112dca3e2d764ca132224d23902bc625c2a02b6e",
+          "section": "局部完整均衡与强制孩子必须区分"
+        },
+        {
+          "path": "archives/customer-attraction/state/候选/实际路径可信保底匹配与最坏分母替代的分离--候选.md",
+          "sha256": "bd8f09ddbee7977b851316f2b3e28ea7a8a0b0809bea67ff16affe193f564abc",
+          "section": "全部可信孩子的L与节点门槛"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/动态门槛审查的净差量词与接续版本边界--审查.md",
+          "sha256": "c7ddc590e5e2470ef8a6c6b51fd91f7e9c7cc7f4463524a365a706d0411128e3",
+          "section": "模型与动态保底的完整量词"
+        },
+        {
+          "path": "archives/customer-attraction/state/候选/动态可信门槛与归属响应税的共同付款条件--候选.md",
+          "sha256": "2d458ab29d0841cd76c634f4ec12df7f884f2398d0311ab759b566106d04ff6b",
+          "section": "三种值和同一actual钱包"
+        },
+        {
+          "path": "archives/customer-attraction/state/候选/最优主题逐位强制收益的净差共同预算--候选.md",
+          "sha256": "894cd39bc0ddb23835895e8b0f40175d8e75223585c61db7240b88506479f03a",
+          "section": "L与Θ的正确界，而非强制枝的错误去重"
+        },
+        {
+          "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+          "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+        }
+      ],
+      "reading_state": "本轮实读语义合同、全部body/evidence指定区间；sources追溯字符串不冒作原文件全文阅读。"
+    },
+    {
+      "object_id": "customer-attraction/arbitrary-path-credible-threshold-terminal-welfare-and-witness-cones",
+      "version": 2,
+      "truth_status": "open",
+      "statement": "对每条合法有序完整路径z，要求OPT_m≤W(z)+Σ_i Θ(z_<i)。计数k上的J在终端取W(k)，其余J(k)=Θ(k)+min_A J(k+e_A)，故该要求恰等价J(0)≥OPT_m。",
+      "quantifiers": "任意共同目录、m≥1、每条合法路径，包括非SPE路径。",
+      "assumptions": [
+        "Θ为REP的最低局部完整均衡首利，不能以固定σ线性行替代",
+        "用计数缓存全集和值，保不同有序历史的策略自由"
+      ],
+      "scope": "任意路径终端福利预算与其已证DP表示；普遍TA若成立，蕴含actual TB和全空路径POP。",
+      "objections": "正确Bellman递推、可独立的局部见证合同及条件缩减都不是TA证明；局部裸覆盖边际floor已假，MP和TA对任意路径不可互换。",
+      "body": {
+        "path": "archives/customer-attraction/state/候选/任意路径可信门槛的终端福利预算与见证锥--候选.md",
+        "sha256": "d239bdcd4aaae2bbc5c70de49c0ed4450eb9d62308b21c2fb47520ae6b965639"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/资料/动态局部门槛的独立见证锥与人口预算--资料.md",
+          "sha256": "6e7c0a8718e335ec5e4409df112dca3e2d764ca132224d23902bc625c2a02b6e",
+          "section": "TB和独立见证的精确等价"
+        },
+        {
+          "path": "archives/customer-attraction/state/资料/动态局部门槛的独立见证锥与人口预算--资料.md",
+          "sha256": "6e7c0a8718e335ec5e4409df112dca3e2d764ca132224d23902bc625c2a02b6e",
+          "section": "POP是更强未证桥的必要后果"
+        },
+        {
+          "path": "archives/customer-attraction/state/候选/真实门槛任意路径的累计预算与不可拼合边界--候选.md",
+          "sha256": "4db2d35f3e6ecb2001c447576d36659e3295f370468ddace187698721fc10986",
+          "section": "2026-11-02：终端福利版任意路径预算的另一个合同"
+        },
+        {
+          "path": "archives/customer-attraction/state/候选/实际路径可信保底匹配与最坏分母替代的分离--候选.md",
+          "sha256": "bd8f09ddbee7977b851316f2b3e28ea7a8a0b0809bea67ff16affe193f564abc",
+          "section": "三种量词及half充分箭头"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/任意路径门槛的六种攻击与产品有限报告--程序.md",
+          "sha256": "e2639632cc669fb263168a59e60b523775dabdc47d63a6515dd692e975154330"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/独立门槛多锥与人口预算的三份原攻击器--程序.md",
+          "sha256": "3bc392e590dc23093578b80cf0d4c3f973bc3b01801157a597cc355774963df3"
+        }
+      ],
+      "reading_state": "本轮实读语义合同、全部body/evidence指定区间；sources追溯字符串不冒作原文件全文阅读。"
+    },
+    {
+      "object_id": "M-acc03453ceb84446bf50b9ed1eb12c5d",
+      "version": 2,
+      "truth_status": "open",
+      "statement": "令Σ_i L_{h_i}(T_i)支付OPT_m−W。SM-opt-all量化所有最优有序T，SM-opt-exists只要某一最优有序T；现行SM-all对全部合法T的更强主对象独立，两种最优版依次蕴含，最弱版仍蕴含TB。",
+      "quantifiers": "每实例、每份完整σ，内层分别∀最优T或∃最优T，最优含全部排列与重复。",
+      "assumptions": [
+        "每行L取该强制孩子全部完整纯SPE中的当前者最低值"
+      ],
+      "scope": "真实门槛匹配；存在版反例须最大最优匹配仍小于OPT−W。",
+      "objections": "七字母缩写同名时以量词为准；正文已证条件箭头，未给任何普遍SM证明。五份冻结诊断和两旧反例重放仅在其具体输入。",
+      "body": {
+        "path": "archives/customer-attraction/state/候选/实际路径可信保底匹配与最坏分母替代的分离--候选.md",
+        "sha256": "bd8f09ddbee7977b851316f2b3e28ea7a8a0b0809bea67ff16affe193f564abc",
+        "section": "三种量词及half充分箭头"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/动态门槛审查的净差量词与接续版本边界--审查.md",
+          "sha256": "c7ddc590e5e2470ef8a6c6b51fd91f7e9c7cc7f4463524a365a706d0411128e3",
+          "section": "TB与三个SM版本，及准确反例合同"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/动态门槛审查的净差量词与接续版本边界--审查.md",
+          "sha256": "c7ddc590e5e2470ef8a6c6b51fd91f7e9c7cc7f4463524a365a706d0411128e3",
+          "section": "两份旧匹配反例确实没有击中净差预算"
+        },
+        {
+          "path": "archives/customer-attraction/state/候选/动态可信门槛与归属响应税的共同付款条件--候选.md",
+          "sha256": "2d458ab29d0841cd76c634f4ec12df7f884f2398d0311ab759b566106d04ff6b",
+          "section": "TB、SM与不同排列量词"
+        }
+      ],
+      "reading_state": "本轮实读语义合同、全部body/evidence指定区间；sources追溯字符串不冒作原文件全文阅读。"
+    },
+    {
+      "object_id": "M-6fcdfc9cd18445d2aa9900ce16d67d59",
+      "version": 2,
+      "truth_status": "proved",
+      "statement": "m≥4，B为m个客户的大主题，另有m−1个不交单例。每有序历史全选B是完整SPE，W=m、OPT=2m−1，actual每个L_i(A)=1；放松为任意后继复制的F_i(A)时，最优匹配最大仅1+H_(m−1)<m−1。",
+      "quantifiers": "每个m≥4存在该单位输入和完整σ，对每个最优有序元组替代匹配失败。",
+      "assumptions": [
+        "F_i(A)=Σ_{x∈A}1/(b_i(x)+m−i+1)允许非理性未来；真强制单例后后继严格选B"
+      ],
+      "scope": "真SPE上的静态最坏分母替代失效；所有真L匹配仍通过。",
+      "objections": "不反SM、TB或half；与非SPE路径上的无界松弛族不同。",
+      "body": {
+        "path": "archives/customer-attraction/state/候选/实际路径可信保底匹配与最坏分母替代的分离--候选.md",
+        "sha256": "bd8f09ddbee7977b851316f2b3e28ea7a8a0b0809bea67ff16affe193f564abc",
+        "section": "最坏分母替代在真SPE上的失败"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/动态门槛审查的净差量词与接续版本边界--审查.md",
+          "sha256": "c7ddc590e5e2470ef8a6c6b51fd91f7e9c7cc7f4463524a365a706d0411128e3",
+          "section": "UV：条件蕴含保留，存在加强现为假"
+        }
+      ],
+      "reading_state": "本轮实读语义合同、全部body/evidence指定区间；sources追溯字符串不冒作原文件全文阅读。"
+    },
+    {
+      "object_id": "customer-attraction/actual-path-credible-floor-matching-and-worst-denominator-separation",
+      "version": 3,
+      "truth_status": "open",
+      "statement": "固定完整纯SPE实际路径z和前缀h_i，要求OPT_m−W(z)≤Σ_i Θ(h_i)。由逐动作真实IC已有ΣΘ≤W，故TB若真足half；它等价对每前缀独立选取每份局部完整SPE见证的对应收益和预算。",
+      "quantifiers": "每个合法实例、m≥1和每份完整纯SPE；实际路径固定为该σ的实现。",
+      "assumptions": [
+        "Θ取全部可信孩子的最小首人表示；各局部见证不需相容"
+      ],
+      "scope": "只量化真实actual路径；不同于TA、MP及SM匹配。",
+      "objections": "独立见证表示已证不等于预算已证。旧遗漏匹配/最坏分母替代/逐客户UV反例没有否定TB。",
+      "body": {
+        "path": "archives/customer-attraction/state/候选/实际路径可信保底匹配与最坏分母替代的分离--候选.md",
+        "sha256": "bd8f09ddbee7977b851316f2b3e28ea7a8a0b0809bea67ff16affe193f564abc"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/资料/动态局部门槛的独立见证锥与人口预算--资料.md",
+          "sha256": "6e7c0a8718e335ec5e4409df112dca3e2d764ca132224d23902bc625c2a02b6e",
+          "section": "TB和独立见证的精确等价"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/动态门槛审查的净差量词与接续版本边界--审查.md",
+          "sha256": "c7ddc590e5e2470ef8a6c6b51fd91f7e9c7cc7f4463524a365a706d0411128e3",
+          "section": "TB与三个SM版本，及准确反例合同"
+        },
+        {
+          "path": "archives/customer-attraction/state/候选/动态可信门槛与归属响应税的共同付款条件--候选.md",
+          "sha256": "2d458ab29d0841cd76c634f4ec12df7f884f2398d0311ab759b566106d04ff6b",
+          "section": "TB、SM与不同排列量词"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/三主题六人门槛重数穷举与四个根探针--程序.md",
+          "sha256": "cf406def1372ad233377992154794c255e173d837dacfeb830a77f392257af10"
+        }
+      ],
+      "reading_state": "本轮实读语义合同、全部body/evidence指定区间；sources追溯字符串不冒作原文件全文阅读。"
+    },
+    {
+      "object_id": "M-2f64765fa1ee41b1a6cf18fbb601f9db",
+      "version": 1,
+      "truth_status": "proved",
+      "statement": "m≥2时每条路径价格和至少(m−2)K/m+2θ_m，且F(空)≥4(m−1)OPT_m/[m(2m−1)]；m=1直接F=OPT₁。任何目标完整可信尾接前缀缺陷R有W+R≥F(空)。",
+      "quantifiers": "任意共同目录、任意m和路径；真尾不等式另量化所有完整可信尾输入。",
+      "assumptions": [
+        "K为最大主题大小，θ_m为全合法末位历史静态地板；倒二界使用全部真实末位最优回复"
+      ],
+      "scope": "终端0的MP尺度校准；大主题+单例族给F=m、OPT=2m−1。",
+      "objections": "系数自m≥5不足half；不把路径价格误作可由同一SPE实现的福利。",
+      "body": {
+        "path": "archives/customer-attraction/state/候选/真实门槛任意路径的累计预算与不可拼合边界--候选.md",
+        "sha256": "4db2d35f3e6ecb2001c447576d36659e3295f370468ddace187698721fc10986",
+        "section": "任意路径的已证一般校准"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/候选/真实门槛任意路径的累计预算与不可拼合边界--候选.md",
+          "sha256": "4db2d35f3e6ecb2001c447576d36659e3295f370468ddace187698721fc10986",
+          "section": "真尾输入的已证接口与条件加强"
+        }
+      ],
+      "reading_state": "本轮实读语义合同、全部body/evidence指定区间；sources追溯字符串不冒作原文件全文阅读。"
+    },
+    {
+      "object_id": "M-e0c5c68f81074bd3a1ea52e3d3b812e3",
+      "version": 1,
+      "truth_status": "proved",
+      "statement": "m=5四主题、客户类型{1}:2、{0,1,2}:4、{2,3}:1，路径(1,1,1,2,0)的五个当前M均13/10，而每份完整SPE福利均7，故各层极小价格不可免费胶合成福利至多13/2的一份真SPE。",
+      "quantifiers": "存在一个单位客户输入与一条任意完整路径，量化该输入全部完整SPE。",
+      "assumptions": [
+        "末动作0并非BR；路径价格的原各孩子证书入口见正文，W=7有原独立解析证明"
+      ],
+      "scope": "反驳逐层独立极小值的无成本拼接。",
+      "objections": "不反MP、TA或真尾输入预算；现轮未再读原JSON或重跑。",
+      "body": {
+        "path": "archives/customer-attraction/state/候选/真实门槛任意路径的累计预算与不可拼合边界--候选.md",
+        "sha256": "4db2d35f3e6ecb2001c447576d36659e3295f370468ddace187698721fc10986",
+        "section": "七客户：最低价格孩子不能免费拼成同一SPE"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        }
+      ],
+      "reading_state": "本轮实读语义合同、全部body/evidence指定区间；sources追溯字符串不冒作原文件全文阅读。"
+    },
+    {
+      "object_id": "customer-attraction/exact-threshold-arbitrary-path-budget-and-nonrealizability",
+      "version": 4,
+      "truth_status": "open",
+      "statement": "对任意合法路径z要求Σ_i M(z_<i)≥OPT_m/2，其中M为当前完整局部SPE最低首利。终端为0的F(h)=M(h)+min_A F(h,A)故等价F(空)≥OPT_m/2。若目标有完整真尾，前缀缺陷总量R满足W+R≥Σ_i M(h_i)≥F(空)；MP若真给OPT_m−2W≤2R。",
+      "quantifiers": "任意实例、人数及路径；条件缺陷接口另要求目标真尾，前j位允许不可信。",
+      "assumptions": [
+        "完整有序历史，强制孩子全SPE集合极小；不要求路径本身可信"
+      ],
+      "scope": "根任意路径价格和；不同于终端取W的TA和任意背景活跃利润PRICE-HALF。",
+      "objections": "一般校准不足以解决全人数，七客户不可拼合只反共见证，不反MP；有限阴性不是证明。",
+      "body": {
+        "path": "archives/customer-attraction/state/候选/真实门槛任意路径的累计预算与不可拼合边界--候选.md",
+        "sha256": "4db2d35f3e6ecb2001c447576d36659e3295f370468ddace187698721fc10986"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/候选/任意路径可信门槛的终端福利预算与见证锥--候选.md",
+          "sha256": "d239bdcd4aaae2bbc5c70de49c0ed4450eb9d62308b21c2fb47520ae6b965639",
+          "section": "终端必须取W的准确Bellman值"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/真实门槛任意路径探针与稀疏纪录--程序.md",
+          "sha256": "73f340548ee16440739d07411d7526b55bf96a3f4c1152b31e59f063f0dddc99"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/真实门槛累计的整数集合搜索与多节点策略锥--程序.md",
+          "sha256": "9dfe66c4a73c4bca0a22a9a2764ee65265fff45d455585260336f80269612ddd"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/同主题承诺递推实现与终端门槛预算攻击的证据合同--资源.md",
+          "sha256": "b4137443a4e4245b46f87093d2ba7f2ec1b48e97bdf3f74d1f4ebeb022d4f6d1"
+        }
+      ],
+      "reading_state": "本轮实读语义合同、全部body/evidence指定区间；sources追溯字符串不冒作原文件全文阅读。"
+    },
+    {
+      "object_id": "M-807f05190d1f4272b17deb8d040f979a",
+      "version": 3,
+      "truth_status": "open",
+      "statement": "开放命题POP：对每个有限共同目录和m≥1，Σ_{r=1}^m Θ_r(空历史)≥OPT_m，Θ_r为该同一目录r人完整局部纯SPE中首人收益的最小值。普遍TB-ANY若成立，添加合法空主题并取全empty路径即推出POP；此条件箭头已有证明，不是POP证明。",
+      "quantifiers": "所有有限单位客户目录与每个m≥1；每个r各自对全部完整有序历史r人SPE取最小首利。",
+      "assumptions": [
+        "同一目录的不同人数动态门槛，不改用静态不观察查询的v_r",
+        "全空路径只是合法形式路径，不要求它是完整SPE路径",
+        "存在可覆盖客户时空主题收益0，永不在局部SPE中选；全零客户全部量为0"
+      ],
+      "scope": "更强任意路径TB-ANY的必要后果；不等同actual-TB、逐次最优边际界或原六人half。",
+      "objections": "完整读POP推导与四客户动态/静态分离：A={1,2},C={3,4},B={1,3}时Θ1=Θ2=2，但v1=2,v2=3/2，故不能以静态和替代。原(30,15,13,9)仅MD历史报告，未重新认证原数值/输入；逐次边际失败不反累计POP。本次无新数学运行。 两份成熟正文均全文实读。全空路径仍保同一目录的动态局部首值；十五客户已证反例击破更强的逐次裸边际，不反 POP，故第二节仅给反向边界。 本次未重跑历史探针。",
+      "body": {
+        "path": "archives/customer-attraction/state/资料/动态局部门槛的独立见证锥与人口预算--资料.md",
+        "sha256": "6e7c0a8718e335ec5e4409df112dca3e2d764ca132224d23902bc625c2a02b6e",
+        "section": "POP是更强未证桥的必要后果"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/资料/动态局部门槛的独立见证锥与人口预算--资料.md",
+          "sha256": "6e7c0a8718e335ec5e4409df112dca3e2d764ca132224d23902bc625c2a02b6e",
+          "section": "局部完整均衡与强制孩子必须区分"
+        },
+        {
+          "path": "archives/customer-attraction/state/资料/动态局部门槛的独立见证锥与人口预算--资料.md",
+          "sha256": "6e7c0a8718e335ec5e4409df112dca3e2d764ca132224d23902bc625c2a02b6e",
+          "section": "TB和独立见证的精确等价"
+        },
+        {
+          "path": "archives/customer-attraction/state/候选/任意路径可信门槛的终端福利预算与见证锥--候选.md",
+          "sha256": "d239bdcd4aaae2bbc5c70de49c0ed4450eb9d62308b21c2fb47520ae6b965639",
+          "section": "全空路径必要子候选"
+        },
+        {
+          "path": "archives/customer-attraction/state/候选/任意路径可信门槛的终端福利预算与见证锥--候选.md",
+          "sha256": "d239bdcd4aaae2bbc5c70de49c0ed4450eb9d62308b21c2fb47520ae6b965639",
+          "section": "裸覆盖边际floor如何足够，又为何已经失败"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/独立门槛多锥与人口预算的三份原攻击器--程序.md",
+          "sha256": "3bc392e590dc23093578b80cf0d4c3f973bc3b01801157a597cc355774963df3"
+        }
+      ],
+      "reading_state": "本轮实读语义合同、全部body/evidence指定区间；sources追溯字符串不冒作原文件全文阅读。"
+    },
+    {
+      "object_id": "CA-EXACT-PURE-SPE-ALL",
+      "version": 2,
+      "truth_status": "proved",
+      "statement": "有限共同标签目录p≥1、m≥1。R(k)在|k|=m时为{k}；否则R_a=R(k+e_a)、ell_a=min_(c∈R_a)U_a(c)、M=max_a ell_a，则R(k)=∪_a{c∈R_a:U_a(c)≥M}，恰为所有完整纯SPE可实现终局计数且非空。每个保留终局可逐有序历史独立拼接实现；指定路径须各前缀满足同递推条件。定义级全树真实偏离比较独立认证SPE。",
+      "quantifiers": "每个有限单位客户输入、每个合法计数前缀及每个可实现终局；不同同计数有序历史可选不同续局。",
+      "assumptions": [
+        "每个玩家只在自身层行动一次",
+        "完整离轨孩子均为子SPE",
+        "有限孩子集最小值达到"
+      ],
+      "scope": "精确终局集合/证书构造及验证，不枚举全部完整策略或混合SPE。忽略算术成本候选扫描O(NpT)，N=binom(m+p,p)、T=binom(m+p−1,p−1)；完整证书随有序树增长，无位长多项式保证。 所接实现证据按精确有理数、无溢出LCM整数或浮点proposal分别解释；对一棵策略后核不认证浮点全集或最差性。",
+      "objections": "fresh恢复全文读主正文归纳的必要/充分/非空、有序路径展开和独立全树核验，并定向实读已发布14页中的算法/实现合同后接证。计数只缓存全集；同计数不同有序历史可有不同续局。精确Fraction规范包与LCM整数实现、带容差浮点发现、固定策略count-target DAG须按各自条件使用；int64/32位不得溢出。40项dp_crosscheck缺输入及运行绑定，仅保原有限PASS字段，不充当一般正确性证明。群轨道商的额外数学保其独立owner，本对象仅接基础R递推部分。零覆盖不定义0/0效率比。",
+      "body": {
+        "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+        "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/完整历史求解器的精确复现--计算.md",
+          "sha256": "08301e20c759f777651af65740a809fd0c3261e24b006047b90f30bae3bf42ca"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/R4表示层路线与接口--审查.md",
+          "sha256": "b083f4eb4abe44239ecf2de7920c06e4c26153e3c711e5091b22fc2a1569b225",
+          "section": "全集门槛与有序叶的精确条件"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/可信续局试验与动态规划交叉核对--审查.md",
+          "sha256": "ca49559f8693fcd42b5d473c927a567e0c0a819d72f277e7304d4598ab37508f",
+          "section": "四十条DP交叉记录的真正范围"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/固定输入同时轨道商的存在性与选择器边界--审查.md",
+          "sha256": "759aba64f361917cc40b9bcab8be6650b6215e639b6406d0ef01178231cb1d28",
+          "section": "模型、收益和完整历史终局集合"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/七个极大主题的六人整数终局集合搜索程序--程序.md",
+          "sha256": "0faef6f1fbb38e84e0f125c110dbc8663b98b6f0676211844f2901e6cda1a033",
+          "section": "为什么这个整数集合递推包括完整历史平局"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/双客户池的可信尾局搜索程序--程序.md",
+          "sha256": "f4859f6d311ea93158144886f53eede916b4eb8f4c93f9a2b492b1c01dceca35",
+          "section": "三层可信过滤与全部平局的自足证明"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/合法背景数值策略锥的利润归一与四份探索--程序.md",
+          "sha256": "a44e9d629df6cb327d6fac88f63be8c490f114cdd1b816bcbfc1d0b66b97d18b",
+          "section": "终局集合递推和count-target完整策略锥"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/整数安全聚合的轨道输入搜索与固定策略锥--程序.md",
+          "sha256": "3ececa548aa4612031f7815c15cfd04968d2b0af2a7344e876422cc36e9afc99",
+          "section": "Search的精确整数部分与全部历史续局"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/最坏可信终局与静态CCE差值交替发现器--程序.md",
+          "sha256": "649b2a9ed27cd4569c2d6cfea85b16d3496adbefe5e31c4586d35da361a5cdf9",
+          "section": "solve_spe：全部可实现计数与一棵完整树"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/最差顺序与静态PNE桥的精确有限阴性搜索--程序.md",
+          "sha256": "8fcbdb62efc9c2ef42730c272f231382666824394cfe09ef271c6b738f5377b0",
+          "section": "全部静态PNE和全部顺序终局"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/浮点终局全集递推与完整历史有理后核程序--程序.md",
+          "sha256": "b81b76db8d6ea7fc2cc204725293367ca6568e8785b8f7ff110e2140759dca22",
+          "section": "为什么计数集合可缓存，而完整策略不能强制匿名"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/静态PNE与残余双桥扫描的短路约简合同--程序.md",
+          "sha256": "f9172cb8aae5cbc49dbaa02ae7b80de76fe3a6d48c52e2e5f48993ad83c905af",
+          "section": "精确模型与规范闭包"
+        },
+        {
+          "path": "archives/customer-attraction/state/算法/对称不交卫星块的完整SPE结果轨道递推--算法.md",
+          "sha256": "b0c4e874c48d9124c842e8c144b1738202db6ef44e019b793fa71d6163e93c98",
+          "section": "完整历史结果集合为何允许按计数缓存"
+        },
+        {
+          "path": "archives/customer-attraction/state/资料/完整根查询证书的字段与审计范围--资料.md",
+          "sha256": "a3711f39be17eea77f922ba8934da03633474d3a62ca394d21af851e6cbea263",
+          "section": "完整策略的无损紧写与动作计数"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/完整历史策略锥的最低收益价格攻击--资源.md",
+          "sha256": "011bd76ef59d13973a9ae2dc3ca064adbe9f07b13b620bc520747cb17e8ad362",
+          "section": "完整策略客户锥与两步优化"
+        },
+        {
+          "path": "archives/customer-attraction/state/证明/有限完整SPE证书池与六人half边界--证明.md",
+          "sha256": "d751732561877e1936e59a78ea2f4434d8c12171cfdb6a47c21b4cfda4561131"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/归档策略有限计数状态与早停报告的精确边界--计算.md",
+          "sha256": "ceeeb590c59e69d7f7434566f7507f486f2319f37a14e140dae6ee52917817be"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/上传精确SPE脚本与个体安全压缩生成接续审查--审查.md",
+          "sha256": "3b739e6f439592a45ff1466e37b56827a89b9010b4e016151a6cf62771e30ae7",
+          "section": "2. `exact_spe.py` 的模型、递推和完整历史验证"
+        },
+        {
+          "path": "archives/customer-attraction/state/资料/完整根查询证书的字段与审计范围--资料.md",
+          "sha256": "a3711f39be17eea77f922ba8934da03633474d3a62ca394d21af851e6cbea263"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/末位负载尾和的原Fraction审计与抽证边界--资源.md",
+          "sha256": "f268efc46ddfb71ffcf798d5aa59a4d9e5e722260d399fb10803e2228048cdb4"
+        },
+        {
+          "path": "archives/customer-attraction/subarchives/six-providers/state/计算/十八主题完整逆推与前缀种子复核--计算.md",
+          "sha256": "f90821a2d15a866f712d3d2b9d3e4a43fda3df6f4ba53309d833f9fd529ecf28",
+          "section": "完整历史终局集合的精确递推"
+        }
+      ],
+      "reading_state": "本轮实读语义合同、全部body/evidence指定区间；sources追溯字符串不冒作原文件全文阅读。"
+    },
+    {
+      "object_id": "CAG-MODEL",
+      "version": 1,
+      "truth_status": "definition",
+      "statement": "有限单位客户 N 与有限非空标签集 S、任意覆盖映射 cov:S→2^N；m≥1人按序选标签，每人一次。u_i=Σ_{x∈S_i}1/c_x，W=|∪S_i|=Σu_i，OPT_m为全部m元组最大覆盖。完整纯SPE恰对每层、每个合法有序历史、每个替代标签，沿同策略真实后继完成的实际收益不低于偏离收益。合法旧负载b下剩余总利润为Σ_{c_x>0}c_x/(b_x+c_x)。",
+      "quantifiers": "对任意有限N、S、任意覆盖映射和正整数m；最优性量化全部有序历史与全部标签。",
+      "assumptions": [
+        "共同目录非空，价值和提供者权重为一",
+        "客户不在终局后再优化"
+      ],
+      "scope": "固定共同目录、均分效用、完整策略和合法背景；根和非零背景的目标有明确区分。",
+      "objections": "允许空覆盖和不同标签同覆盖；计数可压缩收益，不能自动压缩历史依赖策略；不证明六人half。",
+      "body": {
+        "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+        "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+      },
+      "evidence": [],
+      "reading_state": "本轮实读语义合同、全部body/evidence指定区间；sources追溯字符串不冒作原文件全文阅读。"
+    }
+  ],
+  "required_reference_count": 53,
+  "required_distinct_files": 35,
+  "merged_reading_interval_count": 36,
+  "all_assigned_spans_read": true,
+  "reading_segments": [
+    {
+      "path": "archives/customer-attraction/state/候选/任意路径可信门槛的终端福利预算与见证锥--候选.md",
+      "sha256": "d239bdcd4aaae2bbc5c70de49c0ed4450eb9d62308b21c2fb47520ae6b965639",
+      "start_line": 1,
+      "end_line": 86,
+      "covered_task_ref_indices": [
+        9,
+        2,
+        0,
+        30,
+        31
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "无：该文件全文已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "start_line": 1,
+      "end_line": 129,
+      "covered_task_ref_indices": [
+        1
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "无：该文件全文已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/动态局部门槛的独立见证锥与人口预算--资料.md",
+      "sha256": "6e7c0a8718e335ec5e4409df112dca3e2d764ca132224d23902bc625c2a02b6e",
+      "start_line": 16,
+      "end_line": 43,
+      "covered_task_ref_indices": [
+        3,
+        10
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "本区间外不声称本轮已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/动态局部门槛的独立见证锥与人口预算--资料.md",
+      "sha256": "6e7c0a8718e335ec5e4409df112dca3e2d764ca132224d23902bc625c2a02b6e",
+      "start_line": 64,
+      "end_line": 73,
+      "covered_task_ref_indices": [
+        11
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "本区间外不声称本轮已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/实际路径可信保底匹配与最坏分母替代的分离--候选.md",
+      "sha256": "bd8f09ddbee7977b851316f2b3e28ea7a8a0b0809bea67ff16affe193f564abc",
+      "start_line": 1,
+      "end_line": 101,
+      "covered_task_ref_indices": [
+        21,
+        4,
+        13,
+        19
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "无：该文件全文已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/动态门槛审查的净差量词与接续版本边界--审查.md",
+      "sha256": "c7ddc590e5e2470ef8a6c6b51fd91f7e9c7cc7f4463524a365a706d0411128e3",
+      "start_line": 23,
+      "end_line": 146,
+      "covered_task_ref_indices": [
+        5,
+        16,
+        17,
+        20
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "本区间外不声称本轮已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/动态可信门槛与归属响应税的共同付款条件--候选.md",
+      "sha256": "2d458ab29d0841cd76c634f4ec12df7f884f2398d0311ab759b566106d04ff6b",
+      "start_line": 18,
+      "end_line": 52,
+      "covered_task_ref_indices": [
+        6,
+        18
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "本区间外不声称本轮已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/最优主题逐位强制收益的净差共同预算--候选.md",
+      "sha256": "894cd39bc0ddb23835895e8b0f40175d8e75223585c61db7240b88506479f03a",
+      "start_line": 40,
+      "end_line": 64,
+      "covered_task_ref_indices": [
+        7
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "本区间外不声称本轮已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "start_line": 1,
+      "end_line": 107,
+      "covered_task_ref_indices": [
+        8
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "无：该文件全文已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/真实门槛任意路径的累计预算与不可拼合边界--候选.md",
+      "sha256": "4db2d35f3e6ecb2001c447576d36659e3295f370468ddace187698721fc10986",
+      "start_line": 1,
+      "end_line": 77,
+      "covered_task_ref_indices": [
+        26,
+        24,
+        23,
+        25,
+        12
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "无：该文件全文已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/任意路径门槛的六种攻击与产品有限报告--程序.md",
+      "sha256": "e2639632cc669fb263168a59e60b523775dabdc47d63a6515dd692e975154330",
+      "start_line": 1,
+      "end_line": 116,
+      "covered_task_ref_indices": [
+        14
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "无：该文件全文已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/独立门槛多锥与人口预算的三份原攻击器--程序.md",
+      "sha256": "3bc392e590dc23093578b80cf0d4c3f973bc3b01801157a597cc355774963df3",
+      "start_line": 1,
+      "end_line": 121,
+      "covered_task_ref_indices": [
+        15
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "无：该文件全文已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/三主题六人门槛重数穷举与四个根探针--程序.md",
+      "sha256": "cf406def1372ad233377992154794c255e173d837dacfeb830a77f392257af10",
+      "start_line": 1,
+      "end_line": 115,
+      "covered_task_ref_indices": [
+        22
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "无：该文件全文已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/真实门槛任意路径探针与稀疏纪录--程序.md",
+      "sha256": "73f340548ee16440739d07411d7526b55bf96a3f4c1152b31e59f063f0dddc99",
+      "start_line": 1,
+      "end_line": 99,
+      "covered_task_ref_indices": [
+        27
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "无：该文件全文已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/真实门槛累计的整数集合搜索与多节点策略锥--程序.md",
+      "sha256": "9dfe66c4a73c4bca0a22a9a2764ee65265fff45d455585260336f80269612ddd",
+      "start_line": 1,
+      "end_line": 148,
+      "covered_task_ref_indices": [
+        28
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "无：该文件全文已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/同主题承诺递推实现与终端门槛预算攻击的证据合同--资源.md",
+      "sha256": "b4137443a4e4245b46f87093d2ba7f2ec1b48e97bdf3f74d1f4ebeb022d4f6d1",
+      "start_line": 1,
+      "end_line": 112,
+      "covered_task_ref_indices": [
+        29
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "无：该文件全文已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/完整历史求解器的精确复现--计算.md",
+      "sha256": "08301e20c759f777651af65740a809fd0c3261e24b006047b90f30bae3bf42ca",
+      "start_line": 1,
+      "end_line": 67,
+      "covered_task_ref_indices": [
+        32
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "无：该文件全文已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R4表示层路线与接口--审查.md",
+      "sha256": "b083f4eb4abe44239ecf2de7920c06e4c26153e3c711e5091b22fc2a1569b225",
+      "start_line": 24,
+      "end_line": 51,
+      "covered_task_ref_indices": [
+        33
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "本区间外不声称本轮已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/可信续局试验与动态规划交叉核对--审查.md",
+      "sha256": "ca49559f8693fcd42b5d473c927a567e0c0a819d72f277e7304d4598ab37508f",
+      "start_line": 101,
+      "end_line": 117,
+      "covered_task_ref_indices": [
+        34
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "本区间外不声称本轮已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/固定输入同时轨道商的存在性与选择器边界--审查.md",
+      "sha256": "759aba64f361917cc40b9bcab8be6650b6215e639b6406d0ef01178231cb1d28",
+      "start_line": 14,
+      "end_line": 28,
+      "covered_task_ref_indices": [
+        35
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "本区间外不声称本轮已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/七个极大主题的六人整数终局集合搜索程序--程序.md",
+      "sha256": "0faef6f1fbb38e84e0f125c110dbc8663b98b6f0676211844f2901e6cda1a033",
+      "start_line": 59,
+      "end_line": 80,
+      "covered_task_ref_indices": [
+        36
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "本区间外不声称本轮已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/双客户池的可信尾局搜索程序--程序.md",
+      "sha256": "f4859f6d311ea93158144886f53eede916b4eb8f4c93f9a2b492b1c01dceca35",
+      "start_line": 77,
+      "end_line": 127,
+      "covered_task_ref_indices": [
+        37
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "本区间外不声称本轮已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/合法背景数值策略锥的利润归一与四份探索--程序.md",
+      "sha256": "a44e9d629df6cb327d6fac88f63be8c490f114cdd1b816bcbfc1d0b66b97d18b",
+      "start_line": 48,
+      "end_line": 72,
+      "covered_task_ref_indices": [
+        38
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "本区间外不声称本轮已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/整数安全聚合的轨道输入搜索与固定策略锥--程序.md",
+      "sha256": "3ececa548aa4612031f7815c15cfd04968d2b0af2a7344e876422cc36e9afc99",
+      "start_line": 40,
+      "end_line": 54,
+      "covered_task_ref_indices": [
+        39
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "本区间外不声称本轮已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/最坏可信终局与静态CCE差值交替发现器--程序.md",
+      "sha256": "649b2a9ed27cd4569c2d6cfea85b16d3496adbefe5e31c4586d35da361a5cdf9",
+      "start_line": 55,
+      "end_line": 79,
+      "covered_task_ref_indices": [
+        40
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "本区间外不声称本轮已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/最差顺序与静态PNE桥的精确有限阴性搜索--程序.md",
+      "sha256": "8fcbdb62efc9c2ef42730c272f231382666824394cfe09ef271c6b738f5377b0",
+      "start_line": 51,
+      "end_line": 77,
+      "covered_task_ref_indices": [
+        41
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "本区间外不声称本轮已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/浮点终局全集递推与完整历史有理后核程序--程序.md",
+      "sha256": "b81b76db8d6ea7fc2cc204725293367ca6568e8785b8f7ff110e2140759dca22",
+      "start_line": 49,
+      "end_line": 73,
+      "covered_task_ref_indices": [
+        42
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "本区间外不声称本轮已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/静态PNE与残余双桥扫描的短路约简合同--程序.md",
+      "sha256": "f9172cb8aae5cbc49dbaa02ae7b80de76fe3a6d48c52e2e5f48993ad83c905af",
+      "start_line": 23,
+      "end_line": 42,
+      "covered_task_ref_indices": [
+        43
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "本区间外不声称本轮已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/对称不交卫星块的完整SPE结果轨道递推--算法.md",
+      "sha256": "b0c4e874c48d9124c842e8c144b1738202db6ef44e019b793fa71d6163e93c98",
+      "start_line": 51,
+      "end_line": 61,
+      "covered_task_ref_indices": [
+        44
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "本区间外不声称本轮已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资料/完整根查询证书的字段与审计范围--资料.md",
+      "sha256": "a3711f39be17eea77f922ba8934da03633474d3a62ca394d21af851e6cbea263",
+      "start_line": 1,
+      "end_line": 160,
+      "covered_task_ref_indices": [
+        50,
+        45
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "无：该文件全文已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/完整历史策略锥的最低收益价格攻击--资源.md",
+      "sha256": "011bd76ef59d13973a9ae2dc3ca064adbe9f07b13b620bc520747cb17e8ad362",
+      "start_line": 32,
+      "end_line": 64,
+      "covered_task_ref_indices": [
+        46
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "本区间外不声称本轮已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/证明/有限完整SPE证书池与六人half边界--证明.md",
+      "sha256": "d751732561877e1936e59a78ea2f4434d8c12171cfdb6a47c21b4cfda4561131",
+      "start_line": 1,
+      "end_line": 51,
+      "covered_task_ref_indices": [
+        47
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "无：该文件全文已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/归档策略有限计数状态与早停报告的精确边界--计算.md",
+      "sha256": "ceeeb590c59e69d7f7434566f7507f486f2319f37a14e140dae6ee52917817be",
+      "start_line": 1,
+      "end_line": 64,
+      "covered_task_ref_indices": [
+        48
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "无：该文件全文已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/上传精确SPE脚本与个体安全压缩生成接续审查--审查.md",
+      "sha256": "3b739e6f439592a45ff1466e37b56827a89b9010b4e016151a6cf62771e30ae7",
+      "start_line": 46,
+      "end_line": 80,
+      "covered_task_ref_indices": [
+        49
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "本区间外不声称本轮已读。"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/末位负载尾和的原Fraction审计与抽证边界--资源.md",
+      "sha256": "f268efc46ddfb71ffcf798d5aa59a4d9e5e722260d399fb10803e2228048cdb4",
+      "start_line": 1,
+      "end_line": 131,
+      "covered_task_ref_indices": [
+        51
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "无：该文件全文已读。"
+    },
+    {
+      "path": "archives/customer-attraction/subarchives/six-providers/state/计算/十八主题完整逆推与前缀种子复核--计算.md",
+      "sha256": "f90821a2d15a866f712d3d2b9d3e4a43fda3df6f4ba53309d833f9fd529ecf28",
+      "start_line": 38,
+      "end_line": 64,
+      "covered_task_ref_indices": [
+        52
+      ],
+      "reading_identity": "本轮实际阅读成熟正文/指定证明或程序合同；其旧作者、旧执行及原始源码身份不变。",
+      "unread_outside_interval": "本区间外不声称本轮已读。"
+    }
+  ],
+  "reference_to_reading_span": [
+    {
+      "task_ref_index": 0,
+      "path": "archives/customer-attraction/state/候选/任意路径可信门槛的终端福利预算与见证锥--候选.md",
+      "sha256": "d239bdcd4aaae2bbc5c70de49c0ed4450eb9d62308b21c2fb47520ae6b965639",
+      "section": "终端必须取W的准确Bellman值",
+      "start_line": 32,
+      "end_line": 43,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 1,
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": null,
+      "start_line": 1,
+      "end_line": 129,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 2,
+      "path": "archives/customer-attraction/state/候选/任意路径可信门槛的终端福利预算与见证锥--候选.md",
+      "sha256": "d239bdcd4aaae2bbc5c70de49c0ed4450eb9d62308b21c2fb47520ae6b965639",
+      "section": "全部可信孩子与任意路径",
+      "start_line": 17,
+      "end_line": 31,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 3,
+      "path": "archives/customer-attraction/state/资料/动态局部门槛的独立见证锥与人口预算--资料.md",
+      "sha256": "6e7c0a8718e335ec5e4409df112dca3e2d764ca132224d23902bc625c2a02b6e",
+      "section": "局部完整均衡与强制孩子必须区分",
+      "start_line": 16,
+      "end_line": 29,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 4,
+      "path": "archives/customer-attraction/state/候选/实际路径可信保底匹配与最坏分母替代的分离--候选.md",
+      "sha256": "bd8f09ddbee7977b851316f2b3e28ea7a8a0b0809bea67ff16affe193f564abc",
+      "section": "全部可信孩子的L与节点门槛",
+      "start_line": 17,
+      "end_line": 26,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 5,
+      "path": "archives/customer-attraction/state/审查/动态门槛审查的净差量词与接续版本边界--审查.md",
+      "sha256": "c7ddc590e5e2470ef8a6c6b51fd91f7e9c7cc7f4463524a365a706d0411128e3",
+      "section": "模型与动态保底的完整量词",
+      "start_line": 23,
+      "end_line": 58,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 6,
+      "path": "archives/customer-attraction/state/候选/动态可信门槛与归属响应税的共同付款条件--候选.md",
+      "sha256": "2d458ab29d0841cd76c634f4ec12df7f884f2398d0311ab759b566106d04ff6b",
+      "section": "三种值和同一actual钱包",
+      "start_line": 18,
+      "end_line": 36,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 7,
+      "path": "archives/customer-attraction/state/候选/最优主题逐位强制收益的净差共同预算--候选.md",
+      "sha256": "894cd39bc0ddb23835895e8b0f40175d8e75223585c61db7240b88506479f03a",
+      "section": "L与Θ的正确界，而非强制枝的错误去重",
+      "start_line": 40,
+      "end_line": 64,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 8,
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": null,
+      "start_line": 1,
+      "end_line": 107,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 9,
+      "path": "archives/customer-attraction/state/候选/任意路径可信门槛的终端福利预算与见证锥--候选.md",
+      "sha256": "d239bdcd4aaae2bbc5c70de49c0ed4450eb9d62308b21c2fb47520ae6b965639",
+      "section": null,
+      "start_line": 1,
+      "end_line": 86,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 10,
+      "path": "archives/customer-attraction/state/资料/动态局部门槛的独立见证锥与人口预算--资料.md",
+      "sha256": "6e7c0a8718e335ec5e4409df112dca3e2d764ca132224d23902bc625c2a02b6e",
+      "section": "TB和独立见证的精确等价",
+      "start_line": 30,
+      "end_line": 43,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 11,
+      "path": "archives/customer-attraction/state/资料/动态局部门槛的独立见证锥与人口预算--资料.md",
+      "sha256": "6e7c0a8718e335ec5e4409df112dca3e2d764ca132224d23902bc625c2a02b6e",
+      "section": "POP是更强未证桥的必要后果",
+      "start_line": 64,
+      "end_line": 73,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 12,
+      "path": "archives/customer-attraction/state/候选/真实门槛任意路径的累计预算与不可拼合边界--候选.md",
+      "sha256": "4db2d35f3e6ecb2001c447576d36659e3295f370468ddace187698721fc10986",
+      "section": "2026-11-02：终端福利版任意路径预算的另一个合同",
+      "start_line": 71,
+      "end_line": 77,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 13,
+      "path": "archives/customer-attraction/state/候选/实际路径可信保底匹配与最坏分母替代的分离--候选.md",
+      "sha256": "bd8f09ddbee7977b851316f2b3e28ea7a8a0b0809bea67ff16affe193f564abc",
+      "section": "三种量词及half充分箭头",
+      "start_line": 27,
+      "end_line": 40,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 14,
+      "path": "archives/customer-attraction/state/程序/任意路径门槛的六种攻击与产品有限报告--程序.md",
+      "sha256": "e2639632cc669fb263168a59e60b523775dabdc47d63a6515dd692e975154330",
+      "section": null,
+      "start_line": 1,
+      "end_line": 116,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 15,
+      "path": "archives/customer-attraction/state/程序/独立门槛多锥与人口预算的三份原攻击器--程序.md",
+      "sha256": "3bc392e590dc23093578b80cf0d4c3f973bc3b01801157a597cc355774963df3",
+      "section": null,
+      "start_line": 1,
+      "end_line": 121,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 16,
+      "path": "archives/customer-attraction/state/审查/动态门槛审查的净差量词与接续版本边界--审查.md",
+      "sha256": "c7ddc590e5e2470ef8a6c6b51fd91f7e9c7cc7f4463524a365a706d0411128e3",
+      "section": "TB与三个SM版本，及准确反例合同",
+      "start_line": 59,
+      "end_line": 89,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 17,
+      "path": "archives/customer-attraction/state/审查/动态门槛审查的净差量词与接续版本边界--审查.md",
+      "sha256": "c7ddc590e5e2470ef8a6c6b51fd91f7e9c7cc7f4463524a365a706d0411128e3",
+      "section": "两份旧匹配反例确实没有击中净差预算",
+      "start_line": 90,
+      "end_line": 115,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 18,
+      "path": "archives/customer-attraction/state/候选/动态可信门槛与归属响应税的共同付款条件--候选.md",
+      "sha256": "2d458ab29d0841cd76c634f4ec12df7f884f2398d0311ab759b566106d04ff6b",
+      "section": "TB、SM与不同排列量词",
+      "start_line": 37,
+      "end_line": 52,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 19,
+      "path": "archives/customer-attraction/state/候选/实际路径可信保底匹配与最坏分母替代的分离--候选.md",
+      "sha256": "bd8f09ddbee7977b851316f2b3e28ea7a8a0b0809bea67ff16affe193f564abc",
+      "section": "最坏分母替代在真SPE上的失败",
+      "start_line": 79,
+      "end_line": 98,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 20,
+      "path": "archives/customer-attraction/state/审查/动态门槛审查的净差量词与接续版本边界--审查.md",
+      "sha256": "c7ddc590e5e2470ef8a6c6b51fd91f7e9c7cc7f4463524a365a706d0411128e3",
+      "section": "UV：条件蕴含保留，存在加强现为假",
+      "start_line": 116,
+      "end_line": 146,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 21,
+      "path": "archives/customer-attraction/state/候选/实际路径可信保底匹配与最坏分母替代的分离--候选.md",
+      "sha256": "bd8f09ddbee7977b851316f2b3e28ea7a8a0b0809bea67ff16affe193f564abc",
+      "section": null,
+      "start_line": 1,
+      "end_line": 101,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 22,
+      "path": "archives/customer-attraction/state/程序/三主题六人门槛重数穷举与四个根探针--程序.md",
+      "sha256": "cf406def1372ad233377992154794c255e173d837dacfeb830a77f392257af10",
+      "section": null,
+      "start_line": 1,
+      "end_line": 115,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 23,
+      "path": "archives/customer-attraction/state/候选/真实门槛任意路径的累计预算与不可拼合边界--候选.md",
+      "sha256": "4db2d35f3e6ecb2001c447576d36659e3295f370468ddace187698721fc10986",
+      "section": "任意路径的已证一般校准",
+      "start_line": 38,
+      "end_line": 56,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 24,
+      "path": "archives/customer-attraction/state/候选/真实门槛任意路径的累计预算与不可拼合边界--候选.md",
+      "sha256": "4db2d35f3e6ecb2001c447576d36659e3295f370468ddace187698721fc10986",
+      "section": "真尾输入的已证接口与条件加强",
+      "start_line": 28,
+      "end_line": 37,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 25,
+      "path": "archives/customer-attraction/state/候选/真实门槛任意路径的累计预算与不可拼合边界--候选.md",
+      "sha256": "4db2d35f3e6ecb2001c447576d36659e3295f370468ddace187698721fc10986",
+      "section": "七客户：最低价格孩子不能免费拼成同一SPE",
+      "start_line": 57,
+      "end_line": 64,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 26,
+      "path": "archives/customer-attraction/state/候选/真实门槛任意路径的累计预算与不可拼合边界--候选.md",
+      "sha256": "4db2d35f3e6ecb2001c447576d36659e3295f370468ddace187698721fc10986",
+      "section": null,
+      "start_line": 1,
+      "end_line": 77,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 27,
+      "path": "archives/customer-attraction/state/程序/真实门槛任意路径探针与稀疏纪录--程序.md",
+      "sha256": "73f340548ee16440739d07411d7526b55bf96a3f4c1152b31e59f063f0dddc99",
+      "section": null,
+      "start_line": 1,
+      "end_line": 99,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 28,
+      "path": "archives/customer-attraction/state/程序/真实门槛累计的整数集合搜索与多节点策略锥--程序.md",
+      "sha256": "9dfe66c4a73c4bca0a22a9a2764ee65265fff45d455585260336f80269612ddd",
+      "section": null,
+      "start_line": 1,
+      "end_line": 148,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 29,
+      "path": "archives/customer-attraction/state/资源/同主题承诺递推实现与终端门槛预算攻击的证据合同--资源.md",
+      "sha256": "b4137443a4e4245b46f87093d2ba7f2ec1b48e97bdf3f74d1f4ebeb022d4f6d1",
+      "section": null,
+      "start_line": 1,
+      "end_line": 112,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 30,
+      "path": "archives/customer-attraction/state/候选/任意路径可信门槛的终端福利预算与见证锥--候选.md",
+      "sha256": "d239bdcd4aaae2bbc5c70de49c0ed4450eb9d62308b21c2fb47520ae6b965639",
+      "section": "全空路径必要子候选",
+      "start_line": 44,
+      "end_line": 53,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 31,
+      "path": "archives/customer-attraction/state/候选/任意路径可信门槛的终端福利预算与见证锥--候选.md",
+      "sha256": "d239bdcd4aaae2bbc5c70de49c0ed4450eb9d62308b21c2fb47520ae6b965639",
+      "section": "裸覆盖边际floor如何足够，又为何已经失败",
+      "start_line": 54,
+      "end_line": 63,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 32,
+      "path": "archives/customer-attraction/state/计算/完整历史求解器的精确复现--计算.md",
+      "sha256": "08301e20c759f777651af65740a809fd0c3261e24b006047b90f30bae3bf42ca",
+      "section": null,
+      "start_line": 1,
+      "end_line": 67,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 33,
+      "path": "archives/customer-attraction/state/审查/R4表示层路线与接口--审查.md",
+      "sha256": "b083f4eb4abe44239ecf2de7920c06e4c26153e3c711e5091b22fc2a1569b225",
+      "section": "全集门槛与有序叶的精确条件",
+      "start_line": 24,
+      "end_line": 51,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 34,
+      "path": "archives/customer-attraction/state/审查/可信续局试验与动态规划交叉核对--审查.md",
+      "sha256": "ca49559f8693fcd42b5d473c927a567e0c0a819d72f277e7304d4598ab37508f",
+      "section": "四十条DP交叉记录的真正范围",
+      "start_line": 101,
+      "end_line": 117,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 35,
+      "path": "archives/customer-attraction/state/审查/固定输入同时轨道商的存在性与选择器边界--审查.md",
+      "sha256": "759aba64f361917cc40b9bcab8be6650b6215e639b6406d0ef01178231cb1d28",
+      "section": "模型、收益和完整历史终局集合",
+      "start_line": 14,
+      "end_line": 28,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 36,
+      "path": "archives/customer-attraction/state/程序/七个极大主题的六人整数终局集合搜索程序--程序.md",
+      "sha256": "0faef6f1fbb38e84e0f125c110dbc8663b98b6f0676211844f2901e6cda1a033",
+      "section": "为什么这个整数集合递推包括完整历史平局",
+      "start_line": 59,
+      "end_line": 80,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 37,
+      "path": "archives/customer-attraction/state/程序/双客户池的可信尾局搜索程序--程序.md",
+      "sha256": "f4859f6d311ea93158144886f53eede916b4eb8f4c93f9a2b492b1c01dceca35",
+      "section": "三层可信过滤与全部平局的自足证明",
+      "start_line": 77,
+      "end_line": 127,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 38,
+      "path": "archives/customer-attraction/state/程序/合法背景数值策略锥的利润归一与四份探索--程序.md",
+      "sha256": "a44e9d629df6cb327d6fac88f63be8c490f114cdd1b816bcbfc1d0b66b97d18b",
+      "section": "终局集合递推和count-target完整策略锥",
+      "start_line": 48,
+      "end_line": 72,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 39,
+      "path": "archives/customer-attraction/state/程序/整数安全聚合的轨道输入搜索与固定策略锥--程序.md",
+      "sha256": "3ececa548aa4612031f7815c15cfd04968d2b0af2a7344e876422cc36e9afc99",
+      "section": "Search的精确整数部分与全部历史续局",
+      "start_line": 40,
+      "end_line": 54,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 40,
+      "path": "archives/customer-attraction/state/程序/最坏可信终局与静态CCE差值交替发现器--程序.md",
+      "sha256": "649b2a9ed27cd4569c2d6cfea85b16d3496adbefe5e31c4586d35da361a5cdf9",
+      "section": "solve_spe：全部可实现计数与一棵完整树",
+      "start_line": 55,
+      "end_line": 79,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 41,
+      "path": "archives/customer-attraction/state/程序/最差顺序与静态PNE桥的精确有限阴性搜索--程序.md",
+      "sha256": "8fcbdb62efc9c2ef42730c272f231382666824394cfe09ef271c6b738f5377b0",
+      "section": "全部静态PNE和全部顺序终局",
+      "start_line": 51,
+      "end_line": 77,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 42,
+      "path": "archives/customer-attraction/state/程序/浮点终局全集递推与完整历史有理后核程序--程序.md",
+      "sha256": "b81b76db8d6ea7fc2cc204725293367ca6568e8785b8f7ff110e2140759dca22",
+      "section": "为什么计数集合可缓存，而完整策略不能强制匿名",
+      "start_line": 49,
+      "end_line": 73,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 43,
+      "path": "archives/customer-attraction/state/程序/静态PNE与残余双桥扫描的短路约简合同--程序.md",
+      "sha256": "f9172cb8aae5cbc49dbaa02ae7b80de76fe3a6d48c52e2e5f48993ad83c905af",
+      "section": "精确模型与规范闭包",
+      "start_line": 23,
+      "end_line": 42,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 44,
+      "path": "archives/customer-attraction/state/算法/对称不交卫星块的完整SPE结果轨道递推--算法.md",
+      "sha256": "b0c4e874c48d9124c842e8c144b1738202db6ef44e019b793fa71d6163e93c98",
+      "section": "完整历史结果集合为何允许按计数缓存",
+      "start_line": 51,
+      "end_line": 61,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 45,
+      "path": "archives/customer-attraction/state/资料/完整根查询证书的字段与审计范围--资料.md",
+      "sha256": "a3711f39be17eea77f922ba8934da03633474d3a62ca394d21af851e6cbea263",
+      "section": "完整策略的无损紧写与动作计数",
+      "start_line": 74,
+      "end_line": 94,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 46,
+      "path": "archives/customer-attraction/state/资源/完整历史策略锥的最低收益价格攻击--资源.md",
+      "sha256": "011bd76ef59d13973a9ae2dc3ca064adbe9f07b13b620bc520747cb17e8ad362",
+      "section": "完整策略客户锥与两步优化",
+      "start_line": 32,
+      "end_line": 64,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 47,
+      "path": "archives/customer-attraction/state/证明/有限完整SPE证书池与六人half边界--证明.md",
+      "sha256": "d751732561877e1936e59a78ea2f4434d8c12171cfdb6a47c21b4cfda4561131",
+      "section": null,
+      "start_line": 1,
+      "end_line": 51,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 48,
+      "path": "archives/customer-attraction/state/计算/归档策略有限计数状态与早停报告的精确边界--计算.md",
+      "sha256": "ceeeb590c59e69d7f7434566f7507f486f2319f37a14e140dae6ee52917817be",
+      "section": null,
+      "start_line": 1,
+      "end_line": 64,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 49,
+      "path": "archives/customer-attraction/state/审查/上传精确SPE脚本与个体安全压缩生成接续审查--审查.md",
+      "sha256": "3b739e6f439592a45ff1466e37b56827a89b9010b4e016151a6cf62771e30ae7",
+      "section": "2. `exact_spe.py` 的模型、递推和完整历史验证",
+      "start_line": 46,
+      "end_line": 80,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 50,
+      "path": "archives/customer-attraction/state/资料/完整根查询证书的字段与审计范围--资料.md",
+      "sha256": "a3711f39be17eea77f922ba8934da03633474d3a62ca394d21af851e6cbea263",
+      "section": null,
+      "start_line": 1,
+      "end_line": 160,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 51,
+      "path": "archives/customer-attraction/state/资源/末位负载尾和的原Fraction审计与抽证边界--资源.md",
+      "sha256": "f268efc46ddfb71ffcf798d5aa59a4d9e5e722260d399fb10803e2228048cdb4",
+      "section": null,
+      "start_line": 1,
+      "end_line": 131,
+      "state": "read-complete-assigned-span"
+    },
+    {
+      "task_ref_index": 52,
+      "path": "archives/customer-attraction/subarchives/six-providers/state/计算/十八主题完整逆推与前缀种子复核--计算.md",
+      "sha256": "f90821a2d15a866f712d3d2b9d3e4a43fda3df6f4ba53309d833f9fd529ecf28",
+      "section": "完整历史终局集合的精确递推",
+      "start_line": 38,
+      "end_line": 64,
+      "state": "read-complete-assigned-span"
+    }
+  ],
+  "ordered_reading_passes": [
+    {
+      "question": "完整模型、全集递推、REP、TA终端W与actual TB/SM/分母边界",
+      "task_ref_indices": [
+        1,
+        8,
+        9,
+        21
+      ]
+    },
+    {
+      "question": "MP终端0、一般校准、真尾接口、七客户、独立见证/POP及净差量词",
+      "task_ref_indices": [
+        3,
+        5,
+        6,
+        7,
+        10,
+        11,
+        16,
+        17,
+        18,
+        20,
+        26
+      ]
+    },
+    {
+      "question": "TA六攻击与独立前缀/人数锥程序合同",
+      "task_ref_indices": [
+        14,
+        15
+      ]
+    },
+    {
+      "question": "actual三主题六人报告与MP原探针稀疏记录",
+      "task_ref_indices": [
+        22,
+        27
+      ]
+    },
+    {
+      "question": "MP整数集合/多节点锥与同主题承诺预算合同",
+      "task_ref_indices": [
+        28,
+        29
+      ]
+    },
+    {
+      "question": "CA-EXACT的全部指定实现/有序证书证据",
+      "task_ref_indices": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52
+      ]
+    }
+  ],
+  "additional_same_core_evidence": [
+    {
+      "path": "archives/customer-attraction/tools/evidence/threshold-path-random-probe-and-seven-client-record-primary/original/research/workspaces/customer-attraction/R-65d0f88edf3849b39ca5eb79760e970b/robust_prefix_next/threshold_path_nonrealizability.json",
+      "sha256": "c9ac2c0dace080141f622c6eb81c92146fe62876c6767e037692cfe6bfb26cb4",
+      "span": "full",
+      "purpose": "Me0指定七客户五行原child_minima与计数prefix报告；无完整孩子策略，故随后仅定点补验证。"
+    }
+  ],
+  "new_mathematical_runs": [
+    {
+      "count": 1,
+      "kind": "one-fixed-input-exact-Fraction-verification",
+      "code": {
+        "path": "map/edges/customer-attraction-3a-3a-e023e4e7f56fe44b/seven-client-targeted-check.py",
+        "sha256": "d015aedb5f6e04b9da39d6083c6853b782e0c1d52da548e423f96979a9b58c97"
+      },
+      "output": {
+        "path": "map/edges/customer-attraction-3a-3a-e023e4e7f56fe44b/seven-client-targeted-check.json",
+        "sha256": "a6a17671a05e4e77f5564632adac8e61dbcf31c3fec3bda90e97020cd8d17999"
+      },
+      "scope": "只验证Me0的指定7客户/m5/p4输入；不是新输入搜索，不重放旧随机或LP。",
+      "count_states": 126,
+      "root_outcome_count": 2,
+      "root_welfares": [
+        7
+      ],
+      "ordered_local_histories": 453,
+      "comparisons_including_self": 1812,
+      "proof_semantics": "全集按已读CA-EXACT定理精确递推；每个局部见证另按有序历史展开、逐真实孩子核验，未强制匿名策略。"
+    }
+  ],
+  "not_read_or_replayed": [
+    "35文件中未指定章节的其余正文未声称已读。",
+    "成熟程序合同引用的全部原始源码、全部原始JSON/JSONL与缺失历史日志未在本轮逐件重读。",
+    "原3250/76/300随机、LP锥、产品报告、2186输入39204路径及40条DP报告均未重跑。",
+    "原作者已完成的源码审读/历史成功只按成熟合同原范围复用，不称本轮执行。"
+  ],
+  "technical_schema_reads": [
+    "tools/research_runtime.py 的边结构校验片段；既有一条JSON作结构样例，不作本包数学前提。"
+  ]
+}

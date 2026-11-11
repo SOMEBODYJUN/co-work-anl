@@ -1,0 +1,49 @@
+{
+  "edge_id": "cag-credible-paths-rep-implies-terminal-welfare-bellman",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-7f014258b58d49fc9fd0fef19700ec26"
+  ],
+  "target_ids": [
+    "M-158dbf9aefdc4676820323ac335d007f"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、有限非空共同标签目录及任意覆盖映射；m≥1单位提供者按完整有序历史各行动一次，客户价值均分。保空覆盖、同覆盖异标签、重复、零客户和全部离轨弱平局。值及全集可按计数缓存，完整策略仍可区分同计数有序历史。 J的终端为完整终局W；每次min遍历全部合法标签，不筛SPE动作。",
+  "roles": {
+    "M-7f014258b58d49fc9fd0fef19700ec26": "提供非终端有序子博弈的精确Θ值及其计数不变性。",
+    "M-158dbf9aefdc4676820323ac335d007f": "得到终端保W的全合法路径最小值DP与TA的精确重写。"
+  },
+  "explanation": "相同计数历史的后缀树和收益同构，搬运完整子策略使REP值Θ只依k。对剩余层数归纳：终端J=W；非终端先选任意a并支付当前Θ，故J(k)=min所有完整后缀[最终W+沿途Θ和]。在k=0即目标公式；全部路径预算成立当且仅当这个有限最小值≥OPT。这个展开不证明该下界。",
+  "scope": "有限单位客户、有限非空共同标签目录及任意覆盖映射；m≥1单位提供者按完整有序历史各行动一次，客户价值均分。保空覆盖、同覆盖异标签、重复、零客户和全部离轨弱平局。值及全集可按计数缓存，完整策略仍可区分同计数有序历史。 结论按目标原statement的完整量词成立；开放源只作条件使用。",
+  "reviewed_by": "Boss6",
+  "review_note": "本轮实读任务九core、三个read端及全部指定证明区间，逐项核目标statement、min/max量词、有序孩子拼接和所用实际路径条件；完整推导见同目录review对应章节。未生成绑定字段，Root须绑定并检查。 Root已另核推导与原目标范围，准确实读/新运行边界见本receipt.parent_review；随后原生bind/check仅支付结构与证据绑定。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/任意路径可信门槛的终端福利预算与见证锥--候选.md",
+      "sha256": "d239bdcd4aaae2bbc5c70de49c0ed4450eb9d62308b21c2fb47520ae6b965639",
+      "section": "全部可信孩子与任意路径"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/任意路径可信门槛的终端福利预算与见证锥--候选.md",
+      "sha256": "d239bdcd4aaae2bbc5c70de49c0ed4450eb9d62308b21c2fb47520ae6b965639",
+      "section": "终端必须取W的准确Bellman值"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-e023e4e7f56fe44b/review.md",
+      "sha256": "47a8d948d5e3649c388311f6f732d116b0ecf57275efc8c766afc08176f416d3",
+      "section": "E02：REP 给终端福利 Bellman 的完整表示"
+    }
+  ],
+  "whole_result": "令J(k)=W(k)若|k|=m，否则J(k)=Θ(k)+min_AJ(k+e_A)，则J(0)=min_{z合法有序完整路径}[W(z)+Σ_iΘ(z_<i)]；TA恰为J(0)≥OPT_m。允许非SPE路径，计数只缓存全集和值。",
+  "endpoint_pins": {
+    "M-158dbf9aefdc4676820323ac335d007f": "c8b26a293e73448456240306a7b73d7a71d0242511ff78393e2bd8a4a2c2d24f",
+    "M-7f014258b58d49fc9fd0fef19700ec26": "a7a7d402f894d033966abefa337dc9fd5462254e1eecc2cb4ccb509e2913e2d8"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/任意路径可信门槛的终端福利预算与见证锥--候选.md": "d239bdcd4aaae2bbc5c70de49c0ed4450eb9d62308b21c2fb47520ae6b965639",
+    "map/edges/customer-attraction-3a-3a-e023e4e7f56fe44b/review.md": "47a8d948d5e3649c388311f6f732d116b0ecf57275efc8c766afc08176f416d3"
+  },
+  "review_digest": "b9dfbd094046d1b75896f0f6fd3a3d0468225c7796e1bad861c8bc03a81c694d"
+}

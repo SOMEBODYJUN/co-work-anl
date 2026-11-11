@@ -1,0 +1,55 @@
+{
+  "edge_id": "um-constant-tw-exact-load-dp-contributes-fptas-join-v4-7c26",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-247deecec83946358afe4e89413a7bd1"
+  ],
+  "target_ids": [
+    "M-14dbe6980117492aa7a3b48c52378dcb"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限可行二进制整数R||Cmax输入；固定dual或incidence树宽界k；epsilon>0为输入有理数。使用M247修正后的L^{O(k)}精确负载DP及合法回溯，或本review给出的等价closed-max/阈值flag-load DP；原完整Cmax join须补父活跃负载最大项。空任务、无资格、零上界先处理。不存在额外开放数学前提；不调用未付的LST2approx。",
+  "roles": {
+    "M-247deecec83946358afe4e89413a7bd1": "提供经共享活跃负载join修正的精确负载DP与L^{O(k)}O(nm)复杂度；当前review明确closed-max/forget-machine语义，裁剪至多项式整数cap并实际回溯。",
+    "M-14dbe6980117492aa7a3b48c52378dcb": "接收常数dual/incidence树宽的FPTAS贡献；目标陈述还含独立的弱NP-hard半部，故不标whole_result。"
+  },
+  "contribution": {
+    "result": "对每个固定dual或incidence树宽k、每个合法输入和epsilon>0，构造makespan≤(1+epsilon)OPT的合法调度，时间对输入位长及1/epsilon为多项式（次数可依k）。逐job放最小有限处理时间端给OPT≤B_min≤nOPT；令epsilon0=min(epsilon,1)、q=epsilon0 B_min/n²、a_ij=ceil(p_ij/q)，精确DP仅枚举0..floor(n²/epsilon0+n)的整数负载并回溯。",
+    "remaining": "本贡献不把算法性前提当作核心弱NP-hard结论的来源。整条目标的困难性半部另由P2||Cmax/PARTITION归约：dual为K2、incidence为K_{2,n}。其独立原文结论保留；本边只支付近似算法部分。"
+  },
+  "explanation": "任取原最优sigma*，每机至多n个任务，故q load_a(sigma*,i)≤load_p(sigma*,i)+nq≤OPT+nq。初等上界由逐任务最小端构造，B_min≤sum_j min_i p_ij≤nOPT；q>0时nq≤epsilon0 OPT。裁剪cap B_min+nq可保留sigma*及更优的缩放调度，缩放状态数L≤floor(n²/epsilon0+n)+1。非负部分负载不超过最终负载，所以逐状态剪枝不丢见证。M247精确DP与回溯给sigma_a，C_p(sigma_a)≤qC_a(sigma_a)≤qC_a(sigma*)≤OPT+nq≤(1+epsilon)OPT。向上取整只改数值，不增资格边，结构宽度保持；dual宽k也可转incidence宽≤k+1。网格运算以ceil(n² v p/(uB_min))整数除法完成，操作数位长为输入位长的多项式，大于cap的单端直接跳过，数组不依原B_min数值大小。review另给fixed-k分解搜索和flag/load DP的完整cap解释，以及论文原B≤2OPT路线的正确cap与两job反例。 v4定向替代独立核当前正文及完整正式audit：原完整Cmax的dual/incidence join遗漏父活跃lambda max；两任务三机器唯一1+1拆分使原右端1而父2。补父lambda max由机器袋连通性和非负性充分证明；等价closed-max表值在forget-machine计完整负载、join仅合并已忘峰值。旧c739的阈值flag/load证明已使用正确forget语义，不依赖错误印式。新review前置当前范围并逐字保全旧完整证明；参数、复杂度、困难性和FPTAS合同均不改。",
+  "scope": "仅M14的FPTAS算法部分，适用于一般unrelated整数处理时间；固定k的多项式次数可依k。未推出仅由树宽的精确FPT、也未迁移restricted-assignment rankwidth的PTAS或一般模型的无结构FPTAS。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+      "sha256": "a2c918daef8cb6711a97a56fbdca355f2e72fd1136ff6dbc1216f393d577aaa1"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+      "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/结构参数DP共享活跃机器合并负载勘误--审查.md",
+      "sha256": "3b26e5d5cf1c422b280e04cf0b39964fe5aa804335576b117c54198ccca5b4b6"
+    },
+    {
+      "path": "map/edges/boss6-structural-join-repair-repair-7c26e24731c9e786/review.md",
+      "sha256": "d4f4788f5766b044800ef011b5f038918ccfb61b1a6889e1e4f9ae66688f7e38"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Boss6 fresh v4修复worker实读新旧完整任务/receipt、三项完整旧资产、两端v4完整合同、当前中文全文与正式join audit；亲自核指定v3→v4提交差异、实际字节SHA和当前pins。核唯一拆分反例、补父lambda的充分性，并明确旧阈值flag/load与closed-max/forget-machine等价，既有B_min/q/K、L含0、回溯和位复杂度完整保留。未新增PDF阅读、canonical扫描或旧程序重放；原PDF与旧worker阅读仅准确继承为历史。保留accepted/unconditional/ALL/contribution与独立弱NP-hard remaining；原生绑定/check由Root另行执行。 Root已另核推导与原目标范围，准确实读/新运行边界见本receipt.parent_review；随后原生bind/check仅支付结构与证据绑定。",
+  "endpoint_pins": {
+    "M-14dbe6980117492aa7a3b48c52378dcb": "4cc79b881344f952b164f32ade2499d082517fca76266eea16a8463f65cfa0a3",
+    "M-247deecec83946358afe4e89413a7bd1": "30b35bb14eecc203c3d423292925b6c33404e29f7d8d82de0e65c3105f10c078"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md": "a2c918daef8cb6711a97a56fbdca355f2e72fd1136ff6dbc1216f393d577aaa1",
+    "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae",
+    "archives/unrelated-machines/state/审查/结构参数DP共享活跃机器合并负载勘误--审查.md": "3b26e5d5cf1c422b280e04cf0b39964fe5aa804335576b117c54198ccca5b4b6",
+    "map/edges/boss6-structural-join-repair-repair-7c26e24731c9e786/review.md": "d4f4788f5766b044800ef011b5f038918ccfb61b1a6889e1e4f9ae66688f7e38"
+  },
+  "review_digest": "6332efc3775d8df1f5b64bf2f27305de4bd8fb0e4b7b0398251df6f28bd00384"
+}

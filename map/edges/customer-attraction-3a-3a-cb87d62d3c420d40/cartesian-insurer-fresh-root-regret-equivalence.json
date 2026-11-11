@@ -1,0 +1,56 @@
+{
+  "edge_id": "cag-cb87d-insurer-and-cartesian-fresh-equivalence",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/multi-theme-independent-insurer-three-regret-repair-and-half-equivalence",
+    "cartesian-optimal-fresh-defect-and-three-regret-repair"
+  ],
+  "target_ids": [
+    "M-b3fae7777cce4dc6969d5de4ba5b4c3b"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "每个固定m≥2、全部有限单位客户标签目录及全部相应完整计划。fresh量定义g_c(T)=Σ_(x∈T)1/(1+c_x)、R0=Σ_(c_x>0)1/(1+c_x)、K0为覆盖达到OPT_m的全部m元组中fresh费用最小者，Df=K0−W−R0；R0不是合法背景剩余总利润。客户不交、联合目录含全部标签对，比较允许重复，根修复模式固定，全部有理块与旧客户共同清分母。",
+  "roles": {
+    "customer-attraction/multi-theme-independent-insurer-three-regret-repair-and-half-equivalence": "提供保旧actual投影的完整纯SPE修复和保险实际负载X一次、Y m−1次；其动态可信性承重。",
+    "cartesian-optimal-fresh-defect-and-three-regret-repair": "在任意联合actual元组上使OPT/K0/W/fresh-R0/Df按坐标精确相加；min-fresh最优元组的任意合法配对承重。",
+    "M-b3fae7777cce4dc6969d5de4ba5b4c3b": "所得所有完整SPE的fresh预算与所有正深度SPE计划的三倍根遗憾fresh界两个普遍命题的等价。"
+  },
+  "explanation": "保险坐标actual为X,Y^(m−1)，故W_ins=(m+1)s，fresh-R0_ins=s+(m−1)s/m=(2−1/m)s。恰m个非空不交块须各取一次才能以m槽覆盖达到OPT，g(X)=s、g(Y)=(1−1/m)s、每个g(Z)=s，得K0_ins=(m−1/m)s、Df_ins=−3s。Cartesian源证明联合覆盖最优当且仅当两投影各最优，并可把两个min-fresh最优m元组任意按位置配对，所以K0及Df确实相加，无需联合策略坐标独立或均衡；缺边目录不能直接套用。与完整动态修复共同得Df_new=Df_old−3s。令F_m为全部实例每份完整SPE都有Df≤0，RF_m为全部正深度全SPE完整计划都有Df≤3Δ。若F_m成立，Δ>0取s=Δ全实例复制L，所得完整SPE给0≥Df_new=L(Df_old−3Δ)；Δ0直接用τ本身。若RF_m成立，任一完整SPE的Δ0立即得F_m。两个源共同使用，不能拆为各自单独足够。",
+  "scope": "完整证明fresh候选的固定人数等价接口；既不证明候选成立，也不把它等同half/R4。静态相加允许任意actual；动态修复另用根后独立固定模式。",
+  "whole_result": "每个固定m≥2，普遍命题“所有有限单位客户共同标签目录实例每份完整纯SPE的Df=K0−W−R0≤0”当且仅当“所有有限实例每份全正深度为SPE的完整计划τ满足Df(τ)≤3Δ(τ)”。保险R0_ins=(2−1/m)s、K0_ins=(m−1/m)s、Df_ins=−3s，与完整Cartesian相加给Df_new=Df_old−3s；Δ>0取s=Δ并整体清分母，Δ0直接处理。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/笛卡尔目录的最优查询缺陷与三倍根修复--引理.md",
+      "sha256": "d6b5c15a3f91fa7bde0f99502988127772fea3369e1519195cc86978b9e9bcf2"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/多主题独立保险的三倍根修复与半覆盖等价--定理.md",
+      "sha256": "38c7925347ed877cc81eee372fa78b57ac7db566cb4860c728c4bdb1fbff8a1e"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-cb87d62d3c420d40/review.md",
+      "sha256": "8d00caab127c8fa3942aa0e2f500674f1620bfa3e75c43d903028111d53589c0",
+      "section": "关系二：保险与Cartesian相加共同推出fresh/RF等价"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "实读两个源与目标的原记录及全部正文，核K0最小值的最优集分解、保险全部块费用、两个普遍命题方向和Δ0边界。共同前提保一条ALL；同减3s未被误作fresh与half等价。 Root已另核推导与原目标范围，准确实读/新运行边界见本receipt.parent_review；随后原生bind/check仅支付结构与证据绑定。",
+  "endpoint_pins": {
+    "M-b3fae7777cce4dc6969d5de4ba5b4c3b": "7a36f05c3b8f2de42490cbfc9e6ac8b5882855bb0e09f5f0dfdf6919ed56203f",
+    "cartesian-optimal-fresh-defect-and-three-regret-repair": "2dd4c02f5251633dbb00806dd4c4a23324c7e34d7450731c71c44221fc0a87fe",
+    "customer-attraction/multi-theme-independent-insurer-three-regret-repair-and-half-equivalence": "5c7b1b9fc970b3926c77e773d0fb9dc3cc5f518225578e8d85b1596dc67bdb05"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/笛卡尔目录的最优查询缺陷与三倍根修复--引理.md": "d6b5c15a3f91fa7bde0f99502988127772fea3369e1519195cc86978b9e9bcf2",
+    "archives/customer-attraction/state/定理/多主题独立保险的三倍根修复与半覆盖等价--定理.md": "38c7925347ed877cc81eee372fa78b57ac7db566cb4860c728c4bdb1fbff8a1e",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "map/edges/customer-attraction-3a-3a-cb87d62d3c420d40/review.md": "8d00caab127c8fa3942aa0e2f500674f1620bfa3e75c43d903028111d53589c0"
+  },
+  "review_digest": "d03c81c5ca95705294055f00f667502f54b4f1cb276f9c2c521bbfdb195bc58a"
+}

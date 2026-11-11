@@ -1,0 +1,48 @@
+{
+  "edge_id": "cag-cb87d-insurer-implies-half-root-regret-equivalence",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/multi-theme-independent-insurer-three-regret-repair-and-half-equivalence"
+  ],
+  "target_ids": [
+    "M-66daec0c150c4606835e6e3fe61074b4"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "逐个固定m≥2。有限单位客户、非空有限共同标签目录及任意覆盖映射；允许空覆盖、同覆盖异标签、重复行动和全部离轨弱平局。τ完整定义且每个正深度子博弈为SPE；Δ=max_B d_B−u遍历同一τ的全部真实根后继。新目录保留全部标签对(B,T)，客户不交，根后坐标模式一次固定；有理参数对全实例共同清分母。",
+  "roles": {
+    "customer-attraction/multi-theme-independent-insurer-three-regret-repair-and-half-equivalence": "提供任意旧正深度SPE计划的完整根修复以及W/OPT精确账：G_new=G_old−3s；无需假设half普遍成立。",
+    "M-66daec0c150c4606835e6e3fe61074b4": "所得固定m的两个普遍命题P_m与R4_m完整等价。"
+  },
+  "explanation": "令P_m表示每个有限实例每份完整纯SPE都满足G=OPT_m−2W≤0，R4_m表示每份全正深度SPE完整计划τ满足G(τ)≤3Δ(τ)。若P_m成立且Δ>0，保险构造取s=Δ，并把全部旧/新客户共同复制L倍，使有理账成为不同单位客户实例；根修复给真正完整SPE，且G_new=L(G_old−3Δ)。P_m应用于这个新有限实例得G_old≤3Δ。Δ=0时旧根本已BR，τ即完整SPE，直接G≤0，不需s0保险。反向把R4_m用于任一完整SPE，其根遗憾Δ=0，立即得G≤0。构造的全部正深度联合动作同时偏离仍由两坐标非正收益差相加支付，根比较u+2s≥u+Δ+s，故这里确实量化所有有序离轨历史而非实际suffix。B≠A按标签判断，所有旧偏离后继始终保留。",
+  "scope": "证明等价归约本身，不决定P_m/R4_m是否为真，不展示G>3Δ旧计划或一般六人half证明。",
+  "whole_result": "对每个固定m≥2，所有有限单位客户共同标签目录实例的每份完整有序历史纯SPE均满足OPT_m≤2W，当且仅当所有有限实例的每份正深度全部为SPE、仅根可以非最佳的完整计划τ均满足OPT_m−2W(τ)≤3Δ(τ)。Δ由全部真实根后继定义；Δ>0用s=Δ全实例清分母，Δ0直接处理；人数、单位模型、全部平局和历史量词均保留。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/多主题独立保险的三倍根修复与半覆盖等价--定理.md",
+      "sha256": "38c7925347ed877cc81eee372fa78b57ac7db566cb4860c728c4bdb1fbff8a1e"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-cb87d62d3c420d40/review.md",
+      "sha256": "8d00caab127c8fa3942aa0e2f500674f1620bfa3e75c43d903028111d53589c0",
+      "section": "关系一：保险完整推出固定m的half/R4等价"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "实读当前源对象v6、目标v3及其完整绑定正文，逐式重推H/LX/LY/LZ永久模式、任意联合动作偏离、OPT按位置配对与两个全称方向；未用有限审计替代一般构造。Root另独立核同一解析主链。 Root已另核推导与原目标范围，准确实读/新运行边界见本receipt.parent_review；随后原生bind/check仅支付结构与证据绑定。",
+  "endpoint_pins": {
+    "M-66daec0c150c4606835e6e3fe61074b4": "9297616f2b3a795aa5cddf85df150e8a1b4484ed981c766fc81e672d96a668d5",
+    "customer-attraction/multi-theme-independent-insurer-three-regret-repair-and-half-equivalence": "5c7b1b9fc970b3926c77e773d0fb9dc3cc5f518225578e8d85b1596dc67bdb05"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/多主题独立保险的三倍根修复与半覆盖等价--定理.md": "38c7925347ed877cc81eee372fa78b57ac7db566cb4860c728c4bdb1fbff8a1e",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "map/edges/customer-attraction-3a-3a-cb87d62d3c420d40/review.md": "8d00caab127c8fa3942aa0e2f500674f1620bfa3e75c43d903028111d53589c0"
+  },
+  "review_digest": "863253634d07d14de462240ef9cf214d6283b21fc44781c91a532e43fb220957"
+}

@@ -1,0 +1,57 @@
+{
+  "edge_id": "cag-credible-paths-mp-and-rep-imply-actual-tb",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/exact-threshold-arbitrary-path-budget-and-nonrealizability",
+    "M-7f014258b58d49fc9fd0fef19700ec26"
+  ],
+  "target_ids": [
+    "customer-attraction/actual-path-credible-floor-matching-and-worst-denominator-separation"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "有限单位客户、有限非空共同标签目录及任意覆盖映射；m≥1单位提供者按完整有序历史各行动一次，客户价值均分。保空覆盖、同覆盖异标签、重复、零客户和全部离轨弱平局。值及全集可按计数缓存，完整策略仍可区分同计数有序历史。 MP为开放全称前提；W≥ΣΘ只用于完整σ的实际路径。",
+  "roles": {
+    "customer-attraction/exact-threshold-arbitrary-path-budget-and-nonrealizability": "开放任意合法路径ΣM≥OPT/2，仅将它用于actual路径；由REP识别M=Θ。",
+    "M-7f014258b58d49fc9fd0fef19700ec26": "保证actual每人u_i≥Θ_i，从而W≥ΣΘ，亦支付独立见证等价。",
+    "customer-attraction/actual-path-credible-floor-matching-and-worst-denominator-separation": "收到与TA和SM-opt两条证明独立的完整actual TB条件支持。"
+  },
+  "explanation": "任取完整σ，令S=ΣΘ(h_i)。MP覆盖其实际路径，给S≥O/2；REP给W=Σu_i≥S。故W+S≥2S≥O，正是TB。REP还给实际σ在h_i的限制首利u_i≥Θ_i，故ΣΘ≤W。任意独立局部SPE见证族有v_i≥Θ_i，所以预算推出W+Σv_i≥O；反向逐前缀取达到Θ的见证恢复预算。由ΣΘ≤W还得TB若真则O≤2W。独立见证不要求彼此相容。 不由此声称MP⇒TA或MP⇔TA；任意非SPE路径缺少W≥S。",
+  "scope": "有限单位客户、有限非空共同标签目录及任意覆盖映射；m≥1单位提供者按完整有序历史各行动一次，客户价值均分。保空覆盖、同覆盖异标签、重复、零客户和全部离轨弱平局。值及全集可按计数缓存，完整策略仍可区分同计数有序历史。 结论按目标原statement的完整量词成立；开放源只作条件使用。",
+  "reviewed_by": "Boss6",
+  "review_note": "本轮实读任务九core、三个read端及全部指定证明区间，逐项核目标statement、min/max量词、有序孩子拼接和所用实际路径条件；完整推导见同目录review对应章节。未生成绑定字段，Root须绑定并检查。 Root已另核推导与原目标范围，准确实读/新运行边界见本receipt.parent_review；随后原生bind/check仅支付结构与证据绑定。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/真实门槛任意路径的累计预算与不可拼合边界--候选.md",
+      "sha256": "4db2d35f3e6ecb2001c447576d36659e3295f370468ddace187698721fc10986"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/任意路径可信门槛的终端福利预算与见证锥--候选.md",
+      "sha256": "d239bdcd4aaae2bbc5c70de49c0ed4450eb9d62308b21c2fb47520ae6b965639",
+      "section": "全部可信孩子与任意路径"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/实际路径可信保底匹配与最坏分母替代的分离--候选.md",
+      "sha256": "bd8f09ddbee7977b851316f2b3e28ea7a8a0b0809bea67ff16affe193f564abc"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-e023e4e7f56fe44b/review.md",
+      "sha256": "47a8d948d5e3649c388311f6f732d116b0ecf57275efc8c766afc08176f416d3",
+      "section": "E06：MP 与 REP 独立推出 TB"
+    }
+  ],
+  "whole_result": "若普遍MP成立，则对每个合法实例、每份完整纯SPE实际路径z有OPT_m−W(z)≤ΣΘ(h_i)≤W(z)，TB的全部独立局部见证族等价及half条件用途均成立。此方向不需要TA或SM-opt。",
+  "endpoint_pins": {
+    "M-7f014258b58d49fc9fd0fef19700ec26": "a7a7d402f894d033966abefa337dc9fd5462254e1eecc2cb4ccb509e2913e2d8",
+    "customer-attraction/actual-path-credible-floor-matching-and-worst-denominator-separation": "a6746ee50efbc96d1d9adc511cac0d31ddeb4492e9f955670a4b6bd9225c58e5",
+    "customer-attraction/exact-threshold-arbitrary-path-budget-and-nonrealizability": "64a3e1531ea1f2659134097edcc5af1f3021cf97f82014728447a2f354bd0cfd"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/真实门槛任意路径的累计预算与不可拼合边界--候选.md": "4db2d35f3e6ecb2001c447576d36659e3295f370468ddace187698721fc10986",
+    "archives/customer-attraction/state/候选/任意路径可信门槛的终端福利预算与见证锥--候选.md": "d239bdcd4aaae2bbc5c70de49c0ed4450eb9d62308b21c2fb47520ae6b965639",
+    "archives/customer-attraction/state/候选/实际路径可信保底匹配与最坏分母替代的分离--候选.md": "bd8f09ddbee7977b851316f2b3e28ea7a8a0b0809bea67ff16affe193f564abc",
+    "map/edges/customer-attraction-3a-3a-e023e4e7f56fe44b/review.md": "47a8d948d5e3649c388311f6f732d116b0ecf57275efc8c766afc08176f416d3"
+  },
+  "review_digest": "42d9bb10c46c67bd56c0d43989c4bbae5536b38fc185f184340d8ca4d93c29bc"
+}
