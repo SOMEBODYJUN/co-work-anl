@@ -1,0 +1,49 @@
+{
+  "edge_id": "vk2005-rational-cover-to-tanner-forest-integrality",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-9a4d60726a564ed493cd4e84df82cd0e"
+  ],
+  "target_ids": [
+    "M-fe3ac5a7f1374a24a221eb5c26172625"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "whole_result": "对任意有限Tanner森林H，每个有限M及任意wiring的cover在各类型重标号后为M份原森林，覆盖投影是原码字有理凸组合；由Q的闭包为P得到P(H)=conv C。对任意有限lambda，min_Q=min_P=min_C，标准有限LLR合同下即归一GCD/LP与块ML共同最优值。",
+  "conditions": "固定同一个有限二元校验矩阵H、局部偶字多面体和按类型平均的有限covers；结论限制到T(H)为森林。信道解释另用二元输入无记忆、均匀先验和有限LLR；平局可共选码字。",
+  "explanation": "逐基树选根，把根提升副本标签沿每条提升边双射传递；无环保证每种类型只有唯一路径而不冲突，所有提升边接同标签，故cover分成M份原森林。覆盖码字按标签限制为M个原码字，omega=(1/M)sum_a x^(a)，所以Q⊆conv C。源定理closure Q=P、有限码字凸包闭及conv C⊆P一起给P=conv C。M=1实现每个码字，因而有限线性目标在三域共同取得码字最优点。详见本包proof完整推导；原证据为Prop10/A1与Lemma28/A4，登记source的A5定位不用于本边。",
+  "scope": "全部有限森林、全部有限M和接线，包含断连和孤立节点；不是含环或一般消息传递算法等价。",
+  "roles": {
+    "M-9a4d60726a564ed493cd4e84df82cd0e": "提供Q=P∩Q^n及closure Q=P；把树覆盖分解所得Q⊆conv C升级为P整数性。",
+    "M-fe3ac5a7f1374a24a221eb5c26172625": "所得完整森林覆盖分解、P=conv C和有限LLR三方最优值保证。"
+  },
+  "review_note": "Boss1恢复worker重读当前两对象及指定PDF Prop10(p18)/A1(pp50–53)、Lemma28(p29)/A4(p55)，自行提取并视觉核p51/55；重构唯一道路标号、闭包与有限成本三方等值。未以A5误定位或MPID类比作证明。",
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-cf8ea49608961cd3/proof.md",
+      "sha256": "92d206cc7680c23f6602f856ed7cee9fadcc47dc372d49bb394e5a91ac93d200",
+      "section": "完整推导"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md",
+      "sha256": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+      "section": "5. 基本锥、极射线和表示复杂度"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/Boss7-vontobel-restored/vontobel-koetter-2005-v1.pdf",
+      "sha256": "d6b6f7868f5a80220586b0394a55c244f6732b787e4aa9945baf0369167366cf"
+    }
+  ],
+  "reviewed_by": "Boss1/recover-tanner-shared-source-round38",
+  "endpoint_pins": {
+    "M-9a4d60726a564ed493cd4e84df82cd0e": "b7e498de86a7598d0591ea9bfc623ed8f714eaed436fce701141ad69c7d5462c",
+    "M-fe3ac5a7f1374a24a221eb5c26172625": "b74f616be8810ab7ef9b821fd974f0977e99e2982c2efb07eeb71d82f24e07e9"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-cf8ea49608961cd3/proof.md": "92d206cc7680c23f6602f856ed7cee9fadcc47dc372d49bb394e5a91ac93d200",
+    "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+    "archives/unrelated-machines/tools/evidence/Boss7-vontobel-restored/vontobel-koetter-2005-v1.pdf": "d6b6f7868f5a80220586b0394a55c244f6732b787e4aa9945baf0369167366cf"
+  },
+  "review_digest": "f58cfa1dbc4c2f3a9261385a7c9a15f6902b0634ab4e6c0b479656fd6d37d4d1"
+}

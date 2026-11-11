@@ -1,0 +1,49 @@
+{
+  "edge_id": "vk2005-rational-cover-to-finite-llr-gcd-lp-value",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-9a4d60726a564ed493cd4e84df82cd0e"
+  ],
+  "target_ids": [
+    "M-655414c8f3494d3fab373b7c3b5a7e40"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "whole_result": "对任意固定有限二元H及有限lambda∈R^n，min_{omega∈Q(H)}<omega,lambda>=min_{omega∈P(H)}<omega,lambda>且存在共同有理最优顶点由某有限cover取得。复制观测、1/M归一并扣除全零参考后的对数似然为−<omega,lambda>；argmin_Q=argmin_P∩Q^n，tie可共选同一可实现有理最优点，顶点选择为充分规则。",
+  "conditions": "固定同一H/P/Q和所有坐标有限的lambda；信道推导使用二元输入无记忆、标准有限LLR和归一1/M，原码ML解释使用均匀先验。平局采用共同可实现点，顶点总可选；不把BEC无穷LLR代入有限合同。",
+  "explanation": "复制观测下(1/M)log[W(y^upM|x-tilde)/W(y^upM|0^upM)]=−(1/M)sum_{i,a}x-tilde_{i,a}lambda_i=−<omega,lambda>，零参考归一后与M及接线无关。P紧有理故有最优顶点v；源定理给v∈Q并有限cover实现，而Q⊆P，夹出两最小值相等且取得。Q=P∩Q^n进一步给全部最优集合关系。任意共同有理最优点均可相容选择，不能指定无理最优点要求精确实现；本边不把顶点选择说成唯一必要规则。",
+  "scope": "有限实成本及标准有限LLR下归一GCD/LP的共同最优值和可实现tie；不推一般块ML或MPID算法等价。",
+  "roles": {
+    "M-9a4d60726a564ed493cd4e84df82cd0e": "保证P的有理最优顶点在某有限cover实现，消除仅稠密逼近或不取得的缺口。",
+    "M-655414c8f3494d3fab373b7c3b5a7e40": "接收归一似然到有限线性目标以及Q/P共同取得的完整最优值保证。"
+  },
+  "review_note": "Boss1恢复worker实读当前两对象、成熟正文2/3/4节和原PDF Def21/Prop22/A2、Prop10/A1，核1/M、零参考和最优顶点。对原argmin记号显化有理交集，顶点仅为充分tie规则，保无穷LLR及MPID边界。",
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-b7526d2993f1c7a2/proof.md",
+      "sha256": "b3811425dce2dc891804afd4cadf7db911814e4a4898540e25f0ce8a25953c2c",
+      "section": "完整推导"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md",
+      "sha256": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+      "section": "4. 归一化图覆盖译码及其与消息传递的边界"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/Boss7-vontobel-restored/vontobel-koetter-2005-v1.pdf",
+      "sha256": "d6b6f7868f5a80220586b0394a55c244f6732b787e4aa9945baf0369167366cf"
+    }
+  ],
+  "reviewed_by": "Boss1/recover-tanner-shared-source-round38",
+  "endpoint_pins": {
+    "M-655414c8f3494d3fab373b7c3b5a7e40": "ff4db0ca8e35399e83fb96a8104cfcb44663a25c7745c51049393ceaad3cc414",
+    "M-9a4d60726a564ed493cd4e84df82cd0e": "b7e498de86a7598d0591ea9bfc623ed8f714eaed436fce701141ad69c7d5462c"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-b7526d2993f1c7a2/proof.md": "b3811425dce2dc891804afd4cadf7db911814e4a4898540e25f0ce8a25953c2c",
+    "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+    "archives/unrelated-machines/tools/evidence/Boss7-vontobel-restored/vontobel-koetter-2005-v1.pdf": "d6b6f7868f5a80220586b0394a55c244f6732b787e4aa9945baf0369167366cf"
+  },
+  "review_digest": "c84321625074bbf66a4e9f633bb247e71d287b796fdabd8813fb0590c6706347"
+}

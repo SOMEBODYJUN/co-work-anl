@@ -1,0 +1,49 @@
+{
+  "edge_id": "vk2005-tanner-forest-to-redundant-row-girth-invariance",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-fe3ac5a7f1374a24a221eb5c26172625"
+  ],
+  "target_ids": [
+    "M-3262fb2c84db47bfb4f4bcab6e9408d4"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "whole_result": "任意原H行的F2和作为冗余行不改变码且只能缩小P。若每个新行的参与原check子图分别为森林，则P(H)已蕴含每个新校验，全部同时加入仍不改变P；有限偶围长g时，所有至多r≤(g−2)/2个原行的和均如此，故R_r(H)=P(H)。",
+  "conditions": "H∈F2^{m×n}有限；每个新行由原H行在F2求和，其选择向量维度为m；森林条件针对各所选check及全部相邻变量的子系统；围长推论限有限偶g和非负整数r≤(g−2)/2。",
+  "explanation": "对选择S及h=sum_{j∈S}H_j，行空间给kerH⊆kerh；P([H;h])=P(H)∩P(h)。若T(H_S)森林，源对象给P(H_S)=conv kerH_S⊆conv kerh=P(h)，而P(H)⊆P(H_S)，故加h不收紧。每新行相对原H分别蕴含即可同时相交，不要求加入后的图保持森林。若|S|≤r且其子图有2k环，则k≤|S|≤r给2k≤g−2，矛盾于原围长g；因此R_r=P。A16按补集H_{S^c}读，Cor53的a维度恢复为m。",
+  "scope": "森林支撑的冗余行与有限偶围长范围；不推有4环必严格收紧、全部对偶行必达conv C或迭代行为不变。",
+  "roles": {
+    "M-fe3ac5a7f1374a24a221eb5c26172625": "应用于参与新行求和的原check子系统，给P(H_S)=conv kerH_S这一承重步骤。",
+    "M-3262fb2c84db47bfb4f4bcab6e9408d4": "接收单行、多行以及围长范围内不收紧P并保持原码的完整保证。"
+  },
+  "review_note": "Boss1恢复worker实读当前两对象、Lemma28/A4、Lemma52/Cor53/54/A15–17；自行提取并视觉核p55/61，确认补集横线和a的m维。已重构单子系统包含、同时加行及围长反证，不依靠提取误排或加入后森林假设。",
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-70a4a207453c6716/proof.md",
+      "sha256": "051ca3bf0168c8ea132e433d15bdd0cf288d730b02ea7f78e991ced9153932de",
+      "section": "完整推导"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md",
+      "sha256": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+      "section": "8. 停止集、near-codewords与冗余校验"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/Boss7-vontobel-restored/vontobel-koetter-2005-v1.pdf",
+      "sha256": "d6b6f7868f5a80220586b0394a55c244f6732b787e4aa9945baf0369167366cf"
+    }
+  ],
+  "reviewed_by": "Boss1/recover-tanner-shared-source-round38",
+  "endpoint_pins": {
+    "M-3262fb2c84db47bfb4f4bcab6e9408d4": "b23b8ca485f6b3a94a0645613b057ee0abdaca85c4e5afe26d5c77a2596bb1a2",
+    "M-fe3ac5a7f1374a24a221eb5c26172625": "b74f616be8810ab7ef9b821fd974f0977e99e2982c2efb07eeb71d82f24e07e9"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-70a4a207453c6716/proof.md": "051ca3bf0168c8ea132e433d15bdd0cf288d730b02ea7f78e991ced9153932de",
+    "archives/unrelated-machines/state/文献/图覆盖译码与基本多面体--文献.md": "83056729670058454bf93797df5c7dcf5306079a5da00a4aaddf5e5cb16a0614",
+    "archives/unrelated-machines/tools/evidence/Boss7-vontobel-restored/vontobel-koetter-2005-v1.pdf": "d6b6f7868f5a80220586b0394a55c244f6732b787e4aa9945baf0369167366cf"
+  },
+  "review_digest": "66abdd7484b7e5ef7ebfe6e53ffa35a2ec130f3dd72bae447d20aa6e2b72e656"
+}
