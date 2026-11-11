@@ -1,0 +1,52 @@
+{
+  "edge_id": "boss6-infinity-cap-family-to-finite-unit-helper-whole",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-b6605b3864cb41e399d926496739f12d"
+  ],
+  "target_ids": [
+    "M-d1467073db5b4c139d81c9483d98f1c0"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss6",
+  "conditions": "逐所有整数n≥4；使用C正文中明确给出的同一K_n（n原玩家、n−1条n副本/相邻n−1helper链及n件private），目标只把helper∞改有限1，其余原值与身份按索引保持。有限正s/M，raw按原p；cap固定λ=1、big为p≥M、small为p<M，保列容量、big+z≥1、small值≥Mz、逐small x≤z和非负，无行总x=1。目标输出独立于查询参数。零端先清零；本处显式证书映射已在explanation/review逐约束证明，不另依赖一般MLP估值单调性或H的一般有限桥。",
+  "roles": {
+    "M-b6605b3864cb41e399d926496739f12d": "提供完整成熟的同一∞像K_n：全部正M的cap集S_n=(0,a]∪(v,1]（含全部M>1不可行）、raw整数/CONFIG=a，及同一支撑规模；本边用局部∞→1替换和逐约束映射把这些保证迁到新有限输出。",
+    "M-d1467073db5b4c139d81c9483d98f1c0": "迁移终点：新全有限K_n^(1)的整个statement，含raw精确值、全部cap参数、规模/度/位长、Θ(√N)及n4反例；不将本次桥本身冒作终点。"
+  },
+  "explanation": "将C的r_i/c_{j,i}分别重命名为CF的q_i/e_{j,i}，保同一玩家、n/链j/owner i/helper k，原玩家有限值a,v与零端不变，仅每helper两∞端改1。任意可行证书先把所有零端x清零，列容量/逐small上界改善，big和与small值不变。0<M≤1时两种helper端规范化后都是big M，原玩家矩阵与分类相同，故两LP系统逐项相同，从C转得此区间内恰S_n=(0,a]∪(v,1]。M>1时不能套估值单调性：若有限像可行，helper两正端为small1且无big，(5)迫z_h≥1、(6)给两端x和≥Mz_h≥M>1；保全部去零后x与原玩家z，只置helper z′=0，便得∞像证书。列容量不变；原玩家各约束及系数不变；∞helper两端现为big、质量和>1满足(5)，其余small恰零端且x=0，使(6)为0≥0、(7)为0≤0，非负保持。C排除全部M>1，故有限像全正cap集亦精确S_n、最高1。raw另用原值配置包含：逐端p_finite≤p_infinity，任何有限像达s的分配/CONFIG证书原样在∞像达s，因此raw两值≤C的a；原玩家各取private、helper各取左副本给真实a分配，helper得1≥a，故两值≥a并给全部0<s≤a。已另直接核s>a配置容量：每链n−1helper至少耗n−1副本边际，留旧玩家≤1；n旧行各需≥1专属副本、总需n，n−1链最多n−1，矛盾（含s>1）。支撑不变给N=n+(n−1)²=n²−n+1,m=n+n(n−1)=n²,E=n+n(n−1)+2(n−1)²=3n²−4n+2；端点副本正度2、内部3、private1，helper2、旧玩家n；无∞，a/v/1位长O(log n)且显式poly(n)。M=1旧a,v均small，仅helper1端big，故物品和玩家big度均≤2；低M内部副本可big度3。比1/a=n²/(2n−1)，n²/2≤N≤n²且n/2<1/a<n，得本族Θ(√N)。n4：a7/16,v3/4,N13,m16,E34，比16/7，M1见证旧private1、各copy1/n、z1，helper左右(n−k)/n,k/n、z0，使所有列恰1、旧small值1、helperbig质量1；raw CONFIG1/2因1/2>a不可行。M1可行而(a+v)/2不可行给非前缀。全部目标结论均已支付，H仅另作已完成替代合同比较。",
+  "whole_result": "对每个整数n≥4，v=(n−1)/n、a=(2n−1)/n²，C的同一∞helper像按同一n/链/owner/helper索引，仅将全部helper∞值改1（private与副本按标签重命名），得到CF当前v1完整全有限输出K_n^(1)：所有估值属于{0,a,v,1}⊆[0,1]，N=n²−n+1玩家、m=n²物品、E=3n²−4n+2正端，每物品正度≤3、helper正度2、原玩家正度n、两侧原∞度0，正值位长O(log n)、构造显式poly(n)。对固定该输出的全部有限正s，raw整数及raw CONFIG均恰在(0,a]可行、两最优值a；对全部有限正M，固定λ=1并保五类约束的cap M-LP恰在(0,a]∪(v,1]可行、最高1，M=a含、M=v排除、M=1含。两个cap/raw比均为n²/(2n−1)=Θ(√N)。n4有限值域{0,7/16,3/4,1}、13玩家16物品34正端，cap(1)可行但raw CONFIG(1/2)不可行，比16/7；M=1的物品及玩家big度均≤2。故得到新有限实例上的完整非前缀与无额外small界λ1二倍回raw接口反例，而非仅一个见证解码步骤。",
+  "scope": "C v1的成熟∞像整结果迁为CF v1的新全有限保证，方向ALL{C}->CF、无未付数学前提。全部有限正s/M、同数值λ=1；构造固定不随M改变。只描述本显式族Θ(√N)，不推出全类tight/hardness/全局新颖性。原玩家总正度n，M1 big二度不外推；不否定raw向下闭、pmax≤M/2安全接口、λ≥2规范化或λ4 DegreeTwo算法。H§4的一般正向仅M≤λH、反向全M已实际比较，但不是此C-only证明的必要端点。",
+  "review_note": "完整实读CF正文/独立审查、C正文及三个完整registry record，读H定义/主合同/完整有限H§4并分段读完其正文。独立逐约束审过M>1去零和helper z清零转换；以raw证书包含加实际匹配支付精确值，并另核全部s>a配置容量。核全部端点、有限位长、计数、原/规范化度与n4见证。两个in-packet引用对均已解决，不欠定向后续；原H/C对象及既有边无需修改。未运行科学程序、求解器或旧证书；accepted是数学完成状态，native绑定由Root另行生成。 Root独立审读最终完整证明和目标合同，具体核验保存于本任务receipt.parent_review；原生检查仅验结构。",
+  "evidence": [
+    {
+      "path": "map/edges/boss6-finite-unit-cap-3a-3a-2bfe0e166c55a64b/review.md",
+      "sha256": "0296299eccce5ed32016f7f5a324a196213184858ace70ebe2c9f50ca344050d"
+    },
+    {
+      "path": "archives/unrelated-machines/state/反例/三度二无限度内capMLP非前缀与根号人数分离--反例.md",
+      "sha256": "b3454530c3cfff2700e16d39114ade01a645526863d5130efcc61e5253c3fece"
+    },
+    {
+      "path": "archives/unrelated-machines/state/反例/全有限单位helper三度族的capMLP非前缀与根号人数分离--反例.md",
+      "sha256": "1a7a9b07f378abf3fd3c659ec35297fd774b47c004952773b01896feae133939"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/全有限单位helper三度cap反族独立复核--审查.md",
+      "sha256": "60532563e85816541e45ebe42681eedf5720ef18df7b0a5a5a4edcd25401a7e9"
+    }
+  ],
+  "endpoint_pins": {
+    "M-b6605b3864cb41e399d926496739f12d": "a4473d1389b5162ebfdada8c07211497ebd46ec7034fa7a58c716c57ea695df7",
+    "M-d1467073db5b4c139d81c9483d98f1c0": "544e687681b5c59e7470cbb03e31736a1afb7dab9107067e93a4c60e0883b8dc"
+  },
+  "evidence_pins": {
+    "map/edges/boss6-finite-unit-cap-3a-3a-2bfe0e166c55a64b/review.md": "0296299eccce5ed32016f7f5a324a196213184858ace70ebe2c9f50ca344050d",
+    "archives/unrelated-machines/state/反例/三度二无限度内capMLP非前缀与根号人数分离--反例.md": "b3454530c3cfff2700e16d39114ade01a645526863d5130efcc61e5253c3fece",
+    "archives/unrelated-machines/state/反例/全有限单位helper三度族的capMLP非前缀与根号人数分离--反例.md": "1a7a9b07f378abf3fd3c659ec35297fd774b47c004952773b01896feae133939",
+    "archives/unrelated-machines/state/审查/全有限单位helper三度cap反族独立复核--审查.md": "60532563e85816541e45ebe42681eedf5720ef18df7b0a5a5a4edcd25401a7e9"
+  },
+  "review_digest": "7342b25acb3d21c1c3816d5aaeb303414c4093a9c0b1aa71b426927ba21d6023"
+}

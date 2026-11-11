@@ -1,0 +1,48 @@
+{
+  "edge_id": "cf-two-barrier-motivates-xos-oracle-boundary",
+  "kind": "motivates",
+  "status": "accepted",
+  "source_ids": [
+    "M-bcf19c1d04ba4f39b746241304786dc1"
+  ],
+  "target_ids": [
+    "M-bafae50558c441728f16cbfc7dce9f82"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "下界对每个固定ε>0要求在所有单调归一化CF/subadditive实例上达到2−ε，在单bidder general-query/communication模型按通信比特计费。目标算法只对XOS子类，并具demand+maximizing-clause合同。显式语言长度、oracle调用数与消息编码长度分别计量。",
+  "roles": {
+    "M-bcf19c1d04ba4f39b746241304786dc1": "Theorem1.3/4.1：从一般估值n-vs-1的通信gap经非空bundle值加1转换得到CF福利2n-vs-至多n+1，阻止大类上普适严格优于2的低通信协议。",
+    "M-bafae50558c441728f16cbfc7dce9f82": "在更窄XOS promise和支持clause访问下给实际福利≥OPT/2；是CF普适障碍不否定的具体算法合同。"
+  },
+  "explanation": "原文§4.1令v′(空)=0、v′(非空S)=1+v(S)，其中v为包含感兴趣bundle的0/1估值。新估值非空值在[1,2]，直接CF；高case福利2n，低case任意分配福利≤n+1。对固定ε选n+1>2/ε则2n/(n+1)>2−ε，继承所引通信gap。XOS⊊CF：XOS按标准非负加性clause约定满足q(S∪T)≤q(S)+q(T)，取最大值得subadditivity；对单调XOS允许负系数的表示也可等价非负化；三物品CF例v(非空真子集)=1、v(全体)=2不能有支持全体的clause，因为三个pair约束相加把clause总值压到3/2。大类最坏情形hardness不会自动限制到每个子类；且core的因子2正处于下界未禁止的边界。general query本允许任意单bidder查询，不能说它缺demand；一般CF可能连支持clause都不存在。XOS较好期望比值也不矛盾，原因是其promise而非免费更强查询。显式XOS的输入长度多项式可能关于m指数，不能与自然参数通信界混算。",
+  "scope": "说明core保留XOS类与oracle/表示边界的必要性；不由CF下界推出XOS的2最优，不否定core，不把hardness与算法合成一个全CF算法或目标证明。外部Nisan[15]原始gap按本篇引文继承，本次已核本篇完整CF转换。",
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-f6d5397cb124db3c/review.md",
+      "sha256": "76475c8899520b0d2d979fb1fe4f0647eb206dca88ef37916bda32fe74fd3a16",
+      "section": "CF通信障碍为何与两XOS算法相容"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-auction-setcover-20261031/dobzinski_auction.pdf",
+      "sha256": "d0700d7674db45b4330d558c731c0200567f2c7a999f5eef7952029cab26dd15"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/组合拍卖与投影游戏集合覆盖两篇文献整理--文献.md",
+      "sha256": "ee4b62663ff651341ae40162b5319b31b9230d71c93b81333d43cfbf92d4fb22",
+      "section": "1. Dobzinski–Nisan–Schapira：Approximation Algorithms for Combinatorial Auctions with Complement-Free Bidders"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本次实读primary引言oracle/严格类层次、§2接口、§3.3及§4.1完整证明；独立核CF转换、有限n比值与strict containment小例。没有把大类通信hardness偷换为XOS子类下界；该边仅motivates语境。 Root独立审读最终完整证明和目标合同，具体核验保存于本任务receipt.parent_review；原生检查仅验结构。",
+  "endpoint_pins": {
+    "M-bafae50558c441728f16cbfc7dce9f82": "73243ca77a1d4fdf7c89c8e99d9cd60264cfbdf6d1ee671b1adec63d6d0dfefd",
+    "M-bcf19c1d04ba4f39b746241304786dc1": "186d9ce8713657ac38d25fd1e13e4a0875f808a76902d55ce134381948f76bbe"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-f6d5397cb124db3c/review.md": "76475c8899520b0d2d979fb1fe4f0647eb206dca88ef37916bda32fe74fd3a16",
+    "archives/unrelated-machines/tools/evidence/retired-literature-auction-setcover-20261031/dobzinski_auction.pdf": "d0700d7674db45b4330d558c731c0200567f2c7a999f5eef7952029cab26dd15",
+    "archives/unrelated-machines/state/文献/组合拍卖与投影游戏集合覆盖两篇文献整理--文献.md": "ee4b62663ff651341ae40162b5319b31b9230d71c93b81333d43cfbf92d4fb22"
+  },
+  "review_digest": "a7686dc4207dec6d157ca8dd208c5df835c04ba21c91015d7e82ab8e9c429600"
+}

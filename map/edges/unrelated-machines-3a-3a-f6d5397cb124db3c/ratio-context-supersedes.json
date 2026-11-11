@@ -1,0 +1,48 @@
+{
+  "edge_id": "xos-rounding-ratio-context-supersedes-deterministic-two",
+  "kind": "supersedes",
+  "status": "accepted",
+  "source_ids": [
+    "M-8fdee11afd164305a429734ee5ae705a"
+  ],
+  "target_ids": [
+    "M-bafae50558c441728f16cbfc7dce9f82"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "共同域为单调归一化XOS估值的社会福利和最大化，均需demand及maximizing-XOS-clause访问，或显式XOS语言下按实际输入长度实现这两个接口。supersedes只在将确定性实际保证投影为期望保证后的数值比例维度比较，保留前者LP随机舍入、后者确定性组合实际输出的差异。",
+  "roles": {
+    "M-8fdee11afd164305a429734ee5ae705a": "Theorem1.2/3.2：LP独立舍入后逐item分配最高clause系数，产生可行实际分配，期望福利至少c_n OPT*，c_n=1−(1−1/n)^n≥1−1/e。",
+    "M-bafae50558c441728f16cbfc7dce9f82": "Theorem3.3：一遍处理bidder、夺取demand bundle并更新支持clause价格的确定性组合算法；每次实际输出福利至少OPT/2。"
+  },
+  "explanation": "PDF页8–9证明E[W]≥c_n OPT*≥c_n OPT，故期望近似因子1/c_n≤e/(e−1)<2；core的逐次实际W≥OPT/2当然也给期望2保证。因而更好数值在这一投影维度取代2这一可达期望比值，但没有替换整个core算法合同。较好算法先求configuration LP、再独立舍入；core是n轮、n次demand+n次clause、无需LP且对每个合法tie-breaking实际成立。原文没有在该定理中支付所需的无LP组合去随机化，不能由更好期望直接推出core整条，也不能反向由2推出c_n。每次输出可行与每次输出满足比例是不同命题。本边不建立whole_result或contribution，不将存在某个好种子冒作指定算法的构造。",
+  "scope": "只保存同一XOS/oracle合同内的近似数值与算法属性取舍。属于context，不能进入core的逻辑证明支持；不宣称2算法无效、不宣称没有去随机化，也不迁移为MaxMin/makespan或均衡阈值。",
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-f6d5397cb124db3c/review.md",
+      "sha256": "76475c8899520b0d2d979fb1fe4f0647eb206dca88ef37916bda32fe74fd3a16",
+      "section": "数值改进与整条算法合同的关系"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-auction-setcover-20261031/dobzinski_auction.pdf",
+      "sha256": "d0700d7674db45b4330d558c731c0200567f2c7a999f5eef7952029cab26dd15"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/组合拍卖与投影游戏集合覆盖两篇文献整理--文献.md",
+      "sha256": "ee4b62663ff651341ae40162b5319b31b9230d71c93b81333d43cfbf92d4fb22",
+      "section": "1. Dobzinski–Nisan–Schapira：Approximation Algorithms for Combinatorial Auctions with Complement-Free Bidders"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本次实读共同body、三端点完整记录、primary §2/§3共享段/§3.2/§3.3；视觉核PDF页8–10。核对c_n精确期望式与价格算法实际分配不变量、n轮调用数。该边仅语境上的数值改进，未把算法属性抹平；证据读取边界见reading-ledger。 Root独立审读最终完整证明和目标合同，具体核验保存于本任务receipt.parent_review；原生检查仅验结构。",
+  "endpoint_pins": {
+    "M-8fdee11afd164305a429734ee5ae705a": "5a4576c51598ca30c504ceff1d46a7f61cbf24c25cb4816468ee635b78297a7f",
+    "M-bafae50558c441728f16cbfc7dce9f82": "73243ca77a1d4fdf7c89c8e99d9cd60264cfbdf6d1ee671b1adec63d6d0dfefd"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-f6d5397cb124db3c/review.md": "76475c8899520b0d2d979fb1fe4f0647eb206dca88ef37916bda32fe74fd3a16",
+    "archives/unrelated-machines/tools/evidence/retired-literature-auction-setcover-20261031/dobzinski_auction.pdf": "d0700d7674db45b4330d558c731c0200567f2c7a999f5eef7952029cab26dd15",
+    "archives/unrelated-machines/state/文献/组合拍卖与投影游戏集合覆盖两篇文献整理--文献.md": "ee4b62663ff651341ae40162b5319b31b9230d71c93b81333d43cfbf92d4fb22"
+  },
+  "review_digest": "23426c6c6e63eb2ef0c9af6555e8fdfdbc402035ec3cd57bc4f6a9c7e6883d71"
+}
