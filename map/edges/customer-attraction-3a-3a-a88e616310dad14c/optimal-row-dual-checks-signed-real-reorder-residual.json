@@ -1,0 +1,47 @@
+{
+  "edge_id": "cag-a88e-optimal-row-dual-checks-signed-real-reorder-residual",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-101bd6b12f47485fa951acd733de98cb"
+  ],
+  "target_ids": [
+    "customer-attraction/common-source-swap-capacity-and-true-reorder-residual"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "明确八不交单客户主题、五名提供者、所有有序历史永取未用标签；同一σ上z=(1,2,3,4,5)、raw swap s=(2,1,3,4,5)、真换序w=(2,1,6,7,8)，μ=2、η=−1，分别取单点shadow3或6。",
+  "roles": {
+    "M-101bd6b12f47485fa951acd733de98cb": "两个明确最优row dual提供J=+1与−1。",
+    "customer-attraction/common-source-swap-capacity-and-true-reorder-residual": "被检查的是精确method中不能忽略的signed mismatch，并非其合法raw交换恒等式被否定。"
+  },
+  "explanation": "全历史未用主题收益1且已用至多1/2，故原σ完整SPE，规范M恒1。r=7+4/c−2W−ell_a在c=1…5的全raw域下界依次0,0,1/3,1,9/5，双侧原/对偶值1达到，所用dual并非任意非最优猜测。shadow3时r(w)−r(s)=1，shadow6时−1，核清J没有自动符号。因此真历史账须保−θJ，不能把w=s；此例不反合法method本体，也不构造Cov-to-swap付款。",
+  "scope": "context检查最优定价不能免除真实换序尾差；不是refutes原method、不是half反例。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/共同源交换的容量与真实换序残差--障碍.md",
+      "sha256": "42fe74a71d8291549591ec8abe4ea7b3c0a9a7e6aaee4151d44cc18d9080374d",
+      "section": "4. 完整 SPE 边界二：最优 row dual 下 `J` 仍有双符号"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/共同源交换的容量与真实换序残差--障碍.md",
+      "sha256": "42fe74a71d8291549591ec8abe4ea7b3c0a9a7e6aaee4151d44cc18d9080374d",
+      "section": "6. 两个完整SPE例子的证明补足"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/共同源交换的容量与真实换序残差--障碍.md",
+      "sha256": "42fe74a71d8291549591ec8abe4ea7b3c0a9a7e6aaee4151d44cc18d9080374d",
+      "section": "2. 真正换序历史还有 signed mismatch"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本批fresh worker按当前registration陈述、完整模型与所列承重证明实读重构；逻辑边核whole_result，checks只记context。原成熟数学程序/LP/SPE/BI审计均未重跑；Root另作最终bind/check。 Root实读当前六个承重端点的完整合同、return与full-v/fresh目标及swap源全文，逐步重构同动作加权Cauchy、严格future角色归纳、六循环零支撑反例、最优dual的双符号J及rank反例最优面；实读全部19项coverage和16组review。另实读TC/截断共同边际原文与现行ALL边，确认固定σ/T的3/2和实速率支持限制。两逻辑边是完整目标，三checks仅检查未被method宣称的自动性质；不反half、不用h界代付βu。本轮无旧科学重放。",
+  "endpoint_pins": {
+    "M-101bd6b12f47485fa951acd733de98cb": "0494be9a73bdb52c554a17062f0733b60377dc69dd12a5b2b93f2f6658310500",
+    "customer-attraction/common-source-swap-capacity-and-true-reorder-residual": "c8d6a9bbcd2fa0193f0157b98832aedf9d3a6f0d39585d154013a390dbf8de54"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/共同源交换的容量与真实换序残差--障碍.md": "42fe74a71d8291549591ec8abe4ea7b3c0a9a7e6aaee4151d44cc18d9080374d"
+  },
+  "review_digest": "3c364428ae684762f9e81ee453db6f7c7fbd83825a78dc7a602b8768022aa413"
+}

@@ -1,0 +1,47 @@
+{
+  "edge_id": "cag-a88e-active-rank-example-checks-query-uniqueness-gate",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-66e8289c4897432d9adc304ed4d2721e"
+  ],
+  "target_ids": [
+    "customer-attraction/optimal-query-onpath-fixed-saddle-budget-probes"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "原单位客户静态安全问题，两人一竞争槽，L/S不交且各2/1客户。只检查probe潜在rank_active接受逻辑，不把两人实例当三人预算正见证。",
+  "roles": {
+    "M-66e8289c4897432d9adc304ed4d2721e": "给当前全部紧行加归一满秩而最优面非单点的精确反例。",
+    "customer-attraction/optimal-query-onpath-fixed-saddle-budget-probes": "其walk潜在candidate分支使用当前紧行rank；固定p/Q鞍点合同本身仍有效。"
+  },
+  "explanation": "p=αL+(1−α)S时背景L给1、背景S给1/2+3α/2，故v2=1且最优面α∈[1/3,1]。在α=1/3，两背景紧，正文(查询坐标、v)三行矩阵满秩，仍存在整段其他最优p。原因是当前偶然紧行不对全部最优p共同紧。若先有精确最优Q，则其正支持行对所有最优p共同紧，合归一后的精确满秩才提供充分唯一性；也可直接检查完整最优面。该修正不否固定鞍点LP的有限minimax证明，原120方向亦没有正candidate可供误收。",
+  "scope": "完成task的in-packet overlap数学比较；属于context checks，不能提升为否定某个好安全最优p存在或聚合/half失败。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/实际路径安全最优查询的固定鞍点预算探针--资源.md",
+      "sha256": "8ac9c0136b27734b128ec9a31d2394b06b088c0a123e26081902b3ba1bd8ebcf",
+      "section": "当前紧列满秩为什么不能认证查询唯一"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/实际路径安全最优查询的固定鞍点预算探针--资源.md",
+      "sha256": "8ac9c0136b27734b128ec9a31d2394b06b088c0a123e26081902b3ba1bd8ebcf",
+      "section": "保持一对静态鞍点的线性攻击"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/实际路径安全最优查询的固定鞍点预算探针--资源.md",
+      "sha256": "8ac9c0136b27734b128ec9a31d2394b06b088c0a123e26081902b3ba1bd8ebcf",
+      "section": "120方向改变鞍点的实际控制流"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本批fresh worker按当前registration陈述、完整模型与所列承重证明实读重构；逻辑边核whole_result，checks只记context。原成熟数学程序/LP/SPE/BI审计均未重跑；Root另作最终bind/check。 Root实读当前六个承重端点的完整合同、return与full-v/fresh目标及swap源全文，逐步重构同动作加权Cauchy、严格future角色归纳、六循环零支撑反例、最优dual的双符号J及rank反例最优面；实读全部19项coverage和16组review。另实读TC/截断共同边际原文与现行ALL边，确认固定σ/T的3/2和实速率支持限制。两逻辑边是完整目标，三checks仅检查未被method宣称的自动性质；不反half、不用h界代付βu。本轮无旧科学重放。",
+  "endpoint_pins": {
+    "M-66e8289c4897432d9adc304ed4d2721e": "8a6ecff0ed860574c7ce51c42f094e9d08c58320343c77959765e740b8970286",
+    "customer-attraction/optimal-query-onpath-fixed-saddle-budget-probes": "963eb096a197e312b32772a0a1a2e5bb43e4ac61ab78b1cbf9544c186e8812c3"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/实际路径安全最优查询的固定鞍点预算探针--资源.md": "8ac9c0136b27734b128ec9a31d2394b06b088c0a123e26081902b3ba1bd8ebcf"
+  },
+  "review_digest": "2f33c53c8fb9c8c9b752fb7036cec8a92a5696096cbdab622c9d9859856dfac7"
+}

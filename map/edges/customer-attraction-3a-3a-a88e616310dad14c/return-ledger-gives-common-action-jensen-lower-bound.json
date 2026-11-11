@@ -1,0 +1,42 @@
+{
+  "edge_id": "cag-a88e-return-ledger-gives-common-action-jensen-lower-bound",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/off-history-return-exact-ledger-and-common-funding-gap"
+  ],
+  "target_ids": [
+    "M-3d0dbf4f161844cd95cd3d48f8e96ded"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "whole_result": "对同一角色k、同一actual动作B_k和任意有限合法return contexts，α_t≥0、M=Σα_t>0、Z_x=Σα_t c_(U_t)(x)，有Σα_t v_t≥Σ_(x∈B_k) M²/Z_x；M=0时两边规定为0，B_k为空时右和为空。结论只为收益下界。",
+  "conditions": "有限不同单位客户、有限非空共同标签目录、m≥1、同一完整有序历史纯SPE；在各合法history g_t强制actual B_k，随后沿同一σ真实完成U_t。保空主题、同覆盖异标签、重复和任意离轨弱平局。所有contexts共用B_k，但各自真实分母不得互换。",
+  "roles": {
+    "customer-attraction/off-history-return-exact-ledger-and-common-funding-gap": "RETURN-LEDGER保r_t=u+P_t−N_t、v_t=r_t+e_t及e_t≥0，故每history v_t≥r_t。",
+    "M-3d0dbf4f161844cd95cd3d48f8e96ded": "由这些真实返回收益的逐客户加权Cauchy得到整条Jensen下界及零量边界。"
+  },
+  "explanation": "先用源对象v_t=r_t+e_t、e_t≥0得到Σα_t v_t≥Σα_t r_t。每个return叶中当前仍选B_k，所以r_t=Σ_(x∈B_k)1/z_(t,x)，z_(t,x)=c_(U_t)(x)≥1。有限和交换后，对每个x用(Σα_t/z_(t,x))(Σα_t z_(t,x))≥(Σα_t)²，得Σα_t/z_(t,x)≥M²/Z_x；再对x求和。α可有零项，M>0保证每个非空B_k客户的Z_x>0。M=0则所有α_t=0，不定义0/0而两边取0；B_k为空直接空和。没有倒转此不等式，未从e≥0推出e≤N，亦未复制actual u或券库存。",
+  "scope": "整条目标的收益下界，无共同source-price/R-current资金上界、无六人half结论。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/真实历史返回动作的精确账本与共同资金缺口--引理.md",
+      "sha256": "531bbd0b36506a1f2b8c616a713a598d4b538e2c470e090ce13e590508e89d22"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本批fresh worker按当前registration陈述、完整模型与所列承重证明实读重构；逻辑边核whole_result，checks只记context。原成熟数学程序/LP/SPE/BI审计均未重跑；Root另作最终bind/check。 Root实读当前六个承重端点的完整合同、return与full-v/fresh目标及swap源全文，逐步重构同动作加权Cauchy、严格future角色归纳、六循环零支撑反例、最优dual的双符号J及rank反例最优面；实读全部19项coverage和16组review。另实读TC/截断共同边际原文与现行ALL边，确认固定σ/T的3/2和实速率支持限制。两逻辑边是完整目标，三checks仅检查未被method宣称的自动性质；不反half、不用h界代付βu。本轮无旧科学重放。",
+  "endpoint_pins": {
+    "M-3d0dbf4f161844cd95cd3d48f8e96ded": "da04e3111ce6d4a0bdb50cee4cf109b59ff0060f66d5b8a512b832e259126a17",
+    "customer-attraction/off-history-return-exact-ledger-and-common-funding-gap": "7f94ea8b333775c3f67f669fb73e538c2e1b3e69f93d925000bf2ed0c6bb429f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/真实历史返回动作的精确账本与共同资金缺口--引理.md": "531bbd0b36506a1f2b8c616a713a598d4b538e2c470e090ce13e590508e89d22",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "634fe32a47acf65837c9884b6fa65723ae0ae61dfa93a325e81343702443fe98"
+}

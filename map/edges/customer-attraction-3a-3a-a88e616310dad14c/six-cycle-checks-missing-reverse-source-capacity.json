@@ -1,0 +1,48 @@
+{
+  "edge_id": "cag-a88e-six-cycle-checks-missing-reverse-source-capacity",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-d93ca7824648496bae36a42ac100c12a"
+  ],
+  "target_ids": [
+    "customer-attraction/common-source-swap-capacity-and-true-reorder-residual"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "六不交单客户主题、五人完整有序SPE；全历史选未用主题，depth1用六循环后继。p是任一真实OPT5五元组的均匀查询分布，T为这个原σ的根first-follower核。",
+  "roles": {
+    "M-d93ca7824648496bae36a42ac100c12a": "对每一OPT五元组给pT在p零坐标上有正量的完整SPE见证。",
+    "customer-attraction/common-source-swap-capacity-and-true-reorder-residual": "检查method把逐原子CAP列为额外条件而不能从查询最优自动获得。"
+  },
+  "explanation": "任意OPT5组合恰取五个不同标签，遗漏标签a满足p(a)=0。循环前驱在这五标签中而有正p，故(pT)(a)>0，对每个有限κ都有pT不≤κp。真实策略在全部长度≤4有序历史仍有未用主题，选它得1、改已用至多1/2，因此见证完整SPE且W=OPT5=5。失败只限这原均匀最优p；改p为行内teleport解p=(r+pT)/2可给行动边际pT≤2p，但仍须另核完整原子库存、共同查询价格及跨行兼容。",
+  "scope": "context检查自动reverse支配的失败；不否精确CAP条件界或换查询重启构造。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/共同源交换的容量与真实换序残差--障碍.md",
+      "sha256": "42fe74a71d8291549591ec8abe4ea7b3c0a9a7e6aaee4151d44cc18d9080374d",
+      "section": "3. 完整 SPE 边界一：reverse-source 无有限支配"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/共同源交换的容量与真实换序残差--障碍.md",
+      "sha256": "42fe74a71d8291549591ec8abe4ea7b3c0a9a7e6aaee4151d44cc18d9080374d",
+      "section": "6. 两个完整SPE例子的证明补足"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/逐源容量二交换与行内再启动分布--引理.md",
+      "sha256": "b614116fc06f8f5b2091a34363bacede8bdac652b4330e33eb60548fe2972c1d",
+      "section": "原端点原子的容量与一次R库存"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本批fresh worker按当前registration陈述、完整模型与所列承重证明实读重构；逻辑边核whole_result，checks只记context。原成熟数学程序/LP/SPE/BI审计均未重跑；Root另作最终bind/check。 Root实读当前六个承重端点的完整合同、return与full-v/fresh目标及swap源全文，逐步重构同动作加权Cauchy、严格future角色归纳、六循环零支撑反例、最优dual的双符号J及rank反例最优面；实读全部19项coverage和16组review。另实读TC/截断共同边际原文与现行ALL边，确认固定σ/T的3/2和实速率支持限制。两逻辑边是完整目标，三checks仅检查未被method宣称的自动性质；不反half、不用h界代付βu。本轮无旧科学重放。",
+  "endpoint_pins": {
+    "M-d93ca7824648496bae36a42ac100c12a": "f4c124443766523a83bd30636a909b0efd8528d2d8486351b7a6324680d3af9c",
+    "customer-attraction/common-source-swap-capacity-and-true-reorder-residual": "c8d6a9bbcd2fa0193f0157b98832aedf9d3a6f0d39585d154013a390dbf8de54"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/共同源交换的容量与真实换序残差--障碍.md": "42fe74a71d8291549591ec8abe4ea7b3c0a9a7e6aaee4151d44cc18d9080374d",
+    "archives/customer-attraction/state/引理/逐源容量二交换与行内再启动分布--引理.md": "b614116fc06f8f5b2091a34363bacede8bdac652b4330e33eb60548fe2972c1d"
+  },
+  "review_digest": "62729c828223eb505138be78ffadc75989301382cadd03ff0aa9b18cebf97465"
+}
