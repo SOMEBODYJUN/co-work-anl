@@ -1,0 +1,37 @@
+{
+  "edge_id": "ca-r38-aggregate-rank-to-independent-unit-backgrounds",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "FB-AGG-RANK"
+  ],
+  "target_ids": [
+    "FB-ALL-UNIT"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "k个不同背景标签，各恰一位；全部客户会员模式；必须先交换证明系数相同再聚合。",
+  "roles": {
+    "FB-AGG-RANK": "背景交换先使各背景系数相同后提供聚合核分类",
+    "FB-ALL-UNIT": "得到逐背景单人收益全部关系仍仅内部效率差及秩N−M+2"
+  },
+  "explanation": "先保每个背景标签c在qj的独立系数γc,j，不预聚合。只喜欢c的客户给Σjγc,j=0。任意c≠e作会员交换，δj=γc,j−γe,j满足Σδ=0，R(z)=Σδj/(z+j)在t和−M−t（t=1,…,k−1）处均为0。乘M+1个线性分母后分子次数≤M−1，却有2(k−1)>M−1个不同非极点根，故δ=0。于是同j所有背景系数相同，才合法回到聚合Hj。此时T={0,…,k}、d=k+1≥M+1，用FB-AGG-RANK只剩M−2内部效率差；它们在独有Aj坐标独立。总行数N=2M+k(M+1)，故秩N−M+2。",
+  "scope": "k个不同背景标签，各恰一位；全部客户会员模式；必须先交换证明系数相同再聚合。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/固定背景双主题收益切片的完整有理回路--定理.md",
+      "sha256": "3376e9adde9e73b3a1e7439c1230387051dce3979ef86df04010dea223148947"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "独立mirror实读当前登记、精确正文与所列证明；逐项核域、共同前提和关系方向，不以有限PASS替代解析证明。",
+  "whole_result": "在k≥M≥2且每个背景标签各一人的整域，全部逐背景收益的完整核与精确秩恰为FB-ALL-UNIT所述。",
+  "endpoint_pins": {
+    "FB-AGG-RANK": "8c6d1e21210e72ea03eb81b87b77e68c85039fc4152e7178ab6db71e11d804c3",
+    "FB-ALL-UNIT": "7adb999fbcf11eae18bfc66f4ac23a71eb0153112f7815bac656960adb03e6c7"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/固定背景双主题收益切片的完整有理回路--定理.md": "3376e9adde9e73b3a1e7439c1230387051dce3979ef86df04010dea223148947"
+  },
+  "review_digest": "d846097d7cc4b28ce717dcdfa5893ffe7d46f1a4a4078fa6fff77dd735a82168"
+}

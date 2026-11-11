@@ -1,0 +1,41 @@
+{
+  "edge_id": "ca-r38-fixed-query-cones-implement-zero-background-pb-attack",
+  "kind": "implements",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/first-pair-security-attacks-two-policy-cones-and-rational-postchecks"
+  ],
+  "target_ids": [
+    "M-0b376f94c10846d5942e2cbc14e7d0ad"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "精确固定p/完整σ的零背景strongPB搜索接口，静态竞争r−1槽；不扩成任意背景extra r槽或穷尽全部SPE。",
+  "roles": {
+    "customer-attraction/first-pair-security-attacks-two-policy-cones-and-rational-postchecks": "实现固定σ/p、非负客户锥与r−1静态竞争列的精确攻击接口",
+    "M-0b376f94c10846d5942e2cbc14e7d0ad": "原PB-strong成块归约及程序描述的被攻击全称前提；条件蕴含仍有效"
+  },
+  "explanation": "原成块归约中PB-strong的假设是任意合法背景、余r人每份完整子SPE首对≥2v_r(b)。本攻击方法只实现其b0固定σ、固定queryp切片：非负客户x、全有序真实Γx≥0，全部r−1槽静态列s_qx≥1，最小化首对dx；精确dx<2min_q s_qx及x≥0才给该输入的真反例。固定p不须安全最优，齐次后核无需恢复原归一值1。原报告无阳性且恢复x非负未显式核，不认证任何根失败。已证PB-extra巨背景反例使一般PB前提失效，但不能由它证明该零背景固定锥有阳性，更不能否定仍有效的条件成块蕴含。",
+  "scope": "精确固定p/完整σ的零背景strongPB搜索接口，静态竞争r−1槽；不扩成任意背景extra r槽或穷尽全部SPE。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/首对安全攻击的两种策略锥与有理后核--程序.md",
+      "sha256": "2c7aca7c8075b62b459b2724e9a18b85ab5b3947e86f5518b998616e384d8f2b"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/首对成块安全的条件归约与可信阈值缺口--资源.md",
+      "sha256": "f80669a3f0a6b221d2d3321ccc1af2a8ca172be708689594d41f245104dc9bce"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读当前精确正文，区分原输入纠错、独立真反族与条件归约；无新搜索或程序重放。",
+  "endpoint_pins": {
+    "M-0b376f94c10846d5942e2cbc14e7d0ad": "d43ac71ba7b06e783d3e4c62dbe92cbf1bebaedd485e063f7a90b80ae6f39d9f",
+    "customer-attraction/first-pair-security-attacks-two-policy-cones-and-rational-postchecks": "82e7d3a8224fc875f146b8717975a1acded3330523df3b674710b9bca33fd844"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/首对安全攻击的两种策略锥与有理后核--程序.md": "2c7aca7c8075b62b459b2724e9a18b85ab5b3947e86f5518b998616e384d8f2b",
+    "archives/customer-attraction/state/资源/首对成块安全的条件归约与可信阈值缺口--资源.md": "f80669a3f0a6b221d2d3321ccc1af2a8ca172be708689594d41f245104dc9bce"
+  },
+  "review_digest": "ce60737dab59839f0cdf07b3c30935d4b882a54eb2a76a90e364926c16ecf7cd"
+}

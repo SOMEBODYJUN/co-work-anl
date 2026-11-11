@@ -1,0 +1,42 @@
+{
+  "edge_id": "ca-r38-same-branch-credit-harmonic-reentry",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/same-branch-deletion-refund-and-old-prefix-positive-loss-sharp-common-credit"
+  ],
+  "target_ids": [
+    "customer-attraction/closeout-a3f5930bed307bd49861b037"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一真实SPE；每实际深度允许自身行动查询与任意未来删除；跨深度均权1。",
+  "roles": {
+    "customer-attraction/same-branch-deletion-refund-and-old-prefix-positive-loss-sharp-common-credit": "提供先退款的共同信用B及精确标量包络K",
+    "customer-attraction/closeout-a3f5930bed307bd49861b037": "在唯一单主题真SPE中使B=K并证明全深度单位权超支"
+  },
+  "explanation": "对任意m，一个客户x、唯一标签A={x}给唯一完整SPE A^m，W=OPT_m=1。第i实际节点自身查询后删全部未来，参数p=i−1,c=d=m,a1,d0=i。旧退款后E=(i−1)(1/m−1/i)+=0，G=1/i−1/m，故B=G；源精确K=max{0,1/i−1/m,0}=B。全深度各权1相加得Hm−1，m4起>W且随m无界。因此即使每个局部锐界都取等，也不能无条件重开同客户容量。所有原收益1/m，严格门槛W/m=1/m及OPT/(2m)=1/(2m)均不触发删除；没有遗漏客户，proper不同标签查询亦不存在。",
+  "scope": "同一真实SPE；每实际深度允许自身行动查询与任意未来删除；跨深度均权1。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/同枝删除返还与旧前缀正损失的锐共同信用--引理.md",
+      "sha256": "cb215f17594e876c2c8202875dc82cfe758e95e08974bfe05096dbddf7bdc56d"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/单主题真实均衡逐深度删除信用的调和重入--障碍.md",
+      "sha256": "2176bf1e361ce6ad1612304f4630566700cdeb29c4dc8273e319f57b56dbf5d4"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "独立mirror实读当前登记、精确正文与所列证明；逐项核域、共同前提和关系方向，不以有限PASS替代解析证明。",
+  "whole_result": "推出单标签真实完整SPE全参数调和重复入账障碍及它对严格内生阈值/遗漏机制的准确不反驳边界。",
+  "endpoint_pins": {
+    "customer-attraction/closeout-a3f5930bed307bd49861b037": "4c202ae108c66823e722adb831a68ddab5d684226118f47aefccb9a8510b1f12",
+    "customer-attraction/same-branch-deletion-refund-and-old-prefix-positive-loss-sharp-common-credit": "1da79bec655169381ba9b73c518c185f59e40fa09bf9903e519c8c74f85a5349"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/同枝删除返还与旧前缀正损失的锐共同信用--引理.md": "cb215f17594e876c2c8202875dc82cfe758e95e08974bfe05096dbddf7bdc56d",
+    "archives/customer-attraction/state/障碍/单主题真实均衡逐深度删除信用的调和重入--障碍.md": "2176bf1e361ce6ad1612304f4630566700cdeb29c4dc8273e319f57b56dbf5d4"
+  },
+  "review_digest": "1c9791b68892613d512e634bb6ab747f8248d211c74ca0b301c58223d18e38b8"
+}

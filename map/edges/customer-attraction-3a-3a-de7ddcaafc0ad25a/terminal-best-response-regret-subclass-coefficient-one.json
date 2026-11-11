@@ -1,0 +1,51 @@
+{
+  "edge_id": "ca-r38-terminal-best-response-regret-subclass-coefficient-one",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-3418b71c179a4c85a0c5b3c13995e8d6",
+    "customer-attraction/terminal-load-tail-and-minimum-optimal-cover-size",
+    "M-22df1141090140a88fd6a1d5a7f41040"
+  ],
+  "target_ids": [
+    "M-a314c9dcb7af4ad9a47a2e111c323080"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "任意人数m≥2、根无背景、完整计划；额外假设实际末位真BR及(k−1)u≤QB+F(O)。",
+  "roles": {
+    "M-3418b71c179a4c85a0c5b3c13995e8d6": "在任意早位计划但末位真BR时保留静态信用式",
+    "customer-attraction/terminal-load-tail-and-minimum-optimal-cover-size": "提供单客户位串几何与QB，早位IC改为加regret",
+    "M-22df1141090140a88fd6a1d5a7f41040": "提供同τ强制分支定义的实际ρ及全历史B比较",
+    "M-a314c9dcb7af4ad9a47a2e111c323080": "取得开放系数一目标在末位BR/负载信用子域的局部上界"
+  },
+  "explanation": "任意完整计划τ只要求实际末位为真BR。令ρi为实际节点同τ强制收益减规定收益的非负最大值；早位可强制同一末主题B，故ui+ρi≥qi(B)。末位自身无误差ρm0，逐客户位串论证仍给W+Σ_(i<m)ρi≥Σqi(B)≥QB。末位静态信用不需早位IC，仍有OPT−W≤(k−1)u−F(O)。若另有(k−1)u≤QB+F(O)，则OPT−2W≤QB−W≤Σ_(i<m)ρi≤B（全历史各层最大regret之和）。该局部合同完全不需要factor2。",
+  "scope": "任意人数m≥2、根无背景、完整计划；额外假设实际末位真BR及(k−1)u≤QB+F(O)。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/末位实际主题的负载尾和与最优覆盖主题数--定理.md",
+      "sha256": "5d296aeda1c8364a9c6c9b7ab064e12af910e709f3db96218630c5c030fee524"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/全历史后悔稳定界与真实后缀退出的解析复核--审查.md",
+      "sha256": "03c89fa7eb2703c0070eb2e1c6b5ecde80895e5d6047c9009d3441781cb57f17"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "独立mirror实读当前登记、精确正文与所列证明；逐项核域、共同前提和关系方向，不以有限PASS替代解析证明。 本轮仅同步共享可信退出源的末位Δ勘误及五owner新版本，其余本边推导未变。",
+  "contribution": {
+    "result": "在实际末位真BR且满足同一叶负载/最优信用条件的任意完整计划子域，系数一OPT−2W≤Σ早位ρ≤B成立。",
+    "remaining": "OPEN目标量化所有全历史factor2计划；并不自动给末位真BR或该负载信用条件。因此一般系数一义务及B0一般half仍未闭合。"
+  },
+  "endpoint_pins": {
+    "M-22df1141090140a88fd6a1d5a7f41040": "edaa32b85ff6986440d8cb8324311bc28cee5ed53940ac9e086702111201d111",
+    "M-3418b71c179a4c85a0c5b3c13995e8d6": "7b288b7b8a371a526432a0c664aa178f7ad8b84d9f3e568d73089ee9deaee455",
+    "M-a314c9dcb7af4ad9a47a2e111c323080": "b9372879fbd48a880ba06776a448ec0b40f34d5cb784b25b90c7ac3b9357d329",
+    "customer-attraction/terminal-load-tail-and-minimum-optimal-cover-size": "6ec6fee85d89bd87ae15917b26c8782e2e2f2bdceb88c64fa871641972ee6507"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/末位实际主题的负载尾和与最优覆盖主题数--定理.md": "5d296aeda1c8364a9c6c9b7ab064e12af910e709f3db96218630c5c030fee524",
+    "archives/customer-attraction/state/审查/全历史后悔稳定界与真实后缀退出的解析复核--审查.md": "03c89fa7eb2703c0070eb2e1c6b5ecde80895e5d6047c9009d3441781cb57f17"
+  },
+  "review_digest": "67b6f19b85a7c579c1d6788f400311c89a29d86b7d4a14b389fe181ea94921c5"
+}
