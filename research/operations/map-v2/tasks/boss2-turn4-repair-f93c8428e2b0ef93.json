@@ -127,12 +127,58 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss2",
-  "request_id": "e9f506a8584e4de2ba8fc938b5a0aec2",
+  "request_id": "68c737204c674cc3b5eb24c57780bc8c",
   "requests": {
     "4718bf02fc4443cd994b091c444975e5": "plan",
     "c77f36589b2f4dd18104dfd0ed38dbe5": "claim",
-    "e9f506a8584e4de2ba8fc938b5a0aec2": "read-add"
+    "e9f506a8584e4de2ba8fc938b5a0aec2": "read-add",
+    "68c737204c674cc3b5eb24c57780bc8c": "done"
+  },
+  "edge_paths": {
+    "um-fractional-forest-realizes-some-compatible-pairs-with-fixed-rows": "map/edges/boss2-forest-prescribed-pairs-3c-002d6e0879b30140/um-fractional-forest-realizes-some-compatible-pairs-with-fixed-rows.json"
+  },
+  "receipt": {
+    "coverage": {
+      "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1": {
+        "state": "linked",
+        "object_pin": "0117271b622daf5cc467317f1e1229b9ec5769c2d80ea71258bcf63a50cfff07",
+        "edge_ids": [
+          "um-fractional-forest-realizes-some-compatible-pairs-with-fixed-rows"
+        ],
+        "comparison_scope": "实读当前两个核心对象v1的完整正文及本任务全部reading_refs；另实读原六机反例UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1（registration_pin=d0bef948df0515503febaf7e048674f25a5c02f8f1ccf6b4550f2b6b610578a6）的全文 archives/unrelated-machines/state/反例/分数关联森林与指定配对律的全局不相容--反例.md（SHA256 ab12c07272e685786c230c17034c9fe63afcae5825af201769a1ad1930a9f239），包括“全部十五个指定配对律”“不可全局延拓的解析证明”“原调度与原行律仍完全可实现”。同时完整读其exact_kernel.py及原exact_kernel_output.json，核对r12=r23=0、r13=1与实际pair列表；复核旧收据和保留canonical边的完整构造。比较固定完整行律的森林实现与保持预先指定全部配对律的延拓，不将一般含环问题纳入已解决范围。",
+        "reason": "森林结论是：对每份满足精确覆盖及分数关联无环的给定完整行律y，存在一个支持真实原T调度且D_i=y_i的联合分布D。从这个D逐对投影，构造出某套同时可延拓的GPC₂配对π；这不给出对任意事先指定π的延拓。原六机证据的完整有限矩阵为每分量两机对own任务处理1、其余处理2，T=1；每行空/own单例各半，分数图为三条断开路径。原15对的公式是q=r_ij⊕s⊕t，r12=r23=0、r13=1，同分量互补。因此X_i=Z_(a_i)的三份限制准确为X1=X2、X2=X3、X1≠X3（均概率一），前两式推出X1=X3，故无任何联合延拓。每对仍有正确行边际及不交支撑；任意两分量四机的全部六对也可共同实现。独立无偏U_i并取Z_(a_i)=U_i、Z_(b_i)=1−U_i，给八个各质量1/8的真实阈值一调度且保全部原行律，OPT=1。原例否定的是∀π的加强，保留森林的∀y∃D结论。旧canonical边自行另取三台0号机两两反相关、其余跨分量对取乘积，亦是独立有效的全15对局部合法反例；其三布尔变量不能两两不同，不应与原证据的两等一不等混写。本收据保留该边的原SHA及有效构造，不为这次归因修正重复建边。"
+      },
+      "EA-GROUPED-CONFIG-GLOBAL-GLUE-v1": {
+        "state": "linked",
+        "object_pin": "9528168f0798b583ac2c68786ebc20df4cf94368b57a9f73d262ab16aecd643f",
+        "edge_ids": [
+          "um-fractional-forest-realizes-some-compatible-pairs-with-fixed-rows"
+        ],
+        "comparison_scope": "实读“全局耦合与阈值可行性”、保机器分组/无色目录边界及容量一星族全pair合同，并与固定行律森林定理、原六机反例全文（ab12c07272e685786c230c17034c9fe63afcae5825af201769a1ad1930a9f239）和其原Fraction证据比较。区分给定(y,π)的同时延拓、给定y的某个真实调度实现，以及原实例存在T调度三件事；旧边仅提供目标的一条森林特例贡献，不接管其任意原实例的完整等价证明。",
+        "reason": "对任何预先指定且局部合法的全部GPC₂配对，若有同时匹配它们的联合延拓，则有限多个两机不交事件同时成立，每任务重数为0或1且期望为1，故几乎处处恰覆盖并解码成真实T调度。反向从一份真实调度取得的是某套Dirac见证，允许重新选择行律和配对，不证明原指定π可延拓。森林定理更强地保持给定y，并由构造的D给出存在某套可延拓π的证书。原六机例的π准确强制X1=X2、X2=X3、X1≠X3；独立三比特调度虽保持相同y，却给另一套跨分量配对，因而原实例OPT=1与指定π不延拓完全相容。不得把该例写成三条原反相关，也不得把不延拓解释为阈值不可行或CONFIG间隙。保留边的独立三反相关构造同样只说明指定见证相容性另检；其推导和森林贡献均继续有效。容量一星族另有OPT=2−1/k>1的局部见证，它通过阈值不可行推出不延拓，属于不同证据机制；无色目录反例另因丢失机器身份，不能与这里的固定身份相关性障碍混同。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/boss2-forest-prescribed-pairs-3c-002d6e0879b30140/um-fractional-forest-realizes-some-compatible-pairs-with-fixed-rows.json",
+        "sha256": "04cc912ed6f5fd588b99ba084bfe741c4f3a0be85dc26ead6eb1839b18e0f6b8"
+      }
+    ],
+    "supersession": {
+      "boss2-forest-prescribed-pairs-3c-002d6e0879b30140": {
+        "reason": "定向更正旧收据对原六机指定配对证据的描述与归因：原15对为r12=r23=0、r13=1，三a机限制是X1=X2、X2=X3、X1≠X3。保留固定行律森林实现可投影得到某套可延拓配对的有效贡献，并明确“给定y存在D/某套π”和“延拓任意指定π”的量词不同；原调度可行性另行判断。旧canonical边完整自给的三反相关构造有效，非原15对的复述，因此保其字节及身份。",
+        "assets": {
+          "map/edges/boss2-forest-prescribed-pairs-3c-002d6e0879b30140/um-fractional-forest-realizes-some-compatible-pairs-with-fixed-rows.json": {
+            "disposition": "retained",
+            "reason": "完整复核该边：森林全机分解逐对投影的推导成立；自给三分量、三台0号机两两反相关、其它跨分量乘积的指定全pair家族逐对边际正确且不交，却无共同布尔实现；原T=1调度存在。此独立构造不依赖将原六机的r12/r23误写为1，故原资产无需修改，按原SHA256 04cc912ed6f5fd588b99ba084bfe741c4f3a0be85dc26ead6eb1839b18e0f6b8原样复用。"
+          }
+        }
+      }
+    },
+    "follow_up_tasks": [],
+    "closed_overlaps": [],
+    "review_note": "本轮接续完整实读本修复task的全部reading_refs、三个当前对象及旧task/receipt/edge，另完整实读指定只读反例的正文与两份原Fraction证据。11个独立正文/证据文件SHA和唯一复用资产SHA均与当前字节一致；保留canonical边的当前edge-check通过，proof_scope=step。本修复及被替代原task均未声明follow-up对象对，因此不把已在coverage解决的本包比较或一般含环阅读线索制造为closed_overlaps或后续队列义务。六机原证据与旧边自给的另一构造已分别核明，未重跑或改写原exact_kernel_output.json，未修改保留边。"
   }
 }
