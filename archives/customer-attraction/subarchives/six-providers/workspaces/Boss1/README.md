@@ -1,23 +1,27 @@
 # Boss1：恰六人半覆盖
 
-RUN：`six-boss1-20261111`；Boss1；分支`rebuild/research-v2`；存档`customer-attraction`；子档`six-providers`。
+RUN：six-boss1-20261111；Boss1；分支rebuild/research-v2；存档customer-attraction；子档six-providers。
 
 ## 恢复入口
 
-实际clone：`/workspace/scratch/b0fef5ec503f/co-work-anl-boss1`。工作区`research/workspaces/six-boss1-20261111/`。先读`main.md`顶部Stage11、`spec.json`、实际任务稿及输入，再用`research resume six-boss1-20261111`核不可变证据、反馈和状态。环境丢失时同Boss/分支/存档/子档执行start --resume。原题仍OPEN，继续Main循环。
+实际clone：/workspace/scratch/b0fef5ec503f/co-work-anl-boss1。实际工作区research/workspaces/six-boss1-20261111/。先读main.md顶部“Stage11结果”、spec.json及实际任务稿/输入，再用research resume six-boss1-20261111核证据包、反馈和状态。环境丢失时同Boss、分支、存档、子档执行start --resume。原六人2W≥OPT6仍OPEN，继续Main循环。
 
-## 当前精确数学
+## 当前结论
 
-第九必要系统20910×20585精确最优W≈.49304863960834766、O=1，531正对偶匹配；相对19662值严格增约2.1718440919348508e−9。当前点SHA`cb45ee6f8df153764c91bd77d0543527cc44719ff7cc43646ffce06a7921a932`；证书在`full624_augmented_lp/recovery/`，入口`full624_augmented_lp/recovery_report.md`，Main全行列核`main_20910_audit.json`。低于half不是SPE反例或全域福利界。
+旧20910×20585必要系统精确最优W≈.49304863960834766，531正对偶匹配；其cb45原始点现已被普遍必要式MC6排除。MC6保同一个全目录最大潜力标签X，将倒二cap/RC、实际末位报价及裸K容量一起消元，K归一精确余量约−.11768241938025059。此次数值排除保同一原语义及全目录K，不证明整个旧最优面排除或六人half。
 
-旧b0ca点有100原子D/R/Z/B4共同客户层；其完整164标签目录却不能支持actual尾：强制Z1非对角后唯一BR为A6，第五位提高约.04226956。见`finite_two_tail_164.md`和Main末两位判据。增加标签、改变客户律尚未排除。
+正式解析入口为父档引理“共同最大潜力主题的末两位容量投影”；工作证据terminal_response_cycles.md/同名目录、main_verify_maxb_cut.py及main_maxb_cut_audit.json。旧最大X和RC归旧owner，新增的是五预算投影及已认证点的严格分离。
 
-旧根17边缘被8个上界排除；新299行的35μ也已被两条精确固定边缘运输上界排除，其中跨根真末对上界约−.04133362，反查R上界约−.00698366。见`root_network_joint.md`，不能推成旧原点排除。新cb45点的Z后继E完整893行已有精确可行证书，仍缺共同跨E/R/Z查询。冻结RZ五权与四追加互查仍容许空新末题；Main已明确其违反对六T均值的真实末位查询。背景21参数指定单案在65态仍全锥>7/100。
+cb45的完整438主行根排序包络有精确120正μ完成，全部36776不等式/38等式通过；完整177RZE单查询也有精确E完成，全部21572行通过。新E却违反同一B4的两个条件联合上界（约−.00239255、−.00140459）。各结论保明确有限范围，不构成共同客户律或完整SPE。原始云数组/精确证书在root_sorting_20910/及rze_query_closure_20910/。
+
+旧b0ca点的100原子D/R/Z/B4共同层及164标签实际末两位排除仍有效；增加目录或改变客户律未排除。更早所有点按各自指纹读取，不迁移结论。
 
 ## 实际在续
 
-`/root/root_sorting_20910`重选根μ，438主行与排序片已独立审计；请求`C-six-boss1-root-sorting-20910-01`。`/root/rze_query_closure_20910`自由E的21572行已审计；请求`C-six-boss1-rze-closure-20910-01`。本次checkpoint推送请求后查询实际run，取回数组再做精确恢复。Main新同B4条件上界供E可行后的下一层。`/root/terminal_response_cycles`将旧共同max-B主题引理接入当前点的一份X及490更紧PAIR钱包。路径均为同名目录和.md，最新义务以`main.md`顶部为准。
+/root/maxb_augmented_lp唯一下一发现为maxb_augmented_lp/full_lift/完整22297×21021共同X系统，矩阵SHA c054aadf745ea4540233a3da693917498527d19d4ccecb0fdd34ad884e461e4b；保旧20910系统全部内容并加1387行/436列。独立全结构及旧下界PASS。正式请求C-six-boss1-maxb-full-lift-22297-01，DS1800秒/job40分钟。推送后查询实际run，取回输出后由原代理精确恢复原始/对偶。单切20911准备保留但未执行。
+
+/root/maxb_h3_bridge的10u4−9κ族及17行已完成并由maxb_h3_audit独立PASS；Main已合成HMP六参数族，待新点评价，不改冻结22297。maxb_universal_audit已完成MP/MC6审核。root_x_joint_contract正在核同X/旧RZ与根μ共同合同，maxb_h3_pair_strength正查三份真两尾PAIR能否降低10。完成的根/E/循环和两项审核均已关闭释放。
 
 ## 远端状态
 
-最近确认pushed为`0f9749da0b907474afddf48fd571c2e2b2a39854`（stage10），收据`checkpoints/stage10.json`。第九精确证书、D层、164目录排除、根两运输障碍、E893层、actual490PAIR和RUN均已远端可恢复。下一根/E自由闭包输入与Actions请求待下一次推送；不能把本地草稿或Actions绿色状态当精确数学证书。原题继续研究。
+最后确认pushed为e4b9a8702cab8fe47ca4370fd5d025ee3b7d70cc（Stage11两项闭包输入），收据checkpoints/stage11-inputs.json。新MC6、完整根/E精确结果、正式回流和22297请求在下一checkpoint确认前仅本地可恢复；新请求云端产物尚未产生。继续研究，Actions成功不代替精确数学。

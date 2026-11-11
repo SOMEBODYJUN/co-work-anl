@@ -1,0 +1,18 @@
+{
+  "slack": "S = A_old*x + B*mu + C*min + D*L",
+  "main_inequality": "S + delta >= 0",
+  "other_inequality": "S >= 0",
+  "scipy_inequality": "-(B,C,D)*y - main_indicator*delta <= A_old*x",
+  "equality": "E*y = -F_old*x",
+  "nonnegative_variables": "all mu, min, L, delta",
+  "objective": "min delta",
+  "method": "highs-ds",
+  "options": {
+    "primal_feasibility_tolerance": 1e-09,
+    "dual_feasibility_tolerance": 1e-09,
+    "time_limit": 1800.0,
+    "disp": true
+  },
+  "dual_conversion": "For scipy marginals pi<=0 and eta free, set lambda=-pi>=0 and mass multiplier rho=eta; sum(lambda*slack)+sum(rho*mass) has nonpositive lifted coefficients at positive-phase optimum. Its old value equals minus the dual objective. Exact recovery is mandatory.",
+  "no_other_optimization": true
+}
