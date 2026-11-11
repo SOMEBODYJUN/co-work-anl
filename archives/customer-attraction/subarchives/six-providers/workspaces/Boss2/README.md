@@ -16,14 +16,12 @@
 
 ## 当前可接续成果与边界
 
-最新Main整轮笔记为 `research/workspaces/six-boss2-20261111-cross/round5-main-update.md`，已追加进 `main.md`。该页逐项区分已证、有限结论、失败机制和下一问。
+最新Main完整笔记为 research/workspaces/six-boss2-20261111-cross/round6-main-update.md，已追加进main.md。必须先读该页与实际文件，再research resume原RUN。
 
-1. `master_cuts/`保存5716至5786/5799及完整有限ZZ扩展的精确证书。最新11418×7639系统准确最优W约0.49265432731768616，与5786/5799同值。全点`complete_zz_5799_v1_exact.json` SHA `e5cd48369fc08f652490b09ecddc80dbacc09dd45d06e5fe97dc64de3f247075`，旧4849列投影SHA `1af6fd35f9cf1a51220072e627df042b450a52a7c6ecac388a98247ecac043d2`；Main全行/列独审PASS。仍限固定16hist必要图，不是SPE或一般半覆盖下界。
-2. 5752早期对偶恢复问题已准确解决；原点字节未改，全部146正乘子与4849列通过。不要把早期失败记录误读为现状态未闭合。
-3. 新严格层级 P616⊊P332⊊交P76 有两份独立有理见证；共享真实V的独立初段/折扣尾合同、任意尾长平衡权统一正价已证明。新增对象ID分别为 `M-b1b4276f0ec747ed8c347bda65c9e0af`、`M-63c882b0c8414805a43d4d8d4e43f4e3`、`M-043045ec129b4a5f82a3368b324accf9`。有限计算对象 `M-ddceaa3d53064498b3e833a32e1f3b6f` 升version2至5783。正式路径/哈希在 `formal-round4-identities.json`，登记和边审回执在 `formal-round4-integration-receipt.json`。
-4. 删12条beta非零行而保留所有同期普通更新的5763系统有准确可行点，证明这12条具体正尾合同对有限目标有严格增益；不扩大成整个旧无限锥的严格分离。
-5. 全部39个有限ZZ min上界已一次完整纳入、精确闭合且不能再分离当前投影。原末R/Z对宏B/C/J/V的8条反查给624；一份新增单hist的actual关联有理提升已由Main独审证明P624严格包含于P616。它不是固定主图或SPE反例。
-6. 同一R^C/Z^C的49:10零K合账、统一末位IC权、固定同权共享增益及u6信用已Main独审；仍未支付u4主要预算。正式入口待以原对象接续升级，具体工作文件及SHA见第五轮笔记。
-7. 三代理保持Boss2身份：joint制备完整624共同提升（预计12666×12631，尚未独审求解），master定向实读全历史精确搜索既有范围，coverage重算更强末位信用移账。没有待取回云端任务。
+1. 最新已认证系统为12666×12631，固定16hist，完整ZZ加actual第四源/R/第一非对角结构的624共同提升。准确最优约0.49265618211149476，仍低于half。全点master_cuts/complete624_actual4_R00_opt_v2_exact.json SHA02bcb92f33f7e7e4fac00a4c64fd39b0a4f0c68a736559c300bbfba255168817；原4849投影SHA75cf981c8e9a6554b796735b3e96c7e1145f420addec0ba045b25a293139803c。Main全部原/对偶、projection、39ZZmin独审PASS。
+2. 层级M-b1b4276f0ec747ed8c347bda65c9e0af版本2给P624⊊P616⊊P332⊊交P76，共同17hist域；主矩阵仍16hist。有限M-ddceaa3d53064498b3e833a32e1f3b6f版本3涵盖十份有限最优及一指定真目录排除。新M-736ccd964c384f16a6816eebcb468f2f证明148951u4−1278u6≥(10857/2)OPT6−(88871/9)W，尚未支付u4。正式正文、登记、8边审计均已本地完成，pushed以实际回执为准。
+3. 唯一12标签48整数兴趣类型博弈全部完整SPE均选六T各一次，最坏W/OPT=1。六A目标在A1…A4后被偏T1严格挡住，完整末回复为T2…T6。Main核18564菜单状态和完整DAG全部行动IC。仅排该固定目录，不排附加标签，输入绑定前一ZZ点。
+4. 最新624点在已知81跨真实分支单查询中仍有9负，12等权双中2负（代理精确报告，Main正在逐系数接入）。新20701×20585单查询完整扩展已制备，文件transport_closure/complete624_single81_v1_matrix.json.gz SHA99822b719bf53a1cef1b751e027c84a0fe2754fba1ae45b6de8a28792ae46c34。尚待Main7954阈值/81预算独审，未优化；不是共同运输闭包。
+5. 实际在岗：/root/transport_closure 构造；/root/transport_exact 适配精确恢复（Main PASS硬门）；/root/direct_tail_budget 核直接末两人新候选相对旧全参数族，尚不认领新主图分离。旧master_cuts/joint_requery/coverage_bridge的本轮义务完成并冻结。代理沿用Boss2，不做Git。无待取回云端任务。
 
-本次checkpoint前最后确认pushed的远端提交为 `87847ecd75c6f71b67ec5ddb5bae5f85b4318e1f`，回执 `checkpoint-fourth-confirmed.json`。本轮新结果完成后，以最新checkpoint的 `pushed` 与 `pushed_head` 为恢复上限。工作区未标已确认回执的更新须先检查Git；不要将本地草稿当作远端已保存。
+本次checkpoint前最后确认pushed为cb23334b6b4516a7a7ba81b45f64d67f3bc556f9，回执checkpoint-fifth-confirmed.json。本轮更新只有在下一份checkpoint确认pushed后才是远端可恢复。原题仍OPEN；先接新81完整层的系数审计与准确重优化，继续推导和核回。
