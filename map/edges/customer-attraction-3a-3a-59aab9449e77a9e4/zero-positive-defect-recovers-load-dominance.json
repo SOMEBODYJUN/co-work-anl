@@ -1,0 +1,36 @@
+{
+  "edge_id": "ca-b6-r48-zero-positive-defect-recovers-load-dominance",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/terminal-pair-positive-negative-load-defect-exact-decomposition-and-conditional-half"
+  ],
+  "target_ids": [
+    "CA-TERMINAL-PAIR-LOAD-SECURITY-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一完整根SPE及actual前t=m−2槽/末两A,B；存在α,β≥0、总权t，且D(α,β)=0。",
+  "roles": {
+    "customer-attraction/terminal-pair-positive-negative-load-defect-exact-decomposition-and-conditional-half": "精确P=αuA+βuB+R−D和尾保底链。",
+    "CA-TERMINAL-PAIR-LOAD-SECURITY-v1": "H的守恒福利结论与点态条件等价；独立85节点扩类见证不在本推导内。"
+  },
+  "explanation": "每个被计D项非负、分母c>0，D0当且仅当p≥α1A+β1B，未覆盖客户两边0。因此条件正是H。恒等式给P≥αuA+βuB；两实际尾各≥θ(h)，得W≥mθ(h)≥mv。静态计数界给mOPT≤(2m−1)W。H区间等价亦直接逐membership：交集p=t，A/B差集分别α≤LA、β≤LB，存在总权t当且仅当LA+LB≥t，空差集最小按t。",
+  "scope": "只得到H对象的条件定理和等价检查；不从一般代数生成独立四客户完整σ。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/末两主题正负负载缺口的精确分解与条件半覆盖--引理.md",
+      "sha256": "307705e20431f0a78b422bb6a28ecf9ca0a602524311a1d23eb979dcdb3b6083"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/真实末两主题负载继承--定理.md",
+      "sha256": "a91e04c79a96c76bfd708f4b0fedf282c4c6df791024846f0d4b0b6d6c09e22f"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "复用本Boss round48成熟数学草稿；本轮逐边实读解释与结果范围，核当前注册陈述、量词、假设及版本。未变原承重正文及成熟证书按旧reading-ledger复用；本轮新增实读与ETA更正另记refresh-review，未重跑旧数学程序、LP、BI或全树审计。只得到H对象的条件定理和等价检查；不从一般代数生成独立四客户完整σ。 源对象整体登记conditional，按该完整源合同保留conditional；本边已证的D0=H限制域推导无新增缺步，普通合法叶/固定总权参数不另充开放前提。贡献只含H条件福利与LA/LB等价；独立85节点扩类证据仍按contribution.remaining另承。 此为当前完整源合同的保守依赖类型，不表示关系证明存在数学缺口；不改source truth_status，不扩大whole_result/contribution。",
+  "contribution": {
+    "result": "H条件及其LA/LB等价检查，和H下完整条件福利W≥mθ(h)≥mv、mOPT≤(2m−1)W。",
+    "remaining": "H对象另含四客户四人85节点可实现严格扩类见证；那由已读独立成熟原JSON/审计合同承担，不由本D0推导产生。"
+  }
+}
