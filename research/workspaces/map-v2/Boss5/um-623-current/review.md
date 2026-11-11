@@ -20,8 +20,9 @@
 
 正文、边和收据都在任务 write_paths 内。已 `edge-bind --write`，
 随后 `edge-check` 报结构有效、`proof_scope: whole`；数学判断由上述
-完整论证承担。收据含该对 `closed_overlaps`，无新增只读对象或承接
-任务请求。最终 Git、checkpoint、done 由父 Boss 组织。
+完整论证承担。任务未将该对列作 follow-up，故收据不填
+`closed_overlaps`；实际已解决比较保留在 comparison_scope/reason。
+无新增只读对象或承接任务请求。最终 Git、checkpoint、done 由父 Boss 组织。
 
 ## 附带的平面任务交叠图观察
 
