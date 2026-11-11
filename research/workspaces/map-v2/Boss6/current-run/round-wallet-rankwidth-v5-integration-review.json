@@ -1,0 +1,830 @@
+{
+  "reviewed_by": "Boss6",
+  "manifests": [
+    {
+      "path": "research/workspaces/map-v2/Boss6/current-run/round-rankwidth-current-receipt-manifest.json",
+      "sha256": "ef37eb6e9e3418b1dcb805dc7990742d909512753ed79f9dfa367c1d6306cf75"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss6/current-run/round-wallet-current-receipt-manifest.json",
+      "sha256": "6711a8ebb15369196f8da47663a67f0693da45dc420afc9636eba72e2521e010"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss6/current-run/round-v5-algorithm-repairs-receipt-manifest.json",
+      "sha256": "438170798209f036082d0b6009d49d04f520b5929063ec05f027ac68542207a8"
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "unrelated-machines-3a-3a-d97d472e04065fc5",
+      "receipt_file": "map/receipts/unrelated-machines-3a-3a-d97d472e04065fc5.json",
+      "receipt_sha256": "040bc525fe6e280906c6e08b8790b725ff0206aeb4185a2c0a66cb1bee1a8f9a",
+      "relations": [
+        {
+          "path": "map/edges/unrelated-machines-3a-3a-d97d472e04065fc5/lst-st-rounding-contribution.json",
+          "sha256": "5e52af28da56103119e5ff090d30e6dec70d6b02f61296cb392cc293adae5785",
+          "edge_id": "um-lst-st-to-incidence-rankwidth-size-reduction",
+          "proof_scope": "step",
+          "relation_mode": "unconditional"
+        }
+      ],
+      "input_pins": {
+        "M-3452046f3bdd47c48b17a0a3038ba4b2": "ba12f5b18a9a510724838777afe59d7cd3424453bc0e55a74d2d56b5b840687e",
+        "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding": "c12cff11f8d9d634441f752ebe101222ec0faba1d570a402caf2618f68edb356",
+        "unrelated-machines/lst-two-approximation": "5771433d59066caee67ea38680fecaca5af89e91b7370b31d54ba9af99818374"
+      },
+      "receipt_pin": "1670558f5d1e5e2cd3bcf886876adfe642298da4b3e683be8c57c39f284bd5fd",
+      "coverage": {
+        "M-3452046f3bdd47c48b17a0a3038ba4b2": {
+          "state": "linked",
+          "object_pin": "ba12f5b18a9a510724838777afe59d7cd3424453bc0e55a74d2d56b5b840687e",
+          "comparison_scope": "当前M345 v5完整合同/共享中文全文、LST v2和ST v1完整合同及资源全文；复用原完整rankwidth主稿、历史PDF读取账本和4页图，全文读独立固定尺寸DP接口窄审及其ledger。核完整尺寸化/克隆/恢复与cut类型/translation/实际身份拼接/叶根回溯/复杂度；本次没有新读原PDF或重跑科学程序，treewidth/FPTAS仅核非迁移边界。",
+          "reason": "LST给实际OPT≤B≤2OPT，ST接受克隆实际计数诱导的任意分数点，二者共同完整支付尺寸归约及仅small恢复，得到一条accepted ALL局部贡献。完整目标的固定尺寸rankwidth DP独立证明已保留并由窄审核整数拼接；这些不由两资源本身单独提供。v5已落实m²及单列分解构造，旧v4阻塞关闭；无身份/版本needs-decision。",
+          "edge_ids": [
+            "um-lst-st-to-incidence-rankwidth-size-reduction"
+          ]
+        }
+      },
+      "parent_review": {
+        "reviewed_by": "Boss6",
+        "mathematical_checks": [
+          "Root全文核当前9654字符完整review、独立接口审查、最终贡献边和receipt；旧完整主稿已于来源更正前实读并保全。此前Root全文读两成熟ST/LST资源并视觉核原PDF页17的m²；本轮不冒称Root或fresh worker重新逐页读原PDF。",
+          "LST实际调度给OPT≤B≤2OPT；δ=min(1/3,ε/7)，大任务向上δ²B网格、小任务ceil(np/(δB))个同资格克隆，N≤n²、d′≤ceilδ^-2+1，原最优同机复制给OPT′≤(1+3δ)OPT。",
+          "给定实际克隆调度，小任务分数x=a/r具有列和1与正确资格，行负载≤该机clone负载；只对small调用任意分数点ST，big机器固定，恢复加性≤δB，故(1+δ)(1+3δ)+2δ≤1+ε。未让ST自己承担结构DP或把LST顶点舍入冒充任意分数点。",
+          "对每个固定实际出口H，入口同cut邻域同尺寸置换逐机保持资格和负载，所以可以先选子最优出口再用对侧实际出口替换规范入口。出口需类内实际subset最小化，2job/2machine例任取代表会1变∞。来源细类先拆再translate，左右任务域点并恰为父域，机器域不交，实际整数回溯成立。",
+          "计数含0，机器叶保原页14资格拒绝分支；零外邻域局部出口可有限但不能在根形成完整错解。克隆false twins给width≤max(k,1)。给定分解DP/预处理m²(n+1)^{O(d2^k)}及f(k)(n+m)^3分解构造分别计费，fixedk/fixedε仅PTAS。",
+          "单一ALL只支付尺寸化和克隆恢复局部步骤，remaining说明固定尺寸DP已由独立完整主稿/接口审查支付，非全目标未证。十份历史资产按原字节保留；旧勘误draft已实施，只保来源史。"
+        ],
+        "new_mathematical_program_runs": 0,
+        "old_scientific_program_replays": 0,
+        "native_validation": "The unique active edge was natively bound and structurally checked against current-v5 endpoint and evidence pins."
+      },
+      "closed_overlaps": [],
+      "additional_comparisons": [
+        {
+          "core_id": "M-3452046f3bdd47c48b17a0a3038ba4b2",
+          "peer_id": "unrelated-machines/lst-two-approximation",
+          "disposition": "resolved-joint-local-contribution",
+          "edge_ids": [
+            "um-lst-st-to-incidence-rankwidth-size-reduction"
+          ],
+          "reason": "实际2近似调度给可计算B∈[OPT,2OPT]；单独未给small任意分数点恢复或固定尺寸DP。与ST合用完整支付尺寸归约，非单独近1推导。"
+        },
+        {
+          "core_id": "M-3452046f3bdd47c48b17a0a3038ba4b2",
+          "peer_id": "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding",
+          "disposition": "resolved-joint-local-contribution",
+          "edge_ids": [
+            "um-lst-st-to-incidence-rankwidth-size-reduction"
+          ],
+          "reason": "对实际克隆诱导x接受任意分数点；零费用共同匹配保持原身份/资格，small每机添≤δB，big锁机。单独未给尺度B或固定尺寸DP，与LST组成同一ALL局部贡献。"
+        }
+      ],
+      "follow_up_tasks": [],
+      "supersession": {}
+    },
+    {
+      "task_id": "customer-attraction-3a-3a-ca44cde7e1f709dd",
+      "receipt_file": "map/receipts/customer-attraction-3a-3a-ca44cde7e1f709dd.json",
+      "receipt_sha256": "9d9bab62befc1cdd713e5eaa20668b23af3bb4031437ad4453f08cbd556b0988",
+      "relations": [
+        {
+          "path": "map/edges/customer-attraction-3a-3a-ca44cde7e1f709dd/bilateral-to-common-density.json",
+          "sha256": "34608b55526fd977fdc0ee9607ecd44f3292050989fa268f5d9e940df6f66485",
+          "edge_id": "cag-ca44-bilateral-to-common-density",
+          "proof_scope": "whole",
+          "relation_mode": "unconditional"
+        },
+        {
+          "path": "map/edges/customer-attraction-3a-3a-ca44cde7e1f709dd/common-density-to-prefix-pushback.json",
+          "sha256": "51bb5a0c05df23ab6f93bc6dd9ffec81f636f4c374d1ef0d793e81edefc45308",
+          "edge_id": "cag-ca44-common-density-to-prefix-pushback",
+          "proof_scope": "whole",
+          "relation_mode": "unconditional"
+        },
+        {
+          "path": "map/edges/customer-attraction-3a-3a-ca44cde7e1f709dd/common-density-to-real-query.json",
+          "sha256": "cf473e8e22eb67426b8215d17173f347efe3a0e3271300dd55b7fb00960bcc39",
+          "edge_id": "cag-ca44-common-density-to-real-query",
+          "proof_scope": "whole",
+          "relation_mode": "unconditional"
+        },
+        {
+          "path": "map/edges/customer-attraction-3a-3a-ca44cde7e1f709dd/root-wallet-given-up-terminal-transfer.json",
+          "sha256": "29cf6f0c675713a6360df5624d26235bcc8b7b69de92b8bea57b14f507c2d48a",
+          "edge_id": "cag-ca44-root-wallet-given-up-terminal-transfer",
+          "proof_scope": "whole",
+          "relation_mode": "conditional"
+        },
+        {
+          "path": "map/edges/customer-attraction-3a-3a-ca44cde7e1f709dd/static-row-to-reverse-nonnegative-remainder.json",
+          "sha256": "9ab912ed207a402205395df4696a82e9b0ced0d555df43c28305148417705a16",
+          "edge_id": "cag-ca44-static-row-to-reverse-nonnegative-remainder",
+          "proof_scope": "step",
+          "relation_mode": "unconditional"
+        },
+        {
+          "path": "map/edges/customer-attraction-3a-3a-ca44cde7e1f709dd/universal-price-and-root-wallet-transfer.json",
+          "sha256": "188f0e47d85b28a4506a4fedb7f6ea82607c9dfffe1329a3c4473d82b373251e",
+          "edge_id": "cag-ca44-universal-price-and-root-wallet-transfer",
+          "proof_scope": "step",
+          "relation_mode": "conditional"
+        },
+        {
+          "path": "map/edges/customer-attraction-3a-3a-ca44cde7e1f709dd/whole-catalog-price-excludes-single-point.json",
+          "sha256": "a94fab1e56e3e5dff5bf01bd57a0551453d0bbe9a13c091973c16f4d6b586137",
+          "edge_id": "cag-ca44-whole-catalog-price-excludes-single-point",
+          "proof_scope": "step",
+          "relation_mode": "unconditional"
+        },
+        {
+          "path": "map/edges/customer-attraction-3a-3a-ca44cde7e1f709dd/whole-catalog-price-excludes-three-point.json",
+          "sha256": "80cea2004fbe309fc9c319a645edbfb75488912e85367dbafe1a813fc06538f9",
+          "edge_id": "cag-ca44-whole-catalog-price-excludes-three-point",
+          "proof_scope": "step",
+          "relation_mode": "unconditional"
+        }
+      ],
+      "preserved_shared_evidence": [
+        {
+          "source_path": "research/workspaces/map-v2/Boss6/current-run/wallet-transport-audit/ancestor-normalization-supplement.md",
+          "preserved_path": "map/edges/customer-attraction-3a-3a-ca44cde7e1f709dd/preserved-shared-evidence/wallet-transport-audit/ancestor-normalization-supplement.md",
+          "sha256": "cafc3606dad4fd4385090122748460b76d9ae4e7654491b4f54ed0c5f94cddd5",
+          "reason": "Exact already-published read evidence preserved within this task reserved write scope; original source and reading attribution remain unchanged."
+        },
+        {
+          "source_path": "research/workspaces/map-v2/Boss6/current-run/wallet-transport-audit/independent-review.md",
+          "preserved_path": "map/edges/customer-attraction-3a-3a-ca44cde7e1f709dd/preserved-shared-evidence/wallet-transport-audit/independent-review.md",
+          "sha256": "5d593c3face68c741d4f0d71190fb88c007544f4941837620124f597d5cb715f",
+          "reason": "Exact already-published read evidence preserved within this task reserved write scope; original source and reading attribution remain unchanged."
+        },
+        {
+          "source_path": "research/workspaces/map-v2/Boss6/current-run/wallet-transport-audit/independent-reading-ledger.json",
+          "preserved_path": "map/edges/customer-attraction-3a-3a-ca44cde7e1f709dd/preserved-shared-evidence/wallet-transport-audit/independent-reading-ledger.json",
+          "sha256": "d7dbd5b19dbb6556400ead37571a5d81da7c5c38eb53f08ab94743c0c5e5aab6",
+          "reason": "Exact already-published read evidence preserved within this task reserved write scope; original source and reading attribution remain unchanged."
+        },
+        {
+          "source_path": "research/workspaces/map-v2/Boss6/current-run/wallet-transport-audit/price-scope-supplement.md",
+          "preserved_path": "map/edges/customer-attraction-3a-3a-ca44cde7e1f709dd/preserved-shared-evidence/wallet-transport-audit/price-scope-supplement.md",
+          "sha256": "92ebfca0a1696507b0ab6c04d0dbedc6646895391fa4ec2b0a0c7c5d74ba5a79",
+          "reason": "Exact already-published read evidence preserved within this task reserved write scope; original source and reading attribution remain unchanged."
+        },
+        {
+          "source_path": "research/workspaces/map-v2/Boss6/current-run/wallet-transport-audit/manifest.json",
+          "preserved_path": "map/edges/customer-attraction-3a-3a-ca44cde7e1f709dd/preserved-shared-evidence/wallet-transport-audit/manifest.json",
+          "sha256": "b17c59fc08c6539d275cb07b28fd3653446f219adb0ddf123309b8a945f9333e",
+          "reason": "Exact already-published read evidence preserved within this task reserved write scope; original source and reading attribution remain unchanged."
+        },
+        {
+          "source_path": "research/workspaces/map-v2/Boss6/current-run/price-label-quotient-comparison-note.md",
+          "preserved_path": "map/edges/customer-attraction-3a-3a-ca44cde7e1f709dd/preserved-shared-evidence/price-label-quotient-comparison-note.md",
+          "sha256": "3f77a0ca0f87fd26b5e3503e7f12ea8bd483b43a130c70a61df8cea851079ac9",
+          "reason": "Exact already-published read evidence preserved within this task reserved write scope; original source and reading attribution remain unchanged."
+        },
+        {
+          "source_path": "research/workspaces/map-v2/Boss6/current-run/price-label-quotient-3b-plan.json",
+          "preserved_path": "map/edges/customer-attraction-3a-3a-ca44cde7e1f709dd/preserved-shared-evidence/price-label-quotient-3b-plan.json",
+          "sha256": "bf67c30b9eaefac1cf16f39bc04a804ee6c61a9148b8b07d84f95a39f838b1ee",
+          "reason": "Exact already-published read evidence preserved within this task reserved write scope; original source and reading attribution remain unchanged."
+        }
+      ],
+      "input_pins": {
+        "M-8170674befc34fdf866ec8fbd76d43c4": "7f471536ffeeca9be092b0c3e3196fe5de27799b2564d1b2a74472c6d3e45292",
+        "M-b685609e9c8844768f9f83e56b1b5c88": "baca4c99f0c6170ad870266a5ffc20bbba4010e968e1f1e0494fcf8df2dafabf",
+        "M-c53fb7d0b92a42f9932d5d637d6a97ba": "6da730ca6b6cfa493c642cbd749ceaed1faf409c1f81660d225ac02b49aae41c",
+        "customer-attraction/terminal-normalization-independent-contract-and-eight-client-threshold-case": "9e9287bfd079dfb7bd9bd02c54e31ea51147bd70eb9a5e13d2379039498f0852",
+        "customer-attraction/universal-signed-credible-defect-price-equivalence": "dbc52fcf418dbdbecccd087fec391fc9e2bf5d35bf8bdefc34c70bff61c0b44c",
+        "customer-attraction/one-root-wallet-for-terminal-BR-normalization-and-true-price-transfer": "f68349d7174fa7173052a5dc75374c1e05e84d41815a9468b1f183d458eaf100",
+        "customer-attraction/two-leaf-shared-client-profit-bilateral-coupling": "2e8e4215b7477e7ca1818c375beca8f0ccf09e78e98984a886a81d84d09d3b48",
+        "M-57cc29d007474699abddc1bc2a9ab543": "e6c760f8f08d4e10b35db415f8092e014bbf33095f49705cc4907254f4aaa75f",
+        "customer-attraction/common-coverer-request-density-projection-and-static-column-deficit": "5278eee5e2b340199210488fa6b01c52744bc53ee0e6103120081a51666abdb8",
+        "customer-attraction/prefix-request-pushback-monotone-prices-and-ancestry-normalization": "dd4cfbdb62edb482c0f83dc8b278f7843d9b53b24305c0e3a905a834ec52991c",
+        "M-b29430314bce490aa4c60a00b48a7430": "d0c51bf6a547891cd43938d9e47a6d9282c2dbe506b325ca7c2b2f18fee65f15",
+        "customer-attraction/joint-column-capacity-and-positive-tax-preserving-reverse-split": "4329e761753a15cc3ad30f1ffbb8e20ee55bc84fb9c992d84282b2030c811882",
+        "customer-attraction/closeout-736dbe5593ed64a2cbf9514d": "4dcb3f2c9203d44deb5cee24bf27d2e7558924c152cc49ca6c48b0232c84fa91",
+        "M-0099728e245c474cb859d7dba9318bff": "51f33997134e5cd9bdd0d7d94ef2f63844507dc5fd24665b0c064d3c071abe46",
+        "CA-COORD-ROOT-UNIT-CAPACITY-NO-v1": "31169fa8d04930e52c45d0e0082e6f3d65532e9cd01637129795393d4ec938ec",
+        "customer-attraction/actual-prefix-whole-catalog-one-step-deviation-rows": "375ea8bc408ad43c663858fda9346fcf2b7c22d3c9dfeb2265d5ee95790f0ca4",
+        "customer-attraction/four-provider-root-deviation-exact-certificate": "42cb8ff8a5aa86705a690fc6dbdb283d67a1a1a00299d4d291d94991898de576",
+        "CAG-MODEL": "3216d1db43ff83e0e0c9cf2479e79611277c9d9291a68e7f9b85ec4bb299dc5c"
+      },
+      "receipt_pin": "cac03df6fbf4eb0c727f88c5f041c9457674feb8a0655bc43035dbb071f55282",
+      "coverage": {
+        "M-8170674befc34fdf866ec8fbd76d43c4": {
+          "state": "linked",
+          "object_pin": "7f471536ffeeca9be092b0c3e3196fe5de27799b2564d1b2a74472c6d3e45292",
+          "comparison_scope": "v2完整合同、当前共同正文、families历史summary、D完整证明；与5259点身份、source2/3/4菜单及后续同W但不同隐藏向量的范围比较。 当前实读与历史复用分列current-reading-ledger.json/reading-ledger.json；完整证明见review.md。",
+          "reason": "指定5494旧点source4一条actual6普通价严格负；D平均只排保持actual/ell坐标的完整策略补全。未认证全矩阵或全部五负行。v2已准确登记成功报告属历史normalized输出而当前driver为失败版；无需版本决定。",
+          "edge_ids": [
+            "cag-ca44-whole-catalog-price-excludes-three-point"
+          ]
+        },
+        "M-b685609e9c8844768f9f83e56b1b5c88": {
+          "state": "linked",
+          "object_pin": "baca4c99f0c6170ad870266a5ffc20bbba4010e968e1f1e0494fcf8df2dafabf",
+          "comparison_scope": "v2完整合同、当前共同正文、single历史summary、D完整证明；与5494三枝点及共同K/条件质量的不同身份比较。 当前实读与历史复用分列current-reading-ledger.json/reading-ledger.json；完整证明见review.md。",
+          "reason": "指定5259旧点actual6普通新Y价严格负；D给遗漏真实必要行，排保该坐标补全。保原行可行的历史报告，不把当前失败driver当成功重演，也不排其它点/重优化。",
+          "edge_ids": [
+            "cag-ca44-whole-catalog-price-excludes-single-point"
+          ]
+        },
+        "M-c53fb7d0b92a42f9932d5d637d6a97ba": {
+          "state": "linked",
+          "object_pin": "6da730ca6b6cfa493c642cbd749ceaed1faf409c1f81660d225ac02b49aae41c",
+          "comparison_scope": "v2全标签/任意给定UP_L价完整合同，根钱包主正文、价格等价集合域量词及较晚price-scope补判逐项比较。 当前实读与历史复用分列current-reading-ledger.json/reading-ledger.json；完整证明见review.md。",
+          "reason": "根钱包单源及目标原有显式UP_L合同，已对全标签域/任意给定有效λ完整证明转移身份和不等式，无需HALF或单射；原价格ALL仅另保HALF_S下的UP_S见证及集合域转移贡献。Ω/g及PAY?边界保持。",
+          "edge_ids": [
+            "cag-ca44-root-wallet-given-up-terminal-transfer",
+            "cag-ca44-universal-price-and-root-wallet-transfer"
+          ]
+        },
+        "customer-attraction/terminal-normalization-independent-contract-and-eight-client-threshold-case": {
+          "state": "isolated-after-review",
+          "object_pin": "9e9287bfd079dfb7bd9bd02c54e31ea51147bd70eb9a5e13d2379039498f0852",
+          "comparison_scope": "v1完整合同及正文全文；固定八客户真M/路径F/静态v与通用价格及早期PAY合同比较，历史JSON原读取由前worker账本保留。 当前实读与历史复用分列current-reading-ledger.json/reading-ledger.json；完整证明见review.md。",
+          "reason": "固定八客户输入精确F=6、M/u=(2,2,2)、v3=44/23；与真M/静态v及末位转移比较后只区分对象。一个非亏损点既不证明全实例MP/统一价，也不支付早期跨枝PAY，无成立逻辑边。"
+        },
+        "customer-attraction/universal-signed-credible-defect-price-equivalence": {
+          "state": "linked",
+          "object_pin": "dbc52fcf418dbdbecccd087fec391fc9e2bf5d35bf8bdefc34c70bff61c0b44c",
+          "comparison_scope": "v2完整合同、等价主正文和两阶段范围审查全文；HALF_S⇒存在UP_S与M-c53的全标签任意给定价量词比较；作者原稿/独审原全文读取只按历史账本复用。 当前实读与历史复用分列current-reading-ledger.json/reading-ledger.json；完整证明见review.md。",
+          "reason": "等价只在真实集合域HALF_S条件下供某组UP_S实价，可总价≤2n−1；与根钱包共同给该子域转移贡献。不能把它作为UP_L见证或支付宽目标whole；全标签给定价whole另有单源证明。",
+          "edge_ids": [
+            "cag-ca44-universal-price-and-root-wallet-transfer"
+          ]
+        },
+        "customer-attraction/one-root-wallet-for-terminal-BR-normalization-and-true-price-transfer": {
+          "state": "linked",
+          "object_pin": "f68349d7174fa7173052a5dc75374c1e05e84d41815a9468b1f183d458eaf100",
+          "comparison_scope": "v1完整合同/主正文及末位规范化独审全文；两次同游戏BR、一次根混合预算和不需HALF的全标签给定UP转移，另比较集合域供价贡献。 当前实读与历史复用分列current-reading-ledger.json/reading-ledger.json；完整证明见review.md。",
+          "reason": "两次同游戏BR给ell≤P和任意根混合一次2E P≤u1；加目标原有显式UP_L及前缀M不变/利润守恒，完整支付全标签任意给定价转移。另与等价源共同支付集合域供价贡献，早期全树PAY仍未证。",
+          "edge_ids": [
+            "cag-ca44-root-wallet-given-up-terminal-transfer",
+            "cag-ca44-universal-price-and-root-wallet-transfer"
+          ]
+        },
+        "customer-attraction/two-leaf-shared-client-profit-bilateral-coupling": {
+          "state": "linked",
+          "object_pin": "2e8e4215b7477e7ca1818c375beca8f0ccf09e78e98984a886a81d84d09d3b48",
+          "comparison_scope": "v2完整合同/正文及COMMON正文；逐客户M到特定common同角色核的明确重分配，核支持/共享客户/F-exclusive边界比较。 当前实读与历史复用分列current-reading-ledger.json/reading-ledger.json；完整证明见review.md。",
+          "reason": "从逐客户双边M矩阵把给common收款人的份额重新归同输入角色，完整导出另一COMMON密度核。明确两核不等价，不继承M未保的原PUSH支持或重复cap。",
+          "edge_ids": [
+            "cag-ca44-bilateral-to-common-density"
+          ]
+        },
+        "M-57cc29d007474699abddc1bc2a9ab543": {
+          "state": "linked",
+          "object_pin": "e6c760f8f08d4e10b35db415f8092e014bbf33095f49705cc4907254f4aaa75f",
+          "comparison_scope": "v2完整合同、静态密度/ROW正文和REVERSE正文全文；同一固定B的同矩阵ROW/COLUMN、精确缺额及r非负贡献比较。 当前实读与历史复用分列current-reading-ledger.json/reading-ledger.json；完整证明见review.md。",
+          "reason": "同一固定B正矩阵的严格ROW给REVERSE r=u−PB≥0，贡献仅此必要非负余量及原B边共同容量保持；静态COLUMN/缺额不证全网收缩或SD身份。",
+          "edge_ids": [
+            "cag-ca44-static-row-to-reverse-nonnegative-remainder"
+          ]
+        },
+        "customer-attraction/common-coverer-request-density-projection-and-static-column-deficit": {
+          "state": "linked",
+          "object_pin": "5278eee5e2b340199210488fa6b01c52744bc53ee0e6103120081a51666abdb8",
+          "comparison_scope": "v2完整合同/正文、M/PUSH/QUERY主正文和新增独审全文；比较逐客户同角色支持、同时列密度、prefix及真query两个专门化。 当前实读与历史复用分列current-reading-ledger.json/reading-ledger.json；完整证明见review.md。",
+          "reason": "共同coverer密度核有完整逐客户守恒/cap；从M重分配构造，并专门化导出目标原显式PUSH和合成叶真query分解。各项只合计同一总请求。",
+          "edge_ids": [
+            "cag-ca44-bilateral-to-common-density",
+            "cag-ca44-common-density-to-prefix-pushback",
+            "cag-ca44-common-density-to-real-query"
+          ]
+        },
+        "customer-attraction/prefix-request-pushback-monotone-prices-and-ancestry-normalization": {
+          "state": "linked",
+          "object_pin": "dd4cfbdb62edb482c0f83dc8b278f7843d9b53b24305c0e3a905a834ec52991c",
+          "comparison_scope": "v3完整合同/主正文、同子枝PUSH全文、祖先补充及独审全文；显式T、非减价、三分支域修复、待修包络与合法输出合并范围比较。 当前实读与历史复用分列current-reading-ledger.json/reading-ledger.json；完整证明见review.md。",
+          "reason": "COMMON专门化精确给显式列次随机T、单pair共同L和单调价/后缀界；固定栈按strictpast PUSH、等号query d/v、future停止，未解深度下降给完整有限域修复。合法输出可停离轨；待修包络保L不等于全合并输出保L，三人例Z role2=1.5清楚限制之。",
+          "edge_ids": [
+            "cag-ca44-common-density-to-prefix-pushback"
+          ]
+        },
+        "M-b29430314bce490aa4c60a00b48a7430": {
+          "state": "linked",
+          "object_pin": "d0c51bf6a547891cd43938d9e47a6d9282c2dbe506b325ca7c2b2f18fee65f15",
+          "comparison_scope": "v3完整合同、QUERY/REVERSE正文、COMMON主正文及独审全文；每q≤a≤d≤v、严格后继及同history整行动IC与不成立的Σq界比较。 当前实读与历史复用分列current-reading-ledger.json/reading-ledger.json；完整证明见review.md。",
+          "reason": "COMMON仅给当前j密度1，得到H=a+Σq、每q≤a≤d≤v及合法query尾；whole-IC在同history完整行动调用，不把Σq≤a或多投影共钱加入。",
+          "edge_ids": [
+            "cag-ca44-common-density-to-real-query"
+          ]
+        },
+        "customer-attraction/joint-column-capacity-and-positive-tax-preserving-reverse-split": {
+          "state": "linked",
+          "object_pin": "4329e761753a15cc3ad30f1ffbb8e20ee55bc84fb9c992d84282b2030c811882",
+          "comparison_scope": "v3完整合同/正文及静态ROW正文全文；同矩阵PB≤u的局部输入、另需SD/whole-IC的完整反向核、actual到off-history方向比较。 当前实读与历史复用分列current-reading-ledger.json/reading-ledger.json；完整证明见review.md。",
+          "reason": "接静态ROW的r≥0局部贡献，完整REVERSE另用自然context SD/whole-IC与min截取。方向actual到off-history，current/COLUMN和多枝循环未付，不说ROW单独证明整个核。",
+          "edge_ids": [
+            "cag-ca44-static-row-to-reverse-nonnegative-remainder"
+          ]
+        },
+        "customer-attraction/closeout-736dbe5593ed64a2cbf9514d": {
+          "state": "isolated-after-review",
+          "object_pin": "4dcb3f2c9203d44deb5cee24bf27d2e7558924c152cc49ca6c48b0232c84fa91",
+          "comparison_scope": "v1完整合同及资源正文全文；signed第三源债、两次同pivot造重和全m首降−1/m，与共同首截面单位容量障碍精确被否合同比较。 当前实读与历史复用分列current-reading-ledger.json/reading-ledger.json；完整证明见review.md。",
+          "reason": "读完整双写signed债、两次同pivot造重及每m首降−1/m。与共同首截面障碍比较：前者只否非降首更新，后者否固定独立根pair统一截面合同，不能互相反驳或推总预算。"
+        },
+        "M-0099728e245c474cb859d7dba9318bff": {
+          "state": "isolated-after-review",
+          "object_pin": "51f33997134e5cd9bdd0d7d94ef2f63844507dc5fd24665b0c064d3c071abe46",
+          "comparison_scope": "v2完整合同、R28精确第3节、verify_join_conflict.py/冻结JSON全文；一般匿名7/3终局分离与CAG单例14/6但终局计数相同分别比较。 当前实读与历史复用分列current-reading-ledger.json/reading-ledger.json；完整证明见review.md。",
+          "reason": "当前v2收益表、代码及冻结7/3结果重读；手工四case结构与保全稿一致。匿名收益未主张CAG实现；CAG单例只显示共同低回复不兼容且终局计数相同。没有本包内准确被否端点，不伪造refutes。"
+        },
+        "CA-COORD-ROOT-UNIT-CAPACITY-NO-v1": {
+          "state": "isolated-after-review",
+          "object_pin": "31169fa8d04930e52c45d0e0082e6f3d65532e9cd01637129795393d4ec938ec",
+          "comparison_scope": "v1完整合同及正文全文；所有独立根pair固定非负权统一首截面需求Λ>1与核心capΛ≤1，对照双写源首降、单孩子PUSH及整合多源合同。 当前实读与历史复用分列current-reading-ledger.json/reading-ledger.json；完整证明见review.md。",
+          "reason": "共同核心Ti={x,yi}使根支付逼Lambda>1而同一首截面容量逼Lambda≤1，只排该全合同；不反单孩子PUSH、一次根钱包、整合多源或half，其本例W=OPT。与closeout核不同无逻辑边。"
+        },
+        "customer-attraction/actual-prefix-whole-catalog-one-step-deviation-rows": {
+          "state": "linked",
+          "object_pin": "375ea8bc408ad43c663858fda9346fcf2b7c22d3c9dfeb2265d5ee95790f0ca4",
+          "comparison_scope": "v1完整合同及D正文全文、当前两有限点正文和历史summary；任意合法h/T的真前缀D与固定Y菜单平均必要价比较。其余生成程序页按前worker已保存全文审读复用，不冒称本轮重读。 当前实读与历史复用分列current-reading-ledger.json/reading-ledger.json；完整证明见review.md。",
+          "reason": "对任意合法目录标签的D(h,T)用该h真实前缀负载及同sigma后继；取新Y菜单平均为两个指定点的普通价补全排除提供普遍必要性。35/36行程序各保目标/位值/路由范围，不外推所有菜单IC闭包。",
+          "edge_ids": [
+            "cag-ca44-whole-catalog-price-excludes-single-point",
+            "cag-ca44-whole-catalog-price-excludes-three-point"
+          ]
+        },
+        "customer-attraction/four-provider-root-deviation-exact-certificate": {
+          "state": "isolated-after-review",
+          "object_pin": "42cb8ff8a5aa86705a690fc6dbdb283d67a1a1a00299d4d291d94991898de576",
+          "comparison_scope": "v1完整合同及资源正文全文；128完整会员系数域与任意客户数的算术意义、SPE/slack数学量词及有限m接口边界；旧源码/重放由前worker实读账保全，本轮未重跑。 当前实读与历史复用分列current-reading-ledger.json/reading-ledger.json；完整证明见review.md。",
+          "reason": "128是完整七会员系数域，有限m接口是实现核，SPE/slack总和非负由四人定理数学承担。本包其它对象只给安全分母或局部容量，不能推出整份1499/750证书，未因方法相似造边。"
+        }
+      },
+      "parent_review": {
+        "reviewed_by": "Boss6",
+        "mathematical_checks": [
+          "Root本轮全文读修订前13828字符完整review、八条当前边，并完整核最终新增的PUSH原句解释和第10节真实3B路由；另核三个关键registry合同和PUSH原正文/完整合同资源。较早完整主稿及独立审查/两个补判已读。未冒称重读全部历史46文件或运行科学程序。",
+          "共同密度核由双边M逐客户重分配而得；输入只收common incidence的已合总密度，支持/守恒/同时列界完整，不能与原M重复付钱。COMMON到PUSH保目标原显式T、零分母、列次随机和非减价；到QUERY仅每条q≤a≤d≤v，不是Σq≤a。",
+          "递增栈中严格过去才PUSH，等号是同历史query d/v，未来已规定即停；未解同角色祖先深度下降。原正文先声明parent中自然context输出已合法，只有余留项可能降到Z；registry的actual合法域摘要不读成所有输出回actual。三人例保量4但Z角色2合并系数3/2，未解prefix包络L与全部停止项合并L严格区分。",
+          "根钱包的regret是同一删后游戏中两末位行动的差，0≤ell≤P、2P≤d_T≤u1；混合根分布仅凸组合共用一次u1。全标签任意给定有效UP_L价的转移用同精确前缀M不变和W=Σu，F差=2ell+Ω；根钱包单源已经支付M-c53整个条件目标。",
+          "原价格等价仅供HALF_S条件下某个UP_S统一实价，Σλ≤2n−1；与根钱包的ALL保集合域存在性与转移贡献，不混合任意given价分支、不当UP_L见证。后来价格补判优先于早期独审whole判断。B10商是否给同一价UP_S→UP_L由已发布精确3B继续，当前八边不提前取用。",
+          "静态ROW单独仅付REVERSE的P_B≤u_i与r非负；完整逆核的SD/IC身份独立保留。D的六标签平均只排指定5259/5494坐标的真实菜单补全，不认证全矩阵、CAP或后5692点。当前两有限点v2及driver来源更正已登记，成功driver字节SHA仍未知，无新重放。",
+          "五个isolated核心各按实际合同比较：八客户不供通用价；双写债/共同首截面分别否不同路线；一般匿名7/3不冒作CAG14/6终局分离；四人128会员算术不冒作一般人数证明。17core coverage与所有current pins闭合，全部旧稿/账本/补丁字节按历史身份保留。"
+        ],
+        "new_mathematical_program_runs": 0,
+        "old_scientific_program_replays": 0,
+        "native_validation": "All eight edges were natively bound and structurally checked using the current endpoints and evidence."
+      },
+      "closed_overlaps": [],
+      "additional_comparisons": [
+        {
+          "object_ids": [
+            "M-8170674befc34fdf866ec8fbd76d43c4",
+            "M-b685609e9c8844768f9f83e56b1b5c88"
+          ],
+          "status": "reviewed-in-packet",
+          "reason": "按当前端点、实读主正文及明确保全的历史证据作精确比较；实际所得与欠缺逐core见coverage及review.md，不扩为全局否定。"
+        },
+        {
+          "object_ids": [
+            "M-c53fb7d0b92a42f9932d5d637d6a97ba",
+            "customer-attraction/terminal-normalization-independent-contract-and-eight-client-threshold-case",
+            "customer-attraction/universal-signed-credible-defect-price-equivalence",
+            "customer-attraction/one-root-wallet-for-terminal-BR-normalization-and-true-price-transfer"
+          ],
+          "status": "reviewed-in-packet",
+          "reason": "逐项比较L/S模型域、任意给定价/存在某价和UP_L/UP_S：单源whole与两源集合域contribution拆开，较晚price-scope补判优先；固定八客户不给通用价或PAY。"
+        },
+        {
+          "object_ids": [
+            "customer-attraction/two-leaf-shared-client-profit-bilateral-coupling",
+            "M-57cc29d007474699abddc1bc2a9ab543",
+            "customer-attraction/common-coverer-request-density-projection-and-static-column-deficit",
+            "customer-attraction/prefix-request-pushback-monotone-prices-and-ancestry-normalization",
+            "M-b29430314bce490aa4c60a00b48a7430",
+            "customer-attraction/joint-column-capacity-and-positive-tax-preserving-reverse-split"
+          ],
+          "status": "reviewed-in-packet",
+          "reason": "M→COMMON、COMMON→PUSH/QUERY三个whole及ROW→REVERSE一步成立；祖先三分支、离轨停止、未解包络与合并L的界限有完整证明和三人解析例。"
+        },
+        {
+          "object_ids": [
+            "customer-attraction/closeout-736dbe5593ed64a2cbf9514d"
+          ],
+          "status": "reviewed-in-packet",
+          "reason": "按当前端点、实读主正文及明确保全的历史证据作精确比较；实际所得与欠缺逐core见coverage及review.md，不扩为全局否定。"
+        },
+        {
+          "object_ids": [
+            "M-0099728e245c474cb859d7dba9318bff"
+          ],
+          "status": "reviewed-in-packet",
+          "reason": "按当前端点、实读主正文及明确保全的历史证据作精确比较；实际所得与欠缺逐core见coverage及review.md，不扩为全局否定。"
+        },
+        {
+          "object_ids": [
+            "CA-COORD-ROOT-UNIT-CAPACITY-NO-v1"
+          ],
+          "status": "reviewed-in-packet",
+          "reason": "按当前端点、实读主正文及明确保全的历史证据作精确比较；实际所得与欠缺逐core见coverage及review.md，不扩为全局否定。"
+        },
+        {
+          "object_ids": [
+            "customer-attraction/actual-prefix-whole-catalog-one-step-deviation-rows"
+          ],
+          "status": "reviewed-in-packet",
+          "reason": "按当前端点、实读主正文及明确保全的历史证据作精确比较；实际所得与欠缺逐core见coverage及review.md，不扩为全局否定。"
+        },
+        {
+          "object_ids": [
+            "customer-attraction/four-provider-root-deviation-exact-certificate"
+          ],
+          "status": "reviewed-in-packet",
+          "reason": "按当前端点、实读主正文及明确保全的历史证据作精确比较；实际所得与欠缺逐core见coverage及review.md，不扩为全局否定。"
+        },
+        {
+          "object_ids": [
+            "customer-attraction/actual-prefix-whole-catalog-one-step-deviation-rows",
+            "M-8170674befc34fdf866ec8fbd76d43c4",
+            "M-b685609e9c8844768f9f83e56b1b5c88"
+          ],
+          "status": "reviewed-in-packet",
+          "reason": "按当前端点、实读主正文及明确保全的历史证据作精确比较；实际所得与欠缺逐core见coverage及review.md，不扩为全局否定。"
+        },
+        {
+          "object_ids": [
+            "B10-DUPLICATE-COVERAGE-QUOTIENT-v1",
+            "M-c53fb7d0b92a42f9932d5d637d6a97ba",
+            "customer-attraction/one-root-wallet-for-terminal-BR-normalization-and-true-price-transfer",
+            "customer-attraction/universal-signed-credible-defect-price-equivalence"
+          ],
+          "status": "follow-up-published",
+          "follow_up_task_id": "boss6-price-label-quotient-3b-3b-0bba87a65175bee7",
+          "comparison_question": "固定每个精确标签前缀h和动作a，B10双向商是否保持强制(h,a)后的全部真实完整子SPE物理终局集合及原已行动角色收益，从而保持ell_i(h,a)、M_i(h)？任意末位BR目标在商下是否保u/W/OPT/g，使同一个全实例UP_S价格成为UP_L见证，再与全标签根钱包和末位转移相接？",
+          "reason": "这是已正式发布的独立3B比较，区分全体真实子SPE最低退出门槛与固定原sigma全部alias菜单。若桥成立，可支付当前两旧来源自身未提供的标签域供价；当前本包的给定UP_L单源whole及集合域ALL contribution范围不变。",
+          "reading_boundary": "本包worker已读价格/钱包定义；对B10的数学判断仅基于Root转述及路线说明，未读取B10对象记录或正文，不能记作本包已证。B10及必要证据由此3B worker完整实读后判断；未提前宣称后续done。",
+          "routing_evidence": [
+            {
+              "path": "research/workspaces/map-v2/Boss6/current-run/price-label-quotient-comparison-note.md",
+              "sha256": "3f77a0ca0f87fd26b5e3503e7f12ea8bd483b43a130c70a61df8cea851079ac9"
+            },
+            {
+              "path": "research/workspaces/map-v2/Boss6/current-run/price-label-quotient-3b-plan.json",
+              "sha256": "bf67c30b9eaefac1cf16f39bc04a804ee6c61a9148b8b07d84f95a39f838b1ee"
+            }
+          ]
+        }
+      ],
+      "follow_up_tasks": [
+        "boss6-price-label-quotient-3b-3b-0bba87a65175bee7"
+      ],
+      "supersession": {}
+    },
+    {
+      "task_id": "boss6-runtime-provenance-repair-repair-ea3c50ff802ffdaf",
+      "receipt_file": "map/receipts/boss6-runtime-provenance-repair-repair-ea3c50ff802ffdaf.json",
+      "receipt_sha256": "8f4f5d7f3888472401fec0c53ca1a2ee6e9ea0fc5f05b8f6a4268a51c1b6d86b",
+      "relations": [
+        {
+          "path": "map/edges/boss6-runtime-provenance-repair-repair-ea3c50ff802ffdaf/exact-load-dp-to-fptas.json",
+          "sha256": "7d5e4a57aa7a731bff2dbe257a3c19b9bed5c170ec87954163a23159929202db",
+          "edge_id": "um-constant-tw-exact-load-dp-contributes-fptas-runtime-v5-ea3c",
+          "proof_scope": "step",
+          "relation_mode": "unconditional"
+        }
+      ],
+      "input_pins": {
+        "M-14dbe6980117492aa7a3b48c52378dcb": "8d3c860cc8f5e4d5abd95ab0b8891067fb982bc537b9f4870b161e43a7800372",
+        "M-247deecec83946358afe4e89413a7bd1": "d026cdeda8e61fd5025c4c061a88cb0bf2606b83fa3d7281bc14b4fcab722149"
+      },
+      "receipt_pin": "3dd0617ec7a644be8805026e364a4bbac73f6349f5e42c00125df0ab14634ed1",
+      "coverage": {
+        "M-14dbe6980117492aa7a3b48c52378dcb": {
+          "state": "linked",
+          "object_pin": "8d3c860cc8f5e4d5abd95ab0b8891067fb982bc537b9f4870b161e43a7800372",
+          "comparison_scope": "M14/M247 complete current v5 contracts; actual claimed and prior done tasks/receipt; three complete prior assets; full current Chinese source and unchanged formal join audit; exact registration-review and candidate-review in full, candidate-manifest selected UM/source/reading-role fields. Own read-only actual97ea source diff,065f selected-record comparison, byte hashes and current canonical JSON pins. Complete prior FPTAS/closed-max/traceback/bit/decomposition proof preserved. No new PDF page/visual, canonical scan or scientific replay.",
+          "reason": "The shared v4-to-v5 delta only repairs independent rankwidth runtime transcription/accounting and source objections; it does not affect treewidth exact-load DP, complete-Cmax active-load correction or valid closed-max/forget semantics. B_min<=nOPT,epsilon0/q/K,L including0, safe nonnegative cap and actual traceback still prove the FPTAS algorithm contribution. Independent PARTITION weak NP-hardness remains valid separately; no identity or mathematical gap.",
+          "edge_ids": [
+            "um-constant-tw-exact-load-dp-contributes-fptas-runtime-v5-ea3c"
+          ]
+        }
+      },
+      "parent_review": {
+        "reviewed_by": "Boss6",
+        "mathematical_checks": [
+          "Root全文读当前21230字符review（完整继承7c26/c739/task850证明）、当前贡献边及receipt。当前源更正由Root此前直接检查并正式登记；本轮不冒称重新逐页读PDF或重跑旧程序。",
+          "实际最短端调度给OPT≤B_min≤nOPT；空任务/无资格/B_min0先处理，q=epsilon0 B_min/n²，向上取整误差每机≤nq，K=floor(n²/epsilon0+n)保原最优及缩放最优见证，L≤K+1包括零。非负部分负载与唯一选边使中间cap安全。",
+          "闭合最大负载只计已忘机器，forget-machine时取max；join共享活跃lambda必须相加，完整Cmax语义还需父活跃峰。已登记两任务唯一1+1拆分反例不推翻修正后的来源定理。",
+          "紧边界(S,C)分解搜索的连通C袋并/最高袋包含S保证固定k的n^{O(k)}入口；它不是参数k的FPT分解。dual资格团挂任务叶袋给incidence宽≤k+1，位运算和实际j→i回溯完整。",
+          "仅支付M14近似算法部分；两机PARTITION弱NP-hard另有独立来源且保持已证，remaining不把它说成全局缺口。独立rankwidth m²段的v5修正不参与此推导，旧完整数学与历史PDF归属原字节保留。"
+        ],
+        "new_mathematical_program_runs": 0,
+        "old_scientific_program_replays": 0,
+        "native_validation": "New current-v5 edge was natively bound and structurally checked; prior done bytes remain unchanged."
+      },
+      "closed_overlaps": [],
+      "additional_comparisons": [
+        {
+          "core_id": "M-14dbe6980117492aa7a3b48c52378dcb",
+          "peer_id": "M-247deecec83946358afe4e89413a7bd1",
+          "result": "Exact integer-load DP continues to contribute the constant-treewidth FPTAS algorithm after the v5 source-runtime refresh; no reverse whole-theorem edge.",
+          "reason": "The independent rankwidth m² accounting paragraph is absent from the treewidth scaling proof. Full-Cmax active-load correction and equivalent closed-max/threshold flag-load semantics preserve feasible schedules, cap and exact traceback. Tiny epsilon can force an integer optimum but the resulting n^{O(k)} dependence does not establish parameter-pair FPT with fixed input exponent or its maximum-eligibility-degree branch. This task declares no overlap pair, so this is an additional completed comparison."
+        }
+      ],
+      "follow_up_tasks": [],
+      "supersession": {
+        "boss6-structural-join-repair-repair-7c26e24731c9e786": {
+          "reason": "Current endpoints refreshed fromv4 tov5 after the already published shared-source rankwidth runtime correction. Complete old mathematics and attributed reading history remain valid, but v4 native endpoint/evidence bindings and coverage pin need a current-bound replacement. All three old assets are explicitly replaced; old bytes remain unchanged.",
+          "assets": {
+            "map/edges/boss6-structural-join-repair-repair-7c26e24731c9e786/exact-load-dp-to-fptas.json": {
+              "disposition": "replaced",
+              "replacement_paths": [
+                "map/edges/boss6-runtime-provenance-repair-repair-ea3c50ff802ffdaf/exact-load-dp-to-fptas.json"
+              ],
+              "reason": "Old v4-bound edge replaced by a new v5-unique accepted unconditional ALL contribution with current source/evidence and complete preserved proof; Root supplies fresh native bindings."
+            },
+            "map/edges/boss6-structural-join-repair-repair-7c26e24731c9e786/review.md": {
+              "disposition": "replaced",
+              "replacement_paths": [
+                "map/edges/boss6-runtime-provenance-repair-repair-ea3c50ff802ffdaf/review.md"
+              ],
+              "reason": "Entire original 28,662-byte review preserved verbatim as new review suffix; v5 preface adds actual runtime-only source delta, current contract checks, exact reading attribution and current valid mathematical scope."
+            },
+            "map/edges/boss6-structural-join-repair-repair-7c26e24731c9e786/reading-ledger.json": {
+              "disposition": "replaced",
+              "replacement_paths": [
+                "map/edges/boss6-runtime-provenance-repair-repair-ea3c50ff802ffdaf/reading-ledger.json"
+              ],
+              "reason": "Entire old ledger JSON including complete c739/task850 history is embedded as attributed history; new own actual readings, exact source/record delta and zero PDF/scientific-run boundary added."
+            }
+          }
+        }
+      }
+    },
+    {
+      "task_id": "boss6-runtime-provenance-repair-repair-9568cb1ca8a4abea",
+      "receipt_file": "map/receipts/boss6-runtime-provenance-repair-repair-9568cb1ca8a4abea.json",
+      "receipt_sha256": "fea0ae3788609df17f181e93d1b9739d67352876d1d24e852e42e9fb75283e54",
+      "relations": [
+        {
+          "path": "map/edges/boss6-runtime-provenance-repair-repair-9568cb1ca8a4abea/controlled-incidence-to-primal-v5.json",
+          "sha256": "eae439c430ee7a8b12f06054e994f7510f684f03775ba837b4064b6537aa84b8",
+          "edge_id": "um-controlled-incidence-dp-implies-primal-single-exponential-v5-9568",
+          "proof_scope": "whole",
+          "relation_mode": "unconditional"
+        }
+      ],
+      "input_pins": {
+        "M-232414c2d8e744ccaba95138638a15dc": "d8b5a0de4557def0e8b2b04119d7388d4054554ce8daf83b98273009c932cf22",
+        "M-247deecec83946358afe4e89413a7bd1": "d026cdeda8e61fd5025c4c061a88cb0bf2606b83fa3d7281bc14b4fcab722149"
+      },
+      "receipt_pin": "007848b032a73c65b620c78b6b660f7643fb9fadec5c5dc45ae6c302e1e10739",
+      "coverage": {
+        "M-232414c2d8e744ccaba95138638a15dc": {
+          "state": "linked",
+          "object_pin": "d8b5a0de4557def0e8b2b04119d7388d4054554ce8daf83b98273009c932cf22",
+          "comparison_scope": "Complete old done task/receipt and all three prior assets directly read and inherited without shortening; complete current M232/M247 v5 contracts, current shared Chinese body, unchanged full formal join audit and exact runtime-provenance registration review directly read. Original PDF text1–11/visual4,5,7,9,10,11 and original primal Lemma9–11 full-source review are prior-worker provenance, not fresh PDF reading. Current v5 delta only independent rankwidth m² runtime and separate decomposition cost. Controlled branch correctness, exact optimum/assignment, single-exponential arithmetic and true binary costs statically rechecked.",
+          "reason": "One accepted unconditional ALL transfer still pays the complete current M232 result: primal k exact FPT, 2^{O(k)}O(nm) DP arithmetic on a regular supplied legal decomposition, separate FPT decomposition/read costs, bit charging and actual optimum assignment. Private machine leaves, unique eligibility edges and jobs-only joins give4^{k+1} states/3^{k+1} combinations with explicit correct closed-max semantics. v5 does not change either endpoint mathematical contract; prior join correction is already complete. No unresolved mathematical, identity or source issue.",
+          "edge_ids": [
+            "um-controlled-incidence-dp-implies-primal-single-exponential-v5-9568"
+          ]
+        }
+      },
+      "parent_review": {
+        "reviewed_by": "Boss6",
+        "mathematical_checks": [
+          "Root全文读当前15291字符review（完整继承旧九节成熟证明）、当前whole边及receipt；本轮不冒称新PDF逐页阅读。两端模型/陈述/量词未变，当前v5仅独立rankwidth复杂度段和来源说明刷新。",
+          "J(i)为primal团，子树Helly给共同袋与d_i≤k+1；每机器独立叶分支唯一介绍全部资格边，关闭机器后才进入jobs-only join。任务出现连通、每任务最终forget只收1，重复introduce是局部计数不复制任务。",
+          "closed-max正确，机器袋状态≤4^(k+1)、jobs-only join≤3^(k+1)，直接优化不枚举OPT；分解缩减后的给定DP为2^{O(k)}O(nm)算术次数，真实位成本、分解取得和冗长分解读取分别计费，回溯给实际最优分配。",
+          "原primal Lemma9–11的机器组不交和小任务子集DP另有完整保全证明，支付目标论文时间归属，不用新算法的存在性冒充原公式证据。",
+          "反向袋替换只给(w+1)Delta−1；私有单位机加公共单位机例保incidence树宽1和OPT1而primalK_n，排的只是OPT宽度替换，不否M247。旧join勘误已解决，无新的开放前提。"
+        ],
+        "new_mathematical_program_runs": 0,
+        "old_scientific_program_replays": 0,
+        "native_validation": "New current-v5 edge was natively bound and structurally checked; prior done bytes remain unchanged."
+      },
+      "closed_overlaps": [],
+      "additional_comparisons": [
+        {
+          "core_id": "M-232414c2d8e744ccaba95138638a15dc",
+          "peer_id": "M-247deecec83946358afe4e89413a7bd1",
+          "direction": "M-247deecec83946358afe4e89413a7bd1 -> M-232414c2d8e744ccaba95138638a15dc",
+          "result": "Whole accepted transfer via a controlled incidence decomposition and finer state count.",
+          "reason": "Each J(i) is  a primal clique with common bag, d_i≤k+1. Each machine is processed and forgotten in its private leaf before any join. Machine states≤4^{k+1}; jobs-only joins≤3^{k+1}; direct optimization and parent pointers give actual optimum. The full quantitative target is paid, not only qualitative FPT."
+        },
+        {
+          "core_id": "M-232414c2d8e744ccaba95138638a15dc",
+          "peer_id": "M-247deecec83946358afe4e89413a7bd1",
+          "direction": "scope of uniform black-box substitution",
+          "result": "The uniform L^{O(w)} estimate alone is a weaker2^{O(k²)} alternative.",
+          "reason": "w≤k+1,L≤2^{k+1}. This is a completed comparison, not an unfilled gap: the finer controlled-branch proof above separately pays the target single-exponential bound."
+        },
+        {
+          "core_id": "M-232414c2d8e744ccaba95138638a15dc",
+          "peer_id": "M-247deecec83946358afe4e89413a7bd1",
+          "direction": "M-232414c2d8e744ccaba95138638a15dc -> degree branch of M-247deecec83946358afe4e89413a7bd1",
+          "result": "Reverse structural bridge covers maximum-machine-eligibility degree branch, not the full target including OPT branch.",
+          "reason": "Replacing each incidence-bag machine by J(i) gives primal width≤(w+1)Delta−1 by edge coverage and connected union of intersecting occurrence subtrees. Conversely n all-unit jobs, private unit machines plus one common unit machine have incidence treewidth1 and OPT1 but primal K_n; OPT pruning removes no edges. This refutes only that particular width bridge for the OPT branch, not M247. No duplicate reverse whole edge or follow-up needed."
+        },
+        {
+          "core_id": "M-232414c2d8e744ccaba95138638a15dc",
+          "peer_id": "M-247deecec83946358afe4e89413a7bd1",
+          "direction": "v4 -> current v5 provenance refresh",
+          "result": "Complete prior whole transfer remains accepted without new mathematical assumptions.",
+          "reason": "Only independent rankwidth runtime m² and safe preprocessing/decomposition accounting changed in shared body; these two records change body/objections/version only. Current formal join audit is the identical SHA. Complete mature transfer proof and original-paper primal audit retained; current fresh worker adds no PDF full-reading claim."
+        }
+      ],
+      "follow_up_tasks": [],
+      "supersession": {
+        "unrelated-machines-3a-3a-effdbb6d60f56b34": {
+          "reason": "Both endpoint records advanced v4→v5 through an independent shared-body rankwidth runtime provenance correction. Preserve full mature controlled-incidence whole transfer and original primal source audit while replacing stale pins/evidence with current v5 independent assets. Old done bytes stay unchanged.",
+          "assets": {
+            "map/edges/unrelated-machines-3a-3a-effdbb6d60f56b34/controlled-incidence-to-primal.json": {
+              "sha256": "35542d13aa91fde3c264fb694f717cecbc73f852948b8e4c7ba788e9d37021c3",
+              "disposition": "replaced",
+              "replacement_paths": [
+                "map/edges/boss6-runtime-provenance-repair-repair-9568cb1ca8a4abea/controlled-incidence-to-primal-v5.json"
+              ],
+              "reason": "Same complete accepted unconditional ALL whole transfer, new v5 edge ID/current body source and targeted review; stale bound old edge is excluded after supersession rather than hand-edited."
+            },
+            "map/edges/unrelated-machines-3a-3a-effdbb6d60f56b34/review.md": {
+              "sha256": "b24fba4c07858e7aff1e999d4540bc33edd1c3bda67b41d15df45019fa40ad5b",
+              "disposition": "replaced",
+              "replacement_paths": [
+                "map/edges/boss6-runtime-provenance-repair-repair-9568cb1ca8a4abea/review.md"
+              ],
+              "reason": "All old review bytes, full proofs, source attribution and prior reading scope preserved inside new review; add accurate current v5 contracts/delta, current-task scope and asset dispositions."
+            },
+            "map/edges/unrelated-machines-3a-3a-effdbb6d60f56b34/reading-ledger.json": {
+              "sha256": "9e7a3b231820fbd102df4f159b0f7d8b81ee9b36f94fc7a4a3986543008cdd13",
+              "disposition": "replaced",
+              "replacement_paths": [
+                "map/edges/boss6-runtime-provenance-repair-repair-9568cb1ca8a4abea/reading-ledger.json"
+              ],
+              "reason": "Complete old ledger embedded unchanged as inherited_reading_ledger; separately record this fresh worker direct file reads/current complete endpoint snapshots and explicitly no new PDF page reads."
+            }
+          }
+        }
+      }
+    }
+  ],
+  "mathematical_review": {
+    "wallet_transport": "双边共享客户M经显式common再分配给COMMON；该核专门化完整支付单pairPUSH及真QUERY。PUSH等号位置必须用同history d/v，未来自然项停止，只有未解同角色残项降深；whole是有限合法化而非所有输出回actual。三人例初始总4最终保量但Z role2合并系数3/2，待修strictpast包络L不控制全部已停止项；每q≤a也不强化Σq≤a。ROW仅给REVERSE r≥0贡献，SD身份另有独立证明。",
+    "wallet_price_scope": "给定任意全标签有效UP_L价时，精确有序前缀相同保全部真实子SPE的M，W=Σu给F(q+)−F(q)=2ell+Ω，根钱包ell≤P支付M-c53整个条件目标；不附加HALF或目录单射。旧ALL{集合域价格等价,根钱包}仅在HALF_S下供某UP_S实价及该子域转移，Σλ≤2n−1，仍是贡献。两种量词不能混成whole。",
+    "wallet_finite_and_isolated": "全目录D的六标签平均排两个指定5259/5494点的actual/ell坐标完整延拓，仅采用一条普通负价；不认证全矩阵/CAP/新5692点。两v2的历史normalized成功报告与现存失败driver字节准确区分。五孤立core分别保八客户门槛、双写债首次下降、匿名7/3与CAG14/6区别、共同首截面单位cap和四人128会员证书的准确范围。",
+    "rankwidth_rounding_and_interface": "LST实际B与只对small调用的ST给尺寸化/克隆恢复一条ALL贡献：δ=min(1/3,ε/7)，big按δ²B网格，small等重克隆，误差≤1+6δ+3δ²≤1+ε。完整固定尺寸DP独立保全：对每固定实际出口H，入口同尺寸同cut邻域可替换；出口须类内实际subset最小化。子最优出口先选，细类拆后translate，跨子实际入口替换后任务域/机器域正确拼合并可回溯。零计数/资格机器叶/零外邻域均正确。m²(n+1)^{O(d2^k)}给定DP与f(k)(n+m)^3分解另列。",
+    "current_fptas": "M247 v5到M14 v5只支付FPTAS算法：实际B_min≤nOPT，q=ε0B_min/n²，K=floor(n²/ε0+n)，非负部分负载保cap见证，整数实现/固定k分解/实际回溯给真正多项式近似。完整Cmax join须父活跃峰，closed-max则在forget关闭机器，共享活跃load相加。独立PARTITION弱NP-hard保持已证，不归算法source。",
+    "current_primal": "M247 v5到M232 v5为whole：primal资格团≤k+1且有共同袋，机器独立叶分支使joins仅任务；状态≤4^(k+1)、组合≤3^(k+1)，闭合峰直接优化给2^{O(k)}O(nm)算术与实际最优分配，位成本/分解取得分别付费。原primal论文递推另有完整审证。反向(w,Δ)桥不换成OPT桥，私有机+公共机例保持incidence宽1/OPT1/primalK_n。",
+    "supersession_and_scope": "两已done v4任务全部三资产逐项replaced，新v5唯一路径/ID恢复有效数学，旧文件保原字节，完整review和读取账不缩写或冒称新PDF阅读；rankwidth v5独立来源更正不改变两个treewidth theorem。当前20核心/4共享/11边实际复核，并非全仓所有pending已审。",
+    "directed_follow_up": "UP_S→UP_L同一价格见证的精确问题已接3B boss6-price-label-quotient-3b-3b-0bba87a65175bee7：B10前缀全部真实子SPE物理终局及ell/M保持，区别固定原σ所有alias菜单不保。该3B正在独立实读，本轮不先将桥标成已完成，HALF及一般全树共同付款仍开放。另B10主3A和异质前缀组件包独立进行。无新客户吸引↔调度跨档模型桥。"
+  },
+  "reviewed_core_ids": [
+    "CA-COORD-ROOT-UNIT-CAPACITY-NO-v1",
+    "M-0099728e245c474cb859d7dba9318bff",
+    "M-14dbe6980117492aa7a3b48c52378dcb",
+    "M-232414c2d8e744ccaba95138638a15dc",
+    "M-3452046f3bdd47c48b17a0a3038ba4b2",
+    "M-57cc29d007474699abddc1bc2a9ab543",
+    "M-8170674befc34fdf866ec8fbd76d43c4",
+    "M-b29430314bce490aa4c60a00b48a7430",
+    "M-b685609e9c8844768f9f83e56b1b5c88",
+    "M-c53fb7d0b92a42f9932d5d637d6a97ba",
+    "customer-attraction/actual-prefix-whole-catalog-one-step-deviation-rows",
+    "customer-attraction/closeout-736dbe5593ed64a2cbf9514d",
+    "customer-attraction/common-coverer-request-density-projection-and-static-column-deficit",
+    "customer-attraction/four-provider-root-deviation-exact-certificate",
+    "customer-attraction/joint-column-capacity-and-positive-tax-preserving-reverse-split",
+    "customer-attraction/one-root-wallet-for-terminal-BR-normalization-and-true-price-transfer",
+    "customer-attraction/prefix-request-pushback-monotone-prices-and-ancestry-normalization",
+    "customer-attraction/terminal-normalization-independent-contract-and-eight-client-threshold-case",
+    "customer-attraction/two-leaf-shared-client-profit-bilateral-coupling",
+    "customer-attraction/universal-signed-credible-defect-price-equivalence"
+  ],
+  "reviewed_shared_object_ids": [
+    "CAG-MODEL",
+    "M-247deecec83946358afe4e89413a7bd1",
+    "unrelated-machines/lst-two-approximation",
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding"
+  ],
+  "reviewed_current_edge_ids": [
+    "cag-ca44-bilateral-to-common-density",
+    "cag-ca44-common-density-to-prefix-pushback",
+    "cag-ca44-common-density-to-real-query",
+    "cag-ca44-root-wallet-given-up-terminal-transfer",
+    "cag-ca44-static-row-to-reverse-nonnegative-remainder",
+    "cag-ca44-universal-price-and-root-wallet-transfer",
+    "cag-ca44-whole-catalog-price-excludes-single-point",
+    "cag-ca44-whole-catalog-price-excludes-three-point",
+    "um-constant-tw-exact-load-dp-contributes-fptas-runtime-v5-ea3c",
+    "um-controlled-incidence-dp-implies-primal-single-exponential-v5-9568",
+    "um-lst-st-to-incidence-rankwidth-size-reduction"
+  ],
+  "retired_replaced_edge_ids": [
+    "um-constant-tw-exact-load-dp-contributes-fptas-join-v4-7c26",
+    "um-controlled-incidence-dp-implies-primal-single-exponential-effd"
+  ],
+  "pending_before_union": {
+    "object_ids": [
+      "CA-COORD-ROOT-UNIT-CAPACITY-NO-v1",
+      "CA-EXACT-PURE-SPE-ALL",
+      "M-0099728e245c474cb859d7dba9318bff",
+      "M-14dbe6980117492aa7a3b48c52378dcb",
+      "M-232414c2d8e744ccaba95138638a15dc",
+      "M-247deecec83946358afe4e89413a7bd1",
+      "M-3452046f3bdd47c48b17a0a3038ba4b2",
+      "M-57cc29d007474699abddc1bc2a9ab543",
+      "M-5af596d5d75441cba006ff7ba31a19a4",
+      "M-807f05190d1f4272b17deb8d040f979a",
+      "M-8170674befc34fdf866ec8fbd76d43c4",
+      "M-8c360a7779154480879e38c65d1f827e",
+      "M-8fdee11afd164305a429734ee5ae705a",
+      "M-90610eea6c6447188c03208eaa549254",
+      "M-922feb7b429f49d4b5f13ca51b34aae7",
+      "M-9a7614916cf04cee8915aefce74b502a",
+      "M-9f8033b6e1a4485b97636171b09f8218",
+      "M-ab4a576ed0be482b89d4a646ffc102b9",
+      "M-b29430314bce490aa4c60a00b48a7430",
+      "M-b6605b3864cb41e399d926496739f12d",
+      "M-b685609e9c8844768f9f83e56b1b5c88",
+      "M-bcf19c1d04ba4f39b746241304786dc1",
+      "M-c53fb7d0b92a42f9932d5d637d6a97ba",
+      "M-fb633f3a6f1448fbbd63bfc7c3806c40",
+      "PCP-EXACT-PROJECTION-PERFECT-COMPLETE-BIREGULAR-ROUNDING-v1",
+      "UM-NEAR-PERFECT-NORMALIZED-ROBUST-SOURCE-v1",
+      "UM-NORMALIZED-GATED-MENU-13-8-v2",
+      "UM-NORMALIZED-GATED-MENU-WELFARE-v1",
+      "UM-RAW-K2-LOCAL-LAW-DIRECT-CANONICAL-PULLBACK-OBSTRUCTION-v1",
+      "UM-RAW-SA3-CANONICAL-SA1-POINT-PULLBACK-v1",
+      "UM-VW2010-THEOREM12-BACKEND-PRECHECK-v1",
+      "customer-attraction/actual-prefix-whole-catalog-one-step-deviation-rows",
+      "customer-attraction/closeout-736dbe5593ed64a2cbf9514d",
+      "customer-attraction/common-coverer-request-density-projection-and-static-column-deficit",
+      "customer-attraction/four-provider-root-deviation-exact-certificate",
+      "customer-attraction/joint-column-capacity-and-positive-tax-preserving-reverse-split",
+      "customer-attraction/one-root-wallet-for-terminal-BR-normalization-and-true-price-transfer",
+      "customer-attraction/prefix-request-pushback-monotone-prices-and-ancestry-normalization",
+      "customer-attraction/terminal-normalization-independent-contract-and-eight-client-threshold-case",
+      "customer-attraction/two-leaf-shared-client-profit-bilateral-coupling",
+      "customer-attraction/universal-signed-credible-defect-price-equivalence",
+      "unrelated-machines/lst-two-approximation",
+      "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding"
+    ],
+    "edge_ids": [
+      "boss2-mz-joint-source-and-sparsification-close-minrep-parameters",
+      "boss5-infdegree-one-gadget-motivates-two-outer-path",
+      "cag-ca44-bilateral-to-common-density",
+      "cag-ca44-common-density-to-prefix-pushback",
+      "cag-ca44-common-density-to-real-query",
+      "cag-ca44-root-wallet-given-up-terminal-transfer",
+      "cag-ca44-static-row-to-reverse-nonnegative-remainder",
+      "cag-ca44-universal-price-and-root-wallet-transfer",
+      "cag-ca44-whole-catalog-price-excludes-single-point",
+      "cag-ca44-whole-catalog-price-excludes-three-point",
+      "perfect-four-to-one-and-biregularization-to-three-uniform-independent-set",
+      "perfect-four-to-one-to-eight-color-independent-set",
+      "um-129516aa-minrep-source-and-sparsification-pay-conditional-parameter-repair",
+      "um-280160f5-raw-s3-pays-only-sound-failure-half",
+      "um-constant-tw-exact-load-dp-contributes-fptas-join-v4-7c26",
+      "um-constant-tw-exact-load-dp-contributes-fptas-runtime-v5-ea3c",
+      "um-controlled-incidence-dp-implies-primal-single-exponential-effd",
+      "um-controlled-incidence-dp-implies-primal-single-exponential-v5-9568",
+      "um-lst-st-to-incidence-rankwidth-size-reduction"
+    ],
+    "archive_scopes": [
+      "archives/customer-attraction",
+      "archives/unrelated-machines"
+    ]
+  },
+  "pending_after": {
+    "object_ids": [
+      "CA-EXACT-PURE-SPE-ALL",
+      "M-5af596d5d75441cba006ff7ba31a19a4",
+      "M-807f05190d1f4272b17deb8d040f979a",
+      "M-8c360a7779154480879e38c65d1f827e",
+      "M-8fdee11afd164305a429734ee5ae705a",
+      "M-90610eea6c6447188c03208eaa549254",
+      "M-922feb7b429f49d4b5f13ca51b34aae7",
+      "M-9a7614916cf04cee8915aefce74b502a",
+      "M-9f8033b6e1a4485b97636171b09f8218",
+      "M-ab4a576ed0be482b89d4a646ffc102b9",
+      "M-b6605b3864cb41e399d926496739f12d",
+      "M-bcf19c1d04ba4f39b746241304786dc1",
+      "M-fb633f3a6f1448fbbd63bfc7c3806c40",
+      "PCP-EXACT-PROJECTION-PERFECT-COMPLETE-BIREGULAR-ROUNDING-v1",
+      "UM-NEAR-PERFECT-NORMALIZED-ROBUST-SOURCE-v1",
+      "UM-NORMALIZED-GATED-MENU-13-8-v2",
+      "UM-NORMALIZED-GATED-MENU-WELFARE-v1",
+      "UM-RAW-K2-LOCAL-LAW-DIRECT-CANONICAL-PULLBACK-OBSTRUCTION-v1",
+      "UM-RAW-SA3-CANONICAL-SA1-POINT-PULLBACK-v1",
+      "UM-VW2010-THEOREM12-BACKEND-PRECHECK-v1"
+    ],
+    "edge_ids": [
+      "boss2-mz-joint-source-and-sparsification-close-minrep-parameters",
+      "boss5-infdegree-one-gadget-motivates-two-outer-path",
+      "perfect-four-to-one-and-biregularization-to-three-uniform-independent-set",
+      "perfect-four-to-one-to-eight-color-independent-set",
+      "um-129516aa-minrep-source-and-sparsification-pay-conditional-parameter-repair",
+      "um-280160f5-raw-s3-pays-only-sound-failure-half"
+    ],
+    "archive_scopes": [
+      "archives/customer-attraction",
+      "archives/unrelated-machines"
+    ]
+  },
+  "new_mathematical_program_runs": 0
+}
