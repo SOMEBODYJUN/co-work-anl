@@ -1,0 +1,42 @@
+{
+  "kind": "checks",
+  "relation_mode": "context",
+  "conditions": "m=1,…,5，两个不交块分量的每个候选块向量在 {(1,2),(1,3),(2,5),(1,1,1)} 内，完整产品目录。",
+  "roles": {
+    "customer-attraction/closeout-1ed22a276af8b03beb384931": "在80个候选输入对筛分量全部有序历史、全 m 维收益唯一，并精确比较47个通过者的联合根终局集合。",
+    "CA-CARTESIAN-PAYOFF-UNIQUE-FACTOR-v1": "证明在每个联合子博弈的乘积终局等式，包含分量中已经行动玩家的收益唯一性假设。"
+  },
+  "explanation": "各分量每个历史检查的是全 m 人收益向量集合单点，含已行动前缀玩家。满足条件的47个输入对才检查根集合，实际比较为逐位置投影的联合根可实现终局全集与分量根全集乘积。色分量三人异色前缀的两个平局末动作使前两人收益在 (q/2,q) 与 (q,q/2) 之间切换，解释该分量未通过唯一筛选。一般全历史乘积分解靠解析归纳。",
+  "scope": "固定有限输入域、强前提筛选与根投影断言，不扩成全部策略映射的分解。",
+  "review_note": "实读重放对象及任意子博弈归纳，核前提量化前缀玩家、回归只断言联合根。",
+  "edge_id": "ca-87d9-cartesian-audit-finite-payoff-unique-check",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/closeout-1ed22a276af8b03beb384931"
+  ],
+  "target_ids": [
+    "CA-CARTESIAN-PAYOFF-UNIQUE-FACTOR-v1"
+  ],
+  "premises_mode": "all",
+  "reviewed_by": "Boss5",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/笛卡尔福利与支付唯一分解的精确核验--计算.md",
+      "sha256": "b92e1abb87634e79cee811dc1fe2a2e80bee81c1bed71bfa580bfc0da028c28a",
+      "section": "笛卡尔福利反例与全体支付唯一分解的精确有限核验"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/全体玩家续局支付唯一的乘积分解--定理.md",
+      "sha256": "34e461e4bac319cd0804f194fd5e83ba3fb7b10cafc6d4aa25cad6cd0070ab4a"
+    }
+  ],
+  "endpoint_pins": {
+    "CA-CARTESIAN-PAYOFF-UNIQUE-FACTOR-v1": "478b993429188620a73b4531f1bc8c397d7bae51999252b2c19dc35e1ba00d5e",
+    "customer-attraction/closeout-1ed22a276af8b03beb384931": "eda0fbcc40d548caeffd1d62e3f9584f8b7f8f3216c690806dab5776984a2a99"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/笛卡尔福利与支付唯一分解的精确核验--计算.md": "b92e1abb87634e79cee811dc1fe2a2e80bee81c1bed71bfa580bfc0da028c28a",
+    "archives/customer-attraction/state/定理/全体玩家续局支付唯一的乘积分解--定理.md": "34e461e4bac319cd0804f194fd5e83ba3fb7b10cafc6d4aa25cad6cd0070ab4a"
+  },
+  "review_digest": "274f437e4de14cd723bd7833c1326ada7c498b5819f2922195d78cc1bf03276d"
+}

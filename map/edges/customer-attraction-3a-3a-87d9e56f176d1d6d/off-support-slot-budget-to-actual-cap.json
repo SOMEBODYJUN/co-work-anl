@@ -1,0 +1,57 @@
+{
+  "kind": "implies",
+  "relation_mode": "unconditional",
+  "conditions": "同一旧十三人36单位客户、actual 计数 (2,1,0,0,0,10)、W=33，阈值 β=66/25；背景分布在查询之前确定，竞争槽恰十二个。",
+  "roles": {
+    "M-8daa6a744d794d36aabc405ffb09fe53": "共同 cap 若可行，必要 E N_out≥6/25，即使背景槽任意相关。",
+    "M-8d4997623f794aef8b9436983980d99f": "同一实例上排仅用实际支持的静态封顶，并另给受限值和完整目录可行上界。"
+  },
+  "explanation": "若某十二槽背景分布只取实际支持 A,B,P，则逐背景 N_out=0，与必要正下界 6/25 矛盾。相同矛盾也可从 T 的三个遗漏客户逐点无负载、T 查询恒为3读出。因分布可任意相关，排除覆盖全部实际支持混合，包含但不限于实际叶删一位和均匀删位。",
+  "scope": "旧十三人实例上针对固定 β 的 actual 支持限制；与全目录 minmax 静态付款桥有不同背景域。",
+  "contribution": {
+    "result": "由正离轨槽必要预算推出所有仅用 actual 支持的十二槽背景分布均无法达到 β=66/25。",
+    "remaining": "精确实际删位矩阵值3还须检查三列其余查询≤3；全目录 cap≤5/2 还须给出并检验合法背景 (A,B,T,P⁹)。6/25 的 T-only 取等也不能代替全部查询的共同可行性。"
+  },
+  "review_note": "实读同一旧13输入和删位矩阵，核 β、三 T 客户、逐背景计数关系及完整目录的独立见证。",
+  "edge_id": "ca-87d9-off-support-slot-budget-to-actual-cap",
+  "status": "accepted",
+  "source_ids": [
+    "M-8daa6a744d794d36aabc405ffb09fe53"
+  ],
+  "target_ids": [
+    "M-8d4997623f794aef8b9436983980d99f"
+  ],
+  "premises_mode": "all",
+  "reviewed_by": "Boss5",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/实际删位静态封顶的原扫描与离轨槽预算--程序.md",
+      "sha256": "c310d5e18e8c9e13bf73b916fda4d0f67fa10cfb701956cf15e5bbc66d78a1e4",
+      "section": "离开实际支持需要多少槽：6/25的准确对象"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/实际删位静态封顶的原扫描与离轨槽预算--程序.md",
+      "sha256": "c310d5e18e8c9e13bf73b916fda4d0f67fa10cfb701956cf15e5bbc66d78a1e4",
+      "section": "静态封顶量及实际删位的受限矩阵"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/固定原安全鞍点下的完整策略查询锥审计--计算.md",
+      "sha256": "6dffc61f0d997857a286122048fa038b0a59511e5e67006ae75fcab6818b5a69",
+      "section": "唯一复用的旧13输入与已有SPE认证"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/实际删位静态封顶的原扫描与离轨槽预算--程序.md",
+      "sha256": "c310d5e18e8c9e13bf73b916fda4d0f67fa10cfb701956cf15e5bbc66d78a1e4",
+      "section": "旧十三人完整SPE：实际支持限制的明确反例"
+    }
+  ],
+  "endpoint_pins": {
+    "M-8d4997623f794aef8b9436983980d99f": "335da001651dfd0597e4f3971935251b2211ca4a36812b2994f6940990b963e6",
+    "M-8daa6a744d794d36aabc405ffb09fe53": "8514cf67c88ee021e47e5d91c9747f4945cad6762b5a2aad4efcbd710bc079a1"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/实际删位静态封顶的原扫描与离轨槽预算--程序.md": "c310d5e18e8c9e13bf73b916fda4d0f67fa10cfb701956cf15e5bbc66d78a1e4",
+    "archives/customer-attraction/state/计算/固定原安全鞍点下的完整策略查询锥审计--计算.md": "6dffc61f0d997857a286122048fa038b0a59511e5e67006ae75fcab6818b5a69"
+  },
+  "review_digest": "26ce2c008676a2a9fe2a3a404e2c6b1c05fb89115147573d7e4457b32e6ce6c8"
+}

@@ -1,0 +1,52 @@
+{
+  "kind": "transfers",
+  "relation_mode": "unconditional",
+  "conditions": "固定五人五题 A,C,D,E,F，35名固定单位客户，E 私有类型的辅助质量为实数 t∈[0,1]。收益仍为共同客户均分。递推只比较有限真实续局的收益，必要性和独立有序子树拼接的充分性在此实质量辅助域照样成立。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "精确刻画每个计数前缀所有完整有序历史 SPE 终局，并从任何可实现计数拼接完整有序策略。",
+    "customer-attraction/omitted-client-deletion-and-unbounded-credible-root-sensitivity": "代入具体五人参数数据，得到全参数目标可实现性、可信根门槛及整数单客删除无界族。"
+  },
+  "explanation": "对所有126终局和占用标签列 U_a(z;t) 的 211 条不同仿射收益线，取 [0,1] 内全部交点及端点，共65分点和129个点/开区间代表。任何开区间全部候选线的弱序固定，从终层向上用 R_t(q)=∪_a{z∈R_t(q+e_a):U_a(z;t)≥max_b min_{y∈R_t(q+e_b)}U_b(y;t)}，每层的筛选与 min/max 达到者均固定。所有分点逐点保平局。两条门槛常数线33/4与7也属于候选线，根阈值线若在开区间代表等于相应常数，整段必恒等，否则出现未列交点。代表精确结果给目标 c=(2,1,0,0,2) 可实现当且仅当 t≥3/4，阈值在下段33/4、从断点起7。t=1删唯一 E 私有客户到 t=0 即排除目标。对整数 s≥1 取 k=4s+1，固定类型放大 k，E 私有从3s+1删至3s，归一参数严格跨3/4；收益线性使门槛由7k升至33k/4，差5k/4，目标在轨覆盖仍为35k。",
+  "scope": "五人固定目录固定客户类型的全参数辅助族及其单位客户整数实现。门槛是对子 SPE 终局集合取最坏再选行动，不把它识别为静态安全值。",
+  "whole_result": "精确终局全集递推加完整收益弱序分区，推出固定族的 iff、两段根门槛、删唯一实际遗漏客户排除目标及单客删除的无界绝对门槛跳变。",
+  "review_note": "实读全集递推的两个方向与参数证书。独立按客户类型重建211线、65分点、129个精确代表及各代表根全集和阈值，全部与正文一致。整数结论用跨阈值与正齐次性。",
+  "edge_id": "ca-87d9-complete-outcome-recursion-to-omitted-client-threshold",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "customer-attraction/omitted-client-deletion-and-unbounded-credible-root-sensitivity"
+  ],
+  "premises_mode": "all",
+  "reviewed_by": "Boss5",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/实际遗漏客户删除与可信根门槛的无界敏感性--障碍.md",
+      "sha256": "f1239a8d5ae08a1fae4802668f591ca2f5446f588acd7ff9878f914a8703d990"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/遗漏删除参数证书与重入菜单的证据分层--资源.md",
+      "sha256": "99686dac4c625f4437e0d070229688e8454639586ab963d052366981e7f962fb"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/omitted-deletion-parameters-and-reentry-primary/single-new-run/output/parameter-partition.json",
+      "sha256": "48501a61ba3c7a3e3641a0bdff0d9e8d35e20f4f5da7178148106ab2ce28e0f6"
+    }
+  ],
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "customer-attraction/omitted-client-deletion-and-unbounded-credible-root-sensitivity": "af4e1874e104c5d35b722fa8fe543cb9da07a5b06266ab435e2d6be19e3aae53"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/实际遗漏客户删除与可信根门槛的无界敏感性--障碍.md": "f1239a8d5ae08a1fae4802668f591ca2f5446f588acd7ff9878f914a8703d990",
+    "archives/customer-attraction/state/资源/遗漏删除参数证书与重入菜单的证据分层--资源.md": "99686dac4c625f4437e0d070229688e8454639586ab963d052366981e7f962fb",
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/tools/evidence/omitted-deletion-parameters-and-reentry-primary/single-new-run/output/parameter-partition.json": "48501a61ba3c7a3e3641a0bdff0d9e8d35e20f4f5da7178148106ab2ce28e0f6"
+  },
+  "review_digest": "275d923b5da7b6cec15647225f51b68e6dcd5a5ae5b2f7146bf6911ae2c00adb"
+}
