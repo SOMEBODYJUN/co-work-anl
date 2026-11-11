@@ -1,0 +1,121 @@
+{
+  "definition": {
+    "task_id": "boss5-localfix-repair-a850f769876ca7ec",
+    "stage": "3A",
+    "registry": "research/registry.json",
+    "supersedes": [
+      "boss1-pcp-source-erratum-repair-20b44981f12275fe"
+    ],
+    "object_ids": [
+      "M-fb633f3a6f1448fbbd63bfc7c3806c40"
+    ],
+    "read_object_ids": [
+      "M-9a7614916cf04cee8915aefce74b502a",
+      "M-8c360a7779154480879e38c65d1f827e"
+    ],
+    "input_pins": {
+      "M-fb633f3a6f1448fbbd63bfc7c3806c40": "fdb940f4d9c1ac5bffffa7b4e6b2317975a6ace432efab15cb0b8dc480350364",
+      "M-9a7614916cf04cee8915aefce74b502a": "2aa23f854e6b0f711408da511b189185dfbace9f8c524b4ddf8c0d7b1e97db49",
+      "M-8c360a7779154480879e38c65d1f827e": "3dd4454f24e6ace08f116048d88ada39f73596fb57ae251b1d7b61568079281d"
+    },
+    "write_paths": [
+      "map/edges/boss5-localfix-repair-a850f769876ca7ec",
+      "map/receipts/boss5-localfix-repair-a850f769876ca7ec.json"
+    ],
+    "goal": "Resolve the changed inputs or unanswered comparison in boss1-pcp-source-erratum-repair-20b44981f12275fe; reuse still valid coverage, and explicitly dispose each prior asset.",
+    "context_plan": {
+      "budget": {
+        "context_tokens": 500000,
+        "window_source": "official-default",
+        "model": "gpt-6.1-sol",
+        "used_tokens": null,
+        "history_mode": "fresh-worker",
+        "reserve_tokens": 200000,
+        "reading_tokens": 300000,
+        "output_tokens": 100000,
+        "runtime_remaining_tokens": null,
+        "declared_remaining_before_reserve_tokens": null,
+        "assumptions": [
+          "Window source is declared, not discovered from this conversation.",
+          "Reading budget includes source text and object/task metadata.",
+          "Reserved context includes expected generated records and later reasoning/tool growth.",
+          "Fresh worker assumed; actual system/prefix usage is unknown and covered only by the engineering reserve."
+        ],
+        "budget_is_runtime_measurement": false
+      },
+      "reading": {
+        "chars": 24059,
+        "utf8_bytes": 42505,
+        "source_tokens": 33864,
+        "metadata_tokens": 3739,
+        "estimated_tokens": 37699,
+        "metadata_chars": 3333,
+        "metadata_utf8_bytes": 5106,
+        "distinct_files": 4,
+        "reading_segments": 2,
+        "token_count_is_estimate": true,
+        "estimators": [
+          "conservative-math-text-estimate-v1; not a tokenizer count"
+        ],
+        "unmeasured_refs": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/minzer_zheng.pdf",
+            "sha256": "13b8eb55f86cfe28ac8b283fe83612889b335e14b7a87d64d479451693c7dff4",
+            "bytes": 1526039,
+            "reason": "Non-text evidence: export/read with the appropriate tool, then size its actual extracted context"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/Boss7-minrep-restored/original/manurangsi_minrep_degree_1807_00936v1.pdf",
+            "sha256": "259edd7e850da816ddb5c318287a7a3a525ccc8963f07918787156384d7153d8",
+            "bytes": 134108,
+            "reason": "Non-text evidence: export/read with the appropriate tool, then size its actual extracted context"
+          }
+        ],
+        "measurement_scope": "Requested complete text spans plus supplied metadata; binary evidence is not token-counted from raw bytes.",
+        "task_overhead_tokens": 96
+      },
+      "reading_refs": [
+        {
+          "path": "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md",
+          "sha256": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/minzer_zheng.pdf",
+          "sha256": "13b8eb55f86cfe28ac8b283fe83612889b335e14b7a87d64d479451693c7dff4"
+        },
+        {
+          "path": "archives/unrelated-machines/state/文献/四对一与字母表soundness两篇文献整理--文献.md",
+          "sha256": "6d5be138de6825a1208776cbb485316c5b0e9d197870e32ab7c1d8ca5cf2f746"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/Boss7-minrep-restored/original/manurangsi_minrep_degree_1807_00936v1.pdf",
+          "sha256": "259edd7e850da816ddb5c318287a7a3a525ccc8963f07918787156384d7153d8"
+        }
+      ],
+      "oversized": false,
+      "requires_export": true,
+      "prior_assets": [
+        {
+          "path": "map/edges/unrelated-machines-3a-3a-129516aa527e0e1f/source-and-sparsification-conditional-repair.json",
+          "sha256": "fee131189c6475d80920ef00a74c2ff8c85bad2f3d360cb15e1775e8e0865c1b"
+        }
+      ],
+      "retired_core_object_ids": [],
+      "recheck_core_object_ids": [
+        "M-fb633f3a6f1448fbbd63bfc7c3806c40"
+      ],
+      "repair_reasons": [
+        "changed-registration-input"
+      ],
+      "note": "Read the previous task and receipt. Carry forward valid work. If needed, read the same scope in ordered passes. A retirement-only task lists no coverage or new assets.",
+      "comparison_priority": 2,
+      "scope_hint": "archives/unrelated-machines"
+    }
+  },
+  "state": "available",
+  "owner": null,
+  "request_id": "b381a65a6cb94ccea0db76cfebd4371f",
+  "requests": {
+    "b381a65a6cb94ccea0db76cfebd4371f": "plan"
+  }
+}
