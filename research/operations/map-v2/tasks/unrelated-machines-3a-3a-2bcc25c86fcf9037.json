@@ -85,12 +85,71 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss5",
-  "request_id": "f9d446bd1ad54971abb5ef051a8134b3",
+  "request_id": "005d1f39969f4d56a2a836dfa2172519",
   "requests": {
     "81a0648c3de14140a1ae6370812f33c4": "plan",
     "7c6b45df35254fa9a07c49395aefc7aa": "plan",
-    "f9d446bd1ad54971abb5ef051a8134b3": "claim"
+    "f9d446bd1ad54971abb5ef051a8134b3": "claim",
+    "005d1f39969f4d56a2a836dfa2172519": "done"
+  },
+  "edge_paths": {},
+  "receipt": {
+    "task_id": "unrelated-machines-3a-3a-2bcc25c86fcf9037",
+    "owner": "Boss5",
+    "request_id": "f9d446bd1ad54971abb5ef051a8134b3",
+    "coverage": {
+      "M-a4ecb68ddbe948258e6a2e7e0cebeb54": {
+        "state": "isolated-after-review",
+        "object_pin": "a79b9571925fbadfc3a98db3a5cb1036e1f76213025f55003ce051856d285ee6",
+        "comparison_scope": "本轮读完整任务、AGENTS.md、research/IMPLEMENTATION.md、prompts/03-map-worker.md及core v2完整record；research show核正文和PDF均current且pin等于任务pin。完整实读共同正文ee4b6266…及Dobzinski–Nisan–Schapira冻结PDF全部15页（其现成全文967个换行，Python splitlines计968行）；本轮pdftotext -layout重新提取与所读现成txt逐字节相等，并渲染实看PDF p3、p11、p12核Theorem1.4、4.2、4.3与分区构造符号。重构§4.2两条独立下界的全部承重推导，同时读§2的表示/查询合同、§3的LP舍入及两上界和§6的value查询独立下界；核当前M-8fdee11afd164305a429734ee5ae705a、M-bafae50558c441728f16cbfc7dce9f82、M-513a993cb39a478a850f01c62d52d0ed、M-4db1e9e555294998a207d584ce22485f完整record及共享正文的对象边界。Moshkovitz侧另经只读子核验实读提取pp221–229（§1–4，含Theorem1.2、Cor4.8、Lemma4.9、Claim4.10）及PDF印刷229页，未声称完整实读该15页PDF。检索当前registry中auction/XOS/set-cover/list-agreement相关对象定位候选；未找到本core所用Feige MAX-k-COVER硬度或approximate-disjointness下界的独立已登记前提。任务无指定overlap_comparisons，恢复检索未找到本任务已有边/收据草稿；没有扩大成全档无关系断言。",
+        "reason": "本core有两条完整但源前提未单独登记的证明。表示下界：给有限MAX-k-COVER集合族F与预算k，建k个相同显式0/1 XOS估值v_i(S)=max_(F∈F)|S∩F|。任意k集的并集可按元素唯一分给相应bidder，得到至少该并集大小的福利；任意allocation为各bidder选一个maximizing clause后，福利等于这些clause中实际分配元素的总数，至多k个相应集合的并集大小。因此OPT_welfare=OPT_MAX-k-COVER，输入是显式clause列表且构造多项式；Feige1998的MAX-k-COVER阈值给表示域的NP-hardness。通信下界是另一条approximate-disjointness归约：令c_n=1−(1−1/n)^n，选t=exp(Ω(η²m/n))个公开分区，使任意互异索引s_i的混合块并集至多(c_n+η)m。玩家i的私有A_i只选择本人的分区块作为0/1 clauses；若所有A_i有公共s，则同一分区分配福利m；若A_i两两不交，则任意maximizing clauses索引互异，福利至多(c_n+η)m。任何近似因子r<1/(c_n+η)的协议可区分承诺，须Ω(t/n^4)通信；对每个固定r<e/(e−1)，先取充分大n再取小η，随m增长得到指数下界，包含有界错误随机协议且不依赖P≠NP。本轮不把冻结PDF p11 Theorem4.3中r_n+ε的排版号错当可用结论：p12的证明只支付上述严格阈值，p3 Theorem1.4的渐近常数陈述和当前core仍正确。与e/(e−1)上界的关系是精确阈值相容性；上界本身不证明下界，下界不构造上界。确定性2近似也不违反本阈值，其价格证明与两下界独立。value-only的平方根障碍涉及更弱访问，其隐藏clause证明不能推出一般通信下界或显式表示NP-hardness，本core也没有推出其m增长的平方根阈值。Moshkovitz给的是最小化完全覆盖集合数的|A|对>|A|ln|U|(1−2α) gap，经N=|B||U|得到对数近似硬度；它没有给本归约所需的固定k最大化并集gap，不能因cover/partition同名替代Feige MAX-k-COVER源。共享正文也没有从任何上述福利/覆盖模型到SPE、max-min或makespan的目标保持映射。本轮有限候选范围只得到证明入口与边界核实，没有可接受的跨已登记对象逻辑关系，故不为连通造边。潜在新用途仍须先给精确目标、访问合同及可证的目标保持桥；当前没有具体需派后续的未付比较。"
+      }
+    },
+    "assets": [],
+    "follow_up_tasks": [],
+    "reading_evidence": [
+      {
+        "path": "archives/unrelated-machines/state/文献/组合拍卖与投影游戏集合覆盖两篇文献整理--文献.md",
+        "sha256": "ee4b62663ff651341ae40162b5319b31b9230d71c93b81333d43cfbf92d4fb22",
+        "range": "全文；两个文献模型及跨来源边界"
+      },
+      {
+        "path": "archives/unrelated-machines/tools/evidence/retired-literature-auction-setcover-20261031/dobzinski_auction.pdf",
+        "sha256": "d0700d7674db45b4330d558c731c0200567f2c7a999f5eef7952029cab26dd15",
+        "range": "全部15页提取全文；本轮另渲染目视核p3/p11/p12。新提取txt SHA=d97e661087cfa4972ed4635c045982d98d28a53bbdd4b4a993fb509f4d6acafc，与现成txt完全相等。"
+      },
+      {
+        "path": "archives/unrelated-machines/tools/evidence/retired-literature-auction-setcover-20261031/moshkovitz_setcover.pdf",
+        "sha256": "51072837058066469129fdc62ad6b16725bce6ea97dfeb2110172b464cdfa1d7",
+        "range": "只读子核验：提取pp221–229的§1–4及§5入口，另核PDF印刷229页；不声称全文PDF阅读。仅用于区分最小Set Cover与MAX-k-COVER，并非本core新增证明依赖。"
+      }
+    ],
+    "reviewed_by": "Boss5",
+    "review_note": "完整读与双向重构确认core v2的两个模型各有正确证明入口；精确保留通信归约严格gap、先固定常数后选n/η的量词及PDF排版边界。与四个具名peer的候选关系都没有支付一个新已登记目标的完整结论或有价值独立贡献。零边为本次实际审读结果；未改源、registry或队列。",
+    "reviewed_comparisons": [
+      {
+        "core_id": "M-a4ecb68ddbe948258e6a2e7e0cebeb54",
+        "peer_id": "M-8fdee11afd164305a429734ee5ae705a",
+        "reason": "已读同一PDF的两完整证明。该peer在demand及maximizing-clause访问下提供e/(e−1)算法，本core排除严格更优常数，两者共同说明sharpness但不单独推出对方完整陈述；无独立登记sharpness目标可作ALL边，故关闭本次一般性比较。"
+      },
+      {
+        "core_id": "M-a4ecb68ddbe948258e6a2e7e0cebeb54",
+        "peer_id": "M-bafae50558c441728f16cbfc7dce9f82",
+        "reason": "已读Theorem3.3的价格单调/最终价格两侧收费。确定性2上界与本core的严格优于e/(e−1)下界并不矛盾；任一证明不支付另一个。共享XOS定义和访问接口不构成逻辑边，关闭。"
+      },
+      {
+        "core_id": "M-a4ecb68ddbe948258e6a2e7e0cebeb54",
+        "peer_id": "M-513a993cb39a478a850f01c62d52d0ed",
+        "reason": "已读§6的随机隐藏clause/value-query证明。其m^(1/2−ε)障碍限value访问；本core是显式表示计算下界和一般通信的常数阈值，访问域与量纲均不同。常数级value访问的弱推论既不支付peer完整sqrt结论，也不反推core两部分，关闭而不造重复局部边。"
+      },
+      {
+        "core_id": "M-a4ecb68ddbe948258e6a2e7e0cebeb54",
+        "peer_id": "M-4db1e9e555294998a207d584ce22485f",
+        "reason": "共同正文、两record和源定理关键段已核：Moshkovitz是最小完全覆盖的对数gap；Dobzinski Theorem4.2用Feige1998的固定k最大覆盖gap。前者NO情况下cover数大并不直接排除k集已覆盖绝大部分元素，源文未给缺少的预算覆盖soundness桥；公开随机分区相似性也不替代通信归约。此一般比较无继续价值，关闭；不启动无具体新桥的任务。"
+      }
+    ],
+    "closed_overlaps": []
   }
 }
