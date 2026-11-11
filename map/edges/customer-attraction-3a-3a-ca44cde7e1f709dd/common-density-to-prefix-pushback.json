@@ -10,17 +10,17 @@
   ],
   "premises_mode": "all",
   "relation_mode": "unconditional",
-  "conditions": "合法B/W满足B_j=W_j (j<i)，同一child的全部prefix系数0≤λ_j≤L。ancestry条款另取同一完整σ及严格递增强制位置栈；只在真prescribed/query处使用whole-IC。",
+  "conditions": "任意合法B/W满足B_j=W_j (j<i)，同一child全部已合并严格prefix系数0≤λ_j≤L；单pair代数不需SPE。有限祖先域修复另固定同一完整纯SPE σ、严格递增强制栈和一个初始prefix包，停止的自然项不重开；只在真prescribed/query处使用whole-IC。单步共同L不作为所有最终输出合并后的共同L。",
   "roles": {
     "customer-attraction/common-coverer-request-density-projection-and-static-column-deficit": "共同coverer投影提供同角色base与新增B-coverer两类互不重叠支持、同时列密度。",
     "customer-attraction/prefix-request-pushback-monotone-prices-and-ancestry-normalization": "精确原PUSH矩阵、非减价格、后缀利润及一次纯祖先规范化。"
   },
-  "explanation": "取F=W,R=B，只给prefix common角色j常密度λ_j，其它common密度0。保留项为λ_j base_j，base_j=Σr_x/(c_Bc_W)=p_j(B)−N_j；新增B-coverer在ℓ≥i，金额Σj λ_jq^+jℓ。源密度界给每个parent完整角色金额≤L p_ℓ(B)，零父利润金额0。归一成目标T即每列和≤1、κ=λT≤L，金额守恒。金额仅留j或进ℓ≥i>j，所以任意非负非减z的输入价≤输出价≤LΣz p(B)，指标价给后缀界。严格递增强制栈中，仍非法的同角色保留项每次祖先深度降1；新tail在parent最后强制之后已真规定，因此这一次纯域修复有限。未控制多child、旧suffix或SD再次展开后的累计量。",
-  "scope": "目标整条单parent/child回推，包括其原有输入合同下的有限ancestry；没有全网络吸收或actual cap。",
+  "explanation": "取F=W,R=B，只给prefix common角色j常密度λ_j，其余0。COMMON同角色项λ_j base_j，base_j=Σr_x/(c_Bc_W)=p_j(B)−N_j；新增B-coverer必ℓ≥i，金额Σ_jλ_jq^+jℓ。逐请求守恒及同时密度界给目标原显式T的每列和≤1、κ=λT≤L，零父利润金额/系数0。金额仅留j或进ℓ≥i>j，故非负非减z的输入价≤输出价≤LΣz p(B)，指标价给后缀界。祖先栈L^r=finishσ(L^(r−1)_<i_r,d_r)必须三分支：j<i_r才用strictprefix PUSH；j=i_r是真query，用同一h的0≤d≤v将βd=(βd/v)v，v0则d0，所得parent规定完整利润停止；j>i_r已真规定而停止。每个尚非法项至多留下一个同角色未解后继，深度降1，所以一次纯修域有限；合法输出可停离轨自然context。继续strictpast的对角系数包络≤L，但已停止金额合并未必≤L：ξ_(i_r)=κ_(i_r)+βd/v。三人恒X完整SPE、|X|3/|Y|1不交加empty、Z=XXX/L1=XYX/L2=XYempty的初始前两单位请求终归Z role2金额1+1/2=3/2>p2(Z)=1，其余Z role1为1、离轨L1 role3为3/2，总4守恒。不反单步PUSH或half，不承诺全回actual、全栈L、SD再展开或全网钱包。",
+  "scope": "整条单pair显式PUSH、共同列cap、单调价及后缀界；另完整证明固定递增栈的一次有限合法域修复。单步L与待修strictpast包络L不升级为所有自然输出合并的L，输出可停off-history。",
   "evidence": [
     {
       "path": "map/edges/customer-attraction-3a-3a-ca44cde7e1f709dd/review.md",
-      "sha256": "fbda324741cf14a46741609f2fefcc774cc202c22c307ec7de146936b6c27d12",
+      "sha256": "fcac03e4d8328b4b6ff89e5d561f37d448e9c9574603f6a6f5a8fee8ac158baf",
       "section": "5. 共同密度专门化得到精确PUSH及真query投影"
     },
     {
@@ -30,9 +30,29 @@
     {
       "path": "archives/customer-attraction/state/引理/前缀请求回推的单调价格与祖先规范化--引理.md",
       "sha256": "6b31e7c3bef41e06ce8bac21425998bb9190b6232dd079d80d237041efb41b02"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss6/current-run/wallet-transport-audit/ancestor-normalization-supplement.md",
+      "sha256": "cafc3606dad4fd4385090122748460b76d9ae4e7654491b4f54ed0c5f94cddd5"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss6/current-run/wallet-transport-audit/independent-review.md",
+      "sha256": "5d593c3face68c741d4f0d71190fb88c007544f4941837620124f597d5cb715f"
     }
   ],
   "reviewed_by": "Boss6",
-  "review_note": "本包worker完整实读指定对象、必要正文及证据，按review.md逐项核量词、支持和零端点。已完成的局部关系按贡献标明；不把旧报告当本轮运行。Root尚未作原生edge-bind。",
-  "whole_result": "同一child全部prefix请求有目标显式列次随机T与κ=λT∈[0,L]^m，精确保量；非负非减角色价和后缀利润界成立；同一严格递增强制栈的一次纯过去域修复有限。多孩子、旧请求及再展开SD不包含在该结论。"
+  "review_note": "本fresh worker完整读当前18端点合同、承重正文、原七边/完整稿/账本/receipt及新增审查；前worker57引用/46文件读取声明另保，不冒称本轮全量重读。按当前review逐项核域/量词/零端点；无科学程序重跑，Boss尚待原生绑定。 Root全文实读当前完整数学稿及八边，另对照当前关键目标原句、PUSH正文与合同资源，复核三分支及合并容量反例、两种价格域/量词、有限负价必要条件和证据来源；此前已读独立审查补判。本次随后实际执行原生绑定和结构检查，后者不替代数学论证。",
+  "whole_result": "对每一固定parent/child及同一child一组已合并严格prefix请求，目标显式T列次随机，κ=λT∈[0,L]^m，精确保量，非负非减角色价和后缀界成立。另对固定严格递增强制栈，j<i_r用PUSH、j=i_r用同history query d/v（v0⇒d0）、j>i_r停止；未解strictpast深度逐次下降，有限得到合法自然利润表示，可停off-history。后句不保证所有合并输出仍≤L，亦不保证全部落actual Z。",
+  "endpoint_pins": {
+    "customer-attraction/common-coverer-request-density-projection-and-static-column-deficit": "5278eee5e2b340199210488fa6b01c52744bc53ee0e6103120081a51666abdb8",
+    "customer-attraction/prefix-request-pushback-monotone-prices-and-ancestry-normalization": "dd4cfbdb62edb482c0f83dc8b278f7843d9b53b24305c0e3a905a834ec52991c"
+  },
+  "evidence_pins": {
+    "map/edges/customer-attraction-3a-3a-ca44cde7e1f709dd/review.md": "fcac03e4d8328b4b6ff89e5d561f37d448e9c9574603f6a6f5a8fee8ac158baf",
+    "archives/customer-attraction/state/引理/共同覆盖者请求的密度投影与静态列余量--引理.md": "9a3a5698b25b4e0ce36e3a2ac23064fbffdf31fbc8a763818744a141ff33798c",
+    "archives/customer-attraction/state/引理/前缀请求回推的单调价格与祖先规范化--引理.md": "6b31e7c3bef41e06ce8bac21425998bb9190b6232dd079d80d237041efb41b02",
+    "research/workspaces/map-v2/Boss6/current-run/wallet-transport-audit/ancestor-normalization-supplement.md": "cafc3606dad4fd4385090122748460b76d9ae4e7654491b4f54ed0c5f94cddd5",
+    "research/workspaces/map-v2/Boss6/current-run/wallet-transport-audit/independent-review.md": "5d593c3face68c741d4f0d71190fb88c007544f4941837620124f597d5cb715f"
+  },
+  "review_digest": "ca4cf73fc1a58b4788ccc10e308fe3482fe04af0f07cd2fa2742b82fcc9551a3"
 }
