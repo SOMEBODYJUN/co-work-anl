@@ -1,0 +1,62 @@
+{
+  "edge_id": "ca-aa8e8ffa-new-lift-pays-menu-closure-conditions",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "LOCAL-RESERVATION-SPE-v1"
+  ],
+  "target_ids": [
+    "LOCAL-RESERVATION-MENU-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "仅对NEW实际构造的literal B首位提升，旧n≥2、全部旧节点规定收益≥η、J/2≤η及J≥L=max_T(|T|−δ_T/2)。查询菜单Z_i(A)保含当前强制行动的旧n槽真叶。U闭包另假设旧∀p Σ_iψ_i(p)≤W；actual cap闭包另假设旧M≤W/n。加权式对同一个指定p和同一λ∈Δ_n使用，不从各查询分别选λ。",
+  "roles": {
+    "LOCAL-RESERVATION-SPE-v1": "提供确已存在的完整literal提升，并用NEW全历史保底和交集上界付清MENU的两个标量条件C。",
+    "LOCAL-RESERVATION-MENU-v1": "在这些NEW提升上得到U/指定共同时间权重预算及actual cap的条件闭包；不是任意游戏的初始预算。"
+  },
+  "explanation": "旧actual z至少含一旧主题S。对任意旧T，J_T(z)=Σ_(x∈T)1/(1+c_x(z))≤|T|−|T∩S|/2≤|T|−δ_T/2≤L≤J，故M≤J。旧actual的n人每人≥η，故W≥nη≥nJ/2，尤其W−(n−1)J/2≥J/2>0；这付清C的第二式。NEW保根B下全部旧强制行动后的真实子树，故对p′=αδ_B+(1−α)p，限制后续菜单候选到旧A得ψ′_(i+1)≤αJ/2+(1−α)ψ_i，根仅用实际B列得ψ′_1≤αJ/2+(1−α)L_z。它们是最小化的上界，新合法B列仍在菜单内。对λ′=(1,nλ)/(n+1)，令E=nΣλ_iψ_i−W、E′=(n+1)Σλ′_jψ′_j−(W+J)，逐项相加给E′≤(1−α)E−(1−α)(J−L_z)−α[W−(n−1)J/2]；两扣项非负。均匀λ提升为均匀λ′，因此在另有旧U时新U≤W+J。新actual中旧客户负载不变、B只有一个覆盖者，所以M′=max(M,J/2)。在另有旧cap M≤W/n时，(n+1)M≤W+J来自nM≤W及M≤J，而(n+1)J/2≤W+J来自C第二式，故M′≤(W+J)/(n+1)。α=1时旧p任取，端点也在式中。",
+  "scope": "NEW构造类上的条件菜单闭包；旧U和旧cap分别保为各自独立前提，未为任意旧游戏产生预算或六人归约。",
+  "contribution": {
+    "result": "NEW全树假设确保证存在literal提升并付清MENU的C:M≤J及(n−1)J/2≤W；于是其菜单列上界、同p/同λ两扣项式、旧U⇒新U及旧cap⇒新cap在NEW提升类内完整成立。",
+    "remaining": "目标MENU还对任何已存在literal提升（不必由NEW生成、甚至n=1）成立；其更大域的逐字列代数独立于NEW。本边不证明任意游戏的旧U、共同λ预算或M≤W/n初始前提，也不证明一般/六人half。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/构造/不交保留主题的无严格退出嵌入与菜单闭包--构造.md",
+      "sha256": "b492ef9a853615fb1f29f5f092d2f32279ccb3897c90eb0225f2116aa1ca134a",
+      "section": "旧游戏、条件和全树构造"
+    },
+    {
+      "path": "archives/customer-attraction/state/构造/不交保留主题的无严格退出嵌入与菜单闭包--构造.md",
+      "sha256": "b492ef9a853615fb1f29f5f092d2f32279ccb3897c90eb0225f2116aa1ca134a",
+      "section": "菜单量及通用的逐字提升合同"
+    },
+    {
+      "path": "archives/customer-attraction/state/构造/不交保留主题的无严格退出嵌入与菜单闭包--构造.md",
+      "sha256": "b492ef9a853615fb1f29f5f092d2f32279ccb3897c90eb0225f2116aa1ca134a",
+      "section": "无权、加权及实际cap的条件闭包"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/保留主题新构造的双独审与有限边界合同--审查.md",
+      "sha256": "6c5851357b0d3b835fc781813fa6c87ee71e0cd8921a7ddce749622a94aa44b7",
+      "section": "闭包的同一对象、权重与alpha记号"
+    }
+  ],
+  "review_note": "独立推导C及CL系数，核n槽真菜单含自身、B查询质量α、α=0/1、λ′归一与actual cap恒等式。对任意literal的更大目标只交NEW子类contribution，保旧U/cap和共同权重前提，未升级普遍预算。",
+  "reviewed_by": "Boss1",
+  "endpoint_pins": {
+    "LOCAL-RESERVATION-MENU-v1": "c06d60f5a48d0b216609893a760d7b8b5bc2a25cc70bca1a6b2bedb32c0afd78",
+    "LOCAL-RESERVATION-SPE-v1": "01d0fc8c575ec424b28a672af641a49e23ec88074ada357acfaffb997a2f6255"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/构造/不交保留主题的无严格退出嵌入与菜单闭包--构造.md": "b492ef9a853615fb1f29f5f092d2f32279ccb3897c90eb0225f2116aa1ca134a",
+    "archives/customer-attraction/state/审查/保留主题新构造的双独审与有限边界合同--审查.md": "6c5851357b0d3b835fc781813fa6c87ee71e0cd8921a7ddce749622a94aa44b7"
+  },
+  "review_digest": "6e558374b51405150979d09128966b8d6c6e5574474b1c5cadc6eacee18887fc"
+}
