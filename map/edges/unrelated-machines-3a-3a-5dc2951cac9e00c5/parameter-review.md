@@ -120,4 +120,4 @@ generic 稀疏化的 NO 条件是严格 `val<Γ`，门槛为 `0.06N/sqrt(Γ)`；
 
 本轮直接从冻结 PDF 用 `pdftotext -layout` 重抽 DS pp.3–5、p.20、p.24，确认 Theorem 1.1/Corollaries 1.2–1.3、Theorem 4.7、Theorem 6.4 的参数行；重新渲染并查看 p.5 的 φ 根号及 p.24 的错误 k/2 指数。另读已有 DS 提取全文中 Claim 2.3、Theorem 3.3、Theorem 4.1 的承重入口，保留原已成熟 threshold-rounding/correlated-sampling 证明的复用范围。本轮直接重抽 Moshkovitz PDF pp.6–8，读 Lemmas 4.3–4.4、Definitions 4.5–4.6、Lemma 4.7、Corollary 4.8 与 partition-system 接口。直接重抽 Manurangsi PDF pp.4–7，核近完美 YES、严格 NO 和稀疏化量词；重抽 Minzer–Zheng PDF pp.60–61，核 δ=1/g、Lemma 7.12 及 Theorem 7.13 应用行。对这三项 MinRep 对端继续复用成熟正文中的自足修复，不把本轮读相关两页宣称成 106 页全文复审。
 
-两个贡献的数学内容不因 φ 修订而改变：Set Cover 分支从 Theorem 4.7 的精确主界/小值推论出发，另用 Lemma 4.4 与独立的 ℓ² 列表桥，保留 ALL；partial-MinRep 分支由高值推论给输入放大，另核 YES/NO 共同的 Qγ≥1 与固定参数复杂度。两条都只是 conditional contribution；上述其余上游与目标自身证明义务仍按各自 remaining 保留。当前任务没有额外 follow-up 对；七个已读比较端点的逐对处置已写入同任务 receipt.closed_overlaps。
+两个贡献的数学内容不因 φ 修订而改变：Set Cover 分支从 Theorem 4.7 的精确主界/小值推论出发，另用 Lemma 4.4 与独立的 ℓ² 列表桥，保留 ALL；partial-MinRep 分支由高值推论给输入放大，另核 YES/NO 共同的 Qγ≥1 与固定参数复杂度。两条都只是 conditional contribution；上述其余上游与目标自身证明义务仍按各自 remaining 保留。当前任务没有额外 follow-up 对；七个已读比较端点的逐对处置已写入同任务 receipt.comparison_reviews。
