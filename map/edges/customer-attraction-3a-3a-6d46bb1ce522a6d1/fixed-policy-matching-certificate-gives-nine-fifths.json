@@ -1,0 +1,45 @@
+{
+  "edge_id": "cag-fixed-policy-cone-and-matching-certificate-give-exact-nine-fifths",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-STRATEGY-CONE"
+  ],
+  "target_ids": [
+    "M-0bd39a3908684af6b8e045e54fa94da5"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定冻结SHA b3b1e0635675449e0b9757ecbe486aecf0baa2a6ffb675791e4f1f2a30c4e7d8 的selected_exact完整五人七标签策略σ、全部2801有序决策节点和比较J=(0,1,2,3,4)。使用同σ真实后继的收益差，不固定偏离后的原尾；客户型为127个非空标签兴趣集合，允许覆盖别名与空主题。Γ按Fraction元组词典序去重排序，取1428个非零真实IC行；w为σ实际叶覆盖行，vJ为J并集覆盖行。下述原始点及六乘子是随证据给出的固定有理输入，其成熟精确资格按同SHA审计合同复用。",
+  "roles": {
+    "CA-STRATEGY-CONE": "给出固定完整σ的非负客户锥与全部有序历史SPE的精确对应，以及固定J下非负对偶与匹配原始点认证最优的正确符号。",
+    "M-0bd39a3908684af6b8e045e54fa94da5": "所得是这个指定σ、指定J的完整9/5精确最优及九单位客户的真实SPE达成，不推广其它政策或其它J。"
+  },
+  "explanation": "令整数客户向量r0在mask4、8、16各为1，mask33为5、mask66为1，其余为0。成熟同SHA审计已按完整2801历史和16806非自身真实比较确认Γr0≥0、actual为(0,0,0,5,5)且五个收益均1。实际覆盖正是mask33的五客户，故wr0=5；J含0,1,2,3,4覆盖全部九客户，故vJr0=OPT5=9。r0/5因此属于固定σ的归一锥并达到9/5。反向取β=9/5，按源排序的Γ索引(0,11,330,1262,1263,1279)放非负乘子(11/56,143/280,1,1,1,1)，其余0。原保存合同逐127型给s=βw−ΣμΓ−vJ≥0。对任意r≥0、Γr≥0、wr=1，有β−vJr=ΣμΓr+s·r≥0。于是全部该锥点vJr≤9/5，与r0/5达等，严格证明固定(σ,J)的最大值9/5。源定理把整数r0的全部IC资格转回有限不同单位客户的完整SPE。两覆盖别名类{0,5}、{1,6}保原标签；若另要五集合商，须按正文有序历史lift，不能只逐点冻结代表动作。",
+  "whole_result": "CA-STRATEGY-CONE在该指定完整σ与固定J、上述已核原始点和六乘子上特殊化，完整推出max_{r≥0,Γr≥0,wr=1}vJr=9/5；原九客户整数输入有完整2801节点SPE、actual(0,0,0,5,5)、每人收益1、W=5、OPT=9。全部127型的同一对偶及匹配原始点支付该目标整条陈述。",
+  "scope": "固定策略和固定比较J的精确锥最优。六乘子索引仅在明确的1428行排序中有意义；不证明其余69个保存政策、其它J、任意完整SPE的9/5界或一般half。与另一W1000/OPT1800输入仅数值相同，不认成同一策略或同一锥。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md",
+      "sha256": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/末两人固定前缀策略族与交叉必要行原审计--程序.md",
+      "sha256": "b257f0a816a490f74fe75828540ff90ac6c843314434e60d634c955373cc9bad"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/security-late-reply-resumed-boss3/original/research/workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round4_search/late2_m5p7_fixed.json",
+      "sha256": "b3b1e0635675449e0b9757ecbe486aecf0baa2a6ffb675791e4f1f2a30c4e7d8"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/security-late-reply-resumed-boss3/audit_saved_contracts.py",
+      "sha256": "b3c9ab9454b9f66e50fb5b03b6cedea2565eb1132b511065834e697cabd1c1aa"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/security-late-reply-resumed-boss3/late_saved.json",
+      "sha256": "d87753a26de5f829dc223fed31fce39f67071a30bcb3a2214beaa2da141de707"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "父Boss实读固定锥完整定理、主审计页、两个必要点/补全及千客户对照正文、审计源码中complete_ends/late_saved/mixed_saved承重函数；解析原selected_exact策略与权/对偶字段及late_saved完整报告。逐式核新边的弱对偶方向、归一与单位客户达成，完整历史和127型证书沿同SHA成熟审计复用，没有运行旧LP、IC、重构、枚举或科学验证器。"
+}
