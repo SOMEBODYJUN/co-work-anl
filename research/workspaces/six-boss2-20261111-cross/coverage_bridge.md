@@ -219,4 +219,25 @@ Main `main_pair/balanced_any_tail_price.md` 证明a0=M时，任意k下固定s的
 
 Main/master已将本子任务16行及joint_requery的7行并入5775系统，原始与对偶均精确闭合，Main独审通过；新点为 `master_cuts/dynamic_5775_exact.json`，SHA `81983304076358d591cbdac2e6bf7a4b697fc2854aad40918e8cf8cf2d99dd02`，W约0.49192027032608004。本节此前48个价格实验始终绑定5752，后续新方向改用5775；不移动旧负值。主系统的数值结论由Main/master报告承担。
 
+### 9.7 任意k窄义务收尾与零K承重行回到主线
+
+`any_tail_price_projection.py` 在5775上完成唯一指定六结构：actual第四源k3平衡正价→actual第三源k4、theta1/2、R/Z三轨道，预算分列u3/u4/u6/K。全部新增价格权为0；仅一条普通332重配权有理负值约-0.000023801055854751435，已完整回代，但joint_requery同结构有更强旧锥对照及616新行，故仅归档不重复准入。报告 `new5775_price4_prefix3_theta_half.json`；R/C非对角浮点微负在网格1e7复原后仍正，不称切面。`cross_source_price_projection.md` 保完整合同与有限范围。
+
+按Main新主线义务，实读并手展已冻结prefix/tail包2、13两条K=0承重行。新稿 `mainline_zero_capacity_v1.md` 给包2整数预算999u4+139u6、包13预算10000u4+1358u6的完整E和每位四个仿射尾候选，及按(p,ell,n,同索引会员)的精确下界。程序 `zero_capacity_rows_v1.py` 及输出 `mainline_zero_capacity_v1.json` 核5376个特征恒等与3840/720个完整离散可见类型；没有参数扫描。
+
+`zero_capacity_ic_bridge_v1.py/json` 进一步用全客户共用447/2、3593/2权的真实R/Z末位六最优均匀查询IC，以零额外外部预算得到
+
+    999u4+139u6 >= (23479/432)OPT6-(6013/108)W，
+    10000u4+1358u6 >= (63535/216)OPT6-(132805/216)W。
+
+R侧保同一B_j先对5个i求和再min。没有合并离轨源收入。两条压缩付款仍不足闭合半覆盖：稿内给actual000000与000100、n1的准确局部比较障碍，不当作完整SPE反例。30边和6对角即使q均值相同，闭包平均仍可差37/54，亦给了精确小例。下一可核义务是将包2合法菜单B_j一致换C_j、seed换R^C，与包13的Z^C共享真实边，用同一R/Z四态的信用支付查询分母多一负载的损失；一般四态式已列出，尚未称已支付全OPT6−2W。
+
+### 9.8 49∶10同R^C/Z^C桥已获Main独审，完整点固定检查全正
+
+冻结的 `shared_rz_zero_capacity_v1.md/.py/.json` 完成49×包2_C、10×包13、17965×真Z末位六最优均匀IC合账。Main现从冻结原alpha/beta独立生成L与Bellman，`main_verify_zero_capacity_v1.py/json` 已PASS：3840/720个L、两统一lambda、2560个同边四态、960个A6差、32个实际基线、588个共同C计数及全部覆盖和障碍常数精确相同。完整R^C/Z^C共同投影相对同权复制R的严格增益为17965n/[6(P+1)(P+2)]；菜单替换只动静态Bj→Cj，不动隐藏b。原合同完整预算148951u4+20391u6，手工末位信用移账10859u6后剩148951u4+9532u6，K仍0。
+
+按Main指定，`fixed_shared_rz_point_v1.py` 只做一次固定检查，绑定完整ZZ的原4849投影 `master_cuts/complete_zz_5799_v1_original4849_exact.json`、SHA `1af6fd35f9cf1a51220072e627df042b450a52a7c6ecac388a98247ecac043d2`。三条完整4849行均严格正：保真实joint四态约391.89616627829645；已消元J约6112.977836446694；手工A6移账5.3约8031.866280337332。完整稀疏向量、行SHA、精确值与投影损失存 `fixed_shared_rz_completezz5799_v1.json`。无新负切，未改参数或冻结证据。
+
+Main同次独核也确认完整A6差的更强21669/D信用。下一窄义务是诚实移到账左，给148951u4−1278u6的新全模型合同，并重算覆盖税与A6=1负基线，不沿用旧非负断言；同权R共享增益及原U/C局部障碍须保留。本子任务已另起 `a6_query_credit_hidden_map_v1.md` 给包13的2162/D信用直接隐藏状态映射证明，未扫描新点。当前coverage_bridge.md按Main要求暂冻供checkpoint，后续结果写独立新文件。
+
 所有本子任务产物均只在指定coverage_bridge范围；未执行Git写入、推送或凭据读取。正式登记、RUN反馈ack与checkpoint由Main负责。

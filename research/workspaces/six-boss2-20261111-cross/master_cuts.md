@@ -250,3 +250,23 @@ Main独审8条616特征跨旧查询PAIR行后，全并入5775母系统，8条互
 ## Main独审与登记冻结
 
 Main已独立通过5783完整原始/对偶（`main_verify_dynamic_5783.json`）和正尾5763删行见证（`main_verify_tail_ablation.py/json`）。有限对象拟按已有身份升version2至5783。以下实现与稿件即刻冻结，后续变化新建版本：`scaled_dual.py`、`advance_with_exact_cert.py`、`alternate_primal.py`、`ablate_positive_tail.py`、`formal_5752_5775_gap.md`、`formal_5775_tail_ablation.md`、`formal_5783_gap.md`，以及所有已输出准确点/矩阵/对偶。当前无未闭合计算；等待joint在最新5783点的指定结构扫描和Main独审后再并行族。
+
+## 最新反馈答复与邻线兼容复审
+
+Main已完成至5783的正式对象version2登记和独立审查，checkpoint确认pushed头87847ecd75c6f71b67ec5ddb5bae5f85b4318e1f；登记证据保持冻结。邻线Boss1四份正文已实读，复审稿`master_cuts/neighbor_bridge_review_v1.md`给出正式对象ID、承重式和代入条件。独立容量H0行在5783准确负约−0.00744191613；当前端点的3条ZZ行亦负，且Boss1旧78条端点行在本点全部正。候选只另档，不混入已认证母系统。现在仅把Main已独审3条616再配权行并为新5786，继续原始/对偶恢复；下一点未出前不继承neighbor旧负号。
+
+## 第七轮5786闭合与邻线新点重验
+
+三条已核616再配权合入后，5786×4849准确最优W≈0.49265432731768616，300正原列、160正对偶权，全部原始行/对偶列min0。点SHA6927af3bda45a12a36885d949b7690fbd4f24c5938618e1e6a81cb4a7d71ed27，正式续稿`master_cuts/formal_5786_gap.md`。邻线CAP在新点仍负约−0.00833774904，原5783的3条固定ZZ却全部转正；重选5786端点所得12条新ZZ和同一CAP已合13候选包，待Main独审，不包含在5786证书。数据与范围另见`master_cuts/neighbor_bridge_5786_addendum_v1.md`。
+
+## 第八轮5799闭合：邻线十三行不抬高本次最优
+
+Main独立核13行后已全并入5799×4849。新原始295正列、对偶163正权，全原始与对偶余量min0；W准确等于5786的0.49265432731768616，差严格为0。13新增行2零/11正、对偶全0。16hist/K逐Fraction未变，仅174个隐藏完成坐标改变；不能因新行确实切旧点就声称提高最优。新点SHA63edbafd53493a20ec64ced5f09a694ead3f894bfb6419cde425de0b3a1710c1已交两位。稳定稿`master_cuts/formal_5799_gap.md`；5799的新ZZ端点另检得11负候选，当前未并入，CAP-H0准确取等。
+
+## 完整有限ZZ机制已闭合：11418×7639
+
+Main独审新2790辅助/5580 upper/39预算后准入，现完整扩展已有806正列（312原+494辅助）精确可行点；原5799的163项有理对偶零扩，全部11418行/7639列min0，W准确同5799。337变量核心精确恢复（消469辅助、留25自由辅助），未追大基。39个min上界亦全部非负min0，所以停止在这一有限域内反复更换ZZ端点。全点SHAe5cd48369fc08f652490b09ecddc80dbacc09dd45d06e5fe97dc64de3f247075；供旧分离器的4849投影SHA1af6fd35f9cf1a51220072e627df042b450a52a7c6ecac388a98247ecac043d2，均已交Main/两代理。正式结果稿`master_cuts/formal_complete_zz_11418_gap_v1.md`；z不是真交集，624未并，一般half仍开放。
+
+## Main完整扩展独审PASS及下一定向实读
+
+Main独立`main_verify_complete_zz_5799_v1.json`已PASS：全11418原始行、7639对偶列、原对偶零扩、与5799同一准确W均核过。本批构造/求解脚本、矩阵、映射、全点、对偶、原4849投影和正文全部冻结。当前无待执行优化；joint正在制备完整624提升。下一仅定向实读M-1d9e7c776d844291b544f03021f73847、M-94942bfb644042ea8039e44db39d1504、M-9260c580a43d4db9a5b3dbf095c358d4及cag-full-history-versus-count-policy-strict-separation，查清既有全历史精确搜索输入/最低比值/覆盖边界，并提出一次机制驱动的新有限实验；未启动云计算或新批量搜索。本文追加后按Main要求暂冻，供checkpoint。
