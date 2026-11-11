@@ -1,0 +1,55 @@
+{
+  "edge_id": "cag-complete-mean-and-spe-recursions-separate-28-client-input",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-f3cd47fc35ac49eb9a58fd4ed3c13b94",
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "M-e04d4c2e3acf4a5b98a015de2376eb30"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同目录五标签0,…,4、四名单位提供者、全部有序历史；固定J={0,1,2,3}。客户会员mask重数精确为1:2、2:3、9:1、16:9、18:4、24:4、27:5，其余为0。标签2覆盖为空仍保留。两套递推分别在各自全部可实现终局集合上进行，不能共用删减后的孩子集合。有限数据使用所列SHA的有理证书，并按下述精确方程及全树真实偏离复核；不存在浮点容差或开放数学前提。",
+  "roles": {
+    "M-f3cd47fc35ac49eb9a58fd4ed3c13b94": "对全历史固定J平均规则给出必要充分的集合递推；a∈J时消去的必须是同一所选终局项，提供27个平均终局及完整平均策略的实现桥。",
+    "CA-EXACT-PURE-SPE-ALL": "对全部合法行动逐一比较，给真正完整历史纯SPE终局全集的必要充分递推及有序子树拼接，提供唯一SPE终局的保证。",
+    "M-e04d4c2e3acf4a5b98a015de2376eb30": "实际终点为同一28单位客户输入上平均规则与真正SPE的完整有限分离，含覆盖、完整平均策略及真实IC失败。"
+  },
+  "whole_result": "在上述固定输入，平均规则的126个计数状态给27个根终局，最小W=12且(2,0,0,2,0)可实现；保存的完整156节点平均策略全部平均余量严格正，780条真实IC中158条为负。相同输入的完整纯SPE根终局全集恰{(0,0,0,0,4)}，W=22。固定J覆盖19而OPT_4=28，故平均点的12/28<1/2不是SPE反例；真正SPE覆盖率为11/14。方向是两种精确递推联合实例化并核给定有理证书得到整个分离结果。",
+  "explanation": "两源缺一不可：平均源只认证弱规则的可实现集合，真正SPE源才排除其它均衡根终局。设q为前缀计数。分别以终端集合{q}为基例，平均递推保留t∈E(q+e_a)当且仅当(4−1[a∈J])U_a(t)≥Σ_{b∈J,b≠a}min_{s∈E(q+e_b)}U_b(s)；SPE递推保留t∈R(q+e_a)当且仅当U_a(t)≥max_b min_{s∈R(q+e_b)}U_b(s)。二者的孩子均遍历五标签，第二式最大值也遍历五标签。独立实数值替换无关：这里以Fraction逐一核证书中两套各126状态的全部上述方程，得到根|E(0)|=27、min_E W=12，而R(0)仅(0,0,0,0,4)、W=22。归纳必要/充分性因两源成立，故存储的完整集合具有相应数学语义，不只是一条抽样路径。\n\n平均源的独立孩子拼接构造把保存的目标(2,0,0,2,0)展开为156个有序决策节点。按这份完整动作表在每个改变后的历史继续，逐节点重算全部780个收益差及156个固定J均值，精确得到158个负真IC、最小平均余量1/48>0。根规定0，五个真实孩子的根收益分别为(5/2,13/4,0,11/4,11/2)；固定J均值17/8低于规定收益5/2，平均余量3/8，但改选1、3、4分别获利3/4、1/4、3。故完整形式动作表满足平均规则而不满足SPE。此处既有J内平均掩盖有利偏离，也有J外行动4未入平均；标签2的零收益不可事后从J删除。\n\n七类重数和为28，标签0、1、3、4覆盖全部客户，所以OPT_4=28。固定J漏掉只在4的9名客户，O_J=19。平均目标只选0、3，覆盖2+1+4+5=12；唯一SPE根计数全选4，覆盖9+4+4+5=22。因此全部目标数值与量词均已付清。这条边不反驳真SPE的half，也不证明固定J平均在J最优时的一般界；19/12<2尤其不能被改称O_J/W>2。",
+  "scope": "同一明确输入的精确有限全结果保证；全部完整历史与离轨平局均保留。两个算法的普遍正确性来自各自完整归纳证明，数值来自精确证书验证。本边不推广到其它J、客户输入、四人全类或六人原题。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/固定比较组平均续局集合的递推与二十八客户原点--程序.md",
+      "sha256": "a10c97145c4b1d7cae94d303a6b7622e16d0bfdad2df9f7986eb8bbcd35570f2"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/average-and-last-payoff-resumed-boss2/new-average-exact-check.json",
+      "sha256": "01aa191f681e1c058d2734fc5eee50c073318b1e614becd51ee2f1b3410b1d56"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/average-and-last-payoff-resumed-boss2/check_average_sources.py",
+      "sha256": "b48b4c61d873bb7aa36cb707d4fed8d6393b00ec9dbfcec868c36b8cc1231359"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本轮实读平均规则正文、完整历史模型、真正SPE递推完整必要/充分/非空及有序拼接证明，实读固定输入检查器全部代码。按固定七类整数输入独立逐项验证已有JSON中两套各126状态集合方程及156节点动作表的全部780真IC/156平均行；读取完整数组用于精确核验，没有重跑原浮点发现器、随机搜索或全类扫描。对CA-EXACT-PURE-SPE-ALL新增的其它实现应用证据仅按成熟合同复用，不宣称本轮重审每份实现。比较相邻198客户不重复前缀模板的不同历史筛选及J最优条件，其两个重复节点平均负，不能代替本输入或扩大反驳目标。全部端点源为已证，实例化和验证完整，故accepted/unconditional/whole_result。",
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "M-e04d4c2e3acf4a5b98a015de2376eb30": "1493d5e97a5fd8d478a47568b7719e7c08efed23eb6e0699026ceab071539842",
+    "M-f3cd47fc35ac49eb9a58fd4ed3c13b94": "0356bb31e1771504bbd9af4b29f99d80c59ea90c4c6426641103431cf323f5cf"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/固定比较组平均续局集合的递推与二十八客户原点--程序.md": "a10c97145c4b1d7cae94d303a6b7622e16d0bfdad2df9f7986eb8bbcd35570f2",
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/tools/evidence/average-and-last-payoff-resumed-boss2/new-average-exact-check.json": "01aa191f681e1c058d2734fc5eee50c073318b1e614becd51ee2f1b3410b1d56",
+    "archives/customer-attraction/tools/evidence/average-and-last-payoff-resumed-boss2/check_average_sources.py": "b48b4c61d873bb7aa36cb707d4fed8d6393b00ec9dbfcec868c36b8cc1231359"
+  },
+  "review_digest": "52a4850868d6e14becacea7997d08ac12886b8c130982c084606c350d7456d2e"
+}
