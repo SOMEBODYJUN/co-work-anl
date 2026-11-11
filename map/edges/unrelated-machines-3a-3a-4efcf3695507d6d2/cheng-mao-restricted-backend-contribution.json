@@ -1,0 +1,68 @@
+{
+  "edge_id": "um-cheng-mao-gives-actual-restricted-backend-for-resource-distortion",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-af5cd39d12c444399b616e0d318c27be"
+  ],
+  "target_ids": [
+    "UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "只贡献目标定理§4的外部restricted-Santa后端步骤。给定目标完整flat输入域中的P：有限非空组，每组非空显式indexed states；p_xu为非负二进制有理数，W_x=Σ_u p_xu≤1。构造I(P)：每state x一个player；每个有正private权的原资源u仅一件real item，固有值q_u=min{p_xu:p_xu>0}，仅p_xu>0者有资格；每b_x=1−W_x>0一件x独有baseline item；每组|S_g|−1件值1的本组dummy。其它估值均0。令V_-为I(P)的最优实际最小效用，T*_LP为同一实例的配置LP最高可行阈值。α>4为预先固定实常数，选预先固定有理4<a<α，调用固定δ=a−4的完整CM算法/目标搜索合同。",
+  "roles": {
+    "M-af5cd39d12c444399b616e0d318c27be": "提供每固定δ>0、全部有限restricted实例的实际互斥allocation与min value≥T*_LP/(4+δ)，以及固定δ的多项式时间；不是只给积分间隙或估值。",
+    "UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1": "目标§4式(6)需要的restricted实际allocation后端；本边仅支付t≥V_-/a这一步。"
+  },
+  "explanation": "I(P)的real、baseline与dummy每件均有单一固有非负值，player估值为该值或0，故精确满足source的restricted模型；一个原资源只建一件item，不能按incidence克隆。任一达到V_-的实际allocation为每个player提供一个价值≥V_-的bundle；在CLP(V_-)中令这些bundle的x变量等于1，其余等于0，player约束成立且互斥性给每item列和≤1。因此T*_LP≥V_-；V_-=0时该不等式和零保证仍成立。取source的固定δ=a−4>0，得到一份实际互斥allocation，其实际最小效用t≥T*_LP/a≥V_-/a，恰为目标§4式(6)的首个不等式。players数S，items数≤U+2S，dummy资格表≤Σ_g|S_g|²，q取最小正输入，b求有理和，故I(P)构造按原总显式位长多项式；source时间poly(m,n)n^{poly(1/(a−4))}在固定a下仍为多项式，不按κ数值迭代。未知T*_LP的搜索使用source已登记的完整合同，不把精确LP或未支付的几何网格当免费oracle。若另改目标搜索，必须以内部固定a0<a支付精度/网格损失；本边未声称实现该后端。以上证明不使用945/1301有限扫描，也不用另一Theorem2的99/26存在性替代实际多项式输出。",
+  "scope": "source⇒目标中间restricted实例的实际allocation后端这一局部贡献；不声称source单独推出目标整条UM近二算法、OPT恒等式、κ比较或promise区分。所有量词对固定α和固定有理a、目标域全部有限显式有理P成立；不覆盖一般玩家异值max-min、一般UM、共同非unit资源端或额外耦合。",
+  "contribution": {
+    "result": "对目标显式I(P)，每固定有理a>4，可在固定a的总位多项式时间取得一份真实互斥restricted allocation，实际min value t≥T*_LP/a≥V_-/a。该结果支付目标§4式(6)的后端一步。",
+    "remaining": "目标整条陈述还须由其结构证明支付：W<1时的baseline值V及OPT(P)=2−V（含V0/OPT2端点）；同资源正权比κ给V/κ≤V_-≤V≤1；每组dummy-free player选择与全部原selector、未选state、zero incidence和其它原jobs的合法回填，使C≤2−t；用非空组OPT≥1推相对比率；固定κ0且严格ε<1/(ακ0)时的固定有理separator和准确promise。上述桥不由CM定理单独给出，本边未把它们当作source已证的结论，未宣称整条迁移或hardness。"
+  },
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Cheng-Mao受限最大最小分配与配置LP--文献.md",
+      "sha256": "fa7375b5a1a8a5719b539df0192242461e713e6673735813a9f612dae7d1b574"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/cheng-mao.pdf",
+      "sha256": "ea99b29b0b05694d16fcf18b63fddcd9dc798aa6ef476ac0b78033c8eaf90e7a"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/逐资源正权畸变与κ边界--定理.md",
+      "sha256": "b783d56af21a6fe65deb8bf69608a22bf16b31f74b1fa6ecbd9b0f130f77db6a",
+      "section": "3. Restricted Santa 中间实例及两侧值界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/逐资源正权畸变与κ边界--定理.md",
+      "sha256": "b783d56af21a6fe65deb8bf69608a22bf16b31f74b1fa6ecbd9b0f130f77db6a",
+      "section": "4. 外部 restricted-Santa 算法与全部原 jobs 解码"
+    },
+    {
+      "path": "archives/unrelated-machines/state/证明/资源畸变的双表示与全任务回填--证明.md",
+      "sha256": "8d5826c4f7ef14bff433f182e2cde51678a89479c0d568fb29a6fd13242574b4",
+      "section": "未知目标、位复杂度与固定实阈值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/资源畸变审查的真实先验与阈值修补--审查.md",
+      "sha256": "8db949569f264ddfe92ee2e5979271bf8986a21ccef0729139be6ed65493793f",
+      "section": "外部算法到底核到哪里"
+    }
+  ],
+  "reviewed_by": "Boss2/4efc",
+  "review_note": "本轮实读冻结CM PDF全部28页（§1–4与Appendix A/B/C），核restricted定义、配置LP基准、Theorem1实际输出、参数与Lemma18固定δ运行时间及未知目标入口；同时核Theorem2只是99/26存在性/有限搜索，不能继承多项式界。实读目标主文全部§1–9、双表示全任务证明、真实先验/阈值审查与固定κ审查；逐项检查I(P)的固有值/0结构、LP≥实际最优和参数a的匹配。只提交已完成的外部后端贡献，没有重新证明或实现CM全算法，没有从历史引用或有限PASS推出全称UM命题。",
+  "endpoint_pins": {
+    "M-af5cd39d12c444399b616e0d318c27be": "62077266d7b015a7d2ec0e854f173491f1d776d5d2dc840b88fb799d756ae49b",
+    "UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1": "79085f46470c9efab03b016bd86098d6895f923c0095588bfdbc4cf92e863af2"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/Cheng-Mao受限最大最小分配与配置LP--文献.md": "fa7375b5a1a8a5719b539df0192242461e713e6673735813a9f612dae7d1b574",
+    "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/cheng-mao.pdf": "ea99b29b0b05694d16fcf18b63fddcd9dc798aa6ef476ac0b78033c8eaf90e7a",
+    "archives/unrelated-machines/state/定理/逐资源正权畸变与κ边界--定理.md": "b783d56af21a6fe65deb8bf69608a22bf16b31f74b1fa6ecbd9b0f130f77db6a",
+    "archives/unrelated-machines/state/证明/资源畸变的双表示与全任务回填--证明.md": "8d5826c4f7ef14bff433f182e2cde51678a89479c0d568fb29a6fd13242574b4",
+    "archives/unrelated-machines/state/审查/资源畸变审查的真实先验与阈值修补--审查.md": "8db949569f264ddfe92ee2e5979271bf8986a21ccef0729139be6ed65493793f"
+  },
+  "review_digest": "f486f258b95314e636e4d0191cffa0a532aee65e8705c704f790d03a65e4e6c5"
+}

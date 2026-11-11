@@ -1,0 +1,62 @@
+{
+  "edge_id": "ca-r22-common-core-pays-endogenous-credit-one-sharpness",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "R22-POSITIVE-DEPTH-SECURITY-NO-v1"
+  ],
+  "target_ids": [
+    "B10-ENDOGENOUS-WATERFILL-SHARP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定R22的53单位四人七标签完整σ₀和真正v₄；每个整数c≥0给所有标签添加相同c个共同单位客户。仅在辅助水位计算中降低actual第二位X0质量，原完整单位SPE不改。唯一水位与完整平移族包括c=0；严格有理夹界及0<Γ<D仅量化c>0；c=0时Γ=0且夹界两端均0。",
+  "roles": {
+    "R22-POSITIVE-DEPTH-SECURITY-NO-v1": "提供同一完整σ0、精确静态鞍点t0、actual唯一低尾和23客户负载谱的真实单位基底。",
+    "B10-ENDOGENOUS-WATERFILL-SHARP-v1": "通过共同核心平移和真水位方程得到指定族的全部系数一锐性、显式门槛和收敛常数。"
+  },
+  "explanation": "给任意四人叶添加共同核心后每人恰增c/4，全部有序历史IC和平局不变，静态K矩阵每项也增c/4，同一p/Q仍匹配，故tc=t0+c/4。实际X0的12个负载2和11个负载3客户在辅助质量ρ下密度为12/(1+ρ)+11/(2+ρ)+c/(3+ρ)，其与tc之差在0处正、1处−D，严格递减，故唯一真水位ρc∈(0,1)。令δ=1−ρc，根返还Γ=cδ/[4(4−δ)]，并由密度差逐项得D=δ[6/(2−δ)+11/(3(3−δ))]+Γ。于是δ≤16D/(c+4D)，δ→0，Γ/D→1。对c>0，Γ/D=c/(c+H(δ))，H=24(4−δ)/(2−δ)+(44/3)(4−δ)/(3−δ)严格递增于608/9和94之间，给全部严格夹界、c(1−Γ/D)→608/9及c>94K/(1−K)的显式门槛。K<0以c=0处理。本条完整解析推导无需对有限二分数据外推。根−tc恒27075/2924>0；Wc−4tc及half余量均正，不能移作低根聚合失败或六人half反例。详证见本包mathematical-review.md。",
+  "whole_result": "R22指定同一53单位四人完整σ₀经任意非负整数共同核心c平移后仍为完整SPE，真正v₄(c)=28481/2924+c/4，actual唯一低尾缺口D=647/8772不变，根严格高于阈值。每个c≥0均有唯一ρc∈(0,1)满足12/(1+ρc)+11/(2+ρc)+c/(3+ρc)=v₄(c)，Γ=c/(3+ρc)−c/4，D=B(1−ρc)+Γ且Γ/D→1。每个正整数c有c/(c+94)<Γ/D<c/(c+608/9)，c(1−Γ/D)→608/9；c=0时Γ/D=0，两个严格夹界不适用。给任意0≤K<1，整数c>94K/(1−K)使Γ>KD；K<0取c=0亦满足该门槛并有Γ₀>KD。因此指定真实内生阈值完整SPE族的共同信用系数1不能统一减小。",
+  "scope": "只量化这个指定完整四人单位客户族及真实静态v4，不量化所有四人SPE、root<tc子域或六人模型；ρ仅为辅助分数叶。",
+  "evidence": [
+    {
+      "path": "map/edges/map-repair-b8773e63a5ff5d21/mathematical-review.md",
+      "sha256": "78f3442e8fd4f55cb3c23cb70dfb43af7c60213ce3ad15c7bcb9165ebdd38d78"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/内生安全水位的信用系数一锐性--定理.md",
+      "sha256": "5d8b8535d07bb769ae66a3745102af0cf14cba8437b6d95592efc5b829785a37"
+    },
+    {
+      "path": "archives/customer-attraction/state/构造/五十三单位四人完整策略与内生水位基准--构造.md",
+      "sha256": "7bc96b556fef1c8cae96c768ff79087682593044092ae73f1c4c86f1c574f0a9"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/完整水位审计与独立锐性审查的证据范围--计算.md",
+      "sha256": "2055ad41469733d99382eba52a0157622941ac5a9ce154e130e5a2f5e8c34e56"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/完整策略核心平移与九十六步水位复核--计算.md",
+      "sha256": "b9a0382c8a6ec983de63d729c02a8d3545c6e0d117a7da52900e8dbd5d5a3ada"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "定向修复B10 v3的正参数严格域及登记pin；实读两端当前陈述/证明、全部相关正式审查及旧边/收据，任务17条引用的14个文件SHA全部匹配。重新逐式核共同核心对全历史IC/静态矩阵的同移、唯一真水位、返还分解、H严格单调、608/9极限及K<0的c=0见证。旧边数学有效，完整保留并换新证据/当前pins；未重跑大数组IC、LP或80/96步二分。",
+  "endpoint_pins": {
+    "B10-ENDOGENOUS-WATERFILL-SHARP-v1": "44c616b78fe8eb79f68ea8934180481f7b6da9ce4b8e8c909f4c2f71ad7cbc43",
+    "R22-POSITIVE-DEPTH-SECURITY-NO-v1": "0648a6a1c488e5a803c71c7895a1934c7016036bfb6b0b7c181feb26e2702e69"
+  },
+  "evidence_pins": {
+    "map/edges/map-repair-b8773e63a5ff5d21/mathematical-review.md": "78f3442e8fd4f55cb3c23cb70dfb43af7c60213ce3ad15c7bcb9165ebdd38d78",
+    "archives/customer-attraction/state/定理/内生安全水位的信用系数一锐性--定理.md": "5d8b8535d07bb769ae66a3745102af0cf14cba8437b6d95592efc5b829785a37",
+    "archives/customer-attraction/state/构造/五十三单位四人完整策略与内生水位基准--构造.md": "7bc96b556fef1c8cae96c768ff79087682593044092ae73f1c4c86f1c574f0a9",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/计算/完整水位审计与独立锐性审查的证据范围--计算.md": "2055ad41469733d99382eba52a0157622941ac5a9ce154e130e5a2f5e8c34e56",
+    "archives/customer-attraction/state/计算/完整策略核心平移与九十六步水位复核--计算.md": "b9a0382c8a6ec983de63d729c02a8d3545c6e0d117a7da52900e8dbd5d5a3ada"
+  },
+  "review_digest": "8ab5d8bab813b4afad7e6d74ef22cf4e1971e8a4455448ec5b3b8b5ce5ebb4da"
+}
