@@ -1,0 +1,74 @@
+{
+  "status": "accepted",
+  "premises_mode": "all",
+  "reviewed_by": "Boss4",
+  "review_note": "逐项核对完整共同目录模型、真实后继与全部历史量词，实读数学正文并复算逐客户四类代入和总松弛恒等式；计算证据按相同SHA与复核器实际合同复用，本轮没有重跑探针或完整树核验。",
+  "edge_id": "ca-credible-finite-snapshots-pay-assignment-budget-locally",
+  "kind": "implies",
+  "source_ids": [
+    "M-4905aa68e584457aac3cbd8f4f26a138",
+    "customer-attraction/credible-assignment-defect-finite-probe"
+  ],
+  "target_ids": [
+    "M-623ac57e29a240ff9132957babba26db"
+  ],
+  "relation_mode": "conditional",
+  "conditions": "ALL使用精确松弛恒等式与源有限结果所固定的两保存点；只量化m=5、p9/n30/seed721028/trial218及p10/n16/seed892139/trial485的给定策略。复用SHA绑定的成熟完整有序历史核验和全部最优槽/指派核验，不由随机样本外推全称命题。",
+  "roles": {
+    "M-4905aa68e584457aac3cbd8f4f26a138": "把每一已支付的E≤0指派转换为该固定实例的OPT_5≤2W，并分离余量。",
+    "customer-attraction/credible-assignment-defect-finite-probe": "给出两个完整SPE保存点及全最优多重集/指派的精确min E=−7、−3。",
+    "M-623ac57e29a240ff9132957babba26db": "在两个固定实例上支付存在E≤0这一量词的局部实例；全称范围仍未支付。"
+  },
+  "explanation": "p9保存点实际(2,4,5,3,8)，最优槽(2,3,4,5,8)，列指派(0,2,3,1,4)，min E=−7，W=OPT_5=12。p10保存点实际(6,0,7,9,4)，最优槽(0,4,6,7,8)，列指派(2,0,3,4,1)，min E=−3，W=OPT_5=5。精确复核器先把计数策略提升至全部有序历史并逐行动检查真实续局最优性，再重算所有早期Δ和费用。它穷举有重复的m槽多重集，确认两保存点的全部最优多重集均无重复；随后对1和196个最优互异组合各穷举120排列，得到相同最小值。因此这些负值真正支付目标的允许重复槽存在量词。与恒等式联合得到两点的条件half，亦得到最小指派总余量分别5和2（−7−12+24，−3−5+10），说明保存点并非所有余量为零。原400/4000试验仅有3/153个实际不交样本；其负互异指派是样本内存在证据，不能证明普遍候选。",
+  "scope": "两个固定保存点及原有限生成/计数依赖破平局扫描；不提升为全部五人策略、更不提升为任意m。",
+  "contribution": {
+    "result": "目标候选的存在指派量词在两个已保存完整SPE实例上均成立，准确min E分别−7和−3；ALL联合精确恒等式给这两点OPT_5≤2W。",
+    "remaining": "任意实际不交完整历史SPE的普遍预算仍待证明；两样本都W=OPT且计数依赖，未覆盖历史依赖平局，也未排除其他游戏出现所有最优多重集评分为正。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/可信分配缺陷的有限探针--计算.md",
+      "sha256": "7873beb3f3880870b31d44ebacd66ae44b95f5097b6dce2279a35652497f95bd",
+      "section": "响应缺口与匹配条件"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/可信分配缺陷的有限探针--计算.md",
+      "sha256": "7873beb3f3880870b31d44ebacd66ae44b95f5097b6dce2279a35652497f95bd",
+      "section": "原探针的实际枚举域"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/可信分配缺陷的有限探针--计算.md",
+      "sha256": "7873beb3f3880870b31d44ebacd66ae44b95f5097b6dce2279a35652497f95bd",
+      "section": "两组实录与独立复核"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/credible-assignment-defect/exact-check.json",
+      "sha256": "0ab36639345dc2664a8322ff5cc5b46e19a134b00e038164b36ca8338ac8b252"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/credible-assignment-defect/check_snapshots.py",
+      "sha256": "6e1c11cbaec5c1ee175e3b39f8849501d510bbade43d43d856d755312b30de41"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/credible-assignment-defect/source/assignment_probe_m5p9.json",
+      "sha256": "f5595322c2b6e38b87012057150277597ff89cbcd56fa84c9310ab7d669738c8"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/credible-assignment-defect/source/assignment_probe_m5p10.json",
+      "sha256": "285d424910b9481431f52f89e17c99a5fb4408b0cb4a35ea1f383c0eb912506b"
+    }
+  ],
+  "endpoint_pins": {
+    "M-4905aa68e584457aac3cbd8f4f26a138": "cabf1bed93879209206e79dcdb20691580909ec9aa2a643c0ee187d654770343",
+    "M-623ac57e29a240ff9132957babba26db": "647d6746cf2e8a2e6a77387e5187fa4b42b98a032af73a909abbabc377d0792f",
+    "customer-attraction/credible-assignment-defect-finite-probe": "d8ba8fa00bf88c078b6a33e933454588c0992b49837980b648d65731169c624d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/可信分配缺陷的有限探针--计算.md": "7873beb3f3880870b31d44ebacd66ae44b95f5097b6dce2279a35652497f95bd",
+    "archives/customer-attraction/tools/evidence/credible-assignment-defect/exact-check.json": "0ab36639345dc2664a8322ff5cc5b46e19a134b00e038164b36ca8338ac8b252",
+    "archives/customer-attraction/tools/evidence/credible-assignment-defect/check_snapshots.py": "6e1c11cbaec5c1ee175e3b39f8849501d510bbade43d43d856d755312b30de41",
+    "archives/customer-attraction/tools/evidence/credible-assignment-defect/source/assignment_probe_m5p9.json": "f5595322c2b6e38b87012057150277597ff89cbcd56fa84c9310ab7d669738c8",
+    "archives/customer-attraction/tools/evidence/credible-assignment-defect/source/assignment_probe_m5p10.json": "285d424910b9481431f52f89e17c99a5fb4408b0cb4a35ea1f383c0eb912506b"
+  },
+  "review_digest": "c35e3ea3d857b48723b6dc1f6af3bc7f54594a358afbc571870d7cebd1652601"
+}
