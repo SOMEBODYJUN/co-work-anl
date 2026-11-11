@@ -1,0 +1,82 @@
+# ∞链全正阈值桥及精确交域族：3A实读比较
+
+同一个符号∞ helper输出保持整数与原始CONFIG的全部有限正阈值；把它作用到下文明确构造的I_T，得到ConfigOPT=T、OPT=⌊√T⌋、N=T³+T的DegreeThree∩InfDegreeTwo族，因此本族间隙为Θ(N^(1/6))。
+
+本报告对应Boss6任务`boss6-inf-chain-gap-3a-76ebd0d679385a1a`。两个主覆盖对象分别为M-16209762a32e42e48ec20b76381b5e9d v1（以下A）及M-7bc9eab74ecd475db7df33c3f4b75e61 v1（以下B）。M-080d9b22ae87408f9a673a898c7a6dc3 v4（以下F；首轮完整实读其v3相同主合同）、M-a9534c70ffa74fca9a91cd270468de3f v3（以下D）及M-b126c4b3ff29400589f7f38abdca4d85 v3（以下G）仅为指定共享比较端点。只读clone；新报告、边和收据仅写指定staging。没有运行历史数学程序、证书、枚举或work.py，没有Git、队列、公屏写入。本次JSON的accepted是本worker的数学判断；native绑定、检查及发布由Root实际执行。
+
+## 1. 目标合同与逐项审查范围
+
+A的完整目标不限于原论文的整数链式gadget。它要求先对每个输入I构造同一J∞，再对每个有限实s>0同时有整数与原始CONFIG(s)双向等价；两种扩展最优值相等；物品总正度≤3；输入物品∞度≤2时经排序仍≤2；值域保{0,1,∞}；精确规模n′=n+S、m′=m+S、E′=E+2S；给定有限有理见证的正向支撑增量≤2S与位多项式转换。以下§2–3逐项付清，未把固定s输出或有限helper版本当作同一输出的全阈值结果。
+
+B的完整目标是每个整数T≥4均有一个明确实例J_T，物品总正度≤3，物品及玩家∞度均≤2，N=T³+T、M=T³+T²+T−1，ConfigOPT精确T、整数OPT精确⌊√T⌋，因而T/⌊√T⌋=Θ(N^(1/6))且≥2^(−1/6)N^(1/6)。§4–5从明确I_T直接核配置与整数上下界并应用A，全部目标已付清，没有虚留contribution.remaining。该目标未声称玩家总正度≤3、全类tight上界、NP-hardness或近似算法。
+
+共同模型是有限非空玩家、有限可空不可分物品、非负加性估值，物品至多单归属；允许二进制有理值及符号∞。原始CONFIG按所有达s的配置设变量，每玩家配置质量恰一、每物品总边际≤一。非负性允许删除所属玩家零值物品；配置LP不要求各玩家配置有共同整数随机实现。Degree与InfDegree首先均为物品侧定义。原PDF印刷页4和6的实际导出分别确认这些定义；页8–9提供整数链，页12–13确认{0,1,∞}规范化边界及InfDegreeTwo脚注的来源范围。
+
+## 2. 有限桥到同一∞输出的完整扩展
+
+F的完整body已实读，五项evidence的SC path、正反阈值及历史版本相关段另读。F的正向actual/CONFIG只需所保正阈值≤1，不要求每个旧端值≤1，也不要求oldOPT≤1才存在给定阈值见证的转换。oldOPT≤1只是它关于精确最优值的附加合同。反向对任意正阈值成立，不能在阈值>1时把双copy helper配置强剪为singleton。
+
+对I中每件d_j>3物品j按不同正玩家身份列i_1,…,i_d，删j、加d份owner-copy c_1,…,c_d，并加d−1名相邻helper h_k；h_k仅在c_k,c_(k+1)取∞。低度和无正owner物品保留。该J∞完全不含阈值参数。
+
+F提供的逐物品证明可在需要的高次物品上局部应用。对任意有限实s>0，选有限正有理H≥s（例如足够大的正整数），把全部旧端值截为min(v,H)并除以H，再使用F的目标s/H≤1。任意非负bundle达s当且仅当截断后达s：如含≥H端，截后该单端已有H≥s；如不含，则值全不变。F给出的有限H helper版本与J∞的关系也由同样的阈值封顶逐bundle成立；把copy的旧端恢复为v、helper恢复∞不会改变达s判定。因此对每个s都有双向合同，而其目标始终是预先固定的同一J∞。这里H只是复用成熟有限证明的辅助参数，不是输出实例依赖s。实际见证变换直接用下述matching及边际公式，不需要把实s写成有限字符串。
+
+整数正向：旧j给i_r时保c_r给该玩家；k<r的helper得c_k，k≥r的helper得c_(k+1)。旧j未用则任留一hole。每个helper达∞，原玩家值逐端保持。反向：每位helper在正阈值需至少一份相邻copy，d−1位helper由单归属占互异物品，所以至多一份copy正值服务旧玩家。逐链合回j不冲突且保旧玩家值。全部有限正阈值等价便给整数扩展OPT相等，含零及∞端点。
+
+CONFIG正向：删零后令q_r为i_r使用旧j的边际，Σq_r≤1。选w_r≥q_r、Σw_r=1，记W_k=Σ_(r≤k)w_r。旧配置逐owner重命名copy；给h_k两singleton质量1−W_k和W_k，分别放c_k和c_(k+1)。每位helper质量一且singleton值∞。每份c_r的helper边际恰1−w_r，加原玩家q_r后≤1。不同物品链独立，无配置笛卡尔积。CONFIG反向：每位helper的正质量配置在自己链至少含一件，故d−1位helper总边际≥d−1；d份copy总容量d给旧玩家剩余总边际≤1。旧玩家在该链只有自己的copy有正值，删零后投影不会在单配置制造重复旧j，效用与质量保持。因此全部有限正阈值CONFIG双向等价，最高可行阈值的扩展值相等。
+
+每名helper最多两个singleton，若旧有限有理见证支持Q项，则新支持≤Q+2S，其中S=Σ_(d_j>3)(d_j−1)。有限概率只作加减与部分和，其公共分母可取所有输入概率分母之积，位长受给定证书总编码多项式控制。原有限估值仅复制，∞是常长符号，稀疏输出构造为输入编码多项式。此合同转换给定证书，不从零求解指数规模CONFIG。
+
+## 3. 度、计数与有限helper边界
+
+每条链内部copy有一旧端和两helper端，端点copy有一旧端和一helper端，所以总正度≤3。若旧物品至多两∞端，把它们排在链两端；内部旧端有限，故内部copy只有两helper∞端；端点只有一helper∞端加至多一旧∞端。低度旧物品原样保留。因此物品∞度≤2且{0,1,∞}值域保留。一般旧玩家∞度不由物品条件限制；其每条旧∞边只换copy而不减少，新增helper玩家∞度二。B的玩家侧界必须由其具体I_T另核。
+
+每条高次链把一物品换d份，净增d−1物品，添d−1玩家；旧d条正边保留并增2(d−1)条helper正边。因此n′=n+S、m′=m+S、E′=E+2S。S≤E给组合规模O(n+m+E)；通常n,m≥1时为O(nm)，没有无条件声称每边顶点数≤nm。n≥1,m=0时任一正阈值为NO，恒等输出；s=0无需占物品，不能使用helper耗一份的证明。
+
+有限H只能在0<s≤H正向保持。只要有一条d>3的链，s>H时每位helper有效配置必须同时含两份copy（s>2H时根本无有效配置），全部helpers需边际至少2(d−1)>d，故CONFIG和整数皆不可行。于是有限H会截断目标，不能由它宣称同一输出全OPT保持。四玩家各有私有值100的物品并共享一件对四人均值100的物品，旧OPT=100；对共享物品降度且helper=1，新OPT=1。这是直接边界例，不是运行旧程序得到的有限观测。没有物品被降度时J_H=I，不套“截在H”句子。以上有限H内容仍归F的缩放及边界使用，不登记第三个重复身份。
+
+## 4. 明确原族的精确配置与整数值
+
+本节I_T是新正文§8明确列出的同一构造，不能从G的宽泛存在性statement中任选一个族当作它。对每个整数T≥4，建T个block；block r的玩家为root a_r及T位b_(r,k)，物品为T件u_(r,k)及T件w_(r,ℓ)。a_r在本block所有u值一；b_(r,k)在u_(r,k)值∞、在本block全部w值一；另T−1件B_r只对相邻a_r,a_(r+1)值∞。其余为零。原人数n=T²+T，物品数m=2T²+T−1。u的总正度二/∞度一，w的总正度T/∞度零，B的总正度二/∞度二；root玩家∞度≤二，b玩家∞度一。
+
+Config在T的见证：a_r在整组u配置质量1/T；每件B_r的singleton给左root质量(T−r)/T、右root质量r/T。对内部root外部质量为(r−1)/T+(T−r)/T=(T−1)/T，两个端root也同样。b_(r,k)在自己的u singleton质量1−1/T、在整组w配置质量1/T。每玩家质量一；每份u边际1/T+1−1/T=1，每份w边际T/T=1，每份B两端质量和一。有限大配置价值T，∞singleton均达T。故ConfigOPT≥T。
+
+若s>T，任何root的合法配置都需至少一件相邻B，因为其所有有限正物品总值仅T。T个root归一质量需总B边际至少T，却只有T−1件B容量，矛盾。因此ConfigOPT精确T。
+
+整数上界：T个root而仅T−1件B，至少一个root无B。若其获s件u、最低值V>0，则s≥V；对应s个b失唯一∞物品，只能分T件w获值，于是sV≤T，故V²≤T。至少一root有限，所以分配最低值有限；本族全部有限效用为整数，故V≤⌊√T⌋。令q=⌊√T⌋，每block给root q件u，失u的q个b各给q件互不重复w（q²≤T），其余b拿自己的∞ u，B与剩w可留空或任补。每玩家至少q，故OPT精确q。不存在除零，T≥4时q≥2。
+
+## 5. 桥应用后完整目标与规模指数
+
+对§4的I_T使用A；只有T²件w需要降度，每件正度T。新增helper数S=T²(T−1)，所以N=n+S=T³+T、M=m+S=T³+T²+T−1。A同时保整数与CONFIG的全部正阈值，因此J_T的OPT仍精确q、ConfigOPT仍精确T。w各旧玩家边际1/T，取均匀hole w_k=1/T，则第k个helper的左右singleton质量为(T−k)/T、k/T；各copy使用1/T+(1−1/T)=1。此直接输出见证的全部概率分母为T。
+
+未变u总正度二/∞度一，B为二/二；w端点copy总正度二/∞度一，内部copy为三/二。所以J_T属于DegreeThree∩InfDegreeTwo，且值域{0,1,∞}。root玩家仅至多两件B为∞，b玩家仅一件u为∞，新增helper恰两件∞，所以这个具体族还有玩家侧∞度≤2。玩家总正度并非三：root有T加至多二，b为T+1，helper为二。
+
+T³≤N≤2T³，q≤√T且q≥√T/2，故
+
+T/q≥√T≥2^(−1/6)N^(1/6)，且T/q≤2√T≤2N^(1/6)。
+
+本族比值因此Θ(N^(1/6))。旧人数n=Θ(T²)时的n^(1/4)不能在新增helper后保持指数；N=Θ(T³)强制此处1/6。输入是poly(T)显式规模，不是poly(log T)压缩编码。该证明覆盖B整条陈述，既没有漏掉新增玩家，也没有额外依赖G的任意存在性实例或一般M-LP变量等价。
+
+## 6. 四个in-packet对象对的实际处置
+
+1. A/F：有限桥已经有相同owner-copy、hole/prefix及反向容量论证；A是同一∞输出、全正阈值、∞端点排序及完整规模/编码的扩展。§2–3把扩展所需条件全部付清，因此F→A交accepted whole transfers。有限H的独立新身份不成立；F与A也不是不附阈值条件的等价对象。
+2. A/D：原PDF Theorem2.4/Figure2及D给整数链来源，D登记合同只有每个给定正t的可行性，不能单独推出CONFIG、更不能从阈值依赖J_t推出同一J∞全目标。反过来A的整数部分在固定t可再把helper∞截为t得到D式合同，但本批不重复Root正在发布的F→D成熟关系，不把来源相似写成A整条已由D证明。原PDF玩家增长caveat也实际核读。
+3. B/A：§4明确I_T的构造、精确值、度及原规模均由直接证据付清；A作为真正迁移桥给输出全部目标保持。以A为前提、I_T已付性质为明确附加条件，A→B交accepted whole transfers。G没有承担这条推导的必要前提，故不为凑ALL塞入。没有把一条共同推导拆成两个独立充分来源。
+4. B/G：G是InfDegreeTwo的存在性Ω(n^(1/4))声明；原PDF印刷页13脚注2没有展开I_T。新正文透明重构并补全明确I_T，再由A迁移。G自身既不给精确T/q也不给输出人数/交域度，因此不交G→B的无条件逻辑边；B也不能以新人数N的1/6族反推出G所写原人数n的1/4整句。这里只记来源比较和范围，未假称PDF已有全部本轮构造。
+
+本任务没有declared follow-up overlap，故收据closed_overlaps为空。四项均为实际in-packet比较，记录在coverage及additional_comparisons中。M-LP的原(x,z)变量合同由独立3B任务另审；本任务的两条主关系只用原始CONFIG与整数，不依赖那个审查结果，不将它虚标open。
+
+## 7. 实读证据与没有作出的审查
+
+全部新正文155行及独立复核274行已实读。F的成熟正文76行全文已读；五evidence相关段分别为Exact/Proof审查42–50和68–85、pre-Exact记录44–69和71–88、v1/v3核验17–52、双源审查69–85、v3范围34–54。多篇文献汇编106行全文已读，但只使用§2的MaxMin定义、量词及来源边界。没有把历史审查所列外部canonical scratch原稿说成本worker实读。
+
+原maxmin.pdf SHA-256确认为7f7b21ff08b37e8489e9f60527e9aa9458dc5cf4cd6cc6804869665c24d51f7f；pdfinfo显示49页。本次重新用pdftotext -layout分别导出并完整读PDF/印刷页4、6、8、9、12、13，共六页；另将8–9页渲染PNG实看Figure2及脚注位置。仅这些必要页用于本结论，没有声称读完或复审全部49页。临时导出及PNG在staging/tmp/pdf，仅为本次读证记录，不是独立数学资产，不需复制进正式仓库。
+
+精确输入SHA、导出文本SHA、每个文件实际读取范围与各端点当前pin另列reading-ledger.json。没有运行旧科学程序或证书；数学判断来自上述直接公式、容量证明、有限边界及成熟桥实际正文。
+
+## 8. F v4共享证据的定向publication refresh
+
+本次仅沿原任务恢复共享输入版本。当前F为v4，registration pin为5041d21ea4cc71de0cf1e759aade84c0cc09a86d8539510dc3683242679ff85c；主body SHA仍为8bfbaa80b98546b6d1320e9760bb9491165e26a6cef1b6cd35eb86116c822f66，statement/model/quantifiers/assumptions及truth_status不变。实读当前F完整record，并重读未改主body§4的unit-helper正反阈值、copy耗用、hole/prefix及零值边界段，首轮两条whole推导继续成立。
+
+唯一evidence版本变化是“归一化菜单福利与配置证书双源审查--审查.md”从a5d9a684e8d8413457f5cf999e28b8a6aa93b140256be3031d6f3e2e02742195变为63629abaa5cd2bcc0e42ff051936b91882ea63c711dfdac231f238763b682255。实际读取当前审查文件，针对父任务给出的§一/1补句核清：P_gate全任务安排中root pin留root；未选组connector留root、selector去gate；其余incidence留private。该补全涉及门控菜单的全任务调度说明，没有改动本包所用§二/2 normal form/state-dummy SC、有限证书边界或F的unit-helper证明；不把它扩展为本包额外数学审查。
+
+当前同ID任务保持两core、三read、goal及四个in-packet overlap；仅F pin改版。按仓库pin定义对当前registry的五个端点计算规范JSON SHA，与当前task全部input_pins逐项一致，其余四pin均与首轮一致。两条whole_result、推导、端点和overlap处置不变。仅更新本review、ledger、边的review引用及收据asset SHA；Root此前parent_review逐字保留。旧native绑定字段因review/输入改版由本staging去除，交Root重新bind/check，不冒称本worker执行过native检查。

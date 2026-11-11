@@ -1,6 +1,6 @@
 # G v4 的窄范围修复：有限阈值 D 与全正阈值 A/B helper 族
 
-G v4 已以明确源族 I_T 和固定 λ=2 的 M-LP 证书支付原人数 n=T²+T 下的 Ω(n^(1/4)) 存在性目标。该证据补全不改变既有 F→D、F→A、A→B 三条 accepted whole 关系的端点、推导或证据字节。本次三个核心均保持 linked，两个旧任务的七项资产逐字节 retained；仅新增本窄范围审查和 reading-ledger，不另造逻辑边。
+G v4 已以明确源族 I_T 和固定 λ=2 的 M-LP 证书支付原人数 n=T²+T 下的 Ω(n^(1/4)) 存在性目标。该证据补全不改变既有 F→D、F→A、A→B 三条 accepted whole 关系的端点、推导或证据字节。本次三个核心均保持 linked；三条旧 canonical 边按原 path/SHA retained，四份旧 review/ledger 按原 SHA 逐字节复制到本任务保留写入范围，并在 supersession 中以 replaced 指向副本。另新增本窄范围审查和 reading-ledger，不另造逻辑边。
 
 本报告对应 `boss6-mlp-g-scope-repair-b2229510e88b478a`。本地任务快照为 claimed/Boss6，request_id 为 `6eec589cecb548fdb99bb3d7c64e3f2f`；Root 已通知该认领确认 pushed。本 worker 只读 clone，所有新文件仅写指定 staging。没有 Git、队列、registry、旧 review/ledger/edge、native binding 或科学程序写入。
 
@@ -93,8 +93,8 @@ F 经缩放的有限 helper H>0 版本，仅在 0<s≤H 正向保持 INTEGER/CON
 
 ## 6. 字节处置、实际阅读与发布界限
 
-两个 superseded 任务的全部七项 prior_assets 均逐项以原 path、原 SHA 列入本收据 assets，并在 supersession 中逐项 disposition=retained；没有 replaced、retired 或遗漏项。新资产只有本 review 和 reading-ledger，收据不列自身为 asset。旧文件完全未写入或复制改版。
+两个 superseded 任务的全部七项 prior_assets 均逐项处置：三条旧 canonical 边以原 path、原 SHA 列入本收据 assets，disposition=retained；四份旧 review/ledger 原样复制到本任务保留写入目录，复制品 SHA 与原文件完全相等，并以 disposition=replaced、replacement_paths 指向该副本。此处 replaced 只调整新收据资产路径以满足写入范围，不表示数学内容或历史阅读记录发生替换。四个副本名为 retained-a-b-review.md、retained-a-b-reading-ledger.json、retained-d-review.md、retained-d-reading-ledger.json。已发布的原文件完全未改动，三条 retained 边仍引用历史原路径；没有 retired 或遗漏项。新收据在保留三条旧边外，列入四个字节相同副本及本 review/reading-ledger，共九项资产；收据不列自身为 asset。
 
 本次实读包括：任务定义与当前七对象合同；两份旧 done 收据；三条完整边 JSON；两份旧 review；两份旧 ledger 的已声明阅读范围、版本/pin、历史限制与 publication-refresh 元数据；F 主正文、A/B 主正文、对应独立复核、H 正文、文献汇编全文；PDF 指定五页及页13图像。五篇旧 F evidence 的原先逐段实读范围以原 ledger 保留，本次只核其 SHA，没有把这些旧扫描重新宣称为新实读。未重跑科学程序、证书、枚举或 LP solver，亦未重审 DegreeTwo/VW 原始算法证据闭包。
 
-所有输入/资产精确 SHA、当前 pin、各文件实际读取范围及限制另见本 reading-ledger。数学判断来自上述约束、配置质量、容量、matching、阈值量词和人数账的直接核验。Git、native edge-bind/check、checkpoint、done 与集成均由 Root 按实际需要执行；本 worker 不冒称已经发布。
+所有输入/资产精确 SHA、当前 pin、各文件实际读取范围及限制另见本 reading-ledger。数学判断来自上述约束、配置质量、容量、matching、阈值量词和人数账的直接核验。此次路径修复只复制既有字节并更新资产处置与引用，没有新增数学阅读或程序重放。Git、native edge-bind/check、checkpoint、done 与集成均由 Root 按实际需要执行；本 worker 不冒称已经发布。
