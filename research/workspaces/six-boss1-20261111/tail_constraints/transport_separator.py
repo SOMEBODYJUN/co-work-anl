@@ -197,6 +197,23 @@ def primitive_cost(block: Block, rz: int, state: FamilyState, spec: tuple) -> F:
     return block.group.omega * state.members[spec[2]] / (block.prefix4 + r + 1)
 
 
+def sorted_quote(q: F, states: list[FamilyState]) -> F:
+    remaining = q
+    value = F()
+    for state in sorted(states, key=lambda x: -x.terminal_denom):
+        take = min(remaining, state.mass)
+        value += take / state.terminal_denom
+        remaining -= take
+    assert remaining == 0
+    # Independent nested-level formula, exact for six-player quotes.
+    layer_value = q / 6
+    for k in range(1, 6):
+        high_mass = sum((s.mass for s in states if s.terminal_denom > k), F())
+        layer_value += max(F(), q - high_mass) / (k * (k + 1))
+    assert value == layer_value
+    return value
+
+
 def single_row_lower_cost(point: Point, family: str, spec: tuple) -> F:
     """Independent Fraction sorting diagnostics, not the joint separation."""
     total = F()
@@ -210,14 +227,22 @@ def single_row_lower_cost(point: Point, family: str, spec: tuple) -> F:
             value = y_mass / (p + 2) + max(F(), y_mass - r_mass) / ((p + 1) * (p + 2))
         else:
             coordinate = 0 if spec[0] == "new-to-R" else 1
-            remaining = sum((mass * state[coordinate] for state, mass in zip(STATES, block.group.rho)), F())
-            value = F()
-            for state in sorted(block.family_states, key=lambda x: -x.terminal_denom):
-                take = min(remaining, state.mass)
-                value += take / state.terminal_denom
-                remaining -= take
-            assert remaining == 0
+            q = sum((mass * state[coordinate] for state, mass in zip(STATES, block.group.rho)), F())
+            value = sorted_quote(q, block.family_states)
         total += block.group.omega * value
+    return total
+
+
+def paired_RZ_lower_cost(point: Point, family: str, orbit: tuple[int, int]) -> F:
+    """Exact joint cost of the equal-weight new-to-R and new-to-Z rows."""
+    total = F()
+    for block in point.blocks(family):
+        if block.group.orbit != orbit:
+            continue
+        union = sum(block.group.rho[1:], F())
+        intersection = block.group.rho[3]
+        total += block.group.omega * (sorted_quote(union, block.family_states)
+                                      + sorted_quote(intersection, block.family_states))
     return total
 
 
@@ -481,8 +506,9 @@ def main():
         rhs = budgets(point, family, specs)
         singles = [(spec, budget - single_row_lower_cost(point, family, spec))
                    for spec, budget in zip(specs, rhs)]
+        paired = [(orbit, 2 * rhs[0] - paired_RZ_lower_cost(point, family, orbit)) for orbit in ORBITS]
         item = {"family": family, "labels": point.labels[family],
-                "single_row_slacks": singles}
+                "single_row_slacks": singles, "paired_RZ_slacks": paired}
         discovery = discover(point, family, specs, rhs, args.tolerance)
         item["discovery"] = discovery
         if discovery.get("success") and discovery["max_common_slack_float"] < -10 * args.tolerance:
@@ -508,6 +534,7 @@ def main():
         summary = {"family": family,
                    "minimum_single_row_slack": str(min(slack for _, slack in singles)),
                    "negative_single_rows": sum(slack < 0 for _, slack in singles),
+                   "paired_RZ_slacks": paired,
                    "discovery": {k: v for k, v in discovery.items() if k != "dual_weights_float"}}
         if "certificate" in item:
             summary["certificate"] = {k: v for k, v in item["certificate"].items()

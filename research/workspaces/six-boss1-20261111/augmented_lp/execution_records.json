@@ -1,0 +1,91 @@
+{
+  "scope": "Observed local execution records; no fabricated start or exit times",
+  "archived_materializer": {
+    "command": [
+      "python3",
+      "-B",
+      "archives/customer-attraction/tools/evidence/b-family-menu-prices-boss3/materialize_runtime.py",
+      "/workspace/scratch/b0fef5ec503f/co-work-anl-boss1/research/workspaces/six-boss1-20261111/augmented_lp/runtime"
+    ],
+    "exit_code": 1,
+    "observed_result": "47 base files copied, then KeyError: stored_path; current manifest had 8 entries"
+  },
+  "local_materializer_adapter": {
+    "command": [
+      "python3",
+      "-B",
+      "research/workspaces/six-boss1-20261111/augmented_lp/prepare_runtime.py"
+    ],
+    "exit_code": 0,
+    "report": "materialization.json"
+  },
+  "attempt1": {
+    "command": [
+      "python3",
+      "-B",
+      "research/workspaces/six-boss1-20261111/augmented_lp/solve_augmented.py"
+    ],
+    "exit_code": 1,
+    "stdout": "attempt1_stdout.txt",
+    "stderr": "attempt1_stderr.txt",
+    "failure": "attempt1_unhandled_failure.json"
+  },
+  "initial_5716": {
+    "command": [
+      "python3",
+      "-B",
+      "research/workspaces/six-boss1-20261111/augmented_lp/solve_augmented.py"
+    ],
+    "exit_code": 0,
+    "stdout": "stdout.txt",
+    "stderr": "stderr.txt",
+    "result": "Exact primal succeeded; first positive-primal-column dual recovery failed rank assertion and was recorded, then replaced by separate verified recovery"
+  },
+  "dual_recovery_5716": {
+    "command": [
+      "python3",
+      "-B",
+      "research/workspaces/six-boss1-20261111/augmented_lp/recover_dual_free.py"
+    ],
+    "exit_code": 0,
+    "stdout": "dual_free_stdout.txt",
+    "stderr": "dual_free_stderr.txt"
+  },
+  "verification_5716": {
+    "command": [
+      "python3",
+      "-B",
+      "research/workspaces/six-boss1-20261111/augmented_lp/verify_certificates.py"
+    ],
+    "exit_code": 0,
+    "stdout": "verify_stdout.txt",
+    "stderr": "verify_stderr.txt"
+  },
+  "round2": {
+    "command": [
+      "python3",
+      "-B",
+      "research/workspaces/six-boss1-20261111/augmented_lp/refine_cached.py",
+      "research/workspaces/six-boss1-20261111/augmented_lp",
+      "research/workspaces/six-boss1-20261111/augmented_lp/round2",
+      "research/workspaces/six-boss1-20261111/cross_branch_math/new_theme_early_at_5716.json",
+      "research/workspaces/six-boss1-20261111/cross_branch_math/observed_first_at_5716.json",
+      "research/workspaces/six-boss1-20261111/tail_constraints/augmented5716-transport.json"
+    ],
+    "exit_code": 0,
+    "stdout": "round2_stdout.txt",
+    "stderr": "round2_stderr.txt"
+  },
+  "verification_5764": {
+    "command": [
+      "python3",
+      "-B",
+      "research/workspaces/six-boss1-20261111/augmented_lp/verify_certificates.py",
+      "research/workspaces/six-boss1-20261111/augmented_lp/round2"
+    ],
+    "exit_code": 0,
+    "stdout": "round2/verify_stdout.txt",
+    "stderr": "round2/verify_stderr.txt"
+  },
+  "continuation": "No third round started; Main will assign a fresh calculation agent."
+}
