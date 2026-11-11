@@ -78,7 +78,7 @@ Section 7 的 duplication gadget 说明，若用“三个显著物品复制可�
 Theorem 1.8 的核心算子不等式是
 \[
  \lVert G\otimes H\rVert\le \phi(\lVert G\rVert)\lVert H\rVert,
- \qquad \phi(x)=\frac{2x}{1+x}.
+ \qquad \phi(x)=\frac{2\sqrt{x}}{1+x}.
 \]
 来源通过 collision value 而非普通 `val` 直接相乘；文中还明确提醒普通值的同型乘法不等式一般为假。
 
