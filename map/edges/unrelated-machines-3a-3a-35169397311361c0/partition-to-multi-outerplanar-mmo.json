@@ -1,0 +1,59 @@
+{
+  "edge_id": "um-35169397-partition-to-multi-outerplanar-mmo",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-e8d9614430ab49fc99125452d10388f1"
+  ],
+  "target_ids": [
+    "M-91ba949b418b4026aa3c2dc2e5a62834"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "输入为显式正二进制整数列表，按下标区分重复数。目标 MMO 允许平行边，各边在两个端点的权相同，以边的尾端计加权出度，询问所有顶点能否同时不超过同一个整数阈值。最大边权随输入变化。",
+  "roles": {
+    "M-e8d9614430ab49fc99125452d10388f1": "提供精确半总和判定语言的 NP 完全性及二进制编码合同。",
+    "M-91ba949b418b4026aa3c2dc2e5a62834": "在两点平行边子族中承接保 YES/NO 的归约。"
+  },
+  "explanation": "记 A=Σ_i w_i。非空偶和输入取 B=A/2，在 s、t 间为每个下标 i 建独立边，权 w_i，两顶点可同在外部面。若下标集 I 的和为 B，把 I 的边以 s 为尾，其余以 t 为尾，两点出度皆 B。反向每边恰计一次，两点出度和 2B，因此若都至多 B 则都恰等于 B，从 s 的尾边读出 I。奇和或非法编码映到固定 MMO NO（权 2 单边，阈值 1），若合法空表是 YES 则映到权 1 单边、阈值 1。边数线性，求和、阈值和权的位长多项式。弱困难性的数值边界可直接核：两点族可用子集和表，对整个多重外平面类可用底层简单外平面图宽度至多 2 的树分解，逐条引入平行边，对袋中不超过阈值的整数载荷记可行性，合并时逐坐标相加。阈值可截在总权，得到伪多项式时间。",
+  "scope": "完整证明正整数多重外平面 MMO 的弱 NP 困难性；保留两点平行边及输入可变权域。简单外平面图、固定最大权及固定乘性近似阈值各有不同合同。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "2. 主定理的21个判定问题及历史术语"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "1. 先固定语言、量词和编码"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "5.5 Subset Sum到单机罚金排序、到Partition"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md",
+      "sha256": "58b4be48da7c01dac6a3e5eeff733d7e211dbae675690684e4142742d5bc4740",
+      "section": "4.1（多重）外平面图：弱 NP-困难"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/asahiro-miyano-ono-2011.pdf",
+      "sha256": "5db93652d80fd92b6440e0a0e22edfdeb09f78e2b886c95cb4adf171c67ee147"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "核对 Karp 正二进制语言与精确半和，以及 Asahiro–Miyano–Ono 冻结稿 §2、Theorem 11 和 Fig. 4 的按尾端定义及两个方向。显式补齐奇和与空编码端点。",
+  "whole_result": "正二进制 PARTITION 经全输入位多项式多对一归约到多重外平面 MMO 阈值判定，非平凡实例用两点间独立平行边，故目标弱 NP 困难。",
+  "endpoint_pins": {
+    "M-91ba949b418b4026aa3c2dc2e5a62834": "fd137caa008d902027799278ce88cf69fc35dc0b35350e45472e2e53e08c179d",
+    "M-e8d9614430ab49fc99125452d10388f1": "8235a2ee5b9dcca8eed3e1083fdc0e9d32a10ffc64b264ea13b6c6de967c0ab4"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+    "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md": "58b4be48da7c01dac6a3e5eeff733d7e211dbae675690684e4142742d5bc4740",
+    "research/registration/evidence/boss6-0104/asahiro-miyano-ono-2011.pdf": "5db93652d80fd92b6440e0a0e22edfdeb09f78e2b886c95cb4adf171c67ee147"
+  },
+  "review_digest": "aa915f84ce05950404e484052c65074e91c7408c2f70d6aa08f3c82665da83f3"
+}
