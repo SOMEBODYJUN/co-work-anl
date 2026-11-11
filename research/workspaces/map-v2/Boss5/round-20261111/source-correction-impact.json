@@ -1,0 +1,246 @@
+{
+  "reviewed_by": "Boss5",
+  "source_changes": [
+    {
+      "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+      "old_sha256": "a842380d2ee484db652986c5d639fb5c1651cc7ca77dff67bac5e898381f4a85",
+      "new_sha256": "4fd79dc5ee2ffd4830eb094e9d293af62565a9069033844dc75c1a06292dcad1",
+      "replacements": [
+        {
+          "old": "\\operatorname{tw}_{p}\\ge \\max_i|J(i)|,",
+          "new": "\\operatorname{tw}_{p}\\ge \\max_i|J(i)|-1,"
+        },
+        {
+          "old": "\\operatorname{tw}_{d}\\ge \\max_j|M(j)|,",
+          "new": "\\operatorname{tw}_{d}\\ge \\max_j|M(j)|-1,"
+        },
+        {
+          "old": "这些是约束满足文献中的结构关系在此模型上的应用，不是新的调度近似界。",
+          "new": "这些是约束满足文献中的结构关系在此模型上的应用，不是新的调度近似界。冻结 PDF 的 Remark 7 本身遗漏上述两个 −1；按其第5页的标准树宽定义，团大小为 r 只能推出树宽至少 r−1。单任务单机器的零树宽也直接排除原字面不等式；这不影响四项算法定理。"
+        },
+        {
+          "old": "取 (L\\le\\mathrm{OPT}) 或 (L\\le2\\max_i|J(i)|)",
+          "new": "在判定阈值 T 下只保留负载不超过 T 的状态，取 (L\\le T+1)；或用每机子集和数界 (L\\le2^{\\max_i|J(i)|})"
+        },
+        {
+          "old": "最优值不变，而 primal 和 dual 图都变成完全图，rankwidth 为 1；因此这两个图的 rankwidth 可被人为压低，不能作为有效结构参数。",
+          "new": "最优值不变，dual 图确实变成完全图，rankwidth 为 1。原文还称 primal 图同样完全，但该构造只向旧 primal 图加入一个全邻接的新任务，不会使原本不相邻的旧任务相邻；例如两个互不相邻旧任务加新任务后是三点路径。故此段不认证 primal 图完全或任意 primal rankwidth 归一到1的主张。下文 incidence rankwidth 的 PTAS 由独立的类型计数 DP 和 Rounding Lemma 给出，不依赖这句背景断言。"
+        },
+        {
+          "old": "(\\delta^2B/n)",
+          "new": "(\\delta^2B)"
+        }
+      ]
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md",
+      "old_sha256": "a5d9a684e8d8413457f5cf999e28b8a6aa93b140256be3031d6f3e2e02742195",
+      "new_sha256": "63629abaa5cd2bcc0e42ff051936b91882ea63c711dfdac231f238763b682255",
+      "replacements": [
+        {
+          "old": "从 β* 见证构造全任务调度：选中组 connector 放 gate、selector 放达到 state 的 private，所领正 incidence 导出资源机；未选 state 与全部其他 jobs 留各自 private。",
+          "new": "从 β* 见证构造全任务调度：root pin 留 root；选中组 connector 放 gate、selector 放达到 state 的 private，所领正 incidence 导出资源机；其余全部 incidence jobs（含未选 states 和零 jobs）留各自 private；未选组 connector 留 root、selector 去 gate。"
+        }
+      ]
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/私有汇点高阶上负相关精确尾概率最终独立审查--审查.md",
+      "old_sha256": "78e293e15c76124a4b00ca8bc65018748b720d6ad0d08992b760eceec4370e7b",
+      "new_sha256": "c8abb60a2839833d60f829d5eb01101042265cfaa9ef93eb1f6a6ad66fdd6ba5",
+      "replacements": [
+        {
+          "old": "其它 q? 选取不同组各一件送 sink",
+          "new": "从其它 k−q 个不同组各选一件送 sink"
+        }
+      ]
+    }
+  ],
+  "affected_objects": [
+    "M-080d9b22ae87408f9a673a898c7a6dc3",
+    "M-14dbe6980117492aa7a3b48c52378dcb",
+    "M-232414c2d8e744ccaba95138638a15dc",
+    "M-247deecec83946358afe4e89413a7bd1",
+    "M-3452046f3bdd47c48b17a0a3038ba4b2",
+    "M-9452d445c1744d5eaac946ee974d2162",
+    "M-f0619ab2e98f41eb9fa9c02a48c19aaa",
+    "UM-NEAR-PERFECT-NORMALIZED-ROBUST-SOURCE-v1",
+    "UM-NORMALIZED-GATED-MENU-13-8-v2",
+    "UM-NORMALIZED-GATED-MENU-WELFARE-v1",
+    "UM-OPT-HULL-HIGHER-NC-SUCCESS-v1"
+  ],
+  "affected_edges": [
+    {
+      "path": "map/edges/boss5-474257b8-qd-decoder-3a-69d5a688c474b34c/support.json",
+      "edge_id": "b5-qd-and-private-tree-config-force-decoder-parameter-growth"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-17669e4ba1771673/normalized-config-bridges-qd-degree-three.json",
+      "edge_id": "um-1766-normalized-config-bridges-give-qd-degree-three-certificate"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-1961b46f6545c308/partial-support-versus-welfare-lp.json",
+      "edge_id": "um-1961b46f-partial-support-versus-welfare-lp"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-e5b7b2ae27def807/welfare-to-general-ratio-value-bridge.json",
+      "edge_id": "um-normalized-welfare-to-general-ratio-value-bridge"
+    }
+  ],
+  "affected_tasks": [
+    {
+      "task_id": "round20-um-macro-source-repair-repair-7adac135318f96e8",
+      "state": "done",
+      "owner": "Boss1"
+    },
+    {
+      "task_id": "boss6-inf-chain-transfer-3b-ea6be0c00b1186cf",
+      "state": "claimed",
+      "owner": "Boss6"
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-effdbb6d60f56b34",
+      "state": "available",
+      "owner": null
+    },
+    {
+      "task_id": "boss2-6405-source-repair-b61b3ed236a4a90b",
+      "state": "claimed",
+      "owner": "Boss2"
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-777902a1e6f15125",
+      "state": "claimed",
+      "owner": "Boss2"
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-a56e5e8b03d8a1fd",
+      "state": "claimed",
+      "owner": "Boss3"
+    },
+    {
+      "task_id": "boss6-inf-chain-gap-3a-76ebd0d679385a1a",
+      "state": "claimed",
+      "owner": "Boss6"
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-e5b7b2ae27def807",
+      "state": "done",
+      "owner": "Boss2"
+    },
+    {
+      "task_id": "boss2-dgr-ratio-refresh-repair-5454691cffc3842f",
+      "state": "done",
+      "owner": "Boss2"
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-3f8b771c0276b1b2",
+      "state": "claimed",
+      "owner": "Boss5"
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-1961b46f6545c308",
+      "state": "done",
+      "owner": "Boss3"
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-850a6179151b732e",
+      "state": "claimed",
+      "owner": "Boss6"
+    },
+    {
+      "task_id": "boss5-474257b8-qd-decoder-3a-69d5a688c474b34c",
+      "state": "done",
+      "owner": "Boss5"
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-17669e4ba1771673",
+      "state": "done",
+      "owner": "Boss5"
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-9a5cd2eb99c8ff5a",
+      "state": "claimed",
+      "owner": "Boss5"
+    },
+    {
+      "task_id": "boss3-sourcefix-repair-d1188acb9358b2e6",
+      "state": "done",
+      "owner": "Boss2"
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-d97d472e04065fc5",
+      "state": "available",
+      "owner": null
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-826effc7485414e4",
+      "state": "claimed",
+      "owner": "Boss6"
+    }
+  ],
+  "previous_baseline": {
+    "path": "research/registration/baseline-boss6-inf-chain-gap-v2-20261111.json",
+    "sha256": "5e91470842cc298079a8a3a514c7b7702f911fd594e47c8f723898c580a40cea"
+  },
+  "object_changes": [
+    {
+      "object_id": "M-080d9b22ae87408f9a673a898c7a6dc3",
+      "old_version": 3,
+      "new_version": 4
+    },
+    {
+      "object_id": "M-14dbe6980117492aa7a3b48c52378dcb",
+      "old_version": 1,
+      "new_version": 2
+    },
+    {
+      "object_id": "M-232414c2d8e744ccaba95138638a15dc",
+      "old_version": 1,
+      "new_version": 2
+    },
+    {
+      "object_id": "M-247deecec83946358afe4e89413a7bd1",
+      "old_version": 1,
+      "new_version": 2
+    },
+    {
+      "object_id": "M-3452046f3bdd47c48b17a0a3038ba4b2",
+      "old_version": 1,
+      "new_version": 2
+    },
+    {
+      "object_id": "M-9452d445c1744d5eaac946ee974d2162",
+      "old_version": 2,
+      "new_version": 3
+    },
+    {
+      "object_id": "M-f0619ab2e98f41eb9fa9c02a48c19aaa",
+      "old_version": 3,
+      "new_version": 4
+    },
+    {
+      "object_id": "UM-NEAR-PERFECT-NORMALIZED-ROBUST-SOURCE-v1",
+      "old_version": 3,
+      "new_version": 4
+    },
+    {
+      "object_id": "UM-NORMALIZED-GATED-MENU-13-8-v2",
+      "old_version": 3,
+      "new_version": 4
+    },
+    {
+      "object_id": "UM-NORMALIZED-GATED-MENU-WELFARE-v1",
+      "old_version": 3,
+      "new_version": 4
+    },
+    {
+      "object_id": "UM-OPT-HULL-HIGHER-NC-SUCCESS-v1",
+      "old_version": 2,
+      "new_version": 3
+    }
+  ],
+  "new_baseline": {
+    "path": "research/registration/baseline-boss5-formulas-and-witnesses-20261111.json",
+    "sha256": "b7a35b8679aaab139cbbcdab1413255ca02433e3731fc031fbc1dd8c7e890586"
+  }
+}
