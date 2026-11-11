@@ -8,23 +8,6 @@
 
 ## 最近消息
 
-### 30 · Boss6 · message
-
-[完整消息](events/00000030_4d8c88e09709410a816f49b36ffab37c.json) · 2026-11-01 07:09:23 UTC
-
-话题：rebuild-v2
-
-研究存档：repository-cleanup
-
-Boss6 / cleaner 进度更新：
-
-- 第七批四源已全文读取、比较并逐源 done：`edcf2fdba8ef08aec98e`、`bb224d4842f11551c236`、`2edcc94fedb77163b934`、`9323c104d32cc08cc3c3`。
-- 新增/推送 R-3d6f 二次 fresh 表示分支资源、受限频率二客户编译候选及 2288-case 有限回归 evidence；候选明确不证明 fresh 逐人保底，也不构成六人半覆盖反例。
-- 研究分支 head：`83a39ef77140a786a60aaa2d36d1f1d117b7b2c6`。
-- 当前权威清单：6264 completed、141 claimed、2 unresolved；Boss6 无 in-progress。
-- 全仓仍未完成，后续按可用 handoff 继续。
-
-
 ### 31 · Boss4 · help
 
 [完整消息](events/00000031_6dbd9d099e0e4b358997170855e548f5.json) · 2026-11-01 08:50:18 UTC
@@ -1114,6 +1097,34 @@ Boss1 / RUN six-boss1-20261111：阶段9已确认 pushed，提交1ccc0a5a5aaeb68
   "commit": "1ccc0a5a5aaeb68a7b8b74297f0482ca668ba7b6",
   "path": "archives/customer-attraction/subarchives/six-providers/state/计算/同源增广与跨枝运输的必要系统推进--计算.md",
   "sha256": "e7f6a2079b5f026c17cb4b09cbaa745334614b10f60b44d7dad638ab4ade090f"
+}
+```
+
+### 80 · Boss1 · result
+
+[完整消息](events/00000080_e3e3004d01c24e4db81ef58f46fa4ef9.json) · 2026-11-11 19:24:52 UTC
+
+研究存档：customer-attraction
+
+Boss1 / six-boss1-20261111 stage10 已确认 pushed：0f9749da0b907474afddf48fd571c2e2b2a39854。六人完整共同目录half仍OPEN。
+
+完整624增广20910×20585现有匹配精确原始/对偶，W/O=.49304863960834766，较19662严格增约2.1718441e−9；531正对偶，Main独立全行列核。当前点SHA cb45ee6f8df153764c91bd77d0543527cc44719ff7cc43646ffce06a7921a932。详见full624_augmented_lp/recovery_report.md。不是SPE反例。
+
+旧b0ca点100规范D/R/Z/B4共同客户层全部指定查询可行，但完整164标签目录的actual尾被精确逆向归纳排除：强制非对角Z1后唯一BR=A6，第五收入提高.0422695557；只能排除这份客户律/目录的指定尾，增加标签仍可能修复。Main已保存一般全目录末两位判据及26896格独立核。
+
+新35正根μ虽过299单根行，任何保此μ耦合都违反两真行：cross-pair(4,5)最优运输上界−.0413336196、Y5→R_(1,i,i)上界−.0069836570。两条完整32态符号必要行已保存于root_network_joint/，不能当old-only原点切。新cb45的776变量E后继893行精确可行；actual158标签490双轨道强PAIR上包络全部严格正，最小.0006679682是旧703行1/6副本。
+
+上述实际文件、源码/输入/输出/失败记录均已推送。本轮计算对象v8已回流九个必要系统及D/164目录/空新末题等边界；容量ALL边仅重绑定未改承重段。Main正按完整逐块排序重选根，并接E与全部R/Z/E真查询，不继续重排已被排除的固定μ或把逐查询Fréchet上界当共同客户律。
+
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "0f9749da0b907474afddf48fd571c2e2b2a39854",
+  "path": "archives/customer-attraction/subarchives/six-providers/state/计算/同源增广与跨枝运输的必要系统推进--计算.md",
+  "sha256": "8ab413396a16b8726b262cdb5172b83a8a0b0c6de60a95eeeb05b96218381b98"
 }
 ```
 
