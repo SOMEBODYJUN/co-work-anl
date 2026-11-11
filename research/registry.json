@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-boss6-degree-three-footnote-20261111.json",
-    "sha256": "f9405a8a115a87b548156e231f288949ad0efc1566fa039a06aab7b0281eff4f"
+    "path": "research/registration/baseline-boss6-inf-chain-gap-v2-20261111.json",
+    "sha256": "5e91470842cc298079a8a3a514c7b7702f911fd594e47c8f723898c580a40cea"
   },
   "objects": [
     {
@@ -18965,6 +18965,49 @@
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/tree_coupling/coupling_layers.json#layers",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/tree_coupling/verify_coupling.py#main",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/tree_coupling/round2/pair_scope_correction.md"
+      ]
+    },
+    {
+      "object_id": "M-16209762a32e42e48ec20b76381b5e9d",
+      "version": 1,
+      "title": "∞ helper路径的全正阈值整数与配置LP保持及InfDegreeTwo排序",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限非空玩家、有限可空不可分物品的非负加性MaxMin；估值为非负二进制有理数或符号∞，物品单归属。原始CONFIG(s)用所有达有限正阈值s的配置、每玩家质量一及每物品容量一。Degree与InfDegree首先指物品侧。",
+      "statement": "对每个总正度d_j>3的物品，用d_j份专属副本及d_j−1名只在相邻两副本取∞的helper替代；低度物品保留。同一输出J∞对每个有限s>0同时保持整数可行性和CONFIG(s)可行性，两种见证可双向转换，故整数OPT及最高CONFIG阈值的扩展值相等。输出每物品总正度≤3；若输入每物品∞度≤2，将原∞端置链端点后输出∞度仍≤2，源值域为{0,1,∞}时该值域也保留。S=Σ_{d_j>3}(d_j−1)时n′=n+S、m′=m+S、E′=E+2S。给定有限有理CONFIG见证，正向支持至多新增2S项，构造和见证编码转换为多项式。",
+      "quantifiers": "对每个显式输入I，先构造一个不依赖s的J∞，再对每个有限实阈值s>0分别有两种可行性等价。∞度的附加结论只在输入每物品∞度≤2时使用；有理见证的位复杂度按实际给定编码计，不承诺求解指数配置LP。",
+      "assumptions": [
+        "估值非负，正owner按不同玩家身份计，配置中零值物品可删除，物品至多分给一位玩家。",
+        "全阈值合同使用符号∞ helper；有限helper值H仅对0<s≤H正向保持，不能由固定阈值版本推出全目标相等。",
+        "需要InfDegreeTwo时把同物品至多两个原∞玩家端排在链两端；一般不限制原玩家∞度。",
+        "有限见证支持、支撑概率及输入估值采用显式二进制有理编码；∞为一个常数长度符号。"
+      ],
+      "scope": "M-080d9b22ae87408f9a673a898c7a6dc3有限unit-helper桥的∞全阈值和无限度排序扩展；原始MaxMin CONFIG，不是UM makespan或一般M-LP变量恒等映射。",
+      "objections": "Boss6与两名worker分别重构正反整数/边际证明；现有有限桥保留原身份，未重复登记。内部副本旧端有限与两∞helper端才给∞度二；不允许把第三个∞端藏入内部。s=0不使用helper消耗论证；空物品正阈值单列。没有把给定证书转换冒作配置LP求解算法。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/无限helper全阈值降度与三度二无限度配置间隙--定理.md",
+        "sha256": "9d56eff7715d695c85f6e45707b899633faef71dd1388c86bea1ac4fc721dbca"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/无限helper降度与三度二无限度间隙独立复核--审查.md",
+          "sha256": "958e5a737a76de3dfdbb20f7971bba5c61e4e86a59b50ea4d43ebdc36a228d5b"
+        },
+        {
+          "path": "archives/unrelated-machines/state/定理/规范化平菜单的CONFIG与正支撑LP双向保持--定理.md",
+          "sha256": "8bfbaa80b98546b6d1320e9760bb9491165e26a6cef1b6cd35eb86116c822f66",
+          "section": "4. SC unit-helper 路径"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/maxmin.pdf",
+          "sha256": "7f7b21ff08b37e8489e9f60527e9aa9458dc5cf4cd6cc6804869665c24d51f7f"
+        }
+      ],
+      "sources": [
+        "archives/unrelated-machines/state/定理/无限helper全阈值降度与三度二无限度配置间隙--定理.md#§1–7：构造、整数匹配、hole/prefix lift、反向总容量、有限边界和位复杂度",
+        "M-080d9b22ae87408f9a673a898c7a6dc3 v3：已有有限unit-helper一般SC路径",
+        "M-a9534c70ffa74fca9a91cd270468de3f v3 / maxmin.pdf Theorem2.4和Figure2：整数链式源",
+        "archives/unrelated-machines/state/审查/无限helper降度与三度二无限度间隙独立复核--审查.md#独立复核§3–5"
       ]
     },
     {
@@ -39948,6 +39991,44 @@
       ],
       "sources": [
         "archives/customer-attraction/state/引理/笛卡尔银行的联合偏离余额与最低资本--引理.md"
+      ]
+    },
+    {
+      "object_id": "M-7bc9eab74ecd475db7df33c3f4b75e61",
+      "version": 1,
+      "title": "DegreeThree与InfDegreeTwo交域的精确T对floor√T配置间隙族",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "显式{0,1,∞}不可分加性MaxMin的原始配置LP；物品总正度≤3、物品∞度≤2。具体族还满足玩家∞度≤2，玩家总正度不限定为三。全部新增helper计入玩家数N。",
+      "statement": "对每个整数T≥4，存在正文§8–9明确列出的实例J_T，玩家数N=T³+T、物品数M=T³+T²+T−1，每物品总正度≤3且每物品/每玩家∞度≤2。其配置LP最高可行阈值精确为T，整数OPT精确为floor√T。因此该显式无限家族的比值T/floor√T为Θ(N^(1/6))，特别至少2^(−1/6)N^(1/6)。",
+      "quantifiers": "对每个整数T≥4显式构造一例，规模与见证编码为poly(T)，不是poly(log T)压缩输入；Θ只描述本族比值，不主张整个交域的tight上界，不声称每实例有同样gap。",
+      "assumptions": [
+        "原始族有T个block；每block一个root和T位aux、T个root值1/对应aux值∞的u、T个所有本block aux值1的w；T−1个外部B连接相邻root并给∞。",
+        "只对T²个正度T的w使用∞ helper路径，低度u和B保留；使用全正阈值桥，不用有限H版本冒充全目标等价。",
+        "配置LP用原始有效配置及单物品容量；整数分配物品单归属，全部玩家纳入最低效用目标。"
+      ],
+      "scope": "将透明InfDegreeTwo源家族迁到物品DegreeThree∩InfDegreeTwo后的精确目标、规模和间隙增长；不是NP-hardness、一般近似算法或M-LP双向变量桥。",
+      "objections": "正文同时给LP阈值T的全部概率、s>T的T个root对T−1个B容量矛盾、V²≤T整数上界及q=floor√T时q²≤T的整数下界；新人数Θ(T³)故指数为1/6，不能照搬旧人数Θ(T²)的1/4。完整源家族是Boss6透明重构和本轮直接复核，原PDF脚注仅声明InfDegreeTwo存在性gap。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/无限helper全阈值降度与三度二无限度配置间隙--定理.md",
+        "sha256": "9d56eff7715d695c85f6e45707b899633faef71dd1388c86bea1ac4fc721dbca"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/无限helper降度与三度二无限度间隙独立复核--审查.md",
+          "sha256": "958e5a737a76de3dfdbb20f7971bba5c61e4e86a59b50ea4d43ebdc36a228d5b"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/maxmin.pdf",
+          "sha256": "7f7b21ff08b37e8489e9f60527e9aa9458dc5cf4cd6cc6804869665c24d51f7f"
+        }
+      ],
+      "sources": [
+        "archives/unrelated-machines/state/定理/无限helper全阈值降度与三度二无限度配置间隙--定理.md#§8–9：原始族全部配置/整数见证和只降度w的交域推论",
+        "M-16209762a32e42e48ec20b76381b5e9d：同一∞ helper输出的全正阈值双向保持",
+        "M-b126c4b3ff29400589f7f38abdca4d85 v3 / maxmin.pdf 印刷页13脚注2：InfDegreeTwo存在性源；本文展开具体重构而不冒称脚注已有全部证明",
+        "research/workspaces/map-v2/Boss6/current-run/pcsp-pending-math-review.json：此前明示原族重构",
+        "archives/unrelated-machines/state/审查/无限helper降度与三度二无限度间隙独立复核--审查.md#独立复核§6–7的精确值和新增人数"
       ]
     },
     {
@@ -196658,6 +196739,16 @@
       "reason": "全文实读；承载本批独立数学主对象并按精确Claim分开陈述/模型/量词，成熟完整证明复用。"
     },
     {
+      "path": "archives/unrelated-machines/state/定理/无限helper全阈值降度与三度二无限度配置间隙--定理.md",
+      "sha256": "9d56eff7715d695c85f6e45707b899633faef71dd1388c86bea1ac4fc721dbca",
+      "disposition": "objects",
+      "object_ids": [
+        "M-16209762a32e42e48ec20b76381b5e9d",
+        "M-7bc9eab74ecd475db7df33c3f4b75e61"
+      ],
+      "reason": "同一自足正文分别承载∞全阈值/排序扩展和精确交域间隙族；完整正文和独立报告实际对读，有限unit-helper现有身份不重复。"
+    },
+    {
       "path": "archives/unrelated-machines/state/定理/有向需求与调度的压缩双向任务桥--定理.md",
       "sha256": "47052b1eb3dfa67b095bbdb1ef86b80f108c6bb71b1e8d0210649b13092b130e",
       "disposition": "objects",
@@ -196775,9 +196866,10 @@
         "M-f0619ab2e98f41eb9fa9c02a48c19aaa",
         "M-080d9b22ae87408f9a673a898c7a6dc3",
         "M-9452d445c1744d5eaac946ee974d2162",
-        "M-4bfb99ccca4f4f77a6aaee6882ef1170"
+        "M-4bfb99ccca4f4f77a6aaee6882ef1170",
+        "M-16209762a32e42e48ec20b76381b5e9d"
       ],
-      "reason": "全文已读；拆正支撑FSLP/UM-SC CONFIG1接口、一般SC单位helper路径、Q_D参数gap三精确Claim，tree/menuportpath留接口内，旧v1/v3容器不吞新量词。0111 M20–22全文额外读并实际接受为各自适用范围的证据。"
+      "reason": "全文已读；拆正支撑FSLP/UM-SC CONFIG1接口、一般SC单位helper路径、Q_D参数gap三精确Claim，tree/menuportpath留接口内，旧v1/v3容器不吞新量词。0111 M20–22全文额外读并实际接受为各自适用范围的证据。\n新增∞桥复用该完整文件§4的已登记有限unit-helper配置证明；合并时保留原body全部数学owners。"
     },
     {
       "path": "archives/unrelated-machines/state/定理/逐坐标一致菜单的整数资源配额--定理.md",
@@ -199651,6 +199743,16 @@
         "unrelated-machines/um-0102-b78bc5b8a17db8f7"
       ],
       "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/无限helper降度与三度二无限度间隙独立复核--审查.md",
+      "sha256": "958e5a737a76de3dfdbb20f7971bba5c61e4e86a59b50ea4d43ebdc36a228d5b",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-16209762a32e42e48ec20b76381b5e9d",
+        "M-7bc9eab74ecd475db7df33c3f4b75e61"
+      ],
+      "reason": "独立数学复核含全部正反映射、精确OPT/ConfigOPT、规模/位长与真实阅读账；不以审查报告另造数学节点。"
     },
     {
       "path": "archives/unrelated-machines/state/审查/显式XOS分数NSW的确定化合同与真实审读链--审查.md",
@@ -203763,6 +203865,31 @@
       "reason": "已核精确陈述、必要条件和承重证明位置，复用本页完整正文。"
     },
     {
+      "path": "archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md",
+      "sha256": "9c7a4bfe21f216b57edfbce69b591aabf1a4d3a637510eba54411f7d62774bd1",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-737cbc9ea3b54c03b847026018cf5b19",
+        "M-0a576e4d0f4647d18173160e6cbaad70"
+      ],
+      "reason": "Theorems21/23的完整压缩质量槽替代证明与逐项对偶；保真结论并精确指出冻结v1两图的失败。"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/maxmin.pdf",
+      "sha256": "7f7b21ff08b37e8489e9f60527e9aa9458dc5cf4cd6cc6804869665c24d51f7f",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-16209762a32e42e48ec20b76381b5e9d",
+        "M-7bc9eab74ecd475db7df33c3f4b75e61",
+        "M-90610eea6c6447188c03208eaa549254",
+        "M-a9534c70ffa74fca9a91cd270468de3f",
+        "M-b126c4b3ff29400589f7f38abdca4d85",
+        "M-de7aec4bd7c24b0f9dc342c483c4a75e",
+        "M-e52574ff126d4b128f222053c97bf596"
+      ],
+      "reason": "原始MaxMin定义、Degree/InfDegree、CONFIG与整数链式及gap脚注证据；反向列齐当前所有引用同一PDF字节的数学owners，新增两对象不吞原有各独立文献命题。"
+    },
+    {
       "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/original/unit_readout_two_tree_actual_certificates.json",
       "sha256": "b44ee0f44485f2e1497b87338106d642beaa85b96196a810c569b4d120febefd",
       "disposition": "attachment",
@@ -206672,16 +206799,6 @@
         "UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1"
       ],
       "reason": "明确六机三任务固定GPC2家族：分数关联森林与可实现指定行律不保证任意指定全部pair共同延拓；解析三比特不等式和单实例精确核验。"
-    },
-    {
-      "path": "archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md",
-      "sha256": "9c7a4bfe21f216b57edfbce69b591aabf1a4d3a637510eba54411f7d62774bd1",
-      "disposition": "attachment",
-      "object_ids": [
-        "M-737cbc9ea3b54c03b847026018cf5b19",
-        "M-0a576e4d0f4647d18173160e6cbaad70"
-      ],
-      "reason": "Theorems21/23的完整压缩质量槽替代证明与逐项对偶；保真结论并精确指出冻结v1两图的失败。"
     }
   ],
   "edge_files": [
@@ -210313,6 +210430,13 @@
       "record": {
         "path": "research/registration/batches/register-lead-v5-accepted-supplement-21.json",
         "sha256": "7c4e5257b4fd91187c70f546c536f5b20f939e698d6f4a0bb49f0c2a5b296f05"
+      }
+    },
+    {
+      "batch_id": "boss6-inf-chain-and-degree-gap-20261111",
+      "record": {
+        "path": "research/registration/batches/boss6-inf-chain-and-degree-gap-20261111.json",
+        "sha256": "1f1fd819618c1a12420b9bf425a85f70703f5a0fd1158b5aa65a8b434c4d08d1"
       }
     }
   ],
