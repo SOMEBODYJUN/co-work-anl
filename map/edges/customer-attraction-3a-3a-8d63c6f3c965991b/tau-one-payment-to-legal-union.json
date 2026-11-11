@@ -1,0 +1,54 @@
+{
+  "edge_id": "ca-tau-one-payment-specializes-to-legal-union-8d63c6f3",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-b93248b51751445f889461294b278608"
+  ],
+  "target_ids": [
+    "customer-attraction/legal-background-menu-finite-certificate"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "有限单位价值客户、单位提供者及有限非空共同标签目录；固定任意合法有序前缀h，其后恰余两人，并固定同一完整纯SPE的真实子策略。要求O={x:p_x>0}本身恰为目录中的合法主题H，F={x:p_x=0}=N\\H；各旧客户的正整数负载可以不同。源结果所需的tau=1付款u_A>=C_old在此域由首位对合法H的真实偏离地板支付，见explanation；此付款不扩张为所有合法前缀的自动性质。P始终计实际两尾全部利润，包括旧客户份额。",
+  "roles": {
+    "M-b93248b51751445f889461294b278608": "提供任意合法背景在u_A>=C_old条件下的完整两尾fresh预算，以及(1/2,1,1,1)四项证书及对所有正旧负载成立的显式余项。",
+    "customer-attraction/legal-background-menu-finite-certificate": "将额外付款的充分来源限定为可合法查询的旧覆盖并集H，得到所有此类前缀、全部比较T,S和不同旧负载下的完整合法H定理。"
+  },
+  "whole_result": "从源tau=1条件定理特化到旧客户并集本身为合法主题H的域：对所有这样的合法前缀和同一完整纯SPE的实际两尾A,B，以及每对合法T,S，P+Delta>=|(T union S)\\H|，故P+Delta>=freshOPT2。其完整证书为P+Delta-C_F(T,S)=(1/2)C_B+C_H+L_T+L_S+sum_x rho_x/[(p_x+1)(p_x+2)]，其中rho_F=a[(1-t)(1-s)+ts]+(1-a)[b/2+2ts]，rho_O(p)=(1-b)(2-3a/2)+(t+s)(3-a)+(p-1)[1-(a+b)/2+t+s]均非负；C_H与源old_cover完全相同。此结论允许每名旧客户有不同正整数负载；H重复L>=1为特例。",
+  "explanation": "记U_p(X;Y)=sum_{x in X}1/(p_x+1+1_Y(x))，u_A=U_p(A;B)，u_B=U_p(B;A)，C_old=sum_{x in O}1/(p_x+2)。先支付源条件：令V为同一策略在首位改选H后的真实末回复。H合法，所以首位SPE最优性给u_A>=U_p(H;V)；因只有一名后继，对每个x in H有1/(p_x+1+1_V(x))>=1/(p_x+2)，从而u_A>=sum_{x in H}1/(p_x+2)=C_old。这里没有把偏离后继固定成实际B，也没有向目录添加新题。于是源条件定理可用于这个原本的子博弈，已得到每对合法T,S的全部fresh预算。进一步核对目标所含的证书部分：源的old_cover=u_A-C_old在H=O时就是C_H=u_A-sum_x1_H(x)/(p_x+2)；floor_B、last_B_A_T、last_B_A_S分别原样成为C_B=u_A-sum_x1_B(x)/(p_x+2)、L_T=u_B-U_p(T;A)、L_S=u_B-U_p(S;A)。C_B由首位对合法B的真实偏离及同一安全地板得到，L_T和L_S是在同一个实际A后的末位最佳回复差。源的其他乘子为零，因此Q/R等其他回复的会员位不承担额外付款。逐客户令a,b,t,s为A,B,T,S会员位，D(p)=(p+1)(p+2)>0。fresh客户的目标分子为2[2(a+b-ab)-(t+s-ts)]；old客户为(p+2)(a+b)-2ab。减去上述四个IC分子乘(1/2,1,1,1)，恰得whole_result所写rho_F及rho_O(p)。fresh非负式中所有因子均非负；old的首项(1-b)(2-3a/2)>=0，第二项(t+s)(3-a)>=0，斜率1-(a+b)/2+t+s>=0且p-1>=0，故对每个正整数p成立。每客户分别除自己的D(p_x)后求和，四个乘子仍为同一组常数，恰得完整全局恒等式，不对IC施加客户依赖权重。fresh上两尾利润合计等于新增覆盖Delta，old上是非负的分数利润，故恒等式左端确是P+Delta-C_F(T,S)。有限非空目录允许重复主题，最后对全部合法T,S取最大值即得freshOPT2。该推导已支付目标H域所需的全部额外付款；源登记的条件形式仍保留，不能据此删除一般背景上的u_A>=C_old假设。",
+  "scope": "同一模型内，从任意背景的tau=1额外付款条件定理到合法旧并集主题H子类的特化；得到目标整个陈述及其四项解析证书。允许空主题、重复动作、同覆盖异标签、前缀离轨和任意弱平局。此关系不要求统一旧负载，不推出Delta>=freshOPT2/2，不覆盖旧并集不合法且付款未经支付的背景，也不推出三人以上尾界或任意人数根half。反方向的任意背景结论不能仅由合法H命题的适用域推出，故不写等价边。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/背景旧覆盖二倍付款模板的不可行报告--计算.md",
+      "sha256": "3df3e179b114bbf0b16858b95aef008380013a4de1ac5456ffa3d59edc1b98d8",
+      "section": "为什么tau=1成功证书不与本失败冲突"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/背景菜单的有限证书--计算.md",
+      "sha256": "d26bc4fff7e557fc56785a4149f39aa170fe594c951858cb4333e2db8c8a2025",
+      "section": "模型、合法背景和完整策略量词"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/背景菜单的有限证书--计算.md",
+      "sha256": "d26bc4fff7e557fc56785a4149f39aa170fe594c951858cb4333e2db8c8a2025",
+      "section": "39候选行及四个真正活跃的合同"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/背景菜单的有限证书--计算.md",
+      "sha256": "d26bc4fff7e557fc56785a4149f39aa170fe594c951858cb4333e2db8c8a2025",
+      "section": "从保存乘子到全背景长度的显式非负余项"
+    }
+  ],
+  "reviewed_by": "Boss1/recover_facility_bridge",
+  "review_note": "实读两核心当前v1及任务全部8篇数学/程序正文，手工核对首位真实H偏离如何支付tau1前提、全部四项全局slack的对应、fresh及old清分母展开、不同负载逐客户除回和全部T/S量词。另读186B原乘子表和审计的48有效余项类，并从单位均分重构现有case-ledger全部384行14976个候选IC系数、target及四项余项，均与已存表严格一致；该新增有限Fraction核不是普遍性证明，普遍性由本文所列非负仿射恒等式承担。0LP、0原main、0随机搜索、0完整SPE搜索；历史阴性日志和接口复放只按其准确证据角色使用。无本边未付证明步骤或需要另立对象的桥。",
+  "endpoint_pins": {
+    "M-b93248b51751445f889461294b278608": "365a7e225576fd76d35cbd1eef85197d69a2949883352cd2fffee58c00ad8998",
+    "customer-attraction/legal-background-menu-finite-certificate": "cc5b96c41b081698c8b20286f5213d1f2517fa07918b0927f0f353a0882b8ce7"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/背景旧覆盖二倍付款模板的不可行报告--计算.md": "3df3e179b114bbf0b16858b95aef008380013a4de1ac5456ffa3d59edc1b98d8",
+    "archives/customer-attraction/state/计算/背景菜单的有限证书--计算.md": "d26bc4fff7e557fc56785a4149f39aa170fe594c951858cb4333e2db8c8a2025"
+  },
+  "review_digest": "666c3fe127f4a5a3a2b14218fc88f1ac2ded501abf7d284065425df417f16dd4"
+}
