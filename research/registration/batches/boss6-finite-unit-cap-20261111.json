@@ -1,0 +1,91 @@
+{
+  "schema": 2,
+  "objects": [
+    {
+      "object_id": "M-d1467073db5b4c139d81c9483d98f1c0",
+      "version": 1,
+      "title": "全有限单位helper三度族的cap M-LP非前缀与根号人数分离",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限非负有理加性MaxMin，全部估值在[0,1]内且没有符号∞；原始整数与CONFIG均用原值。cap M-LP固定λ=1，查询每个M>0时用min(p,M)分类，big为p≥M，small为p<M，并保留全部(4)–(8)约束，尤其逐small x≤z。物品总正度限制为3。",
+      "statement": "对每个整数n≥4，令v=(n−1)/n、a=(2n−1)/n²。正文显式构造K_n^(1)：n个原玩家各有私有a；每条j=1,…,n−1链有n件副本，副本i仅对原玩家i值v，n−1个helper分别只在相邻两副本值1，其他端0。该固定有限实例有N=n²−n+1玩家、n²物品、3n²−4n+2正端，物品正度≤3、helper正度2、两侧原∞度0。其原始整数OPT与ConfigOPT均恰a，正可行阈值集均为(0,a]；其λ=1 cap M-LP正可行参数集恰(0,a]∪(v,1]，最高参数1。所以cap/raw比n²/(2n−1)=Θ(√N)。n=4的13玩家16物品34正端有限矩阵取值于{0,7/16,3/4,1}，cap(1)可行而raw CONFIG(1/2)不可行，比16/7。在M=1点物品与玩家big度均≤2。",
+      "quantifiers": "所有整数n≥4的显式poly(n)构造；对每个固定输出的全部有限正s及全部有限正M分别给精确raw/cap可行集。所有新增helper计入N。有限1输出独立于查询参数；每个正值位长O(log n)。",
+      "assumptions": [
+        "原值矩阵严格按正文有限四值集合{0,a,v,1}定义；物品不可分、单归属；效用非负可加。",
+        "原CONFIG的每行质量为1、只用该行原值达阈值的配置，每物品边际容量≤1；零值端可删除。",
+        "M-LP的五类约束是列容量、big质量+z≥1、small加权值≥Mz、逐small x≤z和非负性；没有额外的行总x=1。",
+        "有限H=1桥的正向只用于M≤λH=1，反向对全部M>0；源族全部cap可行点已经≤1。raw精确值另用完整配置容量论证。"
+      ],
+      "scope": "完全有限估值、物品正度3中的显式非前缀cap族和Θ(√N)分离；只否定无small上界前件的λ=1 cap M-LP(M)⇒raw CONFIG(M/2)及cap可行参数必为前缀。原始CONFIG仍向下闭；这是本族渐近值，不宣称整个DegreeThree类tight界或算法困难性。",
+      "objections": "Root与独立worker完成全矩阵纸面证明。s>a时每条链helper至少耗n−1边际，余量≤1而n原行需n副本，raw上界对s>1也成立。M>1时每helper占用至少M>1，原行投影总值≤n却需nM，排除所有高参数。M=a含端点、M=v排除、M=1可行。原玩家正度n，不能写成两侧总正度3；低M的内部副本可能big度3，M=1的big度2不外推。M=1时旧small值v≥3/4不满足p_max≤M/2，不反驳安全接口或λ4 DegreeTwo算法。没有有限扫描或全局新颖性断言。",
+      "body": {
+        "path": "archives/unrelated-machines/state/反例/全有限单位helper三度族的capMLP非前缀与根号人数分离--反例.md",
+        "sha256": "1a7a9b07f378abf3fd3c659ec35297fd774b47c004952773b01896feae133939"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/全有限单位helper三度cap反族独立复核--审查.md",
+          "sha256": "60532563e85816541e45ebe42681eedf5720ef18df7b0a5a5a4edcd25401a7e9"
+        },
+        {
+          "path": "archives/unrelated-machines/state/反例/三度二无限度内capMLP非前缀与根号人数分离--反例.md",
+          "sha256": "b3454530c3cfff2700e16d39114ade01a645526863d5130efcc61e5253c3fece"
+        },
+        {
+          "path": "archives/unrelated-machines/state/定理/无限helper链对阈值规范化MLP的全正阈值双向保持--定理.md",
+          "sha256": "f07cd5f7128a9e8ac0f4667b8e69f5d89905b8d4e4d999edd090612cb95a9dfb",
+          "section": "4. 有限 helper：整数、CONFIG 与 M-LP 的边界不同"
+        }
+      ],
+      "sources": [
+        "archives/unrelated-machines/state/反例/全有限单位helper三度族的capMLP非前缀与根号人数分离--反例.md#§1–5：独立有限矩阵、raw容量证明、cap四区间、人数与度数",
+        "M-b6605b3864cb41e399d926496739f12d v1正文：源共享—私有I_n的完整cap可行集；既有∞输出身份保持",
+        "M-b86375379821448d857231e8c38d8f46 v1正文§4：有限H全M反向及M≤λH正向",
+        "archives/unrelated-machines/state/审查/全有限单位helper三度cap反族独立复核--审查.md：原H/C worker独立复核及正式归档出处"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/unrelated-machines/state/反例/三度二无限度内capMLP非前缀与根号人数分离--反例.md",
+      "sha256": "b3454530c3cfff2700e16d39114ade01a645526863d5130efcc61e5253c3fece",
+      "disposition": "objects",
+      "object_ids": [
+        "M-b6605b3864cb41e399d926496739f12d",
+        "M-d1467073db5b4c139d81c9483d98f1c0"
+      ],
+      "reason": "新增全有限单位helper独立反族；完整当前记录反向保留所有共享材料owner，不改变旧H/C对象或证据版本。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/反例/全有限单位helper三度族的capMLP非前缀与根号人数分离--反例.md",
+      "sha256": "1a7a9b07f378abf3fd3c659ec35297fd774b47c004952773b01896feae133939",
+      "disposition": "objects",
+      "object_ids": [
+        "M-d1467073db5b4c139d81c9483d98f1c0"
+      ],
+      "reason": "新增全有限单位helper独立反族；完整当前记录反向保留所有共享材料owner，不改变旧H/C对象或证据版本。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/无限helper链对阈值规范化MLP的全正阈值双向保持--定理.md",
+      "sha256": "f07cd5f7128a9e8ac0f4667b8e69f5d89905b8d4e4d999edd090612cb95a9dfb",
+      "disposition": "objects",
+      "object_ids": [
+        "M-b126c4b3ff29400589f7f38abdca4d85",
+        "M-b6605b3864cb41e399d926496739f12d",
+        "M-b86375379821448d857231e8c38d8f46",
+        "M-d1467073db5b4c139d81c9483d98f1c0"
+      ],
+      "reason": "新增全有限单位helper独立反族；完整当前记录反向保留所有共享材料owner，不改变旧H/C对象或证据版本。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/全有限单位helper三度cap反族独立复核--审查.md",
+      "sha256": "60532563e85816541e45ebe42681eedf5720ef18df7b0a5a5a4edcd25401a7e9",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-d1467073db5b4c139d81c9483d98f1c0"
+      ],
+      "reason": "新增全有限单位helper独立反族；完整当前记录反向保留所有共享材料owner，不改变旧H/C对象或证据版本。"
+    }
+  ],
+  "edge_files": []
+}
