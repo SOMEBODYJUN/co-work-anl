@@ -162577,23 +162577,23 @@
     },
     {
       "object_id": "M-ddceaa3d53064498b3e833a32e1f3b6f",
-      "version": 1,
-      "title": "固定16hist的5716、5727、5744行必要LP精确最优值",
+      "version": 2,
+      "title": "固定16hist的5716至5783六轮必要LP精确最优值与正尾有限提升",
       "kind": "exact-finite-necessary-LP-optima",
       "truth_status": "finite",
       "model": "有限单位客户、有限非空共同标签目录，标签覆盖可空、可相同；单位提供者观察全部有序历史依次各行动一次，客户终局在覆盖者间均分。完整纯SPE在全部合法有序历史对全部合法偏离满足同一完整策略真实后继下的弱IC。保任意平局、重复行动与零客户。本对象仅研究固定16hist、4849列、非负有理质量的明示必要系统；母矩阵含OPT单换行，比较六元组取最优。",
-      "statement": "以5692行原点及母矩阵为起点，合并三冻结包24个不同向量得5716行精确最优W≈0.4900905644294647；再加6折扣/portfolio和5共享PAIR行得5727行W≈0.4901508813179543；再加16更早源PAIR和1单步portfolio得5744行W≈0.4908340074462763。正文给全部精确大分数、原始可行点及匹配非负有理对偶，所有行/列标准库复核通过。各轮新增正对偶支撑分别2、4、3条，故相应5694、5720、5730子系统有同样最优。全部16可用hist均d=1，纯静态OPT替换在该支持自动成立。",
-      "quantifiers": "仅所绑定SHA的三个完整有限有理矩阵及其全部非负列质量；不是对所有客户型或所有完整SPE量化的福利常数。",
+      "statement": "以5692行原点及母矩阵为起点，合并三冻结包24个不同向量得5716行精确最优W≈0.4900905644294647；再加6折扣/portfolio和5共享PAIR行得5727行W≈0.4901508813179543；再加16更早源PAIR和1单步portfolio得5744行W≈0.4908340074462763。正文给全部精确大分数、原始可行点及匹配非负有理对偶，所有行/列标准库复核通过。各轮新增正对偶支撑分别2、4、3条，故相应5694、5720、5730子系统有同样最优。全部16可用hist均d=1，纯静态OPT替换在该支持自动成立。版本2在相同列域上继续认证5752、5775、5783，准确最优W分别约0.4916608461765668、0.49192027032608004、0.4926332627883867。5752原始点保持原SHA，候选等式选择修复后146正对偶全部列准确成立。5775有137正对偶，5783有160正对偶；新增对偶支撑分别5、4、3条。删去12条beta非零而保留同期7+4普通更新的5763系统有精确可行点W≈0.491714016012119，严格低于5775已证最优，给具体正尾族至少约0.00020625431396106435的严格有限目标提升。",
+      "quantifiers": "仅正文及证据绑定SHA的六个完整有限有理矩阵、其全部非负列质量，以及指定删行系统；不是对所有客户型或所有完整SPE量化的福利常数。",
       "assumptions": [
         "列描述符、O归一向量和W目标在三轮完全相同",
         "新增行使用已证明的同源真实IC预算并由Main独立全列重建",
         "各轮原始/对偶证书绑定具体矩阵和点SHA；W相同不替代隐藏完成一致"
       ],
-      "scope": "证明这三个有限必要LP的准确最优值及其小于1/2；确认旧具体点被合法缺行排除后可改隐藏质量继续可行。",
+      "scope": "证明六个有限必要LP的准确最优值及其仍小于1/2，补具体12条正尾行对有限目标的严格贡献。一般六人命题仍开放。",
       "objections": "无共同目录、全部新主题联合会员或全有序历史策略实现；有理质量整数化不补SPE。固定支持达到half也不自动证明一般题；零对偶权不表示全域逻辑冗余。",
       "body": {
         "path": "archives/customer-attraction/subarchives/six-providers/state/计算/同源跨枝增强必要图的精确最优值与半界缺口--计算.md",
-        "sha256": "5d13402bbaad268e1695427ae1e8aa99e8112d46016e856f4dc4316ccdafb435"
+        "sha256": "09279a4d27440954584adaa3b323723a0e07f4419c58b4c0b85646665e58f4bb"
       },
       "evidence": [
         {
@@ -162799,11 +162799,505 @@
         {
           "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/new5727_single_portfolio_cut.json",
           "sha256": "875e9f3192f5c0f7202ba1e40d63b8d3dde42534e30de62f3bb850178650d98a"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/共同真实回复与跨查询配对的严格投影层级--引理.md",
+          "sha256": "9cfcee53e139efeff799ec3bb4decb611d82d0cd10d0c53621e132fb10d3e28a"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/共享真实末端的独立初段与折扣尾闭包--引理.md",
+          "sha256": "885e0c46d9b44ecdefa438d6df7dd04e796da94da20030daf302c34fae15a124"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/formal_5752_5775_gap.md",
+          "sha256": "686f3508bff93de503cfd91c695d3682226acb82ff02bf3b97e3439c978b71e2"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/formal_5775_tail_ablation.md",
+          "sha256": "0f3ebd8aa855bbf6ab484d102a76dbbc072968297a050fef9220e41dc2a1154b"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/formal_5783_gap.md",
+          "sha256": "ad812a03c6928cd77e0e2b670e29e40112f11774506d68bc59b444bcf64368cc"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/scaled_dual.py",
+          "sha256": "be964a3a5c321e541ffd117c7b3cd7ad06a28e9a3b7fcd253c59609eb6188ec7"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/advance_with_exact_cert.py",
+          "sha256": "d06f04b7268326d0278f23726c811fdc239093886fd53b5d8081902c7d0a2dbf"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/alternate_primal.py",
+          "sha256": "792e7061f5b5ad76597745b3ef7c77e7d875be8e5a2a3b8fda48f7280e512a43"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/ablate_positive_tail.py",
+          "sha256": "aa71001f074e0cdb39d39ae27285a244e6fcf2774d4fd35b0017eeb033e12089"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/ablate_5775_positive_tail_exact.json",
+          "sha256": "99e177c9d3ffb089ce8beed432da30f62faf6b97df31770fa34af81f52a0a01c"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/ablate_5775_positive_tail_verification.json",
+          "sha256": "bd8bc20c2adfc82c4ed2102fd3cf60bec5134c626f732961e0fe003db0a4e082"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_selected_5744.json",
+          "sha256": "c7e796a1514c43938b7e9509b49af44918aa5b4e66695caff4c2644b0795751e"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_selected_5752.json",
+          "sha256": "4dfcd2f118da6a871cffd1e165d87a79c32edc8e983e15e622fcd2ffa1bc921c"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/cross_pairs_selected_5775_v1.json",
+          "sha256": "bf9714af7e01fff4cddd33ead2ce41c014943ead5679e1b75a5160e9f9257759"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/selected_prefix_tail_5752.json",
+          "sha256": "595e7386cfacc591f513fe477453e94d9e2271e4cb63ce3f5c57a8dc34fabd50"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_pair_features.py",
+          "sha256": "177057776f9aa3322f907ce073511eb7ef491774fc0871b11fd0c367c833b1ac"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_cross_query_features_v1.py",
+          "sha256": "1bd5386c82827ab1eb9a8cbbeb4061cb129aa13bf8b18cc3730772099604e8f6"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_portfolio_pair_5744.py",
+          "sha256": "2abecda57725836996f43658c2a53a6b95f852824bf1a9922d6ffcebf9f7583e"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_portfolio_pair_5744.json",
+          "sha256": "d715f0194ba254ec16fca48d84bcd05b200fc5d09f1e6ac6c9e6422122a0053c"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_portfolio_pair_5752.py",
+          "sha256": "83ecbea0fa36e89a7dd8e237b42f38108987cbe9baf9e3e16b8162e9f5b4a8a3"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_portfolio_pair_5752.json",
+          "sha256": "b8b85707dd1a4e7e60e49aca59f6773d6175990e98a4f89d1f28a1cff328e4f4"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_prefix_tail_5752.py",
+          "sha256": "989e87e6e799ff81faaca2ba88f0137ee08297300974891053127266c042a875"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_prefix_tail_5752.json",
+          "sha256": "207d0eaeb8b260931d680b05f3db36a1e60754b910cc5fdf3ee331486238d201"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_cross_pairs_5775.py",
+          "sha256": "4ac4b88bc45ea98eba264749d4e59275d5917d418c477740f87513844f405ab4"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_cross_pairs_5775.json",
+          "sha256": "495a81b42e3fc0368693413029027e4eb89df72832742d55d9d2d11a9ae4facd"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_tail_ablation.py",
+          "sha256": "b954fc211fe1763e40db96c06851e9876d7a8b551fe1bad984f626d5634644ee"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_tail_ablation.json",
+          "sha256": "8365187c106a3214c9a1ef651662f2d95c9d99dab08eb19cee1a34327e9fc211"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_matrix.json.gz",
+          "sha256": "44c34467eb8cc65c5581228c31e82083909e8162f400dd1343da5c651c690884"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_exact.json",
+          "sha256": "791cbcba1afd841eabe3bc908b300083822739fd8f7ed8b85a8c7ff06f28c787"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_dual.json",
+          "sha256": "7b7e081174fcbc817931ec0aba6384116645ec84b64f847d52fbd88209bac61e"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_identity.json",
+          "sha256": "6e7daf2b44d8952c5aef31f4d8aa66c0e0117b1df4dd3b65ffd3028e39d0a767"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_review_manifest.json",
+          "sha256": "29c99dbd9890ffac7c7420082bdd80939f3cbb7ca5f5ba045b38d7defe1ef507"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_verification.json",
+          "sha256": "adfa4616b32417aace48a3cfce0c591d385c54c99809523f84110967cd34425e"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_config.json",
+          "sha256": "f80bcb68a603ef584c7e7f678521fdd27ed8da9b914016507316a8b901e30507"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_dynamic_5752.json",
+          "sha256": "269454d0a432126f0fc4784b02040fa757a7bdf860656d600e5b6e560d97fdc4"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5775_matrix.json.gz",
+          "sha256": "49470d85127a7f24b4059c3289c9995f469445170fecefed6644bca3d29c82ae"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5775_exact.json",
+          "sha256": "81983304076358d591cbdac2e6bf7a4b697fc2854aad40918e8cf8cf2d99dd02"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5775_dual.json",
+          "sha256": "c3388dd6b575637aaf6e9cd8a54bb5484d622820e3a966f00f0c5efbd54b8346"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5775_identity.json",
+          "sha256": "5ffd09018c3248c38a233e460a48cf2ebf1c555b26107f3b941cd0c2251ec12b"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5775_review_manifest.json",
+          "sha256": "2ebf81e5745c3fc27cdf885dd6562b31fedcd4fa75d05e60a9fe4b80efd5bea1"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5775_verification.json",
+          "sha256": "735612a2bbe4590af3541807d662d362944fb9436aa19f5246c1a548e5bd4c3f"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5775_config.json",
+          "sha256": "b04330ce407986bc1c4b63d3871ab798cb2beee19ec5128e6d35438552542fb6"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_dynamic_5775.json",
+          "sha256": "6b528c1150b7de3e839861b0805b7e2b804a6e07664ae43f7375351c1e999c17"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_matrix.json.gz",
+          "sha256": "363b01b298a5939590d2979bf10215a8080dd5c625966398fdaefd91eb92a696"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_exact.json",
+          "sha256": "525139e949098e14426d483a334b7ad7acb454ff692f76ee19769dd305c227df"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_dual.json",
+          "sha256": "94732c241e0feb961aa9925a5d2b3596628ce3c68ec0a99a56ade291b0ae9eac"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_identity.json",
+          "sha256": "36e2b86e3d7946bae617feb189ef9b516f8b4e8cbe07b9921dc19dedf0324681"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_review_manifest.json",
+          "sha256": "326bdab86413cf7f6058ebccc560904692dc9d09dcb69f42e77a84d2595250a5"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_verification.json",
+          "sha256": "b027e343038b36a0c5f329ca27a7507964f3e0b418bd53cf12bd96e071a274cb"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_config.json",
+          "sha256": "1568fe222a1e0401e4d2361dfb2daca41bd8c0d69d63fb90e5084af12d12aec0"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_dynamic_5783.json",
+          "sha256": "d0c6217852e9854c9a2cd3a352945c3742f26fdba669b1e879812f781697ba09"
         }
       ],
       "sources": [
         "archives/customer-attraction/subarchives/six-providers/state/计算/同源跨枝增强必要图的精确最优值与半界缺口--计算.md",
-        "RUN:six-boss2-20261111-cross; actor:Boss2; Main independently verified load-bearing identities and exact inputs."
+        "RUN:six-boss2-20261111-cross; actor:Boss2; Main independently verified load-bearing identities and exact inputs.",
+        "Version 2: all three new finite primal/dual certificates and exact positive-tail ablation independently replayed by Main."
+      ]
+    },
+    {
+      "object_id": "M-b1b4276f0ec747ed8c347bda65c9e0af",
+      "version": 1,
+      "title": "共同真实回复的76/332/616严格投影层级与跨查询对称差信用",
+      "kind": "strict-hierarchy-of-shared-hidden-reply-projections",
+      "truth_status": "proved",
+      "model": "有限单位客户、有限非空共同标签目录，标签覆盖可空、可相同；单位提供者观察全部有序历史依次各行动一次，客户终局在覆盖者间均分。完整纯SPE在全部合法有序历史对全部合法偏离满足同一完整策略真实后继下的弱IC。保任意平局、重复行动与零客户。",
+      "statement": "固定actual第四源、R种子、第一类非对角轨道、17个指定合法查询及充分细化可见域。共同616行投影严格包含于共同332行投影，后者严格包含于17个单Q76行投影的交。5744点的17份有理旧提升与500整数权负行证明右侧严格；5775点的79原子共同332提升与12整数权跨查询负行证明左侧严格。三额外剩余交矩按条件质量分裂细化旧提升，不偷换比较域。12权行预算413u4+164u6+14K，新增48PAIR1(Ti,Bj)相对24+24两个对角PAIR准确增加24·1_(Ti△Bj)/[(p+t+1)(p+t+2)]，与隐藏位无关，故穿过min为等式。",
+      "quantifiers": "非严格包含与逐客户PAIR恒等式对任意原模型完整SPE、固定同一源和合法查询成立。两道严格性仅在正文明确的actual4/R/orb00/17菜单共同可见域存在两份不同有理见证；不是对每个输入都严格。",
+      "assumptions": [
+        "两枝第一真末主题C同时是第二枝强制动作，所有查询共用该组隐藏回复",
+        "两个剩余查询的same/off联合索引分布对全部客户相同，正确保交矩",
+        "源收益与actual六位会员同一质量关联；不同单Q提升可不同，但332/616必须共同"
+      ],
+      "scope": "原模型合法必要行、两个完整局部投影锥的严格包含及八条绑定5775点的精确负行。",
+      "objections": "两份见证均非完整SPE；仅整数化客户质量不能实现全部有序历史。新增同余族off行的交叠不等于均值平方。目标值上升不替代旧锥全部参数不可推出性的提升证据。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/共同真实回复与跨查询配对的严格投影层级--引理.md",
+        "sha256": "9cfcee53e139efeff799ec3bb4decb611d82d0cd10d0c53621e132fb10d3e28a"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/同源双末对跨枝配对与严格联合投影--引理.md",
+          "sha256": "7547538073d8edf42f2430c5ed0d4139c2129fdaa8817ea0dbcba591552328e5"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/formal_query_projection_hierarchy_v1.md",
+          "sha256": "c1e5a8b8b06eb2ac70b64a44ea8e4a7d9625c9811cbdf5eb73e139da8d54a366"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_comparison/formal_portfolio_strictness.md",
+          "sha256": "372b2dea7f7fe94ebd3514b044310c1b1aa73b0fd04ae0f43bd08cfc3561a0c5"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_comparison/exact_single_lifts_5744_i3_m0_orb00.json",
+          "sha256": "329b5bca4ad9fdfa3e59b8fb0fcaeca396eceac950edc2d8c1c8ca8f67eca793"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_comparison/joint_common_denominator_5744.json",
+          "sha256": "fcb9be905ab4282ab3ff90293ef47f196ab08e86f45e106d883d3944a655d3ab"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_comparison/compare_5744.py",
+          "sha256": "6a2a86d17bd09a5b7eca2cfa6124e5642e289e7631b39fe8d0fe804740f98b9d"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_comparison/recover_single_lifts.py",
+          "sha256": "22d62a9324295b523c911995700acca4561b603e1f76555d6b6333dc5c7ca476"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_comparison/simplify_joint_cut.py",
+          "sha256": "a34fb990027dbd854848e7fa09cd65d21a8c35fe83974faeb6e10996260556ec"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_master.py",
+          "sha256": "af8b0a9251d3b42f623ac37fe980235d7b66f3d2f481855174d68b843d99bed3"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/cross_query_pairs_v1.py",
+          "sha256": "ed2bdbed2bb6c51e3ab44c78c28f54b7160a4cb59443836b31a41cefa90f2001"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/audit_cross_query_pairs_v1.py",
+          "sha256": "f79b7fc2518e48187055430cdb2063868008fc87233d4b9e313fccad66e626b9"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/cross_query_pairs_v1_audit.json",
+          "sha256": "b0d6ee082ba48cbf4afd6fe24f5eb0937b9167d243bbc8a686d5dbfca11730d7"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/package_cross_pairs_5775_v1.py",
+          "sha256": "602ffa030a57a949aab7a19ecbcaa619b9e94a5f0ccbc269094eca83122a3b55"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/recover_332_lift_5775_v1.py",
+          "sha256": "5f9fc7b779d6aa2ba951d2da730a8aa3310dc188e981bff9ab601a67e172cad6"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/exact_332_lift_cross_strictness_5775_v1.json",
+          "sha256": "39655d2eeb9f807053614ff17d830246199804dbca266b9784e116e8f8d09385"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/cross_pairs_selected_5775_v1.json",
+          "sha256": "bf9714af7e01fff4cddd33ead2ce41c014943ead5679e1b75a5160e9f9257759"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/cross_query_disagreement_identity_5775_v1.json",
+          "sha256": "4527dce663e0f6bc6441497f5fd03253de39051b0602ea4eaac5e7bb0987a490"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_selected_5744.json",
+          "sha256": "c7e796a1514c43938b7e9509b49af44918aa5b4e66695caff4c2644b0795751e"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5744_exact.json",
+          "sha256": "17fc8c5f5cbb9464747802fc2a3ca8ed3c37aa6472b981c804b9c3806d2ebfa0"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5775_exact.json",
+          "sha256": "81983304076358d591cbdac2e6bf7a4b697fc2854aad40918e8cf8cf2d99dd02"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_pair_features.py",
+          "sha256": "177057776f9aa3322f907ce073511eb7ef491774fc0871b11fd0c367c833b1ac"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_cross_query_features_v1.py",
+          "sha256": "1bd5386c82827ab1eb9a8cbbeb4061cb129aa13bf8b18cc3730772099604e8f6"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_single_lifts_5744.py",
+          "sha256": "f29d00c25d0176a89f9d5e6b83ec3ba87ec179c3aa0b76920fbb8a8e778d108d"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_single_lifts_5744.json",
+          "sha256": "e18185e79ac0906e4bc289b2822ea11f7a0429a41d25a03d82ccbd00dc2bbc3b"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_portfolio_500.py",
+          "sha256": "d7ea8eb4876529072e25dd52d10838def8def9f8ae80e4d2bd5f7e9768a33791"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_portfolio_500.json",
+          "sha256": "a22ef1268e1b61a3a0b63e2fd893aefafaa02054d0f945bcc4bb6c1e6bc74078"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_portfolio_pair_5744.py",
+          "sha256": "2abecda57725836996f43658c2a53a6b95f852824bf1a9922d6ffcebf9f7583e"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_portfolio_pair_5744.json",
+          "sha256": "d715f0194ba254ec16fca48d84bcd05b200fc5d09f1e6ac6c9e6422122a0053c"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_cross_pairs_5775.py",
+          "sha256": "4ac4b88bc45ea98eba264749d4e59275d5917d418c477740f87513844f405ab4"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_cross_pairs_5775.json",
+          "sha256": "495a81b42e3fc0368693413029027e4eb89df72832742d55d9d2d11a9ae4facd"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_332_lift_5775.py",
+          "sha256": "9b50a4640aaabe6190afe85ba5c34cf83e162893f195b82ef46c552ddcc57b25"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_332_lift_5775.json",
+          "sha256": "df71595961eeac9683dddf69ac00a6c9359053bf989e699a69a32f04a8699105"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/引理/共同真实回复与跨查询配对的严格投影层级--引理.md",
+        "RUN:six-boss2-20261111-cross; actor:Boss2; Main personally checked proof, scope and exact certificates."
+      ]
+    },
+    {
+      "object_id": "M-63c882b0c8414805a43d4d8d4e43f4e3",
+      "version": 1,
+      "title": "独立初段与折扣尾闭包在同一真实末端的合法联合投影",
+      "kind": "shared-terminal-prefix-and-discounted-tail-composition",
+      "truth_status": "proved",
+      "model": "有限单位客户、有限非空共同标签目录，标签覆盖可空、可相同；单位提供者观察全部有序历史依次各行动一次，客户终局在覆盖者间均分。完整纯SPE在全部合法有序历史对全部合法偏离满足同一完整策略真实后继下的弱IC。保任意平局、重复行动与零客户。",
+      "statement": "同源余k≥3，初段为T→真末B/C以及回同源C→真末J/V。任意非负初段合同alpha与独立非负二状态折扣尾合同beta，在合法V上接合后给(aT+aC+a_beta)r+(Aalpha+Abeta)u_m+(Dalpha+Dbeta)K≥Σ min[Ealpha+Psi_beta(v)]。源总权按三项合计；初段中间数k−3，尾段k−2。固定参数联合min至少为分别min之和；5752点16条准确负行中12条beta非零且同权分别投影非负，另4条beta零只为旧参数更新。",
+      "quantifiers": "任意有限原模型完整SPE、合法有序源、固定合法种子和静态菜单、客户无关非负初段/尾权、0≤delta<1。有限16行的负值和固定同权严格增益仅在所绑定5752点上。",
+      "assumptions": [
+        "尾部统一闭包对全部合法F成立，才能用于初段的真实V",
+        "两合同共用同一V会员后取min，且全部源/末价/容量成本相加",
+        "菜单在对尾部当前主题取最大值之前固定；动态自查询另显式计权"
+      ],
+      "scope": "一般合法组合定理及固定同权投影增益；对全体旧参数锥的严格包含尚未证明。",
+      "objections": "beta非零不等于delta正；delta0只增加一次尾合同。固定参数的联合优于分别不能声称超过所有旧参数组合。改用另一源必须另付其实际或离轨源收益。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/共享真实末端的独立初段与折扣尾闭包--引理.md",
+        "sha256": "885e0c46d9b44ecdefa438d6df7dd04e796da94da20030daf302c34fae15a124"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/同源双末对跨枝配对与严格联合投影--引理.md",
+          "sha256": "7547538073d8edf42f2430c5ed0d4139c2129fdaa8817ea0dbcba591552328e5"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/同源真实末回复的折扣闭包与二状态精确投影--引理.md",
+          "sha256": "a2aa6f407865993f693ff8338e2c038a7849643d04ed9078fc7c8e0e6f6b5d42"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/formal_prefix_tail.md",
+          "sha256": "30d85aeb7d325436bce1de1975ef131d0bbeb0c07f2f8f130e828cd747b1bcda"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/selected_prefix_tail_5752.json",
+          "sha256": "595e7386cfacc591f513fe477453e94d9e2271e4cb63ce3f5c57a8dc34fabd50"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/prefix_tail_requery.py",
+          "sha256": "bec483fbce411889ee872ccae873fc6395d9d69f487bd60acde5137f2bcf27f7"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/compact_prefix_tail_cuts.py",
+          "sha256": "3e145aa01fd46739c1521d8ff66f89eb770b679b2fe286dd4800893f8c2151e5"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/prefix_tail_beta_zero_audit.json",
+          "sha256": "23a46e86e7f0ab71b4e443c59eada7e296e774c9b702ef1524e1f9d05732cddc"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_master.py",
+          "sha256": "af8b0a9251d3b42f623ac37fe980235d7b66f3d2f481855174d68b843d99bed3"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/explore_projection.py",
+          "sha256": "f64d1d08dc52b935432c993d6712a1888dccea216f737a2d5e3cdc4c175b55da"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/separate_master.py",
+          "sha256": "20ccb2656d736e7754a9c79ef9d030358ab2534bd8b14a4b4b6d8726803709af"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_exact.json",
+          "sha256": "791cbcba1afd841eabe3bc908b300083822739fd8f7ed8b85a8c7ff06f28c787"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_pair_features.py",
+          "sha256": "177057776f9aa3322f907ce073511eb7ef491774fc0871b11fd0c367c833b1ac"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_prefix_tail_5752.py",
+          "sha256": "989e87e6e799ff81faaca2ba88f0137ee08297300974891053127266c042a875"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_verify_prefix_tail_5752.json",
+          "sha256": "207d0eaeb8b260931d680b05f3db36a1e60754b910cc5fdf3ee331486238d201"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/引理/共享真实末端的独立初段与折扣尾闭包--引理.md",
+        "RUN:six-boss2-20261111-cross; actor:Boss2; Main personally checked proof, scope and exact certificates."
+      ]
+    },
+    {
+      "object_id": "M-043045ec129b4a5f82a3368b324accf9",
+      "version": 1,
+      "title": "任意尾长平衡查询权闭包给所有目录主题的统一正加性价格",
+      "kind": "uniform-positive-customer-price-from-balanced-terminal-closure",
+      "truth_status": "proved",
+      "model": "有限单位客户、有限非空共同标签目录，标签覆盖可空、可相同；单位提供者观察全部有序历史依次各行动一次，客户终局在覆盖者间均分。完整纯SPE在全部合法有序历史对全部合法偏离满足同一完整策略真实后继下的弱IC。保任意平局、重复行动与零客户。",
+      "statement": "同源余k≥2，源权a等于静态查询总权加当前自查询权mu_*，静态q_x满足0≤q_x≤a−mu_*。折扣Bellman势Psi给b_x=Psi(0)、w_x=Psi(1)−Psi(0)。任意合法主题F同时满足Σw_x1_F≤B−Σb_x，且(1−theta)[(a−q)/(p+k−1)+(mu_*+q)/(p+k)]≤w≤(1−theta)[(a−q)/(p+1)+(mu_*+q)/(p+2)]。a>0时每客户价严格正，a0时全0。证明关键H(1,c,s)−H(0,c,s)与c和价格参数无关，随后对同一s域和同一Bellman固定点两行取min。",
+      "quantifiers": "任意有限原模型完整SPE、同一有序源、k≥2、先固定的合法静态查询及非负价/容量权、0≤theta<1，随后对目录全部F同时量化。",
+      "assumptions": [
+        "平衡源权a=M；q不随被定价F改变，自查询mu_*已显式包括",
+        "每次借给其它分支合法主题均支付完整B及同一常量Σb，多个主题按总权计费",
+        "只有源在actual路径时才能把r写为实际u_i"
+      ],
+      "scope": "一般全目录正价接口和逐客户准确上下界；未宣称此接口已单独切掉当前必要点。",
+      "objections": "k2上下界相等且价格参数消去；k>2不能假定已取min的四边仍平衡或w与价格参数无关。不同离轨源收益不能免费合并为W。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/任意尾长平衡末回复闭包的统一正客户价格--引理.md",
+        "sha256": "6e2e4e0b2b790ed20ce424a2be8aa9d8284cb8116b889cf910fb12e9fbcb1784"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/同源真实末回复的折扣闭包与二状态精确投影--引理.md",
+          "sha256": "a2aa6f407865993f693ff8338e2c038a7849643d04ed9078fc7c8e0e6f6b5d42"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/main_pair/balanced_any_tail_price.md",
+          "sha256": "bb5f163dc1f6fa6ab829ba09b146aea4070142a29506cf2d2b6045f1deb7d6df"
+        },
+        {
+          "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/audit_balanced_any_tail_price.md",
+          "sha256": "eac642851dc58d443d398446988b26b70a6c5e8fd05c87a7bcb0a8ea95f6dac3"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/引理/任意尾长平衡末回复闭包的统一正客户价格--引理.md",
+        "RUN:six-boss2-20261111-cross; actor:Boss2; Main personally checked proof, scope and exact certificates."
       ]
     }
   ],
@@ -167557,7 +168051,10 @@
         "customer-attraction/four-provider-weak-row-cone-scaled-actual-load-obstruction",
         "M-e394b173b9b1419588c6c380da4bd326",
         "M-b233ef00a9c34e189817cdfb7a495107",
-        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+        "M-ddceaa3d53064498b3e833a32e1f3b6f",
+        "M-b1b4276f0ec747ed8c347bda65c9e0af",
+        "M-63c882b0c8414805a43d4d8d4e43f4e3",
+        "M-043045ec129b4a5f82a3368b324accf9"
       ],
       "reason": "已核精确数学、量词及正文所列论证/证据。"
     },
@@ -207457,7 +207954,9 @@
       "disposition": "objects",
       "object_ids": [
         "M-e394b173b9b1419588c6c380da4bd326",
-        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+        "M-ddceaa3d53064498b3e833a32e1f3b6f",
+        "M-b1b4276f0ec747ed8c347bda65c9e0af",
+        "M-63c882b0c8414805a43d4d8d4e43f4e3"
       ],
       "reason": "Boss2实读并核对的同源跨枝/折扣闭包及有限必要LP证据；具体范围由对象正文限定。"
     },
@@ -207493,7 +207992,8 @@
       "sha256": "f64d1d08dc52b935432c993d6712a1888dccea216f737a2d5e3cdc4c175b55da",
       "disposition": "attachment",
       "object_ids": [
-        "M-e394b173b9b1419588c6c380da4bd326"
+        "M-e394b173b9b1419588c6c380da4bd326",
+        "M-63c882b0c8414805a43d4d8d4e43f4e3"
       ],
       "reason": "Boss2实读并核对的同源跨枝/折扣闭包及有限必要LP证据；具体范围由对象正文限定。"
     },
@@ -207502,7 +208002,8 @@
       "sha256": "20ccb2656d736e7754a9c79ef9d030358ab2534bd8b14a4b4b6d8726803709af",
       "disposition": "attachment",
       "object_ids": [
-        "M-e394b173b9b1419588c6c380da4bd326"
+        "M-e394b173b9b1419588c6c380da4bd326",
+        "M-63c882b0c8414805a43d4d8d4e43f4e3"
       ],
       "reason": "Boss2实读并核对的同源跨枝/折扣闭包及有限必要LP证据；具体范围由对象正文限定。"
     },
@@ -207553,7 +208054,9 @@
       "disposition": "objects",
       "object_ids": [
         "M-b233ef00a9c34e189817cdfb7a495107",
-        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+        "M-ddceaa3d53064498b3e833a32e1f3b6f",
+        "M-63c882b0c8414805a43d4d8d4e43f4e3",
+        "M-043045ec129b4a5f82a3368b324accf9"
       ],
       "reason": "Boss2实读并核对的同源跨枝/折扣闭包及有限必要LP证据；具体范围由对象正文限定。"
     },
@@ -207683,7 +208186,7 @@
     },
     {
       "path": "archives/customer-attraction/subarchives/six-providers/state/计算/同源跨枝增强必要图的精确最优值与半界缺口--计算.md",
-      "sha256": "5d13402bbaad268e1695427ae1e8aa99e8112d46016e856f4dc4316ccdafb435",
+      "sha256": "09279a4d27440954584adaa3b323723a0e07f4419c58b4c0b85646665e58f4bb",
       "disposition": "objects",
       "object_ids": [
         "M-ddceaa3d53064498b3e833a32e1f3b6f"
@@ -207848,7 +208351,8 @@
       "sha256": "17fc8c5f5cbb9464747802fc2a3ca8ed3c37aa6472b981c804b9c3806d2ebfa0",
       "disposition": "attachment",
       "object_ids": [
-        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+        "M-ddceaa3d53064498b3e833a32e1f3b6f",
+        "M-b1b4276f0ec747ed8c347bda65c9e0af"
       ],
       "reason": "Boss2实读并核对的同源跨枝/折扣闭包及有限必要LP证据；具体范围由对象正文限定。"
     },
@@ -208004,6 +208508,734 @@
         "M-ddceaa3d53064498b3e833a32e1f3b6f"
       ],
       "reason": "Boss2实读并核对的同源跨枝/折扣闭包及有限必要LP证据；具体范围由对象正文限定。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/共同真实回复与跨查询配对的严格投影层级--引理.md",
+      "sha256": "9cfcee53e139efeff799ec3bb4decb611d82d0cd10d0c53621e132fb10d3e28a",
+      "disposition": "objects",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af",
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/formal_query_projection_hierarchy_v1.md",
+      "sha256": "c1e5a8b8b06eb2ac70b64a44ea8e4a7d9625c9811cbdf5eb73e139da8d54a366",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_comparison/formal_portfolio_strictness.md",
+      "sha256": "372b2dea7f7fe94ebd3514b044310c1b1aa73b0fd04ae0f43bd08cfc3561a0c5",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_comparison/exact_single_lifts_5744_i3_m0_orb00.json",
+      "sha256": "329b5bca4ad9fdfa3e59b8fb0fcaeca396eceac950edc2d8c1c8ca8f67eca793",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_comparison/joint_common_denominator_5744.json",
+      "sha256": "fcb9be905ab4282ab3ff90293ef47f196ab08e86f45e106d883d3944a655d3ab",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_comparison/compare_5744.py",
+      "sha256": "6a2a86d17bd09a5b7eca2cfa6124e5642e289e7631b39fe8d0fe804740f98b9d",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_comparison/recover_single_lifts.py",
+      "sha256": "22d62a9324295b523c911995700acca4561b603e1f76555d6b6333dc5c7ca476",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_comparison/simplify_joint_cut.py",
+      "sha256": "a34fb990027dbd854848e7fa09cd65d21a8c35fe83974faeb6e10996260556ec",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_master.py",
+      "sha256": "af8b0a9251d3b42f623ac37fe980235d7b66f3d2f481855174d68b843d99bed3",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af",
+        "M-63c882b0c8414805a43d4d8d4e43f4e3"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/cross_query_pairs_v1.py",
+      "sha256": "ed2bdbed2bb6c51e3ab44c78c28f54b7160a4cb59443836b31a41cefa90f2001",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/audit_cross_query_pairs_v1.py",
+      "sha256": "f79b7fc2518e48187055430cdb2063868008fc87233d4b9e313fccad66e626b9",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/cross_query_pairs_v1_audit.json",
+      "sha256": "b0d6ee082ba48cbf4afd6fe24f5eb0937b9167d243bbc8a686d5dbfca11730d7",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/package_cross_pairs_5775_v1.py",
+      "sha256": "602ffa030a57a949aab7a19ecbcaa619b9e94a5f0ccbc269094eca83122a3b55",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/recover_332_lift_5775_v1.py",
+      "sha256": "5f9fc7b779d6aa2ba951d2da730a8aa3310dc188e981bff9ab601a67e172cad6",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/exact_332_lift_cross_strictness_5775_v1.json",
+      "sha256": "39655d2eeb9f807053614ff17d830246199804dbca266b9784e116e8f8d09385",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/cross_pairs_selected_5775_v1.json",
+      "sha256": "bf9714af7e01fff4cddd33ead2ce41c014943ead5679e1b75a5160e9f9257759",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af",
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/cross_query_disagreement_identity_5775_v1.json",
+      "sha256": "4527dce663e0f6bc6441497f5fd03253de39051b0602ea4eaac5e7bb0987a490",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_selected_5744.json",
+      "sha256": "c7e796a1514c43938b7e9509b49af44918aa5b4e66695caff4c2644b0795751e",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af",
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5775_exact.json",
+      "sha256": "81983304076358d591cbdac2e6bf7a4b697fc2854aad40918e8cf8cf2d99dd02",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af",
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_pair_features.py",
+      "sha256": "177057776f9aa3322f907ce073511eb7ef491774fc0871b11fd0c367c833b1ac",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af",
+        "M-63c882b0c8414805a43d4d8d4e43f4e3",
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_cross_query_features_v1.py",
+      "sha256": "1bd5386c82827ab1eb9a8cbbeb4061cb129aa13bf8b18cc3730772099604e8f6",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af",
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_verify_single_lifts_5744.py",
+      "sha256": "f29d00c25d0176a89f9d5e6b83ec3ba87ec179c3aa0b76920fbb8a8e778d108d",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_verify_single_lifts_5744.json",
+      "sha256": "e18185e79ac0906e4bc289b2822ea11f7a0429a41d25a03d82ccbd00dc2bbc3b",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_verify_portfolio_500.py",
+      "sha256": "d7ea8eb4876529072e25dd52d10838def8def9f8ae80e4d2bd5f7e9768a33791",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_verify_portfolio_500.json",
+      "sha256": "a22ef1268e1b61a3a0b63e2fd893aefafaa02054d0f945bcc4bb6c1e6bc74078",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_verify_portfolio_pair_5744.py",
+      "sha256": "2abecda57725836996f43658c2a53a6b95f852824bf1a9922d6ffcebf9f7583e",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af",
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_verify_portfolio_pair_5744.json",
+      "sha256": "d715f0194ba254ec16fca48d84bcd05b200fc5d09f1e6ac6c9e6422122a0053c",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af",
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_verify_cross_pairs_5775.py",
+      "sha256": "4ac4b88bc45ea98eba264749d4e59275d5917d418c477740f87513844f405ab4",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af",
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_verify_cross_pairs_5775.json",
+      "sha256": "495a81b42e3fc0368693413029027e4eb89df72832742d55d9d2d11a9ae4facd",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af",
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_verify_332_lift_5775.py",
+      "sha256": "9b50a4640aaabe6190afe85ba5c34cf83e162893f195b82ef46c552ddcc57b25",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_verify_332_lift_5775.json",
+      "sha256": "df71595961eeac9683dddf69ac00a6c9359053bf989e699a69a32f04a8699105",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b1b4276f0ec747ed8c347bda65c9e0af"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/共享真实末端的独立初段与折扣尾闭包--引理.md",
+      "sha256": "885e0c46d9b44ecdefa438d6df7dd04e796da94da20030daf302c34fae15a124",
+      "disposition": "objects",
+      "object_ids": [
+        "M-63c882b0c8414805a43d4d8d4e43f4e3",
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/formal_prefix_tail.md",
+      "sha256": "30d85aeb7d325436bce1de1975ef131d0bbeb0c07f2f8f130e828cd747b1bcda",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-63c882b0c8414805a43d4d8d4e43f4e3"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/selected_prefix_tail_5752.json",
+      "sha256": "595e7386cfacc591f513fe477453e94d9e2271e4cb63ce3f5c57a8dc34fabd50",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-63c882b0c8414805a43d4d8d4e43f4e3",
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/prefix_tail_requery.py",
+      "sha256": "bec483fbce411889ee872ccae873fc6395d9d69f487bd60acde5137f2bcf27f7",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-63c882b0c8414805a43d4d8d4e43f4e3"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/compact_prefix_tail_cuts.py",
+      "sha256": "3e145aa01fd46739c1521d8ff66f89eb770b679b2fe286dd4800893f8c2151e5",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-63c882b0c8414805a43d4d8d4e43f4e3"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/prefix_tail_beta_zero_audit.json",
+      "sha256": "23a46e86e7f0ab71b4e443c59eada7e296e774c9b702ef1524e1f9d05732cddc",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-63c882b0c8414805a43d4d8d4e43f4e3"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_exact.json",
+      "sha256": "791cbcba1afd841eabe3bc908b300083822739fd8f7ed8b85a8c7ff06f28c787",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-63c882b0c8414805a43d4d8d4e43f4e3",
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_verify_prefix_tail_5752.py",
+      "sha256": "989e87e6e799ff81faaca2ba88f0137ee08297300974891053127266c042a875",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-63c882b0c8414805a43d4d8d4e43f4e3",
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_verify_prefix_tail_5752.json",
+      "sha256": "207d0eaeb8b260931d680b05f3db36a1e60754b910cc5fdf3ee331486238d201",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-63c882b0c8414805a43d4d8d4e43f4e3",
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/任意尾长平衡末回复闭包的统一正客户价格--引理.md",
+      "sha256": "6e2e4e0b2b790ed20ce424a2be8aa9d8284cb8116b889cf910fb12e9fbcb1784",
+      "disposition": "objects",
+      "object_ids": [
+        "M-043045ec129b4a5f82a3368b324accf9"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_pair/balanced_any_tail_price.md",
+      "sha256": "bb5f163dc1f6fa6ab829ba09b146aea4070142a29506cf2d2b6045f1deb7d6df",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-043045ec129b4a5f82a3368b324accf9"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/coverage_bridge/audit_balanced_any_tail_price.md",
+      "sha256": "eac642851dc58d443d398446988b26b70a6c5e8fd05c87a7bcb0a8ea95f6dac3",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-043045ec129b4a5f82a3368b324accf9"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/formal_5752_5775_gap.md",
+      "sha256": "686f3508bff93de503cfd91c695d3682226acb82ff02bf3b97e3439c978b71e2",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/formal_5775_tail_ablation.md",
+      "sha256": "0f3ebd8aa855bbf6ab484d102a76dbbc072968297a050fef9220e41dc2a1154b",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/formal_5783_gap.md",
+      "sha256": "ad812a03c6928cd77e0e2b670e29e40112f11774506d68bc59b444bcf64368cc",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/scaled_dual.py",
+      "sha256": "be964a3a5c321e541ffd117c7b3cd7ad06a28e9a3b7fcd253c59609eb6188ec7",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/advance_with_exact_cert.py",
+      "sha256": "d06f04b7268326d0278f23726c811fdc239093886fd53b5d8081902c7d0a2dbf",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/alternate_primal.py",
+      "sha256": "792e7061f5b5ad76597745b3ef7c77e7d875be8e5a2a3b8fda48f7280e512a43",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/ablate_positive_tail.py",
+      "sha256": "aa71001f074e0cdb39d39ae27285a244e6fcf2774d4fd35b0017eeb033e12089",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/ablate_5775_positive_tail_exact.json",
+      "sha256": "99e177c9d3ffb089ce8beed432da30f62faf6b97df31770fa34af81f52a0a01c",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/ablate_5775_positive_tail_verification.json",
+      "sha256": "bd8bc20c2adfc82c4ed2102fd3cf60bec5134c626f732961e0fe003db0a4e082",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/joint_requery/portfolio_selected_5752.json",
+      "sha256": "4dfcd2f118da6a871cffd1e165d87a79c32edc8e983e15e622fcd2ffa1bc921c",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_verify_portfolio_pair_5752.py",
+      "sha256": "83ecbea0fa36e89a7dd8e237b42f38108987cbe9baf9e3e16b8162e9f5b4a8a3",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_verify_portfolio_pair_5752.json",
+      "sha256": "b8b85707dd1a4e7e60e49aca59f6773d6175990e98a4f89d1f28a1cff328e4f4",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_verify_tail_ablation.py",
+      "sha256": "b954fc211fe1763e40db96c06851e9876d7a8b551fe1bad984f626d5634644ee",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_verify_tail_ablation.json",
+      "sha256": "8365187c106a3214c9a1ef651662f2d95c9d99dab08eb19cee1a34327e9fc211",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_matrix.json.gz",
+      "sha256": "44c34467eb8cc65c5581228c31e82083909e8162f400dd1343da5c651c690884",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_dual.json",
+      "sha256": "7b7e081174fcbc817931ec0aba6384116645ec84b64f847d52fbd88209bac61e",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_identity.json",
+      "sha256": "6e7daf2b44d8952c5aef31f4d8aa66c0e0117b1df4dd3b65ffd3028e39d0a767",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_review_manifest.json",
+      "sha256": "29c99dbd9890ffac7c7420082bdd80939f3cbb7ca5f5ba045b38d7defe1ef507",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_verification.json",
+      "sha256": "adfa4616b32417aace48a3cfce0c591d385c54c99809523f84110967cd34425e",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5752_config.json",
+      "sha256": "f80bcb68a603ef584c7e7f678521fdd27ed8da9b914016507316a8b901e30507",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_verify_dynamic_5752.json",
+      "sha256": "269454d0a432126f0fc4784b02040fa757a7bdf860656d600e5b6e560d97fdc4",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5775_matrix.json.gz",
+      "sha256": "49470d85127a7f24b4059c3289c9995f469445170fecefed6644bca3d29c82ae",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5775_dual.json",
+      "sha256": "c3388dd6b575637aaf6e9cd8a54bb5484d622820e3a966f00f0c5efbd54b8346",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5775_identity.json",
+      "sha256": "5ffd09018c3248c38a233e460a48cf2ebf1c555b26107f3b941cd0c2251ec12b",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5775_review_manifest.json",
+      "sha256": "2ebf81e5745c3fc27cdf885dd6562b31fedcd4fa75d05e60a9fe4b80efd5bea1",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5775_verification.json",
+      "sha256": "735612a2bbe4590af3541807d662d362944fb9436aa19f5246c1a548e5bd4c3f",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5775_config.json",
+      "sha256": "b04330ce407986bc1c4b63d3871ab798cb2beee19ec5128e6d35438552542fb6",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_verify_dynamic_5775.json",
+      "sha256": "6b528c1150b7de3e839861b0805b7e2b804a6e07664ae43f7375351c1e999c17",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_matrix.json.gz",
+      "sha256": "363b01b298a5939590d2979bf10215a8080dd5c625966398fdaefd91eb92a696",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_exact.json",
+      "sha256": "525139e949098e14426d483a334b7ad7acb454ff692f76ee19769dd305c227df",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_dual.json",
+      "sha256": "94732c241e0feb961aa9925a5d2b3596628ce3c68ec0a99a56ade291b0ae9eac",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_identity.json",
+      "sha256": "36e2b86e3d7946bae617feb189ef9b516f8b4e8cbe07b9921dc19dedf0324681",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_review_manifest.json",
+      "sha256": "326bdab86413cf7f6058ebccc560904692dc9d09dcb69f42e77a84d2595250a5",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_verification.json",
+      "sha256": "b027e343038b36a0c5f329ca27a7507964f3e0b418bd53cf12bd96e071a274cb",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_config.json",
+      "sha256": "1568fe222a1e0401e4d2361dfb2daca41bd8c0d69d63fb90e5084af12d12aec0",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
+    },
+    {
+      "path": "research/workspaces/six-boss2-20261111-cross/main_verify_dynamic_5783.json",
+      "sha256": "d0c6217852e9854c9a2cd3a352945c3742f26fdba669b1e879812f781697ba09",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-ddceaa3d53064498b3e833a32e1f3b6f"
+      ],
+      "reason": "Boss2 Main本轮实读、推导和独立准确审计后的投影层级、共享末端合同、统一正价或有限必要LP证据；范围以正文量词为准。"
     }
   ],
   "edge_files": [
@@ -210111,7 +211343,11 @@
     "map/edges/customer-attraction-boss2-six-cross-20261111/boss2-six-cross-34-and-pair-shared-projection.json",
     "map/edges/customer-attraction-boss2-six-cross-20261111/boss2-six-cross-portfolio-to-discounted-closure.json",
     "map/edges/customer-attraction-boss2-six-cross-20261111/boss2-six-cross-three-families-pay-52-added-rows.json",
-    "map/edges/customer-attraction-boss2-six-cross-20261111/boss2-six-cross-old5692-gap-motivates-dynamic-closure.json"
+    "map/edges/customer-attraction-boss2-six-cross-20261111/boss2-six-cross-old5692-gap-motivates-dynamic-closure.json",
+    "map/edges/customer-attraction-boss2-six-cross-20261111/boss2-six-cross-shared-pair-to-query-hierarchy.json",
+    "map/edges/customer-attraction-boss2-six-cross-20261111/boss2-six-cross-pair-and-discount-pay-shared-terminal.json",
+    "map/edges/customer-attraction-boss2-six-cross-20261111/boss2-six-cross-balanced-discount-to-positive-price.json",
+    "map/edges/customer-attraction-boss2-six-cross-20261111/boss2-six-cross-hierarchy-and-shared-tail-pay-39-more-rows.json"
   ],
   "registration_batches": [
     {

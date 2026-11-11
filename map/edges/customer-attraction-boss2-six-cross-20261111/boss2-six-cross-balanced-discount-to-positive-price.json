@@ -1,0 +1,42 @@
+{
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss2 Main",
+  "edge_id": "boss2-six-cross-balanced-discount-to-positive-price",
+  "source_ids": [
+    "M-b233ef00a9c34e189817cdfb7a495107"
+  ],
+  "target_ids": [
+    "M-043045ec129b4a5f82a3368b324accf9"
+  ],
+  "conditions": "同一有序源余k≥2，固定静态查询及显式当前自查询，源权a=M；非负价格/容量，0≤theta<1。所有静态Q在主题F的全称量词之前固定。",
+  "roles": {
+    "M-b233ef00a9c34e189817cdfb7a495107": "提供同一Bellman势和对全部合法种子成立的折扣合同。",
+    "M-043045ec129b4a5f82a3368b324accf9": "利用平衡权两行之差给严格正客户价格及任意尾长上下界，转成全目录统一价格上限。"
+  },
+  "explanation": "平衡时H(1,c,s)−H(0,c,s)=(a−q)/(p+s+1)+(mu_*+q)/(p+s+2)，与c和各价格成本无关，且随s递减。对s取min夹住e1c−e0c，再对同一Bellman固定点的c取min夹住V1−V0。乘1−theta得w界；a>0时下界正，a0时w0。由已证全目录合同B≥ΣPsi(1_F)，写Psi=b+w1_F即得统一上限B−Σb。每次用于其它分枝都连同B、常量一并按权支付。",
+  "whole_result": "一般k平衡末回复闭包的全目录非负价格、a>0时严格正价、精确上下界及合法跨枝使用预算；目标不含未经证实的数值切点宣称。",
+  "scope": "一般局部正价定理；只在k2得到上下界相等，不声称k>2参数独立或全域half。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/同源真实末回复的折扣闭包与二状态精确投影--引理.md",
+      "sha256": "a2aa6f407865993f693ff8338e2c038a7849643d04ed9078fc7c8e0e6f6b5d42"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/任意尾长平衡末回复闭包的统一正客户价格--引理.md",
+      "sha256": "6e2e4e0b2b790ed20ce424a2be8aa9d8284cb8116b889cf910fb12e9fbcb1784"
+    }
+  ],
+  "review_note": "Main亲自推导同c/s差及两次min夹界，包括p=s=c0的零分子边界；coverage_bridge独立审查PASS。未借任何有限网格建立一般定理。",
+  "endpoint_pins": {
+    "M-043045ec129b4a5f82a3368b324accf9": "bf0acd43715e327c29da0a8cd17d36e64b6d5d0da25ffecaeaa4875ebf4f7436",
+    "M-b233ef00a9c34e189817cdfb7a495107": "308401b736d5e278edb8a86a3dbfd2d3466aa1455f9c627b8b72069a9197c411"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/同源真实末回复的折扣闭包与二状态精确投影--引理.md": "a2aa6f407865993f693ff8338e2c038a7849643d04ed9078fc7c8e0e6f6b5d42",
+    "archives/customer-attraction/state/引理/任意尾长平衡末回复闭包的统一正客户价格--引理.md": "6e2e4e0b2b790ed20ce424a2be8aa9d8284cb8116b889cf910fb12e9fbcb1784"
+  },
+  "review_digest": "df5c16b4d5803ee36fb59e357d0e502161e1911499105d2b1523341b8dd05046"
+}

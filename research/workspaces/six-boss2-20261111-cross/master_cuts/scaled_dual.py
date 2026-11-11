@@ -21,7 +21,7 @@ from merge_master import HERE,sha
 def run(config,support_tolerance,float_file):
     start=time.time();data,rows,obj,norm=engine.load();floating=np.load(HERE/(float_file if float_file else engine.STEM+'_float.npz'));point=engine.read('exact');W=F(point['W'])
     support=[int(i) for i in np.flatnonzero(-floating['inequality_marginals']/floating['scales']>support_tolerance)]
-    active=[int(j) for j in np.flatnonzero(abs(floating['lower_marginals'])<1e-8)]
+    active=[j for j,c in enumerate(point['columns']) if F(c['weight'])>0 or abs(floating['lower_marginals'][j])<1e-12]
     equations=[];rhs=[];origins=[];seen=set()
     for j in active:
         row=tuple(rows[i].get(j,F()) for i in support);b=obj[j]-W*norm[j]
