@@ -1,0 +1,67 @@
+{
+  "status": "SYMBOLIC_UNBOUND",
+  "kernel": "symbolic_coefficients.py",
+  "catalogue": "row_catalogue.json",
+  "samples": "literal_samples.json",
+  "row_direction": "A nu <= b; residual b-A nu >= 0",
+  "entry_points": {
+    "catalogue()": "243 raw row descriptors in fixed order",
+    "coefficient(row,atom,q,tail)": "one exact Fraction A coefficient",
+    "base_atom_coefficient(row,atom)": "one exact old-mass coefficient in b",
+    "base_K_coefficient(row)": "one exact coefficient of K in b",
+    "fixed_dimensions(s)": "32s, s, 2s, 243, 243+2s; no allocation",
+    "moment_envelope(a0,a1,o)": "exact minimum and signed-row multiplier contract"
+  },
+  "expected_counts": {
+    "IC_SOURCE2": 1,
+    "CAP": 5,
+    "ACTUAL_SAFE": 29,
+    "MAX": 5,
+    "MX": 5,
+    "NEW_SAFE": 52,
+    "NEW_PAIR": 91,
+    "ACTUAL_RC": 55
+  },
+  "pair_counts": {
+    "new_pair_pure_pure": 78,
+    "new_pair_pure_mean": 12,
+    "new_pair_mean_mean": 1,
+    "actual_RC_new_new": 15,
+    "actual_RC_new_old": 40,
+    "actual_RC_pure_pure": 50,
+    "actual_RC_pure_mean": 5,
+    "omitted_old_RC": 36
+  },
+  "single_distinct30_row": "NEW_PAIR|Omean|Omean",
+  "distinct30_mean_cost": "o/(3D), D=1+a1+q+r3+r4",
+  "same_actual_P_families": [
+    "MAX",
+    "MX",
+    "ACTUAL_RC"
+  ],
+  "known_redundancies": {
+    "MX_and_RC_L_X_mod_mass": 5,
+    "literal_duplicate": "NEW_PAIR|R5|R6 = NEW_SAFE_j5|R5",
+    "literal_zero_row": "NEW_SAFE_j6|R6"
+  },
+  "omitted_paid_row": "ACTUAL_SAFE_j2|Q is implied by IC_SOURCE2 plus q*(1/(a1+1+sum(tail))-1/(a1+5)) >= 0",
+  "globalization": {
+    "W": "sum(lambda_R*A_R)",
+    "a_q": "min over ALL16 tail states of W(v,q,tail)",
+    "m_o0": "a0",
+    "m_o1": "min((5*a0+a1)/6,a1)",
+    "lower_multiplier": "delta=max(a1-a0,0)",
+    "upper_multiplier": "gamma=max(a0-a1,0)",
+    "mass_multiplier": "a0, free sign",
+    "residual": "W+(gamma-delta)*q-a0 = W-a_q >= 0",
+    "cut": "sum(lambda_R*b_R)-sum_all256(m_v*z_v) >= 0",
+    "all_state_count_required": 8192
+  },
+  "excluded_claims": [
+    "fixed-point feasibility or infeasibility",
+    "LP optimum",
+    "global sharpness",
+    "complete SPE",
+    "half bound"
+  ]
+}
