@@ -73,3 +73,23 @@ W_ZZ = 535943112516612323388180134957528955068113928895980836490
 | `exact_dual_certificate.json` | `cabd61e3b536e2b5bad44b32472b03569453c9f1ea2da788d419ce0ead8aa74e` |
 
 完整阶段命令、起止时间、exit code、stdout/stderr 及其 SHA 在 `execution_records.json` 和相应 `*_stdout.txt`、`*_stderr.txt`；恢复参数及活跃方程见 `primal_exact_audit.json` 与 `exact_dual_certificate.json`。已有证据应先核验，不应覆盖重跑；同样的下一轮须用新目录保存。
+
+## 完整 min 闭合后的最终停界
+
+首轮 13931 精确点重选端点后又有 12 条 ZZ 包络负行，因此首轮所有产物冻结，完整扩展另存 `zz_closure_lp/round2/`。完整证明、列含义、恢复细节及最终证据见该目录 `README.md`。
+
+第二轮用 2790 个共享非负上界变量、5580 条 q/v 上界行，一次精确表示全部 39 个非自查 ZZ min 轨道预算；同时接入 `new_point_separation/priority_six_cuts_13931.json` 的 6 条合法新早期行。全系统为 **19556×15593，914676 非零**，原 4849 列及原 7954 个辅助列前缀全部保持。该共享变量表示与全部 min 包络双向等价；变量是虚拟上界，未宣称真实跨边联合交集。
+
+最终精确最优值仍严格等于上文 W_ZZ，增加量恰为 0。新点的 314 个原正坐标来自 719 式、rank 308 的稀疏消元；6 个自由值按明确有理数选定后全部行严格回代通过。另有 1435 个正 max 辅助、622 个正 min 辅助，总正支撑 2371。冻结的 129 正行权对偶以零新行权扩展，全部 15593 列残差非负，下界与原始 W 严格相等。
+
+独立标准库核验已从保存文件重建全部 5580 个新上界和 39 个轨道预算，并回代全部 19556 行与对偶列，exit 0。冻结 42 类分离器在新精确点重跑得到 **0 条负行**：3 个字面自查类为零，39 个非自查预算全严格正，最小约 0.011170952728482045。原 81 个单查询预算也全严格正，最小约 0.0018248783443133。
+
+最终点与首轮点的 16 个 hist 质量以及 K 逐 Fraction 完全相同；仅 240 个其他原坐标改变（joint-reply 89、overlap 82、actual-B-family-state 29、maximum-root-family-state 40）。所以本轮完成的是同一 hist/K 投影内满足完整 ZZ 包络及六新行的另一份必要图数据；此前指定点被排除，并没有排除该 hist/K 投影或提高其有限必要 LP 最优值。
+
+| 最终证据 | SHA-256 |
+| --- | --- |
+| `round2/exact_matrix.json.gz` | `353b1978b6c2ad46d28dc33a03b5ff8c3f71f273d9bf4d71cc15f5a9cf223f0c` |
+| `round2/augmented_lp_exact.json` | `bf47390017e37f49f47a8f89126eb8e812982e16bd535adb555f042c178a2ca3` |
+| `round2/exact_dual_certificate.json` | `53f60d579e1778065d169e4b7e0deaa8ff20da3808d84b1eb21d153b6090dee5` |
+
+最终摘要、逐原坐标差异、所有阶段退出记录、实际执行源码快照及全部文件 SHA 均保存在 `round2/`。指定完整 min 义务已闭合，本代理按 Main 指示在此结束，不自行继续新轮。下一缺口仍是真实 R/Z 联合耦合、跨边 Boolean/循环一致性和完整历史共同后继；新早期分离须绑定最终点重新计算。原题 OPEN，最终点仍不是完整纯 SPE 或六人 half 反例。

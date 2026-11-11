@@ -1,0 +1,5 @@
+# 首12条具名同源折扣行冻结入口
+
+Main已实读发现器、独立字面Bellman核验器及Boss2一般折扣证明。当前包有12条在19556精确点严格负的不同向量，6条theta0 portfolio、6条theta1/4重查。完整selected_rows、全部零质量列系数、精确参数和全域核保存在冻结包。它们尚未加入19556矩阵，不能预报下一LP值。
+
+这里保实测执行字节；audit采用原执行快照并与包内SHA相符，不把后续支持四状态的新版冒作旧码。point和matrix在本RUN zz_closure_lp/round2/。实际输入绝对路径是来源记录，换clone应从这些repo相对位置定位同SHA输入。
