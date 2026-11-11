@@ -1,0 +1,665 @@
+{
+  "reviewed_by": "Boss6",
+  "kind": "minimal original-source corrections with unchanged theorem identities and current proof scope",
+  "base_registry_sha256": "bab0123a249605a84088e73d818b5c2cb8e1241e4f301aa5639d79dd1fea10e2",
+  "body_changes": [
+    {
+      "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+      "old_sha256": "a842380d2ee484db652986c5d639fb5c1651cc7ca77dff67bac5e898381f4a85",
+      "new_sha256": "b2ae90415d0b340c9c0039bf68005854f06b0da4acc35e0f44a22a97d2ebc5ed",
+      "replacements": [
+        {
+          "key": "clique-minus-one",
+          "before": "\\operatorname{tw}_{p}\\ge \\max_i|J(i)|,\n\\qquad\n\\operatorname{tw}_{d}\\ge \\max_j|M(j)|,",
+          "after": "\\operatorname{tw}_{p}\\ge \\max_i|J(i)|-1,\n\\qquad\n\\operatorname{tw}_{d}\\ge \\max_j|M(j)|-1,",
+          "error_type": "primary-error-transcribed",
+          "primary_pdf_pages": [
+            5,
+            6
+          ],
+          "reason": "树宽定义是最大袋大小减一；一个job和一台machine已反驳未减一公式。",
+          "affected_object_ids": [
+            "M-14dbe6980117492aa7a3b48c52378dcb",
+            "M-232414c2d8e744ccaba95138638a15dc",
+            "M-247deecec83946358afe4e89413a7bd1"
+          ]
+        },
+        {
+          "key": "clique-error-disclosure",
+          "before": "因为每个 (J(i)) 在 primal 中是团、每个 (M(j)) 在 dual 中是团。",
+          "after": "因为每个 (J(i)) 在 primal 中是团、每个 (M(j)) 在 dual 中是团。原 PDF 页 6 Remark 7 的两式漏了减一；这里按页 5 的树宽定义与团性质纠正。",
+          "error_type": "primary-error-disclosure",
+          "primary_pdf_pages": [
+            5,
+            6
+          ],
+          "reason": "保留冻结source并在正文明确原式错误，不默称原PDF正确。",
+          "affected_object_ids": [
+            "M-14dbe6980117492aa7a3b48c52378dcb",
+            "M-232414c2d8e744ccaba95138638a15dc",
+            "M-247deecec83946358afe4e89413a7bd1"
+          ]
+        },
+        {
+          "key": "baseline-rounding-cap",
+          "before": "固定机器数的 FPTAS 由 (B\\le2\\mathrm{OPT}) 的上界、把加工时间按 \\(\\delta B/n) 向上取整和上述负载向量 DP 获得；这只是无结构基线。",
+          "after": "固定机器数的 FPTAS 由 (\\mathrm{OPT}\\le B\\le2\\mathrm{OPT}) 的合法上界、把加工时间按 \\(q=\\delta B/n\\) 向上取整和上述负载向量 DP 获得。每机至多 (n) 个任务，因而 rounded optimum 的增加量至多 (nq=\\delta B\\le2\\delta\\mathrm{OPT})；取 (\\delta=\\epsilon/2) 即付清 (\\epsilon\\mathrm{OPT}) 误差。DP 可把每机负载裁剪到 (B+nq=(1+\\delta)B)，缩放整数负载值数至多 (\\lfloor n/\\delta+n\\rfloor+1)。原 PDF 页 4 的 (1+\\delta/n)B 裁剪上界和 (n/\\delta+2) 状态数过小；例如 (n=2,m=1,p_1=p_2=1,B=2,\\delta=3/10) 时 rounded 总负载 (12/5) 已超过原 cap (23/10)。正确 cap 为 (13/5)，修正保持同阶 FPTAS；这只是无结构基线。",
+          "error_type": "primary-error-corrected-in-summary",
+          "primary_pdf_pages": [
+            4
+          ],
+          "reason": "每机最多累加n次网格误差；原句epsilon OPT正确，不作勘误。",
+          "affected_object_ids": [
+            "M-14dbe6980117492aa7a3b48c52378dcb",
+            "M-247deecec83946358afe4e89413a7bd1"
+          ]
+        },
+        {
+          "key": "primal-check-J",
+          "before": "M(J_t\\cup\\widetilde J_t)=\\widetilde M_t\\cup\\check M_t.",
+          "after": "M(\\check J_t\\cup\\widetilde J_t)=\\widetilde M_t\\cup\\check M_t.",
+          "error_type": "chinese-transcription-error",
+          "primary_pdf_pages": [
+            7
+          ],
+          "reason": "Lemma9(6)与其证明均为check J，中文漏check。",
+          "affected_object_ids": [
+            "M-232414c2d8e744ccaba95138638a15dc"
+          ]
+        },
+        {
+          "key": "load-state-exponent-and-target",
+          "before": "取 (L\\le\\mathrm{OPT}) 或 (L\\le2\\max_i|J(i)|) 得到 Theorem 2 的 FPT：参数为 dual treewidth 或 incidence treewidth，再加 OPT 或最大资格度。",
+          "after": "在目标为整数 (T) 且把每机负载裁剪到 (0,\\ldots,T) 的 DP 内，可取 (L\\le T+1)；最优目标处对应 (L\\le\\mathrm{OPT}+1)。另一支由每机可接任务的子集计数给出 (L\\le2^{\\max_i|J(i)|})。原 PDF 页 4 的后一个界本来是指数，原中文转写漏了指数；前一个界须说明裁剪并计入零负载，不能作为全体调度的负载值数界。由此得到 Theorem 2 的 FPT：参数为 dual treewidth 或 incidence treewidth，再加 OPT 或最大资格度。",
+          "error_type": "chinese-transcription-plus-primary-target-qualification",
+          "primary_pdf_pages": [
+            4,
+            10,
+            11
+          ],
+          "reason": "每机至多2^D子集；目标界仅在截断DP内计数0..T，不是所有schedule loads被OPT界住。",
+          "affected_object_ids": [
+            "M-14dbe6980117492aa7a3b48c52378dcb",
+            "M-247deecec83946358afe4e89413a7bd1"
+          ]
+        },
+        {
+          "key": "theorem3-cap-detail",
+          "before": "FPTAS 通过把加工时间按 (\\delta B/n) 取整，压缩每机负载值数，再运行前述 DP。",
+          "after": "FPTAS 通过把加工时间按 (\\delta B/n) 向上取整，使用上文修正的 (B+nq) 负载 cap 与整数状态数，再运行前述 DP；取 (\\delta=\\epsilon/2) 时总增量至多 (\\delta B\\le\\epsilon\\mathrm{OPT})。",
+          "error_type": "summary-uses-corrected-primary-cap",
+          "primary_pdf_pages": [
+            4,
+            11
+          ],
+          "reason": "明确本core所用正确舍入误差和cap；主Theorem3保持。",
+          "affected_object_ids": [
+            "M-14dbe6980117492aa7a3b48c52378dcb"
+          ]
+        },
+        {
+          "key": "rankwidth-padding-scope",
+          "before": "作者指出 primal/dual rankwidth 不能直接给出有意义的 PTAS：给任意 (P|M(j)|C_{\\max}) 实例 (I) 添加一个大小为 \\(\\mathrm{OPT}(I)\\) 且可在所有机器处理的任务，再添加一台只处理该新任务的机器，得到 (I')。最优值不变，而 primal 和 dual 图都变成完全图，rankwidth 为 1；因此这两个图的 rankwidth 可被人为压低，不能作为有效结构参数。",
+          "after": "作者在 Section 4 开头给出一个压低 dual rankwidth 的构造：给任意 (P|M(j)|C_{\\max}) 实例 (I) 添加一个大小为 \\(\\mathrm{OPT}(I)\\) 且可在所有机器处理的任务，再添加一台只处理该新任务的机器，得到 (I')。最优值不变，dual 图变成完全图，rankwidth 为 1。原 PDF 页 12 同时声称 primal 图也完全，这并不成立：原任务间的非边保持非边，primal 只是原图增加一个 universal job 顶点；原 primal 是新 primal 的诱导子图，不能据此把其 rankwidth 压到 1。这里仅保留该构造对 dual 的准确结论；该旁注不参与后面的 incidence rankwidth PTAS。",
+          "error_type": "primary-error-transcribed",
+          "primary_pdf_pages": [
+            12
+          ],
+          "reason": "新增universal job使所有机器共享该job，但不增加旧job间共享机器。",
+          "affected_object_ids": [
+            "M-3452046f3bdd47c48b17a0a3038ba4b2"
+          ]
+        },
+        {
+          "key": "big-job-grid",
+          "before": "把大任务 (p_j>\\delta B) 向上取整到 (\\delta^2B/n) 网格",
+          "after": "把大任务 (p_j>\\delta B) 向上取整到 (\\delta^2B) 网格",
+          "error_type": "chinese-transcription-error",
+          "primary_pdf_pages": [
+            12
+          ],
+          "reason": "原PDFbig-job公式是delta²B ceil(p/(delta²B))，无/n。",
+          "affected_object_ids": [
+            "M-3452046f3bdd47c48b17a0a3038ba4b2"
+          ]
+        },
+        {
+          "key": "distinct-size-count",
+          "before": "得到至多 (1/\\delta+1) 种尺寸",
+          "after": "得到至多 (\\lceil1/\\delta^2\\rceil+1) 种尺寸（大任务有 (p_j\\le\\mathrm{OPT}\\le B)，另加一种小任务克隆尺寸；原 PDF 页 12 的 (1/\\delta+1) 计数过小，但修正后仍对固定 (\\epsilon) 为常数）",
+          "error_type": "primary-error-transcribed",
+          "primary_pdf_pages": [
+            12
+          ],
+          "reason": "步长delta²B下big-job尺寸只有O(1/delta²)界，仍固定epsilon常数。",
+          "affected_object_ids": [
+            "M-3452046f3bdd47c48b17a0a3038ba4b2"
+          ]
+        },
+        {
+          "key": "primary-dp-formula-notes",
+          "before": "由这些 DP，论文给出：",
+          "after": "第三阶段对原 PDF 页 9、11 的定向公式核对还需保留三个语义修正：nearly inactive machines 是在子节点活跃、到 parent 失活的机器，故应为 \\(\\widetilde M_t=M_t\\setminus M_{p(t)}\\)（等价于 \\(M_t\\cap\\check M_{p(t)}\\)），不是源文所印的 \\(M_t\\setminus\\check M_{p(t)}\\)；incidence 的任务拆分应覆盖 \\(J'\\cup\\widetilde J_t=A\\dot\\cup X\\)，不是只拆 \\(J'\\)；合并左右负载的 \\(\\Xi\\) 集合须满足投影相加等于父负载 \\(\\lambda\\) 的守恒条件。上述中文概述按这些定义、任务恰分配一次与负载守恒的正确语义使用 DP，不把原公式缺漏当作新的模型。\n\n由这些 DP，论文给出：",
+          "error_type": "primary-error-clarification-not-previously-copied",
+          "primary_pdf_pages": [
+            9,
+            11
+          ],
+          "reason": "本轮已视觉核对应源页；补明正确语义以避免凭坏公式使用DP，不重做未读章节。",
+          "affected_object_ids": [
+            "M-14dbe6980117492aa7a3b48c52378dcb",
+            "M-247deecec83946358afe4e89413a7bd1"
+          ]
+        }
+      ],
+      "additional_root_clarifications": [],
+      "owner_ids": [
+        "M-14dbe6980117492aa7a3b48c52378dcb",
+        "M-232414c2d8e744ccaba95138638a15dc",
+        "M-247deecec83946358afe4e89413a7bd1",
+        "M-3452046f3bdd47c48b17a0a3038ba4b2"
+      ]
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Ebenlendr-Krcal-Sgall-2014--图平衡1.75近似--文献.md",
+      "old_sha256": "885419a0ce3908a45e2aad0341dce707a240f31efe3812114994b9974faef1aa",
+      "new_sha256": "9d71410ab24c1c45dc459477049db45c422992bff6494e077a61ff78a2bcd368",
+      "replacements": [
+        {
+          "id": "gbapx-fail-threshold",
+          "pdf_location": "p6 GBapx / p14 Theorem 3",
+          "before": "归一化决策版本给定顶点基载荷 `q_v` 和边权 `p_e`，判断是否存在定向使 `q_v+Σ_{e→v}p_e≤1`；若不存在，算法允许输出 `FAIL`，并要求存在所有定向都使某顶点负载超过 `1.75` 的证书。标准二分和缩放把该过程转为优化近似。",
+          "after": "归一化决策版本给定顶点基载荷 `q_v` 和边权 `p_e`。GBapx 要么返回使全部顶点负载至多 `1.75` 的定向，要么返回 `FAIL`，其正确性条件是不存在使全部顶点负载至多 `1` 的定向。若 `OPT∈(1,1.75]`，两种回答均允许；`FAIL` 不表示所有定向都有顶点负载超过 `1.75`。标准二分和缩放把该过程转为优化近似。"
+        },
+        {
+          "id": "lp1-rotate-forest",
+          "pdf_location": "pp6–7 §2.2 / Algorithm 1",
+          "before": "LP1 对每条边 `e={u,v}` 设 `x_{eu}+x_{ev}=1`，对每个顶点约束 `q_v+Σ_{e∋v}p_e x_{ev}≤1`。整数可行点与边定向一一对应。给定 LP1 分数解，沿其正支撑图的有向环执行 `ROTATE`：令环上某一端的质量增至 1、另一端减至 0，保持每条边总质量和各顶点分数负载不增。重复旋转消去分数环，得到整数定向，但直接使用 LP1 的积分间隙仍可达 2。",
+          "after": "LP1 对每条边 `e={u,v}` 设 `x_{eu}+x_{ev}=1`，对每个顶点约束 `q_v+Σ_{e∋v}p_e x_{ev}≤1`。整数可行点与负载至多 1 的边定向一一对应。给定 LP1 分数解，在全部边均为分数的任意环上任选方向，对每条有向边 `u→v` 令 `δ=min_{e∈C}x_{eu}p_e` 并将 `δ/p_e` 从 `x_{eu}` 移到 `x_{ev}`。`ROTATE` 保持每条边总质量和每个顶点分数负载不变，每次至少使一条边整数化。重复旋转后，尚未整数化的边构成森林；再将各树任意选根、全部边背根定向，每顶点至多接收一条森林边，合并已整数边后给负载至多 2 的定向。旋转消环本身不保证全整数，直接使用 LP1 的积分间隙上确界仍为 2。"
+        },
+        {
+          "id": "round-invariants",
+          "pdf_location": "pp9–12 Algorithm 2 / Theorem 1",
+          "before": "`ROUND` 维护 LP2 可行分数解及以下不变量：顶点当前负载不超过 1.75；未定向边的支撑图无危险叶时可沿环旋转；出现叶时仅在叶端增载不超过 0.75 的条件下执行 `LeafAssignment`；大边所在连通分量的树约束始终保持。若所有边均已整数化，输出定向即给出 1.75 负载上界。Theorem 1 通过对 LeafAssignment、Rotation、树分量重排的逐案分析证明这些不变量。",
+          "after": "`ROUND` 从 LP2 可行分数解及分数大边图为树或纯环的结构出发；舍入途中不要求继续满足 LP2 的负载至多 1 约束。Theorem 1 保持四项不变量：全部顶点当前负载至多 1.75；仍关联分数边的顶点负载至多 1.25；仍关联分数大边的顶点负载至多 1；分数大边图的每个子树约束仍成立。若分数图有叶 `(v,e)`，当给叶端的增量 `x_{eu}p_e≤0.75` 时执行 `LeafAssignment`；否则 `e` 为大边，将其分数大边树分量全部背离 `v` 定向，路径树约束保证其余各顶点增载严格小于 0.25。没有叶时，沿优先走大边得到的环旋转；扩树论证保全部子树约束。每轮至少一条边整数化，最终输出负载至多 1.75 的定向。"
+        },
+        {
+          "id": "lp3-strengthening",
+          "pdf_location": "pp13–15 Theorem 2 / §4.1",
+          "before": "LP3 用每个顶点的 `Star(v)` 多项式约束替代所有 `Tree(T)` 约束。Theorem 2 证明 LP3 的任意解满足 LP2 的全部树约束，并且大边分数支撑图的每个连通分量为树或含受控环；证明对树边约束求和并用 `x_{ev}≤1` 恢复任意树不等式。于是可以用普通多项式 LP 算法求 LP3，不需要指数分离 oracle。Algorithm `LP-BALANCE` 解 LP3 后运行 `ROUND`；Theorem 3 给出 GBapx 的正确性，因而得到图平衡的 1.75 近似。",
+          "after": "LP3 保留 LP1 的 `Edge` 和 `Load` 约束，加入每个顶点的 `Star(v): Σ_{e∈E_B:v∈e}x_{ev}≤1`，其规模为多项式。它与 LP1、LP2 有相同整数可行点，分数可行域则满足 `LP3⊆LP2⊆LP1`，不能视为与 LP2 等价。Theorem 2 证明 LP3 的任意解满足全部树约束，并且分数大边图的每个非平凡连通分量是树或纯环。具体地，对树的 `Edge` 求和并减去内部顶点的 `Star`，得到叶端质量和至少为叶数减 1，再用 `x_{ev}≤1` 及 `p_e≤1` 得到加权树不等式。LP3 适合用普通多项式 LP 算法取得初始点；旋转不保持未加权的 `Star`，所以 `ROUND` 改用 LP2 的树约束不变量。Algorithm `LP-BALANCE` 解 LP3 后运行 `ROUND`；Theorem 3 给出 GBapx 的正确性及图平衡的 1.75 近似。"
+        }
+      ],
+      "additional_root_clarifications": [
+        {
+          "before": "归一化决策版本给定顶点基载荷 `q_v` 和边权 `p_e`。GBapx 要么返回使全部顶点负载至多 `1.75` 的定向，要么返回 `FAIL`，其正确性条件是不存在使全部顶点负载至多 `1` 的定向。若 `OPT∈(1,1.75]`，两种回答均允许；`FAIL` 不表示所有定向都有顶点负载超过 `1.75`。标准二分和缩放把该过程转为优化近似。",
+          "after": "归一化决策版本给定顶点基载荷 `q_v` 和边权 `p_e`。GBapx 要么返回使全部顶点负载至多 `1.75` 的定向，要么返回 `FAIL`，其正确性条件是不存在使全部顶点负载至多 `1` 的定向。若 `OPT∈(1,1.75]`，两种回答均允许；`FAIL` 不表示所有定向都有顶点负载超过 `1.75`。标准二分和缩放把该过程转为优化近似。\n\n预处理时，将 loop 和仅有一个合法端点的作业计入相应顶点基载荷，零权边任意合法定向后删去；若某基载荷大于 1 或某正权边权大于 1，直接返回 `FAIL`。此后旋转只处理 `0<p_e≤1` 的边，所有 `δ/p_e` 均有定义。",
+          "reason": "Explicit preprocessing for loops, single-end jobs, zero edge weights and the unit-threshold domain; prevents division by zero in ROTATE."
+        }
+      ],
+      "owner_ids": [
+        "M-2063376836194a818dc34becdb99cc88"
+      ]
+    }
+  ],
+  "object_changes": [
+    {
+      "object_id": "M-14dbe6980117492aa7a3b48c52378dcb",
+      "old_version": 1,
+      "new_version": 2,
+      "old_pin": "3ef41cbee7acc410bc35740475928bdc5b35cf4dd43138a48ab8971ce516cb3a",
+      "new_pin": "2e991ac64d1bc297760daccd30f713ae70c2bdaa42bb3e54a02ae554563a4e86",
+      "changed_fields": [
+        "body",
+        "objections",
+        "version"
+      ],
+      "before": {
+        "title": "常数dual或incidence树宽的FPTAS及弱困难性",
+        "model": "R||Cmax整数处理时间，dual或incidence treewidth固定常数。",
+        "statement": "该类仍弱NP-hard，但对每ε>0存在FPTAS；将处理时间按δB/n网格取整、压缩负载向量后运行DP并回溯。",
+        "quantifiers": "每个固定树宽和ε>0，时间poly(input,1/ε)，次数可依树宽。",
+        "assumptions": [
+          "dual/incidence树宽常数",
+          "B≤2OPT的合法上界"
+        ],
+        "scope": "论文Theorem3；非强多项式精确或一般UM FPTAS。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+          "sha256": "a842380d2ee484db652986c5d639fb5c1651cc7ca77dff67bac5e898381f4a85"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+            "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。",
+        "object_id": "M-14dbe6980117492aa7a3b48c52378dcb",
+        "version": 1,
+        "sources": [
+          "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      },
+      "after": {
+        "title": "常数dual或incidence树宽的FPTAS及弱困难性",
+        "model": "R||Cmax整数处理时间，dual或incidence treewidth固定常数。",
+        "statement": "该类仍弱NP-hard，但对每ε>0存在FPTAS；将处理时间按δB/n网格取整、压缩负载向量后运行DP并回溯。",
+        "quantifiers": "每个固定树宽和ε>0，时间poly(input,1/ε)，次数可依树宽。",
+        "assumptions": [
+          "dual/incidence树宽常数",
+          "B≤2OPT的合法上界"
+        ],
+        "scope": "论文Theorem3；非强多项式精确或一般UM FPTAS。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+          "sha256": "b2ae90415d0b340c9c0039bf68005854f06b0da4acc35e0f44a22a97d2ebc5ed"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+            "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "第三阶段 Boss6 包实读完整中文正文、原 PDF 页1–11及页12至Lemma17前半，定向视觉核页4、6、7、9、11、12。正文已纠正舍入累积误差后的负载 cap B+nq、状态数以及相关DP定义；Theorem3主合同、固定树宽量词与独立弱NP-hard结论不变。本包另以最快可用机器上界重构舍入与精确DP的FPTAS贡献，不把该贡献当作困难性证明；未运行旧数学程序。",
+        "object_id": "M-14dbe6980117492aa7a3b48c52378dcb",
+        "version": 2,
+        "sources": [
+          "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      }
+    },
+    {
+      "object_id": "M-2063376836194a818dc34becdb99cc88",
+      "old_version": 1,
+      "new_version": 2,
+      "old_pin": "6905fbf8963c9918c663d147fa1bf66be79083d8e449ce7f85dc2b5c01d96bbe",
+      "new_pin": "f59a35c1f3d7806acc53b3f042854036e846e5abf4338fd6060f97c517f857d4",
+      "changed_fields": [
+        "body",
+        "objections",
+        "version"
+      ],
+      "before": {
+        "title": "Ebenlendr–Krčál–Sgall两端等时图平衡七比四近似",
+        "model": "加权机器多重图/允许loop及顶点基载荷；每作业至多两有限端且两端耗时相同。",
+        "statement": "LP-BALANCE在多项式时间给7/4近似。阈值1的松弛判定要么返回负载≤7/4的定向，要么FAIL且不存在负载≤1的定向；OPT∈(1,7/4]时两答均可。",
+        "quantifiers": "全部有限图平衡输入；每次输出同时核全顶点。",
+        "assumptions": [
+          "两端等处理时间",
+          "非负边权/基载荷"
+        ],
+        "scope": "restricted graph balancing；异速两端与三资格端不在此保证。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/Ebenlendr-Krcal-Sgall-2014--图平衡1.75近似--文献.md",
+          "sha256": "885419a0ce3908a45e2aad0341dce707a240f31efe3812114994b9974faef1aa"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/graph-balancing.pdf",
+            "sha256": "a407bdbda09ea649f72454518f8dce526405fe7743a38abeb8ed499dee4918d5"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。定向核原PDF的GBapx与Theorem3。成熟body误将FAIL无解阈值写成1.75；原文为1，本record按原PDF修正。LP2/LP3及ROUND完整证明在PDF，未重写成熟字节。",
+        "object_id": "M-2063376836194a818dc34becdb99cc88",
+        "version": 1,
+        "sources": [
+          "archives/unrelated-machines/state/文献/Ebenlendr-Krcal-Sgall-2014--图平衡1.75近似--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      },
+      "after": {
+        "title": "Ebenlendr–Krčál–Sgall两端等时图平衡七比四近似",
+        "model": "加权机器多重图/允许loop及顶点基载荷；每作业至多两有限端且两端耗时相同。",
+        "statement": "LP-BALANCE在多项式时间给7/4近似。阈值1的松弛判定要么返回负载≤7/4的定向，要么FAIL且不存在负载≤1的定向；OPT∈(1,7/4]时两答均可。",
+        "quantifiers": "全部有限图平衡输入；每次输出同时核全顶点。",
+        "assumptions": [
+          "两端等处理时间",
+          "非负边权/基载荷"
+        ],
+        "scope": "restricted graph balancing；异速两端与三资格端不在此保证。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/Ebenlendr-Krcal-Sgall-2014--图平衡1.75近似--文献.md",
+          "sha256": "9d71410ab24c1c45dc459477049db45c422992bff6494e077a61ff78a2bcd368"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/graph-balancing.pdf",
+            "sha256": "a407bdbda09ea649f72454518f8dce526405fe7743a38abeb8ed499dee4918d5"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "第三阶段 Boss6 包完整实读原PDF20页，定向视觉核页6、11、13、14；正文已与本record原已正确的FAIL阈值1一致，并纠正旋转只得到分数森林、ROUND三层负载及Tree不变量、LP3强于LP2和分数大边组件为树或纯环的陈述。补明loop/单端/零权预处理及0<p_e≤1的旋转域。两点三条3/5平行边给OPT=6/5而LP3不可行，直接核旧FAIL强化为假；未运行旧数学程序。",
+        "object_id": "M-2063376836194a818dc34becdb99cc88",
+        "version": 2,
+        "sources": [
+          "archives/unrelated-machines/state/文献/Ebenlendr-Krcal-Sgall-2014--图平衡1.75近似--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      }
+    },
+    {
+      "object_id": "M-232414c2d8e744ccaba95138638a15dc",
+      "old_version": 1,
+      "new_version": 2,
+      "old_pin": "8d5b5ba214a8552f093c7ab5bee40f0447c4f8079e09b59cd6ff3eea2fc95f0c",
+      "new_pin": "1e9794e5fc7df57937761008c911b96f760dad3177e4974ce1f0f0d83d4477bd",
+      "changed_fields": [
+        "body",
+        "objections",
+        "version"
+      ],
+      "before": {
+        "title": "Primal资格树宽的不相关机精确FPT",
+        "model": "显式非负/正整数加工时间及∞的R||Cmax，primal图任务为点、共同资格机器成邻接。",
+        "statement": "对primal treewidth k有精确FPT算法，论文DP运行2^{O(k)}O(nm)，可回溯实际最优分配。",
+        "quantifiers": "全部输入，参数k为primal树宽；数值位长按输入计费。",
+        "assumptions": [
+          "通常整数处理时间编码",
+          "合法树分解或相应固定参数求分解"
+        ],
+        "scope": "论文Theorem1，非机器图树宽单参数结论。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+          "sha256": "a842380d2ee484db652986c5d639fb5c1651cc7ca77dff67bac5e898381f4a85"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+            "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。primary Remark7与成熟body背景式均漏树宽团大小−1；标准关系应tw_p≥max|J(i)|−1。不影响此DP主定理，未将错式登记成独立节点。",
+        "object_id": "M-232414c2d8e744ccaba95138638a15dc",
+        "version": 1,
+        "sources": [
+          "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      },
+      "after": {
+        "title": "Primal资格树宽的不相关机精确FPT",
+        "model": "显式非负/正整数加工时间及∞的R||Cmax，primal图任务为点、共同资格机器成邻接。",
+        "statement": "对primal treewidth k有精确FPT算法，论文DP运行2^{O(k)}O(nm)，可回溯实际最优分配。",
+        "quantifiers": "全部输入，参数k为primal树宽；数值位长按输入计费。",
+        "assumptions": [
+          "通常整数处理时间编码",
+          "合法树分解或相应固定参数求分解"
+        ],
+        "scope": "论文Theorem1，非机器图树宽单参数结论。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+          "sha256": "b2ae90415d0b340c9c0039bf68005854f06b0da4acc35e0f44a22a97d2ebc5ed"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+            "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "第三阶段已在正文纠正原PDF Remark7漏掉的团大小减一，并恢复Lemma9(6)中中文漏写的check J。前者为原论文错误，后者原PDF正确；均已定向视觉核对。Theorem1精确FPT主定理、数值位长及分解前提保持；未将背景错式登记成独立节点，未运行旧数学程序。",
+        "object_id": "M-232414c2d8e744ccaba95138638a15dc",
+        "version": 2,
+        "sources": [
+          "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      }
+    },
+    {
+      "object_id": "M-247deecec83946358afe4e89413a7bd1",
+      "old_version": 1,
+      "new_version": 2,
+      "old_pin": "dbcdbb45498a1acfc82bdd43e5838d191cea87a46f2323ceef051cbf3cc683dd",
+      "new_pin": "fd687a135427e3d9654468452b5db3a8279a4f60bfa41d99904b9d214a241a41",
+      "changed_fields": [
+        "body",
+        "objections",
+        "version"
+      ],
+      "before": {
+        "title": "Dual或incidence树宽加目标或资格度的精确FPT",
+        "model": "整数R||Cmax；dual图机器为点/共享资格任务成边，incidence图为真实机器任务二部图。",
+        "statement": "参数对(k1,k2)下精确FPT，k1∈{dual treewidth,incidence treewidth}，k2∈{OPT,max_i|J(i)|}。状态保活跃机器负载，复杂度L^{O(k1)}O(nm)。",
+        "quantifiers": "每个该参数对的全部合法输入；第二参数不能删。",
+        "assumptions": [
+          "整数加工时间",
+          "资格与分解显式"
+        ],
+        "scope": "论文Theorem2，L由OPT+1或2^{max资格度}控制，不是2乘资格度。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+          "sha256": "a842380d2ee484db652986c5d639fb5c1651cc7ca77dff67bac5e898381f4a85"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+            "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。定向核primary Remark6排版是指数2^{max|J(i)|}，成熟中文正文写2max漏指数；本record按正确状态数，FPT结论保留。",
+        "object_id": "M-247deecec83946358afe4e89413a7bd1",
+        "version": 1,
+        "sources": [
+          "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      },
+      "after": {
+        "title": "Dual或incidence树宽加目标或资格度的精确FPT",
+        "model": "整数R||Cmax；dual图机器为点/共享资格任务成边，incidence图为真实机器任务二部图。",
+        "statement": "参数对(k1,k2)下精确FPT，k1∈{dual treewidth,incidence treewidth}，k2∈{OPT,max_i|J(i)|}。状态保活跃机器负载，复杂度L^{O(k1)}O(nm)。",
+        "quantifiers": "每个该参数对的全部合法输入；第二参数不能删。",
+        "assumptions": [
+          "整数加工时间",
+          "资格与分解显式"
+        ],
+        "scope": "论文Theorem2，L由OPT+1或2^{max资格度}控制，不是2乘资格度。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+          "sha256": "b2ae90415d0b340c9c0039bf68005854f06b0da4acc35e0f44a22a97d2ebc5ed"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+            "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "第三阶段已把正文的状态数改为目标裁剪下的OPT+1或2^{max_i|J(i)|}，并按原定义、任务恰分配一次及负载守恒修正nearly inactive机器、incidence任务拆分与父负载匹配的源文缺漏。原PDF Remark6的指数本来正确，中文转写漏指数；源PDF全体调度负载值不能无裁剪地以OPT界住。Theorem2及两个参数的完整合同不变；原证明按修正后的DP语义使用，未运行旧数学程序。",
+        "object_id": "M-247deecec83946358afe4e89413a7bd1",
+        "version": 2,
+        "sources": [
+          "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      }
+    },
+    {
+      "object_id": "M-3452046f3bdd47c48b17a0a3038ba4b2",
+      "old_version": 1,
+      "new_version": 2,
+      "old_pin": "b3eb04a32ae731fc94ab6f513547b825b1f2adcb24e3d061b1831b1492b0bf60",
+      "new_pin": "de260547c181f0822855d9e499b794276e9ed6cc56a709a67fc1f89c899f85ab",
+      "changed_fields": [
+        "scope",
+        "body",
+        "objections",
+        "version"
+      ],
+      "before": {
+        "title": "常数incidence秩宽受限指派的PTAS",
+        "model": "restricted assignment p_ij∈{p_j,∞}；incidence图rankwidth为固定常数。",
+        "statement": "论文Theorem4给PTAS。连接类型≤2^k，固定尺寸种类d时计数DP为O(m2^k n^{O(d2^k)})；Rounding Lemma将一般尺寸归约到固定种类并以LST槽恢复小任务，给(1+ε)OPT。",
+        "quantifiers": "每个固定k及ε>0，全部该restricted实例；不要求原尺寸种类预先常数。",
+        "assumptions": [
+          "同任务各有限端时间相同",
+          "incidence rankwidth固定"
+        ],
+        "scope": "非一般异速UM；primal/dual rankwidth1的padding不替代此参数。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+          "sha256": "a842380d2ee484db652986c5d639fb5c1651cc7ca77dff67bac5e898381f4a85"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+            "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。",
+        "object_id": "M-3452046f3bdd47c48b17a0a3038ba4b2",
+        "version": 1,
+        "sources": [
+          "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      },
+      "after": {
+        "title": "常数incidence秩宽受限指派的PTAS",
+        "model": "restricted assignment p_ij∈{p_j,∞}；incidence图rankwidth为固定常数。",
+        "statement": "论文Theorem4给PTAS。连接类型≤2^k，固定尺寸种类d时计数DP为O(m2^k n^{O(d2^k)})；Rounding Lemma将一般尺寸归约到固定种类并以LST槽恢复小任务，给(1+ε)OPT。",
+        "quantifiers": "每个固定k及ε>0，全部该restricted实例；不要求原尺寸种类预先常数。",
+        "assumptions": [
+          "同任务各有限端时间相同",
+          "incidence rankwidth固定"
+        ],
+        "scope": "非一般异速UM；所述padding仅使dual成团、primal为原图的cone，不能据此把primal rankwidth压到1；该旁注不替代incidence参数。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+          "sha256": "b2ae90415d0b340c9c0039bf68005854f06b0da4acc35e0f44a22a97d2ebc5ed"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+            "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "第三阶段只定向复核PDF页12的padding、网格与尺寸计数：原构造仅使dual成团，primal是原图增加universal job，不能据此声称primal rankwidth为1；大任务网格为delta^2 B且尺寸数安全界为ceil(1/delta^2)+1。正文与scope已同步。Theorem4主incidence-rankwidth PTAS沿用成熟证明；本轮没有重新审读PDF页13–19或声称完整rankwidth DP重证，未运行旧数学程序。",
+        "object_id": "M-3452046f3bdd47c48b17a0a3038ba4b2",
+        "version": 2,
+        "sources": [
+          "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      }
+    }
+  ],
+  "canonical_incident_edges": [],
+  "affected_tasks_before_publication": [
+    {
+      "task_id": "unrelated-machines-3a-3a-777902a1e6f15125",
+      "state": "claimed",
+      "owner": "Boss2",
+      "core_ids": [
+        "M-20c5c28925d440e48d955b1293aaddb9"
+      ],
+      "affected_object_ids": [
+        "M-14dbe6980117492aa7a3b48c52378dcb"
+      ]
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-9a5cd2eb99c8ff5a",
+      "state": "claimed",
+      "owner": "Boss5",
+      "core_ids": [
+        "M-247deecec83946358afe4e89413a7bd1"
+      ],
+      "affected_object_ids": [
+        "M-14dbe6980117492aa7a3b48c52378dcb",
+        "M-247deecec83946358afe4e89413a7bd1"
+      ]
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-8e98a0bfdb34cc2a",
+      "state": "claimed",
+      "owner": "Boss6",
+      "core_ids": [
+        "M-2063376836194a818dc34becdb99cc88"
+      ],
+      "affected_object_ids": [
+        "M-2063376836194a818dc34becdb99cc88"
+      ]
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-d97d472e04065fc5",
+      "state": "available",
+      "owner": null,
+      "core_ids": [
+        "M-3452046f3bdd47c48b17a0a3038ba4b2"
+      ],
+      "affected_object_ids": [
+        "M-3452046f3bdd47c48b17a0a3038ba4b2"
+      ]
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-850a6179151b732e",
+      "state": "claimed",
+      "owner": "Boss6",
+      "core_ids": [
+        "M-14dbe6980117492aa7a3b48c52378dcb"
+      ],
+      "affected_object_ids": [
+        "M-14dbe6980117492aa7a3b48c52378dcb",
+        "M-247deecec83946358afe4e89413a7bd1"
+      ]
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-effdbb6d60f56b34",
+      "state": "available",
+      "owner": null,
+      "core_ids": [
+        "M-232414c2d8e744ccaba95138638a15dc"
+      ],
+      "affected_object_ids": [
+        "M-232414c2d8e744ccaba95138638a15dc"
+      ]
+    }
+  ],
+  "primary_sources_preserved": [
+    {
+      "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+      "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/graph-balancing.pdf",
+      "sha256": "a407bdbda09ea649f72454518f8dce526405fe7743a38abeb8ed499dee4918d5"
+    }
+  ],
+  "mathematical_review": [
+    "Treewidth is maximum bag size minus one; a single job and machine already falsifies the old unclipped clique formula. PDF7 Lemma9(6) uses check J; PDF9 and11 contain the separately disclosed inactive-machine/split/conservation omissions.",
+    "Rounding with q=delta B/n adds at most n q to each machine. For n=2,m=1,p1=p2=1,B=2,delta=3/10, rounded load 12/5 exceeds old cap 23/10; cap B+nq=13/5 is safe. PDF4 epsilon OPT error bound itself is correct, so it is not listed as an erratum.",
+    "Universal-job padding makes all machines adjacent, but keeps all old job nonedges; the old primal is an induced subgraph of the new cone. Its optimum-labelled new job is a mathematical padding observation, not an asserted polynomial reduction computing unknown OPT.",
+    "At positive threshold T, CONFIG marginal projection on equal-time degree-two instances satisfies Edge, Load and Star, so LP3/ROUND gives actual original-machine loads at most 7T/4. This is only a contribution to the general JR11/6 statement; asymmetric (1/k,1) jobs are outside the equal-time premise.",
+    "EKS three parallel 3/5 edges have integral optimum 6/5 while LP3 Star total capacity is 2 below Edge mass 3. This verifies FAIL excludes load 1, not load 7/4. Cycle rotation preserves weighted loads but can leave fractional forest edges.",
+    "Zero edges can be legally oriented and removed; loops/single-end jobs enter q; p>1 or q>1 precludes a unit-threshold orientation. The remaining rotation domain avoids division by zero."
+  ],
+  "actual_reading_scope": {
+    "structural_worker": "中文完整正文；primary PDF pp1-11 text + p12 through Lemma17 first half; visuals4,6,7,9,11,12; no claim of pp13-19 or full rankwidth proof re-audit",
+    "structural_root": "Full Chinese body, five affected records, complete proposed errata and worker derivation; direct PDF visual checks4,6,7,9,11,12. No claim of full pp13-19 reread.",
+    "graph_worker": "Full20-page primary PDF and complete Chinese body; extracted1015 LF lines/60327 bytes; visual pages6,11,13,14.",
+    "graph_root": "Full Chinese body, affected record, four replacement paragraphs and worker derivation; direct PDF visual checks6,11,13,14; independent exact three-parallel-edge and LP3 strengthening arguments."
+  },
+  "task_refresh_policy": "After atomic body/registry/new-baseline publication, native map-draft --repair-task refreshes all six existing unfinished task IDs, preserving current owners, cores and write scopes. Boss2 has only a shared FPTAS read changed and retains its unchanged Asahiro core. Both Boss6 workers resume their original drafts on the refreshed pins.",
+  "scientific_replays": 0
+}
