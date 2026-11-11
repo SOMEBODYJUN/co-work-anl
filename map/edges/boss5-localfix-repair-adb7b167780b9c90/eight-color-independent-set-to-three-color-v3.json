@@ -1,0 +1,55 @@
+{
+  "kind": "implies",
+  "status": "accepted",
+  "target_ids": [
+    "M-d007675a9ed240898c90e831af80b092"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "edge_id": "boss6-adb7-eight-color-independent-set-to-three-color-v3",
+  "source_ids": [
+    "M-922feb7b429f49d4b5f13ca51b34aae7"
+  ],
+  "conditions": "有限无向图；目标整数k≥3先固定。GS20 Lemma8所需源palette常数为C0(k)，先选固定整数C≥max{8,k,C0(k)}再选固定0<δ<1/C，调用八色小独立集硬度。arc变换次数和所有源参数在输入规模前固定；输出是归约后的图。",
+  "roles": {
+    "M-922feb7b429f49d4b5f13ca51b34aae7": "对任意固定δ给出完整8-colorable YES与α(G)/|V|<δ NO的NP-hard源promise；本调用取δ<1/C≤1/8。",
+    "M-d007675a9ed240898c90e831af80b092": "颜色类独立集桥支付non-C0(k)的源NO，GS20 Lemma8输出完整3-colorable对non-k-colorable的整个目标。"
+  },
+  "whole_result": "对每个预先固定整数k≥3，有限无向图上区分存在完整合法3-coloring与不存在合法k-coloring是NP-hard。",
+  "explanation": "固定目标k后，GS20 Lemma8对q=8给有限arc-graph链和固定源palette C0(k)。令C≥max{8,k,C0(k)}固定，再选固定0<δ<1/C调用源对象。YES图有完整8着色；若NO图有C着色，C个色类中有一个独立集大小≥|V|/C>δ|V|，矛盾。因此NO非C色，亦非C0(k)色，支付Lemma8源promise。其b(n)=binom(n,floor(n/2))的固定palette归约及4→3末段产生完整3色YES和non-k色NO。所有常数先固定，故归约多项式且全目标成立；无需把exact4对象加为本条共同前提。只迁移chromatic promise，未据此给三色小独立集gap。FMW Cor1.9的既有证明入口不受同页新增MZ Claim3.2段影响。",
+  "scope": "八色小独立集源到三色固定palette目标的独立完整蕴含；没有同图8→3断言、逐实例反向独立集桥、变量k或调度/SPE归约。",
+  "evidence": [
+    {
+      "path": "map/edges/boss5-localfix-repair-adb7b167780b9c90/review.md",
+      "sha256": "b0eeb3e07ef83537b3e34f6def319e75a027f8d2be6f3ad904610fe86fe98d14",
+      "section": "第二条完整关系：八色小独立集 gap 支付三色固定 palette 目标"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/四对一与字母表soundness两篇文献整理--文献.md",
+      "sha256": "6d5be138de6825a1208776cbb485316c5b0e9d197870e32ab7c1d8ca5cf2f746",
+      "section": "2.1 主定理与可直接引用的结论"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/comparison-proof.md",
+      "sha256": "ee2a7a2eb8567a1e9f3aaa37714d33d898948c79ebd0e20b9d93def3d1c58e5e",
+      "section": "三可着色图：完整目标"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/guruswami-sandeep-icalp2020.pdf",
+      "sha256": "1f7428d31ae66a1d6488444fa117b1265fd0cf305dbd237387961f7f2b0a97f4"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "完整实读当前三对象v3记录与pins、旧receipt/review/ledger、两canonical proof-bearing字段、当前正文和成熟comparison-proof全文；历史FMW Cor1.9及GS20十二页阅读明确继承，不写成本轮重新PDF审读。核固定k→C≥max(8,k,C0)→δ<1/C的量词、颜色类严格NO界、Lemma8输出整个目标和独立支持。精确source delta只修MZ另一证明，未引入本条条件。旧v2 bindings不沿用，Root应对本独立新ID完成当前bind/check。 Root完整审读最终review、两条whole推导及收据，复核固定k→C0(k)→C→δ→PCP参数顺序、exact4完美源和多重图、颜色类严格NO及两证明独立充分性；MZ增量不参与本链。",
+  "endpoint_pins": {
+    "M-922feb7b429f49d4b5f13ca51b34aae7": "9d9c5ff02a494c05d6cd44d8a20732d81d72852f26938f3bee195c24192887be",
+    "M-d007675a9ed240898c90e831af80b092": "568c2356602c664bf481424bd361d25375f32b1d853c9f21952c4237a96092b5"
+  },
+  "evidence_pins": {
+    "map/edges/boss5-localfix-repair-adb7b167780b9c90/review.md": "b0eeb3e07ef83537b3e34f6def319e75a027f8d2be6f3ad904610fe86fe98d14",
+    "archives/unrelated-machines/state/文献/四对一与字母表soundness两篇文献整理--文献.md": "6d5be138de6825a1208776cbb485316c5b0e9d197870e32ab7c1d8ca5cf2f746",
+    "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/comparison-proof.md": "ee2a7a2eb8567a1e9f3aaa37714d33d898948c79ebd0e20b9d93def3d1c58e5e",
+    "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/guruswami-sandeep-icalp2020.pdf": "1f7428d31ae66a1d6488444fa117b1265fd0cf305dbd237387961f7f2b0a97f4"
+  },
+  "review_digest": "06154983cd5f8caf59b7ad2599e90f5a4aac1aff1d9d27b78f65926ba7ec9b78"
+}
