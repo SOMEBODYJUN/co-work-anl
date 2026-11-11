@@ -1,0 +1,46 @@
+{
+  "edge_id": "cag-a9eda610-fresh-protection-certifies-fixed-suffix",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "kind": "specializes",
+  "source_ids": [
+    "M-3ef821ac4c2f4acc961f098e4973c094"
+  ],
+  "target_ids": [
+    "customer-attraction/bounded-suffix-security-insufficient-for-half"
+  ],
+  "conditions": "固定目标弱尾族：k≥1，m≥2k+1，n=m−k、L=k+1；不交E大小n，m个不交Q_j各L，目标E^n Q1…Qk。目标前n位各u_i=1、W=m+k²、OPT=(k+2)m−2k−1、G=OPT−2W=k(m−2k−2)−1。",
+  "roles": {
+    "M-3ef821ac4c2f4acc961f098e4973c094": "提供不需非储备动作共同上界的fresh保护及其严格降人数归纳；在固定E前缀的Q储备闭合族中实例化。",
+    "customer-attraction/bounded-suffix-security-insufficient-for-half": "固定E^n后的指定fresh-Q完整尾SPE这一实际证明步骤；其它覆盖/保底计算独立。"
+  },
+  "explanation": "固定k≥1、m≥2k+1、n=m−k、L=k+1，E大小n、m个互不交Q各L。固定E^n后，对尾部全部合法有序历史取Q为储备；每动作至多触一块、pure Q合法、旧Q触及动作即时≤L/2<L，E不碰Q。尾历史已走d<k步，fresh Q至少m−d≥k−d，合法动作后仍保持余fresh足数；闭合域与fresh合同全部满足。此域又有E即时≤n/(n+1)<1<L及全部Q即时≤L，因此每份真尾SPE每人恰L、从不再碰已用Q。对指定“每节点选尚未出现的最小Q”规则，从末位严格向前归纳：孩子上的同规则先由归纳完整可信；当前指定freshQ后后继仍挑其它freshQ，当前独享L；改另一freshQ仍L、改旧Q至多L/2、改E至多n/(n+1)<L。故指定策略在固定前缀后的所有有序尾历史确为完整k人SPE。再核早位最后E玩家真改freshQ后的所有真child：余k人且fresh m−1≥k，fresh保护不需要E即时≤L，迫所有后继避开被强制的Q，偏离者恰L>1，故形式整树不能为SPE。这是target尾SPE及其准确非SPE边界的证明，不是把SPE保护下界反读成任意策略可信。成本比较仅作接续说明：任意早位i≤n真改freshQ后同理对全部child独享L，故最低菜单δ_i≥k、R≥nk、D≥k；uniform j=n成本与G的差至少k(m+3)+1，shared合法g≥k且成本与G差至少k(2m+2k−1)+1，最低菜单异质2R+D亦有前一下界。这些成本结论不作为目标原陈述的逻辑支持，留在coverage的应用比较。",
+  "contribution": {
+    "result": "在固定E^n前缀后，正文“每个有序尾历史选尚未出现的最小Q”规则是完整k人纯SPE，各尾角色利润L=k+1；并且最后早位E真改freshQ在每份真child下均得L>1，所以该形式整树非SPE。",
+    "remaining": "目标W=m+k²、OPT=(k+2)m−2k−1、早期逐题最坏分母保底及正half缺口的算术仍由目标正文另证；本边不将新增修复成本比较冒充原目标证明，也不证明一般可信菜单预算。"
+  },
+  "scope": "目标原陈述的固定k尾完整SPE实际步骤及其非SPE适用边界；half-gap修复成本只作已核接续比较。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/新鲜储备的真实尾部保护与旧独占负信用门槛--引理.md",
+      "sha256": "ef7a98508fcd9f990cf751f26ecfc75a6287fdf3bdd992f685fb30bb05052ed3",
+      "section": "物理fresh块的条件合同"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/固定尾深最坏保底不足半覆盖--障碍.md",
+      "sha256": "b3740df027153dce7bef0918174a0699b506a0b77fab5e3ce54601f28bbf451b"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "完整核对所有合法尾历史的fresh容量、纯块/一动作一块/旧块严格次优与E收益；用降人数构造指定尾SPE，未从“任意SPE受保护”逆推任意策略为SPE。成本排除只列应用比较，不计作target原定理步骤。",
+  "endpoint_pins": {
+    "M-3ef821ac4c2f4acc961f098e4973c094": "6965d23aec43eb77a7bbcc0762599cf7babb2870ae7004960915c58fd0d01e4a",
+    "customer-attraction/bounded-suffix-security-insufficient-for-half": "bf371c2ca87c1275381af43cd04311ca1dfbfa9ac39c192b636eedd03072b11b"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/新鲜储备的真实尾部保护与旧独占负信用门槛--引理.md": "ef7a98508fcd9f990cf751f26ecfc75a6287fdf3bdd992f685fb30bb05052ed3",
+    "archives/customer-attraction/state/障碍/固定尾深最坏保底不足半覆盖--障碍.md": "b3740df027153dce7bef0918174a0699b506a0b77fab5e3ce54601f28bbf451b"
+  },
+  "review_digest": "568a869bc9e06273c149aed081b601bb850faf9220913f01c46f43929f0166d6"
+}

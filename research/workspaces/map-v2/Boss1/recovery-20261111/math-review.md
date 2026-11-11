@@ -83,3 +83,9 @@ Boss逐条实读aa8e包五边的全部条件/解释/whole或contribution，并�
 Boss已实读ac349包15边的全部数学文字、20核覆盖和两条follow-up处置，核对关键目标原句；完整实读需求递推/分数需求、F/G及合法前缀P的共同正文，重新核算法主证明与两族末对精确式。11条逻辑边保8 whole/3 contribution，4条有限checks/cites保context。分数到整数只在z为比较索引次数、tau=m时专化；源分数查询全客户未截断，整数截O查询单独支付。严格六人坏例对每个最优元组必要，half充分条件只需存在一个有利元组，二者量词不混。F≥G逐席并经第r大单调性传递，P在Q取actual遗漏私有子块且b|Q=0时专化；两入口不额外领取第二份W。
 
 两近二族的末对支付只给一般PAY已完成的子类；完整path-cut和可信菜单共同ALL支付max/min表示，非全输入符号。经典m2单列G=−1，负首步n4合并b1后G=−59/15；解析符号由原式非负项和人数范围承担，少量有理校准不是新全树计算。两follow-up只关闭可信菜单与原PAY/路径表示的实际比较，普遍PAY仍在remaining。124例三席F>G但rank全相等，精确差13/6仅针对G与旧max；其它有限owner语境不升级为逻辑推导。全部最终文件SHA与收据一致。
+
+## 真尾/共享租金包的最终复核
+
+Boss逐条实读a9eda最终六条新边及七资产15核收据。fresh→C-then-D的作者精确式和独立弱上界保两个完整入口；末位d≥x/2和H≥a+x/2先付，最后C改A后fresh真尾使两个B再触X不可能，从而a≤x/2。R22→shared只支付同合同成本比较及g0逆拼，未声称推出shared全部保险构造或异质层。负独占信用的all-big下界和交叠真SPE上界以一条ALL迁移到仅放开f(b,0)的模板，n16差−4/15及极限−5/6准确。P7的有向菜单取代为3×(7+7+13)+13=94、固定查询为45+15=60，indexed保各真背景。
+
+原草稿曾把新增修复成本当作弱尾目标的贡献，已交原worker改正并删除两份未交草稿。最终fresh→fixed-suffix只证明实际k尾completeSPE和早位非SPE，福利/OPT及robust floors留remaining；已独立核的三成本比较只留explanation/coverage。复用E/J2边保持精确canonical SHA。八isolated对象逐一保同叶/跨前缀、静态/真reset、有限取等/全锥、signed/非负客户等实际缺口；统一模型源v3已经精确重读并刷新原任务。全七资产SHA与收据一致。

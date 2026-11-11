@@ -1,0 +1,51 @@
+{
+  "edge_id": "cag-a9eda610-released-exclusive-credit-negative-threshold",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "kind": "transfers",
+  "source_ids": [
+    "M-269bc87834564b3aa68a9116271d78bf",
+    "CA-PREFIX-BALANCE-NO"
+  ],
+  "target_ids": [
+    "M-e39117bc24ae48adaba9e454a64f666b"
+  ],
+  "conditions": "保留同一实例/目录/规模无关函数族C_r=Σf_r(b_x,c_x)、f_r(0,c)=0及尾安全F_r≤2P+C、父子递推Δ+C_child−C_parent≤2u；仅放开原模板f_r(b,0)=0。同n≥16取r=n−1，两族均为原单位客户完整SPE。",
+  "roles": {
+    "M-269bc87834564b3aa68a9116271d78bf": "提供all-big和交叠两真SPE族的精确剩余利润及原上下界证明；本迁移保留其两条数值压力，不照搬零独占项假设。",
+    "CA-PREFIX-BALANCE-NO": "为交叠族A B^(n−1)的全部有序历史SPE和单位客户incidence作承重前提；其总覆盖补全F不被拿来替代剩余利润。",
+    "M-e39117bc24ae48adaba9e454a64f666b": "放开旧独占信用后仍必要的f_(n−1)(1,0)≤U_n−L_n及n16/极限结论。"
+  },
+  "explanation": "模型、n和负载变量恒等映射。all-big目录为n客户A及n−1个不交单例，全历史恒A：规定利润n/(过去A+剩余人数)≥1，改单例≤1，故完整SPE。第一A后n个(1,n−1)客户；尾最优利润max_(0≤k≤n−1)[nk/(k+1)+n−1−k]=2n−h_n，h_n=min整数(j+n/j)，实际P=n−1，尾安全给f_(n−1)(1,n−1)≥(2−h_n)/n=L_n。交叠族的全历史可信性由CA-PREFIX-BALANCE-NO保证；用O的剩余利润精确消元而非总覆盖补全，根2u+Ftail−OPT=(23−5n)/6−2/n。首A后恰n−1个共享(1,n−1)与n−1个旧独占(1,0)，其余b=0信用为零；根信用因f(0,c)=0为零，父子递推故给f_(n−1)(1,n−1)+f_(n−1)(1,0)≤U_n=[(23−5n)/6−2/n]/(n−1)。相减即目标必要负门槛；这是把原零独占矛盾改成显式独占项约束的证明迁移。n16：h16=8、L16=−3/8、U16=−77/120，差−4/15。2√n≤h_n≤2√n+1给L_n→0，U_n→−5/6，故差趋−5/6。允许f(1,0)负只通过此必要压力，不证明存在满足所有合同的函数。",
+  "whole_result": "仅放开旧模板f_r(b,0)=0而保其它共同合同后，所有这样的通用f必须对每n≥16满足f_(n−1)(1,0)≤U_n−L_n；n16给f15(1,0)≤−4/15，右端趋−5/6。完整迁移只给必要条件，不给信用充分性或half结论。",
+  "scope": "同一通用可加逐客户信用模板的必要条件；不排除目录/实例依赖、非可加或不同合同。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/最优剩余利润的局部系数与共享负载信用--障碍.md",
+      "sha256": "905b75ff5eca8aaf37b6056228bdf31c12cfbb88ce424a6937d052ec0ce35048"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/任意人数首步补全余额--反例.md",
+      "sha256": "b42e57e311686c2d737d6ade6642efaa05caa28dded02c9cf035ef0ed9c70072"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/新鲜储备的真实尾部保护与旧独占负信用门槛--引理.md",
+      "sha256": "ef7a98508fcd9f990cf751f26ecfc75a6287fdf3bdd992f685fb30bb05052ed3",
+      "section": "共享负载信用模板的负门槛"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "完整实读本包核心陈述、实际证明和相关共享依赖，逐项核对域、全部有序历史、真实后继、逻辑方向及整句/局部贡献；未把历史有限PASS当本轮新证明。",
+  "endpoint_pins": {
+    "CA-PREFIX-BALANCE-NO": "4d500022638bb5dcc117edeace66f673af98737256c72c9ebf3217ac49949bb1",
+    "M-269bc87834564b3aa68a9116271d78bf": "62db2df3f04776740dd56897eef2d5e89429947f3954385eeb717660aa1fb82a",
+    "M-e39117bc24ae48adaba9e454a64f666b": "d8b9cf3ca381226b2785ed9ab1093f01f622da5efce8e7299e9d865709761535"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/最优剩余利润的局部系数与共享负载信用--障碍.md": "905b75ff5eca8aaf37b6056228bdf31c12cfbb88ce424a6937d052ec0ce35048",
+    "archives/customer-attraction/state/反例/任意人数首步补全余额--反例.md": "b42e57e311686c2d737d6ade6642efaa05caa28dded02c9cf035ef0ed9c70072",
+    "archives/customer-attraction/state/引理/新鲜储备的真实尾部保护与旧独占负信用门槛--引理.md": "ef7a98508fcd9f990cf751f26ecfc75a6287fdf3bdd992f685fb30bb05052ed3"
+  },
+  "review_digest": "6f8c5e507dbaca0f2c4f0aabd56a16819acbba4a36260d3ad0cce5bdc50fd042"
+}
