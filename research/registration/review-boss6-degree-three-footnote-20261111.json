@@ -1,0 +1,586 @@
+{
+  "reviewed_by": "Boss6",
+  "kind": "minimal source and registration clarification; stable claims and IDs",
+  "source_review": {
+    "path": "research/workspaces/map-v2/Boss6/current-run/pcsp-pending-math-review.json",
+    "sha256": "78e1b6bd7368306dc200ff507b29511e486e8ebb09d6162f7944d4d4c9c11fd9"
+  },
+  "body": {
+    "path": "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+    "old_sha256": "b78fd89e77a417f19d4d56977d9c94fb473e9441a611b64c9ca864394e17dc8f",
+    "new_sha256": "a0d8bb0b5261e46ef6843a1e2c9bb812393f22953129ffba03313e0c16b5fb36",
+    "before": "1. **Degree reduction**（Theorem 2.4）：任意 MaxMin1 实例可通过链式虚拟玩家/物品 gadget 变成大小至多 `mn` 的 `DegreeThree` 实例；每个高阶物品的副本中只有一个副本可服务原玩家。该等价保持多项式规模，但额外玩家会影响精确近似比的常数解释。",
+    "after": "1. **Degree reduction**（Theorem 2.4）：对任意非负加性 MaxMin 实例及给定正阈值 `t>0`，逐物品副本与链式 helper 可构造 `O(mn)` 规模的 `DegreeThree` 实例，正阈值可行性及原玩家分配见证可双向恢复；每个高阶旧物品至多一副本服务原玩家。helper 的无限价值可在该固定阈值截为 `t`；新增玩家须计入规模和依赖玩家数的近似保证。"
+  },
+  "object_changes": [
+    {
+      "object_id": "M-210d4539a60c44ada74183ed5465c10e",
+      "old_version": 2,
+      "new_version": 3,
+      "old_pin": "7ffe184c2d3dd2b342a0d71cf4a1615b96655eb664f43b7f0637f5ca2db7a8b2",
+      "new_pin": "88395c7506fda3009040374cfb5b5045dcbdb8f0952e63668ba45dbcefeaf0ce",
+      "changed_fields": [
+        "body",
+        "version"
+      ],
+      "before": {
+        "title": "有限PCSP模板的minion同态逆向复杂度归约",
+        "model": "有限PCSP模板(A_i,B_i)，M_i=Pol(A_i,B_i)，minor保持同态。",
+        "statement": "若存在minion homomorphism M1→M2，则PCSP(A2,B2)在logspace归约到PCSP(A1,B1)。minor条件、free structure与pp构造为论文中的等价接口。",
+        "quantifiers": "任意两固定有限模板；方向为后模板问题归约到前模板问题。",
+        "assumptions": [
+          "存在保持所有minor的映射",
+          "合法有限PCSP模板"
+        ],
+        "scope": "论文Theorem3.1及其完整证明；不把一般PCSP分类称已完成。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "sha256": "b78fd89e77a417f19d4d56977d9c94fb473e9441a611b64c9ca864394e17dc8f"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/algebraic_pcsp.pdf",
+            "sha256": "9c2c8d16c804c440cb7bbd15d8be68fce8b212722f5db284a4633b7d92bc1394"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。定向重读primary提取文本Theorem3.1核方向；概述中未精确定量的其他硬度不由本对象自动承诺。",
+        "object_id": "M-210d4539a60c44ada74183ed5465c10e",
+        "version": 2,
+        "sources": [
+          "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      },
+      "after": {
+        "title": "有限PCSP模板的minion同态逆向复杂度归约",
+        "model": "有限PCSP模板(A_i,B_i)，M_i=Pol(A_i,B_i)，minor保持同态。",
+        "statement": "若存在minion homomorphism M1→M2，则PCSP(A2,B2)在logspace归约到PCSP(A1,B1)。minor条件、free structure与pp构造为论文中的等价接口。",
+        "quantifiers": "任意两固定有限模板；方向为后模板问题归约到前模板问题。",
+        "assumptions": [
+          "存在保持所有minor的映射",
+          "合法有限PCSP模板"
+        ],
+        "scope": "论文Theorem3.1及其完整证明；不把一般PCSP分类称已完成。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "sha256": "a0d8bb0b5261e46ef6843a1e2c9bb812393f22953129ffba03313e0c16b5fb36"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/algebraic_pcsp.pdf",
+            "sha256": "9c2c8d16c804c440cb7bbd15d8be68fce8b212722f5db284a4633b7d92bc1394"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。定向重读primary提取文本Theorem3.1核方向；概述中未精确定量的其他硬度不由本对象自动承诺。",
+        "object_id": "M-210d4539a60c44ada74183ed5465c10e",
+        "version": 3,
+        "sources": [
+          "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      }
+    },
+    {
+      "object_id": "M-90610eea6c6447188c03208eaa549254",
+      "old_version": 2,
+      "new_version": 3,
+      "old_pin": "f96504001b2687bb14d1a02310621b871caf0d2008e4b54694e9a76fc09d55d5",
+      "new_pin": "b93158b8dfb521bc935ec5f078fea108272e0a89049ee55cb7fa61cb65d1b475",
+      "changed_fields": [
+        "body",
+        "version"
+      ],
+      "before": {
+        "title": "InfDegreeOne的配置松弛n六分之一次幂间隙",
+        "model": "论文InfDegreeOne加性MaxMin：每物品无限价值端数≤1。",
+        "statement": "存在该类参数化家族，其M-LP/配置LP积分间隙为Ω(n^{1/6})，n为玩家数。",
+        "quantifiers": "存在参数化有限家族，n为玩家数；不声称每实例均有该差距。",
+        "assumptions": [
+          "按论文无限/有限值的阈值规范化",
+          "相应InfDegree端点界"
+        ],
+        "scope": "同论文两结构参数子类的间隙族；完整构造在primary。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "sha256": "b78fd89e77a417f19d4d56977d9c94fb473e9441a611b64c9ca864394e17dc8f"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/maxmin.pdf",
+            "sha256": "7f7b21ff08b37e8489e9f60527e9aa9458dc5cf4cd6cc6804869665c24d51f7f"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。",
+        "object_id": "M-90610eea6c6447188c03208eaa549254",
+        "version": 2,
+        "sources": [
+          "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      },
+      "after": {
+        "title": "InfDegreeOne的配置松弛n六分之一次幂间隙",
+        "model": "论文InfDegreeOne加性MaxMin：每物品无限价值端数≤1。",
+        "statement": "存在该类参数化家族，其M-LP/配置LP积分间隙为Ω(n^{1/6})，n为玩家数。",
+        "quantifiers": "存在参数化有限家族，n为玩家数；不声称每实例均有该差距。",
+        "assumptions": [
+          "按论文无限/有限值的阈值规范化",
+          "相应InfDegree端点界"
+        ],
+        "scope": "同论文两结构参数子类的间隙族；完整构造在primary。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "sha256": "a0d8bb0b5261e46ef6843a1e2c9bb812393f22953129ffba03313e0c16b5fb36"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/maxmin.pdf",
+            "sha256": "7f7b21ff08b37e8489e9f60527e9aa9458dc5cf4cd6cc6804869665c24d51f7f"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。",
+        "object_id": "M-90610eea6c6447188c03208eaa549254",
+        "version": 3,
+        "sources": [
+          "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      }
+    },
+    {
+      "object_id": "M-a9534c70ffa74fca9a91cd270468de3f",
+      "old_version": 2,
+      "new_version": 3,
+      "old_pin": "50bb3457ac2657d6421b296aa0bfa5971b4bda331cb19b244c13f0ee6420e6c1",
+      "new_pin": "608415f3a648158ae4b612cc7a9f2e21699ee3b73ef786908e0f40654b33fb44",
+      "changed_fields": [
+        "model",
+        "statement",
+        "quantifiers",
+        "assumptions",
+        "body",
+        "version"
+      ],
+      "before": {
+        "title": "MaxMin正阈值的DegreeThree保值链式降度",
+        "model": "一般不可分物品非负加性MaxMin，n玩家m物品；正阈值归一化MaxMin1。",
+        "statement": "论文Theorem2.4用逐物品副本及链式helper将MaxMin1转成大小至多mn的DegreeThree实例，正阈值可行性双向恢复；高阶旧物品至多一副本服务原玩家。",
+        "quantifiers": "对每个显式MaxMin1实例的阈值判定及见证；不越过归一化目标域声称任意目标相等。",
+        "assumptions": [
+          "非负加性估值",
+          "按论文MaxMin1定义/目标1"
+        ],
+        "scope": "Degree≤3的有限归约工具，新增helper玩家计入大小与目标。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "sha256": "b78fd89e77a417f19d4d56977d9c94fb473e9441a611b64c9ca864394e17dc8f"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/maxmin.pdf",
+            "sha256": "7f7b21ff08b37e8489e9f60527e9aa9458dc5cf4cd6cc6804869665c24d51f7f"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。",
+        "object_id": "M-a9534c70ffa74fca9a91cd270468de3f",
+        "version": 2,
+        "sources": [
+          "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      },
+      "after": {
+        "title": "MaxMin正阈值的DegreeThree保值链式降度",
+        "model": "一般不可分物品非负加性MaxMin，n玩家m物品；给定正阈值t>0的可行性与分配见证。",
+        "statement": "论文Theorem2.4用逐物品副本及链式helper将给定正阈值t>0的非负加性MaxMin实例转成O(mn)规模的DegreeThree实例，正阈值可行性及原玩家分配见证双向恢复；每个高阶旧物品至多一副本服务原玩家，helper的无限价值可在该固定阈值截为t。",
+        "quantifiers": "对每个显式非负加性MaxMin实例、每个给定正阈值t>0及相应分配见证；仅主张该阈值合同，不据此声称任意目标值相等。",
+        "assumptions": [
+          "非负加性估值，物品不可分且单归属",
+          "固定正阈值t>0；helper价值按该阈值取t（文献以∞记）"
+        ],
+        "scope": "Degree≤3的有限归约工具，新增helper玩家计入大小与目标。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "sha256": "a0d8bb0b5261e46ef6843a1e2c9bb812393f22953129ffba03313e0c16b5fb36"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/maxmin.pdf",
+            "sha256": "7f7b21ff08b37e8489e9f60527e9aa9458dc5cf4cd6cc6804869665c24d51f7f"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。",
+        "object_id": "M-a9534c70ffa74fca9a91cd270468de3f",
+        "version": 3,
+        "sources": [
+          "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      }
+    },
+    {
+      "object_id": "M-aa8493282cc64a7ca8ec31430eb5e8af",
+      "old_version": 2,
+      "new_version": 3,
+      "old_pin": "d2d2a9536b8a1a02c4a96d192c15da83188190a0f2b21bfa3538c365238e65d2",
+      "new_pin": "744e82f6dc08ae52f2228358b8e98c308aaf6293629634d42511e79013d9192b",
+      "changed_fields": [
+        "body",
+        "version"
+      ],
+      "before": {
+        "title": "投影博弈的Dinur–Steurer平行重复界",
+        "model": "有限两玩家投影博弈G、通常独立k次平行重复。",
+        "statement": "val(G)≤ρ时val(G^{⊗k})≤(2sqrtρ/(1+ρ))^{k/2}；高值1−ε给≤(1−ε²/16)^k，小值给≤(4ρ)^{k/4}。不主张普通val直接乘法。",
+        "quantifiers": "所有投影博弈与整数k≥1及对应ρ∈(0,1]。",
+        "assumptions": [
+          "投影约束",
+          "通常独立平行重复"
+        ],
+        "scope": "论文Theorem1.1及其推论；非投影/多人不自动适用。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "sha256": "b78fd89e77a417f19d4d56977d9c94fb473e9441a611b64c9ca864394e17dc8f"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/parallel_repetition.pdf",
+            "sha256": "7a7d2fcb62e173dabed10d69faa1e522055a811a228b707ab94f3e88b28dfdd5"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。定向核primary Theorem1.1。概述另写Theorem1.8的φ(x)=2x/(1+x)有漏根号；primary为2sqrt(x)/(1+x)，本对象不继承该错误中间式。",
+        "object_id": "M-aa8493282cc64a7ca8ec31430eb5e8af",
+        "version": 2,
+        "sources": [
+          "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      },
+      "after": {
+        "title": "投影博弈的Dinur–Steurer平行重复界",
+        "model": "有限两玩家投影博弈G、通常独立k次平行重复。",
+        "statement": "val(G)≤ρ时val(G^{⊗k})≤(2sqrtρ/(1+ρ))^{k/2}；高值1−ε给≤(1−ε²/16)^k，小值给≤(4ρ)^{k/4}。不主张普通val直接乘法。",
+        "quantifiers": "所有投影博弈与整数k≥1及对应ρ∈(0,1]。",
+        "assumptions": [
+          "投影约束",
+          "通常独立平行重复"
+        ],
+        "scope": "论文Theorem1.1及其推论；非投影/多人不自动适用。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "sha256": "a0d8bb0b5261e46ef6843a1e2c9bb812393f22953129ffba03313e0c16b5fb36"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/parallel_repetition.pdf",
+            "sha256": "7a7d2fcb62e173dabed10d69faa1e522055a811a228b707ab94f3e88b28dfdd5"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。定向核primary Theorem1.1。概述另写Theorem1.8的φ(x)=2x/(1+x)有漏根号；primary为2sqrt(x)/(1+x)，本对象不继承该错误中间式。",
+        "object_id": "M-aa8493282cc64a7ca8ec31430eb5e8af",
+        "version": 3,
+        "sources": [
+          "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      }
+    },
+    {
+      "object_id": "M-b126c4b3ff29400589f7f38abdca4d85",
+      "old_version": 2,
+      "new_version": 3,
+      "old_pin": "b9c325c725c95dbe0cd1c4f5be1b20808133132bcb9c0e7b216a55b60278cf60",
+      "new_pin": "290a361d6679820d0f4564c518bb120fd486835a7bf8cd08e6660438cf690029",
+      "changed_fields": [
+        "body",
+        "version"
+      ],
+      "before": {
+        "title": "InfDegreeTwo的配置松弛n四分之一次幂间隙",
+        "model": "论文InfDegreeTwo加性MaxMin：每物品无限价值端数≤2。",
+        "statement": "存在该类参数化家族，其M-LP/配置LP积分间隙为Ω(n^{1/4})，n为玩家数。",
+        "quantifiers": "存在参数化有限家族，n为玩家数；不声称每实例均有该差距。",
+        "assumptions": [
+          "按论文无限/有限值的阈值规范化",
+          "相应InfDegree端点界"
+        ],
+        "scope": "同论文两结构参数子类的间隙族；完整构造在primary。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "sha256": "b78fd89e77a417f19d4d56977d9c94fb473e9441a611b64c9ca864394e17dc8f"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/maxmin.pdf",
+            "sha256": "7f7b21ff08b37e8489e9f60527e9aa9458dc5cf4cd6cc6804869665c24d51f7f"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。",
+        "object_id": "M-b126c4b3ff29400589f7f38abdca4d85",
+        "version": 2,
+        "sources": [
+          "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      },
+      "after": {
+        "title": "InfDegreeTwo的配置松弛n四分之一次幂间隙",
+        "model": "论文InfDegreeTwo加性MaxMin：每物品无限价值端数≤2。",
+        "statement": "存在该类参数化家族，其M-LP/配置LP积分间隙为Ω(n^{1/4})，n为玩家数。",
+        "quantifiers": "存在参数化有限家族，n为玩家数；不声称每实例均有该差距。",
+        "assumptions": [
+          "按论文无限/有限值的阈值规范化",
+          "相应InfDegree端点界"
+        ],
+        "scope": "同论文两结构参数子类的间隙族；完整构造在primary。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "sha256": "a0d8bb0b5261e46ef6843a1e2c9bb812393f22953129ffba03313e0c16b5fb36"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/maxmin.pdf",
+            "sha256": "7f7b21ff08b37e8489e9f60527e9aa9458dc5cf4cd6cc6804869665c24d51f7f"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。",
+        "object_id": "M-b126c4b3ff29400589f7f38abdca4d85",
+        "version": 3,
+        "sources": [
+          "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      }
+    },
+    {
+      "object_id": "M-de7aec4bd7c24b0f9dc342c483c4a75e",
+      "old_version": 2,
+      "new_version": 3,
+      "old_pin": "182e9b12b8ce755ebd8d8f9d0ccce92434319c04212370bede9089fbedf5bca6",
+      "new_pin": "dc433f81a5ec38885a9666f9dadbf2e7adf6f91d9422b60af76704fe9d0a4d24",
+      "changed_fields": [
+        "body",
+        "version"
+      ],
+      "before": {
+        "title": "DegreeTwo对称MaxMin的严格二因子硬度",
+        "model": "DegreeTwo加性MaxMin，甚至每物品两端正估值相同。",
+        "statement": "论文Theorem3.1的SAT归约使YES最小效用2、NO至多1，因此除非P=NP，不存在任意固定优于2的多项式近似。",
+        "quantifiers": "对每个固定近似因子c<2的算法排除。",
+        "assumptions": [
+          "P≠NP",
+          "论文指定SAT归约域"
+        ],
+        "scope": "DegreeTwo特殊类的复杂度下界，非UM makespan或SPE。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "sha256": "b78fd89e77a417f19d4d56977d9c94fb473e9441a611b64c9ca864394e17dc8f"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/maxmin.pdf",
+            "sha256": "7f7b21ff08b37e8489e9f60527e9aa9458dc5cf4cd6cc6804869665c24d51f7f"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。",
+        "object_id": "M-de7aec4bd7c24b0f9dc342c483c4a75e",
+        "version": 2,
+        "sources": [
+          "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      },
+      "after": {
+        "title": "DegreeTwo对称MaxMin的严格二因子硬度",
+        "model": "DegreeTwo加性MaxMin，甚至每物品两端正估值相同。",
+        "statement": "论文Theorem3.1的SAT归约使YES最小效用2、NO至多1，因此除非P=NP，不存在任意固定优于2的多项式近似。",
+        "quantifiers": "对每个固定近似因子c<2的算法排除。",
+        "assumptions": [
+          "P≠NP",
+          "论文指定SAT归约域"
+        ],
+        "scope": "DegreeTwo特殊类的复杂度下界，非UM makespan或SPE。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "sha256": "a0d8bb0b5261e46ef6843a1e2c9bb812393f22953129ffba03313e0c16b5fb36"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/maxmin.pdf",
+            "sha256": "7f7b21ff08b37e8489e9f60527e9aa9458dc5cf4cd6cc6804869665c24d51f7f"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。",
+        "object_id": "M-de7aec4bd7c24b0f9dc342c483c4a75e",
+        "version": 3,
+        "sources": [
+          "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      }
+    },
+    {
+      "object_id": "M-e52574ff126d4b128f222053c97bf596",
+      "old_version": 2,
+      "new_version": 3,
+      "old_pin": "522c507dae5a4c578c5ab53b17ff1efab5887f833dc809403915c0927eac5025",
+      "new_pin": "eff19fc84cf112c156c8fc3228f91b9cc55f928a88b6b3bc21fd9c5a2094130f",
+      "changed_fields": [
+        "body",
+        "version"
+      ],
+      "before": {
+        "title": "DegreeTwo加性MaxMin四近似",
+        "model": "每件物品至多对两玩家有正值的不可分加性MaxMin；允许两端异值。",
+        "statement": "M-LP、大小物品分解与树组件舍入在多项式时间输出每玩家效用至少OPT/4的实际分配。",
+        "quantifiers": "全部DegreeTwo输入，同一分配同时保证所有玩家。",
+        "assumptions": [
+          "每物品正值玩家数≤2",
+          "论文有限编码估值"
+        ],
+        "scope": "BCG的DegreeTwo算法，非restricted Santa四加精度算法。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "sha256": "b78fd89e77a417f19d4d56977d9c94fb473e9441a611b64c9ca864394e17dc8f"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/maxmin.pdf",
+            "sha256": "7f7b21ff08b37e8489e9f60527e9aa9458dc5cf4cd6cc6804869665c24d51f7f"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。",
+        "object_id": "M-e52574ff126d4b128f222053c97bf596",
+        "version": 2,
+        "sources": [
+          "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      },
+      "after": {
+        "title": "DegreeTwo加性MaxMin四近似",
+        "model": "每件物品至多对两玩家有正值的不可分加性MaxMin；允许两端异值。",
+        "statement": "M-LP、大小物品分解与树组件舍入在多项式时间输出每玩家效用至少OPT/4的实际分配。",
+        "quantifiers": "全部DegreeTwo输入，同一分配同时保证所有玩家。",
+        "assumptions": [
+          "每物品正值玩家数≤2",
+          "论文有限编码估值"
+        ],
+        "scope": "BCG的DegreeTwo算法，非restricted Santa四加精度算法。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "sha256": "a0d8bb0b5261e46ef6843a1e2c9bb812393f22953129ffba03313e0c16b5fb36"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/maxmin.pdf",
+            "sha256": "7f7b21ff08b37e8489e9f60527e9aa9458dc5cf4cd6cc6804869665c24d51f7f"
+          }
+        ],
+        "truth_status": "proved",
+        "kind": "theorem",
+        "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。",
+        "object_id": "M-e52574ff126d4b128f222053c97bf596",
+        "version": 3,
+        "sources": [
+          "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+          "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
+        ]
+      }
+    }
+  ],
+  "canonical_incident_edges": [],
+  "affected_tasks_before_publication": [
+    {
+      "task_id": "unrelated-machines-3a-3a-5dc2951cac9e00c5",
+      "state": "claimed",
+      "owner": "Boss4",
+      "affected_object_ids": [
+        "M-aa8493282cc64a7ca8ec31430eb5e8af"
+      ]
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-9a8dd2493600ac1c",
+      "state": "available",
+      "owner": null,
+      "affected_object_ids": [
+        "M-90610eea6c6447188c03208eaa549254"
+      ]
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-9ac280b0cc4ae67d",
+      "state": "available",
+      "owner": null,
+      "affected_object_ids": [
+        "M-e52574ff126d4b128f222053c97bf596"
+      ]
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-5a7e01c1e00e31e9",
+      "state": "claimed",
+      "owner": "Boss4",
+      "affected_object_ids": [
+        "M-210d4539a60c44ada74183ed5465c10e"
+      ]
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-826effc7485414e4",
+      "state": "available",
+      "owner": null,
+      "affected_object_ids": [
+        "M-a9534c70ffa74fca9a91cd270468de3f"
+      ]
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-7cb05dc28cf8ea6e",
+      "state": "claimed",
+      "owner": "Boss2",
+      "affected_object_ids": [
+        "M-de7aec4bd7c24b0f9dc342c483c4a75e"
+      ]
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-d0dbd6a658e32f9e",
+      "state": "available",
+      "owner": null,
+      "affected_object_ids": [
+        "M-b126c4b3ff29400589f7f38abdca4d85"
+      ]
+    }
+  ],
+  "mathematical_review": [
+    "Root直接读取maxmin.txt 380–450。Theorem2.4的MaxMin1中1是紧随其后的脚注号，脚注讲MinMax以M替换infinity；不是单独定义的MaxMin1模型。",
+    "对每个固定t>0，d>3的旧物品分成d份，各保一个原玩家估值；d−1个相邻helper各对两个邻副本值t。所有helper达t必须用掉d−1互异副本，因此至多一个副本服务旧玩家。原物品给第r位时，将左副本给左helper、右副本给右helper反向构造；未使用旧物品时任留一份。每副本总正度至多3，原玩家值保持。",
+    "n_prime=n+sum(d_j−1)，m_prime=m+sum(d_j−1)，直接为O(mn)；无预处理时n5,m1,d5得到9玩家5物品，不是两端都至多mn。保持精确mn需先排m<n的正阈值NO分支，本次取最小安全措辞O(mn)。",
+    "仅保固定正阈值的可行性及原玩家见证，不声称任意OPT相等，也不把DegreeThree当DegreeTwo。新增玩家计入任何依n的近似函数。",
+    "其它六条对象只刷新同一完整正文SHA/version，其模型、命题、量词、假设、truth_status均逐字段保持。三在途主任务仍归Boss4/Boss2；不改他们的任何边或receipt，不将有限源复核代替主覆盖。"
+  ],
+  "task_refresh_policy": "Native map-draft --repair-task refreshes all seven existing task IDs and preserves current owners/write scopes. The sole changed mathematical wording is the unowned DegreeThree task; the three claimed primary contracts are unchanged and only share the corrected full-body reference. Owners are notified with exact report and draft paths and continue their original workers.",
+  "scientific_replays": 0
+}

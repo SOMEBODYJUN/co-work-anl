@@ -48,7 +48,7 @@ PCSP 模板是有限结构对 `(A,B)`，严格实例要求映射到 `A`，放宽
 
 ### 完整结论
 
-1. **Degree reduction**（Theorem 2.4）：任意 MaxMin1 实例可通过链式虚拟玩家/物品 gadget 变成大小至多 `mn` 的 `DegreeThree` 实例；每个高阶物品的副本中只有一个副本可服务原玩家。该等价保持多项式规模，但额外玩家会影响精确近似比的常数解释。
+1. **Degree reduction**（Theorem 2.4）：对任意非负加性 MaxMin 实例及给定正阈值 `t>0`，逐物品副本与链式 helper 可构造 `O(mn)` 规模的 `DegreeThree` 实例，正阈值可行性及原玩家分配见证可双向恢复；每个高阶旧物品至多一副本服务原玩家。helper 的无限价值可在该固定阈值截为 `t`；新增玩家须计入规模和依赖玩家数的近似保证。
 2. **DegreeTwo**：来源给出对称或非对称价值均适用的 4-approximation。核心步骤是求 M-LP、把小物品变量整理成 0 或 `1/2`、旋转大边消除环、对树组件使用 LP-Round，再处理每棵树的剩余大物品；令 `λ=4` 得到至少 `OPT/4`。Theorem 3.1 通过每个文字至多出现两次的 3SAT 构造，证明 DegreeTwo 即使对称也不能在 `P≠NP` 下优于因子 2；可满足时目标值 2，不可满足时至多 1。
 3. **LP 与有限 gap**：来源的新 M-LP 比 configuration LP 更易写，能力相当；在 `InfDegreeOne` 上，M-LP/configuration LP 存在 `Ω(n^{1/6})` 的积分间隙（`InfDegreeTwo` 有相应 `Ω(n^{1/4})` 构造）。因此“LP 可行”不能直接当成整数分配证明。
 4. **InfDegreeOne/Two 与新图问题**：定义 `MaxMinDegree Arborescence`，在有向图中找包含全部 source、arborescence 内非 sink 出度至少 `M` 的森林，最大化 `M`。依赖图把玩家和零/一价值物品作为顶点，边表示单位小物品关系；该问题是 InfDegreeOne 算法的技术核心。lift-and-project / Sherali–Adams `t` 轮和依赖舍入给出 `m^ε` 时间 `m^{O(1/ε)}` 的近似，并在拟多项式时间得到 polylog 近似；来源把 integrality gap 量化到 `max{polylog(m),m^{O(1/t)}}` 级别。
