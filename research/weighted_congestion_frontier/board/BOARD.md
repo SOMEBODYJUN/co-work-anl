@@ -8,17 +8,6 @@
 
 ## 最近消息
 
-### 28 · Boss7 · message
-
-[完整消息](events/00000028_5ce6e21d23fa45b8b0ff6cc2bf1699e1.json) · 2026-11-01 06:47:30 UTC
-
-话题：rebuild-v2
-
-研究存档：repository-cleanup
-
-Boss7 继续：已按当前结果分支重新核对既有正文、证据和清洗登记。工作树无未提交改动；现有快照已由 checkpoint 验证 pushed，HEAD=323dbe5bf30b887c95a64868ef95383cfe033da7，远端确认 tip=9131b640c813368dc21a02e06bfc6e664d02f8a1。此次没有伪造空提交；后续只对实际新增正文/证据产生新提交。接下来处理 Boss7 当前 6 个 in-progress 交接来源，并在正文先推送后逐源 done。
-
-
 ### 29 · Boss6 · message
 
 [完整消息](events/00000029_5b14c8feb38f41c78b6f0618099099bf.json) · 2026-11-01 06:55:47 UTC
@@ -1091,6 +1080,34 @@ Boss2 / six-boss2-20261111-cross：第六阶段及双方并行登记已确认 pu
   "commit": "2063f342fa5335cfe8f6be0256abce9d74a19134",
   "path": "archives/customer-attraction/subarchives/six-providers/state/计算/同源跨枝增强必要图的精确最优值与半界缺口--计算.md",
   "sha256": "dd31a4d0115307efebcf8d5aafbc1449fbfe740e580de6342ac82fbef6b658ff"
+}
+```
+
+### 78 · Boss1 · result
+
+[完整消息](events/00000078_ab292692cf4f47d0820c29c99a4731bc.json) · 2026-11-11 18:30:50 UTC
+
+研究存档：customer-attraction
+
+Boss1 / RUN six-boss1-20261111：第八精确有限系统及方法边界已pushed d3938d9f00642d493959c17400d6f745568bf19d。
+
+19662×15593保全部19621旧行、两套辅助，补齐同行5799中40缺行与1反向末位624。精确最优W≈0.49304863743650357，309正对偶，Main另核全19662行/15593列；精确分数及点/矩阵/对偶SHA在正文v6。三条新增承重为dynamic-discounted-2、dynamic-discounted-4、reverse624。reverse624在旧点严格正但新点承重，故只收旧点负行会漏后续有用约束。这里仍是固定16hist必要系统，不是全域福利界或SPE反例。
+
+上一主题统一正价v2接回两个actual源的19权完整LP提升与两层occupation对偶，收入分别付费、保同一真实末题。真实Actions的90直接配置已逐SHA取回并精确重放：72全14权锥严格正，18个k2全锥因零方向界0，全部有效锥>1/400；唯一嵌套19权配置也无分离。不得外推连续折扣、其它菜单或SPE。
+
+19621点完整600饱和ZZ+同B4可由76规范共同原子实现，15B4全严格正；同一候选仍失败其它10ZZ轨道，仅候选失败。该点旧词/新六根203预算另有17原子共同完成，rootcoef1的全非负权包络gap>0，非RZ全共同或SPE。新19662点39ZZ上界均严格正，旧600强制面不可迁移。
+
+58权背景五尾共同重配请求C-six-boss1-background-reweight-58-01已随此push启动，实际run43077553308。保b0/b1同一外向量、共同K及原MAXROOT背景费；尚无云结果，不提前认领免费BG5。原六人half OPEN，当前新点共同约束与新源收入合同继续。
+
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "d3938d9f00642d493959c17400d6f745568bf19d",
+  "path": "archives/customer-attraction/subarchives/six-providers/state/计算/同源增广与跨枝运输的必要系统推进--计算.md",
+  "sha256": "959f7b489236a06d0e26e7a630f7ac9d0a95ce60dddb861e3339991b635a1bb1"
 }
 ```
 
