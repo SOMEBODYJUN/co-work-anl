@@ -1,0 +1,42 @@
+{
+  "edge_id": "blmrs-resource-job-additive-rounding-complement-equivalence",
+  "kind": "equivalent_to",
+  "status": "accepted",
+  "source_ids": [
+    "M-737cbc9ea3b54c03b847026018cf5b19"
+  ],
+  "target_ids": [
+    "M-0a576e4d0f4647d18173160e6cbaad70"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "原BLMRS restricted resource/job-matroid域：每项公共非负有限编码值或尺寸、整数polymatroid value-oracle、给定共同阈值的可行基凸包点；辅助确定性私有项仅在归约内部存在，解码逐个恢复全部原项basis。允许任意多值。零值及rank零项按证明处理。",
+  "roles": {
+    "M-737cbc9ea3b54c03b847026018cf5b19": "正向提供共同下界T的减最大单项值整数舍入；反向是由作业上界舍入恢复的完整接口。",
+    "M-0a576e4d0f4647d18173160e6cbaad70": "正向由资源舍入构造共同上界T的加最大单项尺寸整数舍入及2近似；反向提供该舍入算法。"
+  },
+  "whole_result": "两个完整多项式舍入接口等价：资源LP点的min≥T可舍入到min≥T−max_j v_j，当且仅当作业LP点的max≤T可舍入到max≤T+max_j p_j；作业端在删除rank零项后对最优LP点舍入得到2OPT保证。",
+  "explanation": "对每个原整数rank f_j设z_j(i)=f_j({i})、g_j(S)=z_j(S)+f_j(E\\S)−f_j(E)。z_j支配全部P_j，且B(g_j)=z_j−B(f_j)，同样适用于基凸包。设共同尺寸/值s_j、s=max s_j、C_i=Σs_j z_j(i)、C=max_i C_i。各玩家/机器补偿D_i=C−C_i=q_i s+r_i，由至多两个确定性私有项强制贡献q_i s和r_i：一个值s、private rank q_i的polymatroid和一个值r_i<s、private rank1的polymatroid；q_i二进制编码，故≤2|E|项且最大单项值不增。job→resource：L_i≤T时，若T≥C任取原basis即可；否则补基加补偿的分数资源值C−L_i≥C−T，调用资源减s舍入并扣确定性补偿，补回原基得负载≤T+s。resource→job：V_i≥T且V_i≤C_i≤C，补基加补偿的分数作业负载C−V_i≤C−T≥0；调用作业加s舍入并扣补偿、补回原基，得资源值≥T−s。零尺寸直接完成。两方向全部阈值、基合同、位复杂度及原项身份见完整证明。2近似另先删rank零作业；每活跃整数basis总量至少1，故pmax≤OPT，而非pmax≤给定LP阈值T；取LP最优F≤OPT得F+pmax≤2OPT。",
+  "scope": "原restricted整数polymatroid域上两个完整给定分数见证的算法接口，连同job端2近似；不是仅有共同整数性背景，也不推广到一般unrelated端点尺寸。",
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-566d00453361c959/complement-rounding-proof.md",
+      "sha256": "b718fd5ea5178265445c4c0697d87f0f29a2ecaa629c267e2fd746606c25df9d"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
+      "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+    }
+  ],
+  "reviewed_by": "Boss2/hardness-rounding-worker",
+  "review_note": "分别实读两端登记陈述、同页舍入接口、BLMRS v1 Definition7/8与dual、Theorem21和23完整原证明。独立逐式核补基基集恒等式、阈值符号、两种方向、不增最大单项值的≤2|E|补偿项、二进制rank编码，以及rank零/全零尺寸/2approx边界。完整变换写于complement-rounding-proof.md。",
+  "endpoint_pins": {
+    "M-0a576e4d0f4647d18173160e6cbaad70": "01b9d7e0b6cd46cd7dbbfdca071d32153cb7ccdcc588fd71c927e1b90dccdca9",
+    "M-737cbc9ea3b54c03b847026018cf5b19": "5d96ae72406c54e71f2f87a16dd996d4157903ce947afa47bcba4f4dc6c3990b"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-566d00453361c959/complement-rounding-proof.md": "b718fd5ea5178265445c4c0697d87f0f29a2ecaa629c267e2fd746606c25df9d",
+    "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+  },
+  "review_digest": "5c0c1d0de175f5327f8f116ac003e62650168e04246308d3bfdec5f1836b9f0a"
+}
