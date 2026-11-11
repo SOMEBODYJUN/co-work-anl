@@ -1,0 +1,60 @@
+{
+  "edge_id": "ca-net-credit-rent-and-static-to-min-row-balance",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-31bc04f713a649628e647ee4e88ddcdd",
+    "customer-attraction/optimal-menu-static-credit-signed-adaptivity"
+  ],
+  "target_ids": [
+    "customer-attraction/actual-minimum-profit-net-row-and-arrival-rent-difference"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、有限非空共同标签目录、单位提供者、同一份全部有序历史完整纯SPE；保空覆盖、别名、重复索引与任意离轨平局。固定同一实际位置i、同一实际过去b、同一最优m索引元组；每query的冻结尾Y_j^0与真实尾Y_j^σ共享b及当前T_j。",
+  "roles": {
+    "M-31bc04f713a649628e647ee4e88ddcdd": "提供d+全部其它角色租金=|A|，及过去/未来的精确带符号转移。",
+    "customer-attraction/optimal-menu-static-credit-signed-adaptivity": "提供Σ_jF_ij=OPT−W+u_i+L_i和Q_i=Σ(F−V)。",
+    "customer-attraction/actual-minimum-profit-net-row-and-arrival-rent-difference": "获得MIN-ROW的准确未付款余额，而非其普遍成立。"
+  },
+  "explanation": "逐j用RENT：Q_Tj(Y_j^σ)−Q_Tj(Y_j^0)=d_Tj(Y_j^0)−d_i(T_j)=F_ij−V_ij。求和使到达租金适应损失A_i恰等Q_i；代静态五类身份得R_i=OPT−W+u_i+L_i−A_i。因此MIN-ROW⇔A_i≤u_i+L_i。客户损失δ=(n′−n)/DD′可有符号，过去租金变动−bδ、未来(b+1)δ，相加才δ；互斥j叶不能合并为actual钱包。",
+  "scope": "任意实际行的完整代数对接；在目标选择最小行后仍须新付款界。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/实际最小利润位置的净行与到达租金差--候选.md",
+      "sha256": "4ac0ae008a04320f2f214642ae90badd6786607f6a41e3c2899df1c98f76bd34",
+      "section": "到达主题的精确整客户租金身份"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/实际最小利润位置的净行与到达租金差--候选.md",
+      "sha256": "4ac0ae008a04320f2f214642ae90badd6786607f6a41e3c2899df1c98f76bd34",
+      "section": "有过去时不能把整租金增量叫作仅未来增量"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/实际最小利润位置的净行与到达租金差--候选.md",
+      "sha256": "4ac0ae008a04320f2f214642ae90badd6786607f6a41e3c2899df1c98f76bd34",
+      "section": "实际行适应损失和仍未支付的差"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优主题菜单的非负静态信用与带符号自适应恒等式--引理.md",
+      "sha256": "e26f3d06e14f3ca457c42350b81ecc360a23ebc8263a0769af3591acf0887bd6",
+      "section": "真实续局的准确罚项"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "Boss4同身份worker实读端点陈述、条件和所引完整数学证明，按同一σ及同一比较元组逐式复核；区分条件蕴含、局部贡献与一般开放义务。原数学程序/求解器运行0，未以有限检查提升真值。",
+  "contribution": {
+    "result": "同一实际行的租金适应损失A_i=Q_i，R_i=OPT_m−W+u_i+L_i−A_i；所选MIN-ROW准确等价A_i≤u_i+L_i。",
+    "remaining": "仍需对每份完整σ选择一个实际最小收益位置及共同最优元组并独立证明该带符号上界；逐query租金守恒没有支付跨枝总额。"
+  },
+  "endpoint_pins": {
+    "M-31bc04f713a649628e647ee4e88ddcdd": "e89dbee7d70101040917002ef515419caf33d5c95e3f3c559e33dd617c6e0f8c",
+    "customer-attraction/actual-minimum-profit-net-row-and-arrival-rent-difference": "da92ebaf73b065c8ddbf53b6bfe0a5a8621d843ce70852c6a0fee3c8c0678494",
+    "customer-attraction/optimal-menu-static-credit-signed-adaptivity": "c55cc40a1f50aac26344d34745ca7022ff0c141c76530a952875cea62d21b14a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/实际最小利润位置的净行与到达租金差--候选.md": "4ac0ae008a04320f2f214642ae90badd6786607f6a41e3c2899df1c98f76bd34",
+    "archives/customer-attraction/state/引理/最优主题菜单的非负静态信用与带符号自适应恒等式--引理.md": "e26f3d06e14f3ca457c42350b81ecc360a23ebc8263a0769af3591acf0887bd6"
+  },
+  "review_digest": "102b187f11da75b1b9b6e01f55d0dae052e1a20809f7ff13ece01f4a0fc8fbed"
+}

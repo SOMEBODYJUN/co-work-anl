@@ -1,0 +1,52 @@
+{
+  "edge_id": "ca-net-credit-sharp-to-weak",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-1767bd82c7ef4808b85fd9309f2e307c",
+    "customer-attraction/optimal-menu-static-credit-signed-adaptivity"
+  ],
+  "target_ids": [
+    "M-064ba06269a545b8a12971321dacf867"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "有限单位客户、有限非空共同标签目录、单位提供者、同一份全部有序历史完整纯SPE；保空覆盖、别名、重复索引与任意离轨平局。假设SHARP候选确对每实例/每完整σ给出某个共同最优m索引元组T，满足ΣQ_i≤ΣL_i；不得另换T。",
+  "roles": {
+    "M-1767bd82c7ef4808b85fd9309f2e307c": "供应仍open的尖锐共同预算ΣQ≤ΣL，及存在共同最优元组的量词。",
+    "customer-attraction/optimal-menu-static-credit-signed-adaptivity": "供应五类非负信用及同一T的精确ΣV恒等式。",
+    "M-064ba06269a545b8a12971321dacf867": "得到存在版弱平均及其等价预算、随后匹配/half的充分链。"
+  },
+  "explanation": "对SHARP所选同一T，W=Σu_i≥0给ΣQ≤W+ΣL。静态身份Σ_ijV_ij=m(OPT−W)+W+ΣL−ΣQ遂给ΣV≥m(OPT−W)，且此不等式与弱预算互等价。均匀平均索引排列使某π有Σ_iV_iπ(i)≥ΣV/m≥OPT−W；每位一次真实IC再给该和≤W。全m均成立，无须取比率，W=0亦合法。这里证明充分条件的方向，未支付SHARP自身。",
+  "scope": "任意m≥1的存在最优T版；不宣称逆向、全最优T或每排列。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/真实最优组合的净差匹配与共同付款--候选.md",
+      "sha256": "fe06ff84ca5e70c8e7d59d25be85103c191d3a510980dd9f08c453ba04b6ea80",
+      "section": "两个准确门槛"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优主题菜单的非负静态信用与带符号自适应恒等式--引理.md",
+      "sha256": "e26f3d06e14f3ca457c42350b81ecc360a23ebc8263a0769af3591acf0887bd6",
+      "section": "真实续局的准确罚项"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优主题菜单的非负静态信用与带符号自适应恒等式--引理.md",
+      "sha256": "e26f3d06e14f3ca457c42350b81ecc360a23ebc8263a0769af3591acf0887bd6",
+      "section": "完整排列的静态信用"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "Boss4同身份worker实读端点陈述、条件和所引完整数学证明，按同一σ及同一比较元组逐式复核；区分条件蕴含、局部贡献与一般开放义务。原数学程序/求解器运行0，未以有限检查提升真值。",
+  "whole_result": "若存在版SHARP普遍成立，则存在版弱平均M-064普遍成立：同一最优T有Σ_ijV_ij≥m(OPT_m−W)，等价ΣQ≤W+ΣL，并足以给净差匹配及half。",
+  "endpoint_pins": {
+    "M-064ba06269a545b8a12971321dacf867": "8f866d89867993832978e0a53c5a174b4b3174932d395537eca43cb3ad8ed6bf",
+    "M-1767bd82c7ef4808b85fd9309f2e307c": "9d28f1d134457345563dd60c924a124c5a5493f20fcb8c3920970952a090a6ee",
+    "customer-attraction/optimal-menu-static-credit-signed-adaptivity": "c55cc40a1f50aac26344d34745ca7022ff0c141c76530a952875cea62d21b14a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/真实最优组合的净差匹配与共同付款--候选.md": "fe06ff84ca5e70c8e7d59d25be85103c191d3a510980dd9f08c453ba04b6ea80",
+    "archives/customer-attraction/state/引理/最优主题菜单的非负静态信用与带符号自适应恒等式--引理.md": "e26f3d06e14f3ca457c42350b81ecc360a23ebc8263a0769af3591acf0887bd6"
+  },
+  "review_digest": "428faa62b66ae6bdd72ceac1153bdbcdaa0a78531a848900b70e0eb9bca87f7e"
+}

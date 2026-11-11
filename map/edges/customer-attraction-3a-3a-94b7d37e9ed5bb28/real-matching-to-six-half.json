@@ -1,0 +1,44 @@
+{
+  "edge_id": "ca-net-credit-real-matching-to-six-half",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/true-optimal-portfolio-net-gap-joint-payment"
+  ],
+  "target_ids": [
+    "customer-attraction/six-providers/exact-six-full-history-half-cover"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "有限单位客户、有限非空共同标签目录、单位提供者、同一份全部有序历史完整纯SPE；保空覆盖、别名、重复索引与任意离轨平局。取恰m=6，并假设存在真实净差匹配候选在这份σ上成立。",
+  "roles": {
+    "customer-attraction/true-optimal-portfolio-net-gap-joint-payment": "供应一个共同最优六索引元组和一次每角色指派。",
+    "customer-attraction/six-providers/exact-six-full-history-half-cover": "得到所有六人完整纯SPE的half条件结论。"
+  },
+  "explanation": "对所给π，每个V_iπ(i)都是同一σ实际前缀i的一条合法完整行动偏离，故V_iπ(i)≤u_i。六式相加得OPT6−W≤ΣV_iπ(i)≤Σu_i=W，即OPT6≤2W。选择最优元组及指派只需存在一次，保全部离轨SPE与弱平局；零客户无需0/0。",
+  "scope": "恰六人一般目录的完整half结论，仍依赖open匹配前提。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/真实最优组合的净差匹配与共同付款--候选.md",
+      "sha256": "fe06ff84ca5e70c8e7d59d25be85103c191d3a510980dd9f08c453ba04b6ea80",
+      "section": "净差匹配比旧接口弱在哪里"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "Boss4同身份worker实读端点陈述、条件和所引完整数学证明，按同一σ及同一比较元组逐式复核；区分条件蕴含、局部贡献与一般开放义务。原数学程序/求解器运行0，未以有限检查提升真值。",
+  "whole_result": "若真实净差匹配候选对恰六人的每份完整σ成立，则∀有限(N,S,cov)∀六人完整纯SPE σ，2W(σ)≥OPT6。",
+  "endpoint_pins": {
+    "customer-attraction/six-providers/exact-six-full-history-half-cover": "2d5b191271cb052c435121a41935eb3958540d5a53cb05013f13dd45a70f6e31",
+    "customer-attraction/true-optimal-portfolio-net-gap-joint-payment": "fd9a93a4ba2f5a8702bdcc764cb2fe6ebb1ef8beecce2b0be5d6073a7cd62b84"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/真实最优组合的净差匹配与共同付款--候选.md": "fe06ff84ca5e70c8e7d59d25be85103c191d3a510980dd9f08c453ba04b6ea80",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "d54785060b5960eecb2fc4e56d06fbc54854ff257a4807530320179c12db26a0"
+}

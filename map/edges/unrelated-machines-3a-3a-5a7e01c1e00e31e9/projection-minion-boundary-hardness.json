@@ -1,0 +1,59 @@
+{
+  "edge_id": "um-boss4-projection-minion-reduction-pays-r-k-minus-one-hardness",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-210d4539a60c44ada74183ed5465c10e",
+    "UM-NEAR-UNIT-PCSP-EXACT-MINION-v1"
+  ],
+  "target_ids": [
+    "UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定整数k≥2，r=k−1；模板恰含A_k=B_{k,k−1}、AMO₂与ONE；一般有限约束图，变量允许重复及任意次数出现。目标只支付其r=k−1分支。",
+  "roles": {
+    "M-210d4539a60c44ada74183ed5465c10e": "给有限模板之间minion同态的逆向logspace归约。",
+    "UM-NEAR-UNIT-PCSP-EXACT-MINION-v1": "给该分支所有arity的精确minion等于Boolean projections。",
+    "UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1": "接受此一般NP-hardness全称命题中的r=k−1分支贡献。"
+  },
+  "explanation": "令T是Boolean positive 1-in-3模板R={(1,0,0),(0,1,0),(0,0,1)}。其CSP为NP-hard，冻结BBKO §5.1 Theorem5.2证明明确以此为源并给Pol(T)=P₂。还可直接核Pol(T)：对任意n元f及[n]任意三分划A,B,C，关系保持给f(1_A)+f(1_B)+f(1_C)=1；取([n],∅,∅)得f(∅)=0、f([n])=1。将(A,B,complement(A∪B))与(A∪B,complement(A∪B),∅)比较，得不交A,B上的有限可加性，故f(S)=Σ_{i∈S}f({i})且恰一singleton值1，即f为该坐标projection。对近单位r=k−1，精确minion对象同样给M₁=P₂。恒等映射ξ:M₁→Pol(T)=P₂保每个minor。把近单位模板置为Theorem3.1的(A₁,B₁)、T置为(A₂,B₂)，严格得到CSP(T)≤_L PCSP(A_k,B_{k,k−1};AMO₂,ONE)，方向反向于minion箭头。固定k使关系规模为常数，输入一般约束图的全部promise YES/NO由该定理保持。于是此r=k−1分支NP-hard。本证明没有假定一般strongly C-fixing minion能同态到projections；C≥2可有无界essential arity且本推理不适用。",
+  "scope": "一般Boolean promise-PCSP的r=k−1精确子族；不施加DAG/端口/变量出现次数，不向普通UM调度迁移。",
+  "contribution": {
+    "result": "对每个固定k≥2，r=k−1的近单位strict/weak模板从positive 1-in-3-SAT获得logspace归约，故一般约束图promise decision NP-hard。",
+    "remaining": "目标还含1≤r≤k−2的分支；它们由已有独立canonical强C-fixing证明处理，不能从projections恒等映射推出。物理UM任务复制及任意低峰调度解码仍是UM-NEAR-UNIT-PHYSICAL-COPY-OPEN，未由本边支付。"
+  },
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+      "sha256": "b78fd89e77a417f19d4d56977d9c94fb473e9441a611b64c9ca864394e17dc8f"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/近单位PCSP蕴含与物理复制义务最终范围审查--审查.md",
+      "sha256": "05f56de06de9c6a087704dff698cc949df910695f6073d1d622b4ccc3d06f9f2",
+      "section": "1. Strict/weak near-unit PCSP 与精确 minion"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/近单位PCSP蕴含与物理复制义务最终范围审查--审查.md",
+      "sha256": "05f56de06de9c6a087704dff698cc949df910695f6073d1d622b4ccc3d06f9f2",
+      "section": "2. 一般 PCSP NP-hardness 与普通 CSP 迁移边界"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/algebraic_pcsp.pdf",
+      "sha256": "9c2c8d16c804c440cb7bbd15d8be68fce8b212722f5db284a4633b7d92bc1394"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "实读冻结BBKO Theorem3.1、3.12及3.2/3.3的完整归约证明、§5.1的1-in-3源和§5.2 Prop5.17，实读近单位两个正文及原审查。独立写出1-in-3 polymorphism的可加性证明并核逆向归约。只交边界分支作为独立证明贡献，保现行强C-fixing全证明原SHA。未运行数学发现或硬度实验。",
+  "endpoint_pins": {
+    "M-210d4539a60c44ada74183ed5465c10e": "7ffe184c2d3dd2b342a0d71cf4a1615b96655eb664f43b7f0637f5ca2db7a8b2",
+    "UM-NEAR-UNIT-PCSP-EXACT-MINION-v1": "761b51f2ad55ed124afa6c9925fac09e0b318876f3a35afacfff5e903a14952a",
+    "UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1": "905c58fa9b11b6bb9fadbf532251fbd54d1cbf5e1bb54aa1132984666ffc98ef"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md": "b78fd89e77a417f19d4d56977d9c94fb473e9441a611b64c9ca864394e17dc8f",
+    "archives/unrelated-machines/state/审查/近单位PCSP蕴含与物理复制义务最终范围审查--审查.md": "05f56de06de9c6a087704dff698cc949df910695f6073d1d622b4ccc3d06f9f2",
+    "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/algebraic_pcsp.pdf": "9c2c8d16c804c440cb7bbd15d8be68fce8b212722f5db284a4633b7d92bc1394"
+  },
+  "review_digest": "59accba81d884064f07ebf456e80f2beb5aa454db2e78d9d6956716de1fc7295"
+}

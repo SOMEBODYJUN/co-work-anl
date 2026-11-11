@@ -1,0 +1,387 @@
+{
+  "task_id": "customer-attraction-3a-3a-94b7d37e9ed5bb28",
+  "stage": "3A",
+  "owner": "Boss4",
+  "coverage": {
+    "customer-attraction/actual-minimum-profit-net-row-and-arrival-rent-difference": {
+      "state": "linked",
+      "object_pin": "da92ebaf73b065c8ddbf53b6bfe0a5a8621d843ce70852c6a0fee3c8c0678494",
+      "comparison_scope": "MIN-ROW与静态信用/到达租金、存在匹配/全行弱平均的量词比较；原第十轮净行合同及冻结FLOOR/ROOT-K失败范围。",
+      "reason": "完整行余额由RENT+静态身份对接，MIN-ROW只在一个实际最小位置成立即足six-half；并未由聚合预算反推最小行。A_i≤u_i+L_i跨query付款仍open，ROOT-K/非SPE冻结星族不能否该净行。",
+      "edge_ids": [
+        "ca-net-credit-minimum-row-to-six-half",
+        "ca-net-credit-rent-and-static-to-min-row-balance"
+      ]
+    },
+    "M-064ba06269a545b8a12971321dacf867": {
+      "state": "linked",
+      "object_pin": "8f866d89867993832978e0a53c5a174b4b3174932d395537eca43cb3ad8ed6bf",
+      "comparison_scope": "同一共同最优索引元组上的SHARP、弱平均、ΣQ预算及有限索引排列平均；全部真实IC。",
+      "reason": "SHARP条件推出弱平均；弱平均经固定V矩阵的排列平均推出某一真实净差匹配。条件链完整，各候选本身保持open；不偷换全部最优元组或全部排列。",
+      "edge_ids": [
+        "ca-net-credit-sharp-to-weak",
+        "ca-net-credit-weak-to-real-matching"
+      ]
+    },
+    "M-1767bd82c7ef4808b85fd9309f2e307c": {
+      "state": "linked",
+      "object_pin": "9d28f1d134457345563dd60c924a124c5a5493f20fcb8c3920970952a090a6ee",
+      "comparison_scope": "与弱平均M-064的精确一份W差、静态ΣV身份及2−1/m界；比较真实vs冻结桥。",
+      "reason": "SHARP在其所选同一最优T上给ΣQ≤ΣL，W≥0遂给弱预算；没有反向或一般付款。静态信用是共同ALL输入，不能由其非负性直接给Q的符号。",
+      "edge_ids": [
+        "ca-net-credit-sharp-to-weak"
+      ]
+    },
+    "M-31bc04f713a649628e647ee4e88ddcdd": {
+      "state": "linked",
+      "object_pin": "e89dbee7d70101040917002ef515419caf33d5c95e3f3c559e33dd617c6e0f8c",
+      "comparison_scope": "完整RENT/TRANSFER、合法实际过去的b因子、ADAPT与既有带符号Q_i身份。",
+      "reason": "逐客户δ有符号，过去−bδ与未来(b+1)δ相加才当前损失δ。跨互斥主题行求和只给A_i=Q_i，不给共同钱包；其已证代数是MIN-ROW的准确局部贡献。",
+      "edge_ids": [
+        "ca-net-credit-rent-and-static-to-min-row-balance"
+      ]
+    },
+    "customer-attraction/true-optimal-portfolio-net-gap-joint-payment": {
+      "state": "linked",
+      "object_pin": "fd9a93a4ba2f5a8702bdcc764cb2fe6ebb1ef8beecce2b0be5d6073a7cd62b84",
+      "comparison_scope": "存在净差匹配与弱平均/SHARP/全行ROW；B-all vs B-exists；FLOW和NET界面；遗漏42 vs匹配41、冻结最优指派失败。",
+      "reason": "弱平均提供一个共同最优T及某π，六人每位一次真实IC得half；旧遗漏/冻结失败没有击中净差真实存在量词。FLOW为同一存在终点，NET的incoming仍未付，不另造同义对象或虚假反边。",
+      "edge_ids": [
+        "ca-net-credit-real-matching-to-six-half",
+        "ca-net-credit-weak-to-real-matching"
+      ]
+    },
+    "customer-attraction/shared-convex-load-static-credit-and-true-terminal-error-review": {
+      "state": "linked",
+      "object_pin": "4217ac996ff9c5bc19c3a59fa6899f5d88a59dfb45821adfc9a06db7175005ba",
+      "comparison_scope": "真实删当前槽K、VAR、BAL、KKT/Cov−G、KEEP-K保Qstat及末位DEMAND误差债；不同SHARED定义。",
+      "reason": "本对象提供PAY-HALF⇒six-half的两个共同已证承重式；需同一鞍点。纯query逐行对角背景不能合并为全目录共同cap；末位rβ/reset债保留，未借KKT抹C。",
+      "edge_ids": [
+        "ca-net-credit-shared-payment-to-six-half"
+      ]
+    },
+    "customer-attraction/shared-menu-positive-correlation-at-every-optimal-saddle": {
+      "state": "linked",
+      "object_pin": "cacdadba2bf06d057bd1134c90eac33979207e2aba1bcecc28e3c48adeabb11f",
+      "comparison_scope": "全部最优primal唯一、全部最优query排锚、所有保边际角色运输正C；uniform30负C运输；完整保根银行菜单对端。",
+      "reason": "全m银行控制器给真正六人全历史输入；uniform成本表给非锚所有运输C恒135/242的子证明。此正C点在指定p*有PAY-HALF严格余量145/44，不能反SHARED或half；I/D只保所取p*量词。",
+      "edge_ids": [
+        "ca-net-credit-full-bank-controller-to-six-saddle-input",
+        "ca-net-credit-positive-bank-preserves-payment",
+        "ca-net-credit-uniform-costs-to-nonanchor-correlation"
+      ]
+    },
+    "M-2a9869f16b5647da9cac874f0ee4b1de": {
+      "state": "linked",
+      "object_pin": "b67510a214c9642f25cdec0cac7d772bf6ef4bb763cb2f9450e09d40a537dab1",
+      "comparison_scope": "同一joint saddle的C/Cov两式、BAL、KEEP-K、γ/2与保Qstat放宽；正C银行具体金额。",
+      "reason": "ALL[共享已证恒等式,未证PAY-HALF]完整推出six-half。银行Qstat=12/11且付款余量145/44仅已证固定输入子贡献，普遍付款仍open，较强零C失败不否本候选。",
+      "edge_ids": [
+        "ca-net-credit-positive-bank-preserves-payment",
+        "ca-net-credit-shared-payment-to-six-half"
+      ]
+    },
+    "customer-attraction/uniform-bank-query-transport-integer-dual-and-negative-correlation": {
+      "state": "linked",
+      "object_pin": "354a520528cfc582fc8b7feb4cc5ac400e0a6be42d25fbf1a4bd01264b8d2d05",
+      "comparison_scope": "完整180成本、可行运输与显式α/β180对偶；固定uniform30边际vs真正最优25非锚支持。",
+      "reason": "min C=−477/484精确成立于固定L*和uniform30；成本表又直接给所有无锚支持运输C=135/242。改支持/背景即改问题，不把此负值误作全最优正C反例。",
+      "edge_ids": [
+        "ca-net-credit-uniform-costs-to-nonanchor-correlation"
+      ]
+    },
+    "DR-MARGINAL-AGGREGATE-NO-v1": {
+      "state": "isolated-after-review",
+      "object_pin": "ddbae4e6df51a0f047098e0d00a9776a4a5425b038023080c15a94fbeec07b8c",
+      "comparison_scope": "84整数势、168单调/252DR/43节点258IC、21静态背景原始对偶v56；CAG support预算与R18 signed模型比较。",
+      "reason": "扩大单调DR模型确有P161<3v168、首两105<112，弱P≥(5/2)v仍满足。纯111效用0迫CAG主题1为空，却001唯一1得161，故非CAG；不能向本包真实净差/共享half作反边。与R18的n3k3有限signed搜索没有包含域或结论的足够桥。"
+    },
+    "M-259b7564d2674b3db76ca35d5f6ff5ed": {
+      "state": "isolated-after-review",
+      "object_pin": "cdc14328359b790483090225a6a08a95ffdd41853967e805841e43b18c830a9d",
+      "comparison_scope": "abstract_alternating.py完整LP目标/全有序策略、两个冻结300 seeds空候选报告；与六动作单调DR精确点及CAG候选比较。",
+      "reason": "只读复核源默认n3k3、每seed6步、300 seed有限null记录，不重跑。signed势无CAG客户/预算且没有全势/全策略穷尽；DR精确点k6超出这次配置，既不矛盾也不证明CAG全局运输或共同付款，保持有限观测孤立。"
+    },
+    "customer-attraction/closeout-4ba5e3377764b15521966f2d": {
+      "state": "isolated-after-review",
+      "object_pin": "8c676a57e032a5591ed3c1c20076d5cb36f7a681fef155820044b186cb4fef4d",
+      "comparison_scope": "合法同一背景、全目录等f_b=K的完整两人首位值；任意n≥2 iid单人期望；与共享鞍点等t价、六人银行和净行比较。",
+      "reason": "该证明完整给u=K−min h且支配任意q的V_n；共享鞍点只等重权t价，不是合法原b上的全目录等f_b。银行虽根主题同大小，真实人数六而非恰两人；不能按静态iid人数单调把真实六人策略归到两人定理。未找到本范围有用的逻辑迁移，保该特殊类独立。"
+    },
+    "customer-attraction/closeout-724ee80749cc67d586a81fca": {
+      "state": "isolated-after-review",
+      "object_pin": "8e18baf9eb254e71da3bbb35014fce782e8415dc71fc7e6f2da659c45955f2a1",
+      "comparison_scope": "全文有限审查、固定(4,1,2)失败/重选(2,1,1)成功、真实四边零E、跨计数(-1/6,0,0)、局部二次系数及p0 singleton；一般条件lift与固定乘子边界。",
+      "reason": "两条checks准确保存有限重放与局部方法的证据用途，不能单凭8019局部检查、一个零E流或商空间成功例推出一般r+E逐类型非负。仅语境关系故isolated-after-review；需全局规范化λ/r、可达跨计数与余项共同非负才可给逻辑全结论。"
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-94b7d37e9ed5bb28/finite-audit-checks-fixed-boundary.json",
+      "sha256": "a5b55f32e56094c0218bd81f930ac279d0011db8962e50e25670b8155b310cf1"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-94b7d37e9ed5bb28/finite-audit-checks-lift.json",
+      "sha256": "bde906fc0fc7f56fc821fda835958a8472c821583671218dde1e1249d31146a6"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-94b7d37e9ed5bb28/full-bank-controller-to-six-saddle-input.json",
+      "sha256": "d70eecb0440e4e79cc4c903316879f35b0dcd5434f4540048e98d1145de1898e"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-94b7d37e9ed5bb28/minimum-row-to-six-half.json",
+      "sha256": "0cc81b3658cba0212a067e56131f59387c7d81d4db7194782423f774a7193452"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-94b7d37e9ed5bb28/positive-bank-preserves-payment.json",
+      "sha256": "9decabc2c3a34e15730834c00bfe12574f2ab77c6218c77c7d7dad115180b4d1"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-94b7d37e9ed5bb28/real-matching-to-six-half.json",
+      "sha256": "12a0254551eb2c36f5f1ed866f5a2aa2ff7e2d8910989974640c15e2270113ff"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-94b7d37e9ed5bb28/rent-and-static-to-min-row-balance.json",
+      "sha256": "5bab634a7e1ea24283f478b6f131b0f3aeb1b20ad1753c2239224667a102a162"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-94b7d37e9ed5bb28/shared-payment-to-six-half.json",
+      "sha256": "f1802770d96aa549ce3c3a879400478df9ef6aa5bfd5556397c81a7e8c9c2982"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-94b7d37e9ed5bb28/sharp-to-weak.json",
+      "sha256": "ac0120f3bfbb21a2f28ef35172ec2b9970956451ad2b98f2cbcec05228e95751"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-94b7d37e9ed5bb28/uniform-costs-to-nonanchor-correlation.json",
+      "sha256": "967a5d1bb6bba46ba2ccd81930b1ca54b9ff7b75ce5662f2067c9a3c957ae3ac"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-94b7d37e9ed5bb28/weak-to-real-matching.json",
+      "sha256": "3bb617284407946437a58896d86d847532995f34daecb197a7f171bac4313229"
+    }
+  ],
+  "follow_up_tasks": [],
+  "reading": {
+    "method": "分段实读全部必要数学陈述、条件及证明；已证成熟自足正文复用，不凭导航冒读其原code/大packet。源码、JSON均只读；记录精确实际部分范围。",
+    "refs": [
+      {
+        "path": "archives/customer-attraction/state/候选/实际最小利润位置的净行与到达租金差--候选.md",
+        "sha256": "4ac0ae008a04320f2f214642ae90badd6786607f6a41e3c2899df1c98f76bd34",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+        "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/候选/真实最优组合的净差匹配与共同付款--候选.md",
+        "sha256": "fe06ff84ca5e70c8e7d59d25be85103c191d3a510980dd9f08c453ba04b6ea80",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/资源/第十轮根稿的净行合同与相邻钱包反证时序--资源.md",
+        "sha256": "a62298db31da20711e21dfca8925f09c0a2cf789053e2608d806ec9987d405b5",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/资源/冻结组合保底与根行加强的原稿审查合同--资源.md",
+        "sha256": "948458cf95517ab07c4e40fe2065703d5fe68fe50a422a0d0c0c4ca8d8124149",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/审查/customer-attraction直接覆盖分支README、义务分层与前缀障碍路由--审查.md",
+        "sha256": "c13575dacbbc84395d03ae68e844dad15618da5002ca7421a997b0d88d01de53",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/引理/最优主题菜单的非负静态信用与带符号自适应恒等式--引理.md",
+        "sha256": "e26f3d06e14f3ca457c42350b81ecc360a23ebc8263a0769af3591acf0887bd6",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/候选/最优主题逐位强制收益的净差共同预算--候选.md",
+        "sha256": "894cd39bc0ddb23835895e8b0f40175d8e75223585c61db7240b88506479f03a",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/资源/真实最优查询的冻结差额与可信修复接口--资源.md",
+        "sha256": "095b8032ca0e53a429329fb32d8b861e98b9e76f7dfd3dc21f464b53247115b8",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/候选/真实查询自由指派与残源净钱包的共同接口--候选.md",
+        "sha256": "5c58a1ad9b278ce0361b368653a0cfff5b6ab38f5dbbec2a087e3099ee6d0e05",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/资源/R891真实净差行与策略正锥的工作区范围--资源.md",
+        "sha256": "72cd595b14d51ff385986e59a8d785039a77bd3475f3cdaf169ae55768f4ae3d",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/资源/正锥与均匀真实组合安全接口的历史分层--资源.md",
+        "sha256": "41739ac574f76b907c67af741461973e43e25122b395c2a07c63d7e448dc92f9",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/审查/共享凸负载的静态信用与真实末位误差--审查.md",
+        "sha256": "ab2d707c443c8aca2ae9edd1cd5b66c3374090c3e559c7d6c6662b55297acf19",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/反例/共享菜单全部最优鞍点的正相关项--反例.md",
+        "sha256": "f213df092ae6477f7eac0452da0e56e1bb9e89c8d9a72a07813f0f1faa92126d",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/资源/第十一轮共享负载的凸信用与共同付款停界--资源.md",
+        "sha256": "c0fe71706655f53c781363a817f3e50e3dd0939c1d959ecd10a7c7d15de9280f",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/资源/共同退款与共享负载反馈的量词和历史回执--资源.md",
+        "sha256": "128aa8e47ff704b9cc49f10a4989a0847e43d5c521c7c78ba78bfb011ee4a08d",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/反例/笛卡尔银行完整根菜单的低值自洽分布失败--反例.md",
+        "sha256": "e66e762af835f21575d7799a16937aee608e87706f75bebb3994cec1427562b0",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/subarchives/six-providers/state/计算/共享负载旧实例与保险协方差压力--计算.md",
+        "sha256": "b3e693cfd5df9d9c61ebd8dbf29e343716442c670794ec4789787e179ac851bb",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/计算/共享菜单固定查询与全局鞍点的双精确证书--计算.md",
+        "sha256": "cce71e1adcd31cd81f5e5461c0a4e7356c7dc75c77dd2e03a299efd5b53f8f8d",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/引理/均匀银行查询运输的整数对偶与负相关值--引理.md",
+        "sha256": "0b8555e1509fcb5b75007bdc549ddb3656e9dc4137149c49e94e12b9eea73230",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/障碍/单调递减边际势的强安全聚合障碍--障碍.md",
+        "sha256": "5892b0b1dfce155b9d33aa1077a983111c3dd2cdc9e55a1349269f23534b7e9e",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/资源/覆盖矩与势支付工作台的状态校正--资源.md",
+        "sha256": "e41fea56fe16694bee3a6a81c65f88df4d51ca73c6944635035ab449cd4aa500",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/资源/覆盖矩与扩大势入口的模型和独审合同--资源.md",
+        "sha256": "b731a4fe799df985590d896c2ce9b54fd76f7a4cb46066ee29bd7fe52bc3878b",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/资源/边际势预算与全局正矩原稿的精确证据层次--资源.md",
+        "sha256": "49466d60bed633f3856cfa6eb9da3de81fd2758537a1c16f580d9717d44b977e",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/资源/扩大DR聚合安全十源诊断清单--资源.md",
+        "sha256": "e2f37e671080c62bbe9f0fdfc71b8b34750c7c5c8449591f7da55187442975d8",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/tools/evidence/coverage-moment-and-potential-ledger-primary/new-definition-check/result.json",
+        "sha256": "88edce2a899beff924e17e6af7690fddd4bd54f77a8f787ab25bff51d7f38eb7",
+        "read_scope": "完整读取顶层状态和$.expanded_DR_model全部18字段：168单调行、252DR行、43完整策略行及其6收益/6叶、21静态背景、原始/对偶与预算分界；另行$.unit_CAG十一客户分支非本任务DR对象所需，未逐行实读也不用于本批任何边。"
+      },
+      {
+        "path": "archives/customer-attraction/state/计算/DR聚合安全配对浮点诊断--计算.md",
+        "sha256": "87e4d0cdf6b1eee798165d176c764f56c675adaff7464f42febefe4f3e1532a1",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/候选/R-18次安全值有限搜索与根缺口--候选.md",
+        "sha256": "226dbd9f977eeb827acc9eeb6fd4a93a04989a1953308f8f4afaaae107656435",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/tools/evidence/R-18-next-security-finite-20261031/abstract_alternating.py",
+        "sha256": "66490a310c84be9fd95cea07de30af150b03bf01cb27f435602b5b912bd8410e",
+        "read_scope": "完整源码或完整JSON字段实读；未执行"
+      },
+      {
+        "path": "archives/customer-attraction/tools/evidence/R-18-next-security-finite-20261031/abstract_alternating_n3k3.json",
+        "sha256": "dce588b69162c127069829bf732d9afad1b324c8976e912e5370635644d8eb1f",
+        "read_scope": "完整源码或完整JSON字段实读；未执行"
+      },
+      {
+        "path": "archives/customer-attraction/tools/evidence/R-18-next-security-finite-20261031/abstract_alternating_replay.json",
+        "sha256": "c0b7f4dde921e124fbb1c8452a0c275b0a772628111341de5a6565b4aa51ac02",
+        "read_scope": "完整源码或完整JSON字段实读；未执行"
+      },
+      {
+        "path": "archives/customer-attraction/state/引理/等单独收益目录的两人首位与任意iid人数比较--引理.md",
+        "sha256": "964240ed3394ac3ea62b2cfd916fbce2b1df7bb3a908a4f222a2a4410a75f017",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/审查/末回复商空间的有限审查与局部判别--审查.md",
+        "sha256": "966d66efa7e9bc15a1ed39db0e4e7059d31793897ac7a53641a54dfa0b259f25",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/反例/笛卡尔银行目录的逐人分数门槛反族--反例.md",
+        "sha256": "46c7a8df14fb3dd858e4fc827e2de7f000966d49ac4cd9ef7bb2b05777957a80",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/tools/evidence/cag-mixed-routing-primary/analytic-bank-menu.json",
+        "sha256": "8d4048052042a94d47205381a693ea851e7dc30f9a85e4f354feaeadc7d6c7d6",
+        "read_scope": "完整源码或完整JSON字段实读；未执行"
+      },
+      {
+        "path": "archives/customer-attraction/state/资源/安全聚合探索与银行任务的分段证据身份--资源.md",
+        "sha256": "c0508e8a6b00e44e1beff9deb4cc25e6385fb3add5cc3e0541d9174bb9f4523a",
+        "read_scope": "全文数学正文（Markdown frontmatter来源元数据仅按登记/任务引用核对；全部陈述、条件及证明实读）"
+      },
+      {
+        "path": "archives/customer-attraction/state/定理/末回复规范化的条件性对偶提升--定理.md",
+        "sha256": "8eb07c4a37419699252a4ad0d4f87eb1d17144172bfc9094c3aeac7ed84feba1",
+        "read_scope": "全文数学正文实读（任务read_object_ids中既有共享端点）；不运行原审计。"
+      },
+      {
+        "path": "archives/customer-attraction/state/障碍/固定乘子提升的商空间边界--障碍.md",
+        "sha256": "ef5895b2d7b748db7e47626e0347d1c904520439b5553eaf34c85dbd4ee4ba53",
+        "read_scope": "全文数学正文实读（任务read_object_ids中既有共享端点）；不运行原审计。"
+      },
+      {
+        "path": "archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md",
+        "sha256": "0626668e7a825108fc0b3699e42394b75b1c2e2a526df220a90d91a02afc8a0c",
+        "read_scope": "全文数学正文实读（任务read_object_ids中既有共享端点）；不运行原审计。"
+      }
+    ],
+    "distinct_files": 39,
+    "new_dependency_object_ids": [],
+    "planned_estimated_tokens": 249373,
+    "planned_estimate_is_runtime_measurement": false,
+    "actual_runtime_remaining_tokens": "unknown",
+    "new_mathematical_program_runs": 0,
+    "new_arithmetic": "仅独立Fraction算术核H161/22、Qstat12/11和PAY-HALF余量145/44，不导入原程序、不重放BI/LP/SPE。"
+  },
+  "mathematical_boundary": "9 accepted逻辑关系=5 conditional whole_result+4 unconditional contribution；2 accepted checks只作语境。所有共同前提保ALL。SHARP/弱平均/净差匹配/MIN-ROW/PAY-HALF及六人原题仍open；无新无条件福利界或反例。DR是扩大模型精确障碍；R18仍finite；等f两人引理保持其特类。",
+  "binding_status": "Boss4已串行对全部11边edge-bind --write并edge-check通过；本收据assets已按最终绑定字节刷新。",
+  "validation": {
+    "edge_binding": "11/11 accepted边已绑定最终端点、证据与review digest",
+    "edge_check": "Boss4原生逐边11/11通过；worker另11/11只读edge-bind确认全部引用/章节可解析。",
+    "receipt_coverage": "原生_asset_refs、batch_edges、_map_receipt_coverage及validate_map_follow_ups均只读通过：13核心、11边、39读取文件；无follow-up状态对象对。in-packet对端审查存overlap_reviews，不误填仅供follow-up关闭的closed_overlaps。"
+  },
+  "overlap_reviews": [
+    {
+      "core_id": "customer-attraction/shared-menu-positive-correlation-at-every-optimal-saddle",
+      "peer_id": "customer-attraction/cartesian-bank-full-root-menu-low-value-symmetric-nash-failure",
+      "reason": "已全文比较同一全m银行完整BASE/PUNISH/EXIT控制器，并写full-bank-controller-to-six-saddle-input局部贡献。对端的K_{T,A}保当前根槽、竞争质量m，以Jensen反低值NQ/Mfull；核心共享K是actual各角色删当前后的m−1槽凸域，p*值37/22<2、I+D−C21/11>0。完整保根菜单失败不否共享cap或PAY-HALF；共享正C只否零C加强。共同模型/控制器可精确复用，两个矩阵、人数槽和量词均已闭合区分，无额外定向比较任务。"
+    }
+  ],
+  "closed_overlaps": []
+}
