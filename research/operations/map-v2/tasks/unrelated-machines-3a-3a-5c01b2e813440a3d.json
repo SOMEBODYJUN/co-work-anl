@@ -92,13 +92,139 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss4",
-  "request_id": "4d436cad82b74098bf78e9e668134653",
+  "request_id": "eb898097459d49b8a45fc3af696e14e5",
   "requests": {
     "81a0648c3de14140a1ae6370812f33c4": "plan",
     "b27725e9a4444b89897c57928ad71909": "claim",
     "cb278a61a66a434788cb1b91d03dc302": "read-add",
-    "4d436cad82b74098bf78e9e668134653": "plan"
+    "4d436cad82b74098bf78e9e668134653": "plan",
+    "eb898097459d49b8a45fc3af696e14e5": "done"
+  },
+  "edge_paths": {
+    "um-5c01b2-commuting-border-basis-connected-column-flat-extension": "map/edges/unrelated-machines-3a-3a-5c01b2e813440a3d/commuting-border-basis-to-connected-column-flat-extension.json"
+  },
+  "receipt": {
+    "coverage": {
+      "M-eeb1beecbe7345c29aae65f41841b671": {
+        "state": "linked",
+        "object_pin": "3b689c32cc0e06a1c31ec2ee7ac0317aadf2b58e482ad9e8d608beaba32f1d13",
+        "comparison_scope": "本轮完整实读当前v2核心交换border判据、v2 M-d2f0e90baf4440cab9efbffecfee709e稀疏flat唯一性、v2 M-8a8102ce2db9454ba1ed5eae66e12724正且rank-flat表示测度；读取共同正文全文，直接pdftotext -layout从冻结PDF抽取并读完全12页。精核p.5 Theorem1.6实际B连通条件、pp.6–8 (2.1)–(2.8)/Lemmas2.1–2.3及全局构造/唯一性、p.9 Proposition3.1、列基反例与Theorem3.2。当前正文两处既有修订与PDF一致，正文SHA为0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254。检索当前registry中Hankel/border/flat extension/平坦/乘法算子字段及现有map边/任务端点，确认本包同模型已登记端点；其他矩/调度对象只作候选导航，未声称完成其证明比较。",
+        "reason": "恢复复核后保留一条accepted conditional proof-step：flat投影给χ交换，在额外存在connected-to-1满秩B⊆C的分支，源判据给真实商基，再以H_B自伴性及N(p)=p(χ)1构造唯一同秩全局扩展。完整次数层由Proposition3.1支付额外B条件；一般connected-to-1稀疏C不保证这种B，故本条不充作目标全量词定理的完整支持。正表示测度另需实正性及有限秩正矩表示定理，未造纯代数判据无条件给测度的边。没有新增必读依赖或新原文错误。Boss已保原ID/归属刷新task的3个input_pins；本轮重读当前任务确认均与当前v2登记一致，本包无剩余输入版本义务。",
+        "edge_ids": [
+          "um-5c01b2-commuting-border-basis-connected-column-flat-extension"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-5c01b2e813440a3d/commuting-border-basis-to-connected-column-flat-extension.json",
+        "sha256": "7107cb24a26f8f84a0b4949a21c8606b55935096668c8f210c971289477372b3"
+      }
+    ],
+    "source_correction_notes": [
+      {
+        "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+        "sha256": "0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254",
+        "section": "矩阵模型",
+        "evidence": "冻结PDF p.4 §1.4的两项Hankel算子定义以及p.6 rank-flat假设。",
+        "impact": "原式把C标号与C+定义域混在一起，现已在原处分别写明H^C和H^{C+}定义域。该记号勘误不改变两个flat结果或核心border判据的真值；本包已随新正文SHA及v2端点重绑。",
+        "previous_sha256": "de08d9e732431ad8b7df4da921c7c42984746cce96a0fffba437547e19162d87",
+        "status": "applied-and-rechecked",
+        "previous_text": "对应的 Hankel 算子是 `H^C_Λ:Span(C^+)→Span(C^+)^*`。",
+        "corrected_text": "索引 `C` 的算子为 `H^C_Λ:Span(C)→Span(C)^*`；border 扩展为 `H^{C^+}_Λ:Span(C^+)→Span(C^+)^*`。"
+      },
+      {
+        "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+        "sha256": "0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254",
+        "section": "失败机制与条件",
+        "evidence": "冻结PDF p.9 §3.1：a≠1时rank为2，C内仅有{1,x1x2}及{x1,x1x2}两种列基，两者均不connected-to-1；前者明确含1。p.7紧接Lemma2.1的说明禁止直接在非连通B上套Theorem1.6。",
+        "impact": "“含1”不等价于“connected-to-1”；原字面断言被其所举例子直接否定。现已明确实际B连通条件并指出含1非连通列基，本边保留的B连通条件与修正后正文一致。无需撤回源核心定理或一般稀疏flat定理。",
+        "previous_sha256": "de08d9e732431ad8b7df4da921c7c42984746cce96a0fffba437547e19162d87",
+        "status": "applied-and-rechecked",
+        "previous_text": "即便 `C` connected to `1`，也可能不存在含 `1` 的简单 column basis；作者用 `C={1,x_1,x_1x_2}` 的例子说明必须使用更一般的 kernel/border-basis 论证。",
+        "corrected_text": "即便 `C` connected to `1`，也可能不存在 connected-to-1 的满秩 column basis `B⊆C`；`C={1,x_1,x_1x_2}` 的例子中可取含 `1` 的列基 `{1,x_1x_2}`，但它不 connected to `1`。因此一般稀疏扩展不能直接套用要求 `B` connected-to-1 的 Theorem 1.6，须使用 §2 的 kernel 归纳。"
+      }
+    ],
+    "current_review": {
+      "date": "2026-11-11",
+      "reviewed_by": "Boss4/fresh-recovery-flat-extension-worker",
+      "reused_assets": [
+        "map/edges/unrelated-machines-3a-3a-5c01b2e813440a3d/commuting-border-basis-to-connected-column-flat-extension.json"
+      ],
+      "actual_read": "本轮直接读取AGENTS.md、prompts/03-map-worker.md、IMPLEMENTATION第三阶段、当前task、3个完整v2 registry对象、共同正文全文、既有edge及receipt；从冻结PDF实际pdftotext -layout分段抽取并读完12页（1–5、6–9、10–12），特别逐式核p.5 Theorem1.6、pp.6–8 flat kernel/交换乘法/正规形/扩展唯一性和p.9 Proposition3.1/列基反例/Theorem3.2。pdfinfo核为12页，PDF及正文SHA均与当前绑定相符。",
+      "mathematical_result": "现有accepted conditional contribution仍有效：实际B连通时交换border判据给r维商代数，正规形保持全部给定乘积数据并产生唯一秩r全局扩展。一般C只有连通仍不足以调用源判据；其核归纳和实正表示测度升级不由本条支付。",
+      "independent_check": "同Boss fresh只读数学子核直接抽读PDF pp.5–9并逐项核正规形、H_B自伴、数据一致性和唯一性，结论无真数学缺口；未写文件。",
+      "column_basis_counterexample": "p.9 H_C=[[1,1,1],[1,1,1],[1,1,a]]，a≠1；仅有{1,x1x2}、{x1,x1x2}两组满秩列基。前者含1但缺通往x1x2的C内前缀，后者缺1，两者均非connected-to-1。原两句修订准确。",
+      "verification": "本轮更新审读说明后，edge-bind --write完成当前v2端点/正文/PDF绑定，edge-check通过并返回edge-structure-valid-not-a-mathematical-verdict、proof_scope=step；最终asset SHA按绑定后实际文件计算。数学结论依据实读和证明，程序检查不代替数学判断。",
+      "source_correction_followthrough": "既有两处原文修订保持；本轮没有修改共享正文、registry或任务定义，没有Git写操作或队列操作。",
+      "source_sha256": "0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254",
+      "endpoint_versions": {
+        "M-eeb1beecbe7345c29aae65f41841b671": 2,
+        "M-d2f0e90baf4440cab9efbffecfee709e": 2,
+        "M-8a8102ce2db9454ba1ed5eae66e12724": 2
+      },
+      "current_registration_pins": {
+        "M-eeb1beecbe7345c29aae65f41841b671": "3b689c32cc0e06a1c31ec2ee7ac0317aadf2b58e482ad9e8d608beaba32f1d13",
+        "M-d2f0e90baf4440cab9efbffecfee709e": "a066527acf0feec7455d375787e9a60dbe8603fa27a7b32090db79d1c5d54fad",
+        "M-8a8102ce2db9454ba1ed5eae66e12724": "8c985cebfde20d2b788e4610e314e7fbdc6ca3525041db765165988c455715b9"
+      },
+      "task_pin_status": "已实读Boss修复后的当前任务：core=3b689c32cc0e06a1c31ec2ee7ac0317aadf2b58e482ad9e8d608beaba32f1d13；d2=a066527acf0feec7455d375787e9a60dbe8603fa27a7b32090db79d1c5d54fad；8a=8c985cebfde20d2b788e4610e314e7fbdc6ca3525041db765165988c455715b9。三者均等于本轮已核v2登记；state=claimed、owner=Boss4，原task ID和写入范围保持。",
+      "required_follow_up_pairs": [],
+      "new_required_read_dependencies": [],
+      "new_source_errors": [],
+      "task_request_id_after_repair": "4d436cad82b74098bf78e9e668134653",
+      "compared_pairs": [
+        {
+          "core_id": "M-eeb1beecbe7345c29aae65f41841b671",
+          "peer_id": "M-d2f0e90baf4440cab9efbffecfee709e",
+          "reason": "本包的直接证明关系已由现conditional contribution支付到实际B连通分支；一般C的kernel归纳是目标自身文献证明，不是本源判据无条件全证。当前task没有标为follow-up的此对。"
+        },
+        {
+          "core_id": "M-eeb1beecbe7345c29aae65f41841b671",
+          "peer_id": "M-8a8102ce2db9454ba1ed5eae66e12724",
+          "reason": "已实读判明纯代数border商基判据本身不支付实正性或有限秩正矩表示；本包不新增冗余直接边，也不将localizer/优化器或有理原子结论混入。正表示测度对象的独立定理保持原有范围。当前task没有标为follow-up的此对。"
+        }
+      ],
+      "overlap_disposition": "当前task没有正式overlap_comparisons/follow-up对；两共享端点的数学比较记录在compared_pairs，未写closed_overlaps。"
+    },
+    "source_correction_impact": {
+      "affected_object_ids_by_whole_file_sha": [
+        "M-2cade1d7f2d24941acd7fb06b938c73e",
+        "M-8a8102ce2db9454ba1ed5eae66e12724",
+        "M-cdd66f04eebf4c44b73d62aece017919",
+        "M-d2f0e90baf4440cab9efbffecfee709e",
+        "M-dcddc9883c494fea8a4b270fdc4b10c7",
+        "M-e37dfe8f79184d5ba961c1e78cf3a558",
+        "M-eeb1beecbe7345c29aae65f41841b671"
+      ],
+      "affected_edge_files_by_endpoint_or_evidence": [
+        "map/edges/unrelated-machines-3a-3a-4307b22874ace6d9/expanders-to-sparse-incomparability.json",
+        "map/edges/unrelated-machines-3a-3a-5c01b2e813440a3d/commuting-border-basis-to-connected-column-flat-extension.json",
+        "map/edges/boss2-kun-same-signature-3b-5d4dd1a8a16eca9d/sparse-and-modern-dichotomy-complete-fixed-signature.json",
+        "map/edges/unrelated-machines-3a-3a-03312e3ef480754a/sparse-incomparability-to-mmsnp-reductions.json",
+        "map/edges/boss2-kun-fixed-seed-exact-n-3b-3b-a0d1b953a8e694c8/exact-order-by-dense-expander-sizes.json"
+      ],
+      "affected_task_ids": [
+        "unrelated-machines-3a-3a-03312e3ef480754a",
+        "unrelated-machines-3a-3a-ec98dbd143c32cff",
+        "unrelated-machines-3a-3a-5c01b2e813440a3d",
+        "unrelated-machines-3a-3a-4307b22874ace6d9",
+        "boss2-kun-same-signature-3b-5d4dd1a8a16eca9d",
+        "boss2-kun-fixed-seed-exact-n-3b-3b-a0d1b953a8e694c8",
+        "unrelated-machines-3a-3a-a10ca7ce6f144aff",
+        "unrelated-machines-3a-3a-f3d11f3d19e62b00",
+        "unrelated-machines-3a-3a-4cf8579e24721ace"
+      ],
+      "minimum_action": "原处两句已修正，七对象已按同ID/同陈述/同数学状态升v2，本包已按新正文SHA刷新evidence/endpoint pins、review_digest及receipt资产SHA。其余关联边和任务按各负责Boss的定向重绑/修复合同处理，不改历史done收据；本包源勘误已落实。"
+    },
+    "finite_rational_realization_boundary": {
+      "claim": "若给定矩数据及选定非退化H_B全在Q上，解H_B投影方程所得pi与chi_i均在Q上；该分支提供r维有理商代数/有理乘法矩阵，并使所有扩展矩Lambda_tilde(x^alpha)=Lambda(chi^alpha 1)仍有理。此为有理线性代数结论，不要求表示测度，也不保证原子坐标有理。",
+      "proof": "投影系数由非奇异有理矩阵H_B解线性方程，故在Q中；有限乘法矩阵的任意整数次积及有理线性泛函仍在Q中。",
+      "exact_boundary_example": "一变量y0=1,y1=0,y2=2,y3=0,y4=4给M1=diag(1,2)，M2=[[1,0,2],[0,2,0],[2,0,4]]，二者秩均2且PSD；B={1,x}连通，chi_x=[[0,2],[1,0]]有理，唯一正原子测度为(delta_sqrt(2)+delta_-sqrt(2))/2，原子不在Q。",
+      "not_paid": "未给一般稀疏C连通满秩B；未把任意矩生成/算法寻找证书、任意LP解、原T支撑调度law或有理坐标原子作为本edge结论。"
+    },
+    "follow_up_tasks": []
   }
 }
