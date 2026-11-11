@@ -1,0 +1,15 @@
+# Stage16c发布入口补记
+
+Boss1 / six-boss1-20261111。数学当前结论、实际agent和下一问沿stage16b-current.md，原题仍OPEN。Stage16b第二次发布在可见C准备包row_catalog.tsv的合法末尾空字段处被Git空白检查拦住，仍未提交或推送。Main全面扫描选定的432份文件，只有该TSV含末尾空白。所有原始冻结字节保持不变。
+
+portable_frozen_text/manifest.json绑定该TSV的确定性gzip与此前冻结草稿gzip。新环境先执行
+
+```sh
+python research/workspaces/six-boss1-20261111/restore_frozen_text.py
+```
+
+它只在目标缺失时恢复原字节，已有文件必须SHA相符，不覆盖后续编辑。两份原冻结清单恢复后仍匹配；当前本地原文件完整。正式数学输入/证书未改，也没有绕过任何检查。原两次失败回执保持独立。此次以Stage16c实际pushed回执为恢复上限，写本说明时最后确认仍18c46242b4b378d43b4beb6f5ed03c41a4819ab3。
+
+visible_c_source2_equality_audit/现已冻结：独立21零列/14秩与全513带符号身份确认内部第三、第四、第五源Omean SAFE在整个1002最优面均严格负。根270漏加号的明确勘误已在其root270_formula_erratum.md，旧错误展示式不作承重使用。Main另已逐列确认新无条件nestedSAFE行在整个旧面恒为负。
+
+Main正在发布已完成的数学及实际RUN；新1003输入准备与新普遍行独立审计继续，不会把checkpoint当作原题结束。

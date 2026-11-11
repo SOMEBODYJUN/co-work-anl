@@ -1,6 +1,160 @@
 # Boss1：六人共同目录跨真实分支研究
 
-## Stage15当前入口：30对真实预算、225行普遍界与全部源31组合
+# Stage16c发布入口补记
+
+Boss1 / six-boss1-20261111。数学当前结论、实际agent和下一问沿stage16b-current.md，原题仍OPEN。Stage16b第二次发布在可见C准备包row_catalog.tsv的合法末尾空字段处被Git空白检查拦住，仍未提交或推送。Main全面扫描选定的432份文件，只有该TSV含末尾空白。所有原始冻结字节保持不变。
+
+portable_frozen_text/manifest.json绑定该TSV的确定性gzip与此前冻结草稿gzip。新环境先执行
+
+```sh
+python research/workspaces/six-boss1-20261111/restore_frozen_text.py
+```
+
+它只在目标缺失时恢复原字节，已有文件必须SHA相符，不覆盖后续编辑。两份原冻结清单恢复后仍匹配；当前本地原文件完整。正式数学输入/证书未改，也没有绕过任何检查。原两次失败回执保持独立。此次以Stage16c实际pushed回执为恢复上限，写本说明时最后确认仍18c46242b4b378d43b4beb6f5ed03c41a4819ab3。
+
+visible_c_source2_equality_audit/现已冻结：独立21零列/14秩与全513带符号身份确认内部第三、第四、第五源Omean SAFE在整个1002最优面均严格负。根270漏加号的明确勘误已在其root270_formula_erratum.md，旧错误展示式不作承重使用。Main另已逐列确认新无条件nestedSAFE行在整个旧面恒为负。
+
+Main正在发布已完成的数学及实际RUN；新1003输入准备与新普遍行独立审计继续，不会把checkpoint当作原题结束。
+
+## Stage16b当前入口
+
+# Stage16b 当前恢复入口：正式回流修正、可见 C 精确界及内部真源的新付款
+
+Boss1 / RUN six-boss1-20261111；customer-attraction/six-providers；rebuild/research-v2。
+原题2W≥OPT6仍OPEN，Main继续。写本说明时最后确认pushed仍是
+18c46242b4b378d43b4beb6f5ed03c41a4819ab3。Stage16第一次checkpoint因两处
+相同公式行末空白失败，未提交；实际恢复上限须看后续Stage16b的pushed回执。
+
+## 当前 Main 已亲核的精确普遍界
+
+完整512客户型(a1,…,a6,x,o,c)+K的1002raw/513col/2eq必要锥，唯一一次LP后
+精确恢复得到
+
+α=4757095109515738566700794768667543071677 / 10803370013405844497554807694481975324637
+≈.44033436822146094，且原模型 W≥α OPT6。
+
+完整input在visible_maximum_joint/，SHA b0610bb00298a4ee953423a8066dab050cb9d515fd6d5dde41f5117116f2ba33；
+完整原对偶、12正付款、最优面及真实分支排除在visible_maximum_joint_solve/，
+cert SHA8dd66c5c1cd3d729d262b64d6874ca9c7090952f0100c97d5ccc5397c6465347，
+manifest13a5a0206c1332433fa823d25be67cb6b1244375c0269c8e9dca7e3aef0dc98f。
+Main亲读完整proof并用main_visible_c_certificate_check.py/json另核全部1002原行、
+513对偶余项、两等式、互补/目标、21零余项支持上14秩、七参数完整表达、
+1002参数化原不等式及6个fixed量有符号身份；没有调用优化器。
+
+整个最优面不能由完整SPE实现。正P25 source2(C,Omean)使三个中间真实后继
+覆盖恰C，真实源收益均等于actual u2；p=a1=1时末位1110和1111弱平局均保留。
+全脸A1⊆C、A1∩X空、K/|A1|/|X|/u2固定，内部第三源查X需
+u2≥|X|/4−(K−|A1|)/20，而固定差为
+73001712264841918690793563657687463721 / 108033700134058444975548076944819753246370>0。
+这只是等号排除，不能单凭严格不等号声称统一正增量；完整半覆盖仍未证明。
+
+## Main已经补出的定量约束
+
+新冻结包main_source2_maximum_nested_safe/有完整源证明、128态余项、4096真实
+菜单核验及513列新行，0优化。实际首标签A1会员p∈{0,1}，真实最大C会员c，
+任意六合法查询并会员o，令
+
+B=Σc/(p+5)，M=Σo/[6(p+4c+1)]，N=Σo/[6(p+3c+2)]。
+
+新普遍行是300u2+K−288B−12M−5N≥0。付款为同一真实source2强制C分支的
+25源IC、三个中间CAP各1/2、末CAP1、同末BR平均1，再加5/12倍该分支内部
+真第五源SAFE平均。把真实第五源收益留在同一客户成本中后取完整四尾最低值，
+最后才用|C|=K；并未提前假设中间收益等于u2。两个六索引均值保真实d≥o。
+当前仿射包络端点5/12由(p,c,o;r3r4r5r6)=(0,0,1;0010)支付；不声称所有钱包最优。
+Main将新行代入整个1002最优面，精确恒为
+−15981204499895866953854050884598865236619 / 86426960107246755980438461555855802597096
+≈−.1849099456936224。
+
+## 已冻结独审及已发现文字勘误
+
+maximal_root_tail_wallet_v3_audit/及相邻.md已冻，独立检查270原行/129列/自由K,O的
+131列和Main全局桥257列均PASS，manifest e670451f2d1b23c7d389ed4425074d9a2348969c9a76d0ed634903f443ef1cb8。
+Main实读发现其相邻正文COST显示式首行三分式漏印两个加号；实际check_exact.py
+及证书使用相加，计算不受影响。准确首行必须是
+
+126000q/(b+1+r+y+t) + (43r+31218y+34458t)/(b+b3+3)
++ 1654(r+y+t)/(b+b3+b4+b5+1)，再加后两行5400与7740项。
+
+这是明确文字勘误，不能按旧展示式中的乘积引用。独审者将在新的
+visible_c_source2_equality_audit/root270_formula_erratum.md保正式勘误，旧冻结字节不改。
+原根270数学证明与Main全131检查此前已正确，正式source3引理不引用这份错误展示。
+
+## 正式登记及待集成的边
+
+Stage16已新增唯一正式source3/root引理M-a90ca74cfdc848cb8f628fac8dd35f0a。
+本次按版本规则升至v2，只将公式NU行末TeX空白写为quad；body SHA
+25e68dd35cedd7bc507092111a96fb8dd1b26f2e507275597915c763c5376676。
+计算对象cross-branch-necessary-system-20261111升v13，仅刷新引理证据SHA；
+其Stage16承重正文不变，仍准确回流到CAP4普遍界.4400737002661185。
+后续root270/.44026194及可见C/.44033437、新定量行属于完整已核工作包，下一版定向回流。
+旧冻结draft body.md原字节及正式v1原字节保存在registration/stage16_whitespace_correction/
+的确定性gzip内。仅原draft文本不入此次提交，其SHA256SUMS在恢复原稿后仍匹配。
+没有改输入、覆盖失败回执或绕过Git空白检查。
+
+登记实际3793对象，4986材料；canonical edge_files保持2114。
+本次8条受影响边均已正规重新bind/check。此前10条自有边漏canonical索引加本轮3条，
+仍须在隔离mapper完成实际plan/claim/published receipt/done/assemble；不手改edge_files。
+mapper /workspace/scratch/b0fef5ec503f/co-work-anl-boss1-map，Boss1/map-v2，旧3任务不动。
+Main先确认本轮pushed，再同步mapper固定当前注册pin并做这个窄比较。
+
+## 当前实际代理及下一步
+
+/root/visible_maximum_joint已闭合1002输入准备，其实际独立worker为
+/root/visible_maximum_joint/independent_precheck，0优化。
+/root/visible_maximum_joint_solve已闭合唯一1002求解/原对偶/整面排除；同一代理新义务
+只准备visible_maximum_joint_v2/的1003raw/513/2：旧1002字面全保，仅追加Main新行。
+此下一输入尚无优化授权，不能重跑旧求解；冻结审核后由Main另行释放唯一求解。
+/root/early_shared_x_source_audit完成751与root270独审，现写新的
+visible_c_source2_equality_audit/：独立整面中间真源SAFE矛盾及文字勘误；随后另审
+main_source2_maximum_nested_safe/的真实预算与全部128态/513系数，0优化。
+
+751点无关模板已冻但未绑定任何新点；旧225/546/867/1002完整面均已被廉价真约束排除，
+不再消耗这些点的phase-I。唯一云请求C-six-boss1-common-x-joint-23676-01，
+run43096304349，源b96dbcdfe0dec963bbaf91f3a9a2f0ed597467ad，最后check10 queued，
+jobs/artifacts空；没有重发、取消或绕本地大型求解守卫。固定16hist值与普遍界严格区分。
+Main持续推导、核查、保存和推进；checkpoint不结束开放原题。
+
+## Stage16历史入口：真实第三源正式回流、六轮全型证书与最大标签联合层
+
+Boss1；RUN six-boss1-20261111；结果分支rebuild/research-v2；customer-attraction/six-providers。原六人2W≥OPT6仍OPEN，Main继续。写本入口时最后实际确认pushed为18c46242b4b378d43b4beb6f5ed03c41a4819ab3；本轮以实际Stage16 pushed回执确认恢复上限。
+
+### 已核主结论及实际文件
+
+三份新完整全256客户型+K系统225/546/867已有精确匹配原对偶，普遍系数分别约.43743468994980583、.4391243746776041、.440065512041364。Main分别全行/全257列重放；v6另亲重建全部82240个P25新系数。它们的完整最优面均被真分支等号排除：225面依赖SAFE2(A5)与K帽，真四尾同覆盖后末位严格偏离；546面P31等号迫|T|=K而三个T严格小于K；867面真最大根CAP2/CAP4和四个零余项型迫O=K而整面K<1。三个包保完整秩、非支持零列及signed面身份，不是SPE反例。
+
+main_all_source25_family/已经Main直接证明并两次独立核验：n=6−i、c=(n+1)/2，25ui+cK≥c|T|+24Σ_T1/(p+n+1)+Σ_Q1/(p+1+n1T)。源IC25、中间尾帽各1/2、真末帽1与同末BR1付款；P31−P25=6SAFE+(n−1)CAP/2仅在直接证明后作强度比较。320行全257系数及完整菜单平均均冻结。
+
+main_root30_cap4_strict_bound/及独立_audit/已冻：同一真CAP4增加δ4=1242901025/57296293387767，全部131根列证新线；六actual源各真改最大C给W≥K。和v6对偶全257合账给α=891124490754754277833367477478333164168/2024943754229983091736619905135906627503≈.4400737002661185。独立审计将它展开为18个正预算，0优化。
+
+更新的最强本RUN已核系数来自随后独立根270：maximal_root_tail_wallet_v3/已完成唯一LP，完整128根型+u的270raw准确匹配，原始点只认证指定K处必要锥。普遍根线16877573861922720u≥1767904008200582K+337340181272013O，十个正预算新增真第四源P25(B6,Omean)。OPT并集帽权0，因此线允许任意六合法查询并。Main全文实读并在main_root270_global_bridge/亲核全部270/129/131、正P25全部128型。六合法查询大小帽给K≥O/6；和v6对偶准确合账得当前普遍界
+
+W≥688930071678645080978179164614013566510285979581569 / 1564818589840432726302471545016752331710657348785374 · OPT6 ≈ .44026194227977344 · OPT6。
+
+该新常数来自全257非负恒等式，0新全局LP；不宣称新全局必要系统最优或最佳已知界。所有这些界仍小于half。
+
+### 已闭合模板与独立审查
+
+actual_source2_nested_requery/及_audit/均冻：751=P243+507内部真P25+1内部C30，原243逐字继承。内部source3/4/5取外层真分支自身前缀和收益，K系数2、3/2、1；强制source2无新IC；C30的h第二位为q，A=−cut。独立流核追加508×8192共4161536条数学接口与27036实际静态标量，不冒称运行builder或已有全矩阵。全包未绑定任何点，0phase-I；已排除225/546/867各点均不再耗此计算。
+
+background_projection_audit/已闭合：既有一背景五尾53预算来源，经12288条件表、六删一与完整并会员域给全257必要行，保V=W−u1及−κK。该行在v5/v6付款0、实际slack正；原大型oracle未重跑。
+
+### 正式正文、共享图及恢复状态
+
+新正式引理M-a90ca74cfdc848cb8f628fac8dd35f0a已写archives/customer-attraction/state/引理/六标签真实第三源重查询与根收益投影--引理.md，含任意两前缀C36/C30、九预算/十根预算、全部128包络与三份根余项。计算对象升级v12，正文完整回流至.4400737002661185及三次完整面排除；根270与.44026194227977344是紧接的已核工作包，下一版再定向回流，不篡改已生成本次登记候选。正式登记3793对象/4986材料，canonical edge_files仍2114，未手工追加图索引。
+
+Stage16重新绑定核查5条受计算v12影响的旧边，并新增真实source3 ALL、全域新界ALL、背景删槽贡献三边。它们的文件存在/edge-check不等于canonical已集成。此前10条本RUN边漏索引加本次3条仍须走隔离mapper正规plan/claim/published receipt/done/assemble。mapper clone为/workspace/scratch/b0fef5ec503f/co-work-anl-boss1-map，Boss1/map-v2，旧3个认领任务保持不动。先推本次登记，再同步mapper定向做实际数学范围；不得通过手工edge_files追加绕过门禁。
+
+### 当前真实代理、准确授权和下一步
+
+/root/visible_maximum_joint（fresh fork_turns=none）只准备全512客户型(a1..a6,x,o,c)+K的513列联合层。C是真最大裸标签，X仍为actual前四最大潜力；旧867原行全量忠实拉回，加CAP4/ROOT270两根、132个可见C真实查询与六标签并帽，再加K−O/6，共1002raw、2等式。只作准确输入和来源前检，尚无优化授权；不得用旧点支持缩域或把C当新潜力最大者。输入锁定及Main源审核之后再明确释放一次求解。
+
+/root/early_shared_x_source_audit已闭合751审计，现独立审maximal_root_tail_wallet_v3/270真根来源及全270/129/131，另可附审Main根到全局的菜单K付款；只写maximal_root_tail_wallet_v3_audit/，0优化。/root/universal_union_wallet_lp已闭合v6和CAP4独审；/root/formal_requery_return已交完整新引理草稿并结束；/root/maximal_root_tail_wallet_v3已完成一次求解和独立字面核验并冻结。
+
+唯一云请求C-six-boss1-common-x-joint-23676-01，run43096304349，源b96dbcdfe0dec963bbaf91f3a9a2f0ed597467ad；check10仍queued且jobs/artifacts空。未重发、未取消、未绕本地GITHUB_ACTIONS守卫。固定16hist的W10≈.4941319648与上述全域界不混用。
+
+Main接续：先确认本轮checkpoint pushed，再完成定向canonical图集成，同时亲核visible-C新输入并适时释放唯一LP；只在新的精确候选不能被廉价已证约束排除时绑定751。持续留下真实推导、失败和下一问，不以checkpoint结束开放题。
+
+## Stage15历史入口：30对真实预算、225行普遍界与全部源31组合
 
 Boss1；RUN six-boss1-20261111；研究分支rebuild/research-v2；customer-attraction/six-providers。原六人2W≥OPT6仍OPEN，Main继续推导。写本入口时最后实际确认pushed为6af9f623faf22f2a1f0d668884f40e10a368404a；Stage15以随后实际pushed回执为准。
 
