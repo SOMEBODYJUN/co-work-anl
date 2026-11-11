@@ -1,0 +1,48 @@
+{
+  "edge_id": "perfect-four-to-one-to-three-color-constant-palette",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-ab4a576ed0be482b89d4a646ffc102b9"
+  ],
+  "target_ids": [
+    "M-d007675a9ed240898c90e831af80b092"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "k为先固定整数；使用GS20 Theorem1/Lemma8的有限arc-graph归约链，按所需源palette先选独立集阈值及核心soundness。所有归约针对固定常数而为确定性多项式；不将k提升为输入相关参数。",
+  "roles": {
+    "M-ab4a576ed0be482b89d4a646ffc102b9": "在d=4支付任意小固定soundness、常数字母表和严格完美YES的exact投影源hardness。",
+    "M-d007675a9ed240898c90e831af80b092": "所得完整图承诺可区分NP-hardness；目标参数在输入规模之前固定。"
+  },
+  "whole_result": "对每个固定整数k≥3，有限图上区分3-colorable与不存在合法k-coloring是NP-hard。",
+  "explanation": "核心支付GS20 Conjecture3在d=4的完整承诺，包括perfect completeness和parallel edges。先由GS20 Theorem9取q=8；任意固定源palette C，选δ<1/C，则NO图不可能C可着色，因为C个色类中至少一个是比例≥1/C的独立集。再用GS20 Lemma8的arc-graph归约把固定8色YES的任意常数palette硬度降为3色YES，给定k先固定所需C及有限构造链。因而最终YES是完全3着色，NO无k着色，正好匹配目标整句。该边不把不完美YES替换为完美YES，也不声称随输入增长k的同样多项式结论。",
+  "scope": "Fei–Minzer–Wang Theorem1.6应用到GS20的精确图模型；正文同页独立数学端点，保全部模型/复杂度量词。",
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/comparison-proof.md",
+      "sha256": "ee2a7a2eb8567a1e9f3aaa37714d33d898948c79ebd0e20b9d93def3d1c58e5e",
+      "section": "三可着色图：完整目标"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/fei_minzer_wang.pdf",
+      "sha256": "48baa160d5d15e61aaf99b24b6fc15518c20f204d165fc96de1251d9d8a82ea0"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/guruswami-sandeep-icalp2020.pdf",
+      "sha256": "1f7428d31ae66a1d6488444fa117b1265fd0cf305dbd237387961f7f2b0a97f4"
+    }
+  ],
+  "reviewed_by": "Boss1/four-to-one-soundness-round39",
+  "review_note": "实读原登记陈述、完整同页正文、重新导出的FMW定义/主定理/附录B与GS20正式原PDF全文；核exact标签比、YES=1、multigraph合同、固定常数参数顺序及目标完整陈述。详细归约与未声称的范围见comparison-proof.md；原正文soundness公式误属另作最小勘误，不作该主定理的反证。 已复核正式源v2及当前端点陈述；字母表界r不与Condition3.12内部r混用。",
+  "endpoint_pins": {
+    "M-ab4a576ed0be482b89d4a646ffc102b9": "94cc67179ae4605032328fa61672d51c0de1d87860dc3e410c46251ca96ccb54",
+    "M-d007675a9ed240898c90e831af80b092": "3ce12eb8694b9825d6c06c796d23e6aacacf0c6a05a850ed9c0c2f1f0447e6ab"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/comparison-proof.md": "ee2a7a2eb8567a1e9f3aaa37714d33d898948c79ebd0e20b9d93def3d1c58e5e",
+    "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/fei_minzer_wang.pdf": "48baa160d5d15e61aaf99b24b6fc15518c20f204d165fc96de1251d9d8a82ea0",
+    "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/guruswami-sandeep-icalp2020.pdf": "1f7428d31ae66a1d6488444fa117b1265fd0cf305dbd237387961f7f2b0a97f4"
+  },
+  "review_digest": "cc35e0eacd06785fe0b2f4129018eec5fb57e83c4edb648e61dba5b1b28a3623"
+}

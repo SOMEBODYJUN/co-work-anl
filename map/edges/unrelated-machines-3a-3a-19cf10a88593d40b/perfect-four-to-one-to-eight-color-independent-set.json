@@ -1,0 +1,48 @@
+{
+  "edge_id": "perfect-four-to-one-to-eight-color-independent-set",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-ab4a576ed0be482b89d4a646ffc102b9"
+  ],
+  "target_ids": [
+    "M-922feb7b429f49d4b5f13ca51b34aae7"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "先固定目标δ>0，再选GS20解码/列表参数及所需源soundness，再由核心选常数字母表。采用GS20的exact4-to-1约束多重图合同和其已证Conjecture3⇒4、Theorem9归约；不加bounded-degree保证。",
+  "roles": {
+    "M-ab4a576ed0be482b89d4a646ffc102b9": "在d=4支付任意小固定soundness、常数字母表和严格完美YES的exact投影源hardness。",
+    "M-922feb7b429f49d4b5f13ca51b34aae7": "所得完整图承诺可区分NP-hardness；目标参数在输入规模之前固定。"
+  },
+  "whole_result": "对每个固定δ>0，有限图上区分8-colorable与最大独立集比例严格小于δ是NP-hard。",
+  "explanation": "核心在d=4逐项满足GS20 Conjecture3：左右标签可重命名为[4R]与[R]，每右标签恰4个原像，YES严格满足全部约束，NO的任意小soundness在固定目标δ之后选择；FMW Definition1.1的多重边允许性与GS20 pp62:3/62:10一致。GS20 §2.1的已证d-to-d induced-list归约和Theorem9以q=2d给出图独立集gap，代d=4即q=8。长码构图的YES由满足标签所指定的坐标着色，NO独立集经低度影响解码给出相反的诱导列表满足率。字母表及码块大小都是固定δ的常数，构造多项式；全部目标成立，非调度迁移。",
+  "scope": "Fei–Minzer–Wang Theorem1.6应用到GS20的精确图模型；正文同页独立数学端点，保全部模型/复杂度量词。",
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/comparison-proof.md",
+      "sha256": "ee2a7a2eb8567a1e9f3aaa37714d33d898948c79ebd0e20b9d93def3d1c58e5e",
+      "section": "八可着色图：完整目标"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/fei_minzer_wang.pdf",
+      "sha256": "48baa160d5d15e61aaf99b24b6fc15518c20f204d165fc96de1251d9d8a82ea0"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/guruswami-sandeep-icalp2020.pdf",
+      "sha256": "1f7428d31ae66a1d6488444fa117b1265fd0cf305dbd237387961f7f2b0a97f4"
+    }
+  ],
+  "reviewed_by": "Boss1/four-to-one-soundness-round39",
+  "review_note": "实读原登记陈述、完整同页正文、重新导出的FMW定义/主定理/附录B与GS20正式原PDF全文；核exact标签比、YES=1、multigraph合同、固定常数参数顺序及目标完整陈述。详细归约与未声称的范围见comparison-proof.md；原正文soundness公式误属另作最小勘误，不作该主定理的反证。 已复核正式源v2及当前端点陈述；字母表界r不与Condition3.12内部r混用。",
+  "endpoint_pins": {
+    "M-922feb7b429f49d4b5f13ca51b34aae7": "e09bfb3ab6c6974e31aa7bed58569873db142dc0620e81c62084ab88bd039128",
+    "M-ab4a576ed0be482b89d4a646ffc102b9": "94cc67179ae4605032328fa61672d51c0de1d87860dc3e410c46251ca96ccb54"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/comparison-proof.md": "ee2a7a2eb8567a1e9f3aaa37714d33d898948c79ebd0e20b9d93def3d1c58e5e",
+    "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/fei_minzer_wang.pdf": "48baa160d5d15e61aaf99b24b6fc15518c20f204d165fc96de1251d9d8a82ea0",
+    "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/guruswami-sandeep-icalp2020.pdf": "1f7428d31ae66a1d6488444fa117b1265fd0cf305dbd237387961f7f2b0a97f4"
+  },
+  "review_digest": "49334274d40873c29281d4e159ad3556f8b1465c64b970714d5e8f90dcdaaed1"
+}
