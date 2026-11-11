@@ -4,24 +4,24 @@ RUN：six-boss1-20261111；Boss1；分支rebuild/research-v2；存档customer-at
 
 ## 恢复入口
 
-实际clone：/workspace/scratch/b0fef5ec503f/co-work-anl-boss1。实际工作区research/workspaces/six-boss1-20261111/。先读main.md顶部“Stage11结果”、spec.json及实际任务稿/输入，再用research resume six-boss1-20261111核证据包、反馈和状态。环境丢失时同Boss、分支、存档、子档执行start --resume。原六人2W≥OPT6仍OPEN，继续Main循环。
+实际clone：/workspace/scratch/b0fef5ec503f/co-work-anl-boss1。实际工作区research/workspaces/six-boss1-20261111/。先打开main.md顶部“Stage12当前入口”、spec.json及实际任务稿、程序和输入输出，再执行research resume six-boss1-20261111核证据包、未答反馈和任务状态。环境丢失时按同Boss、分支、存档和子档start --resume。原题OPEN，保存之后继续Main循环。
 
-## 当前结论
+## 当前已核结论
 
-旧20910×20585必要系统精确最优W≈.49304863960834766，531正对偶匹配；其cb45原始点现已被普遍必要式MC6排除。MC6保同一个全目录最大潜力标签X，将倒二cap/RC、实际末位报价及裸K容量一起消元，K归一精确余量约−.11768241938025059。此次数值排除保同一原语义及全目录K，不证明整个旧最优面排除或六人half。
+完整共同X的22297×21021必要系统精确最优W10约.4941319647988424，精确分数、463正对偶与全行列证书在maxb_augmented_lp/full_lift/recovery/；primal SHA5b1b649af5fc9d359e31dd03945d12708e599e0eeac75983ed188e60178b3bfe。新增对偶投影给20911单MC6系统同值，compact_projection/有452正对偶和独立匹配证书。只是固定16hist必要LP，低于half不是SPE反例或全域下界。
 
-正式解析入口为父档引理“共同最大潜力主题的末两位容量投影”；工作证据terminal_response_cycles.md/同名目录、main_verify_maxb_cut.py及main_maxb_cut_audit.json。旧最大X和RC归旧owner，新增的是五预算投影及已认证点的严格分离。
+W9整个最优面被MC6排除。W10整个最优面又被旧AP的actual3→A6行排除：精确恒等负值约−.014240756561364065。后者证据在early_ap_optimum_face/facial_zero_closure/，需保全3384步强制零面传播与21021列signed identity；初试正dual支撑不足的失败也保留。没有据此认领下一LP的新定量最优。
 
-cb45的完整438主行根排序包络有精确120正μ完成，全部36776不等式/38等式通过；完整177RZE单查询也有精确E完成，全部21572行通过。新E却违反同一B4的两个条件联合上界（约−.00239255、−.00140459）。各结论保明确有限范围，不构成共同客户律或完整SPE。原始云数组/精确证书在root_sorting_20910/及rze_query_closure_20910/。
+正式解析入口包括父档“共同最大潜力主题的末两位容量投影”“共同最大潜力主题的三尾前接不等式”和新增“共同最大潜力主题的早期安全预算投影”。Main的新全类型证明给前三源常数206/5、121/4、61/3，独立1440型原份额核验PASS。H3七权锥最佳10、第三源加三份真PAIR的十一权锥最佳仍61/3，各自限定证书锥，不外推真实SPE锐性。
 
-旧b0ca点的100原子D/R/Z/B4共同层及164标签实际末两位排除仍有效；增加目录或改变客户律未排除。更早所有点按各自指纹读取，不迁移结论。
+210组共同X/own的1260六facet已核；420交叠今后必须是独立真实core，不能取各自min。旧5b1b的5条O6负只否定给定y。根438和RZE177旧cb45完成、旧b0ca的164目录排除均保各自点/域，不迁移。
 
-## 实际在续
+## 当前实际义务
 
-/root/maxb_augmented_lp唯一下一发现为maxb_augmented_lp/full_lift/完整22297×21021共同X系统，矩阵SHA c054aadf745ea4540233a3da693917498527d19d4ccecb0fdd34ad884e461e4b；保旧20910系统全部内容并加1387行/436列。独立全结构及旧下界PASS。正式请求C-six-boss1-maxb-full-lift-22297-01，DS1800秒/job40分钟。推送后查询实际run，取回输出后由原代理精确恢复原始/对偶。单切20911准备保留但未执行。
+common_x_joint_lp/final/已经冻结23676×21021、3313758非零；matrix SHA1b4a4e544e5b9eeea1fa64b3849a9d4cc532b997a5ad972ce33df81c224551e7。10277core含420真实y，10744旧辅助保规范合同。最终六输入、全51增量与恢复路径独立PASS；同目录actions_request.json及freeze_manifest.json是准确输入，Main正式本地请求为C-six-boss1-common-x-joint-23676-01，推送触发一次DS1800秒/job40分钟。
 
-/root/maxb_h3_bridge的10u4−9κ族及17行已完成并由maxb_h3_audit独立PASS；Main已合成HMP六参数族，待新点评价，不改冻结22297。maxb_universal_audit已完成MP/MC6审核。root_x_joint_contract正在核同X/旧RZ与根μ共同合同，maxb_h3_pair_strength正查三份真两尾PAIR能否降低10。完成的根/E/循环和两项审核均已关闭释放。
+取回这份请求的原始ZIP/数组，核request、source commit、六输入、实际源码、输出清单和返回scales，再交原/root/common_x_joint_lp做精确原始/对偶及210组八格验证；不可把数值状态当结论。/root/common_x_joint_audit已完成。/root/early12_safe_maxx_cones给前两源锥的精确最优，Main实读已关闭；/root/root_x_shared_queries及其independent_audit落实同一X根η的真实查询接口；/root/opt6_shared_x_exchange核最大覆盖槽交换。各新任务只能写独占目录，不改已冻结final输入。
 
 ## 远端状态
 
-最后确认pushed为e4b9a8702cab8fe47ca4370fd5d025ee3b7d70cc（Stage11两项闭包输入），收据checkpoints/stage11-inputs.json。新MC6、完整根/E精确结果、正式回流和22297请求在下一checkpoint确认前仅本地可恢复；新请求云端产物尚未产生。继续研究，Actions成功不代替精确数学。
+最后确认pushed为ef43da7b2a1bdf1bdaa06e302586dc4a3748a13a，收据checkpoints/stage11-results.json，公屏seq81。上述Stage12结果、新正文和23676请求在本次checkpoint确认前仅本地。旧云run43091082992/artifact13889091562已完整取回并核验，当前没有已派未取的旧云产物；新请求以随后真实run回执为准。checkpoint成功后继续原题。

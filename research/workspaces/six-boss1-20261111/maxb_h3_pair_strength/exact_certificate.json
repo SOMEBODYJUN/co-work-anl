@@ -1,0 +1,3309 @@
+{
+  "schema": "maxb-h3-pair-strength-exact-v1",
+  "variables": [
+    "C",
+    "alpha",
+    "beta",
+    "gamma",
+    "eta_QX",
+    "eta_QQ",
+    "eta_XX"
+  ],
+  "row_convention": "E = coefficients dot weights + constant >= 0",
+  "input_sha256": {
+    "maxb_h3_bridge.md": "5620e1bc60e24f22be37f09c261b3ae2ec0219d6eeb07ece7eb44f91bbb91e62",
+    "maxb_h3_audit.md": "e05dd2cac1baf8430629d3d519e6e2f55e49eab43dd7bd62d55d8d0dacf067cc"
+  },
+  "primal": {
+    "C": "10",
+    "alpha": "1",
+    "beta": "2",
+    "gamma": "1",
+    "eta_QX": "0",
+    "eta_QQ": "0",
+    "eta_XX": "0"
+  },
+  "optimal_face_upper_endpoint": {
+    "C": "10",
+    "alpha": "6/5",
+    "beta": "2",
+    "gamma": "1",
+    "eta_QX": "0",
+    "eta_QQ": "0",
+    "eta_XX": "0"
+  },
+  "dual": {
+    "standard_primal": "min e_C^T w subject to M w >= -c and w >= 0",
+    "standard_dual": "max (-c)^T lambda subject to M^T lambda <= e_C and lambda >= 0",
+    "support": [
+      {
+        "atom": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "weight": "14"
+      },
+      {
+        "atom": [
+          0,
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        "weight": "12"
+      },
+      {
+        "atom": [
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "weight": "6"
+      },
+      {
+        "atom": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "weight": "6"
+      }
+    ],
+    "weighted_coefficients": [
+      "1",
+      "0",
+      "0",
+      "0",
+      "-1",
+      "0",
+      "-11"
+    ],
+    "weighted_constant": "-10",
+    "reduced_cost": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "1",
+      "0",
+      "11"
+    ],
+    "objective": "10",
+    "identity": "C - 10 = 14 E_A + 12 E_B + 6 E_D + 6 E_H + eta_QX + 11 eta_XX"
+  },
+  "eta_QQ_zero_identity": "E_A + 3 E_H = -eta_QQ",
+  "atoms": [
+    {
+      "atom": {
+        "b": 0,
+        "a": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "constant": "0",
+      "tp_qx": "0",
+      "tp_qq": "0",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "1",
+        "1",
+        "3/2",
+        "0"
+      ],
+      "constant": "-1",
+      "tp_qx": "-1",
+      "tp_qq": "-3/2",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 0,
+        "x": 0,
+        "y": 0,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "1",
+        "-1",
+        "-1",
+        "-1",
+        "-1"
+      ],
+      "constant": "0",
+      "tp_qx": "1",
+      "tp_qq": "1",
+      "tp_xx": "1",
+      "primal_slack": "1",
+      "upper_endpoint_slack": "1"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 0,
+        "x": 0,
+        "y": 0,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "1/2",
+        "-1"
+      ],
+      "constant": "-1",
+      "tp_qx": "0",
+      "tp_qq": "-1/2",
+      "tp_xx": "1",
+      "primal_slack": "1",
+      "upper_endpoint_slack": "1"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 0,
+        "x": 0,
+        "y": 1,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "1",
+        "0",
+        "0",
+        "-3/2",
+        "-3/2",
+        "-3/2"
+      ],
+      "constant": "0",
+      "tp_qx": "3/2",
+      "tp_qq": "3/2",
+      "tp_xx": "3/2",
+      "primal_slack": "1",
+      "upper_endpoint_slack": "6/5"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 0,
+        "x": 0,
+        "y": 1,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "1",
+        "0",
+        "1/2",
+        "-1/2",
+        "0",
+        "-3/2"
+      ],
+      "constant": "-1",
+      "tp_qx": "1/2",
+      "tp_qq": "0",
+      "tp_xx": "3/2",
+      "primal_slack": "1/2",
+      "upper_endpoint_slack": "7/10"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 0,
+        "x": 0,
+        "y": 1,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "1",
+        "1",
+        "-1/2",
+        "-3/2",
+        "-3/2",
+        "-3/2"
+      ],
+      "constant": "0",
+      "tp_qx": "3/2",
+      "tp_qq": "3/2",
+      "tp_xx": "3/2",
+      "primal_slack": "5/2",
+      "upper_endpoint_slack": "27/10"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 0,
+        "x": 0,
+        "y": 1,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "1",
+        "1",
+        "0",
+        "-1/2",
+        "0",
+        "-3/2"
+      ],
+      "constant": "-1",
+      "tp_qx": "1/2",
+      "tp_qq": "0",
+      "tp_xx": "3/2",
+      "primal_slack": "2",
+      "upper_endpoint_slack": "11/5"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 0,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "2/3",
+        "-1",
+        "-1",
+        "0",
+        "1/2",
+        "0",
+        "5/6"
+      ],
+      "constant": "1/3",
+      "tp_qx": "-1/2",
+      "tp_qq": "0",
+      "tp_xx": "-5/6",
+      "primal_slack": "4",
+      "upper_endpoint_slack": "19/5"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 0,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "2/3",
+        "-1",
+        "-1",
+        "1/2",
+        "5/6",
+        "5/6",
+        "5/6"
+      ],
+      "constant": "0",
+      "tp_qx": "-5/6",
+      "tp_qq": "-5/6",
+      "tp_xx": "-5/6",
+      "primal_slack": "25/6",
+      "upper_endpoint_slack": "119/30"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 0,
+        "x": 1,
+        "y": 0,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "1/6",
+        "-1",
+        "0",
+        "-1/2",
+        "0",
+        "-1/2",
+        "1/3"
+      ],
+      "constant": "1/3",
+      "tp_qx": "0",
+      "tp_qq": "1/2",
+      "tp_xx": "-1/3",
+      "primal_slack": "1/2",
+      "upper_endpoint_slack": "3/10"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 0,
+        "x": 1,
+        "y": 0,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "1/6",
+        "-1",
+        "0",
+        "0",
+        "1/3",
+        "1/3",
+        "1/3"
+      ],
+      "constant": "0",
+      "tp_qx": "-1/3",
+      "tp_qq": "-1/3",
+      "tp_xx": "-1/3",
+      "primal_slack": "2/3",
+      "upper_endpoint_slack": "7/15"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 0,
+        "x": 1,
+        "y": 1,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "1/6",
+        "0",
+        "-1",
+        "0",
+        "-1/6",
+        "-2/3",
+        "1/6"
+      ],
+      "constant": "1/3",
+      "tp_qx": "1/6",
+      "tp_qq": "2/3",
+      "tp_xx": "-1/6",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 0,
+        "x": 1,
+        "y": 1,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "1/6",
+        "0",
+        "-1",
+        "1/3",
+        "1/6",
+        "1/6",
+        "1/6"
+      ],
+      "constant": "0",
+      "tp_qx": "-1/6",
+      "tp_qq": "-1/6",
+      "tp_xx": "-1/6",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 0,
+        "x": 1,
+        "y": 1,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "-1/3",
+        "-1/3",
+        "-5/6",
+        "0"
+      ],
+      "constant": "1/3",
+      "tp_qx": "1/3",
+      "tp_qq": "5/6",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 0,
+        "x": 1,
+        "y": 1,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "constant": "0",
+      "tp_qx": "0",
+      "tp_qq": "0",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 1,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "constant": "0",
+      "tp_qx": "0",
+      "tp_qq": "0",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 1,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "1",
+        "1",
+        "3/2",
+        "0"
+      ],
+      "constant": "-1",
+      "tp_qx": "-1",
+      "tp_qq": "-3/2",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 1,
+        "x": 0,
+        "y": 0,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "1/2",
+        "-1",
+        "-1",
+        "-1",
+        "-1"
+      ],
+      "constant": "0",
+      "tp_qx": "1",
+      "tp_qq": "1",
+      "tp_xx": "1",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 1,
+        "x": 0,
+        "y": 0,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "1/2",
+        "0",
+        "0",
+        "1/2",
+        "-1"
+      ],
+      "constant": "-1",
+      "tp_qx": "0",
+      "tp_qq": "-1/2",
+      "tp_xx": "1",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 1,
+        "x": 0,
+        "y": 1,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "1/2",
+        "0",
+        "0",
+        "-3/2",
+        "-3/2",
+        "-3/2"
+      ],
+      "constant": "0",
+      "tp_qx": "3/2",
+      "tp_qq": "3/2",
+      "tp_xx": "3/2",
+      "primal_slack": "1/2",
+      "upper_endpoint_slack": "3/5"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 1,
+        "x": 0,
+        "y": 1,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "1/2",
+        "0",
+        "1/2",
+        "-1/2",
+        "0",
+        "-3/2"
+      ],
+      "constant": "-1",
+      "tp_qx": "1/2",
+      "tp_qq": "0",
+      "tp_xx": "3/2",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "1/10"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 1,
+        "x": 0,
+        "y": 1,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "1/2",
+        "1/2",
+        "-1/2",
+        "-3/2",
+        "-3/2",
+        "-3/2"
+      ],
+      "constant": "0",
+      "tp_qx": "3/2",
+      "tp_qq": "3/2",
+      "tp_xx": "3/2",
+      "primal_slack": "1",
+      "upper_endpoint_slack": "11/10"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 1,
+        "x": 0,
+        "y": 1,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "1/2",
+        "1/2",
+        "0",
+        "-1/2",
+        "0",
+        "-3/2"
+      ],
+      "constant": "-1",
+      "tp_qx": "1/2",
+      "tp_qq": "0",
+      "tp_xx": "3/2",
+      "primal_slack": "1/2",
+      "upper_endpoint_slack": "3/5"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 1,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "2/3",
+        "-1/2",
+        "-1/2",
+        "0",
+        "1/2",
+        "0",
+        "5/6"
+      ],
+      "constant": "1/3",
+      "tp_qx": "-1/2",
+      "tp_qq": "0",
+      "tp_xx": "-5/6",
+      "primal_slack": "11/2",
+      "upper_endpoint_slack": "27/5"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 1,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "2/3",
+        "-1/2",
+        "-1/2",
+        "1/2",
+        "5/6",
+        "5/6",
+        "5/6"
+      ],
+      "constant": "0",
+      "tp_qx": "-5/6",
+      "tp_qq": "-5/6",
+      "tp_xx": "-5/6",
+      "primal_slack": "17/3",
+      "upper_endpoint_slack": "167/30"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 1,
+        "x": 1,
+        "y": 0,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "1/6",
+        "-1/2",
+        "0",
+        "-1/2",
+        "0",
+        "-1/2",
+        "1/3"
+      ],
+      "constant": "1/3",
+      "tp_qx": "0",
+      "tp_qq": "1/2",
+      "tp_xx": "-1/3",
+      "primal_slack": "1",
+      "upper_endpoint_slack": "9/10"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 1,
+        "x": 1,
+        "y": 0,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "1/6",
+        "-1/2",
+        "0",
+        "0",
+        "1/3",
+        "1/3",
+        "1/3"
+      ],
+      "constant": "0",
+      "tp_qx": "-1/3",
+      "tp_qq": "-1/3",
+      "tp_xx": "-1/3",
+      "primal_slack": "7/6",
+      "upper_endpoint_slack": "16/15"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 1,
+        "x": 1,
+        "y": 1,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "1/6",
+        "0",
+        "-1/2",
+        "0",
+        "-1/6",
+        "-2/3",
+        "1/6"
+      ],
+      "constant": "1/3",
+      "tp_qx": "1/6",
+      "tp_qq": "2/3",
+      "tp_xx": "-1/6",
+      "primal_slack": "1",
+      "upper_endpoint_slack": "1"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 1,
+        "x": 1,
+        "y": 1,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "1/6",
+        "0",
+        "-1/2",
+        "1/3",
+        "1/6",
+        "1/6",
+        "1/6"
+      ],
+      "constant": "0",
+      "tp_qx": "-1/6",
+      "tp_qq": "-1/6",
+      "tp_xx": "-1/6",
+      "primal_slack": "1",
+      "upper_endpoint_slack": "1"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 1,
+        "x": 1,
+        "y": 1,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "-1/3",
+        "-1/3",
+        "-5/6",
+        "0"
+      ],
+      "constant": "1/3",
+      "tp_qx": "1/3",
+      "tp_qq": "5/6",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 0,
+        "a": 1,
+        "x": 1,
+        "y": 1,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "constant": "0",
+      "tp_qx": "0",
+      "tp_qq": "0",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "constant": "0",
+      "tp_qx": "0",
+      "tp_qq": "0",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "1/2",
+        "1/2",
+        "5/6",
+        "0"
+      ],
+      "constant": "-1/2",
+      "tp_qx": "-1/2",
+      "tp_qq": "-5/6",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 0,
+        "x": 0,
+        "y": 0,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2"
+      ],
+      "constant": "0",
+      "tp_qx": "1/2",
+      "tp_qq": "1/2",
+      "tp_xx": "1/2",
+      "primal_slack": "1/2",
+      "upper_endpoint_slack": "1/2"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 0,
+        "x": 0,
+        "y": 0,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "1/2",
+        "0",
+        "0",
+        "1/3",
+        "-1/2"
+      ],
+      "constant": "-1/2",
+      "tp_qx": "0",
+      "tp_qq": "-1/3",
+      "tp_xx": "1/2",
+      "primal_slack": "1/2",
+      "upper_endpoint_slack": "1/2"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 0,
+        "x": 0,
+        "y": 1,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "1/2",
+        "0",
+        "0",
+        "-2/3",
+        "-2/3",
+        "-2/3"
+      ],
+      "constant": "0",
+      "tp_qx": "2/3",
+      "tp_qq": "2/3",
+      "tp_xx": "2/3",
+      "primal_slack": "1/2",
+      "upper_endpoint_slack": "3/5"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 0,
+        "x": 0,
+        "y": 1,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "1/2",
+        "0",
+        "1/3",
+        "-1/6",
+        "1/6",
+        "-2/3"
+      ],
+      "constant": "-1/2",
+      "tp_qx": "1/6",
+      "tp_qq": "-1/6",
+      "tp_xx": "2/3",
+      "primal_slack": "1/3",
+      "upper_endpoint_slack": "13/30"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 0,
+        "x": 0,
+        "y": 1,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "1/2",
+        "1/2",
+        "-1/3",
+        "-5/6",
+        "-5/6",
+        "-5/6"
+      ],
+      "constant": "0",
+      "tp_qx": "5/6",
+      "tp_qq": "5/6",
+      "tp_xx": "5/6",
+      "primal_slack": "7/6",
+      "upper_endpoint_slack": "19/15"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 0,
+        "x": 0,
+        "y": 1,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "1/2",
+        "1/2",
+        "0",
+        "-1/3",
+        "0",
+        "-5/6"
+      ],
+      "constant": "-1/2",
+      "tp_qx": "1/3",
+      "tp_qq": "0",
+      "tp_xx": "5/6",
+      "primal_slack": "1",
+      "upper_endpoint_slack": "11/10"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 0,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "1/4",
+        "-1/2",
+        "-1/2",
+        "0",
+        "1/3",
+        "0",
+        "7/12"
+      ],
+      "constant": "1/4",
+      "tp_qx": "-1/3",
+      "tp_qq": "0",
+      "tp_xx": "-7/12",
+      "primal_slack": "5/4",
+      "upper_endpoint_slack": "23/20"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 0,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "1/4",
+        "-1/2",
+        "-1/2",
+        "1/3",
+        "7/12",
+        "7/12",
+        "7/12"
+      ],
+      "constant": "0",
+      "tp_qx": "-7/12",
+      "tp_qq": "-7/12",
+      "tp_xx": "-7/12",
+      "primal_slack": "4/3",
+      "upper_endpoint_slack": "37/30"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 0,
+        "x": 1,
+        "y": 0,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "1/12",
+        "-1/2",
+        "0",
+        "-1/3",
+        "0",
+        "-1/3",
+        "1/4"
+      ],
+      "constant": "1/4",
+      "tp_qx": "0",
+      "tp_qq": "1/3",
+      "tp_xx": "-1/4",
+      "primal_slack": "1/4",
+      "upper_endpoint_slack": "3/20"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 0,
+        "x": 1,
+        "y": 0,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "1/12",
+        "-1/2",
+        "0",
+        "0",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      "constant": "0",
+      "tp_qx": "-1/4",
+      "tp_qq": "-1/4",
+      "tp_xx": "-1/4",
+      "primal_slack": "1/3",
+      "upper_endpoint_slack": "7/30"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 0,
+        "x": 1,
+        "y": 1,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "1/12",
+        "0",
+        "-1/2",
+        "0",
+        "-1/12",
+        "-5/12",
+        "1/6"
+      ],
+      "constant": "1/4",
+      "tp_qx": "1/12",
+      "tp_qq": "5/12",
+      "tp_xx": "-1/6",
+      "primal_slack": "1/12",
+      "upper_endpoint_slack": "1/12"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 0,
+        "x": 1,
+        "y": 1,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "1/12",
+        "0",
+        "-1/2",
+        "1/4",
+        "1/6",
+        "1/6",
+        "1/6"
+      ],
+      "constant": "0",
+      "tp_qx": "-1/6",
+      "tp_qq": "-1/6",
+      "tp_xx": "-1/6",
+      "primal_slack": "1/12",
+      "upper_endpoint_slack": "1/12"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 0,
+        "x": 1,
+        "y": 1,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "-1/4",
+        "-1/4",
+        "-7/12",
+        "0"
+      ],
+      "constant": "1/4",
+      "tp_qx": "1/4",
+      "tp_qq": "7/12",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 0,
+        "x": 1,
+        "y": 1,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "constant": "0",
+      "tp_qx": "0",
+      "tp_qq": "0",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 1,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "constant": "0",
+      "tp_qx": "0",
+      "tp_qq": "0",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 1,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "1/2",
+        "1/2",
+        "5/6",
+        "0"
+      ],
+      "constant": "-1/2",
+      "tp_qx": "-1/2",
+      "tp_qq": "-5/6",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 1,
+        "x": 0,
+        "y": 0,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "1/3",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2"
+      ],
+      "constant": "0",
+      "tp_qx": "1/2",
+      "tp_qq": "1/2",
+      "tp_xx": "1/2",
+      "primal_slack": "1/6",
+      "upper_endpoint_slack": "1/6"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 1,
+        "x": 0,
+        "y": 0,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "1/3",
+        "0",
+        "0",
+        "1/3",
+        "-1/2"
+      ],
+      "constant": "-1/2",
+      "tp_qx": "0",
+      "tp_qq": "-1/3",
+      "tp_xx": "1/2",
+      "primal_slack": "1/6",
+      "upper_endpoint_slack": "1/6"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 1,
+        "x": 0,
+        "y": 1,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "1/3",
+        "0",
+        "0",
+        "-2/3",
+        "-2/3",
+        "-2/3"
+      ],
+      "constant": "0",
+      "tp_qx": "2/3",
+      "tp_qq": "2/3",
+      "tp_xx": "2/3",
+      "primal_slack": "1/3",
+      "upper_endpoint_slack": "2/5"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 1,
+        "x": 0,
+        "y": 1,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "1/3",
+        "0",
+        "1/3",
+        "-1/6",
+        "1/6",
+        "-2/3"
+      ],
+      "constant": "-1/2",
+      "tp_qx": "1/6",
+      "tp_qq": "-1/6",
+      "tp_xx": "2/3",
+      "primal_slack": "1/6",
+      "upper_endpoint_slack": "7/30"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 1,
+        "x": 0,
+        "y": 1,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "1/3",
+        "1/3",
+        "-1/3",
+        "-5/6",
+        "-5/6",
+        "-5/6"
+      ],
+      "constant": "0",
+      "tp_qx": "5/6",
+      "tp_qq": "5/6",
+      "tp_xx": "5/6",
+      "primal_slack": "2/3",
+      "upper_endpoint_slack": "11/15"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 1,
+        "x": 0,
+        "y": 1,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "1/3",
+        "1/3",
+        "0",
+        "-1/3",
+        "0",
+        "-5/6"
+      ],
+      "constant": "-1/2",
+      "tp_qx": "1/3",
+      "tp_qq": "0",
+      "tp_xx": "5/6",
+      "primal_slack": "1/2",
+      "upper_endpoint_slack": "17/30"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 1,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "1/4",
+        "-1/3",
+        "-1/3",
+        "0",
+        "1/3",
+        "0",
+        "7/12"
+      ],
+      "constant": "1/4",
+      "tp_qx": "-1/3",
+      "tp_qq": "0",
+      "tp_xx": "-7/12",
+      "primal_slack": "7/4",
+      "upper_endpoint_slack": "101/60"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 1,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "1/4",
+        "-1/3",
+        "-1/3",
+        "1/3",
+        "7/12",
+        "7/12",
+        "7/12"
+      ],
+      "constant": "0",
+      "tp_qx": "-7/12",
+      "tp_qq": "-7/12",
+      "tp_xx": "-7/12",
+      "primal_slack": "11/6",
+      "upper_endpoint_slack": "53/30"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 1,
+        "x": 1,
+        "y": 0,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "1/12",
+        "-1/3",
+        "0",
+        "-1/3",
+        "0",
+        "-1/3",
+        "1/4"
+      ],
+      "constant": "1/4",
+      "tp_qx": "0",
+      "tp_qq": "1/3",
+      "tp_xx": "-1/4",
+      "primal_slack": "5/12",
+      "upper_endpoint_slack": "7/20"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 1,
+        "x": 1,
+        "y": 0,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "1/12",
+        "-1/3",
+        "0",
+        "0",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      "constant": "0",
+      "tp_qx": "-1/4",
+      "tp_qq": "-1/4",
+      "tp_xx": "-1/4",
+      "primal_slack": "1/2",
+      "upper_endpoint_slack": "13/30"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 1,
+        "x": 1,
+        "y": 1,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "1/12",
+        "0",
+        "-1/3",
+        "0",
+        "-1/12",
+        "-5/12",
+        "1/6"
+      ],
+      "constant": "1/4",
+      "tp_qx": "1/12",
+      "tp_qq": "5/12",
+      "tp_xx": "-1/6",
+      "primal_slack": "5/12",
+      "upper_endpoint_slack": "5/12"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 1,
+        "x": 1,
+        "y": 1,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "1/12",
+        "0",
+        "-1/3",
+        "1/4",
+        "1/6",
+        "1/6",
+        "1/6"
+      ],
+      "constant": "0",
+      "tp_qx": "-1/6",
+      "tp_qq": "-1/6",
+      "tp_xx": "-1/6",
+      "primal_slack": "5/12",
+      "upper_endpoint_slack": "5/12"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 1,
+        "x": 1,
+        "y": 1,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "-1/4",
+        "-1/4",
+        "-7/12",
+        "0"
+      ],
+      "constant": "1/4",
+      "tp_qx": "1/4",
+      "tp_qq": "7/12",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 1,
+        "a": 1,
+        "x": 1,
+        "y": 1,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "constant": "0",
+      "tp_qx": "0",
+      "tp_qq": "0",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "constant": "0",
+      "tp_qx": "0",
+      "tp_qq": "0",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "1/3",
+        "1/3",
+        "7/12",
+        "0"
+      ],
+      "constant": "-1/3",
+      "tp_qx": "-1/3",
+      "tp_qq": "-7/12",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 0,
+        "x": 0,
+        "y": 0,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "1/3",
+        "-1/3",
+        "-1/3",
+        "-1/3",
+        "-1/3"
+      ],
+      "constant": "0",
+      "tp_qx": "1/3",
+      "tp_qq": "1/3",
+      "tp_xx": "1/3",
+      "primal_slack": "1/3",
+      "upper_endpoint_slack": "1/3"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 0,
+        "x": 0,
+        "y": 0,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "1/3",
+        "0",
+        "0",
+        "1/4",
+        "-1/3"
+      ],
+      "constant": "-1/3",
+      "tp_qx": "0",
+      "tp_qq": "-1/4",
+      "tp_xx": "1/3",
+      "primal_slack": "1/3",
+      "upper_endpoint_slack": "1/3"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 0,
+        "x": 0,
+        "y": 1,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "1/3",
+        "0",
+        "0",
+        "-5/12",
+        "-5/12",
+        "-5/12"
+      ],
+      "constant": "0",
+      "tp_qx": "5/12",
+      "tp_qq": "5/12",
+      "tp_xx": "5/12",
+      "primal_slack": "1/3",
+      "upper_endpoint_slack": "2/5"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 0,
+        "x": 0,
+        "y": 1,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "1/3",
+        "0",
+        "1/4",
+        "-1/12",
+        "1/6",
+        "-5/12"
+      ],
+      "constant": "-1/3",
+      "tp_qx": "1/12",
+      "tp_qq": "-1/6",
+      "tp_xx": "5/12",
+      "primal_slack": "1/4",
+      "upper_endpoint_slack": "19/60"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 0,
+        "x": 0,
+        "y": 1,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "1/3",
+        "1/3",
+        "-1/4",
+        "-7/12",
+        "-7/12",
+        "-7/12"
+      ],
+      "constant": "0",
+      "tp_qx": "7/12",
+      "tp_qq": "7/12",
+      "tp_xx": "7/12",
+      "primal_slack": "3/4",
+      "upper_endpoint_slack": "49/60"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 0,
+        "x": 0,
+        "y": 1,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "1/3",
+        "1/3",
+        "0",
+        "-1/4",
+        "0",
+        "-7/12"
+      ],
+      "constant": "-1/3",
+      "tp_qx": "1/4",
+      "tp_qq": "0",
+      "tp_xx": "7/12",
+      "primal_slack": "2/3",
+      "upper_endpoint_slack": "11/15"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 0,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "2/15",
+        "-1/3",
+        "-1/3",
+        "0",
+        "1/4",
+        "0",
+        "9/20"
+      ],
+      "constant": "1/5",
+      "tp_qx": "-1/4",
+      "tp_qq": "0",
+      "tp_xx": "-9/20",
+      "primal_slack": "8/15",
+      "upper_endpoint_slack": "7/15"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 0,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "2/15",
+        "-1/3",
+        "-1/3",
+        "1/4",
+        "9/20",
+        "9/20",
+        "9/20"
+      ],
+      "constant": "0",
+      "tp_qx": "-9/20",
+      "tp_qq": "-9/20",
+      "tp_xx": "-9/20",
+      "primal_slack": "7/12",
+      "upper_endpoint_slack": "31/60"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 0,
+        "x": 1,
+        "y": 0,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "1/20",
+        "-1/3",
+        "0",
+        "-1/4",
+        "0",
+        "-1/4",
+        "1/5"
+      ],
+      "constant": "1/5",
+      "tp_qx": "0",
+      "tp_qq": "1/4",
+      "tp_xx": "-1/5",
+      "primal_slack": "7/60",
+      "upper_endpoint_slack": "1/20"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 0,
+        "x": 1,
+        "y": 0,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "1/20",
+        "-1/3",
+        "0",
+        "0",
+        "1/5",
+        "1/5",
+        "1/5"
+      ],
+      "constant": "0",
+      "tp_qx": "-1/5",
+      "tp_qq": "-1/5",
+      "tp_xx": "-1/5",
+      "primal_slack": "1/6",
+      "upper_endpoint_slack": "1/10"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 0,
+        "x": 1,
+        "y": 1,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "1/20",
+        "0",
+        "-1/3",
+        "0",
+        "-1/20",
+        "-3/10",
+        "3/20"
+      ],
+      "constant": "1/5",
+      "tp_qx": "1/20",
+      "tp_qq": "3/10",
+      "tp_xx": "-3/20",
+      "primal_slack": "1/30",
+      "upper_endpoint_slack": "1/30"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 0,
+        "x": 1,
+        "y": 1,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "1/20",
+        "0",
+        "-1/3",
+        "1/5",
+        "3/20",
+        "3/20",
+        "3/20"
+      ],
+      "constant": "0",
+      "tp_qx": "-3/20",
+      "tp_qq": "-3/20",
+      "tp_xx": "-3/20",
+      "primal_slack": "1/30",
+      "upper_endpoint_slack": "1/30"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 0,
+        "x": 1,
+        "y": 1,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "-1/5",
+        "-1/5",
+        "-9/20",
+        "0"
+      ],
+      "constant": "1/5",
+      "tp_qx": "1/5",
+      "tp_qq": "9/20",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 0,
+        "x": 1,
+        "y": 1,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "constant": "0",
+      "tp_qx": "0",
+      "tp_qq": "0",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 1,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "constant": "0",
+      "tp_qx": "0",
+      "tp_qq": "0",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 1,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "1/3",
+        "1/3",
+        "7/12",
+        "0"
+      ],
+      "constant": "-1/3",
+      "tp_qx": "-1/3",
+      "tp_qq": "-7/12",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 1,
+        "x": 0,
+        "y": 0,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "1/4",
+        "-1/3",
+        "-1/3",
+        "-1/3",
+        "-1/3"
+      ],
+      "constant": "0",
+      "tp_qx": "1/3",
+      "tp_qq": "1/3",
+      "tp_xx": "1/3",
+      "primal_slack": "1/6",
+      "upper_endpoint_slack": "1/6"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 1,
+        "x": 0,
+        "y": 0,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "1/4",
+        "0",
+        "0",
+        "1/4",
+        "-1/3"
+      ],
+      "constant": "-1/3",
+      "tp_qx": "0",
+      "tp_qq": "-1/4",
+      "tp_xx": "1/3",
+      "primal_slack": "1/6",
+      "upper_endpoint_slack": "1/6"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 1,
+        "x": 0,
+        "y": 1,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "1/4",
+        "0",
+        "0",
+        "-5/12",
+        "-5/12",
+        "-5/12"
+      ],
+      "constant": "0",
+      "tp_qx": "5/12",
+      "tp_qq": "5/12",
+      "tp_xx": "5/12",
+      "primal_slack": "1/4",
+      "upper_endpoint_slack": "3/10"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 1,
+        "x": 0,
+        "y": 1,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "1/4",
+        "0",
+        "1/4",
+        "-1/12",
+        "1/6",
+        "-5/12"
+      ],
+      "constant": "-1/3",
+      "tp_qx": "1/12",
+      "tp_qq": "-1/6",
+      "tp_xx": "5/12",
+      "primal_slack": "1/6",
+      "upper_endpoint_slack": "13/60"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 1,
+        "x": 0,
+        "y": 1,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "1/4",
+        "1/4",
+        "-1/4",
+        "-7/12",
+        "-7/12",
+        "-7/12"
+      ],
+      "constant": "0",
+      "tp_qx": "7/12",
+      "tp_qq": "7/12",
+      "tp_xx": "7/12",
+      "primal_slack": "1/2",
+      "upper_endpoint_slack": "11/20"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 1,
+        "x": 0,
+        "y": 1,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "1/4",
+        "1/4",
+        "0",
+        "-1/4",
+        "0",
+        "-7/12"
+      ],
+      "constant": "-1/3",
+      "tp_qx": "1/4",
+      "tp_qq": "0",
+      "tp_xx": "7/12",
+      "primal_slack": "5/12",
+      "upper_endpoint_slack": "7/15"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 1,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "2/15",
+        "-1/4",
+        "-1/4",
+        "0",
+        "1/4",
+        "0",
+        "9/20"
+      ],
+      "constant": "1/5",
+      "tp_qx": "-1/4",
+      "tp_qq": "0",
+      "tp_xx": "-9/20",
+      "primal_slack": "47/60",
+      "upper_endpoint_slack": "11/15"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 1,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "2/15",
+        "-1/4",
+        "-1/4",
+        "1/4",
+        "9/20",
+        "9/20",
+        "9/20"
+      ],
+      "constant": "0",
+      "tp_qx": "-9/20",
+      "tp_qq": "-9/20",
+      "tp_xx": "-9/20",
+      "primal_slack": "5/6",
+      "upper_endpoint_slack": "47/60"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 1,
+        "x": 1,
+        "y": 0,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "1/20",
+        "-1/4",
+        "0",
+        "-1/4",
+        "0",
+        "-1/4",
+        "1/5"
+      ],
+      "constant": "1/5",
+      "tp_qx": "0",
+      "tp_qq": "1/4",
+      "tp_xx": "-1/5",
+      "primal_slack": "1/5",
+      "upper_endpoint_slack": "3/20"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 1,
+        "x": 1,
+        "y": 0,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "1/20",
+        "-1/4",
+        "0",
+        "0",
+        "1/5",
+        "1/5",
+        "1/5"
+      ],
+      "constant": "0",
+      "tp_qx": "-1/5",
+      "tp_qq": "-1/5",
+      "tp_xx": "-1/5",
+      "primal_slack": "1/4",
+      "upper_endpoint_slack": "1/5"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 1,
+        "x": 1,
+        "y": 1,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "1/20",
+        "0",
+        "-1/4",
+        "0",
+        "-1/20",
+        "-3/10",
+        "3/20"
+      ],
+      "constant": "1/5",
+      "tp_qx": "1/20",
+      "tp_qq": "3/10",
+      "tp_xx": "-3/20",
+      "primal_slack": "1/5",
+      "upper_endpoint_slack": "1/5"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 1,
+        "x": 1,
+        "y": 1,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "1/20",
+        "0",
+        "-1/4",
+        "1/5",
+        "3/20",
+        "3/20",
+        "3/20"
+      ],
+      "constant": "0",
+      "tp_qx": "-3/20",
+      "tp_qq": "-3/20",
+      "tp_xx": "-3/20",
+      "primal_slack": "1/5",
+      "upper_endpoint_slack": "1/5"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 1,
+        "x": 1,
+        "y": 1,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "-1/5",
+        "-1/5",
+        "-9/20",
+        "0"
+      ],
+      "constant": "1/5",
+      "tp_qx": "1/5",
+      "tp_qq": "9/20",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 2,
+        "a": 1,
+        "x": 1,
+        "y": 1,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "constant": "0",
+      "tp_qx": "0",
+      "tp_qq": "0",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "constant": "0",
+      "tp_qx": "0",
+      "tp_qq": "0",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "1/4",
+        "1/4",
+        "9/20",
+        "0"
+      ],
+      "constant": "-1/4",
+      "tp_qx": "-1/4",
+      "tp_qq": "-9/20",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 0,
+        "x": 0,
+        "y": 0,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "1/4",
+        "-1/4",
+        "-1/4",
+        "-1/4",
+        "-1/4"
+      ],
+      "constant": "0",
+      "tp_qx": "1/4",
+      "tp_qq": "1/4",
+      "tp_xx": "1/4",
+      "primal_slack": "1/4",
+      "upper_endpoint_slack": "1/4"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 0,
+        "x": 0,
+        "y": 0,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "1/4",
+        "0",
+        "0",
+        "1/5",
+        "-1/4"
+      ],
+      "constant": "-1/4",
+      "tp_qx": "0",
+      "tp_qq": "-1/5",
+      "tp_xx": "1/4",
+      "primal_slack": "1/4",
+      "upper_endpoint_slack": "1/4"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 0,
+        "x": 0,
+        "y": 1,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "1/4",
+        "0",
+        "0",
+        "-3/10",
+        "-3/10",
+        "-3/10"
+      ],
+      "constant": "0",
+      "tp_qx": "3/10",
+      "tp_qq": "3/10",
+      "tp_xx": "3/10",
+      "primal_slack": "1/4",
+      "upper_endpoint_slack": "3/10"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 0,
+        "x": 0,
+        "y": 1,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "1/4",
+        "0",
+        "1/5",
+        "-1/20",
+        "3/20",
+        "-3/10"
+      ],
+      "constant": "-1/4",
+      "tp_qx": "1/20",
+      "tp_qq": "-3/20",
+      "tp_xx": "3/10",
+      "primal_slack": "1/5",
+      "upper_endpoint_slack": "1/4"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 0,
+        "x": 0,
+        "y": 1,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "1/4",
+        "1/4",
+        "-1/5",
+        "-9/20",
+        "-9/20",
+        "-9/20"
+      ],
+      "constant": "0",
+      "tp_qx": "9/20",
+      "tp_qq": "9/20",
+      "tp_xx": "9/20",
+      "primal_slack": "11/20",
+      "upper_endpoint_slack": "3/5"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 0,
+        "x": 0,
+        "y": 1,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "1/4",
+        "1/4",
+        "0",
+        "-1/5",
+        "0",
+        "-9/20"
+      ],
+      "constant": "-1/4",
+      "tp_qx": "1/5",
+      "tp_qq": "0",
+      "tp_xx": "9/20",
+      "primal_slack": "1/2",
+      "upper_endpoint_slack": "11/20"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 0,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "1/12",
+        "-1/4",
+        "-1/4",
+        "0",
+        "1/5",
+        "0",
+        "11/30"
+      ],
+      "constant": "1/6",
+      "tp_qx": "-1/5",
+      "tp_qq": "0",
+      "tp_xx": "-11/30",
+      "primal_slack": "1/4",
+      "upper_endpoint_slack": "1/5"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 0,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "1/12",
+        "-1/4",
+        "-1/4",
+        "1/5",
+        "11/30",
+        "11/30",
+        "11/30"
+      ],
+      "constant": "0",
+      "tp_qx": "-11/30",
+      "tp_qq": "-11/30",
+      "tp_xx": "-11/30",
+      "primal_slack": "17/60",
+      "upper_endpoint_slack": "7/30"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 0,
+        "x": 1,
+        "y": 0,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "1/30",
+        "-1/4",
+        "0",
+        "-1/5",
+        "0",
+        "-1/5",
+        "1/6"
+      ],
+      "constant": "1/6",
+      "tp_qx": "0",
+      "tp_qq": "1/5",
+      "tp_xx": "-1/6",
+      "primal_slack": "1/20",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 0,
+        "x": 1,
+        "y": 0,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "1/30",
+        "-1/4",
+        "0",
+        "0",
+        "1/6",
+        "1/6",
+        "1/6"
+      ],
+      "constant": "0",
+      "tp_qx": "-1/6",
+      "tp_qq": "-1/6",
+      "tp_xx": "-1/6",
+      "primal_slack": "1/12",
+      "upper_endpoint_slack": "1/30"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 0,
+        "x": 1,
+        "y": 1,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "1/30",
+        "0",
+        "-1/4",
+        "0",
+        "-1/30",
+        "-7/30",
+        "2/15"
+      ],
+      "constant": "1/6",
+      "tp_qx": "1/30",
+      "tp_qq": "7/30",
+      "tp_xx": "-2/15",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 0,
+        "x": 1,
+        "y": 1,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "1/30",
+        "0",
+        "-1/4",
+        "1/6",
+        "2/15",
+        "2/15",
+        "2/15"
+      ],
+      "constant": "0",
+      "tp_qx": "-2/15",
+      "tp_qq": "-2/15",
+      "tp_xx": "-2/15",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 0,
+        "x": 1,
+        "y": 1,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "-1/6",
+        "-1/6",
+        "-11/30",
+        "0"
+      ],
+      "constant": "1/6",
+      "tp_qx": "1/6",
+      "tp_qq": "11/30",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 0,
+        "x": 1,
+        "y": 1,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "constant": "0",
+      "tp_qx": "0",
+      "tp_qq": "0",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 1,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "constant": "0",
+      "tp_qx": "0",
+      "tp_qq": "0",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 1,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "1/4",
+        "1/4",
+        "9/20",
+        "0"
+      ],
+      "constant": "-1/4",
+      "tp_qx": "-1/4",
+      "tp_qq": "-9/20",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 1,
+        "x": 0,
+        "y": 0,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "1/5",
+        "-1/4",
+        "-1/4",
+        "-1/4",
+        "-1/4"
+      ],
+      "constant": "0",
+      "tp_qx": "1/4",
+      "tp_qq": "1/4",
+      "tp_xx": "1/4",
+      "primal_slack": "3/20",
+      "upper_endpoint_slack": "3/20"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 1,
+        "x": 0,
+        "y": 0,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "1/5",
+        "0",
+        "0",
+        "1/5",
+        "-1/4"
+      ],
+      "constant": "-1/4",
+      "tp_qx": "0",
+      "tp_qq": "-1/5",
+      "tp_xx": "1/4",
+      "primal_slack": "3/20",
+      "upper_endpoint_slack": "3/20"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 1,
+        "x": 0,
+        "y": 1,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "1/5",
+        "0",
+        "0",
+        "-3/10",
+        "-3/10",
+        "-3/10"
+      ],
+      "constant": "0",
+      "tp_qx": "3/10",
+      "tp_qq": "3/10",
+      "tp_xx": "3/10",
+      "primal_slack": "1/5",
+      "upper_endpoint_slack": "6/25"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 1,
+        "x": 0,
+        "y": 1,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "1/5",
+        "0",
+        "1/5",
+        "-1/20",
+        "3/20",
+        "-3/10"
+      ],
+      "constant": "-1/4",
+      "tp_qx": "1/20",
+      "tp_qq": "-3/20",
+      "tp_xx": "3/10",
+      "primal_slack": "3/20",
+      "upper_endpoint_slack": "19/100"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 1,
+        "x": 0,
+        "y": 1,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "1/5",
+        "1/5",
+        "-1/5",
+        "-9/20",
+        "-9/20",
+        "-9/20"
+      ],
+      "constant": "0",
+      "tp_qx": "9/20",
+      "tp_qq": "9/20",
+      "tp_xx": "9/20",
+      "primal_slack": "2/5",
+      "upper_endpoint_slack": "11/25"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 1,
+        "x": 0,
+        "y": 1,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "1/5",
+        "1/5",
+        "0",
+        "-1/5",
+        "0",
+        "-9/20"
+      ],
+      "constant": "-1/4",
+      "tp_qx": "1/5",
+      "tp_qq": "0",
+      "tp_xx": "9/20",
+      "primal_slack": "7/20",
+      "upper_endpoint_slack": "39/100"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 1,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "1/12",
+        "-1/5",
+        "-1/5",
+        "0",
+        "1/5",
+        "0",
+        "11/30"
+      ],
+      "constant": "1/6",
+      "tp_qx": "-1/5",
+      "tp_qq": "0",
+      "tp_xx": "-11/30",
+      "primal_slack": "2/5",
+      "upper_endpoint_slack": "9/25"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 1,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "1/12",
+        "-1/5",
+        "-1/5",
+        "1/5",
+        "11/30",
+        "11/30",
+        "11/30"
+      ],
+      "constant": "0",
+      "tp_qx": "-11/30",
+      "tp_qq": "-11/30",
+      "tp_xx": "-11/30",
+      "primal_slack": "13/30",
+      "upper_endpoint_slack": "59/150"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 1,
+        "x": 1,
+        "y": 0,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "1/30",
+        "-1/5",
+        "0",
+        "-1/5",
+        "0",
+        "-1/5",
+        "1/6"
+      ],
+      "constant": "1/6",
+      "tp_qx": "0",
+      "tp_qq": "1/5",
+      "tp_xx": "-1/6",
+      "primal_slack": "1/10",
+      "upper_endpoint_slack": "3/50"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 1,
+        "x": 1,
+        "y": 0,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "1/30",
+        "-1/5",
+        "0",
+        "0",
+        "1/6",
+        "1/6",
+        "1/6"
+      ],
+      "constant": "0",
+      "tp_qx": "-1/6",
+      "tp_qq": "-1/6",
+      "tp_xx": "-1/6",
+      "primal_slack": "2/15",
+      "upper_endpoint_slack": "7/75"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 1,
+        "x": 1,
+        "y": 1,
+        "z": 0,
+        "q": 0
+      },
+      "coefficients": [
+        "1/30",
+        "0",
+        "-1/5",
+        "0",
+        "-1/30",
+        "-7/30",
+        "2/15"
+      ],
+      "constant": "1/6",
+      "tp_qx": "1/30",
+      "tp_qq": "7/30",
+      "tp_xx": "-2/15",
+      "primal_slack": "1/10",
+      "upper_endpoint_slack": "1/10"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 1,
+        "x": 1,
+        "y": 1,
+        "z": 0,
+        "q": 1
+      },
+      "coefficients": [
+        "1/30",
+        "0",
+        "-1/5",
+        "1/6",
+        "2/15",
+        "2/15",
+        "2/15"
+      ],
+      "constant": "0",
+      "tp_qx": "-2/15",
+      "tp_qq": "-2/15",
+      "tp_xx": "-2/15",
+      "primal_slack": "1/10",
+      "upper_endpoint_slack": "1/10"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 1,
+        "x": 1,
+        "y": 1,
+        "z": 1,
+        "q": 0
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "-1/6",
+        "-1/6",
+        "-11/30",
+        "0"
+      ],
+      "constant": "1/6",
+      "tp_qx": "1/6",
+      "tp_qq": "11/30",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    },
+    {
+      "atom": {
+        "b": 3,
+        "a": 1,
+        "x": 1,
+        "y": 1,
+        "z": 1,
+        "q": 1
+      },
+      "coefficients": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "constant": "0",
+      "tp_qx": "0",
+      "tp_qq": "0",
+      "tp_xx": "0",
+      "primal_slack": "0",
+      "upper_endpoint_slack": "0"
+    }
+  ]
+}

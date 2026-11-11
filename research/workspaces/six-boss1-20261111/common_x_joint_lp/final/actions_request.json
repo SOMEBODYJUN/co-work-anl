@@ -1,0 +1,96 @@
+{
+  "status": "READY_FOR_MAIN_ACTIONS_UNIQUE_DISCOVERY",
+  "run": "six-boss1-20261111",
+  "owner": "Boss1",
+  "local_optimization_calls": 0,
+  "authorized_optimization_calls": 1,
+  "main_release_reference": "Main authorized frozen 1a1876a01a505e74b1497fc1ac1ad62400b93bf648f53bf9966fc630f13b770c after PASS_INDEPENDENT_MAIN_FAMILY_AUDIT; append exactly51 to retained23625 baseline; final23676x21021; sole dispatch by Main.",
+  "method": "highs-ds",
+  "time_limit_seconds": 1800,
+  "job_timeout_minutes": 40,
+  "command": "python3 -B research/workspaces/six-boss1-20261111/common_x_joint_lp/final/actions_solve.py --execute --time-limit 1800 --output actions_discovery",
+  "argv": [
+    "python3",
+    "-B",
+    "research/workspaces/six-boss1-20261111/common_x_joint_lp/final/actions_solve.py",
+    "--execute",
+    "--time-limit",
+    "1800",
+    "--output",
+    "actions_discovery"
+  ],
+  "cwd": "repository root",
+  "required_inputs": [
+    {
+      "path": "research/workspaces/six-boss1-20261111/common_x_joint_lp/final/actions_solve.py",
+      "sha256": "a09339fa1f16a4c3908d99c0390eeb32d1c53cb4bd4492286c1364f0149da28c",
+      "bytes": 15700
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/common_x_joint_lp/final/exact_matrix.json.gz",
+      "sha256": "1b4a4e544e5b9eeea1fa64b3849a9d4cc532b997a5ad972ce33df81c224551e7",
+      "bytes": 7892331
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/common_x_joint_lp/final/floating_problem.npz",
+      "sha256": "df95f1922e99cd25d28fdef39bbd5137d2d3bf7de2b2ab968203860d120c392f",
+      "bytes": 3511096
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/common_x_joint_lp/final/structure_and_lower_verification.json",
+      "sha256": "cf76cfc0005572ba01ef641c955331c0438c2e942af8a31abbf277c19874ebb8",
+      "bytes": 3037
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/common_x_joint_lp/final/inputs_manifest.json",
+      "sha256": "f1c5b6233abe009306e216796dd09aa43ed3806c15eddac445aa5d7b645a7fa2",
+      "bytes": 8077
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/common_x_joint_lp/final/runtime_inputs_manifest.json",
+      "sha256": "3c09448e59a2e3061b2bccd2712fae5ac304badeffaa40c8edbb951b041e1b76",
+      "bytes": 1666
+    }
+  ],
+  "dependencies": [
+    "Python standard library",
+    "numpy",
+    "scipy"
+  ],
+  "extra_python_helpers": [],
+  "driver_is_self_contained": true,
+  "requires_github_actions_environment": true,
+  "dimensions": {
+    "rows": 23676,
+    "columns": 21021,
+    "nonzeros": 3313758,
+    "added_columns": 0,
+    "core_columns": 10277,
+    "canonical_old_auxiliary_columns": 10744,
+    "real_overlap_core_columns": 420,
+    "shared624_hidden_columns_retained": 4992,
+    "all_histograms_retained": 16,
+    "historically_zero_histograms_retained": 6
+  },
+  "output_directory": "research/workspaces/six-boss1-20261111/common_x_joint_lp/final/actions_discovery",
+  "outputs": [
+    "floating_solver_arrays.npz",
+    "numerical_result.json",
+    "actions_input_manifest.json",
+    "optimizer_call_started.json",
+    "executed_actions_solve.py",
+    "solver_stdout.txt",
+    "solver_stderr.txt",
+    "execution.json",
+    "output_manifest.json",
+    "progress.jsonl",
+    "worker_failure.json if failure",
+    "driver_failure.json if failure"
+  ],
+  "arrays": "Full-shape primal, inequality/equality/lower/upper marginals and residuals, unscaled row multipliers, recomputed row and dual residuals, availability and state; unavailable values remain explicit full-shape NaNs.",
+  "retain_outputs_on_failure": true,
+  "automatic_numeric_reruns": 0,
+  "exact_postprocessing": "Only after Main returns immutable arrays: standard-library rational primal and dual; 10744 old auxiliaries canonical; 420 real y values preserved from core; independent every-row/column verification and 210 beta=L eight-cell witnesses.",
+  "failure_boundary": "An active-face recovery failure is not an infeasibility certificate. A numerical optimum below one half is not a game-theoretic counterexample.",
+  "dispatch_performed_by_this_agent": false
+}
