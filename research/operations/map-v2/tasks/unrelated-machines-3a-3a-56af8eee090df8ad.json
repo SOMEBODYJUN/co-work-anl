@@ -85,12 +85,25 @@
       ]
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss2",
-  "request_id": "608e680bc5e94201b3f2f8e4c1115ceb",
+  "request_id": "323ec0191b9c4e6594f79492cdd39d08",
   "requests": {
     "81a0648c3de14140a1ae6370812f33c4": "plan",
     "7c6b45df35254fa9a07c49395aefc7aa": "plan",
-    "608e680bc5e94201b3f2f8e4c1115ceb": "claim"
+    "608e680bc5e94201b3f2f8e4c1115ceb": "claim",
+    "323ec0191b9c4e6594f79492cdd39d08": "done"
+  },
+  "edge_paths": {},
+  "receipt": {
+    "coverage": {
+      "M-513a993cb39a478a850f01c62d52d0ed": {
+        "state": "isolated-after-review",
+        "object_pin": "7f422db13d614f5057ed8d3cc6ac0ae19fec702fad1c8896cbb9b86cf17b27f7",
+        "comparison_scope": "实读当前v2登记、同页全部估值/oracle边界与冻结PDF物理3页Theorem1.6、13页value算法、14页Section6完整隐藏分割证明；对照M-3023109bed134f94b5895212631801c7的demand分层、M-6024dc77bef04ea7a6aea19a318c6f43的value根号上界和XOS demand+clause常数算法。",
+        "reason": "本核是无复杂度假设的value查询下界，允许非truthful算法。Section6取n=√m，L=(1+δ)m^(2δ)，a=(1+δ)m^(-1/2+δ)，基估值v(S)=max{min(|S|,L),a|S|}为XOS；隐藏均匀√m等块T_i后v_i′(S)=max{v(S),|S∩T_i|}仍XOS。基profile福利≤nL+am=O(m^(1/2+2δ))，隐藏profile可把T_i给i取福利m。固定查询只有当交集超过max{min(|S|,L),a|S|}才泄露隐藏clause；分小/大bundle的超几何tail均给指数小命中概率。沿基oracle自适应transcript固定各查询并union bound（把算法输出bundle纳入检验），多项式value查询无法以常数成功率区分两个profile；令δ按ε取值得到m^(1/2−ε)尺度障碍。它与value truthful O(√m)相容，后者是不同方向且多一个truthfulness保证；它不能反驳demand或显式XOS/clause算法，也不能从较弱常数通信下界推出平方根value界。本包未找到一条现有端点之间完整成立的新逻辑关系，保留准确oracle边界和已付证明。若要推出demand不能value模拟的独立命题，需单独登记该命题和相应成功概率合同，本包不把它冒作现有福利目标。"
+      }
+    },
+    "assets": []
   }
 }
