@@ -1,0 +1,50 @@
+{
+  "edge_id": "ca-e489-full-policy-cone-and-padding-certify-positive-root-target",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-STRATEGY-CONE",
+    "customer-attraction/same-population-disjoint-catalog-padding-full-policy-preservation"
+  ],
+  "target_ids": [
+    "M-f9400eb98db0497db8a40bbc10eed586"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "旧覆盖映射须单射，使用严格集合目录；固定m≥1、有限旧目录和完整形式σ，所有真实IC及x≥0，根收益ux=1。遍历候选最大C且加每个|T_b|≤|C|；别名点不在本桥适用域。",
+  "roles": {
+    "CA-STRATEGY-CONE": "所有有序真实IC使精确非负重数保持同一完整σ，允许共同有理整数化。",
+    "customer-attraction/same-population-disjoint-catalog-padding-full-policy-preservation": "严格集合目录中同人数t=K/m扩充保全部旧历史与根收益，OPT为卷积。",
+    "M-f9400eb98db0497db8a40bbc10eed586": "获得固定策略根收益归一、最大C枚举、r域省略和精确阳性的真实解释。"
+  },
+  "explanation": "CONE把精确可行x解释为同一σ完整SPE。任何非零旧实例根偏离最大题至少K/m，故u>0可归一。选r个旧主题J时覆盖行为v_Jx；padding t=K/m保同m全部旧历史和u，精确扩充OPT是max_r[OPT_old,r+(m−r)K/m]。因此v_Jx+(m−r)|C|/m>2m时，清全部旧/新重数的共同分母得到整数单位客户，扩充根仍同收益比例而OPT⁺>2m u。若只先得实可行严格阳性，有限有理线性系统在该开放半空间内有有理点；保持覆盖互异的有限严格对称差约束后仍可取有理点，再共同整数化。r0值K≤mu；r1值K+(m−1)K/m≤(2m−1)u；r>k不增旧覆盖且新块项只降，故仅2≤r≤min(m,k)可能严格分离。K0不能满足ux1。m1无保留候选且DIRECT直接成立。",
+  "scope": "只攻击扩充后根DIRECT的2m u_1；不把目标换为2W。没有精确阳性时，有限浮点阴性不提供上界。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md",
+      "sha256": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/同人数不交目录扩充的完整策略保持--定理.md",
+      "sha256": "3ead3d718b23e40082d98f0bce2d9a7717593eaaa41e1d85c15f006b64cb9e61"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/逐人最优覆盖门槛与安全扩充的固定策略锥探针--程序.md",
+      "sha256": "26936470cb62b37a93e1eae2bb751e356a3149e0a57f0aacb2e587bc210c86c4"
+    }
+  ],
+  "reviewed_by": "Boss6/map-cage489-round40",
+  "review_note": "完整读取本边两端所用陈述、量词、正文及本包必要共享证据；按当前字节核同一完整策略、客户数组、索引重数和真实偏离。所列局部结论与未付义务分别审读；成熟有限证书按其现行精确合同复用，未重跑原LP、搜索或大型全树审计。\nBoss6已复核两条旧成熟推导及本轮来源变化：同人数严格目录padding与完整IC联合推出根DIRECT的精确阳性目标，右端2m u1；固定四人六标签ROW界仅对指定σ/J与252份成熟对偶，mask49等号和严格互异目录上确界边界保留。未运行旧科学计算。",
+  "whole_result": "固定完整σ的最大安全端点目标v_Jx+(m−r)|C|/m精确代表扩充OPT项；任何满足单射目录及全部精确闸门的值>2m给真实同人数扩充根DIRECT失败，省略r0/r1/r>k不丢严格阳性。",
+  "endpoint_pins": {
+    "CA-STRATEGY-CONE": "291bd4d94e33d40566453a33b5cf07b1c620b77362268417582efecb42b0c4bb",
+    "M-f9400eb98db0497db8a40bbc10eed586": "74ee3f25aae9220665b69be6de0793e166de176a273f11b5a3dacff3985a7658",
+    "customer-attraction/same-population-disjoint-catalog-padding-full-policy-preservation": "47760ca9fb3a5a2aaaa15ff4d458e1bd1f11abf157bf2fa34a793223ad4978f9"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39",
+    "archives/customer-attraction/state/定理/同人数不交目录扩充的完整策略保持--定理.md": "3ead3d718b23e40082d98f0bce2d9a7717593eaaa41e1d85c15f006b64cb9e61",
+    "archives/customer-attraction/state/程序/逐人最优覆盖门槛与安全扩充的固定策略锥探针--程序.md": "26936470cb62b37a93e1eae2bb751e356a3149e0a57f0aacb2e587bc210c86c4"
+  },
+  "review_digest": "85812360306d9fcab2dc28df1fa49af8e9d243b951af8c960d3b918ab093e814"
+}

@@ -1,0 +1,45 @@
+{
+  "edge_id": "cag-1213ac-fixed-strategy-cone-dual-for-common-q",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-STRATEGY-CONE"
+  ],
+  "target_ids": [
+    "customer-attraction/opposite-group-first-pair-common-Q-float-probe-and-group-size-boundaries"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定相应三人双组完整形式σ及合法二槽概率Q。所比较的是对所有x≥0、Γx≥0及每个纯查询a的逐Q预期上界。",
+  "roles": {
+    "CA-STRATEGY-CONE": "完整有序策略的所有真Γ定义精确非负客户锥。",
+    "customer-attraction/opposite-group-first-pair-common-Q-float-probe-and-group-size-boundaries": "对预先固定的共同Q，给逐查询非负IC乘子模板的精确充要性。"
+  },
+  "explanation": "写Dσ={x≥0:Γx≥0}及c_a=ℓ−2Σ_B Q_B β_(B,a)。目标c_a·x≥0对所有x∈Dσ，恰等价c_a∈Dσ的对偶锥。有限多面体Farkas对偶给c_a=Γᵀλ_a+ρ_a，λ_a、ρ_a≥0，反向直接与x点乘。对每个纯a分别取乘子而保同一个Q，正是模板C。如果只量化单位整数客户也等价，因为Dσ为有理多面锥，任何严格负的实点可由有理锥点逼近并齐次清分母。",
+  "scope": "为一个固定Q、所有质量、各纯查询的证书完整性。一般逐输入安全值允许Q随x变化，固定查询分布的对偶允许Q随p变化。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md",
+      "sha256": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/反组首对共同静态背景的浮点探针与双组规模边界--程序.md",
+      "sha256": "f8e265c7877a91722ba5a715f7f31743f6337972cada2eff1bc70ea83f4b64d0"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Boss6本次定向替代实读旧边全文、当前两端完整登记、固定策略锥四定理、反组首对共同Q目标全文及共同模型。固定同一完整形式σ、同一类型域与同一合法二槽Q后，逐a复核c_a=ℓ−2ΣQβ及c_a=Γᵀλ_a+ρ_a、λ_a,ρ_a≥0的Farkas双向；有理锥严格负点可有理逼近并清分母，保单位整数客户的同一合同。Q须先固定且对所有a和x相同，λ_a可随a变；Q(x)或Q(p)均为另一个量词合同。CA v7仅有历史来源字段订正，不提供新的共同Q或t=4精确证书；本边contribution和remaining原字句保留。未重跑LP、SPE/IC核验器或旧科学审计。",
+  "contribution": {
+    "result": "给定共同Q时，模板逐类型余项可证且仅当该Q对固定策略锥上的每份合法质量与每个纯查询都确实给L/2上界。",
+    "remaining": "尚未提供t=4的合法共同Q、精确不可行证书或否定首对安全桥的真实客户输入。数值状态不判这些断言。"
+  },
+  "endpoint_pins": {
+    "CA-STRATEGY-CONE": "291bd4d94e33d40566453a33b5cf07b1c620b77362268417582efecb42b0c4bb",
+    "customer-attraction/opposite-group-first-pair-common-Q-float-probe-and-group-size-boundaries": "e03e80d1ff416df67981efc241fe2950cf4e85187d016557e8956fb99f57f16c"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39",
+    "archives/customer-attraction/state/程序/反组首对共同静态背景的浮点探针与双组规模边界--程序.md": "f8e265c7877a91722ba5a715f7f31743f6337972cada2eff1bc70ea83f4b64d0"
+  },
+  "review_digest": "21241fedc380b20ac88129e78138a2996489254666da8d7537a1f65e50957660"
+}

@@ -1,0 +1,31 @@
+# 固定完整策略首对负接纳：仅来源字段变化的定向复用
+
+任务 `boss6-cone-metadata-repair-bc6b3e4d71d45dc5` 只替代 `customer-attraction-3a-3a-9c9f049faab9298b`。本地任务仍为 claimed/Boss6，request `c0c6a35587254042bc1179bbcbbf98a4`。旧任务为 done；21个核心和6个共享只读对象的集合、顺序及26个未受影响pin均保持，唯一改变的是只读 CA-STRATEGY-CONE 的 v6 pin `4657ebd5314421477c1db4255ecff0d2eafa960dd47317013e042f4b240aca73` 至 v7 pin `291bd4d94e33d40566453a33b5cf07b1c620b77362268417582efecb42b0c4bb`。本轮只复制R05到新任务路径，保同一edge_id和完整whole_result；最终native绑定与edge-check由Root执行。
+
+## 本轮实际读取与成熟成果继承
+
+本worker完整读了旧R05、旧收据全部21core覆盖及15项资产、当前CA v7与目标M-c74c7070a71744a997540c75197d0bf8完整登记合同、锥正文全部四定理与证明、首对全类型锥资源全文、共同目录模型全文、R-373d原fixed_bridge_mult3.json及当前validation全文。另完整读了预先独立数学审读报告中本边和本旧任务的条目、通用锥证明审读、源精确delta及v7观察；没有把那份报告中其他10边、8收据的已读身份算成本worker重新阅读。具体文件SHA和读取段写在同目录reading-ledger.json。
+
+旧收据21core的实际比较、16 linked/5 isolated、全部未付范围与科学数值原样继承；本轮未机械重读82去重文件、83阅读段，也未重审未受影响10条自有边和1条canonical单D贡献的完整证明。15个旧资产的当前原字节SHA全部独立匹配。10条未受影响自有边及原canonical单D局部贡献继续按各自旧SHA保留；旧review、reading-ledger及binding-preview也按原SHA保留，只作原时点记录，内含旧CA pin或旧all-match不能冒作本轮v7认证。本轮新阅读与复用边界不修改旧done资产。
+
+## 实际源变化及为何不改数学
+
+原source是p=6标签、m=3人，具有43=1+6+36个有序决策历史、63=2^6−1个类型、六维终局计数、034三行动路径及三收益项。历史validation仅把parameters.providers从6订正为3、topics从3订正为6；其source_id/source_path/source_sha256/source_size、全部策略、权重、exact_replay事件与科学数值不变。当前报告SHA为cc819e4b0046fa38880168793794b8675d15a3e0bd7a64efa9b1cc0e4d308d86；只将两个metadata值回退便精确恢复历史SHA e34de6e41884af992d0a9727e12f933c624356352a62d9850e964abfd02607d0。CA记录只改version、该必要证据SHA及objections末尾的来源勘误/无新执行说明，按此反向恢复v6又精确复得旧登记pin。通用锥正文SHA ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39从未改变。
+
+R05既未把该有限validation直接列为边证据，也未从三人六标签的有限数值推出验收。四个通用锥定理自足：全真实节点IC刻画同一形式σ的有理锥；根偏离保证正归一与紧截面；固定人数/标签数上的有理极点可清分母；对偶需逐坐标精确验收。因此两个历史parameters字段不参与R05的推导。
+
+## 对同一σ、同一实际行和合法过去的实质核对
+
+完整形式σ固定在每个有序历史，不将同计数节点强制并为同一续局。Γ的每一行是该节点规定动作收益减同σ真实偏离续局收益；c是这份σ实际叶的未来覆盖行，d是同一实际叶前两人的真实收益行。更换客户重数时三者由同σ重新解释为同一输入的这些量，不能从别叶借d、从旧seed借IC或冻结原后继。
+
+合法固定整数过去k给每类型同一个b_S=Σ_(a∈S)k_a。规定叶、每个真实偏离叶及全部静态竞争背景的所有收益分母均加这个b_S，不能只平移β而漏Γ。若K=|k|且未来r人，根偏离到a至少获s_a/(K+r)；全真实IC和非零质量使实际根收益、首对和及未来实际覆盖正，因此W=1或pair=1各自可用正齐次缩放。有背景时未来总利润一般不等覆盖；这里没有使用该错误等同。
+
+固定合法q与全部静态r−1竞争背景B给0≤t≤min_B β_B(q)·w≤v_r(b;w)。故精确可行负目标d·w−2t<0使同输入、同一σ的首对s<2t≤2v。q不需要安全最优；它只是证出足够大的安全下保证。有限非严格IC保全部平局；有理重数及t可清共同分母，所有IC和静态收益同比例放大，严格差仍严格，得到不同单位客户组成的同σ实例。合法过去计数保持原整数值，不随客户质量缩放。
+
+这完整证明目标的if-acceptance合同，沿用whole_result；未证明负点存在、交替全局最优或全部策略采样支持。71份近零float仍不成为精确负点或全锥下界。严格首对失败也不自动成为聚合失败或OPT>2W，更不产生六人half反例。本轮不改这些边界。
+
+## 逐旧资产去向及当前比较范围
+
+收据supersession对全部15项旧资产逐一写明：R05被新任务目录内同edge_id关系替换，其余14项按旧SHA retained。新独立review及reading-ledger只承载本次来源变化和实际阅读说明。旧三个closed_overlaps的数学比较继续按原收据继承，写在additional_reviewed_comparisons；当前repair任务未声明overlap_comparisons，因此不迁入closed_overlaps，也不虚构待发布后续任务。原canonical单D边仍只为核心M-d9337358fe0249f787ef6cd7d1517d85提供原accepted局部贡献，不扩大为一般D_j整条结果。
+
+本worker没有Git、sync、claim、checkpoint、done、assemble、registry/body/公屏写、网络或凭据访问。没有运行、导入旧数学程序，没有LP、逆推、IC检查、精确审计或证书重放。结构/字节回退核对不增加历史scientific execution。新边数学审读已完成，绑定、最终资产SHA及发布交付由Root串行完成。
