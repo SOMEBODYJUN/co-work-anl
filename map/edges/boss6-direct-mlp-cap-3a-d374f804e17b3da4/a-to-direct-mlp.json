@@ -1,0 +1,49 @@
+{
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss6",
+  "edge_id": "boss6-a-infinity-copy-construction-to-direct-mlp-whole",
+  "kind": "implies",
+  "source_ids": [
+    "M-16209762a32e42e48ec20b76381b5e9d"
+  ],
+  "target_ids": [
+    "M-b86375379821448d857231e8c38d8f46"
+  ],
+  "conditions": "有限非空玩家、有限可空物品、非负二进制有理或符号∞估值；逐总正度d_j>3物品使用A的同一个专属副本/相邻∞helper输出，低度物品保留。任意有限M>0、有限λ≥1在两侧取相同数值，先按R_{M,λ}规范化再严格使用(4)–(8)。InfDegreeTwo附加结论只在输入每物品原∞度≤2且原∞owner置两端时使用；位复杂度针对显式可运算有理输入、查询及给定有理证书。",
+  "roles": {
+    "M-16209762a32e42e48ec20b76381b5e9d": "提供精确D∞输出、owner-copy标签、端点排序、规模计数与有限显式编码；其raw整数/CONFIG可行性不被冒作M-LP证明。",
+    "M-b86375379821448d857231e8c38d8f46": "由同一输出上的独立(4)–(8)正反证书验证得到全部同M同λ全正阈值、结构和算法合同。"
+  },
+  "explanation": "固定A的D∞输出后再任取M,λ。R保正支撑，旧端与其专属副本分类及small系数相同，所有helper∞端为big M；R不是点态不减。零值x先清零。正向对每条链令q_r=x_{i_rj}、Q=Σq≤1，取w_1=q_1+1−Q、其余w_r=q_r、W_k=Σ_{r≤k}w_r。旧正x仅重命名至自己副本，旧z保留；helper z=0、左右x=1−W_k,W_k。helper big质量一，small价值及坐标均零，所以(5)–(8)满足；副本helper占用1−w_r，加旧q_r≤w_r后总量≤1，给(4)；旧行(5)–(7)逐项不变。反向去零后helper的(6)给0≥Mz_h，M>0迫z_h=0；(5)迫每位helper相邻big总质量≥1。d个列容量扣除d−1名helper的≥d−1使用，得Σ_r y_{i_r,c_r}≤1。投影专属坐标、保旧z恢复旧列容量与全部行约束，非负性保持。故两侧全正参数集逐点相同，固定λ的扩展sup相同，不用前缀性，也不允许按新旧人数重新选不同λ。空物品时z=0与z≥1矛盾；M=0排除。结构与计数沿用同一A图：S=Σ(d_j−1)，n′=n+S,m′=m+S,E′=E+2S；内部至多三正端、端点至多二。原每物品∞度≤2时把至多两个旧∞端置两端，内部旧端有限并只有两个∞helper，端点至多两个∞端，故∞度≤2。原玩家∞度逐边不变，不能一般增加玩家侧界或规范化big度界。S≤E，估值复制、∞常数符号与有理残量/部分和都给多项式输出；前向每helper至多加两正x、z=0，反向去零投影，给定有理证书转换多项式。不枚举CONFIG，不借MLP→CONFIG。完整证明见review§1及H正文§2。",
+  "whole_result": "A的同一D∞构造完整延伸为H：对每个有限显式I先构造一个独立于M、λ的J∞，再对所有有限M>0、有限λ≥1在同数值参数下具有规范化M-LP可行性双向保持和给定证书双向转换；去零后旧正x按副本重命名、旧z保持、helper z=0且hole/prefix填容量，反向按helper≥1投影。固定λ的全部正参数集及扩展最高值相同而无前缀假设；输出每物品总正度≤3，输入原物品∞度≤2时端点排序保持该界；S=Σ_{d_j>3}(d_j−1)给n′=n+S,m′=m+S,E′=E+2S；输出编码和显式有理M-LP证书转换多项式。",
+  "scope": "H当前v1主statement的整结果支持；A承担同一具体结构，新增逐约束证明承担不同松弛。未把两个LP同阈值等同，未声称全多面体双射、M=0保持、玩家总正度三、所有查询big度二或CONFIG求解/多项式顶点分解。",
+  "review_note": "完整实读A/H/C当前记录、全部主文和相关独立审查；按原PDF(4)–(8)独立重构去零、同M同λ、helper z=0、前后容量及旧行保持，并核端点排序、精确计数、空物品与有理位长。H主statement全部分量已付清，无未付数学条件。 Boss6 Root已独立核对完整目标、推导方向、条件与实际证据。",
+  "evidence": [
+    {
+      "path": "map/edges/boss6-direct-mlp-cap-3a-d374f804e17b3da4/review.md",
+      "sha256": "fdfe510907c1c125ee8614942ba972b0b99dc6cdfaf5e4a54b231d09d6d9000c",
+      "section": "1. A 的构造直接延伸为 H 的完整主定理"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/无限helper全阈值降度与三度二无限度配置间隙--定理.md",
+      "sha256": "9d56eff7715d695c85f6e45707b899633faef71dd1388c86bea1ac4fc721dbca"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/无限helper链对阈值规范化MLP的全正阈值双向保持--定理.md",
+      "sha256": "f07cd5f7128a9e8ac0f4667b8e69f5d89905b8d4e4d999edd090612cb95a9dfb",
+      "section": "2. 主定理：同一 ∞ 输出的直接 M-LP 桥"
+    }
+  ],
+  "endpoint_pins": {
+    "M-16209762a32e42e48ec20b76381b5e9d": "7eccabec57217ad462462ba0ca4da21e7e3928e2cf3d1859fedf609e00dc907e",
+    "M-b86375379821448d857231e8c38d8f46": "bd9217e58da09968a5580a321b9be8c46b109e3f20b184ff2468e4acb1ba3a30"
+  },
+  "evidence_pins": {
+    "map/edges/boss6-direct-mlp-cap-3a-d374f804e17b3da4/review.md": "fdfe510907c1c125ee8614942ba972b0b99dc6cdfaf5e4a54b231d09d6d9000c",
+    "archives/unrelated-machines/state/定理/无限helper全阈值降度与三度二无限度配置间隙--定理.md": "9d56eff7715d695c85f6e45707b899633faef71dd1388c86bea1ac4fc721dbca",
+    "archives/unrelated-machines/state/定理/无限helper链对阈值规范化MLP的全正阈值双向保持--定理.md": "f07cd5f7128a9e8ac0f4667b8e69f5d89905b8d4e4d999edd090612cb95a9dfb"
+  },
+  "review_digest": "33b42639928b145ba2cb07a88369585b3dc1a79eb30d308e76a48a6af15dacd8"
+}
