@@ -1,0 +1,61 @@
+{
+  "status": "READY for exactly one Actions phase I; no optimizer called locally",
+  "run": "six-boss1-20261111",
+  "scope": "Complete free-E single-query envelope lift",
+  "dependencies": [
+    {
+      "path": "research/workspaces/six-boss1-20261111/rze_query_closure_20910/actions_phase1.py",
+      "sha256": "dc55b7263303b641d6a01f5871a2100812c00083797a4c7872fa016d9fd4b943",
+      "bytes": 8869
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/rze_query_closure_20910/symbolic_lift.json.gz",
+      "sha256": "cf420cca78dd507239aa3baac1538093177d10c8b37af84fc5a945209816fdc8",
+      "bytes": 330252
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/rze_query_closure_20910/preflight_literal_audit.json",
+      "sha256": "0a9911393b17de998a2c18a56c2c7d6fcd278c2ddf1c01c8193aa35d482d48ba",
+      "bytes": 1698
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/full624_augmented_lp/recovery/augmented_lp_exact.json",
+      "sha256": "cb45ee6f8df153764c91bd77d0543527cc44719ff7cc43646ffce06a7921a932",
+      "bytes": 8502638
+    }
+  ],
+  "argv": [
+    "python",
+    "research/workspaces/six-boss1-20261111/rze_query_closure_20910/actions_phase1.py",
+    "--seconds",
+    "1800"
+  ],
+  "requirements": [
+    "numpy",
+    "scipy"
+  ],
+  "solver": "highs-ds",
+  "linprog_calls_authorized": 1,
+  "solver_time_limit_seconds": 1800,
+  "recommended_workflow_timeout_minutes": 40,
+  "phase_I_shape": [
+    21572,
+    11035
+  ],
+  "new_E_columns": 776,
+  "min_auxiliaries": 10258,
+  "output_path": "research/workspaces/six-boss1-20261111/rze_query_closure_20910/actions_output",
+  "retained_outputs": [
+    "started.json",
+    "prepared_input.json",
+    "phase_I_matrix.npz",
+    "phase_I_vectors.npz",
+    "phase_I_input_order.json.gz",
+    "executed_actions_phase1.py",
+    "phase_I_discovery.json",
+    "phase_I_solution.npz"
+  ],
+  "failure_policy": "Retain failure/timeout and input order; no automatic repeat or second optimization.",
+  "after_discovery": "Exact primal recovery with canonical min, or exact Farkas eliminating all 11034 new columns; independent literal audit required.",
+  "local_optimization_calls": 0
+}

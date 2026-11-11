@@ -1,0 +1,68 @@
+{
+  "status": "READY_FOR_MAIN_ACTIONS_UNIQUE_PHASE_I",
+  "local_optimization_calls": 0,
+  "authorized_optimization_calls": 1,
+  "method": "highs-ds",
+  "time_limit_seconds": 1800,
+  "prerequisite": "Independent symbolic/literal/sorting audit PASS",
+  "command": "python3 -B research/workspaces/six-boss1-20261111/root_sorting_20910/actions_phase1.py --time-limit 1800",
+  "required_inputs": [
+    {
+      "path": "research/workspaces/six-boss1-20261111/root_sorting_20910/actions_phase1.py",
+      "sha256": "9caa38bdc27c40fd1bd44efe3fe66890a7fc4f14b8a56a7e8e9d456411686d82",
+      "bytes": 10411
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/root_sorting_20910/symbolic_matrix_exact.json.gz",
+      "sha256": "cf57bb8ceea25d2504db60326ae5a8abd9f461f36339bc5b57dd820ce1efd8b4",
+      "bytes": 1175223
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/root_sorting_20910/symbolic_independent_audit.json",
+      "sha256": "15521969def62799dc10a6d83e8d90e26cb86e6221d4ac704ce0a17966bd6637",
+      "bytes": 4578
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/full624_augmented_lp/recovery/augmented_lp_exact.json",
+      "sha256": "cb45ee6f8df153764c91bd77d0543527cc44719ff7cc43646ffce06a7921a932",
+      "bytes": 8502638
+    }
+  ],
+  "dependencies": [
+    "Python standard library",
+    "numpy",
+    "scipy"
+  ],
+  "output_directory": "research/workspaces/six-boss1-20261111/root_sorting_20910/actions_discovery",
+  "outputs": [
+    "phase1_input_arrays.npz",
+    "input_order.json.gz",
+    "lp_convention.json",
+    "floating_solver_arrays.npz",
+    "phase1_discovery.json",
+    "solver.stdout.txt",
+    "solver.stderr.txt",
+    "execution.json",
+    "progress.jsonl",
+    "executed_actions_phase1.py",
+    "worker_failure.json if failure"
+  ],
+  "next": "No reoptimization: recover exact mu/canonical min/L if feasible, otherwise exact Farkas eliminating all new variables.",
+  "dimensions": {
+    "principal": 438,
+    "inherited_principal": 299,
+    "new_principal": 139,
+    "cap_rows": 5400,
+    "sorting_lower_variables": 9572,
+    "sorting_piece_rows": 30938,
+    "total_inequalities": 36776,
+    "equalities": 38,
+    "mu": 1216,
+    "min_aux": 2700,
+    "phase1_variables": 13489,
+    "independent_transport_block_occurrences": 11442,
+    "symbolic_nonzeros": 1004690,
+    "matrix_sha256": "cf57bb8ceea25d2504db60326ae5a8abd9f461f36339bc5b57dd820ce1efd8b4",
+    "elapsed_seconds": 19.667168969999693
+  }
+}

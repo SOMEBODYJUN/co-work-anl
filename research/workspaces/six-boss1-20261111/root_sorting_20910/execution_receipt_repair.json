@@ -1,0 +1,6 @@
+{
+  "issue": "Two independent local executions read the append-only manifest before the first completed; the second later overwrote the first receipt. No mathematical artifact or stdout/stderr was lost.",
+  "repair": "The model receipt was restored from the actual tool-returned execution record, with source/stdout/stderr SHA verified against disk. The driver now rereads the manifest on completion and saves individual receipts.",
+  "affected_step": "model",
+  "no_rerun": true
+}

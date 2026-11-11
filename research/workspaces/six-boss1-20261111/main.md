@@ -1,10 +1,22 @@
 # Boss1：六人共同目录跨真实分支研究
 
+## Stage11当前入口：自由根与自由E的完整闭包
+
+原题仍OPEN。最后确认远端为Stage10的`0f9749da0b907474afddf48fd571c2e2b2a39854`；原始/对偶及三份末尾完成审计均可恢复。Stage10公屏seq80、id e3e3004d01c24e4db81ef58f46fa4ef9已发。下面新输入与请求由本次stage11 checkpoint保存，是否启动以实际pushed及GitHub run回执为准。
+
+`/root/root_sorting_20910`的438主行+完整排序片已独立核全域，36776不等式/38等式、13489个phaseI变量。Main核RS2符号L−λq+Σμ(λ−c)+≥0、主行扣L，质量等式的scipy对偶符号η不反转；旧293块的七运输上界逐分数复现。矩阵SHA cf57bb8ceea25d2504db60326ae5a8abd9f461f36339bc5b57dd820ce1efd8b4。请求`C-six-boss1-root-sorting-20910-01`，唯一highs-ds1800秒、40分钟job；输入和实际输出路径在其actions_request.json。
+
+`/root/rze_query_closure_20910`的固定E确有51负单查询上界；允许776E全部重选的21572行/11034新列通用闭包已经独立字面预检，矩阵SHA cf420cca78dd507239aa3baac1538093177d10c8b37af84fc5a945209816fdc8。请求`C-six-boss1-rze-closure-20910-01`同样只作一次highs-ds1800秒。Main实读177完整真钱包、去重/辅助正向和全部solver约定。数值结论必须接精确原始或Farkas，不能以solver状态断言原点排除。
+
+Main另在cb45重算旧同B4的H2→Z上界，两个off族仍精确为0，故强制ZH1交叠最大。保E∩Z后，EH1应受分层上界min(EZ,ZH1)+min(E−EZ,H1−ZH1)，可强于旧min(E,H1)。完整推导、通用提升合同及逐分数诊断见`main_E_B4_conditional_bound.md/py/json`。不改本次两份冻结计算输入；E自由闭包若可行，再在其精确E上核这个共同条件层。
+
+`/root/terminal_response_cycles`已定位旧owner`customer-attraction/true-last-reply-common-potential-cap-and-overlap-endpoints`，Main实读其完整RC及β端点。全目录max-B主题X满足a≥max_Q U(Q,X)且全部PAIR势≤a+B_X，这是旧引理，不能认新。当前接入同一个X的16hist质量、17单题轨道和490强PAIR更紧钱包，再核实际报价/K/SAFE；只作一次小phaseI。不重复已失败的旧三人势增量推广。所有三任务只写各自同名目录和.md，Main串行RUN/Git。
+
 ## Stage10当前入口：第九精确最优与真实末两位缺口
 
-本节为当前恢复入口；下方Stage9及更早各节是当时状态，按各自点和域阅读。原题仍OPEN，继续Main循环，不因本次checkpoint停止。模型仍为有限单位客户、有限非空共同标签目录、每份完整有序历史纯SPE，允许空主题、重复行动、同覆盖异标签、零客户及任意弱平局。
+本节保Stage10恢复状态；更晚义务见上方Stage11。下方Stage9及更早各节按各自点和域阅读。原题仍OPEN，继续Main循环，不因checkpoint停止。模型仍为有限单位客户、有限非空共同标签目录、每份完整有序历史纯SPE，允许空主题、重复行动、同覆盖异标签、零客户及任意弱平局。
 
-最近确认pushed为1ccc0a5a5aaeb68a7b8b74297f0482ca668ba7b6（stage9）。本节新增内容在stage10确认pushed前均为本地；实际原始云产物已取回，不再标作待下载。
+Stage10已确认pushed：0f9749da0b907474afddf48fd571c2e2b2a39854；收据见checkpoints/stage10.json。此前全部冻结完成已可远端恢复；三个新活动目录、Main后加E/B4条件上界和待建计算请求仍在下一次checkpoint保存。实际原始云产物已取回。
 
 ### 当前精确主点已换为20910系统
 

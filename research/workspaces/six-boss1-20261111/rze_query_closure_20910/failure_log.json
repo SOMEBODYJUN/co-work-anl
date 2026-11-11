@@ -1,0 +1,12 @@
+{
+  "failures": [
+    {
+      "step": "First build_envelopes.py parse, before any matrix or optimizer",
+      "exception": "KeyError: ((0, 0, (0, 0, 1), (0, 0, 1)), E)",
+      "cause": "joint-reply.hist_column_old is the pre-expansion legacy hist index, not the current 4849-column index.",
+      "repair": "Associate each joint-reply with its enclosing current hist block, as in both frozen independent parser and source builder.",
+      "consequence": "No mathematical inference or optimization used the failed parse; all final symbolic rows independently reconstructed.",
+      "preserved_source": "failures/build_legacy_hist.py"
+    }
+  ]
+}
