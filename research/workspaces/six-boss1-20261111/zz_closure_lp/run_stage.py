@@ -13,10 +13,14 @@ HERE = Path(__file__).resolve().parent
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("stage", choices=("solve", "recover", "verify"))
+    parser.add_argument("stage", choices=("solve", "recover", "verify", "separate"))
     args = parser.parse_args()
-    entry = {"solve": "solve_full.py", "recover": "recover_full.py", "verify": "verify_certificates.py"}[args.stage]
-    command = [sys.executable, "-B", str(HERE / entry)]
+    entry = {"solve": HERE / "solve_full.py", "recover": HERE / "recover_full.py", "verify": HERE / "verify_certificates.py",
+             "separate": HERE.parent / "common_coupling_math" / "audit_boolean.py"}[args.stage]
+    command = [sys.executable, "-B", str(entry)]
+    if args.stage == "separate":
+        command.extend([str(HERE / "augmented_lp_exact.json"), "--matrix", str(HERE / "exact_matrix.json.gz"),
+                        "--output", str(HERE / "zz-at-certified-point.json")])
     start = datetime.now(timezone.utc).isoformat()
     tick = time.monotonic()
     stdout_path, stderr_path = HERE / (args.stage + "_stdout.txt"), HERE / (args.stage + "_stderr.txt")
@@ -26,7 +30,7 @@ def main():
     record = {"stage": args.stage, "command": command, "cwd": str(HERE),
               "start_utc": start, "end_utc": datetime.now(timezone.utc).isoformat(),
               "seconds": time.monotonic()-tick, "exit_code": process.returncode,
-              "entry_sha256": sha256((HERE / entry).read_bytes()).hexdigest(),
+              "entry_sha256": sha256(entry.read_bytes()).hexdigest(),
               "stdout": stdout_path.name, "stderr": stderr_path.name,
               "stdout_sha256": sha256(stdout_path.read_bytes()).hexdigest(),
               "stderr_sha256": sha256(stderr_path.read_bytes()).hexdigest()}
