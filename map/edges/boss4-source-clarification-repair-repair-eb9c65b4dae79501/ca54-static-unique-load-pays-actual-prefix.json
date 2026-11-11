@@ -1,0 +1,58 @@
+{
+  "edge_id": "ca54r5-static-unique-load-pays-actual-prefix",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-921cb4daa29e43c6b2816c1ec73720b5"
+  ],
+  "target_ids": [
+    "M-3b33bff2ccf041a9a82eb35664d00a69"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一n≥1目录满足(2n−1)v_n=OPT_n；同一完整SPE实际前n−1个动作产生的逐客户负载恰等于S2唯一L，末位为真实BR。实际嵌入是额外条件，不由静态存在/舍入支付。",
+  "roles": {
+    "M-921cb4daa29e43c6b2816c1ec73720b5": "唯一L、g≤v、纯背景cap=v及ΣL/(1+L)=(n−1)v。",
+    "M-3b33bff2ccf041a9a82eb35664d00a69": "实际前缀嵌入后的末位等号、逐人下界及总覆盖。"
+  },
+  "explanation": "面对L末位真实BR恰为v。实际前缀B产生L，故按槽Σg(a)=Σ_xL_x/(1+L_x)=(n−1)v；每槽≤v，于是每槽g=v。末位至多加一层，前缀玩家终局分母≤1+L，其收入≥g=v。零背景根收入和等于W，得W≥nv。n1空前缀直接成立，不对任取q支持强取等；不要求B属于预选Q支持。",
+  "scope": "目标整条条件命题，保全部有序历史和弱平局，无普遍嵌入保证。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/静态安全值的亏量刚性与纯背景舍入--定理.md",
+      "sha256": "3d10d512cd632bacdbcc7c9bd8553438dd9fa3ad08a4aabaa61e638c17e4ad64",
+      "section": "4. S2：取等强制固定的纯对偶负载"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/静态安全值的亏量刚性与纯背景舍入--定理.md",
+      "sha256": "3d10d512cd632bacdbcc7c9bd8553438dd9fa3ad08a4aabaa61e638c17e4ad64",
+      "section": "5. 显式原始最优分布与所有最坏回复"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/静态安全值的亏量刚性与纯背景舍入--定理.md",
+      "sha256": "3d10d512cd632bacdbcc7c9bd8553438dd9fa3ad08a4aabaa61e638c17e4ad64",
+      "section": "6. 全部最优对偶之间的客户负载唯一性"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/静态安全值的亏量刚性与纯背景舍入--定理.md",
+      "sha256": "3d10d512cd632bacdbcc7c9bd8553438dd9fa3ad08a4aabaa61e638c17e4ad64",
+      "section": "8. 退化边界与真正能接回 SPE 的条件推论"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-54b1539bc147e0b3/review.md",
+      "sha256": "c79717248672a2afa1023c16003cb60e1aaee98cae84ec08a4e2f21b1f8870b7"
+    }
+  ],
+  "reviewed_by": "Boss4/boss4-source-clarification-repair-repair-eb9c65b4dae79501",
+  "review_note": "本次fresh worker实读此关系所需现行正文及承重证明；原未改数学复用，未重跑旧LP/BI/审计。核全部有序历史、同σ真实后继、模型/量词和整条/局部作用。CA-DISJOINT按v5重核；六边公共review证据同步改版。",
+  "whole_result": "在静态锐界且同一SPE实际前缀负载为L时，末位恰获v_n，每个前缀主题g=v_n，每个实际玩家收入≥v_n，W≥n v_n；n1和零值边界均成立。",
+  "endpoint_pins": {
+    "M-3b33bff2ccf041a9a82eb35664d00a69": "3f806751ffafb741306cfd9dbb14b74757d4564563e438ed4ae123d85289ae70",
+    "M-921cb4daa29e43c6b2816c1ec73720b5": "16aa564c605768797d2d59d18424960974bf082756ff55102020870b9781a55e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/静态安全值的亏量刚性与纯背景舍入--定理.md": "3d10d512cd632bacdbcc7c9bd8553438dd9fa3ad08a4aabaa61e638c17e4ad64",
+    "map/edges/customer-attraction-3a-3a-54b1539bc147e0b3/review.md": "c79717248672a2afa1023c16003cb60e1aaee98cae84ec08a4e2f21b1f8870b7"
+  },
+  "review_digest": "6324b2a9fe9846c964e960203ac7c67331c00280fa98367ca17d4efd0bc4757f"
+}

@@ -1,0 +1,62 @@
+{
+  "edge_id": "cag-35cc-fixed-prefix-flows-averaging-subcases",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-1f02cb8940364924a813cf01dc1c7ac1"
+  ],
+  "target_ids": [
+    "customer-attraction/full-tree-averaging-obstruction"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "正文明确的36客户三人六主题完整SPE、均匀q及两种固定流系数1或n=3；静态Nash行Ew=0，客户质量非负。",
+  "roles": {
+    "M-1f02cb8940364924a813cf01dc1c7ac1": "两个精确删位置恒等式及真36客户SPE的负余项。",
+    "customer-attraction/full-tree-averaging-obstruction": "任意深度/节点动作平均证书障碍；本边只排其中预设系数1或n的子模板。"
+  },
+  "explanation": "在任意形式σ、q、非负质量下先用真实后继效用的势差表达式，得 G_k=EΦ(Z_{k−1})−EΦ(Z_k)−Δ_(k,k)。直接求和并用 L=Φ−W 得单位流恒等式(2a)；再用逐终局 W=nΦ−Σ_iΦ(z\\i) 得n倍流恒等式(2)。二式的余项不同，均不能由SPE直接判非负。在指定真36客户σ、均匀q处，Ew=0，w≥0，W−Ψ=34−97/3=5/3，ΣG=1/2+31/18=20/9。因此 W−Ψ−ΣG=−5/9，W−Ψ−3ΣG=−5。若把每深度平均行G_k的权预先全部定为1或3后，剩余可写作Eᵀη+r（η,r≥0），与该w内积必须非负，矛盾。这只排目标任意非负权模板的两个特例：目标全部深度权仍由6类型分离向量承担，43节点独立动作平均权由15类型向量承担；它们分别有57行及至少一行完整Γ为负，故不是SPE福利反例。该真36客户点本身W>Ψ，也没有排固定σ,q下逐偏离独立λ的Farkas等价。当前正文新增的两人平稳回复恒等式仅用于两人正接口，其平稳性消去角色差，既不改变本边三人固定流计算，也不将五客户实际终局均匀删位的失败推广到所有静态背景。",
+  "scope": "固定三人六主题形式σ与均匀q，保持两种不同余项定义；不排除固定σ,q逐节点逐偏离独立乘子Farkas合同。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/完整策略树平均与独立同分布福利桥--障碍.md",
+      "sha256": "1800d58ce4f16dd0677a2d12b39379457f9729db36629b92e3ea58f95a0b6b3d",
+      "section": "独立前缀流恒等式及删除位置余项"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/完整策略树平均与独立同分布福利桥--障碍.md",
+      "sha256": "1800d58ce4f16dd0677a2d12b39379457f9729db36629b92e3ea58f95a0b6b3d",
+      "section": "真实36客户SPE已经否定两种固定流余项的非负性"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/个体安全去相关与尾部流增量--审查.md",
+      "sha256": "0e403e9b132173e0574988b86dbdc8f8ada65d259d1e5ded6b4ca0bc5f84bb3a",
+      "section": "全树流分离：负向量不是 SPE 反例"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/continuation-security/tests/audits/customer_attraction_full_tree_flow.py",
+      "sha256": "0762f79c46af253a5c7948120a7ea27fc2db7c0172fc767c263f78bd37e060ce"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/continuation-security/replay-flow.json",
+      "sha256": "70fe6b6dc71bf769b5cbd9396dd039dd904a51615a40d550e8e1a985fccb625b"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "35cc fresh定向复核：实读当前22核心及3只读对象的数学登记字段、旧完整任务/收据与8条边，全文读当前完整树障碍、改变的个体安全审查、共同模型和独立Fraction审计源码/保存replay。逐式重构两种恒等式、真36客户负余项和两个非SPE分离点的量词；新两人平稳接口按角色差消去重新验算。保留accepted/unconditional的局部贡献，不把该边升级为完整任意平均权障碍或普遍iid/half结论。此次未运行科学审计/LP或全仓检查。",
+  "contribution": {
+    "result": "指定全树平均模板的权重全1、全n两个子类已被真36客户点精确排除；固定流余项不能免费丢弃。",
+    "remaining": "目标任意非负深度权及逐节点动作平均权的完整排除仍由各自显式6类型/15类型分离向量独立承担，不能用本边两个负余项代替。逐节点逐偏离独立λ的固定σ,q Farkas等价未被本步排除；该等价不保证所有σ,q有证书。真正静态安全值聚合及六人half亦未由本步判定；新两人平稳回复正接口不能无桥延伸到三人。"
+  },
+  "endpoint_pins": {
+    "M-1f02cb8940364924a813cf01dc1c7ac1": "a1714b4c0947fb5df1e3e9607ace67c92202efd0dfc0d0f66b02e0b0a71b3f0c",
+    "customer-attraction/full-tree-averaging-obstruction": "e9cd6534342c0bc3f69db8c7b45f248e369be546487a4e7121794049240954d0"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/完整策略树平均与独立同分布福利桥--障碍.md": "1800d58ce4f16dd0677a2d12b39379457f9729db36629b92e3ea58f95a0b6b3d",
+    "archives/customer-attraction/state/审查/个体安全去相关与尾部流增量--审查.md": "0e403e9b132173e0574988b86dbdc8f8ada65d259d1e5ded6b4ca0bc5f84bb3a",
+    "archives/customer-attraction/tools/evidence/continuation-security/tests/audits/customer_attraction_full_tree_flow.py": "0762f79c46af253a5c7948120a7ea27fc2db7c0172fc767c263f78bd37e060ce",
+    "archives/customer-attraction/tools/evidence/continuation-security/replay-flow.json": "70fe6b6dc71bf769b5cbd9396dd039dd904a51615a40d550e8e1a985fccb625b"
+  },
+  "review_digest": "0cd1bbd160e267588d3185f7aa86a2f8ce9c8d0d44c53a43ef6e067932039ed3"
+}
