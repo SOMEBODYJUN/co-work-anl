@@ -65,9 +65,11 @@ Theorem 4：对任意 epsilon > 0，restricted resource-matroid Santa Claus 有�
 
 ## 5. 舍入接口
 
-Theorem 21：给定值 T 的可行 resource-matroid assignment LP 分数解，可在多项式时间舍入为整数分配，最小玩家值至少 T - max_j v_j。证明在二部图上构造 polymatroid intersection，并沿资源顺序传递每个玩家的分数余量。
+Theorem 21：给定值 T 的可行 resource-matroid assignment LP 分数解，可在多项式时间舍入为原资源的整数基分配，最小玩家值至少 T - max_j v_j。该保证要求每项有共同有限非负有理价值、归一化单调整数值次模秩及给定可行分数基见证。严格证明按价值降序把每位玩家的分数质量切成单位槽，以两个整数 polymatroid 的交饱和所有完整槽；右秩按不同槽容量求和，左秩是原资源秩在平行槽边上的投影。投回后先得整数独立向量，再在原资源中补基；非负性保证收益不降，有序积分给损失至多最大资源值。槽按断点压缩到多项式规模，基完成用逐坐标次模最小化，允许二进制大重数。
 
-Theorem 23：给定值 T 的 job-matroid Makespan assignment LP 分数解，可舍入为 makespan 至多 T + max_j p_j，从而得到至多 2 OPT 的整数解。该证明使用相同的 polymatroid-intersection 整数性。
+Theorem 23：给定值 T 的 job-matroid Makespan assignment LP 分数解，可舍入为 makespan 至多 T + max_j p_j。逐项取 K_j=f_j(E)、z_j=K_j·1 及对偶秩 g_j(S)=K_j|S|+f_j(E\S)-K_j，补向量 z_j-x_j 双向保持分数基与整数基。令共同常数 C=Σ_j p_jK_j，在对偶资源实例上以阈值 max(0,C-T) 用 Theorem 21 舍入，再补回原作业基，得到每机 T+max_j p_j。去掉零秩项后 max_j p_j≤OPT，结合最小 LP 阈值不超过 OPT 才得到二近似。反向使用同一逐项补向量桥也推出 Theorem 21；两者不限两值，但共同尺寸/价值前提不能删去。
+
+冻结 v1 的两处相邻索引图不能承载它们声称的分数见证，右秩的印刷公式还按边重复计入同一右端容量。十人、四项 U_{3,10}、每项每人分数 3/10（另加零项）的合法输入，资源图的正容量右端只能由两项总秩六填十槽；作业逆向图则使第三项只接零容量槽。这只否定原图的分数可行性步骤，两条舍入结论由上述严格证明保留。完整反例、两秩次模性、槽压缩、基完成与双向对偶见[严格替代证明](../../tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md)。
 
 Lemma 22 把一般两值 resource-matroid 实例约化到一个无穷值 matroid 加一个单位 polymatroid 的规范子程序；重资源先整数处理、轻资源分数处理，再用 Theorem 21 舍入，可得到一般资源拟阵 Santa Claus 的 2 alpha 版本（在其外部算法假设下）。
 

@@ -71,7 +71,7 @@ raw-K2-with-row-degree 稿新增 §13 的后置读后（4,370 字节，SHA `a280
 \]
 
 这是真实 ordinary schedule 的精确值，不依赖样本 law；缩放 (k/(k+s)) 后目标可归一
-到 1，固定 (d) 且 (k\to\infty) 时该 gap 趋近 2 的上侧。它不是一般 UM 近二障碍。
+到 1，固定 (d) 且 (k\to\infty) 时该 gap 从下侧趋近 2。它不是一般 UM 近二障碍。
 
 # 2. 有限 law、subset 插值与 whole-row CONFIG
 
