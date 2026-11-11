@@ -1,0 +1,43 @@
+{
+  "edge_id": "ca-dd45-reciprocal-kernel-pays-harmonic-staircase",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-8a1de497e39a4cf3b8585cd369a8f124"
+  ],
+  "target_ids": [
+    "M-a232d479b8ba494aa0df8eda4f01ca8b"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一原m人完整σ；合法有序H0与r0≥1满足|H0|+r0+1=m；每步ct=σ_m(Ht+a_t^{r_t}), H_(t+1)=Ht,ct, r_(t+1)=r_t−1, a_(t+1)=ct；0≤T≤r0−1，始终相同总m。",
+  "roles": {
+    "M-8a1de497e39a4cf3b8585cd369a8f124": "提供每合法(H,r)上的对称K及真实末位BR比较；r1也有对称核。",
+    "M-a232d479b8ba494aa0df8eda4f01ca8b": "由一次精确δ转移和逐客户望远镜得到其整条跨前缀调和租金结论。"
+  },
+  "explanation": "先保固定核：REC在当前Ht,r_t给K_Ht^r_t(a_(t−1),a_t)≤K_Ht^r_t(ct,a_t)=K_Ht^r_t(a_t,ct)，因为ct是具体长度m−1历史Ht+a_t^{r_t}的真实末回复。对任意a,b及r≥2，U_a(H+a+r b)与U_a((H+b)+a+(r−1)b)的最终总计数完全相同，故收益项逐客户抵消；剩余f_H(b)−f_(H+b)(b)=Σ_(x∈b)[1/(h+1)−1/(h+2)]=δ_H(b)。于是该一步≤K_(Ht+ct)^(r_t−1)(a_t,ct)+δ_Ht(ct)。从t0到T−1相加，内部核逐项消去。每客户第j次新命中租金为1/(h0+j)−1/(h0+j+1)，j1,…,g_x，和为1/(h0+1)−1/(h0+g_x+1)。得到目标完整式K_start≤K_end+Σ_x该调和差；空H0化为Σg/(g+1)，T0空和为0。每执行步r_t≥2，末端r_T≥1；没有在r1丢负E。此证明不使用P=K+E非负性，也不把r2同前缀cohort一次支付重复收费。单客户单主题m3检验可直接算K_empty^2=4/3、K_(s)^1=5/6，下降1/2恰等δ，排除无租跨前缀单调误读。",
+  "scope": "完整STAIR陈述；只限把本步真实回复移入前缀的阶梯。租金和末端通常离轨，仍未被根W付款。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/互惠末位回复链端点化--引理.md",
+      "sha256": "323bba07da5e7181df7e79ad0cfee371d9b3adbc55ffadeec8b83dbca374dbee"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/互惠回复阶梯与调和租金--引理.md",
+      "sha256": "ca1b7336d0054d99277109357978db01bd8ec116f48c200a7480480085ed6219",
+      "section": "精确阶梯恒等式"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "正式worker逐核心实读当前合同、所引正文及本边承重证明；保当前版本、全部联合前提、同一完整策略和所列作用范围。未运行旧科学程序。",
+  "whole_result": "REC的固定核对称与同σ真BR，加上精确δ转移，推出STAIR全部一步恒等式、0≤T≤r0−1的阶梯不等式及逐客户调和租金（空前缀Σg/(g+1)）。",
+  "endpoint_pins": {
+    "M-8a1de497e39a4cf3b8585cd369a8f124": "a4bc76ae59d4129e502b4eace77b6ccefcd714b047c6d0935a10af482d897a8a",
+    "M-a232d479b8ba494aa0df8eda4f01ca8b": "8d42a51fcd3d2239b70c86e87afbddc6bb3ba49935c69feb4eed2fbe006eedea"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/互惠末位回复链端点化--引理.md": "323bba07da5e7181df7e79ad0cfee371d9b3adbc55ffadeec8b83dbca374dbee",
+    "archives/customer-attraction/state/引理/互惠回复阶梯与调和租金--引理.md": "ca1b7336d0054d99277109357978db01bd8ec116f48c200a7480480085ed6219"
+  },
+  "review_digest": "c93af4173073ccdef5b1d8c1f916242845f61e3b26c2305a3f54f19ad88860d5"
+}

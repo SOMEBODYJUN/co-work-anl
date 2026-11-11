@@ -1,0 +1,56 @@
+{
+  "edge_id": "ca90ad-p1-p3-imply-specified-product-price-budget",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-f43418d6c24d4db0b3c03683f0c71e8a",
+    "M-bb4a25e2107c496891b5e18d9bed2c73"
+  ],
+  "target_ids": [
+    "M-b77c555512fb45fc9616608c28f65ed0"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限正个不交单位客户分量、各有限非空真实集合目录、完整Cartesian联合目录、同一m≥1与行动次序；每分量给定一份全有序历史纯SPE并逐坐标执行；按目标自身假设，对每个所选分量a_j=min_i u_i^j均有B_j(a_j)≤W_j。此if是P4原定理适用条件，不是新增开放的普遍预算断言。",
+  "roles": {
+    "M-f43418d6c24d4db0b3c03683f0c71e8a": "构造指定完整乘积SPE并给逐人收益、实际福利和菜单OPT加性。",
+    "M-bb4a25e2107c496891b5e18d9bed2c73": "给每个共同分数质量t的覆盖加性及达到的非负价格下卷积。",
+    "M-b77c555512fb45fc9616608c28f65ed0": "接收其完整条件保持定理，含每分量自身价格预算假设与half结论。"
+  },
+  "explanation": "在每个联合有序历史，坐标策略均沿自身真实偏离后继；P1使指定乘积为完整SPE，u_i=Σ_j u_i^j、W=Σ_j W_j。令a_j=min_i u_i^j，a=min_iΣ_j u_i^j，则每个i的和≥Σ_j a_j，故a≥Σ_j a_j；各分量最小者无需相同。P3在总价Σa_j处采用可行非负拆分a_j，得B_prod(Σa_j)≤ΣB_j(a_j)。B非增给B_prod(a)≤B_prod(Σa_j)≤ΣW_j=W。任意最优m个整数查询是总质量m的可行分数覆盖，故OPT_m≤F_prod(m)≤B_prod(a)+ma；由ma≤Σ_i u_i=W，得OPT_m≤2W。t=0/v=0及空客户分量已由P2/P3端点承担，无比值除零。",
+  "scope": "整条P4成立：只适用于指定独立乘积及逐分量预算if；不分解任意耦合SPE、不把a≥Σa_j改成等号，不证明所有分量自动满足预算。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/笛卡尔目录的共同质量覆盖与非负价格卷积--定理.md",
+      "sha256": "26caea513dccd71d5b679783c31544e0db32af07ae55753336e0f9aee7bd155a",
+      "section": "P1：指定完整SPE乘积和根量可加"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/笛卡尔目录的共同质量覆盖与非负价格卷积--定理.md",
+      "sha256": "26caea513dccd71d5b679783c31544e0db32af07ae55753336e0f9aee7bd155a",
+      "section": "P2：每个坐标共享同一个分数质量t"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/笛卡尔目录的共同质量覆盖与非负价格卷积--定理.md",
+      "sha256": "26caea513dccd71d5b679783c31544e0db32af07ae55753336e0f9aee7bd155a",
+      "section": "P3：达到的非负价格下卷积"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/笛卡尔目录的共同质量覆盖与非负价格卷积--定理.md",
+      "sha256": "26caea513dccd71d5b679783c31544e0db32af07ae55753336e0f9aee7bd155a",
+      "section": "P4：最小玩家价格预算的条件保持"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Boss6正式恢复worker逐份重读本任务当前端点合同与承重primary正文；冻结预研及两份独立审计只保其原信用。本关系按目标完整statement逐项核whole/contribution及余项；没有新原程序、LP、SPE、IC或DP执行。",
+  "whole_result": "对任意满足P4自身逐分量预算假设的所选完整分量SPE，其指定坐标独立乘积是完整SPE，a=min_iΣ_j u_i^j≥Σ_j a_j，B_prod(a)≤W，且OPT_m≤B_prod(a)+ma≤2W。",
+  "endpoint_pins": {
+    "M-b77c555512fb45fc9616608c28f65ed0": "518c2387c03f4858dda71894a4eff021a2752054ac0e697b6b7d7c270a973b48",
+    "M-bb4a25e2107c496891b5e18d9bed2c73": "9e4dbdd5eee897b485515ff336cff32c69e4f93fc97b52640563e74ee199dfb4",
+    "M-f43418d6c24d4db0b3c03683f0c71e8a": "011f989f8fe5f1a1e38f64fca7ef325c18a8de9b064a75b2f203b6560cce4f92"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/笛卡尔目录的共同质量覆盖与非负价格卷积--定理.md": "26caea513dccd71d5b679783c31544e0db32af07ae55753336e0f9aee7bd155a"
+  },
+  "review_digest": "96ff521794e6ce7a99ccf0b2dd97e7ab19533d5ac6461c0bb6b9e363d770fb2e"
+}

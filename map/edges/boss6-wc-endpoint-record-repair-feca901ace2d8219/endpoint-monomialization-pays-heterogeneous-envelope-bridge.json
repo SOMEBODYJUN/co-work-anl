@@ -1,0 +1,53 @@
+{
+  "edge_id": "wc-boss6-wc-endpoint-record-repair-monomialization-bridge",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "WC-R3-FULL-TOPOLOGY-REDUCTION-v3"
+  ],
+  "target_ids": [
+    "weighted-congestion/heterogeneous-endpoint-integer-reduction"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一次数d≥2；同权整数两列星，整数n≥1、共同权w>0、主/副费用p,f为非负实系数次数≤d多项式；成本求和且真实新负载含自身。这里已给H/L在某实γ>1处同时严格成立。F_poly(d)只计这组充分端点的可认证γ>1并补基线1；F_d采用源(S)整数n,k及实0<w≤1、0≤β≤1的两商sup。",
+  "roles": {
+    "WC-R3-FULL-TOPOLOGY-REDUCTION-v3": "使用正文中独立的“从多项式测试到单项式源”步骤，起点已经是严格端点，因此不需要完整无PNE到端点的ρ阈值。",
+    "weighted-congestion/heterogeneous-endpoint-integer-reduction": "支付其联合推论中F_poly=F_d的外部单项式桥，未替代密度选择与核心凸取整。"
+  },
+  "explanation": "令同权端点为p(1)+nf(1+w)>γ[p(1+nw)+nf(1)]及p(1+w)+f(w)>γ[p(nw)+f(1+w)]。第二式和f(w)≤f(1+w)强迫p非恒定及(n−1)w<1；若n=1,w>1则交换两玩家并按1/w缩放权，同时把两费用交换，令w≤1（此处不同于完整拓扑右支的不交换费用倒权）。侧费以端点凸弦换成c+βx^d，保持f(1),f(1+w)并不减f(w)，删除c≥0使两个严格margin分别增加n(γ−1)c、(γ−1)c。消去β所得严格正线性泛函在某个有正系数的主单项式x^k上为正；常数项的泛函严格负，所以1≤k≤d。非空β开区间的下端>0、上端<1，得合法两源商均>γ。因此每个F_poly的严格认证因子小于F_d。反向每个单项式源本来就在同权非负多项式域，每个1<γ<min(A,B)都通过H/L；故两侧>1可认证倍率集合相同。β=0时A=1/(1+nw)^k<1；β=1时(1+w)^k≤E=(1+w)^d且w^d≤(nw)^k，故B≤1，两边界不增>1 sup。源n=k=1,β=0,w↓0给F_d≥1，补基线后恰F_poly(d)=F_d。所有γ>1均可用；ρ0=(1+√3)/2只用于任意同权全态无γ-PNE先取得端点的另一前置步骤，不能把它加到本桥上。",
+  "scope": "异权整数化输出的γ=1+(m/n)(α−1)>1已经足以调用此桥；不论γ是否达到ρ0。不把F_poly与固定同权实例的真实minimax相同，也不将H/L充分性升成任意异权非存在必要性。",
+  "contribution": {
+    "result": "目标正文联合推论的外部单项式桥完整成立：每个同权整数非负多项式H/L严格证书γ>1迁为同次数合法单项式源，且补基线后F_poly(d)=F_d。",
+    "remaining": "目标整数化主体仍由其自身实际wi密度选择、代数n=W/wi及m=floor n的核心凸性论证支付；异权F_het夹逼和锐主项还共同需要该主体与源锐渐近，已在本包另一条三前提ALL边承载。"
+  },
+  "evidence": [
+    {
+      "path": "archives/weighted-congestion/state/定理/对称两列拓扑的单项式两攻击归约--定理.md",
+      "sha256": "6d6ffc835804eec4e380e086b818d8e022dc1c0d70d505d31a09873766b7d6d9",
+      "section": "从多项式测试到单项式源"
+    },
+    {
+      "path": "archives/weighted-congestion/state/归约/异权两列端点证书的同权整数化--归约.md",
+      "sha256": "64957afa7b236bc90b036ac3edf3ac5718ce77f7716541f87c8690cc6907aa4a",
+      "section": "上确界比较及与已清洗单项式归约的联合推论"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/两攻击源参数包络的锐渐近--定理.md",
+      "sha256": "dfbc9a01472bc4c9015b0eec4dd2b4fefd2384fae1ad52425c93df8a7b3bedca",
+      "section": "精确定义、结论和模型接口"
+    }
+  ],
+  "reviewed_by": "Boss6 fresh formal wc-endpoint-record 3B repair worker, round50",
+  "review_note": "本轮为端点记录v2输入pin的定向替代。fresh worker已完整实读三个核心和只读目标的当前记录、三份主正文、任务六个阅读文件/指定章节，以及旧两边、旧收据、冻结Fraction脚本/报告和边界JSON；逐式核同一α的H及全部L、实际wi可大于1、n=W/wi仅代数、m=floor n与ρ=1严格性、γ>1单项式桥及n=1换玩家/费用、β开区间与0/1边界、严格α<U和弱sup、锐渐近和独立有理近邻论证。旧数学payload和证据逐字段保持不变，仅新ID/路径、本轮审读与当前端点pin绑定；未运行旧有限程序，未扩大H/L充分机制范围。",
+  "endpoint_pins": {
+    "WC-R3-FULL-TOPOLOGY-REDUCTION-v3": "cd9c56dbad4a1760d545b3dce0028cb43947151508b9821d251f5b37df350e0a",
+    "weighted-congestion/heterogeneous-endpoint-integer-reduction": "2d3198c35617e91b52cd088866c17e9fb45dd6b87d169f38d02acc2b0f4f8a83"
+  },
+  "evidence_pins": {
+    "archives/weighted-congestion/state/定理/对称两列拓扑的单项式两攻击归约--定理.md": "6d6ffc835804eec4e380e086b818d8e022dc1c0d70d505d31a09873766b7d6d9",
+    "archives/weighted-congestion/state/归约/异权两列端点证书的同权整数化--归约.md": "64957afa7b236bc90b036ac3edf3ac5718ce77f7716541f87c8690cc6907aa4a",
+    "archives/weighted-congestion/state/定理/两攻击源参数包络的锐渐近--定理.md": "dfbc9a01472bc4c9015b0eec4dd2b4fefd2384fae1ad52425c93df8a7b3bedca"
+  },
+  "review_digest": "0bef213920e62e825f041c6cb0aff14e67759328ab4be594b9fc9f613dd061c8"
+}

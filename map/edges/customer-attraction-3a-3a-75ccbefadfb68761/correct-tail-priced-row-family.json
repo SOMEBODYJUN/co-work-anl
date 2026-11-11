@@ -1,0 +1,60 @@
+{
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss7",
+  "edge_id": "boss7-ca-75cc-correct-tail-priced-row-family",
+  "source_ids": [
+    "CA-PRICED-HIDDEN-REPLY-v1"
+  ],
+  "target_ids": [
+    "M-4d83bece0286411d82b700f3e95c43ed"
+  ],
+  "conditions": "有限单位客户、有限非空共同标签目录及完整有序历史纯SPE；m仅取5或6。actual源位置i从1计，原引理k_total=m−i+1含当前源，隐藏后继数n_hidden=k_total−1=m−i。T、Q均为原共同目录合法标签，比较索引可重复；原来的基础行单独保留，不以本投影取代强PAIR。",
+  "roles": {
+    "CA-PRICED-HIDDEN-REPLY-v1": "提供对任意真实余尾和任意非负价格/容量/分支末位查询乘子的合法隐藏回复投影。",
+    "M-4d83bece0286411d82b700f3e95c43ed": "本边仅支付四格表中R5PC、R6PC新增PC行的必要性及准确行数，不支付四个精确最优值。"
+  },
+  "explanation": "固定实际源i，取n_hidden=m−i个同一σ真实后继。给前n_hidden−1位α=1/8、β=0，最后一位α=1/5、β=1/20，查询乘子μ=1/4；引理的实际末前负载ℓ=Σ_{h<m}a_h，源背景p=Σ_{h<i}a_h。源IC、每个真实后继在actual末节点的全目录报价、共同K容量及该分支真末位对Q的IC非负组合，得到r+(Σα)u_m+(1/20)K≥Σψ。原six_stress.py的priced_projection按此准确隐藏位个数逐字面min；没有把六人第三位的三个后继误缩成两个。T,Q遍历m²个实际对、2m个实际/平均比较方向及同索引、异索引两类，共m²+2m+2行/源。异索引四会员权为d(d−1)、d(m−d)、d(m−d)、(m−d)(m−d−1)，统一除m(m−1)，来自先固定有序不同索引再对客户换序，未假定两个会员独立。故m=5增加4×37=148行，61→209；m=6增加5×50=250行，81→331。所有m个比较主题可重复，空覆盖与弱平局不破坏原真实IC。 平均的先后按原码分清：四表make_system的A:Tavg与Toffdiag是对每个合法Q先形成已证单Q投影行，再非负平均其ψ(t,q)；这是E_Q min_f h，合法但一般弱于min_f E_Q h。本边没有从前者反推后者。固定T后真实后继F(T)本来相同，逐Q行可分别使用它再作下界，平均其非负行无须假设F依Q改变；异索引先固定强制j并平均合法Q_l（l≠j），再按客户t/q频数交换求和，F_j可随j变。若要使用更强的组合查询min(E h)，必须先在固定j的同一F_j上平均真实末位IC、合并q再消元；这一额外步骤不能仅由平均后的单Q投影借Jensen反推。本四表边没有声称原码实现了该较强步骤。",
+  "scope": "只证明四格表指定PC增强的合法性、正确人数域和61→209/81→331的构造对应；不由一般引理推导任何有限LP最优数值。",
+  "contribution": {
+    "result": "表中R5PC与R6PC的全部新增定价行是共同末位价格投影在准确余尾长度和指定参数上的合法实例；所报209/331行与原生成合同吻合。",
+    "remaining": "四个精确最优W值、对应K=1/m、各原始支持/全部slack、非负匹配对偶和全部192/448客户列及K列余项，仍由目标的冻结四矩阵证书分别承担。基础强PAIR行与静态目录非SPE诊断不由PC投影本身推出；这些必要行没有共同全树充分性。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/共同末位报价与隐藏回复投影--引理.md",
+      "sha256": "5a4a02c618b296478ba6a40cb3700b81a83e27a5f207a5b587ce38593a27d0c9"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/六人行松弛与真实SPE闭包--障碍.md",
+      "sha256": "8313abcc410984c2b531aeba440d30ea95be84687a7b79352dac02f31f927ac2"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-07e871289a6b4c1fb07244c97eb4aac8/general_from_half5/71a951f150023e0843d6.raw",
+      "sha256": "f4451ab10d2e7f94c914084428b9b79f574a8803fbea9292c6f94309a180cf2d"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-07e871289a6b4c1fb07244c97eb4aac8/general_from_half5/b8fa1741de1a4a642368.raw",
+      "sha256": "bb3230e1126357960d23097165dd3ef2aa0761458d3ef1231b21b72cf301d8d1"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-07e871289a6b4c1fb07244c97eb4aac8/general_from_half5/da16429efa6114469f95.raw",
+      "sha256": "6269875e7e1f451dc64031dcb20d0b97f1a01ccb3baf161cd4345f0b917e7c33"
+    }
+  ],
+  "review_note": "已实读一般引理全部正文和五项登记evidence正文、six_stress完整原码、四格冻结报告全部字段/全部slack及来源正文。仅作数学/版本阅读和短符号计数，没有import/执行旧程序或重跑LP；明确区分k_total与隐藏位数。 已与Boss复核平均/消元顺序：四表原PC是平均逐Q最小式，非较强的同回复组合min(E h)。",
+  "endpoint_pins": {
+    "CA-PRICED-HIDDEN-REPLY-v1": "7679405a6ff9eaeeb064077ec3bef03308249d984e63fb6c3ab644f055a72b5f",
+    "M-4d83bece0286411d82b700f3e95c43ed": "aa89c7a23a7716cb3b81287633f839af7f0cdf32d41e3b01a10730c8292cc6bb"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/共同末位报价与隐藏回复投影--引理.md": "5a4a02c618b296478ba6a40cb3700b81a83e27a5f207a5b587ce38593a27d0c9",
+    "archives/customer-attraction/state/障碍/六人行松弛与真实SPE闭包--障碍.md": "8313abcc410984c2b531aeba440d30ea95be84687a7b79352dac02f31f927ac2",
+    "archives/customer-attraction/tools/evidence/R-07e871289a6b4c1fb07244c97eb4aac8/general_from_half5/71a951f150023e0843d6.raw": "f4451ab10d2e7f94c914084428b9b79f574a8803fbea9292c6f94309a180cf2d",
+    "archives/customer-attraction/tools/evidence/R-07e871289a6b4c1fb07244c97eb4aac8/general_from_half5/b8fa1741de1a4a642368.raw": "bb3230e1126357960d23097165dd3ef2aa0761458d3ef1231b21b72cf301d8d1",
+    "archives/customer-attraction/tools/evidence/R-07e871289a6b4c1fb07244c97eb4aac8/general_from_half5/da16429efa6114469f95.raw": "6269875e7e1f451dc64031dcb20d0b97f1a01ccb3baf161cd4345f0b917e7c33"
+  },
+  "review_digest": "ce47c68d48897adf605c4eb587f291062e64dec3295989563293e095fb016250"
+}

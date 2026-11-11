@@ -1,0 +1,46 @@
+{
+  "edge_id": "cag-9c9f-r11-AGG0-static-active-budget-implies-Hres",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-b347c9cc584140b4beb935d3c7a7a5fe",
+    "M-2a29e052fe69401983eec20de4e86440"
+  ],
+  "target_ids": [
+    "customer-attraction/old-prefix-residual-new-coverage-and-same-branch-refund-contracts"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一有限实例、合法b、r≥1、每份原完整SPE；开放AGG0作为动态假设，M-2a29取κ0。",
+  "roles": {
+    "M-b347c9cc584140b4beb935d3c7a7a5fe": "开放AGG0给同一原SPE的V≥r v_r。",
+    "M-2a29e052fe69401983eec20de4e86440": "已证Factive≤(2r−1)v_r，不能省略为单AGG边。",
+    "customer-attraction/old-prefix-residual-new-coverage-and-same-branch-refund-contracts": "Fres≤Factive后得完整Hres，且系数2−1/r。"
+  },
+  "explanation": "1. 对任意比较r题，所有b0且被覆盖的客户各向未来利润贡献1，旧客户贡献非负，因此取各自最大值仍Fres≤Factive。\n\n2. M-2a29 κ0给Factive≤(2r−1)v_r；开放AGG0在同一σ给V_b≥r v_r，组合即(2−1/r)V上界。\n\n3. M-2a29静态证明对任意query-independent Q取L=E负载，c/(b+c)≤(c+L)/(b+1+L)由c(c−1)+bL≥0，r比较槽+r−1竞争槽各用同一最大查询支付，再Jensen/minimax。",
+  "scope": "全背景AGG0仍open；静态定理和有限background_probe都不付动态前提，不把Fres与Factive等同。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/水位事件的共同信用与原树激励账--引理.md",
+      "sha256": "b8016751cd4d68e9236fa25dbf3b3a26c28a35b46e3205dee13190cfd86c6501",
+      "section": "两个聚合候选及有背景静态预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/旧前缀外残余覆盖与同枝删除退款的准确合同--引理.md",
+      "sha256": "c3c5553de8d30152d8ac027933cc5b2b3a196b4d5b783bbebbc7f6190ceeba24"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Round55正式worker已实读当前端点完整合同、所列正文承重证明并重构R11。共同输入、全有序真实IC、静态槽数及量词逐项核对；范围以whole_result所写完整if定理或完整目标句。",
+  "whole_result": "若AGG0成立，则Fres_r(b)≤Factive_r(b)≤(2r−1)v_r(b)≤(2−1/r)V_b≤2V_b，故Hres完整全称成立，并保更强系数2−1/r。",
+  "endpoint_pins": {
+    "M-2a29e052fe69401983eec20de4e86440": "4ba350a6249603cf32469a71a4c461e3f681ef8c5c2be78c47c77bbe924111f3",
+    "M-b347c9cc584140b4beb935d3c7a7a5fe": "300cc57b1da309745576746d4b82a06bd3411e9b37ce60a89974197f4b119b49",
+    "customer-attraction/old-prefix-residual-new-coverage-and-same-branch-refund-contracts": "c919d0ae95aec8b97d89e8beb67b225a4f9ab4a10d200a35ee227f89d9c9d066"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/水位事件的共同信用与原树激励账--引理.md": "b8016751cd4d68e9236fa25dbf3b3a26c28a35b46e3205dee13190cfd86c6501",
+    "archives/customer-attraction/state/引理/旧前缀外残余覆盖与同枝删除退款的准确合同--引理.md": "c3c5553de8d30152d8ac027933cc5b2b3a196b4d5b783bbebbc7f6190ceeba24"
+  },
+  "review_digest": "bbcc37d8a4bf6ed5de7004ec14cb9c36ff0d4efada7c942b9bc9fa6fb6460bf4"
+}

@@ -1,0 +1,72 @@
+{
+  "edge_id": "cag-73f1-closure-records-strong-pair-sums",
+  "kind": "implements",
+  "status": "accepted",
+  "source_ids": [
+    "M-6c3c976de0884efeb7f98c36eb11a626"
+  ],
+  "target_ids": [
+    "M-e960d7f4ebca40a38760eb3ae044cc19"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "只指固定1033×211系统702旧行之后的old_1与old_4（零基行号703、706）两条必要行接口；采用同一完整σ的实际路径A1,…,A6与强制第四位Ti后的真尾Bi,Ci。有限保存点不据此取得真实策略身份。",
+  "roles": {
+    "M-6c3c976de0884efeb7f98c36eb11a626": "保存原矩阵、全部列序及两条指定PAIR求和行的精确有限点；程序接口复用原compact_rows/60。",
+    "M-e960d7f4ebca40a38760eb3ae044cc19": "提供任意合法背景下真末两人的强PAIR及其三IC+交叠余项证明。"
+  },
+  "explanation": "令p为actual前三负载，pa=p+1_A4。强PAIR记H_b(C,D)=U_b(C,D)+U_b(D,C)+g_b(C,C)，并有H_b(C,D)−f_b(T)−f_b(Q)+g_b(T,Q)≥0。old_1精确为Σ_i[H_pa(A5,A6)−f_pa(Bi)−f_pa(Ci)+g_pa(Bi,Ci)]，即同一actual末两人对子目录六个(Bi,Ci)的合法PAIR之和。old_4精确为Σ_{i≠j}[H_(p+1_Ti)(Bi,Ci)−f_(p+1_Ti)(Bj)−f_(p+1_Ti)(Cj)+g_(p+1_Ti)(Bj,Cj)]，即六个真实Ti分支各五次，共30条PAIR求和；背景随i保留，不能用一个无背景的根式替换。原fourth_indexed_projection.compact_rows返回60倍逐客户式，new_reply_budget.row_parts先除60，故存入矩阵的两行正是上述未缩放求和；hist只按会员词计数精确聚合，Bi/Ci交叠保持为同客户乘积，未换成边缘乘积。父方audit_full_closure.py另按i,j字面重建相同接口，原报告绑定211点SHA。当前保存余量old_1=0，old_4=3634344642484744340383195053024321/8688875233423373354548736090657824≥0。这里只记录该有限必要行系统实现强PAIR特定求和的来源接口；强PAIR本身不推出指定向量可行，指定向量通过行也不反向证明普遍引理或完整SPE充分性。",
+  "scope": "解释一个指定有限必要系统的两条强PAIR聚合行及真实节点对应，是implements语境关系。任意索引M的普遍聚合、完整SPE和全图可补全性仍保原引理/模型各自量词。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/末两人重叠比较与任意索引聚合--引理.md",
+      "sha256": "4dacbe163ea4ea9459395dd4445c0dea25ed28070d0723a750ea6351832f4d2c"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/真实新末回复的三层原始闭包与精确点--程序.md",
+      "sha256": "9aaeaad3e23d7e7b066a1adb46801bb1ba9833174c782f084efc658d1ce7b814",
+      "section": "2. 第一层：5+2×16原行、100互查行和194上界"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/same-layer-terminal-closure-and-potential-primary/replay/closure1033-all-row-slacks.json",
+      "sha256": "a86bcdf61f3261fb19fb7361f554dd10265f5ac377019cbccbd570331ab9495a"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/same-layer-terminal-closure-and-potential-primary/runtime-dependencies.json",
+      "sha256": "f29fe30a749ea8642f3e7fc53d4faf5d70e783b30bc728ed9a5a838972984d41"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/explicit-joint-rz-and-root-extension-primary/dependencies-original/research/workspaces/customer-attraction/R-964def22ed03479582e83410444f2ea2/parent/fourth_indexed_projection.py",
+      "sha256": "9c7425c5d6fba5925540744800f315bf623f24aaf20d48b59b795506b39d417c"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/explicit-joint-rz-and-root-extension-primary/dependencies-original/research/workspaces/customer-attraction/R-c4f1ef099fad483c9f81283b61eb0b53/six_astra/new_reply_budget.py",
+      "sha256": "5be0586e5b013a8bd7dacc197874b6b4549d700a383bbd12726fe2b8f0245773"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/same-layer-terminal-closure-and-potential-primary/original/parent/audit_full_closure.py",
+      "sha256": "4efb26ec59d226af1b3a425b5738bcf1319e4c8f6dedac4dff9dd41141a8da45"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/same-layer-terminal-closure-and-potential-primary/original/parent/audit_full_closure.json",
+      "sha256": "1f32219bf8d2b9e63fd252e03e1bccbacc68540ead5db11d2b78de1e74f43a4a"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "完整实读强PAIR自足三IC证明、单隐藏末回复恒等式页及原compact_rows/literal_rows、row_parts、full_new_reply_closure.build、audit_full_closure代码/原报告；逐式确认两个求和行、背景、缩放和存储余量。任意M聚合并非此六槽有限点已经验证的全部引理。原137字面审计及702生成均未在本轮重跑。",
+  "endpoint_pins": {
+    "M-6c3c976de0884efeb7f98c36eb11a626": "3bc8e59ddf68238b63f28f8c14746145a38e91974654f159c6b0395c595daafc",
+    "M-e960d7f4ebca40a38760eb3ae044cc19": "ab054800337d5944cb152e30ad29e8398e6cb46284ce218ad99be5485c5c3406"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/末两人重叠比较与任意索引聚合--引理.md": "4dacbe163ea4ea9459395dd4445c0dea25ed28070d0723a750ea6351832f4d2c",
+    "archives/customer-attraction/state/程序/真实新末回复的三层原始闭包与精确点--程序.md": "9aaeaad3e23d7e7b066a1adb46801bb1ba9833174c782f084efc658d1ce7b814",
+    "archives/customer-attraction/tools/evidence/same-layer-terminal-closure-and-potential-primary/replay/closure1033-all-row-slacks.json": "a86bcdf61f3261fb19fb7361f554dd10265f5ac377019cbccbd570331ab9495a",
+    "archives/customer-attraction/tools/evidence/same-layer-terminal-closure-and-potential-primary/runtime-dependencies.json": "f29fe30a749ea8642f3e7fc53d4faf5d70e783b30bc728ed9a5a838972984d41",
+    "archives/customer-attraction/tools/evidence/explicit-joint-rz-and-root-extension-primary/dependencies-original/research/workspaces/customer-attraction/R-964def22ed03479582e83410444f2ea2/parent/fourth_indexed_projection.py": "9c7425c5d6fba5925540744800f315bf623f24aaf20d48b59b795506b39d417c",
+    "archives/customer-attraction/tools/evidence/explicit-joint-rz-and-root-extension-primary/dependencies-original/research/workspaces/customer-attraction/R-c4f1ef099fad483c9f81283b61eb0b53/six_astra/new_reply_budget.py": "5be0586e5b013a8bd7dacc197874b6b4549d700a383bbd12726fe2b8f0245773",
+    "archives/customer-attraction/tools/evidence/same-layer-terminal-closure-and-potential-primary/original/parent/audit_full_closure.py": "4efb26ec59d226af1b3a425b5738bcf1319e4c8f6dedac4dff9dd41141a8da45",
+    "archives/customer-attraction/tools/evidence/same-layer-terminal-closure-and-potential-primary/original/parent/audit_full_closure.json": "1f32219bf8d2b9e63fd252e03e1bccbacc68540ead5db11d2b78de1e74f43a4a"
+  },
+  "review_digest": "362762fd2777c3f1994081f65691a0b04497a89f141286f4778791a95d882b2f"
+}

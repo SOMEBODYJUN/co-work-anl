@@ -1,0 +1,53 @@
+{
+  "edge_id": "cag-7934-collision-free-family-excludes-fixed-largest-theme-budget",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/collision-free-family-welfare-obstruction"
+  ],
+  "target_ids": [
+    "B6-LARGEST-THEME-ADDITIVE-OBSTRUCTION-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限单位客户、共同主题标签、单位提供者的完整有序历史纯SPE模型；只用源对象明确给出的A_i=X_i∪{a_i}、B_i=X_i∪{b}、C_i=X_i、D={b,d}全k≥1族。令m=k+1≥2；c以及β<3/2均为与m无关的任意固定实数。源给存在一份完整SPE，并非每份SPE都走规定路径。",
+  "roles": {
+    "customer-attraction/collision-free-family-welfare-obstruction": "供应每k≥1的同一明确目录及B/Q状态归纳证明的完整可信SPE，实际C₁,…,C_k,D；给出所有实际收益2、W=2k+2及OPT=3k+2。",
+    "B6-LARGEST-THEME-ADDITIVE-OBSTRUCTION-v1": "将k=m−1代入，完整推出固定c的逐人/聚合K加性桥，以及任意固定β<3/2,c的福利预算，均有任意充分大人数反例。"
+  },
+  "explanation": "源对象的证明不是有限枚举：B状态允许一个旧B_s及其他旧A/C，fresh A以终局收益3封顶，最后A_s使旧B_s收益2；Q状态允许多个旧A，fresh C的真实fresh A偏离由重新指定惩罚组的Q子树封到2，fresh B偏离由B子树封到2，其余动作即时上界≤2。每个有序后继独立粘合且高度严格下降，因此对每k≥1有合法完整SPE。取m=k+1后，同一目录有每主题大小≤3且A_i、B_i大小3，所以K=3；实际各人u_i=2、W=2m；A₁,…,A_k,D共m题覆盖全部3m−1客户，故OPT_m=3m−1。于是同一实例每实际i均有OPT_m−(cK+mu_i)=OPT_m−(cK+W)=m−1−3c。对任意固定实c，取整数m≥2且m>1+3c，差严格正。更一般地，任意固定实β<3/2、c有OPT_m−(βW+cK)=(3−2β)m−1−3c；因3−2β>0，所有充分大整数m均严格分离（可取m≥2且(3−2β)m>1+3c）。这证明目标的完整量词，不需要c非负。c=1,m=5时K=3,W=10,OPT=14、每人2，差1只是公式中的最小清楚成员，不代替无限归纳。另2W−OPT_m=m+1>0，因此这条排除不反驳half，也不证明β=3/2充分。",
+  "scope": "完整支持目标全陈述：任意固定实c的K加性预算排除，及任意固定实β<3/2,c的渐近排除；同一SPE内全部实际玩家同时失败。人数按c或(β,c)选择，不外推为固定m时任意大c都失败。",
+  "whole_result": "collision-free-family-welfare-obstruction⇒B6-LARGEST-THEME-ADDITIVE-OBSTRUCTION-v1全陈述：对每个固定实c，所有充分大m≥2的给定完整SPE族有K=3,u_i=2,W=2m,OPT_m=3m−1以及OPT_m−cK−mu_i=OPT_m−cK−W=m−1−3c>0；对任意固定实β<3/2,c，同族在所有充分大m满足OPT_m>βW+cK。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/三人碰撞自由族福利障碍--反例.md",
+      "sha256": "588764de045e2a55362773dc9b83d3f10cadb47e22d8feeac0c4e342cc4836ad"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/最大主题加性预算与分数价格曲线--障碍.md",
+      "sha256": "242d69b8d1630a6db6f67dd5205c5a5455b746459011aa65177359203cf6dfca",
+      "section": "1. 模型、族和量词"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/最大主题加性预算与分数价格曲线--障碍.md",
+      "sha256": "242d69b8d1630a6db6f67dd5205c5a5455b746459011aa65177359203cf6dfca",
+      "section": "2. K 加性桥的精确无限族障碍"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "已完整实读源族全文，逐项核Q多旧A闭包、fresh B危险偏离的B子树、全部有序历史粘合与终局收益；以k=m−1代入精确恒等式，核固定实c和β<3/2,c的量词与half边界。未重跑BI、LP或有限族checker。",
+  "endpoint_pins": {
+    "B6-LARGEST-THEME-ADDITIVE-OBSTRUCTION-v1": "4a790ecf3e1a03db1e462e841d1fa7c68ab52c150fd71748d15d18c782a7994e",
+    "customer-attraction/collision-free-family-welfare-obstruction": "9fbfbcfd4a941c4d6f0bf5de7788ff53f90c8f8c7ab0b505effef487d4980d6a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/反例/三人碰撞自由族福利障碍--反例.md": "588764de045e2a55362773dc9b83d3f10cadb47e22d8feeac0c4e342cc4836ad",
+    "archives/customer-attraction/state/障碍/最大主题加性预算与分数价格曲线--障碍.md": "242d69b8d1630a6db6f67dd5205c5a5455b746459011aa65177359203cf6dfca"
+  },
+  "review_digest": "6d6ea408cb9ab20b76bedaa989f64055b124a96f6b54dfa77ec4c844f6bfc941"
+}

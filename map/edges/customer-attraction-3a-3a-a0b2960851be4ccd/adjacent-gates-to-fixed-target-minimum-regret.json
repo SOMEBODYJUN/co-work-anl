@@ -1,0 +1,49 @@
+{
+  "edge_id": "ca-a0-round49-adjacent-gates-to-fixed-target-minimum-regret",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/credible-adjacent-transposition-and-fixed-count-extremal-form"
+  ],
+  "target_ids": [
+    "M-95339315b24743b1a55ef71f8b039ec6"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "原完整SPE在h根收益α；强制T后原σ真实第二动作C及完整可信尾给(d_T,c_T)，d_T≤α；目标(C,T,τ)保持该尾，c_T≥α；未改根孩子保原真实SPE。",
+  "roles": {
+    "customer-attraction/credible-adjacent-transposition-and-fixed-count-extremal-form": "提供有限孩子极小值与第二位置资格门M_C。",
+    "M-95339315b24743b1a55ef71f8b039ec6": "给固定目标叶可实现的精确最小第二节点regret、唯一可能缺陷及松弛分裂。"
+  },
+  "explanation": "C后目标T孩子的当前收益为d_T且其孩子最低值ell_T≤d_T。每个其它X孩子的当前偏离收益不可能低于ell_X；不同有序孩子分别取达到ell_X的完整SPE，同时达到最小最大偏离收益。因此最小regret=max(0,max_X ell_X−d_T)=(M_C−d_T)_+，包括own-action不改变正部。新根规定C给c_T≥α，其余原根孩子收益≤α，故根仍最佳。全部贴入孩子内部可信，仅该C后二节点可能有正regret；d_T≤α使δ≤(α−d_T)+(M_C−α)_+。目标来自原强制T分支，未声称同旧h实际叶负载相同或更早祖先自动保IC。",
+  "scope": "目标注册陈述整条单第二节点接口；不作为只有根缺陷的保险器输入，也不提供多T共同付款。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/可信相邻换位与固定计数坏点正常形--引理.md",
+      "sha256": "aaa8859eaa5951c82329b324465346657ddd29c5593aa4ae4898adbf5e7c15b2",
+      "section": "无祖先承诺的规范门槛"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/可信相邻换位与固定计数坏点正常形--引理.md",
+      "sha256": "aaa8859eaa5951c82329b324465346657ddd29c5593aa4ae4898adbf5e7c15b2",
+      "section": "固定目标移植的唯一第二节点缺陷与最小regret"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-a0b2960851be4ccd/review.md",
+      "sha256": "f9dff0cd0c3bb98c303aa4c149dd0626a180497471789b657c6d482fc14a1fd7",
+      "section": "2. 固定目标的唯一第二节点最小后悔"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Fresh正式worker逐当前pin实读原陈述/量词/主证明并在review中独立重建此关系；成熟有限证据按精确SHA与合同复用，未重跑科学程序。Root安装后须原生edge-bind --write及edge-check。",
+  "whole_result": "固定真实目标移植(C,T,τ)的最小第二节点后悔恰(M_C−d_T)_+；c_T≥α时根及其它正深度节点可保最优，且δ≤(α−d_T)+(M_C−α)_+。",
+  "endpoint_pins": {
+    "M-95339315b24743b1a55ef71f8b039ec6": "8fcacaf98d1339ac8ff9e8d3214aad1ee3ecf4278f8a7ac639e925943c2ac8e7",
+    "customer-attraction/credible-adjacent-transposition-and-fixed-count-extremal-form": "c4578f77fab30e7978a68a87a6091a4dd4e7b8b034712900b26a8ef4bb008c71"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/可信相邻换位与固定计数坏点正常形--引理.md": "aaa8859eaa5951c82329b324465346657ddd29c5593aa4ae4898adbf5e7c15b2",
+    "map/edges/customer-attraction-3a-3a-a0b2960851be4ccd/review.md": "f9dff0cd0c3bb98c303aa4c149dd0626a180497471789b657c6d482fc14a1fd7"
+  },
+  "review_digest": "2c338cb24eb7bbd4faa430d9ef49add0f4ae4978b5f6176a466151404b9748a7"
+}

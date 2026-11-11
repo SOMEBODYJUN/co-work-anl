@@ -1,0 +1,42 @@
+{
+  "edge_id": "boss6-cagff-r50-fresh-exit-to-floor-normal-form",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/fresh-private-petal-exit-and-individual-floor-normal-form"
+  ],
+  "target_ids": [
+    "M-09be8e7dcc1040dcb82e9cbc3e63cfde"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、两两不同真实覆盖的非空有限共同集合目录；总人数m固定，FLOOR以原OPT_m/(2m)量化全部合法有序前缀和每份完整子SPE。扩目录仅加入m个彼此及与旧客户不交、B>0整数客户的新瓣；允许共同整数复制旧客户。",
+  "roles": {
+    "customer-attraction/fresh-private-petal-exit-and-individual-floor-normal-form": "在每个合法历史及任意选定的完整孩子中提供新瓣恰B且不被复用的真实外选项。",
+    "M-09be8e7dcc1040dcb82e9cbc3e63cfde": "把任意全前缀FLOOR坏点等价化为同人数、某历史真实选瓣B而OPT_new>2mB的正规形。"
+  },
+  "explanation": "任给坏点，先把该完整子SPE补成完整根策略，再在其有限全树选择最深坏节点h，u<t=OPT_m/(2m)。所有proper旧后代（包括偏离子树）规定当前收益至少t。取有理u<s<t，共同复制L使B=Ls为正整数。h以下未见新瓣的proper旧节点保原σ；首次新瓣后的互不交边界孩子永久贴一份完整BI子SPE。逐深度核验：改旧行动仍沿原σ，原IC同倍保留；改新瓣由退出引理仅得B<Lt。h处每个旧行动的真实收益不超过Lu<B，每个新瓣恰B，故规定新瓣最佳。向根在已固定的可信孩子间逐祖先选BR，得到完整SPE，h可离轨。旧最优m元组仍可选，OPT_new≥L OPT_old>2mB。反向：若某新实例某合法历史选瓣恰B且OPT_new>2mB，该节点直接违反其FLOOR。整个论证只保单节点失败，不控制原actual路径或新实际福利。",
+  "scope": "同人数的全前缀逐人门槛失败等价正规形；不作为half坏例正规形。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/新私有花瓣的全历史退出与逐人门槛正规形--定理.md",
+      "sha256": "5d8d79f7ed6b2143791a63bebe6240aff360f3bd63854dcf778a3450c264abf2"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Fresh正式worker逐对象实读当前22core/7read的完整登记及主正文；本边承重证明直接复核，精确当前pins及引用SHA已核。未运行旧LP、BI、全树、随机或科学审计。Root串行原生绑定后发布；预审只作线索，不替本轮实读。",
+  "whole_result": "FLOOR存在反例，当且仅当存在同一总人数的合法扩充实例，含m个等大独立正大小新瓣，某完整SPE在某合法历史选瓣收益恰B，且OPT_new>2mB。",
+  "endpoint_pins": {
+    "M-09be8e7dcc1040dcb82e9cbc3e63cfde": "612660358915a63f204b21b7587db7f3a990e56d90de368d307492dd7235bb23",
+    "customer-attraction/fresh-private-petal-exit-and-individual-floor-normal-form": "6ff12df75541735122e7ca554fefbf08fb7f1b982aa0c903f53a3d5a78ef29a3"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/新私有花瓣的全历史退出与逐人门槛正规形--定理.md": "5d8d79f7ed6b2143791a63bebe6240aff360f3bd63854dcf778a3450c264abf2",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "1cb6a8ed3203dc727ca0e653e72c51a075e9c27e4779abbff79dfd374d5b9444"
+}

@@ -1,0 +1,55 @@
+{
+  "edge_id": "boss6-cag936-r55-exact-terminal-credit-decision-contribution",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "cag-exact-same-topic-threshold-promise-slices-and-retroactive-rent",
+    "M-c485c6216694439490afcca241cb9038"
+  ],
+  "target_ids": [
+    "M-fdc2946fae794567a71e1f984863c0aa"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定一份有限单位客户共同目录输入及m≥1。R(k)、M(k)全部使用无约束完整纯菜单；从(k,t)=(0,0)沿所选主题max更新。J是新定义的状态终端成本，不能以途中改变固定g的α替代。",
+  "roles": {
+    "cag-exact-same-topic-threshold-promise-slices-and-retroactive-rent": "精确纯promise转移及独立无约束兄弟拼接给终端可行链与完整SPE实际路径的双向实现。",
+    "M-c485c6216694439490afcca241cb9038": "同一终局追溯预算B_final≤W，使较强门槛下界一旦成立即可推出half。",
+    "M-fdc2946fae794567a71e1f984863c0aa": "得到该固定输入上全SPE门槛桥的有限精确判定归约；其跨所有输入的下界仍未付。"
+  },
+  "explanation": "各t坐标只取0或该固定输入有限多个M(k)之一，故可达(k,t)状态有限。终端k=q若U_a(q)≥t_a对所有占用a成立，置J(q,t)=Σ_a q_a t_a，否则+∞；非终端置J(k,t)=min_a J(k+e_a,t^(a))。若一条链被终端接受，其q满足所有沿链U_a(q)≥M(k)，从叶按源递推反向归纳即q在各所选孩子的真实R中。每个未走的有序兄弟孩子独立选原无约束R(k+e_b)中最低当前收益的完整子SPE；旁枝不继承实际链旧promise。因此整链可扩成完整SPE实际路径。反向任一完整SPE路径满足所有资格及其t更新，故在此DP中。于是J(0,0)=min_(全部可实现完整SPE实际路径)B_final。对固定输入，全SPE较强门槛桥 iff 2J(0,0)≥OPT_m；若该式成立，由共同前提B_final≤W才得所有SPE的half。m1时J=OPT，全零输入J=OPT=0。固定g的Bellman系数全程不变；这里明确另定义J，不冒原程序已经实现或运行它。",
+  "scope": "固定输入的有限、精确、可能很大的终端预算判定；2J≥OPT仅与该输入的全SPE B_final桥等价，对原half只有充分方向。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/同主题门槛承诺的非凸状态与追溯租金--引理.md",
+      "sha256": "ed5459aee6b627bb92def88bb4ad4a267a78cece676ab476877ff78f69558219",
+      "section": "非凸promise slice与精确递推"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/同主题门槛承诺的非凸状态与追溯租金--引理.md",
+      "sha256": "ed5459aee6b627bb92def88bb4ad4a267a78cece676ab476877ff78f69558219",
+      "section": "同主题门槛的追溯租金"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/同主题承诺递推实现与终端门槛预算攻击的证据合同--资源.md",
+      "sha256": "b4137443a4e4245b46f87093d2ba7f2ec1b48e97bdf3f74d1f4ebeb022d4f6d1",
+      "section": "3. 1946B预算搜索的实际量词"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "逐层检查同一终端q、实际链t、全部无约束兄弟的可拼性；保固定输入与全输入的量词区别，m1/全零不除福利。ALL同时保精确菜单与同一福利预算，状态终端成本不偷换固定线性α。",
+  "contribution": {
+    "result": "对每个固定有限输入，显式有限状态递推J(0,0)精确等于所有完整SPE实际路径的最小B_final；该输入的全SPE门槛桥等价于2J(0,0)≥OPT_m，且满足该条件即由B_final≤W推出half。",
+    "remaining": "没有证明所有有限输入均满足2J(0,0)≥OPT_m，也没有给出真实可实现路径的严格负例；一般开放下界及其强于half的程度仍待解决。不把固定输入判定归约当普遍证明、复杂度改进或新计算实验。"
+  },
+  "endpoint_pins": {
+    "M-c485c6216694439490afcca241cb9038": "70032e834fd1a23e22741ab61940ad774276c4d41e2553d3287d3ee75cc4bce1",
+    "M-fdc2946fae794567a71e1f984863c0aa": "2a3f09bb2cde0fc70256b7acdfd5447d4bda0805c00edb89544f6e8d219ecdbe",
+    "cag-exact-same-topic-threshold-promise-slices-and-retroactive-rent": "ace6f591694edc63ea0198bd391d531e23b77da92563c9bc560798d5f46ed448"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/同主题门槛承诺的非凸状态与追溯租金--引理.md": "ed5459aee6b627bb92def88bb4ad4a267a78cece676ab476877ff78f69558219",
+    "archives/customer-attraction/state/资源/同主题承诺递推实现与终端门槛预算攻击的证据合同--资源.md": "b4137443a4e4245b46f87093d2ba7f2ec1b48e97bdf3f74d1f4ebeb022d4f6d1"
+  },
+  "review_digest": "8f07ef239fda31134af39160fbb64256e4b4a60e4198139a03a20eec886d37ae"
+}

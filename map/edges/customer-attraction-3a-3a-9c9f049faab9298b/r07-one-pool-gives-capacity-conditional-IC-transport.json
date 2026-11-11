@@ -1,0 +1,37 @@
+{
+  "edge_id": "cag-9c9f-r07-one-pool-gives-capacity-conditional-IC-transport",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/fixed-insertion-pool-and-deleted-strategy-IC-stability"
+  ],
+  "target_ids": [
+    "M-fa7873def6304632b28f5810aa6869c5"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一原完整策略、同一被删单位根A，非负真实IC权λ；逐叶逐A客户有κ_z(x)≤ρ_z c_x(z)，ρ_z≥0。该容量不是由SPE自动给出。",
+  "roles": {
+    "customer-attraction/fixed-insertion-pool-and-deleted-strategy-IC-stability": "逐叶每角色删除损失、共同池E_A及根/尾/旧背景守恒。",
+    "M-fa7873def6304632b28f5810aa6869c5": "对任意满足逐叶容量的给定λ,ρ得到完整加权搬运if定理。"
+  },
+  "explanation": "1. 同叶删A令每角色j收益增加δ_j(z)=Σ_(x∈A∩S_j(z))1/[L_x(z)(L_x(z)+1)]，其中L=b+c。\n\n2. 每条真实IC的变化为δ_j(zplus)−δ_j(zminus)。非负λ相加并按相同叶分母收集，恰等原加权IC−Σ_zΣ_A κ_z(x)/[L(L+1)]。\n\n3. 逐客户容量乘正分母给后者损失≤Σ_zρ_zΣ_A c_x(z)/[L(L+1)]=Σ_zρ_zE_A(z)。c0时会员系数也0，不生成0/0。\n\n4. 完整保符号抵消，不能逐行正部化或把不同叶E_A都换成一actual钱包。",
+  "scope": "目标作为条件定理完整；λ、ρ的全局可用构造仍未给出，不证明删后SPE或同一actual池足够支付所有叶。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/固定插入共同池与删除后的原策略激励界--引理.md",
+      "sha256": "4cc9cb7a1b8047e89004a5c23c60254ad513c87c3f7f3bb9a687af8b3e27c043"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Round55正式worker已实读当前端点完整合同、所列正文承重证明并重构R07。共同输入、全有序真实IC、静态槽数及量词逐项核对；范围以whole_result所写完整if定理或完整目标句。",
+  "whole_result": "对任意固定完整原策略、被删单位根A、原真实IC的非负权λ，以及任意ρ_z≥0，若逐叶逐x∈A有κ_z(x)≤ρ_z c_x(z)，则删A后保持同一有序映射的加权IC差≥原加权IC差−Σ_zρ_zE_A(z)。这里量化的是所有满足容量条件的给定λ、ρ；不声称原SPE自动产生可用于全局付款的容量证书。",
+  "endpoint_pins": {
+    "M-fa7873def6304632b28f5810aa6869c5": "bc518dc1fc06b947746a28056c1d18c19fccb1eee46e3c2547e5847051e19376",
+    "customer-attraction/fixed-insertion-pool-and-deleted-strategy-IC-stability": "e1bb1a3706d1509fdf4b5de68f3c06a36ada67825b712f822cfa4a3c4f7a806f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/固定插入共同池与删除后的原策略激励界--引理.md": "4cc9cb7a1b8047e89004a5c23c60254ad513c87c3f7f3bb9a687af8b3e27c043"
+  },
+  "review_digest": "9242908c2850cc3f7a0b33bc9826e7d22ff02c9fac4d68c1317aec2987c5cbc7"
+}

@@ -1,0 +1,47 @@
+{
+  "edge_id": "um-a56e5e8b-quota-theorem-pays-candidate-actual-matrix",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1"
+  ],
+  "target_ids": [
+    "unrelated-machines/cotransversal-cross-layer-dense-small-review"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "候选子族 K≥2、1≤s<K、c=K−s、q=⌈cK/s⌉。每变量资源是 c 个共同点加 s 个两两不交的私有点，YES 对照把所有 K 元资源集改为彼此不交。",
+  "roles": {
+    "UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1": "给全层精确 ν_t 及原不可拆二端矩阵的 OPT=2−b* 桥。",
+    "unrelated-machines/cotransversal-cross-layer-dense-small-review": "原有限候选只存配额核的负载算术；其显式族整数上、下界由后证补齐。"
+  },
+  "explanation": "候选三例的机数 1+2q+c+qs、任务数 1+2q+qK 恰等于后证完整矩阵。层 t≤s 从私有点得 ν_t=q；t>s 时每个保留变量至少取 t−s 个共同点且取不交块达到上界 ν_t=min(q,⌊c/(t−s)⌋)。因 q≥cK/s，b*=max_t min(ν_t/q,t/K)=s/K（t=s 达到）；精确需求树—任务桥把任意较低完整原调度反向解码，故真实 OPT=2−s/K。把 a_i→x_i、b_i→e_i、每 e_i 的 s 枚叶送各自私有机、c 枚留 e_i 给上界；改成全 K 元资源不交即所有叶可外送，峰1。",
+  "scope": "关闭原候选对这一固定矩阵族的实际值缺口；保持候选出处为有限代码证据。没有给未知源的统一归约。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/余横截配置跨层配额与稠密小整数等价有限审计--审查.md",
+      "sha256": "119c853b368933abd3941dd3979fa4d84b033e0e5a7fb35372c093d68bb66374",
+      "section": "3. 跨层配额匹配：接近二的候选障碍"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/标签碰撞低重数地板与全层配额近二双源审查--审查.md",
+      "sha256": "a83aff0881acf91272d5b292f8cc9328ba9c7d0d0430d33ee308efd76befbb87",
+      "section": "二、共同核心—私有资源的全层精确障碍"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "核参数与三例机/任务计数同一，区别对全原分配的反向保证与候选的有限数值；近二明确只为显式构造。",
+  "contribution": {
+    "result": "在候选的同一参数子族上，完整原不可拆矩阵具有真正整数 OPT=2−s/K，不交对照 OPT=1；全层公式和实际低负载反向已由证明补齐。",
+    "remaining": "仍需给定复杂度源到此类或更广系统的统一归约、对所有源 NO 的可靠 decoder 及无旁路；显式坏族不产生 hardness。"
+  },
+  "endpoint_pins": {
+    "UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1": "edc0b8d269ea30bb0b78f0a4acdd71feaf9f5ead0b1773b4db8fa1cfd53b35df",
+    "unrelated-machines/cotransversal-cross-layer-dense-small-review": "a41d208a85f07aa81a47fda2f28ad4faf87403d9c6508ce4af0087369e1039ba"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/余横截配置跨层配额与稠密小整数等价有限审计--审查.md": "119c853b368933abd3941dd3979fa4d84b033e0e5a7fb35372c093d68bb66374",
+    "archives/unrelated-machines/state/审查/标签碰撞低重数地板与全层配额近二双源审查--审查.md": "a83aff0881acf91272d5b292f8cc9328ba9c7d0d0430d33ee308efd76befbb87"
+  },
+  "review_digest": "232256a40961051da2a72fe05f582b4bf01d3412fd668fbc0ced92fcbfb1d6d1"
+}

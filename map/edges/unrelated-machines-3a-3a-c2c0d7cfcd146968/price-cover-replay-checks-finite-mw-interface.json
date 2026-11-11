@@ -1,0 +1,52 @@
+{
+  "edge_id": "um-c2c0d7cf-price-cover-replay-checks-finite-mw-interface",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/arbitrary-sink-cover-mw-frozen-audit-replay"
+  ],
+  "target_ids": [
+    "unrelated-machines/arbitrary-sink-price-cover-final-audit"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "显式unique-home私有组，逐任务sink资格，p_zj≤ρ a_j、W_h≤T、a_j≤δT、ρ(1−τ+δ)T≤T，正T及零目标分别；保留实际参数和已运行的前缀。",
+  "roles": {
+    "unrelated-machines/arbitrary-sink-cover-mw-frozen-audit-replay": "独立Fraction实现的有限实际重放，保持原私有任务子集/真实目的地和同一宏注入。",
+    "unrelated-machines/arbitrary-sink-price-cover-final-audit": "最终审查中的覆盖FPTAS、共同宏选择和MW阶段是该程序的有限检查对象。"
+  },
+  "explanation": "程序比较价格覆盖DP与独立子集枚举，保真实体积、极小出口、原资格目的地并用指数枚举对照宏注入。MW四个完整成功运行共1472轮，另有32/4608前缀和一次首轮价格拒绝；仅完整成功运行核最终平均预算。该前缀与共同宏频率来源于同一批真实方案，不能写成逐机独立选择。保留成功但真实OPT>T的cycling负控制。",
+  "scope": "核有限oracle与共同MW输出，不认证最终拟阵基加性舍入、实际未知OPT搜索或生产多项式后端。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/计算/任意汇点价格覆盖与共同MW的独立有限审计--计算.md",
+      "sha256": "9ec3292e98e33664b761a4aa24f7d22a5547cc503954359e3cf37bd470e702a3",
+      "section": "1. 原代码和精确有限输入域"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/任意汇点价格覆盖与共同MW的独立有限审计--计算.md",
+      "sha256": "9ec3292e98e33664b761a4aa24f7d22a5547cc503954359e3cf37bd470e702a3",
+      "section": "2. 一次价格oracle如何保真实任务与近似覆盖"
+    },
+    {
+      "path": "archives/unrelated-machines/state/计算/任意汇点价格覆盖与共同MW的独立有限审计--计算.md",
+      "sha256": "9ec3292e98e33664b761a4aa24f7d22a5547cc503954359e3cf37bd470e702a3",
+      "section": "4. MW的共同菜单、full-N、prefix与拒绝"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/任意汇点私有组价格覆盖最终正文内部审计--审查.md",
+      "sha256": "759a4ea069203c8b9b4d142727c3716ff54ade96387294cdf45cce1cbc6e0a1a"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "核112静态、1876 oracle与104920真实分配枚举的计数分母，区分full-N与前缀及手工解析的最终舍入。",
+  "endpoint_pins": {
+    "unrelated-machines/arbitrary-sink-cover-mw-frozen-audit-replay": "b9490b74e10244afafcd2321446c408e451e50548b79a1953c572c3c8b337a35",
+    "unrelated-machines/arbitrary-sink-price-cover-final-audit": "dde0ea37fdd1584dfe632900cb12aa353a12e818ccc9598911930b44014a93e8"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/计算/任意汇点价格覆盖与共同MW的独立有限审计--计算.md": "9ec3292e98e33664b761a4aa24f7d22a5547cc503954359e3cf37bd470e702a3",
+    "archives/unrelated-machines/state/审查/任意汇点私有组价格覆盖最终正文内部审计--审查.md": "759a4ea069203c8b9b4d142727c3716ff54ade96387294cdf45cce1cbc6e0a1a"
+  },
+  "review_digest": "9cf7fb1788ff938afd79e4f292c9e55e4e8cabf76a651af1e7d90d48087e23a3"
+}

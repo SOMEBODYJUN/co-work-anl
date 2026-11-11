@@ -1,0 +1,568 @@
+{
+  "reviewed_by": "Boss6",
+  "status": "approved-and-preserved-handoff-pushed",
+  "requires_preserved_handoffs": [
+    "boss6-six-security-bridge-3b-37e2f44d17517898"
+  ],
+  "sources": {
+    "archives/customer-attraction/state/问题/一般目录安全债务与真实分支转移--问题.md": {
+      "old_sha256": "87e0e226e76c384eddf11d6620e630198711323ca05533a776c3ef2eb198d580",
+      "new_sha256": "1475c5ed8eda49c6fbf6d289d83e126879a33829acc3bf888c4d581ce26430f9",
+      "replacement_file": "/workspace/scratch/bbb425bb840f/boss6-staging/security-quantifier-errata-round52/mirror/archives/customer-attraction/state/问题/一般目录安全债务与真实分支转移--问题.md",
+      "replacements": [
+        [
+          "这是纯代数恒等式\n$$\n\\sum_{i=1}^nD_i=W-ns.",
+          "并置 $D_n=u_n-V_n=0$。这是纯代数恒等式\n$$\n\\sum_{i=1}^nD_i=W-ns."
+        ],
+        [
+          "固定完整形式策略 $\\sigma$、查询分布 $p$ 和客户重数向量 $w$ 时，来源给出精确锥接口。令 $\\Gamma$ 为每个有序历史一次偏离相对原行动的真实收益差系数，$\\Gamma w\\ge0$ 当且仅当 $\\sigma$ 在全部历史上是 SPE；令 $c$ 为根实际覆盖行为，$\\beta_B(p)_T=p(T)/(1+\\operatorname{load}_B(T))$。则固定 $\\sigma,p$ 下",
+          "固定完整形式策略 $\\sigma$、查询分布 $p$ 及系数 $\\alpha>0$，来源给出全客户锥接口。令 $\\Gamma$ 为每个有序历史一次偏离相对原行动的真实收益差系数，并定义 $\\mathcal K_\\sigma=\\{w\\ge0:\\Gamma w\\ge0\\}$；它恰是使 $\\sigma$ 在全部历史上成为 SPE 的客户质量锥。令 $c$ 为根实际覆盖行为，$\\beta_B(p)_T=p(T)/(1+\\operatorname{load}_B(T))$。则固定 $\\sigma,p,\\alpha$ 下"
+        ],
+        [
+          "W\\ge\\alpha\\min_B\\beta_B(p)\\cdot w",
+          "\\forall w\\in\\mathcal K_\\sigma:\\qquad c\\cdot w\\ge\\alpha\\min_B\\beta_B(p)\\cdot w"
+        ],
+        [
+          "等价于存在静态分布 $Q$、非负偏离权重 $\\lambda$ 和逐类型余项 $r$ 使",
+          "等价于存在静态分布 $Q$、非负偏离权重 $\\lambda$ 和逐类型非负余项 $r$ 使"
+        ],
+        [
+          "该 Farkas 等价关系是精确接口，不是 $\\lambda$ 存在性的证明；所有历史与偏离必须保留，不能先在节点内平均或循环借用目标结论。",
+          "这里同一组 $Q,\\lambda,r$ 可依赖固定的 $\\sigma,p,\\alpha$，须同时支付整个 $\\mathcal K_\\sigma$，不能随客户点 $w$ 更换。该 minimax/Farkas 等价关系是精确接口，不是所有 $\\sigma,p$ 都存在证书的证明；所有历史与偏离必须保留，不能先在节点内平均或循环借用目标结论。"
+        ]
+      ]
+    }
+  },
+  "changes": [
+    {
+      "object_id": "M-819ec76c39b24e9892557d52c04d29ab",
+      "old_pin": "c2ed3ad6f624d7cec5abeba2c6c2e536151c8e2409388fbc5ae7912ac0f29014",
+      "new_pin": "7a775565bfd059c58445608f22a5569ff0f75b044076e0b03a788cf9f59a138e",
+      "old_object": {
+        "object_id": "M-819ec76c39b24e9892557d52c04d29ab",
+        "version": 1,
+        "title": "末层代表历史规范化的真实收益行转移接口",
+        "kind": "method",
+        "truth_status": "proved",
+        "model": "有限单位客户、有限非空共同集合目录S⊆2^N；单位提供者按序观察全部有序历史各选一次，客户在最终覆盖者间均分；保空主题、重复行动、零客户及离轨平局。",
+        "statement": "固定完整形式策略及每个n−1计数的一条代表历史，末位由a_l换为代表b_q。末位行barΓ_(l,t)=Γ_(l,t)+Γ_(g(q),a_l)；早期行barΓ_(h,a)=Γ_(h,a)+δ_(l_h,S_h)−δ_(l_ha,a)，其中δ_(l,S;T)=1_(S∈T)(1_(a_l∈T)−1_(b_q∈T))/[p_(l,T)(p_(l,T)+1)]，只在S含当前客户的正分母域使用。直接half若有2c−o=Γᵀλ+r、λ,r≥0即可付款；规范化的带符号δ仍需共同流守恒。",
+        "quantifiers": "任意固定完整策略、代表历史选择、合法主题偏离和非空客户类型；真实后继始终保同策略。",
+        "assumptions": [
+          "δ只对当前主题命中时计算，零分子项置0",
+          "比较行来自真实有序历史"
+        ],
+        "scope": "可复用行变换与证书接口；没有宣称对每策略存在half证书。",
+        "objections": "已读正文全部转移公式及三人真实M_jk/N_jk承重节点。负号项不可统一按半安全价支付，代表守恒只充分而非必要；普遍2c−o证书存在仍开放。",
+        "body": {
+          "path": "archives/customer-attraction/state/问题/一般目录安全债务与真实分支转移--问题.md",
+          "sha256": "87e0e226e76c384eddf11d6620e630198711323ca05533a776c3ef2eb198d580"
+        },
+        "evidence": [],
+        "sources": [
+          "p25-register-v2:register-ab98f323ad-0064",
+          "archives/customer-attraction/state/问题/一般目录安全债务与真实分支转移--问题.md"
+        ]
+      },
+      "proposed_object": {
+        "object_id": "M-819ec76c39b24e9892557d52c04d29ab",
+        "version": 2,
+        "title": "末层代表历史规范化的真实收益行转移接口",
+        "kind": "method",
+        "truth_status": "proved",
+        "model": "有限单位客户、有限非空共同集合目录S⊆2^N；单位提供者按序观察全部有序历史各选一次，客户在最终覆盖者间均分；保空主题、重复行动、零客户及离轨平局。",
+        "statement": "固定完整形式策略及每个n−1计数的一条代表历史，末位由a_l换为代表b_q。末位行barΓ_(l,t)=Γ_(l,t)+Γ_(g(q),a_l)；早期行barΓ_(h,a)=Γ_(h,a)+δ_(l_h,S_h)−δ_(l_ha,a)，其中δ_(l,S;T)=1_(S∈T)(1_(a_l∈T)−1_(b_q∈T))/[p_(l,T)(p_(l,T)+1)]，只在S含当前客户的正分母域使用。直接half若有2c−o=Γᵀλ+r、λ,r≥0即可付款；规范化的带符号δ仍需共同流守恒。",
+        "quantifiers": "任意固定完整策略、代表历史选择、合法主题偏离和非空客户类型；真实后继始终保同策略。",
+        "assumptions": [
+          "δ只对当前主题命中时计算，零分子项置0",
+          "比较行来自真实有序历史"
+        ],
+        "scope": "可复用行变换与证书接口；没有宣称对每策略存在half证书。",
+        "objections": "已读正文全部转移公式及三人真实M_jk/N_jk承重节点。负号项不可统一按半安全价支付，代表守恒只充分而非必要；普遍2c−o证书存在仍开放。 本轮只对共同正文补明全客户锥量词、固定正系数及统一证书，并明列已登记的末位余额D_n=0；本对象原数学陈述、真值状态和代表历史转移公式不变，原冻结证据未修改、无新科学运行。",
+        "body": {
+          "path": "archives/customer-attraction/state/问题/一般目录安全债务与真实分支转移--问题.md",
+          "sha256": "1475c5ed8eda49c6fbf6d289d83e126879a33829acc3bf888c4d581ce26430f9"
+        },
+        "evidence": [],
+        "sources": [
+          "p25-register-v2:register-ab98f323ad-0064",
+          "archives/customer-attraction/state/问题/一般目录安全债务与真实分支转移--问题.md"
+        ]
+      },
+      "reason": "Refresh exact source reference after a minimal auxiliary all-cone quantifier correction and explicit zero terminal debt; preserve mathematical statement and truth status."
+    },
+    {
+      "object_id": "M-d0feba99599d40b3806c54c5b6fa52ee",
+      "old_pin": "8d784c8b36c6d038a0385ef6923b3c85eed7ff0f38f9e75aed141d291d4a3b67",
+      "new_pin": "d599ffd1f047dd5778d4e6caeab4057991d9a90ca3eae5c7acfb14e94d6148bc",
+      "old_object": {
+        "object_id": "M-d0feba99599d40b3806c54c5b6fa52ee",
+        "version": 1,
+        "title": "弱总安全债务付款桥",
+        "kind": "open-problem",
+        "truth_status": "open",
+        "model": "有限单位客户、有限非空共同集合目录S⊆2^N；单位提供者按序观察全部有序历史各选一次，客户在最终覆盖者间均分；保空主题、重复行动、零客户及离轨平局。",
+        "statement": "完整SPE沿实际前缀b_i令V_i=v_(n−i+1)(b_i)、s=V1，i<n定义D_i=u_i−V_i+(n−i)(V_(i+1)−V_i)，D_n=u_n−V_n=0。望远镜给ΣD_i=W−ns。开放目标ΣD_i≥−s/2，即W≥(n−1/2)v_n(0)；结合静态v_n≥OPT_n/(2n−1)足以half。允许个别D_i<0。",
+        "quantifiers": "所有有限共同目录、每个人数及每份完整历史纯SPE；当前恰六人范围仍须证明。",
+        "assumptions": [
+          "真实实际前缀的整数背景安全值",
+          "末位真实BR使V_n=u_n",
+          "静态对手不观察本次查询"
+        ],
+        "scope": "弱于强聚合W≥nv的独立付款合同；不是已证静态锐界。",
+        "objections": "已核定义、望远镜与half充分性；正文113客户局部负债不否全局桥。正文旧“五人起仍需”时态按当前五人另证处理，不据此恢复已解局部目标。",
+        "body": {
+          "path": "archives/customer-attraction/state/问题/一般目录安全债务与真实分支转移--问题.md",
+          "sha256": "87e0e226e76c384eddf11d6620e630198711323ca05533a776c3ef2eb198d580"
+        },
+        "evidence": [],
+        "sources": [
+          "p25-register-v2:register-ab98f323ad-0064",
+          "archives/customer-attraction/state/问题/一般目录安全债务与真实分支转移--问题.md"
+        ]
+      },
+      "proposed_object": {
+        "object_id": "M-d0feba99599d40b3806c54c5b6fa52ee",
+        "version": 2,
+        "title": "弱总安全债务付款桥",
+        "kind": "open-problem",
+        "truth_status": "open",
+        "model": "有限单位客户、有限非空共同集合目录S⊆2^N；单位提供者按序观察全部有序历史各选一次，客户在最终覆盖者间均分；保空主题、重复行动、零客户及离轨平局。",
+        "statement": "完整SPE沿实际前缀b_i令V_i=v_(n−i+1)(b_i)、s=V1，i<n定义D_i=u_i−V_i+(n−i)(V_(i+1)−V_i)，D_n=u_n−V_n=0。望远镜给ΣD_i=W−ns。开放目标ΣD_i≥−s/2，即W≥(n−1/2)v_n(0)；结合静态v_n≥OPT_n/(2n−1)足以half。允许个别D_i<0。",
+        "quantifiers": "所有有限共同目录、每个人数及每份完整历史纯SPE；当前恰六人范围仍须证明。",
+        "assumptions": [
+          "真实实际前缀的整数背景安全值",
+          "末位真实BR使V_n=u_n",
+          "静态对手不观察本次查询"
+        ],
+        "scope": "弱于强聚合W≥nv的独立付款合同；不是已证静态锐界。",
+        "objections": "已核定义、望远镜与half充分性；正文113客户局部负债不否全局桥。正文旧“五人起仍需”时态按当前五人另证处理，不据此恢复已解局部目标。 本轮只对共同正文补明全客户锥量词、固定正系数及统一证书，并明列已登记的末位余额D_n=0；本对象原数学陈述、真值状态和代表历史转移公式不变，原冻结证据未修改、无新科学运行。",
+        "body": {
+          "path": "archives/customer-attraction/state/问题/一般目录安全债务与真实分支转移--问题.md",
+          "sha256": "1475c5ed8eda49c6fbf6d289d83e126879a33829acc3bf888c4d581ce26430f9"
+        },
+        "evidence": [],
+        "sources": [
+          "p25-register-v2:register-ab98f323ad-0064",
+          "archives/customer-attraction/state/问题/一般目录安全债务与真实分支转移--问题.md"
+        ]
+      },
+      "reason": "Refresh exact source reference after a minimal auxiliary all-cone quantifier correction and explicit zero terminal debt; preserve mathematical statement and truth status."
+    }
+  ],
+  "materials": [
+    {
+      "path": "archives/customer-attraction/state/问题/一般目录安全债务与真实分支转移--问题.md",
+      "sha256": "1475c5ed8eda49c6fbf6d289d83e126879a33829acc3bf888c4d581ce26430f9",
+      "disposition": "objects",
+      "object_ids": [
+        "M-d0feba99599d40b3806c54c5b6fa52ee",
+        "M-819ec76c39b24e9892557d52c04d29ab"
+      ],
+      "reason": "核对成熟正文的精确陈述、模型/量词、条件、状态及完整证明/证据位置；复用已有证明，不重跑原搜索或逐行重审旧代码。"
+    }
+  ],
+  "root_mathematical_review": {
+    "status": "passed-final-fixed-source-and-preserved-handoff",
+    "actual_reading": "Root fully read the original debt/transfer body, the complete fixed-strategy cone duality theorem, the complete actual-path chain theorem and the exact general static-chain canonical relation. Root independently reconstructed the positive-alpha cone argument and terminal telescoping.",
+    "quantifier": "For fixed sigma,p,alpha>0, the assertion is forall w>=0 withGamma w>=0, c.w>=alpha min_B beta_B(p).w. A single mass vector is insufficient to obtain a coefficient identity uniform over the whole cone. Q,lambda,r may depend on sigma,p,alpha but notw.",
+    "positive_alpha_proof": "The sum-one cone slice is nonempty compact via all-interest-type mass. Withalpha>0, max_w min_Q(alpha E_Q beta-c).w<=0 is exactly the all-cone premise after homogeneity. Finite minimax produces oneQ; nonnegative polyhedral cone duality gives c-alpha E_Q beta=Gamma^Tlambda+r. Conversely pointwise nonnegative pairing gives all-cone inequality. This proves equivalence, not universal feasibility.",
+    "terminal_debt": "The source already usesVn=un and its registeredM-d0statement explicitly includesDn=0. AddingDn=un-Vn=0 makes the displayed sum1..n literal; the ordinaryi<n telescoping and all weak/strong amounts are unchanged.",
+    "unchanged_transfer": "The unrelated section3 representative-terminal row and signed early-rowdelta identities remain byte-identical, with positive denominator only when the queried incumbent covers the client. Its payment obligation staysopen.",
+    "source_scope": "Only one current short body; no frozen original material or numerical evidence edited. Two referenced registrations incrementversion because the complete body hash changes; all mathematical statements and truth statuses retained.",
+    "repair_scope": "One claimed3Bcore requires preserved draft thenhandoff andfresh reassignment; one effective done23-core primary requires a directed replacement rechecking exactlythetwochangedcores andcarryingforward itsothercurrentcoverage/11unaffectedcanonicalassets. Theonefinitebudgetcanonicalneeds refreshedsource/evidencebindings only after itsmathis read.",
+    "nonnegative_residual": "The explicit typewise residual r>=0 is necessary: otherwise lambda=0 and r=c-alpha E_Q beta makes the identity vacuous. For n=m=1, alpha=2 the all-cone statement fails but r=-1 would satisfy the unrestricted identity. The final candidate explicitly requires r>=0.",
+    "finite_canonical_review": "Root additionally read the complete unique finite-budget edge and its complete exact-evidence body. The genuine safety values (n,W,s)=(4,38,9),(4,85,508643/26546),(3,34,10) give total debt 2,110919/13273,4 through the unchanged telescoping. Retain conditional finite contribution and refresh only source/evidence/endpoint bindings after new registrations; no pointwise Di computation or mature audit rerun."
+  },
+  "affected_tasks": [
+    {
+      "task_id": "customer-attraction-3a-3a-33ebc875abc62fec",
+      "state": "done",
+      "owner": "Boss4",
+      "affected_object_ids": [
+        "M-819ec76c39b24e9892557d52c04d29ab",
+        "M-d0feba99599d40b3806c54c5b6fa52ee"
+      ]
+    },
+    {
+      "task_id": "boss6-six-security-bridge-3b-37e2f44d17517898",
+      "state": "claimed",
+      "owner": "Boss6",
+      "affected_object_ids": [
+        "M-d0feba99599d40b3806c54c5b6fa52ee"
+      ]
+    }
+  ],
+  "canonical_incident_edges": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-33ebc875abc62fec/exact-budget-examples-calibrate-weak-total-debt.json",
+      "sha256": "34a32136ca42e0d190a1331bbd1777e2ccefbe6d44e1e2596ba9c4bef17f5fcb",
+      "reviewed_edge_id": "cag-33eb-exact-budget-examples-calibrate-weak-total-debt",
+      "source_ids": [
+        "customer-attraction/global-security-budget-exact-evidence"
+      ],
+      "target_ids": [
+        "M-d0feba99599d40b3806c54c5b6fa52ee"
+      ],
+      "required_action": "Read exact finite contribution and rebind only evidence and endpoint pins after source correction; retain mathematical payload if independent audit confirms."
+    }
+  ],
+  "new_scientific_runs": 0,
+  "audited_candidate_metadata_sha256": "7cc1853d276e934c01b726a197afe3e3eeb1f01b31f838d13a7a492518121687",
+  "independent_mathematical_audit": {
+    "report": {
+      "schema": 1,
+      "reviewer": "Boss6 fresh independent mathematical audit worker",
+      "status": "passed-final-fixed-candidate",
+      "formal_primary_claim": false,
+      "read_root": "/workspace/scratch/bbb425bb840f/co-work-anl-boss6",
+      "write_root": "/workspace/scratch/bbb425bb840f/boss6-staging/audit-security-quantifier-round52",
+      "python_mode": "python3 -B",
+      "actual_reading": [
+        {
+          "path": "/workspace/scratch/bbb425bb840f/co-work-anl-boss6/AGENTS.md",
+          "sha256": "0caabed57cddc14a7c1c594450e970f6818be570893fc948f5eef1e1c92eaf9a",
+          "scope": "full text"
+        },
+        {
+          "path": "/workspace/scratch/bbb425bb840f/co-work-anl-boss6/research/IMPLEMENTATION.md",
+          "sha256": "3f7a1353048e30c44468ac6a98433c3d68f10581e0707114fe70e9c61547833b",
+          "scope": "full text"
+        },
+        {
+          "path": "/workspace/scratch/bbb425bb840f/co-work-anl-boss6/prompts/03-map-worker.md",
+          "sha256": "6629f71923c54d994297d54c3737b285227b72c463641d318c3f61c9342d07b2",
+          "scope": "full text"
+        },
+        {
+          "path": "/workspace/scratch/bbb425bb840f/co-work-anl-boss6/archives/customer-attraction/state/问题/一般目录安全债务与真实分支转移--问题.md",
+          "sha256": "87e0e226e76c384eddf11d6620e630198711323ca05533a776c3ef2eb198d580",
+          "scope": "full text"
+        },
+        {
+          "path": "/workspace/scratch/bbb425bb840f/co-work-anl-boss6/archives/customer-attraction/state/定理/完整策略锥的静态安全值对偶--定理.md",
+          "sha256": "b279e1f63f08b961365a2cbc0173530de7090fd1c7beefc1a42c585ef6e58cf5",
+          "scope": "full text"
+        },
+        {
+          "path": "/workspace/scratch/bbb425bb840f/co-work-anl-boss6/archives/customer-attraction/state/定理/真实路径安全值链的嵌入与债务恒等式--定理.md",
+          "sha256": "d5431e82c2acd43845c37528035f4d59f1e4e564cfdd5b1b8112dc8753147b12",
+          "scope": "full text"
+        },
+        {
+          "path": "/workspace/scratch/bbb425bb840f/co-work-anl-boss6/archives/customer-attraction/state/计算/总安全预算的精确证书与独立审计--计算.md",
+          "sha256": "459e7030903b6e650fad2b1c0515053cbd478e64131d31795a0ad25944946387",
+          "scope": "full text"
+        },
+        {
+          "path": "/workspace/scratch/bbb425bb840f/co-work-anl-boss6/archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+          "scope": "full text"
+        },
+        {
+          "path": "/workspace/scratch/bbb425bb840f/co-work-anl-boss6/map/edges/customer-attraction-3a-3a-33ebc875abc62fec/exact-budget-examples-calibrate-weak-total-debt.json",
+          "sha256": "34a32136ca42e0d190a1331bbd1777e2ccefbe6d44e1e2596ba9c4bef17f5fcb",
+          "scope": "full text"
+        },
+        {
+          "path": "/workspace/scratch/bbb425bb840f/co-work-anl-boss6/research/registry.json",
+          "scope": "full contracts of two affected cores and finite source object; exact source material record; canonical edge_files endpoint incidence scan; not a full registry mathematical audit"
+        },
+        {
+          "path": "/workspace/scratch/bbb425bb840f/co-work-anl-boss6/tools/research_runtime.py",
+          "scope": "lines 51–90 only, especially pin(record) at lines 78–79; read-only algorithm inspection"
+        },
+        {
+          "path": "/workspace/scratch/bbb425bb840f/boss6-staging/security-quantifier-errata-round52/source.diff",
+          "sha256": "a7d4c1d685e0a8aca0c7e4d9d62ba22952510f47d4182068e55a09234afa0da9",
+          "scope": "full final diff"
+        },
+        {
+          "path": "/workspace/scratch/bbb425bb840f/boss6-staging/security-quantifier-errata-round52/approved-delta.json",
+          "sha256": "7cc1853d276e934c01b726a197afe3e3eeb1f01b31f838d13a7a492518121687",
+          "scope": "full initial version; final revision changes and all candidate object contracts mechanically compared; final source replacements and review fields reread"
+        },
+        {
+          "path": "/workspace/scratch/bbb425bb840f/boss6-staging/security-quantifier-errata-round52/mirror/archives/customer-attraction/state/问题/一般目录安全债务与真实分支转移--问题.md",
+          "sha256": "1475c5ed8eda49c6fbf6d289d83e126879a33829acc3bf888c4d581ce26430f9",
+          "scope": "full initial candidate; complete final diff, corrected Farkas paragraph, exact replacement reconstruction and byte comparison"
+        }
+      ],
+      "candidate_lock": {
+        "source_old_sha256": "87e0e226e76c384eddf11d6620e630198711323ca05533a776c3ef2eb198d580",
+        "source_new_sha256": "1475c5ed8eda49c6fbf6d289d83e126879a33829acc3bf888c4d581ce26430f9",
+        "source_diff_sha256": "a7d4c1d685e0a8aca0c7e4d9d62ba22952510f47d4182068e55a09234afa0da9",
+        "approved_delta_sha256": "7cc1853d276e934c01b726a197afe3e3eeb1f01b31f838d13a7a492518121687",
+        "exact_replacement_count": 5
+      },
+      "cores": [
+        {
+          "object_id": "M-819ec76c39b24e9892557d52c04d29ab",
+          "old_version": 1,
+          "new_version": 2,
+          "old_pin": "c2ed3ad6f624d7cec5abeba2c6c2e536151c8e2409388fbc5ae7912ac0f29014",
+          "new_pin": "7a775565bfd059c58445608f22a5569ff0f75b044076e0b03a788cf9f59a138e",
+          "old_body_sha256": "87e0e226e76c384eddf11d6620e630198711323ca05533a776c3ef2eb198d580",
+          "new_body_sha256": "1475c5ed8eda49c6fbf6d289d83e126879a33829acc3bf888c4d581ce26430f9",
+          "changed_fields": [
+            "body",
+            "objections",
+            "version"
+          ],
+          "statement_unchanged": true,
+          "truth_status_unchanged": true,
+          "truth_status": "proved",
+          "old_contract_matches_current_registry": true
+        },
+        {
+          "object_id": "M-d0feba99599d40b3806c54c5b6fa52ee",
+          "old_version": 1,
+          "new_version": 2,
+          "old_pin": "8d784c8b36c6d038a0385ef6923b3c85eed7ff0f38f9e75aed141d291d4a3b67",
+          "new_pin": "d599ffd1f047dd5778d4e6caeab4057991d9a90ca3eae5c7acfb14e94d6148bc",
+          "old_body_sha256": "87e0e226e76c384eddf11d6620e630198711323ca05533a776c3ef2eb198d580",
+          "new_body_sha256": "1475c5ed8eda49c6fbf6d289d83e126879a33829acc3bf888c4d581ce26430f9",
+          "changed_fields": [
+            "body",
+            "objections",
+            "version"
+          ],
+          "statement_unchanged": true,
+          "truth_status_unchanged": true,
+          "truth_status": "open",
+          "old_contract_matches_current_registry": true
+        }
+      ],
+      "mechanical_checks": {
+        "five_exact_single_occurrence_replacements": true,
+        "source_diff_exact": true,
+        "section_3_and_after_byte_identical": true,
+        "explicit_nonnegative_r": true
+      },
+      "mathematical_review": {
+        "all_cone_positive_alpha_minimax_Farkas": "PASS: fixed sigma,p,alpha>0; universal w in Ksigma iff one Q in Delta(B), lambda>=0, r>=0 gives coefficient identity. Proof reconstructed independently using compact normalized cone, finite bilinear minimax, homogeneity and polyhedral Farkas duality.",
+        "uniformity": "Q,lambda,r depend only on sigma,p,alpha, never on individual customer point w; universal certificate feasibility remains unproved.",
+        "resolved_finding": {
+          "original_and_initial_candidate": "r nonnegativity not explicit",
+          "counterexample_if_r_unrestricted": "n=m=1, alpha=2: Gamma=0,c=beta=1; all-cone inequality fails at w=1, but unrestricted r=-1 satisfies the displayed identity.",
+          "final_resolution": "Final fifth exact replacement explicitly states typewise nonnegative r."
+        },
+        "terminal_debt": "PASS: Vn=un by true final best response. Dn=un-Vn=0 makes sum1..n literal; telescoping sum_i<n Di=W-ns unchanged; n=1 and zero customers included.",
+        "weak_half_sufficiency": "PASS: sum Di>=-s/2 iff W>=(n-1/2)s; s>=OPT/(2n-1) gives W>=OPT/2; remains an open universal obligation.",
+        "representative_delta_positive_domain_and_sign": "PASS: for incumbent S in last prefix ell, I_S=1 implies prefix load k>=1. New-minus-old incumbent share equals I_S(I_a-I_b)/(k(k+1)); I_S=0 terms are defined zero, including k=0. Early incentive rows therefore add delta_actual minus delta_deviation. Final rows add the representative b-versus-a row, with the same prefix count. Section 3 unchanged."
+      },
+      "unique_canonical": {
+        "path": "map/edges/customer-attraction-3a-3a-33ebc875abc62fec/exact-budget-examples-calibrate-weak-total-debt.json",
+        "old_sha256": "34a32136ca42e0d190a1331bbd1777e2ccefbe6d44e1e2596ba9c4bef17f5fcb",
+        "incidence_check": "Exactly one canonical entry incident to either affected core in current registry.edge_files; no incident M819 canonical.",
+        "finite_source_sha256": "459e7030903b6e650fad2b1c0515053cbd478e64131d31795a0ad25944946387",
+        "finite_source_object_pin": "2b544441d8bb057be3f7b2f9974956e33b32c23315ce5b3f35f2c25c33f7d623",
+        "finite_arithmetic": [
+          {
+            "instance": "61",
+            "n": 4,
+            "W": 38,
+            "true_s": "9",
+            "W_minus_ns": "2",
+            "weak_inequality_slack": "13/2"
+          },
+          {
+            "instance": "89",
+            "n": 4,
+            "W": 85,
+            "true_s": "508643/26546",
+            "W_minus_ns": "110919/13273",
+            "weak_inequality_slack": "952319/53092"
+          },
+          {
+            "instance": "36",
+            "n": 3,
+            "W": 34,
+            "true_s": "10",
+            "W_minus_ns": "4",
+            "weak_inequality_slack": "9"
+          }
+        ],
+        "decision": "Retain existing accepted conditional finite contribution and all mathematical payload. Rebind changed body evidence SHA and target endpoint pin, evidence_pins and review_digest; source endpoint pin and finite evidence SHA unchanged.",
+        "new_target_pin": "d599ffd1f047dd5778d4e6caeab4057991d9a90ca3eae5c7acfb14e94d6148bc",
+        "does_not_prove": "No universal weak bridge, no universal Gamma certificate, no individual Di values and no fresh numerical/full-tree audit."
+      },
+      "blockers": [],
+      "publication_condition_outside_this_audit": "Root must preserve required active 3B handoff and follow its serial writer procedure before applying candidate; this worker did not inspect or perform queue/handoff/publication actions.",
+      "executed": "read-only byte hashes, JSON contract comparisons, five-replacement reconstruction, canonical endpoint incidence scan, three Fraction subtractions; no scientific runs",
+      "new_scientific_runs": 0,
+      "not_executed": [
+        "clone",
+        "Git",
+        "queue",
+        "credential access",
+        "network",
+        "Library access",
+        "source/registry/canonical mutation",
+        "LP",
+        "SPE solver",
+        "IC/DP",
+        "mature certificate reruns",
+        "18-source audit or full TSV replay"
+      ]
+    },
+    "report_sha256": "5a21b826527ee10a2d549eeb35bbf926d4832f5f081d2f298d0ff24f1a45e0d8",
+    "review_text": "# 独立数学复核：安全锥量词与末位零债务勘误（round52）\n\n结论：**最终固定候选数学通过，无未解除数学阻断。** 本复核针对一个辅助接口的最小源文勘误，不是 formal primary claim，也不解决普遍弱债务桥或恰六人 half。原先四替换候选另漏写了余项非负条件；已向 Root 报告，最终五替换候选明确写出“逐类型非负余项”，该问题已解除。\n\n本报告只批准下列固定字节，不能沿用到另一个未审新稿：\n\n- 源正文旧 SHA：`87e0e226e76c384eddf11d6620e630198711323ca05533a776c3ef2eb198d580`。\n- 源正文新 SHA：`1475c5ed8eda49c6fbf6d289d83e126879a33829acc3bf888c4d581ce26430f9`。\n- `source.diff` SHA：`a7d4c1d685e0a8aca0c7e4d9d62ba22952510f47d4182068e55a09234afa0da9`。\n- `approved-delta.json` SHA：`7cc1853d276e934c01b726a197afe3e3eeb1f01b31f838d13a7a492518121687`。\n\n## 实际阅读与边界\n\n已全文读 R/AGENTS.md、research/IMPLEMENTATION.md、prompts/03-map-worker.md；全文读原问题页、完整策略锥对偶定理、真实路径安全值链定理、总安全预算精确证据正文及共同目录完整历史模型定义。两 core 的完整 registry 合同及有限预算源对象合同均已读；实读唯一 incident canonical 全文。读取 pin 实现仅限 tools/research_runtime.py 第51–90行，以独立复算记录 SHA。按 registry.edge_files 的 source_ids/target_ids 实扫，两个 core 仅命中一条 canonical。\n\n候选方面，先完整读四替换版 diff、approved-delta 与 mirror，指出 r 非负漏项；再完整读最终 diff，复读最终 Farkas 段、五项替换及 review 字段，并逐字段比较两完整候选对象。五项替换在原文各出现且仅出现一次，重建结果逐字节等于最终 mirror，最终 diff 也逐字节匹配。§3及其后全部原文不变。\n\n精确正文证据：\n\n| 文件 | SHA-256 |\n|---|---|\n| 完整策略锥的静态安全值对偶--定理.md | `b279e1f63f08b961365a2cbc0173530de7090fd1c7beefc1a42c585ef6e58cf5` |\n| 真实路径安全值链的嵌入与债务恒等式--定理.md | `d5431e82c2acd43845c37528035f4d59f1e4e564cfdd5b1b8112dc8753147b12` |\n| 总安全预算的精确证书与独立审计--计算.md | `459e7030903b6e650fad2b1c0515053cbd478e64131d31795a0ad25944946387` |\n| 共同目录完整历史模型--定义.md | `cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88` |\n| 唯一 incident canonical | `34a32136ca42e0d190a1331bbd1777e2ccefbe6d44e1e2596ba9c4bef17f5fcb` |\n\n## 固定正系数的全锥等价：独立双向证明\n\n固定有限主题标签、完整形式策略 σ、查询分布 p 及实数 α>0，客户类型坐标遍历非空标签子集。Γ 的行是原行动真实后继收益减该历史合法偏离的真实后继收益，故 Kσ={w≥0: Γw≥0} 恰为该形式策略是完整纯 SPE 的客户质量锥。c·w 是实际根覆盖。\n\n所需陈述是：对每个 w∈Kσ，c·w≥α min_B β_B(p)·w；其证书是同一 Q∈Δ(B)、λ≥0、r≥0 满足 c−αΣ_B Q_Bβ_B(p)=Γᵀλ+r。\n\n证书推出全锥断言：与任意 w∈Kσ 配对，右侧 λᵀΓw+r·w≥0，故 c·w≥αE_Q[β_B·w]≥α min_B β_B·w。这里最后一步使用 α>0，且需要 r≥0。\n\n反向令 K={w∈Kσ:Σ_Tw_T=1}。它紧且凸，并非空：将质量1放在全兴趣类型上，每份终局中每人都获得1/n，各 Γ 行为零。对零点结论自动成立，非零点可由齐次性归一化。因此全锥断言等价于 max_(w∈K) min_(Q∈Δ(B)) (αΣQ_Bβ_B−c)·w≤0。α>0保证 min_Q αE_Qβ=α min_Bβ。两域有限维紧凸，表达式双线性，minimax交换次序并由紧性取得同一 Q，使括号向量对所有 K 点内积非正。齐次性恢复整个锥，得 c−αΣQβ∈Kσ*。非负有限多面体锥的 Farkas 对偶给 Kσ*={Γᵀλ+r:λ,r≥0}，即得证书。\n\n这证明给定 σ,p,α 的“全锥不等式 ⇔ 统一证书”接口；不证明任意 σ,p 都满足该接口左侧或有证书。证书只依赖固定参数，不能随单个 w 换。一般实数参数的实证书足够；只有数据有理时才进一步得到有理证书，本次源文没有新增有理性承诺。\n\n**本轮另发现并解除的必要条件。** 原句及初候选的“非负偏离权重λ和逐类型余项r”未明确 r≥0。若让 r 任意，任何 Q 都可令 λ=0、r=c−αEβ，使证书恒真。最小反例为 n=m=1、α=2，Γ=0、c=β=1：w=1违反1≥2，但 r=−1满足等式。最终候选已加入“逐类型非负余项”，与全锥定理完全一致。\n\n## D_n=0、望远镜与弱桥\n\n原定义 i<n 时 D_i=u_i+(n−i)V_(i+1)−(n−i+1)V_i。相邻 V 系数逐项抵消，得 Σ_(i<n)D_i=Σ_(i<n)u_i−nV_1+V_n。真实末位最佳回应给 V_n=u_n，因此为 W−ns。补入 D_n=u_n−V_n=0，只使正文 Σ_(i=1)^n 的记号完整；没有改变总额或原已登记的数学陈述。\n\nn=1时 D_1=0、W=s；零客户时所有量为0，都成立。静态子集嵌入 V_i≤V_(i+1)不需要早期理性，但不是 D_i逐项非负证明。ΣD_i≥−s/2等价于 W≥(n−1/2)s，由 s≥OPT/(2n−1)足以 half；该普遍债务不等式仍是开放义务。\n\n## §3代表历史转移的正分母与方向\n\n令 k=p_(ell,T) 为末位前n−1个主题中覆盖类型T的负载，A=1_(a_ell∈T)，B=1_(b_q∈T)。对某个早期 incumbent 已选主题 S，若 S∈T，则该 incumbent 已在前缀中，故 k≥1。把末回复由 a 改成 b，其收益新减旧为 1/(k+B)−1/(k+A)=(A−B)/(k(k+1))；A=B时两边均为0。若 S∉T，贡献按定义置0，包含 k=0 情形，不计算0/0。因此 δ 的正分母域与 registry 明列假设一致。\n\n早期激励行为“原行动收益减偏离收益”，所以变换为原 Γ 加原行动分支的 δ，再减偏离分支的 δ，符号正确。末位行则为 (b对t)=(a对t)+(b对a)；代表历史具有相同前缀计数，第二项正是 Γ_(g(q),a)。本论证不需要先声称规范化策略是SPE，也不支付那些带符号δ。该部分在候选中字节未变，M819原 proved 方法合同不变。\n\n## 两core版本及pin\n\n两条旧对象与当前registry逐字段相等。候选只改 version 1→2、body.sha256及 objections 勘误说明；statement、truth_status、模型、量词、假设、证据列表及来源均不变。\n\n| 对象 | 旧 pin | 新 pin |\n|---|---|---|\n| M-819ec76c39b24e9892557d52c04d29ab | `c2ed3ad6f624d7cec5abeba2c6c2e536151c8e2409388fbc5ae7912ac0f29014` | `7a775565bfd059c58445608f22a5569ff0f75b044076e0b03a788cf9f59a138e` |\n| M-d0feba99599d40b3806c54c5b6fa52ee | `8d784c8b36c6d038a0385ef6923b3c85eed7ff0f38f9e75aed141d291d4a3b67` | `d599ffd1f047dd5778d4e6caeab4057991d9a90ca3eae5c7acfb14e94d6148bc` |\n\n所有pin均按 sorted-key、UTF-8、紧凑JSON的现行算法独立复算，非照抄字符串。原材料只有该文件的SHA变更，两个owner保持原样。\n\n## 唯一canonical的处置\n\n路径为 `map/edges/customer-attraction-3a-3a-33ebc875abc62fec/exact-budget-examples-calibrate-weak-total-debt.json`，source为 finite 的 `customer-attraction/global-security-budget-exact-evidence`，target为 M-d0。完整证据正文的“三实例、两个预算查询及独有统计”确实给出真正安全值而非任意查询值：\n\n| 实例 | n | W | s=v_n(0) | 独立有理算术 W−ns |\n|---|---:|---:|---:|---:|\n| 61根税 | 4 | 38 | 9 | 2 |\n| 89总去相关 | 4 | 85 | 508643/26546 | 110919/13273 |\n| 36补偿预算 | 3 | 34 | 10 | 4 |\n\n三数均非负且 s≥0，因此逐例也满足 ΣD_i≥−s/2。这里用的只有证据正文已认证的n、W、真正s，加精确望远镜；89的非最优查询及36未用标签查询的负预算不改变这些根安全差。没有重新计算各个D_i，也没有重跑原18份来源或逐树激励审计。\n\n该既存 accepted/conditional 边的 finite contribution、remaining、conditions、roles及解释仍正确，可以保留数学payload。只需将目标 endpoint pin 换为上表M-d0新pin，将问题正文 evidence 中SHA及 evidence_pins中的相同SHA换为 `1475c5ed8eda49c6fbf6d289d83e126879a33829acc3bf888c4d581ce26430f9`，再按现行绑定方法重算 review_digest。有限证据正文及其源对象pin `2b544441d8bb057be3f7b2f9974956e33b32c23315ce5b3f35f2c25c33f7d623` 均保持。M819没有incident canonical。\n\n## 交付与操作范围\n\n本worker仅在指定O目录写 review.md、audit.json。只运行 Python-B 的读哈希、JSON精确比较、候选五替换重建、canonical端点扫描及三次Fraction差额；无新科学运行，无LP/SPE/IC/DP或成熟证书重跑，无Git/队列/网络/凭据/Library动作，无源、registry或canonical写入。\n\n数学审核已经成熟；Root仍需按既定串行writer流程保全指定活跃3B handoff，再应用该固定候选并定向刷新登记与图绑定。本审核未读取或认证队列状态、handoff落盘、发布和远端推送。最终结论不把有限三例提升为普遍安全值桥。\n",
+    "review_sha256": "d259d7582bb8c2b6745f90aeef8685a067b23208678efb409ac1160e4319906a"
+  },
+  "preserved_worker_draft": {
+    "manifest_sha256": "2b4eca08499d865e40053346ade1937ea01c50f22b3a929fe7ccaac5aeaf83c5",
+    "manifest": {
+      "task_id": "boss6-six-security-bridge-3b-37e2f44d17517898",
+      "delivery_status": "awaiting-core-quantifier-erratum",
+      "staging_root": "/workspace/scratch/bbb425bb840f/boss6-staging/map-sixsecurity-round52",
+      "clone_writes_performed": false,
+      "files": [
+        {
+          "path": "map/edges/boss6-six-security-bridge-3b-37e2f44d17517898/universal-fixed-query-security-to-six-half.json",
+          "sha256": "e6b18506e8499d710e5d2880204559923dea7fad73155555d0ea066f8569adb5"
+        },
+        {
+          "path": "map/edges/boss6-six-security-bridge-3b-37e2f44d17517898/weak-total-debt-to-six-half.json",
+          "sha256": "e7d676b0cc6917892819c0f73d86c482e5be47675bc72a65e192182768d2336e"
+        },
+        {
+          "path": "map/edges/boss6-six-security-bridge-3b-37e2f44d17517898/review.md",
+          "sha256": "86f7e2e2064a156bfeb3a61b5df687d718a4f187e38f4c826a318cc5dbb7afb7"
+        },
+        {
+          "path": "map/edges/boss6-six-security-bridge-3b-37e2f44d17517898/reading-ledger.json",
+          "sha256": "6faf329600791b1faac0ced4bf53506bb862f812510b7435eb2bcb88ef93f76b"
+        },
+        {
+          "path": "map/edges/boss6-six-security-bridge-3b-37e2f44d17517898/quantifier-erratum-request.json",
+          "sha256": "cccad70b64d0312596b84a3d787fa468afd0e5c3db34b6edeceb10252dc95baf"
+        },
+        {
+          "path": "map/receipts/boss6-six-security-bridge-3b-37e2f44d17517898.json",
+          "sha256": "16ab551d6502ca4335df04b787a20f91c7b076a0dbfda5f5cee41d8bcc16c342"
+        }
+      ],
+      "reused_canonical": [
+        {
+          "path": "map/edges/customer-attraction-3a-3a-b9bd43af3aa43810/static-security-price-to-chain-sufficient-budget.json",
+          "sha256": "85d537fa8b16b0c44c4597873a6115913f9e40f36df8621db88107bb0f069f54",
+          "reviewed_edge_id": "ca-b9bd-static-security-price-to-chain-sufficient-budget",
+          "copy_required": false
+        }
+      ],
+      "self_hash_rule": "manifest不自hash；receipt不引用manifest，故无receipt/manifest哈希环。最终工具/交接消息给manifest自身SHA。",
+      "next_required": "Root先修正文与登记、handoff/refresh任务；fresh worker据保存草稿重核受影响核心及实际新pins，再由Root安装native绑定/检查/推送/done。"
+    },
+    "files": [
+      {
+        "path": "map/edges/boss6-six-security-bridge-3b-37e2f44d17517898/universal-fixed-query-security-to-six-half.json",
+        "sha256": "e6b18506e8499d710e5d2880204559923dea7fad73155555d0ea066f8569adb5",
+        "preserved_text": "{\n  \"edge_id\": \"boss6-six-universal-fixed-query-cone-security-and-static-price11-imply-half\",\n  \"kind\": \"implies\",\n  \"status\": \"accepted\",\n  \"source_ids\": [\n    \"CA-SECURITY-CONE-DUAL\",\n    \"CA-OBLIVIOUS-MIXED-SECURITY-2N1\"\n  ],\n  \"target_ids\": [\n    \"customer-attraction/six-providers/exact-six-full-history-half-cover\"\n  ],\n  \"premises_mode\": \"all\",\n  \"relation_mode\": \"conditional\",\n  \"conditions\": \"有限不同单位客户、任意有限非空共同标签目录S（目录大小m≥1）；允许空覆盖、同覆盖异标签、重复行动、零客户；恰六名单位提供者，全部有序历史完整纯SPE及任意弱平局，强制偏离后沿同一σ真实续行。所有安全值、W和OPT6使用同一原客户总体和目录。 额外开放前提C6：∀m≥1、∀六人完整形式σ、∀有理p∈Δ([m])，存在Q_(σ,p)∈Δ([m]^5)与λ_(σ,p),r_(σ,p)≥0，逐非空类型有c−6E_Qβ_B(p)=Γσᵀλ+r。Q、λ、r可依σ,p，不依锥内客户点w；每份证书同时支付整个Kσ={w≥0:Γσw≥0}，五个整数背景槽可重复/任意相关且不观察此次query抽出的a。只需∀p∃Q，不要求∃Q∀p；未假设弱总债务金额。\",\n  \"roles\": {\n    \"CA-SECURITY-CONE-DUAL\": \"固定σ与有理p的全客户锥不等式⇔非负Q/λ/r证书的精确等价；只给接口，不支付C6普遍存在。\",\n    \"CA-OBLIVIOUS-MIXED-SECURITY-2N1\": \"同一原实例、五整数竞争槽的静态锐界11v6≥OPT6。\",\n    \"customer-attraction/six-providers/exact-six-full-history-half-cover\": \"条件推出所有原六人完整历史纯SPE满足2W≥OPT6，且实际上W≥6OPT6/11。\"\n  },\n  \"explanation\": \"先以C6证书与任意实际整数客户w∈Kσ内积，得W≥6E_Qβ_B(p)·w≥6min_Bβ_B(p)·w。有限有理安全博弈有有理最优查询p*(w)，故全有理p量词允许选择其相应全锥证书，得到W≥6v6。再用相同原客户/目录的静态锐界v6≥OPT6/11，得W≥6OPT6/11，因而2W≥12OPT6/11≥OPT6。允许p*随w选择不意味着固定σ,p的Q可随w变化。固定p的minimax/Farkas等价没有证明其左侧普遍成立，所有σ,p证书存在仍是额外开放前提。\",\n  \"scope\": \"完整原六人half目标的一条独立条件充分路线；源定理适用于所有目录及完整策略，条件C6亦保全部m、σ、有理p。v6仅五整数槽；不替换为六槽v7、iid Z6、自由分数t6、真实菜单值或投影客户安全值。零客户直接成立。\",\n  \"whole_result\": \"方向：若全部目录大小m≥1、全部六人完整有序形式σ及全部有理查询p都有所述全客户锥系数6证书，则对每个有限单位客户集N、每个有限非空共同标签目录及任意覆盖映射、每份保所有离轨历史与任意弱平局的六人完整纯SPE σ，均有W(σ)≥(6/11)OPT6，从而2W(σ)≥OPT6；保空覆盖、同覆盖异标签、重复、零客户，OPT6=max_(T1,…,T6∈S)|∪cov(Tj)|。此为条件蕴含，未证明C6或改变目标open状态。\",\n  \"evidence\": [\n    {\n      \"path\": \"archives/customer-attraction/state/定理/完整策略锥的静态安全值对偶--定理.md\",\n      \"sha256\": \"b279e1f63f08b961365a2cbc0173530de7090fd1c7beefc1a42c585ef6e58cf5\"\n    },\n    {\n      \"path\": \"archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md\",\n      \"sha256\": \"034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f\"\n    },\n    {\n      \"path\": \"archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md\",\n      \"sha256\": \"0626668e7a825108fc0b3699e42394b75b1c2e2a526df220a90d91a02afc8a0c\"\n    },\n    {\n      \"path\": \"map/edges/boss6-six-security-bridge-3b-37e2f44d17517898/review.md\",\n      \"sha256\": \"86f7e2e2064a156bfeb3a61b5df687d718a4f187e38f4c826a318cc5dbb7afb7\",\n      \"section\": \"第一条独立路线：普遍固定查询全锥证书\"\n    },\n    {\n      \"path\": \"map/edges/boss6-six-security-bridge-3b-37e2f44d17517898/review.md\",\n      \"sha256\": \"86f7e2e2064a156bfeb3a61b5df687d718a4f187e38f4c826a318cc5dbb7afb7\",\n      \"section\": \"五个整数槽的同实例静态锐界\"\n    }\n  ],\n  \"reviewed_by\": \"Boss6\",\n  \"review_note\": \"fresh worker完整读取当前9合同和必要正文，核固定p全锥量词、Q不依w、不观察抽样、有理最优查询选择、11=6+5及6/11≥1/2。数学条件推导完整；本草稿整体发布态awaiting-core-quantifier-erratum，须Root更新相关正文/登记、fresh接续并native bind/check后才可done。\"\n}\n"
+      },
+      {
+        "path": "map/edges/boss6-six-security-bridge-3b-37e2f44d17517898/weak-total-debt-to-six-half.json",
+        "sha256": "e7d676b0cc6917892819c0f73d86c482e5be47675bc72a65e192182768d2336e",
+        "preserved_text": "{\n  \"edge_id\": \"boss6-six-weak-total-security-debt-and-static-price11-imply-half\",\n  \"kind\": \"implies\",\n  \"status\": \"accepted\",\n  \"source_ids\": [\n    \"M-d0feba99599d40b3806c54c5b6fa52ee\",\n    \"CA-SECURITY-CHAIN-INTERFACE\",\n    \"CA-OBLIVIOUS-MIXED-SECURITY-2N1\"\n  ],\n  \"target_ids\": [\n    \"customer-attraction/six-providers/exact-six-full-history-half-cover\"\n  ],\n  \"premises_mode\": \"all\",\n  \"relation_mode\": \"conditional\",\n  \"conditions\": \"有限不同单位客户、任意有限非空共同标签目录S（目录大小m≥1）；允许空覆盖、同覆盖异标签、重复行动、零客户；恰六名单位提供者，全部有序历史完整纯SPE及任意弱平局，强制偏离后沿同一σ真实续行。所有安全值、W和OPT6使用同一原客户总体和目录。 独立开放前提为源弱总债务合同的恰六人特化：对每份此类原根SPE，b_i是同一真实actual前缀，V_i=v_(7−i)(b_i)、s=V1=v6(0)，D_i=u_i+(6−i)V_(i+1)−(7−i)V_i (i<6)，D6=u6−V6=0，且Σ_(i=1)^6D_i≥−s/2。只需n=6特化，不要求所有人数先解决；不加C6强证书、不要求每个D_i≥0。\",\n  \"roles\": {\n    \"M-d0feba99599d40b3806c54c5b6fa52ee\": \"提供仍open的弱总债务金额ΣD_i≥−s/2，只调用其恰六人范围，允许局部负债。\",\n    \"CA-SECURITY-CHAIN-INTERFACE\": \"同一真实路径有末位V6=u6及精确望远镜ΣD_i=W−6s；链恒等式本身不支付金额。\",\n    \"CA-OBLIVIOUS-MIXED-SECURITY-2N1\": \"同一原实例的五整数静态竞争槽锐界11s≥OPT6。\",\n    \"customer-attraction/six-providers/exact-six-full-history-half-cover\": \"上述独立总债务前提成立时，完整原六人量词下2W≥OPT6。\"\n  },\n  \"explanation\": \"CA-SECURITY-CHAIN-INTERFACE在真实前缀b_i上给V6=u6，且所有内部V项系数相消，故ΣD_i=W−6s。与开放金额ΣD_i≥−s/2合并，得W≥(11/2)s。相同原实例静态界11s≥OPT6，故2W≥11s≥OPT6。保静态余量ε=11s−OPT6≥0时，2W−OPT6=2ΣD_i+s+ε，因此真正等价阈值是ΣD_i≥−(s+ε)/2；使用−s/2是充分加强。一般金额身份已在85d537fa…canonical精确发布，本边只接其六人特化至原目标。未使用第一路线的强证书假设，局部负D或有限预算失败不支付也不否定该全称弱金额。\",\n  \"scope\": \"全部原六人完整历史纯SPE的独立条件充分路线；s始终为同一原实例五整数槽v6，而非末位V6、六槽v7、iid或自由分数值。链无须早期逐步正债务；末位真实最佳回复不可省。原目标与金额均仍open。\",\n  \"whole_result\": \"方向：若M-d0feba弱总安全债务下界至少对每个原六人完整历史纯SPE成立，则联合真实路径链与同实例静态锐界，对所有有限单位客户N、所有有限非空共同标签目录及任意覆盖映射、所有六人完整纯SPE σ，都有W(σ)≥(11/2)v6(0)≥OPT6/2，亦即2W(σ)≥OPT6；保所有有序离轨历史、任意弱平局、真实偏离续局、空覆盖/别名/重复及零客户，OPT6允许重复六标签。未证明总债务下界，亦未将强证书作为共同前提。\",\n  \"evidence\": [\n    {\n      \"path\": \"archives/customer-attraction/state/问题/一般目录安全债务与真实分支转移--问题.md\",\n      \"sha256\": \"87e0e226e76c384eddf11d6620e630198711323ca05533a776c3ef2eb198d580\"\n    },\n    {\n      \"path\": \"archives/customer-attraction/state/定理/真实路径安全值链的嵌入与债务恒等式--定理.md\",\n      \"sha256\": \"d5431e82c2acd43845c37528035f4d59f1e4e564cfdd5b1b8112dc8753147b12\"\n    },\n    {\n      \"path\": \"archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md\",\n      \"sha256\": \"034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f\"\n    },\n    {\n      \"path\": \"archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md\",\n      \"sha256\": \"0626668e7a825108fc0b3699e42394b75b1c2e2a526df220a90d91a02afc8a0c\"\n    },\n    {\n      \"path\": \"map/edges/boss6-six-security-bridge-3b-37e2f44d17517898/review.md\",\n      \"sha256\": \"86f7e2e2064a156bfeb3a61b5df687d718a4f187e38f4c826a318cc5dbb7afb7\",\n      \"section\": \"第二条独立路线：六人弱总债务金额\"\n    }\n  ],\n  \"reviewed_by\": \"Boss6\",\n  \"review_note\": \"fresh worker核同一actual路径、V6=u6、D6=0、望远镜内部系数与11/2金额，并与C6路线分开ALL。数学推导完整，源弱金额仍open。M-d0feba辅助对偶段及D_n文字补全正待Root勘误，故本包awaiting-core-quantifier-erratum；native binding、刷新与done尚未执行。\"\n}\n"
+      },
+      {
+        "path": "map/edges/boss6-six-security-bridge-3b-37e2f44d17517898/review.md",
+        "sha256": "86f7e2e2064a156bfeb3a61b5df687d718a4f187e38f4c826a318cc5dbb7afb7",
+        "preserved_text": "# 六人静态安全桥正式数学草稿\n\n发布状态：**awaiting-core-quantifier-erratum**。本稿保存本次fresh worker的实际阅读和完整数学成果，尚不可用于 map done。当前任务归属 Boss6，state claimed，request d7b6373c9d3c41b79cd21e975031e643；任务 definition pin d52d373e953078a3d185fcc077751e2128bb44944c6d265ce2ac647d836351bf。登记核心 M-d0feba99599d40b3806c54c5b6fa52ee 的正文辅助全锥等价段漏全称量词，Root已确认串行修正文及登记。新版本后须按正式交接由fresh worker核受影响合同、证据和绑定；本稿不冒充刷新后的primary阅读。\n\n## 已证的实际结论与尚未支付的金额\n\n本次得到两条独立、完整的条件蕴含。第一条：若每个目录大小、每份六人完整形式策略、每个有理查询分布，都有系数6的全客户锥静态证书，则同一原实例的静态锐界给 W≥6v6≥6OPT6/11，进而2W≥OPT6。第二条：若每份原六人完整SPE沿真实路径的总债务满足 ΣD_i≥−s/2，已证链恒等式与同一静态界给 W≥11s/2≥OPT6/2。这两项金额是各自充分的独立假设，不能合成要求二者同时成立的一条ALL边。\n\n固定p对偶已证，普遍证书存在未证。安全值链恒等式已证，总债务下界未证。两条新关系的数学推导可为 accepted 且 conditional；这不会把原六人目标从 open 改为 proved。因本包发现核心正文勘误，本次保存的是等待刷新、未绑定的关系与覆盖草稿。\n\n## 原模型、全部量词与同一实例\n\n客户集N有限且每客价值一。共同目录S是任意有限非空标签集，允许空覆盖、同覆盖异标签、重复行动及无人喜爱的客户。六名单位提供者依次观察全部有序历史，每人选一次。完整形式策略σ_i:S^(i−1)→S保全部在轨、离轨历史及任意弱平局。每次强制偏离后沿同一σ在改变后的历史真实完成，不冻结原实际后继，也不把同负载历史强制匿名化。\n\n终局根覆盖W等于六名玩家最终均分收益之和。OPT6=max_(T1,…,T6∈S)|∪cov(Tj)|，六个最优比较标签允许重复。所有静态值、路径值、客户锥和OPT在各自边内使用同一原客户总体与同一目录；未采用最优客户投影来偷换v6。兴趣类型为空的客户对收益和OPT均无贡献，可删去；非空类型重数是不同单位客户数，不是带权玩家。零客户和OPT6=0直接按不等式处理，不取比率。\n\n## 第一条独立路线：普遍固定查询全锥证书\n\n固定目录大小m≥1和六人完整形式σ。非空兴趣类型T⊆[m]坐标上的客户质量为w_T≥0，真实比较矩阵Γσ含每个历史和每个备选行动在同一σ下的真实续局收益差。于是 Kσ={w≥0:Γσw≥0} 恰为σ成为完整纯SPE的所有客户质量。根覆盖行为c，W=c·w。\n\n固定有理p∈Δ([m])。五个静态整数竞争槽B∈[m]^5的类型系数为 β_B(p)_T=p(T)/(1+#{j:B_j∈T})。背景可知道p但不能观察此次抽出的a；槽间可重复、可任意相关，亦不要求来自σ的实际回复菜单。\n\n额外开放前提 C6 是\n\n∀m≥1 ∀六人完整形式σ ∀有理p∈Δ([m]) ∃Q_(σ,p)∈Δ([m]^5), λ_(σ,p)≥0, r_(σ,p)≥0：\n\nc−6Σ_BQ_Bβ_B(p)=Γσᵀλ+r，逐个非空类型成立。\n\nQ、λ、r可依σ,p而变，不能依锥中的w而变；每份Q支付整个Kσ。本路线只要求∀p∃Q_(σ,p)，没有要求∃Q_σ∀p。共同背景审查的跨全部纯查询同一Q，是更强充分接口，不能反向强加给固定p精确对偶。\n\n给任意实际整数客户w及其完整SPE σ。对固定p的证书与w内积：右边非负，故 W≥6E_Q[β_B(p)·w]≥6min_Bβ_B(p)·w。有限安全值博弈的支付矩阵全有理，原始最大化LP在紧有理多面体上有有理最优p*(w)。C6的全有理p量词允许调用该p*的证书，得到W≥6v6(w)。p*随实际w选择不改变每份固定σ,p证书的全锥统一性。\n\nCA-SECURITY-CONE-DUAL给(A)∀w∈Kσ:c·w≥6min_Bβ_B(p)·w与该证书的充要等价。它的minimax步骤合法：归一锥有全兴趣类型客户点，非空紧凸，齐次性恢复整个锥；Farkas给Γσᵀλ+r，且有理数据可取有理证书。但等价定理没有证明(A)，因而没有自动支付C6的普遍存在性。\n\n如果固定σ,p证书确实不可行，精确等价可提取严格有理全Γ可行客户见证；清分母给原单位客户完整SPE的W<6v6反例。它仍非自动的half反例，后者还须另有OPT6>2W。浮点不可行、有限固定样本及删历史松弛均不足以给这种严格失败证据。\n\n## 五个整数槽的同实例静态锐界\n\n任意五槽联合背景Q，令L_x=E_Qh_B(x)、g(A)=Σ_(x∈A)1/(1+L_x)、M=max_Ag(A)。平均标签出现数除以5给合法目录分布q，故Σ_xL_x/(1+L_x)=5Σ_Aq_Ag(A)≤5M。倒数凸性逐查询给E_Qf_B(A)≥g(A)，没有把两者写成等号。\n\n取同一实例达到OPT6的六标签元组T1,…,T6及其并集O；逐客拆1=1/(1+L_x)+L_x/(1+L_x)，非负性给\n\nOPT6≤Σ_(j=1)^6g(Tj)+Σ_xL_x/(1+L_x)≤11M≤11max_AE_Qf_B(A)。\n\n对Q取min，有限minimax给OPT6≤11v6。可重复背景、相关Q、空覆盖和未覆盖客户均已保留。六个不交主题、一个含6客户而其余五个各含1客，给v6=1、OPT6=11，说明仅用此静态值时系数11锐；没有声称该锐背景是实际SPE。\n\n接第一路线：W≥6v6≥6OPT6/11。因此2W≥12OPT6/11≥OPT6，完整原六人目标在C6前提下成立，且得到更强的6/11保证。这里没有额外借用第二路线的总债务假设。\n\n## 第二条独立路线：六人弱总债务金额\n\n沿同一原六人完整SPE的实际路径，b_i是前i−1位留下的整数负载。令V_i=v_(7−i)(b_i)，s=V1=v6(0)。固定合法A后，剩余竞争列为原全部竞争列的子集，给v_(r−1)(b+1_A)≥v_r(b)。这只是一项静态列嵌入；它本身没有给任何早期收益付款。\n\n末位真实最佳回复给V6=u6。对i=1,…,5定义D_i=u_i+(6−i)V_(i+1)−(7−i)V_i，补记D6=u6−V6=0。内部V_i系数逐项消去，得到Σ_(i=1)^6D_i=W−6s。\n\n现在独立假设M-d0feba的弱总债务合同至少对恰六人的全部原目录与完整SPE成立：ΣD_i≥−s/2。于是W≥6s−s/2=11s/2；同一实例静态界OPT6≤11s，给2W≥11s≥OPT6。无需C6，也不要求每个D_i≥0、每人u_i≥V_i或每份SPE强聚合W≥6s。\n\n保留ε=11s−OPT6≥0时有2W−OPT6=2ΣD_i+s+ε；因此half准确阈值为ΣD_i≥−(s+ε)/2。去掉ε后使用ΣD_i≥−s/2是充分加强。一般n版本已在canonical ca-b9bd-static-security-price-to-chain-sufficient-budget发布，本稿只把该关系特化后接到原六人目标，未重发一般金额身份边。\n\n局部负D、真实菜单限制失败、固定推送Q的GB预算失败、iid平均流障碍均不能自动否定弱全局金额。已经读到的固定样本只有自己的策略/查询/客户域；本稿未用它们替代恰六人全称付款。一般债务源页旧“五人起”时态也不推翻当前五人独立结论。\n\n## 四种安全基准的适用域\n\nv6是五个整数竞争槽的真正max-min值，静态界11v6≥OPT6，正是两条主路线的同一根s。v7用六个整数竞争槽，槽数多一，v7≤v6，静态计数给12v7≥OPT6；全槽SUMmin接口仍须另证动态付款，不能把12改11。\n\nZ6是同一静态对称混合Nash分布的六人独立期望覆盖；完整iid正文自足证明6v6≤Z6≤OPT6。iid背景只是全部合法静态Q的一个子族；静态比较没有证明顺序W支付Z6。\n\nt6是五份确定自由分数主题质量，先取平均负载再取倒数。Jensen只给t6≤v6，能够严格；分数付款不能升级成v6付款或提供合法整数Q。本文没有使用额外自由分数价格定理来承担主路线。自由分数定义及与整数比较两对象共用一页，全文已读，未机械重建分数边。\n\n## canonical去重、读取范围与后续状态\n\n只以当前registry.edge_files确定canonical；当前本地快照1705条，四core incident14条。已检查其端点、条件、scope及whole/contribution，未见本次两条完整安全桥路线重复。仅完整实读并拟在receipt复用一般链边85d537fa8b16b0c44c4597873a6115913f9e40f36df8621db88107bb0f069f54。该边全部端点已在本任务声明。其它固定子族、额外槽、有限债务点、客户投影边只用于边界去重的元数据比较，不加入本receipt。直接2c−o森林/SCC两边处理不同目标系数，本次不重发。\n\n实际阅读为9份完整当前登记合同；任务13refs的10份全文和3个精确标题段；另完整读chain、全槽v7、iid和自由分数四页。共17独立正文文件，其中14全文、3精确段；原文件字节SHA全匹配。正文内的旧运行数和PASS只按历史报告读，没有导入原科学程序、重跑LP/SPE/IC/DP/price或旧证书，没有逐读所有raw附件，也不把source字符串当原源码已读。无Git、队列、clone、registry、canonical写入。\n\n任务没有声明overlap_comparisons或follow-up对象对。原开放金额精确可辨，故不记needs-decision。当前唯一发布障碍是已确认的核心文字勘误与后续pin刷新；按Root要求保存完整草稿，由fresh正式worker接续刷新，不把此包现在当作可done。\n"
+      },
+      {
+        "path": "map/edges/boss6-six-security-bridge-3b-37e2f44d17517898/reading-ledger.json",
+        "sha256": "6faf329600791b1faac0ced4bf53506bb862f812510b7435eb2bcb88ef93f76b",
+        "preserved_text": "{\n  \"task_id\": \"boss6-six-security-bridge-3b-37e2f44d17517898\",\n  \"delivery_status\": \"awaiting-core-quantifier-erratum\",\n  \"not_done_ready\": true,\n  \"owner\": \"Boss6\",\n  \"request_id\": \"d7b6373c9d3c41b79cd21e975031e643\",\n  \"task_state_at_read\": \"claimed\",\n  \"definition_pin\": \"d52d373e953078a3d185fcc077751e2128bb44944c6d265ce2ac647d836351bf\",\n  \"all_9_input_pins_match\": true,\n  \"object_contracts\": [\n    {\n      \"object_id\": \"CA-OBLIVIOUS-MIXED-SECURITY-2N1\",\n      \"role\": \"core\",\n      \"version\": 3,\n      \"truth_status\": \"proved\",\n      \"registration_pin\": \"565f6bdb541c09f8229f27ca4d47409f946a555f141378e72fb91c5a55082ea4\",\n      \"task_pin_matches\": true,\n      \"contract_reading\": \"完整当前登记record，含statement/model/quantifiers/assumptions/scope/objections/body/evidence/sources；以research show重核current bindings\",\n      \"body\": {\n        \"path\": \"archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md\",\n        \"sha256\": \"034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f\"\n      }\n    },\n    {\n      \"object_id\": \"CA-SECURITY-CONE-DUAL\",\n      \"role\": \"core\",\n      \"version\": 3,\n      \"truth_status\": \"proved\",\n      \"registration_pin\": \"e31e80e9d89c7fad56eadbcbfd46a50af3857d6119eea8060c3a41a0cb987899\",\n      \"task_pin_matches\": true,\n      \"contract_reading\": \"完整当前登记record，含statement/model/quantifiers/assumptions/scope/objections/body/evidence/sources；以research show重核current bindings\",\n      \"body\": {\n        \"path\": \"archives/customer-attraction/state/定理/完整策略锥的静态安全值对偶--定理.md\",\n        \"sha256\": \"b279e1f63f08b961365a2cbc0173530de7090fd1c7beefc1a42c585ef6e58cf5\"\n      }\n    },\n    {\n      \"object_id\": \"M-d0feba99599d40b3806c54c5b6fa52ee\",\n      \"role\": \"core\",\n      \"version\": 1,\n      \"truth_status\": \"open\",\n      \"registration_pin\": \"8d784c8b36c6d038a0385ef6923b3c85eed7ff0f38f9e75aed141d291d4a3b67\",\n      \"task_pin_matches\": true,\n      \"contract_reading\": \"完整当前登记record，含statement/model/quantifiers/assumptions/scope/objections/body/evidence/sources；以research show重核current bindings\",\n      \"body\": {\n        \"path\": \"archives/customer-attraction/state/问题/一般目录安全债务与真实分支转移--问题.md\",\n        \"sha256\": \"87e0e226e76c384eddf11d6620e630198711323ca05533a776c3ef2eb198d580\"\n      }\n    },\n    {\n      \"object_id\": \"customer-attraction/six-providers/exact-six-full-history-half-cover\",\n      \"role\": \"core\",\n      \"version\": 1,\n      \"truth_status\": \"open\",\n      \"registration_pin\": \"2d5b191271cb052c435121a41935eb3958540d5a53cb05013f13dd45a70f6e31\",\n      \"task_pin_matches\": true,\n      \"contract_reading\": \"完整当前登记record，含statement/model/quantifiers/assumptions/scope/objections/body/evidence/sources；以research show重核current bindings\",\n      \"body\": {\n        \"path\": \"archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md\",\n        \"sha256\": \"0626668e7a825108fc0b3699e42394b75b1c2e2a526df220a90d91a02afc8a0c\"\n      }\n    },\n    {\n      \"object_id\": \"CA-SECURITY-CHAIN-INTERFACE\",\n      \"role\": \"read\",\n      \"version\": 2,\n      \"truth_status\": \"proved\",\n      \"registration_pin\": \"972872feba5114bec2b490a32d72d67f63f5594f9bb6387ee5d0a7850f6d76c0\",\n      \"task_pin_matches\": true,\n      \"contract_reading\": \"完整当前登记record，含statement/model/quantifiers/assumptions/scope/objections/body/evidence/sources；以research show重核current bindings\",\n      \"body\": {\n        \"path\": \"archives/customer-attraction/state/定理/真实路径安全值链的嵌入与债务恒等式--定理.md\",\n        \"sha256\": \"d5431e82c2acd43845c37528035f4d59f1e4e564cfdd5b1b8112dc8753147b12\"\n      }\n    },\n    {\n      \"object_id\": \"M-73d3a9bedfd449d292f04323e540d4ca\",\n      \"role\": \"read\",\n      \"version\": 3,\n      \"truth_status\": \"proved\",\n      \"registration_pin\": \"da3d0bbed112a0897b1514eb63acac5dc6da174460f1264a731aa6b46a82e638\",\n      \"task_pin_matches\": true,\n      \"contract_reading\": \"完整当前登记record，含statement/model/quantifiers/assumptions/scope/objections/body/evidence/sources；以research show重核current bindings\",\n      \"body\": {\n        \"path\": \"archives/customer-attraction/state/候选/全槽逐行最小价格的共同预算与有限报告--候选.md\",\n        \"sha256\": \"e952c73849b2ac561ac4ebb761b3ae0c1af06d61f27e743c593ea0103c52698a\"\n      }\n    },\n    {\n      \"object_id\": \"CA-IID-SECURITY-BENCHMARK\",\n      \"role\": \"read\",\n      \"version\": 2,\n      \"truth_status\": \"proved\",\n      \"registration_pin\": \"a7d0f1aa90175d0494e873359da6813ca1b53c1321e013ed7f1e3c3183ab6ae5\",\n      \"task_pin_matches\": true,\n      \"contract_reading\": \"完整当前登记record，含statement/model/quantifiers/assumptions/scope/objections/body/evidence/sources；以research show重核current bindings\",\n      \"body\": {\n        \"path\": \"archives/customer-attraction/state/定理/静态独立同分布安全基准--定理.md\",\n        \"sha256\": \"1a79c786e8fed1c7dbefff583922350f6148b35375bd00d3df91cfbc9f11cbf0\"\n      }\n    },\n    {\n      \"object_id\": \"customer-attraction/free-fractional-background-security-floor\",\n      \"role\": \"read\",\n      \"version\": 2,\n      \"truth_status\": \"definition\",\n      \"registration_pin\": \"5e3a8d73eede60c22e76b296b3d0a4dd4021464cebae711470f18dd6c39f5ac0\",\n      \"task_pin_matches\": true,\n      \"contract_reading\": \"完整当前登记record，含statement/model/quantifiers/assumptions/scope/objections/body/evidence/sources；以research show重核current bindings\",\n      \"body\": {\n        \"path\": \"archives/customer-attraction/state/定义/自由分数背景安全门槛--定义.md\",\n        \"sha256\": \"0e2e6393acb153498a3b4d0a8091b3a10976f211945e612c96eb1b2d8982c2cd\",\n        \"section\": \"定义与模型身份\"\n      }\n    },\n    {\n      \"object_id\": \"M-f3439db394f148d598fddb438c676f01\",\n      \"role\": \"read\",\n      \"version\": 1,\n      \"truth_status\": \"proved\",\n      \"registration_pin\": \"7811655bda024a057757bc968005c183d9fc7fc90c5f4b2dad82c28d84febd94\",\n      \"task_pin_matches\": true,\n      \"contract_reading\": \"完整当前登记record，含statement/model/quantifiers/assumptions/scope/objections/body/evidence/sources；以research show重核current bindings\",\n      \"body\": {\n        \"path\": \"archives/customer-attraction/state/定义/自由分数背景安全门槛--定义.md\",\n        \"sha256\": \"0e2e6393acb153498a3b4d0a8091b3a10976f211945e612c96eb1b2d8982c2cd\",\n        \"section\": \"与真正整数混合安全值的比较\"\n      }\n    }\n  ],\n  \"primary_math_reading\": [\n    {\n      \"path\": \"archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md\",\n      \"sha256\": \"034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f\",\n      \"full_file_sha_verified\": true,\n      \"mode\": \"文件全文\",\n      \"section\": null,\n      \"lines_read\": [\n        1,\n        100\n      ],\n      \"reading_owner\": \"fresh formal worker /root/map_sixsecurity_round52\",\n      \"claims_about_raw_attachments\": \"正文引用的source/raw附件未因此算已读或新执行\"\n    },\n    {\n      \"path\": \"archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md\",\n      \"sha256\": \"cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88\",\n      \"full_file_sha_verified\": true,\n      \"mode\": \"文件全文\",\n      \"section\": null,\n      \"lines_read\": [\n        1,\n        129\n      ],\n      \"reading_owner\": \"fresh formal worker /root/map_sixsecurity_round52\",\n      \"claims_about_raw_attachments\": \"正文引用的source/raw附件未因此算已读或新执行\"\n    },\n    {\n      \"path\": \"archives/customer-attraction/state/计算/静态安全值与聚合保底的精确核验--计算.md\",\n      \"sha256\": \"9ca3c8ce9e23da06f04168123bbbef57e70998a16a11b22f90c79c4c07da35f9\",\n      \"full_file_sha_verified\": true,\n      \"mode\": \"文件全文\",\n      \"section\": null,\n      \"lines_read\": [\n        1,\n        86\n      ],\n      \"reading_owner\": \"fresh formal worker /root/map_sixsecurity_round52\",\n      \"claims_about_raw_attachments\": \"正文引用的source/raw附件未因此算已读或新执行\"\n    },\n    {\n      \"path\": \"archives/customer-attraction/state/审查/顺序客户吸引来源记录与上传半覆盖界限审查--审查.md\",\n      \"sha256\": \"a1ce7ff6039cf30e86493fe1be00ddab285443adf78ba2b83e1aba5159abacab\",\n      \"full_file_sha_verified\": true,\n      \"mode\": \"文件全文\",\n      \"section\": null,\n      \"lines_read\": [\n        1,\n        160\n      ],\n      \"reading_owner\": \"fresh formal worker /root/map_sixsecurity_round52\",\n      \"claims_about_raw_attachments\": \"正文引用的source/raw附件未因此算已读或新执行\"\n    },\n    {\n      \"path\": \"archives/customer-attraction/state/资源/一般安全付款检查点与中继分支导航--资源.md\",\n      \"sha256\": \"4f7c985a12523e5098baf1db1036eb6197e60ee19c728cad37869079cb29fd8d\",\n      \"full_file_sha_verified\": true,\n      \"mode\": \"精确唯一标题段全文\",\n      \"section\": \"强聚合与准确半覆盖金额\",\n      \"lines_read\": [\n        22,\n        47\n      ],\n      \"reading_owner\": \"fresh formal worker /root/map_sixsecurity_round52\",\n      \"claims_about_raw_attachments\": \"正文引用的source/raw附件未因此算已读或新执行\"\n    },\n    {\n      \"path\": \"archives/customer-attraction/state/定理/完整策略锥的静态安全值对偶--定理.md\",\n      \"sha256\": \"b279e1f63f08b961365a2cbc0173530de7090fd1c7beefc1a42c585ef6e58cf5\",\n      \"full_file_sha_verified\": true,\n      \"mode\": \"文件全文\",\n      \"section\": null,\n      \"lines_read\": [\n        1,\n        138\n      ],\n      \"reading_owner\": \"fresh formal worker /root/map_sixsecurity_round52\",\n      \"claims_about_raw_attachments\": \"正文引用的source/raw附件未因此算已读或新执行\"\n    },\n    {\n      \"path\": \"archives/customer-attraction/state/审查/指定完整策略锥安全证书与预算边界--审查.md\",\n      \"sha256\": \"ba40e499dce1198cf24fde610f358bdd3b42988493064e769bd9cbe938f153f3\",\n      \"full_file_sha_verified\": true,\n      \"mode\": \"精确唯一标题段全文\",\n      \"section\": \"全锥证书\",\n      \"lines_read\": [\n        48,\n        79\n      ],\n      \"reading_owner\": \"fresh formal worker /root/map_sixsecurity_round52\",\n      \"claims_about_raw_attachments\": \"正文引用的source/raw附件未因此算已读或新执行\"\n    },\n    {\n      \"path\": \"archives/customer-attraction/state/审查/共同背景安全锥报告与版本边界--审查.md\",\n      \"sha256\": \"f26af391adb454cfb27bad1f62e37ab0e7a894f7a133f621eec80a1c5379c5f5\",\n      \"full_file_sha_verified\": true,\n      \"mode\": \"文件全文\",\n      \"section\": null,\n      \"lines_read\": [\n        1,\n        245\n      ],\n      \"reading_owner\": \"fresh formal worker /root/map_sixsecurity_round52\",\n      \"claims_about_raw_attachments\": \"正文引用的source/raw附件未因此算已读或新执行\"\n    },\n    {\n      \"path\": \"archives/customer-attraction/state/程序/R-f6两种完整策略生成与静态安全探索的原始合同--程序.md\",\n      \"sha256\": \"247938c0f2bfd4d1d5fdf80d8d8b7c2542e394a21530a4400f00d3e8b0ce8d9f\",\n      \"full_file_sha_verified\": true,\n      \"mode\": \"精确唯一标题段全文\",\n      \"section\": \"6236B静态安全探针的真实值和归一\",\n      \"lines_read\": [\n        49,\n        64\n      ],\n      \"reading_owner\": \"fresh formal worker /root/map_sixsecurity_round52\",\n      \"claims_about_raw_attachments\": \"正文引用的source/raw附件未因此算已读或新执行\"\n    },\n    {\n      \"path\": \"archives/customer-attraction/state/审查/逐人安全与全树流增量审查--审查.md\",\n      \"sha256\": \"d764ea3fca542496ae66c7c5a4af66ef113e22d6871fc8785016e397be8879da\",\n      \"full_file_sha_verified\": true,\n      \"mode\": \"文件全文\",\n      \"section\": null,\n      \"lines_read\": [\n        1,\n        119\n      ],\n      \"reading_owner\": \"fresh formal worker /root/map_sixsecurity_round52\",\n      \"claims_about_raw_attachments\": \"正文引用的source/raw附件未因此算已读或新执行\"\n    },\n    {\n      \"path\": \"archives/customer-attraction/state/问题/一般目录安全债务与真实分支转移--问题.md\",\n      \"sha256\": \"87e0e226e76c384eddf11d6620e630198711323ca05533a776c3ef2eb198d580\",\n      \"full_file_sha_verified\": true,\n      \"mode\": \"文件全文\",\n      \"section\": null,\n      \"lines_read\": [\n        1,\n        112\n      ],\n      \"reading_owner\": \"fresh formal worker /root/map_sixsecurity_round52\",\n      \"claims_about_raw_attachments\": \"正文引用的source/raw附件未因此算已读或新执行\"\n    },\n    {\n      \"path\": \"archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md\",\n      \"sha256\": \"0626668e7a825108fc0b3699e42394b75b1c2e2a526df220a90d91a02afc8a0c\",\n      \"full_file_sha_verified\": true,\n      \"mode\": \"文件全文\",\n      \"section\": null,\n      \"lines_read\": [\n        1,\n        69\n      ],\n      \"reading_owner\": \"fresh formal worker /root/map_sixsecurity_round52\",\n      \"claims_about_raw_attachments\": \"正文引用的source/raw附件未因此算已读或新执行\"\n    },\n    {\n      \"path\": \"archives/customer-attraction/subarchives/six-providers/问题--问题.md\",\n      \"sha256\": \"21391fbaaa2893fef7b228a345fcf1d7f5c5d1dc8a42cc642d6bfbbeccc7c065\",\n      \"full_file_sha_verified\": true,\n      \"mode\": \"文件全文\",\n      \"section\": null,\n      \"lines_read\": [\n        1,\n        29\n      ],\n      \"reading_owner\": \"fresh formal worker /root/map_sixsecurity_round52\",\n      \"claims_about_raw_attachments\": \"正文引用的source/raw附件未因此算已读或新执行\"\n    },\n    {\n      \"path\": \"archives/customer-attraction/state/定理/真实路径安全值链的嵌入与债务恒等式--定理.md\",\n      \"sha256\": \"d5431e82c2acd43845c37528035f4d59f1e4e564cfdd5b1b8112dc8753147b12\",\n      \"full_file_sha_verified\": true,\n      \"mode\": \"文件全文\",\n      \"section\": null,\n      \"lines_read\": [\n        1,\n        123\n      ],\n      \"reading_owner\": \"fresh formal worker /root/map_sixsecurity_round52\",\n      \"claims_about_raw_attachments\": \"正文引用的source/raw附件未因此算已读或新执行\"\n    },\n    {\n      \"path\": \"archives/customer-attraction/state/候选/全槽逐行最小价格的共同预算与有限报告--候选.md\",\n      \"sha256\": \"e952c73849b2ac561ac4ebb761b3ae0c1af06d61f27e743c593ea0103c52698a\",\n      \"full_file_sha_verified\": true,\n      \"mode\": \"文件全文\",\n      \"section\": null,\n      \"lines_read\": [\n        1,\n        102\n      ],\n      \"reading_owner\": \"fresh formal worker /root/map_sixsecurity_round52\",\n      \"claims_about_raw_attachments\": \"正文引用的source/raw附件未因此算已读或新执行\"\n    },\n    {\n      \"path\": \"archives/customer-attraction/state/定理/静态独立同分布安全基准--定理.md\",\n      \"sha256\": \"1a79c786e8fed1c7dbefff583922350f6148b35375bd00d3df91cfbc9f11cbf0\",\n      \"full_file_sha_verified\": true,\n      \"mode\": \"文件全文\",\n      \"section\": null,\n      \"lines_read\": [\n        1,\n        112\n      ],\n      \"reading_owner\": \"fresh formal worker /root/map_sixsecurity_round52\",\n      \"claims_about_raw_attachments\": \"正文引用的source/raw附件未因此算已读或新执行\"\n    },\n    {\n      \"path\": \"archives/customer-attraction/state/定义/自由分数背景安全门槛--定义.md\",\n      \"sha256\": \"0e2e6393acb153498a3b4d0a8091b3a10976f211945e612c96eb1b2d8982c2cd\",\n      \"full_file_sha_verified\": true,\n      \"mode\": \"文件全文\",\n      \"section\": null,\n      \"lines_read\": [\n        1,\n        78\n      ],\n      \"reading_owner\": \"fresh formal worker /root/map_sixsecurity_round52\",\n      \"claims_about_raw_attachments\": \"正文引用的source/raw附件未因此算已读或新执行\"\n    }\n  ],\n  \"reading_counts\": {\n    \"complete_registry_contracts\": 9,\n    \"distinct_math_files\": 17,\n    \"complete_math_files\": 14,\n    \"exact_section_only_files\": 3\n  },\n  \"preplan_use\": \"preplan review.md全文作为导航；plan/reading-ledger及Root预研导航或部分元数据，不继承其primary阅读信用。全部数学信用来自本次实际正文和合同。\",\n  \"canonical_source\": \"research/registry.json.edge_files only\",\n  \"canonical_count_at_review\": 1705,\n  \"core_incident_canonical_metadata\": [\n    {\n      \"path\": \"map/edges/boss6-six-flow-certificate-3b-839a2b644dbb07a4/boss6-six-half-fixed-policy-cut-and-rank-sparse-forest-certificate.json\",\n      \"sha256\": \"877a5194a25ae355fd8747ec1b464f45fed19dca2312ab101999b62f8503fef5\",\n      \"reviewed_edge_id\": \"boss6-six-half-fixed-policy-cut-and-rank-sparse-forest-certificate\",\n      \"source_ids\": [\n        \"CA-STRATEGY-CONE\",\n        \"customer-attraction/real-payoff-graph-closed-set-divergence-and-forest-certificate\",\n        \"customer-attraction/payoff-type-map-kernel-and-full-real-row-cone-lineality\"\n      ],\n      \"target_ids\": [\n        \"customer-attraction/six-providers/exact-six-full-history-half-cover\"\n      ],\n      \"reading_scope\": \"端点/状态/条件/scope/whole_result或contribution元数据比较，未冒称其外部正文已读\",\n      \"receipt_reuse\": false\n    },\n    {\n      \"path\": \"map/edges/boss6-six-flow-certificate-3b-839a2b644dbb07a4/boss6-six-half-fixed-policy-lossless-scc-certificate-criterion.json\",\n      \"sha256\": \"394ce9042d784d6afa0216ab23b900da70998bfcc318f7f518cc5a73717198b0\",\n      \"reviewed_edge_id\": \"boss6-six-half-fixed-policy-lossless-scc-certificate-criterion\",\n      \"source_ids\": [\n        \"CA-STRATEGY-CONE\",\n        \"customer-attraction/real-payoff-comparison-SCC-quotient-and-nonnegative-flow-compilation\"\n      ],\n      \"target_ids\": [\n        \"customer-attraction/six-providers/exact-six-full-history-half-cover\"\n      ],\n      \"reading_scope\": \"端点/状态/条件/scope/whole_result或contribution元数据比较，未冒称其外部正文已读\",\n      \"receipt_reuse\": false\n    },\n    {\n      \"path\": \"map/edges/customer-attraction-3a-3a-33ebc875abc62fec/exact-budget-examples-calibrate-weak-total-debt.json\",\n      \"sha256\": \"34a32136ca42e0d190a1331bbd1777e2ccefbe6d44e1e2596ba9c4bef17f5fcb\",\n      \"reviewed_edge_id\": \"cag-33eb-exact-budget-examples-calibrate-weak-total-debt\",\n      \"source_ids\": [\n        \"customer-attraction/global-security-budget-exact-evidence\"\n      ],\n      \"target_ids\": [\n        \"M-d0feba99599d40b3806c54c5b6fa52ee\"\n      ],\n      \"reading_scope\": \"端点/状态/条件/scope/whole_result或contribution元数据比较，未冒称其外部正文已读\",\n      \"receipt_reuse\": false\n    },\n    {\n      \"path\": \"map/edges/customer-attraction-3a-3a-384393b28422e037/constant-policy-explicit-security-dual-certificate.json\",\n      \"sha256\": \"30bab87a7740aeda8b1cc593534e8f60af8b4474e2217fe96505308050124db0\",\n      \"reviewed_edge_id\": \"boss6-384393-constant-policy-explicit-security-dual-certificate\",\n      \"source_ids\": [\n        \"M-004bb31d900445a6b85041a48b8443f7\"\n      ],\n      \"target_ids\": [\n        \"CA-SECURITY-CONE-DUAL\"\n      ],\n      \"reading_scope\": \"端点/状态/条件/scope/whole_result或contribution元数据比较，未冒称其外部正文已读\",\n      \"receipt_reuse\": false\n    },\n    {\n      \"path\": \"map/edges/customer-attraction-3a-3a-3cdc3f8b2e711f10/jensen-counting-pays-extra-static-slot.json\",\n      \"sha256\": \"23c0363273c2101388d9d49adbe0ca16138f667a4411fc1007647ae214309311\",\n      \"reviewed_edge_id\": \"cag-3cdc3f8b-jensen-counting-pays-extra-static-slot\",\n      \"source_ids\": [\n        \"CA-OBLIVIOUS-MIXED-SECURITY-2N1\"\n      ],\n      \"target_ids\": [\n        \"customer-attraction/extra-integer-background-and-actual-terminal-insertion-policy-cones\"\n      ],\n      \"reading_scope\": \"端点/状态/条件/scope/whole_result或contribution元数据比较，未冒称其外部正文已读\",\n      \"receipt_reuse\": false\n    },\n    {\n      \"path\": \"map/edges/customer-attraction-3a-3a-51c7cfc720bbb676/original-population-minimal-bad.json\",\n      \"sha256\": \"3e76d02078e92db5a72a97f542b705a7e9f6d3022d131058b00d81da70b3f560\",\n      \"reviewed_edge_id\": \"ca-round37-original-population-minimal-bad\",\n      \"source_ids\": [\n        \"CA-OBLIVIOUS-MIXED-SECURITY-2N1\",\n        \"CA-LAST-TWO-FLOOR\"\n      ],\n      \"target_ids\": [\n        \"M-ee8d34acb5f54d6e89137fdc644273f2\"\n      ],\n      \"reading_scope\": \"端点/状态/条件/scope/whole_result或contribution元数据比较，未冒称其外部正文已读\",\n      \"receipt_reuse\": false\n    },\n    {\n      \"path\": \"map/edges/customer-attraction-3a-3a-51c7cfc720bbb676/stationary-instance-in-residual-cone.json\",\n      \"sha256\": \"6ae611ccaf7ae33f420fc8da6d6d8e28eb24108cdaffb04193f9102da1fa61fc\",\n      \"reviewed_edge_id\": \"ca-round37-stationary-instance-in-residual-cone\",\n      \"source_ids\": [\n        \"customer-attraction/stationary-incidence-without-root-reward-exchange-counterexample\",\n        \"CA-OBLIVIOUS-MIXED-SECURITY-2N1\"\n      ],\n      \"target_ids\": [\n        \"cag-three-player-two-group-residual-aggregate-cone-program\"\n      ],\n      \"reading_scope\": \"端点/状态/条件/scope/whole_result或contribution元数据比较，未冒称其外部正文已读\",\n      \"receipt_reuse\": false\n    },\n    {\n      \"path\": \"map/edges/customer-attraction-3a-3a-725ae21a5945b7b7/actual-deletion-support-restricts-static-opponent.json\",\n      \"sha256\": \"332c103453173058334745ed0491f72abe9cc3e3557b41935f484b29e50d030b\",\n      \"reviewed_edge_id\": \"ca-monochrome-reset-r32-actual-deletion-support-restricts-static-opponent\",\n      \"source_ids\": [\n        \"CA-OBLIVIOUS-MIXED-SECURITY-2N1\"\n      ],\n      \"target_ids\": [\n        \"customer-attraction/actual-terminal-deletion-support-random-policy-cone-probe\"\n      ],\n      \"reading_scope\": \"端点/状态/条件/scope/whole_result或contribution元数据比较，未冒称其外部正文已读\",\n      \"receipt_reuse\": false\n    },\n    {\n      \"path\": \"map/edges/customer-attraction-3a-3a-725ae21a5945b7b7/full-catalog-static-count-after-customer-projection.json\",\n      \"sha256\": \"41f9c741a3a40bde8b25efc1dc2f5c8d06e17fb2456c769fcb3e734102235b57\",\n      \"reviewed_edge_id\": \"ca-monochrome-reset-r32-full-catalog-static-count-after-customer-projection\",\n      \"source_ids\": [\n        \"CA-OBLIVIOUS-MIXED-SECURITY-2N1\"\n      ],\n      \"target_ids\": [\n        \"customer-attraction/optimal-customer-projected-security-payment-candidate\"\n      ],\n      \"reading_scope\": \"端点/状态/条件/scope/whole_result或contribution元数据比较，未冒称其外部正文已读\",\n      \"receipt_reuse\": false\n    },\n    {\n      \"path\": \"map/edges/customer-attraction-3a-3a-725ae21a5945b7b7/static-value-excludes-terminal-minimal-bad-node.json\",\n      \"sha256\": \"28666e98b31843709346fb21e75c72a38d4d98fb80b8686a43ef1af3cfaebebd\",\n      \"reviewed_edge_id\": \"ca-monochrome-reset-r32-static-value-excludes-terminal-minimal-bad-node\",\n      \"source_ids\": [\n        \"CA-OBLIVIOUS-MIXED-SECURITY-2N1\"\n      ],\n      \"target_ids\": [\n        \"M-2e56a6f86c20443fba4e86818e3757c7\"\n      ],\n      \"reading_scope\": \"端点/状态/条件/scope/whole_result或contribution元数据比较，未冒称其外部正文已读\",\n      \"receipt_reuse\": false\n    },\n    {\n      \"path\": \"map/edges/customer-attraction-3a-3a-b9bd43af3aa43810/quadratic-counterexample-separates-static-values.json\",\n      \"sha256\": \"0b7261cb4cdd347d95c6cd67229d8303ec3c3d1c0d8b681f91c8e043769bb81c\",\n      \"reviewed_edge_id\": \"ca-b9bd-quadratic-counterexample-separates-static-values\",\n      \"source_ids\": [\n        \"customer-attraction/quadratic-self-response-minimax-separation\",\n        \"customer-attraction/last-slot-value-and-catalog-counting\"\n      ],\n      \"target_ids\": [\n        \"CA-OBLIVIOUS-MIXED-SECURITY-2N1\"\n      ],\n      \"reading_scope\": \"端点/状态/条件/scope/whole_result或contribution元数据比较，未冒称其外部正文已读\",\n      \"receipt_reuse\": false\n    },\n    {\n      \"path\": \"map/edges/customer-attraction-3a-3a-b9bd43af3aa43810/static-security-price-to-chain-sufficient-budget.json\",\n      \"sha256\": \"85d537fa8b16b0c44c4597873a6115913f9e40f36df8621db88107bb0f069f54\",\n      \"reviewed_edge_id\": \"ca-b9bd-static-security-price-to-chain-sufficient-budget\",\n      \"source_ids\": [\n        \"CA-OBLIVIOUS-MIXED-SECURITY-2N1\"\n      ],\n      \"target_ids\": [\n        \"CA-SECURITY-CHAIN-INTERFACE\"\n      ],\n      \"reading_scope\": \"完整JSON实读\",\n      \"receipt_reuse\": true\n    },\n    {\n      \"path\": \"map/edges/customer-attraction-3a-3a-c0d8496dbc098925/tail-choice-conditional-five-half.json\",\n      \"sha256\": \"b653123495be86a487f7bdda526c5c4bf3cb95d38a874e9e3153fe14a1197f5d\",\n      \"reviewed_edge_id\": \"ca-r36-tail-choice-conditional-five-half\",\n      \"source_ids\": [\n        \"customer-attraction/five-provider-selected-maxpair-credit-early-payment-candidate\",\n        \"customer-attraction/potential-maximizing-tail-real-reply-selected-credit-single-tax\",\n        \"CA-LAST-TWO-FLOOR\",\n        \"CA-OBLIVIOUS-MIXED-SECURITY-2N1\"\n      ],\n      \"target_ids\": [\n        \"CA-FIVE-HALF-EXACT-v1\"\n      ],\n      \"reading_scope\": \"端点/状态/条件/scope/whole_result或contribution元数据比较，未冒称其外部正文已读\",\n      \"receipt_reuse\": false\n    },\n    {\n      \"path\": \"map/edges/maintenance-scope-cf45f539d61398/m397-conditional-six-half.json\",\n      \"sha256\": \"03cb034cb9ee2ce0e2fc9e89bb2b2160434b51b35fbe39dfcca67acbb8c58a15\",\n      \"reviewed_edge_id\": \"m397-conditional-six-half\",\n      \"source_ids\": [\n        \"M-397306454fcf4b6bb794a4f8f492b886\"\n      ],\n      \"target_ids\": [\n        \"customer-attraction/six-providers/exact-six-full-history-half-cover\"\n      ],\n      \"reading_scope\": \"端点/状态/条件/scope/whole_result或contribution元数据比较，未冒称其外部正文已读\",\n      \"receipt_reuse\": false\n    }\n  ],\n  \"declared_overlaps\": [],\n  \"declared_overlap_disposition\": \"当前definition没有overlap/follow-up键，无强行造closed条目\",\n  \"new_scientific_program_runs\": 0,\n  \"historical_scientific_program_replays\": 0,\n  \"not_performed\": [\n    \"Git\",\n    \"queue writes\",\n    \"clone/source writes\",\n    \"registry/canonical writes\",\n    \"network\",\n    \"credentials\",\n    \"Library\",\n    \"LP/SPE/IC/DP/price execution\",\n    \"old certificate replays\",\n    \"subagents\"\n  ],\n  \"freshness_note\": \"记录本次原字节/原pin；Root将修M-d0feba辅助全锥量词及D_n说明，后续新版本须独立记录受影响刷新，不能把本ledger改写成已读未来版本。\"\n}\n"
+      },
+      {
+        "path": "map/edges/boss6-six-security-bridge-3b-37e2f44d17517898/quantifier-erratum-request.json",
+        "sha256": "cccad70b64d0312596b84a3d787fa468afd0e5c3db34b6edeceb10252dc95baf",
+        "preserved_text": "{\n  \"delivery_status\": \"awaiting-core-quantifier-erratum\",\n  \"task_id\": \"boss6-six-security-bridge-3b-37e2f44d17517898\",\n  \"source_path\": \"archives/customer-attraction/state/问题/一般目录安全债务与真实分支转移--问题.md\",\n  \"source_old_sha256\": \"87e0e226e76c384eddf11d6620e630198711323ca05533a776c3ef2eb198d580\",\n  \"section\": \"2. 全局安全债务义务（开放问题）\",\n  \"changes\": [\n    {\n      \"location\": \"line48（定义D_i的display）\",\n      \"old\": \"D_i=u_i-V_i+(n-i)(V_{i+1}-V_i),\\\\quad i<n.\",\n      \"new\": \"D_i=u_i-V_i+(n-i)(V_{i+1}-V_i),\\\\quad i<n;\\\\qquad D_n=u_n-V_n=0.\",\n      \"mathematical_reason\": \"末位V_n=u_n已在前句声明；补终项使其后Σ_(i=1)^nD_i不再引用未定义符号，链的既存数学不变。\"\n    },\n    {\n      \"location\": \"line62（全锥段intro）\",\n      \"old\": \"固定完整形式策略 $\\\\sigma$、查询分布 $p$ 和客户重数向量 $w$ 时，来源给出精确锥接口。令 $\\\\Gamma$ 为每个有序历史一次偏离相对原行动的真实收益差系数，$\\\\Gamma w\\\\ge0$ 当且仅当 $\\\\sigma$ 在全部历史上是 SPE；令 $c$ 为根实际覆盖行为，$\\\\beta_B(p)_T=p(T)/(1+\\\\operatorname{load}_B(T))$。则固定 $\\\\sigma,p$ 下\",\n      \"new\": \"固定完整形式策略 $\\\\sigma$、有理查询分布 $p$ 及常数 $\\\\alpha>0$，来源给出精确全客户锥接口。令 $\\\\Gamma$ 为每个有序历史一次偏离相对原行动的真实收益差系数，并置 $\\\\mathcal K_\\\\sigma=\\\\{w\\\\ge0:\\\\Gamma w\\\\ge0\\\\}$；它恰是 $\\\\sigma$ 在全部历史上成为 SPE 的非负客户质量锥。令 $c$ 为根实际覆盖行为，$W=c\\\\cdot w$，$\\\\beta_B(p)_T=p(T)/(1+\\\\operatorname{load}_B(T))$，其中 $B$ 遍历全部合法 $n-1$ 槽静态背景。则固定 $\\\\sigma,p,\\\\alpha$ 下\",\n      \"mathematical_reason\": \"移除固定单个w的误导，固定α>0，明确实际全集Kσ；允许α6和11/2，不把更弱系数悄改原n系数合同。\"\n    },\n    {\n      \"location\": \"line64（左display）\",\n      \"old\": \"W\\\\ge\\\\alpha\\\\min_B\\\\beta_B(p)\\\\cdot w\",\n      \"new\": \"\\\\forall w\\\\in\\\\mathcal K_\\\\sigma:\\\\qquad c\\\\cdot w\\\\ge\\\\alpha\\\\min_B\\\\beta_B(p)\\\\cdot w\",\n      \"mathematical_reason\": \"minimax得到共同Q的充要前提是整个锥上对所有w成立；单点不等式不能推出非负Γ证书。\"\n    },\n    {\n      \"location\": \"line66（右display前）\",\n      \"old\": \"等价于存在静态分布 $Q$、非负偏离权重 $\\\\lambda$ 和逐类型余项 $r$ 使\",\n      \"new\": \"等价于存在一份静态分布 $Q\\\\in\\\\Delta(\\\\mathcal S^{n-1})$、非负偏离权重 $\\\\lambda$ 和逐类型余项 $r\\\\ge0$，它们只可依赖固定的 $\\\\sigma,p,\\\\alpha$ 而不依赖锥内 $w$，使逐类型恒等式\",\n      \"mathematical_reason\": \"写明一份Q支付全锥并保Q归一、r非负，不要求其跨全部p共同。\"\n    },\n    {\n      \"location\": \"line70（结论句）\",\n      \"old\": \"该 Farkas 等价关系是精确接口，不是 $\\\\lambda$ 存在性的证明；所有历史与偏离必须保留，不能先在节点内平均或循环借用目标结论。\",\n      \"new\": \"该 minimax/Farkas 等价关系是精确接口，不是对所有 $\\\\sigma,p,\\\\alpha$ 的证书存在性证明；所有历史与偏离必须保留，不能先在节点内平均或循环借用目标结论。若 $\\\\alpha$ 也有理，可行时可取全有理证书。\",\n      \"mathematical_reason\": \"等价与普遍存在性分开；全有理性仅对有理α声明。\"\n    }\n  ],\n  \"affected_task_pins\": [\n    {\n      \"object_id\": \"M-d0feba99599d40b3806c54c5b6fa52ee\",\n      \"version_before\": 1,\n      \"registration_pin_before\": \"8d784c8b36c6d038a0385ef6923b3c85eed7ff0f38f9e75aed141d291d4a3b67\",\n      \"body_old_sha256\": \"87e0e226e76c384eddf11d6620e630198711323ca05533a776c3ef2eb198d580\",\n      \"new_pin\": \"由Root实际修正文/登记后计算，不伪造\"\n    }\n  ],\n  \"task_definition_pin_before\": \"d52d373e953078a3d185fcc077751e2128bb44944c6d265ce2ac647d836351bf\",\n  \"task_refresh_effect\": \"9输入中仅M-d0feba正文引用受此次修改影响；其pin和task definition pin需Root刷新，另8端点预计不变（以实际新字节核）。第二关系草稿的debt evidence及全锥段阅读freshness受影响；两个关系/review/receipt的发布就绪态均须新核心交接后确认。\",\n  \"root_reported_other_registration_owner\": \"M-819ec76c39b24e9892557d52c04d29ab（本任务外，由Root处理；本worker未冒称其全文已读）\",\n  \"canonical_effect\": \"本任务仅复用的85d537fa…一般链边不引该错误段，数学与字节不受影响。Boss4 33eb canonical为另任务受影响记录，Root已定位并串行repair；本包不擅改其文件。\",\n  \"mathematical_effect\": \"修复的是完整锥量词及终项定义，不建立普遍Q证书、弱总债务或六人half；两条条件推导继续有效。\"\n}\n"
+      },
+      {
+        "path": "map/receipts/boss6-six-security-bridge-3b-37e2f44d17517898.json",
+        "sha256": "16ab551d6502ca4335df04b787a20f91c7b076a0dbfda5f5cee41d8bcc16c342",
+        "preserved_text": "{\n  \"task_id\": \"boss6-six-security-bridge-3b-37e2f44d17517898\",\n  \"delivery_status\": \"awaiting-core-quantifier-erratum\",\n  \"draft_only\": true,\n  \"not_done_ready\": true,\n  \"owner\": \"Boss6\",\n  \"request_id\": \"d7b6373c9d3c41b79cd21e975031e643\",\n  \"definition_pin\": \"d52d373e953078a3d185fcc077751e2128bb44944c6d265ce2ac647d836351bf\",\n  \"coverage\": {\n    \"CA-OBLIVIOUS-MIXED-SECURITY-2N1\": {\n      \"state\": \"linked\",\n      \"object_pin\": \"565f6bdb541c09f8229f27ca4d47409f946a555f141378e72fb91c5a55082ea4\",\n      \"comparison_scope\": \"全文静态锐界及当前全部声明证据范围；与固定p全锥证书、真实路径弱总债务、六槽v7/iid/free-fraction界限逐项比较；仅同一原实例五整数槽给11。\",\n      \"reason\": \"静态11v6≥OPT6分别服务两条独立条件路线。第一给6/11（更强于half）；第二搭11/2金额恰给half。已存一般金额身份按精确SHA复用，未把静态定理当动态付款。\",\n      \"edge_ids\": [\n        \"boss6-six-universal-fixed-query-cone-security-and-static-price11-imply-half\",\n        \"boss6-six-weak-total-security-debt-and-static-price11-imply-half\",\n        \"ca-b9bd-static-security-price-to-chain-sufficient-budget\"\n      ]\n    },\n    \"CA-SECURITY-CONE-DUAL\": {\n      \"state\": \"linked\",\n      \"object_pin\": \"e31e80e9d89c7fad56eadbcbfd46a50af3857d6119eea8060c3a41a0cb987899\",\n      \"comparison_scope\": \"完整固定σ,p minimax/Farkas双向证明、严格失败提取、全部声明精确审查范围；与六人目标及同实例静态11界比较。\",\n      \"reason\": \"给C6精确全锥接口；条件存在时选择实际有理安全最优p*得到W≥6v6。全部m/σ/p的存在性仍open；∀p∃Q与更强共同Q不混。既存恒常策略子族只作去重元数据，未入receipt。\",\n      \"edge_ids\": [\n        \"boss6-six-universal-fixed-query-cone-security-and-static-price11-imply-half\"\n      ]\n    },\n    \"M-d0feba99599d40b3806c54c5b6fa52ee\": {\n      \"state\": \"linked\",\n      \"object_pin\": \"8d784c8b36c6d038a0385ef6923b3c85eed7ff0f38f9e75aed141d291d4a3b67\",\n      \"comparison_scope\": \"当前债务正文全文，重点§2弱ΣD金额/113局部负债/全锥辅助段，结合完整真实链正文及静态计数；本core待已确认最小量词勘误。\",\n      \"reason\": \"独立将n6源开放金额经ΣD=W−6s送到W≥11s/2及完整half。不要求C6或逐步非负。当前source量词勘误已报Root，旧pin只作交接阅读快照；覆盖草稿不可done。\",\n      \"edge_ids\": [\n        \"boss6-six-weak-total-security-debt-and-static-price11-imply-half\"\n      ]\n    },\n    \"customer-attraction/six-providers/exact-six-full-history-half-cover\": {\n      \"state\": \"linked\",\n      \"object_pin\": \"2d5b191271cb052c435121a41935eb3958540d5a53cb05013f13dd45a70f6e31\",\n      \"comparison_scope\": \"六人原题正文、旧根同题页、完整共同模型；两条全量词条件路线分别对照原目标，保所有有序历史/真实后继/弱平局及零客户。\",\n      \"reason\": \"两条独立ALL边分别完整条件推出所有原六人SPE的2W≥OPT6；第一实际更强6/11，第二11/2付款。未证明任一开放金额，不把固定子族/样本/直接流规格当存在性，目标仍open。\",\n      \"edge_ids\": [\n        \"boss6-six-universal-fixed-query-cone-security-and-static-price11-imply-half\",\n        \"boss6-six-weak-total-security-debt-and-static-price11-imply-half\"\n      ]\n    }\n  },\n  \"assets\": [\n    {\n      \"path\": \"map/edges/boss6-six-security-bridge-3b-37e2f44d17517898/universal-fixed-query-security-to-six-half.json\",\n      \"sha256\": \"e6b18506e8499d710e5d2880204559923dea7fad73155555d0ea066f8569adb5\"\n    },\n    {\n      \"path\": \"map/edges/boss6-six-security-bridge-3b-37e2f44d17517898/weak-total-debt-to-six-half.json\",\n      \"sha256\": \"e7d676b0cc6917892819c0f73d86c482e5be47675bc72a65e192182768d2336e\"\n    },\n    {\n      \"path\": \"map/edges/boss6-six-security-bridge-3b-37e2f44d17517898/review.md\",\n      \"sha256\": \"86f7e2e2064a156bfeb3a61b5df687d718a4f187e38f4c826a318cc5dbb7afb7\"\n    },\n    {\n      \"path\": \"map/edges/boss6-six-security-bridge-3b-37e2f44d17517898/reading-ledger.json\",\n      \"sha256\": \"6faf329600791b1faac0ced4bf53506bb862f812510b7435eb2bcb88ef93f76b\"\n    },\n    {\n      \"path\": \"map/edges/boss6-six-security-bridge-3b-37e2f44d17517898/quantifier-erratum-request.json\",\n      \"sha256\": \"cccad70b64d0312596b84a3d787fa468afd0e5c3db34b6edeceb10252dc95baf\"\n    },\n    {\n      \"path\": \"map/edges/customer-attraction-3a-3a-b9bd43af3aa43810/static-security-price-to-chain-sufficient-budget.json\",\n      \"sha256\": \"85d537fa8b16b0c44c4597873a6115913f9e40f36df8621db88107bb0f069f54\"\n    }\n  ],\n  \"closed_overlaps\": [],\n  \"follow_up_tasks\": [],\n  \"overlap_note\": \"正式definition未声明overlap_comparisons或follow-up对，不制造虚构处置。\",\n  \"source_freshness\": \"所有9pins及17正文文件SHA在本次实际阅读时匹配；M-d0feba辅助全锥量词及D_n终项文字勘误已获Root确认，须Root修源/登记/任务handoff及fresh重新接续后刷新，不可按此旧pin收据done。\",\n  \"mathematical_status\": \"两条accepted conditional推导草稿；C6和独立弱总债务均未证明，六人原题仍open。native edge-bind/check/checkpoint/done未执行，由Root后续串行。\"\n}\n"
+      }
+    ],
+    "formal_status": "awaiting-core-quantifier-erratum; not a done receipt or binding",
+    "preserved_before_handoff": true
+  },
+  "preserved_handoff": {
+    "task_id": "boss6-six-security-bridge-3b-37e2f44d17517898",
+    "result": {
+      "task_id": "boss6-six-security-bridge-3b-37e2f44d17517898",
+      "task": {
+        "task_id": "boss6-six-security-bridge-3b-37e2f44d17517898",
+        "task_file": "research/operations/map-v2/tasks/boss6-six-security-bridge-3b-37e2f44d17517898.json",
+        "stage": "3B",
+        "state": "handoff",
+        "owner": null,
+        "material_count": 0,
+        "object_count": 4,
+        "shared_read_count": 5,
+        "write_paths": [
+          "map/edges/boss6-six-security-bridge-3b-37e2f44d17517898",
+          "map/receipts/boss6-six-security-bridge-3b-37e2f44d17517898.json"
+        ],
+        "context_plan": {
+          "estimated_output_tokens": 8812,
+          "oversized": false,
+          "requires_export": false,
+          "comparison_priority": 1,
+          "family_hint": "CA-OBLIVIOUS-MIXED-SECURITY-2N1",
+          "scope_hint": "archives/customer-attraction",
+          "status": "complete-declared-references-planned",
+          "note": "Compare the stated mathematical question on all selected endpoints; if large, resume the same question in reading passes.",
+          "comparison_question": "恰六人完整有序策略中，固定sigma与有理query的全客户锥对偶证书如何经过五个整数静态竞争槽的锐界11v6>=OPT6得到原half目标？保留所有目录、全部sigma、全部有理p的共同Q/非负乘子存在性为开放前提；另核一般安全债务的11/2金额在六人特化后与同一静态界的条件路线。精确区分五槽v6、六槽v7、iid Z和自由分数值，不把既成等价定理当作普遍证书构造，不重复已登记的固定策略样本或直接2c-o流规格。",
+          "budget_status": "reading-scope-expanded-reestimate",
+          "budget": {
+            "context_tokens": 500000,
+            "window_source": "official-default",
+            "model": "gpt-6.1-sol",
+            "used_tokens": null,
+            "history_mode": "fresh-worker",
+            "reserve_tokens": 200000,
+            "reading_tokens": 300000,
+            "output_tokens": 100000,
+            "runtime_remaining_tokens": null,
+            "declared_remaining_before_reserve_tokens": null,
+            "budget_is_runtime_measurement": false
+          },
+          "reading": {
+            "chars": 57454,
+            "utf8_bytes": 99746,
+            "source_tokens": 76224,
+            "metadata_tokens": 7220,
+            "estimated_tokens": 83572,
+            "metadata_chars": 6721,
+            "metadata_utf8_bytes": 10205,
+            "distinct_files": 13,
+            "reading_segments": 13,
+            "token_count_is_estimate": true,
+            "measurement_scope": "Requested complete text spans plus supplied metadata; binary evidence is not token-counted from raw bytes.",
+            "task_overhead_tokens": 128
+          }
+        }
+      },
+      "status": "pushed",
+      "request_id": "3337c1ba044f48d3b880d74347a9d3f1",
+      "remote_tip": "131b90376b1a2433adedfc2013b7517dce962b17",
+      "reading_instruction": "Read task_file for the complete published batch; use --full only when full machine output is needed.",
+      "local_sync": {
+        "status": "synced",
+        "branch": "rebuild/research-v2",
+        "remote_tip": "131b90376b1a2433adedfc2013b7517dce962b17",
+        "preserved_work": true,
+        "reset_cleanup": {
+          "status": "local-reset-copies-archived",
+          "archived_files": 0,
+          "backup": "/workspace/scratch/bbb425bb840f/co-work-anl-boss6/.git/reset-backups/4595c17cdb264f2c9bc75e06ea2ee3ce"
+        }
+      }
+    },
+    "reason": "Boss6 preserves the completed two-route mathematical draft before the confirmed core-body erratum. Saved draft: /workspace/scratch/bbb425bb840f/boss6-staging/map-sixsecurity-round52; manifest SHA 2b4eca08499d865e40053346ade1937ea01c50f22b3a929fe7ccaac5aeaf83c5. All draft file contents are also preserved in the pending exact audit research/workspaces/map-v2/Boss6/security-cone-quantifier-round52.json. Two independent conditional ALL proofs reach exact-six half: universal fixed-p alpha6 all-cone certificates plus static price11; independently total debt >= -v6/2 plus actual-path chain and price11. Breakpoint: M-d0feba99599d40b3806c54c5b6fa52ee auxiliary source omits the all-w cone quantifier and explicit nonnegative residual; Dn0 also needs literal definition. Next: publish independently audited five-replacement source delta and two version2 registrations; refresh this unfinished task, reclaim it formally, and assign a fresh worker to recheck current affected inputs and preserve both open-payment scopes before bind/check/checkpoint/done.",
+    "state_verified": "handoff",
+    "owner_verified": null
+  }
+}

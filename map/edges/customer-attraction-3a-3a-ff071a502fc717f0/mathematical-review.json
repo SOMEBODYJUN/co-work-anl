@@ -1,0 +1,335 @@
+{
+  "task_id": "customer-attraction-3a-3a-ff071a502fc717f0",
+  "reviewed_by": "Boss6",
+  "definition_pin": "99d87317781f60b6d8c30eca0f95ae48afd4897b916f7c83adb100919744e0dc",
+  "outcome": {
+    "new_edges": 8,
+    "new_whole_logical": 3,
+    "new_contribution_logical": 3,
+    "new_context": 2,
+    "canonical_exact_reused": 1,
+    "coverage_linked": 11,
+    "coverage_isolated_after_review": 11
+  },
+  "reviewed_relations": [
+    {
+      "edge_id": "boss6-cagff-r50-fresh-exit-to-floor-normal-form",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "customer-attraction/fresh-private-petal-exit-and-individual-floor-normal-form"
+      ],
+      "target_ids": [
+        "M-09be8e7dcc1040dcb82e9cbc3e63cfde"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "有限单位客户、两两不同真实覆盖的非空有限共同集合目录；总人数m固定，FLOOR以原OPT_m/(2m)量化全部合法有序前缀和每份完整子SPE。扩目录仅加入m个彼此及与旧客户不交、B>0整数客户的新瓣；允许共同整数复制旧客户。",
+      "roles": {
+        "customer-attraction/fresh-private-petal-exit-and-individual-floor-normal-form": "在每个合法历史及任意选定的完整孩子中提供新瓣恰B且不被复用的真实外选项。",
+        "M-09be8e7dcc1040dcb82e9cbc3e63cfde": "把任意全前缀FLOOR坏点等价化为同人数、某历史真实选瓣B而OPT_new>2mB的正规形。"
+      },
+      "explanation": "任给坏点，先把该完整子SPE补成完整根策略，再在其有限全树选择最深坏节点h，u<t=OPT_m/(2m)。所有proper旧后代（包括偏离子树）规定当前收益至少t。取有理u<s<t，共同复制L使B=Ls为正整数。h以下未见新瓣的proper旧节点保原σ；首次新瓣后的互不交边界孩子永久贴一份完整BI子SPE。逐深度核验：改旧行动仍沿原σ，原IC同倍保留；改新瓣由退出引理仅得B<Lt。h处每个旧行动的真实收益不超过Lu<B，每个新瓣恰B，故规定新瓣最佳。向根在已固定的可信孩子间逐祖先选BR，得到完整SPE，h可离轨。旧最优m元组仍可选，OPT_new≥L OPT_old>2mB。反向：若某新实例某合法历史选瓣恰B且OPT_new>2mB，该节点直接违反其FLOOR。整个论证只保单节点失败，不控制原actual路径或新实际福利。",
+      "scope": "同人数的全前缀逐人门槛失败等价正规形；不作为half坏例正规形。",
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/新私有花瓣的全历史退出与逐人门槛正规形--定理.md",
+          "sha256": "5d8d79f7ed6b2143791a63bebe6240aff360f3bd63854dcf778a3450c264abf2"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        }
+      ],
+      "reviewed_by": "Boss6",
+      "review_note": "Fresh正式worker逐对象实读当前22core/7read的完整登记及主正文；本边承重证明直接复核，精确当前pins及引用SHA已核。未运行旧LP、BI、全树、随机或科学审计。Root串行原生绑定后发布；预审只作线索，不替本轮实读。",
+      "whole_result": "FLOOR存在反例，当且仅当存在同一总人数的合法扩充实例，含m个等大独立正大小新瓣，某完整SPE在某合法历史选瓣收益恰B，且OPT_new>2mB。"
+    },
+    {
+      "edge_id": "boss6-cagff-r50-petals-and-bank-to-efficient-participation-counterfamily",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "customer-attraction/fresh-private-petal-exit-and-individual-floor-normal-form",
+        "customer-attraction/cartesian-bank-individual-fractional-floor-counterfamily"
+      ],
+      "target_ids": [
+        "M-a77a00eae40f4e4b9704d6eeb123fe1e"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "每个整数m≥5；使用已证的完整Cartesian银行控制器及所有联合/再次偏离，旧客户复制L=m−1次，加入m个各B=m客户独立新瓣；根允许弱平局。",
+      "roles": {
+        "customer-attraction/fresh-private-petal-exit-and-individual-floor-normal-form": "新瓣在任意历史与真实孩子中提供恰B、不会被后继复用的退出；保证根和全旧节点的瓣偏离按同一个完整策略比较。",
+        "customer-attraction/cartesian-bank-individual-fractional-floor-counterfamily": "提供所有全旧历史的BASE/PUNISH/EXIT可信控制器、根每个旧行动收益m/(m−1)、proper旧节点收益至少2及旧客户/目录精确结构。",
+        "M-a77a00eae40f4e4b9704d6eeb123fe1e": "获得全m显式POST-PETAL完整SPE及客户、标签、根收益、W=OPT和严格FLOOR失败的整条反族。"
+      },
+      "explanation": "根规定E1。全旧proper历史保银行控制器；首次花瓣后永久POST-PETAL，当前及后继取最小未用经济标签/银行标签的旧pair，任意再次偏离后仍留该模式。深度t若已有瓣，过去旧银行种类至多t−1，未用银行至少m−t，经济也足，故全部剩余规定pair均独占3L，达任意旧主题裸收益上界且≥B，整个子树可信。全旧proper节点原规定≥2L≥B，全部旧偏离按原控制器保留；瓣偏离恰B。根每个旧行动在BASE中得L·m/(m−1)=m，新瓣也得B=m，规定E1是BR。实际覆盖B+3L(m−1)=3m²−5m+3。若一个m槽比较用r≤m−1旧主题，其覆盖≤3Lr+B(m−r)，随r增加且在r=m−1达到上述W；若r=m，最多L(3m−2)=W−1。因此精确OPT=W。客户总数L(3m−2)+mB=4m²−5m+2，主题m(m−1)+m=m²。根u1=m，OPT−2mu1=m²−5m+3>0（m≥5），PARTICIPATE及全前缀FLOOR在实际根失败。",
+      "scope": "真实不同单位客户、同人数扩目录、全有序历史完整SPE；策略全效率而非half反例。",
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定理/新私有花瓣的全历史退出与逐人门槛正规形--定理.md",
+          "sha256": "5d8d79f7ed6b2143791a63bebe6240aff360f3bd63854dcf778a3450c264abf2"
+        },
+        {
+          "path": "archives/customer-attraction/state/反例/笛卡尔银行目录的逐人分数门槛反族--反例.md",
+          "sha256": "46c7a8df14fb3dd858e4fc827e2de7f000966d49ac4cd9ef7bb2b05777957a80"
+        }
+      ],
+      "reviewed_by": "Boss6",
+      "review_note": "Fresh正式worker逐对象实读当前22core/7read的完整登记及主正文；本边承重证明直接复核，精确当前pins及引用SHA已核。未运行旧LP、BI、全树、随机或科学审计。Root串行原生绑定后发布；预审只作线索，不替本轮实读。",
+      "whole_result": "每个m≥5均有上述完整显式SPE：u1=m，W=OPT_m=3m²−5m+3，客户4m²−5m+2、主题m²，且OPT_m>2mu1。"
+    },
+    {
+      "edge_id": "boss6-cagff-r50-anchor-and-proper-witness-to-global-budget-obstruction",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "PM-1",
+        "PM-2"
+      ],
+      "target_ids": [
+        "PM-3"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "固定可见阶2的覆盖并集矩锥K_(2,P)，没有额外总客户质量坐标；每个r≥1，n=2r+1变量加anchor。每个真子目录可分别选择其非负有理客户实现。",
+      "roles": {
+        "PM-1": "给同一全目录锚行L在整个非负客户锥上的有效性。",
+        "PM-2": "给同一y的所有真子目录非负实现及L(y)=−r/(2r−1)<0。",
+        "PM-3": "分离L与全部真子目录完整对偶锥嵌入后的任意有限非负和。"
+      },
+      "explanation": "PM-1逐客户L(v_B)在不含anchor时为k(k−1)，含anchor时为floor(n²/4)−k(n−k)，均非负。PM-2的删变量实现用含anchor的均匀r子集，删anchor实现用r/r+1层的指定α,β；再投影得到每个真子目录A的y|A∈K_(2,A)。因此任意a_A∈K_(2,A)*嵌入后有a_A·y≥0，任意有限非负和c也有c·y≥0。同一个L却L·y<0，故L不属于此局部生成锥。两个来源保为一条ALL；未把PM-2的部分局部模型当同一全目录客户。",
+      "scope": "所有r、全部真子目录的完整二阶对偶及任意有限非负和；不涉及策略或half。",
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/障碍/覆盖矩锚预算与真子目录的全局缺口--障碍.md",
+          "sha256": "7c240893f753aa584260dacbb1060b38b63fb22aab1ead5e161d956acfa879d8"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/边际势预算与全局正矩原稿的精确证据层次--资源.md",
+          "sha256": "49466d60bed633f3856cfa6eb9da3de81fd2758537a1c16f580d9717d44b977e"
+        }
+      ],
+      "reviewed_by": "Boss6",
+      "review_note": "Fresh正式worker逐对象实读当前22core/7read的完整登记及主正文；本边承重证明直接复核，精确当前pins及引用SHA已核。未运行旧LP、BI、全树、随机或科学审计。Root串行原生绑定后发布；预审只作线索，不替本轮实读。",
+      "whole_result": "对PM-2每个r的完整目录，PM-1的同一L不在Σ_(A⊊P)K_(2,A)*的有限非负和锥C_loc中，正是PM-3完整结论。"
+    },
+    {
+      "edge_id": "boss6-cagff-r50-shared-gram-to-conditional-half-slot-route",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "customer-attraction/shared-menu-equal-price-gram-and-kkt-covariance"
+      ],
+      "target_ids": [
+        "M-490680a28551448da57bdad11e5c99a7"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "conditional",
+      "conditions": "固定原完整SPE σ及原删除菜单K=(1/m)Σ_i conv{L_i(A)}；选同一个真实共享鞍点(p*,L*)，用同次t、γ、I、D、G_KKT、Vcorr。额外假设该鞍点满足Vcorr≤D+I+G_KKT+γ/2；此金额及每输入存在可付鞍点均未被证明。",
+      "roles": {
+        "customer-attraction/shared-menu-equal-price-gram-and-kkt-covariance": "给真实TAN、非负KKT信用、C=Vcorr−G_KKT和W−mγ=I−C+D，并以同一个合法m−1槽L*给OPT≤(2m−1)γ。",
+        "M-490680a28551448da57bdad11e5c99a7": "精确定位half-slot的充分付款目标及其仍未付的存在/金额义务。"
+      },
+      "explanation": "共享Gram恒等式在相同σ/p*/L*上给C=Vcorr−G_KKT及W−mγ=I−C+D。额外所假不等式等价C≤D+I+γ/2，代入得W≥(m−1/2)γ。对任一合法最优m主题元组，逐客户1≤(a_x+L*_x)t_x，所有比较主题及L*的合法m−1份分数行动都用同次价格g_t≤γ，故OPT≤(2m−1)γ≤2W。没有把σ迁移到切线游戏，没有跨鞍点取信用，D只在当前query支持坐标计算，G_KKT仅用一次；PSD/等L1价本身不推出所假金额。",
+      "scope": "已完成的是条件充分路线及精确共同记账，不是每输入存在可付鞍点或一般half的证明。",
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/引理/共享真实菜单的等价格Gram核与KKT协方差分解--引理.md",
+          "sha256": "99885e1c8100f76f65fa44e20fd0fdf244115c21c9fe13b3b44923a0c65d62ef"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/共享真实菜单的等价格Gram核与KKT协方差分解--引理.md",
+          "sha256": "99885e1c8100f76f65fa44e20fd0fdf244115c21c9fe13b3b44923a0c65d62ef",
+          "section": "half-slot的准确充分目标"
+        }
+      ],
+      "reviewed_by": "Boss6",
+      "review_note": "Fresh正式worker逐对象实读当前22core/7read的完整登记及主正文；本边承重证明直接复核，精确当前pins及引用SHA已核。未运行旧LP、BI、全树、随机或科学审计。Root串行原生绑定后发布；预审只作线索，不替本轮实读。",
+      "contribution": {
+        "result": "同一个原菜单共享鞍点若满足HALF-SLOT付款，则由真实余额恒等式与同次静态价格界严格推出2W≥OPT_m；该不等式与C≤D+I+γ/2等价。",
+        "remaining": "仍须对每输入、每完整σ证明存在一个合法共享鞍点支付Vcorr≤D+I+G_KKT+γ/2；PSD、KKT与恒等式未给此金额。"
+      }
+    },
+    {
+      "edge_id": "boss6-cagff-r50-global-quadratic-row-to-star-nonrealizability",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "cag-quadratic-nonnegative-residual-full-catalog-coupling-and-local-transport-boundary"
+      ],
+      "target_ids": [
+        "customer-attraction/constant-center-full-tree-local-moment-half-tight-pseudofamily"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "m≥4，p=m+1，中心A和m叶；目标指定截断交集表t_A=1,t_i=2/m,t_Ai=1/(m−1)，不同叶交集及更高阶为0。仅比较目标中的共同非负客户不可实现部分。",
+      "roles": {
+        "cag-quadratic-nonnegative-residual-full-catalog-coupling-and-local-transport-boundary": "给同一全目录二次行Q=R_A在完整Boolean客户类型上的非负性及其全目录标签依赖。",
+        "customer-attraction/constant-center-full-tree-local-moment-half-tight-pseudofamily": "把Q在指定星形截断矩上求值得严格负，排除共同客户实现；其余tight/full-tree断言另有证明。"
+      },
+      "explanation": "目标的Q(z)=z_A−Σ_i z_Az_i+Σ_(i<j)z_iz_j正是来源的R_a（a=A）。逐类型中心位0给k(k−1)/2、位1给(k−1)(k−2)/2，故共同非负客户的Q矩必非负。星形t代入得Q(t)=1−m/(m−1)=−1/(m−1)<0，因此任何共同非负客户重数都不可能实现这个矩表。该结论只用二阶但跨全部m+1标签，清分母或添空客户不改变负值。来源关于任意次数真子目录非负分解失败与目标的局部实现边界一致，不把局部客户表粘成真实全局游戏。",
+      "scope": "仅支付全目录Q分离贡献；没有从源推出真实全树IC或half紧性。",
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/障碍/二次非负残差的全目录耦合与局部运输边界--障碍.md",
+          "sha256": "b0dad402f0d4b12c8a4e8fb3eb482b6d9a4920a02b0d0416935a411858e8bb14"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/全树恒中心的局部客户伪矩与二倍紧点--障碍.md",
+          "sha256": "9641fa81b55ac6a453ed6c21b6c9d168a7859b2f620da139f166b25b3799a7dd",
+          "section": "二次全目录分离与固定策略的乘子限制"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/全树恒中心的局部客户伪矩与二倍紧点--障碍.md",
+          "sha256": "9641fa81b55ac6a453ed6c21b6c9d168a7859b2f620da139f166b25b3799a7dd",
+          "section": "星形参数与全部局部实现"
+        }
+      ],
+      "reviewed_by": "Boss6",
+      "review_note": "Fresh正式worker逐对象实读当前22core/7read的完整登记及主正文；本边承重证明直接复核，精确当前pins及引用SHA已核。未运行旧LP、BI、全树、随机或科学审计。Root串行原生绑定后发布；预审只作线索，不替本轮实读。",
+      "contribution": {
+        "result": "同一个合法全目录非负二次行Q在目标星形点取−1/(m−1)，严格排除共同非负客户实现。",
+        "remaining": "完整目标另需≤m标签局部非负实现、恒中心全部有序IC、W=1/OPT=2及m≥5严格离轨时同策略同目标乘子推零；本边不替代这些步骤。"
+      }
+    },
+    {
+      "edge_id": "boss6-cagff-r50-root-menu-family-pays-broader-deleted-leaf-candidate",
+      "kind": "implies",
+      "status": "accepted",
+      "source_ids": [
+        "customer-attraction/three-theme-root-menu-strong-aggregate-counterfamily"
+      ],
+      "target_ids": [
+        "M-87678370a83d4763b7d40352c6bb4aea"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "unconditional",
+      "conditions": "每个m≥2使用来源三不同主题A=X∪Y、B=X∪{b}、C=Y∪{c}及其同一完整σ；目标菜单包含零偏离实际叶并允许删除任意位置。查询前固定同一个背景分布。",
+      "roles": {
+        "customer-attraction/three-theme-root-menu-strong-aggregate-counterfamily": "提供合法全m完整SPE、actual叶A^(m−1)C及W=2m+1。",
+        "M-87678370a83d4763b7d40352c6bb4aea": "其较广的至多一次真实偏离叶删任意位菜单，包含本例精确共同付款所需的额外列。"
+      },
+      "explanation": "目标Bσ包含零偏离actual叶A^(m−1)C，删除final C得到合法m−1槽背景A^(m−1)。取一个确定分布Q集中在此列，它在全部纯query之前固定。对A，X/Y每客户竞争负载m−1，收益m/m+m/m=2；对B，X给m/m、私客b给1，同样2；C对称也2。因此所有纯query同时≤2<W/m=2+1/m，总聚合余量W−2m=1。来源根尾菜单只有A^(m−2)C和A^(m−2)B，无法使用本列，故其强预算失败与本更广候选在此族成立完全相容。",
+      "scope": "M876的每m≥2正面实例族贡献；不证明其任意输入/任意σ全称，也不反驳广菜单候选。",
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/反例/三主题真实根菜单的强聚合付款反族--反例.md",
+          "sha256": "5e0b9822439df52ae7125f5771f9f176218222dbf4689a3e8bd294d3ab231c1b"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/八客户强iid精确证书与聚合入口的版本合同--资源.md",
+          "sha256": "c4b73f1f42f5acaa2a8d9a208f257705e607ab79cb0b6218a28fa42a7a64a90f",
+          "section": "聚合README的八项保存点及后继状态"
+        }
+      ],
+      "reviewed_by": "Boss6",
+      "review_note": "Fresh正式worker逐对象实读当前22core/7read的完整登记及主正文；本边承重证明直接复核，精确当前pins及引用SHA已核。未运行旧LP、BI、全树、随机或科学审计。Root串行原生绑定后发布；预审只作线索，不替本轮实读。",
+      "contribution": {
+        "result": "在来源每m≥2的完整三主题SPE中，Q=δ_(A^(m−1))支持于目标Bσ，同时把三个纯query压为2<W/m，准确修复窄根尾支持的失败。",
+        "remaining": "任意共同目录和任意完整σ是否都存在这样的共同Q，仍是M876的开放全称义务。"
+      }
+    },
+    {
+      "edge_id": "boss6-cagff-r50-transport-implements-universal-payoff-arcs",
+      "kind": "implements",
+      "status": "accepted",
+      "source_ids": [
+        "M-47c853fbc6c84223b683f6fcb277610b"
+      ],
+      "target_ids": [
+        "cag-full-tree-universal-payoff-arcs-and-finite-potential-review"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "context",
+      "conditions": "合法固定正人数n、有限非空标签P、完整有序动作表；源码PayoffGraph(monotone=True)，仅比较同总人数终局状态。",
+      "roles": {
+        "M-47c853fbc6c84223b683f6fcb277610b": "程序先构造全部真实有序IC，再按准确条件枚举同标签monotone弧，最后合完全相同收益端点。",
+        "cag-full-tree-universal-payoff-arcs-and-finite-potential-review": "提供这些弧恰为全部普遍无缩放二状态收益比较的完整iff；该必要性本身仍由解析证明承担。"
+      },
+      "explanation": "核心给F_(q,a)≥F_(r,a)对所有非负客户成立 iff r_a≥q_a且r_b≤q_b(b≠a)；跨标签无普遍弧由singleton分离。原码在q_a≥r_a且q_c≤r_c(c≠a)时加(q,a)→(r,a)，其head−tail正是F_(r,a)−F_(q,a)，将核心左右状态互换后逐项一致。terminals先按每个有序h沿同σ求真实完成，随后对tail/head去重；不先商策略历史。故monotone=True准确实现全部非平凡普遍同题弧。M47的守恒只是条件充分证书，不承诺每个σ/query存在流，亦未由这个比较器取得全层效率E或非负客户表示。",
+      "scope": "实现关系及原声明follow-up的精确闭合；context不作为普遍流可行或福利逻辑支持。",
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/程序/全有序收益状态弧与势投影的运输求解器--程序.md",
+          "sha256": "2d4f0359039f36b94897bd26110a7b0b44a59ba667e023011af3347267993902"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/全树收益运输的普遍弧与有限势反例范围--审查.md",
+          "sha256": "b766b33297796c9f34de3f55e84d598845a5967992a6361416cdb80f4e85f34d"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/anonymous-potential-five-boss3/original/payoff_state_flow.py",
+          "sha256": "671cdbd2a82d605120f3b638edfbfa60d8198b032c5bf0d0b212c250088ec063"
+        }
+      ],
+      "reviewed_by": "Boss6",
+      "review_note": "Fresh正式worker逐对象实读当前22core/7read的完整登记及主正文；本边承重证明直接复核，精确当前pins及引用SHA已核。未运行旧LP、BI、全树、随机或科学审计。Root串行原生绑定后发布；预审只作线索，不替本轮实读。"
+    },
+    {
+      "edge_id": "boss6-cagff-r50-singleton-background-checks-balance-failure-scope",
+      "kind": "checks",
+      "status": "accepted",
+      "source_ids": [
+        "customer-attraction/singleton-generated-background-global-deficit"
+      ],
+      "target_ids": [
+        "M-21108b01d92540379cb7c7227ec6ade3"
+      ],
+      "premises_mode": "all",
+      "relation_mode": "context",
+      "conditions": "固定52客户40标签、34个合法单客户过去动作、余两人完整41节点尾局；背景生成动作也保留在所有后继可选动作中。",
+      "roles": {
+        "customer-attraction/singleton-generated-background-global-deficit": "给合法背景、全40行动完整尾局及P=17,Δ=0,O2=18的精确证书。",
+        "M-21108b01d92540379cb7c7227ec6ade3": "其定义与首步恒等式在此实例仍成立；被否的是额外G≥0背景加强而非恒等式或根half。"
+      },
+      "explanation": "把来源同一实际尾AB的三个量逐项映到目标G2=P2+Δ2−O2(b)，准确得G2=17+0−18=−1。来源全部40末位行动由6×6主表及两类singleton公式涵盖，根40个真实偏离也均核；它确实在合法背景后的完整尾局成立。因Δ=0，任意固定λ的P+λΔ≥O2同样失败。目标G=Gchild+L只是同路径代数恒等式，负G不与之冲突；来源未给36人根实际到达，不可挪用另一个四人六标签证书的可达性或离轨平局。",
+      "scope": "准确检验目标余额候选的合法背景失败边界，context；不refutes已证identity。",
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/反例/单客户主题生成的合法背景亏损--反例.md",
+          "sha256": "d351f7724328ef84d3ef331fb463f6f660e48eb45760c37e5a76198d119005e2"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/背景新增覆盖余额与首步分解--引理.md",
+          "sha256": "46a4cdc87ee03067d28d70ecffda8ced7949c1988754b81fb1a8dbdfff731d9b"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/四十标签背景反例的完整行动核验--计算.md",
+          "sha256": "b30a358c67644f53765b9df956f33429b18a235fa59560663414e08b49179a0e"
+        }
+      ],
+      "reviewed_by": "Boss6",
+      "review_note": "Fresh正式worker逐对象实读当前22core/7read的完整登记及主正文；本边承重证明直接复核，精确当前pins及引用SHA已核。未运行旧LP、BI、全树、随机或科学审计。Root串行原生绑定后发布；预审只作线索，不替本轮实读。"
+    }
+  ],
+  "canonical_reuse": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-3be0f02a605fe495/star-scalar-certifies-tight-witness-ic.json",
+      "sha256": "732e2e31d7ebb469c6b831932c59624c47fd59412951ced41252accae027d8b4",
+      "reviewed_edge_id": "cag-3be0-star-scalar-certifies-tight-witness-ic",
+      "endpoint_pins": {
+        "M-2e26c141730840938b47955082496450": "0922e73b7bc4b14586c5a8ec9f5744ed8be738dfb93313e736fa36ea95995565",
+        "customer-attraction/constant-center-full-tree-local-moment-half-tight-pseudofamily": "26524ec45185b31d822db96d7d38fd94fbd155131b405b7e73cc774b629fe501"
+      },
+      "scope": "完整实读后复用同关系同pins，只付IC及严格性贡献，不付整个星形目标。"
+    }
+  ],
+  "mathematical_comparisons_without_new_edges": {
+    "PM_and_star": "令y_i=t_i,y_ij=t_i+t_j−t_ij，锚行P_n=b_n t_z+2Σt_ij−(n−1)Σt_zi。n3恰P3=2Q；星形m≥4主tight点通过所有锚：center-anchor/k叶为b_k−k(k−1)/(m−1)≥0；leaf-anchor且不含center为b_k a，含center为b_k a+(k−1)v≥0。Q仍−1/(m−1)。PM2一般r≥2的叶交集c>0，非星形，不能添高阶0冒全m局部可实现。",
+    "Q_and_PM3": "星形所有真子目录局部真及Q<0亦可分离Q_cov与全部真子目录二阶对偶和，但这不是PM3指定的L/PM2全参数族；不把平行机制冒目标整条implies。",
+    "all_boolean_Farkas": "M37的全Boolean正性与固定完整σ Farkas只给证书存在充要式，未给所有σ的λ；PM/星形假矩不是共同非负客户。次数2与依赖标签数分开。",
+    "finite_potential_flow": "核心body保两84点的成熟有限scope；本包不新增弱/强点端点。若以后正式写固定43节点σ、π=(4,3,5,1,1,4)/18势流不可行，单个精确点+M47可用unitSC逐步生成全部同层弧及负缺口分离；两点各自独立，不并作共同必要ALL。当前泛follow-up已实现闭合，无需为它再发3B。",
+    "balance_singletons": "合法singleton背景的P17/Δ0/O18是背景加强失败，主G恒等式及根G=2W−OPT均不受反驳；不借另一个6标签/4人σ的actual可达性。",
+    "different_static_domains": "34客户整数t仿射并目录、H2新权重三竞争槽、六客户五标签纯静态鞍点、三主题真实菜单及自由分数银行各守不同人数/背景/σ，不因同是安全值移植。",
+    "proof_vs_execution": "所有29完整登记及主body实读；大数组/旧代码未逐行读者在ledger标SHA-only，不报本轮成功。无新科学入口。"
+  },
+  "source_error_actions": {
+    "new_errors_found": false,
+    "changes_requested": [],
+    "note": "当前源已明确保存原直接证明失实句的最小修复、历史OPEN更正及凸化m4/m5运行断点；本轮无新core改版需求。"
+  },
+  "followup_resolution": "原ARCS/FLOW对经完整实读及精确实现比较闭合；in-packet STAR/SCALAR按canonical贡献复用，不塞closed_overlaps。",
+  "native_install_handoff": "Root安装8新edge及支持资产，逐新edge原生edge-bind --write/check，重算变更edge/preview/manifest/receipt的SHA后checkpoint pushed/done；本staging hash不冒安装后最终hash。"
+}

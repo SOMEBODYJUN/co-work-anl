@@ -1,0 +1,44 @@
+{
+  "edge_id": "um-87f678d9-ordered-slots-pay-narrow-config-bound",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding"
+  ],
+  "target_ids": [
+    "M-92b453baa93f4791887723352fd55a41"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "全部有限端时间在同一[γ,3γ]、γ>0，给定CONFIG(T)点；机器行降序按处理时间造ST槽，成本置0。",
+  "roles": {
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding": "提供逐行ℓ_i+r_i界和按加工值排序的单位槽匹配。",
+    "M-92b453baa93f4791887723352fd55a41": "以窄值域CONFIG行的前缀约束获得两段11/6保证。"
+  },
+  "explanation": "当T≥18γ/5，投影后ℓ_i≤T,r_i≤3γ，故负载≤11T/6。否则T<4γ，每个配置至多三件，时间>T/2与>T/3的前缀分别至多一、两件。凸组合保持整数前缀容量，所以相应分数区间只占前一或前二个单位槽，匹配后各前缀仍至多一、两件，总数≤三，且每件≤T。降序填零后实际前三件各≤T,T/2,T/3，相加给11T/6。三个前缀约束可直接置入剪枝指派LP，用其可行点作同一舍入，无需求完整CONFIG列。",
+  "scope": "同一窄值域的任意可行CONFIG点；直接多项式LP只用于三个可分离前缀约束。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+      "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+      "section": "2. 有序槽与最小费用匹配：完整证明"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/配置LP在图平衡及不相关机中的间隙--资源.md",
+      "sha256": "0fcfc44edf52bb6f1d0bf459c9847540342f55c9f4d681588f32670d1c64de26",
+      "section": "窄值域的11/6界：Theorem 8"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "核严格大于门槛的前缀和等号边界；高阈值使用随T变化的T+3γ，低阈值使用槽构造而非黑盒加性界。",
+  "whole_result": "在[γ,3γ]窄值域，由给定CONFIG(T)点可多项式输出峰≤11T/6，且三个前缀约束加剪枝指派LP足以实现同一界。",
+  "endpoint_pins": {
+    "M-92b453baa93f4791887723352fd55a41": "be713c622a0c478558ccbf34209672d2a83b89f900913f9eb837f09b502f4917",
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding": "c12cff11f8d9d634441f752ebe101222ec0faba1d570a402caf2618f68edb356"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+    "archives/unrelated-machines/state/资源/配置LP在图平衡及不相关机中的间隙--资源.md": "0fcfc44edf52bb6f1d0bf459c9847540342f55c9f4d681588f32670d1c64de26"
+  },
+  "review_digest": "1b05676e284e00f9381df285dd6786157d6bf208698d632f33e3be88b1f7d151"
+}

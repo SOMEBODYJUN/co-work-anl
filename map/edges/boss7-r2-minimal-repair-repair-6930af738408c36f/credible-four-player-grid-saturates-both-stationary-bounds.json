@@ -1,0 +1,64 @@
+{
+  "edge_id": "ca-four-rook-credible-grid-saturates-both-stationary-bounds",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/four-player-rook-grid-exact-root-regimes",
+    "M-46712a7278244313a7802a857065b4e3"
+  ],
+  "target_ids": [
+    "WS-STATIONARY-SCALAR-ENVELOPE-v1",
+    "M-bed601917aa54ca19d391ab59c6acbd7"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "只取r=4、零背景、三行两列全部六主题、每行4客户每列3客户的18单位客户目录。第一来源提供同一份完整纯SPE在全部六个强制根的可信回复；第二来源提供同一六顶点车图菜单的驻留几何和逐客户等号。两个目标均只获得该专例的真实SPE锐性贡献，不声称由一个有限专例推出其全参数不等式。",
+  "roles": {
+    "customer-attraction/four-player-rook-grid-exact-root-regimes": "在(4,3)处支付此前合法菜单之外的全历史IC，并给同一完整策略的全部六根真实叶。",
+    "M-46712a7278244313a7802a857065b4e3": "将这些叶识别为r4正则车图菜单，给均匀唯一驻留、S=0和逐客户等号条件。",
+    "WS-STATIONARY-SCALAR-ENVELOPE-v1": "其r4,b0聚合系数M₄=6及含返还逐客户包络在真正完整SPE内取等。",
+    "M-bed601917aa54ca19d391ab59c6acbd7": "其r4根/尾系数3/5在同一个真正完整SPE的全部根/尾统一界下取等。"
+  },
+  "explanation": "在第一来源取R=4,C=3，R≥C/3保证一份完整策略的每个根(i,j)后都是另两行的同列标签，再是同行的另一列标签。第二来源r=4时a=2,c=3,Q_R=4,Q_C=3，恰同一目录及同一后继多重集。每根有三个不同邻居，每个标签入度、出度均3，正则连通无向车图不可约，故均匀π=1/6是唯一驻留概率；尾顺序不改变此路由而完整SPE可信性由第一来源单独支付。所有真实根收益3，每个真实尾收益5，故驻留总量D=3、P=18、P−D=15。每个真实后继选完整归属主题，逐客户S_x=0。对任一行块客户，在属于该客户的根标签上I=1,K=1；不属于时I=0,K=1。对任一列块客户，在内部根I=1,K=2；外部仍I=0,K=1。n=3时K=1,2都使K(3−K)=2=floor(9/4)，且所有外部K=1，故点态式逐客户等号；Σ_x P_x=6Σ_x D_x=18。于是若把WS在r4,b0的普遍倍数6改小，这个真正完整SPE已违反它，不仅是抽象路由见证。另一方面，真实根统一上界u=3、真实每尾统一下界t=5均在所有六枝达到，M₄−1=5，故(r−1)t=3·5=P−D=(M₄−1)D=(M₄−1)u，且u=(3/5)t。M-bed在r4的条件根/尾比例因而在同一完整SPE内锐；把3/5提高也会失败。两目标各自获得一个局部结论，未用‘只否定合取’冒称多个目标被反驳。一般WS→M-bed条件推导直接由本边已列证据《驻留根菜单的最优标量包络与尾收益界》“对真实尾收益的条件推论”的(T)承担：任意r≥2，若同一真实菜单的所有根枝根收益≤u且每名后继收益≥t≥0，则正文(G)给(r−1)t≤P−D≤(M_r−1)D≤(M_r−1)u，故u≥(r−1)t/(M_r−1)。完整SPE根IC可提供根上界，尾下界仍需独立依据；合法菜单的代数等号已有ca-causal-closure-r34-grid-sharp-tail，本边只接上新登记全参数定理所给的真实SPE联合锐性来源。",
+  "scope": "两个驻留界在r=4、b=0真实完整SPE子域的同一联合锐性见证。r≥5原精确网格的末位偏离依然成立；没有证明各人数都有真实SPE锐例，也不支持任意正背景或一般θ/v/t首位保底。该见证W=OPT₄=18，未反驳福利近似目标。",
+  "contribution": {
+    "result": "同一个18客户、四人、六标签完整纯SPE在全部六个强制根同时给WS的逐客户S_x=0、P_x=6D_x及聚合P/D=6，并给M-bed的u/t=3/5；两系数在r4,b0真实SPE域均不可改善。",
+    "remaining": "WS目标其余r、b、路由的普遍不等式及全参数锐性仍由其独立证明承担；M-bed的一般条件推导由已列正文(T)独立承担，本边的专例只支付r4,b0真实SPE锐性，其他人数/背景的真实SPE锐性仍未由此推出。r≥5原网格不能作完整SPE见证。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/四人车图的全参数最小根收益与可信锐菜单--定理.md",
+      "sha256": "4f61d223777a05bd89f6751ff83b5a8ac61d06f6863e8344b2a95c566d1b73ba",
+      "section": "两份全历史达界策略"
+    },
+    {
+      "path": "archives/customer-attraction/state/构造/驻留标量锐菜单的完整策略边界--构造.md",
+      "sha256": "fd7d5d80e548da277f09d0da6147b12bf7986f9ec7a409004b1d1a875604a556",
+      "section": "合法网格使全部尾收益同时取等"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/驻留根菜单的最优标量包络与尾收益界--引理.md",
+      "sha256": "db0c124239fe7796f7e2ead6afae5a0828cca10baff0d214dbd61df15bfc25de",
+      "section": "最优逐客户包络及点态证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/驻留根菜单的最优标量包络与尾收益界--引理.md",
+      "sha256": "db0c124239fe7796f7e2ead6afae5a0828cca10baff0d214dbd61df15bfc25de",
+      "section": "对真实尾收益的条件推论"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "Boss7（r2-rook-identity-repair）本次完整实读两来源与两目标对应正文/必要证据，以及三条旧边、旧收据和本次定向修订材料；分别核可信策略、均匀驻留、I/K两类、S返还及同一策略全部根/每尾量词。一般包络到比例直接使用本边已列证据的正文(T)，其根/尾统一界条件与本边r4,b0锐性贡献已分别核对。旧review_note所记worker定义级有理回归47个完整比较符号室/端点及两份策略全节点检查，属于原Boss5/four-rook-worker的历史执行记录，连同Boss5独立符号复核予以继承；Boss7本次未重跑该回归、策略检查或任何科学代码。既有grid-r4-credible独立有限证书与解析策略一致的比较结论沿用原Boss5收据；普遍性和精准作用范围由已列正文及本边显示的推导承担。",
+  "endpoint_pins": {
+    "M-46712a7278244313a7802a857065b4e3": "cfe72405e5b6f06e911c5c469e7ed1452b4386e70ac3141639244d9e8383c831",
+    "M-bed601917aa54ca19d391ab59c6acbd7": "b363aa0c9c6286ea0359806fd6b5ab857a1082e56747356437c3d085447efbfc",
+    "WS-STATIONARY-SCALAR-ENVELOPE-v1": "27eaff9b3d69dd4c07dcac485abebd5ad191e1f2c0b1318d486f69041edbc4c0",
+    "customer-attraction/four-player-rook-grid-exact-root-regimes": "0954c7578a42cc8c5129d5c13ddea64ae827a62e8f76fd22c2af89759be5bc05"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/四人车图的全参数最小根收益与可信锐菜单--定理.md": "4f61d223777a05bd89f6751ff83b5a8ac61d06f6863e8344b2a95c566d1b73ba",
+    "archives/customer-attraction/state/构造/驻留标量锐菜单的完整策略边界--构造.md": "fd7d5d80e548da277f09d0da6147b12bf7986f9ec7a409004b1d1a875604a556",
+    "archives/customer-attraction/state/引理/驻留根菜单的最优标量包络与尾收益界--引理.md": "db0c124239fe7796f7e2ead6afae5a0828cca10baff0d214dbd61df15bfc25de"
+  },
+  "review_digest": "3ecdfb46569e39ab61ae89158bd9db57b4e79ed55936a10253d06972dc169d96"
+}

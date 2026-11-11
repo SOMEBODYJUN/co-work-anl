@@ -1,0 +1,42 @@
+{
+  "edge_id": "cag-9c9f-r04-full-menus-prove-two-action-compatibility",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "M-264b1b9fbb9c49b389077fa940834d03"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限整数客户/合法固定过去k，r≥2；pay=L·U，全部R_z和H_z精确；a,b有序且可相同，任意完整有序历史平局保留。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "全集必要充分递推及互不相交有序子树的独立实现。",
+    "M-264b1b9fbb9c49b389077fa940834d03": "以两层阈值锁定同一策略有序a,b及终局，并精确最小化首对和。"
+  },
+  "explanation": "1. CA-EXACT的必要、充分及非空归纳给每个R_z为全部完整子SPE终局；合法固定过去k只平移总计数，pay=L·U以同一正整数L缩放各层阈值。\n\n2. 任一实现a,b,q_i的完整策略限制到两个真实孩子，给i∈R0∩R_ea∩R_(ea+eb)及两条阈值不等式，所以条件必要。\n\n3. 反向先在二行动孩子实现q_i。第二层指定b，其余每个有序孩子用CA-EXACT充分性中达到当前偏离收益最小值的子SPE，H_ea门槛保证b最优；根指定a并以H0同法填满其余孩子。\n\n4. 不同有序孩子后代互不相交，故所有子策略能同时拼合，同计数历史只缓存集合。每个合格tuple有完整实现，每个完整实现给合格tuple，遍历有序a,b（允许相等）和全部i的首对和最低值恰为全策略最低值。CA-CREDIBLE另有全策略支持保证，但本存在实现及最小化结论不需此更强性质。",
+  "scope": "数学判据完整；实际实现int64仅在m≤6,p≤6,w≤100等已界定无溢出域成立，任意规模需任意精度。报告并未保存完整树；若要证书按菜单展开。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/给定前缀首两人安全值的完整终局菜单探针--资源.md",
+      "sha256": "1aafb6523e4827b9a2a661957072b4fb355540835b24e058effe82bc1f66584b"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Round55正式worker已实读当前端点完整合同、所列正文承重证明并重构R04。共同输入、全有序真实IC、静态槽数及量词逐项核对；范围以whole_result所写完整if定理或完整目标句。",
+  "whole_result": "存在同一完整子SPE以a,b开头且到q_i，当且仅当i∈R0∩R_ea∩R_(ea+eb)、pay(q_i,a)≥H0、pay(q_i,b)≥H_ea；遍历全部合格tuple的首对和最低值恰为全部完整子SPE首对最低值。",
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "M-264b1b9fbb9c49b389077fa940834d03": "79b6d6815cf0eb018e03893781b5da26f57f61e2c3cbe6ab596a1eb337c28118"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/资源/给定前缀首两人安全值的完整终局菜单探针--资源.md": "1aafb6523e4827b9a2a661957072b4fb355540835b24e058effe82bc1f66584b"
+  },
+  "review_digest": "d54aa3d180ba2af7e8f947245bd31a86bb08b3a41ff7b706215565a998a679b2"
+}

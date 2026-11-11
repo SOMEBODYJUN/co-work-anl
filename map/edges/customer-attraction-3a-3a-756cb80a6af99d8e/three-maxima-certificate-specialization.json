@@ -1,0 +1,45 @@
+{
+  "edge_id": "boss7-ca-756cb8-three-maxima-certificate-specialization",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-d1c5cd8b6fbd48d485e1dbcad0ed9588"
+  ],
+  "target_ids": [
+    "customer-attraction/static-seat-incidence-weight-certificate"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "仅s=3、n≥2；a_j为真实核心外席位严格超阈值数加1，1≤a_j≤n且A=Σa_j≤n+2。保持该真实a，不从规范化极值重算。",
+  "roles": {
+    "M-d1c5cd8b6fbd48d485e1dbcad0ed9588": "给三极大全部私有与三对约束的精确最小总权重S及达到点。",
+    "customer-attraction/static-seat-incidence-weight-certificate": "获得通用incidence证书在s3的显式可行权重、支付常数和U≤2W−c子情形。"
+  },
+  "explanation": "令S=max{A,n+max a,3n/2}≤2n。精确LP定理构造y_j∈[a_j,S−n]且Σy=S，于是所有私有y_j≥a_j和所有三对y_j+y_k≥n均成立。三极大时每个核心外非私有客户的incidence只能是一个两元素对，故这些更强的全部约束支付真实出现的每个incidence，即使某块为空亦可用。逐客户在Σ_j y_jg_j(a_j)中，私有系数y_j/a_j≥1、共享系数(y_j+y_k)/n≥1；核心已先扣，不再加入。由g_j(a_j)≤ν得U−c≤Sν≤2nν；若再接通用证书已证的全历史静态保底W−c≥nν，便得OPT≤U≤c+(S/n)(W−c)≤2W−c。ν0时不除ν，直接得U=c。匹配(N)极值只认证固定a辅助LP最优，不认证三真实极大覆盖、同a自洽或SPE福利锐性。",
+  "scope": "局部贡献仅三极大显式y及残余支付；不是任意s的统一2n解。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/极大关联的静态席位权重证书--引理.md",
+      "sha256": "362545bfb9c2c6b848c88c37de166ed0a3512626326f659254d8f3b3611176e6"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/三极大静态席位精确审计--计算.md",
+      "sha256": "e8fa0c8ac418ae05a33f7083db21cd08d3a745260d48ab9e4918d497f6abf31a"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "本包worker逐项实读本边所列正文、模型、登记陈述和异议，复核目标量词及实际所得关系；复用成熟解析证明，不重跑原实验。本边只断言所写局部贡献，remaining保留目标其余内容。",
+  "contribution": {
+    "result": "对真实三极大阈值参数可显式取Σy=S=max{Σa,n+max a,3n/2}≤2n，满足通用证书全部真实私有/核心外共享约束，并给U−c≤Sν；结合已有W≥c+nν得OPT≤c+(S/n)(W−c)≤2W−c。",
+    "remaining": "目标一般incidence证书还包括任意s≥2的逐客户充分条件和全有序历史superset保底W≥c+nν。此边不从s3推任意s存在Σy≤2n，也不证明辅助(N)极值可实现真实SPE福利锐性。"
+  },
+  "endpoint_pins": {
+    "M-d1c5cd8b6fbd48d485e1dbcad0ed9588": "4dc05dd9dfa881f1769347a52e28ad49077aa874e0278be9246a6cf5fe9f143e",
+    "customer-attraction/static-seat-incidence-weight-certificate": "4a988c14c99ca7b148b02975f27727330355e7782d4c86dd32df1a8929216eac"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/极大关联的静态席位权重证书--引理.md": "362545bfb9c2c6b848c88c37de166ed0a3512626326f659254d8f3b3611176e6",
+    "archives/customer-attraction/state/计算/三极大静态席位精确审计--计算.md": "e8fa0c8ac418ae05a33f7083db21cd08d3a745260d48ab9e4918d497f6abf31a"
+  },
+  "review_digest": "5ba58ca376a91f36ed3b5888094a62a7d61337615e72ec382851152080775559"
+}

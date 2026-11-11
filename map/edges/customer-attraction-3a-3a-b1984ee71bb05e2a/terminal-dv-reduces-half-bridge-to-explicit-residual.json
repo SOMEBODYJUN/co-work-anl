@@ -1,0 +1,53 @@
+{
+  "edge_id": "boss6-cagb198-r51-terminal-dv-reduces-half-bridge-to-explicit-residual",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/true-terminal-demand-law-exact-error-transfer-and-insertion-potential-gap",
+    "customer-attraction/shared-menu-equal-price-gram-and-kkt-covariance"
+  ],
+  "target_ids": [
+    "M-a616bdbe5d39474482cc254915474251"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定m≥2、同一原完整sigma及一个原K真正最优鞍点(p*,L*)。i=m−1为实际倒二行，beta为该行同一个真实实际前缀；iid A,A′均用p*、全部误差用同一t。",
+  "roles": {
+    "customer-attraction/true-terminal-demand-law-exact-error-transfer-and-insertion-potential-gap": "给真实末位whole-IC的精确DEMAND/SWAP/DV，含r_beta回复差、cross误差和Gamma。",
+    "customer-attraction/shared-menu-equal-price-gram-and-kkt-covariance": "给C=Σ_k Cov_k−G_KKT和同次BAL/D/I，保所有早期行。",
+    "M-a616bdbe5d39474482cc254915474251": "得到其金额谓词在每个固定鞍点上的精确剩债归约，尚未付该债或存在见证。"
+  },
+  "explanation": "记P=E_A[r_beta(B(A))−r_beta(A)]，X=E_(A,A′) E^t_(B(A′))(prefix,A,B(A′))≥0，J=E Gamma(A,A′)≥0。DV在同一实际倒二行给Cov_i=D_i+P−X−J，其中D_i为当前query误差而非follower own误差。Gram给C=Σ_k Cov_k−G。代入后，C≤I+D+gamma/2恰等价Σ_(k≠i)Cov_k+P≤(D−D_i)+I+G+gamma/2+X+J。两方向只加减同次量，故是无条件成立的局部归约。要得到A，仍须每输入每sigma存在一个最优鞍点满足右述共同金额；P无已知符号，早期真实后继相关项仍在。X与J只按其实际负号使用；互斥query叶的D/X没有合并成actual单叶银行，插入势单调性也未提供额外金额。",
+  "scope": "接受的是精确归约本身；目标存在共同付款仍open。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/真实末位需求律的精确误差转移与插入势差--引理.md",
+      "sha256": "952d12e576d9e4a851b4decfc2147a89d54d72e26c99208ea713cdbda6b2ebe0"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/共享真实菜单的等价格Gram核与KKT协方差分解--引理.md",
+      "sha256": "99885e1c8100f76f65fa44e20fd0fdf244115c21c9fe13b3b44923a0c65d62ef"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/第十一轮共享负载的凸信用与共同付款停界--资源.md",
+      "sha256": "c0fe71706655f53c781363a817f3e50e3dd0939c1d959ecd10a7c7d15de9280f"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Fresh正式worker实读当前核心、正式追加依赖的完整合同及承重正文；本文逐式核共同模型、同一sigma和同次叶/鞍点。成熟证书仅按精确合同阅读复用，未运行LP、SPE、IC、DP或原数学入口。Root原生绑定与发布另行完成。",
+  "contribution": {
+    "result": "在每个固定合法最优鞍点，gamma/2付款精确等价 Σ_(k≠m−1)Cov_k+E[r_beta(B)−r_beta(A)] ≤ (D−D_(m−1))+I+G_KKT+gamma/2+E E_cross+E Gamma。",
+    "remaining": "须对每输入、每完整sigma证明存在一个同次最优鞍点满足该共同金额；仍须付r_beta差及其它真实响应行，不能以互斥叶误差或单actual银行替代。"
+  },
+  "endpoint_pins": {
+    "M-a616bdbe5d39474482cc254915474251": "3d354490c7c0fce70e05e10bfe9aed1dbc6d6bf6da6da89f8863d1a51394f223",
+    "customer-attraction/shared-menu-equal-price-gram-and-kkt-covariance": "f3a618c3c356f720591e27ce1094ed7aa5ec2ddbdf2345556094989969e86eef",
+    "customer-attraction/true-terminal-demand-law-exact-error-transfer-and-insertion-potential-gap": "8602d5924e412365c6e074d4d61ca849945dcd66bd959f9fd20073a1abd6ace7"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/真实末位需求律的精确误差转移与插入势差--引理.md": "952d12e576d9e4a851b4decfc2147a89d54d72e26c99208ea713cdbda6b2ebe0",
+    "archives/customer-attraction/state/引理/共享真实菜单的等价格Gram核与KKT协方差分解--引理.md": "99885e1c8100f76f65fa44e20fd0fdf244115c21c9fe13b3b44923a0c65d62ef",
+    "archives/customer-attraction/state/资源/第十一轮共享负载的凸信用与共同付款停界--资源.md": "c0fe71706655f53c781363a817f3e50e3dd0939c1d959ecd10a7c7d15de9280f"
+  },
+  "review_digest": "1766fd7e1724eab56c6884ff057456027d4ac71b8244e1fa8bdf40c375f109f7"
+}

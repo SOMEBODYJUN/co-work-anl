@@ -1,0 +1,48 @@
+{
+  "edge_id": "ca-7271-hi-public-core-full-efficiency",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "B7-INTERVAL-CEILING-RELAXATION-v1"
+  ],
+  "target_ids": [
+    "M-33f09cf9507e446fa2b1612db659d86d"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "原有限单位客户、单位提供者、有限非空共同标签目录、完整有序历史纯SPE模型；允许重复及全部离轨弱平局。额外固定：玩家数m≥1、恰m个主题；每题覆盖同一组K≥0整数名公共客户及该题独有的一名私客；无其它标签或额外覆盖类型；完全不被目录覆盖的客户不影响结论。所有合法前缀均比较，终局总玩家数始终为m。",
+  "roles": {
+    "B7-INTERVAL-CEILING-RELAXATION-v1": "提供HI的L/E/保整孩子/G递推及全部完整SPE终局包含和剩余利润下界。",
+    "M-33f09cf9507e446fa2b1612db659d86d": "在所列额外目录形状下，确定每一合法前缀的精确fresh终局集、L/G和空根全效率。"
+  },
+  "explanation": "固定任意合法计数前缀b、r=m−|b|。r=0时H={b},G=0，不定义非终局floor。对r>0归纳：此前用过的不同题至多|b|，故至少r个fresh。无论路径，公共K名客户在最终均由全部m人覆盖，每位的公共收入恰K/m。当前选fresh，归纳孩子中后人只选其它fresh，故当前终局收益恒K/m+1；当前选旧题a，孩子仍只选fresh，当前收益恒K/m+1/(b_a+1)<K/m+1。于是所有动作孩子最低值的max为K/m+1，孩子max达到该值的动作恰fresh，HI父集合恰由r个互异fresh组成，G按递推为r(K/m+1)。对有序历史同时作同一归纳：每个fresh动作都可独立给所有离轨孩子指定fresh后继，当前最优性处处成立；反向HI包含性排除所有SPE旧题动作，故可实现集与HI相同。空根选全m个私客且公共客户均覆盖，W=G=OPT_m=K+m。非空背景早已重复时只得到未来r人利润公式，不能据此补齐此前遗漏私客。",
+  "scope": "全整数m≥1,K≥0及上述恰m题目录；每合法有序前缀/全部完整子SPE，根全效率仅取b=0。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/区间终局剪枝的上界比较与全效率目录类--定理.md",
+      "sha256": "398ae2b6a7151c5f4a182fb7072939792b25e7e84f22f85d91fdf0d1e2501d16",
+      "section": "两种准确递归、坐标压缩与合法范围"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/区间终局剪枝的上界比较与全效率目录类--定理.md",
+      "sha256": "398ae2b6a7151c5f4a182fb7072939792b25e7e84f22f85d91fdf0d1e2501d16",
+      "section": "公共核加私有单例：全参数精确"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "实读HI递推与Core全参数归纳；目录假设写成真实额外条件，公共项严格用最终m人数。m=1、K=0、r=0及非空重复背景均已区分。",
+  "whole_result": "在恰m题公共K核加各一私客的全部参数和全部合法前缀，HI恰为r个互异fresh续局，LI=K/m+1、GI=r(K/m+1)；每fresh选择可补全完整SPE，空根所有完整SPE均W=GI=OPT_m=K+m。",
+  "endpoint_pins": {
+    "B7-INTERVAL-CEILING-RELAXATION-v1": "d87d3cf7b49d86d3ee96477eceb08465a6ca216e74d1f8a6c1bf20258ea1a1bf",
+    "M-33f09cf9507e446fa2b1612db659d86d": "3414ee89b2f5dfd0b9581183dfb9a390e89499caf0846d78b096acc0cfd63b94"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/区间终局剪枝的上界比较与全效率目录类--定理.md": "398ae2b6a7151c5f4a182fb7072939792b25e7e84f22f85d91fdf0d1e2501d16",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "78af891ddbfce0b195400a8b292df0b2abce069428a1801d73e357132311bc5e"
+}

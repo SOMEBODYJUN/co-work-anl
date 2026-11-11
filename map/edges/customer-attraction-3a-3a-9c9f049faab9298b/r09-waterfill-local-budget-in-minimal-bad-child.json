@@ -1,0 +1,51 @@
+{
+  "edge_id": "cag-9c9f-r09-waterfill-local-budget-in-minimal-bad-child",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-LAST-TWO-FLOOR",
+    "CA-FRACTIONAL-TAIL-WATERFILL-v1"
+  ],
+  "target_ids": [
+    "M-387a042c9af646cd901dce711d991391"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限单位客户共同标签模型。对κ∈{0,1}，目标本身是若AGGκ失败则取所有实例/合法背景中最小剩余人数的if定理；所有归纳只作用于原真实单位孩子SPE。",
+  "roles": {
+    "CA-LAST-TWO-FLOOR": "任意合法背景末两人逐人保底，排除r2失败；r1另用BR。",
+    "CA-FRACTIONAL-TAIL-WATERFILL-v1": "对各真实孩子叶给同一池Γ≤D及一次利润守恒。",
+    "M-387a042c9af646cd901dce711d991391": "完整最小失败if定理：真实孩子最小性、静态嵌入、根IC与水位预算。"
+  },
+  "explanation": "1. 若AGGκ失败，失败余人数是非空正整数集，取最小r。r1时唯一未来角色最佳回复给P1=v1(b)≥v_(1+κ)(b)；r2时CA-LAST-TWO-FLOOR对任意合法b给每名实际收益≥θ2(b)。弱minimax不等式θ2(b)≥v2(b)和增加竞争槽只降值给每人≥v_(2+κ)(b)。故r≥3。\n\n2. 原实际利润非负，失败P_r<r v_(r+κ)(b)迫t=v_(r+κ)(b)>0。固定原完整σ，各强制根a后的真实孩子为同一输入、合法背景b+1_a、r−1角色的完整单位SPE。r最小性给V_a≥(r−1)v_(r−1+κ)(b+1_a)。\n\n3. 孩子静态竞争有r+κ−2槽；加回固定合法a是父的r+κ−1槽竞争域的一个子域。对每query限制最小域只提高保证，故v_(r−1+κ)(b+1_a)≥v_(r+κ)(b)=t，得到所有V_a≥(r−1)t。\n\n4. 实际u+V<rt且V≥(r−1)t给u<t；原根全部真实IC给每个d(a)≤u。对每个真实叶定义D_a=Σ_j(t−u_j(a))_+及S_a=Σ_j(u_j(a)−t)_+，则S_a−D_a=V_a−(r−1)t≥0。\n\n5. 对每个真实叶以同一背景b、保留完整单位根a、r−1单位尾及阈值t调用CA-waterfill，得Γ_a≤H_a≤D_a≤S_a及Γ_a+ΔB_old,a+tM_a≤V_a。这是完整目标的全部断言；从未向辅助分数叶调用单位人数归纳。",
+  "scope": "目标if定理已完整；跨孩子返还/原有相关债及AGGκ本身仍未支付。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/末两人逐人保底与全人数弱福利界--定理.md",
+      "sha256": "204030503c37b18f8d26ce664b9cb99afc688fed77c8221a00cf0d8d7b21b34b"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/分数尾水位的共同查询信用与利润守恒--引理.md",
+      "sha256": "d9ca9cb82ac113e8573c6ac7f18f19019d69801c1990b675ee2d5e50e07f23eb"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/水位事件的共同信用与原树激励账--引理.md",
+      "sha256": "b8016751cd4d68e9236fa25dbf3b3a26c28a35b46e3205dee13190cfd86c6501",
+      "section": "假定失败后的最小剩余人数归约"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Round55正式worker已实读当前端点完整合同、所列正文承重证明并重构R09。共同输入、全有序真实IC、静态槽数及量词逐项核对；范围以whole_result所写完整if定理或完整目标句。",
+  "whole_result": "对每个κ=0或1，若全背景AGGκ失败，则在所有实例及合法背景中最小失败余人数r满足r≥3、t=v_(r+κ)(b)>0；所选原完整σ实际根u<t且全部真实强制根d(a)≤u。每个原真实单位孩子有V_a≥(r−1)v_(r−1+κ)(b+1_a)≥(r−1)t；对同一真实叶水位化给Γ_a≤D_a≤S_a与Γ_a+ΔB_old,a+tM_a≤V_a。此边无条件证明这一完整if定理，不证明AGGκ真或假，不断言存在失败实例。",
+  "endpoint_pins": {
+    "CA-FRACTIONAL-TAIL-WATERFILL-v1": "5f293f8ee9fe1deabf20597b3666b2ed884221984b95fb4f5d36998557d15f7d",
+    "CA-LAST-TWO-FLOOR": "ac27b3c3c7d9e7ef7b09029a442931c402af6718aaa86500f0f8e3d303d226e1",
+    "M-387a042c9af646cd901dce711d991391": "0ffa84974a6ab491be427c123d2a06e5275baa224a9734547381a5a5422f6e4a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/末两人逐人保底与全人数弱福利界--定理.md": "204030503c37b18f8d26ce664b9cb99afc688fed77c8221a00cf0d8d7b21b34b",
+    "archives/customer-attraction/state/引理/分数尾水位的共同查询信用与利润守恒--引理.md": "d9ca9cb82ac113e8573c6ac7f18f19019d69801c1990b675ee2d5e50e07f23eb",
+    "archives/customer-attraction/state/引理/水位事件的共同信用与原树激励账--引理.md": "b8016751cd4d68e9236fa25dbf3b3a26c28a35b46e3205dee13190cfd86c6501"
+  },
+  "review_digest": "514dbe16b1ddf4b4dcc64495e470d0d86b2d926eb1733ab5e9313e01ad13c8d7"
+}

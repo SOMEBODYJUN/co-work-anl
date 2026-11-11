@@ -1,0 +1,51 @@
+{
+  "edge_id": "boss6-r50-cagd655-exact-outcomes-give-occupied-payoff-probe-quantifier",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "customer-attraction/individual-minimum-payoff-exact-SPE-outcome-probes-and-record-logs"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定任意保存单位客户输入I，人数m≥1、有限非空标签目录，并取OPT_m(I)>0。R(0)按源精确递推计算；未占用标签的软件零值须排除。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "R(k)的必要/充分归纳与逐有序历史独立拼接，精确量化全部纯SPE终局。",
+    "customer-attraction/individual-minimum-payoff-exact-SPE-outcome-probes-and-record-logs": "从R(0)再对占用主题取最小得到逐人最低收益v；本边只认证该数学接口。"
+  },
+  "explanation": "由全集定理，每份完整纯SPE的终局计数c属于R(0)，且每个c∈R(0)均有至少一份完整有序历史SPE实现。固定c时，所有占用标签a的每个实际玩家都取得φ_a(c)，所以跨所有完整SPE和实际玩家的最低收益，恰为min_(c∈R(0))min_(a:c_a>0)φ_a(c)=v(I)。因此对该固定输入，v(I)≥OPT/(2m)当且仅当每份完整SPE的每个实际玩家都满足同一弱逐人门槛；不必枚举全部完整策略。非空R和有限输入保证最小值达到。若保存argmin计数，存在某个可实现顺序与完整策略，但指定某个顺序仍要逐前缀通过源算法的目标筛选，不能任意排列。\n\n同计数只缓存可实现集合：充分性在不同有序孩子分别拼最小偏离收益的子SPE，故未把原历史平局限制为计数策略。随机生成器只选择输入，不改变此固定输入内的量词。此语义结论不声称历史13/8条日志已绑定某次完整执行；程序只调用outcomes，未输出/独立验证每份完整动作表，FATAL可默认exit0和稀疏DONE日志均不能代替这个接口或原执行证据。",
+  "scope": "CAEXACT到本对象式(2)的完整SPE逐人量词这一步；有限日志和普遍逐人桥真值分开。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/逐人最小收益的完整SPE终局探针与稀疏日志--程序.md",
+      "sha256": "a65dd9a258df992199367483b644276bb1534fda37d2530c8d50cc8ed60a7da5",
+      "section": "规范全集递归为何仍是任意完整历史纯SPE"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/逐人最小收益的完整SPE终局探针与稀疏日志--程序.md",
+      "sha256": "a65dd9a258df992199367483b644276bb1534fda37d2530c8d50cc8ed60a7da5",
+      "section": "输入输出和有限证据边界"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Fresh正式worker实读本包当前18核心合同及其承重正文、必要比较端点和精确证据合同。此边给完整解析推导或明确proof contribution；原运行与有限认证按已发表正文职责复用，本轮未运行原LP、SPE/IC、DP、随机或有限数学核验程序。",
+  "contribution": {
+    "result": "探针v(I)=min_(c∈R(0),a:c_a>0)φ_a(c)恰为固定输入全部完整纯SPE中全部实际玩家的最低收益；弱逐人阈值等价性与历史平局自由均成立。",
+    "remaining": "本步不生成或重新认证13/8条历史日志及其原argv/依赖绑定，不证明计划192/1500次均实际执行，也不证明任意输入的逐人桥；argmin指定顺序/完整证书仍需源构造条件。"
+  },
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "customer-attraction/individual-minimum-payoff-exact-SPE-outcome-probes-and-record-logs": "736340fafcc3b292901e5202ae88f6b30254f07f8e718da1aa9678e9e4657a1e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/程序/逐人最小收益的完整SPE终局探针与稀疏日志--程序.md": "a65dd9a258df992199367483b644276bb1534fda37d2530c8d50cc8ed60a7da5"
+  },
+  "review_digest": "ce7ff05e9238ea752252a305229ebff768f414c0beb2286f5cdf698fdfc81a4c"
+}

@@ -1,0 +1,53 @@
+{
+  "edge_id": "boss7-ca-756cb8-mobius-embed-all-n-aggregate",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-MOBIUS-BOOLEAN",
+    "CA-MOBIUS-FULL-HISTORY-EMBED"
+  ],
+  "target_ids": [
+    "CA-AGGREGATE-LAST-FLOOR-NO"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意整数n≥3，p=2n，P=X⊔Y各n；F(空)=0，纯组n集F1、混合n−1集F−1、其它F0。x由M1整数反演，M=Σ|x_B|，取更强K=6M+4≥4M+1，客户r_B=x_B+K>0。",
+  "roles": {
+    "CA-MOBIUS-BOOLEAN": "把两组整数子集势唯一反演为signed整数类型，并固定重复计数收益。",
+    "CA-MOBIUS-FULL-HISTORY-EMBED": "足够正偏置将辅助fresh完整策略扩到全部原有序历史，保持fresh比较并平移收益。",
+    "CA-AGGREGATE-LAST-FLOOR-NO": "得到每n≥3的合法2n主题整数反族；独立36客户证书仍单列。"
+  },
+  "explanation": "辅助只选fresh标签：根首X，第二人选相反组；以后纯前缀继续纯组，混合前缀继续第二标签组。每个非根规定者最终收益1、任意fresh偏离至多1，根总是minority收益0，故完整辅助SPE总收益n−1；任意n−1不同前缀存在fresh末回复收益1。M1的整数反演给signed真实份额，并唯一规定重复计数，不任补收益。M2证明的fresh−old偏置至少1/2且signed差≥−2M，所以此更大K仍使所有old严格劣，所有重复离轨历史可完整扩展；根每人偏置Kb，b=(2^(2n)−2^n)/n，W=Knb+n−1。θ_n还须控制重复背景：固定未用查询a，把某v≥2背景副本改成另一个未用非a标签。全类型偏置拆分前减后=Σ_C[1/((1+s_C)(2+s_C))−1/((v+s_C)(v+s_C+1))]≥1/3，空C项承担下界；可反复拆到n−1不同标签，故任重复背景有fresh查询偏置≥b+1/3，真实BR≥K(b+1/3)−M>Kb+1。不同标签背景old严格劣、最佳fresh恰Kb+1，故θ_n=Kb+1而W=nθ_n−1。全部r_B正含singleton，覆盖两两不同且是有限不同单位客户。任n槽偏置覆盖≤Knb，signed覆盖绝对值≤M，因此OPT≤Knb+M且W≥Knb−M，2W−OPT≥Knb−3M>0。此为全部n解析族，不依n3/4/5的signed有限回归。",
+  "scope": "局部贡献覆盖CA-AGGREGATE…的一般n整数反族及half边界；不吞其额外独立36例。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/子集调和势的Möbius反演--定理.md",
+      "sha256": "9c7e58e4642077607ce2b49c67e7598c97b47b4cdb1b43a34cf335dd2aec5629"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/无重复辅助博弈的完整历史编译--定理.md",
+      "sha256": "e6e06a43973f7c37673b498074475fdf8aa37338d448aff53b2bf9b2e7fa0dd4"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/三人及以上聚合末位保底--反例.md",
+      "sha256": "d316702ecc98a5976769d1d2e0094341474e0c4655deaac825bc208ae81d36e7"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "本包worker逐项实读本边所列正文、模型、登记陈述和异议，复核目标量词及实际所得关系；复用成熟解析证明，不重跑原实验。本边只断言所写局部贡献，remaining保留目标其余内容。",
+  "contribution": {
+    "result": "对每个n≥3，M1与M2共同给2n个不同主题、严格正整数单位客户及完整纯SPE，W=nθ_n−1且2W>OPT；重复末位背景经拆分严格高于distinct最坏值θ_n=Kb+1。",
+    "remaining": "目标合并陈述另有独立三人六主题36客户实例W34、θ3=12、OPT36。该有限实例不是本偏置族的特例，本边不提供它的18类型输入和43节点证书；该部分由已实读三人反例及本包36-exact-relocation-cost的固定实例分析另行保留。"
+  },
+  "endpoint_pins": {
+    "CA-AGGREGATE-LAST-FLOOR-NO": "699ba4cd7ebf119cdeb83f960aa4519f05068694f6f8507893ff071f155045ed",
+    "CA-MOBIUS-BOOLEAN": "1e36e694f7e44451ebb5388ecd03ad031956f6f849fbb53593ba3917c64d6fad",
+    "CA-MOBIUS-FULL-HISTORY-EMBED": "42694a561f1d7d9687fce7fe834aa833e5fa2d8b5b7d84eb1bf54115e118d09a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/子集调和势的Möbius反演--定理.md": "9c7e58e4642077607ce2b49c67e7598c97b47b4cdb1b43a34cf335dd2aec5629",
+    "archives/customer-attraction/state/定理/无重复辅助博弈的完整历史编译--定理.md": "e6e06a43973f7c37673b498074475fdf8aa37338d448aff53b2bf9b2e7fa0dd4",
+    "archives/customer-attraction/state/反例/三人及以上聚合末位保底--反例.md": "d316702ecc98a5976769d1d2e0094341474e0c4655deaac825bc208ae81d36e7"
+  },
+  "review_digest": "64f01d31ad8f261f0ae6dd039777450dbc31b6e9a1fddedf5f677ca4022ed5fb"
+}

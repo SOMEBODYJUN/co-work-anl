@@ -1,0 +1,56 @@
+{
+  "edge_id": "ca-7271-five-cycle-gi-half-contribution",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "B7-INTERVAL-EXTRA-ONE-FLOOR-NO-v1"
+  ],
+  "target_ids": [
+    "M-7a4075ba32f04c97864a34810bd5838f"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "原有限单位客户、单位提供者、有限非空共同标签目录、完整有序历史纯SPE模型；允许重复及全部离轨弱平局。仅五单位客户Ci喜欢循环相邻标签i,i+1、六人、五标签空根。HI按max孩子收益判eligible后保整个孩子，不换成真BI或逐终局筛选版本。",
+  "roles": {
+    "B7-INTERVAL-EXTRA-ONE-FLOOR-NO-v1": "提供固定输入LI=1/2<t7=10/17的局部失败、完整252非终局packet、真BI20根终局及GI=23/6。",
+    "M-7a4075ba32f04c97864a34810bd5838f": "普遍GI-half候选在此固定实例的已付结论，同时明确局部extra桥失败不构成对该候选的反例。"
+  },
+  "explanation": "原252非终局packet的全部floor/eligible、每行动低高值及对应终局见证已逐条紧凑读取，根HI60与真BI20集合及假路径完整读取；本轮不重新执行原HI/BI扫描。由成熟精确递推GI(0)=23/6，OPT6=5，所以GI−OPT6/2=23/6−5/2=4/3>0，该固定实例满足候选GI-half。其失败是另一条更强逐节点接口：每根动作孩子min均1/2,max均1，故LI=1/2；六槽自由背景的五查询均值用凸性至少10/17，均匀背景达到，故t7−LI=3/34。低叶31011在e0/动作0处当前利润1/2<LI(e0)=2/3，却因同孩子高叶20121利润5/6被eligible整孩子保留，表明HI可泄漏。真BI则逐叶筛，根最小真实利润2/3>10/17且每真终局覆盖5。故只否LI≥t7，不能用其局部失败否GI-half、存在价格half或真实SPE half，也不把自由门槛10/17换成整数混合值3/5。",
+  "scope": "该固定C5六人输入对GI-half的有限正面贡献；不扩成任意环、任意目录或任意人数。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/五环区间行动放松低于额外分数门槛--反例.md",
+      "sha256": "62c9d929cfc39b75bb5b552f73a08c78f6460e8ce855b5770e3b808d11fdccdc",
+      "section": "低终局与严格泄漏"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/五环区间行动放松低于额外分数门槛--反例.md",
+      "sha256": "62c9d929cfc39b75bb5b552f73a08c78f6460e8ce855b5770e3b808d11fdccdc",
+      "section": "六槽自由背景的精确静态门槛"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/五环区间行动放松低于额外分数门槛--反例.md",
+      "sha256": "62c9d929cfc39b75bb5b552f73a08c78f6460e8ce855b5770e3b808d11fdccdc",
+      "section": "真SPE与总支付不失败"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/carried-floor-interval-prices-and-background-primary/related-originals/research/workspaces/customer-attraction/R-977d3dbff13346b3b7c0f5a4caa6168e/security/interval_extra_one_c5_packet.json",
+      "sha256": "d6c7d914d7b8a452aba81a113354f130d90d7c7f86348257c054def904d817f9"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "完整读取成熟C5正文、packet22项summary、252条非终局全部低高界/见证、60HI和20真BI根向量，未重跑。精确被否对象写成LI≥t7，未向仍open的GI-half造refutes边。",
+  "contribution": {
+    "result": "五环五单位客户六人实例确有GI(0)=23/6>OPT6/2=5/2，差4/3；其LI=1/2<t7=10/17只反局部extra桥，不反这一累计half义务。",
+    "remaining": "M-7a4075ba32f04c97864a34810bd5838f的所有其它有限目录/人数尚待一般付款或累计GI低于OPT/2的精确反例；此有限成功和真SPE全效率均不能证明普遍GI-half。"
+  },
+  "endpoint_pins": {
+    "B7-INTERVAL-EXTRA-ONE-FLOOR-NO-v1": "65ca02942bca8a3ab15a1ee9cd87248f3e12d6094c6637262e4a6139899141db",
+    "M-7a4075ba32f04c97864a34810bd5838f": "92531427574cba8cfd3667623a7d952dccef2ab60b35517168dd082c1e35a9e4"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/五环区间行动放松低于额外分数门槛--反例.md": "62c9d929cfc39b75bb5b552f73a08c78f6460e8ce855b5770e3b808d11fdccdc",
+    "archives/customer-attraction/tools/evidence/carried-floor-interval-prices-and-background-primary/related-originals/research/workspaces/customer-attraction/R-977d3dbff13346b3b7c0f5a4caa6168e/security/interval_extra_one_c5_packet.json": "d6c7d914d7b8a452aba81a113354f130d90d7c7f86348257c054def904d817f9"
+  },
+  "review_digest": "a7385a060860535324db0482e25ba2dbff1cfbadb21335385c8db6abc2aa1652"
+}

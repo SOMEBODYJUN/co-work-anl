@@ -1,0 +1,54 @@
+{
+  "edge_id": "ca-a0-round49-unaveraged-capacity-to-all-player-harmonic-cap",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-1901496cc91a4b8d8c6a42d18b39dd4f"
+  ],
+  "target_ids": [
+    "customer-attraction/harmonic-payoff-cap-for-any-actual-player"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一完整有序历史纯SPE的实际主题S_1…S_m、实际客户终负载c、过去b_i及r_i=m−i+1。使用CAP陈述中未Cauchy化的u≥Σ_Q1/(b+1+L)，取Q=T=S_j；空S_j或u_j0单列平凡，不除零。",
+  "roles": {
+    "M-1901496cc91a4b8d8c6a42d18b39dd4f": "同一σ真实后继的查询子集IC行，以及L≤严格剩余人数的确定性上界。",
+    "customer-attraction/harmonic-payoff-cap-for-any-actual-player": "逐客户比较给两段位置系数、总H_m与末位正收益m≥3严格性。"
+  },
+  "explanation": "i≠j时，强制T=S_j后任意严格后继对每客户最多r_i−1次覆盖，所以CAP未平均化行给u_i≥Σ_(x∈S_j)1/(b_i(x)+r_i)。i<j时实际S_j尚未出现，b_i(x)≤c_x−1，因c_x≥1有b_i+r_i≤c_x−1+r_i≤r_i c_x，故u_i≥u_j/r_i。i>j时仅需b_i≤c_x，有b_i+r_i≤c_x+r_i≤(r_i+1)c_x，故u_i≥u_j/(r_i+1)。加i=j恒等式，系数1+Σ_(r=m−j+2)^m1/r+Σ_(r=2)^(m−j+1)1/r=H_m，得W≥H_m u_j。若j=m、m≥3、u_m=u>0且等号，全部链相等：根逐客户等号迫S_m每客户actual load1，|S_m|=u且与所有早期actual主题不交；实际u_i=u/(m−i+1)。根任意合法T的保守偏离界又给|T|≤m u1=u。根真实偏离S_m的收益只可u/m，各S_m客户负载≤m迫该分支所有后继覆盖整个S_m，大小界再迫其覆盖恰S_m。但该偏离分支的末位可改原实际S_(m−1)，与S_m不交且大小≥u_(m−1)=u/2>u/m，矛盾。m1有W=u1；m2不交大小1/2的完整路径(小,大)使W3=H2·2，故严格性不扩到m2。",
+  "scope": "所有有限输入、每份完整SPE、每个实际j；完整目标含两段系数与末位严格性，非仅单个Cauchy放松。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/真实偏离的覆盖次数容量与不交储备尾障碍--引理.md",
+      "sha256": "2590eaee9d19c8ace19cf0ca0f6ea50b5314d450350d349d8645d819b7f3c8c8",
+      "section": "任意非空客户子集的必要容量"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/任一实际玩家的调和福利支付界--引理.md",
+      "sha256": "92e0d7bc4f12be9fa2047149dc7c5d0b88c26cea64c8bdc6ed2a5d38120f28bd"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-18-harmonic-counterexample-20261031/original/harmonic_payoff_cap.md",
+      "sha256": "e73c8f0da0a6ae86f3c5c207a2a12c165c7ec60f288b9e7307d20290040ed56c"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-a0b2960851be4ccd/review.md",
+      "sha256": "f9dff0cd0c3bb98c303aa4c149dd0626a180497471789b657c6d482fc14a1fd7",
+      "section": "7. 从CAP未平均化行到调和界，包括严格性"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Fresh正式worker逐当前pin实读原陈述/量词/主证明并在review中独立重建此关系；成熟有限证据按精确SHA与合同复用，未重跑科学程序。Root安装后须原生edge-bind --write及edge-check。",
+  "whole_result": "任意实际j均有W≥H_m u_j；i<j时u_i≥u_j/(m−i+1)，i>j时u_i≥u_j/(m−i+2)；m≥3且u_m>0时末位总界严格，m2允许等号。",
+  "endpoint_pins": {
+    "M-1901496cc91a4b8d8c6a42d18b39dd4f": "bdc53ca87df11c0800cc6d2a410dae7a6a2359f355bbbb7f9e5cce81e66a0d78",
+    "customer-attraction/harmonic-payoff-cap-for-any-actual-player": "485da1ca4e63d4c01a419c5919f956215bf1d2245aece8e7f87d50e45b30ae97"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/真实偏离的覆盖次数容量与不交储备尾障碍--引理.md": "2590eaee9d19c8ace19cf0ca0f6ea50b5314d450350d349d8645d819b7f3c8c8",
+    "archives/customer-attraction/state/引理/任一实际玩家的调和福利支付界--引理.md": "92e0d7bc4f12be9fa2047149dc7c5d0b88c26cea64c8bdc6ed2a5d38120f28bd",
+    "archives/customer-attraction/tools/evidence/R-18-harmonic-counterexample-20261031/original/harmonic_payoff_cap.md": "e73c8f0da0a6ae86f3c5c207a2a12c165c7ec60f288b9e7307d20290040ed56c",
+    "map/edges/customer-attraction-3a-3a-a0b2960851be4ccd/review.md": "f9dff0cd0c3bb98c303aa4c149dd0626a180497471789b657c6d482fc14a1fd7"
+  },
+  "review_digest": "ecb13759c1a32a7a480a8f7f73e4894143cd69e33bc048bcb52176fe5e290163"
+}

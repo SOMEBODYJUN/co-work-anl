@@ -1,0 +1,48 @@
+{
+  "edge_id": "cag-9c9f-r02-exact-negative-point-excludes-whole-optimal-face",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-c74c7070a71744a997540c75197d0bf8",
+    "M-dec80cff9f80445b9f5125a4c71f48db"
+  ],
+  "target_ids": [
+    "M-a6f29c786ed845899fc561f88bab9097"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "需要尚未取得的精确有理w≥0、完整同一σ的全部真实Γw≥0、q∈Δ、t≥0，且t≤β_C(q)w对全部r−1合法静态竞争背景C成立、s=d·w<2t；零根可直接适用，非零b另须同一原根SPE的actual前缀嵌入。",
+  "roles": {
+    "M-c74c7070a71744a997540c75197d0bf8": "若交出完整精确负点，验收同一σ的s<2t≤2v。",
+    "M-dec80cff9f80445b9f5125a4c71f48db": "同一输入上对每个安全最优p给P≥2v。",
+    "M-a6f29c786ed845899fc561f88bab9097": "负点若存在则排该σ的整个最优面；本边不宣告已有反例。"
+  },
+  "explanation": "1. 全部C行给t≤min_C β_C(q)w；q是合法概率故此最小值≤max_p min_C β_C(p)w=v_r(b;w)。单背景价格不足。\n\n2. 精确s−2t<0给s<2t；M-dec在同一b,r,w上对每个p∈M_r(b;w)给P_r(b;p)≥2v_r(b;w)。它的静态B有r−2共同槽且不可看两query实现。\n\n3. 合并得∀安全最优p均P(p)>s，无需q自身安全最优，也没有用P(q)。完整IC与有理质量清分母保持同一σ为单位客户SPE。\n\n4. 零根负点即是M-a6域内的反例；合法离轨非零b不能自行冒作actual前缀，必须另核祖先同σ的真实IC和路径。",
+  "scope": "本轮没有这样的负点或actual嵌入；M-a6仍open。71个浮点近零报告不满足此条件；此关系是条件排除判据，不能作为已有实际反例消费。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/完整策略首对安全值的全类型锥交替探针--资源.md",
+      "sha256": "785a5429dd51178911adc7679c06bd0abfcd816fb9f1929b04cdd07e46288580"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/首对同分布查询的静态安全下界与极点最小化--引理.md",
+      "sha256": "0d5d5b5459dd33b87cff211259e4ab3edc2b78ff422e58ffa3059992822b6ac7"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Round55正式worker已实读当前端点完整合同、所列正文承重证明并重构R02。共同输入、全有序真实IC、静态槽数及量词逐项核对；范围以局部contribution及remaining。",
+  "contribution": {
+    "result": "若满足这些条件，则同一实例对每个安全最优p都有s<2t≤2v_r(b;w)≤P_r(b;p)，因此该σ不可能存在安全最优p付款。",
+    "remaining": "本轮没有这样的负点或actual嵌入；M-a6仍open。71个浮点近零报告不满足此条件；此关系是条件排除判据，不能作为已有实际反例消费。"
+  },
+  "endpoint_pins": {
+    "M-a6f29c786ed845899fc561f88bab9097": "142b2fcc1de68abc6119650f02178bff43638de55b0007c4883414b982f654be",
+    "M-c74c7070a71744a997540c75197d0bf8": "2a1b3ac88ef02a411b31e740a837f3fa3aea2333aba81a8a9d2c18713b24c187",
+    "M-dec80cff9f80445b9f5125a4c71f48db": "21ad335f0920588db39c66a05c7c0fe1dbea409f7c12e2f946282c5edfc3e5c9"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/完整策略首对安全值的全类型锥交替探针--资源.md": "785a5429dd51178911adc7679c06bd0abfcd816fb9f1929b04cdd07e46288580",
+    "archives/customer-attraction/state/引理/首对同分布查询的静态安全下界与极点最小化--引理.md": "0d5d5b5459dd33b87cff211259e4ab3edc2b78ff422e58ffa3059992822b6ac7"
+  },
+  "review_digest": "d9a05dada8484aa6f89ed571590d1f7383b6f29564589f868ae62f2c70d669b6"
+}

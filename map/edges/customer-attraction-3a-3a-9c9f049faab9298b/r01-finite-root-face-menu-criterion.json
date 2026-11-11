@@ -1,0 +1,48 @@
+{
+  "edge_id": "cag-9c9f-r01-finite-root-face-menu-criterion",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-cf492335563c4e51b8b8831681d57936",
+    "M-264b1b9fbb9c49b389077fa940834d03"
+  ],
+  "target_ids": [
+    "M-a6f29c786ed845899fc561f88bab9097"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一固定有限单位客户零根输入，r≥2；R_z为全部精确可信终局；M为整个恰安全最优查询面，允许p依σ。",
+  "roles": {
+    "M-cf492335563c4e51b8b8831681d57936": "全恰安全最优面上P的凹性与顶点最低值。",
+    "M-264b1b9fbb9c49b389077fa940834d03": "同一完整策略首两动作的全兼容菜单及s_min达到性。",
+    "M-a6f29c786ed845899fc561f88bab9097": "只得到固定零根输入的存在付款充要判据，实际前缀全域仍open。"
+  },
+  "explanation": "1. M-264精确枚举有序a,b及同一终局i的兼容tuple；必要充分拼接保证所得最小首对恰为min_σ s(σ)，并有完整σ实现。\n\n2. M-cf证明每个P_B逐客户凹二次，有限min_B仍连续凹；有限非空紧多面体M的P最低值在某顶点达到，记P_min。\n\n3. 若s_min≥P_min，任取达到P_min的p*，每σ有sσ≥s_min≥P(p*)。反之若每σ各有付款p，取达到s_min的σ0，P_min≤P(pσ0)≤s_min。\n\n4. 严格反向不等式s_min<P_min时，σ0对整个M都失败；本轮未找到这样的新输入，随机五点或松弛面采样不等同顶点穷尽。",
+  "scope": "尚未对所有有限实例证明该比较；非零actual-prefix须限制为原根SPE可达的子策略，全部合法子SPE菜单不能自动代替。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/首对同分布查询的静态安全下界与极点最小化--引理.md",
+      "sha256": "0d5d5b5459dd33b87cff211259e4ab3edc2b78ff422e58ffa3059992822b6ac7"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/给定前缀首两人安全值的完整终局菜单探针--资源.md",
+      "sha256": "1aafb6523e4827b9a2a661957072b4fb355540835b24e058effe82bc1f66584b"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Round55正式worker已实读当前端点完整合同、所列正文承重证明并重构R01。共同输入、全有序真实IC、静态槽数及量词逐项核对；范围以局部contribution及remaining。",
+  "contribution": {
+    "result": "该固定零根实例的∀完整SPE σ∃p∈M付款，当且仅当s_min≥min_(p∈vertices(M))P(p)，其中s_min由同策略两层兼容菜单取到。",
+    "remaining": "尚未对所有有限实例证明该比较；非零actual-prefix须限制为原根SPE可达的子策略，全部合法子SPE菜单不能自动代替。"
+  },
+  "endpoint_pins": {
+    "M-264b1b9fbb9c49b389077fa940834d03": "79b6d6815cf0eb018e03893781b5da26f57f61e2c3cbe6ab596a1eb337c28118",
+    "M-a6f29c786ed845899fc561f88bab9097": "142b2fcc1de68abc6119650f02178bff43638de55b0007c4883414b982f654be",
+    "M-cf492335563c4e51b8b8831681d57936": "a94484c81443d6e216fe539be9532c3f3157e4e88ef32d158ef3e28329aa8fec"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/首对同分布查询的静态安全下界与极点最小化--引理.md": "0d5d5b5459dd33b87cff211259e4ab3edc2b78ff422e58ffa3059992822b6ac7",
+    "archives/customer-attraction/state/资源/给定前缀首两人安全值的完整终局菜单探针--资源.md": "1aafb6523e4827b9a2a661957072b4fb355540835b24e058effe82bc1f66584b"
+  },
+  "review_digest": "0479eb6a7797af87b28168196a7884a3cd581af6d64eb26ebcf75d0c860e1740"
+}

@@ -1,0 +1,62 @@
+{
+  "edge_id": "ca-a0-round49-exact-product-thresholds-to-finite-price-compilation",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL",
+    "PRODUCT-TRANSFER-CLOSURE-v1"
+  ],
+  "target_ids": [
+    "customer-attraction/universal-credible-price-upper-lower-domain-and-exact-tests"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "有限个相同m的精确有理组件目标及全部真M_i；g_i^t=M_i^t−u_i^t、B_t=2W_t−OPT_t。条件性给非负有理w满足Σw g_i≤0逐位置及Σw B<0。如先加价格域K，真实银行/proxy及其B成本必须一起纳入，不能免费使用K。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "完整产品目标路径自末向根的指定孩子资格门，允许规定孩子是已递归构造的产品SPE。",
+    "PRODUCT-TRANSFER-CLOSURE-v1": "每个其它联合动作可接组件极小完整后继积，给产品门槛≤组件M总和。",
+    "customer-attraction/universal-credible-price-upper-lower-domain-and-exact-tests": "仅得到有限精确价格不可行证书的真实纯产品编译一步。"
+  },
+  "explanation": "清w分母成整数份组件，客户不交，目录全Cartesian，人数仍m。从最后位置向根构造同一产品目标：规定孩子已由深度归纳为完整产品SPE；每个非规定联合孩子贴组件在对应强制行动后当前极小收益的完整尾积。产品门槛≤Σ整数权M_i，而规定总收益Σ权u_i由Σ权g_i≤0至少该值，EXACT资格门允许当前。有限有序兄弟独立贴，逐层得到完整产品SPE。这里不错误要求每个原组件的目标后缀本已SPE。完整Cartesian使实际W及m槽OPT均组件可加，故B_total=Σ权B<0。有限有理Farkas对Gλ≥−B、λ≥0不可行给非负有理w^TG≤0、w·B<0；限制K时必须先补真实marked银行行或gbar=−1_I proxy，银行B=2|I|+1进入加权成本。没有展示实际不可行G/w，未证明域内任何统一价有效。",
+  "scope": "目标中的精确有限Farkas→真实产品纯SPE编译环节；保bank成本。其余上下域、BAL、ramp与普遍价格存在性不由本边完成。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "完整策略和指定有序路径"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/产品转移金融接口与阈值障碍的精确命题账本--资源.md",
+      "sha256": "994532710719c465d76c20aa0bcb7da4646ff5f9d08a009e3b76f151a7840588",
+      "section": "PRODUCT-TRANSFER-CLOSURE-v1"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/统一可信价格的上下域与精确候选筛选--定理.md",
+      "sha256": "a8a58f3fef8ad4368eea1fb6b0fa845b7e74fcc0e3357eaf3d87bdac7f4f3f5e",
+      "section": "有限不可行证书必须付真实银行成本"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-a0b2960851be4ccd/review.md",
+      "sha256": "f9dff0cd0c3bb98c303aa4c149dd0626a180497471789b657c6d482fc14a1fd7",
+      "section": "9. 统一价格只获得有限精确编译贡献"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Fresh正式worker逐当前pin实读原陈述/量词/主证明并在review中独立重建此关系；成熟有限证据按精确SHA与合同复用，未重跑科学程序。Root安装后须原生edge-bind --write及edge-check。",
+  "contribution": {
+    "result": "精确有限价格系统不可行并给有理Farkas权时，保持真实银行成本、清分母并用完整Cartesian门槛逐层拼接，得到同m完整纯产品SPE且B_total<0。",
+    "remaining": "目标整页的marked银行上域、exact-M下域、BAL、v1→v2紧域与ramp筛选需各自clean/cutoff证明；此步未给任何实际不可行组件/权重或普遍有效价格向量，也未解决half。"
+  },
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "PRODUCT-TRANSFER-CLOSURE-v1": "66f336bb46a3d29d716b1819b9eb1a7ad72bf1d351e5a88f880293b57dc4129c",
+    "customer-attraction/universal-credible-price-upper-lower-domain-and-exact-tests": "81a144578747283250d14af2a029a0ecfcac8c73c684726364ccca9472cdd407"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/资源/产品转移金融接口与阈值障碍的精确命题账本--资源.md": "994532710719c465d76c20aa0bcb7da4646ff5f9d08a009e3b76f151a7840588",
+    "archives/customer-attraction/state/定理/统一可信价格的上下域与精确候选筛选--定理.md": "a8a58f3fef8ad4368eea1fb6b0fa845b7e74fcc0e3357eaf3d87bdac7f4f3f5e",
+    "map/edges/customer-attraction-3a-3a-a0b2960851be4ccd/review.md": "f9dff0cd0c3bb98c303aa4c149dd0626a180497471789b657c6d482fc14a1fd7"
+  },
+  "review_digest": "a49bac57a220649066baf20a9cb69432acf0fe634a225e7644b3c7cf76695fd4"
+}

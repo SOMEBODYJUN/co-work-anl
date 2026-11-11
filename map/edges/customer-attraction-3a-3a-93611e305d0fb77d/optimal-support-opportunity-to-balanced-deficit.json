@@ -1,0 +1,43 @@
+{
+  "edge_id": "boss6-cag936-r55-optimal-support-opportunity-to-balanced-deficit",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-4d3f35e7a2f740c89a7049fd3d3bac56"
+  ],
+  "target_ids": [
+    "M-d0fd386cf5794a36bd0c01957b51c550"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限共同目录、同一个非负背景b、r≥1，A出现在某个r槽势最优组合；z_A始终是强制A后同一策略的同一个r−1槽真实尾。r=1空尾允许；不要求删根后的同一尾仍SPE。",
+  "roles": {
+    "M-4d3f35e7a2f740c89a7049fd3d3bac56": "机会损失E_r的定义、非负及最优支持时E_r=0给P_r=L_b(A)+P_(r−1)(b+1_A)。",
+    "M-d0fd386cf5794a36bd0c01957b51c550": "把同一真实尾在两背景的势损失同时保留，得到完整d_A=Δ_r−ell_A+k_A恒等式。"
+  },
+  "explanation": "令L=Φ_b(A)。源定义E_r=P_r(b)−L−P_(r−1)(b+1_A)≥0；若A在r槽势最大profile内，去掉一个A后尾必最大化新背景势，否则换尾会提高P_r，故E_r=0。逐客户将A的插入前后调和和相减，真实当前收益d_A=L+Φ_(b+1_A)(z_A)−Φ_b(z_A)。分别代入ell_A=P_(r−1)(b+1_A)−Φ_(b+1_A)(z_A)及k_A=P_(r−1)(b)−Φ_b(z_A)，得d_A=[L+P_(r−1)(b+1_A)−P_(r−1)(b)]−ell_A+k_A=Δ_r(b)−ell_A+k_A。两缺陷非负只需同一个合法静态尾；没有在两背景分别挑最优尾。",
+  "scope": "目标BD完整恒等式；未增加PI或下一增量下界。进一步u≥Δ_(r+1)仍需ell−k≤Δ_r−Δ_(r+1)，不是本边结论。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/最优调和势增量的静态下界与平衡缺陷--引理.md",
+      "sha256": "6c11b3aed2ea9007f87f3bf537dda09af40439bd032695c23c52401cf656a6e3",
+      "section": "机会损失E与背景增量重置"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优调和势增量的静态下界与平衡缺陷--引理.md",
+      "sha256": "6c11b3aed2ea9007f87f3bf537dda09af40439bd032695c23c52401cf656a6e3",
+      "section": "平衡缺陷不能只保绝对尾损失"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "完整实读两端同一正文、所有模型/量词；逐客户插入恒等式与最优支持换尾论证重构。430客ell0/k8只说明PI欠款，不反本恒等式；无新程序运行。",
+  "whole_result": "完整推出目标：每个非负背景、每个r槽势最优支持主题A及其同一真实尾z_A，d_A=Δ_r(b)−ell_A+k_A，两缺陷定义与非负性均按各自背景同尾保留。",
+  "endpoint_pins": {
+    "M-4d3f35e7a2f740c89a7049fd3d3bac56": "751c39bb9bc51ded96bbf2d203116b031730c449649b3ca5b79f9ebc41ff325c",
+    "M-d0fd386cf5794a36bd0c01957b51c550": "79fa78c617a2020fd0645f465b6db2e056c9c5a037adf2862c8c59277fe13e5c"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/最优调和势增量的静态下界与平衡缺陷--引理.md": "6c11b3aed2ea9007f87f3bf537dda09af40439bd032695c23c52401cf656a6e3"
+  },
+  "review_digest": "fe18a0637bfc570ab001f4f549e8dd030a8549975ba08b07221f2e727e19ac99"
+}

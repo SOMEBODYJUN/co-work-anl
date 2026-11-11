@@ -1,0 +1,61 @@
+{
+  "edge_id": "boss6-six-universal-fixed-query-cone-security-and-static-price11-imply-half",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-SECURITY-CONE-DUAL",
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1"
+  ],
+  "target_ids": [
+    "customer-attraction/six-providers/exact-six-full-history-half-cover"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "有限不同单位客户、任意有限非空共同标签目录S（目录大小m≥1）；允许空覆盖、同覆盖异标签、重复行动、零客户；恰六名单位提供者，全部有序历史完整纯SPE及任意弱平局，强制偏离后沿同一σ真实续行。所有安全值、W和OPT6使用同一原客户总体和目录。 额外开放前提C6：∀m≥1、∀六人完整形式σ、∀有理p∈Δ([m])，存在Q_(σ,p)∈Δ([m]^5)与λ_(σ,p),r_(σ,p)≥0，逐非空类型有c−6E_Qβ_B(p)=Γσᵀλ+r。Q、λ、r可依σ,p，不依锥内客户点w；每份证书同时支付整个Kσ={w≥0:Γσw≥0}，五个整数背景槽可重复/任意相关且不观察此次query抽出的a。只需∀p∃Q，不要求∃Q∀p；未假设弱总债务金额。",
+  "roles": {
+    "CA-SECURITY-CONE-DUAL": "固定σ与有理p的全客户锥不等式⇔非负Q/λ/r证书的精确等价；只给接口，不支付C6普遍存在。",
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1": "同一原实例、五整数竞争槽的静态锐界11v6≥OPT6。",
+    "customer-attraction/six-providers/exact-six-full-history-half-cover": "条件推出所有原六人完整历史纯SPE满足2W≥OPT6，且实际上W≥6OPT6/11。"
+  },
+  "explanation": "先以C6证书与任意实际整数客户w∈Kσ内积，得W≥6E_Qβ_B(p)·w≥6min_Bβ_B(p)·w。有限有理安全博弈有有理最优查询p*(w)，故全有理p量词允许选择其相应全锥证书，得到W≥6v6。再用相同原客户/目录的静态锐界v6≥OPT6/11，得W≥6OPT6/11，因而2W≥12OPT6/11≥OPT6。允许p*随w选择不意味着固定σ,p的Q可随w变化。固定p的minimax/Farkas等价没有证明其左侧普遍成立，所有σ,p证书存在仍是额外开放前提。",
+  "scope": "完整原六人half目标的一条独立条件充分路线；源定理适用于所有目录及完整策略，条件C6亦保全部m、σ、有理p。v6仅五整数槽；不替换为六槽v7、iid Z6、自由分数t6、真实菜单值或投影客户安全值。零客户直接成立。",
+  "whole_result": "方向：若全部目录大小m≥1、全部六人完整有序形式σ及全部有理查询p都有所述全客户锥系数6证书，则对每个有限单位客户集N、每个有限非空共同标签目录及任意覆盖映射、每份保所有离轨历史与任意弱平局的六人完整纯SPE σ，均有W(σ)≥(6/11)OPT6，从而2W(σ)≥OPT6；保空覆盖、同覆盖异标签、重复、零客户，OPT6=max_(T1,…,T6∈S)|∪cov(Tj)|。此为条件蕴含，未证明C6或改变目标open状态。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/完整策略锥的静态安全值对偶--定理.md",
+      "sha256": "b279e1f63f08b961365a2cbc0173530de7090fd1c7beefc1a42c585ef6e58cf5"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md",
+      "sha256": "034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f"
+    },
+    {
+      "path": "archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md",
+      "sha256": "0626668e7a825108fc0b3699e42394b75b1c2e2a526df220a90d91a02afc8a0c"
+    },
+    {
+      "path": "map/edges/boss6-six-security-bridge-3b-37e2f44d17517898/review.md",
+      "sha256": "b3ba68bb8713e48e3622d231eb015258aae17f87462fd90f6b82841d93924f1e",
+      "section": "第一条独立路线：普遍固定查询全锥证书"
+    },
+    {
+      "path": "map/edges/boss6-six-security-bridge-3b-37e2f44d17517898/review.md",
+      "sha256": "b3ba68bb8713e48e3622d231eb015258aae17f87462fd90f6b82841d93924f1e",
+      "section": "五个整数槽的同实例静态锐界"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Boss6正式fresh接续：当前9完整合同、10数学全文及1精确段已重新实读，承接原历史阅读ledger而不冒作本轮阅读。已核新Md0 v2和五项完整源diff；全部9pins匹配正式claim dde31504d2fc45b3b3f6f0312d4da4fb。固定σ,p证书uniform于整个Kσ，Q不依w且不观察抽样；有理最优p*与同实例静态11界给完整6/11及half。C6普遍存在仍open；没有加入独立弱总债务前提。 数学推导已完整复核，已解勘误不再是当前open请求。原生edge-bind/check由Root安装后串行执行。",
+  "endpoint_pins": {
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1": "565f6bdb541c09f8229f27ca4d47409f946a555f141378e72fb91c5a55082ea4",
+    "CA-SECURITY-CONE-DUAL": "e31e80e9d89c7fad56eadbcbfd46a50af3857d6119eea8060c3a41a0cb987899",
+    "customer-attraction/six-providers/exact-six-full-history-half-cover": "2d5b191271cb052c435121a41935eb3958540d5a53cb05013f13dd45a70f6e31"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/完整策略锥的静态安全值对偶--定理.md": "b279e1f63f08b961365a2cbc0173530de7090fd1c7beefc1a42c585ef6e58cf5",
+    "archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md": "034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f",
+    "archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md": "0626668e7a825108fc0b3699e42394b75b1c2e2a526df220a90d91a02afc8a0c",
+    "map/edges/boss6-six-security-bridge-3b-37e2f44d17517898/review.md": "b3ba68bb8713e48e3622d231eb015258aae17f87462fd90f6b82841d93924f1e"
+  },
+  "review_digest": "ff538352dcc9462e7c571cebd3ba057ab25c16f2786324ec75dcf9b51e33e0c9"
+}

@@ -1,0 +1,51 @@
+{
+  "edge_id": "boss6-r50-cagd655-balance-rewrites-the-exact-unpaid-afc-obligation",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/free-column-incentive-slack-cross-potential-balance"
+  ],
+  "target_ids": [
+    "customer-attraction/actual-position-aggregate-free-column-budget"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一有限CAG输入和同一份完整纯SPEσ。实际位置/前缀不变，每个V_i(B)只删当前位置一槽。q_i各质量1，查询T与同位置B独立；q_i不得观察本次T。",
+  "roles": {
+    "customer-attraction/free-column-incentive-slack-cross-potential-balance": "任意归一位置列混合q_i和独立查询p上的逐列势抵消W−Θ=E+R；SPE仅给E≥0。",
+    "customer-attraction/actual-position-aggregate-free-column-budget": "自由列候选的存在性目标：每p可选择q_i，或有限minimax后共同q_i同时服务全部纯查询。"
+  },
+  "explanation": "对固定p，Θ(p,q)=Σ_iΣ_B q_i(B)F_p(V_i(B))，各q_i约束相互独立且是有限单纯形。因此min_qΘ=Σ_i min_B F_p(V_i(B))=Σ_iH_i(p)。由源BALANCE逐点有W−Θ(p,q)=E(p,q)+R(p,q)，故W−Σ_iH_i(p)=max_q[E(p,q)+R(p,q)]。于是原候选∀p Σ_iH_i(p)≤W，精确等价于∀p∃归一q_i使E+R≥0。有限紧凸单纯形的双线性minimax又给max_p min_qΘ=min_q max_TΣ_iE_(B~q_i)f_(V_i(B))(T)，所以候选亦等价于存在同一组q_i同时封顶全部纯查询T。\n\n这只是准确转换未付义务；它没有证明右边最大值普遍非负，亦未构造一般共同q。每列真实ICΓ_iB≥0保证E≥0，但R是不同完整叶之间的势差，不能删掉。源正文在36客户最优列给E=64/15、R=−46/15，合计6/5，严格说明R单独非负会是错误的加强。位置间可以任意相关，因为只用边缘；允许观察当前T选列会换成另一零和次序，不能用于此等价。",
+  "scope": "一般AFC开放义务的等价代数形式及共同列分布的有限minimax约化；不以恒等式证明存在性。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/自由删槽列的激励松弛与跨势余额--引理.md",
+      "sha256": "3b15eb8175cb141eb827d2dd234dbab59cdb8496d19c16e539d399a635aaf3fa"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/实际位置自由删槽列的聚合查询预算--候选.md",
+      "sha256": "e71619fb84fadc640e8cc0de46c7c1081233f876d010353acaa22b624bb7d522",
+      "section": "有限minimax的精确对偶"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/实际位置自由删槽列的聚合查询预算--候选.md",
+      "sha256": "e71619fb84fadc640e8cc0de46c7c1081233f876d010353acaa22b624bb7d522",
+      "section": "真实菜单及一般候选"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Fresh正式worker实读本包当前18核心合同及其承重正文、必要比较端点和精确证据合同。此边给完整解析推导或明确proof contribution；原运行与有限认证按已发表正文职责复用，本轮未运行原LP、SPE/IC、DP、随机或有限数学核验程序。",
+  "contribution": {
+    "result": "固定任意输入/完整σ，W−Σ_iH_i(p)=max_q(E+R)；AFC精确等价于∀p∃q_i:E+R≥0，亦等价于存在一组同时服务全部纯T的q_i。",
+    "remaining": "仍须对每个原CAG输入和每份完整σ证明或构造满足该存在性/共同付款的q_i；E≥0、势恒等式和固定实例均未给一般存在性。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/actual-position-aggregate-free-column-budget": "20553bc0513e372a911d962e6bc7450a0502d05c4dc53f6fc6cb0ab5d9aace2a",
+    "customer-attraction/free-column-incentive-slack-cross-potential-balance": "932582fa4f62c99fca3c640029c3a26e81e17f04d39741945de2a37e434a81b9"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/自由删槽列的激励松弛与跨势余额--引理.md": "3b15eb8175cb141eb827d2dd234dbab59cdb8496d19c16e539d399a635aaf3fa",
+    "archives/customer-attraction/state/候选/实际位置自由删槽列的聚合查询预算--候选.md": "e71619fb84fadc640e8cc0de46c7c1081233f876d010353acaa22b624bb7d522"
+  },
+  "review_digest": "1d3e3d3808e10746227ed0079a291f64ed534ff82647ca083e7f7e54fc2a2d4e"
+}

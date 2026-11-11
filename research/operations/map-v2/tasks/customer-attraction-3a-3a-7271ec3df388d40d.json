@@ -145,11 +145,152 @@
       "note": "Local proof families are scheduled first. Informal links are separate discovery hints. Read any newly discovered necessary premise through read-add; do not truncate a proof or treat a deferred candidate as paid evidence."
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss7",
-  "request_id": "80cc33fd6bd443ad8ddb4c38953ab53e",
+  "request_id": "05fdb56c093b481c98eae49233dff87f",
   "requests": {
     "c77ec76b08b948c4ac8c43dc65353af7": "plan",
-    "80cc33fd6bd443ad8ddb4c38953ab53e": "claim"
+    "80cc33fd6bd443ad8ddb4c38953ab53e": "claim",
+    "05fdb56c093b481c98eae49233dff87f": "done"
+  },
+  "edge_paths": {
+    "ca-7271-five-cycle-gi-half-contribution": "map/edges/customer-attraction-3a-3a-7271ec3df388d40d/five-cycle-gi-half-contribution.json",
+    "ca-7271-gi-half-implies-price-half": "map/edges/customer-attraction-3a-3a-7271ec3df388d40d/gi-half-implies-price-half.json",
+    "ca-7271-hi-common-terminal-price-duality": "map/edges/customer-attraction-3a-3a-7271ec3df388d40d/hi-common-terminal-price-duality.json",
+    "ca-7271-hi-disjoint-max-full-efficiency": "map/edges/customer-attraction-3a-3a-7271ec3df388d40d/hi-disjoint-max-full-efficiency.json",
+    "ca-7271-hi-public-core-full-efficiency": "map/edges/customer-attraction-3a-3a-7271ec3df388d40d/hi-public-core-full-efficiency.json",
+    "ca-7271-hi-singleton-exact-near-half": "map/edges/customer-attraction-3a-3a-7271ec3df388d40d/hi-singleton-exact-near-half.json",
+    "ca-7271-singleton-price-zero-restores-optimum": "map/edges/customer-attraction-3a-3a-7271ec3df388d40d/singleton-price-zero-restores-optimum.json",
+    "ca-7271-twenty-nine-price-half-contribution": "map/edges/customer-attraction-3a-3a-7271ec3df388d40d/twenty-nine-price-half-contribution.json"
+  },
+  "receipt": {
+    "coverage": {
+      "B7-EXACT-FLOOR-HALF-TIGHTNESS-v1": {
+        "state": "linked",
+        "object_pin": "bd439d965f77d7d75b9511441cca39f96ebd102f6e1aa68d88d8d013dfee38ef",
+        "comparison_scope": "与一般HI递推、两类全效率域和共同终局根价格比较；实读单例两类前缀归纳、真BI必要充分拼接、根比值和λ0恢复。原q=1…6共2352前缀报告仅按资源合同了解，没有重跑或冒成一般证明。",
+        "reason": "独立核全q≥1、全合法前缀HI=R及GI闭式；根每SPE全效率但floor比趋1/2，只有c>1/2被排。λ0得到BI=vI=OPT，所以不反两个half候选。",
+        "edge_ids": [
+          "ca-7271-hi-singleton-exact-near-half",
+          "ca-7271-singleton-price-zero-restores-optimum"
+        ]
+      },
+      "B7-INTERVAL-CEILING-RELAXATION-v1": {
+        "state": "linked",
+        "object_pin": "d87d3cf7b49d86d3ee96477eceb08465a6ca216e74d1f8a6c1bf20258ea1a1bf",
+        "comparison_scope": "实读HI/HM完整递推、全有序SPE包含、P≥G、HI⊆HM及L/G比较、q/2q坐标压缩和两类目录归纳；比较C5严格whole-child泄漏与精确单例族，并导出共同终局价格。",
+        "reason": "一般结果只保超集并付剩余利润，根才是W；坐标min/max无需共同终局，但价格效率消元需要共同q。全效率边各保额外目录条件，未把一般HI定义单独当全效率。节点O(q²)只是算术数，总状态binom(m+q,q)且无一般位复杂度认证。",
+        "edge_ids": [
+          "ca-7271-hi-public-core-full-efficiency",
+          "ca-7271-hi-disjoint-max-full-efficiency",
+          "ca-7271-hi-singleton-exact-near-half",
+          "ca-7271-hi-common-terminal-price-duality"
+        ]
+      },
+      "M-33f09cf9507e446fa2b1612db659d86d": {
+        "state": "linked",
+        "object_pin": "3414ee89b2f5dfd0b9581183dfb9a390e89499caf0846d78b096acc0cfd63b94",
+        "comparison_scope": "与HI总定理和不交最大主题类比较；全部m≥1,K≥0、恰m题、任意合法前缀及全部有序SPE；m3/K3旧HM与HI差表亦实读。",
+        "reason": "公共份额始终K/m；fresh后利润K/m+1，旧题严格小，归纳HI精确fresh和根全效率。K=0恰m单例属两类定理交集；不能拿本类的恰m题条件去推至少m+额外题的一般不交类，亦不能移入q=m−1单例拥挤族。",
+        "edge_ids": [
+          "ca-7271-hi-public-core-full-efficiency"
+        ]
+      },
+      "M-6c18d29fcbdb49ce999605a42d706789": {
+        "state": "linked",
+        "object_pin": "949e78ffcaee29f446a4e194f8e23e4b6c5b8438484a56eeaf30cfedc514e86e",
+        "comparison_scope": "与HI总定理、公共核类K=0交集和q=m−1单例族比较；全m≥1、至少m个不交非空最大题、额外小/空标签；旧近轨族d≥2首小题/晚期最大A均按正文实读。",
+        "reason": "足够多fresh最大题在每个合法前缀存在，精确排旧/小/空题，得LI=L,GI=rL及根W=OPT=mL。非空同覆盖别名不在互不交域，L=0另界。拥挤单例族最大题仅m−1个，故不与本定理冲突；公共核K>0有真实交叠也不能自动套用。",
+        "edge_ids": [
+          "ca-7271-hi-disjoint-max-full-efficiency"
+        ]
+      },
+      "M-7a4075ba32f04c97864a34810bd5838f": {
+        "state": "linked",
+        "object_pin": "92531427574cba8cfd3667623a7d952dccef2ab60b35517168dd082c1e35a9e4",
+        "comparison_scope": "比较HI合法性、C5局部extra反例、单例sharpness、两类全效率和祖先价格BI(1)=GI；量词固定所有有限目录与所有m≥1，根背景为0。",
+        "reason": "普遍GI-half本身仍open。若成立，ALL结合价格恒等式给普遍存在λ-half；该条件推导已完整。C5虽LI<t7但GI比half多4/3；单例比趋half而始终高于half，只排任何统一c>1/2，均不能反精确half。五人或其它真实SPE half不能逆推出更强GI付款。",
+        "edge_ids": [
+          "ca-7271-gi-half-implies-price-half",
+          "ca-7271-five-cycle-gi-half-contribution"
+        ]
+      },
+      "B7-INTERVAL-ANCESTOR-PRICES-v1": {
+        "state": "linked",
+        "object_pin": "8037e3431b966ba1eea9dd74cad907c61ebfcf0fb03cc94aa96febc4e20a7a8d",
+        "comparison_scope": "实读全路径价格、同q效率、有限有理LP原/对偶/达到性、终局标记流分解；和HI/G、单例及29非零价、C5泄漏逐项比较，读取发现器资源合同和29父Fraction源。",
+        "reason": "HI对真实路径的逐边利润门槛保证每λ合法；λ0/1给minHIW/GI，LP达有限有理最优。π仅条件期望且终局标签不能丢。29严格升到29，单例λ0全恢复，但均不证明普遍half；合法非零背景混合利润案例与空根W不同，不能跨域判该LP失败。",
+        "edge_ids": [
+          "ca-7271-hi-common-terminal-price-duality",
+          "ca-7271-gi-half-implies-price-half",
+          "ca-7271-singleton-price-zero-restores-optimum"
+        ]
+      },
+      "M-0e792e5d4d914d5883f3db3c31e70a94": {
+        "state": "linked",
+        "object_pin": "579f4eb4e5ce19b3c773e423fd3efa3ed8b89cdcce893b4025eb2210e613d9c8",
+        "comparison_scope": "比较普遍GI-half⇒价格half的单向关系、全q单例λ0及29四价的正面子域；实读LP强对偶给∃λ与vI≥half的等价，以及正文的背景/银行模型边界警示。",
+        "reason": "条件关系已付且保GH开放前提；单例全参数族BI=vI=OPT、29固定例BI=vI=29均只是明确contribution。一般存在价格half仍open；缺的是任意输入λ构造或本LP精确低于half的反例，不是身份/来源待决。没有从别种菜单矩阵失败推本根价格LP失败。",
+        "edge_ids": [
+          "ca-7271-gi-half-implies-price-half",
+          "ca-7271-singleton-price-zero-restores-optimum",
+          "ca-7271-twenty-nine-price-half-contribution"
+        ]
+      },
+      "M-19cced6028da4e678d11574191efe9d0": {
+        "state": "linked",
+        "object_pin": "3c0a216d0e4a3d9b8c0dfdabdeb6342598997d9dffcc36f155f87d406ed85b0a",
+        "comparison_scope": "完整读六类型candidate、四价/原始4322、29定理七终局分组表及父3896B Fraction代码/576B十五字段报告；比较minHIW25、GI80/3和vI29及真BI根计数。",
+        "reason": "57路径/50边/7HI终局的成熟精确证书与原始点匹配支持vI=OPT4=29，给价格half固定例contribution并严格增强两旧预算。未执行原main或LP、未扩扫描；4322仅价格LP可行路径，唯一根计数不等于唯一完整策略。",
+        "edge_ids": [
+          "ca-7271-twenty-nine-price-half-contribution"
+        ]
+      },
+      "B7-INTERVAL-EXTRA-ONE-FLOOR-NO-v1": {
+        "state": "linked",
+        "object_pin": "65ca02942bca8a3ab15a1ee9cd87248f3e12d6094c6637262e4a6139899141db",
+        "comparison_scope": "完整读C5正文、packet全部22 summary字段、252非终局记录的每行动低高界和2520见证向量、60HI/20真BI根向量、六步假路径及三次泄漏；与一般HI、GI-half和价格half分域比较。",
+        "reason": "六人五单位客户输入LI1/2<自由t7=10/17只否逐节点HI-extra桥；真SPE根最小2/3且覆盖5，GI23/6仍满足累计half。已核精确3/34和4/3差，不写对GH/PH/真实half的反驳。原packet读取不是新HI/BI运行。",
+        "edge_ids": [
+          "ca-7271-five-cycle-gi-half-contribution"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/customer-attraction-3a-3a-7271ec3df388d40d/five-cycle-gi-half-contribution.json",
+        "sha256": "d5847dc316c8e292e1a0f785bf0211ae2c2cefc123a0638cbff8f367b4a9e99e"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-7271ec3df388d40d/gi-half-implies-price-half.json",
+        "sha256": "83706f9e2d3e2ddfccfa014a80f0b08c80c54ae71ed874ed6bff6646c79d8d24"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-7271ec3df388d40d/hi-common-terminal-price-duality.json",
+        "sha256": "4666ae9d531359a37cdb81e3f008558fc9f6c0498d0dc1de01bebc3157b359bc"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-7271ec3df388d40d/hi-disjoint-max-full-efficiency.json",
+        "sha256": "28d2a3c91e57659b3ce456645d5d8c60072f19598d3dbc2279148af8196c1a16"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-7271ec3df388d40d/hi-public-core-full-efficiency.json",
+        "sha256": "f2662abdfa4b7341601897194ed39ef809eba2e0f4afddb12af1bd1d807d8d09"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-7271ec3df388d40d/hi-singleton-exact-near-half.json",
+        "sha256": "b349b5f08dc14aaa2efd95a0e7fb004843c345325dafa473c784edeaad06ed94"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-7271ec3df388d40d/singleton-price-zero-restores-optimum.json",
+        "sha256": "1c15160ae579caaa64a015e90c7eded7c71c33e1f8fe7d86e425171d841ae23c"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-7271ec3df388d40d/twenty-nine-price-half-contribution.json",
+        "sha256": "a96628230102283fd1823b64e62fb2b9514aa46b0053ab51046b19e9a24c99fc"
+      }
+    ],
+    "follow_up_tasks": [],
+    "closed_overlaps": []
   }
 }

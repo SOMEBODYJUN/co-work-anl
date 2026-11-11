@@ -1,0 +1,42 @@
+{
+  "edge_id": "boss7-ca-756cb8-clock-real-ic-weighting-counterexample",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/common-exponential-role-clock-owner-potential-and-ic-domain"
+  ],
+  "target_ids": [
+    "customer-attraction/independent-random-weights-real-ic-decoupling-same-clock-negative-region"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "构造两人三标签九单位客户：{0}1人、{1}5人、{0,1}3人、标签2空；固定根1、末位在全部三个有序前缀均1，钟Y0,Y1独立Exp(1)。不随钟改写原动作表或后继。",
+  "roles": {
+    "customer-attraction/common-exponential-role-clock-owner-potential-and-ic-domain": "把原完整树的真实收益行表示成共用Exp-max删除边际的未条件化期望。",
+    "customer-attraction/independent-random-weights-real-ic-decoupling-same-clock-negative-region": "实例化得到真实SPE的同钟负区与精确负加权期望，并界定独立辅助权的合法平均。"
+  },
+  "explanation": "完整末位前缀0时三行动值(2,13/2,0)，前缀1为(5/2,4,0)，前缀2为(4,8,0)；根沿同一真实后继为(5/2,4,0)，所以该完整策略逐节点最佳。将共用钟定理的H_z删除当前角色边际用于actual11与真实偏离01：g1=8(Y0−Y1)_+，g0=Y0+3(Y0−Y1)_+。X=g1−g0=5(Y0−Y1)_+−Y0，EX=3/2与真实4−5/2相同。若Y0≤Y1则X=−Y0，反之X=4Y0−5Y1，故精确负区Y0<5Y1/4。取α为此区指标，换元r=Y0/Y1,t=Y1并积分t，EαX=∫_0^1−2r/(1+r)^3dr+∫_1^{5/4}2(4r−5)/(1+r)^3dr=−1/4−1/36=−5/18；只取Y0<Y1也给−1/4。故原真实IC的未条件化期望非负不允许任意同钟非负重权。另一方面固定确定原行c_a=u−D(a)≥0，任非负可积α_a(Z)先平均给ΣEα_a c_a≥0；若使用随机表示g(Y)，Z独立Y时可因式分解得到相同合法式。此平均不提供ΣEα_{i,a}≤1的角色容量。",
+  "scope": "完整具体真实SPE反例及合法平均接口；不反共用钟表示本身、不排所有有额外条件证明的时钟方法。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/共用指数角色钟的归属势表示与合法激励范围--定理.md",
+      "sha256": "97615d9e5f8afcd3c30988d49ae372e62a041580578b820f7f1fe4d5f2f4c02b"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/独立随机权的真实激励解耦与同钟负区--引理.md",
+      "sha256": "3209197a869d7690da14ed6ba218251b20c681200d968e4a78c5dffa890e29ab"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "本包worker逐项实读本边所列正文、模型、登记陈述和异议，复核目标量词及实际所得关系；复用成熟解析证明，不重跑原实验。",
+  "whole_result": "共用Exp-max收益表示在该九客户完整SPE中给EX=3/2>0但E[1_{Y0<5Y1/4}X]=−5/18，精确否定任意同钟重权IC；固定确定原IC可先平均任意非负可积辅助权，对随机收益表示乘积接口则以辅助权独立收益钟保证合法。",
+  "endpoint_pins": {
+    "customer-attraction/common-exponential-role-clock-owner-potential-and-ic-domain": "0bcacb2e2fd796264292e36f9a8d16338c05971eae323c740578e9eaae446bfa",
+    "customer-attraction/independent-random-weights-real-ic-decoupling-same-clock-negative-region": "3eac8bb88979dc738e9b2ab3f51dea16b8ae8a8692648fed480099c8b973c8ed"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/共用指数角色钟的归属势表示与合法激励范围--定理.md": "97615d9e5f8afcd3c30988d49ae372e62a041580578b820f7f1fe4d5f2f4c02b",
+    "archives/customer-attraction/state/引理/独立随机权的真实激励解耦与同钟负区--引理.md": "3209197a869d7690da14ed6ba218251b20c681200d968e4a78c5dffa890e29ab"
+  },
+  "review_digest": "ded241cf5ea688efc7c278e50f4329885e9169f31e26e354fd75d9d5321cf4c9"
+}

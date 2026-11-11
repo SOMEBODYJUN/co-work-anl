@@ -1,0 +1,42 @@
+{
+  "edge_id": "um-a56e5e8b-support-safe-step-can-leave-config",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "M-bdd481ab565d4b3bbae3e5a594c6a397"
+  ],
+  "target_ids": [
+    "M-6b8271c4ff7842d9a7187743b0ae09b4"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "两相同机器，三个正时间任务 (1,1/2,1/2)，T=1，x=(1/2,1/2,1/2) 为两原子均值；保护两紧负载及任务行。",
+  "roles": {
+    "M-bdd481ab565d4b3bbae3e5a594c6a397": "给全部负载 circuit 非零箱步离开 CONFIG 的精确两机实例。",
+    "M-6b8271c4ff7842d9a7187743b0ae09b4": "只证明给定真实目标原子、同符号的正向最大箱步保其端支撑。"
+  },
+  "explanation": "消去列守恒后，负载核 u_h+(u_a+u_b)/2=0 的 circuit 恰为两任务支撑。对 σ=(1,0,0)，d=(1,−2,0) 与 σ−x 同符号，正最大步1/4到 (3/4,0,1/2)，仍含实际 h|ab 的全部正端。两行工作量均1，但配置必是满载 {h} 或 {a,b}，投影为 (t,1−t,1−t)；这个端点不在其中。该线唯一非零切向有三任务支撑，故其它非零负载 circuit 也不可能留下配置点。",
+  "scope": "明确验证支持保存与 CONFIG 点再生不同。该例与 conformal 命题相容，反对其更强但未登记的 CONFIG-preserving 外推。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/支撑安全负载方向与CONFIG点再生的不同义务--审查.md",
+      "sha256": "5c94afbb537c86258649370acee3f9656b3f30c518efb6e6e88fb4b752064094",
+      "section": "Conformal只给支撑，不负责下一点"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/支撑安全负载方向与CONFIG点再生的不同义务--审查.md",
+      "sha256": "5c94afbb537c86258649370acee3f9656b3f30c518efb6e6e88fb4b752064094",
+      "section": "全正时间三任务：所有负载circuits都离开CONFIG"
+    }
+  ],
+  "reviewed_by": "Boss3",
+  "review_note": "按实际目标原子核 conformality、两边负载、列支撑和完整 CONFIG 投影。没有把同符号存在改为任意方向安全。",
+  "endpoint_pins": {
+    "M-6b8271c4ff7842d9a7187743b0ae09b4": "534328a0b98d094272e12a9475e243a6cc9a04eb5b0ff2d2889a88173c9cd813",
+    "M-bdd481ab565d4b3bbae3e5a594c6a397": "4f5d344cdd0eccff668d2fbff22945009ba5ff44a0614e44795f0a0779f039ee"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/支撑安全负载方向与CONFIG点再生的不同义务--审查.md": "5c94afbb537c86258649370acee3f9656b3f30c518efb6e6e88fb4b752064094"
+  },
+  "review_digest": "536020e48681939a85bb83d649a2e0d7f2566cb9fd15a61620ed3a20ae695f38"
+}

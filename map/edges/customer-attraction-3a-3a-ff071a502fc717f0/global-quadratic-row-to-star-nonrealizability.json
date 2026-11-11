@@ -1,0 +1,51 @@
+{
+  "edge_id": "boss6-cagff-r50-global-quadratic-row-to-star-nonrealizability",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "cag-quadratic-nonnegative-residual-full-catalog-coupling-and-local-transport-boundary"
+  ],
+  "target_ids": [
+    "customer-attraction/constant-center-full-tree-local-moment-half-tight-pseudofamily"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m≥4，p=m+1，中心A和m叶；目标指定截断交集表t_A=1,t_i=2/m,t_Ai=1/(m−1)，不同叶交集及更高阶为0。仅比较目标中的共同非负客户不可实现部分。",
+  "roles": {
+    "cag-quadratic-nonnegative-residual-full-catalog-coupling-and-local-transport-boundary": "给同一全目录二次行Q=R_A在完整Boolean客户类型上的非负性及其全目录标签依赖。",
+    "customer-attraction/constant-center-full-tree-local-moment-half-tight-pseudofamily": "把Q在指定星形截断矩上求值得严格负，排除共同客户实现；其余tight/full-tree断言另有证明。"
+  },
+  "explanation": "目标的Q(z)=z_A−Σ_i z_Az_i+Σ_(i<j)z_iz_j正是来源的R_a（a=A）。逐类型中心位0给k(k−1)/2、位1给(k−1)(k−2)/2，故共同非负客户的Q矩必非负。星形t代入得Q(t)=1−m/(m−1)=−1/(m−1)<0，因此任何共同非负客户重数都不可能实现这个矩表。该结论只用二阶但跨全部m+1标签，清分母或添空客户不改变负值。来源关于任意次数真子目录非负分解失败与目标的局部实现边界一致，不把局部客户表粘成真实全局游戏。",
+  "scope": "仅支付全目录Q分离贡献；没有从源推出真实全树IC或half紧性。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/二次非负残差的全目录耦合与局部运输边界--障碍.md",
+      "sha256": "b0dad402f0d4b12c8a4e8fb3eb482b6d9a4920a02b0d0416935a411858e8bb14"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/全树恒中心的局部客户伪矩与二倍紧点--障碍.md",
+      "sha256": "9641fa81b55ac6a453ed6c21b6c9d168a7859b2f620da139f166b25b3799a7dd",
+      "section": "二次全目录分离与固定策略的乘子限制"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/全树恒中心的局部客户伪矩与二倍紧点--障碍.md",
+      "sha256": "9641fa81b55ac6a453ed6c21b6c9d168a7859b2f620da139f166b25b3799a7dd",
+      "section": "星形参数与全部局部实现"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Fresh正式worker逐对象实读当前22core/7read的完整登记及主正文；本边承重证明直接复核，精确当前pins及引用SHA已核。未运行旧LP、BI、全树、随机或科学审计。Root串行原生绑定后发布；预审只作线索，不替本轮实读。",
+  "contribution": {
+    "result": "同一个合法全目录非负二次行Q在目标星形点取−1/(m−1)，严格排除共同非负客户实现。",
+    "remaining": "完整目标另需≤m标签局部非负实现、恒中心全部有序IC、W=1/OPT=2及m≥5严格离轨时同策略同目标乘子推零；本边不替代这些步骤。"
+  },
+  "endpoint_pins": {
+    "cag-quadratic-nonnegative-residual-full-catalog-coupling-and-local-transport-boundary": "40e1f085011aa6df444fd74b2c7ef719caf76d79e0221c3c490f8659ba082853",
+    "customer-attraction/constant-center-full-tree-local-moment-half-tight-pseudofamily": "26524ec45185b31d822db96d7d38fd94fbd155131b405b7e73cc774b629fe501"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/二次非负残差的全目录耦合与局部运输边界--障碍.md": "b0dad402f0d4b12c8a4e8fb3eb482b6d9a4920a02b0d0416935a411858e8bb14",
+    "archives/customer-attraction/state/障碍/全树恒中心的局部客户伪矩与二倍紧点--障碍.md": "9641fa81b55ac6a453ed6c21b6c9d168a7859b2f620da139f166b25b3799a7dd"
+  },
+  "review_digest": "b7bb7001aea27a06a01fca748e9defda736f3fb0e2d32dc2e8f93866c8dca70c"
+}

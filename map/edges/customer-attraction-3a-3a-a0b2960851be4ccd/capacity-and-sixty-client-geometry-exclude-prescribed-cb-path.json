@@ -1,0 +1,58 @@
+{
+  "edge_id": "ca-a0-round49-capacity-and-sixty-client-geometry-exclude-prescribed-cb-path",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-1901496cc91a4b8d8c6a42d18b39dd4f",
+    "M-6d5148b035f14ac5b22a0011b5e02bf4"
+  ],
+  "target_ids": [
+    "M-1ce54c8d518d4e32a3a6993a96c38132"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "使用PARTIAL明确的60单位客户、12标签、六人输入；假设指定实际C0,C1,CB,D,D,D及第三人CB终利4。D有42客户且与C0/C1不交，第三位置后恰3人。PARTIAL仅作输入几何，不假设这份根路径已为SPE。",
+  "roles": {
+    "M-1901496cc91a4b8d8c6a42d18b39dd4f": "任意真实偏离Q的覆盖次数必要容量与未平均化收益下界。",
+    "M-6d5148b035f14ac5b22a0011b5e02bf4": "明确九兴趣池及D=E0∪E1∪E2、42客户、前两C不碰D的同一输入。",
+    "M-1ce54c8d518d4e32a3a6993a96c38132": "对所有可能后继均排这份指定CB路径，保两固定前缀子SPE的正确性。"
+  },
+  "explanation": "反设有完整根SPE实现指定路径。在合法历史(C0,C1)当前可偏离D，取Q=T=D，q42、Σ_Q b0。只有3个严格后继，所以Σ_Q L≤126。CAP给当前规定u≥42²/(42+126)=21/2；但指定CB收益4，矛盾。等价u4要求Σ_Q L≥42²/4−42=399>126。该论证不依任何后继的政策或是否恒D，因此增益至少21/2−4=13/2，对全部后继均排除。small/big固定前缀后三人完整SPE的157节点认证不涉及此前节点，与这个早期不可能结论相容。",
+  "scope": "目标注册的指定根路径无法补全结论全部成立；不排全部partial-core结构、全部六人SPE或half。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/真实偏离的覆盖次数容量与不交储备尾障碍--引理.md",
+      "sha256": "2590eaee9d19c8ace19cf0ca0f6ea50b5314d450350d349d8645d819b7f3c8c8",
+      "section": "任意非空客户子集的必要容量"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/部分核心的两份固定前缀三回应者均衡与储备偏离--计算.md",
+      "sha256": "87d1645a660bf7ecb2f84ccbb9f504de24648c162b5257ac8e50e3f12f17b1e2",
+      "section": "客户几何、标签与范围"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/部分核心的两份固定前缀三回应者均衡与储备偏离--计算.md",
+      "sha256": "87d1645a660bf7ecb2f84ccbb9f504de24648c162b5257ac8e50e3f12f17b1e2",
+      "section": "未付的早期储备偏离：为什么没有根SPE"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-a0b2960851be4ccd/review.md",
+      "sha256": "f9dff0cd0c3bb98c303aa4c149dd0626a180497471789b657c6d482fc14a1fd7",
+      "section": "6. CAP、60客户部分核心与所有后继的排除"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Fresh正式worker逐当前pin实读原陈述/量词/主证明并在review中独立重建此关系；成熟有限证据按精确SHA与合同复用，未重跑科学程序。Root安装后须原生edge-bind --write及edge-check。",
+  "whole_result": "同60客户输入中任何保C0,C1,CB,D,D,D及第三利4的真实后继补全都违反第三位置IC；合法D偏离保证至少21/2、严格增益至少13/2。",
+  "endpoint_pins": {
+    "M-1901496cc91a4b8d8c6a42d18b39dd4f": "bdc53ca87df11c0800cc6d2a410dae7a6a2359f355bbbb7f9e5cce81e66a0d78",
+    "M-1ce54c8d518d4e32a3a6993a96c38132": "12b42f67e3aa74de40cba7e9da6f67ea90526a63395c09fd26682d60419a0e10",
+    "M-6d5148b035f14ac5b22a0011b5e02bf4": "672ad28a5c02fd057aa1eff4a9a1b0da201656b97c30541fa7217f5447a5035d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/真实偏离的覆盖次数容量与不交储备尾障碍--引理.md": "2590eaee9d19c8ace19cf0ca0f6ea50b5314d450350d349d8645d819b7f3c8c8",
+    "archives/customer-attraction/state/计算/部分核心的两份固定前缀三回应者均衡与储备偏离--计算.md": "87d1645a660bf7ecb2f84ccbb9f504de24648c162b5257ac8e50e3f12f17b1e2",
+    "map/edges/customer-attraction-3a-3a-a0b2960851be4ccd/review.md": "f9dff0cd0c3bb98c303aa4c149dd0626a180497471789b657c6d482fc14a1fd7"
+  },
+  "review_digest": "5ea5e34b5b00f6d400751041f8b1bae054e36d2a961e30c447d06b3ffba18898"
+}

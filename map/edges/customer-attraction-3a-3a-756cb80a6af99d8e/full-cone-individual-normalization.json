@@ -1,0 +1,47 @@
+{
+  "edge_id": "boss7-ca-756cb8-full-cone-individual-normalization",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-STRATEGY-CONE"
+  ],
+  "target_ids": [
+    "M-ccbf3d5d9ff148d2ba833ecca9eeaee9"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定k≥1标签、m≥1及全部有序历史形式动作表σ，Dσ={x≥0:Gσx≥0}；不先假定σ在非零实例中是SPE。非空type非负实质量作优化，整数点表示不同单位客户。",
+  "roles": {
+    "CA-STRATEGY-CONE": "提供固定形式策略全有序IC的精确有理锥与全部min(m,k)组合覆盖表示。",
+    "M-ccbf3d5d9ff148d2ba833ecca9eeaee9": "将同一锥切片从W1改成任一实际u_i1，保持所有严格逐人分离并给精确组合目标。"
+  },
+  "explanation": "完整锥定理使Dσ恰为σ所有真实有序节点最佳的质量锥。任非零x定义K=max_aΣ_{B∋a}x_B>0。每个实际玩家在自己的真实节点均可偏离到最大题，无论真实后继如何，终局覆盖人数至多m，故收益至少K/m；完整IC给u_i≥K/m>0。因此x→x/u_i(x)在同锥保平局且落入u_i=1；任一OPT>c u_i严格分离同倍率保留，反向由齐次性成立。该切片非空（全兴趣type质量m使任动作表每人1）且Σ_Bx_B≤Σ_a|A_a|≤kK≤km，故紧。最优m槽覆盖为max_{|J|=min(m,k)}v_Jx：少于这些不同题可补题、少于m槽可重复。有限J可交换max/sup，故sup_{x∈Dσ\\{0}}OPT/u_i=max_J sup_{Dσ,u_i=1}v_Jx。终局同标签玩家份额相等，只测每个实际不同标签一次无损。严格实可行点可在同有理面保严格有理化、清共同分母成不同单位客户；这不认证任一浮点union过滤上界、阴性抽样或一般DIRECT，不能用固定σ覆盖全部策略。",
+  "scope": "完整M-ccbf…归一化与组合目标合同；不转移其他探针的数值结果。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md",
+      "sha256": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/逐人最优覆盖门槛与安全扩充的固定策略锥探针--程序.md",
+      "sha256": "26936470cb62b37a93e1eae2bb751e356a3149e0a57f0aacb2e587bc210c86c4"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/三人六主题固定策略的逐人覆盖比线性探针--程序.md",
+      "sha256": "3a885805e162f907b10064f9f02c17f37b60e0fdf8c7b806f142520a9f2d8b11"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "本包worker逐项实读本边所列正文、模型、登记陈述和异议，复核目标量词及实际所得关系；复用成熟解析证明，不重跑原实验。",
+  "whole_result": "固定全历史形式σ的非零完整SPE锥每个实际玩家u_i≥K/m>0；归一化u_i=1无损保全部逐人严格分离，且OPT_m/u_i的上确界精确等于所有|J|=min(m,k)覆盖线性目标在该切片LP上确界之最大值，实际同标签玩家可只测一次。",
+  "endpoint_pins": {
+    "CA-STRATEGY-CONE": "4657ebd5314421477c1db4255ecff0d2eafa960dd47317013e042f4b240aca73",
+    "M-ccbf3d5d9ff148d2ba833ecca9eeaee9": "6ab9b63eba646820d3e13e01160bfd278dc761050be720d86ce9b5d91ff08357"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39",
+    "archives/customer-attraction/state/程序/逐人最优覆盖门槛与安全扩充的固定策略锥探针--程序.md": "26936470cb62b37a93e1eae2bb751e356a3149e0a57f0aacb2e587bc210c86c4",
+    "archives/customer-attraction/state/程序/三人六主题固定策略的逐人覆盖比线性探针--程序.md": "3a885805e162f907b10064f9f02c17f37b60e0fdf8c7b806f142520a9f2d8b11"
+  },
+  "review_digest": "b902b68d75da2b5f400edec38380d701d8517940f2af9565517b07d17b58e12a"
+}

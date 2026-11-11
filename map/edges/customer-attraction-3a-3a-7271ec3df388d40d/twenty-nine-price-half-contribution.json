@@ -1,0 +1,66 @@
+{
+  "edge_id": "ca-7271-twenty-nine-price-half-contribution",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-19cced6028da4e678d11574191efe9d0"
+  ],
+  "target_ids": [
+    "M-0e792e5d4d914d5883f3db3c31e70a94"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "原有限单位客户、单位提供者、有限非空共同标签目录、完整有序历史纯SPE模型；允许重复及全部离轨弱平局。仅固定29单位客户、四人、五标签六类型重数(7:6,8:4,16:2,21:6,22:5,26:6)；原精确57路径证书和父Fraction重构同输入同SHA复用，不重跑优化器或原main。",
+  "roles": {
+    "M-19cced6028da4e678d11574191efe9d0": "给四个明确非负计数边价格、全部57允许路径的精确对偶下界29和价格LP可行路径4322目标29。",
+    "M-0e792e5d4d914d5883f3db3c31e70a94": "价格half候选在这一固定实例成立并可达到全OPT；不推出任意实例或六人结论。"
+  },
+  "explanation": "该输入总客户29，标签2/3/4已全覆盖，故OPT4=29。原candidate与父标准库Fraction源码共同固定四价：根和e4的动作0为12/5，e0和e0+e4的动作3为24/5，其余0；四节点LI=20/3。全部HI允许路径57条、7个计数终局，各组最小Fλ均29；特别低叶(1,1,0,0,2)覆盖25、U0=5，0必在两个定价节点之一出现，(12/5)(20/3−5)=4恰补缺口。终局(1,0,0,1,2)的U0=8会扣16/5，但其有关路径必经定价3且U3=6，加16/5相消，保共同终局。其它组由已成熟全57路径精确证书承担，不以局部例代全部约束。路径4322每沿途Ua(q)−LI≥0且W=29，故是价格LP原始可行点；原/对偶匹配vI=29。于是明确λ使BI=OPT4=29>OPT4/2，且严格大于GI=80/3和minHIW=25。父代码另重建真BI唯一根计数(0,0,2,1,1)，但没有用exact_floors检验4322的全离轨policy，故不称该序列已验完整SPE。",
+  "scope": "一个29客户四人实例的精确价格half及严格增强证书；原枚举范围仅57允许路径/50计数边/7HI终局，非新运行、非一般价格最优性规律。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/祖先门槛的共同终局根价格与标记流等价--定理.md",
+      "sha256": "34e7e6ed9fa0e447d72413c5aafc54c3fc9410772d953d21bbf8f3737f342903",
+      "section": "二十九客户严格改善的完整证书"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/祖先门槛的共同终局根价格与标记流等价--定理.md",
+      "sha256": "34e7e6ed9fa0e447d72413c5aafc54c3fc9410772d953d21bbf8f3737f342903",
+      "section": "原运行、有限数值与当前未决接口"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/carried-floor-interval-prices-and-background-primary/related-originals/research/workspaces/customer-attraction/R-977d3dbff13346b3b7c0f5a4caa6168e/coupling/interval_price_strict_candidate.json",
+      "sha256": "f6aab49bacd7b012d0358132efa8f4b15b44a819733743ccd93fcf57896974c7"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/二十九客户根价格的父方Fraction重构合同--资源.md",
+      "sha256": "b3a08da3ee686f60c403c5e91aab770c42cb3e2c29c95a7aaebbaf812afba4da"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/parent-interval-price-audit-primary/original/research/workspaces/customer-attraction/R-977d3dbff13346b3b7c0f5a4caa6168e/parent/audit_interval_price_independent.py",
+      "sha256": "9280f24d5bfd52c53429986487bf7f8e4b601dad0bedf6adb2461cf219066a22"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/parent-interval-price-audit-primary/original/research/workspaces/customer-attraction/R-977d3dbff13346b3b7c0f5a4caa6168e/parent/interval_price_independent_audit.json",
+      "sha256": "9013f1cb25b6ca071567d5603e9d58316c9eb94267f2d5a36634989e211ee030"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "全文读六类型candidate、父Fraction源码和15字段报告；核了真实证书职责与共同q补偿，复用既有成熟57路径证据，原main/import/LP重跑均0。原始4322只记价格LP可行路径。",
+  "contribution": {
+    "result": "指定29客户四人五标签实例有显示非负四价满足BI(λ)=vI=OPT4=29，严格改善GI=80/3及零价格25，因而本实例的存在价格half义务已付清。",
+    "remaining": "普遍价格half仍须对所有其它有限输入和m≥1证明或给本LP值低于half的精确反例；有限四人证书不能解决一般或六人问题。"
+  },
+  "endpoint_pins": {
+    "M-0e792e5d4d914d5883f3db3c31e70a94": "579f4eb4e5ce19b3c773e423fd3efa3ed8b89cdcce893b4025eb2210e613d9c8",
+    "M-19cced6028da4e678d11574191efe9d0": "3c0a216d0e4a3d9b8c0dfdabdeb6342598997d9dffcc36f155f87d406ed85b0a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/祖先门槛的共同终局根价格与标记流等价--定理.md": "34e7e6ed9fa0e447d72413c5aafc54c3fc9410772d953d21bbf8f3737f342903",
+    "archives/customer-attraction/tools/evidence/carried-floor-interval-prices-and-background-primary/related-originals/research/workspaces/customer-attraction/R-977d3dbff13346b3b7c0f5a4caa6168e/coupling/interval_price_strict_candidate.json": "f6aab49bacd7b012d0358132efa8f4b15b44a819733743ccd93fcf57896974c7",
+    "archives/customer-attraction/state/资源/二十九客户根价格的父方Fraction重构合同--资源.md": "b3a08da3ee686f60c403c5e91aab770c42cb3e2c29c95a7aaebbaf812afba4da",
+    "archives/customer-attraction/tools/evidence/parent-interval-price-audit-primary/original/research/workspaces/customer-attraction/R-977d3dbff13346b3b7c0f5a4caa6168e/parent/audit_interval_price_independent.py": "9280f24d5bfd52c53429986487bf7f8e4b601dad0bedf6adb2461cf219066a22",
+    "archives/customer-attraction/tools/evidence/parent-interval-price-audit-primary/original/research/workspaces/customer-attraction/R-977d3dbff13346b3b7c0f5a4caa6168e/parent/interval_price_independent_audit.json": "9013f1cb25b6ca071567d5603e9d58316c9eb94267f2d5a36634989e211ee030"
+  },
+  "review_digest": "7d737a53d5a1ef8d60398b1df6f7123dc04ec36c4b76bdac63bebb9ba6fbc82f"
+}

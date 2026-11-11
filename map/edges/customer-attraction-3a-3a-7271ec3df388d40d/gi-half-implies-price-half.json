@@ -1,0 +1,52 @@
+{
+  "edge_id": "ca-7271-gi-half-implies-price-half",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-7a4075ba32f04c97864a34810bd5838f",
+    "B7-INTERVAL-ANCESTOR-PRICES-v1"
+  ],
+  "target_ids": [
+    "M-0e792e5d4d914d5883f3db3c31e70a94"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "原有限单位客户、单位提供者、有限非空共同标签目录、完整有序历史纯SPE模型；允许重复及全部离轨弱平局。空根且采用同一份保整eligible孩子的HI/GI和相同OPT_m；假设开放命题GI(0)≥OPT_m/2对每有限实例、每m≥1成立。不能把该前提当已证。",
+  "roles": {
+    "M-7a4075ba32f04c97864a34810bd5838f": "提供尚未证明的普遍GI-half前提。",
+    "B7-INTERVAL-ANCESTOR-PRICES-v1": "已证恒等式BI(1)=GI以及max价格值等路径LP值，保证all-one非负价格合法。",
+    "M-0e792e5d4d914d5883f3db3c31e70a94": "所得更弱普遍存在价格half义务；价格可以依实例，当前构造实际上取统一all-one。"
+  },
+  "explanation": "固定任意一个有限实例和任意m≥1。由价格定理，所有允许计数边均取λ_e=1时BI(λ)=GI(0)。若本实例的GI-half前提成立，就有该显式非负λ满足BI(λ)≥OPT_m/2。再对原GI-half的全部实例/m量词逐个取同一all-one构造，即得∀实例∀m∃λ的完整价格half主张。价格LP强对偶另给等价vI≥OPT_m/2。W≥BI使这一价格保证足够给全部完整纯SPE half，但没有在本包推掉GI-half前提。反向没有证明：29证书已显示最优价可严格优于GI，不能从存在λ-half反推出all-one达到half。",
+  "scope": "普遍GI-half ⇒ 普遍存在价格half的完整单向条件关系。开放源前提仍开放，论证本身无缺步。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/区间终局剪枝的上界比较与全效率目录类--定理.md",
+      "sha256": "398ae2b6a7151c5f4a182fb7072939792b25e7e84f22f85d91fdf0d1e2501d16",
+      "section": "全节点包含与下界比较"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/祖先门槛的共同终局根价格与标记流等价--定理.md",
+      "sha256": "34e7e6ed9fa0e447d72413c5aafc54c3fc9410772d953d21bbf8f3737f342903",
+      "section": "从真实路径到价格预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/祖先门槛的共同终局根价格与标记流等价--定理.md",
+      "sha256": "34e7e6ed9fa0e447d72413c5aafc54c3fc9410772d953d21bbf8f3737f342903",
+      "section": "有限路径原始、对偶与达到性"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "ALL同时保开放GI-half和已证BI(1)=GI。accepted只认证条件推导，绝不把任一普遍half候选升级为proved；没有未付推导步骤。",
+  "whole_result": "若M-7a4075ba32f04c97864a34810bd5838f的普遍GI-half成立，则对每实例取λ≡1使BI(λ)≥OPT_m/2，完整推出M-0e792e5d4d914d5883f3db3c31e70a94；由强对偶也等价于vI≥OPT_m/2。",
+  "endpoint_pins": {
+    "B7-INTERVAL-ANCESTOR-PRICES-v1": "8037e3431b966ba1eea9dd74cad907c61ebfcf0fb03cc94aa96febc4e20a7a8d",
+    "M-0e792e5d4d914d5883f3db3c31e70a94": "579f4eb4e5ce19b3c773e423fd3efa3ed8b89cdcce893b4025eb2210e613d9c8",
+    "M-7a4075ba32f04c97864a34810bd5838f": "92531427574cba8cfd3667623a7d952dccef2ab60b35517168dd082c1e35a9e4"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/区间终局剪枝的上界比较与全效率目录类--定理.md": "398ae2b6a7151c5f4a182fb7072939792b25e7e84f22f85d91fdf0d1e2501d16",
+    "archives/customer-attraction/state/定理/祖先门槛的共同终局根价格与标记流等价--定理.md": "34e7e6ed9fa0e447d72413c5aafc54c3fc9410772d953d21bbf8f3737f342903"
+  },
+  "review_digest": "6d14998f4c94a33860285b817bc1e5ee841af502df39b41ece591fdaf5009287"
+}

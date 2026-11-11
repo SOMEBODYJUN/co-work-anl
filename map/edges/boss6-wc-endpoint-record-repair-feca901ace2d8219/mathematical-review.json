@@ -1,0 +1,121 @@
+{
+  "schema": 1,
+  "task_id": "boss6-wc-endpoint-record-repair-feca901ace2d8219",
+  "owner": "Boss6",
+  "request_id": "de85fa2c01094fada23f6358cfa6ee8b",
+  "definition_pin": "95960cd5777f1103a68360cba8b421ac0b835437cfcbcfba826f0c529a41fc1d",
+  "reviewer": "Boss6 fresh formal wc-endpoint-record 3B repair worker, round50",
+  "outcome": "accepted; unchanged mathematical relations rebound to current endpoint record v2",
+  "reviewed_edge_ids": [
+    "wc-boss6-wc-endpoint-record-repair-monomialization-bridge",
+    "wc-boss6-wc-endpoint-record-repair-envelope-sandwich-sharp"
+  ],
+  "record_delta": {
+    "object_id": "weighted-congestion/heterogeneous-endpoint-integer-reduction",
+    "current_version": 2,
+    "current_registration_pin": "2d3198c35617e91b52cd088866c17e9fb45dd6b87d169f38d02acc2b0f4f8a83",
+    "prior_registration_pin": "a2b7dedcc0f191db11cccb8f9b90c6f84122ac3c3cdb02790c2e8d2597e14f0d",
+    "body_sha256": "64957afa7b236bc90b036ac3edf3ac5718ce77f7716541f87c8690cc6907aa4a",
+    "effect": "model/quantifiers/assumptions/scope/objections now explicitly encode the already proved contract; source body and all mathematical payload/evidence unchanged"
+  },
+  "mathematical_checks": [
+    {
+      "question": "Exact heterogeneous H/L contract and all-state interpretation",
+      "finding": "For the same input and the same real α>1, H and every Li are strict. For heavy=A and aligned set S empty, H is exactly the heavy deviation. For S nonempty, choose i∈S: T≥wi gives current p(1+T)+fi(wi)≥p(1+wi)+fi(wi), and W−T+wi≤W bounds its new cost by p(W)+fi(1+wi). Column symmetry covers the other heavy action. Weights are arbitrary positive reals, including wi>1; zero satellites and constant terms are permitted. This proves sufficiency only."
+    },
+    {
+      "question": "Actual density choice and algebraic n",
+      "finding": "p constant (including zero) makes every Li impossible by monotonicity and α>1; hence p is nonconstant and positive at positive loads. H gives ΣHi>R with Hi=fi(1+wi)−αfi(1), R=αp(1+W)−p(1)>0. Weighted averaging with wi/W selects an actual input i with Hi/wi>R/W. Then n=W/wi≥1 is algebraic and n f(1+w)+p(1)>α[p(1+nw)+n f(1)]; it is not a population. Hi>0 forces selected f nonzero."
+    },
+    {
+      "question": "Population lower bound and strict floor",
+      "finding": "Writing a=α−1, P=p(1+W), F=f(1+w), G=f(1), Q=p(1), H gives nF>αP−Q+αnG≥aP, while selected L gives p(1+w)+F>αF and P≥p(1+w), so P>aF>0 and n>a². Let m=floor n≥1 and ρ=m/n∈(0,1]. Convexity gives Bm≤ρB+(1−ρ)p(1), Am=ρA+(1−ρ)p(1); since A>αB, Am−γBm>ρ(1−ρ)(α−1)[B−p(1)]≥0 for γ=1+ρ(α−1). Strictness at ρ=1 is inherited from A>αB. Li stays strict because m≤n and γ≤α. Therefore all output states have strict γ improvement. γ>1 follows separately from ρ>0; floor n>n−1 and n>(α−1)² give 0≤α−γ<1/(α−1)."
+    },
+    {
+      "question": "γ>1 to monomial source, versus full-topology ρ0 threshold",
+      "finding": "In the full-topology proof, stable-interval/reflection and shifts produce left tests; its right branch requires Nα(α−1)<1, and α≥ρ0=(1+√3)/2 forces N=1. That branch uses w↦1/w and F′(wx),G(wx) without exchanging F/G. These earlier steps are not invoked here, because strict H/L are already given. The later monomialization section starts with any γ>1. Its second endpoint forces (n−1)w<1. For n=1,w>1 only, swapping the two players gives w″=1/w,F″(x)=G(wx),G″(x)=F(wx), so this time F/G really exchange and the two tests exchange. Thus w≤1 is legitimate without imposing γ≥ρ0."
+    },
+    {
+      "question": "Satellite chord, constant removal, and main monomial selection",
+      "finding": "With E=(1+w)^d, normalize G(1+w)>0. Uj=(1+w)^−j and Zj=(w/(1+w))^j=Uj^p with p≥1; the endpoint chord lies above U^p and preserves G(1),G(1+w) while increasing or preserving G(w). Replacing G by c+βx^d preserves strict tests. Removing c≥0 increases margins by n(γ−1)c and (γ−1)c. β>0, E>γ, and elimination of β yields a strictly positive linear functional of F coefficients. The constant monomial has strictly negative value, so a positive-degree x^k with 1≤k≤d survives. Its β interval has strictly positive lower endpoint and upper endpoint below1. This proves both source quotients >γ with integer population and k, 0<w≤1,0<β<1 at the same d."
+    },
+    {
+      "question": "F_poly=F_d including boundaries and baseline",
+      "finding": "Every strict same-weight polynomial certificate γ>1 gives an actual legal source tuple with min(A,B)>γ. Every legal source is a same-weight polynomial star and certifies every 1<γ<min(A,B). At β=0, A=1/(1+nw)^k<1. At β=1, (1+w)^k≤E and w^d≤(nw)^k give B≤1. Neither boundary raises the >1 supremum. Taking n=k=1,β=0,w↓0 yields F_d≥1. Thus the baseline-1 envelopes agree, with no attainment assumption and no single-instance minimax equivalence."
+    },
+    {
+      "question": "Complete ALL theorem, strict individual α and weak sup",
+      "finding": "The three proved premises are kept together: heterogeneous integerization, the endpoint-to-monomial section of WC-R3-FULL, and the independent R3 source theorem. The first two give h(α)=α−1/(α−1)<γ<Rsource≤F_d for each actual H/L witness α>1. Since h is strictly increasing on (1,∞), α<U(F_d) with U(F)=(F+1+sqrt((F−1)^2+4))/2. Taking sup gives F_d=F_poly≤F_het≤U(F_d), only a weak upper bound at the sup. Source A≤E≤2^d proves F_d finite. For F_d>1, U(F_d)−F_d=2/[sqrt((F_d−1)^2+4)+(F_d−1)]<1/(F_d−1)."
+    },
+    {
+      "question": "Independent sharp leading term input",
+      "finding": "Read all R3 proof routes: legal floor n and ceil k family has A/S,B/S→2/sqrt(e), S=sqrt(d ln ln d)/ln d; all-parameter elimination gives (f−1)^2≤n p/t and localizes every f≥cS sequence to w→0,n→∞,nw→0; scalar M(λ)~lnλ/(eλ) yields limsup f²/S²≤4/e, and selecting actual near-sup tuples supplies the noncompact supremum quantifier. The alternative y proof has exact n<y/(1−e^(−L/d)) and a three-region scalar lemma. Consequently F_d→∞ and the gap bound implies F_het/F_d→1 along all integer d, preserving the coefficient 2/sqrt(e). Frozen finite reports supply neither this theorem nor an error rate."
+    },
+    {
+      "question": "Real parameters, separate rational density and computation limits",
+      "finding": "Integerization copies an actual real wi and fi; this is not rationalization. The old ALL edge additionally proves rational-envelope equality: for a fixed finite N,d and fixed real α, finitely many strict polynomial H/L margins remain positive in a relative open parameter neighborhood. Positive rational weights and nonnegative rational coefficients (zeros may remain zero) are dense there. Same-weight and source parameter domains admit the same fixed-integer argument. This preserves the chosen strict threshold, but need not preserve original wi, m after re-reduction, the original γ formula, or any encoding-size/runtime bound. Both these mathematical paragraphs remain exactly unchanged."
+    },
+    {
+      "question": "Historical finite evidence, accurately bounded",
+      "finding": "Complete old Fraction code and its frozen JSON were read, not run. The d100,α=12/5 input has five weights23/1000 and five3/125; report selects i=0,n=235/23,m=10,γ=557/235. Code checks exact Fraction deviations for1024 subsets of each input/output with heavy=A; symmetry handles heavy=B. Float minima are display only. The separate report is endpoint fixtures near n=10 from either side, exact n=10, a zero-satellite fixture and62 rounding-formula cases, not a second full-state enumeration. Nothing in this repair claims new execution."
+    }
+  ],
+  "comparison_results": {
+    "R3-SOURCE-SHARP-ASYMPTOTIC-v1": "linked through the full three-premise ALL to M; independent sharp source theorem is necessary for its leading constant, whereas source finite-domain equality alone supplies the finite sandwich",
+    "WC-R3-FULL-TOPOLOGY-REDUCTION-v3": "linked through a local contribution paying F_poly=F_d and as one of the three joint inputs; its earlier full-state-to-endpoint ρ0 step is deliberately not a condition on the already obtained γ>1 certificate",
+    "weighted-congestion/heterogeneous-endpoint-integer-reduction": "linked via the local external monomial bridge and as an independent premise of the complete envelope theorem; actual-weight density and convex floor remain its own proof, with H/L sufficiency kept exact",
+    "M-1c4e30d5f9404d9e966e43820fed2daf": "read dependency and whole-result target, full current contract checked; not added as core coverage"
+  },
+  "payload_preservation": [
+    {
+      "old": {
+        "path": "map/edges/boss6-heterogeneous-source-3b-969473413388cb7a/endpoint-monomialization-pays-heterogeneous-envelope-bridge.json",
+        "sha256": "0aef0b5b3102dc4e9e0ad3a6d8e4e77b627fd17ebaefefc56dcabf30e1a3c753"
+      },
+      "new": {
+        "path": "map/edges/boss6-wc-endpoint-record-repair-feca901ace2d8219/endpoint-monomialization-pays-heterogeneous-envelope-bridge.json",
+        "sha256": "ab8ef4592b811d2f66422feaf451b21a13b597cfd1142a493e7ab8cb3e4e2e95"
+      },
+      "old_edge_reference_id": "wc-boss5-endpoint-monomialization-pays-heterogeneous-envelope-bridge",
+      "new_edge_reference_id": "wc-boss6-wc-endpoint-record-repair-monomialization-bridge"
+    },
+    {
+      "old": {
+        "path": "map/edges/boss6-heterogeneous-source-3b-969473413388cb7a/heterogeneous-source-envelope-sandwich-and-sharp-leading-term.json",
+        "sha256": "06f8a3b0b7407a8cf5e5c0b180a8f024024566e5ee7e35a20bb7a66d303ed758"
+      },
+      "new": {
+        "path": "map/edges/boss6-wc-endpoint-record-repair-feca901ace2d8219/heterogeneous-source-envelope-sandwich-and-sharp-leading-term.json",
+        "sha256": "3f5cc2cc8f5fd51b6fd8b64072585c9bdec349fd8bd69619a6c79ab1129a6f2b"
+      },
+      "old_edge_reference_id": "wc-boss5-heterogeneous-endpoint-source-envelope-sandwich-and-sharp-leading-term",
+      "new_edge_reference_id": "wc-boss6-wc-endpoint-record-repair-envelope-sandwich-sharp"
+    }
+  ],
+  "freshness": {
+    "all_current_registration_pins_match_task": true,
+    "all_declared_reading_refs_sha_and_sections_match": true,
+    "all_required_endpoint_body_and_evidence_sha_match": true,
+    "old_asset_shas_match_exact_prior_receipt": true,
+    "supplied_pushed_tip": "f4ccf4cb2b74d71f90821e4aacd03bef4924e932",
+    "tip_is_supplied_snapshot_not_worker_git_query": true
+  },
+  "canonical_comparison_search": {
+    "scope": "current clone map/edges, exact F_poly / M target / heterogeneous integerization ID text search",
+    "result": "only the two declared prior assets represent these exact relations; no extra current canonical relation duplicated"
+  },
+  "remaining_mathematics": [
+    "No missing step remains in either preserved relation under the stated d≥2, same-α strict H/L contract.",
+    "Any no-α-PNE→H/L necessity statement for arbitrary heterogeneous stars is outside scope and unproved here.",
+    "d=1 would require explicitly defining F_1; present source and full envelope statements remain d≥2.",
+    "No sup-attainment witness, bit-complexity, exact per-instance threshold, general heterogeneous or all-class bound is established."
+  ],
+  "overlap_disposition": {
+    "declared_overlap_comparisons": [],
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "reason": "This narrow superseding task declares no further comparison pairs. In-packet endpoint/source/envelope comparison is completed by the two replacements; contract-external directions are limits, not invented tasks."
+  },
+  "scientific_runs_performed": [],
+  "administrative_actions": "No Git, work.py, queue mutation, canonical registry write or Library access performed."
+}

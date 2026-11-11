@@ -1,0 +1,54 @@
+{
+  "edge_id": "ca-7271-hi-singleton-exact-near-half",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "B7-INTERVAL-CEILING-RELAXATION-v1"
+  ],
+  "target_ids": [
+    "B7-EXACT-FLOOR-HALF-TIGHTNESS-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "原有限单位客户、单位提供者、有限非空共同标签目录、完整有序历史纯SPE模型；允许重复及全部离轨弱平局。额外固定q≥1个不交单例主题且无其它主题，m=q+1；每合法有序前缀均保留，不限定在轨。真SPE集合用完整有序孩子可独立拼接的定义。",
+  "roles": {
+    "B7-INTERVAL-CEILING-RELAXATION-v1": "给固定HI/G递推；不能直接假定该放松等于真BI，须在本族另证明。",
+    "B7-EXACT-FLOOR-HALF-TIGHTNESS-v1": "给两类前缀中HI=真SPE终局的完整闭式，并显示精确终局仍发生近半累计floor损失。"
+  },
+  "explanation": "令j=|b|,d=已用题数,r=m−j。真终局集合R的递推可直接由完整历史定义推出：孩子R_a上ell=max_a min_Ra U_a，父只保每个满足U_a(z)≥ell的终局；必要性由BR，充分性在每个其它有序孩子分别选达到其最低值的完整子SPE，再拼接。r=0时HI=R={b},G=0。若j−d≥1，则fresh数q−d≥r；归纳后人只选互异fresh，当前fresh收益1、旧题≤1/2，故HI和真BI均只保fresh、LI=1、GI=r。若j=d，则fresh数q−j=r−1。当前选旧题使孩子入重复类，后人填全部fresh，当前恒1/2；当前选fresh仍全异，孩子归纳终局每题至少一次且恰一题重复，当前利润≥1/2，并可让下一位重复该fresh达到1/2。故所有孩子最低值均1/2，每行动eligible且各孩子全部终局均过真ell=1/2，HI=R。r=1时所有题已用，末位任题1/2；r≥2时有fresh孩子成本(r−1)/2，旧孩子成本r−1，故GI=r/2。q=1/m=2不需要假定出现利润1的分支。根GI=m/2，每叶都覆盖q=m−1；先选各fresh再末位重复是可实现的完整SPE路径。比值m/[2(m−1)]趋1/2，任意c>1/2选m−1>1/(2c−1)就有GI<cOPT。尽管每个节点低收入终局各自可实现，同一真实叶不能同时实现所有人的低收入。",
+  "scope": "仅q=m−1不交单例目录的所有q≥1、全部合法前缀和全部完整SPE；证明不是一般HI=BI声明。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/区间终局剪枝的上界比较与全效率目录类--定理.md",
+      "sha256": "398ae2b6a7151c5f4a182fb7072939792b25e7e84f22f85d91fdf0d1e2501d16",
+      "section": "两种准确递归、坐标压缩与合法范围"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/单例满配的真实终局与近半地板损失--定理.md",
+      "sha256": "684829df083dadc437f2ec6b92994d3e1c0b9e33874384832126b6d98bd96680",
+      "section": "每个合法前缀的完整闭式"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/单例满配的真实终局与近半地板损失--定理.md",
+      "sha256": "684829df083dadc437f2ec6b92994d3e1c0b9e33874384832126b6d98bd96680",
+      "section": "根福利、最低支付路径与严格系数障碍"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "另实证真BI的必要充分逐终局规则，再按两类前缀核HI=R；终局r=0、q=1及严重重复背景均保。该族GI仍严格大于OPT/2，不能记为half反例。",
+  "whole_result": "在q≥1,m=q+1个不交单例输入的每个合法前缀，HI恰等真SPE终局：已有重复时后人互异fresh、LI=1/GI=r；全异时全题各一次恰一题重复、LI=1/2/GI=r/2。根GI=m/2而每SPE W=OPT=m−1，排任何统一系数c>1/2。",
+  "endpoint_pins": {
+    "B7-EXACT-FLOOR-HALF-TIGHTNESS-v1": "bd439d965f77d7d75b9511441cca39f96ebd102f6e1aa68d88d8d013dfee38ef",
+    "B7-INTERVAL-CEILING-RELAXATION-v1": "d87d3cf7b49d86d3ee96477eceb08465a6ca216e74d1f8a6c1bf20258ea1a1bf"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/区间终局剪枝的上界比较与全效率目录类--定理.md": "398ae2b6a7151c5f4a182fb7072939792b25e7e84f22f85d91fdf0d1e2501d16",
+    "archives/customer-attraction/state/定理/单例满配的真实终局与近半地板损失--定理.md": "684829df083dadc437f2ec6b92994d3e1c0b9e33874384832126b6d98bd96680",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "2a21dd86f91ac8160a60fc6ee559881cd66ea227d2fb9d94269b538a8bd59031"
+}

@@ -1,0 +1,58 @@
+{
+  "edge_id": "cag-7934-collision-free-family-has-exact-all-real-fractional-price",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/collision-free-family-welfare-obstruction"
+  ],
+  "target_ids": [
+    "B6-COLLISION-FAMILY-FRACTIONAL-PRICE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "使用源给出的相同A_i/B_i/C_i/D有限目录，m=k+1≥2。对每个实v≥0，B(v)对全部非负实主题权z_T优化，覆盖按客户min(1,Σ_{T∋x}z_T)截断。z仅是比较权，不改变SPE行动。价格函数本身只依集合结构；代入实际u_i=W/m=2时使用源完整SPE。",
+  "roles": {
+    "customer-attraction/collision-free-family-welfare-obstruction": "给出每m≥2的明确目录与客户分组，以及真正完整SPE上的u_i=W/m=2、W=2m。",
+    "B6-COLLISION-FAMILY-FRACTIONAL-PRICE-v1": "由该目录四类主题约束的全实权原始/对偶匹配，得到所有v≥0的完整分段曲线及B(u_i)=B(W/m)=m−1<W。"
+  },
+  "explanation": "令k=m−1。任一z_T>1可改为1：T内客户总权仍≥1，T外不变，截断覆盖不降，v≥0时成本不增；有限目录故可在[0,1]^S紧盒达到最大。对任意客户向量0≤y_x≤1，有min(1,d_x)≤y_x+(1−y_x)d_x。因此若对每主题T均Σ_{x∈T}(1−y_x)≤v，则任意全实非负z的目标≤Σ_xy_x。这是有效全局上界，不使用浮点解或选定z的下界来充当上界。令每组X_i两客各y=s，a_i取t，b取u，d取w。四类约束分别为2s+t≥3−v、2s+u≥3−v、2s≥2−v、u+w≥2−v，目标成本2ks+kt+u+w。四区证书如下：(i)0≤v≤1取(s,t,u,w)=(1,1−v,1,1−v)，四类左减右依次为0,v,v,0，成本3k+2−(k+1)v；(ii)1≤v≤2取((3−v)/2,0,2−v,0)，余量依次0,2−v,1,0，成本k(3−v)+2−v=3k+2−(k+1)v；(iii)2≤v≤3取((3−v)/2,0,0,0)，余量依次0,0,1,v−2，成本k(3−v)；(iv)v≥3取全零，此时所有主题大小≤3≤v，成本0。各变量在对应区间均在[0,1]，端点1、2、3兼容。匹配原始方案为：0≤v≤2时所有A_i及D各权1，覆盖全部3k+2客户、总权k+1，价值3k+2−(k+1)v；2≤v≤3时仅所有A_i各权1，覆盖3k客户、总权k，价值k(3−v)；v≥3时z全零，价值0。故对所有实v≥0精确B(v)=3m−1−mv (0≤v≤2)，(m−1)(3−v) (2≤v≤3)，0 (v≥3)。完整SPE实际每人2及W=2m，代入得B(u_i)=B(W/m)=m−1，W−B=m+1>0。即本族没有反驳逐人W价格桥或均值价格桥；这只是在指定目录/指定SPE族上的精确值，不能推所有目录的价格上界。",
+  "scope": "完整支持目标的所有m≥2、所有实v≥0及全部非负实z量词，连同实际完整SPE上的B(u_i)=B(W/m)=m−1<W=2m。集合结构给价格，完整策略给收益代入，两部分均已付；不以同一族的K桥失败推一般价格桥失败。",
+  "whole_result": "collision-free-family-welfare-obstruction⇒B6-COLLISION-FAMILY-FRACTIONAL-PRICE-v1全陈述：每m≥2的给定三二目录对全非负实权优化有B(v)=3m−1−mv于0≤v≤2、B(v)=(m−1)(3−v)于2≤v≤3、B(v)=0于v≥3；该源完整SPE有B(u_i)=B(W/m)=B(2)=m−1<2m=W。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/三人碰撞自由族福利障碍--反例.md",
+      "sha256": "588764de045e2a55362773dc9b83d3f10cadb47e22d8feeac0c4e342cc4836ad"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/最大主题加性预算与分数价格曲线--障碍.md",
+      "sha256": "242d69b8d1630a6db6f67dd5205c5a5455b746459011aa65177359203cf6dfca",
+      "section": "1. 模型、族和量词"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/最大主题加性预算与分数价格曲线--障碍.md",
+      "sha256": "242d69b8d1630a6db6f67dd5205c5a5455b746459011aa65177359203cf6dfca",
+      "section": "3. 同一族的分数价格 LP：完整闭式"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/最大主题加性预算与分数价格曲线--障碍.md",
+      "sha256": "242d69b8d1630a6db6f67dd5205c5a5455b746459011aa65177359203cf6dfca",
+      "section": "4. 有限探针的证据等级与失败机制"
+    }
+  ],
+  "reviewed_by": "Boss7",
+  "review_note": "完整实读四区对偶和匹配原始三支方案，逐类写出A/B/C/D余量并核v=0,1,2,3和所有实v≥0，保全非负实比较权量词；源族完整归纳用于u_i=2代入。已读有限探针证据等级，未把其阴性结果当价格上界，未运行LP/BI/checker。",
+  "endpoint_pins": {
+    "B6-COLLISION-FAMILY-FRACTIONAL-PRICE-v1": "1890d22b850aa7a90353aa9c34bc947f39d122f5e4f445972396bb6c41259f88",
+    "customer-attraction/collision-free-family-welfare-obstruction": "9fbfbcfd4a941c4d6f0bf5de7788ff53f90c8f8c7ab0b505effef487d4980d6a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/反例/三人碰撞自由族福利障碍--反例.md": "588764de045e2a55362773dc9b83d3f10cadb47e22d8feeac0c4e342cc4836ad",
+    "archives/customer-attraction/state/障碍/最大主题加性预算与分数价格曲线--障碍.md": "242d69b8d1630a6db6f67dd5205c5a5455b746459011aa65177359203cf6dfca"
+  },
+  "review_digest": "e0c8159511d580c7806df470f82ec0e9772e931cc70bd34333da07913a8f60d4"
+}
