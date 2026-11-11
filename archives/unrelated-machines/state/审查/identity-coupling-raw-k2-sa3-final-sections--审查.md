@@ -137,7 +137,7 @@ L(h'q^2)=-c/160<0.
   \]
   （其中 (h_s=T-a_s-sum p_e b_e)，(q_s=sum p_ea_sE_e-(2-T)a_s)）把 canonical quality 乘 (W) 化为 Boolean/cover 等式及 raw physical slack。即使 (W=Z_f) 或 (1-Z_f)，(h_sa_sW) 也只达到三 raw literals，正好是 S3 合同的边界。
 
-因此，给定完整 S3 functional 时，canonical plain-SA1 rows、resource/gate/quality rows 可同点提取；同一点另有 raw M2 时，canonical affine square 的 pullback degree (le2) 给可选 M1。固定次数 rational LP 的 monomial 数、literal multipliers 数、系数 bitlength 和 vertex/Cramer/Hadamard 输出位长均为多项式；FAIL 只单向排除真实 threshold-(T) schedule。S3 并不由 raw K2、CONFIG 或实际 schedule 自动产生。
+因此，给定完整 S3 functional 时，canonical plain-SA1 rows、resource/gate/quality rows 可同点提取；同一点另有 raw M2 时，canonical affine square 的 pullback degree (le2) 给可选 M1。固定次数 rational LP 的 monomial 数、literal multipliers 数、系数 bitlength 和 vertex/Cramer/Hadamard 输出位长均为多项式；FAIL 只单向排除真实 threshold-(T) schedule。指定的 raw K2 或 CONFIG functional 不自动满足完整 S3；给定实际 threshold-T 完整 schedule，可以在该 0/1 点逐多项式取值，另造满足 S3 的 Dirac functional，但这不会升级另一指定的 K2/CONFIG 点。
 
 ## 3.1 与 §13 失败的关键层次界线
 

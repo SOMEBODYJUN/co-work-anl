@@ -1,0 +1,60 @@
+{
+  "edge_id": "cag-a371-price-finite-contract-to-tstar",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "PRICE-QUERY-VERTICES-v1",
+    "customer-attraction/fixed-complete-policy-finite-price-contract"
+  ],
+  "target_ids": [
+    "M-a2ddccf1426340bcb9bbddd432eab41b"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定正文唯一三人四标签完整有序策略σ：根0；一人历史0,1,2,3后分别3,2,1,0；末位完整16历史动作按正文表，尤其13后3而31后2。全部15种非空兴趣类型r_B为任意非负实数，且Γσr≥0；允许空客户、空覆盖、同覆盖异标签及任意弱平局。实际计数q=(1,0,0,2)，已占用a∈{0,3}，零福利不归一除法。",
+  "roles": {
+    "PRICE-QUERY-VERTICES-v1": "把每个非负收益价格u_a下全部非负分数query精确缩为完整有理V4；不独自提供SPE价格支付。",
+    "customer-attraction/fixed-complete-policy-finite-price-contract": "从同一完整σ的全部真实后继给出r≥0,Γσr≥0的准确锥，并以βw−Γᵀμ−c≥0支付有限目标行。",
+    "M-a2ddccf1426340bcb9bbddd432eab41b": "在已指定的整个15维重数锥，两个实际占用标签的B_r(u_a)≤2u_a，并保相应原60项有理证明载体。"
+  },
+  "explanation": "先保全部21个有序决策节点，每节点三个非自偏离共63比较，按真实后继计算和去重得39条有理Γ行，根终局固定为033。对任意r≥0使Γr≥0，令u_a=ℓ_a·r≥0、W=w·r≥0。源顶点定理以p=4、v=u_a代入，给B_r(u_a)=max_{z∈V4}[g(z)·r−τu_a]；完整V4恰30点，不限制重数支持或查询总质量。实例化合同目标为c=g(z)−(τ+2)ℓ_a。所引原JSON对每个a=0,3及每个z∈V4恰给一份有理β、稀疏μ，共60份；全部β≤0、μ≥0，逐15坐标R=βw−Γᵀμ−c≥0。因而c·r=βW−μ·Γr−R·r≤βW≤0。对30点取max，得到B_r(u_a)≤2u_a。原表的60份证书存在性由完整保存并本轮逐项核对的所引JSON直接支付；一般合同和顶点结论须与该具体精确证据一起使用，不能把单独工具当作通用价格定理。",
+  "scope": "完整目标数学结论及其所指原60项证书，限固定σ整个非负实重数锥；整数客户是子域，W=0亦直接包含。三人全部其他σ及六人half均不在此关系内。",
+  "whole_result": "有限普适顶点与固定完整策略锥合同在所引具体60项精确证书下共同特殊化：固定正文σ、全部r≥0且Γσr≥0、每个a∈{0,3}，均有B_r(u_a)≤2u_a；原有理表覆盖全部2×30目标，β≤0且全部15坐标残差非负，故包括零福利及全部非负分数query。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/非负分数价格的有限普适顶点--定理.md",
+      "sha256": "d2d398a68d2202bcb957758f3aab70ec142cf7d2f1c021c9658736b17504ba8a"
+    },
+    {
+      "path": "archives/customer-attraction/state/等价/固定完整SPE策略锥的有限价格合同--等价.md",
+      "sha256": "8664984e80081e1bc83093fc93ea90bfe224f82f659ac980ff1515113c9abf9b"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/固定三人策略锥的全查询价格证书--计算.md",
+      "sha256": "335d056ba9a922ce0ca7bdc996c043d157f2cca2efa2f2a402cf1b5a7f6e41b5"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-policy-price/original/credible/nonPNE_fixed_policy_tstar_exact.json",
+      "sha256": "926e784b611374bd57259544e283c87511848578344c1d7842362d67853c7e1a"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "Boss4完整实读当前两核心v1、共同模型、顶点v2及固定锥合同v1正文，两份冻结数学原稿和两JSON全部字段（各完整21节点σ、30顶点、60份稀疏有理证明）。本轮从定义另写Fraction计算，显式支撑及0/1满秩基再生V4=30，从全部63个真实偏离重建39行，重算两表全部1800残差坐标、μ非负及maxβ=0；这些有限有理核算仅核精确载体，普遍量词由顶点证明及逐坐标恒等式承担。未运行原build、LP、SPE搜索，也未声称新增盲审。",
+  "endpoint_pins": {
+    "M-a2ddccf1426340bcb9bbddd432eab41b": "900928bd4ff96925e101f6b945cd929eb42e50ab686d6713c5fa9befeb54b271",
+    "PRICE-QUERY-VERTICES-v1": "45db365cccfd95e5dc74594756f908f2ee6510d498b14ba9601a5c770e7082d1",
+    "customer-attraction/fixed-complete-policy-finite-price-contract": "00ae148fa8caecc9b0612e910913b6888f19a046a0eddf66dd2d6229cde43ec9"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/非负分数价格的有限普适顶点--定理.md": "d2d398a68d2202bcb957758f3aab70ec142cf7d2f1c021c9658736b17504ba8a",
+    "archives/customer-attraction/state/等价/固定完整SPE策略锥的有限价格合同--等价.md": "8664984e80081e1bc83093fc93ea90bfe224f82f659ac980ff1515113c9abf9b",
+    "archives/customer-attraction/state/计算/固定三人策略锥的全查询价格证书--计算.md": "335d056ba9a922ce0ca7bdc996c043d157f2cca2efa2f2a402cf1b5a7f6e41b5",
+    "archives/customer-attraction/tools/evidence/fixed-policy-price/original/credible/nonPNE_fixed_policy_tstar_exact.json": "926e784b611374bd57259544e283c87511848578344c1d7842362d67853c7e1a",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "3550620771437d3cff9781a5fc6e6de43d7bda48174b7b62b1800c31a330a6f2"
+}

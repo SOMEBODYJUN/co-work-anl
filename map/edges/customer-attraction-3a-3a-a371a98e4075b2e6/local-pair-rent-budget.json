@@ -1,0 +1,50 @@
+{
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss4",
+  "edge_id": "cag-a371-continuous-width-two-rent-pays-fixed-population-pair-budget",
+  "kind": "implies",
+  "source_ids": [
+    "B5-PATH-INTERVAL-RENT-v1"
+  ],
+  "target_ids": [
+    "B5-FIXED-POPULATION-PAIR-ERROR-v1"
+  ],
+  "conditions": "任意有限实际路径S_1,…,S_m；对j=1,…,m−3取连续窗口I_j={j+1,j+2}、rho=1、theta_j=1/j；合法整数r_j>s_j≥1且r_j+s_j=m−j。无SPE最优性前提。局部支配式E_H^{r,s}≤(r−s)(r−1)E_H^{2,1}由目标自己的四会员表解析支付。",
+  "roles": {
+    "B5-PATH-INTERVAL-RENT-v1": "同一客户真实hit排名及同一实际槽位拥塞Gamma≤2支付Σ_j E_Hj^{2,1}/j≤W。",
+    "B5-FIXED-POPULATION-PAIR-ERROR-v1": "将四会员局部代数支配接到实际根路径，得到固定人口归一误差总预算。"
+  },
+  "contribution": {
+    "result": "Σ_(j=1)^(m−3) E_Hj^{r_j,s_j}(S_(j+1),S_(j+2))/[j(r_j−s_j)(r_j−1)]≤W，任意合法逐前缀r_j,s_j均可。",
+    "remaining": "目标第一部分的四种会员收益恒等式及局部非负/支配因子来自目标自身逐客户代数，不由连续窗口定理独立生成。此边不提供将短pair-circuit嵌入原m人完整SPE真实偏离叶的全树运输；该额外义务不是已证目标的一部分。"
+  },
+  "explanation": "逐客户h=b_j(x)、a=1_(x∈S_(j+1))、b=1_(x∈S_(j+2))，目标表给E^{r,s}_{h}(a,b)≥0且E^{r,s}≤(r−s)(r−1)G_h，其中G_h=h[1/(h+1)−1/(h+1+a+b)]=E_h^{2,1}。对四会员可直接约分：00为0；10、01、11分别为(r−s)hs/[(h+r)(h+s)]、(r−s)h(r−1)/[(h+r)(h+1)]、(r−s)h(r+s−1)/[(h+r+s)(h+1)]。正因子除后乘theta_j，所得归一误差≤Σ_jG_Hj/j。将源租金引理取rho=1、连续宽2、theta_j=1/j，每槽至多属于两个被收费窗口，Gamma=max_tΣ_(j:t∈I_j)jtheta_j≤2，故Σ_jG_Hj/j≤2Σ_(x:c_x>0)[1/2−1/(1+c_x)]≤W。截断j≤m−3只是去掉非负项，人口关系保持r+s=m−j。所有权在整行选定，未按客户改变窗口或IC。连续性使虚拟命中排名等于真实排名；若换成稀疏reset收费会另有skip-premium，不能继承本边。",
+  "scope": "仅目标的完整路径归一预算步骤，源不需要SPE；客户类型、实际主题与原路径恒等映射。没有删动作、冻结后继或把非零背景剩余利润叫福利。",
+  "review_note": "完整实读pair合并引理、局部ghost审计正文和连续窗口独立审计，另读path端点所有列明成熟证据的相关节；按hit-rank望远镜复核普遍支付，有限17280/8188/151586不替代证明。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/R-171连续窗口与固定人口pair误差预算--引理.md",
+      "sha256": "1fe2861564519f06b29cd287e90bb3a491270e8b8f70744d04194fe33666acfc"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/R-171固定人口pair误差与ghost-rent系数--引理.md",
+      "sha256": "81d2bf5e4b8e1f429129bc384d695029e30a32b1a2c6417b01e9bba39106739b"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/R171连续窗口租金独立Fraction审计--计算.md",
+      "sha256": "f6ecf8ddf3c1b01196d7932bf5892fd413325191191196add78938c106ce3bb8"
+    }
+  ],
+  "endpoint_pins": {
+    "B5-FIXED-POPULATION-PAIR-ERROR-v1": "d560ee5fc1e9a22802d418c4c839066e75a7491248aceebe8d3025677e12d95f",
+    "B5-PATH-INTERVAL-RENT-v1": "c7f88d24e188d27da1d6805a8527cedb1c6dc997cb2a2b9449d4ceb7ba6ff8d8"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/R-171连续窗口与固定人口pair误差预算--引理.md": "1fe2861564519f06b29cd287e90bb3a491270e8b8f70744d04194fe33666acfc",
+    "archives/customer-attraction/state/引理/R-171固定人口pair误差与ghost-rent系数--引理.md": "81d2bf5e4b8e1f429129bc384d695029e30a32b1a2c6417b01e9bba39106739b",
+    "archives/customer-attraction/state/计算/R171连续窗口租金独立Fraction审计--计算.md": "f6ecf8ddf3c1b01196d7932bf5892fd413325191191196add78938c106ce3bb8"
+  },
+  "review_digest": "dfd19299201483e4c6a9d0c9b6e140771be211bcc38e3ea0b8d030090a40de0d"
+}

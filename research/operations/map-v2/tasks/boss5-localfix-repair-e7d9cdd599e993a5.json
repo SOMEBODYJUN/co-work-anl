@@ -1,0 +1,134 @@
+{
+  "definition": {
+    "task_id": "boss5-localfix-repair-e7d9cdd599e993a5",
+    "stage": "3B",
+    "registry": "research/registry.json",
+    "supersedes": [
+      "boss2-mz-joint-source-3b-7d327f911a777dc3"
+    ],
+    "object_ids": [
+      "M-8c360a7779154480879e38c65d1f827e",
+      "M-9a7614916cf04cee8915aefce74b502a",
+      "M-fb633f3a6f1448fbbd63bfc7c3806c40"
+    ],
+    "read_object_ids": [
+      "PCP-EXACT-PROJECTION-PERFECT-COMPLETE-BIREGULAR-ROUNDING-v1"
+    ],
+    "input_pins": {
+      "M-8c360a7779154480879e38c65d1f827e": "3dd4454f24e6ace08f116048d88ada39f73596fb57ae251b1d7b61568079281d",
+      "M-9a7614916cf04cee8915aefce74b502a": "2aa23f854e6b0f711408da511b189185dfbace9f8c524b4ddf8c0d7b1e97db49",
+      "M-fb633f3a6f1448fbbd63bfc7c3806c40": "fdb940f4d9c1ac5bffffa7b4e6b2317975a6ace432efab15cb0b8dc480350364",
+      "PCP-EXACT-PROJECTION-PERFECT-COMPLETE-BIREGULAR-ROUNDING-v1": "3fb491cd85e99950c05f1ce9bbcd8ec6daabc5bf1aae02627ef4efb4e7307922"
+    },
+    "write_paths": [
+      "map/edges/boss5-localfix-repair-e7d9cdd599e993a5",
+      "map/receipts/boss5-localfix-repair-e7d9cdd599e993a5.json",
+      "map/edges/boss2-mz-joint-source-3b-7d327f911a777dc3/joint-source-proof.md"
+    ],
+    "goal": "Resolve the changed inputs or unanswered comparison in boss2-mz-joint-source-3b-7d327f911a777dc3; reuse still valid coverage, and explicitly dispose each prior asset.",
+    "context_plan": {
+      "budget": {
+        "context_tokens": 500000,
+        "window_source": "official-default",
+        "model": "gpt-6.1-sol",
+        "used_tokens": null,
+        "history_mode": "fresh-worker",
+        "reserve_tokens": 200000,
+        "reading_tokens": 300000,
+        "output_tokens": 100000,
+        "runtime_remaining_tokens": null,
+        "declared_remaining_before_reserve_tokens": null,
+        "assumptions": [
+          "Window source is declared, not discovered from this conversation.",
+          "Reading budget includes source text and object/task metadata.",
+          "Reserved context includes expected generated records and later reasoning/tool growth.",
+          "Fresh worker assumed; actual system/prefix usage is unknown and covered only by the engineering reserve."
+        ],
+        "budget_is_runtime_measurement": false
+      },
+      "reading": {
+        "chars": 26267,
+        "utf8_bytes": 47649,
+        "source_tokens": 38046,
+        "metadata_tokens": 5152,
+        "estimated_tokens": 43326,
+        "metadata_chars": 4327,
+        "metadata_utf8_bytes": 6936,
+        "distinct_files": 5,
+        "reading_segments": 3,
+        "token_count_is_estimate": true,
+        "estimators": [
+          "conservative-math-text-estimate-v1; not a tokenizer count"
+        ],
+        "unmeasured_refs": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/Boss7-minrep-restored/original/manurangsi_minrep_degree_1807_00936v1.pdf",
+            "sha256": "259edd7e850da816ddb5c318287a7a3a525ccc8963f07918787156384d7153d8",
+            "bytes": 134108,
+            "reason": "Non-text evidence: export/read with the appropriate tool, then size its actual extracted context"
+          },
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/minzer_zheng.pdf",
+            "sha256": "13b8eb55f86cfe28ac8b283fe83612889b335e14b7a87d64d479451693c7dff4",
+            "bytes": 1526039,
+            "reason": "Non-text evidence: export/read with the appropriate tool, then size its actual extracted context"
+          }
+        ],
+        "measurement_scope": "Requested complete text spans plus supplied metadata; binary evidence is not token-counted from raw bytes.",
+        "task_overhead_tokens": 128
+      },
+      "reading_refs": [
+        {
+          "path": "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md",
+          "sha256": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/Boss7-minrep-restored/original/manurangsi_minrep_degree_1807_00936v1.pdf",
+          "sha256": "259edd7e850da816ddb5c318287a7a3a525ccc8963f07918787156384d7153d8"
+        },
+        {
+          "path": "archives/unrelated-machines/state/文献/四对一与字母表soundness两篇文献整理--文献.md",
+          "sha256": "6d5be138de6825a1208776cbb485316c5b0e9d197870e32ab7c1d8ca5cf2f746"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/minzer_zheng.pdf",
+          "sha256": "13b8eb55f86cfe28ac8b283fe83612889b335e14b7a87d64d479451693c7dff4"
+        },
+        {
+          "path": "archives/unrelated-machines/state/引理/投影约束多重图的保完备性近似双正规化--引理.md",
+          "sha256": "13803e66abc6432815634589e75cbc08238ad74287d89707120274fdfc7927d6"
+        }
+      ],
+      "oversized": false,
+      "requires_export": true,
+      "prior_assets": [
+        {
+          "path": "map/edges/boss2-mz-joint-source-3b-7d327f911a777dc3/joint-source-proof.md",
+          "sha256": "7b9a3ae50171facbfae3ca3c8da07ab412d5deace26c46327bfd2e7ac0b283ad"
+        },
+        {
+          "path": "map/edges/boss2-mz-joint-source-3b-7d327f911a777dc3/joint-source-to-strict-minrep.json",
+          "sha256": "e228f53092df2f02811d91032a734d28080112562b4e064193536ad3a76cd9f3"
+        }
+      ],
+      "retired_core_object_ids": [],
+      "recheck_core_object_ids": [
+        "M-9a7614916cf04cee8915aefce74b502a"
+      ],
+      "repair_reasons": [
+        "changed-registration-input"
+      ],
+      "note": "Read the previous task and receipt. Carry forward valid work. If needed, read the same scope in ordered passes. A retirement-only task lists no coverage or new assets.",
+      "comparison_question": "Minzer–Zheng 冻结PDF印15、52–59及60–61页：固定任意ε′>0和充分大g，沿Thm2.6独立η、§7.1内层误差与§7.3正规化，能否在同一全投影正规源同时实现Q=O(g^{2+ε′})、NO≤2^-11g^-2、YES≥1−1/d(Q,Γ)？核q=2与ℓ固定步长、正规化损失和Lemma7.8平行边端口；若成立接§7.4的严格全列表随机gap，不倒置显示定理量词。",
+      "comparison_priority": 0,
+      "scope_hint": "archives/unrelated-machines"
+    }
+  },
+  "state": "claimed",
+  "owner": "Boss5",
+  "request_id": "7969b2a3907b4291acfb3bbfdc3b2b3e",
+  "requests": {
+    "b381a65a6cb94ccea0db76cfebd4371f": "plan",
+    "7969b2a3907b4291acfb3bbfdc3b2b3e": "claim"
+  }
+}

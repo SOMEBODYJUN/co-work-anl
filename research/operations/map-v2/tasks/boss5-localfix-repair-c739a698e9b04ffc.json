@@ -1,0 +1,115 @@
+{
+  "definition": {
+    "task_id": "boss5-localfix-repair-c739a698e9b04ffc",
+    "stage": "3A",
+    "registry": "research/registry.json",
+    "supersedes": [
+      "unrelated-machines-3a-3a-850a6179151b732e"
+    ],
+    "object_ids": [
+      "M-14dbe6980117492aa7a3b48c52378dcb"
+    ],
+    "read_object_ids": [
+      "M-247deecec83946358afe4e89413a7bd1"
+    ],
+    "input_pins": {
+      "M-14dbe6980117492aa7a3b48c52378dcb": "b4a7cba894657b841b9c88baf9c45f372ed6f7cbbaca225813ea6933b6d7c0ea",
+      "M-247deecec83946358afe4e89413a7bd1": "f2082f5eaf3a9d65644b2cfe1be641dca8c0d1013cf4712153ec597b09f36f07"
+    },
+    "write_paths": [
+      "map/edges/boss5-localfix-repair-c739a698e9b04ffc",
+      "map/receipts/boss5-localfix-repair-c739a698e9b04ffc.json",
+      "map/edges/unrelated-machines-3a-3a-850a6179151b732e/review.md",
+      "map/edges/unrelated-machines-3a-3a-850a6179151b732e/reading-ledger.json"
+    ],
+    "goal": "Resolve the changed inputs or unanswered comparison in unrelated-machines-3a-3a-850a6179151b732e; reuse still valid coverage, and explicitly dispose each prior asset.",
+    "context_plan": {
+      "budget": {
+        "context_tokens": 500000,
+        "window_source": "official-default",
+        "model": "gpt-6.1-sol",
+        "used_tokens": null,
+        "history_mode": "fresh-worker",
+        "reserve_tokens": 200000,
+        "reading_tokens": 300000,
+        "output_tokens": 100000,
+        "runtime_remaining_tokens": null,
+        "declared_remaining_before_reserve_tokens": null,
+        "assumptions": [
+          "Window source is declared, not discovered from this conversation.",
+          "Reading budget includes source text and object/task metadata.",
+          "Reserved context includes expected generated records and later reasoning/tool growth.",
+          "Fresh worker assumed; actual system/prefix usage is unknown and covered only by the engineering reserve."
+        ],
+        "budget_is_runtime_measurement": false
+      },
+      "reading": {
+        "chars": 11716,
+        "utf8_bytes": 18922,
+        "source_tokens": 14381,
+        "metadata_tokens": 2491,
+        "estimated_tokens": 16936,
+        "metadata_chars": 2293,
+        "metadata_utf8_bytes": 3475,
+        "distinct_files": 2,
+        "reading_segments": 1,
+        "token_count_is_estimate": true,
+        "estimators": [
+          "conservative-math-text-estimate-v1; not a tokenizer count"
+        ],
+        "unmeasured_refs": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+            "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae",
+            "bytes": 550316,
+            "reason": "Non-text evidence: export/read with the appropriate tool, then size its actual extracted context"
+          }
+        ],
+        "measurement_scope": "Requested complete text spans plus supplied metadata; binary evidence is not token-counted from raw bytes.",
+        "task_overhead_tokens": 64
+      },
+      "reading_refs": [
+        {
+          "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+          "sha256": "f322df148d7781110aa8b4460adcbcd1cdffbc2f857ca93f5536abefa6f5fa3a"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+          "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+        }
+      ],
+      "oversized": false,
+      "requires_export": true,
+      "prior_assets": [
+        {
+          "path": "map/edges/unrelated-machines-3a-3a-850a6179151b732e/exact-load-dp-to-fptas.json",
+          "sha256": "a726448138447c62ac6115750d6149817d5fd8cddf0182937f14bb5f140cf2a5"
+        },
+        {
+          "path": "map/edges/unrelated-machines-3a-3a-850a6179151b732e/review.md",
+          "sha256": "5f958ba7b25b627252cbc6a06eec9abfa0125fb72348dd15ed6038936f0a4ade"
+        },
+        {
+          "path": "map/edges/unrelated-machines-3a-3a-850a6179151b732e/reading-ledger.json",
+          "sha256": "bd76823f72b2eee0de5094e91b55873cad73ba45b00c5d153f4706028734dc8d"
+        }
+      ],
+      "retired_core_object_ids": [],
+      "recheck_core_object_ids": [
+        "M-14dbe6980117492aa7a3b48c52378dcb"
+      ],
+      "repair_reasons": [
+        "changed-registration-input"
+      ],
+      "note": "Read the previous task and receipt. Carry forward valid work. If needed, read the same scope in ordered passes. A retirement-only task lists no coverage or new assets.",
+      "comparison_priority": 2,
+      "scope_hint": "archives/unrelated-machines"
+    }
+  },
+  "state": "available",
+  "owner": null,
+  "request_id": "b381a65a6cb94ccea0db76cfebd4371f",
+  "requests": {
+    "b381a65a6cb94ccea0db76cfebd4371f": "plan"
+  }
+}
