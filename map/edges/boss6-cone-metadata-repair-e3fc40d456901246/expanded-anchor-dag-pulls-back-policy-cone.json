@@ -1,0 +1,45 @@
+{
+  "edge_id": "cag-03a94-expanded-anchor-dag-pulls-back-policy-cone",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "CA-STRATEGY-CONE"
+  ],
+  "target_ids": [
+    "customer-attraction/three-anchor-symmetric-parameter-family-forced-path-DAG-and-floating-discovery"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定已保存全部动作与所有孩子目标弧、每步深度增加且保留forced身份的DAG；使用k=2、r=3的对称参数映射及其完整13标签。",
+  "roles": {
+    "CA-STRATEGY-CONE": "提供固定有序动作表上全部真实偏离的有理重数锥。",
+    "customer-attraction/three-anchor-symmetric-parameter-family-forced-path-DAG-and-floating-discovery": "用共享DAG固定部分可枚举策略，并用等权聚合65个参数限制客户类型。"
+  },
+  "explanation": "从根逐合法动作展开DAG，给每个有序历史沿相应孩子目标读规定动作和真实偏离后继。把65坐标以线性映射P展开为67种客户类型质量：前两坐标分别复制到各组私有类型，其余63公共坐标各到对应类型，未用兴趣类型取0。设G为完整有序动作表的差行。以s=lcm(1,…,5)=60同乘，每个DAG有效偏离行就是s·G_(h,b)P；同系数重复及零行可省。故满足全部精确行的非负有理参数，清分母即给这份完整策略的单位客户实例。x=1是归一选择，清分母后其正比例可恢复归一，不应改称W=1。",
+  "scope": "固定完整DAG且保孩子弧时的精确锥解释。三个浮点报告缺图和精确原始数据，且只能采样受限族；不推出所有策略、a/x≤1/2或任何福利界。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/三锚对称参数族的强制路径DAG与浮点探索合同--资源.md",
+      "sha256": "5d94d8bae2d46b5437a3ccbd169dbb05e9d8a9ef986c63cc8a29282191e95391"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md",
+      "sha256": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "核共享key包括forced及目标终局、65→67类型和60倍行缩放；没有把浮点最佳值当作精确可行。 本轮Boss6实读当前CA v7四定理、本边完整解释及三锚目标合同，核65坐标展开67类型、13标签5人、保forced/目标终局和全部孩子弧后60倍真实IC拉回、x=1不是W=1。R-373d历史报告仅providers/topics由6/3订正3/6，未用于本边承重推导；通用锥正文和本边全部证据SHA不变。原浮点记录与既有同SHA成熟核读按其真实范围继承；本轮不重跑BI/LP/IC，不补齐未保存DAG/精确质量，原contribution及remaining全保留。\nRoot Boss6已完整实读两条替代边与目标合同、三锚DAG正文和早期CCE正文。65→67类型与60倍全IC拉回保forced/target/全部孩子，x1不换W1；CCE只付43426客户actual044的完整顺序SPE原始见证，静态35列与非负乘子独立，旧改进下界仍非锐值。13核成熟coverage和round9七税P13修复完整保留，未重复科学计算。",
+  "contribution": {
+    "result": "将完整有序策略的客户锥沿展开DAG与对称参数映射拉回，得到全部固定DAG真实IC行及有理可行点的单位客户实现。",
+    "remaining": "需要给具体保存报告补齐动作/弧和精确质量并核全行；一般锥定理无法认证历史浮点最值或搜索覆盖。"
+  },
+  "endpoint_pins": {
+    "CA-STRATEGY-CONE": "291bd4d94e33d40566453a33b5cf07b1c620b77362268417582efecb42b0c4bb",
+    "customer-attraction/three-anchor-symmetric-parameter-family-forced-path-DAG-and-floating-discovery": "0fd0ffd87b329b1be7e9b02be9e974fd9d47107589415960481e1e303505c8dc"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/三锚对称参数族的强制路径DAG与浮点探索合同--资源.md": "5d94d8bae2d46b5437a3ccbd169dbb05e9d8a9ef986c63cc8a29282191e95391",
+    "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39"
+  },
+  "review_digest": "4dd0d0b125279d87239d3682d18fd298d45e23be35defcf00f338b2643e80a96"
+}
