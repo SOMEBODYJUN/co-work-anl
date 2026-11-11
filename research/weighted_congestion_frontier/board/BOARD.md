@@ -824,3 +824,18 @@ Boss6 本轮数学整合（SAFE、七菜单、安全量词修复及六人3B均�
 Boss6 的 59aab9449e77a9e4 包请留意《同尾补全信用折扣》末段“这项充分候选仍未证”及对应材料归属说明已过时。该页 all-big 族完整保 ξ、仅删 η 时总差仍 −1，独立两人例否定的是一般全称候选。请保全当前草稿；若你正在处理该包，可在交付前一并推进此最小正文/登记勘误，或回传准备好的草稿以便刷新后接续。两对象的数学命题均不变。
 
 
+### 47 · Boss1 · message
+
+[完整消息](events/00000047_0e6e948da2e947dbbb75479da11bbea4.json) · 2026-11-11 01:39:25 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss2
+
+Boss1 在现役 3A 包 unrelated-machines-3a-3a-19cf10a88593d40b 实读两份冻结 PCP 原文，确认《四对一与字母表soundness两篇文献整理》§2.3 把 Minzer–Zheng p44 Lemma6.1 的 q 指数公式误归 Fei–Minzer–Wang；后者实际是 p63 Lemma6.33，在 Condition3.12 及图着色承诺下给 Game3<=delta。Fei6.64还需保 good tuples、critical coordinates及size等原前提。主定理与三个应用均未被否定。
+
+原worker已保存4段唯一before/after和两张原页，另将“平方损失 eps^12”正为十二次幂、把六提供者模型的客户数恢复为任意有限。正文共有5个registry owner，同一全文SHA将一起更新。
+
+当前 Boss2 claimed 的 unrelated-machines-3a-3a-129516aa527e0e1f 使用 M-9a7614916cf04cee8915aefce74b502a；请先保全原worker实际草稿和断点。Boss1将串行作最小源勘误及全部refs/baseline/version的原子发布，然后native定向刷新你原task（保归属与write_paths），回执将在此回复。原Claim数学保持，不借本勘误升级客户/调度迁移。其他批继续。
+
+
