@@ -48,9 +48,9 @@ Fei–Minzer–Wang 还使用 `d-to-d'` 约束：左字母表分成大小为 `d`
 
 定理 3.3/定理 1.6 的证明在 Condition 3.12 下分成 Game1a、Game1b、Game2a、Game2b、Game3 五步。参数包括有限域维度、重复次数 `k`、Grassmann 维度 `ℓ1,ℓ2`、advice 维数、平滑参数和误差序列 `τ_i`；这些参数必须按条件式顺序选取，不能独立地把某个维度缩小。
 
-核心桥梁是 Lemma 6.1：当外层 smooth game 的值低于 `q^{-ζ(δ)·ℓ^2}` 时，组合后的 PCP 值至多 `64 q^{-2(1-1000δ)ℓ}`（论文在式中取 `k=q^{2(1+c)ℓ}`、`β=q^{-2(1+2c/3)ℓ}` 的相容参数）。证明走逆命题：若 Alice/Bob 表的组合测试通过率高于该界，则经过 clique-consistency、zoom-in/zoom-out、Grassmann 线性测试和 list decoding，可解码出外层策略，从而与外层 soundness 矛盾。
+最终 soundness 桥是 Fei–Minzer–Wang 的 Lemma 6.33（原 PDF 第 63 页）：在 Condition 3.12 的完整参数条件下，若超图 `H` 的每个 `4^r` 色着色都使至少 `ε` 比例的边单色，则 `val(Game3[H,k,ℓ1,ℓ2,t,s,β])≤δ`。证明见 §6.6–§6.8：反设 Game3 的值大于 `δ`，先展开并剪枝 Alice/Bob 局部表，再经 mixed-type covering、zoom-in/zoom-out、Grassmann 解码与 list decoding，构造 Game2c 策略，其成功率至少为 `exp(−30ℓ1^2)·exp(−3Cq0^2ℓ1)>2^{−q2/4}`；由 Proposition 6.30 与 Lemma 5.22 的 Game2b 上界得到矛盾。这里的 `δ` 是最终 soundness，`ε` 是超图单色边比例；表 1 中的 `r` 是内部参数，不是主定理中字母表界的同一个量词。形如 `q^{−ζ(δ)ℓ^2}` 到 `64q^{−2(1−1000δ)ℓ}` 的公式及 `k=q^{2(1+c)ℓ}`、`β=q^{−2(1+2c/3)ℓ}` 属于 Minzer–Zheng 的 Lemma 6.1（该文原 PDF 第 44 页），不用于表述本段 Fei–Minzer–Wang 的 soundness。
 
-Lemma 6.64 是最终 decoding 的关键形态：许多 Bob-packet 与 zoom-out 线性函数形成 sunflower 后，先在公共大空间上做 Grassmann 线性测试，得到一个全局线性函数，再用 list-decoding 证明它必须与某个 Bob 函数完全一致。论文明确指出这里需要把局部“与 `f_i` 有明显 agreement”提升成一个全局函数；单纯的二次损失会落到随机函数阈值以下，所以必须用更强的、与 agreement 同阶的解码论证。
+Lemma 6.64（Fei–Minzer–Wang 原 PDF 第 80–81 页）在 Condition 3.12 下，固定剪枝后的表、一个 Alice-packet `(E,U)` 和 `q0` 维子空间 `Q`，并要求至少 `m≥exp(1000k^5)` 个 good Bob-packets 具有互异的 critical coordinates 及相同的 critical-coordinate 大小。结论给出 `W⊆V(E)`、`Q′⊆Q` 和线性函数 `f:W→F2`，其中 `codim W≤2q0`、`codim_Q Q′≤1`，且在普通 Grassmann 分布 `Q′⊆L⊆W` 上，Alice 表与 `f` 的 agreement 至少为 `exp(−100q0^7)`；此外某个 Bob 解码对 `(f_i,W_i)` 满足 `W_i⊆W` 和 `f|W_i=f_i`。这把足够多的 good tuples 推进为至少一个 excellent tuple；§6.7 将其用于控制 good 但非 excellent 的概率，§6.8 给出 sunflower、线性测试与 list decoding 证明。该结论不能删去 packet 正规性、剪枝表和 Condition 3.12 后当作一般无损解码定理。
 
 ### 2.4 论文内的失败机制与边界
 
@@ -71,7 +71,7 @@ Lemma 6.64 是最终 decoding 的关键形态：许多 Bob-packet 与 zoom-out �
 
 随机赋值的基线约为 `1/R`，因此这是接近信息论极限的 alphabet-to-soundness 交易，但完整性仍是 imperfect（`1−τ`），没有给出 Fei–Minzer–Wang 那样的 perfect completeness。论文也说明构造在实例大小与字母表之间保持足够好的关系，且经轻微修改可以得到二部 biregular、bounded-degree 版本（定理 7.2）。
 
-论文的关键技术性新引理是 Lemma 1.7：若一个线性表在许多 codimension-`r` 的 zoom-out 子空间 `W_i` 上分别与线性函数 `f_i` 有至少 `ε'` 的 agreement，且数量达到 `q^{Cℓ_1}`，当 `ε'≥q^{-(1−δ)ℓ_1}` 时，可找到更低 codimension 的 zoom-out `W` 和线性函数 `f`，其 agreement 仍为 `Ω(ε')`。它避免了早期解码引理的平方损失 `Ω(ε'^12)`，因为在本文参数区间那种平方损失低于随机线性函数阈值而失去意义。
+论文的关键技术性新引理是 Lemma 1.7：若一个线性表在许多 codimension-`r` 的 zoom-out 子空间 `W_i` 上分别与线性函数 `f_i` 有至少 `ε'` 的 agreement，且数量达到 `q^{Cℓ_1}`，当 `ε'≥q^{-(1−δ)ℓ_1}` 时，可找到更低 codimension 的 zoom-out `W` 和线性函数 `f`，其 agreement 仍为 `Ω(ε')`。它把早期解码引理的高次幂保证 `Ω(ε'^12)` 改进为 `Ω(ε')`；在本文参数区间，原 `ε'^12` 保证低于随机线性函数的 agreement 阈值 `q^{−ℓ_1}` 而失去意义。
 
 ### 3.2 组合结构与证明依赖
 
@@ -108,7 +108,7 @@ Lemma 6.64 是最终 decoding 的关键形态：许多 Bob-packet 与 zoom-out �
 
 ## 5. 对当前六人 SPE/目录覆盖模型的接续判断
 
-当前主模型是六个单位客户、有限非空共同目录、六个提供者沿完整有序历史各选客户子集，终局客户价值在覆盖者间均分；目标是每份完整历史纯 SPE 的覆盖人数至少达到六个目录主题最大覆盖人数的一半。两篇 PCP 不是该模型的证明，也没有给出客户效用、提供者策略、子博弈完美性、任意平局或空主题处理的定义。因此本文件只建立以下**接口和障碍**：
+当前主模型具有任意有限个单位客户、有限非空共同标签目录及覆盖映射，六个提供者沿完整有序历史各选一个目录标签，终局客户价值在覆盖者间均分；目标是每份完整历史纯 SPE 的覆盖人数至少达到六个目录主题最大覆盖人数的一半。两篇 PCP 不是该模型的证明，也没有给出客户效用、提供者策略、子博弈完美性、任意平局或空主题处理的定义。因此本文件只建立以下**接口和障碍**：
 
 1. **可作为硬度压力源的抽象**：projection-game 的“局部标签一致性”与目录/历史上的局部选择一致性有形式相似性。若第三阶段要主张某个自动构造或搜索程序对所有完整历史都能高效找到半覆盖 SPE，应先说明其输入如何编码成有限 game，以及归约是否保留共同目录、零客户、离轨历史和任意平局。两篇论文没有完成这一步。
 2. **完美完整性警告**：任何把“存在一个全局可行标签”类比为“存在一个完整历史 SPE”的论证，都必须处理 Fei 论文所强调的完美完整性与近完整性的差别。当前模型的“完整历史”与“纯 SPE”是量词要求，不能由高概率或 `1−τ` 近似替代。
