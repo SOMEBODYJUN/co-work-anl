@@ -1,0 +1,96 @@
+{
+  "edge_id": "um-9a5cd2-exact-load-dp-and-partition-imply-full-fptas-hardness-v5",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-247deecec83946358afe4e89413a7bd1",
+    "M-e8d9614430ab49fc99125452d10388f1"
+  ],
+  "target_ids": [
+    "M-14dbe6980117492aa7a3b48c52378dcb"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一显式有限资格端、任务不可拆分、二进制正整数处理时间R||Cmax。算法对每个固定dual或incidence树宽界k和有理epsilon>0成立；给定分解直接DP，未给时采用review已复核的固定k多项式分解搜索。精确负载DP须使用当前完整Cmax join加父活跃lambda最大值，或完整等价closed-max/forget-machine语义；cap含零、任务恰分配一次及投影负载守恒。困难性在dual<=1或incidence<=2常数宽类已发生，不声称宽0子类困难。无未付的LST二倍近似或其它开放前提。",
+  "roles": {
+    "M-247deecec83946358afe4e89413a7bd1": "提供修正后的精确负载DP、L^{O(k)}O(nm)状态复杂度和合法调度回溯；通过可计算B_min及缩放支付FPTAS，并给固定k伪多项式精确DP。",
+    "M-e8d9614430ab49fc99125452d10388f1": "提供显式二进制PARTITION的精确NP完全判定合同；review的全输入两机映射保YES/NO、binary位长和常数图宽。",
+    "M-14dbe6980117492aa7a3b48c52378dcb": "接收完整的两个并列结论：常数dual/incidence树宽类弱NP-hard；每个固定宽度均有FPTAS。"
+  },
+  "whole_result": "正向ALL(M247,PARTITION)=>M14：整数R||Cmax在有界常数dual或incidence树宽类仍弱NP-hard（NP-hard已见于dual<=1、incidence<=2），且每个固定宽界k、每个epsilon>0、每个合法可行实例，都能在poly(input位长,1/epsilon)时间输出峰值<=(1+epsilon)OPT的合法调度，次数可依k。算法为向上取整、裁剪整数负载DP及真实回溯。",
+  "explanation": "两源分工不可拆成单前提whole边。算法沿当前ea3c已证贡献：逐任务最短有限端调度有OPT<=B_min<=nOPT，epsilon0=min(epsilon,1)，q=epsilon0 B_min/n^2，a_ij=ceil(p_ij/q)，K=floor(n^2/epsilon0+n)。原最优在缩放后每机负载<=OPT/q+n<=K，非负中间负载保证cap安全；L<=K+1含零。精确DP回溯sigma_a使C_p(sigma_a)<=qC_a(sigma_a)<=OPT+nq<=(1+epsilon)OPT。资格不增加，整数商的位长多项式，固定k分解和DP均poly(input,1/epsilon)。若另已给合法OPT<=B<=2OPT，q=epsilon0 B/(2n)、cap=B+nq，亦得同保证；不使用源PDF过小cap。困难性：PARTITION输入正c_j、S=sum c_j，偶S时建两同机p_1j=p_2j=c_j、T=S/2。总负载2T迫使峰<=T当且仅当两组等和；奇S/非法编码给固定NO，空合法序列给空YES。dual K2宽1，incidence K_{2,n}由袋{1,2,j}路径分解宽<=2，映射位多项式且调度证书可验证。M247在0..U（U=sum_j min_i p_ij）内阈值DP给每个固定k的伪多项式精确算法，故与上述NP-hardness共同支持弱困难性；未推强困难性/近似gap。review完整核当前join修正、core两参数、算法及NP-hardness方向；M14单独的极小epsilon路线不交付M247参数对FPT的固定输入次数，故无反向whole边。",
+  "scope": "M14整个Theorem3合同；一般unrelated处理时间，常数dual/incidence图宽下的FPTAS及数值弱困难性。不是仅树宽的精确FPT，不涉及restricted-assignment rankwidth PTAS，不给强NP-hard或近似gap。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+      "sha256": "113ed833ea9443fe2166793c19b5fe2b1b6bfb3b789e6f617372120d1c90375e"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+      "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/结构参数DP共享活跃机器合并负载勘误--审查.md",
+      "sha256": "3b26e5d5cf1c422b280e04cf0b39964fe5aa804335576b117c54198ccca5b4b6"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "2. 主定理的21个判定问题及历史术语"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "1. 先固定语言、量词和编码"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "4.1 SAT到至多3文字SAT"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "4.2 至多3文字SAT到着色：原印符号必须校正"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "4.3 着色到团覆盖、到精确覆盖"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "5.4 Exact Cover到原名KNAPSACK：基数不是指数位长"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+      "section": "5.5 Subset Sum到单机罚金排序、到Partition"
+    },
+    {
+      "path": "map/edges/boss6-runtime-provenance-repair-repair-ea3c50ff802ffdaf/review.md",
+      "sha256": "eb44107a8c6be855a0aa69dc5faea1d335620b08a39a3a4adebf3432f139edbe"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-9a5cd2eb99c8ff5a/review.md",
+      "sha256": "ccd42713d9b8052f7919b6ac0c338b4987676dfcfd4f50dc207593cd0738220a"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "Boss5 repair_9a worker亲自读当前任务、三对象完整记录、完整中文结构正文、完整正式join audit、原PDF页1-11连续文本及页4/6/9/10/11视觉，Karp body与全部7个指定必要章节，当前ea3c完整edge/review/receipt。当前registry.edge_files全列表逐JSON加载去重，没有相同共同ALL边。逐项核B_min/二倍上界两路线、非负cap和零状态、整数位长、真实回溯、两机全输入YES/NO及宽1/2显式分解、固定k伪多项式。整条目标两半均支付，采用whole_result而非把单源贡献误升整条。0科学程序/有限扫描；未把历史PDF或未读页12-19归本轮。",
+  "endpoint_pins": {
+    "M-14dbe6980117492aa7a3b48c52378dcb": "8d3c860cc8f5e4d5abd95ab0b8891067fb982bc537b9f4870b161e43a7800372",
+    "M-247deecec83946358afe4e89413a7bd1": "d026cdeda8e61fd5025c4c061a88cb0bf2606b83fa3d7281bc14b4fcab722149",
+    "M-e8d9614430ab49fc99125452d10388f1": "8235a2ee5b9dcca8eed3e1083fdc0e9d32a10ffc64b264ea13b6c6de967c0ab4"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md": "113ed833ea9443fe2166793c19b5fe2b1b6bfb3b789e6f617372120d1c90375e",
+    "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae",
+    "archives/unrelated-machines/state/审查/结构参数DP共享活跃机器合并负载勘误--审查.md": "3b26e5d5cf1c422b280e04cf0b39964fe5aa804335576b117c54198ccca5b4b6",
+    "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+    "map/edges/boss6-runtime-provenance-repair-repair-ea3c50ff802ffdaf/review.md": "eb44107a8c6be855a0aa69dc5faea1d335620b08a39a3a4adebf3432f139edbe",
+    "map/edges/unrelated-machines-3a-3a-9a5cd2eb99c8ff5a/review.md": "ccd42713d9b8052f7919b6ac0c338b4987676dfcfd4f50dc207593cd0738220a"
+  },
+  "review_digest": "224ac21bebe8f31059a384b96d98f41b8d56e096cc48f1cc3a8b8d23182d4137"
+}
