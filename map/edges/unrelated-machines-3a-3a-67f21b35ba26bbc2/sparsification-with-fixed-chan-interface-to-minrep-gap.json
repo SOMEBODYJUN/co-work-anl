@@ -1,0 +1,58 @@
+{
+  "edge_id": "um-67f-fixed-chan-interface-and-sparsification-imply-minrep-gap",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-8c360a7779154480879e38c65d1f827e"
+  ],
+  "target_ids": [
+    "M-8b63c8bed3d44f34a50cc846cc98d80a"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "保留目标本身的完整外部 Chan/Laekhanukit 合同：存在绝对常数 C>0，对每个先固定素数幂 q 和先固定 δ>0，可由 SAT 多项式归约为显式非空、正度 D 的 balanced regular 二部全投影游戏，共同字母表 Q=q²；YES 值≥1−δ，NO 值<C ln(q)/q+δ。此合同包括实际适用的显式正规化及其误差账；本边不从论文中一句引用独立重证该接口。g>1 为先固定整数，归约次数可依赖 g；单位标签成本、所有列表总长度、覆盖全部约束。N 始终是该已正规化源的顶点数。随机性只来自其后稀疏化，YES/NO各自对满足对应承诺的固定输入计概率。",
+  "roles": {
+    "M-8c360a7779154480879e38c65d1f827e": "给每个已正规化固定参数源保原 N/字母表的稀疏化：最大度对每个 seed 有界，YES 的近完美单标签赋值经补标签后成本≤(1+εΔ)N，NO 以至少0.9概率同时排除全部便宜列表；其低度直出分支避免为提高D而改变N。",
+    "M-8b63c8bed3d44f34a50cc846cc98d80a": "得到固定 g 的完整随机 MinRep gap：字母表 O(g⁴ln²g)、最大度 O(g ln g)，YES 以至少0.9概率 OPT≤2N，NO 以至少0.9概率 OPT>2gN；由此得到因子 g 随机归约硬度及 NP⊄BPP 下的算法排除。"
+  },
+  "explanation": "先固定 g>1 和外部接口的 C。取最小的足够大素数幂 q 满足 q/ln q>10⁵Cg²，并令 s=C ln q/q、γ=2s、Q=q²、Δ=10⁶·2ln(2Q)/sqrtγ、ε=1/Δ、δ=min{ε,s/2}。素数幂的二次幂子序列给 q=Θ(g²ln g)，故 γ=Θ(g⁻²)、Q=O(g⁴ln²g)、Δ=O(g ln g)；有限小 g 可增大固定常数。q 的阈值还给 γ<10⁻⁴/g²<1。所有参数均在 SAT 输入之前固定，未倒置量词，也没有要求以二进制输入的可增长 g 获得同一统一 PCP。\n\n在完整外部合同成立时，同一个正规化源满足 YES: val≥1−δ≥1−ε；NO: val<s+δ≤3s/2<2s=γ。δ 必须是本式的 min{ε,s/2}，不能照抄冻结 PDF 印4页的 min{ε,Cq ln q}。以源对象 M-8c360… 取上述 ε、γ、Q，输出顶点数仍为 N，且每个 seed 最大度≤Δ。YES以至少0.9概率 OPT≤(1+εΔ)N=2N；NO以至少0.9概率 OPT>0.06N/sqrtγ>6gN>2gN。NO概率事件是对输出后可自适应选择的全部列表同时成立；不是逐列表0.9。YES只给近完美源的概率性补标签成本，未升级为每个seed的完美singleton。YES与NO是互斥的输入承诺，未要求把两个事件在同一实例上联合。\n\n精确有限算法按源正文§3的可编码阈值约定实现：固定整数预算 Δ̂∈[Δ,Δ+2]，用 p=10⁻⁴Δ̂/D 和一次 trimming；取 ε=1/Δ̂，δ=min{ε,s/2}。Δ̂≥Δ 使正文4.1、4.3–4.4的尾界不减弱，4.5的补标签界改为(1+εΔ̂)N；D≤Δ̂仍直出。Δ̂为固定整数，p为有理数，可用有界随机位近似独立采样并用现有0.98/0.9999到0.9的余量吸收总变差误差；也可按标准有理采样使用期望多项式随机位。若采用前者，每条边采样误差≤0.01/M，全部M条边的联合分布误差≤0.01，仍保≥0.9；故核心只需的随机多项式接口不依赖精确采样无理常数。该实现不改变渐近 Q、Δ 或严格 gap。\n\n若有确定性多项式 g-近似，则在好的YES输出上返回的可行列表成本≤2gN，在好的NO输出上任何可行列表成本>2gN；检查成本和覆盖可在显式输入多项式时间完成，因此与随机归约复合给 SAT 有界错误算法。可放大成功率的随机近似算法同理，故 NP⊄BPP 足以排除相应算法。外部 PCP/正规化接口作为条件明确保留，源对象本身只是一项随机算法保证，不单独制造NP-hardness。",
+  "whole_result": "在conditions所述固定参数 Chan/Laekhanukit 正规化PCP接口与源对象的全部合同共同成立时，对每个先固定整数 g>1，构造字母表 Q=O(g⁴ln²g)、每个seed最大度 O(g ln g) 的单位成本全边覆盖 MinRep 实例；N为已正规化源规模，YES以至少0.9概率OPT≤2N，NO以至少0.9概率OPT>2gN，且NO同时针对所有输出后列表。因此得到目标完整的因子g随机多项式归约硬度及NP⊄BPP下的相应算法排除。",
+  "scope": "源→核心整条结论的条件性支持，负责固定参数代入、严格gap、概率与列表量词。外部PCP/正规化的正确性由目标已有的明确接口承载，本轮未重读Chan原论文或Laekhanukit全部归约。仅全边覆盖MinRep；不推出部分覆盖线性度、simple高围长、任意带权版本、连通性费用合同或ordinary UM困难性。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md",
+      "sha256": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217",
+      "section": "2. 主结论及所调用的 PCP"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md",
+      "sha256": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217",
+      "section": "3. Generic 稀疏化：可核实的精确合同"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md",
+      "sha256": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217",
+      "section": "4. 完整证明链"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md",
+      "sha256": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217",
+      "section": "5. 主定理的参数代入及严格 gap"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/Boss7-minrep-restored/original/manurangsi_minrep_degree_1807_00936v1.pdf",
+      "sha256": "259edd7e850da816ddb5c318287a7a3a525ccc8963f07918787156384d7153d8"
+    }
+  ],
+  "reviewed_by": "Boss5/um-67f-current",
+  "review_note": "实读任务完整定义、当前两个端点登记、共同正文全文§1–8和冻结Manurangsi PDF全部9页文本（31,835字符/32,875 UTF-8字节），另逐图核印4、5、7页的Theorem6、Lemma7、参数行、采样/Prop8及Prop12/union bound。独立核δ、pDn、MGF系数、低度分支、全列表同时性、参数阶与严格常数。冻结PDF的既有错误均由当前正文修复，本轮无须再改源。检索现有边/回执，核心仅有向RkC的现有accepted条件迁移；本边补核心内部的上游稀疏化支持，不重复该应用边。关系按完整外部PCP条件成立记accepted/conditional。",
+  "endpoint_pins": {
+    "M-8b63c8bed3d44f34a50cc846cc98d80a": "0a7443fbb503448d27919bd02589188e155ea9faec436fea6b9f9d1eee17f203",
+    "M-8c360a7779154480879e38c65d1f827e": "3dd4454f24e6ace08f116048d88ada39f73596fb57ae251b1d7b61568079281d"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217",
+    "archives/unrelated-machines/tools/evidence/Boss7-minrep-restored/original/manurangsi_minrep_degree_1807_00936v1.pdf": "259edd7e850da816ddb5c318287a7a3a525ccc8963f07918787156384d7153d8"
+  },
+  "review_digest": "5218b774bee17a527709117b0f005c9722eb30920c9216ba909dd05de5185682"
+}
