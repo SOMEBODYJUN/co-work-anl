@@ -649,10 +649,13 @@
     "reason": "Assign a concrete comparison task"
   },
   "CA-CARTESIAN-PAYOFF-UNIQUE-FACTOR-v1": {
-    "state": "isolated-after-review",
+    "state": "linked",
     "object_pin": "478b993429188620a73b4531f1bc8c397d7bae51999252b2c19dc35e1ba00d5e",
-    "comparison_scope": "3A customer-attraction-3a-3a-93611e305d0fb77d: PU全体m位每分量每历史量词、完整正向归纳和独立乘积反向；对照M083静态分离及R7真实退出。",
-    "reason": "当前人在孩子中已属过去，只有PU包含已行动玩家时其分量延续收益F_j(a_j)才独立其它坐标。由Cartesian单坐标偏离得终局集合乘积和最差福利可加；原联合策略仍可耦合。M083对任意p的静态最小化不需PU；R7只构造某些独立真孩子，不断言任意联合SPE可投影。两静态/存在接口不推出PU，也不以共同Cartesian名强连。47有限回归只核给定80对中的根集合。"
+    "comparison_scope": "3B boss5-pu-price-3b-dd8f8641afe7aa6a: 当前v1完整陈述/全部玩家每合法历史PU、正向终局实现归纳、独立乘积反向、CAG最差福利与条件边界；对照当前P4完整价格链、共同补偿候选、PU有限核验全文及原P4 whole边。\n3A customer-attraction-3a-3a-93611e305d0fb77d: PU全体m位每分量每历史量词、完整正向归纳和独立乘积反向；对照M083静态分离及R7真实退出。",
+    "reason": "作为新ALL迁移边的关键前提：当前玩家在孩子中已为过去玩家，PU阻断分量支付受其他坐标后继影响，任意联合SPE终局可逐坐标由完整分量SPE实现；根PU进一步把每分量一份预算证书传给所有投影。该用途不要求原策略字面独立，也不把有限47根回归当普遍证明。\n当前人在孩子中已属过去，只有PU包含已行动玩家时其分量延续收益F_j(a_j)才独立其它坐标。由Cartesian单坐标偏离得终局集合乘积和最差福利可加；原联合策略仍可耦合。M083对任意p的静态最小化不需PU；R7只构造某些独立真孩子，不断言任意联合SPE可投影。两静态/存在接口不推出PU，也不以共同Cartesian名强连。47有限回归只核给定80对中的根集合。",
+    "edge_ids": [
+      "boss5-pu-transfers-selected-component-price-budget-to-every-coupled-spe"
+    ]
   },
   "CA-CHAIN-REQUERY-OPEN-v1": {
     "state": "isolated-after-review",
@@ -9182,10 +9185,10 @@
     ]
   },
   "M-a4ecb68ddbe948258e6a2e7e0cebeb54": {
-    "state": "needs-decision",
+    "state": "isolated-after-review",
     "object_pin": "a79b9571925fbadfc3a98db3a5cb1036e1f76213025f55003ce051856d285ee6",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3A unrelated-machines-3a-3a-2bcc25c86fcf9037: 本轮读完整任务、AGENTS.md、research/IMPLEMENTATION.md、prompts/03-map-worker.md及core v2完整record；research show核正文和PDF均current且pin等于任务pin。完整实读共同正文ee4b6266…及Dobzinski–Nisan–Schapira冻结PDF全部15页（其现成全文967个换行，Python splitlines计968行）；本轮pdftotext -layout重新提取与所读现成txt逐字节相等，并渲染实看PDF p3、p11、p12核Theorem1.4、4.2、4.3与分区构造符号。重构§4.2两条独立下界的全部承重推导，同时读§2的表示/查询合同、§3的LP舍入及两上界和§6的value查询独立下界；核当前M-8fdee11afd164305a429734ee5ae705a、M-bafae50558c441728f16cbfc7dce9f82、M-513a993cb39a478a850f01c62d52d0ed、M-4db1e9e555294998a207d584ce22485f完整record及共享正文的对象边界。Moshkovitz侧另经只读子核验实读提取pp221–229（§1–4，含Theorem1.2、Cor4.8、Lemma4.9、Claim4.10）及PDF印刷229页，未声称完整实读该15页PDF。检索当前registry中auction/XOS/set-cover/list-agreement相关对象定位候选；未找到本core所用Feige MAX-k-COVER硬度或approximate-disjointness下界的独立已登记前提。任务无指定overlap_comparisons，恢复检索未找到本任务已有边/收据草稿；没有扩大成全档无关系断言。",
+    "reason": "本core有两条完整但源前提未单独登记的证明。表示下界：给有限MAX-k-COVER集合族F与预算k，建k个相同显式0/1 XOS估值v_i(S)=max_(F∈F)|S∩F|。任意k集的并集可按元素唯一分给相应bidder，得到至少该并集大小的福利；任意allocation为各bidder选一个maximizing clause后，福利等于这些clause中实际分配元素的总数，至多k个相应集合的并集大小。因此OPT_welfare=OPT_MAX-k-COVER，输入是显式clause列表且构造多项式；Feige1998的MAX-k-COVER阈值给表示域的NP-hardness。通信下界是另一条approximate-disjointness归约：令c_n=1−(1−1/n)^n，选t=exp(Ω(η²m/n))个公开分区，使任意互异索引s_i的混合块并集至多(c_n+η)m。玩家i的私有A_i只选择本人的分区块作为0/1 clauses；若所有A_i有公共s，则同一分区分配福利m；若A_i两两不交，则任意maximizing clauses索引互异，福利至多(c_n+η)m。任何近似因子r<1/(c_n+η)的协议可区分承诺，须Ω(t/n^4)通信；对每个固定r<e/(e−1)，先取充分大n再取小η，随m增长得到指数下界，包含有界错误随机协议且不依赖P≠NP。本轮不把冻结PDF p11 Theorem4.3中r_n+ε的排版号错当可用结论：p12的证明只支付上述严格阈值，p3 Theorem1.4的渐近常数陈述和当前core仍正确。与e/(e−1)上界的关系是精确阈值相容性；上界本身不证明下界，下界不构造上界。确定性2近似也不违反本阈值，其价格证明与两下界独立。value-only的平方根障碍涉及更弱访问，其隐藏clause证明不能推出一般通信下界或显式表示NP-hardness，本core也没有推出其m增长的平方根阈值。Moshkovitz给的是最小化完全覆盖集合数的|A|对>|A|ln|U|(1−2α) gap，经N=|B||U|得到对数近似硬度；它没有给本归约所需的固定k最大化并集gap，不能因cover/partition同名替代Feige MAX-k-COVER源。共享正文也没有从任何上述福利/覆盖模型到SPE、max-min或makespan的目标保持映射。本轮有限候选范围只得到证明入口与边界核实，没有可接受的跨已登记对象逻辑关系，故不为连通造边。潜在新用途仍须先给精确目标、访问合同及可证的目标保持桥；当前没有具体需派后续的未付比较。"
   },
   "M-a50c3336c69c4ba5b5b77d0d89c07737": {
     "state": "linked",
@@ -9978,9 +9981,10 @@
   "M-b77c555512fb45fc9616608c28f65ed0": {
     "state": "linked",
     "object_pin": "518c2387c03f4858dda71894a4eff021a2752054ac0e697b6b7d7c270a973b48",
-    "comparison_scope": "3A customer-attraction-3a-3a-90ada1c6e7bcfa7d: P1、P2/P3及P4全文，规定相同人数不交真实集合目录与指定独立策略、逐分量价格预算if。",
-    "reason": "新ALL whole边完整给a≥Σa_j、B_prod(a)≤W、OPT≤B_prod(a)+ma≤2W；不声称任意分量预算或任意耦合投影均衡。",
+    "comparison_scope": "3B boss5-pu-price-3b-dd8f8641afe7aa6a: 当前v1 P4及其P1/P2/P3全部承重章节；实读现有ca90ad-p1-p3-imply-specified-product-price-budget whole边；新比较是PU投影的独立重现产品与任意耦合σ的同终局/同支付映射。\n3A customer-attraction-3a-3a-90ada1c6e7bcfa7d: P1、P2/P3及P4全文，规定相同人数不交真实集合目录与指定独立策略、逐分量价格预算if。",
+    "reason": "P4原整条指定产品论证继续保留，新增ALL边通过PU重现实际终局，把同一价格预算与half转回任意耦合σ。每分量仍须至少一份真正满足B_j(a_j)≤W_j的SPE证书，未因PU免费获得；a≥Σa_j保为不等式。\n新ALL whole边完整给a≥Σa_j、B_prod(a)≤W、OPT≤B_prod(a)+ma≤2W；不声称任意分量预算或任意耦合投影均衡。",
     "edge_ids": [
+      "boss5-pu-transfers-selected-component-price-budget-to-every-coupled-spe",
       "ca90ad-p1-p3-imply-specified-product-price-budget"
     ]
   },
@@ -19398,10 +19402,13 @@
     "reason": "source合同保耦合DAG/分量极值有限范围、安全添题K/m guard及全部旧历史保持；strict集合safe padding与当前别名标签域按各合同区分。 未付：耦合产品一般不独立分解；安全扩充不提供普遍跨树付款或half反例。五旧缺件后继恢复不倒填旧执行；底层14–16对象另有owner。"
   },
   "customer-attraction/cartesian-coupled-continuation-common-price-compensation-interface": {
-    "state": "needs-decision",
+    "state": "linked",
     "object_pin": "bc907dda443c80430a441368e38e5dab5db4b17bcf448512905cbe4bcdf953c8",
-    "comparison_scope": "No completed comparison batch yet",
-    "reason": "Assign a concrete comparison task"
+    "comparison_scope": "3B boss5-pu-price-3b-dd8f8641afe7aa6a: 当前v1候选全文：实际投影预算、共同质量t、非负价格卷积、福利反例与PU正子类、一般预算及较弱后继超额桥边界；完整比较PU与P4并给m2两分量三单客户的策略耦合见证。",
+    "reason": "新accepted conditional边完整解决目标的PU+分量证书子类：任意耦合完整SPE满足B_prod(min u)≤W、OPT≤2W。对目标仅局部贡献；无PU的实际投影预算/跨坐标超支机制和普遍分量预算仍是正文保留的开放义务，未提升目标truth_status。",
+    "edge_ids": [
+      "boss5-pu-transfers-selected-component-price-budget-to-every-coupled-spe"
+    ]
   },
   "customer-attraction/cartesian-efficient-factors-welfare-counterexample": {
     "state": "needs-decision",
