@@ -1,0 +1,87 @@
+{
+  "edge_id": "cag-727-exact-common-oo-bounds-three-family-margin",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-60da76cf3a0943d79e740518cf376645"
+  ],
+  "target_ids": [
+    "cag-fixed-three-family-common-transport-floating-margin-probes"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定输入SHA e2caa8f504da61dd41c6980671f2ce3d0c715f5d4dcce4b16dd656af25363acb，q=5，三族非负连续槽质量y在每个原子、同锚位t内固定全部三个tuple边缘。所选行共用同一y，两个AB→second末位O行各用ν=4，按原代码以单行精确包络≥0筛选。",
+  "roles": {
+    "M-60da76cf3a0943d79e740518cf376645": "给同一输入上AB→second位置2、3两单O包络严格为正，并给共同OO精确上界J。",
+    "cag-fixed-three-family-common-transport-floating-margin-probes": "规定共用三族槽及自由归一余量，243与248行系统均含这两条O行。"
+  },
+  "explanation": "对每个原子、每个同锚组，将y对AE的槽求和并除以该原子质量w，得到AB/second分数运输，边缘是原有整数槽计数。源码的两行逐槽代价各为4own−d(K−z)，仅依AB与second槽。按固定a,b,t，d只随AB的r位取高低两级。两行和中，低d乘全部目标分数m+n的总和是固定项。高低差乘分给高d槽的目标分数和，最多等于最高的R个目标分数之和，其中R为原高d槽数。将高d槽指派给这R个目标槽即可达到上界。故分数运输与字面匹配的共同两行最大相等。任意AB/second运输均能按同锚AE各tuple计数占比拆成合法三元槽，空组没有贡献。因此在纯三边缘可行域上两行和最大为J。两单行包络严格为正，243行的筛选保留二者，248行也含二者。任意可行(y,ε)满足8ε≤R₂y+R₃y≤J，两条各1/8正是报告的归一发现方向。",
+  "scope": "同一727点的243行pair_positive_terminal及248行all连续必要条件松弛，结论为精确上界。仅220条PAIR的模式没有这两条末位行。",
+  "contribution": {
+    "result": "上述两种模式均有精确max ε≤J/8=-1986982543309346411409324987349550640449892779560449694465/119850675723856985886951818669706933302236204306313376248832<0，故ε=0时不存在共用三族连续槽的解。243行负号由两条各自单包络严格为正的行共同证明。",
+    "remaining": "如要确认243行最优恰为J/8，还需达到该界并满足全部243行及边缘的有理运输。248行的精确最优、220行可行性、跨客户目录一致性及完整历史实现各需独立证据。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/审查/联合菜单严格分离与负载签名的版本边界--审查.md",
+      "sha256": "a94f638f224c82b0e37b7c5ed07598775e359e9ecae6d4f829e18af03b33bbbe",
+      "section": "69原子727点的本轮精确joint-only证据"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/shared-matching-loss-and-adjacent-load-primary/comparison/research/workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round5_pricing/exact_optimum_primal_terminal_cross.json",
+      "sha256": "e2caa8f504da61dd41c6980671f2ce3d0c715f5d4dcce4b16dd656af25363acb"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/shared-matching-loss-and-adjacent-load-primary/check_layers_adjacent_and_727.py",
+      "sha256": "d52a439b6cc4fdffaa163a3cd5d7f966420f033447c1ec9c6255f9e4a4de55a8"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/shared-matching-loss-and-adjacent-load-primary/new-loss-layers-adjacent-and-727.json",
+      "sha256": "ee9671649a5ad3691bb6503984110b0098f26508c84c1a32a2ddd13fce76ac13"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/固定三族边缘的共同运输与自由余量浮点探针--程序.md",
+      "sha256": "4f16c1ff0624d811d6955579e7343a174244617f0194cd5edf9b54613ba2d034",
+      "section": "三族共同槽及三个模式"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/固定三族边缘的共同运输与自由余量浮点探针--程序.md",
+      "sha256": "4f16c1ff0624d811d6955579e7343a174244617f0194cd5edf9b54613ba2d034",
+      "section": "自由ε与`success`的准确含义"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/固定三族边缘的共同运输与自由余量浮点探针--程序.md",
+      "sha256": "4f16c1ff0624d811d6955579e7343a174244617f0194cd5edf9b54613ba2d034",
+      "section": "727与728原报告的完整结果"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/round5-shared-matching-resumed-boss2/original/multimarginal_feasibility.py",
+      "sha256": "73a54c88015c665240486e38be8a221532fe398ca09c75ba6e95d4d9baaa4e75"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/round4-joint-transport-resumed-boss2/original/research/workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round4_coupling/joint_transport.py",
+      "sha256": "eeb84516d6e10261e1912fc4ab747c804d471b6718096dbf89451de8fc1943b0"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/round5-shared-matching-resumed-boss2/original/multimarginal_exact_optimum_primal_terminal_cross.json",
+      "sha256": "04320e2a559297bf72a104fa23f1b8a0b0c770499f5ecee198ae55070220b308"
+    }
+  ],
+  "review_note": "核对同SHA三个模式报告、原程序选行和逐槽系数。由69原子独立重算全部28个单包络，精确复得报告的5个负单行，确认243模式保两条AB→second O行。用两级分数运输极值证明上界，不依赖HiGHS最优显示或完整浮点对偶。",
+  "reviewed_by": "Boss5",
+  "endpoint_pins": {
+    "M-60da76cf3a0943d79e740518cf376645": "4ee3935988070c369edabda790e86632f14788c514086a79f02e08cc2d47996b",
+    "cag-fixed-three-family-common-transport-floating-margin-probes": "6dc571962ddf9020293e9e8316db3317e48038c564a8b7a3c71c205e2b4452ca"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/审查/联合菜单严格分离与负载签名的版本边界--审查.md": "a94f638f224c82b0e37b7c5ed07598775e359e9ecae6d4f829e18af03b33bbbe",
+    "archives/customer-attraction/tools/evidence/shared-matching-loss-and-adjacent-load-primary/comparison/research/workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round5_pricing/exact_optimum_primal_terminal_cross.json": "e2caa8f504da61dd41c6980671f2ce3d0c715f5d4dcce4b16dd656af25363acb",
+    "archives/customer-attraction/tools/evidence/shared-matching-loss-and-adjacent-load-primary/check_layers_adjacent_and_727.py": "d52a439b6cc4fdffaa163a3cd5d7f966420f033447c1ec9c6255f9e4a4de55a8",
+    "archives/customer-attraction/tools/evidence/shared-matching-loss-and-adjacent-load-primary/new-loss-layers-adjacent-and-727.json": "ee9671649a5ad3691bb6503984110b0098f26508c84c1a32a2ddd13fce76ac13",
+    "archives/customer-attraction/state/程序/固定三族边缘的共同运输与自由余量浮点探针--程序.md": "4f16c1ff0624d811d6955579e7343a174244617f0194cd5edf9b54613ba2d034",
+    "archives/customer-attraction/tools/evidence/round5-shared-matching-resumed-boss2/original/multimarginal_feasibility.py": "73a54c88015c665240486e38be8a221532fe398ca09c75ba6e95d4d9baaa4e75",
+    "archives/customer-attraction/tools/evidence/round4-joint-transport-resumed-boss2/original/research/workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round4_coupling/joint_transport.py": "eeb84516d6e10261e1912fc4ab747c804d471b6718096dbf89451de8fc1943b0",
+    "archives/customer-attraction/tools/evidence/round5-shared-matching-resumed-boss2/original/multimarginal_exact_optimum_primal_terminal_cross.json": "04320e2a559297bf72a104fa23f1b8a0b0c770499f5ecee198ae55070220b308"
+  },
+  "review_digest": "7a4dc7a4fbcc55e774c1abe3d1adcd635d3e07ab9f875ff24128d24716ac927e"
+}
