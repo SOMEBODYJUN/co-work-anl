@@ -1,0 +1,54 @@
+{
+  "edge_id": "cag-8afac-fixed-exits-attain-minimal-menu-compiler",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/prefix-insurance-with-prespecified-true-exit-menus"
+  ],
+  "target_ids": [
+    "R22-PREFIX-CREDIBLE-EXIT-COMPILER-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意m≥2、1≤j<m，给定目标z及第j位后的完整真实SPE尾；有限目录、全部有序历史；每个(i,A)包括正常A都选达到ell_i(A)的真完整孩子。",
+  "roles": {
+    "customer-attraction/prefix-insurance-with-prespecified-true-exit-menus": "任意预先指定真实退出rho的全树保险编译；成本由D_rho控制。",
+    "R22-PREFIX-CREDIBLE-EXIT-COMPILER-v1": "逐动作选择最低真孩子后得到D控制的统一前缀修复。"
+  },
+  "explanation": "有限树使每个真孩子SPE集合有限非空，收益为有理数，故ell_i(A)=min_rho d_i(A)达到。对所有i≤j和全部旧动作A（包括A_i）各自固定一个达到者rho。于是max_A d_i(A)=M_i，D_rho=max_i,A(d_i(A)−u_i)_+=max_i(M_i−u_i)_+=D。把这份fixed-rho表送入源合同，对任意正有理s≥D得到同m完整Cartesian纯SPE，保旧z；W′=W+(m+j)s、OPT′=OPT+(2m−1)s、缺口减(2j+1)s。首个联合异常后含未变坐标也永久进入真孩子积；后续联合IC是各坐标真IC之和。D=0按源的原域倒拼真孩子，原z已能实现；不采用零银行极限。共同清分母须同时放大旧、新客户。由此目标所登记统一修复的全部量词和结论均成立，未把其同正文另列异质成本作为本边目标。",
+  "scope": "R22登记的统一前缀修复v3整条；无修复最优成本断言，无一般half预算或正缺口种子。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/指定真实退出菜单的前缀保险合同--引理.md",
+      "sha256": "b2198da8e427e293d9f4dd572e1596f754d51a67459f2c79c2fef748511103e8"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/真实退出缺陷的统一与异质前缀修复--定理.md",
+      "sha256": "55fed6deb6f63cf37cba1fe05ace598b7fac3d0a75062acad170c05da0eabfa6",
+      "section": "统一修复的全坐标首次退出与精确最优"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/真实退出缺陷的统一与异质前缀修复--定理.md",
+      "sha256": "55fed6deb6f63cf37cba1fe05ace598b7fac3d0a75062acad170c05da0eabfa6",
+      "section": "任意标记位置的银行及低退出全树"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/前缀保险三种重构与cap补审的原始合同--审查.md",
+      "sha256": "ac99156ee999100a468458a0ab43c9cd09076806f3a8c45085a2284bb12a3c02",
+      "section": "原fixed菜单审查的全树承重条件"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本任务worker完整实读所引正文与承重证明，独立按真实有序后继核对。整条或局部作用范围如下；不以程序结构检查替代数学。",
+  "whole_result": "任意给定合法目标及真尾，取逐动作ell极小真退出使D_rho=D，推出R22的全部统一修复公式、全树SPE、保旧投影和D=0原计划拼合结论。",
+  "endpoint_pins": {
+    "R22-PREFIX-CREDIBLE-EXIT-COMPILER-v1": "26f71f3af6fd7dbbb7246ecc02dc09338894d1817248fea299b3104c6f987d0f",
+    "customer-attraction/prefix-insurance-with-prespecified-true-exit-menus": "96e1ff315ec42e7afeb6aee7b83af869de8db26929c92d16c10d0c47670d6514"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/指定真实退出菜单的前缀保险合同--引理.md": "b2198da8e427e293d9f4dd572e1596f754d51a67459f2c79c2fef748511103e8",
+    "archives/customer-attraction/state/定理/真实退出缺陷的统一与异质前缀修复--定理.md": "55fed6deb6f63cf37cba1fe05ace598b7fac3d0a75062acad170c05da0eabfa6",
+    "archives/customer-attraction/state/审查/前缀保险三种重构与cap补审的原始合同--审查.md": "ac99156ee999100a468458a0ab43c9cd09076806f3a8c45085a2284bb12a3c02"
+  },
+  "review_digest": "61c67d4d70df68ae3391071c18cf3f12ac3545948147b9e28b22045ffeb5bf92"
+}

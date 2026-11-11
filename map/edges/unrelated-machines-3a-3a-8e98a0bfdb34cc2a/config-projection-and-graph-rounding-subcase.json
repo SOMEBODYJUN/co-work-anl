@@ -1,0 +1,65 @@
+{
+  "edge_id": "um-8e98-config-projection-and-equal-time-graph-rounding-give-restricted-subcase",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-2063376836194a818dc34becdb99cc88",
+    "M-8dec531708464aaa87be325982ae38fc"
+  ],
+  "target_ids": [
+    "unrelated-machines/jansen-rohwedder-restricted-configuration-eleven-sixths"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限显式restricted-assignment实例，每原任务j有非空资格集Γ(j)，各有限端同耗时p_j≥0，并限|Γ(j)|≤2；CONFIG(T)的每机行是合法0/1原任务配置的凸组合，每任务跨机覆盖恰1。JR原≤1/≥1形式先补空配置并逐任务削减过覆盖，故同阈值等价。T>0；空任务及全零任务直接处理，零权任务先任意合法分配。单端/loop任务逐机并成固定q_v，正质量CONFIG行配置必须全部包含这些固定任务。 数学阈值蕴含适用于每个正实T；多项式算法实现仅限全部p_j、q_v及给定T为显式二进制有理编码，按完整输入总位长收费。",
+  "roles": {
+    "M-2063376836194a818dc34becdb99cc88": "提供同端等权图平衡的完整LP3体系、Theorem2的LP3⇒LP2与纯环/树结构，以及Theorem1的ROUND不变量和多项式7/4实际定向恢复；使用的是阈值级LP保证。",
+    "M-8dec531708464aaa87be325982ae38fc": "提供同一CONFIG(T)点的逐机合法0/1配置凸包投影，支付Edge/Load及逐配置大边基数Star，不以一般assignment点替代CONFIG。",
+    "unrelated-machines/jansen-rohwedder-restricted-configuration-eleven-sixths": "仅获得其完整11/6配置间隙定理在每件至多两个同耗时资格端子域上的较强7/4结论；任意资格度与JR局部搜索证明仍待目标自身承担。"
+  },
+  "explanation": "先把JR的配置过覆盖逐任务削到恰1：把含j的正配置权转到删去j的子配置，其他任务覆盖不变；补空配置得行权1。投影x_ev=Σ_(C含e)y_vC，所以x_eu+x_ev=1且x≥0。单端任务仅在固定机器被覆盖，其覆盖1与该机行权1迫使每个正配置全含它，故q_v+Σ_e p_e x_ev≤T。若p_e>T，两端均没有可含e的合法配置，与覆盖1矛盾，因此剩余正权边均满足0<p_e≤T，且q_v≤T。定义E_B={e:p_e>T/2}，任一合法配置至多一枚大边（两枚已超过T，且q_v≥0），对配置凸组合取期望得到Σ_(e∈E_B:v∈e)x_ev≤1。于是同除T后完整满足LP3的Edge、Load和Star。源core的Theorem2给LP2全部树约束及分数大边图纯环/树结构，Theorem1/Algorithm2给ROUND的最终负载≤7/4；舍入过程中只维护分层负载与Tree，不要求Load≤1或Star继续成立。乘回T，补回原固定任务与零任务，得到全部原机器均计负载、每原任务恰一次的完整调度，峰≤7T/4。当全部p_j、q_v及给定T均为显式二进制有理编码时，可直接在原实例上按总位长多项式解LP3后ROUND，CONFIG可行仅保证该T不会FAIL，不需要精确求CONFIG最优值。取T为同一实例最小配置可行阈值T_CONF，得到OPT≤(7/4)T_CONF≤(11/6)T_CONF，支付目标在二资格等端子域的这一步。",
+  "scope": "给定CONFIG可行阈值的等端且每件至多两个资格端子域；保留全部原任务、原机器、预负载和实际输出。该子域为JR完整restricted域的真子域，非一般p_ij、非三资格端，亦非JR全域局部搜索多项式化。 数学上每个正实T适用；运行时间保证限显式二进制有理p_j、q_v、T。",
+  "contribution": {
+    "result": "对每个等端且每件至多两个资格端实例及每个正实T，CONFIG(T)可行⇒存在完整实际调度峰≤(7/4)T；在p_j、q_v、给定T均为显式二进制有理输入时，该完整调度可按总位长多项式输出。因此OPT≤(7/4)T_CONF≤(11/6)T_CONF，成立JR目标在该子域上的数值结论。",
+    "remaining": "JR目标量化任意大小资格集，且保留2017四类blocker的无停滞与有限签名下降及2019替代证明。这里没有支付三端或更多资格端的11/6上界，未复现那些搜索机制，也未证明其全域多项式输出或精确求CONFIG最小阈值。"
+  },
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-8e98a0bfdb34cc2a/review.md",
+      "sha256": "7f6099e30759d14515afef2d35b1f7925ba03dfb403e59ce6f91a0dc82798c2c"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Ebenlendr-Krcal-Sgall-2014--图平衡1.75近似--文献.md",
+      "sha256": "9d71410ab24c1c45dc459477049db45c422992bff6494e077a61ff78a2bcd368"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/graph-balancing.pdf",
+      "sha256": "a407bdbda09ea649f72454518f8dce526405fe7743a38abeb8ed499dee4918d5"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/配置LP在图平衡及不相关机中的间隙--资源.md",
+      "sha256": "0fcfc44edf52bb6f1d0bf459c9847540342f55c9f4d681588f32670d1c64de26",
+      "section": "配置松弛、单机凸包与局部切割"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/配置松弛的局部搜索与图平衡界--资源.md",
+      "sha256": "785ff3e9f85b43508f866deca775e2a3ff88bc875adf6268aa2c79298e45d2a2",
+      "section": "1. 模型、配置LP及准确结果"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "fresh worker连续实读核心完整20页PDF，页面渲染复核p6/11/13/14；实读三个共享端点的完整登记记录、CONFIG投影成熟正文、JR2017成熟完整证明与2019两注册证明章节、异速双树自足重构。逐项独立核Edge/Load/Star、固定任务在每个正配置必出现、归一化单件域和零任务处理；保留ALL及目标contribution范围。二端异速(1/k,1)双树只作promise分离，不冒作反驳或同域推导。核心正文旧错句已由Root按原PDF勘误并发布；本worker实读当前v2完整record、objections、正文及最新task pins，不沿用FAIL>7/4或旋转直接全整数。数学正实阈值合同与显式二进制有理算法实现已分清，不声称精确求CONFIG最优阈值的多项式算法。未运行旧程序。",
+  "endpoint_pins": {
+    "M-2063376836194a818dc34becdb99cc88": "f59a35c1f3d7806acc53b3f042854036e846e5abf4338fd6060f97c517f857d4",
+    "M-8dec531708464aaa87be325982ae38fc": "6e4c72c1c0ced384bcb18335e603bb25356f27d1e46ca793abdd4ed08bad883b",
+    "unrelated-machines/jansen-rohwedder-restricted-configuration-eleven-sixths": "a3a5cb329599525146d82f63fde7338e2e5e5a2d0e48d5da60ac8513f7ac9dd4"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-8e98a0bfdb34cc2a/review.md": "7f6099e30759d14515afef2d35b1f7925ba03dfb403e59ce6f91a0dc82798c2c",
+    "archives/unrelated-machines/state/文献/Ebenlendr-Krcal-Sgall-2014--图平衡1.75近似--文献.md": "9d71410ab24c1c45dc459477049db45c422992bff6494e077a61ff78a2bcd368",
+    "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/graph-balancing.pdf": "a407bdbda09ea649f72454518f8dce526405fe7743a38abeb8ed499dee4918d5",
+    "archives/unrelated-machines/state/资源/配置LP在图平衡及不相关机中的间隙--资源.md": "0fcfc44edf52bb6f1d0bf459c9847540342f55c9f4d681588f32670d1c64de26",
+    "archives/unrelated-machines/state/资源/配置松弛的局部搜索与图平衡界--资源.md": "785ff3e9f85b43508f866deca775e2a3ff88bc875adf6268aa2c79298e45d2a2"
+  },
+  "review_digest": "0e3b6140df2cced885dbe5375e6d9b32e3f97600a0425b9e11ed605d988d0ade"
+}

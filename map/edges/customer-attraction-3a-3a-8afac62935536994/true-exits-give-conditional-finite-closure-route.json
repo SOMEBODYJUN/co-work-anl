@@ -1,0 +1,45 @@
+{
+  "edge_id": "cag-8afac-true-exits-give-conditional-finite-closure-route",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/prefix-insurance-with-prespecified-true-exit-menus"
+  ],
+  "target_ids": [
+    "customer-attraction/multiple-bank-prefix-shared-omission-punishment-finite-closure"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "额外条件尚待构造：多银行候选必须先给同一有限旧目录、m≥2和j<m、目标z在j之后的完整真SPE尾、全部(i,A)包括正常动作的指定真完整退出rho，以及可核有理D_rho。若要严格half坏例，还须OPT−2W>(2j+1)D_rho；这些条件当前未由目标提供。",
+  "roles": {
+    "customer-attraction/prefix-insurance-with-prespecified-true-exit-menus": "在已有真实输入之上把前j位缺陷编译成完整有限SPE，并精确计修复损耗。",
+    "customer-attraction/multiple-bank-prefix-shared-omission-punishment-finite-closure": "待提供满足真尾、真退出和正修复后缺口的有限多银行种子。"
+  },
+  "explanation": "若列出的真输入已经交付，D_rho>0时取s=D_rho；源构造的有限完整Cartesian目录及永久首次联合退出规则给全有序树SPE，保旧z，坏差额精确为OPT−2W−(2j+1)D_rho。若D_rho=0则原z可直接倒拼为SPE，严格原缺口即可。故保险可承担满足合同后的有限全树闭合和精确福利会计。该论证不能把未证Greedy处罚尾当作真rho，也不能从名为clock的在轨路径计算D_rho；正深度全部可信及给定真尾的事实仍由种子提供。此边没有断言所需种子存在。",
+  "scope": "条件性局部接续工具。允许增加不交保险客户及完整Cartesian动作；不是原想法中的Greedy规则已经可信，也不保原客户规模。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/指定真实退出菜单的前缀保险合同--引理.md",
+      "sha256": "b2198da8e427e293d9f4dd572e1596f754d51a67459f2c79c2fef748511103e8"
+    },
+    {
+      "path": "archives/customer-attraction/state/想法/多银行前缀与共享遗漏处罚的有限闭合--想法.md",
+      "sha256": "5840794c1816e259e19fb9643ec77f5f9e02b07bad7bf2a5a3a92e55500b7bca"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本任务worker完整实读所引正文与承重证明，独立按真实有序后继核对。整条或局部作用范围如下；不以程序结构检查替代数学。",
+  "contribution": {
+    "result": "在真实有限种子、真尾和全动作真退出已给定的条件下，前缀有限全树闭合及修复后缺口可由保险编译完成，损耗精确(2j+1)D_rho；D_rho=0原z直接可实现。",
+    "remaining": "多银行/共享遗漏原目录和完整真尾、每动作真退出、其有限缺陷D_rho及严格大于修复损耗的缺口都尚未构造；不能宣称目标开放构造已解决。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/multiple-bank-prefix-shared-omission-punishment-finite-closure": "2e9742b3191ef288e9f2031af6ced244980f9a05f8702fc410b45ac9454dc575",
+    "customer-attraction/prefix-insurance-with-prespecified-true-exit-menus": "96e1ff315ec42e7afeb6aee7b83af869de8db26929c92d16c10d0c47670d6514"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/指定真实退出菜单的前缀保险合同--引理.md": "b2198da8e427e293d9f4dd572e1596f754d51a67459f2c79c2fef748511103e8",
+    "archives/customer-attraction/state/想法/多银行前缀与共享遗漏处罚的有限闭合--想法.md": "5840794c1816e259e19fb9643ec77f5f9e02b07bad7bf2a5a3a92e55500b7bca"
+  },
+  "review_digest": "cf49e11554e29077d9b3204b7f575db0d4120a42989d3e079598ec66ec2dc539"
+}
