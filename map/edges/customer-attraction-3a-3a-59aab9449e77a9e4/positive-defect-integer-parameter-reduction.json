@@ -1,0 +1,29 @@
+{
+  "edge_id": "ca-b6-r48-positive-defect-integer-parameter-reduction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/terminal-pair-positive-negative-load-defect-exact-decomposition-and-conditional-half"
+  ],
+  "target_ids": [
+    "M-1ee118975f1548e7ae493f6eac0c7dd4"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "只调用D对象对任意合法m槽终局的缺口定义/恒等式部分，m≥2；α+β=t=m−2。不使用small-D存在或均衡性质。",
+  "roles": {
+    "customer-attraction/terminal-pair-positive-negative-load-defect-exact-decomposition-and-conditional-half": "固定同一叶的D定义与早期整数p、尾两个指标。",
+    "M-1ee118975f1548e7ae493f6eac0c7dd4": "实参数最小D精确由0…t的整数候选达到。"
+  },
+  "explanation": "令β=t−α。交集指标都1使分子t−p≥0、分母p+2固定；A独有区为(α−p)+/(p+1)，B独有区为(t−α−p)+/(p+1)，外区正部0。所有p为0…t整数，故全部hinge折点p或t−p为整数。D在[0,t]连续凸分段仿射，各仿射段最小值可取某端点，平坦段亦取整数端点；所以实最小=整数k0…t最小。t0/equal-tail/空差集无需例外计算。",
+  "scope": "仅使用合法叶/参数合同的已证定义和整数代数，不附加实际未证small-D；仅一个给定终局的m−1参数检测，非全部SPE枚举。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/末两主题正负负载缺口的精确分解与条件半覆盖--引理.md",
+      "sha256": "307705e20431f0a78b422bb6a28ecf9ca0a602524311a1d23eb979dcdb3b6083"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "复用本Boss round48成熟数学草稿；本轮逐边实读解释与结果范围，核当前注册陈述、量词、假设及版本。未变原承重正文及成熟证书按旧reading-ledger复用；本轮新增实读与ETA更正另记refresh-review，未重跑旧数学程序、LP、BI或全树审计。仅使用合法叶/参数合同的已证定义和整数代数，不附加实际未证small-D；仅一个给定终局的m−1参数检测，非全部SPE枚举。 源对象整体登记conditional，按该完整源合同保留conditional；本边已证的限制域推导无新增缺步，普通合法叶/整数参数不另充开放前提。此处只用D的已证定义与整数hinge代数，不使用small-D存在；未枚举或认证全部SPE。 此为当前完整源合同的保守依赖类型，不表示关系证明存在数学缺口；不改source truth_status，不扩大whole_result/contribution。",
+  "whole_result": "令β=t−α、α∈[0,t]。D为连续凸分段仿射：交集常项Σ_(A∩B)(t−p)/(p+2)，差集分别(α−p)+/(p+1)、(t−α−p)+/(p+1)。全部折点整数，故min_实α D=min_k=0…t D(k,t−k)，一般只需m−1参数，六人五个。"
+}

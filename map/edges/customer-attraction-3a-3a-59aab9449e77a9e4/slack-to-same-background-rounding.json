@@ -1,0 +1,29 @@
+{
+  "edge_id": "ca-b6-r48-slack-to-same-background-rounding",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-5cc1da5d3b804a1d9c7d5e67b731041c"
+  ],
+  "target_ids": [
+    "M-b7cc379ef3f84299a3e9b6555bbcc68d"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意n≥1，同一真最优Q与同一OPT_n元组；FC、JC、Rout均由这份共同输入定义，不假设iid或实际均衡。",
+  "roles": {
+    "M-5cc1da5d3b804a1d9c7d5e67b731041c": "给JC+Rout≤Δ以及jx精确倒数余项。",
+    "M-b7cc379ef3f84299a3e9b6555bbcc68d": "存在一个正支持纯B的共同查询cap与θ−v定量界。"
+  },
+  "explanation": "先对每个同一个B同时界所有A：Dx=(1+Hx(B))^(−1)−(1+Lx)^(−1)，fB(A)≤v+ΣC Dx+ +Rout，因g(A)≤F(A)≤v且C外Dx+≤L/(1+L)。右侧与A无关，故可先max_A再E_Q；没有把max和E交换。EDx=jx，故EΣC Dx+=(JC+EΣC|Dx|)/2；将|Dx|写为sqrt[样本J余项·1/(1+H)]，先随机性再客户和两次Cauchy给EΣ|Dx|≤sqrt(JC FC)。FC≤ΣjF(Tj)≤nv；有限正支持有一个B的cap≤其均值，得v+Rout+(JC+sqrt(JC FC))/2。S1的JC+Rout≤Δ给0≤θ−v≤Δ+sqrt(nvΔ)/2。零值/n1无除零。",
+  "scope": "仅至少一个支持背景；不保证全部支持近优、不支付任何SPE前缀嵌入。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/静态安全值的亏量刚性与纯背景舍入--定理.md",
+      "sha256": "3d10d512cd632bacdbcc7c9bd8553438dd9fa3ad08a4aabaa61e638c17e4ad64"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "复用本Boss round48成熟数学草稿；本轮逐边实读解释与结果范围，核当前注册陈述、量词、假设及版本。未变原承重正文及成熟证书按旧reading-ledger复用；本轮新增实读与ETA更正另记refresh-review，未重跑旧数学程序、LP、BI或全树审计。仅至少一个支持背景；不保证全部支持近优、不支付任何SPE前缀嵌入。",
+  "whole_result": "任取真最优Q与OPT_n比较元组，沿用S1。令F_C=E_QΣ_(x∈C)1/(1+H_x)≤nv、J_C=Σ_C j_x。存在一个B∈supp Q使max_A f_B(A)≤v+R_out+[J_C+sqrt(J_C F_C)]/2。因此0≤θ_n−v≤Δ+(1/2)sqrt(nvΔ)。正文先对同一个B同时控制全部A，再取期望与Cauchy，不交换max与期望。"
+}

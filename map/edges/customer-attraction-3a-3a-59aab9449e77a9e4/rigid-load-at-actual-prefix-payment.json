@@ -1,0 +1,35 @@
+{
+  "edge_id": "ca-b6-r48-rigid-load-at-actual-prefix-payment",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-921cb4daa29e43c6b2816c1ec73720b5"
+  ],
+  "target_ids": [
+    "M-3b33bff2ccf041a9a82eb35664d00a69"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一个n人游戏静态Δ0，给定完整SPE的实际前n−1槽恰有S2共同负载L；不以静态纯背景存在替代这个实际条件。",
+  "roles": {
+    "M-921cb4daa29e43c6b2816c1ec73720b5": "提供唯一L、每个合法主题g≤v、纯cap v及显式原始slack。",
+    "M-3b33bff2ccf041a9a82eb35664d00a69": "此前缀条件下每位≥v且W≥nv。"
+  },
+  "explanation": "末位面对实际负载L真BR得v。实际前缀每槽主题包含在C（C外L0），Σ槽g=ΣC L/(1+L)=(n−1)v；每项≤v，故每个槽g=v。最终客户分母L+1末位覆盖≤L+1，先前玩家实际收入≥g(自身主题)=v。末位亦v，求和W≥nv。n1空前缀且静态最大主题直接成立。",
+  "scope": "完整条件命题；S1的Δ0结构和S3的纯支持存在均不能取消实际前缀同L。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/静态安全值的亏量刚性与纯背景舍入--定理.md",
+      "sha256": "3d10d512cd632bacdbcc7c9bd8553438dd9fa3ad08a4aabaa61e638c17e4ad64",
+      "section": "8. 退化边界与真正能接回 SPE 的条件推论"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/静态安全值的亏量刚性与纯背景舍入--定理.md",
+      "sha256": "3d10d512cd632bacdbcc7c9bd8553438dd9fa3ad08a4aabaa61e638c17e4ad64",
+      "section": "5. 显式原始最优分布与所有最坏回复"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "复用本Boss round48成熟数学草稿；本轮逐边实读解释与结果范围，核当前注册陈述、量词、假设及版本。未变原承重正文及成熟证书按旧reading-ledger复用；本轮新增实读与ETA更正另记refresh-review，未重跑旧数学程序、LP、BI或全树审计。完整条件命题；S1的Δ0结构和S3的纯支持存在均不能取消实际前缀同L。 本边证明目标自身的条件命题：静态锐性且给定完整SPE实际前n−1槽负载=L时逐人付款。此前缀相等是目标适用域，不是本边另需研究的证明步骤；没有推出任意SPE自动满足它。",
+  "whole_result": "若(2n−1)v_n=OPT_n，且给定完整SPE实际前n−1位的客户负载恰等于S2唯一最优静态负载L，则实际末位真实BR恰获v_n。前缀主题满足Σg(A)=(n−1)v_n且各g(A)≤v_n，故每个实际前缀主题g(A)=v_n；最终分母至多L+1，使每个原前缀玩家收入≥v_n。因而该SPE每位收入≥v_n、W≥n v_n。"
+}

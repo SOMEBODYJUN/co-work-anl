@@ -1,0 +1,40 @@
+{
+  "edge_id": "ca-b6-r48-static-count-converts-positive-defect-payment",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1"
+  ],
+  "target_ids": [
+    "customer-attraction/terminal-pair-positive-negative-load-defect-exact-decomposition-and-conditional-half"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一m≥2人有限单位客户共同目录、同一完整SPE实际末两及合法早期前缀；本边保留目标存在α+β=m−2且D≤s/2的假设及真实末两保底，只完成其half系数转换，不从静态值证明small-D普遍存在。",
+  "roles": {
+    "CA-OBLIVIOUS-MIXED-SECURITY-2N1": "真正相关静态值v_m≥OPT_m/(2m−1)。",
+    "customer-attraction/terminal-pair-positive-negative-load-defect-exact-decomposition-and-conditional-half": "把已经取得的实际收益门槛转换成目标福利系数。"
+  },
+  "explanation": "对完全同一输入调用v_m≥OPT_m/(2m−1)。若实际终局存在D≤s/2，则由精确叶账W≥ms−D≥(m−1/2)s；真实两人保底与背景域包含给s≥θ(h)≥θm≥v，故W≥(m−1/2)OPT/(2m−1)=OPT/2。本边不把θ纯minmax换成v混合maxmin，不提供早期玩家一般v保底。",
+  "scope": "目标证明的定量转换贡献；所有实际路径条件明确保留。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/静态混合安全值的锐目录计数界--定理.md",
+      "sha256": "034c940129b4ef2e1b5a2902f9256f9dbfed5fbc8bf6750c4403217db3a6b15f"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/末两主题正负负载缺口的精确分解与条件半覆盖--引理.md",
+      "sha256": "307705e20431f0a78b422bb6a28ecf9ca0a602524311a1d23eb979dcdb3b6083"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末两人逐人保底与全人数弱福利界--定理.md",
+      "sha256": "204030503c37b18f8d26ce664b9cb99afc688fed77c8221a00cf0d8d7b21b34b"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "复用本Boss round48成熟数学草稿；本轮逐边实读解释与结果范围，核当前注册陈述、量词、假设及版本。未变原承重正文及成熟证书按旧reading-ledger复用；本轮新增实读与ETA更正另记refresh-review，未重跑旧数学程序、LP、BI或全树审计。目标证明的定量转换贡献；所有实际路径条件明确保留。 本边只宣称给定完整SPE已满足存在D≤s/2且真实尾保底时，静态v界完成half最后系数转换；small-D是目标原适用域，未证明其普遍存在。contribution.remaining保留叶账、尾保底及参数条件。",
+  "contribution": {
+    "result": "small-D下W≥(m−1/2)s≥(m−1/2)v时得W≥OPT/2",
+    "remaining": "目标完整句还需同叶D/R精确账、真实末两SPE保底、参数合同、整数有限化及存在small-D；本静态来源不证明这些前提普遍成立。"
+  }
+}
