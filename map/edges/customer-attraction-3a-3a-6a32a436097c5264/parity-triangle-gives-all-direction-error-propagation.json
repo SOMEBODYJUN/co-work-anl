@@ -1,0 +1,35 @@
+{
+  "edge_id": "cag-6a32-parity-triangle-gives-all-direction-error-propagation",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CC-PARITY-1"
+  ],
+  "target_ids": [
+    "CC-PARITY-2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限标签集、同一非负共同客户质量；E_j任意有限方向。若要解释成固定可见阶m的非负三角组合，给出使每一步中间对称差S_j均有|S_j|≤m的顺序，且输入E_j亦可见。没有使用不可见总质量归一化。",
+  "roles": {
+    "CC-PARITY-1": "提供任意E,F的P(E△F)≤P(E)+P(F)及可见支持条件。",
+    "CC-PARITY-2": "所得二方向与任意有限方向族的完整误差传播。"
+  },
+  "explanation": "令S_1=E_1、S_j=S_(j−1)△E_j。源定理逐客户给P(S_j)≤P(S_(j−1))+P(E_j)，归纳得P(△_jE_j)≤Σ_jP(E_j)≤Σ_jε_j。二方向为j2，ε_E=ε_F=0时非负性迫P(E△F)=0。组合每步仅需E_j、S_(j−1)、S_j三个支持可见，不要求它们的并集≤m；若只问全客户恒等式则无需中间可见。空方向、空兴趣型及零客户均给零且保持归纳；奇偶位没有被当成合法主题行动。",
+  "scope": "目标CC-PARITY-2整条，包括任有限方向族与截断可见组合的额外顺序条件；不声明客户正性充分或SPE福利付款。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/可见奇偶矩的对称差闭合--定理.md",
+      "sha256": "5d6bd8498a8113baafc178698261aae803e80eee7b28d01020bf2bf95926f9c1",
+      "section": "3. 对称差三角及误差传播"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-6a32a436097c5264/mathematical-review.md",
+      "sha256": "d76d07fcecb9da813c1d59a853daa7acebb6cbdf9d5cce3b5fc05d95ea3fc447",
+      "section": "3. 奇偶矩：CC-PARITY-1推出CC-PARITY-2整条"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本包fresh worker逐组实读当前registry、全部指定正文与证据，按真实有序后继重走承重推导。whole_result与局部contribution分别标明；未运行旧数学程序、搜索或优化器，绑定与最终检查由父Boss串行。",
+  "whole_result": "CC-PARITY-1推出同一非负共同客户资料上的二方向及全部有限方向误差传播；作为当前截断可见三角的组合时，严格保留全部中间对称差可见的条件。"
+}

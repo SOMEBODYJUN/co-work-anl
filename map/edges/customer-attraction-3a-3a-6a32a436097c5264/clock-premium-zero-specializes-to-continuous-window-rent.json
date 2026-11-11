@@ -1,0 +1,39 @@
+{
+  "edge_id": "cag-6a32-clock-premium-zero-specializes-to-continuous-window-rent",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "B5-CHRONOLOGICAL-RENT-DECOMPOSITION-v1"
+  ],
+  "target_ids": [
+    "B5-PATH-INTERVAL-RENT-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意有限实际主题路径，允许空主题/重复/零客户；I_j={j+1,…,j+ell_j}紧接前缀并保中间全部槽；θ_j≥0，ρ>0，Γ=max_tΣ_{j:t∈I_j}jθ_j。路径无需SPE，ρ是代数reserve。",
+  "roles": {
+    "B5-CHRONOLOGICAL-RENT-DECOMPOSITION-v1": "任意稀疏未来槽的真实clock预算以及Ereset=Eclock+P、P逐项非负的精确分解。",
+    "B5-PATH-INTERVAL-RENT-v1": "连续窗口P0后的完整旧群体租金预算与宽二费用≤W特例。"
+  },
+  "explanation": "固定行j和客户x，紧接连续窗口内第k个选中hit之前不存在窗口外中间hit，故其真实排名b=b_j(x)+k恰虚拟排名a。源每个premium分子含b−a，遂P_j=0。Ereset逐hit求和b_j/[(ρ+b_j+k−1)(ρ+b_j+k)]，望远镜成b_j[(ρ+b_j)⁻¹−(ρ+b_j+q_j)⁻¹]，与target E_j完全相同。源clock界直接给Σθ_jE_j≤ΓΣ_{c_x>0}[1/(ρ+1)−1/(ρ+c_x)]≤ΓW/(ρ+1)。宽2/ρ1/θ1/j时每槽最多两行且jθ1，Γ≤2，费用≤W。客户无hit或b_j0的项自然0。任意稀疏槽不能令b=a，不能把此特例扩成reset通用界。",
+  "scope": "target B5-PATH-INTERVAL-RENT-v1整条一般路径级预算；不包含同页独立固定人口pair误差比较，也不提供真实SPE到窗口的全树运输。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/R-171稀疏槽clock租金与skip-premium分解--引理.md",
+      "sha256": "d75732b32979a8373155abbf315599b8bba30e19784e4952cae2af7adf20a215"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/R-171连续窗口与固定人口pair误差预算--引理.md",
+      "sha256": "1fe2861564519f06b29cd287e90bb3a491270e8b8f70744d04194fe33666acfc",
+      "section": "连续窗口的普遍支付"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-6a32a436097c5264/mathematical-review.md",
+      "sha256": "d76d07fcecb9da813c1d59a853daa7acebb6cbdf9d5cce3b5fc05d95ea3fc447",
+      "section": "10. Clock精确分解推出连续窗口预算"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本包fresh worker逐组实读当前registry、全部指定正文与证据，按真实有序后继重走承重推导。whole_result与局部contribution分别标明；未运行旧数学程序、搜索或优化器，绑定与最终检查由父Boss串行。",
+  "whole_result": "对target全部路径/连续窗口/非负权/ρ>0量词，连续窗口逐客户无跳hit迫premium0，得到精确租金式、完整Γ细界与宽二/ρ1/θ1/j的费用≤W。"
+}
