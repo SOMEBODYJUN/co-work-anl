@@ -1,0 +1,142 @@
+{
+  "schema": 1,
+  "review_kind": "3D-independent-mathematical-integration-review",
+  "reviewer": "Boss2/integrate_affine",
+  "review_date": "2026-11-10",
+  "task_id": "unrelated-machines-3a-3a-0b1e09fc127de8a8",
+  "decision": "approve-integration-as-contribution-only",
+  "approved_for_integration": true,
+  "blocking_findings": [],
+  "summary": "当前唯一边的实际结论成立，contribution与remaining准确分开。批准把它作为从CSP到完整高维匹配的保值/差距接口整合；不得把这条单源边读作独立证明整个p/(12+ε)硬度定理。当前v2正文的稀疏化参数校勘有效，无需为本次整合改动共享数学文件。",
+  "access_scope": {
+    "clone": "/workspace/scratch/9e889562cee5/co-work-anl-boss2",
+    "read_only_inputs": "指定已done收据、其唯一边、当前registry的两个相应端点、共同正文及其唯一冻结PDF；另读必需工作规则。没有读取其它任务、其它端点或凭据。",
+    "actions": "仅本地读取、PDF文本导出、SHA256核对，以及两次只读research show核当前pin；未领包、未执行网络/队列操作、未改Git或共享文件。",
+    "write_path": "research/workspaces/map-v2/Boss2/review-current-affine.json"
+  },
+  "actually_read": [
+    {
+      "path": "AGENTS.md",
+      "extent": "全文"
+    },
+    {
+      "path": "prompts/03-map-worker.md",
+      "extent": "全文"
+    },
+    {
+      "path": "research/IMPLEMENTATION.md",
+      "extent": "全文；初次合并输出有截断的段落另以第95–155行补读"
+    },
+    {
+      "path": "map/receipts/unrelated-machines-3a-3a-0b1e09fc127de8a8.json",
+      "extent": "全文",
+      "sha256": "497fd90942727acaedb03017d7451d812e577a90ac3698ad897c3146445b1732"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-0b1e09fc127de8a8/affine-compiler-pays-hardness-gap-transfer.json",
+      "extent": "全文",
+      "sha256": "46336cdbdeb40022e39fe5a6e4113505d47d822ed5a3e65e919c68b2a11319a9"
+    },
+    {
+      "path": "research/registry.json",
+      "extent": "仅当前M-49ea7a8bb95e414cbd856952bde67ab4 v2与M-760386636e8342ea8df34d88c9b6d1b9 v2完整记录；以本地research show核pin和body/evidence绑定"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Lee-Svensson-Thiery--k维匹配硬度--文献.md",
+      "extent": "全文，包括全部二级章节；重点重核“仿射线 gadget 和为什么匹配值相等”“度数稀疏化的承重步骤”“量词、边界和没有声称的内容”",
+      "sha256": "29b992ce5499f740468033bb5aaceeb05cb994a68c7a8bfacbc72b16fd910475"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/k-dimensional-matching.pdf",
+      "extent": "实际导出并读完物理pp.1–14；pp.6–9另分两段重新导出阅读，补足首次输出截断。承重复核Definition2.1/2.3、Theorem3.1、Remark3.2、Claim3.3、Theorems4.1–4.3、Claims4.4–4.6、AppendicesA–C；参考文献亦已读。未另读Chan或素数间隔外部原论文。",
+      "sha256": "75c9acd3432958383ffb21b12dd4baf2dacec97e8a183962cde4460dd7884ee2"
+    }
+  ],
+  "binding_review": {
+    "receipt_asset_sha_matches": true,
+    "evidence_sha_matches": true,
+    "endpoint_pins_match_current_registry": true,
+    "current_bindings": {
+      "M-49ea7a8bb95e414cbd856952bde67ab4": "d33f53d7f3df03066aaa38da1d0a0486c22f4d509414ddce26d420e68ef78eac",
+      "M-760386636e8342ea8df34d88c9b6d1b9": "7092217439085ffdcae19abda08590f1523e0345f069353d879cc22000781ae3"
+    },
+    "note": "两个端点body和PDF evidence均为current；收据核心pin及边两端pin一致。唯一PDF只计一个证明来源，不把正文所述重复冻结路径计作独立证据。"
+  },
+  "edge_reviews": [
+    {
+      "edge_id": "um-lst-affine-compiler-pays-hardness-gap-transfer",
+      "verdict": "approved",
+      "actual_conclusion": "对素数R、显式关系、变量度≤R的k-partite k-CSP，仿射线编译得到K=kR维完整匹配实例，OPT_DM等于原最大可同时满足约束数；任意输出匹配都能解码为至少满足同数约束的赋值。因此ρ近似DM算法组合成同ρ近似CSP算法。若给定(c,s) CSP判定gap，ρ<c/s可区分两端。k=6、c=1−δ、s=2(1+δ)/R时阈值比为K(1−δ)/(12(1+δ))。",
+      "whole_vs_contribution": "该结论没有单独建立CSP gap、随机化复杂度排除或全部充分大p。边使用contribution.result/remaining而非whole_result，准确标出只付清目标定理的编译阶段。relation_mode:unconditional用于已经证明的接口本身成立；不把if输入已有gap误读为该gap已由唯一source推出。",
+      "proof_checks": [
+        "各变量使用互不相交资源集X_v；各出现次数有不同截距b。对固定斜率a，不同b的线不交；a≠a'时(a−a')x=b'−b在F_R中唯一可解。素数条件足以保证逆元存在。",
+        "任一匹配在同一变量上若出现两个不同标签，所用两线必相交，矛盾；未被匹配触及的变量可任意赋值，因此解码不要求每个变量被覆盖。",
+        "同一约束的两个不同允许tuple至少在一个变量上标签不同，从而其输出边相交。故匹配到约束的映射为单射，解码满足约束数至少为匹配大小；这一步补足了仅有局部一致性尚不足以计数的潜在缺口。",
+        "任一赋值对各被满足约束选对应输出边。同一变量上标签相同、截距不同，故这些边互不相交，反向匹配大小恰等于该赋值满足数。两方向推出最优值完全相等，并不要求YES完全可满足。",
+        "若CSP分区为V_i，输出以(i,x)分区，每条完整输出边在每个分区恰有一个点，所以确为kR-DM。一般非partite输入只能直接得到kR-set packing；边没有混淆二者。",
+        "每个允许tuple产生一条kR元集合；固定k下枚举成本为poly(|V|,|E|,R^k)。标签、约束标识可随构造保存以多项式时间解码。空允许关系不产生输出边；未触及变量并非障碍。归一化式m·val使用m>0的常规定义，零约束实例的未归一化最优值等式仍平凡成立。",
+        "最大化问题ρ≥1的保证是输出值≥OPT/ρ，因而区分条件为ρ<c/s，方向正确。代入6-CSP得R(1−δ)/(2(1+δ))=K(1−δ)/(12(1+δ))，不能忽略1−δ后仍使用同一个δ。"
+      ],
+      "evidence_precision": "指定正文section完整承载局部构造和双向等式；唯一PDF全文补充原定理、算法时间及目标硬度阶段。边的解释自行核实每约束至多一条匹配边和未触及变量任意扩展，避免照搬原PDF中“unique assignment”对所有变量都唯一的过强措辞。",
+      "required_repair": null
+    }
+  ],
+  "target_theorem_crosscheck": {
+    "status": "consistent-with-current-v2-literature-object",
+    "sparsification": [
+      "原PDF Claims4.5/4.6分别给删边≤ηm、采样边≥(1−2η)m，只能推出|E_2|≥(1−3η)m；原p.9使用(1−η)m作分母无依据。当前正文正确保留校勘。",
+      "按原Chernoff/union-bound证明，对全部赋值同时有满足边数≤k(1+η)m/((γ−1)(1−η)R)。与最终边数下界合并，得到val(Π')≤k(1+η)/((γ−1)(1−η)(1−3η)R)。",
+      "取η=λ/4后，比较目标(1+λ)/(1−λ)^2时，交叉相乘右侧减左侧恰为λ(28−21λ−λ²)/16>0（0<λ<1），故当前正文显示的Theorem4.3界确实由正确分母推出。完备性val(Π')≥val(Π)−3η亦蕴含−3λ版本。",
+      "union bound剩余R^(−ηn)由n≥1只能直接界为R^(−η)，而非R^(−1)；正文使用R≥100^(1/η)使失败率≤0.01是正确修复。完备性只需针对固定最优赋值的事件；soundness需对全部R^n赋值同时成立。若要求两种保证和总边数、删边事件共同成立，四个失败率各≤0.01给≥0.96，仍足够且可放大。",
+      "以Chan定理给出的固定源误差δ和γ=k−2为外部输入，0<ε≤1时取δ≤ε/2、η≤ε/12。则δ+3η≤ε，且(1+η)/((1−η)(1−3η))−1≤15η/2<ε，足以得到Theorem4.1的近完美完备性和k(1+ε)/((k−3)R) soundness。R阈值允许依赖这些先固定的参数。"
+    ],
+    "all_dimensions": "固定最终ε>0后先选足够小δ、β>0，使(1−β)(1−δ)/(1+δ)>12/(12+ε)。素数密度给所有充分大p存在素数R使(1−β)p≤6R≤p；构造K=6R的匹配，再对每条边在每个新增分区加入只属于该边的独立dummy顶点，匹配大小不变。原判定阈值比至少p(1−β)(1−δ)/(12(1+δ))>p/(12+ε)，故所需严格分离可付清。不能只证明无限素数子序列，也不能共用dummy而改变交叠关系。",
+    "complexity_and_quantifiers": "固定精度ε、固定CSP arity6，之后所有充分大的维度p；随机性只在CSP稀疏化，compiler与dummy扩维确定性。组合假定近似算法将给NP⊆BPP；算法排除所用假设为NP⊄BPP，不能换成仅P≠NP。近完美YES没有被升级为完美YES。",
+    "external_inputs_not_reproved": [
+      "论文Theorem4.2所引用的Chan正则k-CSP gap及其k-partite使用约定；本轮读到其准确陈述及在本证明中的调用，没有另读或重证Chan原论文。",
+      "AppendixA所调用的邻近素数存在性；本轮复核其所需量词与padding论证，没有另读或重证素数分布原论文。"
+    ]
+  },
+  "source_errata_not_blocking_current_edge": [
+    {
+      "location": "冻结PDF物理p.8，Proof of Theorem4.3第二步",
+      "problem": "当deg_G1(v)>R时写删除R−deg_G1(v)条边，数目为负。",
+      "exact_correction": "应删除deg_G1(v)−R条当前多余关联边，或顺序处理每个变量至当前度≤R。",
+      "impact": "当前正文已正确写为删去超过R的多余边；Claims4.5所用正部超度总和确实给总删除量上界，不影响当前边。"
+    },
+    {
+      "location": "冻结PDF物理p.9，Proof of Theorem4.1",
+      "problem": "把应调用的Theorem4.3误写成Theorem4.1，且同名ε直接重用未预算完备损失。",
+      "exact_correction": "调用Theorems4.2与4.3，并分别选源误差δ和内部稀疏化误差η。",
+      "impact": "当前正文的δ/η预算已补足；边remaining仍将gap视作独立输入，没有循环推导。"
+    },
+    {
+      "location": "冻结PDF物理p.13，AppendixA最后一句",
+      "problem": "最后把最大化问题的近似因子写成12/(p·(1−ε))，是前一正确推导因子的倒数。",
+      "exact_correction": "k=6时应为p(1−ε)/12；最终通过调整ε得到p/(12+ε)。",
+      "impact": "Theorem1.1原陈述、前一反证所假设因子及其不等式、当前正文和本边均使用正确方向，无需为本次整合改边。"
+    }
+  ],
+  "remaining_mathematical_obligations": [
+    {
+      "obligation": "若从本边单独获取完整高维匹配硬度，还须输入随机有界度CSP gap、随机归约的复杂度组合，以及邻近素数和逐边独立dummy扩维。",
+      "status": "not-paid-by-this-edge; supplied-by-separate-literature-proof-stages",
+      "next_use": "保持contribution-only消费；若未来另建whole-result超边，列齐独立前提及正文校勘，不把唯一compiler源升级成全部硬度的充分前提。"
+    },
+    {
+      "obligation": "从完整kR-DM迁往部分配额层或普通R||Cmax，必须另证部分层soundness、可计算调度decoder和实际负载与源值的对应。",
+      "status": "open-outside-this-task",
+      "next_use": "本边没有提供这些保证，不得据同一仿射线几何自动跨模型推导。"
+    },
+    {
+      "obligation": "独立于文献引用链重新审证明Chan gap或素数分布结论。",
+      "status": "not-performed-and-not-required-for-this-local-integration",
+      "next_use": "如后续研究要求基础定理独立复证，应另明确范围；本次批准不宣称完成这两项。"
+    }
+  ],
+  "coverage_review": {
+    "core_id": "M-760386636e8342ea8df34d88c9b6d1b9",
+    "linked_state_appropriate": true,
+    "reason": "存在已成立、可复用、精确定位的编译贡献，故linked成立；linked不意味着目标可由该source单独完全推得。comparison_scope与remaining明确限定本范围，不把UM或部分配额层计入已付结论。"
+  }
+}

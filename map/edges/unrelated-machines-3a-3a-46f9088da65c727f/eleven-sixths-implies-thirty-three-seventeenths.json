@@ -1,0 +1,80 @@
+{
+  "edge_id": "um-46f9088d-eleven-sixths-implies-thirty-three-seventeenths",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/jansen-rohwedder-restricted-configuration-eleven-sixths"
+  ],
+  "target_ids": [
+    "M-6e6de497c2034ca99d68b4ff3d548a0d"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限受限指派实例：每任务j有公共尺寸p_j≥0和非空资格集Γ(j)，所有可用端时间均为p_j。两侧配置均为合资格且总尺寸≤T的任务子集；取有限正配置阈值。空任务及全零尺寸分支直接安排或取空调度。",
+  "roles": {
+    "unrelated-machines/jansen-rohwedder-restricted-configuration-eleven-sixths": "给同一实例和同一配置松弛的完整较强界OPT≤(11/6)OPT*；局部搜索仅保证有限终止。",
+    "M-6e6de497c2034ca99d68b4ff3d548a0d": "获得其整条数值结论OPT≤(33/17)T_conf，保留受限指派域和存在调度合同。"
+  },
+  "explanation": "两文均使用机器配置总权≤1、每任务总覆盖≥1的非负配置LP；合法配置向下封闭，补空配置和逐任务削减过覆盖可转成仓库恰等式形式而不增阈值。因此JR的OPT*与Svensson的T_conf是同一数，不改变机器、任务、资格、尺寸或目标。源定理给OPT≤(11/6)T_conf，且33/17−11/6=11/102>0，故直接得到OPT≤(33/17)T_conf。等价地，对任一正T且CONFIG(T)可行，有T_conf≤T，源搜索给出的调度也满足峰≤(11/6)T≤(33/17)T。零值先直接安排零尺寸任务。这个推导支付目标的完整数值定理，不声称重现Svensson三种blocker的原证明，亦不把JR四类blocker或2019 repelled-move证明识别为同一算法。",
+  "scope": "公共尺寸的全部受限指派实例；较强11/6上界给较弱33/17上界的独立支持。无多项式实际排程、一般p_ij<2或间隙锐性结论。",
+  "whole_result": "对每个受限指派实例，OPT≤(33/17)T_conf；对每个正T且CONFIG(T)可行，存在合法完整调度的峰≤(33/17)T。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/配置松弛的局部搜索与图平衡界--资源.md",
+      "sha256": "785ff3e9f85b43508f866deca775e2a3ff88bc875adf6268aa2c79298e45d2a2",
+      "section": "1. 模型、配置LP及准确结果"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/配置松弛的局部搜索与图平衡界--资源.md",
+      "sha256": "785ff3e9f85b43508f866deca775e2a3ff88bc875adf6268aa2c79298e45d2a2",
+      "section": "2. 四类 blocker 如何维护可接续的部分调度"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/配置松弛的局部搜索与图平衡界--资源.md",
+      "sha256": "785ff3e9f85b43508f866deca775e2a3ff88bc875adf6268aa2c79298e45d2a2",
+      "section": "3. 不停滞：由局部阻塞构造不可能的配置LP对偶"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/配置松弛的局部搜索与图平衡界--资源.md",
+      "sha256": "785ff3e9f85b43508f866deca775e2a3ff88bc875adf6268aa2c79298e45d2a2",
+      "section": "4. 有限终止为何不等于多项式复杂度"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Jansen-Rohwedder-2019--受限指派准多项式近似--文献.md",
+      "sha256": "5d0f5f99d39fa01916c6e3f03ec6e80eb4f71b93283167ccb7f5d71dab317029",
+      "section": "配置 LP 与对偶停滞证书"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Jansen-Rohwedder-2019--受限指派准多项式近似--文献.md",
+      "sha256": "5d0f5f99d39fa01916c6e3f03ec6e80eb4f71b93283167ccb7f5d71dab317029",
+      "section": "非构造性配置 LP 间隙：(11/6)"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/SantaClaus调度与受限指派配置界--资源.md",
+      "sha256": "fdd4fa895b3161204f7de75e2b4a29b07653838276e04a2105026fcf41bfe7c5",
+      "section": "模型、配置LP及量词"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/SantaClaus调度与受限指派配置界--资源.md",
+      "sha256": "fdd4fa895b3161204f7de75e2b4a29b07653838276e04a2105026fcf41bfe7c5",
+      "section": "一般尺寸证明：三个阻塞种类和33/17摊还"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/svensson-2011.pdf",
+      "sha256": "e80d2b787fd0d594361e3eaedc1272a418c02d81b5c1e1fa06a81a688fab43c3"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "本包实读Svensson资源全文、原PDF Sections 1–2及4全部定义与证明（Theorem4.1、Claims4.7–4.8、Lemmas4.6/4.9、结论）；实读JR2017资源全部证明及局部澄清与其2019注册证明章节。比较的是同一LP、量词及输出合同，并独立核对11/102常数差；不把同一常数、共同定义或方法相似当逻辑证据。",
+  "endpoint_pins": {
+    "M-6e6de497c2034ca99d68b4ff3d548a0d": "dcb9f97372bb14482a8183da2b85413e087620cdb0971e8b51dc3e80ac23c2be",
+    "unrelated-machines/jansen-rohwedder-restricted-configuration-eleven-sixths": "a3a5cb329599525146d82f63fde7338e2e5e5a2d0e48d5da60ac8513f7ac9dd4"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/配置松弛的局部搜索与图平衡界--资源.md": "785ff3e9f85b43508f866deca775e2a3ff88bc875adf6268aa2c79298e45d2a2",
+    "archives/unrelated-machines/state/文献/Jansen-Rohwedder-2019--受限指派准多项式近似--文献.md": "5d0f5f99d39fa01916c6e3f03ec6e80eb4f71b93283167ccb7f5d71dab317029",
+    "archives/unrelated-machines/state/资源/SantaClaus调度与受限指派配置界--资源.md": "fdd4fa895b3161204f7de75e2b4a29b07653838276e04a2105026fcf41bfe7c5",
+    "research/registration/evidence/boss6-0104/svensson-2011.pdf": "e80d2b787fd0d594361e3eaedc1272a418c02d81b5c1e1fa06a81a688fab43c3"
+  },
+  "review_digest": "cf24c8cb257a43eb95ccd6ab766267badc6db983022702654092de178c44757e"
+}

@@ -1,0 +1,53 @@
+{
+  "edge_id": "um-0195479a-config-independent-retention",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-8dec531708464aaa87be325982ae38fc"
+  ],
+  "target_ids": [
+    "M-50c2c45b506146c4877862acc3a258be"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "给定可行等式覆盖CONFIG(T)的一组显式有限支撑y_i，局部配置是负载≤T的合法0/1原任务子集，每机配置质量一，逐任务列和恰一。独立采样后允许删去重复副本和未覆盖任务。算法保证相对于给定证书的显式输入长度，不把隐式指数列LP的取得当作免费步骤。",
+  "roles": {
+    "M-8dec531708464aaa87be325982ae38fc": "把合法的每机配置凸组合与逐任务列覆盖一起交给独立采样。",
+    "M-50c2c45b506146c4877862acc3a258be": "完整双标准还需大边匹配、小边贪心和数量优化。"
+  },
+  "explanation": "对任意原任务j令x_ij=Σ_{C含j}y_iC；每行概率律给0≤x_ij≤1，等式列覆盖给Σ_i x_ij=1。独立从每行y_i抽一配置，未覆盖概率Π_i(1−x_ij)≤exp(−Σ_i x_ij)=e^(−1)。每个重复任务只保一个真实端，每机留下的不同原任务仍为抽中合法配置的子集，故每次输出峰≤T；对n个原任务用线性期望得保留数≥(1−1/e)n。计算量按已给显式支撑计，概率与子集论证不使用处理时间严格为正。配置投影的逐行凸性提供此采样合同，不要求不同机器配置先已全局不交。Markov坏态讨论保全部任务且冻结树方向后残量失配，本子步骤允许舍去未覆盖任务，不能互作全覆盖补全保证。DGR当前整页的第5节Set Packing条件概率/残余计数校勘不改变第3节这个独立抽样子步骤。",
+  "scope": "给定显式配置证书时的一次随机局部舍入保证；保留比例是期望，实际峰T对每次输出成立。只是DGR完整双标准定理的一个贡献步骤。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/配置LP在图平衡及不相关机中的间隙--资源.md",
+      "sha256": "0fcfc44edf52bb6f1d0bf459c9847540342f55c9f4d681588f32670d1c64de26",
+      "section": "配置松弛、单机凸包与局部切割"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/Davies-Guruswami-Ren受限拒绝双标准--资料.md",
+      "sha256": "0c1ebd672e4c42c0d99231eda8e171781a76a67dc88041a025d85f28340e5179",
+      "section": "3. Makespan 的 (0.6533,1.5) 算法"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-tree-matching-and-configuration-primary/comparison/research/current/unrelated_machines/tree_markov_completion.md",
+      "sha256": "73628429e0c9773a3cfc083a8b3d87ef3b20004a583df6f5dce2492309a31817",
+      "section": "3. 再耦合产生的四个态"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "Boss2 fresh worker定向实读旧task/receipt及15旧边、当前DGR整页（特别是第3节和第5节）、当前CONFIG投影完整节及Markov四态完整节；逐项重推独立覆盖概率、去重复后的真实子集负载与期望量词。当前登记增量明确DGR实际校勘在第5节，目标M-50c2版本2的第3节数学陈述未变但正文SHA和registration_pin已刷新。保留step贡献，明确给定显式证书而不代签隐式LP求解或完整0.6533组合；此边不连接本包未列入的PSM两长度文献对象。",
+  "contribution": {
+    "result": "从显式等式覆盖CONFIG(T)证书得到实际峰≤T、期望保留至少(1−1/e)n个原任务的子调度。",
+    "remaining": "要推出目标完整(6e−5)/(6e+1)期望比例及随机多项式算法，还须大边最大匹配m*候选、小边最短贪心列表与T/2前缀保留至少(n−m*)/6、余下原任务的CONFIG(T)证书及其算法取得合同；将该证书舍入所得峰T与前缀峰T/2叠加，再比较两候选数量。源对象的投影等价本身不承担这些步骤。"
+  },
+  "endpoint_pins": {
+    "M-50c2c45b506146c4877862acc3a258be": "2e00b3111a871e52c292cb63c385c85f04b26dd5f564a7989e1ad04e88b3d900",
+    "M-8dec531708464aaa87be325982ae38fc": "6e4c72c1c0ced384bcb18335e603bb25356f27d1e46ca793abdd4ed08bad883b"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/配置LP在图平衡及不相关机中的间隙--资源.md": "0fcfc44edf52bb6f1d0bf459c9847540342f55c9f4d681588f32670d1c64de26",
+    "archives/unrelated-machines/state/资源/Davies-Guruswami-Ren受限拒绝双标准--资料.md": "0c1ebd672e4c42c0d99231eda8e171781a76a67dc88041a025d85f28340e5179",
+    "archives/unrelated-machines/tools/evidence/um-tree-matching-and-configuration-primary/comparison/research/current/unrelated_machines/tree_markov_completion.md": "73628429e0c9773a3cfc083a8b3d87ef3b20004a583df6f5dce2492309a31817"
+  },
+  "review_digest": "0a4877c24252ef54898f873b254fc3b75b3c30388073c4f32084fa7128a5cd1e"
+}
