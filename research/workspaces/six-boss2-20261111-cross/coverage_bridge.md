@@ -1,7 +1,7 @@
 # 同源末回复的折扣闭包：六人共同预算研究
 
 RUN：`six-boss2-20261111-cross`。内部工作者：`/root/coverage_bridge`。
-状态：下述任意有限标签目录上的折扣闭包已完成解析推导；在Main精确5716行新点上产生6个严格有理切面，Main以独立实现逐4849列全部复核通过。没有声称六人半覆盖已证。
+状态：两状态一般闭包及5716点6行已由Main独立逐4849列复核；其后四状态120次只找到一条普通theta0行，固定同权macro在5744点36次无负；独立初段alpha/尾段beta在5752点产生16条精确负行，已共同小整数网格压权，等待Main独核准入。当前转向已证统一正价格对早源隐藏主题的跨actual源付款。没有声称六人半覆盖已证。
 
 Main拟登记一般对象：`M-b233ef00a9c34e189817cdfb7a495107`；本工作区只准备自足数学与证据，正式登记和推送由Main串行完成。
 
@@ -171,3 +171,42 @@ Main独立实写 `main_verify_discounted.py/json`：字面六索引、中间二�
 同一预算不增加外部收入；第3节望远镜证明对四状态原样成立。初始可取任意两个合法主题，特别(R_e,Z_e)四态正由原图保存。在actual倒二源，Z_e=C_h(R_e)还具有真实进入边身份。
 
 四状态有两个下一位选择，精确最优值可由16个确定平稳策略的4x4有理线性方程求出；每个(s)仍只在当前边代价中消去。这个扩展在k2时保留真实末位向前一主题的查询，它与旧余二人调和势边值单调相容；不预先假设任何逐客户势差非负。先在下一份精确点上分离，只有严格负行经完整列审核后才申请入图。
+
+## 9. 当前完整接续状态与RUN反馈回复
+
+### 9.1 Main已认证的六条两状态行
+
+稳定文件 `new5716_joint_discounted.json`、`joint_discounted_requery.py`、`audit_discounted_cuts.py`、`discounted_audit_and_finite_depth.json` 按Main要求保持字节稳定。一般定理建议稿为 `formal_discounted.md`，Main已完整实读并准备回流；有限最大值证明避免依赖任何seed在循环上的假设。
+
+Main另对平衡k2固定权解析证明整个theta∈[0,1]的精确分段仿射结构，并在5727点完整核断点；此组固定权连续加密不能再切5727。来源是Main `main_pair/balanced_discount_proof.md`、`continuous_discount.py`与JSON，不冒成本子任务独立发现或运行。
+
+### 9.2 四状态120次扫描的准确范围
+
+`previous_theme_requery.py` 在5727精确点的5源×2种子×3轨道×4折扣，共120LP完成。全部正折扣尝试无负；唯一负行是actual第二源/R/C对角/theta0，mu_previous=0，所以是原单步portfolio权更新，不是四状态新机制。其标准两状态包是 `new5727_single_portfolio_cut.json`，回写4849列与发现向量完全一致；Main已承接独核及准入。原120次报告分为 `new5727_previous_source5.json` 与 `new5727_previous_sources1to4.json`。
+
+### 9.3 同权两枝宏闭包的阴性与具体弱化机制
+
+`macro_pair_requery.py` 保原34+两枝PAIR的332个共享17菜单权，final v成为下一macro强制主题，sourceT+sourceC=1。对5744点，actual第四源(k3)和第三源(k4)各18次正折扣LP均无负；报告 `new5744_macro_source4.json`、`new5744_macro_source3.json`。不称全连续参数族冗余。
+
+`macro_closure.md` 给出一般闭包证明和一客户六人完整SPE的精确弱化例：目录F={x}、E空、sigma处处选F，actual第四源p3/k3；只给sourceT权1时旧投影r>=1/6取等，同权正折扣只给r>=(1-delta)/6。此例说明不能假定重复同权自动保住seed信用，不是模型反例。
+
+### 9.4 独立alpha/beta的16条新有理负行
+
+`prefix_tail_requery.py` 把一次34+PAIR共享初段用alpha、其真实末端V接独立beta的同源两状态闭包；两段完整预算相加，全部源权合计1。beta0时与旧共同锥逐列相同，非平凡10行证书的4849列回归保在 `prefix_tail_beta_zero_audit.json`。
+
+绑定5752精确点SHA `791cbcba1afd841eabe3bc908b300083822739fd8f7ed8b85a8c7ff06f28c787`；actual第四源×两种子×三轨道×delta{0,1/2,3/4}共18LP，原始发现16个负向量、12个含非零beta。原报告为 `new5752_prefix_tail_source4.json`。最强原权是Z/B非对角/delta1/2，slack约-0.001009252985852488，而同权两段分别投影的合计slack为正；共享真实末端v提供严格信用。
+
+`compact_prefix_tail_cuts.py` 将16个负向量分别压到共同整数网格1000、10000或1000000，全部保严格有理负、全部4849列精确回代。稳定包为 **`selected_prefix_tail_5752.json`**，16个向量互异，每个保完整alpha/beta、三钱包预算、源权和1、分开投影slack、联合增益、稀疏向量与SHA。压权后slack会变化，不沿用原始更负小数；包中保存的是新向量自身的精确值。
+
+这些16条已完成发现器内部精确核验，**尚等Main独立复核准入**，不抢称已入主图或已改变W。保留4条beta0为旧共同查询权重更新，不把它们归为新尾闭包机制。
+
+### 9.5 当前优先义务：统一派生正价格跨actual源付款
+
+`derived_uniform_price.md` 给出Main已认可的一般桥：固定原actual和六个旧C菜单，最强k2闭包可写为每个合法F的统一价
+
+    sum_x w_x 1_F(x) <= u5+3u6/8+K/64-sum_x Psi0(x)，
+    w_x=(p5_x+2-q_x)/[4(p5_x+1)(p5_x+2)]>0。
+
+q不含被定价F，故可用于早源真实隐藏B/C/J/V以及每个middle主题。每次使用必须完整计同一u5、3u6/8、K/64和常量sumPsi0；早源u_i另列。`derived_price_projection.py` 已实现这338权(332旧+6派生价)联合min及四钱包输出，先使用同一5752点测试actual第四源。此处尚无新的数值结论，运行结果单独回报。
+
+所有本子任务产物均只在指定coverage_bridge范围；未执行Git写入、推送或凭据读取。正式登记、RUN反馈ack与checkpoint由Main负责。
