@@ -1,0 +1,57 @@
+{
+  "edge_id": "um-controlled-incidence-dp-implies-primal-single-exponential-v5-9568",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-247deecec83946358afe4e89413a7bd1"
+  ],
+  "target_ids": [
+    "M-232414c2d8e744ccaba95138638a15dc"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一显式非负二进制整数R||Cmax实例，有限端为真实资格；参数k为primal树宽。给定合法宽k分解或按目标合同用FPT程序取得；给定常规规模分解的DP界与求分解的独立f(k)代价分列。空任务、无资格任务和空机器先处理；不输入OPT、不要求正OPT或restricted assignment，无开放数学前提。",
+  "roles": {
+    "M-247deecec83946358afe4e89413a7bd1": "提供incidence的任务分配标志/活跃机器负载精确状态机制。本轮使用明确定义的closed-max递推，并证明受控机器叶分支和无机器join使该机制达到单指数；不是仅代入其L^{O(w)}黑盒。",
+    "M-232414c2d8e744ccaba95138638a15dc": "接收primal树宽k的完整精确FPT、给定常规分解时2^{O(k)}O(nm)加法/比较次数及实际最优分配回溯；原论文primal递推的同阶界也已另行核清。"
+  },
+  "whole_result": "对全部该模型输入先处理空任务及无资格分支；可行分支在primal树宽k下精确求OPT并回溯实际最优分配。非空分支给定常规O((k+1)n)袋宽k分解，DP与分支构造使用2^{O(k)}O(nm)次对O(B+log(n+1))位负载整数的加法/比较，数值位长按输入计费；任意冗长显式分解另付读取/缩减，未给分解时另加合法FPT求分解代价。因此支付M232整条算法、单指数DP界和实际输出合同。原PDF页7–9、11所述原primal DP的相同运行时和backtracking亦独立核对，不把来源归属省略。",
+  "explanation": "每台机器资格集J(i)在primal为团，树分解子树Helly性给某袋包含整团，所以d_i≤k+1。仅用incidence宽≤k+1、L≤2^{k+1}的黑盒是2^{O(k²)}；完整新证明把机器i放在独立叶分支：empty→介绍J(i)任务(flags0)→介绍i→每资格边恰一次介绍→遗忘i计入closed max→介绍父袋X的其余任务→在仅含jobs的X join。机器从不进入join，所有任务出现仍连通。任务位记子树选中边数0/1，机器负载记选中边处理时间和，表值只优化已忘机器峰；选边把任务位置1，forget-job强制1，forget-machine取max，jobs-only join把左右任务位相加并限制≤1、表值取max。重复introduce只初始化不同子树局部计数；唯一介绍边和最终forget保证每原任务恰一次。负载值至多2^{d_i}个，机器袋至多2^{d_i}2^{d_i}≤4^{k+1}状态，join的合法任务位组合总数≤3^{k+1}，故细化复杂度2^{O(k)}乘分解大小和输入。直接最小化closed max不依OPT搜索；空根恰为真实OPT，父指针回溯给实际端。review另核原primal机器组不交、Lemma9–11及小任务子集DP；audit独立纠正源Lemma13/15遗漏父活跃负载，两个定理和复杂度不变。",
+  "scope": "同一整数unrelated实例和primal资格结构的完整M232合同。单指数指给定常规合法分解的DP，不承诺精确求分解本身也单指数；没有用n^{O(k)}识别替代FPT，也没有把统一L^{O(w)}黑盒单独说成单指数。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+      "sha256": "113ed833ea9443fe2166793c19b5fe2b1b6bfb3b789e6f617372120d1c90375e"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+      "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+    },
+    {
+      "path": "map/edges/boss6-runtime-provenance-repair-repair-9568cb1ca8a4abea/review.md",
+      "sha256": "f2e8b4b0a78d1015c76fd0f1b5c30eae44a0adef83784c023fc5277e8e215107"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/结构参数DP共享活跃机器合并负载勘误--审查.md",
+      "sha256": "3b26e5d5cf1c422b280e04cf0b39964fe5aa804335576b117c54198ccca5b4b6"
+    },
+    {
+      "path": "research/registration/review-boss6-runtime-provenance-errata-20261111.json",
+      "sha256": "9504e07bf8528bd227dda83cb159c5c27de42deb4ea19a8c4bb783846e1d9068"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Boss6 fresh current-v5 repair worker directly read actual claimed task, prior done task/receipt and all three complete prior assets, both complete current v5 records, current shared body, formal join audit and precise runtime-provenance registration review. Canonical endpoint pins independently match actual task. Full prior nine-section proof and exact historical reading ledger retained in new review/ledger, with prior PDF page reads explicitly inherited rather than claimed as new. v4→v5 changes only independent rankwidth runtime/decomposition accounting and body/objections/version for these two endpoints; model/statement/quantifiers/assumptions remain unchanged. Statically checked whole controlled machine-leaf closed-max algorithm, state counts, binary costs, actual traceback, original primal evidence attribution and reverse degree-only bridge. Existing join correction resolved; no open proof step or added parameter. No scientific program, PDF export/render, native binding or Git/queue write by this worker. New edge awaits Root serial native binding/check and bound-SHA receipt update. Root随后全文核当前完整稿、最终边与收据，复核目标范围/方向、正确closed-max、状态数/位成本/实际回溯和历史证据归属，并真实执行原生edge-bind --write及edge-check；结构校验不替代数学证明。",
+  "endpoint_pins": {
+    "M-232414c2d8e744ccaba95138638a15dc": "d8b5a0de4557def0e8b2b04119d7388d4054554ce8daf83b98273009c932cf22",
+    "M-247deecec83946358afe4e89413a7bd1": "d026cdeda8e61fd5025c4c061a88cb0bf2606b83fa3d7281bc14b4fcab722149"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md": "113ed833ea9443fe2166793c19b5fe2b1b6bfb3b789e6f617372120d1c90375e",
+    "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae",
+    "map/edges/boss6-runtime-provenance-repair-repair-9568cb1ca8a4abea/review.md": "f2e8b4b0a78d1015c76fd0f1b5c30eae44a0adef83784c023fc5277e8e215107",
+    "archives/unrelated-machines/state/审查/结构参数DP共享活跃机器合并负载勘误--审查.md": "3b26e5d5cf1c422b280e04cf0b39964fe5aa804335576b117c54198ccca5b4b6",
+    "research/registration/review-boss6-runtime-provenance-errata-20261111.json": "9504e07bf8528bd227dda83cb159c5c27de42deb4ea19a8c4bb783846e1d9068"
+  },
+  "review_digest": "e5abbbaaebc584fa0d97d24c903979b8553129c6ea89628ea04900f09af31231"
+}

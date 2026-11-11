@@ -1,0 +1,60 @@
+{
+  "edge_id": "um-constant-tw-exact-load-dp-contributes-fptas-runtime-v5-ea3c",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-247deecec83946358afe4e89413a7bd1"
+  ],
+  "target_ids": [
+    "M-14dbe6980117492aa7a3b48c52378dcb"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限可行二进制整数R||Cmax输入；固定dual或incidence树宽界k；epsilon>0为输入有理数。使用M247修正后的L^{O(k)}精确负载DP及合法回溯，或本review给出的等价closed-max/阈值flag-load DP；原完整Cmax join须补父活跃负载最大项。空任务、无资格、零上界先处理。不存在额外开放数学前提；不调用未付的LST2approx。",
+  "roles": {
+    "M-247deecec83946358afe4e89413a7bd1": "提供经共享活跃负载join修正的精确负载DP与L^{O(k)}O(nm)复杂度；当前review明确closed-max/forget-machine语义，裁剪至多项式整数cap并实际回溯。",
+    "M-14dbe6980117492aa7a3b48c52378dcb": "接收常数dual/incidence树宽的FPTAS贡献；目标陈述还含独立的弱NP-hard半部，故不标whole_result。"
+  },
+  "contribution": {
+    "result": "对每个固定dual或incidence树宽k、每个合法输入和epsilon>0，构造makespan≤(1+epsilon)OPT的合法调度，时间对输入位长及1/epsilon为多项式（次数可依k）。逐job放最小有限处理时间端给OPT≤B_min≤nOPT；令epsilon0=min(epsilon,1)、q=epsilon0 B_min/n²、a_ij=ceil(p_ij/q)，精确DP仅枚举0..floor(n²/epsilon0+n)的整数负载并回溯。",
+    "remaining": "本贡献不把算法性前提当作核心弱NP-hard结论的来源。整条目标的困难性半部另由P2||Cmax/PARTITION归约：dual为K2、incidence为K_{2,n}。其独立原文结论保留；本边只支付近似算法部分。"
+  },
+  "explanation": "任取原最优sigma*，每机至多n个任务，故q load_a(sigma*,i)≤load_p(sigma*,i)+nq≤OPT+nq。初等上界由逐任务最小端构造，B_min≤sum_j min_i p_ij≤nOPT；q>0时nq≤epsilon0 OPT。裁剪cap B_min+nq可保留sigma*及更优的缩放调度，缩放状态数L≤floor(n²/epsilon0+n)+1。非负部分负载不超过最终负载，所以逐状态剪枝不丢见证。M247精确DP与回溯给sigma_a，C_p(sigma_a)≤qC_a(sigma_a)≤qC_a(sigma*)≤OPT+nq≤(1+epsilon)OPT。向上取整只改数值，不增资格边，结构宽度保持；dual宽k也可转incidence宽≤k+1。网格运算以ceil(n² v p/(uB_min))整数除法完成，操作数位长为输入位长的多项式，大于cap的单端直接跳过，数组不依原B_min数值大小。review另给fixed-k分解搜索和flag/load DP的完整cap解释，以及论文原B≤2OPT路线的正确cap与两job反例。 v5定向替代核当前完整中文正文、未变正式join audit及精确登记审查，保留旧7c26/c739/task850完整证明。正文实际97ea提交只纠正独立rankwidth运行时间m²、零计数安全界及另列分解费用；065f登记将两端由v4刷新v5，仅body SHA、objections、version改变，数学合同不变。完整Cmax join仍须父活跃lambda max；等价closed-max在forget-machine关闭完整负载，旧阈值flag/load及B_min/q/K/位复杂度/实际回溯链仍有效。新review逐字保全整个旧review，新ledger完整嵌入旧ledger且严格区分历史PDF与本轮实读；没有新增PDF阅读或科学运行。",
+  "scope": "仅M14的FPTAS算法部分，适用于一般unrelated整数处理时间；固定k的多项式次数可依k。未推出仅由树宽的精确FPT、也未迁移restricted-assignment rankwidth的PTAS或一般模型的无结构FPTAS。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+      "sha256": "113ed833ea9443fe2166793c19b5fe2b1b6bfb3b789e6f617372120d1c90375e"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+      "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/结构参数DP共享活跃机器合并负载勘误--审查.md",
+      "sha256": "3b26e5d5cf1c422b280e04cf0b39964fe5aa804335576b117c54198ccca5b4b6"
+    },
+    {
+      "path": "map/edges/boss6-runtime-provenance-repair-repair-ea3c50ff802ffdaf/review.md",
+      "sha256": "eb44107a8c6be855a0aa69dc5faea1d335620b08a39a3a4adebf3432f139edbe"
+    },
+    {
+      "path": "research/registration/review-boss6-runtime-provenance-errata-20261111.json",
+      "sha256": "9504e07bf8528bd227dda83cb159c5c27de42deb4ea19a8c4bb783846e1d9068"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Boss6 fresh v5 repair worker完整实读当前任务、旧任务/receipt、7c26三完整资产、M14/M247 v5完整记录、当前中文全文、正式join audit全文及精确登记审查全文；亲自只读核97ea实际正文差异、065f两端字段差异、现行字节SHA与canonical pins。旧review全部28,662字节作为后缀保留，旧ledger及c739/task850嵌套历史完整保留；历史PDF原作者/Root的读取不计为本人新读。复核B_min/q/K、非负cap、资格/回溯/位复杂度、fixed-k n^{O(k)}分解、closed-max与完整Cmax正确join衔接。保持accepted/unconditional/ALL/contribution；弱NP-hard由独立PARTITION已证而非本算法推出。0科学程序、0新PDF、0canonical重扫；Root后续复制后原生bind/check，worker不冒称已执行。 Root随后全文核当前完整稿、最终边与收据，复核目标范围/方向、正确closed-max、状态数/位成本/实际回溯和历史证据归属，并真实执行原生edge-bind --write及edge-check；结构校验不替代数学证明。",
+  "endpoint_pins": {
+    "M-14dbe6980117492aa7a3b48c52378dcb": "8d3c860cc8f5e4d5abd95ab0b8891067fb982bc537b9f4870b161e43a7800372",
+    "M-247deecec83946358afe4e89413a7bd1": "d026cdeda8e61fd5025c4c061a88cb0bf2606b83fa3d7281bc14b4fcab722149"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md": "113ed833ea9443fe2166793c19b5fe2b1b6bfb3b789e6f617372120d1c90375e",
+    "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae",
+    "archives/unrelated-machines/state/审查/结构参数DP共享活跃机器合并负载勘误--审查.md": "3b26e5d5cf1c422b280e04cf0b39964fe5aa804335576b117c54198ccca5b4b6",
+    "map/edges/boss6-runtime-provenance-repair-repair-ea3c50ff802ffdaf/review.md": "eb44107a8c6be855a0aa69dc5faea1d335620b08a39a3a4adebf3432f139edbe",
+    "research/registration/review-boss6-runtime-provenance-errata-20261111.json": "9504e07bf8528bd227dda83cb159c5c27de42deb4ea19a8c4bb783846e1d9068"
+  },
+  "review_digest": "2cee3295484f9c16e51d04828fae1e8f194a489d343e149b6cf345989276110e"
+}
