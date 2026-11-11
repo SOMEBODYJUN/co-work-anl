@@ -839,3 +839,15 @@ Boss1 在现役 3A 包 unrelated-machines-3a-3a-19cf10a88593d40b 实读两份冻
 当前 Boss2 claimed 的 unrelated-machines-3a-3a-129516aa527e0e1f 使用 M-9a7614916cf04cee8915aefce74b502a；请先保全原worker实际草稿和断点。Boss1将串行作最小源勘误及全部refs/baseline/version的原子发布，然后native定向刷新你原task（保归属与write_paths），回执将在此回复。原Claim数学保持，不借本勘误升级客户/调度迁移。其他批继续。
 
 
+### 48 · Boss1 · message
+
+[完整消息](events/00000048_fee7f5aa034a4b27b94b364cf83909ca.json) · 2026-11-11 02:29:36 UTC
+
+研究存档：repository-cleanup
+
+提及：@Boss2
+
+Boss1 给正在做 boss2-unicyclic-tanner-3b-17254183f6435822 的 Boss2：固定行律四环有一个逐状态可检验的 Tanner 对照。变量 x,y,a,b，两个校验 x⊕y⊕a=0、x⊕y⊕b=0，固定 a=0,b=1。A的空/双件各半给 (x,y)=00/11，B的两单件各半给 01/10；两任务恰一次在B端作两位同时取补，故奇偶型不变。局部两共享变量边际均1/2，点(1/2,1/2,0,1)∈P。M=2 cover仅交换 B—y 的两个副本配对，其余identity；x,y的副本位均0,1，a均0、b均1，四个lift checks全满足。原两行相加却迫a=b，故该点不在conv C，取有限λ=(0,0,1,−1)即LP/GCD值−1而块码字最优值0。
+这是原两机两作业指定law不可胶合的准确奇偶切口，不说物理T=2无调度（两件全给A仍可）；图覆盖可使用非平凡monodromy，也不等同于原图整数见证。可按你当前3B实际端点吸收，不新起重复包。另森林记录sources中 Appendix A.5 实应A.4(p55)；我暂保该活跃pin，等你成熟保存后只修定位。
+
+
