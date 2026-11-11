@@ -1,6 +1,36 @@
 # Boss1：六人共同目录跨真实分支研究
 
-## Stage13当前入口：普遍覆盖并31/25/19与共同X四源层
+## Stage14当前入口：真实根尾、全类型精确界与最优菜单重查
+
+原六人2W≥OPT6仍OPEN；Main继续推导，不以checkpoint结束研究。Boss1、RUN six-boss1-20261111、分支rebuild/research-v2和customer-attraction/six-providers不变。写本入口时最后确认pushed为d9c1b9937fb66b811e85968c4ba52a40cc759c10（checkpoints/stage13.json），公屏seq83；本轮须以实际Stage14 pushed收据确认为可恢复上限。
+
+### 本轮已核数学
+
+全256型217行系统的精确界约.4258960956295508已被真实根第五源NEW加强；其整个最优面K固定，NEW恒负，Main全257列signed identity给无新LP严格界约.42608659882235334。静态最大C会员可精确补全54新预算，但不支付真实根后继；universal_max_label_completion/与root_near_equality_audit/均已冻。
+
+Main亲推NEW=10980u1−1658K−87O≥0及SIZE=67140u1−9878K−627O≥0：分别保真实第五源SAFE与同一第五标签大小一致性，128型ρ/η解析非负。新TAIL=112944305160u1−11595684007K−2178783435O≥0由真实最大C分支的第三/四/六SAFE、完整36PAIR及五尾K帽共同支付。Main和独立audit核全部128型及u/K/O三参数，不能把两个有效式直接相减。正式父档根收益加强v1已登记，原题未闭合。
+
+universal_true_x_tail/将同一真实第四源强制X的Y,T跨真PAIR与actual RC联合付款，六整数权(4096,800,71,384,512,900)给全256型QX；Main另核1024态。正式父档两尾跨实际钱包投影v1已登记。219行精确最优22634634904624698063/52739368771603064323≈.4291791015294076，新增NEW与QX均正权。Main进一步证明整个219面K恒定、SIZE恒为−2694628988940630887460/52739368771603064323；main_universal_wallet_v2_face/同名三文件记录全列身份及无LP严格界约.4294380660455146。
+
+221行v3保原219，只加SIZE和TAIL。精确最优alpha3=999866079286562265469481/2318932167377271341801106≈.4311752164865684，11正原子+K，10正预算，全部256型余项非负。Main重放全部221行/257列及新根公式PASS，输入d5808676b4a59bc9a63deece83e291887ead8847a7177c3afac4221523f30f55，证书1d9a898e3ca429b6af3611f01ada831ad50cf7f0708f14d7c518478573f0a9e3。它既是明定必要系统精确最优，也是普遍有效界；不声称SPE实现、half或最佳已知界。整个最优面由正权迫K=|A6|、TAIL=QX=0；只代表点的SAFE6(X)=0不能直接传播整面。
+
+maximal_root_opt_requery/新160ν/10质量式/141原始行已精确Farkas：根C分支第三源依次查询六个真实Q，保其同一后三尾和合法重数矩区间[o/6,o]。九正钱包给126000v3+65719v4+4962v6−Σm(h)w_h≥0，全128型与2048状态认证，旧根71点严格违反。Main识别并独立核量词推广：这九权没有C最大性、K或根u，故任意两行动历史后的真实四人续局及任意六合法查询并均有效。直接映到actual的全256列时与X无关，在221代表点精确值−1458110288660943054148007972513/1471748948895441544929768608≈−990.7330，已排该点。来源、完整公式和逐点值见main_opt_requery_any_history.md及main_opt_requery_cut_check.py/.json；整面排除另等专门线代任务，不能仅从点负值推出。
+
+### 当前实际代理和下一承重义务
+
+/root/universal_union_wallet_lp 已冻v3，现独占v3_optimum_joint_face/：0优化，精确最优面参数及全列身份、K/u1/RC(X,O)与SAFE6(X)范围，并将actual重查cut接回整面；若成立给保号严格对偶。真实C=A6根分支13个零余项型的等号结构也须保同一客户账本。
+
+/root/universal_true_x_tail 已冻requery，现获显式释放在maximal_root_tail_wallet_v2/保原71行、只加此一全128重查cut，K固定为v3的1125421575458286230366665/6570307807568935468436467、O=1，唯一129列小LP；必须恢复两个自由质量乘子及全域u/K/O线，不能直接搬固定K数值。
+
+/root/early_shared_x_source_audit 已冻结maximal_root_opt_requery_audit/；其独立输入22560系数、全域2048状态及2178列齐次身份PASS，并确认任意两前缀推广。现转独立maximal_root_tail_wallet_v2_audit/，核新根72来源、输入及自由K/O的普遍线；不改旧冻结包。
+
+Main已把两条父档引理、计算对象v11及五条计算承重边接回，旧四边只继续支付原AP/H3/容量/MC6步骤，相关承重正文逐字未变；新联合边才支付221行全类型十钱包证书。结构build只核结构，不当数学判决。Stage13 build日志因上轮checkpoint时间竞合未完整推入，本轮保存已完成版本；数学输入未受影响。
+
+### 原云端义务仍未返回
+
+C-six-boss1-common-x-joint-23676-01；run43096304349；source b96dbcdfe0dec963bbaf91f3a9a2f0ed597467ad。check8仍queued、jobs=[]、artifacts=[]，无新数组/数值点，无重发或本地绕过。原冻结23676×21021包含420真实交叠core；收到实际ZIP后先核请求/source/六输入/执行源码/scales，再交原席freeW精确恢复。固定16hist的W10≈.4941319648不能与本全256型界互换。
+
+## Stage13历史入口：普遍覆盖并31/25/19与共同X四源层
 
 原六人2W≥OPT6仍OPEN。最后确认pushed为b96dbcdfe0dec963bbaf91f3a9a2f0ed597467ad，收据checkpoints/stage12.json；公屏Stage12 seq82。以下Stage13新增文件在本次checkpoint确认前仍仅本地。本RUN、Boss1、结果分支rebuild/research-v2及customer-attraction/six-providers身份不变。
 
