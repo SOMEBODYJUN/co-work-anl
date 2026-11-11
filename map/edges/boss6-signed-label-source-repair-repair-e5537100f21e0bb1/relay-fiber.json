@@ -1,0 +1,60 @@
+{
+  "edge_id": "ca-causal-closure-r34-relay-fiber",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/net-relay-debt-envelope-residual-and-true-information-elimination"
+  ],
+  "target_ids": [
+    "M-bdc70d9420664c1396118db568c5675f"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "八单位客户两份完整纯SPE，固定同一z_T=z_M=z_R=1；只考察原实际前缀的真实query。",
+  "explanation": "两表的actual MRR和全部实际前缀query的末回复R相同，故PROJ的独立查询式与末位实际IC项、E/F/K逐项相同。根改T时两表的真实中继分别为M和R，根偏离收益分别为2和3，δ₁与s₁各差1/3但τ(δ₁−s₁)同为−5/3。NET的左右同为−187/12，Debt=−133/12。该代数只保证投影纤维上的净金额相同。",
+  "scope": "同一实例同一组合的投影量保持，根偏离收益及离轨福利由另一份全历史表决定。",
+  "roles": {
+    "customer-attraction/net-relay-debt-envelope-residual-and-true-information-elimination": "消去真实偏离收益，给出Debt在该投影纤维上的不变性",
+    "M-bdc70d9420664c1396118db568c5675f": "给出同一投影纤维中的两个不同SPE点"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/净中继债务的包络余项与真实信息消元--引理.md",
+      "sha256": "a5a2815369825a109430268811774c5465df43f7e07e541576c6199738312ac8",
+      "section": "八客户：真实SPE到该投影确实非单射"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/real-history-clock-relay-single-kernel-and-packet-primary/source-root/research/workspaces/customer-attraction/R-c57321db16eb40e9867cee444f322c62/relay/audit_projected_debt.py",
+      "sha256": "ee8d8615059048a80034e3aa3f8bfe44a81dac63464c9197defe57df6f71768a"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/real-history-clock-relay-single-kernel-and-packet-primary/source-root/research/workspaces/customer-attraction/R-c57321db16eb40e9867cee444f322c62/relay/projected_debt_audit.json",
+      "sha256": "9a536879b22d29e9911d6c2f635f0c090857175fcacc16d6a31bdf984a941ced"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/净中继债务的包络余项与真实信息消元--引理.md",
+      "sha256": "a5a2815369825a109430268811774c5465df43f7e07e541576c6199738312ac8"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/real-history-clock-relay-single-kernel-and-packet-primary/source-root/research/workspaces/customer-attraction/R-c57321db16eb40e9867cee444f322c62/relay/projected_relay_debt.md",
+      "sha256": "4b305eac842e16008b7bc3b95e8ac5836182e47ebdd5a4bff249a7c8d511f7da"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Boss6全文实读净中继正文及本边全JSON：Pi保留同一实例、actual路径/收益和每个actual前缀各query末回复，固定同一z；两表Pi相等而根真实偏离利润分别2与3，故同一纤维不能恢复被消去的中继信息。只更正target角色句，原contribution、公式和数值原样保留；不把历史全树运行计新执行。 Root已核完整数学审查、当前端点合同和必要承重原文，复核推导方向、条件、量词与整目标/局部范围；具体复核见receipt.parent_review。随后进行原生绑定与结构检查，程序检查不替代数学判断。",
+  "contribution": {
+    "result": "固定两份真实策略及同一比较组合后，末回复投影相同导致净金额相同，而根δ₁和s₁分别可变。",
+    "remaining": "两张全策略的存在与最优性另由每表13有序节点、39含自身比较确认。普遍强支付Debt≤阈值仍需额外证明。"
+  },
+  "endpoint_pins": {
+    "M-bdc70d9420664c1396118db568c5675f": "9b11e813ac8feda145dedcf621b636098a5a089a5063e41f0a4fc39863c55e0f",
+    "customer-attraction/net-relay-debt-envelope-residual-and-true-information-elimination": "946fadc9761d55d0d2925479a27e1fbfb8de50f0611013ac1db644bd6a7c671b"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/净中继债务的包络余项与真实信息消元--引理.md": "a5a2815369825a109430268811774c5465df43f7e07e541576c6199738312ac8",
+    "archives/customer-attraction/tools/evidence/real-history-clock-relay-single-kernel-and-packet-primary/source-root/research/workspaces/customer-attraction/R-c57321db16eb40e9867cee444f322c62/relay/audit_projected_debt.py": "ee8d8615059048a80034e3aa3f8bfe44a81dac63464c9197defe57df6f71768a",
+    "archives/customer-attraction/tools/evidence/real-history-clock-relay-single-kernel-and-packet-primary/source-root/research/workspaces/customer-attraction/R-c57321db16eb40e9867cee444f322c62/relay/projected_debt_audit.json": "9a536879b22d29e9911d6c2f635f0c090857175fcacc16d6a31bdf984a941ced",
+    "archives/customer-attraction/tools/evidence/real-history-clock-relay-single-kernel-and-packet-primary/source-root/research/workspaces/customer-attraction/R-c57321db16eb40e9867cee444f322c62/relay/projected_relay_debt.md": "4b305eac842e16008b7bc3b95e8ac5836182e47ebdd5a4bff249a7c8d511f7da"
+  },
+  "review_digest": "c62f5704100a3695cfdc39cdff8ab968767b1fafe294fb58bdccc825ec100823"
+}
