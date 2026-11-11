@@ -1,0 +1,50 @@
+{
+  "edge_id": "um-constant-tw-exact-load-dp-contributes-fptas-850a",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-247deecec83946358afe4e89413a7bd1"
+  ],
+  "target_ids": [
+    "M-14dbe6980117492aa7a3b48c52378dcb"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限可行二进制整数R||Cmax输入；固定dual或incidence树宽界k；精度epsilon>0为输入有理数。使用M247明确的L^{O(k)}负载DP及合法回溯，不把任意f(k,OPT)存在性误当此复杂度。空任务/无资格/零上界先处理；无额外开放数学前提，亦不调用未付的LST2approx。",
+  "roles": {
+    "M-247deecec83946358afe4e89413a7bd1": "提供活跃机器负载状态的精确DP和L^{O(k)}O(nm)复杂度；本轮将其裁剪到多项式整数cap后应用。",
+    "M-14dbe6980117492aa7a3b48c52378dcb": "接收常数dual/incidence树宽的FPTAS贡献；目标陈述还含独立的弱NP-hard半部，故不标whole_result。"
+  },
+  "contribution": {
+    "result": "对每个固定dual或incidence树宽k、每个合法输入和epsilon>0，构造makespan≤(1+epsilon)OPT的合法调度，时间对输入位长及1/epsilon为多项式（次数可依k）。逐job放最小有限处理时间端给OPT≤B_min≤nOPT；令epsilon0=min(epsilon,1)、q=epsilon0 B_min/n²、a_ij=ceil(p_ij/q)，精确DP仅枚举0..floor(n²/epsilon0+n)的整数负载并回溯。",
+    "remaining": "本贡献不把算法性前提当作核心弱NP-hard结论的来源。整条目标的困难性半部另由P2||Cmax/PARTITION归约：dual为K2、incidence为K_{2,n}。其独立原文结论保留；本边只支付近似算法部分。"
+  },
+  "explanation": "任取原最优sigma*，每机至多n个任务，故q load_a(sigma*,i)≤load_p(sigma*,i)+nq≤OPT+nq。初等上界由逐任务最小端构造，B_min≤sum_j min_i p_ij≤nOPT；q>0时nq≤epsilon0 OPT。裁剪cap B_min+nq可保留sigma*及更优的缩放调度，缩放状态数L≤floor(n²/epsilon0+n)+1。非负部分负载不超过最终负载，所以逐状态剪枝不丢见证。M247精确DP与回溯给sigma_a，C_p(sigma_a)≤qC_a(sigma_a)≤qC_a(sigma*)≤OPT+nq≤(1+epsilon)OPT。向上取整只改数值，不增资格边，结构宽度保持；dual宽k也可转incidence宽≤k+1。网格运算以ceil(n² v p/(uB_min))整数除法完成，操作数位长为输入位长的多项式，大于cap的单端直接跳过，数组不依原B_min数值大小。review另给fixed-k分解搜索和flag/load DP的完整cap解释，以及论文原B≤2OPT路线的正确cap与两job反例。",
+  "scope": "仅M14的FPTAS算法部分，适用于一般unrelated整数处理时间；固定k的多项式次数可依k。未推出仅由树宽的精确FPT、也未迁移restricted-assignment rankwidth的PTAS或一般模型的无结构FPTAS。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+      "sha256": "b2ae90415d0b340c9c0039bf68005854f06b0da4acc35e0f44a22a97d2ebc5ed"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+      "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-850a6179151b732e/review.md",
+      "sha256": "5f958ba7b25b627252cbc6a06eec9abfa0125fb72348dd15ed6038936f0a4ade"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Fresh数学worker完整核两端契约、共享中文全文及相关primary页1–12指定范围，视觉核4/6/7/9/11/12；Root另独立核B_min、分解递归和flag/load DP。对本轮新贡献完整给出上界、舍入、cap、回溯与位复杂度；原文源错/转写错均最小更正后再绑定，不声称重证未读rankwidth全DP。",
+  "endpoint_pins": {
+    "M-14dbe6980117492aa7a3b48c52378dcb": "2e991ac64d1bc297760daccd30f713ae70c2bdaa42bb3e54a02ae554563a4e86",
+    "M-247deecec83946358afe4e89413a7bd1": "fd687a135427e3d9654468452b5db3a8279a4f60bfa41d99904b9d214a241a41"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md": "b2ae90415d0b340c9c0039bf68005854f06b0da4acc35e0f44a22a97d2ebc5ed",
+    "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae",
+    "map/edges/unrelated-machines-3a-3a-850a6179151b732e/review.md": "5f958ba7b25b627252cbc6a06eec9abfa0125fb72348dd15ed6038936f0a4ade"
+  },
+  "review_digest": "cbdc623d2da3baef239c393f490fd93a406f48b5e5e246c66cd65a2584289433"
+}
