@@ -30,7 +30,13 @@
 
 程序会在任何有理恢复前先保存 `augmented_lp_float.json` 和完整求解器数组。之后以原 `exact_solve`、原 `exact_point` 的支持/活跃阈值恢复有理点，省略全零方程但不删除任何待核不等式；全部 5716 行及非负/归一化都用 Fraction 回代。最后尝试恢复精确对偶并逐列核非负剩余系数，以认证有限系统的最优性。任一步失败将保存准确 traceback 和浮点候选，不把失败称为严格界。
 
-主要输出将包括：`inputs.json`、`cut_records.json`、`old_point_audit.json`、`exact_matrix.json.gz`、`augmented_lp_float.json`、`augmented_lp_exact.json`、`primal_exact_audit.json`、`exact_dual_certificate.json`、`status.json`、`stdout.txt`、`stderr.txt`、`progress.jsonl`。当前数学结果尚待本次进程完成；本笔记的初始状态不预先宣称可行或最优。
+主要输出包括：`inputs.json`、`cut_records.json`、`old_point_audit.json`、`exact_matrix.json.gz`、`augmented_lp_float.json`、`augmented_lp_exact.json`、`primal_exact_audit.json`、`exact_dual_certificate.json`、`status.json`、`stdout.txt`、`stderr.txt`、`progress.jsonl`。
+
+首轮构造已得到 5692×4849，但描述符比较因 Python tuple 与 JSON list 的序列化差异停止。失败保在 `attempt1_*`。仅将描述符按 JSON 值规范化后，第二轮构造与全部描述符精确通过；未更改任何数学坐标。
+
+第二轮原 5692 行有 402049 非零系数。原点全部 5692 行用 Fraction 回代通过。27 条切面从字面后继实现重建后逐系数相同，去重为 24；它们在原点共有 12 条不同负行，而正文此前只针对 pending 五条单独报告其中两条不同负行。
+
+2026-11-11 16:49 UTC，新 5716×4849 稀疏 LP 已求得浮点最优 W≈`0.4900905644294647`，333 正列，HiGHS optimal。完整浮点点及求解器数组已保存，且已交给两位数学代理进一步检查。它仍低于 half；这一刻尚未完成有理认证，不将浮点提高冒称严格提高。精确原始恢复正在对 333 个变量、485 条非平凡活跃方程使用原 `exact_solve`；完成后再核全部不等式并恢复对偶。
 
 恢复命令（仓库根）：
 

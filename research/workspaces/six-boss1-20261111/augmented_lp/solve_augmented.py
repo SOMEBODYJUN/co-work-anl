@@ -110,7 +110,9 @@ def main():
     assert (len(dense), len(cols)) == (5692, 4849)
     old = json.loads(OLD.read_text())
     assert len(cols) == len(old["columns"])
-    strip = lambda col: {k: v for k, v in col.items() if k != "weight"}
+    # Runtime builders use tuples; the frozen JSON necessarily uses lists.
+    # Canonicalize only that serialization distinction before descriptor checks.
+    strip = lambda col: json.loads(json.dumps({k: v for k, v in col.items() if k != "weight"}))
     assert all(strip(a) == strip(b) for a, b in zip(cols, old["columns"]))
     cols = [strip(c) for c in cols]
     rows = [{j: F(value) for j, value in enumerate(row) if value} for row in dense]
