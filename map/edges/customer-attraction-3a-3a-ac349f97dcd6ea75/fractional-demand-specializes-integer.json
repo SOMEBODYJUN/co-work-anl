@@ -1,0 +1,42 @@
+{
+  "edge_id": "ca-ac349f97-fractional-demand-specializes-integer",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-290442849ccc4895928938acc63b5dfd"
+  ],
+  "target_ids": [
+    "M-66588897e3024f18af0d85daf6c91201"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同目录完整历史单位客户模型；所有合法有序历史的真实续局IC，空题、重复、覆盖别名、全零客户及弱平局保留。",
+  "roles": {
+    "M-290442849ccc4895928938acc63b5dfd": "全客户非负目录权需求及τ≥1逐位/产品预算。",
+    "M-66588897e3024f18af0d85daf6c91201": "整数索引权特例，保留截O查询与遗漏全重数。"
+  },
+  "explanation": "给合法可重复比较元组T_1,…,T_m，取z_H等于H在该元组中的索引出现次数。于是τ=m≥1，a_x=d_x；在C∩O有min(1,d_x)=1，在C外只有O内客户贡献d_x，故Q_z=I+D*。源结论逐位及产品式立即给目标全部预算。目标使用的截O查询也单独核清：当前强制H后的最终负载≤b_i+r，丢弃非O客户给g_i(H)≤u_i；对同actual旧主题A_j，最终c_x≤b_i+r给g_i(A_j)≤u_j。逐客户旧项加r个比较查询是(b_i+r d_x)/(b_i+r)，遗漏b_i恒0恰保d_x。递推P_i≥(1−1/(rm))P_(i−1)+Q/(rm)系数非负，得W≥F_m(m)Q；m=1、W=0、空O均保留。分数源必须用全客户未截断查询，不能误称二者查询支持相同。",
+  "scope": "任意m≥1、每份完整纯SPE、每个合法m索引比较元组；比较元组不必最优。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/实际遗漏比较重数的真实前缀需求递推--引理.md",
+      "sha256": "408029cd91f73691a6b574abdcd8470acf5585140920a06d1239464fc95c0879"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核对当前registry陈述、量词、全部承重证明和退化边界；本边只保实际完成的数学作用，不以程序输出替代真实IC。",
+  "whole_result": "源分数需求在整数目录权z_H=#索引H、τ=m下推出目标整条I+D*≤P_(i−1)+rm u_i及I+D*≤W/F_m(m)，目标截O查询的支付合法性亦已核清。",
+  "endpoint_pins": {
+    "M-290442849ccc4895928938acc63b5dfd": "18e9f476515e6cbb60ec87473e23cb97cfb176a1b931edeb1c41f46c49b1ecf7",
+    "M-66588897e3024f18af0d85daf6c91201": "b9ffbd494b445c5522eb914be7edb811c911b530abc3f36f9ff7fbd454187a9b"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/实际遗漏比较重数的真实前缀需求递推--引理.md": "408029cd91f73691a6b574abdcd8470acf5585140920a06d1239464fc95c0879",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "f52ef2f3cbe68ff57056e56a41a924536db13b342518c2f67802d46bf5338394"
+}

@@ -1,0 +1,50 @@
+{
+  "edge_id": "ca-ac349f97-quantile-and-credible-menu-give-path-cut",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-fba1c001a1cd4e05b5cdb4285ab6215c",
+    "CA-CREDIBLE-CONTINUATIONS"
+  ],
+  "target_ids": [
+    "customer-attraction/pay-weighted-quantile-and-all-credible-path-cut"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同目录完整历史单位客户模型；所有合法有序历史的真实续局IC，空题、重复、覆盖别名、全零客户及弱平局保留。",
+  "roles": {
+    "M-fba1c001a1cd4e05b5cdb4285ab6215c": "精确消去连续参数t，含平段左端和空正d边界。",
+    "CA-CREDIBLE-CONTINUATIONS": "全部可信实际边与每份原有序SPE的精确重构，保证路径集合量词无损。",
+    "customer-attraction/pay-weighted-quantile-and-all-credible-path-cut": "全真OPT组合、全允许实际前缀与全SPE路径的精确max–min有限算法。"
+  },
+  "explanation": "先以深度归纳核Out递推本身：叶集合{q}精确。若孩子集合均精确，任一完整SPE当前实际孩子终局z必满足U_a(z)≥每个偏离孩子真实收益≥相应孩子最小值，故达到L且被递推保留；反之任何被保留z可在实际孩子实现z、其余孩子各实现最低收益，当前达到L便满足全部IC，互不相交有序子树拼成完整SPE。因此按式(4)计算的Out恰等精确R，未把精确性当未付接口。源Q对每固定q、目标最终计数z、真最优m槽组合J精确算min_t收费；保持所有真OPT计数组合而非挑一个。MENU的R(k)与目标Out(q)同为全部子SPE最终计数集合；其M(k)=L(q)，兼容实际动作条件就是z∈Out(q+e_a)、U_a(z)≥L(q)。任一合法有序路径均可把实际孩子保留z、每个离轨孩子独立取兼容菜单（取极小值已足够）递归补满，故可实现；任一原完整SPE的实际路径由MENU完备性必逐边合法。同计数只缓存集合，不共享动作选择。E_z(q)=Σ_a q_a U_a(z)正是同actual最终叶旧玩家利润。令g_z(q)为遍历所有真最优J且用Q精确优化的最小收费差。深度m−1没有k≥2允许前缀，置+∞。合法子节点非空，以min(c,max_a x_a)=max_a min(c,x_a)逐深度归纳，V_z(q)=min(g_z(q),max_a V_z(q+e_a))恰是所有合法路径的最大路径最小g。再max所有z得到目标等式。m=2只有根g；全零g=0；标签别名及所有平局均留在菜单。正值路径须补满离轨有序树并定义级重核，抽样或一条count路径不充当完整证书。",
+  "scope": "每个固定有限合法m≥2输入。两个源共同不可拆：只解t不保全SPE路径，只保菜单不精确算g。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/真实前缀支付的加权分位与完整路径切断--算法.md",
+      "sha256": "85a0b934af56c9eaee00fc4ac7c42d4eb90c9a5d8e87342df24989ca272f8852"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/可信续局菜单与完整策略重构--算法.md",
+      "sha256": "db6267ec3888975e5c6310d3a9a0d7c889469ee4d5be02b00ac338f139647961"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核对当前registry陈述、量词、全部承重证明和退化边界；本边只保实际完成的数学作用，不以程序输出替代真实IC。",
+  "whole_result": "对每个固定有限m≥2输入，max_z V_z(0)完整等于max_完整纯SPE min_实际k≥2前缀,真最优J,t [ΣJ−2E]；同时保留计数缓存与有序完整策略重构边界。",
+  "endpoint_pins": {
+    "CA-CREDIBLE-CONTINUATIONS": "2dbb128ee54e25aca2f4a2cb528c14e32cadaf7c7e70c3a6b25126a68c3d5ffe",
+    "M-fba1c001a1cd4e05b5cdb4285ab6215c": "d354c31b3fa6f438006e6ccac60e792cd37054cf1a9edf1bd6799fb5dac1f82f",
+    "customer-attraction/pay-weighted-quantile-and-all-credible-path-cut": "feaa9f989384665d551b6665d74981cac101d9c9fce080868e7fc34cc002d138"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/真实前缀支付的加权分位与完整路径切断--算法.md": "85a0b934af56c9eaee00fc4ac7c42d4eb90c9a5d8e87342df24989ca272f8852",
+    "archives/customer-attraction/state/算法/可信续局菜单与完整策略重构--算法.md": "db6267ec3888975e5c6310d3a9a0d7c889469ee4d5be02b00ac338f139647961",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "840acea1518d33a0746e42257147ac14160ef5c30d4487c88023bdb07e9c787c"
+}

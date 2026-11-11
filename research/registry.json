@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-boss1-uniform-label-scope-20261111.json",
-    "sha256": "e714bfe822f80b3943e14763f2e3f4dec62e37c32bdbd3fa114bcb194607fa29"
+    "path": "research/registration/baseline-boss6-mlp-cap-merged-v2-20261111.json",
+    "sha256": "a3da170c189f00bc13b79c5e651166b288cbd29363303c314484b068b118d780"
   },
   "objects": [
     {
@@ -52129,7 +52129,7 @@
         "按论文无限/有限值的阈值规范化",
         "相应InfDegree端点界"
       ],
-      "scope": "同论文两结构参数子类的间隙族；完整构造在primary。",
+      "scope": "论文物品侧InfDegreeTwo类上的存在性gap；原PDF印刷页13脚注2仅声明Ω(n^(1/4))存在性，没有展开完整构造。可直接复用已登记∞helper/交域族正文§8的明确I_T及其全部配置、整数上下界；原n=T²+T，不能用降度后N=T³+T冒称同一人数指数。M-LP与CONFIG的存在性gap分别成立，不表示两松弛在一般输入或所有阈值上同值等价。",
       "body": {
         "path": "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
         "sha256": "a0d8bb0b5261e46ef6843a1e2c9bb812393f22953129ffba03313e0c16b5fb36"
@@ -52138,13 +52138,23 @@
         {
           "path": "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/maxmin.pdf",
           "sha256": "7f7b21ff08b37e8489e9f60527e9aa9458dc5cf4cd6cc6804869665c24d51f7f"
+        },
+        {
+          "path": "archives/unrelated-machines/state/定理/无限helper全阈值降度与三度二无限度配置间隙--定理.md",
+          "sha256": "9d56eff7715d695c85f6e45707b899633faef71dd1388c86bea1ac4fc721dbca",
+          "section": "8. 透明重构的 InfDegreeTwo 原 gap 家族"
+        },
+        {
+          "path": "archives/unrelated-machines/state/定理/无限helper链对阈值规范化MLP的全正阈值双向保持--定理.md",
+          "sha256": "f07cd5f7128a9e8ac0f4667b8e69f5d89905b8d4e4d999edd090612cb95a9dfb",
+          "section": "5.3 原人数下的旧 InfDegreeTwo 存在性目标"
         }
       ],
       "truth_status": "proved",
       "kind": "theorem",
-      "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。",
+      "objections": "本轮实读成熟陈述、模型、量词、边界及完整论证入口；复用既有证明，未重新逐句复证或运行原数学程序。 本轮进一步直接核原PDF印刷pp6–8和12–13，确认InfDegreeTwo来源只有脚注声明；完整I_T证明由补充evidence承担。取固定λ=2、整数T≥4时单位端仍为small，原∞端仍为big，故规范化后InfDegreeTwo条件也保持。原CONFIG(T)证书经big-singleton/小配置质量映射给M-LP(T)，再由整数OPT=floor√T与n=T²+T得两种gap至少2^(−1/4)n^(1/4)。这不依赖有争议的无条件cap M-LP→raw CONFIG(M/2)逆桥。",
       "object_id": "M-b126c4b3ff29400589f7f38abdca4d85",
-      "version": 3,
+      "version": 4,
       "sources": [
         "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
         "冻结文献/程序来源及完整证明入口见body和evidence；本批不建超边"
@@ -53380,6 +53390,53 @@
       ]
     },
     {
+      "object_id": "M-b6605b3864cb41e399d926496739f12d",
+      "version": 1,
+      "title": "三度二无限度内cap M-LP非前缀与根号人数分离反族",
+      "kind": "counterexample",
+      "truth_status": "proved",
+      "model": "有限非负加性MaxMin，估值为二进制有理数或符号∞；原始整数/CONFIG按原值p。cap M-LP固定λ=1，对每个查询M>0逐端用min(p,M)再施加Definition2.2式(4)–(8)。DegreeThree和InfDegreeTwo首先指原估值物品侧，具体族还保玩家∞度二。",
+      "statement": "对每个整数n≥4，令v=(n−1)/n、a=(2n−1)/n²。正文明确给出n玩家、n−1共享v及n私有a的I_n，并取同一∞helper像K_n。K_n有N=n²−n+1玩家、n²物品、3n²−4n+2正端，每物品总正度≤3且每物品/每玩家∞度≤2。I_n与K_n的原始整数OPT和ConfigOPT均精确为a，二者cap M-LP的正可行参数集合均精确为(0,a]∪(v,1]，最高参数为1。因此cap/原始CONFIG及cap/整数比均为n²/(2n−1)，在原人数为Θ(n)，在新人数为Θ(√N)。n=4的K_n有13玩家16物品34正端，cap(1)可行而原始CONFIG(1/2)不可行，比值16/7。",
+      "quantifiers": "对所有整数n≥4的一族显式poly(n)输入；每个固定实例上逐全部有限正M给精确可行集合。Θ仅描述此族，不是整个类tight上界；不涉及M=0、全局新颖性或近似困难性。返回原值与重估后CONFIG必须分别说清。",
+      "assumptions": [
+        "共享物品对所有n位原玩家值v，私有物品只对各自主人值a；未列原端为0。每件物品不可分且单归属。",
+        "只降度n−1件共享物品，每条链n份专属副本、n−1名相邻∞helper；n件private保持。全部helper计入N。",
+        "M-LP严格按当前cap值分类，等于M为big、小于M为small，保留逐small x≤z；原CONFIG用全有效配置及单物品边际容量。",
+        "同M同λ的M-LP保持和原始integer/CONFIG保持分别使用两个已证明桥；不省略任一联合前提。"
+      ],
+      "scope": "同一共享—私有反族及其DegreeThree∩InfDegreeTwo像，精确否定无附加小端界的λ=1 cap M-LP⇒原始CONFIG(M/2)及可行参数必为前缀。保持桥分别保存不同松弛，不反驳原{0,1,∞}I_T族的CONFIG本身gap或λ≥2时带small前件的安全接口。",
+      "objections": "全部四区间和端点直接证明：M=a可行，M=v不可行；M>1按总可用价值n排除。原始s>a每行需shared而n需求超过n−1容量。降度后raw与cap正阈值分别保持，S=(n−1)²全部计数已独立核。有限旧端低目标时也可变big，所以原∞度二不是所有目标big度二；在用于反二倍的M=1点则只有helper端big。Root与两份独立数学审读均核完，不依赖求解器或扫描。",
+      "body": {
+        "path": "archives/unrelated-machines/state/反例/三度二无限度内capMLP非前缀与根号人数分离--反例.md",
+        "sha256": "b3454530c3cfff2700e16d39114ade01a645526863d5130efcc61e5253c3fece"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/capMLP共享私有反族与三度迁移独立复核--审查.md",
+          "sha256": "e5a5ce699585185b304799e0db30debf8e1d5f9d46b79f70f5977707ec512978"
+        },
+        {
+          "path": "archives/unrelated-machines/state/定理/无限helper全阈值降度与三度二无限度配置间隙--定理.md",
+          "sha256": "9d56eff7715d695c85f6e45707b899633faef71dd1388c86bea1ac4fc721dbca"
+        },
+        {
+          "path": "archives/unrelated-machines/state/定理/无限helper链对阈值规范化MLP的全正阈值双向保持--定理.md",
+          "sha256": "f07cd5f7128a9e8ac0f4667b8e69f5d89905b8d4e4d999edd090612cb95a9dfb"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/maxmin.pdf",
+          "sha256": "7f7b21ff08b37e8489e9f60527e9aa9458dc5cf4cd6cc6804869665c24d51f7f"
+        }
+      ],
+      "sources": [
+        "archives/unrelated-machines/state/反例/三度二无限度内capMLP非前缀与根号人数分离--反例.md#§1–5：原族四区间、原始精确值及同一D∞像的结构/证书/人数",
+        "M-16209762a32e42e48ec20b76381b5e9d：原始整数与CONFIG全正阈值保持",
+        "M-b86375379821448d857231e8c38d8f46：同一输出同M同λ的直接M-LP全正阈值保持",
+        "maxmin.pdf印刷页6–8：方程来源及首次promotion操作的准确反例范围",
+        "archives/unrelated-machines/state/审查/capMLP共享私有反族与三度迁移独立复核--审查.md#独立全文核验及当前registry同一对象去重；不是全球新颖性断言"
+      ]
+    },
+    {
       "object_id": "M-b6645751e3fb47d1a3038d76b0796633",
       "version": 1,
       "title": "三设施全共址三倍基线及其形式阈值恰三",
@@ -53963,6 +54020,52 @@
       "sources": [
         "archives/customer-attraction/state/定理/末偏离剥离中继的精确总账与首次偏离容量--定理.md",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-7c3db62487a34730a704a4f2eb401556/relay/actual_marked_relay.md"
+      ]
+    },
+    {
+      "object_id": "M-b86375379821448d857231e8c38d8f46",
+      "version": 1,
+      "title": "∞helper链对阈值规范化M-LP的全正阈值双向保持",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限非空玩家、有限可空不可分物品、非负二进制有理或符号∞估值的MaxMin。对每个有限M>0及有限λ≥1先作R_{M,λ}(p)=M（p≥M/λ），否则保p，再使用原Definition2.2的(4)–(8)：物品容量、大端质量+z≥1、小端效用≥Mz、小端x≤z、非负。",
+      "statement": "对每个输入I，按每件总正度d_j>3物品建立d_j个专属副本和d_j−1位相邻∞helper，低度物品保留，得到与M、λ无关的同一J∞。对全部有限M>0、有限λ≥1，旧、新实例在同一数值M、同一数值λ下的阈值规范化M-LP可行性等价，给定证书可双向转换。去零后旧玩家正值x仅按副本重命名、旧z保持，新增helper z=0，以hole/prefix填容量；反向由helper每行占用≥1投影。固定λ的全正可行参数集合及最高可行参数扩展值相同，不假定该集合为前缀。输出每物品总正度≤3；原物品∞度≤2时将原∞端置两链端点，仍保该物品∞度界。S=Σ_{d_j>3}(d_j−1)时n′=n+S、m′=m+S、E′=E+2S；给定显式有理M-LP证书的转换及输出编码多项式。",
+      "quantifiers": "∀有限显式I，先∃一个不依赖M、λ的J∞，再∀有限实M>0、∀有限实λ≥1有M-LP可行性双向保持；数学阈值量词与有理输入/目标/λ/证书上的位复杂度分开。两侧比较同数值λ，不是λ=f(n)与λ=f(n′)。",
+      "assumptions": [
+        "正owner按不同玩家身份计，零端x先删；M>0使helper式(6)迫z_h=0。",
+        "原值允许符号∞；每次规范化后helper正端全为大端M，旧端分类与小端系数在两侧一一相同。",
+        "若需物品∞度≤2，至多两个原∞owner放链两端；原玩家∞度一般无二上界。",
+        "多项式见证合同针对给定有限显式有理编码，不声称从零求解指数CONFIG、也不借未验证的MLP→CONFIG算法。"
+      ],
+      "scope": "与M-16209762a32e42e48ec20b76381b5e9d共用同一降度结构，但独立验证不同的M-LP松弛。正文另付有限H反向全M/正向M≤λH、CONFIG到M-LP、带pmax前件的小端存在性接口及I_T/J_T精确max(T,λ)作为边界/推论；主statement不将两松弛等同。",
+      "objections": "M=0不在量词内；一般cap λ=1参数可行集合可非前缀，且没有无条件raw CONFIG(M/2)接口，完整共享—私有反族已在正文重证。∞原值度与λ重估后的big端度不是同一条件。玩家总正度不由此降为三；整个LP多面体不声称双射。 Root与独立worker逐约束重构全部双向证明；root另补有限H算例的raw最优值上下界及固定λ=2的旧InfDegreeTwo存在性推导。安全small切片接口只声明存在性，不作未经给出的多项式显式分解算法承诺。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/无限helper链对阈值规范化MLP的全正阈值双向保持--定理.md",
+        "sha256": "f07cd5f7128a9e8ac0f4667b8e69f5d89905b8d4e4d999edd090612cb95a9dfb"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/maxmin.pdf",
+          "sha256": "7f7b21ff08b37e8489e9f60527e9aa9458dc5cf4cd6cc6804869665c24d51f7f"
+        },
+        {
+          "path": "archives/unrelated-machines/state/定理/无限helper全阈值降度与三度二无限度配置间隙--定理.md",
+          "sha256": "9d56eff7715d695c85f6e45707b899633faef71dd1388c86bea1ac4fc721dbca"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/无限helper阈值规范化MLP桥独立复核--审查.md",
+          "sha256": "18e0e2725aca9fd8fe6887b8dcade0f033887ac2f6db7a704a505c00893515cf"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/capMLP共享私有反族与三度迁移独立复核--审查.md",
+          "sha256": "e5a5ce699585185b304799e0db30debf8e1d5f9d46b79f70f5977707ec512978"
+        }
+      ],
+      "sources": [
+        "本页§1–2：从原Definition2.2式(4)–(8)直接重构正反M-LP桥。",
+        "M-16209762a32e42e48ec20b76381b5e9d：共享输出结构、计数和原∞端排序；其CONFIG证明不被冒作MLP变量证明。",
+        "maxmin.pdf印刷pp6–8：原Config/M-LP定义、大/小阈值与Thm2.3适用边界；印刷pp12–13模型语境。",
+        "本页§3–5：接口、有限H反例及具体族的自足附加论证。"
       ]
     },
     {
@@ -196218,6 +196321,15 @@
       "reason": "Directly read frozen source; its stable frontmatter identity robust-optimization/random-convex-order-candidate-lane and scoped mathematical content are retained as a distinct registered object. retained-candidate-map-literature-scope-checked; no stronger claim is inferred."
     },
     {
+      "path": "archives/unrelated-machines/state/反例/三度二无限度内capMLP非前缀与根号人数分离--反例.md",
+      "sha256": "b3454530c3cfff2700e16d39114ade01a645526863d5130efcc61e5253c3fece",
+      "disposition": "objects",
+      "object_ids": [
+        "M-b6605b3864cb41e399d926496739f12d"
+      ],
+      "reason": "Boss6两独立数学对象及G同ID来源范围补正；按完整当前记录反向保全该文件全部数学owner，不以共享附件合并命题。"
+    },
+    {
       "path": "archives/unrelated-machines/state/反例/分数关联森林与指定配对律的全局不相容--反例.md",
       "sha256": "ab12c07272e685786c230c17034c9fe63afcae5825af201769a1ad1930a9f239",
       "disposition": "objects",
@@ -196744,9 +196856,23 @@
       "disposition": "objects",
       "object_ids": [
         "M-16209762a32e42e48ec20b76381b5e9d",
-        "M-7bc9eab74ecd475db7df33c3f4b75e61"
+        "M-7bc9eab74ecd475db7df33c3f4b75e61",
+        "M-b126c4b3ff29400589f7f38abdca4d85",
+        "M-b6605b3864cb41e399d926496739f12d",
+        "M-b86375379821448d857231e8c38d8f46"
       ],
-      "reason": "同一自足正文分别承载∞全阈值/排序扩展和精确交域间隙族；完整正文和独立报告实际对读，有限unit-helper现有身份不重复。"
+      "reason": "同一自足正文分别承载∞全阈值/排序扩展和精确交域间隙族；完整正文和独立报告实际对读，有限unit-helper现有身份不重复。\nBoss6两独立数学对象及G同ID来源范围补正；按完整当前记录反向保全该文件全部数学owner，不以共享附件合并命题。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/无限helper链对阈值规范化MLP的全正阈值双向保持--定理.md",
+      "sha256": "f07cd5f7128a9e8ac0f4667b8e69f5d89905b8d4e4d999edd090612cb95a9dfb",
+      "disposition": "objects",
+      "object_ids": [
+        "M-b126c4b3ff29400589f7f38abdca4d85",
+        "M-b6605b3864cb41e399d926496739f12d",
+        "M-b86375379821448d857231e8c38d8f46"
+      ],
+      "reason": "Boss6两独立数学对象及G同ID来源范围补正；按完整当前记录反向保全该文件全部数学owner，不以共享附件合并命题。"
     },
     {
       "path": "archives/unrelated-machines/state/定理/有向需求与调度的压缩双向任务桥--定理.md",
@@ -197204,6 +197330,16 @@
         "UM-NORMALIZED-XOS-THRESHOLD-MENU-SIZE-OBSTRUCTION-v2"
       ],
       "reason": "二遍比较：候选ID按版本归一后均对应现有 canonical object；正文模型/有限证据与该对象同一，归为 attachment，保留原登记理由与未反引路径提示。 本页含实际数学/有限证据，但当前 canonical 尚无该 path/SHA 的可验证主接收；保留精确 owner 路由，不能凭标题删除。 原登记：全文已读；normalized-XOS threshold k-cover精确equivalence/纠错给0101 UM-NORMALIZED-XOS-THRESHOLD-MENU-SIZE-OBSTRUCTION-v2待实际接受；旧r=d+1仅弱界，固定η指数是对t而非source bitlength的2^Ω(n)。 Lead accepted existing owner after full worker read."
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/capMLP共享私有反族与三度迁移独立复核--审查.md",
+      "sha256": "e5a5ce699585185b304799e0db30debf8e1d5f9d46b79f70f5977707ec512978",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b6605b3864cb41e399d926496739f12d",
+        "M-b86375379821448d857231e8c38d8f46"
+      ],
+      "reason": "Boss6两独立数学对象及G同ID来源范围补正；按完整当前记录反向保全该文件全部数学owner，不以共享附件合并命题。"
     },
     {
       "path": "archives/unrelated-machines/state/审查/customer-attraction直接覆盖分支README、义务分层与前缀障碍路由--审查.md",
@@ -199745,6 +199881,15 @@
       "reason": "Direct full read of the frozen body; it contains a distinct mathematical model, proof, obstruction, literature result, or exact finite certificate. Stable frontmatter identity reused when present; exact scope and open obligations are preserved."
     },
     {
+      "path": "archives/unrelated-machines/state/审查/无限helper阈值规范化MLP桥独立复核--审查.md",
+      "sha256": "18e0e2725aca9fd8fe6887b8dcade0f033887ac2f6db7a704a505c00893515cf",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-b86375379821448d857231e8c38d8f46"
+      ],
+      "reason": "Boss6两独立数学对象及G同ID来源范围补正；按完整当前记录反向保全该文件全部数学owner，不以共享附件合并命题。"
+    },
+    {
       "path": "archives/unrelated-machines/state/审查/无限helper降度与三度二无限度间隙独立复核--审查.md",
       "sha256": "958e5a737a76de3dfdbb20f7971bba5c61e4e86a59b50ea4d43ebdc36a228d5b",
       "disposition": "attachment",
@@ -201246,7 +201391,7 @@
         "M-aa8493282cc64a7ca8ec31430eb5e8af",
         "M-b126c4b3ff29400589f7f38abdca4d85"
       ],
-      "reason": "已核本页独立精确数学；主对象与完整证明/必要证据见本批记录。外部论文事实不声称仓库已实现或重新证明。"
+      "reason": "已核本页独立精确数学；主对象与完整证明/必要证据见本批记录。外部论文事实不声称仓库已实现或重新证明。\nBoss6两独立数学对象及G同ID来源范围补正；按完整当前记录反向保全该文件全部数学owner，不以共享附件合并命题。"
     },
     {
       "path": "archives/unrelated-machines/state/文献/Page-Solis-Oba-Maack-2018--有界任务与交叠图--文献.md",
@@ -203885,9 +204030,11 @@
         "M-a9534c70ffa74fca9a91cd270468de3f",
         "M-b126c4b3ff29400589f7f38abdca4d85",
         "M-de7aec4bd7c24b0f9dc342c483c4a75e",
-        "M-e52574ff126d4b128f222053c97bf596"
+        "M-e52574ff126d4b128f222053c97bf596",
+        "M-b6605b3864cb41e399d926496739f12d",
+        "M-b86375379821448d857231e8c38d8f46"
       ],
-      "reason": "原始MaxMin定义、Degree/InfDegree、CONFIG与整数链式及gap脚注证据；反向列齐当前所有引用同一PDF字节的数学owners，新增两对象不吞原有各独立文献命题。"
+      "reason": "原始MaxMin定义、Degree/InfDegree、CONFIG与整数链式及gap脚注证据；反向列齐当前所有引用同一PDF字节的数学owners，新增两对象不吞原有各独立文献命题。\nBoss6两独立数学对象及G同ID来源范围补正；按完整当前记录反向保全该文件全部数学owner，不以共享附件合并命题。"
     },
     {
       "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/original/unit_readout_two_tree_actual_certificates.json",
@@ -210480,6 +210627,13 @@
       "record": {
         "path": "research/registration/batches/boss6-inf-chain-and-degree-gap-20261111.json",
         "sha256": "1f1fd819618c1a12420b9bf425a85f70703f5a0fd1158b5aa65a8b434c4d08d1"
+      }
+    },
+    {
+      "batch_id": "boss6-mlp-chain-cap-boundary-20261111",
+      "record": {
+        "path": "research/registration/batches/boss6-mlp-chain-cap-boundary-20261111.json",
+        "sha256": "25f3cf914c7d4e9c67f5e8e33ab4a37855758b736c432478604b4d24fe5250bc"
       }
     }
   ],
