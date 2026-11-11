@@ -89,12 +89,53 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss2",
-  "request_id": "f9c1512f8a4a4c22b82853d0eb53b1f9",
+  "request_id": "f154c7ca432d435b826489448420902d",
   "requests": {
     "81a0648c3de14140a1ae6370812f33c4": "plan",
     "608e680bc5e94201b3f2f8e4c1115ceb": "claim",
-    "f9c1512f8a4a4c22b82853d0eb53b1f9": "read-add"
+    "f9c1512f8a4a4c22b82853d0eb53b1f9": "read-add",
+    "f154c7ca432d435b826489448420902d": "done"
+  },
+  "edge_paths": {
+    "blmrs-resource-job-additive-rounding-complement-equivalence": "map/edges/unrelated-machines-3a-3a-566d00453361c959/resource-job-rounding-equivalence.json"
+  },
+  "receipt": {
+    "coverage": {
+      "M-737cbc9ea3b54c03b847026018cf5b19": {
+        "state": "linked",
+        "object_pin": "5d96ae72406c54e71f2f87a16dd996d4157903ce947afa47bcba4f4dc6c3990b",
+        "comparison_scope": "当前核心v1与作业加最大舍入M-0a576e4d0f4647d18173160e6cbaad70 v1独立比较。实读各登记合同、完整舍入接口正文；重新导出同SHA的BLMRS arXiv2307.08453v1 PDF，读第6–8页整数polymatroid/dual与Definition7/8，第26–30页assignment LP、Theorem21完整floor余量证明、Lemma22及Theorem23完整ceil余量证明。为避免仅由共用整数性误造逻辑边，本轮另写完整多项式补基与共同阈值补偿证明。 另核当前新增read端M-a3feff9f6a574834925528d0f9d9d658 v1的完整本地§4正文；原PDF§4(pp13–17)和AppendixF(pp31–36)已读取算法与分析范围，但沿用成熟定理而未逐句重证全部局部搜索。实际比较舍入在Lemma22(pp28–29)的两处用途，未把Theorem21当作阈值oracle。",
+        "reason": "两方向均支付完整算法接口：z_j(i)=f_j({i})支配原polymatroid，dual基集恰为z_j−B(P_j)；每玩家/机器至多两个、值不超原最大单项值的确定性私有项把异质补基值Ci−原值统一成C−原值。一个private rank q_i二进制编码而非展开q_i项，保多项式位复杂度。job→resource的T≥C分支直接任取原basis；其余阈值非负；逆向T≤原分数值≤Ci≤C。最后补回逐个原basis并移除辅助项，故max≤T+s与min≥T−s严格互推。2approx先删rank零作业，再由每活跃整数基至少一份证明pmax≤OPT，未把它错当pmax≤给定LP阈值T。任意多值适用；没有推广到一般端点异值、配置LP或其他存档模型。",
+        "edge_ids": [
+          "blmrs-resource-job-additive-rounding-complement-equivalence"
+        ]
+      }
+    },
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "assets": [
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-566d00453361c959/complement-rounding-proof.md",
+        "sha256": "b718fd5ea5178265445c4c0697d87f0f29a2ecaa629c267e2fd746606c25df9d"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-566d00453361c959/resource-job-rounding-equivalence.json",
+        "sha256": "2938307a80520d5a9fdac539bb3fdca03dc66a99b2fd2849ec2ba051ec98eb53"
+      }
+    ],
+    "comparison_dispositions": [
+      {
+        "core_id": "M-737cbc9ea3b54c03b847026018cf5b19",
+        "peer_id": "M-0a576e4d0f4647d18173160e6cbaad70",
+        "reason": "本包已给整数polymatroid域上两个完整给定LP见证舍入算法的双向多项式构造，含2approx、rank零及辅助项位复杂度边界。"
+      },
+      {
+        "core_id": "M-737cbc9ea3b54c03b847026018cf5b19",
+        "peer_id": "M-a3feff9f6a574834925528d0f9d9d658",
+        "reason": "已付清本轮比较：Theorem21在Lemma22只支付舍入收尾。两值的大最优值分支O/α>w用O−w≥O(1−1/α)≥O/α（α≥2）；一般多值重轻分解在局部子程序已给重资源整数/轻资源分数见证后，以lightmax<O/(2α)把轻资源阈值O/α舍入到至少O/(2α)。这不单独支付M-a3的完整(8+ε)/(4+ε)目标：仍需M/P规范阈值oracle的α=4+Oε保证、可行性/失败证书及固定ε多项式时间。已实读Lemma22、§4与AppendixF以辨清这些作用，未重新逐句复证其成熟局部搜索定理；不为已有舍入定理的每一步另添重复边，也没有把缺少oracle写成整条蕴含。该pair比较已关闭，无需另开followup。"
+      }
+    ]
   }
 }
