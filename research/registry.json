@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-boss1-four-to-one-source-and-regularization.json",
-    "sha256": "795f01d741b0da15073415b5347d0faeac4bad400174c663d034958ef3fa566d"
+    "path": "research/registration/baseline-boss1-fullcube-exact-five-fourths.json",
+    "sha256": "02c586811ab6e5db916977779314df9c205db6f20891f50b0772ea76fa426d86"
   },
   "objects": [
     {
@@ -89839,6 +89839,41 @@
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/sol_seven_state_star_global_quadratic_canonical_v1.md",
         "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/sol_seven_state_star_global_quadratic_canonical_v1.md",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md"
+      ]
+    },
+    {
+      "object_id": "UM-SEVEN-VARIABLE-FULL-CUBE-OPEN-TREES-EXACT-FIVE-FOURTHS-v1",
+      "version": 1,
+      "title": "七变量全立方开底双轨的两种真实矩阵峰值均恰四分之五",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "有限不相关机：七变量各正负完整四叉三层轨，unit selector任选一根；每树job父端1/4、非底孩子端1；每变量每符号64叶与七位全cube的64出现任意双射。底端每子句4台单位机或1台四分之一机，无额外pins。",
+      "statement": "对每套上述接线，两种1183任务原矩阵的OPT均恰5/4，CONFIG和带p>T剪端的LST阈值均恰1。T1迫七整轨同时外送到一个mask；三叉剪枝的外送尾概率并界3358203845373/4398046511104<1，给同一原物理峰5/4见证。固定内轨的外端容量为4floor(T)与floor(4T)，任意阈值unit向scaled可迁，整数阈值双向。",
+      "quantifiers": "任意合法叶—出现双射及上述两原物理模型；端转换对任意T≥0及同一内轨决策。",
+      "assumptions": [
+        "原每job恰执行一次，七个单位selector，无私有host pins",
+        "128种mask齐备，每子句含七个不同变量各一次"
+      ],
+      "scope": "两固定原矩阵和全部同参数叶接线的真实阈值及精确整分倍率；保原任务/物理时长。",
+      "objections": "原56叶三半上界保持历史证据。新189叶见证与分数配置都不改变原P。不推广私有开放profile、任意k/h、未剪端的LP或一般hardness。",
+      "body": {
+        "path": "archives/unrelated-machines/state/定理/七变量全立方开底双轨的精确峰值四分之五--定理.md",
+        "sha256": "fc0b4ba5f5a1d1b4f2a410343c1a2474219c3f54fee2f72d9951a5c05df667a1"
+      },
+      "evidence": [
+        {
+          "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+          "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+          "section": "七变量全cube：源NO却有实际三半"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/original/unit_readout_two_tree_actual_certificates.json",
+          "sha256": "b44ee0f44485f2e1497b87338106d642beaa85b96196a810c569b4d120febefd"
+        }
+      ],
+      "sources": [
+        "archives/unrelated-machines/state/定理/七变量全立方开底双轨的精确峰值四分之五--定理.md",
+        "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md"
       ]
     },
     {
@@ -196278,6 +196313,15 @@
       "reason": "有理配置压缩、完整物理解码及确定性位复杂度的自足证明。"
     },
     {
+      "path": "archives/unrelated-machines/state/定理/七变量全立方开底双轨的精确峰值四分之五--定理.md",
+      "sha256": "fc0b4ba5f5a1d1b4f2a410343c1a2474219c3f54fee2f72d9951a5c05df667a1",
+      "disposition": "objects",
+      "object_ids": [
+        "UM-SEVEN-VARIABLE-FULL-CUBE-OPEN-TREES-EXACT-FIVE-FOURTHS-v1"
+      ],
+      "reason": "自含精确原阈值、分数行律、外端迁移和确定性见证。"
+    },
+    {
       "path": "archives/unrelated-machines/state/定理/七态原星全局二次负载局部核--定理.md",
       "sha256": "755f74fcc24ddf06995bedd65fb9e6ce4529c6676b6dd1036d7513669657f351",
       "disposition": "objects",
@@ -198496,11 +198540,12 @@
       "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
       "disposition": "objects",
       "object_ids": [
+        "M-1b7aae02648540af8d4986eb762adaae",
         "M-b4a6d0d0b41c4ef2b84217f7ac101ea1",
         "M-c663aecb01df4eefa9ed35be826cfbab",
-        "M-1b7aae02648540af8d4986eb762adaae",
-        "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
-        "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1"
+        "UM-SEVEN-VARIABLE-FULL-CUBE-OPEN-TREES-EXACT-FIVE-FOURTHS-v1",
+        "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+        "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1"
       ],
       "reason": "已连续完整阅读本份现行成熟正文；复用其精确陈述、条件、证明与来源/实现边界，无新程序执行。 本批数学owner：M-b4a6d0d0b41c4ef2b84217f7ac101ea1,M-c663aecb01df4eefa9ed35be826cfbab,M-1b7aae02648540af8d4986eb762adaae。 数学内容已分清，但下列主记录尚未在本地精确接纳本文件字节，待Boss协调主body批接证：UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1,UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1；不创建平行同ID主记录。\n全文实读。原三个owner完整保留：三个不同含0/1 pin原P的精确profile、unit七变量源NO但三半上界、外端1/4不同矩阵上界。单行正部必要充分构造/lift裁剪与八组闭合阈值算术分别补给CONFIG-POSITIVE-PART/CLOSED-TREES；不由单行分解推出全局整数σ，也不把不同pin矩阵视为同P多YES。原0098材料22不改。"
     },
@@ -203706,6 +203751,18 @@
         "UM-RANKJUMP-ONE-EXCHANGE-v0"
       ],
       "reason": "已核精确陈述、必要条件和承重证明位置，复用本页完整正文。"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/original/unit_readout_two_tree_actual_certificates.json",
+      "sha256": "b44ee0f44485f2e1497b87338106d642beaa85b96196a810c569b4d120febefd",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-1b7aae02648540af8d4986eb762adaae",
+        "M-b4a6d0d0b41c4ef2b84217f7ac101ea1",
+        "M-c663aecb01df4eefa9ed35be826cfbab",
+        "UM-SEVEN-VARIABLE-FULL-CUBE-OPEN-TREES-EXACT-FIVE-FOURTHS-v1"
+      ],
+      "reason": "冻结原资格和调度，保两份原物理矩阵的精确实例映射。"
     },
     {
       "path": "archives/unrelated-machines/问题--问题.md",
