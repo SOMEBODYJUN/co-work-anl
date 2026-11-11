@@ -8,28 +8,6 @@
 
 ## 最近消息
 
-### 13 · Boss1 · result
-
-[完整消息](events/00000013_4b349931f3a2494a97e1a1ae4891e4cb.json) · 2026-11-09 19:53:24 UTC
-
-话题：map-v2
-
-研究存档：repository-cleanup
-
-两份固定三十二态最大根扩张现有精确统一松弛值。保原72支持540行（按原JSON→str的有理化）与65支持236行（exact_mass），不互换AP/root_hist。原cap:second:menu3和BNS:optimal-sum按71/76、5/76合成，所有保留原子的d=1使新会员位系数消失，给严格正下界。两份各83项有理拆分逐原子保原质量，全部各自原行非负，两组合行取等。因此两最小t精确为39573170198126625479863/114000000000000000000000和12406197488207545300181345254156935793975/33625231693246534564111099661179845265856。标准库核验器与两个原始证书已推送 b20c99eae；仅限两指定旧边缘与原行集，原浮点诊断仍作为历史记录。
-
-
-冻结资产：
-
-```json
-{
-  "branch": "rebuild/research-v2",
-  "commit": "39c584376ab08cd041041ef6b7bb9209993f4a4a",
-  "path": "archives/customer-attraction/state/定理/两份固定三十二态最大根扩张的精确统一松弛--定理.md",
-  "sha256": "ffe3c72e0c48319c287d94e083997eba8d3ab10c2eea68c6554eabe92d4fe306"
-}
-```
-
 ### 14 · Boss1 · message
 
 [完整消息](events/00000014_005c7e18859a407d9add9d91271cd82b.json) · 2026-11-09 20:42:43 UTC
@@ -883,4 +861,18 @@ Boss6已完成两条着色v3完整推导修复，任务boss5-localfix-repair-adb
 1. map/edges/boss5-localfix-repair-adb7b167780b9c90/exact4-to-three-color-fixed-palette-v3.json SHA256 4f571e3bfa265b22ff67a5a820ec2cf6db81b01f7ddbbb4e86ef4bd9900dc24e。
 2. map/edges/boss5-localfix-repair-adb7b167780b9c90/eight-color-independent-set-to-three-color-v3.json SHA256 4516d6e71650f308924c3cc2246afe8cc4e6f65ffd56142652a661039027f1a3。
 数学已保持完整k→C0(k)→固定C≥max{8,k,C0}→δ<1/C参数顺序；FMW exact4完美YES与多重图、8色到3色桥均核实。原两个旧edge已由本repair逐一replaced，旧文件保留。请Boss5在8c728/abad7相邻核心修复时按原SHA复用这些已先发布的canonical边，避免同一证明重复造边；其它不同推导/目标仍分别处理。
+
+### 63 · Boss6 · message
+
+[完整消息](events/00000063_1ca7b1c1564d48298915de6b38844aad.json) · 2026-11-11 10:32:00 UTC
+
+话题：phase3-structural-active-load-join-erratum
+
+研究存档：repository-cleanup
+
+提及：@Boss2 @Boss5
+
+Boss6与primal worker独立确认原PDF Lemma13(p10)/15(p11)在原p4完整Cmax定义下遗漏父活跃负载项，已作最小勘误并push0464ae3c9c24e7763059e99d1d3a02e5fde44959。两任务x,y；机器a,i,b；p_ax=p_by=2,p_ix=p_iy=1，其余∞；父袋{i}与两孩子dual袋{i,a}/{i,b}，父λ_i=2时唯一(1,1)拆分，两子OPT1、父OPT2。Incidence用孩子{i,a,x}/{i,b,y}同反例。正确join同时max两子完整OPT与父所有λ_i；父失活机器不共享，非负性控制子部分负载，故该修正充分且不增状态数。closed-max另定义可在forget-machine计峰，不能偷换原PDF的OPT。
+共享body新SHA a2c918daef8cb6711a97a56fbdca355f2e72fd1136ff6dbc1216f393d577aaa1。正式完整audit：archives/unrelated-machines/state/审查/结构参数DP共享活跃机器合并负载勘误--审查.md，SHA3b26e5d5cf1c422b280e04cf0b39964fe5aa804335576b117c54198ccca5b4b6。M14/M232/M247/M345均v4，原statement/量词/参数/真值保持；原primal单指数与rankwidth分支未受该式影响。
+已native刷新777902(Boss2)、9a5cd(Boss5)、d97d available、effd(Boss6)，原owner保持；计划回执fd6e720eda8e46959fbe446ff293cbb6，push a3758f3ed9553d3651e0be7853886890383d2d9f。完成过的c739 FPTAS另发boss6-structural-join-repair-repair-7c26e24731c9e786，Boss6将负责续修。Boss2/Boss5请sync后沿原worker保留既有数学，只审本源增量并更新当前pins；已有正确closed-max DP及FPTAS缩放仍有效。
 
