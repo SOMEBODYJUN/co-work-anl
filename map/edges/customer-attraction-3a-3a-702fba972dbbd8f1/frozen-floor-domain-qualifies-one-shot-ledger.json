@@ -1,0 +1,45 @@
+{
+  "edge_id": "cag-702-frozen-floor-domain-qualifies-one-shot-ledger",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/history-mean-floor-domain-with-frozen-actual-tag"
+  ],
+  "target_ids": [
+    "customer-attraction/canonical-one-shot-reset-and-nonuniform-copy-price-residual"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定冻结actual标签的MF域，z为一份完整孩子SPE规定叶，z′为未来单次真实偏离后同见证叶，且z,z′均为该域允许列。A≠B_i时允许任意raw尾；A=B_i时仅原实际叶，非平凡同tag改尾通常不满足此条件。",
+  "roles": {
+    "customer-attraction/history-mean-floor-domain-with-frozen-actual-tag": "提供逐历史Δ、允许列的非负约化成本、规范源盈余以及实际标签资格例外。",
+    "customer-attraction/canonical-one-shot-reset-and-nonuniform-copy-price-residual": "在这一明确域实例中可合法使用ALL-PRICE并重构全部祖先floor账。"
+  },
+  "explanation": "从MF的Δ_g(y)=1延伸g(M(g)−u_j(y))及R=η+μd+ΣλΔ−score，单次偏离前的j<k历史不变，故Δ_g(z′)−Δ_g(z)=u_j(z)−u_j(z′)；当前k给Γ；严格后继给各自尾盈余之差。逐历史求和再减两个R定义，得到目标DIFF及ONE-SHOT的精确加权式。非负R(z′)只在该允许列资格已核时可用；源I/floor/r三项仍只是同一G。",
+  "scope": "仅冻结actual-tag域中的允许两端单次reset实例；全历史祖先项及各历史λ都保留。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/逐历史均值门槛的受限实际标签域--引理.md",
+      "sha256": "c44a9313f50196c4d26553aa11c02ba01e7d7ccd5cf324344c3e52febcfe0164"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/规范门槛单次重置与非统一价格复制残差--引理.md",
+      "sha256": "acb109030542b854ea6d1b043984a7878f43cc10affa0b62b0af54e19ca6c6a3"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "本轮按完整正文实读比较，逐项核陈述、量词、全部共同条件和实际可用结论；只把下列contribution局部结果记为局部，不由语境或有限记录冒全目标。",
+  "contribution": {
+    "result": "在该冻结MF域内允许的z,z′上，ΔF=Σ祖先λ收益损失+λ_hΓ+F_tail(z)−F_tail(z′)，score差=μΔd+ΔF+R(z)−R(z′)。",
+    "remaining": "目标的一般raw域版本须按该域重新核列资格及对偶；actual-tag改尾被删时不能套此式的R≥0，也不能免费跨行重索引并沿用原μ/λ/η或概率库存。COPY残差和多源付款须各自另核。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/canonical-one-shot-reset-and-nonuniform-copy-price-residual": "2660c8b7a1ac1dd2ded11c50a31ca7a380f4814370ac57770e235376d39a6d15",
+    "customer-attraction/history-mean-floor-domain-with-frozen-actual-tag": "14d16af09ad773b5e96d05ddb4a6dcf0659553e7565b5fc746b37dd78332347a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/逐历史均值门槛的受限实际标签域--引理.md": "c44a9313f50196c4d26553aa11c02ba01e7d7ccd5cf324344c3e52febcfe0164",
+    "archives/customer-attraction/state/引理/规范门槛单次重置与非统一价格复制残差--引理.md": "acb109030542b854ea6d1b043984a7878f43cc10affa0b62b0af54e19ca6c6a3"
+  },
+  "review_digest": "f08ecc122268db76ce5d1802e4261f8f9b64c3c7a758f480cb30f4dad1b09777"
+}

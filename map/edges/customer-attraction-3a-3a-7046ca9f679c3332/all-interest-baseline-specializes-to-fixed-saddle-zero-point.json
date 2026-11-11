@@ -1,0 +1,51 @@
+{
+  "edge_id": "cag-7046-all-interest-baseline-specializes-to-fixed-saddle-zero-point",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-73c559dbd9bf479696b39beb7e7339f6"
+  ],
+  "target_ids": [
+    "M-cf1d92f57a344ffa8930465e27966f62"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "源理想精确完整策略锥取k=6、零背景ℓ=0、n=13及目标固定形式σ；源首对归一1的全兴趣点按正比例2/13缩放到目标Σw=1。目标固定p*/Q*均为合法概率分布。",
+  "roles": {
+    "M-73c559dbd9bf479696b39beb7e7339f6": "提供任意完整形式策略的全兴趣可行基线及全部IC平局。",
+    "M-cf1d92f57a344ffa8930465e27966f62": "接收FS-OQ的一个精确零目标可行点，不接收该锥精确最优性。"
+  },
+  "explanation": "源全兴趣型质量(ℓ+n)/2=13/2使每位利润1/2、首对1、任意12槽静态安全值1/2。缩放2/13后仅mask63质量1，每个13槽叶/每位真实玩家收益1/13，任意形式策略每个IC平局；任意12槽静态背景与任意查询均1/13，所以任何合法p*/Q*均构成值v=1/13的匹配鞍点，满足目标全部6188背景和6查询约束。每个真实删当前槽的C_i(p*)=1/13，十三项之和1，根W1，故FS-OQ目标(C−c)w=0。正比例只改变绝对归一，不改变完整策略或静态最优身份。",
+  "scope": "FS-OQ固定锥的精确全兴趣零点，属于已完成局部贡献。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/合法背景首对安全值的交替锥探针--程序.md",
+      "sha256": "9d4a571d1b9603ff50f71504164fd6cfdc28752e149958f58ffd2a66e4672d20"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/固定原安全鞍点下的完整策略查询锥审计--计算.md",
+      "sha256": "6dffc61f0d997857a286122048fa038b0a59511e5e67006ae75fcab6818b5a69",
+      "section": "保同一策略和同一原鞍点的线性攻击域"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/固定原安全鞍点下的完整策略查询锥审计--计算.md",
+      "sha256": "6dffc61f0d997857a286122048fa038b0a59511e5e67006ae75fcab6818b5a69",
+      "section": "浮点层、恢复点与能够精确断言的内容"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "Boss5逐comparison_group实读当前登记、完整数学正文和指定证据章节，核对全历史真实续局、方向、全部联合前提及完整/局部目标范围；无新数学程序执行。 本轮沿M-73 v2→v3精确delta复核：仅controller当前模型描述改成标签目录及evidence SHA/版本刷新，原有全兴趣基线与本局部结论均不变。",
+  "contribution": {
+    "result": "FS-OQ存在mask63质量1、v1/13的精确可行零目标点，所有真实IC及静态鞍点行均取等，故真正最优值至少0。",
+    "remaining": "目标整个线性攻击合同的全部系数/鞍点等价性独立给出；原浮点−0.0缺精确上界对偶，因此本边不推出整个锥最优恰0，不排除其它有理正点，也不判安全最优查询存在式/聚合/half。"
+  },
+  "endpoint_pins": {
+    "M-73c559dbd9bf479696b39beb7e7339f6": "ff8916716d708e1dad92d8a789e6f117c5535f82c686f5155c3096c2efd5d9c8",
+    "M-cf1d92f57a344ffa8930465e27966f62": "243fbf676523a50fa2c446f202c86da5cb1081d9e753c6f5f80af700cdfd4499"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/合法背景首对安全值的交替锥探针--程序.md": "9d4a571d1b9603ff50f71504164fd6cfdc28752e149958f58ffd2a66e4672d20",
+    "archives/customer-attraction/state/计算/固定原安全鞍点下的完整策略查询锥审计--计算.md": "6dffc61f0d997857a286122048fa038b0a59511e5e67006ae75fcab6818b5a69"
+  },
+  "review_digest": "c12f4038d3e05746a4fe1483fcff42e66db03a8747ebfaf70eb2df75d506d3df"
+}

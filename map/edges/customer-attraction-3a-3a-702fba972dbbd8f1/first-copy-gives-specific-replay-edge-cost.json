@@ -1,0 +1,46 @@
+{
+  "edge_id": "cag-702-first-copy-gives-specific-replay-edge-cost",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/canonical-mean-floor-domains-and-exact-copy-cost"
+  ],
+  "target_ids": [
+    "customer-attraction/fixed-entering-role-real-replay-and-once-only-potential-budget"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "真实重放的第一未来边j=i+1，目标动作恰为原进入标签A；同一完整原σ及同一固定进入角色i。若套ROW-NET对偶，还须z′为该给定允许raw域的列。",
+  "roles": {
+    "customer-attraction/canonical-mean-floor-domains-and-exact-copy-cost": "给首后继真实复制的B_i(z′)=M(h_i,A)−S_{>i+1}(z′)≤M(h_i,A)。",
+    "customer-attraction/fixed-entering-role-real-replay-and-once-only-potential-budget": "给定流中满足该动作条件的一类未来边可用此精确局部成本界。"
+  },
+  "explanation": "REPLAY首边前叶正是finish_σ(h_i,A)，强制第一后继选A并沿同一σ完成，完全匹配复制对象FIRST-COPY。单位均分使d_i(z′)=u_{i+1}(z′)，B_i中两收益相消，严格后继S≥0，得B_i(z′)≤M(h_i,A)，并有Δd_i+Γ=u_{i+1}(z)−d_i(z)。",
+  "scope": "只对第一未来动作复制A的边；不更改Q_i，也不为一般y_j推同主题结论。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/规范门槛均值域与复制偏离的精确成本--引理.md",
+      "sha256": "1a122a9a37ce73ccc41411cb4abdb160e96c56a6ad02e042d8d03ef474c62d4d",
+      "section": "同一真实续局中的复制成本"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/固定进入槽的真实后继重放与一次势预算--算法.md",
+      "sha256": "8eaf25b4b724f19ef98e4a58876484540fbd424f1df23c87a80ae32a50fed10b"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "本轮按完整正文实读比较，逐项核陈述、量词、全部共同条件和实际可用结论；只把下列contribution局部结果记为局部，不由语境或有限记录冒全目标。",
+  "contribution": {
+    "result": "真实流该特定首边的净成本和复制收益工作有上述精确界，可直接代入该边的有符号净成本账。",
+    "remaining": "全目标仍含任意目标Q_i的流/端点/TELE。一般目标y_j≠A留下同叶d_i(z′)−u_j(z′)无定号，较晚复制仍保祖先损失；本局部界不给Cov总金额、原源容量或NET共同付款。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/canonical-mean-floor-domains-and-exact-copy-cost": "5335afa7d68afef5608d0415ac6d32edddb813cee28620eb08b4abb957cc93b4",
+    "customer-attraction/fixed-entering-role-real-replay-and-once-only-potential-budget": "242e85e429f195fb7cdf9b97499721fb5386c0f8c114edbec31a68825aa7b489"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/规范门槛均值域与复制偏离的精确成本--引理.md": "1a122a9a37ce73ccc41411cb4abdb160e96c56a6ad02e042d8d03ef474c62d4d",
+    "archives/customer-attraction/state/算法/固定进入槽的真实后继重放与一次势预算--算法.md": "8eaf25b4b724f19ef98e4a58876484540fbd424f1df23c87a80ae32a50fed10b"
+  },
+  "review_digest": "869df021861a161b8175862efd331586298965de3c153fa159c3d5d712249a5a"
+}
