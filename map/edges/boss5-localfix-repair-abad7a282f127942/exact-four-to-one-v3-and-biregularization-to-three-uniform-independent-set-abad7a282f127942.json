@@ -1,0 +1,55 @@
+{
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss6",
+  "edge_id": "exact-four-to-one-v3-and-biregularization-to-three-uniform-independent-set-abad7a282f127942",
+  "source_ids": [
+    "M-ab4a576ed0be482b89d4a646ffc102b9",
+    "PCP-EXACT-PROJECTION-PERFECT-COMPLETE-BIREGULAR-ROUNDING-v1"
+  ],
+  "target_ids": [
+    "M-9f8033b6e1a4485b97636171b09f8218"
+  ],
+  "conditions": "先固定目标δ>0及0<α<min(δ,1/2)。先按KS14测试固定L、噪声、影响参数、T和所需有理源ζ，再由FMW取soundnessζ/2、正式正规化lemma取η=ζ/2。约束逐原ID保投影与重数；typed多层化每替换h=l′−l坐标保对应ID，fiber=4^h≥4。有理权顶点作完整整数cloud blowup。所有常数先固定后显式输出多项式。",
+  "roles": {
+    "M-ab4a576ed0be482b89d4a646ffc102b9": "支付perfect exact4常数字母表硬度源，但本身不提供biregularity。",
+    "PCP-EXACT-PROJECTION-PERFECT-COMPLETE-BIREGULAR-ROUNDING-v1": "支付保原投影与标签的确定性双正规化；两侧E个clone、全部度D，D=ceil(S/(ηE))，val误差≤η，perfect YES严格保1，DE=O(E³/η)。",
+    "M-9f8033b6e1a4485b97636171b09f8218": "两共同前提加实际KS14合同扩展后所得有限未加权3-uniform超图的完整目标。"
+  },
+  "whole_result": "由两个共同前提，对每个固定δ>0，有限未加权三一致超图上区分2-colorable与不存在比例至少δ独立集是NP-hard；YES为完整合法二着色。",
+  "explanation": "KS14 Conjecture2.5另要biregular，其脚注不能作WLOG证明；本边因此保两个source的ALL。正式lemma用加权clone严格保值，再对带ID的D/(d_ud_v)变量作floor/ceil二部整数流舍入，逐标签分数误差≤S/(DE)，perfect YES和exact4逐边不变。proof给KS14 Appendix A一个完整typed有序Q坐标实现：层l有l−1个U位置，替换h个V位置并独立抽原incident IDs。层间双正规且随机链每层顶点均匀；smoothness≤h/(Q−l+1)≤1/T，二阶计数给weak-density。冻结其余坐标后，distinguished坐标仍按每原ID恰1/|F|抽样，其两端标签只看端点，故每层对val≤源val；不同投影平行边均保留。原PDF的l−l′负指数改为实际h=l′−l。KS14 §5逐ID测试/坏事件/期望因而合法。测试y,z在至少一未改fiber坐标相反而互异，x在另一层，故三点确实不同。权w_x=2^(−K_l)/(Ln_l)，B=L(∏n_l)2^(maxK_l)给每顶点整数Bw_x clones，各三点边换成完整三部三元组，严格保最大独立集比例及2-coloring。固定δ后所有层/域常数，最终无权有限三一致构造多项式。",
+  "scope": "FMW与独立正规化引理共同支持KS14完整超图应用；不以MZ近完美双正规定理代替。",
+  "evidence": [
+    {
+      "path": "map/edges/boss5-localfix-repair-abad7a282f127942/proof-review.md",
+      "sha256": "f1ef13f8411cfec63b16b5fe2afdf9badfeb3d458d80a1b0a8a9f1099869d8d2"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/fei_minzer_wang.pdf",
+      "sha256": "48baa160d5d15e61aaf99b24b6fc15518c20f204d165fc96de1251d9d8a82ea0"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/khot-saket-1308.3247v2.pdf",
+      "sha256": "2dcb03c6bc10dda5503452719c74bb57c5463e8b34bdbef5d06463cb7d74dc24"
+    },
+    {
+      "path": "archives/unrelated-machines/state/引理/投影约束多重图的保完备性近似双正规化--引理.md",
+      "sha256": "13803e66abc6432815634589e75cbc08238ad74287d89707120274fdfc7927d6"
+    }
+  ],
+  "review_note": "独立重构clone保值、整数流舍入及统一值误差，并补完整typed多层化的uniform-ID、uniform-layer、weak-density/smoothness/soundness证明。实读KS14源双正规脚注、§5及AppendixA，核负指数局部符号、三点互异、带身份不同投影和无权cloud展开；目标整句成立。 六个当前端点合同逐项复核；五文献对象为v3，正规化lemma为v1。完整证明和实际新读/复用区分见proof-review.md及reading-ledger.json。未跑科学程序；原生endpoint/evidence绑定交Root串行执行。 Root全文核本包完整证明与最终关系，独立审查前提、方向、全部量词和目标范围；详receipt.parent_review。Root原生绑定和结构检查不替代上述数学。",
+  "endpoint_pins": {
+    "M-9f8033b6e1a4485b97636171b09f8218": "0c1e923b6f2e4c08fa7c53a7088fc874cfcdf539cde9ac39b77d61141b6d0ffe",
+    "M-ab4a576ed0be482b89d4a646ffc102b9": "74280017a599b84a48878085e8d9869d16d657aa712f51458f820383ad826072",
+    "PCP-EXACT-PROJECTION-PERFECT-COMPLETE-BIREGULAR-ROUNDING-v1": "3fb491cd85e99950c05f1ce9bbcd8ec6daabc5bf1aae02627ef4efb4e7307922"
+  },
+  "evidence_pins": {
+    "map/edges/boss5-localfix-repair-abad7a282f127942/proof-review.md": "f1ef13f8411cfec63b16b5fe2afdf9badfeb3d458d80a1b0a8a9f1099869d8d2",
+    "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/fei_minzer_wang.pdf": "48baa160d5d15e61aaf99b24b6fc15518c20f204d165fc96de1251d9d8a82ea0",
+    "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/khot-saket-1308.3247v2.pdf": "2dcb03c6bc10dda5503452719c74bb57c5463e8b34bdbef5d06463cb7d74dc24",
+    "archives/unrelated-machines/state/引理/投影约束多重图的保完备性近似双正规化--引理.md": "13803e66abc6432815634589e75cbc08238ad74287d89707120274fdfc7927d6"
+  },
+  "review_digest": "5dd6eb0c73b37e2d37bcdd59fe1545556082bb91e83d495ed867c883d2e2e07e"
+}

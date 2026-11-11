@@ -1,0 +1,47 @@
+{
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss6",
+  "edge_id": "exact-four-to-one-v3-to-eight-color-independent-set-abad7a282f127942",
+  "source_ids": [
+    "M-ab4a576ed0be482b89d4a646ffc102b9"
+  ],
+  "target_ids": [
+    "M-922feb7b429f49d4b5f13ca51b34aae7"
+  ],
+  "conditions": "先固定目标δ>0，再取0<a<min(δ,1/8)，选择GS20影响/列表参数t、诱导比例阈值及源soundness，最后由perfect exact4源选常数字母表。源允许带身份平行约束，值按重数计；输出重复图边可去重。全部参数在实例规模之前固定。",
+  "roles": {
+    "M-ab4a576ed0be482b89d4a646ffc102b9": "支付GS20 exact d-to-1 Conjecture3在d=4的全部源合同：严格val=1、任意小固定soundness、常数字母表、每右标签恰4个左原像及多重约束。",
+    "M-922feb7b429f49d4b5f13ca51b34aae7": "所得有限图的完整8-colorable对最大独立集比例<δ的承诺硬度。"
+  },
+  "whole_result": "对每个固定δ>0，存在确定性多项式归约，YES输出完整8-colorable有限图，NO输出最大独立集比例严格小于δ的有限图；得到目标的完整NP-hardness。",
+  "explanation": "FMW Theorem1.6连同附录B的标签×Z/kZ、每原边k个exact4约束，支付GS20 Conjecture3。GS20 §2.1已证exact d-to-1到d-to-d induced-list桥，保留每个常数列表上界及诱导子集量词。其Theorem9/Lemma10取q=2d，通过不交元组上的对称非周期Markov链构造长码图；满足标签按对应坐标给完整q着色。若有比例a独立集，至少a/2比例码块重，逐约束的零测试期望经影响解码在同一d块两侧各取一个标签。统一列表保守取t=ceil(d²k0/b)，修正原PDF列表计数少一个d的常数，不改变对任意固定t的源合同。该列表满足所有诱导带身份约束，与NO诱导比例阈值冲突。代d=4得q=8，固定δ后字母表和码块为常数，显式展开多项式。",
+  "scope": "完整图独立集应用；不附加最大度保证，不迁移到UM调度或SPE。",
+  "evidence": [
+    {
+      "path": "map/edges/boss5-localfix-repair-abad7a282f127942/proof-review.md",
+      "sha256": "f1ef13f8411cfec63b16b5fe2afdf9badfeb3d458d80a1b0a8a9f1099869d8d2"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/fei_minzer_wang.pdf",
+      "sha256": "48baa160d5d15e61aaf99b24b6fc15518c20f204d165fc96de1251d9d8a82ea0"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/guruswami-sandeep-icalp2020.pdf",
+      "sha256": "1f7428d31ae66a1d6488444fa117b1265fd0cf305dbd237387961f7f2b0a97f4"
+    }
+  ],
+  "review_note": "重读GS20全文与FMW定义/主定理/附录B，核精确标签比、完美YES、多重图、Markov支撑、低度影响列表及量词顺序；GS20 p62:9的t保守改为ceil(d²k0/b)，其定理结论保持。 六个当前端点合同逐项复核；五文献对象为v3，正规化lemma为v1。完整证明和实际新读/复用区分见proof-review.md及reading-ledger.json。未跑科学程序；原生endpoint/evidence绑定交Root串行执行。 Root全文核本包完整证明与最终关系，独立审查前提、方向、全部量词和目标范围；详receipt.parent_review。Root原生绑定和结构检查不替代上述数学。",
+  "endpoint_pins": {
+    "M-922feb7b429f49d4b5f13ca51b34aae7": "9d9c5ff02a494c05d6cd44d8a20732d81d72852f26938f3bee195c24192887be",
+    "M-ab4a576ed0be482b89d4a646ffc102b9": "74280017a599b84a48878085e8d9869d16d657aa712f51458f820383ad826072"
+  },
+  "evidence_pins": {
+    "map/edges/boss5-localfix-repair-abad7a282f127942/proof-review.md": "f1ef13f8411cfec63b16b5fe2afdf9badfeb3d458d80a1b0a8a9f1099869d8d2",
+    "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/fei_minzer_wang.pdf": "48baa160d5d15e61aaf99b24b6fc15518c20f204d165fc96de1251d9d8a82ea0",
+    "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/guruswami-sandeep-icalp2020.pdf": "1f7428d31ae66a1d6488444fa117b1265fd0cf305dbd237387961f7f2b0a97f4"
+  },
+  "review_digest": "dd815000445b7751284400afe377ee342b075e72f36936f693ffd7cb450e1852"
+}
