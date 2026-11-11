@@ -1,0 +1,119 @@
+{
+  "definition": {
+    "task_id": "boss6-runtime-provenance-repair-repair-ea3c50ff802ffdaf",
+    "stage": "3A",
+    "registry": "research/registry.json",
+    "supersedes": [
+      "boss6-structural-join-repair-repair-7c26e24731c9e786"
+    ],
+    "object_ids": [
+      "M-14dbe6980117492aa7a3b48c52378dcb"
+    ],
+    "read_object_ids": [
+      "M-247deecec83946358afe4e89413a7bd1"
+    ],
+    "input_pins": {
+      "M-14dbe6980117492aa7a3b48c52378dcb": "8d3c860cc8f5e4d5abd95ab0b8891067fb982bc537b9f4870b161e43a7800372",
+      "M-247deecec83946358afe4e89413a7bd1": "d026cdeda8e61fd5025c4c061a88cb0bf2606b83fa3d7281bc14b4fcab722149"
+    },
+    "write_paths": [
+      "map/edges/boss6-runtime-provenance-repair-repair-ea3c50ff802ffdaf",
+      "map/receipts/boss6-runtime-provenance-repair-repair-ea3c50ff802ffdaf.json",
+      "map/edges/boss6-structural-join-repair-repair-7c26e24731c9e786/review.md",
+      "map/edges/boss6-structural-join-repair-repair-7c26e24731c9e786/reading-ledger.json"
+    ],
+    "goal": "Resolve the changed inputs or unanswered comparison in boss6-structural-join-repair-repair-7c26e24731c9e786; reuse still valid coverage, and explicitly dispose each prior asset.",
+    "context_plan": {
+      "budget": {
+        "context_tokens": 500000,
+        "window_source": "official-default",
+        "model": "gpt-6.1-sol",
+        "used_tokens": null,
+        "history_mode": "fresh-worker",
+        "reserve_tokens": 200000,
+        "reading_tokens": 300000,
+        "output_tokens": 100000,
+        "runtime_remaining_tokens": null,
+        "declared_remaining_before_reserve_tokens": null,
+        "assumptions": [
+          "Window source is declared, not discovered from this conversation.",
+          "Reading budget includes source text and object/task metadata.",
+          "Reserved context includes expected generated records and later reasoning/tool growth.",
+          "Fresh worker assumed; actual system/prefix usage is unknown and covered only by the engineering reserve."
+        ],
+        "budget_is_runtime_measurement": false
+      },
+      "reading": {
+        "chars": 18229,
+        "utf8_bytes": 30944,
+        "source_tokens": 23935,
+        "metadata_tokens": 3693,
+        "estimated_tokens": 27692,
+        "metadata_chars": 3134,
+        "metadata_utf8_bytes": 5112,
+        "distinct_files": 3,
+        "reading_segments": 2,
+        "token_count_is_estimate": true,
+        "estimators": [
+          "conservative-math-text-estimate-v1; not a tokenizer count"
+        ],
+        "unmeasured_refs": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+            "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae",
+            "bytes": 550316,
+            "reason": "Non-text evidence: export/read with the appropriate tool, then size its actual extracted context"
+          }
+        ],
+        "measurement_scope": "Requested complete text spans plus supplied metadata; binary evidence is not token-counted from raw bytes.",
+        "task_overhead_tokens": 64
+      },
+      "reading_refs": [
+        {
+          "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+          "sha256": "113ed833ea9443fe2166793c19b5fe2b1b6bfb3b789e6f617372120d1c90375e"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+          "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+        },
+        {
+          "path": "archives/unrelated-machines/state/审查/结构参数DP共享活跃机器合并负载勘误--审查.md",
+          "sha256": "3b26e5d5cf1c422b280e04cf0b39964fe5aa804335576b117c54198ccca5b4b6"
+        }
+      ],
+      "oversized": false,
+      "requires_export": true,
+      "prior_assets": [
+        {
+          "path": "map/edges/boss6-structural-join-repair-repair-7c26e24731c9e786/exact-load-dp-to-fptas.json",
+          "sha256": "f5bf77706c9c27bbbf1ee066677c545a93cd208b9106509f405f5e421e0cbb02"
+        },
+        {
+          "path": "map/edges/boss6-structural-join-repair-repair-7c26e24731c9e786/review.md",
+          "sha256": "d4f4788f5766b044800ef011b5f038918ccfb61b1a6889e1e4f9ae66688f7e38"
+        },
+        {
+          "path": "map/edges/boss6-structural-join-repair-repair-7c26e24731c9e786/reading-ledger.json",
+          "sha256": "89e78c76ad627a16b628f5fc35d27046d307424f1c330a8c53d1e62fea99b2d4"
+        }
+      ],
+      "retired_core_object_ids": [],
+      "recheck_core_object_ids": [
+        "M-14dbe6980117492aa7a3b48c52378dcb"
+      ],
+      "repair_reasons": [
+        "changed-registration-input"
+      ],
+      "note": "Read the previous task and receipt. Carry forward valid work. If needed, read the same scope in ordered passes. A retirement-only task lists no coverage or new assets.",
+      "comparison_priority": 2,
+      "scope_hint": "archives/unrelated-machines"
+    }
+  },
+  "state": "available",
+  "owner": null,
+  "request_id": "e8177f7ecfb34c0696110c3d665497b5",
+  "requests": {
+    "e8177f7ecfb34c0696110c3d665497b5": "plan"
+  }
+}
