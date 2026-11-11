@@ -316,12 +316,293 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss6",
-  "request_id": "c81e106dee444e4d958d1fd502eeab72",
+  "request_id": "64495ad0b8894cbeb23694135f14bd16",
   "requests": {
     "c77ec76b08b948c4ac8c43dc65353af7": "plan",
     "33f10b05d5034b698b3fc64e8432a879": "claim",
-    "c81e106dee444e4d958d1fd502eeab72": "read-add"
+    "c81e106dee444e4d958d1fd502eeab72": "read-add",
+    "64495ad0b8894cbeb23694135f14bd16": "done"
+  },
+  "edge_paths": {
+    "cag-fresh-slot-bernoulli-to-averaged-kernels-e8f9638e": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/bernoulli-to-averaged-kernels.json",
+    "cag-fresh-slot-beta-minorant-to-owner-e8f9638e": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/beta-minorant-to-owner.json",
+    "cag-fresh-slot-fixed-kernels-to-beta-potential-e8f9638e": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/fixed-kernels-to-beta-potential.json",
+    "cag-fresh-slot-harmonic-to-reserve-bound-e8f9638e": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/harmonic-to-reserve-bound.json",
+    "cag-fresh-slot-kernel-cites-ic-reweighting-boundary-e8f9638e": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/kernel-cites-ic-reweighting-boundary.json",
+    "cag-fresh-slot-legal-completion-to-owner-e8f9638e": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/legal-completion-to-owner.json",
+    "cag-fresh-slot-portfolio-to-bernoulli-e8f9638e": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/portfolio-to-bernoulli.json",
+    "cag-fresh-slot-representation-to-ancestor-filter-e8f9638e": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/representation-to-ancestor-filter.json",
+    "cag-fresh-slot-reserve-to-short-optimal-e8f9638e": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/reserve-to-short-optimal.json",
+    "cag-fresh-slot-zero-loss-to-optimal-actual-reserve-e8f9638e": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/zero-loss-to-optimal-actual-reserve.json"
+  },
+  "receipt": {
+    "coverage": {
+      "M-0859541a37a34a7bb303101aa610d241": {
+        "state": "linked",
+        "object_pin": "d751fc8a76005c2c5c101da4e9f09a1ec5875bbae7184c8fd9815a35ae5912f3",
+        "comparison_scope": "第一组：HF正文完整d_x保重数、端点c=m、m5系数及原CLAIMS/去重审查指定章节。",
+        "reason": "HF对K0给调和上界，且结合R0≥W/(m+1)支付RES的m≤2域；一般m候选仍未付。",
+        "edge_ids": [
+          "cag-fresh-slot-harmonic-to-reserve-bound-e8f9638e"
+        ]
+      },
+      "M-e9b27ea7513440d796a02e92d254d714": {
+        "state": "linked",
+        "object_pin": "cf5ac224097eff7f75323ad6ba0b72a830041c66b1c89a3a1783bc7ce9d25168",
+        "comparison_scope": "第一组：共同min-fresh最优T的等势索引零净损失替换，区别冻结费用Q。",
+        "reason": "全索引替换在actual覆盖最优W=OPT时净损失0，K0≤W−R0；正损失actual域未付，不扩大GATE。",
+        "edge_ids": [
+          "cag-fresh-slot-zero-loss-to-optimal-actual-reserve-e8f9638e"
+        ]
+      },
+      "optimal-cover-fresh-self-reserve-budget": {
+        "state": "linked",
+        "object_pin": "4466de01f6ca7aadfa630ba4f282e2ed1db13ac5c9086fe1e11cc1ff8791c2a6",
+        "comparison_scope": "第一组：全部指定fresh正文/辅助审查、静态RES/H/SQ、HF、GATE、13人例、有限策略锥边界；比较P*域。",
+        "reason": "向P*有完整conditional方向；来自HF和GATE的两个独立partial只支付已述子域。S?一般仍open，比half更强的充分条件，不写等价。",
+        "edge_ids": [
+          "cag-fresh-slot-harmonic-to-reserve-bound-e8f9638e",
+          "cag-fresh-slot-reserve-to-short-optimal-e8f9638e",
+          "cag-fresh-slot-zero-loss-to-optimal-actual-reserve-e8f9638e"
+        ]
+      },
+      "M-16eddbd6da9a461686207660a3d8720b": {
+        "state": "linked",
+        "object_pin": "9e69616dc382d7791fc91b629f461fba00b23a53b23928dbf587f875e573020f",
+        "comparison_scope": "第一组：短最优元组跨1≤k≤m共同最小、OPT-CREDIT、与恰m槽K0及ENT1的量词区别。",
+        "reason": "由开放K0预算条件推出P*预算；静态OPT≤P*+W−R0，旧13例P*和K0精确值均保持；无P*⇒K0反向。",
+        "edge_ids": [
+          "cag-fresh-slot-reserve-to-short-optimal-e8f9638e"
+        ]
+      },
+      "R7-CHILD-CUT-SUPPORT-v1": {
+        "state": "isolated-after-review",
+        "object_pin": "06c4128b4af554d65621082dce8e494d369c0264014eaf24773f2be24c5f9dc5",
+        "comparison_scope": "第一组：整数背景SUPPORT/MIX/B非负/截断/SLACK、同actual叶CUT和全部指定资源；与K0/P*预算比较。",
+        "reason": "根b0 SUPPORT只给OPT≤m maxg+W−R0，不给min-fresh上界。CUT价格只在同叶固定，换child后变价不免费相消。本范围没有已付的预算逻辑边。"
+      },
+      "customer-attraction/optimal-slot-parameter-kernels-and-anchored-harmonic-budget": {
+        "state": "linked",
+        "object_pin": "3c43d4475a22975180e9b321f4cdd9898119044b9571d763366a5c9ddc49d468",
+        "comparison_scope": "第二组：固定J的BER/HARM、共同α稳定核、MATCH、任意锚、FIRST/ONE及注入真实金额限制。",
+        "reason": "Bernoulli只提供平均参数部分；固定J合法替槽支撑完整Beta，并经Q扩T桥独立支撑owner完整合同；引用IC非重权障碍仅context。",
+        "edge_ids": [
+          "cag-fresh-slot-bernoulli-to-averaged-kernels-e8f9638e",
+          "cag-fresh-slot-fixed-kernels-to-beta-potential-e8f9638e",
+          "cag-fresh-slot-legal-completion-to-owner-e8f9638e"
+        ]
+      },
+      "customer-attraction/fixed-optimal-slot-beta-potential-and-prefix-repeat-credit": {
+        "state": "linked",
+        "object_pin": "0f829b4fe76cdf505a706369b6667dc4f0e5a8fe9f498e796f14859ddd663c2a",
+        "comparison_scope": "第二组：KT有限归零、形式空槽、带槽次模扩展、精确ell/e、LEAF及真实最优前缀H_(a−1)；与owner薄化比较。",
+        "reason": "由参数核和同一随机覆盖表示推完整目标；向owner经未归零minorant迁移，归零F比较不能同向搬。跨rollout未付。",
+        "edge_ids": [
+          "cag-fresh-slot-beta-minorant-to-owner-e8f9638e",
+          "cag-fresh-slot-fixed-kernels-to-beta-potential-e8f9638e"
+        ]
+      },
+      "customer-attraction/exchange-potential-finite-baseline-and-full-IC-integral-boundary": {
+        "state": "isolated-after-review",
+        "object_pin": "9f2f4120125e0415af00a6647d60bc046497b272bf2490ef339227933fed161a",
+        "comparison_scope": "第二组：完整原IC积分0与非负权1−t后−1/6的合法末位局部平局；核与真实IC接口。",
+        "reason": "精确否定任意内部非负重权保符号，不反本包真静态参数/Beta/owner。只保存被参数对象引用的cites语境边，不作为accepted逻辑支持计linked。"
+      },
+      "customer-attraction/bernoulli-optimal-index-exchange-tax": {
+        "state": "linked",
+        "object_pin": "0e09a05e3121c2c94fe57bc5a2f5349fb23bfd7e12600840a9cdb6102845f9a7",
+        "comparison_scope": "第二组：B/I/Ia、无放回第二证明、BH、NU、FL、PI及E=Lout+Rout的真实分母边界；指定有限核审读。",
+        "reason": "全部子列表E2非负平均完整生成目标；反向只恢复参数定理平均MATCH/参数锚部分，不恢复固定J，亦不付Rout。",
+        "edge_ids": [
+          "cag-fresh-slot-bernoulli-to-averaged-kernels-e8f9638e",
+          "cag-fresh-slot-portfolio-to-bernoulli-e8f9638e"
+        ]
+      },
+      "customer-attraction/optimal-index-portfolio-exchange": {
+        "state": "linked",
+        "object_pin": "c0b0f672b74876830d28c7bac45bb92cdcff2c483e69842c5d5497a0ad87fbde",
+        "comparison_scope": "第二组：E1→E2精细谱→E3粗化；E4单主题求和、E5私有块、插值实验与全部子列表族。",
+        "reason": "完整普遍E2对全部子列表是Bernoulli全部生成/积分扩展的共同输入；并集和关联数不互换。",
+        "edge_ids": [
+          "cag-fresh-slot-portfolio-to-bernoulli-e8f9638e"
+        ]
+      },
+      "customer-attraction/optimal-owner-potential-unit-decomposition-and-same-leaf-joint-budget": {
+        "state": "linked",
+        "object_pin": "49cb45a29e31e41d68c4c09ff36350cd31e82d446188b0fc7bd7198322a9513f",
+        "comparison_scope": "第二组：固定一次owner分析分割、POT/UNIT/JOINT及原firstowner REPEAT；全部指定补充定理/章节与程序范围。",
+        "reason": "两独立完整方向：Beta未归零minorant和参数替槽的Q合法补全。核同叶κ、固定硬币次模与真实后缀≤H_a−1；不扩到跨枝钱包或后续任意/分数owner量词。",
+        "edge_ids": [
+          "cag-fresh-slot-beta-minorant-to-owner-e8f9638e",
+          "cag-fresh-slot-legal-completion-to-owner-e8f9638e"
+        ]
+      },
+      "customer-attraction/closeout-102bf6823e76f9dda3449f4c": {
+        "state": "isolated-after-review",
+        "object_pin": "dacd287edb2d5eea7c4963fa405f13537dc9e05a304664d77be3c6e78b4eb32f",
+        "comparison_scope": "第三组独立：R18正文全文，另两原完整证书及25客户有序精确审计全文。",
+        "reason": "两有限点25<29及21<25只反SPE福利不低于最差静态PNE桥，half余量均正。本包无被否桥端点，不造指向模型或真势的refutes边；历史资格复用无重跑。"
+      },
+      "customer-attraction/r44b24-workspace-entry-scope": {
+        "state": "isolated-after-review",
+        "object_pin": "a59dea8df2872aaca3e46cb8d91441939590ad2b8e020ddfed6bffcd20d62528",
+        "comparison_scope": "第四组独立：R44入口全文逐行核参数、条件、导航与恢复界。",
+        "reason": "入口不是所指条件half、矩空间、安全值等完整定理，不从导航建逻辑hub。本范围没有具体未付且需发布的端点比较，不以泛研究建议虚构follow-up。"
+      },
+      "M-642ee38da5f34b84b0ede9f031c0e835": {
+        "state": "isolated-after-review",
+        "object_pin": "5e6cc3d370c37b6b74ea806ce526102b037162fc4d439dd5e1c6811a1e462604",
+        "comparison_scope": "第五组独立：M-642完整原记录、计算正文、资源正文、report全五cases/164records/所有解释字段及audit源码230行。",
+        "reason": "固定五图三解释精确资格：四五人二进微负不舍入、六人字面通过；十进点与新整数点不同。无全锥对偶/全策略上界，未读报告当新重核，也不与fresh一般预算强连。"
+      },
+      "M-a6cc20f9493b40cd8b85f449cb0b646d": {
+        "state": "linked",
+        "object_pin": "551c5e94f4562980a9098115a3f20437dfd55d6be15609c4f2bdfc6cc09fce2f",
+        "comparison_scope": "第六组：原三完整章节；Root read-add后的REP v2完整record、body及全部7 evidence（共同模型本轮复用，7新文件）。比较完整局部SPE最低首值与d+1维祖先联合集合筛选。",
+        "reason": "REP提供μ及全部父SPE当前≥μ；保所选孩子同一联合实现、其它互斥孩子各取min可拼父SPE，完整支付先筛当前再投影的精确递推。d允许增长，不凸化，不跨嵌套actual拼极小见证。",
+        "edge_ids": [
+          "cag-fresh-slot-representation-to-ancestor-filter-e8f9638e"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/bernoulli-to-averaged-kernels.json",
+        "sha256": "09128b22fd090b4427fa60d62c566cd899e066ed76ab17f5a3ec39c99c14839d"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/beta-minorant-to-owner.json",
+        "sha256": "b68b750c2af4a783587884702931116a5025ad43fe891304fbd1c5ddbe614e87"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/fixed-kernels-to-beta-potential.json",
+        "sha256": "f70213bb21413a246703116780df089a5dfa1d6f16ce99ad4eed1586e5c39435"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/harmonic-to-reserve-bound.json",
+        "sha256": "1b252c2ab3f53f8b898c52a97d0300867e191f5050e561f8443194315693c1f5"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/kernel-cites-ic-reweighting-boundary.json",
+        "sha256": "b878e79d5a7439eb18e710b20825f6e914cbe4cc7ed7d6c2144a916b02c6e739"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/legal-completion-to-owner.json",
+        "sha256": "8ec3d6e6253de5a90596e64ba05f93d8e668cbbaf41f34ad30aa74fdf48e04fb"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/owner-proof-review.md",
+        "sha256": "e116cea90e62963400a68d9ee008ec2cdc234dcb39751faefec7cc97b3e5d900"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/portfolio-to-bernoulli.json",
+        "sha256": "369ec5447dfbe38eec377a9e24be315f8295445f7c6a850d899927d3b12a8a95"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/proof-notes.md",
+        "sha256": "f8d53266a302a867afa57b1708617dc5dcc7541b52dca73cea6915c28345b8df"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/reading-ledger.json",
+        "sha256": "f39c756e66fab723bea6f9d2e52cc89d0219876cb3a8d42180522ca9577b1789"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/representation-to-ancestor-filter.json",
+        "sha256": "61d7c018ed49e7d0ef332869ee90ed1243736b551e5cec243b8c87acc04cb540"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/reserve-to-short-optimal.json",
+        "sha256": "64a1228ebfe80054b49ec1186bec0ed5e151664aace12ce173d8ce957d958f08"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/review.md",
+        "sha256": "7a184c8a2e6e5cc686d968a7fc1f855285e9cbadf2730fcf8a4f814e8f750069"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/zero-loss-to-optimal-actual-reserve.json",
+        "sha256": "f5c1fe389100beca29275bd48c16442739135320ae7d39c06bf881862fda8137"
+      }
+    ],
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "additional_comparisons": [
+      {
+        "core_ids": [
+          "optimal-cover-fresh-self-reserve-budget",
+          "M-16eddbd6da9a461686207660a3d8720b",
+          "M-0859541a37a34a7bb303101aa610d241",
+          "M-e9b27ea7513440d796a02e92d254d714",
+          "R7-CHILD-CUT-SUPPORT-v1"
+        ],
+        "peer_ids": [
+          "CAG-MODEL",
+          "customer-attraction/residual-payoff-tax-calculus"
+        ],
+        "status": "resolved-in-packet/shared-read",
+        "reason": "完整模型和剩余利润/税演算仅作条件及正文证据；fresh自留R0与R_b利润区分。R7同叶支持不推出最优fresh共同上界；两预算存在量词与HF/GATE已解子域见独立边。"
+      },
+      {
+        "core_ids": [
+          "customer-attraction/optimal-index-portfolio-exchange",
+          "customer-attraction/bernoulli-optimal-index-exchange-tax",
+          "customer-attraction/optimal-slot-parameter-kernels-and-anchored-harmonic-budget",
+          "customer-attraction/fixed-optimal-slot-beta-potential-and-prefix-repeat-credit",
+          "customer-attraction/exchange-potential-finite-baseline-and-full-IC-integral-boundary",
+          "customer-attraction/optimal-owner-potential-unit-decomposition-and-same-leaf-joint-budget"
+        ],
+        "peer_ids": [
+          "CAG-MODEL"
+        ],
+        "status": "resolved-in-packet/shared-read",
+        "reason": "保合法带索引替槽、形式空槽只作函数值、固定一次全局配对/owner、全客户共同参数、原IC整行不重权。没有机械定义hub。"
+      },
+      {
+        "core_ids": [
+          "customer-attraction/closeout-102bf6823e76f9dda3449f4c"
+        ],
+        "peer_ids": [],
+        "status": "resolved-evidence-extension",
+        "reason": "正文为精确有限反例而非一般支付；额外实读原两证书与完整25客户审计以核被否桥及有限范围，不重跑旧程序。"
+      },
+      {
+        "core_ids": [
+          "customer-attraction/r44b24-workspace-entry-scope",
+          "M-642ee38da5f34b84b0ede9f031c0e835"
+        ],
+        "peer_ids": [],
+        "status": "separate-groups-reviewed",
+        "reason": "R44入口导航和M-642固定图输入资格分别覆盖；它们与fresh预算、同叶势没有已付逻辑桥。M-a6另由实际成熟REP read-add完整解决，不凭共同BI名词强连。"
+      },
+      {
+        "core_ids": [
+          "M-a6cc20f9493b40cd8b85f449cb0b646d"
+        ],
+        "peer_ids": [
+          "M-7f014258b58d49fc9fd0fef19700ec26"
+        ],
+        "status": "resolved-read-add",
+        "reason": "Root request c81e106dee444e4d958d1fd502eeab72已pushed加入REP v2（pin a7a7d402f894d033966abefa337dc9fd5462254e1eecc2cb4ccb509e2913e2d8）。完整实读后，REP的最低当前值与互斥孩子胶合完整推出联合祖先先筛后投影递推，新增accepted unconditional whole边；没有未发布后续任务。"
+      }
+    ],
+    "reviewed_by": "Boss6 / cag_fresh_optimal_slot_budgets_3a",
+    "review_note": "15 core与3 read完整原记录；原35 refs/31文件，REP新增8 refs（共同模型复用、7新文件），另4个R18必要证据完整实读。10独立边：9逻辑（6 whole、3 contribution）和1 cites context；10 linked/5 isolated-after-review。Root原生绑定后刷新边SHA再发布，本轮数学程序运行0。",
+    "parent_review": {
+      "reviewed_by": "Boss6",
+      "mathematical_checks": [
+        "Root实读十五core原数学合同、全部最终十边、完整review/proof-notes及receipt，定向全文读参数核/Beta/owner正文，并核REP原合同及新联合递推。大历史report与原科学程序的完整实读由worker账本承载，不冒称Root重放。",
+        "Root独立逐客户核RES余项，P*域含m槽域所以P*<=K0，预算只充分推出half；13人费用557/66与724/33不同。HF仅全m调和界与m<=2预算，GATE只支付W=OPT零损失域。一般fresh仍开放。",
+        "全子列表E2经Bernoulli非负平均、Beta积分、保锚残余实例与非均匀生成式给整个Bernoulli合同。组合数对称只恢复平均参数核；固定J信息不从平均压缩反推。",
+        "固定配对HARM加同硬币覆盖增量证明Beta完整势、形式空槽、带槽次模及单位差分；首次credit<=1-1/a和后来1/s精确给H_(a-1)，不删除真实后缀。",
+        "两条owner独立证明均完整：未归零Phi_Q<=Phi_T给上界，归零后反为F_T<=F_Q；另一条在扩充静态标签目录S并Q及空标签上逐新标签补回T，证明OPT保全、Q最优且重数1，实际应用源HARM。只迁移静态实例，不迁移SPE。",
+        "Root独立核owner单位ell/e及仅已覆盖客户的kappa；first-owner首次error0、后次<=1/s给H_a-1，未扩大任意owner后续合同。不可行同槽多动作次模扩展不授OPT cap。",
+        "Root给出并复核REP到联合祖先集合的两向证明：父SPE当前>=mu；反向保留同一选中孩子联合向量，其余互斥有序孩子各取min，弱BR足够胶合。必须先筛当前再投影，不凸化、不分坐标选叶，d随递归增长。",
+        "IC局部非负重权失败只作cites语境；R7同叶支持、R18有限桥反例、R44导航、五图固定输入资格分别保准确比较和孤立原因，未强接全称预算。"
+      ],
+      "old_scientific_program_replays": 0,
+      "new_mathematical_program_runs": 0,
+      "native_validation": "All ten edges received actual native edge-bind --write and edge-check before this checkpoint; structural validation is not mathematical proof."
+    }
   }
 }
