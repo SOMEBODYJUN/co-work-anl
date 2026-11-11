@@ -18,13 +18,13 @@
   "explanation": "对每机删p>T后的资格集K_i，令A_i={A⊆K_i:|A|≤d_i,|A∩B_i|≤1}。逐分案证明所有负载≤T的合法配置均在A_i：空行与整行总和≤T直接；q≤3且总和>T时合法子集至多q−1且最多一大件；四资格后三项和>T时任意三件已超T，故容量二有效；后三项和≤T且前两项和>T时全四件不可取、前两互斥，且所有默认大件已在前两，故容量三及前两共门有效；前两和≤T的余案同样只禁全四件和双大件。由CONFIG投影等价，x每行满足Σx≤d_i、Σ_Bx≤1且每任务Σ_i x_ij=1。把x沿资格弧送流，B弧先过共用门，构成值|J|的分数流；整数容量最大流给同值整数流，每任务恰分给一个资格机。因此CONFIG(T)可行⇒满整数流，REJECT⇒CONFIG(T)不可行。真实T调度本身给确定性配置点，所以也得到目标的OPT≤T⇒满流。ell=2时计划允许集恰为合法配置族，满流、CONFIG可行与真实T调度等价；ell=3/4不成立逆向：T10，机1资格(a6,b5,c1)、机2仅c1，d1=2且B1={a}时可满流把a,b给机1、c给机2，但OPT11，且CONFIG10因x1a=x1b=1违反有效切割x1a+x1b≤1而不可行。这个例子只排除候选逆向桥，不是对任何登记对象的反驳。完整推导见证据第2–4节。",
   "contribution": {
     "result": "对ell∈{2,3,4}的Theorem2实际机器计划，CONFIG(T)可行足以保证存在满整数流；因此网络REJECT也证明CONFIG(T)不可行，并经真实T调度的确定性配置点得到核心的OPT≤T⇒满流这一可行性步骤。ell=2的同一接口还是精确阈值等价。",
-    "remaining": "整条目标的任意满整数流输出负载≤T、3T/2、5T/3三种分析、可靠拒绝下的正整数阈值搜索，以及三角形自由图⇒每机至多两资格的推论，仍由目标原证明承担，本边不将它们归给CONFIG投影等价；ell=3/4时满流⇒CONFIG(T)可行已由明确实例排除。"
+    "remaining": "整条目标的任意满整数流输出负载≤T、3T/2、5T/3三种分析、可靠拒绝下的正整数阈值搜索，以及三角形自由图⇒每机至多两资格的推论，仍由目标原证明承担，本边不将它们归给CONFIG投影等价。阈值搜索用REJECT⇒T<OPT的端点不变量即可，不假设满流接受性单调或找到全局最小成功阈值；ell=3/4时满流⇒CONFIG(T)可行已由明确实例排除。"
   },
   "scope": "已成立、无开放前提的局部可行性贡献；不是whole_result。仅此两个登记对象和真实资格上界2/3/4。不得将机器计划外松弛误认为单机配置凸包，也不推广到任意ell、一般统一次二保证或配置LP精确舍入。",
   "evidence": [
     {
       "path": "map/edges/unrelated-machines-3a-3a-64bdf7ec5167df6a/config-to-machine-plan.md",
-      "sha256": "f543574b516e5f3aa94884cd5012ae5dd6715e04bbd82580f087b3b23aba29a2"
+      "sha256": "4296a5afc318750aaa3a2294f4e1285bb2651191057e33f6e78d7dee6ae5d101"
     },
     {
       "path": "archives/unrelated-machines/state/文献/Page-Solis-Oba-Maack-2018--有界任务与交叠图--文献.md",
@@ -42,16 +42,16 @@
     }
   ],
   "reviewed_by": "Boss5",
-  "review_note": "实读两端完整陈述、正文及核心PDF第6节，渲染核Figure5；逐项重建(a)–(f)合法配置包含及同一个CONFIG投影的分数满流，不使用独立配置采样。核整数最大流解码、空行、总和≤T优先、q≤3截断、四项后三和阈值与前两互斥。只登记目标可行性步骤，负载及搜索仍由原证明承担；对ell2核精确性，对ell3/4给出全局满流而CONFIG不可行的正整数实例。无新增端点依赖、无需要继续的指定follow-up，也未发现当前v2原文需要勘误。",
+  "review_note": "恢复有效草稿后，本轮实读两端当前登记及其完整body、冻结15页PDF全部提取文本，另渲染第10页核Figure5；从PDF(a)–(f)独立重建网络和逐配置包含，不以旧07fa3边为依赖。逐项核空行、总和≤T优先、q≤3截断、四项后三和及前两共门、共同投影的分数满流和整数解码。只登记目标可行性贡献；ell2精确，ell3/4逆向失败。另用四任务整数例核出满流接受性非单调，给可靠拒绝端点不变量修正PDF第9页“最小成功T”措辞，定理和当前v2不受影响。无新增端点依赖或未闭合follow-up。",
   "endpoint_pins": {
     "M-665cd08feee04456b5cb538e29d62305": "64040f451a3c74f21ec974a8afe1e99dc5206dbc009304d00a8bcaa50d13a63d",
     "M-8dec531708464aaa87be325982ae38fc": "6e4c72c1c0ced384bcb18335e603bb25356f27d1e46ca793abdd4ed08bad883b"
   },
   "evidence_pins": {
-    "map/edges/unrelated-machines-3a-3a-64bdf7ec5167df6a/config-to-machine-plan.md": "f543574b516e5f3aa94884cd5012ae5dd6715e04bbd82580f087b3b23aba29a2",
+    "map/edges/unrelated-machines-3a-3a-64bdf7ec5167df6a/config-to-machine-plan.md": "4296a5afc318750aaa3a2294f4e1285bb2651191057e33f6e78d7dee6ae5d101",
     "archives/unrelated-machines/state/文献/Page-Solis-Oba-Maack-2018--有界任务与交叠图--文献.md": "beb13d191887b1d5b91ec2335861d33d5c7088a174cfe18c40444f222e09464e",
     "archives/unrelated-machines/state/资源/配置LP在图平衡及不相关机中的间隙--资源.md": "0fcfc44edf52bb6f1d0bf459c9847540342f55c9f4d681588f32670d1c64de26",
     "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/bounded-job-assignments.pdf": "a2fad69bcf3b1e6caed4ce4f29d559e1b0f394695d859f2ca0fd8f05f8296775"
   },
-  "review_digest": "0096750cefac959e0af6da0a31d6bc4b281472b9f4b4f8a2854fb6e8a7d349d7"
+  "review_digest": "a19bd2b6b09c1f504b96f7057e3cfb5bb5499e4d0eebbe0e192cb7bb1bf01432"
 }
