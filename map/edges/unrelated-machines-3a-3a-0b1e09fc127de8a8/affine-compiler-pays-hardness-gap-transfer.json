@@ -1,0 +1,46 @@
+{
+  "edge_id": "um-lst-affine-compiler-pays-hardness-gap-transfer",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-49ea7a8bb95e414cbd856952bde67ab4"
+  ],
+  "target_ids": [
+    "M-760386636e8342ea8df34d88c9b6d1b9"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "局部贡献限定于素数R、显式允许关系、每变量度≤R的k-partite k-CSP；ρ≥1。结论是双向值/见证编译以及近似算法的反向组合，不把任何CSP gap当前提已由compiler单独证明。CSP arity k与输出维度K=kR须区分。",
+  "roles": {
+    "M-49ea7a8bb95e414cbd856952bde67ab4": "Theorem3.1/Remark3.2的确定性仿射线编译与双向见证恢复，提供硬度证明中的完全保值接口。",
+    "M-760386636e8342ea8df34d88c9b6d1b9": "Theorem1.1的渐近p/(12+ε)随机归约硬度；本边只付清其中从有界度CSP到K=kR维匹配的算法/差距保持阶段。"
+  },
+  "explanation": "令m为原CSP约束数，OPT_CSP为最大可同时满足约束数。给变量v的第b次出现和标签a使用F_R²中的线L(v,a,b)；不同变量的点集分离。同斜率不同截距不交，不同斜率因R为素数而恰交一点。为每个约束C及其每个允许tuple a加入k条局部线之并e(C,a)。任一匹配在同一变量上只能使用同一斜率，故给该变量确定标签；未触及变量任选标签。来自同一约束的两个不同tuple至少在一个变量上斜率不同而相交，故匹配至多为同一约束选一条边。由此任意匹配M可在多项式时间解码成至少满足|M|条约束的全局赋值。反向，任一赋值ψ为每条被满足约束选择对应e(C,ψ|C)；每变量上为同斜率不同截距，故构成大小恰为其满足约束数的匹配。因此OPT_DM=OPT_CSP，且CSP k-partition与局部x列给出kR-partition。若kR-DM有ρ近似，则解码满足数≥OPT_CSP/ρ，所以同ρ近似CSP；任意给定(c,s)的CSP判定gap只要ρ<c/s即被区分。对证明主结论所需的k=6、c=1−δ、s=2(1+δ)/R，该接口给K=6R维的判定阈值之比 K(1−δ)/(12(1+δ))。这是从source结果推出的完整编译贡献；CSP gap是否存在及全p扩维另列remaining，没有从source单独推出NP⊄BPP的算法排除。",
+  "contribution": {
+    "result": "完全付清Theorem1.1所用的CSP→kR-DM保值/差距接口：OPT_DM=m·val(CSP)，每份匹配可解码出至少同大小的满足约束集，故任意ρ近似DM算法组合成同ρ近似CSP算法。若输入已有[1−δ,2(1+δ)/R]的6-CSP gap，则输出K=6R维判定阈值之比为K(1−δ)/(12(1+δ))。",
+    "remaining": "整条目标还需共同使用论文Theorem4.1的随机有界度CSP gap（由Chan gap与稀疏化得到）、NP⊄BPP的复杂度排除，以及AppendixA的邻近素数R与逐边独立dummy扩维，将K=6R扩展到全部充分大p。它们不由本边的唯一源compiler推出。本边不提供部分配额层soundness、调度解码或普通R||Cmax硬度。"
+  },
+  "scope": "目标定理的已证局部贡献；固定k、素数R、完整集合匹配，算法时间poly(|V|,|E|,R^k)。不将共享仿射几何当成其他UM合同，不将近完美YES改成完美YES。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/Lee-Svensson-Thiery--k维匹配硬度--文献.md",
+      "sha256": "29b992ce5499f740468033bb5aaceeb05cb994a68c7a8bfacbc72b16fd910475",
+      "section": "仿射线 gadget 和为什么匹配值相等"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/k-dimensional-matching.pdf",
+      "sha256": "75c9acd3432958383ffb21b12dd4baf2dacec97e8a183962cde4460dd7884ee2"
+    }
+  ],
+  "reviewed_by": "Boss2/um_0b1e",
+  "review_note": "实读本包两对象的v2正文、冻结PDF pp.1–14；关键处pp.5–7 Theorem 3.1、Claim 3.3、Remark 3.2，pp.7–9 Theorems 4.1/4.3，pp.12–13 Appendix A（另重读pp.6–9避免导出截断）；核查域逆元、每约束至多一条匹配边、未触及变量任意扩展、双向见证、kR-partition、归约复杂度和c/s方向。核Theorem4.1及Appendix A的贡献边界，不把它们藏成compiler的单独推论。正文已校勘PDF p.9的soundness分母：Claims 4.5/4.6直接给(1−3η)m，复核η=λ/4保原定理界以及Theorem4.1的完备误差与soundness常数余量。该校勘未改本边的独立保值推导。",
+  "endpoint_pins": {
+    "M-49ea7a8bb95e414cbd856952bde67ab4": "d33f53d7f3df03066aaa38da1d0a0486c22f4d509414ddce26d420e68ef78eac",
+    "M-760386636e8342ea8df34d88c9b6d1b9": "7092217439085ffdcae19abda08590f1523e0345f069353d879cc22000781ae3"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/Lee-Svensson-Thiery--k维匹配硬度--文献.md": "29b992ce5499f740468033bb5aaceeb05cb994a68c7a8bfacbc72b16fd910475",
+    "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/k-dimensional-matching.pdf": "75c9acd3432958383ffb21b12dd4baf2dacec97e8a183962cde4460dd7884ee2"
+  },
+  "review_digest": "772ffc8b06e73ae0f1f9ea3ab3a6698a1278149bc1bf4693e070bf939c04badf"
+}
