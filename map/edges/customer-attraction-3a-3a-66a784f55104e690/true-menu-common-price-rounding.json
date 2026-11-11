@@ -1,0 +1,53 @@
+{
+  "edge_id": "cag-66a784-true-menu-common-price-rounding",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/unfiltered-true-grandchild-product-H-and-common-multiplier-bound"
+  ],
+  "target_ids": [
+    "M-565d88ede6584348a7900eb10a8ae40d"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "完整Cartesian共同目录、不交单位客户、对齐角色；所有菜单叶B之后是真纯SPE，强制B不预筛BR；τ≥0且所有组件共用同一τ。",
+  "roles": {
+    "customer-attraction/unfiltered-true-grandchild-product-H-and-common-multiplier-bound": "真grandchild菜单、θ、M=max_A L、全r θ_P≤Σθ及r2/3逐τ等号。",
+    "M-565d88ede6584348a7900eb10a8ae40d": "同一产品前缀一条总v门槛的整数舍入、统一D与r3同型极限。"
+  },
+  "explanation": "对每个联合当前A，把相同(组件类型k,当前A_k)分组g，副本数n_g整数；保全部未筛真(B,z)菜单。解 min ΣX_go d_go，Σ_oX_go=n_g，ΣX_go(v_go−θ_g)≥0，X≥0。各组取达到max_B min v的B使每叶v≥θ，故紧LP可行。若G个正组，最优极点至多G+1个正变量：超出则组质量等式及至多一条活跃总v约束存在双向扰动。因此至多一组混两项；将其中较高v项向上整一单位，保持各组总整数质量，门槛只升，当前利润增≤D=max_{正类型k,全部A_k}(max d−min d)。把选定联合B后贴所选坐标真grandchild；其它每个联合B′的完整孩子分别贴各坐标最低v真尾，即使仅某坐标变化，仍可在新的联合有序历史重选其它坐标续局。各偏离利润≤Σθ，选定叶≥Σθ，故形成真正下一节点SPE；亦与θ_P≤Σθ相容。LP对偶值为sup_{τ≥0}Σ_gn_g f_g(τ)。对全部联合A取max与sup交换，完整Cartesian目录使max_A逐坐标分解，得M_P≤supτΣ_kn_kH_k(τ)+D。r3同型N复制由逐τ等号和Ψ_P≤M_P得NΨ≤M_N，结合上界夹得M_N/N→Ψ；r2由源的终端可加直接M_N=NM。",
+  "scope": "任意有限整数不交产品、副本数、角色对齐合法前缀，r≥2上界；下界齐次/极限仅r3，r2精确可加；D覆盖所有当前A，空产品取D0。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/真实未筛菜单的产品H结构与共同乘子界--引理.md",
+      "sha256": "980bad1ed0fcb440fe8e7d2785f17db8c7eee098d76729cebad1c7b130c1dd32",
+      "section": "真M、H与Ψ的三层关系"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/真实未筛菜单的产品H结构与共同乘子界--引理.md",
+      "sha256": "980bad1ed0fcb440fe8e7d2785f17db8c7eee098d76729cebad1c7b130c1dd32",
+      "section": "全r的产品次可加"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/真实未筛菜单的产品H结构与共同乘子界--引理.md",
+      "sha256": "980bad1ed0fcb440fe8e7d2785f17db8c7eee098d76729cebad1c7b130c1dd32",
+      "section": "恰两人、三人的逐乘子等号"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/真实未筛菜单的产品H结构与共同乘子界--引理.md",
+      "sha256": "980bad1ed0fcb440fe8e7d2785f17db8c7eee098d76729cebad1c7b130c1dd32",
+      "section": "共同sup、真实整数池化与统一舍入余量"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "本包 fresh worker 已实读当前登记、所引完整证明及必要定义，逐式重构变量映射、真实后继与未付范围；未运行或借有限探针提升全称真值。",
+  "whole_result": "任意r≥2真未筛菜单整数产品满足 M_P≤sup_{τ≥0}Σ_kn_kH_k(τ)+D，至多一混合组且统一舍入增≤D并可拼接真实SPE。r3同型N复制满足NΨ≤M_N≤NΨ+D，故M_N/N→Ψ；r2直接精确可加。",
+  "endpoint_pins": {
+    "M-565d88ede6584348a7900eb10a8ae40d": "459a5c7042fed8f23ee4380b971dc861471393902f72670c7d6cf38ee4f6ac0b",
+    "customer-attraction/unfiltered-true-grandchild-product-H-and-common-multiplier-bound": "c48110a37d9d48df75663aced6a972e5cf2f2389bc596f215750bece7d05e201"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/真实未筛菜单的产品H结构与共同乘子界--引理.md": "980bad1ed0fcb440fe8e7d2785f17db8c7eee098d76729cebad1c7b130c1dd32"
+  },
+  "review_digest": "327b2773dfbfdc572ae26b2e1f7e6b6131473c6c71f965e297b7d2816db3afa6"
+}

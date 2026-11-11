@@ -1,0 +1,46 @@
+{
+  "edge_id": "customer-attraction-5356-terminal-cap-partial-adm-payment",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-dec7c21b49d64b9495c2d9fac0d1678f"
+  ],
+  "target_ids": [
+    "M-4e38f1641f354bf7ae836664dc8cffa9"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "固定同一完整菜单D和actual W=Σu_i；m≥2。下述子域额外满足min(u_(m−1),u_m)≤W/m；m=2时此条件由两数最小值不超过平均自动成立。",
+  "roles": {
+    "M-dec7c21b49d64b9495c2d9fac0d1678f": "提供已证明的M_adm≤min末两收益。",
+    "M-4e38f1641f354bf7ae836664dc8cffa9": "只接收m=2及满足终端最小收益条件的付款子域，保一般上界open。"
+  },
+  "explanation": "已证末两封顶与指定收益条件直接串接M_adm≤min(u_(m−1),u_m)≤W/m。特别m=2时条件恒成立，故得到该开放全称合同的完整两人基底。m≥3时早期收益可低，不能从只含末两人的最小值≤末两平均推出≤所有m人的平均。此边不会把已证2m静态下界所给half充分性误作ADM上界证明，也不把已有五人half逆推成ADM。",
+  "scope": "开放ADM合同的明确已付子域；不是所有m、所有收益向量上的整条目标。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/可信全端点菜单的别名复核与静态付款下界--资源.md",
+      "sha256": "040788b4bc4d648619ed341829885887df80502bd34b82fb0806d08e5fd82ac6",
+      "section": "已付末两人界与真正cap缺口"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/可信全端点菜单的别名复核与静态付款下界--资源.md",
+      "sha256": "040788b4bc4d648619ed341829885887df80502bd34b82fb0806d08e5fd82ac6",
+      "section": "模型与全部cap合法端点"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "本批实读并逐式核对。m=2的基底无条件已付；附带m≥3子域另保min末两收益≤W/m条件，故全边标conditional。一般ADM上界仍open；没有将目标全称量词判为已证。",
+  "contribution": {
+    "result": "m=2时M_adm≤W/2；更一般地，对满足min末两收益≤W/m的每份m≥2完整SPE，有M_adm≤W/m。",
+    "remaining": "一般m≥3仍需控制末两最小值高于W/m的路径；缺跨位置保祖先cap的共同付款或精确ADM反例。"
+  },
+  "endpoint_pins": {
+    "M-4e38f1641f354bf7ae836664dc8cffa9": "384448d8476bde6414a7572c8495ea2e5168d17c57843b59e9bf6e9532beff58",
+    "M-dec7c21b49d64b9495c2d9fac0d1678f": "f8d364f2d68ae81bfce928651b2c2146d0c76fb74ae5265ba11d0fb221a8a094"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/可信全端点菜单的别名复核与静态付款下界--资源.md": "040788b4bc4d648619ed341829885887df80502bd34b82fb0806d08e5fd82ac6"
+  },
+  "review_digest": "206be48cda9bce4a3b67771010aa96d4118f4ba6569fce8685979b9d907fd67d"
+}

@@ -1,0 +1,52 @@
+{
+  "edge_id": "cag-66a784-scc-injectivity-same-menu-directions",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/real-payoff-comparison-SCC-quotient-and-nonnegative-flow-compilation"
+  ],
+  "target_ids": [
+    "M-85ab49e180534fef826742662c7972eb"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一完整形式σ，保全部非空客户兴趣类型和行动标签索引；只比较真实强制行动后沿同一σ所得终局。",
+  "roles": {
+    "customer-attraction/real-payoff-comparison-SCC-quotient-and-nonnegative-flow-compilation": "全类型收益顶点单射、真实双向路径非负编译及H_SCC。",
+    "M-85ab49e180534fef826742662c7972eb": "同完整带行动索引菜单的H_menu及跨深度无损代表行商。"
+  },
+  "explanation": "统一记c为总终局计数。目标菜单M_h(a)=c(h,a)；SCC登记的顶点用余下m−1人计数q=c−e_a，故F_v(B)=1_(a∈B)/(1+q(B))=1_(a∈B)/c(B)。固定a的全类型F单射，逐a得到M_h=M_g当且仅当全部行动收益向量逐一相等。若同菜单类C内两个原节点规定a,b，则原Γ_(h,b)=U_C(a)−U_C(b)，Γ_(g,a)为其相反数，二边给两个收益顶点的SCC；因此该类span中每个正负方向都由原真实行非负编译，H_menu⊆H_SCC。相同前缀计数不保证菜单相同，固定客户点数值收益相同也不足以合并全类型顶点。",
+  "scope": "任意固定完整σ、全部非空客户类型、任意深度或角色；不修改原σ、不净化计数历史，也不称H_menu或H_SCC为全部lineality。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/真实收益比较图的强连通商与非负流编译--定理.md",
+      "sha256": "3ce9defea8b9c8508eed7fcc973f0acfbd32111ab58c80b94d5efe026e4d4900",
+      "section": "全有序历史的真实行与收益顶点"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/真实收益比较图的强连通商与非负流编译--定理.md",
+      "sha256": "3ce9defea8b9c8508eed7fcc973f0acfbd32111ab58c80b94d5efe026e4d4900",
+      "section": "强连通分量内可任意符号支付"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/收益比较图工作区的菜单商与Markov边界--资源.md",
+      "sha256": "5879ca605afa7cf2343e8bb356f9f8b4ed18d0bce31b297811adbbbfc9ecbcd0",
+      "section": "同菜单的任意深度真实行商"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "本包 fresh worker 已实读当前登记、所引完整证明及必要定义，逐式重构变量映射、真实后继与未付范围；未运行或借有限探针提升全称真值。",
+  "contribution": {
+    "result": "完整整数菜单与全类型收益菜单的逐行动等价，以及H_menu所有双向方向的原行非负编译和H_menu⊆H_SCC。",
+    "remaining": "目标的精确代表行分解还使用 Γ_(h,t)=[U_C(σh)−U_C(b_C)]+Γ_(g_C,t)，四人二题严格扩大H_terminal的例另需其全部菜单表。SCC不证明一般half，也不自动给最大lineality。"
+  },
+  "endpoint_pins": {
+    "M-85ab49e180534fef826742662c7972eb": "7ba1272acc450ac7481fa5df3c9fbbf2e84f6a3b9eb82b86132ff48bbef6494a",
+    "customer-attraction/real-payoff-comparison-SCC-quotient-and-nonnegative-flow-compilation": "8dd4e2d61274209aeb10dea8096420574f68e93915837769264d459f0cea54e0"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/真实收益比较图的强连通商与非负流编译--定理.md": "3ce9defea8b9c8508eed7fcc973f0acfbd32111ab58c80b94d5efe026e4d4900",
+    "archives/customer-attraction/state/资源/收益比较图工作区的菜单商与Markov边界--资源.md": "5879ca605afa7cf2343e8bb356f9f8b4ed18d0bce31b297811adbbbfc9ecbcd0"
+  },
+  "review_digest": "887a38239d7d6a353872ce7b2bd68c2665e0d0d69097ef8af6973fde37dff778"
+}
