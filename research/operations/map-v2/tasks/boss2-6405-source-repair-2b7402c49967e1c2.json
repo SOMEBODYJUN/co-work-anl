@@ -1,0 +1,123 @@
+{
+  "definition": {
+    "task_id": "boss2-6405-source-repair-2b7402c49967e1c2",
+    "stage": "3A",
+    "registry": "research/registry.json",
+    "supersedes": [
+      "unrelated-machines-3a-3a-566d00453361c959"
+    ],
+    "object_ids": [
+      "M-737cbc9ea3b54c03b847026018cf5b19"
+    ],
+    "read_object_ids": [
+      "M-0a576e4d0f4647d18173160e6cbaad70",
+      "M-a3feff9f6a574834925528d0f9d9d658"
+    ],
+    "input_pins": {
+      "M-737cbc9ea3b54c03b847026018cf5b19": "8cf0ef3b2e88c2a2e1253b318c333e212f60184c7482c182cee8e33434f8d758",
+      "M-0a576e4d0f4647d18173160e6cbaad70": "3dc9e4fefd70e75055f18cfabea7f3b779e1c8a48fa9b5051374e2c9943bcb93",
+      "M-a3feff9f6a574834925528d0f9d9d658": "41aec13327cb012d5d6739317141f856f7d95b3df59cd831d486548a7561839e"
+    },
+    "write_paths": [
+      "map/edges/boss2-6405-source-repair-2b7402c49967e1c2",
+      "map/receipts/boss2-6405-source-repair-2b7402c49967e1c2.json",
+      "map/edges/unrelated-machines-3a-3a-566d00453361c959/complement-rounding-proof.md",
+      "map/edges/unrelated-machines-3a-3a-566d00453361c959/resource-job-rounding-equivalence.json"
+    ],
+    "goal": "Resolve the changed inputs or unanswered comparison in unrelated-machines-3a-3a-566d00453361c959; reuse still valid coverage, and explicitly dispose each prior asset.",
+    "context_plan": {
+      "budget": {
+        "context_tokens": 500000,
+        "window_source": "official-default",
+        "model": "gpt-6.1-sol",
+        "used_tokens": null,
+        "history_mode": "fresh-worker",
+        "reserve_tokens": 200000,
+        "reading_tokens": 300000,
+        "output_tokens": 100000,
+        "runtime_remaining_tokens": null,
+        "declared_remaining_before_reserve_tokens": null,
+        "assumptions": [
+          "Window source is declared, not discovered from this conversation.",
+          "Reading budget includes source text and object/task metadata.",
+          "Reserved context includes expected generated records and later reasoning/tool growth.",
+          "Fresh worker assumed; actual system/prefix usage is unknown and covered only by the engineering reserve."
+        ],
+        "budget_is_runtime_measurement": false
+      },
+      "reading": {
+        "chars": 9057,
+        "utf8_bytes": 17742,
+        "source_tokens": 14252,
+        "metadata_tokens": 3314,
+        "estimated_tokens": 17662,
+        "metadata_chars": 3945,
+        "metadata_utf8_bytes": 5074,
+        "distinct_files": 3,
+        "reading_segments": 2,
+        "token_count_is_estimate": true,
+        "estimators": [
+          "conservative-math-text-estimate-v1; not a tokenizer count"
+        ],
+        "unmeasured_refs": [
+          {
+            "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
+            "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183",
+            "bytes": 512937,
+            "reason": "Non-text evidence: export/read with the appropriate tool, then size its actual extracted context"
+          }
+        ],
+        "measurement_scope": "Requested complete text spans plus supplied metadata; binary evidence is not token-counted from raw bytes.",
+        "task_overhead_tokens": 96
+      },
+      "reading_refs": [
+        {
+          "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
+          "sha256": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
+          "section": "5. 舍入接口"
+        },
+        {
+          "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
+          "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md",
+          "sha256": "9c7a4bfe21f216b57edfbce69b591aabf1a4d3a637510eba54411f7d62774bd1"
+        },
+        {
+          "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
+          "sha256": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
+          "section": "4. resource-matroid Santa Claus 局部搜索"
+        }
+      ],
+      "oversized": false,
+      "requires_export": true,
+      "prior_assets": [
+        {
+          "path": "map/edges/unrelated-machines-3a-3a-566d00453361c959/complement-rounding-proof.md",
+          "sha256": "b718fd5ea5178265445c4c0697d87f0f29a2ecaa629c267e2fd746606c25df9d"
+        },
+        {
+          "path": "map/edges/unrelated-machines-3a-3a-566d00453361c959/resource-job-rounding-equivalence.json",
+          "sha256": "2938307a80520d5a9fdac539bb3fdca03dc66a99b2fd2849ec2ba051ec98eb53"
+        }
+      ],
+      "retired_core_object_ids": [],
+      "recheck_core_object_ids": [
+        "M-737cbc9ea3b54c03b847026018cf5b19"
+      ],
+      "repair_reasons": [
+        "changed-registration-input"
+      ],
+      "note": "Read the previous task and receipt. Carry forward valid work. If needed, read the same scope in ordered passes. A retirement-only task lists no coverage or new assets.",
+      "comparison_priority": 2,
+      "scope_hint": "archives/unrelated-machines"
+    }
+  },
+  "state": "available",
+  "owner": null,
+  "request_id": "de2bdb60df5c43bf9ed2992d31867be8",
+  "requests": {
+    "de2bdb60df5c43bf9ed2992d31867be8": "plan"
+  }
+}
