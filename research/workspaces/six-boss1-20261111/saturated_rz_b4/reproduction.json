@@ -1,0 +1,129 @@
+{
+  "working_directory": "repository root",
+  "commands": [
+    {
+      "actual_command": [
+        "python",
+        "research/workspaces/six-boss1-20261111/saturated_rz_b4/extract_face.py",
+        "--point",
+        "research/workspaces/six-boss1-20261111/peer_augmented_lp/augmented_lp_exact.json",
+        "--output",
+        "research/workspaces/six-boss1-20261111/saturated_rz_b4/saturated_face.json"
+      ],
+      "executed_source_path": "research/workspaces/six-boss1-20261111/saturated_rz_b4/extract_face.py",
+      "executed_source_sha256": "167643dac88e870dccffc598b8d28c68805c5799be45d74b301c462f6118c93e",
+      "output": "research/workspaces/six-boss1-20261111/saturated_rz_b4/saturated_face.json",
+      "mathematical_status": "exact full 39 nonself ZZ budgets, all zero-cell graphs"
+    },
+    {
+      "actual_command": [
+        "python",
+        "research/workspaces/six-boss1-20261111/saturated_rz_b4/conditional_b4.py",
+        "--point",
+        "research/workspaces/six-boss1-20261111/peer_augmented_lp/augmented_lp_exact.json",
+        "--face",
+        "research/workspaces/six-boss1-20261111/saturated_rz_b4/saturated_face.json",
+        "--output",
+        "research/workspaces/six-boss1-20261111/saturated_rz_b4/conditional_moments.json"
+      ],
+      "executed_source_path": "research/workspaces/six-boss1-20261111/saturated_rz_b4/executed_sources/conditional_b4_base.py",
+      "executed_source_sha256": "75209260b5093becc28c15e539ee645859773ea7b0896cd24b550cca42069bfe",
+      "output": "research/workspaces/six-boss1-20261111/saturated_rz_b4/conditional_moments.json",
+      "mathematical_status": "exact feasible own/B4 moment solution"
+    },
+    {
+      "actual_command": [
+        "python",
+        "research/workspaces/six-boss1-20261111/saturated_rz_b4/complete_conditional.py",
+        "--point",
+        "research/workspaces/six-boss1-20261111/peer_augmented_lp/augmented_lp_exact.json",
+        "--face",
+        "research/workspaces/six-boss1-20261111/saturated_rz_b4/saturated_face.json",
+        "--moments",
+        "research/workspaces/six-boss1-20261111/saturated_rz_b4/conditional_moments.json",
+        "--output",
+        "research/workspaces/six-boss1-20261111/saturated_rz_b4/conditional_candidate.json"
+      ],
+      "executed_source_path": "research/workspaces/six-boss1-20261111/saturated_rz_b4/complete_conditional.py",
+      "executed_source_sha256": "8ee4e0847d3b08ab88167ffb99ac8edd35a9e071d5431ab56bb4d1c659e11311",
+      "output": "research/workspaces/six-boss1-20261111/saturated_rz_b4/conditional_candidate.json",
+      "mathematical_status": "exact 76-atom completion of zero face+B4; 10 other ZZ orbits fail"
+    },
+    {
+      "actual_command": [
+        "python",
+        "research/workspaces/six-boss1-20261111/saturated_rz_b4/conditional_b4.py",
+        "--point",
+        "research/workspaces/six-boss1-20261111/peer_augmented_lp/augmented_lp_exact.json",
+        "--face",
+        "research/workspaces/six-boss1-20261111/saturated_rz_b4/saturated_face.json",
+        "--old-envelopes",
+        "ZZ",
+        "--output",
+        "research/workspaces/six-boss1-20261111/saturated_rz_b4/conditional_ZZ_moments.json"
+      ],
+      "executed_source_path": "research/workspaces/six-boss1-20261111/saturated_rz_b4/executed_sources/conditional_b4_ZZ.py",
+      "executed_source_sha256": "0423003c7774b090eb0ee5065419d2377a0af461f3ccfcb16732c67e967e0390",
+      "output": "research/workspaces/six-boss1-20261111/saturated_rz_b4/conditional_ZZ_moments.json",
+      "mathematical_status": "floating only; exact observed-support recovery inconsistent"
+    },
+    {
+      "actual_command": [
+        "python",
+        "research/workspaces/six-boss1-20261111/saturated_rz_b4/conditional_b4.py",
+        "--point",
+        "research/workspaces/six-boss1-20261111/peer_augmented_lp/augmented_lp_exact.json",
+        "--face",
+        "research/workspaces/six-boss1-20261111/saturated_rz_b4/saturated_face.json",
+        "--old-envelopes",
+        "all",
+        "--strict-old-slack",
+        "--output",
+        "research/workspaces/six-boss1-20261111/saturated_rz_b4/conditional_all_moments.json"
+      ],
+      "executed_source_path": "research/workspaces/six-boss1-20261111/saturated_rz_b4/executed_sources/conditional_b4_all.py",
+      "executed_source_sha256": "4f92a27d9746f24e88386a194cd3f454ef1d39904847c8f8793267a70566f632",
+      "output": "research/workspaces/six-boss1-20261111/saturated_rz_b4/conditional_all_moments.json",
+      "mathematical_status": "floating only; exact observed-support recovery inconsistent"
+    },
+    {
+      "actual_command": [
+        "python",
+        "research/workspaces/six-boss1-20261111/saturated_rz_b4/verify_face_and_atoms.py",
+        "--point",
+        "research/workspaces/six-boss1-20261111/peer_augmented_lp/augmented_lp_exact.json",
+        "--face",
+        "research/workspaces/six-boss1-20261111/saturated_rz_b4/saturated_face.json",
+        "--atoms",
+        "research/workspaces/six-boss1-20261111/saturated_rz_b4/conditional_candidate.json",
+        "--domain-output",
+        "research/workspaces/six-boss1-20261111/saturated_rz_b4/reduced_domain.json",
+        "--output",
+        "research/workspaces/six-boss1-20261111/saturated_rz_b4/independent_verification.json"
+      ],
+      "executed_source_path": "research/workspaces/six-boss1-20261111/saturated_rz_b4/verify_face_and_atoms.py",
+      "executed_source_sha256": "ab9ef7e143552f1d213fe38a934225374bbe820ebc74f08ddb11ae778fdc6d98",
+      "output": "research/workspaces/six-boss1-20261111/saturated_rz_b4/independent_verification.json",
+      "mathematical_status": "independent PASS for complete zero-cell representation and exact atom margins/payoffs; full_old_plus_B4_completion=false"
+    },
+    {
+      "actual_command": [
+        "python",
+        "research/workspaces/six-boss1-20261111/saturated_rz_b4/audit_B4_upper.py",
+        "--point",
+        "research/workspaces/six-boss1-20261111/peer_augmented_lp/augmented_lp_exact.json",
+        "--verification",
+        "research/workspaces/six-boss1-20261111/saturated_rz_b4/independent_verification.json",
+        "--output",
+        "research/workspaces/six-boss1-20261111/saturated_rz_b4/B4_upper_audit.json"
+      ],
+      "executed_source_path": "research/workspaces/six-boss1-20261111/saturated_rz_b4/audit_B4_upper.py",
+      "executed_source_sha256": "f12de978842628eb3bc65e8ed920d0d5e101b6df42b2e3d307d550dbbf429554",
+      "output": "research/workspaces/six-boss1-20261111/saturated_rz_b4/B4_upper_audit.json",
+      "mathematical_status": "exact single-row upper matches attained positive minimum B4 slack"
+    }
+  ],
+  "snapshot_replay": "For the three conditional_b4 versions, replace actual_command[1] with executed_source_path; adjacent executed_sources/extract_face.py supplies the same dependency. Use fresh output names to preserve frozen results.",
+  "independent_gate": "verify_face_and_atoms.py and audit_B4_upper.py import no discovery or constructor modules.",
+  "scope": "All runs were ordinary local finite calculations; no Actions request or other batch compute was submitted."
+}

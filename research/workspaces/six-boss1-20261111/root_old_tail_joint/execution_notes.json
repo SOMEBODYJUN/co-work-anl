@@ -1,0 +1,49 @@
+{
+  "completed_utc": "2026-11-11T18:08:50.659074+00:00",
+  "point_sha256": "d70c26065d42fd73dedc94183e4533dd6f8608d5841f7a6018ff180dc77e2f9f",
+  "compute_scope": "Small 32-column local coupling and exact audit only; no large-domain pricing or cloud request.",
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "commands": [
+    [
+      "python",
+      "research/workspaces/six-boss1-20261111/root_old_tail_joint/evaluate_product.py"
+    ],
+    [
+      "python",
+      "research/workspaces/six-boss1-20261111/root_old_tail_joint/solve_coupling.py",
+      "--mode",
+      "fixed"
+    ],
+    [
+      "python",
+      "research/workspaces/six-boss1-20261111/root_old_tail_joint/solve_coupling.py",
+      "--mode",
+      "rebudget"
+    ],
+    [
+      "python",
+      "research/workspaces/six-boss1-20261111/root_old_tail_joint/recover_exact.py"
+    ],
+    [
+      "python",
+      "research/workspaces/six-boss1-20261111/root_old_tail_joint/verify_completion.py"
+    ],
+    [
+      "python",
+      "research/workspaces/six-boss1-20261111/root_old_tail_joint/materialize.py"
+    ]
+  ],
+  "outcomes": [
+    "Aligned product: exactly 2 negative orbit rows.",
+    "Complete fixed old-root-mass coupling: infeasible; 2 exact restricted dual bounds verified.",
+    "Rebudgeted common coupling: 17 positive atoms.",
+    "Exact rational recovery: all 176 inequalities nonnegative.",
+    "Independent audit: all 216 literal terminal queries and all 163 old budgets pass.",
+    "Materialization: 12240 records with exact finite integer customer multiplicities."
+  ],
+  "next_obligation": "28 old-B / early-new-tail same/off safe/terminal rows; not evaluated here.",
+  "boundary": "Finite necessary projection; no complete SPE or general six-player half claim."
+}
