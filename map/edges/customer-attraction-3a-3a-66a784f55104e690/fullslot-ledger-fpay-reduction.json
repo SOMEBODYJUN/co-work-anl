@@ -1,0 +1,52 @@
+{
+  "edge_id": "cag-66a784-fullslot-ledger-fpay-reduction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/full-slot-mean-cap-original-source-norm-ledger"
+  ],
+  "target_ids": [
+    "M-d7a0e5e614884a5293fbc7f69e193692"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一完整mean-cap域L+鞍点、同一原σ删除槽source、同一γ和Q+；保持完整静态系数2m，不假设开放FPAY不等式已证。",
+  "roles": {
+    "customer-attraction/full-slot-mean-cap-original-source-norm-ledger": "同一完整L+鞍点的FNORM恒等式、ONE-BANK及OPT≤2mγ−Q+。",
+    "M-d7a0e5e614884a5293fbc7f69e193692": "开放FPAY付款的不等式部分仍未证；本边只支付其充分性归约。"
+  },
+  "explanation": "令 A=Σ_i(1+μ_i)I_i+Σ_iE R_i+ +D0+m||ρt||²。同一原删除槽source、同一完整L+处FNORM即 W−mγ=A−Cov0。因此 Cov0≤A+Q+/2 当且仅当 W≥mγ−Q+/2。由同一完整槽静态OPT≤2mγ−Q+，任一满足FPAY的分析点立即给OPT≤2W。没有证明该Cov0不等式对所有输入成立。ONE-BANK说明Tax+D+−Cov+=D0−Cov0+m||ρt||²，故不能另把Tax、曲率差和范数当三份资金；完整槽2m系数也不能换成删除槽2m−1。",
+  "scope": "全部m≥1、每份原完整σ及同一完整mean-cap鞍点；仅证明FPAY的等价金额和half充分性，不提升open付款真值。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/完整槽均值cap的原源范数账与付款接口--引理.md",
+      "sha256": "3156bff6a6618d31960fee21e09537ea20d7982d6c479dc0b6be58533566a4ef",
+      "section": "用完整背景展开原删除槽查询"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/完整槽均值cap的原源范数账与付款接口--引理.md",
+      "sha256": "3156bff6a6618d31960fee21e09537ea20d7982d6c479dc0b6be58533566a4ef",
+      "section": "完整槽静态比较及未证金额"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/可信均值菜单与完整槽的内部复核合同--审查.md",
+      "sha256": "ac7b59a210f617049f57a5e330d6ff90d4a3532c0b605d138b050673d7062d4b",
+      "section": "完整槽合同：范数正号、税相消及静态系数"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "本包 fresh worker 已实读当前登记、所引完整证明及必要定义，逐式重构变量映射、真实后继与未付范围；未运行或借有限探针提升全称真值。",
+  "contribution": {
+    "result": "在同一分析点，FPAY严格等价于 W≥mγ−Q+/2，且由完整槽静态比较足以推出half；ONE-BANK禁止税/曲率/范数重复入账。",
+    "remaining": "证明任意实例、原完整σ都能在该完整域同一点支付Cov0，尤其z=ρt<1/(2m)的低密度缺额。一般人数校准族只认证该族，不支付普遍FPAY。"
+  },
+  "endpoint_pins": {
+    "M-d7a0e5e614884a5293fbc7f69e193692": "fe6f201c9214abc4983954efc0ff88f74e930ed0187f0af68b703f2b4796db08",
+    "customer-attraction/full-slot-mean-cap-original-source-norm-ledger": "e285ad51a032470825546d9a32115a064200ff54c6e211399cb66e958a47de3b"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/完整槽均值cap的原源范数账与付款接口--引理.md": "3156bff6a6618d31960fee21e09537ea20d7982d6c479dc0b6be58533566a4ef",
+    "archives/customer-attraction/state/审查/可信均值菜单与完整槽的内部复核合同--审查.md": "ac7b59a210f617049f57a5e330d6ff90d4a3532c0b605d138b050673d7062d4b"
+  },
+  "review_digest": "ba42efbec077bc7428d1f4c339b5221739595b143885c0fadc112264598b8997"
+}

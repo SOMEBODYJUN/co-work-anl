@@ -1,0 +1,47 @@
+{
+  "edge_id": "cag-66a784-forward-kernel-last-tax",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-6c728d8fe4c24e70b069b6e32145e80b"
+  ],
+  "target_ids": [
+    "customer-attraction/round5-general-payment-ledger-and-refined-last-tax"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限单位客户目录、固定实际末位前缀负载b≥0，查询T与额外列A的随机实现独立；本边的核代数不额外假设付款成立。",
+  "roles": {
+    "M-6c728d8fe4c24e70b069b6e32145e80b": "固定背景加一个竞争主题时查询效用下降的精确非负核。",
+    "customer-attraction/round5-general-payment-ledger-and-refined-last-tax": "任意列分布末位税比较中 K_b、t_b、CREDIT 所用的同一税核。"
+  },
+  "explanation": "在前向效用式取 k=1、β=b、H=∅、查询 T、新增竞争主题 A，得到 K_b(T,A)=f_b(T)−Σ_{x∈T∩A}h_x，h_x=1/[(b_x+1)(b_x+2)]。再取T=A，即列 A 加回当前槽的精确税 t_b(A)=Σ_{x∈A}h_x，且逐客户 2h_x=1/(b_x+1)−b_xh_x。对独立列分布 Q 线性平均，2E_Qt_b=E_Qf_b−B_Q。该步保查询/列独立，不把随查询实现改变的响应列变成固定Q。完整 CREDIT 还需 τ=W−u−D_old；OPT 比较另需逐客户覆盖不等式及末位BR。",
+  "scope": "单位客户；实际末位前缀整数负载 b；同一目录全部 T,A 及任意独立 Q。只传递税核和信用分解中的一项。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/覆盖调和势的任意阶同枢交换恒等式--引理.md",
+      "sha256": "bea1197f8b58037f95042b814d16e2073f3b4b5f632ec39cf4f02c7a86d8a546",
+      "section": "前向增加竞争者的完全单调特例与新主源比较"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/第五轮一般付款账本与末位精确税的现态--资源.md",
+      "sha256": "30c0eb795eacc3c60bf359e05b456abbf86cf1ecd366a87a539e1d18f6704e86",
+      "section": "任意列分布的精确末位税比较"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "本包 fresh worker 已实读当前登记、所引完整证明及必要定义，逐式重构变量映射、真实后继与未付范围；未运行或借有限探针提升全称真值。",
+  "contribution": {
+    "result": "精确得到 K_b(T,A)=f_b(T)−税(T∩A) 及 2E_Qt_b=E_Qf_b−B_Q；这提供目标 TAX/CREDIT 的固定背景核代数。",
+    "remaining": "完整目标的OPT上界需逐客户覆盖比较，CREDIT还需actual覆盖恒等式及末位BR保证三个余量非负。更进一步的2W付款不由本边提供；三种末菜单付款助手已另被P池族否定。"
+  },
+  "endpoint_pins": {
+    "M-6c728d8fe4c24e70b069b6e32145e80b": "dfd10f02418422c38d3a5f088b814590610492975bc0d66ff27eae6d24bb2d62",
+    "customer-attraction/round5-general-payment-ledger-and-refined-last-tax": "9d4cf72a3ab4544e5db68b35e34be003fe633d7f939308c3db5f5561e3afd330"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/覆盖调和势的任意阶同枢交换恒等式--引理.md": "bea1197f8b58037f95042b814d16e2073f3b4b5f632ec39cf4f02c7a86d8a546",
+    "archives/customer-attraction/state/资源/第五轮一般付款账本与末位精确税的现态--资源.md": "30c0eb795eacc3c60bf359e05b456abbf86cf1ecd366a87a539e1d18f6704e86"
+  },
+  "review_digest": "05334999431bc6c7dd0d6b52ed937b51562927657d5b6d6a22a586b1199fe31a"
+}
