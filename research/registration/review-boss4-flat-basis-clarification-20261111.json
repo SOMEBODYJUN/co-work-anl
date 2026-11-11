@@ -1,0 +1,522 @@
+{
+  "reviewed_by": "Boss4",
+  "kind": "two explanatory corrections; all seven theorem identities and mathematical contracts retained",
+  "base_registry_sha256": "8275b367cb9eed28da87cfa8c90ea65434bb75dd330eab951a076ec34630a5bb",
+  "source": {
+    "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+    "old_sha256": "de08d9e732431ad8b7df4da921c7c42984746cce96a0fffba437547e19162d87",
+    "new_sha256": "0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254"
+  },
+  "corrections": [
+    {
+      "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+      "sha256": "de08d9e732431ad8b7df4da921c7c42984746cce96a0fffba437547e19162d87",
+      "section": "矩阵模型",
+      "current": "对应的 Hankel 算子是 `H^C_Λ:Span(C^+)→Span(C^+)^*`。",
+      "suggested": "索引 `C` 的算子为 `H^C_Λ:Span(C)→Span(C)^*`；border 扩展为 `H^{C^+}_Λ:Span(C^+)→Span(C^+)^*`。",
+      "evidence": "冻结PDF p.4 §1.4的两项Hankel算子定义以及p.6 rank-flat假设。",
+      "impact": "原式把C标号与C+定义域混在一起。此为记号勘误；目标flat秩比较仍须区分H^C和H^{C+}，不改变两个flat结果或核心border判据的真值。修改正文将改变整个文件SHA，须按仓库规则协调并定向重绑所有引用，不在本worker任务直接改原文/registry。"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+      "sha256": "de08d9e732431ad8b7df4da921c7c42984746cce96a0fffba437547e19162d87",
+      "section": "失败机制与条件",
+      "current": "即便 `C` connected to `1`，也可能不存在含 `1` 的简单 column basis；作者用 `C={1,x_1,x_1x_2}` 的例子说明必须使用更一般的 kernel/border-basis 论证。",
+      "suggested": "即便 `C` connected to `1`，也可能不存在 connected-to-1 的满秩 column basis `B⊆C`；`C={1,x_1,x_1x_2}` 的例子中可取含 `1` 的列基 `{1,x_1x_2}`，但它不 connected to `1`。因此一般稀疏扩展不能直接套用要求 `B` connected-to-1 的 Theorem 1.6，须使用 §2 的 kernel 归纳。",
+      "evidence": "冻结PDF p.9 §3.1：a≠1时rank为2，C内仅有{1,x1x2}及{x1,x1x2}两种列基，两者均不connected-to-1；前者明确含1。p.7紧接Lemma2.1的说明禁止直接在非连通B上套Theorem1.6。",
+      "impact": "“含1”不等价于“connected-to-1”；若把原句按不存在含1列基理解，会被其所举例子直接否定。“简单”未定义，应替换为精确连通性条件。本条贡献边已显式保留B连通假设并给出反例，不依赖该含混表述。无需撤回源核心定理或一般稀疏flat定理；应纠正说明并协调所有正文SHA引用。"
+    }
+  ],
+  "primary_evidence": {
+    "path": "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/laurent_flat_extension.pdf",
+    "sha256": "a79a6aae70263cdc0b15415f838df666cfb99d6a00ef87bb1dae381493478fad",
+    "pages": [
+      4,
+      7,
+      9
+    ]
+  },
+  "object_changes": [
+    {
+      "object_id": "M-2cade1d7f2d24941acd7fb06b938c73e",
+      "old_version": 1,
+      "new_version": 2,
+      "old_pin": "924a6b5445269f548796c5a55fccc153af1f550c77ec4b77faf7e4f7839f9df7",
+      "new_pin": "2731a90af12bcb31c023bfe0342f847e6bc3128f60ec2d4be6101e8f472df37c",
+      "before": {
+        "object_id": "M-2cade1d7f2d24941acd7fb06b938c73e",
+        "version": 1,
+        "title": "Kun twisted product 保高围长构造",
+        "kind": "algorithm",
+        "truth_status": "proved",
+        "model": "有限关系类型 τ 的结构，同态保持关系元组。",
+        "statement": "以置换纤维的 twisted product 逐次减少最短环，得到 girth(C)≥k。",
+        "quantifiers": "每个满足定理条件的 A,B。",
+        "assumptions": [
+          "girth(A)≥k，|A|^(1/k)>Δ(A)Δ(B)。"
+        ],
+        "scope": "所引文献的数学定理及指定参数。",
+        "objections": "核已整理正文的陈述与原 PDF 入口；保文献量词。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+          "sha256": "de08d9e732431ad8b7df4da921c7c42984746cce96a0fffba437547e19162d87",
+          "section": "1. Kun：Constraints, MMSNP and Expander Relational Structures"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/kun_mmsnp.pdf",
+            "sha256": "e6d37a035edb3cbaa3e246e5781a88c8a348eaaa16a57028dd8782dcf7373eea"
+          }
+        ],
+        "sources": [
+          "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md"
+        ]
+      },
+      "after": {
+        "object_id": "M-2cade1d7f2d24941acd7fb06b938c73e",
+        "version": 2,
+        "title": "Kun twisted product 保高围长构造",
+        "kind": "algorithm",
+        "truth_status": "proved",
+        "model": "有限关系类型 τ 的结构，同态保持关系元组。",
+        "statement": "以置换纤维的 twisted product 逐次减少最短环，得到 girth(C)≥k。",
+        "quantifiers": "每个满足定理条件的 A,B。",
+        "assumptions": [
+          "girth(A)≥k，|A|^(1/k)>Δ(A)Δ(B)。"
+        ],
+        "scope": "所引文献的数学定理及指定参数。",
+        "objections": "核已整理正文的陈述与原 PDF 入口；保文献量词。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+          "sha256": "0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254",
+          "section": "1. Kun：Constraints, MMSNP and Expander Relational Structures"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/kun_mmsnp.pdf",
+            "sha256": "e6d37a035edb3cbaa3e246e5781a88c8a348eaaa16a57028dd8782dcf7373eea"
+          }
+        ],
+        "sources": [
+          "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md"
+        ]
+      },
+      "mathematical_statement_and_status_unchanged": true
+    },
+    {
+      "object_id": "M-8a8102ce2db9454ba1ed5eae66e12724",
+      "old_version": 1,
+      "new_version": 2,
+      "old_pin": "37e40791e296a7d096fa14ae9f7228f7f37bdcdadad3c9c4566485e8b35a546c",
+      "new_pin": "8c985cebfde20d2b788e4610e314e7fbdc6ca3525041db765165988c455715b9",
+      "before": {
+        "object_id": "M-8a8102ce2db9454ba1ed5eae66e12724",
+        "version": 1,
+        "title": "正且稀疏 rank-flat 矩的表示测度",
+        "kind": "theorem",
+        "truth_status": "proved",
+        "model": "有限单项式集的截断 Hankel 矩与其 border 扩展。",
+        "statement": "正实截断 Hankel 数据满足 sparse rank-flat 假设时可全局扩展为有限原子表示测度。",
+        "quantifiers": "对文献规定域中的实正线性泛函。",
+        "assumptions": [
+          "connected-to-1；正性及秩不增；用于半代数约束时另核 localizer。"
+        ],
+        "scope": "所引文献的数学定理及指定参数。",
+        "objections": "核已整理正文的陈述与原 PDF 入口；保文献量词。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+          "sha256": "de08d9e732431ad8b7df4da921c7c42984746cce96a0fffba437547e19162d87",
+          "section": "2. Laurent–Mourrain：A Sparse Flat Extension Theorem for Moment Matrices"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/laurent_flat_extension.pdf",
+            "sha256": "a79a6aae70263cdc0b15415f838df666cfb99d6a00ef87bb1dae381493478fad"
+          }
+        ],
+        "sources": [
+          "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md"
+        ]
+      },
+      "after": {
+        "object_id": "M-8a8102ce2db9454ba1ed5eae66e12724",
+        "version": 2,
+        "title": "正且稀疏 rank-flat 矩的表示测度",
+        "kind": "theorem",
+        "truth_status": "proved",
+        "model": "有限单项式集的截断 Hankel 矩与其 border 扩展。",
+        "statement": "正实截断 Hankel 数据满足 sparse rank-flat 假设时可全局扩展为有限原子表示测度。",
+        "quantifiers": "对文献规定域中的实正线性泛函。",
+        "assumptions": [
+          "connected-to-1；正性及秩不增；用于半代数约束时另核 localizer。"
+        ],
+        "scope": "所引文献的数学定理及指定参数。",
+        "objections": "核已整理正文的陈述与原 PDF 入口；保文献量词。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+          "sha256": "0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254",
+          "section": "2. Laurent–Mourrain：A Sparse Flat Extension Theorem for Moment Matrices"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/laurent_flat_extension.pdf",
+            "sha256": "a79a6aae70263cdc0b15415f838df666cfb99d6a00ef87bb1dae381493478fad"
+          }
+        ],
+        "sources": [
+          "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md"
+        ]
+      },
+      "mathematical_statement_and_status_unchanged": true
+    },
+    {
+      "object_id": "M-cdd66f04eebf4c44b73d62aece017919",
+      "old_version": 1,
+      "new_version": 2,
+      "old_pin": "546c2b3dec92c148900c273e8631187b3defa905d5aa21fa6c8f9d8eb0bea1fb",
+      "new_pin": "a4e4c065b40291de0d2f4684419381102f90eebf0cf979bbb71f8434a2e25db9",
+      "before": {
+        "object_id": "M-cdd66f04eebf4c44b73d62aece017919",
+        "version": 1,
+        "title": "Kun 有界度高围长关系扩展器构造",
+        "kind": "algorithm",
+        "truth_status": "proved",
+        "model": "有限关系类型 τ 的结构，同态保持关系元组。",
+        "statement": "所有 n 足够大时可多项式时间构造 n 点、围长至少 k、度有界的 ε-expander 关系结构。",
+        "quantifiers": "固定 τ,k,ε；n 超过仅依赖这些参数的阈值。",
+        "assumptions": [
+          "ε>0；至少二元的各关系分别满足 expansion 条件。"
+        ],
+        "scope": "所引文献的数学定理及指定参数。",
+        "objections": "核已整理正文的陈述与原 PDF 入口；保文献量词。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+          "sha256": "de08d9e732431ad8b7df4da921c7c42984746cce96a0fffba437547e19162d87",
+          "section": "1. Kun：Constraints, MMSNP and Expander Relational Structures"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/kun_mmsnp.pdf",
+            "sha256": "e6d37a035edb3cbaa3e246e5781a88c8a348eaaa16a57028dd8782dcf7373eea"
+          }
+        ],
+        "sources": [
+          "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md"
+        ]
+      },
+      "after": {
+        "object_id": "M-cdd66f04eebf4c44b73d62aece017919",
+        "version": 2,
+        "title": "Kun 有界度高围长关系扩展器构造",
+        "kind": "algorithm",
+        "truth_status": "proved",
+        "model": "有限关系类型 τ 的结构，同态保持关系元组。",
+        "statement": "所有 n 足够大时可多项式时间构造 n 点、围长至少 k、度有界的 ε-expander 关系结构。",
+        "quantifiers": "固定 τ,k,ε；n 超过仅依赖这些参数的阈值。",
+        "assumptions": [
+          "ε>0；至少二元的各关系分别满足 expansion 条件。"
+        ],
+        "scope": "所引文献的数学定理及指定参数。",
+        "objections": "核已整理正文的陈述与原 PDF 入口；保文献量词。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+          "sha256": "0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254",
+          "section": "1. Kun：Constraints, MMSNP and Expander Relational Structures"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/kun_mmsnp.pdf",
+            "sha256": "e6d37a035edb3cbaa3e246e5781a88c8a348eaaa16a57028dd8782dcf7373eea"
+          }
+        ],
+        "sources": [
+          "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md"
+        ]
+      },
+      "mathematical_statement_and_status_unchanged": true
+    },
+    {
+      "object_id": "M-d2f0e90baf4440cab9efbffecfee709e",
+      "old_version": 1,
+      "new_version": 2,
+      "old_pin": "7f98bc0a6bd16cb4009e92a95508a1acea102c4f4b8cceb1225da3a95cb98f39",
+      "new_pin": "a066527acf0feec7455d375787e9a60dbe8603fa27a7b32090db79d1c5d54fad",
+      "before": {
+        "object_id": "M-d2f0e90baf4440cab9efbffecfee709e",
+        "version": 1,
+        "title": "Laurent–Mourrain 稀疏 flat extension 唯一性",
+        "kind": "theorem",
+        "truth_status": "proved",
+        "model": "有限单项式集的截断 Hankel 矩与其 border 扩展。",
+        "statement": "若C含1且connected to 1，C+=C∪⋃_i x_iC，Hankel矩阵M_C+(y)是M_C(y)的秩不增扩展，则有唯一全矩序列ỹ，其完整矩阵M(ỹ)扩展M_C+(y)且秩等于rank M_C(y)。",
+        "quantifiers": "任意有限 C 及满足 flat 条件的截断矩序列。",
+        "assumptions": [
+          "C 含1且 connected to 1，C+含每个变量乘 C；相应 Hankel 一致性。"
+        ],
+        "scope": "所引文献的数学定理及指定参数。",
+        "objections": "核已整理正文的陈述与原 PDF 入口；保文献量词。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+          "sha256": "de08d9e732431ad8b7df4da921c7c42984746cce96a0fffba437547e19162d87",
+          "section": "2. Laurent–Mourrain：A Sparse Flat Extension Theorem for Moment Matrices"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/laurent_flat_extension.pdf",
+            "sha256": "a79a6aae70263cdc0b15415f838df666cfb99d6a00ef87bb1dae381493478fad"
+          }
+        ],
+        "sources": [
+          "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md"
+        ]
+      },
+      "after": {
+        "object_id": "M-d2f0e90baf4440cab9efbffecfee709e",
+        "version": 2,
+        "title": "Laurent–Mourrain 稀疏 flat extension 唯一性",
+        "kind": "theorem",
+        "truth_status": "proved",
+        "model": "有限单项式集的截断 Hankel 矩与其 border 扩展。",
+        "statement": "若C含1且connected to 1，C+=C∪⋃_i x_iC，Hankel矩阵M_C+(y)是M_C(y)的秩不增扩展，则有唯一全矩序列ỹ，其完整矩阵M(ỹ)扩展M_C+(y)且秩等于rank M_C(y)。",
+        "quantifiers": "任意有限 C 及满足 flat 条件的截断矩序列。",
+        "assumptions": [
+          "C 含1且 connected to 1，C+含每个变量乘 C；相应 Hankel 一致性。"
+        ],
+        "scope": "所引文献的数学定理及指定参数。",
+        "objections": "核已整理正文的陈述与原 PDF 入口；保文献量词。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+          "sha256": "0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254",
+          "section": "2. Laurent–Mourrain：A Sparse Flat Extension Theorem for Moment Matrices"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/laurent_flat_extension.pdf",
+            "sha256": "a79a6aae70263cdc0b15415f838df666cfb99d6a00ef87bb1dae381493478fad"
+          }
+        ],
+        "sources": [
+          "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md"
+        ]
+      },
+      "mathematical_statement_and_status_unchanged": true
+    },
+    {
+      "object_id": "M-dcddc9883c494fea8a4b270fdc4b10c7",
+      "old_version": 1,
+      "new_version": 2,
+      "old_pin": "dd884f44a2d29292f589d3fc015354320aca13ff64188e3f8e19748cf511dc64",
+      "new_pin": "d7d4efe1412c23438b3c478da7574fadf9d36fbf4edbff31177248a421331e4a",
+      "before": {
+        "object_id": "M-dcddc9883c494fea8a4b270fdc4b10c7",
+        "version": 1,
+        "title": "Kun 稀疏不可比引理的算法版本",
+        "kind": "algorithm",
+        "truth_status": "proved",
+        "model": "有限关系类型 τ 的结构，同态保持关系元组。",
+        "statement": "确定性构造同类型 S′，girth(S′)>k、S′→S，且对所有 |T|<t 有 S→T 当且仅当 S′→T。",
+        "quantifiers": "每个固定有限类型 τ、正整数 t,k，对任意有限 S；对所有所给大小界内目标。",
+        "assumptions": [
+          "t,k,τ 固定于复杂度合同。"
+        ],
+        "scope": "所引文献的数学定理及指定参数。",
+        "objections": "核已整理正文的陈述与原 PDF 入口；保文献量词。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+          "sha256": "de08d9e732431ad8b7df4da921c7c42984746cce96a0fffba437547e19162d87",
+          "section": "1. Kun：Constraints, MMSNP and Expander Relational Structures"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/kun_mmsnp.pdf",
+            "sha256": "e6d37a035edb3cbaa3e246e5781a88c8a348eaaa16a57028dd8782dcf7373eea"
+          }
+        ],
+        "sources": [
+          "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md"
+        ]
+      },
+      "after": {
+        "object_id": "M-dcddc9883c494fea8a4b270fdc4b10c7",
+        "version": 2,
+        "title": "Kun 稀疏不可比引理的算法版本",
+        "kind": "algorithm",
+        "truth_status": "proved",
+        "model": "有限关系类型 τ 的结构，同态保持关系元组。",
+        "statement": "确定性构造同类型 S′，girth(S′)>k、S′→S，且对所有 |T|<t 有 S→T 当且仅当 S′→T。",
+        "quantifiers": "每个固定有限类型 τ、正整数 t,k，对任意有限 S；对所有所给大小界内目标。",
+        "assumptions": [
+          "t,k,τ 固定于复杂度合同。"
+        ],
+        "scope": "所引文献的数学定理及指定参数。",
+        "objections": "核已整理正文的陈述与原 PDF 入口；保文献量词。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+          "sha256": "0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254",
+          "section": "1. Kun：Constraints, MMSNP and Expander Relational Structures"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/kun_mmsnp.pdf",
+            "sha256": "e6d37a035edb3cbaa3e246e5781a88c8a348eaaa16a57028dd8782dcf7373eea"
+          }
+        ],
+        "sources": [
+          "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md"
+        ]
+      },
+      "mathematical_statement_and_status_unchanged": true
+    },
+    {
+      "object_id": "M-e37dfe8f79184d5ba961c1e78cf3a558",
+      "old_version": 1,
+      "new_version": 2,
+      "old_pin": "0d954ed3f251ccc9fc393df4517c9fd00cf8b5d546922f26669559da23b864df",
+      "new_pin": "0b180510308df6f911e049d3940293ba946379e5693bea94c500ee8109bb2d87",
+      "before": {
+        "object_id": "M-e37dfe8f79184d5ba961c1e78cf3a558",
+        "version": 1,
+        "title": "Kun 的 MMSNP 与有限模板 CSP 互归约",
+        "kind": "theorem",
+        "truth_status": "proved",
+        "model": "有限关系类型 τ 的结构，同态保持关系元组。",
+        "statement": "每个 MMSNP 语言 L 与某有限结构集 T 的 CSP(T) 多项式时间互归约。",
+        "quantifiers": "每个有限类型和 MMSNP 语言，存在一组有限目标模板。",
+        "assumptions": [
+          "Feder–Vardi 中间定理及本文纤维多数值同态抽取。"
+        ],
+        "scope": "所引文献的数学定理及指定参数。",
+        "objections": "核已整理正文的陈述与原 PDF 入口；保文献量词。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+          "sha256": "de08d9e732431ad8b7df4da921c7c42984746cce96a0fffba437547e19162d87",
+          "section": "1. Kun：Constraints, MMSNP and Expander Relational Structures"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/kun_mmsnp.pdf",
+            "sha256": "e6d37a035edb3cbaa3e246e5781a88c8a348eaaa16a57028dd8782dcf7373eea"
+          }
+        ],
+        "sources": [
+          "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md"
+        ]
+      },
+      "after": {
+        "object_id": "M-e37dfe8f79184d5ba961c1e78cf3a558",
+        "version": 2,
+        "title": "Kun 的 MMSNP 与有限模板 CSP 互归约",
+        "kind": "theorem",
+        "truth_status": "proved",
+        "model": "有限关系类型 τ 的结构，同态保持关系元组。",
+        "statement": "每个 MMSNP 语言 L 与某有限结构集 T 的 CSP(T) 多项式时间互归约。",
+        "quantifiers": "每个有限类型和 MMSNP 语言，存在一组有限目标模板。",
+        "assumptions": [
+          "Feder–Vardi 中间定理及本文纤维多数值同态抽取。"
+        ],
+        "scope": "所引文献的数学定理及指定参数。",
+        "objections": "核已整理正文的陈述与原 PDF 入口；保文献量词。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+          "sha256": "0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254",
+          "section": "1. Kun：Constraints, MMSNP and Expander Relational Structures"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/kun_mmsnp.pdf",
+            "sha256": "e6d37a035edb3cbaa3e246e5781a88c8a348eaaa16a57028dd8782dcf7373eea"
+          }
+        ],
+        "sources": [
+          "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md"
+        ]
+      },
+      "mathematical_statement_and_status_unchanged": true
+    },
+    {
+      "object_id": "M-eeb1beecbe7345c29aae65f41841b671",
+      "old_version": 1,
+      "new_version": 2,
+      "old_pin": "afe7949bdb73e944dcc5919bb8c9a310eb3bd851681a9192a9487ee7157e8ba6",
+      "new_pin": "3b689c32cc0e06a1c31ec2ee7ac0317aadf2b58e482ad9e8d608beaba32f1d13",
+      "before": {
+        "object_id": "M-eeb1beecbe7345c29aae65f41841b671",
+        "version": 1,
+        "title": "交换 border 乘法算子与基判据",
+        "kind": "theorem",
+        "truth_status": "proved",
+        "model": "有限单项式集的截断 Hankel 矩与其 border 扩展。",
+        "statement": "对 connected-to-1 的基候选，border prebasis 的变量乘法算子两两交换当且仅当该组是商的 border basis。",
+        "quantifiers": "对每个满足文献假设的 border prebasis。",
+        "assumptions": [
+          "保留 C 的 connected-to-1 和原文的商与 border 定义。"
+        ],
+        "scope": "所引文献的数学定理及指定参数。",
+        "objections": "核已整理正文的陈述与原 PDF 入口；保文献量词。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+          "sha256": "de08d9e732431ad8b7df4da921c7c42984746cce96a0fffba437547e19162d87",
+          "section": "2. Laurent–Mourrain：A Sparse Flat Extension Theorem for Moment Matrices"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/laurent_flat_extension.pdf",
+            "sha256": "a79a6aae70263cdc0b15415f838df666cfb99d6a00ef87bb1dae381493478fad"
+          }
+        ],
+        "sources": [
+          "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md"
+        ]
+      },
+      "after": {
+        "object_id": "M-eeb1beecbe7345c29aae65f41841b671",
+        "version": 2,
+        "title": "交换 border 乘法算子与基判据",
+        "kind": "theorem",
+        "truth_status": "proved",
+        "model": "有限单项式集的截断 Hankel 矩与其 border 扩展。",
+        "statement": "对 connected-to-1 的基候选，border prebasis 的变量乘法算子两两交换当且仅当该组是商的 border basis。",
+        "quantifiers": "对每个满足文献假设的 border prebasis。",
+        "assumptions": [
+          "保留 C 的 connected-to-1 和原文的商与 border 定义。"
+        ],
+        "scope": "所引文献的数学定理及指定参数。",
+        "objections": "核已整理正文的陈述与原 PDF 入口；保文献量词。",
+        "body": {
+          "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+          "sha256": "0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254",
+          "section": "2. Laurent–Mourrain：A Sparse Flat Extension Theorem for Moment Matrices"
+        },
+        "evidence": [
+          {
+            "path": "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/laurent_flat_extension.pdf",
+            "sha256": "a79a6aae70263cdc0b15415f838df666cfb99d6a00ef87bb1dae381493478fad"
+          }
+        ],
+        "sources": [
+          "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md"
+        ]
+      },
+      "mathematical_statement_and_status_unchanged": true
+    }
+  ],
+  "affected_tasks": [
+    "unrelated-machines-3a-3a-03312e3ef480754a",
+    "unrelated-machines-3a-3a-ec98dbd143c32cff",
+    "unrelated-machines-3a-3a-5c01b2e813440a3d",
+    "unrelated-machines-3a-3a-4307b22874ace6d9",
+    "boss2-kun-same-signature-3b-5d4dd1a8a16eca9d",
+    "boss2-kun-fixed-seed-exact-n-3b-3b-a0d1b953a8e694c8",
+    "unrelated-machines-3a-3a-a10ca7ce6f144aff",
+    "unrelated-machines-3a-3a-f3d11f3d19e62b00",
+    "unrelated-machines-3a-3a-4cf8579e24721ace"
+  ],
+  "affected_edges": [
+    "map/edges/unrelated-machines-3a-3a-4307b22874ace6d9/expanders-to-sparse-incomparability.json",
+    "map/edges/unrelated-machines-3a-3a-5c01b2e813440a3d/commuting-border-basis-to-connected-column-flat-extension.json",
+    "map/edges/boss2-kun-same-signature-3b-5d4dd1a8a16eca9d/sparse-and-modern-dichotomy-complete-fixed-signature.json",
+    "map/edges/unrelated-machines-3a-3a-03312e3ef480754a/sparse-incomparability-to-mmsnp-reductions.json",
+    "map/edges/boss2-kun-fixed-seed-exact-n-3b-3b-a0d1b953a8e694c8/exact-order-by-dense-expander-sizes.json"
+  ],
+  "mathematical_review": "H^C acts on Span(C), while H^{C+} acts on Span(C+). The rank-2 example has a column basis containing 1 with determinant a−1, but no connected-to-1 column basis. General sparse flat extension uses Lemmas2.2–2.3. Neither theorem nor proof-step gains a stronger domain."
+}
