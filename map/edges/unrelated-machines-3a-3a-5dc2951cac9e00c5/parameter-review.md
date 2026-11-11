@@ -41,13 +41,13 @@
 
 ## 3. 概述中 φ 的最小勘误及影响
 
-本轮发现时概述把 Theorem 1.8 写为 `φ(x)=2x/(1+x)`；印5页和印11页原图/文本均为
+原草稿审读时概述把 Theorem 1.8 写为 `φ(x)=2x/(1+x)`；印5页和印11页原图/文本均为
 
 \[
  \phi(x)=\frac{2\sqrt x}{1+x}.
 \]
 
-最小修订是只在该中间式补根号，冻结 PDF 不改。原错误式在0<x<1更小，故它声称了未获来源支持的更强 collision 收缩，不可当作已付证明。登记核心的 Theorem 1.1 主界与两个推论本来正确，不需降低其 truth_status。精确主界以上述 val_+ 的 Theorem 4.1 / 4.7 证明链为依据；不能把修正后的较弱 Theorem 1.8 直接代入 `||G||≤sqrt(r)`，就冒称得到了完全相同的精确常数。
+最小修订是只在该中间式补根号，冻结 PDF 不改。当前核心已为 v3，绑定正文已经按此补上根号；本轮复核复用该修正，不把历史错误描述为仍存在的现行陈述。原错误式在0<x<1更小，故它声称了未获来源支持的更强 collision 收缩，不可当作已付证明。登记核心的 Theorem 1.1 主界与两个推论本来正确，不需降低其 truth_status。精确主界以上述 val_+ 的 Theorem 4.1 / 4.7 证明链为依据；不能把修正后的较弱 Theorem 1.8 直接代入 `||G||≤sqrt(r)`，就冒称得到了完全相同的精确常数。
 
 ## 4. Set Cover 的已付局部贡献
 
@@ -113,3 +113,11 @@ v3附加域 `Qγ≥1` 也不可遗漏，而且必须同时保证YES与NO输入�
 generic 稀疏化的 NO 条件是严格 `val<Γ`，门槛为 `0.06N/sqrt(Γ)`；如果重复只得到 `val≤γ₀`，须另取Γ>γ₀（如5γ₀/4）再代入。YES近完美时还需误差δ满足δΔ≤1才能得成本2N；重复不会把近完美自动变perfect，不能跳过误差预算。
 
 `M-fb633f3a6f1448fbbd63bfc7c3806c40` 恰记录 Minzer–Zheng 这一δ预算和严格Γ修复。其 δ≤1/d、正规化、log³g 核算均独立于本重复界。当前比较不发布DS单独推出这三项MinRep结果的逻辑边，也不把其不同的all-edge/partial-edge、YES与随机量词混在一起。
+
+## 8. 当前 v3 定向复核与复用范围
+
+2026-11-11，Boss4/fresh-um-two-worker 读当前本任务、核心 v3、全部七个共享端点的完整 registry 记录及原两条边、receipt 和本 review。核心当前 registration pin 为 `744e82f6dc08ae52f2228358b8e98c308aaf6293629634d42511e79013d9192b`。本轮完整读当前 PCSP/DS、Set Cover、MinRep 三篇整理正文，以及 partial-MinRep v2、v3 的任务所列全部现行正文/审查/后缀证据；原成熟证明继续复用，未重新运行科学搜索或复审外部 Chan/MR PCP 的所有证明。
+
+本轮直接从冻结 PDF 用 `pdftotext -layout` 重抽 DS pp.3–5、p.20、p.24，确认 Theorem 1.1/Corollaries 1.2–1.3、Theorem 4.7、Theorem 6.4 的参数行；重新渲染并查看 p.5 的 φ 根号及 p.24 的错误 k/2 指数。另读已有 DS 提取全文中 Claim 2.3、Theorem 3.3、Theorem 4.1 的承重入口，保留原已成熟 threshold-rounding/correlated-sampling 证明的复用范围。本轮直接重抽 Moshkovitz PDF pp.6–8，读 Lemmas 4.3–4.4、Definitions 4.5–4.6、Lemma 4.7、Corollary 4.8 与 partition-system 接口。直接重抽 Manurangsi PDF pp.4–7，核近完美 YES、严格 NO 和稀疏化量词；重抽 Minzer–Zheng PDF pp.60–61，核 δ=1/g、Lemma 7.12 及 Theorem 7.13 应用行。对这三项 MinRep 对端继续复用成熟正文中的自足修复，不把本轮读相关两页宣称成 106 页全文复审。
+
+两个贡献的数学内容不因 φ 修订而改变：Set Cover 分支从 Theorem 4.7 的精确主界/小值推论出发，另用 Lemma 4.4 与独立的 ℓ² 列表桥，保留 ALL；partial-MinRep 分支由高值推论给输入放大，另核 YES/NO 共同的 Qγ≥1 与固定参数复杂度。两条都只是 conditional contribution；上述其余上游与目标自身证明义务仍按各自 remaining 保留。当前任务没有额外 follow-up 对；七个已读比较端点的逐对处置已写入同任务 receipt.closed_overlaps。

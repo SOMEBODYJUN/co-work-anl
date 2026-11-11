@@ -1,0 +1,51 @@
+{
+  "edge_id": "ca54r5-disjoint-maxima-static-sharp-welfare-contribution",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-DISJOINT-MAXIMA-2M1"
+  ],
+  "target_ids": [
+    "M-3b33bff2ccf041a9a82eb35664d00a69"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "n≥1；全目录共同核大小C，不同包含极大残余覆盖两两不交；另有同一目录静态锐等式OPT_n=(2n−1)v_n。n为提供者人数，不限制目录基数。不假设实际前缀为L。",
+  "roles": {
+    "CA-DISJOINT-MAXIMA-2M1": "全部完整SPE的DM福利界。",
+    "M-3b33bff2ccf041a9a82eb35664d00a69": "只接收W≥n v_n的总福利一步。"
+  },
+  "explanation": "DM整理得W≥[n OPT_n+(n−1)C]/(2n−1)，代静态锐等式即W≥n v_n+(n−1)C/(2n−1)≥n v_n。不用实际前缀嵌入。S2仅最优比较元组不交，不能倒推本边所需整个目录极大残余结构。 v5的m=1锐性句仅限定所给单覆盖构造；任意一人目录由真实BR得W=OPT₁，贡献公式仍成立。",
+  "scope": "结构子类的总福利部分，不代替逐人和末位等号。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/不交极大主题锐福利界--定理.md",
+      "sha256": "73ee40ebc928e90365b86c776677e9acabd8445d5cb461c0675af50e77fdaac8"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/静态安全值的亏量刚性与纯背景舍入--定理.md",
+      "sha256": "3d10d512cd632bacdbcc7c9bd8553438dd9fa3ad08a4aabaa61e638c17e4ad64",
+      "section": "8. 退化边界与真正能接回 SPE 的条件推论"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-54b1539bc147e0b3/review.md",
+      "sha256": "c79717248672a2afa1023c16003cb60e1aaee98cae84ec08a4e2f21b1f8870b7"
+    }
+  ],
+  "reviewed_by": "Boss4/boss4-source-clarification-repair-repair-eb9c65b4dae79501",
+  "review_note": "本次fresh worker实读此关系所需现行正文及承重证明；原未改数学复用，未重跑旧LP/BI/审计。核全部有序历史、同σ真实后继、模型/量词和整条/局部作用。CA-DISJOINT按v5重核；六边公共review证据同步改版。",
+  "contribution": {
+    "result": "不交极大残余花瓣且静态取等的交集上，每份完整SPE有W≥n v_n+(n−1)C/(2n−1)≥n v_n，无须先知实际前缀L。",
+    "remaining": "目标末位=v_n、前缀g=v_n及逐人≥v_n仍由S2加同一实际前缀负载L证明；结构外无本边付款。"
+  },
+  "endpoint_pins": {
+    "CA-DISJOINT-MAXIMA-2M1": "d0ea4ff60d59e858bed8625cf7bdb692e69a521ac0b1e4323bfa0243154d4d6f",
+    "M-3b33bff2ccf041a9a82eb35664d00a69": "3f806751ffafb741306cfd9dbb14b74757d4564563e438ed4ae123d85289ae70"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/不交极大主题锐福利界--定理.md": "73ee40ebc928e90365b86c776677e9acabd8445d5cb461c0675af50e77fdaac8",
+    "archives/customer-attraction/state/定理/静态安全值的亏量刚性与纯背景舍入--定理.md": "3d10d512cd632bacdbcc7c9bd8553438dd9fa3ad08a4aabaa61e638c17e4ad64",
+    "map/edges/customer-attraction-3a-3a-54b1539bc147e0b3/review.md": "c79717248672a2afa1023c16003cb60e1aaee98cae84ec08a4e2f21b1f8870b7"
+  },
+  "review_digest": "e30ea07d337ad645a87d604c02d342ca2c6b2edecf6959759621e6643a18faf9"
+}
