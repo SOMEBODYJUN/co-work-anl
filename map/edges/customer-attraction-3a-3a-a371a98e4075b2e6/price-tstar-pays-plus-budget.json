@@ -1,0 +1,61 @@
+{
+  "edge_id": "cag-a371-price-tstar-pays-plus-budget",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-a2ddccf1426340bcb9bbddd432eab41b"
+  ],
+  "target_ids": [
+    "M-a1872383daa0444e9f6891eb3cfe576f"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定正文唯一三人四标签完整有序策略σ：根0；一人历史0,1,2,3后分别3,2,1,0；末位完整16历史动作按正文表，尤其13后3而31后2。全部15种非空兴趣类型r_B为任意非负实数，且Γσr≥0；允许空客户、空覆盖、同覆盖异标签及任意弱平局。实际计数q=(1,0,0,2)，已占用a∈{0,3}，零福利不归一除法。",
+  "roles": {
+    "M-a2ddccf1426340bcb9bbddd432eab41b": "提供同锥标签3在全部非负分数查询上的B_r(u3)≤2u3。",
+    "M-a1872383daa0444e9f6891eb3cfe576f": "接收其全部占用标签的价格加实际收益不等式；该边不认领原plus有理表的来源身份。"
+  },
+  "explanation": "固定σ实际终局为(0,3,3)，故W=u0+2u3。根真实偏离到3后的规定回复为0再3，终局(3,0,3)有相同计数；该根IC给u0≥u3（39行字典序中的第38行恰ℓ0−ℓ3）。对任意非负查询z，τ=Σz≥0，源tstar在标签3给C_r(z)−τu3≤2u3。于是C_r(z)−τu0≤C_r(z)−τu3≤2u3=W−u0；对标签3则C_r(z)−τu3≤2u3≤u0+u3=W−u3。对所有z取sup得两个plus预算。等价的逐目标有理恒等式是c_plus,0(z)=c_floor,3(z)−τ(ℓ0−ℓ3)，c_plus,3(z)=c_floor,3(z)−(ℓ0−ℓ3)，只增加同σ根IC的非负乘子。该推导可生成另一套有效plus证书，但不把它冒认保存原plus表；原表本轮独立实读并由price-finite-contract-to-plus.json的完整实例化支付。",
+  "scope": "源tstar足以支付目标全部价格预算这一承重数学部分，使用固定σ的特定根IC和W恒等式，不能推广到只有相同root033的另一动作图。原plus60份载体的独立存在/身份不由此预算推导替代。",
+  "contribution": {
+    "result": "在目标全部固定锥及全部非负查询量词下，推出每个a∈{0,3}的B_r(u_a)+u_a≤W；tstar预算在此σ上足以支付plus全部价格结论。",
+    "remaining": "目标完整登记还包含所保存原60份plus有理载体的存在及精确身份；本边解析预算推导不生成那份原表。本轮已完整实读该JSON，原表的逐项精确残差由另一条finite-contract-to-plus完整实例化边支付，不把两份原证书并作同一证明来源。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/固定三人策略锥的全查询价格证书--计算.md",
+      "sha256": "335d056ba9a922ce0ca7bdc996c043d157f2cca2efa2f2a402cf1b5a7f6e41b5",
+      "section": "一、同一份完整有序策略"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/固定三人策略锥的全查询价格证书--计算.md",
+      "sha256": "335d056ba9a922ce0ca7bdc996c043d157f2cca2efa2f2a402cf1b5a7f6e41b5",
+      "section": "三、两套60项证明如何覆盖无限查询与整个锥"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-policy-price/original/credible/nonPNE_fixed_policy_tstar_exact.json",
+      "sha256": "926e784b611374bd57259544e283c87511848578344c1d7842362d67853c7e1a"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fixed-policy-price/original/credible/nonPNE_fixed_policy_price_plus_u_exact.json",
+      "sha256": "9faf718d29e79c7e4a3e85fc33e60ab0fa02f6d12a44aaed95ab1fd7c7e12c91"
+    },
+    {
+      "path": "archives/customer-attraction/state/等价/固定完整SPE策略锥的有限价格合同--等价.md",
+      "sha256": "8664984e80081e1bc83093fc93ea90bfe224f82f659ac980ff1515113c9abf9b"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "Boss4完整实读当前两核心v1、共同模型、顶点v2及固定锥合同v1正文，两份冻结数学原稿和两JSON全部字段（各完整21节点σ、30顶点、60份稀疏有理证明）。本轮从定义另写Fraction计算，显式支撑及0/1满秩基再生V4=30，从全部63个真实偏离重建39行，重算两表全部1800残差坐标、μ非负及maxβ=0；这些有限有理核算仅核精确载体，普遍量词由顶点证明及逐坐标恒等式承担。未运行原build、LP、SPE搜索，也未声称新增盲审。 另逐类型核两条交叉目标恒等式；共同根IC不删。",
+  "endpoint_pins": {
+    "M-a1872383daa0444e9f6891eb3cfe576f": "7b2cafa0be4fe8b3686bebce121a149fdc2e5b8b6c82d115ef9edf40bed5315b",
+    "M-a2ddccf1426340bcb9bbddd432eab41b": "900928bd4ff96925e101f6b945cd929eb42e50ab686d6713c5fa9befeb54b271"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/固定三人策略锥的全查询价格证书--计算.md": "335d056ba9a922ce0ca7bdc996c043d157f2cca2efa2f2a402cf1b5a7f6e41b5",
+    "archives/customer-attraction/tools/evidence/fixed-policy-price/original/credible/nonPNE_fixed_policy_tstar_exact.json": "926e784b611374bd57259544e283c87511848578344c1d7842362d67853c7e1a",
+    "archives/customer-attraction/tools/evidence/fixed-policy-price/original/credible/nonPNE_fixed_policy_price_plus_u_exact.json": "9faf718d29e79c7e4a3e85fc33e60ab0fa02f6d12a44aaed95ab1fd7c7e12c91",
+    "archives/customer-attraction/state/等价/固定完整SPE策略锥的有限价格合同--等价.md": "8664984e80081e1bc83093fc93ea90bfe224f82f659ac980ff1515113c9abf9b"
+  },
+  "review_digest": "6eb2c26197fe0e9d0bf27dcddf0f882a81294a54ba5c56fa924f712d1c86f8f6"
+}
