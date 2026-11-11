@@ -1,0 +1,63 @@
+{
+  "status": "WAITING_FINAL_INPUT_SHA_AND_EXPLICIT_MAIN_RELEASE",
+  "optimizer_calls_currently_authorized": 0,
+  "input_sha256": null,
+  "actual_input_counts": null,
+  "actual_main_release_present": false,
+  "future_output_contract": {
+    "released_preflight_result.json": "After Main release only: exact domain, literal parent, complete scaling, zero/duplicate/affine row checks; optimizer calls zero.",
+    "source_pins_at_solve.json": "The exact consumed input/source/evidence/code/release pin closure.",
+    "single_lp_consumed.json": "Exclusive permanent one-call budget marker created and fsynced before optimizer entry.",
+    "discovery_output.json": "The sole actual solver result or exception, preserving every returned numerical residual/marginal and original row scale/order.",
+    "numerical_summary.json": "Actual numerical objective and all strictly positive returned primal/dual entries, without exact or SPE claims.",
+    "exact_certificate.json": "Full 513 primal coordinates, all 3056 raw payments, two signed free equality multipliers, full exact residuals and affine objective accounting.",
+    "all3056_raw_row_checks.json": "Every raw affine slack, original-scale payment and complementary product.",
+    "all513_column_checks.json": "Every primal coordinate, objective coefficient, dual residual and complementary product.",
+    "exact_recovery_summary.json": "Actual exact objective, returned-support ranks, all positive exact payments and all zero-residual columns.",
+    "recovery_obstacle.json": "If rational recovery fails: exact stage/support/rank obstruction, without another optimizer call.",
+    "independent_check_result.json": "Independent standard-library Fraction reparse/recomputation of all rows, columns, free equalities, affine RHS, scales and complementarity.",
+    "optimal_face.json": "All exact zero-residual columns; original equalities and all actual positive-payment equalities; every raw parameter inequality and all 513 nonnegativity conditions.",
+    "optimal_face_check_result.json": "Independent Fraction RREF/full-face coverage/rank/parameter/equality/functional-identity verification.",
+    "positive_payment_diagnostic_queue.json": "Actual current positive-payment source obligations only; no inherited equality pattern or source-specific theorem.",
+    "true_branch_equality_diagnostic.json": "Future source-specific audit only after actual positive payments and explicit release of any additional source formulas; not emitted by this scaffold.",
+    "proof.md": "Future manually reviewed actual result and source-validity reasoning; never a prefilled numerical or SPE assertion.",
+    "freeze_manifest.json": "Future final actual input/source/results/proof fingerprint after substantive completion; distinct from scaffold_manifest.json.",
+    "SHA256SUMS": "Future final-output checksums; neither authorization nor a mathematical proof."
+  },
+  "single_optimizer_contract": {
+    "solver": "scipy.optimize.linprog/highs-ds",
+    "calls": 1,
+    "time_limit_seconds": 60,
+    "presolve": false,
+    "primal_feasibility_tolerance": 1e-09,
+    "dual_feasibility_tolerance": 1e-09,
+    "full_3056_by_513_matrix_after_exact_release": true,
+    "bounds": [
+      0,
+      null
+    ],
+    "default_invocation_only_status": true,
+    "explicit_execution_flag": "--run-released-once"
+  },
+  "face_contract": {
+    "columns": "All exact zero dual-residual columns, regardless of representative support.",
+    "equalities": "Both original affine equalities plus every exact strictly positive raw-payment row.",
+    "remaining_conditions": "Every original raw inequality and all 513 nonnegative-coordinate conditions; no pruning of zero/duplicate constraints.",
+    "dimension": "The unrestricted affine parameter count is not asserted to be the feasible-face relative dimension.",
+    "signed_functionals": "Any fixed affine-face identity is verified in all 513 columns and has signed coefficients; it is not a universal nonnegative payment."
+  },
+  "diagnostic_boundary": {
+    "old_positive_rows_inherited": false,
+    "old_zero_states_inherited": false,
+    "old_utility_K_relation_inherited": false,
+    "true_IC_weight_replaced_by_numerical_divisor": false,
+    "fixed_K_allowed": false,
+    "support_restricted_optimization_allowed": false,
+    "old_point_completion_allowed": false,
+    "phaseI_allowed": false,
+    "second_LP_allowed": false,
+    "SPE_claim_from_primal_allowed": false,
+    "source_specific_checks_pending_actual_result_and_release": true
+  },
+  "original_half_problem_status": "OPEN"
+}
