@@ -1,0 +1,113 @@
+{
+  "definition": {
+    "task_id": "boss5-pu-price-3b-dd8f8641afe7aa6a",
+    "stage": "3B",
+    "registry": "research/registry.json",
+    "object_ids": [
+      "CA-CARTESIAN-PAYOFF-UNIQUE-FACTOR-v1",
+      "M-b77c555512fb45fc9616608c28f65ed0",
+      "customer-attraction/cartesian-coupled-continuation-common-price-compensation-interface"
+    ],
+    "read_object_ids": [],
+    "input_pins": {
+      "CA-CARTESIAN-PAYOFF-UNIQUE-FACTOR-v1": "478b993429188620a73b4531f1bc8c397d7bae51999252b2c19dc35e1ba00d5e",
+      "M-b77c555512fb45fc9616608c28f65ed0": "518c2387c03f4858dda71894a4eff021a2752054ac0e697b6b7d7c270a973b48",
+      "customer-attraction/cartesian-coupled-continuation-common-price-compensation-interface": "bc907dda443c80430a441368e38e5dab5db4b17bcf448512905cbe4bcdf953c8"
+    },
+    "write_paths": [
+      "map/edges/boss5-pu-price-3b-dd8f8641afe7aa6a",
+      "map/receipts/boss5-pu-price-3b-dd8f8641afe7aa6a.json"
+    ],
+    "goal": "在全体玩家、全部分量有序子博弈支付唯一条件下，逐坐标投影任意耦合完整SPE终局，再将分量选定SPE预算转成联合最小利润价格及half。精确区分投影终局实现与字面策略独立，说明任意耦合补偿尚缺条件。",
+    "context_plan": {
+      "budget": {
+        "context_tokens": 500000,
+        "window_source": "official-default",
+        "model": "gpt-6.1-sol",
+        "used_tokens": null,
+        "history_mode": "fresh-worker",
+        "reserve_tokens": 200000,
+        "reading_tokens": 300000,
+        "output_tokens": 100000,
+        "runtime_remaining_tokens": null,
+        "declared_remaining_before_reserve_tokens": null,
+        "assumptions": [
+          "Window source is declared, not discovered from this conversation.",
+          "Reading budget includes source text and object/task metadata.",
+          "Reserved context includes expected generated records and later reasoning/tool growth.",
+          "Fresh worker assumed; actual system/prefix usage is unknown and covered only by the engineering reserve."
+        ],
+        "budget_is_runtime_measurement": false
+      },
+      "reading": {
+        "chars": 14565,
+        "utf8_bytes": 27582,
+        "source_tokens": 20973,
+        "metadata_tokens": 4215,
+        "estimated_tokens": 25284,
+        "metadata_chars": 4877,
+        "metadata_utf8_bytes": 6520,
+        "distinct_files": 4,
+        "reading_segments": 5,
+        "token_count_is_estimate": true,
+        "estimators": [
+          "conservative-math-text-estimate-v1; not a tokenizer count"
+        ],
+        "unmeasured_refs": [],
+        "measurement_scope": "Requested complete text spans plus supplied metadata; binary evidence is not token-counted from raw bytes.",
+        "task_overhead_tokens": 96
+      },
+      "estimated_output_tokens": 5410,
+      "oversized": false,
+      "requires_export": false,
+      "reading_refs": [
+        {
+          "path": "archives/customer-attraction/state/定理/全体玩家续局支付唯一的乘积分解--定理.md",
+          "sha256": "34e461e4bac319cd0804f194fd5e83ba3fb7b10cafc6d4aa25cad6cd0070ab4a"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/笛卡尔福利与支付唯一分解的精确核验--计算.md",
+          "sha256": "b92e1abb87634e79cee811dc1fe2a2e80bee81c1bed71bfa580bfc0da028c28a"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/笛卡尔目录的共同质量覆盖与非负价格卷积--定理.md",
+          "sha256": "26caea513dccd71d5b679783c31544e0db32af07ae55753336e0f9aee7bd155a",
+          "section": "P4：最小玩家价格预算的条件保持"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/笛卡尔目录的共同质量覆盖与非负价格卷积--定理.md",
+          "sha256": "26caea513dccd71d5b679783c31544e0db32af07ae55753336e0f9aee7bd155a",
+          "section": "P1：指定完整SPE乘积和根量可加"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/笛卡尔目录的共同质量覆盖与非负价格卷积--定理.md",
+          "sha256": "26caea513dccd71d5b679783c31544e0db32af07ae55753336e0f9aee7bd155a",
+          "section": "P2：每个坐标共享同一个分数质量t"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/笛卡尔目录的共同质量覆盖与非负价格卷积--定理.md",
+          "sha256": "26caea513dccd71d5b679783c31544e0db32af07ae55753336e0f9aee7bd155a",
+          "section": "P3：达到的非负价格下卷积"
+        },
+        {
+          "path": "archives/customer-attraction/state/候选/笛卡尔耦合续局的共同价格补偿接口--候选.md",
+          "sha256": "30dc4d22b418fe0f83b638f8d07ab79a2c3e5e38f2cae7331db895fff58ac263"
+        }
+      ],
+      "deferred_candidate_ids": [],
+      "deferred_candidate_issues": {},
+      "comparison_priority": 1,
+      "family_hint": "CA-CARTESIAN-PAYOFF-UNIQUE-FACTOR-v1",
+      "scope_hint": "archives/customer-attraction",
+      "status": "complete-declared-references-planned",
+      "note": "Compare the stated mathematical question on all selected endpoints; if large, resume the same question in reading passes.",
+      "comparison_question": "在全体玩家、全部分量有序子博弈支付唯一条件下，逐坐标投影任意耦合完整SPE终局，再将分量选定SPE预算转成联合最小利润价格及half。精确区分投影终局实现与字面策略独立，说明任意耦合补偿尚缺条件。"
+    }
+  },
+  "state": "available",
+  "owner": null,
+  "request_id": "8be56e60053443b4864e5e369d760c51",
+  "requests": {
+    "8be56e60053443b4864e5e369d760c51": "plan"
+  }
+}
