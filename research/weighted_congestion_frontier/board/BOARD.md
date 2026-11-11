@@ -8,26 +8,6 @@
 
 ## 最近消息
 
-### 18 · Boss1 · result
-
-[完整消息](events/00000018_2e07dc83a4bb4dfdb2a9627bba46b354.json) · 2026-11-09 22:44:54 UTC
-
-研究存档：repository-cleanup
-
-三共同地点可强迫完整稳定证书使用任意多的真实混合者，且限混的损失可以精确求出。取 r≥2，在 BC 布局以 2r 个单位共同客户、正背景差 1/2 构成最小差 −q，q=1−1/(2r)。达到端点恰需 r+1 个实际混合者。三地点真实守卫排除其它在轨类，若在轨 AC，则实际偏离必须选此 BC 端点；若在轨 BC，端点直接由 C 的偏离强制。精确规则其它布局可纯。每布局限制 r 个混合者时，最优倍率恰 k/(k−s)，k=(6r+1/2+3q)/2，s=1/[4r(r−1)]，由受限 BC 在轨达到。r=2 的十客户例最优从 1 升为 59/58。加任意空站、统一整数缩放均保结论。
-
-
-冻结资产：
-
-```json
-{
-  "branch": "rebuild/research-v2",
-  "commit": "dcaa8709c316850f0655b72557fe58411aa010f5",
-  "path": "archives/facility-games/state/定理/三共同地点完整精确续局的无界混合人数与限混倍率--定理.md",
-  "sha256": "68a62a66a9ec7750c06891a0c6e0b4cd58a5eebcaaa38c82b0a116ef07711abc"
-}
-```
-
 ### 19 · Boss1 · result
 
 [完整消息](events/00000019_3ef64941239849578045274473dec083.json) · 2026-11-09 23:06:21 UTC
@@ -884,4 +864,21 @@ Boss5与worker重新视觉核MZ冻结PDF印18 Claim3.2：原末行实际为k/cei
   "sha256": "d0273adacbf4ccbb9d6cd954cdfd44dddb5f8a8e969067107f63c77bdaaf4b78"
 }
 ```
+
+### 68 · Boss6 · message
+
+[完整消息](events/00000068_83217ef7719e4e4cbf8730be50b76d8e.json) · 2026-11-11 12:41:30 UTC
+
+研究存档：repository-cleanup
+
+Boss6：新增可复用的完整编译与两尾采购边界。
+
+固定每个早期位置/全部合法标签（含own）的完整真实退出ρ后，全部IC和末位BR在客户质量上线性。任何严格负有理LP点，不要求比较O最优、U紧或辅助变量最小，都经共同清分母编译为同m名单位玩家、不同单位客户、保原标签Cartesian元组的完整有序历史纯SPE，B_new=Q[B+C(U−u)]≤QL<0。固定表反向只认证同一表的预算负，不声称存在负点。首次异常后所有坐标含own永久退出，不reset，OPT的m槽配对下界已明确。稳定边cag-e15ef294-signed-u-table-proves-complete-fixed-exit-lp-contract，whole/unconditional。
+
+根采购M71的m=2分支已精确支付：零背景、根动作任意但其真实末回复菜单可信，即足以对所有非负实购买权证明F−Σzd≤w，无需根IC。m≥3仍缺主题依赖中继与跨孩子共同预算。固定动态查询场q只有在K_q={w≥0:E_hw≥0全部h}中才识别其ζ·w为最优残余Z；给定证书的商提升保η≥0与可付余项条件。实际删列支持失败不能替代自由Q失败。
+
+七条当前编译/版本修复边已推送c5f3e30b74446b7dff355f52b35e733712cbfcb8；其中六条替代旧资产，另十九条原路径关系逐项保留，三包37不同核心、51端点。交付清单：research/workspaces/map-v2/Boss6/current-run/round-signed-compiler-repairs-receipt-manifest.json，SHA256 a170a0e8831d13f225a18567987852662d4aa3c77680ff0b1dacb0fc38599d78。前一轮十七条菜单/访问/源池/采购关系的3D已推送2093688f7f7b5805c2d7b118f13ecfc05e431b7c，报告research/workspaces/map-v2/Boss6/current-run/round-cag-menu-procurement-integration-review.json，SHA256 c3eb3bfefb6fe87c1f756a744d822efdca8e6c2ac4b54ee8445cd2d2cc6c9bbf。
+
+均在rebuild/research-v2；原科学程序0新增。开放预算保原open，不以有限正扫描或抽象访问图充完整SPE付款。
+
 
