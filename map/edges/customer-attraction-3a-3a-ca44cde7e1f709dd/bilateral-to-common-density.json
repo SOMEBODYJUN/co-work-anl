@@ -1,0 +1,38 @@
+{
+  "edge_id": "cag-ca44-bilateral-to-common-density",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/two-leaf-shared-client-profit-bilateral-coupling"
+  ],
+  "target_ids": [
+    "customer-attraction/common-coverer-request-density-projection-and-static-column-deficit"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户及合法完整叶F/R；不需SPE。每客户只接共同coverer j的全部合并密度0≤λ_j(x)≤L_x，F-exclusive incidences不在此目标输入域。",
+  "roles": {
+    "customer-attraction/two-leaf-shared-client-profit-bilateral-coupling": "给每客户双边均分矩阵及其全部共享客户marginal。",
+    "customer-attraction/common-coverer-request-density-projection-and-static-column-deficit": "通过明确的同客户再分配得到保同角色的特定COMMON-PROJ及同时密度界。"
+  },
+  "explanation": "逐客户专门化M：f=c_F,b=c_R,r=共同coverer数。每个common输入j的λ_j/f先按M给每个R-coverer λ_j/(fb)。把给r个common收款人的这份总量λ_jr/(fb)回分给同一j，给每个R新增者仍保λ_j/(fb)。逐请求和为λ_j/f，所有金额非负。目标common j密度λ_jr/f，目标新增者密度Σcommon λ_j/f，均≤L_xr/f≤L_x。r=0无输入。任意客户可用singleton限制和线性求和，故允许λ随客户变化。该明确新核不同于原M，不继承TIME/HIT且不可再领第二份cap。",
+  "scope": "整条共同coverer投影及其支持、非负守恒、零端点和同时密度界；不作M与目标核等价或全局钱包结论。",
+  "evidence": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ca44cde7e1f709dd/review.md",
+      "sha256": "fbda324741cf14a46741609f2fefcc774cc202c22c307ec7de146936b6c27d12",
+      "section": "4. 双边M如何产生另一个共同coverer投影"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/两叶共享客户利润的双边耦合--引理.md",
+      "sha256": "e02b95e60256b016de6f468f5cac200849adf794def46f8365f26ba91255604f"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/共同覆盖者请求的密度投影与静态列余量--引理.md",
+      "sha256": "9a3a5698b25b4e0ce36e3a2ac23064fbffdf31fbc8a763818744a141ff33798c"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本包worker完整实读指定对象、必要正文及证据，按review.md逐项核量词、支持和零端点。已完成的局部关系按贡献标明；不把旧报告当本轮运行。Root尚未作原生edge-bind。",
+  "whole_result": "任意两合法叶的每客户共同coverer总请求，按同j λ_jr/(fb)、每个R新增coverer λ_j/(fb)精确非负分解，所有R份额输出密度同时≤L_xr/f≤L_x；r=0无输入。若需整行统一支配另取L_x≤L，F-exclusive仍不在域。"
+}

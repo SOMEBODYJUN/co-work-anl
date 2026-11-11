@@ -1,0 +1,60 @@
+{
+  "edge_id": "cag-fresh-slot-representation-to-ancestor-filter-e8f9638e",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-7f014258b58d49fc9fd0fef19700ec26"
+  ],
+  "target_ids": [
+    "M-a6cc20f9493b40cd8b85f449cb0b646d"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、有限非空共同标签目录；固定任意合法有序h、r≥1余位、任意有限d个真实历史祖先。孩子联合集合恰由全部完整局部纯SPE终局产生；有限极值达到，不同强制行动的有序子树互斥可独立拼。",
+  "roles": {
+    "M-7f014258b58d49fc9fd0fef19700ec26": "给μ_r(h)=max_B min_child U_B等于局部完整SPE最低当前收益，以及所有父SPE首利≥μ和有限孩子拼接",
+    "M-a6cc20f9493b40cd8b85f449cb0b646d": "提升到同一孩子终局的d+1维祖先/当前联合向量，先按当前坐标筛选再投影的精确集合递推"
+  },
+  "explanation": "令R_r(h)为全部完整局部纯SPE终局，E_r为这些同一终局上的d个祖先最终利润联合向量。REP给μ=max_B min_(R_(r−1)(hB))U_B。任意父SPE规定B时，其所选孩子为完整子SPE，d+1维向量当前坐标≥μ，投影给祖先值，证明必要性。反向任取孩子B的真实可实现d+1向量v且v_current≥μ，保实现整个同一v的完整B孩子；其它每个B'孩子分别取达到L_h(B')的完整子SPE，它们当前收益≤μ≤v_current。互斥有序子树可拼，当前B为BR，得到完整父SPE且沿B保整个祖先联合向量。于是先筛v_current≥μ再投影后对B取并恰为E_r。r0唯一完成历史为基例，d0投影空向量，零客户/空题/重复/弱平局全保。d随递归增到d+1，不作固定维压缩；不取凸包，不按坐标分别选终局，不把单节点孩子拼接扩成跨嵌套actual见证免费共存。",
+  "scope": "目标M-a6整个精确联合祖先集合递推和μ最低当前收益合同；局部子局资格，不额外声称能回填同一固定原根策略或支付跨枝。",
+  "whole_result": "REP完整推出M-a6：对任意合法h、任意有限d个真实祖先及r≥1，μ_r(h)=max_B min_true-child U_B为最低局部SPE当前收益，E_r(h;A_1,…,A_d)=∪_B proj_(1..d){v∈E_(r−1)(hB;A_1,…,A_d,B):v_(d+1)≥μ_r(h)}；保持纯可实现联合向量、先筛后投影、维度可增长及终端基例。",
+  "evidence": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/proof-notes.md",
+      "sha256": "f8d53266a302a867afa57b1708617dc5dcc7541b52dca73cea6915c28345b8df",
+      "section": "10. REP完整支付祖先联合先筛后投影递推"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/任意路径可信门槛的终端福利预算与见证锥--候选.md",
+      "sha256": "d239bdcd4aaae2bbc5c70de49c0ed4450eb9d62308b21c2fb47520ae6b965639",
+      "section": "全部可信孩子与任意路径"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/条件纯续局的先筛选后投影与祖先接触账--候选.md",
+      "sha256": "9567ea8c76e121c6d2837fd3f402e4ff7a3705cc1245a897e4347efe5ef60c5e",
+      "section": "祖先联合集合必须先筛选再投影"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/条件纯续局的先筛选后投影与祖先接触账--候选.md",
+      "sha256": "9567ea8c76e121c6d2837fd3f402e4ff7a3705cc1245a897e4347efe5ef60c5e",
+      "section": "精确最小当前机会与可拼续局判据"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "Root定向read-add REP后，本轮完整实读REP v2原记录、body/全部7 evidence及M-a6三指定章节。独立核必要/充分两方向、同一孩子联合实现、有限min、d增长、r0/d0和全零边界；只需REP局部表示作为源，不强制添整个算法实现对象端点。未执行BI或其它数学程序。 Root另核完整推导与原目标合同，准确阅读和零新运行范围见receipt.parent_review；原生绑定只校验结构及引用。",
+  "endpoint_pins": {
+    "M-7f014258b58d49fc9fd0fef19700ec26": "a7a7d402f894d033966abefa337dc9fd5462254e1eecc2cb4ccb509e2913e2d8",
+    "M-a6cc20f9493b40cd8b85f449cb0b646d": "551c5e94f4562980a9098115a3f20437dfd55d6be15609c4f2bdfc6cc09fce2f"
+  },
+  "evidence_pins": {
+    "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/proof-notes.md": "f8d53266a302a867afa57b1708617dc5dcc7541b52dca73cea6915c28345b8df",
+    "archives/customer-attraction/state/候选/任意路径可信门槛的终端福利预算与见证锥--候选.md": "d239bdcd4aaae2bbc5c70de49c0ed4450eb9d62308b21c2fb47520ae6b965639",
+    "archives/customer-attraction/state/候选/条件纯续局的先筛选后投影与祖先接触账--候选.md": "9567ea8c76e121c6d2837fd3f402e4ff7a3705cc1245a897e4347efe5ef60c5e",
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954"
+  },
+  "review_digest": "51cfe03b87b361ff9910669d967bf19af466bf88103a71d768d1de505170229f"
+}

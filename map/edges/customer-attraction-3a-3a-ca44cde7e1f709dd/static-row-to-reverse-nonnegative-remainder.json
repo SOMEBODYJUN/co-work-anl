@@ -1,0 +1,43 @@
+{
+  "edge_id": "cag-ca44-static-row-to-reverse-nonnegative-remainder",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-57cc29d007474699abddc1bc2a9ab543"
+  ],
+  "target_ids": [
+    "customer-attraction/joint-column-capacity-and-positive-tax-preserving-reverse-split"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一reference actual Z、同一固定合法B及同一第一类q矩阵；在目标natural context中P_B使用这一矩阵对应i行，不混不同B或重复来源。",
+  "roles": {
+    "M-57cc29d007474699abddc1bc2a9ab543": "严格ROW及与COLUMN同矩阵的输入行支配。",
+    "customer-attraction/joint-column-capacity-and-positive-tax-preserving-reverse-split": "只接收r=u_i−P_B非负这一反向分裂必要步骤及原B边可保留。"
+  },
+  "explanation": "源逐客户新增recipient数n≤δ_i−1给P_B≤u_i(Z)，非空S_i时严格，空S_i时二者0。因此r=u_i−P_B≥0，保全部原B正边不会先超过本行reference金额。因为保留的是同一q，原ROW/COLUMN身份保持。后续r=v+P_W−(ell+N_B+N_W)、t=(r−v)+≤P_W和current min(v,r)还需两次真实/静态倒数身份与同context whole-IC；它们在目标正文独立证明，不能声称只由静态ROW产生。",
+  "scope": "REVERSE的已证局部非负余量贡献；既不声称源单独给完整SD身份，也不处理current和COLUMN重用、多child或环。",
+  "evidence": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ca44cde7e1f709dd/review.md",
+      "sha256": "fbda324741cf14a46741609f2fefcc774cc202c22c307ec7de146936b6c27d12",
+      "section": "6. 静态ROW只给REVERSE的一步"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/共同覆盖者请求的密度投影与静态列余量--引理.md",
+      "sha256": "9a3a5698b25b4e0ce36e3a2ac23064fbffdf31fbc8a763818744a141ff33798c",
+      "section": "同一矩阵的严格ROW与未付义务"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/共同列容量与保正价的反向分裂--引理.md",
+      "sha256": "411328a60bf2ba23da0753bbc479088dedd4e52c87e4bb719580381c336e641a",
+      "section": "保全部B正价的反向分裂"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本包worker完整实读指定对象、必要正文及证据，按review.md逐项核量词、支持和零端点。已完成的局部关系按贡献标明；不把旧报告当本轮运行。Root尚未作原生edge-bind。",
+  "contribution": {
+    "result": "同一固定B第一正矩阵给P_B≤u_i，故REVERSE的r=u_i−P_B≥0；保留全部B正边保持原同矩阵ROW/COLUMN。",
+    "remaining": "整条REVERSE还使用自然context的两次倒数差SD身份和whole-IC ell≥0，再作min截取及W子容量分裂。源静态ROW单独不提供这些真收益身份；目标正文已另证局部核，整体actual钱包仍未证。"
+  }
+}

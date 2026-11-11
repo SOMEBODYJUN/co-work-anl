@@ -1,0 +1,46 @@
+{
+  "edge_id": "cag-fresh-slot-harmonic-to-reserve-bound-e8f9638e",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-0859541a37a34a7bb303101aa610d241"
+  ],
+  "target_ids": [
+    "optimal-cover-fresh-self-reserve-budget"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "零初始背景；HF对全部完整SPE及带重数m槽比较元组使用。0≤c_x≤m；W=0按加法不等式处理。",
+  "roles": {
+    "M-0859541a37a34a7bb303101aa610d241": "提供mW≥Σd_x a_m(c_x)≥H_mΣd_x/(1+c_x)",
+    "optimal-cover-fresh-self-reserve-budget": "获得min-fresh的调和上界和m≤2域的预算，不完成一般m候选"
+  },
+  "explanation": "对K0共同最小最优元组使用保重数HF，得H_mK0≤mW。自留R0≥W/(m+1)。m1得K0≤W≤W+R0；m2得K0≤(4/3)W≤W+R0。W0时K0=R0=0（全目录覆盖OPT0），不取效率比。一般m没有从这两个界得到K0≤W+R0；平方能量不改变上界方向。",
+  "scope": "无条件的已证部分；不将源HF的全人数范围误传为目标全人数预算。",
+  "evidence": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/proof-notes.md",
+      "sha256": "f8d53266a302a867afa57b1708617dc5dcc7541b52dca73cea6915c28345b8df",
+      "section": "2. HF与零净损失门各自支付的范围"
+    },
+    {
+      "path": "archives/customer-attraction/state/想法/最优覆盖查询的自留份额预算--想法.md",
+      "sha256": "136032aeef1bd264a76783f6c3c98152095d4efad8536d43eb1a4a6f33a1e228"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本轮已完整实读任务所指原记录、正文与必要证据；逐项核验模型、量词、零客户/空槽/重复索引端点及实际付款范围。完整证明在proof-notes对应节；本轮无数学程序重放，历史运行只按来源复用。本关系只支付contribution.result，整条目标未付部分保留在remaining。 Root另核完整推导与原目标合同，准确阅读和零新运行范围见receipt.parent_review；原生绑定只校验结构及引用。",
+  "contribution": {
+    "result": "全部m≥1有K0≤mW/H_m；结合R0≥W/(m+1)，S?的m=1与m=2域成立，含零客户和全目录空覆盖端点。",
+    "remaining": "目标对所有m的K0≤W+R0仍未付；尤其m≥3不能仅凭本调和界、静态RES或SQ下界得所需上界。目标辅助恒等式各自保持有效。"
+  },
+  "endpoint_pins": {
+    "M-0859541a37a34a7bb303101aa610d241": "d751fc8a76005c2c5c101da4e9f09a1ec5875bbae7184c8fd9815a35ae5912f3",
+    "optimal-cover-fresh-self-reserve-budget": "4466de01f6ca7aadfa630ba4f282e2ed1db13ac5c9086fe1e11cc1ff8791c2a6"
+  },
+  "evidence_pins": {
+    "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/proof-notes.md": "f8d53266a302a867afa57b1708617dc5dcc7541b52dca73cea6915c28345b8df",
+    "archives/customer-attraction/state/想法/最优覆盖查询的自留份额预算--想法.md": "136032aeef1bd264a76783f6c3c98152095d4efad8536d43eb1a4a6f33a1e228"
+  },
+  "review_digest": "49f5d3cb559df55776efe490e9b3355f335a3266e53aac8486bae58c02ec54ee"
+}

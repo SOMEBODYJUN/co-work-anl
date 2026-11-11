@@ -1,0 +1,48 @@
+{
+  "edge_id": "cag-fresh-slot-fixed-kernels-to-beta-potential-e8f9638e",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/optimal-slot-parameter-kernels-and-anchored-harmonic-budget"
+  ],
+  "target_ids": [
+    "customer-attraction/fixed-optimal-slot-beta-potential-and-prefix-repeat-credit"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定一次全局最优T及槽配对用于全部叶；profile每槽至多一合法动作或形式空槽；真实查询为同一原完整策略的最优前缀。",
+  "roles": {
+    "customer-attraction/optimal-slot-parameter-kernels-and-anchored-harmonic-budget": "固定J的HARM给Φ_T≤0；合法Bernoulli替槽给同一归零表示",
+    "customer-attraction/fixed-optimal-slot-beta-potential-and-prefix-repeat-credit": "得到有限KT势、单位边际、同叶信用与H_(a−1)前缀重复界的整个合同"
+  },
+  "explanation": "以HARM定义Φ_T，KT=ΣO1/a，F_T=KT+Φ_T。用同一硬币的hybrid覆盖减active槽形式空的baseline覆盖，除p积分，逐客户恰是F_T；固定硬币的相对覆盖增量非负、单调次模，所以F_T≥0，HARM给F_T≤KT，空/T端点分别0/KT。形式空槽可补合法主题保cap。差分得O外ell1/c、其它保护ell0、无其它保护且当前在T为Beta(a,c)，不在T为Beta(a+1,c)，均介于0和1/c；因此u=ell+e且e只在O，同叶Σe≤|O∩cover(B)|。固定最优前缀首次error≤1−1/a（若未来另保护则a≥2、c≥2），后第s次≤1/s，合H_(a−1)；a1首次0。全部推导与重复界不需SPE，亦不控制互斥rollout信用。",
+  "scope": "目标全合同，包括形式空槽、单位边际、同叶一次信用、固定最优前缀重复预算；不把次模扩展cap用于同槽多动作不可行配置。",
+  "evidence": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/proof-notes.md",
+      "sha256": "f8d53266a302a867afa57b1708617dc5dcc7541b52dca73cea6915c28345b8df",
+      "section": "5. 固定配对核给Beta势的整个合同"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/最优替槽的参数核与锚定调和预算--定理.md",
+      "sha256": "32fb23dce06ad178f155d5ef0afe5a95b37e98377809c8ee9b2febc774cb73ec"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定最优槽的Beta势与前缀重复信用--定理.md",
+      "sha256": "9f39a6a3cd90baad6709c7915e97bd9395bb4cb7c4318fb56cc3a79465246f8d"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本轮已完整实读任务所指原记录、正文与必要证据；逐项核验模型、量词、零客户/空槽/重复索引端点及实际付款范围。完整证明在proof-notes对应节；本轮无数学程序重放，历史运行只按来源复用。本逻辑方向的whole_result已对照目标完整合同；开放源仅在conditional模式使用。 Root另核完整推导与原目标合同，准确阅读和零新运行范围见receipt.parent_review；原生绑定只校验结构及引用。",
+  "whole_result": "固定配对参数核蕴含目标完整Beta势定理：Φ_T≤0、0≤F_T≤KT、空/T端点、带槽单调次模扩展、ell的精确各分支及0≤ell≤u、e仅在O和同叶Σe界，以及固定最优前缀每客户Σquery credit≤H_(a−1)≤a−1。",
+  "endpoint_pins": {
+    "customer-attraction/fixed-optimal-slot-beta-potential-and-prefix-repeat-credit": "0f829b4fe76cdf505a706369b6667dc4f0e5a8fe9f498e796f14859ddd663c2a",
+    "customer-attraction/optimal-slot-parameter-kernels-and-anchored-harmonic-budget": "3c43d4475a22975180e9b321f4cdd9898119044b9571d763366a5c9ddc49d468"
+  },
+  "evidence_pins": {
+    "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/proof-notes.md": "f8d53266a302a867afa57b1708617dc5dcc7541b52dca73cea6915c28345b8df",
+    "archives/customer-attraction/state/定理/最优替槽的参数核与锚定调和预算--定理.md": "32fb23dce06ad178f155d5ef0afe5a95b37e98377809c8ee9b2febc774cb73ec",
+    "archives/customer-attraction/state/定理/固定最优槽的Beta势与前缀重复信用--定理.md": "9f39a6a3cd90baad6709c7915e97bd9395bb4cb7c4318fb56cc3a79465246f8d"
+  },
+  "review_digest": "39585054105bf1d7c9a913cf54a64bb5708526f47f959c00561ec1314ce6dab8"
+}

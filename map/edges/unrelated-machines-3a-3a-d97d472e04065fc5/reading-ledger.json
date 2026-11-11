@@ -1,0 +1,146 @@
+{
+  "schema": 1,
+  "task_id": "unrelated-machines-3a-3a-d97d472e04065fc5",
+  "author": "Boss6/restricted-rankwidth-worker",
+  "status": "mature-v4-draft-awaiting-minimal-v5-correction",
+  "task_snapshot": {
+    "path": "research/operations/map-v2/tasks/unrelated-machines-3a-3a-d97d472e04065fc5.json",
+    "sha256": "ffef50e3e26ebe38cad90f5b817d795c779e1743c3dc09853608d7f5d23d2372"
+  },
+  "input_objects": [
+    {
+      "object_id": "M-3452046f3bdd47c48b17a0a3038ba4b2",
+      "version": 4,
+      "registration_pin": "d98e21ee28031f26b5b3f7f2661ddfb52c5ff5ed9916ea980256005071a6008e",
+      "scope": "完整registry合同与全文body；必要主证据PDF目标页完整实读"
+    },
+    {
+      "object_id": "unrelated-machines/lst-two-approximation",
+      "version": 2,
+      "registration_pin": "5771433d59066caee67ea38680fecaca5af89e91b7370b31d54ba9af99818374",
+      "scope": "完整registry合同与body/evidence所需的§1–2；为范围核对也读了该文件余下全文"
+    },
+    {
+      "object_id": "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding",
+      "version": 1,
+      "registration_pin": "c12cff11f8d9d634441f752ebe101222ec0faba1d570a402caf2618f68edb356",
+      "scope": "完整registry合同与body/evidence所需的§1–2完整槽证明；为范围核对也读了该文件余下全文"
+    }
+  ],
+  "readings": [
+    {
+      "ref": {
+        "path": "AGENTS.md",
+        "sha256": "0caabed57cddc14a7c1c594450e970f6818be570893fc948f5eef1e1c92eaf9a"
+      },
+      "mode": "text",
+      "scope": "全文"
+    },
+    {
+      "ref": {
+        "path": "research/IMPLEMENTATION.md",
+        "sha256": "3f7a1353048e30c44468ac6a98433c3d68f10581e0707114fe70e9c61547833b"
+      },
+      "mode": "text",
+      "scope": "全文；初次合读被截断的中部用135–270行补读"
+    },
+    {
+      "ref": {
+        "path": "prompts/03-map-worker.md",
+        "sha256": "6629f71923c54d994297d54c3737b285227b72c463641d318c3f61c9342d07b2"
+      },
+      "mode": "text",
+      "scope": "全文"
+    },
+    {
+      "ref": {
+        "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+        "sha256": "a2c918daef8cb6711a97a56fbdca355f2e72fd1136ff6dbc1216f393d577aaa1"
+      },
+      "mode": "text",
+      "scope": "全文；rankwidth完整证明定位与v4边界"
+    },
+    {
+      "ref": {
+        "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+        "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+      },
+      "mode": "pdf-text",
+      "scope": "PDF页1–5及12–19逐页阅读；页14在大输出截断后单独重读全文；页6–11本轮没有重新阅读",
+      "extraction": "pdftotext -layout，每个\\f为一页；19页，550316bytes",
+      "proof_ranges": [
+        "页3 Theorem4完整量词",
+        "页4 feasibility/empty/OPT定义及基础DP边界",
+        "页5 cut-rank/branch decomposition/rankwidth定义及固定k外部分解构造",
+        "页12–13 Lemma17完整舍入、克隆与恢复",
+        "页13–17 Remark18、集合流守恒、Lemma19、计数、translation、Lemma21完整双向证明、叶基例、结果复杂度",
+        "页17–18 bi-cograph定义及Lemma23全文（仅范围核对，未用于主边）",
+        "页18–19 references"
+      ]
+    },
+    {
+      "ref": {
+        "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+        "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+      },
+      "mode": "pdf-visual",
+      "scope": "PDF页12、13、16、17；本轮用pdftoppm渲染，worker逐页实看",
+      "checks": [
+        "页12网格δ²B、ceil克隆数、尺寸数原误记",
+        "页13 x_ij≥1原笔误，正确应非负；最终误差预算",
+        "页16机器叶漏非邻接类型∞分支，translation与式14",
+        "页17公式为m²，而不是m2^k；n指数内含2^k"
+      ],
+      "saved_visuals": [
+        "map/edges/unrelated-machines-3a-3a-d97d472e04065fc5/primary-page-12.png",
+        "map/edges/unrelated-machines-3a-3a-d97d472e04065fc5/primary-page-13.png",
+        "map/edges/unrelated-machines-3a-3a-d97d472e04065fc5/primary-page-16.png",
+        "map/edges/unrelated-machines-3a-3a-d97d472e04065fc5/primary-page-17.png"
+      ]
+    },
+    {
+      "ref": {
+        "path": "archives/unrelated-machines/state/资源/LST不相关机二近似与硬度--资源.md",
+        "sha256": "2197637438ed2fdfe40d4eb21ba2f86a6d9fd4dde4211b01fb253e38a7489969"
+      },
+      "mode": "text",
+      "scope": "全文；承重为§1顶点支撑伪森林/逐机加性舍入、§2松弛判定及实际二近似B，有理/零边界"
+    },
+    {
+      "ref": {
+        "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+        "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a"
+      },
+      "mode": "text",
+      "scope": "全文；承重为§1任意分数点、正支撑上限、逐机ℓ_i+r_i与§2全部有序槽/Hall/共同匹配证明"
+    },
+    {
+      "ref": {
+        "path": "archives/unrelated-machines/state/资料/不相关并行机文献清单范围与证据层级--资料.md",
+        "sha256": "17aa2105082ec806a46808706cf132335618d5cca73dd9d879f2dc124f5bba7a"
+      },
+      "mode": "text",
+      "scope": "全文；仅核1987报告与1990期刊版本、ST费用保持及证据层级，不代替论文证明"
+    }
+  ],
+  "explicit_nonclaims": [
+    "本轮未读LST1987/ST1993外部原PDF；使用已登记自足正文的完整证明，历史全文阅读声明不是本worker本轮阅读。",
+    "没有重读结构参数PDF页6–11或借此前Boss的阅读冒称本轮读取。",
+    "固定k的分解构造定理及bi-cograph外部cliquewidth定理未独立重证；前者按页5成熟引用使用，后者未用于主边。",
+    "没有运行调度数学程序，没有实现DP、LP或匹配软件，没有用文件哈希检查替代证明。",
+    "不把当前v4误转写的运行时间标成whole_result；待最小更正后刷新核心合同和全部受影响SHA。"
+  ],
+  "findings": {
+    "new_required_correction": "PDF页17原式O(m² n^{O(d2^k)})；给定分解DP与分解构造费用应分列。",
+    "already_correct_in_v4": [
+      "页12 dual/primal padding区别",
+      "大任务δ²B网格与ceil(δ^-2)+1尺寸数",
+      "Remark20包含零的(phi+1)计数",
+      "叶规则应检查资格"
+    ],
+    "source_typos_to_keep_explicit": [
+      "页13 x>=1改用x>=0",
+      "页16 machine叶非邻接计数非零为∞"
+    ]
+  }
+}

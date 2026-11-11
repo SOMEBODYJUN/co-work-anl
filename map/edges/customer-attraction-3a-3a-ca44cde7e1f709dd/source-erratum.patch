@@ -1,0 +1,8 @@
+--- a/archives/customer-attraction/state/计算/实际末主题单枝与三枝条件联合的精确点--计算.md
++++ b/archives/customer-attraction/state/计算/实际末主题单枝与三枝条件联合的精确点--计算.md
+@@ -86 +86 @@
+-本次为检查header之外的具体风险，保存[增强回代程序](../../tools/evidence/coupled-b-fixed-points-boss3/verify_fixed_point.py)：读取全部2033/2801列每个有理weight和嵌套描述符，重建相应原作者矩阵，逐项核行列长度、列序和身份、所有列非负、O/W/1−2W及正列计数，并逐条保存所有具名有理slack。它复用原row builder，是同实现精确回代和接口核，**不是第二套独立数学矩阵实现**；没有调用float LP或SPE求解器。
++本页保存的[早期增强回代程序（失败版）](../../tools/evidence/coupled-b-fixed-points-boss3/verify_fixed_point.py)旨在读取全部2033/2801列每个有理weight和嵌套描述符，重建相应原作者矩阵，核行列长度、列序、身份及全部有理行。当前所存字节与`replay/failed-type-comparison/verifier.py`完全相同，SHA256为`152200c7426a02563be1b6cbc930f9b1bcb9da6f1694ec8ca02fde0ef30175e7`；其第25行直接比较Python容器，未作下述JSON规范化，故不能把这份现存失败版说成产生成功summary的driver。它复用原row builder，**不是第二套独立数学矩阵实现**；本次溯源核查未运行该driver、float LP或SPE求解器。
+@@ -88 +88 @@
+-原builder的overlap group内部使用Python tuple，原JSON writer把它们序列化成array。列身份检查因此按同一JSON序列化规范化tuple/list后进行；不改会员值、行顺序、系数或质量。最初两个clone内输出尝试因同步临时收起未跟踪目录而保存失败；迁到clone外后两个尝试建图成功，但过严的Python容器类型比较停在接口assert。修正这一个表示比较后，对两份矩阵各完成一次全部有理回代。失败记录与真实成功执行各自保在[执行总账](../../tools/evidence/coupled-b-fixed-points-boss3/replay/attempt-ledger.json)，没有把失败算作PASS，也未修改冻结原件。
++原builder的overlap group内部使用Python tuple，原JSON writer把它们序列化成array。[执行总账](../../tools/evidence/coupled-b-fixed-points-boss3/replay/attempt-ledger.json)分别保存最初两次clone内输出保存失败、两次外部建图后因直接tuple/list比较而停止，以及后来两次按JSON序列化规范化后的历史成功事件。两份已保存成功summary以`all_saved_column_descriptors_equal_builder_after_JSON_tuple_array_normalization`标识该接口处理，并报告全部有理行非负；对应execution记录exit0，但没有绑定成功driver的字节SHA。当前保存的上述失败版第69行输出字段仍是`all_saved_column_descriptors_equal_builder`，与成功summary不同。因此本页原矩阵通过的证据身份是已保存历史输出及执行记录，不能声称由当前失败版driver可直接复现；未恢复或猜测原成功driver，未改会员值、行顺序、系数、坐标、冻结原件或既有输出。

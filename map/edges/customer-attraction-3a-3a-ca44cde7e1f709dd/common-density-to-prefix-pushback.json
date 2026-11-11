@@ -1,0 +1,38 @@
+{
+  "edge_id": "cag-ca44-common-density-to-prefix-pushback",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/common-coverer-request-density-projection-and-static-column-deficit"
+  ],
+  "target_ids": [
+    "customer-attraction/prefix-request-pushback-monotone-prices-and-ancestry-normalization"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "合法B/W满足B_j=W_j (j<i)，同一child的全部prefix系数0≤λ_j≤L。ancestry条款另取同一完整σ及严格递增强制位置栈；只在真prescribed/query处使用whole-IC。",
+  "roles": {
+    "customer-attraction/common-coverer-request-density-projection-and-static-column-deficit": "共同coverer投影提供同角色base与新增B-coverer两类互不重叠支持、同时列密度。",
+    "customer-attraction/prefix-request-pushback-monotone-prices-and-ancestry-normalization": "精确原PUSH矩阵、非减价格、后缀利润及一次纯祖先规范化。"
+  },
+  "explanation": "取F=W,R=B，只给prefix common角色j常密度λ_j，其它common密度0。保留项为λ_j base_j，base_j=Σr_x/(c_Bc_W)=p_j(B)−N_j；新增B-coverer在ℓ≥i，金额Σj λ_jq^+jℓ。源密度界给每个parent完整角色金额≤L p_ℓ(B)，零父利润金额0。归一成目标T即每列和≤1、κ=λT≤L，金额守恒。金额仅留j或进ℓ≥i>j，所以任意非负非减z的输入价≤输出价≤LΣz p(B)，指标价给后缀界。严格递增强制栈中，仍非法的同角色保留项每次祖先深度降1；新tail在parent最后强制之后已真规定，因此这一次纯域修复有限。未控制多child、旧suffix或SD再次展开后的累计量。",
+  "scope": "目标整条单parent/child回推，包括其原有输入合同下的有限ancestry；没有全网络吸收或actual cap。",
+  "evidence": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ca44cde7e1f709dd/review.md",
+      "sha256": "fbda324741cf14a46741609f2fefcc774cc202c22c307ec7de146936b6c27d12",
+      "section": "5. 共同密度专门化得到精确PUSH及真query投影"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/共同覆盖者请求的密度投影与静态列余量--引理.md",
+      "sha256": "9a3a5698b25b4e0ce36e3a2ac23064fbffdf31fbc8a763818744a141ff33798c"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/前缀请求回推的单调价格与祖先规范化--引理.md",
+      "sha256": "6b31e7c3bef41e06ce8bac21425998bb9190b6232dd079d80d237041efb41b02"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本包worker完整实读指定对象、必要正文及证据，按review.md逐项核量词、支持和零端点。已完成的局部关系按贡献标明；不把旧报告当本轮运行。Root尚未作原生edge-bind。",
+  "whole_result": "同一child全部prefix请求有目标显式列次随机T与κ=λT∈[0,L]^m，精确保量；非负非减角色价和后缀利润界成立；同一严格递增强制栈的一次纯过去域修复有限。多孩子、旧请求及再展开SD不包含在该结论。"
+}

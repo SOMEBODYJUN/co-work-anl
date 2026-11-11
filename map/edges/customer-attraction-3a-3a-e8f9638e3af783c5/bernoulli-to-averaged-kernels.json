@@ -1,0 +1,51 @@
+{
+  "edge_id": "cag-fresh-slot-bernoulli-to-averaged-kernels-e8f9638e",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/bernoulli-optimal-index-exchange-tax"
+  ],
+  "target_ids": [
+    "customer-attraction/optimal-slot-parameter-kernels-and-anchored-harmonic-budget"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "取s=m、最优d=a，或保q个锚后s=n=m−q；只用同一全局平均配对，不逐客户挑参数或配对。",
+  "roles": {
+    "customer-attraction/bernoulli-optimal-index-exchange-tax": "提供全部共同p的负载谱Bernoulli式及锚定式",
+    "customer-attraction/optimal-slot-parameter-kernels-and-anchored-harmonic-budget": "获得参数定理的MATCH、平均KERNEL和任意锚定平均部分"
+  },
+  "explanation": "s=m时binom(m−c,a)/binom(m,a)=binom(m−a,c)/binom(m,c)=P_m(a,c)，故B就是均匀重排索引后的BER。除p积分给MATCH，密度p^(α−1)给Σout Lα(c)≤ΣO P_m(a,c)Beta(a+α,c+1)。几何展开得稳定和及α0延拓。保锚后n替m、右域O\\H，q=m时两侧0。源只保平均谱，不能恢复某固定配对J；不把这种压缩逆写为目标全部固定J预算。",
+  "scope": "目标的平均配对和锚定参数核部分；固定J和FIRST不由本平均式反向恢复。",
+  "evidence": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/proof-notes.md",
+      "sha256": "f8d53266a302a867afa57b1708617dc5dcc7541b52dca73cea6915c28345b8df",
+      "section": "4. Bernoulli只恢复参数定理的平均配对部分"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最优索引交换的生成表示与查询税--引理.md",
+      "sha256": "42186434ed76f888969bb99dfec9890cfddfd9b25f4604522b0aec703972503b"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/最优替槽的参数核与锚定调和预算--定理.md",
+      "sha256": "32fb23dce06ad178f155d5ef0afe5a95b37e98377809c8ee9b2febc774cb73ec"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本轮已完整实读任务所指原记录、正文与必要证据；逐项核验模型、量词、零客户/空槽/重复索引端点及实际付款范围。完整证明在proof-notes对应节；本轮无数学程序重放，历史运行只按来源复用。本关系只支付contribution.result，整条目标未付部分保留在remaining。 Root另核完整推导与原目标合同，准确阅读和零新运行范围见receipt.parent_review；原生绑定只校验结构及引用。",
+  "contribution": {
+    "result": "MATCH：Σout H_c≤ΣO P_m(a,c)Beta(a,c+1)，及全部α>0的平均参数核、L0=Hc稳定延拓、任意最优锚的同类平均式。",
+    "remaining": "目标固定全局槽配对的保护集J之BER/HARM/KERNEL、未平均FIRST及槽内注入合同还须逐实现合法替槽证明；本源的负载谱不恢复这些信息，更不提供动态付款。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/bernoulli-optimal-index-exchange-tax": "0e09a05e3121c2c94fe57bc5a2f5349fb23bfd7e12600840a9cdb6102845f9a7",
+    "customer-attraction/optimal-slot-parameter-kernels-and-anchored-harmonic-budget": "3c43d4475a22975180e9b321f4cdd9898119044b9571d763366a5c9ddc49d468"
+  },
+  "evidence_pins": {
+    "map/edges/customer-attraction-3a-3a-e8f9638e3af783c5/proof-notes.md": "f8d53266a302a867afa57b1708617dc5dcc7541b52dca73cea6915c28345b8df",
+    "archives/customer-attraction/state/引理/最优索引交换的生成表示与查询税--引理.md": "42186434ed76f888969bb99dfec9890cfddfd9b25f4604522b0aec703972503b",
+    "archives/customer-attraction/state/定理/最优替槽的参数核与锚定调和预算--定理.md": "32fb23dce06ad178f155d5ef0afe5a95b37e98377809c8ee9b2febc774cb73ec"
+  },
+  "review_digest": "6b4ad89b6afddb6447ff7dc12f853badbd8c5793eacd8ae9f07bde0b691c9052"
+}

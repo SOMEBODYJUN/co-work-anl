@@ -1,0 +1,39 @@
+{
+  "edge_id": "cag-ca44-common-density-to-real-query",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/common-coverer-request-density-projection-and-static-column-deficit"
+  ],
+  "target_ids": [
+    "M-b29430314bce490aa4c60a00b48a7430"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定完整纯SPE σ，任合法有序m槽F、任槽j；R=finishσ(F_≤j)、V=finishσ(F_<j)，d=u_j(R)、v=u_j(V)。只调用该同一前缀的一条完整行动IC d≤v。",
+  "roles": {
+    "customer-attraction/common-coverer-request-density-projection-and-static-column-deficit": "对当前j的common incidence作密度1的精确投影。",
+    "M-b29430314bce490aa4c60a00b48a7430": "合成叶完整当前利润H向natural current与真query后继的非负分解。"
+  },
+  "explanation": "对x∈F_j，只给共同角色j密度1，其余0。源公式保留a_x=r_x/(c_Fc_R)，给每个R新增coverer 1/(c_Fc_R)。F/R在j前及j相同，新增recipient全>j，且r_x≥1。求和得到H=a+Σq_ℓ；逐客户r_x≥1给每条q_ℓ≤a，r_x≤c_F给a≤d；完整同history IC给d≤v。因此current系数a/v≤1，q在R的真prescribed尾；空F_j全0，v=0时a=0并取系数0。不把每条q≤a强化为Σq≤a。",
+  "scope": "目标整条局部PROJECTION；F不要求SPE，整行IC不按客户改权。多投影和过去角色域没有全局付款结论。",
+  "evidence": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-ca44cde7e1f709dd/review.md",
+      "sha256": "fbda324741cf14a46741609f2fefcc774cc202c22c307ec7de146936b6c27d12",
+      "section": "5. 共同密度专门化得到精确PUSH及真query投影"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/共同覆盖者请求的密度投影与静态列余量--引理.md",
+      "sha256": "9a3a5698b25b4e0ce36e3a2ac23064fbffdf31fbc8a763818744a141ff33798c"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/共同列容量与保正价的反向分裂--引理.md",
+      "sha256": "411328a60bf2ba23da0753bbc479088dedd4e52c87e4bb719580381c336e641a",
+      "section": "合成叶向真query的投影"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "本包worker完整实读指定对象、必要正文及证据，按review.md逐项核量词、支持和零端点。已完成的局部关系按贡献标明；不把旧报告当本轮运行。Root尚未作原生edge-bind。",
+  "whole_result": "任合法F与槽j均精确H=a+Σ_{ℓ>j}q_ℓ，a≥0且每一q_ℓ≤a≤d≤v；natural完整利润系数a/v≤1（零分母时金额与系数0），future输出位于R的真实规定尾。"
+}

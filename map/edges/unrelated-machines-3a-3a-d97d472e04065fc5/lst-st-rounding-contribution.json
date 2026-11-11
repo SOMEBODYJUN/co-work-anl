@@ -1,0 +1,58 @@
+{
+  "edge_id": "um-lst-st-to-incidence-rankwidth-size-reduction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/lst-two-approximation",
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding"
+  ],
+  "target_ids": [
+    "M-3452046f3bdd47c48b17a0a3038ba4b2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限有理restricted-assignment实例，全部有限端p_ij=p_j；不可行/空任务/零最优分支先处理。取实际二近似峰B，OPT≤B≤2OPT，δ=min{1/3,ε/7}。大任务只按δ²B上舍入并保持原资格；小任务j复制ceil(np_j/(δB))份同资格克隆，每份δB/n。恢复阶段仅对小任务用ST，全部大任务锁定在给定合法克隆调度σ′的原机。该局部引理不假定σ′的取得免费。",
+  "roles": {
+    "unrelated-machines/lst-two-approximation": "提供实际完整调度的峰值B，支付OPT≤B≤2OPT与可计算性。",
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding": "接受克隆实际计数诱导的任意有理分数点；零费用共同槽匹配保资格与任务身份，逐机ℓ_i+r_i≤t_i+δB。",
+    "M-3452046f3bdd47c48b17a0a3038ba4b2": "得到其Rounding Lemma和小任务恢复这一步；核心全部PTAS还需要独立的incidence秩宽计数DP及分解构造。"
+  },
+  "explanation": "令q=δB/n、r_j=ceil(p_j/q)、a_ij为σ′实际放在i上的j克隆数。x_ij=a_ij/r_j列和1，正支撑在M(j)，且Σ_j p_j x_ij≤qΣ_j a_ij=t_i。只对原小任务用ST，取c=0、t=δB；原大任务保持σ′机器且恢复原尺寸不增负载，故Cmax(σ)≤Cmax(σ′)+δB。尺寸化有N≤n²、d′≤ceil(δ^-2)+1；把原最优调度同机复制给出OPT′≤(1+3δ)OPT。如果σ′≤(1+δ)OPT′，输出≤[(1+δ)(1+3δ)+2δ]OPT≤(1+ε)OPT。每一步均为实际可算操作；给定尺寸数的结构DP另在review按cut类型、传出代表元最小化、translation守恒及双向拼接核对。",
+  "scope": "核心PTAS的尺寸化与克隆小任务恢复局部贡献。只用同任务跨机共同尺寸；不迁移到一般unrelated p_ij，不声称FPTAS，不给当前v4错误m依赖的whole_result。",
+  "contribution": {
+    "result": "用LST实际B与ST任意分数点恢复，将同资格有限尺寸克隆实例I′的每份合法σ′变为原restricted实例的完整σ，Cmax(σ)≤Cmax(σ′)+δB；N≤n²、d′≤ceil(δ^-2)+1、OPT′≤(1+3δ)OPT，故(1+δ)-近似σ′恢复成(1+ε)-近似σ。",
+    "remaining": "整条核心另需付清固定尺寸数d下的incidence-rankwidth类型计数DP、实际分解构造与回溯。review已独立核其必要推导，但它们不由这两个舍入来源单独提供；现行v4错误的m 2^k因子须最小改为PDF的m²并另计分解构造后刷新合同。"
+  },
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-d97d472e04065fc5/rankwidth-review.md",
+      "sha256": "778a173e98657c8c794759c77f015511f8e62f45df55b0b25968e94896105953"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+      "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/LST不相关机二近似与硬度--资源.md",
+      "sha256": "2197637438ed2fdfe40d4eb21ba2f86a6d9fd4dde4211b01fb253e38a7489969",
+      "section": "2. 松弛判定、一般二近似和趋二实例"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/LST不相关机二近似与硬度--资源.md",
+      "sha256": "2197637438ed2fdfe40d4eb21ba2f86a6d9fd4dde4211b01fb253e38a7489969",
+      "section": "1. 顶点支撑伪森林与逐机加性舍入"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+      "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+      "section": "1. 模型、两个阈值与准确主结论"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+      "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+      "section": "2. 有序槽与最小费用匹配：完整证明"
+    }
+  ],
+  "reviewed_by": "Boss6/restricted-rankwidth-worker",
+  "review_note": "完整审读当前两来源合同及自足证明；结构PDF页12–19必要proof实读，12/13/16/17视觉核；显式锁定大任务、构造克隆分数点并保持原资格、核δ预算。accepted只覆盖contribution中的局部舍入命题；v4错误运行时间已报更正，最终交付需刷新核心版本。未写任何伪造endpoint_pins/evidence_pins/review_digest。"
+}
