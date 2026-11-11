@@ -42,7 +42,7 @@
 
 ### 矩阵模型
 
-令 `K[x]` 为多项式环，`C` 是包含 `1` 的有限单项式集，`C^+ = C∪⋃_i x_iC` 是 closure，`∂C=C^+\\C` 是 border。对线性泛函/矩序列 `Λ`，矩阵 `M_C(y)` 的条目只依赖乘积 `ab`；对应的 Hankel 算子是 `H^C_Λ:Span(C^+)→Span(C^+)^*`。所谓 flat extension 是扩展后秩不增加，并且旧矩阵是主子矩阵。
+令 `K[x]` 为多项式环，`C` 是包含 `1` 的有限单项式集，`C^+ = C∪⋃_i x_iC` 是 closure，`∂C=C^+\\C` 是 border。对线性泛函/矩序列 `Λ`，矩阵 `M_C(y)` 的条目只依赖乘积 `ab`；索引 `C` 的算子为 `H^C_Λ:Span(C)→Span(C)^*`；border 扩展为 `H^{C^+}_Λ:Span(C^+)→Span(C^+)^*`。所谓 flat extension 是扩展后秩不增加，并且旧矩阵是主子矩阵。
 
 ### 主要结论
 
@@ -54,7 +54,7 @@
 ### 失败机制与条件
 
 - `connected to 1` 不是装饰条件。来源给出 `C={1,x^3}` 等不连通例子，其中相同秩的局部矩数据无法 flat 扩展；因此不能仅凭秩相等推断全局矩序列存在。
-- 即便 `C` connected to `1`，也可能不存在含 `1` 的简单 column basis；作者用 `C={1,x_1,x_1x_2}` 的例子说明必须使用更一般的 kernel/border-basis 论证。
+- 即便 `C` connected to `1`，也可能不存在 connected-to-1 的满秩 column basis `B⊆C`；`C={1,x_1,x_1x_2}` 的例子中可取含 `1` 的列基 `{1,x_1x_2}`，但它不 connected to `1`。因此一般稀疏扩展不能直接套用要求 `B` connected-to-1 的 Theorem 1.6，须使用 §2 的 kernel 归纳。
 - 正半定、rank-flat、局部化约束和实数域假设各自承担不同义务；文献没有把任意有限矩阵或任意 LP 解自动变成表示测度。
 
 ## 跨来源接续
