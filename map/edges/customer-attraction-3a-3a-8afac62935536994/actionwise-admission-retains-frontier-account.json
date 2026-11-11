@@ -1,0 +1,51 @@
+{
+  "edge_id": "cag-8afac-actionwise-admission-retains-frontier-account",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/action-admission-local-stop-threshold"
+  ],
+  "target_ids": [
+    "M-7f482d6e8c494a05bcc5b2b824216696"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一完整SPE、同一最优owner分割、同一次取消gamma与钱包eta，source不缩放；在每角色固定实际incoming后任选0≤theta_a≤1且Σtheta_a f_a≤eta_i−K_i_src。",
+  "roles": {
+    "customer-attraction/action-admission-local-stop-threshold": "给出逐行动合并分子的单条whole-IC系数与有限DAG首次停止守恒。",
+    "M-7f482d6e8c494a05bcc5b2b824216696": "沿用同一总量恒等式；质量law/财务law转换和总停止付款继续开放。"
+  },
+  "explanation": "对每query，w_ia=(A_src,a+theta_a A_a)/D_a只乘一次完整真IC D_a≤u_i；因此费用K_i_src+Σtheta_a u_i A_a/D_a≤eta_i，合计K≤W。正incoming保证D_a>0；零分母分子同为0并取系数0。每客户接纳后按完整负载等份吸收/发送到严格更晚角色，拒流第一次即终止，故A_abs+B_stop=|R|−|G|=OPT−W且A_abs≤K。置E=K−A_abs、U=W−K，逐式消去得B_stop−E−U=OPT−2W。于是源的合法逐行动扩展保目标总账，但任意可行theta有拒流未必已满预算；需要按正质量局部最优规则才有饱和。p_mass(a)=lambda_a v_a/B_i与p_fin(a)=lambda_a/L_i只在v_a共同一致时才自然相同，未有一般价格控制。没有从守恒推得B_stop≤E+U。",
+  "scope": "只支持M-7f482d6e8c494a05bcc5b2b824216696的有效构造和精确余额部分；目标总停止付款仍未证。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/整行激励下的逐行动接纳与局部停止阈值--引理.md",
+      "sha256": "2ab00569d1fe95b6899c30b2cd42b9d538d991b51078e1402acc3c9ff4bcf94c",
+      "section": "逐行动接纳保留整行激励与守恒"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/整行激励下的逐行动接纳与局部停止阈值--引理.md",
+      "sha256": "2ab00569d1fe95b6899c30b2cd42b9d538d991b51078e1402acc3c9ff4bcf94c",
+      "section": "同一份源、同一实际前缀和一个费用预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/净遗漏停止前沿的父稿付款合同--资源.md",
+      "sha256": "36310443cacc102cf892056e10b54a8997d6882d86aaf36f4b543da2990d434a"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本任务worker完整实读所引正文与承重证明，独立按真实有序后继核对。整条或局部作用范围如下；不以程序结构检查替代数学。",
+  "contribution": {
+    "result": "逐行动门控仍有A_abs+B_stop=OPT−W、A_abs≤K≤W及OPT−2W=B_stop−E−U；统一theta只是合法可行域中的一个点。",
+    "remaining": "同一证书上的B_stop≤E+U、质量law与财务law有效转换、每owner单槽总量≤1均未证明；局部背包最优也不证明全树最优或half。"
+  },
+  "endpoint_pins": {
+    "M-7f482d6e8c494a05bcc5b2b824216696": "d77d9cf99a701802dda0a800911b98cc50c47da864b7efdd698bb66909a2c552",
+    "customer-attraction/action-admission-local-stop-threshold": "9edcf249e3d0a3ff15d71f9a15e208900508f9128672fff087e12734939b9447"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/整行激励下的逐行动接纳与局部停止阈值--引理.md": "2ab00569d1fe95b6899c30b2cd42b9d538d991b51078e1402acc3c9ff4bcf94c",
+    "archives/customer-attraction/state/资源/净遗漏停止前沿的父稿付款合同--资源.md": "36310443cacc102cf892056e10b54a8997d6882d86aaf36f4b543da2990d434a"
+  },
+  "review_digest": "8e0b3b8d5066971f4aba748d82bcf0d3be2234659132134e315e5daf2037fe61"
+}

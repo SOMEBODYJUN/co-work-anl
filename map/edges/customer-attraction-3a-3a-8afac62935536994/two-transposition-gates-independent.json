@@ -1,0 +1,54 @@
+{
+  "edge_id": "cag-8afac-two-transposition-gates-independent",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-439e07ff742f49d3a8613abd9389c909",
+    "M-d9ab460bd2034033bf6eb605bf626c48"
+  ],
+  "target_ids": [
+    "customer-attraction/credible-adjacent-transposition-and-fixed-count-extremal-form"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "目标引理r=2、空背景且尾部为空的特例；每个源分别使用其自身有限目录及完整SPE，不把两实例拼成同一游戏。",
+  "roles": {
+    "M-439e07ff742f49d3a8613abd9389c909": "使换位的第一门槛通过、第二门槛严格失败。",
+    "M-d9ab460bd2034033bf6eb605bf626c48": "使换位的第二门槛通过、第一门槛严格失败。",
+    "customer-attraction/credible-adjacent-transposition-and-fixed-count-extremal-form": "只得到其两道换位资格门不能各自删除的局部锐性。"
+  },
+  "explanation": "在六客户源中AB利润alpha=beta=2。根强制A后可用末位Q1/Q2把当前降至1，强制B后所有末BR Q1/Q2给当前2，强制Q1/Q2后取另一Q使当前2；故各动作最低真收益为(1,2,2,2)，M2(0)=2。B后末位最大值M1(B)=3。交换的beta≥M2通过而alpha≥M1(B)失败，BA确不可实现。在100/80不交主题源中，A后末位唯一B、B后末位唯一A，根门槛M2(0)=100且M1(B)=100；AB利润(alpha,beta)=(100,80)。交换的alpha≥M1(B)等号成立而beta≥M2失败，根80可严格改100，故BA不可实现。两源共同证实不能只留下其中任一道门槛。没有把这些有限例当作任意背景/任意尾的充要式证明，也没有反驳目标引理。",
+  "scope": "对两门槛独立必要性的有限精确sharpness贡献；不是一般AB/BA可实现充要定理的完整推导。",
+  "contribution": {
+    "result": "存在一例只缺第二门槛、另一例只缺第一门槛，而BA均不可支持；目标的两道资格门不能分别省略。",
+    "remaining": "任意合法背景、剩余人数及指定可信尾的完整门槛公式、同负载尾重标和充分性拼接仍须目标正文的一般证明，不能由两个例子推出。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/审查/R4表示层路线与接口--审查.md",
+      "sha256": "b083f4eb4abe44239ecf2de7920c06e4c26153e3c711e5091b22fc2a1569b225",
+      "section": "相等收益的六客户证书"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R4表示层路线与接口--审查.md",
+      "sha256": "b083f4eb4abe44239ecf2de7920c06e4c26153e3c711e5091b22fc2a1569b225",
+      "section": "递增、递减也都不是一般正规化"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/可信相邻换位与固定计数坏点正常形--引理.md",
+      "sha256": "aaa8859eaa5951c82329b324465346657ddd29c5593aa4ae4898adbf5e7c15b2"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本任务worker已读全部源末位收益表和一般换位证明；独立计算M2与M1(B)，两实例分别破坏一门、另一门成立。严格限定局部贡献。",
+  "endpoint_pins": {
+    "M-439e07ff742f49d3a8613abd9389c909": "b86637d6015e3d634938b6935d704d2437048495ec169f6c02d31dcebaec55e5",
+    "M-d9ab460bd2034033bf6eb605bf626c48": "0a73a376a69a324befc978a8c09b55772927bc9908b0100749511d0075e7ea4a",
+    "customer-attraction/credible-adjacent-transposition-and-fixed-count-extremal-form": "c4578f77fab30e7978a68a87a6091a4dd4e7b8b034712900b26a8ef4bb008c71"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/审查/R4表示层路线与接口--审查.md": "b083f4eb4abe44239ecf2de7920c06e4c26153e3c711e5091b22fc2a1569b225",
+    "archives/customer-attraction/state/引理/可信相邻换位与固定计数坏点正常形--引理.md": "aaa8859eaa5951c82329b324465346657ddd29c5593aa4ae4898adbf5e7c15b2"
+  },
+  "review_digest": "1569e1aeed030769a9b6c7b53407952316dcc3b9e0652aba0cf1b6c37c013045"
+}
