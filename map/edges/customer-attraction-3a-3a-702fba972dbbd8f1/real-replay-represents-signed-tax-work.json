@@ -1,0 +1,45 @@
+{
+  "edge_id": "cag-702-real-replay-represents-signed-tax-work",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/fixed-entering-role-real-replay-and-once-only-potential-budget"
+  ],
+  "target_ids": [
+    "customer-attraction/true-deviation-frozen-query-signed-tax-residual"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "限目标签名税恒等式的完整纯SPE情形。对每行i分别应用重放定理：p_i为确定标签T_i，Q_i为y_i=(actual_{<i},T_i,actual_{>i})的单点；该冻结尾叶仅是分析终点，raw域必须允许它。每行固定势Φ_i(z)=d_i(z)。",
+  "roles": {
+    "customer-attraction/fixed-entering-role-real-replay-and-once-only-potential-budget": "给每行从同一原σ真实查询源到任意指定raw叶的逐未来真实IC路径及任意固定势TELE。",
+    "customer-attraction/true-deviation-frozen-query-signed-tax-residual": "其D=Σ(f_i−q_i)获得逐真实未来边的精确有符号工作表示。"
+  },
+  "explanation": "第i行原源z_i=finish_σ(actual_{<i},T_i)的进入收益是q_i；选定raw终点y_i的进入收益是冻结查询f_i。真实重放逐未来角色将源尾改成actual尾，进入标签始终T_i，所以最终enter标签边是恒等且Δd_i=0。TELE取同一固定Φ_i=d_i，得f_i−q_i=Σ_{j>i}[d_i(z_i^j)−d_i(z_i^{j−1})]。各行相加即D为这些真实路径上的有符号进入收益工作；每个j边另有原σ的整人Γ_j≥0，但Γ_j属于未来角色j，不能据此给进入者Δd_i固定符号。",
+  "scope": "任意合法m标签比较元组的SPE版签名税；各行分别以确定查询应用，不要求所有T_i相同或将冻结叶冒作可信孩子SPE。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/算法/固定进入槽的真实后继重放与一次势预算--算法.md",
+      "sha256": "8eaf25b4b724f19ef98e4a58876484540fbd424f1df23c87a80ae32a50fed10b"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/真实偏离与冻结查询的签名税余项--引理.md",
+      "sha256": "6840470beeb219752c5a4e01f4e6f851bcf34ab318828844aabe47b8ca741470"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "本轮按完整正文实读比较，逐项核陈述、量词、全部共同条件和实际可用结论；只把下列contribution局部结果记为局部，不由语境或有限记录冒全目标。",
+  "contribution": {
+    "result": "D=Σ_iΣ_{j>i}Δd_i可用同一原σ的真实未来偏离路径精确表示，终点正是目标定义中的冻结查询；所有中间边保真实有序IC。",
+    "remaining": "目标对任意非SPE策略也成立的RES代数、静态S≥0及D≤S充分付款仍由其独立证明维护。本边不给D的上界，不可把未来角色Γ_j≥0误作进入者Δd_i≥0，也不合并互斥分支银行。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/fixed-entering-role-real-replay-and-once-only-potential-budget": "242e85e429f195fb7cdf9b97499721fb5386c0f8c114edbec31a68825aa7b489",
+    "customer-attraction/true-deviation-frozen-query-signed-tax-residual": "be502b593d828fa17a071594a291cd40e8a9161ac2f27cbdcd4e0b331777abce"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/算法/固定进入槽的真实后继重放与一次势预算--算法.md": "8eaf25b4b724f19ef98e4a58876484540fbd424f1df23c87a80ae32a50fed10b",
+    "archives/customer-attraction/state/引理/真实偏离与冻结查询的签名税余项--引理.md": "6840470beeb219752c5a4e01f4e6f851bcf34ab318828844aabe47b8ca741470"
+  },
+  "review_digest": "a0a712a0b3bfbf79ee2157bf1e9a96fd3261530c8e118b7a0c65f266a8fc659e"
+}

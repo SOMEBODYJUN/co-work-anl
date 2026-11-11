@@ -1,0 +1,50 @@
+{
+  "edge_id": "cag-7046-last-two-floor-pays-terminal-pair",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-LAST-TWO-FLOOR"
+  ],
+  "target_ids": [
+    "customer-attraction/all-position-pair-static-security-candidate-and-finite-cone-scope"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "空根m>=2，同一有限非空共同集合目录、单位客户与完整有序历史纯SPE。取actual长度m−2前缀P；v_m为不观察查询的m−1槽真正静态安全值。只涉及最后两个位置。",
+  "roles": {
+    "CA-LAST-TWO-FLOOR": "给actual末两人的逐人θ(P)保底，真实末位所有最佳回复均可用。",
+    "customer-attraction/all-position-pair-static-security-candidate-and-finite-cone-scope": "接收全位置pair候选中最后两位置的已证子域；早期pair仍open。"
+  },
+  "explanation": "写θ(P)=min_A max_T U_P(T,A)。对任意查询分布p与每个合法A，竞争背景P+A是合法m−1槽，故min_B E_p f_B(T)<=E_p U_P(T,A)<=max_T U_P(T,A)。对A取最小、再对p取最大，得v_m<=θ(P)。源给u_(m−1),u_m>=θ(P)，相加得u_(m−1)+u_m>=2v_m。m=2时P为空即唯一pair全覆盖；m>2不能把其它位置删去当同一两人SPE，故不扩为早期pair。无需依赖静态锐计数界或五人half。",
+  "scope": "全部位置候选的最后两位置局部结论。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/全位置成对安全值候选与有限锥判别范围--候选.md",
+      "sha256": "4d25a518482c0ba7d798c90e34f33db33b779c64e9e0e72330f232956aec85f6"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末两人逐人保底与全人数弱福利界--定理.md",
+      "sha256": "204030503c37b18f8d26ce664b9cb99afc688fed77c8221a00cf0d8d7b21b34b"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "Boss5按任务comparison_groups实读双方当前登记和所列完整正文/精确章节；核对全部量词、方向、整数与零边界，复用成熟解析证明；本轮未运行数学程序。",
+  "contribution": {
+    "result": "同一根SPE的最后两人满足u_(m−1)+u_m>=2v_m；m=2因此覆盖该实例全部不同位置对。",
+    "remaining": "一般m>2中含早期位置的pair仍须构造合法静态对偶Q或给全树付款；既有有限浮点锥阴性与总福利结论均不能补此缺步。"
+  },
+  "endpoint_pins": {
+    "CA-LAST-TWO-FLOOR": "ac27b3c3c7d9e7ef7b09029a442931c402af6718aaa86500f0f8e3d303d226e1",
+    "customer-attraction/all-position-pair-static-security-candidate-and-finite-cone-scope": "4ebb29c723236a2cebe672593a7a8a6200c612c3dedf16a3a9efa6cad93a0cf2"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/全位置成对安全值候选与有限锥判别范围--候选.md": "4d25a518482c0ba7d798c90e34f33db33b779c64e9e0e72330f232956aec85f6",
+    "archives/customer-attraction/state/定理/末两人逐人保底与全人数弱福利界--定理.md": "204030503c37b18f8d26ce664b9cb99afc688fed77c8221a00cf0d8d7b21b34b",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "bf227057a6ac79c2c273079258ccbbbcc6fef37af24ac1614ea1490914447336"
+}

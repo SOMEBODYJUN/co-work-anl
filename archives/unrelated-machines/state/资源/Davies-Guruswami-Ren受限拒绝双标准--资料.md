@@ -81,15 +81,13 @@ Theorem 2：存在普适常数 delta,epsilon>0，给定一个所有 n 个代理�
 
 Theorem 3：对任意 delta>0，存在 epsilon>0 和多项式时间随机算法；若输入集合族存在 m 个集合分割全集，则期望找到 (1-delta)m 个集合及其两两不交子集，每个子集至少占原集合 epsilon 比例。
 
-作者取 D=40/delta，C=400/delta^2，epsilon=delta^2/800，按集合大小分为小集合 |S|<=C 与大集合 |S|>C。小集合阶段在集合节点与元素节点之间建单位容量网络：源到集合容量一，元素到汇点容量一，集合与其元素之间容量一。最大流饱和的集合各取一个元素；因 epsilon<1/C，每个小集合取一个元素即满足比例。
+以下取 0<delta<1（delta>=1 时空输出已达数量保证）。设 D=40/delta，C=400/delta^2，e0=delta^2/800。空集合可直接以空子集选入，以下只处理非空集合。若允许空块计入承诺，则以下的 m 指原分割的非空块数。小集合 |S|<=C 用单位容量网络最大匹配，各配一个不同元素，已足够保留 e0 比例。记所配集合数为 a，所用元素为 U_s，故 |U_s|=a。每个小集合都交 U_s，否则可把一个未匹配小集合直接配给未用元素，与最大性矛盾。一个原始分割中，每个被移除元素至多碰到一个分割集合，因而至少 m-a 个原集合完整留在 U\U_s。令 R 为该残余实例完整集合打包的最优值，则 a+R>=m；残余只需考虑完全包含于 U\U_s 的大集合。
 
-大集合阶段解 fractional packing LP
-max sum_S x_S subject to sum_{S contains u} x_S <= 1 for each u, 0<=x_S<=1。
-有 m 个分割集合，所以 LP 最优值至少 m。独立按 x_S 采样集合。令 T 为被至少 D 个采样集合覆盖的元素；保留采样集合中 |S intersect T|<0.1|S| 的集合 B；将每个非热门元素随机分配给包含它的 B 中某集合；若集合收集到至少 epsilon |S intersect T| 个元素，保留之为 C。
+在残余实例求 fractional packing LP：最大化 sum_S x_S，其中每个元素 u 满足 sum_{S contains u} x_S<=1，且 0<=x_S<=1。其最优值至少 R。独立按 x_S 采样集合成 A。令 T 为至少被 D 个采样集合覆盖的元素，令 B 为 A 中 |S intersect T|<0.1|S| 的集合。对 x_S>0 的固定 S，在 S 已采样的条件下，每个 u in S 的其他采样覆盖数期望至多一；Markov 给 Pr[u in T | S in A]<=1/(D-1)<=delta/20。再对 S 中热门元素数用 Markov 得 Pr[S not in B | S in A]<=delta/2，所以 E|B|>=(1-delta/2)E|A|。
 
-每个元素的采样覆盖期望不超过一，Chernoff 界给 Pr[u in T] <= delta/20。Markov 界给采样集合因热门元素比例过大而被删的概率至多 delta/2，因此 E|B| >= (1-delta/2)E|A|。对 B 中固定集合，非热门元素覆盖次数至多 D，单个元素分配到该集合的概率至少 1/D；|S|>C 和第二次 Chernoff 界给收集不足概率至多 delta/2。故
-E|C| >= (1-delta/2)^2 sum_S x_S >= (1-delta)m，
-且每个保留集合取得至少 epsilon |S intersect T| >= 0.9 epsilon |S| 个元素。算法保证是期望意义；多项式时间表述依赖固定 delta 后的常数 C,D。
+给定整个采样结果 A，各非热门元素独立均匀分配给包含它的 B 中某个集合，若没有候选集合则跳过。对每个 S in B，令 K=|S\T|>0.9|S|，其收集元素数是独立 Bernoulli 变量之和，均值 mu>=K/D。保留收集至少 e0 K 个元素的集合。因 e0 D=delta/20，Chernoff 给失败概率至多 exp(-(1-e0 D)^2 mu/2)<=exp(-2.25/delta)<delta/2。这一条件概率界对每个固定 A 均成立。原 Algorithm 6 伪码阈值写成 |S intersect T|，正文的 Chernoff 与比例结论实际使用 |S\T|，这里采用正文阈值。
+
+残余阶段期望至少保留 (1-delta/2)^2 sum_S x_S >= (1-delta)R 个集合，每个至少取得 0.9 e0=9 delta^2/8000 比例。加上小集合阶段，期望总数至少 a+(1-delta)R >= (1-delta)m。两阶段使用的元素互不相交。最终可取定理中的 epsilon=0.9 e0。上述是固定 delta 的随机多项式算法及期望数量保证。
 
 # 6. Bicriteria Set Packing 的硬度
 

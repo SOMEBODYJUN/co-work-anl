@@ -1,0 +1,61 @@
+{
+  "edge_id": "ca35-route17-prime-residual-dominates-advertised-residual",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/orderstat-residual-expression-and-subset-legality-review"
+  ],
+  "target_ids": [
+    "customer-attraction/route-compatible-seven-maxima-asr-all-deletions-separation"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "使用本目标冻结17正列同一分布、route000010实际归属列域、每个前缀r=6−t、L=6r+1和同一席数组q/U；H为整个分布共享且|H|=r−1。q≥0，L>0；不逐客户改变H。",
+  "roles": {
+    "customer-attraction/orderstat-residual-expression-and-subset-legality-review": "提供逐H恒等式R′_H=R_H−Σ_Hq/L及其非负平均单向蕴含。",
+    "customer-attraction/route-compatible-seven-maxima-asr-all-deletions-separation": "使用独立核验的1631兼容列/17正支持数据，将六层全部R′正平均转为同域全部R正平均；本边只负责该一步。"
+  },
+  "explanation": "对本17列分布y先按席求E[q_h]和E[U_h]。广告残差E[R_H]=E[u_t]−Σ_allE[q_h]/L+Σ_HE[U_h]/L；冻结脚本变体E[R′_H]=E[u_t]−Σ_allE[q_h]/L+Σ_H(E[U_h]−E[q_h])/L。因此逐个固定H有E[R_H]=E[R′_H]+Σ_HE[q_h]/L≥E[R′_H]。六个已核R′最小值均正，故全部R平均也正，不能将其最小值或argmin宣称相同。于是针对同一负目标和同一见证，在41+全部R′行族上加入全部广告R也不能恢复非负逐列付款。这里的17正列属于真实归属000010的1631列域，并且与原五路由000010的另一17支持不同：本分布漏0目标为−7513394/580968033（且私有0质量0，故为真正OPT6），漏6目标反为+7377766/193656011；原冻结000010支持漏6为−3227857/487086288、漏0为+1512601/974172576。故两者不能互充固定目标见证；保route000010的主题重标号须固定0和1，无法把漏0变为漏6。本边也不把4064未过滤八轨道数据升格为真实路由证书。本目标D40=−13148647/4647744264仍排除完整SPE。 4064域的正轨道(0,1,(4,))质量为2017043/71420526，均匀含(I={1},J={4})和(I={2},J={4})；后者直接违反route[4]=1∈I要求，而两列的I不交说明第4实际集合甚至没有一个共同极大容器可供改路由。",
+  "scope": "仅为目标17列证书中的R′到R单向平均转移及同见证扩行一步；不从代数恒等式独立推出17正列、41行、真实OPT或完整SPE反例。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/审查/顺序统计残差的表达式错位与逐索引合法性--审查.md",
+      "sha256": "7d6a3b093d916696de5679192e2d2c161c212480df22cdec4b22f078b5c168c6"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/七极大真实归属列的全删席残差仍不足半覆盖--障碍.md",
+      "sha256": "687f3d1324a055e50750425c9a9cd78c2ff37dca9f39b526d3e4b295a2a1dac5",
+      "section": "基础行和两种残差"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/route-asr-compatible-17/verify.py",
+      "sha256": "fa94d575c726bdb94cc61c5f6a325b7acfd1b3d7cde55a7719f89eda1476ad61"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/route-asr-compatible-17/replay.json",
+      "sha256": "f66fa5b6673528ebc10d851474b434dd92595ddb705b87c738ee48c48d1739d6"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/root-seven-maxima-route-target-and-coordination/source-root/research/workspaces/customer-attraction/R-3a870729e9524f6da600542c63297d4c/route_lp_boundary/farkas_witnesses.json",
+      "sha256": "eb3d6461eba39f22ad36241501c24cae21003578e2b924630a24baccadacfba2"
+    }
+  ],
+  "contribution": {
+    "result": "对真实归属1631列上本17正列的六层全部固定H，由R′平均严格正单向推出广告R平均严格正；故同一负目标见证同时排除41+全部R′+全部R的非负付款锥。",
+    "remaining": "17列权的实际归属/正性、41基础行平均、R′六个精确最小值、漏0等于OPT6及D40排除SPE均由独立有限证书验证，不由本代数桥推出。"
+  },
+  "reviewed_by": "Boss5",
+  "review_note": "实读核心、三个比较端点及绑定代码/全有理支持。按同一1631域独立Fraction复算core17的两类残差、原000010两类残差及两份17支持各自漏0/漏6目标；核对新旧分布不同、目标符号相反和主题重标约束。没有复跑优化器，也未将形式行可行误作SPE。 直接运行核心标准库verify.py exit0/stderr0，其stdout字节SHA=f66fa5b6673528ebc10d851474b434dd92595ddb705b87c738ee48c48d1739d6，与冻结replay.json完全相同。 本轮仅复核已发布正文勘误delta、全部四个比较对象v2引用及任务当前pin：4064未过滤形式域与独立1631真实归属证书现已在正文明确分开；代数恒等式、两17目标差异和原有限计算保持有效。未重复运行已通过的1631列验证，也不依赖待定向修复的五条历史canonical边。",
+  "endpoint_pins": {
+    "customer-attraction/orderstat-residual-expression-and-subset-legality-review": "f46196a09f591f8c497432051249e1247540af286d4746ac33fce13a05ea1248",
+    "customer-attraction/route-compatible-seven-maxima-asr-all-deletions-separation": "ec7081d38bda659168c506a3aef2094c7ee6cf8a5757cd1163009b4c72fcfcd7"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/审查/顺序统计残差的表达式错位与逐索引合法性--审查.md": "7d6a3b093d916696de5679192e2d2c161c212480df22cdec4b22f078b5c168c6",
+    "archives/customer-attraction/state/障碍/七极大真实归属列的全删席残差仍不足半覆盖--障碍.md": "687f3d1324a055e50750425c9a9cd78c2ff37dca9f39b526d3e4b295a2a1dac5",
+    "archives/customer-attraction/tools/evidence/route-asr-compatible-17/verify.py": "fa94d575c726bdb94cc61c5f6a325b7acfd1b3d7cde55a7719f89eda1476ad61",
+    "archives/customer-attraction/tools/evidence/route-asr-compatible-17/replay.json": "f66fa5b6673528ebc10d851474b434dd92595ddb705b87c738ee48c48d1739d6",
+    "archives/customer-attraction/tools/evidence/root-seven-maxima-route-target-and-coordination/source-root/research/workspaces/customer-attraction/R-3a870729e9524f6da600542c63297d4c/route_lp_boundary/farkas_witnesses.json": "eb3d6461eba39f22ad36241501c24cae21003578e2b924630a24baccadacfba2"
+  },
+  "review_digest": "01b30ea8d7d2f881830a83f3dbb5e373ab090d259f5b2c8a97ba02bd00c96094"
+}

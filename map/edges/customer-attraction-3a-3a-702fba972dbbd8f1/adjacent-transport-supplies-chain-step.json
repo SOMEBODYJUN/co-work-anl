@@ -1,0 +1,45 @@
+{
+  "edge_id": "cag-702-adjacent-transport-supplies-chain-step",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/adjacent-actual-prefix-bubble-background-and-net-cost"
+  ],
+  "target_ids": [
+    "customer-attraction/actual-prefix-bubble-chain-and-canonical-deficit-witness"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限客户实例、合法actual前缀h_i、任意A及精确前缀(h_i,A,b_i)后的完整尾SPE见证；若使用价格式，两行必须在同一允许raw域、同一shadow和同一总NET-cap共同μ下。",
+  "roles": {
+    "customer-attraction/adjacent-actual-prefix-bubble-background-and-net-cost": "提供全尾有序前缀同构、删除背景相等和精确净成本/价格行差。",
+    "customer-attraction/actual-prefix-bubble-chain-and-canonical-deficit-witness": "其单步QUERY/BUBBLE/PRICE部分获得可复用的完整尾搬运依据。"
+  },
+  "explanation": "将尾策略每个有序历史(h_i,A,b_i,s)重标到(h_i,b_i,A,s)。两已占槽的总负载一致，故每个未来真实比较保持，得到下一actual前缀强制A后的完整孩子SPE。删除的都是选A的单位槽，因此ell_i(z)=ell_{i+1}(w)、d_i(z)=d_{i+1}(w)。严格更深收益和规范M相消，B_i(z)−B_{i+1}(w)=M(h_i,A)−u_{i+1}(z)；同shadow同μ给r_i−r_{i+1}=η_i−η_{i+1}+μ(M−u)。",
+  "scope": "目标气泡链的局部搬运步骤，含完整离轨尾策略而非一条叶。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/相邻实际前缀换位的保背景续局与净成本差--引理.md",
+      "sha256": "184ef7b2acd59723751e02cf7c4247b37227439f18e47a08f33a046401cc619f"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/实际前缀气泡链的规范缺额见证--引理.md",
+      "sha256": "64941328e341b15948a02fe9b5f975b51751f16f8d35ed6d9c9c936f93b477f1"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "本轮按完整正文实读比较，逐项核陈述、量词、全部共同条件和实际可用结论；只把下列contribution局部结果记为局部，不由语境或有限记录冒全目标。",
+  "contribution": {
+    "result": "链目标的QUERY、BUBBLE和共同价格PRICE三式逐点成立，搬运尾仍为真实完整孩子SPE。",
+    "remaining": "目标的任意正缺额δ真IC见证须另用规范max-min独立拼接；真正迭代还需每步重新干预当前见证，不能用固定旧Y机械重复。多源归一质量、η边界及原source银行始终未付。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/actual-prefix-bubble-chain-and-canonical-deficit-witness": "4156ef0918a28971aa594e6e7b92830f2e30b3ce0dcc31d636e4c0b24cf9ca15",
+    "customer-attraction/adjacent-actual-prefix-bubble-background-and-net-cost": "d4839adbe345230c2d66e9c2f9465a0eaccb5e37500b2a6b881b64a0a3469aff"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/相邻实际前缀换位的保背景续局与净成本差--引理.md": "184ef7b2acd59723751e02cf7c4247b37227439f18e47a08f33a046401cc619f",
+    "archives/customer-attraction/state/引理/实际前缀气泡链的规范缺额见证--引理.md": "64941328e341b15948a02fe9b5f975b51751f16f8d35ed6d9c9c936f93b477f1"
+  },
+  "review_digest": "6c4cd0f1daea8fc9ae831bd716049cb5c082c111e77ae8311951b5c9f0b0c239"
+}
