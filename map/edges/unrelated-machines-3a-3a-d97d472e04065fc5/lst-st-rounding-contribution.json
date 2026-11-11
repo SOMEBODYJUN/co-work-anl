@@ -15,18 +15,18 @@
   "roles": {
     "unrelated-machines/lst-two-approximation": "提供实际完整调度的峰值B，支付OPT≤B≤2OPT与可计算性。",
     "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding": "接受克隆实际计数诱导的任意有理分数点；零费用共同槽匹配保资格与任务身份，逐机ℓ_i+r_i≤t_i+δB。",
-    "M-3452046f3bdd47c48b17a0a3038ba4b2": "得到其Rounding Lemma和小任务恢复这一步；核心全部PTAS还需要独立的incidence秩宽计数DP及分解构造。"
+    "M-3452046f3bdd47c48b17a0a3038ba4b2": "得到其Rounding Lemma和小任务恢复的完整局部贡献；核心全部PTAS另结合review保留的独立计数DP、分解构造与回溯证明，已按v5更正复杂度。"
   },
-  "explanation": "令q=δB/n、r_j=ceil(p_j/q)、a_ij为σ′实际放在i上的j克隆数。x_ij=a_ij/r_j列和1，正支撑在M(j)，且Σ_j p_j x_ij≤qΣ_j a_ij=t_i。只对原小任务用ST，取c=0、t=δB；原大任务保持σ′机器且恢复原尺寸不增负载，故Cmax(σ)≤Cmax(σ′)+δB。尺寸化有N≤n²、d′≤ceil(δ^-2)+1；把原最优调度同机复制给出OPT′≤(1+3δ)OPT。如果σ′≤(1+δ)OPT′，输出≤[(1+δ)(1+3δ)+2δ]OPT≤(1+ε)OPT。每一步均为实际可算操作；给定尺寸数的结构DP另在review按cut类型、传出代表元最小化、translation守恒及双向拼接核对。",
-  "scope": "核心PTAS的尺寸化与克隆小任务恢复局部贡献。只用同任务跨机共同尺寸；不迁移到一般unrelated p_ij，不声称FPTAS，不给当前v4错误m依赖的whole_result。",
+  "explanation": "令q=δB/n、r_j=ceil(p_j/q)、a_ij为σ′实际放在i上的j克隆数。x_ij=a_ij/r_j列和1，正支撑在M(j)，且Σ_j p_j x_ij≤qΣ_j a_ij=t_i。只对原小任务用ST，取c=0、t=δB；原大任务保持σ′机器且恢复原尺寸不增负载，故Cmax(σ)≤Cmax(σ′)+δB。尺寸化有N≤n²、d′≤ceil(δ^-2)+1；把原最优调度同机复制给出OPT′≤(1+3δ)OPT。如果σ′≤(1+δ)OPT′，输出≤[(1+δ)(1+3δ)+2δ]OPT≤(1+ε)OPT。每一步均为实际可算操作；给定尺寸数的结构DP另在review按cut类型、传出代表元最小化、translation守恒及双向拼接核对。 对固定实际出口H的入口置换不变性、出口必须最小化的资格反例、来源细类型先拆再翻译及任务域点并闭合，由当前review与interface-audit-review.md明确；它们属于独立结构证明，不归功于LST/ST两端点。",
+  "scope": "核心v5 PTAS的尺寸化与克隆小任务恢复局部贡献。只用同任务跨机共同尺寸；不迁移到一般unrelated p_ij，不声称FPTAS；运行时间沿用v5已更正的m²安全界并另计分解构造，不把本局部边写成全目标whole_result。",
   "contribution": {
     "result": "用LST实际B与ST任意分数点恢复，将同资格有限尺寸克隆实例I′的每份合法σ′变为原restricted实例的完整σ，Cmax(σ)≤Cmax(σ′)+δB；N≤n²、d′≤ceil(δ^-2)+1、OPT′≤(1+3δ)OPT，故(1+δ)-近似σ′恢复成(1+ε)-近似σ。",
-    "remaining": "整条核心另需付清固定尺寸数d下的incidence-rankwidth类型计数DP、实际分解构造与回溯。review已独立核其必要推导，但它们不由这两个舍入来源单独提供；现行v4错误的m 2^k因子须最小改为PDF的m²并另计分解构造后刷新合同。"
+    "remaining": "本关系自身不提供固定尺寸数d下的incidence-rankwidth计数DP、实际分解构造及回溯；这些是完整目标的独立结构成分，已在当前完整review中保留证明，并由复制保存的接口窄审核对实际身份拼接。v5运行时间更正已完成，当前无版本阻塞；不能把两舍入来源未单独提供结构步骤误写成整个PTAS仍未证明。"
   },
   "evidence": [
     {
       "path": "map/edges/unrelated-machines-3a-3a-d97d472e04065fc5/rankwidth-review.md",
-      "sha256": "778a173e98657c8c794759c77f015511f8e62f45df55b0b25968e94896105953"
+      "sha256": "1666746f732e4b41eeaede96e9771e19995d848549d552c50e8114a54ee1d8f8"
     },
     {
       "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
@@ -51,8 +51,30 @@
       "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
       "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
       "section": "2. 有序槽与最小费用匹配：完整证明"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-d97d472e04065fc5/interface-audit-review.md",
+      "sha256": "36f615d43e47f9cc675d06523fc579026ea3a685475b182aae46a57bb8c970b3"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+      "sha256": "113ed833ea9443fe2166793c19b5fe2b1b6bfb3b789e6f617372120d1c90375e"
     }
   ],
-  "reviewed_by": "Boss6/restricted-rankwidth-worker",
-  "review_note": "完整审读当前两来源合同及自足证明；结构PDF页12–19必要proof实读，12/13/16/17视觉核；显式锁定大任务、构造克隆分数点并保持原资格、核δ预算。accepted只覆盖contribution中的局部舍入命题；v4错误运行时间已报更正，最终交付需刷新核心版本。未写任何伪造endpoint_pins/evidence_pins/review_digest。"
+  "reviewed_by": "Boss6",
+  "review_note": "Fresh worker完整实读当前v5三端点/结构正文/ST-LST资源、原完整稿和独立窄审，未冒称重读PDF或新科学运行。Root另全文核现版完整review、独立接口报告及贡献边，独立核尺度/误差、small恢复与big锁机、逐H入口置换及实际身份点并、资格叶和m²复杂度分项；来源更正此前已正式登记。此关系只支付两舍入来源的局部贡献，固定尺寸DP另有保全完整证明。Root随后真实执行native edge-bind --write及edge-check，结构校验不替代数学论证。",
+  "endpoint_pins": {
+    "M-3452046f3bdd47c48b17a0a3038ba4b2": "ba12f5b18a9a510724838777afe59d7cd3424453bc0e55a74d2d56b5b840687e",
+    "unrelated-machines/lst-two-approximation": "5771433d59066caee67ea38680fecaca5af89e91b7370b31d54ba9af99818374",
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding": "c12cff11f8d9d634441f752ebe101222ec0faba1d570a402caf2618f68edb356"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-d97d472e04065fc5/rankwidth-review.md": "1666746f732e4b41eeaede96e9771e19995d848549d552c50e8114a54ee1d8f8",
+    "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae",
+    "archives/unrelated-machines/state/资源/LST不相关机二近似与硬度--资源.md": "2197637438ed2fdfe40d4eb21ba2f86a6d9fd4dde4211b01fb253e38a7489969",
+    "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+    "map/edges/unrelated-machines-3a-3a-d97d472e04065fc5/interface-audit-review.md": "36f615d43e47f9cc675d06523fc579026ea3a685475b182aae46a57bb8c970b3",
+    "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md": "113ed833ea9443fe2166793c19b5fe2b1b6bfb3b789e6f617372120d1c90375e"
+  },
+  "review_digest": "4d7904deb1047b7fc51d474c74f464a549cede003ce48f5af7e64a5b598b6d7e"
 }

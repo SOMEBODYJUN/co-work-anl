@@ -1,16 +1,31 @@
 {
   "coverage": {
     "M-3452046f3bdd47c48b17a0a3038ba4b2": {
-      "state": "needs-decision",
-      "object_pin": "d98e21ee28031f26b5b3f7f2661ddfb52c5ff5ed9916ea980256005071a6008e",
-      "comparison_scope": "完整v4合同/中文正文、结构PDF页1–5和12–19及指定视觉核；新增LST v2与ST v1完整合同、自足承重证明和provenance。已完成rankwidth DP正确性、克隆保持秩宽、有限尺寸化、共同槽恢复及二近似上界的逐项比较。",
-      "reason": "已经得到一条accepted ALL局部贡献边，完整数学可复用；发现v4 statement/body错转写PDF页17复杂度，必须先修正为m²并另计分解构造后更新核心版本及源SHA。本收据为按v4保全的草稿，不能据此done当前错误版本。"
+      "state": "linked",
+      "object_pin": "ba12f5b18a9a510724838777afe59d7cd3424453bc0e55a74d2d56b5b840687e",
+      "comparison_scope": "当前M345 v5完整合同/共享中文全文、LST v2和ST v1完整合同及资源全文；复用原完整rankwidth主稿、历史PDF读取账本和4页图，全文读独立固定尺寸DP接口窄审及其ledger。核完整尺寸化/克隆/恢复与cut类型/translation/实际身份拼接/叶根回溯/复杂度；本次没有新读原PDF或重跑科学程序，treewidth/FPTAS仅核非迁移边界。",
+      "reason": "LST给实际OPT≤B≤2OPT，ST接受克隆实际计数诱导的任意分数点，二者共同完整支付尺寸归约及仅small恢复，得到一条accepted ALL局部贡献。完整目标的固定尺寸rankwidth DP独立证明已保留并由窄审核整数拼接；这些不由两资源本身单独提供。v5已落实m²及单列分解构造，旧v4阻塞关闭；无身份/版本needs-decision。",
+      "edge_ids": [
+        "um-lst-st-to-incidence-rankwidth-size-reduction"
+      ]
     }
   },
   "assets": [
     {
+      "path": "map/edges/unrelated-machines-3a-3a-d97d472e04065fc5/interface-audit-manifest.json",
+      "sha256": "32e692ed64514bf6b10ba45d3194f8d811b51696a3e308d87aafe8e474829fc5"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-d97d472e04065fc5/interface-audit-reading-ledger.json",
+      "sha256": "bde1991eef89ec723692ea12116858662d69c9f83fb04acf74ea7080dc240b1c"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-d97d472e04065fc5/interface-audit-review.md",
+      "sha256": "36f615d43e47f9cc675d06523fc579026ea3a685475b182aae46a57bb8c970b3"
+    },
+    {
       "path": "map/edges/unrelated-machines-3a-3a-d97d472e04065fc5/lst-st-rounding-contribution.json",
-      "sha256": "9d8a866c38839d635157a328ab8b157e68c83faa4754e2f65f62f78a92555e29"
+      "sha256": "5e52af28da56103119e5ff090d30e6dec70d6b02f61296cb392cc293adae5785"
     },
     {
       "path": "map/edges/unrelated-machines-3a-3a-d97d472e04065fc5/primary-page-12.png",
@@ -33,14 +48,24 @@
       "sha256": "2bbf9deffa9cb6bdf2026e441cb73d4c4ce31f387d923ba8dcf983cc096ba65c"
     },
     {
-      "path": "map/edges/unrelated-machines-3a-3a-d97d472e04065fc5/rankwidth-review.md",
+      "path": "map/edges/unrelated-machines-3a-3a-d97d472e04065fc5/rankwidth-review-v4-preserved.md",
       "sha256": "778a173e98657c8c794759c77f015511f8e62f45df55b0b25968e94896105953"
     },
     {
-      "path": "map/edges/unrelated-machines-3a-3a-d97d472e04065fc5/reading-ledger.json",
+      "path": "map/edges/unrelated-machines-3a-3a-d97d472e04065fc5/rankwidth-review.md",
+      "sha256": "1666746f732e4b41eeaede96e9771e19995d848549d552c50e8114a54ee1d8f8"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-d97d472e04065fc5/reading-ledger-v4-preserved.json",
       "sha256": "21713a86d11e00971a7a8cd36e2596191925293d3915f8341a173ee7ea03faba"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-d97d472e04065fc5/reading-ledger.json",
+      "sha256": "ad5327ec8374eee796a545c74e41a020f754fb7e2ad6a4b77510615001806e3a"
     }
   ],
+  "closed_overlaps": [],
+  "follow_up_tasks": [],
   "additional_comparisons": [
     {
       "core_id": "M-3452046f3bdd47c48b17a0a3038ba4b2",
@@ -49,7 +74,7 @@
       "edge_ids": [
         "um-lst-st-to-incidence-rankwidth-size-reduction"
       ],
-      "reason": "仅提供可计算OPT≤B≤2OPT；与ST共同支付Rounding Lemma，不把二近似直接当近1。"
+      "reason": "实际2近似调度给可计算B∈[OPT,2OPT]；单独未给small任意分数点恢复或固定尺寸DP。与ST合用完整支付尺寸归约，非单独近1推导。"
     },
     {
       "core_id": "M-3452046f3bdd47c48b17a0a3038ba4b2",
@@ -58,8 +83,23 @@
       "edge_ids": [
         "um-lst-st-to-incidence-rankwidth-size-reduction"
       ],
-      "reason": "接受实际克隆计数诱导的任意分数点，原资格与锁定大任务下每机只添δB。"
+      "reason": "对实际克隆诱导x接受任意分数点；零费用共同匹配保持原身份/资格，small每机添≤δB，big锁机。单独未给尺度B或固定尺寸DP，与LST组成同一ALL局部贡献。"
     }
   ],
-  "delivery_status": "mature-draft-awaiting-core-v5; no native edge binding or queue mutation by worker"
+  "historical_asset_policy": "rankwidth-review-v4-preserved.md、reading-ledger-v4-preserved.json、原draft及4页图逐字保留；draft已由v5实施只作历史证据，旧v4/等待更正词不反映本次状态。独立窄审report/ledger/manifest逐字复制纳入assets；历史与本次实际读取分开。",
+  "delivery_status": "current-v5-mathematically-reviewed-and-natively-bound; ready for pushed checkpoint and native done",
+  "parent_review": {
+    "reviewed_by": "Boss6",
+    "mathematical_checks": [
+      "Root全文核当前9654字符完整review、独立接口审查、最终贡献边和receipt；旧完整主稿已于来源更正前实读并保全。此前Root全文读两成熟ST/LST资源并视觉核原PDF页17的m²；本轮不冒称Root或fresh worker重新逐页读原PDF。",
+      "LST实际调度给OPT≤B≤2OPT；δ=min(1/3,ε/7)，大任务向上δ²B网格、小任务ceil(np/(δB))个同资格克隆，N≤n²、d′≤ceilδ^-2+1，原最优同机复制给OPT′≤(1+3δ)OPT。",
+      "给定实际克隆调度，小任务分数x=a/r具有列和1与正确资格，行负载≤该机clone负载；只对small调用任意分数点ST，big机器固定，恢复加性≤δB，故(1+δ)(1+3δ)+2δ≤1+ε。未让ST自己承担结构DP或把LST顶点舍入冒充任意分数点。",
+      "对每个固定实际出口H，入口同cut邻域同尺寸置换逐机保持资格和负载，所以可以先选子最优出口再用对侧实际出口替换规范入口。出口需类内实际subset最小化，2job/2machine例任取代表会1变∞。来源细类先拆再translate，左右任务域点并恰为父域，机器域不交，实际整数回溯成立。",
+      "计数含0，机器叶保原页14资格拒绝分支；零外邻域局部出口可有限但不能在根形成完整错解。克隆false twins给width≤max(k,1)。给定分解DP/预处理m²(n+1)^{O(d2^k)}及f(k)(n+m)^3分解构造分别计费，fixedk/fixedε仅PTAS。",
+      "单一ALL只支付尺寸化和克隆恢复局部步骤，remaining说明固定尺寸DP已由独立完整主稿/接口审查支付，非全目标未证。十份历史资产按原字节保留；旧勘误draft已实施，只保来源史。"
+    ],
+    "new_mathematical_program_runs": 0,
+    "old_scientific_program_replays": 0,
+    "native_validation": "The unique active edge was natively bound and structurally checked against current-v5 endpoint and evidence pins."
+  }
 }
