@@ -1,0 +1,54 @@
+{
+  "edge_id": "um-boss2-6405-blmrs-rational-bit-transfer",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-5ecd146af7cb4e7cbd110d3f635a57be"
+  ],
+  "target_ids": [
+    "M-49195941d69c4784890f322dca84ef7b"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意固定实数 α≥2 和 η>0；Santa 输入为显式二进制非负有理价值矩阵；给定对所有一般不相关机实例均输出实际完整调度的确定性总位多项式 (2−1/α)-近似算法。这里的算法假设是目标定理内部的前件，不额外假设 Santa 无常数近似。",
+  "roles": {
+    "M-5ecd146af7cb4e7cbd110d3f635a57be": "提供一般模型中从 UM 近似输出到 Santa 分配的方向，以及每玩家/配置的配置机、单位选机任务、原资源机与 Lemmas 12–14 的实际调度解码。",
+    "M-49195941d69c4784890f322dca84ef7b": "保留该物理构造，用已证明的有理截断、配置压缩和阈值搜索补齐确定性总位多项式合同，得到整条 (α+η)-近似实际分配定理。"
+  },
+  "explanation": "（1）实读当前源 v2 第1节以及同 SHA 冻结作者稿 Theorem 1、§2、Lemmas 10–14 和附录 B。源方向为调用 makespan 算法求 Santa 分配；不是由一般 Santa 算法反推出一般 UM 算法。配置记录每玩家各值类型的整数件数，不是可丢失玩家/资源身份的公共目录。源页这次全文 SHA 变化来自别的数学章节；第1节的一般归约合同未变。\n（2）对有理猜值 T>0 以 x_ij=min(v_ij/T,1) 归一化。T≤OPT 时，某真实互不相交分配的每人归一价值仍至少1。固定有理 0<s<1，q=1+s，取最小 L 使 q^(−L)≤s/n。删除小于 q^(−L) 的值只损失至多 n q^(−L)≤s，再向下取至连续网格 {q^(−j):0≤j≤L} 只损失因子 q。每个类型数量 d>0 改为 ceil(q^ell)，其中 ell 是 q^ell≤d 的最大整数；此数≤d且>d/q，因此仅丢弃资源并再损失因子 q。取固定整数 κ 使 q^(−κ)≤s/q。网格下标按模 κ 分组，每组依价值下降仅保首个非零数量及后续严格刷新数量的类型。每个被删数量不超过其前一保留类型数量，且价值相隔至少 κ；相对于该保留类型，被删总价值至多 Σ_(a≥1)q^(−aκ)=q^(−κ)/(1−q^(−κ))≤s。故稀疏后保留因子至少1/q，最终每人的配置价值至少 b=(1−s)/q^3。所有步骤只删除资源，真实互不相交性保持。\n（3）每组可用值位置与正数量值均为 O_s(log(n+1)) 个；选择位置子集、正数量子集后，唯一严格递增匹配决定该组配置。κ 固定，故每玩家总配置数为 (n+1)^(O_s(1))。仅枚举总件数≤n且价值 |c|≥b 的配置。若 q=A/B 为固定有理数，网格分母整除 A^L；L=O_s(log(n+1))，配置件数、价值与 v/|c| 的位长为多项式。归一化及枚举只做有理数和整数运算。\n（4）为每玩家 i 的配置 c 建机 m_(i,c)，其每件值类型 w 的配置任务在该机耗时 w/|c|，仅在 i 对该类型相容的原资源机 j 耗时1。每玩家一个单位选机任务只能选本人的配置机。不可用端可用有限常数3编码。正确猜值的真实资源匹配把选中配置的任务送到互异原资源机，其单位任务留在所选配置机；未选配置的全部任务留本机，总负载恰1。因此构造实例 OPT_UM≤1。任意合法完整实际调度若峰 C<2，则禁止端未用、每原资源机至多一任务。单位选机任务实际落点指认每玩家一个配置，选中配置机留下的配置任务负载≤C−1，送到原资源机的价值至少 |c|(2−C)。这些实际目的地给原资源互不重复的分配，原值至少 T|c|(2−C)；未领取资源可任意补派，非负原值保证无人减值。正确猜值下 UM 算法保证 C≤2−1/α，因此每人所得原值至少 Tb/α。\n（5）固定足够小的有理 s 使 b>α/(α+η)，再固定有理 a0 满足 α/b≤a0<α+η。只接受已核验的完整物理调度、C<2以及实际原值每人≥T/a0；正确猜值必接受，任意接受都有原资源实物见证，不需运行时编码或比较 α、η。令 Q 为所有输入价值既约分母之积，U=max_i Σ_j Qv_ij。OPT 在1/Q网格且≤U/Q；log Q和log(U+1)关于总输入位长为多项式。整数二分初始 l=0、h=U+1，l存实际分配，h>QOPT。测试K/Q，接受则升l并存见证，拒绝则因所有T≤OPT必接受而有K>QOPT，故降h仍保不变量。无需高猜接受性单调。终止h=l+1推出l≥QOPT，所存见证值≥l/(Qa0)≥OPT/a0≥OPT/(α+η)。零资源或OPT=0亦由零值分配/同一非负不变量处理。共 O(log(U+1)) 次调用，显式机器/任务矩阵和输出检验均为总位多项式。\n（6）上述完整证明复用旧边的有效数学，替换失效的源版本/SHA绑定。附录 B 字面阈值1/((1+ε)n)的首步损失不能直接使用：ε=1/10、n=2、价值9/20与11/20时切点5/11删去9/20，只剩11/20<10/11；这里以≤s/n的连续网格及上述估计完成修补。此反例针对该首步而非否定 Theorem 1。旧条件双源审查中的位增长义务由目标全文及本关系付清；独立 SCHA_det^N 假设仍未证明，既不成为本边前提，也不由本边推出。",
+  "scope": "一般显式二进制非负有理 Santa 与一般 UM 的确定性实际算法转移，α、η 固定。保持每个玩家和每件原资源身份，不扩展为两值反向、restricted assignment、matroid basis、随机算法或无条件复杂度下界。",
+  "whole_result": "对每个固定实数 α≥2 和 η>0，若一般不相关机有确定性总位多项式时间的实际 (2−1/α)-近似调度算法，则对任意显式二进制非负有理 Santa 输入，有确定性总位多项式时间算法输出实际互不冲突原资源分配，使每位玩家价值至少 OPT/(α+η)。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
+      "sha256": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
+      "section": "1. 一般 Santa Claus 到 Makespan"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
+      "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/一般SantaClaus到不相关机的有理位保持转移--定理.md",
+      "sha256": "d0b040d9fe3d4f6fbb26fcc67d9083bffe40f0274d7fd7b30525307cfdad8f4a"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/Santa无常数近似条件反面双源审查--审查.md",
+      "sha256": "406f82949f814028b7161bb4508fa48218dff0c0eb16af9ba05b43443088ba63",
+      "section": "适用性、位复杂度与数学边界"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "在 claimed/owner Boss2、两个当前 input pins 与正文/证据 SHA 一致的输入上，实读源页全文、目标全文、双源审查及冻结 PDF 的一般模型、Theorem 1、§2、Lemmas 10–14、附录 B 完整证明，并对照两值/拟阵合同边界。独立逐步复核截断损失、取量不增资源数、连续网格模 κ 尾和、配置枚举位界、实际不重复资源解码与允许高猜非单调的阈值不变量。新边完整保留旧数学，只更新准确绑定并展开证明；没有以有限计算充当证明。",
+  "endpoint_pins": {
+    "M-49195941d69c4784890f322dca84ef7b": "c5df48ba0bc06da10680b294eec39270c48bc7bf91f98deb02fd13c3f21b2401",
+    "M-5ecd146af7cb4e7cbd110d3f635a57be": "04c11305343dd00b9052f2ec4d075d3e33414b7e7b2b22d0685848af711f4dea"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
+    "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183",
+    "archives/unrelated-machines/state/定理/一般SantaClaus到不相关机的有理位保持转移--定理.md": "d0b040d9fe3d4f6fbb26fcc67d9083bffe40f0274d7fd7b30525307cfdad8f4a",
+    "archives/unrelated-machines/state/审查/Santa无常数近似条件反面双源审查--审查.md": "406f82949f814028b7161bb4508fa48218dff0c0eb16af9ba05b43443088ba63"
+  },
+  "review_digest": "2c51c80a700bb00656fb51f0b76fec1fa3237b3f6488af75a31e48ea518278af"
+}
