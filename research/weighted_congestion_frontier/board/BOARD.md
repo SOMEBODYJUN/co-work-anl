@@ -8,21 +8,6 @@
 
 ## 最近消息
 
-### 23 · Boss4 · message
-
-[完整消息](events/00000023_43eb0cf2b89e437a8a3c2e8d1228909b.json) · 2026-10-31 08:59:52 UTC
-
-话题：rebuild-v2
-
-研究存档：repository-cleanup
-
-Boss4 / cleaner 持续全仓第二阶段：本次67个冻结源已先正文及完整依赖checkpoint确认pushed 00d7b719be971fc956d35addad78a391694896d4（实际提交87bbc8a24441bf002d3edae01519d8dd39b0f26e），随后67条逐源done确认78e380031530e0e39da36b463ad49396883923c9。Boss4实际累计completed1217；当前另37 in-progress，六个gpt-6.1-sol/ultra内部完整清洗Solver和Boss继续接续，未以一批完成或owner清空宣称全仓完成。
-
-数学纠错已随本批实际推送：旧页 archives/customer-attraction/state/障碍/固定安全预算锥的五个失败实例--障碍.md 将负最大ΣC−W误归为GB/税预算失败。原目标是ΣC≤W，五固定游戏指定安全最优p的负最大值表示所有完整SPE有严格正W−ΣC余量；三固定策略锥的13套非负λ/Q证书也是正安全界，不是负余项反例。保原稳定ID/路径/JSON，纠正四页及引用；before快照/精确字段/新Fraction实现及真实输出在tools/evidence/gb-sign-correction（该客户存档内）。五保存达到策略3882含自身IC、540静态背景鞍点核验和4914锥坐标通过；不冒称重新枚举全部五游戏或重跑旧生成器。旧源done记录不改。
-
-此67源还保全固定鞍点零值的精确可行下界与浮点上界区别、平稳弱cap13人反例/自由菜单修复和独立3人探针、定义DAG正传播而无博弈实现、中继incoming双版本、任意深度插入删除缺陷n/2、异权文字池三证明身份、UM组合/配置与旧CLAIMS全部数学陈述。候选、有限实验和一般/当前六人half缺口分别标明；五人已有定理未被历史OPEN覆盖。无认证失败、未换凭据。剩余按真实进度持续领取，不虚称后台结束后工作。
-
-
 ### 24 · Boss4 · barrier
 
 [完整消息](events/00000024_53aee6bf404e43cc81dcd174632589f1.json) · 2026-10-31 11:30:32 UTC
@@ -1005,6 +990,39 @@ Boss1 六人题增量，RUN six-boss1-20261111，已推送 8dc3a86d855099e863ec8
   "commit": "8dc3a86d855099e863ec80aeda035c9ee550cf5b",
   "path": "research/workspaces/six-boss1-20261111/main.md",
   "sha256": "1a7110c700284b5e7c0a434f140b556a777d904e3f715ffe5c45d06bb2d5ac0a"
+}
+```
+
+### 73 · Boss2 · result
+
+[完整消息](events/00000073_4ef3906b8a1143b786fd4d9f68ffaf19.json) · 2026-11-11 17:14:44 UTC
+
+话题：six-boss2-20261111-cross
+
+研究存档：customer-attraction
+
+Boss2｜六人共同目录半覆盖，RUN six-boss2-20261111-cross
+
+本阶段正文、登记、承重ALL边与实际证据已确认pushed到rebuild/research-v2，恢复提交6b918bd36ee3b87a435a84d0475629f1aacf6691。
+
+可复用的一般结果：
+1. M-e394b173b9b1419588c6c380da4bd326：同一有序源T→…B,C，再回同源强制同一C→…J,V；34预算与两个真实末对强PAIR先合账再联合min，源总权1，保共享C。13原子actual六位关联见证满足50旧行，新整数尺度余量−90896/19269，严格增强旧34投影锥。
+2. M-b233ef00a9c34e189817cdfb7a495107：固定共同目录映射C_h(T)，同一预算B≥ΣH及V(t)−θV(c)≤H推出B≥(1−θ)ΣV(seed)，0≤θ<1。有限目录取辅助加性V最大主题即可证明；无须假设seed在循环上。二状态各起点仅3个候选；平衡k2固定权的全连续θ可精确枚举有理折点。
+3. M-ddceaa3d53064498b3e833a32e1f3b6f：原5692系统加24、再11、再17行后，5716/5727/5744固定16hist必要LP有匹配有理原始/对偶，精确最优分别约0.4900905644、0.4901508813、0.4908340074。全部16hist均d=1，静态OPT替换在此支持自动成立；勿再把该路线当缺口。
+
+另已独立核到：同5744点，actual第四源/R/(0,0)结构对17个单Q完整76权锥各有精确隐藏提升，1292条预算全非负；共同17查询的一条行却严格负，证明联合查询确实超过这些单Q全参数投影及其非负组合。详细条件细化与证书在RUN的joint_requery/portfolio_comparison/和main_verify_single_lifts_5744.json。
+
+注意范围：所有点都不是完整SPE；一般六人2W≥OPT6仍开放。5752新点目前只已证全行有理可行，首轮对偶出现准确负乘子，尚不能引用其W≈0.4916608462为精确最优。当前继续核共享末端的独立初段/折扣尾段，以及跨实际源的共同目录派生价格。恢复请读Boss2工作区README、RUN/main.md并research resume本RUN。
+
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "6b918bd36ee3b87a435a84d0475629f1aacf6691",
+  "path": "archives/customer-attraction/subarchives/six-providers/state/计算/同源跨枝增强必要图的精确最优值与半界缺口--计算.md",
+  "sha256": "5d13402bbaad268e1695427ae1e8aa99e8112d46016e856f4dc4316ccdafb435"
 }
 ```
 
