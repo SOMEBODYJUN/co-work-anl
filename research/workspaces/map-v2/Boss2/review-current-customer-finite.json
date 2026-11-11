@@ -1,0 +1,377 @@
+{
+  "schema": 1,
+  "reviewer": "Boss2/integrate_finite",
+  "task_id": "customer-attraction-3a-3a-87d9e56f176d1d6d",
+  "review_scope": "仅本收据四条指定边的3D实质数学复核；当前登记端点、承重证明与必要静态证据。",
+  "outcome": "四边均可按现有精确范围整合；未发现确定数学错误或需要先修复的缺步。",
+  "execution_boundary": {
+    "git_operations": 0,
+    "network_or_work_py": 0,
+    "queue_operations": 0,
+    "credential_reads": 0,
+    "new_scientific_runs": 0,
+    "performed": "只读当前仓库规则、登记、正文、原程序、冻结证书及历史事件；用标准库解析JSON、数保存条目、比较既有字节并核SHA/registration_pin。未执行原审计、DP、LP或完整隐藏态遍历。"
+  },
+  "input_integrity": {
+    "all_four_receipt_asset_hashes_match_current_edges": true,
+    "all_endpoint_pins_match_current_registry": true,
+    "all_edge_evidence_sha256_match_current_bytes": true,
+    "cartesian_two_saved_replays_byte_equal_to_frozen_outputs": true
+  },
+  "edges": [
+    {
+      "edge_file": "map/edges/customer-attraction-3a-3a-87d9e56f176d1d6d/cartesian-audit-finite-payoff-unique-check.json",
+      "edge_id": "ca-87d9-cartesian-audit-finite-payoff-unique-check",
+      "edge_sha256": "7cc0a01c6ee66a9146bc127b1bc4e375993afe68e3a50588a23a75ed0c55eae2",
+      "current_endpoint_records": [
+        {
+          "object_id": "customer-attraction/closeout-1ed22a276af8b03beb384931",
+          "version": 1,
+          "truth_status": "finite",
+          "registration_pin": "eda0fbcc40d548caeffd1d62e3f9584f8b7f8f3216c690806dab5776984a2a99",
+          "matches_edge_pin": true
+        },
+        {
+          "object_id": "CA-CARTESIAN-PAYOFF-UNIQUE-FACTOR-v1",
+          "version": 1,
+          "truth_status": "proved",
+          "registration_pin": "478b993429188620a73b4531f1bc8c397d7bae51999252b2c19dc35e1ba00d5e",
+          "matches_edge_pin": true
+        }
+      ],
+      "actual_conclusion": "有限计算确实检查80个候选有序分量对中满足强支付唯一前提的47例；对每例只断言联合根可实现终局的逐位置投影等于两个分量根终局集合乘积。一般每个联合子博弈分解由目标正文的解析归纳独立承担。",
+      "integration_decision": {
+        "can_integrate": true,
+        "mode": "保留 accepted / checks / context 原范围，无须修改边"
+      },
+      "mathematical_review": [
+        "原程序tree在每个分量所有长度0至m−1的有序历史求完整SPE终局集合，唯一性检查集合{pay(ss,z)}，pay返回全部m位玩家收益，故也含已经行动的前缀玩家；终端只有固定终局，未列入唯一性循环不损失条件。",
+        "候选域是m=1,…,5与四种块向量各自有序配对，共5·4²=80。冻结输出47项分布为16、9、9、9、4；两分量均unique才执行根projected==product(o1,o2)，没有对全部联合子博弈逐个断言，也没有枚举完整策略映射。",
+        "目标归纳在联合行动后的每个分量实际终局上使用P_i^j(h^j,a^j)，此时当前玩家已在孩子前缀行动；强假设使它与其它坐标及续局选择无关，完整Cartesian单坐标偏离迫使各坐标最大化。实现实际投影的分量子SPE与其余孩子可独立拼接。反向独立乘积不需唯一性。",
+        "三人等大双色分量异色前缀的末位平局自己均得q/2，却给前两人(q/2,q)或(q,q/2)，因此与福利非可加反例并不矛盾。"
+      ],
+      "evidence_read": [
+        {
+          "path": "archives/customer-attraction/state/计算/笛卡尔福利与支付唯一分解的精确核验--计算.md",
+          "sha256": "b92e1abb87634e79cee811dc1fe2a2e80bee81c1bed71bfa580bfc0da028c28a",
+          "lines": {
+            "start": 65,
+            "end": 87
+          },
+          "use": "80候选/47通过与根断言域"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/cartesian-payoff-decomposition/original/audit_payoff_unique_product.py",
+          "sha256": "9954bf14ffa925939a90be60760276dae4328ca94abbd2dccd5eaf298d4530b2",
+          "lines": {
+            "start": 7,
+            "end": 33
+          },
+          "use": "全m维收益唯一筛选、根投影断言"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/cartesian-payoff-decomposition/original/payoff_unique_product_verified.json",
+          "sha256": "d3fee2e2955a5298af86615f12139f2e43ea2db1142a8dc309de53970a66ba37",
+          "use": "保存47例与负向条件检查；仅解析既有输出"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/全体玩家续局支付唯一的乘积分解--定理.md",
+          "sha256": "34e461e4bac319cd0804f194fd5e83ba3fb7b10cafc6d4aa25cad6cd0070ab4a",
+          "lines": {
+            "start": 20,
+            "end": 78
+          },
+          "use": "全历史全体玩家量词及两个方向归纳"
+        }
+      ],
+      "concrete_gaps": [],
+      "scope_limits": [
+        "有限回归不能作为一般乘积分解的逻辑证明，当前边已准确用checks/context。",
+        "登记目标的每个子博弈结论与最差福利可加来自解析证明；检查本身不证明强前提必要性。"
+      ],
+      "determinate_errors": [],
+      "minimal_corrections": []
+    },
+    {
+      "edge_file": "map/edges/customer-attraction-3a-3a-87d9e56f176d1d6d/cartesian-audit-finite-welfare-check.json",
+      "edge_id": "ca-87d9-cartesian-audit-finite-welfare-check",
+      "edge_sha256": "7ffb98c60aeb4e421804678e7883fdd0af09bf52bda63bf504fc7fa454ab8d94",
+      "current_endpoint_records": [
+        {
+          "object_id": "customer-attraction/closeout-1ed22a276af8b03beb384931",
+          "version": 1,
+          "truth_status": "finite",
+          "registration_pin": "eda0fbcc40d548caeffd1d62e3f9584f8b7f8f3216c690806dab5776984a2a99",
+          "matches_edge_pin": true
+        },
+        {
+          "object_id": "customer-attraction/cartesian-efficient-factors-welfare-counterexample",
+          "version": 1,
+          "truth_status": "finite",
+          "registration_pin": "7c81389f0d5158b6073c91f940a64e429a95d8c4a120ba358f24e096bfe39734",
+          "matches_edge_pin": true
+        }
+      ],
+      "actual_conclusion": "冻结七参数的同一份显式联合策略均在43个有序历史、六动作上通过真实续局比较，覆盖两行两色并得W=2a+2q；两个单独分量则按完整终局全集递推分别只得福利3a、2q。",
+      "integration_decision": {
+        "can_integrate": true,
+        "mode": "保留 accepted / checks / context 原范围，无须修改边"
+      },
+      "mathematical_review": [
+        "七参数精确为(1,1),(1,2),(1,9),(2,2),(2,7),(7,7),(7,100)。六标签编号2i+c下actual=(0,1,2)为((0,0),(0,1),(1,0))，因此实际只覆盖两行，不能误作三行。",
+        "check循环所有长度0、1、2的有序前缀，term沿同一action在每个偏离孩子后继续，43·6=258项比较（含自身）。full_outcomes只用于两个单独分量并保留全部平局终局；没有求联合全部SPE或联合最差值。",
+        "一般a≥1、q≥a的策略证明已在反例正文付清：末位新行最优、色规则为真实最优/平局；第二人指定同行异色为a/2+q，异行选择最多a+q/2，q≥a足够；根所有动作同得(a+q)/2。两分量全有效的解析证明也完整。",
+        "216个联合有序终局只用于OPT=3a+2q；静态值由均匀六查询与十二个异行异色竞争元组匹配给v3=2a/3+q/2。边没有把这类静态值或有限样本混同SPE全参数证明。"
+      ],
+      "evidence_read": [
+        {
+          "path": "archives/customer-attraction/state/计算/笛卡尔福利与支付唯一分解的精确核验--计算.md",
+          "sha256": "b92e1abb87634e79cee811dc1fe2a2e80bee81c1bed71bfa580bfc0da028c28a",
+          "lines": {
+            "start": 43,
+            "end": 63
+          },
+          "use": "七参数、指定策略/分量全集/静态证书分层"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/cartesian-payoff-decomposition/original/audit_cartesian_efficiency_failure.py",
+          "sha256": "9659f4606d9ccf61f9707fd808c26f2f075e0c689e74d6d36e94ec3e94ca87d4",
+          "lines": {
+            "start": 7,
+            "end": 79
+          },
+          "use": "真实续局完整历史认证、两个分量全集和有限参数入口"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/cartesian-payoff-decomposition/original/cartesian_efficiency_verified.json",
+          "sha256": "8ed10636b34f4d3d6ddaf541cf0d796f7adf17f9723239d24f1d54a2699ea5c7",
+          "use": "保存七例各43节点258比较；仅解析既有输出"
+        },
+        {
+          "path": "archives/customer-attraction/state/反例/笛卡尔目录的福利非可加性--反例.md",
+          "sha256": "4a107a28ae3d2dd8aa8d67a1f6e72359936003a1ee36002916b7e9d7a25091b6",
+          "lines": {
+            "start": 21,
+            "end": 120
+          },
+          "use": "全参数逐节点证明及分量全有效"
+        }
+      ],
+      "concrete_gaps": [],
+      "scope_limits": [
+        "检查边只核七点的指定联合策略；一般参数由正文解析证明承担。",
+        "当前登记目标truth_status=finite偏保守，不能由checks边自动提升；此保守状态不影响本语境边整合。",
+        "不声称所给联合策略最差，也不声称完整策略必须按分量独立。"
+      ],
+      "determinate_errors": [],
+      "minimal_corrections": []
+    },
+    {
+      "edge_file": "map/edges/customer-attraction-3a-3a-87d9e56f176d1d6d/complete-outcome-recursion-to-omitted-client-threshold.json",
+      "edge_id": "ca-87d9-complete-outcome-recursion-to-omitted-client-threshold",
+      "edge_sha256": "e377f5270abb543b65ee5b8f1105c431f0f44c8af6f6a90b2370f6b5947e9af8",
+      "current_endpoint_records": [
+        {
+          "object_id": "CA-EXACT-PURE-SPE-ALL",
+          "version": 2,
+          "truth_status": "proved",
+          "registration_pin": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+          "matches_edge_pin": true
+        },
+        {
+          "object_id": "customer-attraction/omitted-client-deletion-and-unbounded-credible-root-sensitivity",
+          "version": 1,
+          "truth_status": "proved",
+          "registration_pin": "af4e1874e104c5d35b722fa8fe543cb9da07a5b06266ab435e2d6be19e3aae53",
+          "matches_edge_pin": true
+        }
+      ],
+      "actual_conclusion": "完整终局全集递推可迁移到该辅助非负实质量族；全部收益线弱序的精确分区给c=(2,1,0,0,2)可实现iff t≥3/4、根门槛t<3/4为33/4而t≥3/4为7。整数齐次缩放给删除一名实际遗漏单位客户后目标不可实现及门槛差5(4s+1)/4→∞。",
+      "integration_decision": {
+        "can_integrate": true,
+        "mode": "保留 accepted / transfers / unconditional / whole_result 原范围，无须修改边"
+      },
+      "mathematical_review": [
+        "源递推的必要性为实际孩子可实现且每个偏离孩子真实收益≥该孩子最小值；充分性在实际孩子保目标、其它孩子各取达到最小值的子SPE，并按不同有序子树独立拼接。证明只用有限树和真实终局收益，未用客户质量为整数，故同一论证覆盖t∈[0,1]辅助实质量。",
+        "五主题五人126个终局的全部占用标签收益都进入候选线，系数为固定客户的有理alpha与E占用标签1/z_E的beta。保存证书有211条不同线、65个切点、129个点/开区间代表。程序静读确认从所有两线交点建立切分，代表处执行全部孩子全集min/max递推，未固定统一平局选择器。",
+        "开区间内全部候选收益弱序固定，终层集合固定后归纳使每层达到关系与保留集合固定；切点逐点计算保全部平局。根门槛在区间是某一候选线，且33/4与7自身在候选线中：代表处等于对应常数而不恒等将产生遗漏交点，故门槛两段公式也获全区间证明。",
+        "已保存129行的根结果：96个t<3/4代表均仅(2,1,1,0,1)，t=3/4三根结果含目标，余32个代表为(2,0,1,1,1)与目标，门槛分别33/4、7、7。此处只是读取证书，不重算DP；全实参数量词由分区论证而非样本外推。",
+        "t=1删唯一E私有客户变t=0，目标的35个被覆盖固定客户及在轨收益都不变。任意s≥1取k=4s+1，私有人数3s+1到3s给t+=(3s+1)/k>3/4>3s/k=t−；收益整体乘k而可实现全集不变，故门槛差(33/4−7)k=5k/4。全称整数族无需依赖s=1,…,30有限回归。"
+      ],
+      "evidence_read": [
+        {
+          "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+          "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+          "lines": {
+            "start": 21,
+            "end": 91
+          },
+          "use": "计数集合同构、必要/充分/非空和有序策略展开"
+        },
+        {
+          "path": "archives/customer-attraction/state/障碍/实际遗漏客户删除与可信根门槛的无界敏感性--障碍.md",
+          "sha256": "f1239a8d5ae08a1fae4802668f591ca2f5446f588acd7ff9878f914a8703d990",
+          "lines": {
+            "start": 28,
+            "end": 131
+          },
+          "use": "实际输入、全参数覆盖证明、删除与整数族"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/遗漏删除参数证书与重入菜单的证据分层--资源.md",
+          "sha256": "99686dac4c625f4437e0d070229688e8454639586ab963d052366981e7f962fb",
+          "lines": {
+            "start": 39,
+            "end": 69
+          },
+          "use": "保存输出与历史重放的层次"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/omitted-deletion-parameters-and-reentry-primary/new_parameter_and_reentry_audit.py",
+          "sha256": "cc442cfa931e463c97174105123559982817e22680221feb283bb36b7346b78b",
+          "lines": {
+            "start": 9,
+            "end": 137
+          },
+          "use": "客户表、全部收益线、全交点、全集递推和有序证书构造的静读"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/omitted-deletion-parameters-and-reentry-primary/single-new-run/output/parameter-partition.json",
+          "sha256": "48501a61ba3c7a3e3641a0bdff0d9e8d35e20f4f5da7178148106ab2ce28e0f6",
+          "use": "211线/65切点/129代表及完整保存根结果，只解析现有证书"
+        }
+      ],
+      "concrete_gaps": [],
+      "scope_limits": [
+        "根可信max-min门槛不是静态安全值，跳变不否总福利桥或五人half。",
+        "原模型反族使用整数客户；辅助实质量仅用于代数分区，边已说明迁移理由。",
+        "只保证关键末层两端严格，未声称全树strict-SPE。"
+      ],
+      "determinate_errors": [],
+      "minimal_corrections": []
+    },
+    {
+      "edge_file": "map/edges/customer-attraction-3a-3a-87d9e56f176d1d6d/exact-ab-cuts-to-fixed-query-graph-extensions.json",
+      "edge_id": "ca-87d9-exact-ab-cuts-to-fixed-query-graph-extensions",
+      "edge_sha256": "b1c0a1a2965a2f05f6bde590c844726b37a6f4d030775e138a4ff3ab90efb79b",
+      "current_endpoint_records": [
+        {
+          "object_id": "customer-attraction/closeout-53555b8266050816d0d85b39",
+          "version": 1,
+          "truth_status": "finite",
+          "registration_pin": "49fbfb4d6c08215c96d764877dee4286b2f96e9009129ef727413cbe713fdc06",
+          "matches_edge_pin": true
+        },
+        {
+          "object_id": "customer-attraction/closeout-050733087bae701b99737013",
+          "version": 1,
+          "truth_status": "finite",
+          "registration_pin": "de00a5d8f8832c774f5fffbf7533c8f30e5a5763b8963a57420bc47ae7da9b66",
+          "matches_edge_pin": true
+        }
+      ],
+      "actual_conclusion": "两组非负整数AB行组合的完整隐藏直方图上投影，在固定priced33十三位点及独立旧697系统13支持点处分别严格为负；因此这两个指定可见质量边缘的完整AB扩张均不可行。它只认证目标程序对象中这两项分离，不认证全部固定图或SPE。",
+      "integration_decision": {
+        "can_integrate": true,
+        "mode": "保留 accepted / implies / conditional 及 contribution 原范围，无须修改边"
+      },
+      "mathematical_review": [
+        "完整AB引理在真实AB前缀强制六个查询后使用同一原σ的真实后三位回复。Source为实际第三位六IC；CAP、保守floor、真实末两人强PAIR及其有序索引和给十五种合法原始行。两组10/11个L均正，第一κ=360·105064=37823040，第二κ=0。",
+        "每客户按t_i=0/1两组保完整8格(f_i,b_i,c_i)词直方图，计数和为6−d与d；任意六真实回复均在该域。γ取整组非负行和的最大值，故逐客户γ≥h_L，必要性方向为sum wγ+κK≥0。不同客户最大词不必能共同实现σ，放宽上界仍合法；取min或分离同索引b_i c_i均不合法，现边未犯此误。",
+        "保存输入均全d1，故每支持8·C(12,7)=6336完整直方图，33/13支持对应209088/82368列。第一γ仅依实际前六位，另外七个固定枝位对活跃行无作用；第二构造过滤非actual fixedfloor/pair/查询后才将旧六位点补七零位，没有无条件把一般十三位点降维。",
+        "固定输入身份为priced的33支持fixed_graph_priced.json（SHA c5d62321…）及独立697系统joint_AB_input.json的13支持（SHA b09ce6d5…）。它们不是raw28、后续701/702或5108点。两负值由成熟certificate-only原事件以Fraction认证；本轮只静读源码、证书、保存报告及事件，未重跑162792隐藏态或LP。",
+        "第一负上界为−105837198790011822662124212696232256/4196040267817038685502527597（含K项）；第二为−91349718500898376119822922846103334631798555340791880/21162912871981828450039063390798893871166580197（κ恰0）。保存报告分别有448系数与63/168 argmax；成熟事件明确全部数学字段等冻结，仅elapsed_seconds与minimum/maximum说明句有版本差。"
+      ],
+      "evidence_read": [
+        {
+          "path": "archives/customer-attraction/state/程序/六人十三主题固定查询图与两类索引扩张--程序.md",
+          "sha256": "cad33149629d0346d86c4348679b65fea449425cc9aa54c119d59ff05efc153e",
+          "lines": {
+            "start": 26,
+            "end": 87
+          },
+          "use": "目标程序量词、1118/3088域、子域与完整AB以及数据版本"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/两条六索引AB投影的有理证书重构--计算.md",
+          "sha256": "3e56183e19a75d664db155bfe148e9e4ba71fee38e331e111a6909c93942f375",
+          "lines": {
+            "start": 15,
+            "end": 81
+          },
+          "use": "全部L、全域上投影、两个指定点与负值"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/真实第三位六索引菜单的完整直方图投影--引理.md",
+          "sha256": "81453a13fa3d7f0c5d533ca5e2dee64ec044afbd286779e263f9673b3366eba5",
+          "lines": {
+            "start": 15,
+            "end": 116
+          },
+          "use": "十五种行的真实节点合法性、索引计数和max必要性"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/六索引AB投影的字面独审与数据版本--审查.md",
+          "sha256": "f7dac36b40eacc452640010c5b5e69e116bf47be60078366cdcb73be9a44624e",
+          "lines": {
+            "start": 25,
+            "end": 71
+          },
+          "use": "成熟两事件和版本层次"
+        },
+        {
+          "path": "tools/evidence/cag-background-sources-and-AB-projection-primary/runs/AB-original-runs/with-K/verify_farkas_and_project.py",
+          "sha256": "e7f2cbc76d697436033892ab98a7c00c39942213329ace7efe366a4e16eb98db",
+          "lines": {
+            "start": 14,
+            "end": 109
+          },
+          "use": "完整composition、全部行组合、max及Fraction负判号的静读"
+        },
+        {
+          "path": "tools/evidence/cag-background-sources-and-AB-projection-primary/runs/AB-original-runs/execution-manifest.json",
+          "sha256": "23da24760278362fc05fff2c0d73f3242f8feb58e4ed6607f0a3196f105527d8",
+          "use": "成熟两次原入口成功、同数学数组及文本差异"
+        },
+        {
+          "path": "tools/evidence/cag-background-sources-and-AB-projection-primary/runs/AB-original-runs/with-K/full_AB_extension.json",
+          "sha256": "43ab68177b861bdddfc971dae99a0df01306046367bc65af249417cad39257db",
+          "use": "10乘子、κ和第一固定点严格负证书"
+        },
+        {
+          "path": "tools/evidence/cag-background-sources-and-AB-projection-primary/runs/AB-original-runs/with-K/fixed_graph_priced.json",
+          "sha256": "c5d6232116fd6ab5d4eff9428325a1a3c96e5625fd4e814885f0d2a2585a6305",
+          "use": "33支持十三位固定输入身份"
+        },
+        {
+          "path": "tools/evidence/cag-background-sources-and-AB-projection-primary/runs/AB-original-runs/K-zero/joint_full_AB_extension.json",
+          "sha256": "ac95af6f76c35f324f458343afa27e1c5a4d766640593cdb52ed7aca4a79cfca",
+          "use": "11乘子、零κ和第二固定点严格负证书"
+        },
+        {
+          "path": "tools/evidence/cag-background-sources-and-AB-projection-primary/runs/AB-original-runs/K-zero/joint_AB_input.json",
+          "sha256": "b09ce6d5746bdc964ca597700672dad455b4070fb7da0c3c3eb8c67a3dddb663",
+          "use": "独立697系统13支持固定输入身份"
+        }
+      ],
+      "concrete_gaps": [
+        "目标对象其它条目（旧587依赖、1118/3088行整体资格、六个受限单词子域浮点报告、raw28点）没有由本边证明；现有contribution.remaining已逐项保留，故不是本边缺步。"
+      ],
+      "scope_limits": [
+        "只排两个固定可见质量边缘的全部隐藏词扩张；不排所有重新优化后的必要系统点。",
+        "受限单词子域浮点不可行不排完整域；当前两条完整负有理证书才给严格分离。",
+        "不构造SPE反例、不证明六人half、不将后继点身份倒灌旧点。"
+      ],
+      "determinate_errors": [],
+      "minimal_corrections": []
+    }
+  ],
+  "integration_guardrails": [
+    "两条Cartesian checks保持context，不给有限计算升级逻辑支持。",
+    "五人transfer保持完整有序历史与所有续局量词、辅助实参数到整数反族的桥。",
+    "AB保持固定priced33/独立旧697-13点身份和局部contribution，不覆盖raw28或后继701。"
+  ],
+  "files_changed": [
+    "research/workspaces/map-v2/Boss2/review-current-customer-finite.json"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "edge_id": "um-46f9088d-gap-and-approximate-threshold-yield-estimation",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-6e6de497c2034ca99d68b4ff3d548a0d"
+  ],
+  "target_ids": [
+    "M-28ae04c28f0e43369c5ec1bb68e63bf2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "公共尺寸受限指派、每任务至少一个可用端；每个固定η>0。另用原文Section2外引的近似配置阈值后端：对任意固定有理精度ε>0，在输入长度的多项式时间返回T̂，使T_conf≤T̂≤(1+ε)T_conf。该后端的复杂度是显式附加条件，本边不从有限签名终止推得它。",
+  "roles": {
+    "M-6e6de497c2034ca99d68b4ff3d548a0d": "给实际整数最优的上界OPT≤(33/17)T_conf。",
+    "M-28ae04c28f0e43369c5ec1bb68e63bf2": "目标为每固定η>0的多项式数值估计，而非输出相同因子的实际调度。"
+  },
+  "explanation": "整数调度诱导Dirac配置，因此T_conf≤OPT。给固定η>0，选固定有理0<ε≤17η/33；调用条件中的后端并输出数E_num=(33/17)T̂。由源间隙与T̂≥T_conf有OPT≤(33/17)T_conf≤E_num；另一侧E_num≤(33/17)(1+ε)T_conf≤(33/17+η)OPT。空任务或全零尺寸时直接返回E_num=0，不除以零。固定精度后端加一次有理乘法保多项式时间，且整个数值算法不运行局部搜索。Svensson原PDF p.2及p.11说明Theorem4.1和近似求配置LP共同给Theorem1.1；其p.3–4把近似分离外引到Bansal–Sviridenko，而非假设精确背包免费。本边据此保留后端合同，不声称在本包独立重证该外引算法。",
+  "scope": "仅公共尺寸的受限指派数值估计；每固定精度η使用对应固定精度配置LP后端。一般不相关机、实际调度及局部搜索多项式收敛均未由此得到。",
+  "whole_result": "在所列近似配置阈值后端条件下，对每固定η>0可多项式输出数E_num，满足OPT≤E_num≤(33/17+η)OPT，即目标的完整估值合同。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/SantaClaus调度与受限指派配置界--资源.md",
+      "sha256": "fdd4fa895b3161204f7de75e2b4a29b07653838276e04a2105026fcf41bfe7c5",
+      "section": "模型、配置LP及量词"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/SantaClaus调度与受限指派配置界--资源.md",
+      "sha256": "fdd4fa895b3161204f7de75e2b4a29b07653838276e04a2105026fcf41bfe7c5",
+      "section": "可引用的结论与真实输出合同"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/SantaClaus调度与受限指派配置界--资源.md",
+      "sha256": "fdd4fa895b3161204f7de75e2b4a29b07653838276e04a2105026fcf41bfe7c5",
+      "section": "一般尺寸证明：三个阻塞种类和33/17摊还"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/svensson-2011.pdf",
+      "sha256": "e80d2b787fd0d594361e3eaedc1272a418c02d81b5c1e1fa06a81a688fab43c3"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "实读两端当前v2、Svensson冻结PDF Theorem1.1、Theorem4.1与Section2；核对近似阈值上下两侧、ε≤17η/33重标和零值分支。外引后端是显式条件，所以关系accepted/conditional；整条估值成立且无局部搜索步数承诺。",
+  "endpoint_pins": {
+    "M-28ae04c28f0e43369c5ec1bb68e63bf2": "c7bdbc188ec3052b70fa2e6b3f68155a2355f1022f15952337fcbc883ebceeb1",
+    "M-6e6de497c2034ca99d68b4ff3d548a0d": "dcb9f97372bb14482a8183da2b85413e087620cdb0971e8b51dc3e80ac23c2be"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/SantaClaus调度与受限指派配置界--资源.md": "fdd4fa895b3161204f7de75e2b4a29b07653838276e04a2105026fcf41bfe7c5",
+    "research/registration/evidence/boss6-0104/svensson-2011.pdf": "e80d2b787fd0d594361e3eaedc1272a418c02d81b5c1e1fa06a81a688fab43c3"
+  },
+  "review_digest": "0f2a3aaa7d3a118c1a57098ce2ef970a7170c1104e7f38d20b872ac291e46e94"
+}
