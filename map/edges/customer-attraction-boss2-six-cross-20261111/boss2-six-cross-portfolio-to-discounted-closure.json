@@ -1,0 +1,46 @@
+{
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss2 Main",
+  "edge_id": "boss2-six-cross-portfolio-to-discounted-closure",
+  "source_ids": [
+    "customer-attraction/shared-true-terminal-reply-query-portfolio-and-reweighted-requery"
+  ],
+  "target_ids": [
+    "M-b233ef00a9c34e189817cdfb7a495107"
+  ],
+  "conditions": "有限共同标签目录、固定同一有序源及同一完整策略；每个当前强制T的末回复C(T)仍属同目录。种子及常量查询先固定，所有权非负，0≤θ<1。允许查询当前T自身，但不得改变已固定seed查询。",
+  "roles": {
+    "customer-attraction/shared-true-terminal-reply-query-portfolio-and-reweighted-requery": "提供每个合法T都共用同一源收益、actual末价及K的组合查询真实IC预算。",
+    "M-b233ef00a9c34e189817cdfb7a495107": "用有限目录辅助最大值闭包该预算，再精确求二状态Bellman势。"
+  },
+  "explanation": "原组合行将同一真末回复的查询先加权相加；源权a0按源IC权直接重写，包括a0=0。由B≥ΣH以及V(t)−θV(c)≤H，对每合法T有B≥V(T)−θV(C(T))。在有限目录取加性V最大的T*，C(T*)合法，遂B≥(1−θ)V(T*)≥(1−θ)V(T0)。逐客户收缩Bellman方程的四确定策略只给三个不同起点候选。k2源权等于总查询权时四边平衡，二循环夹在另两候选中，连续θ由有限有理折点求最小。",
+  "contribution": {
+    "result": "一般折扣闭包、三候选精确消元及平衡权连续参数有限化。",
+    "remaining": "六条5716分离、固定权18步比较及5727连续θ全区间非分离是目标另附的有理输入/计算结论；不由组合引理的状态标签直接推出。"
+  },
+  "scope": "固定同一源的合法预算闭包；无跨互斥源免费合账，无最优种子必在周期上的假设。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/共享真实末回复的组合查询投影与同源重配权--引理.md",
+      "sha256": "a3e5fdcf1e47c919d5b6f500b07d4fc371ac482c924b39213c6fb2d591f3c08c",
+      "section": "同一真实源的组合查询恒等式"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/同源真实末回复的折扣闭包与二状态精确投影--引理.md",
+      "sha256": "a2aa6f407865993f693ff8338e2c038a7849643d04ed9078fc7c8e0e6f6b5d42"
+    }
+  ],
+  "review_note": "Main核原portfolio全部真实IC与查询平均规则，独立完成有限最大值证明和Bellman四策略推导，另以独立实现重建6条全4849坐标并证明连续平衡特例。",
+  "endpoint_pins": {
+    "M-b233ef00a9c34e189817cdfb7a495107": "308401b736d5e278edb8a86a3dbfd2d3466aa1455f9c627b8b72069a9197c411",
+    "customer-attraction/shared-true-terminal-reply-query-portfolio-and-reweighted-requery": "fbb4178dc3912c766be9526dcbd2b686c9cd79c0f6cbc47f723d078e954af4f9"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/共享真实末回复的组合查询投影与同源重配权--引理.md": "a3e5fdcf1e47c919d5b6f500b07d4fc371ac482c924b39213c6fb2d591f3c08c",
+    "archives/customer-attraction/state/引理/同源真实末回复的折扣闭包与二状态精确投影--引理.md": "a2aa6f407865993f693ff8338e2c038a7849643d04ed9078fc7c8e0e6f6b5d42"
+  },
+  "review_digest": "c5fe182e6fa698f49a8a7473e0a6d7bbeba4a00cc075f9009152c0a0e43fa164"
+}

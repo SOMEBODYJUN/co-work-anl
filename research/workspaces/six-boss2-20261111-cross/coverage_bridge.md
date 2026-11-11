@@ -1,7 +1,7 @@
 # 同源末回复的折扣闭包：六人共同预算研究
 
 RUN：`six-boss2-20261111-cross`。内部工作者：`/root/coverage_bridge`。
-状态：下述任意有限标签目录上的折扣闭包已完成解析推导；在Main精确5716行新点上产生6个严格有理切面，Main以独立实现逐4849列全部复核通过。没有声称六人半覆盖已证。
+状态：两状态一般闭包及5716点6行已由Main独立逐4849列复核；其后四状态120次只找到一条普通theta0行，固定同权macro在5744点36次无负；独立初段alpha/尾段beta在5752点产生16条精确负行，已压权并经Main独立复核，现并入5775系统。固定及独立优化k2正价各24次旧点扫描均未产生正价负切；Main一般任意k正价已由本子任务数学独审通过。当前推进已证统一正价格对隐藏主题的跨actual源付款。没有声称六人半覆盖已证。
 
 Main拟登记一般对象：`M-b233ef00a9c34e189817cdfb7a495107`；本工作区只准备自足数学与证据，正式登记和推送由Main串行完成。
 
@@ -171,3 +171,52 @@ Main独立实写 `main_verify_discounted.py/json`：字面六索引、中间二�
 同一预算不增加外部收入；第3节望远镜证明对四状态原样成立。初始可取任意两个合法主题，特别(R_e,Z_e)四态正由原图保存。在actual倒二源，Z_e=C_h(R_e)还具有真实进入边身份。
 
 四状态有两个下一位选择，精确最优值可由16个确定平稳策略的4x4有理线性方程求出；每个(s)仍只在当前边代价中消去。这个扩展在k2时保留真实末位向前一主题的查询，它与旧余二人调和势边值单调相容；不预先假设任何逐客户势差非负。先在下一份精确点上分离，只有严格负行经完整列审核后才申请入图。
+
+## 9. 当前完整接续状态与RUN反馈回复
+
+### 9.1 Main已认证的六条两状态行
+
+稳定文件 `new5716_joint_discounted.json`、`joint_discounted_requery.py`、`audit_discounted_cuts.py`、`discounted_audit_and_finite_depth.json` 按Main要求保持字节稳定。一般定理建议稿为 `formal_discounted.md`，Main已完整实读并准备回流；有限最大值证明避免依赖任何seed在循环上的假设。
+
+Main另对平衡k2固定权解析证明整个theta∈[0,1]的精确分段仿射结构，并在5727点完整核断点；此组固定权连续加密不能再切5727。来源是Main `main_pair/balanced_discount_proof.md`、`continuous_discount.py`与JSON，不冒成本子任务独立发现或运行。
+
+### 9.2 四状态120次扫描的准确范围
+
+`previous_theme_requery.py` 在5727精确点的5源×2种子×3轨道×4折扣，共120LP完成。全部正折扣尝试无负；唯一负行是actual第二源/R/C对角/theta0，mu_previous=0，所以是原单步portfolio权更新，不是四状态新机制。其标准两状态包是 `new5727_single_portfolio_cut.json`，回写4849列与发现向量完全一致；Main已承接独核及准入。原120次报告分为 `new5727_previous_source5.json` 与 `new5727_previous_sources1to4.json`。
+
+### 9.3 同权两枝宏闭包的阴性与具体弱化机制
+
+`macro_pair_requery.py` 保原34+两枝PAIR的332个共享17菜单权，final v成为下一macro强制主题，sourceT+sourceC=1。对5744点，actual第四源(k3)和第三源(k4)各18次正折扣LP均无负；报告 `new5744_macro_source4.json`、`new5744_macro_source3.json`。不称全连续参数族冗余。
+
+`macro_closure.md` 给出一般闭包证明和一客户六人完整SPE的精确弱化例：目录F={x}、E空、sigma处处选F，actual第四源p3/k3；只给sourceT权1时旧投影r>=1/6取等，同权正折扣只给r>=(1-delta)/6。此例说明不能假定重复同权自动保住seed信用，不是模型反例。
+
+### 9.4 独立alpha/beta的16条新有理负行
+
+`prefix_tail_requery.py` 把一次34+PAIR共享初段用alpha、其真实末端V接独立beta的同源两状态闭包；两段完整预算相加，全部源权合计1。beta0时与旧共同锥逐列相同，非平凡10行证书的4849列回归保在 `prefix_tail_beta_zero_audit.json`。
+
+绑定5752精确点SHA `791cbcba1afd841eabe3bc908b300083822739fd8f7ed8b85a8c7ff06f28c787`；actual第四源×两种子×三轨道×delta{0,1/2,3/4}共18LP，原始发现16个负向量、12个含非零beta。原报告为 `new5752_prefix_tail_source4.json`。最强原权是Z/B非对角/delta1/2，slack约-0.001009252985852488，而同权两段分别投影的合计slack为正；共享真实末端v提供严格信用。
+
+`compact_prefix_tail_cuts.py` 将16个负向量分别压到共同整数网格1000、10000或1000000，全部保严格有理负、全部4849列精确回代。稳定包为 **`selected_prefix_tail_5752.json`**，16个向量互异，每个保完整alpha/beta、三钱包预算、源权和1、分开投影slack、联合增益、稀疏向量与SHA。压权后slack会变化，不沿用原始更负小数；包中保存的是新向量自身的精确值。
+
+这些16条现已由Main的 `main_verify_prefix_tail_5752.py/json` 独立复核：不导入发现器，字面六索引、独立四策略线性方程、共享v联合min，全部16×4849坐标与joint/separate/gain精确相同。稳定包SHA为 `595e7386cfacc591f513fe477453e94d9e2271e4cb63ce3f5c57a8dc34fabd50`，Main已交master合并下一系统。保留4条beta0为旧共同查询权重更新；12条beta非零的严格性仅是**固定同权**联合min优于分别投影，不推出胜过全部独立权锥。稳定回流稿为 `formal_prefix_tail.md`。
+
+### 9.5 当前优先义务：统一派生正价格跨actual源付款
+
+`derived_uniform_price.md` 给出Main已认可的一般桥：固定原actual和六个旧C菜单，最强k2闭包可写为每个合法F的统一价
+
+    sum_x w_x 1_F(x) <= u5+3u6/8+K/64-sum_x Psi0(x)，
+    w_x=(p5_x+2-q_x)/[4(p5_x+1)(p5_x+2)]>0。
+
+q不含被定价F，故可用于早源真实隐藏B/C/J/V以及每个middle主题。每次使用必须完整计同一u5、3u6/8、K/64和常量sumPsi0；早源u_i另列。`derived_price_projection.py` 实现这338权(332旧+6派生价)联合min及四钱包输出。
+
+固定此价的四个早actual源×两种子×三轨道共24LP已完成，全部绑定5752点。7个负行的gamma均为0，故仅旧共同锥再次配权；较早源的部分Z轨道用了gamma正权，但slack仍正。本轮无新的跨源价负切，也不把有限阴性称全族冗余。报告为 `new5752_derived_price_source4.json` 和 `new5752_derived_price_sources1to3.json`，776个hist/group/RZ四态的q与价格统一性精确检查通过。
+
+`balanced_price_projection.py` 允许每个隐藏主题独立优化actual第五源的平衡k2统一正价，保持静态17菜单与每步动态self的正确区分。固定theta时价格基线是两线性式最小值、价格会员差是非负线性式，故形成452个非负权的LP并分列u_i/u5/u6/K。`balanced_price_embedding_audit.json` 已核1280个独立四策略公式例，以及含非零middle价格的一例全4849列与固定旧价嵌入完全相同。该扩充也在5752完成四早源×R/Z×三轨道24LP，7条负行新增价权仍全零；报告 `new5752_balanced_prices_source4.json`、`new5752_balanced_prices_sources1to3.json`。较早源Z类有正价权但均未切点，不把浮点最优或返回有理权的有限阴性扩成连续全族冗余。
+
+### 9.6 任意尾长正价数学独审与新点分界
+
+Main `main_pair/balanced_any_tail_price.md` 证明a0=M时，任意k下固定s的H两输入差与c无关，并随s单调；两次min和同一Bellman固定点给严格正会员差的准确上下界。因此同一固定查询菜单对目录全部F产生统一正价。`audit_balanced_any_tail_price.md` 已独立逐项核差式含self、两层min的方向、a0/零客户/零分母、全称F与非统一middle价扩展，结论PASS，无数值扫描替代证明。该正文及审计现冻结；一般桥身份为 `M-043045ec129b4a5f82a3368b324accf9`，独立初尾合同身份为 `M-63c882b0c8414805a43d4d8d4e43f4e3`。
+
+Main/master已将本子任务16行及joint_requery的7行并入5775系统，原始与对偶均精确闭合，Main独审通过；新点为 `master_cuts/dynamic_5775_exact.json`，SHA `81983304076358d591cbdac2e6bf7a4b697fc2854aad40918e8cf8cf2d99dd02`，W约0.49192027032608004。本节此前48个价格实验始终绑定5752，后续新方向改用5775；不移动旧负值。主系统的数值结论由Main/master报告承担。
+
+所有本子任务产物均只在指定coverage_bridge范围；未执行Git写入、推送或凭据读取。正式登记、RUN反馈ack与checkpoint由Main负责。

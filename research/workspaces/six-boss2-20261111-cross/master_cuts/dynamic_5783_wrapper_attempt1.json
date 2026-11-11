@@ -1,0 +1,95 @@
+{
+  "scope": "Execution wrapper only; exact mathematical certification is in the saved full primal/dual verifier report.",
+  "success": true,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "/workspace/scratch/0ecc5caed424/co-work-anl-boss2/research/workspaces/six-boss2-20261111-cross/master_cuts/advance_with_exact_cert.py",
+    "/workspace/scratch/0ecc5caed424/co-work-anl-boss2/research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_config.json",
+    "--start",
+    "prepare"
+  ],
+  "cwd": "/workspace/scratch/0ecc5caed424/co-work-anl-boss2",
+  "started_utc": "2026-11-11T17:23:25.990207+00:00",
+  "elapsed_seconds": 14.99675464630127,
+  "python": "3.12.14",
+  "script_sha256": "d06f04b7268326d0278f23726c811fdc239093886fd53b5d8081902c7d0a2dbf",
+  "config_sha256": "1568fe222a1e0401e4d2361dfb2daca41bd8c0d69d63fb90e5084af12d12aec0",
+  "dependencies": {
+    "advance_master.py": "4b4d93d8aed0d1cb527250871cccc3a1292777baba1a2afa14a0447192bc36d5",
+    "scaled_dual.py": "be964a3a5c321e541ffd117c7b3cd7ad06a28e9a3b7fcd253c59609eb6188ec7",
+    "extend_master.py": "15045199dbbb6c3bc38daeb859028e63beb799ff5ede11214810deacfc4b9862",
+    "merge_master.py": "2afa5e8d9713c39170c547cdfa8b63ad5da8079668b669c0e961e29628999a6c"
+  },
+  "stages": [
+    {
+      "stage": "prepare",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/scratch/0ecc5caed424/co-work-anl-boss2/research/workspaces/six-boss2-20261111-cross/master_cuts/advance_master.py",
+        "/workspace/scratch/0ecc5caed424/co-work-anl-boss2/research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_config.json",
+        "prepare"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.4505016803741455,
+      "stdout": "dynamic_5783_prepare_wrapper1.stdout.txt",
+      "stderr": "dynamic_5783_prepare_wrapper1.stderr.txt"
+    },
+    {
+      "stage": "solve",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/scratch/0ecc5caed424/co-work-anl-boss2/research/workspaces/six-boss2-20261111-cross/master_cuts/advance_master.py",
+        "/workspace/scratch/0ecc5caed424/co-work-anl-boss2/research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_config.json",
+        "solve"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 4.467467308044434,
+      "stdout": "dynamic_5783_solve_wrapper1.stdout.txt",
+      "stderr": "dynamic_5783_solve_wrapper1.stderr.txt"
+    },
+    {
+      "stage": "reconstruct",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/scratch/0ecc5caed424/co-work-anl-boss2/research/workspaces/six-boss2-20261111-cross/master_cuts/advance_master.py",
+        "/workspace/scratch/0ecc5caed424/co-work-anl-boss2/research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_config.json",
+        "reconstruct"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 4.256775140762329,
+      "stdout": "dynamic_5783_reconstruct_wrapper1.stdout.txt",
+      "stderr": "dynamic_5783_reconstruct_wrapper1.stderr.txt"
+    },
+    {
+      "stage": "dual",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/scratch/0ecc5caed424/co-work-anl-boss2/research/workspaces/six-boss2-20261111-cross/master_cuts/scaled_dual.py",
+        "/workspace/scratch/0ecc5caed424/co-work-anl-boss2/research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_config.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.2549235820770264,
+      "stdout": "dynamic_5783_dual_wrapper1.stdout.txt",
+      "stderr": "dynamic_5783_dual_wrapper1.stderr.txt"
+    },
+    {
+      "stage": "verify",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/scratch/0ecc5caed424/co-work-anl-boss2/research/workspaces/six-boss2-20261111-cross/master_cuts/advance_master.py",
+        "/workspace/scratch/0ecc5caed424/co-work-anl-boss2/research/workspaces/six-boss2-20261111-cross/master_cuts/dynamic_5783_config.json",
+        "verify"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.565678358078003,
+      "stdout": "dynamic_5783_verify_wrapper1.stdout.txt",
+      "stderr": "dynamic_5783_verify_wrapper1.stderr.txt"
+    }
+  ]
+}
