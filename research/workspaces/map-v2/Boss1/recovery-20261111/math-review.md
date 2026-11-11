@@ -89,3 +89,7 @@ Boss已实读ac349包15边的全部数学文字、20核覆盖和两条follow-up�
 Boss逐条实读a9eda最终六条新边及七资产15核收据。fresh→C-then-D的作者精确式和独立弱上界保两个完整入口；末位d≥x/2和H≥a+x/2先付，最后C改A后fresh真尾使两个B再触X不可能，从而a≤x/2。R22→shared只支付同合同成本比较及g0逆拼，未声称推出shared全部保险构造或异质层。负独占信用的all-big下界和交叠真SPE上界以一条ALL迁移到仅放开f(b,0)的模板，n16差−4/15及极限−5/6准确。P7的有向菜单取代为3×(7+7+13)+13=94、固定查询为45+15=60，indexed保各真背景。
 
 原草稿曾把新增修复成本当作弱尾目标的贡献，已交原worker改正并删除两份未交草稿。最终fresh→fixed-suffix只证明实际k尾completeSPE和早位非SPE，福利/OPT及robust floors留remaining；已独立核的三成本比较只留explanation/coverage。复用E/J2边保持精确canonical SHA。八isolated对象逐一保同叶/跨前缀、静态/真reset、有限取等/全锥、signed/非负客户等实际缺口；统一模型源v3已经精确重读并刷新原任务。全七资产SHA与收据一致。
+
+## BLMRS规范两值新交付的窄核
+
+Boss完整实读e1f95的关系与proof-review以及两端当前statement。只在规范{0,1,1/b}、b≤n、OPT_SC≥1时直接给每玩家两配置各总值1；选择作业/大作业大小1、小作业1/b，resource端大小1，保持处理值至多两种。beta=2−1/alpha<2支付资源互斥，选中配置被大小1选择作业占机后离机质量≥1/alpha，完整得到这个输入子域的单向SC输出保证且无epsilon。其余规范化/反向oracle仍不由这条局部边推出。未声称本轮重读BLMRS冻结PDF或重跑算法。同期a371十八核心及多项旧source改版/退休未全读，整合中明确保pending，不以assemble收拢冒作全部数学已审。
