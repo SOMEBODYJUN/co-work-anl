@@ -1,0 +1,55 @@
+{
+  "edge_id": "cag-f64d18-e05-position-source",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/positive-source-common-amount-pool-and-position-loss"
+  ],
+  "target_ids": [
+    "M-bae9307fdf5a4f7ba2918af45978c866"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意m≥1合法B和有限cut-prefix相同孩子；sender j<iα；同一sender全部孩子共享Σαλ_αj p_j(Wα)≤p_j(B)，λ≥0；无SPE前提。",
+  "roles": {
+    "customer-attraction/positive-source-common-amount-pool-and-position-loss": "给同sender正价/保留项精确分池、R原后缀离开计数和共享AMOUNT。",
+    "M-bae9307fdf5a4f7ba2918af45978c866": "由R≤c−1、R≤r获得局部及位置严格系数，并用合法叶一客户族付清局部锐性。"
+  },
+  "explanation": "每个x∈B_j有R≤c_B−1且R≤rα，于是R/c_B≤R/(R+1)≤rα/(rα+1)。乘1/cα并求和给Σ_lqαjl≤rα/(rα+1)p_j(Wα)。rα≤m−j，依系数单调并逐sender只用一次共享AMOUNT得Σλq≤Σ_(j<m)(m−j)/(m−j+1)p_j(B)≤(m−1)(W−p_m)/m。m1空和。每r取一客户原由sender和r尾共同覆盖，孩子r尾全空，c_B=r+1,cα=1，正价r/(r+1)、sender孩子利润1，局部比取等。",
+  "scope": "完整目标位置损失与合法叶域局部锐性；不生成AMOUNT、不证明单recipient cap2或SPE锐性。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/正价源池原随机核验的有限域与读后审查--程序.md",
+      "sha256": "c978b38ed35c64697734bcca7a5c572e8dc353eac24604c2390bfbed736d3911",
+      "section": "每个孩子实际核的三条关系"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/正价源池原随机核验的有限域与读后审查--程序.md",
+      "sha256": "c978b38ed35c64697734bcca7a5c572e8dc353eac24604c2390bfbed736d3911",
+      "section": "系数缩放是合法预算样本，不是最坏金额优化"
+    },
+    {
+      "path": "archives/customer-attraction/subarchives/six-providers/state/引理/任意深度正价的源金额分解与位置损失--引理.md",
+      "sha256": "1999ca0cf74abbc38a5efc14b3c5a41cfb95836275324786ea0177c88cff7399",
+      "section": "位置控制及严格系数"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-f64d18c6613f94d3/mathematical-review.md",
+      "sha256": "00a4f36b1c78ac0a777ac0db0b010eac58fb830af721438482280d41e04144e8",
+      "section": "E05：共享 AMOUNT 源池推出位置损失与合法叶锐性"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "完整实读任务所列端点与必要证据，核对实际陈述、域、量词和方向；推导见同目录数学审查对应E节。accepted为作者数学审读声明；由Root复制后执行native绑定/检查，worker未执行。 Root已核完整数学审查、当前端点合同和必要承重原文，复核推导方向、条件、量词与整目标/局部范围；具体复核见receipt.parent_review。随后进行原生绑定与结构检查，程序检查不替代数学判断。",
+  "whole_result": "对每sender局部正价和≤rα/(rα+1) p_j(Wα)，共享AMOUNT后总正价≤Σ_(j<m)(m−j)/(m−j+1)p_j(B)≤(m−1)(W−p_m)/m；每整数r≥1的一客户合法叶构造使局部系数取等，不宣称该锐例SPE。",
+  "endpoint_pins": {
+    "M-bae9307fdf5a4f7ba2918af45978c866": "4d1a924b90be651cf90aa663241e06a390bb0c0c51ad6a7e1b49b2a7de8b94e7",
+    "customer-attraction/positive-source-common-amount-pool-and-position-loss": "c98f1c3524bebd6504dad781f1ae5843cd8caeeefcaf8da93d0a4881e6a7d115"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/正价源池原随机核验的有限域与读后审查--程序.md": "c978b38ed35c64697734bcca7a5c572e8dc353eac24604c2390bfbed736d3911",
+    "archives/customer-attraction/subarchives/six-providers/state/引理/任意深度正价的源金额分解与位置损失--引理.md": "1999ca0cf74abbc38a5efc14b3c5a41cfb95836275324786ea0177c88cff7399",
+    "map/edges/customer-attraction-3a-3a-f64d18c6613f94d3/mathematical-review.md": "00a4f36b1c78ac0a777ac0db0b010eac58fb830af721438482280d41e04144e8"
+  },
+  "review_digest": "7145ed422f7ec761f94920aa94d4ef7d8a44ed6ff8559e04b8a319a05fc6e514"
+}

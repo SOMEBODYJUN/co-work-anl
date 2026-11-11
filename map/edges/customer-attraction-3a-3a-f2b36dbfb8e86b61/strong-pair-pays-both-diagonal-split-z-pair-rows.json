@@ -1,0 +1,56 @@
+{
+  "edge_id": "boss6-f2b3-strong-pair-pays-both-diagonal-split-z-pair-rows",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-e960d7f4ebca40a38760eb3ae044cc19"
+  ],
+  "target_ids": [
+    "customer-attraction/diagonal-reply-budget-split-basic-graph-program"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "六人同一完整有序纯SPE，actual前四位背景p_a，actual两尾A5/A6。C族Rij为原真实合法回复，Zij=σ6(A1…A4,Rij)；保原六比较索引，i=j与i≠j分别为6/30边。",
+  "roles": {
+    "M-e960d7f4ebca40a38760eb3ae044cc19": "给任意合法背景及任意T/Q的保交叠强PAIR。",
+    "customer-attraction/diagonal-reply-budget-split-basic-graph-program": "将T=Rij、Q=Zij逐边特化，再分别同/异索引求和得到56新行中的两条Z-pair。"
+  },
+  "explanation": "置H=u5+u6+Σ_xa5/[(p_a+1)(p_a+2)]。源逐边给H−Σ_x(rij+zij)/(p_a+1)+Σ_xrijzij/[(p_a+1)(p_a+2)]≥0。先在30异索引边、再在6同索引边各自相加，恰是目标Z/pair/diag0与diag1。四态质量将rijzij保为同组y11，不独立化，不把同词当同索引。预算H在两行分别出现30/6次，合回原36次，无新增资金。所用是逐对强式，不能由另一张共同菜单的P-M替代。",
+  "scope": "仅证明两个拆分Z-pair行的真实必要性，独立于冻结16hist/1905列点是否可行。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/末两人重叠比较与任意索引聚合--引理.md",
+      "sha256": "4dacbe163ea4ea9459395dd4445c0dea25ed28070d0723a750ea6351832f4d2c"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/对角回复预算拆分的基础图程序--程序.md",
+      "sha256": "82ec96261a97cd3bdf9ddd249a75c7947260ef229eed293ff6cb2c80529dc2d7"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/split-basic-graph-program/original/split_basic_graph.py",
+      "sha256": "649ea591b5c15c076246d72f4b13920caeade77d1b87c59530ac492f3e50b1dc"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-f2b36dbfb8e86b61/mathematical-review.md",
+      "sha256": "1cfc867905ed3fc1aac0b7a80dc2a73ba3c3a59f6ed59a8bebb7d73043110797",
+      "section": "11 强 PAIR 支付两条 Z-pair 拆分行"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "已完整实读本边端点登记、正文和全部必要证据，逐式核域、量词、真实历史及剩余义务；本轮未运行数学程序、LP或原审计。Root将串行原生绑定并检查。 Root已核完整数学审查、当前端点合同和必要承重原文，复核推导方向、条件、量词与整目标/局部范围；具体复核见receipt.parent_review。随后进行原生绑定与结构检查，程序检查不替代数学判断。",
+  "contribution": {
+    "result": "56新增预算行中的两个Z-pair同/异索引行均为既有强PAIR的合法非负索引和，精确保留R/Z交叠和同一actual尾预算。",
+    "remaining": "其余54条新行须各自source/末位BR/反查/价格/容量；四态矩阵、16hist支持、旧3889行和有限点回代均由目标另付。不证明SPE可完成、秩恰28、精确最优或half。"
+  },
+  "endpoint_pins": {
+    "M-e960d7f4ebca40a38760eb3ae044cc19": "ab054800337d5944cb152e30ad29e8398e6cb46284ce218ad99be5485c5c3406",
+    "customer-attraction/diagonal-reply-budget-split-basic-graph-program": "83fc1f015b74a656d9aeff67c7003dc5704cb8e98b5770fe0d3514d524075814"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/末两人重叠比较与任意索引聚合--引理.md": "4dacbe163ea4ea9459395dd4445c0dea25ed28070d0723a750ea6351832f4d2c",
+    "archives/customer-attraction/state/程序/对角回复预算拆分的基础图程序--程序.md": "82ec96261a97cd3bdf9ddd249a75c7947260ef229eed293ff6cb2c80529dc2d7",
+    "archives/customer-attraction/tools/evidence/split-basic-graph-program/original/split_basic_graph.py": "649ea591b5c15c076246d72f4b13920caeade77d1b87c59530ac492f3e50b1dc",
+    "map/edges/customer-attraction-3a-3a-f2b36dbfb8e86b61/mathematical-review.md": "1cfc867905ed3fc1aac0b7a80dc2a73ba3c3a59f6ed59a8bebb7d73043110797"
+  },
+  "review_digest": "de333f1e1ead23af6a833edc071155e8420d763e8f8dd5267ced21a19452257e"
+}

@@ -1,0 +1,52 @@
+{
+  "edge_id": "cag-f64d18-e06-terminal-sharpness",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/current-best-response-plateau-ancestor-payoff-separation"
+  ],
+  "target_ids": [
+    "M-6f1c958742604a9b9a4db058d433066c"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "源的两不交主题A/B大小2M/M，M≥1；在同一真实可达A前缀后的两种末BR均得v=M，各可扩成一份完整两人SPE。",
+  "roles": {
+    "customer-attraction/current-best-response-plateau-ancestor-payoff-separation": "提供两份完整纯SPE实际AA/AB与同current不同ancestor的精确族。",
+    "M-6f1c958742604a9b9a4db058d433066c": "只付清其覆盖及正/负转移预算不可普遍改小的锐性部分。"
+  },
+  "explanation": "AA→AB时旧ancestor P_old=M，正转移G=M=v=P_old，覆盖变化M=|C_A|/2。AB→AA时P_old=2M，负转移L=M=v=P_old/2。两方向末位值均M。因此目标半覆盖预算、正方向min(v,P_old)和负方向min(v,P_old/2)均在此族取等，不能把两方向都改v/2。",
+  "scope": "局部锐性贡献，纯集合两个点，不把凸包整纵段或同一σ随机选择作为输入。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/当前最佳回复平台上的祖先收益分离--障碍.md",
+      "sha256": "3cbd8075ece094f180baf1681b47612cc2e91a0075820aa28bd81d1828adb82f"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末回复规范化的条件性对偶提升--定理.md",
+      "sha256": "8eb07c4a37419699252a4ad0d4f87eb1d17144172bfc9094c3aeac7ed84feba1",
+      "section": "incumbent转移、覆盖恒等式及锐预算"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-f64d18c6613f94d3/mathematical-review.md",
+      "sha256": "00a4f36b1c78ac0a777ac0db0b010eac58fb830af721438482280d41e04144e8",
+      "section": "E06：纯 BR 平台提供末回复预算的锐性部分"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "完整实读任务所列端点与必要证据，核对实际陈述、域、量词和方向；推导见同目录数学审查对应E节。accepted为作者数学审读声明；由Root复制后执行native绑定/检查，worker未执行。 Root已核完整数学审查、当前端点合同和必要承重原文，复核推导方向、条件、量词与整目标/局部范围；具体复核见receipt.parent_review。随后进行原生绑定与结构检查，程序检查不替代数学判断。",
+  "contribution": {
+    "result": "目标三类总量上界在完整两人SPE族中分别取等：|ΔW|=|C_A|/2=M，G=min(v,P_old)=M，反向L=min(v,P_old/2)=M。",
+    "remaining": "任意前缀/类型的δ恒等式及普遍预算不由此存在族推出，仍需一般分母代数；该边不负责目标其它全称部分。"
+  },
+  "endpoint_pins": {
+    "M-6f1c958742604a9b9a4db058d433066c": "9ab51a103c9d38f5c135a3b998008031fc693e944958db75ff44a785eccdac86",
+    "customer-attraction/current-best-response-plateau-ancestor-payoff-separation": "ceeb6a7dc57f7d54a7e0916538a3b167ec49cc0a75c9fc76c8ef51e40bdb98d2"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/当前最佳回复平台上的祖先收益分离--障碍.md": "3cbd8075ece094f180baf1681b47612cc2e91a0075820aa28bd81d1828adb82f",
+    "archives/customer-attraction/state/定理/末回复规范化的条件性对偶提升--定理.md": "8eb07c4a37419699252a4ad0d4f87eb1d17144172bfc9094c3aeac7ed84feba1",
+    "map/edges/customer-attraction-3a-3a-f64d18c6613f94d3/mathematical-review.md": "00a4f36b1c78ac0a777ac0db0b010eac58fb830af721438482280d41e04144e8"
+  },
+  "review_digest": "154569ce33dc71e87973e0c4174a752893ae236f2e88d0b28265e4b17e6db70b"
+}

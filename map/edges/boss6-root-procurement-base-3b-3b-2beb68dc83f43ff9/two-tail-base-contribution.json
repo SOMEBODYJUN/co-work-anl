@@ -1,0 +1,56 @@
+{
+  "edge_id": "boss6-root-menu-procurement-two-tail-base-step",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/true-penultimate-menu-nonuniform-fractional-procurement"
+  ],
+  "target_ids": [
+    "M-71ed7e12bea340678033968287995926"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "只向目标贡献 m=2、空背景分支。有限单位客户、有限非空共同标签目录及任意覆盖映射；固定同一完整计划，根 A 可任意，全部正深度即所有末位节点 BR；每个强制根 T 后保原计划真实回复 D(T)，保全部弱平局、同覆盖标签、空主题、重复行动及零客户；全部非负实采购权 z。没有额外当前 IC，也不把 z 限成概率或人数槽组合。",
+  "roles": {
+    "customer-attraction/true-penultimate-menu-nonuniform-fractional-procurement": "提供恰两人剩余、任意合法背景、整张真实末位 BR 菜单、当前 A 无需最优时的非均匀全实权强采购合同 F−C≤W−v+E；同时保留更精细加权包络及共同客户价格。",
+    "M-71ed7e12bea340678033968287995926": "接收其所有 m=2 root-only 实例的完整采购分支 F−Σ z_T d_T≤w≤W；该对象仍要求全部 m≥2，本贡献不支付 m≥3。"
+  },
+  "explanation": "取目标 m=2，令来源背景 b=0，实际 A=a0，D(T) 等于同一完整计划在强制根 T 后的真实末位回复。正深度可信恰给全部末位节点 BR，且来源不需根 A 最优。价格逐主题相同：c(T)=U_0(T,D(T))=Σ_{x∈T}1/(1+1_{D(T)}(x))=d_T，保原二槽而非额外查询。没有祖先故 P=0，W=v+w；E 仅收费 b≥2 的实际交叠客户，故 E=0，来源强合同直接给全部 z≥0 的 F−Σ z_Td_T≤W−v=w≤W。强证明用 H=Z/(2σ)+V/σ+L/2≥0（σ=Σz），不使用 S=σv−C 的符号；σ<1 用截断线性缩放，σ=0 目标零。实际还可得 F−C≤w/2+|A|/4=w−L/2≤w，只用末位复制 A。任意非零合法背景的局部版本仍成立，但 W=P+v+w 包含全部过去玩家在同一实际叶的最终利润，不能换成末两人利润和。更多后继的中继负载依赖 T，既不能合成一个末位合法单主题 BR，也不能将互斥孩子各自价格的钱包相加；这些不由该基底支付。完整代数与错误背景替换的精确边界例保存在 review。",
+  "scope": "M-71ed7e12bea340678033968287995926 v1 的完整 m=2、b=0 子域；来源 v2 的任意合法背景两尾合同用于核适用边界。所有 m≥3 的根采购仍 open；五人 66 浮点记录不作全域支持，未导出一般 half 结论。",
+  "contribution": {
+    "result": "对每个 m=2 原共同目录实例、每份全部正深度可信而规定根可任意的完整计划及全部 z≥0，同一菜单 c(T)=d_T，P=E=0，故 F(z)−Σ_T z_Td_T≤W−v=w≤W。该局部结论没有额外未付 IC 前提。",
+    "remaining": "目标原量词还包含每个 m≥3。仍需由所有真实中继 IC 支付主题依赖后继负载的有符号缺陷，或构造一份受规定根实际叶 W 约束的跨孩子共同客户价格/预算。逐孩子存在价格、把多后继当单个末位 BR、根处无条件统一价 c(T)≤v 及原 66 浮点阴性均不能完成此步。本边不证明也不反驳一般 all-m 目标。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/真实倒二菜单的非均匀分数采购--定理.md",
+      "sha256": "5a37e12292562c8e0c28a99576a12e376c44cc3dce9d6235aac58f7f387547ab"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/真实根菜单全分数采购的原六十六项锥探针--程序.md",
+      "sha256": "ba078811190bcdc203abdbb6262e155d401d19e325dd552502d4b3293ec3e6b5",
+      "section": "全分数采购候选：价格是强制根自己的真实收益"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "map/edges/boss6-root-procurement-base-3b-3b-2beb68dc83f43ff9/review.md",
+      "sha256": "98852586570ba780add389e482f8c6d7227694591bae2829689ae4cbafb4e482"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "全文实读并核 SHA：两端点完整 registry 合同与任务全部七份正文（43,473 字符 / 74,368 UTF-8 字节），包括全部 66 保存记录；独立核 Z/V/L 不需当前 IC、强合同六角点与 h 消去、弱合同、全参数保留松弛、共同 LP、零/小总权及非零背景最终 P。仅 accepted 局部贡献，未用导航里的早期 signed-defect 引理。未运行原 LP、求解器、生成树或科学审计；Root 负责 native bind/check 和发布。 Root已核完整数学审查、当前端点合同和必要承重原文，复核推导方向、条件、量词与整目标/局部范围；具体复核见receipt.parent_review。随后进行原生绑定与结构检查，程序检查不替代数学判断。",
+  "endpoint_pins": {
+    "M-71ed7e12bea340678033968287995926": "afd4bfb9852a119a7edda11db4d4c24771bc987e1ffbbfadef5eb9158733100e",
+    "customer-attraction/true-penultimate-menu-nonuniform-fractional-procurement": "d708f5e8e7241d5ab43210f22d77cadbb024af162adf0096e23a7ecabc5b312d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/真实倒二菜单的非均匀分数采购--定理.md": "5a37e12292562c8e0c28a99576a12e376c44cc3dce9d6235aac58f7f387547ab",
+    "archives/customer-attraction/state/程序/真实根菜单全分数采购的原六十六项锥探针--程序.md": "ba078811190bcdc203abdbb6262e155d401d19e325dd552502d4b3293ec3e6b5",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "map/edges/boss6-root-procurement-base-3b-3b-2beb68dc83f43ff9/review.md": "98852586570ba780add389e482f8c6d7227694591bae2829689ae4cbafb4e482"
+  },
+  "review_digest": "45827cea123bf9bf3fce891763d9772151be7d065c4d728e60cb99e9d52c913e"
+}

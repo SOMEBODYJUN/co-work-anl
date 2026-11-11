@@ -1,0 +1,46 @@
+{
+  "edge_id": "boss6-f2b3-residual-value-identifies-dynamic-farkas-rows",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-DYNAMIC-IID-DEBT-INTERFACE"
+  ],
+  "target_ids": [
+    "M-327915ce4a664c10ac670089d8423293"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定任意有限n/m、完整有序形式策略σ及每个决策历史的实概率分布q_h；客户质量w≥0，背景为该历史的非负整数负载。Γ保每条原真实偏离，不先平均。静态KKT等价及目标识别限制在K_q={w≥0:E_hw≥0对全部h}；动态Farkas的完整质量锥还要再交Γw≥0。任意固定场在此锥外不必最优，不能识别ζ_root·w为Z_root(w)。",
+  "roles": {
+    "CA-DYNAMIC-IID-DEBT-INTERFACE": "提供残余凹势KKT、Z值唯一/连续及路径总债恒等式。",
+    "M-327915ce4a664c10ac670089d8423293": "据此识别E_h及其弱支付目标；有限锥对偶还须目标自身的Farkas步骤。"
+  },
+  "explanation": "对任意w≥0，逐历史E_{h,a}·w=Z_h(q_h,w)−r_hα_a(q_h,w)，其中Z_h(q_h,w)是所固定分布的残余支付。Σ_aq_h(a)E_{h,a}=0，故E_hw≥0恰是该质量下的凹势KKT及正支持等式。只有当w属于K_q时，每个q_h才是该质量的残余势最大者，标量ζ_root·w才等于唯一Z_root(w)；任意固定场对锥外质量不满足这一识别。另一方面Σ_actualD_h=Z_root(w)−W使用各历史真正最优残余值；因此仅在K_q上，(cσ−κ_nζ_root)·w≥0才恰为ΣD≤Z_root(w)/(2n)。完整Farkas再交Γw≥0。值唯一和紧单纯形/连续势另给全域Z(w)连续，为客户质量延拓提供接口。",
+  "scope": "只支付目标中的E/KKT识别及目标/总债等价，不声称通用非负乘子存在。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/合法前缀残余独立同分布价值与租金--定理.md",
+      "sha256": "f0dffb71a91e64ec3cf8acacea13ae759c2b4ff554b22094ff36ba0b27acceed"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-f2b36dbfb8e86b61/mathematical-review.md",
+      "sha256": "1cfc867905ed3fc1aac0b7a80dc2a73ba3c3a59f6ed59a8bebb7d73043110797",
+      "section": "1 残余 iid 值到 Farkas 的识别步骤"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "已完整实读本边端点登记、正文和全部必要证据，逐式核域、量词、真实历史及剩余义务；本轮未运行数学程序、LP或原审计。Root将串行原生绑定并检查。 Root已核完整数学审查、当前端点合同和必要承重原文，复核推导方向、条件、量词与整目标/局部范围；具体复核见receipt.parent_review。随后进行原生绑定与结构检查，程序检查不替代数学判断。",
+  "contribution": {
+    "result": "E_hw≥0精确表示同一质量下该历史的残余静态KKT；仅在K_q={w≥0:E_hw≥0∀h}上，标量ζ_root·w等于唯一Z_root(w)，该线性弱桥目标与实际路径总债界等价。Z最优值函数另为连续。",
+    "remaining": "Γ真实SPE锥的完整枚举、有限维Farkas充要及全实概率场量词仍由目标论证承担。固定策略/场证书未由此自动产生；普遍弱债界和普遍证书存在性已经被反族否定。"
+  },
+  "endpoint_pins": {
+    "CA-DYNAMIC-IID-DEBT-INTERFACE": "26829d87194b0863e743d31b5885ef61bd48c330a68c84ac35683761727781e6",
+    "M-327915ce4a664c10ac670089d8423293": "6096dd679578085e5bf7e5f6d6f632a890d0f6788d30ea70add1818e6025a90d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/合法前缀残余独立同分布价值与租金--定理.md": "f0dffb71a91e64ec3cf8acacea13ae759c2b4ff554b22094ff36ba0b27acceed",
+    "map/edges/customer-attraction-3a-3a-f2b36dbfb8e86b61/mathematical-review.md": "1cfc867905ed3fc1aac0b7a80dc2a73ba3c3a59f6ed59a8bebb7d73043110797"
+  },
+  "review_digest": "0431e90791231d4c66576a5e193e7a4310ab54486153783b518ca40ad208226f"
+}

@@ -1,0 +1,51 @@
+{
+  "edge_id": "boss6-f2b3-terminal-quotient-lifts-given-dynamic-certificate",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/closeout-d0e622fce9f9afaf1412157f"
+  ],
+  "target_ids": [
+    "M-327915ce4a664c10ac670089d8423293"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "n≥2，同一有限标签类型空间及完整形式策略σ；只规范化末回复，并选根实际末前历史为代表，故根c不变。实q_h场固定于全部合法决策历史。给定barλ≥0、静态η_h≥0、bar r≥0的规范化证书d=barΓᵀbarλ+ΣE_hᵀη_h+bar r；另给自由实θ使r′=bar r+ℰ−ΣθR≥0逐类型成立。ℰ是原方法的lifting误差，不是KKT矩阵E_h。",
+  "roles": {
+    "customer-attraction/closeout-d0e622fce9f9afaf1412157f": "提供barΓᵀbarλ=Γᵀλ⁰+ℰ及任意自由θR的原末行非负表示。",
+    "M-327915ce4a664c10ac670089d8423293": "固定概率场的静态E_h原样保留，接受构造得到的原Γ/E动态证书。"
+  },
+  "explanation": "E_h只含历史负载p(h)、剩余人数r_h和q_h，不含σ的规定行动；末回复规范化不改变E_h或ζ_root，根代表选择不改变cσ。因此同一个d=cσ−κ_nζ_root满足d=Γᵀλ⁰+ΣE_hᵀη_h+bar r+ℰ，λ⁰≥0。由相反真实末行，ΣθR=Γᵀμ且μ≥0（θ可正可负，按符号选择真实行）。定义r′后代回得d=Γᵀ(λ⁰+μ)+ΣE_hᵀη_h+r′。η_h始终非负，自由的是θ。无需假定barσ在原质量上为SPE。",
+  "scope": "条件性构造步骤：给定规范化动态证书并付清提升误差后，显式得到原动态证书；不提供这些输入的普遍存在性。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/方法/末端平局商空间支付与局部二次判别--方法.md",
+      "sha256": "ff65f22f629b9b7a1b2848eabb5167b4563356d92c6c86b6625d502eb981dcd2"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/合法前缀残余独立同分布价值与租金--定理.md",
+      "sha256": "f0dffb71a91e64ec3cf8acacea13ae759c2b4ff554b22094ff36ba0b27acceed"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-f2b36dbfb8e86b61/mathematical-review.md",
+      "sha256": "1cfc867905ed3fc1aac0b7a80dc2a73ba3c3a59f6ed59a8bebb7d73043110797",
+      "section": "10 末端商空间对动态证书的条件提升"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "已完整实读本边端点登记、正文和全部必要证据，逐式核域、量词、真实历史及剩余义务；本轮未运行数学程序、LP或原审计。Root将串行原生绑定并检查。 Root已核完整数学审查、当前端点合同和必要承重原文，复核推导方向、条件、量词与整目标/局部范围；具体复核见receipt.parent_review。随后进行原生绑定与结构检查，程序检查不替代数学判断。",
+  "contribution": {
+    "result": "任何满足所列共同条件的规范化Γ/E证书可用原真实相反末行提升为同一d的原Γ/E非负证书。",
+    "remaining": "必须另行取得规范化证书和使余项非负的自由θ；局部二次判别不是全局必要条件，且任意固定早期支付不能自动提升。目标全部锥充要不由此重证，普遍弱iid桥已假。"
+  },
+  "endpoint_pins": {
+    "M-327915ce4a664c10ac670089d8423293": "6096dd679578085e5bf7e5f6d6f632a890d0f6788d30ea70add1818e6025a90d",
+    "customer-attraction/closeout-d0e622fce9f9afaf1412157f": "53dcc6979be684ae532ae40edd02be04eaa571532811c14997c7a095337942da"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/方法/末端平局商空间支付与局部二次判别--方法.md": "ff65f22f629b9b7a1b2848eabb5167b4563356d92c6c86b6625d502eb981dcd2",
+    "archives/customer-attraction/state/定理/合法前缀残余独立同分布价值与租金--定理.md": "f0dffb71a91e64ec3cf8acacea13ae759c2b4ff554b22094ff36ba0b27acceed",
+    "map/edges/customer-attraction-3a-3a-f2b36dbfb8e86b61/mathematical-review.md": "1cfc867905ed3fc1aac0b7a80dc2a73ba3c3a59f6ed59a8bebb7d73043110797"
+  },
+  "review_digest": "47346b459fc31394ad4df533f9224e1a794bb668fa402656fdbe1c41de9e076c"
+}

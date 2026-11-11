@@ -1,0 +1,49 @@
+{
+  "edge_id": "cag-f64d18-e04-owner-average",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "B21-ARBITRARY-OWNER-REPEAT-v1"
+  ],
+  "target_ids": [
+    "M-52269de7c7654e718899924ce225b2de"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限m≥1；同一个带索引比较元组T；均匀随机排列后每客户在覆盖索引均匀选固定owner。固定端点B须独立于这两个随机源；直接Fbar差分部分对任意比较前缀叶族成立而无需随机端点独立。",
+  "roles": {
+    "B21-ARBITRARY-OWNER-REPEAT-v1": "提供F_Q及任意固定owner的UNIT非owner误差公式；给比较前缀计数域。",
+    "M-52269de7c7654e718899924ce225b2de": "获得其全部固定端点均值公式与直接Fbar较松前缀误差，明确独立性边界。"
+  },
+  "explanation": "排列使每客户owner位置均匀，固定B覆盖c次时owner覆盖概率c/m。F_Q的O内平均为1−(1−c/m)/(1+c)=(m+1)c/[m(c+1)]；误差总和按owner覆盖/未覆盖事件的(c−1)/c与c/(c+1)加权，为(mc−1)/[m(c+1)]（c0直接0）。O外保持H_c。直接差分Fbar得覆盖槽误差(mc−1)/[mc(c+1)]。m≥2相邻差为(mc−2)/[mc(c+1)(c+2)]≥0，第ℓ次比较覆盖c≥ℓ，求和得H_a−(m+1)a/[m(a+1)]；m1直接0。",
+  "scope": "完整目标结果；不能把tight AH免费赋给平均势，不能对依赖排列的真实叶套固定端点均值。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/任意固定归属的比较前缀调和误差--引理.md",
+      "sha256": "25fffa8f9c52de806dd0a1d806e6f5907567c8ba925d2d8921081d317864526e",
+      "section": "比较前缀，而非任意实际前缀"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/任意固定归属的比较前缀调和误差--引理.md",
+      "sha256": "25fffa8f9c52de806dd0a1d806e6f5907567c8ba925d2d8921081d317864526e",
+      "section": "固定端点的平均势及较松直接误差"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-f64d18c6613f94d3/mathematical-review.md",
+      "sha256": "00a4f36b1c78ac0a777ac0db0b010eac58fb830af721438482280d41e04144e8",
+      "section": "E04：固定 owner 的 UNIT 推出固定端点平均及直接较松误差"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "完整实读任务所列端点与必要证据，核对实际陈述、域、量词和方向；推导见同目录数学审查对应E节。accepted为作者数学审读声明；由Root复制后执行native绑定/检查，worker未执行。 Root已核完整数学审查、当前端点合同和必要承重原文，复核推导方向、条件、量词与整目标/局部范围；具体复核见receipt.parent_review。随后进行原生绑定与结构检查，程序检查不替代数学判断。",
+  "whole_result": "E F_Q(B)=Σ_(x∈O)(m+1)c/[m(c+1)]+Σ_(x∉O)H_c；EΣe_i(B)=Σ_(x∈O,c>0)(mc−1)/[m(c+1)]。直接Fbar误差(mc−1)/[mc(c+1)]沿比较前缀总和≤H_a−1+(m−a)/[m(a+1)]，m1为0，全部量词/独立性如条件。",
+  "endpoint_pins": {
+    "B21-ARBITRARY-OWNER-REPEAT-v1": "10ababc02fce5652569ce9889eaf08933f1ce367ed7199c7dcb33f9264bf5b51",
+    "M-52269de7c7654e718899924ce225b2de": "ad031b005ebb8675c9b7316fa45880b0c7314e59de47ffa21fa94039274f48cb"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/任意固定归属的比较前缀调和误差--引理.md": "25fffa8f9c52de806dd0a1d806e6f5907567c8ba925d2d8921081d317864526e",
+    "map/edges/customer-attraction-3a-3a-f64d18c6613f94d3/mathematical-review.md": "00a4f36b1c78ac0a777ac0db0b010eac58fb830af721438482280d41e04144e8"
+  },
+  "review_digest": "5cb88bc74e74131ab903b5351da7dff646aa84306ffb64210f341760904f4e17"
+}
