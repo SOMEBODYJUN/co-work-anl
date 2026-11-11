@@ -1,0 +1,38 @@
+{
+  "edge_id": "ca-net-credit-minimum-row-to-six-half",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/actual-minimum-profit-net-row-and-arrival-rent-difference"
+  ],
+  "target_ids": [
+    "customer-attraction/six-providers/exact-six-full-history-half-cover"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "有限单位客户、有限非空共同标签目录、单位提供者、同一份全部有序历史完整纯SPE；保空覆盖、别名、重复索引与任意离轨平局。取m=6；假设每份σ可选一个实际最小收益位置i及一个共同最优六索引元组，使MIN-ROW成立。",
+  "roles": {
+    "customer-attraction/actual-minimum-profit-net-row-and-arrival-rent-difference": "提供最小实际收益行的未证下界。",
+    "customer-attraction/six-providers/exact-six-full-history-half-cover": "获得六人half；没有把最小角色移到末位。"
+  },
+  "explanation": "令u_i=min_k u_k，则6u_i≤Σu_k=W。六条同一实际位置的真实整行动IC分别给d_i(T_j)≤u_i，按索引重数求和：OPT6−W≤Σ_jd_i(T_j)≤6u_i≤W。只用该行，未假设所有行ROW、未改最优T、未把最小位置移尾。",
+  "scope": "存在一个合格最小行及最优元组便足；不是每个最小行/每个最优元组的加强。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/候选/实际最小利润位置的净行与到达租金差--候选.md",
+      "sha256": "4ac0ae008a04320f2f214642ae90badd6786607f6a41e3c2899df1c98f76bd34",
+      "section": "同一完整策略下的准确充分目标"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "Boss4同身份worker实读端点陈述、条件和所引完整数学证明，按同一σ及同一比较元组逐式复核；区分条件蕴含、局部贡献与一般开放义务。原数学程序/求解器运行0，未以有限检查提升真值。",
+  "whole_result": "若所述存在版MIN-ROW对每份六人完整σ成立，则该六人原题的2W≥OPT6完整成立。",
+  "endpoint_pins": {
+    "customer-attraction/actual-minimum-profit-net-row-and-arrival-rent-difference": "da92ebaf73b065c8ddbf53b6bfe0a5a8621d843ce70852c6a0fee3c8c0678494",
+    "customer-attraction/six-providers/exact-six-full-history-half-cover": "2d5b191271cb052c435121a41935eb3958540d5a53cb05013f13dd45a70f6e31"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/候选/实际最小利润位置的净行与到达租金差--候选.md": "4ac0ae008a04320f2f214642ae90badd6786607f6a41e3c2899df1c98f76bd34"
+  },
+  "review_digest": "761fd3ed47ca2ffcae75e805654584f00f691eba14fc7e36c26a675c56aafee3"
+}

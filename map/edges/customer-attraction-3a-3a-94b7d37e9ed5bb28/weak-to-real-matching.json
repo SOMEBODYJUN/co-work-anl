@@ -1,0 +1,47 @@
+{
+  "edge_id": "ca-net-credit-weak-to-real-matching",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-064ba06269a545b8a12971321dacf867",
+    "customer-attraction/optimal-menu-static-credit-signed-adaptivity"
+  ],
+  "target_ids": [
+    "customer-attraction/true-optimal-portfolio-net-gap-joint-payment"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "有限单位客户、有限非空共同标签目录、单位提供者、同一份全部有序历史完整纯SPE；保空覆盖、别名、重复索引与任意离轨平局。假设存在版弱平均对每实例/每σ成立；固定它给出的一个共同最优索引元组T及原实际前缀V矩阵。",
+  "roles": {
+    "M-064ba06269a545b8a12971321dacf867": "供应ΣV≥m(OPT−W)的共同元组。",
+    "customer-attraction/optimal-menu-static-credit-signed-adaptivity": "供应索引排列平均与Lπ/Qπ恒等式，保重数。",
+    "customer-attraction/true-optimal-portfolio-net-gap-joint-payment": "得到所需存在π的真实净差匹配；不要求任意排列。"
+  },
+  "explanation": "在固定m×m真实V矩阵上平均m!个索引排列，每个(i,j)出现概率1/m。因此平均匹配ΣV/m≥OPT−W，有限性给某π达到至少该平均；即Qπ≤Lπ。不是交换玩家次序或随机更换实际前缀。静态身份还给每行ROW⇔Q_i≤u_i+L_i；对所有行相加产生弱预算，故目标记录的ROW⇒弱预算⇒存在匹配充分链也保持。逆向及全部排列版均未推出。",
+  "scope": "完整目标的存在真实净差匹配；源弱平均未证，逻辑链已闭合。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/最优主题菜单的非负静态信用与带符号自适应恒等式--引理.md",
+      "sha256": "e26f3d06e14f3ca457c42350b81ecc360a23ebc8263a0769af3591acf0887bd6",
+      "section": "完整排列的静态信用"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/真实最优组合的净差匹配与共同付款--候选.md",
+      "sha256": "fe06ff84ca5e70c8e7d59d25be85103c191d3a510980dd9f08c453ba04b6ea80",
+      "section": "净差匹配比旧接口弱在哪里"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "Boss4同身份worker实读端点陈述、条件和所引完整数学证明，按同一σ及同一比较元组逐式复核；区分条件蕴含、局部贡献与一般开放义务。原数学程序/求解器运行0，未以有限检查提升真值。",
+  "whole_result": "若存在版弱平均成立，则对每完整σ存在一个最优m索引元组及指派π，使Σ_iV_iπ(i)≥OPT_m−W；全行ROW又是其充分条件。",
+  "endpoint_pins": {
+    "M-064ba06269a545b8a12971321dacf867": "8f866d89867993832978e0a53c5a174b4b3174932d395537eca43cb3ad8ed6bf",
+    "customer-attraction/optimal-menu-static-credit-signed-adaptivity": "c55cc40a1f50aac26344d34745ca7022ff0c141c76530a952875cea62d21b14a",
+    "customer-attraction/true-optimal-portfolio-net-gap-joint-payment": "fd9a93a4ba2f5a8702bdcc764cb2fe6ebb1ef8beecce2b0be5d6073a7cd62b84"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/最优主题菜单的非负静态信用与带符号自适应恒等式--引理.md": "e26f3d06e14f3ca457c42350b81ecc360a23ebc8263a0769af3591acf0887bd6",
+    "archives/customer-attraction/state/候选/真实最优组合的净差匹配与共同付款--候选.md": "fe06ff84ca5e70c8e7d59d25be85103c191d3a510980dd9f08c453ba04b6ea80"
+  },
+  "review_digest": "423c3a406b8f678b9a66b70e89835ffe07f7ca9aaf98d33ba759dcfee397d0f9"
+}

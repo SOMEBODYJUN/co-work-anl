@@ -1,0 +1,57 @@
+{
+  "edge_id": "cag-mp-to-direct-positive-defect-budget-step",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/exact-threshold-arbitrary-path-budget-and-nonrealizability"
+  ],
+  "target_ids": [
+    "customer-attraction/closeout-ff2a29400e053336f9f0f877"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一有限单位客户、有限非空标签目录和m名单位顺序提供者的零根模型；M(h)=max_A min_{强制A后完整真SPE孩子}当前利润；z为任意完整合法路径，δ_i=(M(h_i)−u_i(z))_+。额外假定尚未证明的MP：每条z有Σ_iM(h_i)≥OPT_m/2。真尾加强另要求前j位以后为同一完整SPE尾部。",
+  "roles": {
+    "customer-attraction/exact-threshold-arbitrary-path-budget-and-nonrealizability": "提供开放前提MP的精确任意路径下界；其已证M定义和真尾接口固定量词。",
+    "customer-attraction/closeout-ff2a29400e053336f9f0f877": "得到检查点中A?的正确条件推导及真尾2R、2jΔ预算；不接收一般half的无条件证明。"
+  },
+  "explanation": "对每个位置逐点有u_i(z)+(M(h_i)−u_i(z))_+≥M(h_i)。在零根背景Σ_iu_i(z)=W(z)，求和得W+Σδ≥ΣM。额外假设MP后，OPT_m≤2ΣM≤2(W+Σδ)，正是检查点A?。若j后整个尾部可信，后段δ_i=0，R=Σ_{i≤j}δ_i且R≤jΔ（j=0时R=0单独解释），所以OPT_m−2W≤2R≤2jΔ。不要求各M极小孩子可拼成同一SPE；七客户不可拼合边界只否免费实现，不影响这段代数。没有从既有2R+Δ编译成本反推A?或MP。",
+  "scope": "仅目标的条件A?及真尾缺陷上界部分；目标所保不交大小y/r族的真M=y和负编译余量是另一个解析计算，不由MP推出。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/可信缺陷直接预算检查点与便宜分母的解析校准--资源.md",
+      "sha256": "3a3f788c8c97758f3bf8ba1d5793cf2828101fe981ef30c7acfdd9f79967f7a9",
+      "section": "真M和未证的直接预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/真实门槛任意路径的累计预算与不可拼合边界--候选.md",
+      "sha256": "4db2d35f3e6ecb2001c447576d36659e3295f370468ddace187698721fc10986",
+      "section": "定义与主候选"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/真实门槛任意路径的累计预算与不可拼合边界--候选.md",
+      "sha256": "4db2d35f3e6ecb2001c447576d36659e3295f370468ddace187698721fc10986",
+      "section": "真尾输入的已证接口与条件加强"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/真实门槛任意路径的累计预算与不可拼合边界--候选.md",
+      "sha256": "4db2d35f3e6ecb2001c447576d36659e3295f370468ddace187698721fc10986",
+      "section": "七客户：最低价格孩子不能免费拼成同一SPE"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "实读检查点全文、MP正文全文及当前完整模型；逐项核δ正部、根W=Σu、有序历史和真尾量词。MP仍open，关系论证完整故accepted/conditional；不读取或重跑旧300随机扫描。",
+  "contribution": {
+    "result": "假设MP，则任意合法完整路径满足OPT_m≤2[W(z)+Σ_i(M(h_i)−u_i(z))_+]；若仅前j位可不可信，则OPT_m−2W≤2R≤2jΔ。",
+    "remaining": "MP本身尚未证明；目标另含不交校准族M_i=y、raw floor失败及编译费负余量，不由本边承担。无条件任意路径直接预算和一般half均未闭合。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/closeout-ff2a29400e053336f9f0f877": "00ecd55f52485651c02474bd196b1474364963354d51cd61d9195b686da51465",
+    "customer-attraction/exact-threshold-arbitrary-path-budget-and-nonrealizability": "64a3e1531ea1f2659134097edcc5af1f3021cf97f82014728447a2f354bd0cfd"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/可信缺陷直接预算检查点与便宜分母的解析校准--资源.md": "3a3f788c8c97758f3bf8ba1d5793cf2828101fe981ef30c7acfdd9f79967f7a9",
+    "archives/customer-attraction/state/候选/真实门槛任意路径的累计预算与不可拼合边界--候选.md": "4db2d35f3e6ecb2001c447576d36659e3295f370468ddace187698721fc10986"
+  },
+  "review_digest": "134c28d411870b9a20f3e13f50378afa541a137e1e3ae29e9e367f83b618cf23"
+}

@@ -1,0 +1,61 @@
+{
+  "edge_id": "um-ds-repetition-partial-minrep-source-threshold-step",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-aa8493282cc64a7ca8ec31430eb5e8af"
+  ],
+  "target_ids": [
+    "UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2",
+    "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "先固定ε0∈(0,1]与基础alphabet Q0≥2；给定非空显式balanced regular total-projection游戏H，YES值1，NO值≤1−ε0。g≥2，0<ρ≤1，γ=ρ³/(10⁹g⁸)，q=1−ε0²/16，整数k=ceil(ln(1/γ)/(-ln q))。基础perfect-complete PCP的存在/正规化是外部前提；v3围长参数G固定。",
+  "roles": {
+    "M-aa8493282cc64a7ca8ec31430eb5e8af": "把基础NO值≤1−ε0放大至≤γ，同时按独立product保perfect YES、total projection和正规性。",
+    "UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2": "接收其条件source推论所需的原val≤γ、Q=polyρ(g)输入；随后由自身删边/全列表证明提供degree和概率。",
+    "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3": "接收相同阈值并在YES/NO两个promise都满足Qγ≥1的输入；随后由自身permutation lift/repair与FAIL证明提供高围长全copy-list源。"
+  },
+  "explanation": "DS高值界给val(H^{⊗k})≤q^k≤γ。perfect赋值逐坐标复制仍perfect；total map和balanced regular在product中保持。Q=Q0^k，k=Oε0(log g+log(1/ρ))，故固定ρ时Q=polyρ(g)，并使v2参数λ/floor(log2g)=Oρ(1)，Δ=Oρ(g)。由于q≥15/16、Q0≥2且γ≥q^k，Qγ≥(Q0q)^k≥(15/8)^k>1，所以v3的Qγ≥1域在YES和NO两个promise均满足；不能只用NO的val≥1/Q基线处理此域。显式基础长L的输出为L^{O(k)}，只有先固定g,ρ等后才给关于SAT输入的多项式归约。该边只支付输入amplification，不声称product本身产生稀疏图、高围长或全cheap-list soundness；v2/v3分别仍用自己的0.9与0.8概率证明。",
+  "scope": "两个partial-MinRep端点正文的条件PCP/parallel-repetition source接口中的同一阈值步骤。不是Manurangsi近完美MinRep主定理的精确Q/Δ迁移，不含ordinary UM compiler、decoder、fee或near-two hardness。",
+  "contribution": {
+    "result": "对每个满足条件的显式基础源H，构造H^{⊗k}得到YES perfect、NO val≤ρ³/(10⁹g⁸)、共同Q=Q0^k且固定ρ下Q=polyρ(g)的balanced regular total-projection输入；YES和NO两种输入都满足v3域Qγ≥1。",
+    "remaining": "若要hardness源，须提供并核定基础perfect-complete PCP、正规/共同alphabet接口及编码。随后v2自身删边定理或v3自身随机lift/repair定理才能给全列表NO、逐seed YES及各自成功/FAIL概率；随机归约算法排除保NP⊄BPP类假设。所有UM物理编译与低载decoder另待证明。"
+  },
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-5dc2951cac9e00c5/parameter-review.md",
+      "sha256": "d993ae3b2996e33eb88d8b19b0df3a7df53a1bc2e9a2b77b961b3a447853d4f7",
+      "section": "6. partial-MinRep v2/v3 的已付局部贡献"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/parallel_repetition.pdf",
+      "sha256": "7a7d2fcb62e173dabed10d69faa1e522055a811a228b707ab94f3e88b28dfdd5"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资料/partial-MinRep线性degree删边源与外部边界--资料.md",
+      "sha256": "b638ac893f6e42e189696b70af4dee640f6d1af59d8db7c47cb1831fd1fa0728",
+      "section": "外部 primary 比较、source 参数和新颖性边界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/部分MinRep高围长v3三源精读与随机repair边界--审查.md",
+      "sha256": "7f7940ad9bafacd5d6e3f2493a06711f526753543e915642937d4c2cac9c1902",
+      "section": "4. 与既有部分 Min-Rep 对象和 UM 边界"
+    }
+  ],
+  "reviewed_by": "Boss4/fresh-projection-repeat-worker",
+  "review_note": "实读DS精确高值界、v2/v3输入域及固定参数source边界；逐项核k、Q、显式规模、YES/NO共同的Qγ条件。贡献限于放大输入，不迁移后续随机结构或UM结论。",
+  "endpoint_pins": {
+    "M-aa8493282cc64a7ca8ec31430eb5e8af": "d2d2a9536b8a1a02c4a96d192c15da83188190a0f2b21bfa3538c365238e65d2",
+    "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3": "49526ecced6cea0e70b066af67a5f49a07cb454ce91cc373658f2f73578015c6",
+    "UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2": "ded973103913d8f0476436daa5bd8c88be562935a75b2fd9573a2d25f7874861"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-5dc2951cac9e00c5/parameter-review.md": "d993ae3b2996e33eb88d8b19b0df3a7df53a1bc2e9a2b77b961b3a447853d4f7",
+    "archives/unrelated-machines/tools/evidence/retired-literature-pcsp-20261031/parallel_repetition.pdf": "7a7d2fcb62e173dabed10d69faa1e522055a811a228b707ab94f3e88b28dfdd5",
+    "archives/unrelated-machines/state/资料/partial-MinRep线性degree删边源与外部边界--资料.md": "b638ac893f6e42e189696b70af4dee640f6d1af59d8db7c47cb1831fd1fa0728",
+    "archives/unrelated-machines/state/审查/部分MinRep高围长v3三源精读与随机repair边界--审查.md": "7f7940ad9bafacd5d6e3f2493a06711f526753543e915642937d4c2cac9c1902"
+  },
+  "review_digest": "6831c3f4db2b45a4e5ff0b72f5f4c945cdd7671f088537196871cb3f53ff874a"
+}

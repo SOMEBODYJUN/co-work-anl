@@ -1,0 +1,46 @@
+{
+  "edge_id": "um-5c01b2-commuting-border-basis-connected-column-flat-extension",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-eeb1beecbe7345c29aae65f41841b671"
+  ],
+  "target_ids": [
+    "M-d2f0e90baf4440cab9efbffecfee709e"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "设 K 为域，C 是有限 connected-to-1 单项式集，Λ 定义在 Span(C+·C+) 上，rank H^{C+}_Λ=rank H^C_Λ=r。除目标定理的假设外，本条证明分支要求存在 B⊆C，B connected-to-1，且 |B|=rank H^B_Λ=r。r=0 时零扩展另行平凡处理；本边的乘法算子构造处理 r>0。完整次数层 C=M_{n,t−1} 满足这个额外列基条件（冻结 PDF Proposition 3.1），任意稀疏 C 则未必满足。这里 connected-to-1 作用于实际列基 B，不能只用较大索引集 C 的连通性代替。",
+  "roles": {
+    "M-eeb1beecbe7345c29aae65f41841b671": "把 flat Hankel 投影所得两两交换的 border 乘法算子提升为 K[x]/(F) 的真实商基，使该分支有定义良好的有限维全局代数及正规形。",
+    "M-d2f0e90baf4440cab9efbffecfee709e": "一般稀疏 flat-extension 唯一性是比较目标；本边只完成存在 connected-to-1 满秩列基的子情形，并定位一般证明仍需的步骤。"
+  },
+  "explanation": "记 V=Span(C+)、K₀=ker H^{C+}_Λ。flat 假设及非退化的 H^B_Λ 给 V=Span(B)⊕K₀，记投影为 π，并置 f(m)=m−π(m)、F={f(m):m∈∂B}、χ_i(b)=π(x_i b)。\n\n先核两项局部事实。由 flat 性，p∈K₀ 当且仅当 Λ(ap)=0 对每个 a∈C 成立；若 p∈K₀ 且 x_i p∈V，则 Λ(a x_i p)=Λ((a x_i)p)=0，故 x_i p∈K₀。其次，对 b∈B，χ_iχ_j(b)−χ_jχ_i(b) 是 Span(B) 中的向量；将 χ_i(b)=x_i b−f(x_i b) 代入后，其差为 x_j f(x_i b)−x_i f(x_j b) 加若干 f(x_i b′)、f(x_j b′) 的线性组合。第一部分仍在 V，因为最高次项相消；与任意 a∈C 配对为零，因为 a x_i,a x_j∈C+ 且各 f∈K₀。由局部事实，整个差属于 K₀∩Span(B)={0}。这就是冻结 PDF Lemma 2.1 的交换性论证，不需要正性。\n\n现调用源对象（PDF Theorem 1.6）：因为实际 B connected-to-1，交换性推出 B 是 Q=K[x]/(F) 的基。该调用也可直接核实：定义 Φ(p)=p(χ)1，交换性使 ker Φ 为理想；沿 B 中的前缀归纳得 Φ(b)=b，因此 F⊆ker Φ。B 含1且 border 关系可逐次消去 x_i b，故 B 张成 Q；Φ 在 Span(B) 上为恒等，故 B 在 Q 中线性无关。反向则由商代数中的变量乘法交换立即成立。于是正规形 N(p)=p(χ)1 是 Q 到 Span(B) 的代表。\n\n证明 N 在 V 上等于 π：若 m∈C+ 非常数，利用 C connected-to-1 选择 m=x_i m₁、m₁∈C，沿次数归纳。由归纳假设 N(m₁)=π(m₁)，且 x_i(m₁−π(m₁))∈V；局部 kernel 闭合给 x_i(m₁−π(m₁))∈K₀。因此 N(m)=χ_iπ(m₁)=π(m)。常数1的情形显然。这一步保留了目标定理对 C 的连通性。\n\n在 Span(B) 上设非退化对称双线性型 ⟨u,v⟩=Λ(uv)。各 χ_i 对此型自伴，因为 ⟨χ_i b,b′⟩=Λ(x_i b b′)=⟨b,χ_i b′⟩；这里把 π 去掉只与 C+ 中的向量配对，合法。交换性使 p(χ) 对所有 p 仍自伴。定义 Λ̃(p)=Λ(N(p))。对 p,q∈V，Λ̃(pq)=⟨1,p(χ)q(χ)1⟩=⟨N(p),N(q)⟩=Λ(π(p)π(q))=Λ(pq)。所以 Λ̃ 完整保持给定的 C+·C+ 数据。又因 N 沿理想 (F) 因子化，(F)⊆ker H_{Λ̃}，故 rank H_{Λ̃}≤dim Q=r；其 B 主块非退化给相反不等式，故秩恰为 r。\n\n最后核唯一性。若 Λ′ 是另一秩 r 的完整扩展，则其列 B 已满秩，因此每个 f(m)∈F（它在给定 C+ 主块中属于 kernel）也属于完整 H_{Λ′} 的 kernel；列 B 张成全列空间，所以与 B 配对为零已强制与任意列配对为零。于是 (F)⊆ker H_{Λ′}，而 N(p) 是 p 模 (F) 的唯一 B 代表，Λ′(p)=Λ′(N(p))=Λ(N(p))=Λ̃(p)。从而本加强子情形的全序列存在性、给定数据一致性、秩及唯一性全部成立。\n\n不能把此论证作为一般目标的全证。冻结 PDF §3.1 的 C={1,x₁,x₁x₂}、a≠1 例中 rank H^{C+}_Λ=rank H^C_Λ=2，但 C 内的满秩列基只有 {1,x₁x₂}、{x₁,x₁x₂}，均不 connected-to-1；第一组仍含1。一般 sparse 定理必须改用 Lemmas 2.2–2.3 从 C 的连通性直接证明 Φ|V=π 及 Λ(pq)=Λ(Φ(pq))，而非无条件套用要求 B 连通的源定理。本边不把该尚未由源定理支付的推广隐藏在条件里。",
+  "scope": "同一 Hankel/多项式商模型内的严格证明分支。无需 PSD、实数域或 localizer；它不自行给表示测度，也不声称一般低阶矩证书能生成、能直接提取调度。完整次数层由 Proposition 3.1 进入本分支；更一般 C 只有在额外满秩列基条件实际成立时进入。",
+  "contribution": {
+    "result": "若稀疏 flat Hankel 数据另有 connected-to-1 的非退化满秩列基 B⊆C，则交换 border 乘法算子判据产生真实 r 维商代数，由正规形 Λ̃(p)=Λ(p(χ)1) 构造唯一保持全部 C+·C+ 数据且秩 r 的完整 Hankel 扩展。特别覆盖 C=M_{n,t−1} 的经典完整次数层分支。",
+    "remaining": "目标对象量化任意 connected-to-1 的稀疏 C，不保证存在 connected-to-1 满秩 B；PDF §3.1 已给反例。覆盖目标整条定理仍需不要求 B 连通的 kernel 归纳（Lemmas 2.2–2.3）及其全局构造；不能用本边把目标标成由源定理单独全证。"
+  },
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+      "sha256": "de08d9e732431ad8b7df4da921c7c42984746cce96a0fffba437547e19162d87",
+      "section": "2. Laurent–Mourrain：A Sparse Flat Extension Theorem for Moment Matrices"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/laurent_flat_extension.pdf",
+      "sha256": "a79a6aae70263cdc0b15415f838df666cfb99d6a00ef87bb1dae381493478fad"
+    }
+  ],
+  "reviewed_by": "Boss4",
+  "review_note": "实读当前两端对象v1及绑定正文，使用 pdftotext -layout 实读冻结 Laurent–Mourrain PDF 全12页；精核 p.5 Theorem 1.6、pp.6–8 (2.1)–(2.8)、Lemmas 2.1–2.3 与全局扩展/唯一性证明，以及 p.9 Proposition 3.1 和非连通列基反例。独立补写了 connected-B 情形的 Φ 商基证明及非退化双线性型下 χ_i 自伴的扩展计算，区分 C 连通、B 含1、B 连通三个条件。没有把引文相似性或一般 Hankel 证明的灵感误记成整个稀疏定理由源结果推出。",
+  "endpoint_pins": {
+    "M-d2f0e90baf4440cab9efbffecfee709e": "7f98bc0a6bd16cb4009e92a95508a1acea102c4f4b8cceb1225da3a95cb98f39",
+    "M-eeb1beecbe7345c29aae65f41841b671": "afe7949bdb73e944dcc5919bb8c9a310eb3bd851681a9192a9487ee7157e8ba6"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md": "de08d9e732431ad8b7df4da921c7c42984746cce96a0fffba437547e19162d87",
+    "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/laurent_flat_extension.pdf": "a79a6aae70263cdc0b15415f838df666cfb99d6a00ef87bb1dae381493478fad"
+  },
+  "review_digest": "4a3ac72db57401749d6579161ee8f3970355ccf056394f7ba6ad7409f1f73939"
+}
