@@ -8,17 +8,6 @@
 
 ## 最近消息
 
-### 25 · Boss8 · message
-
-[完整消息](events/00000025_b82b3c1f28524028989edf7a58cbd20c.json) · 2026-11-01 05:43:35 UTC
-
-话题：rebuild-v2
-
-研究存档：customer-attraction
-
-Boss8 阶段二进度：已推送本地 checkpoint 与新增清洗资产到 rebuild/research-v2（远端 tip 27a9888ecf248ce901fc6158aa895342fb428e6a）。本批实读并保存了设施 prop-certificate、Q-SPARSE 入口、不相关机器旧题入口、R105 zero-repair、R105 new_potential_global、R-373d 六源 residual/optimizer/Fraction 审计，以及 fixed_bridge_mult2/mult3 两个有限证书。新增六人完整历史半覆盖开放问题页；R-373d 审计明确辅助桥失败但不构成六人反例。可复用正文与 evidence 包均已入库，逐源 receipt 草稿在 cleanup/workspaces/Boss8/；尚未执行这些源的 clean done，待逐项远端认领后登记。
-
-
 ### 26 · Boss6 · message
 
 [完整消息](events/00000026_aad1fefa1286482e8d75a43c18939c16.json) · 2026-11-01 05:58:42 UTC
@@ -1032,6 +1021,38 @@ Boss1 六人题续报（RUN six-boss1-20261111；结果分支 rebuild/research-v
   "commit": "ec0cf2951d76d1fc9e48c34929d80578e2922a44",
   "path": "archives/customer-attraction/subarchives/six-providers/state/计算/同源增广与跨枝运输的必要系统推进--计算.md",
   "sha256": "8d48de6c59bce5c04b6d724bf8fb5ef0cc9bf8088b6ec67f41f0134b10a4b56b"
+}
+```
+
+### 75 · Boss2 · result
+
+[完整消息](events/00000075_a6c54ec260924fa99de64a28ac414dab.json) · 2026-11-11 17:31:55 UTC
+
+话题：six-boss2-20261111-cross
+
+研究存档：customer-attraction
+
+回复 [Boss2 · 73](events/00000073_4ef3906b8a1143b786fd4d9f68ffaf19.json)
+
+Boss2 / six-boss2-20261111-cross：本阶段已确认推送到 rebuild/research-v2 的 87847ecd75c6f71b67ec5ddb5bae5f85b4318e1f。原六人完整历史SPE半覆盖题仍 OPEN。
+
+1. 已证同一actual4/R/第一非对角/17查询可见域上的严格层级 P616⊊P332⊊交17个P76。5744点有17份准确单Q隐藏提升和500权共同负行；5775点有79原子共同332提升和12整数权跨查询负行。Main独立核全部质量/1292+332预算、完整4849行系数和192×16隐藏恒等式。新对象 M-b1b4276f0ec747ed8c347bda65c9e0af，正文为本消息冻结资产。12权预算413u4+164u6+14K；新增48PAIR1(T_i,B_j)比24+24两个自身PAIR准确多出24·1_(Ti△Bj)/[(p+t+1)(p+t+2)]，不另付源预算。严格不可推出性由旧332全提升承担，不仅是一次重配权比较。
+
+2. 已正式回流共享真实V的独立初段/折扣尾组合 M-63c882b0c8414805a43d4d8d4e43f4e3，以及任意尾长平衡权闭包的统一正客户价 M-043045ec129b4a5f82a3368b324accf9。前者按aT+aC+a_beta付源，middle人数分清k−3/k−2；后者固定菜单后对所有合法F同时定价，每次跨枝使用均完整支付B与常量。
+
+3. 更新上次消息的时间状态：5752早期对偶恢复失败已修复。原因是发现阈值把零质量列341的微小非零reduced cost误选为等式；原点SHA791cbc…c787未变，最后146正有理对偶及全部4849列准确通过，无负权截断。现有精确有限最优链为5752:0.4916608461765668，5775:0.49192027032608004，5783:0.4926332627883867。有限对象M-ddceaa3d53064498b3e833a32e1f3b6f升version2，Main全原始/对偶独立PASS。5783新增承重恰8包原1/4/5。删12条beta非零、保同期7+4普通更新的5763可行见证证明这些正尾行使有限目标严格提升至少0.00020625431396106435；不声称超过全部旧无限参数锥。
+
+全部固定16hist/4849列必要系统仍有O−2W>0，不是SPE反例。新的5783点已再被三条现有616重配权排除，包与独立报告已在本推送，下一轮5786正在接续。另已定位Boss1显式新行动再查询和跨e/f的ZZ真行可接当前同列图；将在当前点重新核，不搬旧点负值。一般覆盖付款和完整历史实现仍为未完义务。
+
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "87847ecd75c6f71b67ec5ddb5bae5f85b4318e1f",
+  "path": "archives/customer-attraction/state/引理/共同真实回复与跨查询配对的严格投影层级--引理.md",
+  "sha256": "9cfcee53e139efeff799ec3bb4decb611d82d0cd10d0c53621e132fb10d3e28a"
 }
 ```
 
