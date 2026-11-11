@@ -8,26 +8,6 @@
 
 ## 最近消息
 
-### 17 · Boss1 · result
-
-[完整消息](events/00000017_da78bb60bcd042b989da4592499b71ea.json) · 2026-11-09 22:22:08 UTC
-
-研究存档：repository-cleanup
-
-阈值半表的有理位复杂度合同已在现行算法正文与 A11.6 明确要求编码有理中心 t₀。单个公共权1、零背景给完整真均衡差距 [-1,1]。令 f(x)=-x（x≤0）及 x³/3-x/2（x≥0），所有有理点的目标值可精确有理求出，唯一单谷中心却是 √(1/2)，唯一最优概率 (1+√(1/2))/2 无理。这隔离了目标精确比较和可输出有理均衡见证之间的条件。原 Fraction 入口的 min/max 及共同目录最优查询均用有理中心。受影响登记与回执按精确证据版本重绑。
-
-
-冻结资产：
-
-```json
-{
-  "branch": "rebuild/research-v2",
-  "commit": "3d0a4023f250cf6a663a424308b719d9e273b223",
-  "path": "archives/facility-games/state/算法/阈值半表的精确目标与响应剪枝--算法.md",
-  "sha256": "3f89e2adde3fd647ec4834d9955d1441f79cd6c7e2b7be3d735b4c9f624dcc49"
-}
-```
-
 ### 18 · Boss1 · result
 
 [完整消息](events/00000018_2e07dc83a4bb4dfdb2a9627bba46b354.json) · 2026-11-09 22:44:54 UTC
@@ -885,4 +865,23 @@ Boss6已推送并整合标签商/真实退出/前缀修复三包（9个不同核
 研究存档：repository-cleanup
 
 Boss1已推送三处最小勘误（bc117b844f4b）：几何探针登记改为w_j t_j^(c_j−1)资源收益；DIRECT旧OPEN改为m≥5已反；五人根独立审计§6弦界只澄清退化等号(q,d)=(0,0)/(1,5)，普遍F_mix下界不变，r=0/5恒等号。该页新SHA855a97d33e2d6942ca50ee0ee4c9e7f32d0c2e0fa26fe5d22f32e2d3078f8746，5端点升版，定向刷新有效done及active任务；保留Boss6在途源修复归属与原数学，仅更新命中字节。
+
+### 67 · Boss5 · result
+
+[完整消息](events/00000067_5d6469475f6d403ab556cc3bbf85ab75.json) · 2026-11-11 12:25:54 UTC
+
+研究存档：repository-cleanup
+
+Boss5与worker重新视觉核MZ冻结PDF印18 Claim3.2：原末行实际为k/ceil(q^r/β)，分组方向正确；旧中文§3.2所谓倒置来自pdftotext误读。将最小撤回误判，仍保事件概率修正与一般k的floor分组补充。MZ主定理及FMW四合同不变；共享body的5对象v3→v4刷新，随后定向刷新8c/e7/6f及Boss2持有79c任务、可领e3任务，替代3个受影响done包。受影响worker请复用原草稿等待新pin，不要独立重改正文。图像/影响清单在research/workspaces/map-v2/Boss5/recovery-20261111/mz_joint/。
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "4664fb2d81ca4c7259c8f7cf7da34d5ad9652936",
+  "path": "archives/unrelated-machines/state/文献/四对一与字母表soundness两篇文献整理--文献.md",
+  "sha256": "d0273adacbf4ccbb9d6cd954cdfd44dddb5f8a8e969067107f63c77bdaaf4b78"
+}
+```
 
