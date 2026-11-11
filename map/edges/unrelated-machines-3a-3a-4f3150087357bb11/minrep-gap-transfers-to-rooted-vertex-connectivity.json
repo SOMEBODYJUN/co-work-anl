@@ -1,0 +1,48 @@
+{
+  "edge_id": "minrep-gap-transfers-to-rooted-vertex-connectivity",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-8b63c8bed3d44f34a50cc846cc98d80a"
+  ],
+  "target_ids": [
+    "M-782bc7fb7cd043a989f84b80e695307f"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "联合前提是完整源对象与外部近似保持归约合同：采用冻结 Manurangsi note Theorem 2 中 MinRep→RkC 的 k=O(Δ³Q+Δ⁴) 合同，以及另一个 Theorem 4 中 MinRep→RkC 的 D_dem=O(Δ²) 合同，归约的实际输入类别、可行解编码/解码与费用近似保持均须满足。两合同分别使用，不假设同一输出同时达界。目标限无向图、固定需求 k、按边数最小化的 RkC；每个终端与根之间要求内部顶点不交路径。源中 g>1 是先固定的整数，使用显式总投影、全边覆盖及真实列表总成本，保留源的 Chan/正规化接口、δ 修复和随机归约限定。外部归约本身未在本轮重证；任意加权、顶点费用、edge-disjoint 或改变 k 的双标准版本均须另核合同。",
+  "roles": {
+    "M-8b63c8bed3d44f34a50cc846cc98d80a": "提供完整的随机 MinRep g-gap 源：Q=O(g⁴log²g)、Δ=O(g log g)，YES 以至少0.9概率 OPT≤2N，NO 以至少0.9概率 OPT>2gN；两种概率分别针对对应 promise 的固定输入。",
+    "M-782bc7fb7cd043a989f84b80e695307f": "通过所调用的外部近似保持归约，分别得到 RkC 的 k 参数和终端需求对数参数硬度；目标仍是条件应用合同。"
+  },
+  "explanation": "先固定 g，并从源取得 MinRep 实例 Π。以 Δ 表示该实例的最大度数，以 Q 表示共同字母表大小，D_dem=|T| 表示 RkC 的根—终端需求对数，避免与源图的正则度数 D 混同。第一分支调用 Theorem 2 的 RkC 归约：Δ³Q=O((g log g)³·g⁴log²g)=O(g⁷log⁵g)，Δ⁴=O(g⁴log⁴g)，所以 k=O(g⁷log⁵g)。第二分支另调用 Theorem 4：D_dem=O(Δ²)=O(g²log²g)。在各自外部合同成立时，目标的 α 近似经该合同解码为源的相应近似；因此源的 g 困难因子迁移为目标的 Ω(g) 困难因子，绝对常数损失不改变所列幂和波浪阶。对增长的实际输出参数，分别反演单调上界 x↦x⁷(log x)⁵ 和 x↦x²(log x)²，得到 g=Ω(k^(1/7)/(log k)^(5/7)) 及 g=Ω(sqrt(D_dem)/log D_dem)，即目标中两条分别的波浪Ω(k^(1/7))、波浪Ω(D_dem^(1/2))结论；这不需要把参数上界冒充等式。源的随机归约经近似保持归约复合后仍是随机归约，不能从正文 Corollaries 3、5 省略该字样推成确定性硬度。两 promise 不须在同一输入上同时发生，NO 排除的是全部便宜列表而非预先选定的列表。若转述为多项式算法排除，可用 NP⊄BPP；仅 P≠NP 不足以消去这里的随机性。两条存在性归约陈述并不单独证明同一图同时满足两参数界，也不在本边补证任意指定 k 或 D_dem 的 padding。",
+  "whole_result": "在上述外部归约合同与源的全部前提共同成立时，完整源 M-8b63c8bed3d44f34a50cc846cc98d80a 迁移为目标 M-782bc7fb7cd043a989f84b80e695307f 的完整条件应用结论：RkC 的 k 分支有 k=O(Δ³Q+Δ⁴)=O(g⁷log⁵g) 及波浪Ω(k^(1/7)) 随机归约硬度；另一个需求对数分支有 D_dem=|T|=O(Δ²)=O(g²log²g) 及波浪Ω(D_dem^(1/2)) 随机归约硬度。两分支为分别的参数化结果，未声称同一归约输出的联合双参数界。",
+  "scope": "3A，archives/unrelated-machines，同一文献内部从完整 MinRep 随机硬度源到其 RkC 条件应用。方向是 MinRep 硬实例→RkC 硬实例；不是 RkC 算法保证，也不通向一般不相关机困难性。完整结论限源的固定参数量词及所调用归约的实际模型。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md",
+      "sha256": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217",
+      "section": "5. 主定理的参数代入及严格 gap"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md",
+      "sha256": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217",
+      "section": "6. 连通性应用：保留全部参数及外部依赖"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/Boss7-minrep-restored/original/manurangsi_minrep_degree_1807_00936v1.pdf",
+      "sha256": "259edd7e850da816ddb5c318287a7a3a525ccc8963f07918787156384d7153d8"
+    }
+  ],
+  "reviewed_by": "Boss2 / minrep_contract worker",
+  "review_note": "实读两端精确登记、共享正文全文及原PDF印2–4页的抽取文本/页图：Theorem 1、RkC最少边定义、Theorems 2/4、Corollaries 3/5。复核 Δ³Q 与 Δ⁴ 两项、需求对数与源正则度的区别、固定g与随机归约、YES/NO分开概率和全部列表量词。Theorems 2/4 的外部归约与费用/解码保证作为显式联合条件，故关系本身可 accepted，但目标仍 conditional；未把第一步参数代入当作无条件完整硬度。原文两定理是分别存在的归约，边中显式禁止未经证据的同输出联合达界推断。",
+  "endpoint_pins": {
+    "M-782bc7fb7cd043a989f84b80e695307f": "7bb8e71ec8c979d89e57d1dfda1e50562b4934e5c49a3bd2c0632574a2a84fea",
+    "M-8b63c8bed3d44f34a50cc846cc98d80a": "0a7443fbb503448d27919bd02589188e155ea9faec436fea6b9f9d1eee17f203"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217",
+    "archives/unrelated-machines/tools/evidence/Boss7-minrep-restored/original/manurangsi_minrep_degree_1807_00936v1.pdf": "259edd7e850da816ddb5c318287a7a3a525ccc8963f07918787156384d7153d8"
+  },
+  "review_digest": "323abee72cbf805c15311ad2c3cb06c21bc301caa7919691835c71e16c960f18"
+}

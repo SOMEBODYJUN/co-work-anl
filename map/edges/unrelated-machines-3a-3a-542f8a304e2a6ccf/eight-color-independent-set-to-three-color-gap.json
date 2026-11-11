@@ -1,0 +1,43 @@
+{
+  "edge_id": "eight-color-independent-set-to-three-color-gap",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-922feb7b429f49d4b5f13ca51b34aae7"
+  ],
+  "target_ids": [
+    "M-d007675a9ed240898c90e831af80b092"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限无向图；目标整数k≥3先固定。使用已证GS20 Lemma8的promise图归约；其所需8-colorable源NO色数C=C(k)亦为实例大小之外的常数，然后固定δ<1/C。不声称同一输入图由八色变三色。",
+  "roles": {
+    "M-922feb7b429f49d4b5f13ca51b34aae7": "对每个固定δ给出8-colorable与独立集比例<δ的NP-hard源承诺。",
+    "M-d007675a9ed240898c90e831af80b092": "经arc-graph归约得到完整3-colorable对非k-colorable的NP-hard目标。"
+  },
+  "whole_result": "对每个固定整数k≥3，有限图上区分3-colorable与非k-colorable是NP-hard。",
+  "explanation": "GS20 Lemma8及其证明给出：若某固定q的Graph-Coloring(C,q)对每个固定常数C为NP-hard，则每个固定k的Graph-Coloring(k,3)为NP-hard；它由固定次数的arc-graph变换和b(n)=binom(n,floor(n/2))的palette归约构成。现在取q=8。对Lemma8在目标k所需的源palette常数C（可增大至至少8），先固定0<δ<1/C，再调用核心。若源NO图能C着色，某颜色类就是至少|V|/C>δ|V|的独立集，与核心NO矛盾；YES图保8-colorable。因此核心支付Lemma8需要的8-colorable对非C-colorable源promise，经该多项式归约支付全部目标。δ、C和arc变换次数在输入规模之前依k固定；没有把k当随输入增长的参数，也不要求8色源图本身3-colorable。",
+  "scope": "八色独立集gap向三色固定palette着色gap的完整复杂性蕴含；不是反向蕴含，亦非调度归约。",
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/guruswami-sandeep-icalp2020.pdf",
+      "sha256": "1f7428d31ae66a1d6488444fa117b1265fd0cf305dbd237387961f7f2b0a97f4"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/comparison-proof.md",
+      "sha256": "ee2a7a2eb8567a1e9f3aaa37714d33d898948c79ebd0e20b9d93def3d1c58e5e",
+      "section": "三可着色图：完整目标"
+    }
+  ],
+  "reviewed_by": "Boss2/hardness-rounding-worker",
+  "review_note": "实读当前v2两端、完整同页正文、FMW Cor1.9与Cor1.7、GS20正式12页PDF，尤其Lemma8的promise归约和Theorem9；核颜色类的独立集比例、严格NO不等式及先固定k再选常数的顺序。既有exact4-to-1到八色边独立复用，不重复建立。",
+  "endpoint_pins": {
+    "M-922feb7b429f49d4b5f13ca51b34aae7": "e09bfb3ab6c6974e31aa7bed58569873db142dc0620e81c62084ab88bd039128",
+    "M-d007675a9ed240898c90e831af80b092": "3ce12eb8694b9825d6c06c796d23e6aacacf0c6a05a850ed9c0c2f1f0447e6ab"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/guruswami-sandeep-icalp2020.pdf": "1f7428d31ae66a1d6488444fa117b1265fd0cf305dbd237387961f7f2b0a97f4",
+    "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/comparison-proof.md": "ee2a7a2eb8567a1e9f3aaa37714d33d898948c79ebd0e20b9d93def3d1c58e5e"
+  },
+  "review_digest": "3c9645e89e11f3c19a1928c8716b3d7c995199400e36b2c0cd1cc63609b16ba9"
+}
