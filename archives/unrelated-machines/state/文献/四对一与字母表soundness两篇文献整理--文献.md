@@ -82,6 +82,8 @@ Lemma 6.64（Fei–Minzer–Wang 原 PDF 第 80–81 页）在 Condition 3.12 �
 3. 若很多 Bob zoom-out 都成功，Lemma 1.7 把它们压缩成低 codimension 的全局解码；
 4. 全局解码与外层低值冲突，得到定理 1.3。
 
+冻结原文印18页 Claim 3.2 的两处中间式须按实际概率与分组修正：事件“Ui=Vi，或Ui≠Vi且advice全零”的概率实际为 `1−β+βq^{−r}`；把后半句改为“advice并非全零”才得原显示的 `1−βq^{−r}`，其补事件为暴露坐标。再令 `m=ceil(q^r/β)`、`Ψ=G_{β,r}^{⊗m}` 和 `t=floor(k/m)`，原末行写成 `ceil(q^r k/β)` 次 Ψ 重复不对；正确用 `val(G_{β,r}^{⊗k})≤val(Ψ^{⊗t})≤2^{−Ω(ε²t)}`。本构造充分大 ℓ 使 `k≥2m`，因 `m≤2q^r/β`，有 `t≥βk/(4q^r)`，仍得显示的 `2^{−Ω(ε²q^{−r}βk)}`。这些修正不改变 Claim 3.2 结论或主 PCP 定理；充分大 ℓ 条件也未增加对源完备误差 η 的依赖。
+
 论文在 Theorem 7.2 中把图变换为 `(d_1,d_2)`-regular bipartite 2-CSP，并保留 `val≥1−φ` 对 `val≤R^{-(1−ε)}` 的 gap。该版本是把 alphabet/soundness 交易接到有限度优化问题时的接口，而非一个新的 unrelated-machines 定理。
 
 ### 3.3 三个应用及其限制
