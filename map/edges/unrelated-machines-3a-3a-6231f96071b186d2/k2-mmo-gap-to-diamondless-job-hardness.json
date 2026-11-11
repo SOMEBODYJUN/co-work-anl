@@ -1,0 +1,58 @@
+{
+  "edge_id": "um-623-k2-planar-bipartite-mmo-gap-to-diamondless-job-hardness",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-af28c29d24b14be393e56add3cebfc7c"
+  ],
+  "target_ids": [
+    "M-1b8213b483df41bd9fa149b10255daa3"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "特化源对象Theorem 13的实际Planar 3SAT归约为k=2；该归约族是简单无自环的平面二部图且最大度数至多3。机器为原顶点、任务为原边，任务仅在两端有资格且两端处理时间同为边权1或2，其他资格为∞。任务交叠图按共享资格机器定义，diamondless意为无菱形子图；近似不可行性使用P≠NP及任意固定1≤c<3/2。所有桥条件在证据中由构造证明，不是额外未付假设。",
+  "roles": {
+    "M-af28c29d24b14be393e56add3cebfc7c": "其k=2归约提供2-versus-3 gap；完整构造还给出简单二部且最大度3这一承重结构。",
+    "M-1b8213b483df41bd9fa149b10255daa3": "由保持全部负载的端点指派及线图无菱形桥得到其完整受限类NP-hardness和严格低于3/2的近似障碍。"
+  },
+  "explanation": "在源Theorem 13中令k=2。文字环节点度≤3，a节点度2，b节点度2+(k−1)=3，q文字子句节点度q+(k+1−q)=3，四环special节点度≤3；故实际归约图G简单、二部且Δ≤3。建立p[v,e]=w(e)当v∈e，否则∞。将MMO弧的任务给尾端机器，与任一合法调度反向定向互逆，逐机保持负载；Page按入边计负载的记号仅需逐弧反向。因此OPT保持，且每机≤3项。任务交叠图等于L(G)。简单三角形自由图的线图中，每个三角形只能来自一个共同原端点；若存在菱形子图，其两个共享边的三角形将迫使四条不同原边同接一个顶点，违反Δ≤3。所以L(G)为diamondless，排除的包含非诱导菱形。源可满足/不可满足公式分别给OPT≤2/OPT≥3，得到目标整个gap-hardness；若固定c<3/2的多项式近似存在，YES输出成本≤2c<3而NO成本≥3，可判Planar 3SAT。该方向严格使用k=2归约族；任意平面二部G或k≥3的源归约均不能凭图类名得到diamondless（K1,4的线图K4即障碍）。",
+  "whole_result": "M-af28c29d24b14be393e56add3cebfc7c的k=2实际归约经精确端点调度映射，完整推出M-1b8213b483df41bd9fa149b10255daa3：同时满足diamondless任务交叠图和每机至多3项资格任务的R||Cmax，区分OPT≤2与OPT≥3是NP-hard，因此除非P=NP，对每个固定c<3/2不存在多项式近似算法。",
+  "scope": "完整目标，单向迁移；仅需两个端点同权、有限时间{1,2}和∞的子类。源原图的平面二部性质不冒作目标图的同名限制；核心桥为k=2构造的Δ≤3加二部性。无反向迁移、无一般端点异权结论。",
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-6231f96071b186d2/planar-bipartite-k2-to-diamondless-proof.md",
+      "sha256": "154a794261791ad7c8c9cf044a225ea8db35dcaaad0dbe655fc38fca308cd29f"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md",
+      "sha256": "58b4be48da7c01dac6a3e5eeff733d7e211dbae675690684e4142742d5bc4740",
+      "section": "4.3 平面二部图：强 NP-困难"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/asahiro-miyano-ono-2011.pdf",
+      "sha256": "5db93652d80fd92b6440e0a0e22edfdeb09f78e2b886c95cb4adf171c67ee147"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Page-Solis-Oba-Maack-2018--有界任务与交叠图--文献.md",
+      "sha256": "beb13d191887b1d5b91ec2335861d33d5c7088a174cfe18c40444f222e09464e"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/bounded-job-assignments.pdf",
+      "sha256": "a2fad69bcf3b1e6caed4ce4f29d559e1b0f394695d859f2ca0fd8f05f8296775"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "实读两个v2对象和成熟正文；pdftotext核Asahiro冻结稿第1–5、15–19页（重点16–18页Theorem13构造与gap），Page冻结稿第2–3、6–8、14–15页。逐类核k=2最大度、尾端/入端记号、处理矩阵全解双射及非诱导diamond排除，独立写出线图桥和2c<3判定。目标整个结论已得；未把Page原来的引用关系当作推导，未声称通用k≥3线图无菱形。",
+  "endpoint_pins": {
+    "M-1b8213b483df41bd9fa149b10255daa3": "b1f641db6d0df9cc8be5e7fd3d69b3c37578f403733ceea79a752742808b0069",
+    "M-af28c29d24b14be393e56add3cebfc7c": "32b8baf3123e2fadc7c79aee848d9dd49052e75422c3959faa71f560ed087160"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-6231f96071b186d2/planar-bipartite-k2-to-diamondless-proof.md": "154a794261791ad7c8c9cf044a225ea8db35dcaaad0dbe655fc38fca308cd29f",
+    "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md": "58b4be48da7c01dac6a3e5eeff733d7e211dbae675690684e4142742d5bc4740",
+    "research/registration/evidence/boss6-0104/asahiro-miyano-ono-2011.pdf": "5db93652d80fd92b6440e0a0e22edfdeb09f78e2b886c95cb4adf171c67ee147",
+    "archives/unrelated-machines/state/文献/Page-Solis-Oba-Maack-2018--有界任务与交叠图--文献.md": "beb13d191887b1d5b91ec2335861d33d5c7088a174cfe18c40444f222e09464e",
+    "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/bounded-job-assignments.pdf": "a2fad69bcf3b1e6caed4ce4f29d559e1b0f394695d859f2ca0fd8f05f8296775"
+  },
+  "review_digest": "1be47ba942faaea87d4ff1b44450a2f98c2cbd78fbad33a79bc414baaaf0b33c"
+}
