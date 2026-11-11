@@ -1,0 +1,54 @@
+{
+  "edge_id": "um-9ac-vw-two-approx-supersedes-degree-two-four-guarantee",
+  "kind": "supersedes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-VW2010-THEOREM12-BACKEND-PRECHECK-v1"
+  ],
+  "target_ids": [
+    "M-e52574ff126d4b128f222053c97bf596"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "仅比较两端点共同的显式有限非负二进制有理加性MaxMin域：非空有限玩家集，有限不可分物品，每物品至多两个正价值玩家，允许两端异值，输出实际完整分配。zero-support物品可任意补配，OPT=0单列。",
+  "roles": {
+    "UM-VW2010-THEOREM12-BACKEND-PRECHECK-v1": "用forced-largest全局双端删除、双配对交替图二染色和单侧阈值二分，在共同域给确定性总位多项式OPT/2实际分配。",
+    "M-e52574ff126d4b128f222053c97bf596": "历史M-LP、small半整数化、big环旋转/树叶替换与LP-Round算法，给OPT/4实际分配；指定算法本身的正确性由其原§3另证。"
+  },
+  "explanation": "两端点在所列共同输入域、单归属加性目标、同时保证所有玩家、实际分配及位多项式输出合同上一致。VW后端在无最优类型等额外信息条件下将最小玩家保证由OPT/4提高到OPT/2，其成功只给T/2实际分配、拒绝才证明OPT<T。清分母后保存成功分配的二分不需OPT以上成功谓词单调。该算法改进不证明旧M-LP/树算法的每一步；旧算法的独立λ=4证明已在本包review中核清，因此仅记supersedes/context，不记whole_result逻辑边、不将已付清的旧算法证明伪写成open。共同有限值域之外不作声明，也不声称这是截至日历当前的世界最优界。",
+  "scope": "仅为实读总表中同域算法保证的改进比较，非对旧定理的反驳，非旧算法正确性的逻辑支持。严格2硬度只排固定c<2，与2和4上界相容。",
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-9ac280b0cc4ae67d/review.md",
+      "sha256": "159e12891093eac0ef712381fb59e9f7ba439682681bf124ca0b17dcd7656d3f",
+      "section": "同域二近似只作算法改进语境"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/VW2010 Theorem12双端价值后端与新桥接口预核--审查.md",
+      "sha256": "fbbe4ca060d00910f3679c128355a9427adc6e887bdfa0890ad51d2ba023bb81"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/配置LP在图平衡及不相关机中的间隙--资源.md",
+      "sha256": "0fcfc44edf52bb6f1d0bf459c9847540342f55c9f4d681588f32670d1c64de26",
+      "section": "二度MaxMin的组合二近似：Theorem 12"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md",
+      "sha256": "a0d8bb0b5261e46ef6843a1e2c9bb812393f22953129ffba03313e0c16b5fb36",
+      "section": "2. Bateni–Charikar–Guruswami：MaxMin allocation via MaxMinDegree Arborescences"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "完整实读当前core及VW成熟正文与必要primary，逐项核对域、量词、原算法承重链和阈值二分接口。此边只宣告共同有限有理域中更强实际分配保证的算法语境改进，不推导指定M-LP算法正确性；无复用未读程序或新运行。",
+  "endpoint_pins": {
+    "M-e52574ff126d4b128f222053c97bf596": "eff19fc84cf112c156c8fc3228f91b9cc55f928a88b6b3bc21fd9c5a2094130f",
+    "UM-VW2010-THEOREM12-BACKEND-PRECHECK-v1": "16a2920abfebbaed76d2492aee350d1b801fcfe5eb40c65c9a4f33ddddb02584"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-9ac280b0cc4ae67d/review.md": "159e12891093eac0ef712381fb59e9f7ba439682681bf124ca0b17dcd7656d3f",
+    "archives/unrelated-machines/state/审查/VW2010 Theorem12双端价值后端与新桥接口预核--审查.md": "fbbe4ca060d00910f3679c128355a9427adc6e887bdfa0890ad51d2ba023bb81",
+    "archives/unrelated-machines/state/资源/配置LP在图平衡及不相关机中的间隙--资源.md": "0fcfc44edf52bb6f1d0bf459c9847540342f55c9f4d681588f32670d1c64de26",
+    "archives/unrelated-machines/state/文献/PCSP最大最小分配与投影博弈平行重复三篇文献整理--文献.md": "a0d8bb0b5261e46ef6843a1e2c9bb812393f22953129ffba03313e0c16b5fb36"
+  },
+  "review_digest": "56a851a3d047be19c779f93228cdbc99136aa97a03e5926c6ac8e37b6d6c265f"
+}
