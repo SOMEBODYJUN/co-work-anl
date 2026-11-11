@@ -1,0 +1,54 @@
+{
+  "edge_id": "um-3e41-afs-gap-with-explicit-scaled-threshold-flow",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-ca617ca816f74198b08235417c005de5"
+  ],
+  "target_ids": [
+    "M-af4186a632934efda5df11453c86a4a6"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限非空玩家集、不可分物品、非负二进制有理公共价值和显式资格、线性受限指派。每个固定有效精度 ε>0，L 是同一输入的配置 LP 最大可行阈值。",
+  "roles": {
+    "M-ca617ca816f74198b08235417c005de5": "AFS fat/thin 超图匹配的实际整数舍入给 L/5≤OPT，整数分配逐玩家的 Dirac 配置反给 OPT≤L。",
+    "M-af4186a632934efda5df11453c86a4a6": "接收完整的多项式数值估计合同。"
+  },
+  "explanation": "固定 t>0、m≥1、k≥2，先截单物品值至 t，再以 h=t/(mk) 向下舍入；配置价值至少 t 时舍后整数值至少 H=m(k−1)，反向 H 的配置保原值≥(1−1/k)t。按物品顺序为每位玩家建截顶值状态 0…H 的分层 DAG，资格内取用弧与跳过弧分别编号；单位流按路径分解给每人配置权重和一，共同的逐物品取用弧容量一精确保配置边际，故显式多项式大小的有理 LP 精确测试舍后阈值。以最小正合资格价值为起点，在公比 1+1/k 的网格测试至超过总价值；若起点失败或无正值则 L=0。最大通过 t* 给可行 L_-=(1−1/k)t*，且 L_-≥(k−1)L/(k+1)，网格与 LP 均是位多项式。取 2/(k+1)≤5ε，结合源间隙得 E=L_-/5 介于 (1/5−ε)OPT 与 OPT；ε≥1/5 直接输出零。构造完整支付既有条件关系的配置阈值后端，无需运行有限局部搜索。",
+  "scope": "受限 Santa Claus 数值估计。给出的流分解是分数配置；实际整数输出时间仍由原舍入的有限搜索负责。",
+  "whole_result": "每个固定 ε>0，确定性位多项式输出 E，使 (1/5−ε)OPT≤E≤OPT，覆盖原 AFS Theorem 1 的数值估计。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/Santa-Claus超图匹配与配置LP五分之一界--资源.md",
+      "sha256": "e2473d9f5ff132a5a2774a6f10a0c73da16e1f94c4851fdae8143e796cb0ea5f",
+      "section": "Restricted assignment 的 1/5 舍入"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/asadpour-feige-saberi-2008.pdf",
+      "sha256": "7c95e2140f4180a2edd5affb1917589f75f707b231b5ce5295b9e677f9e501a6"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-3e4187a25db3d265/scaled-threshold-flow.md",
+      "sha256": "bd8e172d1dee0c0fc1333275a5e7516655a99ae3c5d7436f46c47671f8f0110c",
+      "section": "固定阈值"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-3e4187a25db3d265/scaled-threshold-flow.md",
+      "sha256": "bd8e172d1dee0c0fc1333275a5e7516655a99ae3c5d7436f46c47671f8f0110c",
+      "section": "阈值搜索与原估值"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "实读冻结作者稿 Section 1.1/Theorem 1、Section 2/Theorem 3、Section 3/Theorems 4 与 6，复核既有条件边及同版三端点。独立推导两向流分解、正阈值下界、网格精度及位复杂度，补齐数值估计后端。",
+  "endpoint_pins": {
+    "M-af4186a632934efda5df11453c86a4a6": "1327fd46ec124c0d3fd531eb5e6cfcd87e6e60809e04f576d8d04590164442db",
+    "M-ca617ca816f74198b08235417c005de5": "1a7cb900788dd805e72895946463dd116bc498d223d07a0678d1bc6782a01bcf"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/Santa-Claus超图匹配与配置LP五分之一界--资源.md": "e2473d9f5ff132a5a2774a6f10a0c73da16e1f94c4851fdae8143e796cb0ea5f",
+    "research/registration/evidence/boss6-0104/asadpour-feige-saberi-2008.pdf": "7c95e2140f4180a2edd5affb1917589f75f707b231b5ce5295b9e677f9e501a6",
+    "map/edges/unrelated-machines-3a-3a-3e4187a25db3d265/scaled-threshold-flow.md": "bd8e172d1dee0c0fc1333275a5e7516655a99ae3c5d7436f46c47671f8f0110c"
+  },
+  "review_digest": "44fd5e3541be65b789007b698c6b2b7e73533fc1d9e57cec3a5d85a6505a2555"
+}
