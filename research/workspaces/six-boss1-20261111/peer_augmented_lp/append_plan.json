@@ -1,0 +1,32 @@
+{
+  "scope": "all 42 reviewed peer rows plus one newly negative old frozen row at baseline 19578; finite necessary LP only",
+  "baseline_point_sha256": "a4e48a91f0e2c7b65725178d042b515c6bedf11562afdeeea2ae69b815e8f505",
+  "baseline_matrix_sha256": "a95bd72e0fdc2b0b93af79b1a0e8b324b6bd1fc8f62abe8a3ce642be4bcc3936",
+  "baseline_rows": 19578,
+  "columns": 15593,
+  "original_columns": 4849,
+  "packages": [
+    {
+      "path": "peer_cut_transfer/all_reviewed_cuts_19578.json",
+      "sha256": "add31035121ab7184ac2666ad0dd881c2210517aa135f44424104ddf60ac4781",
+      "expected_rows": 42,
+      "expected_negative_rows": 27,
+      "name_prefix": "peer-at19578:"
+    },
+    {
+      "path": "main_revaluation_19578/existing_negative_cuts_19578.json",
+      "sha256": "9206026d520fa3986d79a47fec7eea7f142a9759c744b231c08ef663bc85d08e",
+      "expected_rows": 1,
+      "expected_negative_rows": 1,
+      "name_prefix": "old-rechecked-at19578:"
+    }
+  ],
+  "expected_new_distinct_rows": 43,
+  "expected_total_rows": 19621,
+  "main_old_frozen_scan": {
+    "evaluated_fixed_vectors": 4906,
+    "strictly_negative": 1,
+    "other_nonnegative": 4905,
+    "instruction": "Main message: include the sole negative old frozen full vector, after deduplication against the 42 and baseline."
+  }
+}
