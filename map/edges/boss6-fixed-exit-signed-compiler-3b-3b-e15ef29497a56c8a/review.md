@@ -1,6 +1,8 @@
 # 固定真实退出表的负有理点编译：完整合同复核
 
-任务：`boss6-fixed-exit-signed-compiler-3b-3b-e15ef29497a56c8a`。审读：Boss6 fresh worker；独立 staging，不写共享 clone、Git、registry 或队列。
+任务：`boss6-fixed-exit-signed-compiler-3b-3b-e15ef29497a56c8a`。审读：Boss6 current-label fresh worker；复用源刷新前已完整证明并由Root核过的数学稿，同时全文实读当前两个核心合同与全部9个不同reading文件，定向复核源补丁和新增审查。独立staging，不写共享clone、Git、registry或队列。
+
+当前输入：e7 v1，pin `6e67ca0fc650897d49e00953c92f76a7fb44070237218a85ef8a875c9ced9c74`；signed v3，pin `133e3bed60171a4bfcd5a49eec4330324a99998b2a92c60dc0b6dce1bc877309`。本任务当前SHA `9da5abf93179446a04a9a1f237bba8a561fe388132e3ffcf5bd1fd45a6216557`。历史完整稿SHA `ac77addb4b9ac38c37ed1d85dc821d9c63f98788ef370f383238bde85183d9ff` 保存在已发布handoff；本稿保留其有效数学，更新当前来源与状态。
 
 ## 一、实际得到的数学句子
 
@@ -184,8 +186,23 @@ marked 若供应更负只增加真实激励余量，不改变精确 W/OPT 成本
 
 fb3d 已发布 R6→e7 边仅给真预算上界/必要筛选，B10→e7 边仅给逐点重构商退出的迁移；它们各自 `contribution.remaining` 确实留下整套 LP/编译接口。本次阅读 signed 完整 U 表接口并给出上面自足的线性建模、固定表反向认证和物理构造，因而不是重复两条局部边，也不因新 source 只新增一环而人为缩为局部。当前 e7 statement 的条目均已由 §§2–7 支付。
 
-signed 当前 registry v2 已明确共同**标签**目录及重复覆盖；其成熟正文仍写“真实集合”并声称“完整Cartesian并集映射由不交投影唯一读回，不产生同覆盖别名”。这句在原组件已有 alias 时为假：不交投影只读回各坐标覆盖，不读回同覆盖标签。正确构造是式 (G) 的标签元组，元组身份来自已观察行动；所得也允许同覆盖别名。该修改修复表述而不更改 registry v2 的数学范围、donor 成本或结论。精确最小文本建议在同包 `source-clarification.md`，由 Root 串行决定源及引用刷新，本 worker 不改共享源。
+signed 原登记v2已经明确共同**标签**目录及重复覆盖；源刷新前正文却把不交块的覆盖投影误写为标签可唯一反演。原组件有alias时，投影只能读回各坐标覆盖，不能读回标签。Root现已应用四处最小更正，当前signed为v3；正文SHA `e131b381683729532c961d175a879ae0ed73d4e1d392681d14fc5f323c2dad74`，新增审查SHA `2a1c8458efb4e48917c6a7af77df37076aee259dd7f5f2f7ee5eb7a07e02e66f`。本轮全文复核确认：当前正文和审查都明确式(G)的原标签元组、首次联合异常后的全坐标own-action永久退出以及不reset。它们与本稿§5的完整策略一致，不改变既有full-label数学范围、donor成本、精确编译差额或有限字典最小性量词。
 
-不需要新增对象或只读依赖。B10 自足商页是任务已要求阅读的边界背景；本边没有通过覆盖商消费 B10 的命题，不需要把它偷偷加成 ALL 输入。`closed_overlaps=[]`：当前 task 无指定 follow-up 对。普通端点比较及 fb3d 比较保存在 receipt 的 `additional_comparisons`。
+原 `source-clarification.md/json` 与170项 `source-reference-inventory.json` 仍原字节保留，身份是历史修复提案/扫描快照；其中旧SHA、旧v2及当时待办没有被伪改成当前状态。本轮当前核对结果、四替换各自0旧/1新命中、三个当前owner版本及引用、实际扫描边界另见 `current-source-refresh.md/json`。不以旧170项清单冒称又扫描全部历史引用。源勘误已应用，本边最终交付只待Root按当前版本串行绑定/校核及刷新绑定后的receipt资产SHA。
+
+不需要新增对象或只读依赖。B10自足商页是任务要求阅读的边界背景；本边没有通过覆盖商消费B10命题，不把它加成ALL输入。当前task没有指定follow-up对象对；receipt不声明closed_overlaps，普通端点比较及fb3d比较保存在additional_comparisons。
 
 本轮 LP、BI、随机、科学程序及旧计算重放均为零；只进行了正文阅读、解析推导和交付文件生成/字节核对。原 bank/LOW、五人证书和历史报告未被伪报为本轮新运行或外部盲审。
+
+
+## 九、当前版本复核与逐核心剩余范围
+
+对e7 v1：实读完整注册statement与算法全文，再对当前signed v3的U接口逐项比较；§§2–7支付全部线性化、最小辅助、真预算上界、物理编译及固定表认证等价。因此保whole_result，无本边尚未支付的数学步骤。负点存在性、全部退出表枚举、一般或六人HALF不属于该statement的已证断言。
+
+对signed v3：本边使用并实际实施其完整U表接口到e7；§§4–6核非负分层、共同Q、标签元组、全坐标永久退出、全部IC和OPT精确相加。此次源勘误已经与既有full-label合同对齐，无需引入商桥或新前提。所读支持函数与有限字典最小性范围保持；本边不宣称所有自由物理修复的最优成本。
+
+当前task的reading_refs为12条引用、9个不同文件，context_plan按相邻section合并规划为10个阅读段；实际已逐文件全文阅读9份，signed四指定section外的支持函数/有限字典及末尾模型去向也一起实读。新增audit已全文核对。历史资源中的旧原始程序、bank/LOW底层稿及HALF5证书均未在本轮追读或重跑。完整逐文件范围见reading-ledger.json。
+
+一名只读子审独立全文核当前signed正文、audit、共同目录定义、e7算法与旧review，结论与本轮核对一致：标签元组与唯一首次异常后的永久全坐标策略充分，无剩余数学缺口。它没有运行科学程序或写共享目录，其审读是补充，当前accepted/whole判断仍由本worker按完整推导负责。
+
+当前直接承重来源：signed正文SHA `e131b381683729532c961d175a879ae0ed73d4e1d392681d14fc5f323c2dad74`；审查SHA `2a1c8458efb4e48917c6a7af77df37076aee259dd7f5f2f7ee5eb7a07e02e66f`；e7算法SHA `6b8c6d64907404d0f748e9f115329a607b1ed5114a47edeb8b401abf79c8e6d4`；共同目录定义SHA `cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88`。本轮不以历史修复提案代替当前正文证据。
