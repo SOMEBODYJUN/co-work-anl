@@ -1,0 +1,42 @@
+{
+  "edge_id": "ca-ac349f97-integer-demand-gives-necessary-single-omissions",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-66588897e3024f18af0d85daf6c91201"
+  ],
+  "target_ids": [
+    "M-3752bd88c1534212af2ab2afead65c03"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同目录完整历史单位客户模型；所有合法有序历史的真实续局IC，空题、重复、覆盖别名、全零客户及弱平局保留。",
+  "roles": {
+    "M-66588897e3024f18af0d85daf6c91201": "对每个最优元组的I+D*预算。",
+    "M-3752bd88c1534212af2ab2afead65c03": "严格half反例若存在必须有的D、额外重数、θ和单次遗漏质量。"
+  },
+  "explanation": "仍令m=6及β=6718464/2352949，假设严格OPT_6>2W。W=0与源预算矛盾，故W>0。对每个最优元组I≤W且I+D=OPT>2W给D>W。源I+D*≤βW减去I+D>2W给D*−D<(β−2)W；又I+θD=θ(I+D)−(θ−1)I>(θ+1)W（θ≥1、I≤W），所以θ<β−1。设D_1为该元组中d_x=1的遗漏数，每个其余遗漏对D*−D至少贡献1，故D−D_1≤D*−D，D_1≥D−(D*−D)>(3−β)W=340383W/2352949。全程对任意最优元组，故必要条件逐一适用每个；d_x=1不说明该客户在全目录私有。",
+  "scope": "严格坏例的必要条件；既不构造坏例，也不控制这些单次遗漏在其它合法动作中的会员。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/实际遗漏比较重数的真实前缀需求递推--引理.md",
+      "sha256": "408029cd91f73691a6b574abdcd8470acf5585140920a06d1239464fc95c0879"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核对当前registry陈述、量词、全部承重证明和退化边界；本边只保实际完成的数学作用，不以程序输出替代真实IC。",
+  "whole_result": "完整推出目标W>0、每最优元组D>W、D*−D<(β−2)W、θ<β−1及D_1>340383W/2352949。",
+  "endpoint_pins": {
+    "M-3752bd88c1534212af2ab2afead65c03": "c25b39c99ca72faba63eb5666e2b4ffe98bc54e8506073e768436dadef83de96",
+    "M-66588897e3024f18af0d85daf6c91201": "b9ffbd494b445c5522eb914be7edb811c911b530abc3f36f9ff7fbd454187a9b"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/实际遗漏比较重数的真实前缀需求递推--引理.md": "408029cd91f73691a6b574abdcd8470acf5585140920a06d1239464fc95c0879",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "366345620a01b5375ce0a67143d540af806e2cb013468f8acee59a184aef24ba"
+}

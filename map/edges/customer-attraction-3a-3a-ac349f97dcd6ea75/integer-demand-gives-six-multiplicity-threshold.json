@@ -1,0 +1,42 @@
+{
+  "edge_id": "ca-ac349f97-integer-demand-gives-six-multiplicity-threshold",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-66588897e3024f18af0d85daf6c91201"
+  ],
+  "target_ids": [
+    "M-8a2a60823e9645688f49e36287bc0cda"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同目录完整历史单位客户模型；所有合法有序历史的真实续局IC，空题、重复、覆盖别名、全零客户及弱平局保留。",
+  "roles": {
+    "M-66588897e3024f18af0d85daf6c91201": "对每个比较元组的统一需求预算。",
+    "M-8a2a60823e9645688f49e36287bc0cda": "六人最优元组上的平均遗漏索引重数充分门槛及双次严格改进。"
+  },
+  "explanation": "令m=6并取任意最优六索引元组。精确乘积F_6(6)=2352949/6718464，故每个元组I+D*≤βW，β=6718464/2352949。D=0直接OPT=I≤W。D>0令θ=D*/D≥1：I+θD≤βW，故OPT=I+D≤βW/θ+(1−1/θ)I≤[1+(β−1)/θ]W。存在一个最优元组θ≥β−1足够half，不是要求所有元组满足；若该元组每个遗漏至少出现两次，θ≥2，得到(β+1)W/2=9071413W/4705898<2W。W=0由源Q=0给OPT=0。",
+  "scope": "恰六人；θ仅是所选最优索引元组的实际遗漏平均次数，非全目录incidence。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/实际遗漏比较重数的真实前缀需求递推--引理.md",
+      "sha256": "408029cd91f73691a6b574abdcd8470acf5585140920a06d1239464fc95c0879"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核对当前registry陈述、量词、全部承重证明和退化边界；本边只保实际完成的数学作用，不以程序输出替代真实IC。",
+  "whole_result": "完整推出目标每最优元组的β预算、存在某最优元组的θ门槛half、D=0分支及每遗漏至少双次时9071413/4705898界。",
+  "endpoint_pins": {
+    "M-66588897e3024f18af0d85daf6c91201": "b9ffbd494b445c5522eb914be7edb811c911b530abc3f36f9ff7fbd454187a9b",
+    "M-8a2a60823e9645688f49e36287bc0cda": "867b1ed98a3f2b15ee00c0c3df57675dd898dd0f0504600afbccafb49d9ac53f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/实际遗漏比较重数的真实前缀需求递推--引理.md": "408029cd91f73691a6b574abdcd8470acf5585140920a06d1239464fc95c0879",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "b30c35139ea3e257a0191f822c6d95bad51cff458e8ecdc35f921854862c4d51"
+}

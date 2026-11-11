@@ -1,0 +1,55 @@
+{
+  "edge_id": "ca-ac349f97-quantile-and-negative-balance-family-last-pair",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-fba1c001a1cd4e05b5cdb4285ab6215c",
+    "CA-PREFIX-BALANCE-NO"
+  ],
+  "target_ids": [
+    "M-7ea4f8c088194116be26f8692bb988fc"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同目录完整历史单位客户模型；所有合法有序历史的真实续局IC，空题、重复、覆盖别名、全零客户及弱平局保留。",
+  "roles": {
+    "M-fba1c001a1cd4e05b5cdb4285ab6215c": "精确分位/凹性判定共同t最优。",
+    "CA-PREFIX-BALANCE-NO": "该无界族的合法单位客户、全部有序历史SPE、实际叶与唯一最优支持。",
+    "M-7ea4f8c088194116be26f8692bb988fc": "同一族真实末对前缀的精确PAY支付。"
+  },
+  "explanation": "BAL给每个n=m≥4的完整全历史SPE actual=A B^(n−1)、叶私有正质量以及真最优支持为全部n叶；n槽满覆盖要求各叶一次，故最优客户d=1。余两人前缀A B^(n−3)中，负载多重表为n(n−2)名b0，n−1名b1，n(n−2)名b(n−3)，n−1名b(n−2)；n4时两条b1合并。d1、k2的最早断点t0=4n/(n+1)，其右导数=(1/n)[Σ_(b≥1)n_b/(b+1)−(n−1)n0/2]。这里首和=(3n+1)/2，后者=n(n−1)(n−2)/2；n4时13<24，之后差的多项式n³−3n²−n−1正且递增。因此源Q凹性给t0最左最大化点。Qmax=4/(n+1)Σ_b n_b/(b+1)=4n−6+8/(n+1)。同原actual最终叶E=u_A+(n−3)u_B=n²−2n−2+2/n+2/(n−1)，O=2n²−2n−2。k2线性(k−2)项消失，收费差G=O−Qmax−2E=−2n+8−4/n−4/(n−1)−8/(n+1)<0。",
+  "scope": "每个整数n≥4的BAL族；只否首步覆盖余额的不变量并不否跨步存在PAY。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/两个近二完整策略族的末对参数支付--引理.md",
+      "sha256": "cd5cb341b5e384512836e294c43627fd56be408b0a814fce26d032c1e9a9b73b"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/真实前缀支付的加权分位与完整路径切断--算法.md",
+      "sha256": "85a0b934af56c9eaee00fc4ac7c42d4eb90c9a5d8e87342df24989ca272f8852"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/任意人数首步补全余额--反例.md",
+      "sha256": "b42e57e311686c2d737d6ade6642efaa05caa28dded02c9cf035ef0ed9c70072"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "逐项核对当前registry陈述、量词、全部承重证明和退化边界；本边只保实际完成的数学作用，不以程序输出替代真实IC。",
+  "whole_result": "完整推出目标负首步族的d1真最优、末对负载表、t0=4n/(n+1)、Qmax、原最终E以及G<0全部结论。",
+  "endpoint_pins": {
+    "CA-PREFIX-BALANCE-NO": "4d500022638bb5dcc117edeace66f673af98737256c72c9ebf3217ac49949bb1",
+    "M-7ea4f8c088194116be26f8692bb988fc": "1eafaed253295a221de59abd36b535bebea3bdb9a6668c028e05400ab2714cb7",
+    "M-fba1c001a1cd4e05b5cdb4285ab6215c": "d354c31b3fa6f438006e6ccac60e792cd37054cf1a9edf1bd6799fb5dac1f82f"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/两个近二完整策略族的末对参数支付--引理.md": "cd5cb341b5e384512836e294c43627fd56be408b0a814fce26d032c1e9a9b73b",
+    "archives/customer-attraction/state/算法/真实前缀支付的加权分位与完整路径切断--算法.md": "85a0b934af56c9eaee00fc4ac7c42d4eb90c9a5d8e87342df24989ca272f8852",
+    "archives/customer-attraction/state/反例/任意人数首步补全余额--反例.md": "b42e57e311686c2d737d6ade6642efaa05caa28dded02c9cf035ef0ed9c70072",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "5230df49152a855d9424ad2f1102e64e710cbec76c3d86a70a211fa15ff040c5"
+}
