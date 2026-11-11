@@ -1,0 +1,43 @@
+{
+  "edge_id": "cag-a9eda610-p7-generates-94-plus-60-necessary-rows",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "kind": "specializes",
+  "source_ids": [
+    "M-049f49c6150f4a8b969b1b33c33523ac"
+  ],
+  "target_ids": [
+    "customer-attraction/true-third-node-fixed-query-closure-and-two-menu-pricing"
+  ],
+  "conditions": "任意五人完整有序历史纯SPE；任意真正第三位源。D/J分别为合法五槽菜单，标签、空题与重复全保；K仅全目录裸大小cap，H为同背景1/(p+3)加权最大。",
+  "roles": {
+    "M-049f49c6150f4a8b969b1b33c33523ac": "任意真第三位、任意两合法五槽D/J的P7与完整3×6 F表。",
+    "customer-attraction/true-third-node-fixed-query-closure-and-two-menu-pricing": "指定三固定源和五索引真源上的94双菜单/60固定查询必要行闭包。"
+  },
+  "explanation": "对max/actual/second三个真第三位，各AB、AE family的菜单名为opt及两回复菜单（3种），Sbranch为opt及三回复菜单（4种）。P7对每个有向(D,J)均合法，去掉父类已有D=opt且J为回复菜单的实例：AB/AE各3²−2=7，Sbranch为4²−3=13，每固定源27，共81。indexed只在其真正(A,T_i)背景a+t_i使用Sbranch这13种，每种逐五i代入P7后求和，共13个合计行；故新增81+13=94。D与J分属非线性F和线性加权查询角色，不能对称合并。固定15合法标签作五次重复J，则j_x=5·1_query，2679j=13395·1_query；D为原比较菜单，三固定源45行、indexed逐i相加后15行，计60。indexed必须保p_i=a+t_i、真实当前Ui以及完整D/J菜单计数，不能先平均背景或把当前受迫T_i当优化者。各行均为一份P7合法代入或五份同索引真节点P7相加，故是必要关系；有限94/60库并未穷尽全部合法查询。",
+  "whole_result": "目标指定的94条双菜单替换与60条十五固定标签查询全部是P7的合法必要行；indexed行保整个菜单重数和各自真背景，D不需最优，任意完整五人SPE均满足这些行。该保证不包含浮点oracle全域定价证书或真实游戏反向实现。",
+  "scope": "只证明目标完整陈述的行有效性与94/60计数，不把6659/6747受限浮点LP当half或全局闭包。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/真实第三位投影的五人最大根包络--引理.md",
+      "sha256": "1451e7ab0336455708ae7afad62655b5ecd5224e4159d87d1b48aacca5514cb9",
+      "section": "2. 任意真实第三节点的七行投影"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/真实第三位固定查询闭包与双菜单替换定价--程序.md",
+      "sha256": "77d988440395cb5af2e776b11da65867d58b331b0370ceceed3ad1c3266f0cd5"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "完整实读本包核心陈述、实际证明和相关共享依赖，逐项核对域、全部有序历史、真实后继、逻辑方向及整句/局部贡献；未把历史有限PASS当本轮新证明。",
+  "endpoint_pins": {
+    "M-049f49c6150f4a8b969b1b33c33523ac": "ea276fadfc9ce521ff099e7ec8f4b845c19f75f811fb5926dca38d720ae06ca4",
+    "customer-attraction/true-third-node-fixed-query-closure-and-two-menu-pricing": "8d5f0691511a14870e12ea92570b4e0aa7a42062408b18c899b15d14789d3253"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/真实第三位投影的五人最大根包络--引理.md": "1451e7ab0336455708ae7afad62655b5ecd5224e4159d87d1b48aacca5514cb9",
+    "archives/customer-attraction/state/程序/真实第三位固定查询闭包与双菜单替换定价--程序.md": "77d988440395cb5af2e776b11da65867d58b331b0370ceceed3ad1c3266f0cd5"
+  },
+  "review_digest": "06ecf4dc616bc9a84842314c4d0c32dc180c3e9d406b75d834a08b18c9c3205f"
+}

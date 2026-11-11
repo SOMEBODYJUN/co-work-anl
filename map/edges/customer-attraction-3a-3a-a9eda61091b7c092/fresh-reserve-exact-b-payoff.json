@@ -1,0 +1,43 @@
+{
+  "edge_id": "cag-a9eda610-fresh-reserve-exact-b-payoff",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "kind": "specializes",
+  "source_ids": [
+    "M-3ef821ac4c2f4acc961f098e4973c094"
+  ],
+  "target_ids": [
+    "M-39efbd59b255457e82303be3881f54d5"
+  ],
+  "conditions": "严格集合去重目录恰A_i=X_i∪Y_i、C_i=X_i、B_ir=X_i∪Z_r、D_r=Z_r∪V_r；各块不交，k,t≥1，m=k+t，x,b>0及a,d≥0；给定完整纯SPE实际先各C_i再各D_r。",
+  "roles": {
+    "M-3ef821ac4c2f4acc961f098e4973c094": "足量fresh纯储备与已用块严格次优，给全部真实子SPE的尾部保护；加全动作上界得到恰H。",
+    "M-39efbd59b255457e82303be3881f54d5": "指定C-then-D族a≤x/2及OPT/W≤3/2的完整结论。"
+  },
+  "explanation": "实际末位D_s的合法偏离到B_is、A_i分别给d≥x/2及H=b+d≥a+x/2。所有X已用后，A/C/B/D即时利润均≤H；触已用Z的B/D至多H−b/2<H，且任一动作至多消耗一储备、pure D合法，全部动作子历史闭合。对q≥余n的节点应用fresh保护，尾部恰H且以后不碰旧储备。a=0直接；a>0时最后C_i真改A_i，t份储备对t尾人仍足；A_i即时≤(x+a)/2<a+x/2≤H，C_i<H，所以尾部不再用A_i/C_i，Y_i由偏离者独占。令s个B_ir触X_i；已用储备排除迫其r互异、Z各独享，每个该B精确收益b+x/(s+1)=H。若s≥2，x/(s+1)≤x/3<x/2≤d，矛盾，故s≤1。偏离者至少a+x/2，原收益x，真实IC给a≤x/2。全部A_i与D_r用m槽覆盖所有客户，OPT=k(x+a)+tH、W=kx+tH，故OPT≤3W/2。d=0与x>0及末位条件不相容，并未漏边界。",
+  "whole_result": "在所列严格目录和完整C-then-D路径条件下，末位给d≥x/2、H≥a+x/2，fresh真实尾保护及最后C_i的偏离IC给a≤x/2，进而OPT/W≤3/2；保留作者B玩家精确收益等式的完整证明。",
+  "scope": "仅正文对称独立储备族与该指定实际顺序，不推广到交叠储备、异质块或一般目录。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/新鲜储备的真实尾部保护与旧独占负信用门槛--引理.md",
+      "sha256": "ef7a98508fcd9f990cf751f26ecfc75a6287fdf3bdd992f685fb30bb05052ed3"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/对称终末储备的全历史容量归纳与独审先验--审查.md",
+      "sha256": "bab83635b0523959154389bda088ee0440bdc7a2c4c9d132c12511e2325ab88e",
+      "section": "作者精确收益与独审较弱上界的两条收束"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "完整实读本包核心陈述、实际证明和相关共享依赖，逐项核对域、全部有序历史、真实后继、逻辑方向及整句/局部贡献；未把历史有限PASS当本轮新证明。",
+  "endpoint_pins": {
+    "M-39efbd59b255457e82303be3881f54d5": "9ab7d401c95a94a6629a79e7ee92a321ac3b4c6f34565d33627626edc6891beb",
+    "M-3ef821ac4c2f4acc961f098e4973c094": "6965d23aec43eb77a7bbcc0762599cf7babb2870ae7004960915c58fd0d01e4a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/新鲜储备的真实尾部保护与旧独占负信用门槛--引理.md": "ef7a98508fcd9f990cf751f26ecfc75a6287fdf3bdd992f685fb30bb05052ed3",
+    "archives/customer-attraction/state/审查/对称终末储备的全历史容量归纳与独审先验--审查.md": "bab83635b0523959154389bda088ee0440bdc7a2c4c9d132c12511e2325ab88e"
+  },
+  "review_digest": "de5ce5323d1f7dd1cb37d6172b1c8aa3eb048651bd982351b27c96417a16f8aa"
+}
