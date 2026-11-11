@@ -192,12 +192,35 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss1",
-  "request_id": "bb12d1b1b9a6402b94cefef5770a4895",
+  "request_id": "494891dcd66f494b821df418acf5acff",
   "requests": {
     "db94902e1fc04625a91bc2d2cae20e2f": "plan",
     "2e91b88c7b484150a1ba94e81d69c7f8": "claim",
-    "bb12d1b1b9a6402b94cefef5770a4895": "read-add"
+    "bb12d1b1b9a6402b94cefef5770a4895": "read-add",
+    "494891dcd66f494b821df418acf5acff": "done"
+  },
+  "edge_paths": {
+    "um-fullcube-five-fourths-sharpens-original-unit-escape": "map/edges/unrelated-machines-3a-3a-6a52932cad1a2c41/fullcube-five-fourths-sharpens-original-unit-escape.json"
+  },
+  "receipt": {
+    "coverage": {
+      "UM-SEVEN-VARIABLE-FULL-CUBE-OPEN-TREES-EXACT-FIVE-FOURTHS-v1": {
+        "state": "linked",
+        "object_pin": "4d9b1866955403db0d78b69c623aae5c005828f5f9291b598ca9bc58cd369c6b",
+        "reason": "新定理在同一冻结 unit 原 P 给出 OPT=5/4 及 CONFIG、剪端 LST 均为 1。旧 unit 半密度条件 7≤2·4，因而任意 wiring 都已有 3/2 上界；原 56 叶是冻结负轨二叉树的特定见证。新证明任意接线均成立，冻结 sign0 每活跃点留 digit0 可得另一份 189 叶见证。新定理至旧 unit 只贡献同一原 P 的精确整数与分数阈值，不替换原 56 叶证书或 128 个源赋值 NO 检查。旧 scaled 的阈值与 56 叶迁移已有两个独立现行边。单变量 8 个开放私有 host 版的真实 0/1 pin 禁活全闭子树并迫根留下两小边，故其 3/2 精确结论属于不同 P。它没有全立方共享外端，也无本定理的全叶双射与无预载条件。\n固定所有内轨决定，外送量必须逐子句符合 unit 的 4floor(T) 或 scaled 的 floor(4T)。前者蕴含后者，整数 T 时等价。冻结原接线在 T=5/4 已见严格性。全选 sign0，七变量各活跃内机所留 digit 分别固定为 (0,0,1,1,1,1,1)，外送仍 189；q=0,1,2,3,4,5 的子句数依次是 31,45,23,21,5,3，恰 mask 0、2、3 各送五枚。203 台非活跃内机载 1、91 台活跃内机载 5/4，scaled 唯一外机可接这五枚 1/4 任务，unit 的四台外机不能在同阈值保该内轨决定。两模型最优峰都等于 5/4，因为另有共同剪枝使 q≤4。\n对任意合法接线，T=1 的同一行律还给两种模型各自的 GPC₂ 完整配对。任务支持不交时取乘积；任意两内机或内外机至多一个共用任务，两个占用边际之和≤1，先耦合为互斥占用再用行律条件分布，保持完整行边际。scaled 的两外机不交且每原任务恰有两个有限端；这正复用单共用任务规则，无需先细分。unit 同子句两外槽各在七 singleton 加空态中均匀取态，用相差一位的循环移位避免双选，异子句外槽取乘积。两模型 T<1 时 selector 无端，所以 GPC₂ 阈值也恰 1。若任一整套不交配对律有全机联合延拓，各任务几乎处处至多被选一次且期望恰一次，遂给完整 T=1 调度，与整轨下界矛盾。两例的分数关联边数 5054/2366 大于顶点数 1989/1605 减一，森林胶合的前提确实不成立。森林的指定配对反例则仍有真实 T=1 调度和可胶合行律。这里是固定 5/4 的原双轨检验，不重证紧凑星近二族或细分的整族结论。",
+        "comparison_scope": "实读 v1 定理完整论证、旧审查「七变量全cube：源NO却有实际三半」「私有host与真实0/1 pin：三个不同原P」及半密度正文的完整合同、半片 Hall 证明和锐例边界。将冻结 b44ee0f4… 证书分段按原任务标签结构解析，只对 unit_slot_source_NO_escape 与 single_endpoint_source_NO_escape 全量语义核对。逐项核 806/422 台机、各 1183 件任务、5054/2366 个有限处理端、各变量各符号 64 叶的出现双射、512/128 外端、两份各 128 个源 NO 表项、原 sigma 与完整负载、新 189 叶见证、精确并界及分数行律。其它冻结 case 及历史审计未重跑。\n比较了 M-c663aecb01df4eefa9ed35be826cfbab v1、M-1b7aae02648540af8d4986eb762adaae v1、M-b4a6d0d0b41c4ef2b84217f7ac101ea1 v2 和 UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1 v2。查对已整合的 scaled 两边 um-2837df-fullcube-unit-slot-to-quarter-endpoint（8e725e31ed6717ac1c18d9f9f40664e7aba4a3becd5dbdd28fac315fcff5e8be）与 um-2837df-fullcube-exact-threshold-specializes-to-quarter-matrix（38167ec7306c32caf9abe97c111d1542277bb6132abd2c2f90e469ea92fad04a）。\n实读 UM-CAPACITY-ONE-PAIR-GAP-v1 v3 的完整 GPC₂ 合同与近二证明、UM-PAIR-SUBDIVISION-GAP-v1 v1 的单共用任务完整耦合与长度二细分、UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1 v1 的森林胶合，以及 UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1 v1 的指定配对律反例及其全调度行律。核对两个原 P 的 T=1 行律上各 324415/88831 个机器对。",
+        "edge_ids": [
+          "um-fullcube-five-fourths-sharpens-original-unit-escape"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-6a52932cad1a2c41/fullcube-five-fourths-sharpens-original-unit-escape.json",
+        "sha256": "9aa88d6784df99f2d4b6bd7991d7f1295c8033bb4b27ab68591fdbc649169696"
+      }
+    ]
   }
 }
