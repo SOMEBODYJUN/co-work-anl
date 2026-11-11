@@ -1,0 +1,15 @@
+{
+  "event": "Main work.py sync overlapped untracked artifact finalization",
+  "sync_remote_tip": "434b525fca184b302de2688c63c72f04b71f460c",
+  "cause": "The normal sync uses git stash --include-untracked around merge. Main did not first stop concurrent agent writes.",
+  "affected": "Only new local finishing files observed missing/transient; eight explicit core mathematical artifact pins independently matched.",
+  "fixed_C_missing_metadata": {
+    "freeze_manifest.json": "b59d086e0988d4e19e9cd2138385e114077c91537106098d71120b089d0b1230",
+    "SHA256SUMS": "3ec4fdb9630b5bdd320f11d9dc76b820117698edb09140a954823996410c2009"
+  },
+  "recovery_search": "Read-only git fsck: six unreachable commit trees inspected, no saved copy of the two finishing files found there.",
+  "authorization": "Author may regenerate only freeze metadata after checking 20 artifact files and24 source files. New timestamp/hash must be reported as a new freeze, not an exact recovery of the missing manifests.",
+  "v3_interruption": "Existing deterministic checker exited1 at transient FileNotFound; preserve failure record and rerun only that checker after sync. Frozen 1050 input hash unchanged.",
+  "optimizer_calls_authorized": 0,
+  "prevention": "Main must coordinate a no-write interval with every active agent before future sync/stash; checkpointing distinct frozen paths alone does not require mutating other work."
+}

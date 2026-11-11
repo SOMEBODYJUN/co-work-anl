@@ -1,12 +1,15 @@
-"""Materialize two byte-exact archived frozen sources, without overwriting edits."""
+"""Materialize byte-exact archived frozen sources, without overwriting edits."""
 from pathlib import Path
 from hashlib import sha256
 import gzip
 import json
 
 W=Path(__file__).resolve().parent
-manifest=json.loads((W/'portable_frozen_text/manifest.json').read_text())
-for item in manifest['files']:
+manifests=sorted(W.glob('portable_frozen_text*/manifest.json'))
+assert manifests, 'No exact frozen-text manifests are available.'
+items=[item for path in manifests for item in json.loads(path.read_text())['files']]
+assert len({item['target'] for item in items})==len(items), 'Duplicate restoration targets.'
+for item in items:
     payload=gzip.decompress((W/item['archive']).read_bytes())
     assert sha256(payload).hexdigest()==item['sha256']
     target=W/item['target']

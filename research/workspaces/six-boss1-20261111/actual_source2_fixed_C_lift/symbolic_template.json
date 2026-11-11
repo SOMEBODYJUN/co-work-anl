@@ -1,0 +1,69 @@
+{
+  "status": "SYMBOLIC_UNBOUND_FIXED_C",
+  "owner": "Boss1",
+  "RUN": "six-boss1-20261111",
+  "state": {
+    "visible_bits": [
+      "a1",
+      "a2",
+      "a3",
+      "a4",
+      "a5",
+      "a6",
+      "x",
+      "o",
+      "c"
+    ],
+    "tail_bits": [
+      "r3",
+      "r4",
+      "r5",
+      "r6"
+    ],
+    "true_branch": [
+      "A1",
+      "C",
+      "R3",
+      "R4",
+      "R5",
+      "R6"
+    ],
+    "visible_types": 512,
+    "tail_states_per_type": 16,
+    "full_symbolic_state_count": 8192,
+    "same_client_joint_law": true,
+    "outer_index_average": false
+  },
+  "mass_equation": "sum_{r3,r4,r5,r6} nu[h,r]=w[h] for every complete visible9-bit h",
+  "outer_q_moment_rows": [],
+  "local_hidden_inequalities": 734,
+  "visible_prerequisites": "visible_prerequisite_routing.json",
+  "dimensions_for_future_positive_type_count_s": {
+    "nu_columns": "16*s",
+    "mass_equalities": "s",
+    "local_inequalities": 734,
+    "outer_moment_rows": 0
+  },
+  "projection_contract": {
+    "weights": "lambda_R>=0 on local A_R nu<=b_R(w,K)",
+    "W": "sum_R lambda_R*A_R(h,r)",
+    "minimum": "m(h)=min_{r in {0,1}^4} W(h,r)",
+    "free_mass_multiplier": "m(h), unrestricted sign",
+    "state_residual": "W(h,r)-m(h)>=0",
+    "projected_inequality": "sum_R lambda_R*b_R(w,K)-sum_h m(h)*w[h]>=0",
+    "full_domain_required": "all512 visible types and all8192 joint states for any eventual universal cut"
+  },
+  "fixed_input": null,
+  "fixed_atom_masses": null,
+  "fixed_K": null,
+  "fixed_O": null,
+  "support": null,
+  "fixed_matrix": null,
+  "phaseI": null,
+  "certificate": null,
+  "projection_weights": null,
+  "optimizer_calls": 0,
+  "optimizer_authorized": false,
+  "forbidden_bindings": "Previously excluded1002/1003 candidates; no old-point phaseI or numerical solver is included.",
+  "future_gate": "Main separately releases a surviving future candidate after newer necessary-family screening and rechecks16 visible prerequisites plus C-size equality."
+}
