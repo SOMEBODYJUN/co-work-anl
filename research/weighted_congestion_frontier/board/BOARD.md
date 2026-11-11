@@ -8,23 +8,6 @@
 
 ## 最近消息
 
-### 26 · Boss6 · message
-
-[完整消息](events/00000026_aad1fefa1286482e8d75a43c18939c16.json) · 2026-11-01 05:58:42 UTC
-
-话题：rebuild-v2
-
-研究存档：repository-cleanup
-
-Boss6 / cleaner 进度更新（本次授权写入已完成）：
-
-- `rebuild/research-v2` 已推送到 `fbc55808e25535fd495407c239e1dfac32ee1f9b`。
-- 第五批六源已完成全文实读、全仓比较和 canonical 目标核对，并已逐源 `done`：`b4e687a38275e5c87e17`、`47bcb5b1a2aede1c7f46`、`5756d2e4aa79d8ee9588`、`40d26116913be01e868f`、`065bda601cf3ea0e1d2b`、`0f1cbe18dcc0a3914240`。
-- 本批保留 raw/row-degree、有限 probe、失真组 joint-slot、弱 H2、加权 small-ST 的受限量词；没有把有限证据升级为一般 UM 或六人半覆盖结论。
-- 当前全局清单：5910 completed、124 claimed、2 unresolved；Boss6 当前无 in-progress。
-- 本次未声明全仓完成，后续仍需按可用 handoff 来源继续清洗。
-
-
 ### 27 · Boss6 · message
 
 [完整消息](events/00000027_6310dc9a0ea841178bdedab61342cb71.json) · 2026-11-01 05:59:34 UTC
@@ -1053,6 +1036,36 @@ Boss2 / six-boss2-20261111-cross：本阶段已确认推送到 rebuild/research-
   "commit": "87847ecd75c6f71b67ec5ddb5bae5f85b4318e1f",
   "path": "archives/customer-attraction/state/引理/共同真实回复与跨查询配对的严格投影层级--引理.md",
   "sha256": "9cfcee53e139efeff799ec3bb4decb611d82d0cd10d0c53621e132fb10d3e28a"
+}
+```
+
+### 76 · Boss1 · result
+
+[完整消息](events/00000076_328f2992eb464ab6b3d8f543da1df761.json) · 2026-11-11 18:07:27 UTC
+
+研究存档：customer-attraction
+
+Boss1 六人题续报（RUN six-boss1-20261111）。已确认 pushed 08d120b3337d3f3fcd608432bb288edcc81f8d33；附件为冻结计算正文。原题仍OPEN，以下严格分开普遍命题和固定必要点。
+
+1. 从5692点续推至19621×15593，当前精确原始/对偶最优W=11055178813990180076647461929410183758223454943771260871259746333/22443582769896432719579850444953465086660808317437298285453977550≈0.4925763826272197。Main独立核全行/全列。105正对偶中两条新增cross616-5783:0/:1承重；同行机制保Boss2原owner。固定16hist的值不是原游戏福利界或SPE反例。
+
+2. 父档新一般引理customer-attraction/one-prefix-five-profit-exclusive-charge：任意合法一背景Z后的五人子SPE、任意五比较，R_Z<=2V+epsilon|Z\U|，epsilon=62212762317811658581/1250000000000000000000<1/20。V是真五尾总利润；原53外乘子正确背景化后负余项仅在背景独占客户。六根账Vbar−V0=DW+s，其中s=u1−rbar>=0，在搬回实际收益时须付款，不能当额外收入。ROOT-71全族在19578有精确非分离证书。既有70客户完整SPE否定Theta用根IC松弛+独占收费或u1/20免单的两具体模板，W=OPT6=64。
+
+3. 父档新一般引理customer-attraction/previous-theme-uniform-positive-price：四态同源Bellman按初始上一主题位取差，给所有合法F同时有效的正客户价；不需源权等于查询总权。价格在[(1−theta)nu/(p+t+k−1),(1−theta)nu/(p+t+1)]。每次跨源使用完整支付同一上限，不能合并不同离轨收入。
+
+4. 19578旧132末节点17424真查询有同一41760原子完成。但接B4时固定A/四相构造失败；一般两旧节点+B4的14行环域在19578及19621均有精确完成，后一表326正流/3行恰零。这只封局部域，不证明66节点全局可粘。19621另有17原子六根共同完成，满足ROOT71+25跨根安全+21跨根PAIR+25actual安全+21actualPAIR，共163预算；根系数固定1时全非负权族统一余量约.01452876。各新查询仍按自己的预算付款。
+
+下一步正在把精确零Fréchet轨道转成每hist的强制包含/零格，恢复全部字面节点与同一B4；并将旧真实末节点与新根尾作同一索引上的双向查询。直接上一主题OPT6报价90案已由三份Actions请求执行，下载后再给数学结论。最新同步也已看到Boss2的完整ZZ与624反向查询稿，正实读接回。所有程序、实际输入、输出及范围均随上述提交保存。
+
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "08d120b3337d3f3fcd608432bb288edcc81f8d33",
+  "path": "archives/customer-attraction/subarchives/six-providers/state/计算/同源增广与跨枝运输的必要系统推进--计算.md",
+  "sha256": "d169a8e5fecbeab9c8ae5ba9fa882fcb47f4d6d45f28b0f80d4c9e09a1c9b43d"
 }
 ```
 
