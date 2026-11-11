@@ -1,0 +1,67 @@
+{
+  "edge_id": "ca-aa8e8ffa-exact-outcomes-support-finite-pool-recursion",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "customer-attraction/finite-full-spe-certificate-pool-and-six-half-boundary"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、有限非空共同标签目录、m≥1及全部有序历史纯SPE。收益只由终局计数决定；相同计数只共用可实现终局集合，完整策略仍在不同有序节点分别选择真实续局。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "提供R(k)全集递推的必要性、充分性和非空性，以及逐有序历史证书展开与独立全树IC核验的充要合同。",
+    "customer-attraction/finite-full-spe-certificate-pool-and-six-half-boundary": "其可复用完整证书递推段得到严格通用依据；池中各固定数值与六人half义务保持独立。"
+  },
+  "explanation": "将池正文的R(k)、R_a、ell_a、M(k)逐符号对应canonical算法的同名量。完整SPE当前选a到c时，c∈R_a，且每个真实离轨孩子b实现d_b∈R_b，所以U_a(c)≥U_b(d_b)≥ell_b，对所有b给U_a(c)≥M(k)。反之若c∈R_a且U_a(c)≥M(k)，在孩子a实现c，在其余互不相交的有序孩子b分别实现达到ell_b的子SPE，当前a便最优；有限性保证最小值达到。取ell_a最大的a又给非空性。故该集合是全部完整纯SPE可实现终局全集，非只一个平局选择器的输出。证书在全部长度<m的有序历史分别展开、强制每个替代动作后沿同一表重建真实叶并比较，按每人只在自身一层行动的性质恰好认证完整SPE。",
+  "scope": "只支持目标综合对象中通用递推和完整证书认证这一已证明步骤；目标truth_status=open所承载的六人全称问题没有被提升。",
+  "contribution": {
+    "result": "池正文所列R(k)=∪_a{c∈R(k+e_a):U_a(c)≥max_b min_(d∈R(k+e_b))U_b(d)}恰为全部完整历史纯SPE终局计数集合、非空；每个结果可展开完整有序证书，逐节点全行动真续局IC核验充分且必要。",
+    "remaining": "池内R275/R18/R2fc/R373各固定客户、指定策略、全部IC、W/OPT数字及其执行绑定仍由各自有限证据承担；本边不重新认证这些保存点，有限个正例也不推出任意六人2W≥OPT₆，仍缺共同预算/长后缀真实续局论证。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "计数缓存的准确含义"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "全集递推及完整证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "完整策略和指定有序路径"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "定义级独立核验证书"
+    },
+    {
+      "path": "archives/customer-attraction/state/证明/有限完整SPE证书池与六人half边界--证明.md",
+      "sha256": "d751732561877e1936e59a78ea2f4434d8c12171cfdb6a47c21b4cfda4561131",
+      "section": "可复用完整证书递推"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "直接核全集必要/充分/非空归纳及有序孩子拼接，不借有限回归证明一般算法。仅交目标中递推局部contribution；有限池和恰六人全称目标分开。",
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "customer-attraction/finite-full-spe-certificate-pool-and-six-half-boundary": "4cefbff038c22131b1a8be1dd2ae017531122889fa085ac7a664dbb6ff58e8fd"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/证明/有限完整SPE证书池与六人half边界--证明.md": "d751732561877e1936e59a78ea2f4434d8c12171cfdb6a47c21b4cfda4561131"
+  },
+  "review_digest": "9c4b38c015f26e651a136a712c5a2692967668c5f50e14cdf2d753e5f9e998ba"
+}
