@@ -166129,23 +166129,23 @@
     },
     {
       "object_id": "customer-attraction/shared-maximal-potential-early-safe-prefix-family",
-      "version": 1,
-      "title": "同一最大潜力标签向前三真实源的SAFE/MAX投影",
+      "version": 2,
+      "title": "同一最大潜力标签的早期SAFE/MAX投影及完整权锥唯一最优",
       "kind": "lemma",
       "truth_status": "proved",
       "model": "有限单位客户、有限非空共同标签目录，单位提供者依固定顺序选择；完整有序历史纯SPE及客户等分收益。",
-      "statement": "六人完整有序历史纯SPE，固定长度i−1的合法前缀及其真实续局，i=1,2,3，r=7−i；b为此前负载，P为按同一σ继续到第四位后的负载。固定一个全目录f_P最大标签X。对每个合法Q，C_r u_i−(C_r−1)Σ_X1/(b+r)≥Σ_Q[x/(b+r)+(1−x)/(b+1)]，对应C_6=206/5、C_5=121/4、C_4=61/3。使用源IC、原源分别真改后继标签的SAFE、同一X的最大性和真实末节点查询；四角解析余项全部非负。",
-      "quantifiers": "每份原六人完整纯SPE，每个i∈{1,2,3}及合法有序前缀（可离轨），按该前缀真实续局定义u_i和P；任意固定f_P最大标签X、每个合法查询Q。沿同一根实际路径的三个源可以共用X。",
+      "statement": "六人完整有序历史纯SPE，固定长度i−1的合法前缀及其真实续局，i=1,2,3，r=7−i；b为此前负载，P为按同一σ继续到第四位后的负载。固定一个全目录f_P最大标签X。对每个合法Q，C_r u_i−(C_r−1)Σ_X1/(b+r)≥Σ_Q[x/(b+r)+(1−x)/(b+1)]，对应C_6=206/5、C_5=121/4、C_4=61/3。使用源IC、原源分别真改后继标签的SAFE、同一X的最大性和真实末节点查询；四角解析余项全部非负。 三个完整非对称2r权逐型锥分别精确最优61/3、121/4、206/5；统一7/9/11支撑对偶的末MAX正余项ρ=8/9、85/16、18，强制唯一最优权为正文三组参数。第三位再加正确倒二前缀的三份指定PAIR仍唯一为八权最优追加三个零，另有直接七支撑十一列恒等式。",
+      "quantifiers": "每份原六人完整纯SPE，每个i∈{1,2,3}及合法有序前缀（可离轨），按该前缀真实续局定义u_i和P；任意固定f_P最大标签X、每个合法查询Q。沿同一根实际路径的三个源可以共用X。 另对r=4,5,6的全部2r个独立非负全局预算权，要求全部原始有序布尔型余项非负而最小化C；第三位十一权扩展仅加正文三份指定PAIR，所有权不按客户变化。",
       "assumptions": [
         "b≤i−1、k=P−b≤5−i，会员逐客户取值但所有预算权对全部客户固定",
         "每个SAFE由原源真改对应合法后继标签并沿其自己的σ后续支付，不冻结X枝",
         "X最大性针对f_P而非最坏分母κ；X不能按客户或查询重新选择"
       ],
-      "scope": "全类型普遍必要式，允许全部弱平局、空主题、零客户、重复行动与同覆盖异标签；有限51行仅是一个查询接口。",
-      "objections": "第一、第二位此版本只证有效，不证最佳；第三位限定八预算锥的最优不等于真实SPE锐性。该引理不单独证明half、不提供完整策略，也不认证任一有限LP点可共同实现。",
+      "scope": "全类型普遍必要式，允许全部弱平局、空主题、零客户、重复行动与同覆盖异标签；有限51行仅是一个查询接口。 完整非对称2r非负全局权锥（r=4,5,6）的最优与唯一性；第三位指定三PAIR扩展十一权的最优与唯一性。均给逐系数解析恒等式与非退化唯一方程。",
+      "objections": "前三位及第三位指定PAIR扩展只在明定预算锥中证明唯一最优，不等于真实SPE锐性。该引理不单独证明half、不提供完整策略，也不认证任一有限LP点可共同实现。",
       "body": {
         "path": "archives/customer-attraction/state/引理/共同最大潜力主题的早期安全预算投影--引理.md",
-        "sha256": "bb260d9366608cb076dbd425fd4c625bc40609c3e39e7d048377ec372694eefd"
+        "sha256": "6dfc16bae5bc8f67e2552ba85d9a9e7d293dc294de9c95179245a8c2ff2afda9"
       },
       "evidence": [
         {
@@ -166187,6 +166187,66 @@
         {
           "path": "research/workspaces/six-boss1-20261111/main_prefix_maxx_interface/freeze_manifest.json",
           "sha256": "f62812138600f7be7d1670f3455522989e01dbefd87eb692afce6cea4d868065"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/main_prefix_cone_uniform_dual.md",
+          "sha256": "9af3d2d30da8b8bb9922442ae978f81d9c7dfcbf6c80dad3acfd8c989a1aa165"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/main_prefix_cone_uniform_dual.py",
+          "sha256": "07d3ac06eadd1b795669d89937e11bddcca4601fa4f4c2125af977e9e86ede2b"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/main_prefix_cone_uniform_dual.json",
+          "sha256": "fc5b9fe5ceb4dc10a3aab7dc79da541dd347b34e8d98ae63961750cb1526d126"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/prefix_uniform_dual_audit.md",
+          "sha256": "c2604e441b5060075fca1a2390d0605b0023a8c289ee2610f6db63b00e107230"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/prefix_uniform_dual_audit/verify_audit.py",
+          "sha256": "f3ced90ca87ace3270bf9be073da01a97389cfb0f1bb66fbeb61213369ab8a24"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/prefix_uniform_dual_audit/audit_result.json",
+          "sha256": "a189f6780b3d5bb04045bbedb3bbc35a9a6d877f6178fb4503c900a030bec3b3"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/prefix_uniform_dual_audit/support_coefficients.json",
+          "sha256": "406a060167845cb46d580528c70d399fdf6f34158a89a86b540bda05d68eada8"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/prefix_uniform_dual_audit/freeze_manifest.json",
+          "sha256": "0be38b2ee11d66af01b2bef813105f3819000fe941b2096c3b16d46163ed2117"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/early3_pair_cone.md",
+          "sha256": "5b12857eb5cc51146e75acf10fe12bc855a783d15ab9892cddaae241b490ec25"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/early3_pair_cone/exact_certificate.json",
+          "sha256": "3c075dd6db55da3290265d9630c5a3096a05bfa511412960afc743deb876b366"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/early3_pair_cone/independent_verification.json",
+          "sha256": "6b66739545690bc3a53e198e6bb7f9276671252d276b8552cbc2444fd444868e"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/early12_safe_maxx_cones.md",
+          "sha256": "7f6c5af2d5935ac1a76d010435bd09a502f6513603951e147b71d0e1b122e351"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/early12_safe_maxx_cones/exact_certificate_r5.json",
+          "sha256": "fab4287a87007dc3e26f38ed13007dddb9f9e82a909906d6edcbf5527b7b95f1"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/early12_safe_maxx_cones/exact_certificate_r6.json",
+          "sha256": "a86329fb1e21ce0d1f4fc7e1d8c233f0e2b8b53795de25f271831bef881e3227"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/early12_safe_maxx_cones/independent_verification.json",
+          "sha256": "4f762c137cdf3860134411d72cf20b26791e4f87498979518e68e81ccd40f206"
         }
       ],
       "sources": [
@@ -166199,7 +166259,22 @@
         "material:research/workspaces/six-boss1-20261111/early3_maxx_cone/audit_main_family.json",
         "material:research/workspaces/six-boss1-20261111/early3_maxx_cone/audit_main_family_1440.csv",
         "material:research/workspaces/six-boss1-20261111/main_prefix_maxx_interface/rows_51.json",
-        "material:research/workspaces/six-boss1-20261111/main_prefix_maxx_interface/freeze_manifest.json"
+        "material:research/workspaces/six-boss1-20261111/main_prefix_maxx_interface/freeze_manifest.json",
+        "material:research/workspaces/six-boss1-20261111/main_prefix_cone_uniform_dual.md",
+        "material:research/workspaces/six-boss1-20261111/main_prefix_cone_uniform_dual.py",
+        "material:research/workspaces/six-boss1-20261111/main_prefix_cone_uniform_dual.json",
+        "material:research/workspaces/six-boss1-20261111/prefix_uniform_dual_audit.md",
+        "material:research/workspaces/six-boss1-20261111/prefix_uniform_dual_audit/verify_audit.py",
+        "material:research/workspaces/six-boss1-20261111/prefix_uniform_dual_audit/audit_result.json",
+        "material:research/workspaces/six-boss1-20261111/prefix_uniform_dual_audit/support_coefficients.json",
+        "material:research/workspaces/six-boss1-20261111/prefix_uniform_dual_audit/freeze_manifest.json",
+        "material:research/workspaces/six-boss1-20261111/early3_pair_cone.md",
+        "material:research/workspaces/six-boss1-20261111/early3_pair_cone/exact_certificate.json",
+        "material:research/workspaces/six-boss1-20261111/early3_pair_cone/independent_verification.json",
+        "material:research/workspaces/six-boss1-20261111/early12_safe_maxx_cones.md",
+        "material:research/workspaces/six-boss1-20261111/early12_safe_maxx_cones/exact_certificate_r5.json",
+        "material:research/workspaces/six-boss1-20261111/early12_safe_maxx_cones/exact_certificate_r6.json",
+        "material:research/workspaces/six-boss1-20261111/early12_safe_maxx_cones/independent_verification.json"
       ],
       "keywords": [
         "共同目录",
@@ -166207,6 +166282,162 @@
         "真实早期源",
         "SAFE",
         "最大潜力",
+        "six-providers"
+      ]
+    },
+    {
+      "object_id": "customer-attraction/shared-maximal-potential-optimal-union-prefix-family",
+      "version": 1,
+      "title": "同一最大潜力主题的覆盖并31/25/19前缀界与平均重数修正",
+      "kind": "lemma",
+      "truth_status": "proved",
+      "model": "有限单位客户、有限非空共同标签目录、六位单位提供者、每份完整有序历史纯SPE；终局客户按覆盖者均分。",
+      "statement": "沿任意实际路径固定一次全目录f_P最大标签X，P为actual前四负载。对任意六合法标签覆盖并U，C_i u_i−(C_i−1)Σ_X1/(b_i+7−i)≥(1/6)Σ_U[x/(b_i+7−i)+(1−x)/(b_i+1)]，i=1,2,3的C为31,25,19；第四源由H3给10。前三源对原六查询重数d/6另有精确逐型修正Π=max_{0≤j≤r−2}j[d/(6n(n+j))−a*/(n+k)]，仅加于X外；a*=(5r−6)/(r(r−1))。完整非对称2r权锥在固定θ1/6及并集θ∈{0,1/6}域上最优均6r−5，全部中间MAX自由度分别为正文两个精确盒。",
+      "quantifiers": "每个有限原六人实例、每份完整有序历史纯SPE、沿其同一实际路径选定的每个f_P最大标签X、任意六合法查询标签及其覆盖并U；允许查询标签重复，覆盖可重叠。系数锥另对所有全客户固定、各自独立的2r个非负权取逐型要求。",
+      "assumptions": [
+        "X仅在actual前四负载P上一次全目录取最大，不逐客户/源/查询重选",
+        "源真改X后沿原策略真实续局；SAFE改末标签后重新取该标签自己的真实后继",
+        "覆盖并预算由六条合法末位IC平均加d−o非负差支付，不把U加入行动目录、不删任何客户",
+        "固定θ锥与θ0/1/6并集锥的中间MAX上端不同；任意平均d版保其显式Π"
+      ],
+      "scope": "全域普遍必要界及其完整明定预算锥最优面；第四源10复用既有H3。有限16hist只是后续应用，不是本引理论域。",
+      "objections": "没有证明一般2W≥OPT6，没有完整SPE反例。31/25/19是指定预算锥的最佳而非真实SPE锐性；普通大X条件half推论已被旧根近饱和粗界支配，不另认新进展。",
+      "body": {
+        "path": "archives/customer-attraction/state/引理/共同最大潜力主题的覆盖并前缀界--引理.md",
+        "sha256": "ac0168f7f10eab292df15c280091e5102d6bc369a3b88c39ca19c6dafdcd774d"
+      },
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/共同最大潜力主题的三尾前接不等式--引理.md",
+          "sha256": "8c1e1e62b7adc50095ca2251c89c815868c0fe92e74223de32de41e977b00f35"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/main_averaged_menu_prefix.md",
+          "sha256": "56d5436a0f3b85efee3ff3341b9af895fefaf0932edc1ed445720cafe06f08dc"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/main_averaged_menu_prefix.py",
+          "sha256": "db6fa0bef605024fb6d9ceb7fd0ef20a5ca69b78ef092c7118920aebdde54bda"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/main_averaged_menu_prefix.json",
+          "sha256": "f238e07fad1248c0a64f000ca9e6a6bef03023afa165402dc83e5b27a70d2ce8"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/main_optimal_union_prefix.md",
+          "sha256": "b991d8381b6bb9d7afed804ffb9aa7de9a71d112035c9184967db83f9e7cc1a2"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/main_optimal_union_prefix.json",
+          "sha256": "d02f24ce676148c1608b1a7f93a3557e57c45d019d054f552c0a2e48f5cb086f"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/main_optimal_union_prefix_check.py",
+          "sha256": "6beb57ce2c255e73bbc5ec0cf16c935273c24733efe03f21e1172cd6af949dcb"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit.md",
+          "sha256": "01e5e2d09a11771f8efe73337ddc8c53b7e12a8ba5a67764018035fed23c6f11"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/verify_independent.py",
+          "sha256": "4ff3919afef7c9c9f96d83046ee96e4d37ee50b3cb80b4ed34e0306addf1cda7"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/audit_result.json",
+          "sha256": "baa62d6d29b399157c9e24e6fb9f15d24ac07011968f4470dd39cd0e448da675"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/restricted_cone_certificate.json",
+          "sha256": "d4a48d645b447e069c5d3bc5934b2e2fd11d27a58550a4149da67e64e5b2bd47"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/union_bridge.md",
+          "sha256": "c6cfee6652256f589e60eff04254f21a89b46540f5f34606868fcc7a3bde276c"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/verify_union_bridge.py",
+          "sha256": "a7ac2c11ad32c606ad3cd925a8f7050d0dbf0f9dc69fd3d4bb3718cdae719bfa"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/union_bridge.json",
+          "sha256": "33ce3a64a04e06d22477dbe80ba03cb6f7e4d22a0d747f0f0abcda3874fe3249"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/union_bridge_certificates.json",
+          "sha256": "8590851325aa6a4ad371ebdac2a9b41f198ea3063f3a7439eb2bc26f5b61d583"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/freeze_manifest.json",
+          "sha256": "b08b3685c759eecb6d8a149e3b4500ce867bd8cf61717a4748e17906e5cfcc2e"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/main_union_comparison.md",
+          "sha256": "220f47634aad9b8c933bd10fdfe3fcc3974422e4f4ef68bd53f02a935b918825"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/main_union_comparison.json",
+          "sha256": "a2499cd7e2ba909802920b07cb7c456c80f68281535a7e544a2ece39598d21ca"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/fourth_averaged_menu_cone.md",
+          "sha256": "81fdf0b4df98efe3ab324d89eae1427d1af01b4e105af6b83e0859c007067453"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/fourth_averaged_menu_cone/certificate.json",
+          "sha256": "143899eeec7c5c1ef65ccd544d791c640915f338f66482c45154d95f061c00ec"
+        },
+        {
+          "path": "research/workspaces/six-boss1-20261111/fourth_averaged_menu_cone/union_domain_audit_128.json",
+          "sha256": "e0af6c44380f6a4f7418246bf0168ea77d059b7867a771d851e6a4c834fb1adc"
+        },
+        {
+          "path": "archives/customer-attraction/state/推论/最大主题根近饱和的覆盖阈值--推论.md",
+          "sha256": "8c205982d0718e9117220df227d79f24553417a5a71c46111caed7debfc256eb"
+        },
+        {
+          "path": "archives/customer-attraction/state/引理/任意人数近饱和根主题刚性--引理.md",
+          "sha256": "87ab5e0608333ea8bc7cc83ce81832a7571092a01109c01baf7f744cf42fbd61"
+        }
+      ],
+      "sources": [
+        "archives/customer-attraction/state/引理/共同最大潜力主题的覆盖并前缀界--引理.md",
+        "material:archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+        "material:archives/customer-attraction/state/引理/共同最大潜力主题的三尾前接不等式--引理.md",
+        "material:research/workspaces/six-boss1-20261111/main_averaged_menu_prefix.md",
+        "material:research/workspaces/six-boss1-20261111/main_averaged_menu_prefix.py",
+        "material:research/workspaces/six-boss1-20261111/main_averaged_menu_prefix.json",
+        "material:research/workspaces/six-boss1-20261111/main_optimal_union_prefix.md",
+        "material:research/workspaces/six-boss1-20261111/main_optimal_union_prefix.json",
+        "material:research/workspaces/six-boss1-20261111/main_optimal_union_prefix_check.py",
+        "material:research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit.md",
+        "material:research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/verify_independent.py",
+        "material:research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/audit_result.json",
+        "material:research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/restricted_cone_certificate.json",
+        "material:research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/union_bridge.md",
+        "material:research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/verify_union_bridge.py",
+        "material:research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/union_bridge.json",
+        "material:research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/union_bridge_certificates.json",
+        "material:research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/freeze_manifest.json",
+        "material:research/workspaces/six-boss1-20261111/main_union_comparison.md",
+        "material:research/workspaces/six-boss1-20261111/main_union_comparison.json",
+        "material:research/workspaces/six-boss1-20261111/fourth_averaged_menu_cone.md",
+        "material:research/workspaces/six-boss1-20261111/fourth_averaged_menu_cone/certificate.json",
+        "material:research/workspaces/six-boss1-20261111/fourth_averaged_menu_cone/union_domain_audit_128.json",
+        "material:archives/customer-attraction/state/推论/最大主题根近饱和的覆盖阈值--推论.md",
+        "material:archives/customer-attraction/state/引理/任意人数近饱和根主题刚性--引理.md"
+      ],
+      "keywords": [
+        "共同目录",
+        "same-X",
+        "OPT6覆盖并",
+        "真实末位查询平均",
+        "SAFE",
+        "完整非对称锥",
         "six-providers"
       ]
     }
@@ -216619,7 +216850,7 @@
     },
     {
       "path": "archives/customer-attraction/state/引理/共同最大潜力主题的早期安全预算投影--引理.md",
-      "sha256": "bb260d9366608cb076dbd425fd4c625bc40609c3e39e7d048377ec372694eefd",
+      "sha256": "6dfc16bae5bc8f67e2552ba85d9a9e7d293dc294de9c95179245a8c2ff2afda9",
       "disposition": "objects",
       "object_ids": [
         "customer-attraction/shared-maximal-potential-early-safe-prefix-family"
@@ -216706,6 +216937,330 @@
         "customer-attraction/shared-maximal-potential-early-safe-prefix-family"
       ],
       "reason": "Main全类型解析推导，并独立原份额/四角审查；有限接口不升级量词。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/main_prefix_cone_uniform_dual.md",
+      "sha256": "9af3d2d30da8b8bb9922442ae978f81d9c7dfcbf6c80dad3acfd8c989a1aa165",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-early-safe-prefix-family"
+      ],
+      "reason": "Main全类型证明、统一稀疏对偶与唯一性，独立真实份额及精确秩核验；限定预算锥。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/main_prefix_cone_uniform_dual.py",
+      "sha256": "07d3ac06eadd1b795669d89937e11bddcca4601fa4f4c2125af977e9e86ede2b",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-early-safe-prefix-family"
+      ],
+      "reason": "Main全类型证明、统一稀疏对偶与唯一性，独立真实份额及精确秩核验；限定预算锥。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/main_prefix_cone_uniform_dual.json",
+      "sha256": "fc5b9fe5ceb4dc10a3aab7dc79da541dd347b34e8d98ae63961750cb1526d126",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-early-safe-prefix-family"
+      ],
+      "reason": "Main全类型证明、统一稀疏对偶与唯一性，独立真实份额及精确秩核验；限定预算锥。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/prefix_uniform_dual_audit.md",
+      "sha256": "c2604e441b5060075fca1a2390d0605b0023a8c289ee2610f6db63b00e107230",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-early-safe-prefix-family"
+      ],
+      "reason": "Main全类型证明、统一稀疏对偶与唯一性，独立真实份额及精确秩核验；限定预算锥。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/prefix_uniform_dual_audit/verify_audit.py",
+      "sha256": "f3ced90ca87ace3270bf9be073da01a97389cfb0f1bb66fbeb61213369ab8a24",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-early-safe-prefix-family"
+      ],
+      "reason": "Main全类型证明、统一稀疏对偶与唯一性，独立真实份额及精确秩核验；限定预算锥。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/prefix_uniform_dual_audit/audit_result.json",
+      "sha256": "a189f6780b3d5bb04045bbedb3bbc35a9a6d877f6178fb4503c900a030bec3b3",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-early-safe-prefix-family"
+      ],
+      "reason": "Main全类型证明、统一稀疏对偶与唯一性，独立真实份额及精确秩核验；限定预算锥。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/prefix_uniform_dual_audit/support_coefficients.json",
+      "sha256": "406a060167845cb46d580528c70d399fdf6f34158a89a86b540bda05d68eada8",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-early-safe-prefix-family"
+      ],
+      "reason": "Main全类型证明、统一稀疏对偶与唯一性，独立真实份额及精确秩核验；限定预算锥。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/prefix_uniform_dual_audit/freeze_manifest.json",
+      "sha256": "0be38b2ee11d66af01b2bef813105f3819000fe941b2096c3b16d46163ed2117",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-early-safe-prefix-family"
+      ],
+      "reason": "Main全类型证明、统一稀疏对偶与唯一性，独立真实份额及精确秩核验；限定预算锥。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/early3_pair_cone.md",
+      "sha256": "5b12857eb5cc51146e75acf10fe12bc855a783d15ab9892cddaae241b490ec25",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-early-safe-prefix-family"
+      ],
+      "reason": "Main全类型证明、统一稀疏对偶与唯一性，独立真实份额及精确秩核验；限定预算锥。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/early3_pair_cone/exact_certificate.json",
+      "sha256": "3c075dd6db55da3290265d9630c5a3096a05bfa511412960afc743deb876b366",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-early-safe-prefix-family"
+      ],
+      "reason": "Main全类型证明、统一稀疏对偶与唯一性，独立真实份额及精确秩核验；限定预算锥。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/early3_pair_cone/independent_verification.json",
+      "sha256": "6b66739545690bc3a53e198e6bb7f9276671252d276b8552cbc2444fd444868e",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-early-safe-prefix-family"
+      ],
+      "reason": "Main全类型证明、统一稀疏对偶与唯一性，独立真实份额及精确秩核验；限定预算锥。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/early12_safe_maxx_cones.md",
+      "sha256": "7f6c5af2d5935ac1a76d010435bd09a502f6513603951e147b71d0e1b122e351",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-early-safe-prefix-family"
+      ],
+      "reason": "Main全类型证明、统一稀疏对偶与唯一性，独立真实份额及精确秩核验；限定预算锥。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/early12_safe_maxx_cones/exact_certificate_r5.json",
+      "sha256": "fab4287a87007dc3e26f38ed13007dddb9f9e82a909906d6edcbf5527b7b95f1",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-early-safe-prefix-family"
+      ],
+      "reason": "Main全类型证明、统一稀疏对偶与唯一性，独立真实份额及精确秩核验；限定预算锥。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/early12_safe_maxx_cones/exact_certificate_r6.json",
+      "sha256": "a86329fb1e21ce0d1f4fc7e1d8c233f0e2b8b53795de25f271831bef881e3227",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-early-safe-prefix-family"
+      ],
+      "reason": "Main全类型证明、统一稀疏对偶与唯一性，独立真实份额及精确秩核验；限定预算锥。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/early12_safe_maxx_cones/independent_verification.json",
+      "sha256": "4f762c137cdf3860134411d72cf20b26791e4f87498979518e68e81ccd40f206",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-early-safe-prefix-family"
+      ],
+      "reason": "Main全类型证明、统一稀疏对偶与唯一性，独立真实份额及精确秩核验；限定预算锥。"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/共同最大潜力主题的覆盖并前缀界--引理.md",
+      "sha256": "ac0168f7f10eab292df15c280091e5102d6bc369a3b88c39ca19c6dafdcd774d",
+      "disposition": "objects",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-optimal-union-prefix-family"
+      ],
+      "reason": "普遍覆盖并与平均重数真实付款、完整全型解析证明及独立精确系数锥审查；明确旧粗界支配。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/main_averaged_menu_prefix.md",
+      "sha256": "56d5436a0f3b85efee3ff3341b9af895fefaf0932edc1ed445720cafe06f08dc",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-optimal-union-prefix-family"
+      ],
+      "reason": "普遍覆盖并与平均重数真实付款、完整全型解析证明及独立精确系数锥审查；明确旧粗界支配。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/main_averaged_menu_prefix.py",
+      "sha256": "db6fa0bef605024fb6d9ceb7fd0ef20a5ca69b78ef092c7118920aebdde54bda",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-optimal-union-prefix-family"
+      ],
+      "reason": "普遍覆盖并与平均重数真实付款、完整全型解析证明及独立精确系数锥审查；明确旧粗界支配。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/main_averaged_menu_prefix.json",
+      "sha256": "f238e07fad1248c0a64f000ca9e6a6bef03023afa165402dc83e5b27a70d2ce8",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-optimal-union-prefix-family"
+      ],
+      "reason": "普遍覆盖并与平均重数真实付款、完整全型解析证明及独立精确系数锥审查；明确旧粗界支配。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/main_optimal_union_prefix.md",
+      "sha256": "b991d8381b6bb9d7afed804ffb9aa7de9a71d112035c9184967db83f9e7cc1a2",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-optimal-union-prefix-family"
+      ],
+      "reason": "普遍覆盖并与平均重数真实付款、完整全型解析证明及独立精确系数锥审查；明确旧粗界支配。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/main_optimal_union_prefix.json",
+      "sha256": "d02f24ce676148c1608b1a7f93a3557e57c45d019d054f552c0a2e48f5cb086f",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-optimal-union-prefix-family"
+      ],
+      "reason": "普遍覆盖并与平均重数真实付款、完整全型解析证明及独立精确系数锥审查；明确旧粗界支配。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/main_optimal_union_prefix_check.py",
+      "sha256": "6beb57ce2c255e73bbc5ec0cf16c935273c24733efe03f21e1172cd6af949dcb",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-optimal-union-prefix-family"
+      ],
+      "reason": "普遍覆盖并与平均重数真实付款、完整全型解析证明及独立精确系数锥审查；明确旧粗界支配。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit.md",
+      "sha256": "01e5e2d09a11771f8efe73337ddc8c53b7e12a8ba5a67764018035fed23c6f11",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-optimal-union-prefix-family"
+      ],
+      "reason": "普遍覆盖并与平均重数真实付款、完整全型解析证明及独立精确系数锥审查；明确旧粗界支配。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/verify_independent.py",
+      "sha256": "4ff3919afef7c9c9f96d83046ee96e4d37ee50b3cb80b4ed34e0306addf1cda7",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-optimal-union-prefix-family"
+      ],
+      "reason": "普遍覆盖并与平均重数真实付款、完整全型解析证明及独立精确系数锥审查；明确旧粗界支配。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/audit_result.json",
+      "sha256": "baa62d6d29b399157c9e24e6fb9f15d24ac07011968f4470dd39cd0e448da675",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-optimal-union-prefix-family"
+      ],
+      "reason": "普遍覆盖并与平均重数真实付款、完整全型解析证明及独立精确系数锥审查；明确旧粗界支配。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/restricted_cone_certificate.json",
+      "sha256": "d4a48d645b447e069c5d3bc5934b2e2fd11d27a58550a4149da67e64e5b2bd47",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-optimal-union-prefix-family"
+      ],
+      "reason": "普遍覆盖并与平均重数真实付款、完整全型解析证明及独立精确系数锥审查；明确旧粗界支配。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/union_bridge.md",
+      "sha256": "c6cfee6652256f589e60eff04254f21a89b46540f5f34606868fcc7a3bde276c",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-optimal-union-prefix-family"
+      ],
+      "reason": "普遍覆盖并与平均重数真实付款、完整全型解析证明及独立精确系数锥审查；明确旧粗界支配。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/verify_union_bridge.py",
+      "sha256": "a7ac2c11ad32c606ad3cd925a8f7050d0dbf0f9dc69fd3d4bb3718cdae719bfa",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-optimal-union-prefix-family"
+      ],
+      "reason": "普遍覆盖并与平均重数真实付款、完整全型解析证明及独立精确系数锥审查；明确旧粗界支配。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/union_bridge.json",
+      "sha256": "33ce3a64a04e06d22477dbe80ba03cb6f7e4d22a0d747f0f0abcda3874fe3249",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-optimal-union-prefix-family"
+      ],
+      "reason": "普遍覆盖并与平均重数真实付款、完整全型解析证明及独立精确系数锥审查；明确旧粗界支配。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/union_bridge_certificates.json",
+      "sha256": "8590851325aa6a4ad371ebdac2a9b41f198ea3063f3a7439eb2bc26f5b61d583",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-optimal-union-prefix-family"
+      ],
+      "reason": "普遍覆盖并与平均重数真实付款、完整全型解析证明及独立精确系数锥审查；明确旧粗界支配。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/averaged_menu_prefix_audit/freeze_manifest.json",
+      "sha256": "b08b3685c759eecb6d8a149e3b4500ce867bd8cf61717a4748e17906e5cfcc2e",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-optimal-union-prefix-family"
+      ],
+      "reason": "普遍覆盖并与平均重数真实付款、完整全型解析证明及独立精确系数锥审查；明确旧粗界支配。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/main_union_comparison.md",
+      "sha256": "220f47634aad9b8c933bd10fdfe3fcc3974422e4f4ef68bd53f02a935b918825",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-optimal-union-prefix-family"
+      ],
+      "reason": "普遍覆盖并与平均重数真实付款、完整全型解析证明及独立精确系数锥审查；明确旧粗界支配。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/main_union_comparison.json",
+      "sha256": "a2499cd7e2ba909802920b07cb7c456c80f68281535a7e544a2ece39598d21ca",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-optimal-union-prefix-family"
+      ],
+      "reason": "普遍覆盖并与平均重数真实付款、完整全型解析证明及独立精确系数锥审查；明确旧粗界支配。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/fourth_averaged_menu_cone.md",
+      "sha256": "81fdf0b4df98efe3ab324d89eae1427d1af01b4e105af6b83e0859c007067453",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-optimal-union-prefix-family"
+      ],
+      "reason": "普遍覆盖并与平均重数真实付款、完整全型解析证明及独立精确系数锥审查；明确旧粗界支配。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/fourth_averaged_menu_cone/certificate.json",
+      "sha256": "143899eeec7c5c1ef65ccd544d791c640915f338f66482c45154d95f061c00ec",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-optimal-union-prefix-family"
+      ],
+      "reason": "普遍覆盖并与平均重数真实付款、完整全型解析证明及独立精确系数锥审查；明确旧粗界支配。"
+    },
+    {
+      "path": "research/workspaces/six-boss1-20261111/fourth_averaged_menu_cone/union_domain_audit_128.json",
+      "sha256": "e0af6c44380f6a4f7418246bf0168ea77d059b7867a771d851e6a4c834fb1adc",
+      "disposition": "attachment",
+      "object_ids": [
+        "customer-attraction/shared-maximal-potential-optimal-union-prefix-family"
+      ],
+      "reason": "普遍覆盖并与平均重数真实付款、完整全型解析证明及独立精确系数锥审查；明确旧粗界支配。"
     }
   ],
   "edge_files": [

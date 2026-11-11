@@ -1,0 +1,98 @@
+{
+  "schema": "same-X-conditioned-ZZ-frozen-contract-v1",
+  "status": "FROZEN_WAITING_FOR_NEW_EXACT_POINT",
+  "run": "six-boss1-20261111",
+  "created_utc": "2026-11-11T20:34:54.839440+00:00",
+  "matrix_sha256": "1b4a4e544e5b9eeea1fa64b3849a9d4cc532b997a5ad972ce33df81c224551e7",
+  "base_shape": [
+    23676,
+    21021
+  ],
+  "candidate_rows": 5580,
+  "new_columns": 0,
+  "nonzeros": 27900,
+  "larger_matrix_assembled": false,
+  "optimizer_calls": 0,
+  "exact_point_files_opened": 0,
+  "all_420_real_core_unchanged": true,
+  "old_7954_max_contract_unchanged": true,
+  "files": [
+    {
+      "path": "build_interface.py",
+      "sha256": "8c8a6084ba8297413f450d939241d369a72ce702d58ec0270ba12351426f6763",
+      "bytes": 22873
+    },
+    {
+      "path": "build_manifest.json",
+      "sha256": "32a7d7ec3ecb73ab5b1556563340fd75a38f6e68ef61be05eaf1ce812484a9b8",
+      "bytes": 3063
+    },
+    {
+      "path": "column_interface.json",
+      "sha256": "89646fd499655af3cbdc86d09955bf15926d06a15cdc12ae8d5bcae12c722c9e",
+      "bytes": 7569127
+    },
+    {
+      "path": "complete_point.py",
+      "sha256": "194ec07452f7e3edb8dc5a8323febf5bd847bc6f6e2fb7d78f6a19923c211ec1",
+      "bytes": 16541
+    },
+    {
+      "path": "completion_selfcheck.json",
+      "sha256": "22645323c4edf372c25b54d9e25e9d621d4dddd2182e9d59b716168f1cd15f30",
+      "bytes": 618
+    },
+    {
+      "path": "conditioned_upper_rows.json",
+      "sha256": "5614006684a05520fd28455a1d041148897c95a9d9a6a9e03d395344b10a1677",
+      "bytes": 3219020
+    },
+    {
+      "path": "independent_audit.json",
+      "sha256": "290e1a954a61177fe3e52bcccf7d8bb9263c4ea51f323fd3bd107a80cba69c29",
+      "bytes": 478888
+    },
+    {
+      "path": "literal_boolean_audit.json",
+      "sha256": "ee0a120b09959b09e10f6f84a8a8453137879584279c8e96104e1b19b7896f5e",
+      "bytes": 2343
+    },
+    {
+      "path": "literal_orbit_interface.json.gz",
+      "sha256": "eb1bf5241a121532b05eab1199b5983b7e4b26e324a571131401037a9ed1c55b",
+      "bytes": 248519
+    },
+    {
+      "path": "old_aux_sign_audit.json",
+      "sha256": "284869fd9071351d6f1f7bc60df96ee99d2ebb7b72c211eeb5ee1d72eac1a22b",
+      "bytes": 2486795
+    },
+    {
+      "path": "verify_interface.py",
+      "sha256": "1992fb10dbb8cfd94ef1c146de07602c52774862c22afaf7a55726229748b5c8",
+      "bytes": 16300
+    }
+  ],
+  "report": {
+    "path": "../x_conditioned_zz.md",
+    "sha256": "a2e6a9d69c62e83a1e8de13c48a50755fc5dd5f420bc3033b52d12d2a45a7ba6"
+  },
+  "executed_checks": [
+    {
+      "command": "python -B research/workspaces/six-boss1-20261111/x_conditioned_zz/build_interface.py",
+      "exit_code": 0,
+      "receipt": "build_manifest.json"
+    },
+    {
+      "command": "python -B research/workspaces/six-boss1-20261111/x_conditioned_zz/verify_interface.py",
+      "exit_code": 0,
+      "receipt": "independent_audit.json"
+    },
+    {
+      "command": "python -B research/workspaces/six-boss1-20261111/x_conditioned_zz/complete_point.py --self-check",
+      "exit_code": 0,
+      "receipt": "completion_selfcheck.json"
+    }
+  ],
+  "next_action": "Only after Main supplies a new exact 23676-row point plus SHA, run complete_point.py; preserve every core and replace only the old 2790 p auxiliaries."
+}

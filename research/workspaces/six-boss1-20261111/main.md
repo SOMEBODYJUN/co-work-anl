@@ -1,6 +1,50 @@
 # Boss1：六人共同目录跨真实分支研究
 
-## Stage12当前入口：第十精确最优面已排，23676共同交叠系统待唯一发现
+## Stage13当前入口：普遍覆盖并31/25/19与共同X四源层
+
+原六人2W≥OPT6仍OPEN。最后确认pushed为b96dbcdfe0dec963bbaf91f3a9a2f0ed597467ad，收据checkpoints/stage12.json；公屏Stage12 seq82。以下Stage13新增文件在本次checkpoint确认前仍仅本地。本RUN、Boss1、结果分支rebuild/research-v2及customer-attraction/six-providers身份不变。
+
+### 本轮Main亲推与接回的普遍数学
+
+main_prefix_cone_uniform_dual.md/.py/.json给上一轮C*=(206/5,121/4,61/3)的统一7/9/11类型对偶，严格末MAX余项与满秩方程强制完整2r权唯一；prefix_uniform_dual_audit/已独立核33088付款基、1440型及精确秩。父档早期安全预算引理已升级v2，正文SHA6dfc16bae5bc8f67e2552ba85d9a9e7d293dc294de9c95179245a8c2ff2afda9，原普遍有效性不变；相关边的旧证据SHA导致一次stale拒绝，已按实读v2更新并重新bind/check通过，不掩盖第一次失败。
+
+Main的新main_averaged_menu_prefix.md/.py/.json从真实源IC、末标签SAFE、同一X最大性及六查询末BR推出C=(31,25,19)。一般平均d/6保精确逐客户Π；三个全类型锥有明确a*=(4/5,19/20,7/6)，5040型/10080参数端点精确核验。前三个受限θ=1/6锥最优各由3正类型恒等式闭合，中间MAX权非唯一，不再重复搜此锥。
+
+main_optimal_union_prefix.md给关键普遍桥：真末节点六个合法查询平均的d/6分子可以弱化为覆盖并指标o/6，额外差Σ(d−o)/(6den)逐客户非负，保留全部客户、标签和完整历史。于是任意OPT6菜单的覆盖并U都满足C_i u_i−(C_i−1)κ_i(X)≥(1/6)Σ_U[x/(b_i+7−i)+(1−x)/(b_i+1)]，i1/2/3的C为31/25/19，第四位用已证H3的10。没有把U当合法行动，也没有删除重叠客户。root推论W≥(1105|X|+6OPT6)/1116；条件1105|X|≥552OPT6已付half。更一般条件930K+175|X|≥552OPT6也足够，其中K为全目录最大大小。独立averaged_menu_prefix_audit/union_bridge.md实读与全域核验已回报PASS，冻结状态以包内最终manifest为准。
+
+averaged_menu_pair_cone/以四支撑精确恒等式闭合source3固定θ1/6的11权锥，C仍19，三新增真PAIR权在全部最优点均0，0optimizer；fourth_averaged_menu_cone/给source4完整6权和加五真末预算的11权锥C均10，固定θ与union域的最优MAX区间明确不同，只1次6变量小LP，其后全精确。Main已全文实读两稿及承重对偶，不把局部锥最优当SPE锐性。
+
+本次实读旧B6-ROOT-NEAR-SATURATION-v1后发现：新稿的大X条件虽有效，却已被旧界W≥(889K+6OPT6)/900支配，不能当成扩大已证区域；准确比较见main_union_comparison.md。下一合账必须保旧150u1−139K/6−OPT6≥0及合法根锚RIG-K。
+
+### 已冻结的共同客户层与有效失败
+
+root_x_shared_queries/保同一η的42直接新查询，扩展为236项可见根钱包。direct包SHA2370ce93f9e7f0efe7c9887553d96ce39fb1696a3f837cae72d4643e75a3010b，extended包SHA3c2ff7ca4f56efa48b1d2d790c05a922e5e36731faa18c204ce87e3a63fdc3fb，freeze27a118e7597c66427fbb0d48a21d1bd466d7fb07c8ecc72c07bc040a6a1621c2。Main已读完整数学和条件排序证明；新接口无数值点，非全SPE充分证书。
+
+x_conditioned_zz/把同一X条件上界落实为5580互异行、27900非零、零新列，旧2790p必须取min(q,v,rX+v−zX,q−rX+zX)。complete_point.py只在明确新有理点上固定全部10277core、420真实y及7954max，重算2790p和39预算；若预算负，再消p生成真实core负行。只看到旧p违反新上界不排core。freeze a25640a5c97d13c9101a0d3f57d90b820453cc65a7332829a4b539af582c9272。
+
+opt6_shared_x_exchange/对70候选OPT槽交换给出全部旧X≤H和非负H的锥冗余恒等式，保原T/B/C词序、0optimizer、无新行。generic交换公式可保，当前dT1支持上不再沿此候选族重复搜索。
+
+early_shared_x_joint.md/已冻结1920新μ（1024/512/256/128）、436互异不等式、128质量等式；原23676旧行及21021列字节不改，总22941列。append SHA1ff17a93dc319e05c366424214a722a86577773599ac5692a1fabb6cfaa3a5e0。每分支共用同一16X边缘，十四新尾是角色而非互异标签。source与literal独立审查PASS，Main全文实读真实IC/SAFE/MAX/MX/RC/PAIR钱包和别名边界。另有36可见C*/H3投影证书SHA1be0eccd98b2cf5130e42f40590728ee409df00350bb16d4a874679648048c45；只27+9可见查询，非全51/17支配声明。
+
+### 原云义务与正在接续的下一步
+
+唯一23676发现请求C-six-boss1-common-x-joint-23676-01，source b96dbcdfe0dec963bbaf91f3a9a2f0ed597467ad，Actions run43096304349，2026-11-11T20:28:55Z创建。截至compute_dispatch/common-x-joint-run-check4.stdout.json真实API仍queued、jobs=[]、artifacts=[]；没有新数组、新点或新最优。保持唯一1800秒DS请求，0重试，不改冻结final六输入。取回原始ZIP后先由Main核request/source/六输入/实际源码/输出清单和scales，再由原/root/common_x_joint_lp恢复精确原始/对偶、10744aux及210组八格。W10整个最优面已由AP39排除，不能强制沿旧W恢复。
+
+/root/early_shared_x_joint与原literal子席/root/early_shared_x_joint/literal_audit在独立新early_shared_x_menu_pair_closure/处理中：每源所有可见pure/mean查询的394原始无序PAIR；两个菜单使用字面全36配对乘积dQ*dR/36，区别旧六对角dQ/6，不借未知跨分支交叠。Main proof main_full_average_pair.md给通用来源及OPT并集全配对减弱。另生成前三源T/B/C共9条31/25/19含Π投影证书，不改已冻结436/36包。/root/early12_safe_maxx_cones已冻结averaged_menu_prefix_audit/及union桥，freeze b08b3685c759eecb6d8a149e3b4500ce867bd8cf61717a4748e17906e5cfcc2e；原prefix_uniform_dual_audit义务亦已完。新/root/universal_union_wallet_lp已实际派发，全256原客户型覆盖并与actual钱包必要系统仅许一次tinyLP，若未到half给精确锥不足见证，不称SPE反例。
+
+下一实质选择：原云点到手后先核9新投影与X条件ZZ，再决定自由四源/根μ联合提升；同时尝试将普遍覆盖并界与actual末两人同X钱包做全256原客户型的紧合账。尚无第二份批量求解请求，不把任何固定16hist必要点称反例。恢复先读本节、各实际稿件和原文件，再research resume本RUN；pending_feedback在本次恢复中为空，旧selected refs未过期。
+
+### 全256型合账已经精确闭合；下一问改为真实分支共同实现
+
+universal_union_wallet_lp/只做一次257列小LP，随后精确恢复：alpha=243427385229576983115/571565195660569935844≈.4258960956295508。它既是217原始行指定必要系统的精确最优值，也给原六人全域有效下界W≥alpha OPT6；没有固定16hist假设，含全部256型和最优并外客户。13个正整数预算与256列非负余项支付恒等式，K列严格抵消；17客户型余项零、239正。13原子加K的精确点不是完整SPE。Main逐217行/257列重放PASS，独立来源审核逐55769系数PASS；见main_universal_union_wallet_check.json与universal_union_wallet_audit/。不认领最佳已知下界改进，独有结果是指定预算系统的精确不足及清楚的缺失接口。
+
+early_shared_x_menu_pair_closure/已冻结：394原始PAIR扣84旧副本及4逐点正项，306新行131721非零；其中42又由旧末BR和非负余项支付，可选264行116034非零同锥版本。9条31/25/19平均前缀投影已从旧436层付款，完整5040域与独立literal核验PASS；C菜单的非零Π保留，不能拿T/B的零罚替代。freeze888e5c76e84e8ccfb9cb0d6b0b20ea5898c7c139766d4c4af988c10d1298aca4。所有结论都没有宣称整锥不可再约简或全SPE充分。
+
+新实际义务：(1) /root/universal_union_wallet_lp转入universal_max_label_completion/，用13个新会员变量补真正达到K的合法C，核54个actual和根钱包；已发现一个明确解析候选，待完整独立冻结。(2) /root/universal_true_x_tail独占universal_true_x_tail/，补四条真正强制X的780个尾部会员、52质量式及608原始行；只一次小phaseI，必须接精确完成或Farkas。(3) /root/early_shared_x_source_audit完成普遍审计后接root_near_equality_audit/，独立核Main新等号障碍：ROOT_NEAR=0是否迫强制最大C分支中间四覆盖均C，并由该分支第五源SAFE迫K≥23OPT6/63。此新命题尚待审完，不能提前登记为证明。Main同时亲推其定量版本。
+
+截至21:06 UTC的check6，唯一云run43096304349仍queued、jobs=[]、artifacts=[]。未取到新数组，未重复派发，未本地绕过Actions-only输入。被冻结的23676与新全256型小系统是不同问题，不能混用点或目标值。
+
+## Stage12历史入口：第十精确最优面已排，23676共同交叠系统待唯一发现
 
 原六人2W≥OPT6仍OPEN。最后确认pushed是ef43da7b2a1bdf1bdaa06e302586dc4a3748a13a，收据checkpoints/stage11-results.json；本节及本轮文件须以随后checkpoint的pushed收据为远端恢复上限。保持同Boss1、同RUN、同分支和子档继续。
 
