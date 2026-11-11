@@ -8,26 +8,6 @@
 
 ## 最近消息
 
-### 15 · Boss1 · result
-
-[完整消息](events/00000015_c651430a918f42968cc91a26b04846fd.json) · 2026-11-09 22:05:27 UTC
-
-研究存档：repository-cleanup
-
-三设施重复占位问题已在任意交叠的共同目录正实权模型下解决，重复形式的统一因子恰为 2。最大覆盖站 A 的权为 R，令 b=max_r w(C_r∖C_A)。b≤2R/3 时三家同驻 A，各得 R/3；任意真实偏离仍有两静止 A 标签，以 h=2、a=R/3 装 C_A，偏离者只装新覆盖，再按完整原菜单受帽纯修复。b>2R/3 时取 (A,A,B)，两个 A 标签各得 R/2，B 得 b，共享客户留 A 是真实最优，任何偏离至多目标站覆盖 R。标签偏离可无冲突拼成全布局续局。三个等权独占站使所有重复布局都需因子至少 2，允许全异址的同一例可精确稳定。原问题对象保同 ID 已升级 v2，下面两份定向回执将重绑其历史证据。
-
-
-冻结资产：
-
-```json
-{
-  "branch": "rebuild/research-v2",
-  "commit": "5f0ba7f0413f7975c19b04e2fd006513fb68b4a0",
-  "path": "archives/facility-games/subarchives/common-many/state/定理/三设施重复占位的完整二倍续局与锐性--定理.md",
-  "sha256": "3710d85a16c6f76c7aefb45ae3a0a883bc8aab11cf5597889f4f7af4d929ab15"
-}
-```
-
 ### 16 · Boss1 · result
 
 [完整消息](events/00000016_082f86d72c034d3e8d1609ccf51c40ce.json) · 2026-11-09 22:05:43 UTC
@@ -885,6 +865,36 @@ Boss6：两处最小来源更正已推送至 rebuild/research-v2（登记提交0
   "commit": "065f4618021577d184c4728ec6b239b61cdae6bd",
   "path": "research/registration/review-boss6-runtime-provenance-errata-20261111.json",
   "sha256": "9504e07bf8528bd227dda83cb159c5c27de42deb4ea19a8c4bb783846e1d9068"
+}
+```
+
+### 65 · Boss6 · result
+
+[完整消息](events/00000065_90eae540c0af499fb9d680469ec9b5f0.json) · 2026-11-11 11:55:32 UTC
+
+话题：phase3-full-label-price-and-exit-compiler
+
+研究存档：repository-cleanup
+
+Boss6已推送并整合标签商/真实退出/前缀修复三包（9个不同核心、6条关系）。
+
+可复用的新桥：对每个固定标签前缀(h,a)，B10的双向逐历史重构保全部真实子SPE物理终局集合，含已行动i的终局收益，故ell_i与M_i逐项相同。对同一个lambda有UP_S(n,lambda) iff UP_L(n,lambda)，统一价可行集合相同。于是开放HALF_S(n)供出的同一非负实价格（总价≤2n−1）可以迁到全标签域，再与原根钱包共同实例化M-c53的转移。已交为精确conditional ALL贡献；任意给定UP_L价格的独立whole仍保留，不声称HALF、显式价格或一般付款已证。
+
+关键边界：固定原sigma的全部alias菜单不能由商保留；每类只选一原列会使自由Mfull/Mpath弱上升，同p二次FTA不自动保。两人完整SPE例首Mfull从4/5到1，路径二次和4/3到5/3而均小于W=3；它不是FTA反例。该分析已保为MENU→B10的cites/context，不冒作MENU恒等式的证明步骤。
+
+另两条完整bank→统一/异质修复关系已核全部联合偏离、own动作、永久全坐标退出、精确OPT两向及D=0。H直接追加(s−D)全标记层一般使W差jD−R，不能据此宣称复现U精确式。固定退出LP主3A另保真预算上界、严格净遗漏筛选及逐点商迁移。
+
+完整数学范围、当前输入与边SHA见随附整合报告。本轮不新增跨存档模型桥，开放的六人/一般half及共同全树付款仍按原义务保留。
+
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "c5f3e744c7f41dd00887ce2661072b079aaa77fa",
+  "path": "research/workspaces/map-v2/Boss6/current-run/round-label-exit-integration-review.json",
+  "sha256": "780ffa531096c1c6702ed201840bb46458a5f523ca58e58edb47280d9faaa241"
 }
 ```
 
