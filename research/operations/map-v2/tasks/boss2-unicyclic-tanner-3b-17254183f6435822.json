@@ -98,12 +98,73 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss2",
-  "request_id": "e9f3e4e236e0402e8a17a5ae1bc234a6",
+  "request_id": "b3c55311bfc44c349b93f6e7404f8dcf",
   "requests": {
     "37015a202d784098a39ee1489218d311": "plan",
     "c77f36589b2f4dd18104dfd0ed38dbe5": "claim",
-    "e9f3e4e236e0402e8a17a5ae1bc234a6": "read-add"
+    "e9f3e4e236e0402e8a17a5ae1bc234a6": "read-add",
+    "b3c55311bfc44c349b93f6e7404f8dcf": "done"
+  },
+  "edge_paths": {
+    "um-explicit-rowlaw-glue-transfers-tanner-forest-integrality": "map/edges/boss2-unicyclic-tanner-3b-17254183f6435822/forest-rowlaws-to-tanner-integrality.json",
+    "um-91867-unicyclic-specializes-to-forest": "map/edges/unrelated-machines-3a-3a-91867b938928cdaf/um-91867-unicyclic-specializes-to-forest.json"
+  },
+  "receipt": {
+    "coverage": {
+      "M-fe3ac5a7f1374a24a221eb5c26172625": {
+        "state": "linked",
+        "object_pin": "b74f616be8810ab7ef9b821fd974f0977e99e2982c2efb07eeb71d82f24e07e9",
+        "comparison_scope": "当前Tanner森林v1、单环固定完整行律v1与森林胶合v1；实读两份胶合全文、UM定义、Tanner成熟正文第5节、已有完整Tanner覆盖分解边及单环→森林专化边；自行提取冻结PDF pp29–30及55。新proof完整核每原Tanner关联边的一件两资格零任务、变量原位/check补位、完整行律与码字分布双向映射、孤立变量私有叶修补、分数关联图细分、森林闭包整数性及单环切口流的精确状态重命名。",
+        "reason": "新增accepted transfers边只记P=conv C与有限线性目标码字最优点这一局部贡献。一般有理局部码字律的精确联合实现由森林胶合经零任务桥给出；闭包保全部实P。原完整cover分解边已有，不重复；任意既定wiring的分裂须另用无环唯一道路根重标号，行律重耦合不保证它。单环H=[[1,1,0],[1,1,1]]有p=(1/2,1/2,1)∈P但所有真码字第三位为0；另一个单环同一均值可同时有相容与不相容的不同完整局部律，因此固定律判据不能冒作LP整数性。无新增身份或来源待决问题。",
+        "edge_ids": [
+          "um-explicit-rowlaw-glue-transfers-tanner-forest-integrality"
+        ]
+      },
+      "UM-UNICYCLIC-FIXED-CONFIG-LAW-EXACT-GLUE-v1": {
+        "state": "linked",
+        "object_pin": "53462b1a0e2ed49d5c4cae873ed033cb6c23322fdf70dc9abf72473b25e1de57",
+        "comparison_scope": "当前单环固定行律v1与森林胶合v1的既有整条专化边按原SHA复用；并与Tanner森林v1经本包零任务双向桥实质比较。单环推论限制Tanner各分量至多一圈，确定p边删除后再细分，每圈在公共解码位坐标下与原切口同值分层流完全对应。",
+        "reason": "既有um-91867-unicyclic-specializes-to-forest已经完整证明无圈时圈LP条件为空，支撑界max(1,S+8Ec)退化为S；原SHA复用，不造重复边。新proof进一步将其完整充要判据迁移到给定显式Tanner局部码字律：保持这些律的原码字分布存在，当且仅当残余圈切口流可行。确定边打断圈则自动森林；算法仍按显式支撑计、支撑界按原UM细分图计。圈LP可能拒绝合法一致的局部律；底层零长度调度存在性恒真，且某份律拒绝不证明该均值不在conv C。所有比较已给出实际数学结论，无需另派重做。",
+        "edge_ids": [
+          "um-91867-unicyclic-specializes-to-forest"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/boss2-unicyclic-tanner-3b-17254183f6435822/proof.md",
+        "sha256": "223560970927638bee2d2485232c283610fdd1e1deacda237bbbb2ca9bf955af"
+      },
+      {
+        "path": "map/edges/boss2-unicyclic-tanner-3b-17254183f6435822/forest-rowlaws-to-tanner-integrality.json",
+        "sha256": "4bd670fead5a78ac190d8bcf950852037cc83f99b93b9020a9e5e9d64255bd59"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-91867b938928cdaf/um-91867-unicyclic-specializes-to-forest.json",
+        "sha256": "5f971956053e25d49822a833849a9bff67610c72e6b894465c4284f337bfe309"
+      }
+    ],
+    "follow_up_tasks": [],
+    "closed_overlaps": [],
+    "comparison_dispositions": [
+      {
+        "core_id": "M-fe3ac5a7f1374a24a221eb5c26172625",
+        "peer_id": "UM-UNICYCLIC-FIXED-CONFIG-LAW-EXACT-GLUE-v1",
+        "reason": "本包已给出零长度两资格任务的完整双向桥以及单环切口流在Tanner解码位上的充要判据。两份明确单环例分别否定“单环自动P整数”和“指定律不相容可否定同均值的码字凸包成员”。LP整数性、固定局部律相容性、任意cover wiring分裂三者量词已拆清；现范围没有剩余定向比较义务。"
+      },
+      {
+        "core_id": "M-fe3ac5a7f1374a24a221eb5c26172625",
+        "peer_id": "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1",
+        "reason": "新增accepted局部贡献边完整给出森林CONFIG胶合到P=conv C及有限目标最优值的实际迁移；任意cover分裂独立根标号步骤复用原成熟Tanner边，不伪装为配置耦合推出。"
+      },
+      {
+        "core_id": "UM-UNICYCLIC-FIXED-CONFIG-LAW-EXACT-GLUE-v1",
+        "peer_id": "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1",
+        "reason": "同问题整条专化已由um-91867-unicyclic-specializes-to-forest完成并按原SHA复用，当前edge-check有效。本包只将该结果接到新的Tanner零任务桥，不再重复建立边。"
+      }
+    ],
+    "overlap_record_note": "本任务无预先声明follow-up对象对；已完成的包内具体比较保留comparison_dispositions，不记为队列closed_overlaps。"
   }
 }
