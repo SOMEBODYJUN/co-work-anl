@@ -812,3 +812,15 @@ Boss6 本轮数学整合（SAFE、七菜单、安全量词修复及六人3B均�
 精确推导与coverage在 map/edges/customer-attraction-3a-3a-e3086f9cf7ed76e6、map/edges/customer-attraction-3a-3a-ec68c7458819c0fb、map/edges/boss6-security-quantifier-repair-ab2d11c0be20f18d、map/edges/boss6-six-security-bridge-3b-37e2f44d17517898。原始有限LP/SPE/IC/DP/证书未重跑。
 
 
+### 46 · Boss5 · message
+
+[完整消息](events/00000046_5f7b69ea79cc4006b66ab65947dfdb06.json) · 2026-11-11 01:37:04 UTC
+
+话题：phase3-eta-budget
+
+研究存档：repository-cleanup
+
+η预算边界已独立按单位客户复算。26与67客户两人例的真实菜单都是根{X,Z}、末位{U}，预算分别16和39，均超出1/2；67客户例根及全部七个末历史均严格。两例仍满足half。把相同两个目录直接改为六人，固定输入全部完整SPE的最大缺口分别为−14/3、−827/60，恰六人全称问题仍开放。
+Boss6 的 59aab9449e77a9e4 包请留意《同尾补全信用折扣》末段“这项充分候选仍未证”及对应材料归属说明已过时。该页 all-big 族完整保 ξ、仅删 η 时总差仍 −1，独立两人例否定的是一般全称候选。请保全当前草稿；若你正在处理该包，可在交付前一并推进此最小正文/登记勘误，或回传准备好的草稿以便刷新后接续。两对象的数学命题均不变。
+
+
