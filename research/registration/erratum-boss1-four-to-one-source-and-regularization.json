@@ -1,0 +1,121 @@
+{
+  "schema": 1,
+  "type": "source-correction-proposal-not-an-edge",
+  "source": {
+    "path": "archives/unrelated-machines/state/文献/四对一与字母表soundness两篇文献整理--文献.md",
+    "sha256": "156917fad2732e2bb04517c2557dcf0d46cdd799954d66be592ddbad55bdc4f5"
+  },
+  "base_commit": "ef7e0fe9426df98226298c79cc909495aaebfb10",
+  "scope": "仅修正证明归属/引理真实前提、十二次幂术语及客户数/标签目录误写；五个已登记主定理的数学陈述和truth_status均不变。",
+  "replacements": [
+    {
+      "section": "2.3 参数化 soundness 链",
+      "before": "核心桥梁是 Lemma 6.1：当外层 smooth game 的值低于 `q^{-ζ(δ)·ℓ^2}` 时，组合后的 PCP 值至多 `64 q^{-2(1-1000δ)ℓ}`（论文在式中取 `k=q^{2(1+c)ℓ}`、`β=q^{-2(1+2c/3)ℓ}` 的相容参数）。证明走逆命题：若 Alice/Bob 表的组合测试通过率高于该界，则经过 clique-consistency、zoom-in/zoom-out、Grassmann 线性测试和 list decoding，可解码出外层策略，从而与外层 soundness 矛盾。",
+      "after": "最终 soundness 桥是 Fei–Minzer–Wang 的 Lemma 6.33（原 PDF 第 63 页）：在 Condition 3.12 的完整参数条件下，若超图 `H` 的每个 `4^r` 色着色都使至少 `ε` 比例的边单色，则 `val(Game3[H,k,ℓ1,ℓ2,t,s,β])≤δ`。证明见 §6.6–§6.8：反设 Game3 的值大于 `δ`，先展开并剪枝 Alice/Bob 局部表，再经 mixed-type covering、zoom-in/zoom-out、Grassmann 解码与 list decoding，构造 Game2c 策略，其成功率至少为 `exp(−30ℓ1^2)·exp(−3Cq0^2ℓ1)>2^{−q2/4}`；由 Proposition 6.30 与 Lemma 5.22 的 Game2b 上界得到矛盾。这里的 `δ` 是最终 soundness，`ε` 是超图单色边比例；表 1 中的 `r` 是内部参数，不是主定理中字母表界的同一个量词。形如 `q^{−ζ(δ)ℓ^2}` 到 `64q^{−2(1−1000δ)ℓ}` 的公式及 `k=q^{2(1+c)ℓ}`、`β=q^{−2(1+2c/3)ℓ}` 属于 Minzer–Zheng 的 Lemma 6.1（该文原 PDF 第 44 页），不用于表述本段 Fei–Minzer–Wang 的 soundness。",
+      "source_locations": [
+        "Fei pp25–26 Condition3.12",
+        "Fei pp47–48 Lemma5.22",
+        "Fei pp61–63 Proposition6.30/Definition6.31/Lemmas6.32–6.33",
+        "Fei pp74–80 Lemma6.33 proof",
+        "Minzer–Zheng p44 Lemma6.1"
+      ]
+    },
+    {
+      "section": "2.3 参数化 soundness 链",
+      "before": "Lemma 6.64 是最终 decoding 的关键形态：许多 Bob-packet 与 zoom-out 线性函数形成 sunflower 后，先在公共大空间上做 Grassmann 线性测试，得到一个全局线性函数，再用 list-decoding 证明它必须与某个 Bob 函数完全一致。论文明确指出这里需要把局部“与 `f_i` 有明显 agreement”提升成一个全局函数；单纯的二次损失会落到随机函数阈值以下，所以必须用更强的、与 agreement 同阶的解码论证。",
+      "after": "Lemma 6.64（Fei–Minzer–Wang 原 PDF 第 80–81 页）在 Condition 3.12 下，固定剪枝后的表、一个 Alice-packet `(E,U)` 和 `q0` 维子空间 `Q`，并要求至少 `m≥exp(1000k^5)` 个 good Bob-packets 具有互异的 critical coordinates 及相同的 critical-coordinate 大小。结论给出 `W⊆V(E)`、`Q′⊆Q` 和线性函数 `f:W→F2`，其中 `codim W≤2q0`、`codim_Q Q′≤1`，且在普通 Grassmann 分布 `Q′⊆L⊆W` 上，Alice 表与 `f` 的 agreement 至少为 `exp(−100q0^7)`；此外某个 Bob 解码对 `(f_i,W_i)` 满足 `W_i⊆W` 和 `f|W_i=f_i`。这把足够多的 good tuples 推进为至少一个 excellent tuple；§6.7 将其用于控制 good 但非 excellent 的概率，§6.8 给出 sunflower、线性测试与 list decoding 证明。该结论不能删去 packet 正规性、剪枝表和 Condition 3.12 后当作一般无损解码定理。",
+      "source_locations": [
+        "Fei pp80–81 Lemma6.64",
+        "Fei pp81–82 Claim6.62 proof",
+        "Fei pp82–91 Lemma6.64 proof"
+      ]
+    },
+    {
+      "section": "3.1 主定理与量词",
+      "before": "它避免了早期解码引理的平方损失 `Ω(ε'^12)`，因为在本文参数区间那种平方损失低于随机线性函数阈值而失去意义。",
+      "after": "它把早期解码引理的高次幂保证 `Ω(ε'^12)` 改进为 `Ω(ε')`；在本文参数区间，原 `ε'^12` 保证低于随机线性函数的 agreement 阈值 `q^{−ℓ_1}` 而失去意义。",
+      "source_locations": [
+        "Minzer–Zheng pp8–9 §1.2.3/Lemma1.7"
+      ]
+    },
+    {
+      "section": "5. 对当前六人 SPE/目录覆盖模型的接续判断",
+      "before": "当前主模型是六个单位客户、有限非空共同目录、六个提供者沿完整有序历史各选客户子集，终局客户价值在覆盖者间均分；",
+      "after": "当前主模型具有任意有限个单位客户、有限非空共同标签目录及覆盖映射，六个提供者沿完整有序历史各选一个目录标签，终局客户价值在覆盖者间均分；",
+      "source_locations": [
+        "customer model 输入和终局量 / 策略、真实续局与全部历史量词"
+      ]
+    }
+  ],
+  "affected_body_owners": [
+    {
+      "object_id": "M-922feb7b429f49d4b5f13ca51b34aae7",
+      "version": 1
+    },
+    {
+      "object_id": "M-9a7614916cf04cee8915aefce74b502a",
+      "version": 1
+    },
+    {
+      "object_id": "M-9f8033b6e1a4485b97636171b09f8218",
+      "version": 1
+    },
+    {
+      "object_id": "M-ab4a576ed0be482b89d4a646ffc102b9",
+      "version": 1
+    },
+    {
+      "object_id": "M-d007675a9ed240898c90e831af80b092",
+      "version": 1
+    }
+  ],
+  "active_affected_tasks_at_base_commit": [
+    {
+      "task_id": "unrelated-machines-3a-3a-129516aa527e0e1f",
+      "state": "claimed",
+      "owner": "Boss2",
+      "affected_object_ids": [
+        "M-9a7614916cf04cee8915aefce74b502a"
+      ]
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-19cf10a88593d40b",
+      "state": "claimed",
+      "owner": "Boss1",
+      "affected_object_ids": [
+        "M-ab4a576ed0be482b89d4a646ffc102b9"
+      ]
+    }
+  ],
+  "primary_sources": [
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/fei_minzer_wang.pdf",
+      "sha256": "48baa160d5d15e61aaf99b24b6fc15518c20f204d165fc96de1251d9d8a82ea0"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/minzer_zheng.pdf",
+      "sha256": "13b8eb55f86cfe28ac8b283fe83612889b335e14b7a87d64d479451693c7dff4"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "new_source_sha256": "0e1f9f27706ce17087037ef05c6265d8f3d2e6ede5801cdbe87b559c4ff9f2ac",
+  "affected_objects": [
+    "M-922feb7b429f49d4b5f13ca51b34aae7",
+    "M-9a7614916cf04cee8915aefce74b502a",
+    "M-9f8033b6e1a4485b97636171b09f8218",
+    "M-ab4a576ed0be482b89d4a646ffc102b9",
+    "M-d007675a9ed240898c90e831af80b092"
+  ],
+  "new_lemma": {
+    "path": "archives/unrelated-machines/state/引理/投影约束多重图的保完备性近似双正规化--引理.md",
+    "sha256": "13803e66abc6432815634589e75cbc08238ad74287d89707120274fdfc7927d6",
+    "object_id": "PCP-EXACT-PROJECTION-PERFECT-COMPLETE-BIREGULAR-ROUNDING-v1"
+  },
+  "temporarily_unindexed_edges": [
+    "map/edges/unrelated-machines-3a-3a-129516aa527e0e1f/source-and-sparsification-conditional-repair.json"
+  ],
+  "scope_after": "5个原数学陈述及truth_status不变；独立新桥单独登记；并行约束及加权应用另由定向包付清。"
+}
