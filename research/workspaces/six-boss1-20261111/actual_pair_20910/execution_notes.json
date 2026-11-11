@@ -1,0 +1,65 @@
+{
+  "optimizer_calls": 0,
+  "successful_receipts": {
+    "build": {
+      "stage": "build",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/b0fef5ec503f/co-work-anl-boss1/research/workspaces/six-boss1-20261111/actual_pair_20910/build.py"
+      ],
+      "cwd": "/workspace/scratch/b0fef5ec503f/co-work-anl-boss1",
+      "started_utc": "2026-11-11T19:13:27.700947+00:00",
+      "completed_utc": "2026-11-11T19:14:01.497837+00:00",
+      "elapsed_seconds": 33.795901797000624,
+      "exit_code": 0,
+      "python": "3.12.14",
+      "optimizer_calls": 0,
+      "source_sha256": "91218cff31ac628634b664bcb33193b9fb9c6a05b010ef8e88d54177218cf1d2",
+      "stdout_sha256": "ef9109c490b0ebce083c34b2b69fd6ea8a70fa7bd5ea407a85b6667f08ad96d9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "verify": {
+      "stage": "verify",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/b0fef5ec503f/co-work-anl-boss1/research/workspaces/six-boss1-20261111/actual_pair_20910/verify.py"
+      ],
+      "cwd": "/workspace/scratch/b0fef5ec503f/co-work-anl-boss1",
+      "started_utc": "2026-11-11T19:15:23.651576+00:00",
+      "completed_utc": "2026-11-11T19:15:44.561540+00:00",
+      "elapsed_seconds": 20.909579417000714,
+      "exit_code": 0,
+      "python": "3.12.14",
+      "optimizer_calls": 0,
+      "source_sha256": "fe63e7cdac31f7bdf439f203e228186bc9b832c024f6104fd87a6ca5f135d8cd",
+      "stdout_sha256": "58ae9167a634d9a72c1ad1c12667d5eb532ce9c553d06972280477d8b848ea00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "retained_implementation_failures": [
+    {
+      "stage": "build",
+      "source": "failed_zero_normalization_build.py",
+      "stdout": "failed_zero_normalization_build.stdout.txt",
+      "stderr": "failed_zero_normalization_build.stderr.txt",
+      "cause": "Ray comparison reached an explicitly stored zero wallet coefficient before normalization.",
+      "repair": "Filter zero coefficients; rerun the complete build and exact matrix comparison."
+    },
+    {
+      "stage": "verify",
+      "source": "failed_old_hist_id_verify.py",
+      "receipt": "failed_old_hist_id_execution_verify.json",
+      "stdout": "failed_old_hist_id_verify.stdout.txt",
+      "stderr": "failed_old_hist_id_verify.stderr.txt",
+      "cause": "The independent parser initially asserted old hist IDs equal current expanded column IDs.",
+      "repair": "Use current hist blocks and verify the one-to-one old-ID map; rerun the full independent audit."
+    }
+  ],
+  "no_optimization_no_strategy_enumeration": true,
+  "write_scope": [
+    "research/workspaces/six-boss1-20261111/actual_pair_20910/",
+    "research/workspaces/six-boss1-20261111/actual_pair_20910.md"
+  ]
+}
