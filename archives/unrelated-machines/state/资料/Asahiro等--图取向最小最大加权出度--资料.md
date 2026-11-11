@@ -23,7 +23,7 @@ related_objects:
 
 # 阅读边界与对象身份
 
-本条目对应冻结作者稿 `history/source/literature/unrelated_machines/asahiro_miyano_ono_2011_cactus_orientation_author.pdf`，两个冻结提交的字节相同；`clean show` 报告源 SHA-256 为 `5db93652d80fd92b6440e0a0e22edf09f78e2b886c95cb4adf171c67ee147`，大小 271,837 字节。PDF 从摘要、定义、全部算法章节、三个困难性归约、结论和参考文献逐段转写阅读。本文档保存论文声称和其在稿件中给出的证明机制；没有对参考文献外部网页、期刊最终排版或作者身份做独立核验。
+本条目对应冻结作者稿 `history/source/literature/unrelated_machines/asahiro_miyano_ono_2011_cactus_orientation_author.pdf`，两个冻结提交的字节相同；`clean show` 报告源 SHA-256 为 `5db93652d80fd92b6440e0a0e22edfdeb09f78e2b886c95cb4adf171c67ee147`，大小 271,837 字节。PDF 从摘要、定义、全部算法章节、三个困难性归约、结论和参考文献逐段转写阅读。本文档保存论文声称和其在稿件中给出的证明机制；没有对参考文献外部网页、期刊最终排版或作者身份做独立核验。
 
 这是一项图取向/受限调度文献资源，不是当前六人共同目录、客户均分效用、完整有序历史纯 SPE 的证明。论文的 scheduling 对照把节点看作机器、边看作任务，每个任务只能在预先给定的两个端点机器中选一个，且该任务在两个端点的处理时间相同（等于边权）。因此它只是一般 unrelated-machines 模型的一个很窄的二端点子类，不能把下述图类结论直接代入六提供者问题。
 

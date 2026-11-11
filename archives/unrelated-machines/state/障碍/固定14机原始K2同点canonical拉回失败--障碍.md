@@ -147,7 +147,7 @@ L(Z_{M0u}A_{Hv0})=\ell(abc)=-\frac1{160}<0.
 
 \[
 g=\frac{Z_{M0u}+Z_{M0v}}2-
-rac{A_{M0}}4,
+\frac{A_{M0}}4,
 \]
 
 故
