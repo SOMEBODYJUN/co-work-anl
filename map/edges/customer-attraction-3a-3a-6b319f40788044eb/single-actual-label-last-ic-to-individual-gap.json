@@ -1,0 +1,46 @@
+{
+  "edge_id": "boss6-ca-6b31-single-actual-label-last-ic-to-individual-gap",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-STRATEGY-CONE"
+  ],
+  "target_ids": [
+    "M-27562e8b0be542e9a60f5fdb863dfcc9"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定任意m,p≥1和完整有序历史策略σ；仅在根实际路径m次都选择同一个标签B的子域取可行单位客户重数。离轨动作与平局任意；比较为任意m个合法带索引主题T1,…,Tm，允许重复。",
+  "roles": {
+    "CA-STRATEGY-CONE": "保留每有序历史的真实IC及逐类型非负对偶规则，特别是实际末位历史h=B^(m−1)的全部偏离行。",
+    "M-27562e8b0be542e9a60f5fdb863dfcc9": "取得actual单标签路径分层中的每玩家净缺口上界；其它actual路径尚未覆盖。"
+  },
+  "explanation": "在actual叶B^m，覆盖行w_X=b=1_(B∈X)，每个实际玩家u_i=W/m。对比较元组记d_X=#j(Tj∈X)，v_X=1_(d_X>0)。在实际末历史h=B^(m−1)对每个Tj取一份真实IC行Γ_j，重复比较题按出现次数取同一行；当前已是末位，完全没有冻结未来的步骤。b=0时Σ_jΓ_j=−d_X；b=1时Σ_jΓ_j=1−d_X/m。目标行a_X=(2−1/m)w_X−v_X减ΣΓ_j在四类坐标分别为：b0/d0时0；b0/d>0时d−1；b1/d0时1−1/m；b1/d>0时(d−1)/m。全部非负，故这是每条所取IC乘子为1的精确非负对偶。与任意非负可行重数内积得比较覆盖≤(2−1/m)W；取真正最优m槽给OPT_m−W≤(1−1/m)W=(m−1)u_i。m1、零客户、空比较主题和自身零行均正常。",
+  "scope": "只付M-27562全称目标中actual路径单一标签这一精确分层；不要求全树恒B，不将此分层结果扩大到actual含两个或更多标签。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md",
+      "sha256": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39",
+      "section": "定理一：完整 SPE 的精确重数锥"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md",
+      "sha256": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39",
+      "section": "定理四：逐坐标精确对偶证书"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "原worker完整实读登记陈述、量词、正文与必要证据；逐步核所得结论及目标整条范围。复用成熟证明及同SHA充分证据，未重跑科学程序、BI、LP或旧审计。",
+  "contribution": {
+    "result": "任意m,p≥1、任意完整纯SPE，只要实际路径为同一标签B^m，就对每个实际玩家i有OPT_m−W≤(m−1)u_i；逐类型给出仅用实际末位IC的非负对偶。",
+    "remaining": "目标还量化actual使用两个或更多不同标签的所有完整纯SPE；本边没有这些策略的共同付款或反例，不能宣布一般(m−1)逐人缺口候选成立。"
+  },
+  "endpoint_pins": {
+    "CA-STRATEGY-CONE": "291bd4d94e33d40566453a33b5cf07b1c620b77362268417582efecb42b0c4bb",
+    "M-27562e8b0be542e9a60f5fdb863dfcc9": "d09851b0e4e7ffe475f6e3b6db54d1fbcaf028d60591be93c61af8bddac590a5"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/固定完整策略的客户重数锥--定理.md": "ae4bcfd424eca8d4e3d79965f72182c0b2c8eefb72e74b44c2521b519f7aad39"
+  },
+  "review_digest": "9a3319607b76bd6e83d90f2f320b3a57f1607385dbf68205acb56fdc4a102711"
+}

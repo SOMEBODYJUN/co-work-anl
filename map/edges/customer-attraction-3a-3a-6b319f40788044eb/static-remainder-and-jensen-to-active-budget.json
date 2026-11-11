@@ -1,0 +1,44 @@
+{
+  "edge_id": "boss6-ca-6b31-static-remainder-and-jensen-to-active-budget",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-1ea3dfad13c54333a9086854b6249f72"
+  ],
+  "target_ids": [
+    "M-2a29e052fe69401983eec20de4e86440"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意合法非负整数旧负载b，r≥1，κ∈{0,1}；比较为r个合法共同主题且可重复。真正静态安全v_(r+κ)(b)的对手Q有s=r+κ−1个合法竞争槽，不观察实际查询，可相关。",
+  "roles": {
+    "M-1ea3dfad13c54333a9086854b6249f72": "提供同一比较负载d和平均菜单负载L的非负REM与V_b(d)+R≤(r+s)M，再给Jensen到静态minimax的接口。",
+    "M-2a29e052fe69401983eec20de4e86440": "接收两种槽数、任意背景的活跃比较利润预算完整结论。"
+  },
+  "explanation": "固定任意r主题比较负载d与任意合法s槽竞争分布Q。令μ_A=E_Q主题A出现次数，Σμ=s，L_x=Σ_A μ_A1_(x∈A)，g(T)=Σ_(x∈T)1/(b_x+1+L_x)，M=max_Tg(T)。源的REM对d≥1给(d+L)/(b+1+L)−d/(b+d)≥0，d0单列L/(b+1+L)；所以V_b(d)+R=Σ_jg(T_j)+Σ_Aμ_Ag(A)≤(r+s)M且R≥0。倒数凸性给每T有g(T)≤E_QΣ_(x∈T)1/(b_x+1+c_Q(x))，从而V_b(d)≤(2r+κ−1)max_T E_Q f_b(T,Q)。同一Q上界对全部比较均成立，取比较最大得到F_r^active(b)；再取有限minimax最优Q得F_r^active(b)≤(2r+κ−1)v_(r+κ)(b)。r1/κ0时Q为空元组、μ=L=0，各式照常；没有把Factive替成仅新覆盖或原真实子SPE总利润。",
+  "scope": "M-2a29整条静态比较结论，κ0系数2r−1、κ1系数2r；不提供任一动态聚合安全前提或跨树旧玩家信用。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/静态模块原验证器的双证书与父审余项边界--程序.md",
+      "sha256": "5620e02cb54be5fdc0841bb2203d9adf0c051489eec69d874b0e8063b8334806",
+      "section": "父审的全背景静态余项：已证代数，不是动态信用"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/水位事件的共同信用与原树激励账--引理.md",
+      "sha256": "b8016751cd4d68e9236fa25dbf3b3a26c28a35b46e3205dee13190cfd86c6501",
+      "section": "两个聚合候选及有背景静态预算"
+    }
+  ],
+  "reviewed_by": "Boss6",
+  "review_note": "原worker完整实读登记陈述、量词、正文与必要证据；逐步核所得结论及目标整条范围。复用成熟证明及同SHA充分证据，未重跑科学程序、BI、LP或旧审计。",
+  "whole_result": "对每个合法整数旧背景b、r≥1及κ∈{0,1}，r个合法比较主题的最优活跃总利润F_r^active(b)=max Σ_(c_x>0)c_x/(b_x+c_x)满足F_r^active(b)≤(2r+κ−1)v_(r+κ)(b)，其中v为查询面对r+κ−1个不观察查询的合法静态竞争槽的真正有限minimax值。",
+  "endpoint_pins": {
+    "M-1ea3dfad13c54333a9086854b6249f72": "d813fd7ac18b0a4f48cd1f5d5fb71e6565b92de369a127830ec7e99ca9166cd9",
+    "M-2a29e052fe69401983eec20de4e86440": "4ba350a6249603cf32469a71a4c461e3f681ef8c5c2be78c47c77bbe924111f3"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/静态模块原验证器的双证书与父审余项边界--程序.md": "5620e02cb54be5fdc0841bb2203d9adf0c051489eec69d874b0e8063b8334806",
+    "archives/customer-attraction/state/引理/水位事件的共同信用与原树激励账--引理.md": "b8016751cd4d68e9236fa25dbf3b3a26c28a35b46e3205dee13190cfd86c6501"
+  },
+  "review_digest": "ffc2233c6c4c1a573b8ce03b78558b091e943ecf5418e36a4f09e8f13982fac0"
+}
