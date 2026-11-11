@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-boss4-four-source-clarifications.json",
-    "sha256": "71925471f8b6e1da794546eecfb1b3a406b5ed9a60700d35d4537c5db3dc7273"
+    "path": "research/registration/baseline-boss2-fixed-d-blmrs-slots-20261110.json",
+    "sha256": "7c58e349fc02db92f089ce21c8cc12ddb280a7dd7551ac750e27ba91b23ca6f7"
   },
   "objects": [
     {
@@ -16509,7 +16509,7 @@
     },
     {
       "object_id": "M-0a576e4d0f4647d18173160e6cbaad70",
-      "version": 1,
+      "version": 2,
       "title": "BLMRS 作业拟阵 assignment LP 的加最大作业舍入",
       "kind": "algorithm",
       "truth_status": "proved",
@@ -16517,19 +16517,25 @@
       "statement": "给定阈值 T 的可行 assignment LP 点，可多项式输出整数调度峰≤T+max_j p_j，从而给2近似。",
       "quantifiers": "对每个给定可行分数见证。",
       "assumptions": [
-        "按原论文多拟阵交构造；保原任务。"
+        "有限玩家/机器；每项有共同有限非负有理价值/尺寸",
+        "归一化、单调、整数值次模秩oracle；每项选择原整数polymatroid的一基",
+        "给定可行有理分数基见证；使用两个整数polymatroid交的整数性与多项式oracle算法"
       ],
       "scope": "冻结作者稿的对应定理。",
-      "objections": "保该版本的输入合同和归约方向。",
+      "objections": "冻结v1两相邻索引图的分数见证不成立；十人四项U_{3,10}反例及严格压缩槽替代证明、逐项双向对偶见新增必要evidence。定理结论与数学身份保留；不推广到机器依赖尺寸。",
       "body": {
         "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
-        "sha256": "3cdd2f7d112e3a64af8ad898328ed8c81865b51f1f9d3d5ad420b9ebfb53839d",
+        "sha256": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
         "section": "5. 舍入接口"
       },
       "evidence": [
         {
           "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
           "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md",
+          "sha256": "9c7a4bfe21f216b57edfbce69b591aabf1a4d3a637510eba54411f7d62774bd1"
         }
       ],
       "sources": [
@@ -19128,7 +19134,7 @@
     },
     {
       "object_id": "M-17240dfa6f6b45e3aca80c1cc929744c",
-      "version": 1,
+      "version": 2,
       "title": "BLMRS 两值一般 Santa Claus 与 makespan 的近似等价",
       "kind": "theorem",
       "truth_status": "proved",
@@ -19142,7 +19148,7 @@
       "objections": "保该版本的输入合同和归约方向。",
       "body": {
         "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
-        "sha256": "3cdd2f7d112e3a64af8ad898328ed8c81865b51f1f9d3d5ad420b9ebfb53839d",
+        "sha256": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
         "section": "2. 两值一般模型等价"
       },
       "evidence": [
@@ -34458,7 +34464,7 @@
     },
     {
       "object_id": "M-5ecd146af7cb4e7cbd110d3f635a57be",
-      "version": 1,
+      "version": 2,
       "title": "BLMRS 一般 Santa Claus 到 makespan 的近似归约",
       "kind": "theorem",
       "truth_status": "proved",
@@ -34472,7 +34478,7 @@
       "objections": "保该版本的输入合同和归约方向。",
       "body": {
         "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
-        "sha256": "3cdd2f7d112e3a64af8ad898328ed8c81865b51f1f9d3d5ad420b9ebfb53839d",
+        "sha256": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
         "section": "1. 一般 Santa Claus 到 Makespan"
       },
       "evidence": [
@@ -38288,7 +38294,7 @@
     },
     {
       "object_id": "M-737cbc9ea3b54c03b847026018cf5b19",
-      "version": 1,
+      "version": 2,
       "title": "BLMRS 资源拟阵 assignment LP 的减最大资源舍入",
       "kind": "algorithm",
       "truth_status": "proved",
@@ -38296,19 +38302,25 @@
       "statement": "给定阈值 T 的可行 assignment LP 点，可多项式输出整数分配，min value≥T−max_j v_j。",
       "quantifiers": "对每个给定可行分数见证。",
       "assumptions": [
-        "按原论文多拟阵交构造；保原资源。"
+        "有限玩家/机器；每项有共同有限非负有理价值/尺寸",
+        "归一化、单调、整数值次模秩oracle；每项选择原整数polymatroid的一基",
+        "给定可行有理分数基见证；使用两个整数polymatroid交的整数性与多项式oracle算法"
       ],
       "scope": "冻结作者稿的对应定理。",
-      "objections": "保该版本的输入合同和归约方向。",
+      "objections": "冻结v1两相邻索引图的分数见证不成立；十人四项U_{3,10}反例及严格压缩槽替代证明、逐项双向对偶见新增必要evidence。定理结论与数学身份保留；不推广到机器依赖尺寸。",
       "body": {
         "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
-        "sha256": "3cdd2f7d112e3a64af8ad898328ed8c81865b51f1f9d3d5ad420b9ebfb53839d",
+        "sha256": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
         "section": "5. 舍入接口"
       },
       "evidence": [
         {
           "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
           "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md",
+          "sha256": "9c7a4bfe21f216b57edfbce69b591aabf1a4d3a637510eba54411f7d62774bd1"
         }
       ],
       "sources": [
@@ -49027,7 +49039,7 @@
     },
     {
       "object_id": "M-a3feff9f6a574834925528d0f9d9d658",
-      "version": 1,
+      "version": 2,
       "title": "BLMRS 资源拟阵 Santa Claus 多项式局部搜索",
       "kind": "algorithm",
       "truth_status": "proved",
@@ -49041,7 +49053,7 @@
       "objections": "保该版本的输入合同和归约方向。",
       "body": {
         "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
-        "sha256": "3cdd2f7d112e3a64af8ad898328ed8c81865b51f1f9d3d5ad420b9ebfb53839d",
+        "sha256": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
         "section": "4. resource-matroid Santa Claus 局部搜索"
       },
       "evidence": [
@@ -63268,7 +63280,7 @@
     },
     {
       "object_id": "M-e7c107d268344ca592782a71e1925647",
-      "version": 1,
+      "version": 2,
       "title": "BLMRS 两值受限资源／作业拟阵模型双向近似归约",
       "kind": "theorem",
       "truth_status": "proved",
@@ -63282,7 +63294,7 @@
       "objections": "保该版本的输入合同和归约方向。",
       "body": {
         "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
-        "sha256": "3cdd2f7d112e3a64af8ad898328ed8c81865b51f1f9d3d5ad420b9ebfb53839d",
+        "sha256": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
         "section": "3. 两值资源/作业拟阵双向归约"
       },
       "evidence": [
@@ -81601,7 +81613,7 @@
     },
     {
       "object_id": "UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1",
-      "version": 2,
+      "version": 3,
       "title": "共享终端固定row-degree的锐二倍间隙",
       "kind": "construction",
       "truth_status": "proved",
@@ -81626,7 +81638,7 @@
         },
         {
           "path": "archives/unrelated-machines/state/审查/稀释共享终端fixed-d全行CONFIG五源读后--审查.md",
-          "sha256": "1cfdbab9c444721c7cc023672111d23871e8ef6b0dbf1337045f7b4673df8c9b"
+          "sha256": "4ae80beac407853797940d2bbd9047174c0a56d494b255ea2c1a8a949911a80f"
         },
         {
           "path": "archives/unrelated-machines/state/审查/稀释共享终端row-degree最终section13读后增量--审查.md",
@@ -200283,7 +200295,7 @@
     },
     {
       "path": "archives/unrelated-machines/state/审查/稀释共享终端fixed-d全行CONFIG五源读后--审查.md",
-      "sha256": "1cfdbab9c444721c7cc023672111d23871e8ef6b0dbf1337045f7b4673df8c9b",
+      "sha256": "4ae80beac407853797940d2bbd9047174c0a56d494b255ea2c1a8a949911a80f",
       "disposition": "attachment",
       "object_ids": [
         "UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1"
@@ -202885,7 +202897,7 @@
     },
     {
       "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
-      "sha256": "3cdd2f7d112e3a64af8ad898328ed8c81865b51f1f9d3d5ad420b9ebfb53839d",
+      "sha256": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
       "disposition": "objects",
       "object_ids": [
         "M-5ecd146af7cb4e7cbd110d3f635a57be",
@@ -206660,6 +206672,16 @@
         "UM-FOREST-FIXED-GPC2-PAIR-LAW-EXTENSION-NO-v1"
       ],
       "reason": "明确六机三任务固定GPC2家族：分数关联森林与可实现指定行律不保证任意指定全部pair共同延拓；解析三比特不等式和单实例精确核验。"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md",
+      "sha256": "9c7a4bfe21f216b57edfbce69b591aabf1a4d3a637510eba54411f7d62774bd1",
+      "disposition": "attachment",
+      "object_ids": [
+        "M-737cbc9ea3b54c03b847026018cf5b19",
+        "M-0a576e4d0f4647d18173160e6cbaad70"
+      ],
+      "reason": "Theorems21/23的完整压缩质量槽替代证明与逐项对偶；保真结论并精确指出冻结v1两图的失败。"
     }
   ],
   "edge_files": [
