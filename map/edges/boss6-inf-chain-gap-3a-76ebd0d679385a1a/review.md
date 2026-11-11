@@ -2,7 +2,7 @@
 
 同一个符号∞ helper输出保持整数与原始CONFIG的全部有限正阈值；把它作用到下文明确构造的I_T，得到ConfigOPT=T、OPT=⌊√T⌋、N=T³+T的DegreeThree∩InfDegreeTwo族，因此本族间隙为Θ(N^(1/6))。
 
-本报告对应Boss6任务`boss6-inf-chain-gap-3a-76ebd0d679385a1a`。两个主覆盖对象分别为M-16209762a32e42e48ec20b76381b5e9d v1（以下A）及M-7bc9eab74ecd475db7df33c3f4b75e61 v1（以下B）。M-080d9b22ae87408f9a673a898c7a6dc3 v3（以下F）、M-a9534c70ffa74fca9a91cd270468de3f v3（以下D）及M-b126c4b3ff29400589f7f38abdca4d85 v3（以下G）仅为指定共享比较端点。只读clone；新报告、边和收据仅写指定staging。没有运行历史数学程序、证书、枚举或work.py，没有Git、队列、公屏写入。本次JSON的accepted是本worker的数学判断；native绑定、检查及发布由Root实际执行。
+本报告对应Boss6任务`boss6-inf-chain-gap-3a-76ebd0d679385a1a`。两个主覆盖对象分别为M-16209762a32e42e48ec20b76381b5e9d v1（以下A）及M-7bc9eab74ecd475db7df33c3f4b75e61 v1（以下B）。M-080d9b22ae87408f9a673a898c7a6dc3 v4（以下F；首轮完整实读其v3相同主合同）、M-a9534c70ffa74fca9a91cd270468de3f v3（以下D）及M-b126c4b3ff29400589f7f38abdca4d85 v3（以下G）仅为指定共享比较端点。只读clone；新报告、边和收据仅写指定staging。没有运行历史数学程序、证书、枚举或work.py，没有Git、队列、公屏写入。本次JSON的accepted是本worker的数学判断；native绑定、检查及发布由Root实际执行。
 
 ## 1. 目标合同与逐项审查范围
 
@@ -72,3 +72,11 @@ T/q≥√T≥2^(−1/6)N^(1/6)，且T/q≤2√T≤2N^(1/6)。
 原maxmin.pdf SHA-256确认为7f7b21ff08b37e8489e9f60527e9aa9458dc5cf4cd6cc6804869665c24d51f7f；pdfinfo显示49页。本次重新用pdftotext -layout分别导出并完整读PDF/印刷页4、6、8、9、12、13，共六页；另将8–9页渲染PNG实看Figure2及脚注位置。仅这些必要页用于本结论，没有声称读完或复审全部49页。临时导出及PNG在staging/tmp/pdf，仅为本次读证记录，不是独立数学资产，不需复制进正式仓库。
 
 精确输入SHA、导出文本SHA、每个文件实际读取范围与各端点当前pin另列reading-ledger.json。没有运行旧科学程序或证书；数学判断来自上述直接公式、容量证明、有限边界及成熟桥实际正文。
+
+## 8. F v4共享证据的定向publication refresh
+
+本次仅沿原任务恢复共享输入版本。当前F为v4，registration pin为5041d21ea4cc71de0cf1e759aade84c0cc09a86d8539510dc3683242679ff85c；主body SHA仍为8bfbaa80b98546b6d1320e9760bb9491165e26a6cef1b6cd35eb86116c822f66，statement/model/quantifiers/assumptions及truth_status不变。实读当前F完整record，并重读未改主body§4的unit-helper正反阈值、copy耗用、hole/prefix及零值边界段，首轮两条whole推导继续成立。
+
+唯一evidence版本变化是“归一化菜单福利与配置证书双源审查--审查.md”从a5d9a684e8d8413457f5cf999e28b8a6aa93b140256be3031d6f3e2e02742195变为63629abaa5cd2bcc0e42ff051936b91882ea63c711dfdac231f238763b682255。实际读取当前审查文件，针对父任务给出的§一/1补句核清：P_gate全任务安排中root pin留root；未选组connector留root、selector去gate；其余incidence留private。该补全涉及门控菜单的全任务调度说明，没有改动本包所用§二/2 normal form/state-dummy SC、有限证书边界或F的unit-helper证明；不把它扩展为本包额外数学审查。
+
+当前同ID任务保持两core、三read、goal及四个in-packet overlap；仅F pin改版。按仓库pin定义对当前registry的五个端点计算规范JSON SHA，与当前task全部input_pins逐项一致，其余四pin均与首轮一致。两条whole_result、推导、端点和overlap处置不变。仅更新本review、ledger、边的review引用及收据asset SHA；Root此前parent_review逐字保留。旧native绑定字段因review/输入改版由本staging去除，交Root重新bind/check，不冒称本worker执行过native检查。

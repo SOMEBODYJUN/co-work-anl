@@ -1,6 +1,6 @@
 # 3A 实读比较：固定正阈值的 DegreeThree 链式降度
 
-任务：unrelated-machines-3a-3a-826effc7485414e4。作者：Boss6 委派 worker。结论：当前核心陈述已完整核清；M-080d9b22ae87408f9a673a898c7a6dc3 的 read-add 已完成，现为 1 core/4 read，以其 finite unit-helper 路径给本 core 交一条完整缩放关系，覆盖为 linked。有限配置桥已经登记，不另称新漏登记。∞ helper 的全正阈值扩展与 InfDegreeTwo 排序、交域 gap 已有自足证明，单独提交仓库外提案，待 Root 登记并交定向任务承接；它们不是数学 open，也不塞进旧对象的整个结论。
+任务：unrelated-machines-3a-3a-826effc7485414e4。作者：Boss6 委派 worker。结论：当前核心陈述已完整核清；M-080d9b22ae87408f9a673a898c7a6dc3 的 read-add 已完成，现为 1 core/4 read，以其 finite unit-helper 路径给本 core 交一条完整缩放关系，覆盖为 linked。有限配置桥已经登记，不另称新漏登记。∞ helper 的全正阈值扩展与 InfDegreeTwo 排序、交域 gap 已有自足证明，单独提交仓库外提案，已由 Root 登记并交已发布3B任务boss6-inf-chain-transfer-3b-ea6be0c00b1186cf承接；它们不是数学 open，也不塞进旧对象的整个结论。
 
 ## 1. 当前合同与实际输入
 
@@ -12,9 +12,9 @@
 | read | M-e52574ff126d4b128f222053c97bf596 | 3 | eff19fc84cf112c156c8fc3228f91b9cc55f928a88b6b3bc21fd9c5a2094130f |
 | read | M-b126c4b3ff29400589f7f38abdca4d85 | 3 | 290a361d6679820d0f4564c518bb120fd486835a7bf8cd08e6660438cf690029 |
 | read | UM-VW2010-THEOREM12-BACKEND-PRECHECK-v1 | 1 | 16a2920abfebbaed76d2492aee350d1b801fcfe5eb40c65c9a4f33ddddb02584 |
-| read | M-080d9b22ae87408f9a673a898c7a6dc3 | 3 | 6cd5f3d8efacfcd5bf14b184ae5f1a65b5dc3a44f804ecdad53a5c117ccb42e7 |
+| read | M-080d9b22ae87408f9a673a898c7a6dc3 | 4 | 5041d21ea4cc71de0cf1e759aade84c0cc09a86d8539510dc3683242679ff85c |
 
-上述四份原登记合同均已读取；另实读 M-080d9b22ae87408f9a673a898c7a6dc3 v3 完整合同及 body 全文（pin 6cd5f3d8efacfcd5bf14b184ae5f1a65b5dc3a44f804ecdad53a5c117ccb42e7），Root已完成其read-add；当前五端点pin均重新核对。以上 pin 按现行 research_runtime.pin 的稳定 JSON 规则独立计算并与 task.input_pins 一致。这里只报告字节核对，不冒充 Root 的 native bind/check 或远端状态查询。
+上述四份原登记合同均已读取；另实读 M-080d9b22ae87408f9a673a898c7a6dc3 v4 完整合同及 body 全文（pin 5041d21ea4cc71de0cf1e759aade84c0cc09a86d8539510dc3683242679ff85c），Root已完成其read-add；原发布时五端点pin已核对；本次F v4 publication refresh已按Root同ID刷新request 89d6e526e7494500b869128903161801执行最终guard：当前仍claimed/Boss6，五个input pins与当前registry记录逐一匹配，唯F改为v4 pin 5041d21ea4cc71de0cf1e759aade84c0cc09a86d8539510dc3683242679ff85c。以上 pin 按现行 research_runtime.pin 的稳定 JSON 规则独立计算并与 task.input_pins 一致。这里只报告字节核对，不冒充 Root 的 native bind/check 或远端状态查询。
 
 核心 body 是共享文献整理全文，SHA-256 为 a0d8bb0b5261e46ef6843a1e2c9bb812393f22953129ffba03313e0c16b5fb36；必要 primary maxmin.pdf 的 SHA-256 为 7f7b21ff08b37e8489e9f60527e9aa9458dc5cf4cd6cc6804869665c24d51f7f。直接从该 PDF 读取印刷页 8、9、13 的文本，并结合仓库原有 maxmin.txt 的指定连续区间核对模型、定理及比较原文，没有声称阅读完整 49 页。
 
@@ -70,11 +70,11 @@ M-b126c4b3ff29400589f7f38abdca4d85 是存在家族的 Ω(n^{1/4}) LP gap，n 为
 
 对旧 InfDegreeTwo 家族取 T≥4，只需降低 T² 件总度T的 w。使用∞ helper，原 w 端值仍有限1，内部副本∞度≤2。新增 S=T²(T−1) 位 helper/物品，n′=T³+T，m′=T³+T²+T−1。整数 OPT 全阈值保持，配置 LP 阈值T可 lift，因此 DegreeThree∩InfDegreeTwo 有 gap≥√T=Ω((n′)^{1/6}) 的显式家族。∞度在此家族的玩家侧也≤2，但 root 总正度为T加外邻接数，b总正度T+1；没有两侧总度3。
 
-有限 helper=t 的 LP 桥是已有 M080d 的缩放/局部应用，不能重复登记。可独立登记的增量仅为同一个∞ helper输出对全部正阈值同时保持及InfDegreeTwo端点排序，后接此具体交域家族。该家族还可精确计值：q=floor√T时，每block root取q件u，失u的q位b各取q件w，q²≤T，故OPT=q；s>T时每位root配置都须含外B，而T位root只对应T−1件B，故配置LP最高阈值=T。∞桥输出的精确gap为T/q=Θ((n′)^{1/6})，只是该族的增长阶，不是全类tight gap。它不能写成旧M-b126的原Ω(n^{1/4})整条结果由核心推出；旧gap也不能反向证明核心对所有输入的降度定理。自足∞扩展与推论置于仓库外proposal/chain-config-infdegree-two-lemma.md，Root将登记并发布承接任务；不造self-edge或将新目标塞回旧对象。
+有限 helper=t 的 LP 桥是已有 M080d 的缩放/局部应用，不能重复登记。可独立登记的增量仅为同一个∞ helper输出对全部正阈值同时保持及InfDegreeTwo端点排序，后接此具体交域家族。该家族还可精确计值：q=floor√T时，每block root取q件u，失u的q位b各取q件w，q²≤T，故OPT=q；s>T时每位root配置都须含外B，而T位root只对应T−1件B，故配置LP最高阈值=T。∞桥输出的精确gap为T/q=Θ((n′)^{1/6})，只是该族的增长阶，不是全类tight gap。它不能写成旧M-b126的原Ω(n^{1/4})整条结果由核心推出；旧gap也不能反向证明核心对所有输入的降度定理。自足∞扩展与推论置于仓库外proposal/chain-config-infdegree-two-lemma.md，Root已登记并发布3B承接任务boss6-inf-chain-transfer-3b-ea6be0c00b1186cf；不造self-edge或将新目标塞回旧对象。
 
 ## 5. 既有 SC 单位路径到核心的完整缩放关系
 
-source 为 M-080d9b22ae87408f9a673a898c7a6dc3 v3，target 为 M-a9534c70ffa74fca9a91cd270468de3f v3。源body的唯一节“4. SC unit-helper 路径”已对任意非空有限SC agents和非负二进制有理值给出逐物品的实际分配双向变换；所保目标阈值正向≤1，反向任意正值。这个限制是目标阈值，不是每个估值≤1，更不需要先知道旧OPT≤1才能做一次阈值变换。
+source 为 M-080d9b22ae87408f9a673a898c7a6dc3 v4，target 为 M-a9534c70ffa74fca9a91cd270468de3f v3。源body的唯一节“4. SC unit-helper 路径”已对任意非空有限SC agents和非负二进制有理值给出逐物品的实际分配双向变换；所保目标阈值正向≤1，反向任意正值。这个限制是目标阈值，不是每个估值≤1，更不需要先知道旧OPT≤1才能做一次阈值变换。
 
 数学上对核心任意给定有限实t>0，直接把每条新helper的值设为t，并使用源的逐物品copy/左右matching公式。该证明只用正阈值、单归属及copy原值对应，不用数值离散化，故源虽在有限二进制有理输入上表述，其显式matching公式在任意有限实t处可直接逐项验证。算法编码的多项式声明另限显式二进制有理原值和有理t：此时可先用v_ij/t归一化有限原值，在目标阈值1应用源的unit-helper证明，再把全体值乘回t。单位helper变为t，原玩家的专属copy恢复原值。有限有理除乘与精确比较按输入和t的总位长多项式。若按文献记号还把原∞端纳入核心域，先用v̂_ij=min(v_ij,t)（∞截t）。任一bundle达t当且仅当封顶后达t：若含至少一个≥t端，单件封顶t已够；否则完全不变。因此先在有限v̂/t上使用源，最后把原玩家copy的估值恢复v_ij。正向实际owner拿自己的copy，所以其原效用准确保持；反向任意新阈值t见证经同一封顶仍达t，源计数投影可行，且原copy到原物品的值一一对应，恢复估值不降阈值。这个小步只付本次t，不宣称原∞的全值与有限封顶OPT相同。特别是即使旧OPT>1（归一化单位），只要给定旧分配已达阈值1，逐物品保留旧owner自己的copy仍保持每个旧玩家的全部价值，新helper各值1，因此新分配达到1；此边直接用这一构造，不从旧OPT≤1的精确最优值结论跳步。
 
@@ -88,4 +88,15 @@ source 为 M-080d9b22ae87408f9a673a898c7a6dc3 v3，target 为 M-a9534c70ffa74fca
 
 M-90610eea6c6447188c03208eaa549254（InfDegreeOne gap）、M-de7aec4bd7c24b0f9dc342c483c4a75e（严格2硬度）、一般 MaxMin 半整数声明只作登记候选定位，不是本包新增端点，没有迁移这些结果。§3.1 原文顺带含 Theorem3.1、§4原文含 Lemma4.1，不把读到这些文本冒作它们主任务的交付。
 
-本任务提交一核心的准确coverage；read对象没有被重复记为核心。新增关系在M080d正式read-add后已列入asset，由Root最终native bind/check；内容是§5完整缩放所得core whole_result，不是LP加分性质替代整数目标。review与reading-ledger为本次说明资产，收据不把自身列asset。新∞扩展已经证明，余下是Root登记、发布承接及后续构图，不是补数学实验。worker未做native bind/check、队列done、推送或科学程序重放。
+本任务提交一核心的准确coverage；read对象没有被重复记为核心。新增关系在M080d正式read-add后已列入asset，由Root最终native bind/check；内容是§5完整缩放所得core whole_result，不是LP加分性质替代整数目标。review与reading-ledger为本次说明资产，收据不把自身列asset。新∞扩展已经登记，已发布3B任务承接后续构图；这里没有待补的数学实验。worker未做native bind/check、队列done、推送或科学程序重放。
+
+
+## 7. F v4 的有限 publication refresh
+
+本次只完整读取 M-080d9b22ae87408f9a673a898c7a6dc3 v4 record，并检查一项已发布 evidence delta。F 的 model、statement、quantifiers、assumptions 及 body（8bfbaa80b98546b6d1320e9760bb9491165e26a6cef1b6cd35eb86116c822f66）完全保持；version升4，当前registration pin为5041d21ea4cc71de0cf1e759aade84c0cc09a86d8539510dc3683242679ff85c，objections仅追加本次澄清的追溯说明。
+
+改动的“归一化菜单福利与配置证书双源审查”由旧SHA a5d9a684e8d8413457f5cf999e28b8a6aa93b140256be3031d6f3e2e02742195更新到63629abaa5cd2bcc0e42ff051936b91882ea63c711dfdac231f238763b682255。本轮实读该页§一1（当前29–39行），确认P_gate正向全任务调度现已显写：root pin留root；选中组connector放gate、selector放相应private；未选组connector留root、selector去gate；剩余所有incidence（含未选states和零jobs）留各自private。没有重新审查福利13/8或其它菜单定理。
+
+本边使用的是未改body的唯一节“4. SC unit-helper 路径”，本轮重读当前58–65行；其copy、hole、实际正阈值正反向及helper占用计数没有变化。P_gate的root/gate/private全任务澄清不进入本边的fixed-threshold unit-helper推导，故保原accepted whole数学、core v3、实际3B承接任务和全部范围边界。仅刷新F版本/输入pin、该证据版本和本review/ledger的字节引用；最终native重新绑定/检查由Root执行。
+
+本次publication refresh的最终guard只读取本task和当前五个record计算pin，并核staging证据/资产SHA；未执行native bind/check、Git、队列写或数学程序。Root随后对原文件重新绑定和检查。
