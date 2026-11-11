@@ -1,0 +1,779 @@
+{
+  "schema": 1,
+  "review_kind": "有限实质3D审读：五个BLMRS pending对象的数学比较与交付有效性",
+  "reviewed_by": "Boss6 / matroid_pending_math_review",
+  "reviewed_at_utc": "2026-11-11T07:21:55.675945+00:00",
+  "authorized_scope": {
+    "repository": "/workspace/scratch/62622ba39554/co-work-anl-boss6",
+    "staging_file": "/workspace/scratch/62622ba39554/staging-matroid-review.json",
+    "intended_report": "research/workspaces/map-v2/Boss6/current-run/matroid-pending-math-review.json",
+    "only_write_staging": true,
+    "no_git_queue_registry_body_edge_integration_mutation": true,
+    "publication_and_copy": "按父Boss后续统一复制和发布；本worker不复制入仓库"
+  },
+  "overall_verdict": "五对象的现行数学结论均可在明确模型和成熟证明边界下保留；本轮未发现应把它们标假的理由。已付清压缩质量槽、常向量对偶与旧singleton/private桥的比较；旧566d done已因三个输入pin变化失效，现有Boss2 claimed source repair尚未done；另外三个主任务available、一个主任务claimed且无done。因此五对象全部保pending，本轮可清集合为空。源delta实读不等于主覆盖done。",
+  "snapshot": {
+    "source": "本clone当前只读文件；未fetch/sync，不声称新的远端状态",
+    "registry_sha256": "4026be89754c42860af796dcce6b73628ffe421a274bf50e6693b66917bd42c2",
+    "registry_record_pin": "a879713003ff9419a8974579a2c64311ca00fecbabc2daff16801ecd7bbdeda4",
+    "integration_sha256": "401081e2e5fe2c2db2cbaacb1d698252f464313c587ebedca3b924dfe0924b3d",
+    "integration_record_pin": "16000144fecffdeece9f13a70a3b59e8696df06ca9a70cf61edc26a09ed952fb",
+    "integration_registry_pin": "a879713003ff9419a8974579a2c64311ca00fecbabc2daff16801ecd7bbdeda4",
+    "coverage_sha256": "5d97042aed5ec8928739831f219226143801182320349b4040fc1898a660619d",
+    "object_pins": {
+      "M-0a576e4d0f4647d18173160e6cbaad70": "3dc9e4fefd70e75055f18cfabea7f3b779e1c8a48fa9b5051374e2c9943bcb93",
+      "M-17240dfa6f6b45e3aca80c1cc929744c": "f033275c1d9574034b92eafeb232a706db3a6ecba82633b537928d88be3b5779",
+      "M-737cbc9ea3b54c03b847026018cf5b19": "8cf0ef3b2e88c2a2e1253b318c333e212f60184c7482c182cee8e33434f8d758",
+      "M-a3feff9f6a574834925528d0f9d9d658": "41aec13327cb012d5d6739317141f856f7d95b3df59cd831d486548a7561839e",
+      "M-e7c107d268344ca592782a71e1925647": "b07db459d993b150fd8a8d01c8cf01f689bde95a9689321d4c79bd9026d8881f"
+    },
+    "five_present_in_pending_changes": [
+      "M-0a576e4d0f4647d18173160e6cbaad70",
+      "M-17240dfa6f6b45e3aca80c1cc929744c",
+      "M-737cbc9ea3b54c03b847026018cf5b19",
+      "M-a3feff9f6a574834925528d0f9d9d658",
+      "M-e7c107d268344ca592782a71e1925647"
+    ]
+  },
+  "object_records": [
+    {
+      "object_id": "M-0a576e4d0f4647d18173160e6cbaad70",
+      "version": 2,
+      "title": "BLMRS 作业拟阵 assignment LP 的加最大作业舍入",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "restricted job-matroid makespan，公共任务尺寸。",
+      "statement": "给定阈值 T 的可行 assignment LP 点，可多项式输出整数调度峰≤T+max_j p_j，从而给2近似。",
+      "quantifiers": "对每个给定可行分数见证。",
+      "assumptions": [
+        "有限玩家/机器；每项有共同有限非负有理价值/尺寸",
+        "归一化、单调、整数值次模秩oracle；每项选择原整数polymatroid的一基",
+        "给定可行有理分数基见证；使用两个整数polymatroid交的整数性与多项式oracle算法"
+      ],
+      "scope": "冻结作者稿的对应定理。",
+      "objections": "冻结v1两相邻索引图的分数见证不成立；十人四项U_{3,10}反例及严格压缩槽替代证明、逐项双向对偶见新增必要evidence。定理结论与数学身份保留；不推广到机器依赖尺寸。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
+        "sha256": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
+        "section": "5. 舍入接口"
+      },
+      "evidence": [
+        {
+          "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
+          "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md",
+          "sha256": "9c7a4bfe21f216b57edfbce69b591aabf1a4d3a637510eba54411f7d62774bd1"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/bamas_et_al_2023_santa_claus_makespan_matroids_v1.pdf",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/bamas_et_al_2023_santa_claus_makespan_matroids_v1.pdf"
+      ],
+      "registration_pin": "3dc9e4fefd70e75055f18cfabea7f3b779e1c8a48fa9b5051374e2c9943bcb93",
+      "observed_coverage": {
+        "state": "needs-decision",
+        "object_pin": "3dc9e4fefd70e75055f18cfabea7f3b779e1c8a48fa9b5051374e2c9943bcb93",
+        "comparison_scope": "No completed comparison batch yet",
+        "reason": "Assign a concrete comparison task"
+      }
+    },
+    {
+      "object_id": "M-17240dfa6f6b45e3aca80c1cc929744c",
+      "version": 2,
+      "title": "BLMRS 两值一般 Santa Claus 与 makespan 的近似等价",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "两正值 u≤w；Santa 值域{0,u,w}、makespan时间域{u,w,∞}。",
+      "statement": "对任意 α≥2，两值 Santa Claus 的多项式 α-近似 iff 两值 makespan 的多项式(2−1/α)-近似。",
+      "quantifiers": "每个α≥2；仅两值模型。",
+      "assumptions": [
+        "正向相关配置数位多项式，反向保持两种作业大小。"
+      ],
+      "scope": "冻结作者稿的对应定理。",
+      "objections": "保该版本的输入合同和归约方向。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
+        "sha256": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
+        "section": "2. 两值一般模型等价"
+      },
+      "evidence": [
+        {
+          "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
+          "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/bamas_et_al_2023_santa_claus_makespan_matroids_v1.pdf",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/bamas_et_al_2023_santa_claus_makespan_matroids_v1.pdf"
+      ],
+      "registration_pin": "f033275c1d9574034b92eafeb232a706db3a6ecba82633b537928d88be3b5779",
+      "observed_coverage": {
+        "state": "needs-decision",
+        "object_pin": "f033275c1d9574034b92eafeb232a706db3a6ecba82633b537928d88be3b5779",
+        "comparison_scope": "No completed comparison batch yet",
+        "reason": "Assign a concrete comparison task"
+      }
+    },
+    {
+      "object_id": "M-737cbc9ea3b54c03b847026018cf5b19",
+      "version": 2,
+      "title": "BLMRS 资源拟阵 assignment LP 的减最大资源舍入",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "restricted resource-matroid Santa Claus。",
+      "statement": "给定阈值 T 的可行 assignment LP 点，可多项式输出整数分配，min value≥T−max_j v_j。",
+      "quantifiers": "对每个给定可行分数见证。",
+      "assumptions": [
+        "有限玩家/机器；每项有共同有限非负有理价值/尺寸",
+        "归一化、单调、整数值次模秩oracle；每项选择原整数polymatroid的一基",
+        "给定可行有理分数基见证；使用两个整数polymatroid交的整数性与多项式oracle算法"
+      ],
+      "scope": "冻结作者稿的对应定理。",
+      "objections": "冻结v1两相邻索引图的分数见证不成立；十人四项U_{3,10}反例及严格压缩槽替代证明、逐项双向对偶见新增必要evidence。定理结论与数学身份保留；不推广到机器依赖尺寸。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
+        "sha256": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
+        "section": "5. 舍入接口"
+      },
+      "evidence": [
+        {
+          "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
+          "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+        },
+        {
+          "path": "archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md",
+          "sha256": "9c7a4bfe21f216b57edfbce69b591aabf1a4d3a637510eba54411f7d62774bd1"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/bamas_et_al_2023_santa_claus_makespan_matroids_v1.pdf",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/bamas_et_al_2023_santa_claus_makespan_matroids_v1.pdf"
+      ],
+      "registration_pin": "8cf0ef3b2e88c2a2e1253b318c333e212f60184c7482c182cee8e33434f8d758",
+      "observed_coverage": {
+        "state": "needs-decision",
+        "object_pin": "8cf0ef3b2e88c2a2e1253b318c333e212f60184c7482c182cee8e33434f8d758",
+        "comparison_scope": "No completed comparison batch yet",
+        "reason": "Assign a concrete comparison task"
+      }
+    },
+    {
+      "object_id": "M-a3feff9f6a574834925528d0f9d9d658",
+      "version": 2,
+      "title": "BLMRS 资源拟阵 Santa Claus 多项式局部搜索",
+      "kind": "algorithm",
+      "truth_status": "proved",
+      "model": "受限资源拟阵 Santa Claus。",
+      "statement": "每固定 ε>0 可多项式输出(8+ε)-近似；两值子域(4+ε)-近似。",
+      "quantifiers": "任意该受限拟阵输入；两值界另需两值。",
+      "assumptions": [
+        "原论文拟阵访问和精度合同。"
+      ],
+      "scope": "冻结作者稿的对应定理。",
+      "objections": "保该版本的输入合同和归约方向。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
+        "sha256": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
+        "section": "4. resource-matroid Santa Claus 局部搜索"
+      },
+      "evidence": [
+        {
+          "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
+          "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/bamas_et_al_2023_santa_claus_makespan_matroids_v1.pdf",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/bamas_et_al_2023_santa_claus_makespan_matroids_v1.pdf"
+      ],
+      "registration_pin": "41aec13327cb012d5d6739317141f856f7d95b3df59cd831d486548a7561839e",
+      "observed_coverage": {
+        "state": "needs-decision",
+        "object_pin": "41aec13327cb012d5d6739317141f856f7d95b3df59cd831d486548a7561839e",
+        "comparison_scope": "No completed comparison batch yet",
+        "reason": "Assign a concrete comparison task"
+      }
+    },
+    {
+      "object_id": "M-e7c107d268344ca592782a71e1925647",
+      "version": 2,
+      "title": "BLMRS 两值受限资源／作业拟阵模型双向近似归约",
+      "kind": "theorem",
+      "truth_status": "proved",
+      "model": "两值 restricted resource-matroid Santa Claus 与 restricted job-matroid makespan。",
+      "statement": "每个α≥2，前者多项式α-近似 iff 后者多项式(2−1/α)-近似。",
+      "quantifiers": "两值受限拟阵输入。",
+      "assumptions": [
+        "原拟阵/多拟阵合同；多拟阵对偶和同值项聚合/回译。"
+      ],
+      "scope": "冻结作者稿的对应定理。",
+      "objections": "保该版本的输入合同和归约方向。",
+      "body": {
+        "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
+        "sha256": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
+        "section": "3. 两值资源/作业拟阵双向归约"
+      },
+      "evidence": [
+        {
+          "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
+          "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+        }
+      ],
+      "sources": [
+        "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/literature/unrelated_machines/bamas_et_al_2023_santa_claus_makespan_matroids_v1.pdf",
+        "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/literature/unrelated_machines/bamas_et_al_2023_santa_claus_makespan_matroids_v1.pdf"
+      ],
+      "registration_pin": "b07db459d993b150fd8a8d01c8cf01f689bde95a9689321d4c79bd9026d8881f",
+      "observed_coverage": {
+        "state": "needs-decision",
+        "object_pin": "b07db459d993b150fd8a8d01c8cf01f689bde95a9689321d4c79bd9026d8881f",
+        "comparison_scope": "No completed comparison batch yet",
+        "reason": "Assign a concrete comparison task"
+      }
+    }
+  ],
+  "exact_file_pins": {
+    "body": {
+      "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
+      "sha256": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a"
+    },
+    "corrected_proof": {
+      "path": "archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md",
+      "sha256": "9c7a4bfe21f216b57edfbce69b591aabf1a4d3a637510eba54411f7d62774bd1"
+    },
+    "old_proof": {
+      "path": "map/edges/unrelated-machines-3a-3a-566d00453361c959/complement-rounding-proof.md",
+      "sha256": "b718fd5ea5178265445c4c0697d87f0f29a2ecaa629c267e2fd746606c25df9d"
+    },
+    "old_edge": {
+      "path": "map/edges/unrelated-machines-3a-3a-566d00453361c959/resource-job-rounding-equivalence.json",
+      "sha256": "2938307a80520d5a9fdac539bb3fdca03dc66a99b2fd2849ec2ba051ec98eb53"
+    },
+    "old_receipt": {
+      "path": "map/receipts/unrelated-machines-3a-3a-566d00453361c959.json",
+      "sha256": "17914fdd84b2560c94f8df87c203dc98db7db23de476e67250a840f7285544e1"
+    },
+    "paper": {
+      "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
+      "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+    },
+    "source_refresh": {
+      "path": "research/workspaces/map-v2/Boss2/fixed-d-blmrs-source-refresh.json",
+      "sha256": "ec24acc839dbb8567cb80f16dec87e3420b8d7ac06dfa1d3963f6050541ade9b"
+    },
+    "baseline": {
+      "path": "research/registration/baseline-boss2-fixed-d-blmrs-slots-20261110.json",
+      "sha256": "7c58e349fc02db92f089ce21c8cc12ddb280a7dd7551ac750e27ba91b23ca6f7"
+    },
+    "other_review": {
+      "path": "research/workspaces/map-v2/Boss6/current-run/um-pending-integration-review.json",
+      "sha256": "defbdefc05b745f16fbf5112472b3c95c4313da7b4735ebef7be0ad8af805121"
+    }
+  },
+  "clear_exact_reviewed_delta": {
+    "object_ids": [],
+    "edge_ids": [],
+    "task_ids": [],
+    "archive_scopes": [],
+    "reason": "这份3D数学比较报告不能替代队列主owner的当前pin覆盖收据；现有有效done来源为空。"
+  },
+  "keep_pending": {
+    "object_ids": [
+      "M-0a576e4d0f4647d18173160e6cbaad70",
+      "M-17240dfa6f6b45e3aca80c1cc929744c",
+      "M-737cbc9ea3b54c03b847026018cf5b19",
+      "M-a3feff9f6a574834925528d0f9d9d658",
+      "M-e7c107d268344ca592782a71e1925647"
+    ],
+    "stale_done_task_ids": [
+      "unrelated-machines-3a-3a-566d00453361c959"
+    ],
+    "existing_repair_task_ids": [
+      "boss2-6405-source-repair-2b7402c49967e1c2"
+    ],
+    "repair_owner": "Boss2",
+    "main_tasks_without_done": [
+      "unrelated-machines-3a-3a-b68de77a6cb0fb55",
+      "unrelated-machines-3a-3a-e1f95bf98a191bd2",
+      "unrelated-machines-3a-3a-71b6862653595dda",
+      "unrelated-machines-3a-3a-fc54f981449e3903"
+    ],
+    "old_edge_id": "blmrs-resource-job-additive-rounding-complement-equivalence",
+    "old_edge_is_current_canonical": false,
+    "instruction": "沿原ID和已有owner接续；不另造repair，不把本轮delta审读计成主包done，不清UM存档整体pending。"
+  },
+  "task_audit": [
+    {
+      "task_id": "unrelated-machines-3a-3a-b68de77a6cb0fb55",
+      "path": "research/operations/map-v2/tasks/unrelated-machines-3a-3a-b68de77a6cb0fb55.json",
+      "sha256": "bde32bdbdfde9ceac9d3015f4827be39cc472323de18a9275be04e7619c5be6a",
+      "record_pin": "6250dedd4d98c5bb5fcd9a8e68e74e5f4d5efeee570d4fcba9b8357f2fb76541",
+      "state": "available",
+      "owner": null,
+      "core_object_ids": [
+        "M-0a576e4d0f4647d18173160e6cbaad70"
+      ],
+      "read_object_ids": [],
+      "input_pins": {
+        "M-0a576e4d0f4647d18173160e6cbaad70": "3dc9e4fefd70e75055f18cfabea7f3b779e1c8a48fa9b5051374e2c9943bcb93"
+      },
+      "stale_input_pins": {},
+      "supersedes": [],
+      "has_done_receipt": false,
+      "receipt_record_pin": null
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-e1f95bf98a191bd2",
+      "path": "research/operations/map-v2/tasks/unrelated-machines-3a-3a-e1f95bf98a191bd2.json",
+      "sha256": "26e91ceee3581d07420a6a7b4b5c293465d1180966b43fa4bd930a3cef4fcbf1",
+      "record_pin": "367f814fce4477656b1d41e620d7c4e9e66c4f364a2561db4be64938367ac7ab",
+      "state": "available",
+      "owner": null,
+      "core_object_ids": [
+        "M-17240dfa6f6b45e3aca80c1cc929744c"
+      ],
+      "read_object_ids": [],
+      "input_pins": {
+        "M-17240dfa6f6b45e3aca80c1cc929744c": "f033275c1d9574034b92eafeb232a706db3a6ecba82633b537928d88be3b5779"
+      },
+      "stale_input_pins": {},
+      "supersedes": [],
+      "has_done_receipt": false,
+      "receipt_record_pin": null
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-566d00453361c959",
+      "path": "research/operations/map-v2/tasks/unrelated-machines-3a-3a-566d00453361c959.json",
+      "sha256": "140f915ab1c117c42d23de7aa363aa89f331bb4f64cfcc45d5a259599d26bd6f",
+      "record_pin": "f4bccc1e298a662ceaba9af3686927ec8de3f4fedf22f7f8bdb551883cef9a35",
+      "state": "done",
+      "owner": "Boss2",
+      "core_object_ids": [
+        "M-737cbc9ea3b54c03b847026018cf5b19"
+      ],
+      "read_object_ids": [
+        "M-0a576e4d0f4647d18173160e6cbaad70",
+        "M-a3feff9f6a574834925528d0f9d9d658"
+      ],
+      "input_pins": {
+        "M-737cbc9ea3b54c03b847026018cf5b19": "5d96ae72406c54e71f2f87a16dd996d4157903ce947afa47bcba4f4dc6c3990b",
+        "M-0a576e4d0f4647d18173160e6cbaad70": "01b9d7e0b6cd46cd7dbbfdca071d32153cb7ccdcc588fd71c927e1b90dccdca9",
+        "M-a3feff9f6a574834925528d0f9d9d658": "e6429e59c1020a89055fe4c799976fbc27a231028bf1de7896017eb55a7f598b"
+      },
+      "stale_input_pins": {
+        "M-737cbc9ea3b54c03b847026018cf5b19": {
+          "recorded": "5d96ae72406c54e71f2f87a16dd996d4157903ce947afa47bcba4f4dc6c3990b",
+          "current": "8cf0ef3b2e88c2a2e1253b318c333e212f60184c7482c182cee8e33434f8d758"
+        },
+        "M-0a576e4d0f4647d18173160e6cbaad70": {
+          "recorded": "01b9d7e0b6cd46cd7dbbfdca071d32153cb7ccdcc588fd71c927e1b90dccdca9",
+          "current": "3dc9e4fefd70e75055f18cfabea7f3b779e1c8a48fa9b5051374e2c9943bcb93"
+        },
+        "M-a3feff9f6a574834925528d0f9d9d658": {
+          "recorded": "e6429e59c1020a89055fe4c799976fbc27a231028bf1de7896017eb55a7f598b",
+          "current": "41aec13327cb012d5d6739317141f856f7d95b3df59cd831d486548a7561839e"
+        }
+      },
+      "supersedes": [],
+      "has_done_receipt": true,
+      "receipt_record_pin": "c418f757a7909957f6651f0714b33f851fc91e83cd329a366a49327f64066788"
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-71b6862653595dda",
+      "path": "research/operations/map-v2/tasks/unrelated-machines-3a-3a-71b6862653595dda.json",
+      "sha256": "44ac57598cbf1b1a5adc41ecb08fd738c9b5acdc521e63821e0418d1bdfd526a",
+      "record_pin": "a2f5d9ee58bba3015a4081fb79e1c8c17c6f623c1be6e1c207b72dbc8efe4a37",
+      "state": "claimed",
+      "owner": "Boss2",
+      "core_object_ids": [
+        "M-a3feff9f6a574834925528d0f9d9d658"
+      ],
+      "read_object_ids": [],
+      "input_pins": {
+        "M-a3feff9f6a574834925528d0f9d9d658": "41aec13327cb012d5d6739317141f856f7d95b3df59cd831d486548a7561839e"
+      },
+      "stale_input_pins": {},
+      "supersedes": [],
+      "has_done_receipt": false,
+      "receipt_record_pin": null
+    },
+    {
+      "task_id": "unrelated-machines-3a-3a-fc54f981449e3903",
+      "path": "research/operations/map-v2/tasks/unrelated-machines-3a-3a-fc54f981449e3903.json",
+      "sha256": "812791faccd15c229923343ea07ead22ef88c5ae5de931771b06849e6fc1b92c",
+      "record_pin": "760129f3a4410845d35e14e02c6cf66d507fe26af1833e92561dfd210a74a9f4",
+      "state": "available",
+      "owner": null,
+      "core_object_ids": [
+        "M-e7c107d268344ca592782a71e1925647"
+      ],
+      "read_object_ids": [],
+      "input_pins": {
+        "M-e7c107d268344ca592782a71e1925647": "b07db459d993b150fd8a8d01c8cf01f689bde95a9689321d4c79bd9026d8881f"
+      },
+      "stale_input_pins": {},
+      "supersedes": [],
+      "has_done_receipt": false,
+      "receipt_record_pin": null
+    },
+    {
+      "task_id": "boss2-6405-source-repair-2b7402c49967e1c2",
+      "path": "research/operations/map-v2/tasks/boss2-6405-source-repair-2b7402c49967e1c2.json",
+      "sha256": "7a52eb184e058ee40a29083a90ee94473a724f0310ecc0b44b23d01b042b9805",
+      "record_pin": "272c3b82c54f5b6f3159812066872053d948061a4824ec250e25322f9941a743",
+      "state": "claimed",
+      "owner": "Boss2",
+      "core_object_ids": [
+        "M-737cbc9ea3b54c03b847026018cf5b19"
+      ],
+      "read_object_ids": [
+        "M-0a576e4d0f4647d18173160e6cbaad70",
+        "M-a3feff9f6a574834925528d0f9d9d658"
+      ],
+      "input_pins": {
+        "M-737cbc9ea3b54c03b847026018cf5b19": "8cf0ef3b2e88c2a2e1253b318c333e212f60184c7482c182cee8e33434f8d758",
+        "M-0a576e4d0f4647d18173160e6cbaad70": "3dc9e4fefd70e75055f18cfabea7f3b779e1c8a48fa9b5051374e2c9943bcb93",
+        "M-a3feff9f6a574834925528d0f9d9d658": "41aec13327cb012d5d6739317141f856f7d95b3df59cd831d486548a7561839e"
+      },
+      "stale_input_pins": {},
+      "supersedes": [
+        "unrelated-machines-3a-3a-566d00453361c959"
+      ],
+      "has_done_receipt": false,
+      "receipt_record_pin": null
+    }
+  ],
+  "valid_done_sources": {
+    "current_valid_done_task_ids": [],
+    "historical_done": {
+      "task_id": "unrelated-machines-3a-3a-566d00453361c959",
+      "owner": "Boss2",
+      "receipt": {
+        "path": "map/receipts/unrelated-machines-3a-3a-566d00453361c959.json",
+        "sha256": "17914fdd84b2560c94f8df87c203dc98db7db23de476e67250a840f7285544e1",
+        "record_pin": "c418f757a7909957f6651f0714b33f851fc91e83cd329a366a49327f64066788"
+      },
+      "embedded_receipt_equals_file": true,
+      "integration_task_receipt_pin": "c418f757a7909957f6651f0714b33f851fc91e83cd329a366a49327f64066788",
+      "validity": "历史资产字节与嵌入收据一致，但原核心737及只读0a/a3三输入均已stale，不能作为当前主覆盖。",
+      "asset_byte_mismatches": []
+    }
+  },
+  "actual_comparison_edges": [
+    {
+      "edge_id": "blmrs-resource-job-additive-rounding-complement-equivalence",
+      "path": "map/edges/unrelated-machines-3a-3a-566d00453361c959/resource-job-rounding-equivalence.json",
+      "sha256": "2938307a80520d5a9fdac539bb3fdca03dc66a99b2fd2849ec2ba051ec98eb53",
+      "record_pin": "52f0b33a138d6bc1e227a52d7053c3b515a95b24bab6d2e8021834b1105955a0",
+      "kind": "equivalent_to",
+      "status_in_file": "accepted",
+      "source_ids": [
+        "M-737cbc9ea3b54c03b847026018cf5b19"
+      ],
+      "target_ids": [
+        "M-0a576e4d0f4647d18173160e6cbaad70"
+      ],
+      "endpoint_pins_in_file": {
+        "M-0a576e4d0f4647d18173160e6cbaad70": "01b9d7e0b6cd46cd7dbbfdca071d32153cb7ccdcc588fd71c927e1b90dccdca9",
+        "M-737cbc9ea3b54c03b847026018cf5b19": "5d96ae72406c54e71f2f87a16dd996d4157903ce947afa47bcba4f4dc6c3990b"
+      },
+      "current_endpoint_pins": {
+        "M-0a576e4d0f4647d18173160e6cbaad70": "3dc9e4fefd70e75055f18cfabea7f3b779e1c8a48fa9b5051374e2c9943bcb93",
+        "M-737cbc9ea3b54c03b847026018cf5b19": "8cf0ef3b2e88c2a2e1253b318c333e212f60184c7482c182cee8e33434f8d758"
+      },
+      "evidence": [
+        {
+          "path": "map/edges/unrelated-machines-3a-3a-566d00453361c959/complement-rounding-proof.md",
+          "sha256": "b718fd5ea5178265445c4c0697d87f0f29a2ecaa629c267e2fd746606c25df9d"
+        },
+        {
+          "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
+          "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+        }
+      ],
+      "review_digest_in_file": "5c0c1d0de175f5327f8f116ac003e62650168e04246308d3bfdec5f1836b9f0a",
+      "canonical_registry_membership": false,
+      "canonical_integration_edge_pin": null,
+      "mathematical_verdict": "整目标双向算法接口的singleton上界+私有补偿推导本身成立；不能因端点stale说它数学被反驳。当前accepted文件不是当前有效交付；需已有source repair更新source-routing、所有输入pins及旧资产处置。"
+    }
+  ],
+  "source_delta": {
+    "old_source_and_route": "冻结v1 PDF Theorems21/23用相邻索引两图，将累计fractional remainder宣称可沿仅一格邻边传递；其右秩印为按边重复加右端容量。旧正文SHA3cdd2f7d112e3a64af8ad898328ed8c81865b51f1f9d3d5ad420b9ebfb53839d在旧566d task reading_ref中留存。本轮没有取出该旧正文完整字节，故不声称完成旧正文逐字diff；新旧数学差异依据直接读取的旧PDF、旧独立补基proof/edge/receipt、现行正文和新增替代证明。",
+    "new_source_and_route": "现行共同正文SHA c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a 的§5明确否定原两图分数见证，并以完整必要evidence rounding-slots-and-dual.md（9c7a4b...）替代证明；五对象都为v2，两个舍入对象新增明确有理/秩oracle/给定基见证合同和必要evidence，另三对象共享正文SHA刷新而其§2/3/4数学陈述保留。",
+    "exact_counterexample": [
+      "十人、四项价值/尺寸1的U_{3,10}，每项每人x=3/10。每项总质量3且每人总值/负载6/5，故为合法分数基见证；添零价值零秩第五项满足末项为零。",
+      "资源floor累计容量每人(0,0,0,1,0)。正槽u_i4仅接资源3/4，左总秩6而右总需求10，因此不可能饱和；改右秩为按不同邻点求和仍不能解决跨零容量槽传输。",
+      "作业ceil累计容量每人(1,0,0,1,0)。第三项只接u_i3及u_i2，两槽容量零，故其秩3基无法被保留。",
+      "反例只否定冻结原图的分数可行性步骤，不否定T−vmax或T+pmax结论；本轮按式核算，没有运行枚举程序。"
+    ],
+    "what_remains_valid": "旧singleton/private证明是另一个独立的完整接口变换，没有依赖两图分数可行性来证明其桥；它把Theorem21或23作为输入调用。两端定理由新槽证明和常向量对偶支付后，旧桥的数学关系仍可保留。"
+  },
+  "corrected_rounding_proof_review": {
+    "common_domain": "同一非空有限玩家/机器底集E；每项j公共有限非负有理值s_j；归一化、单调、整数值次模秩f_j的value oracle；输出每项原polymatroid的整数basis，允许二进制重数。输入有理x_j属于真实基多面体B(f_j)，资源端逐人值≥T，作业端逐机负载≤T。不是每资源只选一人的一般简化模型，也不是端点依赖p_ij。",
+    "resource_steps": [
+      "按v_j非增排序，以每玩家累计质量a_ij切出完整单位槽k≤floor(X_i)，边t_jik是资源质量区间与槽的正交长；每槽分数总质量恰1，丢去的是不足1的尾部总质量，未必只来自最后一项。",
+      "左秩F(S)=Σ_j f_j(pi_j(S))，利用投影对并相等、对交包含及原f的次模/单调性证明F次模；右秩G(S)=Σ_{不同槽b被S触及}c_b是coverage次模秩，不能按边重复计c_b。",
+      "t在F/G交中可行且饱和所有完整槽，总交重数上界就是槽容量Q；两个整数polymatroid交的整数性与oracle优化给出重数Q的整数解。此处只用两个交，不声称三个交整数。",
+      "投回原资源得到整数独立y_j∈Q_j，再在原资源补成原basis；资源非负故各人福利不降。阶梯函数w_i非增给Σ_k w_i(k)≥∫_1^∞w_i，因此损失≤∫_0^1w_i≤vmax，得到min≥T−vmax。",
+      "每个非整数断点所处的混合槽单独留存；纯槽按同一资源合并为二进制容量c_ij。每资源区间至多两端混合槽加一纯组，图规模O(|E||R|)，允许巨大二进制秩。",
+      "原资源补基逐坐标用强制包含该坐标的次模最小化求最大增量；已紧坐标保持紧，每坐标所属紧集合对并封闭，最后E紧。至多|E|次子模最小化/资源，不逐单位扩张。"
+    ],
+    "constant_vector_duality": [
+      "每项K_j=f_j(E)，z_j=K_j·1_E，g_j(S)=K_j|S|+f_j(E\\S)−K_j。原边际≤f_j({i})≤K_j，所以g_j单调；归一化、整数值、次模均保留。",
+      "B(g_j)=z_j−B(f_j)对实基和整数基双向成立。反向需由g_j单点上界推出b_j≤z_j，再用补集约束恢复原秩。以同一z_j再次取对偶恢复f_j。",
+      "资源→作业舍入方向：原值V_i≥T，C=Σ_jv_jK_j≥T，补向量的作业负载C−V_i≤C−T；调用作业T'+vmax接口再补回，得原值≥T−vmax。",
+      "作业→资源舍入方向：原负载L_i≤T，补向量资源值C−L_i≥C−T且非负；以τ=max(0,C−T)调用资源减pmax接口，再补回，得原负载≤C−τ+pmax≤T+pmax。",
+      "两向均保逐个原项basis、原公共值/尺寸和最大单项值；不用私有项或第三值。适用任意多值，但常数C可能远大于2，不能由此直接得到两值近似等价的2−1/α因子。"
+    ],
+    "job_two_approximation": "给定任意LP见证的合同只有T+pmax。先去掉秩零作业，活跃每个整数基总重数至少1，故pmax≤OPT；再在原秩oracle/分离合同下求最小LP阈值T_LP≤OPT，才得T_LP+pmax≤2OPT。不得推断pmax≤任意给定T，也不得说本报告实现了LP求解器。",
+    "nonnegativity_and_infinite_values": "资源端独立向量补基安全依赖非负价值；作业端随意补基会增负载，必须在对偶资源端先完成basis再取补向量。有限舍入定理不接收规范局部搜索中的∞重资源；只对轻有限资源调用。"
+  },
+  "old_singleton_private_bridge_review": {
+    "domain_and_goal": "同一restricted整数polymatroid给定分数基模型，任意多值；整目标是两个加减最大项算法合同的双向变换，含作业最优LP的2近似边界。",
+    "proof": [
+      "取z_j(i)=f_j({i})，g_j(S)=z_j(S)+f_j(E\\S)−f_j(E)。z_j逐坐标支配全部原独立向量，g单调次模整数，B(g)=z_j−B(f)双向保持整数/分数basis。",
+      "Ci=Σ_js_jz_j(i)随i变化。取C=max_i Ci，D_i=C−Ci=q_i s+r_i，s=max_j s_j。加最多两个确定性私有项：一个公共值s且private rank q_i，一个值r_i<s且private rank1；它们对i固定贡献D_i。q_i二进制编码，不展开q_i份。",
+      "作业→资源：若T≥C，任取原basis即可；否则资源补基加补偿的共同值≥C−T，调用减s，扣私有项再补回得峰≤T+s。",
+      "资源→作业：T≤原值≤Ci≤C，作业补基加补偿的共同负载≤C−T，调用加s，扣私有项再补回得min≥T−s。",
+      "s=0直接处理，秩零项先删再接回；全部辅助项最大值≤s、数量≤2|E|、数值位长多项式，输出逐个保原项身份。"
+    ],
+    "comparison_with_new_bridge": "旧桥需补Ci的异质差，新桥用每项常向量K_j1使Ci从一开始统一，两桥可替代地完成完整舍入等价。新压缩槽证明则额外独立支付资源端定理本身；单独旧桥只证明若有一个舍入器就有另一个，不能替原两图证明这两个舍入器存在。",
+    "why_not_the_two_value_reduction": "私有余值r_i可引入许多新的正值，故旧构造不保持恰好两值；即使新常向量桥保原值，仍缺两值归约中的坐标cap使补偿总常数≤2以及规范化分支。因此均不得直接替代M-e7的Lemmas15/16。"
+  },
+  "per_object_math": {
+    "M-0a576e4d0f4647d18173160e6cbaad70": {
+      "conclusion": "给定LP见证→逐原作业整数basis，峰≤T+pmax；另在最优LP及删零秩前提下给2OPT。",
+      "quantifiers": "每个有限restricted job-matroid输入、每个有理可行分数基见证及共同上界T；不限两值。",
+      "proof_paid_this_review": "实核新Theorem21压缩槽后，经常向量对偶取得整个加最大项接口；另核旧singleton/private算法桥和2近似分界。",
+      "relation_to_other_objects": "与737的完整算法接口双向等价；与e7的两值乘性近似归约结论不同，不能由2近似推出优于2；a3只在资源端，不是本对象的直接算法。",
+      "remaining_obligations": "数学结论在所列标准oracle合同下保留；b68主任务当前available无done，本轮不替它交覆盖。旧566d边需Boss2现有repair更新。"
+    },
+    "M-17240dfa6f6b45e3aca80c1cc929744c": {
+      "conclusion": "每个α≥2，两正值一般SC的poly α-approx存在 ⇔ 两值一般makespan的poly(2−1/α)-approx存在。",
+      "quantifiers": "对所有端点异值实例v_ij∈{0,u,w}、p_ij∈{u,w,∞}，0<u≤w；谈整个实例类算法存在性，不是给定LP见证。",
+      "directions": [
+        "SC实例→调度实例，调用makespan β-approx后解码SC α-approx：两值相关配置计数多项式，规范到1及1/b后gadget仍两值，不损失一般多值配置压缩的额外ε。Lemma20分最大值很小、所有玩家可得大项匹配、其余规范分支。",
+        "调度实例→SC实例，调用SC α-approx后解码makespan β-approx：Lemma17为每机器造一大槽与k小槽，每作业设job-player；machine-player保剩余资源。C=w+ku=1+t≤2，SC保留至少t/α，原负载≤1+t−t/α≤2−1/α。零/不可用/单值及小最大项分支按原标准合同处理。"
+      ],
+      "proof_boundary": "实读冻结AppendixC及相关定义；配置选择gadget本身沿成熟Lemma12复用，没有重做一般有理配置位桥。该定理与拟阵两值定理使用不同结构，不互相自动推出。",
+      "remaining_obligations": "e1主任务available且无done；现行§2未因§5原图勘误变为假，但本轮source-delta比较不构成其主覆盖完成。"
+    },
+    "M-737cbc9ea3b54c03b847026018cf5b19": {
+      "conclusion": "每个给定阈值T的可行resource-matroid assignment LP分数基见证，可poly输出所有原项整数basis，逐人≥T−vmax。",
+      "quantifiers": "有限非负有理公共值；规范单调整数次模value oracle；任意多值；不是泛指配置LP最优或∞规范资源。",
+      "proof_paid_this_review": "压缩质量槽、F/G次模与分数饱和、交整数性、投回独立、原资源多项式补基、积分损失逐步核对。十人反例只击中旧两图。",
+      "relation_to_local_search": "在Lemma22中，先已有规范backend产出的重整数/轻分数中间见证，才能以lightmax<V/(2α)将未覆盖玩家的V/α降到≥V/(2α)；不是阈值backend，也非单独(8+ε)证明。",
+      "remaining_obligations": "旧566d done三输入stale；Boss2已claimed 2b7402c49967e1c2未done，必须保pending。"
+    },
+    "M-a3feff9f6a574834925528d0f9d9d658": {
+      "conclusion": "每固定ε>0，restricted resource-matroid SC有poly(8+ε)-approx；仅两值输入可poly(4+ε)-approx。",
+      "quantifiers": "算法运行时间允许依固定ε变化；在同一matroid/value-oracle和数值编码合同下，不声称ε输入时统一poly。",
+      "proof_structure": [
+        "规范backend给M=(E,I)、P及b，输出I_M∈I、y∈P使每元素在I_M或y(i)≥b，或者证明不存在αb强解，α=4+O(ε)。",
+        "递归交换A/C/阻塞B，用截断的polymatroid contraction固定b份，不能用未经截断的f(Y|X)过量预留；成功增广与失败证书一起支撑backend。",
+        "失败证书Definition34保Z2⊆Z1、matroid rank亏损和低polymatroid边际；Lemma35排除强解，36/37处理直接及递归失败。F.4递归规模O_ε(log n)、节点≤n^{O_ε(1)}；本轮复用其成熟分析，不逐句重证F.2。",
+        "Lemma22把该backend α近似提升为两值α与一般2α；一般取α=4+ε/2得8+ε。Theorem21修正后的轻资源收尾保此路由。"
+      ],
+      "why_rounding_not_enough": "T−vmax可能≤0，且未提供backend的可行性/拒绝保证；所以737⇒a3整目标不成立。反过来OPT常数近似也不自动满足任意LP见证的T−vmax。",
+      "remaining_obligations": "71b6当前claimed Boss2、无done；本轮确认模型和收尾，不代其完成局部搜索主包。"
+    },
+    "M-e7c107d268344ca592782a71e1925647": {
+      "conclusion": "每α≥2，两值restricted resource-matroid SC poly α-approx存在 ⇔ 两值restricted job-matroid makespan poly(2−1/α)-approx存在。",
+      "quantifiers": "值/尺寸每项共同、同项选择一个整数polymatroid basis；同值项合并后恰两polymatroid，最终必须分解回原项；不是端点一般{u,w}模型。",
+      "directions": [
+        "SC α算法→job β算法（Lemma15）：在OPTjob≤1的目标猜测下cap每项每坐标k_j=floor(1/p_j)；可行原basis保总秩。取对k_j1的对偶，C=k1p1+k2p2=1+t≤2。SC解值≥t/α，补回原basis得负载≤1+t−t/α≤β。零尺寸/秩零活跃性须先处理，不能对p=0直接取floor1/p。",
+        "job β算法→SC α算法（Lemma16+Lemma22）：先规范成值1与1/b并保证OPTSC≥1；截断到每坐标1和b，向上补成截断基，再对1_E与b_E取对偶，C=2。原SC福利≥1给对偶OPTjob≤1；β解补回福利≥2−β=1/α；最后资源端补回原项basis，非负性不降福利。",
+        "Proposition9同值秩相加保持逐坐标总值；用原项disjoint ground copies与坐标容量polymatroid交分解合并整数基，保原项身份和近似因子。"
+      ],
+      "why_distinct_from_rounding_equivalence": "特殊caps和C≤2支付精确乘性因子；一般K_j1桥的C可能巨大，旧singleton/private还会新增值。不能把两条舍入接口等价直接称为本对象双向近似归约。",
+      "remaining_obligations": "fc54主任务available且无done；本轮读取归约承重段与修正Lemma22依赖，但不替其主覆盖。"
+    }
+  },
+  "pairwise_comparisons": [
+    {
+      "object_ids": [
+        "M-0a576e4d0f4647d18173160e6cbaad70",
+        "M-737cbc9ea3b54c03b847026018cf5b19"
+      ],
+      "result": "整目标舍入接口双向等价，在同一公共非负值、整数polymatroid、给定LP基见证域上成立；旧边数学仍有效但pins已stale，留已有source repair。"
+    },
+    {
+      "object_ids": [
+        "M-0a576e4d0f4647d18173160e6cbaad70",
+        "M-17240dfa6f6b45e3aca80c1cc929744c"
+      ],
+      "result": "前者任意多值restricted job-matroid给定见证加性舍入，后者端点一般两值算法存在性等价；参数、量词和模型均不同，未得到直接整目标蕴含。"
+    },
+    {
+      "object_ids": [
+        "M-0a576e4d0f4647d18173160e6cbaad70",
+        "M-a3feff9f6a574834925528d0f9d9d658"
+      ],
+      "result": "作业2approx经加减接口桥只得到资源加性T−vmax；不足支付资源局部搜索的常数近似和失败证书，未得到整目标蕴含。"
+    },
+    {
+      "object_ids": [
+        "M-0a576e4d0f4647d18173160e6cbaad70",
+        "M-e7c107d268344ca592782a71e1925647"
+      ],
+      "result": "一般加性job舍入不提供β<2；两值拟阵乘性归约需cap/规范C≤2，不能用一般对偶常数直接替代。"
+    },
+    {
+      "object_ids": [
+        "M-17240dfa6f6b45e3aca80c1cc929744c",
+        "M-737cbc9ea3b54c03b847026018cf5b19"
+      ],
+      "result": "一般端点两值算法等价和restricted资源多值LP舍入没有现成模型桥；共享SantaClaus名称不构成整目标关系。"
+    },
+    {
+      "object_ids": [
+        "M-17240dfa6f6b45e3aca80c1cc929744c",
+        "M-a3feff9f6a574834925528d0f9d9d658"
+      ],
+      "result": "a3的受限资源拟阵SC算法不是172所需所有端点一般两值SC算法。rank-one特例只恢复普通restricted assignment，不覆盖一个资源对不同玩家同时可为u/w的情形。"
+    },
+    {
+      "object_ids": [
+        "M-17240dfa6f6b45e3aca80c1cc929744c",
+        "M-e7c107d268344ca592782a71e1925647"
+      ],
+      "result": "两条同形式α↔2−1/α定理在普通restricted rank-one两值交集一致；172允许同项端点异值而e7允许一般整数基，两域互不由显然包含关系全覆盖，未建立跨模型完整算法归约。"
+    },
+    {
+      "object_ids": [
+        "M-737cbc9ea3b54c03b847026018cf5b19",
+        "M-a3feff9f6a574834925528d0f9d9d658"
+      ],
+      "result": "737只支付Lemma22重整数/轻分数共同中间见证之后的收尾；仍需规范backend α=4+Oε、成功/失败证书及固定ε多项式时间。现行修正恢复此局部贡献，不能升格单前提整目标蕴含。"
+    },
+    {
+      "object_ids": [
+        "M-737cbc9ea3b54c03b847026018cf5b19",
+        "M-e7c107d268344ca592782a71e1925647"
+      ],
+      "result": "737在Lemma22两值大最优分支提供OPT−w≥OPT/α（α≥2），并支持Lemma16的规范前处理；e7还需两方向特定caps/duals和同值聚合解码。只算承重贡献，不宣称737单独推出整条双向近似归约。"
+    },
+    {
+      "object_ids": [
+        "M-a3feff9f6a574834925528d0f9d9d658",
+        "M-e7c107d268344ca592782a71e1925647"
+      ],
+      "result": "两值a3的α=4+ε算法与e7共同推出同域两值job-matroid β=2−1/(4+ε)=7/4+ε/[4(4+ε)]近似；这是依两条结果的ALL应用，不是a3或e7各自单独的整目标。一般多值8+ε分支不能送入仅两值e7。未新造节点或边。"
+    }
+  ],
+  "reading_scope": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "0caabed57cddc14a7c1c594450e970f6818be570893fc948f5eef1e1c92eaf9a",
+      "scope": "全文：仓库和阶段规则；父Boss限制本worker不做Git/队列/共享写入"
+    },
+    {
+      "path": "research/IMPLEMENTATION.md",
+      "sha256": "3f7a1353048e30c44468ac6a98433c3d68f10581e0707114fe70e9c61547833b",
+      "scope": "全文：对象/边/覆盖收据、done/repair和3D整合规则"
+    },
+    {
+      "path": "prompts/03-map-worker.md",
+      "sha256": "6629f71923c54d994297d54c3737b285227b72c463641d318c3f61c9342d07b2",
+      "scope": "全文：完整目标与contribution、精确比较与主owner边界"
+    },
+    {
+      "path": "research/registry.json",
+      "sha256": "4026be89754c42860af796dcce6b73628ffe421a274bf50e6693b66917bd42c2",
+      "scope": "仅五个指定对象完整记录及edge_files相关成员检查；未声称全registry数学读取"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
+      "sha256": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
+      "scope": "当前全文读取以辨模型和共同版本；实质覆盖为§2/3/4/5及边界，§1只作排除范围，不重做一般SC→UM"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md",
+      "sha256": "9c7a4bfe21f216b57edfbce69b591aabf1a4d3a637510eba54411f7d62774bd1",
+      "scope": "全文直接实读；独立核压缩槽、两个次模秩、饱和、补基、对偶、±max、Lemma22收尾、U3,10反例"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-566d00453361c959/complement-rounding-proof.md",
+      "sha256": "b718fd5ea5178265445c4c0697d87f0f29a2ecaa629c267e2fd746606c25df9d",
+      "scope": "全文直接实读；核singleton界、异质Ci、私有项固定贡献及位复杂度、两方向阈值与2approx"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-566d00453361c959/resource-job-rounding-equivalence.json",
+      "sha256": "2938307a80520d5a9fdac539bb3fdca03dc66a99b2fd2849ec2ba051ec98eb53",
+      "scope": "全文直接实读；完整关系及旧pins/evidence/review_digest"
+    },
+    {
+      "path": "map/receipts/unrelated-machines-3a-3a-566d00453361c959.json",
+      "sha256": "17914fdd84b2560c94f8df87c203dc98db7db23de476e67250a840f7285544e1",
+      "scope": "全文直接实读；旧两个pair比较及资产；与task嵌入和实际SHA核对"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss2/fixed-d-blmrs-source-refresh.json",
+      "sha256": "ec24acc839dbb8567cb80f16dec87e3420b8d7ac06dfa1d3963f6050541ade9b",
+      "scope": "全文直接实读；源改版范围与旧任务记录，仅作历史定位，当前state以任务JSON为准"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
+      "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183",
+      "scope": "pdftotext -layout stdout选页：物理6–9（定义/模型/dual/Proposition9）；13–18（§3 Lemmas15/16和§4算法接口/递归）；20–32（Proposition9完整、AppendixC两值一般归约、AppendixD、AppendixE Theorems21/23和Lemma22、AppendixF开头）；35–37（阻塞收缩、失败证书、递归失败、F.4时间）。不是37页全读；物理21–23的Lemma11文字虽读到，未在本轮作为一般有理SC桥重审或覆盖。"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss6/current-run/um-pending-integration-review.json",
+      "sha256": "defbdefc05b745f16fbf5112472b3c95c4313da7b4735ebef7be0ad8af805121",
+      "scope": "仅review_kind、keep_pending、reading_limitations及read_scope相关字段以排除M5ecd/M491一般SC→UM任务，未复做其数学"
+    },
+    {
+      "path": "map/integration.json",
+      "sha256": "401081e2e5fe2c2db2cbaacb1d698252f464313c587ebedca3b924dfe0924b3d",
+      "scope": "五对象pending/pins、旧边canonical成员、旧566d receipt pin；未读取全仓archive review数学"
+    },
+    {
+      "path": "map/coverage.json",
+      "sha256": "5d97042aed5ec8928739831f219226143801182320349b4040fc1898a660619d",
+      "scope": "五对象当前needs-decision条目"
+    },
+    {
+      "path": "research/operations/map-v2/tasks/unrelated-machines-3a-3a-b68de77a6cb0fb55.json",
+      "sha256": "bde32bdbdfde9ceac9d3015f4827be39cc472323de18a9275be04e7619c5be6a",
+      "scope": "当前任务definition/state/owner/input pins/supersedes及有无done；旧566d全文含嵌入收据"
+    },
+    {
+      "path": "research/operations/map-v2/tasks/unrelated-machines-3a-3a-e1f95bf98a191bd2.json",
+      "sha256": "26e91ceee3581d07420a6a7b4b5c293465d1180966b43fa4bd930a3cef4fcbf1",
+      "scope": "当前任务definition/state/owner/input pins/supersedes及有无done；旧566d全文含嵌入收据"
+    },
+    {
+      "path": "research/operations/map-v2/tasks/unrelated-machines-3a-3a-566d00453361c959.json",
+      "sha256": "140f915ab1c117c42d23de7aa363aa89f331bb4f64cfcc45d5a259599d26bd6f",
+      "scope": "当前任务definition/state/owner/input pins/supersedes及有无done；旧566d全文含嵌入收据"
+    },
+    {
+      "path": "research/operations/map-v2/tasks/unrelated-machines-3a-3a-71b6862653595dda.json",
+      "sha256": "44ac57598cbf1b1a5adc41ecb08fd738c9b5acdc521e63821e0418d1bdfd526a",
+      "scope": "当前任务definition/state/owner/input pins/supersedes及有无done；旧566d全文含嵌入收据"
+    },
+    {
+      "path": "research/operations/map-v2/tasks/unrelated-machines-3a-3a-fc54f981449e3903.json",
+      "sha256": "812791faccd15c229923343ea07ead22ef88c5ae5de931771b06849e6fc1b92c",
+      "scope": "当前任务definition/state/owner/input pins/supersedes及有无done；旧566d全文含嵌入收据"
+    },
+    {
+      "path": "research/operations/map-v2/tasks/boss2-6405-source-repair-2b7402c49967e1c2.json",
+      "sha256": "7a52eb184e058ee40a29083a90ee94473a724f0310ecc0b44b23d01b042b9805",
+      "scope": "当前任务definition/state/owner/input pins/supersedes及有无done；旧566d全文含嵌入收据"
+    }
+  ],
+  "limitations": [
+    "本轮只有限比较五个具名对象，不完成任何主owner全包，不对其他UM pending或全仓3D闭合给结论。",
+    "未做Git、fetch、sync、checkpoint、map done/assemble或任何共享正文/registry/edge/integration写入；未新建修复或修改owner。",
+    "未重跑成熟科学程序、有限枚举、历史审计或局部搜索算法；反例为手核精确算式。",
+    "实际读取冻结PDF选页，未声称读全37页；局部搜索成熟定理及外部polymatroid intersection/次模最小化算法作为标准oracle合同复用，未重证全部AppendixF或外部论文。",
+    "一般有理SC→UM的§1算法/位复杂度桥M5ecd/M491由指定另一freshworker报告处理；本轮只读该报告的scope/keep_pending/reading_limitations以避免重复。没有再覆盖该一般SC桥。",
+    "未获取旧共同正文SHA3cdd的完整字节；旧新比较基于直接读取的旧PDF承重证明、旧bridge/edge/receipt及现行正文/替代proof。",
+    "文件pins或任务状态并发改变时，父Boss采用前核对命中delta；本报告不声称本clone读后即锁定远端。"
+  ],
+  "new_edges_or_repairs_created": [],
+  "completion": "有限数学比较完成，报告暂存在仓库外；由父Boss统一复制和发布。"
+}
