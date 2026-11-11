@@ -1,0 +1,53 @@
+{
+  "edge_id": "um-54ba-afs-finite-rounding-gap-yields-polynomial-estimate",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-ca617ca816f74198b08235417c005de5"
+  ],
+  "target_ids": [
+    "M-af4186a632934efda5df11453c86a4a6"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一有限受限Santa Claus实例，非负公共资源值v_j、资格集、不可分物品、每玩家线性价值，n≥1。显式附加原稿Section1.1引用的近似配置阈值后端：每固定有理ζ∈(0,1)可在输入长度的多项式时间返回可行阈值Lhat，满足(1−ζ)optLP≤Lhat≤optLP。此后端未由有限局部搜索推得，保为条件。固定有效精度0<ε<1/5。",
+  "roles": {
+    "M-ca617ca816f74198b08235417c005de5": "有限实际舍入证明optLP/5≤OPT，并与Dirac配置的OPT≤optLP合成上下夹界；不运行此指数搜索。",
+    "M-af4186a632934efda5df11453c86a4a6": "接收每固定ε的完整多项式数值估计合同，非实际整数分配输出。"
+  },
+  "explanation": "整数分配逐玩家取Dirac配置，给OPT≤L=optLP。源Theorem4/6的fat/thin构造及严格下降signature给实际互斥分配价值至少L/5，故L/5≤OPT≤L；局部步数<2^n仅支付该数学不等式。给固定ε∈(0,1/5)，取固定有理0<ζ≤5ε。调用条件中的近似阈值后端，输出数E=Lhat/5。由Lhat≤L及源间隙有E≤L/5≤OPT；由Lhat≥(1−ζ)L且L≥OPT有E≥(1−ζ)L/5≥(1/5−ε)OPT。若L=0，两式强迫OPT=Lhat=0而E=0，无需除以OPT；没有玩家的退化输入不属于本n≥1定义。固定精度后端和一次有理乘法为多项式，计算E完全不运行源局部搜索。原稿Theorem1与Section1.1明确区分近似配置LP估值与有限但未证多项式的输出分配。这是由源整数界和显式后端得到目标整条估值合同；不把指数有限搜索改称多项式算法。",
+  "scope": "全部受限Santa Claus模型的数值估计；不适用于一般v_ij、min-max调度或均分博弈。配置LP精度后端的独立证明仍是条件。",
+  "whole_result": "在所列近似配置LP后端条件下，对每固定0<ε<1/5及每个受限Santa Claus输入，可多项式输出数E，使(1/5−ε)OPT≤E≤OPT，即完整的1/5−ε最优值估计；不输出实际分配。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/Santa-Claus超图匹配与配置LP五分之一界--资源.md",
+      "sha256": "e2473d9f5ff132a5a2774a6f10a0c73da16e1f94c4851fdae8143e796cb0ea5f",
+      "section": "Restricted assignment 的 1/5 舍入"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/Santa-Claus超图匹配与配置LP五分之一界--资源.md",
+      "sha256": "e2473d9f5ff132a5a2774a6f10a0c73da16e1f94c4851fdae8143e796cb0ea5f",
+      "section": "模型和配置 LP"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/Santa-Claus超图匹配与配置LP五分之一界--资源.md",
+      "sha256": "e2473d9f5ff132a5a2774a6f10a0c73da16e1f94c4851fdae8143e796cb0ea5f",
+      "section": "证据强度、条件和缺口"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/asadpour-feige-saberi-2008.pdf",
+      "sha256": "7c95e2140f4180a2edd5affb1917589f75f707b231b5ce5295b9e677f9e501a6"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "本轮独立实读注册资源全文及冻结AFS作者稿11页（Theorems1/2/3/4/6、Lemma5和signature），核fat阈值严格/非严格边界、thin子集≤2/5、匹配→原价值的方向和Σ2^k<2^n。独立重算估值夹界及ζ≤5ε，保外引后端为条件。未重跑旧科学计算。",
+  "endpoint_pins": {
+    "M-af4186a632934efda5df11453c86a4a6": "1327fd46ec124c0d3fd531eb5e6cfcd87e6e60809e04f576d8d04590164442db",
+    "M-ca617ca816f74198b08235417c005de5": "1a7cb900788dd805e72895946463dd116bc498d223d07a0678d1bc6782a01bcf"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/Santa-Claus超图匹配与配置LP五分之一界--资源.md": "e2473d9f5ff132a5a2774a6f10a0c73da16e1f94c4851fdae8143e796cb0ea5f",
+    "research/registration/evidence/boss6-0104/asadpour-feige-saberi-2008.pdf": "7c95e2140f4180a2edd5affb1917589f75f707b231b5ce5295b9e677f9e501a6"
+  },
+  "review_digest": "04fed71ba2e88c72f43ffef5419845114807c343e2c97a3c8007551cb5cc686e"
+}

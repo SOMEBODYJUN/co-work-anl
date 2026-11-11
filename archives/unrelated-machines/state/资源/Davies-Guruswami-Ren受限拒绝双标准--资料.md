@@ -95,7 +95,7 @@ Theorem 4：存在普适 epsilon>0 及 alpha>beta>0，给定集合族中存在 m
 
 论文从每个变量出现次数为五、每个子句恰有三个文字的 3-CNF 硬度出发，经 q-CSP 到 Set Packing 的标准超图构造。对变量 x 使用 Feige 超立方分割系统 V(x)=[d]^Sigma，其中 |Sigma|=2、d=5；第 i 个标签匹配由 e(i,j)={a: a_i=j} 构成。不同匹配中的两条超边交集为各自大小的 1/d=1/5。每个 CSP 子句和一个满足该子句的赋值对应一个集合，该集合是相关变量 gadget 超边的并。
 
-固定参数是 q=3、|Sigma|=2、d=5、每子句有 eta=7 个满足赋值，故 |S|=7m，每个集合大小 k=q d^(|Sigma|-1)=15，全集大小 15m。完整 CSP 赋值给出 m 个互不相交集合，因此 alpha=1/7。若两个集合对应不一致的变量赋值，它们在相应 gadget 至少共享 gamma^q 比例元素，其中 gamma=1/5；取 epsilon<gamma/(2q)=1/30，则要使集合 almost-disjoint，只能在每个变量固定同一标签，从而对应全局 CSP 赋值。NO 情况下任意赋值最多满足 1-epsilon_0 比例子句，所以 almost-disjoint 集合数至多 beta n，其中 beta=(1-epsilon_0)/7。这里只给固定常数参数的 NP-hardness，不能外推为所有 epsilon 或所有集合大小的普遍阈值。
+固定参数是 q=3、|Sigma|=2、d=5、每子句有 eta=7 个满足赋值，故 |S|=7m，每个集合大小 k=q d^(|Sigma|-1)=15，全集大小 15m。完整 CSP 赋值给出 m 个互不相交集合，因此 alpha=1/7。若两个集合对应不一致的变量赋值，它们在相应 gadget 至少共享 gamma/q=1/15 比例元素，其中 gamma=1/5；取 epsilon<gamma/(2q)=1/30，则要使集合 almost-disjoint，只能在每个变量固定同一标签，从而对应全局 CSP 赋值。NO 情况下任意赋值最多满足 1-epsilon_0 比例子句，所以 almost-disjoint 集合数至多 beta n，其中 beta=(1-epsilon_0)/7。这里只给固定常数参数的 NP-hardness，不能外推为所有 epsilon 或所有集合大小的普遍阈值。
 
 # 7. 文献关系、结论等级与不迁移范围
 

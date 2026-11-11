@@ -1,0 +1,61 @@
+{
+  "edge_id": "um-explicit-rowlaw-glue-transfers-tanner-forest-integrality",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1"
+  ],
+  "target_ids": [
+    "M-fe3ac5a7f1374a24a221eb5c26172625"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定任意有限二元H及其Tanner表示，基本多面体为各局部偶字凸包与[0,1]^n的交；本边结论域为Tanner森林。先取有理p及显式有理check完整局部码字律，再对有理多面体取闭包。每条Tanner边仅一件两资格零长度任务，变量端取原位、check端取补位，T=0。孤立变量可先删除后补自由位，要求全分布双射时另添私有零任务及dummy叶。位多项式构造只对实际给出的显式局部支撑计，不承诺隐式列枚举。",
+  "roles": {
+    "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1": "提供相容边际下分数关联森林的完整机器行律有理联合实现；保每原任务恰一次和全部行配置分布。",
+    "M-fe3ac5a7f1374a24a221eb5c26172625": "接收替代的P(H)=conv C证明及任意有限线性成本存在码字最优点这一局部贡献；任意cover接线的分解由既有独立根重标号边承载。"
+  },
+  "explanation": "给每条Tanner关联边e=(i,a)建仅能在变量机X_i与check机B_a执行的零任务J_e。变量机以p_i取全部相邻任务、1−p_i取空；check对局部偶字w执行其0位对应任务。于是J_e覆盖概率p_i+(1−p_i)=1。任何保持这些完整行律的实际调度逐点解码为全局码字，反向码字按其位取唯一端点，完整行律与码字分布互相推前；孤立变量用私有零任务补码或删去后补自由位。分数机—任务图正是删掉确定p边后的Tanner图细分，森林性保留。对有理p∈P，check局部可行律可选有理，源定理给真实调度分布，反向映为均值p的码字分布。故P∩Q^n⊆conv C；有理点稠密和有限码字凸包闭给P⊆conv C；反向显然。有限线性成本因而有原码字最优点。零时长仅保障支撑合法，编码来自指定完整行律，不是底层阈值可行性。完整细节及单环量词分界在proof。",
+  "scope": "全部有限Tanner森林，包括断连、孤立变量/校验及0/1边际。精确保完整局部码字律，迁移实际输出为原码字分布。没有由概率重耦合推出指定cover接线同构分解，也没有将单环圈LP恒可行或大围长整数性作为结论。",
+  "contribution": {
+    "result": "在全部有限Tanner森林上，经每关联边一件两资格零长度任务的显式桥，给定有理局部偶字完整律和一致比特边际可精确胶合为原码字有理分布；由闭包得到P(H)=conv C及任意有限实线性目标的LP与码字最优值一致、存在码字最优点。",
+    "remaining": "目标的“每个M、每个给定wiring的cover经各类型重标号分成M份原森林”不由概率行律胶合推出；该独立图结构步骤已有vk2005-rational-cover-to-tanner-forest-integrality完整边及其proof。源定理不保给定cover双射，必须另用森林唯一道路的根标签传播。"
+  },
+  "reviewed_by": "Boss2",
+  "review_note": "本worker实读当前三个端点、两份行律正文、原UM定义、Tanner第5节与成熟边，并自行提取原PDF pp29–30和55。逐项核每任务只有两个资格端且覆盖恰一、补位方向、孤立变量塌缩及私有叶修补、分数图细分、完整分布双射、有理局部律选择与闭包。以两个显式单环例核清固定律相容性和点属于conv C的不同量词，另以连通两层单环cover说明整数性不推出任意接线分裂。只把P整数性与最优值作为本边贡献。",
+  "evidence": [
+    {
+      "path": "map/edges/boss2-unicyclic-tanner-3b-17254183f6435822/proof.md",
+      "sha256": "223560970927638bee2d2485232c283610fdd1e1deacda237bbbb2ca9bf955af",
+      "section": "一条Tanner关联边编码一件两资格零长度任务"
+    },
+    {
+      "path": "map/edges/boss2-unicyclic-tanner-3b-17254183f6435822/proof.md",
+      "sha256": "223560970927638bee2d2485232c283610fdd1e1deacda237bbbb2ca9bf955af",
+      "section": "固定完整行律与全局码字分布的双向映射"
+    },
+    {
+      "path": "map/edges/boss2-unicyclic-tanner-3b-17254183f6435822/proof.md",
+      "sha256": "223560970927638bee2d2485232c283610fdd1e1deacda237bbbb2ca9bf955af",
+      "section": "森林CONFIG胶合独立推出基本多面体整数性"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md",
+      "sha256": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md",
+      "sha256": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+    }
+  ],
+  "endpoint_pins": {
+    "M-fe3ac5a7f1374a24a221eb5c26172625": "b74f616be8810ab7ef9b821fd974f0977e99e2982c2efb07eeb71d82f24e07e9",
+    "UM-FRACTIONAL-INCIDENCE-FOREST-CONFIG-LAW-GLUE-v1": "0117271b622daf5cc467317f1e1229b9ec5769c2d80ea71258bcf63a50cfff07"
+  },
+  "evidence_pins": {
+    "map/edges/boss2-unicyclic-tanner-3b-17254183f6435822/proof.md": "223560970927638bee2d2485232c283610fdd1e1deacda237bbbb2ca9bf955af",
+    "archives/unrelated-machines/state/定理/分数任务关联森林上的完整配置律胶合--定理.md": "211507d3a2c0ea265e24ca60be9b1ca28d964ecd5e006c52fee9fdcd5f8126e5",
+    "archives/unrelated-machines/state/定义/不相关机器与两个调度松弛--定义.md": "f83b0a531d9e9b98fcffa70c77962f2e2b61e112b2074646f4f7cc3179ac9a8b"
+  },
+  "review_digest": "037fffb5325e86d68d90494a1872052778a897628b5a47465bd0ae5faf7f5ac2"
+}

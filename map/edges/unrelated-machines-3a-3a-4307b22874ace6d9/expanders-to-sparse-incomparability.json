@@ -1,0 +1,46 @@
+{
+  "edge_id": "um-4307-kun-expanders-construct-sparse-incomparability",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-cdd66f04eebf4c44b73d62aece017919",
+    "M-2cade1d7f2d24941acd7fb06b938c73e"
+  ],
+  "target_ids": [
+    "M-dcddc9883c494fea8a4b270fdc4b10c7"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定有限关系类型τ及正整数t,k。两项已登记的共同前提按ALL保留：M-cdd66f04eebf4c44b73d62aece017919提供确定性多项式时间有界度高围长关系扩展器构造；M-2cade1d7f2d24941acd7fb06b938c73e提供同一冻结PDF的Definition7和Theorem9高围长twisted-product算法：若girth(A)≥q且|A|^(1/q)>Δ(A)Δ(B)，可确定性多项式时间构造girth≥q的twisted product C，投影C→B且每个B关系元组上的纤维由A的对应关系经逐坐标双射给出。Theorem9是已证的额外桥，不能把expansion本身说成自动给高围长乘积。扩展器定义仅约束至少二元且非空的关系，因此对这些关系应用该桥；一元关系按整个纤维复制，零元真值原样复制。采用q=k+1确保目标严格girth>k。空域如允许，在输入与目标两端采用同一合同。全部承重输入均为已证定理或下文给出的直接证明，无开放前提。",
+  "roles": {
+    "M-cdd66f04eebf4c44b73d62aece017919": "对固定τ、精度ε和围长q构造任意充分大尺寸n的辅助结构A，其最大度有只依赖固定参数的常数上界，使n可选成输入S大小的多项式并满足Theorem9的度/尺寸条件。",
+    "M-dcddc9883c494fea8a4b270fdc4b10c7": "完整终点：同类型S′具有严格大于k的围长，投影同态到S，并对所有域大小<t的有限τ型T同时保持S→T的真假，构造确定性且在固定τ,t,k下为多项式时间。",
+    "M-2cade1d7f2d24941acd7fb06b938c73e": "与扩展器源共同必需的高围长twisted-product算法：在girth(A)≥q及|A|^(1/q)>Δ(A)Δ(B)条件下确定性多项式时间置换纤维，得到girth(C)≥q的乘积并保留投影和每个关系元组上的逐坐标双射结构。本边在≥2元reduct上使用该算法，再独立恢复一元完整纤维和零元真值。"
+  },
+  "whole_result": "由两项共同前提——扩展器构造与高围长twisted-product算法——及下述直接多数值论证，对每个固定有限关系类型τ、正整数t,k和任意有限τ型输入S，可确定性多项式时间构造同类型S′，使girth(S′)>k、S′→S，且对每个有限τ型T满足|T|<t时有S→T当且仅当S′→T。构造只依赖S及固定τ,t,k，不依赖个别T；这支付了目标对象的整条陈述。",
+  "explanation": "设τ₂为τ中所有至少二元的关系符号。若S的域为空，直接取S′=S；若τ₂为空也取S′=S，因为仅一元/零元元组不能产生来源定义的关系环。这两种情形恒等映射已付清全部目标。以下设S非空且τ₂非空。令B为S的τ₂-reduct，r为τ₂最大元数，q=k+1，ε=1/(t^r+1)。这些量均固定，与输入S及待比较的T无关。源定理给常数D≥1、N≥1和确定性构造，使每个整数n≥N都可生成n点τ₂型ε-expander A，girth(A)≥q且Δ(A)≤D。取整数n≥max(N,1)，并使n>(D max(1,Δ(B)))^q，例如把右侧向上取整后再加N+1。由于τ、t、k固定，Δ(B)至多为显式输入关系元组总长度，n为输入长度的多项式。于是n^(1/q)>Δ(A)Δ(B)。用Theorem9构造τ₂型twisted product C，底集A×S，girth(C)≥q且πS:C→B为同态。其每个至少二元关系的度至多DΔ(B)，底集和全部元组数量均为多项式，Theorem9的算法时间也为多项式。\n\n在同一底集上定义完整τ型S′：至少二元关系沿用C；对每个一元U，令U(S′)=A×U(S)；每个零元关系在S′中取与S相同的真值。加入一元/零元元组不产生关系环，因此girth(S′)≥q>k。投影πS保持至少二元元组、一元完整纤维及零元真值，故S′→S。因而对任意T，S→T都蕴含S′→T。\n\n反向同时涵盖每个|T|<t的有限目标。若T为空而S非空，则S和S′都不可能映到T，等价成立。设m=|T|≥1且φ:S′→T是同态。对每个s∈S，在非空纤维A×{s}上选φ的一个多数值h(s)，使被选值的逆像至少n/m点；平票任意打破。对任意ℓ元符号R∈τ₂及元组b=(s₁,…,sℓ)∈R(S)，twisted product给双射αb,i:A→A×{sᵢ}。令Fᵢ=αb,i⁻¹(φ⁻¹(h(sᵢ))∩(A×{sᵢ}))，则|Fᵢ|≥n/m。由A中R的非空性及expansion，\nR(A)(F₁,…,Fℓ) ≥ |R(A)|((∏ᵢ|Fᵢ|)/n^ℓ−ε) ≥ |R(A)|(m^(−ℓ)−ε)>0，\n其中ℓ≤r、1≤m<t及ε=1/(t^r+1)保证εm^ℓ<1。于是存在(a₁,…,aℓ)∈R(A)，且每个αb,i(aᵢ)均映到h(sᵢ)。Definition7把这些点变为S′的R元组，φ保持关系，故(h(s₁),…,h(sℓ))∈R(T)。此论证也允许原元组中坐标重复；逐坐标双射仍按Definition7取用。若s∈U(S)，则整个纤维在U(S′)，其所有φ像都在U(T)，故多数值h(s)也在U(T)。若零元R在S为真，则它在S′为真，φ保证其在T为真。因此h:S→T是完整τ型同态。构造S′事先固定，与这里用于验证的T、φ和h无关，所以等价对所有|T|<t同时成立。\n\n原印Lemma13不能在含任意一元辅助关系时不加说明直接调用：取τ={U}，A={a}且U(A)=∅，B={b}且U(B)={b}，T={z}且U(T)=∅。Definition5只约束至少二元关系，故A满足任意ε>0的expander条件；取ε<1满足ε|T|<1。直接乘积C的U为空，所以C→T而B↛T。本边的一元全纤维处理排除了这个确切反例，并已直接证明全部同态保持，不把错误的一元推广当成额外未付前提。原印Theorem1最后一段只写Theorem9输出girth≥k，本边明确用q=k+1解决严格不等号。两项修补不改变已登记的源定理或目标定理陈述。",
+  "scope": "有限关系结构及保持所有关系元组的同态；固定τ,t,k下的确定性多项式构造和对所有|T|<t的同态存在性判定等价。允许一元关系及一致空域合同；若模型允许零元关系，按上述复制处理。结论不保持所有无大小界目标，不保持解数，也未断言输出S′有独立于输入S的常数最大度：twisted product的度界一般为DΔ(S的τ₂-reduct)，目标算法不要求常数度。与MMSNP对象的关系复用已有稀疏不可比→MMSNP边，不重复建立传递边。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+      "sha256": "de08d9e732431ad8b7df4da921c7c42984746cce96a0fffba437547e19162d87",
+      "section": "1. Kun：Constraints, MMSNP and Expander Relational Structures"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/kun_mmsnp.pdf",
+      "sha256": "e6d37a035edb3cbaa3e246e5781a88c8a348eaaa16a57028dd8782dcf7373eea"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "实读扩展器、twisted-product、稀疏不可比及MMSNP四个端点的v1登记、整理正文§1及冻结Kun arXiv:0706.1701v2全部12页；重点逐项核pp.3–6 Definitions4/5/7、Lemma8、Theorem9及其pp.6–8构造证明，pp.8–10 Lemmas10/11和Theorem3构造，pp.10–11 Lemma13与Theorem1证明。独立核固定参数、n对输入长度的多项式界、严格围长参数q=k+1、非空关系的正计数、全部小目标的同时量词、一元全纤维、零元复制及空域退化。另实读两条已存在的稀疏不可比→MMSNP边与03312e收据，确认本边新解决Thm3→Thm1的构造问题，没有重复原问题；原印一元Lemma13的具体反例及修法已在本边完整给出并通知Boss。 复核后将已登记Theorem9对象M-2cade1d7f2d24941acd7fb06b938c73e从文字条件提升为显式共同source，与扩展器按ALL输入；两者均不能在本条证明中省略。",
+  "endpoint_pins": {
+    "M-2cade1d7f2d24941acd7fb06b938c73e": "924a6b5445269f548796c5a55fccc153af1f550c77ec4b77faf7e4f7839f9df7",
+    "M-cdd66f04eebf4c44b73d62aece017919": "546c2b3dec92c148900c273e8631187b3defa905d5aa21fa6c8f9d8eb0bea1fb",
+    "M-dcddc9883c494fea8a4b270fdc4b10c7": "dd884f44a2d29292f589d3fc015354320aca13ff64188e3f8e19748cf511dc64"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md": "de08d9e732431ad8b7df4da921c7c42984746cce96a0fffba437547e19162d87",
+    "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/kun_mmsnp.pdf": "e6d37a035edb3cbaa3e246e5781a88c8a348eaaa16a57028dd8782dcf7373eea"
+  },
+  "review_digest": "94ed49e3d95783c6537ae2b098bb2f974d8b01f5f17f707c99d4972a522f6a23"
+}
