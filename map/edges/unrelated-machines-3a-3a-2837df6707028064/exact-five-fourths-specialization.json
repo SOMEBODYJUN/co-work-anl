@@ -1,0 +1,56 @@
+{
+  "edge_id": "um-2837df-fullcube-exact-threshold-specializes-to-quarter-matrix",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "UM-SEVEN-VARIABLE-FULL-CUBE-OPEN-TREES-EXACT-FIVE-FOURTHS-v1"
+  ],
+  "target_ids": [
+    "M-1b7aae02648540af8d4986eb762adaae"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "从全称定理取冻结scaled_single接线。每变量每符号64个深三叶和全cube中该符号的64个子句出现双射；每子句每变量恰一叶，父端1/4，外端只在该子句的一台机器耗时1/4，无其他原任务或资格。",
+  "roles": {
+    "UM-SEVEN-VARIABLE-FULL-CUBE-OPEN-TREES-EXACT-FIVE-FOURTHS-v1": "给任意合格接线在两种外端模型下的精确原整数峰值；可专门取quarter单外端型。",
+    "M-1b7aae02648540af8d4986eb762adaae": "提供固定422机1183任务及其叶接线，接收同一原P的精确阈值强化。"
+  },
+  "explanation": "逐冻结资格表匹配7个selector、280条真实内部边、896条底边及128个scaled外端。取该固定接线后，定理的均匀选轨与三叉剪枝使每个clause的外送事件跨七变量独立，单叶外送概率27/128；超4子句数的期望3358203845373/4398046511104<1。选满足共同外送数≤4的实现，内部活跃机5/4，未活跃机1，外部单机≤1。原P确定重放恰给全选sign0、活跃节点全丢digit0，189外叶且所有1183原任务合法安置。反向若C≤1则每选轨全下送，选轨符号mask对应子句收七叶，外机负载7/4。原时间的1/4网格给OPT≥5/4，故精确等于5/4。",
+  "contribution": {
+    "result": "冻结的422机1183任务quarter原P恰OPT=5/4。得到原登记中无C≤1的下界和更强的存在性上界，并能逐原任务重放5/4调度。",
+    "remaining": "原目标还指定同一56枚外送叶、二叉剪枝的历史见证及其逐原任务迁移。新5/4见证外送189叶；要保留原56叶的固定证书，另用已核的unit→quarter折叠及原冻结记录。"
+  },
+  "scope": "在该边只取全称定理的quarter单外端型固定P实例。任意双射的全称证明、同样适用的unit外端实例及精确CONFIG和剪枝LST阈值由源定理承载。私有host含pin合同另有外端资格。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/定理/七变量全立方开底双轨的精确峰值四分之五--定理.md",
+      "sha256": "fc0b4ba5f5a1d1b4f2a410343c1a2474219c3f54fee2f72d9951a5c05df667a1"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+      "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+      "section": "七变量全cube：源NO却有实际三半"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/original/unit_readout_two_tree_actual_certificates.json",
+      "sha256": "b44ee0f44485f2e1497b87338106d642beaa85b96196a810c569b4d120febefd"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-2837df6707028064/fullcube_five_fourths_replay.py",
+      "sha256": "5c3a44bad4e38b23527f4712dbbe43702326a98c626bc34fc42487edc4124fda"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实核定理三叉剪枝、阈值1的整轨强制与网格下界；逐原资格匹配接线和1183项，并用精确条件期望独立构造两份5/4原分配。登记目标的56叶见证与新的189叶见证按各自实际证明保留。",
+  "endpoint_pins": {
+    "M-1b7aae02648540af8d4986eb762adaae": "e7424de0548f248dc6df034014a245526a23c77d45743b4ff8eb67e39cf30e99",
+    "UM-SEVEN-VARIABLE-FULL-CUBE-OPEN-TREES-EXACT-FIVE-FOURTHS-v1": "4d9b1866955403db0d78b69c623aae5c005828f5f9291b598ca9bc58cd369c6b"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/定理/七变量全立方开底双轨的精确峰值四分之五--定理.md": "fc0b4ba5f5a1d1b4f2a410343c1a2474219c3f54fee2f72d9951a5c05df667a1",
+    "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+    "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/original/unit_readout_two_tree_actual_certificates.json": "b44ee0f44485f2e1497b87338106d642beaa85b96196a810c569b4d120febefd",
+    "map/edges/unrelated-machines-3a-3a-2837df6707028064/fullcube_five_fourths_replay.py": "5c3a44bad4e38b23527f4712dbbe43702326a98c626bc34fc42487edc4124fda"
+  },
+  "review_digest": "ec61108f737ad8dd9bf00834c8a9f68c56f7aa99a5f5afd1298fa8fa5bc2814b"
+}

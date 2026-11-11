@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-2837df-fullcube-unit-slot-to-quarter-endpoint",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-c663aecb01df4eefa9ed35be826cfbab"
+  ],
+  "target_ids": [
+    "M-1b7aae02648540af8d4986eb762adaae"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "冻结的两份七变量全cube原P同128子句、同294内部机、同1183原任务身份、同每枚叶的父端与所属子句。无额外资格或pins。每枚外送叶可用其子句全部4台单位机，或该子句唯一台时间1/4的机器。源证书的原选择、边任务方向及外送叶集合保持。",
+  "roles": {
+    "M-c663aecb01df4eefa9ed35be826cfbab": "给相同源的全赋值NO、完整单位外端56叶见证、阈值1无实际调度。",
+    "M-1b7aae02648540af8d4986eb762adaae": "接收外端折叠后的422机原见证，并用阈值1的反向注入保无C1。"
+  },
+  "explanation": "逐一核原任务和机器标签。固定所有内部决定与外送叶集合，令q_c是子句c外送数。若内部各机已满足T≥0，四台unit的外端可行当且仅当q_c≤4⌊T⌋：每槽至多⌊T⌋个单位任务，所有叶都可用四槽，故条件亦充分。单台quarter端可行当且仅当q_c≤⌊4T⌋。因4⌊T⌋≤⌊4T⌋，任意阈值下同决定可从unit向quarter折叠。固定T=1时两界恰相等，若quarter有完整C≤1调度则每子句至多4枚外叶，逐子句向4个不同unit注入便给同决定的unit C≤1，与源对象矛盾。原unit证书在每个子句至多外送4叶，折叠后外部负载至多1，56枚叶与内部决定原样保留，全部1183任务的目的机逐项等于冻结quarter证书，内部峰3/2。源NO见证仍是对每个x取mask=x xor 127，其七出现全真。",
+  "whole_result": "对应806机单位端原实例的全cube源NO、特定56叶外送的实际3/2见证和无C≤1，一并迁移到每子句一台且叶外端时间1/4的422机1183原任务矩阵。实际quarter外部负载至多1，内部峰3/2，源NO见证不变。",
+  "scope": "原目标整条数学主张。整数阈值下外端容量界相等；非整数T下反向只对另满足q_c≤4⌊T⌋的指定外送数成立。例如T=5/4的局部外端界分别为4和5。无资格或预载异动的迁移。三份私有host含pins矩阵不满足前提。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md",
+      "sha256": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+      "section": "七变量全cube：源NO却有实际三半"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/original/unit_readout_two_tree_actual_certificates.json",
+      "sha256": "b44ee0f44485f2e1497b87338106d642beaa85b96196a810c569b4d120febefd"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-2837df6707028064/fullcube_five_fourths_replay.py",
+      "sha256": "5c3a44bad4e38b23527f4712dbbe43702326a98c626bc34fc42487edc4124fda"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "实读同页两个cube原命题、UM模型和三份私有pin profile。冻结JSON全量解析并核6证书全部原资格、原调度、负载和源赋值见证；两cube完整原σ在上述折叠和升序注入下逐任务相等。阈值容量及反向C1是单独数学核证。",
+  "endpoint_pins": {
+    "M-1b7aae02648540af8d4986eb762adaae": "e7424de0548f248dc6df034014a245526a23c77d45743b4ff8eb67e39cf30e99",
+    "M-c663aecb01df4eefa9ed35be826cfbab": "6bd9cb6d0a2f63e97e26a6c144b01052aeae4dff9838abdb8088a600664d932c"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/单位配置行分解与开底双树原矩阵--审查.md": "5ed466df2c1aadd7cc55340d2281edee66c003787bb871faae1e3f87e668fddf",
+    "archives/unrelated-machines/tools/evidence/unit-configuration-tree-originals/original/unit_readout_two_tree_actual_certificates.json": "b44ee0f44485f2e1497b87338106d642beaa85b96196a810c569b4d120febefd",
+    "map/edges/unrelated-machines-3a-3a-2837df6707028064/fullcube_five_fourths_replay.py": "5c3a44bad4e38b23527f4712dbbe43702326a98c626bc34fc42487edc4124fda"
+  },
+  "review_digest": "9ea044051ad94ca54e17556c9de112a631afab9c24c19e5918aff43bc93fb6b5"
+}
