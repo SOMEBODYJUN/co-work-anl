@@ -1,100 +1,59 @@
 # Boss1：恰六人半覆盖
 
-# Stage17：真实内部源共同付款、源权端点与完整下一输入
+# Stage18：1586行精确全域界、整面排除及两套完整新参数族
 
-Boss1；RUN `six-boss1-20261111`；分支 `rebuild/research-v2`；存档 customer-attraction，子存档 six-providers。研究 clone 是 `/workspace/scratch/b0fef5ec503f/co-work-anl-boss1`。原命题对任意有限单位客户、有限非空共同标签目录、任意完整有序历史纯 SPE 证明 `2W >= OPT6`，仍为 **OPEN**。空覆盖、重复行动、同覆盖别名和任意弱平局均保留。
+## 恢复入口和原题
 
-## 恢复入口与当前边界
+Boss1；RUN `six-boss1-20261111`；结果分支 `rebuild/research-v2`；父档 `customer-attraction`、子档 `six-providers`。实际研究 clone 为 `/workspace/scratch/b0fef5ec503f/co-work-anl-boss1`，全部推导和计算在 `research/workspaces/six-boss1-20261111/`，RUN事件在 `research/runs/six-boss1-20261111/`。原题仍是任意有限单位客户、有限非空共同标签目录及每份完整有序历史纯SPE的 `2W>=OPT6`，或满足全部离轨弱最优性约束的精确反例。空主题、重复动作、覆盖别名、零客户和全部弱平局均保留。
 
-最后完整数学发布是 Stage16c，提交 `4f247f0a3ea65db6b4b74ff65306d964ebc6a2b9`。随后正规 mapper 任务 `six-boss1-source-requery-map3b` 的回执已推到 `33663ce220e55fa6f52e44297c0bdf3684df1fd9`，done 状态已推到 `434b525fca184b302de2688c63c72f04b71f460c`。本次十四条关系已通过正规 assemble 接回 canonical，包含此前漏索引的十三条，实际边文件总数为 2127。随后 Main 写了准确的局部整合审读，保留旧 pending 与同期未审变化；三派生文件及本批审读已确认推到 `3d2b34b8e72754f31e13e9e2c15c8f89fe090e32`。全仓 final check 仍报告 18 个未纳入当前冻结基线的新正式路径，本批不声称全仓终验完成；三个旧 Boss1 3A 任务保持原状。研究 clone 随后仅 fast-forward 这些已确认推送且与数学工作区不相交的 tracked 路径，没有再 stash/reset/清理新工作。
+写此说明时最后确认数学推送为 `4328330998fcd54659ff38060243bb450720a785`；正式图十四条关系已接回并推至 `3d2b34b8e72754f31e13e9e2c15c8f89fe090e32`。本阶段新的pushed身份以实际 `checkpoints/stage18.json` 回执为准。只把确认pushed的内容当作远端可恢复；活跃新目录单独列于末节。
 
-本页所列 Stage17 新数学在本轮 checkpoint 确认 `pushed` 之前只在本地。实际可恢复上限看 `checkpoints/` 真实回执，不能把本地 HEAD 或已生成文件当成远端保存。新 clone 先运行 `restore_frozen_text.py` 恢复两份精确压缩保全的历史文本，再打开本页、`spec.json`、下列实际输入和证明，最后 `research resume six-boss1-20261111`。同 Boss、分支、存档及子存档 `start --resume`。
+恢复先运行 `python research/workspaces/six-boss1-20261111/restore_frozen_text.py`，将所有 portable_frozen_text* 清单中的原始冻结字节准确还原；再 `python work.py research resume six-boss1-20261111`。冻结TSV中的末尾空字段保留于无损gzip，没有修改原数学输入、清单或SHA。不要重跑任何已消费LP，也不要为了重放而调用有写入的发现程序。
 
-## 当前 Main 已核的普遍福利下界
+## 已核的1586行普遍界
 
-`visible_maximum_joint_v2/` 保留全 512 客户型 `(a1,...,a6,x,o,c)` 和独立 K 列、1003 原行及两质量式。其唯一一次 LP 已消费并精确恢复：
-
-\[
-W\ge\alpha_{1003}\,\mathrm{OPT}_6,\qquad
-\alpha_{1003}=
-\frac{112508769242601005698939086121271608650179}
-{255504218184559114703526217520973415950853}
-\approx0.44034016362630934.
-\]
-
-输入 SHA `0d80f56ac0b1f82350ae5e307370d9860b21382c7059b688904230a3b80f20a4`；`visible_maximum_joint_v2_solve/exact_certificate.json` SHA `b9c1d5339b21823b5f448f8c8242bf8b1394b181c099c2bf7d87c68d3f227aea`；求解包 manifest `110e6b873a0d7d61f552b8c2c97a28a1dc571a7b130137a5926a36496f6713ce`。
-
-Main 亲读完整证明，并在 `main_visible_c_v2_certificate_check.py/json` 独立核全部 1003 原行、513 对偶列、两等式、非负性、互补性及原对偶目标。完整最优面仍有 21 个可非零列、秩 14、七自由参数，保全部 1003 面限制，未缩成求解返回点的正支持。
-
-该整个最优面不能实现为原模型 SPE。正权 NS5 的完整局部零态使同一真实第二源强制最大 C 分支的源份额为 `|C|/5`，源 IC 等号因此要求 `u2=K/5`；而完整面上的准确固定差是
+`visible_maximum_joint_v4/` 保全部1586原行、513非负列和两等式，输入SHA `fbd3b0cb65736b5c41b64dd630b442e9647b701e446c36819e3f726c620ac839`。上游1050保持未求解；本输入经Main明确释放后在 `visible_maximum_joint_v4_solve/` **恰调用一次** highs-ds，65迭代，后续精确恢复和面分析均0优化。
 
 \[
-u_2-K/5=
-\frac{2090367050511169183056222233334689252587}
-{30660506182147093764423146102516809914102360}>0.
+\alpha_{1586}=\frac{208101173892952666162424962783956947305005629564084333}
+{471722007522064528882747177426615554317607603285651548}
+\approx0.4411521416736506.
 \]
 
-此结论由完整 513 列有符号面身份支持，不仅代入一个点。原 P25-C 行在这个新面上不再取等，不能复用 1002 面的旧等号推导。半覆盖仍未证明，也没有完整 SPE 反例。
+完整原尺度非负对偶证明 `W>=alpha1586 OPT6`。证书SHA `6049aba7ddb134159f95adea1f3bc6470bdfcb902a111e702e52b9b6f3cec34b`；最终manifest `cf4f29d6ed36d09de746314b49b3ec6c7269c207fbb3cda6a54c19285f4e195f`；proof `74c44f77ac0f6986c1cae020f5b60432968867bf2343233197612a67f3bef0f7`。Main亲读完整证明，另核全部1586原行/513列/两自由等式及互补，记录于 `main_visible_c_v4_certificate_check.py/json` 与 `main_visible_c_v4_proof_review.json`。
 
-## 将等号障碍改成普遍的端点付款
+全部零对偶列有20个，正行/等式秩13，准确全最优面为七参数并保全部1586不等式。实际正C行1018、1433共同在同一真实历史(A1,C)取等：完整弱零态先保留后取交集，中间R3/R4/R5覆盖恰C且收益都是K/5。真正内部SAFE分别要求K/5>=N3,N4,N5，而全脸三个差均严格固定负；Main独立核全部15个泛函的7695列有符号身份。因此整个必要锥最优面无完整SPE实现。此非达到结论不自行给出统一新epsilon，更不证明half。
 
-同一真实第二源历史 `(A1)` 强制目录最大 C 后，保留真实 R3、R4、R5、R6。逐客户 `p=1_A1,c=1_C,o=1_O`；O 是任意六合法标签的覆盖并，不当作合法行动。定义
+## 已核的181行连续菜单完整有限化
+
+`all_source_ordered_joint_menu/` 证明外层强制Q_k、内层对同一六菜单中的五索引l!=k平均，保准确重数d和各真实续局。连续域内d=1唯一最弱，客户系数具有 `L=max(0,ell_j)` 的分片仿射损失。旧67参数顶点只给合法样本，不能直接生成整个连续族。
+
+`all_source_ordered_menu_cells/` 切成14个活跃区域，完整181参数顶点（源1/2/3/4分别119/40/16/6），包含67原顶点及114新交界点。每区域内行仿射，因此181行准确生成指定连续族；不是所有SPE钱包的最优性声明。family SHA `f1bca409d9927f9721764a327f1fcd52a18c38f0968d9c240fa20288aa95eac3`，manifest `313e3fe07138c1ecf0b42bd8fbafa4e4f334f583141f0a950eeb71bb09ad6430`。
+
+Main亲读两包证明并独立重建32448个边界组合、全部14区域/181顶点/369关联、92853系数与114个严格Jensen差。全部PASS在 `main_ordered_cells_check.py/json`。最初Main检查程序的整数除法误生浮点已明确修正为逐元素Fraction，失败记录保留；没有修改冻结来源或矩阵。181包原样保119根行，任何冗余另由完整正付款证明。
+
+## 已核的28行联动域与26条整面分离
+
+`source2_cap_coupled_internal_safe/` 同时给源IC、内部SAFE和中间大小帽增权。固定theta*下的参数(e3,e4,e5,s)完整域有11个真面、28顶点；关键新增面为
 
 \[
-B=\sum\frac c{p+5},\quad M=\sum\frac o{6(p+4c+1)},\quad
-N_j=\sum\frac o{6[p+(j-2)c+7-j]},\quad j=3,4,5.
+\tfrac34e_j+\sum_{l>j}\frac{e_l}{6(7-l)(8-l)}+s/20
+\le7/10+\theta_j^*/4.
 \]
 
-原 Main 行 `300u2+K >= 288B+12M+5N5` 已独立审计。完整新包 `source2_joint_internal_safe/` 证明如下四参数族，Main 提出扩张并直接核过，实际代理独立重建：
+原“e域乘[0,9]”猜测被真实态余项−1/192否定；保留全部12个失败候选状态。新family SHA `b5c950664a21da750245cb7115dc3a60721feb494ce7cf1e32771d5aeeba2906`、manifest `a744e986913415ac964c6fc12dafa51a86f1982983b2a6fcd0507091bfaafd28`。Main再重建全部11面/330交点/28顶点、3584真实余项、224准确min及14364列。28行中的26条在完整1586最优面上固定严格为负，另两条是已紧基底端点；见 `main_cap_coupled_complete_check.py/json`。
 
-\[
-(25+\Theta-s)u_2+\frac s5K
-\ge24B+M+\theta_3N_3+\theta_4N_4+\theta_5N_5,
-\qquad \Theta=\theta_3+\theta_4+\theta_5.
-\]
+Main自己推导的六个单坐标端点、失败product原程序和完整768态保在 `main_cap_coupled_safe_seed/`。新行先由非负真预算支付，再写成旧基底行加sum e_j(u2−Nj)，不能把各u2−Nj擅自当作普遍非负。
 
-指定仿射最小值的完整参数域为
+## 当前实际下一义务与写入范围
 
-\[
-\theta\ge0,\quad
-\theta_5\le5/12,\quad
-\theta_4+\theta_5/36\le5/12,\quad
-\theta_3+\theta_4/72+\theta_5/36\le5/12,\quad 0\le s\le9.
-\]
+- `/root/early_shared_x_source_audit`：`source2_minimal_cap_safe/`。新任意tau>=0，改中间帽为beta_j=1/12+tau_j+sum_later tau_l/[6(7-l)(8-l)]，完整域与C-only行；0优化、不读新点。28点旧包已停写。
+- `/root/visible_maximum_joint_solve`：`all_source_minimal_cap_safe/`。推广同一直接付款到源1/3/4/5，保H=t/min(D,5)，先核真参数域和枚举规模；0新优化、不读1586点。1586求解包已冻结停写。
+- `/root/visible_maximum_joint`：`ordered181_on_1586_diagnostic/`。Main已明确释放准确1586点/面作只读诊断；核全181准确面表达及119根的ROOT270正支付。0优化、不改冻结181。
+- Main：回流独有连续付款引理和新的全域精确界到正式正文/登记；亲核下一更一般帽族，组成新的完整全类型输入后才明确释放新的一次求解。原734固定C模板保持UNBOUND，已排除的1586全脸不花phase-I。
 
-全部 16 顶点、2048 隐藏态与 8208 全列系数已核，所有源 IC 权至少 16。三个内部 SAFE 的收益始终是同一强制 C 分支的真实收益，取完四尾 minimum 后才使用 `|C|=K`。没有冻结偏离后继或共享虚构的分支边际。原固定源权 25 的钱包位于 `s=Theta` 截面，因此 16 端点保留更多限制。
+本阶段checkpoint排除以上三个仍活跃目录及其相邻笔记，只推已闭合实际产物、Main推导和RUN。任何 `work.py sync` 前必须先协调停写；不能再让include-untracked的stash与子席写入竞态。checkpoint只串行选择闭合路径，不stash/reset/清理活跃工作。
 
-简洁端点 `theta=(0,0,5/12),s=9` 给
+旧23676×21021固定16hist云任务仍唯一为 run43096304349（请求C-six-boss1-common-x-joint-23676-01）；本轮仅查询原请求并保存 `cloud23676-check12.stdout.json`，没有重发、取消或绕过本地Actions守卫。其结果若尚未取回，单列为待取云端产物，不计入已核全类型界。
 
-\[
-985u_2+108K\ge1440B+60M+25N_5.
-\]
-
-其真实付款先直接证明，再作准确身份 `row985=5*NS5-515*(u2-K/5)`。不能通过相减不等式证明它。它在整个旧 1003 面的值严格负；全三权饱和的 `s=9` 端点在共同末 BR 权 1 尺度下也严格负。
-
-族文件 SHA `a38144bb000e8585d520a731ed4159269a7245e0616d020ca12550d55df3719e`；证明 SHA `e4ba6dd0e4cde35a9c899d35e85c53a98a042b257e6bb14a01078726138210e4`；manifest `ec51f3eff143d0f555d2601deb1954a06f249aecbd4eabcfab3398d2c45d7b25`。`main_source2_reweighted_seed/` 保 Main 原始 2048 状态推导。
-
-## 跨实际源与后续范围
-
-`all_source_nested_safe_family/` 已证任意 actual 源 i=1,...,4、任意合法强制 T 的 P25 加真实第五源 SAFE。令 n=6-i、D=p+n+1，正确份额是 `H=t/min(D,5)`。不能用 `t/D` 代替：全部八个相应错误状态给余项 `-1/72`。完整 416 隐藏态、40 minimum、36 条全 513 列均核过。
-
-四条 outerOmean 已被旧 P25 双 mean 的 30 异索引行逐客户支配，保留失败说明而不添加；C2 与原 NS5 模 C 质量等式等价。其余 31 纯标签行保留真实付款，不声称条条独立。Main `main_joint_cross_family_check.py/json` 又独立核了两个族全部 26676 个系数及隐藏态；旧 1003 点除七个端点负值外，纯标签负行仍是第二源 T=A4。
-
-`visible_maximum_joint_v3/` 已按原合同冻结 1050 原行：完整原 1003，加 16 端点，再加 31 纯跨源行；513 列、两质量式不变。它明确保留 `NO_SOLVE_INTERMEDIATE_INPUT`，输入 SHA `c5ddba49b71303083b07b96f90888d56f11b291d7c307f0c3e8280b7385d280e`，manifest `f7cf345480b2d0c328a12a3485b0ad9d66c260f611b6c6e5253a16b361c857f9`。
-
-`all_source_joint_reweighted_safe/` 已完成全部内部 SAFE 与源 IC 权的普遍推广，四源参数域分别有 39、16、8、4 个顶点，31 个真面；原源权为 `a=25+Theta-s`，一般 T 的大小项完全保留。第一源额外范围为 `s<=15+5theta_j`，最大 s 为 `1070/63`、最小 a 为 `605/63`，均唯一在四个 theta=`25/63`。Main 独立重新求交所有顶点、核全部 8064 余项、444 minimum 与 536×513=274968 系数，及 source2,C 的 8208 列模质量等式身份，全部 PASS。完整 family SHA `c8a40df9458e2add557ef14b8282880a1d14b05d55238ecf0715f63968907c18`，proof `1a72e75cbcfa36d215c5030d1b86426746d068c1afc806894272b5c9aca60f70`，manifest `3f08170af4b678688317bdebfd8468a8c62e8a801923b3e86f7612a8873825eb`。
-
-下一输入 `visible_maximum_joint_v4/` 正准备在完整 1050 上追加这 536 行，总 1586 raw、513 非负列及两等式。新增数值除数全为 25，K 原列保持 c_i，所有旧行、重复和零型保留。`visible_maximum_joint_v4_solve/` 只准备下一求解骨架，必须等 Main 精确输入释放，当前没有优化授权。
-
-`actual_source2_fixed_C_lift/` 已冻结无点绑定的固定 C 真实分支模板。其合同是 734 条隐藏行及 17 条显式可见前置路由；全 512 可见型各 16 真尾，共 8192 状态。旧外层 q 的两个矩约束在固定 C 中不合法，必须删除；内部 C30 的六查询矩仍合法并保留。当前不绑定已排除的 1002/1003 点，不消耗 phase-I。Main 全文实读完整推导并独立核当前 21 条 checksum；有效新冻结 manifest 为 `10012e13e443042a6be1150277207c67bfd222c7e0967e9b3818fd4a49c54f61`。首次两份收尾清单因 Main 同步与写入竞态缺失，已保存原 SHA 和事件，仅重新生成元数据；不声称原清单逐字恢复，没有数学输入或求解重跑。1050 首次 checker 的同一竞态失败亦保留，输入未变，仅重放确定性 checker。详见 `stage17_sync_recovery/`。
-
-## 实际代理与下一问
-
-- `/root/early_shared_x_source_audit`：已闭合 NS5、16 端点及一般源 536 行。下一义务 `all_source_ordered_joint_menu/`：外层强制 Q_k，内层对同菜单 l!=k 的五查询平均，保准确重数 d 后再取全尾 minimum，检查是否能改进已失败的独立 outermean；0 优化。
-- `/root/visible_maximum_joint`：已闭合跨源第五 SAFE 及 1050 未求解中间输入；准备完整 1586 输入，0 优化。新输入逐项获 Main 复核前不释放求解。
-- `/root/visible_maximum_joint_solve`：已闭合 1003 唯一 LP、全原对偶与整面排除及 734 固定 C 无点模板；只准备 1586 求解骨架，等待 Main 输入 SHA 与一次明确释放，0 新优化。
-- `/root`：亲自推导源权扩张、复核全部新客户列，串行保存与推送，当前正规 mapper 集成已 pushed；随后审核更强完整输入并释放唯一求解。只有新精确候选通过廉价必要式检查后才考虑绑定 734 模板。
-
-唯一云请求仍为 `C-six-boss1-common-x-joint-23676-01`，GitHub run `43096304349`，源提交 `b96dbcdfe0dec963bbaf91f3a9a2f0ed597467ad`。check11 为 queued，jobs/artifacts 空；未重发、取消或绕过本地大型求解守卫。固定 16hist 松弛值与上述全型普遍下界严格分开。
-
-每次 checkpoint 只确认实际回执覆盖的文件。新成果继续回流正式正文及受影响边；当前正式计算对象 v13 只回流到此前 CAP4 阶段，不能把随后工作包当已正式登记。原题开放，Main 持续推导、核验、派工和接回。
+half原题仍OPEN。继续从真实分支的内部偏离付款推导，不以新的必要锥低点冒充完整SPE，不在checkpoint后结束研究。
