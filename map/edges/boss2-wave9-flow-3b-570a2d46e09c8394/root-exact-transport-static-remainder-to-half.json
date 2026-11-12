@@ -1,0 +1,71 @@
+{
+  "edge_id": "boss2-wave9-root-exact-transport-and-static-remainder-all-to-half",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-47c853fbc6c84223b683f6fcb277610b",
+    "customer-attraction/r3d253-fixed-background-static-security-remainder-review"
+  ],
+  "target_ids": [
+    "Q-CAG-HALF"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "H_root（开放）：∀有限单位客户集N、有限非空共同标签目录P及任意覆盖映射（含同覆盖异标签/空覆盖）、∀整数n≥2、∀定义在全部有序历史的完整纯SPE σ，∃至少一份真正整数静态安全值v_n(0)的有理最优查询π，∃非负有理λ_e、Q_fl(b)（b∈Z_+^P,|b|=n−1,Σ_bQ_fl(b)=1），使d−divλ−nΣ_bQ_fl(b)s_b(π)=0，或该残差经完整整数删除势投影K后为0。d=Σ_aq*_aδ_(q*,a)，s_b(π)=Σ_aπ_aδ_(b+e_a,a)，Kδ_(q,a)=ε_q−ε_(q−e_a)，K保全部n及n−1层势坐标。图精确固定为E_σ=全部原有序历史真实IC弧∪全部已证普遍同标签弧（q,a→r,a恰当q_a≥r_a>0且q_c≤r_c对所有c≠a）；先在每个有序节点沿同一σ求真实规定/偏离完成，再合相同收益端点。只IC子图证书通过把其余弧流设零包含在此图中；不增添其他未列明弧。div按head加、tail减。Q_fl可依实例、σ、π但不依本次实现a，供给为π_aQ_fl(b)。只需某份最优π，不要求所有最优π。",
+  "roles": {
+    "M-47c853fbc6c84223b683f6fcb277610b": "给定精确查询独立守恒/共同删除势投影证书时，真实IC及合法普遍弧非负给W≥n E_(Q_fl,π)f≥n v_n；此方法本身未证H_root全称存在。",
+    "customer-attraction/r3d253-fixed-background-static-security-remainder-review": "零旧背景β=0、r=n、s=n−1，取另一个静态对偶最优Q_st*及最优比较负载d*，给OPT_n+R_0(d*,Q_st*)≤(2n−1)v_n且R_0≥0。",
+    "Q-CAG-HALF": "联合两源与H_root得到所有正人数、原有限标签实例及每份完整SPE的half全句；保持其当前open状态。"
+  },
+  "explanation": "1. 固定任意n≥2、有限单位客户实例及完整σ。f_(q,a)=Σ_(x∈cov(a))1/c_x(q)有理；静态对手为|b|=n−1整数标签背景，与合法元组收益等价。有限有理maxmin有某份有理最优π，但这不证明流可行。\n\n2. 固定E_σ为全部原有序IC弧与全部普遍同题弧的并集，只IC子图证书令其余流为零。对每个有序节点h，弧tail=(qσ(ha),a)→head=(qσ(h),σ(h))；两完成均沿同一σ，故f_head−f_tail≥0。先全历史铺行再合端点不把策略商为计数策略。同题弧(q,a)→(r,a)条件q_a≥r_a、q_c≤r_c(c≠a)时，对每个含a的客户类型T有r(T)−q(T)=Σ_(c∉T)(q_c−r_c)≤0，因而f_(r,a)≥f_(q,a)。\n\n3. H_root的普通守恒与f内积给W−nE_(Q_fl,π)f=Σ_eλ_e(f_head−f_tail)≥0。Q_fl查询独立及π最优给E_(Q_fl,π)f≥min_bE_πf=v_n，因此W≥nv_n。势版本中CAG同一调和势Φ(q)=Σ_xH_(c_x(q))满足f=K^TΦ，完整K残差0给同一恒等式，不另要求收益坐标残差0，也不推一般有限势的客户表示。\n\n4. 独立取真正静态安全游戏的对偶最优Q_st*，无须等于流Q_fl。静态余项取β=0,r=n,s=n−1，F_n(0)=OPT_n，得OPT_n+R≤(2n−1)v_n。逐客户d=0时ρ=L/(1+L)，d≥1时ρ=(d−1)/(1+L)，均非负；比较元组信用未替换为actual收益。\n\n5. 两式合得OPT_n+R≤(2−1/n)W≤2W。n=1直接真实BR给W=OPT_1=v_1，不依赖CLI人数推断。整个证明不除W，零客户、全空覆盖及一般W=0均以不等式处理。任意弱平局、离轨历史、重复和同覆盖异标签均保留，命中目标完整全称。\n\n6. 固定有理π时流/投影系统若实可行则有理可行；联合未知π与Q_fl是双线性，不能把某个实最优π证书自动有理化。固定纯查询a总能用各actual角色强制a的真实背景b_i=q_i^a−e_a、Q_fl均匀与各IC权1构造普通流；混合π的逐a构造一般使背景依赖a，仍未付H_root。主边只用根H_root，未把它扩成全合法旧背景的AGG0；后者需另付H_background。完整独立推导与AGG0/AGG1/原集合域强安全比较见proof.md。",
+  "whole_result": "若H_root完整全称成立，则∀n≥1、∀有限单位客户共同标签目录实例、∀完整有序历史纯SPE σ，OPT_n≤(2−1/n)W(σ)，从而2W(σ)≥OPT_n，完整推出Q-CAG-HALF；n≥2还保非负静态余项OPT_n+R_0(d*,Q_st*)≤(2−1/n)W。此为已成立条件蕴含，不证明H_root、根强安全或Q的无条件全称。",
+  "scope": "主关系为完整条件ALL：原共同标签域、所有正人数、所有完整有序SPE；只需零背景根H_root，且图固定为IC∪全部已证普遍同题弧。全合法背景AGG0/AGG1和原单射集合域累计M等价只作精确比较，不据此扩量词或倒推指定流锥可行。",
+  "evidence": [
+    {
+      "path": "map/edges/boss2-wave9-flow-3b-570a2d46e09c8394/proof.md",
+      "sha256": "1c25fe6b78c11c7ee867c6bebfdab4c0f40f850a21d6abd57ced3506c84b8742"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/全有序收益状态弧与势投影的运输求解器--程序.md",
+      "sha256": "2d4f0359039f36b94897bd26110a7b0b44a59ba667e023011af3347267993902"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R-3d253固定背景静态安全余项--审查.md",
+      "sha256": "b4c017c15230cfdc71397bc68349bfa2fd1a0285dd2c3f907b6ecfe7360dd3c9"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r3d253-fixed-background-static-security-Boss8/background_static_security_remainder.md",
+      "sha256": "05d02af59ebfe74dfd7387e96446f4d982af0fbb10924bb2d136890836d041f3"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/全树收益运输的普遍弧与有限势反例范围--审查.md",
+      "sha256": "b766b33297796c9f34de3f55e84d598845a5967992a6361416cdb80f4e85f34d"
+    },
+    {
+      "path": "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md",
+      "sha256": "bc5add8e880e83c3ed799f457607103532aa9120018c862ae3ac869f2ed34d15",
+      "section": "完整量词和目标"
+    }
+  ],
+  "reviewed_by": "Boss2 worker FLOW-ROOT-STATIC-HALF-ALL; Boss2 root",
+  "review_note": "正式fresh worker按actual已认领任务完整读3core及5只读对象登记、全部body/evidence指定范围，独立重构IC/同题弧方向、完整K投影、rho/minimax与全称归约；外部readonly报告只作建议不冒正式阅读。H_root的某份有理最优π、Q_fl独立及混合查询未付性逐项保留；AGG0全背景与原集合目录强安全域已另实读关闭scope比较。未运行数学求解器、LP、BI、随机或旧审计；Root负责原生bind/check/push/done。 Boss2 root完整实读proof、edge与receipt，独立核固定IC∪同题弧方向、H1/H2内积付款、Jensen及非负rho、两个独立Q的职责、n1和零值，以及root/AGG/累计M的量词界限。固定图条件已按Root意见收紧；关系完整但H_root仍开放。",
+  "endpoint_pins": {
+    "M-47c853fbc6c84223b683f6fcb277610b": "d2473cc4f9c7ae425a69c597526db01bf14b439971c842ff80a5348b649ef246",
+    "Q-CAG-HALF": "dccd5277f7b0c1bb4dcac17287010f1d012bb40c6244c51f24808c1519a4b5ea",
+    "customer-attraction/r3d253-fixed-background-static-security-remainder-review": "694c57debf2cb86a158b179a5a2da1d9d998a92867319af621d8113a9d336c68"
+  },
+  "evidence_pins": {
+    "map/edges/boss2-wave9-flow-3b-570a2d46e09c8394/proof.md": "1c25fe6b78c11c7ee867c6bebfdab4c0f40f850a21d6abd57ced3506c84b8742",
+    "archives/customer-attraction/state/程序/全有序收益状态弧与势投影的运输求解器--程序.md": "2d4f0359039f36b94897bd26110a7b0b44a59ba667e023011af3347267993902",
+    "archives/customer-attraction/state/审查/R-3d253固定背景静态安全余项--审查.md": "b4c017c15230cfdc71397bc68349bfa2fd1a0285dd2c3f907b6ecfe7360dd3c9",
+    "archives/customer-attraction/tools/evidence/r3d253-fixed-background-static-security-Boss8/background_static_security_remainder.md": "05d02af59ebfe74dfd7387e96446f4d982af0fbb10924bb2d136890836d041f3",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/审查/全树收益运输的普遍弧与有限势反例范围--审查.md": "b766b33297796c9f34de3f55e84d598845a5967992a6361416cdb80f4e85f34d",
+    "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md": "bc5add8e880e83c3ed799f457607103532aa9120018c862ae3ac869f2ed34d15"
+  },
+  "review_digest": "b1d021a58f53ed32e1feb0386850b73a40c7b070348443a9ac7d69f4748d8389"
+}

@@ -1,0 +1,44 @@
+{
+  "schema": "boss2-milp-threshold-metadata-correction-v1",
+  "actor": "Boss2",
+  "created_at_utc": "2026-11-12T19:30:55.020534+00:00",
+  "object_id": "customer-attraction/target-terminal-joint-mass-milp-compressed-witness-and-fixed-root-records",
+  "old_version": 1,
+  "old_registration_pin": "e0582d56619d2eb06da9a548fb08826798142863d5bdf2f3e0a954312cf86c71",
+  "new_version": 2,
+  "new_registration_pin": "1498397d3a8b15ccd4f69d03c81c222a1561faba76f398eb2e94729b85fc46e7",
+  "base_registry_sha256": "d1bd2b68c23efb4b74e88ee0f672f6ae615cd301ef473cdeb0608614eba906bd",
+  "old_statement": "正文系统(1)用状态(k,q)表示已走计数与请求终局，二元y(k,q,a)和A=Σ_a y≤1开启可信动作，给所有已开启非终叶的偏离主题b选共同可信孩子x(k,b,d)，阈值T(k,b)∈[0,m]。选中动作必须延续请求q且收益≥各偏离阈值；阈值至少所选惩罚孩子的偏离收益；最后一位直接检查全部主题。非负联合重数r、每主题质量≤m、W(q0)=1，并固定根请求q0。该有界MILP可行当且仅当同一r有一份完整有序历史纯SPE实现q0。最低可信惩罚可共享于同计数状态而不丢终局存在性；不能从而声称原σ是计数策略。",
+  "new_statement": "正文系统(1)用状态(k,q)表示已走计数与请求终局，二元y(k,q,a)和A=Σ_a y≤1开启可信动作，给所有已开启非终叶的偏离主题b选共同可信孩子x(k,b,d)，每个计数k只有一个共同阈值T_k∈[0,m]，供该k下全部偏离主题共享。选中动作必须延续请求q且收益≥T_k；T_k至少为每个所选惩罚孩子的偏离收益；最后一位直接检查全部主题。非负联合重数r、每主题质量≤m、W(q0)=1，并固定根请求q0。该有界MILP可行当且仅当同一r有一份完整有序历史纯SPE实现q0。最低可信惩罚可共享于同计数状态而不丢终局存在性；不能从而声称原σ是计数策略。",
+  "mathematical_finding": "正文系统(1)与冻结原代码都只给每个k一个T_k；T_k共同上界各b的最低可信偏离收益，再由选中动作收益下界T_k。原登记T(k,b)容易误读成每个(k,b)一变量，与原N=|K|个阈值的压缩合同不一致。修正只澄清真实变量索引，不改变双方存在性证明、真值或任何收益/证书。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/目标终局联合重数MILP的压缩见证与固定根记录--程序.md",
+      "sha256": "c49a6a7ffeb62173aabc5d1c2cda3126bb67ffecad9cf65f921c415b07466a3f"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/full-history-milp-and-fixed-root-status-five-primary/original/c5806a0a4985de93a5cb/research/workspaces/customer-attraction/R-d51d7a410c12456aa5c44e84b78708d0/true_counterexample/full_history_milp.py",
+      "sha256": "30c569b6e9bf09fb81bbf719b8c53c50c9410b240898880fdb483ac4b5932144"
+    }
+  ],
+  "actual_reading": "Root全文读目标正文的系统、双向证明、M=m、计数与全部历史报告，并按符号读原码阈值创建和所有T[k]参与的约束；未声称重新逐行运行原程序。",
+  "mathematical_reconstruction": [
+    "给定每个k,b的最低可信孩子d(k,b)，令T_k=max_b u_b(d(k,b))；任何保留请求q的选中动作收益至少T_k。每个原有序孩子独立展开，所以共享惩罚不丢终局存在性。",
+    "反向系统中全部b的选中惩罚收益都至多同一T_k，选中动作收益至少T_k，故有序展开每节点真IC成立。",
+    "每个k创建一个实阈值，数目N=|K|；五人七题N=330，因此127客户变量+330阈值=457连续变量，原32307总量不变。",
+    "若另使用逐b阈值并对每个b约束当前动作，可作等价冗余表示，但它不是本对象冻结程序的实际变量合同。"
+  ],
+  "affected_map_tasks": [
+    {
+      "task_id": "customer-attraction-3a-3a-fe146ca92b8502da",
+      "state": "done",
+      "owner": "Boss1",
+      "old_pin": "e0582d56619d2eb06da9a548fb08826798142863d5bdf2f3e0a954312cf86c71"
+    }
+  ],
+  "incident_canonical_edges": [],
+  "source_files_changed": [],
+  "baseline_inputs_changed": false,
+  "new_scientific_runs": 0,
+  "required_followup": "发布v2登记后，对已done fe146按native repair-task定向替代收据；原六关系资产逐项原SHA retained。其余任务和open数学继续独立推进。"
+}
