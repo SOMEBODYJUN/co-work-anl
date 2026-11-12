@@ -1,0 +1,82 @@
+{
+  "schema": "visible_maximum_joint_v6_expected_outputs_v1",
+  "status": "WAITING_FINAL_INPUT_SHA_AND_EXPLICIT_MAIN_RELEASE",
+  "owner": "Boss1",
+  "RUN": "six-boss1-20261111",
+  "agent": "/root/visible_joint_v6_solve",
+  "profile": "full",
+  "optimizer_calls_currently_authorized": 0,
+  "input_sha256": null,
+  "actual_numerical_or_exact_result": null,
+  "planning_counts_not_input_certification": {
+    "raw_inequalities": 4177,
+    "literal_parent_rows": 3056,
+    "appended_rows": 1121,
+    "nonnegative_columns": 513,
+    "equalities": 2,
+    "affine_rhs_minus_one_rows": 30
+  },
+  "post_release_order": [
+    {
+      "command": "python preflight.py --released",
+      "outputs": [
+        "released_preflight_result.json"
+      ],
+      "optimizer_calls": 0
+    },
+    {
+      "command": "python solve_once.py --run-released-once",
+      "outputs": [
+        "source_pins_at_solve.json",
+        "single_lp_consumed.json",
+        "discovery_output.json",
+        "numerical_summary.json"
+      ],
+      "optimizer_calls": 1,
+      "failure_policy": "Permanent consumption; no retry after marker creation, exception, timeout, infeasibility, or failed recovery."
+    },
+    {
+      "command": "python recover_exact.py",
+      "outputs": [
+        "exact_certificate.json",
+        "all4177_raw_row_checks.json",
+        "all513_column_checks.json",
+        "exact_recovery_summary.json"
+      ],
+      "optimizer_calls": 0,
+      "failure_output": "recovery_obstacle.json"
+    },
+    {
+      "command": "python verify_certificate.py",
+      "outputs": [
+        "independent_check_result.json"
+      ],
+      "optimizer_calls": 0
+    },
+    {
+      "command": "python analyze_optimal_face.py",
+      "outputs": [
+        "optimal_face.json"
+      ],
+      "optimizer_calls": 0
+    },
+    {
+      "command": "python verify_optimal_face.py",
+      "outputs": [
+        "optimal_face_check_result.json"
+      ],
+      "optimizer_calls": 0
+    },
+    {
+      "command": "python diagnose_true_payments.py --queue",
+      "outputs": [
+        "positive_payment_diagnostic_queue.json"
+      ],
+      "optimizer_calls": 0,
+      "source_specific_deductions": 0
+    }
+  ],
+  "exact_recovery_scope": "Only symbolic linear algebra from the actual sole numerical result. Rank deficiency, inconsistency or any exact all-domain check failure is a recorded obstacle; there is no second LP.",
+  "face_scope": "Every zero exact dual-residual column, every 4177 original raw inequality and all 513 nonnegativity conditions. The affine parameter count is not asserted to be relative feasible dimension.",
+  "mathematical_scope": "Necessary-system optimality only. The old C-rigidity or any old candidate support is not inherited. Exact positive rows must be reviewed through actual current metadata before source-specific deductions."
+}

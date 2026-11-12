@@ -1,75 +1,61 @@
 # Boss1：恰六人半覆盖
 
-# Stage19：完整最小帽参数族已核，3056行准备继续
+# Stage19c：γ36、正式正文回流与4177完整输入
 
-Boss1；RUN `six-boss1-20261111`；分支 `rebuild/research-v2`；父档customer-attraction、子档six-providers。
-实际clone `/workspace/scratch/b0fef5ec503f/co-work-anl-boss1`；工作目录 `research/workspaces/six-boss1-20261111/`。
-原题仍是每一份共同有限非空标签目录上的六人完整有序历史纯SPE均有2W>=OPT6，
-或给出满足全部在轨离轨弱最优性的精确反例。空标签、覆盖别名、重复动作、任意平局与零客户全部保留。
+Boss1；RUN `six-boss1-20261111`；分支 `rebuild/research-v2`；customer-attraction / six-providers。
+实际clone `/workspace/scratch/b0fef5ec503f/co-work-anl-boss1`，工作路径 `research/workspaces/six-boss1-20261111/`。
+原题仍是共同有限非空标签目录、有限单位客户、恰六人每份完整有序历史纯SPE的2W≥OPT6，或全部离轨最优的精确反例。
+空覆盖、重复选择、同覆盖异标签、零客户和所有弱平局保留；原half仍OPEN。
 
-写本阶段首个说明时最后确认pushed为 `ef03cfffc654faca74a184608cb26dfa5c07f447`。
-该提交包含完整1586证书及整面排除、181同菜单cell族、28联动帽族。
-本阶段各次推送只以 `checkpoints/stage19*.json` 的实际pushed回执为准。
-恢复先执行 `python research/workspaces/six-boss1-20261111/restore_frozen_text.py`，
-然后 `python work.py research resume six-boss1-20261111`。不重跑任何已消费LP。
+## 当前结论
 
-## 新闭合的普遍约束
+完整3056原始行、513非负列、两自由等式的精确必要锥值为
+108858965563724169521890917325832631652315417 / 246421667899918066927761529101381586610108429，约.44175890250014965。
+其全部18个零对偶列、秩12和六参数完整面已核；真实第二源C分支正CAP及SAFE4/5等号与N5−N4=(1−K)/36>0冲突，排除整个面。
 
-1. `source2_minimal_cap_safe/`：任意tau>=0的坐标最小帽，完整11面/28顶点C-only族。
-   真帽 beta_j=1/12+tau_j+sum_later tau_l/[6(7-l)(8-l)]；自由C等式乘子S−s/5允许为负，
-   特别tau=0,s=9时为−11/20。Main完整重建域、3584真尾态及14364列。
-2. `all_source_minimal_cap_safe/`：五源完整137顶点，按90/28/12/5/2分布；每点八个合法纯目标，
-   全1096行。根的六个双缺面不可删，仅单缺域有准确−1/192反例。一般T保独立K系数S、
-   H=t/min(D,5)，没有滥用C大小等式。manifest `cabb420531d2ca22c27f3dd3a415cbe350807f2ff377178d2cff239ba8a02c83`。
-3. `ordered_minimal_cap/`：q0=1/5自适应帽的完整137顶点族。外六强制、内五排同索引保持q=(d−t)/5；
-   全连续域有W>Z，故d=1唯一最弱，最终行对参数仿射，无固定帽族的max损失。
-   manifest `cd0b3db1fe384f5a4336edca3ec6c9e954ac253748cd830f2858add37e96cdd7`。
+Main的ε=1/144真δ切割、ROOT270的η|C\\O|信用以及六actual SAFE_i(C)给γ72改善；独立审计再用全部64个p=1,o=1,c=0列的旧余量付款，可取γ36=2γ72。
+Main亲自复核全部3056权和513身份后，当前普遍界为
 
-Main亲读两份新proof全文，并用 `main_minimal_caps_complete_check.py` 独立重建两套各12026边界组合、
-全部45面/137顶点、每面秩，及16656/49968真实隐藏态。全部弱平局保留；分别重建562248和70281系数，
-ordered再核13568完整菜单上下文。两个Main JSON均PASS，0优化、未读任何候选点。
-这些是明定预算族的完整有限生成器，不能称作所有钱包最优性或SPE可实现性。
+\[
+W\ge\frac{60031108172895495982435367008072256807714132617609}
+{135891023315105974064184556965981156861873793636093}\,\mathrm{OPT}_6
+\simeq0.4417591884174316401633\,\mathrm{OPT}_6.
+\]
 
-## 3056行下一系统
+这是准确非负付款恒等式，不依赖最优面；不宣称新必要锥最优或完整SPE。
+全部正付款另已核对任意六合法查询并有效，原完整LP本身则必须O=OPT6以保继承上帽。
+证书在 `delta_uniform_audit/certificate_gamma36.json`，Main在 `main_gamma36_certificate_check.py/json`。
 
-最终顺序已由Main明确为1586+181+28+28+1096+137=3056，全部原行保留。
-513个非负变量、两自由等式、原1586行字典/尺度、30条rhs=−1均原样保留。
-Main准备释放 `visible_maximum_joint_v5/final_release.json` SHA
-`653e43d66feda8874fef8230fe95d689aa00378bca327284ddee43fcf300f821`。
-它只授权构造，不授权优化。首个构造在读取新坐标契约的K_column字段时失败，未写出输入；
-原准备代理 `/root/visible_joint_v5_prepare` 已确认接手显式schema适配，不改来源数学。
-准备完成并Main复核最终SHA后，才另发一次LP授权。
+## 已闭合与正式回流
 
-求解代理 `/root/visible_joint_v5_solve` 已完成静态骨架并结束当前轮等待同线程followup。
-其静态manifest为 `f3720a30fddd4625321aa0c9b56632ce4854ef30c31de0db43a93703740694b7`。
-当前0次v5优化授权、0次调用；未来唯一一次highs-ds前必须排他写消费标记。
-精确恢复应核全3056行、513列、两等式及全部零对偶列的完整面，不沿用旧正行假设。
+- 第二源λ230及完整低段160、后部λ550、完整δ180均已Main独立全域/真态/全列检查。
+- 根λ在[0,25]只是旧完整19面90点族的准确换元；900行无新增信息，未重复物化。
+- 新正式引理 `customer-attraction/internal-safe-exact-domains-and-ordered-menu-projection` v1 已写入并登记，承载固定/最小帽完整域、同菜单条件投影、λ延拓及δ完整生成。
+- 原真实第三源/根投影 `M-a90ca74cfdc848cb8f628fac8dd35f0a` 已升v3，追加ROOT270及严格C在O外余项。
+- 计算对象 `customer-attraction/six-providers/cross-branch-necessary-system-20261111` 已升v14，保全部旧承重段并接回1002/1003/1586/3056及γ36。
+- 两份旧正式正文逐字保存在 `registration/previous_revisions/`；旧冻包不改SHA。旧source3整结果超边已收窄为v2旧贡献，新完整联合边另外支付ROOT270。
+- 八条受影响旧边与三条新边均已绑定并检查；新三边的canonical接入仍需本轮定向替代map回执/assemble，不用手工改edge_files。
 
-## 已开出的下一数学义务
+## 下一完整系统与模型更正
 
-实际新代理 `/root/source2_lambda_strip`，fresh fork，Boss1，独立目录 `source2_lambda_strip/`。
-Main提出源2权a=lambda+sum tau、lambda∈[9,16]；这里t1全中间且末位0是新锚，
-收益分母D−1而查询锚分母D。初核两种q0各有23顶点，lambda9/15/16分别8/7/8；
-将完整保留184条一般纯目标行、23条C-only与23条ordered，共230条。
-该族正在独立全态/全列证明，尚未Main准入，明确不加入本轮3056。lambda>=9是本研究窗口限制。
+4177原始行顺序是3056+230+160+550+180+1，全部513非负列、两等式、30条rhs=−1、零行和重复行保留。
+输入SHA `8f953bca6b65a8093d5fcf0fdb5a432ba3603137fe1015cd06fc8f6324e68769`；manifest SHA `0aa45d8f1517b6958ae6187b5ebbf89a3ea31926347d997a696fe20fd4b35da2`。
+全部新λ/δ除数25，最后ROOT270严格行除数1，实际源IC权另记。
 
-Main继续把新的闭式及完整参数域回流正文，草稿在 `registration/stage19_new_internal_lemma/body.md`。
-已实读一般JP旧owner，独有内容定位为明确完整参数域、坐标最小帽与同菜单条件耦合，
-没有重新认领一般联合尾投影。ROOT270正文增补也已准备，但正式body/registry/edges尚未变更。
-所有旧承重路线和已正确超边保留；更新对象后的whole_result范围将逐边复核。
+全局O为OPT6最优六标签并，正OPT6才归一化。冻结准备合同有两句把X写得过宽，已用独立 `visible_maximum_joint_v6_model_erratum.md` 明确更正：X必须一次选为同一actual前四负载P下全目录f_P最大合法标签；它与最大裸C不同。系数及冻结35件不改。
+Main完整逐字核查在 `main_visible_c_v6_preflight.py/json`，最终release必须同时绑定该更正；脚手架已冻结但当前无LP release、无消费。
+完成正式图集成和安全同步后，才对这份最终SHA单独放行唯一一次highs-ds及准确恢复、全原行全列、完整新面和真实正来源重审。
 
-## 边界和继续顺序
+## 当前并行数学义务
 
-最后已证全域界仍为alpha1586≈0.4411521416736506，完整准确分数和全脸排除见Stage18。
-旧23676固定16hist云任务仍是同一run43096304349，最近check12为queued、0jobs、0artifacts；未重发。
-734固定C模板仍UNBOUND，不对已排除的旧整面运行phase-I。
+1. `/root/source2_cap3_tradeoff`：只减第三尾帽，保全部真实条件损失，求连续h族的完整端点/ordered重数；C-only若整段冗余须给准确付款，一般T和ordered另核。
+2. `/root/high_lambda_closure`：λ≥25完整无界域和全部射线；证明是否由λ25族、真实SAFE与客户非负余项支付，不以固定τ斜率冒充整域闭合。
+3. `/root`：串行完成正文、登记、定向map回流与Main新输入核查，接回以上义务，随后继续4177主线。
 
-本次checkpoint选择已停写族、Main复核、静态求解骨架、草稿及RUN；活跃v5准备和lambda目录不混入。
-任何sync必须先协调所有写者停写；checkpoint采用指定路径，不stash/reset。
-继续完成v5冻结、一次求解、Main证书和真分支诊断，再把新lambda族接回；half仍OPEN，不在checkpoint处停研。
+## 恢复和远端
 
-## Stage19b 当前入口（2026-11-12）
-
-RUN仍为 `six-boss1-20261111`；当前说明与实际工件见 `research/workspaces/six-boss1-20261111/stage19b-current.md`。
-已核完整3056必要系统及整面不可达；Main用新δ切割和根C在O外余项，无新LP得到统一系数约.44175904545882727。half仍开放。
-下一步：完整δ族、后部λ全族Main准入、登记正文与超边回流、继续跨真实偏离约束。具体远端提交以该阶段pushed回执为准。
+写本页时最后确认pushed为 `81a3d423605707021f797c393f37099420d5d43a`（Stage19b）。Stage19c以随后checkpoint实际 `pushed` 回执为准。
+恢复先运行 `python research/workspaces/six-boss1-20261111/restore_frozen_text.py`，再 `python work.py research resume six-boss1-20261111`。
+原凭据在仓库外；不得重跑已消费的旧LP，不重发旧云23676任务。734仍UNBOUND，旧面已排除不作phase-I。
+活跃写者存在时不得stash式sync；Main checkpoint只选闭合包及实际RUN/正文路径，新的两项活跃目录暂不混入。
+本页是持续入口，不是研究结束；下一步按准确新证据继续原half义务。
