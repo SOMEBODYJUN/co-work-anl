@@ -1,6 +1,7 @@
 """Exact finite sanity checks for the Boss1 source reconstruction, not a new theorem."""
 from fractions import Fraction as F
-from itertools import product
+from itertools import product, combinations_with_replacement
+from math import comb
 import json
 from pathlib import Path
 
@@ -106,10 +107,60 @@ def check_two_player_ledgers():
             "source_explicit_debts": ["1", "-1/2"]}
 
 
+def check_rank_security():
+    cases = [
+        (4, [[11], [492], [21], [108, 286, 392], [152], [199], [25]],
+         {1: 1, 2: 1, 4: 1, 8: 3, 16: 1, 32: 1, 64: 1},
+         [F(1, 8), F(1, 8), F(1, 8), F(1, 4), F(1, 8), F(1, 8), F(1, 8)],
+         (3, 3), F(15, 16), 6, 4),
+        (5, [[913], [343, 575, 934], [605], [971], [625], [325, 521], [206]],
+         {1: 1, 2: 2, 4: 1, 8: 1, 16: 1, 32: 2, 66: 1},
+         [F(2, 15), F(4, 15), F(2, 15), F(2, 15), F(2, 15), F(1, 5), F(0)],
+         (1, 1, 5), F(14, 15), 8, 5),
+    ]
+
+    def rank(vectors):
+        pivots = {}
+        for v in vectors:
+            while v:
+                top = v.bit_length() - 1
+                if top not in pivots:
+                    pivots[top] = v
+                    break
+                v ^= pivots[top]
+        return len(pivots)
+
+    out = {}
+    for m, bundles, types, p, fixed, expected, optimum, welfare in cases:
+        def coverage(actions):
+            mask = sum(1 << a for a in set(actions))
+            return sum(r for b, r in types.items() if b & mask)
+
+        def query(a, opponents):
+            return sum((F(r, 1 + sum(bool(b & (1 << j)) for j in opponents))
+                        for b, r in types.items() if b & (1 << a)), F(0))
+
+        assert sum(p) == 1 and all(x >= 0 for x in p)
+        for mask in range(128):
+            actions = [a for a in range(7) if mask & (1 << a)]
+            assert rank([v for a in actions for v in bundles[a]]) == coverage(actions)
+        backgrounds = list(combinations_with_replacement(range(7), m - 1))
+        assert len(backgrounds) == comb(m + 5, 6)
+        lower = min(sum(p[a] * query(a, b) for a in range(7)) for b in backgrounds)
+        dual = [sum(p[j] * query(a, fixed + (j,)) for j in range(7)) for a in range(7)]
+        assert lower == expected == max(dual)
+        assert max(coverage(a) for a in combinations_with_replacement(range(7), m)) == optimum
+        out[f"m{m}"] = {"rank_coverage_checks": 128, "integer_backgrounds": len(backgrounds),
+                         "primal_lower": str(lower), "dual_queries": list(map(str, dual)),
+                         "OPT": optimum, "W_minus_mv": str(welfare - m * expected)}
+    return out
+
+
 if __name__ == "__main__":
     result = {"scope": "finite exact checks; universal claims use the source proofs",
               "client_rows": check_client_rows(), "jensen_distributions": check_jensen(),
-              "two_player_ledgers": check_two_player_ledgers()}
+              "two_player_ledgers": check_two_player_ledgers(),
+              "rank_security": check_rank_security()}
     destination = Path(__file__).with_name("ledger_checks.json")
     destination.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
     print(json.dumps(result, ensure_ascii=False))

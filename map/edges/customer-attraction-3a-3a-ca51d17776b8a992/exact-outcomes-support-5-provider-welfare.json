@@ -1,0 +1,77 @@
+{
+  "edge_id": "ca-ca51-exact-outcomes-support-5-provider-rank-bundle-welfare",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-EXACT-PURE-SPE-ALL"
+  ],
+  "target_ids": [
+    "M-7a25d0b4b971487d8921485c82c17f5b"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "仅该固定5人七标签九单位客户输入；从正文向量束逐项计算全部128个秩值，并与所给非负整数客户类型表示逐点相等。收益以Python无溢出整数乘LCM(1,…,5)=60精确比较，保全部合法计数孩子和非严格平局；原JSON行动表按全部有序历史解析，不作匿名策略限制。",
+  "roles": {
+    "CA-EXACT-PURE-SPE-ALL": "提供集合值递推的必要性、充分性与有序子树拼接，以及独立定义级全树真实偏离验证的逻辑依据。",
+    "M-7a25d0b4b971487d8921485c82c17f5b": "将固定rank输入实现为单位客户后，专化算法得到全部完整纯SPE根计数和最低福利；原静态安全鞍点与OPT由其独立输入证据承担。"
+  },
+  "explanation": "先固定该输入的客户类型：r_{1}=r_{4}=r_{8}=r_{16}=r_{66}=1，r_{2}=r_{32}=2，其余0（兴趣mask66={1,6}）。独立GF2消元在全部标签子集上与此coverage逐项相等，所以收益也是同一客户均分收益，而不是把向量当客户。将源R(k)、R_a、ell_a、M(k)原样用于这份类型表：终端R(k)={k}；非终端R(k)=并_a{c∈R(k+e_a):U_a(c)≥max_b min_{d∈R(k+e_b)}U_b(d)}。必要性把任一完整SPE的真实离轨子SPE纳入相应孩子；充分性在每个不同有序孩子独立选取达到min的子SPE，故计数缓存保的是全集，不把同计数历史强制同续局。本文审读时另行inline Python精确实施该递推，检查全部792个合法计数状态，与固定audit对应字段一致。令J={0,2,3,4}。根全集q6=0，且恰为(q1,q5)=(3,2)（1项）；(3,1)或(2,2)并在J中一个坐标取1（各4项）；(2,1)并在J中两个不同坐标各取1（6项）。其余坐标0。各类福利依次5、6、6、7，共15个根计数。 因而所有完整纯SPE的福利至少5，且保留最低计数可由完整有序策略实现。还完整解析已存的新重构2801节点动作表，核历史键恰为全部长度小于5的有序历史、行动合法；在每个节点强制每个标签并沿同一所给策略真实续行，19607次含自身有理比较全部非负，实际路径(1,1,1,5,5)，各位收益1，独立给达到W=5的完整SPE。该表是旧audit时新重构的证书，当前仅重放核验；不是原随机best报告中未保存的策略。",
+  "scope": "固定5人七标签九客户对象的全部完整纯SPE最低福利与给定完整策略步骤；不迁移到其他人数、目录、一般rank函数或普遍强安全聚合。",
+  "contribution": {
+    "result": "该固定输入的全部完整纯SPE根终局计数恰为解释中的有限集合，最低福利正好5；已存完整动作表按同策略真实偏离定义成立，实际路径(1,1,1,5,5)达到此最低值。",
+    "remaining": "整条目标另含具体向量束/客户实现、OPT_5=8及真正静态整数安全值v_5=14/15和W−5v_5=1/3。本包亦分别核了全128个rank/coverage值、全部终局支持OPT及静态原/对偶，但这些结论不由本边的全集算法单独推出；本边仅把全SPE量词、最低福利及完整策略这一局部贡献接入目标。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "全集递推及完整证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "完整策略和指定有序路径"
+    },
+    {
+      "path": "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md",
+      "sha256": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+      "section": "定义级独立核验证书"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/三份向量束秩记录的客户实现与精确安全值--计算.md",
+      "sha256": "4fbaa6b1cd92993865d5ac37f924721c70cf95d098644881111e23ebe3229176",
+      "section": "五人七标签：线性相关仍可coverage，题6是大题子集"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/三份向量束秩记录的客户实现与精确安全值--计算.md",
+      "sha256": "4fbaa6b1cd92993865d5ac37f924721c70cf95d098644881111e23ebe3229176",
+      "section": "三个固定输入的精确检查"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/matroid-bundle-four-boss3/fixed-best-exact-audit.json",
+      "sha256": "3d0ca826cb1cb57072a90001f3f6911dfba2b68d90fec06977e3c5e345861201"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/matroid-bundle-four-boss3/matroid_k7_m5_d10-new-full-strategy.json",
+      "sha256": "fa766b9b1cf0977e49c37af357386700422659e879463b4d62a4bde3e12a8b55"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "worker完整实读模型/计算/探针说明正文及源算法必要/充分/非空证明；audit完整JSON字段实读；动作表全部记录由解析器逐行消费并穷尽真实后继IC，非只读首尾。当前inline Python独立重算固定输入792状态全集、1470项玩家位置Shapley与19607项IC；未运行原随机CLI、原audit_fixed_matroids.py或原探针源码，不把历史统计说成当前执行。 Boss本次全文实读全集算法必要/充分性、计算页两个输入及探针说明，逐条核本边实际结论/目标剩余；独立GF2全128值、所有静态整数背景与匹配对偶及OPT复算通过。未重演原随机批次，也未把给定策略的存在性冒作全集下界。",
+  "endpoint_pins": {
+    "CA-EXACT-PURE-SPE-ALL": "aaa77e1f9a928bc25a315e66e18f424418e64643ec3fdb8717cbc3adc6310056",
+    "M-7a25d0b4b971487d8921485c82c17f5b": "56aa93666cac1b6a60dcdba9ac027ce3a365f396dde851da0dd51772fbc48185"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/算法/完整历史纯SPE终局全集--算法.md": "667d6f319b1f325bd32538f6b0e5a8e95c1942e2ec97cbc76d7cbaef06b36954",
+    "archives/customer-attraction/state/计算/三份向量束秩记录的客户实现与精确安全值--计算.md": "4fbaa6b1cd92993865d5ac37f924721c70cf95d098644881111e23ebe3229176",
+    "archives/customer-attraction/tools/evidence/matroid-bundle-four-boss3/fixed-best-exact-audit.json": "3d0ca826cb1cb57072a90001f3f6911dfba2b68d90fec06977e3c5e345861201",
+    "archives/customer-attraction/tools/evidence/matroid-bundle-four-boss3/matroid_k7_m5_d10-new-full-strategy.json": "fa766b9b1cf0977e49c37af357386700422659e879463b4d62a4bde3e12a8b55"
+  },
+  "review_digest": "6b3aa2423da7bb607c86ec2ff700dded24efa0efdf9d00ad4b61c65a6a1c76ef"
+}
