@@ -23,3 +23,7 @@ spec 的最小结构：
 obstacle packet 给原题、定义、障碍与自由研究任务。full packet 另给登记检索入口及相关超边，Solver 按需展开完整共同前提、条件和证据。不同支持分支保持 OR，单条逻辑边前提保持 ALL；proposed/refuted/rejected/objections 分别按真实语义理解。
 
 Main 用真实平台工具创建/接续 Solver。保存实际 profile、agent_id、完整数学笔记、具体反馈与下一动作；恢复时保留原 packet 和笔记，并明确当前登记与初始版本的差异。packet 不代表模型已启动，也不代表数学结论已成立。
+
+普通 open 的 init/resume 返回同题 RUN 与共同工作区入口，独立运行也可用 `research peers RUN` 查找。原题和定义的精确引用相同，即使 problem_id 或 seed_ids 不同也能发现；比较实验保原输入隔离。开题和派新义务前读同题已有成果，自己的 BossN.md 记录当前具体义务、输入版本、交付及实际接用位置。
+
+open 的 worker 默认 gpt-6.1-sol / ultra / fork_turns=none，用户另指定时照办。用 save 的 --model、--reasoning-effort、--fork-turns 记录真实配置。Main给取证代理精确义务，让其沿超边实读并返回可代入的数学、条件、关键步骤和来源；完整材料保存在文件。

@@ -27,9 +27,10 @@ STATES = {'working', 'needs-feedback', 'blocked', 'candidate', 'paused', 'closed
 IDENT = re.compile(r'[A-Za-z0-9][A-Za-z0-9_.-]{0,95}')
 OBJECT_IDENT = re.compile(r'[A-Za-z0-9][A-Za-z0-9_.:-]*(?:/[A-Za-z0-9][A-Za-z0-9_.:-]*)*')
 
-# Every new mathematical run gets the same three platform launch slots.  The
-# role split preserves the useful blind-vs-informed comparison while making the
-# model/effort choice explicit and machine-readable for Work orchestration.
+# Comparison runs retain their original blind-vs-informed launch slots.
+# Ordinary research dispatches obligations on demand with the same explicit
+# worker defaults, unless the user selects another model or effort.
+WORKER_LAUNCH = {'model': 'gpt-6.1-sol', 'reasoning_effort': 'ultra', 'fork_turns': 'none'}
 SOLVER_ROSTER = [
     {'solver_id': 'obstacle-1', 'profile': 'obstacle', 'model': 'gpt-6.1-sol',
      'reasoning_effort': 'ultra', 'fork_turns': 'none'},
@@ -871,6 +872,82 @@ def run_path(root, run_id):
     return _safe_path(root, 'research/runs/' + identity(run_id) + '/run.json')
 
 
+def _saved_research_inputs(root, run):
+    """Use immutable input declarations, never a silently edited current spec."""
+    for profile, expected in run['packet_pins'].items():
+        path = run_path(root, run['run_id']).parent / ('packet-' + profile + '.json')
+        saved = json.loads(path.read_text())
+        if pin(saved) != expected:
+            raise ValueError('Saved packet changed for ' + run['run_id'])
+        refs = saved.get('input_refs')
+        if refs is not None:
+            break
+    else:
+        # Compatibility with packets predating input_refs.
+        spec = json.loads(_safe_path(root, run['spec']).read_text())
+        if pin(spec) != run['spec_pin']:
+            raise ValueError('Saved spec changed for ' + run['run_id'])
+        refs = spec
+
+    def exact(ref):
+        if (not isinstance(ref, dict) or not {'path', 'sha256'} <= ref.keys()
+                or not isinstance(ref['sha256'], str)
+                or not re.fullmatch(r'[0-9a-f]{64}', ref['sha256'])):
+            raise ValueError('Exact problem/definition reference required')
+        _safe_path(root, ref['path'])
+        if 'section' in ref and (not isinstance(ref['section'], str) or not ref['section'].strip()):
+            raise ValueError('Explicit section title required')
+        return {key: ref[key] for key in ('path', 'sha256', 'section') if key in ref}
+
+    return {'problem': exact(refs['problem']),
+            'definitions': sorted((exact(ref) for ref in refs['definitions']), key=pin)}
+
+
+def peers(root, run_id):
+    """Find exact-input peers without treating arbitrary problem_id as identity.
+
+    This is a local-snapshot discovery aid, not a lease, a task claim, a remote
+    refresh, or a proof that the listed researchers are currently running.
+    """
+    run = json.loads(run_path(root, run_id).read_text())
+    inputs = _saved_research_inputs(root, run)
+    fingerprint = pin(inputs)
+    shared = 'research/collaboration/P-' + fingerprint[:24]
+    matches, related, warnings = [], [], []
+    for path in sorted((_safe_path(root, 'research/runs')).glob('*/run.json')):
+        try:
+            other = json.loads(path.read_text())
+            identity(other['run_id'])
+            if run_path(root, other['run_id']) != path:
+                raise ValueError('Run ID does not match its directory')
+            other_inputs = _saved_research_inputs(root, other)
+            if other_inputs['problem'] != inputs['problem']:
+                continue
+            exact_inputs = other_inputs == inputs
+            row = {'run_id': other['run_id'], 'problem_id': other['problem_id'],
+                   'same_run': other['run_id'] == run_id, 'declared_state': other['state'],
+                   'spec': other['spec'], 'workspace': str(Path(other['spec']).parent),
+                   'main_notes': [{'solver_id': sid, 'note': solver['note'],
+                                   'next_action': solver['next_action']}
+                                  for sid, solver in other.get('solvers', {}).items()
+                                  if sid.casefold() == 'main'],
+                   'saved_solver_count': len(other.get('solvers', {}))}
+            if exact_inputs:
+                matches.append(row)
+            else:
+                row['definitions'] = other_inputs['definitions']
+                related.append(row)
+        except (ValueError, OSError, KeyError, TypeError) as exc:
+            warnings.append({'run': path.relative_to(root).as_posix(), 'error': str(exc)})
+    return {'input_fingerprint': fingerprint, 'inputs': inputs,
+            'shared_workspace': shared,
+            'shared_entry': shared + '/README.md',
+            'shared_entry_exists': (root / shared / 'README.md').is_file(),
+            'peer_runs': matches, 'same_target_different_definitions': related,
+            'discovery_warnings': warnings,
+            'instruction': 'Sync safely before dispatch or expensive recomputation. Read peer Main notes and the shared workspace; publish your concrete obligation and reusable input/output paths in your own Boss file. Exact source inputs are a discovery match, not proof of semantic equivalence or compatible LP coordinates. Comparison runs retain their original input isolation. Declared states do not establish live agents. This command neither contacts peers nor claims work.'}
+
+
 def init_run(root, run_id, spec_file, registry=REGISTRY, *, mode='comparison'):
     path = run_path(root, run_id)
     if path.exists():
@@ -880,8 +957,8 @@ def init_run(root, run_id, spec_file, registry=REGISTRY, *, mode='comparison'):
     packets = {profile: packet(root, spec, profile, registry) for profile in profiles}
     if mode == 'open':
         packets['full']['launch'] = {
-            'fork_turns': 'none',
-            'instruction': 'Choose the model and effort for the actual assignment. Record the platform agent ID after dispatch.',
+            **WORKER_LAUNCH,
+            'instruction': 'Dispatch concrete obligations through the platform with these worker defaults unless the user explicitly selects another model or effort. Record the actual platform agent ID and launch settings. Keep Main on the original mathematical problem; delegate long-source retrieval and extraction.',
         }
     home = path.parent
     for profile, value in packets.items():
@@ -908,10 +985,12 @@ def init_run(root, run_id, spec_file, registry=REGISTRY, *, mode='comparison'):
     _write_json(path, state)
     return {'status': 'initialized-local-not-pushed', 'run': path.relative_to(root).as_posix(),
             'packets': [str((home / ('packet-' + p + '.json')).relative_to(root)) for p in packets],
-            'solver_count': len(roster), 'solver_roster': roster, 'agents_launched': 0}
+            'solver_count': len(roster), 'solver_roster': roster, 'agents_launched': 0,
+            'collaboration': peers(root, run_id) if mode == 'open' else None}
 
 
-def update_run(root, run_id, solver_id, profile, note, next_action, state, feedback=None, agent_id=None, ack_feedback=False):
+def update_run(root, run_id, solver_id, profile, note, next_action, state, feedback=None, agent_id=None, ack_feedback=False,
+               model=None, reasoning_effort=None, fork_turns=None):
     identity(solver_id)
     if profile not in {'obstacle', 'full'} or state not in STATES or not next_action.strip():
         raise ValueError('Explicit solver profile, state and concrete next action required')
@@ -928,6 +1007,15 @@ def update_run(root, run_id, solver_id, profile, note, next_action, state, feedb
     if not on_demand and roster and (solver_id not in roster or roster[solver_id] != profile):
         raise ValueError('Use a declared Solver roster slot with its original profile')
     old = run['solvers'].get(solver_id, {})
+    same_agent = agent_id is None or agent_id == old.get('agent_id')
+    launch = copy.deepcopy(old.get('launch', {})) if same_agent else {}
+    if fork_turns is not None and fork_turns not in {'none', 'all'}:
+        raise ValueError('fork_turns must be none or all')
+    for key, val in (('model', model), ('reasoning_effort', reasoning_effort), ('fork_turns', fork_turns)):
+        if val is not None:
+            if not isinstance(val, str) or not val.strip():
+                raise ValueError('Explicit launch setting required: ' + key)
+            launch[key] = val
     old_pending = old.get('feedback_pending', bool(old.get('feedback')))
     if old and old['profile'] != profile:
         raise ValueError('Do not silently change a solver context profile')
@@ -946,6 +1034,8 @@ def update_run(root, run_id, solver_id, profile, note, next_action, state, feedb
              'feedback_inherited': feedback is None and old.get('feedback') is not None,
              'feedback_pending': feedback is not None or (old_pending and not ack_feedback),
              'feedback_acknowledged': bool(ack_feedback and old_pending)}
+    if launch:
+        event['launch'] = launch
     _write_json(_safe_path(root, (path.parent / 'events' / (event_id + '.json')).relative_to(root).as_posix()), event)
     run['solvers'][solver_id] = dict(event, latest_event=event_id)
     if on_demand and solver_id not in roster:
@@ -1047,7 +1137,15 @@ def resume(root, run_id):
             warnings.append('Saved notes and packets remain recoverable; the current registry needs attention: '+str(exc))
     head = subprocess.run(['git','rev-parse','HEAD'],cwd=root,capture_output=True,text=True)
     roster = run.get('solver_roster', SOLVER_ROSTER)
+    collaboration = None
+    if run.get('launch_plan', {}).get('mode') == 'open':
+        try:
+            collaboration = peers(root, run_id)
+        except (ValueError, OSError, KeyError, TypeError) as exc:
+            collaboration = {'status': 'input-recovery-required', 'error': str(exc),
+                             'instruction': 'Recover the original saved input before matching peers; continue recovering notes and feedback below.'}
     return {'run':run,'solver_count':run.get('solver_count',len(roster)),'solver_roster':roster,
+            'collaboration': collaboration,
             'packet_bindings':packet_bindings,'event_history':histories,
             'recent_feedback':{i:s.get('feedback') for i,s in run['solvers'].items() if s.get('feedback')},
             'pending_feedback':{i:s.get('feedback') for i,s in run['solvers'].items()
@@ -1761,6 +1859,8 @@ def main(argv=None):
     q = sub.add_parser('init'); q.add_argument('run_id'); q.add_argument('--spec', required=True)
     q.add_argument('--mode', choices=['comparison', 'open'], default='comparison')
     q = sub.add_parser('resume'); q.add_argument('run_id')
+    q = sub.add_parser('peers', help='Find same-input runs and their shared research workspace in this snapshot')
+    q.add_argument('run_id')
     q = sub.add_parser('compute', help='Run one registered experiment and checkpoint its receipt immediately')
     q.add_argument('experiment'); q.add_argument('--out', required=True)
     q.add_argument('--manifest', default='research/experiments.json'); q.add_argument('--resume-from')
@@ -1771,6 +1871,8 @@ def main(argv=None):
     feedback_group = q.add_mutually_exclusive_group()
     feedback_group.add_argument('--feedback'); feedback_group.add_argument('--ack-feedback', action='store_true')
     q.add_argument('--agent-id')
+    q.add_argument('--model'); q.add_argument('--reasoning-effort')
+    q.add_argument('--fork-turns', choices=['none', 'all'])
     a = p.parse_args(argv); root = a.repo.resolve()
     if a.command == 'inventory': result = inventory(root, a.registry)
     elif a.command == 'inputs':
@@ -1837,10 +1939,12 @@ def main(argv=None):
     elif a.command == 'packet': result = packet(root, json.loads(_safe_path(root, a.spec).read_text()), a.profile, a.registry)
     elif a.command == 'init': result = init_run(root, a.run_id, a.spec, a.registry, mode=a.mode)
     elif a.command == 'resume': result = resume(root, a.run_id)
+    elif a.command == 'peers': result = peers(root, a.run_id)
     elif a.command == 'compute':
         import codespace_math
         result = codespace_math.run(root, a.experiment, a.out, a.message, a.local_only, a.manifest, a.resume_from)
-    else: result = update_run(root, a.run_id, a.solver, a.profile, a.note, a.next, a.state, a.feedback, a.agent_id, a.ack_feedback)
+    else: result = update_run(root, a.run_id, a.solver, a.profile, a.note, a.next, a.state, a.feedback, a.agent_id, a.ack_feedback,
+                             a.model, a.reasoning_effort, a.fork_turns)
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0
 

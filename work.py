@@ -560,7 +560,11 @@ def start(args):
                   board_branch=selected_board)
     if selected_role == "boss" and valid_archive:
         result.update(research_prompt=result["role_prompt"],
-                      research_runbook="research/RESEARCH_WORKFLOW.md")
+                      research_runbook="research/RESEARCH_WORKFLOW.md",
+                      research_collaboration={
+                          "discover": "python work.py research peers RUN",
+                          "instruction": "init/resume returns same-input RUNs and a shared research workspace. Read peer Main notes and publish your concrete obligation before dispatch or expensive recomputation.",
+                      })
     if save == "customer-attraction" and not selected_sub:
         result["context_entry"] = "archives/customer-attraction/README.md"
     elif save == "repository-cleanup":

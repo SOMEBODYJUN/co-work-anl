@@ -307,11 +307,18 @@ python work.py research search '精确数学关键词' --model '实际模型' --
 python work.py research show OBJECT-C --body
 python work.py research context OBJECT-C --hops 0
 python work.py research init RUN --spec research/problem-spec.json --mode open
-python work.py research save RUN --solver next-lemma --profile full --note research/workspaces/RUN/next-lemma.md --next '继续具体未付不等式' --agent-id 实际平台ID
+python work.py research peers RUN
+python work.py research save RUN --solver next-lemma --profile full --note research/workspaces/RUN/next-lemma.md --next '继续具体未付不等式' --agent-id 实际平台ID --model gpt-6.1-sol --reasoning-effort ultra --fork-turns none
 python work.py research save RUN --solver next-lemma --profile full --note research/workspaces/RUN/next-lemma.md --next '回应具体推导缺口' --state needs-feedback --feedback '具体疑点及已成立部分'
 python work.py research save RUN --solver next-lemma --profile full --note research/workspaces/RUN/next-lemma.md --next '接续答复后的推导' --state working --ack-feedback
 python work.py research resume RUN
 ```
+
+普通 open 运行返回明确 worker 默认配置（gpt-6.1-sol / ultra / none），实际派工服从用户本轮配置。save 的 --model、--reasoning-effort、--fork-turns 可记录实际配置，后续事件沿用已记录值；旧记录不猜填。配置与 agent_id 是执行者对实际平台派工的记录。
+
+`research peers RUN` 从保存且 pin 匹配的 packet/input_refs 发现同题 RUN。problem 和 definitions 精确引用相同则进入同一个 `research/collaboration/P-…/`；定义排序不影响匹配，seed_ids、problem_id 和检索选项不同不割裂同题研究。不同 section/版本不自动合并。它返回各 RUN 的实际 spec/工作区和 Main 笔记入口；原题相同但定义不同的另列供实读。命令只读本地快照，不自动联系其他会话或认领任务。普通 open 的 init/resume 返回同一 collaboration 字段，保留原 packet 和反馈恢复。对照运行不会自动返回其他组的研究内容。
+
+共同入口 README 由研究者建立，保原题和各 RUN 链接；各人自己的 BossN.md 随真实义务/输入/交付/接用结果更新并 checkpoint。派工和重算前安全同步读有变化的合作页，复用可用工作；同时选中同一义务时根据实质进展拆分。无需新建审批或先完成正式构图才能使用成熟工作区结果。
 
 先实际答复并写note，再ack-feedback。新feedback与ack互斥；普通save保未答反馈，ack关闭pending但保事件历史，后续needs-feedback不复活已答问题。resume保同agent、不可变笔记、continuation、原packet、未答反馈和相关版本变化，并显示相对原输入新可见的关联关系，不悄改原输入。
 
