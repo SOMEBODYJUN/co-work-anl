@@ -12,4 +12,4 @@
 
 Boss与每个子代理都做完整数学整理，独立文件并行写，Git由Boss串行组织，成熟即保存与补位，持续至本阶段可处理材料全部准确处置。无用身份/过程日志、重复导出和旧交付包，核实无独有内容、必要证据或未完草稿后直接删除并修引用，不另存历史目录。
 
-具体接口见[操作手册](CURATION_OPERATIONS.md)与[程序契约](PHASE25_PROGRAM.md)。第一步定性工具为triage/classification_catalog；当前对象群使用curation-task、独立curator clone及wcg/board-curation-25。原阶段二clean处理冻结来源，不混用其认领。现有旧准入与图原型不充当本步的登记或验收要求。
+具体接口见[操作手册](CURATION_OPERATIONS.md)与[程序契约](PHASE25_PROGRAM.md)。第一步定性工具为triage/classification_catalog；已完成对象群的curation-task保留供追溯，旧公屏已退役。原阶段二clean处理冻结来源，不混用其认领。现有旧准入与图原型不充当本步的登记或验收要求。

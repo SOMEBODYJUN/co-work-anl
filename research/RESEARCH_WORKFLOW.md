@@ -1,3 +1,5 @@
+> 当前状态：研究系统暂停重新设计。现行启动入口见[暂停说明](../prompts/research-runtime.md)，下文为旧设计参考，不得据此重建已删除公屏。
+
 # 从已有数学到实际研究，再把成果接回仓库
 
 前置登记给出准确数学身份与正文位置，超边给出完整的支持、反驳和迁移关系；现在围绕用户原题做新研究。Main启动词见[完整Main词](../prompts/research-runtime.md)，两个内部词分别供obstacle/full使用；命令与格式见[IMPLEMENTATION](IMPLEMENTATION.md)，输入spec见[现有模板](templates/research-packet.md)。用户不用另上传一组内部文件。
@@ -12,13 +14,9 @@ Main核准原题和承重定义，及时把长材料定位、沿超边取证和�
 
 Main 通过平台真实派工，给精确子命题、当前条件、候选超边、已有结果/失败边界和独立笔记 `research/workspaces/<RUN>/<solver-id>.md`。普通研究默认 gpt-6.1-sol / ultra / fork_turns=none，用户明确指定时照办。首次实质派工用 `research save` 记录实际 agent ID、model、reasoning_effort、fork_turns 和下一步，后续记录推导和反馈；旧记录的未知配置不补猜。对照运行按原 profile 反馈。
 
-## 同题 Main 的档内文件公屏
+## 旧研究公屏已删除
 
-`research peers RUN` 按已保存 packet 中原题与定义的精确引用发现其他 RUN，返回 `<所属存档或子档>/collaboration/P-…/README.md` 及各 Main 笔记。普通 open 的 init/resume 返回同一入口。所属档从保存的原题路径或显式 collaboration_scope 恢复，不从当前clone配置或跨档定义猜。原题暂在workspaces时可在spec指明scope；未定归属返回scope-required，先做数学再补准确入口。原题相同而定义不同、同路径改版的RUN另列为待核对应，不自动合并数学身份。problem_id不是跨Main唯一题目标识。发现基于本地快照，先安全同步；working和历史solver_count不证明进程活着或占槽。
-
-文件板与成果在结果分支：读用work.py sync后打开入口与变化文件；发布用checkpoint保存本人BossN.md和相关数学文件，确认pushed。旧read/send/inbox仍属原阶段公屏，不是此板收发入口。共同README保原题、可复用数学、关键缺口和RUN入口；本人板页只保当前断点、输入、交付和接用位置，完整历史按需追读，不把大段旧主笔记每次重新塞给Main。研究开始、派新义务、收到成果及路线转折时读取变化文件。昂贵工作先发表具体义务/输入，确认pushed后再同步核撞题，发现重合便接用或拆分。这里没有原子锁，不承诺完全消除重复；有目的的独立证明可并行。
-
-合作先是研究认识、可复用推导、决定性障碍和更正改变另一条路线，不把公屏做成跨Main互相出题验算。常规核验自家子代理完成，同一昂贵计算共享只是特例。接收方给实际代入位置和新一步，或精确不兼容条件与所需桥。成熟工作区数学可以先用，登记与超边回流随之进行。不同系统先核域与映射，有限最优数值不冒作普遍结论；跨档成果保原owner与条件映射。旧合作入口只留迁移指针。第三阶段期间保留所有旧阶段公屏，全部结束并由用户指定的1号下令后才退役。
+研究 Agent 等超边收尾后从头设计，本页其余内容只供核对旧方案，不是继续启动指令。仓库级合作区、六人试跑板及旧研究公屏均已退役，不建立替代板。research peers/resume只定位保存的数学与RUN，shared_entry为空。当前唯一活动公屏为构图的wcg/board-map-v2。
 
 ## 子代理取证，Main 接回数学
 

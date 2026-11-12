@@ -22,10 +22,13 @@ WORKSPACES = "research/workspaces"
 # Legacy unbound non-start/checkpoint fallback; preserve topic compatibility.
 # New-conversation phase defaults are separate below and are applied by start.
 DEFAULT_SAVE = "customer-attraction"
-# New conversations share this long-lived branch and board. Existing bound
-# clones keep their own routes; cleanup is a phase, not a branch lifecycle.
+# The hypergraph closeout board is the only active chat. Other roles have no
+# implicit board while the research agent is being redesigned.
 DEFAULT_BRANCH = "rebuild/research-v2"
-DEFAULT_BOARD_BRANCH = "wcg/board-cleanup-20261028"
+DEFAULT_BOARD_BRANCH = ""
+MAP_BOARD_BRANCH = "wcg/board-map-v2"
+RETIRED_BOARD_BRANCHES = {"wcg/board", "wcg/board-cleanup-20261028",
+                          "wcg/board-curation-25", "wcg/board-registration-v2"}
 DEFAULT_START_SAVE = "repository-cleanup"
 RESEARCH_ENTRIES = {
     "repository-cleanup": {"research_entry": "cleanup/README.md", "research_prompt": "prompts/02.5-3-register.md", "research_runbook": "tools/README.md"},
@@ -124,14 +127,23 @@ def branch_id(repo, requested=None):
     return chosen
 
 
-def board_branch(repo, requested=None):
+def board_branch(repo, requested=None, *, allow_none=False):
     saved = run(repo, "config", "--local", "--get", "wcg.boardBranch",
                 check=False).stdout.decode().strip()
-    fallback = DEFAULT_BOARD_BRANCH if branch_id(repo) == DEFAULT_BRANCH else "wcg/board"
-    chosen = checked_branch(repo, requested or saved or fallback, board=True)
+    role = run(repo, "config", "--local", "--get", "wcg.role", check=False).stdout.decode().strip()
+    workflow = run(repo, "config", "--local", "--get", "wcg.workflowRun", check=False).stdout.decode().strip()
+    fallback = MAP_BOARD_BRANCH if role == "mapper" or workflow == "map-v2" else DEFAULT_BOARD_BRANCH
+    if requested in RETIRED_BOARD_BRANCHES:
+        raise Stop("该旧公屏已退役删除；构图使用 wcg/board-map-v2，其他阶段不再启用旧公屏。")
+    chosen = requested or (saved if saved not in RETIRED_BOARD_BRANCHES else "") or fallback
+    if not chosen:
+        if allow_none:
+            return None
+        raise Stop("当前角色没有活动公屏；旧公屏已删除，研究系统等待重新设计。")
+    chosen = checked_branch(repo, chosen, board=True)
     if chosen == branch_id(repo):
         raise Stop("公屏分支与研究文件分支必须分开。")
-    if saved and requested and saved != chosen:
+    if saved and saved not in RETIRED_BOARD_BRANCHES and requested and saved != chosen:
         raise Stop("本clone已绑定公屏 " + saved + "；新公屏使用独立clone。")
     return chosen
 
@@ -427,7 +439,7 @@ def start(args):
     legacy = target == "main" and branch.startswith("wcg/work/") and not getattr(args, "branch", None)
     if branch != target and not legacy:
         raise Stop("当前分支不是 " + target + "；不自动切换或合并其他分支，请使用独立clone。")
-    selected_board = board_branch(repo, getattr(args, "board_branch", None))
+    selected_board = board_branch(repo, getattr(args, "board_branch", None), allow_none=True)
     if selected_board == target:
         raise Stop("公屏分支与研究文件分支必须分开。")
     env = auth(repo, args)
@@ -523,12 +535,21 @@ def start(args):
         prompt_path = Path(workflow_config['prompt'])
         if prompt_path.is_absolute() or '..' in prompt_path.parts or not (repo / prompt_path).is_file():
             raise Stop('工作阶段缺少明确启动词。')
-        expected_board = checked_branch(repo, workflow_config['board_branch'], board=True)
+        expected_board = workflow_config.get('board_branch') or None
+        if expected_board:
+            expected_board = checked_branch(repo, expected_board, board=True)
+            if expected_board in RETIRED_BOARD_BRANCHES:
+                expected_board = None
         if getattr(args, 'board_branch', None) and selected_board != expected_board:
             raise Stop('公屏与该工作阶段配置不一致。')
         selected_board = expected_board
         run(repo, 'config', '--local', 'wcg.workflowRun', workflow_run)
-    run(repo, "config", "--local", "wcg.boardBranch", selected_board)
+    if not selected_board and selected_role == 'mapper':
+        selected_board = MAP_BOARD_BRANCH
+    if selected_board:
+        run(repo, "config", "--local", "wcg.boardBranch", selected_board)
+    else:
+        run(repo, "config", "--local", "--unset", "wcg.boardBranch", check=False)
     if legacy:
         # sync has already preserved staged/unstaged/untracked work and stopped
         # on any real conflict. Keep any existing local main under a local ref
@@ -561,9 +582,10 @@ def start(args):
     if selected_role == "boss" and valid_archive:
         result.update(research_prompt=result["role_prompt"],
                       research_runbook="research/RESEARCH_WORKFLOW.md",
+                      research_status="paused-for-redesign",
                       research_collaboration={
                           "discover": "python work.py research peers RUN",
-                          "instruction": "init/resume returns same-input RUNs and a shared research workspace. Read peer Main notes and publish your concrete obligation before dispatch or expensive recomputation.",
+                          "instruction": "Research boards are retired. Inspect saved RUNs and mathematical workspaces only; do not recreate collaboration pages. Research-agent design resumes after hypergraph closeout.",
                       })
     if save == "customer-attraction" and not selected_sub:
         result["context_entry"] = "archives/customer-attraction/README.md"
@@ -589,7 +611,7 @@ def start(args):
             result.update(status='read-only',write_access='blocked');print(json.dumps(result,ensure_ascii=False));return registered.returncode
         result['write_access']='verified'
     print(json.dumps(result, ensure_ascii=False), flush=True)
-    if not board_limit:
+    if not board_limit or not selected_board:
         return 0
     return board(repo, env, "view", ["--save", save, "--limit", str(board_limit)])
 
@@ -629,7 +651,7 @@ def main():
     s.add_argument('--curation-run',help='已发布的2.5运行ID；独立工作区/身份/任务，不混入旧来源')
     s.add_argument('--workflow-run', help='已发布的登记/建图阶段；独立身份与工作区，不改绑旧阶段')
     s.add_argument("--branch", help="文件分支；新clone默认长期共用分支，既有绑定不变")
-    s.add_argument("--board-branch", help="公屏分支；新长期分支clone默认新公屏，既有绑定不变")
+    s.add_argument("--board-branch", help="构图公屏wcg/board-map-v2；其他阶段无默认公屏，旧公屏已退役")
     s.add_argument("--board-limit", type=int, default=0,
                    help="启动时读取最近几条公屏；默认0不自动读取，完整历史用read按需查询")
     sub.add_parser("sync", help="只同步绑定分支并保留本地工作")

@@ -8,12 +8,12 @@
 
 | 用户指定工作 | 完整入口 | 身份、任务与公屏 |
 | --- | --- | --- |
-| 2.5第三步：登记数学对象 | [登记提示词](prompts/02.5-3-register.md) | curator；p25-register-v2；wcg/board-registration-v2 |
+| 已完成登记的必要追溯/修订 | [登记接口](research/IMPLEMENTATION.md) | curator；p25-register-v2；旧公屏已退役 |
 | 第三阶段：从内到外建超边 | [构图提示词](prompts/03-map.md) | mapper；map-v2；wcg/board-map-v2 |
-| 后续实际研究 | [Main提示词](prompts/research-runtime.md) | 按明确研究问题建立运行，原Solver持续接续 |
+| 后续研究 Agent | [暂停说明](prompts/research-runtime.md) | 先超边收尾，再从头设计；不启动旧协作方案 |
 | 已完成整理的必要追溯/修订 | [既有任务操作](research/CURATION_OPERATIONS.md) | 原curation-run及工作区，不重新启动旧阶段 |
 
-具体启动、任务、字段与阶段闭合见[阶段入口](research/PHASE3_READINESS.md)及[命令](research/IMPLEMENTATION.md)。维护设计不自动启动全仓登记、构图或Solver，不替其他Boss认领数学任务。普通研究恢复已有数学、原输入和未付问题，按现行Main词调度；明确对照才保原输入隔离。Main与长线研究者持续思考，机动子代理取证、独立推导和挑战；局部引理闭合不清空有价值的长线历史，嵌套请求直接回送发起者。新的承重结果主动安排独立挑战、修后复查，Main不包办全量演算。普通init/resume或research peers给出所属档内的文件公屏，sync后读文件、checkpoint发布；旧read/send/inbox仍属阶段公屏。先接用同题已有数学再派新义务，昂贵工作发表后再读一次避免碰撞。实际配置如实保存，登记和构图按可用并发持续补位。
+具体阶段接口见[交接说明](research/PHASE3_READINESS.md)及[命令](research/IMPLEMENTATION.md)。当前先完成超边，研究Agent之后从头设计；旧Main和合作区不再作为执行方案。保留数学正文、证据、超边、RUN、packet和未完研究文件，peers/resume只定位已存数学，不创建公屏。旧研究、清洗、整理、登记公屏及试跑合作页已按用户授权退役删除，唯一保留公屏wcg/board-map-v2用于构图收尾；旧路由不得重建，也不把旧研究消息转入构图屏。维护不替其他Boss认领数学任务。
 
 ## 协作与持续执行
 

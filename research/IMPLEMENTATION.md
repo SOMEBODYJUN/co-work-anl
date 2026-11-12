@@ -6,7 +6,7 @@
 
 | 阶段 | workflow-run | role | 公屏 | 队列入口 |
 | --- | --- | --- | --- | --- |
-| 2.5第三步登记 | p25-register-v2 | curator | wcg/board-registration-v2 | registration-task |
+| 2.5第三步登记（已完成，接口供追溯） | p25-register-v2 | curator | 已退役，无活动公屏 | registration-task |
 | 第三阶段构图 | map-v2 | mapper | wcg/board-map-v2 | map |
 
 任务/lead/身份在research/operations/<run>/，工作区在research/workspaces/<run>/<Boss>/。新对话使用用户给出的唯一Boss号和独立clone；同对话恢复原身份和未完批次。旧clean/curation-run不改绑进新阶段。
@@ -316,13 +316,9 @@ python work.py research resume RUN
 
 普通 open 运行返回明确 worker 默认配置（gpt-6.1-sol / ultra / none），实际派工服从用户本轮配置。save 的 --model、--reasoning-effort、--fork-turns 可记录实际配置，后续事件沿用已记录值；旧记录不猜填。配置与 agent_id 是执行者对实际平台派工的记录。
 
-research peers从保存且pin匹配的packet/input_refs发现同题。problem与definitions精确引用相同则列peer，定义排序、seed_ids、problem_id及检索选项不割裂同题。same_target_different_definitions列不同定义；same_target_revisions列同目标路径但SHA/section不同的RUN和旧板，只供数学核对，不自动合并。各行含原spec/工作区、Main笔记及自身入口。命令只读本地快照，不联系他人或认领；普通open的init/resume返回同一collaboration字段，对照不自动注入同行研究。
+研究系统暂停，等待超边收尾后从头设计。research peers从保存且pin匹配的packet/input_refs定位同行RUN、数学工作区和主笔记，改版/不同定义保持可辨别；返回status=retired，shared_entry/shared_workspace及legacy入口均为空，不创建合作目录。普通resume保原packet、工作文件和未答反馈，不表示已恢复活动公屏或启动研究者。
 
-公屏路由为collaboration_scope/collaboration/P-…/README.md。archives内原题固定以路径最深所属档为准，显式scope不一致会拒绝；workspace新题可在spec存collaboration_scope，不用clone配置或跨档定义猜。旧RUN不改packet，仍可由已存原题路径推断。scope未知返回scope-required及空入口，数学继续。workspace精确peer声明不同scope时返回scope_conflicts及各自入口，当前有scope则status=scope-conflict；研究者协调唯一现行板，不自动合并旧声明。legacy_shared_entry保旧入口迁移指针。
-
-共同README保原题、可用数学、关键缺口与RUN链接；不存在则开题者直接建立并推送。本人BossN.md只保当前义务/输入/交付/接用结果。读用sync后直接读文件，发表用本人板页和数学一起checkpoint确认pushed；旧read/send/inbox仍是阶段公屏入口。昂贵工作先发表再同步读一次，撞题就接用或拆分；无原子锁，不承诺绝无重复。旧阶段公屏保留到第三阶段全完且指定1号下令。成熟数学无需等正式构图即可用。
-
-旧workspace RUN未保存scope时，改现spec不会补路由：以新RUN ID/init --mode open保存原准确题目/定义引用及scope，笔记链接旧RUN、最后推导、未答反馈与job标识，旧入口保承接指针；不改旧packet、不重算已有结果。相同输入scope分歧时协调唯一活板，其他留指针，不能默认两个入口都在共同研究。
+旧远端公屏和试跑文件板已删除；唯一保留的公屏为wcg/board-map-v2。旧read/send/inbox/board-init在退役路由上拒绝执行，不自动重建，也不把旧研究消息转发到构图公屏。构图mapper/workflow map-v2继续用原公屏；其他角色没有默认公屏。旧清洗reset apply停用，避免重建旧屏或重置构图状态。
 
 先实际答复并写note，再ack-feedback。新feedback与ack互斥；普通save保未答反馈，ack关闭pending但保事件历史，后续needs-feedback不复活已答问题。resume保同agent、不可变笔记、continuation、原packet、未答反馈和相关版本变化，并显示相对原输入新可见的关联关系，不悄改原输入。
 

@@ -30,6 +30,8 @@ INTENT_KEYS = {'id', 'actor', 'kind', 'body'}
 BODY_KEYS = {'text', 'thread', 'reply_to', 'asset', 'save', 'to', 'mentions'}
 ADDRESS = re.compile(r'[A-Za-z0-9][A-Za-z0-9._-]{0,63}')
 DEFAULT_SAVE = 'shared'
+RETIRED_BRANCHES = {'wcg/board', 'wcg/board-cleanup-20261028',
+                    'wcg/board-curation-25', 'wcg/board-registration-v2'}
 
 
 class BoardError(Exception):
@@ -270,7 +272,9 @@ def render(state, now=None, selected=None, actor=None):
 
 
 class Board:
-    def __init__(self, repo, branch='wcg/board', retries=20, clock=time.time):
+    def __init__(self, repo, branch='wcg/board-map-v2', retries=20, clock=time.time):
+        if branch in RETIRED_BRANCHES:
+            raise ValidationError('This board was retired and deleted; do not recreate it. Only the hypergraph closeout board remains active.')
         if type(retries) is not int or not 1 <= retries <= 50:
             raise ValidationError('Retry limit must be an integer from 1 to 50.')
         self.repo = Path(git(repo, 'rev-parse', '--show-toplevel').stdout.decode().strip())
@@ -573,7 +577,7 @@ def make_intent(actor, kind, body, event_id=None):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--repo', default='.')
-    parser.add_argument('--branch', default='wcg/board')
+    parser.add_argument('--branch', required=True, help='Explicit active board; retired boards cannot be reopened')
     parser.add_argument('--retries', type=int, default=20)
     sub = parser.add_subparsers(dest='command', required=True)
     sub.add_parser('init')

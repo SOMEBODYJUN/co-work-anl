@@ -40,7 +40,7 @@ class ResearchPeerTests(unittest.TestCase):
         self.write('two.json', {'problem': 'changed'})
         self.assertEqual(result['input_fingerprint'], runtime.peers(self.root, 'two')['input_fingerprint'])
 
-    def test_archive_and_nested_subarchive_route_is_the_same_at_init_peers_and_resume(self):
+    def test_archive_and_nested_subarchive_boards_stay_retired_at_init_peers_and_resume(self):
         scopes = ['archives/game', 'archives/game/subarchives/child',
                   'archives/game/subarchives/child/subarchives/grandchild']
         for index, scope in enumerate(scopes):
@@ -49,13 +49,13 @@ class ResearchPeerTests(unittest.TestCase):
                 initialized = self.init('run-' + str(index), 'target')['collaboration']
                 discovered = runtime.peers(self.root, 'run-' + str(index))
                 restored = runtime.resume(self.root, 'run-' + str(index))['collaboration']
-                expected = scope + '/collaboration/P-' + discovered['input_fingerprint'][:24] + '/README.md'
-                self.assertEqual(discovered['status'], 'ready')
+                expected = None
+                self.assertEqual(discovered['status'], 'retired')
                 self.assertEqual(discovered['collaboration_scope'], scope)
                 self.assertEqual(initialized['shared_entry'], expected)
                 self.assertEqual(discovered['shared_entry'], expected)
                 self.assertEqual(restored['shared_entry'], expected)
-                self.assertFalse((self.root / expected).exists())
+                self.assertEqual(list(self.root.rglob('collaboration')), [])
 
     def test_workspace_scope_is_saved_in_packet_and_does_not_change_fingerprint(self):
         self.problem = self.write('research/workspaces/one/problem.md', '# Target\nEvery finite instance.\n')
@@ -80,7 +80,7 @@ class ResearchPeerTests(unittest.TestCase):
                 self.init('wrong-' + str(index), 'target', scope=scope)
         result = self.init('canonical', 'target', scope=canonical)['collaboration']
         self.assertEqual(result['collaboration_scope'], canonical)
-        self.assertEqual(result['status'], 'ready')
+        self.assertEqual(result['status'], 'retired')
         self.assertEqual(result['scope_conflicts'], [])
         self.problem = self.write('archives/game/problem.md', '# Parent target\n')
         with self.assertRaisesRegex(ValueError, 'conflicts with the problem archive'):
@@ -96,16 +96,17 @@ class ResearchPeerTests(unittest.TestCase):
         first = runtime.peers(self.root, 'one')
         second = runtime.resume(self.root, 'two')['collaboration']
         self.assertEqual(first['input_fingerprint'], second['input_fingerprint'])
-        self.assertEqual(first['status'], 'scope-conflict')
-        self.assertEqual(second['status'], 'scope-conflict')
-        self.assertNotEqual(first['shared_entry'], second['shared_entry'])
+        self.assertEqual(first['status'], 'retired')
+        self.assertEqual(second['status'], 'retired')
+        self.assertIsNone(first['shared_entry'])
+        self.assertIsNone(second['shared_entry'])
         self.assertEqual({row['run_id'] for row in first['scope_conflicts']}, {'one', 'two'})
         self.assertEqual({row['shared_entry'] for row in first['scope_conflicts']},
                          {first['shared_entry'], second['shared_entry']})
-        self.assertIn('agree one current board', first['instruction'])
+        self.assertIn('do not create or recreate', first['instruction'])
         self.assertEqual(first['legacy_shared_entry'], second['legacy_shared_entry'])
         unknown = runtime.peers(self.root, 'unknown')
-        self.assertEqual(unknown['status'], 'scope-required')
+        self.assertEqual(unknown['status'], 'retired')
         self.assertIsNone(unknown['shared_entry'])
         self.assertEqual(unknown['scope_conflicts'], first['scope_conflicts'])
         self.assertEqual([path.read_bytes() for path in packets], original)
@@ -114,13 +115,13 @@ class ResearchPeerTests(unittest.TestCase):
         self.problem = self.write('research/workspaces/one/problem.md', '# Target\nEvery finite instance.\n')
         self.definition = self.write('archives/other/subarchives/unrelated/definition.md', '# Model\n')
         result = self.init('one', 'target')['collaboration']
-        self.assertEqual(result['status'], 'scope-required')
+        self.assertEqual(result['status'], 'retired')
         self.assertIsNone(result['collaboration_scope'])
         self.assertIsNone(result['shared_entry'])
         self.assertIsNone(result['shared_workspace'])
         self.assertFalse(result['shared_entry_exists'])
-        self.assertTrue(result['legacy_shared_entry'].startswith('research/collaboration/P-'))
-        self.assertEqual(runtime.resume(self.root, 'one')['collaboration']['status'], 'scope-required')
+        self.assertIsNone(result['legacy_shared_entry'])
+        self.assertEqual(runtime.resume(self.root, 'one')['collaboration']['status'], 'retired')
 
     def test_legacy_packet_scope_comes_from_saved_problem_not_live_spec(self):
         scope = 'archives/game/subarchives/child'
@@ -140,7 +141,7 @@ class ResearchPeerTests(unittest.TestCase):
         self.assertEqual(result['collaboration_scope'], scope)
         self.assertEqual(packet_path.read_bytes(), before)
 
-    def test_same_path_target_revisions_have_their_own_board_and_are_not_exact_peers(self):
+    def test_same_path_target_revisions_remain_distinct_without_reopening_boards(self):
         self.problem = self.write('archives/game/problem.md', '# Target\nOriginal formulation.\n# Variant\nOther formulation.\n')
         self.init('old', 'target')
         old = runtime.peers(self.root, 'old')
@@ -154,7 +155,8 @@ class ResearchPeerTests(unittest.TestCase):
         self.assertEqual(set(rows), {'old', 'section'})
         self.assertEqual(rows['old']['shared_entry'], old['shared_entry'])
         self.assertEqual(rows['old']['legacy_shared_entry'], old['legacy_shared_entry'])
-        self.assertNotEqual(rows['old']['shared_entry'], revised['shared_entry'])
+        self.assertNotEqual(rows['old']['input_fingerprint'], revised['input_fingerprint'])
+        self.assertIsNone(rows['old']['shared_entry'])
         self.assertIn('check their mathematical relationship', rows['old']['instruction'])
         old_now = runtime.peers(self.root, 'old')
         self.assertEqual(old_now['input_fingerprint'], old['input_fingerprint'])

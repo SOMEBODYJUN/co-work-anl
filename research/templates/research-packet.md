@@ -1,3 +1,5 @@
+> 当前研究系统暂停从头设计。以下仅说明既有数学输入与恢复格式，不启动新协作公屏；peers的活动及legacy公屏入口均为空。
+
 # 研究输入
 
 普通研究用 `work.py research init RUN --spec <路径> --mode open` 生成一份 full packet。明确对照用 comparison 生成 obstacle/full；已有RUN恢复数学与原输入，普通派工按现行设计判断，对照保隔离。两种模式用同一spec。
@@ -14,7 +16,7 @@ spec 的最小结构：
 }
 ```
 
-问题及定义包含完整的域、目标量词与约束，引用可用section指定标题。obstacles只选有用失败边界。archives内原题以路径最深所属档为准，显式scope不一致会拒绝；若原题暂在workspaces，在spec加 `"collaboration_scope":"archives/ARCHIVE/subarchives/SUBARCHIVE"`（可父档或更深子档），随packet保存，不从跨档定义或clone配置猜。workspace精确同题的已存scope分歧以scope_conflicts明确列出，当前已知scope时status=scope-conflict，不自动裁决或改写旧声明。
+问题及定义包含完整的域、目标量词与约束，引用可用section指定标题。obstacles只选有用失败边界。archives内原题以路径最深所属档为准，显式scope不一致会拒绝；若原题暂在workspaces，在spec加 `"collaboration_scope":"archives/ARCHIVE/subarchives/SUBARCHIVE"`（可父档或更深子档），随packet保存，不从跨档定义或clone配置猜。workspace精确同题的旧scope分歧仍以scope_conflicts列出供核对，但公屏状态统一为retired，不自动裁决或改写旧声明。
 
 原题或定义尚无准确正文时，可先按完整原意写到`research/workspaces/<RUN>/problem.md`、`definitions.md`再引用。有相关既有成果才填写其真实seed_ids；没有时用`"seed_ids":[]`，即使尚无registry也可init，研究者从原题开始，可按需查后续证据。此时保留full检索能力，但初始packet没有引入任何成果；后续实际取用的相关结果记进研究笔记，不悄改原packet。指定edge_ids时须同时给相关seed，以准确保留所选证明分支。
 
@@ -24,8 +26,6 @@ obstacle packet 给原题、定义、障碍与自由研究任务。full packet �
 
 Main用真实平台创建/接续研究者。长线线路保历史并followup；临时Reader/独立挑战以当前精确请求为目标，交清发起者与回送对象。保存真实profile、agent_id、笔记、反馈和下一步；恢复保原packet及版本差异，不改写旧packet。packet不代表已启动模型或结论成立。
 
-普通open的init/resume及research peers返回同题RUN和档内文件公屏；原题/定义精确引用匹配不依赖problem_id/seed_ids。同目标改版及不同定义另列需数学核对；未知scope给scope-required与空入口，先研究再按准确归属建新保存输入，不篡改旧包。读用sync后打开返回文件，发用本人BossN.md及数学文件checkpoint，旧read/send/inbox不承担此板。当前板页保当前断点，完整历史按需追读；昂贵工作发表后再读一次核碰撞。对照保原输入隔离。
-
-旧workspace RUN若初始未存scope，编辑现spec不会改变旧packet/路由。要归档时，从原数学断点建立一个新ID的open RUN，复制准确原题/定义引用并加真实collaboration_scope；新工作笔记链接旧RUN、已成立推导、未答反馈及外部job标识，旧入口保承接指针。不重做已完成数学、不改旧包，不把仅补归属说成数学重新开题。相同输入出现不同scope时先协调唯一现行板，其他入口留指针，不让两板各自活跃。
+普通open的init/resume及research peers仍能定位已保存RUN和数学断点，返回status=retired及空公屏入口，不创建、迁移或重建合作页。旧packet不改；研究Agent的下一版输入和协作方式待超边收尾后设计。
 
 open的worker默认gpt-6.1-sol / ultra / fork_turns=none，用户另指定照办。save记录真实配置，长线用稳定线路ID、临时请求用独立请求ID。给取证者精确接口和回送对象；完整材料留文件。
