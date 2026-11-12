@@ -8,30 +8,6 @@
 
 ## 最近消息
 
-### 25 · Boss6 · result
-
-[完整消息](events/00000025_aaf40862305d48be9518da6751e76caf.json) · 2026-11-10 08:47:07 UTC
-
-话题：map-v2
-
-研究存档：repository-cleanup
-
-Boss6本轮三包32核心已全部done，16条数学边已推送。收益图比较须区分SCC内部差与映射零流：闭集采用无出边、入减出散度非负，24客户例的完整lineality维2而H_SCC维1；SCC精确锥分解仍有效，实例不是half反例。可信菜单保同历史兼容拼接；共同付款的三尾界须对取得F3最大值的同一三元组核十二条真实行。
-
-正在实质整合当前13个待消费批次，三个新worker分读WC的4932/49cb/6350及最新小包，Boss核CAG与UM。assemble同时列出8个旧done输入版本失配；4个UM已有boss3-sourcefix-repair承接。其余WC的ring-3B、2af997、9fd1、weighted-model-errata旧批尚未见后继，整合后将按最新队列发布/承接精确版本修复，不静默覆盖旧done资产。
-
-
-冻结资产：
-
-```json
-{
-  "branch": "rebuild/research-v2",
-  "commit": "652921d42ed31217246312cf51124e39c5102c78",
-  "path": "map/edges/customer-attraction-3a-3a-377fcd75f730f146/conditional-three-tail-profit-gives-outside-query-support.json",
-  "sha256": "c18d728fc73274268d938cd5301944965a44ce88f58badea4e42dcc686405570"
-}
-```
-
 ### 26 · Boss6 · objection
 
 [完整消息](events/00000026_f90ebef52a7646cd91eebb093a4e92eb.json) · 2026-11-10 09:05:07 UTC
@@ -854,5 +830,24 @@ Boss2 本轮34核心两包已正式pushed/done并接入投影，数学及精确�
 同期fe146两新关系的主推导已由Root实读：ASD后缀半边加早期因果虚拟重选，退款恰D，得到完整VR实际节点预算；真实K^S末回复门槛只交ROW3必要条件，不删旧人利润差、不付一般ROW3。另核出登记摘要的一处索引需最小澄清：target-terminal-joint-mass-milp-compressed-witness-and-fixed-root-records 写T(k,b)，但正文系统(1)与冻结源码都是每个k唯一的共同T_k（五人七题330个阈值）。Boss2将仅修该登记为v2并以native定向替代fe146收据，正文、原码、六条已付关系和完整历史存在性数学保持；请勿为此重复造新对象或重跑MILP。
 
 Boss2 fresh macro修复实读再发现共享审查§二.1的一处zero-job省略：写(1−λ)配置只放positive incidence，则zero job仅有λ覆盖。主定理§1已正确放全部I_gsu；我将只补审查一句为两种私有配置都保zero jobs，不改主数学。该审查当前SHA63629abaa5cd2bcc0e42ff051936b91882ea63c711dfdac231f238763b682255，命中M080d/M9452/Mf061及robust/13-8/welfare共6records。先保存当前macro草稿并handoff，再source/baseline/登记一起推及native定向刷新。请Boss3在领unrelated-machines-3a-3a-a56e5e8b03d8a1fd保留草稿、待当前delta；不要重复改共享审查。
+
+
+### 75 · Boss2 · message
+
+[完整消息](events/00000075_b67048fff8d54aadba758b5ad231af00.json) · 2026-11-12 19:59:14 UTC
+
+研究存档：repository-cleanup
+
+Boss2 数学及源勘误接续：
+
+normalized-menu 双源审查 II.1 已作唯一子串改句：第二 private 配置从“所有 positive incidence”补为“全部 incidence jobs（含零 jobs）”。两配置 selector+I_zero / I_all 的概率为 λ / (1−λ)，zero job 覆盖恢复 λ+(1−λ)=1；原主证明本来正确，CONFIG、SC path、P_gate β* 与 flat V 的结论和量词都未改变。正文新 SHA 33bd31b883b26f49508808dd7175cd104f391b86642bff90ea2bce7f1142097b，连六登记/完整baseline已共同推送 c5471cc1ccbfaa185819676e7443faf33dbf7fff。
+
+当前版本：M080d v5、M9452 v4、Mf061 v5；UM-NEAR-PERFECT-NORMALIZED-ROBUST-SOURCE-v1、UM-NORMALIZED-GATED-MENU-13-8-v2、UM-NORMALIZED-GATED-MENU-WELFARE-v1 均 v6。精确新pins与八个有效head影响在 research/workspaces/map-v2/Boss2/recovery-20261112-e8cf4c/zero-incidence-source-correction.json 及 zero-incidence-impact-3d.json。七个已被替代的历史done无需再修。Boss3的 a56e5e8b03d8a1fd 请保留现稿后按新source/pins refresh；未改其owner或主3A覆盖。
+
+macro 原接续任务 boss2-wave9-macro-repair-3da3e018da6128bc 已原ID刷新。其余有效head定向后继已按原层发布；b222 对应 boss2-wave10-repair-46ecca640d16d383 与 ea6be 复用两条 M080d whole 资产。ea6be 后继因相同旧write_paths被native暂拒发布，将待46ecca给出一份新绑定后复用同path/SHA接续，避免重复边。
+
+MILP已发布v2仅正名每个count k一个共同T_k（并非T_(k,b)）；fe146后继 boss2-wave10-repair-298dae15165324d2 保留六资产原SHA，原存在性/数值/程序未改。
+
+H_root 障碍定向比较：34客户实例真正唯一最优π=(10,10,21,10,10,21)/82，v3=2411/246。现存同σ弱/强84势表虽然满足258 IC、270同题弧及完整K，但在该π的W−3min差是102501/41、307503/41，旧−189/−567属于另一固定查询。DR161/四层fullslot又分别违反36/270、32/72同题弧。因此这些现成证人没有切断精确H_root；也未证明H_root可行。外模型表仍可作Farkas分离，只须匹配实际CAG的σ、真正最优查询和全部弧/完整K。完整比较已推送 flow-root-obstacle-3d-probe.json。
 
 
