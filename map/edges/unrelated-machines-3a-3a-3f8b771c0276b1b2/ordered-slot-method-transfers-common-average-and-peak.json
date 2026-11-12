@@ -1,0 +1,60 @@
+{
+  "edge_id": "um-3f8b771c-ordered-slot-method-transfers-common-average-and-peak",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding"
+  ],
+  "target_ids": [
+    "M-49e9997cd9f844868fd866561237e733"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "无释放、不可抢占、无权平均完成时间普通UM；给共同(M,T)见证。位置s为倒数位置；slot费用sp，正支撑p≤T。",
+  "roles": {
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding": "其有序槽负载证明对任意覆盖匹配成立，匹配积分性允许新的slot边费用。",
+    "M-49e9997cd9f844868fd866561237e733": "在共同位置LP和重排费用桥付款后得到整个(M,2T)结论。"
+  },
+  "explanation": "共同调度给位置LP：job和1、位置质量≤1、行load≤T、总位置费用≤nM且剪p>T。把同机分数按p非增从倒数位置1装单位槽，交换论证使费用不增。对该槽图用费用s p_ij求最小费用覆盖匹配；整数性给费用≤nM。ST前槽收费只依图和降序，与边费用无关，故同一匹配负载≤ell_i+r_i≤2T。按slot s由大到小执行，压紧后的倒数位置≤s，实际完成时间总和≤sum sp≤nM。原generic c_ij定理不能把完成时间免费当费用，slot依赖费用的桥已在§4逐项证明。M*代入时T必须取达到M*的调度中的T_M*。",
+  "scope": "整个共同见证定理；不获得两个独立最优同时(M*,2T*)，不从论文报告造未经复核反例矩阵。",
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-3f8b771c0276b1b2/comparison-review.md",
+      "sha256": "f9ecd430ed5045fec8f20236fd1049dc71847deede6866b371416ce322cdb545",
+      "section": "4. ST机制转移到共同平均与峰值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+      "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+      "section": "6. 平均完成时间与 makespan：共同见证及后续纠错"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+      "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+      "section": "1. 模型、两个阈值与准确主结论"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+      "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+      "section": "2. 有序槽与最小费用匹配：完整证明"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-3f8b771c0276b1b2/recovery-review.md",
+      "sha256": "366f89caa0a0c38e3834c406450087e1461246198ee9fcd921af1a33c1adb6cf",
+      "section": "2. 完成时间的槽费用桥独立复核"
+    }
+  ],
+  "reviewed_by": "Boss5/two_small/recovery-20261112",
+  "review_note": "前序worker的77声明refs/56文件57区间实读成果继续复用，原阅读证据见reading-manifest；本恢复独立核ST的slot费用桥及复制界，并核9边当前端点的whole/contribution/context边界。新增实读范围见recovery-review；未重读其余全部来源，旧数学程序本轮运行0。",
+  "whole_result": "任意同一调度可同时达到(M,T)时，总位多项式位置LP/重排最小费用槽输出平均≤M、峰≤2T；特别(M*,2T_M*)，严格保留共同最优见证限制。",
+  "endpoint_pins": {
+    "M-49e9997cd9f844868fd866561237e733": "551c03a1aa1106931282f56ab10b50c5b5973b2fbae9aa8d9837a9af29a702ff",
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding": "c12cff11f8d9d634441f752ebe101222ec0faba1d570a402caf2618f68edb356"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-3f8b771c0276b1b2/comparison-review.md": "f9ecd430ed5045fec8f20236fd1049dc71847deede6866b371416ce322cdb545",
+    "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+    "map/edges/unrelated-machines-3a-3a-3f8b771c0276b1b2/recovery-review.md": "366f89caa0a0c38e3834c406450087e1461246198ee9fcd921af1a33c1adb6cf"
+  },
+  "review_digest": "b301a7ead09d680d8073259397e73db11ea8ea7d73f3b588ed8cfb664eb83fb8"
+}
