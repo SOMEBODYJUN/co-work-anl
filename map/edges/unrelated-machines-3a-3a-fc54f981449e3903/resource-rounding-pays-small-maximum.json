@@ -1,0 +1,50 @@
+{
+  "edge_id": "blmrs-resource-rounding-pays-two-value-bridge-small-maximum",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-737cbc9ea3b54c03b847026018cf5b19"
+  ],
+  "target_ids": [
+    "M-e7c107d268344ca592782a71e1925647"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "固定alpha>=2、V>0；restricted resource-matroid的公共有限非负有理价值、归一化单调整数次模秩value-oracle及原基合同。已给每项合法有理分数基，使每人收益>=V，且最大正资源价值w<V/alpha。此边只处理两值job算法到Santa算法归约中的小最大值分支；不把见证存在/构造及其他分支纳入源舍入定理。",
+  "roles": {
+    "M-737cbc9ea3b54c03b847026018cf5b19": "提供任意给定合法分数基的减最大有限资源值舍入；严格证据支付压缩槽、整数交和原基完成。",
+    "M-e7c107d268344ca592782a71e1925647": "接受Lemma16通过Lemma22调用的小最大值分支贡献；不由此单步证明完整双向alpha↔2−1/alpha算法类等价。"
+  },
+  "explanation": "调用源舍入得到每项原资源的整数基，每人值至少V−w。由w<V/alpha及alpha>=2，V−w>V(1−1/alpha)>=V/alpha。这正是冻结Appendix E Lemma22第一部分最后分支，被Appendix D Lemma16开头调用。有限公共价值是必要合同；无穷值规范项不进入此次舍入。分数见证可在相关阈值分支由原oracle LP构造，但不是源定理自行提供的输入。",
+  "contribution": {
+    "result": "给定上述两值原实例、V及分数基见证，若w<V/alpha则多项式输出原项整数基分配、每人值>=V/alpha，支付Lemma16的小最大值分支。",
+    "remaining": "完整核心还需Lemma16其余两值分支及其覆盖判定、规范1和1/b输入的封顶双对偶与解码；Lemma15的另一算法方向；Proposition9同值项聚合和精确分解回原项，以及阈值搜索/oracle算法合同。"
+  },
+  "scope": "当前核心v2 Theorem3证明的一步；不宣称舍入单独推出整条双向桥，也不把一般值逐见证对偶等价混作两值算法类等价。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/算法/两值作业拟阵的四分之七加误差条件近似--算法.md",
+      "sha256": "43d19d1a98d521929c0adb75443d9115b279413a48ed7a245ab83c2193ddfea4"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md",
+      "sha256": "9c7a4bfe21f216b57edfbce69b591aabf1a4d3a637510eba54411f7d62774bd1"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
+      "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+    }
+  ],
+  "reviewed_by": "Boss5/matroid_transfers",
+  "review_note": "完整实读当前核心及四指定共享端点合同；实读Definitions7/8、Proposition9/AppendixA、Lemmas15/16/22和严格槽证明。独立核本分支不等式与alpha>=2边界，remaining保全部未由本源提供的归约步骤。辅助worker独立核同一结论。未绑定；父Boss统一审阅绑定。 父Boss核对算法方向、V−w门槛、聚合回译、固定epsilon参数与一侧完备阈值搜索，保原oracle复杂度合同。",
+  "endpoint_pins": {
+    "M-737cbc9ea3b54c03b847026018cf5b19": "8cf0ef3b2e88c2a2e1253b318c333e212f60184c7482c182cee8e33434f8d758",
+    "M-e7c107d268344ca592782a71e1925647": "b07db459d993b150fd8a8d01c8cf01f689bde95a9689321d4c79bd9026d8881f"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/算法/两值作业拟阵的四分之七加误差条件近似--算法.md": "43d19d1a98d521929c0adb75443d9115b279413a48ed7a245ab83c2193ddfea4",
+    "archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md": "9c7a4bfe21f216b57edfbce69b591aabf1a4d3a637510eba54411f7d62774bd1",
+    "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+  },
+  "review_digest": "e9d2be124db9ba364e72bb12fd6c4456b0ebd6ed505206f331bdd092a53b3ab3"
+}
