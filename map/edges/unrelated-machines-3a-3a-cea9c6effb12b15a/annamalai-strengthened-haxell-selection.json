@@ -1,0 +1,49 @@
+{
+  "edge_id": "um-cea9-annamalai-unit-slack-proves-afs-disjoint-selection",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/annamalai-bipartite-hypergraph-perfect-matching-algorithm-2016"
+  ],
+  "target_ids": [
+    "M-45f29a8d9e9f4e45acad4efb363adbfb"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "目标的完整集合系合同：任意正整数p,l、整数k≥3，每族恰l个按候选索引计的k元集合，任一资源在全部索引候选中出现≤l。置b=floor(k/3)、总边大小r=b+1、源强化余量ε=1。构造的全部超边是有限显式集合；本边只声称全k存在性以及固定k时的构造，不声称变k统一位多项式。",
+  "roles": {
+    "unrelated-machines/annamalai-bipartite-hypergraph-perfect-matching-algorithm-2016": "在总边大小r及强化余量ε固定时，对满足全左子集严格命中数条件的显式二部超图输出覆盖左侧的匹配。",
+    "M-45f29a8d9e9f4e45acad4efb363adbfb": "接收其完整全p,l,k存在性：每族选一个原候选并留下至少βk个元素，所有留下的集合两两不交。"
+  },
+  "explanation": "给定目标合同中的任一有限实例，令b=floor(k/3)≥1。左顶点a_i对应第i族，右顶点是原资源；对每个原索引候选S_ij及每个b元子集Q⊆S_ij加入超边{a_i}∪Q，并记录(i,j,Q)见证。相同超边可去重，但计数仍按原候选索引。每超边恰含1左点、b右点，故总大小r=b+1≥2。任取左子集C，若右侧T命中该C的全部候选超边，则对其中每个原k元候选S_ij有|T∩S_ij|≥k−b+1；否则其补集有至少b点，构成避开T的超边。将这些交点按原候选索引求和，每个右资源被计≤l次，而C含恰l|C|个原索引候选。因此l|T|≥(k−b+1)l|C|，特别τ(E_C)≥(k−b)|C|≥2b|C|。对非空C，这严格大于2b(|C|−1)=(2r−3+ε)(|C|−1)，其中ε=1；对空C，τ=0>−2b，条件同样成立。所有源定理前提均已逐项付清。对该实例对应的固定整数r和固定ε=1，源Theorem1.3输出覆盖全部p个左点的匹配；每条边的见证给一个原候选及其中恰b点，匹配保证所有右集合不交。任意实数β≤b/k都满足b≥βk，故同一输出涵盖目标全部β量词。源量词为每固定r存在算法；为证明无运行时间承诺的全k存在结论，可对每个给定有限k取对应r，不要求一个跨k的多项式界。若k固定，枚举的边数≤pl*binomial(k,b)，源算法及 witness解码按显式集合系输入多项式；k随输入增长则该枚举和源参数依赖可能指数，本边不升级复杂度。",
+  "scope": "这是加强Haxell算法对AFS集合系的完整存在性特化。原物品身份、候选索引、每族等l和全局出现上界全部保持；不涉及树形子集、加权价值、任意隐式超边或调度解码。",
+  "whole_result": "对全部正整数p,l、全部k≥3及满足目标等族大小和全局出现次数条件的集合系，每族可选一个原候选并取至少βk个元素，所得p个子集两两不交，对所有β≤floor(k/3)/k成立。即完整得到目标M-45f29a8d9e9f4e45acad4efb363adbfb；附带固定k时显式可构造，不包含变k统一多项式承诺。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资料/Annamalai双部超图完美匹配算法--资料.md",
+      "sha256": "1bda69d8bc6c48c99b8ec4ec6b38f4443f3de7de2bf85957cce2f42b758e2d12",
+      "section": "主结论：固定 r 与固定强化量的可构造化"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/Santa-Claus超图匹配与配置LP五分之一界--资源.md",
+      "sha256": "e2473d9f5ff132a5a2774a6f10a0c73da16e1f94c4851fdae8143e796cb0ea5f",
+      "section": "组合选择引理"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/asadpour-feige-saberi-2008.pdf",
+      "sha256": "7c95e2140f4180a2edd5affb1917589f75f707b231b5ce5295b9e677f9e501a6"
+    }
+  ],
+  "reviewed_by": "Boss2/afs-selection-worker",
+  "review_note": "完整读取当前Annamalai登记v1及其全部无额外evidence的body，实读AFS资源与冻结2008作者稿11个PDF页的文本导出。独立完成b元子集超图、k−b+1命中下界、原候选索引双计数和ε=1严格强化阈值；核对空C及b=1边界。源固定rank算法量词只在固定k用于多项式构造，在全k目标仅用于存在性，不将隐式/变rank问题升级。未重证外部原论文全部增广算法，未运行科学计算。",
+  "endpoint_pins": {
+    "M-45f29a8d9e9f4e45acad4efb363adbfb": "e30390208fe4b0a1b78f6e9ec3f941dc7840c4a29e7d7e6731ed3b90027a9824",
+    "unrelated-machines/annamalai-bipartite-hypergraph-perfect-matching-algorithm-2016": "b60b0046cd893f1bef2cd2bbea4acf7df766ff07a00c61dd0beb0b9386be02f3"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资料/Annamalai双部超图完美匹配算法--资料.md": "1bda69d8bc6c48c99b8ec4ec6b38f4443f3de7de2bf85957cce2f42b758e2d12",
+    "archives/unrelated-machines/state/资源/Santa-Claus超图匹配与配置LP五分之一界--资源.md": "e2473d9f5ff132a5a2774a6f10a0c73da16e1f94c4851fdae8143e796cb0ea5f",
+    "research/registration/evidence/boss6-0104/asadpour-feige-saberi-2008.pdf": "7c95e2140f4180a2edd5affb1917589f75f707b231b5ce5295b9e677f9e501a6"
+  },
+  "review_digest": "f37b6a913804a5bcc21ccd5f49ec5a468e3deea0c16cd37ab667b4fe46e02410"
+}

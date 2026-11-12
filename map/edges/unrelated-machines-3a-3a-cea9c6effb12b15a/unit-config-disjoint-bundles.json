@@ -1,0 +1,51 @@
+{
+  "edge_id": "um-cea9-afs-indexed-selection-yields-unit-config-disjoint-bundles",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-45f29a8d9e9f4e45acad4efb363adbfb"
+  ],
+  "target_ids": [
+    "M-ca617ca816f74198b08235417c005de5"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "仅限同一有限受限Santa Claus实例的单位值子域：每件物品对有资格玩家的公共价值为1，对其它玩家为0；非空玩家集；给定整数k≥3及阈值k的有理可行配置点x，满足每玩家配置权重和1、每物品总边际≤1。条件不包含任意加权值的约简，也不声称多项式枚举清分母后的候选。",
+  "roles": {
+    "M-45f29a8d9e9f4e45acad4efb363adbfb": "对每族恰l个按索引计的k元候选、且每资源总出现≤l的集合系，给每族一个至少floor(k/3)元的两两不交子集。",
+    "M-ca617ca816f74198b08235417c005de5": "只接收单位值、整数可行阈值k≥3时的实际分配存在性；其一般加权模型与2^n局部步数合同仍由独立fat/thin及signature证明承重。"
+  },
+  "explanation": "令b=floor(k/3)≥1。先对每个玩家每个正权配置S删去不合资格的零值物品，再固定选其中恰k件合资格物品R_iS；原配置值≥k使这一步可行。把同一R的权重相加得到x_iR，保每玩家权重和1，且逐物品边际只会下降。所有权重有理且支持有限，取一个共同正分母l，使所有l*x_iR为非负整数。对玩家i，把每个k元集合R按l*x_iR份复制成有索引的候选；每族总索引数恰Σ_R l*x_iR=l，同一物品在所有玩家所有索引候选中的总出现数为l*Σ_i,R:j∈R x_iR≤l。重复集合必须保留索引，不能先去重而丢失等族大小。于是源引理以β=b/k直接适用，给每玩家一个候选及其中至少b件物品，且所有玩家输出束两两不交。每件输出物品资格合法、价值1，故这是原实例上的实际整数分配，逐玩家值≥b；未分物品可不分配，若要求全分可任意补分而不降非负价值。若需有限找到该见证，可穷举这个有限索引集合系和各候选的b元子集；该过程不继承源之外的任何运行时间界。源引理的内部阈值也核对如下：任何命中全部b元子集的T在每个k元候选内至少有k−b+1个元素；双计数甚至给|T|≥(k−b+1)|C|，原稿放松为(k−b)|C|≥2b|C|，严格超过(2b−1)(|C|−1)。这里两处l抵消依赖每族恰l个索引候选。以上支付的是单位整数阈值子域的完整存在性推导；没有从普通无权基数选择推出全加权fat/thin舍入或其2^n步数。",
+  "scope": "原资源身份及玩家资格完全保持的单位值CONFIG子域；k为整数且k≥3。清分母是有限存在性桥，l及显式重复候选数可能对二进制输入指数大。",
+  "contribution": {
+    "result": "每个给定单位值受限Santa Claus实例、整数k≥3及阈值k的有理CONFIG可行点，存在同一原物品上的实际互斥分配，使每位玩家获得至少floor(k/3)件合资格物品、价值至少floor(k/3)。这是精确的整数输出界。",
+    "remaining": "目标M-ca617ca816f74198b08235417c005de5还量化任意非负公共物品值并要求min value≥optLP/5及原局部搜索2^n步数；这些不由该单位阈值桥支付。需要独立的加权fat/thin极小配置、交替树Lemma5及signature终止证明；k=0,1,2亦不在本局部贡献域。"
+  },
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/Santa-Claus超图匹配与配置LP五分之一界--资源.md",
+      "sha256": "e2473d9f5ff132a5a2774a6f10a0c73da16e1f94c4851fdae8143e796cb0ea5f",
+      "section": "组合选择引理"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/Santa-Claus超图匹配与配置LP五分之一界--资源.md",
+      "sha256": "e2473d9f5ff132a5a2774a6f10a0c73da16e1f94c4851fdae8143e796cb0ea5f",
+      "section": "模型和配置 LP"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/asadpour-feige-saberi-2008.pdf",
+      "sha256": "7c95e2140f4180a2edd5affb1917589f75f707b231b5ce5295b9e677f9e501a6"
+    }
+  ],
+  "reviewed_by": "Boss2/afs-selection-worker",
+  "review_note": "本轮worker完整读取资源正文及冻结AFS2008作者稿11个PDF页的pdftotext-layout导出，独立核Theorem3/Conjecture2.1的同l索引合同、b=floor(k/3)、transversal严格阈值、单位CONFIG逐项缩束与共同清分母。目标的Theorems4/6、Lemma5及signature亦已读以明确未支付范围。检索当前边未发现同一AFS→单位CONFIG逻辑边；scaled-threshold-flow.md已有一致边界说明，不重建其加权估值关系。没有新科学运行。 Boss复核：单位值、整数阈值及有理CONFIG是已明确量化的输入域，缩束、共同清分母和源引理应用均完整，无开放前提；本关系在该输入域内为unconditional，完整加权目标的范围差距仍由contribution.remaining保留。",
+  "endpoint_pins": {
+    "M-45f29a8d9e9f4e45acad4efb363adbfb": "e30390208fe4b0a1b78f6e9ec3f941dc7840c4a29e7d7e6731ed3b90027a9824",
+    "M-ca617ca816f74198b08235417c005de5": "1a7cb900788dd805e72895946463dd116bc498d223d07a0678d1bc6782a01bcf"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/Santa-Claus超图匹配与配置LP五分之一界--资源.md": "e2473d9f5ff132a5a2774a6f10a0c73da16e1f94c4851fdae8143e796cb0ea5f",
+    "research/registration/evidence/boss6-0104/asadpour-feige-saberi-2008.pdf": "7c95e2140f4180a2edd5affb1917589f75f707b231b5ce5295b9e677f9e501a6"
+  },
+  "review_digest": "f3d0ce426754c6be38f5146cf128414c265305714e545eb21f0d8bc8aca1a200"
+}
