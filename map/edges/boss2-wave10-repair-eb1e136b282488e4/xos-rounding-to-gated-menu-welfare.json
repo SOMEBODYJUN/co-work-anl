@@ -1,0 +1,58 @@
+{
+  "edge_id": "xos-independent-coefficient-rounding-to-gated-menu-welfare",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-8fdee11afd164305a429734ee5ae705a"
+  ],
+  "target_ids": [
+    "UM-NORMALIZED-GATED-MENU-13-8-v2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "目标的有限非空显式norm1 indexed菜单，非负二进制有理p；对显式福利LP的一份精确有理可行(z,x)，Σ_s z_gs=1，0≤x_gsu≤z_gs且每资源Σ_gs x_gsu≤1。令n=组数、L=Σp x。state选择跨组独立；给定各组选态后，按x/z取incidence coins。只在z>0的state计算x/z。局部福利迁移无需unit-FSLP、未知OPT或整数YES见证。",
+  "roles": {
+    "M-8fdee11afd164305a429734ee5ae705a": "提供Theorem3.2/Lemma3.3的独立逐bidder随机加性系数最大值界，以及支持clause使真实福利支配赢家系数和的论证；保留原demand+maximizing-clause访问合同。",
+    "UM-NORMALIZED-GATED-MENU-13-8-v2": "把bidder映为group、物品映为resource、加性clause映为显式state；compact LP的state/coin分布生成同型随机系数。显式有限level乘积公式支付精确有理去随机化，供目标后续平衡提取使用。"
+  },
+  "contribution": {
+    "result": "对目标每个显式输入及每份上述可行有理(z,x)，state/coin舍入的初始赢家质量A满足E[A]≥c_n L，c_n=1−(1−1/n)^n≥1−1/e；逐state、逐coin重算精确有理条件期望，可确定性位多项式输出实际不交bundles，真实福利W≥c_n L。因此支付目标W≥(1−1/e)L的福利舍入分步，并保有限n更强常数。",
+    "remaining": "本边不单独推出目标整条未知OPT的13/8调度定理。完整目标还需从菜单求精确最优LP并证W*≤L≤n，排序提取βhat、W/n≤2βhat−βhat²、W*≥n(β*)²，完整P_gate的OPT=2−β*及全部原jobs回填，以及13/8二次比较。上述是本边未支付的目标步骤，不将已证目标改标开放。"
+  },
+  "explanation": "一、源的可迁移内容。PDF pp.8–9 Theorem3.2/Lemma3.3固定物品j，令X_i为bidder收到j的概率、V_i为收到后的条件平均系数；各bidder独立，Σ_i X_i≤1。按V_i递减排，辅助规则把j交给首个收到者，其期望为Σ_i X_iV_i∏_{h<i}(1−X_h)，实际取最大系数逐样本不更差。若s_k=Σ_{i≤k}X_i，则AM–GM给1−∏_{i≤k}(1−X_i)≥1−(1−s_k/k)^k≥[1−(1−1/k)^k]s_k≥c_n s_k。中间不等式由s↦1−(1−s/k)^k在[0,1]凹且过原点；c_k随k不增。乘非负V_k−V_{k+1}并求和，得到E[max系数]≥c_nΣ_i X_iV_i。X_i=0项删去，末项V_{n+1}=0；n=1时c_1=1。证明只需跨bidder独立和单物品容量，不要求同一bidder的不同物品独立。\n二、明确的目标分布映射。独立地为每组g按z_g选一个原state s_g；随后该state的正incidence u以θ_gsu=x_gsu/z_gs提出。定义a_gu为提出时的原p_gsu，否则0。固定u，a_gu跨组独立；X_g=Pr(a_gu>0)=Σ_{s:p_gsu>0}x_gsu，Σ_gX_g≤1，E[a_gu]=Σ_s p_gsu x_gsu；X_g>0时取V_g=E[a_gu]/X_g。源的上述同一个物品引理立即给E[max_g a_gu]≥c_nΣ_gs p_gsu x_gsu。逐u相加得E[A]≥c_n L。每资源给最高系数提议者，bundle全局不交；同一组所有赢家系数都来自其所选同一state，所以Σ_{u∈B_g}p_g,s_g,u≤v_g(B_g)。故实际W≥A。这是源承重论证向新分布的迁移，不把目标state误称必为随机bundle的maximizing clause；该state只需作为有效加性下界，足以给W≥A。没有把state/coin分布的潜在指数bundle支持显式枚举成输入。\n三、算法性没有从期望免费取得。对每资源收集全部不同正原系数0=b_0<b_1<…<b_k；在任一合法固定前缀下，令Q_gu(b)=Pr(a_gu≥b | prefix)。跨组独立始终给精确式F(prefix)=Σ_{u,l}(b_l−b_{l−1})[1−∏_g(1−Q_gu(b_l))]。未固定组选态时Q=Σ_{s:p≥b}x_gsu；已固定正概率state时Q=1[p≥b]x_gsu/z_gs；coin固定后相应项为0或1。先逐组枚举z>0的原state，取F最大的候选；当前F是这些候选按原z的加权平均，故不降。全部state固定后逐选中incidence coin取较大分支；θ为0/1时只走概率一的分支，避免零概率条件化。最终F等于确定的A，故W≥A≥初始E[A]≥c_n L。条件化后的Σ_gQ可以超过1；后续只使用精确乘积式，绝不重复套初始容量不等式。不同资源共享同一state的相关性不影响按资源求和，所需独立性只在单资源跨组。\n四、位复杂度与边界。菜单、可行点及所有系数显式有理，状态候选、coin数和正level总数均被显式输入长度多项式控制。x/z只在z>0时计算，位长由原有理数位长和控制；每次F从原x,z,p及当前离散固定项直接重算，各概率子集和与跨组有限乘积的分母位长为原位长之和的多项式，不递归平方旧期望。精确有理比较及多项式次候选评估因此是位多项式；无需比较e或枚举指数bundle支持，也无需给隐式XOS额外查询接口。L=0时W≥0；零系数/无正level资源贡献为0，重复indexed states保持原编号，unused资源不影响式子。局部步骤仅输出资源bundles，全部物理jobs的调度仍属contribution.remaining。",
+  "scope": "源完整XOS福利定理证明中的逐物品最大系数不等式，迁移到目标显式state/coin福利舍入分步；不是从期望推出无条件高概率，不是一般XOS的demand→clause模拟，不是一般UM、flat菜单或NSW算法。目标已有值桥边不被此边覆盖或替代。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-auction-setcover-20261031/dobzinski_auction.pdf",
+      "sha256": "d0700d7674db45b4330d558c731c0200567f2c7a999f5eef7952029cab26dd15"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/组合拍卖与投影游戏集合覆盖两篇文献整理--文献.md",
+      "sha256": "ee4b62663ff651341ae40162b5319b31b9230d71c93b81333d43cfbf92d4fb22",
+      "section": "1. Dobzinski–Nisan–Schapira：Approximation Algorithms for Combinatorial Auctions with Complement-Free Bidders"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化门控菜单v2三源精读与13-8算法版本审查--审查.md",
+      "sha256": "a4a7e0a28927697fa92175ad43d78a94c1bffdd967d447bc54606c172e493cc5",
+      "section": "3. 福利 LP、条件期望和未知 OPT 算法"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md",
+      "sha256": "33bd31b883b26f49508808dd7175cd104f391b86642bff90ea2bce7f1142097b",
+      "section": "一、归一化门控菜单的精确实际值"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "本次是source-only定向续办：fresh完整实读源核心v2和目标v6的当前合同、旧edge/旧完整receipt/旧task；fresh全文读共同文献整理、目标主审查和当前共享审查，定向读主定理§1及源勘误ledger/3D本任务条目。已核当前共享全文仅§二.1将互补private配置改为全部incidence（含零jobs），内存反替换恢复旧SHA，§一逐字节不变；零job两配置覆盖λ+(1−λ)=1，负载不变。DNS冻结PDF全部15页及pp.8–9目视的成熟审读继承旧receipt，本次仅核其原始SHA，未fresh提取/重读PDF；未变的其它登记审查、旧跨对象比较和有限运行按旧receipt明确继承。复核本edge逐item前缀/Abel界、state/coin映射、正概率CE分支与有理位长，确认勘误不改福利步骤。保同edge_id、ALL/unconditional/accepted及原contribution.result/remaining，未提升为目标整条13/8证明。未重跑科学程序；本worker未执行native bind/check，旧review_digest移除，交Boss以最终语义重新绑定并检查。 Boss2根审已完整读取本条新旧数学边及新receipt，独立核前缀成功率的凹性与Abel求和、同一组选态的加性下界、条件化后只重算精确乘积而不重套容量、z=0和n=1边界，以及给定有理点的位复杂度。完整目标的LP求解、排序平衡、全部jobs回填和13/8比较继续保原remaining；本次复用旧PDF实读，不冒称重新阅读全文。最终语义确认后由Boss正式native绑定检查。",
+  "endpoint_pins": {
+    "M-8fdee11afd164305a429734ee5ae705a": "5a4576c51598ca30c504ceff1d46a7f61cbf24c25cb4816468ee635b78297a7f",
+    "UM-NORMALIZED-GATED-MENU-13-8-v2": "94dffb9efd7fe5c0c5f91d33d7c8da06be50b259084298ec14fedcf1bf765be2"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/tools/evidence/retired-literature-auction-setcover-20261031/dobzinski_auction.pdf": "d0700d7674db45b4330d558c731c0200567f2c7a999f5eef7952029cab26dd15",
+    "archives/unrelated-machines/state/文献/组合拍卖与投影游戏集合覆盖两篇文献整理--文献.md": "ee4b62663ff651341ae40162b5319b31b9230d71c93b81333d43cfbf92d4fb22",
+    "archives/unrelated-machines/state/审查/归一化门控菜单v2三源精读与13-8算法版本审查--审查.md": "a4a7e0a28927697fa92175ad43d78a94c1bffdd967d447bc54606c172e493cc5",
+    "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md": "33bd31b883b26f49508808dd7175cd104f391b86642bff90ea2bce7f1142097b"
+  },
+  "review_digest": "1dbc9c1a8edfc6b9dc04b83cb5ff510be2001ff26315db299b82e0b672226e58"
+}
