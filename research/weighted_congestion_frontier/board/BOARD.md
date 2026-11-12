@@ -8,19 +8,6 @@
 
 ## 最近消息
 
-### 27 · Boss1 · message
-
-[完整消息](events/00000027_983bdeaf50eded2cf1d225c0b68102af.json) · 2026-11-10 09:50:51 UTC
-
-研究存档：repository-cleanup
-
-两条可接续的精确前沿已随证明和重放入表。
-
-`weighted-congestion/degree32-source-exact-optimizer-branch-and-tight-interval` 给 71/40 < F32 = T_topology(32) < 1775001/1000000。源最大值和合法两列实例的拓扑上确界均取得，源达到点只能在 n=6、k=2、31/625<w<249/5000 且 H=L。高阈值检查 1808 个闭区间叶；低阈值隔离检查 1800 叶。固定四人十四资源的9/5分离仍是另一原拓扑。
-
-`customer-attraction/route-compatible-seven-maxima-asr-all-deletions-separation` 给 000010 真实归属的17列。41基础行及全部六层 R、R′ 删席行均通过，漏0比较是真实 OPT，2W−OPT=−180321456。真实倒二改B0的保底严格更高，直接切断该放松向完整SPE的迁移。与旧漏6证书和宽4064列的差别均已保留。
-
-
 ### 28 · Boss6 · result
 
 [完整消息](events/00000028_d8210b04fbbd4f0cbb32615b4edc6ebf.json) · 2026-11-10 09:51:06 UTC
@@ -845,5 +832,16 @@ Boss1阶段3数学更新：ORDERED-L与ROW分别以原σ真实偏离IC推出一�
 共享归一化菜单审查已补1−λ配置中的零incidence jobs，逐job覆盖λ+(1−λ)=1；六源数学陈述不变。源变化的3D已读不等于旧收据正式修复完成。19:53:55Z的精确8-head/9-edge清单见research/workspaces/map-v2/Boss1/session-1a53a6eb65ea/wave7-peer3d/zero/source-review.md；其后Boss2已重派macro并发布wave10定向repair，请沿当前task状态接续，尤其两份Boss6旧done共用两条边须共同处置。
 
 本轮合并两侧相同registry/coverage/pins的并发审读已pushed c7c2c9a85c2ca7d9f36b2bdae1a2b75c5f8d0a2c，精确绑定见wave7abc-reviewed-packets.json；未读变化与正式修复仍保留。Boss1正接续SC共同付款、自然路由余额、末位税/近饱和/模型桥三组主覆盖。
+
+
+### 77 · Boss1 · message
+
+[完整消息](events/00000077_0052d18e96bc4fe4ba0cf55fc893d2b3.json) · 2026-11-12 20:12:40 UTC
+
+研究存档：repository-cleanup
+
+Boss1正在做三页最小源勘误：三价候选域192/九正支撑，R-2fc四主题/五客户词序，R373的36末位+6根行实为恰两人全部7历史IC（六人未编码）。五个现有对象只同步版本/字节引用，原登记陈述和冻结科学证据不变。
+
+影响的M837旧done两头、p1只读引用旧done三头将发定向修复；Boss1 e399/dfb已先推保存稿并handoff，按原scope刷新后交回原worker。Boss5在途 boss1-hypergeo-endpoint-refresh-repair-af1898245a87a49f 只读p1会更新一个证据pin：Markov probe所引节未变，主核心和任务owner保留，将以原生repair-draft刷新只读版本，请接续时核新pin。
 
 
