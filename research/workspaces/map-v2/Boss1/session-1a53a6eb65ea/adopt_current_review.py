@@ -32,6 +32,8 @@ def append(row, key, note):
 record_path = Path(sys.argv[1]).resolve()
 record_path.relative_to(ROOT)
 record = read(record_path)
+for material in record.get('review_materials', []):
+    assert sha(ROOT / material['path']) == material['sha256'], material['path']
 registry = read(ROOT / 'research/registry.json')
 objects = {o['object_id']: o for o in registry['objects']}
 integration_path = ROOT / 'map/integration.json'
@@ -40,6 +42,7 @@ assert integration['registry_pin'] == rr.pin(registry), 'Run native assemble fir
 reviewed = set()
 edges = {}
 receipts = []
+retired_edges = set()
 
 for saved in record.get('task_reviews', []):
     task_id = saved['task_id']
@@ -72,6 +75,35 @@ for saved in record.get('task_reviews', []):
         edges[edge_id] = asset
     receipts.append(task_id)
 
+for saved in record.get('retired_edge_reviews', []):
+    # A removed relation is discharged only through its exact published
+    # supersession, never merely because it is absent from the current graph.
+    old_id, new_id = saved['old_task_id'], saved['new_task_id']
+    assert new_id in receipts, new_id
+    old_task = read(ROOT / 'research/operations/map-v2/tasks' / (old_id + '.json'))
+    new_task = read(ROOT / 'research/operations/map-v2/tasks' / (new_id + '.json'))
+    assert old_task['state'] == 'done', old_id
+    assert old_id in new_task['definition'].get('supersedes', []), old_id
+    path = saved['path']
+    old_assets = {asset['path']: asset for asset in old_task['receipt']['assets']}
+    assert old_assets[path]['sha256'] == saved['sha256'], path
+    assert sha(ROOT / path) == saved['sha256'], path
+    disposition = new_task['receipt']['supersession'][old_id]['assets'][path]
+    assert disposition['disposition'] == 'retired', path
+    assert path not in {asset['path'] for asset in new_task['receipt']['assets']}, path
+    assert path not in registry['edge_files'], path
+    edge = read(ROOT / path)
+    edge_id = saved['edge_id']
+    assert edge['edge_id'] == edge_id, edge_id
+    assert edge_id not in integration['edge_pins'], edge_id
+    endpoints = set(edge['source_ids'] + edge['target_ids'])
+    assert set(saved['endpoint_pins']) == endpoints, edge_id
+    for object_id, pin in saved['endpoint_pins'].items():
+        assert rr.pin(objects[object_id]) == pin, object_id
+    assert saved['reason'].strip(), edge_id
+    reviewed.update(endpoints)
+    retired_edges.add(edge_id)
+
 for saved in record.get('source_reviews', []):
     object_id = saved['object_id']
     assert rr.pin(objects[object_id]) == saved['object_pin'], object_id
@@ -98,7 +130,7 @@ old_pending = published.get('pending_changes', {})
 pending_objects = (set(new_pending.get('object_ids', [])) |
                    set(old_pending.get('object_ids', []))) - reviewed
 pending_edges = (set(new_pending.get('edge_ids', [])) |
-                 set(old_pending.get('edge_ids', []))) - set(edges)
+                 set(old_pending.get('edge_ids', []))) - set(edges) - retired_edges
 edge_endpoints = integration.get('edge_endpoints', {})
 for edge_id in pending_edges:
     pending_objects.update(edge_endpoints.get(edge_id, []))
@@ -128,6 +160,7 @@ print(json.dumps({
     'review_record_sha256': sha(record_path),
     'tasks': receipts,
     'accepted_edge_count': len(edges),
+    'retired_edge_count': len(retired_edges),
     'reviewed_object_count': len(reviewed),
     'pending_changes': integration['pending_changes'],
 }, ensure_ascii=False))
