@@ -1,0 +1,60 @@
+{
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss5",
+  "edge_id": "exact-four-to-one-v4-and-biregularization-to-three-uniform-independent-set-9fa9ce8a7e4a75ec",
+  "source_ids": [
+    "M-ab4a576ed0be482b89d4a646ffc102b9",
+    "PCP-EXACT-PROJECTION-PERFECT-COMPLETE-BIREGULAR-ROUNDING-v1"
+  ],
+  "target_ids": [
+    "M-9f8033b6e1a4485b97636171b09f8218"
+  ],
+  "conditions": "先固定δ>0及有理0<α<min(δ,1/2)，L=ceil(32α^(-2))、噪声θ；逐有限层差h选择KS14解析常数，再取T≥max T_h及有理ζ小于min_h α²τ_h²γ_h²/(2048·4^h)。最后以FMW soundnessζ/2和独立正规化η=ζ/2取常数字母表。所有投影约束保持独立ID，目标超图用完整整数cloud把权变为无权；δ固定后显式构造多项式。",
+  "roles": {
+    "M-ab4a576ed0be482b89d4a646ffc102b9": "支付任意小固定soundness、常数字母表、perfect exact4的NP-hard源；不免费提供biregularity。",
+    "PCP-EXACT-PROJECTION-PERFECT-COMPLETE-BIREGULAR-ROUNDING-v1": "支付保持原标签/投影及perfect YES的确定性双正规化，多重ID约束均保留，统一值误差≤η，显式DE=O(E³/η)。",
+    "M-9f8033b6e1a4485b97636171b09f8218": "两共同前提经完整typed层化和KS14测试所得有限未加权三一致超图的小独立集承诺硬度。"
+  },
+  "whole_result": "由两个共同前提，对每个固定δ>0，区分有限未加权3-uniform超图的完整2-colorable YES与不存在比例≥δ独立集的NO为NP-hard。",
+  "explanation": "加权度1克隆严格保源值，带ID二部整数流floor/ceil舍入使每clone度D且逐标签误差≤S/(DE)≤η，perfect exact4逐边保持。Q=TL+L−1的typed有序坐标层化在l<l′替h=l′−l个V位置，fiber=4^h；均匀源点/incident ID给层间均匀约束和均匀层顶点，平滑碰撞≤h/(Q−l+1)≤1/T，统一随机链二阶计数给弱密度。固定其余坐标后distinguished ID均匀源约束、端点标签不看ID，故每层对val≤源val，即使同端点不同投影。有限h的解析阈值先统一选择，KS14 §5逐投影和ID期望产生heavy-good解码率α²τ_h²γ_h²/(2048·4^h)>ζ。fiber≥4且最多改一坐标使y≠z，x异层，故确为三点超边。权2^(−K_l)/(Ln_l)以B=L(∏n_l)2^Kmax的完整整数cloud展开，最大独立集比例精确等于原加权质量；完美二着色保持。新稿完整核全部量词、两种测度及归一化，目标整句成立。",
+  "scope": "完美exact4源与独立正规化的共同ALL支持KS14完整超图应用；不以MZ近完美双正规版本代替，不附加simple或常数最大度。",
+  "evidence": [
+    {
+      "path": "map/edges/boss5-mz-visual-repair-9fa9ce8a7e4a75ec/proof-review.md",
+      "sha256": "87b2cf6a26b8bfc7e440f6701d6969a25e8726c239e964c86b88a19ebf705868"
+    },
+    {
+      "path": "map/edges/boss5-localfix-repair-abad7a282f127942/proof-review.md",
+      "sha256": "f1ef13f8411cfec63b16b5fe2afdf9badfeb3d458d80a1b0a8a9f1099869d8d2"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/fei_minzer_wang.pdf",
+      "sha256": "48baa160d5d15e61aaf99b24b6fc15518c20f204d165fc96de1251d9d8a82ea0"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/khot-saket-1308.3247v2.pdf",
+      "sha256": "2dcb03c6bc10dda5503452719c74bb57c5463e8b34bdbef5d06463cb7d74dc24"
+    },
+    {
+      "path": "archives/unrelated-machines/state/引理/投影约束多重图的保完备性近似双正规化--引理.md",
+      "sha256": "13803e66abc6432815634589e75cbc08238ad74287d89707120274fdfc7927d6"
+    }
+  ],
+  "review_note": "v4实际只撤回MZ印18页商数抽取误诊，四个FMW合同不变。本轮实读当前六端点/共享正文/独立正规化全文、两份完整旧proof及KS14实际接口；新增显式有限h统一参数、约束/顶点测度和双重归一化核验。旧源内核和成熟解析定理按精确入口复用，实际新读见reading-ledger；未将结构检查或科学程序当证明。",
+  "endpoint_pins": {
+    "M-9f8033b6e1a4485b97636171b09f8218": "389687c25c6745ad7df87c021157ed183a8364e118d6d1fa6614a14a0b3d5816",
+    "M-ab4a576ed0be482b89d4a646ffc102b9": "e2f4d171f9174665027371524263e60473a991292495c0041683392feaa38077",
+    "PCP-EXACT-PROJECTION-PERFECT-COMPLETE-BIREGULAR-ROUNDING-v1": "3fb491cd85e99950c05f1ce9bbcd8ec6daabc5bf1aae02627ef4efb4e7307922"
+  },
+  "evidence_pins": {
+    "map/edges/boss5-mz-visual-repair-9fa9ce8a7e4a75ec/proof-review.md": "87b2cf6a26b8bfc7e440f6701d6969a25e8726c239e964c86b88a19ebf705868",
+    "map/edges/boss5-localfix-repair-abad7a282f127942/proof-review.md": "f1ef13f8411cfec63b16b5fe2afdf9badfeb3d458d80a1b0a8a9f1099869d8d2",
+    "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/fei_minzer_wang.pdf": "48baa160d5d15e61aaf99b24b6fc15518c20f204d165fc96de1251d9d8a82ea0",
+    "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/khot-saket-1308.3247v2.pdf": "2dcb03c6bc10dda5503452719c74bb57c5463e8b34bdbef5d06463cb7d74dc24",
+    "archives/unrelated-machines/state/引理/投影约束多重图的保完备性近似双正规化--引理.md": "13803e66abc6432815634589e75cbc08238ad74287d89707120274fdfc7927d6"
+  },
+  "review_digest": "7db9723325ddc138d96928c757f2ff62875e830c41ddedf980bd250de20e75f5"
+}
