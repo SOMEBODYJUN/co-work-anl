@@ -440,12 +440,482 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss2",
-  "request_id": "ff1faf13bc5f48d2b0589bb089c0705f",
+  "request_id": "a6cfeaf51f9748e58b80c62b69bf2ff1",
   "requests": {
     "c77ec76b08b948c4ac8c43dc65353af7": "plan",
     "fbb67fa8523b44e0bdd45047668a56d0": "claim",
-    "ff1faf13bc5f48d2b0589bb089c0705f": "read-add"
+    "ff1faf13bc5f48d2b0589bb089c0705f": "read-add",
+    "a6cfeaf51f9748e58b80c62b69bf2ff1": "done"
+  },
+  "edge_paths": {
+    "cag-d588-copy-all-ordered-indices-second-moment": "map/edges/customer-attraction-3a-3a-d58827fb2a79c8e2/copy-ordered-pairs-second-moment.json",
+    "cag-d588-mobius-fixes-anonymous-count-compatibility": "map/edges/customer-attraction-3a-3a-d58827fb2a79c8e2/mobius-anonymous-count-compatibility.json",
+    "cag-d588-mobius-nonnegative-and-unit-realizability": "map/edges/customer-attraction-3a-3a-d58827fb2a79c8e2/mobius-nonnegative-unit-realizability.json",
+    "cag-d588-two-player-tax-supplies-spectral-pair-rows": "map/edges/customer-attraction-3a-3a-d58827fb2a79c8e2/two-player-tax-spectral-pair-contribution.json",
+    "cag-022-maximum-root-supports-distinct-spectral-residuals": "map/edges/customer-attraction-3a-3a-022eb352950d4307/maximum-root-supports-distinct-spectral-residuals.json"
+  },
+  "receipt": {
+    "task_id": "customer-attraction-3a-3a-d58827fb2a79c8e2",
+    "reviewed_by": "Boss2",
+    "review_note": "按13数学组各自比较；初始18及read-add后三端点pins全核。4新accepted逻辑边（3 whole、1 contribution），1既有canonical逻辑边原SHA复用；4核心linked，12核心具体isolated。全部正式follow-up在本包闭合。",
+    "coverage": {
+      "M-4d61acfe4fb1427dabcf76b30a824dcc": {
+        "state": "linked",
+        "object_pin": "575df957276c4480509b8de9a2e2cc10c9c5b59a4957595e482be7ec7cd41abf",
+        "comparison_scope": "与CA-MOBIUS-BOOLEAN完整反演/唯一性、原值非负/整数实现及缩放、单调次模例比较；包括标签别名与覆盖互异附加检查。",
+        "reason": "反演唯一性给所有客户表示必等于x；逐型非负、整数及清分母分别充分且必要。两标签(−1,−1,2)反演逐式核，整条目标被完整支持。",
+        "edge_ids": [
+          "cag-d588-mobius-nonnegative-and-unit-realizability"
+        ]
+      },
+      "customer-attraction/anonymous-count-potential-compatibility": {
+        "state": "linked",
+        "object_pin": "889a902b7d59f8547f4b6ec534acb16e3ec9561d7bc40ddb5597d2128c3726df",
+        "comparison_scope": "与CA-MOBIUS-BOOLEAN完整计数扩张、轴式、三人四终局与交换对称四人三终局比较；另比较截断交集/奇偶矩域。",
+        "reason": "由同一调和表直接消元得到整条三式；Boolean唯一性也固定重复势。截断矩的不可见核不反完整Boolean反演；四人交换对称是额外条件。",
+        "edge_ids": [
+          "cag-d588-mobius-fixes-anonymous-count-compatibility"
+        ]
+      },
+      "M-bf3dfd10aea3433aaa79c2a75559ce25": {
+        "state": "linked",
+        "object_pin": "d1701689c29cafefef72e33b7f28aaef7f6ebedb3853ef51dcf07b110726486e",
+        "comparison_scope": "与真实COPY原句、两路径九合同、128型JSON及谱§7比较，按全部25有序最优索引含对角/重复标签聚合。",
+        "reason": "逐客户5d−4d²/5及右端25(44u/3+13K/5)−80D/3给完整矩行；任意合法query菜单保同一actual u/K。",
+        "edge_ids": [
+          "cag-d588-copy-all-ordered-indices-second-moment"
+        ]
+      },
+      "customer-attraction/five-player-maximum-root-overlap-spectra": {
+        "state": "linked",
+        "object_pin": "d29c683becfcfb0690689121fb2c405142509987f229641ef2b889a55f774bf3",
+        "comparison_scope": "与CA-TWO-REMAINING-TAX合法背景T2、完整谱/乘子/192型源码和报告、COPY不同二阶投影及M-5d32同线另表示比较。",
+        "reason": "T2精确提供同一末两人历史的P/Q_pair局部承重行，未冒四谱整条支持；既有canonical另表示边从同一四谱合法行推出同标量线严格更强交叠信用，原SHA复用。COPY二阶矩与四谱各自保留，不互相替代。",
+        "edge_ids": [
+          "cag-d588-two-player-tax-supplies-spectral-pair-rows",
+          "cag-022-maximum-root-supports-distinct-spectral-residuals"
+        ]
+      },
+      "M-58ef82731528424394935220507e6fc1": {
+        "state": "isolated-after-review",
+        "object_pin": "f1632b4b5d1c573d0895d1089ef9fe1b893004c781d3a5bbf6b74ddbf506e36a",
+        "comparison_scope": "与M-bb7fa19357034cdb89eb096c2a6c5a53、同主题补位核族、CAG模型及静态余项比较。",
+        "reason": "本条件half要求最优实际遗漏分割、每人至多一次偏离及后继不覆盖该组。新不交F必要界不构造任意实例的分割；补位族早查询B/D会被T后继覆盖，正好未满足私有偏离假设。静态余项属于比较终局也不补该假设，本范围无整条或可复用的非平凡部分蕴含。"
+      },
+      "M-bb7fa19357034cdb89eb096c2a6c5a53": {
+        "state": "isolated-after-review",
+        "object_pin": "5cb076e4ab79d38acf7e9f12521bcacb6d377bb217bd70bab76a1d9568278352",
+        "comparison_scope": "与M-58ef82731528424394935220507e6fc1条件遗漏支付、同主题补位核及共同目录扩展量词比较。",
+        "reason": "本结果条件是扩目录后仍存在保同一实际路径完整SPE，结论仅v≤末两人各自收益。倒二改F后末位用旧S_m至少u_m而复制F仅v/2，足以排复制；更早偏离可变多个后继，未给所有玩家付款。条件遗漏支付也不证明扩目录保SPE。"
+      },
+      "customer-attraction/r3d253-fixed-background-static-security-remainder-review": {
+        "state": "isolated-after-review",
+        "object_pin": "694c57debf2cb86a158b179a5a2da1d9d998a92867319af621d8113a9d336c68",
+        "comparison_scope": "完整r/s静态余项代数/minimax及d0/s0端点；与完整根矩阵保根r槽、全树流n−1槽、背景两人税、比较/实际负载身份比较。",
+        "reason": "F_r+R≤(r+s)v_(s+1)为静态结果，d*与Q*不能换成真实σ的实际负载/收入，亦无跨子树共同预算。若另有最优query运输流，可把OPT_n≤(2n−1)v_n与W≥nv_n合成条件福利界；源方法未断言这种流普遍存在，故当前16对象无所得结果端点可供整条逻辑边。"
+      },
+      "M-1302624aad874058a6d7dc2cd254018d": {
+        "state": "isolated-after-review",
+        "object_pin": "88cb560f5bd7ca93e38dd4849bedc01e7b381d480efb4f50a798adf538ab1a13",
+        "comparison_scope": "完整actual13_v1的header与63 atom全字段、三直方图、十/五会员位、menus_lh和长质量；与源身份正文、五人谱、非负Möbius实现条件比较。",
+        "reason": "指定5930…6751行版本只给W1、比较O>2和原恢复最小slack0；未独立重建6751源行，缺源生成器版本与共同目录/完整σ逆实现，O也不自动OPT。非负atom不是完整Boolean势表，不能调用Möbius判据将其升为真五人反例；与谱行须先有同客户系数映射，本包没有。"
+      },
+      "customer-attraction/symmetric-quadratic-fresh-all-outcome-BI-fixed-policy-floor-probe": {
+        "state": "isolated-after-review",
+        "object_pin": "a3bee2865aa14c6d31b06c6bb70a6d41ef05e2ccb18a2f0b64b57b99b8f37699",
+        "comparison_scope": "全文BI递推/完整有序策略重建/固定报价LP与三有限报告；比较Möbius signed表示、完整编译的偏置边界及任意长高阶辅助牺牲前缀。",
+        "reason": "该程序是禁止重复的signed对称二次辅助域，θ按纯背景后最佳报价；三无失败记录及浮点LP不证一般floor。高阶牺牲F未证明属于二次类，偏置嵌入改变相对静态值缺口；原单位客户CAG不能直接接收其signed系数。本范围仅语境/实现，无逻辑边。"
+      },
+      "customer-attraction/full-root-matrix-cross-coefficients-and-self-coupling": {
+        "state": "isolated-after-review",
+        "object_pin": "2a26da157fc9c5275136dac640a8e7843e1a3809afeb754dd8fc65f4325681f4",
+        "comparison_scope": "完整K/H/D/C定义、SELF自税、两点极值、PAIR→SELF→WP→Mfull→v单向链；六固定策略、348、三压力策略和菜单范围证据；对照全树流。",
+        "reason": "本对象已经是固定矩阵的代数及条件链；有限p测试不证普遍SELF，逐项H≥0才给某固定σ全p。全树流用另一n−1背景供给守恒，而K列含当前根r槽，既没给可行流也没给双向等价。静态余项不能补Mfull≤u；本包没有一般PAIR/WP或extra-one的新保证。"
+      },
+      "customer-attraction/tail-ABB-five-multiplier-rational-candidate-failed-class": {
+        "state": "isolated-after-review",
+        "object_pin": "c8f3d6b20f193d85ce8c8e751fe93640e664660508614addf085573e58dc1bdf",
+        "comparison_scope": "完整五有理乘子、坏会员列、l2/l3端点及移位符号；比较actual13必要点、完整根矩阵和客户SPE范围。",
+        "reason": "特定接触集模板在每实l≥3坏类R<0，但l2此类为正，其他31类通过不修坏类；单列不一定满足真实IC，不反half或全部七行模板。未有共同坐标/可行性桥可将它转成actual13或K矩阵的目标否证，故不制造跨组合边。"
+      },
+      "M-47c853fbc6c84223b683f6fcb277610b": {
+        "state": "isolated-after-review",
+        "object_pin": "d2473cc4f9c7ae425a69c597526db01bf14b439971c842ff80a5348b649ef246",
+        "comparison_scope": "全树真实IC弧/普遍同题弧、独立π×Q供给、势投影及精确回代；完整两循环/有限势边界/匿名攻击及独立前缀余项；对照根完整K和静态F_r。",
+        "reason": "本方法只说给定非负有理流精确守恒时足以付固定query保底，最优π才付nv_n；未声称任意σ存在流。无势循环不满足可积性，有限势负点又缺共同signed客户/全层效率，不能当原CAG反例。K列人数与弧供给不同，无免费转换。已有implements边仅语境，不将其列为linked。"
+      },
+      "customer-attraction/Brethouwer-four-player-lower-bound-model-scope-and-closure-obligation": {
+        "state": "isolated-after-review",
+        "object_pin": "610e39eec4d4ef6c2aea987bb7dc2f3df9689da3f94a9e2bad02ca605f250eae",
+        "comparison_scope": "完整Brethouwer范围正文、CAG全历史量词，以及新不交主题/大偏置增人数接口比较。",
+        "reason": "玩家特定S_i的四人下界缺具体incidence/重数/完整σ；取并目录新增动作、向下闭包及四到六人各有未付全部历史保持。CAG定义提供对照域，不推出这一文献范围记录或迁移结论；本页不是原模型反例，未凭数值>2造refutes边。"
+      },
+      "customer-attraction/padded-on-path-same-topic-kernel-budget-boundary": {
+        "state": "isolated-after-review",
+        "object_pin": "509ce7a5c07cdd7405ae640c3dcb25f3330dd67fc10ae78a9377236a91493c87",
+        "comparison_scope": "完整全m解析策略粘合、唯一OPT、受限核上下界及跨主题逃逸；四有限成员审计源码/manifest与完整计算资源；对照私有遗漏充分支付和全树运输。",
+        "reason": "预算最小22(m+1)只管同主题实际节点限制，解除限制同族末A复用P0/λ1预算22m。早查询遗漏被T后继覆盖，与私有遗漏条件不冲突；核(C)的付款路由也不是全树独立供给守恒，不能从受限接口失败推出一般流不可行。全m来自解析证明，m2…5证据不外推。"
+      },
+      "CA-WORST-PNE-WELFARE-NO": {
+        "state": "isolated-after-review",
+        "object_pin": "9bdf6b2a11b9c30a26f42cf7dbf2e0b933152c415e08e0db01c4a5deab7261eb",
+        "comparison_scope": "完整16客户/21有序节点/20静态计数、定义审计、603阴性程序、50客户四人资源及势差1/3比较；对照静态安全值与背景流。",
+        "reason": "反的是每份SPE福利至少同实例最差静态PNE，非SPE终局是否PNE的弱命题。全部PNE W16而该σ W15、OPT16；固定例只三人且half成立。有限阴性不挽回已否桥；静态PNE与minimax值/CCE及恰六人不同，未向这些端点扩域。"
+      },
+      "customer-attraction/closeout-3e0d9dd985280d79001d6049": {
+        "state": "isolated-after-review",
+        "object_pin": "87eeaff8fb9a67de94159d79991649aca08e14fff1d554713aea92010927ad23",
+        "comparison_scope": "完整公共稀释原审计/13与72客户同动作不同重数、公共t三多项式矛盾、发现器/minimizer/graphθ范围；对照Möbius计数相容、全树流和PNE见证。",
+        "reason": "公共t逐点同时IC与积分后调和IC的量词不同；13/72两例W=OPT，未反half、Möbius客户实现或独立Q运输。graphθ只给二关联域有限候选器，无结果/精确验收；13/72输入不能因同动作而互授运行。已有checks边仅复现语境，不据其标linked。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/customer-attraction-3a-3a-d58827fb2a79c8e2/copy-ordered-pairs-second-moment.json",
+        "sha256": "fd212975f5665cd33f5437826351212153e7a7719ef7a42ffb5ece954b4fb896"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-d58827fb2a79c8e2/mobius-anonymous-count-compatibility.json",
+        "sha256": "1e3d9b0c84d0afa4da670d1b20da449f3bf332bea71ad927e128ef8e5383f2eb"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-d58827fb2a79c8e2/mobius-nonnegative-unit-realizability.json",
+        "sha256": "4d00678945292e49a6692e9babb37d9fcea072cb2472317153e23dc783effded"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-d58827fb2a79c8e2/two-player-tax-spectral-pair-contribution.json",
+        "sha256": "ee48586c3baed93e41dc423305438f35cdf2d3c46e43cc116acfe8c169f4e5fc"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-d58827fb2a79c8e2/potential-security-scope-proof.md",
+        "sha256": "eeef21b7c1e439d89b54c713874188cae8d75f197e53cc9e9582163dd9ecb887"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-022eb352950d4307/maximum-root-supports-distinct-spectral-residuals.json",
+        "sha256": "622de92e816a0eb413ff8efbc907ecb4914db92ed0bdca7c7eab07f7bdfe42a0"
+      }
+    ],
+    "read_refs": [
+      {
+        "path": "archives/customer-attraction/state/障碍/匿名计数势的客户相容性--障碍.md",
+        "sha256": "67bd95af6c88eea3cae84900e08148e691a1ef16e6a17fd92719bc2bca89fbf5",
+        "section": "非负可实现性、精确整数实现和缩放"
+      },
+      {
+        "path": "archives/customer-attraction/state/定理/子集调和势的Möbius反演--定理.md",
+        "sha256": "9c7e58e4642077607ce2b49c67e7598c97b47b4cdb1b43a34cf335dd2aec5629"
+      },
+      {
+        "path": "archives/customer-attraction/state/障碍/匿名计数势的客户相容性--障碍.md",
+        "sha256": "67bd95af6c88eea3cae84900e08148e691a1ef16e6a17fd92719bc2bca89fbf5",
+        "section": "即使只指定固定人数的终局，也有线性障碍"
+      },
+      {
+        "path": "archives/customer-attraction/state/障碍/匿名计数势的客户相容性--障碍.md",
+        "sha256": "67bd95af6c88eea3cae84900e08148e691a1ef16e6a17fd92719bc2bca89fbf5",
+        "section": "子集表已固定所有重复势值"
+      },
+      {
+        "path": "archives/customer-attraction/state/障碍/匿名计数势的客户相容性--障碍.md",
+        "sha256": "67bd95af6c88eea3cae84900e08148e691a1ef16e6a17fd92719bc2bca89fbf5",
+        "section": "主题轴上的必要关系"
+      },
+      {
+        "path": "archives/customer-attraction/state/引理/五人最大主题根分支交叠谱界--引理.md",
+        "sha256": "c74900a7a6b354e5e97a9d9ff5dfe99e3f205a2295e33c6f29ff99af7d8e82c6"
+      },
+      {
+        "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+        "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+      },
+      {
+        "path": "archives/customer-attraction/state/引理/五人根复制真实末回复刚性--引理.md",
+        "sha256": "1be3bfd7b1cbff807a932ee14c5b4c9baa699aab84926c4ca321edae88cdc528"
+      },
+      {
+        "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+        "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a"
+      },
+      {
+        "path": "archives/customer-attraction/tools/evidence/spectral-root/source/audit_spectral_root.py",
+        "sha256": "e494b6c3b246b3d6fb6d82fda90e296f68c7014108635b4bf7c8000065cee10f"
+      },
+      {
+        "path": "archives/customer-attraction/tools/evidence/spectral-root/original/audit_spectral_root.json",
+        "sha256": "045bc8cc08ea60867282d13ec9b50414cce5cfbc9408d5b856bf892620bf4110"
+      },
+      {
+        "path": "archives/customer-attraction/state/障碍/单公共奖金重复尾部的末位互斥--障碍.md",
+        "sha256": "b2dae758dcb66b45bae70c54ecbe842c8e4ae3d799c9b5112b9943a09b4c7bd2"
+      },
+      {
+        "path": "archives/customer-attraction/state/审查/R-3d253固定背景静态安全余项--审查.md",
+        "sha256": "b4c017c15230cfdc71397bc68349bfa2fd1a0285dd2c3f907b6ecfe7360dd3c9"
+      },
+      {
+        "path": "archives/customer-attraction/tools/evidence/r3d253-fixed-background-static-security-Boss8/background_static_security_remainder.md",
+        "sha256": "05d02af59ebfe74dfd7387e96446f4d982af0fbb10924bb2d136890836d041f3"
+      },
+      {
+        "path": "archives/customer-attraction/state/审查/R-3d253一般半覆盖候选与静态组件停界审查--审查.md",
+        "sha256": "1cf8b9eed573dd2b469fa5edb74a60a4047bd7ec54fc332114c71911ca40b8db",
+        "section": "静态模块与有限诊断"
+      },
+      {
+        "path": "archives/customer-attraction/state/审查/R-3d253一般半覆盖候选与静态组件停界审查--审查.md",
+        "sha256": "1cf8b9eed573dd2b469fa5edb74a60a4047bd7ec54fc332114c71911ca40b8db"
+      },
+      {
+        "path": "archives/customer-attraction/state/资源/当前五种精确源点的身份与分离归因--资源.md",
+        "sha256": "de10919f3849eb378cc0b9c9121a0e0e204a796b37e4677022079223949d4765"
+      },
+      {
+        "path": "archives/customer-attraction/tools/evidence/weighted-source-contracts-resumed-boss3/original/research/workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/round8_five/certificate/exact_current_source_actual13_v1.json",
+        "sha256": "5930c355483c801f535ef2385e1907fc27d0cae25f10c4d74d83d973ebe96f98"
+      },
+      {
+        "path": "archives/customer-attraction/state/程序/对称二次无重复辅助博弈的集合值逆推与固定策略保底探针--程序.md",
+        "sha256": "e3006efd7ba6cc7a797c88dd593a18cd2ed1fb4b9d8f1173e199b876824f63da"
+      },
+      {
+        "path": "archives/customer-attraction/state/引理/完整根矩阵的交叉系数与自耦合蕴含--引理.md",
+        "sha256": "0be6e293e8992245396605980ff33cd79c6981f1d864aa5d7912595880b7b39a"
+      },
+      {
+        "path": "archives/customer-attraction/state/计算/最小支撑核验的三百四十八单位输入与导航范围--计算.md",
+        "sha256": "cc0856512e273e8400d3910abecebc31b98b3c9f771efd299db98352742798d6"
+      },
+      {
+        "path": "archives/customer-attraction/state/资源/六份固定策略对角报告与双pair原审计的合同--资源.md",
+        "sha256": "92fdaab8293c7cc8d4f14765345081b6aeaf212ba3cb25e481318a0cca1d62bd"
+      },
+      {
+        "path": "archives/customer-attraction/state/计算/固定根菜单压力诊断的三份完整策略--计算.md",
+        "sha256": "ea45705cd5f604ffdd84d88fa6250da5b49f6e552c3d59712fd0559ef10761a0"
+      },
+      {
+        "path": "archives/customer-attraction/state/资源/菜单聚合与根协方差的审查域及综合边界--资源.md",
+        "sha256": "f93bfe993cbc662a78d61933b5d04dd7ad9b02ced924f91abdd15d61ad08d07f",
+        "section": "五原稿的数学及历史身份"
+      },
+      {
+        "path": "archives/customer-attraction/state/障碍/ABB五乘子通式的唯一坏类与负余量机制--障碍.md",
+        "sha256": "6c8b86d673b17487599a354f967e079669398cdb0f5eda971bb15ecbf89fbd21"
+      },
+      {
+        "path": "archives/customer-attraction/state/程序/全有序收益状态弧与势投影的运输求解器--程序.md",
+        "sha256": "2d4f0359039f36b94897bd26110a7b0b44a59ba667e023011af3347267993902"
+      },
+      {
+        "path": "archives/customer-attraction/state/审查/全树收益运输的普遍弧与有限势反例范围--审查.md",
+        "sha256": "b766b33297796c9f34de3f55e84d598845a5967992a6361416cdb80f4e85f34d"
+      },
+      {
+        "path": "archives/customer-attraction/state/计算/五动作无势循环的原运输核验与势类抽样记录--计算.md",
+        "sha256": "9ffebed0deb512b4c6770d365b2cdcc63bc1c1e92d6d45df4f69c2b0b5f710a6"
+      },
+      {
+        "path": "archives/customer-attraction/state/程序/匿名自拥挤与两类删除势的有限攻击--程序.md",
+        "sha256": "9535fd2397bada32c37d0b1cd9199574164744ff664a83c3eff74f04d8c8cd91"
+      },
+      {
+        "path": "archives/customer-attraction/state/资料/个体安全和全树流独立审计的完整合同--资料.md",
+        "sha256": "1488258b80e3e4d196db405f079504ef55c0f5574ab746a0159d0ef70f618954",
+        "section": "全树势、独立前缀流与不能丢的余项"
+      },
+      {
+        "path": "archives/customer-attraction/state/文献/Brethouwer四人下界的异目录范围与闭包限制--文献.md",
+        "sha256": "ae8cc269a7ec68269ca1378d8e9c55c08b27e24219927466b279a92af0e52ba1"
+      },
+      {
+        "path": "archives/customer-attraction/state/障碍/同主题在途查询的补位核预算--障碍.md",
+        "sha256": "ac47f8de83b2cfc2963453f5326d31cd45ddc079b8cbc108b0743360cdb085b5"
+      },
+      {
+        "path": "archives/customer-attraction/state/计算/循环查询与补位核的完整策略核验--计算.md",
+        "sha256": "62778de37e74db6429e00ae5bd6587ba8d0c3f8048a99d1d396bc35142bda0ee"
+      },
+      {
+        "path": "archives/customer-attraction/tools/evidence/cyclic-padding-boundary/source-manifest.json",
+        "sha256": "a3eb5b5b1d8aa03ee7a8b7e64adb4d2ab194175297748d63adf24a4f00ad10d0"
+      },
+      {
+        "path": "archives/customer-attraction/tools/evidence/cyclic-padding-boundary/audit_full_data.py",
+        "sha256": "f9c45f3d69501d14f3f8a11bca001cf3f4f68fac6979e3e0a1260d4a6e8725e8"
+      },
+      {
+        "path": "archives/customer-attraction/state/反例/三人顺序SPE低于全部静态纯Nash福利--反例.md",
+        "sha256": "4ffd9919619fd9ede93e1fdf66cab9fa5df295fbd291cef9fc21b6314641e580"
+      },
+      {
+        "path": "archives/customer-attraction/state/计算/三人静态纯Nash福利比较的定义级核验--计算.md",
+        "sha256": "d71032ecedb4e6871bde7be33eb5b4b4ec1b0cc461a412588c572d736e75f5fa"
+      },
+      {
+        "path": "archives/customer-attraction/state/资源/静态福利比较与末回复配对锥的原稿接续--资源.md",
+        "sha256": "9cf3b19c7944055dd196df9c9d2da0127fa1764d7a9f293a77a1b888fd411465",
+        "section": "同实例PNE有限反例及独审身份"
+      },
+      {
+        "path": "archives/customer-attraction/state/程序/最差顺序与静态PNE桥的精确有限阴性搜索--程序.md",
+        "sha256": "8fcbdb62efc9c2ef42730c272f231382666824394cfe09ef271c6b738f5377b0"
+      },
+      {
+        "path": "archives/customer-attraction/state/资源/全局覆盖入口的静态PNE证书与净差合同--资源.md",
+        "sha256": "2459e86d064914003f7eb264fc29133ae1f9cace3addc04eaa2803cd3f718450"
+      },
+      {
+        "path": "archives/customer-attraction/state/资源/任意人数价格与弱门槛工作区的版本入口--资源.md",
+        "sha256": "a20d108b7d1b7633a66c4571cd909b27215e74fe40a2795e07442b3e590de010",
+        "section": "三个分入口各自保留什么"
+      },
+      {
+        "path": "archives/customer-attraction/state/程序/公共稀释核反例的原审计与图门槛探针--程序.md",
+        "sha256": "c20d53c640664ccc45d69eb4ec0ba9c8bf910e263ef156f608501e1ff3984f20",
+        "section": "公共稀释核反例的原审计与图门槛探针"
+      },
+      {
+        "path": "archives/customer-attraction/state/定理/有限阶交集矩的全收益表示与布尔正性--定理.md",
+        "sha256": "c6f61661e403b1336b0668ff5ef8f77ea3398878d16e64e5ddbb996918fadd30"
+      },
+      {
+        "path": "archives/customer-attraction/state/计算/奇偶闭合的字面审计与完整策略--计算.md",
+        "sha256": "4cb15af3e09d10a507823f783048de12df77acaa951aa4f343140f4f7739c7e3"
+      },
+      {
+        "path": "archives/customer-attraction/state/构造/任意长前缀牺牲的无重复势博弈与合法嵌入--构造.md",
+        "sha256": "e70b7a85e56b92e3f56ee5860ec54c20dc7f624d54ef6834b9e9d5ea4d897b8f"
+      },
+      {
+        "path": "archives/customer-attraction/state/计算/根复制末回复全成员域核验--计算.md",
+        "sha256": "df381376e65edc399bca4d4ae61166ed4d7cf558e3803d668d4235f8e0df6342"
+      },
+      {
+        "path": "archives/customer-attraction/tools/evidence/root-copy-reply-rigidity/original/audit_copy_reply_rigidity.json",
+        "sha256": "16aa29fe1640f688a3d28edbf5f850c6aa4fbdde31c8ce65765d5eb620850db7"
+      },
+      {
+        "path": "archives/customer-attraction/state/资源/五人根刚性闭合分支的作者证书与发现来源--资源.md",
+        "sha256": "0414b6933461441096b126a19c4563b85cb53263621b040964070e55d2b5acc9"
+      },
+      {
+        "path": "archives/customer-attraction/state/定义/固定背景剩余收益与税--定义.md",
+        "sha256": "c752babf29ecf272b564fe9ff9883c77dcbf6d7fc5e3e501321fab8c5237b4ee"
+      },
+      {
+        "path": "archives/customer-attraction/state/引理/最大主题同线证书的不同交叠信用--引理.md",
+        "sha256": "a5e342f36cbfaf19abbd2cd4968bcc5aa52fa88d98470569a044e95d8d270440"
+      },
+      {
+        "path": "archives/customer-attraction/state/计算/最大主题包络发现与有理恢复--计算.md",
+        "sha256": "ea082282a648ad5f7ad94e410952c0590f193c09319dd7a99cbdd04a25a1c762"
+      }
+    ],
+    "follow_up_tasks": [],
+    "closed_overlaps": [
+      {
+        "core_id": "M-bf3dfd10aea3433aaa79c2a75559ce25",
+        "peer_id": "customer-attraction/five-player-root-copy-real-terminal-reply-rigidity",
+        "reason": "已read-add并完整读COPY两路径/九合同/128域；新whole边将全部25有序最优索引（含对角/重复）精确聚合，5d−4d²/5和右端共同u/K完整推出5500u+975K−475D+12S2≥0。该指定比较已闭合，无待发3B。"
+      },
+      {
+        "core_id": "customer-attraction/five-player-maximum-root-overlap-spectra",
+        "peer_id": "CA-TWO-REMAINING-TAX",
+        "reason": "已read-add并完整读T2及背景税定义；在真实(M,B2,B3)上逐十索引对推出Q_pair，四对覆盖再推出P。accepted contribution边保该准确局部作用，四谱剩余R/CAP/J/L及192余项在目标正文已付。比较问题已闭合，未冒称T2单独证明四谱。"
+      }
+    ],
+    "comparison_outcomes": [
+      {
+        "object_ids": [
+          "M-4d61acfe4fb1427dabcf76b30a824dcc",
+          "customer-attraction/anonymous-count-potential-compatibility"
+        ],
+        "outcome": "反演唯一性给所有客户表示必等于x；逐型非负、整数及清分母分别充分且必要。两标签(−1,−1,2)反演逐式核，整条目标被完整支持。；由同一调和表直接消元得到整条三式；Boolean唯一性也固定重复势。截断矩的不可见核不反完整Boolean反演；四人交换对称是额外条件。"
+      },
+      {
+        "object_ids": [
+          "M-bf3dfd10aea3433aaa79c2a75559ce25",
+          "customer-attraction/five-player-maximum-root-overlap-spectra"
+        ],
+        "outcome": "逐客户5d−4d²/5及右端25(44u/3+13K/5)−80D/3给完整矩行；任意合法query菜单保同一actual u/K。；T2精确提供同一末两人历史的P/Q_pair局部承重行，未冒四谱整条支持；既有canonical另表示边从同一四谱合法行推出同标量线严格更强交叠信用，原SHA复用。COPY二阶矩与四谱各自保留，不互相替代。"
+      },
+      {
+        "object_ids": [
+          "M-58ef82731528424394935220507e6fc1",
+          "M-bb7fa19357034cdb89eb096c2a6c5a53"
+        ],
+        "outcome": "本条件half要求最优实际遗漏分割、每人至多一次偏离及后继不覆盖该组。新不交F必要界不构造任意实例的分割；补位族早查询B/D会被T后继覆盖，正好未满足私有偏离假设。静态余项属于比较终局也不补该假设，本范围无整条或可复用的非平凡部分蕴含。；本结果条件是扩目录后仍存在保同一实际路径完整SPE，结论仅v≤末两人各自收益。倒二改F后末位用旧S_m至少u_m而复制F仅v/2，足以排复制；更早偏离可变多个后继，未给所有玩家付款。条件遗漏支付也不证明扩目录保SPE。"
+      },
+      {
+        "object_ids": [
+          "customer-attraction/r3d253-fixed-background-static-security-remainder-review"
+        ],
+        "outcome": "F_r+R≤(r+s)v_(s+1)为静态结果，d*与Q*不能换成真实σ的实际负载/收入，亦无跨子树共同预算。若另有最优query运输流，可把OPT_n≤(2n−1)v_n与W≥nv_n合成条件福利界；源方法未断言这种流普遍存在，故当前16对象无所得结果端点可供整条逻辑边。"
+      },
+      {
+        "object_ids": [
+          "M-1302624aad874058a6d7dc2cd254018d"
+        ],
+        "outcome": "指定5930…6751行版本只给W1、比较O>2和原恢复最小slack0；未独立重建6751源行，缺源生成器版本与共同目录/完整σ逆实现，O也不自动OPT。非负atom不是完整Boolean势表，不能调用Möbius判据将其升为真五人反例；与谱行须先有同客户系数映射，本包没有。"
+      },
+      {
+        "object_ids": [
+          "customer-attraction/symmetric-quadratic-fresh-all-outcome-BI-fixed-policy-floor-probe"
+        ],
+        "outcome": "该程序是禁止重复的signed对称二次辅助域，θ按纯背景后最佳报价；三无失败记录及浮点LP不证一般floor。高阶牺牲F未证明属于二次类，偏置嵌入改变相对静态值缺口；原单位客户CAG不能直接接收其signed系数。本范围仅语境/实现，无逻辑边。"
+      },
+      {
+        "object_ids": [
+          "customer-attraction/full-root-matrix-cross-coefficients-and-self-coupling"
+        ],
+        "outcome": "本对象已经是固定矩阵的代数及条件链；有限p测试不证普遍SELF，逐项H≥0才给某固定σ全p。全树流用另一n−1背景供给守恒，而K列含当前根r槽，既没给可行流也没给双向等价。静态余项不能补Mfull≤u；本包没有一般PAIR/WP或extra-one的新保证。"
+      },
+      {
+        "object_ids": [
+          "customer-attraction/tail-ABB-five-multiplier-rational-candidate-failed-class"
+        ],
+        "outcome": "特定接触集模板在每实l≥3坏类R<0，但l2此类为正，其他31类通过不修坏类；单列不一定满足真实IC，不反half或全部七行模板。未有共同坐标/可行性桥可将它转成actual13或K矩阵的目标否证，故不制造跨组合边。"
+      },
+      {
+        "object_ids": [
+          "M-47c853fbc6c84223b683f6fcb277610b"
+        ],
+        "outcome": "本方法只说给定非负有理流精确守恒时足以付固定query保底，最优π才付nv_n；未声称任意σ存在流。无势循环不满足可积性，有限势负点又缺共同signed客户/全层效率，不能当原CAG反例。K列人数与弧供给不同，无免费转换。已有implements边仅语境，不将其列为linked。"
+      },
+      {
+        "object_ids": [
+          "customer-attraction/Brethouwer-four-player-lower-bound-model-scope-and-closure-obligation"
+        ],
+        "outcome": "玩家特定S_i的四人下界缺具体incidence/重数/完整σ；取并目录新增动作、向下闭包及四到六人各有未付全部历史保持。CAG定义提供对照域，不推出这一文献范围记录或迁移结论；本页不是原模型反例，未凭数值>2造refutes边。"
+      },
+      {
+        "object_ids": [
+          "customer-attraction/padded-on-path-same-topic-kernel-budget-boundary"
+        ],
+        "outcome": "预算最小22(m+1)只管同主题实际节点限制，解除限制同族末A复用P0/λ1预算22m。早查询遗漏被T后继覆盖，与私有遗漏条件不冲突；核(C)的付款路由也不是全树独立供给守恒，不能从受限接口失败推出一般流不可行。全m来自解析证明，m2…5证据不外推。"
+      },
+      {
+        "object_ids": [
+          "CA-WORST-PNE-WELFARE-NO"
+        ],
+        "outcome": "反的是每份SPE福利至少同实例最差静态PNE，非SPE终局是否PNE的弱命题。全部PNE W16而该σ W15、OPT16；固定例只三人且half成立。有限阴性不挽回已否桥；静态PNE与minimax值/CCE及恰六人不同，未向这些端点扩域。"
+      },
+      {
+        "object_ids": [
+          "customer-attraction/closeout-3e0d9dd985280d79001d6049"
+        ],
+        "outcome": "公共t逐点同时IC与积分后调和IC的量词不同；13/72两例W=OPT，未反half、Möbius客户实现或独立Q运输。graphθ只给二关联域有限候选器，无结果/精确验收；13/72输入不能因同动作而互授运行。已有checks边仅复现语境，不据其标linked。"
+      }
+    ],
+    "verification": {
+      "input_pin_count": 21,
+      "all_input_pins_current": true,
+      "initial_declared_ref_count": 45,
+      "all_initial_file_sha256_matched": true,
+      "mathematical_computation": "未新运行LP/BI/生成器、旧矩阵/系数域或随机扫描；只解析原件、核SHA及原生边绑定/结构。",
+      "canonical_reuse": "原路径原SHA，不copy、不rebind。"
+    }
   }
 }
