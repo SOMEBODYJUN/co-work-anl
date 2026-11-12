@@ -1,0 +1,60 @@
+{
+  "edge_id": "cag-static-frozen-average-and-pne-ic-give-half-coverage",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/static-allowance-original-notes-and-finite-search-contract"
+  ],
+  "target_ids": [
+    "M-3a55169b86b64a7a99a13e612a389688"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意m≥1、有限单位客户、有限非空共同标签目录与单位提供者，终局客户价值在覆盖者间均分。目标为静态同时行动纯Nash终局a，故每个角色i对每个合法主题T均有u_i(a)≥u_i(T,a_-i)，固定另外角色动作。比较取任意达到OPT_m的m索引主题元组，允许重复标签、空覆盖、覆盖别名和弱平局。无顺序SPE或SA假设。",
+  "roles": {
+    "customer-attraction/static-allowance-original-notes-and-finite-search-contract": "提供任意确定叶的冻结删位恒等式D_T=Σ_i u_i(T,a_-i)，均匀索引排列平均Q=(1/m)Σ_jD_Tj及Q≥OPT_m−(1−1/m)W；这些代数不要求SPE。",
+    "M-3a55169b86b64a7a99a13e612a389688": "在该目标自身的每角色静态PNE假设下支付Q≤W，从而对每m、每合法实例、每静态PNE完整推出OPT_m≤2W。"
+  },
+  "explanation": "固定目标的任意静态PNE a，令C为覆盖、c_x为负载、W=Σ_i u_i(a)=|C|。源对任意确定叶给D_T=Σ_{x∈T∩C}(m+1)/(c_x+1)+m|T∖C|：x∈T且c>0时，c名原覆盖者被替换各得1/c，其余m−c名各得1/(c+1)；c0时m名各得1。有限非空目录有最优m索引元组T1,…,Tm，允许重复。每个角色均匀分到每个索引的概率1/m，所以Q=(1/m)Σ_jΣ_i u_i(T_j,a_-i)。其逐客户贡献在O∖C至少1，在O∩C至少1/m，故Q≥OPT_m−(1−1/m)W。现在对每i,j使用目标PNE的静态IC u_i(a)≥u_i(T_j,a_-i)，对j平均、对i求和，得到W≥Q。合成OPT_m≤Q+(1−1/m)W≤(2−1/m)W≤2W。m=1时仍给OPT₁≤W，W=0时仍给OPT_m=0而不定义比值；空客户、重复及弱平局都保。源恒等式不需SPE，不能把真实偏离IC偷换来支付此静态总和；也没有由总D_T≤W反推当前确定profile为PNE。",
+  "whole_result": "对目标模型中的每个m≥1、每个合法有限共同目录与单位客户实例、每个同时行动纯Nash终局a，静态每角色IC配任意确定叶的冻结索引平均恒等式，完整证明OPT_m≤(2−1/m)W(a)≤2W(a)。因此推出M-3a55169b86b64a7a99a13e612a389688整条半覆盖陈述；更锐系数是证明中间保证，未改变原目标身份或将SPE归约为PNE。",
+  "scope": "同一均分收益公式的静态同时行动模型，任意正人数及全部纯Nash；不要求全局势最大。没有对一般顺序SPE支付Q≤W，源中已假的一般SA或十三人平均失败不影响本边。",
+  "evidence": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-14984893febe0464/review.md",
+      "sha256": "aff3c93c4ab15abbb6f2e4afd08a8f02a9180ae82a7b517b2013d194aaae9491",
+      "section": "静态核心：冻结索引平均给出完整另一证明"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/静态删位宽限原笔记与有限搜索的准确合同--资源.md",
+      "sha256": "5b4a03208b79bcb8791d8d03da7192cbbf4d10287afacea17f5191e97c75c686",
+      "section": "同一确定叶的两个逐客户式"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/静态删位宽限原笔记与有限搜索的准确合同--资源.md",
+      "sha256": "5b4a03208b79bcb8791d8d03da7192cbbf4d10287afacea17f5191e97c75c686",
+      "section": "最优组合平均版与匹配量词"
+    },
+    {
+      "path": "archives/customer-attraction/state/资源/静态势半覆盖与二分关联预算的原稿边界--资源.md",
+      "sha256": "09c1b1b776374c71f0360d5acecdfbedd5d4adccc9d4eec6d99b41374a289000",
+      "section": "静态同时行动的完整证明"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/static-allowance-original-notes-and-independent-review-primary/source-root/research/workspaces/customer-attraction/R-d51d7a410c12456aa5c44e84b78708d0/global_proof/static_allowance_notes.md",
+      "sha256": "ea23fdaea943eccfe19dc0d9ecf7159f9c048fb05ee23736b35df7bc8a601500"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "全文实读当前static-allowance identity的主合同、关联新标签策略资源及3168B原笔记，并独立核对原静态PNE证明。重建c0/c>0两类删位贡献、重复索引均匀边际、Q逐客户下界及每角色静态IC平均的方向，全部量词和m1/W0均已支付。canonical仅见该源到十三人固定极值的不同ALL应用，本目标无重复边。0原入口、LP、BI、矩阵或SPE审计重跑；既不借已假SA，也不把SPE反例作为静态定理的refutes。",
+  "endpoint_pins": {
+    "M-3a55169b86b64a7a99a13e612a389688": "c890e5d906328f6a25dab6fe69c85ef056482e2bce48c12e5373d0dc7a6ed3a9",
+    "customer-attraction/static-allowance-original-notes-and-finite-search-contract": "30389930f5358e6b3928bb6a4fe3726e5c7da2e6f1c5690ec6c2d82d2d7c48b5"
+  },
+  "evidence_pins": {
+    "map/edges/customer-attraction-3a-3a-14984893febe0464/review.md": "aff3c93c4ab15abbb6f2e4afd08a8f02a9180ae82a7b517b2013d194aaae9491",
+    "archives/customer-attraction/state/资源/静态删位宽限原笔记与有限搜索的准确合同--资源.md": "5b4a03208b79bcb8791d8d03da7192cbbf4d10287afacea17f5191e97c75c686",
+    "archives/customer-attraction/state/资源/静态势半覆盖与二分关联预算的原稿边界--资源.md": "09c1b1b776374c71f0360d5acecdfbedd5d4adccc9d4eec6d99b41374a289000",
+    "archives/customer-attraction/tools/evidence/static-allowance-original-notes-and-independent-review-primary/source-root/research/workspaces/customer-attraction/R-d51d7a410c12456aa5c44e84b78708d0/global_proof/static_allowance_notes.md": "ea23fdaea943eccfe19dc0d9ecf7159f9c048fb05ee23736b35df7bc8a601500"
+  },
+  "review_digest": "caa6b1af5fc12b2da44f06045caeaebdfbf24d92280839f0b8d37e139c400102"
+}
