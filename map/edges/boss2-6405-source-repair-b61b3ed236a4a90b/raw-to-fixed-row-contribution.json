@@ -1,0 +1,66 @@
+{
+  "edge_id": "um-raw-k2-to-fixed-row-uniform-opt-and-localizer-contribution",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-DILUTED-SHARED-TERMINAL-RAW-K2-GAP-v1"
+  ],
+  "target_ids": [
+    "UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定整数d≥2、k≥d，s=d−1，L=2k²；沿用相同U/B/Z端点矩阵与H、Qold法则，但允许目标构造自己的M。只传递本边contribution，不把两对象的指定M、背景法则或证书等同。",
+  "roles": {
+    "UM-DILUTED-SHARED-TERMINAL-RAW-K2-GAP-v1": "提供与组件数M无关的完整实际OPT证明，以及Qold平方估计、H负项界和跨组件条件方差分解。",
+    "UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1": "复用上述步骤，另以Rfill和有限差分交易构造固定d的整行CONFIG。"
+  },
+  "contribution": {
+    "result": "相同U/B/Z矩阵对任意正组件数M的真实OPT=2−floor(sqrt(k))/k。对row目标T=1+s/k≥T0，Qnew=(Qold+Rfill)/2且Rfill负载≤T时，任意组件内affine q的Qnew正贡献至少||c||²/(60Lk⁴)，H负贡献至少−2||c||²；故M−1≥120Lk⁴时，全输入affine负载localizer非负。",
+    "remaining": "目标整条还需Rfill的具体合法生成、有限差分系数bS、全部degree≤d同机矩匹配与负质量吸收，以及固定d的有理生成和缩放趋二证明。此边不单独推出这些步骤，也不推出目标指定M/Qnew证书等于raw证书。"
+  },
+  "explanation": "raw正文第1节的真实OPT下界只使用selector所在组件：峰C<2时至少r=k−floor(k(C−1))枚f离开U，进入不同B，每个B又至少输出r枚unit e，故r²≤k；上界选floor(sqrt(k))枚f及同数e，其他组件全home。该推导未用M的数值。raw第4节给E_Qold q²≥||c||²/(30Lk³)和E_H[(T0−loadB)q²]≥−2||c||²。在row目标T≥T0，Qold slack≥1/k；Qnew至少有一半Qold，Rfill逐点slack≥0，故E_Qnew[(T−loadB)q²]≥||c||²/(60Lk⁴)。H中(T−T0)q²非负，沿用−2下界。以a=1/M混合得((1−a)/(60Lk⁴)−2a)||c||²≥0。条件于全局selector后其他组件独立，均值吸收入任意截距，条件方差乘正平均slack，所以同一估计适用于全部全输入affine q。row目标正文恰使用这条链；它仍需自己的subset交易完成整条定理。d=2时新M与Qnew也不同，不能标whole_result或equivalent_to。",
+  "scope": "固定d row-degree对象的真实OPT与affine-localizer证明步骤；不含higher-q、joint CONFIG-selector M2、跨行事件或variable-d统一复杂度。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/构造/稀释共享终端raw-K2锐二倍间隙--构造.md",
+      "sha256": "29c2f3957692a22a2e7172eb3111cbf19263b6053726e738d0532a2caeb1c631"
+    },
+    {
+      "path": "archives/unrelated-machines/state/构造/稀释共享终端row-degree固定阶间隙--构造.md",
+      "sha256": "2eb9b960a562fbe575bf20d09f29addf99e3129436916a4ae606ce3f8992e80a"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/稀释共享终端fixed-d全行CONFIG五源读后--审查.md",
+      "sha256": "4ae80beac407853797940d2bbd9047174c0a56d494b255ea2c1a8a949911a80f"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/diluted-shared-terminal-raw-k2-20261031/original/sol_diluted_shared_terminal_raw_k2_author_proof.md",
+      "sha256": "2e926c6471c68843602f78c101874198e0ad2808b8db12d737cc8a04f27ad948"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/diluted-shared-terminal-row-degree-20261031/original/sol_diluted_shared_terminal_row_degree_d_author_proof.md",
+      "sha256": "7fb8ae7e6635853417963a5ff379406cbc3a0abf347a73015ebc79c1a207c407"
+    },
+    {
+      "path": "map/edges/boss2-6405-source-repair-b61b3ed236a4a90b/repair_mathematics.md",
+      "sha256": "7c502544752ae76be1dbf8b2fd2f3347c130181136892d6c8129705227b429d6",
+      "section": "固定行度的插值和原 raw 合同"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "本轮连续完整实读两构造、改版fixed-d五源审查、section13页和两份原作者完整证明，独立重建三样本平方估计与selector条件方差。整行交易只插值mixed部分，pure-home degree d逐项相消。六个Fraction行交易与参数边界复算另存本批附件；未重跑历史审计。仅保留真实OPT和affine-localizer的contribution，不能把d=2的M/Qnew等同raw指定证书。此边替换旧路径，更新受影响端点pin及五源审查SHA，其余语义未扩大。",
+  "endpoint_pins": {
+    "UM-DILUTED-SHARED-TERMINAL-RAW-K2-GAP-v1": "24f24abc2c99885dd68a0265963b33cd15b94410071046afddd07301fe9f847f",
+    "UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1": "0e0b887b5d0fea2827782d85b6e470d8d210bc1ed6a795ebe50212e0e86baacb"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/构造/稀释共享终端raw-K2锐二倍间隙--构造.md": "29c2f3957692a22a2e7172eb3111cbf19263b6053726e738d0532a2caeb1c631",
+    "archives/unrelated-machines/state/构造/稀释共享终端row-degree固定阶间隙--构造.md": "2eb9b960a562fbe575bf20d09f29addf99e3129436916a4ae606ce3f8992e80a",
+    "archives/unrelated-machines/state/审查/稀释共享终端fixed-d全行CONFIG五源读后--审查.md": "4ae80beac407853797940d2bbd9047174c0a56d494b255ea2c1a8a949911a80f",
+    "archives/unrelated-machines/tools/evidence/diluted-shared-terminal-raw-k2-20261031/original/sol_diluted_shared_terminal_raw_k2_author_proof.md": "2e926c6471c68843602f78c101874198e0ad2808b8db12d737cc8a04f27ad948",
+    "archives/unrelated-machines/tools/evidence/diluted-shared-terminal-row-degree-20261031/original/sol_diluted_shared_terminal_row_degree_d_author_proof.md": "7fb8ae7e6635853417963a5ff379406cbc3a0abf347a73015ebc79c1a207c407",
+    "map/edges/boss2-6405-source-repair-b61b3ed236a4a90b/repair_mathematics.md": "7c502544752ae76be1dbf8b2fd2f3347c130181136892d6c8129705227b429d6"
+  },
+  "review_digest": "2309ac25ca356e19b546ff9aa0692662251fe05709047ea4c59dc09373fcfe64"
+}

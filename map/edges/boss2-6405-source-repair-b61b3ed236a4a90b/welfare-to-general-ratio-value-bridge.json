@@ -1,0 +1,63 @@
+{
+  "edge_id": "um-normalized-welfare-to-general-ratio-value-bridge",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-NORMALIZED-GATED-MENU-WELFARE-v1"
+  ],
+  "target_ids": [
+    "UM-NORMALIZED-GATED-MENU-13-8-v2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "相同有限显式norm1菜单与完整P_gate：root pin、各connector/selector及全部listed incidence均保留，四类机器互异；零incidence和未选state jobs仍执行。这里只复用不要求FSLP的值桥。",
+  "roles": {
+    "UM-NORMALIZED-GATED-MENU-WELFARE-v1": "提供OPT(P_gate)=2−β*的两向证明及给定H/bundles的全原任务调度回填。",
+    "UM-NORMALIZED-GATED-MENU-13-8-v2": "一般z/x福利LP及两阶段舍入利用该值桥，将排序得到的βhat转成实际峰并以β*表示真实OPT。"
+  },
+  "contribution": {
+    "result": "对目标的全部输入，不要求unit-FSLP，精确有OPT(P_gate)=2−β*∈[1,2]；任意显式不交bundle/选组H的平衡见证b可确定性回填为覆盖全部原jobs的Cmax≤2−b调度。因而目标排序提取的βhat确给Cmax≤2−βhat，比较分母为2−β*。",
+    "remaining": "目标全类13/8比率还需一般z/x福利LP、state/coin两阶段精确有理条件期望、W≥(1−1/e)L，以及W/n≤2βhat−βhat²、W*≥n(β*)²和13/8二次不等式。源的unit-FSLP绝对13/8部分不代替这些步骤。"
+  },
+  "explanation": "源的值恒等本来就无FSLP前提。给b>0见证，root pin留root；H中connector送gate、selector送达到bundle价值的private；H外connector留root、selector去gate。只将选中state在其bundle上的正incidence导出资源机；其余全部incidence（包括未选states与零incidence）留各自private。root峰2−|H|/n，选中private峰2−value，每个gate恰一个unit，其他private和资源机≤1；b=0用pin和全部connector留root、selector去gate、incidence全留private的完整峰二基线。反向任意C<2完整调度，connector在gate的组H满足|H|/n≥2−C；其selector被迫进private，至少2−C质量的positive incidence外送，resource unit在C<2时不能双占，得到全局不交bundles和β*≥2−C。root pin给OPT≥1。源与目标P_gate逐任务相同，故该两向桥可复用；新一般LP排序提取的前k组及其attaining states正是前向见证。这里不使用unit-FSLP存在、未知OPT输入或免费整数oracle，也不把其余jobs错送private。",
+  "scope": "一般显式归一化gated类的精确值和实际回填步骤；不是flat菜单保值变换，也不把FSLP存在提升为整数perfect completeness。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/审查/门控归一化FSLP四源清洗--审查.md",
+      "sha256": "2df6beb69a4f267953dd2298a41b153fd5110467acadde09df6b0601dca07b64"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化门控菜单v2三源精读与13-8算法版本审查--审查.md",
+      "sha256": "a4a7e0a28927697fa92175ad43d78a94c1bffdd967d447bc54606c172e493cc5"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md",
+      "sha256": "63629abaa5cd2bcc0e42ff051936b91882ea63c711dfdac231f238763b682255",
+      "section": "一、归一化门控菜单的精确实际值"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化门控福利证明与参数互补八源溯源--审查.md",
+      "sha256": "9e00d296c74e95a1e1bf35cc8e5a442333b1b212c53da563ffec5fabb3bda546",
+      "section": "2. 完整 `P_gate` 的精确值"
+    },
+    {
+      "path": "map/edges/boss2-6405-source-repair-b61b3ed236a4a90b/repair_mathematics.md",
+      "sha256": "7c502544752ae76be1dbf8b2fd2f3347c130181136892d6c8129705227b429d6",
+      "section": "完整门控值桥与两种福利保证"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "本轮完整实读FSLP四源/gated-v2两核心及改版的双源和八源附件，逐类核pin、connector、selector、全部listed incidence的双向映射；用四份完整小矩阵全端点枚举核值桥，含n=1、零incidence、重复state及unused资源。Fraction复算排序和13/8余量仅为有限核对。独立v1/v2福利推导及各自前提仍分别保留；本边只交无FSLP值恒等与完整回填的contribution。更新改版端点pins，不提升为目标整条算法。",
+  "endpoint_pins": {
+    "UM-NORMALIZED-GATED-MENU-13-8-v2": "6d3f4a6a93839fad94221c9b552d5b42d25baa7d6931c1fb1b2381e90e781c52",
+    "UM-NORMALIZED-GATED-MENU-WELFARE-v1": "64a46a21e39c5f17e14f814770a1f5132239b7b77cac312321c1ed92a2a21f63"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/审查/门控归一化FSLP四源清洗--审查.md": "2df6beb69a4f267953dd2298a41b153fd5110467acadde09df6b0601dca07b64",
+    "archives/unrelated-machines/state/审查/归一化门控菜单v2三源精读与13-8算法版本审查--审查.md": "a4a7e0a28927697fa92175ad43d78a94c1bffdd967d447bc54606c172e493cc5",
+    "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md": "63629abaa5cd2bcc0e42ff051936b91882ea63c711dfdac231f238763b682255",
+    "archives/unrelated-machines/state/审查/归一化门控福利证明与参数互补八源溯源--审查.md": "9e00d296c74e95a1e1bf35cc8e5a442333b1b212c53da563ffec5fabb3bda546",
+    "map/edges/boss2-6405-source-repair-b61b3ed236a4a90b/repair_mathematics.md": "7c502544752ae76be1dbf8b2fd2f3347c130181136892d6c8129705227b429d6"
+  },
+  "review_digest": "b10dba94f8fface13c9cf6665e6efe9bee70a2e89a18de42059addd775b79025"
+}

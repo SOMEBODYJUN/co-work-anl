@@ -9,7 +9,7 @@
 
 两端均采用 BLMRS arXiv:2307.08453v1 的 Definition 7/8：每个资源或作业 j 选给定整数 polymatroid P_j 的一个 basis；值或尺寸 s_j 为非负公共值，而不是依玩家/机器变化。有限整数 rank function 以 value oracle 给出，数值和有理输入使用二进制编码。分数 basis 指整数基凸包中的点。这里不引入一般 unrelated processing-time 矩阵，也不要求只有两种正值。
 
-实际实读：原PDF第6–8页的 polymatroid/dual 定义、Definition 7/8 和 Proposition 9；第26–30页的 assignment LP、Theorem 21 完整证明、Lemma 22、Theorem 23 完整证明。原文的两个舍入分别沿 floor/ceil 余量及整数 polymatroid intersection 证明。本轮给出独立的接口变换，证明两种完整舍入算法可互相调用；不是仅因同用一个整数性定理而宣称蕴含。
+本次在两个端点的当前 v2 合同上重审。实际实读冻结原 PDF 的 polymatroid/dual 定义、Definition 7/8、Proposition 9、assignment LP、Theorems 21/23 和 Lemma 22，并完整实读新增必要证据 `archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md`。冻结 v1 的 floor/ceil 两相邻索引图并未给出它们声称的分数见证，不能再把该图当作完整证明。当前端点的舍入结论由新增证据中的压缩单位槽、两秩交整数性、原资源补基及常向量对偶严格证明保留。本页的双向接口变换独立于原错误图；以下原有补基和私有补偿项证明仍逐式成立。因此本次修复的是证据路线和当前绑定，不改变已证明的等价数学身份。
 
 ## 补基恒等式与共同阈值的补偿
 

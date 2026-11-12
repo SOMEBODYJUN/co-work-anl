@@ -1,0 +1,54 @@
+{
+  "edge_id": "um-boss2-6405-blmrs-rational-bit-transfer-source-repair",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-5ecd146af7cb4e7cbd110d3f635a57be"
+  ],
+  "target_ids": [
+    "M-49195941d69c4784890f322dca84ef7b"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定实数α≥2和η>0；源和目标均为一般显式二进制非负有理输入。给定确定性总位多项式的实际UM调度输出算法。",
+  "roles": {
+    "M-5ecd146af7cb4e7cbd110d3f635a57be": "提供已证方向及配置机、单位资源机、真实选机与物理解码。",
+    "M-49195941d69c4784890f322dca84ef7b": "得到该同方向的完整精确有理位保持算法和实际资源分配。"
+  },
+  "explanation": "固定α≥2、η>0，假定一般UM有det总位多项式实际(2−1/α)算法。源BLMRS配置机/资源机/选机unit及Lemma12–14给物理合同：正确试探T可用互不相交真实物品匹配每人一个配置，选中配置任务全外送，未选配置全部任务本地归一总量1，得到完整峰1见证。任意实际C<2输出中资源机至多一任务；选机任务指认每人的一个真实配置c，选中配置所送走的原资源价值≥|c|(2−C)，不合并未选配置或重复物品。禁止端可写3，成功输出不用它。\n\n冻结Appendix B字面截断并不支付所写损失；目标证明独立修补如下。对T归一后截值到1，取固定有理s∈(0,1)、q=1+s，连续grid q^(−j)一直到最低q^(−L)≤s/n；删除每人至多n个小值损失≤s，向下取grid损失因子q。类型整数数量d取最大ell满足q^ell≤d，保ceil(q^ell)∈[d/q,d]。取固定κ使q^(−κ)≤s/q，按全部grid下标模κ分组，各组仅保第一次非零数量和随后严格刷新的数量；每个保留项后的删除tail价值≤该项·q^(−κ)/(1−q^(−κ))≤s倍该项，故此步损失因子q。所得每人价值至少b=(1−s)/q³，且物品只删除，仍全局不交。每类位置/数量均O_s(log(n+1))，由两子集及唯一递增匹配给每模类2^O_s(log(n+1))种，固定κ使总配置数(n+1)^O_s(1)；只保件数≤n及|c|≥b。所有grid、数量、配置及v/|c|耗时精确有理、位长多项式。\n\n选s足够小使b>α/(α+η)，固定有理a0∈[α/b,α+η)。正确试探T≤OPT时实际算法给C≤2−1/α，解码并核回原值≥Tb/α≥T/a0，故必接受；任何接受都有实际原分配见证。输入分母积Q使OPT位于1/Q网格，令U=max_iΣ_jQv_ij。整数区间[0,U+1]的上端始终>QOPT，接受升下端并存见证，拒绝蕴含K>QOPT故降上端。相邻终止时下端≥QOPT，保存分配每人≥OPT/a0≥OPT/(α+η)，不要求高猜接受性单调。调用数O(log(U+1))且所有数和实例编码位长多项式。未领取资源任意补派保非负；零资源/OPT0直接零值分配。由此完整实现同方向一般有理算法桥；SCHA_det^N不由此得证。",
+  "scope": "一般有理Santa与一般UM的实际算法方向；近似参数固定，原作者的物理构造与此处修补分开。",
+  "whole_result": "对每个固定α≥2、η>0，从确定性总位多项式实际(2−1/α)-UM近似输出构造确定性总位多项式实际Santa原资源分配，逐人价值至少OPT/(α+η)。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
+      "sha256": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
+      "section": "1. 一般 Santa Claus 到 Makespan"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
+      "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+    },
+    {
+      "path": "archives/unrelated-machines/state/定理/一般SantaClaus到不相关机的有理位保持转移--定理.md",
+      "sha256": "d0b040d9fe3d4f6fbb26fcc67d9083bffe40f0274d7fd7b30525307cfdad8f4a"
+    },
+    {
+      "path": "map/edges/boss2-6405-source-repair-74d84ac2223f267e/reading-notes.md",
+      "sha256": "4746772973884503f2b6c3c242719d66738382be65b20e0f39e38b1c3fc991e2",
+      "section": "Pass 5：一般 Santa 与当前源改版"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "本轮完整按任务阅读37个不同路径的指定跨度，冻结BLMRS v1全37页以pdftotext连续读完；承重精查Theorem1、Lemma11–14与Appendix B，和当前有理位保持主证明逐步比较。核出原字面截断不能供所写损失，当前q网格、数量取整、模κ稀疏和非单调高猜二分的独立补证完整。Fraction有限复核另见本任务notes/verification与rational-contract-checks，不把它们当一般证明。源资源正文改版至c10e…，故以新边重绑，不改原冻结边；SCHA假设仍未付，已有另一个canonical条件边。",
+  "endpoint_pins": {
+    "M-49195941d69c4784890f322dca84ef7b": "c5df48ba0bc06da10680b294eec39270c48bc7bf91f98deb02fd13c3f21b2401",
+    "M-5ecd146af7cb4e7cbd110d3f635a57be": "04c11305343dd00b9052f2ec4d075d3e33414b7e7b2b22d0685848af711f4dea"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
+    "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183",
+    "archives/unrelated-machines/state/定理/一般SantaClaus到不相关机的有理位保持转移--定理.md": "d0b040d9fe3d4f6fbb26fcc67d9083bffe40f0274d7fd7b30525307cfdad8f4a",
+    "map/edges/boss2-6405-source-repair-74d84ac2223f267e/reading-notes.md": "4746772973884503f2b6c3c242719d66738382be65b20e0f39e38b1c3fc991e2"
+  },
+  "review_digest": "f33f4e609acb6c5ff6dd1655ed60b8e99affb0a60b9dc3031f431bfe01d39bfd"
+}
