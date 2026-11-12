@@ -1,0 +1,62 @@
+{
+  "edge_id": "santa-appendix-c-uniform-bit-clock-implies-ga05",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-b8540026a0fc4c52b209c4ce7311c25b"
+  ],
+  "target_ids": [
+    "GA-05"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一显式有限restricted max-min域：非空玩家、有限不可分资源、显式资格表、非负二进制有理资源固有值v_j，玩家估值仅0或v_j，资源至多分给一人且可不分配。固定λ=26/99和一个逐位可执行的Appendix C全分配实现A，所有匹配/扫描/删除/根与路径选择均用已固定的确定性规则；程序不读取配置LP解或可行性/背包/精确T* oracle。唯一额外开放条件P：已指定固定正整数c,d，使对全部正T且CLP_I(T)可行的编码输入(I,T)，A在p(L)=c(1+L)^d总位步骤内完成，L=|(I,T)|；时钟包括读取、归一化、全部子程序、精确算术与完整输出。同一时钟覆盖全部可行输入，不要求不可行T自行终止或输出失败证书。P只承担该具体过程的时间，正确性由源支付，未假设整个未知OPT近似结论。",
+  "roles": {
+    "M-b8540026a0fc4c52b209c4ce7311c25b": "提供Appendix C对任意给定CLP(T)可行正T的有限真实26T/99全分配、无LP oracle的可执行选边/路径接口，以及源配置基准T*≥OPT；P额外支付该固定实现的统一总位多项式clock。",
+    "GA-05": "接收完整历史算法合同：固定δ=5/26，对全部同模型显式输入，总位多项式时间输出合法分配并保证每名玩家效用≥OPT/(4−δ)；保REJECT_OLD_TARGET的历史选题身份。"
+  },
+  "explanation": "先用所有有理分母之积D清分母，a_j=Dv_j为非负整数，U=Σa_j；D、各a_j、U及全部显式编码的位长均为原输入位长B的多项式，不复制或拆分物品。U=0直接输出空分配。令整数实际最优为O、配置LP最高可行目标为T*，则0≤O≤T*≤U。所有配置和为整数，CLP(T)=CLP(ceil(T))，所以T*可取到且为整数；所有正t≤T*均可行。\n\n对正整数t，Try(t)从头限时模拟A(I_a,t)至p(L_t)总位步，然后只接受完整合法的实际资源分配。逐物品核标签/资格和唯一使用，按实际资格求每玩家整数值s_i，精确检查99s_i≥26t。超时、异常、无完整输出或检查失败均记failure。验证给success⇒真实合法且min s_i≥26t/99；源正确性加P给CLP(t)可行⇒success，故failure⇒CLP(t)不可行⇒t>T*。不生成LP不可行证书，不把success当作可行性判定。\n\n初始化lo=0、hi=U+1，保存空分配。只维护hi>T*和保存分配的min s_i≥26lo/99，不维护lo≤T*。每次mid=floor((lo+hi)/2)>0：success则lo=mid并保存已验证分配，failure则hi=mid。高于T*的成功可以提升lo，成功谓词即使非单调也不破坏这两个不变量。O(log(U+1))次后hi=lo+1>T*，由T*整数得lo≥T*，所以保存分配min s_i≥26T*/99≥26O/99。将同一分配按原值解释，得min u_i≥26OPT/99=OPT/(4−5/26)。查询数、编码长度、截断模拟、精确验证与清分母合成总位多项式时间，完全不需要精确OPT或T*输入。零值、空资源、零最优及无资格玩家按0下界分支/截断正确处理。\n\nM-af5cd39d12c444399b616e0d318c27be的4+δ算法只是实读对照：其λ=1/(4+δ)<1/4，Build/Collapse的正γ、β=γ²、μ=γ³、limited blocking、canonical/lazy状态及层增长计数不支付Appendix C的λ=26/99>1/4时钟；代入相同λ会要求δ=−5/26，γ归零又失去正增长参数。故它不作为本条ALL的额外源，不造不存在的时间迁移或运行下界refutation。已有3A数值存在性contribution不重复拆边。",
+  "scope": "完整条件蕴含，作用于GA-05的整个历史实际分配/统一多项式算法合同；保持玩家、资源、资格、不可分性与显式有理输入位复杂度。仅在条件P下得目标，不把P、GA-05或外部近期算法无条件证明，不评价现时开放性、新颖性或恢复旧选题。",
+  "whole_result": "若所固定的Appendix C实现A满足条件P的统一总位多项式时钟，则存在一个无LP/精确目标oracle的确定性总位多项式算法，对每个显式有限非空玩家restricted非负有理实例输出合法实际分配，使所有玩家同时至少得到(26/99)OPT=OPT/(4−5/26)；因此以固定δ=5/26完整满足GA-05的历史4−δ算法合同。条件推导完整，时钟P本身仍开放。",
+  "reviewed_by": "Boss2 fresh formal 3C worker wave17_santa_ga05; Root Boss2",
+  "review_note": "三个核心v1合同与现行registry逐字相等、task definition和全部input pins独立重算核准。完整实读共同中文正文、两处GA-05指定段、fresh3A support与Root预分析/独立3D；本次按PDF skill定向实读冻结PDF pp19–23、27–28，完整其余源证明准确复用fresh3A，不声称再次全文PDF复证。独立核了任意可行正T的源接口、固定确定性A、P仅时钟、清分母总位长、CLP整数最高阈值、单向failure与允许lo>T*、真实资格/分配验证、零分支、合成多项式和M-af5对照。无缺步故accepted/conditional/whole；未运行科研程序、Git、work.py/native、队列或正式绑定，Root负责最终pins/check/publish。\nRoot Boss2 separately read the three current contracts and relevant original bodies, the complete final edge/support/receipt and the earlier exact Appendix C review. Root reconstructed the uniform clock condition, denominator clearing, integer CLP threshold, one-sided failure certificate, saved allocation invariant allowing lo above T*, all zero branches, exact output verification and total bit complexity. Only the concrete total clock remains open; the conditional whole implication is complete. Original PDF full-reading credit stays with its actual workers.",
+  "evidence": [
+    {
+      "path": "map/edges/boss2-wave17-santa-ga05-3c-2c145fadd5b8270e/support.md",
+      "sha256": "964c9d65148d2ce5a896d11d46892d1dfa42ec9d375a0084c326ca7d1e626da3"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-eb09f2fb3f9a708f/support.md",
+      "sha256": "3b676dce201acc54e4373c88fd30a8f22f13f1c40fa46501638f1008faf04c48"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Cheng-Mao受限最大最小分配与配置LP--文献.md",
+      "sha256": "fa7375b5a1a8a5719b539df0192242461e713e6673735813a9f612dae7d1b574"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/cheng-mao.pdf",
+      "sha256": "ea99b29b0b05694d16fcf18b63fddcd9dc798aa6ef476ac0b78033c8eaf90e7a"
+    },
+    {
+      "path": "archives/bottleneck-knapsack/state/审查/广义指派候选池的状态与证据边界--审查.md",
+      "sha256": "15ebb51bee034ac2fda32fecaa16fce4803675f0dae83442b7bd587f99694ad7"
+    },
+    {
+      "path": "archives/bottleneck-knapsack/state/审查/广义指派候选报告的深入状态与BMKP舍入边界--审查.md",
+      "sha256": "a9a733a7ca331d092090b7f09ac9423ee2e4a31a195b0810eb27f04feaa2947d"
+    }
+  ],
+  "endpoint_pins": {
+    "GA-05": "cd879b3e71058a9a355b48795bac4a378d7ce788e4876870077d6ba0c81312dd",
+    "M-b8540026a0fc4c52b209c4ce7311c25b": "94f3d06211128043b9b86c0d8c73049abf17e2551c7a14a47f99729d2f89e31e"
+  },
+  "evidence_pins": {
+    "map/edges/boss2-wave17-santa-ga05-3c-2c145fadd5b8270e/support.md": "964c9d65148d2ce5a896d11d46892d1dfa42ec9d375a0084c326ca7d1e626da3",
+    "map/edges/unrelated-machines-3a-3a-eb09f2fb3f9a708f/support.md": "3b676dce201acc54e4373c88fd30a8f22f13f1c40fa46501638f1008faf04c48",
+    "archives/unrelated-machines/state/文献/Cheng-Mao受限最大最小分配与配置LP--文献.md": "fa7375b5a1a8a5719b539df0192242461e713e6673735813a9f612dae7d1b574",
+    "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/cheng-mao.pdf": "ea99b29b0b05694d16fcf18b63fddcd9dc798aa6ef476ac0b78033c8eaf90e7a",
+    "archives/bottleneck-knapsack/state/审查/广义指派候选池的状态与证据边界--审查.md": "15ebb51bee034ac2fda32fecaa16fce4803675f0dae83442b7bd587f99694ad7",
+    "archives/bottleneck-knapsack/state/审查/广义指派候选报告的深入状态与BMKP舍入边界--审查.md": "a9a733a7ca331d092090b7f09ac9423ee2e4a31a195b0810eb27f04feaa2947d"
+  },
+  "review_digest": "8694550950bde4ecabdf3b74e286050b8e74ad6d3fab12ca21ead9ada1162c1f"
+}

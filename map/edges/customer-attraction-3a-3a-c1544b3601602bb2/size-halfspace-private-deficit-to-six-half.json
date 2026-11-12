@@ -1,0 +1,79 @@
+{
+  "edge_id": "cag-seven-maxima-size-halfspace-private-deficit-to-six-half",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/seven-maxima-fixed-route-size-halfspace-rational-cover-certificate",
+    "customer-attraction/seven-maxima-private-block-objective-and-current-fractional-cover-scope"
+  ],
+  "target_ids": [
+    "customer-attraction/six-providers/exact-six-full-history-half-cover"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限单位客户实例、有限非空共同标签目录及任意覆盖映射；恰六名单位提供者、全部合法有序历史上的完整纯SPE σ，保空覆盖、同覆盖异标签、重复行动、零客户及任意历史依赖弱平局。偏离后沿同一张σ真实续行。全目录恰有七个不同包含极大覆盖B0,…,B6，各有合法代表；固定合法极大容器映射后，实际六位置容器路由为000010，实际末位覆盖恰为B0，前四动作可为B0子主题、第五可为B1子主题。K={0,2,3,4,5,6}、O_K=∪_{j≠1}B_j；V=∪_{j=0}^6B_j，N_+=|V|，p_j=|B_j\\∪_{k≠j}B_k|，p_*=min_j p_j。要求max_{2≤j≤6}|B_j|≥|B1|，只重标未用索引2..6即可满足源A的B6大小条件。下述定量式不另要求private-gap界；其中half推论进一步限于p1−p_*≤2δN_+的输入子域，δ为精确已证正分数。",
+  "roles": {
+    "customer-attraction/seven-maxima-fixed-route-size-halfspace-rational-cover-certificate": "支付同一完整σ、实际route000010、固定K125和大小半空间中的W−|O_K|/2≥δN_+；十九正权为18基础行+1大小行，0 ASR。",
+    "customer-attraction/seven-maxima-private-block-objective-and-current-fractional-cover-scope": "支付同目录七极大静态最优公式OPT6=N_+−p_*及固定并集|O_K|=N_+−p1，确定与真实OPT6的差额p1−p_*。只扩张静态比较元组，不改游戏目录。",
+    "customer-attraction/six-providers/exact-six-full-history-half-cover": "接收原六人全称half问题在此route/size子域上的精确定量贡献，以及private-gap受控子域的half；完整原题继续open。"
+  },
+  "explanation": "对任意原目录六标签比较元组，把每项覆盖静态扩张到一个合法极大容器；去重后至多六种，可从七极大补足六种，覆盖不减。反向任意六极大各取合法代表即是原S^6中的比较元组，所以OPT6=max_j|∪_{k≠j}B_k|。遗漏j恰丢全局私有块X_j，故OPT6=N_+−p_*且|O_K|=N_+−p1；这些等式不删除非极大、别名、重复或空覆盖动作。若未用2..6中某B_j大小至少|B1|，只在这五索引内统一重标，把它叫B6，固定0/1；实际动作与σ不变，route仍000010，K及O_K不变，p1身份不变而min私有块不变。源A于新标号给W−|O_K|/2≥δN_+。结合源B：W−OPT6/2=(W−|O_K|/2)−(OPT6−|O_K|)/2≥δN_+−(p1−p_*)/2，其中δ=18498863000606739639886045305171986828695633123297448847848950678586594650307/6762571796424872885022917111161933156201229619283339655506473064817216175091704。若p1−p_*≤2δN_+，得到2W≥OPT6；缺口严格小于阈值则严格half，p1=p_*时得W≥OPT6/2+δN_+。恰七不同极大时N_+>0；一般零客户边界不取比率。大小条件本身不推出p1最小，不能交换0/1或改历史来强迫最优遗漏。全部推导在规定输入子域已付清，两已证源必须共同保留为一条ALL。",
+  "scope": "仅原六人完整历史模型中恰七个不同极大覆盖、实际route000010且maxunused大小条件成立的域；定量式适用于其全部private缺口，half仅由受控缺口充分条件推出。N_+是可覆盖客户总数，不是全部N。没有任意目录到七极大的归约，不把固定O_K普遍视为OPT6，不把其它路线失败模板或松弛负列视为SPE反例。",
+  "contribution": {
+    "result": "在同一六人完整σ、恰七不同极大、实际route000010及max_{2≤j≤6}|B_j|≥|B1|的子域，精确有W−OPT6/2≥δN_+−(p1−min_jp_j)/2，δ=18498863000606739639886045305171986828695633123297448847848950678586594650307/6762571796424872885022917111161933156201229619283339655506473064817216175091704。因此p1−min_jp_j≤2δN_+时2W≥OPT6；严格缺口不等号给严格half。特例p1=min_jp_j给W≥OPT6/2+δN_+。",
+    "remaining": "没有覆盖其它实际容器路由；当前route中B1严格大于全部五个未用极大覆盖的互补大小域；route/size域中private缺口超过2δN_+时的half额外付款；以及任意不同极大覆盖数的原题。只说明本桥未支付这些域，不宣称它们是反例域、全部失败域或其他既有路线均未处理。Q仍为任意目录、任意六人完整σ的开放问题，不能填写whole_result。"
+  },
+  "evidence": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-c1544b3601602bb2/size-halfspace-private-deficit-bridge.md",
+      "sha256": "77ab67831f0a62884d7d02e573c7cf18d301483548c32db364f5104c6ef794e1"
+    },
+    {
+      "path": "archives/customer-attraction/state/证明/七极大固定路由的大小半空间有理覆盖证书--证明.md",
+      "sha256": "a06141db4845abc6f6fb0599ebfa2847d00a5798894da6f2212dc6fe5fc8e351"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/ordered-maxima-single-branch-primary/exact-review/summary.json",
+      "sha256": "4d7ae70b3f3758d965f8664e352159b97ff483379ae6c9020337cae39845e736"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/ordered-maxima-single-branch-primary/original/b6e38a6404bc19b47b14/exact_branch_audit.json",
+      "sha256": "db1cac116f4161c7f4cebf34fde261613fdca4a699539d6ac4923289cf5db715"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/ordered-maxima-single-branch-primary/exact-review/all-1631-residuals.json.gz",
+      "sha256": "e3103e64a25e109556082313f3ac7ac1638b6cf38f6ba12019238c779b1667ad"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/七极大单私有块证书目标与当前覆盖范围--审查.md",
+      "sha256": "b800495e653a5ade48b3c04d9836a78b19d60da47cb8ad7a4826bab0a25f73b2",
+      "section": "正确静态最优与八客户反证"
+    },
+    {
+      "path": "archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md",
+      "sha256": "0626668e7a825108fc0b3699e42394b75b1c2e2a526df220a90d91a02afc8a0c"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss2 / recovered 3A worker; Root Boss2",
+  "review_note": "亲自实读当前三对象完整合同并与current-contracts导出逐项核同；全文实读A证明、B审查、Q正文、共同模型、Q旧根证据、成熟summary和原3070B十九权JSON，并实读B指定dense乘子恒等式节。核所有当前body/evidence SHA与精确标题，核δ/route/K与摘要绑定。完整推导保同一σ及0/1身份、静态比较与游戏动作边界；只接受上述定量贡献和受控缺口子域half。复用同SHA成熟1631列证书，压缩残差仅核原字节SHA，0次解压遍历/重建、原入口/LP/SPE求解。当前registry.edge_files共2287条，仅定向命中9条，无相同A/B->Q联合ALL。最终edge-bind/check由Boss根流程执行。\nRoot Boss2 separately read the current A/B/Q contracts and original bodies, independent bridge review and complete final support/edge/receipt. Root reconstructed static OPT over all original labels, the private-deficit identity, relabelling restricted to unused indices2..6, exact positive margin, all non-interest/zero cases and the remaining target domain. Both A and B are indispensable in this ALL contribution; source certificate is reused at its frozen SHA without a new1631-column audit.",
+  "endpoint_pins": {
+    "customer-attraction/seven-maxima-fixed-route-size-halfspace-rational-cover-certificate": "c44c8904f129a2e683da716943182a40587f59d83142a5854349402f60095d0a",
+    "customer-attraction/seven-maxima-private-block-objective-and-current-fractional-cover-scope": "a3aabc5153fae5241aff5fd2adf4612ce9de5a908a63eb92e494afd94051a4ec",
+    "customer-attraction/six-providers/exact-six-full-history-half-cover": "2d5b191271cb052c435121a41935eb3958540d5a53cb05013f13dd45a70f6e31"
+  },
+  "evidence_pins": {
+    "map/edges/customer-attraction-3a-3a-c1544b3601602bb2/size-halfspace-private-deficit-bridge.md": "77ab67831f0a62884d7d02e573c7cf18d301483548c32db364f5104c6ef794e1",
+    "archives/customer-attraction/state/证明/七极大固定路由的大小半空间有理覆盖证书--证明.md": "a06141db4845abc6f6fb0599ebfa2847d00a5798894da6f2212dc6fe5fc8e351",
+    "archives/customer-attraction/tools/evidence/ordered-maxima-single-branch-primary/exact-review/summary.json": "4d7ae70b3f3758d965f8664e352159b97ff483379ae6c9020337cae39845e736",
+    "archives/customer-attraction/tools/evidence/ordered-maxima-single-branch-primary/original/b6e38a6404bc19b47b14/exact_branch_audit.json": "db1cac116f4161c7f4cebf34fde261613fdca4a699539d6ac4923289cf5db715",
+    "archives/customer-attraction/tools/evidence/ordered-maxima-single-branch-primary/exact-review/all-1631-residuals.json.gz": "e3103e64a25e109556082313f3ac7ac1638b6cf38f6ba12019238c779b1667ad",
+    "archives/customer-attraction/state/审查/七极大单私有块证书目标与当前覆盖范围--审查.md": "b800495e653a5ade48b3c04d9836a78b19d60da47cb8ad7a4826bab0a25f73b2",
+    "archives/customer-attraction/subarchives/six-providers/state/问题/六人完整历史半覆盖目标--问题.md": "0626668e7a825108fc0b3699e42394b75b1c2e2a526df220a90d91a02afc8a0c",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "655594ab1070ae6ea27007585e67586e989eb4e8037cbec1f61cad0666fffa82"
+}
