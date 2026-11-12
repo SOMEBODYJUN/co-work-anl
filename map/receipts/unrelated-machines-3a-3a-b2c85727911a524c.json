@@ -1,0 +1,59 @@
+{
+  "coverage": {
+    "M-bcf19c1d04ba4f39b746241304786dc1": {
+      "state": "isolated-after-review",
+      "object_pin": "186d9ce8713657ac38d25fd1e13e4a0875f808a76902d55ce134381948f76bbe",
+      "comparison_scope": "当前核心version2及其完整record、共同body全文；本轮对冻结15页Dobzinski–Nisan–Schapira PDF重新pdftotext -layout，所得SHA d97e661087cfa4972ed4635c045982d98d28a53bbdd4b4a993fb509f4d6acafc与现存全文txt逐字节相等，实读全部提取文本（967个换行）并目视核PDF物理第10、11页的Theorem4.1和完整CF归约。对照同PDF的§2/2.1估值、表示和oracle合同，§3.1 CF demand上界、§3.2 XOS随机期望上界、§3.3确定性组合二近似、§4.2 XOS两类下界和§5–6 value算法/隐藏clause下界。检索registry的CF/XOS/communication及相关现有边，具名比较M-3023109bed134f94b5895212631801c7、M-a4ecb68ddbe948258e6a2e7e0cebeb54、M-513a993cb39a478a850f01c62d52d0ed、M-bafae50558c441728f16cbfc7dce9f82、M-8fdee11afd164305a429734ee5ae705a（均version2）。完整读既有cf-two-barrier-motivates-xos-oracle-boundary及其review与receipt，复用已付模型边界；未复制该context边。共同body的Set Cover/PGC仅作模型排除，没有借同页制造关系；此范围不声称穷尽全仓潜在联系。",
+      "reason": "核心渐近固定常数结论有完整已知证明入口。继承本PDF明确调用的Nisan[15]一般估值通信gap：私有I_i⊆T_i定义单调0/1上闭v_i，高case有互不交非空获胜bundle使福利n，低case任意分配最多一位获胜、福利≤1。令v′_i(∅)=0、v′_i(S)=1+v_i(S)（S非空）。新函数归一化、单调，两个非空集合的右端值至少2、并集值至多2，带空集情形直接等号，所以确为CF。高case原n个非空获胜bundle给新福利2n；低case任何allocation的非空bundle基准贡献≤n、获胜额外贡献≤1，故福利≤n+1。对任一有意义固定0<ε<1，先选固定整数n使n+1>2/ε，再增大m满足所引gap参数条件；于是2n/(n+1)>2−ε，达到该保证的协议通过实际输出福利可区分两case，只需另O(n)常数值报告，继承指数通信。ε≥1对应的有效更强保证已被任取0<ε₀<1的结论排除；因子低于1在正OPT实例本来不可能。本次不依赖源末句在精确有限比值等号处的表述，也不必断言所有低case恰达到n+1。Nisan原始gap按本篇外引定理继承，未声称本轮取得或重证其原全文。general queries允许任意面向单一bidder的询问，结论计通信比特，不是任意长问答均按单位价格计费的统一query-count下界；也不是显式输入长度的NP-hardness。\n\nCF demand对数除对数对数算法是上界，本核心是严格二因子下界；两者独立、相容，缺少任何由一者构造或证明另一者的桥。XOS⊆CF仅把XOS通信下界的e/(e−1)弱阈值扩大到CF，不能把该阈值提升为2；反向从大类最坏情形hardness限制到XOS也无效，尤其XOS算法确有更好常数。XOS下界record另含显式表示NP-hardness部分，CF通信归约没有给出那一计算结论。value-only的平方根障碍限制更弱访问；CF一般通信下界至多在value子模型给常数阈值，既不支付其随m增长的平方根结论，value下界也不反推允许一般询问的通信下界。两XOS上界的更窄promise及maximizing-clause接口和本核心完全相容；普通CF未必存在支持clause，不能将类差别描述成general query不许demand。既有cf-two-barrier-motivates-xos-oracle-boundary已完整保存与确定性二近似的这条语境，本轮不重复。现有登记中未找到本核心直接调用的Nisan[15]n-vs-1通信gap独立端点；普通证明步骤不另造节点。本次范围没有新accepted逻辑整条、独立局部贡献或有必要复制的语境边，故零新边、isolated-after-review。若未来迁往NSW、MaxMin、makespan或SPE，仍须给保目标与访问/表示复杂度的具体映射；当前没有这样的已付桥，也无具体未处置follow-up。"
+    }
+  },
+  "assets": [],
+  "follow_up_tasks": [],
+  "closed_overlaps": [],
+  "reviewed_comparisons": [
+    {
+      "core_id": "M-bcf19c1d04ba4f39b746241304786dc1",
+      "peer_id": "M-3023109bed134f94b5895212631801c7",
+      "reason": "已读§3.1完整configuration-LP/preallocation/分层证明。该算法只给O(log m/log log m)上界，本核心从另一通信gap归约给2−ε下界；上界不排除更好算法，下界不构造分层算法，二者不能互证。"
+    },
+    {
+      "core_id": "M-bcf19c1d04ba4f39b746241304786dc1",
+      "peer_id": "M-a4ecb68ddbe948258e6a2e7e0cebeb54",
+      "reason": "已读§4.2完整MAX-k-COVER与approximate-disjointness归约。XOS⊆CF使通信部分在CF上仅给更弱e/(e−1)阈值，不补足2−ε；CF大类hardness不向XOS下推，也不付显式XOS表示NP-hardness。没有有价值的新逻辑边。"
+    },
+    {
+      "core_id": "M-bcf19c1d04ba4f39b746241304786dc1",
+      "peer_id": "M-513a993cb39a478a850f01c62d52d0ed",
+      "reason": "已读§6完整隐藏clause证明及现有value-query语境边。其查询数平方根障碍不能排除允许任意一般询问的协议；本核心限制value访问只得常数障碍，不能推出平方根阈值。两核心在不同访问强度下独立。"
+    },
+    {
+      "core_id": "M-bcf19c1d04ba4f39b746241304786dc1",
+      "peer_id": "M-bafae50558c441728f16cbfc7dce9f82",
+      "reason": "已读§3.3完整价格证明并复用既有cf-two-barrier-motivates-xos-oracle-boundary。XOS子类及支持clause合同、边界因子2均与本障碍相容；语境已存在，不复制，也不据此声称2对XOS最优。"
+    },
+    {
+      "core_id": "M-bcf19c1d04ba4f39b746241304786dc1",
+      "peer_id": "M-8fdee11afd164305a429734ee5ae705a",
+      "reason": "已读§3.2完整逐item期望证明。更窄XOS类上的e/(e−1)随机福利算法不违反全CF最坏情形的严格二因子障碍；其期望保证、clause存在性和显式输入长度均不提供核心通信归约，反向也无下推。"
+    }
+  ],
+  "reading_evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/组合拍卖与投影游戏集合覆盖两篇文献整理--文献.md",
+      "sha256": "ee4b62663ff651341ae40162b5319b31b9230d71c93b81333d43cfbf92d4fb22",
+      "range": "全文，含两来源分离及全部oracle/目标边界；Set Cover/PGC未用作推导前提。"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-auction-setcover-20261031/dobzinski_auction.pdf",
+      "sha256": "d0700d7674db45b4330d558c731c0200567f2c7a999f5eef7952029cab26dd15",
+      "range": "本轮重新导出并实读全部15页提取文本；目视核物理p10/p11。提取SHA d97e661087cfa4972ed4635c045982d98d28a53bbdd4b4a993fb509f4d6acafc，与既存txt字节相同。Nisan[15]原gap为本篇外引，不声称独立重证。"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-f6d5397cb124db3c/cf-barrier-context.json",
+      "sha256": "0779338a519038023327a32d94c71d607abf14bec3b1cb47130a27cb0fd2a591",
+      "range": "完整现有context边及其evidence review/receipt均实读，复用而不复制；未作为本轮新资产。"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "逐项核归一化、单调及CF三种空/非空情况，高低case福利界、严格有限gap和固定ε先选n后长大m的量词、communication bits与单bidder general query的范围。未把论文§4.3明确写出的随机成功率合同额外搬到§4.1；保本文定理及所引原始gap的协议范围。核心v2未发现须改registry的实质错误。零边为具体比较结果，不是身份或来源needs-decision；没有运行科学计算或改Git/queue/registry。 最终重读Boss已pushed的read-add任务：owner=Boss2、state=claimed、5个共享依赖与比较名单一致、无overlap_comparisons；6个对象version2的registration_pin与当前task全部一致且body/evidence current，收据coverage/写入路径及空assets结构已核。"
+}

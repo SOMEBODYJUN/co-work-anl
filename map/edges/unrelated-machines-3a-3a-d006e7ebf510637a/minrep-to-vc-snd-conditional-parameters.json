@@ -1,0 +1,48 @@
+{
+  "edge_id": "minrep-gap-transfers-to-conditional-vc-snd-contract",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-8b63c8bed3d44f34a50cc846cc98d80a"
+  ],
+  "target_ids": [
+    "M-e76a773c043a4818bb84406b5e862bee"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "联合使用完整随机 MinRep g-gap 源与冻结 Manurangsi Theorems 2、4 所调用的近似保持归约合同。Theorem 2 的 VC-SND 分支给最大正需求 k=O(ΔQ+Δ²)，Theorem 4 的另一分支给正需求终端对数 D_dem=O(Δ²)；不假定这两项是同一个归约输出的联合界。外部归约须对这里的源类型有完整可行解编码、解码及费用近似保持。目标限冻结 PDF 所定义的无向图、最少顶点子图、每个终端对按给定 r_st 要求内部顶点不交路径的 VC-SND；实际外部费用版本的适用性仍是显式条件，不自动推广为边费用、任意权重或双标准需求。g>1 在 SAT 输入之前先固定；保留源的显式全投影、全边覆盖、真实列表总成本、Chan/regularization 接口、δ 修复和随机归约。",
+  "roles": {
+    "M-8b63c8bed3d44f34a50cc846cc98d80a": "给出每个先固定整数g的随机MinRep硬度：Δ=O(g log g)、Q=O(g^4 log²g)，YES以≥0.9概率OPT≤2N，NO以≥0.9概率OPT>2gN；两概率各对相应promise的固定输入。",
+    "M-e76a773c043a4818bb84406b5e862bee": "接收上述外部近似保持合同下分别以k和正需求对数参数表示的VC-SND随机硬度。"
+  },
+  "explanation": "从源输出Π取实际最大度Δ和共同字母表大小Q。第一分支逐项代入Theorem 2：ΔQ=O(g^5 log³g)，Δ²=O(g²log²g)，故k=O(g^5log³g)；第二分支另以Theorem 4得D_dem=O(g²log²g)。在每条相应外部合同成立时，目标的α近似解经费用保持的解码给源的相应近似，源的严格YES≤2N、NO>2gN分离将Ω(g)困难因子传至目标；常数失真可通过预先放大固定g吸收。反演各自实际输出参数的单调上界，得g=Ω(k^(1/5)/(log k)^(3/5))及g=Ω(sqrt(D_dem)/log D_dem)，即两条分别的波浪Ω硬度。这里仅用参数上界，不把它写成等式；也未证明任意指定参数值的padding。两条外部存在归约不能据此合为同输出的双参数保证。源的随机性在多项式归约复合后仍保留；若转为多项式算法排除，可用NP⊄BPP，不能只用P≠NP。所有正需求对都须满足内部顶点连通度r_st；这不是edge-disjoint版本。外部归约自身及其费用模型没有在本包重证，故结论维持条件性质。",
+  "whole_result": "在所列完整MinRep源和外部近似保持合同共同成立时，得到目标的完整条件应用：VC-SND的k分支满足k=O(ΔQ+Δ²)=O(g^5log³g)，给波浪Ω(k^(1/5))随机归约硬度；另一个正需求对数分支满足D_dem=O(Δ²)=O(g²log²g)，给波浪Ω(D_dem^(1/2))随机归约硬度。两个参数结论分别成立，费用与需求域均限于合同中的最少顶点子图VC-SND。",
+  "scope": "3A，同一MinRep文献内从已核完整随机g-gap源到VC-SND条件应用；与RkC及VC-kRC是独立的外部归约分支。不能由另外两种目标的硬度不经归约直接推出本目标，也不推出一般不相关机困难性。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md",
+      "sha256": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217",
+      "section": "5. 主定理的参数代入及严格 gap"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md",
+      "sha256": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217",
+      "section": "6. 连通性应用：保留全部参数及外部依赖"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/Boss7-minrep-restored/original/manurangsi_minrep_degree_1807_00936v1.pdf",
+      "sha256": "259edd7e850da816ddb5c318287a7a3a525ccc8963f07918787156384d7153d8"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "实读当前目标及同页全部正文、冻结9页PDF全文（定义、Theorems 1/2/4、Corollaries 3/5、稀疏化完整证明），并核已交RkC和VC-kRC条件边。独立逐项计算ΔQ、Δ²及其反演，核固定g与随机归约、两promise分开概率、全部便宜列表量词、正需求对与原图正则度D的区别。冻结PDF明确写最少顶点子图，外部归约实际费用适配作为显式条件；本包没有复证外部论文或免费升级费用模型。",
+  "endpoint_pins": {
+    "M-8b63c8bed3d44f34a50cc846cc98d80a": "0a7443fbb503448d27919bd02589188e155ea9faec436fea6b9f9d1eee17f203",
+    "M-e76a773c043a4818bb84406b5e862bee": "227cb65415aba778a5e81976b33769e51846f049b9b8e489622b54fac6ae1f0d"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217",
+    "archives/unrelated-machines/tools/evidence/Boss7-minrep-restored/original/manurangsi_minrep_degree_1807_00936v1.pdf": "259edd7e850da816ddb5c318287a7a3a525ccc8963f07918787156384d7153d8"
+  },
+  "review_digest": "9804abcb57e7593f17c7ec76deeac042c3820d11504ade2684970518648fb7e2"
+}
