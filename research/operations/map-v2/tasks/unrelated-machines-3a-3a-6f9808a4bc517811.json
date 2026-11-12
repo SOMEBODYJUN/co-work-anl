@@ -111,15 +111,70 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss5",
-  "request_id": "e19e6d25d684405689f27c20afd9fd9a",
+  "request_id": "51cf85b5aca144bca63511cc380518d5",
   "requests": {
     "81a0648c3de14140a1ae6370812f33c4": "plan",
     "7463f6a7efb346499529e6c70e953c64": "plan",
     "b0d874c919b84d16b61354f1173d3744": "claim",
     "b90b2a0ed47441aea4d8a6b8169747ae": "read-add",
     "b381a65a6cb94ccea0db76cfebd4371f": "plan",
-    "e19e6d25d684405689f27c20afd9fd9a": "plan"
+    "e19e6d25d684405689f27c20afd9fd9a": "plan",
+    "51cf85b5aca144bca63511cc380518d5": "done"
+  },
+  "edge_paths": {
+    "boss5-mz-joint-source-and-sparsification-close-minrep-parameters": "map/edges/boss5-localfix-repair-e7d9cdd599e993a5/joint-source-to-strict-minrep.json"
+  },
+  "receipt": {
+    "coverage": {
+      "M-9a7614916cf04cee8915aefce74b502a": {
+        "state": "linked",
+        "object_pin": "12f2b0b849e6a0e259a911875357e454172c3f94fd8c1ceea54deb6526c25b84",
+        "comparison_scope": "当前MZ v4、稀疏化v1、参数修复v1、整数度桥v1。沿用2026-11-11原worker冻结实读：三份中文正文、旧两个任务/收据、旧联合源完整proof/ALL边、6f98审读和f9ff2cee记录版证明；MZ印2–3、8、14–21、25、44、52–61，逐图核印15、18、44、52、54–58、60–61；Manurangsi印4–7。2026-11-12 fresh接续重新读取当前四端点登记、三份中文正文、完整joint-source-proof、本任务review/receipt及共享新ALL边，另对照已保存MZ定理2.6、Claim3.2、§4.1、Lemma6.1、§7.1文字核q=2格点、真实总Q、独立η、好U条件化因子2、删除/舍入损失及整数度桥。原worker的PDF页码阅读不计为本恢复worker新读；未重证MZ106页全部内层或Alon21。",
+        "reason": "当前v4按正确来源重核联合源主线，固定内部参数与ℓ网格使Q=O(g^(2+ε′))，独立η在Q/Δ固定后选择；删除/舍入损失及整数度桥在同一源上支付。新渲染印18页显示原次数是k/ceil(q^r/β)，此前倒置诊断撤回；本q=2清分母格点实际m|k，原商数等式成立，一般参数可用floor；事件句按无暴露事件修正。原显示定理量词未倒置，近完美未冒作perfect。 本3A包复用定向repair的新ALL关系，不重复创建同一逻辑边。原文显示YES仅近完美，整数度桥不把一般projection变为exact4；FMW绝对soundness也不支付MZ的Q指数。",
+        "edge_ids": [
+          "boss5-mz-joint-source-and-sparsification-close-minrep-parameters"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/boss5-localfix-repair-e7d9cdd599e993a5/joint-source-to-strict-minrep.json",
+        "sha256": "c3e4dbcb1b4427dd1ef133f463da66d78c5c16a1cbcc9de7cb07f9f319406f56"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-6f9808a4bc517811/resume-review.md",
+        "sha256": "1ac69d62132a25bca193f94c2fd4a8082a47aa2ed78f0d21e85b2f94d8e9dfd7"
+      }
+    ],
+    "follow_up_tasks": [],
+    "closed_overlaps": [],
+    "comparison_dispositions": [
+      {
+        "core_id": "M-9a7614916cf04cee8915aefce74b502a",
+        "peer_id": "M-8c360a7779154480879e38c65d1f827e",
+        "reason": "同一Q上的联合YES/NO、正规性、全投影、共同字母表与逐记录采样全部已支付；主ALL关系闭合，不再另发同题。"
+      },
+      {
+        "core_id": "M-9a7614916cf04cee8915aefce74b502a",
+        "peer_id": "M-fb633f3a6f1448fbbd63bfc7c3806c40",
+        "reason": "构造内独立η与固定格点解决显示量词自身不支付的联合源义务；v4来源误诊撤回不影响结果。"
+      },
+      {
+        "core_id": "M-9a7614916cf04cee8915aefce74b502a",
+        "peer_id": "PCP-EXACT-PROJECTION-PERFECT-COMPLETE-BIREGULAR-ROUNDING-v1",
+        "reason": "Claim7.6后显式等权源以固定有理ρ≤min(γ₀/4,1/(8Δ))进入已证整数度桥，逐标签同时保误差、同Q、固定ρ多项式。主线不需外部expander算法。"
+      }
+    ],
+    "mathematical_limits": "主结果为单位标签成本、全边覆盖、带身份平行约束的随机多项式MinRep gap。中间正规度D允许随输入增长。Lemma7.8旁支明确需外部expander接口；未独立认证该算法、简单图、任意费用模型、外部连通性归约或PCP→UM/SPE编译器。Lemma6.1内层及其已调用外部重复定理复用，不冒称本轮全部重证。",
+    "reuse_order": "共享repair任务boss5-localfix-repair-e7d9cdd599e993a5已done，当前本地registry的canonical edge_files已包含其新ALL边；本轮已核路径、SHA、四端点及证据绑定有效，原前置阻塞解除。本3A收据复用该边，不改共享边；由Boss确认本包checkpoint pushed后再done。",
+    "source_correction": "印18页图像显示k/ceil(q^r/β)，旧倒置误诊已撤回并由Boss串行发布当前正文；本任务review保留更强的q=2实际格点整除核对。",
+    "recovery_review": {
+      "date": "2026-11-12",
+      "scope": "Fresh恢复仅重核当前来源接口、联合源参数和本地交付闭合；2026-11-11原worker实际PDF阅读记录作为既有取证复用。",
+      "local_checks": "shared canonical path and SHA, all four endpoint input_pins, evidence bytes and accepted binding, one-core linked coverage, final follow-up disposition",
+      "remote_boundary": "本次不执行Git/队列写操作；任务归属沿用Boss从最新成功sync确认的claimed/Boss5，远端503期间不冒称重新同步或已交done。"
+    }
   }
 }
