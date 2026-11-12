@@ -1,0 +1,50 @@
+{
+  "task_id": "unrelated-machines-3a-3a-c35fa3f0dc7db052",
+  "coverage": {
+    "M-13581d45b027466aa2e4ab966402a1ca": {
+      "state": "isolated-after-review",
+      "object_pin": "71e162462b7be3911d5ebcaae839a22b52cf80e2d313d17c8f63d5f00616c76d",
+      "comparison_scope": "当前核心v3、简单系列并行困难性v3及PARTITION源v1。实读Asahiro资料全文（包括本轮已勘误的树宽DP节，仅不复用旧join时间界），冻结作者稿印页4–11的模型、Propositions 1–5、AlgCactus、Lemmas 6–8及Theorem 9，并完整核印页14–15的Theorem 12三边路径归约；Karp源的§1、§2和§4.1–4.3、§5.4–5.5由同包只读helper完整复核。检索本人Boss5工作区及现行边目录，未找到本c35fa包已有同题草稿；已读既有PARTITION→多重外平面→简单SP两边以避免重复。额外只读检查UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1 v2及其唯一现有cactus-gap应用边，只比较准确输出与时间保证，不把它误作本包指定依赖。",
+      "reason": "本范围没有可准确写成核心整目标或局部证明贡献的已分配端点逻辑边。AlgCactus保持同边两端同权的实际出度账本：非gate可承受两环边时把两边转由它支付可交换而不增其它点负担；若某端f(u)+w(e)>K则该边必须由另一端支付；其余环中每个非gate不能有两个向外环边、但每个单环边都可支付，因此任一可行解在gate至少支付一条环边。选择gate较轻边作向外边、全环同向使gate取得最小可能环贡献，非gate也都满足阈值，故可和外部固定方向同时组合。路径逐叶同样以能吸收则吸收的支配规则保持最小父贡献。每块和每边只处理常数次，得论文算术比较模型中的O(|V|)决策及完整方向；零初载时上界2k给O(|V| log(k+1))决策调用总时间（k≥2时即原O(|V| log k)，k=1直接线性处理）。这些是核心自身的完整证明机制，并非从困难性源推出。SP归约对n个元素用n条独立内点的s–v_i–v_i′–t路径，边权(s_i,W,s_i)。中边出端已付W，迫使至少一个终端承担s_i；两终端总预算2W=Σs_i又迫每条路径恰付一次、各端各W，从而恢复PARTITION。n≥3时每条路径和任一其它路径形成一个简单环，每条边属于n−1≥2个环，故困难归约像违反仙人掌条件。n=1为树、n=2为单环，属于核心适用域且源分割本就可直接判定。PARTITION的NP完全性只承重该SP困难性；既不证明、不否定仙人掌算法，SP超类困难性也不向其cactus子类下传。未作P≠NP无条件障碍陈述，未把同名图类或同模型当作推导。"
+    }
+  },
+  "assets": [],
+  "closed_overlaps": [
+    {
+      "core_id": "M-13581d45b027466aa2e4ab966402a1ca",
+      "peer_id": "M-dcc092193be04e8b9b143a1ed5ba1d4d",
+      "reason": "完整核双向路径归约及cactus的gate消息。n≥3的困难实例为theta型块，一条边同时处于多个环；n≤2只有可直接判定的PARTITION小实例。成立的是结构适用边界语境，没有从简单SP弱NP困难到cactus困难的推导，也没有从cactus算法到整个SP精确算法的推导。已解决本范围比较，无需发布重复后续。"
+    },
+    {
+      "core_id": "M-13581d45b027466aa2e4ab966402a1ca",
+      "peer_id": "M-e8d9614430ab49fc99125452d10388f1",
+      "reason": "PARTITION源的binary语言、附数编码及边界均已核。Karp非平凡SUBSET SUM附数输出有n≥3、偶总和且每项小于半和；它经三边路径落到非cactus的SP困难族。与核心无直接证明或反驳作用，已有PARTITION→多重外平面→简单SP承重关系可复用其有效数学，勿重复造边。"
+    }
+  ],
+  "follow_up_tasks": [
+    "boss5-cactus-blockrank-comparison-3b-b06dac924461f37d"
+  ],
+  "additional_comparisons": [
+    {
+      "core_id": "M-13581d45b027466aa2e4ab966402a1ca",
+      "peer_id": "UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1",
+      "disposition": "published-follow-up",
+      "reason": "额外端点v2的2^b poly(L)粗界在cactus b≤1给精确位多项式可解性，但不能仅据此推出核心O(n)决策/O(nlogk)整目标；两算法最小父割点消息及逐规则复杂度比较已具体化。精确端点、比较问题、当前pins及实际已读证据保存于本任务边目录followup-proposal.json，该文件不是edge资产。具体比较已由该3B任务承接。",
+      "task_id": "boss5-cactus-blockrank-comparison-3b-b06dac924461f37d"
+    }
+  ],
+  "source_review": {
+    "same_file_current_sha256": "93be27e188d71bd0194088dc7c4a2d96afbaa9513c6f3754900c5b972fd9d6f0",
+    "pdf_sha256": "5db93652d80fd92b6440e0a0e22edfdeb09f78e2b886c95cb4adf171c67ee147",
+    "source_math_correction_needed": false,
+    "precision_notes": [
+      "O(n)保持论文按整数加法/比较计步的模型；不把任意binary大整数位操作视为常数。",
+      "优化调用数严格写O(log(k+1))并单独处理k=1；不由论文区间下界k误推所有权域上界为k的实例OPT≥k。实际下界应为w_max。",
+      "PDF Lemma6 Step2-1c的组件符号和伪码记账可直接以最小gate贡献交换论证解释；本轮验证实际算法保证，不依赖该处排印不精确的组件大小关系。",
+      "没有运行有限科学扫描或以程序PASS替代数学。"
+    ]
+  },
+  "reviewed_by": "Boss5",
+  "review_note": "父Boss核对三边路径反向强制、非cactus边界和单环最小gate交换；本包无跨端点逻辑边，已发布具名3B比较以继续核算法消息及时间强度。",
+  "binding_status": "No new edge asset; no binding performed."
+}

@@ -1,0 +1,49 @@
+{
+  "edge_id": "cag-41659bef-p7-labeled-catalog-generates-94-plus-60-necessary-rows",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "kind": "specializes",
+  "source_ids": [
+    "M-049f49c6150f4a8b969b1b33c33523ac"
+  ],
+  "target_ids": [
+    "customer-attraction/true-third-node-fixed-query-closure-and-two-menu-pricing"
+  ],
+  "conditions": "有限单位客户、有限非空共同标签目录S及任意覆盖映射cov:S→2^N，固定同一份五人全部有序历史纯SPE σ；保同覆盖异标签、重复行动、空覆盖、零客户及历史依赖弱平局。在每个真正第三位前缀逐客户p∈{0,1,2}，同背景1/(p+3)加权最大H；强制H后Q/R沿原σ；K仅是全目录裸大小cap。D/J各为合法有序五槽菜单，允许重复和空标签；不要求D最优。",
+  "roles": {
+    "M-049f49c6150f4a8b969b1b33c33523ac": "当前v2提供标签目录、全部有序历史与任意合法五槽D/J上的P7；七行使用同H及原σ真实后继，隐藏位外松弛给完整F表。",
+    "customer-attraction/true-third-node-fixed-query-closure-and-two-menu-pricing": "把P7在三个固定真源和五个索引真源上按指定有向菜单名/固定标签名实例化，得到完整94/60必要行保证。"
+  },
+  "explanation": "本轮先核唯一改版端点M-049的当前v2与共同标签目录。覆盖映射可以非单射，但证明从未合并标签历史：在给定真前缀h强制H后，Q=σ4(h,H)、R=σ5(h,H,Q)；任何比较D_i的离轨末回复也取原σ在(h,H,D_i)处的值。同覆盖标签若诱发不同回复，逐节点IC仍分别成立，故不需要商策略或同负载续局一致。七行的承重作用为：当前IC u−V_H；同一个H支配Q/R及五个J的加权大小；真末位对每个D_i的IC求和；K−|H|；真末两人税对五个(R,D_i)求和。后两项中D只须合法，覆盖最优性没有用于任何一步。非负权17040,9000,10080,600,1085,360,2679给C+ΣG≥0，C=17040u+1085K−2679Σj/(p+3)；18格F由全部8隐藏位外取max满足G≤−F，因此C−ΣF≥C+ΣG≥0，所用p,d,hidden域与标签重数无关。零客户或全空覆盖时各量均0；重复/同覆盖异标签不改变菜单有5槽、p≤2、d,j≤5的界。\n在max/actual/second三个真第三位，AB/AE族的菜单名分别是opt与两个回复菜单（各3名），Sbranch族是opt与三个回复菜单（4名）。每个有向(D,J)代入均合法；去掉父类已有D=opt且J为回复菜单，AB/AE各3²−2=7，Sbranch为4²−3=13，每固定源27，三个源81。indexed仅在各自真正(A,T_i)前缀上应用Sbranch的13对，再对5个i逐项相加，共13个合计行，新增81+13=94。D/J作用分别为非线性F参数与线性查询，不能交换或对称合并。\n固定15个合法查询名为十旧标签加z0…z4；各取J=(Q,Q,Q,Q,Q)，则j=5·1_Q、2679j=13395·1_Q。D固定原比较五槽，三固定源给3×15=45行，indexed对每一Q逐五个真节点相加给15行，共60。indexed必须保每个p_i=a+t_i、该节点σ规定的真实U_i利润、以及整份D/J菜单计数d/j；不能先平均背景后代入非线性F，也不能把受迫T_i当优化者。94和60是所指定命名实例/字典键的计数，同标签或同覆盖可令不同实例数值相同，但不影响逐行合法性或该命名计数。有限实例库不穷尽全部查询，亦不认证浮点定价全域闭包或必要点的游戏实现。",
+  "whole_result": "对任意所列五人标签目录完整σ，目标所指定全部94条有向双菜单替换行与60条十五固定查询行均为P7合法实例或五份同索引真节点P7之和；D无需最优，重复/空覆盖/同覆盖异标签合法，indexed保自身a+t_i背景与完整菜单重数。此为目标登记陈述的完整必要行有效性及命名计数保证。",
+  "scope": "完整覆盖目标v1的94/60必要行保证；仅此指定查询库，不扩大为穷尽查询、全域浮点pricing证书、half结论或真实策略反向实现。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/真实第三位投影的五人最大根包络--引理.md",
+      "sha256": "1451e7ab0336455708ae7afad62655b5ecd5224e4159d87d1b48aacca5514cb9",
+      "section": "2. 任意真实第三节点的七行投影"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/真实第三位固定查询闭包与双菜单替换定价--程序.md",
+      "sha256": "77d988440395cb5af2e776b11da65867d58b331b0370ceceed3ad1c3266f0cd5"
+    }
+  ],
+  "reviewed_by": "Boss5",
+  "review_note": "定向实读原任务/收据及7旧边，核唯一改版P7端点、当前共同标签目录与P7/94/60全文；追查真末两人税的三条真实IC及交集余项，逐项核标签非单射、任意D/J、隐藏max方向、indexed历史/菜单重数、零客户与命名计数。原有有效数学保留，无新数学程序/LP运行；父Boss另核标签历史未商掉、G≤−F的放缩方向及81+13、45+15计数，确认完整结论。",
+  "endpoint_pins": {
+    "M-049f49c6150f4a8b969b1b33c33523ac": "60de1ef4c05b1a893c0b5671b1528ca2beba582a8e6bfc6dadef5a16cba3b9f6",
+    "customer-attraction/true-third-node-fixed-query-closure-and-two-menu-pricing": "8d5f0691511a14870e12ea92570b4e0aa7a42062408b18c899b15d14789d3253"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/引理/真实第三位投影的五人最大根包络--引理.md": "1451e7ab0336455708ae7afad62655b5ecd5224e4159d87d1b48aacca5514cb9",
+    "archives/customer-attraction/state/程序/真实第三位固定查询闭包与双菜单替换定价--程序.md": "77d988440395cb5af2e776b11da65867d58b331b0370ceceed3ad1c3266f0cd5"
+  },
+  "review_digest": "ff5e549d538ce76f2df30d2e8d77ee1f8cfcc21b010cb37333a0f3c1c2ff9821"
+}
