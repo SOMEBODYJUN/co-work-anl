@@ -1,0 +1,77 @@
+{
+  "edge_id": "um-positive-sparse-flat-to-original-t-hs-support-step",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-8a8102ce2db9454ba1ed5eae66e12724"
+  ],
+  "target_ids": [
+    "UM-GLOBAL-MOMENT-NEARFLAT-EXTRACTION-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "保持目标 NF 的原输入合同：n,d≥1、T>0、0<η≤1，原有限端已剪枝至0≤p_e≤T且各任务合法端非空；给定同一显式有理 normalized degree4 Boolean/one-hot C2-load(T)矩、M2 PSD与逐机affine load localizer。在可精确检查的δ=Σ_e tr(A_e−A_e²)=0子域应用源定理；δ=0是普通子域限制，不是开放前提。C={1,x_e}的connected-to-1、普通Hankel、正性及rank-flat全部由该输入支付。只支持target的平坦算法步骤。",
+  "roles": {
+    "M-8a8102ce2db9454ba1ed5eae66e12724": "正 sparse-flat 表示源定理：对实际提升的普通Hankel degree4数据给有限正原子测度；原子数、Boolean指派、逐原子负载及算法对应由本边补全。",
+    "UM-GLOBAL-MOMENT-NEARFLAT-EXTRACTION-v1": "贡献所定位的目标步骤：δ=0时原全空间G-HS最大分支输出原T支持调度，并可有理投影分裂恢复正权原子；不把这一局部步骤升级为δ>0的完整NF定量结论。"
+  },
+  "explanation": "先在普通R[x_e] degree≤4上把重复幂按Boolean归约、同任务冲突置0。C={1,x_e} connected，C+是全部ordinary degree≤2单项式；平方行复制一次行、冲突行全0，故普通M_C+是reduced M2的满射pullback，PSD且同秩。D_e=B_e*B_e PSD与迹和0强制全部B_e=0，所有[x_ex_f]都在V1，故V2=V1且rank M_C+=rank M_C=R≥1；反向亦然。应用M8a得正有限表示μ=Σw_sδ_zs、Σw_s=1。L((x_e²−x_e)²)=0及L((Σ_{e∈E_j}x_e−1)²)=0逐正权原子强制0/1及每原任务恰选一个原合法端。在该正表示上rank M2=rank M1使affine评价像对每个坐标乘法封闭；含常数，因此包含全部多项式评价，有限Boolean支撑的全部单原子指示也在其中，故恰R个互异原子。于是M1=E_val diag(w) E_val^T中E_val列满秩；对每s有affine q_s(z_t)=1_{s=t}。deg(g_i q_s²)≤3，原localizer给0≤L(g_iq_s²)=w_s(T−load_i(z_s))，每个原子同时原T可行。L2等距映射[q]↦(sqrt(w_s)q(z_s))把原A_e变为diag(z_s,e)，是全交换0/1正交投影。任意前缀K是joint支持投影，G-HS²=rank K=满足前缀的支持原子个数；合法孩子准确分割该count，初始R>0，每步最大者保持正整数，完整任务后count=1，原HS输出必是原μ某个原T调度。原测度质量为||Kv0||²=Σ相容w_s，通常不同于HS count。独立三原子短有理例精确显示首步HS(2,1)而mass(1/50,49/50)。算法用G=L(bbᵀ)、H_e=L(bbᵀx_e)、A_e=G^-1H_e及G-adjoint计算；可从v0按任务分裂A_eu，至多R条正交非零分支，最终权||u_s||²为正有理数且重构degree4矩。固定有理矩阵的至多n步乘积分母可取Q^n、分子位长随n及logR多项式增长；不需要irrational eigenoracle、sqrt Gram或逆最小权循环。完整细节、原文合同、次数、数值界限与去重见proof evidence。",
+  "scope": "源定理向NF目标δ=0子域的已闭合proof-step。输入全部保原模型、原端身份、同一矩与原T localizer；有理总位复杂度按显式(P,T,η,y)输入长度。普通connected C不推出任意独立basis connected；本边不作此推断。R=0因y_empty=1排除。n=0/T=0只在正文给边界说明，不扩张NF核心API。没有逐条目非负或prefix-count假设。既有NF→PREFIX边已覆盖flat joint law和矩重构；本边不另连PREFIX，不复制正δ的Tprime law，也不支付一般实例证书生成、可靠FAIL或3/2困难性。",
+  "contribution": {
+    "result": "在目标原合同的δ=0子域，M8a正表示经ordinary Hankel lift与affine隔离localizer给恰R个正权、原T可行的原任务调度；原全空间G-HS最大分支按任何固定任务次序/输入平局规则输出其中一个。HS前缀平方精确是支持原子计数；有理G/H_e投影分裂给正有理权并在总位多项式时间提取，无需原子或谱oracle。",
+    "remaining": "相对于整个NF目标，本源迁移不支付δ>0的交换子误差、任意前缀近幂等、定量不塌缩和selected-loss界；这些由NF自身正文另证，不是本关系的开放前提。普通(P,T)输入如何生成适用共同矩、如何解释失败亦不由本边解决。"
+  },
+  "evidence": [
+    {
+      "path": "map/edges/boss2-wave9-flat-3b-07eb1949e26f831f/flat-original-T-support-proof.md",
+      "sha256": "a4b8f522304ce5a703f1fa807b3309c49e8d3e9dd9eaa75b39dbe7351bd0467f"
+    },
+    {
+      "path": "map/edges/boss2-wave9-flat-3b-07eb1949e26f831f/count-versus-mass-witness.json",
+      "sha256": "48678946f48b8a6af8e31de39edd30a9956f01cb49554aa2846adb63207c6f10"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+      "sha256": "0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254",
+      "section": "2. Laurent–Mourrain：A Sparse Flat Extension Theorem for Moment Matrices"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/laurent_flat_extension.pdf",
+      "sha256": "a79a6aae70263cdc0b15415f838df666cfb99d6a00ef87bb1dae381493478fad"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/全阶矩提取与近平坦HS贪心双源审查--审查.md",
+      "sha256": "dbef9218b48846a2bb3950bcbb373a18e7f4f9d9d24cef9b009717b5c3dcddfd",
+      "section": "二、近平坦四阶矩的条件提取与 HS 贪心"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/um-following-audit-contracts-primary/comparison/research/current/unrelated_machines/global_assignment_moment_rounding.md",
+      "sha256": "c49e7d8dd13757f16ce6bd451c32999966739bed9be5c40d0bade4fce63cb1f0"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/共同矩有理Gram平坦原子与低阶Latin点原入口--资源.md",
+      "sha256": "d11930042e429bebfcba8dd043d6817dc6932b68ea34e972f0fe3e23f8d2180f"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-6992d380256546e6/um-nearflat-hs-pruned-support-to-common-prefix-law.json",
+      "sha256": "576e3c28bee648bf224c66ac4059633c7f6a4d812f7d6918ba604886cf765493"
+    }
+  ],
+  "reviewed_by": "Boss2 worker FLAT-DELTA-ZERO-ORIGINAL-T; Boss2 root",
+  "review_note": "完整实读并逐字节核M8a v2与NF v4所有指定refs，Laurent原PDF12页全文并目视第3/9/10页；重建ordinary Hankel、V2=V1、Boolean零平方、affine evaluation满秩隔离及原T支撑、HS count、rational bit bound。追加read-only PREFIX v4后实读完整record/body/evidence，按canonical NF→PREFIX精确去重。新短Fraction算术核验rank3/δ0的count-vs-mass例；未跑旧科学程序。原source严格号在δ_e=0的边界已由NF v4和主审查修正，本边沿修正合同。该推导无未付数学前提，scope仅step。 Boss2 root完整实读本包proof、edge、三原子记录与收据，独立核普通Hankel满射pullback、δ0同秩、正原子Boolean化、affine插值次数、原T容量、HS计数及有理投影位长；与既有NF→PREFIX接口分开。本次Root未重复worker的短算术。",
+  "endpoint_pins": {
+    "M-8a8102ce2db9454ba1ed5eae66e12724": "8c985cebfde20d2b788e4610e314e7fbdc6ca3525041db765165988c455715b9",
+    "UM-GLOBAL-MOMENT-NEARFLAT-EXTRACTION-v1": "3260dbb3dde9aa8112807f49374bf24da0c0af502b5285cbafbbf6a2655d8b2e"
+  },
+  "evidence_pins": {
+    "map/edges/boss2-wave9-flat-3b-07eb1949e26f831f/flat-original-T-support-proof.md": "a4b8f522304ce5a703f1fa807b3309c49e8d3e9dd9eaa75b39dbe7351bd0467f",
+    "map/edges/boss2-wave9-flat-3b-07eb1949e26f831f/count-versus-mass-witness.json": "48678946f48b8a6af8e31de39edd30a9956f01cb49554aa2846adb63207c6f10",
+    "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md": "0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254",
+    "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/laurent_flat_extension.pdf": "a79a6aae70263cdc0b15415f838df666cfb99d6a00ef87bb1dae381493478fad",
+    "archives/unrelated-machines/state/审查/全阶矩提取与近平坦HS贪心双源审查--审查.md": "dbef9218b48846a2bb3950bcbb373a18e7f4f9d9d24cef9b009717b5c3dcddfd",
+    "archives/unrelated-machines/tools/evidence/um-following-audit-contracts-primary/comparison/research/current/unrelated_machines/global_assignment_moment_rounding.md": "c49e7d8dd13757f16ce6bd451c32999966739bed9be5c40d0bade4fce63cb1f0",
+    "archives/unrelated-machines/state/资源/共同矩有理Gram平坦原子与低阶Latin点原入口--资源.md": "d11930042e429bebfcba8dd043d6817dc6932b68ea34e972f0fe3e23f8d2180f",
+    "map/edges/unrelated-machines-3a-3a-6992d380256546e6/um-nearflat-hs-pruned-support-to-common-prefix-law.json": "576e3c28bee648bf224c66ac4059633c7f6a4d812f7d6918ba604886cf765493"
+  },
+  "review_digest": "5769b2b46eef7650cdd193805849d60629c5885c443918aec3fdfe0c559512ca"
+}
