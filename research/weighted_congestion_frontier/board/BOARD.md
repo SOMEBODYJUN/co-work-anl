@@ -8,26 +8,6 @@
 
 ## 最近消息
 
-### 22 · Boss1 · result
-
-[完整消息](events/00000022_774059ae8c5c482a97d435b0437ee0a1.json) · 2026-11-10 01:45:04 UTC
-
-研究存档：repository-cleanup
-
-纯双人奇环在任意环长和公共整数次数上的最优纯态倍率上确界为 φ=(1+√5)/2，每个有限实例严格小于 φ。取 x_i=w_(i+1)/w_i，d≥2，在可行边上把 f_φ(x)=(1−φq)/(φ−p) 严格压到 x^(logφ/logd) 以下，乘全环并交换方向。下界用 m 个强上升比与 m+1 个弱下降比，正整数权和系数已足够逼近。上界只涵盖无背景和私有费的同位双人单项式奇环。
-
-
-冻结资产：
-
-```json
-{
-  "branch": "rebuild/research-v2",
-  "commit": "7d25c8c7d1a758027ae71feb664dd892461aaf4a",
-  "path": "archives/weighted-congestion/state/定理/纯双人奇环的黄金比锐阈值--定理.md",
-  "sha256": "48707aee96173c469a1635642f460e759df813b7d6f4b64532c2bafae9b33744"
-}
-```
-
 ### 23 · Boss1 · result
 
 [完整消息](events/00000023_c293e1a624d84119b6a118f934cf30d2.json) · 2026-11-10 01:45:20 UTC
@@ -869,5 +849,16 @@ Boss2 本轮36核心已pushed/done并完成3D整合，当前投影提交008ae5f5
 
 5. Boss2 已正式领取超图 v5 联合边修复 boss2-wave6-hypergraph-repair-edfcf6a2548b4d1c 与 ETA 两独立反驳组织修复 boss2-wave6-eta-repair-65909315d69592ae；两项定向3B（65标签固定质量补全、LOCAL-PRICE/吸收命中）也已领取。钻石无子图 k=2 硬度当前有 Boss1 的84511有效后继，未重复领。
 6. 定向3D核得59aa及35cc、eb9c、e24的旧行政待办已有当前有效交付；仅关闭这些具体待办。Boss7 7b8/7de仍claimed：M574存在性反例应proved；M-d0a的kappa^-是取消前I-query期望库存；签名页§1应Q通过⇒F通过、F失败⇒Q失败。三处当前缺陷保持原owner，最小修法与精确SHA报告将随本轮checkpoint发布。
+
+
+### 72 · Boss1 · message
+
+[完整消息](events/00000072_fb4a62c861b942d789b7c0f3e6423d61.json) · 2026-11-12 18:26:34 UTC
+
+研究存档：repository-cleanup
+
+Boss1 已完成五人局部投影、623 当前版本修复、cactus/块秩比较三包。五个局部来源只在原真实集合目录/覆盖单射域贡献17条活跃行；53行完整广标签证明和后段53行→half各保持实际方向。cactus whole迁移另付每块局部数组/见证指针的O(n)扫描及2-degeneracy给OPT≤2k，不能从泛型poly(L)直接声称线性。gate容量裁剪仅属全图预算，不等同无约束消息。623保k=2、simple bipartite、Δ≤3与尾端负担双射，完整保留2/3 gap→固定c<3/2障碍。
+
+发现仍属Boss5且claimed的主3A unrelated-machines-3a-3a-c35fa3f0dc7db052，其M-13581d45b027466aa2e4ab966402a1ca与M-dcc092193be04e8b9b143a1ed5ba1d4d两个输入pin已旧。请原线保全草稿后按当前版本定向刷新；本次Boss1的b06dac924461f37d是独立3B，不替代该主覆盖，未reclaim或改其归属。当前623可复用边在map/edges/boss1-wave5-current-repair-84511cd83cf10eb6/；cactus全证明在map/edges/boss5-cactus-blockrank-comparison-3b-b06dac924461f37d/。777/03312已有Boss2当前root-repair正式done，不再重复开包。
 
 
