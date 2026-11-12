@@ -1,0 +1,73 @@
+{
+  "edge_id": "cag-ae38-1953-json-checks-named-closeout-local-fields",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/static-optimal-assignment-independent-json-exact-verification"
+  ],
+  "target_ids": [
+    "customer-attraction/closeout-7e5cdb4518f8c0342b82772c"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "只比较同一三人六标签1953单位客户输入SHA2ae935f6980037f3526eee447021a6e2d8d5987e0bb2b2c31d4017afad7126c4及完整43节点策略SHA1c59b0406e8fdd56e01fc4a2d1c03b9dd15a9aefc0748a556fb08cf593fa27ac。检查范围是目标正文“旧1953客户完整策略的全部冻结诊断”中的共同输入/策略身份、43历史/258含自身比较合同、actual034、三收益、W/OPT、18项冻结矩阵、行最大值和最优静态Q；成熟全历史核验按原报告与正文复用，本轮不新执行。",
+  "roles": {
+    "customer-attraction/static-optimal-assignment-independent-json-exact-verification": "提供同SHA原输入/43动作策略、独立JSON核验的全历史合同，以及完整18矩阵和36条索引化最优指派的可审计证据。",
+    "customer-attraction/closeout-7e5cdb4518f8c0342b82772c": "接受其1953输入局部字段的交叉核对；本对象还含old52诊断、相邻钱包、旧13复用、后续反驳状态和安全最优查询固定锥等独立内容。"
+  },
+  "explanation": "两对象的输入和完整策略SHA逐字一致，不是仅客户总数相同。原独立JSON以主题为行、实际玩家为列给6×3矩阵；named报告以实际玩家为行、主题为列给3×6矩阵，二者恰为转置。共同实际叶为(0,3,4)，收益(1733/3,1736/3,1736/3)，W=1735，OPT3=1740；唯一最优无序支持为{1,2,5}。六个不同静态指派(1,2,5),(1,5,2),(2,1,5),(2,5,1),(5,1,2),(5,2,1)的Q依次1736,1737,1736,1736,1737,1736；源JSON的六最优有序元组各配六排列构成36条索引化检查，每个不同指派出现六次，不能误说36种不同指派。故目标局部的min_opt Q=1736及第一个最小指派(1,2,5)与源一致。矩阵逐行取最大另给(1736/3,1739/3,1736/3)，共同核到sum M_i-W=2。裸冻结桥的min Q-W=1>0，与目标另报Ctot=989/3后的-986/3<0相容：后式的钱包值没有在源JSON中，不能由本checks认证。真实根改选1后同一σ到(1,2,0)，根收益1733/3；冻结矩阵主题1给玩家1却为1736/3，这也核清真实续局IC与静态替换价格各自的含义。",
+  "scope": "局部证据检查，非整条目标推导：源没有给出相邻钱包493/3、496/3或cashout最小值2732/3的认证，也不检查old52、old13/13角色银行、后续一般族真值、安全最优p*固定锥或作者阅读历史；目标亦不能反向推出源的全部216终局记录、258逐项真实比较、36逐项索引记录及全JSON结构核验。两固定输入的阴性钱包诊断不授予普遍钱包定理。本edge只有context，相关coverage均保持isolated-after-review。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/计算/静态最优指派独立JSON的全字段精确核验--计算.md",
+      "sha256": "c6f1591495e7913fe6894f56e4e56cff6619094e26329048487dcde529c03d0d",
+      "section": "全部静态指派严格失败"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/静态最优指派独立JSON的全字段精确核验--计算.md",
+      "sha256": "c6f1591495e7913fe6894f56e4e56cff6619094e26329048487dcde529c03d0d",
+      "section": "全部真实历史的SPE证书"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/两份命名策略的相邻钱包诊断与历史范围--计算.md",
+      "sha256": "376d4708ea50b24bda7a7e627f6ca696fa0b3730a3ffbc195374e45e0594fc73",
+      "section": "旧1953客户完整策略的全部冻结诊断"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/dynamic-exchange/original/assignment_instance.json",
+      "sha256": "2ae935f6980037f3526eee447021a6e2d8d5987e0bb2b2c31d4017afad7126c4"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/dynamic-exchange/original/assignment_full_policy.json",
+      "sha256": "1c59b0406e8fdd56e01fc4a2d1c03b9dd15a9aefc0748a556fb08cf593fa27ac"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r105-json/original/independent_assignment_audit.json",
+      "sha256": "a860f144805263ece3aa034a2e66f1e54adc740d38777cdad6713bd1df997d29"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/r105-json/verification-report.json",
+      "sha256": "fb9b281d9c01d7a2330cf67c0d6bbb6e68dfbcbdf7ef5ebb363d1c958cc2c818"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/security-named-attack-history-primary/replay/adjacent_wallet_named_packets.json",
+      "sha256": "e303ec93699c8ae3d89d87fb301385e2657a831c837e46780343c87d82d407a2"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "STATIC-PRICE-1953 fresh worker：完整实读四core正文、模型与三探针合同；原1953客户63类及43动作全文实读，原独立JSON仅按实际用途读取raw_inputs/dimensions/actual、SPE与枚举汇总、18矩阵、全部36静态指派及结论，未逐条阅读其216终局或258IC行；3708B新核验报告和4163B named报告全文实读。核两矩阵转置、全部六种费用与两个量词、真实根1响应和钱包边界。复用既存成熟核验，不运行BI、LP、原审计、核验器或扫描，不继承盲审/外审身份。未发现当前canonical含此四core端点的同题边；其它1953静态反例检查边的目标不同，本边只补named closeout局部字段。Boss正式bind/check后刷新receipt中edge SHA。",
+  "endpoint_pins": {
+    "customer-attraction/closeout-7e5cdb4518f8c0342b82772c": "9e60bc95bb8c9e214b39e6e4196c7a3c597334f6ab8c728d3f32d8921ce3a5c1",
+    "customer-attraction/static-optimal-assignment-independent-json-exact-verification": "e25b913f81151fbcef411a6f60b025ff7f66128189e98d407d00fbf49b99c1ec"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/计算/静态最优指派独立JSON的全字段精确核验--计算.md": "c6f1591495e7913fe6894f56e4e56cff6619094e26329048487dcde529c03d0d",
+    "archives/customer-attraction/state/计算/两份命名策略的相邻钱包诊断与历史范围--计算.md": "376d4708ea50b24bda7a7e627f6ca696fa0b3730a3ffbc195374e45e0594fc73",
+    "archives/customer-attraction/tools/evidence/dynamic-exchange/original/assignment_instance.json": "2ae935f6980037f3526eee447021a6e2d8d5987e0bb2b2c31d4017afad7126c4",
+    "archives/customer-attraction/tools/evidence/dynamic-exchange/original/assignment_full_policy.json": "1c59b0406e8fdd56e01fc4a2d1c03b9dd15a9aefc0748a556fb08cf593fa27ac",
+    "archives/customer-attraction/tools/evidence/r105-json/original/independent_assignment_audit.json": "a860f144805263ece3aa034a2e66f1e54adc740d38777cdad6713bd1df997d29",
+    "archives/customer-attraction/tools/evidence/r105-json/verification-report.json": "fb9b281d9c01d7a2330cf67c0d6bbb6e68dfbcbdf7ef5ebb363d1c958cc2c818",
+    "archives/customer-attraction/tools/evidence/security-named-attack-history-primary/replay/adjacent_wallet_named_packets.json": "e303ec93699c8ae3d89d87fb301385e2657a831c837e46780343c87d82d407a2"
+  },
+  "review_digest": "eebcd97ffad443d691c2471ce588afec1ee9b195b31ae57078f6d1e969c541ba"
+}

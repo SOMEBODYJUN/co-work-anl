@@ -1,0 +1,59 @@
+{
+  "edge_id": "ca-full-history-compiler-specializes-to-all-n-menu-obstruction",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "CA-MOBIUS-FULL-HISTORY-EMBED"
+  ],
+  "target_ids": [
+    "CA-CREDIBLE-MENU-SECURITY-NO-ALL-N"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "对每个整数n≥3取p=2n，X/Y各n标签。F仅在大小n纯组集合取1、大小n−1混合集合取−1，其他集合取0。该整数F满足M2的F(空)=0且p≥n，D=1；以下显式辅助σ与所有菜单/静态/福利估计已证明，未增加开放前提。M1是M2已含的反演前提及实读证据，不另机械加入ALL源。",
+  "roles": {
+    "CA-MOBIUS-FULL-HISTORY-EMBED": "将所给无重复辅助完整SPE编成r_B=x_B+4Σ|x_B|+1≥1的单位客户游戏完整SPE，严格排除所有重复历史的old动作，并精确保留distinct激励/根路径/收益平移。",
+    "CA-CREDIBLE-MENU-SECURITY-NO-ALL-N": "所得特定F应用的全部存在性：每个n≥3、2n标签、两根尾、z_1=u_1+1/2、真正v_n≤u_1及2W>OPT_n。"
+  },
+  "explanation": "显式辅助σ在根取X0，第二人取相反组最小未用标签，以后纯前缀继续该组、混合前缀继续第二人的组。任一n-distinct终局纯组收益1，混合终局孤组成员0、非孤组成员1；故所有fresh偏离≤1，每个非根指定动作得1，根各真实偏离得0（n≥3确保第二人有后继）。这核全部无重复有序历史。M2以整数反演x_B、M=Σ|x_B|和K=4M+1补齐所有重复子树，old比fresh劣势至少K/2−2M=1/2，给合法完整原σ。令C=2^(2n)−2^n、b=C/n，根u_1=Kb，回复为两组最小n−1标签cX/cY。遗漏X/Y两查询对列(cX,cY)为(Kb+1,Kb)、(Kb,Kb+1)，和恒2Kb+1。其余查询在本组old列≤K(b−1/2)+M=Kb−M−1/2，跨组列Kb，故半半达到z_1=Kb+1/2。真正静态对偶改用两组全部2n个n−1子集列均匀混合，每查询cap≤Kb+[1−(n−1)(M+1/2)]/(2n)≤Kb（M≥1），故v_n≤u_1。任意最多n-distinct终局偏置覆盖≤KC、signed覆盖绝对值≤M；实际有n-distinct，故W≥KC−M、OPT_n≤KC+M，2W−OPT_n≥KC−3M>0。全部目标边界已付，不以有限回归替代一般归纳。",
+  "scope": "M2对这一两组Boolean势及显式辅助σ的完整应用，保单位客户、同一有序完整策略、全部重复历史、m−1竞争槽和全静态目录；不声称是36客户实例的原输入特化或保持辅助福利比。",
+  "whole_result": "对每个整数n≥3，构造2n主题、每非空客户类型正整数单位客户重数的完整原CAG纯SPE，根真实尾菜单仅两列且z_1=u_1+1/2；真正静态v_n≤u_1，并且2W>OPT_n。其一般证明由上述辅助逐历史策略、M2完整重复历史扩展和解析菜单/静态/福利估计共同完成。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/无重复辅助博弈的完整历史编译--定理.md",
+      "sha256": "e6e06a43973f7c37673b498074475fdf8aa37338d448aff53b2bf9b2e7fa0dd4"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/子集调和势的Möbius反演--定理.md",
+      "sha256": "9c7e58e4642077607ce2b49c67e7598c97b47b4cdb1b43a34cf335dd2aec5629"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/自适应后继与真实菜单安全值--障碍.md",
+      "sha256": "f046f4a75196620da290ae446a92296aceddbb79a0eaee78523a3d1495aad8e0",
+      "section": "每个 $n\\ge3$ 的完整菜单障碍族"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-f525076e4311ebee/mathematical-review.md",
+      "sha256": "b0c1958ee9611df89a56ec4b801918018b1c8127b9e6b67cf6ce3e55f521f444",
+      "section": "完整编译定理生成每人数菜单反族"
+    }
+  ],
+  "reviewed_by": "Boss1 / MENU-OBSTRUCTION",
+  "review_note": "新增read-add后全文实读M1、M2，独立核反演系数、后继未用标签对齐只作用于偏置、signed差界、重复子树拼接、辅助全fresh历史σ、old查询上界、2n列静态对偶与全tuple覆盖界。M2已包含M1，单源足够。所有目标量词与边界均已付，故whole_result；未调用或重跑n=3…6回归承担一般证明。",
+  "endpoint_pins": {
+    "CA-CREDIBLE-MENU-SECURITY-NO-ALL-N": "f1726f234b28e336d72043f829e1c656d696e995f0a996699e8e335528f3b3b3",
+    "CA-MOBIUS-FULL-HISTORY-EMBED": "42694a561f1d7d9687fce7fe834aa833e5fa2d8b5b7d84eb1bf54115e118d09a"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/无重复辅助博弈的完整历史编译--定理.md": "e6e06a43973f7c37673b498074475fdf8aa37338d448aff53b2bf9b2e7fa0dd4",
+    "archives/customer-attraction/state/定理/子集调和势的Möbius反演--定理.md": "9c7e58e4642077607ce2b49c67e7598c97b47b4cdb1b43a34cf335dd2aec5629",
+    "archives/customer-attraction/state/障碍/自适应后继与真实菜单安全值--障碍.md": "f046f4a75196620da290ae446a92296aceddbb79a0eaee78523a3d1495aad8e0",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "map/edges/customer-attraction-3a-3a-f525076e4311ebee/mathematical-review.md": "b0c1958ee9611df89a56ec4b801918018b1c8127b9e6b67cf6ce3e55f521f444"
+  },
+  "review_digest": "b2e27462233b61d9ae1b2f5ae868a278e64cf5432a4c544749bd392aaa12b9a3"
+}
