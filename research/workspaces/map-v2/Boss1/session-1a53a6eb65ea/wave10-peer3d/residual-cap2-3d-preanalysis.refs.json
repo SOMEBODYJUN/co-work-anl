@@ -1,0 +1,241 @@
+{
+  "purpose": "Bounded temporary 3D analysis only; no formal edge, coverage, receipt, claim or overlap closure.",
+  "parent_identity": "Boss1",
+  "worker_marker": "FINITE2-CURRENT",
+  "report": {
+    "path": "/workspace/scratch/1a53a6eb65ea/wave10-finite2-worker/residual-cap2-3d-preanalysis.md",
+    "sha256": "7916e64dcc5ece575e9625ae264bcd70e3ee507bb02ead2a20c0ee9822baa0db",
+    "bytes": 7364
+  },
+  "selected_registry_records": {
+    "path": "research/registry.json",
+    "snapshot_sha256": "51e338b1cf3d31e1f1d7bd84be3f5d36d27e23d1662992a072c74db5c314611c",
+    "scope": "Two complete selected records; no full-registry semantic read.",
+    "objects": {
+      "CA-RESIDUAL-NO": {
+        "native_pin": "44e3dfaa5f6ddafe63fdb908579eeb4c5e34f47b8c5a0cb30197ce88ae8904a6",
+        "record": {
+          "object_id": "CA-RESIDUAL-NO",
+          "version": 1,
+          "title": "实际终局单主题残余最大覆盖不保逐人或总福利",
+          "kind": "counterexample",
+          "truth_status": "proved",
+          "model": "有限单位客户、有限非空共同标签目录、正整数个单位提供者；顺序版本采用全部有序历史与覆盖者均分，根福利为覆盖数。",
+          "statement": "两人五主题14单位客户完整SPE actual AB收益(4,5)、W9、OPT₂10，M(C)=max_T|T∖C|=5，因此 u₁<M、W<2M；同回复表改根为D另得W8的完整SPE，未称其为最差。",
+          "quantifiers": "存在空背景下完整σ；同时否定每位uᵢ≥M与总W≥mM的普遍桥。",
+          "assumptions": [
+            "残余针对该actual并集，早期偏离改变后继；末位仍可保证M。"
+          ],
+          "scope": "实际终局单主题残余最大覆盖不保逐人或总福利",
+          "objections": "单主题M区别于去重多主题残余R_m及最优并集遗漏；half仍成立。",
+          "body": {
+            "path": "archives/customer-attraction/state/反例/残余覆盖的逐人与聚合保底--反例.md",
+            "sha256": "3f43e503a443946eed65f9986047b25456655c2fbae348c0dfe5c2d50090b889"
+          },
+          "evidence": [
+            {
+              "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+              "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+            },
+            {
+              "path": "archives/customer-attraction/state/计算/三种续局捷径的完整策略精确审计--计算.md",
+              "sha256": "71996e38c00c3e2fef5536fd10d558139fc58f150c41faccffcb24084e0fb32e"
+            }
+          ],
+          "sources": [
+            "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/continuation_lemmas.md#CA-RESIDUAL-NO",
+            "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/customer_attraction/continuation_lemmas.md#CA-RESIDUAL-NO",
+            "source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/customer_attraction/residual_counterexample.json",
+            "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/customer_attraction/residual_counterexample.json",
+            "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/customer_attraction_continuations.py#run"
+          ]
+        }
+      },
+      "customer-attraction/cap-two-harmonic-potential-not-optimal-coverage": {
+        "native_pin": "574b8931a3f8d8be156b22f31bb482ce5e3c3a8c78a932d64478cf034b891359",
+        "record": {
+          "object_id": "customer-attraction/cap-two-harmonic-potential-not-optimal-coverage",
+          "version": 1,
+          "title": "十四客户完整两人SPE否定封顶二调和势支配OPT",
+          "kind": "counterexample",
+          "truth_status": "proved",
+          "model": "有限不同单位客户、有限非空共同标签目录及覆盖映射；单位提供者按固定次序观察全部有序历史各选一次主题，终局客户价值在所有覆盖者间均分。完整纯策略保留同覆盖异标签、空主题、重复行动、零客户及任意离轨弱平局；真实偏离后沿同一原策略在改变后的有序历史续行。",
+          "statement": "十四单位客户五标签正文六节点完整两人策略，actual A,B不交、收益(4,5)、W9，实际负载仅0/1，故Φ2=Σx min(2,H_cx)=9，而B,T不交共10客户且OPT2=10。于是存在完整纯SPE Φ2<OPT；改变高负载封顶不能修复此同例。",
+          "quantifiers": "存在指定两人精确实例与完整策略；反驳全人数势支配全称，不裁定恰六人限制。",
+          "assumptions": [],
+          "scope": "旧残余保底输入对新精确势候选的反例用途。",
+          "objections": "half仍有18>10；完整六节点收益表自足，计算审计为证据而非新节点；未重跑1000随机输入。",
+          "body": {
+            "path": "archives/customer-attraction/state/反例/封顶二调和势不能支配最优覆盖--反例.md",
+            "sha256": "adc972b26511591acf4312f33671caca50bacdf22c33beec3ff87f099ee681c6"
+          },
+          "evidence": [
+            {
+              "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+              "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+            },
+            {
+              "path": "archives/customer-attraction/state/计算/三种续局捷径的完整策略精确审计--计算.md",
+              "sha256": "71996e38c00c3e2fef5536fd10d558139fc58f150c41faccffcb24084e0fb32e"
+            },
+            {
+              "path": "archives/customer-attraction/state/反例/残余覆盖的逐人与聚合保底--反例.md",
+              "sha256": "3f43e503a443946eed65f9986047b25456655c2fbae348c0dfe5c2d50090b889"
+            }
+          ],
+          "sources": [
+            "archives/customer-attraction/state/反例/封顶二调和势不能支配最优覆盖--反例.md",
+            "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/round3_structure/README.md",
+            "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/round3_structure/probe_potential.py"
+          ]
+        }
+      }
+    }
+  },
+  "actual_complete_text_reads": [
+    {
+      "path": "archives/customer-attraction/state/反例/残余覆盖的逐人与聚合保底--反例.md",
+      "sha256": "3f43e503a443946eed65f9986047b25456655c2fbae348c0dfe5c2d50090b889",
+      "bytes": 5211,
+      "read_scope": "Full file this residual/cap2 preanalysis"
+    },
+    {
+      "path": "archives/customer-attraction/state/反例/封顶二调和势不能支配最优覆盖--反例.md",
+      "sha256": "adc972b26511591acf4312f33671caca50bacdf22c33beec3ff87f099ee681c6",
+      "bytes": 3634,
+      "read_scope": "Full file this residual/cap2 preanalysis"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/三种续局捷径的完整策略精确审计--计算.md",
+      "sha256": "71996e38c00c3e2fef5536fd10d558139fc58f150c41faccffcb24084e0fb32e",
+      "bytes": 11453,
+      "read_scope": "Full file this residual/cap2 preanalysis"
+    }
+  ],
+  "same_worker_model_reuse": {
+    "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+    "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "bytes": 7598,
+    "read_scope": "Model full text read in original FINITE2 work; two exact sections 策略、真实续局与全部历史量词 and 客户类型压缩与计数的边界 newly read in preceding WA preanalysis. Not newly reread in this residual/cap2 round."
+  },
+  "current_body_evidence_checks": {
+    "all_selected_object_references_current": true,
+    "method": "Native ref_bytes for all selected object body/evidence; raw SHA and exact required headings, not new scientific execution."
+  },
+  "canonical_incident_edges": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-8afac62935536994/residual-witness-forbids-decreasing-sort.json",
+      "sha256": "4572cb47e8f212c3bb11c418ff25b7ee198be9828fbad926efd6b997656e1034",
+      "bytes": 3460,
+      "reviewed_edge_id": "cag-8afac-residual-witness-forbids-decreasing-sort",
+      "source_ids": [
+        "CA-RESIDUAL-NO"
+      ],
+      "target_ids": [
+        "M-c9dfd0b84c6b4f67871588ace18c1d82"
+      ],
+      "kind": "implies",
+      "status": "accepted",
+      "relation_mode": "unconditional",
+      "proof_scope": "whole",
+      "binding_fields_current": true,
+      "read_scope": "Full edge contract. R4 source theorem only SHA/section checked, not independently reread; not used for cap2 calculation."
+    }
+  ],
+  "canonical_lookup": "Machine parse current registry edge endpoints, followed by full text read of the one incident edge. No cap2 endpoint edge or CA-RESIDUAL-NO->cap2 edge is canonical in this snapshot.",
+  "formal_owner_context": {
+    "task_ref": {
+      "path": "research/operations/map-v2/tasks/customer-attraction-3a-3a-ecc5aa399336c4fe.json",
+      "sha256": "e7810dc06fdb4654f4da3452331511cf14bb88c94b7518812cb800f3d1602997"
+    },
+    "definition_pin_native": "3357959cdc9fa20f0c6835b6c47da590e3bf5423e69992f7b7a6a889e0479c9b",
+    "state": "claimed",
+    "owner": "Boss2",
+    "request_id": "107b1cda097341278a5cc7fbdac3869d",
+    "selected_formal_rows": [
+      {
+        "core_id": "customer-attraction/cap-two-harmonic-potential-not-optimal-coverage",
+        "peer_id": "CA-RESIDUAL-NO",
+        "basis": {
+          "path": "archives/customer-attraction/state/反例/残余覆盖的逐人与聚合保底--反例.md",
+          "sha256": "3f43e503a443946eed65f9986047b25456655c2fbae348c0dfe5c2d50090b889"
+        },
+        "status": "in-packet"
+      }
+    ],
+    "disposition": "No disposition written. Owner retains formal in-packet pair and core coverage."
+  },
+  "mathematical_findings": {
+    "exact_instance_identity": "Same six integer type counts B:3,T:3,AD:2,AE:2,BDE:2,TDE:2, five labels, two players; same root-A full policy with second replies B,D,D,E,D.",
+    "root_A_AB": {
+      "payoffs": [
+        4,
+        5
+      ],
+      "W": 9,
+      "OPT2": 10,
+      "load_histogram": {
+        "0": 5,
+        "1": 9,
+        "2": 0
+      },
+      "Phi2": 9,
+      "strict_potential_deficit": -1
+    },
+    "root_D_DE": {
+      "payoffs": [
+        4,
+        4
+      ],
+      "W": 8,
+      "OPT2": 10,
+      "load_histogram": {
+        "0": 6,
+        "1": 4,
+        "2": 4
+      },
+      "Phi2": 10,
+      "potential_deficit": 0,
+      "reason": "Same second-player reply table but different root action is a different complete strategy. Lower welfare does not imply lower harmonic potential."
+    },
+    "logical_scope": "The precise CA-RESIDUAL-NO construction plus target potential definition derives the complete cap2 registered statement, including no-high-load-truncation repair and n2/not-n6 scope. Formal relation would warrant whole_result, not only contribution; none created here.",
+    "necessary_distinction": "Abstract residual-floor inequalities alone do not determine loads and do not imply a cap2 deficit. It is the exact source input and root-A policy that suffice.",
+    "high_load_modification_scope": "Any change only to c>=2 contributions preserving c0=0 and c1=1 leaves AB potential9; no claim for arbitrary reweighting at load1.",
+    "half_scope": "AB and DE both satisfy half; neither decides exactly six players."
+  },
+  "execution_boundary": {
+    "original_audit_runs": 0,
+    "IC_replay_runs": 0,
+    "terminal_enumeration_runs": 0,
+    "random_probe_runs": 0,
+    "LP": 0,
+    "BI": 0,
+    "new_mathematical_checker": 0,
+    "queue_or_git_writes": 0,
+    "shared_clone_writes": 0,
+    "subagents_spawned": 0,
+    "note": "Payoff tables and exact direct arithmetic read/derived analytically; only native pin/ref/binding and SHA identity checks executed."
+  },
+  "prior_artifacts_unchanged": {
+    "original_finite2_manifest": {
+      "path": "/workspace/scratch/1a53a6eb65ea/wave10-finite2-worker/frozen-manifest.json",
+      "sha256": "e3b119995e595f5ca275829562ad730251c9e82a8f1ec95c0fe11db960fc721f",
+      "all_six_payload_files_unchanged": true
+    },
+    "WA_files": [
+      {
+        "path": "/workspace/scratch/1a53a6eb65ea/wave10-finite2-worker/wa-query-3d-preanalysis.md",
+        "sha256": "bb500d1b470f062f1822ec4eb10454494f6a6e3c81bb8d180b920005071f3cc9",
+        "bytes": 13102,
+        "unchanged": true
+      },
+      {
+        "path": "/workspace/scratch/1a53a6eb65ea/wave10-finite2-worker/wa-query-3d-preanalysis.refs.json",
+        "sha256": "d3fdec007c7838bd0c177695b594ddd65d300e675fe89c98b5bbd6efab57d665",
+        "bytes": 23487,
+        "unchanged": true
+      }
+    ]
+  },
+  "hash_rule": "This refs file hashes report and prior frozen artifacts, not itself. Final handoff supplies refs SHA. Only this report and refs are new."
+}
