@@ -1,8 +1,8 @@
 {
   "schema": 2,
   "baseline": {
-    "path": "research/registration/baseline-boss5-mz-quotient-visual-correction-20261111.json",
-    "sha256": "9ae26b436245ac25516fad45079611bff4b87f2c59d241aa3585a326f9225fbb"
+    "path": "research/registration/baseline-boss2-asahiro-join-20261111.json",
+    "sha256": "ba10956f2a5a557b2e158fc6186a043375ba3e9c63af9365fe1a7ca985313e17"
   },
   "objects": [
     {
@@ -18505,7 +18505,7 @@
     },
     {
       "object_id": "M-13581d45b027466aa2e4ab966402a1ca",
-      "version": 2,
+      "version": 3,
       "title": "Asahiro–Miyano–Ono 仙人掌最小最大加权出度精确求解",
       "kind": "algorithm",
       "truth_status": "proved",
@@ -18516,10 +18516,10 @@
         "节点初载用于块剥离账本，gate 的同向环选择保可行性。"
       ],
       "scope": "冻结作者稿的对应定理。",
-      "objections": "同边两端同权，不能替代异权带标签支撑图结论。",
+      "objections": "同边两端同权，不能替代异权带标签支撑图结论。 本次仅因同页第3节join计费勘误刷新全文SHA及记录版本；本对象本节数学合同和冻结PDF证据不变。",
       "body": {
         "path": "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md",
-        "sha256": "58b4be48da7c01dac6a3e5eeff733d7e211dbae675690684e4142742d5bc4740",
+        "sha256": "93be27e188d71bd0194088dc7c4a2d96afbaa9513c6f3754900c5b972fd9d6f0",
         "section": "2. 仙人掌图：精确决策和优化"
       },
       "evidence": [
@@ -21267,21 +21267,22 @@
     },
     {
       "object_id": "M-20c5c28925d440e48d955b1293aaddb9",
-      "version": 2,
+      "version": 3,
       "title": "Asahiro–Miyano–Ono 的有界树宽加权出度 DP",
       "kind": "algorithm",
       "truth_status": "proved",
-      "model": "同边两端正整数权，树宽τ、最大权k。",
-      "statement": "给定相应树分解，袋出度向量 DP 在 O((k|V|)^(τ+1)|E|) 内优化。",
-      "quantifiers": "有界τ；依赖权数值k，伪多项式。",
+      "model": "有限简单无向图，同边两端相同正整数权；n=|V|、m=|E|、最大权k、树宽τ。平行边推广按正文另用km坐标界。",
+      "statement": "给定宽τ、O(n+m)节点的分解，袋出度向量DP精确求解MMO。简单图正整数边权≤k时，显式双子表实现有O(2^{O(τ²)}(kn+1)^(2τ+2)(n+m))次整数算术与比较；固定τ下伪多项式，可回溯完整取向。",
+      "quantifiers": "给定相应二叉树分解；每个固定τ；权值二进制编码时依赖数值k，为伪多项式。",
       "assumptions": [
-        "袋共享点的出度贡献相加，常数宽度袋内方向显式枚举。"
+        "子边集互不交，袋共享点负载贡献相加；父表值还计全部父袋合并负载。",
+        "简单图袋内边数O(τ²)；分解构造费用和整数位运算另计，空边图保读取/输出。"
       ],
-      "scope": "冻结作者稿的对应定理。",
-      "objections": "同边两端同权，不能替代异权带标签支撑图结论。",
+      "scope": "同一袋负载向量算法的精确性与安全平方状态计费；不认证冻结Theorem10所声称的更快指数。",
+      "objections": "冻结稿印页12–13直接从状态数推出单节点时间，未支付双子袋状态配对；O((kn)^(τ+1)m)仍为来源声称的未付实现义务，并非已被复杂度下界否定。Root与worker独立核递推、父负载和平方表安全实现。同边两端同权，不替代异权带标签支撑图合同。",
       "body": {
         "path": "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md",
-        "sha256": "58b4be48da7c01dac6a3e5eeff733d7e211dbae675690684e4142742d5bc4740",
+        "sha256": "93be27e188d71bd0194088dc7c4a2d96afbaa9513c6f3754900c5b972fd9d6f0",
         "section": "3. 有界树宽：伪多项式动态规划"
       },
       "evidence": [
@@ -44641,7 +44642,7 @@
     },
     {
       "object_id": "M-91ba949b418b4026aa3c2dc2e5a62834",
-      "version": 2,
+      "version": 3,
       "title": "多重外平面 MMO 的弱 NP 困难性",
       "kind": "theorem",
       "truth_status": "proved",
@@ -44652,10 +44653,10 @@
         "平行边必须保留；不能用作简单外平面困难性。"
       ],
       "scope": "冻结作者稿的对应定理。",
-      "objections": "同边两端同权，不能替代异权带标签支撑图结论。",
+      "objections": "同边两端同权，不能替代异权带标签支撑图结论。 本次仅因同页第3节join计费勘误刷新全文SHA及记录版本；本对象本节数学合同和冻结PDF证据不变。",
       "body": {
         "path": "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md",
-        "sha256": "58b4be48da7c01dac6a3e5eeff733d7e211dbae675690684e4142742d5bc4740",
+        "sha256": "93be27e188d71bd0194088dc7c4a2d96afbaa9513c6f3754900c5b972fd9d6f0",
         "section": "4.1（多重）外平面图：弱 NP-困难"
       },
       "evidence": [
@@ -51887,7 +51888,7 @@
     },
     {
       "object_id": "M-af28c29d24b14be393e56add3cebfc7c",
-      "version": 2,
+      "version": 3,
       "title": "平面二部两值 MMO 强 NP 困难性与近似边界",
       "kind": "theorem",
       "truth_status": "proved",
@@ -51898,10 +51899,10 @@
         "Planar 3SAT 的变量环与 special gadget；整数目标给k和至少k+1的 gap。"
       ],
       "scope": "冻结作者稿的对应定理。",
-      "objections": "同边两端同权，不能替代异权带标签支撑图结论。",
+      "objections": "同边两端同权，不能替代异权带标签支撑图结论。 本次仅因同页第3节join计费勘误刷新全文SHA及记录版本；本对象本节数学合同和冻结PDF证据不变。",
       "body": {
         "path": "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md",
-        "sha256": "58b4be48da7c01dac6a3e5eeff733d7e211dbae675690684e4142742d5bc4740",
+        "sha256": "93be27e188d71bd0194088dc7c4a2d96afbaa9513c6f3754900c5b972fd9d6f0",
         "section": "4.3 平面二部图：强 NP-困难"
       },
       "evidence": [
@@ -61459,7 +61460,7 @@
     },
     {
       "object_id": "M-dcc092193be04e8b9b143a1ed5ba1d4d",
-      "version": 2,
+      "version": 3,
       "title": "简单系列并行 MMO 的弱 NP 困难性",
       "kind": "theorem",
       "truth_status": "proved",
@@ -61470,10 +61471,10 @@
         "路径两外边权为元素值，中边权为阈值。"
       ],
       "scope": "冻结作者稿的对应定理。",
-      "objections": "同边两端同权，不能替代异权带标签支撑图结论。",
+      "objections": "同边两端同权，不能替代异权带标签支撑图结论。 本次仅因同页第3节join计费勘误刷新全文SHA及记录版本；本对象本节数学合同和冻结PDF证据不变。",
       "body": {
         "path": "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md",
-        "sha256": "58b4be48da7c01dac6a3e5eeff733d7e211dbae675690684e4142742d5bc4740",
+        "sha256": "93be27e188d71bd0194088dc7c4a2d96afbaa9513c6f3754900c5b972fd9d6f0",
         "section": "4.2 简单系列并行图：弱 NP-困难"
       },
       "evidence": [
@@ -208697,7 +208698,7 @@
     },
     {
       "path": "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md",
-      "sha256": "58b4be48da7c01dac6a3e5eeff733d7e211dbae675690684e4142742d5bc4740",
+      "sha256": "93be27e188d71bd0194088dc7c4a2d96afbaa9513c6f3754900c5b972fd9d6f0",
       "disposition": "objects",
       "object_ids": [
         "M-13581d45b027466aa2e4ab966402a1ca",
@@ -208706,7 +208707,7 @@
         "M-dcc092193be04e8b9b143a1ed5ba1d4d",
         "M-af28c29d24b14be393e56add3cebfc7c"
       ],
-      "reason": "已核精确陈述、必要条件和承重证明位置，复用本页完整正文。"
+      "reason": "已核精确陈述、必要条件和承重证明位置，复用本页完整正文。 第3节独立复核保DP正确性与伪多项式性，撤回未支付的精确join时间断言。"
     },
     {
       "path": "archives/unrelated-machines/state/资料/UM_Route_Card模板与路线量词边界--资料.md",
