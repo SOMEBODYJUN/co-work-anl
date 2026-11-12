@@ -17,7 +17,7 @@
     "M-080d9b22ae87408f9a673a898c7a6dc3": "在旧SC最高有限CONFIG阈值≤1时精确保该阈值；保持旧agent行总值且使新item正owner度≤3。",
     "M-9452d445c1744d5eaac946ee974d2162": "所得gap族的CONFIG(1)/有界行与最终item度部分；整数actual值部分不由分数桥替代。"
   },
-  "explanation": "Q_D取main各态λ=1/D；每helper以1−1/D取g、以1/D取A_a。每g列占用1/D+(1−1/D)=1；每A_a列为D·1/D=1，故是同一份有理FSLP证书。第一源的tree流与menu-port hole双向桥把这份证书传到N(Q_D)，各normalized group至多3态、每资源至多跨3组。state-dummy后每state-agent real row=1且有K−1个unit dummies，完整row=K≤3；旧实资源度≤3·3=9、dummy度≤3。第一源给SC CONFIG(1)有限证书。对任意t>1，每个state-agent的全部real价值只有1，故每个其合法t配置必须含一枚本组dummy；K个agent各需总dummy边际≥1却只有K−1容量，矛盾。于是中间SC最高有限CONFIG阈值恰1。现才满足第二源正向0<t≤1和旧最高阈值≤1的前件，SC路径保持该最高阈值恰1；反向t>1仅用helper非空、不错误剪singleton。路径保old rowtotal，新helper rowtotal2，新copy仅old owner和至多两个邻helper，共正owner度≤3，所以最终row≤3/item度≤3。全部转换、分数子树和hole混合按显式D及证书支持编码为多项式；正支撑不按private weight计容量。两源共同承担N/SC CONFIG保持与最后path，保ALL，任何一源单独都不是该完整合成。",
+  "explanation": "Q_D取main各态λ=1/D；每helper以1−1/D取g、以1/D取A_a。每g列占用1/D+(1−1/D)=1；每A_a列为D·1/D=1，故是同一份有理FSLP证书。完整flat CONFIG(1)正向在每private以λ取selector加全部零jobs、以1−λ取全部incidence jobs含zero；零job覆盖λ+(1−λ)=1，正job以资源singleton补λ，保全部原job而不把零membership计正支撑容量。第一源的tree流与menu-port hole双向桥把这份证书传到N(Q_D)，各normalized group至多3态、每资源至多跨3组。state-dummy后每state-agent real row=1且有K−1个unit dummies，完整row=K≤3；旧实资源度≤3·3=9、dummy度≤3。第一源给SC CONFIG(1)有限证书。对任意t>1，每个state-agent的全部real价值只有1，故每个其合法t配置必须含一枚本组dummy；K个agent各需总dummy边际≥1却只有K−1容量，矛盾。于是中间SC最高有限CONFIG阈值恰1。现才满足第二源正向0<t≤1和旧最高阈值≤1的前件，SC路径保持该最高阈值恰1；反向t>1仅用helper非空、不错误剪singleton。路径保old rowtotal，新helper rowtotal2，新copy仅old owner和至多两个邻helper，共正owner度≤3，所以最终row≤3/item度≤3。全部转换、分数子树和hole混合按显式D及证书支持编码为多项式；正支撑不按private weight计容量。两源共同承担N/SC CONFIG保持与最后path，保ALL，任何一源单独都不是该完整合成。",
   "contribution": {
     "result": "对所有D≥2，Q_D及经N/state-dummy/SC路径所得完整实例都有显式有限CONFIG(1)证书；最终SC最高有限CONFIG阈值恰1、每agent行总价值≤3、每item正owner度≤3（path前实item≤9），证书及构造大小poly(D)。",
     "remaining": "整条目标的actual菜单值和SC actualOPT恰1/D、完整flat UM actualOPT恰2−1/D，还要另外使用Q_D的整数鸽巢上下界、N与state-dummy的actual值保持以及完整flat UM值桥。主正文已另给这些证明；本边只交上述分数证书/度数贡献，不把CONFIG可行性当实际allocation，也不把其它已证步骤称新open。"
@@ -42,26 +42,27 @@
     },
     {
       "path": "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md",
-      "sha256": "63629abaa5cd2bcc0e42ff051936b91882ea63c711dfdac231f238763b682255"
+      "sha256": "33bd31b883b26f49508808dd7175cd104f391b86642bff90ea2bce7f1142097b"
     },
     {
       "path": "archives/unrelated-machines/state/审查/归一化CONFIG有限证书三向桥的v3审读范围--审查.md",
       "sha256": "2ee2f04fa427e1889073c25daaab373a8d4042f633aa78ca0fd76df80d9e996b"
     }
   ],
-  "reviewed_by": "Boss2/MACRO-V3V4-SOURCE-DELTA-STEP",
-  "review_note": "Boss2本轮source-delta审读：完整实读三个当前record、共同主证明正文、现行福利审查和四份旧edge，对照冻结P_gate primary §1–2，核新增全任务分配不把balanced β换flat V。共同正文与原局部数学关系未变，保ALL及原contribution/remaining；其余未变必要证据沿成熟审读继承并核SHA，未冒称本轮重读全部历史证明或重跑程序。逐项复核同一Q_D正支撑λ、state-dummy的K−1容量与K1分支、阈值恰1后才用SC path正向0<t≤1，以及反向t>1不得剪双copy。另识别福利审查§二.1压缩句漏写1−λ配置也含zero jobs：本边采用共同正文§1的正确全incidence配方，零作业总覆盖1；最小源改句与待native refresh接续见本任务source-delta-proof-note.md。当前pin草稿未执行最终native绑定，不据此自称最终done。",
+  "reviewed_by": "Boss2/CURRENT-ZERO-INCIDENCE-SOURCE-DELTA-STEP",
+  "review_note": "Boss2当前zero-incidence fresh定向复核：完整实读三个当前record、共同主定理与本边全部五份审查evidence、四旧edge及现有替换草稿；逐项阅读14core coverage和20对象数学合同，重算全部20 input pins。共享审查§二.1已正式把补集配置改为全部incidence jobs含zero；private两配置分别selector+Izero与Iall，零job覆盖λ+(1−λ)=1，与未变主定理§1一致。三record精确重构上轮pins证实只变version/sourceSHA/追溯尾句。核同一Q_D正支撑λ、N后K≤3/跨组≤3、K−1 dummy的最高阈值恰1，再用SC path正向0<t≤1；反向所有t>0不剪双copy。保ALL/unconditional及原局部contribution/remaining；实际值原始完整证据与其余未变全包审读按授权继承，66refs/55files仅一份source变、另54文件SHA未变。上轮P_gate primary§1–2属于继承，不能把其β*等同flat V。无新科学程序运行或新数学open；当前语义待Boss最终native bind/check，不伪造review_digest或声称pushed/done。",
   "endpoint_pins": {
-    "M-080d9b22ae87408f9a673a898c7a6dc3": "5041d21ea4cc71de0cf1e759aade84c0cc09a86d8539510dc3683242679ff85c",
-    "M-9452d445c1744d5eaac946ee974d2162": "4126eff22b627cb6b93e95ca4c20542452b045c2df488d91bdbb5f4fd99f4e32",
-    "M-f0619ab2e98f41eb9fa9c02a48c19aaa": "73cab4763a7fcab682efdc03aca50b35d091e600a350f1dab0e1840673aa184f"
+    "M-080d9b22ae87408f9a673a898c7a6dc3": "d0b2a08064ea4ddb1eb3d096b576113c85d2effdc50f43593b10cf756e4c217a",
+    "M-9452d445c1744d5eaac946ee974d2162": "cddd9bf3289e55ce350e792f70fdfea147cf0b44bfc0da08d9355f0c40a48e64",
+    "M-f0619ab2e98f41eb9fa9c02a48c19aaa": "7fe755e2d8d7e0dd39ba154180fa2f3344420f4bf0a951d533bf9e709337df8f"
   },
   "evidence_pins": {
     "archives/unrelated-machines/state/定理/规范化平菜单的CONFIG与正支撑LP双向保持--定理.md": "8bfbaa80b98546b6d1320e9760bb9491165e26a6cef1b6cd35eb86116c822f66",
     "archives/unrelated-machines/state/审查/规范化平菜单Exact与Proof版本核验--审查.md": "acd5fa40598e0e880083405a713752569671abefc20ac63d32576c6bc717cc84",
     "archives/unrelated-machines/state/审查/规范化平菜单row3degree9独立预Exact记录--审查.md": "29f6c62f6fdbc4dfbc6ad99d832c9a25b5527f044c572bd14c322acd3689e6a8",
     "archives/unrelated-machines/state/审查/规范化平菜单v1v3的独立与作者核验--审查.md": "61835242b90509d0f831c95ebb38f1b002779716de335568a4fcf01cfd1321e6",
-    "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md": "63629abaa5cd2bcc0e42ff051936b91882ea63c711dfdac231f238763b682255",
+    "archives/unrelated-machines/state/审查/归一化菜单福利与配置证书双源审查--审查.md": "33bd31b883b26f49508808dd7175cd104f391b86642bff90ea2bce7f1142097b",
     "archives/unrelated-machines/state/审查/归一化CONFIG有限证书三向桥的v3审读范围--审查.md": "2ee2f04fa427e1889073c25daaab373a8d4042f633aa78ca0fd76df80d9e996b"
-  }
+  },
+  "review_digest": "1018a6f4d66ffd7090e37964f5427bd4235d8fafb07d095c6f32bc7c4773e4a5"
 }

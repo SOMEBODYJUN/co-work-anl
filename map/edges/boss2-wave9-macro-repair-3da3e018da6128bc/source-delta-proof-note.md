@@ -1,74 +1,83 @@
-# 归一化 CONFIG 局部链的 source delta 核验
+# 归一化 CONFIG 局部链的当前零 incidence 增量核验
 
-任务：`boss2-wave9-macro-repair-3da3e018da6128bc`；身份：Boss2。本文保存当前已发布任务 pin 上的数学复核和最小源更正建议。源更正尚须 Root 按原处勘误、引用刷新与 native task refresh 流程接续；本包不能直接据当前草稿宣称最终 done。
+任务：`boss2-wave9-macro-repair-3da3e018da6128bc`；身份：Boss2。source 更正已发布并进入当前任务 pins，本轮数学审读完成。本文及配套 edge/receipt 留给 Boss 对最终字节执行 native bind/check、checkpoint 与 done；本 worker 没有执行或冒称这些操作。
 
-## 当前输入与实际审读
+## 当前任务和版本边界
 
-任务定义规范化 JSON SHA-256 为 `cd48a0e20744ffd85d399b969ec83cb38acf86ac2c8dec9d1a3621d7e5e6230a`。本地任务为 `claimed`、owner `Boss2`，claim request `ebeb85d2c4e441d1a06c86c8e1887ad5`。前任务 `round20-um-macro-source-repair-repair-7adac135318f96e8` 为 done；其收据原始 SHA-256 为 `cc115c079c0c48dce6b3d5caebee679bcdba3597f985bbb9e7ec4af471e5b48f`。
+当前任务 definition 的规范化 JSON SHA-256 为 `a51448886eaa287b935cbc3bbad940b169cb35cb6fc0471d74f29d9fe991901b`；任务文件原始 SHA-256 为 `b97ce196efbe7f9c8f264006de758670e324a2055da0e450eceeb80bddfc953c`。本地任务为 `claimed`、owner `Boss2`，claim request 为 `2531db0de77d46cd97f21dedc8466531`。父 Boss 提供的已推送任务快照为 `37910e9d597b5f64a2a3fb33032734b927eca2cd`；本 worker 未自行查询远端、运行 Git 或访问队列。
 
-本轮完整实读 AGENTS、IMPLEMENTATION、worker 入口、实际任务定义、前任务定义及收据、详细 3D 审查、三个当前登记 record、共同定理正文、现行福利审查和四份旧 edge JSON。额外对照冻结 primary 的 §1–2，核清 P_gate 的矩阵及完整正向分配；没有重读 primary 全文，没有重跑历史科学程序。3D 审查 SHA-256 为 `7a2a51765a6157790260e153052dcb8aeb0e5c43d6e8cf4b345afa9ffb398def`。
+14 core / 6 read 的全部 20 个 input pins 均按当前 registry 对象的规范化 JSON 重算并匹配。三份受影响记录为：
 
-14 core / 6 read 的 20 个 input pins 全部与当前 registry 的对象规范化 JSON SHA 一致。三份变化 record 是：
-
-| 对象 | 当前版本 | 当前 pin |
+| 对象 | 版本 | 当前 pin |
 | --- | --- | --- |
-| `M-9452d445c1744d5eaac946ee974d2162` | 3 | `4126eff22b627cb6b93e95ca4c20542452b045c2df488d91bdbb5f4fd99f4e32` |
-| `M-f0619ab2e98f41eb9fa9c02a48c19aaa` | 4 | `73cab4763a7fcab682efdc03aca50b35d091e600a350f1dab0e1840673aa184f` |
-| `M-080d9b22ae87408f9a673a898c7a6dc3` | 4 | `5041d21ea4cc71de0cf1e759aade84c0cc09a86d8539510dc3683242679ff85c` |
+| `M-9452d445c1744d5eaac946ee974d2162` | 4 | `cddd9bf3289e55ce350e792f70fdfea147cf0b44bfc0da08d9355f0c40a48e64` |
+| `M-f0619ab2e98f41eb9fa9c02a48c19aaa` | 5 | `7fe755e2d8d7e0dd39ba154180fa2f3344420f4bf0a951d533bf9e709337df8f` |
+| `M-080d9b22ae87408f9a673a898c7a6dc3` | 5 | `d0b2a08064ea4ddb1eb3d096b576113c85d2effdc50f43593b10cf756e4c217a` |
 
-三 record 的数学合同均未变：变化为 version、福利审查 evidence SHA 和 objections 中追溯此次 P_gate 全任务说明的尾句。共同正文仍为 `archives/unrelated-machines/state/定理/规范化平菜单的CONFIG与正支撑LP双向保持--定理.md`，SHA `8bfbaa80b98546b6d1320e9760bb9491165e26a6cef1b6cd35eb86116c822f66`。旧收据 66 个 reading refs 覆盖 55 个不同文件；本轮逐原始字节核 SHA，只一份福利审查变化，其余 54 文件不变。核 SHA 不表示本轮重读全部旧证据。旧 14 核心的完整成熟审读与实际值独立证明按父任务授权继承。
+对每份当前 record，减一版本、共享审查 SHA 换回 `63629abaa5cd2bcc0e42ff051936b91882ea63c711dfdac231f238763b682255`、仅删去 objections 的此次零作业说明尾句，均精确恢复上轮草稿的旧 pin。因此 object_id、title、kind、truth_status、model、statement、quantifiers、assumptions、scope、body 与 sources 未变，三个合同没有增加前提。
 
-## P_gate 改动的全任务核算
+共同主定理正文仍为 `8bfbaa80b98546b6d1320e9760bb9491165e26a6cef1b6cd35eb86116c822f66`。共享福利/配置审查现为 `33bd31b883b26f49508808dd7175cd104f391b86642bff90ea2bce7f1142097b`；source delta 仅在 §二.1 将补集配置的“所有 positive incidence”改为“全部 incidence jobs（含零 jobs）”。它恢复主定理 §1 已有完整配方，不改变结论。
 
-福利审查当前 SHA 为 `63629abaa5cd2bcc0e42ff051936b91882ea63c711dfdac231f238763b682255`。此次已发布增量位于 §一.1：它补明根 pin、未选 connector、未选 selector 和全部其余 incidences 的去向。冻结 primary 的完整矩阵中，根 pin 在 R 耗时 1；每组 connector 在 R 耗时 1/n、在自身 gate 耗时 1；selector 在 gate 或本组任意 private 均耗时 1；每 incidence 在 private 耗时其原系数、在对应 resource 耗时 1。
+## 实际读取与继承
 
-给非空 H 和真实不交 bundles，逐组选 attaining state。J0 留 R；选中 connector 去 gate、selector 去 attaining private；仅将选中 state 在其 bundle 内的正 incidences 导出 resource；其余全部 incidences 留原 private，包含未选 states 和零作业。未选 connector 留 R，未选 selector 去 gate。于是根负载是 `2−|H|/n`，每 gate 负载 1，选中 private 负载 `2−v_g(B_g)`，其余 private 负载 1，资源因 bundles 不交至多一件 unit job。β=0 用根接全部 connectors、gate 接全部 selectors、incidences 全私有的峰 2 基线，不能用空 H 取最小组质量。
+本轮完整实读 AGENTS、IMPLEMENTATION、worker 入口、当前任务、三个受影响的当前 registry records、现有 edge/证明 note/receipt 和四份 prior edge JSON。14 core / 6 read 的全部当前数学合同字段和 14 个 coverage 理由均逐项阅读，20 个对象 pin 已重算。
 
-反向 C<2 时，gate 接 connector 的组 H 满足 `|H|/n≥2−C>0`；selector 被迫去本组某 private，该 state 外送的原资源质量至少 `2−C`。unit resource 端点在 C<2 时至多接一件，故这些选中 bundles 全局不交。C≥2 时仅用 β*≥0；根 pin 另给 OPT≥1。这是完整 P_gate 的 `OPT=2−β*`，β* 同时收费组比例和所选组最小质量。Q_D 的 flat V 是全部 groups 的 max-min 实际菜单值，没有根/gate 的可选组比例，不能把二者任意代入。
+本轮完整重读共同主定理全文及本边全部五份审查 evidence：Exact/Proof 版本核验、row3/degree9 预 Exact、v1/v3 独立与作者核验、现行福利/配置双源审查、v3 三向有限证书审读范围。直接重建主定理 §1 与共享审查 §二.1 的逐 job 覆盖，并核 §2–5 的 tree/port、state-dummy、单位 SC 路径与 Q_D 合成。
 
-## flat CONFIG 的零作业完整配方
+当前和直接前任务 receipt 的 coverage/assets/pins/supersession/reading metadata 已核；zero-incidence-source-correction 全文，以及 zero-incidence 3D impact 的 independent_math、macro draft、provenance 部分已读。较早 3D 报告只用于其版本、资产和范围记录，不冒称本轮重读报告涉及的全部别包边或 primary。
 
-本轮另识别现行福利审查 §二.1 的一个压缩表述省略。本文不改源文件；此项须交 Root 作最小原处勘误及引用刷新。其数学证明在未变共同正文 §1 已完整成立。
+直接前 receipt 为 `map/receipts/round20-um-macro-source-repair-repair-7adac135318f96e8.json`，SHA `cc115c079c0c48dce6b3d5caebee679bcdba3597f985bbb9e7ec4af471e5b48f`。依父 Boss 明确授权继承其 66 refs / 55 files 的成熟全包审读；全部引用文件原始 SHA 本轮再次核实，仅共享审查一份改为上述 `33bd…`，其余 54 文件字节不变。核 SHA 不算 fresh 全文。上轮 P_gate primary §1–2 阅读、未变实际值的原始完整证据、外部 NSW PDF、BCG/Haxell 原文和历史科学程序均按来源继承；本轮不冒认 fresh，新增科学程序运行数为零。
 
-令同一 state 的全部 incidences 分为 `I_pos` 和 `I_zero`。FSLP 资源容量必须按 `1[p_gsu>0]` 的 0/1 incidence 计算，不能改为系数权重。给定 λ，在 private 采用
+## flat CONFIG 的完整零作业配方
+
+固定 state，将全部 incidence jobs 分成 `I_pos` 和 `I_zero`。给同一份 FSLP 证书 λ，在 private 上取两配置：
 
 \[
-C_{\mathrm{sel}}=\{J_g\}\cup I_{\mathrm{zero}},\qquad
-C_{\mathrm{inc}}=I_{\mathrm{pos}}\cup I_{\mathrm{zero}}=I_{\mathrm{all}},
+C_{sel}=\{J_g\}\cup I_{zero},\qquad C_{inc}=I_{pos}\cup I_{zero}=I_{all},
 \]
 
-分别赋概率 λ 和 `1−λ`。第一配置负载为 1，第二因 norm1 负载也为 1。零作业私有覆盖为 `λ+(1−λ)=1`；每个正 incidence 私有覆盖 `1−λ`，资源 singleton 覆盖 λ，因此总覆盖 1；selector 在本组全部 states 上覆盖 `Σ_s λ_gs=1`。资源空配置补足容量。未选 states 的 payload、零作业、重复 indexed states、未用资源均保留；既不删 job，也不把零 membership 算入 FSLP 容量。
+权重分别为 `λ_gs` 和 `1−λ_gs`。selector 为 unit，state 私有权总和恰一，故两配置负载均一。零 job 的 private 覆盖为 `λ+(1−λ)=1`；正 incidence 的 private 覆盖 `1−λ` 加资源 unit singleton 覆盖 λ 也为一；selector 跨 states 覆盖 `Σ_sλ_gs=1`。每资源的容量以 `1[p_gsu>0]` 的 **0/1 正支撑**收费，余量放 empty，不按小系数降低收费，不把零 membership 计为正支撑。
 
-反向记 private 含 unit selector 的边缘 α。正 incidence 不能与 selector 同处 private 的负载一配置，故资源端至少须承担 α；每 resource 的 unit singleton 容量得正支撑 α 和≤1。每组 selector 覆盖得 `A_g=Σ_s α_gs≥1`，按组令 `λ=α/A_g` 只减资源使用。阈值 1、norm1 和完整 job 身份均是承重前件。该有限有理证书变换没有提供整数 allocation、未知隐式 CONFIG 的求解器或 actualOPT≥1 promise。
+保留 `λ=0/1`、全部未选 states、重复 indexed states、unused resources 和每个原零 job。一个零 job 同时列在两个互斥配置事件中，其边际权重和恰一，没有复制或删任务。
 
-最小原句/改句位置均为 `归一化菜单福利与配置证书双源审查--审查.md` 的唯一标题“1. FSLP 与完整 flat machine CONFIG(1)”下第一段，当前全文 SHA 如上。原句：
+反向令 private 含 selector 的边缘为 α。正 incidence 不能与 unit selector 同处负载一配置，private 覆盖至多 `1−α`，资源端至少承担 α。unit 资源配置至多容一件 incidence，故正支撑列 `Σα≤1`；每组 selector 覆盖给 `A_g=Σ_sα_gs≥1`，取 `λ=α/A_g` 只减资源使用。零 job 能与 selector 同居，不能用于该排斥下界。覆盖≥1的显式有限证书可按 job 剪冗余、必要时拆分权重，支持增量多项式。
 
-> 给定 λ，在 private root 上以 λ 权重放 selector 加零 jobs，以 1−λ 权重放所有 positive incidence；资源机放每个 positive incidence singleton 配置并以 empty 补足。
+此次更正已支付零作业覆盖，无新数学缺口；结论限于 norm1 两端结构的阈值一和给定有限有理证书转换，不提供整数 allocation、隐式 CONFIG 求解器或 actualOPT≥1 promise。
 
-建议只把其中“以 1−λ 权重放所有 positive incidence”改为“以 1−λ 权重放全部 incidence jobs（含零 jobs）”；其它文字保留。若按原句字面仅在 λ 配置保零作业，则 λ<1 时零作业只覆盖 λ，不能接下一句“覆盖恰一”。更正恢复共同正文已经给出的配置，不改变该证明或三个对象的数学合同。不得把此已识别省略写成“现行审查全部句子均无瑕”。
+## Q_D 的共同证书和三座桥
 
-## Q_D 局部合成及阈值边界
+对每个显式整数 `D≥2`，main 的 D 个 states 各取概率 `1/D`；每 helper 以 `1−1/D` 取 home g、以 `1/D` 取 A。每 g 列为 `1/D+(1−1/D)=1`，每 A 列为 `D·(1/D)=1`。所有资源都按正支撑而非系数收费。
 
-对每个显式整数 D≥2，取 main 各 state 概率 `1/D`；每 helper 在其 g 上取 `1−1/D`，在对应 A_a 上取 `1/D`。每 g 列负载 `1/D+1−1/D=1`；每 A_a 列负载 `D·(1/D)=1`。这是同一份正支撑 FSLP 有理证书，并非按小权重降低资源收费。
+第一源的 `N=menu-port-path∘binary-selector-tree` 双向保持 FSLP。tree 正向用子树概率，逆向从 root 送一单位流，own 容量保证非 own 分支可承接 parent 流，叶概率恢复旧 states，允许 off-path 激活。菜单 port-path 正向取 `h_j≥a_j` 且和一的 hole 分布，helper 使用边际 `1−h_j`；逆向相加 d 个 port 容量扣 d−1 个完整 helper 行，得旧正支撑和≤1。语法 membership 与正支撑分开，`d=0/1`、全零 membership、`K=1` 与重复索引保留。
 
-第一源把此证书沿 N 的 binary-selector-tree 与 menu-port-path 转换。其成熟 normal form 保每组 K≤3、每资源跨组数≤3。state-dummy SC 对每组 K 个 states 建 K 名 agents 和 K−1 枚 unit dummies；这里的 K−1 是 SC dummy 数，UM 的 selector 是每组一件 unit job。每 agent 的 real row 总值为 1，加 dummies 得 row total=K≤3。旧 real item 正 owner 数至多 `3·3=9`，dummy 正度 K≤3。
+N 后每组 state 数 `K≤3`，每资源跨组数≤3。state-dummy SC 每组 K 名 agents 加 `K−1` 枚 unit dummies；这不是 UM 的单个 selector。每 agent real row 恰一，完整 row 为 `1+(K−1)=K≤3`。real item 正 owner 度至多 `3·3=9`，dummy 正度≤3。
 
-K>1 时，agent s 以 λ_s 取全正 real support，以 `(1−λ_s)/(K−1)` 分给每个 dummy singleton；每枚 dummy 的组内总边际为 `(K−Σ_s λ_s)/(K−1)=1`。K=1 时 λ_1=1，无 dummy、无除零。逆向阈值一时不含 dummy 的合格配置必须含完整正 real support；dummy 容量给这种配置质量总和≥1，归一化即回 FSLP。若 t>1，每 agent 的 real 总值只有 1，合法配置必含本组 dummy；K 名 agents 所需 dummy 边际至少 K，而只有 K−1 容量，矛盾。因此这个中间 SC 的最高有限 CONFIG 阈值恰 1。
+`K>1` 时，agent s 以 λ_s 取全正 real support，对每枚 dummy singleton 赋权 `(1−λ_s)/(K−1)`。每枚 dummy 总边际 `(K−Σ_sλ_s)/(K−1)=1`，得到有限 CONFIG(1)；`K=1` 时 λ_1=1，无 dummy、无除零。反向阈值一且无本组 dummy 的配置须含完整正 real support；dummy 容量迫这类配置的组内总质量≥1，归一化即回 FSLP。
 
-至此才满足 SC unit-helper 路径的正向 `0<t≤1` 与旧最高阈值≤1前件。反向允许全部 t>0：每 helper 的合格配置至少占一个 copy，t>1 时可以同时占两端，不能强剪成 singleton。对 d 个不同正 owners 的旧 item，d−1 helpers 的总期望占用至少 d−1；copy 总容量 d 留给所有旧 owners 至多一份边际，因此反投影保旧 item 容量和同阈值。正向 hole/prefix 混合保有限有理支持；old agent row 不增，新 helper row=2，每 copy 至多原 owner 加两个邻 helper，最终 item 正度≤3、row≤3。
+对任意 `t>1`，每 agent 全部 real 总值仅一，合法配置必含本组 dummy。K 名 agents 需 dummy 边际至少 K，而容量仅 K−1，矛盾；K=1 直接由无 dummy 和 real row 一排除。因此先得 CONFIG(1) 可行，再排全部 t>1，中间 SC 的**最高有限 CONFIG 阈值恰一**。
 
-零阈值由空配置/正阈值反证另列；空 items/全零 rows 不凭正阈值证明直接跳过。d=0 的无正 owner 项、d=1 的单 copy 无 helper、K=1 的单 state 无 dummy、全零语法 membership 和重复索引均分别保留。实际路径正向只在 `0<v≤1`；不能从 fractional CONFIG 变换推出实际积分性。
+## SC unit-helper 路径的方向和 degree‑3
 
-故两个共同前提保持 ALL，交付范围仍为 accepted 局部贡献：Q_D 和经 N/state-dummy/SC path 的完整实例有显式有限 CONFIG(1) 证书；最终 SC 最高有限阈值恰 1、row≤3、item 正度≤3，中间 real item 正度≤9；转换按显式 D 与支持编码为 poly(D)，不能称 poly(log D)。D≥2 保 `0<1/D≤1/2`。
+至此才满足第二源正向 `0<t≤1` 和旧最高有限阈值≤一条件。对 d 个不同正 owners 建 d copies、d−1 helpers；重标旧配置，以 hole/prefix 分布给 helpers 单位 singleton 配置。逆向适用于全部 `t>0`：每 helper 至少消耗一份正 copy；`t>1` 时可且可能必须同时拿两端，绝不能强剪 singleton。相加全部 copy 容量，helpers 至少消耗 d−1 边际，留给 old owners 至多一，故投影保旧 item 容量和同一阈值。正向给新 CONFIG(1)，逆向排新 t>1，最高有限阈值仍恰一。
 
-完整目标另含实际菜单值 `1/D`、SC actualOPT `1/D` 和完整 flat UM actualOPT `2−1/D`。这些分别依赖整数鸽巢上下界、N 的 actual 值保持、state-dummy 的实际分配桥与 flat 全作业值桥。它们在成熟正文/先行审读已有，本文准确继承；两条 fractional 桥不独立支付这些步骤，P_gate 的 β* 也不代替 flat V。本轮没有重证或重跑全部 actual 证据，也不把这些独立已证步骤称为新 open。
+旧 agent row 不增、新 helper row 二，每 copy 至多有一个 old owner 加两个邻 helper，故最终 **row≤3、item 正 owner 度≤3**。无正 owner、单 owner 无 helper 和阈值零分别处理。有限证书只经有理部分和、组内归一化、树流、剪枝和 hole 混合；按显式 D 与输入/支持编码为 `poly(D)`，不能称 `poly(log D)`。
 
-## 资产与比较的精确处置
+两源共同支付完整合成，保 ALL / unconditional / accepted 和局部 contribution，任何一源单独都不支付此合成。
 
-四件旧资产均核原始 SHA。只有 `normalized-config-bridges-qd-degree-three.json` 的三个 endpoint pins 与福利审查 SHA 过时；在本任务独立目录保原 edge ID、accepted/ALL/unconditional 与原 contribution/remaining，最小更新三个 pins、一份 evidence SHA/evidence_pins 和本轮审读文字。旧 review_digest 删除，留 Root 对最终语义运行 native edge-bind/write/check；当前草稿未绑定，不冒用旧 digest。
+## 独立实际值、P_gate 和未付义务
 
-该旧 edge 在直接前任务 supersession 下为 replaced，replacement_paths 指向本任务新 edge。依 IMPLEMENTATION，新任务 done 后旧边从现役清单退出，旧文件不需直接覆盖或删除。pin-capacity、qary-fixed-affine 和 um0066 三份边按原路径及原 SHA retained，未改任何字节。前两条仍交各自 whole_result；um0066 仍仅交 μ=1 恢复 v2 B 的局部 contribution，不能靠数值代入覆盖其 LP/CONFIG1/非注入 promise 全合同。
+整条 Q_D 目标另含实际菜单 `1/D`、SC actualOPT `1/D`、完整 flat UM actualOPT `2−1/D`。整数鸽巢上下界、N actual 保持、state-dummy 整数桥和 flat 全作业值桥在成熟正文/先行审读中分别已有。本轮重读主定理展开的 Q_D 鸽巢与 state-dummy 整数桥，其余原始完整实际值证据按授权继承；两条 fractional 桥不因此变成 whole_result，独立已证步骤也不改称新 open。
 
-当前任务无新增 overlap_comparisons。旧收据 closed_overlaps 与 follow_up_tasks 均为空；其 inherited_closed_overlaps 两项 pin→saturated、qary→binary 已解决，照原记录继承。本轮没有另造泛比较或待发布任务。NP-source 强制请求、普通 UM 的物理一致性 gadget 和变 rank Haxell 位多项式输出等原范围外开放义务仍按原覆盖保留。
+P_gate 的 β* 同时收费组比例和选中组最小质量。现行审查 §一保全部原 jobs：非空 H 的 root 负载 `2−|H|/n`、gate 一、选中 private `2−v_g`、其余 private 一；β=0 用峰二基线。C<2 反向用 unit 资源独占提取不交 bundles。该 `OPT(P_gate)=2−β*` 不将 β* 等同 flat 全组 max-min 值 V；本次 §二.1 更正没改 §一。primary §1–2 本轮继承上轮实读，不冒称 fresh 读取 primary。
 
-Root 已确认待勘误审查被本包三个端点及另外三个现行对象引用；后者不在本 worker 写入范围。本 worker 只保存此当前 pin 草稿及最小改句，不改源/registry/coverage/integration，不执行 Git、work.py mutation、队列或凭据读取。Root 完成源更正与 native refresh 后，fresh worker 可只对该 zero-job source delta 和受影响 pins/evidence 做准确复核，再重绑、更新 assets SHA、checkpoint 与 done。
+新增数学 open 为零。明确 open 对象 `M-ff169368da6147ccbe40ceb2b3b5730b` 仍是共同 H/x/z 的统一位多项式提取、全任务恢复和 sound FAIL 义务，正常交 isolated-after-review。NP-source 强制请求、普通 UM 物理一致性 gadget、变 rank Haxell 位多项式实际输出等保持原范围；无身份或来源 needs-decision。
+
+## 四件 prior assets 与 receipt
+
+四件 prior assets 原始 SHA 再次核对。pin-capacity `07e7a6e47391ef0456a702e205de1e245898d77ecd0ccfe5e3d1a4cd581e960b`、qary `68e9112daec1637327c84271e74c42136dafe030cd2d15ff44bbe1b2b481a004`、um0066 μ=1 `0e8ddf05392b67a56d26d2d7874f5e9883e1ba8197c3d3512baa113fef92bfa0` 的 endpoint/evidence pins 均匹配当前字节，原路径/原 SHA retained。前两条保持 whole_result；um0066 只支持 v2 B 的存在界 contribution，不吞并其 LP、CONFIG1、非注入 promise。
+
+唯一旧 normalized edge SHA `4dca9371ef33db56efd5e792cae6f97e165e9dc892b52bbf9405c53a11e04418` 在直接前任务 supersession 下 replaced，replacement_paths 指向本任务新 edge。保同 edge ID、ALL、unconditional、accepted、contribution/result/remaining 与数学范围，只刷新当前 endpoint/evidence pins 和审读追溯。旧文件未覆盖或删除，review_digest 未伪造；Boss 最终 bind 后须重算新 edge asset SHA。
+
+当前定义没有任何新的 follow-up overlap 对，故 closed_overlaps 和 follow_up_tasks 均为空；旧 pin→saturated、qary→binary 两项只保 inherited_closed_overlaps。其它真实比较留 coverage/completed_in_scope_comparisons，不冒作任务声明。
+
+本 worker 只改本任务新 edge、本文和独立 receipt；source 更正在 receipt 记为已核实解决。剩余操作是 Boss 的最终 native 绑定、检查、推送和交付，不是待数学决策或待源勘误。

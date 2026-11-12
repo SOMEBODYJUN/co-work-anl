@@ -1,0 +1,71 @@
+{
+  "edge_id": "wc-boss2-wave10-finite-weight-class-full-welfare-input",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1",
+    "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1"
+  ],
+  "target_ids": [
+    "weighted-congestion/common-scale-full-welfare-regularization"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限标准正实权原子拥塞游戏；非空有限资源子集菜单（允许空策略）；非负实系数次数至多整数d≥2的多项式费用；个体成本是资源延迟之和，不乘自身权，真实偏离重算含自身的新负载。背景只来自真正单策略玩家。至少一名可动者，k≥1为实际全局不同可动权值数，类序跨资源一致；固定玩家权类别不受限。社会目标是全体W=Σ_i w_i C_i=Σ_e(B_e+X_e)c_e(B_e+X_e)。参数为每个有限实η≥0。本域的共同尺度、边际与社会包络已由解析构造付清，不附加待求的局部校准YES条件。",
+  "roles": {
+    "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1": "提供真正单策略固定玩家背景B_e的精确平移c_e(B_e+x)、原状态与可动状态的一一对应、每个真实可动偏离的成本恒等和势拉回；不单独提供完整W包络。",
+    "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1": "提供λ_r的凸组合、各排序的加权右端点和、S_j前缀及跨资源共同h_i=w_iS_class(i)，并给全部相关可动插入的h_i c≤ΔFopt≤A_(d,k)h_i c。",
+    "weighted-congestion/common-scale-full-welfare-regularization": "作为已独立证明的应用接口，接收本具体输入类的共同边际与重新证明的完整W包络；在其必用背景扩展的边际—包络论证中得到本类正则化稳定和只有全局最小点具有的质量保证。"
+  },
+  "explanation": "令A=A_(d,k)∈[1,d)为根A=Σ_(q=0)^(k−1)((d−1)/A)^q，t=(d−1)/A，λ_r=t^(r−1)/A，S_j=Σ_(r≤j)λ_r。于是λ>0、Σλ=1、min_jS_j=S_1=1/A。F平移后，T的π_r排序势P_(r,e)=Σ_ℓv_ℓ c_e(B_e+u_ℓ)按λ混合为Fopt_e，且h_i=w_iS_class(i)跨资源一致。每个排序由单调性满足∫_(B_e)^(B_e+X)c_e≤P_(r,e)≤Xc_e(B_e+X)，凸组合仍成立。定义PhiHat=Σ_e[Fopt_e+B_e c_e(B_e)]。B_e c_e(B_e)≥∫_0^(B_e)c_e且非负系数degree≤d给∫_0^L c_e≥Lc_e(L)/(d+1)，而B_e c_e(B_e)+Xc_e(L)≤Lc_e(L)，故独立得到W/(d+1)≤PhiHat≤W。基线为状态常数，三角边际不变。PhiHat_e(empty)=B_e c_e(B_e)一般非零，因此不字面套R开头全用户归一化；实际沿R已修复的必用背景扩展，只使用相关可动边际及本边独立付清的系数1包络。R通用q_min基线没有被声称自动给同一个m。完整G_e=(B_e+X)c_e(B_e+X)的幂差为w_iΣ_(q=0)^pL^(p−q)(L−w_i)^q，逐项得w_i c_e(L)≤ΔG_e≤(d+1)w_i c_e(L)，包括固定玩家成本外部性。故Psi_eta=PhiHat+ηW对class j的下/上尺度为w_i(S_j+η)、w_i(A S_j+η(d+1))。比值r_eta(S)对S非增，因为导数η(A−d−1)/(S+η)^2≤0；只在可动类别取最大，得beta_eta=[1+η(d+1)]/[1/A+η]。删除、加入、保留成本D,N,H≥0给ΔPsi≤w_i(S_j+η)[beta_eta C_i(new)−C_i(old)−(beta_eta−1)H]，因此严格beta_eta改善下降，局部最小为beta_eta-PNE，固定玩家约束恒真。全局最小s_eta与W最优o才有[1/(d+1)+η]W(s_eta)≤Psi(s_eta)≤Psi(o)≤(1+η)OPT；零OPT直接推出零W，不做成本除法。完整步骤与全部边界见本边证据笔记。",
+  "scope": "单条有限全局可动权类＋真正单策略固定背景的解析输入类应用贡献。系数1基线和有序右端点凸组合给本类m=1/(d+1)、M=1；不是F/T对generic R整条命题的证明，也不是其它共同尺度、每资源局部类数、窄簇或W_M保证的自动升级。无可动者单独为唯一精确状态且W=OPT，不定义A_(d,0)。d≤1不在根公式域。",
+  "contribution": {
+    "result": "F与T联合解析支付R的一类完整输入：对d≥2、实际全局可动权类k≥1、真正单策略固定玩家背景，h_i=w_iS_class(i)，PhiHat=Σ_e[Fopt_e+B_e c_e(B_e)]具有h_i c≤ΔPhiHat≤A_(d,k)h_i c及W/(d+1)≤PhiHat≤W，虽PhiHat_e(empty)一般非零，仍可沿必用背景扩展使用这些相关可动边际和独立包络。对每个有限η≥0，Psi_eta=PhiHat+ηW的每个单方局部最小点是beta_eta=[1+η(d+1)]/[1/A_(d,k)+η]-PNE，全部严格该倍率改善降势并有限终止；每个全局最小点另有W≤[(1+η)/(1/(d+1)+η)]OPT。倍率最大只取可动类别。本域没有未付的校准YES假设。",
+    "remaining": "本关系仅提供上述具体输入类及其应用，不把F/T升级为任意h_i、任意资源集合势的generic R全定理证明；一般R的独立共同社会边际、真实偏离和包络消费论证及其它输入类仍由R正文承担，R不列为自己的source。局部最小只获稳定，质量必须另有全局最小性或有效全局目标gap，后者不由本边给任意局部状态提供。有限状态存在不保证紧凑输入的多项式全局求解、位复杂度或多项式移动次数；不声称保证最优、新颖性或外审。"
+  },
+  "evidence": [
+    {
+      "path": "map/edges/boss2-wave10-weight-class-3b-b37884e6f7aee231/proof-and-reading-note.md",
+      "sha256": "cfb6b80ee063aab63423af40ac6cd9d1e66caf170dc47b3c5ecee964a51f87d6"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+      "sha256": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2",
+      "section": "三角排序与跨资源一致乘子"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+      "sha256": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2",
+      "section": "固定背景吸收"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/共同尺度势的稳定与全社会成本正则化--定理.md",
+      "sha256": "c55c041ea1d065a2b74e19ebb84a36cc1e53b42f62f37380a5ad1da07cd29a5f",
+      "section": "逐资源必用背景的全社会成本修复"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/共同尺度势的稳定与全社会成本正则化--定理.md",
+      "sha256": "c55c041ea1d065a2b74e19ebb84a36cc1e53b42f62f37380a5ad1da07cd29a5f",
+      "section": "共同边际与完整证明"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定义/共同尺度稳定与社会质量的证书接口--定义.md",
+      "sha256": "c17d6fb0d93bd42814ce807198beee8fc96217c38d317228ea52b3dbfb1c9a23",
+      "section": "5. 社会目标：只能在写明的成本上使用包络"
+    }
+  ],
+  "reviewed_by": "Boss2-wave10-weight-class-formal-worker",
+  "review_note": "本轮完整实读三端点记录及六份源文件，逐字节核SHA；独立重算三角有限和、平移排序右端和的系数1基线包络、完整G幂差、movable-only倍率最大及增删保留真实偏离。明确非零empty-set与R背景扩展的匹配，区分W/W_M及局部稳定/全局质量。已有49032de3…局部YES条件应用和ce3075dd…背景稳定边已全文比较，均无须替换；本边只补具体有限k解析应用，不填whole_result、不新增节点、不循环使用R。历史程序未复跑，有限计数不作一般证明。",
+  "endpoint_pins": {
+    "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1": "93d33edeb95f5257122583259d5347ea913e25f04dfefe41e9e5f281c1c2b704",
+    "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1": "1a0edceaed3cbc80e104df06697385be3406c7aa2b6eed26b2203f66c2609413",
+    "weighted-congestion/common-scale-full-welfare-regularization": "2064d4dcea77a85b0b3d5cd4a82fa4f44edcbc717a4f920fcc146fc65e9fe005"
+  },
+  "evidence_pins": {
+    "map/edges/boss2-wave10-weight-class-3b-b37884e6f7aee231/proof-and-reading-note.md": "cfb6b80ee063aab63423af40ac6cd9d1e66caf170dc47b3c5ecee964a51f87d6",
+    "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md": "4f6eb81eeda1730da6b72bdbc662ce5971ba0da66a0c040e02102231a4a3b7b2",
+    "archives/weighted-congestion/state/定理/共同尺度势的稳定与全社会成本正则化--定理.md": "c55c041ea1d065a2b74e19ebb84a36cc1e53b42f62f37380a5ad1da07cd29a5f",
+    "archives/weighted-congestion/state/定义/共同尺度稳定与社会质量的证书接口--定义.md": "c17d6fb0d93bd42814ce807198beee8fc96217c38d317228ea52b3dbfb1c9a23"
+  },
+  "review_digest": "ba90888fc137df3200bb45b348aad1abe44dca5d2fd45e707904458bb6b8dc3c"
+}
