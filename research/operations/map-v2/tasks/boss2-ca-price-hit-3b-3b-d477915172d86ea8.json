@@ -151,12 +151,251 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss2",
-  "request_id": "2ccaf5e13a5545e4ae6d8ecc08a9a5fb",
+  "request_id": "8af71f5b570449698ee9dda4af5acb46",
   "requests": {
     "cb5edd175f8b4628b82836b22f9c3d6d": "plan",
     "543bcf4da284446bb3510cdb1dc1c213": "claim",
-    "2ccaf5e13a5545e4ae6d8ecc08a9a5fb": "read-add"
+    "2ccaf5e13a5545e4ae6d8ecc08a9a5fb": "read-add",
+    "8af71f5b570449698ee9dda4af5acb46": "done"
+  },
+  "edge_paths": {
+    "ca-price-hit-projection-diagnostic-checks-absorption-boundary": "map/edges/boss2-ca-price-hit-3b-3b-d477915172d86ea8/projection-absorption-boundary-check.json",
+    "ca-causal-closure-r34-same-context-to-hitting": "map/edges/customer-attraction-3a-3a-7b5d2e180fc235e1/same-context-to-hitting.json"
+  },
+  "receipt": {
+    "schema": 1,
+    "task_id": "boss2-ca-price-hit-3b-3b-d477915172d86ea8",
+    "reviewed_by": "Boss2 LOCAL-PRICE-ABSORBING worker",
+    "coverage": {
+      "customer-attraction/net-coupon-global-role-hitting-and-fresh-source-suffix-bounds": {
+        "state": "linked",
+        "object_pin": "f346125d03a9f72a58f7ab68c1977677c58f240dc6ab7a913a4b338984bc2db6",
+        "comparison_scope": "三核心current pins及17个原计划refs全部实读，补读SAFE的完整body/evidence；核原实际current/past吸收、严格future、角色汇总支持、真实初始化、多源守恒及终点HIT与价格的同一律等价。",
+        "reason": "复用canonical的SAFE+LOCAL ALL整条支持，原归纳对外K current取0有明确实际终点根据。3/4 toy改成同role current续行，故不在该原图域内。终点HIT与GLOBAL-PRICE指示价/层积分互推，但均不提供actual钱包预算。",
+        "edge_ids": [
+          "ca-causal-closure-r34-same-context-to-hitting"
+        ]
+      },
+      "customer-attraction/net-coupon-row-uniform-subset-hull-and-local-prices": {
+        "state": "linked",
+        "object_pin": "fc7c04fc0b30e7336e4c3873a94631d1d1ff82ab29505e72f1e4b110b1b1e92d",
+        "comparison_scope": "同一有限角色概率行的current支配、uniform-subset凸包、任实完整续价支持函数及所有非负recipient PRICE的等价；比较真实PROJ、原GLOBAL、重复同role端口及三角色终点律。",
+        "reason": "在已实读SAFE的联合前提下，本行工具经canonical推到原固定图GLOBAL。非负PRICE的逆向用z_j=2其余1精确恢复p_j≤p_i。它只给节点自己的角色行，不给current续行图的旧HIT，也不要求复合终点律仍为局部行；三角色终点(1/3,1/6,1/2)将二者严格区分。",
+        "edge_ids": [
+          "ca-causal-closure-r34-same-context-to-hitting"
+        ]
+      },
+      "customer-attraction/static-denominator-review-priors-and-projection-hitting-boundary": {
+        "state": "isolated-after-review",
+        "object_pin": "fcfbd2967e5cabbc97a3ccaa7c1c6e9630fdc7cfb45ba2c2b45d28cfd4f11360",
+        "comparison_scope": "全文边界资源及五份完整primary、GLOBAL/LOCAL/SAFE全部承重引用；逐式核PROJ的同role natural current、q_l>0仅l>j、角色汇总q_l≤J≤J+L，及两层3/4有限完全吸收toy。",
+        "reason": "抽象toy确证放宽current吸收语义后的裸PRICE⇒旧HIT失败，未给同一F/R/H/σ与真实coverer支持的CAG实现，也不反原GLOBAL或LOCAL。新边仅为accepted checks/context；没有把一个正确原定理作为refutes终点，也没有已完成的模型迁移关系。两条来源follow-up问题已在本包精确处置。"
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/boss2-ca-price-hit-3b-3b-d477915172d86ea8/comparison-proof.md",
+        "sha256": "397cc34731317b55b98570447ea3f7c888d60ad1c0ad9b7be7429fe7734a9893"
+      },
+      {
+        "path": "map/edges/boss2-ca-price-hit-3b-3b-d477915172d86ea8/projection-absorption-boundary-check.json",
+        "sha256": "41200d521ec019ecb02aa7e09ac2a19e996c8188c5c2be7b8b6a12f723ac749d"
+      },
+      {
+        "path": "map/edges/customer-attraction-3a-3a-7b5d2e180fc235e1/same-context-to-hitting.json",
+        "sha256": "b909deebb014a18c351e33b331b53f973bed3c874b7fcccabed9d43139a78fe5"
+      }
+    ],
+    "follow_up_tasks": [],
+    "closed_overlaps": [],
+    "comparison_outcomes": [
+      {
+        "core_id": "customer-attraction/net-coupon-global-role-hitting-and-fresh-source-suffix-bounds",
+        "peer_id": "customer-attraction/net-coupon-row-uniform-subset-hull-and-local-prices",
+        "disposition": "closed-by-canonical-reuse-and-interface-proof",
+        "reason": "同一原吸收图的正向关系已由SAFE+LOCAL ALL canonical完整覆盖；本包实读并复用同SHA。全终点HIT⇔全部非负GLOBAL-PRICE需同一非负守恒终点律；它不推出终点律仍满足源current的LOCAL支配。没有新增同义逻辑边。"
+      },
+      {
+        "core_id": "customer-attraction/static-denominator-review-priors-and-projection-hitting-boundary",
+        "peer_id": "customer-attraction/net-coupon-row-uniform-subset-hull-and-local-prices",
+        "disposition": "closed-by-exact-context-boundary",
+        "reason": "PROJ每层确满足LOCAL角色凸包，但current输出是另一natural context的完整续值。两层toy在放宽接口给3/4；只在该抽象域核验，不从LOCAL的CAG适用实例推存在性实现桥。新checks/context边保留准确关系，无新裸研究后续。"
+      },
+      {
+        "core_id": "customer-attraction/static-denominator-review-priors-and-projection-hitting-boundary",
+        "peer_id": "customer-attraction/net-coupon-global-role-hitting-and-fresh-source-suffix-bounds",
+        "disposition": "closed-by-absorption-semantics",
+        "reason": "原GLOBAL的外K current实际终点值0与PROJ current续行≤h不同。原式(a+bh)/(1+a+b)≤h成立；续行式(h+a+bh)/(1+a+b)一般不闭合。toy有限DAG且吸收仍超界，说明局部PRICE与总吸收性不足；实际CAG组合仍缺同源coverer/真实终点/资金合同，未宣布反例。"
+      }
+    ],
+    "origin_follow_up_routes_resolved": [
+      {
+        "task_id": "customer-attraction-3a-3a-d2d520d432eef77d",
+        "core_id": "customer-attraction/static-denominator-review-priors-and-projection-hitting-boundary",
+        "peer_id": "customer-attraction/net-coupon-global-role-hitting-and-fresh-source-suffix-bounds",
+        "reason": "已明确原current实际吸收为0及PROJ续行替换后的精确失败步骤；抽象toy不反原GLOBAL。"
+      },
+      {
+        "task_id": "customer-attraction-3a-3a-d2d520d432eef77d",
+        "core_id": "customer-attraction/static-denominator-review-priors-and-projection-hitting-boundary",
+        "peer_id": "customer-attraction/net-coupon-row-uniform-subset-hull-and-local-prices",
+        "reason": "已核行PRICE等价、完整续价语义、角色汇总支持和未提供的同一CAG实现；没有把局部价格当全局预算。"
+      }
+    ],
+    "read_audit": {
+      "core_objects": 3,
+      "shared_read_objects": 1,
+      "original_planned_reading_refs_completed": [
+        {
+          "path": "archives/customer-attraction/state/定理/净券跨节点角色命中与来源后缀界--定理.md",
+          "sha256": "efc8aa1cebf24755c73ef386614de6da0706033e8ab0da721769bc76598041a3",
+          "section": "跨所有context的终点HIT"
+        },
+        {
+          "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+          "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/净券跨节点角色命中与来源后缀界--定理.md",
+          "sha256": "efc8aa1cebf24755c73ef386614de6da0706033e8ab0da721769bc76598041a3",
+          "section": "固定同一合法非负图"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/净券跨节点角色命中与来源后缀界--定理.md",
+          "sha256": "efc8aa1cebf24755c73ef386614de6da0706033e8ab0da721769bc76598041a3",
+          "section": "局部行的均匀子集结构"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/净券跨节点角色命中与来源后缀界--定理.md",
+          "sha256": "efc8aa1cebf24755c73ef386614de6da0706033e8ab0da721769bc76598041a3",
+          "section": "将真实初始化放入同一图"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/净券局部凸包与终点价格的非盲核对--审查.md",
+          "sha256": "acae58db48481fa4ef16c4c5a558ea7d4e255cbafd17b55b19b0b0eb832c45fb"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/全局角色净券九节点图的原始定义级审计--程序.md",
+          "sha256": "7af5d86e35f39f099b990827d7b7431f9dcd3d6bf3168a714d05c68328072edc"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/净券行均匀子集凸包与局部价格--定理.md",
+          "sha256": "146605762c508fa2131e5add2cf0519faaf5aaf5fd90ea34f733d64861cebc67",
+          "section": "独立的有限概率行命题"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/净券行均匀子集凸包与局部价格--定理.md",
+          "sha256": "146605762c508fa2131e5add2cf0519faaf5aaf5fd90ea34f733d64861cebc67",
+          "section": "为什么合法净券行满足支配"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/净券行均匀子集凸包与局部价格--定理.md",
+          "sha256": "146605762c508fa2131e5add2cf0519faaf5aaf5fd90ea34f733d64861cebc67",
+          "section": "局部续价与终点角色价必须区分"
+        },
+        {
+          "path": "archives/customer-attraction/state/资源/静态分母接口的审查先验与投影命中边界--资源.md",
+          "sha256": "1f1840a835df8181ae2bb444c577f88b0c8ae8f128e3acc81438a5cd9e863705"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/static-denominator-fixed-parent-prefix-five-primary/original/71ba6b57cc3e3d8e6cb5/static_denominator_off_ic.md",
+          "sha256": "3c6f2b5887140aa815874da9ab95033b171ba654fbc716a4d2acba46c9bb132a"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/static-denominator-fixed-parent-prefix-five-primary/original/9c613946f6641758cb8e/fixed_parent_static_column_capacity.md",
+          "sha256": "684565393352b2d8934d0ec0a383a8eddc7ac27faf112409da581ae87bd043d3"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/static-denominator-fixed-parent-prefix-five-primary/original/36b9bc7cc4211abd8d56/static_denominator_and_query_projection_review.md",
+          "sha256": "94ef390232222edb5780b3956e95ada9d95283ff8ac06c435a97bb7bec0b1dca"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/static-denominator-fixed-parent-prefix-five-primary/original/c51f7faac28bb42e7a8c/joint_prefix_claim_pushback.md",
+          "sha256": "612d347215a63f5d2ecdf7b58542dfd534c5835b061bec5ba06c4cf770d8116e"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/static-denominator-fixed-parent-prefix-five-primary/original/09e88a6b11f6264a6a83/README.md",
+          "sha256": "5fda26823a39632d336a698b2e4e0dc5fb4f8c59e74b3d81ec70dd548419670f"
+        },
+        {
+          "path": "archives/customer-attraction/tools/evidence/static-denominator-fixed-parent-prefix-five-primary/README.md",
+          "sha256": "726e528c05cd21f55e12e5fc0745963175edacef02925a6da98b5d4356631f4b"
+        }
+      ],
+      "original_distinct_files": 12,
+      "additional_safe_reading_refs_completed": [
+        {
+          "path": "archives/customer-attraction/state/定理/同节点安全净券与最大标量剪枝--定理.md",
+          "sha256": "10f9a70752e2b014434ffc0cff2c3bfe10ab5a45724e088bbb76cac073158892",
+          "section": "同一当前整行安全退款"
+        },
+        {
+          "path": "archives/customer-attraction/state/定理/同节点安全净券与最大标量剪枝--定理.md",
+          "sha256": "10f9a70752e2b014434ffc0cff2c3bfe10ab5a45724e088bbb76cac073158892",
+          "section": "原模型与同一context的全部金额"
+        },
+        {
+          "path": "archives/customer-attraction/state/程序/父方全利润剪枝的六策略原审计与三份流--程序.md",
+          "sha256": "63b158d7c5eb9c0945621402b4e3a4e619bc8fe7a3beef5e4cf8aa7d78e50270"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/鲜利润计数与非零两层图的精确复现--计算.md",
+          "sha256": "5fdada142ee8dfe12388062dcf0f02bf0ba71ad456b5eb098a6b7d8ffb26635b"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/混合方剪枝停点与第二缺陷重构的读序--审查.md",
+          "sha256": "007e7b921364a105d8f7e0fbdff50aa9e79ca83fe0331f0cfb24e6d5140e4752",
+          "section": "同一context的退款与剪枝合同"
+        }
+      ],
+      "combined_distinct_files": 16,
+      "current_input_pins": {
+        "customer-attraction/net-coupon-global-role-hitting-and-fresh-source-suffix-bounds": "f346125d03a9f72a58f7ab68c1977677c58f240dc6ab7a913a4b338984bc2db6",
+        "customer-attraction/net-coupon-row-uniform-subset-hull-and-local-prices": "fc7c04fc0b30e7336e4c3873a94631d1d1ff82ab29505e72f1e4b110b1b1e92d",
+        "customer-attraction/static-denominator-review-priors-and-projection-hitting-boundary": "fcfbd2967e5cabbc97a3ccaa7c1c6e9630fdc7cfb45ba2c2b45d28cfd4f11360",
+        "customer-attraction/same-context-safe-net-coupons-and-maximal-scalar-clipping": "4ddd33959413439662237f9ae63137f1c7887853eddb2a1ac4ef7e0ab68096b6"
+      },
+      "all_planned_ref_sha256_current": true,
+      "all_added_safe_ref_sha256_current": true,
+      "complete_text_scope": "原计划12个短正文/primary文件均全文读取，覆盖全部17refs。新增SAFE定理全文、父方六策略程序正式合同全文、鲜利润两层计算正式合同全文及混合方审查指定退款章节；common模型已全文复用同本次实读。未读取或执行这些正式程序页所链接的所有raw代码/策略输入。",
+      "canonical_prior_edges_reused": [
+        {
+          "edge_id": "ca-causal-closure-r34-same-context-to-hitting",
+          "path": "map/edges/customer-attraction-3a-3a-7b5d2e180fc235e1/same-context-to-hitting.json",
+          "sha256": "b909deebb014a18c351e33b331b53f973bed3c874b7fcccabed9d43139a78fe5",
+          "scope": "完整原ALL边、所有当前端点和证据实读；原文件未修改"
+        }
+      ],
+      "canonical_search_scope": "检索本次检索时registry的2199条 canonical边，定位三核心端点及PRICE/HIT/PROJ相关边，完整读取实际复用的同context到HIT边。其它导航命中文件仅按相关范围查阅，不冒称全对象或全仓证明审计。",
+      "read_add_confirmation": {
+        "request_id": "2ccaf5e13a5545e4ae6d8ecc08a9a5fb",
+        "pushed_head_reported_by_root": "3432b4370d1ba7dc0ca923740f4d0c5e6214855d",
+        "added_object_id": "customer-attraction/same-context-safe-net-coupons-and-maximal-scalar-clipping",
+        "object_pin": "4ddd33959413439662237f9ae63137f1c7887853eddb2a1ac4ef7e0ab68096b6"
+      },
+      "new_math_object_reads_without_declared_dependency": [],
+      "mature_programs_replayed": 0,
+      "fresh_small_arithmetic": "仅一次标准库Fraction核3/4、原首行1/2、三角色终点律全部4个外源集合HIT及7/6对1；不是客户游戏搜索、SPE审计或成熟程序复跑。"
+    },
+    "mathematical_result_note": "0 new logical edges; 1 accepted checks/context edge; 1 unchanged published canonical whole ALL implication reused. All3 core comparisons completed:2 linked,1 isolated-after-review. Exact interfaces and missing global budgets proved in comparison-proof; no CAG/SPE counterexample or half conclusion asserted.",
+    "verification": {
+      "new_edge_bind_write_completed": true,
+      "new_edge_check_completed": true,
+      "canonical_edge_check_completed": true,
+      "check_result": "edge-structure-valid-not-a-mathematical-verdict",
+      "new_edge_proof_scope": "context",
+      "reused_edge_proof_scope": "whole",
+      "all_three_core_coverage_present": true,
+      "all_four_input_pins_current": true,
+      "original_refs_verified": 17,
+      "new_safe_refs_verified": 5,
+      "declared_overlap_comparisons": 0,
+      "all_three_core_pairs_mathematically_disposed": true,
+      "git_queue_registry_global_coverage_integration_mutations": 0,
+      "written_paths_within_task_scope_only": true,
+      "receipt_structure_validation": "passed: map_tasks.batch_edges, _map_receipt_coverage, research_runtime.validate_map_follow_ups; all3 assets and22 read refs current; all4 input pins current; no canonical identity collision"
+    }
   }
 }
