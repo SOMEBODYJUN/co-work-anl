@@ -1,0 +1,52 @@
+{
+  "edge_id": "ca-fe146c-suffix-refund-to-causal-full-replay",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "B16-AVERAGED-SUFFIX-DELETION"
+  ],
+  "target_ids": [
+    "M-363cc23cd477445195e834449c6a72a3"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限单位客户、有限非空共同标签目录、m≥1单位提供者及同一完整有序历史纯SPE σ。每个删除计划在原i槽按当时已模拟的原有序历史重新调用σ_i；模拟原σ的后续处方使用包含虚拟动作的原历史，而虚拟动作由固定σ和存活有序历史递归确定。只从客户竞争负载中去掉该虚拟角色，没有新增可见信息变量或真实角色。后悔仅在原实际存活节点计算，候选包含规定动作。",
+  "roles": {
+    "B16-AVERAGED-SUFFIX-DELETION": "提供每个i<j的真实后缀双包络min{u_j,K_ij}−A_ij及三角共同退款D/2。",
+    "M-363cc23cd477445195e834449c6a72a3": "把完整因果虚拟计划中的j<i项纳入同一实际退款账，得到精细及粗VR全句。"
+  },
+  "explanation": "固定原实际叶z=(S_1,…,S_m)。逐存活有序历史递归模拟原σ：到被删i槽时插入σ_i在当时原历史上的动作，之后仍按原σ完成；收益计算才删去该角色。故这确实定义完整m−1角色计划τ_i，且较早角色j<i改选T时，虚拟动作会随改变后的历史重选，不能冻结实际S_i。对j>i，虚拟过去仍是S_i，源对象的r_ij=R_ij≤min{u_j,K_ij}−A_ij完整适用。对j<i，任一τ_i强制分支在删除前恰是原σ同节点强制T的真实终局，当前角色原偏离收益v≤u_j。其被删虚拟主题可变，但对同时被当前和虚拟角色覆盖的客户，原负载l≥2，删除增益1/[l(l−1)]≤1/l；其余客户增益0。因此整条偏离的删除增益至多v。τ_i规定实际叶中的同叶收益恰u_j+A_ij，最大正后悔遂≤u_j−A_ij；规定动作在候选中给非负性，且实际退款A_ij≤u_j使该上界非负。一个实际重叠客户负载c≥2，在i<j覆盖对付c(c−1)/2份1/[c(c−1)]，源账退款为1/2；反向i>j覆盖对再付1/2。故所有有向不同覆盖者退款总计D。将后缀包络与早期界一次相加，得到Σ_iΣ_{j≠i}r_ij≤Σ_{i<j}min{u_j,K_ij}+Σ_j(m−j)u_j−D。再以min≤u_j及根Σu_j=W，右端≤(m−1)W−D。m=1、零客户和空主题由空和直接成立。构造及早期推导已在目标正文完整证明，此边解释再次给出全部承重步骤；没有留下未证的早期误差项。",
+  "scope": "任意原完整SPE全部实际删位的因果全回放计划及实际节点共同regret预算；τ_i无须为SPE。实际D退款不覆盖离轨可信修复，也不导出half归纳。",
+  "whole_result": "任意原完整SPE及每个i均有上述完整因果m−1计划τ_i；j>i满足0≤r_ij≤min{u_j,K_ij}−A_ij，j<i满足0≤r_ij≤u_j−A_ij，且Σ_{i≠j}A_ij=D，故Σ_iΣ_{j≠i}r_ij≤Σ_{i<j}min{u_j,K_ij}+Σ_j(m−j)u_j−D≤(m−1)W−D。这是目标所述完整因果回放共同D退款与精细VR界。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/实际单删后缀的共同退款与全回放界--引理.md",
+      "sha256": "9e683915e03af1573fce2fbd03d05afd52e7261d9fd410d4f007c0b7c1cc52ba"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/静态指派与因果单删的单位客户原审计--计算.md",
+      "sha256": "46380ec93a23ae983219b16401d91410778d6d7e9f5817da79319cf028e5e288"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/R105删除盲性尾部预算与全历史regret边界审查--审查.md",
+      "sha256": "ea33d1269e595296a683f8c11cc7321c1a638539cfa7c2025a2ba17d4837db87"
+    }
+  ],
+  "reviewed_by": "Boss1/causal-refund-packet",
+  "review_note": "fresh实读两端当前登记、共同模型和所列完整正文，逐客户重构早期因果偏离、双三角退款及精细/粗求和。1953客户原有限回归及成熟SPE认证按原SHA复用，未重跑全树审计。原实际路径预算与离轨修复、一般half的量词分开。",
+  "endpoint_pins": {
+    "B16-AVERAGED-SUFFIX-DELETION": "1c54e05f2854a355aff6c6754ca37fc40eee85178f65e6b8cc3c625db4a30ed7",
+    "M-363cc23cd477445195e834449c6a72a3": "f0ea4b4f908385e3b67bc40aa25f99ca46449c5040d8f0ff803af6325d850812"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/实际单删后缀的共同退款与全回放界--引理.md": "9e683915e03af1573fce2fbd03d05afd52e7261d9fd410d4f007c0b7c1cc52ba",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/计算/静态指派与因果单删的单位客户原审计--计算.md": "46380ec93a23ae983219b16401d91410778d6d7e9f5817da79319cf028e5e288",
+    "archives/customer-attraction/state/审查/R105删除盲性尾部预算与全历史regret边界审查--审查.md": "ea33d1269e595296a683f8c11cc7321c1a638539cfa7c2025a2ba17d4837db87"
+  },
+  "review_digest": "3654926ef77ebf054ab11e517f3c2815e6201ab95a08b7bc03a89ee7f9c5d593"
+}

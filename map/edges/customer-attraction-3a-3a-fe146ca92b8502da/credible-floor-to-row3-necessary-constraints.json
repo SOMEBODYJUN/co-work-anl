@@ -1,0 +1,50 @@
+{
+  "edge_id": "ca-fe146c-credible-floor-to-row3-necessary-constraints",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/real-third-move-cross-query-credible-last-response-floor"
+  ],
+  "target_ids": [
+    "M-da46a94d923b4d408dcc5e6f883e466e"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定同一五人完整有序历史纯SPE σ、实际前缀h=(A,B)及达到OPT_5的五个合法查询槽T_i（可重复）；b=1_A+1_B，强制T_i后的真实尾为R_i,S_i。复制S_j后使用同一σ在精确历史(h,T_i,S_j)的K^S_ij；不给第三位被强制的T_i枝内最优性。",
+  "roles": {
+    "customer-attraction/real-third-move-cross-query-credible-last-response-floor": "供每个强制查询枝的真实第四位IC、末位整个共同目录BR域、带势差修正的中继下界及非根旧人利润账。",
+    "M-da46a94d923b4d408dcc5e6f883e466e": "获得该开放ROW3合同的合法必要约束；不把局部BR门槛或浮点坏松弛点当ROW3证明或反例。"
+  },
+  "explanation": "对每个i，源定理使v_Ri:=U_b(R_i;T_i,S_i)同时不低于每个U_b(S_j;T_i,K^S_ij)，且K^S_ij属于BR(b+1_Ti,S_j)。因此定义L_i=max_j min_{K∈BR(b+1_Ti,S_j)}U_b(S_j;T_i,K)，有逐枝v_Ri≥L_i及Σ_i v_Ri≥Σ_i L_i。保留原选K时，对每个合法Q还有v_Ri≥U_b(Q;T_i,S_j)+F_i(S_j)−F_i(K^S_ij)，其中F_i(X)=Σ_{x∈X}1/[b_x+1+1_Ti(x)]。这些是真实ROW3查询数组必须同时满足的约束，排除了把末回复任取或换成另一历史K^R的松弛解释。另从原实际第三位IC，仅有d_i≤u_3而无被强制枝内最优性；记W_i为(h,T_i,R_i,S_i)完整分支福利，V_i为其末两人总利润，B_i为原前两人在该同叶上的总利润，V_0、B_0分别为原实际叶的末两人及前两人总利润。令Γ_i=u_3−d_i≥0，真实分支效率相减给W_i−W=(V_i−V_0)+(B_i−B_0)−Γ_i。旧两人利润差B_i−B_0无固定符号，故该账也须保留。上述已证约束和中继没有赋予F势差共同索引符号或支付OPT_5−W，尚不能相加得到Σd_i≥OPT_5−W。若将来该独立ROW3下界成立，并另满足u_3为实际最低收益，则Σd_i≤5u_3≤W，才完成该条件下half；五人half别证不反向证明ROW3。78行的1.5084908438浮点报告和77行的1.51707147材料化诊断输入不同，均不能填补此普遍下界。",
+  "scope": "开放ROW3证明可调用的精确可信性约束及完整非根利润账；是一条已成立局部贡献，不是ROW3全称不等式或half的无条件支持。",
+  "contribution": {
+    "result": "同一σ的五个真实第三位查询数组逐枝满足v_Ri≥L_i（故总和也满足），以及保K^S势差的中继下界和含B_i−B_0的效率账；这些是该开放合同中真实尾可合法使用的必要条件。",
+    "remaining": "开放的普遍ROW3下界Σd_i≥OPT_5−W仍须共同支付查询/实际叶之间的差额，尤其不能免费假定ΣF势差非负或删B_i−B_0。目标的half条件应用另外须实际第三位为最低收益者；上述局部条件未声称解决这些义务。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/真实第三位交叉查询的可信末回复门槛--引理.md",
+      "sha256": "a258e52a351fbbfb275e2baecffa00511246f0284bddc4bc8bf317dfe9d6ed0f"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/五人第三位查询松弛的原程序与可信性边界--程序.md",
+      "sha256": "dd48a51fbda72bc2a63c2437c2cb6ffa2d5e419b61dc52b7f55ab8eb423ef599"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss1/causal-refund-packet",
+  "review_note": "fresh实读当前两对象、完整门槛证明及78/77行版本边界，核复制S_j历史、真实末位BR量词、势差身份和旧人信用。仅将已证必要约束记局部贡献，保持ROW3 truth_status=open；未运行旧LP或十八主题诊断。",
+  "endpoint_pins": {
+    "M-da46a94d923b4d408dcc5e6f883e466e": "94089ac0b1d166df15c77796107138f236bb7c1e27f97e2403da6be33a0bd5dc",
+    "customer-attraction/real-third-move-cross-query-credible-last-response-floor": "fa1e041a65123f6304731d004d36c926c0f23796add52a67206326bc1ee0aa63"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/真实第三位交叉查询的可信末回复门槛--引理.md": "a258e52a351fbbfb275e2baecffa00511246f0284bddc4bc8bf317dfe9d6ed0f",
+    "archives/customer-attraction/state/程序/五人第三位查询松弛的原程序与可信性边界--程序.md": "dd48a51fbda72bc2a63c2437c2cb6ffa2d5e419b61dc52b7f55ab8eb423ef599",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "4c23f28757dd3dcad44bb5e61120f447482b714695c2578d8406138f8cc0ee9e"
+}

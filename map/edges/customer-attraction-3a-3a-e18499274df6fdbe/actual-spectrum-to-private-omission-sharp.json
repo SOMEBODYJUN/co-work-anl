@@ -1,0 +1,53 @@
+{
+  "edge_id": "cag-e184-actual-spectrum-to-private-omission-sharp",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-ACTUAL-PRIVATE-SEAT-SPECTRUM-v1"
+  ],
+  "target_ids": [
+    "CA-OPTIMAL-PRIVATE-OMISSIONS-2M1-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "共同目录完整历史单位模型；m≥1，固定任意完整纯SPE。目标锐界仅在存在最优m主题并集O使O\\C全部属于按全目录极大覆盖定义的私有块时使用；任意最优O的私有遗漏≤W不需这个附加条件。",
+  "roles": {
+    "CA-ACTUAL-PRIVATE-SEAT-SPECTRUM-v1": "提供固定实际遗漏Q_j=P_j\\C的完整前m席位预算W≥Σλ_r；同终局整极大主题支配后继及每个实际前缀q_j=0已在源归纳中支付。",
+    "CA-OPTIMAL-PRIVATE-OMISSIONS-2M1-v1": "由不同极大容器第一席得到条件福利界、任意最优私有遗漏约束，并以正文all-big完整策略证明各m锐性。"
+  },
+  "explanation": "先对任意最优O看其全局私有遗漏：每个比较主题至多触一个全局私有块，所以该部分至多为m个遗漏块大小之和，至多前m第一席之和，因而≤W。再在目标条件下，把最优元组各主题静态扩成合法极大覆盖并去重，得J、|J|≤m；扩大后的并集仍恰O，否则补重复到m槽会反最优性。令I=|O∩C|、D=|O\\C|，则Σ_J a_j=D、Σ_J v_j≥I。源谱给W≥Σ_J(a_j+v_j/m)≥D+I/m，故OPT=D+I≤W+(1−1/m)I≤(2−1/m)W。锐性另由同页完整构造直接支付：A含m客户，m−1个不交单例，每个有序历史均选A；当前历史已有a个A且余r人时，遵循得m/(a+r)≥1，改单例至多1，故全部有序节点可信。actual W=m、OPT=2m−1且遗漏全私有。m1同样合法；全零实例用乘法式。",
+  "scope": "整条目标：存在一个有利最优O即够，不要求所有最优O；包括任意最优O私有遗漏≤W及对每m的完整SPE匹配构造。未支付共享遗漏，也未把任意合法路径当SPE。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/实际遗漏私有席位谱与锐界--定理.md",
+      "sha256": "aa4b81ffda0f492eedaf8ad691acf68703d7ff8502a91b37d0eeea1461230719",
+      "section": "固定实际遗漏后的完整谱预算"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/实际遗漏私有席位谱与锐界--定理.md",
+      "sha256": "aa4b81ffda0f492eedaf8ad691acf68703d7ff8502a91b37d0eeea1461230719",
+      "section": "最优覆盖中私有遗漏的一般约束"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/实际遗漏私有席位谱与锐界--定理.md",
+      "sha256": "aa4b81ffda0f492eedaf8ad691acf68703d7ff8502a91b37d0eeea1461230719",
+      "section": "某个最优并集的遗漏全私有时的锐界"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/实际遗漏私有席位谱与锐界--定理.md",
+      "sha256": "aa4b81ffda0f492eedaf8ad691acf68703d7ff8502a91b37d0eeea1461230719",
+      "section": "每个人数的完整SPE匹配构造"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "本包实际阅读当前登记陈述及所引完整证明，逐项核模型、量词、真实后继和结论范围；复用成熟解析/精确证据，未重跑LP、BI、原审计或数组。",
+  "whole_result": "对每m≥1与每份完整纯SPE，任意最优O的全局私有实际遗漏≤W；若存在最优O的实际遗漏全为极大全局私有，则OPT_m≤(2−1/m)W，并对每个m有正文全历史all-big匹配构造。",
+  "endpoint_pins": {
+    "CA-ACTUAL-PRIVATE-SEAT-SPECTRUM-v1": "499a1caa4be25d9c2127574d30fd71d7b2cf0419d41bfa5a19e7c53877bb7ac2",
+    "CA-OPTIMAL-PRIVATE-OMISSIONS-2M1-v1": "240b618158815f1fab6cc3ee78106d4c58e1d18b8b91d70df0fdb1d0a77238f7"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/实际遗漏私有席位谱与锐界--定理.md": "aa4b81ffda0f492eedaf8ad691acf68703d7ff8502a91b37d0eeea1461230719"
+  },
+  "review_digest": "fd5d505344b9c7bf475c609e1b744e614f63464d097a9b74371d2df4f7ed77eb"
+}
