@@ -4344,8 +4344,8 @@
     "map/edges/weighted-model-errata-repair-ce098c336867ec28/frontier-ledger-locates-multicolumn-contract.json"
   ],
   "baseline": {
-    "path": "research/registration/baseline-boss1-r18-source-hash-20261112.json",
-    "sha256": "e1a62719b92de158bb02630e5153b1ea7a194d12166497d37703997a970489e2"
+    "path": "research/registration/baseline-boss1-ret-prefix-refutation-20261112.json",
+    "sha256": "9d418513b4496a54a6f576734c78e6a8be991480410b3d417fa782263ad35c22"
   },
   "materials": [
     {
@@ -16928,7 +16928,7 @@
     },
     {
       "path": "archives/customer-attraction/state/引理/最优比较池的净交换与随机保留恒等式--引理.md",
-      "sha256": "aeb776e8877dadb113c2039c34007a2a5509a77dfea8231a3ce485216eeeb218",
+      "sha256": "400665b8ed3932fb36b7562ced86c182c79852c58d2d2e254ccc87b77c0e0cbe",
       "disposition": "objects",
       "object_ids": [
         "optimal-comparison-pool-net-exchange-and-random-retention-identity",
@@ -77132,7 +77132,7 @@
     },
     {
       "object_id": "M-140da849797c486ba0ad22e4dfbe2631",
-      "version": 3,
+      "version": 4,
       "title": "最优补全比较池的单步独有损失floor在真实节点失败",
       "kind": "counterexample",
       "truth_status": "proved",
@@ -77153,7 +77153,7 @@
       "evidence": [
         {
           "path": "archives/customer-attraction/state/引理/最优比较池的净交换与随机保留恒等式--引理.md",
-          "sha256": "aeb776e8877dadb113c2039c34007a2a5509a77dfea8231a3ce485216eeeb218"
+          "sha256": "400665b8ed3932fb36b7562ced86c182c79852c58d2d2e254ccc87b77c0e0cbe"
         },
         {
           "path": "archives/customer-attraction/state/反例/四人实际根总税--反例.md",
@@ -101691,7 +101691,7 @@
     },
     {
       "object_id": "M-8a98d8d3ca9a42089dbad81715d6f020",
-      "version": 2,
+      "version": 3,
       "title": "平方旧负载信用的Bellman单步付款在可信实际节点失败",
       "kind": "counterexample",
       "truth_status": "proved",
@@ -101712,7 +101712,7 @@
       "evidence": [
         {
           "path": "archives/customer-attraction/state/引理/最优比较池的净交换与随机保留恒等式--引理.md",
-          "sha256": "aeb776e8877dadb113c2039c34007a2a5509a77dfea8231a3ce485216eeeb218"
+          "sha256": "400665b8ed3932fb36b7562ced86c182c79852c58d2d2e254ccc87b77c0e0cbe"
         },
         {
           "path": "archives/customer-attraction/state/反例/四人实际根总税--反例.md",
@@ -122267,26 +122267,35 @@
     },
     {
       "object_id": "M-dfcc6e32210c40c3b80ff0808d132d0b",
-      "version": 1,
-      "title": "最优比较随机保留净损失的全前缀累计付款义务",
+      "version": 2,
+      "title": "最优比较随机保留净损失的全前缀累计付款命题（已反驳）",
       "kind": "candidate",
-      "truth_status": "open",
+      "truth_status": "refuted",
       "model": "有限单位价值客户、单位提供者、有限非空共同标签目录；每位依次观察全部先前有序行动各选一次主题；终局客户在所有覆盖者间均分。完整纯SPE在所有有序历史满足同一策略真实续局的弱最佳回复，允许空主题、重复行动、同覆盖异标签和任意离轨平局。",
-      "statement": "固定一个达到OPT_m的带槽比较元组，按RET定义实际每前缀净损失L_i。待证义务为从同一完整SPE的真实后继证明全部i有L_i≤P_i=Σ_{j≤i}u_j；终点即OPT_m−W≤W并足以half。",
-      "quantifiers": "对任意原输入、完整纯SPE与固定最优比较元组的每个实际位置i；源未给能支付此全前缀义务的机制。",
+      "statement": "被否的原全称命题为：对任意原输入、完整纯SPE及固定最优m槽比较元组，RET的每个实际前缀净损失均满足L_i≤P_i=Σ_{j≤i}u_j。CA-PREFIX-BALANCE-NO族每个n≥4的唯一最优支持是n个不交叶，每客户d_x=1、C_1=A⊂O；因此L_1=2(n−2)>n−1/n=P_1，差n−4+1/n>0，故全前缀命题为假。其终点付款仍足以half，但本族2W−OPT_n=2(n−1)>0，不反half。",
+      "quantifiers": "原命题量化任意输入、每份完整纯SPE、固定任意最优带槽比较元组和每个实际i。反例每个n≥4存在明示单位客户输入及完整SPE；全部最优元组仅差叶排列，所以连存在一个可付清全部前缀的最优元组也被该族排除。",
       "assumptions": [
         "根背景为零",
         "比较索引随机保留",
         "同一实际福利钱包累计付账"
       ],
-      "scope": "全前缀强不变量的开放目标，区别仅终点half及逐人D。",
-      "objections": "RET表示及单步退款恒等式本身不证明付款；单步lost≤u已假，不能据此宣布全部非局部信用不可能。",
+      "scope": "全前缀强不变量已被真实首步族反驳；不是RET恒等式、仅终点half或所有非局部信用机制的反例。",
+      "objections": "这次直接计算的是根开始、固定最优元组、RET规定的无条件随机索引余额，非把局部lost>u推成一般不可能。n4给L1=4、P1=15/4而half余量6。RET恒等式、退款以及终点/其他跨期机制的原目标保持独立。",
       "body": {
         "path": "archives/customer-attraction/state/引理/最优比较池的净交换与随机保留恒等式--引理.md",
-        "sha256": "aeb776e8877dadb113c2039c34007a2a5509a77dfea8231a3ce485216eeeb218",
+        "sha256": "400665b8ed3932fb36b7562ced86c182c79852c58d2d2e254ccc87b77c0e0cbe",
         "section": "累计付款是目标而非已证不变量"
       },
-      "evidence": [],
+      "evidence": [
+        {
+          "path": "archives/customer-attraction/state/反例/任意人数首步补全余额--反例.md",
+          "sha256": "b42e57e311686c2d737d6ade6642efaa05caa28dded02c9cf035ef0ed9c70072"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/四人首步余额完整策略证书--计算.md",
+          "sha256": "60616835c921d4c336019b9f5e107980ac35db330d9c78c3244057327a0e7a9c"
+        }
+      ],
       "sources": [
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/continuation_general/exchange/exchange_notes.md",
         "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/continuation_general/fresh/README.md"
@@ -217823,7 +217832,7 @@
     },
     {
       "object_id": "optimal-comparison-pool-net-exchange-and-random-retention-identity",
-      "version": 2,
+      "version": 3,
       "title": "比较索引随机保留的精确净覆盖余额与退款恒等式",
       "kind": "lemma",
       "truth_status": "proved",
@@ -217835,16 +217844,24 @@
         "保留实际O外新增退款",
         "d≥1只对O内客户求和"
       ],
-      "scope": "纯组合净账；不自动给L_i≤Σ_{j≤i}u_j。",
-      "objections": "gross遗漏无法不扣实际独有客户；71客户输入收益等价由0010 M-06448f714de24ea6bf75846797d3cb84复用。旧逐人D已有canonical M-9ae63ef5abd846b28c67b72f4df146cb，不重复造候选。",
+      "scope": "纯组合净账恒等式保持已证；其全前缀付款加强另由CA-PREFIX-BALANCE-NO直接反驳，不影响恒等式或终点half。",
+      "objections": "gross遗漏不能不扣actual独有客户；71客户输入收益等价仍复用M-06448f714de24ea6bf75846797d3cb84。负首步完整SPE族对所有最优元组都使L1>P1，已否M-dfcc的全前缀付款；旧逐人D仍由canonical M-9ae63ef5abd846b28c67b72f4df146cb承载且不因本反例改判。",
       "body": {
         "path": "archives/customer-attraction/state/引理/最优比较池的净交换与随机保留恒等式--引理.md",
-        "sha256": "aeb776e8877dadb113c2039c34007a2a5509a77dfea8231a3ce485216eeeb218"
+        "sha256": "400665b8ed3932fb36b7562ced86c182c79852c58d2d2e254ccc87b77c0e0cbe"
       },
       "evidence": [
         {
           "path": "archives/customer-attraction/state/程序/比较池私有块与平方旧负载信用的原诊断--程序.md",
           "sha256": "6a56e68dca66a3bf88797412577097bb0a399567b1d3f3afb6284db7c97a5a94"
+        },
+        {
+          "path": "archives/customer-attraction/state/反例/任意人数首步补全余额--反例.md",
+          "sha256": "b42e57e311686c2d737d6ade6642efaa05caa28dded02c9cf035ef0ed9c70072"
+        },
+        {
+          "path": "archives/customer-attraction/state/计算/四人首步余额完整策略证书--计算.md",
+          "sha256": "60616835c921d4c336019b9f5e107980ac35db330d9c78c3244057327a0e7a9c"
         }
       ],
       "sources": [

@@ -1,0 +1,9 @@
+# Boss1：positive-flat最终范围复核
+
+Root完整实读当前POS/EXT/NF三合同、共享中文文献正文、EXT→POS新whole边、positive-flat-review全文、POS→NF现役contribution边及本轮独立3D报告；worker直接读冻结PDF pp1–10并目视p3/p9和原NF完整数学证据，Root不把这些PDF动作记作自己新执行。
+
+Root独立重建：原PSD秩R主矩有正定独立Gram块G，无须列基connected；EXT完整秩R迫每个有限包含C的主矩Schur补为零，从而所有多项式平方非负。完整Hankel核是ideal，Cauchy–Schwarz识别零范数核，商空间维数R；交换自伴乘法有实联合谱，常数1循环迫每个联合谱空间一维且投影非零。得到恰R个互异正权原子，R0取零测度，原C+全部截断数据与未归一化输入均保。whole成立，无附加开放前提。
+
+δ0步骤另核普通degree4 Hankel满射pullback、全V1迹为0使V2=V1；正原子由Boolean/one-hot零平方成为原指派。rank-flat令affine评价空间闭于坐标乘法而含全部支撑指示，故能以affine q隔离每原子，原degree3负载localizer确给每原子原T可行。全空间HS数支持，常数向量范数数权重，不能混同；有理投影分裂与至多n步固定矩阵乘积位长多项式。此只为NF的δ0 contribution，不付正δ误差或普适矩生成。
+
+本task真正为POS一core及EXT/NF两read，linked和无formal-followup均准确。EXT的主覆盖另属其他包，不能因incident边而替它done。此次Root未新增数学程序或复制canonical关系。两现役边按已核SHA保留，待下次assemble以明确full-task审读记录采用此范围，未评审并行变更仍须保pending。
