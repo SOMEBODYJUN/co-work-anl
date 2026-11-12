@@ -1,0 +1,87 @@
+{
+  "edge_id": "boss1-wave11-necessary5-four-rational-full-tree-up-checks",
+  "kind": "checks",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/closeout-1260c5f420061df612ad304c"
+  ],
+  "target_ids": [
+    "M-ad5065e7d73146cf920522804d5ae2b9"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "仅源四张恢复有理客户质量与其保存完整有序动作表；分别固定(m,k,path,P)=(4,5,0011,1234),(3,4,011,123),(3,4,012,123),(3,5,012,234)。UP的V_ij必须在同一张完整表的actual前缀强制比较标签后真实续完。",
+  "roles": {
+    "customer-attraction/closeout-1260c5f420061df612ad304c": "给四份45秒超时数值提案、可恢复的有理质量及完整动作表；成熟Fraction证据逐全历史验证这些有限实例。",
+    "M-ad5065e7d73146cf920522804d5ae2b9": "被有限检查的开放全矩阵真实前缀付款命题；不从四点获得全称支持或真值提升。"
+  },
+  "explanation": "包装器的最小化目标F=(m−1)W+Q−m C_P，其中Q=Σ_iΣ_(a∈P)V_i,a，正好是UP右端减左端。逐有序历史独立选择器及选中孩子效用复制保证不偷换为计数策略；精确审计沿保存同一动作表递归完成每次偏离。四恢复点为x31=4、x3=3、(x2=2/3,x5=2)、x7=3；对应(W,OPT,C_P,Q,F)=(4,4,4,16,12),(3,3,3,3,0),(8/3,8/3,8/3,4,4/3),(3,3,3,3,0)。保存完整动作表含156/21/21/31个有序决策节点，成熟精确审计1103项含self比较、874真替代均非负且minIC0；第三点×3为8单位客户F4，其余已整数。原status1 time-limit、负mip_dual_bound不是负可行解，浮点近零负fun也不是反例。归零/有理恢复后是新精确实例，不倒写原float原样精确。四个F非负仅为四有限输入checks。",
+  "scope": "context finite checks；原MILP全局最优、全部路径/客户/策略/重复比较元组的UP、m≥3普遍付款和六人half均未由此认证。源core因只有此context仍isolated-after-review。",
+  "evidence": [
+    {
+      "path": "map/edges/customer-attraction-3a-3a-d617c18ca49f7b6b/mathematical-review.md",
+      "sha256": "e710f18246d944f0682bfa3dcb1c7c19430d24539b527f51a6ed88754949360a",
+      "section": "完整历史MILP四点与UP"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/真实前缀组合完整历史MILP与有限重放--计算.md",
+      "sha256": "41bc0ca7c3b8c962e1ca5690d061572ce5ed6c46f9a64210209b04eeb807dfcd"
+    },
+    {
+      "path": "archives/customer-attraction/state/候选/真实前缀均匀组合接口--候选.md",
+      "sha256": "0a40b665592ac4fd10a8b60329e57481b9d82aa478d5eb5879efa5eb92f1e137"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-51-uniform-portfolio-probes/original/portfolio_full_tree.py",
+      "sha256": "6139ee9afe1b8a8ac5442ee60e0b2a9386c0eba187c5c6c5479d28b1aa230177"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-51-uniform-portfolio-probes/replay/full_tree_milp.py",
+      "sha256": "06f97056fd6534274120425f6adc18b072908fc51643f76cf08fa4ba7f815b70"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-51-uniform-portfolio-probes/audit_reports.py",
+      "sha256": "2fc40ab7599acaff0d12df4f379ecdc4355f9a56eb62db82d122190f061d3b7e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-51-uniform-portfolio-probes/exact_reports.json",
+      "sha256": "ecdd8f3ddf1e20333185ccb62ad6d671418379d45584e7dfcdd9fded62490c5e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-51-uniform-portfolio-probes/original/full_tree_aabb_bcde.json",
+      "sha256": "23b3d419a89f79b251cfbe223d1996a4697291bc724eaba832679c1cd4d17752"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-51-uniform-portfolio-probes/original/full_tree_abb_bcd.json",
+      "sha256": "ba66ccfa58a6c6234dce7ce415afabf07111b8d38f441d1c7ec30dd8ef371799"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-51-uniform-portfolio-probes/original/full_tree_abc_bcd.json",
+      "sha256": "7c8169352a25b0b601f6d737f728acdf99f187f529fe65e51e5ba8a06f4d143c"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-51-uniform-portfolio-probes/original/full_tree_abc_cde.json",
+      "sha256": "c07f84689e5f655ff584ad1a4699fb493800df8ca4144197e4ed5cbef19544ec"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "NECESSARY5完整实读源/UP当前合同与主文、wrapper/base/audit源码、四原JSON所有字段/客户float数组/229保存动作及四exact report全字段，逐项核目标符号、真实后继、Big-M规范域、全部IC计数、原status1与精确恢复后有限量词。复用成熟精确结果，未重跑MILP、smoke、全树IC或原审计；此为checks/context，目标仍open。父Boss后续原生bind/check。",
+  "endpoint_pins": {
+    "M-ad5065e7d73146cf920522804d5ae2b9": "3711c9df5a379160d6538e1000fa2caf5c589f835cee1041487780a0f26f447c",
+    "customer-attraction/closeout-1260c5f420061df612ad304c": "c02794fc8cf05c04d56600192fcd722229b072431c67e7ac146c346e06ceb618"
+  },
+  "evidence_pins": {
+    "map/edges/customer-attraction-3a-3a-d617c18ca49f7b6b/mathematical-review.md": "e710f18246d944f0682bfa3dcb1c7c19430d24539b527f51a6ed88754949360a",
+    "archives/customer-attraction/state/计算/真实前缀组合完整历史MILP与有限重放--计算.md": "41bc0ca7c3b8c962e1ca5690d061572ce5ed6c46f9a64210209b04eeb807dfcd",
+    "archives/customer-attraction/state/候选/真实前缀均匀组合接口--候选.md": "0a40b665592ac4fd10a8b60329e57481b9d82aa478d5eb5879efa5eb92f1e137",
+    "archives/customer-attraction/tools/evidence/R-51-uniform-portfolio-probes/original/portfolio_full_tree.py": "6139ee9afe1b8a8ac5442ee60e0b2a9386c0eba187c5c6c5479d28b1aa230177",
+    "archives/customer-attraction/tools/evidence/R-51-uniform-portfolio-probes/replay/full_tree_milp.py": "06f97056fd6534274120425f6adc18b072908fc51643f76cf08fa4ba7f815b70",
+    "archives/customer-attraction/tools/evidence/R-51-uniform-portfolio-probes/audit_reports.py": "2fc40ab7599acaff0d12df4f379ecdc4355f9a56eb62db82d122190f061d3b7e",
+    "archives/customer-attraction/tools/evidence/R-51-uniform-portfolio-probes/exact_reports.json": "ecdd8f3ddf1e20333185ccb62ad6d671418379d45584e7dfcdd9fded62490c5e",
+    "archives/customer-attraction/tools/evidence/R-51-uniform-portfolio-probes/original/full_tree_aabb_bcde.json": "23b3d419a89f79b251cfbe223d1996a4697291bc724eaba832679c1cd4d17752",
+    "archives/customer-attraction/tools/evidence/R-51-uniform-portfolio-probes/original/full_tree_abb_bcd.json": "ba66ccfa58a6c6234dce7ce415afabf07111b8d38f441d1c7ec30dd8ef371799",
+    "archives/customer-attraction/tools/evidence/R-51-uniform-portfolio-probes/original/full_tree_abc_bcd.json": "7c8169352a25b0b601f6d737f728acdf99f187f529fe65e51e5ba8a06f4d143c",
+    "archives/customer-attraction/tools/evidence/R-51-uniform-portfolio-probes/original/full_tree_abc_cde.json": "c07f84689e5f655ff584ad1a4699fb493800df8ca4144197e4ed5cbef19544ec"
+  },
+  "review_digest": "ee5d110999222a2cdcc55e77ceae770a7c78dcc70e2b99bf14e71327a664612a"
+}
