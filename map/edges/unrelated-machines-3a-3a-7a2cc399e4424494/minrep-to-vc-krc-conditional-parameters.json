@@ -1,0 +1,48 @@
+{
+  "edge_id": "um-7a2c-minrep-gap-transfers-to-conditional-vc-krc-contract",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-8b63c8bed3d44f34a50cc846cc98d80a"
+  ],
+  "target_ids": [
+    "M-78fd7919bea149f28ed377eaed9fe3e7"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "先固定整数g>1并取源对象的随机多项式MinRep承诺。额外合取冻结Manurangsi Theorem 2/4所调用CLNV14、CK12、CMVZ16、Lae14的适用归约合同：在实际费用模型内近似保持，分别给VC-kRC的k=O(ΔQ)和需求对数D_dem=O(Δ²)。这里只认证这些明确外部合同成立时的参数迁移；没有重证这些外部论文，也不把Theorem 2和Theorem 4自动当成一份同时优化两参数的构造。",
+  "roles": {
+    "M-8b63c8bed3d44f34a50cc846cc98d80a": "提供每个固定g的随机MinRep硬度、Δ=O(g log g)、Q=O(g^4 log²g)，YES≤2N和NO>2gN各以至少0.9概率成立。",
+    "M-78fd7919bea149f28ed377eaed9fe3e7": "接收有条件的VC-kRC参数硬度；目标为无向图删最少边使每个需求对内部顶点不交路径数小于同一个k。"
+  },
+  "explanation": "对源输出逐项代入外部合同，ΔQ=O(g^5 log³g)，Δ²=O(g² log²g)。近似保持使任何因子g的目标真近似可复合为源因子g算法，源严格2N对>2gN的gap因此继续排除该算法。按外部参数族反解，得到波浪Ω(k^{1/5})和波浪Ω(D_dem^{1/2})；两项分别使用对应归约，不宣称任意给定(k,D_dem)组合均有同一实例。下游归约为确定性多项式时，唯一随机性仍来自源，故保留随机归约限定，若转算法排除以NP⊄BPP为充分假设。需求量词为每个i∈[D_dem]，原PDF印3页i∈[k]为笔误。路径为内部顶点不交，不是边不交；算法必须达到连通度<k的原阈值，因此不能推允许放宽k的bicriteria硬度。费用模型限于所调用合同，未推广任意加权或删点版本。",
+  "whole_result": "在上述外部近似保持归约及其实际费用模型合同下，固定g的MinRep随机硬度迁移到VC-kRC：k=O(g^5 log³g)一支给波浪Ω(k^{1/5})真近似硬度，D_dem=O(g² log²g)一支给波浪Ω(D_dem^{1/2})真近似硬度；对全部需求对删边降至内部顶点连通度<k，仍是随机归约，不含改变k的bicriteria或未经核实的费用推广。这完整对应目标对象的条件合同。",
+  "scope": "条件参数合同及两条分别成立的外部归约支路；不声称已完成原外部器件或费用归约的实际复证。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md",
+      "sha256": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217",
+      "section": "6. 连通性应用：保留全部参数及外部依赖"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md",
+      "sha256": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217",
+      "section": "5. 主定理的参数代入及严格 gap"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/Boss7-minrep-restored/original/manurangsi_minrep_degree_1807_00936v1.pdf",
+      "sha256": "259edd7e850da816ddb5c318287a7a3a525ccc8963f07918787156384d7153d8"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "实读完整成熟正文及冻结9页PDF（定义、Theorems 1/2/4与Corollaries 3/5、Lemma 7全证明）；分别核原N、最大度、共同字母表、固定g顺序、0.9承诺和随机复杂性。Python独立验ΔQ与Δ²的g/log幂并反核严格gap，未将局部参数代入冒作已重证外部归约。",
+  "endpoint_pins": {
+    "M-78fd7919bea149f28ed377eaed9fe3e7": "d3240e828d9eb0b52425164e29d808065e3dde3061e2055e1ab97571db6ada28",
+    "M-8b63c8bed3d44f34a50cc846cc98d80a": "0a7443fbb503448d27919bd02589188e155ea9faec436fea6b9f9d1eee17f203"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217",
+    "archives/unrelated-machines/tools/evidence/Boss7-minrep-restored/original/manurangsi_minrep_degree_1807_00936v1.pdf": "259edd7e850da816ddb5c318287a7a3a525ccc8963f07918787156384d7153d8"
+  },
+  "review_digest": "e102a9a76cd29e93cf9797d0824da5982b057aed616702b76857c15e500d9dbf"
+}
