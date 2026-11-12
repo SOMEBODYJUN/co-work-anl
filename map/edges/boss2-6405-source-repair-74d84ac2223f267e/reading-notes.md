@@ -66,6 +66,10 @@ verify_rational_contract.py 用Fraction核字面删值反例、7坐标各0..3数
 
 ## 交付决定与未付义务
 
-旧四边完整数学仍有效且输入未变，按SHA retained；只以本任务新边替换旧BLMRS物理构造边的过时资源SHA/endpoint pin，保其正确方向并展开有理修补。当前/旧任务均无mandatory follow-up对象对；无read-add需要。q2→开放转移只accepted/conditional局部贡献；SCHA反面只conditional；本轮无尚有缺步却标accepted的新增关系。
+旧四边的完整数学仍有效，输入未变，按原 SHA 保留。恢复交付时核到单对象修复 `boss2-6405-source-repair-1f1a52bff3f7d750` 已完成并集成。其 `um-boss2-6405-blmrs-rational-bit-transfer` 与本任务草稿有同一对端点、当前 pin、算法蕴含和承重推导，且展开了精确位长、逐件构造和截断反例。收据以这条已发布边替换旧 BLMRS 物理构造边，保留本包的逐段比较及计算证据。
+
+恢复复核时直接对照冻结 PDF 的 Lemmas 10–14 与附录 B，配置机按玩家与配置建立，单位选机任务按玩家建立。复核了正确试探全任务峰1、任意严格次二调度的资源机独占、连续网格尾和、原值验收和 Q 网格二分。重新执行两个 Fraction 脚本，得到与既有文件字节一致的结果。五条交付边的绑定均按当前登记校验。
+
+当前和旧任务均无必须接续的对象对，也不需扩展只读依赖。q2 对开放转移只支付证书给定后的 soundness，SCHA 反面保留其独立假设。
 
 已读完本任务全部指定正文跨度和必要PDF，没有将未读原始链接材料、heavy fixture数学、历史程序运行或外部新颖性算完成。仍未付：普通UM物理一致性compiler、q2所列Fδ/YES/任意低σ共同证书/source hardness、一般Santa无常数复杂度假设。这些是已定位研究义务，非本任务输入身份needs-decision。

@@ -1,0 +1,66 @@
+{
+  "edge_id": "um-777902-orientation-dp-contributes-equal-two-endpoint-fptas",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-20c5c28925d440e48d955b1293aaddb9"
+  ],
+  "target_ids": [
+    "M-14dbe6980117492aa7a3b48c52378dcb"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限显式整数调度，每个原作业不可拆分，恰有两个不同的可选机器且在这两端的正整数处理时间相等。每个固定的dual或incidence树宽界和每个正有理精度ε。若多件作业有同一端点对，各自保留平行边身份，使用M20正文逐边引入的多重图扩展。无作业时直接返回空调度和峰值0。",
+  "roles": {
+    "M-20c5c28925d440e48d955b1293aaddb9": "提供有界树宽MMO的精确整数负载向量DP、显式双子表安全计费及取向回溯。",
+    "M-14dbe6980117492aa7a3b48c52378dcb": "接收FPTAS算法半部的等时双端子域，目标另覆盖任意资格和不同端处理时间，并包含独立的弱NP-hard结论。"
+  },
+  "contribution": {
+    "result": "常数dual或incidence树宽的等时双端整数调度，对每个ε>0都可在输入位长和1/ε的多项式时间内输出实际调度，峰值≤(1+ε)OPT。由最大权W和最大记录度d取网格q=min(ε,1)W/d，向上缩放后的每条整数边权≤ceil(d/min(ε,1))，可直接调用M20并从取向回溯全部原作业。",
+    "remaining": "该证明只覆盖所列FPTAS子域。任意资格、异端时长的一般FPTAS以及目标的弱NP-hard半部由现有9a5cd的精确负载DP与PARTITION联合证明支付。原MMO印式的单表大小运行时间仍缺子表合并实现。"
+  },
+  "explanation": "每台机器为一个顶点，每件任务j为带身份的边e_j={u,v}，权w_e=p_uj=p_vj。指派到u当且仅当边的尾为u；两方向与两合法机器双射，逐机负载恰为加权出度，故保任意方案峰值及最优值。支撑简单图就是dual。若给的是incidence分解，把每个度2的作业点沿其任一关联边收缩至该端机器，再去掉重复边，得到dual。每次收缩可在各袋中把作业名替为端机器名并去重，两个原出现袋子树因覆盖被收缩边而相交，故连通且不增宽。固定宽度未给分解时，用两原文所列的固定宽度分解构造，二叉化不增宽，逐记录引入多重边的O(τ)因子按固定τ计。\n\n若有边，令W为最大权，d为每个顶点的最大incident记录数，ε₀=min(ε,1)，q=ε₀W/d>0，a_e=ceil(w_e/q)。W≤OPT，因为最大件必须全部放在一端。任一取向Λ、任一顶点v至多有d条出边，故load_w(Λ,v)≤q load_a(Λ,v)≤load_w(Λ,v)+dq。令Λ*为原最优、Λ_a为缩放整数DP回溯的最优取向，则C_w(Λ_a)≤q C_a(Λ_a)≤q C_a(Λ*)≤OPT+dq≤(1+ε)OPT。若ε₀=u/v为正有理数，a_e用ceil(d v w_e/(uW))整数除法，操作数位长多项式。a_e≤K=ceil(d/ε₀)；简单图调用源界O(2^{O(τ²)}(Kn+1)^(2τ+2)(n+m))，多重图调用逐边引入界O(poly(τ)(Km+1)^(2τ+2)(n+m))，整数位成本和原指派输出另计。缩放保持图和作业身份，固定τ下两界均为位输入及1/ε的多项式。\n\n递推对应到同一完整峰值不变量：两子局部任务不交，父袋外机器至多出现在一个子树，父活跃机器负载则是两个投影坐标与当前袋内边贡献之和。父峰值恰为两子峰与全部父活跃坐标的最大值；固定接口后各自子最优可以同时实现。Asahiro印13页已经保留父坐标项，但单表大小未支付双子状态配对。Jansen–Maack–Solis-Oba印10/11页Lemmas13/15的全峰值原式反而漏父坐标，正式勘误恢复它。两源的任务分组不同，本证明用每条边唯一归属一个覆盖袋支付任务恰一次，独立于一般incidence DP的活跃任务标记及较强的任意资格合同。",
+  "scope": "正向迁移MMO精确DP至R||Cmax的等时双端FPTAS子域，保每件原任务身份、合法调度输出和固定宽度量词。多重作业由逐边引入支付。完整一般Theorem 3沿现有独立联合证明；本边不承担其困难性，也不认证MMO原印运行时间、树宽单参数精确FPT或异权模型迁移。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md",
+      "sha256": "93be27e188d71bd0194088dc7c4a2d96afbaa9513c6f3754900c5b972fd9d6f0",
+      "section": "1. MMO 模型和调度对应"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md",
+      "sha256": "93be27e188d71bd0194088dc7c4a2d96afbaa9513c6f3754900c5b972fd9d6f0",
+      "section": "3. 有界树宽：伪多项式动态规划"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/asahiro-miyano-ono-2011.pdf",
+      "sha256": "5db93652d80fd92b6440e0a0e22edfdeb09f78e2b886c95cb4adf171c67ee147"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md",
+      "sha256": "113ed833ea9443fe2166793c19b5fe2b1b6bfb3b789e6f617372120d1c90375e"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf",
+      "sha256": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/结构参数DP共享活跃机器合并负载勘误--审查.md",
+      "sha256": "3b26e5d5cf1c422b280e04cf0b39964fe5aa804335576b117c54198ccca5b4b6"
+    }
+  ],
+  "reviewed_by": "Boss2/um-777-current",
+  "review_note": "实读当前M20 v3、M14 v5、两份中文正文及正式join审查，Asahiro冻结原文的模型和印11–13页完整树宽证明（视觉核印12–13），结构文献冻结原文印1–5及9–11页相应定义、缩放、dual/incidence证明（视觉核印10–11）。从当前registry.edge_files逐边扫端点，M20没有现成canonical。复核现有9a5cd的一般合同和ea3c的近似半部。独立证明选尾、收缩、以最大度控制的整数网格、位成本与完整回溯，另在四点简单图权1至3的12285个图/ε对上用有理数穷举检查所有缩放最优取向的误差与K。有限检查只用于验算。固定宽度分解调用两原文均采用的标准构造，未重证其外部论文。",
+  "endpoint_pins": {
+    "M-14dbe6980117492aa7a3b48c52378dcb": "8d3c860cc8f5e4d5abd95ab0b8891067fb982bc537b9f4870b161e43a7800372",
+    "M-20c5c28925d440e48d955b1293aaddb9": "ef93b3e15d360e7585cba28e86f602d0e4777f6c5475cc0d054771749e50bb44"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md": "93be27e188d71bd0194088dc7c4a2d96afbaa9513c6f3754900c5b972fd9d6f0",
+    "research/registration/evidence/boss6-0104/asahiro-miyano-ono-2011.pdf": "5db93652d80fd92b6440e0a0e22edfdeb09f78e2b886c95cb4adf171c67ee147",
+    "archives/unrelated-machines/state/文献/结构参数下的指派限制调度--文献.md": "113ed833ea9443fe2166793c19b5fe2b1b6bfb3b789e6f617372120d1c90375e",
+    "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/structural-parameters.pdf": "4b47eaccfcffe81f6713522269b6afa2124bec3d619d6ef3a1b5341db7e48bae",
+    "archives/unrelated-machines/state/审查/结构参数DP共享活跃机器合并负载勘误--审查.md": "3b26e5d5cf1c422b280e04cf0b39964fe5aa804335576b117c54198ccca5b4b6"
+  },
+  "review_digest": "acd215c12d4de5fac15b295d50d073ab2a8555d3feaf0b04b5e1de6bc17b0965"
+}

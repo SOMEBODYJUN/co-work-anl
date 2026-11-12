@@ -1,0 +1,46 @@
+{
+  "edge_id": "xos-value-query-lower-bound-locates-cf-truthful-exponent",
+  "kind": "motivates",
+  "status": "accepted",
+  "source_ids": [
+    "M-513a993cb39a478a850f01c62d52d0ed"
+  ],
+  "target_ids": [
+    "M-6024dc77bef04ea7a6aea19a318c6f43"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "context",
+  "conditions": "有限物品组合拍卖的总福利、归一化单调非负估值与每次面向单一竞买人的 value 查询。下界只需 XOS 子域，并允许任意福利算法。上界对全部 CF 成立，并给确定性占优策略诚实的机制。指数比较固定 ε>0，运行查询数取最坏情形。",
+  "roles": {
+    "M-513a993cb39a478a850f01c62d52d0ed": "Theorem 6.1 在 XOS 上排除以多项式个 value queries 获得 O(m^(1/2−ε)) 的近似。",
+    "M-6024dc77bef04ea7a6aea19a318c6f43": "Theorems 1.5/5.1 在更大的 CF 域达到 O(sqrt(m))，从而也覆盖该 XOS 子域。"
+  },
+  "explanation": "XOS 的每个非负加性条款满足次可加性，对并集取条款最大值仍有 v(S∪T)≤v(S)+v(T)，所以 XOS⊆CF。若全 CF 上存在用多项式个 value queries 的固定指数改进，限制到 XOS 即违反下界。结合本机制的根号因子，得到同一访问模型下两域的指数最优性。冻结 §6 小束公式按原定义改为截断 min 后，基准福利 O(m^(1/2+2δ))、隐藏福利 m；用超几何尾界和基准查询与输出轨迹的并合控制，证明下界也覆盖适应性和逐实例期望保证。上界构造仍独立使用固定范围的整集/匹配与 VCG 支付。",
+  "scope": "仅定位多项式 value 查询所能达到的固定幂指数，不推出上界构造、精确根号常数、排除次幂因子改进、demand 模型下界或非福利目标保证。",
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-72d5b617f1767ca4/value-query-exponent.md",
+      "sha256": "d75ed2a871f3c3ef696198e18c7546630603bb89c5d3ce26286de30860770b1e"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/组合拍卖与投影游戏集合覆盖两篇文献整理--文献.md",
+      "sha256": "ee4b62663ff651341ae40162b5319b31b9230d71c93b81333d43cfbf92d4fb22"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-auction-setcover-20261031/dobzinski_auction.pdf",
+      "sha256": "d0700d7674db45b4330d558c731c0200567f2c7a999f5eef7952029cab26dd15"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "独立核冻结 §2、§3.2–3.3、§5、§6，目视第14页公式，重证小束截断、随机隐藏划分尾界、适应性及最终实际福利比较。固定范围上界与查询下界方向分别保留。",
+  "endpoint_pins": {
+    "M-513a993cb39a478a850f01c62d52d0ed": "7f422db13d614f5057ed8d3cc6ac0ae19fec702fad1c8896cbb9b86cf17b27f7",
+    "M-6024dc77bef04ea7a6aea19a318c6f43": "6aabb462f0f0434c2353eac21ac6fadcdbcc5c4a7b64887b5017e0e81c88b041"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-72d5b617f1767ca4/value-query-exponent.md": "d75ed2a871f3c3ef696198e18c7546630603bb89c5d3ce26286de30860770b1e",
+    "archives/unrelated-machines/state/文献/组合拍卖与投影游戏集合覆盖两篇文献整理--文献.md": "ee4b62663ff651341ae40162b5319b31b9230d71c93b81333d43cfbf92d4fb22",
+    "archives/unrelated-machines/tools/evidence/retired-literature-auction-setcover-20261031/dobzinski_auction.pdf": "d0700d7674db45b4330d558c731c0200567f2c7a999f5eef7952029cab26dd15"
+  },
+  "review_digest": "38eb6a5148d313a20c663f862126b93bbf4fcfb1f0826410d474b855243ebcde"
+}
