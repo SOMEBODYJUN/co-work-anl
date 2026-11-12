@@ -1,0 +1,42 @@
+{
+  "edge_id": "ca-tax20-exact-tax-specializes-collision-free-balanced-bound",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-0eee0a3d6a7f4796b59b8b027eea66b8"
+  ],
+  "target_ids": [
+    "customer-attraction/collision-free-terminal-support-exact-tax-and-balanced-payoff-bound"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户与有限非空共同标签目录；任意m≥1合法完整路径，实际末位为该节点最佳回复；另加实际m主题两两不交。前缀并集P、实际总覆盖W、末位收益L；比较m槽合法主题可空、可重复。平衡福利推论另要求L≤W/m。无需早期SPE或匿名/同计数续局。",
+  "roles": {
+    "M-0eee0a3d6a7f4796b59b8b027eea66b8": "提供任意真实末位前负载b的精确比较税恒等式及非负δ_j、D_O。",
+    "customer-attraction/collision-free-terminal-support-exact-tax-and-balanced-payoff-bound": "由实际不交把τ_O化为|P∩O|/2，得到普遍比较并集上界、精确slack、等号合同和平衡福利推论。"
+  },
+  "explanation": "实际主题两两不交使末位前b=1_P，末位自身主题也与P不交，所以L等于末题大小、|P|=W−L。源身份逐任意m槽比较元组给|O|=mL+|P∩O|/2−Σ_jδ_j−D_O。将|P∩O|=W−L−|P\\O|代入，精确得到W/2+(m−1/2)L−|O|=|P\\O|/2+Σ_jδ_j+D_O≥0。这不只对最优O成立。等号当且仅当P⊆O、每个δ_j=0以及D_O=0；正分母使δ_j=0等价每比较题均为同一实际末节点BR，D_O=0等价没有客户被两比较槽同时覆盖。重复非空主题不取等；重复空覆盖槽及L=0仍按三个零项条件处理。取O达到OPT_m，若L≤W/m，因m−1/2>0，2mOPT_m≤mW+(2m−1)W=(3m−1)W。m=1有P空和BR最大题而OPT_1=W；W=0由非负性L=0，精确式迫OPT=0，不除W。",
+  "scope": "目标登记整条陈述已推出；构造锐族不属于该陈述另需支付的前件。已有ca-r36-collision-free-sharp-balanced-terminal-tax单独支付同族取等，不在本边重复认领。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/无拥挤末位支持的精确税与平衡收益界--引理.md",
+      "sha256": "8361094b9f22dc52cc49d9962d80897a875d197850e88f52d7ea7d5fc3e087b1"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "TAX-MODEL-20 fresh worker按当前登记实读模型、原正文及承重证明，逐项核对量词和整条/局部作用；Boss1随后全文实核本边与comparison-proof并认可推导。非新外审。本轮未运行旧LP、BI、MILP或数学审计程序；native binding/edge-check另由Boss1复制后执行。",
+  "whole_result": "任意m≥1实际两两不交且末位BR的路径、任意m槽合法比较并集O均满足|O|≤W/2+(m−1/2)L，精确松弛为|P\\O|/2+Σδ_j+D_O；等号恰三非负项全零，即P⊆O、所有比较题末位BR且比较覆盖按客户两两不交。另有L≤W/m时2mOPT_m≤(3m−1)W。",
+  "endpoint_pins": {
+    "M-0eee0a3d6a7f4796b59b8b027eea66b8": "6587e057b2e49e14ddddb0dc7d8a67371f61e2d19eee23073468c262feaf8431",
+    "customer-attraction/collision-free-terminal-support-exact-tax-and-balanced-payoff-bound": "f14f44ad0cd8a5c006165621a7ffcbfcb93d573659044477dab9f4360debcde4"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/无拥挤末位支持的精确税与平衡收益界--引理.md": "8361094b9f22dc52cc49d9962d80897a875d197850e88f52d7ea7d5fc3e087b1",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "13e5c9bc82ec3b603cc628932dc35af8c2c39d3972e0c207a61d7e7b09da3c7e"
+}

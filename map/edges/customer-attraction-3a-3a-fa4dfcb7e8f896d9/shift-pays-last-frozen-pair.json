@@ -1,0 +1,46 @@
+{
+  "edge_id": "cag-fa4-shift-pays-last-frozen-pair",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-55167519658e4f15a63ed1054fb6a436"
+  ],
+  "target_ids": [
+    "customer-attraction-frozen-adjacent-query-bridge-two-old-strategies-and-fixed-PB-audit"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "任意合法背景、r≥2完整子SPE实际叶及任意合法单题T；只取最后相邻对i=r−1。",
+  "roles": {
+    "M-55167519658e4f15a63ed1054fb6a436": "提供精确q_i−q_r=D+−D−、D+≤u_i/2及末位真实BR锚。",
+    "customer-attraction-frozen-adjacent-query-bridge-two-old-strategies-and-fixed-PB-audit": "最后相邻对与r2全部相邻位置得到候选要求的付款。"
+  },
+  "explanation": "SHIFT给q_i≤q_r+u_i/2；末位q_r是真BR查询≤u_r。取i=r−1并用非负u_i，q_(r−1)≤u_r+u_(r−1)/2≤u_r+u_(r−1)。更早中间u_(i+1)−q_(i+1)可负，不能把早期冻结查询当真偏离或重复领取u_r。",
+  "scope": "目标候选的末对域；r2时覆盖所有相邻位置。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/相邻冻结查询的旧两人策略与PB固定族核验--程序.md",
+      "sha256": "a03019c7f6baa3aad28adb98930562f27e78055b5d40ea7174202a8d192e9918"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-fa4dfcb7e8f896d9/comparison-proof.md",
+      "sha256": "80f032cd3e8e87a20e801f80adfaf41d4d52e0dfa19e217e79c0785117f61998",
+      "section": "5. SHIFT到冻结查询最后相邻对"
+    }
+  ],
+  "reviewed_by": "Boss1-ROUTING-WALLET-20",
+  "review_note": "实读本任务对应当前对象陈述、全部指定reading spans及本边承重证据；按同一模型/有序历史/真实后继/量词逐式核对。只在明列作用范围accepted，未把原历史计算报告当本轮执行。",
+  "contribution": {
+    "result": "所有合法背景及完整r尾SPE的最后相邻对满足q_(r−1)(T)≤u_(r−1)+u_r；r=2因此全位置成立。",
+    "remaining": "一般r≥3的早期相邻对仍需控制精确UNPAID式中静态premium，不能让每对重新使用末位钱包；旧PB与h1有限族不支付该全称部分。"
+  },
+  "endpoint_pins": {
+    "M-55167519658e4f15a63ed1054fb6a436": "def62c706c0e9ee06f54ad10480bd953f0886b91b4b89e1cadf561afd4f3fc4b",
+    "customer-attraction-frozen-adjacent-query-bridge-two-old-strategies-and-fixed-PB-audit": "4ce82c40a5bdb8d7cebe02d66fc36c200102c7cc56c07f608e828de22fbe6229"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/相邻冻结查询的旧两人策略与PB固定族核验--程序.md": "a03019c7f6baa3aad28adb98930562f27e78055b5d40ea7174202a8d192e9918",
+    "map/edges/customer-attraction-3a-3a-fa4dfcb7e8f896d9/comparison-proof.md": "80f032cd3e8e87a20e801f80adfaf41d4d52e0dfa19e217e79c0785117f61998"
+  },
+  "review_digest": "950dc7ffa0c1440a3e6aa0c07fa3ecf850a4ead5671838fc47d16528cc6d9650"
+}

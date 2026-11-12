@@ -1,0 +1,66 @@
+{
+  "edge_id": "cag-sc20-retained-credit-and-static-all-to-half",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-874e2ddc63924879aba98a33dd2204a8",
+    "M-06f6b8ff456c4de59eb0add2cb939067"
+  ],
+  "target_ids": [
+    "Q-CAG-HALF"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一个有限单位客户、有限非空共同标签目录与同一份完整有序历史纯SPE σ；m≥2。V_i(A)是actual位置i真实强制A后沿同σ完成并只删当前槽的m−1槽元组；同一个p诱导q=Kp、g、G和R。SC为supp(p)⊆argmax_T g_T，不要求p=q或G的KKT。保空主题、同覆盖异标签、重复、零客户和全部离轨弱平局。 m=1另按唯一玩家的根IC直接处理；0覆盖直接作不等式。",
+  "roles": {
+    "M-874e2ddc63924879aba98a33dd2204a8": "未证的共同付款前提：每份原完整σ存在一个同p的SC见证支付mG+(m−1)R≤2W。",
+    "M-06f6b8ff456c4de59eb0add2cb939067": "已证KEEP-q静态比较及SC上M=G，给OPT_m≤mG+(m−1)R。",
+    "Q-CAG-HALF": "任意m≥1、任意有限共同标签目录、每份完整有序历史纯SPE的2W≥OPT_m。"
+  },
+  "explanation": "m≥2时先由credit选一个SC p，固定其q、G、R。把同一q送入KEEP-q：任意m个合法比较主题T_j的并集客户指标满足1_{d_x>0}≤[d_x+(m−1)q_x]/[1+(m−1)q_x]；求和保背景项得OPT_m≤Σ_jg_Tj+(m−1)R≤mG+(m−1)R≤2W。两个源分别提供静态覆盖比较和动态同见证付款，保为一条ALL边。m=1时根IC使唯一玩家选最大覆盖，W=OPT_1；零客户/零覆盖不取比值，直接0≤0。故整个任意人数目标得到条件推导，不仅五人或某个实例。",
+  "scope": "完整Q-CAG-HALF的条件蕴含；不把SC存在、有限证书或五人另证当作credit已付。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/审查/自洽查询变分条件与共同付款停界--审查.md",
+      "sha256": "3f2b5a7ae8038aaeecdb5730477be7e8e91535acfc61d02b67c8de5acce90542"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/自洽池固定见证与成对水库收费的复核--审查.md",
+      "sha256": "93ce52495f5b6c1bd0060f71b524e27ac6846a27bd4a7828c8b12e8603083381"
+    },
+    {
+      "path": "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md",
+      "sha256": "bc5add8e880e83c3ed799f457607103532aa9120018c862ae3ac869f2ed34d15",
+      "section": "完整量词和目标"
+    },
+    {
+      "path": "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md",
+      "sha256": "bc5add8e880e83c3ed799f457607103532aa9120018c862ae3ac869f2ed34d15",
+      "section": "净遗漏是一般付款的准确对象"
+    },
+    {
+      "path": "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md",
+      "sha256": "bc5add8e880e83c3ed799f457607103532aa9120018c862ae3ac869f2ed34d15",
+      "section": "可接续的精确义务"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss1/SC-RESERVE-20",
+  "review_note": "Fresh正式worker实读当前任务端点登记、指定正文及精确证据后逐式核对；仅静态代数与已证明的条件归约，不重跑原成熟IC/BI/LP。该关系不把开放付款义务升级为已证。最终绑定由Boss串行完成。",
+  "whole_result": "若保背景信用SC付款的全称义务M-874e2ddc63924879aba98a33dd2204a8成立，则与已证明的M-06f6b8ff456c4de59eb0add2cb939067共同推出：∀m≥1、∀有限单位客户共同标签目录实例、∀完整有序历史纯SPE σ，OPT_m≤2W(σ)。",
+  "endpoint_pins": {
+    "M-06f6b8ff456c4de59eb0add2cb939067": "e4daf825de569e77402bb1c9e0a130e6893ec3cb208983b9e4bf70b15a394de2",
+    "M-874e2ddc63924879aba98a33dd2204a8": "f500ca3cdb3c40d6f4ca31970f91e32ec94c77fe7876b7c41d5c93bdeeb23a99",
+    "Q-CAG-HALF": "dccd5277f7b0c1bb4dcac17287010f1d012bb40c6244c51f24808c1519a4b5ea"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/审查/自洽查询变分条件与共同付款停界--审查.md": "3f2b5a7ae8038aaeecdb5730477be7e8e91535acfc61d02b67c8de5acce90542",
+    "archives/customer-attraction/state/审查/自洽池固定见证与成对水库收费的复核--审查.md": "93ce52495f5b6c1bd0060f71b524e27ac6846a27bd4a7828c8b12e8603083381",
+    "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md": "bc5add8e880e83c3ed799f457607103532aa9120018c862ae3ac869f2ed34d15",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "77c3ac2f711e50929d9e10ab0a7fb40602f77b5238bb4bb08ea85c13d90e943a"
+}

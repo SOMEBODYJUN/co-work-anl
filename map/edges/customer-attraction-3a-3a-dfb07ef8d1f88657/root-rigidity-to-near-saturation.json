@@ -1,0 +1,47 @@
+{
+  "edge_id": "ca-tax20-shared-maximum-rigidity-implies-b6-threshold",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/all-m-nearly-saturated-root-rigidity"
+  ],
+  "target_ids": [
+    "B6-ROOT-NEAR-SATURATION-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一有限单位共同标签目录、每份全部有序历史纯SPE、m≥2。K为全目录最大主题大小，r为该份σ真实根收益，E=mr−K；取任意最大主题C以及任意合法D。使用源正文保共同大小上界M的式(5)，取自然M=K，不把主RIG式仅按Δ=E粗代入。",
+  "roles": {
+    "customer-attraction/all-m-nearly-saturated-root-rigidity": "提供含共同M的全人数根分支消元式(5)、全目录K≤mr、E=0时根强制饱和主题后的真实尾集合刚性。",
+    "B6-ROOT-NEAR-SATURATION-v1": "取T=C最大、M=K并按m槽及同一C信用求和，得到整条最大主题交换、覆盖阈值及刚性推论。"
+  },
+  "explanation": "由源§2，K≤mr，故E≥0。源§4式(5)对同一σ给F_C(D)=|D\\C|+|D∩C|/m≤(m−1)^2r+mK/2−(3m−4)K/2=(m−1)^2r−(m−2)K=[K+(m−1)^2E]/m；这直接给目标m|D\\C|+|D∩C|≤K+(m−1)^2E。对任意带槽比较D_1,…,D_m逐槽应用，令U=∪D_j、R=U\\C、I=U∩C；重数只增加非负计价，m|R|+|I|≤Σ_j[m|D_j\\C|+|D_j∩C|]≤mK+m(m−1)^2E。于是|U|≤K+(1−1/m)|I|+(m−1)^2E≤(2−1/m)K+(m−1)^2E；取最优元组。若D亦最大则|D∩C|=K−|D\\C|，得到(m−1)|D\\C|≤(m−1)^2E并以m−1>0得单向差≤(m−1)E。E=0时K=mr，源§5对每个最大C保证根强制C后全部真实后继覆盖恰C；最大主题同覆盖但不要求同标签。每个实际角色i在自己的真实节点可改选任一最大题，其每个客户最终负载至多m，所以该真实偏离收益≥K/m，IC给u_i≥K/m，合W≥K。若E≤K/[m(m−1)^2]则(m−1)^2E≤K/m，上界OPT≤2K≤2W。K=0时全目录空覆盖、收益/E/W/OPT均0，全部采用乘加式；m=2直接使用源式(5)，保目标原证明的单独边界处理。",
+  "scope": "目标登记整条而非只有OPT不等式；一般σ是否满足小E条件没有被证明，故不无条件关闭half。m=1不在目标域；源单列W=OPT=K仍成立。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/任意人数近饱和根主题刚性--引理.md",
+      "sha256": "87ab5e0608333ea8bc7cc83ce81832a7571092a01109c01baf7f744cf42fbd61"
+    },
+    {
+      "path": "archives/customer-attraction/state/推论/最大主题根近饱和的覆盖阈值--推论.md",
+      "sha256": "8c205982d0718e9117220df227d79f24553417a5a71c46111caed7debfc256eb"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "TAX-MODEL-20 fresh worker按当前登记实读模型、原正文及承重证明，逐项核对量词和整条/局部作用；Boss1随后全文实核本边与comparison-proof并认可推导。非新外审。本轮未运行旧LP、BI、MILP或数学审计程序；native binding/edge-check另由Boss1复制后执行。",
+  "whole_result": "对每份m≥2完整纯SPE，E=mr−K≥0且每最大C/任意D满足m|D\\C|+|D∩C|≤K+(m−1)^2E；OPT≤(2−1/m)K+(m−1)^2E；两最大主题单向差≤(m−1)E，E0强制最大主题后的真实尾同覆盖。又W≥K，E≤K/[m(m−1)^2]时2W≥OPT，K0不取比。",
+  "endpoint_pins": {
+    "B6-ROOT-NEAR-SATURATION-v1": "1d15a68fab01de46f1ceb2bc96f442daf14a4065211d0c08b29bbd472a926554",
+    "customer-attraction/all-m-nearly-saturated-root-rigidity": "fc9ad23fad83f04e23c4107d85f10995212c12864bead15c364e70ddec390469"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/任意人数近饱和根主题刚性--引理.md": "87ab5e0608333ea8bc7cc83ce81832a7571092a01109c01baf7f744cf42fbd61",
+    "archives/customer-attraction/state/推论/最大主题根近饱和的覆盖阈值--推论.md": "8c205982d0718e9117220df227d79f24553417a5a71c46111caed7debfc256eb",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+  },
+  "review_digest": "efcc6b3e90b22e53a156eb2b2c7111e4ac06af70e45d61e1cfe22fc187225406"
+}

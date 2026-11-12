@@ -1,0 +1,50 @@
+{
+  "edge_id": "cag-sc20-capacity-protection-pays-old-periphery-step",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/capacity-slack-independent-reserve-protection"
+  ],
+  "target_ids": [
+    "customer-attraction/common-core-uniform-periphery-arbitrary-player-hub-relay-exclusion"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "目标共核目录的全部结构条件：真实r≥2、偶k≥r、M=3C(k,k/2)，外围P_a有M/2核心与M/3专有私客；所有hub覆盖全核心且避开全部外围私块。当前前缀已至少一个hub；排旧外围这一步允许过去外围重复，不使用H-cap。源conditional表示其明列储备假设，不是新开放前提。",
+  "roles": {
+    "customer-attraction/capacity-slack-independent-reserve-protection": "在真实孩子封闭节点域、d=1和q≥n下，给收益≥H且无人再触旧私块。",
+    "customer-attraction/common-core-uniform-periphery-arbitrary-player-hub-relay-exclusion": "接收hub证明的先行排旧外围步骤；完整排hub另需后续核心差分。"
+  },
+  "explanation": "将k个外围私有块作两两不交储备。hub不耗任何储备，外围只耗自己的一个，故d=1；每个fresh私块的P_a合法且不碰别的储备。若其私块未再被触，当前最终利润至少H=M/3+M/(2r)，核心M/2客户至多由r人均分。已触私块a有过去外围次数c_a≥1、旧hub次数j≥1，重选P_a即时全收益≤M/[2(j+c_a+1)]+(M/3)/(c_a+1)≤M/3<H。状态域取全部包含该旧hub前缀的合法后继，条件一直成立；已走h步最多使用h个外围，所以q≥k−h≥r−h=n。源引理因此逐真实偏离孩子与规定孩子给每名未来收益至少H且不能重选旧外围。全程允许未来hub，故没有循环先假定无hub。",
+  "scope": "目标全定理的排旧外围贡献；conditional仅对应登记源的条件定理地位，全部储备假设已在目标目录中明确核验，没有新增数学open义务。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/定理/共核均匀外围目录的任意人数枢纽中继阻断--定理.md",
+      "sha256": "7e10d5449b900d786fbbd4916fc81bf7f02b7a23ef5a3dedadbc999303cb5dbe"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/有容量余量的独立储备保护--引理.md",
+      "sha256": "b6fa26987829881bbbfa830bf38710fc6cdc80634fb2776e4944633cff36fbb0"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/nonuniform-reserve-and-common-hub-primary/original/protected_reserves_and_common_hubs.md",
+      "sha256": "cbd221e94505bf4402fab0b48699bcf30c0a2cec2b6f7338ae7e5aaf96c5b5fc"
+    }
+  ],
+  "reviewed_by": "Boss1/SC-RESERVE-20",
+  "review_note": "Fresh正式worker实读当前任务端点登记、指定正文及精确证据后逐式核对；仅静态代数与已证明的条件归约，不重跑原成熟IC/BI/LP。该关系不把开放付款义务升级为已证。最终绑定由Boss串行完成。",
+  "contribution": {
+    "result": "在目标共核目录任意已有hub的前缀后，即使过去外围有重复，每份完整子SPE的全部后继均不再选择其行动前已用外围，并且各未来利润≥M/3+M/(2r)。",
+    "remaining": "目标整条“全部后继fresh外围”还需排hub：选在hub分支未来s个外围之外的比较a，分别沿两个真实孩子；对等重核心用超几何d_j<a_r，再与H-cap合并严格排hub。这些另有目标正文的完整解析证明，不由容量引理这一步单独得到；本边不证明首hub前外围互异或根付款。"
+  },
+  "endpoint_pins": {
+    "customer-attraction/capacity-slack-independent-reserve-protection": "9f0a30f4184df64e51e7b0851f8ea93952e503017bdf5f6a00c215b397641b81",
+    "customer-attraction/common-core-uniform-periphery-arbitrary-player-hub-relay-exclusion": "e5984d8b94c1393ffa9a2af97c948d95bc9b8a95acf69a30876f846845ca11a3"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/定理/共核均匀外围目录的任意人数枢纽中继阻断--定理.md": "7e10d5449b900d786fbbd4916fc81bf7f02b7a23ef5a3dedadbc999303cb5dbe",
+    "archives/customer-attraction/state/引理/有容量余量的独立储备保护--引理.md": "b6fa26987829881bbbfa830bf38710fc6cdc80634fb2776e4944633cff36fbb0",
+    "archives/customer-attraction/tools/evidence/nonuniform-reserve-and-common-hub-primary/original/protected_reserves_and_common_hubs.md": "cbd221e94505bf4402fab0b48699bcf30c0a2cec2b6f7338ae7e5aaf96c5b5fc"
+  },
+  "review_digest": "38ce9782c5e0569d8fb76a75aa4bbf9cae572233b783b49b9b0ebcdbdd391b9f"
+}
