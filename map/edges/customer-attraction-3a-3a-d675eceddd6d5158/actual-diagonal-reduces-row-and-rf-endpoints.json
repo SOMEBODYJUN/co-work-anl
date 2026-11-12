@@ -1,0 +1,56 @@
+{
+  "edge_id": "cag-d675-actual-diagonal-reduces-row-and-rf-endpoints",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-801eb0ca84914c859864cd3827b32d23"
+  ],
+  "target_ids": [
+    "R-3b9429e7635a48208e072c8f1597126a/child_query/general_query_row",
+    "M-32971102341a46ad8cfeb53574021668"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、有限非空共同标签目录及任意覆盖映射、单位提供者；保空主题、同覆盖异标签、重复索引和任意离轨弱平局；强制后沿同一完整有序历史策略完成。 固定可由完整child-SPE实现的actual叶z、actual动作A及收益t；d_T≥0整数且Σd_T=m。",
+  "roles": {
+    "M-801eb0ca84914c859864cd3827b32d23": "互不交即时孩子可独立贴可信尾，actual孩子保持指定叶。",
+    "R-3b9429e7635a48208e072c8f1597126a/child_query/general_query_row": "在局部父IC可支持端点域中的精确最小行。",
+    "M-32971102341a46ad8cfeb53574021668": "在全部可行actual端点域中的精确最小行。"
+  },
+  "explanation": "每个T≠A孩子的最低当前收益ell_T可独立实现；A查询必须到规定z、收益t。因此最低行恰d_A t+Σ_(T≠A)d_T ell_T=Σd_Tell_T+d_A(t−ell_A)。RF比较W(z)+该式≥O的全部可行actual端点；要求父局部SPE时再限t≥max_Tell_T，给ROW的对应局部端点问题。非负权和重复出现重数保留。局部充分拼合并未证明祖先根可达每个端点，故本边不把局部域自动等同所有实际根可达域。",
+  "scope": "两个开放行目标的精确单节点端点消元；本边不证明其普遍非负。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/R-3b942一般查询行共同付款缺口--障碍.md",
+      "sha256": "4c3a1cd74cd4e3bffae8c222b39acd84e932fbe0f9f118189c135b092c770b5f",
+      "section": "端点消元的准确形式"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/给定终局的完整SPE真实查询最小值递推--引理.md",
+      "sha256": "8e8b1ff54e112a36cb245d28c559874c529d5440a2b20f7011e97322ec4511be",
+      "section": "一行真实查询的精确最小额"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-d675eceddd6d5158/math-review.md",
+      "sha256": "5b3cb241de0c8c74d0c13f236d8a0d7a5a25375a0422ec3370bee21d58b762bd",
+      "section": "ROW：更宽域、对角端点与同一份余额"
+    }
+  ],
+  "reviewed_by": "Boss2/PADDING-QUERY-TRANSFER",
+  "review_note": "逐项实读当前登记、完整承重正文及准确来源证据；核模型、全部有序历史、同σ真实后继、弱平局、联合前提与目标作用范围。本轮未运行成熟LP、BI或大系数矩阵。",
+  "contribution": {
+    "result": "ROW和RF-ROW的固定actual叶最小查询行均必须保d_A(t−ell_A)对角修正；RF用全部可行端点，父局部SPE子域另有t≥max_Tell_T。",
+    "remaining": "仍须证明相应端点域内W(z)+d_A t+Σ_(T≠A)d_Tell_T≥O；ROW若作根可达性等价还须保实际祖先可达域。没有用较弱的删对角负值制造反例。"
+  },
+  "endpoint_pins": {
+    "M-32971102341a46ad8cfeb53574021668": "1dbfa32621bf95af3a5a051a519d9acd971d597986a60f5f6e891ccb5706d756",
+    "M-801eb0ca84914c859864cd3827b32d23": "609f93d2ea053c642ad0e39b400dbe67dc8ab3dc643a0ec33bfb245d0982b885",
+    "R-3b9429e7635a48208e072c8f1597126a/child_query/general_query_row": "4730dfee64aeeb8b1ee6e44092cfd2328963b661cff67617fe1e6807250f8bb0"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/R-3b942一般查询行共同付款缺口--障碍.md": "4c3a1cd74cd4e3bffae8c222b39acd84e932fbe0f9f118189c135b092c770b5f",
+    "archives/customer-attraction/state/引理/给定终局的完整SPE真实查询最小值递推--引理.md": "8e8b1ff54e112a36cb245d28c559874c529d5440a2b20f7011e97322ec4511be",
+    "map/edges/customer-attraction-3a-3a-d675eceddd6d5158/math-review.md": "5b3cb241de0c8c74d0c13f236d8a0d7a5a25375a0422ec3370bee21d58b762bd"
+  },
+  "review_digest": "cecec6fca584aa79f3bbe22a9d15a380c11288a8fbdf636ba1b89a2ba56d6308"
+}

@@ -1,0 +1,51 @@
+{
+  "edge_id": "cag-d588-two-player-tax-supplies-spectral-pair-rows",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-TWO-REMAINING-TAX"
+  ],
+  "target_ids": [
+    "customer-attraction/five-player-maximum-root-overlap-spectra"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一五人完整SPE真实最大根叶(M,B2,B3,B4,B5)，固定真实末两人历史(M,B2,B3)及背景p；最优五索引按槽保重复。",
+  "roles": {
+    "CA-TWO-REMAINING-TAX": "在这个合法固定历史，统一上界任意两个比较主题的剩余两人利润。",
+    "customer-attraction/five-player-maximum-root-overlap-spectra": "接收P与Q_pair两条准确非负承重行，随后与其它真实行和192型余项组合。"
+  },
+  "explanation": "所得结论仅为局部贡献：T2在背景p、实际(B4,B5)给R_p(T_i,T_j)≤H，H=v4+v5+Σ_(x∈B4)1/((p+1)(p+2))。对十个i<j求和，重数d客户的一次覆盖对有d(5−d)、两次覆盖对有binom(d,2)，每个双覆盖对 pooled份额2/(p+2)，故Q_pair=10H−Σ[d(5−d)/(p+1)+d(d−1)/(p+2)]≥0。对每个d>0客户任选一覆盖索引，包含它的四对各贡献至少1/(p+1)，因双覆盖时2/(p+2)≥1/(p+1)。于是(5/2)H≥Σ_(d>0)1/(p+1)；加并集外非负p/(p+1)得到P=(5/2)H+Σ_all p/(p+1)−O≥0。十对共享同一真实历史及H，没有跨分支合并预算。",
+  "contribution": {
+    "result": "在真实末两人历史完整证明目标所用P≥0与Q_pair≥0及准确d(5−d)、d(d−1)系数。",
+    "remaining": "目标整个原句的四谱及四条D/S2矩行，仍须根IC、共同K的CAP、真正第三位floor、真末位五查询、指定非负乘子及全部192型精确余项；这些在目标正文另证，未由T2单独推出。old谱的P/Q乘子为零。"
+  },
+  "scope": "四谱承重行的无条件局部推导；不把本局部边称为整四谱或half证明。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/固定背景两人税界--引理.md",
+      "sha256": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/五人最大主题根分支交叠谱界--引理.md",
+      "sha256": "c74900a7a6b354e5e97a9d9ff5dfe99e3f205a2295e33c6f29ff99af7d8e82c6"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-d58827fb2a79c8e2/potential-security-scope-proof.md",
+      "sha256": "eeef21b7c1e439d89b54c713874188cae8d75f197e53cc9e9582163dd9ecb887",
+      "section": "两人税在四谱中的准确贡献"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "完整读T2的三个真实比较与两个交叠余项、固定背景税定义，以及四谱的完整陈述/乘子/192域。逐项重核十索引对与并集放大，目标只收局部贡献，故accepted而非候选或未证整结果。",
+  "endpoint_pins": {
+    "CA-TWO-REMAINING-TAX": "eb63a8d1cd934879f5f7f25f633b4bf753973f405a7b8db91bed63f633de7d15",
+    "customer-attraction/five-player-maximum-root-overlap-spectra": "d29c683becfcfb0690689121fb2c405142509987f229641ef2b889a55f774bf3"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/固定背景两人税界--引理.md": "7d1c4b0fb173cc539637300237d5050d241a85375e22fe807e3dbbfce424f07a",
+    "archives/customer-attraction/state/引理/五人最大主题根分支交叠谱界--引理.md": "c74900a7a6b354e5e97a9d9ff5dfe99e3f205a2295e33c6f29ff99af7d8e82c6",
+    "map/edges/customer-attraction-3a-3a-d58827fb2a79c8e2/potential-security-scope-proof.md": "eeef21b7c1e439d89b54c713874188cae8d75f197e53cc9e9582163dd9ecb887"
+  },
+  "review_digest": "998f6eb373cb76ab03e9f604a3b4fd106e3b0c81329f870b51605d93979dc0aa"
+}

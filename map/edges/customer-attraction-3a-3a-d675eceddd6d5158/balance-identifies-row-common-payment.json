@@ -1,0 +1,47 @@
+{
+  "edge_id": "cag-d675-balance-identifies-row-common-payment",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-22121f3f6dcb4ddd8952357a3ecff736"
+  ],
+  "target_ids": [
+    "R-3b9429e7635a48208e072c8f1597126a/child_query/general_query_row"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户、有限非空共同标签目录及任意覆盖映射、单位提供者；保空主题、同覆盖异标签、重复索引和任意离轨弱平局；强制后沿同一完整有序历史策略完成。 固定同一真实查询行，比较C、actual U，每遗漏客户选一个比较owner。",
+  "roles": {
+    "M-22121f3f6dcb4ddd8952357a3ecff736": "逐客户完整份额恒等式，保实际比较外信用。",
+    "R-3b9429e7635a48208e072c8f1597126a/child_query/general_query_row": "把尚缺共同付款定位为一条精确不等式。"
+  },
+  "explanation": "M=C\\U无actual前缀覆盖，指定owner份额1/(1+c)=1−c/(1+c)。把其它owner命中和C∩U的所有完整分母份额计E，actual比较外客户计B=U\\C，逐客户消去交集即Σq−(O−W)=|B|+E−L。因此同一行成立当且仅当L≤|B|+E，任意owner均可但L/E必须一起重算。此代数不需当前父IC；互斥孩子未来利润不能各自向W再取一份。",
+  "scope": "ROW在同一输入/真实查询行上的精确余量归约，不闭合一般支付。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/R-3b942一般查询行共同付款缺口--障碍.md",
+      "sha256": "4c3a1cd74cd4e3bffae8c222b39acd84e932fbe0f9f118189c135b092c770b5f",
+      "section": "查询行的精确余额恒等式"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-d675eceddd6d5158/math-review.md",
+      "sha256": "5b3cb241de0c8c74d0c13f236d8a0d7a5a25375a0422ec3370bee21d58b762bd",
+      "section": "ROW：更宽域、对角端点与同一份余额"
+    }
+  ],
+  "reviewed_by": "Boss2/PADDING-QUERY-TRANSFER",
+  "review_note": "逐项实读当前登记、完整承重正文及准确来源证据；核模型、全部有序历史、同σ真实后继、弱平局、联合前提与目标作用范围。本轮未运行成熟LP、BI或大系数矩阵。",
+  "contribution": {
+    "result": "对每一条完整SPE ROW行，精确缺口Σ_jq(T_j)−(O−W)=|U\\C|+E−L；故该行与L≤|U\\C|+E等价。",
+    "remaining": "须对所有原目录、完整σ、有序位置和比较m元组证明同一跨孩子L可由|U\\C|+E共同支付；源恒等式、原有限正gap和当前五人half均不单独给这个全称预算。"
+  },
+  "endpoint_pins": {
+    "M-22121f3f6dcb4ddd8952357a3ecff736": "9d24d69777de2481d66e8e375b022fb4ebb49299d94242b77a4f74af269e8984",
+    "R-3b9429e7635a48208e072c8f1597126a/child_query/general_query_row": "4730dfee64aeeb8b1ee6e44092cfd2328963b661cff67617fe1e6807250f8bb0"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/R-3b942一般查询行共同付款缺口--障碍.md": "4c3a1cd74cd4e3bffae8c222b39acd84e932fbe0f9f118189c135b092c770b5f",
+    "map/edges/customer-attraction-3a-3a-d675eceddd6d5158/math-review.md": "5b3cb241de0c8c74d0c13f236d8a0d7a5a25375a0422ec3370bee21d58b762bd"
+  },
+  "review_digest": "cf424c23eb2a4ce6fbf5f991f3b7d50d0c3dd788e26d9e795fd7230de3043a3f"
+}
