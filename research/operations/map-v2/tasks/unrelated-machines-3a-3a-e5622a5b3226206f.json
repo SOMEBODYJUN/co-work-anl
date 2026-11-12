@@ -87,12 +87,91 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss2",
-  "request_id": "ec31269b6ad0450d8b09cd880418cfcd",
+  "request_id": "865648d104b6401ab2f485216dfe3fc7",
   "requests": {
     "81a0648c3de14140a1ae6370812f33c4": "plan",
     "a9300f0d7e6949ac9b8717ea2b490ea3": "claim",
-    "ec31269b6ad0450d8b09cd880418cfcd": "read-add"
+    "ec31269b6ad0450d8b09cd880418cfcd": "read-add",
+    "865648d104b6401ab2f485216dfe3fc7": "done"
+  },
+  "edge_paths": {
+    "um-46f9088d-gap-and-approximate-threshold-yield-estimation": "map/edges/unrelated-machines-3a-3a-46f9088da65c727f/gap-and-approximate-threshold-yield-estimation.json"
+  },
+  "receipt": {
+    "coverage": {
+      "M-28ae04c28f0e43369c5ec1bb68e63bf2": {
+        "state": "linked",
+        "object_pin": "c7bdbc188ec3052b70fa2e6b3f68155a2355f1022f15952337fcbc883ebceeb1",
+        "comparison_scope": "完整比较核心估值对象M-28ae04c28f0e43369c5ec1bb68e63bf2 v2与read-added配置间隙对象M-6e6de497c2034ca99d68b4ff3d548a0d v2。实读资源正文全文（模型/配置LP、真实输出合同、两尺寸与一般尺寸证明、比较边界），并按PDF阅读流程实读冻结Svensson作者稿全部22页：Theorem1.1、Section2、Theorem3.1及其阻塞/摊还/终止证明、Theorem4.1、Definitions4.2–4.5、Algorithm2、Claims4.7–4.8、Lemmas4.6/4.9、结论与参考文献；另外渲染核对p.1/3/11/20。完整实读既有canonical估值边并核当前两端pins及全部证据SHA；不把canonical旧收据中其它比较纳入本轮阅读成果。",
+        "reason": "复用已接受的conditional whole边，精确覆盖核心的每固定η>0多项式数值估计合同。整数调度给T_conf≤OPT；源间隙给OPT≤(33/17)T_conf。显式要求每固定有理ε>0的多项式后端返回T_conf≤T̂≤(1+ε)T_conf，选0<ε≤17η/33并输出E=(33/17)T̂，则OPT≤E≤(33/17+η)OPT。本次没有独立支付Section2外引的近似LP后端，故关系维持conditional；这不影响条件蕴含整条成立。空任务/可行的全零尺寸返回0，无合法端的作业属于不可行输入。输出E不含assignment，局部搜索至多3|M|阻塞点与有限字典序签名只给有限终止，均不支付多项式实际调度。",
+        "edge_ids": [
+          "um-46f9088d-gap-and-approximate-threshold-yield-estimation"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-46f9088da65c727f/gap-and-approximate-threshold-yield-estimation.json",
+        "sha256": "6c73a9bbe9ec6ff01bbe1891a836a0dce99cb70e9b2f94f012bcf9f817fe4210"
+      }
+    ],
+    "comparison_dispositions": [
+      {
+        "core_id": "M-28ae04c28f0e43369c5ec1bb68e63bf2",
+        "peer_id": "M-6e6de497c2034ca99d68b4ff3d548a0d",
+        "question": "公共尺寸受限指派配置LP的33/17间隙，在什么近似阈值输出合同下，推出每固定η>0的多项式value estimate；该合同与实际构造schedule有何差别？",
+        "disposition": "resolved-by-reused-conditional-whole-edge",
+        "edge_ids": [
+          "um-46f9088d-gap-and-approximate-threshold-yield-estimation"
+        ],
+        "result": "在固定精度近似配置阈值后端条件下，存在由η决定的算法A_η；对每个有限有理编码、p_j≥0且每作业Γ(j)非空的受限指派实例I，以输入长度的多项式时间输出一个数E_η(I)，满足OPT(I)≤E_η(I)≤(33/17+η)OPT(I)。多项式可依赖固定η；本轮不声称对作为输入的η或1/η具有统一多项式界。",
+        "proof_steps": [
+          "每台机器的整数作业集就是一个可用配置；把相应配置变量设1（其余0）得C-LP可行，故T_conf≤OPT。保持每作业公共尺寸p_j，仅资格集随机器变化；不改成一般有限p_ij。",
+          "Theorem4.1通过R=16/17的局部搜索、无潜在移动时的对偶负目标证书及有限终止，给任意正可行阈值T下整数调度存在且负载≤(33/17)T，因此OPT≤(33/17)T_conf。",
+          "对给定固定η>0选固定有理0<ε≤17η/33。附加后端须在每个该ε下多项式返回双侧夹逼T_conf≤T̂≤(1+ε)T_conf；“近似求LP”这个名称本身不能省略夹逼方向和复杂度。",
+          "输出E=(33/17)T̂。下侧OPT≤(33/17)T_conf≤E；上侧E≤(33/17)(1+ε)T_conf≤(33/17+η)OPT。固定精度后端及一次有理乘法支付数值算法的时间，算法无需执行局部搜索。",
+          "先处置不可行资格集；在可行输入内，空任务或全零尺寸直接输出0，正最优值情形再作归一化与相对误差推导。"
+        ],
+        "backend_status": "Svensson PDF p.2–4/11将任意精度配置LP求解外引到Bansal–Sviridenko[3]；p.4把对偶分离写成逐机器背包，并用[3]的尺寸舍入解释近似求解。本次未取得并独立证明该外部后端，所以精确双侧阈值合同仍是显式附加条件，不能从背包分离或有限签名直接删去它。条件论证已完整，不应降成proposed，也不应升成unconditional。",
+        "output_boundary": "E是最优值的数值估计及可行调度存在上界，未输出σ:J→M。实际输出同因子schedule还需被证明为多项式的舍入/构造步骤；Algorithm2及Lemma4.9只证明有限状态字典序下降，至多3|M| blocker不控制签名数量为多项式。当前source并未证明这种多项式构造，也未证明它不可能。",
+        "other_boundaries": "Theorem3.1的两尺寸{δ,1}、5/3+δ是独立参数命题；δ是尺寸参数，η是固定估值精度。仅因常数相近不能代替一般33/17间隙，也不能接到依赖私有菜单树/叶单射的5/3对象。AFS max-min启发、一般异速p_ij和其它文献/旧包的边均未在本轮被用作额外逻辑前提。",
+        "reuse_reason": "当前canonical边已完整包含同一源、目标、后端条件、量词、零值分支、whole_result和实际输出边界；本轮没有新独立推导或条件，故以原字节SHA共享复用，不制造重复边。",
+        "remaining_for_unconditional_rederivation": "如需在当前证据内独立重导无条件多项式估值，应另行实读并支付固定ε的近似配置LP阈值后端（包含误差方向、二分/舍入和位复杂度）；这不属于尚缺的代数步骤，也不代表文献Theorem1.1未宣称该算法。"
+      }
+    ],
+    "closed_overlaps": [],
+    "follow_up_tasks": [],
+    "reviewed_by": "Boss2",
+    "review_note": "本轮primary core已整读，并以read-added gap端完成精确输出合同比较；任务没有formal follow-up overlap，closed_overlaps保持空。既有canonical边accepted/conditional、whole不改字节。冻结PDF为22页arXiv:1011.1168v2，首页侧栏2011-03-21与内部2018-10-23并存，不混成另一版本；PDF元数据不用于更改版本身份。只检查所需文本、公式、当前字节SHA和常数，不重跑成熟计算。",
+    "reading_evidence": [
+      {
+        "path": "archives/unrelated-machines/state/资源/SantaClaus调度与受限指派配置界--资源.md",
+        "sha256": "fdd4fa895b3161204f7de75e2b4a29b07653838276e04a2105026fcf41bfe7c5",
+        "scope": "全文"
+      },
+      {
+        "path": "research/registration/evidence/boss6-0104/svensson-2011.pdf",
+        "sha256": "e80d2b787fd0d594361e3eaedc1272a418c02d81b5c1e1fa06a81a688fab43c3",
+        "scope": "全部22页经pdftotext -layout实读；p.1/3/11/20经pdftoppm渲染目视复核"
+      },
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-46f9088da65c727f/gap-and-approximate-threshold-yield-estimation.json",
+        "sha256": "6c73a9bbe9ec6ff01bbe1891a836a0dce99cb70e9b2f94f012bcf9f817fe4210",
+        "scope": "canonical JSON全文；本轮原字节复用"
+      }
+    ],
+    "root_final_review": {
+      "reviewed_by": "Boss2 root",
+      "mathematical_review": "Root完整实读当前两合同、Svensson资源全文、既有条件whole边与本新receipt的全部比较，独立核T_conf≤OPT≤(33/17)T_conf、固定ε≤17η/33的双侧输出、零值/不可行分支与固定精度位复杂度。外引近似阈值后端仍为条件，有限签名不支付多项式实际调度。PDF实读由本轮worker提供。",
+      "current_definition_pin": "61f01a49844cb34448a90baebb297c52cf2b95a80ab1f70f97f1bbb533fade2e",
+      "current_input_pins": {
+        "M-28ae04c28f0e43369c5ec1bb68e63bf2": "c7bdbc188ec3052b70fa2e6b3f68155a2355f1022f15952337fcbc883ebceeb1",
+        "M-6e6de497c2034ca99d68b4ff3d548a0d": "dcb9f97372bb14482a8183da2b85413e087620cdb0971e8b51dc3e80ac23c2be"
+      },
+      "native_checks": "All four accepted relations checked on current bytes; the single new whole edge was bound with --write first. Shared canonical bytes unchanged.",
+      "publication_state": "Mature local delivery; checkpoint pushed and native done remain to be performed."
+    }
   }
 }
