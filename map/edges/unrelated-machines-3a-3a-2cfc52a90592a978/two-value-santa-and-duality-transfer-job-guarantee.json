@@ -1,0 +1,56 @@
+{
+  "edge_id": "blmrs-two-value-santa-and-duality-transfer-seven-fourths-job",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-a3feff9f6a574834925528d0f9d9d658",
+    "M-e7c107d268344ca592782a71e1925647"
+  ],
+  "target_ids": [
+    "M-57aea6b6d55243269c09c9ba8f026e87"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一非空有限底集上的 restricted resource/job-matroid 模型：每项公共有限非负有理价值或尺寸、归一化单调整数值次模秩的 value oracle、每项输出原整数 polymatroid 的完整基；正价值/尺寸至多两种。假设源对象的两值 (4+eta) 多项式算法接口成立，沿其原 oracle/数值访问合同使用；对每个固定目标 epsilon>0 取固定正有理 eta<=min(1,16epsilon)。源一般值 (8+eta) 分支不用于本迁移，冻结 v1 的递归不交性断言不作为已证明前提。",
+  "roles": {
+    "M-a3feff9f6a574834925528d0f9d9d658": "提供待证的两值 resource-matroid Santa Claus (4+eta) 多项式算法接口 A_eta；本边只在该接口成立时使用它。",
+    "M-e7c107d268344ca592782a71e1925647": "提供 alpha>=2 时 Santa 算法到 job 算法的封顶、逐项对偶、同值聚合/原基分解及阈值搜索桥；使用其正向，不以双向桥自身证明 A_eta 存在。",
+    "M-57aea6b6d55243269c09c9ba8f026e87": "实际转移后的全输入条件保证：每个固定 epsilon>0 的两值 restricted job-matroid 原整数基调度，峰值至多 (7/4+epsilon)OPT。"
+  },
+  "explanation": "先独立处理零尺寸与零秩项，并按公共尺寸合并原秩；聚合整数基通过 polymatroid intersection 分解回所有原项，逐机器负载不变。对正猜测 makespan T 归一化为1，正秩项若 p_j>1 则拒绝；单正值情形用坐标封顶后总秩判断并直接构造。两正值时取 k_j=floor(1/p_j)，将 P_j 封顶为 P'_j={x in P_j:x(i)<=k_j}；若总秩降低则拒绝。任何峰值<=1的原基调度都保留，故可行猜测不会被拒绝。对 P'_j 取相对于 k_j 1_E 的对偶，秩为 g_j(S)=k_j|S|+f'_j(E\\S)-f'_j(E)。设 C=k_1p_1+k_2p_2、t=C-1。因每个 1/2<k_jp_j<=1，得0<t<=1；原调度补向量是两个对偶资源的基，逐玩家值至少t。假设 A_eta 成立，以 alpha=4+eta 调用它，输出对偶原基且最小值至少t/alpha。补回得到 P'_j 的整数基；封顶前后总秩相同使其也是 P_j 的原基。每机负载<=C-t/alpha=1+(1-1/alpha)t<=2-1/alpha。恢复T，以所有原负载的公共有理网格做阈值二分：验证原基及峰值<=beta T才判成功，可行猜测必成功，所以失败下界严格小于OPT；相邻网格时成功上界<=OPT，不需要假设成功集合单调。最终分解回每个原作业。参数恒等式 beta=2-1/(4+eta)=7/4+eta/(16+4eta)<7/4+eta/16<=7/4+epsilon 完成全部目标。每固定epsilon使用固定eta，保原访问合同，不扩大为FPTAS或任意二进制巨大重数下的新整体位复杂度定理。外层可达反例只切断冻结搜索的 Lemma30 输入不交性步骤；它既不推翻此代数/解码桥，也不证明不存在其他满足 A_eta 的算法。",
+  "whole_result": "若两值 restricted resource-matroid Santa Claus 的每固定 eta>0 之 (4+eta) 多项式算法接口成立，则对每个固定 epsilon>0，所有有限非负有理公共尺寸、正尺寸至多两值、原整数 polymatroid 秩 value-oracle 的 job-matroid 输入，都能在同一访问合同下多项式输出每个原作业的完整整数基，makespan<=(7/4+epsilon)OPT；零项正确处理，允许原整数重数。方向为源两值算法加双向桥的 Santa→job 分支共同推出目标条件保证。",
+  "scope": "完整覆盖 M-57aea6b6d55243269c09c9ba8f026e87 v3 的条件算法命题。未证明源 A_eta；未迁移到机器依赖尺寸的普通 unrelated 模型、machine-matroid、任意多值或精度作为输入的统一多项式时间。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/算法/两值作业拟阵的四分之七加误差条件近似--算法.md",
+      "sha256": "0bd9496cdd2bf67b32d74e2f29468de53e0f57e3f53866ed5dbfac4c1fc3593e"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
+      "sha256": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
+      "section": "3. 两值资源/作业拟阵双向归约"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
+      "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+    },
+    {
+      "path": "archives/unrelated-machines/state/反例/BLMRS规范搜索的外层可达递归重叠--反例.md",
+      "sha256": "c8c04a17f37b603201f8c265e57a051b934e9a43964fe7e380e65418414ad9fa"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "本轮父Boss完整实读目标正文、当前源对象/桥、严格槽舍入和已有条件证书正文，以及外层可达q>=16反例；重新导出冻结PDF并逐项核Definition7/8、Proposition9及AppendixA、Theorem3/Lemma15、AppendixD Lemma16与§4执行公式。独立核聚合/回译、封顶总秩、基对偶、0<t<=1、非单调成功谓词下的网格二分和eta精度。只承认完整条件迁移，源算法open和精确反例范围保持。",
+  "endpoint_pins": {
+    "M-57aea6b6d55243269c09c9ba8f026e87": "8c7897d87832ab065a982d50e7fec8d2f4eee5c63eaa8c7591d28d880242c4f3",
+    "M-a3feff9f6a574834925528d0f9d9d658": "a75b5c172facac3d19078ee9bcb0d06f3642a8256d5f7aa8196f7553ded5df01",
+    "M-e7c107d268344ca592782a71e1925647": "b07db459d993b150fd8a8d01c8cf01f689bde95a9689321d4c79bd9026d8881f"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/算法/两值作业拟阵的四分之七加误差条件近似--算法.md": "0bd9496cdd2bf67b32d74e2f29468de53e0f57e3f53866ed5dbfac4c1fc3593e",
+    "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
+    "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183",
+    "archives/unrelated-machines/state/反例/BLMRS规范搜索的外层可达递归重叠--反例.md": "c8c04a17f37b603201f8c265e57a051b934e9a43964fe7e380e65418414ad9fa"
+  },
+  "review_digest": "262832a992cb634a7bffa6d5c0c1013edd29d2011ec5a1cc83179828f7c47524"
+}
