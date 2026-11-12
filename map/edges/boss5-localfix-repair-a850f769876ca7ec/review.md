@@ -1,4 +1,4 @@
-# MinRep 应用参数边：当前源 v3 的定向修复
+# MinRep 应用参数边：当前源 v4 的定向复核
 
 ## 本次实际得到的数学句子
 
@@ -11,12 +11,14 @@
 本包完整读三条当前登记合同：
 
 - M-8c360a7779154480879e38c65d1f827e v1：有意义域 0<γ<1、非空正则全投影源上的保 N 稀疏化。
-- M-9a7614916cf04cee8915aefce74b502a v3：固定 ε、τ 后取充分大 R 的 MZ 主定理，以及 Theorem7.2 的显式双正规接口。
+- M-9a7614916cf04cee8915aefce74b502a v4：固定 ε、τ 后取充分大 R 的 MZ 主定理，以及 Theorem7.2 的显式双正规接口。
 - M-fb633f3a6f1448fbbd63bfc7c3806c40 v1：§7.4 参数缺口与给定联合正规源后的定向修复。
 
-两份当前正文的 SHA 分别是 `187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217` 与 `6d5be138de6825a1208776cbb485316c5b0e9d197870e32ab7c1d8ca5cf2f746`。旧边所指 PCP 正文 SHA 是 `0e1f9f27706ce17087037ef05c6265d8f3d2e6ede5801cdbe87b559c4ff9f2ac`，须刷新到当前 v3。新增修正位于当前 PCP 正文§3.2：Claim3.2 的 advice 事件和重复分组。这不改变本包以实际联合源为条件的稀疏化计算，但必须在源版本复核中交代。
+两份当前正文的 SHA 分别是 `187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217` 与 `d0273adacbf4ccbb9d6cd954cdfd44dddb5f8a8e969067107f63c77bdaaf4b78`。旧本包所绑 MZ v3 正文 SHA 为 `6d5be138de6825a1208776cbb485316c5b0e9d197870e32ab7c1d8ca5cf2f746`；当前源的 registration_pin 为 `12f2b0b849e6a0e259a911875357e454172c3f94fd8c1ceea54deb6526c25b84`。v4 仅撤回印18页分组次数“倒置”的抽取误读：原式为正确商数 `k/ceil(q^r/β)`。事件句概率修正和一般非整除时的 floor 补全仍保留。本页下文还说明实际 q=2 清分母格点本来整除，不能把一般补全误称为此构造仍有缺口。
 
-本次只替代 boss1-pcp-source-erratum-repair-20b44981f12275fe 的那一个旧资产。沿用数学边 ID `um-129516aa-minrep-source-and-sparsification-pay-conditional-parameter-repair`，把完整关系保存到本任务新路径；不改旧任务、旧回执或他人的联合源资产。
+2026-11-12 本轮完整实读当前三条对象记录、两份中文正文、旧任务/收据/边/review/reading-ledger，以及已 done 的联合源 repair 定义/收据、当前 canonical ALL 边与完整 `joint-source-proof.md`。重新导出并全文读冻结 MZ 印18、59、60、61和 Manurangsi 印4；这五页均逐图核对。下面的稀疏化完整论证以实读当前成熟正文§3–4.5复用；Theorem2.6、Lemma6.1内层及§7.3细部按当前成熟证明接口继承，不冒称本轮新读或重证相应全部 PDF 页。旧2026-11-11作者的印2、3、15、18、19、52、54、59、60、61等阅读范围保存在 ledger 的 historical_reading 中，不能算成本轮新阅读。
+
+本轮任务 `boss5-mz-visual-repair-3c1fe8fa00844a15` 只替代 `boss5-localfix-repair-a850f769876ca7ec` 的三项资产。数学边 ID 继续为 `um-129516aa-minrep-source-and-sparsification-pay-conditional-parameter-repair`，新边写在本轮新路径；本页与 reading-ledger 在获准的原路径定向修正。旧边和旧回执不改写。
 
 ## 原应用行的精确失败范围
 
@@ -72,20 +74,28 @@ NO 成本严格>2gN。Γ<1、δ>0、字母表和图非空都已在条件中支�
 
 冻结印18页写出的事件“Ui=Vi，或Ui≠Vi且 advice 全零”的概率实际是 `1−β+βq^−r`。改成“advice 并非全零”才得到原显示的 `1−βq^−r`，其补事件正是可暴露的“Ui≠Vi且 advice 全零”。这一事件只取决于 β、q、r；不依赖原始 3LIN 完备误差 η。
 
-令 m=ceil(q^r/β)、Ψ=G_(β,r)^(⊗m)、t=floor(k/m)。完整 k 个坐标的成功必须蕴含前 mt 个坐标成功，所以 `val(G^(⊗k))≤val(Ψ^(⊗t))`，而不是原印的重复次数等式。Rao 上界给 `val(Ψ^(⊗t))≤2^−Ω(ε²t)`。本构造充分大 ℓ 时 k≥2m；因为 m≤2q^r/β，有 `t≥k/(2m)≥βk/(4q^r)`，仍得原 Claim 的 `2^−Ω(ε²q^−rβk)`。在§7.1固定 q=2、r 与 c 后，βk=q^(2cℓ/3)，所以 k≥2m 的 ℓ 阈值独立于 η；外层最终指数仍是 `2^−Ω((1−s)²q^(−r+2cℓ/3))`。
+令 m=ceil(q^r/β)、Ψ=G_(β,r)^(⊗m)。冻结印18页原末行是 `val(G^(⊗k))=val(Ψ^(⊗(k/m)))`，商数方向正确。抽取文本把分式线压平，旧审读据此诊断倒置应撤回。一般 m 不整除 k 时，令 t=floor(k/m)，完整 k 个坐标的成功必须蕴含前 mt 个坐标成功，所以 `val(G^(⊗k))≤val(Ψ^(⊗t))`。Rao 上界给 `val(Ψ^(⊗t))≤2^−Ω(ε²t)`；当 k≥2m 时，m≤2q^r/β 给 `t≥k/(2m)≥βk/(4q^r)`，仍得原 Claim 的 `2^−Ω(ε²q^−rβk)`。
+
+对已完成联合源证明采用的实际 q=2 格点，A=2(1+c)ℓ、B=2(1+2c/3)ℓ、r均为整数，k=2^A、β=2^−B，故 m=2^(r+B)。沿固定清分母步长取足够大ℓ，使 A−B−r=(2c/3)ℓ−r为非负整数，则 m|k，原商数等式本身成立。即使不用整除，βk/q^r=2^(−r+2cℓ/3)增长也可支付 k≥2m。两条论证的ℓ阈值都不依赖源完备误差η；事件句的独立修正保留，最终外层指数不变。本条件性稀疏化推导事实上只调用已经实现的源接口，不靠分组式额外承诺源的存在。
 
 显示 Theorems1.3/7.2 都先固定完备误差，再取充分大 R。本包没有从显示定理单独推出“任一预定 R 可事后任调 δ”。印15页 Theorem2.6 给 s<1 独立于 η，印52页§7.1用 η≤τ/k 调节 raw 源完备性；这说明具体构造内可调性有依据。上游§7.3还会出现 `2q^−((2−2c)ℓ)`、`q^−10ℓ` 及 `O(q^−5ℓ)` 等损失，必须在联合参数证明中支付，不能同本包的既得双正规源精确保值复制混为一步。
 
-## 已存在联合源证明与准确承接
+## 已闭合联合源与本条件接口的独立范围
 
-旧后续 `boss2-mz-joint-source-3b-7d327f911a777dc3` 已 done。完整读取其 `joint-source-proof.md`（SHA `7b9a3ae50171facbfae3ca3c8da07ab412d5deace26c46327bfd2e7ac0b283ad`）、边和回执，可见它已经给出联合源存在性的实质证明：q=2、ℓ固定清分母步长、Theorem2.6 的 s 独立 η、先定 Q/Δ 再选 η、Claims7.3/7.4 的事件/归一比率修正、Claim7.6后用已登记整数度舍入引理支付正规性。主路线不用 Lemma7.8 外部 expander 算法。其端口/额外统一复制 T/减号误差附核也保留在原资产中。本包不改动、不替代、不抹去该独有数学；没有把旧证明重做为自己的无条件边。
+`boss5-localfix-repair-e7d9cdd599e993a5` 当前已经 done，owner=Boss5，其 canonical 边为 `boss5-mz-joint-source-and-sparsification-close-minrep-parameters`，位于 `map/edges/boss5-localfix-repair-e7d9cdd599e993a5/joint-source-to-strict-minrep.json`。本轮完整实读该边、回执以及当前完整联合源证明 `map/edges/boss2-mz-joint-source-3b-7d327f911a777dc3/joint-source-proof.md`（SHA `59c4ade2f67ca482de8fb89e95c9fb5b2ad46469fb5a95c33edce1a42ba191fa`）。它用 q=2、固定ℓ清分母格点、Theorem2.6 的 s 独立η、好U条件化因子2、Claims7.3/7.4事件/归一比率修正和Claim7.6后的整数度舍入，已在同一正规源上支付Q、YES误差与NO值；主路线不需Lemma7.8外部expander算法。不能继续把这项联合源存在性说成未完成，也不再为此同题重复发 follow-up。
 
-当前源 v3 新增上述 Claim3.2 修正，所以该联合源边的旧源 pin/SHA 已过时，已发布定向修复 `boss5-localfix-repair-e7d9cdd599e993a5`。实读该任务完整定义，其 stage 为3B，三个 core 正是本包所涉三对象，另读正规化引理，当前 pins 齐全，comparison_question 明确要求固定目标 alphabet、同一源完备误差/NO、q=2离散步长和全部正规化损失；本地快照 state=claimed、owner=Boss5。当前版本承接指向这个现役 repair。旧结果“已证明过”与当前版本“待该 repair 完成重核”同时准确成立。
+该 canonical 边的三个 ALL 前提包含 MZ、稀疏化和 `PCP-EXACT-PROJECTION-PERFECT-COMPLETE-BIREGULAR-ROUNDING-v1`，relation_mode 为 unconditional；对任意先固定ε′>0、充分大固定g，它构造特定 Q(g)=O(g^(2+ε′)) 的源并得到严格随机gap。其实现使用整数预算Δ∈[d,d+2]，YES源误差≤1/(2Δ)，因此每seed度≤Δ=O(g ln g)。本页一般条件接口仍按登记目标的原实阈值d写；二者不得混成声称该特定实现恰有每seed度≤d。
 
-本包的条件性结论不依赖那个旧联合源资产现在是否重绑；因此不新增正规化引理端点。若以后把联合源证明作为本边前提来交付 unconditional 关系，必须把它实际调用的正规化命题纳入 ALL，不能只删 conditional 字样。本包无待解决身份冲突、无新依赖 read-add 请求。当前 task 无 status=follow-up 的 overlap 对，所以 closed_overlaps 留空；已核比较放 additional_comparisons。follow_up_tasks 仅列现役联合源 repair，不为同一问题重复发任务。
+本页条件定理则对**任意先固定可编码 g>1、R≥2**的已经联合实现的正规源成立，既得双正规源还可由本页完整copy-pairs证明精确保值地转成该输入。它不需要该正规源出自特定 q=2 网格，也不调用整数度桥；它保任意如此联合源的原实阈值d、正规化后N及全部列表量词。小R若不能满足NO承诺，只表示该条件分支无实例，不会产生无根据的源存在性。与 canonical 边相比，这个泛域条件接口和copy-pairs的精确桥有独立复用价值，量词域并不被“充分大g的特定Q(g)”全部覆盖，所以本轮保留两输入 accepted/conditional 边。两边不是把同一联合证明机械拆成OR支持，也不将canonical的正规化输入偷偷从ALL中删除。
+
+原收据的 follow_up_tasks 所列 e7d9 问题已由该 done 交付解决；本轮 follow_up_tasks 为空，在 comparison_dispositions 中记录此已解决路由。当前任务没有预先声明 status=follow-up 的 overlap 对，所以 closed_overlaps 仍为空。Lemma7.8外部expander、simple图或外部连通性费用模型均不在本泛域条件合同目标内，不凭一般阅读线索另造任务。
 
 ## 旧资产的逐项保全与交付边界
 
-旧任务唯一资产是 `map/edges/unrelated-machines-3a-3a-129516aa527e0e1f/source-and-sparsification-conditional-repair.json`，当前 SHA `fee131189c6475d80920ef00a74c2ff8c85bad2f3d360cb15e1775e8e0865c1b`。它由本任务新路径的同 ID 边与本完整 review 替代。旧独有内容全部保留：原 δ 行/严格 NO 两个问题、balanced regular copy-pairs 的正反值证明、typed alphabet 的保值延拓、N 重置、逐记录 sampling/heavy incidence、低度分支、全列表量词、两个 promise 各0.9、严格常数1.47456、d³R/d⁴对数账、显示量词与上游加法损失。修订只刷新当前来源、补明 Claim3.2 修正和准确承接状态，未删除上述数学。
+被替代任务是 `boss5-localfix-repair-a850f769876ca7ec`，其三项旧资产逐项处理：
 
-worker 只写独立 staging。没有运行 Git、队列、registry 写入、native edge-bind/check 或科学程序；绑定、复制后资产 SHA 回填和最终原生检查由 Root 串行完成。reading-ledger 只记录本轮实读，不把旧作者的全文阅读声明算作本轮阅读。
+1. 旧 `source-and-sparsification-conditional-repair.json`（SHA `53eaa72900ff29f21594683ae5e3083bed58fe245284560ecfb66d0f28ccf37e`）由本轮新目录同名边替代，沿用同一edge_id，刷新到MZ v4和准确证据；原δ/严格NO、copy-pairs、typed共同字母表、N、记录重数、全列表量词、各promise概率、严格常数1.47456、log³g及泛域联合源条件全部保留。原旧边不直接改写。
+2. 本 review 的旧 SHA `abee0092cb4df042428124533d5bda6447f1a7a5935ed80e73df673b6cf0abe5` 由同路径当前字节替代。独有完整数学照留，只纠正来源误诊、区分本轮与历史阅读，并把旧“claimed待续”路由改成已经done的联合源及两条关系的实际量词差别。
+3. `reading-ledger.json` 的旧 SHA `41616d0c503e223d5f1d2f74795e99d9fa9f06e324d87340492c6f0312f3bc7a` 由同路径当前ledger替代；原JSON完整放入 historical_reading，历史逐页阅读不会被冒记成本轮。新阅读和承重重算另列。
+
+本轮没有新科学程序运行、Git、队列或共享正文/registry写入。边在最终字节上原生绑定及 edge-check；收据记录精确资产SHA、完整目标覆盖及上述逐项替代。程序检查只核结构与绑定，数学结论由本页实证论证支持。

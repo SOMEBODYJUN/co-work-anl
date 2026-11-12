@@ -1,0 +1,72 @@
+{
+  "edge_id": "um-129516aa-minrep-source-and-sparsification-pay-conditional-parameter-repair",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-9a7614916cf04cee8915aefce74b502a",
+    "M-8c360a7779154480879e38c65d1f827e"
+  ],
+  "target_ids": [
+    "M-fb633f3a6f1448fbbd63bfc7c3806c40"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "对每个先固定且可编码的g>1、R≥2，均独立于SAT输入规模，考虑有限非空显式二部全投影源。应用时必须在同一联合选择中取得YES值≥1−δ及NO值≤γ₀=2^−11g^−2，其中Γ=5γ₀/4<1、d=10^6·2ln(2R)/sqrtΓ、0<δ≤1/d；还须把源显式变为共同非空全投影字母表大小R、正度数balanced regular约束多重图，N始终指此正规化后的总顶点数。平行约束按身份逐记录计度、采样和覆盖，MinRep为单位标签成本的列表总长度并覆盖全部记录。若还要求alphabet O(g^(2+ε′))，须在同一联合源中实现R=O(g^(2+ε′))。MZ显示定理先固定完备误差再取充分大R，本边不从其单独断言任一预定R可事后任改δ。概率针对每个固定输入的相应promise分别至少0.9；保留随机归约限定。实阈值按固定/可编码参数合同；若改用整数上取整预算，须按实际预算重取δ，而不静默沿用δ≤1/d。",
+  "roles": {
+    "M-9a7614916cf04cee8915aefce74b502a": "提供当前v4近完美projection-game的alphabet/soundness起点及Theorem7.2显式biregular接口。对已经联合实现所需gap的双正规源，完整copy-pairs证明和typed共同字母表延拓精确保值。v4撤回分组倒置误诊；事件修正、一般floor补全及q=2格点整除保持外层指数。泛域条件接口不从显示定理倒置量词，也不调用特定联合源构造的整数度桥。",
+    "M-8c360a7779154480879e38c65d1f827e": "提供已修复、有意义域0<γ<1、保正规化后N的稀疏化合同：度数预算对每个seed成立；YES成本≤(1+εΔ)N，NO以≥0.9概率同时排除全部便宜列表。本边代入ε=δ、Δ=d、γ=Γ，即YES≤(1+δd)N、NO>0.06N/sqrtΓ。",
+    "M-fb633f3a6f1448fbbd63bfc7c3806c40": "目标完整结论是§7.4原参数行的推导缺口及给定联合源接口后的定向修复，连同正规化和d³R对数因子的准确界限；不是否定PCP主定理，也不是无条件重证Theorem7.13。"
+  },
+  "explanation": "精确核对冻结PDF印60–61页：Lemma7.12的YES上界是(1+εd)N，Theorem7.13证明却设置δ=1/g、γ₀=R^{−(1−η)}=2^−11 g^−2后直接写≤2N。在此参数关系下R=Θ(g^{2/(1−η)})，d₀=10^6·2ln(2R)/sqrtγ₀=Θ(g ln g)，故δd₀=Θ(ln g)。该引理只给(1+Θ(ln g))N这一上界，不能由它推出2N；这定位的是原推导的缺口。原证明同一行使用 NO≤γ₀，而 Lemma7.12 的 NO 前提为严格小于所用阈值。\n\n明确正规化接口：若已实现的源是(d₁,d₂)-biregular，取每个左顶点d₁份、每个右顶点d₂份，并把每条原约束放到其两端全部copy pairs上。设 M 为原边记录数，两侧新顶点数各为 M，新规模 N=2M，各新顶点度 d₁d₂。每条原约束恰产生 d₁d₂ 条记录，平行约束逐条保留。复制旧赋值给val新≥val旧；反向独立均匀选每个原顶点的一份copy标签，期望满足率等于新赋值满足率，故val旧≥val新。这是PDF印59页Lemma7.9取c₁=c₂=1的值保持实现。N重置为此新图规模。稀疏化在 D≤d 时直出原图，在 D>d 时独立采样并一次 trimming；两支均按记录处理重数。heavy incidence 用记录度数，固定列表下尾的每个试验也是一条记录，列表计数与边端点是否重复无关。MZ Definition1.1的R是|Σ_L|+|Σ_R|，可取共同字母表Σ为两侧字母表的带类型不交并，Q=R；每条投影对合法左标签按原投影输出合法右标签，对其他输入先缩回固定合法左标签再投影。非法右标签从不见于像集，改成固定合法右标签不降低满足率；非法左标签缩回合法代表不改变任何边满足性，故val精确保留且投影全定义。这里不声称复制前后的MinRep成本相同，只在新N上应用稀疏化。\n\n在conditions所列同一个正规化源上，NO≤γ₀<Γ=(5/4)γ₀严格满足稀疏化的NO前提。用M-8c360a7779154480879e38c65d1f827e取ε=δ、γ=Γ、Δ=d，YES以至少0.9概率成本≤(1+δd)N≤2N；NO以至少0.9概率成本>0.06N/sqrtΓ。因Γ=5g^−2/8192，(.03/sqrtΓ/g)^2=.03²·8192/5=1.47456>1，故NO成本严格>2gN。NO好事件同时针对看过输出后的所有成本≤0.06N/sqrtΓ列表，不是仅每个预先固定列表的概率。YES与NO是两个不同promise，各自保0.9，不要求在同一实例同时满足两个互斥输入前提。每个seed最大度≤d。\n\n若取MZ alphabet指数η使1/(1−η)=1+ε′/2，并且联合源确能在R=Θ(g^{2/(1−η)})实现所需δ，则R=O(g^{2+ε′})，Γ=Θ(g^−2)给d=O(g ln g)。同一指数的直接代入给d³R=O(g^{5+ε′}ln³g)、d⁴=O(g⁴ln⁴g)；对充分大g，后一项的上界被前一项的上界吸收，故对适用 Theorem7.11 所述归约的输入，其 rooted-connectivity 参数式直接给 O(g^{5+ε′}ln³g)。仅凭这两项输入上界，不能删掉ln²g就宣称同一ε′下得到显示的O(g^{5+ε′}ln g)。最终带固定幂余量的hardness指数可预留较小ε′吸收对数，但这是另一次参数安排，不是原显示行的逐项算术。\n\n联合源条件确实有内容：显示Theorems1.3/7.2先固定误差再选充分大R，不能据此对任意预定R事后任调δ。当前v4正文及本轮冻结印18页视觉核对确认，原Claim3.2重复次数实际为正确商数k/ceil(q^r/β)，此前抽取文本造成的倒置误诊撤回。事件“Ui=Vi或Ui≠Vi且advice全零”的概率仍是1−β+βq^−r，应改为advice并非全零才得到无暴露概率1−βq^−r。一般m=ceil(q^r/β)不整除k时，用t=floor(k/m)及val(G^(⊗k))≤val((G^(⊗m))^(⊗t))；当k≥2m，m≤2q^r/β给t≥βk/(4q^r)，保持原外层指数。实际q=2清分母格点有k=2^A、β=2^−B、m=2^(r+B)，充分大ℓ使A−B−r=(2c/3)ℓ−r为非负整数，所以m|k，原商数等式本身成立。ℓ阈值独立于原始完备误差η；本边实际只用已经实现的源条件，不依赖此处额外承诺源存在性。\n\n原收据所列联合源follow-up boss5-localfix-repair-e7d9cdd599e993a5现已done；其canonical ALL边boss5-mz-joint-source-and-sparsification-close-minrep-parameters及完整joint-source-proof已在当前v4上闭合同一源。该关系对任意固定ε′>0、充分大固定g构造特定Q(g)=O(g^(2+ε′))，调用额外整数度舍入端点，并以整数预算Δ∈[d,d+2]给每seed度≤Δ。它解决了本包此前路由的特定联合存在性问题，但不覆盖本边对任意先固定可编码g>1、R≥2的所有已实现正规源的原实阈值条件合同。copy-pairs精确保值桥也可独立用于任意既得双正规源。因此本边保accepted/conditional的泛域关系，canonical的三输入ALL与本两输入条件关系不混同；本轮不重复发布同一特定联合源证明，无新follow-up。",
+  "whole_result": "原印参数行固定0<η<1并取γ₀=R^{−(1−η)}=2^−11g^−2，因此R=Θ(g^{2/(1−η)})、d₀=Θ(g ln g)，δ=1/g只由所引引理给YES上界(1+Θ(ln g))N，不能推出显示2N。定向修复为：对每个先固定的可编码g>1、R≥2，在已联合实现且已显式正规化为有限非空、共同全投影字母表大小R、正度数balanced regular约束多重图的同一源上，若YES值≥1−δ、NO值≤γ₀=2^−11g^−2，改用Γ=5γ₀/4、d=10^6·2ln(2R)/sqrtΓ和0<δ≤1/d，则保持正规化后N及字母表，每个seed最大记录度≤d；YES以≥0.9概率MinRep≤2N；NO以≥0.9概率全部成本≤0.06N/sqrtΓ的列表均不全覆盖，因此MinRep>0.06N/sqrtΓ>2gN，包含看过输出后选出的自适应列表。两项概率属于不同promise输入。对满足同一联合接口的参数族，若固定ε′>0且R=O(g^(2+ε′))，则d=O(g ln g)，同指数d³R直接上界为O(g^(5+ε′)ln³g)，d⁴为O(g⁴ln⁴g)。这是目标整条泛域条件性参数修复，包含既得双正规源copy-pairs精确保值与typed共同字母表接口。特定Q(g)上的联合源存在性已经由done的e7d9三输入ALL关系支付，本边不调用它，也不把其特定构造声称为任意预定R的存在性。",
+  "scope": "ALL迁移到M-fb633f3a6f1448fbbd63bfc7c3806c40的完整条件性参数审查。真实反驳对象只限原PDF印61页从δ=1/g及Lemma7.12推出2N的推理，以及同指数直接代入时漏掉的对数；不建立反驳Theorem1.3、Theorem7.13真值或任意不正规原N版本的边。源与输出MinRep均为单位标签成本、全边覆盖；不外推任意标签权重、partial-MinRep、UM或SPE。",
+  "evidence": [
+    {
+      "path": "map/edges/boss5-localfix-repair-a850f769876ca7ec/review.md",
+      "sha256": "c0272ffb880c15e332ba2f2d7c1c8109bd460630de85884750078b45f6c08da6"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md",
+      "sha256": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217",
+      "section": "7.2 Minzer–Zheng 后续：显示定理、参数缺口分开"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md",
+      "sha256": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217",
+      "section": "3. Generic 稀疏化：可核实的精确合同"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md",
+      "sha256": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217",
+      "section": "4. 完整证明链"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/四对一与字母表soundness两篇文献整理--文献.md",
+      "sha256": "d0273adacbf4ccbb9d6cd954cdfd44dddb5f8a8e969067107f63c77bdaaf4b78",
+      "section": "3. Minzer–Zheng：近最优字母表—soundness 交易"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/minzer_zheng.pdf",
+      "sha256": "13b8eb55f86cfe28ac8b283fe83612889b335e14b7a87d64d479451693c7dff4"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/Boss7-minrep-restored/original/manurangsi_minrep_degree_1807_00936v1.pdf",
+      "sha256": "259edd7e850da816ddb5c318287a7a3a525ccc8963f07918787156384d7153d8"
+    }
+  ],
+  "reviewed_by": "Boss5/mz_visual_3c/2026-11-12",
+  "review_note": "完整实读当前MZ v4、稀疏化v1、参数目标v1记录与两份中文正文，旧任务/收据/条件边/review/ledger，并实读当前done的e7d9定义/收据/canonical ALL边和完整joint-source-proof。新全文读并逐图核冻结MZ印18、59、60、61及Manurangsi印4；旧作者其余PDF阅读仅作历史继承。重新推导copy-pairs正反保值、typed字母表、正规化后N、逐记录概率与全列表同时性、1.47456严格常数及同指数ln³g。印18原商数方向正确，撤回倒置误诊；事件修正/一般floor保留，实际q=2清分母格点m|k。已done联合源只闭合充分大g的特定Q(g)，未覆盖本边任意固定g>1,R≥2的已实现源泛域；两输入条件证明独立完整，保accepted/conditional和whole_result。未重证106页内层或外部expander/连通性归约。最终字节原生edge-bind/check只核绑定结构，不代替此数学复核。",
+  "endpoint_pins": {
+    "M-8c360a7779154480879e38c65d1f827e": "3dd4454f24e6ace08f116048d88ada39f73596fb57ae251b1d7b61568079281d",
+    "M-9a7614916cf04cee8915aefce74b502a": "12f2b0b849e6a0e259a911875357e454172c3f94fd8c1ceea54deb6526c25b84",
+    "M-fb633f3a6f1448fbbd63bfc7c3806c40": "fdb940f4d9c1ac5bffffa7b4e6b2317975a6ace432efab15cb0b8dc480350364"
+  },
+  "evidence_pins": {
+    "map/edges/boss5-localfix-repair-a850f769876ca7ec/review.md": "c0272ffb880c15e332ba2f2d7c1c8109bd460630de85884750078b45f6c08da6",
+    "archives/unrelated-machines/state/文献/MinRep度数与字母表逼近困难--文献.md": "187fcaeed9bc5f98d04f60b9a137c7c117707674a670bed95d876a2529971217",
+    "archives/unrelated-machines/state/文献/四对一与字母表soundness两篇文献整理--文献.md": "d0273adacbf4ccbb9d6cd954cdfd44dddb5f8a8e969067107f63c77bdaaf4b78",
+    "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/minzer_zheng.pdf": "13b8eb55f86cfe28ac8b283fe83612889b335e14b7a87d64d479451693c7dff4",
+    "archives/unrelated-machines/tools/evidence/Boss7-minrep-restored/original/manurangsi_minrep_degree_1807_00936v1.pdf": "259edd7e850da816ddb5c318287a7a3a525ccc8963f07918787156384d7153d8"
+  },
+  "review_digest": "d510bdabff854f438b6783af87afd2aa600da08ffac33a9d7730b04e6c6a8587"
+}
