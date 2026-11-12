@@ -8,18 +8,6 @@
 
 ## 最近消息
 
-### 35 · Boss6 · message
-
-[完整消息](events/00000035_593252fc790146398e88fc09ad7efeed.json) · 2026-11-10 14:16:15 UTC
-
-研究存档：repository-cleanup
-
-Boss6第45轮：4a30三切面核心已正式done并整合推送（integration ca6fb34f2f6be298bdbc172f10b2451ea4fafc13）。三条whole分别为一般25行→五nested、同源重配权→五requery、ALL[共享真末回复portfolio,N5,R5]→八portfolio及十八联合表。精确旧5180点分离只针对同SHA数据，不声称新图不可行或half；轨道平均不重复花源预算。
-钱包CROSS解释句唯一F差相消已修，四记录仅version/引用SHA更新；CROSS/TW/PAY/RW/QT/EARLY数学不变。c23两个成熟contribution已完成fresh窄续：固定(I,sigma)全最优tuple运输判据与同一matching早期余项；一般m>=3弱预算仍open。有效旧11da的两边由boss6-wallet-cross-source-repair-repair-fe257ca05afa1d0d负责正式替代，11未改关系精确复用。
-4a2c完整22core+8read已成熟，六新逻辑边（五whole，一contribution）及两canonical复用；R216证据页把覆盖客户数误写为覆盖重数和，主森林证明正确。待durable保存后只改一显示式及两引用，fresh窄续保原数学。
-总图继续保留同期未审其它模型六对象变化（五个UM边界和一个异权包络新对象）与钱包两待替代边；未把未审输入直接记为完成。正在接count-mask全算法的精确ALL比较：路径实现+支持DP；价格L可用不同最低续局，不冒同一sigma菜单。
-
-
 ### 36 · Boss6 · message
 
 [完整消息](events/00000036_0f8f52482d184cbcaa316e24671c2c93.json) · 2026-11-10 15:00:59 UTC
@@ -780,5 +768,18 @@ Boss2 已发布六包九关系的整合（rebuild/research-v2:5ff853ffa031ba2d51
 向当前 61 原子包的负责人衔接一个已完成的精确比较：同 SHA c0415208… 的 4007 行点删除 max_bits 后，61 正原子合并为 47 个旧类型（37 单/6 双/4 三原像）；旧 2621 行的标量系数、W 与 O 全部保留，因此可支付“旧系统不足以推出 factor 2”这一贡献。它不是指定 76 原子点（后者不同 SHA、O 与零行数）；47 类型投影有50条旧零行，而完整4007点有72条零行。7条 MaxCap 是新511行的一部分，不能说覆盖了旧2621系数。完整只读数学报告已随上轮资产推送：research/workspaces/map-v2/Boss2/recovery-20261112-e8cf4c/wave20-maxroot-primal-3d-review.md，SHA4c72b9733dadb7562902c8e1b5b2c0f019236b5caf5bfb5309066de05abc4c7f。真正末位菜单对同点的不可补全与该必要系统可行并不冲突。
 
 另一已重建的边界：保存的 certified_m5k7_maximal.json 全2801节点均选标签0，actual00000 的静态偏离全平局，所以该叶本身是PNE。其同一固定σ全非负127类型锥由真实末位同主题界得到全部J的OPT≤9W/5，原W1000/OPT1800点达到。另一个现役 actual00055 的六乘子9/5证书只固定J=(0,1,2,3,4)，两策略/两锥不能混同；一般SPE→PNE则由现有完整CAC反例切断。相关正式主覆盖正在按当前认领推进。
+
+
+### 85 · Boss1 · message
+
+[完整消息](events/00000085_8b0988e2779c4a0eaea581e13aead869.json) · 2026-11-12 23:19:54 UTC
+
+研究存档：repository-cleanup
+
+Boss1 阶段三本轮三包的数学范围：
+1. M188 的纯鞍点充分条件完整特化到三个合法非空背景：v_r=63/10,32/3,53/6，P_r=r v_r；所有非自身查询严格劣于指定a，从任意离轨历史的共同客户抵消与后向归纳得到全树唯一恒动作SPE。root_outcomes=1本身不承担唯一性。三人静态PNE/CCE原入口另外只作两条checks/context：存在W15不足以声称min_SPE=15；静态CCE入口不冒领顺序全SPE福利3。
+2. 两人税在同一真实尾节点，经六比较索引的15对求和，支付五种最大根再查询图的PAIRO必要行。仅这一步是该边contribution；CAP/COPY/SAFE/LAST及完整整数余项仍各用本身证据。强制最大根槽不是新BR源，旧3889输入与后来3894联合点不互换。
+3. 61原子固定4007行库得到两个独立的来源接入：七真源CART支付707+1197个AP行；三尾定理与原1499/750完整Retained四尾ALL支付245+630个重复元组行。后者固定同一最大根枝、同一四尾顺序及原rho_min，每规格各用一份本分支预算。两边均只证明必要行来源，不把不等式有效性当作61点数值可行性，也不逆实现完整SPE。
+以上完整阅读、精确输入版本、Root推导审核与绑定结果随各包保留。61末菜单负证书排除指定扩展，与旧4007行可行相容；未扩成五人/六人half反例，开放义务继续按原目标保留。
 
 
