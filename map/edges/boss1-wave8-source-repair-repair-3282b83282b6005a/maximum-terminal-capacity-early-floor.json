@@ -1,0 +1,77 @@
+{
+  "edge_id": "customer-attraction-5356-maximum-terminal-capacity-early-floor",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/max-theme-terminal-capacity-and-early-node-floor",
+    "CA-LAST-TWO-FLOOR",
+    "customer-attraction/last-slot-value-and-catalog-counting",
+    "CA-THREE-SHARP-5-3"
+  ],
+  "target_ids": [
+    "M-837fb8766b1f4b77ad33225a292f0d27"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "m≥3总人数不变，任意长i−1合法有序前缀h，i≤m−2；原完整σ规定当前收益t，强制目录最大A后沿同一σ真实完成得z。O=OPT_m、M=|A|、L=O/(2m−1)。过去玩家仅用非负利润，不把强制者视作新根均衡。",
+  "roles": {
+    "customer-attraction/max-theme-terminal-capacity-and-early-node-floor": "同一强制最大题终局的容量上界W′≤m(m−1)z−(m−2)M。",
+    "CA-LAST-TWO-FLOOR": "强制当前之后的真实末两人各≥其同背景theta。",
+    "customer-attraction/last-slot-value-and-catalog-counting": "合法前缀嵌入及theta_m≥OPT_m/(2m−1)。",
+    "CA-THREE-SHARP-5-3": "仅用于m=3根推论的W≥3OPT_3/5。",
+    "M-837fb8766b1f4b77ad33225a292f0d27": "所有早期有序节点floor、根系数及三人净缺口推论。"
+  },
+  "explanation": "实际h节点IC给z≤t。强制A的同一叶中末两人按FLOOR与COUNT各≥L，其余m−i−2个真实后继在各自节点可改最大A，因此各≥M/m；过去利润非负，故z+2L+(m−i−2)M/m≤W′。CAP给W′≤m(m−1)z−(m−2)M，消去W′并用z≤t得[m(m−1)−1]t≥2L+[m−2+(m−i−2)/m]M。根i1时M系数m−1−3/m≥0，代M≥O/m得到u1≥(2m³−m²−5m+3)O/[m²(2m−1)(m²−m−1)]。m3为u1≥11O/75；THREE给O−W≤2O/5<33O/75≤3u1（O>0），O0保弱端点。各步骤在同一真实叶结合，不把背景活跃利润当总覆盖，不减少分母总人数。",
+  "scope": "目标M-837整条登记：全历史早期floor、根式和只限三人空根的严格净缺口推论；不推出六人half或任意背景倒三桥。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/最大主题终局容量与早期真实节点保底--引理.md",
+      "sha256": "0f652b0455214f740462eca80815b6d9fb6049e0b27cc54bd9a00569f05374a6",
+      "section": "无均衡假设的终局容量"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最大主题终局容量与早期真实节点保底--引理.md",
+      "sha256": "0f652b0455214f740462eca80815b6d9fb6049e0b27cc54bd9a00569f05374a6"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末两人逐人保底与全人数弱福利界--定理.md",
+      "sha256": "204030503c37b18f8d26ce664b9cb99afc688fed77c8221a00cf0d8d7b21b34b"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md",
+      "sha256": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/三人锐福利界--定理.md",
+      "sha256": "d69eaae8ac102a799364b8050962d26628d6a38e23f813225c74bb5facdb7fae"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/R-373d背景支撑分支缺口与三价模板精确障碍--障碍.md",
+      "sha256": "1457ea758d3571ffc49ec7371228306deebc6f7715469c96516522947f0d71e2",
+      "section": "精确代数审计"
+    },
+    {
+      "path": "map/edges/boss1-wave8-source-repair-repair-3282b83282b6005a/repair-proof.md",
+      "sha256": "845bc86599c4d5cb090b09b3aa9969cde4c90510853e093d64f8cf300014f1db"
+    }
+  ],
+  "reviewed_by": "Boss1 / FLOOR16-REFRESH",
+  "review_note": "本轮fresh worker完整实读容量、真末两人、目录计数、三人锐界、共同定义及M837 v3主证明，逐式核同一强制最大题叶的IC与总人数分母。旧/新障碍页全文实读且原生section比较精确代数审计字节不变。保原edge_id、四ALL和whole；只修当前v3绑定并增加本轮证明/当前审计页定位，不重跑旧LP/BI/IC或作者有限审计。其余核心审读/旧附件复用界见本任务独立receipt和actual-read-list。",
+  "whole_result": "四个ALL前提共同推出M-837的全部陈述：[m(m−1)−1]t≥2L+[m−2+(m−i−2)/m]M、所列根系数、m3的u1≥11O/75及O>0时O−W<3u1。",
+  "endpoint_pins": {
+    "CA-LAST-TWO-FLOOR": "ac27b3c3c7d9e7ef7b09029a442931c402af6718aaa86500f0f8e3d303d226e1",
+    "CA-THREE-SHARP-5-3": "bbbc121600f38b94932c4f34bdbc08126257503e6ca734524727516428cd1a63",
+    "M-837fb8766b1f4b77ad33225a292f0d27": "236c687691dd08399241825538e15fcf17d5442c1247940a421d1076bd98b803",
+    "customer-attraction/last-slot-value-and-catalog-counting": "5b963d828efa40aaa81e50a9a4937656777103dfa5ab0414369926b475f1585e",
+    "customer-attraction/max-theme-terminal-capacity-and-early-node-floor": "79d6822002cb6eeb75aee261b0ead0681428d9b4e6fbf578d8e7d38d848a694d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/最大主题终局容量与早期真实节点保底--引理.md": "0f652b0455214f740462eca80815b6d9fb6049e0b27cc54bd9a00569f05374a6",
+    "archives/customer-attraction/state/定理/末两人逐人保底与全人数弱福利界--定理.md": "204030503c37b18f8d26ce664b9cb99afc688fed77c8221a00cf0d8d7b21b34b",
+    "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d",
+    "archives/customer-attraction/state/定理/三人锐福利界--定理.md": "d69eaae8ac102a799364b8050962d26628d6a38e23f813225c74bb5facdb7fae",
+    "archives/customer-attraction/state/障碍/R-373d背景支撑分支缺口与三价模板精确障碍--障碍.md": "1457ea758d3571ffc49ec7371228306deebc6f7715469c96516522947f0d71e2",
+    "map/edges/boss1-wave8-source-repair-repair-3282b83282b6005a/repair-proof.md": "845bc86599c4d5cb090b09b3aa9969cde4c90510853e093d64f8cf300014f1db"
+  },
+  "review_digest": "5c04da1e022034afa468ae48dcfceaae96e19e97b2e4318b93b915e4924ebae9"
+}

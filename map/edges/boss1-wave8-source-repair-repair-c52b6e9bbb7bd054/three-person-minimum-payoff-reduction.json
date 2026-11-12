@@ -1,0 +1,75 @@
+{
+  "edge_id": "ca-r33-three-person-minimum-payoff-reduction",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "CA-LAST-TWO-FLOOR",
+    "customer-attraction/last-slot-value-and-catalog-counting",
+    "CA-THREE-SHARP-5-3",
+    "M-837fb8766b1f4b77ad33225a292f0d27"
+  ],
+  "target_ids": [
+    "M-942e12ff254c45b68d3d732c1d45e68e"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限单位客户共同目录的完整纯SPE，原根零外生背景。m=1,2闭合；m=3的全位置预算归约保同一实例O=OPT_3、W与各原位置收益，K为真实最大主题。O=0直接按零端点处理。",
+  "roles": {
+    "CA-LAST-TWO-FLOOR": "给任意真实末两位置的各自下界",
+    "customer-attraction/last-slot-value-and-catalog-counting": "把 θ 对齐原人数并给 O/(2m−1)",
+    "CA-THREE-SHARP-5-3": "给三人根 O−W≤2O/5",
+    "M-837fb8766b1f4b77ad33225a292f0d27": "给首位 u1≥11O/75 以及同实例最大主题接口",
+    "M-942e12ff254c45b68d3d732c1d45e68e": "提问全人数的 (m−1) min 预算"
+  },
+  "explanation": "m=1 时 W=O；m=2 时 u1,u2≥O/3，且 W≥2O/3，所以 O−W≤min(u1,u2)。m=3 时末两人各≥O/5，因此 O−W≤2O/5≤2u2,2u3。于是三人原桥只余根位 O−W≤2u1；现有根下界给 O−W≤(30/11)u1。若 K≥3O/5，根改最大题至少 K/3，已经达到 O/5，三人合同全付。",
+  "scope": "一人、两人完整支付；三人尾部与大题子域完整支付，其余三人首位及一般早期位置继续。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/R-3b6b最后平均选择严格SPE边界与最小支付搜索--障碍.md",
+      "sha256": "262f8e2a1bdd5f5bfff6875e728b992799c2469df7f9fff3321422f1780e244a"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/最大主题终局容量与早期真实节点保底--引理.md",
+      "sha256": "0f652b0455214f740462eca80815b6d9fb6049e0b27cc54bd9a00569f05374a6"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/末两人逐人保底与全人数弱福利界--定理.md",
+      "sha256": "204030503c37b18f8d26ce664b9cb99afc688fed77c8221a00cf0d8d7b21b34b"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md",
+      "sha256": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d"
+    },
+    {
+      "path": "archives/customer-attraction/state/定理/三人锐福利界--定理.md",
+      "sha256": "d69eaae8ac102a799364b8050962d26628d6a38e23f813225c74bb5facdb7fae"
+    },
+    {
+      "path": "map/edges/boss1-wave8-source-repair-repair-c52b6e9bbb7bd054/mathematical-review.md",
+      "sha256": "dce147afff7e79b2072957785edf0fcca9d609d99e2298b37e4a146b76d57584",
+      "section": "最小实际收益支付的归约与余项"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "保同一完整SPE的各份额，不把最后玩家低于平均的选择器当 min 支付，也不把有限浮点阴性当全称。 FLOOR26-REFRESH本轮独立实读当前承重正文并逐项复核本关系；M-837 v3仅同步另一节计数勘误的全文SHA，原数学范围不变。原数组和原科学程序未重读/重跑，短有理算术与当前复核在本任务说明及read manifest中精确记录。",
+  "contribution": {
+    "result": "把三人全位置 min 预算严格归约为单一原根不等式，并闭合 m≤2 及三人 K≥3O/5 的子域。",
+    "remaining": "余下三人小 K 的首位需把 30/11 倍改进到2，或找到真正反例。一般人数还要同时处理所有早期位置。"
+  },
+  "endpoint_pins": {
+    "CA-LAST-TWO-FLOOR": "ac27b3c3c7d9e7ef7b09029a442931c402af6718aaa86500f0f8e3d303d226e1",
+    "CA-THREE-SHARP-5-3": "bbbc121600f38b94932c4f34bdbc08126257503e6ca734524727516428cd1a63",
+    "M-837fb8766b1f4b77ad33225a292f0d27": "236c687691dd08399241825538e15fcf17d5442c1247940a421d1076bd98b803",
+    "M-942e12ff254c45b68d3d732c1d45e68e": "8127274ec3d67d6cb00561525d40f2b62a732f0b17423e88e2d2cfe7aa69f3dd",
+    "customer-attraction/last-slot-value-and-catalog-counting": "5b963d828efa40aaa81e50a9a4937656777103dfa5ab0414369926b475f1585e"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/R-3b6b最后平均选择严格SPE边界与最小支付搜索--障碍.md": "262f8e2a1bdd5f5bfff6875e728b992799c2469df7f9fff3321422f1780e244a",
+    "archives/customer-attraction/state/引理/最大主题终局容量与早期真实节点保底--引理.md": "0f652b0455214f740462eca80815b6d9fb6049e0b27cc54bd9a00569f05374a6",
+    "archives/customer-attraction/state/定理/末两人逐人保底与全人数弱福利界--定理.md": "204030503c37b18f8d26ce664b9cb99afc688fed77c8221a00cf0d8d7b21b34b",
+    "archives/customer-attraction/state/引理/末位最坏背景值与目录计数界--引理.md": "6263b3d935b1c2d3d7ae6aee4016ae78cb369de1f28ddb284e8202fd21b69c3d",
+    "archives/customer-attraction/state/定理/三人锐福利界--定理.md": "d69eaae8ac102a799364b8050962d26628d6a38e23f813225c74bb5facdb7fae",
+    "map/edges/boss1-wave8-source-repair-repair-c52b6e9bbb7bd054/mathematical-review.md": "dce147afff7e79b2072957785edf0fcca9d609d99e2298b37e4a146b76d57584"
+  },
+  "review_digest": "f5e8812bcabe92b4e0ce1aac2b681e5e6f97607e49887bb1bb13b880a9e857f9"
+}

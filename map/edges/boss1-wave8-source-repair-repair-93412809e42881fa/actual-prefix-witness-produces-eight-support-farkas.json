@@ -1,0 +1,72 @@
+{
+  "edge_id": "ca-359ad8-actual-prefix-witness-produces-eight-support-farkas",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/actual-prefix-fresh-coverage-global-counterexample"
+  ],
+  "target_ids": [
+    "M-9d8fe992daad4b6996b50973f25ec06e"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "按目标完全指定的192×24模板：六位ABTSQR按字典序，每型fresh、old-p1、old-slope；24列含两真根IC、六安全地板、old_cover=τu_A−C_old及15真末位IC。参数τ为任意实数且τ≥17/12；待排除的乘子λ亦可为任意非负实向量。",
+  "roles": {
+    "customer-attraction/actual-prefix-fresh-coverage-global-counterexample": "提供52个单位客户、259节点完整根SPE、实际前缀AB及其真实T0/Q0离轨末回复S0；负目标来自真实策略。",
+    "M-9d8fe992daad4b6996b50973f25ec06e": "把该真实反例按各自正分母投影为八支持有理Farkas见证，排除完全指定的非负乘子模板。"
+  },
+  "explanation": "用下标0保原主题身份。在源完整根σ的实际前缀(A0,B0)后，模板取(A,B,T,S,Q,R)=(A0,B0,T0,Q0,S0,S0)。源259位编码限制在此前缀的末回复向量是(B0,S0,S0,S0,S0,R0)，所以T0/Q0后的两个S0是真实孩子；不得改用手写尾局的R0来冒同一策略。源十种客户在该映射下合成八型：fresh的000100、000111、001000、001011人数7、2、7、2，old-p1的010000、010011、100000、100011人数12、6、10、6。每客户清分母D(p)=(p+1)(p+2)，用y=6n/D(p)，于是零基行12,21,24,33,49,58,97,106的整数权为21,6,21,6,12,6,10,6，其余184行权0；斜率行无实际客户权。每列的配对恰为6倍真实全局差，因为各型分别除回自己的D，不能统一把p0与p1客户当同一分母。23条真IC/地板差非负；源u_A=8，34个旧客户负载1给C_old=34/3，因此old列为6(8τ−34/3)=48τ−68≥0。直接逐24列核对，τ=2配对为(0,0,16,12,21,21,12,12,28,22,0,0,0,0,6,0,27,0,0,6,0,0,27,0)；其余23项不依赖τ。源P=17、Δ=0且fresh比较T0∪Q0=18，故yᵀf=6(17+0−18)=−6。若λ≥0且Mτλ≤f，就有0≤(yᵀMτ)λ≤yᵀf=−6，矛盾。这里既给模板不可能的短精确证书，也解释它为何来自真实可达前缀；不用浮点HiGHS失败文本作证明。 全部24列配对是逐项的实参数仿射恒等式，其中仅old_cover列依τ且等于48τ−68；目标恒为−6。因此上述符号比较对每个实数τ≥17/12及任意实向量λ≥0成立，既不需要τ有理，也不需要λ有理。",
+  "whole_result": "对所有实数τ≥17/12，在目标固定192×24非负乘子模板中不存在λ≥0满足Mτλ≤f；八支持y=(21,6,21,6,12,6,10,6)满足yᵀf=−6，除old_cover外23列配对非负且不依赖τ，old_cover配对为48τ−68。",
+  "scope": "固定六位收益系数模板及其参数域；不声称17/12是最佳临界值，不判定1<τ<17/12，不排除其它证明模板，也不否根half。源实际前缀证明四人根SPE，不把两人尾局或52客户数值当作六人反例。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/反例/实际前缀的剩余利润与新增覆盖--反例.md",
+      "sha256": "256da0925a23f2cc0bad23f4c9de1722ec417d91cca4b817abd10bbbc331a1b7"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/实际前缀背景反例的完整策略核验--计算.md",
+      "sha256": "ae8714e5d0e1dc12e864e9b3e62b66b0dc4aa7488ed63b8b5dcb6b381146039a"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/背景旧覆盖二倍付款模板的不可行报告--计算.md",
+      "sha256": "3df3e179b114bbf0b16858b95aef008380013a4de1ac5456ffa3d59edc1b98d8"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/背景旧覆盖付款的系数证书搜索程序--程序.md",
+      "sha256": "fcd460f6187d6c101914919a43bb7bfde11ac29e3d0bc8491e7331ff90c34e6e"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fresh-cover-cost-certificate-data/coefficient-rows.json",
+      "sha256": "8fa54abbf242aa1efc93bd68bbb57748110e6d9a0cb70d50e1a6903e43230b57"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/fresh-cover-cost-certificate-data/exact-audit.json",
+      "sha256": "6a5c914fa46938a5a3037f95d7ee3b74fa4cccd69b7a5981d25928965d372450"
+    },
+    {
+      "path": "map/edges/boss1-wave8-source-repair-repair-93412809e42881fa/mathematical-repair-review.md",
+      "sha256": "c55eeb4e1fe8ee993e05fcf99c63a77d974e17ee0c3c2021e032d1e558829f04"
+    },
+    {
+      "path": "map/edges/boss1-wave8-source-repair-repair-93412809e42881fa/narrow-checks.json",
+      "sha256": "cdfeb4ab21c9699f3cfb47c260947e82690552137a4cc98c24f849bdc22305b1"
+    }
+  ],
+  "reviewed_by": "Boss1 / PREFIX7-REFRESH",
+  "review_note": "本轮完整读源52客户正文和完整核验说明、目标两正式页、exact-audit全文、旧边全文与既有临时3D审查；对coefficient-rows只实读八支撑行全部24系数/target并一次Fraction窄核，另读正文259位编码相关7动作。原根259/1554资格继承正式成熟证据，未读其大JSON/1554原数组、未重跑全树IC、LP、BI或旧科学程序。核真S0回复、y=6n/D(p)分型缩放、实τ≥17/12含端点及固定模板whole结论。v4到v5仅另一节名词纠字引起evidence全文SHA同步，数学字段/选定Markov节/52客户正文不变。完整实际范围与旧成果继承见本任务mathematical-repair-review.md及actual-reading-manifest.json。",
+  "endpoint_pins": {
+    "M-9d8fe992daad4b6996b50973f25ec06e": "bbc0b5e10da41b8810c3fe9a00909c6bdd6a90c9b8715574fc5da9e3834f2fc8",
+    "customer-attraction/actual-prefix-fresh-coverage-global-counterexample": "e2905ccdb431606ece1925a18b114090cb464352225866e952b1aa59501d9be7"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/反例/实际前缀的剩余利润与新增覆盖--反例.md": "256da0925a23f2cc0bad23f4c9de1722ec417d91cca4b817abd10bbbc331a1b7",
+    "archives/customer-attraction/state/计算/实际前缀背景反例的完整策略核验--计算.md": "ae8714e5d0e1dc12e864e9b3e62b66b0dc4aa7488ed63b8b5dcb6b381146039a",
+    "archives/customer-attraction/state/计算/背景旧覆盖二倍付款模板的不可行报告--计算.md": "3df3e179b114bbf0b16858b95aef008380013a4de1ac5456ffa3d59edc1b98d8",
+    "archives/customer-attraction/state/程序/背景旧覆盖付款的系数证书搜索程序--程序.md": "fcd460f6187d6c101914919a43bb7bfde11ac29e3d0bc8491e7331ff90c34e6e",
+    "archives/customer-attraction/tools/evidence/fresh-cover-cost-certificate-data/coefficient-rows.json": "8fa54abbf242aa1efc93bd68bbb57748110e6d9a0cb70d50e1a6903e43230b57",
+    "archives/customer-attraction/tools/evidence/fresh-cover-cost-certificate-data/exact-audit.json": "6a5c914fa46938a5a3037f95d7ee3b74fa4cccd69b7a5981d25928965d372450",
+    "map/edges/boss1-wave8-source-repair-repair-93412809e42881fa/mathematical-repair-review.md": "c55eeb4e1fe8ee993e05fcf99c63a77d974e17ee0c3c2021e032d1e558829f04",
+    "map/edges/boss1-wave8-source-repair-repair-93412809e42881fa/narrow-checks.json": "cdfeb4ab21c9699f3cfb47c260947e82690552137a4cc98c24f849bdc22305b1"
+  },
+  "review_digest": "cd1085991459f853a02d3f795e5f8ca88509f7cee5ddbcea62f46333f3e6f782"
+}
