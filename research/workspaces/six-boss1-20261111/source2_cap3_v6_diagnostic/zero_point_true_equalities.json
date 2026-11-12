@@ -1,0 +1,877 @@
+{
+  "count": 5,
+  "records": [
+    {
+      "status": "necessary_equalities_for_an_SPE_realization",
+      "physical_prerequisites_pass": true,
+      "blueprint": {
+        "row_id": "cap3full_pure_s0_v3_general_C",
+        "mode": "pure",
+        "target": "C",
+        "source_vertex": "pure_s0:v3",
+        "terms": [
+          {
+            "kind": "source_IC",
+            "player": 2,
+            "weight": "184969/6912",
+            "outer_branches": 1,
+            "query": "forced legal T",
+            "equality": "v2_after_forcing=u2_actual"
+          },
+          {
+            "kind": "CAP",
+            "player": 3,
+            "weight": "59881/497664",
+            "outer_branches": 1,
+            "equality": "size(R3)=K"
+          },
+          {
+            "kind": "CAP",
+            "player": 4,
+            "weight": "20035/20736",
+            "outer_branches": 1,
+            "equality": "size(R4)=K"
+          },
+          {
+            "kind": "CAP",
+            "player": 5,
+            "weight": "71/72",
+            "outer_branches": 1,
+            "equality": "size(R5)=K"
+          },
+          {
+            "kind": "CAP",
+            "player": 6,
+            "weight": "1",
+            "outer_branches": 1,
+            "equality": "size(R6)=K"
+          },
+          {
+            "kind": "terminal_BR",
+            "player": 6,
+            "weight": "1",
+            "query_index_count": 6,
+            "outer_branches": 1,
+            "equality": "each legal queried label gives exactly v6 at this terminal prefix"
+          },
+          {
+            "kind": "internal_SAFE",
+            "player": 4,
+            "weight": "5929/6912",
+            "query_index_count": 6,
+            "outer_branches": 1,
+            "equality": "for each queried index: current vj = its actual deviation payoff = its SAFE lower bound",
+            "continuation_owner": "the given strategy at the new ordered history after that query",
+            "saturation": "every remaining player covers each positive-mass customer of that queried label",
+            "remaining_players": [
+              5,
+              6
+            ]
+          },
+          {
+            "kind": "internal_SAFE",
+            "player": 5,
+            "weight": "65/72",
+            "query_index_count": 6,
+            "outer_branches": 1,
+            "equality": "for each queried index: current vj = its actual deviation payoff = its SAFE lower bound",
+            "continuation_owner": "the given strategy at the new ordered history after that query",
+            "saturation": "every remaining player covers each positive-mass customer of that queried label",
+            "remaining_players": [
+              6
+            ]
+          }
+        ],
+        "zero_weight_terms_with_no_equality_demand": [
+          {
+            "kind": "internal_SAFE",
+            "player": 3,
+            "weight": "0"
+          }
+        ],
+        "source_A2_is_actual_history": false,
+        "source_IC_identity": null,
+        "indexed_query_routing": "all six legal query indices",
+        "terminal_CAP": "1",
+        "terminal_BR_weight": "1",
+        "raw_K": "1529137/497664",
+        "final_K": "1529137/497664",
+        "free_EC": "0",
+        "free_EC_requires": "E_C=0; it is not a nonnegative budget term",
+        "original_scale": true,
+        "numerical_divisor_applied": false
+      },
+      "indexed_menu_coverage_requirement": "d_x=o_x for every positive-mass customer; the six indexed query coverages are pairwise disjoint",
+      "minimum_tail_requirements": [
+        {
+          "customer_class": {
+            "p": 0,
+            "t": 0,
+            "o": 1
+          },
+          "mass": "36117590108741881282313086404935649775410416962549273/45058867737824276558697819511509770471442516759376354",
+          "condition": {
+            "p": 0,
+            "t": 0,
+            "n": 1,
+            "q": "1/6",
+            "minimum": "36025/124416",
+            "all_weak_tails": [
+              "0000",
+              "0001",
+              "0010",
+              "0100",
+              "1000"
+            ]
+          },
+          "scope": "each positive-mass customer on the real T-forced branch"
+        },
+        {
+          "customer_class": {
+            "p": 0,
+            "t": 1,
+            "o": 1
+          },
+          "mass": "1160287630513152294616652770948309093846050753432701/45058867737824276558697819511509770471442516759376354",
+          "condition": {
+            "p": 0,
+            "t": 1,
+            "n": 1,
+            "q": "1/6",
+            "minimum": "19818593/2488320",
+            "all_weak_tails": [
+              "1111"
+            ]
+          },
+          "scope": "each positive-mass customer on the real T-forced branch"
+        },
+        {
+          "customer_class": {
+            "p": 1,
+            "t": 1,
+            "o": 1
+          },
+          "mass": "3890494999284621490884040167812905801093024521697190/22529433868912138279348909755754885235721258379688177",
+          "condition": {
+            "p": 1,
+            "t": 1,
+            "n": 1,
+            "q": "1/6",
+            "minimum": "1185985/165888",
+            "all_weak_tails": [
+              "1101",
+              "1110",
+              "1111"
+            ]
+          },
+          "scope": "each positive-mass customer on the real T-forced branch"
+        }
+      ],
+      "actual_A2_observable_equalities": [],
+      "actual_A2_equality_failure": false,
+      "actual_A2_certified_query_deviations": [],
+      "warning": "These are necessary conditions under an SPE realization; a zero aggregate row alone does not establish them or construct jointly consistent tails."
+    },
+    {
+      "status": "necessary_equalities_for_an_SPE_realization",
+      "physical_prerequisites_pass": true,
+      "blueprint": {
+        "row_id": "cap3full_pure_s0_v3_C-only_C",
+        "mode": "pure",
+        "target": "C",
+        "source_vertex": "pure_s0:v3",
+        "terms": [
+          {
+            "kind": "source_IC",
+            "player": 2,
+            "weight": "184969/6912",
+            "outer_branches": 1,
+            "query": "forced legal T",
+            "equality": "v2_after_forcing=u2_actual"
+          },
+          {
+            "kind": "CAP",
+            "player": 3,
+            "weight": "59881/497664",
+            "outer_branches": 1,
+            "equality": "size(R3)=K"
+          },
+          {
+            "kind": "CAP",
+            "player": 4,
+            "weight": "20035/20736",
+            "outer_branches": 1,
+            "equality": "size(R4)=K"
+          },
+          {
+            "kind": "CAP",
+            "player": 5,
+            "weight": "71/72",
+            "outer_branches": 1,
+            "equality": "size(R5)=K"
+          },
+          {
+            "kind": "CAP",
+            "player": 6,
+            "weight": "1",
+            "outer_branches": 1,
+            "equality": "size(R6)=K"
+          },
+          {
+            "kind": "terminal_BR",
+            "player": 6,
+            "weight": "1",
+            "query_index_count": 6,
+            "outer_branches": 1,
+            "equality": "each legal queried label gives exactly v6 at this terminal prefix"
+          },
+          {
+            "kind": "internal_SAFE",
+            "player": 4,
+            "weight": "5929/6912",
+            "query_index_count": 6,
+            "outer_branches": 1,
+            "equality": "for each queried index: current vj = its actual deviation payoff = its SAFE lower bound",
+            "continuation_owner": "the given strategy at the new ordered history after that query",
+            "saturation": "every remaining player covers each positive-mass customer of that queried label",
+            "remaining_players": [
+              5,
+              6
+            ]
+          },
+          {
+            "kind": "internal_SAFE",
+            "player": 5,
+            "weight": "65/72",
+            "query_index_count": 6,
+            "outer_branches": 1,
+            "equality": "for each queried index: current vj = its actual deviation payoff = its SAFE lower bound",
+            "continuation_owner": "the given strategy at the new ordered history after that query",
+            "saturation": "every remaining player covers each positive-mass customer of that queried label",
+            "remaining_players": [
+              6
+            ]
+          }
+        ],
+        "zero_weight_terms_with_no_equality_demand": [
+          {
+            "kind": "internal_SAFE",
+            "player": 3,
+            "weight": "0"
+          }
+        ],
+        "source_A2_is_actual_history": false,
+        "source_IC_identity": null,
+        "indexed_query_routing": "all six legal query indices",
+        "terminal_CAP": "1",
+        "terminal_BR_weight": "1",
+        "raw_K": "1529137/497664",
+        "final_K": "0",
+        "free_EC": "1529137/497664",
+        "free_EC_requires": "E_C=0; it is not a nonnegative budget term",
+        "original_scale": true,
+        "numerical_divisor_applied": false
+      },
+      "indexed_menu_coverage_requirement": "d_x=o_x for every positive-mass customer; the six indexed query coverages are pairwise disjoint",
+      "minimum_tail_requirements": [
+        {
+          "customer_class": {
+            "p": 0,
+            "t": 0,
+            "o": 1
+          },
+          "mass": "36117590108741881282313086404935649775410416962549273/45058867737824276558697819511509770471442516759376354",
+          "condition": {
+            "p": 0,
+            "t": 0,
+            "n": 1,
+            "q": "1/6",
+            "minimum": "36025/124416",
+            "all_weak_tails": [
+              "0000",
+              "0001",
+              "0010",
+              "0100",
+              "1000"
+            ]
+          },
+          "scope": "each positive-mass customer on the real T-forced branch"
+        },
+        {
+          "customer_class": {
+            "p": 0,
+            "t": 1,
+            "o": 1
+          },
+          "mass": "1160287630513152294616652770948309093846050753432701/45058867737824276558697819511509770471442516759376354",
+          "condition": {
+            "p": 0,
+            "t": 1,
+            "n": 1,
+            "q": "1/6",
+            "minimum": "19818593/2488320",
+            "all_weak_tails": [
+              "1111"
+            ]
+          },
+          "scope": "each positive-mass customer on the real T-forced branch"
+        },
+        {
+          "customer_class": {
+            "p": 1,
+            "t": 1,
+            "o": 1
+          },
+          "mass": "3890494999284621490884040167812905801093024521697190/22529433868912138279348909755754885235721258379688177",
+          "condition": {
+            "p": 1,
+            "t": 1,
+            "n": 1,
+            "q": "1/6",
+            "minimum": "1185985/165888",
+            "all_weak_tails": [
+              "1101",
+              "1110",
+              "1111"
+            ]
+          },
+          "scope": "each positive-mass customer on the real T-forced branch"
+        }
+      ],
+      "actual_A2_observable_equalities": [],
+      "actual_A2_equality_failure": false,
+      "actual_A2_certified_query_deviations": [],
+      "warning": "These are necessary conditions under an SPE realization; a zero aggregate row alone does not establish them or construct jointly consistent tails."
+    },
+    {
+      "status": "necessary_equalities_for_an_SPE_realization",
+      "physical_prerequisites_pass": true,
+      "blueprint": {
+        "row_id": "cap3full_pure_sstar_v6_general_C",
+        "mode": "pure",
+        "target": "C",
+        "source_vertex": "pure_sstar:v6",
+        "terms": [
+          {
+            "kind": "source_IC",
+            "player": 2,
+            "weight": "859/48",
+            "outer_branches": 1,
+            "query": "forced legal T",
+            "equality": "v2_after_forcing=u2_actual"
+          },
+          {
+            "kind": "CAP",
+            "player": 3,
+            "weight": "59881/497664",
+            "outer_branches": 1,
+            "equality": "size(R3)=K"
+          },
+          {
+            "kind": "CAP",
+            "player": 4,
+            "weight": "20035/20736",
+            "outer_branches": 1,
+            "equality": "size(R4)=K"
+          },
+          {
+            "kind": "CAP",
+            "player": 5,
+            "weight": "71/72",
+            "outer_branches": 1,
+            "equality": "size(R5)=K"
+          },
+          {
+            "kind": "CAP",
+            "player": 6,
+            "weight": "1",
+            "outer_branches": 1,
+            "equality": "size(R6)=K"
+          },
+          {
+            "kind": "terminal_BR",
+            "player": 6,
+            "weight": "1",
+            "query_index_count": 6,
+            "outer_branches": 1,
+            "equality": "each legal queried label gives exactly v6 at this terminal prefix"
+          },
+          {
+            "kind": "internal_SAFE",
+            "player": 4,
+            "weight": "5929/6912",
+            "query_index_count": 6,
+            "outer_branches": 1,
+            "equality": "for each queried index: current vj = its actual deviation payoff = its SAFE lower bound",
+            "continuation_owner": "the given strategy at the new ordered history after that query",
+            "saturation": "every remaining player covers each positive-mass customer of that queried label",
+            "remaining_players": [
+              5,
+              6
+            ]
+          },
+          {
+            "kind": "internal_SAFE",
+            "player": 5,
+            "weight": "65/72",
+            "query_index_count": 6,
+            "outer_branches": 1,
+            "equality": "for each queried index: current vj = its actual deviation payoff = its SAFE lower bound",
+            "continuation_owner": "the given strategy at the new ordered history after that query",
+            "saturation": "every remaining player covers each positive-mass customer of that queried label",
+            "remaining_players": [
+              6
+            ]
+          }
+        ],
+        "zero_weight_terms_with_no_equality_demand": [
+          {
+            "kind": "internal_SAFE",
+            "player": 3,
+            "weight": "0"
+          }
+        ],
+        "source_A2_is_actual_history": false,
+        "source_IC_identity": null,
+        "indexed_query_routing": "all six legal query indices",
+        "terminal_CAP": "1",
+        "terminal_BR_weight": "1",
+        "raw_K": "1529137/497664",
+        "final_K": "1529137/497664",
+        "free_EC": "0",
+        "free_EC_requires": "E_C=0; it is not a nonnegative budget term",
+        "original_scale": true,
+        "numerical_divisor_applied": false
+      },
+      "indexed_menu_coverage_requirement": "d_x=o_x for every positive-mass customer; the six indexed query coverages are pairwise disjoint",
+      "minimum_tail_requirements": [
+        {
+          "customer_class": {
+            "p": 0,
+            "t": 0,
+            "o": 1
+          },
+          "mass": "36117590108741881282313086404935649775410416962549273/45058867737824276558697819511509770471442516759376354",
+          "condition": {
+            "p": 0,
+            "t": 0,
+            "n": 1,
+            "q": "1/6",
+            "minimum": "36025/124416",
+            "all_weak_tails": [
+              "0000",
+              "0001",
+              "0010",
+              "0100",
+              "1000"
+            ]
+          },
+          "scope": "each positive-mass customer on the real T-forced branch"
+        },
+        {
+          "customer_class": {
+            "p": 0,
+            "t": 1,
+            "o": 1
+          },
+          "mass": "1160287630513152294616652770948309093846050753432701/45058867737824276558697819511509770471442516759376354",
+          "condition": {
+            "p": 0,
+            "t": 1,
+            "n": 1,
+            "q": "1/6",
+            "minimum": "15406937/2488320",
+            "all_weak_tails": [
+              "1111"
+            ]
+          },
+          "scope": "each positive-mass customer on the real T-forced branch"
+        },
+        {
+          "customer_class": {
+            "p": 1,
+            "t": 1,
+            "o": 1
+          },
+          "mass": "3890494999284621490884040167812905801093024521697190/22529433868912138279348909755754885235721258379688177",
+          "condition": {
+            "p": 1,
+            "t": 1,
+            "n": 1,
+            "q": "1/6",
+            "minimum": "4459373/829440",
+            "all_weak_tails": [
+              "1101",
+              "1110"
+            ]
+          },
+          "scope": "each positive-mass customer on the real T-forced branch"
+        }
+      ],
+      "actual_A2_observable_equalities": [],
+      "actual_A2_equality_failure": false,
+      "actual_A2_certified_query_deviations": [],
+      "warning": "These are necessary conditions under an SPE realization; a zero aggregate row alone does not establish them or construct jointly consistent tails."
+    },
+    {
+      "status": "necessary_equalities_for_an_SPE_realization",
+      "physical_prerequisites_pass": true,
+      "blueprint": {
+        "row_id": "cap3full_pure_sstar_v6_C-only_C",
+        "mode": "pure",
+        "target": "C",
+        "source_vertex": "pure_sstar:v6",
+        "terms": [
+          {
+            "kind": "source_IC",
+            "player": 2,
+            "weight": "859/48",
+            "outer_branches": 1,
+            "query": "forced legal T",
+            "equality": "v2_after_forcing=u2_actual"
+          },
+          {
+            "kind": "CAP",
+            "player": 3,
+            "weight": "59881/497664",
+            "outer_branches": 1,
+            "equality": "size(R3)=K"
+          },
+          {
+            "kind": "CAP",
+            "player": 4,
+            "weight": "20035/20736",
+            "outer_branches": 1,
+            "equality": "size(R4)=K"
+          },
+          {
+            "kind": "CAP",
+            "player": 5,
+            "weight": "71/72",
+            "outer_branches": 1,
+            "equality": "size(R5)=K"
+          },
+          {
+            "kind": "CAP",
+            "player": 6,
+            "weight": "1",
+            "outer_branches": 1,
+            "equality": "size(R6)=K"
+          },
+          {
+            "kind": "terminal_BR",
+            "player": 6,
+            "weight": "1",
+            "query_index_count": 6,
+            "outer_branches": 1,
+            "equality": "each legal queried label gives exactly v6 at this terminal prefix"
+          },
+          {
+            "kind": "internal_SAFE",
+            "player": 4,
+            "weight": "5929/6912",
+            "query_index_count": 6,
+            "outer_branches": 1,
+            "equality": "for each queried index: current vj = its actual deviation payoff = its SAFE lower bound",
+            "continuation_owner": "the given strategy at the new ordered history after that query",
+            "saturation": "every remaining player covers each positive-mass customer of that queried label",
+            "remaining_players": [
+              5,
+              6
+            ]
+          },
+          {
+            "kind": "internal_SAFE",
+            "player": 5,
+            "weight": "65/72",
+            "query_index_count": 6,
+            "outer_branches": 1,
+            "equality": "for each queried index: current vj = its actual deviation payoff = its SAFE lower bound",
+            "continuation_owner": "the given strategy at the new ordered history after that query",
+            "saturation": "every remaining player covers each positive-mass customer of that queried label",
+            "remaining_players": [
+              6
+            ]
+          }
+        ],
+        "zero_weight_terms_with_no_equality_demand": [
+          {
+            "kind": "internal_SAFE",
+            "player": 3,
+            "weight": "0"
+          }
+        ],
+        "source_A2_is_actual_history": false,
+        "source_IC_identity": null,
+        "indexed_query_routing": "all six legal query indices",
+        "terminal_CAP": "1",
+        "terminal_BR_weight": "1",
+        "raw_K": "1529137/497664",
+        "final_K": "61273/34560",
+        "free_EC": "3234029/2488320",
+        "free_EC_requires": "E_C=0; it is not a nonnegative budget term",
+        "original_scale": true,
+        "numerical_divisor_applied": false
+      },
+      "indexed_menu_coverage_requirement": "d_x=o_x for every positive-mass customer; the six indexed query coverages are pairwise disjoint",
+      "minimum_tail_requirements": [
+        {
+          "customer_class": {
+            "p": 0,
+            "t": 0,
+            "o": 1
+          },
+          "mass": "36117590108741881282313086404935649775410416962549273/45058867737824276558697819511509770471442516759376354",
+          "condition": {
+            "p": 0,
+            "t": 0,
+            "n": 1,
+            "q": "1/6",
+            "minimum": "36025/124416",
+            "all_weak_tails": [
+              "0000",
+              "0001",
+              "0010",
+              "0100",
+              "1000"
+            ]
+          },
+          "scope": "each positive-mass customer on the real T-forced branch"
+        },
+        {
+          "customer_class": {
+            "p": 0,
+            "t": 1,
+            "o": 1
+          },
+          "mass": "1160287630513152294616652770948309093846050753432701/45058867737824276558697819511509770471442516759376354",
+          "condition": {
+            "p": 0,
+            "t": 1,
+            "n": 1,
+            "q": "1/6",
+            "minimum": "15406937/2488320",
+            "all_weak_tails": [
+              "1111"
+            ]
+          },
+          "scope": "each positive-mass customer on the real T-forced branch"
+        },
+        {
+          "customer_class": {
+            "p": 1,
+            "t": 1,
+            "o": 1
+          },
+          "mass": "3890494999284621490884040167812905801093024521697190/22529433868912138279348909755754885235721258379688177",
+          "condition": {
+            "p": 1,
+            "t": 1,
+            "n": 1,
+            "q": "1/6",
+            "minimum": "4459373/829440",
+            "all_weak_tails": [
+              "1101",
+              "1110"
+            ]
+          },
+          "scope": "each positive-mass customer on the real T-forced branch"
+        }
+      ],
+      "actual_A2_observable_equalities": [],
+      "actual_A2_equality_failure": false,
+      "actual_A2_certified_query_deviations": [],
+      "warning": "These are necessary conditions under an SPE realization; a zero aggregate row alone does not establish them or construct jointly consistent tails."
+    },
+    {
+      "status": "necessary_equalities_for_an_SPE_realization",
+      "physical_prerequisites_pass": true,
+      "blueprint": {
+        "row_id": "cap3full_pure_s9_v6_general_A4",
+        "mode": "pure",
+        "target": "A4",
+        "source_vertex": "pure_s9:v6",
+        "terms": [
+          {
+            "kind": "source_IC",
+            "player": 2,
+            "weight": "122761/6912",
+            "outer_branches": 1,
+            "query": "forced legal T",
+            "equality": "v2_after_forcing=u2_actual"
+          },
+          {
+            "kind": "CAP",
+            "player": 3,
+            "weight": "299309/2488320",
+            "outer_branches": 1,
+            "equality": "size(R3)=K"
+          },
+          {
+            "kind": "CAP",
+            "player": 4,
+            "weight": "6697/6912",
+            "outer_branches": 1,
+            "equality": "size(R4)=K"
+          },
+          {
+            "kind": "CAP",
+            "player": 5,
+            "weight": "59/60",
+            "outer_branches": 1,
+            "equality": "size(R5)=K"
+          },
+          {
+            "kind": "CAP",
+            "player": 6,
+            "weight": "1",
+            "outer_branches": 1,
+            "equality": "size(R6)=K"
+          },
+          {
+            "kind": "terminal_BR",
+            "player": 6,
+            "weight": "1",
+            "query_index_count": 6,
+            "outer_branches": 1,
+            "equality": "each legal queried label gives exactly v6 at this terminal prefix"
+          },
+          {
+            "kind": "internal_SAFE",
+            "player": 4,
+            "weight": "29741/34560",
+            "query_index_count": 6,
+            "outer_branches": 1,
+            "equality": "for each queried index: current vj = its actual deviation payoff = its SAFE lower bound",
+            "continuation_owner": "the given strategy at the new ordered history after that query",
+            "saturation": "every remaining player covers each positive-mass customer of that queried label",
+            "remaining_players": [
+              5,
+              6
+            ]
+          },
+          {
+            "kind": "internal_SAFE",
+            "player": 5,
+            "weight": "9/10",
+            "query_index_count": 6,
+            "outer_branches": 1,
+            "equality": "for each queried index: current vj = its actual deviation payoff = its SAFE lower bound",
+            "continuation_owner": "the given strategy at the new ordered history after that query",
+            "saturation": "every remaining player covers each positive-mass customer of that queried label",
+            "remaining_players": [
+              6
+            ]
+          }
+        ],
+        "zero_weight_terms_with_no_equality_demand": [
+          {
+            "kind": "internal_SAFE",
+            "player": 3,
+            "weight": "0"
+          }
+        ],
+        "source_A2_is_actual_history": false,
+        "source_IC_identity": null,
+        "indexed_query_routing": "all six legal query indices",
+        "terminal_CAP": "1",
+        "terminal_BR_weight": "1",
+        "raw_K": "7645397/2488320",
+        "final_K": "7645397/2488320",
+        "free_EC": "0",
+        "free_EC_requires": "E_C=0; it is not a nonnegative budget term",
+        "original_scale": true,
+        "numerical_divisor_applied": false
+      },
+      "indexed_menu_coverage_requirement": "d_x=o_x for every positive-mass customer; the six indexed query coverages are pairwise disjoint",
+      "minimum_tail_requirements": [
+        {
+          "customer_class": {
+            "p": 0,
+            "t": 0,
+            "o": 1
+          },
+          "mass": "34566534602540030045180050025442720603724362975390425/45058867737824276558697819511509770471442516759376354",
+          "condition": {
+            "p": 0,
+            "t": 0,
+            "n": 1,
+            "q": "1/6",
+            "minimum": "180077/622080",
+            "all_weak_tails": [
+              "0000",
+              "0001",
+              "0010",
+              "0100",
+              "1000"
+            ]
+          },
+          "scope": "each positive-mass customer on the real T-forced branch"
+        },
+        {
+          "customer_class": {
+            "p": 0,
+            "t": 1,
+            "o": 1
+          },
+          "mass": "2711343136715003531749689150441238265532104740591549/45058867737824276558697819511509770471442516759376354",
+          "condition": {
+            "p": 0,
+            "t": 1,
+            "n": 1,
+            "q": "1/6",
+            "minimum": "15339329/2488320",
+            "all_weak_tails": [
+              "1101",
+              "1110",
+              "1111"
+            ]
+          },
+          "scope": "each positive-mass customer on the real T-forced branch"
+        },
+        {
+          "customer_class": {
+            "p": 1,
+            "t": 0,
+            "o": 1
+          },
+          "mass": "879318722075343699331581929284109176035297141014808/22529433868912138279348909755754885235721258379688177",
+          "condition": {
+            "p": 1,
+            "t": 0,
+            "n": 1,
+            "q": "1/6",
+            "minimum": "140333/829440",
+            "all_weak_tails": [
+              "0000"
+            ]
+          },
+          "scope": "each positive-mass customer on the real T-forced branch"
+        },
+        {
+          "customer_class": {
+            "p": 1,
+            "t": 1,
+            "o": 1
+          },
+          "mass": "3011176277209277791552458238528796625057727380682382/22529433868912138279348909755754885235721258379688177",
+          "condition": {
+            "p": 1,
+            "t": 1,
+            "n": 1,
+            "q": "1/6",
+            "minimum": "4436837/829440",
+            "all_weak_tails": [
+              "1110"
+            ]
+          },
+          "scope": "each positive-mass customer on the real T-forced branch"
+        }
+      ],
+      "actual_A2_observable_equalities": [],
+      "actual_A2_equality_failure": false,
+      "actual_A2_certified_query_deviations": [],
+      "warning": "These are necessary conditions under an SPE realization; a zero aggregate row alone does not establish them or construct jointly consistent tails."
+    }
+  ]
+}
