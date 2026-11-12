@@ -1,0 +1,63 @@
+{
+  "edge_id": "um-623-k2-planar-bipartite-mmo-gap-to-diamondless-job-hardness",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "M-af28c29d24b14be393e56add3cebfc7c"
+  ],
+  "target_ids": [
+    "M-1b8213b483df41bd9fa149b10255daa3"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "特化源对象Theorem 13的实际Planar 3SAT归约为k=2；该归约族是简单无自环的平面二部图且最大度数至多3。机器为原顶点、任务为原边，任务仅在两端有资格且两端处理时间同为边权1或2，其他资格为∞。任务交叠图按共享资格机器定义，diamondless意为无菱形子图；近似不可行性使用P≠NP及任意固定1≤c<3/2。所有桥条件在证据中由构造证明，不是额外未付假设。",
+  "roles": {
+    "M-af28c29d24b14be393e56add3cebfc7c": "其k=2归约提供2-versus-3 gap；完整构造还给出简单二部且最大度3这一承重结构。",
+    "M-1b8213b483df41bd9fa149b10255daa3": "由保持全部负载的端点指派及线图无菱形桥得到其完整受限类NP-hardness和严格低于3/2的近似障碍。"
+  },
+  "explanation": "在源Theorem 13中令k=2。文字环节点度≤3，a节点度2，b节点度2+(k−1)=3，q文字子句节点度q+(k+1−q)=3，四环special节点度≤3；故实际归约图G简单、二部且Δ≤3。建立p[v,e]=w(e)当v∈e，否则∞。将MMO弧的任务给尾端机器，与任一合法调度反向定向互逆，逐机保持负载；Page按入边计负载的记号仅需逐弧反向。因此OPT保持，且每机≤3项。任务交叠图等于L(G)。简单三角形自由图的线图中，每个三角形只能来自一个共同原端点；若存在菱形子图，其两个共享边的三角形将迫使四条不同原边同接一个顶点，违反Δ≤3。所以L(G)为diamondless，排除的包含非诱导菱形。源可满足/不可满足公式分别给OPT≤2/OPT≥3，得到目标整个gap-hardness；若固定c<3/2的多项式近似存在，YES输出成本≤2c<3而NO成本≥3，可判Planar 3SAT。该方向严格使用k=2归约族；任意平面二部G或k≥3的源归约均不能凭图类名得到diamondless（K1,4的线图K4即障碍）。",
+  "whole_result": "M-af28c29d24b14be393e56add3cebfc7c的k=2实际归约经精确端点调度映射，完整推出M-1b8213b483df41bd9fa149b10255daa3：同时满足diamondless任务交叠图和每机至多3项资格任务的R||Cmax，区分OPT≤2与OPT≥3是NP-hard，因此除非P=NP，对每个固定c<3/2不存在多项式近似算法。",
+  "scope": "完整目标，单向迁移；仅需两个端点同权、有限时间{1,2}和∞的子类。源原图的平面二部性质不冒作目标图的同名限制；核心桥为k=2构造的Δ≤3加二部性。无反向迁移、无一般端点异权结论。",
+  "evidence": [
+    {
+      "path": "map/edges/boss1-wave5-current-repair-84511cd83cf10eb6/current-version-adoption.md",
+      "sha256": "af73feec4eee899a660e8ab52eb7800738772f4b3c4344a14de298a06d8abb22"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-6231f96071b186d2/planar-bipartite-k2-to-diamondless-proof.md",
+      "sha256": "d9ad5dd8c4b1d2f46ed93eb18d01dac25fb516acada99a73ad2553bfa057ba21"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md",
+      "sha256": "3fe059248d81113e400a7c5fe3084cccc9eb53267d4c4f1a570e086bc1a06e0f",
+      "section": "4.3 平面二部图：强 NP-困难"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/asahiro-miyano-ono-2011.pdf",
+      "sha256": "5db93652d80fd92b6440e0a0e22edfdeb09f78e2b886c95cb4adf171c67ee147"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Page-Solis-Oba-Maack-2018--有界任务与交叠图--文献.md",
+      "sha256": "beb13d191887b1d5b91ec2335861d33d5c7088a174cfe18c40444f222e09464e"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/bounded-job-assignments.pdf",
+      "sha256": "a2fad69bcf3b1e6caed4ce4f29d559e1b0f394695d859f2ca0fd8f05f8296775"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "Boss1当前版本正式修复：直接实读当前核心v4/目标v2、正式新任务、旧任务/收据、旧边及完整独立proof；当前中文读Asahiro身份/模型与4.3、Page身份/模型与无菱形硬度段；Asahiro冻结PDF直接读页3、16–18文本并目视16–18，Page直接读页2–3文本并目视3。复用已保存3D报告的623完整复核。重核k=2简单二部Δ≤3、special/变量环/子句双向2/3 gap、尾端负载双射、L(G)普通非诱导diamond排除、固定c的2c<3及whole方向。当前登记将源版本delta限定到另节join/gate，当前承重段及未变PDF重新核实Theorem13合同；未做历史全文逐字diff。旧proof原路径原字节retained，其v2及全文阅读话语为历史审读时点；仅替换旧边版本绑定，完整accepted/ALL/unconditional/whole语义不变，无新假设或FPTAS/Partition依赖。",
+  "endpoint_pins": {
+    "M-1b8213b483df41bd9fa149b10255daa3": "b1f641db6d0df9cc8be5e7fd3d69b3c37578f403733ceea79a752742808b0069",
+    "M-af28c29d24b14be393e56add3cebfc7c": "3d006e3f06c9570a8ccbbb50cf299c465c4a37e8b1d04d1e56d90cb0527365fc"
+  },
+  "evidence_pins": {
+    "map/edges/boss1-wave5-current-repair-84511cd83cf10eb6/current-version-adoption.md": "af73feec4eee899a660e8ab52eb7800738772f4b3c4344a14de298a06d8abb22",
+    "map/edges/unrelated-machines-3a-3a-6231f96071b186d2/planar-bipartite-k2-to-diamondless-proof.md": "d9ad5dd8c4b1d2f46ed93eb18d01dac25fb516acada99a73ad2553bfa057ba21",
+    "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md": "3fe059248d81113e400a7c5fe3084cccc9eb53267d4c4f1a570e086bc1a06e0f",
+    "research/registration/evidence/boss6-0104/asahiro-miyano-ono-2011.pdf": "5db93652d80fd92b6440e0a0e22edfdeb09f78e2b886c95cb4adf171c67ee147",
+    "archives/unrelated-machines/state/文献/Page-Solis-Oba-Maack-2018--有界任务与交叠图--文献.md": "beb13d191887b1d5b91ec2335861d33d5c7088a174cfe18c40444f222e09464e",
+    "archives/unrelated-machines/tools/evidence/registration-Boss5-0111-literature/bounded-job-assignments.pdf": "a2fad69bcf3b1e6caed4ce4f29d559e1b0f394695d859f2ca0fd8f05f8296775"
+  },
+  "review_digest": "a6265174675297d460ebc78a86d263f979936f936a97e9f6476ae8f1d37701f4"
+}

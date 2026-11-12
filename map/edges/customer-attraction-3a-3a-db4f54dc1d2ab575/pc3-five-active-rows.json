@@ -1,0 +1,74 @@
+{
+  "edge_id": "ca-db4f54dc-pc3-contributes-five-active-rows",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "five-provider-local-projections/priced-third"
+  ],
+  "target_ids": [
+    "customer-attraction/five-provider-active-row-semantics"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "来源当前登记的真实集合目录子域：有限单位客户、有限非空S⊆2^N（覆盖单射），恰五名单位提供者、零背景根和每份完整有序历史纯SPE；允许空主题、重复行动、重复最优索引、零客户及任意弱平局。所有路径/菜单由同一原σ产生，所有CAP使用同一个K=max|H|，实际收益均为原actual叶u₁,…,u₅。",
+  "roles": {
+    "five-provider-local-projections/priced-third": "全部三个PC3记录，含源u₃的完整收益列、实际末价u₅及真实复制增强。",
+    "customer-attraction/five-provider-active-row-semantics": "取得本来源支付的指定活跃行；仅贡献，不把这些行单独当整条53行或half。"
+  },
+  "explanation": "actual前四为A,B,C,D。第三位强制T给ABTEF，source[2]另用第四位复制F给ABTFH；所有强制源均由原源节点IC支付，hidden E,F,H由原actual末位对合法主题的报价支付。PC:5,6,7依次是source[0,1,2]。source[0]代(Yᵢᴬᴮ,Xᵢᴬᴮ)，source[1]代(Xᵢᴬᴮ,Yᵢᴬᴮ)、(Yᵢᴬᴮ,Xᵢᴬᴮ)、(Yᵢᴬᴱ,Xᵢᴬᴱ)，source[2]代(Wᵢˢ,Vᵢˢ)，各按五索引求和。u_coefficients已经包括源u₃=1，不能再加u₃；舍入后完整列为10⁶u₃+(380953,325000,327885)u₅，K列47620、50000、40625。eq行整体乘5，K分别238100、250000、203125。负γ照floor而所有证书权仍非负。 以M=10⁶将非负实际收益和K的预算列取ceil、客户信用γ取floor，左减右只增加。任意合法主题代入和同索引五次求和保留同一actual收益、同一K；eq行的全部外部列乘5。",
+  "scope": "来源当前登记的真实集合目录子域：有限单位客户、有限非空S⊆2^N（覆盖单射），恰五名单位提供者、零背景根和每份完整有序历史纯SPE；允许空主题、重复行动、重复最优索引、零客户及任意弱平局。所有路径/菜单由同一原σ产生，所有CAP使用同一个K=max|H|，实际收益均为原actual叶u₁,…,u₅。 本边仅涉及：AB:PC:5:eq:2:1；AB:PC:6:eq:1:2；AB:PC:6:eq:2:1；AE:PC:6:eq:2:1；Sbranch:PC:7:eq:3:2。来源未活跃记录和目标其他行不由本边承担。",
+  "contribution": {
+    "result": "在来源真实集合目录（覆盖单射）子域，对每份同一原σ、同一个K及任意达到OPT₅的五索引，以下5条主行全部非负：AB:PC:5:eq:2:1；AB:PC:6:eq:1:2；AB:PC:6:eq:2:1；AE:PC:6:eq:2:1；Sbranch:PC:7:eq:3:2。",
+    "remaining": "本来源只支付覆盖单射子域中的上述指定行，不独立推出目标整条53行。其余35条真节点行、直接CAP行及其他局部来源须按各自证明联合计入。广标签域的完整53行由目标对象当前活跃行正文独立证明；原canonical whole边active-rows-close-general-five从这些已成立的53行出发，用完整系数恒等式推出half，不反向支付其源53行。上述限域是本来源贡献范围，不是全仓仍缺完整53行或half证明。"
+  },
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/五人真实分支局部投影--引理.md",
+      "sha256": "a33566f40bef4904e8ee700acc2f1b924414abdbcf8a68e5f1247d60a5d9b0ce",
+      "section": "5. PC2、PC3：用实际节点收益支付隐藏回复"
+    },
+    {
+      "path": "archives/customer-attraction/tools/half5-exact/components/priced_player3.json",
+      "sha256": "b142c779d3a641e743d2d731309d2d33fcfd9e0e7b97343db87667589f675a49"
+    },
+    {
+      "path": "archives/customer-attraction/tools/half5-exact/components/verify_local_components.py",
+      "sha256": "d0a8c900ae9eb8ab08bd0b6f8e84acad6f08943f349d3326eee0f57425f06a1d"
+    },
+    {
+      "path": "archives/customer-attraction/state/证明/五人证书活跃行--证明.md",
+      "sha256": "ad93ab97ca4dea4a6362b0f3343f84377fd0e01607af74289ac8ea691fc60374",
+      "section": "4.2 逐条代入表"
+    },
+    {
+      "path": "archives/customer-attraction/tools/half5-exact/row_manifest.json",
+      "sha256": "cbc5f0c7b6238a1d0e622621c89851292c4ed94e946e36ed16b41e1bb851c0cf"
+    },
+    {
+      "path": "archives/customer-attraction/state/审查/五人局部组件独立重构的真实节点门槛与复现范围--审查.md",
+      "sha256": "f1cfa65da73e3e465ab235bf7c26162087e1a3f571ac9a8c4dcb55b47b8b996e",
+      "section": "5. 向外取整必须保持外部列身份"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-db4f54dc1d2ab575/math-review.md",
+      "sha256": "50a248310e316237a04f52d02b6c020b2a6f4a4b9a7046b6cf9c74dcb9b6b78e",
+      "section": "五个独立来源与十七条投影行"
+    }
+  ],
+  "reviewed_by": "Boss1/five-projection-packet",
+  "review_note": "完整实读当前登记、局部/最大根正文、全部七JSON记录、真实节点门槛及源表/活跃行/主闭合。逐式核源IC、同实际末价、共同K、外舍入方向、显式数组索引与同索引求和；本轮仅重建冻结舍入表和标量列/SHA/结构，不重跑47872局部系数态、6144主条件、LP或BI。来源登记仍限真实集合目录，故贡献精确保留子域；广标签全目标已有独立正文/whole边。",
+  "endpoint_pins": {
+    "customer-attraction/five-provider-active-row-semantics": "b591e7a217be0c50cdc98af59dc62fe29a7e5a3eb4f9abd3363ca0a2efd9f512",
+    "five-provider-local-projections/priced-third": "6077245f07a341a2406a30254dc23c16e2f8095cc6c3e173df83043aef414d8d"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/五人真实分支局部投影--引理.md": "a33566f40bef4904e8ee700acc2f1b924414abdbcf8a68e5f1247d60a5d9b0ce",
+    "archives/customer-attraction/tools/half5-exact/components/priced_player3.json": "b142c779d3a641e743d2d731309d2d33fcfd9e0e7b97343db87667589f675a49",
+    "archives/customer-attraction/tools/half5-exact/components/verify_local_components.py": "d0a8c900ae9eb8ab08bd0b6f8e84acad6f08943f349d3326eee0f57425f06a1d",
+    "archives/customer-attraction/state/证明/五人证书活跃行--证明.md": "ad93ab97ca4dea4a6362b0f3343f84377fd0e01607af74289ac8ea691fc60374",
+    "archives/customer-attraction/tools/half5-exact/row_manifest.json": "cbc5f0c7b6238a1d0e622621c89851292c4ed94e946e36ed16b41e1bb851c0cf",
+    "archives/customer-attraction/state/审查/五人局部组件独立重构的真实节点门槛与复现范围--审查.md": "f1cfa65da73e3e465ab235bf7c26162087e1a3f571ac9a8c4dcb55b47b8b996e",
+    "map/edges/customer-attraction-3a-3a-db4f54dc1d2ab575/math-review.md": "50a248310e316237a04f52d02b6c020b2a6f4a4b9a7046b6cf9c74dcb9b6b78e"
+  },
+  "review_digest": "8940f947e2062a8dd7fa6aa3fe56ae035b3d83122a10f3f9ded4979e37638eda"
+}

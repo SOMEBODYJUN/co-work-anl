@@ -1,0 +1,54 @@
+{
+  "edge_id": "um-b06dac92-blockrank-messages-transfer-full-symmetric-cactus-bound",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1"
+  ],
+  "target_ids": [
+    "M-13581d45b027466aa2e4ab966402a1ca"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "目标限邻接表给定的有限简单cactus（顶点块为桥或长度至少3的单环）、每条边在两端同一正整数权；边任务选尾端与定向完全对应。阈值允许原节点初载作本点固定账本，块消息不重复计父割点初载。优化限原零初载、权1…k。O(n)及O(n log k)采用目标论文的单位成本整数算术/图操作模型，完整位运算另计。",
+  "roles": {
+    "UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1": "提供森林最小父负担、逐块反馈边枚举、子块最小见证同时组合与精确回溯的证明引擎；本边另付其b≤1专化实现的精确算术次数。",
+    "M-13581d45b027466aa2e4ab966402a1ca": "恢复整条同权简单cactus阈值O(n)并回收方向、原零初载权1…k优化O(n log k)的已登记结论。"
+  },
+  "explanation": "每条原边成为两端处理时间均为w(e)的独立任务，给u即定向u→v；节点初载可作本点单端固定任务。块只拥有其内部原边和严格后代块任务，父割点本点初载另计；子块原任务与内部点不交，最小父负担可同时达到。桥秩0只作一次森林叶剥离，环秩1只枚举一条反馈边的两个端点、各作一次树扫描，穷尽所有分配且森林交换不增根负担。2-1a可让能付双边的非gate接走两边，仅降邻点负担并双向扩回，保精确消息；非gate2-1b由单边不fit强迫另一端支付；gate2-1b则只是在附加父gate总负载≤T的全图条件下裁剪，不能给局部不限T的根消息强加容量。若非gate可付任一单边而不可双付，c条环边不能全由c−1个非gate各至多支付1条，故gate至少付一边；同向环以gate支付较轻边达到最小值，重边进入gate、轻边离开gate，与Fig.3一致。块层次预先建好，每块仅常数次扫描，ΣB(|VB|+|EB|)=O(n)，见证只存本地方向及已有子块指针、不重算或复制后代，最后O(n)回溯。额外用cactus的2-degeneracy删度≤2点并把边向未删端定向，得到每点出度≤2及零初载OPT≤2k；整数阈值在[0,2k]二分为O(log(k+1))次。所有有限账本是原任务负担的实际和、位长poly(L)，完整位复杂度仍poly(L)。这些新增的专化计费填清了源粗界2^b poly(L)本身未给出的精确O(n)/O(n log k)强度。",
+  "scope": "只在目标原同权简单cactus域给整条保证；不宣称两算法逐边/tie-break相同，不从对称AlgCactus反向推出不等端有理、零、单端或任意labelled平行任务的完整块秩定理。",
+  "whole_result": "B的精确块消息/反馈边引擎连同本边明确实现的b≤1常数扫描与见证指针，给任意目标同权正整数简单cactus在固定阈值下O(|V|)整数算术/图操作的精确决策及原边完整方向回收；在零初载、权1…k且k≥2时，2-degeneracy给OPT≤2k，整数二分及回溯共O(|V| log k)算术/图操作，k=1边界单独O(|V|)，统一为O(|V| log(k+1))。这覆盖A的整条已登记statement；大整数位费用另付，位复杂度poly(L)，没有把线性算术次数当线性位时间。",
+  "evidence": [
+    {
+      "path": "map/edges/boss5-cactus-blockrank-comparison-3b-b06dac924461f37d/mathematical-review.md",
+      "sha256": "9362f812063462606dc46dd96871ca57362b8f1bfb278a7b113120c217614276"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md",
+      "sha256": "3fe059248d81113e400a7c5fe3084cccc9eb53267d4c4f1a570e086bc1a06e0f",
+      "section": "2. 仙人掌图：精确决策和优化"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/仙人掌可行配置证书与逐块精确消息的审查--审查.md",
+      "sha256": "e61a55f8d893ed46a6a4e114c1b53f7133e293233d763b1097dad0398614cc48",
+      "section": "端点异权、带标签顶点块的精确实际算法"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/asahiro-miyano-ono-2011.pdf",
+      "sha256": "5db93652d80fd92b6440e0a0e22edfdeb09f78e2b886c95cb4adf171c67ee147"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "fresh 3B数学worker完整实读两current body、块秩附属审查及有限审计边界；新读冻结PDF印页4–11并目视核Fig.3。独立完成环gate计数、受限/不限根区别、任务不交所有权、常数次森林扫描/指针回溯、2-degeneracy及整数二分计费。原成熟解析证明复用，未重跑审计。已逐项对齐A完整statement后判whole；B整体输入域没有被对称结果逆向扩展。",
+  "endpoint_pins": {
+    "M-13581d45b027466aa2e4ab966402a1ca": "02f610d7fe9a9c2ee09fa05695e14a399b9c15f3f8fb9d1427c6ab430f642e9f",
+    "UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1": "10e9ee07755d5f8822f8dd874e385a962b6f40499112a33b14985bc549305f85"
+  },
+  "evidence_pins": {
+    "map/edges/boss5-cactus-blockrank-comparison-3b-b06dac924461f37d/mathematical-review.md": "9362f812063462606dc46dd96871ca57362b8f1bfb278a7b113120c217614276",
+    "archives/unrelated-machines/state/资料/Asahiro等--图取向最小最大加权出度--资料.md": "3fe059248d81113e400a7c5fe3084cccc9eb53267d4c4f1a570e086bc1a06e0f",
+    "archives/unrelated-machines/state/审查/仙人掌可行配置证书与逐块精确消息的审查--审查.md": "e61a55f8d893ed46a6a4e114c1b53f7133e293233d763b1097dad0398614cc48",
+    "research/registration/evidence/boss6-0104/asahiro-miyano-ono-2011.pdf": "5db93652d80fd92b6440e0a0e22edfdeb09f78e2b886c95cb4adf171c67ee147"
+  },
+  "review_digest": "a5c74ee073208caeee7c6e7bde82061ebcbd80647db65326c7343434cb1fdcc0"
+}
