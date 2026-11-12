@@ -1,0 +1,84 @@
+{
+  "edge_id": "cag-17728-pure-saddle-plus-single-tie-patch-certifies-frozen-policy",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-188ec19e2d354848bf1ddfd992957fe2"
+  ],
+  "target_ids": [
+    "customer-attraction/four-player-six-label-terminal-price-fixed-policy-resource"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定四人、六个标签及六名不同单位客户：兴趣{0,1,2,3}重数4、{5}重数1、{0,1,3,4,5}重数1。动作表精确绑定SHA14e813bb26898416354020f4a2b620dd661208353c4798712cfb8bfbc8da83da；全部有序历史、重复行动和弱平局保留。A为0/1/3的共同五客户覆盖；全259表除h=(2,1,2)规定5外只规定A别名。源条件t_A=5/4、D=(5/4,5/4,1,5/4,1/4,5/4)逐项付清；偏离按同一冻结策略真实续完。",
+  "roles": {
+    "M-188ec19e2d354848bf1ddfd992957fe2": "提供纯静态鞍点的充分条件与任意有序历史恒覆盖A（允许同覆盖别名）的完整SPE基准；不直接假称冻结策略全部恒A。",
+    "customer-attraction/four-player-six-label-terminal-price-fixed-policy-resource": "接收基准加唯一非A节点的可信平局修补；固定σ的完整IC、实际3011、均分收益、W和OPT由本解析与既有完整有理表共同支付。"
+  },
+  "whole_result": "指定六单位客户、四人六标签实例中，SHA14e813bb26898416354020f4a2b620dd661208353c4798712cfb8bfbc8da83da的259节点完整有序纯策略σ为SPE。实际路径(3,0,1,1)、计数(1,2,0,1,0,0)，四人收益均5/4，W=5，允许重复的静态OPT4=6；已保存定义级精确有理表覆盖259×6=1554项含自身比较（1295项非自身），全部slack非负、最小0。此处1554表为继承的成熟证据，不是本轮新运行。",
+  "explanation": "取a=0，b=0,r=4。标签0/1/3覆盖同一A=X∪{z}，|X|=4；2覆盖X，4覆盖z，5覆盖{y,z}。纯鞍点行t_A=5/4、D=(5/4,5/4,1,5/4,1/4,5/4)满足所有D≤t，源定理在全部有序历史给恒覆盖A完整SPE。完整动作表逐项实读发现唯一非A动作σ(212)=5；令τ仅把该动作改为0，τ其余逐项等σ，故τ为该恒覆盖基准。在212，遵循A的末位收入4/4+1/2=3/2，改选5为1+1/2=3/2，局部最优性不变。在父历史21，规定0并走2103，当前收益4/3；仅偏离2由τ叶2120（收入1）换为σ叶2125（收入4/3），这一条slack由1/3降为0，其余比较不变。历史2的六个真实叶为2013,2103,2210,2310,2410,2503；根的六个真实叶为0311,1301,2103,3011,4103,5310；均不到212，σ与τ完全相同。其它非祖先前缀不能进入212，故源全历史认证加上述修补证明了这份冻结σ全部IC。实际动作3→0→1→1全部覆盖A，每人五份1/4，得5/4、W5；六客户给OPT≤6，元组(5,0,0,0)覆盖全部，故OPT4=6。完整成熟脚本只取冻结实例和动作表，表中全部1554行已通过无损prefix readview逐字段读，包含元数据及最小0；本轮只运行JSON/SHA/无损codec与短解析，不重新执行审计或策略求解。",
+  "scope": "整条目标固定输入/指定完整策略的存在性与精确有限证据；不扩为唯一性、最差SPE、价格最优、客户锥上界、任意四人或六人half。原score/z/clones没有进入证明。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/合法背景首两人安全比的有限探针与三个取等点--程序.md",
+      "sha256": "0a1073b2039fd08a31e57ccce915edc030a9ec0d799c0a1d73173bde245a269e",
+      "section": "纯静态鞍点给精确安全值"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/合法背景首两人安全比的有限探针与三个取等点--程序.md",
+      "sha256": "0a1073b2039fd08a31e57ccce915edc030a9ec0d799c0a1d73173bde245a269e",
+      "section": "同一条件还给全历史恒动作SPE"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/合法背景首两人安全比的有限探针与三个取等点--程序.md",
+      "sha256": "0a1073b2039fd08a31e57ccce915edc030a9ec0d799c0a1d73173bde245a269e",
+      "section": "固定合法背景和真正静态安全值"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/四人六标签固定策略的终局价格审计--计算.md",
+      "sha256": "82958619c67ecfa956bb8a95008f4f0d39209a1706a7483fb85388a04d00427b",
+      "section": "本次新增定义级精确核验"
+    },
+    {
+      "path": "archives/customer-attraction/state/计算/四人六标签固定策略的终局价格审计--计算.md",
+      "sha256": "82958619c67ecfa956bb8a95008f4f0d39209a1706a7483fb85388a04d00427b",
+      "section": "冻结输入"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/terminal-price-boss4/original/four_price_best.json",
+      "sha256": "14e813bb26898416354020f4a2b620dd661208353c4798712cfb8bfbc8da83da"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/saved-terminal-price-policies-definition-audit/audit_saved_price_policies.py",
+      "sha256": "1393f59a239ab29992a35134c0b3c8be9f912cea93a421ecae54d6b04eb09c85"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/saved-terminal-price-policies-definition-audit/report.json",
+      "sha256": "48e11a2c4abbadfb832b088bc58970e03b005501d2d9d147583219393088fa47"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-17728d897be33ac3/review.md",
+      "sha256": "18fe0e3b33bc519cc037571b5ebbd812a34ab46f604598a362b3cb93932b550d"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "FOUR-PRICE-FROZEN。原5文件8exact refs、6 staged passes完整保留且实读；policy与report逐字段可逆显示，decoder逐字节等原件。源M188 v3的完整注册合同及单篇一般证明正文另实读，直接用自足一般证明，不冒称读取其无关有限校准附件。人工核全表唯一非A节点及四层六后继/收益/slack，全部共同条件付清。Root已亲审基准与局部修补数学；本边尚未native绑定，不写endpoint_pins/evidence_pins/review_digest。",
+  "endpoint_pins": {
+    "M-188ec19e2d354848bf1ddfd992957fe2": "73f7ca0b81b4c93ce325fc9581e90974a99033cc54b53586b080d6d1ade1eda3",
+    "customer-attraction/four-player-six-label-terminal-price-fixed-policy-resource": "de459aff62848d420c491791293246b17249faf0571b738e034127351b185d13"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/合法背景首两人安全比的有限探针与三个取等点--程序.md": "0a1073b2039fd08a31e57ccce915edc030a9ec0d799c0a1d73173bde245a269e",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/计算/四人六标签固定策略的终局价格审计--计算.md": "82958619c67ecfa956bb8a95008f4f0d39209a1706a7483fb85388a04d00427b",
+    "archives/customer-attraction/tools/evidence/terminal-price-boss4/original/four_price_best.json": "14e813bb26898416354020f4a2b620dd661208353c4798712cfb8bfbc8da83da",
+    "archives/customer-attraction/tools/evidence/saved-terminal-price-policies-definition-audit/audit_saved_price_policies.py": "1393f59a239ab29992a35134c0b3c8be9f912cea93a421ecae54d6b04eb09c85",
+    "archives/customer-attraction/tools/evidence/saved-terminal-price-policies-definition-audit/report.json": "48e11a2c4abbadfb832b088bc58970e03b005501d2d9d147583219393088fa47",
+    "map/edges/customer-attraction-3a-3a-17728d897be33ac3/review.md": "18fe0e3b33bc519cc037571b5ebbd812a34ab46f604598a362b3cb93932b550d"
+  },
+  "review_digest": "fb88788a47beb37c774f20422895b02652cda4b3bb30e3a73e138cffb033eacf"
+}
