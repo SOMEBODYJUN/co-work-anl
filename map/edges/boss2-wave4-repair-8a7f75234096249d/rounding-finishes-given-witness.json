@@ -1,0 +1,61 @@
+{
+  "edge_id": "blmrs-resource-rounding-finishes-local-search-heavy-light",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-737cbc9ea3b54c03b847026018cf5b19"
+  ],
+  "target_ids": [
+    "M-a3feff9f6a574834925528d0f9d9d658"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "同一restricted resource-matroid模型，有限非空玩家集，公共有限非负有理价值，归一化单调整数次模秩oracle及每项原整数polymatroid基；给定V>0、alpha≥2。分别处理两个入口，各结论须相应的全部见证条件：一般值入口给定互不相交并覆盖原项集的H,L，重项值≥V/(2alpha)、轻项值<V/(2alpha)，给定各重项合法整数独立向量且W中每人至少得一个重资源单位，U=E\\W上给定各轻项合法有理分数独立向量且每人值≥V/alpha。两值大阈值入口另给定原资源实例的有理分数基、每人值≥V，且最大值w<V/alpha。两个入口均从相应给定见证出发，不假定冻结规范搜索已构造见证。",
+  "roles": {
+    "M-737cbc9ea3b54c03b847026018cf5b19": "提供对每个合法给定分数基见证的减最大有限资源值舍入；独立向量先在限制底集上补基。",
+    "M-a3feff9f6a574834925528d0f9d9d658": "当前v3/open完整算法目标，仅接受Lemma22给定重轻见证和两值大阈值见证的已证整数化贡献；完整算法仍未获有效证明。"
+  },
+  "explanation": "一般值入口：先逐项把重资源独立向量补成原整数基，W的非负收益不降。对每个轻项限制到U，把给定有理分数独立向量补成限制polymatroid的分数基，在共同阈值V/alpha调用资源减最大值舍入，U各得至少V/alpha−lightmax≥V/(2alpha)。再将每个轻项整数向量在原底集补成原整数基，U收益不降；重轻原项不交，所以全体玩家达到V/(2alpha)。U空时直接补基，U非空且L空时正阈值见证不存在。限制、分数及整数补基均用逐坐标次模最小化，至多每项|E|次；压缩槽舍入不展开二进制大重数。两值大阈值入口：对给定每人值≥V的整体分数基直接舍入，每人值≥V−w>V(1−1/alpha)≥V/alpha，最后一步用alpha≥2。当前严格证据证明两个入口，无需已否的搜索递归不交性。完整条件证书、计数及现canonical反例的精确边界见新正文。",
+  "contribution": {
+    "result": "对每个已给且满足conditions的一般值重轻中间见证，多项式恢复逐项原整数基，所有玩家值至少V/(2alpha)；对每个已给两值大阈值分数基见证，恢复原整数基且每人值至少V/alpha。若另有后端确实构造该重轻见证，取alpha=4+epsilon/2，这一收尾步骤给8+epsilon数值界。",
+    "remaining": "完整a3 v3/open目标还需有效规范M/P阈值子程序、给定见证的多项式构造、阈值搜索、重轻解码及两值其他分支。现已证外层可达递归重叠直接否定冻结v1 Lemma30(1)，在C更正和空A保护后仍存在；须重核部分覆盖后的合法入口、交换秩、失败证书和递归复杂度。本文条件证书与计数只能在其列明不变量下使用，没有支付被否定的搜索不变量，也不把完整算法标为proved。"
+  },
+  "scope": "Lemma22从给定原资源见证到原整数基分配的局部贡献，保一般值2alpha和两值大阈值alpha的不同入口；两个入口各在其相应见证条件下成立。关系推导完整，目标完整算法仍open。",
+  "evidence": [
+    {
+      "path": "map/edges/boss2-wave4-repair-8a7f75234096249d/given-witness-rounding-and-open-search.md",
+      "sha256": "b1df30e880dd56f19c72466833bd291eb2bb70d7efd3a5b3c5a2189c4c6af654"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md",
+      "sha256": "9c7a4bfe21f216b57edfbce69b591aabf1a4d3a637510eba54411f7d62774bd1"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
+      "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md",
+      "sha256": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
+      "section": "4. resource-matroid Santa Claus 局部搜索"
+    },
+    {
+      "path": "archives/unrelated-machines/state/反例/BLMRS规范搜索的外层可达递归重叠--反例.md",
+      "sha256": "c8c04a17f37b603201f8c265e57a051b934e9a43964fe7e380e65418414ad9fa"
+    }
+  ],
+  "reviewed_by": "Boss2/wave4-blmrs-rounding",
+  "review_note": "实读两个被替代任务、收据、四个旧资产和六个当前对象；核资源/作业v2证明及pins不变，保原等价边SHA。完整核严格槽与压缩、原项补基、常向量及私有补偿双向桥和2近似边界。核冻结Definitions7/8、Prop9、Thm21/23、Lemma22及§4/AppendixF；实读canonical外层可达反例正文与精确反驳边。重轻和两值大阈值给定见证收尾逐项成立，不使用已否搜索不交性。旧证书与计数仅保为列明不变量下的条件推导；本轮未重跑历史有限实验。",
+  "endpoint_pins": {
+    "M-737cbc9ea3b54c03b847026018cf5b19": "8cf0ef3b2e88c2a2e1253b318c333e212f60184c7482c182cee8e33434f8d758",
+    "M-a3feff9f6a574834925528d0f9d9d658": "a75b5c172facac3d19078ee9bcb0d06f3642a8256d5f7aa8196f7553ded5df01"
+  },
+  "evidence_pins": {
+    "map/edges/boss2-wave4-repair-8a7f75234096249d/given-witness-rounding-and-open-search.md": "b1df30e880dd56f19c72466833bd291eb2bb70d7efd3a5b3c5a2189c4c6af654",
+    "archives/unrelated-machines/tools/evidence/boss2-6405-blmrs-proof/rounding-slots-and-dual.md": "9c7a4bfe21f216b57edfbce69b591aabf1a4d3a637510eba54411f7d62774bd1",
+    "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183",
+    "archives/unrelated-machines/state/资源/圣诞老人遇到Makespan与拟阵--资源.md": "c10eb8f230e2480fd83c7727b74e3035b33e29eafb5aca54b1023178e296734a",
+    "archives/unrelated-machines/state/反例/BLMRS规范搜索的外层可达递归重叠--反例.md": "c8c04a17f37b603201f8c265e57a051b934e9a43964fe7e380e65418414ad9fa"
+  },
+  "review_digest": "f3b08d8bb1b8681ec8435b8af1ffb5dd56a04bd30d613f3a91a669d3feebd5ac"
+}

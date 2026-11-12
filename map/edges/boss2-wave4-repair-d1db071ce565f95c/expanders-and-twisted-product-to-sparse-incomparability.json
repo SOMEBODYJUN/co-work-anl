@@ -1,0 +1,51 @@
+{
+  "edge_id": "boss2-wave4-kun-expanders-and-twisted-product-construct-sparse-incomparability",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-cdd66f04eebf4c44b73d62aece017919",
+    "M-2cade1d7f2d24941acd7fb06b938c73e"
+  ],
+  "target_ids": [
+    "M-dcddc9883c494fea8a4b270fdc4b10c7"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定有限关系类型τ及正整数t,k。两项当前v2已证前提按ALL保留：M-cdd66f04eebf4c44b73d62aece017919提供每个充分大整数n的精确n点、有界度、高围长关系扩展器确定性构造；M-2cade1d7f2d24941acd7fb06b938c73e提供Kun Definition7和Theorem9：若girth(A)≥q且|A|^(1/q)>Δ(A)Δ(B)，可确定性多项式时间构造girth(C)≥q的twisted product，底集A×B、投影C→B且每个B关系元组上的lift由A的对应关系经逐坐标纤维双射给出。只在至少二元reduct上应用这两项，再恢复一元全纤维和零元真值。取q=k+1支付严格girth>k。空域如允许，输入与目标采用同一合同。精确n源定理的补全复用当前canonical um-kun-fixed-seed-double-padding-all-exact-orders；本边不重新产生该同义关系。全部承重输入均为已证定理或下文直接证明，没有开放前提。",
+  "roles": {
+    "M-cdd66f04eebf4c44b73d62aece017919": "对固定τ₂、ε和q给常数D,N，并对每个整数n≥N确定性构造恰n点的辅助A：girth(A)≥q、Δ(A)≤D，各至少二元关系非空且为ε-expander。可按输入B的度选择多项式大小n，满足Theorem9的严格尺寸条件。",
+    "M-dcddc9883c494fea8a4b270fdc4b10c7": "完整终点：同类型S′具有严格大于k的围长，投影同态到S，并对所有域大小<t的有限τ型T同时保持S→T的真假，构造确定性且在固定τ,t,k下为多项式时间。",
+    "M-2cade1d7f2d24941acd7fb06b938c73e": "与扩展器共同按ALL输入：在girth(A)≥q、|A|^(1/q)>Δ(A)Δ(B)下，确定性构造高围长twisted product C。Definition7的投影与逐元组逐坐标双射使多数值正计数能转成B→T；定理只在τ₂-reduct调用，一元全纤维和零元真值另行自给恢复。"
+  },
+  "whole_result": "由扩展器构造与高围长twisted-product算法这两项共同前提及下述直接多数值论证，对每个固定有限关系类型τ、正整数t,k和任意有限τ型S，可确定性地在S显式输入长度的多项式时间内构造同类型S′，使girth(S′)>k、S′→S，且对每个有限τ型T满足|T|<t时均有S→T当且仅当S′→T。S′仅依赖S和固定τ,t,k，不依赖个别T，支付目标的完整陈述。",
+  "explanation": "令τ₂为τ中所有至少二元的关系符号。若S的域为空，取S′=S；若τ₂为空，也取S′=S，因为仅一元/零元元组不能形成Kun §2定义的关系环。这两种情形的恒等映射已支付严格围长、投影及全部目标的等价。以下设S非空、τ₂非空。令B=S|τ₂，r=max_{R∈τ₂}arity(R)，q=k+1，ε=1/(t^r+1)。这些量仅依赖固定τ,t,k，与S及待比较的T无关。\n\n(1) 精确辅助尺寸与算法。当前Theorem3给固定整数D≥1、N≥1，对每个整数n≥N可确定性构造恰n点的τ₂型ε-expander A，girth(A)≥q、Δ(A)≤D，而且每个R(A)非空。精确n和统一度界不是从Kun p.10的整除简写直接略过：本轮实读并复用当前canonical um-kun-fixed-seed-double-padding-all-exact-orders（精确SHA见evidence），其中已用固定seed、显式图阶数、B层padding及乘积后不足一纤维的padding支付每个充分大整数n。这里仅使用该已完成源结论，不复制其同义边。\n\n取整数n=N+1+(D·max(1,Δ(B)))^q。则n≥N，且n^(1/q)>D·max(1,Δ(B))≥Δ(A)Δ(B)。若L为S显式输入长度，按坐标出现重数计的Δ(B)≤L，故n=O_{τ,t,k}((L+1)^q)。调用Theorem9构造τ₂型twisted product C：底集A×S，girth(C)≥q，投影πS:C→B保持关系。每个R(B)元组有恰|R(A)|个lift，且Δ(C)≤DΔ(B)。A的总关系元组数O_{τ,t,k}(n)，所以C的底集大小和元组总长度均为L的多项式；Theorem9在固定τ和q下的构造时间也是多项式。此处D,N及算法常数可依赖固定参数，不主张τ,t,k作为变化输入时仍有统一多项式界。\n\n(2) 完整签名恢复。在C的同一底集上定义S′：至少二元关系沿用C；每个一元U设U(S′)=A×U(S)；每个零元关系取与S相同的真值。加入低元元组不能产生关系环，故girth(S′)≥q=k+1>k。πS保持高元lift、一元全纤维和零元真值，故S′→S。对任意T，S→T于是通过合成蕴含S′→T。一元恢复增加的度至多τ的一元符号数u，故Δ(S′)≤DΔ(B)+u；不宣称输出度独立于输入S。\n\n(3) 全部小目标的逆向。固定任意有限τ型T，|T|=m<t。若T为空而S非空，则S和S′的域都非空，均不能映到T，等价已成立。以下m≥1，设φ:S′→T为同态。对每个s∈S，在非空纤维A×{s}选φ的一个多数值h(s)，其逆像至少n/m点；平票按任意固定规则打破。\n\n给R∈τ₂，ℓ=arity(R)，及任意b=(s₁,…,sℓ)∈R(S)。Definition7给逐坐标双射αb,i:A→A×{sᵢ}。令Fᵢ=αb,i⁻¹(φ⁻¹(h(sᵢ))∩(A×{sᵢ}))，则|Fᵢ|≥n/m。由R(A)非空及expansion，\nR(A)(F₁,…,Fℓ) ≥ |R(A)|((∏ᵢ|Fᵢ|)/n^ℓ−ε) ≥ |R(A)|(m^(−ℓ)−ε)>0，\n因为1≤m<t、ℓ≤r给m^ℓ≤t^r<t^r+1=1/ε。于是有R(A)元组(a₁,…,aℓ)，使每个αb,i(aᵢ)映为h(sᵢ)；Definition7把它变成S′的R元组，φ保持关系，故(h(s₁),…,h(sℓ))∈R(T)。即使b有重复坐标，各坐标双射仍单独使用，这个推理不要求sᵢ互异。\n\n若s∈U(S)，则整个纤维在U(S′)，其每个φ像都在U(T)，故多数值h(s)也在U(T)。若零元R在S为真，则它在S′为真，φ保证其在T为真。故h:S→T是完整τ型同态。S′在挑选T、φ和h之前已固定，所以该同一S′同时保所有|T|<t的目标。t=1时只有可能的空域目标，前述退化分支已涵盖；不要求存在正大小目标。\n\n(4) 保留旧资产的必要修补及边界。不能把原印Lemma13在任意一元关系下直接使用：取τ={U}，A={a}、U(A)=∅，B={b}、U(B)={b}，T={z}、U(T)=∅。Definition5只约束至少二元关系，故A满足任意ε>0的expander条件；取ε<1，原印ε|T|^r<1也成立。直接乘积C的一元U为空，所以C→T但B↛T。本边在τ₂上构造后采用一元全纤维，排除此精确反例，且步骤(3)直接证明目标而不调用错误的一元推广。原印Theorem1末段只写Theorem9给girth≥k；本边用q=k+1同时调整A的围长、尺寸指数和调用参数，支付严格>k。\n\n两项源在本构造中承担不同步骤，保一条ALL边：扩展器给每个大n的非空关系、固定度和所有坐标盒正计数；Theorem9给高围长lift及投影，后者不能仅由expansion推出。当前另一canonical边已经从Theorem9加上其自给的已证seed/图/误差/padding输入完整推出Theorem3，本边不否定该方向，也不另造重复边。下游到MMSNP同签名互归约另需高围长中间定理和现代二分等桥，准确位置是现有boss2-kun-modern-bridge-completes-fixed-signature；本边不把该下游结论冒作两个源无需额外桥即可直接所得。",
+  "scope": "有限τ型关系结构与保持全部关系元组的同态；固定τ,t,k时，对任意显式输入S的确定性多项式构造、严格girth>k、投影及全部域大小<t目标的同时同态可行性等价。允许一元、零元及一致空域合同。结论不保持无大小界的所有目标，不保持解数，也不保证输出S′有输入无关常数最大度。当前精确n边和下游现代同签名桥均按已发布结果复用，不重复建立。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+      "sha256": "0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254",
+      "section": "1. Kun：Constraints, MMSNP and Expander Relational Structures"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/kun_mmsnp.pdf",
+      "sha256": "e6d37a035edb3cbaa3e246e5781a88c8a348eaaa16a57028dd8782dcf7373eea"
+    },
+    {
+      "path": "map/edges/map-repair-7491db9b84448830/fixed-seed-double-padding.json",
+      "sha256": "5d85de7dbcf86c79d9aa96b8557b6e42dc78aa0e7543686db33afaadb584df9d"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "本轮先实读任务实际definition/owner/input_pins、AGENTS.md、worker与IMPLEMENTATION入口；实读当前四对象v2及正文§1、两旧任务收据和其共用旧资产，再读冻结Kun arXiv:0706.1701v2全部12页的全文提取，重点核§2关系环/重坐标/度、Definitions4/5/7、Lemmas6/8/13、Theorems1/3/9及各自完整证明。完整实读当前精确n canonical边及现代同签名canonical桥，并分别edge-check；只复用其已完成外部文献输入，未声称本轮重读LPS/Bulatov等原论文。独立逐项核n的严格尺寸条件和输入多项式界、q=k+1、非空高元关系、多数值正计数、重复坐标、t=1、全部小目标同时量词、一元全纤维、零元复制及空域/纯低元退化。旧ALL独有内容全部保留，仅更新当前pins/SHA并把源精确n的已完成补证显式引用。新边整条无开放数学步骤，故accepted/unconditional/whole_result；旧资产保持原字节，由新收据逐旧任务replaced。",
+  "endpoint_pins": {
+    "M-2cade1d7f2d24941acd7fb06b938c73e": "2731a90af12bcb31c023bfe0342f847e6bc3128f60ec2d4be6101e8f472df37c",
+    "M-cdd66f04eebf4c44b73d62aece017919": "a4e4c065b40291de0d2f4684419381102f90eebf0cf979bbb71f8434a2e25db9",
+    "M-dcddc9883c494fea8a4b270fdc4b10c7": "d7d4efe1412c23438b3c478da7574fadf9d36fbf4edbff31177248a421331e4a"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md": "0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254",
+    "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/kun_mmsnp.pdf": "e6d37a035edb3cbaa3e246e5781a88c8a348eaaa16a57028dd8782dcf7373eea",
+    "map/edges/map-repair-7491db9b84448830/fixed-seed-double-padding.json": "5d85de7dbcf86c79d9aa96b8557b6e42dc78aa0e7543686db33afaadb584df9d"
+  },
+  "review_digest": "8536bf69a8f9a47e42d730650fd07919cb301c5064e07e1051bb6d935f8f1865"
+}

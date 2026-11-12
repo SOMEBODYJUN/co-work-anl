@@ -1,0 +1,92 @@
+{
+  "edge_id": "boss2-wave4-petal-paid-minimax-all-to-half",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "customer-attraction/pooled-response-load-jensen-credit-and-conditional-interface",
+    "M-a73c059007b34941839ba1683f0d4479"
+  ],
+  "target_ids": [
+    "Q-CAG-HALF"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定m≥2,K≥2的原完整花瓣SPE族和预先固定的不同花瓣响应映射；全部真实偏离删除背景沿同一σ计算。已证B对该σ全部p支付预算；已证pooled源的真实分数背景及其canonical上游归约在本边完整展开，无额外开放付款前提。",
+  "roles": {
+    "customer-attraction/pooled-response-load-jensen-credit-and-conditional-interface": "同σ真实删除负载H(p)属于(m−1)conv{1_T}；将其已经canonical的到M-9f2…完整minimax及静态覆盖归约内联展开。精确恒等式中的signed κ仍保留，不宣称一般付款。",
+    "M-a73c059007b34941839ba1683f0d4479": "对每个m≥2,K≥2、原预先固定完整花瓣σ及每个目录p证明mP(p)≤W，支付上游归约所需全部前件。",
+    "Q-CAG-HALF": "只得到原花瓣完整SPE族OPT_m≤(2−1/m)W≤2W的已完成局部贡献；一般目录/任意完整σ仍开放。"
+  },
+  "explanation": "固定原花瓣m≥2,K≥2及同一完整σ：根C、其余非末位B、末位按全有序历史非B数t选B或预先固定不同花瓣。该规则对所有历史及弱平局已证完整SPE，actual CB^{m−1}、每人2、W=2m。对任意p_C=a,p_B=b,p_Pj=s_j≥0，a+b+Σs_j=1，沿同σ强制查询后删当前槽；根C给B^{m−1}，根B/P给B^{m−2}加一个真实P，其余actual位置给C,B^{m−2}。令ρ_j≥0、Σρ=1−a，得到H_core=1−a/m、H_B=m−2+a/m、H_cj=ρ_j/m。故P(p)=2(1−b)/(2−a/m)+2(m−1)b/(m−1+a/m)+Σs_j/(1+ρ_j/m)。第二项≤2b、末项≤1−a−b、首项=(1−b)[1+a/(2m−a)]，所以∀p:P≤2−a+a(1−b)/(2m−a)≤2=W/m；m≥2保证正分母，概率边界同样成立。\n\n从已证pooled源的真实背景构造展开已canonical的ca-b7bf-pool-ledger-to-conditional-minimax：每个删除背景恰含m−1个合法目录标签，其负载及平均H(p)均属于紧凸K_{m−1}=(m−1)conv{1_T}。令f_L(T)=Σ_{x∈T}1/(1+L_x)、F(p,L)=Σ_xt_x(p)/(1+L_x)、t_m=min_{L∈K}max_T f_L(T)。有限查询单纯形和K紧凸，F对p线性、对L连续凸，minimax给t_m=min_Lmax_pF=max_pmin_LF。对每个p各取合法L=H(p)，上段已证∀p付款给min_LF(p,L)≤P(p)≤W/m；对p取最大得t_m≤W/m。这不是存在一个共同H同时cap所有查询。\n\n固定任意L=(m−1)Σ_Tq_T1_T，q为目录分布，M=max_Tf_L(T)。最优m槽重数d_x满足1_{d_x>0}≤(d_x+L_x)/(1+L_x)：d=0右边非负，d≥1右边≥1。逐客户求和得OPT_m≤Σ_xd_x/(1+L_x)+Σ_xL_x/(1+L_x)=Σ_{i=1}^mf_L(T_i)+(m−1)Σ_Tq_Tf_L(T)≤(2m−1)M。对L极小化并代入已付t_m≤W/m，得到OPT_m≤(2m−1)t_m≤(2−1/m)W≤2W。\n\nM-9f2ee4fe4a7f454f83c30456b204b8f6仍是原条件中间命题：∀p mP≤W⇒t_m≤W/m⇒所述覆盖界；其精确当前pin及canonical上游边见intermediate_propositions。一般余额W−mP=Σe_i+Σκ_i+mJ中κ_i有符号，未从e,J≥0推出一般付款。ALL两输入分别承担合法背景/minimax归约与本族同σ全p付款；一般Q-CAG-HALF剩余量词保留在contribution.remaining。",
+  "scope": "有限单位客户共同标签原模型；m≥2,K≥2的指定完整花瓣族，核心2客户、B块2(m−1)客户、K个私有单点；每种预先固定不同花瓣响应映射、同一全有序历史σ及全部p（含概率边界）。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/引理/R-171池化响应负载Jensen信用与条件接口--引理.md",
+      "sha256": "e1aa463a90efcf3e762275425b7ba04cc5fb8f538d9db0245ada2640ffd1c2d2"
+    },
+    {
+      "path": "archives/customer-attraction/state/引理/R-171池化响应负载Jensen信用与条件接口--引理.md",
+      "sha256": "e1aa463a90efcf3e762275425b7ba04cc5fb8f538d9db0245ada2640ffd1c2d2",
+      "section": "两个校准与失败边界"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-171-security-core-20261031/original/pool_structural_checks.md",
+      "sha256": "72bc555caa4135339937f27e58624dec73be31774759e48683f9d8d1bfbb6b6b",
+      "section": "2. 新弱iid反例的整个多花瓣族，对全部p满足POOL"
+    },
+    {
+      "path": "archives/customer-attraction/state/证明/花瓣弱iid反族的显式阈值与渐近机制--证明.md",
+      "sha256": "10612b3cc46194c02896278722fbb5087817f8c2d6f207dd099c561975d5430e",
+      "section": "两参数目录与全部有序历史策略"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/R-171-security-core-20261031/original/pooled_response_loads.md",
+      "sha256": "075694eaf83dbdd4a595a24a9ccfc8875d92e0403f6cc085ee3e8ebca91fe320",
+      "section": "3. 尚开放的充分桥"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-b7bf2892514415df/pool-ledger-to-conditional-minimax.json",
+      "sha256": "222eae0ed8e28a1f997308f4ce0bd0ba6653caa5ef9356d510c1520fc61b4f6e"
+    },
+    {
+      "path": "map/edges/boss2-wave4-repair-f4379d37833afc48/paid-petal-minimax-proof.md",
+      "sha256": "1ceb77ae124232b1f5396afb8b752daae541ef56863620ff1f0452fb86d49c09"
+    }
+  ],
+  "reviewed_by": "Boss2/wave4-petal-paid-minimax",
+  "review_note": "本次直接实读当前两proved源的承重原文、pooled_response_loads§3完整minimax/静态覆盖证明、pool_structural_checks§2全p付款、花瓣全有序历史策略证明、原八边和21核心收据；按任务25当前pin与独立3D报告逐项对照。这里以已证pooled源及其已canonical完整归约展开后与花瓣付款作ALL，M-9f2…仅保留精确中间命题；不是单改relation_mode、不是把一般conditional节点升proved，也不把历史成熟计算当本轮复跑。",
+  "contribution": {
+    "result": "对全部m≥2,K≥2及每种预先固定不同花瓣响应映射的原完整σ，已付∀p预算给t_m≤W/m，故OPT_m≤(2m−1)t_m≤(2−1/m)W≤2W；这是两个proved源共同支持的无条件特殊族贡献。",
+    "remaining": "Q-CAG-HALF仍要求任意共同目录和每份完整σ；本花瓣族的全p付款不可外推，635例已否一般全pPOOL。本边不解决一般HALF，也不从t_m≤v_m倒推W≥mv_m。"
+  },
+  "intermediate_propositions": [
+    {
+      "object_id": "M-9f2ee4fe4a7f454f83c30456b204b8f6",
+      "object_pin": "f8959bda4b81a1da1262e4a65d8fff2e8827aff973b028882479dad509576a48",
+      "truth_status": "conditional",
+      "role": "其完整条件归约由现proved上游的canonical边证明并在本边展开；B已支付本族全部p前件，本对象本身不改状态。",
+      "canonical_upstream_edge": {
+        "path": "map/edges/customer-attraction-3a-3a-b7bf2892514415df/pool-ledger-to-conditional-minimax.json",
+        "sha256": "222eae0ed8e28a1f997308f4ce0bd0ba6653caa5ef9356d510c1520fc61b4f6e"
+      },
+      "body": {
+        "path": "archives/customer-attraction/state/引理/R-171池化响应负载Jensen信用与条件接口--引理.md",
+        "sha256": "e1aa463a90efcf3e762275425b7ba04cc5fb8f538d9db0245ada2640ffd1c2d2"
+      }
+    }
+  ],
+  "endpoint_pins": {
+    "M-a73c059007b34941839ba1683f0d4479": "97bea580dcdeefa614bfd40e58f857889a5f541caa50b530a2e73d951e759a45",
+    "Q-CAG-HALF": "dccd5277f7b0c1bb4dcac17287010f1d012bb40c6244c51f24808c1519a4b5ea",
+    "customer-attraction/pooled-response-load-jensen-credit-and-conditional-interface": "91310403ac6d6cb6909aae46a5ba6546e02c15c89ae615e749246c64ac20f300"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/引理/R-171池化响应负载Jensen信用与条件接口--引理.md": "e1aa463a90efcf3e762275425b7ba04cc5fb8f538d9db0245ada2640ffd1c2d2",
+    "archives/customer-attraction/tools/evidence/R-171-security-core-20261031/original/pool_structural_checks.md": "72bc555caa4135339937f27e58624dec73be31774759e48683f9d8d1bfbb6b6b",
+    "archives/customer-attraction/state/证明/花瓣弱iid反族的显式阈值与渐近机制--证明.md": "10612b3cc46194c02896278722fbb5087817f8c2d6f207dd099c561975d5430e",
+    "archives/customer-attraction/tools/evidence/R-171-security-core-20261031/original/pooled_response_loads.md": "075694eaf83dbdd4a595a24a9ccfc8875d92e0403f6cc085ee3e8ebca91fe320",
+    "map/edges/customer-attraction-3a-3a-b7bf2892514415df/pool-ledger-to-conditional-minimax.json": "222eae0ed8e28a1f997308f4ce0bd0ba6653caa5ef9356d510c1520fc61b4f6e",
+    "map/edges/boss2-wave4-repair-f4379d37833afc48/paid-petal-minimax-proof.md": "1ceb77ae124232b1f5396afb8b752daae541ef56863620ff1f0452fb86d49c09"
+  },
+  "review_digest": "e05a222e54335bbc6cd197203e9f7a9922997e188f9e219e412136b2d95d6292"
+}
