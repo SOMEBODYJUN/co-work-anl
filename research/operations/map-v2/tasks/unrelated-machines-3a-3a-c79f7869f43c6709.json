@@ -99,13 +99,70 @@
       "budget_status": "reading-scope-expanded-reestimate"
     }
   },
-  "state": "claimed",
+  "state": "done",
   "owner": "Boss2",
-  "request_id": "3b89a0c9bfa94df5abf4a1ef84cd3793",
+  "request_id": "24eea7c482c143eca2c325f337adaeed",
   "requests": {
     "81a0648c3de14140a1ae6370812f33c4": "plan",
     "4718bf02fc4443cd994b091c444975e5": "plan",
     "dc3bd2b44efe4477b38e8983d9e48542": "claim",
-    "3b89a0c9bfa94df5abf4a1ef84cd3793": "read-add"
+    "3b89a0c9bfa94df5abf4a1ef84cd3793": "read-add",
+    "24eea7c482c143eca2c325f337adaeed": "done"
+  },
+  "edge_paths": {
+    "um-lst-affine-compiler-pays-hardness-gap-transfer": "map/edges/unrelated-machines-3a-3a-0b1e09fc127de8a8/affine-compiler-pays-hardness-gap-transfer.json"
+  },
+  "receipt": {
+    "coverage": {
+      "M-49ea7a8bb95e414cbd856952bde67ab4": {
+        "state": "linked",
+        "object_pin": "d33f53d7f3df03066aaa38da1d0a0486c22f4d509414ddce26d420e68ef78eac",
+        "comparison_scope": "完整实读核心v2及共页M-760386636e8342ea8df34d88c9b6d1b9 v2；将冻结LST PDF（75c9acd3…）全文导出，分段读pp.1–14，重点核p.5 Definition2.1/2.3、Theorem3.1/Remark3.2，pp.6–7 Claim3.3、完整构造、kR-partition与双向最优值证明，并渲染核p.6。核pp.7–9 Theorems4.1–4.3及pp.12–13 AppendixA，以确认随机CSP gap和全p扩维不被compiler单独支付。实读当前canonical边um-lst-affine-compiler-pays-hardness-gap-transfer，确认端点pin与证据SHA当前且其contribution已经包含本包推导，故精确SHA共享复用、不重建同义边。另实读Kun整理正文§1及冻结PDF（e6d37a03…）全文pp.1–12，承重段的Definitions4/5/7、Theorems1/3/9、Lemma8/13及证明；比较M-dcddc9883c494fea8a4b270fdc4b10c7、M-2cade1d7f2d24941acd7fb06b938c73e、M-cdd66f04eebf4c44b73d62aece017919各v2。实读UM-LST2025-AFFINE-LINE-SOURCE-UNIFORM-COMPILATION-OBSTRUCTION-v1 v1所引双源正文及bb7f版本审查全文，及UM-3DM-DEMAND-FLOOR-OBSTRUCTION-v1 v3所引三维/高维配额审查全文、dcea标签缺陷审查与2f8c双源审查全文；核已有um-90a2-affine-hall-to-free-vacancy-parking-three-halves边以免重复。比较到的Kun同态、高围长、完整匹配、部分资源配额与UM实际调度均保各自模型，不因同用CSP/直线而连hub。",
+        "reason": "已接受逻辑关系精确复用um-lst-affine-compiler-pays-hardness-gap-transfer；它给硬度对象的已证局部贡献，未声称核心compiler单独推出整条p/(12+ε)硬度。独立核查如下。给变量v取带v标签的F_R²，d_v≤R保证各indexed约束有不同截距b_v(C)。每条约束有k个互异变量，允许tuple a产生恰kR点的边；同斜率不同截距不交，异斜率由(a−a′)x=b′−b的唯一解恰交一点。不同tuple若来自同一约束，至少一坐标斜率不同且截距相同，于x=0相交，因此匹配到约束是注入，不能把tuple当独立可满足group。任意匹配在每个被触及变量上给唯一斜率标签，未触及变量任意延拓；全局赋值至少满足其所选|M|条约束。反向任意赋值把其每条已满足约束映成一条边，同变量同斜率、不同截距，故得到恰同基数的匹配。于是OPT_DM=最大可满足约束数=m·val(Π)（m>0；m=0时基数两边均0，val的0/0另需约定）。最优匹配解码的赋值也是最优；一般匹配解码可能额外满足约束，只需≥|M|，不声称每份匹配与全局赋值一一对应。k-partition及局部x列给kR个分区；没有原k-partition只保kR-set packing。输出|V|R²点、Σ_C|C_C|条边及kRΣ_C|C_C|个incidences，显式枚举时间为这些数量和域运算的多项式，符合poly(|V|,|E|,R^k)，不宣称succinct poly(logR)。空允许关系不输出边而仍算原约束，保最大满足数；若编译UM要求每group非空，则需另处理空关系，不能直接套用。素域条件不能改成任意合数模环：R=4、同一变量两条unary约束分别只允许0与2、截距0与1时，线y=0与y=2x+1不交，mod4伪编译匹配2而CSP最优1。用真正F_q可将同一几何证明扩到prime power q，但当前对象仍限已登记素数R。近似方向是DM的ρ近似解码为CSP同ρ近似；给(c,s)判定gap时ρ<c/s才能严格分离。k=6时已给gap的阈值比为K(1−δ)/(12(1+δ))，K=6R；随机gap来源、NP⊄BPP排除与邻近素数/逐边private dummy扩维仍是整条硬度的独立承重输入。正文的η=λ/4校勘已修PDF分母缺口；未发现需改核心v2的错误。Kun只保小模板同态可行性，未给优化值、gap、alphabet对应或度≤R；其高围长乘积度至多Δ(A)Δ(B)而不是本核心所需同一R。即使输入只有一条k=2约束（围长∞），允许tuple(0,0),(1,0)在R=2时产生两条共享第二变量整条线的输出边，输出已有Berge2环，故不能把输入高围长当成本编译保留的结论。均匀UM模型只部分外送资源时任意local选择已有Hall半保留，给完整原矩阵峰≤3/2；这不反驳本核心完整集合匹配值等式，却阻断由该等式直接推出近二UM gap。高维配额审查的全层ν_t公式也明确：完整匹配仅付t=K，部分层、perfect而非near-perfect YES、全局decoder与真实负载关系均未付。",
+        "edge_ids": [
+          "um-lst-affine-compiler-pays-hardness-gap-transfer"
+        ]
+      }
+    },
+    "assets": [
+      {
+        "path": "map/edges/unrelated-machines-3a-3a-0b1e09fc127de8a8/affine-compiler-pays-hardness-gap-transfer.json",
+        "sha256": "46336cdbdeb40022e39fe5a6e4113505d47d822ed5a3e65e919c68b2a11319a9"
+      }
+    ],
+    "follow_up_tasks": [],
+    "reviewed_comparisons": [
+      {
+        "core_id": "M-49ea7a8bb95e414cbd856952bde67ab4",
+        "peer_id": "M-760386636e8342ea8df34d88c9b6d1b9",
+        "reason": "已由当前canonical accepted局部边完整支付CSP→kR-DM保值与近似反传阶段，本包复用同一SHA，不另建重复边；整条硬度独立gap与全p扩维义务已在原contribution.remaining准确保留。"
+      },
+      {
+        "core_id": "M-49ea7a8bb95e414cbd856952bde67ab4",
+        "peer_id": "M-dcddc9883c494fea8a4b270fdc4b10c7",
+        "reason": "Kun Theorem1保固定有限小目标同态的可行/不可行，不保最大满足约束比例；输出degree/alphabet/k-partition不自动满足本compiler条件。未发现由这两条已登记陈述直接推出优化gap的关系，不发布无内容的条件拼接。"
+      },
+      {
+        "core_id": "M-49ea7a8bb95e414cbd856952bde67ab4",
+        "peer_id": "M-2cade1d7f2d24941acd7fb06b938c73e",
+        "reason": "Kun Theorem9的结构高围长、度乘积与置换纤维条件不提供CSP优化gap，也不由LST保高围长；单条二元约束与两个允许tuple已能在LST输出造Berge2环。该比较关闭把两种构造视为同一保值稀疏化的候选。"
+      },
+      {
+        "core_id": "M-49ea7a8bb95e414cbd856952bde67ab4",
+        "peer_id": "M-cdd66f04eebf4c44b73d62aece017919",
+        "reason": "Kun有界度关系扩展器是独立有限结构构造，未给适配同一prime alphabet的degree≤R、带已知优化gap的允许关系或k-partition；expansion和girth本身不证明困难源的最大满足值。无可用逻辑推导，保具体不兼容条件。"
+      },
+      {
+        "core_id": "M-49ea7a8bb95e414cbd856952bde67ab4",
+        "peer_id": "UM-LST2025-AFFINE-LINE-SOURCE-UNIFORM-COMPILATION-OBSTRUCTION-v1",
+        "reason": "同一局部几何的完整匹配soundness与部分quota是不同合同。UM端任意local state选择均有共同ceil(kR/2)半保留且峰≤3/2，完整集合匹配的异斜率一交不足以阻止部分资源逃逸。已有Hall→free-vacancy停车迁移边，本包不重复，不将其作为本core的反驳。"
+      },
+      {
+        "core_id": "M-49ea7a8bb95e414cbd856952bde67ab4",
+        "peer_id": "UM-3DM-DEMAND-FLOOR-OBSTRUCTION-v1",
+        "reason": "高维正文给全层ν_t最大值；本core只控制完整K匹配，缺部分层soundness、perfect YES及负载decoder，故不能从core迁移一般UM困难性。三维μ/ν闭式有独立有类型三坐标域，不能用高维hardness替代其μ层。已有精确地板充分解释失败，不需新任务重开同一已解决比较。"
+      }
+    ],
+    "closed_overlaps": []
   }
 }
