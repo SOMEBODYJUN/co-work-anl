@@ -22,23 +22,7 @@
     "M-8fdee11afd164305a429734ee5ae705a": "5a4576c51598ca30c504ceff1d46a7f61cbf24c25cb4816468ee635b78297a7f",
     "M-bafae50558c441728f16cbfc7dce9f82": "73243ca77a1d4fdf7c89c8e99d9cd60264cfbdf6d1ee671b1adec63d6d0dfefd"
   },
-  "closed_overlaps": [
-    {
-      "core_id": "M-6024dc77bef04ea7a6aea19a318c6f43",
-      "peer_id": "M-513a993cb39a478a850f01c62d52d0ed",
-      "reason": "同一 value-only 模型的上下界相容。下界的 XOS 子域也受 CF 机制覆盖，但下界不是上界构造的前提，核心 O(sqrt(m)) 也未反驳 m^(1/2−epsilon) 查询障碍。现有端点无“最优指数”合并命题，未建虚假局部支持；本对比较已闭合。"
-    },
-    {
-      "core_id": "M-6024dc77bef04ea7a6aea19a318c6f43",
-      "peer_id": "M-8fdee11afd164305a429734ee5ae705a",
-      "reason": "XOS⊂CF 仅把核心机制限制为 XOS 上 O(sqrt(m))，并未得到 e/(e−1)。反向要求把 demand+XOS clause 多项式模拟成 value-only、把 XOS 扩到 CF 并支付 DSIC；原文没有这些桥。原算法的期望福利也不能替代核心逐实例机制保证，本对比较已闭合。"
-    },
-    {
-      "core_id": "M-6024dc77bef04ea7a6aea19a318c6f43",
-      "peer_id": "M-bafae50558c441728f16cbfc7dce9f82",
-      "reason": "确定性组合 2-approx 的 demand+XOS-clause 和 XOS 域不同于核心 value-only CF maximal-in-range 机制。确定性不推出 DSIC，较弱 O(sqrt(m)) 也不推出 2 或指定价格算法。因此无已完成的迁移或反驳，本对比较已闭合。"
-    }
-  ],
+  "closed_overlaps": [],
   "read_evidence": [
     {
       "path": "archives/unrelated-machines/state/文献/组合拍卖与投影游戏集合覆盖两篇文献整理--文献.md",
@@ -92,5 +76,22 @@
     "finite_truthfulness_check": "m=2,n=2，枚举同一整数 CF 域的全部真实 profile、两 bidder 和全部单方误报，共 2000 次偏离。用固定 R 精确福利最大化、与报告无关的 lexicographic tie-breaking 和 VCG pivot 支付，逐项核对真实效用≥偏离效用。全部通过。",
     "boundary_checks": "零估值，m=1，以及 n=1 时整集最优均通过。以 Python 逐项核对有限实例 OPT≤2sqrt(m)ALG；用 Fraction 记录实际比率并反算 OPT=ratio×ALG。",
     "scope_limit": "未运行或重构论文的 demand/clause 算法；有限检查未证明 oracle 模拟、不证明一般下界，也未把它们当作新数学对象。"
-  }
+  },
+  "comparison_outcomes": [
+    {
+      "core_id": "M-6024dc77bef04ea7a6aea19a318c6f43",
+      "peer_id": "M-513a993cb39a478a850f01c62d52d0ed",
+      "reason": "同一 value-only 模型的上下界相容。下界的 XOS 子域也受 CF 机制覆盖，但下界不是上界构造的前提，核心 O(sqrt(m)) 也未反驳 m^(1/2−epsilon) 查询障碍。现有端点无“最优指数”合并命题，未建虚假局部支持；本对比较已闭合。"
+    },
+    {
+      "core_id": "M-6024dc77bef04ea7a6aea19a318c6f43",
+      "peer_id": "M-8fdee11afd164305a429734ee5ae705a",
+      "reason": "XOS⊂CF 仅把核心机制限制为 XOS 上 O(sqrt(m))，并未得到 e/(e−1)。反向要求把 demand+XOS clause 多项式模拟成 value-only、把 XOS 扩到 CF 并支付 DSIC；原文没有这些桥。原算法的期望福利也不能替代核心逐实例机制保证，本对比较已闭合。"
+    },
+    {
+      "core_id": "M-6024dc77bef04ea7a6aea19a318c6f43",
+      "peer_id": "M-bafae50558c441728f16cbfc7dce9f82",
+      "reason": "确定性组合 2-approx 的 demand+XOS-clause 和 XOS 域不同于核心 value-only CF maximal-in-range 机制。确定性不推出 DSIC，较弱 O(sqrt(m)) 也不推出 2 或指定价格算法。因此无已完成的迁移或反驳，本对比较已闭合。"
+    }
+  ]
 }
