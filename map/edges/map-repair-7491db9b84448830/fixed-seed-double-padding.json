@@ -1,0 +1,43 @@
+{
+  "edge_id": "um-kun-fixed-seed-double-padding-all-exact-orders",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-2cade1d7f2d24941acd7fb06b938c73e"
+  ],
+  "target_ids": [
+    "M-cdd66f04eebf4c44b73d62aece017919"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定有限关系类型τ、正整数k及ε>0；度按Kun §2的元组坐标出现重数计算，至少二元关系必须非空且分别满足Definition 5。以下调用已证的LPS非二分Ramanujan图定理及固定模数算术级数素数定理，二者不是开放前提；图的可达阶数、seed的非空性、所有误差和多关系总度在explanation中逐项支付。",
+  "roles": {
+    "M-2cade1d7f2d24941acd7fb06b938c73e": "Kun Theorem 9：满足大种子不等式后，在多项式时间给高围长twisted product；Definition 7的纤维双射还给精确元组计数和乘积度界。",
+    "M-cdd66f04eebf4c44b73d62aece017919": "完整目标：每个充分大整数n的精确n点、非空至少二元关系、统一有界度、高围长及ε扩展性。"
+  },
+  "whole_result": "对每个固定有限关系类型τ、正整数k及ε>0，存在常数M=M(τ,ε)和阈值n₀=n₀(τ,ε,k)，使每个整数n≥n₀均可确定性地在n的多项式时间内构造τ型ε-expander S，|S|=n、Δ(S)≤M、girth(S)≥k；τ中每个至少二元关系均非空。M可取D_A·Σ_{R∈τ, arity(R)≥2} arity(R)(p+1)^(arity(R)−1)，其中D_A,p仅依赖τ,ε。",
+  "explanation": "令τ₂为至少二元的关系符号集。τ₂为空时取n点及全空关系即可，Δ=0、girth=∞。以下τ₂非空，令r=max_{R∈τ₂} ℓ(R)≥2、K=max(k,2)，选固定有理0<δ≤min(1/8,ε/4)，并令η=δ/4。一元关系取空；若允许零元符号，取假。下面所有常数均可固定且与n无关。\n\n(1) 固定seed及不依赖K的度界。独立采样2s点上的每个ℓ元有序元组，概率H/s^(ℓ−1)。H只依赖τ₂,δ，s充分大使概率≤1。对每个坐标盒S₁×⋯×S_ℓ，其计数X的均值μ=H s·∏ᵢ(|Sᵢ|/s)≤2^r Hs。Bernstein界给P(|X−μ|>ηHs)≤2 exp(−c(r,η)Hs)。盒数≤|τ₂|·2^(2sr)，故取固定H充分大可使所有盒同时满足|X−μ|≤ηHs的概率趋于1。单点按坐标出现重数计的期望度≤μ₀=H·Σ_R ℓ(R)2^(ℓ(R)−1)。取整数D_A≥40μ₀；超过D_A度的点数期望≤s/20，故它大于s/4的概率≤1/5。\n\n对1≤t<K的短圈，t≥2时用不同关系元组和t个相异连接点计数；固定元数及坐标连接方式后，自由点数≤Σ_i(ℓ_i−1)，采样概率为H^t/s^Σ_i(ℓ_i−1)，故期望O_{τ₂,H,K}(1)。t=1是有重坐标元组，其候选数O(s^(ℓ−1))，期望仍O(H)。每圈涉及点数≤rK，所以被短圈覆盖点数的期望O_{τ₂,H,K}(1)，其大于s/4的概率趋于0。三类事件因此以正概率同时成立。删去超度点和全部短圈覆盖点，再任选保留恰s点，得到girth≥K、Δ≤D_A的A。\n\n由于盒估计在删除前对所有子集同时成立，它适用于这个自适应选择的s点域以及其任意子集。取全域盒得||R(A)|−Hs|≤ηHs，故每个R(A)非空。对A内任一坐标盒，令P=∏ᵢ|Sᵢ|/s，则|R(A)(S₁,…,S_ℓ)−|R(A)|P|≤ηHs+ηHs·P≤2ηHs≤δ|R(A)|，最后一步用|R(A)|≥(1−η)Hs及2η≤δ(1−η)。于是A是δ-expander，且D_A不依赖K。固定τ,ε,K后，从任意预定下界开始穷举有限τ₂结构，检查全部坐标盒、短圈和度，必能找到这样的seed；这只是依赖固定参数的一次有限成本，不宣称对变化参数高效。预定下界将在步骤(4)指定。\n\n(2) 显式图阶数及walk关系。选固定素数p≡1 mod 4，使(r−1)·2√p/(p+1)≤δ，设D=p+1。对充分大的素数q≡1 mod 4p，二次互反律给(p/q)=1。LPS原论文的§2构造、§3连通和非二分结论及Theorem 4.1给PSL(2,F_q)上的显式D正则非二分Ramanujan图，阶数s(q)=q(q²−1)/2，所有非常数归一化特征值绝对值≤θ=2√p/D。取q充分大时生成元不同且不为单位元，因此是简单无环图；这也保证下文walk的顶点序列没有来自平行边的重数。所用原定理已实读：Lubotzky–Phillips–Sarnak, Ramanujan graphs, Combinatorica 8 (1988), 261–277, DOI 10.1007/BF02126799，原文PDF https://courses.grainger.illinois.edu/cs598sgt/sp2015/LPS.pdf ，§2、§3及§4 Theorem 4.1的非二分Case ii。\n\n对于每个ℓ元符号R，以全部有序(ℓ−1)步walk的顶点序列定义R(B₀)。有|R(B₀)|=s(q)D^(ℓ−1)>0，固定点出现在指定坐标的次数恰D^(ℓ−1)，故Δ(B₀)≤D_B:=Σ_R ℓ(R)D^(ℓ(R)−1)。不同关系的次数必须求和，不能一般只用rD^(r−1)。在均匀L²测度中令P为归一化邻接算子、J为常数投影，则||P−J||≤θ。任一盒概率写作⟨1,M₁PM₂P⋯PM_ℓ1⟩，其中M_i是相应指示乘子。逐个将ℓ−1个P替换为J，各次误差≤θ，因为所有其余P、J、M_i的范数≤1且||1||=1；全换后为∏ᵢ|Sᵢ|/s(q)。所以B₀的每个ℓ元关系误差≤(ℓ−1)θ≤δ。此推导核清了Kun Lemma 11所需的是最大非常数特征值绝对值，不能把二分图的−D漏掉。\n\n(3) 先把B补到任意充分大m点。令q为满足q≡1 mod 4p、s(q)≤m的最大素数，取s=s(q)，h=m−s。固定模数算术级数素数定理π(x;4p,1)∼x/(φ(4p)log x)给每个固定0<ρ<1的区间((1−ρ)x,x]在x充分大时有这样的素数：两端计数之差∼ρx/(φ(4p)log x)>0。因此q/(2m)^(1/3)→1，s/m→1，h/m→0。这里仅使用固定模数的无条件定理；已核K.S. Kedlaya, Notes on analytic number theory, §5.4 Theorem 5.10及其证明，https://kskedlaya.org/ant/chapter-5.html 。从B₀添h个孤点成B，保持关系元组和|R|不变。对一个坐标集合，设其旧域部分大小u、孤点部分大小v，则|u/s−(u+v)/m|=|(h/m)(u/s−v/h)|≤h/m；h=0时差为0。对ℓ项[0,1]乘积作望远镜估计得变化≤ℓh/m。因此B每个ℓ元关系扩展误差≤δ+ℓh/m≤2δ，当m充分大到rh/m≤δ。关系仍非空，Δ(B)≤D_B。B本身无需高围长；添加孤点也无需保持正则性，因为接下来的twisted product只用有界度和扩展性。\n\n(4) 高围长乘积与完整纤维。步骤(1)的seed下界取到a=|A|满足a^(1/K)>D_A D_B。D_A和D_B都与K无关，故存在任意大这样的seed A。对任意充分大n，设m=⌊n/a⌋、N=am、d=n−N，故0≤d<a。步骤(3)给恰m点的2δ-expander B。现在girth(A)≥K且a^(1/K)>Δ(A)Δ(B)，Theorem 9给确定性多项式时间的twisted product C，|C|=N且girth(C)≥K≥k。\n\nDefinition 7还逐项支付：对每个R(B)元组t，纤维上的逐坐标双射使其lift恰有|R(A)|个元组；不同t的lift经投影不同，故|R(C)|=|R(A)||R(B)|>0。对C上一点(a,b)，每个含b的B坐标出现至多带来D_A个含(a,b)的lift出现；对B的全部坐标出现求和得Δ(C)≤D_AΔ(B)≤D_A D_B。对任一盒令g_i(b)为第i个子集在b纤维中的点数。每个t用A的δ扩展性，累计误差≤δ|R(A)||R(B)|。余下主项是(|R(A)|/a^ℓ)R(B)(g₁,…,g_ℓ)；g_i/a∈[0,1]，用Lemma 6和B的2δ扩展性，其误差≤2δ|R(C)|。故C为3δ-expander。这正是Kun Lemma 8的误差相加，全部关系共同用一个D_B。\n\n(5) 不足一整纤维的最后d个孤点。给C再添d=n−am个孤点，得S。所有关系、元组总数和旧域盒计数均不变，围长不降、最大度不增、每个至少二元关系保持非空。对第i坐标的任意子集T_i，令u_i=|T_i∩C|、v_i=|T_i\\C|，则|u_i/N−(u_i+v_i)/n|≤d/n，d=0时为0。于是每个ℓ元关系的新扩展误差≤3δ+ℓd/n≤3δ+r(a−1)/n≤4δ≤ε，只需n再足够大。这是所求逐坐标d/n界；最后余量确为d<a，而步骤(3)内部的h可能非O(1)，只用了h/m→0。\n\n(6) 固定参数算法与边界。τ,k,ε固定后，δ,H,p,D_A,D_B及seed搜索成本皆为常数；对变化的k或精度不主张统一多项式或实用常数。给n以整数运算求m，按固定同余类向下扫描候选q并检查q(q²−1)/2≤m；试除素性检测已足够使扫描时间为n的多项式。LPS §2的固定维矩阵及固定生成元可直接枚举；即使遍历全部q⁴个2×2矩阵也在n的多项式时间。walk关系总元组数为O_{τ,ε}(m)，补点只是枚举底集。Theorem 9的乘积在|A|,|B|的多项式时间，固定a及K后仍为n的多项式。最后添d点不改变此前性质。故得到whole_result的所有量词，度界M=D_A D_B独立于n和k，阈值和算法常数允许依赖τ,ε,k。\n\n复用及修补范围：保留旧资产的随机固定seed、谱到walk估计、LPS阶数稠密性、乘积误差与度界及孤点padding的全部有效数学。新写法更新v2端点和正文SHA，并把先前的一次近整阶数padding改成显式的“B补至m；C补不足a的d点”两段，以同时清楚支付精确n及最终d/n。Kun PDF p.10直接写|G|=n/|A|没有说明整除及图可达阶数；固定常数seed也避免把p.10的log(n)域穷举直接当作显然多项式时间。这里提供补全证明，不依赖这些未展开的简写。",
+  "scope": "同一τ型有限关系结构，输出是底集与有序关系元组集合；任意固定τ,k,ε，每个充分大整数n。至少二元关系非空；度按坐标重数，低元关系自由取空。全目标支持而非仅局部contribution。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+      "sha256": "0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254",
+      "section": "1. Kun：Constraints, MMSNP and Expander Relational Structures"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/kun_mmsnp.pdf",
+      "sha256": "e6d37a035edb3cbaa3e246e5781a88c8a348eaaa16a57028dd8782dcf7373eea"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "本轮实读当前两个v2登记、任务/旧任务及旧收据/唯一旧资产、当前整理正文§1与冻结Kun PDF全文，重点核Definitions 4/5/7、Lemma 6/8、Theorem 9及pp.8–10的Lemma 10/11与Theorem 3证明。对log(n)搜索、整除/可达阶数、多关系求和度界、非空性、绝对谱界和两段padding逐项作独立推导。另实读LPS原论文在线PDF §2、§3相关结论及Theorem 4.1非二分Case ii，和Kedlaya §5.4 Theorem 5.10及证明；在线补证是已证文献定理，未设开放假说。最终每个目标量词均付清，因此accepted/unconditional/whole_result。仅运行本地绑定及独立edge-check，不执行Git或队列写入。",
+  "endpoint_pins": {
+    "M-2cade1d7f2d24941acd7fb06b938c73e": "2731a90af12bcb31c023bfe0342f847e6bc3128f60ec2d4be6101e8f472df37c",
+    "M-cdd66f04eebf4c44b73d62aece017919": "a4e4c065b40291de0d2f4684419381102f90eebf0cf979bbb71f8434a2e25db9"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md": "0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254",
+    "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/kun_mmsnp.pdf": "e6d37a035edb3cbaa3e246e5781a88c8a348eaaa16a57028dd8782dcf7373eea"
+  },
+  "review_digest": "59d8912fd0fbec40e7c561da4b3cd4834172d8ef910c242d4ac2c9624f4fbf2e"
+}

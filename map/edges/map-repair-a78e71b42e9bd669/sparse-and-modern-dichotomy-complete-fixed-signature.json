@@ -1,0 +1,66 @@
+{
+  "edge_id": "boss2-kun-modern-bridge-completes-fixed-signature",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-dcddc9883c494fea8a4b270fdc4b10c7"
+  ],
+  "target_ids": [
+    "M-e37dfe8f79184d5ba961c1e78cf3a558"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "全部共同数学输入按ALL使用：（i）源对象对固定有限签名、固定目标大小界和固定围长界给出的确定性多项式稀疏不可比算法；（ii）Feder–Vardi高围长中间定理，按Kun–Nešetřil《Forbidden lifts》Theorem14的准确合同，目标签名β可以不同于输入签名τ；（iii）Bulatov, FOCS2017, Theorem1的有限模板CSP确定性P/NP完全二分；（iv）图3染色在确定性多项式many-one归约下的NP完全性（Garey–Johnson–Stockmeyer, STOC1974, Theorem2.1）。标准MMSNP使用存在一元证书、单调输入和无不等式的语法；不把带不等式的扩展类混入。τ、L、所得β、有限模板族及各参数均固定；CSP(𝒯)=∪_{T∈𝒯}CSP(T)是有限析取。外部定理先按正元关系、非空域的标准合同使用；若当前模型允许零元或空域，则按解释中的有限切片/例外输入及直接剖面证明处理，不默认为外部定理已经涵盖它们。全部承重输入均为已证定理，不含oracle、随机算法或开放假设。本边为2017年二分定理给出的现代独立补全，不将它追认为2013年冻结作者证明的一步。",
+  "roles": {
+    "M-dcddc9883c494fea8a4b270fdc4b10c7": "在 β 型上把任意实例稀疏化而同时保持每个固定有限模板的同态判定，付清高围长反向归约的适用域。",
+    "M-e37dfe8f79184d5ba961c1e78cf3a558": "实际完整终点：每个固定有限 τ 上的 MMSNP 语言 L，与某有限 τ 型模板族的 CSP 存在两向确定性多项式时间 many-one 归约；此处显式恢复与 L 相同的 τ。"
+  },
+  "whole_result": "对每个固定有限关系类型τ和标准MMSNP语言L⊆Rel(τ)，存在有限τ型模板族𝒰⊂Rel(τ)，使L≤p_m CSP(𝒰)且CSP(𝒰)≤p_m L，两个归约均确定性；这里CSP(𝒰)=∪_{U∈𝒰}CSP(U)，按存在某个模板的析取解释。若τ只有一元/零元关系，甚至可取L=CSP(𝒰)，两向均为恒等；不要求L对输入不交并闭合，也不把𝒰的不交并当作单一模板。若τ含至少二元的关系，则经有限模板二分和τ型三色/P分支模板取得同签名互归约。零元关系和允许空域的情况按全文自给处理，空语言允许空模板族。",
+  "explanation": "先在非空域、正元关系的标准合同中支付共同的异签名步骤。固定 L，由高围长中间定理取得有限 β 型模板族 𝒯、固定 k、f:L≤p_m CSP(𝒯) 以及仅需处理 girth>k 实例的反向归约 g（Kun–Nešetřil Theorem14的严格版本；冻结Kun Theorem12写girth≥k，增加固定参数即可满足两者）。令 t=1+max({0}∪{|T|:T∈𝒯})。对任意 β 型 S，源算法给 S′，girth(S′)>k，并逐个保持 S→T iff S′→T；对 T 取有限析取得 S∈CSP(𝒯) iff S′∈CSP(𝒯)。于是 S↦g(S′) 是全部实例上的反向归约。𝒯=∅ 时判定恒假且 t 仍正。若签名含零元，给正元 reduct 做稀疏化再原样复制每个零元真值；同态到任意目标的零元要求因此完全不变。该步骤复核并沿用旧边um-03312e-kun-sparse-incomparability-completes-csp-reductions的数学贡献，但本边已把完整推导直接写出，不依赖其现已过时的绑定文件。\n\n有限模板族的二分不能仅由“有限个二分”未经论证地推出，因为析取会掩盖硬分量。先在固定 𝒯 的同态拟序上合并等价类，并删去被严格支配的模板：T→U 意味着 CSP(T)⊆CSP(U)。余下族 {T₁,…,Tₛ} 两两同态不可比且 CSP 不变。逐个应用 Bulatov 定理。若全部成员 CSP 在 P，固定有限析取也在 P。否则选 NP完全成员 Tᵢ。把任意 X 的域与一份带互异域标签的固定 Tᵢ 作不交并（这些标签仅避免底集重名，不增加关系符号） X⊔Tᵢ；每个正元关系只取两边内部元组的并，零元真值取逻辑 OR。这是普通关系结构的 coproduct，故对任何 Tⱼ，(X⊔Tᵢ)→Tⱼ iff (X→Tⱼ 且 Tᵢ→Tⱼ)。反链使后项恰在 j=i 成立，所以 X⊔Tᵢ∈CSP(𝒯) iff X→Tᵢ。复制固定模板只加常数大小，给出确定性多项式 many-one 硬度归约。空族和空域模板为直接可判定的退化情形；单模板的零元约束可先检查再用正元 reduct，空域模板也直接检查，故二分定理的标准有限非空域合同足够。因此 CSP(𝒯) 及与它互归约的 L 均为 P 或 NP完全。这里不把整族模板的域不交并当作同一个等价模板：那会允许不同输入分量各选目标，改变原有限析取。marker 是加到输入上的固定 Tᵢ。\n\n若原输入类型含零元关系，先按其z个真值逐个固定c∈{0,1}^z，把固定MMSNP公式中的零元输入原子换成布尔常量并简化，所得L_c是同一正元签名上的标准MMSNP语言。以上稀疏化、有限模板反链及Bulatov二分逐个给每个非空域切片L_c一个确定性P或NP完全分类。固定有限个切片全在P时，先读c再运行相应P算法，L在P；若有一个NP完全切片，把它的输入附上该固定c就给L的NP-hardness，且L本身在NP。因此整个L也在P或NP完全。若原合同还允许空域，空域结构仅由固定有限种零元真值区别，固定公式可直接判其成员性；添加这些有限例外不改变上述分类，NP-hard切片的嵌入仍输出非空域实例。这样无需把外部高围长定理或二分定理无证明地扩展到零元/空域模型。\n\n若 τ 含一个 r元关系 R，r≥2，可在 τ 上构造明确的 NP完全模板 Hτ。域为 {1,2,3}，R(Hτ)={(a,b,…,b):a≠b}；其他正元关系全满，所有零元为真。图 G 映成同域 τ 型 E(G)：每条边 {u,v} 任取方向，置入 R(u,v,v,…,v)，其他关系取空（零元为假）。则 E(G)→Hτ iff G 可3染色，故 CSP(Hτ) NP-hard，且有限模板 CSP 在 NP。反向亦有直接编码：对任意 τ 型 X，用并查集合并每个 R元组第二至第r坐标，再在第一坐标类与第二坐标类之间加图边；若成自环输出固定 K₄，否则得到的图可3染色 iff X→Hτ。r=2 时无需合并；其他关系因 Hτ 中全满而不设限制。因而这是对所有 τ 型输入成立的精确NP完全模板编码，不只是图像上的promise。\n\n现在在这个 τ≥2 分支恢复目标。若 L=∅，取 𝒰=∅；若 L=Rel(τ)，取一元素所有关系全满的模板，两个判定语言同为恒值。若 L 是非平凡 P 语言，取一元素 τ 型 Eτ，其中 R 为空、其他正元关系全满、零元全真。CSP(Eτ) 恰判 R(X)=∅，是非平凡 P 语言。固定 yL∈L、nL∉L，以及 yτ∈CSP(Eτ)、nτ∉CSP(Eτ)；yτ 可取一元素 R空，nτ 为一元素且有 R自元组。用 L 的固定 P 算法把输入分别送到 yτ/nτ，用 R为空的检查把 CSP(Eτ) 输入分别送到 yL/nL，即付清两向归约。若 L 在 NP完全分支，取 𝒰={Hτ}。L 和 CSP(Hτ) 均在 NP 且 NP-hard，NP完全性的确定性 many-one 合同给两向归约（可固定各自 NP验证器的SAT编码与上述3染色归约）。这只是对固定 L 的存在性证明；没有声称从任意公式在统一多项式时间输出模板和全部归约，也不依赖 P≠NP。\n\n最后独立处理 τ 只有 m个一元和 z个零元关系，避免此类签名不能编码3染色的障碍。对 X 中每种实际出现的精确一元类型 p⊆{1,…,m} 只留一个顶点，得规范剖面 Q(X)，零元真值逐个复制。映射 x↦pX(x) 与每类型选代表给 X→Q(X) 和 Q(X)→X，且 |Q(X)|≤2^m；所有规范剖面至多 2^(2^m+z) 个。标准 MMSNP 在逆同态下闭合：若 h:A→B 且 B 有满足公式的一元证书，将证书逐项沿 h 拉回；A 上任一禁合取违例的正输入原子由 h 保持，证书正负文字由拉回保持，因无不等式便给 B 上违例，矛盾。这也适用于零元正输入原子。因此 X∈L iff Q(X)∈L。取所有属于 L 的规范剖面组成有限 τ 型族 𝒰，并保持CSP(𝒰)=∪_{U∈𝒰}CSP(U)的析取语义。X∈L 时 X→Q(X)∈𝒰；反之 X→U∈𝒰 时逆同态闭合给 X∈L。所以实际上L=CSP(𝒰)。这不推出L对不交并闭合：例如禁止P(x)∧Q(y)的一元语言由P空和Q空两个模板的析取表示；把这两个模板不交并为一个目标会改变语言。本证始终保留模板族的存在量词。构造 Q 为固定 τ 下线性扫描。若允许空域，枚举含空顶点集的剖面和对应空域模板；若整个合同要求非空域，均只枚举非空剖面。空语言允许空模板族。两个签名分支穷尽全部固定有限 τ，故上述 whole_result 没有剩余数学步骤。",
+  "scope": "存在性和判定复杂度层面的同输入签名双向确定性多项式many-one归约。模板族按冻结Kun定义保有限析取；固定L、τ及全部模板与归约参数。全部算法确定性，无oracle；不要求P≠NP，也不声称从任意MMSNP公式在统一多项式时间内输出分支、模板和归约。保证不保解数、同态见证、girth、实例结构或参数化复杂度；只有一元/零元签名的剖面分支另有语言的字面相等。冻结2013年作者引用链中同τ步骤仍未从原中间定理抽出；这是证明来源边界，本边以现代已证二分给出的完整结论不存在相应未付数学义务。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md",
+      "sha256": "0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254",
+      "section": "1. Kun：Constraints, MMSNP and Expander Relational Structures"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/kun_mmsnp.pdf",
+      "sha256": "e6d37a035edb3cbaa3e246e5781a88c8a348eaaa16a57028dd8782dcf7373eea"
+    }
+  ],
+  "external_sources": [
+    {
+      "title": "Gábor Kun and Jaroslav Nešetřil, Forbidden lifts (NP and CSP for combinatorists)",
+      "url": "https://arxiv.org/pdf/0706.1704",
+      "location": "§3 pp.9–10 canonical SNP/MMSNP syntax; §6 pp.19–21 Theorem14, β/Ψ/Θ construction and complete high-girth reduction proof",
+      "read_scope": "本轮实读标准形与三项限制、Thm14完整陈述及pp.19–21证明；其目标题明写possibly different type，β由禁模式的双连通块另行构造。",
+      "mathematical_input": "高围长中间归约允许异签名；MMSNP禁合取无不等式且输入原子均为正。"
+    },
+    {
+      "title": "Andrei A. Bulatov, A dichotomy theorem for nonuniform CSPs, FOCS 2017",
+      "url": "https://www.cs.sfu.ca/~abulatov/papers/focs17.pdf",
+      "location": "p.2 Theorem 1; §II.A CSP instance/solution definition",
+      "read_scope": "本轮实读p.2 Theorem1原文与§II.A固定有限约束语言、显式元组输入和解定义；作为已证外部定理复用，不声称重证整篇算法。",
+      "mathematical_input": "每个固定有限域上的固定有限约束语言，其CSP可确定性多项式时间判定或为NP完全。"
+    },
+    {
+      "title": "M. R. Garey, D. S. Johnson and L. Stockmeyer, Some Simplified NP-Complete Problems, STOC 1974 (preliminary version)",
+      "url": "https://www.math.ucdavis.edu/~deloera/MISC/LA-BIBLIO/trunk/JohnsonDavid2.pdf",
+      "location": "§II Theorem 2.1, printed pp.51–53; PDF pages 5–7",
+      "read_scope": "保留前批已经定位的原论文Thm2.1主源；本轮复用经典图3染色NP完全性结论，没有重做其SAT3归约或声称重读扫描页全部证明。τ型模板编码及对任意实例的逆向图编译在本边独立完整自证。",
+      "mathematical_input": "图3染色为NP完全；本文给出的τ型编码自证，未将任意CSP直接等同于图染色。"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "定向修复原现代桥：先完整实读旧边与旧收据，再读当前两端v2、现正文§1及冻结Kun arXiv:0706.1701v2全部12页（含Definitions4/5/7、Lemmas6/8/10/11/13、Theorems1/2/3/9/12及完整证明）。旧资产的同签名论证仍有效，保留其最大同态反链、输入marker、三色编码、P/空/全和低元剖面证明；源对象改版不触发重证Bulatov算法。重新实读外部主源的准确范围见external_sources。独立复核反链方向、coproduct因子化、零元OR、并查集编译的全输入双向正确性、非平凡P语言固定yes/no实例、空域/零元有限切片和逆同态证书拉回。明确区分有限模板族析取与单模板不交并。删除作为证据引用的旧03312e过时边，因本边已自给其全部有效β归约贡献；正文/PDF按当前SHA绑定。全部目标已支付，故accepted/unconditional/whole_result；不把现代桥误归给冻结作者。",
+  "endpoint_pins": {
+    "M-dcddc9883c494fea8a4b270fdc4b10c7": "d7d4efe1412c23438b3c478da7574fadf9d36fbf4edbff31177248a421331e4a",
+    "M-e37dfe8f79184d5ba961c1e78cf3a558": "0b180510308df6f911e049d3940293ba946379e5693bea94c500ee8109bb2d87"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/文献/稀疏CSP与平坦矩阵两篇文献整理--文献.md": "0b07529b7a2db2b592942290f8a9d8a3c030387c348afd5c772e0dbc1d00f254",
+    "archives/unrelated-machines/tools/evidence/retired-literature-structural-algebra-20261031/kun_mmsnp.pdf": "e6d37a035edb3cbaa3e246e5781a88c8a348eaaa16a57028dd8782dcf7373eea"
+  },
+  "review_digest": "b2525520d46e47cdec848e4ec10387d695a593859abf22ed528d735a0d71146b"
+}

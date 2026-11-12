@@ -1,0 +1,42 @@
+{
+  "edge_id": "unrelated-machines-reachable-overlap-refutes-v1-recursion-disjointness",
+  "kind": "refutes",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/blmrs-reachable-recursion-disjointness-obstruction"
+  ],
+  "target_ids": [
+    "unrelated-machines/blmrs-v1-recursion-disjointness-invariant"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "冻结 arXiv:2307.08453v1（PDF SHA256 fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183）§4，采用从印式 C 中删去 B0、从而 A⊆C⊆I_M 的更正；b=1，ε=1/q，任意整数 q≥16。按原文优先执行第一个可用操作，操作1须穷尽后才检测操作2；递归候选仍按原式 B0′=B0∪B，旧 B0 元素优先于新 B。所有实际走过的非快返调用均有 A≠∅，故另加空 A 保护也不改变轨迹。",
+  "roles": {
+    "unrelated-machines/blmrs-reachable-recursion-disjointness-obstruction": "提供每个 q≥16 的显式直和拟阵、分块容量 polymatroid、从 loop 初始化与单元素外层可达的合法处理顺序、部分覆盖后的下一次递归交集，以及阈值1全覆盖见证。",
+    "unrelated-machines/blmrs-v1-recursion-disjointness-invariant": "被否定的全称主张仅是冻结 v1 Lemma30 第1项：按 §4 操作4构造的每次递归入口 B0′、I_M′、I_P′ 两两不交。"
+  },
+  "whole_result": "对每个整数 q≥16，存在由 §4 外层合法单元素初始化到达的父调用，在首个子成功仅覆盖一个旧候选、但尚未达到父成功阈值之后，下一次操作4构造的 B0′ 与 I_M′ 恰共享一个 ξ∈X。此前的全部调用输入与已执行操作均合法。因此来源对象完整反驳目标对象所记录的冻结 v1 Lemma30(1) 递归输入两两不交主张。",
+  "explanation": "令 N=q²、L=3q+1、Y=q+8、U={u_i,k}、D={c_j,k}。均匀主分量的秩为 L+1，简化地面集为 L 个 a_i、z 与 L 个 x_i；以 N−L 个 x_1 平行副本补足 |X|=N。另有 y_1/u_1,1、y_2/u_1,2、y_j/u_(j−1),1（3≤j≤Y）各自独立的秩1分量及 {t,w} 秩1分量，其余 u 与所有 c 是 loop。P 的各 {a_i,u_i,1,u_i,2}、{y_j,c_j,1,c_j,2}（j≥3）、{z}、{y_1}、{y_2} 容量为2，大块 X∪{t} 容量N，w容量0。对容量K块中的未收缩坐标，h封顶收缩s个其他坐标后的单点边际是 max(0,K−hs)；故以下所有容量判断由精确整数公式给出。\n\n外层先把 loop 放入 I_P，可行性逐块为至多2个单位。逐对处理非loop u 再处理其 y：u 在空秩1分量中快返，y 的 addable 集恰为旧 u，操作1、2把 u 移至 I_P 并换入 y。随后 L 个不同 X 代表逐个快返；每个平行副本调用只交换旧平行占位者，大块在其移入前至多占 N−L−1 个单位，所以操作1、2总能完成。a_1 快返使主分量用满。处理 a_2 时，原文层秩检验仅减去当前 A_l，旧层仍留在 I_M 中，因此每层恰能取一个旧主分量元素，L+1个单元素层均达到 ε|B0|=1/q；又 2L≤N，故全部 L 个旧 X 与 a_1 均被收入 A。操作1优先穷尽大块恰剩的 L 个单位，把这 L 个 X 全收入 A_I；a_1 被两个 u 阻挡。L≥(L+1)/q，故操作2转移全部旧 X 并加入 a_2。其余 a、z、t 均快返。无前序操作3或外层重启。由此到达 I_M={a_i,z,y_j,t}、I_P=U∪D∪X，只剩 w 未覆盖。\n\n对最后单元素 B0={w}，初始相对秩为0，唯一 addable 元素为 t，故 A=C={t}；大块已满，A_I=∅，B=X。操作1、2不适用且 N≥1/q，所以操作4首次合法递归。收缩 t 后 w 是拟阵loop，P 在 X 上剩余容量为0。这个子调用的旧候选为 S={w}∪X，s=|S|=N+1；输入 J_M={a_i,z,y_j}、J_P=U∪D 两者与 S 不交。按 a_i 先于 z 的扫描顺序，第一 addable 层取尽 L 个 a_i；X 的 L 个不同代表使每一步移去 a_i 的边际秩为0，随后移去 z 的边际秩为1。下一层只可取 z，但 1<s/q，故该层被丢弃。y_j 的分量没有 S 中的替代元素，始终不可取。因此 A=C={a_i}；每个 a_i 被两个 u 阻挡，B=U，A_I=∅。L>s/q 且 2L≥s/q，操作1、2、3均不能结束，操作4合法递归。\n\n第二个子入口候选为 S∪U，t_0=|S∪U|=N+6q+3；收缩 a_i 后 z 与 X 是同一秩1主分量，配对的 u 与 y 各是秩1分量，其余候选为loop。相对输入拟阵的候选秩仍为0。P 在 U、X 上均为0，其余相关容量仍为2。第一 addable 层恰为 {z,y_1,...,y_Y}，大小 Y+1=q+9>t_0/q；所有成员在不同容量2块中，下一层为空，故 A=C 为该整层。I_P 此时只有 D，操作1穷尽后 A_I={z,y_1,y_2}，其余 y 被各自两个 c 阻挡。因 3>(q+9)/q，操作2先于操作3执行，移出这三项，并按旧 S 优先的候选顺序恰加入一个 ξ∈X 与 u_1,1、u_1,2。w 是loop，其余 X 平行，其他 u 是loop或被留下的 y_j 跨越。新增候选共3>t_0/q²，所以此次子成功合法，且旧覆盖全部保留。\n\n回到候选 S 的父层，C={a_i} 被加回 I_M，两个 u 从 I_P 中删除，而 z,y_1,y_2 已在 I_P。因此新 I_M 在 S 中恰含 ξ，|I_M∩S|=1<s/q²=1+1/q²，父层不得立即成功。重算 B 得 B=U\\{u_1,1,u_1,2}，大小 2L−2=6q；恰有 a_1 的块被腾空，所以操作1仅加入 a_1 到 A_I。由于 1<L/q=3+1/q，操作2仍不适用；由于 6q≥s/q，操作3仍不适用。因此原文要求再次操作4，但它仍设新候选 S∪B，而新拟阵输入为 I_M\\C，后者已包含 ξ；故 (S∪B)∩(I_M\\C)={ξ}≠∅。第一个非法入口恰发生在这里，初次外层与此前两个递归入口没有交集。所有使用的不等式对每个 q≥16 成立；任意要求 ε 足够小的额外上界仍可取更大 q。\n\n阈值1存在性也可独立核实：在最后 w 调用前取任意 ξ∈X，把拟阵侧的 t,a_1,y_1 换成 w,ξ,u_1,1，并在 P 侧做相反交换。三个拟阵分量分别一换一且仍独立；P 大块以 t 换 ξ 保持占用N，a_1块以 a_1 换 u_1,1 保持占用2，原空的 y_1单点块只新增1。因此所得两集合不交并覆盖整个地面集，1·I_P*∈P。该见证说明本例有合法全覆盖，但不推出任何4+η保证。",
+  "scope": "仅否定冻结 v1 §4 在 C⊆I_M 更正后的按式执行轨迹及 Lemma30(1) 的普遍递归输入不交性；量词是每个 q≥16 存在允许的外层与贪心顺序，并非所有顺序必坏。原印式 C 含 B0 的独立问题不用于此反驳。没有把本边扩张为 Theorem4、Corollary5、所有修订算法或所有资源拟阵近似算法的反例。给定完整见证后的舍入与双向归约独立保留；修订搜索的合法入口、交换秩不变量、证书和运行时间需要各自完整证明。",
+  "evidence": [
+    {
+      "path": "archives/unrelated-machines/state/反例/BLMRS规范搜索的外层可达递归重叠--反例.md",
+      "sha256": "c8c04a17f37b603201f8c265e57a051b934e9a43964fe7e380e65418414ad9fa"
+    },
+    {
+      "path": "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf",
+      "sha256": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+    }
+  ],
+  "reviewed_by": "Boss2",
+  "review_note": "实读两端当前v1登记、完整反例正文，以及冻结PDF §4（印刷pp14–17）的输入合同、addable原式、四操作优先级、递归和回传更新，并实读附录F.2的Lemmas27–30（印刷pp32–33）。独立按直和拟阵秩及块封顶收缩公式推演全部前序、两个合法递归入口、首次部分成功后的动态状态和下次操作4；逐项核所有快返与操作1–4阈值。阈值1全覆盖交换逐分量、逐块核实。另用Fraction核q=16,17,32的候选数和有理阈值；未重跑正文所述历史回放，有限算术未替代q≥16的解析证明。无额外未付假设用于本反驳。",
+  "endpoint_pins": {
+    "unrelated-machines/blmrs-reachable-recursion-disjointness-obstruction": "1dfd9f62acfd5f4e77823f41173a567ec5941b5773f59fc305fd81ff7fac6a64",
+    "unrelated-machines/blmrs-v1-recursion-disjointness-invariant": "5f24a8cea92d3a10535d501805e8c58ea5b1f63f5c029f37e506d08a76f3532c"
+  },
+  "evidence_pins": {
+    "archives/unrelated-machines/state/反例/BLMRS规范搜索的外层可达递归重叠--反例.md": "c8c04a17f37b603201f8c265e57a051b934e9a43964fe7e380e65418414ad9fa",
+    "research/registration/evidence/boss6-0104/bamas-et-al-2023-v1.pdf": "fc907ac5159b3b20ae8498052c161f7aaf8d64114db84d7ef1947d6f1c6d4183"
+  },
+  "review_digest": "d469d5e71ea598adc47b625540f94ce7789d45a2298cd26025b1a23eacd17365"
+}

@@ -1,0 +1,30 @@
+{
+  "coverage": {
+    "unrelated-machines/blmrs-reachable-recursion-disjointness-obstruction": {
+      "state": "linked",
+      "object_pin": "1dfd9f62acfd5f4e77823f41173a567ec5941b5773f59fc305fd81ff7fac6a64",
+      "comparison_scope": "完整实读本核心v1（pin 1dfd9f62acfd5f4e77823f41173a567ec5941b5773f59fc305fd81ff7fac6a64）、对端递归输入不交性v1（pin 5f24a8cea92d3a10535d501805e8c58ea5b1f63f5c029f37e506d08a76f3532c）和反例全文；对照冻结Bamas等2023 v1 PDF §4印刷pp14–17、附录F.2 Lemmas27–30印刷pp32–33。核直和均匀/平行/秩1分量、所有loop初始化、容量块封顶边际、q≥16外层单元素顺序、a2的逐层秩检验、两次初始合法递归、四操作优先级与全部成功/失败阈值、部分成功后的B更新、下一入口交集及阈值1全覆盖交换。另以Fraction核q=16,17,32候选数与有理阈值，未复跑正文历史回放。",
+      "reason": "本核心的解析无限族支付了外层可达性：取L=3q+1、Y=q+8，X大小q²；最终w调用引出旧候选S={w}∪X，|S|=q²+1。第二子层只把旧候选ξ及两个u移入拟阵，父层旧候选覆盖1<(q²+1)/q²；它仅能立即加入a1，1<L/q，而剩余阻塞6q≥(q²+1)/q，故下次操作4仍执行并以ξ同时作为旧候选与拟阵输入。没有先前非法步；阈值1见证逐分量逐块成立。accepted refutes精确连接所给反例与原Lemma30(1)，该关系无剩余证明义务。修订搜索及其保证仍须另付完整入口、交换秩、证书与多项式界；本包不声称证明其失败，不改变给定见证舍入或双向归约。",
+      "edge_ids": [
+        "unrelated-machines-reachable-overlap-refutes-v1-recursion-disjointness"
+      ]
+    },
+    "unrelated-machines/blmrs-v1-recursion-disjointness-invariant": {
+      "state": "linked",
+      "object_pin": "5f24a8cea92d3a10535d501805e8c58ea5b1f63f5c029f37e506d08a76f3532c",
+      "comparison_scope": "把本核心v1的精确全称范围与原PDF Lemma30(1)逐项对应：B0′=B0∪B、I_M′=I_M\\C、I_P′=I_P\\B，采用C⊆I_M的印式更正。独立对照对端完整q≥16构造、§4首次快返、分层addable、四操作顺序、递归回传和B重算；检查首两个递归入口三集合确实两两不交，而下一次递归恰有B0′∩I_M′={ξ}。",
+      "reason": "原PDF把每次递归输入不交性列为Lemma30(1)，并未在部分覆盖旧B0后删去该旧候选。可达父状态满足1<1+1/q²，不能成功；操作2、3也均不可用，故按式构造下一入口时产生非空交集。本边因此反驳本核心整条递归不交性主张，而非仅指出证明未写。所否目标不扩及Lemma30(2)/(3)的独立一般真值、Theorem4近似结论、Corollary5或所有修订算法；后者需新的完整证明。空A保护不能阻断此轨迹，因为各非快返A均非空。",
+      "edge_ids": [
+        "unrelated-machines-reachable-overlap-refutes-v1-recursion-disjointness"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-09e5f7fd803e7a8d/reachable-overlap-refutes-v1-recursion-disjointness.json",
+      "sha256": "de32541d89c5944b98ce238e64aa632ef4ef3005c51c6c68cb7911363028965a"
+    }
+  ],
+  "closed_overlaps": [],
+  "follow_up_tasks": []
+}
