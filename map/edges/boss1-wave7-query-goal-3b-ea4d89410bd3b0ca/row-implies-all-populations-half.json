@@ -1,0 +1,66 @@
+{
+  "edge_id": "cag-query-goal-row-implies-all-populations-half",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "R-3b9429e7635a48208e072c8f1597126a/child_query/general_query_row"
+  ],
+  "target_ids": [
+    "Q-CAG-HALF"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "有限不同单位客户、有限非空共同标签目录及任意覆盖映射、m≥1个单位玩家；固定顺序观察全部有序历史，各选一次，终局客户在覆盖者间均分。保空覆盖、重复动作、同覆盖异标签、零客户和任意离轨弱平局；σ为全部合法有序历史的完整纯SPE，偏离后按同一原σ真实完成。 假设源ROW对每份完整σ的每个合法有序位置及每个原人数m槽比较元组普遍成立，比较重复保索引；q(T)为强制T后同一σ的真实当前收益，actual动作查询保其原叶收益。",
+  "whole_result": "方向ROW⇒Q-CAG-HALF：若源的普遍真实查询行候选成立，则对每个整数m≥1、每个有限单位客户和有限非空共同标签目录实例、每份全部有序历史完整纯SPE σ，都有OPT_m≤2W(σ)，其中W=|∪_i B_i|=Σ_i u_i，OPT_m允许重复比较动作；零福利仍直接解释为不等式。",
+  "roles": {
+    "R-3b9429e7635a48208e072c8f1597126a/child_query/general_query_row": "在根actual收益最小玩家i的actual前缀，提供同σ真实行的OPT_m−W≤Σ_(j=1)^m q_i(T_j)；源仍open。",
+    "Q-CAG-HALF": "由m条同节点真实IC与m u_i≤W，获得完整一般人数half条件结论。"
+  },
+  "explanation": "固定任意m、实例、完整σ及根actual叶B，u_k为该叶收益，W=Σ_k u_k。选择i∈argmin_k u_k，故m u_i≤W；不假设i为最后一人。其actual前缀h_i按σ完成与根得到同一叶B，故此行的actual全叶并集及W均等于根值。取最优有序m元组T，允许重复，|∪T_j|=OPT_m。源ROW在此真实位置与原m个比较索引给OPT_m−W≤Σ_jq_i(T_j)。每个T_j均为共同原目录合法行动；同一σ在h_i的完整行动IC逐项给q_i(T_j)≤u_i，重复标签也按索引各算一次。因此OPT_m−W≤Σ_jq_i(T_j)≤m u_i≤Σ_k u_k=W，得OPT_m≤2W。实际动作A的q_i(A)=u_i保持原对角，不改为最低可信ell_A；没有冻结查询后继、使用RF-END局部端点可达性或将比较槽改为剩余人数。所有固定对象任意，m1及W0仍直接以不等式解释。",
+  "scope": "单源开放前提下的完整一般人数half蕴含；ROW全部合法位置/任意比较m元组的量词仅被应用于一个根actual最小收益位置及最优元组，不改变源身份；不依赖ORDERED-L，不证明ROW普遍付款，不复制恰六人MIN-ROW或matching路线。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/障碍/R-3b942一般查询行共同付款缺口--障碍.md",
+      "sha256": "4c3a1cd74cd4e3bffae8c222b39acd84e932fbe0f9f118189c135b092c770b5f",
+      "section": "精确对象"
+    },
+    {
+      "path": "archives/customer-attraction/state/障碍/R-3b942一般查询行共同付款缺口--障碍.md",
+      "sha256": "4c3a1cd74cd4e3bffae8c222b39acd84e932fbe0f9f118189c135b092c770b5f",
+      "section": "端点消元的准确形式"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "输入和终局量"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    },
+    {
+      "path": "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md",
+      "sha256": "bc5add8e880e83c3ed799f457607103532aa9120018c862ae3ac869f2ed34d15",
+      "section": "完整量词和目标"
+    },
+    {
+      "path": "map/edges/boss1-wave7-query-goal-3b-ea4d89410bd3b0ca/math-review.md",
+      "sha256": "8ade0e3d50bf1043d9ebbeb7bc08631873f9db5f624bb9819a4335e8a2cecb97",
+      "section": "ROW到完整一般half"
+    }
+  ],
+  "reviewed_by": "Boss1/QUERY-GOAL-3B",
+  "review_note": "Boss1/QUERY-GOAL-3B：全文实读任务声明11份去重承重材料及三个现行登记端点，独立逐项核实L≤同σ真实偏离≤u和最小actual行Σq≤m u_i≤W；核原人数比较槽、全部actual前缀同叶、actual对角、标签/重复/零边界及whole范围。两个源和一般half仍open，关系推导本身闭合；未运行原BI/LP/扫描或成熟审计。",
+  "endpoint_pins": {
+    "Q-CAG-HALF": "dccd5277f7b0c1bb4dcac17287010f1d012bb40c6244c51f24808c1519a4b5ea",
+    "R-3b9429e7635a48208e072c8f1597126a/child_query/general_query_row": "4730dfee64aeeb8b1ee6e44092cfd2328963b661cff67617fe1e6807250f8bb0"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/障碍/R-3b942一般查询行共同付款缺口--障碍.md": "4c3a1cd74cd4e3bffae8c222b39acd84e932fbe0f9f118189c135b092c770b5f",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md": "bc5add8e880e83c3ed799f457607103532aa9120018c862ae3ac869f2ed34d15",
+    "map/edges/boss1-wave7-query-goal-3b-ea4d89410bd3b0ca/math-review.md": "8ade0e3d50bf1043d9ebbeb7bc08631873f9db5f624bb9819a4335e8a2cecb97"
+  },
+  "review_digest": "543bc5ae6976e4aa0a551b946605e9fa83d74d6c970c6638ec24450fc0a666ca"
+}

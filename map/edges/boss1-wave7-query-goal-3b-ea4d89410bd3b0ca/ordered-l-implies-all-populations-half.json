@@ -1,0 +1,66 @@
+{
+  "edge_id": "cag-query-goal-ordered-l-implies-all-populations-half",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-f1d873f3865f4b05a6d050762ebee457"
+  ],
+  "target_ids": [
+    "Q-CAG-HALF"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "conditional",
+  "conditions": "有限不同单位客户、有限非空共同标签目录及任意覆盖映射、m≥1个单位玩家；固定顺序观察全部有序历史，各选一次，终局客户在覆盖者间均分。保空覆盖、重复动作、同覆盖异标签、零客户和任意离轨弱平局；σ为全部合法有序历史的完整纯SPE，偏离后按同一原σ真实完成。 假设源ORDERED-L对所有实例、全部可实现actual有序路径及每个达到OPT_m的有序m元组普遍成立；L_i(A)在强制A后的全部完整纯SPE后继取当前收益最小，不要求A在受迫节点本身最佳，actual列也允许另续局。",
+  "whole_result": "方向ORDERED-L⇒Q-CAG-HALF：若源的普遍候选成立，则对每个整数m≥1、每个有限单位客户和有限非空共同标签目录实例、每份全部有序历史完整纯SPE σ，都有OPT_m≤2W(σ)，其中W=|∪_i B_i|=Σ_i u_i，OPT_m允许重复比较动作；零福利仍直接解释为不等式。",
+  "roles": {
+    "M-f1d873f3865f4b05a6d050762ebee457": "供应每条可实现actual路径及每个最优有序T的OPT_m−W≤Σ_i L_i(T_i)；源仍open。",
+    "Q-CAG-HALF": "由逐项真实IC及均分收益守恒获得完整一般人数half条件结论。"
+  },
+  "explanation": "固定任意m、实例、完整σ及其根actual叶B、前缀h_i，令u_i为该叶本人收益、W=Σ_i u_i。有限非空目录保证存在最优有序T∈𝒮^m，允许重复且|∪T_i|=OPT_m。定义d_i^σ(A)为在h_i强制A后沿同一σ真实完成的当前收益。原σ在孩子(h_i,A)上的完整SPE限制属于L_i(A)极小化域，故L_i(A)≤d_i^σ(A)；原σ在actual h_i的完整行动IC给d_i^σ(A)≤u_i。将源ORDERED-L应用于B及T，得OPT_m−W≤Σ_iL_i(T_i)≤Σ_i d_i^σ(T_i)≤Σ_i u_i=W，所以OPT_m≤2W。各固定对象均任意，得到目标全部量词；不需拼合不同位置的L极小化后继，也不要求L_i(B_i)=u_i。m1、W0及零客户均直接用不等式，无除法。",
+  "scope": "单源开放前提下的完整一般人数half蕴含；不是只证某一步或恰六人，不使用另一源ROW作联合前提，不证明ORDERED-L普遍成立，不作二候选等价或逆推。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/资源/最坏分母静态证书与同序可信矩阵的精确边界--资源.md",
+      "sha256": "8cb2f49fe34e048da49e3efd91cfcbc48c379757aa2b692b67708372cb2caeb8",
+      "section": "同序全可信L是另一候选"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "输入和终局量"
+    },
+    {
+      "path": "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md",
+      "sha256": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+      "section": "策略、真实续局与全部历史量词"
+    },
+    {
+      "path": "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md",
+      "sha256": "bc5add8e880e83c3ed799f457607103532aa9120018c862ae3ac869f2ed34d15",
+      "section": "完整量词和目标"
+    },
+    {
+      "path": "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md",
+      "sha256": "bc5add8e880e83c3ed799f457607103532aa9120018c862ae3ac869f2ed34d15",
+      "section": "净遗漏是一般付款的准确对象"
+    },
+    {
+      "path": "map/edges/boss1-wave7-query-goal-3b-ea4d89410bd3b0ca/math-review.md",
+      "sha256": "8ade0e3d50bf1043d9ebbeb7bc08631873f9db5f624bb9819a4335e8a2cecb97",
+      "section": "ORDERED-L到完整一般half"
+    }
+  ],
+  "reviewed_by": "Boss1/QUERY-GOAL-3B",
+  "review_note": "Boss1/QUERY-GOAL-3B：全文实读任务声明11份去重承重材料及三个现行登记端点，独立逐项核实L≤同σ真实偏离≤u和最小actual行Σq≤m u_i≤W；核原人数比较槽、全部actual前缀同叶、actual对角、标签/重复/零边界及whole范围。两个源和一般half仍open，关系推导本身闭合；未运行原BI/LP/扫描或成熟审计。",
+  "endpoint_pins": {
+    "M-f1d873f3865f4b05a6d050762ebee457": "26fcaa6a2068c87a73780b9871d9a1d0012014f2db23864bc17bed72b6fea4cf",
+    "Q-CAG-HALF": "dccd5277f7b0c1bb4dcac17287010f1d012bb40c6244c51f24808c1519a4b5ea"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/资源/最坏分母静态证书与同序可信矩阵的精确边界--资源.md": "8cb2f49fe34e048da49e3efd91cfcbc48c379757aa2b692b67708372cb2caeb8",
+    "archives/customer-attraction/state/定义/共同目录完整历史模型--定义.md": "cc4a9dadb09e08b072cb63214d2e084db38db219e4100efbccf9b7f497520e88",
+    "archives/customer-attraction/state/问题/任意人数完整均衡半覆盖--问题.md": "bc5add8e880e83c3ed799f457607103532aa9120018c862ae3ac869f2ed34d15",
+    "map/edges/boss1-wave7-query-goal-3b-ea4d89410bd3b0ca/math-review.md": "8ade0e3d50bf1043d9ebbeb7bc08631873f9db5f624bb9819a4335e8a2cecb97"
+  },
+  "review_digest": "ae78b992d6103d343f179bb482552e0f94095844cfe3768f3cd22faa33c540d4"
+}
