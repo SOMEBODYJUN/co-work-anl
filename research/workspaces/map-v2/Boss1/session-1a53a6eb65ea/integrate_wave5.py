@@ -1,8 +1,8 @@
 """Adopt the three actual wave5 mathematical reviews on a native assembly.
 
 Keep native hashes/metadata, preserve the latest published pending, and clear
-only reviewed current contracts.  A previously reviewed immutable hypergraph
-edge may be re-adopted if a peer snapshot restored its pending marker.
+only reviewed current contracts.  A previously reviewed hypergraph edge is re-adopted only if unchanged;
+otherwise its actual replacement route and current endpoints remain pending.
 """
 from pathlib import Path
 import hashlib
@@ -47,16 +47,18 @@ for tid, saved in frozen.items():
         reviewed.update(e['source_ids']); reviewed.update(e['target_ids'])
 assert len(accepted)==7, len(accepted)
 
-# This is an unchanged already-read proof, not a new independent audit.
+# Re-adopt only an immutable current edge; otherwise preserve its pending route.
 old=read(HERE/'latest-pending-review-result.json')
 eid='exact-four-to-one-v4-and-biregularization-to-three-uniform-independent-set-9fa9ce8a7e4a75ec'
 a=old['reviewed_edges'][eid]; e=read(ROOT/a['path'])
-assert sha(ROOT/a['path'])==a['sha256'] and a['path'] in reg['edge_files']
-assert d['edge_pins'].get(eid)==rr.pin(e)
-for oid in e['source_ids']+e['target_ids']:
-    assert pins[oid]==old['reviewed_endpoint_pins'][oid], oid
-    reviewed.add(oid)
-accepted[eid]=a
+prior_reconfirmed=(sha(ROOT/a['path'])==a['sha256'] and a['path'] in reg['edge_files']
+    and d['edge_pins'].get(eid)==rr.pin(e)
+    and all(pins[oid]==old['reviewed_endpoint_pins'][oid] for oid in e['source_ids']+e['target_ids']))
+if prior_reconfirmed:
+    reviewed.update(e['source_ids']+e['target_ids']); accepted[eid]=a
+    prior_note='上一轮已完整审读的perfect exact4+双正规化超图whole边及其三端此次逐SHA/pin未变，接回已成立审读；未重跑科学计算。'
+else:
+    prior_note='本次同步发现超图目标M-9f8033b6e1a4485b97636171b09f8218已为v5且旧9fa9边不再canonical；不能沿用上一轮v4审读清除其pending。当前替代boss2-wave6-hypergraph-repair-edfcf6a2548b4d1c仍claimed/Boss2，保留该修复路线及未复核标记。'
 
 cag=('Boss1 wave5新增五条独立局部贡献：BG2六行、DEEP一行、PC2四行、PC3五行、最大根界1一行，'
      '合计十七条；各来源的多行放在同一边，不拆成十七个单独支撑。全部限来源登记的真实集合目录/覆盖单射子域，'
@@ -70,7 +72,7 @@ um=('Boss1 wave5正式采用旧623当前版本替代：k=2的simple bipartite Δ
     'gate容量裁剪只用于全图预算；剩余环最小gate负担为较轻边。每环两个森林扫描及局部见证指针另付O(n)算术，'
     '2-degeneracy给OPT≤2k，原零初载整数域二分付O(n log k)，k=1单独线性，位费用另为poly(L)。'
     '不从泛型poly(L)直接推线性，也不反向扩域到异端有理/平行任务。该3B没有取代他人尚未完成的cactus主3A。'
-    '上一轮已完整审读的perfect exact4+双正规化超图whole边及其三端此次逐SHA/pin未变，故接回已成立审读并清其复现pending标记；没有重新声称科学运行。')
+    +prior_note)
 add(d,'review_note',cag+'\n'+um)
 if 'Boss1' not in d.get('reviewed_by',''): d['reviewed_by']=d.get('reviewed_by','')+'; Boss1'
 add(d['archive_reviews']['archives/customer-attraction'],'comparison_scope','八个五人局部来源、五个实际活跃贡献及已存53行→half的独立后段。')
@@ -89,10 +91,12 @@ published=json.loads(subprocess.run(['git','show','HEAD:map/integration.json'],c
 p=d.get('pending_changes',{}); oldp=published.get('pending_changes',{})
 po=(set(p.get('object_ids',[]))|set(oldp.get('object_ids',[])))-reviewed
 pe=(set(p.get('edge_ids',[]))|set(oldp.get('edge_ids',[])))-set(accepted)
-for x in pe: po.update(d.get('edge_endpoints',{}).get(x,[]))
+pending_endpoints=dict(d.get('edge_endpoints',{}))
+if not prior_reconfirmed: pending_endpoints[eid]=e['source_ids']+e['target_ids']
+for x in pe: po.update(pending_endpoints.get(x,[]))
 ps=set(p.get('archive_scopes',[]))|set(oldp.get('archive_scopes',[]))
 affected={scope for oid in po for scope in d.get('object_scopes',{}).get(oid,[])}
-unscoped_edges=any(not d.get('edge_endpoints',{}).get(x) for x in pe)
+unscoped_edges=any(not pending_endpoints.get(x) for x in pe)
 for scope in ['archives/customer-attraction','archives/unrelated-machines']:
     if scope not in affected and not unscoped_edges:
         ps.discard(scope)
@@ -101,6 +105,6 @@ for scope in ['archives/customer-attraction','archives/unrelated-machines']:
 d['pending_changes']={'object_ids':sorted(po),'edge_ids':sorted(pe),'archive_scopes':sorted(ps|affected)}
 (ROOT/'map/integration.json').write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
 result={'status':'WAVE5_ACTUAL_REVIEWS_ADOPTED','receipts':receipts,'new_or_replaced_edges':7,
-        'unchanged_prior_hypergraph_review_reconfirmed':a,'reviewed_objects':sorted(reviewed),'pending':d['pending_changes']}
+        'unchanged_prior_hypergraph_review_reconfirmed':a if prior_reconfirmed else None,'prior_hypergraph_review_note':prior_note,'reviewed_objects':sorted(reviewed),'pending':d['pending_changes']}
 Path('/workspace/scratch/1a53a6eb65ea/wave5-integration-reviewed.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps({'status':result['status'],'pending':d['pending_changes']},ensure_ascii=False))
