@@ -75,6 +75,34 @@ for saved in record.get('task_reviews', []):
         edges[edge_id] = asset
     receipts.append(task_id)
 
+# A relation-only review preserves the owning packet's other core coverage.
+# The native assembler must already have integrated the exact owning receipt.
+for saved in record.get('edge_reviews', []):
+    task_id = saved['owning_task_id']
+    task = read(ROOT / 'research/operations/map-v2/tasks' / (task_id + '.json'))
+    receipt = read(ROOT / saved['receipt_path'])
+    assert task['state'] == 'done' and task['receipt'] == receipt, task_id
+    assert sha(ROOT / saved['receipt_path']) == saved['receipt_sha256'], task_id
+    assert rr.pin(receipt) == saved['receipt_pin'], task_id
+    assert integration['task_receipt_pins'][task_id] == saved['receipt_pin'], task_id
+    path = saved['path']
+    asset = {'path': path, 'sha256': saved['sha256']}
+    assert asset in receipt['assets'], path
+    assert path in registry['edge_files'] and sha(ROOT / path) == saved['sha256'], path
+    edge = read(ROOT / path)
+    edge_id = saved['edge_id']
+    assert edge['edge_id'] == edge_id, path
+    assert rr.pin(edge) == saved['edge_pin'] == integration['edge_pins'][edge_id], edge_id
+    assert edge['endpoint_pins'] == saved['endpoint_pins'], edge_id
+    assert set(saved['endpoint_pins']) == set(edge['source_ids'] + edge['target_ids']), edge_id
+    assert saved['review_scope'].strip(), edge_id
+    for object_id, pin in saved['endpoint_pins'].items():
+        assert rr.pin(objects[object_id]) == pin, object_id
+        reviewed.add(object_id)
+    for ref in edge['evidence']:
+        assert sha(ROOT / ref['path']) == ref['sha256'], ref['path']
+    edges[edge_id] = asset
+
 for saved in record.get('retired_edge_reviews', []):
     # A removed relation is discharged only through its exact published
     # supersession, never merely because it is absent from the current graph.
