@@ -847,10 +847,12 @@ def packet(root, spec, profile, registry=REGISTRY):
     result = {'problem_id': spec['problem_id'], 'profile': profile, 'target': target,
               'definitions': definitions, 'obstacles': obstacles,
               'input_refs': {key: copy.deepcopy(spec[key]) for key in ('problem', 'definitions', 'obstacles')},
-              'task': 'Solve this exact problem freely. Use any useful mathematical method. Save substantive progress and explicit gaps.',
+              'task': 'Keep this exact original problem and its conditions. The current concrete assignment takes priority: continue a long-lived research line, extract an applicable argument, or independently challenge the specified claim. Return to the requesting researcher; use any useful mathematical method and save substantive progress and explicit gaps.',
               'launch': {'fork_turns': 'none', 'model': 'gpt-6.1-sol', 'reasoning_effort': 'ultra',
-                         'instruction': 'Start a fresh-history solver with the declared model and effort unless the user explicitly requests inherited history. Supply this packet and the matching solver prompt.'},
+                         'instruction': 'Supply this packet with the current concrete assignment and matching task prompt. Follow up the existing researcher for a continuing line; launch a fresh-history worker for temporary reading, independent challenge or a genuinely new line. Apply the declared model and effort to actual launches unless the user selects otherwise; preserve comparison input isolation.'},
               'limit': 'Context selection is not a file-system access-control boundary.'}
+    if 'collaboration_scope' in spec:
+        result['collaboration_scope'] = _collaboration_scope(root, spec['problem']['path'], spec['collaboration_scope'])
     if profile == 'full':
         seeds = spec.get('seed_ids', [])
         strings(seeds, 'seed_ids')
@@ -874,11 +876,13 @@ def run_path(root, run_id):
 
 def _saved_research_inputs(root, run):
     """Use immutable input declarations, never a silently edited current spec."""
+    saved_scope = None
     for profile, expected in run['packet_pins'].items():
         path = run_path(root, run['run_id']).parent / ('packet-' + profile + '.json')
         saved = json.loads(path.read_text())
         if pin(saved) != expected:
             raise ValueError('Saved packet changed for ' + run['run_id'])
+        saved_scope = saved.get('collaboration_scope')
         refs = saved.get('input_refs')
         if refs is not None:
             break
@@ -899,8 +903,42 @@ def _saved_research_inputs(root, run):
             raise ValueError('Explicit section title required')
         return {key: ref[key] for key in ('path', 'sha256', 'section') if key in ref}
 
-    return {'problem': exact(refs['problem']),
-            'definitions': sorted((exact(ref) for ref in refs['definitions']), key=pin)}
+    return ({'problem': exact(refs['problem']),
+             'definitions': sorted((exact(ref) for ref in refs['definitions']), key=pin)},
+            saved_scope)
+
+
+def _collaboration_scope(root, problem_path, declared=None):
+    """Route within the saved problem's archive, never a clone's configuration."""
+    if declared is not None:
+        _safe_path(root, declared)
+        if not re.fullmatch(r'archives/[^/]+(?:/subarchives/[^/]+)*', declared):
+            raise ValueError('collaboration_scope must name an archive or subarchive directory')
+    parts = Path(problem_path).parts
+    if len(parts) < 3 or parts[0] != 'archives':
+        return declared
+    stop = 2
+    while stop + 2 < len(parts) and parts[stop] == 'subarchives':
+        stop += 2
+    scope = '/'.join(parts[:stop])
+    _safe_path(root, scope)
+    if declared is not None and declared != scope:
+        raise ValueError('collaboration_scope conflicts with the problem archive: expected ' + scope)
+    return scope
+
+
+def _collaboration_route(root, inputs, declared_scope):
+    fingerprint = pin(inputs)
+    scope = _collaboration_scope(root, inputs['problem']['path'], declared_scope)
+    legacy = 'research/collaboration/P-' + fingerprint[:24]
+    shared = scope + '/collaboration/P-' + fingerprint[:24] if scope else None
+    return {'status': 'ready' if scope else 'scope-required',
+            'input_fingerprint': fingerprint, 'collaboration_scope': scope,
+            'shared_workspace': shared,
+            'shared_entry': shared + '/README.md' if shared else None,
+            'shared_entry_exists': bool(shared and (root / shared / 'README.md').is_file()),
+            'legacy_shared_workspace': legacy,
+            'legacy_shared_entry': legacy + '/README.md'}
 
 
 def peers(root, run_id):
@@ -910,18 +948,17 @@ def peers(root, run_id):
     refresh, or a proof that the listed researchers are currently running.
     """
     run = json.loads(run_path(root, run_id).read_text())
-    inputs = _saved_research_inputs(root, run)
-    fingerprint = pin(inputs)
-    shared = 'research/collaboration/P-' + fingerprint[:24]
-    matches, related, warnings = [], [], []
+    inputs, declared_scope = _saved_research_inputs(root, run)
+    route = _collaboration_route(root, inputs, declared_scope)
+    matches, related, revisions, warnings = [], [], [], []
     for path in sorted((_safe_path(root, 'research/runs')).glob('*/run.json')):
         try:
             other = json.loads(path.read_text())
             identity(other['run_id'])
             if run_path(root, other['run_id']) != path:
                 raise ValueError('Run ID does not match its directory')
-            other_inputs = _saved_research_inputs(root, other)
-            if other_inputs['problem'] != inputs['problem']:
+            other_inputs, other_scope = _saved_research_inputs(root, other)
+            if other_inputs['problem']['path'] != inputs['problem']['path']:
                 continue
             exact_inputs = other_inputs == inputs
             row = {'run_id': other['run_id'], 'problem_id': other['problem_id'],
@@ -932,20 +969,31 @@ def peers(root, run_id):
                                   for sid, solver in other.get('solvers', {}).items()
                                   if sid.casefold() == 'main'],
                    'saved_solver_count': len(other.get('solvers', {}))}
-            if exact_inputs:
+            row.update(_collaboration_route(root, other_inputs, other_scope))
+            if other_inputs['problem'] != inputs['problem']:
+                row.update(problem=other_inputs['problem'], definitions=other_inputs['definitions'],
+                           instruction='The target source has a different SHA or section. Read both saved formulations and check their mathematical relationship before reusing results; this is not an exact-input peer.')
+                revisions.append(row)
+            elif exact_inputs:
                 matches.append(row)
             else:
                 row['definitions'] = other_inputs['definitions']
                 related.append(row)
         except (ValueError, OSError, KeyError, TypeError) as exc:
             warnings.append({'run': path.relative_to(root).as_posix(), 'error': str(exc)})
-    return {'input_fingerprint': fingerprint, 'inputs': inputs,
-            'shared_workspace': shared,
-            'shared_entry': shared + '/README.md',
-            'shared_entry_exists': (root / shared / 'README.md').is_file(),
+    scopes = {row['collaboration_scope'] for row in matches if row['collaboration_scope']}
+    scope_conflicts = []
+    if len(scopes) > 1:
+        scope_conflicts = [{key: row[key] for key in ('run_id', 'collaboration_scope', 'shared_entry', 'legacy_shared_entry')}
+                           for row in matches if row['collaboration_scope']]
+        if route['collaboration_scope']:
+            route['status'] = 'scope-conflict'
+    return {**route, 'inputs': inputs,
             'peer_runs': matches, 'same_target_different_definitions': related,
+            'same_target_revisions': revisions,
+            'scope_conflicts': scope_conflicts,
             'discovery_warnings': warnings,
-            'instruction': 'Sync safely before dispatch or expensive recomputation. Read peer Main notes and the shared workspace; publish your concrete obligation and reusable input/output paths in your own Boss file. Exact source inputs are a discovery match, not proof of semantic equivalence or compatible LP coordinates. Comparison runs retain their original input isolation. Declared states do not establish live agents. This command neither contacts peers nor claims work.'}
+            'instruction': 'Sync safely, read the archive collaboration files and checkpoint your own concrete obligation and reusable input/output paths through the normal file workflow. A scope-required result has no active board: continue research and resume its mathematical breakpoint in a new open run that saves the explicit archive scope; do not edit the old packet. Nonempty scope_conflicts means exact-input runs declared different archive boards: read the listed entries and agree one current board, keeping earlier entries only as pointers, rather than claiming they already share a board. Legacy entries are pointers for locating earlier work. Exact source inputs are a discovery match, not proof of semantic equivalence or compatible coordinates; target revisions need mathematical comparison. Comparison runs retain their original input isolation. Declared states do not establish live agents. This command neither contacts peers nor claims work.'}
 
 
 def init_run(root, run_id, spec_file, registry=REGISTRY, *, mode='comparison'):
@@ -958,7 +1006,7 @@ def init_run(root, run_id, spec_file, registry=REGISTRY, *, mode='comparison'):
     if mode == 'open':
         packets['full']['launch'] = {
             **WORKER_LAUNCH,
-            'instruction': 'Dispatch concrete obligations through the platform with these worker defaults unless the user explicitly selects another model or effort. Record the actual platform agent ID and launch settings. Keep Main on the original mathematical problem; delegate long-source retrieval and extraction.',
+            'instruction': 'Dispatch the current concrete assignment with these worker defaults unless the user selects otherwise; record the actual agent ID and settings. Keep long-lived researchers on their continuing mathematical lines. Temporary readers and independent challengers answer the assigned question and return to its requester. Main combines the resulting mathematics without replaying every derivation.',
         }
     home = path.parent
     for profile, value in packets.items():

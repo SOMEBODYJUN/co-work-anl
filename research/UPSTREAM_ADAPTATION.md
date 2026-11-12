@@ -26,3 +26,16 @@ Boss编号、公屏、共同分支、持续补位与频繁Git保存按本项目�
 - **Noemesis。** 在固定版本运行真实引理的定向证据包和分段恢复，并从原入口重跑 ENS-lifting 有限域检查。46 个实例与 26,988 项乘子检查通过。它把当前研究状态、按需打开的原证和计算回执分开保存。我们分别沿用 `research resume/save`、`research context` 和 `research compute`，交接长度由当前数学义务决定。[实跑版本](https://github.com/kbr-/math-research/tree/25239211058ef718402a908b3272f01480c159c4)
 - **Ansatz。** 将真实的两人税、PAIR O 加强、原五尾证书和合成结论写入上游 FactGraph。检索找到了加强结论，正向可取合成所需的两个前提，反向可查旧引理的后继。我们的超边保留联合前提和替代证明。发现一条旧证明失效时，定向复核受影响的边，并检查其他仍成立的证明。[FactGraph 固定源码](https://github.com/uclanlp/continual-graph-memory/blob/23367c6568c344d9c4dbf59be3f39b39f5d54324/cgm/core/factgraph.py)
 - **Station。** 公开研究轨迹显示构造经共享结果档案被下一位研究者接到新参数族。借这种证据交接组织公屏。数学放在可直接取用的正文和证明，公屏发可复用结果、决定性障碍及影响别人的更正。[真实协作轨迹](https://arxiv.org/html/2608.23691v2)
+
+## 研究运行职责的具体适配
+
+下表来自实际源码及角色词，不把上游成功当本仓已验收。行为已接到现行Main、solver-full与RESEARCH_WORKFLOW；既有ALL/OR语义保留，不增数据库、检索器或常驻审批岗位。
+
+| 固定源码 | 本仓采用的行为 | 适配边界 |
+| --- | --- | --- |
+| Ansatz [verifier合同](https://github.com/uclanlp/continual-graph-memory/blob/23367c6568c344d9c4dbf59be3f39b39f5d54324/agents/contracts/verifier.md)与[gateway](https://github.com/uclanlp/continual-graph-memory/blob/23367c6568c344d9c4dbf59be3f39b39f5d54324/cgm/gateway/server.py) | 对新的承重命题主动独立检查准确陈述、完整推导、前提及外引适用性；错误与缺口分别给位置、原因和影响，交原研究者修后回查 | 不把作者自审或代理同意当证明；已核且版本/用法一致的支持复用，不每步设审批 |
+| Station [coder_manager](https://github.com/dualverse-ai/station/blob/f2603c817694145610b4a1057eeee7fb6f31d516/station/eval_research/coder_manager.py)的_build_audit_prompt、_handle_audit_verdict | 对关键计算合读原义务、脚本、输入、实际输出与报告；查遗漏case、伪穷尽、错误剪枝、超时冒作完成，错误须修代码/证据再核 | 如实未完成可保存，不因未提高数字判失败；Main无需再全量重复独立核验 |
+| Ansatz [identify-key-failures](https://github.com/uclanlp/continual-graph-memory/blob/23367c6568c344d9c4dbf59be3f39b39f5d54324/agents/skills/worker/identify-key-failures/SKILL.md)；Station [Exploration/Revival](https://github.com/dualverse-ai/station/blob/f2603c817694145610b4a1057eeee7fb6f31d516/station/constants.py) | 重复同一障碍时综合失败范围、最强近成功与未探索部分，重提数学分解或表示；说明新路线逃出什么旧限制、什么证据会改变判断 | 不照搬按分数tick计时的阈值、固定配比或排行榜；不把加参数与算量冒作新机制 |
+| Ansatz [FactGraph撤回](https://github.com/uclanlp/continual-graph-memory/blob/23367c6568c344d9c4dbf59be3f39b39f5d54324/cgm/core/factgraph.py) | 失败支持定向停用，更正送达实际消费者，接收者在原推导撤用或重证 | 上游按DAG全后继撤回不能直接照搬；本仓保独立OR支持，无有效支持恢复待证而非判假 |
+
+本次设计反驳可检验职责、输入和失败处置是否自洽；档内公屏与发现路由可由现有RUN核验。真正跨Pro接用、机动调度收益及新版长线实战仍须留下实际研究证据，不能以文档或代码检查通过代替。

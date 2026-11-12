@@ -298,7 +298,7 @@ collect给已交付成果和待补办批，--full返回详细内容。status与d
 
 ## 后续Main与Solver消费
 
-Main按[完整研究词](../prompts/research-runtime.md)操作；新Project明确Boss号与精确研究题目，独立clone用start --role boss --save <实际研究存档>，不复用登记/构图角色或默认套旧问题。同一研究对话沿原clone/RUN恢复。普通研究用 `init --mode open` 生成一份 full packet，按义务通过平台真实 spawn/followup，并用 save 记录实际 agent ID。明确对照实验可用 comparison 模式，已有三槽 RUN 沿原输入和计划恢复。init 本身只写本地计划和证据包。
+Main按[完整研究词](../prompts/research-runtime.md)操作；新Project明确Boss号与精确研究题目，独立clone用start --role boss --save <实际研究存档>，不复用登记/构图角色或套旧题。同一对话沿原clone/RUN恢复数学与原输入，普通派工按当前设计判断；明确对照才保原输入隔离。普通研究用init --mode open生成full packet，经平台真实spawn/followup，以save记实际ID。init只写本地计划和包，不启动模型。
 
 spec含problem_id、problem引用、definitions引用数组、obstacles引用数组、seed_ids；可加hops、edge_ids、edge_statuses、relation_kinds。原题和定义完整保模型、域、量词和约束。Main先核本对话/RUN中的实际原题；已有自主选题授权可从该范围的真实开放义务选题，只有会改变题意的关键条件不明才询问。没有相关既有成果时写`seed_ids:[]`，full packet以空objects/edges启动，原题、定义和障碍仍完整；不强塞无关旧对象，也不要求先登记原题才准研究。选择了具体edge_ids则须给真实相关seed，防止丢掉明确选择的证明分支。obstacle只接原题/定义/障碍，full另给按需登记成果；用户明确要求继承时照办并准确说明实际输入。packet不代表权限隔离。对照运行沿各槽的原 profile 派工和反馈。明确改变实验输入时建立新 spec/RUN。
 
@@ -316,9 +316,13 @@ python work.py research resume RUN
 
 普通 open 运行返回明确 worker 默认配置（gpt-6.1-sol / ultra / none），实际派工服从用户本轮配置。save 的 --model、--reasoning-effort、--fork-turns 可记录实际配置，后续事件沿用已记录值；旧记录不猜填。配置与 agent_id 是执行者对实际平台派工的记录。
 
-`research peers RUN` 从保存且 pin 匹配的 packet/input_refs 发现同题 RUN。problem 和 definitions 精确引用相同则进入同一个 `research/collaboration/P-…/`；定义排序不影响匹配，seed_ids、problem_id 和检索选项不同不割裂同题研究。不同 section/版本不自动合并。它返回各 RUN 的实际 spec/工作区和 Main 笔记入口；原题相同但定义不同的另列供实读。命令只读本地快照，不自动联系其他会话或认领任务。普通 open 的 init/resume 返回同一 collaboration 字段，保留原 packet 和反馈恢复。对照运行不会自动返回其他组的研究内容。
+research peers从保存且pin匹配的packet/input_refs发现同题。problem与definitions精确引用相同则列peer，定义排序、seed_ids、problem_id及检索选项不割裂同题。same_target_different_definitions列不同定义；same_target_revisions列同目标路径但SHA/section不同的RUN和旧板，只供数学核对，不自动合并。各行含原spec/工作区、Main笔记及自身入口。命令只读本地快照，不联系他人或认领；普通open的init/resume返回同一collaboration字段，对照不自动注入同行研究。
 
-共同入口 README 由研究者建立，保原题和各 RUN 链接；各人自己的 BossN.md 随真实义务/输入/交付/接用结果更新并 checkpoint。派工和重算前安全同步读有变化的合作页，复用可用工作；同时选中同一义务时根据实质进展拆分。无需新建审批或先完成正式构图才能使用成熟工作区结果。
+公屏路由为collaboration_scope/collaboration/P-…/README.md。archives内原题固定以路径最深所属档为准，显式scope不一致会拒绝；workspace新题可在spec存collaboration_scope，不用clone配置或跨档定义猜。旧RUN不改packet，仍可由已存原题路径推断。scope未知返回scope-required及空入口，数学继续。workspace精确peer声明不同scope时返回scope_conflicts及各自入口，当前有scope则status=scope-conflict；研究者协调唯一现行板，不自动合并旧声明。legacy_shared_entry保旧入口迁移指针。
+
+共同README保原题、可用数学、关键缺口与RUN链接；不存在则开题者直接建立并推送。本人BossN.md只保当前义务/输入/交付/接用结果。读用sync后直接读文件，发表用本人板页和数学一起checkpoint确认pushed；旧read/send/inbox仍是阶段公屏入口。昂贵工作先发表再同步读一次，撞题就接用或拆分；无原子锁，不承诺绝无重复。旧阶段公屏保留到第三阶段全完且指定1号下令。成熟数学无需等正式构图即可用。
+
+旧workspace RUN未保存scope时，改现spec不会补路由：以新RUN ID/init --mode open保存原准确题目/定义引用及scope，笔记链接旧RUN、最后推导、未答反馈与job标识，旧入口保承接指针；不改旧packet、不重算已有结果。相同输入scope分歧时协调唯一活板，其他留指针，不能默认两个入口都在共同研究。
 
 先实际答复并写note，再ack-feedback。新feedback与ack互斥；普通save保未答反馈，ack关闭pending但保事件历史，后续needs-feedback不复活已答问题。resume保同agent、不可变笔记、continuation、原packet、未答反馈和相关版本变化，并显示相对原输入新可见的关联关系，不悄改原输入。
 

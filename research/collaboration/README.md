@@ -1,7 +1,7 @@
-# 共同研究区
+# 旧共同研究入口的迁移索引
 
-每道题由 `research peers RUN` 按保存的原题和定义引用给出共同目录。不同 Main 保各自 RUN、身份和实际工作区，在此共享准确入口与具体义务/输入/交付/接用记录。每人写自己的 BossN.md，README 保共同模型与入口，不另建逐动作日志。
+现行研究文件公屏位于题目所属存档或子存档，由research peers及普通open的init/resume返回。此目录只保旧入口的迁移指针，不在此建立或更新Boss页、义务或成果记录。
 
-- [六提供者完整历史 SPE 半覆盖](P-f877d2f96384987057e3c35f/README.md)
+- [六提供者完整历史SPE半覆盖：档内现行公屏](../../archives/customer-attraction/subarchives/six-providers/collaboration/P-f877d2f96384987057e3c35f/README.md)
 
-普通研究的 init/resume 同时返回该入口。先安全同步，再读对方有变化的成果；成熟数学可以从工作区先接用，正式正文和超边随后定向更新。此区不自动联系其他会话，也不提供原子任务锁。
+档内板用sync后读文件、checkpoint发布，具体见现行Main词。原阶段公屏及分支仍保留，第三阶段全部结束且用户指定的1号下令后才退役。迁移没有替离线Boss派工、改其旧RUN或宣称已发生新版跨Pro接力。

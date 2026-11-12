@@ -1,6 +1,6 @@
 # 研究输入
 
-普通研究用 `work.py research init RUN --spec <路径> --mode open` 生成一份 full packet。明确对照实验用 comparison 模式生成 obstacle 和 full，原 RUN 直接恢复。两种模式用同一 spec。
+普通研究用 `work.py research init RUN --spec <路径> --mode open` 生成一份 full packet。明确对照用 comparison 生成 obstacle/full；已有RUN恢复数学与原输入，普通派工按现行设计判断，对照保隔离。两种模式用同一spec。
 
 spec 的最小结构：
 
@@ -14,7 +14,7 @@ spec 的最小结构：
 }
 ```
 
-问题及定义包含完整的域、目标量词与约束，引用可用 `section` 指定精确标题。obstacles 只选有用的已知失败边界；不把全仓成果塞进该字段。
+问题及定义包含完整的域、目标量词与约束，引用可用section指定标题。obstacles只选有用失败边界。archives内原题以路径最深所属档为准，显式scope不一致会拒绝；若原题暂在workspaces，在spec加 `"collaboration_scope":"archives/ARCHIVE/subarchives/SUBARCHIVE"`（可父档或更深子档），随packet保存，不从跨档定义或clone配置猜。workspace精确同题的已存scope分歧以scope_conflicts明确列出，当前已知scope时status=scope-conflict，不自动裁决或改写旧声明。
 
 原题或定义尚无准确正文时，可先按完整原意写到`research/workspaces/<RUN>/problem.md`、`definitions.md`再引用。有相关既有成果才填写其真实seed_ids；没有时用`"seed_ids":[]`，即使尚无registry也可init，研究者从原题开始，可按需查后续证据。此时保留full检索能力，但初始packet没有引入任何成果；后续实际取用的相关结果记进研究笔记，不悄改原packet。指定edge_ids时须同时给相关seed，以准确保留所选证明分支。
 
@@ -22,8 +22,10 @@ spec 的最小结构：
 
 obstacle packet 给原题、定义、障碍与自由研究任务。full packet 另给登记检索入口及相关超边，Solver 按需展开完整共同前提、条件和证据。不同支持分支保持 OR，单条逻辑边前提保持 ALL；proposed/refuted/rejected/objections 分别按真实语义理解。
 
-Main 用真实平台工具创建/接续 Solver。保存实际 profile、agent_id、完整数学笔记、具体反馈与下一动作；恢复时保留原 packet 和笔记，并明确当前登记与初始版本的差异。packet 不代表模型已启动，也不代表数学结论已成立。
+Main用真实平台创建/接续研究者。长线线路保历史并followup；临时Reader/独立挑战以当前精确请求为目标，交清发起者与回送对象。保存真实profile、agent_id、笔记、反馈和下一步；恢复保原packet及版本差异，不改写旧packet。packet不代表已启动模型或结论成立。
 
-普通 open 的 init/resume 返回同题 RUN 与共同工作区入口，独立运行也可用 `research peers RUN` 查找。原题和定义的精确引用相同，即使 problem_id 或 seed_ids 不同也能发现；比较实验保原输入隔离。开题和派新义务前读同题已有成果，自己的 BossN.md 记录当前具体义务、输入版本、交付及实际接用位置。
+普通open的init/resume及research peers返回同题RUN和档内文件公屏；原题/定义精确引用匹配不依赖problem_id/seed_ids。同目标改版及不同定义另列需数学核对；未知scope给scope-required与空入口，先研究再按准确归属建新保存输入，不篡改旧包。读用sync后打开返回文件，发用本人BossN.md及数学文件checkpoint，旧read/send/inbox不承担此板。当前板页保当前断点，完整历史按需追读；昂贵工作发表后再读一次核碰撞。对照保原输入隔离。
 
-open 的 worker 默认 gpt-6.1-sol / ultra / fork_turns=none，用户另指定时照办。用 save 的 --model、--reasoning-effort、--fork-turns 记录真实配置。Main给取证代理精确义务，让其沿超边实读并返回可代入的数学、条件、关键步骤和来源；完整材料保存在文件。
+旧workspace RUN若初始未存scope，编辑现spec不会改变旧packet/路由。要归档时，从原数学断点建立一个新ID的open RUN，复制准确原题/定义引用并加真实collaboration_scope；新工作笔记链接旧RUN、已成立推导、未答反馈及外部job标识，旧入口保承接指针。不重做已完成数学、不改旧包，不把仅补归属说成数学重新开题。相同输入出现不同scope时先协调唯一现行板，其他入口留指针，不让两板各自活跃。
+
+open的worker默认gpt-6.1-sol / ultra / fork_turns=none，用户另指定照办。save记录真实配置，长线用稳定线路ID、临时请求用独立请求ID。给取证者精确接口和回送对象；完整材料留文件。
