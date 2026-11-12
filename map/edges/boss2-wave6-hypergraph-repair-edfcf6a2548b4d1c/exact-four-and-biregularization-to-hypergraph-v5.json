@@ -1,0 +1,60 @@
+{
+  "kind": "implies",
+  "status": "accepted",
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "reviewed_by": "Boss2",
+  "edge_id": "exact-four-to-one-v4-and-biregularization-to-three-uniform-independent-set-9fa9ce8a7e4a75ec",
+  "source_ids": [
+    "M-ab4a576ed0be482b89d4a646ffc102b9",
+    "PCP-EXACT-PROJECTION-PERFECT-COMPLETE-BIREGULAR-ROUNDING-v1"
+  ],
+  "target_ids": [
+    "M-9f8033b6e1a4485b97636171b09f8218"
+  ],
+  "conditions": "先固定分离承诺阈值0<δ≤1/2，有理0<α<δ且α<1/2，L=ceil(32α^(-2))和θ∈(0,1/2)。对有限h、r_h=4^h，使用本分布精确ρ0=sqrt(θ)、ξ_h=θ/(r_h 2^r_h)、ρ(Y;Z)=1−2θ/r_h重选ν_h、γ_h、τ_h、s_h、T_h；取T≥max T_h及正有理ζ<min_h α²τ_h²γ_h²/(2048r_h)。最后以源soundnessζ/2、正规化误差ζ/2固定字母表。保持带身份投影和完整typed测度，整数cloud给无权输出；所有常数先于源字母表及输入规模。",
+  "roles": {
+    "M-ab4a576ed0be482b89d4a646ffc102b9": "支付任意小固定soundness、常数字母表、perfect exact4的NP-hard源；不免费提供biregularity。",
+    "PCP-EXACT-PROJECTION-PERFECT-COMPLETE-BIREGULAR-ROUNDING-v1": "支付保持原标签/投影及perfect YES的确定性双正规化，多重ID约束均保留，统一值误差≤η，显式DE=O(E³/η)。",
+    "M-9f8033b6e1a4485b97636171b09f8218": "两共同前提经完整typed层化和KS14测试所得有限未加权三一致超图的小独立集承诺硬度。"
+  },
+  "whole_result": "由perfect exact4源与保perfect近值双正规化两个共同前提，对每个固定0<δ≤1/2，区分有限未加权3-uniform超图的完整2-colorable YES与不存在比例≥δ独立集的NO为NP-hard。",
+  "explanation": "原度克隆与带ID整数流舍入保持perfect exact4且统一源值误差≤η；typed有序坐标层化分别保均匀约束ID和均匀层顶点，给smoothness、weak-density及逐层对soundness。KS14实际分布的修改事件由(Y,Z)恰可识别，E[X|Y,Z]在该事件等于X、否则0，L2范数sqrt(θ)，故精确ρ(X;(Y,Z))=sqrt(θ)，不能用原≤θ。实际r≥4/θ<1/2的最小原子ξ和支撑连通性仍付三空间1−ξ²/2；Y→Z Fourier特征值(−1)^|A|(1−2θ|A|/r)精确付高阶尾界。用正确ρ0重新依次选ν/γ/τ/s/T/ζ，正Gaussian余量和影响阈值均维数无关。Heavy-good ID比例至少α²/128，每ID解码率至少τ²γ²/(16r)，超过ζ给soundness矛盾。真实测试不变，dictator保二着色，r≥4且至多改一位使三个顶点不同。完整整数cloud精确保独立集比例及perfect二着色。δ>1/2时K4的全部三元超边让原YES/NO重叠，因此仅采用当前目标的准确分离域；α<δ使NO更强。完整证明保全部原有效组合接口，修补不引入开放前提。",
+  "scope": "当前v5三一致超图整条硬度，保持ALL与0<δ≤1/2分离promise。原一般解析工具仍按成熟接口复用，测试相关量和参数调用用绑定修补；不作UM调度或CAG性能迁移，不以MZ近完美正规化替代保perfect桥。",
+  "evidence": [
+    {
+      "path": "map/edges/boss2-wave6-hypergraph-repair-edfcf6a2548b4d1c/hypergraph-complete-proof.md",
+      "sha256": "6cc10b9a2e31525239ee28657d6055bbb284ef808549a37f85c4e97905d10154"
+    },
+    {
+      "path": "research/workspaces/map-v2/Boss2/recovery-20261112-e8cf4c/ks14-correlation-and-threshold-correction.md",
+      "sha256": "d265421442f7bcb9479889803a785927315fb8bd250e4c17a0bb7bc22f506482"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/fei_minzer_wang.pdf",
+      "sha256": "48baa160d5d15e61aaf99b24b6fc15518c20f204d165fc96de1251d9d8a82ea0"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/khot-saket-1308.3247v2.pdf",
+      "sha256": "2dcb03c6bc10dda5503452719c74bb57c5463e8b34bdbef5d06463cb7d74dc24"
+    },
+    {
+      "path": "archives/unrelated-machines/state/引理/投影约束多重图的保完备性近似双正规化--引理.md",
+      "sha256": "13803e66abc6432815634589e75cbc08238ad74287d89707120274fdfc7927d6"
+    }
+  ],
+  "review_note": "Boss2完整读取当前对象、原9fa/abad构造证明和两份独立3D报告，并独立复算相关条件期望、Fourier谱、支撑连通性、K4阈值域及常数顺序；Root另视觉读冻结KS14物理19/22/25页。原exact4/正规化/typed/解码/cloud及两图关系有效数学全部保存，旧作者整篇来源实读记录保其原身份。本边只修正target v5及KS14局部调用，没有原科学程序重跑；原生绑定仅核交付身份。",
+  "endpoint_pins": {
+    "M-9f8033b6e1a4485b97636171b09f8218": "9bd5557d979847cb514b5b14cdf38a18213c14ba3f864dc601ab57c1f6a1c049",
+    "M-ab4a576ed0be482b89d4a646ffc102b9": "e2f4d171f9174665027371524263e60473a991292495c0041683392feaa38077",
+    "PCP-EXACT-PROJECTION-PERFECT-COMPLETE-BIREGULAR-ROUNDING-v1": "3fb491cd85e99950c05f1ce9bbcd8ec6daabc5bf1aae02627ef4efb4e7307922"
+  },
+  "evidence_pins": {
+    "map/edges/boss2-wave6-hypergraph-repair-edfcf6a2548b4d1c/hypergraph-complete-proof.md": "6cc10b9a2e31525239ee28657d6055bbb284ef808549a37f85c4e97905d10154",
+    "research/workspaces/map-v2/Boss2/recovery-20261112-e8cf4c/ks14-correlation-and-threshold-correction.md": "d265421442f7bcb9479889803a785927315fb8bd250e4c17a0bb7bc22f506482",
+    "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/fei_minzer_wang.pdf": "48baa160d5d15e61aaf99b24b6fc15518c20f204d165fc96de1251d9d8a82ea0",
+    "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/khot-saket-1308.3247v2.pdf": "2dcb03c6bc10dda5503452719c74bb57c5463e8b34bdbef5d06463cb7d74dc24",
+    "archives/unrelated-machines/state/引理/投影约束多重图的保完备性近似双正规化--引理.md": "13803e66abc6432815634589e75cbc08238ad74287d89707120274fdfc7927d6"
+  },
+  "review_digest": "7f180db874bd6e8ed26cc1e3ed5d266e5e9faf05e04a7c6ef99231eabf7291f4"
+}
