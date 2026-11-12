@@ -1,0 +1,73 @@
+{
+  "edge_id": "um-3f8b771c-higher-nc-pays-frozen-sink-probability-frontier",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-OPT-HULL-HIGHER-NC-SUCCESS-v1"
+  ],
+  "target_ids": [
+    "UM-FROZEN-MARGINAL-MACRO-SUPPORT-FRONTIERS-RESOURCE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一私有sink矩阵与真实OPT凸包固定x；k≥2,r≥k,1≤d,q≤k；只要求同组全正sink事件NC，不默加补事件或跨组NC。期望达到另需r≥max(k,binom(k,2))。",
+  "roles": {
+    "UM-OPT-HULL-HIGHER-NC-SUCCESS-v1": "阶乘矩上界和固定x的显式达到law，并给增长阶采样界。",
+    "UM-FROZEN-MARGINAL-MACRO-SUPPORT-FRONTIERS-RESOURCE-v1": "支付资源中的NC期望/尾概率/采样部分，保留未由此推出的行包络。"
+  },
+  "explanation": "逐态C=2−D_h/k。成功迫sum_i binom(D_i,s)≥binom(q,s)，NC给期望≤binom(k,s)/r^(s−1)，相邻阶比≤1，所以最强t=min(d,q)，t1给1否则min(1,A_t)。达到law显式选h及q件、其它k−q不同组各一，或h一件及其它k−1组各一；组/任务置换对称与每态总外送k给全边际，所需s事件概率=(p/r)binom(q,s)/binom(k,s)。两两NC时D_h≤1+sum_i binom(D_i,2)给期望≥2−1/k−(k−1)/(2r)；q2、p=binom(k,2)/r在指定r范围取等。d增长时r=k²有超多项式小尾，固定d不能排所有poly采样；adaptive乘积需每历史同合同。原短句的k−q选择在§5展开，未改公共来源。",
+  "scope": "固定边际随机输出接口；本族OPT1可显式达到，放弃x/采后重排/集中正相关均不受此概率界。",
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-3f8b771c0276b1b2/comparison-review.md",
+      "sha256": "f9ecd430ed5045fec8f20236fd1049dc71847deede6866b371416ce322cdb545",
+      "section": "5. 固定边际NC的局部贡献"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/固定边际宏位置与正支撑释放的精确前沿--资源.md",
+      "sha256": "3ba4bf84d43b1aa357947edf7326adaad74849905174c209c68e0e41f82219e6",
+      "section": "私有sink：固定真实OPT边际也能阻止集中撤离"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/高阶负相关两状态多数与鲁棒环相位边界有限审查--审查.md",
+      "sha256": "5966fde7c7e92ec1ba0aee4dafa2c4199626d7a470c264b9e191df5a8422e6d8",
+      "section": "2.1 精确合同和阶乘矩上界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/高阶负相关两状态多数与鲁棒环相位边界有限审查--审查.md",
+      "sha256": "5966fde7c7e92ec1ba0aee4dafa2c4199626d7a470c264b9e191df5a8422e6d8",
+      "section": "2.2 完整达到 law、边界和采样"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/私有汇点高阶上负相关精确尾概率最终独立审查--审查.md",
+      "sha256": "c8abb60a2839833d60f829d5eb01101042265cfaa9ef93eb1f6a6ad66fdd6ba5"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/最优凸包逐行枚举与两两负相关分布双原入口--资源.md",
+      "sha256": "5447f0c5d000e8470bd2c337624a10314ce6833da73476fdfbd63fd9d6e43621"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/higher-nc-duplication-cycle-20261030/private_sink_higher_order_nc_independent_audit.json",
+      "sha256": "ac3938436df69ce861b2e61e42fefa1bf3997b5a11a69ae6f41ded34783777a9"
+    }
+  ],
+  "reviewed_by": "Boss5/two_small/recovery-20261112",
+  "review_note": "前序worker的77声明refs/56文件57区间实读成果继续复用，原阅读证据见reading-manifest；本恢复独立核ST的slot费用桥及复制界，并核9边当前端点的whole/contribution/context边界。新增实读范围见recovery-review；未重读其余全部来源，旧数学程序本轮运行0。",
+  "contribution": {
+    "result": "资源私有sink部分的两两NC期望下界及指定r域达到、高阶p*精确成功率及增长阶poly采样边界均由该共同law/阶乘矩机制成立。",
+    "remaining": "资源同section中的确定性逐行a ell+b s包络floor精确值、计数包络及集中释放倍率需其自己的逐行预算证明；不由NC关系推出，整个资源不在此边提升为全称general-UM结论。"
+  },
+  "endpoint_pins": {
+    "UM-FROZEN-MARGINAL-MACRO-SUPPORT-FRONTIERS-RESOURCE-v1": "29beda67ac5fa359819dec6736419454d09a3e1507549b45e6c7bedf599d92b5",
+    "UM-OPT-HULL-HIGHER-NC-SUCCESS-v1": "f42f1cf215ddd753a029a12ca35d23236a41a12fb0cb8fd2d212c8f14c8068a2"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-3f8b771c0276b1b2/comparison-review.md": "f9ecd430ed5045fec8f20236fd1049dc71847deede6866b371416ce322cdb545",
+    "archives/unrelated-machines/state/资源/固定边际宏位置与正支撑释放的精确前沿--资源.md": "3ba4bf84d43b1aa357947edf7326adaad74849905174c209c68e0e41f82219e6",
+    "archives/unrelated-machines/state/审查/高阶负相关两状态多数与鲁棒环相位边界有限审查--审查.md": "5966fde7c7e92ec1ba0aee4dafa2c4199626d7a470c264b9e191df5a8422e6d8",
+    "archives/unrelated-machines/state/审查/私有汇点高阶上负相关精确尾概率最终独立审查--审查.md": "c8abb60a2839833d60f829d5eb01101042265cfaa9ef93eb1f6a6ad66fdd6ba5",
+    "archives/unrelated-machines/state/资源/最优凸包逐行枚举与两两负相关分布双原入口--资源.md": "5447f0c5d000e8470bd2c337624a10314ce6833da73476fdfbd63fd9d6e43621",
+    "archives/unrelated-machines/tools/evidence/higher-nc-duplication-cycle-20261030/private_sink_higher_order_nc_independent_audit.json": "ac3938436df69ce861b2e61e42fefa1bf3997b5a11a69ae6f41ded34783777a9"
+  },
+  "review_digest": "36504281e5089a431a1467a2c3f51cac74f7fc0d24c06fd2e7b33d5e301d9cee"
+}

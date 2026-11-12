@@ -1,0 +1,53 @@
+{
+  "edge_id": "exact-four-to-one-v4-to-eight-color-independent-set-8c728e95a224313d",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "M-ab4a576ed0be482b89d4a646ffc102b9"
+  ],
+  "target_ids": [
+    "M-922feb7b429f49d4b5f13ca51b34aae7"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "有限非空带身份平行约束的exact4投影游戏；val按约束重数计。先固定目标δ>0，再取0<a<min(δ,1/8)，固定GS20低度影响、列表和诱导比例常数，继而选桥所需源soundness，最后由FMW选择常数字母表。使用GS20 §2.1已证exact d-to-1→d-to-d induced-list桥及Theorem9/Lemma10；全部参数在实例规模前固定。",
+  "roles": {
+    "M-ab4a576ed0be482b89d4a646ffc102b9": "支付GS20 Conjecture3在d=4的全部合同：每个右标签恰4个左原像、左右标签比4、严格val=1与任意小固定NO soundness、常数字母表及多重约束。",
+    "M-922feb7b429f49d4b5f13ca51b34aae7": "所得有限图的完整8-colorable对最大独立集比例严格小于任意固定δ的NP-hard承诺。"
+  },
+  "whole_result": "对每个预先固定δ>0，存在确定性多项式归约，YES输出完整8-colorable有限图，NO输出最大独立集比例严格小于δ的有限图；得到目标的完整NP-hardness。",
+  "explanation": "FMW Definitions1.1/1.3、Theorem1.6及AppendixB支付exact4源合同：两域乘Z/kZ、每旧约束k个exact4新约束，保完美YES，失败旧标签对最多通过两个新约束。GS20 §2.1的已证induced-list桥保每个固定列表上界与诱导子集阈值。Theorem9/Lemma10取q=2d：不交d元组上的对称非周期Markov支撑构造长码图，满足源标签指定码字坐标给完整q着色。有比例a独立集则至少a/2比例码块密度≥a/2；每条诱导约束的零测试期望用Theorem7阈值a/4解码为同一对应d块两侧的影响坐标。统一列表安全取t=ceil(d²h/η)，因为ΣI_i^{≤dh}≤dh、阈值η/d；此保守常数修正不改变对任意固定t的源合同。所有带身份诱导约束都被同一列表族满足，违反源NO阈值a/4。代d=4得到q=8；NO无比例≥a独立集，故严格小于a<δ。显式支持、码块与图边展开在固定参数下为确定性多项式。完整论证见comparison-proof。",
+  "scope": "完整exact4到八色图小独立集承诺硬度的单向蕴含；不附加最大度/双正规，不推出实际字母表的幂次soundness，不迁移到调度或SPE。",
+  "evidence": [
+    {
+      "path": "map/edges/boss5-localfix-repair-8c728e95a224313d/comparison-proof.md",
+      "sha256": "d1634e6dfcd5402be4adfe9b238df6a06dd1c7bdc96a1ea9f98b945be15896fe"
+    },
+    {
+      "path": "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/fei_minzer_wang.pdf",
+      "sha256": "48baa160d5d15e61aaf99b24b6fc15518c20f204d165fc96de1251d9d8a82ea0"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/guruswami-sandeep-icalp2020.pdf",
+      "sha256": "1f7428d31ae66a1d6488444fa117b1265fd0cf305dbd237387961f7f2b0a97f4"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/四对一与字母表soundness两篇文献整理--文献.md",
+      "sha256": "d0273adacbf4ccbb9d6cd954cdfd44dddb5f8a8e969067107f63c77bdaaf4b78",
+      "section": "2.1 主定理与可直接引用的结论"
+    }
+  ],
+  "reviewed_by": "Boss5/repair_8c/recovery",
+  "review_note": "恢复worker完整读当前v4同页正文与三对象记录，复用旧有效证明；重新读现存FMW提取pp4–6和AppendixB pp99–100、GS20全文并补齐截断段，目读既有62:9渲染图。历史worker范围与恢复新读在reading-ledger及comparison-proof分别记录。独立只读审查核Lemma8常数链、Theorem9完整合同和NP-hard量词通过；未重证FMW全部内核。当前canonical无等效exact4→八色边，故本包独立新交并逐旧资产替代；不等待或冒称9fa已done。",
+  "endpoint_pins": {
+    "M-922feb7b429f49d4b5f13ca51b34aae7": "551be6c145cf6c5ee53f5828c71aeef6fbd22f50a958928a01a802fe2b213aed",
+    "M-ab4a576ed0be482b89d4a646ffc102b9": "e2f4d171f9174665027371524263e60473a991292495c0041683392feaa38077"
+  },
+  "evidence_pins": {
+    "map/edges/boss5-localfix-repair-8c728e95a224313d/comparison-proof.md": "d1634e6dfcd5402be4adfe9b238df6a06dd1c7bdc96a1ea9f98b945be15896fe",
+    "archives/unrelated-machines/tools/evidence/retired-literature-four-to-one-20261031/fei_minzer_wang.pdf": "48baa160d5d15e61aaf99b24b6fc15518c20f204d165fc96de1251d9d8a82ea0",
+    "map/edges/unrelated-machines-3a-3a-19cf10a88593d40b/guruswami-sandeep-icalp2020.pdf": "1f7428d31ae66a1d6488444fa117b1265fd0cf305dbd237387961f7f2b0a97f4",
+    "archives/unrelated-machines/state/文献/四对一与字母表soundness两篇文献整理--文献.md": "d0273adacbf4ccbb9d6cd954cdfd44dddb5f8a8e969067107f63c77bdaaf4b78"
+  },
+  "review_digest": "1db3a38f24065d0a045cff9d31763ae4714ef51e24a5599e170b44b9fde87056"
+}

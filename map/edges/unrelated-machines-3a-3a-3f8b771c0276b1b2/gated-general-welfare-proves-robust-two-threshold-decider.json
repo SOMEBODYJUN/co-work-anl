@@ -1,0 +1,53 @@
+{
+  "edge_id": "um-3f8b771c-gated-general-welfare-proves-robust-two-threshold-decider",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "UM-NORMALIZED-GATED-MENU-13-8-v2"
+  ],
+  "target_ids": [
+    "UM-NEAR-PERFECT-NORMALIZED-ROBUST-SOURCE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "同一显式norm1菜单与全allocation NO；0≤eta<1,0≤delta<1,0<gamma≤1，(5/8)(1−eta)≥gamma+(1−gamma)delta；NO_≥与NO_>分别读取，不混阈值。",
+  "roles": {
+    "UM-NORMALIZED-GATED-MENU-13-8-v2": "提供一般福利LP和W≥(1−1/e)L>5L/8的实际allocation保证。",
+    "UM-NEAR-PERFECT-NORMALIZED-ROBUST-SOURCE-v1": "以近完美YES嵌入与严格NO福利上界得到完整LP判别。"
+  },
+  "explanation": "YES至少(1−eta)n个unit组，真实allocation嵌入源LP使L≥该阈值。每NO allocation令h为相应高组数，均有W≤delta n+(1−delta)h<[gamma+(1−gamma)delta]n；若L也达阈值，源实际福利finder给W>5L/8≥右端矛盾。因此只比较精确L和阈值即可判两个promise。gamma≤delta≤3/8,eta≤1/40时右端≤39/64≤左端，三重等号有效。无需FSLP、组数整除或运行finder；端点和位复杂度见§7。",
+  "scope": "完整/近完美显式robust promise可判；没有可靠NP源归约，不外推coherence/隐式/非归一化域。",
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-3f8b771c0276b1b2/comparison-review.md",
+      "sha256": "f9ecd430ed5045fec8f20236fd1049dc71847deede6866b371416ce322cdb545",
+      "section": "7. 一般福利保证到两阈值robust判别"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/归一化门控菜单v2三源精读与13-8算法版本审查--审查.md",
+      "sha256": "a4a7e0a28927697fa92175ad43d78a94c1bffdd967d447bc54606c172e493cc5"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/近完美归一化robust源四源审查--审查.md",
+      "sha256": "3fc6b21c3c331f5406792029de5c5ccd385cebc6a1040a1ea8589d48a9c8b5ce"
+    },
+    {
+      "path": "archives/unrelated-machines/state/引理/显式均匀束robust源的福利排除域--引理.md",
+      "sha256": "433f623b79db8ac16c6a15e6a427512ac2c8245ebc24e024eb10d923746adf94"
+    }
+  ],
+  "reviewed_by": "Boss5/two_small/recovery-20261112",
+  "review_note": "前序worker的77声明refs/56文件57区间实读成果继续复用，原阅读证据见reading-manifest；本恢复独立核ST的slot费用桥及复制界，并核9边当前端点的whole/contribution/context边界。新增实读范围见recovery-review；未重读其余全部来源，旧数学程序本轮运行0。",
+  "whole_result": "精确福利LP最优L≥(1−eta)n判YES否则NO，对NO_≥、NO_>各自正确，完整参数域及统一子域三重等号均保留，总位多项式；无额外FSLP或整除前提。",
+  "endpoint_pins": {
+    "UM-NEAR-PERFECT-NORMALIZED-ROBUST-SOURCE-v1": "4dfe055bb9bcc7ce75cee4da19f61871b56a22c8b4f0f6e5df32c69d234fc642",
+    "UM-NORMALIZED-GATED-MENU-13-8-v2": "6d3f4a6a93839fad94221c9b552d5b42d25baa7d6931c1fb1b2381e90e781c52"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-3f8b771c0276b1b2/comparison-review.md": "f9ecd430ed5045fec8f20236fd1049dc71847deede6866b371416ce322cdb545",
+    "archives/unrelated-machines/state/审查/归一化门控菜单v2三源精读与13-8算法版本审查--审查.md": "a4a7e0a28927697fa92175ad43d78a94c1bffdd967d447bc54606c172e493cc5",
+    "archives/unrelated-machines/state/审查/近完美归一化robust源四源审查--审查.md": "3fc6b21c3c331f5406792029de5c5ccd385cebc6a1040a1ea8589d48a9c8b5ce",
+    "archives/unrelated-machines/state/引理/显式均匀束robust源的福利排除域--引理.md": "433f623b79db8ac16c6a15e6a427512ac2c8245ebc24e024eb10d923746adf94"
+  },
+  "review_digest": "8c4f2da888fd2ede5e69b55506e3f1902e34043c010709a034dc45dee5b58a7b"
+}

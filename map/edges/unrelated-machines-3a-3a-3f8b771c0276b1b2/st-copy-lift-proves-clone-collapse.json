@@ -1,0 +1,61 @@
+{
+  "edge_id": "um-3f8b771c-st-copy-lift-proves-clone-collapse",
+  "kind": "transfers",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding"
+  ],
+  "target_ids": [
+    "UM-SHARED-CLONE-REPLICATION-COLLAPSE-v1"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "固定原非负有理显式UM；F为未额外剪枝assignment-LP最优；k≥1份带身份job共享原机器，按显式nk输入/输出计成本。",
+  "roles": {
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding": "对复制后的分数点提供逐机k ell_i+r_i实际舍入。",
+    "UM-SHARED-CLONE-REPLICATION-COLLAPSE-v1": "得到完整双侧界及归一化极限，并强化原上界。"
+  },
+  "explanation": "把最优x逐个复制给每个job副本，列和仍1，行负载k ell_i≤kF，最大支撑件不变。ST费用取0得O_k≤kF+p_max≤kF+S。任复制整数调度的份数除k给原LP点，所以kF≤O_k；夹逼得O_k/k→F。空/全零按0处理。完整推导保留全部原job身份及共享机器，未把CONFIG或剪枝阈值代成F。",
+  "scope": "共享复制向普通assignment-LP坍缩；不把展开nk称按log k位多项式。",
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-3f8b771c0276b1b2/comparison-review.md",
+      "sha256": "f9ecd430ed5045fec8f20236fd1049dc71847deede6866b371416ce322cdb545",
+      "section": "2. ST转移到共享复制的更强完整界"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/两份复制多数地板与共同激活复制障碍双源审查--审查.md",
+      "sha256": "5e06ccad61d733369eea265a4a2f5cfec977025da0bdb2cabfa79f6b03220b64",
+      "section": "三、删除条件后的精确反例与复制不放大"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+      "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+      "section": "1. 模型、两个阈值与准确主结论"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+      "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+      "section": "2. 有序槽与最小费用匹配：完整证明"
+    },
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-3f8b771c0276b1b2/recovery-review.md",
+      "sha256": "366f89caa0a0c38e3834c406450087e1461246198ee9fcd921af1a33c1adb6cf",
+      "section": "3. 复制界与编码独立复核"
+    }
+  ],
+  "reviewed_by": "Boss5/two_small/recovery-20261112",
+  "review_note": "前序worker的77声明refs/56文件57区间实读成果继续复用，原阅读证据见reading-manifest；本恢复独立核ST的slot费用桥及复制界，并核9边当前端点的whole/contribution/context边界。新增实读范围见recovery-review；未重读其余全部来源，旧数学程序本轮运行0。",
+  "whole_result": "对每个固定原实例和每k≥1，kF≤O_k≤kF+p_max≤kF+max_i sum_{j有限}p_ij，故O_k/k→F；包含原目标完整双侧界和编码边界。",
+  "endpoint_pins": {
+    "UM-SHARED-CLONE-REPLICATION-COLLAPSE-v1": "ef24d22641957f5facbda4b478b34342da87df178b1e251eb5cba4b4700141fe",
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding": "c12cff11f8d9d634441f752ebe101222ec0faba1d570a402caf2618f68edb356"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-3f8b771c0276b1b2/comparison-review.md": "f9ecd430ed5045fec8f20236fd1049dc71847deede6866b371416ce322cdb545",
+    "archives/unrelated-machines/state/审查/两份复制多数地板与共同激活复制障碍双源审查--审查.md": "5e06ccad61d733369eea265a4a2f5cfec977025da0bdb2cabfa79f6b03220b64",
+    "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+    "map/edges/unrelated-machines-3a-3a-3f8b771c0276b1b2/recovery-review.md": "366f89caa0a0c38e3834c406450087e1461246198ee9fcd921af1a33c1adb6cf"
+  },
+  "review_digest": "73dbe0f7074c4cc4816dab3507b3d874dccaffe5047e7b4c63e5c2f3039c9eb2"
+}

@@ -1,0 +1,62 @@
+{
+  "edge_id": "um-3f8b771c-st-and-perfect3dm-jointly-support-two-small-sharpness",
+  "kind": "implies",
+  "status": "accepted",
+  "source_ids": [
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding",
+    "UM-SOURCE-KARP-3DM"
+  ],
+  "target_ids": [
+    "UM-TWO-SMALL-INCIDENCE-SHARP-APPROXIMATION-v2"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "完整显式普通UM；共同有理b>0，全部finite p≤b；每行不同job正small资格≤2，zero与unit及跨行共享任意。困难性结论精确为P≠NP时无固定rho<3/2，不主张P≠NP已证。",
+  "roles": {
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding": "提供普通load-LP的逐机加最大支撑件舍入，支付OPT≥2b分支。",
+    "UM-SOURCE-KARP-3DM": "提供显式三份等大坐标perfect3DM的NP完全性，支付锐界起点。",
+    "UM-TWO-SMALL-INCIDENCE-SHARP-APPROXIMATION-v2": "在结构流、候选搜索和实际assignment归约补付后得到全部算法与同域锐界。"
+  },
+  "explanation": "共同使用ST和Karp；局部结构流不能省略。zero端先实际安置并回填。T<b行容量1/2流精确，OPT候选是0/单small/同机两small和。b≤T<2b写a=T−b、c=b/2+a；easy行small和≤c，unit共享一容量；hard行总容量2，unit与p>c的small共享big容量1。每真实T调度嵌入，任满流负载≤b+c≤3T/2，FAIL单向排OPT≤T；枚举O(m)真实峰候选至OPT必成功。大OPT分支ST给L+b≤3OPT/2，取全部输出中实际负载最小者，无OPT输入。perfect3DM每triple一M_e接X_x,Y_y各1/2，J_e可留M_e或去Z_z用1；YES完整峰1。任C<3/2至多q个J外移且2q元素job迫恰q个opened M各接一对，Z互异，解码perfect3DM。无incident/empty边界先单列。故全部目标成立，具体位复杂度和不等式逐项见证明§1。",
+  "scope": "全输入common-b双small结构类；不是一般UM三半、配置gap或近二hardness。独立shared一般ell包络是替代证明，未与本ALL链混作额外必要前提。",
+  "evidence": [
+    {
+      "path": "map/edges/unrelated-machines-3a-3a-3f8b771c0276b1b2/comparison-review.md",
+      "sha256": "f9ecd430ed5045fec8f20236fd1049dc71847deede6866b371416ce322cdb545",
+      "section": "1. ALL的双small全目标"
+    },
+    {
+      "path": "archives/unrelated-machines/state/审查/双小资格三半锐界三源精读--审查.md",
+      "sha256": "80b0c9a76b6ecf66a8af9c22467b470a463eb1f75661aed27f71ff206374618f"
+    },
+    {
+      "path": "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md",
+      "sha256": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+      "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+      "section": "1. 模型、两个阈值与准确主结论"
+    },
+    {
+      "path": "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md",
+      "sha256": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a",
+      "section": "2. 有序槽与最小费用匹配：完整证明"
+    }
+  ],
+  "reviewed_by": "Boss5/two_small/recovery-20261112",
+  "review_note": "前序worker的77声明refs/56文件57区间实读成果继续复用，原阅读证据见reading-manifest；本恢复独立核ST的slot费用桥及复制界，并核9边当前端点的whole/contribution/context边界。新增实读范围见recovery-review；未重读其余全部来源，旧数学程序本轮运行0。",
+  "whole_result": "在所有指定common-b双正small资格输入上，确定性总位多项式输出全部原job且C≤3OPT/2，包含zero回填、OPT<b精确分支、b≤T<2b单侧流及OPT≥2b的ST包装；同域有限{1/2,1}子类由perfect3DM给YES OPT≤1/NO OPT≥3/2，故P≠NP时不存在固定rho<3/2近似。",
+  "endpoint_pins": {
+    "UM-SOURCE-KARP-3DM": "2b455afb721fc3404464bed6944c36df19220c296dae72d7d0e9af032179e171",
+    "UM-TWO-SMALL-INCIDENCE-SHARP-APPROXIMATION-v2": "dbcb227e5aa994b10964f9b5f1e0bacdcf71e1964cdd02276ddf586bc62c4383",
+    "unrelated-machines/shmoys-tardos-generalized-assignment-cost-preserving-rounding": "c12cff11f8d9d634441f752ebe101222ec0faba1d570a402caf2618f68edb356"
+  },
+  "evidence_pins": {
+    "map/edges/unrelated-machines-3a-3a-3f8b771c0276b1b2/comparison-review.md": "f9ecd430ed5045fec8f20236fd1049dc71847deede6866b371416ce322cdb545",
+    "archives/unrelated-machines/state/审查/双小资格三半锐界三源精读--审查.md": "80b0c9a76b6ecf66a8af9c22467b470a463eb1f75661aed27f71ff206374618f",
+    "archives/unrelated-machines/state/文献/Karp归约框架与完全问题--文献.md": "40c532477ca603c4366c545d4c41c39b056725b73e9a165ca1e8b21782792e1d",
+    "archives/unrelated-machines/state/资源/广义指派的费用保持与加性负载舍入--资源.md": "71aed70bc3061bc33c6b6ea89417693b76b58e8100a010c730a73407b845749a"
+  },
+  "review_digest": "3cdfdcb75b5c4628f22dc9201a5c20941a6fa2d6cf0c98ce3a0bb3a207facb1a"
+}
