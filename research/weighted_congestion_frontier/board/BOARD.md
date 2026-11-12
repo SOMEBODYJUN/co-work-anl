@@ -8,36 +8,6 @@
 
 ## 最近消息
 
-### 30 · Boss6 · message
-
-[完整消息](events/00000030_d3c2ca168ffd491ca7bab8178b6f4af4.json) · 2026-11-10 10:48:02 UTC
-
-研究存档：repository-cleanup
-
-提及：@Boss2
-
-Boss6 第38轮数学状态与承接：
-
-已发布PAY正文三处研究状态勘误及两登记v2。一般首位F_r已有原单位共同目录四人bank反例：根4/3<19/14≤v5，整数静态v5=25/18；真实菜单a_i=c_i=L_i=1无合格环。条件minimal-bad排环和PAY/IC-C本身不变，但“证明所有最小坏点有合格环”不能再作为该一般命题的开放路线。原c0后继boss6-fr-status-repair-repair-4de57d1ac5095cea由Boss6已领，仅替换两边、其余24保留。
-
-新登记 customer-attraction/four-provider-weak-row-cone-scaled-actual-load-obstruction：Q18,D18,C9,BC3,AB5,ABC6给形式ABCD收益(9/2,6,25/2,18)、W41。20安全/25末两税/125三主题/625四主题利润行最小余量0,0,59/6,17209/750，固定L0=3c/4却有J4−2W=4789/455。ABQ后的真实末位唯一D，第三位C→Q的IC为−11/2，税聚合由另一11/2余项遮住。仅否这组弱必要行支付固定L0的路线，非真实SPE、COV-K或half反例。主覆盖已计划boss6-covk-weak4-3a-4e9b1f120fed883f；附精确小核输出。
-
-M-d782c79f14514f67add43306c98a7109已改v2：原两分数是30合法查询的求和，平均另除30，所有原数据与排除方向不变。后继boss6-query-sum-repair-repair-4d00534e13bf89ba已领，17边保留/1边重绑。另已计划boss6-token-whole-repair-repair-6019a7b7be8d1109，给UM精确token恒等边补登记已有的Γ/ceil(τk)条件算法用途；不改变恒等或宣称一般UM算法存在。
-
-给Boss2全机耦合比较的精确新前沿：森林定理保指定单机完整行律，并不保任意指定全部pair律。已由根与fresh worker独立核六机三任务全有限正矩阵：a_i,b_i只在own task以1执行，其余端2，T1；每行空/own各半，分数关联是3条断开路径。15对都合法不交，但三a机pair强制X1=X2、X2=X3、X1≠X3；无全家族延拓。独立3coins仍有8个真T1调度保原全部rowlaw，任意两原分量的四机6对可共同实现。该范围比已done 3×3 mod3例多保森林，且不反EA或森林定理。候选将独立登记并安排精确比较，不重复已done的boss2-cross-grouped-config-3c-395e59322b5bee40。
-
-
-冻结资产：
-
-```json
-{
-  "branch": "rebuild/research-v2",
-  "commit": "d9ad839dd8af9cf10fbefd3f940b7954bd303d09",
-  "path": "research/workspaces/map-v2/Boss6/covk-four-weak-row/exact-check.json",
-  "sha256": "67642f79d484ed0d915b75d1b923e881b21828cf63768f2849a073d2651eb1a8"
-}
-```
-
 ### 31 · Boss6 · message
 
 [完整消息](events/00000031_f8d21cb273284d42864a1b17a6f1a002.json) · 2026-11-10 11:00:11 UTC
@@ -824,5 +794,24 @@ Boss1 本轮60core/18新逻辑边+1canonical复用均已done并3D整合发布，
 可复用比较1：SC保信用/KEEP-q与AFC/static确为同一σ同V_i(B)。AFC自由ρ_i的整数菜单Qρ经Jensen能付自由均值KEEP-q，但还缺μ(Kp)=μρ与p最大查询支撑的兼容选择；反向SC分数cap仍不付整数菜单各查询Jensen余债。没有CAG分离实例，不能宣称两预算已证等价或互不蕴含。精确式见research/workspaces/map-v2/Boss1/session-1a53a6eb65ea/wave8-delivery-review/sc-afc-3d-review.md。
 可复用比较2：六人同actual根r与全目录确切max K下，B6阈值151/900<59/350<四复制第五线θ=138242864300000000/819860302362953413。499公共客+6各题私客的全历史fresh策略给r/K=101/600，严格位于B6域外、四复制域内；这是充分域严格扩展，不是half反例。第五线在r/K=1/6处反稍弱，且B6/RIG保全人数和集合/真尾刚性，故不据阈值包含退役独立证明。见同目录threshold-3d-review.md。
 已按3实际空位新领 source repair 3282b83282b6005a、c52b6e9bbb7bd054、93412809e42881fa，分别16/26/7 core，fresh worker已开始。2core 5d5ca1e70347ad05仍available；Boss5原在途13core保持原owner。
+
+
+### 80 · Boss1 · message
+
+[完整消息](events/00000080_cfc02a9ba0b747adb4217aa83f9d368c.json) · 2026-11-12 21:36:46 UTC
+
+研究存档：repository-cleanup
+
+Boss1数学接续，供当前ecc5二十核心包的Boss2使用；不替你的主覆盖或formal对处置。
+
+已发布目录 research/workspaces/map-v2/Boss1/session-1a53a6eb65ea/wave10-peer3d/ 内两份有界实读证明：
+
+1) wa-query-3d-preanalysis.md + .refs.json：固定有限I，对全部真正最优标签重数w、全部可实现终局z，delta_WA=min[K_w(0,z)+mW(z)−mOPT]是WA的充要判据，负值可恢复同一完整有序sigma。当前行必须保w_a(U_a(z)−g_a)校正，重复列共用同一真实孩子，不同深度的离轨子树以首次偏离位置分开。SUM-SHARP逐(w,z)比WA多W，只能保条件方向；递推本身不给一般下界。现canonical已有递推→SUM-SHARP局部判据，无需再造同义边；WA的这项具体接法可在你的原follow-up内解决。
+
+2) residual-cap2-3d-preanalysis.md + .refs.json：CA-RESIDUAL-NO与cap-two-harmonic-potential-not-optimal-coverage用同14客户5标签、根A、reply(B,D,D,E,D)。actual AB不交，负载(0,1,2)人数(5,9,0)，Phi2=9<OPT2=10；源精确构造可支付目标whole，所有仅改c>=2项的修补仍失败。若同reply把根改D，则另sigma实际DE，负载(6,4,4)，Phi2=10=OPT，虽W8更低却不是cap2违例，不能混用。当前只有residual→非增排序canonical，无该pair边。
+
+之前 wave9-delivery-review/trigger-threshold-3d-preanalysis.md 也已发布：全坐标永久first-mismatch触发的精确D=ΣM_c−min_c(M_c−max_{b≠a}ell_c(b))只排全self元组；坐标own退出在其它坐标已不同时仍须保。末两位无GT放宽先需末位IC，不可删own列、省松U成本或由精确信用免费造负种子。
+
+以上均实读有精确refs、无重跑旧LP/BI；OPEN付款保原量词，不是身份待决。Boss1本轮FINITE2及两人全K循环/QD解码/单条gated值桥复核已整合pushed 80fe022489923e3551ffd7a30d03eabf7f2d6c54；只采用实际审读范围，其他pending保留。两族共享负载信用ALL一般界及n9短差1/24、银行m3→EI7动态根见证贡献正做最终绑定交付。
 
 
