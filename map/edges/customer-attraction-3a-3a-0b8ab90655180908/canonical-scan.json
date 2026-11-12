@@ -1,0 +1,40 @@
+[
+  {
+    "path": "map/edges/customer-attraction-3a-3a-bc7462157647be8f/occupancy-and-security-give-three-singleton-strict-gap.json",
+    "sha256": "a5ee5ed336d8404694d6df2745f651c941643455402fbc8bbbf36ad643f4605b",
+    "edge_id": "ca-bc74-occupancy-and-security-give-three-singleton-strict-gap",
+    "kind": "specializes",
+    "status": "accepted",
+    "source_ids": [
+      "M-60cc776fc561460eba78d5c348e4d9b2",
+      "customer-attraction/static-cce-uniform-deletion-security-lower-bound-and-strict-gap"
+    ],
+    "target_ids": [
+      "M-8093886eed9c4824be53388b7d10d78b"
+    ],
+    "relation_mode": "unconditional",
+    "whole_result": "ALL(占用LP,静态安全量词)在三个单例输入上完整推出v3=2/3、最低任意CCE=21/10>3v3=2、所列达到分布及全部顺序SPE福利3。",
+    "contribution": null,
+    "explanation": "均匀查询对两不同/同标签背景分别得2/3、7/9；均匀混合AB/AC/BC背景使每固定查询得2/3，故v3=2/3。占用LP再按标签置换平均，只三型300/210/111，其(W,H)为(1,7/3),(2,19/9),(3,2)。每型对偶表达W−(9/10)(W−H)≥21/10；CCE的E(W−H)≥0给EW≥21/10。按9/10取210、1/10取111并均匀排列标签/玩家，聚合slack0，逐人每固定查询slack为其三分之一，故合法CCE达到21/10。全部10占用列本次有理核同一对偶。顺序末位若有fresh严格优重复；第二位先fresh以免只得≤1/2，根任标签都1，故全部SPE三不同W3。安全一般界只给C3≥2，本例严格性不能反向抹掉。"
+  },
+  {
+    "path": "map/edges/customer-attraction-3a-3a-cb87d62d3c420d40/pure-saddle-saved-point-tail-contribution.json",
+    "sha256": "10b430fe35e48ceeb5658868aa21336a3926a5c16626708aa19f6879cda7491b",
+    "edge_id": "cag-cb87d-pure-saddle-certifies-saved-point-tail",
+    "kind": "specializes",
+    "status": "accepted",
+    "source_ids": [
+      "M-188ec19e2d354848bf1ddfd992957fe2"
+    ],
+    "target_ids": [
+      "cag-ordered-worst-outcome-two-step-security-probe-and-five-player-saved-point"
+    ],
+    "relation_mode": "unconditional",
+    "whole_result": null,
+    "contribution": {
+      "result": "保存点V2=V3=298/15由源纯鞍点充分条件解析推出，两个相应尾子博弈的完整纯SPE唯一恒5；完整保存表66后57节点确为该恒5策略，因此其全部有序IC获认证。V4=298/15另由r1时七查询直接行最大值给出，尾三人PAIR窗口据此为0。",
+      "remaining": "目标整条statement还包括根可实现终局计数唯一、完整2801节点中66子树之外的全部真实IC、实际根有序路径与福利、混合静态V0=V1=8888/465以及前两个窗口877/93、1087/186。这些不由纯鞍点特化推出，仍由目标的完整有序重构和精确原始/对偶证书承担；本边不提供whole_result。"
+    },
+    "explanation": "把目标精确报告的17个正兴趣型代入t_a=Σ_(J∋a)w_J/(b_J+r)、D_j=Σ_(J∋j)w_J/[1+b_J+(r−1)1_(a∈J)]。背景66,r3与665,r2都给t5=298/15，D=(223/15,229/15,178/15,41/3,76/5,298/15,268/15)，余量t−D=(5,23/5,8,31/5,14/3,0,2)。向背景多加5并把剩余r减一使每个相关分母不变，故两行确相同。源定理于是给这两个静态游戏的精确纯鞍点、V2=V3=298/15及唯一全历史恒5 suffix。保存动作表的66子树实际57节点全部5是另一个完整结构观察；结合唯一性，认证的确是这份保存策略该子树全部离轨IC，而非从actual路径推完整性。最后背景6655,r1无对手，七查询收益就是同一D向量，最大298/15，直接得V4。这里仅使用有限Fraction标量核，无新DP/LP/全树回放。"
+  }
+]

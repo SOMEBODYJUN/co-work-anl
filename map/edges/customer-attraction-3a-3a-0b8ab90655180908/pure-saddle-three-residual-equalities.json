@@ -1,0 +1,59 @@
+{
+  "edge_id": "cag-0b8a-pure-saddle-gives-three-residual-equalities",
+  "kind": "specializes",
+  "status": "accepted",
+  "source_ids": [
+    "M-188ec19e2d354848bf1ddfd992957fe2"
+  ],
+  "target_ids": [
+    "cag-residual-aggregate-full-outcome-probe-and-three-repeat-terminal-points"
+  ],
+  "premises_mode": "all",
+  "relation_mode": "unconditional",
+  "conditions": "保留原单位客户、共同标签目录和全部有序历史；固定三输入分别(k,r,b,a)=(6,3,(5,0,5),1)、(7,4,(3,4),2)、(7,5,(1),6)，全部正兴趣重数按目标固定输入；静态对手恰r−1槽且不能观察查询。全部D_j≤t_a及j≠a严格的数值前提均由已保存精确有理行付清。",
+  "roles": {
+    "M-188ec19e2d354848bf1ddfd992957fe2": "提供D_j≤t_a时的精确静态纯鞍点、全有序历史恒a的完整SPE，以及所有j≠a严格时的全树唯一性。",
+    "cag-residual-aggregate-full-outcome-probe-and-three-repeat-terminal-points": "将一般充分条件具体化到三个固定合法非空背景，得到完整常标签策略、精确v_r及P_r=r v_r。"
+  },
+  "whole_result": "三个固定子博弈的完整有序策略分别在每个历史恒选1、2、6，且各为唯一完整纯SPE；其合法旧前缀分别(5,0,5)、(3,4)、(1)，精确静态值依次63/10、32/3、53/6，剩余总利润依次189/10、128/3、265/6，三点均P_r=r v_r。",
+  "explanation": "直接代入三个固定客户输入，纯对手(r−1)e_a的全部查询收益依次为(29/6,63/10,51/10,51/10,74/15,47/15)、(89/10,133/15,32/3,103/15,112/15,6,11/2)、(16/5,23/6,43/6,32/15,32/15,67/15,53/6)。a坐标恰t_a，其余严格低于t_a。固定纯查询a面对任意合法r−1槽的分母逐客户≤b_J+r，保证t_a；上述纯对手同时给上界，故v_r=t_a。在任意离轨历史h，遵循a与改j的a∩j客户份额抵消；a\\j的遵循分母≤b_J+r，j\\a的偏离分母≥b_J+1，所以真实收益差≥t_a−D_j。严格性从末层反推每个有序节点唯一选a；全读的43/400/2801项动作表恰为这三份常策略，实际a^r每人得t_a，汇总P_r=r t_a。r3同覆盖标签2/3不是被选a1，二者均严格劣于a1，保全部标签仍可唯一。此推导不用root_outcomes=1推出策略唯一，也不使用随机阴性或浮点LP成功。",
+  "scope": "完整支付目标固定三输入的全部数学陈述；背景非空且不要求旧行动均衡，不外推任意合法背景强聚合、PAIR或六人空根half。",
+  "evidence": [
+    {
+      "path": "archives/customer-attraction/state/程序/合法背景首两人安全比的有限探针与三个取等点--程序.md",
+      "sha256": "0a1073b2039fd08a31e57ccce915edc030a9ec0d799c0a1d73173bde245a269e",
+      "section": "同一条件还给全历史恒动作SPE"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/合法背景首两人安全比的有限探针与三个取等点--程序.md",
+      "sha256": "0a1073b2039fd08a31e57ccce915edc030a9ec0d799c0a1d73173bde245a269e",
+      "section": "纯静态鞍点给精确安全值"
+    },
+    {
+      "path": "archives/customer-attraction/state/程序/合法背景残余总利润的全集筛查与三个重复终局点--程序.md",
+      "sha256": "8e0175f1daf9ca6ab7ed7da6c6955f5776b4fd251c09897d1d44f14a275b561c",
+      "section": "三个固定保存输入的精确取等"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/residual-aggregate-three-saved-primary/exact-three-saved-point-audit.json",
+      "sha256": "0948d8629ccb1b11dcc5566b709002f9324ae6dcec3a73a7603f0f225609341b"
+    },
+    {
+      "path": "map/edges/customer-attraction-3a-3a-0b8ab90655180908/review.md",
+      "sha256": "ad0e207121cd7cfbcfcb42d577587855d9c873ffc42349cf4f18c1e134efa6ab"
+    }
+  ],
+  "reviewed_by": "Boss1",
+  "review_note": "原9文件13refs和read-add三个完整对象的全部注册refs均实读；六大策略/矩阵JSON经完整显示的可逆字典/序列表逐字段读，decode==原JSON。人工核三张严格鞍点行和任意历史抵消证明，结论覆盖完整目标。未重跑DP、BI、LP或原审计；交Root亲审绑定。",
+  "endpoint_pins": {
+    "M-188ec19e2d354848bf1ddfd992957fe2": "73f7ca0b81b4c93ce325fc9581e90974a99033cc54b53586b080d6d1ade1eda3",
+    "cag-residual-aggregate-full-outcome-probe-and-three-repeat-terminal-points": "d5db6a6d19b142278045a7f970bbbceaecfeec6dea15a15eb2c1b9552bfdab71"
+  },
+  "evidence_pins": {
+    "archives/customer-attraction/state/程序/合法背景首两人安全比的有限探针与三个取等点--程序.md": "0a1073b2039fd08a31e57ccce915edc030a9ec0d799c0a1d73173bde245a269e",
+    "archives/customer-attraction/state/程序/合法背景残余总利润的全集筛查与三个重复终局点--程序.md": "8e0175f1daf9ca6ab7ed7da6c6955f5776b4fd251c09897d1d44f14a275b561c",
+    "archives/customer-attraction/tools/evidence/residual-aggregate-three-saved-primary/exact-three-saved-point-audit.json": "0948d8629ccb1b11dcc5566b709002f9324ae6dcec3a73a7603f0f225609341b",
+    "map/edges/customer-attraction-3a-3a-0b8ab90655180908/review.md": "ad0e207121cd7cfbcfcb42d577587855d9c873ffc42349cf4f18c1e134efa6ab"
+  },
+  "review_digest": "bfc0598caff44178cf14262b52a72e4110d33fb016ee340661c9c0a436b8bb71"
+}
