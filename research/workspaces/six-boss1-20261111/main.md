@@ -1,5 +1,42 @@
 # Boss1：六人共同目录跨真实分支研究
 
+# Stage20：真实重查询大小帽给出新的普遍界
+
+Boss1；RUN six-boss1-20261111；branch rebuild/research-v2；customer-attraction / six-providers。研究clone /workspace/scratch/b0fef5ec503f/co-work-anl-boss1，工作路径 research/workspaces/six-boss1-20261111/。原恰六人half仍OPEN。
+
+## Main已核的新数学
+
+在同一真实根C分支的C30六个重查询分支中，每个第四回复R4,k都是共同目录合法标签，故平均大小不超过K。按215/3加这一帽，重取全部真实八尾最小，再调整原根五CAP和自由C质量付款，得到
+
+84387869309613600 u1 >= 8839887370271285 K + 1686700906360065 |O| + 1087978231314917 |C\O|。
+
+相对原严格ROOT270增加 (14693170735/3375514772384544)K。Main已从正式C30原公式独立重建2048真尾成本、全部弱态、128余项和131列付款。用6K−|O|>=0接入原γ36的正根权后，全部513列恒等式成立，得到
+
+W >= [120062346724323442838349620057737586143702548617643 / 271782046630211948128369113931962313723747587272186] OPT6
+= 0.44175966813466854899848068069127163284486302151747... OPT6。
+
+该证书对任意六合法查询并有效，不限最优并；正付款17项，未调用优化器。完整可复用入口：main_rootcap_gain/proof_display.md、check_and_build.py、exact_certificate.json、check_result.json。原排版草稿、原freeze_manifest及显示修正分别保留；数学display、数字证书和输入不改。新普遍界不是4177的精确最优，也不是完整SPE构造。
+
+## 4177唯一求解的实际状态
+
+输入SHA保持8f953bca6b65a8093d5fcf0fdb5a432ba3603137fe1015cd06fc8f6324e68769。必须合读独立X更正：X一次选为同一实际前四背景的全目录最大潜力标签，C才是最大裸覆盖标签。完整系统O=OPT6，零OPT直接处理。
+
+首次Main release eef504e3ad50d3e2f901e12a8689a95415986be2552c73cd885041e4d8dbdbaf 在优化前preflight失败：冻结source_pins采用精确44项files列表，旧scaffold误预期sources字典。已明确撤回旧释放并保失败证据；没有消费marker，累计优化0。原scaffold和源不改；原席/root/visible_joint_v6_solve已在新visible_maximum_joint_v6_solve_v2/修复严格44项格式接口，保持全部来源、原行、原列、尺度和元数据验证。Main完整审读patch并核20个资产、6个逐字不变求解/检查程序和不变的数学validator后，新建明确release 9aed677521b19c1c4c4a41a0ef644cf1f540c037c6509210107297479dc4d741；待本次推送及安全同步后执行唯一次LP。不能把旧release拿去执行，也不能因格式错误跳过来源闭包。
+
+## 正在继续的真实义务
+
+- /root/high_lambda_closure已经关闭高lambda路线，现隔离完成root270_equality_stage/中C30第四回复帽、严格ROOT270等号结构与全参数断点。Main已有独立核验，新根与该席一致，冻结后接回RUN。
+- /root/source2_cap3_tradeoff在隔离cap3_full_delta_stage/完成完整二维delta/h域。r3补入严格支配、一般T/C-only权衡及ordered d1最弱已扩到整域；全物理包络存在旧两候选未覆盖的大q新分支，全部弱边界仍要保留。禁止候选点驱动删态。
+- Main完成定向map整合，继续精确4177求解及新正付款分支；新根证书和cap3扩展不偷插冻结4177输入。第一份新完整点/面返回后检验这些已独立证明的新行，再开始下一轮。
+
+## 已推送、仅本地及恢复
+
+Stage19d研究提交b03738737870367e2da8a091d4d6f0e26b16d892已确认pushed。包含高lambda闭合、186条cap3和计算v15可发布证据修正。Stage19构图17资产在061f5bf3e665930cdf8af561dc774598157aec9f已推送，done请求在af4d436db6ec1e7322f33ea667a295c204e5fb51已推送；17条已审关系已assemble为2130条canonical边的本地草案，并保其他77对象/29边/3范围pending。全仓final check/build均因既有冻结登记范围外19个新正文路径未闭合而拒绝，未生成新projection；不冒称全仓最终完成。本次将定向整合与新数学一起checkpoint。
+
+本Stage20新根/Main普遍证书、已接回root270_reply_cap与source2_cap3_full_delta及求解适配目前仅本地；以下一次确认pushed为恢复边界。Main已核完整二维1536成本平面、全部29184半平面、150个cell及225顶点，9个孤立弱点全部保留。root270_replycaps_iter2_stage及cap3_full_delta_rows_stage两条后续隔离义务正在继续，尚未接回。求解席写入期间不sync研究clone。恢复先restore_frozen_text.py，再research resume同RUN；按实际marker与release状态继续，不重复已消费求解。旧23676云任务check14为queued、0jobs、0artifacts，未重发；734仍UNBOUND。
+
+## 以前阶段记录
+
 # Stage19d：两个新义务闭合，继续4177主线
 
 Boss1；RUN six-boss1-20261111；branch rebuild/research-v2；customer-attraction / six-providers。

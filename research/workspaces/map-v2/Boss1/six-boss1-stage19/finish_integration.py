@@ -33,6 +33,7 @@ for scope in ['archives/customer-attraction','archives/customer-attraction/subar
     row = d['archive_reviews'][scope]
     row['comparison_scope'] += '\nBoss1本轮范围：同一actual前四最大X与真正裸最大C分开；真实内部域/同菜单投影、PAIR及P25联合ROOT270、完整3056正付款/整面排除和γ36。旧H3/SAFE/UP/容量等关系只承认原明列贡献，17关系按当前准确pins。'
     row['outcome'] += '\n' + note
+    row['open_math'] = [x for x in row.get('open_math',[]) if not (x.startswith('Boss1本RUN') and '不属于本批' in x and 'v13' in x)]
     opening = 'Boss1本RUN的原六人half和完整SPE反例仍未闭合；ROOT270/可见C/内部SAFE/γ36已纳入本批准确版本；新4177准备尚未求解，后续cap3及高lambda闭合仍属另轮工作区成果。'
     if opening not in row.setdefault('open_math',[]): row['open_math'].append(opening)
 cross = d['cross_archive_review']

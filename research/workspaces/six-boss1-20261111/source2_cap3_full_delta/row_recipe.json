@@ -1,0 +1,422 @@
+{
+  "schema": "source2-cap3-full-delta-row-recipe-v1",
+  "matrices_materialized": false,
+  "affine_order": [
+    "constant",
+    "delta",
+    "h"
+  ],
+  "customer_bits": [
+    "a1",
+    "a2",
+    "a3",
+    "a4",
+    "a5",
+    "a6",
+    "x",
+    "o",
+    "c"
+  ],
+  "customer_order": "lexicographic, 0 before 1",
+  "customer_columns": 512,
+  "K_column": 512,
+  "total_columns": 513,
+  "inequality": "dot(row.a,coordinate)>=0",
+  "prefix": "p=a1",
+  "actual_u2": "a2/(a1+...+a6), zero actual load gives zero",
+  "legal_targets": {
+    "A1": 0,
+    "A2": 1,
+    "A3": 2,
+    "A4": 3,
+    "A5": 4,
+    "A6": 5,
+    "X": 6,
+    "C": 8
+  },
+  "pure_general": {
+    "customer": "a*actual_u2-min_16_COST(p,t,o/6;delta,h)",
+    "K": "S(delta,h)",
+    "free_EC": "0"
+  },
+  "C_only": {
+    "customer": "a*actual_u2-min_16_COST(p,c,o/6;delta,h)+mu(delta,h)*c",
+    "K": "s/5",
+    "free_EC": "mu=S-s/5",
+    "equality": "E_C=sum_x c_x-K=0; multiplier unrestricted in sign"
+  },
+  "ordered": {
+    "customer": "a*actual_u2-o*G(p;delta,h)",
+    "K": "S(delta,h)",
+    "free_EC": "0",
+    "G": "min_{d=1..6} f_d=f_1, after computing physical condition minima",
+    "physical_conditions": "t=0,d=0..5; t=1,d=1..6; q=(d-t)/5"
+  },
+  "parameters": [
+    {
+      "slice_id": "pure_s0",
+      "mode": "pure",
+      "s": "0",
+      "q0": "1/6",
+      "source_IC_affine": [
+        "184969/6912",
+        "0",
+        "0"
+      ],
+      "internal_SAFE_affines": {
+        "3": [
+          "0",
+          "0",
+          "0"
+        ],
+        "4": [
+          "5977/6912",
+          "-1",
+          "0"
+        ],
+        "5": [
+          "43/48",
+          "1",
+          "0"
+        ]
+      },
+      "intermediate_CAP_affines": {
+        "3": [
+          "59833/497664",
+          "1/72",
+          "-1"
+        ],
+        "4": [
+          "6725/6912",
+          "-35/36",
+          "0"
+        ],
+        "5": [
+          "47/48",
+          "1",
+          "0"
+        ]
+      },
+      "terminal_CAP": "1",
+      "terminal_BR": "1",
+      "S_affine": [
+        "1528993/497664",
+        "1/24",
+        "-1"
+      ],
+      "C_only_free_EC_affine": [
+        "1528993/497664",
+        "1/24",
+        "-1"
+      ],
+      "C_only_K": "0",
+      "outer_index_average": null,
+      "inner_query_average": "1/6",
+      "numerical_divisor": "25"
+    },
+    {
+      "slice_id": "pure_sstar",
+      "mode": "pure",
+      "s": "61273/6912",
+      "q0": "1/6",
+      "source_IC_affine": [
+        "859/48",
+        "0",
+        "0"
+      ],
+      "internal_SAFE_affines": {
+        "3": [
+          "0",
+          "0",
+          "0"
+        ],
+        "4": [
+          "5977/6912",
+          "-1",
+          "0"
+        ],
+        "5": [
+          "43/48",
+          "1",
+          "0"
+        ]
+      },
+      "intermediate_CAP_affines": {
+        "3": [
+          "59833/497664",
+          "1/72",
+          "-1"
+        ],
+        "4": [
+          "6725/6912",
+          "-35/36",
+          "0"
+        ],
+        "5": [
+          "47/48",
+          "1",
+          "0"
+        ]
+      },
+      "terminal_CAP": "1",
+      "terminal_BR": "1",
+      "S_affine": [
+        "1528993/497664",
+        "1/24",
+        "-1"
+      ],
+      "C_only_free_EC_affine": [
+        "3233309/2488320",
+        "1/24",
+        "-1"
+      ],
+      "C_only_K": "61273/34560",
+      "outer_index_average": null,
+      "inner_query_average": "1/6",
+      "numerical_divisor": "25"
+    },
+    {
+      "slice_id": "pure_s9",
+      "mode": "pure",
+      "s": "9",
+      "q0": "1/6",
+      "source_IC_affine": [
+        "122761/6912",
+        "0",
+        "0"
+      ],
+      "internal_SAFE_affines": {
+        "3": [
+          "0",
+          "0",
+          "0"
+        ],
+        "4": [
+          "5977/6912",
+          "-1",
+          "0"
+        ],
+        "5": [
+          "43/48",
+          "1",
+          "0"
+        ]
+      },
+      "intermediate_CAP_affines": {
+        "3": [
+          "59833/497664",
+          "1/72",
+          "-1"
+        ],
+        "4": [
+          "6725/6912",
+          "-35/36",
+          "0"
+        ],
+        "5": [
+          "47/48",
+          "1",
+          "0"
+        ]
+      },
+      "terminal_CAP": "1",
+      "terminal_BR": "1",
+      "S_affine": [
+        "1528993/497664",
+        "1/24",
+        "-1"
+      ],
+      "C_only_free_EC_affine": [
+        "3165989/2488320",
+        "1/24",
+        "-1"
+      ],
+      "C_only_K": "9/5",
+      "outer_index_average": null,
+      "inner_query_average": "1/6",
+      "numerical_divisor": "25"
+    },
+    {
+      "slice_id": "ordered_s0",
+      "mode": "ordered",
+      "s": "0",
+      "q0": "1/5",
+      "source_IC_affine": [
+        "184969/6912",
+        "0",
+        "0"
+      ],
+      "internal_SAFE_affines": {
+        "3": [
+          "0",
+          "0",
+          "0"
+        ],
+        "4": [
+          "5977/6912",
+          "-1",
+          "0"
+        ],
+        "5": [
+          "43/48",
+          "1",
+          "0"
+        ]
+      },
+      "intermediate_CAP_affines": {
+        "3": [
+          "59833/414720",
+          "1/60",
+          "-1"
+        ],
+        "4": [
+          "34373/34560",
+          "-29/30",
+          "0"
+        ],
+        "5": [
+          "239/240",
+          "1",
+          "0"
+        ]
+      },
+      "terminal_CAP": "1",
+      "terminal_BR": "1",
+      "S_affine": [
+        "1300021/414720",
+        "1/20",
+        "-1"
+      ],
+      "C_only_free_EC_affine": null,
+      "C_only_K": null,
+      "outer_index_average": "1/6",
+      "inner_query_average": "1/5",
+      "numerical_divisor": "25"
+    },
+    {
+      "slice_id": "ordered_sstar",
+      "mode": "ordered",
+      "s": "61273/6912",
+      "q0": "1/5",
+      "source_IC_affine": [
+        "859/48",
+        "0",
+        "0"
+      ],
+      "internal_SAFE_affines": {
+        "3": [
+          "0",
+          "0",
+          "0"
+        ],
+        "4": [
+          "5977/6912",
+          "-1",
+          "0"
+        ],
+        "5": [
+          "43/48",
+          "1",
+          "0"
+        ]
+      },
+      "intermediate_CAP_affines": {
+        "3": [
+          "59833/414720",
+          "1/60",
+          "-1"
+        ],
+        "4": [
+          "34373/34560",
+          "-29/30",
+          "0"
+        ],
+        "5": [
+          "239/240",
+          "1",
+          "0"
+        ]
+      },
+      "terminal_CAP": "1",
+      "terminal_BR": "1",
+      "S_affine": [
+        "1300021/414720",
+        "1/20",
+        "-1"
+      ],
+      "C_only_free_EC_affine": null,
+      "C_only_K": null,
+      "outer_index_average": "1/6",
+      "inner_query_average": "1/5",
+      "numerical_divisor": "25"
+    },
+    {
+      "slice_id": "ordered_s9",
+      "mode": "ordered",
+      "s": "9",
+      "q0": "1/5",
+      "source_IC_affine": [
+        "122761/6912",
+        "0",
+        "0"
+      ],
+      "internal_SAFE_affines": {
+        "3": [
+          "0",
+          "0",
+          "0"
+        ],
+        "4": [
+          "5977/6912",
+          "-1",
+          "0"
+        ],
+        "5": [
+          "43/48",
+          "1",
+          "0"
+        ]
+      },
+      "intermediate_CAP_affines": {
+        "3": [
+          "59833/414720",
+          "1/60",
+          "-1"
+        ],
+        "4": [
+          "34373/34560",
+          "-29/30",
+          "0"
+        ],
+        "5": [
+          "239/240",
+          "1",
+          "0"
+        ]
+      },
+      "terminal_CAP": "1",
+      "terminal_BR": "1",
+      "S_affine": [
+        "1300021/414720",
+        "1/20",
+        "-1"
+      ],
+      "C_only_free_EC_affine": null,
+      "C_only_K": null,
+      "outer_index_average": "1/6",
+      "inner_query_average": "1/5",
+      "numerical_divisor": "25"
+    }
+  ],
+  "finite_generation": {
+    "common_cells": 150,
+    "source_vertex_records": 225,
+    "prospective_general_rows": 360,
+    "prospective_C_only_rows": 45,
+    "prospective_ordered_rows": 180,
+    "prospective_total_rows": 585,
+    "all_rows_unmaterialized": true,
+    "weights": "lambda=(delta-l)/(u-l), eta=(h-L(delta))/(U(delta)-L(delta)); corner weights (1-lambda)(1-eta), lambda(1-eta), lambda*eta, (1-lambda)*eta",
+    "C_only_status": "entire two-dimensional family paid by its 15 true bottom-edge endpoint rows plus nonnegative customer masses"
+  }
+}
