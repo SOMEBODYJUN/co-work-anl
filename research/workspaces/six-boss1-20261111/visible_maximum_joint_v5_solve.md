@@ -1,15 +1,23 @@
-# 可见最大 C 联合 v5 求解席：等待最终输入和单次 Main 释放
+# 可见最大 C 联合 v5：完整3056精确界与整个最优面不可达
 
-身份：Boss1，RUN `six-boss1-20261111`，profile `full`，实际 agent `/root/visible_joint_v5_solve`。
+Boss1；RUN `six-boss1-20261111`；profile `full`；实际 agent `/root/visible_joint_v5_solve`。
 
-**当前授权 0、实际优化调用 0；状态 WAITING_FINAL_INPUT_SHA_AND_EXPLICIT_MAIN_RELEASE。**
+**已消费且仅消费1次完整LP；精确证书、完整面和本次真实来源排除均通过独立核验。原half仍OPEN。**
 
-静态程序与完整说明位于 `visible_maximum_joint_v5_solve/`。仅以冻结 v4 程序作接口参考，没有访问 v5 活跃输入/来源、运行旧入口、创建释放文件、消费标记或数学结果。Git、RUN 和登记由 Main 独管。
+完整3056 raw／513非负列／2自由等式的必要系统精确最优值为
 
-骨架已覆盖：最终 SHA 与计数门禁；唯一一次完整 highs-ds；原尺度有理支持恢复；独立 Fraction 全 raw/513/2 与互补核验；所有零对偶余量列的完整最优面和全部参数条件；独立完整面复核；依据实际新正付款建立的来源诊断队列。
+`108858965563724169521890917325832631652315417/246421667899918066927761529101381586610108429` ≈ **0.44175890250014965**。
 
-规划 `1586+181+28+28+1096+137=3056` 只是待确认合同。原 1586 完整 raw、零/重复行、30 个 rhs=-1、原正尺度、全部 512 客户类型、独立 K 和两条自由等式均设为硬检查。新增行 numerical divisor 25 与真实 IC 权重分别保存；C-only 自由等式乘子可负，一般 8T/ordered 不消去 K。
+原1586行、全部零/重复行、30条rhs=−1、原正尺度、完整客户轴与独立K均保留。求解使用highs-ds、60秒、presolve=False、1e−9容差，61迭代成功。所有新行numerical divisor25与真实IC权分开保存；原付款逐条以−marginal/divisor恢复。
 
-真分支公式和全弱零态检查必须等最终新来源释放及实际正付款出现后实施；本阶段没有继承旧正行、旧零态或旧效用/K 等号，也没有生成来源排除结论。无 fixed K、支持受限 LP、旧点补全、734 phase I 或第二 LP 路径。
+全部正raw索引为 `46,47,134,218,221,868,1803,2563,2564,2606`。完整零余量列有18个，面等式rank12，自由坐标 `z0,z15,z19,z23,z51,z75`；全部3056参数不等式与513非负条件保留并独立复核。K在整面固定为 `99544754486880443492045505264159012847352877/492843335799836133855523058202763173220216858`。
 
-完整交接说明见 `visible_maximum_joint_v5_solve/source_review.md`；空模板见 `main_release.template.json`；静态核验和指纹见 `scaffold_static_check.json`、`scaffold_manifest.json` 与 `SCAFFOLD_SHA256SUMS`。这些文件均不构成实际输入认证或优化授权。原六人 half 目标仍 **OPEN**。
+本次真实正C行1803与全脸C⊆O共同强制R3=R4=R5=C覆盖，故真实v3=v4=v5=K/5。真实正SAFE4/5取等要求N4=N5，而独立全列身份给出整面
+
+`N5−N4=(1−K)/36=393298581312955690363477552938604160372863981/17742360088794100818798830095299474235927806888` >0。
+
+所以**整个最优面均不能由原完整有序历史纯SPE实现**。完整c=0弱零态及c=1,o=0的1011/1101替代态都保留；覆盖等号是在新零态、全脸C⊆O和正CAP之后推出，没有预置旧u2/K或真实v4/v5关系。N3差为正，实际矛盾来自SAFE4/5。
+
+这给出必要系统精确最优值以及最优面不可达性，不给统一提升epsilon、不构造SPE、不证明half。没有第二LP、734/phaseI、固定K、支持限制、旧点补全或新增λ族输入。
+
+完整正文与实际失败保存见 `visible_maximum_joint_v5_solve/proof.md`；原等待阶段摘要已保留在 `scaffold_summary_before_release.md` 与 `adjacent_summary_before_release.md`。最终来源核验、成果冻结及SHA见同目录 `final_source_verification.json`、`freeze_manifest.json`、`SHA256SUMS`。Git、RUN和登记仍由Main管理。

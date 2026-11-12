@@ -67,3 +67,9 @@ Main继续把新的闭式及完整参数域回流正文，草稿在 `registratio
 本次checkpoint选择已停写族、Main复核、静态求解骨架、草稿及RUN；活跃v5准备和lambda目录不混入。
 任何sync必须先协调所有写者停写；checkpoint采用指定路径，不stash/reset。
 继续完成v5冻结、一次求解、Main证书和真分支诊断，再把新lambda族接回；half仍OPEN，不在checkpoint处停研。
+
+## Stage19b 当前入口（2026-11-12）
+
+RUN仍为 `six-boss1-20261111`；当前说明与实际工件见 `research/workspaces/six-boss1-20261111/stage19b-current.md`。
+已核完整3056必要系统及整面不可达；Main用新δ切割和根C在O外余项，无新LP得到统一系数约.44175904545882727。half仍开放。
+下一步：完整δ族、后部λ全族Main准入、登记正文与超边回流、继续跨真实偏离约束。具体远端提交以该阶段pushed回执为准。

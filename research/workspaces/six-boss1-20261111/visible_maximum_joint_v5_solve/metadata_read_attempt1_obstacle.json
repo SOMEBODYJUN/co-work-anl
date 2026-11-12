@@ -1,0 +1,14 @@
+{
+  "status": "NON_SOLVER_METADATA_READER_PATH_ERROR_CORRECTED",
+  "operation": "Read numerical summary and already released exact-input row metadata",
+  "error_type": "FileNotFoundError",
+  "error": "[Errno 2] No such file or directory: 'visible_maximum_joint_v5/exact_input.json'",
+  "cause": "The inline reader used Path('.') and then .parent; this remains '.', not the absolute working directory's parent.",
+  "correction": "The next read-only command used Path.cwd() and read the correct released sibling path.",
+  "failed_attempt_optimizer_calls": 0,
+  "successful_metadata_retry_optimizer_calls": 0,
+  "sole_LP_rerun": false,
+  "core_program_changed": false,
+  "recovery_affected": false,
+  "scope": "Preserved actual diagnostic metadata-read failure; not a solve, certificate or source failure."
+}

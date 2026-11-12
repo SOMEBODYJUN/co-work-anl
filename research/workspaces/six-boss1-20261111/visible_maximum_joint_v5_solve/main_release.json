@@ -1,0 +1,172 @@
+{
+  "schema": "visible_maximum_joint_v5_main_release_v1",
+  "status": "MAIN_EXPLICIT_FULL3056_RAW_V5_SINGLE_LP_RELEASE",
+  "authorized_by": "/root",
+  "owner": "Boss1",
+  "RUN": "six-boss1-20261111",
+  "agent": "/root/visible_joint_v5_solve",
+  "profile": "full",
+  "optimizer_calls_authorized": 1,
+  "input_read_authorized": true,
+  "source_closure_read_authorized": true,
+  "planning_contract_confirmed": true,
+  "explicit_main_instruction": "Boss1/Main已亲读完整来源并独立复核全3056逐字输入，明确授权此冻结输入恰一次完整highs-ds（60秒、presolve=False、原尺度），随后只做精确恢复、全列证书、完整最优面及实际新正付款诊断。先排他写消费标记，任何异常不重跑；不读或纳入新lambda族。",
+  "input_path": "research/workspaces/six-boss1-20261111/visible_maximum_joint_v5/exact_input.json",
+  "input_sha256": "12f456dfbc789a5c1826d248e4851b84f66b428554d181b7ba12cbfdb920f3ac",
+  "preparation_manifest_sha256": "b49d8bba4197fc6d656005770dace9c5a777816b5e3eaa1105565fb23db51a27",
+  "scaling_sha256": "c0ac529a5436a21bcc83e8227961ec294cd92b829dfd85b331e3cb5ef9fb8e9b",
+  "source_review_sha256": "94c5c4e4f9e1795ecee09dc85181e84bf2d3ee6f5a7c79d300c652c3f2db1fb6",
+  "source_pins_sha256": "85984daef2a8151674456cd8ef241514f16f96625c730ebc7033906198208939",
+  "scaffold_manifest_sha256": "f3720a30fddd4625321aa0c9b56632ce4854ef30c31de0db43a93703740694b7",
+  "raw_row_order_sha256": "ab60dc66ec4037f8aaf5e45dc29e7accbb3f1183f0ab30614504e326f360a504",
+  "expected_dimensions": {
+    "raw_inequalities": 3056,
+    "literal_parent_rows": 1586,
+    "appended_rows": 1470,
+    "nonnegative_columns": 513,
+    "equalities": 2,
+    "affine_rhs_minus_one_rows": 30
+  },
+  "expected_row_blocks": [
+    {
+      "label": "literal_v4_raw",
+      "start": 0,
+      "stop": 1586,
+      "count": 1586
+    },
+    {
+      "label": "fixed_cap_ordered_cells",
+      "start": 1586,
+      "stop": 1767,
+      "count": 181
+    },
+    {
+      "label": "fixed_basis_CAP_coupled_C_only",
+      "start": 1767,
+      "stop": 1795,
+      "count": 28
+    },
+    {
+      "label": "arbitrary_tau_minimal_cap_C_only",
+      "start": 1795,
+      "stop": 1823,
+      "count": 28
+    },
+    {
+      "label": "all_five_source_minimal_CAP_pure_8T",
+      "start": 1823,
+      "stop": 2919,
+      "count": 1096
+    },
+    {
+      "label": "adaptive_five_query_minimal_cap_ordered",
+      "start": 2919,
+      "stop": 3056,
+      "count": 137
+    }
+  ],
+  "appended_numerical_divisor": "25",
+  "literal_parent": {
+    "input_path": "research/workspaces/six-boss1-20261111/visible_maximum_joint_v4/exact_input.json",
+    "input_sha256": "fbd3b0cb65736b5c41b64dd630b442e9647b701e446c36819e3f726c620ac839",
+    "scaling_path": "research/workspaces/six-boss1-20261111/visible_maximum_joint_v4/numerical_scaling.json",
+    "scaling_sha256": "6922dd5c40076105d97ac156173921bee9cc6ff665b7089cc226cb801c67cde1"
+  },
+  "preparation_manifest_count_pointers": {
+    "raw_inequalities": "/raw_rows",
+    "nonnegative_columns": "/columns",
+    "equalities": "/equalities"
+  },
+  "required_evidence": [
+    {
+      "role": "main_preflight",
+      "path": "research/workspaces/six-boss1-20261111/main_visible_c_v5_preflight.json",
+      "sha256": "c4ac072f4aaeb0695da6057dc365fefc99b12c85fa471756568f12ddacd0cdf1",
+      "expected_status": "PASS_MAIN_FULL3056_LITERAL_SOURCE_CONCATENATION_AND_MODEL",
+      "expected_json_values": {
+        "/raw_rows": 3056,
+        "/variables": 513,
+        "/equalities": 2
+      }
+    },
+    {
+      "role": "source_legality",
+      "path": "research/workspaces/six-boss1-20261111/main_visible_c_v5_preflight.json",
+      "sha256": "c4ac072f4aaeb0695da6057dc365fefc99b12c85fa471756568f12ddacd0cdf1",
+      "expected_status": "PASS_MAIN_FULL3056_LITERAL_SOURCE_CONCATENATION_AND_MODEL",
+      "expected_json_values": {
+        "/raw_rows": 3056,
+        "/variables": 513,
+        "/equalities": 2
+      }
+    },
+    {
+      "role": "all_raw_column_audit",
+      "path": "research/workspaces/six-boss1-20261111/main_visible_c_v5_preflight.json",
+      "sha256": "c4ac072f4aaeb0695da6057dc365fefc99b12c85fa471756568f12ddacd0cdf1",
+      "expected_status": "PASS_MAIN_FULL3056_LITERAL_SOURCE_CONCATENATION_AND_MODEL",
+      "expected_json_values": {
+        "/raw_rows": 3056,
+        "/variables": 513,
+        "/equalities": 2
+      }
+    }
+  ],
+  "source_validity_scope": {
+    "original_six_player_complete_ordered_pure_SPE_model_reviewed": true,
+    "all_new_sources_reviewed": true,
+    "all_raw_coefficients_and_all_513_columns_reviewed": true,
+    "all_off_path_weak_optimality_states_preserved": true,
+    "empty_duplicate_coverage_alias_and_zero_customer_cases_preserved": true,
+    "C_only_rewrites_use_only_the_C_size_equality": true,
+    "general_8T_and_ordered_rows_keep_uneliminated_K": true,
+    "numerical_divisor_is_not_substituted_for_true_IC_weight": true
+  },
+  "planned_dimensions_reference_only": {
+    "raw_inequalities": 3056,
+    "literal_parent_rows": 1586,
+    "appended_rows": 1470,
+    "nonnegative_columns": 513,
+    "equalities": 2,
+    "affine_rhs_minus_one_rows": 30
+  },
+  "planned_row_blocks_reference_only": [
+    {
+      "label": "literal_v4_raw",
+      "start": 0,
+      "stop": 1586,
+      "count": 1586
+    },
+    {
+      "label": "fixed_cap_ordered_cells",
+      "start": 1586,
+      "stop": 1767,
+      "count": 181
+    },
+    {
+      "label": "fixed_basis_CAP_coupled_C_only",
+      "start": 1767,
+      "stop": 1795,
+      "count": 28
+    },
+    {
+      "label": "arbitrary_tau_minimal_cap_C_only",
+      "start": 1795,
+      "stop": 1823,
+      "count": 28
+    },
+    {
+      "label": "all_five_source_minimal_CAP_pure_8T",
+      "start": 1823,
+      "stop": 2919,
+      "count": 1096
+    },
+    {
+      "label": "adaptive_five_query_minimal_cap_ordered",
+      "start": 2919,
+      "stop": 3056,
+      "count": 137
+    }
+  ],
+  "note": "Actual Main release after final source proof, geometric, true-cost and all-column checks. No permission is inferred from a template or file existence."
+}
