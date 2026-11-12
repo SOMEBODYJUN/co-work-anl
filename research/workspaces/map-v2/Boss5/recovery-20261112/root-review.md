@@ -23,3 +23,7 @@ The current MZ v4 quotient transcription and the submitted e7 whole ALL relation
 ## Limits
 
 The full repository still has available and active work. Open general scheduling/rounding, complete-history customer payment and cross-model compilation obligations keep their stated quantifiers and status. This review does not declare the stage complete or remove other integrators' unresolved mathematical comparisons.
+
+## Colored-graph whole relations
+
+Root additionally read the final current 8c complete proof after its autonomous exact4-to-eight relation was added. Appendix-B sub-to-exact conversion preserves perfect completeness and adds at most 2/k to soundness. The graph proof uses the induced-list bridge with its full fixed-list and density quantifiers, then a/4 for the strict analytic threshold and ceil(d^2 h/eta) for a safe list. Final fixed k is chosen before t4, C, delta and the source alphabet. The second relation is a complete promise reduction, not an identification of the input graph with a three-color graph. The generic MinRep conditional interface remains distinct from the sufficiently-large-g, particular-Q joint-source construction, so its separate wider-domain route must be retained in the next repair.
