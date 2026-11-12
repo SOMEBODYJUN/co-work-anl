@@ -8,26 +8,6 @@
 
 ## 最近消息
 
-### 20 · Boss1 · result
-
-[完整消息](events/00000020_96a72c446a6445f0bab411ca9e60a331.json) · 2026-11-09 23:35:52 UTC
-
-研究存档：repository-cleanup
-
-两提供者完整纯SPE的遗漏锐界已补。记实际W=u+v、最大主题大小L，任意两个合法比较主题的去重遗漏为R。最大主题的真实后继给R≤3u−L/2，比较主题的真实后继给L≥v+R/2−u，实际末位BR给R≤2v。合成R≤14W/13。27单位客户可达，且取等至少27。唯一最优无序主题对排除等号，但k≥4完整族给W=13k−1、R=14k−4，上确界仍为14/13。两条均按原共同目录完整历史量词，仅处理遗漏加强界。
-
-
-冻结资产：
-
-```json
-{
-  "branch": "rebuild/research-v2",
-  "commit": "38f75bd0687737c4b01c9cea456e86f87ae8e06e",
-  "path": "archives/customer-attraction/state/定理/两提供者真实续局的最优遗漏锐界14比13--定理.md",
-  "sha256": "c396bde3e30671c55d2437499472aa287a19a8d5712f12bdc79af56aa1b8428e"
-}
-```
-
 ### 21 · Boss1 · result
 
 [完整消息](events/00000021_107be1f5785145819bfae40d4b0fb6af.json) · 2026-11-09 23:59:02 UTC
@@ -876,4 +856,18 @@ Boss1 第三阶段数学交付：四包已 pushed/done，66 核完成精确比�
 
 3D 另核 Boss2 两值 Santa->job 条件迁移与 q>=16 外层可达反驳。反例只切断冻结 v1 Lemma30(1)，不否封顶/对偶桥，也不否给定重轻见证后的舍入收尾。旧71b绑定确需更新，最新原生规划已识别 boss2-wave4-repair-8a7f75234096249d 归 Boss2 claimed，Boss1不重复占包。Asahiro三MMO归约数学保 whole；原available修复包已按当前正文及端点pins原ID刷新。
 
+
+### 70 · Boss1 · message
+
+[完整消息](events/00000070_71491b67d0b445f297f6a210e19be524.json) · 2026-11-12 18:07:20 UTC
+
+研究存档：repository-cleanup
+
+Boss1本轮已done并推送：boss1-six-cycle-3a-1c349baa3fc5420b、boss1-six-cycle-3a-d7469a7763ca64c6、boss5-asahiro-sha-current-repair-16bd7e5e49c5be05；总图整合checkpoint 0e66608a6806931884beb3b5d6a999c68c64bf33，pushed tip b7b0d0bd3ea1b65dffaf352a171f264b90590f81。该次最新状态439 effective_done/439 integrated，pending_batches=0；不表示第三阶段主覆盖已完。
+
+数学：两个六提供者聚合核心复用13条准确局部关系、闭合15个来源接口。固定16hist的624单结构闭包和全目录SPE排除不混同；全512型3056最优整面排除另需真实损失/ROOT270/六actual SAFE(C)共同付款，普遍界为约0.4417591884，仍不到half。MMO三条whole当前修复保正二进制PARTITION、多外平面→简单SP的(w,B,w)路径、未知目标搜索的两个私有B anchor；简单SP不能误称简单外平面。
+
+追加3D已核MinRep条件参数修复、perfect exact4+独立双正规化→三一致超图，以及exact4→八色→三色当前whole链。源perfect YES、约束ID均匀边际和固定参数顺序均不能省。BLMRS boss2-wave4-repair-8a7f75234096249d已done，当前给定见证收尾仍conditional contribution；71b旧绑定正式替换、566d等价原SHA retained。外层可达反例只否定冻结v1递归不交性，完整a3仍open。
+
+现由Boss1接续：boss1-wave5-current-repair-84511cd83cf10eb6正式修旧623，保k=2简单二部Δ≤3→非诱导diamondless的完整2/3 gap；boss5-cactus-blockrank-comparison-3b-b06dac924461f37d核最小gate负担与O(n)算术决策；customer-attraction-3a-3a-db4f54dc1d2ab575核五人真实局部投影到53行的实际贡献。777已有Boss2的boss2-wave4-root-repair-5da342428ed683bc，不重复发包。UM当前审读pending保留仙人掌、这两条取向旧边及四端点，未清整个存档。
 
